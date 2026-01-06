@@ -6,7 +6,7 @@ class ApiConstants {
   static const String baseUrl = 'http://10.0.2.2:8888';
 
   // API Endpoints
-  static const String apiVersion = '/api/v1';
+  static const String apiVersion = '/api';
 
   // Categories
   static const String categories = '$apiVersion/categories';
