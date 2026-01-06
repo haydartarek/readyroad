@@ -89,7 +89,7 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
     );
   }
 
-  Widget _buildOverviewCard(stats) {
+  Widget _buildOverviewCard(dynamic stats) {
     return Card(
       child: Padding(
         padding: const EdgeInsets.all(16),
@@ -150,7 +150,7 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
     );
   }
 
-  Widget _buildPerformanceCard(stats) {
+  Widget _buildPerformanceCard(dynamic stats) {
     return Card(
       child: Padding(
         padding: const EdgeInsets.all(16),
@@ -193,7 +193,7 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
     );
   }
 
-  Widget _buildRecentQuizzes(stats) {
+  Widget _buildRecentQuizzes(dynamic stats) {
     return Card(
       child: Padding(
         padding: const EdgeInsets.all(16),
@@ -257,7 +257,7 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
     );
   }
 
-  Widget _buildQuizResultItem(result) {
+  Widget _buildQuizResultItem(dynamic result) {
     final dateFormat = DateFormat('MMM dd, yyyy - HH:mm');
 
     return Container(
@@ -265,8 +265,8 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
         color: result.isPassed
-            ? Colors.green.withOpacity(0.1)
-            : Colors.red.withOpacity(0.1),
+            ? Colors.green.withValues(alpha: 0.1)
+            : Colors.red.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(8),
         border: Border.all(
           color: result.isPassed ? Colors.green : Colors.red,

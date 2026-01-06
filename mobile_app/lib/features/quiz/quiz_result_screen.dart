@@ -62,7 +62,7 @@ class _QuizResultScreenState extends State<QuizResultScreen> {
                   vertical: 8,
                 ),
                 decoration: BoxDecoration(
-                  color: _getScoreColor().withOpacity(0.1),
+                  color: _getScoreColor().withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Text(
@@ -174,7 +174,7 @@ class _QuizResultScreenState extends State<QuizResultScreen> {
     return Container(
       padding: const EdgeInsets.all(24),
       decoration: BoxDecoration(
-        color: color.withOpacity(0.1),
+        color: color.withValues(alpha: 0.1),
         shape: BoxShape.circle,
       ),
       child: Icon(

@@ -11,7 +11,7 @@ class TrafficSign {
   final String? descriptionNl;
   final String? descriptionFr;
   final String? imageUrl;
-  final int categoryId;
+  final String? categoryCode;
 
   TrafficSign({
     required this.id,
@@ -25,7 +25,7 @@ class TrafficSign {
     this.descriptionNl,
     this.descriptionFr,
     this.imageUrl,
-    required this.categoryId,
+    this.categoryCode,
   });
 
   /// Get name by language code
@@ -59,18 +59,18 @@ class TrafficSign {
   /// From JSON
   factory TrafficSign.fromJson(Map<String, dynamic> json) {
     return TrafficSign(
-      id: json['id'],
-      code: json['code'],
-      nameEn: json['nameEn'],
-      nameAr: json['nameAr'],
-      nameNl: json['nameNl'],
-      nameFr: json['nameFr'],
-      descriptionEn: json['descriptionEn'],
-      descriptionAr: json['descriptionAr'],
-      descriptionNl: json['descriptionNl'],
-      descriptionFr: json['descriptionFr'],
-      imageUrl: json['imageUrl'],
-      categoryId: json['categoryId'],
+      id: json['id'] as int,
+      code: json['signCode'] as String? ?? '',
+      nameEn: json['nameEn'] as String? ?? '',
+      nameAr: json['nameAr'] as String? ?? '',
+      nameNl: json['nameNl'] as String? ?? '',
+      nameFr: json['nameFr'] as String? ?? '',
+      descriptionEn: json['descriptionEn'] as String?,
+      descriptionAr: json['descriptionAr'] as String?,
+      descriptionNl: json['descriptionNl'] as String?,
+      descriptionFr: json['descriptionFr'] as String?,
+      imageUrl: json['imageUrl'] as String?,
+      categoryCode: json['categoryCode'] as String?,
     );
   }
 
@@ -78,7 +78,7 @@ class TrafficSign {
   Map<String, dynamic> toJson() {
     return {
       'id': id,
-      'code': code,
+      'signCode': code,
       'nameEn': nameEn,
       'nameAr': nameAr,
       'nameNl': nameNl,
@@ -88,7 +88,7 @@ class TrafficSign {
       'descriptionNl': descriptionNl,
       'descriptionFr': descriptionFr,
       'imageUrl': imageUrl,
-      'categoryId': categoryId,
+      'categoryCode': categoryCode,
     };
   }
 }

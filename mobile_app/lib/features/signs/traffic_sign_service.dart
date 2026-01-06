@@ -43,8 +43,7 @@ class TrafficSignService {
   Future<List<TrafficSign>> getTrafficSignsByCategory(int categoryId) async {
     try {
       final response = await _apiClient.get(
-        ApiConstants.trafficSigns,
-        queryParameters: {'categoryId': categoryId},
+        '${ApiConstants.trafficSigns}/category/$categoryId',
       );
 
       if (response.statusCode == 200) {

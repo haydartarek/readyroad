@@ -87,7 +87,7 @@ class _SearchScreenState extends State<SearchScreen> {
             hintText: 'Search traffic signs...',
             border: InputBorder.none,
             hintStyle: TextStyle(
-              color: Colors.white.withOpacity(0.7),
+              color: Colors.white.withValues(alpha: 0.7),
             ),
             suffixIcon: _searchQuery.isNotEmpty
                 ? IconButton(

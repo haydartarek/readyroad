@@ -70,7 +70,6 @@ class AppTheme {
     colorScheme: ColorScheme.fromSeed(
       seedColor: AppColors.primary,
       brightness: Brightness.dark,
-      background: AppColors.darkBackground,
       surface: AppColors.darkSurface,
     ),
     scaffoldBackgroundColor: AppColors.darkBackground,

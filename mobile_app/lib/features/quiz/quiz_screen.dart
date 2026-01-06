@@ -118,10 +118,14 @@ class _QuizScreenState extends State<QuizScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-      onWillPop: () async {
+    return PopScope(
+      canPop: false,
+      onPopInvokedWithResult: (didPop, result) async {
+        if (didPop) return;
         final shouldPop = await _showExitDialog();
-        return shouldPop ?? false;
+        if (shouldPop == true && context.mounted) {
+          Navigator.of(context).pop();
+        }
       },
       child: Scaffold(
         appBar: AppBar(
@@ -303,11 +307,11 @@ class _QuizScreenState extends State<QuizScreen> {
       final isSelected = _selectedAnswer == index;
 
       if (isCorrect) {
-        backgroundColor = Colors.green.withOpacity(0.1);
+        backgroundColor = Colors.green.withValues(alpha: 0.1);
         borderColor = Colors.green;
         icon = Icons.check_circle;
       } else if (isSelected && !isCorrect) {
-        backgroundColor = Colors.red.withOpacity(0.1);
+        backgroundColor = Colors.red.withValues(alpha: 0.1);
         borderColor = Colors.red;
         icon = Icons.cancel;
       }

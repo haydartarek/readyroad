@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import '../../shared/models/traffic_sign.dart';
 
 /// Favorites Provider - Manages favorite traffic signs
 class FavoritesProvider extends ChangeNotifier {
