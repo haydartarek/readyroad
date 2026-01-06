@@ -32,6 +32,19 @@ mobile_app\LAUNCHER.html
 mobile_app\build\web\index.html
 ```
 
+### أو مع Android Studio:
+```
+1. افتح Android Studio
+2. Open Project: mobile_app
+3. Terminal (Alt + F12)
+4. اكتب: flutter run -d chrome
+```
+
+📖 **دليل كامل لـ Android Studio:**
+```
+mobile_app\ANDROID_STUDIO_GUIDE.md
+```
+
 ---
 
 ## ❌ إذا لم يعمل؟
