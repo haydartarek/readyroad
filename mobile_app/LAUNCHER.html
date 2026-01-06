@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReadyRoad - Web App Launcher</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+
+        .emoji {
+            font-size: 4em;
+            margin-bottom: 20px;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        .status {
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+            text-align: left;
+        }
+
+        .status-item {
+            margin: 8px 0;
+            color: #333;
+        }
+
+        .status-item strong {
+            color: #4caf50;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: bold;
+        }
+
+        .btn-primary {
+            background: #1976d2;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #1565c0;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(25, 118, 210, 0.4);
+        }
+
+        .btn-secondary {
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        .btn-secondary:hover {
+            background: #e0e0e0;
+            transform: translateY(-2px);
+        }
+
+        .instructions {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+            text-align: left;
+        }
+
+        .instructions h3 {
+            color: #856404;
+            margin-bottom: 10px;
+        }
+
+        .instructions p {
+            color: #333;
+            margin: 5px 0;
+            line-height: 1.6;
+        }
+
+        code {
+            background: #f5f5f5;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            color: #d32f2f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="emoji">🚗🚦</div>
+        <h1>ReadyRoad</h1>
+        <p class="subtitle">Traffic Signs Learning Platform</p>
+
+        <div class="status">
+            <div class="status-item">
+                <strong>✅ Status:</strong> Web Version Ready!
+            </div>
+            <div class="status-item">
+                <strong>📦 Build:</strong> Production (Optimized)
+            </div>
+            <div class="status-item">
+                <strong>💾 Size:</strong> ~2 MB
+            </div>
+            <div class="status-item">
+                <strong>🌐 Platform:</strong> Web (All Devices)
+            </div>
+        </div>
+
+        <div class="button-group">
+            <a href="build/web/index.html" class="btn btn-primary">
+                🚀 Launch App
+            </a>
+            <button onclick="showInstructions()" class="btn btn-secondary">
+                📖 Instructions
+            </button>
+        </div>
+
+        <div class="instructions" id="instructions" style="display: none;">
+            <h3>🛠️ كيفية التشغيل:</h3>
+            <p><strong>الطريقة 1 (الأسهل):</strong></p>
+            <p>اضغط زر <strong>"Launch App"</strong> أعلاه</p>
+
+            <p style="margin-top: 15px;"><strong>الطريقة 2 (مباشرة):</strong></p>
+            <p>افتح الملف: <code>mobile_app\build\web\index.html</code></p>
+
+            <p style="margin-top: 15px;"><strong>الطريقة 3 (Development Mode):</strong></p>
+            <p>في PowerShell:</p>
+            <p><code>cd mobile_app</code></p>
+            <p><code>flutter run -d chrome</code></p>
+
+            <p style="margin-top: 15px;"><strong>⚠️ ملاحظة:</strong></p>
+            <p>تأكد من تشغيل Backend على: <code>http://localhost:8080</code></p>
+        </div>
+    </div>
+
+    <script>
+        function showInstructions() {
+            const instructions = document.getElementById('instructions');
+            if (instructions.style.display === 'none') {
+                instructions.style.display = 'block';
+            } else {
+                instructions.style.display = 'none';
+            }
+        }
+
+        // Check if backend is running
+        fetch('http://localhost:8080/api/v1/categories')
+            .then(() => {
+                console.log('✅ Backend is running!');
+            })
+            .catch(() => {
+                console.warn('⚠️ Backend is not running. Please start it first.');
+                const status = document.querySelector('.status');
+                const warning = document.createElement('div');
+                warning.className = 'status-item';
+                warning.style.color = '#f57c00';
+                warning.innerHTML = '<strong>⚠️ Warning:</strong> Backend not detected. Start it first!';
+                status.appendChild(warning);
+            });
+    </script>
+</body>
+</html>
+
