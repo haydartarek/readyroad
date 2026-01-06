@@ -1,7 +1,7 @@
 /// API Constants for ReadyRoad Backend
 class ApiConstants {
   // Base URL - Change this to match your backend
-  static const String baseUrl = 'http://localhost:8080';
+  static const String baseUrl = 'http://localhost:8888';
 
   // API Endpoints
   static const String apiVersion = '/api/v1';
