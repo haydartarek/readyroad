@@ -1,4 +1,4 @@
-import '../quiz_models.dart';
+import 'quiz_models.dart';
 
 /// Quiz Statistics Model
 class QuizStatistics {

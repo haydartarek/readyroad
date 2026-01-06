@@ -1,4 +1,4 @@
-import '../traffic_sign.dart';
+import 'traffic_sign.dart';
 
 /// Quiz Question Model
 class QuizQuestion {
