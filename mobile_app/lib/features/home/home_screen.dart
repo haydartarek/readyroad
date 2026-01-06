@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '../../shared/models/category.dart';
 import '../../core/di/service_locator.dart';
+import '../../core/providers/language_provider.dart';
+import '../../core/providers/favorites_provider.dart';
+import '../../shared/widgets/language_selector.dart';
 import '../categories/category_service.dart';
+import '../categories/category_signs_screen.dart';
+import '../favorites/favorites_screen.dart';
+import '../search/search_screen.dart';
+import '../quiz/quiz_screen.dart';
 
 /// Home Screen - Main entry point
 class HomeScreen extends StatefulWidget {
@@ -49,8 +57,80 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         title: const Text('ReadyRoad'),
         centerTitle: true,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.search),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const SearchScreen(),
+                ),
+              );
+            },
+          ),
+          Consumer<FavoritesProvider>(
+            builder: (context, favoritesProvider, child) {
+              final count = favoritesProvider.favoritesCount;
+              return Stack(
+                children: [
+                  IconButton(
+                    icon: const Icon(Icons.favorite),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const FavoritesScreen(),
+                        ),
+                      );
+                    },
+                  ),
+                  if (count > 0)
+                    Positioned(
+                      right: 8,
+                      top: 8,
+                      child: Container(
+                        padding: const EdgeInsets.all(4),
+                        decoration: BoxDecoration(
+                          color: Colors.red,
+                          shape: BoxShape.circle,
+                        ),
+                        constraints: const BoxConstraints(
+                          minWidth: 16,
+                          minHeight: 16,
+                        ),
+                        child: Text(
+                          count > 9 ? '9+' : '$count',
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 10,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                    ),
+                ],
+              );
+            },
+          ),
+          const LanguageSelector(),
+          const SizedBox(width: 8),
+        ],
       ),
       body: _buildBody(),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const QuizScreen(),
+            ),
+          );
+        },
+        icon: const Icon(Icons.quiz),
+        label: const Text('Take Quiz'),
+      ),
     );
   }
 
@@ -109,26 +189,28 @@ class _HomeScreenState extends State<HomeScreen> {
         itemCount: _categories.length,
         itemBuilder: (context, index) {
           final category = _categories[index];
+          final languageCode = context.watch<LanguageProvider>().currentLanguage;
+
           return Card(
             margin: const EdgeInsets.only(bottom: 12),
             child: ListTile(
               leading: CircleAvatar(
                 child: Text('${category.id}'),
               ),
-              title: Text(category.getName('en')),
-              subtitle: category.getDescription('en') != null
+              title: Text(category.getName(languageCode)),
+              subtitle: category.getDescription(languageCode) != null
                   ? Text(
-                      category.getDescription('en')!,
+                      category.getDescription(languageCode)!,
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                     )
                   : null,
               trailing: const Icon(Icons.arrow_forward_ios, size: 16),
               onTap: () {
-                // Navigate to category details
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                    content: Text('Selected: ${category.getName('en')}'),
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CategorySignsScreen(category: category),
                   ),
                 );
               },
