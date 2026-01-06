@@ -1,14 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '../../shared/models/quiz_models.dart';
+import '../../core/providers/statistics_provider.dart';
 
 /// Quiz Result Screen - Shows quiz results
-class QuizResultScreen extends StatelessWidget {
+class QuizResultScreen extends StatefulWidget {
   final QuizResult result;
 
   const QuizResultScreen({
     super.key,
     required this.result,
   });
+
+  @override
+  State<QuizResultScreen> createState() => _QuizResultScreenState();
+}
+
+class _QuizResultScreenState extends State<QuizResultScreen> {
+  @override
+  void initState() {
+    super.initState();
+    // Save result to statistics
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      context.read<StatisticsProvider>().saveResult(widget.result);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +46,7 @@ class QuizResultScreen extends StatelessWidget {
 
               // Score
               Text(
-                '${result.score}%',
+                '${widget.result.score}%',
                 style: Theme.of(context).textTheme.displayLarge?.copyWith(
                       fontWeight: FontWeight.bold,
                       color: _getScoreColor(),
@@ -50,7 +66,7 @@ class QuizResultScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Text(
-                  'Grade: ${result.grade}',
+                  'Grade: ${widget.result.grade}',
                   style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
@@ -62,9 +78,9 @@ class QuizResultScreen extends StatelessWidget {
               const SizedBox(height: 16),
 
               Text(
-                result.isPassed ? 'Passed!' : 'Failed',
+                widget.result.isPassed ? 'Passed!' : 'Failed',
                 style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                      color: result.isPassed ? Colors.green : Colors.red,
+                      color: widget.result.isPassed ? Colors.green : Colors.red,
                     ),
               ),
 
@@ -79,27 +95,27 @@ class QuizResultScreen extends StatelessWidget {
                       _buildStatRow(
                         Icons.quiz,
                         'Total Questions',
-                        '${result.totalQuestions}',
+                        '${widget.result.totalQuestions}',
                       ),
                       const Divider(),
                       _buildStatRow(
                         Icons.check_circle,
                         'Correct Answers',
-                        '${result.correctAnswers}',
+                        '${widget.result.correctAnswers}',
                         Colors.green,
                       ),
                       const Divider(),
                       _buildStatRow(
                         Icons.cancel,
                         'Wrong Answers',
-                        '${result.wrongAnswers}',
+                        '${widget.result.wrongAnswers}',
                         Colors.red,
                       ),
                       const Divider(),
                       _buildStatRow(
                         Icons.timer,
                         'Time Taken',
-                        _formatDuration(result.timeTaken),
+                        _formatDuration(widget.result.timeTaken),
                       ),
                     ],
                   ),
@@ -144,10 +160,10 @@ class QuizResultScreen extends StatelessWidget {
     IconData icon;
     Color color;
 
-    if (result.score >= 90) {
+    if (widget.result.score >= 90) {
       icon = Icons.emoji_events;
       color = Colors.amber;
-    } else if (result.score >= 70) {
+    } else if (widget.result.score >= 70) {
       icon = Icons.thumb_up;
       color = Colors.green;
     } else {
@@ -196,9 +212,9 @@ class QuizResultScreen extends StatelessWidget {
   }
 
   Color _getScoreColor() {
-    if (result.score >= 90) return Colors.green[700]!;
-    if (result.score >= 70) return Colors.green;
-    if (result.score >= 60) return Colors.orange;
+    if (widget.result.score >= 90) return Colors.green[700]!;
+    if (widget.result.score >= 70) return Colors.green;
+    if (widget.result.score >= 60) return Colors.orange;
     return Colors.red;
   }
 

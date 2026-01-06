@@ -4,12 +4,14 @@ import '../../shared/models/category.dart';
 import '../../core/di/service_locator.dart';
 import '../../core/providers/language_provider.dart';
 import '../../core/providers/favorites_provider.dart';
+import '../../core/providers/theme_provider.dart';
 import '../../shared/widgets/language_selector.dart';
 import '../categories/category_service.dart';
 import '../categories/category_signs_screen.dart';
 import '../favorites/favorites_screen.dart';
 import '../search/search_screen.dart';
 import '../quiz/quiz_screen.dart';
+import '../statistics/statistics_screen.dart';
 
 /// Home Screen - Main entry point
 class HomeScreen extends StatefulWidget {
@@ -58,6 +60,18 @@ class _HomeScreenState extends State<HomeScreen> {
         title: const Text('ReadyRoad'),
         centerTitle: true,
         actions: [
+          IconButton(
+            icon: const Icon(Icons.bar_chart),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const StatisticsScreen(),
+                ),
+              );
+            },
+            tooltip: 'Statistics',
+          ),
           IconButton(
             icon: const Icon(Icons.search),
             onPressed: () {
@@ -111,6 +125,19 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                 ],
+              );
+            },
+          ),
+          Consumer<ThemeProvider>(
+            builder: (context, themeProvider, child) {
+              return IconButton(
+                icon: Icon(
+                  themeProvider.isDarkMode ? Icons.light_mode : Icons.dark_mode,
+                ),
+                onPressed: () {
+                  themeProvider.toggleTheme();
+                },
+                tooltip: themeProvider.isDarkMode ? 'Light Mode' : 'Dark Mode',
               );
             },
           ),
