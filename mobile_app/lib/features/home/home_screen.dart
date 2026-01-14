@@ -12,6 +12,8 @@ import '../favorites/favorites_screen.dart';
 import '../search/search_screen.dart';
 import '../quiz/quiz_screen.dart';
 import '../statistics/statistics_screen.dart';
+import '../lessons/lessons_list_screen.dart';
+import '../exam/exam_screen.dart';
 
 /// Home Screen - Main entry point
 class HomeScreen extends StatefulWidget {
@@ -211,39 +213,148 @@ class _HomeScreenState extends State<HomeScreen> {
 
     return RefreshIndicator(
       onRefresh: _loadCategories,
-      child: ListView.builder(
+      child: ListView(
         padding: const EdgeInsets.all(16),
-        itemCount: _categories.length,
-        itemBuilder: (context, index) {
-          final category = _categories[index];
-          final languageCode = context.watch<LanguageProvider>().currentLanguage;
-
-          return Card(
-            margin: const EdgeInsets.only(bottom: 12),
-            child: ListTile(
-              leading: CircleAvatar(
-                child: Text('${category.id}'),
-              ),
-              title: Text(category.getName(languageCode)),
-              subtitle: category.getDescription(languageCode) != null
-                  ? Text(
-                      category.getDescription(languageCode)!,
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                    )
-                  : null,
-              trailing: const Icon(Icons.arrow_forward_ios, size: 16),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => CategorySignsScreen(category: category),
-                  ),
-                );
-              },
+        children: [
+          // Quick Access Section
+          _buildQuickAccessSection(context),
+          const SizedBox(height: 24),
+          // Categories Section
+          Text(
+            'Traffic Sign Categories',
+            style: Theme.of(context).textTheme.titleLarge?.copyWith(
+              fontWeight: FontWeight.bold,
             ),
-          );
-        },
+          ),
+          const SizedBox(height: 12),
+          ..._categories.map((category) {
+            final languageCode = context.watch<LanguageProvider>().currentLanguage;
+            return Card(
+              margin: const EdgeInsets.only(bottom: 12),
+              child: ListTile(
+                leading: CircleAvatar(
+                  child: Text('${category.id}'),
+                ),
+                title: Text(category.getName(languageCode)),
+                subtitle: category.getDescription(languageCode) != null
+                    ? Text(
+                        category.getDescription(languageCode)!,
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                      )
+                    : null,
+                trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => CategorySignsScreen(category: category),
+                    ),
+                  );
+                },
+              ),
+            );
+          }).toList(),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildQuickAccessSection(BuildContext context) {
+    final languageProvider = context.watch<LanguageProvider>();
+    final isArabic = languageProvider.currentLanguage == 'ar';
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          isArabic ? 'ابدأ التعلم' : 'Start Learning',
+          style: Theme.of(context).textTheme.titleLarge?.copyWith(
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        const SizedBox(height: 12),
+        Row(
+          children: [
+            Expanded(
+              child: _buildQuickAccessCard(
+                context,
+                title: isArabic ? 'الدروس' : 'Lessons',
+                subtitle: isArabic ? 'ادرس 31 درس' : 'Study 31 lessons',
+                icon: Icons.school,
+                color: Colors.blue,
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const LessonsListScreen(),
+                    ),
+                  );
+                },
+              ),
+            ),
+            const SizedBox(width: 12),
+            Expanded(
+              child: _buildQuickAccessCard(
+                context,
+                title: isArabic ? 'الامتحان' : 'Exam',
+                subtitle: isArabic ? 'اختبر معلوماتك' : 'Test your knowledge',
+                icon: Icons.quiz,
+                color: Colors.green,
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ExamScreen(),
+                    ),
+                  );
+                },
+              ),
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+
+  Widget _buildQuickAccessCard(
+    BuildContext context, {
+    required String title,
+    required String subtitle,
+    required IconData icon,
+    required Color color,
+    required VoidCallback onTap,
+  }) {
+    return Card(
+      elevation: 2,
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(12),
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Icon(icon, size: 40, color: color),
+              const SizedBox(height: 12),
+              Text(
+                title,
+                style: const TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const SizedBox(height: 4),
+              Text(
+                subtitle,
+                style: TextStyle(
+                  fontSize: 12,
+                  color: Colors.grey[600],
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }

@@ -31,5 +31,10 @@ public class TrafficSignController {
     public ResponseEntity<TrafficSignResponse> getSignByCode(@PathVariable String signCode) {
         return ResponseEntity.ok(trafficSignService.getSignByCode(signCode));
     }
+
+    @GetMapping("/search")
+    public ResponseEntity<List<TrafficSignResponse>> searchTrafficSigns(@RequestParam("q") String query) {
+        return ResponseEntity.ok(trafficSignService.searchTrafficSigns(query));
+    }
 }
 

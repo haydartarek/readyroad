@@ -41,5 +41,15 @@ public class TrafficSignService {
                 .orElseThrow(() -> new RuntimeException("Traffic sign not found: " + signCode));
         return trafficSignMapper.toResponse(sign);
     }
+
+    public List<TrafficSignResponse> searchTrafficSigns(String query) {
+        if (query == null || query.trim().isEmpty()) {
+            return getAllActiveSigns();
+        }
+        return trafficSignRepository.searchTrafficSigns(query.trim())
+                .stream()
+                .map(trafficSignMapper::toResponse)
+                .collect(Collectors.toList());
+    }
 }
 
