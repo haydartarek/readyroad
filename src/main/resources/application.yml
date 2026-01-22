@@ -1,0 +1,81 @@
+spring:
+  application:
+    name: readyroad
+
+  profiles:
+    active: dev  # Default to dev mode (public endpoints)
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/readyroad?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: root
+    password: intec-123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: none  # No schema validation - Flyway manages schema
+    show-sql: false  # Disable SQL logging in production
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        format_sql: false
+
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    locations: classpath:db/migration
+    validate-on-migrate: false
+
+server:
+  port: 8890
+  error:
+    include-message: always
+    include-stacktrace: on_param
+
+logging:
+  level:
+    com.readyroad: DEBUG
+    org.springframework.web: INFO
+    org.hibernate.SQL: DEBUG
+
+# SpringDoc OpenAPI (Swagger) Configuration
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+    enabled: true
+  swagger-ui:
+    path: /swagger-ui.html
+    enabled: true
+    operations-sorter: alpha
+    tags-sorter: alpha
+    display-request-duration: true
+    default-models-expand-depth: -1
+  show-actuator: true
+
+# Spring Boot Actuator Configuration
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,env
+      base-path: /actuator
+  endpoint:
+    health:
+      show-details: when-authorized
+      probes:
+        enabled: true
+  info:
+    env:
+      enabled: true
+
+# Application Info (for /actuator/info)
+info:
+  app:
+    name: ReadyRoad Backend API
+    description: Backend API for ReadyRoad driving exam preparation platform
+    version: 0.0.1-SNAPSHOT
+    encoding: ${project.build.sourceEncoding:UTF-8}
+    java:
+      version: ${java.version}
+
+

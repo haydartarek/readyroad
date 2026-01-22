@@ -1,0 +1,465 @@
+{
+	"info": {
+		"_postman_id": "readyroad-api-2026",
+		"name": "ReadyRoad Backend API",
+		"description": "Complete API collection for ReadyRoad driving exam preparation platform.\n\n**Base URL:** {{baseUrl}} (default: http://localhost:8890)\n\n**Features:**\n- Health monitoring\n- Categories management\n- Traffic signs reference\n- Lessons and practice questions\n- Exam questions with random selection\n- Swagger UI and OpenAPI documentation\n- Spring Boot Actuator monitoring\n\n**Authentication:** None (Development mode - all endpoints public)\n\n**Date:** January 16, 2026",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Health & Monitoring",
+			"item": [
+				{
+					"name": "Custom Health Check",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/health",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "health"]
+						},
+						"description": "Custom health endpoint that returns application status, message, timestamp, and version."
+					},
+					"response": []
+				},
+				{
+					"name": "Actuator Health",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/actuator/health",
+							"host": ["{{baseUrl}}"],
+							"path": ["actuator", "health"]
+						},
+						"description": "Spring Boot Actuator health endpoint. Returns {\"status\":\"UP\"} when healthy."
+					},
+					"response": []
+				},
+				{
+					"name": "Actuator Info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/actuator/info",
+							"host": ["{{baseUrl}}"],
+							"path": ["actuator", "info"]
+						},
+						"description": "Application information including name, description, version, and Java version."
+					},
+					"response": []
+				},
+				{
+					"name": "Actuator Metrics",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/actuator/metrics",
+							"host": ["{{baseUrl}}"],
+							"path": ["actuator", "metrics"]
+						},
+						"description": "Available application metrics."
+					},
+					"response": []
+				}
+			],
+			"description": "Health check and monitoring endpoints"
+		},
+		{
+			"name": "Categories",
+			"item": [
+				{
+					"name": "Get All Categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/categories",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "categories"]
+						},
+						"description": "Retrieve all active exam question categories."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Category by Code",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/categories/:code",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "categories", ":code"],
+							"variable": [
+								{
+									"key": "code",
+									"value": "A",
+									"description": "Category code (e.g., A, B, C)"
+								}
+							]
+						},
+						"description": "Retrieve a specific category by its code."
+					},
+					"response": []
+				}
+			],
+			"description": "Exam question categories management"
+		},
+		{
+			"name": "Traffic Signs",
+			"item": [
+				{
+					"name": "Get All Traffic Signs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/traffic-signs",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "traffic-signs"]
+						},
+						"description": "Retrieve all active traffic signs."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Signs by Category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/traffic-signs/category/:categoryId",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "traffic-signs", "category", ":categoryId"],
+							"variable": [
+								{
+									"key": "categoryId",
+									"value": "1",
+									"description": "Category ID"
+								}
+							]
+						},
+						"description": "Retrieve traffic signs filtered by category."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Sign by Code",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/traffic-signs/:signCode",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "traffic-signs", ":signCode"],
+							"variable": [
+								{
+									"key": "signCode",
+									"value": "A1",
+									"description": "Traffic sign code"
+								}
+							]
+						},
+						"description": "Retrieve a specific traffic sign by its code."
+					},
+					"response": []
+				},
+				{
+					"name": "Search Traffic Signs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/traffic-signs/search?q=stop",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "traffic-signs", "search"],
+							"query": [
+								{
+									"key": "q",
+									"value": "stop",
+									"description": "Search query"
+								}
+							]
+						},
+						"description": "Search traffic signs by name or description."
+					},
+					"response": []
+				}
+			],
+			"description": "Traffic signs and road markings reference"
+		},
+		{
+			"name": "Lessons",
+			"item": [
+				{
+					"name": "Get All Lessons",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/lessons",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "lessons"]
+						},
+						"description": "Retrieve all lessons with practice question counts."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Lesson by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/lessons/:id",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "lessons", ":id"],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1",
+									"description": "Lesson ID"
+								}
+							]
+						},
+						"description": "Retrieve a specific lesson by ID with practice question count."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Lessons by Category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/lessons/category/:categoryId",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "lessons", "category", ":categoryId"],
+							"variable": [
+								{
+									"key": "categoryId",
+									"value": "1",
+									"description": "Category ID"
+								}
+							]
+						},
+						"description": "Retrieve lessons filtered by category."
+					},
+					"response": []
+				}
+			],
+			"description": "Theory lessons for driving test preparation"
+		},
+		{
+			"name": "Exam Questions",
+			"item": [
+				{
+					"name": "Get All Exam Questions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/exam-questions",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "exam-questions"]
+						},
+						"description": "Retrieve all official exam questions."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Exam Question by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/exam-questions/:id",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "exam-questions", ":id"],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1",
+									"description": "Question ID"
+								}
+							]
+						},
+						"description": "Retrieve a specific exam question by ID."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Random Exam Questions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/exam-questions/random?limit=50",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "exam-questions", "random"],
+							"query": [
+								{
+									"key": "limit",
+									"value": "50",
+									"description": "Number of questions (default: 50)"
+								}
+							]
+						},
+						"description": "Get random exam questions for practice test."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Random Questions by Category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/exam-questions/random/category/:categoryId?limit=15",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "exam-questions", "random", "category", ":categoryId"],
+							"query": [
+								{
+									"key": "limit",
+									"value": "15",
+									"description": "Number of questions (default: 15)"
+								}
+							],
+							"variable": [
+								{
+									"key": "categoryId",
+									"value": "1",
+									"description": "Category ID"
+								}
+							]
+						},
+						"description": "Get random exam questions filtered by category."
+					},
+					"response": []
+				}
+			],
+			"description": "Official exam questions for driving test preparation"
+		},
+		{
+			"name": "Practice Questions",
+			"item": [
+				{
+					"name": "Get Questions by Lesson",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/practice-questions/lesson/:lessonId",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "practice-questions", "lesson", ":lessonId"],
+							"variable": [
+								{
+									"key": "lessonId",
+									"value": "1",
+									"description": "Lesson ID"
+								}
+							]
+						},
+						"description": "Retrieve practice questions for a specific lesson."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Practice Question by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/practice-questions/:id",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "practice-questions", ":id"],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1",
+									"description": "Question ID"
+								}
+							]
+						},
+						"description": "Retrieve a specific practice question by ID."
+					},
+					"response": []
+				}
+			],
+			"description": "Practice questions organized by lessons"
+		},
+		{
+			"name": "API Documentation",
+			"item": [
+				{
+					"name": "Swagger UI",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/swagger-ui.html",
+							"host": ["{{baseUrl}}"],
+							"path": ["swagger-ui.html"]
+						},
+						"description": "Interactive Swagger UI for API exploration and testing."
+					},
+					"response": []
+				},
+				{
+					"name": "Swagger UI (Index)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/swagger-ui/index.html",
+							"host": ["{{baseUrl}}"],
+							"path": ["swagger-ui", "index.html"]
+						},
+						"description": "Alternative path to Swagger UI."
+					},
+					"response": []
+				},
+				{
+					"name": "OpenAPI Specification (JSON)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/v3/api-docs",
+							"host": ["{{baseUrl}}"],
+							"path": ["v3", "api-docs"]
+						},
+						"description": "OpenAPI 3.0 specification in JSON format."
+					},
+					"response": []
+				},
+				{
+					"name": "OpenAPI Specification (YAML)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/v3/api-docs.yaml",
+							"host": ["{{baseUrl}}"],
+							"path": ["v3", "api-docs.yaml"]
+						},
+						"description": "OpenAPI 3.0 specification in YAML format."
+					},
+					"response": []
+				}
+			],
+			"description": "API documentation and OpenAPI specification"
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8890",
+			"type": "string"
+		}
+	]
+}

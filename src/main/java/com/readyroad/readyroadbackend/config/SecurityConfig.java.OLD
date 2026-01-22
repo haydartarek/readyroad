@@ -1,0 +1,40 @@
+package com.readyroad.readyroadbackend.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
+import org.springframework.security.web.SecurityFilterChain;
+
+@Configuration
+@EnableWebSecurity
+public class SecurityConfig {
+
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        http
+                .csrf(AbstractHttpConfigurer::disable)
+                .authorizeHttpRequests(auth -> auth
+                        // Swagger UI and OpenAPI endpoints
+                        .requestMatchers(
+                                "/swagger-ui/**",
+                                "/swagger-ui.html",
+                                "/v3/api-docs/**",
+                                "/swagger-resources/**",
+                                "/webjars/**"
+                        ).permitAll()
+                        // Spring Boot Actuator endpoints
+                        .requestMatchers(
+                                "/actuator/**",
+                                "/actuator/health/**",
+                                "/actuator/info/**"
+                        ).permitAll()
+                        // All other API endpoints
+                        .requestMatchers("/api/**").permitAll()
+                        // Any other request
+                        .anyRequest().permitAll()
+                );
+        return http.build();
+    }
+}
