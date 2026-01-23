@@ -21,7 +21,7 @@ spring:
   # JPA Configuration
   jpa:
     hibernate:
-      ddl-auto: update  # Dev mode: Hibernate manages incremental changes (acceptable for development)
+      ddl-auto: update
     show-sql: false
     properties:
       hibernate:
@@ -36,11 +36,11 @@ spring:
 
   # Security Configuration (DEV MODE)
   security:
-    mode: dev  # Custom property to identify dev mode
+    mode: dev
 
 # Server Configuration
 server:
-  port: 8890  # Standard dev port
+  port: 8890
   error:
     include-message: always
     include-stacktrace: on_param
@@ -52,13 +52,16 @@ logging:
     com.readyroad: DEBUG
     org.springframework.security: DEBUG
 
-# JWT Configuration (Disabled in Dev)
+# JWT Configuration (✅ أضف هذا - مهم جداً!)
 jwt:
-  enabled: false
-  secret: not-used-in-dev-mode
-  expiration: 86400000  # 24 hours (not used in dev)
+  enabled: true
+  secret-key: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970337336763979244226452948404D6351
+  expiration: 86400000
+  refresh-token:
+    expiration: 604800000
+  issuer: readyroad-backend
+
 
 ---
-
-# NOTE: In dev mode, all endpoints are PUBLIC
-# SecurityConfigDev will configure permitAll() for all requests
+# NOTE: In dev mode, JWT is ENABLED but all endpoints remain accessible for testing
+# This allows you to test both authenticated and unauthenticated flows

@@ -1,24 +1,17 @@
 # ========================================
 # ReadyRoad - Secure/Production Profile
 # ========================================
-# JWT Authentication ENABLED
-# Use this profile for production or staging environments
-#
-# Run with: mvn spring-boot:run -Dspring-boot.run.profiles=secure
-# ========================================
 
 spring:
   application:
     name: readyroad-secure
 
-  # Production Database Configuration
   datasource:
     url: jdbc:mysql://localhost:3306/readyroad?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
     username: root
-    password: intec-123  # TODO: Use environment variables in real production
+    password: intec-123
     driver-class-name: com.mysql.cj.jdbc.Driver
 
-  # JPA Configuration
   jpa:
     hibernate:
       ddl-auto: validate
@@ -28,24 +21,20 @@ spring:
         dialect: org.hibernate.dialect.MySQLDialect
         format_sql: false
 
-  # Flyway Configuration
   flyway:
     enabled: true
     baseline-on-migrate: true
     locations: classpath:db/migration
 
-  # Security Configuration (SECURE MODE)
   security:
-    mode: secure  # Custom property to identify secure mode
+    mode: secure
 
-# Server Configuration
 server:
   port: 8890
   error:
     include-message: never
     include-stacktrace: never
 
-# Logging Configuration
 logging:
   level:
     root: WARN
@@ -55,14 +44,13 @@ logging:
 # JWT Configuration (ENABLED in Secure)
 jwt:
   enabled: true
-  secret: ${JWT_SECRET:cmVhZHlyb2FkLXN1cGVyLXNlY3JldC1qd3Qta2V5LWNoYW5nZS1pbi1wcm9kdWN0aW9uLW1pbmltdW0tMjU2LWJpdHMtZm9yLWhzMjU2LXNlY3VyZQ==}
-  expiration: 86400000  # 24 hours in milliseconds
+  secret-key: ${JWT_SECRET:404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970337336763979244226452948404D6351}
+  expiration: 3600000  # 1 hour (أقصر في production)
+  refresh-token:
+    expiration: 604800000  # 7 days
   issuer: readyroad-backend
   header: Authorization
   prefix: Bearer
 
 ---
-
 # IMPORTANT: In secure mode, JWT is REQUIRED for protected endpoints
-# Only /api/auth/** endpoints are public
-# All other /api/** endpoints require valid JWT token

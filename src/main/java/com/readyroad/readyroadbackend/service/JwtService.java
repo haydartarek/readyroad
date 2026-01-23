@@ -4,10 +4,12 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
+import jakarta.annotation.PostConstruct;
 import javax.crypto.SecretKey;
 import java.util.Date;
 import java.util.HashMap;
@@ -28,16 +30,46 @@ import java.util.function.Function;
  * @since 2026-01-18
  */
 @Service
+@Slf4j
 public class JwtService {
 
-    @Value("${jwt.secret}")
+    // ✅ تغيير من jwt.secret إلى jwt.secret-key
+    @Value("${jwt.secret-key:}")
     private String secret;
 
-    @Value("${jwt.expiration}")
+    @Value("${jwt.expiration:86400000}")
     private Long expiration;
 
     @Value("${jwt.issuer:readyroad-backend}")
     private String issuer;
+
+    /**
+     * Validate JWT configuration on startup
+     */
+    @PostConstruct
+    public void init() {
+        log.info("=== JWT Service Initialization ===");
+        log.info("Secret Key Length: {} characters", secret != null ? secret.length() : 0);
+        log.info("JWT Expiration: {} ms ({} hours)", expiration, expiration / 3600000.0);
+        log.info("JWT Issuer: {}", issuer);
+
+        if (secret == null || secret.isEmpty() || secret.equals("not-used-in-dev-mode")) {
+            log.error("❌ CRITICAL: JWT secret key is not configured properly!");
+            throw new IllegalStateException("JWT secret key must be configured in application-dev.yml");
+        }
+
+        try {
+            byte[] keyBytes = Decoders.BASE64.decode(secret);
+            if (keyBytes.length < 32) {
+                log.error("❌ Secret key is too short: {} bytes (minimum 32 bytes required)", keyBytes.length);
+                throw new IllegalStateException("JWT secret key must be at least 256 bits (32 bytes)");
+            }
+            log.info("✅ JWT secret key is valid: {} bytes ({} bits)", keyBytes.length, keyBytes.length * 8);
+        } catch (IllegalArgumentException e) {
+            log.error("❌ Invalid Base64 format for JWT secret key", e);
+            throw new IllegalStateException("JWT secret key must be valid Base64 encoded string", e);
+        }
+    }
 
     /**
      * Extract username from JWT token
@@ -139,12 +171,13 @@ public class JwtService {
      * @return JWT token
      */
     private String createToken(Map<String, Object> claims, String username) {
+        long now = System.currentTimeMillis();
         return Jwts.builder()
                 .claims(claims)
                 .subject(username)
                 .issuer(issuer)
-                .issuedAt(new Date(System.currentTimeMillis()))
-                .expiration(new Date(System.currentTimeMillis() + expiration))
+                .issuedAt(new Date(now))
+                .expiration(new Date(now + expiration))
                 .signWith(getSignKey())
                 .compact();
     }
@@ -155,7 +188,12 @@ public class JwtService {
      * @return Signing key
      */
     private SecretKey getSignKey() {
-        byte[] keyBytes = Decoders.BASE64.decode(secret);
-        return Keys.hmacShaKeyFor(keyBytes);
+        try {
+            byte[] keyBytes = Decoders.BASE64.decode(secret);
+            return Keys.hmacShaKeyFor(keyBytes);
+        } catch (Exception e) {
+            log.error("Error decoding JWT secret key", e);
+            throw new RuntimeException("Invalid JWT secret key format", e);
+        }
     }
 }

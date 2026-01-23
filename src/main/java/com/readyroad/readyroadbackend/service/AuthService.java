@@ -104,14 +104,6 @@ public class AuthService {
      * @return AuthResponse
      */
     private AuthResponse buildAuthResponse(User user, String token) {
-        return AuthResponse.builder()
-                .token(token)
-                .type("Bearer")
-                .userId(user.getId())
-                .username(user.getUsername())
-                .email(user.getEmail())
-                .fullName(user.getFullName())
-                .role(user.getRole())
-                .build();
+        return AuthResponse.of(token, user.getId(), user.getUsername(), user.getEmail(), user.getFullName(), user.getRole());
     }
 }

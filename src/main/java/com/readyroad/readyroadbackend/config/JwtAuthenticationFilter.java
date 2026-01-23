@@ -6,6 +6,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.lang.NonNull;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -32,6 +33,7 @@ import java.io.IOException;
  * @author ReadyRoad Team
  * @since 2026-01-18
  */
+@Slf4j
 @Component
 @RequiredArgsConstructor
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
@@ -46,6 +48,11 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             @NonNull FilterChain filterChain
     ) throws ServletException, IOException {
 
+        final String requestURI = request.getRequestURI();
+        final String method = request.getMethod();
+
+        log.debug("🔍 JWT Filter - {} {}", method, requestURI);
+
         // Extract Authorization header
         final String authHeader = request.getHeader("Authorization");
         final String jwt;
@@ -53,22 +60,26 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
         // Check if Authorization header is present and starts with "Bearer "
         if (authHeader == null || !authHeader.startsWith("Bearer ")) {
+            log.debug("⚪ No JWT token found - allowing anonymous access to: {} {}", method, requestURI);
             filterChain.doFilter(request, response);
             return;
         }
 
         // Extract JWT token (remove "Bearer " prefix)
         jwt = authHeader.substring(7);
+        log.debug("🔑 JWT token found (length: {})", jwt.length());
 
         try {
             // Extract username from JWT token
             username = jwtService.extractUsername(jwt);
+            log.debug("👤 Username extracted from JWT: {}", username);
 
             // If username is extracted and no authentication exists in context
             if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
 
                 // Load user details from database
                 UserDetails userDetails = this.userDetailsService.loadUserByUsername(username);
+                log.debug("✅ User details loaded from database");
 
                 // Validate token
                 if (jwtService.validateToken(jwt, userDetails)) {
@@ -87,11 +98,15 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
                     // Set authentication in SecurityContext
                     SecurityContextHolder.getContext().setAuthentication(authToken);
+                    log.debug("✅ Authentication set in SecurityContext for user: {}", username);
+                } else {
+                    log.warn("⚠️ Invalid JWT token for user: {}", username);
                 }
             }
         } catch (Exception e) {
             // Log error and continue without authentication
-            logger.error("Cannot set user authentication: {}", e);
+            log.error("❌ Cannot set user authentication: {}", e.getMessage());
+            log.error("Exception details:", e);
         }
 
         // Continue filter chain

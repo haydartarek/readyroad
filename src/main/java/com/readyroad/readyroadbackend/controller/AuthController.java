@@ -7,6 +7,7 @@ import com.readyroad.readyroadbackend.dto.RegisterRequest;
 import com.readyroad.readyroadbackend.service.AuthService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
@@ -27,6 +28,7 @@ import java.util.Map;
  * @author ReadyRoad Team
  * @since 2026-01-18
  */
+@Slf4j
 @RestController
 @RequestMapping("/api/auth")
 @RequiredArgsConstructor
@@ -60,10 +62,24 @@ public class AuthController {
      */
     @PostMapping("/login")
     public ResponseEntity<?> login(@Valid @RequestBody LoginRequest request) {
+        log.info("========================================");
+        log.info("🔐 LOGIN REQUEST RECEIVED");
+        log.info("========================================");
+        log.info("Username: {}", request.getUsername());
+        log.info("========================================");
+
         try {
+            log.info("🔄 Calling AuthService.login()...");
             AuthResponse response = authService.login(request);
+            log.info("✅ Login successful!");
+            log.info("User ID: {}", response.getUserId());
+            log.info("========================================");
             return ResponseEntity.ok(response);
         } catch (Exception e) {
+            log.error("❌ LOGIN FAILED");
+            log.error("Exception Type: {}", e.getClass().getName());
+            log.error("Error Message: {}", e.getMessage());
+            log.info("========================================");
             Map<String, String> error = new HashMap<>();
             error.put("error", "Invalid username or password");
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(error);
