@@ -3,7 +3,7 @@ spring:
     name: readyroad
 
   profiles:
-    active: dev  # Default to dev mode (public endpoints)
+    active: secure  # Default to dev mode (public endpoints)
 
   datasource:
     url: jdbc:mysql://localhost:3306/readyroad?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true

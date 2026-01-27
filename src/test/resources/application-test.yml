@@ -1,4 +1,4 @@
-spring:
+﻿spring:
   application:
     name: readyroad-test
 
@@ -14,32 +14,30 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: create-drop  # Let Hibernate create schema from entities
+      ddl-auto: create-drop
     show-sql: false
-    defer-datasource-initialization: true  # Allow CommandLineRunner to run after schema creation
+    defer-datasource-initialization: true
     properties:
       hibernate:
         dialect: org.hibernate.dialect.H2Dialect
         format_sql: true
 
   flyway:
-    enabled: false  # Disabled: migrations are MySQL-specific, use Hibernate DDL instead
+    enabled: false
 
-  # Security Configuration (TEST MODE - Same as DEV)
   security:
-    mode: dev  # Allow test execution without JWT (override in specific tests if needed)
+    mode: dev
 
   h2:
     console:
       enabled: true
 
 server:
-  port: 0  # Random port for parallel test execution
+  port: 0
 
-# JWT Configuration for tests
 jwt:
-  secret: "dGVzdC1qd3Qtc2VjcmV0LWtleS1taW5pbXVtLTMyLWNoYXJhY3RlcnMtcmVxdWlyZWQtZm9yLWhzMjU2LWFsZ29yaXRobQ=="
-  expiration: 86400000  # 24 hours in milliseconds
+  secret-key: "dGVzdC1qd3Qtc2VjcmV0LWtleS1taW5pbXVtLTMyLWNoYXJhY3RlcnMtcmVxdWlyZWQtZm9yLWhzMjU2LWFsZ29yaXRobQ=="
+  expiration: 86400000
 
 logging:
   level:

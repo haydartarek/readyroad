@@ -54,6 +54,8 @@ public class SecurityConfigSecure {
                         .requestMatchers(
                                 "/api/auth/**",
                                 "/api/health",
+                                "/api/traffic-signs/**",
+                                "/api/search",
                                 "/actuator/health",
                                 "/actuator/info",
                                 "/swagger-ui/**",
@@ -86,3 +88,5 @@ public class SecurityConfigSecure {
         return http.build();
     }
 }
+
+
