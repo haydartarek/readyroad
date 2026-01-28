@@ -29,9 +29,113 @@
 
 ---
 
-**Latest Update:** Jan 21, 2026, 23:45 - ✅ **PHASE 5 COMPLETE + PHASE 6 IN PROGRESS** 🚀  
-**All Features:** A (Exams), B (Progress), C (Analytics), D (Compliance) ✅  
+**Latest Update:** Jan 28, 2026 - ✅ **TRAFFIC SIGNS BUG FIX + 100% IMAGE PARITY** 🚀
+**All Features:** A (Exams), B (Progress), C (Analytics), D (Compliance) ✅
 **Phase 6 Tests:** 5/8 active test packs, 3 placeholders 📦
+
+---
+
+## 🔧 Jan 28, 2026 - Critical Bug Fixes & Image Parity
+
+### 🐛 Bug Fixed: Traffic Signs Displaying "undefined"
+
+**Problem:** Traffic signs were showing "undefined", placeholder data, or broken images across Web and Flutter apps.
+
+**Root Causes Identified:**
+1. Mock/hardcoded data being used instead of real API data
+2. Image path conversion issues between Backend → Web → Flutter
+3. Database contained test signs with NULL image URLs
+4. Casing mismatches in file names (B15A.png vs B15a.png)
+
+### ✅ Backend Fixes (Spring Boot)
+
+| File | Issue | Fix |
+|------|-------|-----|
+| `SearchService.java:45` | `getLessonCode()` method didn't exist | Changed to `String.valueOf(lesson.getId())` |
+| `LessonRepository.java:28` | HQL query referenced non-existent `lessonCode` field | Removed from search query |
+
+### ✅ Database Migrations Added
+
+| Migration | Purpose |
+|-----------|---------|
+| `V40__Remove_Test_Traffic_Signs.sql` | Remove test signs (A1, A2, D1, D2, etc.) with NULL images |
+| `V41__Remove_Signs_Without_Images.sql` | Remove B2, C2, E2 which lacked image files |
+| `V42__Fix_Image_Paths.sql` | Fix mismatched paths (M3b→M3, F34b→F34a, etc.) |
+
+### ✅ Web App Fixes (Next.js)
+
+| File | Fix |
+|------|-----|
+| `traffic-signs/page.tsx` | Added `getCategoryName()` function for proper category mapping |
+| `traffic-signs/[signCode]/page.tsx` | Fixed to use real API data instead of mock |
+| `sign-image.tsx` | Added `convertToPublicUrl()` for image path conversion |
+| `traffic-signs-grid.tsx` | Fixed duplicate React key warning using `sign.id \|\| sign.signCode` |
+
+**Image Path Conversion (Web):**
+```typescript
+// Backend: assets/traffic_signs/danger_signs/A1a.png
+// Web:     /images/signs/danger_signs/A1a.png
+function convertToPublicUrl(src: string): string {
+  if (src.startsWith('assets/traffic_signs/')) {
+    return src.replace('assets/traffic_signs/', '/images/signs/');
+  }
+  return src;
+}
+```
+
+### ✅ Flutter Fixes
+
+| File | Fix |
+|------|-----|
+| `category_signs_screen.dart` | Updated `_convertToAssetPath()` to handle both formats |
+| `sign_details_screen.dart` | Updated `_convertToAssetPath()` |
+| `search_screen.dart` | Updated `_convertToAssetPath()` |
+| `favorites_screen.dart` | Updated `_convertToAssetPath()` |
+| `quiz_screen.dart` | Updated `_convertToAssetPath()` |
+| `pubspec.yaml` | Added `bicycle_signs/` asset folder |
+
+**Image Path Conversion (Flutter):**
+```dart
+String _convertToAssetPath(String imageUrl) {
+  // Handle both API formats:
+  // 1. /images/signs/... (web format)
+  // 2. assets/traffic_signs/... (backend format)
+  if (imageUrl.startsWith('/images/signs/')) {
+    return imageUrl.replaceFirst('/images/signs/', 'assets/traffic_signs/');
+  }
+  return imageUrl; // Already in correct format
+}
+```
+
+### ✅ 100% Image Parity Achieved
+
+**Verification Method:** SHA-256 checksum comparison (byte-identical verification)
+
+| Category | Web | Flutter | Status |
+|----------|-----|---------|--------|
+| danger_signs | 35 | 35 | ✅ |
+| priority_signs | 17 | 17 | ✅ |
+| prohibition_signs | 36 | 36 | ✅ |
+| mandatory_signs | 17 | 17 | ✅ |
+| parking_signs | 15 | 15 | ✅ |
+| information_signs | 72 | 72 | ✅ |
+| additional_signs | 28 | 28 | ✅ |
+| bicycle_signs | 20 | 20 | ✅ |
+| zone_signs | 14 | 14 | ✅ |
+| delineation_signs | 2 | 2 | ✅ |
+| **TOTAL** | **256** | **256** | **✅ 100%** |
+
+**Fixes Applied for Parity:**
+- Renamed 7 files: `B15A.png` → `B15a.png` (casing mismatch)
+- Copied missing images from Web to Flutter assets
+- Added `bicycle_signs/` folder with 20 images
+
+### ✅ Build Verification
+
+```
+Flutter analyze: No issues found!
+Flutter build APK: ✅ Built successfully
+```
 
 ---
 
