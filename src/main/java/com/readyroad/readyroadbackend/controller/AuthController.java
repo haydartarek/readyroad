@@ -1,6 +1,7 @@
 package com.readyroad.readyroadbackend.controller;
 
 import com.readyroad.readyroadbackend.domain.entity.User;
+import com.readyroad.readyroadbackend.domain.repository.UserRepository;
 import com.readyroad.readyroadbackend.dto.AuthResponse;
 import com.readyroad.readyroadbackend.dto.LoginRequest;
 import com.readyroad.readyroadbackend.dto.RegisterRequest;
@@ -35,6 +36,7 @@ import java.util.Map;
 public class AuthController {
 
     private final AuthService authService;
+    private final UserRepository userRepository;
 
     /**
      * Register a new user
@@ -103,7 +105,27 @@ public class AuthController {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(error);
         }
 
-        User user = (User) authentication.getPrincipal();
+        // Principal can be User (from JWT filter) or String (username)
+        // Handle both cases safely to prevent ClassCastException
+        Object principal = authentication.getPrincipal();
+        User user;
+
+        if (principal instanceof User) {
+            user = (User) principal;
+        } else if (principal instanceof String username) {
+            // Fallback: load user from database by username
+            user = userRepository.findByUsername(username)
+                    .orElse(null);
+            if (user == null) {
+                Map<String, String> error = new HashMap<>();
+                error.put("error", "User not found");
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
+            }
+        } else {
+            Map<String, String> error = new HashMap<>();
+            error.put("error", "Not authenticated");
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(error);
+        }
 
         Map<String, Object> userInfo = new HashMap<>();
         userInfo.put("userId", user.getId());

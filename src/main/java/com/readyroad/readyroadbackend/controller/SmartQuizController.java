@@ -1,5 +1,6 @@
 package com.readyroad.readyroadbackend.controller;
 
+import com.readyroad.readyroadbackend.config.AuthenticationUtil;
 import com.readyroad.readyroadbackend.domain.entity.QuizQuestion;
 import com.readyroad.readyroadbackend.service.SmartQuizService;
 import lombok.RequiredArgsConstructor;
@@ -24,6 +25,7 @@ import java.util.Map;
 public class SmartQuizController {
 
     private final SmartQuizService smartQuizService;
+    private final AuthenticationUtil authenticationUtil;
 
     /**
      * Generate random smart quiz with 24h cooldown.
@@ -33,7 +35,7 @@ public class SmartQuizController {
         @RequestParam(defaultValue = "10") int count,
         Authentication authentication
     ) {
-        Long userId = extractUserId(authentication);
+        Long userId = authenticationUtil.extractUserId(authentication);
         log.info("Smart quiz request: userId={}, count={}", userId, count);
 
         List<QuizQuestion> questions = smartQuizService.generateSmartQuiz(userId, count);
@@ -54,7 +56,7 @@ public class SmartQuizController {
         @RequestParam(defaultValue = "10") int count,
         Authentication authentication
     ) {
-        Long userId = extractUserId(authentication);
+        Long userId = authenticationUtil.extractUserId(authentication);
         log.info("Smart quiz request: userId={}, categoryId={}, count={}", userId, categoryId, count);
 
         List<QuizQuestion> questions = smartQuizService.generateSmartQuiz(userId, count, categoryId);
@@ -67,7 +69,7 @@ public class SmartQuizController {
      */
     @GetMapping("/stats")
     public ResponseEntity<Map<String, Object>> getFreshQuestionStats(Authentication authentication) {
-        Long userId = extractUserId(authentication);
+        Long userId = authenticationUtil.extractUserId(authentication);
         long freshCount = smartQuizService.countFreshQuestions(userId);
 
         Map<String, Object> stats = new HashMap<>();
@@ -89,7 +91,7 @@ public class SmartQuizController {
         @PathVariable Long categoryId,
         Authentication authentication
     ) {
-        Long userId = extractUserId(authentication);
+        Long userId = authenticationUtil.extractUserId(authentication);
         long freshCount = smartQuizService.countFreshQuestionsInCategory(userId, categoryId);
 
         Map<String, Object> stats = new HashMap<>();
@@ -101,34 +103,5 @@ public class SmartQuizController {
         return ResponseEntity.ok(stats);
     }
 
-    /**
-     * Extract userId from JWT authentication.
-     * Fails loudly if userId cannot be determined (no silent fallback).
-     *
-     * @throws IllegalStateException if authentication is missing or userId cannot be parsed
-     */
-    private Long extractUserId(Authentication authentication) {
-        if (authentication == null || !authentication.isAuthenticated()) {
-            throw new IllegalStateException(
-                "Authentication required for smart quiz (24h cooldown needs user tracking)"
-            );
-        }
-
-        String username = authentication.getName();
-
-        try {
-            return Long.parseLong(username);
-        } catch (NumberFormatException e) {
-            throw new IllegalStateException(
-                String.format(
-                    "Cannot extract userId from authentication. " +
-                    "Expected numeric username, got: '%s'. " +
-                    "This endpoint requires JWT authentication with numeric user ID.",
-                    username
-                ),
-                e
-            );
-        }
-    }
 }
 

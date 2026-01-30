@@ -1,30 +1,31 @@
 package com.readyroad.readyroadbackend.config;
 
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.web.cors.CorsConfiguration;
-import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
-import org.springframework.web.filter.CorsFilter;
-
-import java.util.Arrays;
-import java.util.List;
-
-@Configuration
+/**
+ * DEPRECATED - CORS is now handled INSIDE the SecurityFilterChain
+ *
+ * This standalone CorsFilter bean was causing a critical conflict with Spring Security:
+ * - The CorsFilter bean was processed OUTSIDE the security filter chain
+ * - This caused POST requests to /api/auth/** to be blocked with 401
+ *   even though permitAll() was configured in SecurityConfigSecure
+ * - Root cause: dual CORS processing (standalone filter + security chain CORS)
+ *
+ * CORS is now configured via corsConfigurationSource() in:
+ * - SecurityConfigSecure.java (secure profile)
+ * - SecurityConfigDev.java (dev profile)
+ * - SecurityConfigTest.java (test profile)
+ *
+ * DO NOT RE-ENABLE THIS CLASS. If CORS settings need to change,
+ * update the corsConfigurationSource() method in the relevant SecurityConfig.
+ *
+ * @author ReadyRoad Team
+ * @since 2026-01-18
+ * @deprecated 2026-01-30 - Replaced by integrated CORS in SecurityFilterChain
+ */
+// @Configuration  ← DISABLED: Do NOT re-enable. See Javadoc above.
+@Deprecated
 public class CorsConfig {
 
-    @Bean
-    public CorsFilter corsFilter() {
-        CorsConfiguration config = new CorsConfiguration();
-        config.setAllowCredentials(true);
-        config.setAllowedOrigins(List.of("http://localhost:3000", "http://localhost:8081"));
-        config.setAllowedHeaders(Arrays.asList("*"));
-        config.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
-        config.setMaxAge(3600L);
-
-        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("/**", config);
-
-        return new CorsFilter(source);
-    }
+    // DISABLED: CorsFilter bean removed to prevent conflict with SecurityFilterChain CORS
+    // See SecurityConfigSecure.corsConfigurationSource() for the active CORS configuration
 }
 

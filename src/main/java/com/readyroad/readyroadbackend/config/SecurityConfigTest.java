@@ -53,6 +53,9 @@ public class SecurityConfigTest {
         http
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> auth
+                        // /api/auth/me requires JWT (must come BEFORE /api/auth/**)
+                        .requestMatchers("/api/auth/me").authenticated()
+
                         // Public endpoints
                         .requestMatchers(
                                 "/api/auth/**",

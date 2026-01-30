@@ -41,12 +41,51 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     private final JwtService jwtService;
     private final UserDetailsService userDetailsService;
 
+    /**
+     * Skip JWT authentication filter for public endpoints
+     * CRITICAL: This ensures /api/auth/** endpoints are accessible without JWT
+     * tokens
+     *
+     * @param request HTTP request
+     * @return true if filter should be skipped, false otherwise
+     */
+    @Override
+    protected boolean shouldNotFilter(@NonNull HttpServletRequest request) {
+        String path = request.getRequestURI();
+
+        // /api/auth/me REQUIRES JWT - do NOT skip
+        if (path.equals("/api/auth/me")) {
+            log.debug("🔐 JWT filter ACTIVE for /api/auth/me (requires authentication)");
+            return false;
+        }
+
+        // Skip filter for other authentication endpoints (login, register, health)
+        if (path.startsWith("/api/auth/")) {
+            log.debug("⏭️ Skipping JWT filter for auth endpoint: {}", path);
+            return true;
+        }
+
+        // Skip filter for public endpoints
+        if (path.equals("/api/health") ||
+                path.startsWith("/api/traffic-signs/") ||
+                path.equals("/api/search") ||
+                path.startsWith("/actuator/") ||
+                path.startsWith("/swagger-ui") ||
+                path.startsWith("/v3/api-docs") ||
+                path.startsWith("/swagger-resources") ||
+                path.startsWith("/webjars/")) {
+            log.debug("⏭️ Skipping JWT filter for public endpoint: {}", path);
+            return true;
+        }
+
+        return false;
+    }
+
     @Override
     protected void doFilterInternal(
             @NonNull HttpServletRequest request,
             @NonNull HttpServletResponse response,
-            @NonNull FilterChain filterChain
-    ) throws ServletException, IOException {
+            @NonNull FilterChain filterChain) throws ServletException, IOException {
 
         final String requestURI = request.getRequestURI();
         final String method = request.getMethod();
@@ -88,13 +127,11 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                     UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(
                             userDetails,
                             null,
-                            userDetails.getAuthorities()
-                    );
+                            userDetails.getAuthorities());
 
                     // Set authentication details
                     authToken.setDetails(
-                            new WebAuthenticationDetailsSource().buildDetails(request)
-                    );
+                            new WebAuthenticationDetailsSource().buildDetails(request));
 
                     // Set authentication in SecurityContext
                     SecurityContextHolder.getContext().setAuthentication(authToken);

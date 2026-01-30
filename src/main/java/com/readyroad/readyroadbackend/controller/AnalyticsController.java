@@ -1,5 +1,6 @@
 package com.readyroad.readyroadbackend.controller;
 
+import com.readyroad.readyroadbackend.config.AuthenticationUtil;
 import com.readyroad.readyroadbackend.dto.ErrorPatternResponse;
 import com.readyroad.readyroadbackend.dto.WeakAreaRecommendationResponse;
 import com.readyroad.readyroadbackend.service.AnalyticsService;
@@ -33,6 +34,7 @@ import java.util.List;
 public class AnalyticsController {
 
     private final AnalyticsService analyticsService;
+    private final AuthenticationUtil authenticationUtil;
 
     /**
      * Story C1: View Error Patterns
@@ -62,7 +64,7 @@ public class AnalyticsController {
         )
     })
     public ResponseEntity<List<ErrorPatternResponse>> getErrorPatterns(Authentication authentication) {
-        Long userId = extractUserId(authentication);
+        Long userId = authenticationUtil.extractUserId(authentication);
         log.info("[C1] GET /api/users/me/analytics/error-patterns - userId: {}", userId);
 
         List<ErrorPatternResponse> patterns = analyticsService.getErrorPatterns(userId);
@@ -99,29 +101,12 @@ public class AnalyticsController {
         )
     })
     public ResponseEntity<List<WeakAreaRecommendationResponse>> getWeakAreaRecommendations(Authentication authentication) {
-        Long userId = extractUserId(authentication);
+        Long userId = authenticationUtil.extractUserId(authentication);
         log.info("[C2] GET /api/users/me/analytics/weak-areas - userId: {}", userId);
 
         List<WeakAreaRecommendationResponse> recommendations = analyticsService.getWeakAreaRecommendations(userId);
 
         log.info("[C2] Returning {} weak area recommendations for user {}", recommendations.size(), userId);
         return ResponseEntity.ok(recommendations);
-    }
-
-    /**
-     * Extract user ID from authentication (works in both dev and secure modes)
-     */
-    private Long extractUserId(Authentication authentication) {
-        if (authentication == null || authentication.getName() == null) {
-            log.warn("No authentication found, this should not happen if security is configured correctly");
-            return 1L; // Fallback (should not reach here in production)
-        }
-
-        try {
-            return Long.parseLong(authentication.getName());
-        } catch (NumberFormatException e) {
-            log.error("Invalid user ID in authentication: {}", authentication.getName());
-            throw new IllegalStateException("Invalid user ID in authentication");
-        }
     }
 }
