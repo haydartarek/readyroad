@@ -102,6 +102,4 @@ public class SmartQuizController {
 
         return ResponseEntity.ok(stats);
     }
-
 }
-

@@ -7,7 +7,7 @@
 [![MySQL](https://img.shields.io/badge/MySQL-8.0-blue.svg)](https://www.mysql.com/)
 [![Flutter](https://img.shields.io/badge/Flutter-3.27+-02569B.svg)](https://flutter.dev)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Tests](https://img.shields.io/badge/Tests-185%2B%20Passing-brightgreen.svg)](#-automated-testing)
+[![Tests](https://img.shields.io/badge/Tests-192%20Backend%20%2B%2063%20Frontend-brightgreen.svg)](#-automated-testing)
 [![Security](https://img.shields.io/badge/Auth-JWT%20Verified-blue.svg)](#-authentication--security)
 [![Contract](https://img.shields.io/badge/Documentation-Governed-red.svg)](CONTRACT.md)
 [![Phase6](https://img.shields.io/badge/Phase%206-Production%20Tests-blue.svg)](#-phase-6-production-readiness)
@@ -29,9 +29,92 @@
 
 ---
 
-**Latest Update:** Jan 28, 2026 - ✅ **TRAFFIC SIGNS BUG FIX + 100% IMAGE PARITY** 🚀
+**Latest Update:** Jan 30, 2026 - **FIX: Web Login 401 + Analytics userId Extraction** 🔐
 **All Features:** A (Exams), B (Progress), C (Analytics), D (Compliance) ✅
 **Phase 6 Tests:** 5/8 active test packs, 3 placeholders 📦
+
+---
+
+## 🔐 Jan 30, 2026 - Fix Web Login 401 + Analytics userId Extraction
+
+### Bug 1: Web Login Requests Hit Next.js Instead of Backend
+
+**Problem:** `POST /api/auth/login` returned `{"error":"Unauthorized","message":"Authentication required"}` because requests were routed to `localhost:3000` (Next.js) instead of `localhost:8890` (Spring Boot).
+
+**Root Cause:** Axios `baseURL` was `http://localhost:8890/api` (from `.env.local`), but all `apiClient` calls used paths like `/api/auth/login`. Axios `combineURLs()` produced a **double prefix**:
+
+```
+baseURL:  http://localhost:8890/api
+endpoint: /api/auth/login
+result:   http://localhost:8890/api/api/auth/login  (WRONG)
+```
+
+**Frontend Fixes (Next.js):**
+
+| File | Before | After |
+|------|--------|-------|
+| `contexts/auth-context.tsx` | `/api/auth/login` | `auth/login` |
+| `contexts/auth-context.tsx` | `/api/auth/me` | `auth/me` |
+| `app/(auth)/register/page.tsx` | `/api/auth/register` | `auth/register` |
+| `hooks/use-search.ts` | `/api/search` | `search` |
+| `components/layout/navbar.tsx` | `/api/users/me/notifications/unread-count` | `users/me/notifications/unread-count` |
+
+### Bug 2: Interceptor Stripped Token from `/auth/me`
+
+**Problem:** After login succeeded, `fetchUser()` called `auth/me` but the request interceptor skipped adding the Bearer token for **all** `/auth/` paths, including `/auth/me` which **requires** authentication in `secure` profile.
+
+**Fix in `lib/api.ts`:**
+
+```typescript
+// BEFORE (broken): skipped token for ALL /auth/ paths
+const isAuthEndpoint = config.url?.includes('/auth/');
+
+// AFTER (fixed): skip token ONLY for login & register
+const isPublicAuthEndpoint =
+  url.includes('/auth/login') || url.includes('/auth/register') ||
+  url.startsWith('auth/login') || url.startsWith('auth/register');
+```
+
+### Bug 3: Analytics & SmartQuiz Controllers - userId Extraction Crash
+
+**Problem:** `GET /api/users/me/analytics/weak-areas` returned 401 even with a valid JWT token.
+
+**Root Cause:** `AnalyticsController` and `SmartQuizController` used a local `extractUserId()` method that called `Long.parseLong(authentication.getName())`. Since JWT subject is the **username** (e.g., `"testuser"`), `Long.parseLong("testuser")` threw `NumberFormatException`.
+
+Meanwhile, `ProgressController` and `QuizController` correctly used `AuthenticationUtil.extractUserId(authentication)` which extracts the user ID from the `User` principal object.
+
+**Backend Fixes (Spring Boot):**
+
+| File | Fix |
+|------|-----|
+| `AnalyticsController.java` | Replaced broken `extractUserId()` with `AuthenticationUtil` injection |
+| `SmartQuizController.java` | Replaced broken `extractUserId()` with `AuthenticationUtil` injection |
+
+### Architectural Rule Established
+
+> **Any Controller that needs `userId` MUST use `AuthenticationUtil.extractUserId(authentication)`.**
+>
+> `Long.parseLong(authentication.getName())` is **prohibited** because JWT subject = username (String), not a numeric ID.
+
+### Verification Results
+
+| Endpoint | Before | After |
+|----------|--------|-------|
+| `POST /api/auth/login` | 401 | 200 |
+| `GET /api/auth/me` | 200 | 200 |
+| `GET /api/users/me/progress/overall` | 200 | 200 |
+| `GET /api/users/me/analytics/weak-areas` | **401** | **200** |
+| `GET /api/users/me/analytics/error-patterns` | **401** | **200** |
+| `GET /api/smart-quiz/stats` | **401** | **200** |
+| `GET /api/smart-quiz/random` | **401** | **200** |
+
+### Test Results
+
+| Suite | Result |
+|-------|--------|
+| Backend (Maven) | 192 tests, 0 failures, 0 errors |
+| Frontend (Jest) | 63 tests, 63 passed |
+| ESLint | 0 errors, 1 pre-existing warning |
 
 ---
 
