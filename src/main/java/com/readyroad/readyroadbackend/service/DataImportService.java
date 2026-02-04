@@ -16,12 +16,17 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.io.File;
 import java.io.IOException;
+import java.security.MessageDigest;
+import java.nio.file.Files;
 import java.util.*;
 
 @Service
 public class DataImportService {
 
     private static final Logger log = LoggerFactory.getLogger(DataImportService.class);
+
+    // ⭐ SINGLE SOURCE OF TRUTH - اسم الملف الوحيد للدروس
+    private static final String LESSONS_FILE_NAME = "lessen.json";
 
     private final CategoryRepository categoryRepository;
     private final TrafficSignRepository trafficSignRepository;
@@ -56,19 +61,29 @@ public class DataImportService {
 
     /**
      * Import all data from JSON files in the data directory.
+     * ⭐ SINGLE SOURCE OF TRUTH: Uses lessen.json for lessons
      * @param dataDir path to the data directory containing JSON files
      */
     @Transactional
     public void importAllData(String dataDir) {
-        log.info("Starting data import from directory: {}", dataDir);
+        log.info("═══════════════════════════════════════════════════");
+        log.info("🚀 Starting data import from directory: {}", dataDir);
+        log.info("═══════════════════════════════════════════════════");
 
         try {
             importCategoryDescriptions(dataDir + "/category_descriptions.json");
             importTrafficSigns(dataDir + "/signs.json");
-            importLessons(dataDir + "/lessons_content.json");
-            log.info("Data import completed successfully!");
+
+            // ⭐ استخدام lessen.json بدلاً من lessons_content.json
+            importLessons(dataDir + "/" + LESSONS_FILE_NAME);
+
+            log.info("═══════════════════════════════════════════════════");
+            log.info("✅ Data import completed successfully!");
+            log.info("═══════════════════════════════════════════════════");
         } catch (Exception e) {
-            log.error("Data import failed: {}", e.getMessage(), e);
+            log.error("═══════════════════════════════════════════════════");
+            log.error("❌ Data import failed: {}", e.getMessage(), e);
+            log.error("═══════════════════════════════════════════════════");
             throw new RuntimeException("Data import failed", e);
         }
     }
@@ -77,10 +92,10 @@ public class DataImportService {
      * Import category descriptions from category_descriptions.json
      */
     private void importCategoryDescriptions(String filePath) throws IOException {
-        log.info("Importing category descriptions from: {}", filePath);
+        log.info("📂 Importing category descriptions from: {}", filePath);
         File file = new File(filePath);
         if (!file.exists()) {
-            log.warn("Category descriptions file not found: {}", filePath);
+            log.warn("⚠️  Category descriptions file not found: {}", filePath);
             return;
         }
 
@@ -95,13 +110,13 @@ public class DataImportService {
 
             String categoryCode = CATEGORY_NAME_TO_CODE.get(categoryName);
             if (categoryCode == null) {
-                log.warn("No mapping found for category: {}", categoryName);
+                log.warn("⚠️  No mapping found for category: {}", categoryName);
                 continue;
             }
 
             Optional<Category> optCategory = categoryRepository.findByCode(categoryCode);
             if (optCategory.isEmpty()) {
-                log.warn("Category not found in DB: code={} (from {})", categoryCode, categoryName);
+                log.warn("⚠️  Category not found in DB: code={} (from {})", categoryCode, categoryName);
                 continue;
             }
 
@@ -118,20 +133,20 @@ public class DataImportService {
 
             categoryRepository.save(category);
             updated++;
-            log.debug("Updated category {} ({}) descriptions", categoryCode, categoryName);
+            log.debug("✅ Updated category {} ({}) descriptions", categoryCode, categoryName);
         }
 
-        log.info("Category descriptions import complete: {} categories updated", updated);
+        log.info("✅ Category descriptions import complete: {} categories updated", updated);
     }
 
     /**
      * Import traffic signs from signs.json
      */
     private void importTrafficSigns(String filePath) throws IOException {
-        log.info("Importing traffic signs from: {}", filePath);
+        log.info("🚦 Importing traffic signs from: {}", filePath);
         File file = new File(filePath);
         if (!file.exists()) {
-            log.warn("Signs file not found: {}", filePath);
+            log.warn("⚠️  Signs file not found: {}", filePath);
             return;
         }
 
@@ -152,51 +167,46 @@ public class DataImportService {
 
             String categoryName = getTextOrNull(signNode, "category");
             if (categoryName == null) {
-                log.warn("Sign {} has no category, skipping", signCode);
+                log.warn("⚠️  Sign {} has no category, skipping", signCode);
                 skipped++;
                 continue;
             }
 
             String categoryCode = CATEGORY_NAME_TO_CODE.get(categoryName);
             if (categoryCode == null) {
-                log.warn("No category mapping for: {} (sign: {})", categoryName, signCode);
+                log.warn("⚠️  No category mapping for: {} (sign: {})", categoryName, signCode);
                 skipped++;
                 continue;
             }
 
             Optional<Category> optCategory = categoryRepository.findByCode(categoryCode);
             if (optCategory.isEmpty()) {
-                log.warn("Category {} not found in DB for sign {}", categoryCode, signCode);
+                log.warn("⚠️  Category {} not found in DB for sign {}", categoryCode, signCode);
                 skipped++;
                 continue;
             }
 
             Category category = optCategory.get();
 
-            // Get multilingual names
             String nameNl = getTextOrNull(signNode, "title_nl");
             if (nameNl == null) nameNl = getTextOrNull(signNode, "title");
             String nameEn = getTextOrNull(signNode, "title_en");
             String nameFr = getTextOrNull(signNode, "title_fr");
             String nameAr = getTextOrNull(signNode, "title_ar");
 
-            // Fallback: use title for all missing
             if (nameNl == null) nameNl = signCode;
             if (nameEn == null) nameEn = nameNl;
             if (nameFr == null) nameFr = nameNl;
             if (nameAr == null) nameAr = nameNl;
 
-            // Get multilingual descriptions
             String descNl = getTextOrNull(signNode, "long_description_nl");
             if (descNl == null) descNl = getTextOrNull(signNode, "long_description");
             String descEn = getTextOrNull(signNode, "long_description_en");
             String descFr = getTextOrNull(signNode, "long_description_fr");
             String descAr = getTextOrNull(signNode, "long_description_ar");
 
-            // Get image URL
             String imageUrl = getTextOrNull(signNode, "image");
 
-            // Check if sign already exists
             Optional<TrafficSign> existingSign = trafficSignRepository.findBySignCode(signCode);
 
             TrafficSign sign;
@@ -224,108 +234,154 @@ public class DataImportService {
             trafficSignRepository.save(sign);
         }
 
-        log.info("Traffic signs import complete: {} created, {} updated, {} skipped", created, updated, skipped);
+        log.info("✅ Traffic signs import complete: {} created, {} updated, {} skipped", created, updated, skipped);
     }
 
     /**
-     * Import lessons from lessons_content.json
+     * ⭐ Import lessons from lessen.json - SINGLE SOURCE OF TRUTH
      */
     private void importLessons(String filePath) throws IOException {
-        log.info("Importing lessons from: {}", filePath);
+        log.info("═══════════════════════════════════════════════════");
+        log.info("📚 IMPORTING LESSONS - SINGLE SOURCE OF TRUTH");
+        log.info("═══════════════════════════════════════════════════");
+        log.info("📄 Source File: {}", filePath);
+
         File file = new File(filePath);
         if (!file.exists()) {
-            log.warn("Lessons file not found: {}", filePath);
-            return;
+            log.error("❌ CRITICAL: Lessons file not found: {}", filePath);
+            log.error("Expected file: {}", LESSONS_FILE_NAME);
+            throw new IOException("Lessons file not found: " + filePath);
         }
+
+        // ⭐ حساب checksum للتحقق من سلامة الملف
+        String fileChecksum = calculateFileChecksum(file);
+        log.info("🔐 File Checksum (SHA-256): {}", fileChecksum);
 
         JsonNode root = objectMapper.readTree(file);
         JsonNode lessonsArray = root.get("lessons");
         if (lessonsArray == null || !lessonsArray.isArray()) {
-            log.warn("No 'lessons' array found in lessons file");
+            log.warn("⚠️  No 'lessons' array found in lessons file");
             return;
         }
 
-        // Map lesson IDs to category codes based on naming patterns
+        log.info("📊 Found {} lessons in {}", lessonsArray.size(), LESSONS_FILE_NAME);
+
         Map<String, String> lessonCategoryMapping = buildLessonCategoryMapping();
 
         int created = 0;
         int updated = 0;
+        int skipped = 0;
         int displayOrder = 1;
 
         for (JsonNode lessonNode : lessonsArray) {
-            String lessonId = getTextOrNull(lessonNode, "id");
-            if (lessonId == null) continue;
-
-            // Determine category for this lesson
-            String categoryCode = determineLessonCategory(lessonId, lessonNode, lessonCategoryMapping);
-
-            Optional<Category> optCategory = categoryRepository.findByCode(categoryCode);
-            if (optCategory.isEmpty()) {
-                log.warn("Category {} not found for lesson {}, using default A", categoryCode, lessonId);
-                optCategory = categoryRepository.findByCode("A");
-                if (optCategory.isEmpty()) continue;
-            }
-
-            Category category = optCategory.get();
-
-            // Get multilingual titles
-            String titleNl = getTextOrNull(lessonNode, "title_nl");
-            if (titleNl == null) titleNl = getTextOrNull(lessonNode, "title");
-            String titleEn = getTextOrNull(lessonNode, "title_en");
-            String titleFr = getTextOrNull(lessonNode, "title_fr");
-            String titleAr = getTextOrNull(lessonNode, "title_ar");
-
-            if (titleNl == null) titleNl = lessonId;
-            if (titleEn == null) titleEn = titleNl;
-            if (titleFr == null) titleFr = titleNl;
-            if (titleAr == null) titleAr = titleNl;
-
-            // Build content from pages
-            String contentNl = buildLessonContent(lessonNode, "nl");
-            String contentEn = buildLessonContent(lessonNode, "en");
-            String contentFr = buildLessonContent(lessonNode, "fr");
-            String contentAr = buildLessonContent(lessonNode, "ar");
-
-            // Estimate reading time based on content length
-            int estimatedMinutes = Math.max(5, contentNl.length() / 500);
-
-            // Try to find existing lesson by matching title
-            List<Lesson> existingLessons = lessonRepository.findByCategoryIdOrderByDisplayOrderAsc(category.getId());
-            Lesson lesson = null;
-
-            // Check for existing lesson with same title
-            for (Lesson existing : existingLessons) {
-                if (existing.getTitleNl() != null && existing.getTitleNl().equals(titleNl)) {
-                    lesson = existing;
-                    break;
+            try {
+                String lessonId = getTextOrNull(lessonNode, "id");
+                if (lessonId == null) {
+                    skipped++;
+                    continue;
                 }
+
+                String categoryCode = determineLessonCategory(lessonId, lessonNode, lessonCategoryMapping);
+
+                Optional<Category> optCategory = categoryRepository.findByCode(categoryCode);
+                if (optCategory.isEmpty()) {
+                    log.warn("⚠️  Category {} not found for lesson {}, using default A", categoryCode, lessonId);
+                    optCategory = categoryRepository.findByCode("A");
+                    if (optCategory.isEmpty()) {
+                        skipped++;
+                        continue;
+                    }
+                }
+
+                Category category = optCategory.get();
+
+                String titleNl = getTextOrNull(lessonNode, "title_nl");
+                if (titleNl == null) titleNl = getTextOrNull(lessonNode, "title");
+                String titleEn = getTextOrNull(lessonNode, "title_en");
+                String titleFr = getTextOrNull(lessonNode, "title_fr");
+                String titleAr = getTextOrNull(lessonNode, "title_ar");
+
+                if (titleNl == null) titleNl = lessonId;
+                if (titleEn == null) titleEn = titleNl;
+                if (titleFr == null) titleFr = titleNl;
+                if (titleAr == null) titleAr = titleNl;
+
+                String contentNl = buildLessonContent(lessonNode, "nl");
+                String contentEn = buildLessonContent(lessonNode, "en");
+                String contentFr = buildLessonContent(lessonNode, "fr");
+                String contentAr = buildLessonContent(lessonNode, "ar");
+
+                int estimatedMinutes = Math.max(5, contentNl.length() / 500);
+
+                List<Lesson> existingLessons = lessonRepository.findByCategoryIdOrderByDisplayOrderAsc(category.getId());
+                Lesson lesson = null;
+
+                for (Lesson existing : existingLessons) {
+                    if (existing.getTitleNl() != null && existing.getTitleNl().equals(titleNl)) {
+                        lesson = existing;
+                        break;
+                    }
+                }
+
+                if (lesson != null) {
+                    updated++;
+                } else {
+                    lesson = new Lesson();
+                    lesson.setIsActive(true);
+                    created++;
+                }
+
+                lesson.setCategory(category);
+                lesson.setTitleNl(titleNl);
+                lesson.setTitleEn(titleEn);
+                lesson.setTitleFr(titleFr);
+                lesson.setTitleAr(titleAr);
+                lesson.setContentNl(contentNl);
+                lesson.setContentEn(contentEn);
+                lesson.setContentFr(contentFr);
+                lesson.setContentAr(contentAr);
+                lesson.setDisplayOrder(displayOrder);
+                lesson.setEstimatedMinutes(estimatedMinutes);
+
+                lessonRepository.save(lesson);
+                displayOrder++;
+
+            } catch (Exception e) {
+                log.error("❌ Failed to import lesson: {}", e.getMessage());
+                skipped++;
             }
-
-            if (lesson != null) {
-                updated++;
-            } else {
-                lesson = new Lesson();
-                lesson.setIsActive(true);
-                created++;
-            }
-
-            lesson.setCategory(category);
-            lesson.setTitleNl(titleNl);
-            lesson.setTitleEn(titleEn);
-            lesson.setTitleFr(titleFr);
-            lesson.setTitleAr(titleAr);
-            lesson.setContentNl(contentNl);
-            lesson.setContentEn(contentEn);
-            lesson.setContentFr(contentFr);
-            lesson.setContentAr(contentAr);
-            lesson.setDisplayOrder(displayOrder);
-            lesson.setEstimatedMinutes(estimatedMinutes);
-
-            lessonRepository.save(lesson);
-            displayOrder++;
         }
 
-        log.info("Lessons import complete: {} created, {} updated", created, updated);
+        log.info("═══════════════════════════════════════════════════");
+        log.info("✅ LESSONS IMPORT COMPLETED");
+        log.info("📊 Total: {} | Created: {} | Updated: {} | Skipped: {}",
+                lessonsArray.size(), created, updated, skipped);
+        log.info("📄 Source: {} (SINGLE SOURCE OF TRUTH)", LESSONS_FILE_NAME);
+        log.info("🔐 Checksum: {}", fileChecksum);
+        log.info("═══════════════════════════════════════════════════");
+    }
+
+    /**
+     * ⭐ حساب checksum للتحقق من سلامة الملف
+     */
+    private String calculateFileChecksum(File file) {
+        try {
+            MessageDigest digest = MessageDigest.getInstance("SHA-256");
+            byte[] fileBytes = Files.readAllBytes(file.toPath());
+            byte[] hash = digest.digest(fileBytes);
+
+            // Convert to hex string
+            StringBuilder hexString = new StringBuilder();
+            for (byte b : hash) {
+                String hex = Integer.toHexString(0xff & b);
+                if (hex.length() == 1) hexString.append('0');
+                hexString.append(hex);
+            }
+            return hexString.toString();
+        } catch (Exception e) {
+            log.warn("⚠️  Could not calculate checksum: {}", e.getMessage());
+            return "N/A";
+        }
     }
 
     /**
@@ -334,7 +390,6 @@ public class DataImportService {
     private String buildLessonContent(JsonNode lessonNode, String lang) {
         JsonNode pages = lessonNode.get("pages");
         if (pages == null || !pages.isArray()) {
-            // Fallback to description
             String descKey = "description_" + lang;
             String desc = getTextOrNull(lessonNode, descKey);
             if (desc == null) desc = getTextOrNull(lessonNode, "description");
@@ -343,7 +398,6 @@ public class DataImportService {
 
         StringBuilder content = new StringBuilder();
         for (JsonNode page : pages) {
-            // Add page title
             String titleKey = "title_" + lang;
             String title = getTextOrNull(page, titleKey);
             if (title == null) title = getTextOrNull(page, "title");
@@ -351,7 +405,6 @@ public class DataImportService {
                 content.append("## ").append(title).append("\n\n");
             }
 
-            // Add page content
             String contentKey = "content_" + lang;
             String pageContent = getTextOrNull(page, contentKey);
             if (pageContent == null) pageContent = getTextOrNull(page, "content");
@@ -359,7 +412,6 @@ public class DataImportService {
                 content.append(pageContent).append("\n\n");
             }
 
-            // Add bullet points
             String bulletKey = "bulletPoints_" + lang;
             JsonNode bullets = page.get(bulletKey);
             if (bullets == null) bullets = page.get("bulletPoints");
@@ -379,7 +431,6 @@ public class DataImportService {
      */
     private Map<String, String> buildLessonCategoryMapping() {
         Map<String, String> mapping = new HashMap<>();
-        // Map specific lesson IDs to categories based on known patterns
         mapping.put("les-gevaarsborden", "A");
         mapping.put("les-voorrangsborden", "B");
         mapping.put("les-verbodsborden", "C");
@@ -397,11 +448,9 @@ public class DataImportService {
      * Determine which category a lesson belongs to
      */
     private String determineLessonCategory(String lessonId, JsonNode lessonNode, Map<String, String> mapping) {
-        // Direct ID mapping
         String code = mapping.get(lessonId);
         if (code != null) return code;
 
-        // Try to match by title keywords
         String titleNl = getTextOrNull(lessonNode, "title_nl");
         if (titleNl == null) titleNl = getTextOrNull(lessonNode, "title");
         if (titleNl == null) titleNl = "";
@@ -418,18 +467,16 @@ public class DataImportService {
         if (titleLower.contains("afbakening")) return "M";
         if (titleLower.contains("informatie") || titleLower.contains("tijdelijk")) return "H";
 
-        // Try by lesson number - distribute among categories
         if (lessonId.startsWith("les-")) {
             try {
                 int num = Integer.parseInt(lessonId.replace("les-", ""));
-                // Map lesson numbers to categories
                 String[] codes = {"A", "B", "C", "D", "E", "F", "G", "Z", "M", "H"};
                 return codes[num % codes.length];
             } catch (NumberFormatException ignored) {
             }
         }
 
-        return "A"; // Default
+        return "A";
     }
 
     private String getTextOrNull(JsonNode node, String field) {

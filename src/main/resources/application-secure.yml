@@ -46,16 +46,31 @@ logging:
     com.readyroad: INFO
     org.springframework.security: INFO
 
+# ========================================
 # JWT Configuration (ENABLED in Secure)
+# ========================================
 jwt:
   enabled: true
   secret-key: ${JWT_SECRET:404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970337336763979244226452948404D6351}
-  expiration: 3600000  # 1 hour (أقصر في production)
+  expiration: 3600000 # 1 hour
   refresh-token:
-    expiration: 604800000  # 7 days
+    expiration: 604800000 # 7 days
   issuer: readyroad-backend
   header: Authorization
   prefix: Bearer
+
+# ========================================
+# CORS Configuration
+# ========================================
+app:
+  cors:
+    allowed-origins: http://localhost:3000,http://localhost:3001,http://localhost:8890
+    max-age: 3600
+
+  security:
+    jwt:
+      expiration: 3600000     # 1 hour
+      issuer: readyroad-backend
 
 ---
 # IMPORTANT: In secure mode, JWT is REQUIRED for protected endpoints

@@ -1,5 +1,6 @@
 package com.readyroad.readyroadbackend.domain.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.readyroad.readyroadbackend.domain.enums.Role;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -24,8 +25,8 @@ import java.util.List;
  */
 @Entity
 @Table(name = "users", uniqueConstraints = {
-    @UniqueConstraint(columnNames = "username"),
-    @UniqueConstraint(columnNames = "email")
+        @UniqueConstraint(columnNames = "username"),
+        @UniqueConstraint(columnNames = "email")
 })
 @Data
 @NoArgsConstructor
@@ -42,6 +43,7 @@ public class User extends BaseEntity implements UserDetails {
     @Column(nullable = false, length = 100)
     private String fullName;
 
+    @JsonIgnore
     @Column(nullable = false, length = 255, name = "password_hash")
     private String passwordHash;
 
@@ -59,11 +61,13 @@ public class User extends BaseEntity implements UserDetails {
     // UserDetails Implementation (Spring Security)
     // ========================================
 
+    @JsonIgnore
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(new SimpleGrantedAuthority("ROLE_" + role.name()));
     }
 
+    @JsonIgnore
     @Override
     public String getPassword() {
         return passwordHash;
@@ -74,21 +78,25 @@ public class User extends BaseEntity implements UserDetails {
         return username;
     }
 
+    @JsonIgnore
     @Override
     public boolean isAccountNonExpired() {
         return true;
     }
 
+    @JsonIgnore
     @Override
     public boolean isAccountNonLocked() {
         return !isLocked;
     }
 
+    @JsonIgnore
     @Override
     public boolean isCredentialsNonExpired() {
         return true;
     }
 
+    @JsonIgnore
     @Override
     public boolean isEnabled() {
         return isActive;

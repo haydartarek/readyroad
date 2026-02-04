@@ -1,12 +1,13 @@
 package com.readyroad.readyroadbackend.config;
 
-import com.readyroad.readyroadbackend.config.JwtAuthenticationFilter;
+
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.http.HttpMethod;
-import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -18,130 +19,213 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
+
 import jakarta.servlet.http.HttpServletResponse;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * Security Configuration with RBAC
- * 
- * Implements Feature: ReadyRoad RBAC hardening and Admin tooling
- * 
- * Scenarios Covered:
- * - Block non-admin users from admin endpoints (403)
- * - Allow admin users to access admin endpoints (200)
- * - Restrict traffic sign write operations to ADMIN
- * - Restrict data import endpoints to ADMIN
- * - Allow moderator and admin to access moderation endpoints
- * - Preserve public endpoints without role checks
- * 
- * @author ReadyRoad Team
- * @since 2026-02-04
- */
+
+@Slf4j
 @Configuration
 @EnableWebSecurity
-@EnableMethodSecurity(prePostEnabled = true)
+@EnableMethodSecurity(prePostEnabled = true, securedEnabled = true, jsr250Enabled = true)
 @RequiredArgsConstructor
 @Profile("secure")
 public class SecurityConfigSecure {
 
+
     private final JwtAuthenticationFilter jwtAuthFilter;
-    private final AuthenticationProvider authenticationProvider;
+
+
+    // ⭐ استخدام default values لتجنب مشاكل placeholder
+    @Value("${app.cors.allowed-origins:http://localhost:3000,http://localhost:3001,http://localhost:8890}")
+    private String allowedOriginsString;
+
+
+    @Value("${app.cors.max-age:3600}")
+    private Long corsMaxAge;
+
+
+    // Constants
+    private static final String API_AUTH = "/api/auth/**";
+    private static final String API_V1_AUTH = "/api/v1/auth/**";
+    private static final String API_CATEGORIES = "/api/categories/**";
+    private static final String API_V1_CATEGORIES = "/api/v1/categories/**";
+    private static final String API_LESSONS = "/api/lessons/**";
+    private static final String API_V1_LESSONS = "/api/v1/lessons/**";
+    private static final String API_TRAFFIC_SIGNS = "/api/traffic-signs/**";
+    private static final String API_V1_TRAFFIC_SIGNS = "/api/v1/traffic-signs/**";
+
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        log.info("╔═══════════════════════════════════════════════════════════╗");
+        log.info("║   Configuring Security Filter Chain with RBAC            ║");
+        log.info("╚═══════════════════════════════════════════════════════════╝");
+
+
         http
-                .csrf(AbstractHttpConfigurer::disable)
-                .cors(cors -> cors.configurationSource(corsConfigurationSource()))
+            .csrf(AbstractHttpConfigurer::disable)
+            .cors(cors -> cors.configurationSource(corsConfigurationSource()))
+            .authorizeHttpRequests(auth -> auth
+                
+                // ⭐ إضافة /api/health كـ public endpoint
+                .requestMatchers("/api/health").permitAll()
+                
+                // PUBLIC AUTH
+                .requestMatchers(
+                    "/api/auth/login", 
+                    "/api/auth/register", 
+                    "/api/auth/refresh",
+                    "/api/auth/health",
+                    "/api/v1/auth/login",
+                    "/api/v1/auth/register",
+                    "/api/v1/auth/refresh-token"
+                ).permitAll()
 
-                // ============================================
-                // RBAC Authorization Rules
-                // ============================================
-                .authorizeHttpRequests(auth -> auth
-                        // Public auth endpoints - MUST come FIRST
-                        .requestMatchers("/api/auth/login", "/api/auth/register", "/api/auth/refresh", "/api/auth/health").permitAll()
-                        .requestMatchers(HttpMethod.POST, "/api/auth/login").permitAll()
-                        .requestMatchers(HttpMethod.POST, "/api/auth/register").permitAll()
 
-                        // Special case: /api/auth/me requires JWT (but no specific role)
-                        .requestMatchers("/api/auth/me").authenticated()
+                .requestMatchers(HttpMethod.POST, API_AUTH).permitAll()
+                .requestMatchers(HttpMethod.POST, API_V1_AUTH).permitAll()
+                .requestMatchers("/api/auth/me", "/api/v1/auth/me").authenticated()
 
-                        // ===== ADMIN-ONLY ENDPOINTS =====
-                        // Scenario: Block non-admin users from admin endpoints
-                        .requestMatchers("/api/admin/**").hasRole("ADMIN")
-                        .requestMatchers("/api/data-import/**").hasRole("ADMIN")
 
-                        // ===== ADMIN-ONLY WRITE OPERATIONS ON TRAFFIC SIGNS =====
-                        // Scenario: Restrict traffic sign write operations to ADMIN
-                        .requestMatchers(HttpMethod.POST, "/api/traffic-signs/**").hasRole("ADMIN")
-                        .requestMatchers(HttpMethod.PUT, "/api/traffic-signs/**").hasRole("ADMIN")
-                        .requestMatchers(HttpMethod.DELETE, "/api/traffic-signs/**").hasRole("ADMIN")
+                // MONITORING
+                .requestMatchers(
+                    "/actuator/health",
+                    "/actuator/info",
+                    "/actuator/metrics",
+                    "/swagger-ui/**",
+                    "/swagger-ui.html",
+                    "/v3/api-docs/**",
+                    "/swagger-resources/**",
+                    "/webjars/**"
+                ).permitAll()
 
-                        // ===== MODERATION ENDPOINTS (MODERATOR + ADMIN) =====
-                        // Scenario: Allow moderator and admin to access moderation endpoints
-                        .requestMatchers("/api/moderation/**").hasAnyRole("MODERATOR", "ADMIN")
 
-                        // ===== PUBLIC READ ENDPOINTS =====
-                        // Scenario: Preserve public endpoints without role checks
-                        .requestMatchers(HttpMethod.GET, "/api/health").permitAll()
-                        .requestMatchers(HttpMethod.GET, "/api/traffic-signs/**").permitAll()
-                        .requestMatchers(HttpMethod.GET, "/api/search").permitAll()
-                        .requestMatchers(HttpMethod.GET, "/api/categories/**").permitAll()
-                        .requestMatchers(HttpMethod.GET, "/actuator/health").permitAll()
-                        .requestMatchers(HttpMethod.GET, "/actuator/info").permitAll()
+                // PUBLIC READ
+                .requestMatchers(HttpMethod.GET, API_CATEGORIES, API_V1_CATEGORIES).permitAll()
+                .requestMatchers(HttpMethod.GET, API_LESSONS, API_V1_LESSONS).permitAll()
+                .requestMatchers(HttpMethod.GET, API_TRAFFIC_SIGNS, API_V1_TRAFFIC_SIGNS).permitAll()
+                .requestMatchers(HttpMethod.GET, "/api/quiz-questions/**", "/api/v1/quiz-questions/**").permitAll()
+                .requestMatchers(HttpMethod.GET, "/api/search", "/api/v1/search").permitAll()
 
-                        // Swagger/OpenAPI documentation
-                        .requestMatchers("/swagger-ui/**", "/v3/api-docs/**", "/swagger-resources/**").permitAll()
 
-                        // Static resources
-                        .requestMatchers("/images/**", "/static/**", "/public/**").permitAll()
+                // ADMIN ONLY
+                .requestMatchers("/api/admin/**", "/api/v1/admin/**").hasRole("ADMIN")
+                .requestMatchers("/api/data-import/**", "/api/v1/data-import/**").hasRole("ADMIN")
 
-                        // ===== DEFAULT: All other /api/** require JWT (but no role check) =====
-                        // Scenario: Keep the rest of /api protected by JWT only
-                        .requestMatchers("/api/**").authenticated()
 
-                        // Catch-all: require authentication
-                        .anyRequest().authenticated())
+                // ADMIN WRITE
+                .requestMatchers(HttpMethod.POST, API_CATEGORIES, API_V1_CATEGORIES).hasRole("ADMIN")
+                .requestMatchers(HttpMethod.PUT, API_CATEGORIES, API_V1_CATEGORIES).hasRole("ADMIN")
+                .requestMatchers(HttpMethod.DELETE, API_CATEGORIES, API_V1_CATEGORIES).hasRole("ADMIN")
 
-                // ============================================
-                // Exception Handling (401 & 403)
-                // ============================================
-                .exceptionHandling(exception -> exception
-                        // 401 Unauthorized - No JWT or invalid JWT
-                        .authenticationEntryPoint((request, response, authException) -> {
-                            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-                            response.setContentType("application/json");
-                            response.getWriter().write(
-                                    "{\"error\":\"Unauthorized\",\"message\":\"Authentication required\"}");
-                        })
-                        // 403 Forbidden - JWT valid but insufficient role
-                        // Scenario: Response should indicate "Access Denied"
-                        .accessDeniedHandler((request, response, accessDeniedException) -> {
-                            response.setStatus(HttpServletResponse.SC_FORBIDDEN);
-                            response.setContentType("application/json");
-                            response.getWriter().write(
-                                    "{\"error\":\"Access Denied\",\"message\":\"Insufficient permissions\"}");
-                        }))
 
-                .sessionManagement(session -> session
-                        .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                .authenticationProvider(authenticationProvider)
-                .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
+                .requestMatchers(HttpMethod.POST, API_LESSONS, API_V1_LESSONS).hasRole("ADMIN")
+                .requestMatchers(HttpMethod.PUT, API_LESSONS, API_V1_LESSONS).hasRole("ADMIN")
+                .requestMatchers(HttpMethod.DELETE, API_LESSONS, API_V1_LESSONS).hasRole("ADMIN")
 
+
+                .requestMatchers(HttpMethod.POST, API_TRAFFIC_SIGNS, API_V1_TRAFFIC_SIGNS).hasRole("ADMIN")
+                .requestMatchers(HttpMethod.PUT, API_TRAFFIC_SIGNS, API_V1_TRAFFIC_SIGNS).hasRole("ADMIN")
+                .requestMatchers(HttpMethod.DELETE, API_TRAFFIC_SIGNS, API_V1_TRAFFIC_SIGNS).hasRole("ADMIN")
+
+
+                .requestMatchers(HttpMethod.POST, "/api/quiz-questions/**", "/api/v1/quiz-questions/**").hasRole("ADMIN")
+                .requestMatchers(HttpMethod.PUT, "/api/quiz-questions/**", "/api/v1/quiz-questions/**").hasRole("ADMIN")
+                .requestMatchers(HttpMethod.DELETE, "/api/quiz-questions/**", "/api/v1/quiz-questions/**").hasRole("ADMIN")
+
+
+                // MODERATION
+                .requestMatchers("/api/moderation/**", "/api/v1/moderation/**").hasAnyRole("MODERATOR", "ADMIN")
+
+
+                // STATIC
+                .requestMatchers("/images/**", "/static/**", "/public/**", "/favicon.ico", "/robots.txt", "/error").permitAll()
+
+
+                // USER PROFILE
+                .requestMatchers("/api/users/me/**", "/api/v1/users/me/**").authenticated()
+
+
+                // DEFAULT
+                .requestMatchers("/api/**").authenticated()
+                .anyRequest().authenticated()
+            )
+
+
+            .exceptionHandling(exception -> exception
+                .authenticationEntryPoint((request, response, authException) -> {
+                    log.warn("⚠️  Authentication failed | URI: {} | Reason: {}", 
+                        request.getRequestURI(), authException.getMessage());
+                    
+                    response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+                    response.setContentType("application/json;charset=UTF-8");
+                    response.getWriter().write(String.format(
+                        "{\"error\":\"Unauthorized\",\"message\":\"Authentication required\",\"path\":\"%s\",\"timestamp\":%d}",
+                        request.getRequestURI(), System.currentTimeMillis()
+                    ));
+                })
+                
+                .accessDeniedHandler((request, response, accessDeniedException) -> {
+                    log.warn("🚫 Access denied | URI: {} | Reason: {}", 
+                        request.getRequestURI(), accessDeniedException.getMessage());
+                    
+                    response.setStatus(HttpServletResponse.SC_FORBIDDEN);
+                    response.setContentType("application/json;charset=UTF-8");
+                    response.getWriter().write(String.format(
+                        "{\"error\":\"Access Denied\",\"message\":\"Insufficient permissions\",\"path\":\"%s\",\"timestamp\":%d}",
+                        request.getRequestURI(), System.currentTimeMillis()
+                    ));
+                })
+            )
+
+
+            .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+            .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
+
+
+        log.info("✅ Security Filter Chain configured successfully");
         return http.build();
     }
 
+
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
+        // ⭐ تحويل comma-separated string إلى list
+        List<String> allowedOrigins = Arrays.asList(allowedOriginsString.split(","));
+        
+        log.info("🌍 Configuring CORS | Allowed origins: {}", allowedOrigins);
+
+
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(List.of("http://localhost:3000", "http://localhost:3001"));
-        configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"));
-        configuration.setAllowedHeaders(Arrays.asList("*"));
+        configuration.setAllowedOrigins(allowedOrigins);
+        
+        configuration.setAllowedMethods(Arrays.asList(
+            HttpMethod.GET.name(),
+            HttpMethod.POST.name(),
+            HttpMethod.PUT.name(),
+            HttpMethod.DELETE.name(),
+            HttpMethod.OPTIONS.name(),
+            HttpMethod.PATCH.name(),
+            HttpMethod.HEAD.name()
+        ));
+        
+        configuration.setAllowedHeaders(List.of("*"));
+        configuration.setExposedHeaders(Arrays.asList(
+            "Access-Control-Allow-Origin",
+            "Access-Control-Allow-Credentials",
+            "Authorization"
+        ));
+        
         configuration.setAllowCredentials(true);
-        configuration.setMaxAge(3600L);
+        configuration.setMaxAge(corsMaxAge);
+
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", configuration);
+        
+        log.info("✅ CORS configured successfully");
         return source;
     }
 }
