@@ -26,4 +26,19 @@ public interface UserRepository extends JpaRepository<User, Long> {
     Optional<User> findByUsername(String username);
     boolean existsByUsername(String username);
     Optional<User> findByUsernameAndIsActiveTrue(String username);
+
+    // ========== RBAC Support Methods (Added 2026-02-04) ==========
+    
+    /**
+     * Count active users
+     * Used by: AdminController.getDashboard()
+     */
+    long countByIsActiveTrue();
+    
+    /**
+     * Count users by role
+     * Used by: AdminController.getDashboard()
+     * @param role - Role enum (USER, MODERATOR, ADMIN)
+     */
+    long countByRole(com.readyroad.readyroadbackend.domain.enums.Role role);
 }

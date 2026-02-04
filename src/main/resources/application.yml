@@ -68,6 +68,12 @@ management:
     env:
       enabled: true
 
+# ReadyRoad Data Import Configuration
+readyroad:
+  data-import:
+    enabled: false  # Data imported successfully. Set to true to re-import from JSON files
+    path: data     # Path to the data directory (relative to project root)
+
 # Application Info (for /actuator/info)
 info:
   app:
@@ -77,5 +83,3 @@ info:
     encoding: ${project.build.sourceEncoding:UTF-8}
     java:
       version: ${java.version}
-
-
