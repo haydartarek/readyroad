@@ -1,47 +1,59 @@
-﻿spring:
-  application:
-    name: readyroad-test
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    
+    <!-- ✅ Console Appender -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
 
-  autoconfigure:
-    exclude:
-      - org.springframework.boot.flyway.autoconfigure.FlywayAutoConfiguration
+    <!-- ✅ Test File Appender (optional) -->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>target/test-logs/test.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>target/test-logs/test-%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>7</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
 
-  datasource:
-    url: jdbc:h2:mem:testdb;MODE=MySQL;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
-    driver-class-name: org.h2.Driver
-    username: sa
-    password:
+    <!-- ✅ Application Loggers -->
+    <logger name="com.readyroad" level="DEBUG" additivity="false">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="FILE"/>
+    </logger>
 
-  jpa:
-    hibernate:
-      ddl-auto: create-drop
-    show-sql: false
-    defer-datasource-initialization: true
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.H2Dialect
-        format_sql: true
+    <!-- ✅ Lifecycle Events Logger -->
+    <logger name="com.readyroad.readyroadbackend.domain.model" level="DEBUG" additivity="false">
+        <appender-ref ref="CONSOLE"/>
+    </logger>
 
-  flyway:
-    enabled: false
+    <!-- ✅ Hibernate SQL Logger -->
+    <logger name="org.hibernate.SQL" level="DEBUG" additivity="false">
+        <appender-ref ref="CONSOLE"/>
+    </logger>
 
-  security:
-    mode: dev
+    <!-- ✅ Hibernate Parameters Logger -->
+    <logger name="org.hibernate.type.descriptor.sql.BasicBinder" level="TRACE" additivity="false">
+        <appender-ref ref="CONSOLE"/>
+    </logger>
 
-  h2:
-    console:
-      enabled: true
+    <!-- ✅ Hibernate Events (PrePersist/PreUpdate) -->
+    <logger name="org.hibernate.event" level="DEBUG" additivity="false">
+        <appender-ref ref="CONSOLE"/>
+    </logger>
 
-server:
-  port: 0
+    <!-- ✅ Spring Framework -->
+    <logger name="org.springframework" level="INFO"/>
+    <logger name="org.springframework.security" level="INFO"/>
+    <logger name="org.springframework.test" level="INFO"/>
 
-jwt:
-  secret-key: "dGVzdC1qd3Qtc2VjcmV0LWtleS1taW5pbXVtLTMyLWNoYXJhY3RlcnMtcmVxdWlyZWQtZm9yLWhzMjU2LWFsZ29yaXRobQ=="
-  expiration: 86400000
+    <!-- ✅ Root Logger -->
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+    </root>
 
-logging:
-  level:
-    root: INFO
-    com.readyroad: DEBUG
-    org.springframework.security: DEBUG
-    org.hibernate.SQL: DEBUG
+</configuration>
