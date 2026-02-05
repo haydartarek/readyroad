@@ -6,12 +6,14 @@ import com.readyroad.readyroadbackend.domain.repository.ExamSimulationQuestionRe
 import com.readyroad.readyroadbackend.dto.exam.ExamStartResponse;
 import com.readyroad.readyroadbackend.mapper.ExamMapper;
 import com.readyroad.readyroadbackend.service.ExamService;
+import com.readyroad.readyroadbackend.util.AuthenticationUtil;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
@@ -34,17 +36,30 @@ public class ExamSimulationController {
     private final ExamService examService;
     private final ExamSimulationQuestionRepository examQuestionRepository;
     private final ExamMapper examMapper;
+    private final AuthenticationUtil authenticationUtil;
 
     /**
      * Start exam simulation
      * POST /api/exam-simulations/start
+     *
+     * Supports both authenticated (JWT token) and manual userId parameter
      */
     @PostMapping("/start")
     @Operation(summary = "Start exam simulation")
     public ResponseEntity<ExamStartResponse> startExam(
-        @Parameter(description = "User ID", required = true)
-        @RequestParam Long userId
+        Authentication authentication,
+        @Parameter(description = "User ID (optional if authenticated)")
+        @RequestParam(required = false) Long userId
     ) {
+        // Extract userId from JWT token if not provided
+        if (userId == null) {
+            userId = authenticationUtil.extractUserId(authentication);
+            if (userId == null) {
+                log.warn("❌ No userId provided and no authentication found");
+                return ResponseEntity.badRequest().build();
+            }
+        }
+
         log.info("📝 Starting exam simulation for user: {} (via /api/exam-simulations)", userId);
 
         ExamSimulation exam = examService.startExamSimulation(userId);
@@ -61,13 +76,25 @@ public class ExamSimulationController {
     /**
      * Get active exam for user
      * GET /api/exam-simulations/active
+     *
+     * Supports both authenticated (JWT token) and manual userId parameter
      */
     @GetMapping("/active")
     @Operation(summary = "Get active exam")
     public ResponseEntity<Map<String, Object>> getActiveExam(
-        @Parameter(description = "User ID", required = true)
-        @RequestParam Long userId
+        Authentication authentication,
+        @Parameter(description = "User ID (optional if authenticated)")
+        @RequestParam(required = false) Long userId
     ) {
+        // Extract userId from JWT token if not provided
+        if (userId == null) {
+            userId = authenticationUtil.extractUserId(authentication);
+            if (userId == null) {
+                log.warn("❌ No userId provided and no authentication found");
+                return ResponseEntity.badRequest().build();
+            }
+        }
+
         log.info("🔍 GET /api/exam-simulations/active - userId: {}", userId);
 
         ExamSimulation activeExam = examService.getActiveExam(userId);
@@ -95,13 +122,25 @@ public class ExamSimulationController {
     /**
      * Get exam history for user
      * GET /api/exam-simulations/history
+     *
+     * Supports both authenticated (JWT token) and manual userId parameter
      */
     @GetMapping("/history")
     @Operation(summary = "Get exam history")
     public ResponseEntity<Map<String, Object>> getExamHistory(
-        @Parameter(description = "User ID", required = true)
-        @RequestParam Long userId
+        Authentication authentication,
+        @Parameter(description = "User ID (optional if authenticated)")
+        @RequestParam(required = false) Long userId
     ) {
+        // Extract userId from JWT token if not provided
+        if (userId == null) {
+            userId = authenticationUtil.extractUserId(authentication);
+            if (userId == null) {
+                log.warn("❌ No userId provided and no authentication found");
+                return ResponseEntity.badRequest().build();
+            }
+        }
+
         log.info("📜 GET /api/exam-simulations/history - userId: {}", userId);
 
         List<ExamSimulation> completedExams = examService.getCompletedExams(userId);
