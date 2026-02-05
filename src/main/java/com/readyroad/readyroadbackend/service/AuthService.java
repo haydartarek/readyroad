@@ -7,6 +7,7 @@ import com.readyroad.readyroadbackend.dto.AuthResponse;
 import com.readyroad.readyroadbackend.dto.LoginRequest;
 import com.readyroad.readyroadbackend.dto.RegisterRequest;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -21,6 +22,7 @@ import org.springframework.transaction.annotation.Transactional;
  * @author ReadyRoad Team
  * @since 2026-01-18
  */
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class AuthService {
@@ -39,13 +41,17 @@ public class AuthService {
      */
     @Transactional
     public AuthResponse register(RegisterRequest request) {
+        log.info("📝 Registration request for username: {}", request.getUsername());
+
         // Check if username already exists
         if (userRepository.existsByUsername(request.getUsername())) {
+            log.warn("❌ Username already exists: {}", request.getUsername());
             throw new IllegalArgumentException("Username already exists");
         }
 
         // Check if email already exists
         if (userRepository.existsByEmail(request.getEmail())) {
+            log.warn("❌ Email already exists: {}", request.getEmail());
             throw new IllegalArgumentException("Email already exists");
         }
 
@@ -61,6 +67,7 @@ public class AuthService {
 
         // Save user to database
         user = userRepository.save(user);
+        log.info("✅ User registered successfully: {}", user.getUsername());
 
         // Generate JWT token
         String jwtToken = jwtService.generateToken(user.getUsername());
@@ -74,23 +81,74 @@ public class AuthService {
      *
      * @param request Login request with username and password
      * @return AuthResponse with JWT token
-     * @throws org.springframework.security.core.AuthenticationException if credentials are invalid
+     * @throws org.springframework.security.core.AuthenticationException if
+     *                                                                   credentials
+     *                                                                   are invalid
      */
     public AuthResponse login(LoginRequest request) {
-        // Authenticate user
-        authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(
-                        request.getUsername(),
-                        request.getPassword()
-                )
-        );
+        log.info("🔐 Login attempt for username: {}", request.getUsername());
+        log.debug("📋 Login request details:");
+        log.debug("   - Username: {}", request.getUsername());
+        log.debug("   - Password length: {}", request.getPassword() != null ? request.getPassword().length() : 0);
 
-        // Load user from database
+        try {
+            // Load user first to check details
+            User user = userRepository.findByUsername(request.getUsername())
+                    .orElseThrow(() -> {
+                        log.error("❌ User not found: {}", request.getUsername());
+                        return new IllegalArgumentException("User not found");
+                    });
+
+            log.info("✅ User found in database: {}", user.getUsername());
+            log.debug("📊 User details:");
+            log.debug("   - ID: {}", user.getId());
+            log.debug("   - Email: {}", user.getEmail());
+            log.debug("   - Role: {}", user.getRole());
+            log.debug("   - Active: {}", user.getIsActive());
+            log.debug("   - Locked: {}", user.getIsLocked());
+            log.debug("   - Password Hash (first 30 chars): {}",
+                    user.getPasswordHash() != null
+                            ? user.getPasswordHash().substring(0, Math.min(30, user.getPasswordHash().length()))
+                            : "NULL");
+            log.debug("   - Password Hash length: {}",
+                    user.getPasswordHash() != null ? user.getPasswordHash().length() : 0);
+
+            // Test password match manually for debugging
+            log.info("🔍 Testing password match...");
+            boolean matches = passwordEncoder.matches(request.getPassword(), user.getPasswordHash());
+            log.info("🎯 Password match result: {}", matches);
+
+            if (!matches) {
+                log.error("❌ Password does not match!");
+                log.error("   - Provided password: '{}'", request.getPassword());
+                log.error("   - Expected hash starts with: {}",
+                        user.getPasswordHash().substring(0, Math.min(20, user.getPasswordHash().length())));
+            }
+
+            // Authenticate user using Spring Security
+            log.info("🔐 Calling AuthenticationManager.authenticate()...");
+            authenticationManager.authenticate(
+                    new UsernamePasswordAuthenticationToken(
+                            request.getUsername(),
+                            request.getPassword()));
+            log.info("✅ Authentication successful!");
+
+        } catch (Exception e) {
+            log.error("❌ Authentication failed for user: {}", request.getUsername());
+            log.error("❌ Exception type: {}", e.getClass().getName());
+            log.error("❌ Exception message: {}", e.getMessage());
+            throw e;
+        }
+
+        // Load user from database again (already loaded above, but keeping original
+        // flow)
         User user = userRepository.findByUsername(request.getUsername())
                 .orElseThrow(() -> new IllegalArgumentException("User not found"));
 
         // Generate JWT token
+        log.info("🎫 Generating JWT token for user: {}", user.getUsername());
         String jwtToken = jwtService.generateToken(user.getUsername());
+        log.info("✅ JWT token generated successfully");
 
         // Build and return response
         return buildAuthResponse(user, jwtToken);
@@ -99,11 +157,12 @@ public class AuthService {
     /**
      * Build authentication response from user and token
      *
-     * @param user User entity
+     * @param user  User entity
      * @param token JWT token
      * @return AuthResponse
      */
     private AuthResponse buildAuthResponse(User user, String token) {
-        return AuthResponse.of(token, user.getId(), user.getUsername(), user.getEmail(), user.getFullName(), user.getRole());
+        return AuthResponse.of(token, user.getId(), user.getUsername(), user.getEmail(), user.getFullName(),
+                user.getRole());
     }
 }

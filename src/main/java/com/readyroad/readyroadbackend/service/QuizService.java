@@ -37,6 +37,7 @@ import java.util.List;
 public class QuizService {
 
     private final QuizQuestionRepository quizQuestionRepository;
+    private final com.readyroad.readyroadbackend.domain.repository.CategoryRepository categoryRepository;
 
     /**
      * Maximum questions allowed per quiz to prevent abuse
@@ -100,9 +101,16 @@ public class QuizService {
      */
     public List<QuizQuestion> generateQuizByCategory(Long categoryId, int count) {
         log.info("🎲 Generating quiz for category {} with {} questions", categoryId, count);
-        
+
         if (categoryId == null) {
             throw new IllegalArgumentException("Category ID cannot be null");
+        }
+
+        // Validate category exists
+        boolean categoryExists = categoryRepository.existsById(categoryId);
+        if (!categoryExists) {
+            log.error("❌ Category not found: {}", categoryId);
+            throw new IllegalArgumentException("Category not found: " + categoryId);
         }
 
         // Validate and cap the count
