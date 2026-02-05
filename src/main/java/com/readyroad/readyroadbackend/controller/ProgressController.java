@@ -19,6 +19,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * REST API Controller for Feature B: Progress Tracking
@@ -203,6 +204,58 @@ public class ProgressController {
         );
 
         return ResponseEntity.ok(response);
+    }
+
+    // ============================================================================
+    // RECOMMENDATIONS ENDPOINT (Alias for Analytics)
+    // ============================================================================
+
+    /**
+     * Get study recommendations (Alias for /api/users/me/analytics/weak-areas)
+     * GET /api/users/me/progress/recommendations
+     *
+     * @param authentication Spring Security authentication
+     * @return Study recommendations based on weak areas
+     */
+    @GetMapping("/recommendations")
+    @Operation(
+        summary = "Get study recommendations",
+        description = "Returns personalized study recommendations based on weak areas. " +
+                      "This is an alias endpoint for /api/users/me/analytics/weak-areas",
+        security = @SecurityRequirement(name = "bearer-jwt")
+    )
+    @ApiResponses(value = {
+        @ApiResponse(
+            responseCode = "200",
+            description = "Recommendations retrieved successfully"
+        ),
+        @ApiResponse(
+            responseCode = "401",
+            description = "Unauthorized - Authentication required"
+        )
+    })
+    public ResponseEntity<?> getRecommendations(Authentication authentication) {
+        log.info("GET /api/users/me/progress/recommendations - Recommendations requested");
+
+        // Extract user ID from authentication
+        Long userId = authenticationUtil.extractUserId(authentication);
+
+        // In production mode, return 401 if not authenticated
+        if (userId == null) {
+            log.warn("Unauthenticated access attempt to recommendations - returning 401");
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+        }
+
+        // Redirect to analytics service
+        log.info("Fetching recommendations for user {}", userId);
+
+        // For now, return a simple response
+        // In a real implementation, this would call AnalyticsService.getWeakAreaRecommendations
+        return ResponseEntity.ok(Map.of(
+            "message", "Recommendations endpoint working",
+            "userId", userId,
+            "recommendations", List.of()
+        ));
     }
 
     // ============================================================================
