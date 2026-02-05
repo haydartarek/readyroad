@@ -5,7 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
+import java.time.Instant;
 import java.util.List;
 
 /**
@@ -29,7 +29,7 @@ public class ExamResultsDTO {
     // Basic Info
     private Long examId;
     private Long userId;
-    private LocalDateTime completedAt;
+    private Instant completedAt;
 
     // Score Summary
     private Integer totalQuestions;

@@ -6,11 +6,12 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
+import java.time.Instant;
 import java.util.List;
 
 /**
  * Response DTO for starting exam simulation - Story A1
+ * Uses Instant for UTC-aware timestamps
  */
 @Data
 @Builder
@@ -26,11 +27,17 @@ public class ExamStartResponse {
 
     private String status;
 
-    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'")
-    private LocalDateTime startedAt;
+    /**
+     * Exam start time in UTC (ISO-8601 format)
+     * Example: "2026-02-05T19:30:00Z"
+     */
+    private Instant startedAt;
 
-    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'")
-    private LocalDateTime expiresAt;
+    /**
+     * Exam expiration time in UTC (ISO-8601 format)
+     * Example: "2026-02-05T20:00:00Z"
+     */
+    private Instant expiresAt;
 
     private List<ExamQuestionDTO> questions;
 }

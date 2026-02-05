@@ -3,12 +3,13 @@ package com.readyroad.readyroadbackend.domain.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.time.LocalDateTime;
+import java.time.Instant;
 
 /**
  * Exam Simulation Answer - Phase 5
  * Records user answers for exam simulation questions.
  * Updated for Story A2: Submit Exam Answer
+ * Uses Instant for UTC-aware timestamps
  */
 @Entity
 @Table(name = "exam_simulation_answers")
@@ -39,5 +40,5 @@ public class ExamSimulationAnswer extends BaseEntity {
     private Integer timeTakenSeconds;
 
     @Column(name = "answered_at", nullable = false)
-    private LocalDateTime answeredAt;
+    private Instant answeredAt;
 }

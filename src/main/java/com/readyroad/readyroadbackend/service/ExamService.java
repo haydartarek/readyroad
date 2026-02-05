@@ -30,7 +30,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.LocalDateTime;
+import java.time.Duration;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -124,9 +125,9 @@ public class ExamService {
 
         log.info("Selected {} random questions for exam", questions.size());
 
-        // AC6-AC7: Create exam simulation
-        LocalDateTime now = LocalDateTime.now();
-        LocalDateTime expiresAt = now.plusMinutes(EXAM_TIME_LIMIT_MINUTES);
+        // AC6-AC7: Create exam simulation (UTC-aware timestamps)
+        Instant now = Instant.now();
+        Instant expiresAt = now.plus(Duration.ofMinutes(EXAM_TIME_LIMIT_MINUTES));
 
         ExamSimulation exam = new ExamSimulation();
         exam.setUserId(userId);
@@ -274,7 +275,7 @@ public class ExamService {
 
         // Mark as cancelled by setting status to COMPLETED with 0 score
         exam.setStatus(ExamSimulation.ExamStatus.COMPLETED);
-        exam.setCompletedAt(LocalDateTime.now());
+        exam.setCompletedAt(Instant.now());
         exam.setCorrectAnswers(0);
         exam.setScorePercentage(0.0);
 
@@ -312,8 +313,8 @@ public class ExamService {
 
         log.info("Submitting answer for exam {} question {}", examId, questionId);
 
-        // Story A4: Check time limit first
-        LocalDateTime now = LocalDateTime.now();
+        // Story A4: Check time limit first (UTC-aware)
+        Instant now = Instant.now();
 
         // 1. Validate exam exists and is IN_PROGRESS
         ExamSimulation exam = getExamById(examId);
@@ -436,7 +437,7 @@ public class ExamService {
 
         // ✅ Auto-expire if time has passed (Story A4)
         if (exam.getStatus() == ExamSimulation.ExamStatus.IN_PROGRESS &&
-                LocalDateTime.now().isAfter(exam.getExpiresAt())) {
+                Instant.now().isAfter(exam.getExpiresAt())) {
             exam.setStatus(ExamSimulation.ExamStatus.EXPIRED);
             examRepository.saveAndFlush(exam); // Save immediately
             log.info("Auto-expired exam {} after time limit", examId);

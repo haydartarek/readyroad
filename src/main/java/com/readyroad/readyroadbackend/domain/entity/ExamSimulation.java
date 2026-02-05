@@ -6,7 +6,8 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
+import java.time.Duration;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,13 +32,13 @@ public class ExamSimulation extends BaseEntity {
     private Long userId;
 
     @Column(name = "started_at", nullable = false)
-    private LocalDateTime startedAt;
+    private Instant startedAt;
 
     @Column(name = "completed_at")
-    private LocalDateTime completedAt;
+    private Instant completedAt;
 
     @Column(name = "expires_at", nullable = false)
-    private LocalDateTime expiresAt;
+    private Instant expiresAt;
 
     @Column(name = "total_questions", nullable = false)
     private Integer totalQuestions = 50;
@@ -73,8 +74,33 @@ public class ExamSimulation extends BaseEntity {
         return correctAnswers != null && correctAnswers >= 41;
     }
 
+    /**
+     * Check if exam has expired (UTC-aware)
+     */
     public boolean isExpired() {
-        return LocalDateTime.now().isAfter(expiresAt);
+        return Instant.now().isAfter(expiresAt);
+    }
+
+    /**
+     * Get remaining time in minutes (UTC-aware)
+     */
+    public long getRemainingMinutes() {
+        if (isExpired() || isCompleted()) {
+            return 0;
+        }
+        Duration remaining = Duration.between(Instant.now(), expiresAt);
+        return Math.max(0, remaining.toMinutes());
+    }
+
+    /**
+     * Get remaining time in seconds (UTC-aware)
+     */
+    public long getRemainingSeconds() {
+        if (isExpired() || isCompleted()) {
+            return 0;
+        }
+        Duration remaining = Duration.between(Instant.now(), expiresAt);
+        return Math.max(0, remaining.getSeconds());
     }
 
     public boolean isCompleted() {

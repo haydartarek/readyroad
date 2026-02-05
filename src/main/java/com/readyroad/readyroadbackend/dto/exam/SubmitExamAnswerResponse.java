@@ -5,7 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
+import java.time.Instant;
 
 /**
  * Response DTO for exam answer submission
@@ -42,7 +42,7 @@ public class SubmitExamAnswerResponse {
     /**
      * Timestamp when answer was submitted
      */
-    private LocalDateTime submittedAt;
+    private Instant submittedAt;
 
     /**
      * Success message
