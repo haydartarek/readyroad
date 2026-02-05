@@ -1,6 +1,6 @@
 package com.readyroad.readyroadbackend.controller;
 
-import com.readyroad.readyroadbackend.config.AuthenticationUtil;
+import com.readyroad.readyroadbackend.util.AuthenticationUtil;
 import com.readyroad.readyroadbackend.dto.ErrorPatternResponse;
 import com.readyroad.readyroadbackend.dto.WeakAreaRecommendationResponse;
 import com.readyroad.readyroadbackend.service.AnalyticsService;

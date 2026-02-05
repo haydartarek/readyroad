@@ -1,6 +1,6 @@
 package com.readyroad.readyroadbackend.security;
 
-import com.readyroad.readyroadbackend.config.AuthenticationUtil;
+import com.readyroad.readyroadbackend.util.AuthenticationUtil;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
