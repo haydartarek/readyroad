@@ -228,4 +228,93 @@ public class ExamController {
 
         return ResponseEntity.ok(results);
     }
+
+    /**
+     * Get active exam for user
+     *
+     * GET /api/exams/simulations/active?userId={userId}
+     */
+    @GetMapping("/active")
+    @Operation(
+        summary = "Get active exam",
+        description = "Get the currently active exam for the user, if any"
+    )
+    @ApiResponses({
+        @ApiResponse(responseCode = "200", description = "Active exam retrieved or null if none"),
+        @ApiResponse(responseCode = "404", description = "No active exam found")
+    })
+    public ResponseEntity<Map<String, Object>> getActiveExam(
+        @Parameter(description = "User ID", required = true)
+        @RequestParam Long userId
+    ) {
+        log.info("🔍 GET /api/exams/simulations/active - userId: {}", userId);
+
+        ExamSimulation activeExam = examService.getActiveExam(userId);
+
+        if (activeExam == null) {
+            log.info("ℹ️ No active exam found for user: {}", userId);
+            Map<String, Object> response = new HashMap<>();
+            response.put("hasActiveExam", false);
+            response.put("activeExam", null);
+            return ResponseEntity.ok(response);
+        }
+
+        // Get questions for the active exam
+        List<ExamSimulationQuestion> questions = examQuestionRepository
+            .findByExamIdOrderByQuestionOrder(activeExam.getId());
+
+        // Map to response DTO
+        ExamStartResponse examResponse = examMapper.toStartResponse(activeExam, questions);
+
+        Map<String, Object> response = new HashMap<>();
+        response.put("hasActiveExam", true);
+        response.put("activeExam", examResponse);
+
+        log.info("✅ Active exam found: examId={}, userId={}", activeExam.getId(), userId);
+        return ResponseEntity.ok(response);
+    }
+
+    /**
+     * Get exam history for user
+     *
+     * GET /api/exams/simulations/history?userId={userId}
+     */
+    @GetMapping("/history")
+    @Operation(
+        summary = "Get exam history",
+        description = "Get all completed exams for the user with their results"
+    )
+    @ApiResponses({
+        @ApiResponse(responseCode = "200", description = "Exam history retrieved successfully")
+    })
+    public ResponseEntity<Map<String, Object>> getExamHistory(
+        @Parameter(description = "User ID", required = true)
+        @RequestParam Long userId
+    ) {
+        log.info("📜 GET /api/exams/simulations/history - userId: {}", userId);
+
+        List<ExamSimulation> completedExams = examService.getCompletedExams(userId);
+
+        List<Map<String, Object>> examHistory = completedExams.stream()
+            .map(exam -> {
+                Map<String, Object> examData = new HashMap<>();
+                examData.put("examId", exam.getId());
+                examData.put("startedAt", exam.getStartedAt());
+                examData.put("completedAt", exam.getCompletedAt());
+                examData.put("status", exam.getStatus());
+                examData.put("scorePercentage", exam.getScorePercentage());
+                examData.put("totalQuestions", exam.getTotalQuestions());
+                examData.put("correctAnswers", exam.getCorrectAnswers());
+                examData.put("passed", exam.isPassed());
+                return examData;
+            })
+            .toList();
+
+        Map<String, Object> response = new HashMap<>();
+        response.put("totalExams", examHistory.size());
+        response.put("exams", examHistory);
+
+        log.info("✅ Exam history retrieved: userId={}, totalExams={}", userId, examHistory.size());
+        return ResponseEntity.ok(response);
+    }
 }

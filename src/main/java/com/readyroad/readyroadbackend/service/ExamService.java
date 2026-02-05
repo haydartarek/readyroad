@@ -200,6 +200,21 @@ public class ExamService {
     }
 
     /**
+     * Get completed exams for user.
+     *
+     * @param userId User ID
+     * @return List of completed exams ordered by completion date (newest first)
+     */
+    @Transactional(readOnly = true)
+    public List<ExamSimulation> getCompletedExams(Long userId) {
+        log.info("Fetching completed exams for user: {}", userId);
+        return examRepository.findByUserIdAndStatusOrderByCompletedAtDesc(
+            userId,
+            ExamSimulation.ExamStatus.COMPLETED
+        );
+    }
+
+    /**
      * Submit answer for an exam question.
      * Story A2: Submit Exam Answer
      *
