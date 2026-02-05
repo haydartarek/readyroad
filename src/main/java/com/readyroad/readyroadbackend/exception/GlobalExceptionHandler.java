@@ -19,6 +19,25 @@ import java.util.Map;
 public class GlobalExceptionHandler {
 
     /**
+     * Handle ActiveExamAlreadyExistsException - user already has active exam
+     * HTTP 409 CONFLICT
+     */
+    @ExceptionHandler(ActiveExamAlreadyExistsException.class)
+    @ResponseBody
+    public ResponseEntity<Map<String, Object>> handleActiveExamExists(ActiveExamAlreadyExistsException ex) {
+        Map<String, Object> error = new HashMap<>();
+        error.put("error", "ActiveExamAlreadyExistsException");
+        error.put("message", ex.getMessage());
+        error.put("activeExamId", ex.getActiveExamId());
+        error.put("userId", ex.getUserId());
+        error.put("code", "ACTIVE_EXAM_EXISTS");
+        error.put("resolution", "Cancel the active exam using DELETE /api/exam-simulations/active before starting a new one");
+        error.put("timestamp", LocalDateTime.now());
+
+        return ResponseEntity.status(HttpStatus.CONFLICT).body(error);
+    }
+
+    /**
      * Handle ExamExpiredException - exam time limit exceeded
      * HTTP 409 CONFLICT
      */

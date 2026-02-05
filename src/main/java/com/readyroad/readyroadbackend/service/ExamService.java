@@ -16,6 +16,7 @@ import com.readyroad.readyroadbackend.dto.exam.SubmitExamAnswerResponse;
 import com.readyroad.readyroadbackend.dto.exam.ExamResultsDTO;
 import com.readyroad.readyroadbackend.dto.exam.CategoryBreakdownDTO;
 import com.readyroad.readyroadbackend.dto.exam.IncorrectQuestionDTO;
+import com.readyroad.readyroadbackend.exception.ActiveExamAlreadyExistsException;
 import com.readyroad.readyroadbackend.exception.ExamNotActiveException;
 import com.readyroad.readyroadbackend.exception.ExamNotCompletedException;
 import com.readyroad.readyroadbackend.exception.ExamNotFoundException;
@@ -86,8 +87,13 @@ public class ExamService {
         log.info("Starting exam simulation for user: {}", userId);
 
         // AC1: Check for active exam
-        if (examRepository.existsByUserIdAndStatus(userId, ExamSimulation.ExamStatus.IN_PROGRESS)) {
-            throw new IllegalStateException("User already has an active exam");
+        ExamSimulation activeExam = examRepository
+            .findByUserIdAndStatus(userId, ExamSimulation.ExamStatus.IN_PROGRESS)
+            .orElse(null);
+
+        if (activeExam != null) {
+            // ✅ Use custom exception for proper 409 Conflict response
+            throw new ActiveExamAlreadyExistsException(userId, activeExam.getId());
         }
 
         // ✅ AC2-AC4: Generate 50 questions - FIXED VERSION
