@@ -2,6 +2,7 @@ package com.readyroad.readyroadbackend.domain.repository;
 
 import com.readyroad.readyroadbackend.domain.entity.QuizQuestion;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -49,18 +50,29 @@ public interface QuizQuestionRepository extends JpaRepository<QuizQuestion, Long
 
     /**
      * Get random questions with options loaded (EAGER fetch)
-     * Uses native query for true randomness and LIMIT for performance
+     * Step 1: Get random question IDs using native query
      *
      * @param limit Maximum number of questions to return
-     * @return List of random questions with options
+     * @return List of random question IDs
      */
-    @Query(value =
-        "SELECT DISTINCT q.* FROM quiz_questions q " +
-        "WHERE q.is_active = true " +
-        "ORDER BY RAND() " +
-        "LIMIT :limit",
-        nativeQuery = true)
-    List<QuizQuestion> findRandomQuestionsWithOptionsNative(@Param("limit") int limit);
+    @Query(value = "SELECT q.id FROM quiz_questions q " +
+                   "WHERE q.is_active = true " +
+                   "ORDER BY RAND() " +
+                   "LIMIT :limit",
+           nativeQuery = true)
+    List<Long> findRandomQuestionIds(@Param("limit") int limit);
+
+    /**
+     * Get random questions with options loaded (EAGER fetch)
+     * Step 2: Fetch full questions with options by IDs
+     * Uses @EntityGraph for reliable eager loading
+     *
+     * @param ids List of question IDs to fetch
+     * @return List of questions with options eagerly loaded
+     */
+    @EntityGraph(attributePaths = {"options"})
+    @Query("SELECT qq FROM QuizQuestion qq WHERE qq.id IN :ids")
+    List<QuizQuestion> findAllByIdWithOptions(@Param("ids") List<Long> ids);
 
     /**
      * Get random questions by category
@@ -71,21 +83,19 @@ public interface QuizQuestionRepository extends JpaRepository<QuizQuestion, Long
 
     /**
      * Get random questions by category with options loaded (EAGER fetch)
-     * Uses native query for true randomness and LIMIT for performance
+     * Step 1: Get random question IDs by category using native query
      *
      * @param categoryId Category ID to filter by
      * @param limit Maximum number of questions to return
-     * @return List of random questions from category with options
+     * @return List of random question IDs from category
      */
-    @Query(value =
-        "SELECT DISTINCT q.* FROM quiz_questions q " +
-        "WHERE q.category_id = :categoryId AND q.is_active = true " +
-        "ORDER BY RAND() " +
-        "LIMIT :limit",
-        nativeQuery = true)
-    List<QuizQuestion> findRandomQuestionsByCategoryWithOptionsNative(
-        @Param("categoryId") Long categoryId,
-        @Param("limit") int limit);
+    @Query(value = "SELECT q.id FROM quiz_questions q " +
+                   "WHERE q.category_id = :categoryId AND q.is_active = true " +
+                   "ORDER BY RAND() " +
+                   "LIMIT :limit",
+           nativeQuery = true)
+    List<Long> findRandomQuestionIdsByCategory(@Param("categoryId") Long categoryId,
+                                                 @Param("limit") int limit);
 
     /**
      * Get random questions by difficulty

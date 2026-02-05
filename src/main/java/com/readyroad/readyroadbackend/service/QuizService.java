@@ -10,17 +10,19 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.LocalDateTime;
+import java.util.Collections;
 import java.util.List;
 
 /**
  * QuizService - Basic Quiz Generation
  *
  * **Phase 2 Restoration:** Implemented January 18, 2026
+ * **Fixed:** February 5, 2026 - LazyInitializationException resolved
  *
  * Provides basic quiz generation functionality WITHOUT Smart Quiz features:
- * - ✅ Random question selection
+ * - ✅ Random question selection (two-step approach with @EntityGraph)
  * - ✅ Category filtering
+ * - ✅ Belgian compliance validation
  * - ❌ NO 24-hour cooldown (deferred to SmartQuizService)
  * - ❌ NO user history tracking
  * - ❌ NO adaptive difficulty
@@ -43,27 +45,62 @@ public class QuizService {
 
     /**
      * Generate a random quiz with specified number of questions
+     * 
+     * **Fix Applied:** Uses two-step approach to prevent LazyInitializationException:
+     * 1. Get random question IDs using native query with RAND()
+     * 2. Fetch questions with options using @EntityGraph for eager loading
      *
      * @param count Number of questions requested (capped at MAX_QUESTIONS_PER_QUIZ)
      * @return List of random quiz questions with options loaded
      */
     public List<QuizQuestion> generateRandomQuiz(int count) {
+        log.info("🎲 Generating random quiz with {} questions", count);
+        
         // Validate and cap the count
         int actualCount = Math.min(Math.max(count, 1), MAX_QUESTIONS_PER_QUIZ);
 
-        // Fetch random questions using native query with LIMIT
-        // This prevents loading all questions into memory
-        return quizQuestionRepository.findRandomQuestionsWithOptionsNative(actualCount);
+        // Check if we have any active questions
+        Long totalQuestions = quizQuestionRepository.countByIsActiveTrue();
+        if (totalQuestions == null || totalQuestions == 0) {
+            log.warn("⚠️ No active questions available");
+            return Collections.emptyList();
+        }
+
+        // Adjust count if requested more than available
+        actualCount = (int) Math.min(actualCount, totalQuestions);
+
+        // Step 1: Get random question IDs (fast native query with RAND())
+        List<Long> questionIds = quizQuestionRepository.findRandomQuestionIds(actualCount);
+
+        // If no questions found, return empty list
+        if (questionIds.isEmpty()) {
+            log.warn("⚠️ No question IDs returned from random query");
+            return Collections.emptyList();
+        }
+
+        log.debug("📋 Retrieved {} random question IDs", questionIds.size());
+
+        // Step 2: Fetch full questions with options (eager loading with @EntityGraph)
+        List<QuizQuestion> questions = quizQuestionRepository.findAllByIdWithOptions(questionIds);
+
+        log.info("✅ Generated random quiz with {} questions (options eagerly loaded)", questions.size());
+        return questions;
     }
 
     /**
      * Generate a quiz with questions from a specific category
+     * 
+     * **Fix Applied:** Uses two-step approach to prevent LazyInitializationException:
+     * 1. Get random question IDs by category using native query with RAND()
+     * 2. Fetch questions with options using @EntityGraph for eager loading
      *
      * @param categoryId Category ID to filter by
      * @param count Number of questions requested (capped at MAX_QUESTIONS_PER_QUIZ)
      * @return List of random quiz questions from the category with options loaded
      */
     public List<QuizQuestion> generateQuizByCategory(Long categoryId, int count) {
+        log.info("🎲 Generating quiz for category {} with {} questions", categoryId, count);
+        
         if (categoryId == null) {
             throw new IllegalArgumentException("Category ID cannot be null");
         }
@@ -71,11 +108,36 @@ public class QuizService {
         // Validate and cap the count
         int actualCount = Math.min(Math.max(count, 1), MAX_QUESTIONS_PER_QUIZ);
 
-        // Fetch random questions from category using native query with LIMIT
-        return quizQuestionRepository.findRandomQuestionsByCategoryWithOptionsNative(
+        // Check if we have any active questions in this category
+        Long totalQuestions = quizQuestionRepository.countByCategoryIdAndIsActiveTrue(categoryId);
+        if (totalQuestions == null || totalQuestions == 0) {
+            log.warn("⚠️ No active questions available for category {}", categoryId);
+            return Collections.emptyList();
+        }
+
+        // Adjust count if requested more than available
+        actualCount = (int) Math.min(actualCount, totalQuestions);
+
+        // Step 1: Get random question IDs by category (fast native query with RAND())
+        List<Long> questionIds = quizQuestionRepository.findRandomQuestionIdsByCategory(
             categoryId,
             actualCount
         );
+
+        // If no questions found, return empty list
+        if (questionIds.isEmpty()) {
+            log.warn("⚠️ No question IDs returned for category {}", categoryId);
+            return Collections.emptyList();
+        }
+
+        log.debug("📋 Retrieved {} random question IDs for category {}", questionIds.size(), categoryId);
+
+        // Step 2: Fetch full questions with options (eager loading with @EntityGraph)
+        List<QuizQuestion> questions = quizQuestionRepository.findAllByIdWithOptions(questionIds);
+
+        log.info("✅ Generated quiz with {} questions from category {} (options eagerly loaded)", 
+                 questions.size(), categoryId);
+        return questions;
     }
 
     /**
@@ -84,7 +146,8 @@ public class QuizService {
      * @return Total number of active quiz questions
      */
     public Long getTotalActiveQuestions() {
-        return quizQuestionRepository.countByIsActiveTrue();
+        Long count = quizQuestionRepository.countByIsActiveTrue();
+        return count != null ? count : 0L;
     }
 
     /**
@@ -97,7 +160,8 @@ public class QuizService {
         if (categoryId == null) {
             throw new IllegalArgumentException("Category ID cannot be null");
         }
-        return quizQuestionRepository.countByCategoryIdAndIsActiveTrue(categoryId);
+        Long count = quizQuestionRepository.countByCategoryIdAndIsActiveTrue(categoryId);
+        return count != null ? count : 0L;
     }
 
     /**
@@ -119,7 +183,7 @@ public class QuizService {
             );
         }
 
-        log.debug("Question {} validated: {} options (compliant)",
+        log.debug("✅ Question {} validated: {} options (compliant)",
             question.getId(), optionCount);
     }
 
@@ -183,6 +247,6 @@ public class QuizService {
         question.setIsActive(false);
         quizQuestionRepository.save(question);
 
-        log.info("Question {} unpublished (marked as draft)", questionId);
+        log.info("ℹ️ Question {} unpublished (marked as draft)", questionId);
     }
 }
