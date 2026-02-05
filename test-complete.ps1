@@ -7,10 +7,10 @@ cd C:\Users\heyde\Desktop\end_project\readyroad
 
 $baseUrl = "http://localhost:8890"
 
-Write-Host "`n╔════════════════════════════════════════════════════════╗" -ForegroundColor Cyan
-Write-Host "║  READYROAD - Complete Test Suite (21 Tests)          ║" -ForegroundColor Cyan
-Write-Host "║  Expected: 90%+ Success Rate                         ║" -ForegroundColor Cyan
-Write-Host "╚════════════════════════════════════════════════════════╝`n" -ForegroundColor Cyan
+Write-Host "`n========================================================" -ForegroundColor Cyan
+Write-Host "  READYROAD - Complete Test Suite (21 Tests)" -ForegroundColor Cyan
+Write-Host "  Expected: 90%+ Success Rate" -ForegroundColor Cyan
+Write-Host "========================================================`n" -ForegroundColor Cyan
 
 $passed = 0
 $failed = 0
@@ -172,64 +172,62 @@ $endTime = Get-Date
 $duration = ($endTime - $startTime).TotalSeconds
 $successRate = if ($total -gt 0) { [math]::Round(($passed / $total) * 100, 2) } else { 0 }
 
-Write-Host "`n╔════════════════════════════════════════════════════════╗" -ForegroundColor Cyan
-Write-Host "║  📊 FINAL TEST REPORT                                ║" -ForegroundColor Cyan
-Write-Host "╚════════════════════════════════════════════════════════╝" -ForegroundColor Cyan
+Write-Host "`n========================================================" -ForegroundColor Cyan
+Write-Host "  FINAL TEST REPORT" -ForegroundColor Cyan
+Write-Host "========================================================" -ForegroundColor Cyan
 Write-Host ""
-Write-Host "  📈 Statistics:" -ForegroundColor Yellow
-Write-Host "     • Total Tests:    $total" -ForegroundColor White
-Write-Host "     • Passed:         $passed ✅" -ForegroundColor Green
-Write-Host "     • Failed:         $failed ❌" -ForegroundColor $(if ($failed -eq 0) { "Green" } elseif ($failed -le 2) { "Yellow" } else { "Red" })
-Write-Host "     • Success Rate:   $successRate%" -ForegroundColor $(if ($successRate -eq 100) { "Green" } elseif ($successRate -ge 90) { "Yellow" } else { "Red" })
-Write-Host "     • Duration:       $([math]::Round($duration, 2)) sec" -ForegroundColor Gray
+Write-Host "  Statistics:" -ForegroundColor Yellow
+Write-Host "     Total Tests:    $total" -ForegroundColor White
+Write-Host "     Passed:         $passed" -ForegroundColor Green
+Write-Host "     Failed:         $failed" -ForegroundColor $(if ($failed -eq 0) { "Green" } elseif ($failed -le 2) { "Yellow" } else { "Red" })
+Write-Host "     Success Rate:   $successRate%" -ForegroundColor $(if ($successRate -eq 100) { "Green" } elseif ($successRate -ge 90) { "Yellow" } else { "Red" })
+Write-Host "     Duration:       $([math]::Round($duration, 2)) sec" -ForegroundColor Gray
 Write-Host ""
 
 # Detailed status
-Write-Host "  🎯 Overall Status:" -ForegroundColor Yellow
+Write-Host "  Overall Status:" -ForegroundColor Yellow
 if ($successRate -eq 100) {
-    Write-Host "     🎉 PERFECT - All tests passed!" -ForegroundColor Green
-    Write-Host "     ✅ Production Ready!" -ForegroundColor Green
+    Write-Host "     PERFECT - All tests passed!" -ForegroundColor Green
+    Write-Host "     Production Ready!" -ForegroundColor Green
 } elseif ($successRate -ge 90) {
-    Write-Host "     🎉 EXCELLENT - 90%+ tests passed!" -ForegroundColor Green
-    Write-Host "     ✅ Nearly Production Ready!" -ForegroundColor Green
+    Write-Host "     EXCELLENT - 90%+ tests passed!" -ForegroundColor Green
+    Write-Host "     Nearly Production Ready!" -ForegroundColor Green
 } elseif ($successRate -ge 75) {
-    Write-Host "     ✅ GOOD - Most tests passed" -ForegroundColor Green
+    Write-Host "     GOOD - Most tests passed" -ForegroundColor Green
 } else {
-    Write-Host "     ⚠️  Needs improvement" -ForegroundColor Yellow
+    Write-Host "     Needs improvement" -ForegroundColor Yellow
 }
 
 Write-Host ""
-Write-Host "  🏆 Recent Fixes:" -ForegroundColor Yellow
-Write-Host "     ✅ User Profile endpoint" -ForegroundColor Green
-Write-Host "     ✅ Traffic Rules endpoint" -ForegroundColor Green
-Write-Host "     ✅ Exam Simulation (100 questions)" -ForegroundColor Green
-Write-Host "     ✅ Category validation" -ForegroundColor Green
-Write-Host "     ✅ Auto-extract userId from JWT" -ForegroundColor Green
+Write-Host "  Recent Fixes:" -ForegroundColor Yellow
+Write-Host "     User Profile endpoint" -ForegroundColor Green
+Write-Host "     Traffic Rules endpoint" -ForegroundColor Green
+Write-Host "     Exam Simulation (100 questions)" -ForegroundColor Green
+Write-Host "     Category validation" -ForegroundColor Green
+Write-Host "     Auto-extract userId from JWT" -ForegroundColor Green
 
 if ($failed -gt 0 -and $failed -le 3) {
     Write-Host ""
-    Write-Host "  ⚠️  Remaining Issues ($failed):" -ForegroundColor Yellow
+    Write-Host "  Remaining Issues ($failed):" -ForegroundColor Yellow
     Write-Host "     - May need investigation for full production readiness" -ForegroundColor Gray
 }
 
 Write-Host ""
-Write-Host "  📍 Location: C:\Users\heyde\Desktop\end_project\readyroad" -ForegroundColor Gray
-Write-Host "  🕐 Completed: $(Get-Date -Format "HH:mm:ss")" -ForegroundColor Gray
+Write-Host "  Location: C:\Users\heyde\Desktop\end_project\readyroad" -ForegroundColor Gray
+Write-Host "  Completed: $(Get-Date -Format "HH:mm:ss")" -ForegroundColor Gray
 Write-Host ""
-Write-Host "╚════════════════════════════════════════════════════════╝`n" -ForegroundColor Cyan
+Write-Host "========================================================`n" -ForegroundColor Cyan
 
 # Summary based on success rate
 if ($successRate -eq 100) {
-    Write-Host "🎉 CONGRATULATIONS! All systems operational!" -ForegroundColor Green
+    Write-Host "CONGRATULATIONS! All systems operational!" -ForegroundColor Green
 } elseif ($successRate -ge 90) {
-    Write-Host "🎉 EXCELLENT WORK! System is nearly perfect!" -ForegroundColor Green
+    Write-Host "EXCELLENT WORK! System is nearly perfect!" -ForegroundColor Green
 } elseif ($successRate -ge 75) {
-    Write-Host "✅ GOOD JOB! Minor improvements needed." -ForegroundColor Yellow
+    Write-Host "GOOD JOB! Minor improvements needed." -ForegroundColor Yellow
 }
 
 Write-Host ""
-Write-Host "Press any key to exit..." -ForegroundColor Gray
-$null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
 
 # Exit code
 if ($successRate -ge 90) { exit 0 } else { exit 1 }

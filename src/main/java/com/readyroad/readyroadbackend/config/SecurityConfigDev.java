@@ -42,6 +42,12 @@ public class SecurityConfigDev {
         http
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> auth
+                        // Public endpoints
+                        .requestMatchers("/actuator/**").permitAll()
+                        .requestMatchers("/api/auth/**").permitAll()
+                        .requestMatchers("/swagger-ui/**", "/v3/api-docs/**").permitAll()
+                        // Protected endpoints - require authentication
+                        .requestMatchers("/api/**").authenticated()
                         .anyRequest().permitAll()
                 );
 

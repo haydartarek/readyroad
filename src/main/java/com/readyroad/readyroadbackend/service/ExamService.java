@@ -146,6 +146,15 @@ public class ExamService {
             examQuestionsList.add(esq);
         }
 
+        // ✅ Force load lazy collections to prevent LazyInitializationException
+        // This must be done inside @Transactional method
+        examQuestionsList.forEach(esq -> {
+            QuizQuestion q = esq.getQuestion();
+            if (q != null && q.getOptions() != null) {
+                q.getOptions().size(); // Trigger lazy loading
+            }
+        });
+
         log.info("✅ Exam simulation started successfully: examId={}, userId={}, questions={}",
                 exam.getId(), userId, EXAM_QUESTION_COUNT);
 
@@ -167,13 +176,24 @@ public class ExamService {
 
     /**
      * Get exam questions in order.
+     * ✅ Eagerly loads options to prevent LazyInitializationException
      *
      * @param examId Exam ID
-     * @return List of questions in exam order
+     * @return List of questions in exam order with loaded options
      */
     @Transactional(readOnly = true)
     public List<ExamSimulationQuestion> getExamQuestions(Long examId) {
-        return examQuestionRepository.findByExamIdOrderByQuestionOrder(examId);
+        List<ExamSimulationQuestion> examQuestions = examQuestionRepository.findByExamIdOrderByQuestionOrder(examId);
+
+        // ✅ Force load lazy collections inside transaction
+        examQuestions.forEach(esq -> {
+            QuizQuestion q = esq.getQuestion();
+            if (q != null && q.getOptions() != null) {
+                q.getOptions().size(); // Trigger lazy loading
+            }
+        });
+
+        return examQuestions;
     }
 
     /**
@@ -189,14 +209,28 @@ public class ExamService {
 
     /**
      * Get active exam for user.
+     * ✅ Eagerly loads exam questions and options to prevent LazyInitializationException
      *
      * @param userId User ID
-     * @return Active exam or empty
+     * @return Active exam or null
      */
     @Transactional(readOnly = true)
     public ExamSimulation getActiveExam(Long userId) {
-        return examRepository.findByUserIdAndStatus(userId, ExamSimulation.ExamStatus.IN_PROGRESS)
+        ExamSimulation exam = examRepository.findByUserIdAndStatus(userId, ExamSimulation.ExamStatus.IN_PROGRESS)
                 .orElse(null);
+
+        if (exam != null) {
+            // ✅ Force load exam questions and their options inside transaction
+            List<ExamSimulationQuestion> questions = examQuestionRepository.findByExamIdOrderByQuestionOrder(exam.getId());
+            questions.forEach(esq -> {
+                QuizQuestion q = esq.getQuestion();
+                if (q != null && q.getOptions() != null) {
+                    q.getOptions().size(); // Trigger lazy loading
+                }
+            });
+        }
+
+        return exam;
     }
 
     /**
