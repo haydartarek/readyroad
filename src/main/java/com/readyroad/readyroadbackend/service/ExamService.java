@@ -215,6 +215,35 @@ public class ExamService {
     }
 
     /**
+     * Cancel an active exam.
+     *
+     * @param examId Exam ID
+     */
+    @Transactional
+    public void cancelExam(Long examId) {
+        log.info("Cancelling exam: {}", examId);
+
+        ExamSimulation exam = examRepository.findById(examId)
+            .orElseThrow(() -> new ExamNotFoundException("Exam not found: " + examId));
+
+        if (exam.getStatus() != ExamSimulation.ExamStatus.IN_PROGRESS) {
+            log.warn("Cannot cancel exam that is not in progress: examId={}, status={}",
+                examId, exam.getStatus());
+            throw new ExamNotActiveException("Exam is not active");
+        }
+
+        // Mark as cancelled by setting status to COMPLETED with 0 score
+        exam.setStatus(ExamSimulation.ExamStatus.COMPLETED);
+        exam.setCompletedAt(LocalDateTime.now());
+        exam.setCorrectAnswers(0);
+        exam.setScorePercentage(0.0);
+
+        examRepository.save(exam);
+
+        log.info("✅ Exam cancelled: examId={}", examId);
+    }
+
+    /**
      * Submit answer for an exam question.
      * Story A2: Submit Exam Answer
      *

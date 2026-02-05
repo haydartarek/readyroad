@@ -167,4 +167,50 @@ public class ExamSimulationController {
         log.info("✅ Exam history retrieved: userId={}, totalExams={}", userId, examHistory.size());
         return ResponseEntity.ok(response);
     }
+
+    /**
+     * Cancel active exam for user
+     * DELETE /api/exam-simulations/active
+     *
+     * Supports both authenticated (JWT token) and manual userId parameter
+     */
+    @DeleteMapping("/active")
+    @Operation(summary = "Cancel active exam")
+    public ResponseEntity<Map<String, Object>> cancelActiveExam(
+        Authentication authentication,
+        @Parameter(description = "User ID (optional if authenticated)")
+        @RequestParam(required = false) Long userId
+    ) {
+        // Extract userId from JWT token if not provided
+        if (userId == null) {
+            userId = authenticationUtil.extractUserId(authentication);
+            if (userId == null) {
+                log.warn("❌ No userId provided and no authentication found");
+                return ResponseEntity.badRequest().build();
+            }
+        }
+
+        log.info("🗑️ DELETE /api/exam-simulations/active - userId: {}", userId);
+
+        ExamSimulation activeExam = examService.getActiveExam(userId);
+
+        if (activeExam == null) {
+            log.info("ℹ️ No active exam found for user: {}", userId);
+            Map<String, Object> response = new HashMap<>();
+            response.put("success", false);
+            response.put("message", "No active exam to cancel");
+            return ResponseEntity.ok(response);
+        }
+
+        // Cancel the exam by setting status to CANCELLED or COMPLETED
+        examService.cancelExam(activeExam.getId());
+
+        Map<String, Object> response = new HashMap<>();
+        response.put("success", true);
+        response.put("message", "Active exam cancelled successfully");
+        response.put("cancelledExamId", activeExam.getId());
+
+        log.info("✅ Active exam cancelled: examId={}, userId={}", activeExam.getId(), userId);
+        return ResponseEntity.ok(response);
+    }
 }
