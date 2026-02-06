@@ -27,7 +27,7 @@ import org.springframework.context.annotation.Import;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.LocalDateTime;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -444,7 +444,7 @@ public class FeatureAExamSimulationBDDTest {
             // Given: User has an exam session with status "COMPLETED"
             ExamSimulation exam = examService.startExamSimulation(testUserId);
             exam.setStatus(ExamSimulation.ExamStatus.COMPLETED);
-            exam.setCompletedAt(LocalDateTime.now());
+            exam.setCompletedAt(Instant.now());
             examRepository.save(exam);
 
             List<ExamSimulationQuestion> questions = examQuestionRepository
@@ -589,7 +589,7 @@ public class FeatureAExamSimulationBDDTest {
 
             // When: User requests to finalize the exam (manual completion)
             exam.setStatus(ExamSimulation.ExamStatus.COMPLETED);
-            exam.setCompletedAt(LocalDateTime.now());
+            exam.setCompletedAt(Instant.now());
             exam.setCorrectAnswers(45);
             exam.setScorePercentage(90.0);
             examRepository.save(exam);
@@ -655,7 +655,7 @@ public class FeatureAExamSimulationBDDTest {
 
             // When: Exam result is computed
             exam1.setStatus(ExamSimulation.ExamStatus.COMPLETED);
-            exam1.setCompletedAt(LocalDateTime.now());
+            exam1.setCompletedAt(Instant.now());
             exam1.setCorrectAnswers(41);
             exam1.setScorePercentage(82.0); // 41/50 = 82%
             examRepository.save(exam1);
@@ -683,7 +683,7 @@ public class FeatureAExamSimulationBDDTest {
 
             // When: Exam result is computed
             exam.setStatus(ExamSimulation.ExamStatus.COMPLETED);
-            exam.setCompletedAt(LocalDateTime.now());
+            exam.setCompletedAt(Instant.now());
             exam.setCorrectAnswers(40);
             exam.setScorePercentage(80.0); // 40/50 = 80%
             examRepository.save(exam);
@@ -809,7 +809,7 @@ public class FeatureAExamSimulationBDDTest {
 
         // Mark as completed
         exam.setStatus(ExamSimulation.ExamStatus.COMPLETED);
-        exam.setCompletedAt(LocalDateTime.now());
+        exam.setCompletedAt(Instant.now());
         exam.setCorrectAnswers(correctAnswers);
         exam.setScorePercentage((correctAnswers / 50.0) * 100);
         examRepository.save(exam);

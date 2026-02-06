@@ -16,7 +16,8 @@ import org.springframework.context.annotation.Import;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.LocalDateTime;
+import java.time.Duration;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -94,9 +95,9 @@ class TimeLimitEnforcementIntegrationTest extends BaseIntegrationTest {
     @DisplayName("Story A4: Exam starts with countdown timer")
     void testExamStartsWithTimeLimit() {
         // When
-        LocalDateTime beforeStart = LocalDateTime.now();
+        Instant beforeStart = Instant.now();
         ExamSimulation exam = examService.startExamSimulation(testUserId);
-        LocalDateTime afterStart = LocalDateTime.now();
+        Instant afterStart = Instant.now();
 
         // Then
         assertThat(exam.getStartedAt()).isNotNull();
@@ -104,14 +105,14 @@ class TimeLimitEnforcementIntegrationTest extends BaseIntegrationTest {
         assertThat(exam.getStatus()).isEqualTo(ExamSimulation.ExamStatus.IN_PROGRESS);
 
         // Time limit should be 30 minutes
-        long timeLimitMinutes = java.time.Duration.between(
+        long timeLimitMinutes = Duration.between(
                 exam.getStartedAt(),
                 exam.getExpiresAt()
         ).toMinutes();
 
         assertThat(timeLimitMinutes).isEqualTo(30);
 
-        // Start time should be now
+        // Start time should be now (within 1 second tolerance)
         assertThat(exam.getStartedAt()).isBetween(beforeStart, afterStart);
     }
 
@@ -158,7 +159,7 @@ class TimeLimitEnforcementIntegrationTest extends BaseIntegrationTest {
     void testSubmitAnswerAfterExpiry() {
         // Given - Create exam and manually set expiry to past
         ExamSimulation exam = examService.startExamSimulation(testUserId);
-        exam.setExpiresAt(LocalDateTime.now().minusMinutes(1)); // Expired 1 minute ago
+        exam.setExpiresAt(Instant.now().minus(Duration.ofMinutes(1))); // Expired 1 minute ago
         examRepository.save(exam);
 
         Long firstQuestionId = testQuestions.get(0).getId();
@@ -188,7 +189,7 @@ class TimeLimitEnforcementIntegrationTest extends BaseIntegrationTest {
     void testExpiredExamStatusChange() {
         // Given - Exam with past expiry
         ExamSimulation exam = examService.startExamSimulation(testUserId);
-        exam.setExpiresAt(LocalDateTime.now().minusMinutes(1));
+        exam.setExpiresAt(Instant.now().minus(Duration.ofMinutes(1)));
         examRepository.save(exam);
 
         Long firstQuestionId = testQuestions.get(0).getId();
@@ -244,7 +245,7 @@ class TimeLimitEnforcementIntegrationTest extends BaseIntegrationTest {
 
         // Manually expire the exam
         exam.setStatus(ExamSimulation.ExamStatus.EXPIRED);
-        exam.setCompletedAt(LocalDateTime.now());
+        exam.setCompletedAt(Instant.now());
         examRepository.save(exam);
 
         // When - Request results
@@ -265,7 +266,7 @@ class TimeLimitEnforcementIntegrationTest extends BaseIntegrationTest {
         // Given - Expired exam
         ExamSimulation exam = examService.startExamSimulation(testUserId);
         exam.setStatus(ExamSimulation.ExamStatus.EXPIRED);
-        exam.setExpiresAt(LocalDateTime.now().minusMinutes(1));
+        exam.setExpiresAt(Instant.now().minus(Duration.ofMinutes(1)));
         examRepository.save(exam);
 
         Long firstQuestionId = testQuestions.get(0).getId();
@@ -294,7 +295,7 @@ class TimeLimitEnforcementIntegrationTest extends BaseIntegrationTest {
     void testTimeEnforcementConsistency() {
         // Given - Expired exam
         ExamSimulation exam = examService.startExamSimulation(testUserId);
-        exam.setExpiresAt(LocalDateTime.now().minusMinutes(5)); // Expired 5 minutes ago
+        exam.setExpiresAt(Instant.now().minus(Duration.ofMinutes(5))); // Expired 5 minutes ago
         examRepository.save(exam);
 
         Long questionId = testQuestions.get(0).getId();

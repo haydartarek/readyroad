@@ -24,7 +24,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.LocalDateTime;
+import java.time.Instant;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.*;
@@ -121,7 +121,7 @@ class ExamResultsIntegrationTest extends BaseIntegrationTest {
 
         // Mark exam as completed
         exam.setStatus(ExamSimulation.ExamStatus.COMPLETED);
-        exam.setCompletedAt(LocalDateTime.now());
+        exam.setCompletedAt(Instant.now());
         exam.setCorrectAnswers(45);
         exam.setScorePercentage(90.0);
         examRepository.save(exam);
@@ -162,7 +162,7 @@ class ExamResultsIntegrationTest extends BaseIntegrationTest {
         // Given
         ExamSimulation exam = examService.startExamSimulation(testUserId);
         exam.setStatus(ExamSimulation.ExamStatus.COMPLETED);
-        exam.setCompletedAt(LocalDateTime.now());
+        exam.setCompletedAt(Instant.now());
         examRepository.save(exam);
 
         Long otherUserId = 888L;
@@ -212,7 +212,7 @@ class ExamResultsIntegrationTest extends BaseIntegrationTest {
 
         // Mark as completed
         exam.setStatus(ExamSimulation.ExamStatus.COMPLETED);
-        exam.setCompletedAt(LocalDateTime.now());
+        exam.setCompletedAt(Instant.now());
         exam.setCorrectAnswers(50);
         exam.setScorePercentage(100.0);
         examRepository.save(exam);

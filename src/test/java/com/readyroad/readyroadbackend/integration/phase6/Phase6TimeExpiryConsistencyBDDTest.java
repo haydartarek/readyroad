@@ -19,6 +19,8 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.context.WebApplicationContext;
 
+import java.time.Duration;
+import java.time.Instant;
 import java.time.LocalDateTime;
 
 import static org.assertj.core.api.Assertions.*;
@@ -157,8 +159,8 @@ public class Phase6TimeExpiryConsistencyBDDTest {
         // And the user has an exam that is expired
         ExamSimulation exam = new ExamSimulation();
         exam.setUserId(testUserId);
-        exam.setStartedAt(LocalDateTime.now().minusHours(1));
-        exam.setExpiresAt(LocalDateTime.now().minusMinutes(5)); // Expired 5 minutes ago
+        exam.setStartedAt(Instant.now().minus(Duration.ofHours(1)));
+        exam.setExpiresAt(Instant.now().minus(Duration.ofMinutes(5))); // Expired 5 minutes ago
         exam.setTotalQuestions(50);
         exam.setStatus(ExamSimulation.ExamStatus.IN_PROGRESS);
         exam = examSimulationRepository.save(exam);
@@ -195,12 +197,12 @@ public class Phase6TimeExpiryConsistencyBDDTest {
         // And the user has an exam with status "EXPIRED"
         ExamSimulation exam = new ExamSimulation();
         exam.setUserId(testUserId);
-        exam.setStartedAt(LocalDateTime.now().minusHours(1));
-        exam.setExpiresAt(LocalDateTime.now().minusMinutes(5));
+        exam.setStartedAt(Instant.now().minus(Duration.ofHours(1)));
+        exam.setExpiresAt(Instant.now().minus(Duration.ofMinutes(5)));
         exam.setTotalQuestions(50);
         exam.setCorrectAnswers(0);
         exam.setStatus(ExamSimulation.ExamStatus.EXPIRED);
-        exam.setCompletedAt(LocalDateTime.now().minusMinutes(4));
+        exam.setCompletedAt(Instant.now().minus(Duration.ofMinutes(4)));
         exam = examSimulationRepository.save(exam);
 
         Long examId = exam.getId();
@@ -228,8 +230,8 @@ public class Phase6TimeExpiryConsistencyBDDTest {
         // Given: an expired exam exists
         ExamSimulation exam = new ExamSimulation();
         exam.setUserId(testUserId);
-        exam.setStartedAt(LocalDateTime.now().minusHours(1));
-        exam.setExpiresAt(LocalDateTime.now().minusMinutes(10)); // Expired 10 minutes ago
+        exam.setStartedAt(Instant.now().minus(Duration.ofHours(1)));
+        exam.setExpiresAt(Instant.now().minus(Duration.ofMinutes(10))); // Expired 10 minutes ago
         exam.setTotalQuestions(50);
         exam.setStatus(ExamSimulation.ExamStatus.IN_PROGRESS);
         exam = examSimulationRepository.save(exam);

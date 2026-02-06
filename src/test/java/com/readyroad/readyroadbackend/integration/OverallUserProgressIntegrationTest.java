@@ -16,6 +16,8 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
+import java.time.Duration;
+import java.time.Instant;
 import java.time.LocalDateTime;
 
 import static org.assertj.core.api.Assertions.*;
@@ -233,9 +235,9 @@ class OverallUserProgressIntegrationTest {
         exam.setCorrectAnswers(41);
         exam.setScorePercentage(82.0);
         exam.setStatus(ExamSimulation.ExamStatus.COMPLETED);
-        exam.setStartedAt(LocalDateTime.now().minusHours(1));
-        exam.setCompletedAt(LocalDateTime.now());
-        exam.setExpiresAt(LocalDateTime.now().plusHours(1));
+        exam.setStartedAt(Instant.now().minus(Duration.ofHours(1)));
+        exam.setCompletedAt(Instant.now());
+        exam.setExpiresAt(Instant.now().plus(Duration.ofHours(1)));
         examSimulationRepository.save(exam);
 
         // When: the user requests overall progress

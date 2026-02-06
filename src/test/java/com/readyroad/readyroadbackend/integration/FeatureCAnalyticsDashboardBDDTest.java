@@ -31,6 +31,7 @@ import org.springframework.transaction.annotation.Transactional;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import java.math.BigDecimal;
+import java.time.Instant;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -638,7 +639,7 @@ public class FeatureCAnalyticsDashboardBDDTest extends BaseIntegrationTest {
 
         // Mark as completed
         exam.setStatus(ExamSimulation.ExamStatus.COMPLETED);
-        exam.setCompletedAt(LocalDateTime.now());
+        exam.setCompletedAt(Instant.now());
         exam.setCorrectAnswers(correctAnswers);
         exam.setScorePercentage((correctAnswers / 50.0) * 100);
         examRepository.save(exam);
@@ -679,7 +680,7 @@ public class FeatureCAnalyticsDashboardBDDTest extends BaseIntegrationTest {
 
         // Mark as completed
         exam.setStatus(ExamSimulation.ExamStatus.COMPLETED);
-        exam.setCompletedAt(LocalDateTime.now());
+        exam.setCompletedAt(Instant.now());
         exam.setCorrectAnswers(correctCount);
         exam.setScorePercentage((correctCount / 50.0) * 100);
         examRepository.save(exam);
