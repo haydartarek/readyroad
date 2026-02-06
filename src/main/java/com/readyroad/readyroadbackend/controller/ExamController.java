@@ -9,6 +9,7 @@ import com.readyroad.readyroadbackend.dto.exam.SubmitExamAnswerRequest;
 import com.readyroad.readyroadbackend.dto.exam.SubmitExamAnswerResponse;
 import com.readyroad.readyroadbackend.mapper.ExamMapper;
 import com.readyroad.readyroadbackend.service.ExamService;
+import com.readyroad.readyroadbackend.util.AuthenticationUtil;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -57,12 +58,11 @@ public class ExamController {
         @ApiResponse(responseCode = "400", description = "User already has active exam"),
         @ApiResponse(responseCode = "409", description = "Insufficient questions available")
     })
-    public ResponseEntity<ExamStartResponse> startExam(
-        @Parameter(description = "User ID", required = true)
-        @RequestParam Long userId
-    ) {
+    public ResponseEntity<ExamStartResponse> startExam() {
         try {
-            log.info("📝 Starting exam simulation for user: {}", userId);
+            // ✅ SECURITY FIX: Get userId from JWT instead of request param
+            Long userId = AuthenticationUtil.getCurrentUserId();
+            log.info("📝 Starting exam simulation for authenticated user: {}", userId);
 
             // Service returns entity (business logic)
             ExamSimulation exam = examService.startExamSimulation(userId);
@@ -99,10 +99,10 @@ public class ExamController {
         summary = "Check if user can start exam",
         description = "Checks if user has an active exam in progress"
     )
-    public ResponseEntity<Map<String, Object>> canStartExam(
-        @Parameter(description = "User ID", required = true)
-        @RequestParam Long userId
-    ) {
+    public ResponseEntity<Map<String, Object>> canStartExam() {
+        // ✅ SECURITY FIX: Get userId from JWT
+        Long userId = AuthenticationUtil.getCurrentUserId();
+
         boolean canStart = examService.canStartExam(userId);
         ExamSimulation activeExam = examService.getActiveExam(userId);
 
@@ -215,10 +215,10 @@ public class ExamController {
     })
     public ResponseEntity<ExamResultsDTO> getExamResults(
         @Parameter(description = "Exam ID", required = true)
-        @PathVariable Long examId,
-        @Parameter(description = "User ID", required = true)
-        @RequestParam Long userId
+        @PathVariable Long examId
     ) {
+        // ✅ SECURITY FIX: Get userId from JWT
+        Long userId = AuthenticationUtil.getCurrentUserId();
         log.info("📊 Fetching exam results: examId={}, userId={}", examId, userId);
 
         ExamResultsDTO results = examService.getExamResults(examId, userId);
@@ -243,10 +243,9 @@ public class ExamController {
         @ApiResponse(responseCode = "200", description = "Active exam retrieved or null if none"),
         @ApiResponse(responseCode = "404", description = "No active exam found")
     })
-    public ResponseEntity<Map<String, Object>> getActiveExam(
-        @Parameter(description = "User ID", required = true)
-        @RequestParam Long userId
-    ) {
+    public ResponseEntity<Map<String, Object>> getActiveExam() {
+        // ✅ SECURITY FIX: Get userId from JWT
+        Long userId = AuthenticationUtil.getCurrentUserId();
         log.info("🔍 GET /api/exams/simulations/active - userId: {}", userId);
 
         ExamSimulation activeExam = examService.getActiveExam(userId);
@@ -287,10 +286,9 @@ public class ExamController {
     @ApiResponses({
         @ApiResponse(responseCode = "200", description = "Exam history retrieved successfully")
     })
-    public ResponseEntity<Map<String, Object>> getExamHistory(
-        @Parameter(description = "User ID", required = true)
-        @RequestParam Long userId
-    ) {
+    public ResponseEntity<Map<String, Object>> getExamHistory() {
+        // ✅ SECURITY FIX: Get userId from JWT
+        Long userId = AuthenticationUtil.getCurrentUserId();
         log.info("📜 GET /api/exams/simulations/history - userId: {}", userId);
 
         List<ExamSimulation> completedExams = examService.getCompletedExams(userId);

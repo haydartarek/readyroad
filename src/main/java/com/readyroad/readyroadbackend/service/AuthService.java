@@ -119,10 +119,8 @@ public class AuthService {
             log.info("🎯 Password match result: {}", matches);
 
             if (!matches) {
-                log.error("❌ Password does not match!");
-                log.error("   - Provided password: '{}'", request.getPassword());
-                log.error("   - Expected hash starts with: {}",
-                        user.getPasswordHash().substring(0, Math.min(20, user.getPasswordHash().length())));
+                log.error("❌ Password does not match for user: {}", request.getUsername());
+                // ⚠️ NEVER log passwords or hashes - security violation
             }
 
             // Authenticate user using Spring Security

@@ -46,11 +46,20 @@ public class DefaultAdminInitializer {
             }
 
             // Scenario: Create default admin user if missing at startup
+            // ⚠️ SECURITY: Generate random password or use environment variable
+            String defaultPassword = System.getenv("ADMIN_DEFAULT_PASSWORD");
+            if (defaultPassword == null || defaultPassword.isEmpty()) {
+                log.error("❌ CRITICAL: ADMIN_DEFAULT_PASSWORD environment variable not set!");
+                log.error("❌ Cannot create admin user without secure password");
+                log.error("❌ Set ADMIN_DEFAULT_PASSWORD environment variable and restart");
+                return;
+            }
+
             User admin = new User();
             admin.setUsername(adminUsername);
             admin.setEmail("admin@readyroad.com");
             admin.setFullName("System Administrator");
-            admin.setPasswordHash(passwordEncoder.encode("Admin123!"));
+            admin.setPasswordHash(passwordEncoder.encode(defaultPassword));
             admin.setRole(Role.ADMIN);
             admin.setIsActive(true);
             admin.setIsLocked(false);
@@ -60,12 +69,12 @@ public class DefaultAdminInitializer {
             log.info("╔════════════════════════════════════════════════════════════╗");
             log.info("║        ✅ DEFAULT ADMIN USER CREATED                      ║");
             log.info("╚════════════════════════════════════════════════════════════╝");
-            log.info("   Username: admin");
-            log.info("   Password: Admin123!");
+            log.info("   Username: {}", adminUsername);
             log.info("   Email: admin@readyroad.com");
             log.info("   Role: ADMIN");
             log.info("");
-            log.info("⚠️  IMPORTANT: Change this password immediately in production!");
+            log.warn("⚠️  CRITICAL: Password set from ADMIN_DEFAULT_PASSWORD env variable");
+            log.warn("⚠️  Change this password immediately after first login!");
             log.info("");
 
             // Verify the admin user was created successfully
