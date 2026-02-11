@@ -11,7 +11,11 @@ import java.time.LocalDateTime;
  * Quiz User Answer Entity
  *
  * **Phase 2 Restoration:** Re-enabled January 18, 2026
+ * **Fix Applied:** February 6, 2026 - Updated to match database schema
  * Tracks individual user answers within a quiz attempt
+ * 
+ * Database Schema: Uses polymorphic reference (question_type + question_ref_id)
+ * instead of direct foreign key to support both PRACTICE and EXAM questions
  */
 @Entity
 @Table(name = "quiz_user_answers")
@@ -28,13 +32,15 @@ public class QuizUserAnswer {
     @JoinColumn(name = "attempt_id", nullable = false)
     private QuizAttempt attempt;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "question_id", nullable = false)
-    private QuizQuestion question;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "question_type", nullable = false, columnDefinition = "ENUM('PRACTICE','EXAM')")
+    private QuestionType questionType;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "selected_option_id")
-    private QuizAnswerOption selectedOption;
+    @Column(name = "question_ref_id", nullable = false)
+    private Long questionRefId;
+
+    @Column(name = "selected_option", nullable = false)
+    private Integer selectedOption;
 
     @Column(name = "is_correct", nullable = false)
     private Boolean isCorrect;
@@ -42,7 +48,7 @@ public class QuizUserAnswer {
     @Column(name = "time_taken_seconds")
     private Integer timeTakenSeconds;
 
-    @Column(name = "answered_at", nullable = false)
+    @Column(name = "answered_at", nullable = false, updatable = false)
     private LocalDateTime answeredAt;
 
     @PrePersist
@@ -50,5 +56,10 @@ public class QuizUserAnswer {
         if (answeredAt == null) {
             answeredAt = LocalDateTime.now();
         }
+    }
+
+    public enum QuestionType {
+        PRACTICE,
+        EXAM
     }
 }

@@ -144,7 +144,7 @@ public class ProgressService {
         return progressRecords.stream()
                 .filter(p -> p.getQuestionsAttempted() >= MIN_ATTEMPTS_FOR_CATEGORIZATION)
                 .filter(p -> {
-                    BigDecimal accuracy = BigDecimal.valueOf(p.getAccuracyRate());
+                    BigDecimal accuracy = p.getAccuracyRate();
                     return accuracy.compareTo(WEAK_THRESHOLD) < 0;
                 })
                 .map(p -> buildCategorySummary(p, categoryMap))
@@ -163,7 +163,7 @@ public class ProgressService {
         return progressRecords.stream()
                 .filter(p -> p.getQuestionsAttempted() >= MIN_ATTEMPTS_FOR_CATEGORIZATION)
                 .filter(p -> {
-                    BigDecimal accuracy = BigDecimal.valueOf(p.getAccuracyRate());
+                    BigDecimal accuracy = p.getAccuracyRate();
                     return accuracy.compareTo(STRONG_THRESHOLD) > 0;
                 })
                 .map(p -> buildCategorySummary(p, categoryMap))
@@ -183,7 +183,7 @@ public class ProgressService {
 
         return CategoryProgressSummary.builder()
                 .categoryName(categoryName)
-                .accuracy(BigDecimal.valueOf(progress.getAccuracyRate()).setScale(2, RoundingMode.HALF_UP))
+                .accuracy(progress.getAccuracyRate().setScale(2, RoundingMode.HALF_UP))
                 .attempted(progress.getQuestionsAttempted())
                 .build();
     }
@@ -283,7 +283,7 @@ public class ProgressService {
             UserCategoryProgress progress,
             Category category
     ) {
-        BigDecimal accuracyRate = BigDecimal.valueOf(progress.getAccuracyRate())
+        BigDecimal accuracyRate = progress.getAccuracyRate()
             .setScale(2, RoundingMode.HALF_UP);
 
         int questionsAttempted = progress.getQuestionsAttempted();

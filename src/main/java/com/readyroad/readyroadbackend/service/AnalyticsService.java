@@ -285,7 +285,7 @@ public class AnalyticsService {
                 continue;
             }
 
-            double currentAccuracy = progress.getAccuracyRate();
+            double currentAccuracy = progress.getAccuracyRate().doubleValue();
 
             // Calculate accuracy gap
             double accuracyGap = TARGET_ACCURACY - currentAccuracy;

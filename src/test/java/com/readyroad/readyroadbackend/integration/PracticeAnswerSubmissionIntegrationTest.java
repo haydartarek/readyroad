@@ -232,7 +232,7 @@ class PracticeAnswerSubmissionIntegrationTest {
 
         assertEquals(3, progress.getQuestionsAttempted());
         assertEquals(2, progress.getCorrectAnswers());
-        assertEquals(66.67, progress.getAccuracyRate(), 0.01); // Double comparison with delta
+        assertEquals(66.67, progress.getAccuracyRate().doubleValue(), 0.01); // Double comparison with delta
         assertNotNull(progress.getLastPracticed());
     }
 

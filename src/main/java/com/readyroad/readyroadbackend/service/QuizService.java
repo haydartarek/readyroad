@@ -234,8 +234,10 @@ public class QuizService {
         // Story D2: Validate required translations (NL + FR)
         TranslationValidator.validatePublicationRequirements(question);
 
-        // Mark as active (published)
+        // Mark as active and published
         question.setIsActive(true);
+        question.setStatus(QuizQuestion.QuestionStatus.PUBLISHED);
+        question.setPublishedAt(java.time.LocalDateTime.now());
         quizQuestionRepository.save(question);
 
         log.info("✅ Question {} published successfully (NL/FR verified, {} options)",
@@ -253,6 +255,7 @@ public class QuizService {
             .orElseThrow(() -> new IllegalArgumentException("Question not found: " + questionId));
 
         question.setIsActive(false);
+        question.setStatus(QuizQuestion.QuestionStatus.DRAFT);
         quizQuestionRepository.save(question);
 
         log.info("ℹ️ Question {} unpublished (marked as draft)", questionId);

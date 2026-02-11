@@ -566,7 +566,7 @@ public class FeatureCAnalyticsDashboardBDDTest extends BaseIntegrationTest {
         progress.setCategoryId(categoryId);
         progress.setQuestionsAttempted(totalAttempts);
         progress.setCorrectAnswers(correctAnswers);
-        progress.setAccuracyRate((correctAnswers * 100.0) / totalAttempts);
+        progress.setAccuracyRate(BigDecimal.valueOf((correctAnswers * 100.0) / totalAttempts));
         progress.setLastPracticed(LocalDateTime.now());
         userCategoryProgressRepository.save(progress);
     }
@@ -590,7 +590,7 @@ public class FeatureCAnalyticsDashboardBDDTest extends BaseIntegrationTest {
         progress.setCategoryId(categoryId);
         progress.setQuestionsAttempted(consecutiveDays * 2);
         progress.setCorrectAnswers(consecutiveDays);
-        progress.setAccuracyRate(50.0);
+        progress.setAccuracyRate(BigDecimal.valueOf(50.0));
         progress.setLastPracticed(LocalDateTime.now());
         userCategoryProgressRepository.save(progress);
     }

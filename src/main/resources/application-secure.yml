@@ -7,9 +7,9 @@ spring:
     name: readyroad-secure
 
   datasource:
-    url: jdbc:mysql://localhost:3306/readyroad?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true&characterEncoding=UTF-8&useUnicode=true
-    username: haydar
-    password: Hh06101987@
+    url: jdbc:mysql://localhost:3306/readyroad_prod?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true&characterEncoding=UTF-8&useUnicode=true
+    username: ${DB_USERNAME:haydar}
+    password: ${DB_PASSWORD:Hh06101987@}
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
@@ -25,6 +25,9 @@ spring:
     enabled: true
     baseline-on-migrate: true
     locations: classpath:db/migration
+    url: jdbc:mysql://localhost:3306/readyroad_prod?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true&characterEncoding=UTF-8&useUnicode=true
+    user: ${DB_USERNAME:haydar}
+    password: ${DB_PASSWORD:Hh06101987@}
 
   security:
     mode: secure

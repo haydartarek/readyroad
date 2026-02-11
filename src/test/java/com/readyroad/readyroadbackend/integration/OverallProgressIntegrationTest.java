@@ -292,7 +292,7 @@ class OverallProgressIntegrationTest {
         // Calculate accuracy
         if (attempted > 0) {
             double accuracy = (double) correct / attempted * 100.0;
-            progress.setAccuracyRate(accuracy);
+            progress.setAccuracyRate(BigDecimal.valueOf(accuracy));
         }
 
         progress.updateAccuracy(); // Updates mastery level too

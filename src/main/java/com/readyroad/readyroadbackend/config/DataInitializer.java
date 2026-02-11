@@ -38,36 +38,36 @@ public class DataInitializer implements CommandLineRunner {
 
     // ⭐ Manual mapping للدروس → الفئات (يمكن تعديله حسب احتياجك)
     private static final Map<String, String> LESSON_TO_CATEGORY_MAP = Map.ofEntries(
-            Map.entry("les-0", "A"),   // Rijbewijs B - Basis
-            Map.entry("les-1", "A"),   // Verkeersborden Begrijpen
-            Map.entry("les-2", "B"),   // Voorrang
-            Map.entry("les-3", "C"),   // Snelheid en Afstand
-            Map.entry("les-4", "E"),   // Parkeren en Stilstaan
-            Map.entry("les-5", "F"),   // Rijbaan en Rijstroken
-            Map.entry("les-6", "A"),   // Algemene Verkeersregels
-            Map.entry("les-7", "A"),   // Fietsers en de Weg
-            Map.entry("les-8", "F"),   // De Autosnelweg
-            Map.entry("les-9", "F"),   // De Autoweg
-            Map.entry("les-10", "A"),  // Voetgangers op de Weg
-            Map.entry("les-11", "A"),  // De Bestuurder
-            Map.entry("les-12", "A"),  // Maximaal Toegelaten Massa
-            Map.entry("les-13", "A"),  // Lading van Voertuigen
-            Map.entry("les-14", "D"),  // Lichten en Claxon
-            Map.entry("les-15", "A"),  // Kruisen van Voertuigen
-            Map.entry("les-16", "C"),  // Inhalen van Voertuigen
-            Map.entry("les-17", "B"),  // Voorrangsborden
-            Map.entry("les-18", "B"),  // Bevelen Bevoegde Personen
-            Map.entry("les-19", "F"),  // Verkeerslichten
-            Map.entry("les-20", "Z"),  // Zoneborden
-            Map.entry("les-21", "A"),  // Verkeersregels Tram en Bus
-            Map.entry("les-22", "A"),  // Rotondes
-            Map.entry("les-23", "A"),  // Spoorwegovergangen
-            Map.entry("les-24", "A"),  // Alcohol en Drugs in Verkeer
-            Map.entry("les-25", "A"),  // Overzicht Overtredingen
-            Map.entry("les-26", "A"),  // Ongeval Procedures
-            Map.entry("les-27", "A"),  // Zuinig en Ecologisch Rijden
-            Map.entry("les-28", "E"),  // Regels Betreffende Parkeren
-            Map.entry("les-29", "A")   // Techniek van de Auto
+            Map.entry("les-0", "A"), // Rijbewijs B - Basis
+            Map.entry("les-1", "A"), // Verkeersborden Begrijpen
+            Map.entry("les-2", "B"), // Voorrang
+            Map.entry("les-3", "C"), // Snelheid en Afstand
+            Map.entry("les-4", "E"), // Parkeren en Stilstaan
+            Map.entry("les-5", "F"), // Rijbaan en Rijstroken
+            Map.entry("les-6", "A"), // Algemene Verkeersregels
+            Map.entry("les-7", "A"), // Fietsers en de Weg
+            Map.entry("les-8", "F"), // De Autosnelweg
+            Map.entry("les-9", "F"), // De Autoweg
+            Map.entry("les-10", "A"), // Voetgangers op de Weg
+            Map.entry("les-11", "A"), // De Bestuurder
+            Map.entry("les-12", "A"), // Maximaal Toegelaten Massa
+            Map.entry("les-13", "A"), // Lading van Voertuigen
+            Map.entry("les-14", "D"), // Lichten en Claxon
+            Map.entry("les-15", "A"), // Kruisen van Voertuigen
+            Map.entry("les-16", "C"), // Inhalen van Voertuigen
+            Map.entry("les-17", "B"), // Voorrangsborden
+            Map.entry("les-18", "B"), // Bevelen Bevoegde Personen
+            Map.entry("les-19", "F"), // Verkeerslichten
+            Map.entry("les-20", "Z"), // Zoneborden
+            Map.entry("les-21", "A"), // Verkeersregels Tram en Bus
+            Map.entry("les-22", "A"), // Rotondes
+            Map.entry("les-23", "A"), // Spoorwegovergangen
+            Map.entry("les-24", "A"), // Alcohol en Drugs in Verkeer
+            Map.entry("les-25", "A"), // Overzicht Overtredingen
+            Map.entry("les-26", "A"), // Ongeval Procedures
+            Map.entry("les-27", "A"), // Zuinig en Ecologisch Rijden
+            Map.entry("les-28", "E"), // Regels Betreffende Parkeren
+            Map.entry("les-29", "A") // Techniek van de Auto
     );
 
     @Override
@@ -129,7 +129,8 @@ public class DataInitializer implements CommandLineRunner {
             try {
                 String lessonId = getTextOrNull(lessonNode, "id");
                 String titleNl = getTextOrNull(lessonNode, "title_nl");
-                if (titleNl == null) titleNl = getTextOrNull(lessonNode, "title");
+                if (titleNl == null)
+                    titleNl = getTextOrNull(lessonNode, "title");
 
                 // ⭐ تحديد الفئة بناءً على lesson ID أو title
                 Long categoryId = determineLessonCategory(lessonNode);
@@ -194,12 +195,14 @@ public class DataInitializer implements CommandLineRunner {
 
     /**
      * ⭐ تحديد الفئة بناءً على id الدرس أو العنوان
-     * الأولوية: 1) Manual mapping 2) Explicit category_id 3) Pattern matching 4) Default
+     * الأولوية: 1) Manual mapping 2) Explicit category_id 3) Pattern matching 4)
+     * Default
      */
     private Long determineLessonCategory(JsonNode lessonNode) {
         String lessonId = getTextOrNull(lessonNode, "id");
         String titleNl = getTextOrNull(lessonNode, "title_nl");
-        if (titleNl == null) titleNl = getTextOrNull(lessonNode, "title");
+        if (titleNl == null)
+            titleNl = getTextOrNull(lessonNode, "title");
 
         String categoryCode = null;
 
@@ -221,32 +224,60 @@ public class DataInitializer implements CommandLineRunner {
         // 3. إذا لم يوجد، حاول من lesson ID
         if (categoryCode == null && lessonId != null) {
             String idLower = lessonId.toLowerCase();
-            if (idLower.contains("gevaar")) categoryCode = "A";
-            else if (idLower.contains("voorrang") || idLower.contains("priorit")) categoryCode = "B";
-            else if (idLower.contains("verbod") || idLower.contains("prohib")) categoryCode = "C";
-            else if (idLower.contains("gebod") || idLower.contains("verplich")) categoryCode = "D";
-            else if (idLower.contains("parkeer") || idLower.contains("stilstaan")) categoryCode = "E";
-            else if (idLower.contains("aanwijzing") || idLower.contains("richting")) categoryCode = "F";
-            else if (idLower.contains("onderbord") || idLower.contains("aanvullend")) categoryCode = "G";
-            else if (idLower.contains("zone")) categoryCode = "Z";
-            else if (idLower.contains("afbakening")) categoryCode = "M";
-            else if (idLower.contains("informatie") || idLower.contains("tijdelijk")) categoryCode = "H";
+            if (idLower.contains("gevaar"))
+                categoryCode = "A";
+            else if (idLower.contains("voorrang") || idLower.contains("priorit"))
+                categoryCode = "B";
+            else if (idLower.contains("verbod") || idLower.contains("prohib"))
+                categoryCode = "C";
+            else if (idLower.contains("gebod") || idLower.contains("verplich"))
+                categoryCode = "D";
+            else if (idLower.contains("parkeer") || idLower.contains("stilstaan"))
+                categoryCode = "E";
+            else if (idLower.contains("aanwijzing") || idLower.contains("richting"))
+                categoryCode = "F";
+            else if (idLower.contains("onderbord") || idLower.contains("aanvullend"))
+                categoryCode = "G";
+            else if (idLower.contains("zone"))
+                categoryCode = "Z";
+            else if (idLower.contains("afbakening"))
+                categoryCode = "M";
+            else if (idLower.contains("informatie") || idLower.contains("tijdelijk"))
+                categoryCode = "H";
         }
 
         // 4. إذا لم ينجح، حاول من العنوان
         if (categoryCode == null && titleNl != null) {
             String titleLower = titleNl.toLowerCase();
-            if (titleLower.contains("gevaar") || titleLower.contains("danger")) categoryCode = "A";
-            else if (titleLower.contains("voorrang") || titleLower.contains("priorit") || titleLower.contains("priority")) categoryCode = "B";
-            else if (titleLower.contains("verbod") || titleLower.contains("prohib") || titleLower.contains("interdi")) categoryCode = "C";
-            else if (titleLower.contains("gebod") || titleLower.contains("verplich") || titleLower.contains("obligation")) categoryCode = "D";
-            else if (titleLower.contains("parkeer") || titleLower.contains("parking") || titleLower.contains("stationnement")) categoryCode = "E";
-            else if (titleLower.contains("aanwijzing") || titleLower.contains("richting") || titleLower.contains("direction")) categoryCode = "F";
-            else if (titleLower.contains("onderbord") || titleLower.contains("aanvullend") || titleLower.contains("additional")) categoryCode = "G";
-            else if (titleLower.contains("zone")) categoryCode = "Z";
-            else if (titleLower.contains("afbakening") || titleLower.contains("delimitation")) categoryCode = "M";
-            else if (titleLower.contains("informatie") || titleLower.contains("information") || titleLower.contains("tijdelijk")) categoryCode = "H";
-            else if (titleLower.contains("rijbewijs") || titleLower.contains("license") || titleLower.contains("permis")) categoryCode = "A";
+            if (titleLower.contains("gevaar") || titleLower.contains("danger"))
+                categoryCode = "A";
+            else if (titleLower.contains("voorrang") || titleLower.contains("priorit")
+                    || titleLower.contains("priority"))
+                categoryCode = "B";
+            else if (titleLower.contains("verbod") || titleLower.contains("prohib") || titleLower.contains("interdi"))
+                categoryCode = "C";
+            else if (titleLower.contains("gebod") || titleLower.contains("verplich")
+                    || titleLower.contains("obligation"))
+                categoryCode = "D";
+            else if (titleLower.contains("parkeer") || titleLower.contains("parking")
+                    || titleLower.contains("stationnement"))
+                categoryCode = "E";
+            else if (titleLower.contains("aanwijzing") || titleLower.contains("richting")
+                    || titleLower.contains("direction"))
+                categoryCode = "F";
+            else if (titleLower.contains("onderbord") || titleLower.contains("aanvullend")
+                    || titleLower.contains("additional"))
+                categoryCode = "G";
+            else if (titleLower.contains("zone"))
+                categoryCode = "Z";
+            else if (titleLower.contains("afbakening") || titleLower.contains("delimitation"))
+                categoryCode = "M";
+            else if (titleLower.contains("informatie") || titleLower.contains("information")
+                    || titleLower.contains("tijdelijk"))
+                categoryCode = "H";
+            else if (titleLower.contains("rijbewijs") || titleLower.contains("license")
+                    || titleLower.contains("permis"))
+                categoryCode = "A";
         }
 
         // 5. Default: Category A
@@ -275,9 +306,12 @@ public class DataInitializer implements CommandLineRunner {
             // Fallback to direct description
             String descKey = "description_" + lang;
             String desc = getTextOrNull(lessonNode, descKey);
-            if (desc == null) desc = getTextOrNull(lessonNode, "description");
-            if (desc == null) desc = getTextOrNull(lessonNode, "content_" + lang);
-            if (desc == null) desc = getTextOrNull(lessonNode, "content");
+            if (desc == null)
+                desc = getTextOrNull(lessonNode, "description");
+            if (desc == null)
+                desc = getTextOrNull(lessonNode, "content_" + lang);
+            if (desc == null)
+                desc = getTextOrNull(lessonNode, "content");
             return desc != null ? desc : "";
         }
 
@@ -286,7 +320,8 @@ public class DataInitializer implements CommandLineRunner {
             // Add page title
             String titleKey = "title_" + lang;
             String title = getTextOrNull(page, titleKey);
-            if (title == null) title = getTextOrNull(page, "title");
+            if (title == null)
+                title = getTextOrNull(page, "title");
             if (title != null) {
                 content.append("## ").append(title).append("\n\n");
             }
@@ -294,7 +329,8 @@ public class DataInitializer implements CommandLineRunner {
             // Add page content
             String contentKey = "content_" + lang;
             String pageContent = getTextOrNull(page, contentKey);
-            if (pageContent == null) pageContent = getTextOrNull(page, "content");
+            if (pageContent == null)
+                pageContent = getTextOrNull(page, "content");
             if (pageContent != null) {
                 content.append(pageContent).append("\n\n");
             }
@@ -302,7 +338,8 @@ public class DataInitializer implements CommandLineRunner {
             // Add bullet points
             String bulletKey = "bulletPoints_" + lang;
             JsonNode bullets = page.get(bulletKey);
-            if (bullets == null) bullets = page.get("bulletPoints");
+            if (bullets == null)
+                bullets = page.get("bulletPoints");
             if (bullets != null && bullets.isArray()) {
                 for (JsonNode bullet : bullets) {
                     content.append("• ").append(bullet.asText()).append("\n");
@@ -318,9 +355,11 @@ public class DataInitializer implements CommandLineRunner {
      * Helper method لقراءة text من JSON node
      */
     private String getTextOrNull(JsonNode node, String fieldName) {
-        if (node == null || !node.has(fieldName)) return null;
+        if (node == null || !node.has(fieldName))
+            return null;
         JsonNode fieldNode = node.get(fieldName);
-        if (fieldNode == null || fieldNode.isNull()) return null;
+        if (fieldNode == null || fieldNode.isNull())
+            return null;
         String text = fieldNode.asText();
         return text.isEmpty() ? null : text;
     }
@@ -355,7 +394,12 @@ public class DataInitializer implements CommandLineRunner {
 
         InputStream inputStream = new ClassPathResource("data/signs.json").getInputStream();
         InputStreamReader reader = new InputStreamReader(inputStream, StandardCharsets.UTF_8);
-        List<Map<String, Object>> signsData = objectMapper.readValue(reader, List.class);
+
+        // ✅ Use TypeReference for type-safe deserialization
+        List<Map<String, Object>> signsData = objectMapper.readValue(
+                reader,
+                new com.fasterxml.jackson.core.type.TypeReference<List<Map<String, Object>>>() {
+                });
 
         Map<String, String> categoryMapping = Map.ofEntries(
                 Map.entry("gevaarsborden", "A"),
@@ -367,8 +411,7 @@ public class DataInitializer implements CommandLineRunner {
                 Map.entry("onderborden", "G"),
                 Map.entry("zoneborden", "Z"),
                 Map.entry("afbakeningsborden", "M"),
-                Map.entry("informatieborden_en_tijdelijke_verkeersmaatregelen", "F")
-        );
+                Map.entry("informatieborden_en_tijdelijke_verkeersmaatregelen", "F"));
 
         int loaded = 0;
         int skipped = 0;

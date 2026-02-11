@@ -3,6 +3,7 @@ package com.readyroad.readyroadbackend.util;
 import com.readyroad.readyroadbackend.domain.entity.User;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.authentication.AuthenticationCredentialsNotFoundException;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
@@ -35,11 +36,11 @@ public class AuthenticationUtil {
             if (authentication != null && authentication.getPrincipal() instanceof User user) {
                 return user;
             }
-            throw new IllegalStateException("[DEV MODE] Cannot extract User entity");
+            throw new AuthenticationCredentialsNotFoundException("[DEV MODE] Cannot extract User entity");
         }
 
         if (authentication == null || !authentication.isAuthenticated()) {
-            throw new IllegalStateException("[PRODUCTION MODE] User must be authenticated");
+            throw new AuthenticationCredentialsNotFoundException("[PRODUCTION MODE] User must be authenticated");
         }
 
         if (authentication.getPrincipal() instanceof User user) {
@@ -47,7 +48,7 @@ public class AuthenticationUtil {
             return user;
         }
 
-        throw new IllegalStateException("[PRODUCTION MODE] Invalid principal type");
+        throw new AuthenticationCredentialsNotFoundException("[PRODUCTION MODE] Invalid principal type");
     }
 
     public User getCurrentUser() {
@@ -60,8 +61,8 @@ public class AuthenticationUtil {
             return true;
         }
         return authentication != null &&
-               authentication.isAuthenticated() &&
-               !ANONYMOUS_USER.equals(authentication.getPrincipal());
+                authentication.isAuthenticated() &&
+                !ANONYMOUS_USER.equals(authentication.getPrincipal());
     }
 
     public boolean isDevMode() {
@@ -94,17 +95,18 @@ public class AuthenticationUtil {
     private Long handleProductionMode(Authentication authentication) {
         if (authentication == null) {
             log.error("[PRODUCTION MODE] Authentication is null");
-            throw new IllegalStateException("Authentication required. Please login.");
+            throw new AuthenticationCredentialsNotFoundException("Authentication required. Please login.");
         }
 
         if (ANONYMOUS_USER.equals(authentication.getPrincipal())) {
             log.error("[PRODUCTION MODE] Anonymous user detected");
-            throw new IllegalStateException("Authentication required. Anonymous access not permitted.");
+            throw new AuthenticationCredentialsNotFoundException(
+                    "Authentication required. Anonymous access not permitted.");
         }
 
         if (!authentication.isAuthenticated()) {
             log.error("[PRODUCTION MODE] Authentication not validated");
-            throw new IllegalStateException("Authentication failed. Please login again.");
+            throw new AuthenticationCredentialsNotFoundException("Authentication failed. Please login again.");
         }
 
         if (authentication.getPrincipal() instanceof User user) {
@@ -113,7 +115,7 @@ public class AuthenticationUtil {
         }
 
         log.error("[PRODUCTION MODE] Invalid principal type: {}",
-                  authentication.getPrincipal().getClass().getSimpleName());
-        throw new IllegalStateException("Invalid authentication principal");
+                authentication.getPrincipal().getClass().getSimpleName());
+        throw new AuthenticationCredentialsNotFoundException("Invalid authentication principal");
     }
 }

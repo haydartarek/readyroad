@@ -18,24 +18,14 @@ import java.time.LocalDateTime;
  * Phase B Enhancement: Auto-fill question_ref_id using @PrePersist
  */
 @Entity
-@Table(name = "user_question_history", 
-    indexes = {
-        @Index(name = "idx_user_question_history_user_answered", 
-               columnList = "user_id,answered_at"),
-        @Index(name = "idx_user_question_history_question_answered", 
-               columnList = "question_id,answered_at"),
-        @Index(name = "idx_user_question_history_lookup", 
-               columnList = "user_id,question_id,answered_at"),
-        @Index(name = "idx_user_question_history_perf", 
-               columnList = "user_id,answered_at,is_correct")
-    },
-    uniqueConstraints = {
-        @UniqueConstraint(
-            name = "uk_user_question_ref",
-            columnNames = {"user_id", "question_ref_id"}
-        )
-    }
-)
+@Table(name = "user_question_history", indexes = {
+        @Index(name = "idx_user_question_history_user_answered", columnList = "user_id,answered_at"),
+        @Index(name = "idx_user_question_history_question_answered", columnList = "question_id,answered_at"),
+        @Index(name = "idx_user_question_history_lookup", columnList = "user_id,question_id,answered_at"),
+        @Index(name = "idx_user_question_history_perf", columnList = "user_id,answered_at,is_correct")
+}, uniqueConstraints = {
+        @UniqueConstraint(name = "uk_user_question_ref", columnNames = { "user_id", "question_ref_id" })
+})
 @Data
 @Builder
 @NoArgsConstructor
@@ -80,8 +70,15 @@ public class UserQuestionHistory {
     private Integer timeTakenSeconds;
 
     /**
+     * When the question was last shown to the user
+     * Used for cooldown tracking (24h rule)
+     */
+    @Column(name = "last_shown_at", nullable = false)
+    private LocalDateTime lastShownAt;
+
+    /**
      * Tracks the context in which question was shown
-     * Values: PRACTICE, EXAM, CATEGORY_PRACTICE, SMART_QUIZ
+     * Values: RANDOM, CATEGORY, EXAM, SMART_QUIZ
      */
     @Column(name = "last_shown_type", length = 20)
     private String lastShownType;
@@ -91,7 +88,7 @@ public class UserQuestionHistory {
      */
     @Column(name = "times_shown", nullable = false)
     @Builder.Default
-    private Integer timesShown = 0;
+    private Integer timesShown = 1;
 
     /**
      * Number of times user answered correctly
@@ -103,14 +100,14 @@ public class UserQuestionHistory {
     /**
      * Number of times user answered incorrectly
      */
-    @Column(name = "times_incorrect", nullable = false)
+    @Column(name = "times_wrong", nullable = false)
     @Builder.Default
     private Integer timesIncorrect = 0;
 
     /**
      * Result of the last answer (null if not answered yet)
      */
-    @Column(name = "last_answer_correct")
+    // @Column(name = "last_answer_correct")
     private Boolean lastAnswerCorrect;
 
     @Column(name = "created_at", nullable = false, updatable = false)
@@ -136,19 +133,19 @@ public class UserQuestionHistory {
     @PrePersist
     protected void onCreate() {
         log.debug("@PrePersist triggered for UserQuestionHistory");
-        
+
         // ✅ Auto-fill question_ref_id from question_id
         if (this.questionRefId == null && this.questionId != null) {
             log.info("Auto-filling question_ref_id from question_id: {}", this.questionId);
             this.questionRefId = this.questionId;
         }
-        
+
         // ✅ Validate required fields
         if (this.questionRefId == null) {
             log.error("Cannot persist UserQuestionHistory: question_ref_id is null and question_id is null");
             throw new IllegalStateException("question_ref_id cannot be null (and question_id is also null)");
         }
-        
+
         // ✅ Set timestamps
         LocalDateTime now = LocalDateTime.now();
         if (this.createdAt == null) {
@@ -157,13 +154,19 @@ public class UserQuestionHistory {
         if (this.updatedAt == null) {
             this.updatedAt = now;
         }
-        if (this.answeredAt == null) {
-            this.answeredAt = now;
+        // ❌ DON'T auto-set answeredAt - only set when user actually answers
+        // if (this.answeredAt == null) {
+        // this.answeredAt = now;
+        // }
+
+        // ✅ Set lastShownAt if not set (for display tracking)
+        if (this.lastShownAt == null) {
+            this.lastShownAt = now;
         }
-        
+
         // ✅ Initialize counters
         if (this.timesShown == null) {
-            this.timesShown = 0;
+            this.timesShown = 1;
         }
         if (this.timesCorrect == null) {
             this.timesCorrect = 0;
@@ -171,9 +174,9 @@ public class UserQuestionHistory {
         if (this.timesIncorrect == null) {
             this.timesIncorrect = 0;
         }
-        
-        log.debug("onCreate complete - userId: {}, questionId: {}, questionRefId: {}, createdAt: {}", 
-                  this.userId, this.questionId, this.questionRefId, this.createdAt);
+
+        log.debug("onCreate complete - userId: {}, questionId: {}, questionRefId: {}, createdAt: {}",
+                this.userId, this.questionId, this.questionRefId, this.createdAt);
     }
 
     /**
@@ -183,25 +186,25 @@ public class UserQuestionHistory {
     @PreUpdate
     protected void onUpdate() {
         log.debug("@PreUpdate triggered for UserQuestionHistory id: {}", this.id);
-        
+
         // ✅ Ensure question_ref_id is never null during update
         if (this.questionRefId == null && this.questionId != null) {
-            log.warn("question_ref_id was null during update for id: {}. Auto-filling from question_id: {}", 
-                     this.id, this.questionId);
+            log.warn("question_ref_id was null during update for id: {}. Auto-filling from question_id: {}",
+                    this.id, this.questionId);
             this.questionRefId = this.questionId;
         }
-        
+
         // ✅ Validate
         if (this.questionRefId == null) {
             log.error("Cannot update UserQuestionHistory id: {}. question_ref_id is null", this.id);
             throw new IllegalStateException("question_ref_id cannot be null during update");
         }
-        
+
         // ✅ Update timestamp
         this.updatedAt = LocalDateTime.now();
-        
-        log.debug("onUpdate complete - id: {}, questionRefId: {}, updatedAt: {}", 
-                  this.id, this.questionRefId, this.updatedAt);
+
+        log.debug("onUpdate complete - id: {}, questionRefId: {}, updatedAt: {}",
+                this.id, this.questionRefId, this.updatedAt);
     }
 
     // ═══════════════════════════════════════════════════════════════
@@ -214,8 +217,8 @@ public class UserQuestionHistory {
     public void recordShown() {
         this.timesShown++;
         this.answeredAt = LocalDateTime.now();
-        log.debug("Question {} shown to user {} - Times shown: {}", 
-                  this.questionId, this.userId, this.timesShown);
+        log.debug("Question {} shown to user {} - Times shown: {}",
+                this.questionId, this.userId, this.timesShown);
     }
 
     /**
@@ -231,8 +234,8 @@ public class UserQuestionHistory {
         if (timeTaken != null) {
             this.timeTakenSeconds = timeTaken;
         }
-        log.debug("Correct answer recorded for question {} by user {} - Total correct: {}", 
-                  this.questionId, this.userId, this.timesCorrect);
+        log.debug("Correct answer recorded for question {} by user {} - Total correct: {}",
+                this.questionId, this.userId, this.timesCorrect);
     }
 
     /**
@@ -248,8 +251,8 @@ public class UserQuestionHistory {
         if (timeTaken != null) {
             this.timeTakenSeconds = timeTaken;
         }
-        log.debug("Incorrect answer recorded for question {} by user {} - Total incorrect: {}", 
-                  this.questionId, this.userId, this.timesIncorrect);
+        log.debug("Incorrect answer recorded for question {} by user {} - Total incorrect: {}",
+                this.questionId, this.userId, this.timesIncorrect);
     }
 
     /**
@@ -301,17 +304,17 @@ public class UserQuestionHistory {
         if (this.timesCorrect == 0 && this.timesIncorrect > 0) {
             return true;
         }
-        
+
         // If success rate is low
         if (getSuccessRate() < 70.0) {
             return true;
         }
-        
+
         // If last answer was incorrect
         if (Boolean.FALSE.equals(this.lastAnswerCorrect)) {
             return true;
         }
-        
+
         return false;
     }
 
@@ -322,7 +325,7 @@ public class UserQuestionHistory {
      */
     public String getSuggestedDifficulty() {
         double successRate = getSuccessRate();
-        
+
         if (successRate >= 80.0) {
             return "HARD";
         } else if (successRate >= 50.0) {

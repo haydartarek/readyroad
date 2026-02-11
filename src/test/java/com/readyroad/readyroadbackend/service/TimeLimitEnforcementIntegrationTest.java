@@ -1,5 +1,8 @@
 package com.readyroad.readyroadbackend.service;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 import com.readyroad.readyroadbackend.BaseIntegrationTest;
 import com.readyroad.readyroadbackend.domain.entity.*;
 import com.readyroad.readyroadbackend.domain.repository.*;
@@ -86,7 +89,7 @@ class TimeLimitEnforcementIntegrationTest extends BaseIntegrationTest {
         progress.setCategoryId(testCategory.getId());
         progress.setQuestionsAttempted(10);
         progress.setCorrectAnswers(7);
-        progress.setAccuracyRate(70.0);
+        progress.setAccuracyRate(BigDecimal.valueOf(70.0));
         progress.setMasteryLevel(UserCategoryProgress.MasteryLevel.INTERMEDIATE);
         progressRepository.save(progress);
     }

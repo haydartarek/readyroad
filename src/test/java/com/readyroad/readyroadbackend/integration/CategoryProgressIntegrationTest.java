@@ -407,9 +407,9 @@ class CategoryProgressIntegrationTest {
         // Calculate accuracy
         if (questionsAttempted > 0) {
             double accuracy = ((double) correctAnswers / questionsAttempted) * 100.0;
-            progress.setAccuracyRate(accuracy);
+            progress.setAccuracyRate(BigDecimal.valueOf(accuracy));
         } else {
-            progress.setAccuracyRate(0.0);
+            progress.setAccuracyRate(BigDecimal.valueOf(0.0));
         }
 
         progress.updateAccuracy(); // Updates mastery level based on accuracy

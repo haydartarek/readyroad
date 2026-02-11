@@ -1,0 +1,111 @@
+version: '3.8'
+
+# ============================================
+# ReadyRoad - Docker Compose Configuration
+# ============================================
+# Services:
+#   - mysql: MySQL 8 database
+#   - backend: Spring Boot application
+# ============================================
+
+services:
+  # MySQL Database
+  mysql:
+    image: mysql:8.0
+    container_name: readyroad-mysql
+    restart: unless-stopped
+
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-root_password_change_me}
+      MYSQL_DATABASE: readyroad_prod
+      MYSQL_USER: haydar
+      MYSQL_PASSWORD: Hh06101987@
+      TZ: UTC
+
+    ports:
+      - "3306:3306"
+
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./init-db.sql:/docker-entrypoint-initdb.d/init-db.sql:ro
+
+    networks:
+      - readyroad-network
+
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "haydar", "-pHh06101987@"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+      - --default-authentication-plugin=mysql_native_password
+      - --max-connections=200
+
+  # Backend Application
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: readyroad-backend
+    restart: unless-stopped
+
+    depends_on:
+      mysql:
+        condition: service_healthy
+
+    environment:
+      # Spring Profile
+      SPRING_PROFILES_ACTIVE: prod
+
+      # Database Configuration
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_NAME: readyroad_prod
+      DB_USERNAME: haydar
+      DB_PASSWORD: Hh06101987@
+
+      # JWT Configuration
+      JWT_SECRET: ${JWT_SECRET:-404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970337336763979244226452948404D6351}
+      JWT_EXPIRATION: 86400000
+      JWT_ISSUER: readyroad-backend
+
+      # Admin Configuration
+      ADMIN_DEFAULT_PASSWORD: ${ADMIN_DEFAULT_PASSWORD:-Admin123!ChangeMe}
+
+      # Java Options
+      JAVA_OPTS: "-Xms512m -Xmx1024m -XX:+UseContainerSupport -XX:MaxRAMPercentage=75.0"
+
+      # Timezone
+      TZ: UTC
+
+    ports:
+      - "8890:8890"
+
+    volumes:
+      - backend_logs:/app/logs
+
+    networks:
+      - readyroad-network
+
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:8890/actuator/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+# Networks
+networks:
+  readyroad-network:
+    driver: bridge
+
+# Volumes
+volumes:
+  mysql_data:
+    driver: local
+  backend_logs:
+    driver: local

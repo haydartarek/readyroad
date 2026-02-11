@@ -1,17 +1,17 @@
 spring:
   application:
-    name: readyroad
+    name: readyroad_prod
 
   profiles:
-    active: secure
+    active: ${SPRING_PROFILES_ACTIVE:secure}
 
   security:
     mode: secure
 
   datasource:
-    url: jdbc:mysql://localhost:3306/readyroad?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
-    username: haydar
-    password: Hh06101987@
+    url: jdbc:mysql://localhost:3306/readyroad_prod?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true&characterEncoding=UTF-8&useUnicode=true
+    username: ${DB_USERNAME:haydar}
+    password: ${DB_PASSWORD:Hh06101987@}
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:

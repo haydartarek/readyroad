@@ -5,8 +5,13 @@ import com.readyroad.readyroadbackend.domain.repository.UserRepository;
 import com.readyroad.readyroadbackend.domain.repository.QuizAttemptRepository;
 import com.readyroad.readyroadbackend.domain.enums.Role;
 import com.readyroad.readyroadbackend.domain.entity.User;
+import com.readyroad.readyroadbackend.dto.CreateTrafficSignRequest;
+import com.readyroad.readyroadbackend.dto.response.TrafficSignResponse;
+import com.readyroad.readyroadbackend.service.TrafficSignService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
@@ -37,6 +42,7 @@ public class AdminController {
     private final TrafficSignRepository signRepository;
     private final UserRepository userRepository;
     private final QuizAttemptRepository quizAttemptRepository;
+    private final TrafficSignService trafficSignService;
 
     /**
      * Scenario: Admin dashboard returns aggregated stats
@@ -76,6 +82,23 @@ public class AdminController {
         return ResponseEntity.ok(Map.of(
                 "message", "Sign deleted successfully",
                 "id", id));
+    }
+
+    /**
+     * Create a new traffic sign
+     * POST /api/admin/signs
+     */
+    @PostMapping("/signs")
+    public ResponseEntity<?> createSign(@Valid @RequestBody CreateTrafficSignRequest request) {
+        log.info("➕ Creating new traffic sign: {}", request.getSignCode());
+        try {
+            TrafficSignResponse created = trafficSignService.createSign(request);
+            log.info("✅ Sign created successfully: {}", created.signCode());
+            return ResponseEntity.status(HttpStatus.CREATED).body(created);
+        } catch (IllegalArgumentException e) {
+            log.warn("⚠️ Failed to create sign: {}", e.getMessage());
+            return ResponseEntity.badRequest().body(Map.of("error", e.getMessage()));
+        }
     }
 
     /**

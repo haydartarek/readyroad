@@ -1,5 +1,8 @@
 package com.readyroad.readyroadbackend.integration;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 import com.readyroad.readyroadbackend.domain.entity.Category;
 import com.readyroad.readyroadbackend.domain.entity.UserCategoryProgress;
 import com.readyroad.readyroadbackend.domain.repository.CategoryRepository;
@@ -250,7 +253,7 @@ public class StoryC2WeakAreasIntegrationTest {
         progress.setCategoryId(categoryId);
         progress.setQuestionsAttempted(attempted);
         progress.setCorrectAnswers(correct);
-        progress.setAccuracyRate(accuracy);
+        progress.setAccuracyRate(BigDecimal.valueOf(accuracy));
         progress.setMasteryLevel(determineMasteryLevel(accuracy));
         progress.setLastPracticed(LocalDateTime.now());
         progressRepository.save(progress);

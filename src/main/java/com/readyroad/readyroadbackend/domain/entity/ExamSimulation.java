@@ -46,7 +46,7 @@ public class ExamSimulation extends BaseEntity {
     @Column(name = "correct_answers")
     private Integer correctAnswers;
 
-    @Column(name = "score_percentage")
+    @Column(name = "score_percentage", columnDefinition = "DECIMAL(5,2)")
     private Double scorePercentage;
 
     @Column(name = "time_taken_seconds")

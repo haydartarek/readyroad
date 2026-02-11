@@ -1,22 +1,42 @@
 package com.readyroad.readyroadbackend.service;
 
-import com.readyroad.readyroadbackend.domain.entity.User;
-import com.readyroad.readyroadbackend.domain.repository.UserRepository;
-import lombok.RequiredArgsConstructor;
+import com.readyroad.readyroadbackend.dto.NotificationDTO;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+
+@Slf4j
 @Service
-@RequiredArgsConstructor
 public class NotificationService {
 
-    private final UserRepository userRepository;
+    /**
+     * Get all notifications for a user
+     * For now, returns empty list as we don't have a notifications table yet
+     */
+    public List<NotificationDTO> getAllNotifications(String username) {
+        log.info("Getting all notifications for user: {}", username);
+        // TODO: Implement database query when notifications table is ready
+        return new ArrayList<>();
+    }
 
+    /**
+     * Get unread notification count for a user
+     * For now, returns 0 as we don't have a notifications table yet
+     */
     public int getUnreadCount(String username) {
-        User user = userRepository.findByUsername(username)
-                .orElseThrow(() -> new RuntimeException("User not found"));
-        
-        // For now, return 0 as we don't have a notifications table yet
-        // This can be extended later with a proper Notification entity
+        log.info("Getting unread notification count for user: {}", username);
+        // TODO: Implement database query when notifications table is ready
         return 0;
+    }
+
+    /**
+     * Mark a notification as read
+     */
+    public void markAsRead(Long notificationId, String username) {
+        log.info("Marking notification {} as read for user: {}", notificationId, username);
+        // TODO: Implement database update when notifications table is ready
     }
 }

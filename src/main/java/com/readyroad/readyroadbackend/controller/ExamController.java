@@ -41,6 +41,7 @@ public class ExamController {
     private final ExamService examService;
     private final ExamSimulationQuestionRepository examQuestionRepository;
     private final ExamMapper examMapper;
+    private final AuthenticationUtil authenticationUtil;
 
     /**
      * Story A1: Start exam simulation
@@ -59,9 +60,10 @@ public class ExamController {
         @ApiResponse(responseCode = "409", description = "Insufficient questions available")
     })
     public ResponseEntity<ExamStartResponse> startExam() {
+        // ✅ SECURITY FIX: Get userId from JWT instead of request param
+        Long userId = authenticationUtil.getCurrentUserId();
+
         try {
-            // ✅ SECURITY FIX: Get userId from JWT instead of request param
-            Long userId = AuthenticationUtil.getCurrentUserId();
             log.info("📝 Starting exam simulation for authenticated user: {}", userId);
 
             // Service returns entity (business logic)
@@ -101,7 +103,7 @@ public class ExamController {
     )
     public ResponseEntity<Map<String, Object>> canStartExam() {
         // ✅ SECURITY FIX: Get userId from JWT
-        Long userId = AuthenticationUtil.getCurrentUserId();
+        Long userId = authenticationUtil.getCurrentUserId();
 
         boolean canStart = examService.canStartExam(userId);
         ExamSimulation activeExam = examService.getActiveExam(userId);
@@ -218,7 +220,7 @@ public class ExamController {
         @PathVariable Long examId
     ) {
         // ✅ SECURITY FIX: Get userId from JWT
-        Long userId = AuthenticationUtil.getCurrentUserId();
+        Long userId = authenticationUtil.getCurrentUserId();
         log.info("📊 Fetching exam results: examId={}, userId={}", examId, userId);
 
         ExamResultsDTO results = examService.getExamResults(examId, userId);
@@ -245,7 +247,7 @@ public class ExamController {
     })
     public ResponseEntity<Map<String, Object>> getActiveExam() {
         // ✅ SECURITY FIX: Get userId from JWT
-        Long userId = AuthenticationUtil.getCurrentUserId();
+        Long userId = authenticationUtil.getCurrentUserId();
         log.info("🔍 GET /api/exams/simulations/active - userId: {}", userId);
 
         ExamSimulation activeExam = examService.getActiveExam(userId);
@@ -288,7 +290,7 @@ public class ExamController {
     })
     public ResponseEntity<Map<String, Object>> getExamHistory() {
         // ✅ SECURITY FIX: Get userId from JWT
-        Long userId = AuthenticationUtil.getCurrentUserId();
+        Long userId = authenticationUtil.getCurrentUserId();
         log.info("📜 GET /api/exams/simulations/history - userId: {}", userId);
 
         List<ExamSimulation> completedExams = examService.getCompletedExams(userId);

@@ -121,14 +121,18 @@ public interface QuizQuestionRepository extends JpaRepository<QuizQuestion, Long
     /**
      * Find random questions with Pageable support (for SmartQuizService).
      * Uses JPQL ORDER BY RAND() for H2 compatibility.
+     * EntityGraph: Eager-load options to prevent N+1 queries
      */
-    @Query("SELECT qq FROM QuizQuestion qq WHERE qq.isActive = true")
+    @EntityGraph(attributePaths = {"options", "category", "trafficSign"})
+    @Query("SELECT DISTINCT qq FROM QuizQuestion qq WHERE qq.isActive = true")
     List<QuizQuestion> findRandomQuestionsWithOptions(Pageable pageable);
 
     /**
      * Find random questions by category with Pageable support.
+     * EntityGraph: Eager-load options to prevent N+1 queries
      */
-    @Query("SELECT qq FROM QuizQuestion qq WHERE qq.category.id = :categoryId " +
+    @EntityGraph(attributePaths = {"options", "category", "trafficSign"})
+    @Query("SELECT DISTINCT qq FROM QuizQuestion qq WHERE qq.category.id = :categoryId " +
            "AND qq.isActive = true")
     List<QuizQuestion> findRandomQuestionsByCategoryWithOptions(
         @Param("categoryId") Long categoryId,
