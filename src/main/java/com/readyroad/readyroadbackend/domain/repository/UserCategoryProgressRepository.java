@@ -44,4 +44,10 @@ public interface UserCategoryProgressRepository extends JpaRepository<UserCatego
      */
     @Query("SELECT p FROM UserCategoryProgress p WHERE p.userId = :userId AND p.accuracyRate >= 85.0 ORDER BY p.accuracyRate DESC")
     List<UserCategoryProgress> findStrongCategoriesByUserId(Long userId);
+
+    /**
+     * Global category stats aggregated across all users
+     */
+    @Query("SELECT p FROM UserCategoryProgress p LEFT JOIN FETCH p.category ORDER BY p.categoryId")
+    List<UserCategoryProgress> findAllWithCategory();
 }

@@ -1,6 +1,7 @@
 package com.readyroad.readyroadbackend.mapper;
 
 import com.readyroad.readyroadbackend.domain.entity.TrafficSign;
+import com.readyroad.readyroadbackend.dto.response.AdminTrafficSignResponse;
 import com.readyroad.readyroadbackend.dto.response.TrafficSignResponse;
 import org.springframework.stereotype.Component;
 
@@ -20,8 +21,25 @@ public class TrafficSignMapper {
                 sign.getDescriptionEn(),
                 sign.getDescriptionNl(),
                 sign.getDescriptionFr(),
-                sign.getImageUrl()
-        );
+                sign.getImageUrl());
+    }
+
+    public AdminTrafficSignResponse toAdminResponse(TrafficSign sign) {
+        return new AdminTrafficSignResponse(
+                sign.getId(),
+                sign.getSignCode(),
+                sign.getCategory().getCode(),
+                sign.getNameAr(),
+                sign.getNameEn(),
+                sign.getNameNl(),
+                sign.getNameFr(),
+                sign.getDescriptionAr(),
+                sign.getDescriptionEn(),
+                sign.getDescriptionNl(),
+                sign.getDescriptionFr(),
+                sign.getImageUrl(),
+                sign.getIsActive(),
+                sign.getCreatedAt(),
+                sign.getUpdatedAt());
     }
 }
-

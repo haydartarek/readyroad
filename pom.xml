@@ -28,6 +28,8 @@
     </scm>
     <properties>
         <java.version>21</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
     <dependencies>
         <dependency>
@@ -163,6 +165,50 @@
                         </exclude>
                     </excludes>
                 </configuration>
+            </plugin>
+
+            <!-- ═══════════════════════════════════════════════
+                 Surefire – runs UNIT tests only (mvn test)
+                 Excludes integration / BDD / security tests
+                 that require a live database or full runtime.
+                 ═══════════════════════════════════════════════ -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <excludes>
+                        <exclude>**/*IntegrationTest.java</exclude>
+                        <exclude>**/*BDDTest.java</exclude>
+                        <exclude>**/FeatureBProductionSecurityTest.java</exclude>
+                        <exclude>**/FlywayMigrationTest.java</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+
+            <!-- ═══════════════════════════════════════════════
+                 Failsafe – runs INTEGRATION tests (mvn verify)
+                 Only executes when a database is available.
+                 Skip with: mvn verify -DskipITs
+                 ═══════════════════════════════════════════════ -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <configuration>
+                    <includes>
+                        <include>**/*IntegrationTest.java</include>
+                        <include>**/*BDDTest.java</include>
+                        <include>**/FeatureBProductionSecurityTest.java</include>
+                        <include>**/FlywayMigrationTest.java</include>
+                    </includes>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>integration-test</goal>
+                            <goal>verify</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

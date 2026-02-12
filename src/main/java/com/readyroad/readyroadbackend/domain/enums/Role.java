@@ -21,6 +21,12 @@ public enum Role {
     USER,
 
     /**
+     * Student role (legacy/test data)
+     * - Same permissions as USER
+     */
+    STUDENT,
+
+    /**
      * Moderator role
      * - Can review user submissions
      * - Can manage content

@@ -95,6 +95,16 @@ public interface UserQuestionHistoryRepository extends JpaRepository<UserQuestio
                      @Param("since") LocalDateTime since);
 
        /**
+        * Find history records for a user where answeredAt is after a given timestamp.
+        * Used in integration tests and answer submission tracking.
+        *
+        * @param userId User ID
+        * @param since  Timestamp to check from
+        * @return List of history records answered after the given timestamp
+        */
+       List<UserQuestionHistory> findByUserIdAndAnsweredAtAfter(Long userId, LocalDateTime since);
+
+       /**
         * Story C1: Find all wrong attempts for a user (where is_correct = false).
         * Used for error pattern analysis.
         *

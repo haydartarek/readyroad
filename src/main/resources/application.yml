@@ -31,6 +31,11 @@ spring:
 
 server:
   port: 8890
+  servlet:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
   # ✅ Fixed: Use new Spring Boot 3.x properties
   error:
     include-message: always
