@@ -4,15 +4,21 @@ import com.readyroad.readyroadbackend.domain.entity.UserCategoryProgress;
 import com.readyroad.readyroadbackend.domain.repository.TrafficSignRepository;
 import com.readyroad.readyroadbackend.domain.repository.UserRepository;
 import com.readyroad.readyroadbackend.domain.repository.QuizAttemptRepository;
+import com.readyroad.readyroadbackend.domain.repository.QuizQuestionRepository;
 import com.readyroad.readyroadbackend.domain.repository.UserCategoryProgressRepository;
+import com.readyroad.readyroadbackend.domain.repository.QuizUserAnswerRepository;
 import com.readyroad.readyroadbackend.domain.enums.Role;
 import com.readyroad.readyroadbackend.domain.entity.User;
 import com.readyroad.readyroadbackend.domain.entity.QuizAttempt;
+import com.readyroad.readyroadbackend.dto.AdminQuizQuestionRequest;
 import com.readyroad.readyroadbackend.dto.CreateTrafficSignRequest;
+import com.readyroad.readyroadbackend.dto.response.AdminQuizQuestionResponse;
 import com.readyroad.readyroadbackend.dto.response.AdminTrafficSignResponse;
 import com.readyroad.readyroadbackend.dto.response.PageResponse;
 import com.readyroad.readyroadbackend.dto.response.TrafficSignResponse;
+import com.readyroad.readyroadbackend.service.AdminQuizService;
 import com.readyroad.readyroadbackend.service.TrafficSignService;
+import jakarta.validation.ConstraintViolationException;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -21,7 +27,10 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+import com.readyroad.readyroadbackend.service.FileUploadService;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -52,8 +61,12 @@ public class AdminController {
     private final TrafficSignRepository signRepository;
     private final UserRepository userRepository;
     private final QuizAttemptRepository quizAttemptRepository;
+    private final QuizQuestionRepository quizQuestionRepository;
     private final UserCategoryProgressRepository categoryProgressRepository;
+    private final QuizUserAnswerRepository quizUserAnswerRepository;
     private final TrafficSignService trafficSignService;
+    private final AdminQuizService adminQuizService;
+    private final FileUploadService fileUploadService;
 
     /**
      * Scenario: Admin dashboard returns aggregated stats
@@ -67,11 +80,41 @@ public class AdminController {
         stats.put("totalSigns", signRepository.count());
         stats.put("totalUsers", userRepository.count());
         stats.put("totalQuizAttempts", quizAttemptRepository.count());
+        stats.put("totalQuizQuestions", quizQuestionRepository.count());
         stats.put("activeUsers", userRepository.countByIsActiveTrue());
         stats.put("adminUsers", userRepository.countByRole(Role.ADMIN));
         stats.put("moderatorUsers", userRepository.countByRole(Role.MODERATOR));
 
         return ResponseEntity.ok(stats);
+    }
+
+    // ─── Image Upload ────────────────────────────────────────
+
+    /**
+     * Upload an image file for quiz questions.
+     * POST /api/admin/upload/image
+     * Accepts multipart/form-data with a "file" part.
+     * Returns the URL path of the uploaded image.
+     */
+    @PostMapping("/upload/image")
+    public ResponseEntity<?> uploadImage(@RequestParam("file") MultipartFile file) {
+        log.info("📤 Image upload request: name={}, size={}, type={}",
+                file.getOriginalFilename(), file.getSize(), file.getContentType());
+        try {
+            String imageUrl = fileUploadService.uploadImage(file);
+            return ResponseEntity.ok(Map.of(
+                    "url", imageUrl,
+                    "filename", file.getOriginalFilename(),
+                    "size", file.getSize()));
+        } catch (IllegalArgumentException e) {
+            log.warn("⚠️ Upload validation failed: {}", e.getMessage());
+            return ResponseEntity.badRequest()
+                    .body(Map.of("error", e.getMessage()));
+        } catch (Exception e) {
+            log.error("❌ Upload failed", e);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(Map.of("error", "Upload failed: " + e.getMessage()));
+        }
     }
 
     /**
@@ -166,6 +209,173 @@ public class AdminController {
             log.warn("⚠️ Failed to update sign: {}", e.getMessage());
             return ResponseEntity.badRequest().body(Map.of("error", e.getMessage()));
         }
+    }
+
+    // ═══════════════════════════════════════════════════
+    // Quiz Questions CRUD
+    // ═══════════════════════════════════════════════════
+
+    /**
+     * Paginated admin quiz questions list
+     * GET
+     * /api/admin/quiz/questions?page=0&size=20&sort=createdAt,desc&categoryCode=A&difficulty=EASY&q=traffic
+     */
+    @GetMapping("/quiz/questions")
+    public ResponseEntity<PageResponse<AdminQuizQuestionResponse>> getAdminQuizQuestions(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "20") int size,
+            @RequestParam(defaultValue = "createdAt,desc") String sort,
+            @RequestParam(required = false) String categoryCode,
+            @RequestParam(required = false) String difficulty,
+            @RequestParam(required = false) String q) {
+
+        log.info("📋 Admin quiz questions list: page={}, size={}, sort={}, category={}, difficulty={}, q={}",
+                page, size, sort, categoryCode, difficulty, q);
+        PageResponse<AdminQuizQuestionResponse> result = adminQuizService.getQuestionsPaginated(page, size, sort,
+                categoryCode, difficulty, q);
+        return ResponseEntity.ok(result);
+    }
+
+    /**
+     * Get single quiz question by ID (admin view)
+     * GET /api/admin/quiz/questions/{id}
+     */
+    @GetMapping("/quiz/questions/{id}")
+    public ResponseEntity<?> getQuizQuestionById(@PathVariable Long id) {
+        log.info("🔍 Admin fetching quiz question id={}", id);
+        try {
+            AdminQuizQuestionResponse question = adminQuizService.getQuestionById(id);
+            return ResponseEntity.ok(question);
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    /**
+     * Create a new quiz question
+     * POST /api/admin/quiz/questions
+     */
+    @PostMapping("/quiz/questions")
+    public ResponseEntity<?> createQuizQuestion(@Valid @RequestBody AdminQuizQuestionRequest request) {
+        log.info("➕ Creating new quiz question");
+        try {
+            AdminQuizQuestionResponse created = adminQuizService.createQuestion(request);
+            log.info("✅ Quiz question created id={}", created.id());
+            return ResponseEntity.status(HttpStatus.CREATED).body(created);
+        } catch (IllegalArgumentException e) {
+            log.warn("⚠️ Failed to create quiz question: {}", e.getMessage());
+            return ResponseEntity.badRequest().body(Map.of("error", e.getMessage()));
+        } catch (ConstraintViolationException e) {
+            log.warn("⚠️ Validation failed creating quiz question: {}", e.getMessage());
+            return ResponseEntity.badRequest().body(Map.of("error", e.getMessage()));
+        }
+    }
+
+    /**
+     * Update an existing quiz question
+     * PUT /api/admin/quiz/questions/{id}
+     */
+    @PutMapping("/quiz/questions/{id}")
+    public ResponseEntity<?> updateQuizQuestion(@PathVariable Long id,
+            @Valid @RequestBody AdminQuizQuestionRequest request) {
+        log.info("✏️ Updating quiz question id={}", id);
+        try {
+            AdminQuizQuestionResponse updated = adminQuizService.updateQuestion(id, request);
+            log.info("✅ Quiz question updated id={}", updated.id());
+            return ResponseEntity.ok(updated);
+        } catch (IllegalArgumentException e) {
+            log.warn("⚠️ Failed to update quiz question: {}", e.getMessage());
+            return ResponseEntity.badRequest().body(Map.of("error", e.getMessage()));
+        } catch (IllegalStateException e) {
+            log.warn("⚠️ Edit blocked for quiz question id={} — {}", id, e.getMessage());
+            return ResponseEntity.status(HttpStatus.CONFLICT)
+                    .body(Map.of("error", e.getMessage()));
+        } catch (ConstraintViolationException e) {
+            log.warn("⚠️ Validation failed updating quiz question: {}", e.getMessage());
+            return ResponseEntity.badRequest().body(Map.of("error", e.getMessage()));
+        }
+    }
+
+    /**
+     * Delete a quiz question
+     * DELETE /api/admin/quiz/questions/{id}
+     */
+    @DeleteMapping("/quiz/questions/{id}")
+    public ResponseEntity<?> deleteQuizQuestion(@PathVariable Long id) {
+        log.info("🗑️ Attempting to delete quiz question id={}", id);
+        try {
+            adminQuizService.deleteQuestion(id);
+            log.info("✅ Quiz question deleted id={}", id);
+            return ResponseEntity.ok(Map.of(
+                    "message", "Quiz question deleted successfully",
+                    "id", id));
+        } catch (IllegalArgumentException e) {
+            log.warn("⚠️ Quiz question not found id={}", id);
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body(Map.of("error", e.getMessage()));
+        } catch (IllegalStateException e) {
+            log.warn("⚠️ Cannot delete quiz question id={} — {}", id, e.getMessage());
+            return ResponseEntity.status(HttpStatus.CONFLICT)
+                    .body(Map.of("error", e.getMessage()));
+        } catch (DataIntegrityViolationException e) {
+            log.warn("⚠️ Cannot delete quiz question id={} — DB constraint violation", id);
+            return ResponseEntity.status(HttpStatus.CONFLICT)
+                    .body(Map.of("error",
+                            "Cannot delete question — it is referenced by quiz attempts or user answers. Remove those references first."));
+        }
+    }
+
+    // ═══════════════════════════════════════════════════
+    // Reset Test Data
+    // ═══════════════════════════════════════════════════
+
+    /**
+     * Reset (delete) all test data from quiz attempts and user answers.
+     * Only deletes records explicitly marked as isTestData=true.
+     * Does NOT touch real user data or quiz questions.
+     *
+     * POST /api/admin/reset-test-data
+     * Body: { "confirmation": "RESET TEST DATA" }
+     *
+     * Guardrails:
+     * - Requires exact typed confirmation string
+     * - Admin-only (class-level @PreAuthorize)
+     * - Logs who triggered it and deletion counts
+     * - Idempotent: second run returns 0 deletions
+     */
+    @PostMapping("/reset-test-data")
+    @Transactional
+    public ResponseEntity<?> resetTestData(
+            @RequestBody Map<String, String> request,
+            @org.springframework.security.core.annotation.AuthenticationPrincipal org.springframework.security.core.userdetails.UserDetails principal) {
+
+        String confirmation = request.get("confirmation");
+        if (!"RESET TEST DATA".equals(confirmation)) {
+            return ResponseEntity.badRequest()
+                    .body(Map.of("error",
+                            "Invalid confirmation. You must type exactly: RESET TEST DATA"));
+        }
+
+        String adminUser = principal != null ? principal.getUsername() : "unknown";
+        log.info("🧹 Reset test data triggered by admin: {}", adminUser);
+
+        // Count before deletion for reporting
+        long testAnswerCount = quizUserAnswerRepository.countByIsTestDataTrue();
+        long testAttemptCount = quizAttemptRepository.countByIsTestDataTrue();
+
+        // Delete answers first (they reference attempts), then attempts
+        int deletedAnswers = quizUserAnswerRepository.deleteAllTestData();
+        int deletedAttempts = quizAttemptRepository.deleteAllTestData();
+
+        log.info("✅ Reset test data completed by admin={}: deletedAnswers={}, deletedAttempts={}",
+                adminUser, deletedAnswers, deletedAttempts);
+
+        return ResponseEntity.ok(Map.of(
+                "message", "Test data reset completed successfully",
+                "deletedAnswers", deletedAnswers,
+                "deletedAttempts", deletedAttempts,
+                "previousTestAnswers", testAnswerCount,
+                "previousTestAttempts", testAttemptCount));
     }
 
     /**

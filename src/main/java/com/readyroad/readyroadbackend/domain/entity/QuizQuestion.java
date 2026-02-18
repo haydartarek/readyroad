@@ -117,13 +117,13 @@ public class QuizQuestion extends BaseEntity {
     private LocalDateTime publishedAt;
 
     @OneToMany(mappedBy = "question", cascade = CascadeType.ALL, orphanRemoval = true)
-    @BelgianOptionsCount // Story D1: Belgian compliance - 2-3 options only
+    @BelgianOptionsCount // Story D1: Belgian compliance - 2-4 options
     private List<QuizAnswerOption> options = new ArrayList<>();
 
     // Enums
     public enum QuestionStatus {
-        DRAFT,      // Can be edited freely
-        PUBLISHED   // Compliance-locked, immutable
+        DRAFT, // Can be edited freely
+        PUBLISHED // Compliance-locked, immutable
     }
 
     public enum QuestionType {
@@ -139,12 +139,12 @@ public class QuizQuestion extends BaseEntity {
     }
 
     public enum TypicalErrorType {
-        SIGN_CONFUSION,              // خلط بين علامات متشابهة
-        SUPPLEMENTARY_IGNORED,       // تجاهل لوحة تكميلية
-        PRIORITY_MISUNDERSTANDING,   // فهم خاطئ للأولوية
-        SPEED_LIMIT_ERROR,           // خطأ في حدود السرعة
-        ZONE_CONFUSION,              // خلط بين المناطق
-        RULE_OVERGENERALIZATION,     // تعميم قاعدة في مكان خاطئ
+        SIGN_CONFUSION, // خلط بين علامات متشابهة
+        SUPPLEMENTARY_IGNORED, // تجاهل لوحة تكميلية
+        PRIORITY_MISUNDERSTANDING, // فهم خاطئ للأولوية
+        SPEED_LIMIT_ERROR, // خطأ في حدود السرعة
+        ZONE_CONFUSION, // خلط بين المناطق
+        RULE_OVERGENERALIZATION, // تعميم قاعدة في مكان خاطئ
         OTHER
     }
 

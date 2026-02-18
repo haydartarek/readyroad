@@ -1,5 +1,6 @@
 package com.readyroad.readyroadbackend.config;
 
+import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -170,6 +171,20 @@ public class SecurityConfigDev {
                         // Default: permit all other requests (can be changed to denyAll() for stricter
                         // security)
                         .anyRequest().permitAll())
+                // Return proper 401 for unauthenticated requests (not 403)
+                .exceptionHandling(exception -> exception
+                        .authenticationEntryPoint((request, response, authException) -> {
+                            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+                            response.setContentType("application/json");
+                            response.getWriter().write(
+                                    "{\"error\":\"Unauthorized\",\"message\":\"Authentication required. Please login.\"}");
+                        })
+                        .accessDeniedHandler((request, response, accessDeniedException) -> {
+                            response.setStatus(HttpServletResponse.SC_FORBIDDEN);
+                            response.setContentType("application/json");
+                            response.getWriter().write(
+                                    "{\"error\":\"Forbidden\",\"message\":\"You do not have permission to access this resource.\"}");
+                        }))
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
 

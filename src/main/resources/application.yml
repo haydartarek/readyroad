@@ -23,6 +23,12 @@ spring:
         dialect: org.hibernate.dialect.MySQLDialect
         format_sql: false
 
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 5MB
+      max-request-size: 10MB
+
   flyway:
     enabled: true
     baseline-on-migrate: true
@@ -84,6 +90,9 @@ readyroad:
   data-import:
     enabled: false
     path: data
+  upload:
+    max-file-size-mb: 5
+    directory: public/images/quiz
 
 # Application Info (for /actuator/info)
 info:

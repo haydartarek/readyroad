@@ -113,4 +113,10 @@ public interface UserQuestionHistoryRepository extends JpaRepository<UserQuestio
         * @return List of wrong attempts
         */
        List<UserQuestionHistory> findByUserIdAndIsCorrect(Long userId, Boolean isCorrect);
+
+       /**
+        * Check if any history records exist for a given question ID.
+        * Used for delete/edit protection of referenced questions.
+        */
+       boolean existsByQuestionId(Long questionId);
 }

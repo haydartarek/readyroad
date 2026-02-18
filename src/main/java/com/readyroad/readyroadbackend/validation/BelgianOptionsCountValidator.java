@@ -9,20 +9,19 @@ import java.util.List;
 /**
  * Validator for Belgian Options Count - Story D1
  *
- * Ensures quiz questions comply with Belgian law:
+ * Ensures quiz questions comply with Belgian rules:
  * - Minimum 2 options
- * - Maximum 3 options
- * - Never 4 options (common in other countries)
+ * - Maximum 4 options
  */
 public class BelgianOptionsCountValidator
-    implements ConstraintValidator<BelgianOptionsCount, List<QuizAnswerOption>> {
+        implements ConstraintValidator<BelgianOptionsCount, List<QuizAnswerOption>> {
 
     private static final int MIN_OPTIONS = 2;
-    private static final int MAX_OPTIONS = 3;
+    private static final int MAX_OPTIONS = 4;
 
     @Override
     public boolean isValid(List<QuizAnswerOption> options,
-                          ConstraintValidatorContext context) {
+            ConstraintValidatorContext context) {
         // Null is valid (will be caught by @NotNull if needed)
         if (options == null) {
             return true;
@@ -33,9 +32,9 @@ public class BelgianOptionsCountValidator
         if (count < MIN_OPTIONS || count > MAX_OPTIONS) {
             context.disableDefaultConstraintViolation();
             context.buildConstraintViolationWithTemplate(
-                String.format("Belgian standard requires %d-%d options. Found: %d",
-                    MIN_OPTIONS, MAX_OPTIONS, count)
-            ).addConstraintViolation();
+                    String.format("Belgian standard requires %d-%d options. Found: %d",
+                            MIN_OPTIONS, MAX_OPTIONS, count))
+                    .addConstraintViolation();
             return false;
         }
 

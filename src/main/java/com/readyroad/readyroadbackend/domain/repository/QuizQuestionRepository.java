@@ -1,6 +1,7 @@
 package com.readyroad.readyroadbackend.domain.repository;
 
 import com.readyroad.readyroadbackend.domain.entity.QuizQuestion;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -9,6 +10,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Quiz Question Repository
@@ -38,9 +40,8 @@ public interface QuizQuestionRepository extends JpaRepository<QuizQuestion, Long
      * Find questions by category and difficulty
      */
     List<QuizQuestion> findByCategoryIdAndDifficultyLevelAndIsActiveTrue(
-        Long categoryId,
-        QuizQuestion.DifficultyLevel difficultyLevel
-    );
+            Long categoryId,
+            QuizQuestion.DifficultyLevel difficultyLevel);
 
     /**
      * Get random questions (MySQL RAND())
@@ -56,10 +57,9 @@ public interface QuizQuestionRepository extends JpaRepository<QuizQuestion, Long
      * @return List of random question IDs
      */
     @Query(value = "SELECT q.id FROM quiz_questions q " +
-                   "WHERE q.is_active = true " +
-                   "ORDER BY RAND() " +
-                   "LIMIT :limit",
-           nativeQuery = true)
+            "WHERE q.is_active = true " +
+            "ORDER BY RAND() " +
+            "LIMIT :limit", nativeQuery = true)
     List<Long> findRandomQuestionIds(@Param("limit") int limit);
 
     /**
@@ -70,7 +70,7 @@ public interface QuizQuestionRepository extends JpaRepository<QuizQuestion, Long
      * @param ids List of question IDs to fetch
      * @return List of questions with options eagerly loaded
      */
-    @EntityGraph(attributePaths = {"options"})
+    @EntityGraph(attributePaths = { "options" })
     @Query("SELECT qq FROM QuizQuestion qq WHERE qq.id IN :ids")
     List<QuizQuestion> findAllByIdWithOptions(@Param("ids") List<Long> ids);
 
@@ -78,7 +78,7 @@ public interface QuizQuestionRepository extends JpaRepository<QuizQuestion, Long
      * Get random questions by category
      */
     @Query("SELECT qq FROM QuizQuestion qq WHERE qq.category.id = :categoryId " +
-           "AND qq.isActive = true ORDER BY RAND()")
+            "AND qq.isActive = true ORDER BY RAND()")
     List<QuizQuestion> findRandomQuestionsByCategory(@Param("categoryId") Long categoryId);
 
     /**
@@ -86,25 +86,23 @@ public interface QuizQuestionRepository extends JpaRepository<QuizQuestion, Long
      * Step 1: Get random question IDs by category using native query
      *
      * @param categoryId Category ID to filter by
-     * @param limit Maximum number of questions to return
+     * @param limit      Maximum number of questions to return
      * @return List of random question IDs from category
      */
     @Query(value = "SELECT q.id FROM quiz_questions q " +
-                   "WHERE q.category_id = :categoryId AND q.is_active = true " +
-                   "ORDER BY RAND() " +
-                   "LIMIT :limit",
-           nativeQuery = true)
+            "WHERE q.category_id = :categoryId AND q.is_active = true " +
+            "ORDER BY RAND() " +
+            "LIMIT :limit", nativeQuery = true)
     List<Long> findRandomQuestionIdsByCategory(@Param("categoryId") Long categoryId,
-                                                 @Param("limit") int limit);
+            @Param("limit") int limit);
 
     /**
      * Get random questions by difficulty
      */
     @Query("SELECT qq FROM QuizQuestion qq WHERE qq.difficultyLevel = :difficulty " +
-           "AND qq.isActive = true ORDER BY RAND()")
+            "AND qq.isActive = true ORDER BY RAND()")
     List<QuizQuestion> findRandomQuestionsByDifficulty(
-        @Param("difficulty") QuizQuestion.DifficultyLevel difficulty
-    );
+            @Param("difficulty") QuizQuestion.DifficultyLevel difficulty);
 
     /**
      * Count active questions
@@ -123,7 +121,7 @@ public interface QuizQuestionRepository extends JpaRepository<QuizQuestion, Long
      * Uses JPQL ORDER BY RAND() for H2 compatibility.
      * EntityGraph: Eager-load options to prevent N+1 queries
      */
-    @EntityGraph(attributePaths = {"options", "category", "trafficSign"})
+    @EntityGraph(attributePaths = { "options", "category", "trafficSign" })
     @Query("SELECT DISTINCT qq FROM QuizQuestion qq WHERE qq.isActive = true")
     List<QuizQuestion> findRandomQuestionsWithOptions(Pageable pageable);
 
@@ -131,12 +129,12 @@ public interface QuizQuestionRepository extends JpaRepository<QuizQuestion, Long
      * Find random questions by category with Pageable support.
      * EntityGraph: Eager-load options to prevent N+1 queries
      */
-    @EntityGraph(attributePaths = {"options", "category", "trafficSign"})
+    @EntityGraph(attributePaths = { "options", "category", "trafficSign" })
     @Query("SELECT DISTINCT qq FROM QuizQuestion qq WHERE qq.category.id = :categoryId " +
-           "AND qq.isActive = true")
+            "AND qq.isActive = true")
     List<QuizQuestion> findRandomQuestionsByCategoryWithOptions(
-        @Param("categoryId") Long categoryId,
-        Pageable pageable);
+            @Param("categoryId") Long categoryId,
+            Pageable pageable);
 
     /**
      * Count questions in a list of IDs that belong to a specific category.
@@ -151,24 +149,50 @@ public interface QuizQuestionRepository extends JpaRepository<QuizQuestion, Long
      * Used for adaptive quiz generation.
      */
     @Query("SELECT qq FROM QuizQuestion qq " +
-           "WHERE qq.difficultyLevel = :difficulty " +
-           "AND qq.isActive = true")
+            "WHERE qq.difficultyLevel = :difficulty " +
+            "AND qq.isActive = true")
     List<QuizQuestion> findByDifficultyRandom(
-        @Param("difficulty") QuizQuestion.DifficultyLevel difficulty,
-        Pageable pageable
-    );
+            @Param("difficulty") QuizQuestion.DifficultyLevel difficulty,
+            Pageable pageable);
 
     /**
      * Find random questions by category AND difficulty with Pageable support.
      * Used for adaptive quiz generation with category filter.
      */
     @Query("SELECT qq FROM QuizQuestion qq " +
-           "WHERE qq.category.id = :categoryId " +
-           "AND qq.difficultyLevel = :difficulty " +
-           "AND qq.isActive = true")
+            "WHERE qq.category.id = :categoryId " +
+            "AND qq.difficultyLevel = :difficulty " +
+            "AND qq.isActive = true")
     List<QuizQuestion> findByCategoryAndDifficultyRandom(
-        @Param("categoryId") Long categoryId,
-        @Param("difficulty") QuizQuestion.DifficultyLevel difficulty,
-        Pageable pageable
-    );
+            @Param("categoryId") Long categoryId,
+            @Param("difficulty") QuizQuestion.DifficultyLevel difficulty,
+            Pageable pageable);
+
+    // ========== Admin CRUD Methods ==========
+
+    /**
+     * Admin paginated search with optional filters.
+     * Mirrors TrafficSignRepository.findAdminSigns pattern.
+     */
+    @EntityGraph(attributePaths = { "options", "category" })
+    @Query("SELECT qq FROM QuizQuestion qq JOIN qq.category c WHERE " +
+            "(:categoryCode IS NULL OR c.code = :categoryCode) AND " +
+            "(:difficulty IS NULL OR qq.difficultyLevel = :difficulty) AND " +
+            "(:q IS NULL OR " +
+            " LOWER(qq.questionEn) LIKE LOWER(CONCAT('%', :q, '%')) OR " +
+            " LOWER(qq.questionAr) LIKE LOWER(CONCAT('%', :q, '%')) OR " +
+            " LOWER(qq.questionNl) LIKE LOWER(CONCAT('%', :q, '%')) OR " +
+            " LOWER(qq.questionFr) LIKE LOWER(CONCAT('%', :q, '%')))")
+    Page<QuizQuestion> findAdminQuestions(
+            @Param("categoryCode") String categoryCode,
+            @Param("difficulty") QuizQuestion.DifficultyLevel difficulty,
+            @Param("q") String q,
+            Pageable pageable);
+
+    /**
+     * Find a single question with options eagerly loaded (for admin detail view).
+     */
+    @EntityGraph(attributePaths = { "options", "category" })
+    @Query("SELECT qq FROM QuizQuestion qq WHERE qq.id = :id")
+    Optional<QuizQuestion> findByIdWithOptions(@Param("id") Long id);
 }

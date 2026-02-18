@@ -11,19 +11,20 @@ import java.lang.annotation.Target;
 /**
  * Belgian Compliance Validation - Story D1
  *
- * Validates that quiz questions have exactly 2-3 answer options.
+ * Validates that quiz questions have 2-4 answer options.
  * This is a legal requirement for Belgian driving license exams.
  *
  * Usage:
+ * 
  * @BelgianOptionsCount
- * private List<QuizAnswerOption> options;
+ *                      private List<QuizAnswerOption> options;
  */
-@Target({ElementType.FIELD, ElementType.TYPE})
+@Target({ ElementType.FIELD, ElementType.TYPE })
 @Retention(RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = BelgianOptionsCountValidator.class)
 public @interface BelgianOptionsCount {
 
-    String message() default "Belgian standard requires 2-3 options only";
+    String message() default "Belgian standard requires 2-4 options";
 
     Class<?>[] groups() default {};
 
