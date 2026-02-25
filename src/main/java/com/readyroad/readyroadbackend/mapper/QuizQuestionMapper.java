@@ -6,6 +6,7 @@ import com.readyroad.readyroadbackend.dto.QuizAnswerOptionDTO;
 import com.readyroad.readyroadbackend.dto.QuizQuestionDTO;
 import org.springframework.stereotype.Component;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -55,19 +56,23 @@ public class QuizQuestionMapper {
         dto.setQuestionType(question.getQuestionType());
         dto.setDifficultyLevel(question.getDifficultyLevel());
 
-        // ✅ Law #5: Generic content image URL
-        // No assumption about what content this represents
+        // Generic content image URL
         dto.setContentImageUrl(question.getContentImageUrl());
 
-        // Category (if exists)
+        // Category (multilingual)
         if (question.getCategory() != null) {
             dto.setCategoryId(question.getCategory().getId());
-            dto.setCategoryName(question.getCategory().getNameEn());
+            dto.setCategoryCode(question.getCategory().getCode());
+            dto.setCategoryNameEn(question.getCategory().getNameEn());
+            dto.setCategoryNameAr(question.getCategory().getNameAr());
+            dto.setCategoryNameNl(question.getCategory().getNameNl());
+            dto.setCategoryNameFr(question.getCategory().getNameFr());
         }
 
-        // Options
+        // Options sorted by displayOrder — NO correctness signals exposed
         if (question.getOptions() != null) {
             List<QuizAnswerOptionDTO> optionDTOs = question.getOptions().stream()
+                    .sorted(Comparator.comparingInt(o -> o.getDisplayOrder() != null ? o.getDisplayOrder() : 0))
                     .map(this::toOptionDTO)
                     .collect(Collectors.toList());
             dto.setOptions(optionDTOs);

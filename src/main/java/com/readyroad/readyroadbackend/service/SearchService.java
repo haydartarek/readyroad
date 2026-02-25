@@ -36,20 +36,18 @@ public class SearchService {
                         sign.getSignCode(),
                         getTrafficSignName(sign, language),
                         getTrafficSignDescription(sign, language),
-                        "/traffic-signs/" + sign.getSignCode()
-                )));
+                        "/traffic-signs/" + sign.getSignCode())));
 
         // Search lessons (limit 10)
-        List<Lesson> lessons = lessonRepository.searchLessons(searchTerm);
+        List<Lesson> lessons = lessonRepository.searchLessons(query.trim());
         lessons.stream()
                 .limit(10)
                 .forEach(lesson -> results.add(new SearchResultItem(
                         "lesson",
-                        String.valueOf(lesson.getId()),
-                        getLessonTitle(lesson, language),
-                        "", // No description for lessons
-                        "/lessons/" + lesson.getId()
-                )));
+                        lesson.getLessonCode(),
+                        getLessonName(lesson, language),
+                        getLessonDescription(lesson, language),
+                        "/lessons/" + lesson.getLessonCode())));
 
         return new SearchResponse(query, results);
     }
@@ -73,12 +71,22 @@ public class SearchService {
         return desc != null && desc.length() > 100 ? desc.substring(0, 100) + "..." : (desc != null ? desc : "");
     }
 
-    private String getLessonTitle(Lesson lesson, String language) {
+    private String getLessonName(Lesson lesson, String language) {
         return switch (language.toLowerCase()) {
             case "ar" -> lesson.getTitleAr();
             case "nl" -> lesson.getTitleNl();
             case "fr" -> lesson.getTitleFr();
             default -> lesson.getTitleEn();
         };
+    }
+
+    private String getLessonDescription(Lesson lesson, String language) {
+        String desc = switch (language.toLowerCase()) {
+            case "ar" -> lesson.getDescriptionAr();
+            case "nl" -> lesson.getDescriptionNl();
+            case "fr" -> lesson.getDescriptionFr();
+            default -> lesson.getDescriptionEn();
+        };
+        return desc != null && desc.length() > 100 ? desc.substring(0, 100) + "..." : (desc != null ? desc : "");
     }
 }

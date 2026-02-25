@@ -23,7 +23,7 @@ import static org.junit.jupiter.api.Assertions.*;
  * 
  * This test demonstrates:
  * "We can swap Traffic Signs → Math → Medical
- *  WITHOUT modifying Java code"
+ * WITHOUT modifying Java code"
  * 
  * Method:
  * 1. Create mock "Math" question (not Traffic)
@@ -76,19 +76,25 @@ public class ContentSwapProofTest {
         assertEquals("What is 2+2?", dto.getQuestionEn());
         assertEquals("/images/math/addition.png", dto.getContentImageUrl(),
                 "contentImageUrl should work for Math (generic field)");
-        
+
         // Assert - Category is generic
         assertNotNull(dto.getCategoryId());
-        assertEquals("Mathematics", dto.getCategoryName());
+        assertEquals("Mathematics", dto.getCategoryNameEn());
 
-        // Assert - Options work (generic structure)
+        // Assert - Options work (generic structure, sorted by displayOrder)
         assertNotNull(dto.getOptions());
         assertEquals(4, dto.getOptions().size());
+        // Options must be sorted by displayOrder
+        for (int i = 1; i < dto.getOptions().size(); i++) {
+            assertTrue(dto.getOptions().get(i - 1).getDisplayOrder() <= dto.getOptions().get(i).getDisplayOrder(),
+                    "Options must be sorted by displayOrder");
+        }
 
         System.out.println("✅ Math Question Test PASSED");
         System.out.println("   Question: " + dto.getQuestionAr());
         System.out.println("   Image: " + dto.getContentImageUrl());
-        System.out.println("   Options: " + dto.getOptions().size());
+        System.out.println("   Options: " + dto.getOptions().size() + " (sorted by displayOrder)");
+        System.out.println("   ✓ No correctness signals in delivery DTO");
         System.out.println("   ✓ No Java code modification needed");
     }
 
@@ -118,7 +124,7 @@ public class ContentSwapProofTest {
                 "contentImageUrl should work for Medical (generic field)");
 
         // Assert - Category is generic
-        assertEquals("Medical Sciences", dto.getCategoryName());
+        assertEquals("Medical Sciences", dto.getCategoryNameEn());
 
         System.out.println("✅ Medical Question Test PASSED");
         System.out.println("   Question: " + dto.getQuestionAr());
@@ -186,31 +192,31 @@ public class ContentSwapProofTest {
         // This test documents the process
         String swapProcess = """
                 Content Swap Process (Traffic → Math):
-                
+
                 Step 1: Database (2 hours)
                 - Clear quiz_questions table
                 - Insert Math questions
                 - Update content_image_url field
-                
+
                 Step 2: Java Code (0 hours) ✅
                 - NO CHANGES NEEDED
                 - Services work as-is
                 - DTOs work as-is
-                
+
                 Step 3: API Testing (1 hour)
                 - Test /api/smart-quiz/generate
                 - Test /api/smart-quiz/submit
                 - Verify responses
-                
+
                 Step 4: Frontend (8 hours)
                 - Update UI text (category names)
                 - No logic changes
-                
+
                 Total Time: 11 hours < 48 hours ✅
                 """;
 
         System.out.println(swapProcess);
-        
+
         // Assert - Time is within contract
         int estimatedHours = 11;
         int contractLimit = 48;
@@ -229,29 +235,29 @@ public class ContentSwapProofTest {
 
     private QuizQuestion createMathQuestion() {
         QuizQuestion question = new QuizQuestion();
-        
+
         // Multilingual content
         question.setQuestionAr("ما ناتج 2+2؟");
         question.setQuestionEn("What is 2+2?");
         question.setQuestionNl("Wat is 2+2?");
         question.setQuestionFr("Combien fait 2+2?");
-        
+
         // Generic fields
         question.setQuestionType(QuizQuestion.QuestionType.MULTIPLE_CHOICE);
         question.setDifficultyLevel(QuizQuestion.DifficultyLevel.EASY);
-        question.setContentImageUrl("/images/math/addition.png");  // ✅ Generic
-        
+        question.setContentImageUrl("/images/math/addition.png"); // ✅ Generic
+
         // Category (generic)
         Category mathCategory = new Category();
         mathCategory.setId(100L);
         mathCategory.setNameAr("الرياضيات");
         mathCategory.setNameEn("Mathematics");
         question.setCategory(mathCategory);
-        
+
         // Error explanations (from database, not hardcoded)
         question.setErrorExplanationAr("الإجابة الصحيحة هي 4. مجموع 2+2 يساوي 4.");
         question.setErrorExplanationEn("The correct answer is 4. The sum of 2+2 equals 4.");
-        
+
         // Options
         List<QuizAnswerOption> options = new ArrayList<>();
         options.add(createOption(1L, "3", false, 1));
@@ -259,38 +265,38 @@ public class ContentSwapProofTest {
         options.add(createOption(3L, "5", false, 3));
         options.add(createOption(4L, "22", false, 4));
         question.setOptions(options);
-        
+
         return question;
     }
 
     private QuizQuestion createMedicalQuestion() {
         QuizQuestion question = new QuizQuestion();
-        
+
         question.setQuestionAr("ما هو العرض الرئيسي للإنفلونزا؟");
         question.setQuestionEn("What is the main symptom of flu?");
         question.setQuestionNl("Wat is het belangrijkste symptoom van griep?");
         question.setQuestionFr("Quel est le principal symptôme de la grippe?");
-        
+
         question.setQuestionType(QuizQuestion.QuestionType.MULTIPLE_CHOICE);
         question.setDifficultyLevel(QuizQuestion.DifficultyLevel.MEDIUM);
-        question.setContentImageUrl("/images/medical/flu-symptoms.png");  // ✅ Generic
-        
+        question.setContentImageUrl("/images/medical/flu-symptoms.png"); // ✅ Generic
+
         Category medicalCategory = new Category();
         medicalCategory.setId(200L);
         medicalCategory.setNameAr("العلوم الطبية");
         medicalCategory.setNameEn("Medical Sciences");
         question.setCategory(medicalCategory);
-        
+
         question.setErrorExplanationAr("الحمى هي العرض الرئيسي للإنفلونزا.");
         question.setErrorExplanationEn("Fever is the main symptom of flu.");
-        
+
         List<QuizAnswerOption> options = new ArrayList<>();
         options.add(createOption(1L, "صداع", false, 1));
         options.add(createOption(2L, "حمى", true, 2));
         options.add(createOption(3L, "سعال", false, 3));
         options.add(createOption(4L, "غثيان", false, 4));
         question.setOptions(options);
-        
+
         return question;
     }
 

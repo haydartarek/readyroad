@@ -47,7 +47,8 @@ public class QuizService {
     /**
      * Generate a random quiz with specified number of questions
      * 
-     * **Fix Applied:** Uses two-step approach to prevent LazyInitializationException:
+     * **Fix Applied:** Uses two-step approach to prevent
+     * LazyInitializationException:
      * 1. Get random question IDs using native query with RAND()
      * 2. Fetch questions with options using @EntityGraph for eager loading
      *
@@ -56,7 +57,7 @@ public class QuizService {
      */
     public List<QuizQuestion> generateRandomQuiz(int count) {
         log.info("🎲 Generating random quiz with {} questions", count);
-        
+
         // Validate and cap the count
         int actualCount = Math.min(Math.max(count, 1), MAX_QUESTIONS_PER_QUIZ);
 
@@ -91,12 +92,14 @@ public class QuizService {
     /**
      * Generate a quiz with questions from a specific category
      * 
-     * **Fix Applied:** Uses two-step approach to prevent LazyInitializationException:
+     * **Fix Applied:** Uses two-step approach to prevent
+     * LazyInitializationException:
      * 1. Get random question IDs by category using native query with RAND()
      * 2. Fetch questions with options using @EntityGraph for eager loading
      *
      * @param categoryId Category ID to filter by
-     * @param count Number of questions requested (capped at MAX_QUESTIONS_PER_QUIZ)
+     * @param count      Number of questions requested (capped at
+     *                   MAX_QUESTIONS_PER_QUIZ)
      * @return List of random quiz questions from the category with options loaded
      */
     public List<QuizQuestion> generateQuizByCategory(Long categoryId, int count) {
@@ -128,9 +131,8 @@ public class QuizService {
 
         // Step 1: Get random question IDs by category (fast native query with RAND())
         List<Long> questionIds = quizQuestionRepository.findRandomQuestionIdsByCategory(
-            categoryId,
-            actualCount
-        );
+                categoryId,
+                actualCount);
 
         // If no questions found, return empty list
         if (questionIds.isEmpty()) {
@@ -143,32 +145,37 @@ public class QuizService {
         // Step 2: Fetch full questions with options (eager loading with @EntityGraph)
         List<QuizQuestion> questions = quizQuestionRepository.findAllByIdWithOptions(questionIds);
 
-        log.info("✅ Generated quiz with {} questions from category {} (options eagerly loaded)", 
-                 questions.size(), categoryId);
+        log.info("✅ Generated quiz with {} questions from category {} (options eagerly loaded)",
+                questions.size(), categoryId);
         return questions;
     }
 
     /**
-     * Get total count of active questions
+     * Get total count of active + PUBLISHED questions.
+     * Only PUBLISHED questions are counted — drafts are invisible to the delivery
+     * pool.
      *
-     * @return Total number of active quiz questions
+     * @return Total number of deliverable quiz questions
      */
     public Long getTotalActiveQuestions() {
-        Long count = quizQuestionRepository.countByIsActiveTrue();
+        Long count = quizQuestionRepository.countByIsActiveTrueAndStatus(QuizQuestion.QuestionStatus.PUBLISHED);
         return count != null ? count : 0L;
     }
 
     /**
-     * Get count of active questions in a specific category
+     * Get count of active + PUBLISHED questions in a specific category.
+     * Only PUBLISHED questions are counted — drafts are invisible to the delivery
+     * pool.
      *
      * @param categoryId Category ID
-     * @return Number of active quiz questions in the category
+     * @return Number of deliverable quiz questions in the category
      */
     public Long getActiveQuestionsByCategory(Long categoryId) {
         if (categoryId == null) {
             throw new IllegalArgumentException("Category ID cannot be null");
         }
-        Long count = quizQuestionRepository.countByCategoryIdAndIsActiveTrue(categoryId);
+        Long count = quizQuestionRepository.countByCategoryIdAndIsActiveTrueAndStatus(
+                categoryId, QuizQuestion.QuestionStatus.PUBLISHED);
         return count != null ? count : 0L;
     }
 
@@ -187,12 +194,11 @@ public class QuizService {
         int optionCount = question.getOptions().size();
         if (optionCount < 2 || optionCount > 3) {
             throw new BelgianComplianceException(
-                String.format("Belgian standard requires 2-3 options only. Found: %d", optionCount)
-            );
+                    String.format("Belgian standard requires 2-3 options only. Found: %d", optionCount));
         }
 
         log.debug("✅ Question {} validated: {} options (compliant)",
-            question.getId(), optionCount);
+                question.getId(), optionCount);
     }
 
     /**
@@ -219,14 +225,14 @@ public class QuizService {
      * 3. Must have FR translation (Story D2)
      *
      * @param questionId Question ID to publish
-     * @throws IllegalArgumentException if question not found
-     * @throws BelgianComplianceException if options count invalid
+     * @throws IllegalArgumentException     if question not found
+     * @throws BelgianComplianceException   if options count invalid
      * @throws TranslationRequiredException if translations missing
      */
     @Transactional
     public void publishQuestion(Long questionId) {
         QuizQuestion question = quizQuestionRepository.findById(questionId)
-            .orElseThrow(() -> new IllegalArgumentException("Question not found: " + questionId));
+                .orElseThrow(() -> new IllegalArgumentException("Question not found: " + questionId));
 
         // Story D1: Validate Belgian compliance (2-3 options)
         validateBelgianCompliance(question);
@@ -241,7 +247,7 @@ public class QuizService {
         quizQuestionRepository.save(question);
 
         log.info("✅ Question {} published successfully (NL/FR verified, {} options)",
-            questionId, question.getOptions().size());
+                questionId, question.getOptions().size());
     }
 
     /**
@@ -252,7 +258,7 @@ public class QuizService {
     @Transactional
     public void unpublishQuestion(Long questionId) {
         QuizQuestion question = quizQuestionRepository.findById(questionId)
-            .orElseThrow(() -> new IllegalArgumentException("Question not found: " + questionId));
+                .orElseThrow(() -> new IllegalArgumentException("Question not found: " + questionId));
 
         question.setIsActive(false);
         question.setStatus(QuizQuestion.QuestionStatus.DRAFT);

@@ -2,8 +2,10 @@ package com.readyroad.readyroadbackend.controller;
 
 import com.readyroad.readyroadbackend.util.AuthenticationUtil;
 import com.readyroad.readyroadbackend.domain.entity.QuizQuestion;
+import com.readyroad.readyroadbackend.dto.QuizQuestionDTO;
 import com.readyroad.readyroadbackend.dto.practice.SubmitPracticeAnswerRequest;
 import com.readyroad.readyroadbackend.dto.practice.SubmitPracticeAnswerResponse;
+import com.readyroad.readyroadbackend.mapper.QuizQuestionMapper;
 import com.readyroad.readyroadbackend.service.PracticeService;
 import com.readyroad.readyroadbackend.service.QuizService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -49,6 +51,7 @@ public class QuizController {
     private final QuizService quizService;
     private final PracticeService practiceService;
     private final AuthenticationUtil authenticationUtil;
+    private final QuizQuestionMapper quizQuestionMapper;
 
     /**
      * Generate a random quiz
@@ -61,12 +64,12 @@ public class QuizController {
     @GetMapping("/random")
     @Operation(summary = "Generate random quiz",
                description = "Returns random questions from all active categories")
-    public ResponseEntity<List<QuizQuestion>> generateRandomQuiz(
+    public ResponseEntity<List<QuizQuestionDTO>> generateRandomQuiz(
             @Parameter(description = "Number of questions (max 50)", example = "10")
             @RequestParam(defaultValue = "10") int count) {
 
         List<QuizQuestion> questions = quizService.generateRandomQuiz(count);
-        return ResponseEntity.ok(questions);
+        return ResponseEntity.ok(quizQuestionMapper.toDTOList(questions));
     }
 
     /**
@@ -81,14 +84,14 @@ public class QuizController {
     @GetMapping("/category/{categoryId}")
     @Operation(summary = "Generate quiz by category",
                description = "Returns random questions from a specific category")
-    public ResponseEntity<List<QuizQuestion>> generateQuizByCategory(
+    public ResponseEntity<List<QuizQuestionDTO>> generateQuizByCategory(
             @Parameter(description = "Category ID", example = "1")
             @PathVariable Long categoryId,
             @Parameter(description = "Number of questions (max 50)", example = "10")
             @RequestParam(defaultValue = "10") int count) {
 
         List<QuizQuestion> questions = quizService.generateQuizByCategory(categoryId, count);
-        return ResponseEntity.ok(questions);
+        return ResponseEntity.ok(quizQuestionMapper.toDTOList(questions));
     }
 
     /**

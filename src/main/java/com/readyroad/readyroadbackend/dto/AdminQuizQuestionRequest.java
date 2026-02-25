@@ -45,7 +45,7 @@ public class AdminQuizQuestionRequest {
     private Boolean isActive;
 
     @NotEmpty(message = "At least 2 options are required")
-    @Size(min = 2, message = "At least 2 options are required")
+    @Size(min = 2, max = 3, message = "Belgian standard requires 2-3 options")
     @Valid
     private List<OptionDTO> options;
 

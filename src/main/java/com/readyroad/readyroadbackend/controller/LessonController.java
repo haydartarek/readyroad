@@ -1,64 +1,48 @@
 package com.readyroad.readyroadbackend.controller;
 
-import com.readyroad.readyroadbackend.domain.entity.Lesson;
+import com.readyroad.readyroadbackend.dto.response.LessonDetailResponse;
 import com.readyroad.readyroadbackend.dto.response.LessonResponse;
-import com.readyroad.readyroadbackend.mapper.LessonMapper;
 import com.readyroad.readyroadbackend.service.LessonService;
-import com.readyroad.readyroadbackend.service.PracticeQuestionService;
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/lessons")
-@Tag(name = "Lessons", description = "Theory lessons for driving test preparation")
+@Tag(name = "Lessons", description = "Driving theory lessons (public, read-only)")
 public class LessonController {
 
     private final LessonService lessonService;
-    private final PracticeQuestionService practiceQuestionService;
-    private final LessonMapper lessonMapper;
 
-    public LessonController(LessonService lessonService,
-                            PracticeQuestionService practiceQuestionService,
-                            LessonMapper lessonMapper) {
+    public LessonController(LessonService lessonService) {
         this.lessonService = lessonService;
-        this.practiceQuestionService = practiceQuestionService;
-        this.lessonMapper = lessonMapper;
     }
 
     @GetMapping
-    public ResponseEntity<List<LessonResponse>> getAllLessons() {
-        List<Lesson> lessons = lessonService.getAllLessons();
-        List<LessonResponse> response = lessons.stream()
-                .map(lesson -> {
-                    Long questionsCount = practiceQuestionService.getQuestionsCountByLesson(lesson.getId());
-                    return lessonMapper.toResponse(lesson, questionsCount.intValue());
-                })
-                .toList();
-        return ResponseEntity.ok(response);
+    @Operation(summary = "List all active lessons (summary, no pages)")
+    public ResponseEntity<List<LessonResponse>> listLessons() {
+        return ResponseEntity.ok(lessonService.getAllActiveLessons());
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<LessonResponse> getLessonById(@PathVariable Long id) {
-        return lessonService.getLessonById(id)
-                .map(lesson -> {
-                    Long questionsCount = practiceQuestionService.getQuestionsCountByLesson(lesson.getId());
-                    return ResponseEntity.ok(lessonMapper.toResponse(lesson, questionsCount.intValue()));
-                })
-                .orElse(ResponseEntity.notFound().build());
+    @GetMapping("/{idOrCode}")
+    @Operation(summary = "Get a single lesson with all pages")
+    public ResponseEntity<LessonDetailResponse> getLesson(@PathVariable String idOrCode) {
+        return ResponseEntity.ok(lessonService.getLessonByIdOrCode(idOrCode));
     }
 
-    @GetMapping("/category/{categoryId}")
-    public ResponseEntity<List<LessonResponse>> getLessonsByCategory(@PathVariable Long categoryId) {
-        List<Lesson> lessons = lessonService.getLessonsByCategory(categoryId);
-        List<LessonResponse> response = lessons.stream()
-                .map(lesson -> {
-                    Long questionsCount = practiceQuestionService.getQuestionsCountByLesson(lesson.getId());
-                    return lessonMapper.toResponse(lesson, questionsCount.intValue());
-                })
-                .toList();
-        return ResponseEntity.ok(response);
+    @GetMapping("/search")
+    @Operation(summary = "Search lessons by keyword")
+    public ResponseEntity<List<LessonResponse>> searchLessons(@RequestParam("q") String query) {
+        return ResponseEntity.ok(lessonService.searchLessons(query));
+    }
+
+    @GetMapping("/count")
+    @Operation(summary = "Total number of active lessons")
+    public ResponseEntity<Map<String, Long>> countLessons() {
+        return ResponseEntity.ok(Map.of("count", lessonService.countActiveLessons()));
     }
 }

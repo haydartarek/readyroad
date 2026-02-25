@@ -6,6 +6,23 @@ import jakarta.persistence.*;
 @Table(name = "traffic_signs")
 public class TrafficSign extends BaseEntity {
 
+    /**
+     * Computed governance flag: true only when all 4 long_description fields are
+     * present and non-empty.
+     * Not persisted — derived at read time.
+     */
+    @Transient
+    public boolean isLongDescriptionComplete() {
+        return isPresent(longDescriptionEn)
+                && isPresent(longDescriptionNl)
+                && isPresent(longDescriptionFr)
+                && isPresent(longDescriptionAr);
+    }
+
+    private static boolean isPresent(String s) {
+        return s != null && !s.isBlank();
+    }
+
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "category_id", nullable = false)
     private Category category;
@@ -36,6 +53,18 @@ public class TrafficSign extends BaseEntity {
 
     @Column(columnDefinition = "TEXT")
     private String descriptionFr;
+
+    @Column(columnDefinition = "TEXT")
+    private String longDescriptionEn;
+
+    @Column(columnDefinition = "TEXT")
+    private String longDescriptionNl;
+
+    @Column(columnDefinition = "TEXT")
+    private String longDescriptionFr;
+
+    @Column(columnDefinition = "TEXT")
+    private String longDescriptionAr;
 
     @Column(length = 500)
     private String imageUrl;
@@ -124,6 +153,38 @@ public class TrafficSign extends BaseEntity {
         this.descriptionFr = descriptionFr;
     }
 
+    public String getLongDescriptionEn() {
+        return longDescriptionEn;
+    }
+
+    public void setLongDescriptionEn(String longDescriptionEn) {
+        this.longDescriptionEn = longDescriptionEn;
+    }
+
+    public String getLongDescriptionNl() {
+        return longDescriptionNl;
+    }
+
+    public void setLongDescriptionNl(String longDescriptionNl) {
+        this.longDescriptionNl = longDescriptionNl;
+    }
+
+    public String getLongDescriptionFr() {
+        return longDescriptionFr;
+    }
+
+    public void setLongDescriptionFr(String longDescriptionFr) {
+        this.longDescriptionFr = longDescriptionFr;
+    }
+
+    public String getLongDescriptionAr() {
+        return longDescriptionAr;
+    }
+
+    public void setLongDescriptionAr(String longDescriptionAr) {
+        this.longDescriptionAr = longDescriptionAr;
+    }
+
     public String getImageUrl() {
         return imageUrl;
     }
@@ -140,4 +201,3 @@ public class TrafficSign extends BaseEntity {
         this.isActive = isActive;
     }
 }
-

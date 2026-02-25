@@ -21,6 +21,11 @@ public class TrafficSignMapper {
                 sign.getDescriptionEn(),
                 sign.getDescriptionNl(),
                 sign.getDescriptionFr(),
+                sign.getLongDescriptionEn(),
+                sign.getLongDescriptionNl(),
+                sign.getLongDescriptionFr(),
+                sign.getLongDescriptionAr(),
+                sign.isLongDescriptionComplete(),
                 sign.getImageUrl());
     }
 
@@ -37,6 +42,11 @@ public class TrafficSignMapper {
                 sign.getDescriptionEn(),
                 sign.getDescriptionNl(),
                 sign.getDescriptionFr(),
+                sign.getLongDescriptionEn(),
+                sign.getLongDescriptionNl(),
+                sign.getLongDescriptionFr(),
+                sign.getLongDescriptionAr(),
+                sign.isLongDescriptionComplete(),
                 sign.getImageUrl(),
                 sign.getIsActive(),
                 sign.getCreatedAt(),

@@ -21,178 +21,222 @@ import java.util.Optional;
 @Repository
 public interface QuizQuestionRepository extends JpaRepository<QuizQuestion, Long> {
 
-    /**
-     * Find all active quiz questions
-     */
-    List<QuizQuestion> findByIsActiveTrue();
+        /**
+         * Find all active quiz questions
+         */
+        List<QuizQuestion> findByIsActiveTrue();
 
-    /**
-     * Find questions by category
-     */
-    List<QuizQuestion> findByCategoryIdAndIsActiveTrue(Long categoryId);
+        /**
+         * Find questions by category
+         */
+        List<QuizQuestion> findByCategoryIdAndIsActiveTrue(Long categoryId);
 
-    /**
-     * Find questions by difficulty level
-     */
-    List<QuizQuestion> findByDifficultyLevelAndIsActiveTrue(QuizQuestion.DifficultyLevel difficultyLevel);
+        /**
+         * Find questions by difficulty level
+         */
+        List<QuizQuestion> findByDifficultyLevelAndIsActiveTrue(QuizQuestion.DifficultyLevel difficultyLevel);
 
-    /**
-     * Find questions by category and difficulty
-     */
-    List<QuizQuestion> findByCategoryIdAndDifficultyLevelAndIsActiveTrue(
-            Long categoryId,
-            QuizQuestion.DifficultyLevel difficultyLevel);
+        /**
+         * Find questions by category and difficulty
+         */
+        List<QuizQuestion> findByCategoryIdAndDifficultyLevelAndIsActiveTrue(
+                        Long categoryId,
+                        QuizQuestion.DifficultyLevel difficultyLevel);
 
-    /**
-     * Get random questions (MySQL RAND())
-     */
-    @Query("SELECT qq FROM QuizQuestion qq WHERE qq.isActive = true ORDER BY RAND()")
-    List<QuizQuestion> findRandomQuestions();
+        /**
+         * Get random questions (MySQL RAND())
+         * Filters: isActive=true AND status=PUBLISHED
+         */
+        @Query("SELECT qq FROM QuizQuestion qq WHERE qq.isActive = true AND qq.status = 'PUBLISHED' ORDER BY RAND()")
+        List<QuizQuestion> findRandomQuestions();
 
-    /**
-     * Get random questions with options loaded (EAGER fetch)
-     * Step 1: Get random question IDs using native query
-     *
-     * @param limit Maximum number of questions to return
-     * @return List of random question IDs
-     */
-    @Query(value = "SELECT q.id FROM quiz_questions q " +
-            "WHERE q.is_active = true " +
-            "ORDER BY RAND() " +
-            "LIMIT :limit", nativeQuery = true)
-    List<Long> findRandomQuestionIds(@Param("limit") int limit);
+        /**
+         * Get random questions with options loaded (EAGER fetch)
+         * Step 1: Get random question IDs using native query
+         *
+         * @param limit Maximum number of questions to return
+         * @return List of random question IDs
+         */
+        @Query(value = "SELECT q.id FROM quiz_questions q " +
+                        "WHERE q.is_active = true AND q.status = 'PUBLISHED' " +
+                        "ORDER BY RAND() " +
+                        "LIMIT :limit", nativeQuery = true)
+        List<Long> findRandomQuestionIds(@Param("limit") int limit);
 
-    /**
-     * Get random questions with options loaded (EAGER fetch)
-     * Step 2: Fetch full questions with options by IDs
-     * Uses @EntityGraph for reliable eager loading
-     *
-     * @param ids List of question IDs to fetch
-     * @return List of questions with options eagerly loaded
-     */
-    @EntityGraph(attributePaths = { "options" })
-    @Query("SELECT qq FROM QuizQuestion qq WHERE qq.id IN :ids")
-    List<QuizQuestion> findAllByIdWithOptions(@Param("ids") List<Long> ids);
+        /**
+         * Get random questions with options loaded (EAGER fetch)
+         * Step 2: Fetch full questions with options by IDs
+         * Uses @EntityGraph for reliable eager loading
+         *
+         * @param ids List of question IDs to fetch
+         * @return List of questions with options eagerly loaded
+         */
+        @EntityGraph(attributePaths = { "options" })
+        @Query("SELECT qq FROM QuizQuestion qq WHERE qq.id IN :ids")
+        List<QuizQuestion> findAllByIdWithOptions(@Param("ids") List<Long> ids);
 
-    /**
-     * Get random questions by category
-     */
-    @Query("SELECT qq FROM QuizQuestion qq WHERE qq.category.id = :categoryId " +
-            "AND qq.isActive = true ORDER BY RAND()")
-    List<QuizQuestion> findRandomQuestionsByCategory(@Param("categoryId") Long categoryId);
+        /**
+         * Get random questions by category
+         */
+        @Query("SELECT qq FROM QuizQuestion qq WHERE qq.category.id = :categoryId " +
+                        "AND qq.isActive = true AND qq.status = 'PUBLISHED' ORDER BY RAND()")
+        List<QuizQuestion> findRandomQuestionsByCategory(@Param("categoryId") Long categoryId);
 
-    /**
-     * Get random questions by category with options loaded (EAGER fetch)
-     * Step 1: Get random question IDs by category using native query
-     *
-     * @param categoryId Category ID to filter by
-     * @param limit      Maximum number of questions to return
-     * @return List of random question IDs from category
-     */
-    @Query(value = "SELECT q.id FROM quiz_questions q " +
-            "WHERE q.category_id = :categoryId AND q.is_active = true " +
-            "ORDER BY RAND() " +
-            "LIMIT :limit", nativeQuery = true)
-    List<Long> findRandomQuestionIdsByCategory(@Param("categoryId") Long categoryId,
-            @Param("limit") int limit);
+        /**
+         * Get random questions by category with options loaded (EAGER fetch)
+         * Step 1: Get random question IDs by category using native query
+         *
+         * @param categoryId Category ID to filter by
+         * @param limit      Maximum number of questions to return
+         * @return List of random question IDs from category
+         */
+        @Query(value = "SELECT q.id FROM quiz_questions q " +
+                        "WHERE q.category_id = :categoryId AND q.is_active = true AND q.status = 'PUBLISHED' " +
+                        "ORDER BY RAND() " +
+                        "LIMIT :limit", nativeQuery = true)
+        List<Long> findRandomQuestionIdsByCategory(@Param("categoryId") Long categoryId,
+                        @Param("limit") int limit);
 
-    /**
-     * Get random questions by difficulty
-     */
-    @Query("SELECT qq FROM QuizQuestion qq WHERE qq.difficultyLevel = :difficulty " +
-            "AND qq.isActive = true ORDER BY RAND()")
-    List<QuizQuestion> findRandomQuestionsByDifficulty(
-            @Param("difficulty") QuizQuestion.DifficultyLevel difficulty);
+        /**
+         * Get random questions by difficulty
+         */
+        @Query("SELECT qq FROM QuizQuestion qq WHERE qq.difficultyLevel = :difficulty " +
+                        "AND qq.isActive = true AND qq.status = 'PUBLISHED' ORDER BY RAND()")
+        List<QuizQuestion> findRandomQuestionsByDifficulty(
+                        @Param("difficulty") QuizQuestion.DifficultyLevel difficulty);
 
-    /**
-     * Count active questions
-     */
-    Long countByIsActiveTrue();
+        /**
+         * Count active questions
+         */
+        Long countByIsActiveTrue();
 
-    /**
-     * Count active questions by category
-     */
-    Long countByCategoryIdAndIsActiveTrue(Long categoryId);
+        /**
+         * Count active + PUBLISHED questions (for delivery stats)
+         */
+        Long countByIsActiveTrueAndStatus(QuizQuestion.QuestionStatus status);
 
-    // ========== Phase 3: Smart Quiz Methods (24h Cooldown) ==========
+        /**
+         * Count active questions by category
+         */
+        Long countByCategoryIdAndIsActiveTrue(Long categoryId);
 
-    /**
-     * Find random questions with Pageable support (for SmartQuizService).
-     * Uses JPQL ORDER BY RAND() for H2 compatibility.
-     * EntityGraph: Eager-load options to prevent N+1 queries
-     */
-    @EntityGraph(attributePaths = { "options", "category", "trafficSign" })
-    @Query("SELECT DISTINCT qq FROM QuizQuestion qq WHERE qq.isActive = true")
-    List<QuizQuestion> findRandomQuestionsWithOptions(Pageable pageable);
+        /**
+         * Count active + PUBLISHED questions by category (for delivery stats)
+         */
+        Long countByCategoryIdAndIsActiveTrueAndStatus(Long categoryId, QuizQuestion.QuestionStatus status);
 
-    /**
-     * Find random questions by category with Pageable support.
-     * EntityGraph: Eager-load options to prevent N+1 queries
-     */
-    @EntityGraph(attributePaths = { "options", "category", "trafficSign" })
-    @Query("SELECT DISTINCT qq FROM QuizQuestion qq WHERE qq.category.id = :categoryId " +
-            "AND qq.isActive = true")
-    List<QuizQuestion> findRandomQuestionsByCategoryWithOptions(
-            @Param("categoryId") Long categoryId,
-            Pageable pageable);
+        // ========== Phase 3: Smart Quiz Methods (24h Cooldown) ==========
 
-    /**
-     * Count questions in a list of IDs that belong to a specific category.
-     * Used for calculating fresh question count per category.
-     */
-    long countByIdInAndCategoryId(List<Long> ids, Long categoryId);
+        /**
+         * Find random PUBLISHED questions with Pageable support (for SmartQuizService).
+         * Filters: isActive=true AND status=PUBLISHED (Belgian compliance).
+         * EntityGraph: Eager-load options to prevent N+1 queries
+         */
+        @EntityGraph(attributePaths = { "options", "category", "trafficSign" })
+        @Query("SELECT DISTINCT qq FROM QuizQuestion qq WHERE qq.isActive = true AND qq.status = 'PUBLISHED'")
+        List<QuizQuestion> findRandomQuestionsWithOptions(Pageable pageable);
 
-    // ========== Phase 4: Adaptive Difficulty Methods (Law #2) ==========
+        /**
+         * Find random PUBLISHED questions by category with Pageable support.
+         * Filters: isActive=true AND status=PUBLISHED (Belgian compliance).
+         * EntityGraph: Eager-load options to prevent N+1 queries
+         */
+        @EntityGraph(attributePaths = { "options", "category", "trafficSign" })
+        @Query("SELECT DISTINCT qq FROM QuizQuestion qq WHERE qq.category.id = :categoryId " +
+                        "AND qq.isActive = true AND qq.status = 'PUBLISHED'")
+        List<QuizQuestion> findRandomQuestionsByCategoryWithOptions(
+                        @Param("categoryId") Long categoryId,
+                        Pageable pageable);
 
-    /**
-     * Find random questions by difficulty level with Pageable support.
-     * Used for adaptive quiz generation.
-     */
-    @Query("SELECT qq FROM QuizQuestion qq " +
-            "WHERE qq.difficultyLevel = :difficulty " +
-            "AND qq.isActive = true")
-    List<QuizQuestion> findByDifficultyRandom(
-            @Param("difficulty") QuizQuestion.DifficultyLevel difficulty,
-            Pageable pageable);
+        /**
+         * Count questions in a list of IDs that belong to a specific category.
+         * Used for calculating fresh question count per category.
+         */
+        long countByIdInAndCategoryId(List<Long> ids, Long categoryId);
 
-    /**
-     * Find random questions by category AND difficulty with Pageable support.
-     * Used for adaptive quiz generation with category filter.
-     */
-    @Query("SELECT qq FROM QuizQuestion qq " +
-            "WHERE qq.category.id = :categoryId " +
-            "AND qq.difficultyLevel = :difficulty " +
-            "AND qq.isActive = true")
-    List<QuizQuestion> findByCategoryAndDifficultyRandom(
-            @Param("categoryId") Long categoryId,
-            @Param("difficulty") QuizQuestion.DifficultyLevel difficulty,
-            Pageable pageable);
+        // ========== Phase 4: Adaptive Difficulty Methods (Law #2) ==========
 
-    // ========== Admin CRUD Methods ==========
+        /**
+         * Find random PUBLISHED questions by difficulty level with Pageable support.
+         * Filters: isActive=true AND status=PUBLISHED.
+         */
+        @Query("SELECT qq FROM QuizQuestion qq " +
+                        "WHERE qq.difficultyLevel = :difficulty " +
+                        "AND qq.isActive = true AND qq.status = 'PUBLISHED'")
+        List<QuizQuestion> findByDifficultyRandom(
+                        @Param("difficulty") QuizQuestion.DifficultyLevel difficulty,
+                        Pageable pageable);
 
-    /**
-     * Admin paginated search with optional filters.
-     * Mirrors TrafficSignRepository.findAdminSigns pattern.
-     */
-    @EntityGraph(attributePaths = { "options", "category" })
-    @Query("SELECT qq FROM QuizQuestion qq JOIN qq.category c WHERE " +
-            "(:categoryCode IS NULL OR c.code = :categoryCode) AND " +
-            "(:difficulty IS NULL OR qq.difficultyLevel = :difficulty) AND " +
-            "(:q IS NULL OR " +
-            " LOWER(qq.questionEn) LIKE LOWER(CONCAT('%', :q, '%')) OR " +
-            " LOWER(qq.questionAr) LIKE LOWER(CONCAT('%', :q, '%')) OR " +
-            " LOWER(qq.questionNl) LIKE LOWER(CONCAT('%', :q, '%')) OR " +
-            " LOWER(qq.questionFr) LIKE LOWER(CONCAT('%', :q, '%')))")
-    Page<QuizQuestion> findAdminQuestions(
-            @Param("categoryCode") String categoryCode,
-            @Param("difficulty") QuizQuestion.DifficultyLevel difficulty,
-            @Param("q") String q,
-            Pageable pageable);
+        /**
+         * Find random PUBLISHED questions by category AND difficulty with Pageable
+         * support.
+         * Filters: isActive=true AND status=PUBLISHED.
+         */
+        @Query("SELECT qq FROM QuizQuestion qq " +
+                        "WHERE qq.category.id = :categoryId " +
+                        "AND qq.difficultyLevel = :difficulty " +
+                        "AND qq.isActive = true AND qq.status = 'PUBLISHED'")
+        List<QuizQuestion> findByCategoryAndDifficultyRandom(
+                        @Param("categoryId") Long categoryId,
+                        @Param("difficulty") QuizQuestion.DifficultyLevel difficulty,
+                        Pageable pageable);
 
-    /**
-     * Find a single question with options eagerly loaded (for admin detail view).
-     */
-    @EntityGraph(attributePaths = { "options", "category" })
-    @Query("SELECT qq FROM QuizQuestion qq WHERE qq.id = :id")
-    Optional<QuizQuestion> findByIdWithOptions(@Param("id") Long id);
+        // ========== Admin CRUD Methods ==========
+
+        /**
+         * Admin paginated search with optional filters.
+         * Mirrors TrafficSignRepository.findAdminSigns pattern.
+         */
+        @EntityGraph(attributePaths = { "options", "category" })
+        @Query("SELECT qq FROM QuizQuestion qq JOIN qq.category c WHERE " +
+                        "(:categoryCode IS NULL OR c.code = :categoryCode) AND " +
+                        "(:difficulty IS NULL OR qq.difficultyLevel = :difficulty) AND " +
+                        "(:q IS NULL OR " +
+                        " LOWER(qq.questionEn) LIKE LOWER(CONCAT('%', :q, '%')) OR " +
+                        " LOWER(qq.questionAr) LIKE LOWER(CONCAT('%', :q, '%')) OR " +
+                        " LOWER(qq.questionNl) LIKE LOWER(CONCAT('%', :q, '%')) OR " +
+                        " LOWER(qq.questionFr) LIKE LOWER(CONCAT('%', :q, '%')))")
+        Page<QuizQuestion> findAdminQuestions(
+                        @Param("categoryCode") String categoryCode,
+                        @Param("difficulty") QuizQuestion.DifficultyLevel difficulty,
+                        @Param("q") String q,
+                        Pageable pageable);
+
+        /**
+         * Find a single question with options eagerly loaded (for admin detail view).
+         */
+        @EntityGraph(attributePaths = { "options", "category" })
+        @Query("SELECT qq FROM QuizQuestion qq WHERE qq.id = :id")
+        Optional<QuizQuestion> findByIdWithOptions(@Param("id") Long id);
+
+        // ========== Compliant Question Counts (Stats Accuracy) ==========
+
+        /**
+         * Count questions that are delivery-compliant:
+         * isActive=true, status=PUBLISHED, 2-3 options, exactly 1 correct.
+         * Ensures stats match the actual deliverable pool.
+         */
+        @Query(value = "SELECT COUNT(*) FROM (" +
+                        "  SELECT q.id FROM quiz_questions q" +
+                        "  JOIN quiz_answer_options o ON o.question_id = q.id" +
+                        "  WHERE q.is_active = true AND q.status = 'PUBLISHED'" +
+                        "  GROUP BY q.id" +
+                        "  HAVING COUNT(o.id) BETWEEN 2 AND 3" +
+                        "  AND SUM(CASE WHEN o.is_correct = true THEN 1 ELSE 0 END) = 1" +
+                        ") compliant", nativeQuery = true)
+        long countCompliantQuestions();
+
+        /**
+         * Count delivery-compliant questions in a specific category.
+         */
+        @Query(value = "SELECT COUNT(*) FROM (" +
+                        "  SELECT q.id FROM quiz_questions q" +
+                        "  JOIN quiz_answer_options o ON o.question_id = q.id" +
+                        "  WHERE q.is_active = true AND q.status = 'PUBLISHED'" +
+                        "  AND q.category_id = :categoryId" +
+                        "  GROUP BY q.id" +
+                        "  HAVING COUNT(o.id) BETWEEN 2 AND 3" +
+                        "  AND SUM(CASE WHEN o.is_correct = true THEN 1 ELSE 0 END) = 1" +
+                        ") compliant", nativeQuery = true)
+        long countCompliantQuestionsByCategory(@Param("categoryId") Long categoryId);
 }

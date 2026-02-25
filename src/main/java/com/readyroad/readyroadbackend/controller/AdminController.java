@@ -12,12 +12,16 @@ import com.readyroad.readyroadbackend.domain.entity.User;
 import com.readyroad.readyroadbackend.domain.entity.QuizAttempt;
 import com.readyroad.readyroadbackend.dto.AdminQuizQuestionRequest;
 import com.readyroad.readyroadbackend.dto.CreateTrafficSignRequest;
+import com.readyroad.readyroadbackend.dto.SignGovernanceReport;
+import com.readyroad.readyroadbackend.dto.SignImportEntry;
 import com.readyroad.readyroadbackend.dto.response.AdminQuizQuestionResponse;
 import com.readyroad.readyroadbackend.dto.response.AdminTrafficSignResponse;
 import com.readyroad.readyroadbackend.dto.response.PageResponse;
 import com.readyroad.readyroadbackend.dto.response.TrafficSignResponse;
 import com.readyroad.readyroadbackend.service.AdminQuizService;
 import com.readyroad.readyroadbackend.service.TrafficSignService;
+import com.readyroad.readyroadbackend.service.SignImportService;
+import com.readyroad.readyroadbackend.service.SignGovernanceService;
 import jakarta.validation.ConstraintViolationException;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -67,6 +71,8 @@ public class AdminController {
     private final TrafficSignService trafficSignService;
     private final AdminQuizService adminQuizService;
     private final FileUploadService fileUploadService;
+    private final SignImportService signImportService;
+    private final SignGovernanceService signGovernanceService;
 
     /**
      * Scenario: Admin dashboard returns aggregated stats
@@ -209,6 +215,50 @@ public class AdminController {
             log.warn("⚠️ Failed to update sign: {}", e.getMessage());
             return ResponseEntity.badRequest().body(Map.of("error", e.getMessage()));
         }
+    }
+
+    // ─── Signs: Long Description Import Pipeline ─────────────
+
+    /**
+     * Validate (dry-run) a batch of sign long descriptions.
+     * POST /api/admin/signs/import/validate
+     * Returns a preview of what would change without writing to DB.
+     */
+    @PostMapping("/signs/import/validate")
+    public ResponseEntity<SignImportEntry.ImportResult> validateSignImport(
+            @RequestBody SignImportEntry.ImportRequest request) {
+        log.info("🔍 Validating sign import: {} entries", request.signs().size());
+        SignImportEntry.ImportResult result = signImportService.validateEntries(request.signs());
+        return ResponseEntity.ok(result);
+    }
+
+    /**
+     * Execute a batch import of sign long descriptions.
+     * POST /api/admin/signs/import/execute
+     * Upserts long_description_* fields matched by sign code.
+     * Set dryRun=true in the request body to preview without writing.
+     */
+    @PostMapping("/signs/import/execute")
+    public ResponseEntity<SignImportEntry.ImportResult> executeSignImport(
+            @RequestBody SignImportEntry.ImportRequest request) {
+        log.info("📥 Executing sign import: {} entries, dryRun={}", request.signs().size(), request.dryRun());
+        SignImportEntry.ImportResult result = signImportService.importLongDescriptions(
+                request.signs(), request.dryRun());
+        return ResponseEntity.ok(result);
+    }
+
+    // ─── Signs: Governance Audit ─────────────────────────
+
+    /**
+     * Run a canonical-source governance audit (signs.json ↔ DB consistency check).
+     * GET /api/admin/signs/governance/audit
+     * Returns a detailed report of mismatches, orphans and completeness issues.
+     */
+    @GetMapping("/signs/governance/audit")
+    public ResponseEntity<SignGovernanceReport.AuditResult> governanceAudit() {
+        log.info("Running canonical governance audit (signs.json vs DB)");
+        SignGovernanceReport.AuditResult result = signGovernanceService.audit();
+        return ResponseEntity.ok(result);
     }
 
     // ═══════════════════════════════════════════════════
@@ -690,5 +740,82 @@ public class AdminController {
         }
 
         return dto;
+    }
+
+    // ═══════════════════════════════════════════════════
+    // Quiz Quality Diagnostics
+    // ═══════════════════════════════════════════════════
+
+    /**
+     * Admin-only diagnostics endpoint: reports quiz question integrity violations.
+     * Returns counts of questions failing the 2-3 options Belgian standard,
+     * questions with wrong correct-answer counts, inactive/draft anomalies, etc.
+     *
+     * GET /api/admin/diagnostics/quiz-integrity
+     */
+    @GetMapping("/diagnostics/quiz-integrity")
+    public ResponseEntity<?> getQuizIntegrityReport() {
+        log.info("🔬 Admin quiz integrity diagnostics requested");
+
+        List<com.readyroad.readyroadbackend.domain.entity.QuizQuestion> allQuestions = quizQuestionRepository.findAll();
+
+        int totalQuestions = allQuestions.size();
+        int tooFewOptions = 0; // < 2 options
+        int tooManyOptions = 0; // > 3 options
+        int zeroCorrect = 0;
+        int multipleCorrect = 0;
+        int noEnglishText = 0; // options missing English text
+        int inactivePublished = 0; // inactive but PUBLISHED (anomaly)
+        int draftActive = 0; // DRAFT but active
+
+        for (var q : allQuestions) {
+            var opts = q.getOptions();
+            int optCount = opts != null ? opts.size() : 0;
+
+            if (optCount < 2)
+                tooFewOptions++;
+            if (optCount > 3)
+                tooManyOptions++;
+
+            if (opts != null) {
+                long correct = opts.stream()
+                        .filter(o -> Boolean.TRUE.equals(o.getIsCorrect()))
+                        .count();
+                if (correct == 0)
+                    zeroCorrect++;
+                if (correct > 1)
+                    multipleCorrect++;
+
+                boolean missingText = opts.stream()
+                        .anyMatch(o -> o.getOptionTextEn() == null || o.getOptionTextEn().isBlank());
+                if (missingText)
+                    noEnglishText++;
+            }
+
+            boolean isActive = Boolean.TRUE.equals(q.getIsActive());
+            boolean isPublished = q
+                    .getStatus() == com.readyroad.readyroadbackend.domain.entity.QuizQuestion.QuestionStatus.PUBLISHED;
+            if (!isActive && isPublished)
+                inactivePublished++;
+            if (isActive && !isPublished)
+                draftActive++;
+        }
+
+        int compliant = totalQuestions - tooFewOptions - tooManyOptions - zeroCorrect - multipleCorrect;
+
+        Map<String, Object> report = new HashMap<>();
+        report.put("totalQuestions", totalQuestions);
+        report.put("compliant", Math.max(0, compliant));
+        report.put("violations", Map.of(
+                "tooFewOptions", tooFewOptions,
+                "tooManyOptions", tooManyOptions,
+                "zeroCorrectOptions", zeroCorrect,
+                "multipleCorrectOptions", multipleCorrect,
+                "optionsMissingEnglishText", noEnglishText));
+        report.put("anomalies", Map.of(
+                "inactiveButPublished", inactivePublished,
+                "activeButDraft", draftActive));
+
+        return ResponseEntity.ok(report);
     }
 }

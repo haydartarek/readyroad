@@ -11,13 +11,13 @@ import java.util.List;
  *
  * Ensures quiz questions comply with Belgian rules:
  * - Minimum 2 options
- * - Maximum 4 options
+ * - Maximum 3 options
  */
 public class BelgianOptionsCountValidator
         implements ConstraintValidator<BelgianOptionsCount, List<QuizAnswerOption>> {
 
     private static final int MIN_OPTIONS = 2;
-    private static final int MAX_OPTIONS = 4;
+    private static final int MAX_OPTIONS = 3;
 
     @Override
     public boolean isValid(List<QuizAnswerOption> options,

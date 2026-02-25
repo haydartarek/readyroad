@@ -31,5 +31,9 @@ public class CreateTrafficSignRequest {
     private String descriptionNl;
     private String descriptionFr;
 
+    // Governance: long_description fields are canonical (signs.json → import
+    // pipeline → DB).
+    // Admin CRUD must not set these. They are omitted from this request DTO.
+
     private String imageUrl;
 }

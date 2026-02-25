@@ -2,6 +2,8 @@ package com.readyroad.readyroadbackend.controller;
 
 import com.readyroad.readyroadbackend.util.AuthenticationUtil;
 import com.readyroad.readyroadbackend.domain.entity.QuizQuestion;
+import com.readyroad.readyroadbackend.dto.QuizQuestionDTO;
+import com.readyroad.readyroadbackend.mapper.QuizQuestionMapper;
 import com.readyroad.readyroadbackend.service.SmartQuizService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -17,9 +19,9 @@ import java.util.Map;
  * Smart Quiz Controller - Phase 3: 24h Cooldown MVP
  * Enforces Law #1: Questions don't repeat within 24 hours for same user.
  * 
- * ✅ Public Access: Works without authentication (guest mode: no cooldown
+ * Public Access: Works without authentication (guest mode: no cooldown
  * tracking)
- * 🔐 Authenticated Access: Tracks user history and enforces 24h cooldown
+ * Authenticated Access: Tracks user history and enforces 24h cooldown
  */
 @RestController
 @RequestMapping("/api/smart-quiz")
@@ -29,6 +31,7 @@ public class SmartQuizController {
 
     private final SmartQuizService smartQuizService;
     private final AuthenticationUtil authenticationUtil;
+    private final QuizQuestionMapper quizQuestionMapper;
 
     /**
      * Generate random smart quiz with 24h cooldown.
@@ -38,10 +41,10 @@ public class SmartQuizController {
      *                       returns random questions
      */
     @GetMapping("/random")
-    public ResponseEntity<List<QuizQuestion>> generateRandomSmartQuiz(
+    public ResponseEntity<List<QuizQuestionDTO>> generateRandomSmartQuiz(
             @RequestParam(defaultValue = "10") int count,
             Authentication authentication) {
-        // ✅ Public endpoint: authentication is optional
+        // Public endpoint: authentication is optional
         Long userId = isAuthenticatedUser(authentication)
                 ? authenticationUtil.extractUserId(authentication)
                 : null;
@@ -58,7 +61,7 @@ public class SmartQuizController {
             log.warn("No questions available for user {}", userId);
         }
 
-        return ResponseEntity.ok(questions);
+        return ResponseEntity.ok(quizQuestionMapper.toDTOList(questions));
     }
 
     /**
@@ -70,11 +73,11 @@ public class SmartQuizController {
      *                       returns random questions
      */
     @GetMapping("/category/{categoryId}")
-    public ResponseEntity<List<QuizQuestion>> generateCategorySmartQuiz(
+    public ResponseEntity<List<QuizQuestionDTO>> generateCategorySmartQuiz(
             @PathVariable Long categoryId,
             @RequestParam(defaultValue = "10") int count,
             Authentication authentication) {
-        // ✅ Public endpoint: authentication is optional
+        // Public endpoint: authentication is optional
         Long userId = isAuthenticatedUser(authentication)
                 ? authenticationUtil.extractUserId(authentication)
                 : null;
@@ -88,7 +91,7 @@ public class SmartQuizController {
 
         List<QuizQuestion> questions = smartQuizService.generateSmartQuiz(userId, count, categoryId);
 
-        return ResponseEntity.ok(questions);
+        return ResponseEntity.ok(quizQuestionMapper.toDTOList(questions));
     }
 
     /**
@@ -99,7 +102,7 @@ public class SmartQuizController {
      */
     @GetMapping("/stats")
     public ResponseEntity<Map<String, Object>> getFreshQuestionStats(Authentication authentication) {
-        // ✅ Public endpoint: authentication is optional
+        // Public endpoint: authentication is optional
         Long userId = isAuthenticatedUser(authentication)
                 ? authenticationUtil.extractUserId(authentication)
                 : null;
@@ -107,7 +110,7 @@ public class SmartQuizController {
         Map<String, Object> stats = new HashMap<>();
 
         if (userId != null) {
-            // 🔐 Authenticated: show personalized stats with cooldown info
+            // Authenticated: show personalized stats with cooldown info
             long freshCount = smartQuizService.countFreshQuestions(userId);
             stats.put("userId", userId);
             stats.put("freshQuestionsAvailable", freshCount);
@@ -116,7 +119,7 @@ public class SmartQuizController {
                     ? "You have " + freshCount + " fresh questions available"
                     : "All questions seen recently. They will become available after 24h cooldown.");
         } else {
-            // ✅ Guest: show general stats
+            // Guest: show general stats
             long totalCount = smartQuizService.countTotalQuestions();
             stats.put("totalQuestionsAvailable", totalCount);
             stats.put("message", "Login to track your progress and enable 24h question cooldown.");
@@ -128,19 +131,32 @@ public class SmartQuizController {
 
     /**
      * Get fresh question count for a specific category.
+     * Public endpoint: works for both guests and authenticated users.
      */
     @GetMapping("/stats/category/{categoryId}")
     public ResponseEntity<Map<String, Object>> getCategoryFreshQuestionStats(
             @PathVariable Long categoryId,
             Authentication authentication) {
-        Long userId = authenticationUtil.extractUserId(authentication);
-        long freshCount = smartQuizService.countFreshQuestionsInCategory(userId, categoryId);
+        // Public endpoint: authentication is optional
+        Long userId = isAuthenticatedUser(authentication)
+                ? authenticationUtil.extractUserId(authentication)
+                : null;
 
         Map<String, Object> stats = new HashMap<>();
-        stats.put("userId", userId);
         stats.put("categoryId", categoryId);
-        stats.put("freshQuestionsAvailable", freshCount);
-        stats.put("cooldownHours", 24);
+
+        if (userId != null) {
+            // Authenticated: show personalized fresh count with cooldown info
+            long freshCount = smartQuizService.countFreshQuestionsInCategory(userId, categoryId);
+            stats.put("userId", userId);
+            stats.put("freshQuestionsAvailable", freshCount);
+            stats.put("cooldownHours", 24);
+        } else {
+            // Guest: show total published count for category
+            long totalCount = smartQuizService.countTotalQuestionsInCategory(categoryId);
+            stats.put("totalQuestionsAvailable", totalCount);
+            stats.put("guestMode", true);
+        }
 
         return ResponseEntity.ok(stats);
     }

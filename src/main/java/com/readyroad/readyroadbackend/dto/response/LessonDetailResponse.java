@@ -1,9 +1,12 @@
 package com.readyroad.readyroadbackend.dto.response;
 
+import java.util.List;
+
 /**
- * Lesson summary response — used for the list endpoint (no pages included).
+ * Lesson detail response — includes all pages. Used for the single-lesson
+ * endpoint.
  */
-public record LessonResponse(
+public record LessonDetailResponse(
         Long id,
         String lessonCode,
         String icon,
@@ -17,5 +20,5 @@ public record LessonResponse(
         String descriptionAr,
         int displayOrder,
         int estimatedMinutes,
-        int totalPages) {
+        List<LessonPageResponse> pages) {
 }

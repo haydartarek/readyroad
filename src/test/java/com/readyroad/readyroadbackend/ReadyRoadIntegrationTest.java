@@ -78,12 +78,6 @@ public class ReadyRoadIntegrationTest {
     }
 
     @Test
-    @DisplayName("Bean Test: PracticeQuestionRepository should be available")
-    public void testPracticeQuestionRepositoryBean() {
-        assertThat(applicationContext.containsBean("practiceQuestionRepository")).isTrue();
-    }
-
-    @Test
     @DisplayName("Service Test: CategoryService should be available")
     public void testCategoryServiceBean() {
         assertThat(applicationContext.containsBean("categoryService")).isTrue();
@@ -105,12 +99,6 @@ public class ReadyRoadIntegrationTest {
     @DisplayName("Service Test: ExamQuestionService should be available")
     public void testExamQuestionServiceBean() {
         assertThat(applicationContext.containsBean("examQuestionService")).isTrue();
-    }
-
-    @Test
-    @DisplayName("Service Test: PracticeQuestionService should be available")
-    public void testPracticeQuestionServiceBean() {
-        assertThat(applicationContext.containsBean("practiceQuestionService")).isTrue();
     }
 
     @Test

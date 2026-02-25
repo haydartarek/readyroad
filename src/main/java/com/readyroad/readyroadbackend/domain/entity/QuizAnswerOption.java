@@ -1,6 +1,5 @@
 package com.readyroad.readyroadbackend.domain.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,7 +11,8 @@ import lombok.NoArgsConstructor;
  * خيار إجابة السؤال
  *
  * **Phase 2 Restoration:** Re-enabled January 18, 2026
- * Represents one answer option for a quiz question (typically 2-3 options per question)
+ * Represents one answer option for a quiz question (typically 2-3 options per
+ * question)
  */
 @Entity
 @Table(name = "quiz_answer_options")
@@ -26,7 +26,6 @@ public class QuizAnswerOption {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "question_id", nullable = false)
     private QuizQuestion question;

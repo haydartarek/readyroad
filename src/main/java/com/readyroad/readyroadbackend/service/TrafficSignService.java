@@ -138,6 +138,8 @@ public class TrafficSignService {
         sign.setDescriptionAr(request.getDescriptionAr() != null ? request.getDescriptionAr() : "");
         sign.setDescriptionNl(request.getDescriptionNl() != null ? request.getDescriptionNl() : "");
         sign.setDescriptionFr(request.getDescriptionFr() != null ? request.getDescriptionFr() : "");
+        // Governance: long_description fields are canonical — set only via import
+        // pipeline
         sign.setImageUrl(request.getImageUrl());
         sign.setIsActive(true);
 
@@ -177,6 +179,8 @@ public class TrafficSignService {
         sign.setDescriptionAr(request.getDescriptionAr() != null ? request.getDescriptionAr() : "");
         sign.setDescriptionNl(request.getDescriptionNl() != null ? request.getDescriptionNl() : "");
         sign.setDescriptionFr(request.getDescriptionFr() != null ? request.getDescriptionFr() : "");
+        // Governance: long_description fields are canonical — set only via import
+        // pipeline
         if (request.getImageUrl() != null) {
             sign.setImageUrl(request.getImageUrl());
         }

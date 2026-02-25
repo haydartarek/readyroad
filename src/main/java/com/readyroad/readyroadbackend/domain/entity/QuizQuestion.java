@@ -117,7 +117,7 @@ public class QuizQuestion extends BaseEntity {
     private LocalDateTime publishedAt;
 
     @OneToMany(mappedBy = "question", cascade = CascadeType.ALL, orphanRemoval = true)
-    @BelgianOptionsCount // Story D1: Belgian compliance - 2-4 options
+    @BelgianOptionsCount // Story D1: Belgian compliance - 2-3 options
     private List<QuizAnswerOption> options = new ArrayList<>();
 
     // Enums

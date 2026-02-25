@@ -11,10 +11,10 @@ import org.springframework.stereotype.Component;
 import java.io.File;
 
 /**
- * ⭐ SINGLE SOURCE OF TRUTH: lessen.json
  * Runs data import from JSON files at application startup.
  * Only imports if the data directory exists and contains the expected files.
- * Set readyroad.data-import.enabled=true in application.yml to enable auto-import.
+ * Set readyroad.data-import.enabled=true in application.yml to enable
+ * auto-import.
  */
 @Component
 public class DataImportRunner implements ApplicationRunner {
@@ -29,10 +29,8 @@ public class DataImportRunner implements ApplicationRunner {
     @Value("${readyroad.data-import.path:data}")
     private String dataPath;
 
-    // ⭐ تعريف الملفات المطلوبة - SINGLE SOURCE OF TRUTH
     private static final String[] REQUIRED_FILES = {
             "signs.json",
-            "lessen.json",              // ⭐ تم التغيير من lessons_content.json
             "category_descriptions.json"
     };
 
@@ -77,20 +75,9 @@ public class DataImportRunner implements ApplicationRunner {
             return;
         }
 
-        // ⭐ تحذير إضافي للتأكد من Single Source of Truth
-        File deprecatedFile = new File(dataDir, "lessons_content.json");
-        if (deprecatedFile.exists()) {
-            log.warn("═══════════════════════════════════════════════════");
-            log.warn("⚠️  WARNING: DEPRECATED FILE DETECTED!");
-            log.warn("📄 File: lessons_content.json");
-            log.warn("This file should be deleted. Using lessen.json instead.");
-            log.warn("═══════════════════════════════════════════════════");
-        }
-
         log.info("═══════════════════════════════════════════════════");
         log.info("🚀 Starting automatic data import");
         log.info("📁 Source: {}", dataDir.getAbsolutePath());
-        log.info("📄 Lessons Source: lessen.json (SINGLE SOURCE OF TRUTH)");
         log.info("═══════════════════════════════════════════════════");
 
         try {

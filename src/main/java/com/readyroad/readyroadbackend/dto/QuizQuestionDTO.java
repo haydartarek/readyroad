@@ -19,12 +19,18 @@ public class QuizQuestionDTO {
     private String questionFr;
     private QuestionType questionType;
     private DifficultyLevel difficultyLevel;
+
+    // Category
     private Long categoryId;
-    private String categoryName;
-    
-    // ✅ Law #5 & #6: Generic content image URL
-    // النظام لا يعرف TrafficSign - فقط contentImageUrl عام
+    private String categoryCode;
+    private String categoryNameEn;
+    private String categoryNameAr;
+    private String categoryNameNl;
+    private String categoryNameFr;
+
+    // Content image URL (generic, not tied to traffic sign)
     private String contentImageUrl;
-    
+
+    // Options ordered by displayOrder — NO correctness signals
     private List<QuizAnswerOptionDTO> options;
 }

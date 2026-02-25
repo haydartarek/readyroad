@@ -19,7 +19,9 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
@@ -79,6 +81,8 @@ public class AdminQuizService {
 
     @Transactional
     public AdminQuizQuestionResponse createQuestion(AdminQuizQuestionRequest request) {
+        validateOptionsPolicy(request);
+
         Category category = categoryRepository.findByCode(request.getCategoryCode())
                 .orElseThrow(() -> new IllegalArgumentException(
                         "Category not found: " + request.getCategoryCode()));
@@ -109,6 +113,8 @@ public class AdminQuizService {
 
     @Transactional
     public AdminQuizQuestionResponse updateQuestion(Long id, AdminQuizQuestionRequest request) {
+        validateOptionsPolicy(request);
+
         QuizQuestion question = questionRepository.findByIdWithOptions(id)
                 .orElseThrow(() -> new IllegalArgumentException("Quiz question not found with id: " + id));
 
@@ -143,6 +149,50 @@ public class AdminQuizService {
         QuizQuestion saved = questionRepository.save(question);
         log.info("✅ Quiz question updated id={}", saved.getId());
         return toResponse(saved);
+    }
+
+    // ─── Options policy validation ─────────────────────
+
+    /**
+     * Validate the 2-3 options policy enforced across the full stack.
+     * Rejects payloads that violate:
+     * - Option count outside [2, 3]
+     * - Not exactly 1 correct option
+     * - Duplicate displayOrder values
+     * - Any option missing English text
+     */
+    private void validateOptionsPolicy(AdminQuizQuestionRequest request) {
+        List<AdminQuizQuestionRequest.OptionDTO> options = request.getOptions();
+        if (options == null) {
+            throw new IllegalArgumentException("Options are required");
+        }
+
+        int count = options.size();
+        if (count < 2 || count > 3) {
+            throw new IllegalArgumentException(
+                    String.format("Belgian standard requires 2-3 options. Found: %d", count));
+        }
+
+        long correctCount = options.stream()
+                .filter(o -> Boolean.TRUE.equals(o.getIsCorrect()))
+                .count();
+        if (correctCount != 1) {
+            throw new IllegalArgumentException(
+                    String.format("Exactly 1 option must be marked correct. Found: %d", correctCount));
+        }
+
+        Set<Integer> orders = new HashSet<>();
+        for (AdminQuizQuestionRequest.OptionDTO opt : options) {
+            int order = opt.getDisplayOrder() != null ? opt.getDisplayOrder() : 0;
+            if (!orders.add(order)) {
+                throw new IllegalArgumentException(
+                        "Duplicate displayOrder value: " + order);
+            }
+            if (opt.getTextEn() == null || opt.getTextEn().isBlank()) {
+                throw new IllegalArgumentException(
+                        "All options must have English text");
+            }
+        }
     }
 
     /**

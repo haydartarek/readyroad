@@ -1,71 +1,76 @@
 package com.readyroad.readyroadbackend.domain.entity;
 
 import jakarta.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "lessons")
 public class Lesson extends BaseEntity {
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "category_id", nullable = false)
-    private Category category;
-
-    @Column(nullable = false, columnDefinition = "TEXT")
-    private String titleAr;
-
-    @Column(nullable = false, columnDefinition = "TEXT")
-    private String titleEn;
+    @Column(nullable = false, unique = true, length = 50)
+    private String lessonCode; // e.g., "les-0", "les-1"
 
     @Column(nullable = false, columnDefinition = "TEXT")
     private String titleNl;
 
     @Column(nullable = false, columnDefinition = "TEXT")
+    private String titleEn;
+
+    @Column(nullable = false, columnDefinition = "TEXT")
     private String titleFr;
 
     @Column(nullable = false, columnDefinition = "TEXT")
-    private String contentAr;
+    private String titleAr;
 
-    @Column(nullable = false, columnDefinition = "TEXT")
-    private String contentEn;
+    @Column(columnDefinition = "TEXT")
+    private String descriptionNl;
 
-    @Column(nullable = false, columnDefinition = "TEXT")
-    private String contentNl;
+    @Column(columnDefinition = "TEXT")
+    private String descriptionEn;
 
-    @Column(nullable = false, columnDefinition = "TEXT")
-    private String contentFr;
+    @Column(columnDefinition = "TEXT")
+    private String descriptionFr;
+
+    @Column(columnDefinition = "TEXT")
+    private String descriptionAr;
+
+    @Column(length = 10)
+    private String icon;
 
     @Column(nullable = false)
     private Integer displayOrder = 0;
 
     @Column(nullable = false)
-    private Integer estimatedMinutes = 5; // Estimated reading time
+    private Integer estimatedMinutes = 5;
 
     @Column(nullable = false)
     private Boolean isActive = true;
 
-    // Getters and Setters
-    public Category getCategory() {
-        return category;
+    @OneToMany(mappedBy = "lesson", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    @OrderBy("pageNumber ASC")
+    private List<LessonPage> pages = new ArrayList<>();
+
+    // ─── Convenience ─────────────────────────────────────
+
+    public void addPage(LessonPage page) {
+        pages.add(page);
+        page.setLesson(this);
     }
 
-    public void setCategory(Category category) {
-        this.category = category;
+    public void clearPages() {
+        pages.forEach(p -> p.setLesson(null));
+        pages.clear();
     }
 
-    public String getTitleAr() {
-        return titleAr;
+    // ─── Getters and Setters ─────────────────────────────
+
+    public String getLessonCode() {
+        return lessonCode;
     }
 
-    public void setTitleAr(String titleAr) {
-        this.titleAr = titleAr;
-    }
-
-    public String getTitleEn() {
-        return titleEn;
-    }
-
-    public void setTitleEn(String titleEn) {
-        this.titleEn = titleEn;
+    public void setLessonCode(String lessonCode) {
+        this.lessonCode = lessonCode;
     }
 
     public String getTitleNl() {
@@ -76,6 +81,14 @@ public class Lesson extends BaseEntity {
         this.titleNl = titleNl;
     }
 
+    public String getTitleEn() {
+        return titleEn;
+    }
+
+    public void setTitleEn(String titleEn) {
+        this.titleEn = titleEn;
+    }
+
     public String getTitleFr() {
         return titleFr;
     }
@@ -84,36 +97,52 @@ public class Lesson extends BaseEntity {
         this.titleFr = titleFr;
     }
 
-    public String getContentAr() {
-        return contentAr;
+    public String getTitleAr() {
+        return titleAr;
     }
 
-    public void setContentAr(String contentAr) {
-        this.contentAr = contentAr;
+    public void setTitleAr(String titleAr) {
+        this.titleAr = titleAr;
     }
 
-    public String getContentEn() {
-        return contentEn;
+    public String getDescriptionNl() {
+        return descriptionNl;
     }
 
-    public void setContentEn(String contentEn) {
-        this.contentEn = contentEn;
+    public void setDescriptionNl(String descriptionNl) {
+        this.descriptionNl = descriptionNl;
     }
 
-    public String getContentNl() {
-        return contentNl;
+    public String getDescriptionEn() {
+        return descriptionEn;
     }
 
-    public void setContentNl(String contentNl) {
-        this.contentNl = contentNl;
+    public void setDescriptionEn(String descriptionEn) {
+        this.descriptionEn = descriptionEn;
     }
 
-    public String getContentFr() {
-        return contentFr;
+    public String getDescriptionFr() {
+        return descriptionFr;
     }
 
-    public void setContentFr(String contentFr) {
-        this.contentFr = contentFr;
+    public void setDescriptionFr(String descriptionFr) {
+        this.descriptionFr = descriptionFr;
+    }
+
+    public String getDescriptionAr() {
+        return descriptionAr;
+    }
+
+    public void setDescriptionAr(String descriptionAr) {
+        this.descriptionAr = descriptionAr;
+    }
+
+    public String getIcon() {
+        return icon;
+    }
+
+    public void setIcon(String icon) {
+        this.icon = icon;
     }
 
     public Integer getDisplayOrder() {
@@ -138,5 +167,13 @@ public class Lesson extends BaseEntity {
 
     public void setIsActive(Boolean isActive) {
         this.isActive = isActive;
+    }
+
+    public List<LessonPage> getPages() {
+        return pages;
+    }
+
+    public void setPages(List<LessonPage> pages) {
+        this.pages = pages;
     }
 }

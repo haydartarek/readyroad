@@ -111,7 +111,7 @@ public class SecurityConfigDev {
         log.info("╔═══════════════════════════════════════════════════════════════╗");
         log.info("║   🔒 Security Configuration: Production-Ready Mode            ║");
         log.info("║                                                               ║");
-        log.info("║   ✅ Public Reads:  Traffic Signs, Lessons (no auth)          ║");
+        log.info("║   ✅ Public Reads:  Traffic Signs (no auth)                   ║");
         log.info("║   🔐 Protected:     Exams, Practice, Profile (JWT required)   ║");
         log.info("║   🛡️  Admin:        All admin operations (JWT + role check)   ║");
         log.info("║   🎭 Hierarchy:     ADMIN > MODERATOR > USER                  ║");
@@ -140,6 +140,7 @@ public class SecurityConfigDev {
                         .requestMatchers(HttpMethod.GET, "/api/questions/public").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/categories/**").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/smart-quiz/**").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/api/quiz/**").permitAll()
 
                         // ═══════════════════════════════════════════════════════════
                         // PROTECTED ENDPOINTS (JWT Authentication Required)
@@ -189,7 +190,7 @@ public class SecurityConfigDev {
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
 
         log.info("✅ Security configured successfully");
-        log.info("   - Public endpoints: /api/traffic-signs/**, /api/lessons/** (GET)");
+        log.info("   - Public endpoints: /api/traffic-signs/** (GET)");
         log.info("   - Protected endpoints: /api/exams/**, /api/users/**, etc.");
         log.info("   - Admin endpoints: /api/admin/** (ADMIN role required)");
         log.info("   - Role Hierarchy: ADMIN can access USER and MODERATOR endpoints");
