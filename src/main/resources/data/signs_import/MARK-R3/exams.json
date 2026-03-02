@@ -1,0 +1,51 @@
+{
+  "_IMPORTANT": "Each exam requires exactly 15 questions: 6 EASY + 6 MEDIUM + 3 HARD. No overlap between EXAM_1 and EXAM_2. You need 30 questions total (12 EASY + 12 MEDIUM + 6 HARD).",
+  "_TEMPLATE_STATUS": "INCOMPLETE — Only 5 of 30 required questions exist. Add 25 more questions before configuring exams.",
+  "exam_1": {
+    "_note": "EXAM_1: Questions Q01-Q15 (6 EASY + 6 MEDIUM + 3 HARD)",
+    "questions": [
+      "MARK-R3_Q01",
+      "MARK-R3_Q02",
+      "MARK-R3_Q03",
+      "MARK-R3_Q04",
+      "MARK-R3_Q05",
+      "[MARK-R3_Q06]",
+      "[MARK-R3_Q07]",
+      "[MARK-R3_Q08]",
+      "[MARK-R3_Q09]",
+      "[MARK-R3_Q10]",
+      "[MARK-R3_Q11]",
+      "[MARK-R3_Q12]",
+      "[MARK-R3_Q13]",
+      "[MARK-R3_Q14]",
+      "[MARK-R3_Q15]"
+    ]
+  },
+  "exam_2": {
+    "_note": "EXAM_2: Questions Q16-Q30 (6 EASY + 6 MEDIUM + 3 HARD) — NO overlap with EXAM_1",
+    "questions": [
+      "[MARK-R3_Q16]",
+      "[MARK-R3_Q17]",
+      "[MARK-R3_Q18]",
+      "[MARK-R3_Q19]",
+      "[MARK-R3_Q20]",
+      "[MARK-R3_Q21]",
+      "[MARK-R3_Q22]",
+      "[MARK-R3_Q23]",
+      "[MARK-R3_Q24]",
+      "[MARK-R3_Q25]",
+      "[MARK-R3_Q26]",
+      "[MARK-R3_Q27]",
+      "[MARK-R3_Q28]",
+      "[MARK-R3_Q29]",
+      "[MARK-R3_Q30]"
+    ]
+  },
+  "passing_score": 12,
+  "total_questions": 15,
+  "distribution": {
+    "EASY": 6,
+    "MEDIUM": 6,
+    "HARD": 3
+  }
+}

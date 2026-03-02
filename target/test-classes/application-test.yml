@@ -1,0 +1,64 @@
+# ========================================
+# Test Profile Configuration
+# Uses H2 in-memory database so unit tests
+# and simple @SpringBootTest classes can
+# run without an external MySQL instance.
+# ========================================
+
+spring:
+  application:
+    name: readyroad_test
+
+  security:
+    mode: dev          # disable full security in tests
+
+  datasource:
+    url: jdbc:h2:mem:readyroad_test;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MODE=MYSQL
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop      # auto-create schema from entities
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: false
+    defer-datasource-initialization: true
+
+  flyway:
+    enabled: false               # skip Flyway — H2 schema comes from Hibernate
+
+server:
+  port: 0                         # random port for parallel test safety
+
+# ========================================
+# JWT (minimal config so JwtService boots)
+# ========================================
+jwt:
+  enabled: true
+  secret-key: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970337336763979244226452948404D6351
+  expiration: 3600000
+  refresh-token:
+    expiration: 604800000
+  issuer: readyroad-test
+  header: Authorization
+  prefix: Bearer
+
+# ========================================
+# Disable data import in tests
+# ========================================
+readyroad:
+  data-import:
+    enabled: false
+
+# ========================================
+# Logging — keep it quiet
+# ========================================
+logging:
+  level:
+    root: WARN
+    com.readyroad: INFO
+    org.springframework.web: WARN
+    org.hibernate.SQL: WARN

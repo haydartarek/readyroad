@@ -1,0 +1,51 @@
+{
+  "_IMPORTANT": "Each exam requires exactly 15 questions: 6 EASY + 6 MEDIUM + 3 HARD. No overlap between EXAM_1 and EXAM_2. You need 30 questions total (12 EASY + 12 MEDIUM + 6 HARD).",
+  "_TEMPLATE_STATUS": "INCOMPLETE — Only 5 of 30 required questions exist. Add 25 more questions before configuring exams.",
+  "exam_1": {
+    "_note": "EXAM_1: Questions Q01-Q15 (6 EASY + 6 MEDIUM + 3 HARD)",
+    "questions": [
+      "GVIId-CARPOOL_Q01",
+      "GVIId-CARPOOL_Q02",
+      "GVIId-CARPOOL_Q03",
+      "GVIId-CARPOOL_Q04",
+      "GVIId-CARPOOL_Q05",
+      "[GVIId-CARPOOL_Q06]",
+      "[GVIId-CARPOOL_Q07]",
+      "[GVIId-CARPOOL_Q08]",
+      "[GVIId-CARPOOL_Q09]",
+      "[GVIId-CARPOOL_Q10]",
+      "[GVIId-CARPOOL_Q11]",
+      "[GVIId-CARPOOL_Q12]",
+      "[GVIId-CARPOOL_Q13]",
+      "[GVIId-CARPOOL_Q14]",
+      "[GVIId-CARPOOL_Q15]"
+    ]
+  },
+  "exam_2": {
+    "_note": "EXAM_2: Questions Q16-Q30 (6 EASY + 6 MEDIUM + 3 HARD) — NO overlap with EXAM_1",
+    "questions": [
+      "[GVIId-CARPOOL_Q16]",
+      "[GVIId-CARPOOL_Q17]",
+      "[GVIId-CARPOOL_Q18]",
+      "[GVIId-CARPOOL_Q19]",
+      "[GVIId-CARPOOL_Q20]",
+      "[GVIId-CARPOOL_Q21]",
+      "[GVIId-CARPOOL_Q22]",
+      "[GVIId-CARPOOL_Q23]",
+      "[GVIId-CARPOOL_Q24]",
+      "[GVIId-CARPOOL_Q25]",
+      "[GVIId-CARPOOL_Q26]",
+      "[GVIId-CARPOOL_Q27]",
+      "[GVIId-CARPOOL_Q28]",
+      "[GVIId-CARPOOL_Q29]",
+      "[GVIId-CARPOOL_Q30]"
+    ]
+  },
+  "passing_score": 12,
+  "total_questions": 15,
+  "distribution": {
+    "EASY": 6,
+    "MEDIUM": 6,
+    "HARD": 3
+  }
+}

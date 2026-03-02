@@ -1,0 +1,51 @@
+{
+  "_IMPORTANT": "Each exam requires exactly 15 questions: 6 EASY + 6 MEDIUM + 3 HARD. No overlap between EXAM_1 and EXAM_2. You need 30 questions total (12 EASY + 12 MEDIUM + 6 HARD).",
+  "_TEMPLATE_STATUS": "INCOMPLETE — Only 5 of 30 required questions exist. Add 25 more questions before configuring exams.",
+  "exam_1": {
+    "_note": "EXAM_1: Questions Q01-Q15 (6 EASY + 6 MEDIUM + 3 HARD)",
+    "questions": [
+      "ZE9a_Q01",
+      "ZE9a_Q02",
+      "ZE9a_Q03",
+      "ZE9a_Q04",
+      "ZE9a_Q05",
+      "[ZE9a_Q06]",
+      "[ZE9a_Q07]",
+      "[ZE9a_Q08]",
+      "[ZE9a_Q09]",
+      "[ZE9a_Q10]",
+      "[ZE9a_Q11]",
+      "[ZE9a_Q12]",
+      "[ZE9a_Q13]",
+      "[ZE9a_Q14]",
+      "[ZE9a_Q15]"
+    ]
+  },
+  "exam_2": {
+    "_note": "EXAM_2: Questions Q16-Q30 (6 EASY + 6 MEDIUM + 3 HARD) — NO overlap with EXAM_1",
+    "questions": [
+      "[ZE9a_Q16]",
+      "[ZE9a_Q17]",
+      "[ZE9a_Q18]",
+      "[ZE9a_Q19]",
+      "[ZE9a_Q20]",
+      "[ZE9a_Q21]",
+      "[ZE9a_Q22]",
+      "[ZE9a_Q23]",
+      "[ZE9a_Q24]",
+      "[ZE9a_Q25]",
+      "[ZE9a_Q26]",
+      "[ZE9a_Q27]",
+      "[ZE9a_Q28]",
+      "[ZE9a_Q29]",
+      "[ZE9a_Q30]"
+    ]
+  },
+  "passing_score": 12,
+  "total_questions": 15,
+  "distribution": {
+    "EASY": 6,
+    "MEDIUM": 6,
+    "HARD": 3
+  }
+}

@@ -1,5 +1,6 @@
 package com.readyroad.readyroadbackend.domain.entity;
 
+import com.readyroad.readyroadbackend.util.TextNormalizer;
 import jakarta.persistence.*;
 
 @Entity
@@ -126,6 +127,18 @@ public class Category extends BaseEntity {
 
     public void setIsActive(Boolean isActive) {
         this.isActive = isActive;
+    }
+
+    @Override
+    protected void normalizeTextFields() {
+        nameAr        = TextNormalizer.normalize(nameAr);
+        nameEn        = TextNormalizer.normalize(nameEn);
+        nameNl        = TextNormalizer.normalize(nameNl);
+        nameFr        = TextNormalizer.normalize(nameFr);
+        descriptionAr = TextNormalizer.normalize(descriptionAr);
+        descriptionEn = TextNormalizer.normalize(descriptionEn);
+        descriptionNl = TextNormalizer.normalize(descriptionNl);
+        descriptionFr = TextNormalizer.normalize(descriptionFr);
     }
 }
 

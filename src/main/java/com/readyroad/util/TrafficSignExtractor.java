@@ -17,7 +17,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * مستخرج بيانات العلامات المرورية البلجيكية
  * Belgian Traffic Signs Data Extractor
  */
 public class TrafficSignExtractor {
@@ -55,7 +54,7 @@ public class TrafficSignExtractor {
     public static void main(String[] args) throws Exception {
         System.out.println("🚦 بدء استخراج بيانات العلامات المرورية...");
         
-        // قراءة ملف HTML
+        // Read HTML file
         String htmlFile = "data/traffic_signs.html";
         File file = new File(htmlFile);
         
@@ -64,23 +63,23 @@ public class TrafficSignExtractor {
             return;
         }
         
-        // تحليل HTML
+        // Parse HTML
         Document doc = Jsoup.parse(file, "UTF-8");
         List<TrafficSign> signs = new ArrayList<>();
         
         String currentCategory = null;
         
-        // البحث عن جميع الفئات
+        // Search for all categories
         Elements categoryHeaders = doc.select("h2");
         for (Element header : categoryHeaders) {
             String headerText = header.text();
             
-            // تحديد الفئة
+            // Determine category
             for (String categoryKey : CATEGORIES.keySet()) {
                 if (headerText.contains(categoryKey)) {
                     currentCategory = categoryKey;
                     
-                    // البحث عن جميع العلامات في هذه الفئة
+                    // Search for all signs in this category
                     Element parent = header.parent();
                     if (parent != null) {
                         Elements listingDivs = parent.select("div.listing");
@@ -152,7 +151,7 @@ public class TrafficSignExtractor {
                 String folderName = FOLDER_MAPPING.getOrDefault(categoryCode, "other");
                 String signCode = sign.getSignCode() != null ? sign.getSignCode() : "sign_" + (i + 1);
                 
-                // تنظيف اسم الملف
+                // Clean up filename
                 String cleanCode = signCode.replaceAll("[^\\w\\-]", "_");
                 String imageFilename = cleanCode + ".png";
                 String imagePath = baseImagePath + "/" + folderName + "/" + imageFilename;
@@ -166,7 +165,7 @@ public class TrafficSignExtractor {
                     System.out.println("✗ فشل: " + imageFilename);
                 }
                 
-                // توقف قصير
+                // Brief pause
                 Thread.sleep(500);
             }
             
@@ -195,10 +194,10 @@ public class TrafficSignExtractor {
             sign.setCategoryNameFr(catInfo.getNameFr());
         }
         
-        // استخراج الرابط
+        // Extract URL
         sign.setUrl(item.attr("href"));
         
-        // استخراج الصورة
+        // Extract image
         Elements imgs = item.select("img");
         if (!imgs.isEmpty()) {
             Element img = imgs.first();
@@ -206,7 +205,7 @@ public class TrafficSignExtractor {
             String src = img.attr("src");
             
             if (!srcset.isEmpty()) {
-                // البحث عن رابط 2x
+                // Search for 2x URL
                 String[] parts = srcset.split(",");
                 for (String part : parts) {
                     if (part.contains("2x")) {
@@ -224,13 +223,13 @@ public class TrafficSignExtractor {
             sign.setAlt(img.attr("alt"));
         }
         
-        // استخراج العنوان
+        // Extract title
         Elements titles = item.select("div.listing-item__title");
         if (!titles.isEmpty()) {
             String titleNl = titles.first().text().trim();
             sign.setTitleNl(titleNl);
             
-            // استخراج رمز العلامة
+            // Extract sign code
             Pattern pattern = Pattern.compile("^([A-Z]+\\d+[a-zA-Z]*)\\s+(.+)$");
             Matcher matcher = pattern.matcher(titleNl);
             if (matcher.matches()) {

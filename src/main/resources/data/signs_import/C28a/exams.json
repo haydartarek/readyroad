@@ -1,0 +1,51 @@
+{
+  "_IMPORTANT": "Each exam requires exactly 15 questions: 6 EASY + 6 MEDIUM + 3 HARD. No overlap between EXAM_1 and EXAM_2. You need 30 questions total (12 EASY + 12 MEDIUM + 6 HARD).",
+  "_TEMPLATE_STATUS": "INCOMPLETE — Only 5 of 30 required questions exist. Add 25 more questions before configuring exams.",
+  "exam_1": {
+    "_note": "EXAM_1: Questions Q01-Q15 (6 EASY + 6 MEDIUM + 3 HARD)",
+    "questions": [
+      "C28a_Q01",
+      "C28a_Q02",
+      "C28a_Q03",
+      "C28a_Q04",
+      "C28a_Q05",
+      "[C28a_Q06]",
+      "[C28a_Q07]",
+      "[C28a_Q08]",
+      "[C28a_Q09]",
+      "[C28a_Q10]",
+      "[C28a_Q11]",
+      "[C28a_Q12]",
+      "[C28a_Q13]",
+      "[C28a_Q14]",
+      "[C28a_Q15]"
+    ]
+  },
+  "exam_2": {
+    "_note": "EXAM_2: Questions Q16-Q30 (6 EASY + 6 MEDIUM + 3 HARD) — NO overlap with EXAM_1",
+    "questions": [
+      "[C28a_Q16]",
+      "[C28a_Q17]",
+      "[C28a_Q18]",
+      "[C28a_Q19]",
+      "[C28a_Q20]",
+      "[C28a_Q21]",
+      "[C28a_Q22]",
+      "[C28a_Q23]",
+      "[C28a_Q24]",
+      "[C28a_Q25]",
+      "[C28a_Q26]",
+      "[C28a_Q27]",
+      "[C28a_Q28]",
+      "[C28a_Q29]",
+      "[C28a_Q30]"
+    ]
+  },
+  "passing_score": 12,
+  "total_questions": 15,
+  "distribution": {
+    "EASY": 6,
+    "MEDIUM": 6,
+    "HARD": 3
+  }
+}

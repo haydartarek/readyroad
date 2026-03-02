@@ -199,6 +199,45 @@ public class ExamController {
     }
 
     /**
+     * Submit (complete) exam simulation
+     *
+     * POST /api/exams/simulations/{examId}/submit
+     *
+     * Marks the exam as COMPLETED and calculates the final score.
+     * Must be called before GET /results so the exam is in a terminal state.
+     * Idempotent — safe to call if already completed.
+     */
+    @PostMapping("/{examId}/submit")
+    @Operation(
+        summary = "Submit and complete exam",
+        description = "Marks the exam as COMPLETED and persists the final score. " +
+                      "Must be called when user clicks Submit. Idempotent if already completed."
+    )
+    @ApiResponses({
+        @ApiResponse(responseCode = "200", description = "Exam completed successfully"),
+        @ApiResponse(responseCode = "400", description = "Exam not in progress"),
+        @ApiResponse(responseCode = "403", description = "Exam belongs to another user"),
+        @ApiResponse(responseCode = "404", description = "Exam not found")
+    })
+    public ResponseEntity<Map<String, Object>> submitExam(
+        @Parameter(description = "Exam ID", required = true)
+        @PathVariable Long examId
+    ) {
+        Long userId = authenticationUtil.getCurrentUserId();
+        log.info("📋 Submitting exam: examId={}, userId={}", examId, userId);
+
+        examService.completeExam(examId, userId);
+
+        Map<String, Object> response = new HashMap<>();
+        response.put("examId", examId);
+        response.put("status", "COMPLETED");
+        response.put("message", "Exam submitted successfully");
+
+        log.info("✅ Exam submitted: examId={}", examId);
+        return ResponseEntity.ok(response);
+    }
+
+    /**
      * Story A3: Get exam results
      *
      * GET /api/exams/simulations/{examId}/results

@@ -9,27 +9,27 @@ import java.time.LocalDateTime;
 
 /**
  * ═══════════════════════════════════════════════════════════════════
- *  أنماط الأخطاء (User Error Patterns)
+ *  Error Patterns (User Error Patterns)
  * ═══════════════════════════════════════════════════════════════════
  * 
- * 🎯 جوهر القانون الرابع: الإحصائيات العامة
+ * Core of Law Four: General Statistics
  * 
- * هذا الـ Entity يسجل أنماط الأخطاء، ليس الأخطاء نفسها:
+ * This Entity records error patterns, not the errors themselves:
  * 
- * • ErrorType → تصنيف عام (SIGN_CONFUSION, PRIORITY_MISUNDERSTANDING...)
- * • لا يوجد حقل "اسم الإشارة" أو "رقم القانون"
- * • النمط قابل للتطبيق على أي محتوى
+ * • ErrorType -> General classification (SIGN_CONFUSION, PRIORITY_MISUNDERSTANDING...)
+ * • No field for "sign name" or "law number"
+ * • The pattern is applicable to any content
  * 
- * مثال التطبيق:
- * - في الإشارات: SIGN_CONFUSION = خلط بين علامتين
- * - في الطب: SIGN_CONFUSION = خلط بين أعراض
- * - في الرياضيات: SIGN_CONFUSION = خلط بين قوانين
+ * Application example:
+ * - In signs: SIGN_CONFUSION = confusion between two signs
+ * - In medicine: SIGN_CONFUSION = confusion between symptoms
+ * - In mathematics: SIGN_CONFUSION = confusion between formulas
  * 
- * القاعدة: النمط عام، المحتوى متغير
+ * Rule: The pattern is general, the content is variable
  * 
- * ⚠️ هذا هو الجهل المتعمّد (القانون الخامس)
+ * This is intentional ignorance (Law Five)
  * 
- * @see SYSTEM_LAWS.md - القانون الرابع والخامس
+ * @see SYSTEM_LAWS.md - Laws Four and Five
  */
 @Entity
 @Table(name = "user_error_patterns")
@@ -71,12 +71,12 @@ public class UserErrorPattern {
     private String notes;
 
     public enum ErrorType {
-        SIGN_CONFUSION,              // خلط بين علامات متشابهة
-        SUPPLEMENTARY_IGNORED,       // تجاهل لوحة تكميلية
-        PRIORITY_MISUNDERSTANDING,   // فهم خاطئ للأولوية
-        SPEED_LIMIT_ERROR,           // خطأ في حدود السرعة
-        ZONE_CONFUSION,              // خلط بين المناطق
-        RULE_OVERGENERALIZATION,     // تعميم قاعدة في مكان خاطئ
+        SIGN_CONFUSION,              // Confusion between similar signs
+        SUPPLEMENTARY_IGNORED,       // Ignoring a supplementary panel
+        PRIORITY_MISUNDERSTANDING,   // Misunderstanding of priority
+        SPEED_LIMIT_ERROR,           // Error in speed limits
+        ZONE_CONFUSION,              // Confusion between zones
+        RULE_OVERGENERALIZATION,     // Overgeneralizing a rule in the wrong context
         OTHER
     }
 

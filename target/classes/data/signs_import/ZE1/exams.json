@@ -1,0 +1,51 @@
+{
+  "_IMPORTANT": "Each exam requires exactly 15 questions: 6 EASY + 6 MEDIUM + 3 HARD. No overlap between EXAM_1 and EXAM_2. You need 30 questions total (12 EASY + 12 MEDIUM + 6 HARD).",
+  "_TEMPLATE_STATUS": "INCOMPLETE — Only 5 of 30 required questions exist. Add 25 more questions before configuring exams.",
+  "exam_1": {
+    "_note": "EXAM_1: Questions Q01-Q15 (6 EASY + 6 MEDIUM + 3 HARD)",
+    "questions": [
+      "ZE1_Q01",
+      "ZE1_Q02",
+      "ZE1_Q03",
+      "ZE1_Q04",
+      "ZE1_Q05",
+      "[ZE1_Q06]",
+      "[ZE1_Q07]",
+      "[ZE1_Q08]",
+      "[ZE1_Q09]",
+      "[ZE1_Q10]",
+      "[ZE1_Q11]",
+      "[ZE1_Q12]",
+      "[ZE1_Q13]",
+      "[ZE1_Q14]",
+      "[ZE1_Q15]"
+    ]
+  },
+  "exam_2": {
+    "_note": "EXAM_2: Questions Q16-Q30 (6 EASY + 6 MEDIUM + 3 HARD) — NO overlap with EXAM_1",
+    "questions": [
+      "[ZE1_Q16]",
+      "[ZE1_Q17]",
+      "[ZE1_Q18]",
+      "[ZE1_Q19]",
+      "[ZE1_Q20]",
+      "[ZE1_Q21]",
+      "[ZE1_Q22]",
+      "[ZE1_Q23]",
+      "[ZE1_Q24]",
+      "[ZE1_Q25]",
+      "[ZE1_Q26]",
+      "[ZE1_Q27]",
+      "[ZE1_Q28]",
+      "[ZE1_Q29]",
+      "[ZE1_Q30]"
+    ]
+  },
+  "passing_score": 12,
+  "total_questions": 15,
+  "distribution": {
+    "EASY": 6,
+    "MEDIUM": 6,
+    "HARD": 3
+  }
+}

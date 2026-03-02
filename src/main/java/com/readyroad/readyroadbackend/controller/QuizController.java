@@ -6,6 +6,7 @@ import com.readyroad.readyroadbackend.dto.QuizQuestionDTO;
 import com.readyroad.readyroadbackend.dto.practice.SubmitPracticeAnswerRequest;
 import com.readyroad.readyroadbackend.dto.practice.SubmitPracticeAnswerResponse;
 import com.readyroad.readyroadbackend.mapper.QuizQuestionMapper;
+import com.readyroad.readyroadbackend.service.CategoryService;
 import com.readyroad.readyroadbackend.service.PracticeService;
 import com.readyroad.readyroadbackend.service.QuizService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -49,6 +50,7 @@ import java.util.List;
 public class QuizController {
 
     private final QuizService quizService;
+    private final CategoryService categoryService;
     private final PracticeService practiceService;
     private final AuthenticationUtil authenticationUtil;
     private final QuizQuestionMapper quizQuestionMapper;
@@ -106,7 +108,8 @@ public class QuizController {
                description = "Returns total count of available questions")
     public ResponseEntity<QuizStats> getQuizStats() {
         Long totalQuestions = quizService.getTotalActiveQuestions();
-        return ResponseEntity.ok(new QuizStats(totalQuestions));
+        Long totalCategories = (long) categoryService.getAllActiveCategories().size();
+        return ResponseEntity.ok(new QuizStats(totalQuestions, totalCategories));
     }
 
     /**
@@ -125,13 +128,13 @@ public class QuizController {
             @PathVariable Long categoryId) {
 
         Long categoryQuestions = quizService.getActiveQuestionsByCategory(categoryId);
-        return ResponseEntity.ok(new QuizStats(categoryQuestions));
+        return ResponseEntity.ok(new QuizStats(categoryQuestions, null));
     }
 
     /**
      * Simple DTO for quiz statistics
      */
-    public record QuizStats(Long totalQuestions) {}
+    public record QuizStats(Long totalQuestions, Long totalCategories) {}
 
     // ============================================================================
     // STORY B1: SUBMIT PRACTICE ANSWER

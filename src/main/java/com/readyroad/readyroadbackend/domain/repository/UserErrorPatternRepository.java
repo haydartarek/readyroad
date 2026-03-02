@@ -3,6 +3,7 @@ package com.readyroad.readyroadbackend.domain.repository;
 import com.readyroad.readyroadbackend.domain.entity.UserErrorPattern;
 import com.readyroad.readyroadbackend.domain.entity.UserErrorPattern.ErrorType;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
@@ -35,4 +36,22 @@ public interface UserErrorPatternRepository extends JpaRepository<UserErrorPatte
         @Param("userId") Long userId,
         @Param("categoryId") Long categoryId
     );
+
+    /**
+     * Insert a sign-specific error pattern using raw native SQL.
+     * question_type='PRACTICE' is a fixed literal (matches the DB ENUM).
+     * question_ref_id holds the sign_questions.id.
+     * traffic_sign_id and category_id are intentionally left NULL
+     * (sign-quiz bypasses the legacy FK columns).
+     */
+    @Modifying
+    @Query(nativeQuery = true, value = """
+            INSERT INTO user_error_patterns
+                (user_id, error_type, question_type, question_ref_id, occurred_at)
+            VALUES (:userId, :errorType, 'PRACTICE', :questionId, NOW())
+            """)
+    void insertSignError(@Param("userId")     Long   userId,
+                         @Param("errorType")  String errorType,
+                         @Param("questionId") Long   questionId,
+                         @Param("signCode")   String signCode);
 }

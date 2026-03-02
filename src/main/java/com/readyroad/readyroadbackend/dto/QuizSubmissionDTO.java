@@ -7,13 +7,13 @@ import lombok.NoArgsConstructor;
 import java.util.Map;
 
 /**
- * DTO لتقديم إجابات Quiz
- * ✅ FIX #10: إضافة attemptId للـ DTO لتحسين API design
+ * DTO for submitting Quiz answers
+ * FIX #10: Adding attemptId to the DTO to improve API design
  */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class QuizSubmissionDTO {
-    private Long attemptId; // معرّف المحاولة (للـ Smart Quiz)
+    private Long attemptId; // Attempt identifier (for Smart Quiz)
     private Map<Long, Long> answers; // questionId -> selectedOptionId
 }

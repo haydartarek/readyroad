@@ -1,7 +1,6 @@
 package com.readyroad.readyroadbackend.service;
 
 import com.readyroad.readyroadbackend.domain.entity.QuizQuestion;
-import com.readyroad.readyroadbackend.domain.model.UserQuestionHistory;
 import com.readyroad.readyroadbackend.domain.repository.QuizQuestionRepository;
 import com.readyroad.readyroadbackend.domain.repository.UserQuestionHistoryRepository;
 import lombok.RequiredArgsConstructor;
@@ -11,9 +10,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
@@ -77,16 +78,44 @@ public class SmartQuizService {
         int fetchCount = Math.min(count * MAX_FETCH_MULTIPLIER, 150);
         List<QuizQuestion> candidates = fetchCandidateQuestions(categoryId, fetchCount);
 
-        List<QuizQuestion> freshQuestions = candidates.stream()
+        // Base filter: active + published + valid options (always applied)
+        List<QuizQuestion> compliantCandidates = candidates.stream()
                 .filter(q -> q != null && q.getId() != null)
                 .filter(q -> Boolean.TRUE.equals(q.getIsActive())) // belt-and-suspenders
                 .filter(q -> q.getStatus() == QuizQuestion.QuestionStatus.PUBLISHED) // Belgian invariant
                 .filter(this::hasValidOptions) // quality gate
+                .collect(Collectors.toList());
+
+        // Phase 1: Try fresh (not seen in 24h) questions first
+        List<QuizQuestion> freshQuestions = compliantCandidates.stream()
                 .filter(q -> !recentQuestionIds.contains(q.getId()))
                 .limit(count)
                 .collect(Collectors.toList());
 
-        log.info("Found {} fresh questions out of {} candidates", freshQuestions.size(), candidates.size());
+        log.info("Found {} fresh questions out of {} compliant candidates", freshQuestions.size(), compliantCandidates.size());
+
+        // Phase 2: Fallback — if not enough fresh questions, include already-seen questions
+        // This ensures users can ALWAYS practice, even after seeing all questions recently.
+        if (freshQuestions.size() < count && !compliantCandidates.isEmpty()) {
+            Set<Long> alreadySelected = freshQuestions.stream()
+                    .map(QuizQuestion::getId)
+                    .collect(Collectors.toSet());
+            int needed = count - freshQuestions.size();
+
+            List<QuizQuestion> fallbackQuestions = compliantCandidates.stream()
+                    .filter(q -> !alreadySelected.contains(q.getId()))
+                    .limit(needed)
+                    .collect(Collectors.toList());
+
+            if (!fallbackQuestions.isEmpty()) {
+                log.info("Cooldown fallback: adding {} already-seen questions (user has reviewed all fresh content)",
+                        fallbackQuestions.size());
+                List<QuizQuestion> combined = new ArrayList<>(freshQuestions);
+                combined.addAll(fallbackQuestions);
+                Collections.shuffle(combined); // mix fresh and review questions
+                freshQuestions = combined;
+            }
+        }
 
         // Only record history for authenticated users
         if (userId != null && !freshQuestions.isEmpty()) {
@@ -130,20 +159,12 @@ public class SmartQuizService {
      */
     private void recordQuestionHistory(Long userId, List<QuizQuestion> questions, String shownType) {
         LocalDateTime now = LocalDateTime.now();
-        List<UserQuestionHistory> historyRecords = questions.stream()
-                .map(q -> UserQuestionHistory.builder()
-                        .userId(userId)
-                        .questionId(q.getId())
-                        .lastShownAt(now)
-                        .lastShownType(shownType)
-                        .timesShown(1)
-                        // DON'T set answeredAt here - only when user submits answer
-                        .build())
-                .collect(Collectors.toList());
-
-        historyRepository.saveAll(historyRecords);
+        // Use upsert so re-visiting the same question never causes a duplicate-key error.
+        // ON DUPLICATE KEY UPDATE increments times_shown and refreshes last_shown_at.
+        questions.forEach(q ->
+                historyRepository.upsertQuestionShown(userId, q.getId(), now, shownType));
         log.debug("Recorded {} questions in history for user {} with type {}",
-                historyRecords.size(), userId, shownType);
+                questions.size(), userId, shownType);
     }
 
     // ============================================================================

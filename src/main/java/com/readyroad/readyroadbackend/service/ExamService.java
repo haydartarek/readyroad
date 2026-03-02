@@ -5,9 +5,11 @@ import com.readyroad.readyroadbackend.domain.entity.ExamSimulationAnswer;
 import com.readyroad.readyroadbackend.domain.entity.ExamSimulationQuestion;
 import com.readyroad.readyroadbackend.domain.entity.QuizAnswerOption;
 import com.readyroad.readyroadbackend.domain.entity.QuizQuestion;
+import com.readyroad.readyroadbackend.domain.entity.NotificationType;
 import com.readyroad.readyroadbackend.domain.repository.ExamSimulationAnswerRepository;
 import com.readyroad.readyroadbackend.domain.repository.ExamSimulationQuestionRepository;
 import com.readyroad.readyroadbackend.domain.repository.ExamSimulationRepository;
+import com.readyroad.readyroadbackend.domain.repository.NotificationRepository;
 import com.readyroad.readyroadbackend.domain.repository.QuizAnswerOptionRepository;
 import com.readyroad.readyroadbackend.domain.repository.QuizQuestionRepository;
 import com.readyroad.readyroadbackend.dto.exam.ExamStartResponse;
@@ -25,6 +27,7 @@ import com.readyroad.readyroadbackend.exception.InvalidAnswerException;
 import com.readyroad.readyroadbackend.exception.QuestionNotFoundException;
 import com.readyroad.readyroadbackend.exception.UnauthorizedException;
 import com.readyroad.readyroadbackend.mapper.ExamMapper;
+
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -63,10 +66,19 @@ public class ExamService {
     private final SmartQuizService smartQuizService;
     private final QuizService quizService; // Story D1: Belgian compliance validation
     private final ExamMapper examMapper; // DTO mapping
+    private final NotificationService notificationService; // Story N1: Exam result notifications
+    private final NotificationRepository notificationRepository; // Dedup checks
+    private final AchievementService achievementService; // Story N2: Achievement notifications
 
-    private static final int EXAM_QUESTION_COUNT = 50;
+    private static final int EXAM_QUESTION_COUNT    = 50;
     private static final int EXAM_TIME_LIMIT_MINUTES = 30;
-    private static final int PASSING_SCORE = 41;
+    private static final int PASSING_SCORE           = 41;
+
+    // Belgian driving exam: fixed difficulty distribution
+    private static final int EASY_QUESTION_COUNT   = 20;   // 40%
+    private static final int MEDIUM_QUESTION_COUNT = 20;   // 40%
+    private static final int HARD_QUESTION_COUNT   = 10;   // 20%
+    // Total: 50 = EASY + MEDIUM + HARD ✅
 
     /**
      * Start a new exam simulation.
@@ -97,33 +109,61 @@ public class ExamService {
             throw new ActiveExamAlreadyExistsException(userId, activeExam.getId());
         }
 
-        // ✅ AC2-AC4: Generate 50 questions - FIXED VERSION
-        // Get all published and active questions directly from repository
-        List<QuizQuestion> allQuestions = questionRepository.findAll().stream()
+        // ✅ Belgian exam standard: 20 EASY + 20 MEDIUM + 10 HARD = 50 questions
+        // Uses ORDER BY RAND() in DB for true randomness per difficulty tier
+        List<QuizQuestion> easyPool = questionRepository
+                .findRandomQuestionsByDifficulty(QuizQuestion.DifficultyLevel.EASY).stream()
                 .filter(q -> q != null && q.getId() != null)
-                .filter(q -> q.getStatus() == QuizQuestion.QuestionStatus.PUBLISHED)
-                .filter(QuizQuestion::getIsActive)
-                .filter(q -> q.getOptions() != null && q.getOptions().size() >= 2) // Must have 2+ options
+                .filter(q -> q.getOptions() != null && q.getOptions().size() >= 2)
                 .collect(Collectors.toList());
 
-        log.debug("Found {} published questions in database", allQuestions.size());
+        List<QuizQuestion> mediumPool = questionRepository
+                .findRandomQuestionsByDifficulty(QuizQuestion.DifficultyLevel.MEDIUM).stream()
+                .filter(q -> q != null && q.getId() != null)
+                .filter(q -> q.getOptions() != null && q.getOptions().size() >= 2)
+                .collect(Collectors.toList());
 
-        if (allQuestions.size() < EXAM_QUESTION_COUNT) {
-            log.warn("Insufficient valid questions. Required: {}, Available: {}",
-                    EXAM_QUESTION_COUNT, allQuestions.size());
-            throw new IllegalStateException(
-                    String.format("Insufficient valid questions available. Required: %d, Available: %d",
-                            EXAM_QUESTION_COUNT, allQuestions.size())
-            );
+        List<QuizQuestion> hardPool = questionRepository
+                .findRandomQuestionsByDifficulty(QuizQuestion.DifficultyLevel.HARD).stream()
+                .filter(q -> q != null && q.getId() != null)
+                .filter(q -> q.getOptions() != null && q.getOptions().size() >= 2)
+                .collect(Collectors.toList());
+
+        log.debug("Difficulty pool sizes — EASY: {}, MEDIUM: {}, HARD: {}",
+                easyPool.size(), mediumPool.size(), hardPool.size());
+
+        // Validate each tier has enough questions before building the exam
+        if (easyPool.size() < EASY_QUESTION_COUNT) {
+            log.error("Insufficient EASY questions. Required: {}, Available: {}",
+                    EASY_QUESTION_COUNT, easyPool.size());
+            throw new IllegalStateException(String.format(
+                    "Insufficient EASY questions. Required: %d, Available: %d",
+                    EASY_QUESTION_COUNT, easyPool.size()));
+        }
+        if (mediumPool.size() < MEDIUM_QUESTION_COUNT) {
+            log.error("Insufficient MEDIUM questions. Required: {}, Available: {}",
+                    MEDIUM_QUESTION_COUNT, mediumPool.size());
+            throw new IllegalStateException(String.format(
+                    "Insufficient MEDIUM questions. Required: %d, Available: %d",
+                    MEDIUM_QUESTION_COUNT, mediumPool.size()));
+        }
+        if (hardPool.size() < HARD_QUESTION_COUNT) {
+            log.error("Insufficient HARD questions. Required: {}, Available: {}",
+                    HARD_QUESTION_COUNT, hardPool.size());
+            throw new IllegalStateException(String.format(
+                    "Insufficient HARD questions. Required: %d, Available: %d",
+                    HARD_QUESTION_COUNT, hardPool.size()));
         }
 
-        // ✅ Shuffle and select 50 random questions
-        Collections.shuffle(allQuestions);
-        List<QuizQuestion> questions = allQuestions.stream()
-                .limit(EXAM_QUESTION_COUNT)
-                .collect(Collectors.toList());
+        // Build the 50-question set with correct distribution, then shuffle order
+        List<QuizQuestion> questions = new ArrayList<>(EXAM_QUESTION_COUNT);
+        questions.addAll(easyPool.subList(0, EASY_QUESTION_COUNT));
+        questions.addAll(mediumPool.subList(0, MEDIUM_QUESTION_COUNT));
+        questions.addAll(hardPool.subList(0, HARD_QUESTION_COUNT));
+        Collections.shuffle(questions); // Randomise final question order
 
-        log.info("Selected {} random questions for exam", questions.size());
+        log.info("Selected {} questions for exam (EASY={}, MEDIUM={}, HARD={})",
+                questions.size(), EASY_QUESTION_COUNT, MEDIUM_QUESTION_COUNT, HARD_QUESTION_COUNT);
 
         // AC6-AC7: Create exam simulation (UTC-aware timestamps)
         Instant now = Instant.now();
@@ -253,6 +293,115 @@ public class ExamService {
             userId,
             ExamSimulation.ExamStatus.COMPLETED
         );
+    }
+
+    /**
+     * Complete (submit) an exam simulation.
+     *
+     * Called when the user clicks "Submit Exam". Marks the exam as COMPLETED,
+     * calculates and persists the final score on the exam entity.
+     *
+     * Idempotent: safe to call multiple times — subsequent calls on an already
+     * COMPLETED or EXPIRED exam are silently ignored.
+     *
+     * @param examId Exam ID
+     * @param userId Authenticated user ID (ownership check)
+     */
+    @Transactional
+    public void completeExam(Long examId, Long userId) {
+        log.info("Completing exam: examId={}, userId={}", examId, userId);
+
+        ExamSimulation exam = examRepository.findById(examId)
+                .orElseThrow(() -> new ExamNotFoundException(
+                        String.format("Exam %d not found", examId)));
+
+        if (!exam.getUserId().equals(userId)) {
+            throw new UnauthorizedException(userId, examId);
+        }
+
+        // Idempotent — already in a terminal state, nothing to do
+        if (exam.getStatus() == ExamSimulation.ExamStatus.COMPLETED ||
+                exam.getStatus() == ExamSimulation.ExamStatus.EXPIRED) {
+            log.info("Exam {} already in terminal state: {}", examId, exam.getStatus());
+            return;
+        }
+
+        if (exam.getStatus() != ExamSimulation.ExamStatus.IN_PROGRESS) {
+            throw new ExamNotActiveException(
+                    "Cannot complete exam with status: " + exam.getStatus());
+        }
+
+        // Calculate final score from all submitted answers
+        List<ExamSimulationAnswer> answers = answerRepository.findByExamId(examId);
+        int correctCount = (int) answers.stream()
+                .filter(ExamSimulationAnswer::getIsCorrect)
+                .count();
+        double scorePercentage = (correctCount * 100.0) / EXAM_QUESTION_COUNT;
+
+        // Persist completion state and score on the exam entity
+        exam.setStatus(ExamSimulation.ExamStatus.COMPLETED);
+        exam.setCompletedAt(Instant.now());
+        exam.setCorrectAnswers(correctCount);
+        exam.setScorePercentage(scorePercentage);
+
+        examRepository.save(exam);
+
+        log.info("Exam completed: examId={}, score={}/{} ({}%)",
+                examId, correctCount, EXAM_QUESTION_COUNT,
+                String.format("%.1f", scorePercentage));
+
+        // ── Story N1: Fire exam-result notification ──────────────────────────
+        boolean passed = correctCount >= PASSING_SCORE;
+        try {
+            if (passed) {
+                notificationService.createExamPassedNotification(
+                        exam.getUserId(), examId, correctCount, EXAM_QUESTION_COUNT);
+            } else {
+                int pointsShort = PASSING_SCORE - correctCount;
+                notificationService.createExamFailedNotification(
+                        exam.getUserId(), examId, correctCount, EXAM_QUESTION_COUNT, pointsShort);
+            }
+        } catch (Exception ex) {
+            // Notification failure must NEVER roll back the exam completion
+            log.warn("Failed to create exam notification for examId={}: {}", examId, ex.getMessage());
+        }
+
+        // ── Story N2: Fire WEAK_AREA notifications (deduped per 24h) ─────────
+        try {
+            List<ExamSimulationAnswer> allAnswers = answerRepository.findByExamId(examId);
+            Map<Long, CategoryBreakdownDTO> categoryMap = calculateCategoryBreakdown(allAnswers);
+            Instant weakAreaCutoff = Instant.now().minusSeconds(24 * 3600);
+            for (CategoryBreakdownDTO cat : categoryMap.values()) {
+                if (Boolean.TRUE.equals(cat.getIsWeakArea())) {
+                    // Dedup: skip if we already sent a WEAK_AREA notif for this user in the last 24h
+                    // (We use category name in message but dedup on type+userId+window to avoid flooding)
+                    boolean recentlySent = !notificationRepository
+                            .findByUserIdAndTypeAndCreatedAtAfter(
+                                    exam.getUserId(), NotificationType.WEAK_AREA, weakAreaCutoff)
+                            .isEmpty();
+                    if (!recentlySent) {
+                        notificationService.createWeakAreaNotification(
+                                exam.getUserId(), cat.getCategoryNameEn());
+                        log.info("WEAK_AREA notification sent for userId={}, category={}",
+                                exam.getUserId(), cat.getCategoryNameEn());
+                        break; // Send max 1 weak-area notif per exam to avoid spam
+                    } else {
+                        log.debug("WEAK_AREA notification skipped (sent within 24h) for userId={}",
+                                exam.getUserId());
+                        break;
+                    }
+                }
+            }
+        } catch (Exception ex) {
+            log.warn("Failed to create weak-area notifications for examId={}: {}", examId, ex.getMessage());
+        }
+
+        // ── Story N3: Fire ACHIEVEMENT notifications ──────────────────────────
+        try {
+            achievementService.checkAndAwardExamAchievements(exam.getUserId(), examId, passed, correctCount);
+        } catch (Exception ex) {
+            log.warn("Failed to check achievements for examId={}: {}", examId, ex.getMessage());
+        }
     }
 
     /**

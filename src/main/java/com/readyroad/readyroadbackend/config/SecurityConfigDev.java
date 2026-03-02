@@ -155,6 +155,9 @@ public class SecurityConfigDev {
                         .requestMatchers("/api/exams/**").authenticated()
                         .requestMatchers("/api/practice/**").authenticated()
 
+                        // Sign Quiz (all methods require authentication)
+                        .requestMatchers("/api/sign-quiz/**").authenticated()
+
                         // Analytics & Progress
                         .requestMatchers("/api/analytics/**").authenticated()
                         .requestMatchers("/api/progress/**").authenticated()

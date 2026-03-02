@@ -6,6 +6,8 @@ import com.readyroad.readyroadbackend.domain.repository.UserRepository;
 import com.readyroad.readyroadbackend.dto.AuthResponse;
 import com.readyroad.readyroadbackend.dto.LoginRequest;
 import com.readyroad.readyroadbackend.dto.RegisterRequest;
+import java.util.HashMap;
+import java.util.Map;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -69,8 +71,10 @@ public class AuthService {
         user = userRepository.save(user);
         log.info("✅ User registered successfully: {}", user.getUsername());
 
-        // Generate JWT token
-        String jwtToken = jwtService.generateToken(user.getUsername());
+        // Generate JWT token with role claim
+        Map<String, Object> claims = new HashMap<>();
+        claims.put("role", user.getRole().name());
+        String jwtToken = jwtService.generateToken(claims, user.getUsername());
 
         // Build and return response
         return buildAuthResponse(user, jwtToken);
@@ -143,9 +147,11 @@ public class AuthService {
         User user = userRepository.findByUsername(request.getUsername())
                 .orElseThrow(() -> new IllegalArgumentException("User not found"));
 
-        // Generate JWT token
+        // Generate JWT token with role claim
         log.info("🎫 Generating JWT token for user: {}", user.getUsername());
-        String jwtToken = jwtService.generateToken(user.getUsername());
+        Map<String, Object> claims = new HashMap<>();
+        claims.put("role", user.getRole().name());
+        String jwtToken = jwtService.generateToken(claims, user.getUsername());
         log.info("✅ JWT token generated successfully");
 
         // Build and return response

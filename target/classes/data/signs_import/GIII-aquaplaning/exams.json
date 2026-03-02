@@ -1,0 +1,51 @@
+{
+  "_IMPORTANT": "Each exam requires exactly 15 questions: 6 EASY + 6 MEDIUM + 3 HARD. No overlap between EXAM_1 and EXAM_2. You need 30 questions total (12 EASY + 12 MEDIUM + 6 HARD).",
+  "_TEMPLATE_STATUS": "INCOMPLETE — Only 5 of 30 required questions exist. Add 25 more questions before configuring exams.",
+  "exam_1": {
+    "_note": "EXAM_1: Questions Q01-Q15 (6 EASY + 6 MEDIUM + 3 HARD)",
+    "questions": [
+      "GIII-aquaplaning_Q01",
+      "GIII-aquaplaning_Q02",
+      "GIII-aquaplaning_Q03",
+      "GIII-aquaplaning_Q04",
+      "GIII-aquaplaning_Q05",
+      "[GIII-aquaplaning_Q06]",
+      "[GIII-aquaplaning_Q07]",
+      "[GIII-aquaplaning_Q08]",
+      "[GIII-aquaplaning_Q09]",
+      "[GIII-aquaplaning_Q10]",
+      "[GIII-aquaplaning_Q11]",
+      "[GIII-aquaplaning_Q12]",
+      "[GIII-aquaplaning_Q13]",
+      "[GIII-aquaplaning_Q14]",
+      "[GIII-aquaplaning_Q15]"
+    ]
+  },
+  "exam_2": {
+    "_note": "EXAM_2: Questions Q16-Q30 (6 EASY + 6 MEDIUM + 3 HARD) — NO overlap with EXAM_1",
+    "questions": [
+      "[GIII-aquaplaning_Q16]",
+      "[GIII-aquaplaning_Q17]",
+      "[GIII-aquaplaning_Q18]",
+      "[GIII-aquaplaning_Q19]",
+      "[GIII-aquaplaning_Q20]",
+      "[GIII-aquaplaning_Q21]",
+      "[GIII-aquaplaning_Q22]",
+      "[GIII-aquaplaning_Q23]",
+      "[GIII-aquaplaning_Q24]",
+      "[GIII-aquaplaning_Q25]",
+      "[GIII-aquaplaning_Q26]",
+      "[GIII-aquaplaning_Q27]",
+      "[GIII-aquaplaning_Q28]",
+      "[GIII-aquaplaning_Q29]",
+      "[GIII-aquaplaning_Q30]"
+    ]
+  },
+  "passing_score": 12,
+  "total_questions": 15,
+  "distribution": {
+    "EASY": 6,
+    "MEDIUM": 6,
+    "HARD": 3
+  }
+}

@@ -193,7 +193,7 @@ class AdaptiveDifficultyIntegrationTest {
             UserQuestionHistory history = UserQuestionHistory.builder()
                     .userId(userId)
                     .questionId(questions.get(i).getId())
-                    .answeredAt(LocalDateTime.now().minusHours(25 + i)) // ✅ أكتر من 24 ساعة
+                    .answeredAt(LocalDateTime.now().minusHours(25 + i)) // More than 24 hours
                     .isCorrect(true)
                     .timeTakenSeconds(30)
                     .build();
@@ -205,7 +205,7 @@ class AdaptiveDifficultyIntegrationTest {
             UserQuestionHistory history = UserQuestionHistory.builder()
                     .userId(userId)
                     .questionId(questions.get(correctCount + i).getId())
-                    .answeredAt(LocalDateTime.now().minusHours(25 + correctCount + i)) // ✅ أكتر من 24 ساعة
+                    .answeredAt(LocalDateTime.now().minusHours(25 + correctCount + i)) // More than 24 hours
                     .isCorrect(false)
                     .timeTakenSeconds(60)
                     .build();

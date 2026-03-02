@@ -66,4 +66,10 @@ public class WeakAreaRecommendationResponse {
      * Category code for filtering
      */
     private String categoryCode;
+
+    /**
+     * Number of questions the user has already attempted in this category.
+     * Helps the frontend show "you answered X questions here".
+     */
+    private Integer questionsAttempted;
 }

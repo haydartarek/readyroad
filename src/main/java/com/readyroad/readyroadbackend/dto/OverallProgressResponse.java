@@ -52,7 +52,7 @@ public class OverallProgressResponse {
     private Integer questionsRemaining;
 
     /**
-     * Consecutive days of study activity
+     * Consecutive days of study activity (real consecutive-day streak)
      */
     private Integer studyStreak;
 
@@ -62,7 +62,20 @@ public class OverallProgressResponse {
     private QuizQuestion.DifficultyLevel recommendedDifficulty;
 
     /**
-     * Summary of progress for a specific category
+     * Top 3 most-studied categories by questions attempted (descending).
+     * Used by the dashboard "Most Studied" widget.
+     */
+    private List<CategoryProgressSummary> mostStudiedCategories;
+
+    /**
+     * Date of the user's last practice activity in ISO format (yyyy-MM-dd).
+     * null if the user has never answered any question.
+     */
+    private String lastActivityDate;
+
+    /**
+     * Summary of progress for a specific category.
+     * Used in weakCategories, strongCategories, and mostStudiedCategories lists.
      */
     @Data
     @Builder
@@ -74,6 +87,11 @@ public class OverallProgressResponse {
          * Category name in English
          */
         private String categoryName;
+
+        /**
+         * Short category code (e.g. "A", "B", "C")
+         */
+        private String categoryCode;
 
         /**
          * Accuracy percentage for this category (0-100)

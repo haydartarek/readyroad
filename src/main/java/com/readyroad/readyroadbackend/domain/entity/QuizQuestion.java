@@ -1,5 +1,6 @@
 package com.readyroad.readyroadbackend.domain.entity;
 
+import com.readyroad.readyroadbackend.util.TextNormalizer;
 import com.readyroad.readyroadbackend.validation.BelgianOptionsCount;
 import com.readyroad.readyroadbackend.validation.PublishValidation;
 import com.readyroad.readyroadbackend.validation.RequiresTrafficSign;
@@ -15,7 +16,7 @@ import java.util.List;
 
 /**
  * Quiz Question Entity
- * سؤال الاختبار
+ * Quiz Question
  *
  * **Phase 2 Restoration:** Re-enabled January 18, 2026
  * Used for smart quiz generation with 24-hour cooldown
@@ -62,8 +63,8 @@ public class QuizQuestion extends BaseEntity {
     @JoinColumn(name = "traffic_sign_id")
     private TrafficSign trafficSign;
 
-    // ✅ Law #6 (Grand Contract): Generic content image URL
-    // نقل ImageUrl من TrafficSign إلى QuizQuestion لجعله عام
+    // Law #6 (Grand Contract): Generic content image URL
+    // Move ImageUrl from TrafficSign to QuizQuestion to make it generic
     @Column(name = "content_image_url", columnDefinition = "TEXT")
     private String contentImageUrl;
 
@@ -79,7 +80,7 @@ public class QuizQuestion extends BaseEntity {
     @Column(columnDefinition = "TEXT")
     private String explanationFr;
 
-    // شرح الخطأ المخصص - Error explanations
+    // Custom error explanation - Error explanations
     @Column(name = "error_explanation_ar", columnDefinition = "TEXT")
     private String errorExplanationAr;
 
@@ -92,16 +93,16 @@ public class QuizQuestion extends BaseEntity {
     @Column(name = "error_explanation_fr", columnDefinition = "TEXT")
     private String errorExplanationFr;
 
-    // نوع الخطأ الشائع - Typical error type for this question
+    // Common error type - Typical error type for this question
     @Enumerated(EnumType.STRING)
     @Column(name = "typical_error_type", length = 30)
     private TypicalErrorType typicalErrorType;
 
-    // هل الشرح مخصص للعلامة والسياق - Context-specific explanation
+    // Whether the explanation is specific to the sign and context - Context-specific explanation
     @Column(name = "context_specific")
     private Boolean contextSpecific = true;
 
-    // هل يتطلب صورة العلامة - Requires sign image
+    // Whether it requires the sign image - Requires sign image
     @Column(name = "requires_sign_image")
     private Boolean requiresSignImage = false;
 
@@ -139,12 +140,12 @@ public class QuizQuestion extends BaseEntity {
     }
 
     public enum TypicalErrorType {
-        SIGN_CONFUSION, // خلط بين علامات متشابهة
-        SUPPLEMENTARY_IGNORED, // تجاهل لوحة تكميلية
-        PRIORITY_MISUNDERSTANDING, // فهم خاطئ للأولوية
-        SPEED_LIMIT_ERROR, // خطأ في حدود السرعة
-        ZONE_CONFUSION, // خلط بين المناطق
-        RULE_OVERGENERALIZATION, // تعميم قاعدة في مكان خاطئ
+        SIGN_CONFUSION, // Confusion between similar signs
+        SUPPLEMENTARY_IGNORED, // Ignoring a supplementary panel
+        PRIORITY_MISUNDERSTANDING, // Misunderstanding of priority
+        SPEED_LIMIT_ERROR, // Error in speed limits
+        ZONE_CONFUSION, // Confusion between zones
+        RULE_OVERGENERALIZATION, // Overgeneralizing a rule in the wrong context
         OTHER
     }
 
@@ -157,5 +158,21 @@ public class QuizQuestion extends BaseEntity {
     public void removeOption(QuizAnswerOption option) {
         options.remove(option);
         option.setQuestion(null);
+    }
+
+    @Override
+    protected void normalizeTextFields() {
+        questionAr         = TextNormalizer.normalize(questionAr);
+        questionEn         = TextNormalizer.normalize(questionEn);
+        questionNl         = TextNormalizer.normalize(questionNl);
+        questionFr         = TextNormalizer.normalize(questionFr);
+        explanationAr      = TextNormalizer.normalize(explanationAr);
+        explanationEn      = TextNormalizer.normalize(explanationEn);
+        explanationNl      = TextNormalizer.normalize(explanationNl);
+        explanationFr      = TextNormalizer.normalize(explanationFr);
+        errorExplanationAr = TextNormalizer.normalize(errorExplanationAr);
+        errorExplanationEn = TextNormalizer.normalize(errorExplanationEn);
+        errorExplanationNl = TextNormalizer.normalize(errorExplanationNl);
+        errorExplanationFr = TextNormalizer.normalize(errorExplanationFr);
     }
 }

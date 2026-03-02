@@ -11,9 +11,9 @@ import java.util.Map;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ErrorAnalysisDTO {
-    // عدد الأخطاء حسب النوع
+    // Number of errors by type
     private Map<String, Integer> errorTypeCounts;
     
-    // الفئات الضعيفة (أسوأ 3)
+    // Weak categories (worst 3)
     private List<WeakCategoryDTO> weakCategories;
 }

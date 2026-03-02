@@ -1,0 +1,884 @@
+{
+  "fiets": {
+    "nl": "fiets",
+    "en": "bicycle",
+    "fr": "vélo",
+    "ar": "دراجة",
+    "category": "vehicle_type"
+  },
+  "fietsen": {
+    "nl": "fietsen",
+    "en": "bicycles",
+    "fr": "vélos",
+    "ar": "دراجات",
+    "category": "vehicle_type"
+  },
+  "fietser": {
+    "nl": "fietser",
+    "en": "cyclist",
+    "fr": "cycliste",
+    "ar": "راكب دراجة",
+    "category": "vehicle_type"
+  },
+  "fietsers": {
+    "nl": "fietsers",
+    "en": "cyclists",
+    "fr": "cyclistes",
+    "ar": "راكبو الدراجات",
+    "category": "vehicle_type"
+  },
+  "pedelec": {
+    "nl": "pedelec",
+    "en": "electric bicycle",
+    "fr": "vélo électrique",
+    "ar": "دراجة كهربائية",
+    "category": "vehicle_type"
+  },
+  "speed pedelec": {
+    "nl": "speed pedelec",
+    "en": "speed pedelec",
+    "fr": "speed pedelec",
+    "ar": "دراجة كهربائية سريعة",
+    "category": "vehicle_type"
+  },
+  "paard": {
+    "nl": "paard",
+    "en": "horse",
+    "fr": "cheval",
+    "ar": "حصان",
+    "category": "vehicle_type"
+  },
+  "paarden": {
+    "nl": "paarden",
+    "en": "horses",
+    "fr": "chevaux",
+    "ar": "خيول",
+    "category": "vehicle_type"
+  },
+  "auto": {
+    "nl": "auto",
+    "en": "car",
+    "fr": "voiture",
+    "ar": "سيارة",
+    "category": "vehicle_type"
+  },
+  "autos": {
+    "nl": "autos",
+    "en": "cars",
+    "fr": "voitures",
+    "ar": "سيارات",
+    "category": "vehicle_type"
+  },
+  "voertuig": {
+    "nl": "voertuig",
+    "en": "vehicle",
+    "fr": "véhicule",
+    "ar": "مركبة",
+    "category": "vehicle_type"
+  },
+  "voertuigen": {
+    "nl": "voertuigen",
+    "en": "vehicles",
+    "fr": "véhicules",
+    "ar": "مركبات",
+    "category": "vehicle_type"
+  },
+  "motorvoertuig": {
+    "nl": "motorvoertuig",
+    "en": "motor vehicle",
+    "fr": "véhicule à moteur",
+    "ar": "مركبة آلية",
+    "category": "vehicle_type"
+  },
+  "vrachtwagen": {
+    "nl": "vrachtwagen",
+    "en": "truck",
+    "fr": "camion",
+    "ar": "شاحنة",
+    "category": "vehicle_type"
+  },
+  "vrachtwagens": {
+    "nl": "vrachtwagens",
+    "en": "trucks",
+    "fr": "camions",
+    "ar": "شاحنات",
+    "category": "vehicle_type"
+  },
+  "bus": {
+    "nl": "bus",
+    "en": "bus",
+    "fr": "bus",
+    "ar": "حافلة",
+    "category": "vehicle_type"
+  },
+  "bussen": {
+    "nl": "bussen",
+    "en": "buses",
+    "fr": "bus",
+    "ar": "حافلات",
+    "category": "vehicle_type"
+  },
+  "motor": {
+    "nl": "motor",
+    "en": "motorcycle",
+    "fr": "moto",
+    "ar": "دراجة نارية",
+    "category": "vehicle_type"
+  },
+  "bromfiets": {
+    "nl": "bromfiets",
+    "en": "moped",
+    "fr": "cyclomoteur",
+    "ar": "دراجة بخارية",
+    "category": "vehicle_type"
+  },
+  "bromfietsen": {
+    "nl": "bromfietsen",
+    "en": "mopeds",
+    "fr": "cyclomoteurs",
+    "ar": "دراجات بخارية",
+    "category": "vehicle_type"
+  },
+  "tram": {
+    "nl": "tram",
+    "en": "tram",
+    "fr": "tramway",
+    "ar": "ترام",
+    "category": "vehicle_type"
+  },
+  "ambulance": {
+    "nl": "ambulance",
+    "en": "ambulance",
+    "fr": "ambulance",
+    "ar": "سيارة إسعاف",
+    "category": "vehicle_type"
+  },
+  "voetganger": {
+    "nl": "voetganger",
+    "en": "pedestrian",
+    "fr": "piéton",
+    "ar": "مشاة",
+    "category": "road_user"
+  },
+  "voetgangers": {
+    "nl": "voetgangers",
+    "en": "pedestrians",
+    "fr": "piétons",
+    "ar": "المشاة",
+    "category": "road_user"
+  },
+  "bestuurder": {
+    "nl": "bestuurder",
+    "en": "driver",
+    "fr": "conducteur",
+    "ar": "سائق",
+    "category": "road_user"
+  },
+  "bestuurders": {
+    "nl": "bestuurders",
+    "en": "drivers",
+    "fr": "conducteurs",
+    "ar": "السائقون",
+    "category": "road_user"
+  },
+  "weggebruiker": {
+    "nl": "weggebruiker",
+    "en": "road user",
+    "fr": "usager de la route",
+    "ar": "مستخدم الطريق",
+    "category": "road_user"
+  },
+  "weggebruikers": {
+    "nl": "weggebruikers",
+    "en": "road users",
+    "fr": "usagers de la route",
+    "ar": "مستخدمو الطريق",
+    "category": "road_user"
+  },
+  "ruiter": {
+    "nl": "ruiter",
+    "en": "rider",
+    "fr": "cavalier",
+    "ar": "فارس",
+    "category": "road_user"
+  },
+  "autosnelweg": {
+    "nl": "autosnelweg",
+    "en": "motorway",
+    "fr": "autoroute",
+    "ar": "طريق سريع",
+    "category": "road_type"
+  },
+  "snelweg": {
+    "nl": "snelweg",
+    "en": "highway",
+    "fr": "route rapide",
+    "ar": "طريق سريع",
+    "category": "road_type"
+  },
+  "weg": {
+    "nl": "weg",
+    "en": "road",
+    "fr": "route",
+    "ar": "طريق",
+    "category": "road_type"
+  },
+  "wegen": {
+    "nl": "wegen",
+    "en": "roads",
+    "fr": "routes",
+    "ar": "طرق",
+    "category": "road_type"
+  },
+  "straat": {
+    "nl": "straat",
+    "en": "street",
+    "fr": "rue",
+    "ar": "شارع",
+    "category": "road_type"
+  },
+  "rijstrook": {
+    "nl": "rijstrook",
+    "en": "lane",
+    "fr": "voie",
+    "ar": "مسار",
+    "category": "road_type"
+  },
+  "rijstroken": {
+    "nl": "rijstroken",
+    "en": "lanes",
+    "fr": "voies",
+    "ar": "مسارات",
+    "category": "road_type"
+  },
+  "fietspad": {
+    "nl": "fietspad",
+    "en": "cycle path",
+    "fr": "piste cyclable",
+    "ar": "مسار الدراجات",
+    "category": "road_type"
+  },
+  "fietspaden": {
+    "nl": "fietspaden",
+    "en": "cycle paths",
+    "fr": "pistes cyclables",
+    "ar": "مسارات الدراجات",
+    "category": "road_type"
+  },
+  "voetpad": {
+    "nl": "voetpad",
+    "en": "footpath",
+    "fr": "trottoir",
+    "ar": "رصيف",
+    "category": "road_type"
+  },
+  "trottoir": {
+    "nl": "trottoir",
+    "en": "sidewalk",
+    "fr": "trottoir",
+    "ar": "رصيف",
+    "category": "road_type"
+  },
+  "zone 30": {
+    "nl": "zone 30",
+    "en": "30 km/h zone",
+    "fr": "zone 30",
+    "ar": "منطقة 30 كم/ساعة",
+    "category": "speed_zone"
+  },
+  "bebouwde kom": {
+    "nl": "bebouwde kom",
+    "en": "built-up area",
+    "fr": "agglomération",
+    "ar": "منطقة سكنية",
+    "category": "area_type"
+  },
+  "woonerf": {
+    "nl": "woonerf",
+    "en": "residential area",
+    "fr": "zone résidentielle",
+    "ar": "منطقة سكنية هادئة",
+    "category": "area_type"
+  },
+  "zone": {
+    "nl": "zone",
+    "en": "zone",
+    "fr": "zone",
+    "ar": "منطقة",
+    "category": "area_type"
+  },
+  "zones": {
+    "nl": "zones",
+    "en": "zones",
+    "fr": "zones",
+    "ar": "المناطق",
+    "category": "area_type"
+  },
+  "gebied": {
+    "nl": "gebied",
+    "en": "area",
+    "fr": "zone",
+    "ar": "منطقة",
+    "category": "area_type"
+  },
+  "centrum": {
+    "nl": "centrum",
+    "en": "center",
+    "fr": "centre",
+    "ar": "المركز",
+    "category": "area_type"
+  },
+  "bord": {
+    "nl": "bord",
+    "en": "sign",
+    "fr": "panneau",
+    "ar": "لافتة",
+    "category": "sign"
+  },
+  "borden": {
+    "nl": "borden",
+    "en": "signs",
+    "fr": "panneaux",
+    "ar": "اللافتات",
+    "category": "sign"
+  },
+  "verkeersbord": {
+    "nl": "verkeersbord",
+    "en": "traffic sign",
+    "fr": "panneau de signalisation",
+    "ar": "إشارة مرور",
+    "category": "sign"
+  },
+  "verkeersborden": {
+    "nl": "verkeersborden",
+    "en": "traffic signs",
+    "fr": "panneaux de signalisation",
+    "ar": "إشارات المرور",
+    "category": "sign"
+  },
+  "symbool": {
+    "nl": "symbool",
+    "en": "symbol",
+    "fr": "symbole",
+    "ar": "رمز",
+    "category": "sign"
+  },
+  "symbolen": {
+    "nl": "symbolen",
+    "en": "symbols",
+    "fr": "symboles",
+    "ar": "رموز",
+    "category": "sign"
+  },
+  "pictogram": {
+    "nl": "pictogram",
+    "en": "pictogram",
+    "fr": "pictogramme",
+    "ar": "رمز تصويري",
+    "category": "sign"
+  },
+  "speed": {
+    "nl": "snelheid",
+    "en": "speed",
+    "fr": "vitesse",
+    "ar": "سرعة",
+    "category": "speed"
+  },
+  "snelheid": {
+    "nl": "snelheid",
+    "en": "speed",
+    "fr": "vitesse",
+    "ar": "سرعة",
+    "category": "speed"
+  },
+  "maximum": {
+    "nl": "maximum",
+    "en": "maximum",
+    "fr": "maximum",
+    "ar": "الحد الأقصى",
+    "category": "speed"
+  },
+  "minimum": {
+    "nl": "minimum",
+    "en": "minimum",
+    "fr": "minimum",
+    "ar": "الحد الأدنى",
+    "category": "speed"
+  },
+  "maximumsnelheid": {
+    "nl": "maximumsnelheid",
+    "en": "maximum speed",
+    "fr": "vitesse maximale",
+    "ar": "السرعة القصوى",
+    "category": "speed"
+  },
+  "snelheidslimiet": {
+    "nl": "snelheidslimiet",
+    "en": "speed limit",
+    "fr": "limitation de vitesse",
+    "ar": "حد السرعة",
+    "category": "speed"
+  },
+  "regel": {
+    "nl": "regel",
+    "en": "rule",
+    "fr": "règle",
+    "ar": "قاعدة",
+    "category": "rule"
+  },
+  "regels": {
+    "nl": "regels",
+    "en": "rules",
+    "fr": "règles",
+    "ar": "القواعد",
+    "category": "rule"
+  },
+  "wet": {
+    "nl": "wet",
+    "en": "law",
+    "fr": "loi",
+    "ar": "قانون",
+    "category": "rule"
+  },
+  "verbod": {
+    "nl": "verbod",
+    "en": "prohibition",
+    "fr": "interdiction",
+    "ar": "حظر",
+    "category": "rule"
+  },
+  "verboden": {
+    "nl": "verboden",
+    "en": "prohibited",
+    "fr": "interdit",
+    "ar": "محظور",
+    "category": "rule"
+  },
+  "verplicht": {
+    "nl": "verplicht",
+    "en": "mandatory",
+    "fr": "obligatoire",
+    "ar": "إلزامي",
+    "category": "rule"
+  },
+  "verplichte": {
+    "nl": "verplichte",
+    "en": "mandatory",
+    "fr": "obligatoire",
+    "ar": "الإلزامي",
+    "category": "rule"
+  },
+  "toegestaan": {
+    "nl": "toegestaan",
+    "en": "allowed",
+    "fr": "autorisé",
+    "ar": "مسموح",
+    "category": "rule"
+  },
+  "mag": {
+    "nl": "mag",
+    "en": "may",
+    "fr": "peut",
+    "ar": "يجوز",
+    "category": "rule"
+  },
+  "moet": {
+    "nl": "moet",
+    "en": "must",
+    "fr": "doit",
+    "ar": "يجب",
+    "category": "rule"
+  },
+  "mag niet": {
+    "nl": "mag niet",
+    "en": "may not",
+    "fr": "ne peut pas",
+    "ar": "لا يجوز",
+    "category": "rule"
+  },
+  "richting": {
+    "nl": "richting",
+    "en": "direction",
+    "fr": "direction",
+    "ar": "اتجاه",
+    "category": "direction"
+  },
+  "links": {
+    "nl": "links",
+    "en": "left",
+    "fr": "gauche",
+    "ar": "يسار",
+    "category": "direction"
+  },
+  "rechts": {
+    "nl": "rechts",
+    "en": "right",
+    "fr": "droite",
+    "ar": "يمين",
+    "category": "direction"
+  },
+  "rechtdoor": {
+    "nl": "rechtdoor",
+    "en": "straight ahead",
+    "fr": "tout droit",
+    "ar": "مباشرة",
+    "category": "direction"
+  },
+  "afslaan": {
+    "nl": "afslaan",
+    "en": "turn",
+    "fr": "tourner",
+    "ar": "انعطاف",
+    "category": "direction"
+  },
+  "linksaf": {
+    "nl": "linksaf",
+    "en": "turn left",
+    "fr": "tourner à gauche",
+    "ar": "انعطف يساراً",
+    "category": "direction"
+  },
+  "rechtsaf": {
+    "nl": "rechtsaf",
+    "en": "turn right",
+    "fr": "tourner à droite",
+    "ar": "انعطف يميناً",
+    "category": "direction"
+  },
+  "keren": {
+    "nl": "keren",
+    "en": "turn around",
+    "fr": "faire demi-tour",
+    "ar": "استدارة",
+    "category": "direction"
+  },
+  "veiligheid": {
+    "nl": "veiligheid",
+    "en": "safety",
+    "fr": "sécurité",
+    "ar": "السلامة",
+    "category": "safety"
+  },
+  "veilig": {
+    "nl": "veilig",
+    "en": "safe",
+    "fr": "sûr",
+    "ar": "آمن",
+    "category": "safety"
+  },
+  "gevaar": {
+    "nl": "gevaar",
+    "en": "danger",
+    "fr": "danger",
+    "ar": "خطر",
+    "category": "safety"
+  },
+  "gevaarlijk": {
+    "nl": "gevaarlijk",
+    "en": "dangerous",
+    "fr": "dangereux",
+    "ar": "خطير",
+    "category": "safety"
+  },
+  "risico": {
+    "nl": "risico",
+    "en": "risk",
+    "fr": "risque",
+    "ar": "خطر",
+    "category": "safety"
+  },
+  "ongeval": {
+    "nl": "ongeval",
+    "en": "accident",
+    "fr": "accident",
+    "ar": "حادث",
+    "category": "safety"
+  },
+  "opletten": {
+    "nl": "opletten",
+    "en": "pay attention",
+    "fr": "faire attention",
+    "ar": "انتبه",
+    "category": "safety"
+  },
+  "voorzichtig": {
+    "nl": "voorzichtig",
+    "en": "careful",
+    "fr": "prudent",
+    "ar": "حذر",
+    "category": "safety"
+  },
+  "rood": {
+    "nl": "rood",
+    "en": "red",
+    "fr": "rouge",
+    "ar": "أحمر",
+    "category": "color"
+  },
+  "rode": {
+    "nl": "rode",
+    "en": "red",
+    "fr": "rouge",
+    "ar": "الأحمر",
+    "category": "color"
+  },
+  "blauw": {
+    "nl": "blauw",
+    "en": "blue",
+    "fr": "bleu",
+    "ar": "أزرق",
+    "category": "color"
+  },
+  "blauwe": {
+    "nl": "blauwe",
+    "en": "blue",
+    "fr": "bleu",
+    "ar": "الأزرق",
+    "category": "color"
+  },
+  "groen": {
+    "nl": "groen",
+    "en": "green",
+    "fr": "vert",
+    "ar": "أخضر",
+    "category": "color"
+  },
+  "wit": {
+    "nl": "wit",
+    "en": "white",
+    "fr": "blanc",
+    "ar": "أبيض",
+    "category": "color"
+  },
+  "witte": {
+    "nl": "witte",
+    "en": "white",
+    "fr": "blanc",
+    "ar": "الأبيض",
+    "category": "color"
+  },
+  "zwart": {
+    "nl": "zwart",
+    "en": "black",
+    "fr": "noir",
+    "ar": "أسود",
+    "category": "color"
+  },
+  "geel": {
+    "nl": "geel",
+    "en": "yellow",
+    "fr": "jaune",
+    "ar": "أصفر",
+    "category": "color"
+  },
+  "oranje": {
+    "nl": "oranje",
+    "en": "orange",
+    "fr": "orange",
+    "ar": "برتقالي",
+    "category": "color"
+  },
+  "boete": {
+    "nl": "boete",
+    "en": "fine",
+    "fr": "amende",
+    "ar": "غرامة",
+    "category": "penalty"
+  },
+  "boetes": {
+    "nl": "boetes",
+    "en": "fines",
+    "fr": "amendes",
+    "ar": "غرامات",
+    "category": "penalty"
+  },
+  "straf": {
+    "nl": "straf",
+    "en": "penalty",
+    "fr": "sanction",
+    "ar": "عقوبة",
+    "category": "penalty"
+  },
+  "politie": {
+    "nl": "politie",
+    "en": "police",
+    "fr": "police",
+    "ar": "شرطة",
+    "category": "penalty"
+  },
+  "controle": {
+    "nl": "controle",
+    "en": "check",
+    "fr": "contrôle",
+    "ar": "مراقبة",
+    "category": "penalty"
+  },
+  "camera": {
+    "nl": "camera",
+    "en": "camera",
+    "fr": "caméra",
+    "ar": "كاميرا",
+    "category": "penalty"
+  },
+  "parking": {
+    "nl": "parking",
+    "en": "parking",
+    "fr": "parking",
+    "ar": "موقف السيارات",
+    "category": "parking"
+  },
+  "parkeren": {
+    "nl": "parkeren",
+    "en": "park",
+    "fr": "garer",
+    "ar": "وقوف",
+    "category": "parking"
+  },
+  "parkeerplaats": {
+    "nl": "parkeerplaats",
+    "en": "parking space",
+    "fr": "place de parking",
+    "ar": "موقف سيارات",
+    "category": "parking"
+  },
+  "parkeerplaatsen": {
+    "nl": "parkeerplaatsen",
+    "en": "parking spaces",
+    "fr": "places de parking",
+    "ar": "مواقف السيارات",
+    "category": "parking"
+  },
+  "mogelijk": {
+    "nl": "mogelijk",
+    "en": "possible",
+    "fr": "possible",
+    "ar": "ممكن",
+    "category": "common"
+  },
+  "correcte": {
+    "nl": "correcte",
+    "en": "correct",
+    "fr": "correct",
+    "ar": "صحيح",
+    "category": "common"
+  },
+  "antwoord": {
+    "nl": "antwoord",
+    "en": "answer",
+    "fr": "réponse",
+    "ar": "إجابة",
+    "category": "common"
+  },
+  "verschil": {
+    "nl": "verschil",
+    "en": "difference",
+    "fr": "différence",
+    "ar": "فرق",
+    "category": "common"
+  },
+  "effect": {
+    "nl": "effect",
+    "en": "effect",
+    "fr": "effet",
+    "ar": "تأثير",
+    "category": "common"
+  },
+  "verkeer": {
+    "nl": "verkeer",
+    "en": "traffic",
+    "fr": "circulation",
+    "ar": "المرور",
+    "category": "common"
+  },
+  "kunnen": {
+    "nl": "kunnen",
+    "en": "can",
+    "fr": "pouvoir",
+    "ar": "يمكن",
+    "category": "common"
+  },
+  "door": {
+    "nl": "door",
+    "en": "through",
+    "fr": "par",
+    "ar": "عبر",
+    "category": "common"
+  },
+  "aan": {
+    "nl": "aan",
+    "en": "on",
+    "fr": "sur",
+    "ar": "على",
+    "category": "common"
+  },
+  "nodig": {
+    "nl": "nodig",
+    "en": "necessary",
+    "fr": "nécessaire",
+    "ar": "ضروري",
+    "category": "common"
+  },
+  "volgen": {
+    "nl": "volgen",
+    "en": "follow",
+    "fr": "suivre",
+    "ar": "يتبع",
+    "category": "common"
+  },
+  "negeren": {
+    "nl": "negeren",
+    "en": "ignore",
+    "fr": "ignorer",
+    "ar": "يتجاهل",
+    "category": "common"
+  },
+  "vaak": {
+    "nl": "vaak",
+    "en": "often",
+    "fr": "souvent",
+    "ar": "غالباً",
+    "category": "common"
+  },
+  "willekeurig": {
+    "nl": "willekeurig",
+    "en": "random",
+    "fr": "aléatoire",
+    "ar": "عشوائي",
+    "category": "common"
+  },
+  "blijven": {
+    "nl": "blijven",
+    "en": "stay",
+    "fr": "rester",
+    "ar": "يبقى",
+    "category": "common"
+  },
+  "allemaal": {
+    "nl": "allemaal",
+    "en": "all",
+    "fr": "tous",
+    "ar": "جميعاً",
+    "category": "common"
+  },
+  "doorgestreept": {
+    "nl": "doorgestreept",
+    "en": "crossed out",
+    "fr": "barré",
+    "ar": "مشطوب",
+    "category": "common"
+  },
+  "zonder": {
+    "nl": "zonder",
+    "en": "without",
+    "fr": "sans",
+    "ar": "بدون",
+    "category": "common"
+  },
+  "geldt": {
+    "nl": "geldt",
+    "en": "applies",
+    "fr": "s'applique",
+    "ar": "ينطبق",
+    "category": "common"
+  }
+}

@@ -1,7 +1,6 @@
 package com.readyroad.readyroadbackend.service;
 
 import com.readyroad.readyroadbackend.domain.entity.*;
-import com.readyroad.readyroadbackend.domain.model.UserQuestionHistory;
 import com.readyroad.readyroadbackend.domain.repository.*;
 import com.readyroad.readyroadbackend.dto.practice.SubmitPracticeAnswerRequest;
 import com.readyroad.readyroadbackend.dto.practice.SubmitPracticeAnswerResponse;
@@ -37,6 +36,7 @@ public class PracticeService {
         private final QuizAnswerOptionRepository optionRepository;
         private final UserQuestionHistoryRepository historyRepository;
         private final UserCategoryProgressRepository progressRepository;
+        private final StreakService streakService; // Story N3: Study streak notifications
 
         /**
          * Submit practice answer and get immediate feedback
@@ -85,6 +85,9 @@ public class PracticeService {
 
                 // 5. Record in user_question_history
                 recordAnswerHistory(userId, question.getId(), isCorrect, request.getTimeTakenSeconds());
+
+                // 5b. Check study streak milestone and fire notification if needed
+                streakService.updateStreakAndNotify(userId);
 
                 // 6. Update category progress
                 UserCategoryProgress progress = updateCategoryProgress(
@@ -194,15 +197,10 @@ public class PracticeService {
         private void recordAnswerHistory(Long userId, Long questionId, boolean isCorrect, Integer timeTakenSeconds) {
                 int timeTaken = timeTakenSeconds != null ? timeTakenSeconds : 0;
 
-                UserQuestionHistory history = UserQuestionHistory.builder()
-                                .userId(userId)
-                                .questionId(questionId)
-                                .answeredAt(LocalDateTime.now())
-                                .isCorrect(isCorrect)
-                                .timeTakenSeconds(timeTaken)
-                                .build();
-
-                historyRepository.save(history);
+                // Use upsert to handle the case where the question was already shown via SmartQuiz.
+                // historyRepository.save() causes DataIntegrityViolationException (Duplicate Key)
+                // because SmartQuizService already INSERT'd a row for the same (user_id, question_ref_id).
+                historyRepository.upsertQuestionAnswered(userId, questionId, LocalDateTime.now(), isCorrect, timeTaken);
 
                 log.debug("Recorded answer in history: userId={}, questionId={}, isCorrect={}",
                                 userId, questionId, isCorrect);

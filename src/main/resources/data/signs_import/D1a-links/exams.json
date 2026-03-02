@@ -1,0 +1,51 @@
+{
+  "_IMPORTANT": "Each exam requires exactly 15 questions: 6 EASY + 6 MEDIUM + 3 HARD. No overlap between EXAM_1 and EXAM_2. You need 30 questions total (12 EASY + 12 MEDIUM + 6 HARD).",
+  "_TEMPLATE_STATUS": "INCOMPLETE — Only 5 of 30 required questions exist. Add 25 more questions before configuring exams.",
+  "exam_1": {
+    "_note": "EXAM_1: Questions Q01-Q15 (6 EASY + 6 MEDIUM + 3 HARD)",
+    "questions": [
+      "D1a-links_Q01",
+      "D1a-links_Q02",
+      "D1a-links_Q03",
+      "D1a-links_Q04",
+      "D1a-links_Q05",
+      "[D1a-links_Q06]",
+      "[D1a-links_Q07]",
+      "[D1a-links_Q08]",
+      "[D1a-links_Q09]",
+      "[D1a-links_Q10]",
+      "[D1a-links_Q11]",
+      "[D1a-links_Q12]",
+      "[D1a-links_Q13]",
+      "[D1a-links_Q14]",
+      "[D1a-links_Q15]"
+    ]
+  },
+  "exam_2": {
+    "_note": "EXAM_2: Questions Q16-Q30 (6 EASY + 6 MEDIUM + 3 HARD) — NO overlap with EXAM_1",
+    "questions": [
+      "[D1a-links_Q16]",
+      "[D1a-links_Q17]",
+      "[D1a-links_Q18]",
+      "[D1a-links_Q19]",
+      "[D1a-links_Q20]",
+      "[D1a-links_Q21]",
+      "[D1a-links_Q22]",
+      "[D1a-links_Q23]",
+      "[D1a-links_Q24]",
+      "[D1a-links_Q25]",
+      "[D1a-links_Q26]",
+      "[D1a-links_Q27]",
+      "[D1a-links_Q28]",
+      "[D1a-links_Q29]",
+      "[D1a-links_Q30]"
+    ]
+  },
+  "passing_score": 12,
+  "total_questions": 15,
+  "distribution": {
+    "EASY": 6,
+    "MEDIUM": 6,
+    "HARD": 3
+  }
+}

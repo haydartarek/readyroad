@@ -1,0 +1,51 @@
+{
+  "_IMPORTANT": "Each exam requires exactly 15 questions: 6 EASY + 6 MEDIUM + 3 HARD. No overlap between EXAM_1 and EXAM_2. You need 30 questions total (12 EASY + 12 MEDIUM + 6 HARD).",
+  "_TEMPLATE_STATUS": "INCOMPLETE — Only 5 of 30 required questions exist. Add 25 more questions before configuring exams.",
+  "exam_1": {
+    "_note": "EXAM_1: Questions Q01-Q15 (6 EASY + 6 MEDIUM + 3 HARD)",
+    "questions": [
+      "onderbord_gxb_Q01",
+      "onderbord_gxb_Q02",
+      "onderbord_gxb_Q03",
+      "onderbord_gxb_Q04",
+      "onderbord_gxb_Q05",
+      "[onderbord_gxb_Q06]",
+      "[onderbord_gxb_Q07]",
+      "[onderbord_gxb_Q08]",
+      "[onderbord_gxb_Q09]",
+      "[onderbord_gxb_Q10]",
+      "[onderbord_gxb_Q11]",
+      "[onderbord_gxb_Q12]",
+      "[onderbord_gxb_Q13]",
+      "[onderbord_gxb_Q14]",
+      "[onderbord_gxb_Q15]"
+    ]
+  },
+  "exam_2": {
+    "_note": "EXAM_2: Questions Q16-Q30 (6 EASY + 6 MEDIUM + 3 HARD) — NO overlap with EXAM_1",
+    "questions": [
+      "[onderbord_gxb_Q16]",
+      "[onderbord_gxb_Q17]",
+      "[onderbord_gxb_Q18]",
+      "[onderbord_gxb_Q19]",
+      "[onderbord_gxb_Q20]",
+      "[onderbord_gxb_Q21]",
+      "[onderbord_gxb_Q22]",
+      "[onderbord_gxb_Q23]",
+      "[onderbord_gxb_Q24]",
+      "[onderbord_gxb_Q25]",
+      "[onderbord_gxb_Q26]",
+      "[onderbord_gxb_Q27]",
+      "[onderbord_gxb_Q28]",
+      "[onderbord_gxb_Q29]",
+      "[onderbord_gxb_Q30]"
+    ]
+  },
+  "passing_score": 12,
+  "total_questions": 15,
+  "distribution": {
+    "EASY": 6,
+    "MEDIUM": 6,
+    "HARD": 3
+  }
+}

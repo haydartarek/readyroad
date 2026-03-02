@@ -4,6 +4,7 @@ import com.readyroad.readyroadbackend.domain.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -29,6 +30,11 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
     // ========== RBAC Support Methods (Added 2026-02-04) ==========
     
+    /**
+     * Find all active users (for scheduler operations like study reminders).
+     */
+    List<User> findByIsActiveTrue();
+
     /**
      * Count active users
      * Used by: AdminController.getDashboard()

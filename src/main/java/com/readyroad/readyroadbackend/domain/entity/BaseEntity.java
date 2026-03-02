@@ -1,5 +1,6 @@
 package com.readyroad.readyroadbackend.domain.entity;
 
+import com.readyroad.readyroadbackend.util.TextNormalizer;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
@@ -20,11 +21,25 @@ public abstract class BaseEntity {
     protected void onCreate() {
         createdAt = LocalDateTime.now();
         updatedAt = LocalDateTime.now();
+        normalizeTextFields();
     }
 
     @PreUpdate
     protected void onUpdate() {
         updatedAt = LocalDateTime.now();
+        normalizeTextFields();
+    }
+
+    /**
+     * Override in subclasses to normalize typographic (smart) quote characters
+     * in text fields before every persist and update.
+     * Called automatically by the JPA lifecycle — no manual invocation needed.
+     * Default implementation is a no-op.
+     *
+     * @see TextNormalizer
+     */
+    protected void normalizeTextFields() {
+        // no-op by default — overridden in content entities
     }
 
     // Getters and Setters

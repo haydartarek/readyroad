@@ -162,20 +162,24 @@ public class AnalyticsService {
             return TypicalErrorType.RULE_OVERGENERALIZATION;
         }
 
-        // Map category codes to error types
+        // Map Belgian driving test category codes to error types.
+        // Codes: A=Warning, B=Priority, C=Prohibition, D=Obligation,
+        //        E=Parking/Stopping, F=Info, G=Supplementary, Z=Zone, M=Mandatory, H=Indication
         switch (categoryCode.toUpperCase()) {
-            case "SPEED":
-            case "SPEED_LIMITS":
-                return TypicalErrorType.SPEED_LIMIT_ERROR;
-            case "PRIORITY":
-            case "PRIORITY_RULES":
-                return TypicalErrorType.PRIORITY_MISUNDERSTANDING;
-            case "SIGNS":
-            case "TRAFFIC_SIGNS":
+            case "A": // Warning signs – easily confused triangular shapes
+            case "F": // Information / direction signs
+            case "M": // Mandatory direction signs
+            case "H": // Indication / blue panel signs
                 return TypicalErrorType.SIGN_CONFUSION;
-            case "ZONES":
-            case "PARKING":
+            case "B": // Priority / right-of-way signs
+                return TypicalErrorType.PRIORITY_MISUNDERSTANDING;
+            case "E": // Parking / stopping restrictions
+            case "Z": // Zone entry/exit signs
                 return TypicalErrorType.ZONE_CONFUSION;
+            case "G": // Supplementary panels below main signs
+                return TypicalErrorType.SUPPLEMENTARY_IGNORED;
+            case "C": // Prohibition signs – rules misapplied in wrong context
+            case "D": // Obligation / mandatory signs
             default:
                 return TypicalErrorType.RULE_OVERGENERALIZATION;
         }
@@ -310,6 +314,7 @@ public class AnalyticsService {
                 .recommendedDifficulty(recommendedDifficulty)
                 .estimatedTimeMinutes(estimatedTimeMinutes)
                 .priority(priority++)
+                .questionsAttempted(progress.getQuestionsAttempted())
                 .build();
 
             recommendations.add(recommendation);

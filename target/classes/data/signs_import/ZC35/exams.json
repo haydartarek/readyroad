@@ -1,0 +1,51 @@
+{
+  "_IMPORTANT": "Each exam requires exactly 15 questions: 6 EASY + 6 MEDIUM + 3 HARD. No overlap between EXAM_1 and EXAM_2. You need 30 questions total (12 EASY + 12 MEDIUM + 6 HARD).",
+  "_TEMPLATE_STATUS": "INCOMPLETE — Only 5 of 30 required questions exist. Add 25 more questions before configuring exams.",
+  "exam_1": {
+    "_note": "EXAM_1: Questions Q01-Q15 (6 EASY + 6 MEDIUM + 3 HARD)",
+    "questions": [
+      "ZC35_Q01",
+      "ZC35_Q02",
+      "ZC35_Q03",
+      "ZC35_Q04",
+      "ZC35_Q05",
+      "[ZC35_Q06]",
+      "[ZC35_Q07]",
+      "[ZC35_Q08]",
+      "[ZC35_Q09]",
+      "[ZC35_Q10]",
+      "[ZC35_Q11]",
+      "[ZC35_Q12]",
+      "[ZC35_Q13]",
+      "[ZC35_Q14]",
+      "[ZC35_Q15]"
+    ]
+  },
+  "exam_2": {
+    "_note": "EXAM_2: Questions Q16-Q30 (6 EASY + 6 MEDIUM + 3 HARD) — NO overlap with EXAM_1",
+    "questions": [
+      "[ZC35_Q16]",
+      "[ZC35_Q17]",
+      "[ZC35_Q18]",
+      "[ZC35_Q19]",
+      "[ZC35_Q20]",
+      "[ZC35_Q21]",
+      "[ZC35_Q22]",
+      "[ZC35_Q23]",
+      "[ZC35_Q24]",
+      "[ZC35_Q25]",
+      "[ZC35_Q26]",
+      "[ZC35_Q27]",
+      "[ZC35_Q28]",
+      "[ZC35_Q29]",
+      "[ZC35_Q30]"
+    ]
+  },
+  "passing_score": 12,
+  "total_questions": 15,
+  "distribution": {
+    "EASY": 6,
+    "MEDIUM": 6,
+    "HARD": 3
+  }
+}

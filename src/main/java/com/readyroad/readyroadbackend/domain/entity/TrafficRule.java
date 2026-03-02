@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 
 /**
  * Traffic Rule Entity
- * قاعدة المرور
+ * Traffic Rule
  */
 @Entity
 @Table(name = "traffic_rules")

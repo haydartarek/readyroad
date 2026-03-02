@@ -1,0 +1,51 @@
+{
+  "_IMPORTANT": "Each exam requires exactly 15 questions: 6 EASY + 6 MEDIUM + 3 HARD. No overlap between EXAM_1 and EXAM_2. You need 30 questions total (12 EASY + 12 MEDIUM + 6 HARD).",
+  "_TEMPLATE_STATUS": "INCOMPLETE — Only 5 of 30 required questions exist. Add 25 more questions before configuring exams.",
+  "exam_1": {
+    "_note": "EXAM_1: Questions Q01-Q15 (6 EASY + 6 MEDIUM + 3 HARD)",
+    "questions": [
+      "M12-richtingen_Q01",
+      "M12-richtingen_Q02",
+      "M12-richtingen_Q03",
+      "M12-richtingen_Q04",
+      "M12-richtingen_Q05",
+      "[M12-richtingen_Q06]",
+      "[M12-richtingen_Q07]",
+      "[M12-richtingen_Q08]",
+      "[M12-richtingen_Q09]",
+      "[M12-richtingen_Q10]",
+      "[M12-richtingen_Q11]",
+      "[M12-richtingen_Q12]",
+      "[M12-richtingen_Q13]",
+      "[M12-richtingen_Q14]",
+      "[M12-richtingen_Q15]"
+    ]
+  },
+  "exam_2": {
+    "_note": "EXAM_2: Questions Q16-Q30 (6 EASY + 6 MEDIUM + 3 HARD) — NO overlap with EXAM_1",
+    "questions": [
+      "[M12-richtingen_Q16]",
+      "[M12-richtingen_Q17]",
+      "[M12-richtingen_Q18]",
+      "[M12-richtingen_Q19]",
+      "[M12-richtingen_Q20]",
+      "[M12-richtingen_Q21]",
+      "[M12-richtingen_Q22]",
+      "[M12-richtingen_Q23]",
+      "[M12-richtingen_Q24]",
+      "[M12-richtingen_Q25]",
+      "[M12-richtingen_Q26]",
+      "[M12-richtingen_Q27]",
+      "[M12-richtingen_Q28]",
+      "[M12-richtingen_Q29]",
+      "[M12-richtingen_Q30]"
+    ]
+  },
+  "passing_score": 12,
+  "total_questions": 15,
+  "distribution": {
+    "EASY": 6,
+    "MEDIUM": 6,
+    "HARD": 3
+  }
+}

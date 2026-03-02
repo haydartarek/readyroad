@@ -33,7 +33,7 @@ import java.util.function.Function;
 @Slf4j
 public class JwtService {
 
-    // ✅ تغيير من jwt.secret إلى jwt.secret-key
+    // Changed from jwt.secret to jwt.secret-key
     @Value("${jwt.secret-key:}")
     private String secret;
 

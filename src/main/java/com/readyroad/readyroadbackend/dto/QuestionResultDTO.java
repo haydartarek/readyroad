@@ -6,22 +6,22 @@ import lombok.NoArgsConstructor;
 
 /**
  * ═══════════════════════════════════════════════════════════════════
- *  نتيجة السؤال (Question Result DTO)
+ *  Question Result (Question Result DTO)
  * ═══════════════════════════════════════════════════════════════════
  * 
- * 🎯 يطبق القانون الثاني: التصحيح المقيَّد
- * 🎯 يطبق القانون الثالث: عرض النتائج
+ * Applies Law Two: Restricted Correction
+ * Applies Law Three: Results Display
  * 
- * البنية:
- * • isCorrect → Boolean (true=أخضر ✅, false=أحمر ❌)
- * • error_explanation_* → context-specific من السؤال
+ * Structure:
+ * • isCorrect -> Boolean (true=green, false=red)
+ * • error_explanation_* -> context-specific from the question
  * 
- * القاعدة:
- * - لا يوجد تصحيح عام هنا
- * - كل سؤال يأتي بتفسيره من قاعدة البيانات
- * - Frontend يعرض isCorrect كلون مباشرة
+ * Rule:
+ * - There is no general correction here
+ * - Each question brings its explanation from the database
+ * - Frontend displays isCorrect as a color directly
  * 
- * @see SYSTEM_LAWS.md - القانون الثاني والثالث
+ * @see SYSTEM_LAWS.md - Laws Two and Three
  */
 @Data
 @NoArgsConstructor
@@ -30,16 +30,16 @@ public class QuestionResultDTO {
     private Long questionId;
     private Long selectedOptionId;
     private Long correctOptionId;
-    private Boolean isCorrect; // ← القانون الثالث: أخضر (true) أو أحمر (false)
+    private Boolean isCorrect; // <- Law Three: green (true) or red (false)
     
-    // ← القانون الثاني: شرح مقيَّد من السؤال نفسه (context-specific)
+    // <- Law Two: restricted explanation from the question itself (context-specific)
     private String errorExplanationAr;
     private String errorExplanationEn;
     private String errorExplanationNl;
     private String errorExplanationFr;
     private String errorType;
     
-    // شرح الإجابة الصحيحة
+    // Correct answer explanation
     private String correctExplanationAr;
     private String correctExplanationEn;
     private String correctExplanationNl;

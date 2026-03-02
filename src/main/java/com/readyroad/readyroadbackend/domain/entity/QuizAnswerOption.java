@@ -1,5 +1,6 @@
 package com.readyroad.readyroadbackend.domain.entity;
 
+import com.readyroad.readyroadbackend.util.TextNormalizer;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -8,7 +9,7 @@ import lombok.NoArgsConstructor;
 
 /**
  * Quiz Answer Option Entity
- * خيار إجابة السؤال
+ * Quiz Answer Option
  *
  * **Phase 2 Restoration:** Re-enabled January 18, 2026
  * Represents one answer option for a quiz question (typically 2-3 options per
@@ -54,5 +55,18 @@ public class QuizAnswerOption {
     @PrePersist
     protected void onCreate() {
         createdAt = java.time.LocalDateTime.now();
+        normalizeOptionText();
+    }
+
+    @PreUpdate
+    protected void onUpdate() {
+        normalizeOptionText();
+    }
+
+    private void normalizeOptionText() {
+        optionTextAr = TextNormalizer.normalize(optionTextAr);
+        optionTextEn = TextNormalizer.normalize(optionTextEn);
+        optionTextNl = TextNormalizer.normalize(optionTextNl);
+        optionTextFr = TextNormalizer.normalize(optionTextFr);
     }
 }

@@ -3,9 +3,11 @@ package com.readyroad.readyroadbackend.domain.repository;
 import com.readyroad.readyroadbackend.domain.model.UserQuestionHistory;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -119,4 +121,97 @@ public interface UserQuestionHistoryRepository extends JpaRepository<UserQuestio
         * Used for delete/edit protection of referenced questions.
         */
        boolean existsByQuestionId(Long questionId);
+
+       /**
+        * Find distinct practice dates (YYYY-MM-DD format) for a user, descending.
+        * Used to calculate real consecutive-day study streak.
+        * Only considers rows where answered_at is not null (actual answers, not just shown).
+        *
+        * @param userId User ID
+        * @return List of date strings (e.g. ["2026-02-28", "2026-02-27", "2026-02-25"])
+        */
+       /**
+        * MySQL DISTINCT + ORDER BY constraint: ORDER BY column must appear in SELECT list.
+        * We wrap the DISTINCT in a subquery and order the outer result by the alias.
+        */
+       @Query(value = "SELECT practice_date FROM (" +
+                      "  SELECT DISTINCT DATE_FORMAT(answered_at, '%Y-%m-%d') AS practice_date" +
+                      "  FROM user_question_history" +
+                      "  WHERE user_id = :userId AND answered_at IS NOT NULL" +
+                      ") dates " +
+                      "ORDER BY practice_date DESC",
+              nativeQuery = true)
+       List<String> findDistinctAnswerDatesByUserId(@Param("userId") Long userId);
+
+       /**
+        * Find the most recent answered date (YYYY-MM-DD) for a user.
+        * Returns null if user has never answered any question.
+        *
+        * @param userId User ID
+        * @return ISO date string (yyyy-MM-dd) or null
+        */
+       @Query(value = "SELECT DATE_FORMAT(MAX(answered_at), '%Y-%m-%d') " +
+                      "FROM user_question_history " +
+                      "WHERE user_id = :userId AND answered_at IS NOT NULL",
+              nativeQuery = true)
+       String findMostRecentAnsweredDateByUserId(@Param("userId") Long userId);
+
+       /**
+        * Upsert a question-shown event.
+        * INSERT if (user_id, question_ref_id) not seen before;
+        * UPDATE last_shown_at, last_shown_type, times_shown if already exists.
+        * This prevents DataIntegrityViolationException when the same user
+        * gets the same question again across sessions.
+        */
+       @Modifying
+       @Transactional
+       @Query(value = "INSERT INTO user_question_history " +
+              "(user_id, question_id, question_ref_id, last_shown_at, last_shown_type, " +
+              " times_shown, times_correct, times_wrong, created_at, updated_at) " +
+              "VALUES (:userId, :questionId, :questionId, :lastShownAt, :lastShownType, " +
+              "        1, 0, 0, NOW(), NOW()) " +
+              "ON DUPLICATE KEY UPDATE " +
+              "  last_shown_at   = :lastShownAt, " +
+              "  last_shown_type = :lastShownType, " +
+              "  times_shown     = times_shown + 1, " +
+              "  updated_at      = NOW()",
+              nativeQuery = true)
+       void upsertQuestionShown(@Param("userId") Long userId,
+                                @Param("questionId") Long questionId,
+                                @Param("lastShownAt") LocalDateTime lastShownAt,
+                                @Param("lastShownType") String lastShownType);
+
+       /**
+        * Upsert a question-answered event (when user submits an answer in practice mode).
+        * INSERT if (user_id, question_ref_id) not seen before;
+        * UPDATE answer data and counters if record already exists (from prior show via SmartQuiz).
+        * This prevents DataIntegrityViolationException when a question was already shown
+        * and is now being answered.
+        */
+       @Modifying
+       @Transactional
+       @Query(value = "INSERT INTO user_question_history " +
+              "(user_id, question_id, question_ref_id, answered_at, is_correct, last_answer_correct, " +
+              " time_taken_seconds, last_shown_at, last_shown_type, " +
+              " times_shown, times_correct, times_wrong, created_at, updated_at) " +
+              "VALUES (:userId, :questionId, :questionId, :answeredAt, :isCorrect, :isCorrect, " +
+              "        :timeTaken, :answeredAt, 'PRACTICE', " +
+              "        1, CASE WHEN :isCorrect THEN 1 ELSE 0 END, CASE WHEN :isCorrect THEN 0 ELSE 1 END, NOW(), NOW()) " +
+              "ON DUPLICATE KEY UPDATE " +
+              "  answered_at       = :answeredAt, " +
+              "  is_correct        = :isCorrect, " +
+              "  last_answer_correct = :isCorrect, " +
+              "  time_taken_seconds = :timeTaken, " +
+              "  last_shown_at     = :answeredAt, " +
+              "  last_shown_type   = 'PRACTICE', " +
+              "  times_shown       = times_shown + 1, " +
+              "  times_correct     = times_correct + CASE WHEN :isCorrect THEN 1 ELSE 0 END, " +
+              "  times_wrong       = times_wrong + CASE WHEN :isCorrect THEN 0 ELSE 1 END, " +
+              "  updated_at        = NOW()",
+              nativeQuery = true)
+       void upsertQuestionAnswered(@Param("userId") Long userId,
+                                   @Param("questionId") Long questionId,
+                                   @Param("answeredAt") LocalDateTime answeredAt,
+                                   @Param("isCorrect") boolean isCorrect,
+                                   @Param("timeTaken") int timeTaken);
 }

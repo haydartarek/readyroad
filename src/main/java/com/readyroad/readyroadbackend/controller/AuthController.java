@@ -134,6 +134,7 @@ public class AuthController {
         userInfo.put("fullName", user.getFullName());
         userInfo.put("role", user.getRole());
         userInfo.put("isActive", user.getIsActive());
+        userInfo.put("createdAt", user.getCreatedAt() != null ? user.getCreatedAt().toString() : null);
 
         return ResponseEntity.ok(userInfo);
     }

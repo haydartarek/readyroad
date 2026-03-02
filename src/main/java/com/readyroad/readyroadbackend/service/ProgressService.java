@@ -6,6 +6,7 @@ import com.readyroad.readyroadbackend.domain.entity.UserCategoryProgress;
 import com.readyroad.readyroadbackend.domain.repository.CategoryRepository;
 import com.readyroad.readyroadbackend.domain.repository.QuizQuestionRepository;
 import com.readyroad.readyroadbackend.domain.repository.UserCategoryProgressRepository;
+import com.readyroad.readyroadbackend.domain.repository.UserQuestionHistoryRepository;
 import com.readyroad.readyroadbackend.dto.CategoryProgressResponse;
 import com.readyroad.readyroadbackend.dto.OverallProgressResponse;
 import com.readyroad.readyroadbackend.dto.OverallProgressResponse.CategoryProgressSummary;
@@ -16,8 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.time.LocalDateTime;
-import java.time.temporal.ChronoUnit;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -36,6 +36,7 @@ public class ProgressService {
     private final UserCategoryProgressRepository progressRepository;
     private final CategoryRepository categoryRepository;
     private final QuizQuestionRepository questionRepository;
+    private final UserQuestionHistoryRepository historyRepository;
 
     private static final int TOTAL_QUESTIONS_GOAL = 500;
     private static final int MIN_ATTEMPTS_FOR_CATEGORIZATION = 5;
@@ -72,7 +73,7 @@ public class ProgressService {
 
         BigDecimal overallAccuracy = calculateOverallAccuracy(totalAttempted, totalCorrect);
 
-        // Get category map for names
+        // Get category map for names and codes
         Map<Long, Category> categoryMap = categoryRepository.findAll().stream()
                 .collect(Collectors.toMap(Category::getId, c -> c));
 
@@ -80,17 +81,25 @@ public class ProgressService {
         List<CategoryProgressSummary> weakCategories = identifyWeakCategories(progressRecords, categoryMap);
         List<CategoryProgressSummary> strongCategories = identifyStrongCategories(progressRecords, categoryMap);
 
-        // Calculate remaining questions
-        int questionsRemaining = TOTAL_QUESTIONS_GOAL - totalAttempted;
+        // Most-studied categories (top 3 by questionsAttempted)
+        List<CategoryProgressSummary> mostStudiedCategories =
+                computeMostStudiedCategories(progressRecords, categoryMap);
 
-        // Calculate study streak
-        int studyStreak = calculateStudyStreak(progressRecords);
+        // Calculate remaining questions toward the 500-question goal
+        int questionsRemaining = Math.max(0, TOTAL_QUESTIONS_GOAL - totalAttempted);
+
+        // Real consecutive-day study streak using answered_at history
+        int studyStreak = calculateStudyStreak(userId);
+
+        // Date of last practice activity
+        String lastActivityDate = historyRepository.findMostRecentAnsweredDateByUserId(userId);
 
         // Recommend difficulty
-        QuizQuestion.DifficultyLevel recommendedDifficulty = recommendDifficulty(totalAttempted, overallAccuracy);
+        QuizQuestion.DifficultyLevel recommendedDifficulty =
+                recommendDifficulty(totalAttempted, overallAccuracy);
 
-        log.info("User {} progress: attempted={}, correct={}, accuracy={}%, streak={}",
-                userId, totalAttempted, totalCorrect, overallAccuracy, studyStreak);
+        log.info("User {} progress: attempted={}, correct={}, accuracy={}%, streak={}, lastActivity={}",
+                userId, totalAttempted, totalCorrect, overallAccuracy, studyStreak, lastActivityDate);
 
         return OverallProgressResponse.builder()
                 .totalAttempted(totalAttempted)
@@ -98,8 +107,10 @@ public class ProgressService {
                 .overallAccuracy(overallAccuracy)
                 .weakCategories(weakCategories)
                 .strongCategories(strongCategories)
+                .mostStudiedCategories(mostStudiedCategories)
                 .questionsRemaining(questionsRemaining)
                 .studyStreak(studyStreak)
+                .lastActivityDate(lastActivityDate)
                 .recommendedDifficulty(recommendedDifficulty)
                 .build();
     }
@@ -114,8 +125,10 @@ public class ProgressService {
                 .overallAccuracy(BigDecimal.ZERO.setScale(2, RoundingMode.HALF_UP))
                 .weakCategories(new ArrayList<>())
                 .strongCategories(new ArrayList<>())
+                .mostStudiedCategories(new ArrayList<>())
                 .questionsRemaining(TOTAL_QUESTIONS_GOAL)
                 .studyStreak(0)
+                .lastActivityDate(null)
                 .recommendedDifficulty(QuizQuestion.DifficultyLevel.EASY)
                 .build();
     }
@@ -172,7 +185,23 @@ public class ProgressService {
     }
 
     /**
-     * Build category progress summary
+     * Compute top-3 most-studied categories by questionsAttempted (descending).
+     * Used by the dashboard "Most Studied" widget.
+     */
+    private List<CategoryProgressSummary> computeMostStudiedCategories(
+            List<UserCategoryProgress> progressRecords,
+            Map<Long, Category> categoryMap) {
+
+        return progressRecords.stream()
+                .filter(p -> p.getQuestionsAttempted() > 0)
+                .sorted(Comparator.comparing(UserCategoryProgress::getQuestionsAttempted).reversed())
+                .limit(3)
+                .map(p -> buildCategorySummary(p, categoryMap))
+                .collect(Collectors.toList());
+    }
+
+    /**
+     * Build category progress summary (used by weak, strong, and mostStudied lists)
      */
     private CategoryProgressSummary buildCategorySummary(
             UserCategoryProgress progress,
@@ -180,39 +209,67 @@ public class ProgressService {
 
         Category category = categoryMap.get(progress.getCategoryId());
         String categoryName = (category != null) ? category.getNameEn() : "Unknown Category";
+        String categoryCode = (category != null) ? category.getCode() : null;
 
         return CategoryProgressSummary.builder()
                 .categoryName(categoryName)
+                .categoryCode(categoryCode)
                 .accuracy(progress.getAccuracyRate().setScale(2, RoundingMode.HALF_UP))
                 .attempted(progress.getQuestionsAttempted())
                 .build();
     }
 
     /**
-     * Calculate study streak (consecutive days)
-     * Returns 0 if last practice was >24h ago
+     * Calculate real consecutive-day study streak.
+     *
+     * Algorithm:
+     *  1. Load distinct answered dates from user_question_history (descending).
+     *  2. If the most recent date is neither today nor yesterday → streak = 0 (broken).
+     *  3. Walk backwards through dates; count consecutive days that differ by exactly 1.
+     *
+     * @param userId User ID
+     * @return Number of consecutive study days (0 if user never practiced or streak broken)
      */
-    private int calculateStudyStreak(List<UserCategoryProgress> progressRecords) {
-        // Find most recent practice date
-        LocalDateTime mostRecent = progressRecords.stream()
-                .map(UserCategoryProgress::getLastPracticed)
-                .filter(date -> date != null)
-                .max(LocalDateTime::compareTo)
-                .orElse(null);
+    private int calculateStudyStreak(Long userId) {
+        List<String> rawDates = historyRepository.findDistinctAnswerDatesByUserId(userId);
 
-        if (mostRecent == null) {
+        if (rawDates == null || rawDates.isEmpty()) {
             return 0;
         }
 
-        // Check if practiced within last 24 hours
-        long hoursSinceLastPractice = ChronoUnit.HOURS.between(mostRecent, LocalDateTime.now());
-        if (hoursSinceLastPractice > 24) {
+        // Parse and sort descending (most-recent first)
+        List<LocalDate> dates = rawDates.stream()
+                .filter(s -> s != null && !s.isEmpty())
+                .map(LocalDate::parse)
+                .sorted(Comparator.reverseOrder())
+                .collect(Collectors.toList());
+
+        if (dates.isEmpty()) return 0;
+
+        LocalDate today     = LocalDate.now();
+        LocalDate yesterday = today.minusDays(1);
+        LocalDate mostRecent = dates.get(0);
+
+        // Streak is broken if last practice was before yesterday
+        if (!mostRecent.equals(today) && !mostRecent.equals(yesterday)) {
+            log.debug("Streak broken for user {}: last practice={}", userId, mostRecent);
             return 0;
         }
 
-        // For now, return 1 if practiced today
-        // TODO: Implement full consecutive days calculation by querying practice history
-        return 1;
+        // Count consecutive days starting from the most-recent date
+        int streak = 1;
+        for (int i = 0; i < dates.size() - 1; i++) {
+            LocalDate current = dates.get(i);
+            LocalDate next    = dates.get(i + 1);
+            if (current.minusDays(1).equals(next)) {
+                streak++;
+            } else {
+                break; // Gap found – stop counting
+            }
+        }
+
+        log.debug("Study streak for user {}: {} day(s)", userId, streak);
+        return streak;
     }
 
     /**
@@ -302,6 +359,11 @@ public class ProgressService {
             questionsAttempted
         ).name();
 
+        // Calculate remaining questions in this category (delivery-compliant pool minus already attempted)
+        long totalInCategory = questionRepository.countCompliantQuestionsByCategory(
+                progress.getCategoryId());
+        int questionsRemaining = (int) Math.max(0L, totalInCategory - questionsAttempted);
+
         return CategoryProgressResponse.builder()
             .categoryId(progress.getCategoryId())
             .categoryName(category != null ? category.getNameEn() : "Unknown")
@@ -313,7 +375,7 @@ public class ProgressService {
             .lastPracticed(progress.getLastPracticed())
             .isWeakCategory(isWeak)
             .isStrongCategory(isStrong)
-            .questionsRemaining(null)  // TODO: Calculate based on category question count
+            .questionsRemaining(questionsRemaining)
             .recommendedDifficulty(recommendedDifficulty)
             .build();
     }
@@ -344,5 +406,3 @@ public class ProgressService {
         return QuizQuestion.DifficultyLevel.MEDIUM;
     }
 }
-
-

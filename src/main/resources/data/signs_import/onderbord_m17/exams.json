@@ -1,0 +1,51 @@
+{
+  "_IMPORTANT": "Each exam requires exactly 15 questions: 6 EASY + 6 MEDIUM + 3 HARD. No overlap between EXAM_1 and EXAM_2. You need 30 questions total (12 EASY + 12 MEDIUM + 6 HARD).",
+  "_TEMPLATE_STATUS": "INCOMPLETE — Only 5 of 30 required questions exist. Add 25 more questions before configuring exams.",
+  "exam_1": {
+    "_note": "EXAM_1: Questions Q01-Q15 (6 EASY + 6 MEDIUM + 3 HARD)",
+    "questions": [
+      "onderbord_m17_Q01",
+      "onderbord_m17_Q02",
+      "onderbord_m17_Q03",
+      "onderbord_m17_Q04",
+      "onderbord_m17_Q05",
+      "[onderbord_m17_Q06]",
+      "[onderbord_m17_Q07]",
+      "[onderbord_m17_Q08]",
+      "[onderbord_m17_Q09]",
+      "[onderbord_m17_Q10]",
+      "[onderbord_m17_Q11]",
+      "[onderbord_m17_Q12]",
+      "[onderbord_m17_Q13]",
+      "[onderbord_m17_Q14]",
+      "[onderbord_m17_Q15]"
+    ]
+  },
+  "exam_2": {
+    "_note": "EXAM_2: Questions Q16-Q30 (6 EASY + 6 MEDIUM + 3 HARD) — NO overlap with EXAM_1",
+    "questions": [
+      "[onderbord_m17_Q16]",
+      "[onderbord_m17_Q17]",
+      "[onderbord_m17_Q18]",
+      "[onderbord_m17_Q19]",
+      "[onderbord_m17_Q20]",
+      "[onderbord_m17_Q21]",
+      "[onderbord_m17_Q22]",
+      "[onderbord_m17_Q23]",
+      "[onderbord_m17_Q24]",
+      "[onderbord_m17_Q25]",
+      "[onderbord_m17_Q26]",
+      "[onderbord_m17_Q27]",
+      "[onderbord_m17_Q28]",
+      "[onderbord_m17_Q29]",
+      "[onderbord_m17_Q30]"
+    ]
+  },
+  "passing_score": 12,
+  "total_questions": 15,
+  "distribution": {
+    "EASY": 6,
+    "MEDIUM": 6,
+    "HARD": 3
+  }
+}
