@@ -14,6 +14,9 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import org.springframework.validation.annotation.Validated;
 
 /**
  * Smart Quiz Controller - Phase 3: 24h Cooldown MVP
@@ -27,6 +30,7 @@ import java.util.Map;
 @RequestMapping("/api/smart-quiz")
 @RequiredArgsConstructor
 @Slf4j
+@Validated
 public class SmartQuizController {
 
     private final SmartQuizService smartQuizService;
@@ -42,7 +46,7 @@ public class SmartQuizController {
      */
     @GetMapping("/random")
     public ResponseEntity<List<QuizQuestionDTO>> generateRandomSmartQuiz(
-            @RequestParam(defaultValue = "10") int count,
+            @RequestParam(defaultValue = "10") @Min(1) @Max(50) int count,
             Authentication authentication) {
         // Public endpoint: authentication is optional
         Long userId = isAuthenticatedUser(authentication)

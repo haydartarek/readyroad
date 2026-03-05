@@ -12,6 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -62,16 +63,17 @@ public class SmartQuizService {
 
         log.info("Generating smart quiz: userId={}, count={}, categoryId={}", userId, count, categoryId);
 
-        List<Long> recentQuestionIds;
+        Set<Long> recentQuestionIds;
 
         // Guest mode: no cooldown tracking (userId = null)
         if (userId == null) {
             log.debug("Guest mode: no cooldown tracking");
-            recentQuestionIds = List.of(); // Empty list = no questions to filter
+            recentQuestionIds = new HashSet<>(); // Empty set = no questions to filter
         } else {
             // Authenticated mode: enforce 24h cooldown
             LocalDateTime cooldownThreshold = LocalDateTime.now().minusHours(COOLDOWN_HOURS);
-            recentQuestionIds = historyRepository.findRecentQuestionIdsByUserId(userId, cooldownThreshold);
+            List<Long> recentList = historyRepository.findRecentQuestionIdsByUserId(userId, cooldownThreshold);
+            recentQuestionIds = new HashSet<>(recentList);
             log.debug("User {} has seen {} questions in last 24h", userId, recentQuestionIds.size());
         }
 
@@ -257,7 +259,7 @@ public class SmartQuizService {
 
         // Step 2: Get recent question IDs (24h cooldown - Law #1)
         LocalDateTime cooldownThreshold = LocalDateTime.now().minusHours(COOLDOWN_HOURS);
-        List<Long> recentQuestionIds = historyRepository.findRecentQuestionIdsByUserId(userId, cooldownThreshold);
+        Set<Long> recentQuestionIds = new HashSet<>(historyRepository.findRecentQuestionIdsByUserId(userId, cooldownThreshold));
 
         log.debug("User {} has seen {} questions in last 24h", userId, recentQuestionIds.size());
 

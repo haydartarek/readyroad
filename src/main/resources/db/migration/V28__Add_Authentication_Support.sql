@@ -9,15 +9,15 @@ USE readyroad_prod;
 
 -- Add username column (for authentication)
 ALTER TABLE users
-ADD COLUMN IF NOT EXISTS username VARCHAR(50) UNIQUE AFTER id;
+ADD COLUMN username VARCHAR(50) UNIQUE AFTER id;
 
 -- Add role column
 ALTER TABLE users
-ADD COLUMN IF NOT EXISTS role VARCHAR(20) NOT NULL DEFAULT 'USER' AFTER password_hash;
+ADD COLUMN role VARCHAR(20) NOT NULL DEFAULT 'USER' AFTER password_hash;
 
 -- Add is_locked column
 ALTER TABLE users
-ADD COLUMN IF NOT EXISTS is_locked BOOLEAN NOT NULL DEFAULT FALSE AFTER is_active;
+ADD COLUMN is_locked BOOLEAN NOT NULL DEFAULT FALSE AFTER is_active;
 
 -- Create indexes (idempotent using dynamic SQL)
 SET @i1 = (SELECT COUNT(*) FROM INFORMATION_SCHEMA.STATISTICS WHERE TABLE_SCHEMA=DATABASE() AND TABLE_NAME='users' AND INDEX_NAME='idx_users_username');

@@ -4,8 +4,10 @@ import com.readyroad.readyroadbackend.domain.entity.Category;
 import com.readyroad.readyroadbackend.domain.repository.CategoryRepository;
 import com.readyroad.readyroadbackend.dto.response.CategoryResponse;
 import com.readyroad.readyroadbackend.mapper.CategoryMapper;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -31,7 +33,8 @@ public class CategoryService {
 
     public CategoryResponse getCategoryByCode(String code) {
         Category category = categoryRepository.findByCode(code)
-                .orElseThrow(() -> new RuntimeException("Category not found: " + code));
+                .orElseThrow(() -> new ResponseStatusException(
+                        HttpStatus.NOT_FOUND, "Category not found: " + code));
         return categoryMapper.toResponse(category);
     }
 }

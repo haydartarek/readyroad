@@ -1,10 +1,12 @@
 package com.readyroad.readyroadbackend.service;
 
+import com.readyroad.readyroadbackend.domain.entity.Category;
 import com.readyroad.readyroadbackend.domain.entity.ExamSimulation;
 import com.readyroad.readyroadbackend.domain.entity.ExamSimulationAnswer;
 import com.readyroad.readyroadbackend.domain.entity.ExamSimulationQuestion;
 import com.readyroad.readyroadbackend.domain.entity.QuizAnswerOption;
 import com.readyroad.readyroadbackend.domain.entity.QuizQuestion;
+import com.readyroad.readyroadbackend.domain.entity.UserCategoryProgress;
 import com.readyroad.readyroadbackend.domain.entity.NotificationType;
 import com.readyroad.readyroadbackend.domain.repository.ExamSimulationAnswerRepository;
 import com.readyroad.readyroadbackend.domain.repository.ExamSimulationQuestionRepository;
@@ -12,6 +14,8 @@ import com.readyroad.readyroadbackend.domain.repository.ExamSimulationRepository
 import com.readyroad.readyroadbackend.domain.repository.NotificationRepository;
 import com.readyroad.readyroadbackend.domain.repository.QuizAnswerOptionRepository;
 import com.readyroad.readyroadbackend.domain.repository.QuizQuestionRepository;
+import com.readyroad.readyroadbackend.domain.repository.UserCategoryProgressRepository;
+import com.readyroad.readyroadbackend.domain.repository.UserQuestionHistoryRepository;
 import com.readyroad.readyroadbackend.dto.exam.ExamStartResponse;
 import com.readyroad.readyroadbackend.dto.exam.SubmitExamAnswerRequest;
 import com.readyroad.readyroadbackend.dto.exam.SubmitExamAnswerResponse;
@@ -35,6 +39,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.time.Duration;
 import java.time.Instant;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -69,6 +74,9 @@ public class ExamService {
     private final NotificationService notificationService; // Story N1: Exam result notifications
     private final NotificationRepository notificationRepository; // Dedup checks
     private final AchievementService achievementService; // Story N2: Achievement notifications
+    private final UserCategoryProgressRepository progressRepository; // Dashboard progress tracking
+    private final UserQuestionHistoryRepository historyRepository;   // Streak & lastActivityDate tracking
+    private final StreakService streakService; // Story N3: Study streak update on exam completion
 
     private static final int EXAM_QUESTION_COUNT    = 50;
     private static final int EXAM_TIME_LIMIT_MINUTES = 30;
@@ -401,6 +409,72 @@ public class ExamService {
             achievementService.checkAndAwardExamAchievements(exam.getUserId(), examId, passed, correctCount);
         } catch (Exception ex) {
             log.warn("Failed to check achievements for examId={}: {}", examId, ex.getMessage());
+        }
+
+        // ── Dashboard: Update user_category_progress from exam answers ────────
+        // Each answered exam question now counts towards the user's category progress
+        // so the dashboard reflects exam activity (not just practice sessions).
+        try {
+            LocalDateTime now_ldt = LocalDateTime.now();
+            for (ExamSimulationAnswer answer : answers) {
+                QuizQuestion q = answer.getQuestion();
+                if (q == null) continue;
+                Category cat = q.getCategory();
+                if (cat == null) continue;
+
+                UserCategoryProgress progress = progressRepository
+                        .findByUserIdAndCategoryId(userId, cat.getId())
+                        .orElseGet(() -> {
+                            UserCategoryProgress np = new UserCategoryProgress();
+                            np.setUserId(userId);
+                            np.setCategoryId(cat.getId());
+                            np.setCategory(cat);
+                            np.setQuestionsAttempted(0);
+                            np.setCorrectAnswers(0);
+                            np.setMasteryLevel(UserCategoryProgress.MasteryLevel.BEGINNER);
+                            return np;
+                        });
+
+                progress.setQuestionsAttempted(progress.getQuestionsAttempted() + 1);
+                if (Boolean.TRUE.equals(answer.getIsCorrect())) {
+                    progress.setCorrectAnswers(progress.getCorrectAnswers() + 1);
+                }
+                progress.setLastPracticed(now_ldt);
+                progress.updateAccuracy();
+                progressRepository.save(progress);
+            }
+            log.info("Dashboard progress updated from exam {}: {} answers processed for userId={}",
+                    examId, answers.size(), userId);
+        } catch (Exception ex) {
+            // Progress update failure must NEVER roll back the exam completion
+            log.warn("Failed to update dashboard progress from exam {}: {}", examId, ex.getMessage());
+        }
+
+        // ── History: Record exam answers in user_question_history ─────────────
+        // Required for study streak calculation and SmartQuiz 24h cooldown (Law #1).
+        try {
+            LocalDateTime now_ldt2 = LocalDateTime.now();
+            for (ExamSimulationAnswer answer : answers) {
+                QuizQuestion q = answer.getQuestion();
+                if (q == null) continue;
+                historyRepository.upsertQuestionAnswered(
+                        userId,
+                        q.getId(),
+                        now_ldt2,
+                        Boolean.TRUE.equals(answer.getIsCorrect()),
+                        0);
+            }
+            log.info("Question history updated from exam {}: {} records for userId={}",
+                    examId, answers.size(), userId);
+        } catch (Exception ex) {
+            log.warn("Failed to update question history from exam {}: {}", examId, ex.getMessage());
+        }
+
+        // ── Streak: Count exam completion as a study day ───────────────────────
+        try {
+            streakService.updateStreakAndNotify(userId);
+        } catch (Exception ex) {
+            log.warn("Failed to update streak after exam {}: {}", examId, ex.getMessage());
         }
     }
 

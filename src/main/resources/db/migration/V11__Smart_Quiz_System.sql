@@ -1,4 +1,4 @@
--- V11__Smart_Quiz_System.sql (النسخة المُصحَّحة والكاملة)
+-- V11__Smart_Quiz_System.sql
 -- Smart Quiz System - User question tracking and exam attempts
 -- Fixed: FKs, safe ALTERs, DECIMAL(4,2), USE statement, question_ref_id mapping
 -- Generated: 2026-02-27 (Fixed version)
@@ -135,8 +135,8 @@ CREATE TABLE IF NOT EXISTS user_weak_areas (
 -- ========================================
 -- exam_questions
 SET @sql = '
-ALTER TABLE IF EXISTS exam_questions 
-    ADD COLUMN IF NOT EXISTS typical_error_type ENUM(
+ALTER TABLE exam_questions 
+    ADD COLUMN typical_error_type ENUM(
         ''SIGN_CONFUSION'',
         ''SUPPLEMENTARY_IGNORED'', 
         ''PRIORITY_MISUNDERSTANDING'',
@@ -145,7 +145,7 @@ ALTER TABLE IF EXISTS exam_questions
         ''RULE_OVERGENERALIZATION'',
         ''OTHER''
     ) AFTER explanation_fr,
-    ADD COLUMN IF NOT EXISTS context_specific BOOLEAN DEFAULT TRUE AFTER typical_error_type;
+    ADD COLUMN context_specific BOOLEAN DEFAULT TRUE AFTER typical_error_type;
 ';
 PREPARE stmt FROM @sql;
 EXECUTE stmt;
@@ -153,8 +153,8 @@ DEALLOCATE PREPARE stmt;
 
 -- practice_questions  
 SET @sql = '
-ALTER TABLE IF EXISTS practice_questions 
-    ADD COLUMN IF NOT EXISTS typical_error_type ENUM(
+ALTER TABLE practice_questions 
+    ADD COLUMN typical_error_type ENUM(
         ''SIGN_CONFUSION'',
         ''SUPPLEMENTARY_IGNORED'',
         ''PRIORITY_MISUNDERSTANDING'', 
@@ -163,7 +163,7 @@ ALTER TABLE IF EXISTS practice_questions
         ''RULE_OVERGENERALIZATION'',
         ''OTHER''
     ) AFTER explanation_fr,
-    ADD COLUMN IF NOT EXISTS context_specific BOOLEAN DEFAULT TRUE AFTER typical_error_type;
+    ADD COLUMN context_specific BOOLEAN DEFAULT TRUE AFTER typical_error_type;
 ';
 PREPARE stmt FROM @sql;
 EXECUTE stmt;
@@ -172,9 +172,9 @@ DEALLOCATE PREPARE stmt;
 -- ========================================
 -- Performance indexes for existing tables
 -- ========================================
-CREATE INDEX IF NOT EXISTS idx_exam_sign_code ON exam_questions(sign_code);
-CREATE INDEX IF NOT EXISTS idx_practice_sign_code ON practice_questions(sign_code);
-CREATE INDEX IF NOT EXISTS idx_traffic_rules_category ON traffic_rules(category);
+-- Note: idx_exam_sign_code and idx_practice_sign_code removed (sign_code column
+-- does not exist in those tables at this migration version; added later)
+CREATE INDEX idx_traffic_rules_category ON traffic_rules(category_id);
 
 -- ========================================
 -- Insert default admin user (safe)

@@ -9,11 +9,11 @@
 -- ─────────────────────────────────────────────────────────────────────────────
 
 -- ── Add traffic_sign_code for Sign Quiz tracking ──────────────────────────────
--- Adds the column (no IF NOT EXISTS — column confirmed absent before this migration).
--- Also adds a UNIQUE KEY so ON DUPLICATE KEY UPDATE works correctly.
+-- V11 already created user_weak_areas with traffic_sign_code VARCHAR(10).
+-- Resize the column to VARCHAR(50) so ON DUPLICATE KEY upserts work correctly.
+-- Skip ADD UNIQUE KEY: V11 already has uk_user_sign(user_id, traffic_sign_code).
 ALTER TABLE user_weak_areas
-    ADD COLUMN traffic_sign_code VARCHAR(50) NULL,
-    ADD UNIQUE KEY uk_uwa_user_sign_code (user_id, traffic_sign_code);
+    MODIFY COLUMN traffic_sign_code VARCHAR(50) NULL;
 
 -- ── sign_practice_sessions ────────────────────────────────────────────────────
 CREATE TABLE IF NOT EXISTS sign_practice_sessions

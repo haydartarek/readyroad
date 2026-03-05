@@ -2,7 +2,7 @@
 -- V5: Add Remaining Lessons, Practice Questions and Exam Questions
 -- ====================================================================
 
-USE readyroad;
+USE readyroad_prod;
 
 -- ====================
 -- STEP 1: Additional Lessons (8-31)

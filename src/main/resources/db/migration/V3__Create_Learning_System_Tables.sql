@@ -2,7 +2,7 @@
 -- Phase 4: Learning System Tables
 -- ====================================================================
 
-USE readyroad;
+USE readyroad_prod;
 
 -- ====================
 -- STEP 1: Lessons Table

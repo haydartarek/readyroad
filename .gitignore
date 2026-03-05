@@ -1,12 +1,17 @@
-﻿*.md
-*.py
-*.ps1
-.claude
-.claude/
-claude
-claude/
-*claude*
+﻿# IDE
+.idea/
+*.iml
 
-# build outputs
+# Logs & outputs
+logs/
+*.log
+*.log.*
+*.gz
+*-output*.txt
+backend-full.log
+
+# Maven
 target/
 
+# Windows reserved / junk
+nul

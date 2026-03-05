@@ -10,7 +10,7 @@ USE readyroad_prod;
 
 -- Fix score_percentage column type (safe migration)
 ALTER TABLE quiz_attempts
-MODIFY COLUMN IF EXISTS score_percentage DOUBLE NULL;
+MODIFY COLUMN score_percentage DOUBLE NULL;
 
 -- Update comment with precise description
 ALTER TABLE quiz_attempts

@@ -2,7 +2,7 @@
 -- Phase 4: Learning System - Test Data
 -- ====================================================================
 
-USE readyroad;
+USE readyroad_prod;
 
 -- ====================
 -- STEP 1: Insert Lessons (using subquery for category_id)

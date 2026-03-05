@@ -2,8 +2,8 @@
 USE readyroad_prod;
 
 -- Add missing updated_at column (safe migration)
-ALTER TABLE IF EXISTS quiz_attempts 
-ADD COLUMN IF NOT EXISTS updated_at TIMESTAMP NULL 
+ALTER TABLE quiz_attempts 
+ADD COLUMN updated_at TIMESTAMP NULL 
 DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP 
 AFTER created_at;
 

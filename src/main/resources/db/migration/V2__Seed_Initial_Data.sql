@@ -2,7 +2,7 @@
 -- Phase 0: Foundation Seed Data
 -- ====================================================================
 
-USE readyroad;
+USE readyroad_prod;
 
 -- ====================
 -- STEP 1: Pre-check

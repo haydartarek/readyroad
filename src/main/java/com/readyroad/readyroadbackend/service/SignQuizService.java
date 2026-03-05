@@ -33,14 +33,17 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class SignQuizService {
 
-    private final RoadSignRepository          roadSignRepo;
-    private final SignQuestionRepository      questionRepo;
-    private final SignExamRepository          examRepo;
-    private final SignPracticeSessionRepository sessionRepo;
-    private final SignPracticeAnswerRepository  answerRepo;
-    private final UserRepository              userRepo;
-    private final UserWeakAreaRepository      weakAreaRepo;
-    private final UserErrorPatternRepository  errorPatternRepo;
+    private final RoadSignRepository              roadSignRepo;
+    private final SignQuestionRepository          questionRepo;
+    private final SignExamRepository              examRepo;
+    private final SignPracticeSessionRepository   sessionRepo;
+    private final SignPracticeAnswerRepository     answerRepo;
+    private final UserRepository                  userRepo;
+    private final UserWeakAreaRepository          weakAreaRepo;
+    private final UserErrorPatternRepository      errorPatternRepo;
+    // Bridge: sign quiz answers → main dashboard category progress
+    private final CategoryRepository              categoryRepo;
+    private final UserCategoryProgressRepository  categoryProgressRepo;
 
     // ── 1. Get active signs ──────────────────────────────────────────────────
 
@@ -233,6 +236,18 @@ public class SignQuizService {
             }
         }
 
+        // ── Dashboard bridge: update user_category_progress ───────────────────
+        // This makes sign-quiz practice answers visible in the main dashboard
+        // and analytics pages (weak areas, category progress).
+        try {
+            String catCode = signCategoryToCode(session.getSign().getCategory());
+            categoryRepo.findByCode(catCode).ifPresent(cat ->
+                    updateSignCategoryProgress(userId, cat, isCorrect));
+        } catch (Exception e) {
+            log.warn("Dashboard bridge failed for user={} sign={}: {}",
+                    userId, session.getSignCode(), e.getMessage());
+        }
+
         // ── Compute accuracy for response (best-effort) ───────────────────────
         double accuracy   = answeredCount == 0 ? 0.0
                 : (session.getCorrectCount() * 100.0 / answeredCount);
@@ -359,6 +374,7 @@ public class SignQuizService {
         int correctCount = 0;
         int answeredCount = 0;
         List<SignExamResultDto.ExamQuestionResult> results = new ArrayList<>();
+        List<Boolean> answeredResults = new ArrayList<>(); // for dashboard bridge
 
         for (SignExamQuestion eq : examQuestions) {
             SignQuestion q      = eq.getQuestion();
@@ -404,6 +420,7 @@ public class SignQuizService {
             boolean isCorrect = selectedChoice != null
                     && Boolean.TRUE.equals(selectedChoice.getIsCorrect());
             if (isCorrect) correctCount++;
+            answeredResults.add(isCorrect); // track for dashboard bridge
 
             results.add(new SignExamResultDto.ExamQuestionResult(
                     qId,
@@ -438,6 +455,21 @@ public class SignQuizService {
         } catch (Exception e) {
             log.warn("V11 exam upsertBySignCode failed for user={} sign={}: {}",
                     userId, sign.getSignCode(), e.getMessage());
+        }
+
+        // ── Dashboard bridge: update user_category_progress in bulk ──────────
+        if (!answeredResults.isEmpty()) {
+            try {
+                String catCode = signCategoryToCode(sign.getCategory());
+                categoryRepo.findByCode(catCode).ifPresent(cat -> {
+                    for (boolean correct : answeredResults) {
+                        updateSignCategoryProgress(userId, cat, correct);
+                    }
+                });
+            } catch (Exception e) {
+                log.warn("Dashboard bridge (exam) failed for user={} sign={}: {}",
+                        userId, sign.getSignCode(), e.getMessage());
+            }
         }
 
         log.info("Exam {}/{} submitted by user {} — {}/{} correct, passed={}",
@@ -485,5 +517,66 @@ public class SignQuizService {
                 .limit(totalQuestions)
                 .map(SignQuizQuestionDto::from)
                 .toList();
+    }
+
+    /**
+     * Maps a {@link SignCategory} enum value to the single-letter category code
+     * stored in the {@code categories} table, enabling the join between the
+     * sign-quiz world and the main quiz/progress world.
+     *
+     * <pre>
+     * DANGER      → A  (Warning Signs)
+     * PRIORITY    → B  (Priority Signs)
+     * PROHIBITION → C  (Prohibition Signs)
+     * MANDATORY   → D  (Mandatory Signs)
+     * PARKING     → E  (Parking and Standing Signs)
+     * INFORMATION → F  (Information Signs)
+     * ADDITIONAL  → G  (Supplementary Signs)
+     * ZONE        → Z  (Zone Signs)
+     * </pre>
+     */
+    private static String signCategoryToCode(SignCategory cat) {
+        if (cat == null) return "A";
+        return switch (cat) {
+            case DANGER      -> "A";
+            case PRIORITY    -> "B";
+            case PROHIBITION -> "C";
+            case MANDATORY   -> "D";
+            case PARKING     -> "E";
+            case INFORMATION -> "F";
+            case ADDITIONAL  -> "G";
+            case ZONE        -> "Z";
+        };
+    }
+
+    /**
+     * Creates or updates a {@link UserCategoryProgress} row for the given user
+     * and category, mirroring the logic in {@link PracticeService} so that
+     * sign-quiz answers appear in the main dashboard and analytics views.
+     */
+    private void updateSignCategoryProgress(Long userId, Category category, boolean isCorrect) {
+        UserCategoryProgress progress = categoryProgressRepo
+                .findByUserIdAndCategoryId(userId, category.getId())
+                .orElseGet(() -> {
+                    UserCategoryProgress np = new UserCategoryProgress();
+                    np.setUserId(userId);
+                    np.setCategoryId(category.getId());
+                    np.setCategory(category);
+                    np.setQuestionsAttempted(0);
+                    np.setCorrectAnswers(0);
+                    np.setMasteryLevel(UserCategoryProgress.MasteryLevel.BEGINNER);
+                    return np;
+                });
+
+        progress.setQuestionsAttempted(progress.getQuestionsAttempted() + 1);
+        if (isCorrect) {
+            progress.setCorrectAnswers(progress.getCorrectAnswers() + 1);
+        }
+        progress.setLastPracticed(LocalDateTime.now());
+        progress.updateAccuracy();
+        categoryProgressRepo.save(progress);
+
+        log.debug("Dashboard bridge updated: userId={}, category={}, attempted={}, accuracy={}",
+                userId, category.getCode(), progress.getQuestionsAttempted(), progress.getAccuracyRate());
     }
 }

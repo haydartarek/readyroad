@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
+import jakarta.validation.ConstraintViolationException;
 
 /**
  * Global Exception Handler for ReadyRoad Backend
@@ -31,7 +32,7 @@ public class GlobalExceptionHandler {
         error.put("activeExamId", ex.getActiveExamId());
         error.put("userId", ex.getUserId());
         error.put("code", "ACTIVE_EXAM_EXISTS");
-        error.put("resolution", "Cancel the active exam using DELETE /api/exam-simulations/active before starting a new one");
+        error.put("resolution", "Cancel the active exam using DELETE /api/exams/simulations/active before starting a new one");
         error.put("timestamp", LocalDateTime.now());
 
         return ResponseEntity.status(HttpStatus.CONFLICT).body(error);
@@ -155,5 +156,30 @@ public class GlobalExceptionHandler {
         error.put("timestamp", LocalDateTime.now());
 
         return ResponseEntity.status(HttpStatus.FORBIDDEN).body(error);
+    }
+
+    /**
+     * Handle ConstraintViolationException - @Min/@Max/@NotNull violations on request params
+     * HTTP 400 BAD REQUEST
+     */
+    @ExceptionHandler(ConstraintViolationException.class)
+    @ResponseBody
+    public ResponseEntity<Map<String, String>> handleConstraintViolation(ConstraintViolationException ex) {
+        Map<String, String> errors = new HashMap<>();
+        ex.getConstraintViolations().forEach(violation -> {
+            String field = violation.getPropertyPath().toString();
+            errors.put(field, violation.getMessage());
+        });
+        return ResponseEntity.badRequest().body(errors);
+    }
+
+    /**
+     * Handle IllegalArgumentException - invalid method arguments
+     * HTTP 400 BAD REQUEST
+     */
+    @ExceptionHandler(IllegalArgumentException.class)
+    @ResponseBody
+    public ResponseEntity<Map<String, String>> handleIllegalArgument(IllegalArgumentException ex) {
+        return ResponseEntity.badRequest().body(Map.of("error", ex.getMessage()));
     }
 }

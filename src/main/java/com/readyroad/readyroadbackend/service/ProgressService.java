@@ -1,9 +1,11 @@
 package com.readyroad.readyroadbackend.service;
 
 import com.readyroad.readyroadbackend.domain.entity.Category;
+import com.readyroad.readyroadbackend.domain.entity.ExamSimulation;
 import com.readyroad.readyroadbackend.domain.entity.QuizQuestion;
 import com.readyroad.readyroadbackend.domain.entity.UserCategoryProgress;
 import com.readyroad.readyroadbackend.domain.repository.CategoryRepository;
+import com.readyroad.readyroadbackend.domain.repository.ExamSimulationRepository;
 import com.readyroad.readyroadbackend.domain.repository.QuizQuestionRepository;
 import com.readyroad.readyroadbackend.domain.repository.UserCategoryProgressRepository;
 import com.readyroad.readyroadbackend.domain.repository.UserQuestionHistoryRepository;
@@ -37,12 +39,14 @@ public class ProgressService {
     private final CategoryRepository categoryRepository;
     private final QuizQuestionRepository questionRepository;
     private final UserQuestionHistoryRepository historyRepository;
+    private final ExamSimulationRepository examSimulationRepository;
 
     private static final int TOTAL_QUESTIONS_GOAL = 500;
     private static final int MIN_ATTEMPTS_FOR_CATEGORIZATION = 5;
     private static final BigDecimal WEAK_THRESHOLD = BigDecimal.valueOf(70.00);
     private static final BigDecimal STRONG_THRESHOLD = BigDecimal.valueOf(85.00);
     private static final int MIN_ATTEMPTS_FOR_DIFFICULTY = 10;
+    private static final double EXAM_PASS_THRESHOLD = 82.0;
 
     /**
      * Get overall progress for a user
@@ -98,8 +102,19 @@ public class ProgressService {
         QuizQuestion.DifficultyLevel recommendedDifficulty =
                 recommendDifficulty(totalAttempted, overallAccuracy);
 
-        log.info("User {} progress: attempted={}, correct={}, accuracy={}%, streak={}, lastActivity={}",
-                userId, totalAttempted, totalCorrect, overallAccuracy, studyStreak, lastActivityDate);
+        // Exam simulation statistics
+        int totalExamsTaken = (int) examSimulationRepository.countByUserIdAndStatus(
+                userId, ExamSimulation.ExamStatus.COMPLETED);
+        int passedExams = (int) examSimulationRepository
+                .countByUserIdAndStatusAndScorePercentageGreaterThanEqual(
+                        userId, ExamSimulation.ExamStatus.COMPLETED, EXAM_PASS_THRESHOLD);
+        int failedExams = totalExamsTaken - passedExams;
+        BigDecimal passRate = totalExamsTaken > 0
+                ? BigDecimal.valueOf(passedExams * 100.0 / totalExamsTaken).setScale(2, RoundingMode.HALF_UP)
+                : BigDecimal.ZERO.setScale(2, RoundingMode.HALF_UP);
+
+        log.info("User {} progress: attempted={}, correct={}, accuracy={}%, streak={}, lastActivity={}, exams={}, passed={}",
+                userId, totalAttempted, totalCorrect, overallAccuracy, studyStreak, lastActivityDate, totalExamsTaken, passedExams);
 
         return OverallProgressResponse.builder()
                 .totalAttempted(totalAttempted)
@@ -112,6 +127,10 @@ public class ProgressService {
                 .studyStreak(studyStreak)
                 .lastActivityDate(lastActivityDate)
                 .recommendedDifficulty(recommendedDifficulty)
+                .totalExamsTaken(totalExamsTaken)
+                .passedExams(passedExams)
+                .failedExams(failedExams)
+                .passRate(passRate)
                 .build();
     }
 
@@ -130,6 +149,10 @@ public class ProgressService {
                 .studyStreak(0)
                 .lastActivityDate(null)
                 .recommendedDifficulty(QuizQuestion.DifficultyLevel.EASY)
+                .totalExamsTaken(0)
+                .passedExams(0)
+                .failedExams(0)
+                .passRate(BigDecimal.ZERO.setScale(2, RoundingMode.HALF_UP))
                 .build();
     }
 

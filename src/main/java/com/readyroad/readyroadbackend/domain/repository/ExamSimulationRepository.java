@@ -40,4 +40,13 @@ public interface ExamSimulationRepository extends JpaRepository<ExamSimulation, 
      * Count completed exams for user
      */
     long countByUserIdAndStatus(Long userId, ExamSimulation.ExamStatus status);
+
+    /**
+     * Count completed exams where user achieved a passing score (≥ passThreshold)
+     */
+    long countByUserIdAndStatusAndScorePercentageGreaterThanEqual(
+        Long userId,
+        ExamSimulation.ExamStatus status,
+        double passThreshold
+    );
 }

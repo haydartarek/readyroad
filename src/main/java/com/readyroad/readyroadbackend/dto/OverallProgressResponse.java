@@ -74,6 +74,27 @@ public class OverallProgressResponse {
     private String lastActivityDate;
 
     /**
+     * Total number of completed exam simulations taken by the user.
+     */
+    private Integer totalExamsTaken;
+
+    /**
+     * Number of completed exams where the user scored ≥82% (pass threshold).
+     */
+    private Integer passedExams;
+
+    /**
+     * Number of completed exams where the user scored <82%.
+     */
+    private Integer failedExams;
+
+    /**
+     * Percentage of exams that were passed (0-100).
+     * 0.0 when no exams have been taken.
+     */
+    private BigDecimal passRate;
+
+    /**
      * Summary of progress for a specific category.
      * Used in weakCategories, strongCategories, and mostStudiedCategories lists.
      */
