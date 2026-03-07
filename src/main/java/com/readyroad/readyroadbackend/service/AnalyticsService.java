@@ -13,6 +13,7 @@ import com.readyroad.readyroadbackend.domain.repository.UserQuestionHistoryRepos
 import com.readyroad.readyroadbackend.dto.ErrorPatternResponse;
 import com.readyroad.readyroadbackend.dto.ErrorPatternResponse.ExampleQuestionDTO;
 import com.readyroad.readyroadbackend.dto.WeakAreaRecommendationResponse;
+import com.readyroad.readyroadbackend.dto.WeakAreasOverviewResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -233,14 +234,17 @@ public class AnalyticsService {
     private static final int AVERAGE_TIME_PER_QUESTION_SECONDS = 45;
 
     /**
-     * Get weak area recommendations for a user
-     * Returns top 3 weakest categories with personalized improvement plan
+     * Get weak area recommendations for a user.
+     * Returns ALL categories below the 80% target (not capped at 3) together
+     * with accurate summary statistics so the frontend can show:
+     *   - real overall accuracy (not just the average of weak areas)
+     *   - correct "Strong Areas" count (total practiced − weak count)
      *
      * @param userId User ID
-     * @return List of up to 3 weak area recommendations sorted by priority
+     * @return Wrapper with weak-area list and summary stats
      */
     @Transactional(readOnly = true)
-    public List<WeakAreaRecommendationResponse> getWeakAreaRecommendations(Long userId) {
+    public WeakAreasOverviewResponse getWeakAreaRecommendations(Long userId) {
         log.info("Getting weak area recommendations for user {}", userId);
 
         // Get all category progress for user
@@ -250,7 +254,11 @@ public class AnalyticsService {
 
         if (progressRecords.isEmpty()) {
             log.info("User {} has no progress yet, returning empty recommendations", userId);
-            return new ArrayList<>();
+            return WeakAreasOverviewResponse.builder()
+                .weakAreas(new ArrayList<>())
+                .totalPracticedCategories(0)
+                .overallAccuracy(0.0)
+                .build();
         }
 
         // Filter categories with measurable accuracy (>= 5 attempts)
@@ -260,28 +268,39 @@ public class AnalyticsService {
 
         log.debug("Found {} measurable categories (>= {} attempts)", measurableCategories.size(), MIN_ATTEMPTS_FOR_RECOMMENDATION);
 
+        // Compute summary stats across ALL measurable categories
+        int totalPracticed = measurableCategories.size();
+        int totalAttempted = measurableCategories.stream().mapToInt(UserCategoryProgress::getQuestionsAttempted).sum();
+        int totalCorrect   = measurableCategories.stream().mapToInt(UserCategoryProgress::getCorrectAnswers).sum();
+        double overallAccuracy = totalAttempted > 0
+            ? Math.round((totalCorrect * 100.0 / totalAttempted) * 10.0) / 10.0
+            : 0.0;
+
         if (measurableCategories.isEmpty()) {
             log.info("User {} has no categories with sufficient attempts, returning empty recommendations", userId);
-            return new ArrayList<>();
+            return WeakAreasOverviewResponse.builder()
+                .weakAreas(new ArrayList<>())
+                .totalPracticedCategories(0)
+                .overallAccuracy(0.0)
+                .build();
         }
 
-        // Sort by accuracy (lowest first) to identify weakest areas
-        measurableCategories.sort(Comparator.comparing(UserCategoryProgress::getAccuracyRate));
-
-        // Take top 3 weakest categories
-        List<UserCategoryProgress> top3Weakest = measurableCategories.stream()
-            .limit(3)
+        // Keep only categories BELOW the target accuracy (genuinely weak)
+        // Sort by accuracy ascending (weakest first)
+        List<UserCategoryProgress> weakCategories = measurableCategories.stream()
+            .filter(p -> p.getAccuracyRate().doubleValue() < TARGET_ACCURACY)
+            .sorted(Comparator.comparing(UserCategoryProgress::getAccuracyRate))
             .collect(Collectors.toList());
 
         // Load category map (since relationship may not be loaded due to insertable=false)
         Map<Long, Category> categoryMap = categoryRepository.findAll().stream()
             .collect(Collectors.toMap(Category::getId, c -> c));
 
-        // Build recommendations
+        // Build recommendations for ALL weak categories (no artificial cap)
         List<WeakAreaRecommendationResponse> recommendations = new ArrayList<>();
         int priority = 1;
 
-        for (UserCategoryProgress progress : top3Weakest) {
+        for (UserCategoryProgress progress : weakCategories) {
             Category category = categoryMap.get(progress.getCategoryId());
             if (category == null) {
                 log.warn("Category not found for progress record: userId={}, categoryId={}",
@@ -300,16 +319,16 @@ public class AnalyticsService {
             // Determine recommended difficulty
             String recommendedDifficulty = determineRecommendedDifficulty(currentAccuracy);
 
-            // Estimate time (questions * avg time)
+            // Estimate time to complete recommended practice
             int estimatedTimeMinutes = (recommendedQuestions * AVERAGE_TIME_PER_QUESTION_SECONDS) / 60;
 
             WeakAreaRecommendationResponse recommendation = WeakAreaRecommendationResponse.builder()
                 .categoryId(category.getId())
                 .categoryCode(category.getCode())
                 .categoryName(category.getNameEn())
-                .currentAccuracy(Math.round(currentAccuracy * 10.0) / 10.0) // 1 decimal
+                .currentAccuracy(Math.round(currentAccuracy * 10.0) / 10.0)
                 .targetAccuracy(TARGET_ACCURACY)
-                .accuracyGap(Math.round(accuracyGap * 10.0) / 10.0) // 1 decimal
+                .accuracyGap(Math.round(accuracyGap * 10.0) / 10.0)
                 .recommendedQuestions(recommendedQuestions)
                 .recommendedDifficulty(recommendedDifficulty)
                 .estimatedTimeMinutes(estimatedTimeMinutes)
@@ -320,8 +339,13 @@ public class AnalyticsService {
             recommendations.add(recommendation);
         }
 
-        log.info("Returning {} weak area recommendations for user {}", recommendations.size(), userId);
-        return recommendations;
+        log.info("Returning {} weak area recommendations for user {} (total practiced: {}, overallAccuracy: {}%)",
+            recommendations.size(), userId, totalPracticed, overallAccuracy);
+        return WeakAreasOverviewResponse.builder()
+            .weakAreas(recommendations)
+            .totalPracticedCategories(totalPracticed)
+            .overallAccuracy(overallAccuracy)
+            .build();
     }
 
     /**

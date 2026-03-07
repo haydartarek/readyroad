@@ -4,9 +4,12 @@ import com.readyroad.readyroadbackend.domain.entity.Category;
 import com.readyroad.readyroadbackend.domain.entity.ExamSimulation;
 import com.readyroad.readyroadbackend.domain.entity.QuizQuestion;
 import com.readyroad.readyroadbackend.domain.entity.UserCategoryProgress;
+import com.readyroad.readyroadbackend.domain.entity.SignPracticeSession;
 import com.readyroad.readyroadbackend.domain.repository.CategoryRepository;
 import com.readyroad.readyroadbackend.domain.repository.ExamSimulationRepository;
 import com.readyroad.readyroadbackend.domain.repository.QuizQuestionRepository;
+import com.readyroad.readyroadbackend.domain.repository.SignExamResultRepository;
+import com.readyroad.readyroadbackend.domain.repository.SignPracticeSessionRepository;
 import com.readyroad.readyroadbackend.domain.repository.UserCategoryProgressRepository;
 import com.readyroad.readyroadbackend.domain.repository.UserQuestionHistoryRepository;
 import com.readyroad.readyroadbackend.dto.CategoryProgressResponse;
@@ -40,6 +43,8 @@ public class ProgressService {
     private final QuizQuestionRepository questionRepository;
     private final UserQuestionHistoryRepository historyRepository;
     private final ExamSimulationRepository examSimulationRepository;
+    private final SignPracticeSessionRepository signPracticeSessionRepository;
+    private final SignExamResultRepository signExamResultRepository;
 
     private static final int TOTAL_QUESTIONS_GOAL = 500;
     private static final int MIN_ATTEMPTS_FOR_CATEGORIZATION = 5;
@@ -113,8 +118,14 @@ public class ProgressService {
                 ? BigDecimal.valueOf(passedExams * 100.0 / totalExamsTaken).setScale(2, RoundingMode.HALF_UP)
                 : BigDecimal.ZERO.setScale(2, RoundingMode.HALF_UP);
 
-        log.info("User {} progress: attempted={}, correct={}, accuracy={}%, streak={}, lastActivity={}, exams={}, passed={}",
-                userId, totalAttempted, totalCorrect, overallAccuracy, studyStreak, lastActivityDate, totalExamsTaken, passedExams);
+        // Sign quiz activity statistics
+        int signPracticeCount = (int) signPracticeSessionRepository
+                .countByUserIdAndStatus(userId, SignPracticeSession.SessionStatus.COMPLETED);
+        int signExamCount = (int) signExamResultRepository.countByUserId(userId);
+        int signPassedCount = (int) signExamResultRepository.countDistinctSignsWithPassedExam1(userId);
+
+        log.info("User {} progress: attempted={}, correct={}, accuracy={}%, streak={}, lastActivity={}, exams={}, passed={}, signPractice={}, signExams={}",
+                userId, totalAttempted, totalCorrect, overallAccuracy, studyStreak, lastActivityDate, totalExamsTaken, passedExams, signPracticeCount, signExamCount);
 
         return OverallProgressResponse.builder()
                 .totalAttempted(totalAttempted)
@@ -131,6 +142,9 @@ public class ProgressService {
                 .passedExams(passedExams)
                 .failedExams(failedExams)
                 .passRate(passRate)
+                .signPracticeCount(signPracticeCount)
+                .signExamCount(signExamCount)
+                .signPassedCount(signPassedCount)
                 .build();
     }
 
@@ -153,6 +167,9 @@ public class ProgressService {
                 .passedExams(0)
                 .failedExams(0)
                 .passRate(BigDecimal.ZERO.setScale(2, RoundingMode.HALF_UP))
+                .signPracticeCount(0)
+                .signExamCount(0)
+                .signPassedCount(0)
                 .build();
     }
 

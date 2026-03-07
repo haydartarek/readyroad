@@ -3,6 +3,8 @@ package com.readyroad.readyroadbackend.controller;
 import com.readyroad.readyroadbackend.util.AuthenticationUtil;
 import com.readyroad.readyroadbackend.domain.entity.QuizQuestion;
 import com.readyroad.readyroadbackend.dto.QuizQuestionDTO;
+import com.readyroad.readyroadbackend.dto.TheoryExamAnswerRequest;
+import com.readyroad.readyroadbackend.dto.TheoryExamResultDTO;
 import com.readyroad.readyroadbackend.dto.practice.SubmitPracticeAnswerRequest;
 import com.readyroad.readyroadbackend.dto.practice.SubmitPracticeAnswerResponse;
 import com.readyroad.readyroadbackend.mapper.QuizQuestionMapper;
@@ -233,6 +235,52 @@ public class QuizController {
         );
 
         return ResponseEntity.ok(response);
+    }
+
+    // ============================================================================
+    // BELGIAN THEORY EXAM — /api/quiz/theory-exam
+    // Distribution: 20 EASY + 18 MEDIUM + 12 HARD = 50 questions
+    // Per-question timer enforced client-side (15 seconds)
+    // Pass threshold: 41/50 (Belgian rijbewijs B standard)
+    // Stateless — no DB session, no history written
+    // ============================================================================
+
+    /**
+     * Fetch 50 questions for a Belgian theory exam practice session.
+     * Distribution: 20 easy / 18 medium / 12 hard, fully shuffled.
+     *
+     * GET /api/quiz/theory-exam
+     */
+    @GetMapping("/theory-exam")
+    @Operation(summary = "Get Belgian theory exam question set (20E+18M+12H)")
+    public ResponseEntity<List<QuizQuestionDTO>> getTheoryExamQuestions(
+            Authentication authentication) {
+        Long userId = authenticationUtil.extractUserId(authentication);
+        if (userId == null) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+        }
+        List<QuizQuestion> questions = quizService.getTheoryExamQuestions();
+        return ResponseEntity.ok(quizQuestionMapper.toDTOList(questions));
+    }
+
+    /**
+     * Stateless answer check for a completed theory exam practice session.
+     * Calculates score, pass/fail, and per-question correctness.
+     * Does NOT write to DB or update user history.
+     *
+     * POST /api/quiz/theory-exam/check
+     */
+    @PostMapping("/theory-exam/check")
+    @Operation(summary = "Check Belgian theory exam answers (stateless, no history recorded)")
+    public ResponseEntity<TheoryExamResultDTO> checkTheoryExamAnswers(
+            @RequestBody List<TheoryExamAnswerRequest> answers,
+            Authentication authentication) {
+        Long userId = authenticationUtil.extractUserId(authentication);
+        if (userId == null) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+        }
+        TheoryExamResultDTO result = quizService.checkTheoryExamAnswers(answers);
+        return ResponseEntity.ok(result);
     }
 
     // ============================================================================

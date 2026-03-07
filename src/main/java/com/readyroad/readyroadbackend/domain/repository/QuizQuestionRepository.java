@@ -106,6 +106,30 @@ public interface QuizQuestionRepository extends JpaRepository<QuizQuestion, Long
                         @Param("difficulty") QuizQuestion.DifficultyLevel difficulty);
 
         /**
+         * Theory exam: Get random question IDs by difficulty level (native, for 2-step pattern)
+         *
+         * @param difficulty Difficulty level string ("EASY", "MEDIUM", "HARD")
+         * @param limit      Maximum number of IDs to return
+         * @return List of random question IDs with given difficulty
+         */
+        @Query(value = "SELECT q.id FROM quiz_questions q " +
+                        "WHERE q.difficulty_level = :difficulty AND q.is_active = true AND q.status = 'PUBLISHED' " +
+                        "ORDER BY RAND() LIMIT :limit", nativeQuery = true)
+        List<Long> findRandomQuestionIdsByDifficulty(@Param("difficulty") String difficulty,
+                        @Param("limit") int limit);
+
+        /**
+         * Theory exam answer check: fetch questions with options AND category eagerly loaded.
+         * Used by checkTheoryExamAnswers to avoid lazy-loading issues on category fields.
+         *
+         * @param ids List of question IDs
+         * @return Questions with options and category loaded
+         */
+        @EntityGraph(attributePaths = { "options", "category" })
+        @Query("SELECT qq FROM QuizQuestion qq WHERE qq.id IN :ids")
+        List<QuizQuestion> findAllByIdWithOptionsAndCategory(@Param("ids") List<Long> ids);
+
+        /**
          * Count active questions
          */
         Long countByIsActiveTrue();

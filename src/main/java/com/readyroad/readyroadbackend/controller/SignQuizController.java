@@ -163,7 +163,7 @@ public class SignQuizController {
 
         Long userId = authUtil.extractUserId(auth);
         log.debug("GET /exam/{}/{} — user {}", signCode, examNumber, userId);
-        return ResponseEntity.ok(signQuizService.getExamQuestions(signCode, examNumber));
+        return ResponseEntity.ok(signQuizService.getExamQuestions(signCode, examNumber, userId));
     }
 
     // ── POST /api/sign-quiz/exam/{signCode}/{examNumber}/submit ──────────────
@@ -198,5 +198,85 @@ public class SignQuizController {
         SignExamResultDto result = signQuizService.submitExam(
                 signCode, examNumber, request.answers(), userId);
         return ResponseEntity.ok(result);
+    }
+
+    // ── GET /api/sign-quiz/signs/{signCode}/status ───────────────────────────
+
+    @GetMapping("/signs/{signCode}/status")
+    @Operation(
+        summary     = "Get user progress for a single sign",
+        description = "Returns the progress snapshot (practice, exam 1, exam 2) for the "
+                    + "authenticated user and the specified sign code. Used by the sign "
+                    + "detail page to show locked/unlocked state and best scores."
+    )
+    @ApiResponses({
+        @ApiResponse(responseCode = "200", description = "Progress returned"),
+        @ApiResponse(responseCode = "404", description = "Sign not found"),
+        @ApiResponse(responseCode = "401", description = "JWT not provided or invalid")
+    })
+    public ResponseEntity<SignUserProgressDto> getSignStatus(
+            @Parameter(description = "Road sign code, e.g. A1", example = "A1")
+            @PathVariable String signCode,
+            Authentication auth) {
+
+        Long userId = authUtil.extractUserId(auth);
+        log.debug("GET /signs/{}/status — user {}", signCode, userId);
+        return ResponseEntity.ok(signQuizService.getUserSignProgress(signCode, userId));
+    }
+
+    // ── GET /api/sign-quiz/user-progress ────────────────────────────────────
+
+    @GetMapping("/user-progress")
+    @Operation(
+        summary     = "Get user progress for all signs",
+        description = "Returns a progress snapshot for every active road sign in one call. "
+                    + "Used by the signs list page to show completion badges without N+1 round-trips."
+    )
+    @ApiResponses({
+        @ApiResponse(responseCode = "200", description = "Progress list returned"),
+        @ApiResponse(responseCode = "401", description = "JWT not provided or invalid")
+    })
+    public ResponseEntity<List<SignUserProgressDto>> getAllProgress(Authentication auth) {
+        Long userId = authUtil.extractUserId(auth);
+        log.debug("GET /user-progress — user {}", userId);
+        return ResponseEntity.ok(signQuizService.getAllUserProgress(userId));
+    }
+
+    // ── GET /api/sign-quiz/random-practice ──────────────────────────────────
+
+    @GetMapping("/random-practice")
+    @Operation(
+        summary     = "Get random sign practice questions (stateless)",
+        description = "Returns 50 randomly selected active sign questions (20 EASY + 18 MEDIUM + 12 HARD), "
+                    + "shuffled. No session is created. Choices are returned WITHOUT the isCorrect flag."
+    )
+    @ApiResponses({
+        @ApiResponse(responseCode = "200", description = "50 shuffled sign questions returned"),
+        @ApiResponse(responseCode = "401", description = "JWT not provided or invalid")
+    })
+    public ResponseEntity<List<SignQuizQuestionDto>> getRandomPractice(Authentication auth) {
+        log.debug("GET /random-practice — user {}", authUtil.extractUserId(auth));
+        return ResponseEntity.ok(signQuizService.getRandomSignPracticeQuestions());
+    }
+
+    // ── POST /api/sign-quiz/random-practice/check ────────────────────────────
+
+    @PostMapping("/random-practice/check")
+    @Operation(
+        summary     = "Check random sign practice answers (stateless)",
+        description = "Evaluates all submitted answers for a random-practice session. "
+                    + "No DB write — purely stateless. Passing score: 41/50."
+    )
+    @ApiResponses({
+        @ApiResponse(responseCode = "200", description = "Practice result returned"),
+        @ApiResponse(responseCode = "400", description = "Empty or invalid request body"),
+        @ApiResponse(responseCode = "401", description = "JWT not provided or invalid")
+    })
+    public ResponseEntity<SignRandomPracticeResultDto> checkRandomPractice(
+            @RequestBody List<SignRandomPracticeAnswerRequest> answers,
+            Authentication auth) {
+        log.debug("POST /random-practice/check — user {}, {} answers",
+                authUtil.extractUserId(auth), answers.size());
+        return ResponseEntity.ok(signQuizService.checkRandomSignPracticeAnswers(answers));
     }
 }

@@ -2,6 +2,9 @@ package com.readyroad.readyroadbackend.service;
 
 import com.readyroad.readyroadbackend.domain.entity.QuizQuestion;
 import com.readyroad.readyroadbackend.domain.repository.QuizQuestionRepository;
+import com.readyroad.readyroadbackend.dto.TheoryExamAnswerRequest;
+import com.readyroad.readyroadbackend.dto.TheoryExamQuestionResultDTO;
+import com.readyroad.readyroadbackend.dto.TheoryExamResultDTO;
 import com.readyroad.readyroadbackend.exception.BelgianComplianceException;
 import com.readyroad.readyroadbackend.exception.TranslationRequiredException;
 import com.readyroad.readyroadbackend.validation.TranslationValidator;
@@ -10,8 +13,11 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
  * QuizService - Basic Quiz Generation
@@ -265,5 +271,139 @@ public class QuizService {
         quizQuestionRepository.save(question);
 
         log.info("ℹ️ Question {} unpublished (marked as draft)", questionId);
+    }
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // Belgian Theory Exam (practice/random) — stateless, no DB session
+    // Distribution: 20 EASY + 18 MEDIUM + 12 HARD = 50 questions
+    // ─────────────────────────────────────────────────────────────────────────
+
+    private static final int THEORY_EASY_COUNT   = 20;
+    private static final int THEORY_MEDIUM_COUNT = 18;
+    private static final int THEORY_HARD_COUNT   = 12;
+    private static final int THEORY_PASSING_SCORE = 41;
+
+    /**
+     * Return 50 randomly selected questions (20E+18M+12H) for a Belgian theory exam
+     * practice session. Shuffled so difficulty distribution is not predictable.
+     * Uses 2-step native RAND() pattern to avoid full-table scans.
+     */
+    public List<QuizQuestion> getTheoryExamQuestions() {
+        List<Long> easyIds   = quizQuestionRepository.findRandomQuestionIdsByDifficulty("EASY",   THEORY_EASY_COUNT);
+        List<Long> mediumIds = quizQuestionRepository.findRandomQuestionIdsByDifficulty("MEDIUM", THEORY_MEDIUM_COUNT);
+        List<Long> hardIds   = quizQuestionRepository.findRandomQuestionIdsByDifficulty("HARD",   THEORY_HARD_COUNT);
+
+        if (easyIds.size()   < THEORY_EASY_COUNT)   log.warn("⚠️ Theory exam: only {} EASY questions available (need {})",   easyIds.size(),   THEORY_EASY_COUNT);
+        if (mediumIds.size() < THEORY_MEDIUM_COUNT) log.warn("⚠️ Theory exam: only {} MEDIUM questions available (need {})", mediumIds.size(), THEORY_MEDIUM_COUNT);
+        if (hardIds.size()   < THEORY_HARD_COUNT)   log.warn("⚠️ Theory exam: only {} HARD questions available (need {})",   hardIds.size(),   THEORY_HARD_COUNT);
+
+        List<Long> allIds = new ArrayList<>();
+        allIds.addAll(easyIds);
+        allIds.addAll(mediumIds);
+        allIds.addAll(hardIds);
+        Collections.shuffle(allIds);
+
+        if (allIds.isEmpty()) {
+            log.error("❌ No questions available for theory exam");
+            return Collections.emptyList();
+        }
+
+        List<QuizQuestion> questions = quizQuestionRepository.findAllByIdWithOptions(allIds);
+        log.info("✅ Theory exam prepared: {} questions ({}E / {}M / {}H)",
+                questions.size(), easyIds.size(), mediumIds.size(), hardIds.size());
+        return questions;
+    }
+
+    /**
+     * Stateless check of a completed theory exam.
+     * Looks up each question's correct option and compares to the submitted answer.
+     * Does NOT record history, update streaks, or write to the DB.
+     *
+     * @param answers List of {questionId, selectedOptionId} — selectedOptionId null means timeout
+     * @return Full result DTO including per-question breakdown
+     */
+    @Transactional(readOnly = true)
+    public TheoryExamResultDTO checkTheoryExamAnswers(List<TheoryExamAnswerRequest> answers) {
+        if (answers == null || answers.isEmpty()) {
+            return TheoryExamResultDTO.builder()
+                    .totalQuestions(0).correctAnswers(0).wrongAnswers(0).unanswered(0)
+                    .scorePercentage(0).passed(false).passingScore(THEORY_PASSING_SCORE)
+                    .questions(Collections.emptyList()).build();
+        }
+
+        // Fetch all 50 questions with options + category in 1 query
+        List<Long> questionIds = answers.stream()
+                .map(TheoryExamAnswerRequest::getQuestionId)
+                .collect(Collectors.toList());
+        List<QuizQuestion> questions = quizQuestionRepository.findAllByIdWithOptionsAndCategory(questionIds);
+        Map<Long, QuizQuestion> questionMap = questions.stream()
+                .collect(Collectors.toMap(QuizQuestion::getId, q -> q));
+
+        int correct = 0, wrong = 0, unanswered = 0;
+        List<TheoryExamQuestionResultDTO> results = new ArrayList<>();
+
+        for (TheoryExamAnswerRequest answer : answers) {
+            QuizQuestion q = questionMap.get(answer.getQuestionId());
+            if (q == null) continue;
+
+            // Find the correct option
+            var correctOption = q.getOptions().stream()
+                    .filter(o -> Boolean.TRUE.equals(o.getIsCorrect()))
+                    .findFirst().orElse(null);
+
+            boolean isTimeout  = answer.getSelectedOptionId() == null;
+            boolean isCorrect  = !isTimeout && correctOption != null
+                    && answer.getSelectedOptionId().equals(correctOption.getId());
+
+            if (isTimeout)     unanswered++;
+            else if (isCorrect) correct++;
+            else               wrong++;
+
+            // Category names (eagerly loaded above)
+            String catEn = null, catAr = null, catNl = null, catFr = null;
+            if (q.getCategory() != null) {
+                catEn = q.getCategory().getNameEn();
+                catAr = q.getCategory().getNameAr();
+                catNl = q.getCategory().getNameNl();
+                catFr = q.getCategory().getNameFr();
+            }
+
+            results.add(TheoryExamQuestionResultDTO.builder()
+                    .questionId(q.getId())
+                    .questionEn(q.getQuestionEn())
+                    .questionAr(q.getQuestionAr())
+                    .questionNl(q.getQuestionNl())
+                    .questionFr(q.getQuestionFr())
+                    .selectedOptionId(answer.getSelectedOptionId())
+                    .correctOptionId(correctOption != null ? correctOption.getId() : null)
+                    .correctOptionEn(correctOption != null ? correctOption.getOptionTextEn() : null)
+                    .correctOptionAr(correctOption != null ? correctOption.getOptionTextAr() : null)
+                    .correctOptionNl(correctOption != null ? correctOption.getOptionTextNl() : null)
+                    .correctOptionFr(correctOption != null ? correctOption.getOptionTextFr() : null)
+                    .isCorrect(isCorrect)
+                    .wasTimeout(isTimeout)
+                    .explanationEn(q.getExplanationEn())
+                    .explanationAr(q.getExplanationAr())
+                    .explanationNl(q.getExplanationNl())
+                    .explanationFr(q.getExplanationFr())
+                    .categoryNameEn(catEn)
+                    .categoryNameAr(catAr)
+                    .categoryNameNl(catNl)
+                    .categoryNameFr(catFr)
+                    .difficultyLevel(q.getDifficultyLevel() != null ? q.getDifficultyLevel().name() : null)
+                    .build());
+        }
+
+        double pct = answers.size() > 0 ? (correct * 100.0 / answers.size()) : 0;
+        return TheoryExamResultDTO.builder()
+                .totalQuestions(answers.size())
+                .correctAnswers(correct)
+                .wrongAnswers(wrong)
+                .unanswered(unanswered)
+                .scorePercentage(Math.round(pct * 10.0) / 10.0)
+                .passed(correct >= THEORY_PASSING_SCORE)
+                .passingScore(THEORY_PASSING_SCORE)
+                .questions(results)
+                .build();
     }
 }

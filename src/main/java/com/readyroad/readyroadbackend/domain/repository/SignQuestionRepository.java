@@ -26,5 +26,7 @@ public interface SignQuestionRepository extends JpaRepository<SignQuestion, Long
     List<SignQuestion> findAllBySignIdAndQuestionTypeAndIsActiveTrue(
             Long signId, SignQuestionType questionType);
 
+    List<SignQuestion> findAllByIsActiveTrueAndDifficulty(SignDifficulty difficulty);
+
     long countBySignId(Long signId);
 }

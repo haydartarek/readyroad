@@ -114,12 +114,24 @@ public class AchievementService {
 
         try {
             achievementRepository.save(achievement);
-            notificationService.createAchievementNotification(userId, title, description);
+            notificationService.createAchievementNotification(userId, title, description, achievementMessageKey(type));
             log.info("🏆 Achievement awarded: type={}, userId={}", type, userId);
         } catch (Exception ex) {
             // DataIntegrityViolationException if race condition — safe to ignore
             log.warn("Failed to save achievement type={} for userId={}: {}", type, userId, ex.getMessage());
         }
+    }
+
+    /** Maps AchievementType to a frontend i18n key for the message. */
+    private String achievementMessageKey(AchievementType type) {
+        return switch (type) {
+            case FIRST_EXAM        -> "notif.msg.achievement.first_exam";
+            case PERFECT_SCORE     -> "notif.msg.achievement.perfect_score";
+            case FIVE_EXAMS_PASSED -> "notif.msg.achievement.five_exams_passed";
+            case TEN_EXAMS_PASSED  -> "notif.msg.achievement.ten_exams_passed";
+            case PASSING_STREAK_3  -> "notif.msg.achievement.passing_streak_3";
+            default                -> null;
+        };
     }
 
     /**

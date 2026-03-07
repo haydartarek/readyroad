@@ -129,6 +129,8 @@ public class NotificationService {
                 .message(String.format(
                         "Congratulations! You passed the exam with %d/%d (%d%%). Great job!",
                         score, total, pct))
+                .messageKey("notif.msg.exam_passed")
+                .messageParams(String.format("{\"score\":%d,\"total\":%d,\"pct\":%d}", score, total, pct))
                 .link("/exam/results/" + examId)
                 .build());
     }
@@ -152,6 +154,8 @@ public class NotificationService {
                 .message(String.format(
                         "You scored %d/%d (%d%%). You needed %d more correct answers to pass. Keep practicing!",
                         score, total, pct, pointsShort))
+                .messageKey("notif.msg.exam_failed")
+                .messageParams(String.format("{\"score\":%d,\"total\":%d,\"pct\":%d,\"needed\":%d}", score, total, pct, pointsShort))
                 .link("/exam/results/" + examId)
                 .build());
     }
@@ -171,6 +175,9 @@ public class NotificationService {
                 .message(String.format(
                         "Your accuracy in '%s' is below 60%%. Consider reviewing this topic before your next exam.",
                         categoryName))
+                .messageKey("notif.msg.weak_area")
+                .messageParams(String.format("{\"category\":\"%s\"}", categoryName.replace("\\", "\\\\").replace("\"", "\\\"")
+                ))
                 .link("/analytics/weak-areas")
                 .build());
     }
@@ -190,6 +197,8 @@ public class NotificationService {
                 .message(String.format(
                         "Amazing! You've studied for %d days in a row. Keep it up to master your driving theory!",
                         streakDays))
+                .messageKey("notif.msg.streak_achieved")
+                .messageParams(String.format("{\"days\":%d}", streakDays))
                 .link("/dashboard")
                 .build());
     }
@@ -202,12 +211,13 @@ public class NotificationService {
      * @param description detailed description of the achievement
      */
     @Transactional
-    public void createAchievementNotification(Long userId, String title, String description) {
+    public void createAchievementNotification(Long userId, String title, String description, String messageKey) {
         save(Notification.builder()
                 .userId(userId)
                 .type(NotificationType.ACHIEVEMENT)
                 .title(title)
                 .message(description)
+                .messageKey(messageKey)
                 .link("/dashboard")
                 .build());
     }
@@ -220,12 +230,14 @@ public class NotificationService {
      * @param message notification body
      */
     @Transactional
-    public void createStudyReminderNotification(Long userId, String title, String message) {
+    public void createStudyReminderNotification(Long userId, String title, String message, int inactiveDays) {
         save(Notification.builder()
                 .userId(userId)
                 .type(NotificationType.STUDY_REMINDER)
                 .title(title)
                 .message(message)
+                .messageKey("notif.msg.study_reminder")
+                .messageParams(String.format("{\"days\":%d}", inactiveDays))
                 .link("/quiz")
                 .build());
     }

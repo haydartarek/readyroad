@@ -478,10 +478,16 @@ public class SignQuizImportService {
             SignQuestion saved = questionRepo.save(question);
 
             // Build choices from the NL language block (choices are same count in all langs)
+            // Shuffle indices so the correct answer is not always displayed first
             JsonNode nlChoices = i18n.path("NL").path("choices");
-            for (int idx = 0; idx < nlChoices.size(); idx++) {
+            List<Integer> choiceIndices = new ArrayList<>();
+            for (int i = 0; i < nlChoices.size(); i++) choiceIndices.add(i);
+            Collections.shuffle(choiceIndices);
+
+            for (int pos = 0; pos < choiceIndices.size(); pos++) {
+                int idx = choiceIndices.get(pos);
                 SignChoice choice = new SignChoice();
-                choice.setDisplayOrder(idx + 1);
+                choice.setDisplayOrder(pos + 1);
                 choice.setIsCorrect(nlChoices.get(idx).path("is_correct").asBoolean(false));
                 choice.setTextNl(choiceText(i18n, "NL", idx));
                 choice.setTextEn(choiceText(i18n, "EN", idx));

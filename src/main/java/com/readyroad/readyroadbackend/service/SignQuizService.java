@@ -3,6 +3,7 @@ package com.readyroad.readyroadbackend.service;
 import com.readyroad.readyroadbackend.domain.entity.*;
 import com.readyroad.readyroadbackend.domain.entity.SignPracticeSession.SessionStatus;
 import com.readyroad.readyroadbackend.domain.enums.SignCategory;
+import com.readyroad.readyroadbackend.domain.enums.SignDifficulty;
 import com.readyroad.readyroadbackend.domain.repository.*;
 import com.readyroad.readyroadbackend.dto.RoadSignSummaryDto;
 import com.readyroad.readyroadbackend.dto.sign.*;
@@ -41,6 +42,7 @@ public class SignQuizService {
     private final UserRepository                  userRepo;
     private final UserWeakAreaRepository          weakAreaRepo;
     private final UserErrorPatternRepository      errorPatternRepo;
+    private final SignExamResultRepository        signExamResultRepo;
     // Bridge: sign quiz answers → main dashboard category progress
     private final CategoryRepository              categoryRepo;
     private final UserCategoryProgressRepository  categoryProgressRepo;
@@ -306,24 +308,44 @@ public class SignQuizService {
     /**
      * Returns the ordered questions for a sign exam (no DB session created).
      *
+     * <p><b>Exam-2 lock rule:</b> If the requested {@code examNumber} is 2 the user
+     * must have at least one passed Exam-1 result for this sign; otherwise a
+     * {@code 423 LOCKED} response is thrown so the frontend can show a meaningful
+     * "Complete Exam 1 first" message.</p>
+     *
      * @param signCode   road sign code
      * @param examNumber 1 or 2
+     * @param userId     authenticated user ID (used for Exam-2 lock check only)
      */
     @Transactional(readOnly = true)
-    public SignExamQuestionsDto getExamQuestions(String signCode, int examNumber) {
+    public SignExamQuestionsDto getExamQuestions(String signCode, int examNumber, Long userId) {
 
         RoadSign sign = roadSignRepo.findBySignCode(signCode.toUpperCase())
                 .orElseThrow(() -> new ResponseStatusException(
                         HttpStatus.NOT_FOUND, "Sign not found: " + signCode));
+
+        // ── Exam-2 lock ───────────────────────────────────────────────────────
+        if (examNumber == 2) {
+            boolean passedExam1 = signExamResultRepo
+                    .existsByUserIdAndSignCodeAndExamNumberAndPassedTrue(
+                            userId, sign.getSignCode(), 1);
+            if (!passedExam1) {
+                throw new ResponseStatusException(
+                        HttpStatus.LOCKED,
+                        "Exam 2 is locked. Complete and pass Exam 1 for sign " + signCode + " first.");
+            }
+        }
 
         SignExam exam = examRepo.findBySignIdAndExamNumber(sign.getId(), examNumber)
                 .orElseThrow(() -> new ResponseStatusException(
                         HttpStatus.NOT_FOUND,
                         "Exam " + examNumber + " not found for sign: " + signCode));
 
-        List<SignQuizQuestionDto> questions = exam.getExamQuestions().stream()
-                .map(eq -> SignQuizQuestionDto.from(eq.getQuestion()))
-                .toList();
+        List<SignQuizQuestionDto> questions = new ArrayList<>(
+                exam.getExamQuestions().stream()
+                        .map(eq -> SignQuizQuestionDto.from(eq.getQuestion()))
+                        .toList());
+        Collections.shuffle(questions);
 
         return SignExamQuestionsDto.from(exam, questions);
     }
@@ -472,6 +494,29 @@ public class SignQuizService {
             }
         }
 
+        // ── Save exam result (for exam-2 unlock tracking) ────────────────────
+        try {
+            SignExamResult result = new SignExamResult();
+            result.setUserId(userId);
+            result.setSignId(sign.getId());
+            result.setSignCode(sign.getSignCode());
+            result.setExamNumber(examNumber);
+            result.setTotalQuestions(linkedCount);
+            result.setAnsweredCount(answeredCount);
+            result.setCorrectCount(correctCount);
+            result.setRequiredToPass(requiredToPass);
+            result.setScorePct(scorePct);
+            result.setPassed(passed);
+            result.setCompletedAt(LocalDateTime.now());
+            signExamResultRepo.save(result);
+            log.info("Saved SignExamResult id={} user={} sign={} exam={} passed={}",
+                    result.getId(), userId, sign.getSignCode(), examNumber, passed);
+        } catch (Exception e) {
+            // Non-fatal — log and continue so the user still gets their result
+            log.error("Failed to save SignExamResult for user={} sign={} exam={}: {}",
+                    userId, sign.getSignCode(), examNumber, e.getMessage(), e);
+        }
+
         log.info("Exam {}/{} submitted by user {} — {}/{} correct, passed={}",
                 signCode, examNumber, userId, correctCount, linkedCount, passed);
 
@@ -488,6 +533,84 @@ public class SignQuizService {
                 passed,
                 passed ? "PASSED" : "FAILED",
                 results
+        );
+    }
+
+    // ── 7. User progress for a single sign ──────────────────────────────────
+
+    /**
+     * Returns the progress snapshot for a single sign (practice + exam 1 + exam 2).
+     * Used by the sign hub page.
+     */
+    @Transactional(readOnly = true)
+    public SignUserProgressDto getUserSignProgress(String signCode, Long userId) {
+        RoadSign sign = roadSignRepo.findBySignCode(signCode.toUpperCase())
+                .orElseThrow(() -> new ResponseStatusException(
+                        HttpStatus.NOT_FOUND, "Sign not found: " + signCode));
+        return buildProgressDto(sign, userId);
+    }
+
+    /**
+     * Returns the progress snapshot for EVERY active sign (practice + exam 1 + exam 2).
+     * Used by the signs list page to show progress badges without N+1 round-trips.
+     */
+    @Transactional(readOnly = true)
+    public List<SignUserProgressDto> getAllUserProgress(Long userId) {
+        return roadSignRepo.findAllByIsActiveTrueOrderBySignCodeAsc()
+                .stream()
+                .map(sign -> buildProgressDto(sign, userId))
+                .toList();
+    }
+
+    private SignUserProgressDto buildProgressDto(RoadSign sign, Long userId) {
+        String code   = sign.getSignCode();
+        Long   signId = sign.getId();
+
+        // Practice
+        boolean practiceStarted   = sessionRepo.existsByUserIdAndSignId(userId, signId);
+        boolean practiceCompleted = sessionRepo.existsByUserIdAndSignIdAndStatus(
+                userId, signId, SignPracticeSession.SessionStatus.COMPLETED);
+        Double  practiceBestScore = practiceCompleted
+                ? sessionRepo.findBestScorePctByUserIdAndSignId(userId, signId)
+                : null;
+
+        // Exam 1
+        boolean exam1Attempted = signExamResultRepo.existsByUserIdAndSignCodeAndExamNumber(userId, code, 1);
+        boolean exam1Passed    = signExamResultRepo.existsByUserIdAndSignCodeAndExamNumberAndPassedTrue(userId, code, 1);
+        Double  exam1Best      = exam1Attempted
+                ? signExamResultRepo.findBestScorePctByUserIdAndSignCodeAndExamNumber(userId, code, 1)
+                : null;
+        int     exam1Attempts  = (int) signExamResultRepo.countByUserIdAndSignCodeAndExamNumber(userId, code, 1);
+
+        // Exam 2 (unlocked only after passing exam 1)
+        boolean exam2Attempted = signExamResultRepo.existsByUserIdAndSignCodeAndExamNumber(userId, code, 2);
+        boolean exam2Passed    = signExamResultRepo.existsByUserIdAndSignCodeAndExamNumberAndPassedTrue(userId, code, 2);
+        Double  exam2Best      = exam2Attempted
+                ? signExamResultRepo.findBestScorePctByUserIdAndSignCodeAndExamNumber(userId, code, 2)
+                : null;
+        int     exam2Attempts  = (int) signExamResultRepo.countByUserIdAndSignCodeAndExamNumber(userId, code, 2);
+
+        return new SignUserProgressDto(
+                signId,
+                code,
+                sign.getCategory(),
+                sign.getImagePath(),
+                sign.getNameNl(),
+                sign.getNameEn(),
+                sign.getNameFr(),
+                sign.getNameAr(),
+                practiceStarted,
+                practiceCompleted,
+                practiceBestScore,
+                exam1Attempted,
+                exam1Passed,
+                exam1Best,
+                exam1Attempts,
+                exam1Passed,   // exam2Unlocked == exam1Passed
+                exam2Attempted,
+                exam2Passed,
+                exam2Best,
+                exam2Attempts
         );
     }
 
@@ -578,5 +701,83 @@ public class SignQuizService {
 
         log.debug("Dashboard bridge updated: userId={}, category={}, attempted={}, accuracy={}",
                 userId, category.getCode(), progress.getQuestionsAttempted(), progress.getAccuracyRate());
+    }
+
+    // ── Random Sign Practice (stateless, 50 questions across all signs) ──────
+
+    /**
+     * Returns 50 randomly selected active sign questions (20 EASY + 18 MEDIUM + 12 HARD),
+     * shuffled together. Used by the free-practice endpoint — no session is created.
+     */
+    @Transactional(readOnly = true)
+    public List<SignQuizQuestionDto> getRandomSignPracticeQuestions() {
+        List<SignQuestion> easy   = new ArrayList<>(questionRepo.findAllByIsActiveTrueAndDifficulty(SignDifficulty.EASY));
+        List<SignQuestion> medium = new ArrayList<>(questionRepo.findAllByIsActiveTrueAndDifficulty(SignDifficulty.MEDIUM));
+        List<SignQuestion> hard   = new ArrayList<>(questionRepo.findAllByIsActiveTrueAndDifficulty(SignDifficulty.HARD));
+
+        Collections.shuffle(easy);
+        Collections.shuffle(medium);
+        Collections.shuffle(hard);
+
+        List<SignQuestion> selected = new ArrayList<>();
+        selected.addAll(easy.subList(0, Math.min(20, easy.size())));
+        selected.addAll(medium.subList(0, Math.min(18, medium.size())));
+        selected.addAll(hard.subList(0, Math.min(12, hard.size())));
+        Collections.shuffle(selected);
+
+        return selected.stream().map(SignQuizQuestionDto::from).toList();
+    }
+
+    /**
+     * Evaluates answers for a random sign practice session (stateless — no DB write).
+     * Passing score: 41 / 50 (Belgian standard).
+     */
+    @Transactional(readOnly = true)
+    public SignRandomPracticeResultDto checkRandomSignPracticeAnswers(
+            List<SignRandomPracticeAnswerRequest> answers) {
+
+        int correct = 0, wrong = 0, unanswered = 0;
+        List<SignRandomPracticeResultDto.QuestionResult> qResults = new ArrayList<>();
+
+        for (var answer : answers) {
+            SignQuestion q = questionRepo.findById(answer.questionId())
+                    .orElseThrow(() -> new ResponseStatusException(
+                            HttpStatus.NOT_FOUND, "Question not found: " + answer.questionId()));
+
+            SignChoice correctChoice = q.getChoices().stream()
+                    .filter(c -> Boolean.TRUE.equals(c.getIsCorrect()))
+                    .findFirst()
+                    .orElse(null);
+
+            boolean wasTimeout = answer.selectedChoiceId() == null;
+            boolean isCorrect  = !wasTimeout && correctChoice != null
+                    && correctChoice.getId().equals(answer.selectedChoiceId());
+
+            if (wasTimeout)     unanswered++;
+            else if (isCorrect) correct++;
+            else                wrong++;
+
+            qResults.add(new SignRandomPracticeResultDto.QuestionResult(
+                    q.getId(),
+                    q.getQuestionNl(), q.getQuestionEn(), q.getQuestionFr(), q.getQuestionAr(),
+                    answer.selectedChoiceId(),
+                    correctChoice != null ? correctChoice.getId()      : null,
+                    correctChoice != null ? correctChoice.getTextNl()  : null,
+                    correctChoice != null ? correctChoice.getTextEn()  : null,
+                    correctChoice != null ? correctChoice.getTextFr()  : null,
+                    correctChoice != null ? correctChoice.getTextAr()  : null,
+                    isCorrect, wasTimeout,
+                    q.getExplanationNl(), q.getExplanationEn(), q.getExplanationFr(), q.getExplanationAr(),
+                    q.getSign() != null ? q.getSign().getSignCode()  : null,
+                    q.getSign() != null ? q.getSign().getImagePath() : null,
+                    q.getDifficulty() != null ? q.getDifficulty().name() : null
+            ));
+        }
+
+        int total        = answers.size();
+        int passingScore = 41;
+        double pct       = total > 0 ? (double) correct / total * 100.0 : 0.0;
+        return new SignRandomPracticeResultDto(
+                total, correct, wrong, unanswered, pct, correct >= passingScore, passingScore, qResults);
     }
 }

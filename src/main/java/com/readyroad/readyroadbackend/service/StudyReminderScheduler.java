@@ -82,7 +82,8 @@ public class StudyReminderScheduler {
                             "📚 Time to Study!",
                             String.format(
                                     "You haven't practiced in %d days. A short session today keeps your knowledge fresh. Let's go!",
-                                    daysInactive));
+                                    daysInactive),
+                            daysInactive);
                     sent++;
                     log.debug("Study reminder sent to userId={}", user.getId());
                 } else {

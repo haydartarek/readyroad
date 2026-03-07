@@ -95,6 +95,21 @@ public class OverallProgressResponse {
     private BigDecimal passRate;
 
     /**
+     * Total number of completed sign practice sessions.
+     */
+    private Integer signPracticeCount;
+
+    /**
+     * Total number of sign exam submissions (exam 1 + exam 2).
+     */
+    private Integer signExamCount;
+
+    /**
+     * Number of unique signs where the user has passed exam 1.
+     */
+    private Integer signPassedCount;
+
+    /**
      * Summary of progress for a specific category.
      * Used in weakCategories, strongCategories, and mostStudiedCategories lists.
      */

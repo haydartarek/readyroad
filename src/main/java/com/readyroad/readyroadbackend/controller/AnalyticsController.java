@@ -2,6 +2,7 @@ package com.readyroad.readyroadbackend.controller;
 
 import com.readyroad.readyroadbackend.dto.ErrorPatternResponse;
 import com.readyroad.readyroadbackend.dto.WeakAreaRecommendationResponse;
+import com.readyroad.readyroadbackend.dto.WeakAreasOverviewResponse;
 import com.readyroad.readyroadbackend.service.AnalyticsService;
 import com.readyroad.readyroadbackend.util.AuthenticationUtil;
 import io.swagger.v3.oas.annotations.Operation;
@@ -136,20 +137,18 @@ public class AnalyticsController {
             content = @Content
         )
     })
-    public ResponseEntity<List<WeakAreaRecommendationResponse>> getWeakAreaRecommendations(
+    public ResponseEntity<WeakAreasOverviewResponse> getWeakAreaRecommendations(
             Authentication authentication) {
-        
-        // Extract user ID using AuthenticationUtil (supports dev and production modes)
+
         Long userId = authenticationUtil.extractUserId(authentication);
         log.info("[C2] GET /api/users/me/analytics/weak-areas - userId: {}", userId);
 
-        // Retrieve weak area recommendations from service
-        List<WeakAreaRecommendationResponse> recommendations = 
-            analyticsService.getWeakAreaRecommendations(userId);
+        WeakAreasOverviewResponse overview = analyticsService.getWeakAreaRecommendations(userId);
 
-        log.info("[C2] Returning {} weak area recommendations for user {}", 
-                 recommendations.size(), userId);
-        return ResponseEntity.ok(recommendations);
+        log.info("[C2] Returning {} weak areas for user {} (practiced: {}, accuracy: {}%)",
+                 overview.getWeakAreas().size(), userId,
+                 overview.getTotalPracticedCategories(), overview.getOverallAccuracy());
+        return ResponseEntity.ok(overview);
     }
 
     // ═══════════════════════════════════════════════════════════════

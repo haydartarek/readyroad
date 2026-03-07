@@ -83,17 +83,54 @@ services:
       # Timezone
       TZ: UTC
 
+      # Sign Quiz data path (mounted from host)
+      READYROAD_SIGNS_IMPORT_PATH: /app/data/signs_import
+
     ports:
       - "8890:8890"
 
     volumes:
       - backend_logs:/app/logs
+      - ./src/main/resources/data/signs_import:/app/data/signs_import:ro
 
     networks:
       - readyroad-network
 
     healthcheck:
       test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:8890/actuator/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+  # Frontend Application (Next.js)
+  frontend:
+    build:
+      context: ../readyroad_front_end/web_app
+      dockerfile: Dockerfile
+      args:
+        BACKEND_URL: http://backend:8890/api
+    container_name: readyroad-frontend
+    restart: unless-stopped
+
+    depends_on:
+      backend:
+        condition: service_healthy
+
+    environment:
+      # Runtime env — used by the BFF proxy (server-side only)
+      BACKEND_URL: http://backend:8890/api
+      NODE_ENV: production
+      TZ: UTC
+
+    ports:
+      - "3000:3000"
+
+    networks:
+      - readyroad-network
+
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000"]
       interval: 30s
       timeout: 10s
       retries: 3

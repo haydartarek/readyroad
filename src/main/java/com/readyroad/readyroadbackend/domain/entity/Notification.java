@@ -55,6 +55,21 @@ public class Notification {
     private String message;
 
     /**
+     * i18n key used by the frontend to render a translated message.
+     * When present, the frontend should prefer this over the {@code message} field.
+     * Example: "notif.msg.exam_passed"
+     */
+    @Column(name = "message_key", length = 200)
+    private String messageKey;
+
+    /**
+     * JSON string of interpolation parameters for {@code messageKey}.
+     * Example: {"score":43,"total":50,"pct":86}
+     */
+    @Column(name = "message_params", columnDefinition = "TEXT")
+    private String messageParams;
+
+    /**
      * Optional deep-link inside the app, e.g. "/exam/results/42".
      * Frontend should route to this path when the notification is clicked.
      */

@@ -26,6 +26,8 @@ public class NotificationDTO {
     private String  title;
     private String  message;
     private String  link;        // Optional deep-link, e.g. "/exam/results/42"
+    private String  messageKey;  // i18n key for translated message rendering (nullable)
+    private String  messageParams; // JSON params for messageKey interpolation (nullable)
     @JsonProperty("isRead")   // Force serialization as "isRead" (not "read")
     private boolean isRead;
     private Instant createdAt;
@@ -39,6 +41,8 @@ public class NotificationDTO {
                 .title(n.getTitle())
                 .message(n.getMessage())
                 .link(n.getLink())
+                .messageKey(n.getMessageKey())
+                .messageParams(n.getMessageParams())
                 .isRead(Boolean.TRUE.equals(n.getIsRead()))
                 .createdAt(n.getCreatedAt())
                 .readAt(n.getReadAt())
