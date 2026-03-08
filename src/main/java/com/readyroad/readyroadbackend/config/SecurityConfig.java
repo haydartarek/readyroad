@@ -35,14 +35,14 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
  * 
  * @author ReadyRoad Team
  * @since 2026-02-08
- * @version 2.1 (Added Role Hierarchy Support)
+ * @version 2.2 (Renamed from SecurityConfigDev; production security config)
  */
 @Slf4j
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity(prePostEnabled = true) // Enable @PreAuthorize
 @RequiredArgsConstructor
-public class SecurityConfigDev {
+public class SecurityConfig {
 
     private final JwtAuthenticationFilter jwtAuthFilter;
 
@@ -132,6 +132,7 @@ public class SecurityConfigDev {
 
                         // Authentication
                         .requestMatchers("/api/auth/login", "/api/auth/register").permitAll()
+                        .requestMatchers("/api/auth/forgot-password", "/api/auth/reset-password").permitAll()
 
                         // Public Read-Only Endpoints
                         .requestMatchers(HttpMethod.GET, "/api/traffic-signs/**").permitAll()

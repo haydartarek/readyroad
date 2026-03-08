@@ -2,6 +2,8 @@ package com.readyroad.readyroadbackend.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.FieldError;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -11,11 +13,14 @@ import java.util.HashMap;
 import java.util.Map;
 import jakarta.validation.ConstraintViolationException;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Global Exception Handler for ReadyRoad Backend
  *
  * Provides consistent error responses across all controllers
  */
+@Slf4j
 @ControllerAdvice
 public class GlobalExceptionHandler {
 
@@ -159,6 +164,24 @@ public class GlobalExceptionHandler {
     }
 
     /**
+     * Handle MethodArgumentNotValidException - @Valid @RequestBody validation failures
+     * HTTP 400 BAD REQUEST
+     */
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    @ResponseBody
+    public ResponseEntity<Map<String, Object>> handleMethodArgumentNotValid(MethodArgumentNotValidException ex) {
+        Map<String, String> fieldErrors = new HashMap<>();
+        for (FieldError fe : ex.getBindingResult().getFieldErrors()) {
+            fieldErrors.put(fe.getField(), fe.getDefaultMessage());
+        }
+        Map<String, Object> body = new HashMap<>();
+        body.put("error", "Validation failed");
+        body.put("fields", fieldErrors);
+        body.put("timestamp", LocalDateTime.now());
+        return ResponseEntity.badRequest().body(body);
+    }
+
+    /**
      * Handle ConstraintViolationException - @Min/@Max/@NotNull violations on request params
      * HTTP 400 BAD REQUEST
      */
@@ -181,5 +204,20 @@ public class GlobalExceptionHandler {
     @ResponseBody
     public ResponseEntity<Map<String, String>> handleIllegalArgument(IllegalArgumentException ex) {
         return ResponseEntity.badRequest().body(Map.of("error", ex.getMessage()));
+    }
+
+    /**
+     * Generic fallback — catch all unhandled exceptions
+     * Logs the real error internally but returns a safe 500 response.
+     * HTTP 500 INTERNAL SERVER ERROR
+     */
+    @ExceptionHandler(Exception.class)
+    @ResponseBody
+    public ResponseEntity<Map<String, Object>> handleGenericException(Exception ex) {
+        log.error("Unhandled exception: {}", ex.getMessage(), ex);
+        Map<String, Object> body = new HashMap<>();
+        body.put("error", "An unexpected error occurred");
+        body.put("timestamp", LocalDateTime.now());
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(body);
     }
 }

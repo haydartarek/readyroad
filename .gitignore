@@ -2,6 +2,9 @@
 .idea/
 *.iml
 
+# Secrets — never commit real credentials
+.env
+
 # Logs & outputs
 logs/
 *.log

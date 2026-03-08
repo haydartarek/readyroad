@@ -16,10 +16,10 @@ services:
     restart: unless-stopped
 
     environment:
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-root_password_change_me}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_DATABASE: readyroad_prod
-      MYSQL_USER: haydar
-      MYSQL_PASSWORD: Hh06101987@
+      MYSQL_USER: ${DB_USERNAME}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
       TZ: UTC
 
     ports:
@@ -33,7 +33,7 @@ services:
       - readyroad-network
 
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "haydar", "-pHh06101987@"]
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -u $$MYSQL_USER --password=$$MYSQL_PASSWORD 2>/dev/null"]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -66,16 +66,16 @@ services:
       DB_HOST: mysql
       DB_PORT: 3306
       DB_NAME: readyroad_prod
-      DB_USERNAME: haydar
-      DB_PASSWORD: Hh06101987@
+      DB_USERNAME: ${DB_USERNAME}
+      DB_PASSWORD: ${DB_PASSWORD}
 
       # JWT Configuration
-      JWT_SECRET: ${JWT_SECRET:-404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970337336763979244226452948404D6351}
+      JWT_SECRET: ${JWT_SECRET}
       JWT_EXPIRATION: 86400000
       JWT_ISSUER: readyroad-backend
 
       # Admin Configuration
-      ADMIN_DEFAULT_PASSWORD: ${ADMIN_DEFAULT_PASSWORD:-Admin123!ChangeMe}
+      ADMIN_DEFAULT_PASSWORD: ${ADMIN_DEFAULT_PASSWORD}
 
       # Java Options
       JAVA_OPTS: "-Xms512m -Xmx1024m -XX:+UseContainerSupport -XX:MaxRAMPercentage=75.0"
@@ -85,6 +85,14 @@ services:
 
       # Sign Quiz data path (mounted from host)
       READYROAD_SIGNS_IMPORT_PATH: /app/data/signs_import
+
+      # Email / Password Reset
+      SMTP_HOST: ${SMTP_HOST:-smtp.gmail.com}
+      SMTP_PORT: ${SMTP_PORT:-587}
+      SMTP_USERNAME: ${SMTP_USERNAME:-}
+      SMTP_PASSWORD: ${SMTP_PASSWORD:-}
+      MAIL_FROM: ${MAIL_FROM:-noreply@readyroad.be}
+      FRONTEND_URL: ${FRONTEND_URL:-http://localhost:3000}
 
     ports:
       - "8890:8890"

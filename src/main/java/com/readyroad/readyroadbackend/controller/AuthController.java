@@ -3,9 +3,12 @@ package com.readyroad.readyroadbackend.controller;
 import com.readyroad.readyroadbackend.domain.entity.User;
 import com.readyroad.readyroadbackend.domain.repository.UserRepository;
 import com.readyroad.readyroadbackend.dto.AuthResponse;
+import com.readyroad.readyroadbackend.dto.ForgotPasswordRequest;
 import com.readyroad.readyroadbackend.dto.LoginRequest;
 import com.readyroad.readyroadbackend.dto.RegisterRequest;
+import com.readyroad.readyroadbackend.dto.ResetPasswordRequest;
 import com.readyroad.readyroadbackend.service.AuthService;
+import com.readyroad.readyroadbackend.service.PasswordResetService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -37,6 +40,7 @@ public class AuthController {
 
     private final AuthService authService;
     private final UserRepository userRepository;
+    private final PasswordResetService passwordResetService;
 
     /**
      * Register a new user
@@ -150,5 +154,37 @@ public class AuthController {
         response.put("status", "UP");
         response.put("service", "Authentication Service");
         return ResponseEntity.ok(response);
+    }
+
+    /**
+     * Forgot password — step 1
+     *
+     * Always returns 200 OK regardless of whether the email exists
+     * to prevent user-enumeration attacks.
+     *
+     * POST /api/auth/forgot-password
+     */
+    @PostMapping("/forgot-password")
+    public ResponseEntity<Map<String, String>> forgotPassword(
+            @Valid @RequestBody ForgotPasswordRequest request) {
+        passwordResetService.forgotPassword(request.getEmail());
+        return ResponseEntity.ok(Map.of(
+                "message", "If that email is registered you will receive a reset link shortly."));
+    }
+
+    /**
+     * Reset password — step 2
+     *
+     * POST /api/auth/reset-password
+     */
+    @PostMapping("/reset-password")
+    public ResponseEntity<Map<String, String>> resetPassword(
+            @Valid @RequestBody ResetPasswordRequest request) {
+        try {
+            passwordResetService.resetPassword(request.getToken(), request.getNewPassword());
+            return ResponseEntity.ok(Map.of("message", "Password updated successfully."));
+        } catch (IllegalArgumentException ex) {
+            return ResponseEntity.badRequest().body(Map.of("error", ex.getMessage()));
+        }
     }
 }

@@ -14,7 +14,7 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: none
     show-sql: false
     properties:
       hibernate:
@@ -48,6 +48,19 @@ logging:
     root: WARN
     com.readyroad: INFO
     org.springframework.security: INFO
+
+# Actuator - restrict to safe endpoints only
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "health,info"
+  endpoint:
+    health:
+      show-details: when-authorized
+  info:
+    env:
+      enabled: false
 
 # ========================================
 # JWT Configuration (ENABLED in Secure)

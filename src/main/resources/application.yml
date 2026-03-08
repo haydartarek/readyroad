@@ -41,6 +41,26 @@ spring:
         size: 2
       thread-name-prefix: readyroad-scheduler-
 
+  mail:
+    host: ${SMTP_HOST:smtp.gmail.com}
+    port: ${SMTP_PORT:587}
+    username: ${SMTP_USERNAME:}
+    password: ${SMTP_PASSWORD:}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+        debug: false
+
+app:
+  mail:
+    from: ${MAIL_FROM:noreply@readyroad.be}
+  frontend:
+    url: ${FRONTEND_URL:http://localhost:3000}
+
 server:
   port: 8890
   servlet:
@@ -50,16 +70,17 @@ server:
       force: true
   # ✅ Fixed: Use new Spring Boot 3.x properties
   error:
-    include-message: always
-    include-binding-errors: always
+    include-message: on_param
+    include-binding-errors: never
     include-exception: false
-    include-stacktrace: on_param
+    include-stacktrace: never
 
 logging:
   level:
-    com.readyroad: DEBUG
-    org.springframework.web: INFO
-    org.hibernate.SQL: DEBUG
+    root: WARN
+    com.readyroad: INFO
+    org.springframework.web: WARN
+    org.springframework.security: WARN
 
 # SpringDoc OpenAPI (Swagger) Configuration
 springdoc:
@@ -80,16 +101,19 @@ management:
   endpoints:
     web:
       exposure:
-        include: "*"  # ✅ Enable all endpoints for development
+        include: "health,info"  # Restricted: override in application-dev.yml if more are needed
       base-path: /actuator
   endpoint:
     health:
-      show-details: always  # ✅ Always show health details
+      show-details: when-authorized  # Never expose details to anonymous callers
       probes:
         enabled: true
+  health:
+    mail:
+      enabled: false  # Email credentials are optional; don't fail health check when SMTP is unconfigured
   info:
     env:
-      enabled: true
+      enabled: false  # Prevent env vars (including secrets) from appearing in /actuator/info
 
 # ReadyRoad Data Import Configuration
 readyroad:

@@ -10,8 +10,7 @@ package com.readyroad.readyroadbackend.config;
  * - Root cause: dual CORS processing (standalone filter + security chain CORS)
  *
  * CORS is now configured via corsConfigurationSource() in:
- * - SecurityConfigSecure.java (secure profile)
- * - SecurityConfigDev.java (dev profile)
+ * - SecurityConfig.java (active security config)
  * - SecurityConfigTest.java (test profile)
  *
  * DO NOT RE-ENABLE THIS CLASS. If CORS settings need to change,
