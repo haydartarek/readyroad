@@ -1,7 +1,9 @@
 package com.readyroad.readyroadbackend.domain.repository;
 
 import com.readyroad.readyroadbackend.domain.entity.ExamSimulation;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -49,4 +51,28 @@ public interface ExamSimulationRepository extends JpaRepository<ExamSimulation, 
         ExamSimulation.ExamStatus status,
         double passThreshold
     );
+
+    /**
+     * Find all exams with given status ordered by completion date (admin use)
+     */
+    List<ExamSimulation> findByStatusOrderByCompletedAtDesc(
+        ExamSimulation.ExamStatus status,
+        Pageable pageable
+    );
+
+    /**
+     * Count all exams with given status (admin use)
+     */
+    long countByStatus(ExamSimulation.ExamStatus status);
+
+    /**
+     * Average score for all completed exams (admin analytics)
+     */
+    @Query("SELECT AVG(es.scorePercentage) FROM ExamSimulation es WHERE es.status = 'COMPLETED'")
+    Double getAverageScoreOfCompleted();
+
+    /**
+     * Count completed exams where user passed (correctAnswers >= threshold)
+     */
+    long countByStatusAndCorrectAnswersGreaterThanEqual(ExamSimulation.ExamStatus status, Integer threshold);
 }

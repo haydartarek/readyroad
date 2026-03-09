@@ -3,22 +3,27 @@ package com.readyroad.readyroadbackend.controller;
 import com.readyroad.readyroadbackend.domain.entity.UserCategoryProgress;
 import com.readyroad.readyroadbackend.domain.repository.TrafficSignRepository;
 import com.readyroad.readyroadbackend.domain.repository.UserRepository;
+import com.readyroad.readyroadbackend.domain.repository.UserCategoryProgressRepository;
+import com.readyroad.readyroadbackend.domain.entity.ExamSimulation;
+import com.readyroad.readyroadbackend.domain.repository.ExamSimulationRepository;
 import com.readyroad.readyroadbackend.domain.repository.QuizAttemptRepository;
 import com.readyroad.readyroadbackend.domain.repository.QuizQuestionRepository;
-import com.readyroad.readyroadbackend.domain.repository.UserCategoryProgressRepository;
+
 import com.readyroad.readyroadbackend.domain.repository.QuizUserAnswerRepository;
 import com.readyroad.readyroadbackend.domain.enums.Role;
 import com.readyroad.readyroadbackend.domain.entity.User;
-import com.readyroad.readyroadbackend.domain.entity.QuizAttempt;
+import com.readyroad.readyroadbackend.dto.AdminExamQuestionRequest;
 import com.readyroad.readyroadbackend.dto.AdminQuizQuestionRequest;
 import com.readyroad.readyroadbackend.dto.CreateTrafficSignRequest;
 import com.readyroad.readyroadbackend.dto.SignGovernanceReport;
 import com.readyroad.readyroadbackend.dto.SignImportEntry;
+import com.readyroad.readyroadbackend.dto.response.AdminExamQuestionResponse;
 import com.readyroad.readyroadbackend.dto.response.AdminQuizQuestionResponse;
 import com.readyroad.readyroadbackend.dto.response.AdminTrafficSignResponse;
 import com.readyroad.readyroadbackend.dto.response.PageResponse;
 import com.readyroad.readyroadbackend.dto.response.TrafficSignResponse;
 import com.readyroad.readyroadbackend.service.AdminQuizService;
+import com.readyroad.readyroadbackend.service.ExamQuestionService;
 import com.readyroad.readyroadbackend.service.TrafficSignService;
 import com.readyroad.readyroadbackend.service.SignImportService;
 import com.readyroad.readyroadbackend.service.SignGovernanceService;
@@ -36,6 +41,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import com.readyroad.readyroadbackend.service.FileUploadService;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Sort;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.HashMap;
@@ -64,12 +71,14 @@ public class AdminController {
 
     private final TrafficSignRepository signRepository;
     private final UserRepository userRepository;
+    private final ExamSimulationRepository examSimulationRepository;
     private final QuizAttemptRepository quizAttemptRepository;
     private final QuizQuestionRepository quizQuestionRepository;
     private final UserCategoryProgressRepository categoryProgressRepository;
     private final QuizUserAnswerRepository quizUserAnswerRepository;
     private final TrafficSignService trafficSignService;
     private final AdminQuizService adminQuizService;
+    private final ExamQuestionService examQuestionService;
     private final FileUploadService fileUploadService;
     private final SignImportService signImportService;
     private final SignGovernanceService signGovernanceService;
@@ -85,7 +94,7 @@ public class AdminController {
         Map<String, Object> stats = new HashMap<>();
         stats.put("totalSigns", signRepository.count());
         stats.put("totalUsers", userRepository.count());
-        stats.put("totalQuizAttempts", quizAttemptRepository.count());
+        stats.put("totalQuizAttempts", examSimulationRepository.count());
         stats.put("totalQuizQuestions", quizQuestionRepository.count());
         stats.put("activeUsers", userRepository.countByIsActiveTrue());
         stats.put("adminUsers", userRepository.countByRole(Role.ADMIN));
@@ -376,6 +385,82 @@ public class AdminController {
     }
 
     // ═══════════════════════════════════════════════════
+    // Exam Question CRUD (/api/admin/exam/questions)
+    // ═══════════════════════════════════════════════════
+
+    /**
+     * GET /api/admin/exam/questions
+     * Paginated list of exam simulation questions for the admin panel.
+     */
+    @GetMapping("/exam/questions")
+    public ResponseEntity<PageResponse<AdminExamQuestionResponse>> listExamQuestions(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "20") int size,
+            @RequestParam(required = false) String category,
+            @RequestParam(defaultValue = "id") String sortBy,
+            @RequestParam(defaultValue = "asc") String sortDir) {
+
+        Sort sort = sortDir.equalsIgnoreCase("desc")
+                ? Sort.by(sortBy).descending()
+                : Sort.by(sortBy).ascending();
+        Page<com.readyroad.readyroadbackend.domain.entity.ExamQuestion> pg = examQuestionService
+                .getQuestionsPaginated(PageRequest.of(page, size, sort));
+
+        List<AdminExamQuestionResponse> items = pg.getContent().stream()
+                .map(examQuestionService::toResponse)
+                .toList();
+
+        return ResponseEntity.ok(new PageResponse<>(items, pg.getNumber(), pg.getSize(),
+                pg.getTotalElements(), pg.getTotalPages()));
+    }
+
+    /**
+     * GET /api/admin/exam/questions/{id}
+     */
+    @GetMapping("/exam/questions/{id}")
+    public ResponseEntity<AdminExamQuestionResponse> getExamQuestion(@PathVariable Long id) {
+        return ResponseEntity.ok(examQuestionService.getAdminQuestionById(id));
+    }
+
+    /**
+     * POST /api/admin/exam/questions
+     */
+    @PostMapping("/exam/questions")
+    public ResponseEntity<AdminExamQuestionResponse> createExamQuestion(
+            @Valid @RequestBody AdminExamQuestionRequest request) {
+        log.info("📝 Admin creating exam question for category={}", request.getCategoryCode());
+        AdminExamQuestionResponse resp = examQuestionService.createQuestion(request);
+        log.info("✅ Exam question created id={}", resp.id());
+        return ResponseEntity.status(HttpStatus.CREATED).body(resp);
+    }
+
+    /**
+     * PUT /api/admin/exam/questions/{id}
+     */
+    @PutMapping("/exam/questions/{id}")
+    public ResponseEntity<AdminExamQuestionResponse> updateExamQuestion(
+            @PathVariable Long id,
+            @Valid @RequestBody AdminExamQuestionRequest request) {
+        log.info("✏️ Admin updating exam question id={}", id);
+        return ResponseEntity.ok(examQuestionService.updateQuestion(id, request));
+    }
+
+    /**
+     * DELETE /api/admin/exam/questions/{id}
+     */
+    @DeleteMapping("/exam/questions/{id}")
+    public ResponseEntity<?> deleteExamQuestion(@PathVariable Long id) {
+        log.info("🗑️ Admin deleting exam question id={}", id);
+        try {
+            examQuestionService.deleteQuestion(id);
+            return ResponseEntity.ok(Map.of("message", "Exam question deleted"));
+        } catch (DataIntegrityViolationException e) {
+            return ResponseEntity.status(HttpStatus.CONFLICT)
+                    .body(Map.of("error", "Cannot delete — referenced by exam sessions"));
+        }
+    }
+
+    // ═══════════════════════════════════════════════════
     // Reset Test Data
     // ═══════════════════════════════════════════════════
 
@@ -600,11 +685,12 @@ public class AdminController {
      */
     @GetMapping("/analytics/quiz-stats")
     public ResponseEntity<?> getQuizStats() {
-        log.info("📊 Admin quiz stats requested");
+        log.info("📊 Admin exam stats requested");
 
-        Double avgScore = quizAttemptRepository.getGlobalAverageScore();
-        Long totalCompleted = quizAttemptRepository.countGlobalCompleted();
-        Long totalPassed = quizAttemptRepository.countGlobalPassed();
+        Double avgScore = examSimulationRepository.getAverageScoreOfCompleted();
+        Long totalCompleted = examSimulationRepository.countByStatus(ExamSimulation.ExamStatus.COMPLETED);
+        Long totalPassed = examSimulationRepository.countByStatusAndCorrectAnswersGreaterThanEqual(
+                ExamSimulation.ExamStatus.COMPLETED, 41);
         double passRate = (totalCompleted != null && totalCompleted > 0 && totalPassed != null)
                 ? (double) totalPassed / totalCompleted * 100.0
                 : 0.0;
@@ -678,35 +764,41 @@ public class AdminController {
     /**
      * Recent exams across all users
      * GET /api/admin/analytics/recent-exams
+     *
+     * Queries exam_simulations (real Belgian driving license exam sessions),
+     * NOT quiz_attempts (practice quiz sessions).
      */
     @GetMapping("/analytics/recent-exams")
     public ResponseEntity<?> getRecentExams(@RequestParam(defaultValue = "20") int limit) {
         log.info("📊 Admin recent exams requested (limit: {})", limit);
 
-        List<QuizAttempt> recentExams = quizAttemptRepository
-                .findByCompletedAtIsNotNullOrderByCompletedAtDesc(PageRequest.of(0, limit));
+        List<ExamSimulation> recentExams = examSimulationRepository
+                .findByStatusOrderByCompletedAtDesc(
+                        ExamSimulation.ExamStatus.COMPLETED,
+                        PageRequest.of(0, limit));
 
         List<Map<String, Object>> exams = recentExams.stream()
-                .map(qa -> {
+                .map(es -> {
                     Map<String, Object> exam = new HashMap<>();
-                    exam.put("examId", qa.getId());
-                    exam.put("score", qa.getCorrectAnswers());
-                    exam.put("totalQuestions", qa.getTotalQuestions());
-                    exam.put("scorePercentage", qa.getScorePercentage());
-                    exam.put("passed", qa.getPassed());
-                    exam.put("startedAt", qa.getStartedAt() != null ? qa.getStartedAt().toString() : null);
-                    exam.put("completedAt", qa.getCompletedAt() != null ? qa.getCompletedAt().toString() : null);
-                    // Include user info
-                    if (qa.getUser() != null) {
-                        exam.put("userId", qa.getUser().getId());
-                        exam.put("username", qa.getUser().getUsername());
-                        exam.put("fullName", qa.getUser().getFullName());
-                    }
+                    exam.put("examId", es.getId());
+                    exam.put("score", es.getCorrectAnswers());
+                    exam.put("totalQuestions", es.getTotalQuestions());
+                    exam.put("scorePercentage", es.getScorePercentage());
+                    exam.put("passed", es.isPassed());
+                    exam.put("startedAt", es.getStartedAt() != null ? es.getStartedAt().toString() : null);
+                    exam.put("completedAt", es.getCompletedAt() != null ? es.getCompletedAt().toString() : null);
+                    exam.put("timeTakenSeconds", es.getTimeTakenSeconds());
+                    // Resolve user info from userId
+                    exam.put("userId", es.getUserId());
+                    userRepository.findById(es.getUserId()).ifPresent(u -> {
+                        exam.put("username", u.getUsername());
+                        exam.put("fullName", u.getFullName());
+                    });
                     return exam;
                 })
                 .collect(Collectors.toList());
 
-        long total = quizAttemptRepository.countGlobalCompleted();
+        long total = examSimulationRepository.countByStatus(ExamSimulation.ExamStatus.COMPLETED);
         return ResponseEntity.ok(Map.of("exams", exams, "total", total));
     }
 

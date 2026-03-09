@@ -1,4 +1,4 @@
-version: '3.8'
+version: "3.8"
 
 # ============================================
 # ReadyRoad - Docker Compose Configuration
@@ -33,7 +33,11 @@ services:
       - readyroad-network
 
     healthcheck:
-      test: ["CMD-SHELL", "mysqladmin ping -h localhost -u $$MYSQL_USER --password=$$MYSQL_PASSWORD 2>/dev/null"]
+      test:
+        [
+          "CMD-SHELL",
+          "mysqladmin ping -h localhost -u $$MYSQL_USER --password=$$MYSQL_PASSWORD 2>/dev/null",
+        ]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -100,12 +104,21 @@ services:
     volumes:
       - backend_logs:/app/logs
       - ./src/main/resources/data/signs_import:/app/data/signs_import:ro
+      - sign_uploads:/app/public/images/quiz
 
     networks:
       - readyroad-network
 
     healthcheck:
-      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:8890/actuator/health"]
+      test:
+        [
+          "CMD",
+          "wget",
+          "--no-verbose",
+          "--tries=1",
+          "--spider",
+          "http://localhost:8890/actuator/health",
+        ]
       interval: 30s
       timeout: 10s
       retries: 3
@@ -154,4 +167,6 @@ volumes:
   mysql_data:
     driver: local
   backend_logs:
+    driver: local
+  sign_uploads:
     driver: local

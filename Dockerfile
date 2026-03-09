@@ -29,12 +29,21 @@ RUN addgroup -g 1001 readyroad && \
 # Copy jar from build stage
 COPY --from=build /app/target/*.jar app.jar
 
-# Create logs directory
-RUN mkdir -p /app/logs && \
+# Install su-exec for privilege drop in entrypoint
+RUN apk add --no-cache su-exec
+
+# Create required directories and set ownership
+RUN mkdir -p /app/logs /app/public/images/quiz && \
     chown -R readyroad:readyroad /app
 
-# Switch to non-root user
-USER readyroad
+# Entrypoint: fix volume mount ownership at startup, then run the app
+# Named Docker volumes are mounted as root after image build; this corrects
+# permissions before the JVM starts so uploads always succeed.
+RUN printf '#!/bin/sh\nchown readyroad:readyroad /app/public/images/quiz 2>/dev/null || true\nchmod 755 /app/public/images/quiz 2>/dev/null || true\nexec su-exec readyroad java ${JAVA_OPTS} -jar /app/app.jar "$@"\n' \
+    > /usr/local/bin/entrypoint.sh && chmod +x /usr/local/bin/entrypoint.sh
+
+# Keep running as root so entrypoint.sh can chown the volume mount;
+# su-exec in the script then drops to readyroad before starting Java.
 
 # Expose port
 EXPOSE 8890
@@ -48,5 +57,5 @@ ENV SPRING_PROFILES_ACTIVE=prod \
     JAVA_OPTS="-Xms512m -Xmx1024m" \
     TZ=UTC
 
-# Run application
-ENTRYPOINT ["sh", "-c", "java $JAVA_OPTS -jar app.jar"]
+# Run application (via entrypoint script that fixes volume permissions first)
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]

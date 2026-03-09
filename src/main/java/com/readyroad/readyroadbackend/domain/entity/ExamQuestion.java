@@ -46,28 +46,30 @@ public class ExamQuestion extends BaseEntity {
     @Column(nullable = false, columnDefinition = "TEXT")
     private String option2Fr;
 
-    @Column(nullable = false, columnDefinition = "TEXT")
+    // option3 is optional — questions can have 2 or 3 options (Belgian standard)
+    @Column(nullable = true, columnDefinition = "TEXT")
     private String option3Ar;
 
-    @Column(nullable = false, columnDefinition = "TEXT")
+    @Column(nullable = true, columnDefinition = "TEXT")
     private String option3En;
 
-    @Column(nullable = false, columnDefinition = "TEXT")
+    @Column(nullable = true, columnDefinition = "TEXT")
     private String option3Nl;
 
-    @Column(nullable = false, columnDefinition = "TEXT")
+    @Column(nullable = true, columnDefinition = "TEXT")
     private String option3Fr;
 
-    @Column(nullable = false, columnDefinition = "TEXT")
+    // option4 kept for legacy data only — never set by admin CRUD (max 3 options)
+    @Column(nullable = true, columnDefinition = "TEXT")
     private String option4Ar;
 
-    @Column(nullable = false, columnDefinition = "TEXT")
+    @Column(nullable = true, columnDefinition = "TEXT")
     private String option4En;
 
-    @Column(nullable = false, columnDefinition = "TEXT")
+    @Column(nullable = true, columnDefinition = "TEXT")
     private String option4Nl;
 
-    @Column(nullable = false, columnDefinition = "TEXT")
+    @Column(nullable = true, columnDefinition = "TEXT")
     private String option4Fr;
 
     @Column(nullable = false)
