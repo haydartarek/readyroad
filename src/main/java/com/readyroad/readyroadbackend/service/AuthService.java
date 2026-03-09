@@ -11,6 +11,7 @@ import java.util.Map;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -99,8 +100,8 @@ public class AuthService {
             // Load user first to check details
             User user = userRepository.findByUsername(request.getUsername())
                     .orElseThrow(() -> {
-                        log.error("❌ User not found: {}", request.getUsername());
-                        return new IllegalArgumentException("User not found");
+                        log.warn("⚠️ Login attempt for non-existent username (not logged for security)");
+                        return new BadCredentialsException("Invalid credentials");
                     });
 
             log.info("✅ User found in database: {}", user.getUsername());

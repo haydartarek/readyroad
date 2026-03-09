@@ -16,7 +16,6 @@ import com.readyroad.readyroadbackend.domain.repository.QuizAnswerOptionReposito
 import com.readyroad.readyroadbackend.domain.repository.QuizQuestionRepository;
 import com.readyroad.readyroadbackend.domain.repository.UserCategoryProgressRepository;
 import com.readyroad.readyroadbackend.domain.repository.UserQuestionHistoryRepository;
-import com.readyroad.readyroadbackend.dto.exam.ExamStartResponse;
 import com.readyroad.readyroadbackend.dto.exam.SubmitExamAnswerRequest;
 import com.readyroad.readyroadbackend.dto.exam.SubmitExamAnswerResponse;
 import com.readyroad.readyroadbackend.dto.exam.ExamResultsDTO;
@@ -30,8 +29,6 @@ import com.readyroad.readyroadbackend.exception.ExamExpiredException;
 import com.readyroad.readyroadbackend.exception.InvalidAnswerException;
 import com.readyroad.readyroadbackend.exception.QuestionNotFoundException;
 import com.readyroad.readyroadbackend.exception.UnauthorizedException;
-import com.readyroad.readyroadbackend.mapper.ExamMapper;
-
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -68,9 +65,6 @@ public class ExamService {
     private final ExamSimulationAnswerRepository answerRepository; // Story A2
     private final QuizAnswerOptionRepository optionRepository; // Story A2
     private final QuizQuestionRepository questionRepository; // Story A2 - Load questions
-    private final SmartQuizService smartQuizService;
-    private final QuizService quizService; // Story D1: Belgian compliance validation
-    private final ExamMapper examMapper; // DTO mapping
     private final NotificationService notificationService; // Story N1: Exam result notifications
     private final NotificationRepository notificationRepository; // Dedup checks
     private final AchievementService achievementService; // Story N2: Achievement notifications
@@ -560,13 +554,13 @@ public class ExamService {
         }
 
         // 2. Validate question belongs to this exam
-        ExamSimulationQuestion examQuestion = examQuestionRepository
+        examQuestionRepository
                 .findByExamIdAndQuestionId(examId, questionId)
                 .orElseThrow(() -> new QuestionNotFoundException(
                         String.format("Question %d not found in exam %d", questionId, examId)
                 ));
 
-        // Load the actual question entity (examQuestion.getQuestion() is lazy and may be null)
+        // Load the actual question entity
         QuizQuestion question = questionRepository.findById(questionId)
                 .orElseThrow(() -> new QuestionNotFoundException(
                         String.format("Question %d not found", questionId)

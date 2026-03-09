@@ -1,20 +1,10 @@
-﻿# IDE
-.idea/
-*.iml
-
-# Secrets — never commit real credentials
-.env
-
-# Logs & outputs
+﻿.env
 logs/
-*.log
-*.log.*
-*.gz
-*-output*.txt
-backend-full.log
-
-# Maven
 target/
+.idea/
 
-# Windows reserved / junk
+*.log
+*.txt
+
 nul
+

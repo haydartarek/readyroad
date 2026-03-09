@@ -105,7 +105,7 @@ public class AnalyticsService {
                 // Only count supported patterns
                 if (SUPPORTED_PATTERNS.contains(errorType)) {
                     questionsByPattern.computeIfAbsent(errorType, k -> new ArrayList<>()).add(question);
-                    countByPattern.merge(errorType, 1, Integer::sum);
+                    countByPattern.merge(errorType, 1, (a, b) -> a + b);
                 }
             }
         }

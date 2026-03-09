@@ -15,6 +15,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -81,5 +82,31 @@ public class UserController {
 
         log.info("User profile retrieved: {} ({})", user.getUsername(), user.getRole());
         return ResponseEntity.ok(response);
+    }
+
+    @DeleteMapping("/me")
+    @Operation(
+        summary = "Delete current user account",
+        description = "Permanently deletes the authenticated user account and all associated data via DB cascade",
+        security = @SecurityRequirement(name = "bearer-jwt")
+    )
+    @ApiResponses(value = {
+        @ApiResponse(responseCode = "204", description = "Account deleted successfully"),
+        @ApiResponse(responseCode = "401", description = "Unauthorized", content = @Content),
+        @ApiResponse(responseCode = "404", description = "User not found", content = @Content)
+    })
+    public ResponseEntity<Void> deleteCurrentUser(Authentication authentication) {
+        Long userId = authenticationUtil.extractUserId(authentication);
+        log.info("DELETE /api/users/me - userId: {}", userId);
+
+        if (!userRepository.existsById(userId)) {
+            log.error("User not found for deletion: {}", userId);
+            return ResponseEntity.notFound().build();
+        }
+
+        userRepository.deleteById(userId);
+        log.info("User account permanently deleted: userId={}", userId);
+
+        return ResponseEntity.noContent().build();
     }
 }

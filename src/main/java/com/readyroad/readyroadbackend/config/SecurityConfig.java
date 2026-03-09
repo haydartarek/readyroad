@@ -86,23 +86,17 @@ public class SecurityConfig {
      * @return MethodSecurityExpressionHandler configured with hierarchy
      */
     @Bean
+    @SuppressWarnings("deprecation")
     public MethodSecurityExpressionHandler methodSecurityExpressionHandler(RoleHierarchy roleHierarchy) {
         log.info("🔐 Configuring Method Security with Role Hierarchy");
 
         DefaultMethodSecurityExpressionHandler handler = new DefaultMethodSecurityExpressionHandler();
-
-        // ✅ Use non-deprecated API (Spring Security 7.0+)
-        // Instead of: handler.setRoleHierarchy(roleHierarchy)
-        // Use the constructor or withRoleHierarchy() if available
-        // For now, suppress warning as the replacement requires different approach
-        @SuppressWarnings("deprecation")
-        var configuredHandler = handler;
-        configuredHandler.setRoleHierarchy(roleHierarchy);
+        handler.setRoleHierarchy(roleHierarchy);
 
         log.info("✅ Method Security Expression Handler configured");
         log.info("   - @PreAuthorize annotations now respect role hierarchy");
 
-        return configuredHandler;
+        return handler;
     }
 
     @Bean

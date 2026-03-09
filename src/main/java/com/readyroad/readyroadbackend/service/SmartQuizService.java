@@ -144,15 +144,6 @@ public class SmartQuizService {
     }
 
     /**
-     * Records that questions were shown to user (not answered yet).
-     * Sets lastShownAt and lastShownType for cooldown tracking.
-     * Does NOT set answeredAt (that's only for when user submits answer).
-     */
-    private void recordQuestionHistory(Long userId, List<QuizQuestion> questions) {
-        recordQuestionHistory(userId, questions, "RANDOM");
-    }
-
-    /**
      * Records that questions were shown to user with specific context type.
      * 
      * @param userId    User ID

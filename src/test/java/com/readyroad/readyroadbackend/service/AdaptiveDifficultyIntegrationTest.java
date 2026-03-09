@@ -1,7 +1,6 @@
 package com.readyroad.readyroadbackend.service;
 
 import com.readyroad.readyroadbackend.config.TestDataSeederConfig;
-import com.readyroad.readyroadbackend.domain.entity.QuizAnswerOption;
 import com.readyroad.readyroadbackend.domain.entity.QuizQuestion;
 import com.readyroad.readyroadbackend.domain.model.UserQuestionHistory;
 import com.readyroad.readyroadbackend.domain.repository.QuizQuestionRepository;

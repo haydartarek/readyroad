@@ -101,7 +101,7 @@ public class SignQuizService {
 
         if (allQuestions.isEmpty()) {
             throw new ResponseStatusException(
-                    HttpStatus.UNPROCESSABLE_ENTITY, "No active questions for sign: " + signCode);
+                    HttpStatus.valueOf(422), "No active questions for sign: " + signCode);
         }
 
         // Shuffle for variety
@@ -378,12 +378,6 @@ public class SignQuizService {
 
         List<SignExamQuestion> examQuestions = exam.getExamQuestions();
         int linkedCount = examQuestions.size();
-
-        // Build a map questionId → SignQuestion for O(1) lookup
-        Map<Long, SignQuestion> questionMap = examQuestions.stream()
-                .collect(Collectors.toMap(
-                        eq -> eq.getQuestion().getId(),
-                        SignExamQuestion::getQuestion));
 
         // Build a map questionId → submittedChoiceId from the request
         Map<Long, Long> submittedMap = answers.stream()

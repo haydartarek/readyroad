@@ -2,6 +2,7 @@ package com.readyroad.readyroadbackend.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.AuthenticationException;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -23,6 +24,24 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @ControllerAdvice
 public class GlobalExceptionHandler {
+
+    /**
+     * Handle all Spring Security AuthenticationExceptions:
+     * BadCredentialsException (wrong password), UsernameNotFoundException (no account),
+     * DisabledException (inactive account), LockedException (locked account).
+     *
+     * Always returns HTTP 401 with a generic message to prevent user enumeration.
+     * HTTP 401 UNAUTHORIZED
+     */
+    @ExceptionHandler(AuthenticationException.class)
+    @ResponseBody
+    public ResponseEntity<Map<String, Object>> handleAuthenticationException(AuthenticationException ex) {
+        log.warn("Authentication failed: {}", ex.getClass().getSimpleName());
+        Map<String, Object> error = new HashMap<>();
+        error.put("message", "Invalid username or password.");
+        error.put("timestamp", LocalDateTime.now());
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(error);
+    }
 
     /**
      * Handle ActiveExamAlreadyExistsException - user already has active exam
