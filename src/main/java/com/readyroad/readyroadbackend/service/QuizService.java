@@ -7,6 +7,7 @@ import com.readyroad.readyroadbackend.dto.TheoryExamQuestionResultDTO;
 import com.readyroad.readyroadbackend.dto.TheoryExamResultDTO;
 import com.readyroad.readyroadbackend.exception.BelgianComplianceException;
 import com.readyroad.readyroadbackend.exception.TranslationRequiredException;
+import com.readyroad.readyroadbackend.util.PlaceholderDetector;
 import com.readyroad.readyroadbackend.validation.TranslationValidator;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -91,8 +92,17 @@ public class QuizService {
         // Step 2: Fetch full questions with options (eager loading with @EntityGraph)
         List<QuizQuestion> questions = quizQuestionRepository.findAllByIdWithOptions(questionIds);
 
-        log.info("✅ Generated random quiz with {} questions (options eagerly loaded)", questions.size());
-        return questions;
+        // Filter out questions whose options are placeholder / corrupted content
+        List<QuizQuestion> validQuestions = questions.stream()
+                .filter(this::hasMinValidOptions)
+                .collect(Collectors.toList());
+        if (validQuestions.size() < questions.size()) {
+            log.warn("⚠️ Random quiz: {} question(s) excluded — insufficient valid (non-placeholder) options",
+                    questions.size() - validQuestions.size());
+        }
+
+        log.info("✅ Generated random quiz with {} questions (options eagerly loaded)", validQuestions.size());
+        return validQuestions;
     }
 
     /**
@@ -151,9 +161,18 @@ public class QuizService {
         // Step 2: Fetch full questions with options (eager loading with @EntityGraph)
         List<QuizQuestion> questions = quizQuestionRepository.findAllByIdWithOptions(questionIds);
 
+        // Filter out questions whose options are placeholder / corrupted content
+        List<QuizQuestion> validQuestions = questions.stream()
+                .filter(this::hasMinValidOptions)
+                .collect(Collectors.toList());
+        if (validQuestions.size() < questions.size()) {
+            log.warn("⚠️ Category quiz: {} question(s) excluded — insufficient valid (non-placeholder) options",
+                    questions.size() - validQuestions.size());
+        }
+
         log.info("✅ Generated quiz with {} questions from category {} (options eagerly loaded)",
-                questions.size(), categoryId);
-        return questions;
+                validQuestions.size(), categoryId);
+        return validQuestions;
     }
 
     /**
@@ -278,9 +297,9 @@ public class QuizService {
     // Distribution: 20 EASY + 18 MEDIUM + 12 HARD = 50 questions
     // ─────────────────────────────────────────────────────────────────────────
 
-    private static final int THEORY_EASY_COUNT   = 20;
-    private static final int THEORY_MEDIUM_COUNT = 18;
-    private static final int THEORY_HARD_COUNT   = 12;
+    private static final int THEORY_EASY_COUNT = 20;
+    private static final int THEORY_MEDIUM_COUNT = 20;
+    private static final int THEORY_HARD_COUNT = 10;
     private static final int THEORY_PASSING_SCORE = 41;
 
     /**
@@ -289,13 +308,17 @@ public class QuizService {
      * Uses 2-step native RAND() pattern to avoid full-table scans.
      */
     public List<QuizQuestion> getTheoryExamQuestions() {
-        List<Long> easyIds   = quizQuestionRepository.findRandomQuestionIdsByDifficulty("EASY",   THEORY_EASY_COUNT);
+        List<Long> easyIds = quizQuestionRepository.findRandomQuestionIdsByDifficulty("EASY", THEORY_EASY_COUNT);
         List<Long> mediumIds = quizQuestionRepository.findRandomQuestionIdsByDifficulty("MEDIUM", THEORY_MEDIUM_COUNT);
-        List<Long> hardIds   = quizQuestionRepository.findRandomQuestionIdsByDifficulty("HARD",   THEORY_HARD_COUNT);
+        List<Long> hardIds = quizQuestionRepository.findRandomQuestionIdsByDifficulty("HARD", THEORY_HARD_COUNT);
 
-        if (easyIds.size()   < THEORY_EASY_COUNT)   log.warn("⚠️ Theory exam: only {} EASY questions available (need {})",   easyIds.size(),   THEORY_EASY_COUNT);
-        if (mediumIds.size() < THEORY_MEDIUM_COUNT) log.warn("⚠️ Theory exam: only {} MEDIUM questions available (need {})", mediumIds.size(), THEORY_MEDIUM_COUNT);
-        if (hardIds.size()   < THEORY_HARD_COUNT)   log.warn("⚠️ Theory exam: only {} HARD questions available (need {})",   hardIds.size(),   THEORY_HARD_COUNT);
+        if (easyIds.size() < THEORY_EASY_COUNT)
+            log.warn("⚠️ Theory exam: only {} EASY questions available (need {})", easyIds.size(), THEORY_EASY_COUNT);
+        if (mediumIds.size() < THEORY_MEDIUM_COUNT)
+            log.warn("⚠️ Theory exam: only {} MEDIUM questions available (need {})", mediumIds.size(),
+                    THEORY_MEDIUM_COUNT);
+        if (hardIds.size() < THEORY_HARD_COUNT)
+            log.warn("⚠️ Theory exam: only {} HARD questions available (need {})", hardIds.size(), THEORY_HARD_COUNT);
 
         List<Long> allIds = new ArrayList<>();
         allIds.addAll(easyIds);
@@ -309,9 +332,40 @@ public class QuizService {
         }
 
         List<QuizQuestion> questions = quizQuestionRepository.findAllByIdWithOptions(allIds);
+
+        // Filter out questions whose options are placeholder / corrupted content
+        List<QuizQuestion> validQuestions = questions.stream()
+                .filter(this::hasMinValidOptions)
+                .collect(Collectors.toList());
+        if (validQuestions.size() < questions.size()) {
+            log.warn("⚠️ Theory exam: {} question(s) excluded — insufficient valid (non-placeholder) options",
+                    questions.size() - validQuestions.size());
+        }
+
         log.info("✅ Theory exam prepared: {} questions ({}E / {}M / {}H)",
-                questions.size(), easyIds.size(), mediumIds.size(), hardIds.size());
-        return questions;
+                validQuestions.size(), easyIds.size(), mediumIds.size(), hardIds.size());
+        return validQuestions;
+    }
+
+    /**
+     * Returns {@code true} if the question has at least 2 options whose text is
+     * free of placeholder or corrupted content across all four language fields.
+     * Questions failing this check are excluded from practice and exam pools.
+     */
+    private boolean hasMinValidOptions(QuizQuestion question) {
+        if (question.getOptions() == null) {
+            return false;
+        }
+        long validCount = question.getOptions().stream()
+                .filter(option -> !PlaceholderDetector.hasPlaceholder(
+                        option.getOptionTextEn(), option.getOptionTextNl(),
+                        option.getOptionTextFr(), option.getOptionTextAr()))
+                .count();
+        if (validCount < 2) {
+            log.warn("⚠️ Question {} excluded from pool: only {} valid option(s) after placeholder check",
+                    question.getId(), validCount);
+        }
+        return validCount >= 2;
     }
 
     /**
@@ -319,7 +373,8 @@ public class QuizService {
      * Looks up each question's correct option and compares to the submitted answer.
      * Does NOT record history, update streaks, or write to the DB.
      *
-     * @param answers List of {questionId, selectedOptionId} — selectedOptionId null means timeout
+     * @param answers List of {questionId, selectedOptionId} — selectedOptionId null
+     *                means timeout
      * @return Full result DTO including per-question breakdown
      */
     @Transactional(readOnly = true)
@@ -344,20 +399,24 @@ public class QuizService {
 
         for (TheoryExamAnswerRequest answer : answers) {
             QuizQuestion q = questionMap.get(answer.getQuestionId());
-            if (q == null) continue;
+            if (q == null)
+                continue;
 
             // Find the correct option
             var correctOption = q.getOptions().stream()
                     .filter(o -> Boolean.TRUE.equals(o.getIsCorrect()))
                     .findFirst().orElse(null);
 
-            boolean isTimeout  = answer.getSelectedOptionId() == null;
-            boolean isCorrect  = !isTimeout && correctOption != null
+            boolean isTimeout = answer.getSelectedOptionId() == null;
+            boolean isCorrect = !isTimeout && correctOption != null
                     && answer.getSelectedOptionId().equals(correctOption.getId());
 
-            if (isTimeout)     unanswered++;
-            else if (isCorrect) correct++;
-            else               wrong++;
+            if (isTimeout)
+                unanswered++;
+            else if (isCorrect)
+                correct++;
+            else
+                wrong++;
 
             // Category names (eagerly loaded above)
             String catEn = null, catAr = null, catNl = null, catFr = null;

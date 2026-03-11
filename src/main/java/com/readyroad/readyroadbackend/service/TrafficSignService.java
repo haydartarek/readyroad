@@ -9,6 +9,7 @@ import com.readyroad.readyroadbackend.dto.response.AdminTrafficSignResponse;
 import com.readyroad.readyroadbackend.dto.response.PageResponse;
 import com.readyroad.readyroadbackend.dto.response.TrafficSignResponse;
 import com.readyroad.readyroadbackend.mapper.TrafficSignMapper;
+import com.readyroad.readyroadbackend.exception.TrafficSignNotFoundException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -58,7 +59,7 @@ public class TrafficSignService {
 
     public TrafficSignResponse getSignByCode(String signCode) {
         TrafficSign sign = trafficSignRepository.findBySignCode(signCode)
-                .orElseThrow(() -> new RuntimeException("Traffic sign not found: " + signCode));
+                .orElseThrow(() -> new TrafficSignNotFoundException(signCode));
         return trafficSignMapper.toResponse(sign);
     }
 

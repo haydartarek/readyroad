@@ -390,15 +390,6 @@ UPDATE traffic_signs SET
   updated_at = NOW()
 WHERE sign_code = 'D4';
 
--- D5: Rotonde verplicht
-UPDATE traffic_signs SET
-  name_ar = 'Ø¯ÙˆØ§Ø± Ø¥Ù„Ø²Ø§Ù…ÙŠ',
-  name_en = 'Roundabout compulsory',
-  name_nl = 'Rotonde verplicht',
-  name_fr = 'Giratoire obligatoire',
-  updated_at = NOW()
-WHERE sign_code = 'D5';
-
 -- D9a: Rijbaan gedeeld voor voetgangers en fietsers (voetgangers links)
 UPDATE traffic_signs SET
   name_ar = 'Ø¬Ø²Ø¡ Ù…Ù† Ø§Ù„Ø·Ø±ÙŠÙ‚ Ù…Ø­Ø¬ÙˆØ² Ù„Ù„Ù…Ø´Ø§Ø© ÙˆØ§Ù„Ø¯Ø±Ø§Ø¬ÙŠÙ† (Ù…Ø´Ø§Ø© ÙŠØ³Ø§Ø±Ø§Ù‹)',

@@ -34,6 +34,7 @@ public class AuthService {
     private final PasswordEncoder passwordEncoder;
     private final JwtService jwtService;
     private final AuthenticationManager authenticationManager;
+    private final NotificationService notificationService;
 
     /**
      * Register a new user
@@ -71,6 +72,13 @@ public class AuthService {
         // Save user to database
         user = userRepository.save(user);
         log.info("✅ User registered successfully: {}", user.getUsername());
+
+        // Notify all admins about the new registration
+        try {
+            notificationService.notifyAdminsNewUser(user.getUsername(), user.getEmail());
+        } catch (Exception ex) {
+            log.warn("Admin new-user notification failed: {}", ex.getMessage());
+        }
 
         // Generate JWT token with role claim
         Map<String, Object> claims = new HashMap<>();

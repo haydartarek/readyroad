@@ -16,11 +16,14 @@ import com.readyroad.readyroadbackend.domain.repository.QuizAnswerOptionReposito
 import com.readyroad.readyroadbackend.domain.repository.QuizQuestionRepository;
 import com.readyroad.readyroadbackend.domain.repository.UserCategoryProgressRepository;
 import com.readyroad.readyroadbackend.domain.repository.UserQuestionHistoryRepository;
+import com.readyroad.readyroadbackend.domain.repository.UserWeakAreaRepository;
+import com.readyroad.readyroadbackend.util.PlaceholderDetector;
 import com.readyroad.readyroadbackend.dto.exam.SubmitExamAnswerRequest;
 import com.readyroad.readyroadbackend.dto.exam.SubmitExamAnswerResponse;
 import com.readyroad.readyroadbackend.dto.exam.ExamResultsDTO;
 import com.readyroad.readyroadbackend.dto.exam.CategoryBreakdownDTO;
 import com.readyroad.readyroadbackend.dto.exam.IncorrectQuestionDTO;
+import com.readyroad.readyroadbackend.dto.exam.AllAnsweredQuestionDTO;
 import com.readyroad.readyroadbackend.exception.ActiveExamAlreadyExistsException;
 import com.readyroad.readyroadbackend.exception.ExamNotActiveException;
 import com.readyroad.readyroadbackend.exception.ExamNotCompletedException;
@@ -69,17 +72,18 @@ public class ExamService {
     private final NotificationRepository notificationRepository; // Dedup checks
     private final AchievementService achievementService; // Story N2: Achievement notifications
     private final UserCategoryProgressRepository progressRepository; // Dashboard progress tracking
-    private final UserQuestionHistoryRepository historyRepository;   // Streak & lastActivityDate tracking
+    private final UserQuestionHistoryRepository historyRepository; // Streak & lastActivityDate tracking
     private final StreakService streakService; // Story N3: Study streak update on exam completion
+    private final UserWeakAreaRepository weakAreaRepository; // Story N2: Persist weak areas on exam completion
 
-    private static final int EXAM_QUESTION_COUNT    = 50;
+    private static final int EXAM_QUESTION_COUNT = 50;
     private static final int EXAM_TIME_LIMIT_MINUTES = 30;
-    private static final int PASSING_SCORE           = 41;
+    private static final int PASSING_SCORE = 41;
 
     // Belgian driving exam: fixed difficulty distribution
-    private static final int EASY_QUESTION_COUNT   = 20;   // 40%
-    private static final int MEDIUM_QUESTION_COUNT = 20;   // 40%
-    private static final int HARD_QUESTION_COUNT   = 10;   // 20%
+    private static final int EASY_QUESTION_COUNT = 20; // 40%
+    private static final int MEDIUM_QUESTION_COUNT = 20; // 40%
+    private static final int HARD_QUESTION_COUNT = 10; // 20%
     // Total: 50 = EASY + MEDIUM + HARD ✅
 
     /**
@@ -101,14 +105,22 @@ public class ExamService {
     public ExamSimulation startExamSimulation(Long userId) {
         log.info("Starting exam simulation for user: {}", userId);
 
-        // AC1: Check for active exam
+        // AC1: Check for active exam — auto-expire stale IN_PROGRESS exams first
         ExamSimulation activeExam = examRepository
-            .findByUserIdAndStatus(userId, ExamSimulation.ExamStatus.IN_PROGRESS)
-            .orElse(null);
+                .findByUserIdAndStatus(userId, ExamSimulation.ExamStatus.IN_PROGRESS)
+                .orElse(null);
 
         if (activeExam != null) {
-            // ✅ Use custom exception for proper 409 Conflict response
-            throw new ActiveExamAlreadyExistsException(userId, activeExam.getId());
+            if (Instant.now().isAfter(activeExam.getExpiresAt())) {
+                // Exam time window has passed — expire it silently so user can start fresh
+                log.info("Auto-expiring stale IN_PROGRESS exam {} for user {} (expired at {})",
+                        activeExam.getId(), userId, activeExam.getExpiresAt());
+                activeExam.setStatus(ExamSimulation.ExamStatus.EXPIRED);
+                examRepository.save(activeExam);
+            } else {
+                // ✅ Use custom exception for proper 409 Conflict response
+                throw new ActiveExamAlreadyExistsException(userId, activeExam.getId());
+            }
         }
 
         // ✅ Belgian exam standard: 20 EASY + 20 MEDIUM + 10 HARD = 50 questions
@@ -116,19 +128,19 @@ public class ExamService {
         List<QuizQuestion> easyPool = questionRepository
                 .findRandomQuestionsByDifficulty(QuizQuestion.DifficultyLevel.EASY).stream()
                 .filter(q -> q != null && q.getId() != null)
-                .filter(q -> q.getOptions() != null && q.getOptions().size() >= 2)
+                .filter(q -> hasMinValidOptionsForExam(q))
                 .collect(Collectors.toList());
 
         List<QuizQuestion> mediumPool = questionRepository
                 .findRandomQuestionsByDifficulty(QuizQuestion.DifficultyLevel.MEDIUM).stream()
                 .filter(q -> q != null && q.getId() != null)
-                .filter(q -> q.getOptions() != null && q.getOptions().size() >= 2)
+                .filter(q -> hasMinValidOptionsForExam(q))
                 .collect(Collectors.toList());
 
         List<QuizQuestion> hardPool = questionRepository
                 .findRandomQuestionsByDifficulty(QuizQuestion.DifficultyLevel.HARD).stream()
                 .filter(q -> q != null && q.getId() != null)
-                .filter(q -> q.getOptions() != null && q.getOptions().size() >= 2)
+                .filter(q -> hasMinValidOptionsForExam(q))
                 .collect(Collectors.toList());
 
         log.debug("Difficulty pool sizes — EASY: {}, MEDIUM: {}, HARD: {}",
@@ -257,8 +269,30 @@ public class ExamService {
     }
 
     /**
+     * Returns {@code true} if the question has at least 2 options whose text is
+     * free of placeholder or corrupted content across all four language fields.
+     * Questions failing this check are excluded from the exam pool.
+     */
+    private boolean hasMinValidOptionsForExam(QuizQuestion question) {
+        if (question.getOptions() == null) {
+            return false;
+        }
+        long validCount = question.getOptions().stream()
+                .filter(option -> !PlaceholderDetector.hasPlaceholder(
+                        option.getOptionTextEn(), option.getOptionTextNl(),
+                        option.getOptionTextFr(), option.getOptionTextAr()))
+                .count();
+        if (validCount < 2) {
+            log.warn("⚠️ Exam pool: question {} excluded — only {} valid option(s) after placeholder check",
+                    question.getId(), validCount);
+        }
+        return validCount >= 2;
+    }
+
+    /**
      * Get active exam for user.
-     * ✅ Eagerly loads exam questions and options to prevent LazyInitializationException
+     * ✅ Eagerly loads exam questions and options to prevent
+     * LazyInitializationException
      *
      * @param userId User ID
      * @return Active exam or null
@@ -270,7 +304,8 @@ public class ExamService {
 
         if (exam != null) {
             // ✅ Force load exam questions and their options inside transaction
-            List<ExamSimulationQuestion> questions = examQuestionRepository.findByExamIdOrderByQuestionOrder(exam.getId());
+            List<ExamSimulationQuestion> questions = examQuestionRepository
+                    .findByExamIdOrderByQuestionOrder(exam.getId());
             questions.forEach(esq -> {
                 QuizQuestion q = esq.getQuestion();
                 if (q != null && q.getOptions() != null) {
@@ -283,18 +318,19 @@ public class ExamService {
     }
 
     /**
-     * Get completed exams for user.
+     * Get exam history for user — includes COMPLETED, EXPIRED, and ABANDONED exams.
+     * IN_PROGRESS exams are excluded (they haven't produced results yet).
      *
      * @param userId User ID
-     * @return List of completed exams ordered by completion date (newest first)
+     * @return All non-active exams ordered by start date (newest first)
      */
     @Transactional(readOnly = true)
     public List<ExamSimulation> getCompletedExams(Long userId) {
-        log.info("Fetching completed exams for user: {}", userId);
-        return examRepository.findByUserIdAndStatusOrderByCompletedAtDesc(
-            userId,
-            ExamSimulation.ExamStatus.COMPLETED
-        );
+        log.info("Fetching exam history for user: {}", userId);
+        return examRepository.findByUserIdOrderByStartedAtDesc(userId)
+                .stream()
+                .filter(e -> e.getStatus() != ExamSimulation.ExamStatus.IN_PROGRESS)
+                .collect(java.util.stream.Collectors.toList());
     }
 
     /**
@@ -368,34 +404,46 @@ public class ExamService {
             log.warn("Failed to create exam notification for examId={}: {}", examId, ex.getMessage());
         }
 
-        // ── Story N2: Fire WEAK_AREA notifications (deduped per 24h) ─────────
+        // ── Story N2: Persist WEAK_AREA rows + fire notification (deduped per 24h)
+        // ──────────
         try {
             List<ExamSimulationAnswer> allAnswers = answerRepository.findByExamId(examId);
             Map<Long, CategoryBreakdownDTO> categoryMap = calculateCategoryBreakdown(allAnswers);
             Instant weakAreaCutoff = Instant.now().minusSeconds(24 * 3600);
+            boolean notifSent = false;
             for (CategoryBreakdownDTO cat : categoryMap.values()) {
                 if (Boolean.TRUE.equals(cat.getIsWeakArea())) {
-                    // Dedup: skip if we already sent a WEAK_AREA notif for this user in the last 24h
-                    // (We use category name in message but dedup on type+userId+window to avoid flooding)
-                    boolean recentlySent = !notificationRepository
-                            .findByUserIdAndTypeAndCreatedAtAfter(
-                                    exam.getUserId(), NotificationType.WEAK_AREA, weakAreaCutoff)
-                            .isEmpty();
-                    if (!recentlySent) {
-                        notificationService.createWeakAreaNotification(
-                                exam.getUserId(), cat.getCategoryNameEn());
-                        log.info("WEAK_AREA notification sent for userId={}, category={}",
-                                exam.getUserId(), cat.getCategoryNameEn());
-                        break; // Send max 1 weak-area notif per exam to avoid spam
-                    } else {
-                        log.debug("WEAK_AREA notification skipped (sent within 24h) for userId={}",
-                                exam.getUserId());
-                        break;
+                    // ── Persist every weak category to user_weak_areas (idempotent upsert) ──
+                    weakAreaRepository.upsertByCategoryName(
+                            exam.getUserId(),
+                            cat.getCategoryNameEn(),
+                            cat.getTotalQuestions(),
+                            cat.getCorrectAnswers(),
+                            cat.getWrongAnswers());
+                    log.debug("Weak area persisted for userId={}, category={}", exam.getUserId(),
+                            cat.getCategoryNameEn());
+
+                    // ── Send max 1 notification per exam (deduped per 24h) ──
+                    if (!notifSent) {
+                        boolean recentlySent = !notificationRepository
+                                .findByUserIdAndTypeAndCreatedAtAfter(
+                                        exam.getUserId(), NotificationType.WEAK_AREA, weakAreaCutoff)
+                                .isEmpty();
+                        if (!recentlySent) {
+                            notificationService.createWeakAreaNotification(
+                                    exam.getUserId(), cat.getCategoryNameEn());
+                            log.info("WEAK_AREA notification sent for userId={}, category={}",
+                                    exam.getUserId(), cat.getCategoryNameEn());
+                        } else {
+                            log.debug("WEAK_AREA notification skipped (sent within 24h) for userId={}",
+                                    exam.getUserId());
+                        }
+                        notifSent = true;
                     }
                 }
             }
         } catch (Exception ex) {
-            log.warn("Failed to create weak-area notifications for examId={}: {}", examId, ex.getMessage());
+            log.warn("Failed to persist/notify weak-area for examId={}: {}", examId, ex.getMessage());
         }
 
         // ── Story N3: Fire ACHIEVEMENT notifications ──────────────────────────
@@ -412,9 +460,11 @@ public class ExamService {
             LocalDateTime now_ldt = LocalDateTime.now();
             for (ExamSimulationAnswer answer : answers) {
                 QuizQuestion q = answer.getQuestion();
-                if (q == null) continue;
+                if (q == null)
+                    continue;
                 Category cat = q.getCategory();
-                if (cat == null) continue;
+                if (cat == null)
+                    continue;
 
                 UserCategoryProgress progress = progressRepository
                         .findByUserIdAndCategoryId(userId, cat.getId())
@@ -450,7 +500,8 @@ public class ExamService {
             LocalDateTime now_ldt2 = LocalDateTime.now();
             for (ExamSimulationAnswer answer : answers) {
                 QuizQuestion q = answer.getQuestion();
-                if (q == null) continue;
+                if (q == null)
+                    continue;
                 historyRepository.upsertQuestionAnswered(
                         userId,
                         q.getId(),
@@ -482,11 +533,11 @@ public class ExamService {
         log.info("Cancelling exam: {}", examId);
 
         ExamSimulation exam = examRepository.findById(examId)
-            .orElseThrow(() -> new ExamNotFoundException("Exam not found: " + examId));
+                .orElseThrow(() -> new ExamNotFoundException("Exam not found: " + examId));
 
         if (exam.getStatus() != ExamSimulation.ExamStatus.IN_PROGRESS) {
             log.warn("Cannot cancel exam that is not in progress: examId={}, status={}",
-                examId, exam.getStatus());
+                    examId, exam.getStatus());
             throw new ExamNotActiveException("Exam is not active");
         }
 
@@ -497,6 +548,14 @@ public class ExamService {
         exam.setScorePercentage(0.0);
 
         examRepository.save(exam);
+
+        // Fire exam-failed notification so the user sees a result in the dashboard
+        try {
+            notificationService.createExamFailedNotification(
+                    exam.getUserId(), examId, 0, EXAM_QUESTION_COUNT, PASSING_SCORE);
+        } catch (Exception ex) {
+            log.warn("Failed to create notification for cancelled examId={}: {}", examId, ex.getMessage());
+        }
 
         log.info("✅ Exam cancelled: examId={}", examId);
     }
@@ -513,14 +572,14 @@ public class ExamService {
      * - Updates existing answer if already answered
      * - Does NOT reveal correctness (security)
      *
-     * @param examId Exam simulation ID
+     * @param examId     Exam simulation ID
      * @param questionId Question ID
-     * @param request Answer submission request
+     * @param request    Answer submission request
      * @return Answer submission response
-     * @throws ExamNotFoundException if exam not found
-     * @throws ExamNotActiveException if exam not in progress
+     * @throws ExamNotFoundException     if exam not found
+     * @throws ExamNotActiveException    if exam not in progress
      * @throws QuestionNotFoundException if question not found in exam
-     * @throws InvalidAnswerException if selected option invalid
+     * @throws InvalidAnswerException    if selected option invalid
      */
     @Transactional
     public SubmitExamAnswerResponse submitAnswer(
@@ -537,8 +596,7 @@ public class ExamService {
         ExamSimulation exam = getExamById(examId);
         if (exam.getStatus() != ExamSimulation.ExamStatus.IN_PROGRESS) {
             throw new ExamNotActiveException(
-                    String.format("Cannot submit answer. Exam status: %s", exam.getStatus())
-            );
+                    String.format("Cannot submit answer. Exam status: %s", exam.getStatus()));
         }
 
         // Story A4: Check time limit
@@ -549,41 +607,35 @@ public class ExamService {
             log.warn("Exam {} expired at {}. Current time: {}", examId, exam.getExpiresAt(), now);
             throw new ExamExpiredException(
                     String.format("Exam has expired. Time limit: %d minutes", EXAM_TIME_LIMIT_MINUTES),
-                    examId
-            );
+                    examId);
         }
 
         // 2. Validate question belongs to this exam
         examQuestionRepository
                 .findByExamIdAndQuestionId(examId, questionId)
                 .orElseThrow(() -> new QuestionNotFoundException(
-                        String.format("Question %d not found in exam %d", questionId, examId)
-                ));
+                        String.format("Question %d not found in exam %d", questionId, examId)));
 
         // Load the actual question entity
         QuizQuestion question = questionRepository.findById(questionId)
                 .orElseThrow(() -> new QuestionNotFoundException(
-                        String.format("Question %d not found", questionId)
-                ));
+                        String.format("Question %d not found", questionId)));
 
         // 3. Validate selected option exists and belongs to question
         QuizAnswerOption selectedOption = optionRepository
                 .findById(request.getSelectedOptionId())
                 .orElseThrow(() -> new InvalidAnswerException(
-                        String.format("Invalid option ID: %d", request.getSelectedOptionId())
-                ));
+                        String.format("Invalid option ID: %d", request.getSelectedOptionId())));
 
         if (!selectedOption.getQuestion().getId().equals(questionId)) {
             throw new InvalidAnswerException(
-                    "Selected option does not belong to this question"
-            );
+                    "Selected option does not belong to this question");
         }
 
         // 4. Check if answer already exists (update if exists, create if not)
         ExamSimulationAnswer answer = answerRepository
                 .findByExamIdAndQuestionId(examId, questionId)
                 .orElse(null);
-
 
         if (answer == null) {
             // Create new answer
@@ -634,9 +686,9 @@ public class ExamService {
      * @param examId Exam ID
      * @param userId User ID (for ownership verification)
      * @return Comprehensive exam results with recommendations
-     * @throws ExamNotFoundException if exam not found
+     * @throws ExamNotFoundException     if exam not found
      * @throws ExamNotCompletedException if exam not completed
-     * @throws UnauthorizedException if user doesn't own the exam
+     * @throws UnauthorizedException     if user doesn't own the exam
      */
     @Transactional // ✅ Writable transaction (allows auto-expire save)
     public ExamResultsDTO getExamResults(Long examId, Long userId) {
@@ -645,8 +697,7 @@ public class ExamService {
         // 1. Load exam and verify ownership
         ExamSimulation exam = examRepository.findById(examId)
                 .orElseThrow(() -> new ExamNotFoundException(
-                        String.format("Exam %d not found", examId)
-                ));
+                        String.format("Exam %d not found", examId)));
 
         if (!exam.getUserId().equals(userId)) {
             throw new UnauthorizedException(userId, examId);
@@ -680,6 +731,9 @@ public class ExamService {
         // 5. Get incorrect questions (with enhanced details)
         List<IncorrectQuestionDTO> incorrectQuestions = getIncorrectQuestions(answers);
 
+        // 5b. Get all answered questions for full review
+        List<AllAnsweredQuestionDTO> allAnswers = getAllAnswers(answers);
+
         // 6. Calculate statistics
         int answeredCount = answers.size();
         int correctCount = (int) answers.stream().filter(ExamSimulationAnswer::getIsCorrect).count();
@@ -702,8 +756,7 @@ public class ExamService {
         if (exam.getStartedAt() != null && exam.getCompletedAt() != null) {
             long durationSeconds = java.time.Duration.between(
                     exam.getStartedAt(),
-                    exam.getCompletedAt()
-            ).getSeconds();
+                    exam.getCompletedAt()).getSeconds();
             durationMinutes = (int) (durationSeconds / 60);
         }
 
@@ -741,6 +794,7 @@ public class ExamService {
                 // Breakdowns
                 .categoryBreakdown(categoryBreakdown)
                 .incorrectQuestions(incorrectQuestions)
+                .allAnswers(allAnswers)
                 .build();
 
         log.info("✅ Exam results calculated: examId={}, score={}/{} ({}%), passed={}",
@@ -851,16 +905,66 @@ public class ExamService {
                             .explanationAr(question.getExplanationAr())
                             .explanationNl(question.getExplanationNl())
                             .explanationFr(question.getExplanationFr())
-                            .categoryName(question.getCategory() != null ? question.getCategory().getNameEn() : "Unknown")
+                            .categoryName(
+                                    question.getCategory() != null ? question.getCategory().getNameEn() : "Unknown")
                             // Production enhancements (v2.0)
                             .categoryCode(question.getCategory() != null ? question.getCategory().getCode() : null)
                             .contentImageUrl(question.getContentImageUrl()) // Traffic sign image
                             .userAnswerOptionId(selectedOption.getId()) // For analytics
                             .correctAnswerOptionId(correctOption.getId()) // For analytics
-                            .typicalErrorType(question.getTypicalErrorType() != null ? question.getTypicalErrorType().name() : null)
+                            .typicalErrorType(
+                                    question.getTypicalErrorType() != null ? question.getTypicalErrorType().name()
+                                            : null)
                             .build();
                 })
                 .filter(java.util.Objects::nonNull) // Remove nulls
+                .collect(Collectors.toList());
+    }
+
+    /**
+     * Get all answered questions (correct and incorrect) for full review.
+     */
+    private List<AllAnsweredQuestionDTO> getAllAnswers(List<ExamSimulationAnswer> answers) {
+        return answers.stream()
+                .map(answer -> {
+                    QuizQuestion question = answer.getQuestion();
+                    QuizAnswerOption selectedOption = answer.getSelectedOption();
+
+                    if (question == null || selectedOption == null) {
+                        return null;
+                    }
+
+                    QuizAnswerOption correctOption = question.getOptions().stream()
+                            .filter(QuizAnswerOption::getIsCorrect)
+                            .findFirst()
+                            .orElse(null);
+
+                    if (correctOption == null) {
+                        return null;
+                    }
+
+                    return AllAnsweredQuestionDTO.builder()
+                            .questionId(question.getId())
+                            .questionTextEn(question.getQuestionEn())
+                            .questionTextAr(question.getQuestionAr())
+                            .questionTextNl(question.getQuestionNl())
+                            .questionTextFr(question.getQuestionFr())
+                            .selectedOptionId(selectedOption.getId())
+                            .selectedOptionText(selectedOption.getOptionTextEn())
+                            .correctOptionId(correctOption.getId())
+                            .correctOptionText(correctOption.getOptionTextEn())
+                            .explanationEn(question.getExplanationEn())
+                            .explanationAr(question.getExplanationAr())
+                            .explanationNl(question.getExplanationNl())
+                            .explanationFr(question.getExplanationFr())
+                            .categoryName(
+                                    question.getCategory() != null ? question.getCategory().getNameEn() : "Unknown")
+                            .categoryCode(question.getCategory() != null ? question.getCategory().getCode() : null)
+                            .contentImageUrl(question.getContentImageUrl())
+                            .isCorrect(answer.getIsCorrect())
+                            .build();
+                })
+                .filter(java.util.Objects::nonNull)
                 .collect(Collectors.toList());
     }
 
@@ -885,14 +989,14 @@ public class ExamService {
      * Generate personalized recommendation based on exam performance.
      * Production v2.0 helper method.
      *
-     * @param passed Whether user passed the exam
-     * @param weakCategories List of weak category names
+     * @param passed          Whether user passed the exam
+     * @param weakCategories  List of weak category names
      * @param scorePercentage Score percentage (0-100)
-     * @param pointsToPass Points needed to pass (0 if already passed)
+     * @param pointsToPass    Points needed to pass (0 if already passed)
      * @return Personalized recommendation message
      */
     private String generateRecommendation(boolean passed, List<String> weakCategories,
-                                          double scorePercentage, int pointsToPass) {
+            double scorePercentage, int pointsToPass) {
         if (passed) {
             // User passed the exam
             if (weakCategories.isEmpty() && scorePercentage >= 96.0) {
@@ -905,7 +1009,8 @@ public class ExamService {
         } else {
             // User failed the exam
             if (weakCategories.isEmpty()) {
-                return String.format("Keep practicing! You need %d more correct answer%s. Focus on understanding each question type.",
+                return String.format(
+                        "Keep practicing! You need %d more correct answer%s. Focus on understanding each question type.",
                         pointsToPass, pointsToPass == 1 ? "" : "s");
             } else {
                 return String.format("Focus on: %s. You need %d more correct answer%s. Then retake the exam.",

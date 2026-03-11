@@ -2,6 +2,8 @@ package com.readyroad.readyroadbackend.service;
 
 import com.readyroad.readyroadbackend.domain.entity.Notification;
 import com.readyroad.readyroadbackend.domain.entity.NotificationType;
+import com.readyroad.readyroadbackend.domain.entity.User;
+import com.readyroad.readyroadbackend.domain.enums.Role;
 import com.readyroad.readyroadbackend.domain.repository.NotificationRepository;
 import com.readyroad.readyroadbackend.domain.repository.UserRepository;
 import com.readyroad.readyroadbackend.dto.NotificationDTO;
@@ -18,10 +20,12 @@ import java.util.List;
  * Notification Service — full implementation.
  *
  * Provides:
- *  - CRUD for user notifications (list, unread count, mark-read)
- *  - Factory helpers for creating typed notifications (called from other services)
+ * - CRUD for user notifications (list, unread count, mark-read)
+ * - Factory helpers for creating typed notifications (called from other
+ * services)
  *
- * All read/write operations are scoped to the authenticated user (row-level security).
+ * All read/write operations are scoped to the authenticated user (row-level
+ * security).
  */
 @Slf4j
 @Service
@@ -29,7 +33,7 @@ import java.util.List;
 public class NotificationService {
 
     private final NotificationRepository notificationRepository;
-    private final UserRepository         userRepository;
+    private final UserRepository userRepository;
 
     // ── Read operations ──────────────────────────────────────────────────────
 
@@ -86,7 +90,7 @@ public class NotificationService {
 
         if (Boolean.TRUE.equals(notification.getIsRead())) {
             log.debug("Notification {} already read", notificationId);
-            return;  // Idempotent
+            return; // Idempotent
         }
 
         notification.markRead();
@@ -114,10 +118,10 @@ public class NotificationService {
     /**
      * Create an EXAM_PASSED notification.
      *
-     * @param userId  recipient user ID
-     * @param examId  the exam that was completed
-     * @param score   correct answers count (e.g. 43)
-     * @param total   total questions (50)
+     * @param userId recipient user ID
+     * @param examId the exam that was completed
+     * @param score  correct answers count (e.g. 43)
+     * @param total  total questions (50)
      */
     @Transactional
     public void createExamPassedNotification(Long userId, Long examId, int score, int total) {
@@ -155,7 +159,8 @@ public class NotificationService {
                         "You scored %d/%d (%d%%). You needed %d more correct answers to pass. Keep practicing!",
                         score, total, pct, pointsShort))
                 .messageKey("notif.msg.exam_failed")
-                .messageParams(String.format("{\"score\":%d,\"total\":%d,\"pct\":%d,\"needed\":%d}", score, total, pct, pointsShort))
+                .messageParams(String.format("{\"score\":%d,\"total\":%d,\"pct\":%d,\"needed\":%d}", score, total, pct,
+                        pointsShort))
                 .link("/exam/results/" + examId)
                 .build());
     }
@@ -176,8 +181,8 @@ public class NotificationService {
                         "Your accuracy in '%s' is below 60%%. Consider reviewing this topic before your next exam.",
                         categoryName))
                 .messageKey("notif.msg.weak_area")
-                .messageParams(String.format("{\"category\":\"%s\"}", categoryName.replace("\\", "\\\\").replace("\"", "\\\"")
-                ))
+                .messageParams(String.format("{\"category\":\"%s\"}",
+                        categoryName.replace("\\", "\\\\").replace("\"", "\\\"")))
                 .link("/analytics/weak-areas")
                 .build());
     }
@@ -185,8 +190,8 @@ public class NotificationService {
     /**
      * Create an ACHIEVEMENT notification for a study-streak milestone.
      *
-     * @param userId      recipient user ID
-     * @param streakDays  the streak milestone reached (e.g. 7, 14, 30)
+     * @param userId     recipient user ID
+     * @param streakDays the streak milestone reached (e.g. 7, 14, 30)
      */
     @Transactional
     public void createStreakNotification(Long userId, int streakDays) {
@@ -238,14 +243,16 @@ public class NotificationService {
                 .message(message)
                 .messageKey("notif.msg.study_reminder")
                 .messageParams(String.format("{\"days\":%d}", inactiveDays))
-                .link("/quiz")
+                .link("/practice")
                 .build());
     }
 
     /**
-     * Create a generic SYSTEM notification (admin broadcasts, feature announcements, …).
+     * Create a generic SYSTEM notification (admin broadcasts, feature
+     * announcements, …).
      *
-     * @param userId  recipient user ID (null = not used here; caller handles fan-out)
+     * @param userId  recipient user ID (null = not used here; caller handles
+     *                fan-out)
      * @param title   notification headline
      * @param message full notification text
      * @param link    optional deep-link
@@ -257,6 +264,138 @@ public class NotificationService {
                 .type(NotificationType.SYSTEM)
                 .title(title)
                 .message(message)
+                .link(link)
+                .build());
+    }
+
+    // ── Admin fan-out helpers ─────────────────────────────────────────────────
+
+    /**
+     * Notify every user with ROLE_ADMIN.
+     * Silently skips if no admins are found.
+     */
+    @Transactional
+    public void notifyAllAdmins(String title, String message, String link) {
+        List<User> admins = userRepository.findByRole(Role.ADMIN);
+        for (User admin : admins) {
+            try {
+                save(Notification.builder()
+                        .userId(admin.getId())
+                        .type(NotificationType.SYSTEM)
+                        .title(title)
+                        .message(message)
+                        .link(link)
+                        .build());
+            } catch (Exception ex) {
+                log.warn("Failed to notify admin userId={}: {}", admin.getId(), ex.getMessage());
+            }
+        }
+        log.info("Admin fan-out sent to {} admins: title={}", admins.size(), title);
+    }
+
+    /**
+     * Notify all admins about a new user registration.
+     */
+    @Transactional
+    public void notifyAdminsNewUser(String newUsername, String newEmail) {
+        List<User> admins = userRepository.findByRole(Role.ADMIN);
+        for (User admin : admins) {
+            try {
+                save(Notification.builder()
+                        .userId(admin.getId())
+                        .type(NotificationType.ADMIN_NEW_USER)
+                        .title("New user registered")
+                        .message(String.format("User '%s' (%s) just created an account.", newUsername, newEmail))
+                        .messageKey("notif.msg.admin.new_user")
+                        .messageParams(String.format("{\"username\":\"%s\",\"email\":\"%s\"}", newUsername, newEmail))
+                        .link("/admin/users")
+                        .build());
+            } catch (Exception ex) {
+                log.warn("Failed to notify admin userId={} about new user: {}", admin.getId(), ex.getMessage());
+            }
+        }
+    }
+
+    /**
+     * Notify all admins with a daily exam stats digest.
+     */
+    @Transactional
+    public void notifyAdminsDailyStats(long totalExams, long passed, long failed) {
+        String message = String.format(
+                "Today: %d exams taken — %d passed (%.0f%%), %d failed.",
+                totalExams, passed,
+                totalExams > 0 ? (passed * 100.0 / totalExams) : 0,
+                failed);
+        List<User> admins = userRepository.findByRole(Role.ADMIN);
+        for (User admin : admins) {
+            try {
+                save(Notification.builder()
+                        .userId(admin.getId())
+                        .type(NotificationType.ADMIN_EXAM_STATS)
+                        .title("Daily exam summary")
+                        .message(message)
+                        .messageKey("notif.msg.admin.exam_stats")
+                        .messageParams(String.format(
+                                "{\"total\":%d,\"passed\":%d,\"failed\":%d}", totalExams, passed, failed))
+                        .link("/admin/dashboard")
+                        .build());
+            } catch (Exception ex) {
+                log.warn("Failed to send daily stats to admin userId={}: {}", admin.getId(), ex.getMessage());
+            }
+        }
+    }
+
+    /**
+     * Send a manual platform-wide alert from an admin to all users.
+     */
+    @Transactional
+    public void broadcastPlatformAlert(String title, String message, String link) {
+        List<User> allUsers = userRepository.findByIsActiveTrue();
+        for (User user : allUsers) {
+            try {
+                save(Notification.builder()
+                        .userId(user.getId())
+                        .type(NotificationType.ADMIN_PLATFORM_ALERT)
+                        .title(title)
+                        .message(message)
+                        .link(link)
+                        .build());
+            } catch (Exception ex) {
+                log.warn("Failed to broadcast to userId={}: {}", user.getId(), ex.getMessage());
+            }
+        }
+        log.info("Platform alert broadcast to {} users", allUsers.size());
+    }
+
+    /**
+     * Notify a user that they completed a lesson.
+     */
+    @Transactional
+    public void createLessonProgressNotification(Long userId, String lessonTitle) {
+        save(Notification.builder()
+                .userId(userId)
+                .type(NotificationType.LESSON_PROGRESS)
+                .title("Lesson completed!")
+                .message(String.format("You finished the lesson: \"%s\". Keep it up!", lessonTitle))
+                .messageKey("notif.msg.lesson_progress")
+                .messageParams(String.format("{\"lesson\":\"%s\"}", lessonTitle))
+                .link("/lessons")
+                .build());
+    }
+
+    /**
+     * Suggest the next learning step for a user.
+     */
+    @Transactional
+    public void createNextStepNotification(Long userId, String lessonTitle, String link) {
+        save(Notification.builder()
+                .userId(userId)
+                .type(NotificationType.NEXT_STEP)
+                .title("What to study next")
+                .message("Continue to: " + lessonTitle)
+                .messageKey("notif.msg.next_step")
+                .messageParams(String.format("{\"lesson\":\"%s\"}",
+                        lessonTitle.replace("\\", "\\\\").replace("\"", "\\\"")))
                 .link(link)
                 .build());
     }

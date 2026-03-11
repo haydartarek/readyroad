@@ -10,6 +10,7 @@ import com.readyroad.readyroadbackend.domain.repository.UserQuestionHistoryRepos
 import com.readyroad.readyroadbackend.dto.AdminQuizQuestionRequest;
 import com.readyroad.readyroadbackend.dto.response.AdminQuizQuestionResponse;
 import com.readyroad.readyroadbackend.dto.response.PageResponse;
+import com.readyroad.readyroadbackend.util.PlaceholderDetector;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
@@ -191,6 +192,12 @@ public class AdminQuizService {
             if (opt.getTextEn() == null || opt.getTextEn().isBlank()) {
                 throw new IllegalArgumentException(
                         "All options must have English text");
+            }
+            if (PlaceholderDetector.hasPlaceholderNonBlank(
+                    opt.getTextEn(), opt.getTextNl(), opt.getTextFr(), opt.getTextAr())) {
+                throw new IllegalArgumentException(
+                        "Option text contains placeholder content (e.g. 'Option A', 'Optie B'). " +
+                                "Provide real answer text for all language fields.");
             }
         }
     }

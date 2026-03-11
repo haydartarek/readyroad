@@ -4,16 +4,14 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.readyroad.readyroadbackend.domain.entity.Category;
-import com.readyroad.readyroadbackend.domain.entity.Lesson;
-import com.readyroad.readyroadbackend.domain.entity.LessonPage;
 import com.readyroad.readyroadbackend.domain.entity.QuizAnswerOption;
 import com.readyroad.readyroadbackend.domain.entity.QuizQuestion;
 import com.readyroad.readyroadbackend.domain.entity.TrafficSign;
 import com.readyroad.readyroadbackend.domain.repository.CategoryRepository;
-import com.readyroad.readyroadbackend.domain.repository.LessonRepository;
 import com.readyroad.readyroadbackend.domain.repository.QuizQuestionRepository;
 import com.readyroad.readyroadbackend.domain.repository.TrafficSignRepository;
 import com.readyroad.readyroadbackend.dto.ImportReport;
+import com.readyroad.readyroadbackend.util.PlaceholderDetector;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -32,7 +30,6 @@ public class DataImportService {
     private final CategoryRepository categoryRepository;
     private final TrafficSignRepository trafficSignRepository;
     private final QuizQuestionRepository quizQuestionRepository;
-    private final LessonRepository lessonRepository;
     private final ObjectMapper objectMapper;
 
     // Mapping from JSON category names to database category codes
@@ -53,12 +50,10 @@ public class DataImportService {
     public DataImportService(CategoryRepository categoryRepository,
             TrafficSignRepository trafficSignRepository,
             QuizQuestionRepository quizQuestionRepository,
-            LessonRepository lessonRepository,
             ObjectMapper objectMapper) {
         this.categoryRepository = categoryRepository;
         this.trafficSignRepository = trafficSignRepository;
         this.quizQuestionRepository = quizQuestionRepository;
-        this.lessonRepository = lessonRepository;
         this.objectMapper = objectMapper;
     }
 
@@ -102,7 +97,7 @@ public class DataImportService {
         JsonNode root = objectMapper.readTree(file);
         int updated = 0;
 
-        Iterator<Map.Entry<String, JsonNode>> fields = root.fields();
+        Iterator<Map.Entry<String, JsonNode>> fields = root.properties().iterator();
         while (fields.hasNext()) {
             Map.Entry<String, JsonNode> entry = fields.next();
             String categoryName = entry.getKey();
@@ -389,7 +384,7 @@ public class DataImportService {
         ImportReport.Builder b = new ImportReport.Builder("categories", dryRun);
         try {
             JsonNode root = objectMapper.readTree(content);
-            Iterator<Map.Entry<String, JsonNode>> fields = root.fields();
+            Iterator<Map.Entry<String, JsonNode>> fields = root.properties().iterator();
             while (fields.hasNext()) {
                 Map.Entry<String, JsonNode> entry = fields.next();
                 String categoryName = entry.getKey();
@@ -515,18 +510,26 @@ public class DataImportService {
                         String tEn = getTextOrNull(optNode, "textEn");
                         if (tEn == null)
                             tEn = "";
+                        String tAr = getTextOrNull(optNode, "textAr") != null ? getTextOrNull(optNode, "textAr") : tEn;
+                        String tNl = getTextOrNull(optNode, "textNl") != null ? getTextOrNull(optNode, "textNl") : tEn;
+                        String tFr = getTextOrNull(optNode, "textFr") != null ? getTextOrNull(optNode, "textFr") : tEn;
+                        // Reject placeholder / corrupted translations at import time
+                        if (PlaceholderDetector.hasPlaceholderNonBlank(tEn, tNl, tFr, tAr)) {
+                            log.warn("⚠️ DataImport: placeholder option skipped — question='{}', text_en='{}'", qEn,
+                                    tEn);
+                            order++;
+                            continue;
+                        }
                         opt.setOptionTextEn(tEn);
-                        opt.setOptionTextAr(
-                                getTextOrNull(optNode, "textAr") != null ? getTextOrNull(optNode, "textAr") : tEn);
-                        opt.setOptionTextNl(
-                                getTextOrNull(optNode, "textNl") != null ? getTextOrNull(optNode, "textNl") : tEn);
-                        opt.setOptionTextFr(
-                                getTextOrNull(optNode, "textFr") != null ? getTextOrNull(optNode, "textFr") : tEn);
+                        opt.setOptionTextAr(tAr);
+                        opt.setOptionTextNl(tNl);
+                        opt.setOptionTextFr(tFr);
                         JsonNode ic = optNode.get("isCorrect");
                         opt.setIsCorrect(ic != null && ic.asBoolean());
                         opt.setDisplayOrder(order++);
                         qq.addOption(opt);
                     }
+                    ;
                     quizQuestionRepository.save(qq);
                 }
             }

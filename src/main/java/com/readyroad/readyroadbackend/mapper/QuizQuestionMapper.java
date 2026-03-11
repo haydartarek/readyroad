@@ -4,9 +4,12 @@ import com.readyroad.readyroadbackend.domain.entity.QuizAnswerOption;
 import com.readyroad.readyroadbackend.domain.entity.QuizQuestion;
 import com.readyroad.readyroadbackend.dto.QuizAnswerOptionDTO;
 import com.readyroad.readyroadbackend.dto.QuizQuestionDTO;
+import com.readyroad.readyroadbackend.util.PlaceholderDetector;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
-import java.util.Comparator;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -30,6 +33,7 @@ import java.util.stream.Collectors;
  * @see com.readyroad.readyroadbackend.domain.entity.QuizQuestion
  */
 @Component
+@Slf4j
 public class QuizQuestionMapper {
 
     /**
@@ -69,12 +73,25 @@ public class QuizQuestionMapper {
             dto.setCategoryNameFr(question.getCategory().getNameFr());
         }
 
-        // Options sorted by displayOrder — NO correctness signals exposed
+        // Options: filter placeholder / corrupted translations, then shuffle.
+        // Correct answer identity is always tracked by stable option ID, never by
+        // visual position, so filtering here is safe.
         if (question.getOptions() != null) {
             List<QuizAnswerOptionDTO> optionDTOs = question.getOptions().stream()
-                    .sorted(Comparator.comparingInt(o -> o.getDisplayOrder() != null ? o.getDisplayOrder() : 0))
+                    .filter(option -> {
+                        boolean placeholder = PlaceholderDetector.hasPlaceholder(
+                                option.getOptionTextEn(), option.getOptionTextNl(),
+                                option.getOptionTextFr(), option.getOptionTextAr());
+                        if (placeholder) {
+                            log.warn(
+                                    "⚠️ Placeholder option filtered before DTO — question_id={}, option_id={}, text_en='{}'",
+                                    question.getId(), option.getId(), option.getOptionTextEn());
+                        }
+                        return !placeholder;
+                    })
                     .map(this::toOptionDTO)
-                    .collect(Collectors.toList());
+                    .collect(Collectors.toCollection(ArrayList::new));
+            Collections.shuffle(optionDTOs);
             dto.setOptions(optionDTOs);
         }
 

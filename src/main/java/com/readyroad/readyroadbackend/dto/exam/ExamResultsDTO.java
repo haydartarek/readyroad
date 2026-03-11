@@ -70,4 +70,7 @@ public class ExamResultsDTO {
     // Detailed Breakdown
     private List<CategoryBreakdownDTO> categoryBreakdown;
     private List<IncorrectQuestionDTO> incorrectQuestions;
+
+    // All answered questions (correct + incorrect) for full review
+    private List<AllAnsweredQuestionDTO> allAnswers;
 }

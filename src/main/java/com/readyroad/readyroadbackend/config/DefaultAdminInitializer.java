@@ -39,27 +39,34 @@ public class DefaultAdminInitializer {
         return args -> {
             String adminUsername = "admin";
 
-            // Scenario: Do not recreate default admin user if it already exists
-            if (userRepository.existsByUsername(adminUsername)) {
-                log.info("ℹ️  Default admin user already exists - skipping creation");
-                return;
-            }
-
-            // Scenario: Create default admin user if missing at startup
-            // ⚠️ SECURITY: Generate random password or use environment variable
             String defaultPassword = System.getenv("ADMIN_DEFAULT_PASSWORD");
             if (defaultPassword == null || defaultPassword.isEmpty()) {
                 log.error("❌ CRITICAL: ADMIN_DEFAULT_PASSWORD environment variable not set!");
-                log.error("❌ Cannot create admin user without secure password");
                 log.error("❌ Set ADMIN_DEFAULT_PASSWORD environment variable and restart");
                 return;
             }
 
+            String encodedPassword = passwordEncoder.encode(defaultPassword);
+
+            if (userRepository.existsByUsername(adminUsername)) {
+                // Admin exists (seeded by migration) — always sync password and role from env
+                userRepository.findByUsername(adminUsername).ifPresent(existingAdmin -> {
+                    existingAdmin.setPasswordHash(encodedPassword);
+                    existingAdmin.setRole(Role.ADMIN);
+                    existingAdmin.setIsActive(true);
+                    existingAdmin.setIsLocked(false);
+                    userRepository.save(existingAdmin);
+                    log.info("✅ Admin password and role synced from ADMIN_DEFAULT_PASSWORD env variable");
+                });
+                return;
+            }
+
+            // Create admin user if it doesn't exist at all
             User admin = new User();
             admin.setUsername(adminUsername);
-            admin.setEmail("admin@readyroad.com");
+            admin.setEmail("admin@readyroad.be");
             admin.setFullName("System Administrator");
-            admin.setPasswordHash(passwordEncoder.encode(defaultPassword));
+            admin.setPasswordHash(encodedPassword);
             admin.setRole(Role.ADMIN);
             admin.setIsActive(true);
             admin.setIsLocked(false);

@@ -40,6 +40,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import com.readyroad.readyroadbackend.service.FileUploadService;
+import com.readyroad.readyroadbackend.service.NotificationService;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Sort;
@@ -82,6 +83,7 @@ public class AdminController {
     private final FileUploadService fileUploadService;
     private final SignImportService signImportService;
     private final SignGovernanceService signGovernanceService;
+    private final NotificationService notificationService;
 
     /**
      * Scenario: Admin dashboard returns aggregated stats
@@ -909,5 +911,28 @@ public class AdminController {
                 "activeButDraft", draftActive));
 
         return ResponseEntity.ok(report);
+    }
+
+    /**
+     * Broadcast a platform-wide alert to all active users.
+     * POST /api/admin/notifications/send
+     *
+     * Body: { "title": "...", "message": "...", "link": "..." }
+     */
+    @PostMapping("/notifications/send")
+    public ResponseEntity<?> sendPlatformNotification(@RequestBody Map<String, String> body) {
+        String title = body.get("title");
+        String message = body.get("message");
+        String link = body.getOrDefault("link", "/");
+
+        if (title == null || title.isBlank() || message == null || message.isBlank()) {
+            return ResponseEntity.badRequest()
+                    .body(Map.of("error", "title and message are required"));
+        }
+
+        log.info("Admin broadcast notification: title={}", title);
+        notificationService.broadcastPlatformAlert(title, message, link);
+
+        return ResponseEntity.ok(Map.of("status", "sent", "title", title));
     }
 }

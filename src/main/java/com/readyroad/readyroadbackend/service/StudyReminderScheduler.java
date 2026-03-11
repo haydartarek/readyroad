@@ -10,7 +10,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.time.Instant;
 import java.time.LocalDate;
@@ -21,27 +20,27 @@ import java.util.List;
  * Study Reminder Scheduler — daily cron job that nudges inactive users.
  *
  * Logic:
- *  1. Runs daily at 10:00 AM UTC (configurable via cron-expression).
- *  2. For each active user, checks their most recent answered_at date.
- *  3. If the user has been inactive for ≥ {@code daysInactive} days:
- *     - AND no STUDY_REMINDER was sent in the last {@code cooldownHours} hours:
- *     → Sends a STUDY_REMINDER notification.
+ * 1. Runs daily at 10:00 AM UTC (configurable via cron-expression).
+ * 2. For each active user, checks their most recent answered_at date.
+ * 3. If the user has been inactive for ≥ {@code daysInactive} days:
+ * - AND no STUDY_REMINDER was sent in the last {@code cooldownHours} hours:
+ * → Sends a STUDY_REMINDER notification.
  *
  * Configuration properties (application.yml):
- *  readyroad.study-reminder.enabled         (default: true)
- *  readyroad.study-reminder.days-inactive   (default: 3)
- *  readyroad.study-reminder.cooldown-hours  (default: 24)
- *  readyroad.study-reminder.cron-expression (default: "0 0 10 * * *")
+ * readyroad.study-reminder.enabled (default: true)
+ * readyroad.study-reminder.days-inactive (default: 3)
+ * readyroad.study-reminder.cooldown-hours (default: 24)
+ * readyroad.study-reminder.cron-expression (default: "0 0 10 * * *")
  */
 @Component
 @RequiredArgsConstructor
 @Slf4j
 public class StudyReminderScheduler {
 
-    private final UserRepository                userRepository;
+    private final UserRepository userRepository;
     private final UserQuestionHistoryRepository historyRepository;
-    private final NotificationRepository        notificationRepository;
-    private final NotificationService           notificationService;
+    private final NotificationRepository notificationRepository;
+    private final NotificationService notificationService;
 
     @Value("${readyroad.study-reminder.enabled:true}")
     private boolean enabled;
@@ -57,7 +56,6 @@ public class StudyReminderScheduler {
      * Cron: second minute hour day month weekday
      */
     @Scheduled(cron = "${readyroad.study-reminder.cron-expression:0 0 10 * * *}")
-    @Transactional
     public void sendStudyReminders() {
         if (!enabled) {
             log.info("Study reminder scheduler is disabled — skipping.");
@@ -104,8 +102,9 @@ public class StudyReminderScheduler {
      * Determine whether a user should receive a study reminder.
      *
      * Returns true if:
-     *  (a) The user has never studied OR last studied before the inactivity threshold.
-     *  (b) No STUDY_REMINDER was sent within the cooldown window.
+     * (a) The user has never studied OR last studied before the inactivity
+     * threshold.
+     * (b) No STUDY_REMINDER was sent within the cooldown window.
      */
     private boolean shouldSendReminder(Long userId, LocalDate inactivityThreshold, Instant cooldownCutoff) {
         // Check last activity
@@ -118,7 +117,8 @@ public class StudyReminderScheduler {
                 return false;
             }
         }
-        // If lastDateStr is null: user has NEVER practiced → always eligible for reminder
+        // If lastDateStr is null: user has NEVER practiced → always eligible for
+        // reminder
 
         // Check cooldown — don't spam
         boolean recentlySent = !notificationRepository

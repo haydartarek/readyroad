@@ -1593,40 +1593,6 @@ INSERT INTO traffic_signs (sign_code, category_id, name_ar, name_en, name_nl, na
 );
 
 INSERT INTO traffic_signs (sign_code, category_id, name_ar, name_en, name_nl, name_fr, description_ar, description_en, description_nl, description_fr, image_url, is_active, created_at, updated_at) VALUES (
-  'D5', 
-  (SELECT id FROM categories WHERE code = 'D'),
-  'علامة D5',
-  'Verplicht rondgaand verkeer.',
-  'Verplicht rondgaand verkeer.',
-  'Verplicht rondgaand verkeer.',
-  'علامة D5',
-  'Verplicht rondgaand verkeer.',
-  'Verplicht rondgaand verkeer.',
-  'Verplicht rondgaand verkeer.',
-  'assets/traffic_signs/mandatory_signs/D5.png',
-  TRUE,
-  NOW(),
-  NOW()
-);
-
-INSERT INTO traffic_signs (sign_code, category_id, name_ar, name_en, name_nl, name_fr, description_ar, description_en, description_nl, description_fr, image_url, is_active, created_at, updated_at) VALUES (
-  'D7', 
-  (SELECT id FROM categories WHERE code = 'D'),
-  'ممر دراجات إلزامي',
-  'Compulsory cycle path',
-  'Verplicht fietspad.',
-  'Piste cyclable obligatoire',
-  'ممر دراجات إلزامي',
-  'Compulsory cycle path',
-  'Verplicht fietspad.',
-  'Piste cyclable obligatoire',
-  'assets/traffic_signs/mandatory_signs/D7.png',
-  TRUE,
-  NOW(),
-  NOW()
-);
-
-INSERT INTO traffic_signs (sign_code, category_id, name_ar, name_en, name_nl, name_fr, description_ar, description_en, description_nl, description_fr, image_url, is_active, created_at, updated_at) VALUES (
   'D9a', 
   (SELECT id FROM categories WHERE code = 'D'),
   'علامة D9a',

@@ -53,7 +53,7 @@ INSERT INTO traffic_signs (
  'This traffic sign indicates that parking is only allowed for electric vehicles.',
  'Ce panneau de signalisation indique que le stationnement est uniquement autorisé pour les véhicules électriques.',
  'تشير هذه الإشارة المرورية إلى أنه يسمح بوقوف السيارات الكهربائية فقط.',
- 'images/signs/parkeren/E9a - Parkeren toegelaten.png',  -- ✅ unified: was 'assets/'
+ 'images/signs/parkeren/E9a elektrisch laden Parkeerplaats voorbehouden voor het elektrisch opladen van je wagen.png',  -- fixed: was wrong generic parking image
  'Dit verkeersbord geeft aan dat parkeren alleen is toegestaan voor elektrische voertuigen. Deze plek is exclusief bestemd voor auto''s die op elektrische energie rijden en vaak voorzien van een laadpunt.',
  'This traffic sign indicates that parking is only allowed for electric vehicles. This space is exclusively intended for cars that run on electric energy and is often equipped with a charging point.',
  'Ce panneau de signalisation indique que le stationnement est uniquement autorisé pour les véhicules électriques. Cet emplacement est exclusivement destiné aux voitures fonctionnant à l''énergie électrique.',
