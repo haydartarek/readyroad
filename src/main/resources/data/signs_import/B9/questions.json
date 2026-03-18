@@ -392,5 +392,1870 @@
         "explanation": "لافتات الأولوية ملزمة قانونياً لجميع مستخدمي الطريق. عدم الامتثال مخالفة قد تؤدي إلى غرامات وخصم نقاط من رخصة القيادة."
       }
     }
+  },
+  {
+    "question_id": "B9_Q06",
+    "type": "WHAT_DOES_IT_MEAN",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat geeft het bord B9 aan voor uw positie op de weg?",
+        "choices": [
+          {
+            "text": "U rijdt op een voorrangsweg en heeft voorrang op al het kruisende verkeer",
+            "is_correct": true
+          },
+          {
+            "text": "U moet voorrang verlenen aan alle bestuurders",
+            "is_correct": false
+          },
+          {
+            "text": "U nadert een gevaarlijk kruispunt",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Het bord B9 (voorrangsweg) geeft aan dat u op een weg rijdt met doorlopende voorrang op kruisende zijwegen."
+      },
+      "EN": {
+        "question": "What does sign B9 indicate for your position on the road?",
+        "choices": [
+          {
+            "text": "You are driving on a priority road with right of way over all crossing traffic",
+            "is_correct": true
+          },
+          {
+            "text": "You must give way to all drivers",
+            "is_correct": false
+          },
+          {
+            "text": "You are approaching a dangerous intersection",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Sign B9 (priority road) indicates you are on a road with continuous right of way over intersecting side roads."
+      },
+      "FR": {
+        "question": "Que signifie le panneau B9 pour votre position sur la route ?",
+        "choices": [
+          {
+            "text": "Vous roulez sur une route prioritaire avec droit de passage sur tout le trafic transversal",
+            "is_correct": true
+          },
+          {
+            "text": "Vous devez céder le passage à tous les conducteurs",
+            "is_correct": false
+          },
+          {
+            "text": "Vous approchez d'un carrefour dangereux",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Le panneau B9 (route prioritaire) indique que vous êtes sur une route avec priorité continue sur les voies transversales."
+      },
+      "AR": {
+        "question": "ماذا يشير اللوحة B9 بشأن موقعك على الطريق؟",
+        "choices": [
+          {
+            "text": "أنت تسير على طريق الأولوية وتتمتع بحق الأولوية على جميع المركبات المتقاطعة",
+            "is_correct": true
+          },
+          {
+            "text": "يجب عليك إعطاء الأولوية لجميع السائقين",
+            "is_correct": false
+          },
+          {
+            "text": "أنت تقترب من تقاطع خطير",
+            "is_correct": false
+          }
+        ],
+        "explanation": "اللافتة B9 (طريق الأولوية) تشير إلى أنك على طريق يمنحك أولوية مستمرة على الطرق الجانبية المتقاطعة."
+      }
+    }
+  },
+  {
+    "question_id": "B9_Q07",
+    "type": "TRUE_OR_FALSE",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Waar of niet waar: Op een voorrangsweg heeft u voorrang op voertuigen die vanuit zijwegen de weg oprijden.",
+        "choices": [
+          {
+            "text": "Waar – u heeft altijd voorrang op bestuurders die vanuit kruisende zijwegen rijden",
+            "is_correct": true
+          },
+          {
+            "text": "Niet waar – u moet altijd links rijden",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Waar. Op een voorrangsweg (B9) heeft u voorrang op voertuigen die van kruisende zijwegen komen."
+      },
+      "EN": {
+        "question": "True or false: On a priority road you have right of way over vehicles entering from side roads.",
+        "choices": [
+          {
+            "text": "True – you always have right of way over drivers coming from intersecting side roads",
+            "is_correct": true
+          },
+          {
+            "text": "False – you must always drive on the left",
+            "is_correct": false
+          }
+        ],
+        "explanation": "True. On a priority road (B9) you have right of way over vehicles entering from intersecting side roads."
+      },
+      "FR": {
+        "question": "Vrai ou faux : Sur une route prioritaire, vous avez la priorité sur les véhicules venant des routes latérales.",
+        "choices": [
+          {
+            "text": "Vrai – vous avez toujours la priorité sur les conducteurs venant des voies transversales",
+            "is_correct": true
+          },
+          {
+            "text": "Faux – vous devez toujours rouler à gauche",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Vrai. Sur une route prioritaire (B9), vous avez la priorité sur les véhicules venant des voies transversales."
+      },
+      "AR": {
+        "question": "صحيح أم خاطئ: على طريق الأولوية، لديك حق الأولوية على المركبات القادمة من الطرق الجانبية.",
+        "choices": [
+          {
+            "text": "صحيح – دائماً لديك الأولوية على السائقين القادمين من الطرق الجانبية المتقاطعة",
+            "is_correct": true
+          },
+          {
+            "text": "خاطئ – يجب عليك دائماً السير على اليسار",
+            "is_correct": false
+          }
+        ],
+        "explanation": "صحيح. على طريق الأولوية (B9) لديك حق الأولوية على المركبات القادمة من الطرق الجانبية المتقاطعة."
+      }
+    }
+  },
+  {
+    "question_id": "B9_Q08",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Mag u bij een kruispunt op een voorrangsweg doorrijden zonder voorrang te verlenen aan het zijwegverkeer?",
+        "choices": [
+          {
+            "text": "Ja, op een voorrangsweg heeft u voorrang op kruisende zijwegen",
+            "is_correct": true
+          },
+          {
+            "text": "Nee, u moet altijd stoppen bij een kruispunt",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Op een voorrangsweg (B9) heeft u automatisch voorrang op voertuigen die van kruisende zijwegen komen."
+      },
+      "EN": {
+        "question": "May you continue at an intersection on a priority road without giving way to side road traffic?",
+        "choices": [
+          {
+            "text": "Yes, on a priority road you have right of way over crossing side roads",
+            "is_correct": true
+          },
+          {
+            "text": "No, you must always stop at an intersection",
+            "is_correct": false
+          }
+        ],
+        "explanation": "On a priority road (B9) you automatically have right of way over vehicles coming from intersecting side roads."
+      },
+      "FR": {
+        "question": "Pouvez-vous continuer à un carrefour sur une route prioritaire sans céder le passage au trafic des voies latérales ?",
+        "choices": [
+          {
+            "text": "Oui, sur une route prioritaire vous avez la priorité sur les routes transversales",
+            "is_correct": true
+          },
+          {
+            "text": "Non, vous devez toujours vous arrêter à un carrefour",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Sur une route prioritaire (B9), vous avez automatiquement la priorité sur les véhicules venant des routes transversales."
+      },
+      "AR": {
+        "question": "هل يمكنك الاستمرار عند التقاطع على طريق الأولوية دون إعطاء الأولوية لحركة الطرق الجانبية؟",
+        "choices": [
+          {
+            "text": "نعم، على طريق الأولوية لديك الأولوية على الطرق الجانبية المتقاطعة",
+            "is_correct": true
+          },
+          {
+            "text": "لا، يجب عليك دائماً التوقف عند التقاطع",
+            "is_correct": false
+          }
+        ],
+        "explanation": "على طريق الأولوية (B9) يكون لك تلقائياً حق الأولوية على المركبات القادمة من الطرق الجانبية المتقاطعة."
+      }
+    }
+  },
+  {
+    "question_id": "B9_Q09",
+    "type": "WHAT_IS_PROHIBITED",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat is verboden voor bestuurders die vanuit een zijweg een voorrangsweg willen oprijden?",
+        "choices": [
+          {
+            "text": "De voorrangsweg oprijden zonder voorrang te verlenen aan het verkeer op de voorrangsweg",
+            "is_correct": true
+          },
+          {
+            "text": "Snelheid verminderen voor ze oprijden",
+            "is_correct": false
+          },
+          {
+            "text": "Hun richtingaanwijzer gebruiken",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Bestuurders vanuit zijwegen moeten altijd voorrang verlenen aan het verkeer op de voorrangsweg (B9)."
+      },
+      "EN": {
+        "question": "What is prohibited for drivers wanting to enter a priority road from a side road?",
+        "choices": [
+          {
+            "text": "Entering the priority road without giving way to traffic on the priority road",
+            "is_correct": true
+          },
+          {
+            "text": "Reducing speed before entering",
+            "is_correct": false
+          },
+          {
+            "text": "Using their indicator",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Drivers from side roads must always give way to traffic on the priority road (B9)."
+      },
+      "FR": {
+        "question": "Qu'est-il interdit aux conducteurs voulant s'engager sur une route prioritaire depuis une voie latérale ?",
+        "choices": [
+          {
+            "text": "S'engager sur la route prioritaire sans céder le passage aux usagers de la route prioritaire",
+            "is_correct": true
+          },
+          {
+            "text": "Réduire la vitesse avant de s'engager",
+            "is_correct": false
+          },
+          {
+            "text": "Utiliser leur clignotant",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Les conducteurs venant des voies latérales doivent toujours céder le passage aux usagers de la route prioritaire (B9)."
+      },
+      "AR": {
+        "question": "ما الذي يُحظر على السائقين الراغبين في الدخول إلى طريق الأولوية من طريق جانبي؟",
+        "choices": [
+          {
+            "text": "الدخول إلى طريق الأولوية دون إعطاء الأولوية لحركة المرور على طريق الأولوية",
+            "is_correct": true
+          },
+          {
+            "text": "تقليل السرعة قبل الدخول",
+            "is_correct": false
+          },
+          {
+            "text": "استخدام إشارة الاتجاه",
+            "is_correct": false
+          }
+        ],
+        "explanation": "يجب على السائقين القادمين من الطرق الجانبية دائماً إعطاء الأولوية لحركة المرور على طريق الأولوية (B9)."
+      }
+    }
+  },
+  {
+    "question_id": "B9_Q10",
+    "type": "WHAT_SHOULD_YOU_DO",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U rijdt op een voorrangsweg. Een voertuig staat klaar om vanuit een zijweg op te rijden. Wat doet u?",
+        "choices": [
+          {
+            "text": "Normaal doorrijden – het voertuig op de zijweg moet u voorrang geven",
+            "is_correct": true
+          },
+          {
+            "text": "Vertragen tot het voertuig veilig kan oprijden",
+            "is_correct": false
+          },
+          {
+            "text": "Stoppen en het voertuig laten doorrijden",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Op een voorrangsweg (B9) hebben voertuigen van zijwegen u voorrang te verlenen. U mag normaal doorrijden."
+      },
+      "EN": {
+        "question": "You are driving on a priority road. A vehicle is ready to enter from a side road. What do you do?",
+        "choices": [
+          {
+            "text": "Drive on normally – the vehicle on the side road must give way to you",
+            "is_correct": true
+          },
+          {
+            "text": "Slow down until the vehicle can safely enter",
+            "is_correct": false
+          },
+          {
+            "text": "Stop and let the vehicle proceed",
+            "is_correct": false
+          }
+        ],
+        "explanation": "On a priority road (B9) vehicles from side roads must give way to you. You may drive on normally."
+      },
+      "FR": {
+        "question": "Vous circulez sur une route prioritaire. Un véhicule s'apprête à s'engager depuis une voie latérale. Que faites-vous ?",
+        "choices": [
+          {
+            "text": "Continuer normalement – le véhicule sur la voie latérale doit vous céder le passage",
+            "is_correct": true
+          },
+          {
+            "text": "Ralentir jusqu'à ce que le véhicule puisse s'engager en sécurité",
+            "is_correct": false
+          },
+          {
+            "text": "S'arrêter et laisser passer le véhicule",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Sur une route prioritaire (B9), les véhicules des voies latérales doivent vous céder le passage. Vous pouvez continuer normalement."
+      },
+      "AR": {
+        "question": "أنت تسير على طريق الأولوية. مركبة على وشك الدخول من طريق جانبي. ماذا تفعل؟",
+        "choices": [
+          {
+            "text": "استمر في السير بشكل طبيعي – المركبة على الطريق الجانبي يجب أن تعطيك الأولوية",
+            "is_correct": true
+          },
+          {
+            "text": "أبطئ حتى تتمكن المركبة من الدخول بأمان",
+            "is_correct": false
+          },
+          {
+            "text": "قف واسمح للمركبة بالمضي قدماً",
+            "is_correct": false
+          }
+        ],
+        "explanation": "على طريق الأولوية (B9) يجب أن تعطيك المركبات القادمة من الطرق الجانبية الأولوية. يمكنك الاستمرار في السير بشكل طبيعي."
+      }
+    }
+  },
+  {
+    "question_id": "B9_Q11",
+    "type": "TRUE_OR_FALSE",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Waar of niet waar: Het bord B9 geldt totdat u het bord B11 (einde voorrangsweg) ziet.",
+        "choices": [
+          {
+            "text": "Waar – de voorrang geldt voor het hele traject tot het bord B11 verschijnt",
+            "is_correct": true
+          },
+          {
+            "text": "Niet waar – de voorrang eindigt bij elk kruispunt",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Waar. Het bord B9 geeft doorlopende voorrang totdat het bord B11 (einde voorrangsweg) verschijnt."
+      },
+      "EN": {
+        "question": "True or false: Sign B9 is valid until you see sign B11 (end of priority road).",
+        "choices": [
+          {
+            "text": "True – the priority applies to the entire route until sign B11 appears",
+            "is_correct": true
+          },
+          {
+            "text": "False – the priority ends at each intersection",
+            "is_correct": false
+          }
+        ],
+        "explanation": "True. Sign B9 grants continuous priority until sign B11 (end of priority road) appears."
+      },
+      "FR": {
+        "question": "Vrai ou faux : Le panneau B9 est valable jusqu'à ce que vous voyiez le panneau B11 (fin de route prioritaire).",
+        "choices": [
+          {
+            "text": "Vrai – la priorité s'applique à tout le trajet jusqu'à l'apparition du panneau B11",
+            "is_correct": true
+          },
+          {
+            "text": "Faux – la priorité se termine à chaque carrefour",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Vrai. Le panneau B9 accorde une priorité continue jusqu'à l'apparition du panneau B11 (fin de route prioritaire)."
+      },
+      "AR": {
+        "question": "صحيح أم خاطئ: اللافتة B9 سارية المفعول حتى ترى اللافتة B11 (نهاية طريق الأولوية).",
+        "choices": [
+          {
+            "text": "صحيح – تسري الأولوية على كامل المسار حتى ظهور اللافتة B11",
+            "is_correct": true
+          },
+          {
+            "text": "خاطئ – تنتهي الأولوية عند كل تقاطع",
+            "is_correct": false
+          }
+        ],
+        "explanation": "صحيح. تمنح اللافتة B9 أولوية مستمرة حتى ظهور اللافتة B11 (نهاية طريق الأولوية)."
+      }
+    }
+  },
+  {
+    "question_id": "B9_Q12",
+    "type": "WHAT_DOES_IT_MEAN",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Welke vorm heeft het bord B9 (voorrangsweg)?",
+        "choices": [
+          {
+            "text": "Een geel-wit ruit (diamant) met zwarte omranding",
+            "is_correct": true
+          },
+          {
+            "text": "Een rood driehoekig bord",
+            "is_correct": false
+          },
+          {
+            "text": "Een rond blauw bord",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Het bord B9 heeft de kenmerkende vorm van een geel-witte ruit (diamant) met zwarte rand, typisch voor voorrangswegen."
+      },
+      "EN": {
+        "question": "What shape does the B9 (priority road) sign have?",
+        "choices": [
+          {
+            "text": "A yellow-white diamond shape with black border",
+            "is_correct": true
+          },
+          {
+            "text": "A red triangular sign",
+            "is_correct": false
+          },
+          {
+            "text": "A round blue sign",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Sign B9 has the distinctive shape of a yellow-white diamond with a black border, typical of priority road signs."
+      },
+      "FR": {
+        "question": "Quelle forme a le panneau B9 (route prioritaire) ?",
+        "choices": [
+          {
+            "text": "Un losange jaune-blanc avec bordure noire",
+            "is_correct": true
+          },
+          {
+            "text": "Un panneau triangulaire rouge",
+            "is_correct": false
+          },
+          {
+            "text": "Un panneau bleu rond",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Le panneau B9 a la forme distinctive d'un losange jaune-blanc avec bordure noire, typique des panneaux de route prioritaire."
+      },
+      "AR": {
+        "question": "ما شكل اللافتة B9 (طريق الأولوية)؟",
+        "choices": [
+          {
+            "text": "معين أصفر-أبيض بحدود سوداء",
+            "is_correct": true
+          },
+          {
+            "text": "لافتة مثلثة حمراء",
+            "is_correct": false
+          },
+          {
+            "text": "لافتة مستديرة زرقاء",
+            "is_correct": false
+          }
+        ],
+        "explanation": "للافتة B9 الشكل المميز للمعين الأصفر-الأبيض بحدود سوداء، وهو مميز للافتات طريق الأولوية."
+      }
+    }
+  },
+  {
+    "question_id": "B9_Q13",
+    "type": "WHICH_SIGN",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Op welke weg vindt u het bord B9 normaal gesproken?",
+        "choices": [
+          {
+            "text": "Op wegen waar bestuurders doorlopende voorrang hebben ten opzichte van kruisende zijwegen",
+            "is_correct": true
+          },
+          {
+            "text": "Op wegen met een maximumsnelheid van 30 km/h",
+            "is_correct": false
+          },
+          {
+            "text": "Op wegen voorbehouden aan vrachtwagens",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Het bord B9 staat op wegen waar bestuurders automatisch voorrang hebben op het kruisende zijwegverkeer."
+      },
+      "EN": {
+        "question": "On which road would you normally find sign B9?",
+        "choices": [
+          {
+            "text": "On roads where drivers have continuous right of way over intersecting side roads",
+            "is_correct": true
+          },
+          {
+            "text": "On roads with a maximum speed limit of 30 km/h",
+            "is_correct": false
+          },
+          {
+            "text": "On roads reserved for trucks",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Sign B9 is placed on roads where drivers automatically have right of way over intersecting side road traffic."
+      },
+      "FR": {
+        "question": "Sur quelle route trouve-t-on normalement le panneau B9 ?",
+        "choices": [
+          {
+            "text": "Sur les routes où les conducteurs ont la priorité continue sur les voies transversales",
+            "is_correct": true
+          },
+          {
+            "text": "Sur les routes avec une vitesse maximale de 30 km/h",
+            "is_correct": false
+          },
+          {
+            "text": "Sur les routes réservées aux camions",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Le panneau B9 est placé sur les routes où les conducteurs ont automatiquement la priorité sur le trafic des voies transversales."
+      },
+      "AR": {
+        "question": "على أي طريق تجد اللافتة B9 عادةً؟",
+        "choices": [
+          {
+            "text": "على الطرق التي يتمتع فيها السائقون بأولوية مستمرة على الطرق الجانبية المتقاطعة",
+            "is_correct": true
+          },
+          {
+            "text": "على الطرق التي سرعتها القصوى 30 كم/ساعة",
+            "is_correct": false
+          },
+          {
+            "text": "على الطرق المخصصة للشاحنات",
+            "is_correct": false
+          }
+        ],
+        "explanation": "توضع اللافتة B9 على الطرق التي يتمتع فيها السائقون تلقائياً بالأولوية على حركة المرور في الطرق الجانبية المتقاطعة."
+      }
+    }
+  },
+  {
+    "question_id": "B9_Q14",
+    "type": "TRUE_OR_FALSE",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Waar of niet waar: Op een voorrangsweg mag u verkeerslichten negeren omdat u voorrang heeft.",
+        "choices": [
+          {
+            "text": "Niet waar – verkeerslichten moeten altijd worden gerespecteerd, ook op voorrangswegen",
+            "is_correct": false
+          },
+          {
+            "text": "Waar – voorrang betekent dat u altijd mag doorrijden",
+            "is_correct": true
+          }
+        ],
+        "explanation": "Niet waar. Verkeerslichten moeten altijd worden gerespecteerd. Het bord B9 geldt alleen voor kruispunten zonder verkeerslichten."
+      },
+      "EN": {
+        "question": "True or false: On a priority road you may ignore traffic lights because you have right of way.",
+        "choices": [
+          {
+            "text": "True – right of way means you may always proceed",
+            "is_correct": false
+          },
+          {
+            "text": "False – traffic lights must always be respected, even on priority roads",
+            "is_correct": true
+          }
+        ],
+        "explanation": "False. Traffic lights must always be respected. Sign B9 only applies at intersections without traffic lights."
+      },
+      "FR": {
+        "question": "Vrai ou faux : Sur une route prioritaire, vous pouvez ignorer les feux de signalisation car vous avez la priorité.",
+        "choices": [
+          {
+            "text": "Vrai – la priorité signifie que vous pouvez toujours avancer",
+            "is_correct": false
+          },
+          {
+            "text": "Faux – les feux de signalisation doivent toujours être respectés, même sur les routes prioritaires",
+            "is_correct": true
+          }
+        ],
+        "explanation": "Faux. Les feux de signalisation doivent toujours être respectés. Le panneau B9 s'applique uniquement aux carrefours sans feux."
+      },
+      "AR": {
+        "question": "صحيح أم خاطئ: على طريق الأولوية يمكنك تجاهل إشارات المرور لأنك تتمتع بالأولوية.",
+        "choices": [
+          {
+            "text": "صحيح – الأولوية تعني أنك يمكنك دائماً المضي قدماً",
+            "is_correct": false
+          },
+          {
+            "text": "خاطئ – يجب دائماً احترام إشارات المرور، حتى على طرق الأولوية",
+            "is_correct": true
+          }
+        ],
+        "explanation": "خاطئ. يجب دائماً احترام إشارات المرور. تسري اللافتة B9 فقط عند التقاطعات التي لا توجد فيها إشارات مرور."
+      }
+    }
+  },
+  {
+    "question_id": "B9_Q15",
+    "type": "WHAT_DOES_IT_MEAN",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat betekent de gele diamant van het bord B9 voor andere weggebruikers op kruisende wegen?",
+        "choices": [
+          {
+            "text": "Zij moeten voorrang verlenen aan het verkeer op de voorrangsweg",
+            "is_correct": true
+          },
+          {
+            "text": "Zij hebben absolute voorrang op het doorgaande verkeer",
+            "is_correct": false
+          },
+          {
+            "text": "Zij mogen alleen rechtsaf slaan",
+            "is_correct": false
+          }
+        ],
+        "explanation": "De gele diamant (B9) signaleert aan bestuurders op kruisende wegen dat zij voorrang moeten verlenen aan het verkeer op de voorrangsweg."
+      },
+      "EN": {
+        "question": "What does the yellow diamond of sign B9 mean for other road users on intersecting roads?",
+        "choices": [
+          {
+            "text": "They must give way to traffic on the priority road",
+            "is_correct": true
+          },
+          {
+            "text": "They have absolute right of way over through traffic",
+            "is_correct": false
+          },
+          {
+            "text": "They may only turn right",
+            "is_correct": false
+          }
+        ],
+        "explanation": "The yellow diamond (B9) signals to drivers on intersecting roads that they must yield to traffic on the priority road."
+      },
+      "FR": {
+        "question": "Que signifie le losange jaune du panneau B9 pour les autres usagers sur les routes transversales ?",
+        "choices": [
+          {
+            "text": "Ils doivent céder le passage au trafic sur la route prioritaire",
+            "is_correct": true
+          },
+          {
+            "text": "Ils ont la priorité absolue sur la circulation principale",
+            "is_correct": false
+          },
+          {
+            "text": "Ils ne peuvent tourner qu'à droite",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Le losange jaune (B9) signale aux conducteurs sur les routes transversales qu'ils doivent céder le passage au trafic de la route prioritaire."
+      },
+      "AR": {
+        "question": "ماذا يعني المعين الأصفر للافتة B9 لمستخدمي الطريق الآخرين على الطرق المتقاطعة؟",
+        "choices": [
+          {
+            "text": "يجب عليهم إعطاء الأولوية لحركة المرور على طريق الأولوية",
+            "is_correct": true
+          },
+          {
+            "text": "لديهم أولوية مطلقة على حركة المرور العابرة",
+            "is_correct": false
+          },
+          {
+            "text": "يمكنهم الانعطاف يميناً فقط",
+            "is_correct": false
+          }
+        ],
+        "explanation": "يشير المعين الأصفر (B9) للسائقين على الطرق المتقاطعة بضرورة إعطاء الأولوية لحركة المرور على طريق الأولوية."
+      }
+    }
+  },
+  {
+    "question_id": "B9_Q16",
+    "type": "WHAT_SHOULD_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U rijdt op een voorrangsweg en een voertuig rijdt toch vanuit een zijweg op zonder voorrang te verlenen. Wat doet u?",
+        "choices": [
+          {
+            "text": "Verlagen van de snelheid en indien nodig uitwijken om een botsing te vermijden",
+            "is_correct": true
+          },
+          {
+            "text": "Doorrijden want u heeft voorrang",
+            "is_correct": false
+          },
+          {
+            "text": "Claxonneren en versnellen",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ondanks uw voorrang moet u steeds een botsing proberen te vermijden. Verlaag uw snelheid en wijk indien nodig uit."
+      },
+      "EN": {
+        "question": "You are on a priority road and a vehicle enters from a side road without giving way. What do you do?",
+        "choices": [
+          {
+            "text": "Reduce speed and if necessary swerve to avoid a collision",
+            "is_correct": true
+          },
+          {
+            "text": "Drive on since you have right of way",
+            "is_correct": false
+          },
+          {
+            "text": "Honk and accelerate",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Despite your right of way, you must always try to avoid a collision. Reduce speed and swerve if necessary."
+      },
+      "FR": {
+        "question": "Vous roulez sur une route prioritaire et un véhicule s'engage depuis une voie latérale sans céder le passage. Que faites-vous ?",
+        "choices": [
+          {
+            "text": "Réduire la vitesse et si nécessaire déboîter pour éviter une collision",
+            "is_correct": true
+          },
+          {
+            "text": "Continuer car vous avez la priorité",
+            "is_correct": false
+          },
+          {
+            "text": "Klaxonner et accélérer",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Malgré votre priorité, vous devez toujours essayer d'éviter une collision. Réduisez la vitesse et déboîtez si nécessaire."
+      },
+      "AR": {
+        "question": "أنت تسير على طريق الأولوية ومركبة تدخل من طريق جانبي دون إعطائك الأولوية. ماذا تفعل؟",
+        "choices": [
+          {
+            "text": "قلل السرعة وانحرف إذا لزم الأمر لتجنب الاصطدام",
+            "is_correct": true
+          },
+          {
+            "text": "استمر في السير لأن لديك الأولوية",
+            "is_correct": false
+          },
+          {
+            "text": "أدق البوق وأسرع",
+            "is_correct": false
+          }
+        ],
+        "explanation": "على الرغم من حقك في الأولوية، يجب عليك دائماً محاولة تجنب الاصطدام. قلل السرعة وانحرف إذا لزم الأمر."
+      }
+    }
+  },
+  {
+    "question_id": "B9_Q17",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Mag u op een voorrangsweg (B9) de maximumsnelheid overschrijden omdat u voorrang heeft?",
+        "choices": [
+          {
+            "text": "Nee, de maximumsnelheid moet te allen tijde worden nageleefd",
+            "is_correct": false
+          },
+          {
+            "text": "Ja, voorang geeft u het recht harder te rijden",
+            "is_correct": true
+          }
+        ],
+        "explanation": "Nee. Voorrang (B9) staat los van de maximumsnelheid. U moet altijd de geldende maximumsnelheid respecteren."
+      },
+      "EN": {
+        "question": "May you exceed the maximum speed on a priority road (B9) because you have right of way?",
+        "choices": [
+          {
+            "text": "No, the maximum speed must be respected at all times",
+            "is_correct": false
+          },
+          {
+            "text": "Yes, right of way entitles you to drive faster",
+            "is_correct": true
+          }
+        ],
+        "explanation": "No. Right of way (B9) is separate from the speed limit. You must always respect the applicable maximum speed."
+      },
+      "FR": {
+        "question": "Pouvez-vous dépasser la vitesse maximale sur une route prioritaire (B9) parce que vous avez la priorité ?",
+        "choices": [
+          {
+            "text": "Non, la vitesse maximale doit être respectée en tout temps",
+            "is_correct": false
+          },
+          {
+            "text": "Oui, la priorité vous donne le droit de rouler plus vite",
+            "is_correct": true
+          }
+        ],
+        "explanation": "Non. La priorité (B9) est indépendante de la vitesse maximale. Vous devez toujours respecter la vitesse maximale en vigueur."
+      },
+      "AR": {
+        "question": "هل يمكنك تجاوز الحد الأقصى للسرعة على طريق الأولوية (B9) لأنك تتمتع بالأولوية؟",
+        "choices": [
+          {
+            "text": "لا، يجب احترام الحد الأقصى للسرعة في جميع الأوقات",
+            "is_correct": false
+          },
+          {
+            "text": "نعم، الأولوية تمنحك الحق في القيادة بسرعة أكبر",
+            "is_correct": true
+          }
+        ],
+        "explanation": "لا. الأولوية (B9) مستقلة عن الحد الأقصى للسرعة. يجب عليك دائماً احترام الحد الأقصى للسرعة المعمول به."
+      }
+    }
+  },
+  {
+    "question_id": "B9_Q18",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U rijdt op een voorrangsweg (B9) en ziet dat het bord B11 (einde voorrangsweg) binnenkort zal komen. Wat doet u?",
+        "choices": [
+          {
+            "text": "U bent extra alert en bereidt u voor op de normale voorrangsregels die na B11 gelden",
+            "is_correct": true
+          },
+          {
+            "text": "U kunt gewoon doorrijden want de regels veranderen niet",
+            "is_correct": false
+          },
+          {
+            "text": "U moet stoppen bij het bord B11",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Nadat het bord B11 verschijnt, gelden de normale voorrangsregels (rechtsvoorrang). U moet dus alert zijn."
+      },
+      "EN": {
+        "question": "You are on a priority road (B9) and see sign B11 (end of priority road) is coming soon. What do you do?",
+        "choices": [
+          {
+            "text": "Be extra alert and prepare for normal priority rules that apply after B11",
+            "is_correct": true
+          },
+          {
+            "text": "Just keep driving as the rules don't change",
+            "is_correct": false
+          },
+          {
+            "text": "Stop at sign B11",
+            "is_correct": false
+          }
+        ],
+        "explanation": "After sign B11 appears, normal right-of-way rules (right-hand priority) apply. You must therefore be alert."
+      },
+      "FR": {
+        "question": "Vous roulez sur une route prioritaire (B9) et voyez que le panneau B11 (fin de route prioritaire) va bientôt apparaître. Que faites-vous ?",
+        "choices": [
+          {
+            "text": "Soyez plus vigilant et préparez-vous aux règles normales de priorité qui s'appliquent après B11",
+            "is_correct": true
+          },
+          {
+            "text": "Continuez simplement car les règles ne changent pas",
+            "is_correct": false
+          },
+          {
+            "text": "Arrêtez-vous au panneau B11",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Après l'apparition du panneau B11, les règles normales de priorité (priorité à droite) s'appliquent. Vous devez donc être vigilant."
+      },
+      "AR": {
+        "question": "أنت تسير على طريق الأولوية (B9) وترى أن اللافتة B11 (نهاية طريق الأولوية) ستظهر قريباً. ماذا تفعل؟",
+        "choices": [
+          {
+            "text": "كن أكثر يقظة واستعد لقواعد الأولوية الطبيعية التي تسري بعد B11",
+            "is_correct": true
+          },
+          {
+            "text": "استمر في القيادة لأن القواعد لا تتغير",
+            "is_correct": false
+          },
+          {
+            "text": "توقف عند اللافتة B11",
+            "is_correct": false
+          }
+        ],
+        "explanation": "بعد ظهور اللافتة B11، تسري قواعد الأولوية العادية (الأولوية من اليمين). لذلك يجب أن تكون يقظاً."
+      }
+    }
+  },
+  {
+    "question_id": "B9_Q19",
+    "type": "TRUE_OR_FALSE",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Waar of niet waar: Ook voertuigen van hulpdiensten (ziekenwagen, brandweer) met zwaailichten moeten op een voorrangsweg de B9-regels respecteren.",
+        "choices": [
+          {
+            "text": "Niet waar – voertuigen van hulpdiensten in noodgevallen hebben altijd voorrang op andere weggebruikers",
+            "is_correct": false
+          },
+          {
+            "text": "Waar – niemand mag de verkeersregels overtreden",
+            "is_correct": true
+          }
+        ],
+        "explanation": "Niet waar. Hulpvoertuigen in noodgevallen (met zwaailichten en sirenes) hebben altijd voorrang, ook op voorrangswegen."
+      },
+      "EN": {
+        "question": "True or false: Even emergency vehicles (ambulance, fire brigade) with flashing lights must respect B9 rules on a priority road.",
+        "choices": [
+          {
+            "text": "False – emergency vehicles in emergencies always have priority over other road users",
+            "is_correct": false
+          },
+          {
+            "text": "True – no one may break traffic rules",
+            "is_correct": true
+          }
+        ],
+        "explanation": "False. Emergency vehicles in urgent situations (with lights and sirens) always have right of way, even on priority roads."
+      },
+      "FR": {
+        "question": "Vrai ou faux : Même les véhicules d'urgence (ambulances, pompiers) avec gyrophares doivent respecter les règles B9 sur une route prioritaire.",
+        "choices": [
+          {
+            "text": "Faux – les véhicules d'urgence en situation d'urgence ont toujours la priorité sur les autres usagers",
+            "is_correct": false
+          },
+          {
+            "text": "Vrai – personne ne peut enfreindre les règles de circulation",
+            "is_correct": true
+          }
+        ],
+        "explanation": "Faux. Les véhicules d'urgence en situation urgente (avec gyrophares et sirènes) ont toujours la priorité, même sur les routes prioritaires."
+      },
+      "AR": {
+        "question": "صحيح أم خاطئ: حتى سيارات الطوارئ (الإسعاف، الإطفاء) ذات الأضواء الوامضة يجب أن تحترم قواعد B9 على طريق الأولوية.",
+        "choices": [
+          {
+            "text": "خاطئ – مركبات الطوارئ في حالات الطوارئ دائماً لها الأولوية على غيرها من مستخدمي الطريق",
+            "is_correct": false
+          },
+          {
+            "text": "صحيح – لا يجوز لأحد مخالفة قواعد المرور",
+            "is_correct": true
+          }
+        ],
+        "explanation": "خاطئ. مركبات الطوارئ في المواقف العاجلة (بأضواء وصفارات) دائماً لها حق الأولوية، حتى على طرق الأولوية."
+      }
+    }
+  },
+  {
+    "question_id": "B9_Q20",
+    "type": "WHAT_IS_PROHIBITED",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat is verboden op een voorrangsweg (B9) in een bebouwde kom?",
+        "choices": [
+          {
+            "text": "Stoppen op de rijbaan zonder geldige reden (buiten noodgevallen)",
+            "is_correct": true
+          },
+          {
+            "text": "Rechtsaf slaan bij een kruispunt",
+            "is_correct": false
+          },
+          {
+            "text": "Inhalen van fietsers",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Op een voorrangsweg mag u, net als overal elders, niet stoppen op de rijbaan zonder geldige reden tenzij het een noodgeval is."
+      },
+      "EN": {
+        "question": "What is prohibited on a priority road (B9) in a built-up area?",
+        "choices": [
+          {
+            "text": "Stopping on the carriageway without valid reason (outside emergencies)",
+            "is_correct": true
+          },
+          {
+            "text": "Turning right at an intersection",
+            "is_correct": false
+          },
+          {
+            "text": "Overtaking cyclists",
+            "is_correct": false
+          }
+        ],
+        "explanation": "On a priority road, as elsewhere, you may not stop on the carriageway without a valid reason except in an emergency."
+      },
+      "FR": {
+        "question": "Qu'est-il interdit sur une route prioritaire (B9) en agglomération ?",
+        "choices": [
+          {
+            "text": "S'arrêter sur la chaussée sans raison valable (hors urgences)",
+            "is_correct": true
+          },
+          {
+            "text": "Tourner à droite à un carrefour",
+            "is_correct": false
+          },
+          {
+            "text": "Dépasser des cyclistes",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Sur une route prioritaire, comme ailleurs, vous ne pouvez pas vous arrêter sur la chaussée sans raison valable sauf en cas d'urgence."
+      },
+      "AR": {
+        "question": "ما الذي يُحظر على طريق الأولوية (B9) داخل مناطق البناء؟",
+        "choices": [
+          {
+            "text": "التوقف على الطريق دون سبب مشروع (خارج حالات الطوارئ)",
+            "is_correct": true
+          },
+          {
+            "text": "الانعطاف يميناً عند التقاطع",
+            "is_correct": false
+          },
+          {
+            "text": "تجاوز الدراجين",
+            "is_correct": false
+          }
+        ],
+        "explanation": "على طريق الأولوية، كما هو الحال في كل مكان، لا يمكنك التوقف على الطريق دون سبب مشروع إلا في حالات الطوارئ."
+      }
+    }
+  },
+  {
+    "question_id": "B9_Q21",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U rijdt op een voorrangsweg. Mag u inhalen als het overige verkeer dit toelaat?",
+        "choices": [
+          {
+            "text": "Ja, inhalen is toegestaan zolang u de inhaalregels respecteert",
+            "is_correct": true
+          },
+          {
+            "text": "Nee, inhalen is verboden op een voorrangsweg",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Op een voorrangsweg is inhalen toegestaan zolang u de geldende inhaalregels respecteert. De B9-status verbiedt het inhalen niet."
+      },
+      "EN": {
+        "question": "You are on a priority road. May you overtake if the remaining traffic allows it?",
+        "choices": [
+          {
+            "text": "Yes, overtaking is permitted as long as you respect the overtaking rules",
+            "is_correct": true
+          },
+          {
+            "text": "No, overtaking is prohibited on a priority road",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Overtaking is permitted on a priority road as long as you respect applicable overtaking rules. B9 status does not prohibit overtaking."
+      },
+      "FR": {
+        "question": "Vous roulez sur une route prioritaire. Pouvez-vous dépasser si la circulation restante le permet ?",
+        "choices": [
+          {
+            "text": "Oui, le dépassement est autorisé tant que vous respectez les règles de dépassement",
+            "is_correct": true
+          },
+          {
+            "text": "Non, le dépassement est interdit sur une route prioritaire",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Le dépassement est autorisé sur une route prioritaire à condition de respecter les règles applicables. Le statut B9 n'interdit pas le dépassement."
+      },
+      "AR": {
+        "question": "أنت تسير على طريق الأولوية. هل يمكنك التجاوز إذا سمح بذلك حجم المرور الآخر؟",
+        "choices": [
+          {
+            "text": "نعم، التجاوز مسموح به طالما أنك تحترم قواعد التجاوز",
+            "is_correct": true
+          },
+          {
+            "text": "لا، التجاوز محظور على طريق الأولوية",
+            "is_correct": false
+          }
+        ],
+        "explanation": "التجاوز مسموح به على طريق الأولوية طالما أنك تحترم قواعد التجاوز المعمول بها. لا يحظر وضع B9 التجاوز."
+      }
+    }
+  },
+  {
+    "question_id": "B9_Q22",
+    "type": "WHAT_SHOULD_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Op een voorrangsweg in de bebouwde kom ziet u plotseling een voetganger het zebrapad oversteken. Wat doet u?",
+        "choices": [
+          {
+            "text": "Vertraag en geef de voetganger voorrang op het zebrapad",
+            "is_correct": true
+          },
+          {
+            "text": "Doorrijden want u has voorrang op de voorrangsweg",
+            "is_correct": false
+          },
+          {
+            "text": "Claxonneren en doorrijden",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ondanks uw voorrangsstatus moet u op een zebrapad altijd voorrang verlenen aan voetgangers. Dit staat los van B9."
+      },
+      "EN": {
+        "question": "On a priority road in a built-up area you suddenly see a pedestrian crossing at a zebra crossing. What do you do?",
+        "choices": [
+          {
+            "text": "Slow down and give the pedestrian right of way at the zebra crossing",
+            "is_correct": true
+          },
+          {
+            "text": "Drive on as you have priority on the priority road",
+            "is_correct": false
+          },
+          {
+            "text": "Honk and drive on",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Despite your priority status, on a zebra crossing you must always give way to pedestrians. This is separate from B9."
+      },
+      "FR": {
+        "question": "Sur une route prioritaire en agglomération, vous voyez soudainement un piéton traverser sur un passage clouté. Que faites-vous ?",
+        "choices": [
+          {
+            "text": "Ralentissez et cédez le passage au piéton sur le passage clouté",
+            "is_correct": true
+          },
+          {
+            "text": "Continuez car vous avez la priorité sur la route prioritaire",
+            "is_correct": false
+          },
+          {
+            "text": "Klaxonnez et continuez",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Malgré votre statut prioritaire, sur un passage clouté vous devez toujours céder le passage aux piétons. Cela est indépendant du B9."
+      },
+      "AR": {
+        "question": "على طريق الأولوية داخل منطقة سكنية ترى فجأة مشاةً يعبرون عند ممر المشاة. ماذا تفعل؟",
+        "choices": [
+          {
+            "text": "أبطئ وأعطِ المشاة الأولوية عند ممر المشاة",
+            "is_correct": true
+          },
+          {
+            "text": "استمر في السير لأن لديك الأولوية على طريق الأولوية",
+            "is_correct": false
+          },
+          {
+            "text": "أدق البوق واستمر",
+            "is_correct": false
+          }
+        ],
+        "explanation": "على الرغم من حالة أولويتك، يجب عليك دائماً إعطاء الأولوية للمشاة عند ممرات المشاة. هذا مستقل عن B9."
+      }
+    }
+  },
+  {
+    "question_id": "B9_Q23",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U rijdt op een voorrangsweg en het begint te vriezen. Wat is het effect van B9 op uw rijgedrag?",
+        "choices": [
+          {
+            "text": "B9 verandert niets aan de verplichting om uw rijgedrag aan te passen aan de weersomstandigheden",
+            "is_correct": true
+          },
+          {
+            "text": "B9 geeft u meer rechten bij slecht weer",
+            "is_correct": false
+          },
+          {
+            "text": "U mag sneller rijden om snel voorbij de gevaarlijke zone te komen",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Bij gevaarlijke weersomstandigheden moet u uw rijgedrag altijd aanpassen, ongeacht uw voorrangsstatus op B9-wegen."
+      },
+      "EN": {
+        "question": "You are on a priority road and it starts to freeze. What effect does B9 have on your driving behaviour?",
+        "choices": [
+          {
+            "text": "B9 does not change the obligation to adapt your driving to weather conditions",
+            "is_correct": true
+          },
+          {
+            "text": "B9 gives you more rights in bad weather",
+            "is_correct": false
+          },
+          {
+            "text": "You may drive faster to clear the dangerous zone quickly",
+            "is_correct": false
+          }
+        ],
+        "explanation": "In hazardous weather conditions you must always adapt your driving, regardless of your priority status on B9 roads."
+      },
+      "FR": {
+        "question": "Vous roulez sur une route prioritaire et la chaussée commence à geler. Quel effet le B9 a-t-il sur votre comportement au volant ?",
+        "choices": [
+          {
+            "text": "B9 ne change rien à l'obligation d'adapter votre conduite aux conditions météorologiques",
+            "is_correct": true
+          },
+          {
+            "text": "B9 vous donne plus de droits par mauvais temps",
+            "is_correct": false
+          },
+          {
+            "text": "Vous pouvez rouler plus vite pour traverser rapidement la zone dangereuse",
+            "is_correct": false
+          }
+        ],
+        "explanation": "En cas de conditions météorologiques dangereuses, vous devez toujours adapter votre conduite, quel que soit votre statut prioritaire sur les routes B9."
+      },
+      "AR": {
+        "question": "أنت تسير على طريق الأولوية وتبدأ الطريق بالتجمد. ما تأثير B9 على سلوك قيادتك؟",
+        "choices": [
+          {
+            "text": "B9 لا يغير الالتزام بتكييف قيادتك مع ظروف الطقس",
+            "is_correct": true
+          },
+          {
+            "text": "B9 يمنحك حقوقاً أكبر في الطقس السيئ",
+            "is_correct": false
+          },
+          {
+            "text": "يمكنك القيادة بسرعة أكبر لعبور المنطقة الخطرة بسرعة",
+            "is_correct": false
+          }
+        ],
+        "explanation": "في ظروف الطقس الخطرة يجب عليك دائماً تكييف قيادتك، بغض النظر عن حالة أولويتك على طرق B9."
+      }
+    }
+  },
+  {
+    "question_id": "B9_Q24",
+    "type": "TRUE_OR_FALSE",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Waar of niet waar: Het bord B9 (voorrangsweg) is alleen geldig binnen de bebouwde kom.",
+        "choices": [
+          {
+            "text": "Niet waar – het bord B9 kan zowel binnen als buiten de bebouwde kom worden geplaatst",
+            "is_correct": false
+          },
+          {
+            "text": "Waar – buiten de bebouwde kom gelden andere regels",
+            "is_correct": true
+          }
+        ],
+        "explanation": "Niet waar. Het bord B9 kan zowel in als buiten de bebouwde kom worden geplaatst op iedere weg waar voorrangsrecht nodig wordt geacht."
+      },
+      "EN": {
+        "question": "True or false: Sign B9 (priority road) is only valid within built-up areas.",
+        "choices": [
+          {
+            "text": "True – different rules apply outside built-up areas",
+            "is_correct": false
+          },
+          {
+            "text": "False – sign B9 can be placed both inside and outside built-up areas",
+            "is_correct": true
+          }
+        ],
+        "explanation": "False. Sign B9 can be placed both inside and outside built-up areas on any road where right of way is deemed necessary."
+      },
+      "FR": {
+        "question": "Vrai ou faux : Le panneau B9 (route prioritaire) n'est valable qu'en agglomération.",
+        "choices": [
+          {
+            "text": "Vrai – des règles différentes s'appliquent hors agglomération",
+            "is_correct": false
+          },
+          {
+            "text": "Faux – le panneau B9 peut être placé à la fois en agglomération et hors agglomération",
+            "is_correct": true
+          }
+        ],
+        "explanation": "Faux. Le panneau B9 peut être placé à la fois en et hors agglomération sur toute route où la priorité est jugée nécessaire."
+      },
+      "AR": {
+        "question": "صحيح أم خاطئ: اللافتة B9 (طريق الأولوية) سارية فقط داخل مناطق البناء.",
+        "choices": [
+          {
+            "text": "صحيح – تسري قواعد مختلفة خارج مناطق البناء",
+            "is_correct": false
+          },
+          {
+            "text": "خاطئ – يمكن وضع اللافتة B9 داخل وخارج مناطق البناء",
+            "is_correct": true
+          }
+        ],
+        "explanation": "خاطئ. يمكن وضع اللافتة B9 داخل وخارج مناطق البناء على أي طريق تُرى فيه الأولوية ضرورية."
+      }
+    }
+  },
+  {
+    "question_id": "B9_Q25",
+    "type": "WHAT_DOES_IT_MEAN",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U rijdt op een voorrangsweg (B9) en ziet een bord B15-reeks aan de rechterkant. Wat betekent dit?",
+        "choices": [
+          {
+            "text": "Dit bord specificeert de exacte voorrangsrichting op een kruispunt op de voorrangsweg",
+            "is_correct": true
+          },
+          {
+            "text": "Dit bord heft de voorrangsweg op",
+            "is_correct": false
+          },
+          {
+            "text": "Dit bord verplicht u te stoppen",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Een bord uit de B15-reeks (b.v. B15a-g) preciseert op een kruispunt welke richting voorrang heeft, als aanvulling op de B9-status."
+      },
+      "EN": {
+        "question": "You are on a priority road (B9) and see a B15-series sign on the right. What does this mean?",
+        "choices": [
+          {
+            "text": "This sign specifies the exact priority direction at an intersection on the priority road",
+            "is_correct": true
+          },
+          {
+            "text": "This sign cancels the priority road",
+            "is_correct": false
+          },
+          {
+            "text": "This sign requires you to stop",
+            "is_correct": false
+          }
+        ],
+        "explanation": "A sign from the B15 series (e.g. B15a-g) specifies at an intersection which direction has priority, as a supplement to the B9 status."
+      },
+      "FR": {
+        "question": "Vous roulez sur une route prioritaire (B9) et voyez un panneau de la série B15 sur la droite. Qu'est-ce que cela signifie ?",
+        "choices": [
+          {
+            "text": "Ce panneau précise la direction exacte de priorité à un carrefour sur la route prioritaire",
+            "is_correct": true
+          },
+          {
+            "text": "Ce panneau annule la route prioritaire",
+            "is_correct": false
+          },
+          {
+            "text": "Ce panneau vous oblige à vous arrêter",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Un panneau de la série B15 (p. ex. B15a-g) précise à un carrefour quelle direction a la priorité, en complément du statut B9."
+      },
+      "AR": {
+        "question": "أنت تسير على طريق الأولوية (B9) وترى لافتة من سلسلة B15 على اليمين. ماذا يعني هذا؟",
+        "choices": [
+          {
+            "text": "هذه اللافتة تحدد اتجاه الأولوية الدقيق عند تقاطع على طريق الأولوية",
+            "is_correct": true
+          },
+          {
+            "text": "هذه اللافتة تلغي طريق الأولوية",
+            "is_correct": false
+          },
+          {
+            "text": "هذه اللافتة تُلزمك بالتوقف",
+            "is_correct": false
+          }
+        ],
+        "explanation": "لافتة من سلسلة B15 (مثل B15a-g) تحدد عند التقاطع أي اتجاه له الأولوية، كمكمل لوضع B9."
+      }
+    }
+  },
+  {
+    "question_id": "B9_Q26",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U rijdt op een voorrangsweg en een verkeerslicht staat op rood. Mag u doorrijden omdat u op een voorrangsweg rijdt?",
+        "choices": [
+          {
+            "text": "Nee, een rood licht heeft altijd voorrang boven het symbool van de voorrangsweg",
+            "is_correct": false
+          },
+          {
+            "text": "Ja, de voorrangsweg geeft u het recht door te rijden bij rood",
+            "is_correct": true
+          }
+        ],
+        "explanation": "Nee. Verkeerslichten hebben altijd voorrang boven de voorrangsregels. Een rood licht verplicht u altijd te stoppen, ook op een voorrangsweg."
+      },
+      "EN": {
+        "question": "You are on a priority road and a traffic light shows red. May you drive through because you are on a priority road?",
+        "choices": [
+          {
+            "text": "No, a red light always supersedes the priority road symbol",
+            "is_correct": false
+          },
+          {
+            "text": "Yes, the priority road gives you the right to proceed at red",
+            "is_correct": true
+          }
+        ],
+        "explanation": "No. Traffic lights always supersede priority rules. A red light always requires you to stop, even on a priority road."
+      },
+      "FR": {
+        "question": "Vous êtes sur une route prioritaire et un feu tricolore est au rouge. Pouvez-vous passer car vous êtes sur une route prioritaire ?",
+        "choices": [
+          {
+            "text": "Non, un feu rouge a toujours la priorité sur le symbole de route prioritaire",
+            "is_correct": false
+          },
+          {
+            "text": "Oui, la route prioritaire vous donne le droit de passer au rouge",
+            "is_correct": true
+          }
+        ],
+        "explanation": "Non. Les feux de signalisation ont toujours priorité sur les règles de priorité. Un feu rouge vous oblige toujours à vous arrêter, même sur une route prioritaire."
+      },
+      "AR": {
+        "question": "أنت على طريق الأولوية وإشارة المرور حمراء. هل يمكنك المضي قدماً لأنك على طريق الأولوية؟",
+        "choices": [
+          {
+            "text": "لا، الضوء الأحمر دائماً يتغلب على رمز طريق الأولوية",
+            "is_correct": false
+          },
+          {
+            "text": "نعم، طريق الأولوية يمنحك الحق في المضي عند الأحمر",
+            "is_correct": true
+          }
+        ],
+        "explanation": "لا. إشارات المرور دائماً تتغلب على قواعد الأولوية. الضوء الأحمر يُلزمك دائماً بالتوقف، حتى على طريق الأولوية."
+      }
+    }
+  },
+  {
+    "question_id": "B9_Q27",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U rijdt op een voorrangsweg (B9) en een peuter steekt plotseling de weg over buiten het zebrapad. Wat moet u doen?",
+        "choices": [
+          {
+            "text": "Onmiddellijk remmen en alles in het werk stellen om een botsing te vermijden",
+            "is_correct": true
+          },
+          {
+            "text": "Doorrijden want u heeft voorrang op de voorrangsweg",
+            "is_correct": false
+          },
+          {
+            "text": "Claxonneren en vaart minderen maar doorrijden",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Op een voorrangsweg of niet – u bent altijd verplicht om kwetsbare weggebruikers (met name kinderen) te beschermen. Rem onmiddellijk."
+      },
+      "EN": {
+        "question": "You are on a priority road (B9) and a toddler suddenly crosses the road outside a zebra crossing. What must you do?",
+        "choices": [
+          {
+            "text": "Brake immediately and do everything possible to avoid a collision",
+            "is_correct": true
+          },
+          {
+            "text": "Drive on since you have right of way on the priority road",
+            "is_correct": false
+          },
+          {
+            "text": "Honk and slow down but keep driving",
+            "is_correct": false
+          }
+        ],
+        "explanation": "On a priority road or not – you are always obliged to protect vulnerable road users (especially children). Brake immediately."
+      },
+      "FR": {
+        "question": "Vous roulez sur une route prioritaire (B9) et un bambin traverse soudainement la route en dehors d'un passage clouté. Que devez-vous faire ?",
+        "choices": [
+          {
+            "text": "Freiner immédiatement et tout mettre en œuvre pour éviter une collision",
+            "is_correct": true
+          },
+          {
+            "text": "Continuer car vous avez la priorité sur la route prioritaire",
+            "is_correct": false
+          },
+          {
+            "text": "Klaxonner et ralentir mais continuer à rouler",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Sur une route prioritaire ou non – vous êtes toujours obligé de protéger les usagers vulnérables (surtout les enfants). Freinez immédiatement."
+      },
+      "AR": {
+        "question": "أنت تسير على طريق الأولوية (B9) وطفل صغير يعبر الطريق فجأة خارج ممر المشاة. ماذا يجب أن تفعل؟",
+        "choices": [
+          {
+            "text": "أكبح فوراً وابذل كل ما في وسعك لتجنب الاصطدام",
+            "is_correct": true
+          },
+          {
+            "text": "استمر في السير لأن لديك الأولوية على طريق الأولوية",
+            "is_correct": false
+          },
+          {
+            "text": "أدق البوق وأبطئ لكن استمر في القيادة",
+            "is_correct": false
+          }
+        ],
+        "explanation": "على طريق الأولوية أو غيره – ملزم دائماً بحماية مستخدمي الطريق الضعفاء (خاصة الأطفال). أكبح فوراً."
+      }
+    }
+  },
+  {
+    "question_id": "B9_Q28",
+    "type": "WHAT_IS_PROHIBITED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Op een voorrangsweg (B9) rijdt u achter een vrachtwagen en wilt u hem inhalen. Er is een ononderbroken witte middenlijn. Wat is verboden?",
+        "choices": [
+          {
+            "text": "Inhalen over een ononderbroken witte lijn is verboden, ook op een voorrangsweg",
+            "is_correct": true
+          },
+          {
+            "text": "U mag inhalen want u heeft voorrang",
+            "is_correct": false
+          },
+          {
+            "text": "U mag inhalen als het tegenliggende rijvak vrij is",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Een ononderbroken witte lijn verbiedt inhalen, ongeacht of u op een voorrangsweg rijdt. B9 geeft geen extra inhaalrecht."
+      },
+      "EN": {
+        "question": "On a priority road (B9) you are behind a truck and want to overtake. There is a continuous white centre line. What is prohibited?",
+        "choices": [
+          {
+            "text": "Overtaking across a continuous white line is prohibited, even on a priority road",
+            "is_correct": true
+          },
+          {
+            "text": "You may overtake since you have right of way",
+            "is_correct": false
+          },
+          {
+            "text": "You may overtake if the oncoming lane is clear",
+            "is_correct": false
+          }
+        ],
+        "explanation": "A continuous white line prohibits overtaking regardless of whether you are on a priority road. B9 does not grant extra overtaking rights."
+      },
+      "FR": {
+        "question": "Sur une route prioritaire (B9) vous êtes derrière un camion et voulez le dépasser. Il y a une ligne blanche continue au milieu. Qu'est-il interdit ?",
+        "choices": [
+          {
+            "text": "Dépasser en franchissant une ligne continue blanche est interdit, même sur une route prioritaire",
+            "is_correct": true
+          },
+          {
+            "text": "Vous pouvez dépasser car vous avez la priorité",
+            "is_correct": false
+          },
+          {
+            "text": "Vous pouvez dépasser si la voie en sens inverse est libre",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Une ligne blanche continue interdit le dépassement, que vous soyez ou non sur une route prioritaire. Le B9 n'accorde pas de droit de dépassement supplémentaire."
+      },
+      "AR": {
+        "question": "على طريق الأولوية (B9) أنت خلف شاحنة وتريد تجاوزها. هناك خط أبيض متصل في المنتصف. ما الذي يُحظر؟",
+        "choices": [
+          {
+            "text": "التجاوز عبر الخط الأبيض المتصل محظور، حتى على طريق الأولوية",
+            "is_correct": true
+          },
+          {
+            "text": "يمكنك التجاوز لأن لديك الأولوية",
+            "is_correct": false
+          },
+          {
+            "text": "يمكنك التجاوز إذا كان الممر المقابل خالياً",
+            "is_correct": false
+          }
+        ],
+        "explanation": "الخط الأبيض المتصل يحظر التجاوز بصرف النظر عما إذا كنت على طريق الأولوية. B9 لا يمنح حقوق تجاوز إضافية."
+      }
+    }
+  },
+  {
+    "question_id": "B9_Q29",
+    "type": "TRUE_OR_FALSE",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Waar of niet waar: Als u een voorrangsweg (B9) volgt en een tram nadert van rechts bij een ongeregeld kruispunt, moet de tram u voorrang verlenen.",
+        "choices": [
+          {
+            "text": "Niet waar – trams hebben altijd voorrang op alle andere voertuigen, ongeacht B9",
+            "is_correct": false
+          },
+          {
+            "text": "Waar – op een voorrangsweg heeft u voorrang op alles",
+            "is_correct": true
+          }
+        ],
+        "explanation": "Niet waar. Trams hebben in België altijd voorrang op andere voertuigen, ook op voorrangswegen. Bestuurders op B9-wegen moeten voor trams stoppen."
+      },
+      "EN": {
+        "question": "True or false: If you are following a priority road (B9) and a tram approaches from the right at an uncontrolled intersection, the tram must give way to you.",
+        "choices": [
+          {
+            "text": "False – trams always have priority over all other vehicles, regardless of B9",
+            "is_correct": false
+          },
+          {
+            "text": "True – on a priority road you have priority over everything",
+            "is_correct": true
+          }
+        ],
+        "explanation": "False. Trams in Belgium always have priority over other vehicles, including on priority roads. Drivers on B9 roads must stop for trams."
+      },
+      "FR": {
+        "question": "Vrai ou faux : Si vous suivez une route prioritaire (B9) et un tram approche par la droite à un carrefour non réglementé, le tram doit vous céder le passage.",
+        "choices": [
+          {
+            "text": "Faux – les trams ont toujours la priorité sur tous les autres véhicules, peu importe le B9",
+            "is_correct": false
+          },
+          {
+            "text": "Vrai – sur une route prioritaire vous avez la priorité sur tout",
+            "is_correct": true
+          }
+        ],
+        "explanation": "Faux. Les trams en Belgique ont toujours la priorité sur les autres véhicules, y compris sur les routes prioritaires. Les conducteurs sur les routes B9 doivent s'arrêter pour les trams."
+      },
+      "AR": {
+        "question": "صحيح أم خاطئ: إذا كنت تسير على طريق الأولوية (B9) وترام يقترب من اليمين عند تقاطع غير منظم، يجب على الترام إعطائك الأولوية.",
+        "choices": [
+          {
+            "text": "خاطئ – الترام دائماً له الأولوية على جميع المركبات الأخرى، بغض النظر عن B9",
+            "is_correct": false
+          },
+          {
+            "text": "صحيح – على طريق الأولوية لديك الأولوية على كل شيء",
+            "is_correct": true
+          }
+        ],
+        "explanation": "خاطئ. في بلجيكا، للترام دائماً أولوية على المركبات الأخرى، بما في ذلك على طرق الأولوية. يجب على السائقين على طرق B9 التوقف للترام."
+      }
+    }
+  },
+  {
+    "question_id": "B9_Q30",
+    "type": "WHAT_SHOULD_YOU_DO",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U rijdt op een voorrangsweg (B9) en nadert een kruispunt op hoge snelheid. Er staat geen verkeer op de zijweg maar de zichtbaarheid is slecht door een bocht. Wat doet u?",
+        "choices": [
+          {
+            "text": "Snelheid verminderen tot u een goed overzicht heeft van het kruispunt",
+            "is_correct": true
+          },
+          {
+            "text": "Doorrijden op hoge snelheid want u heeft voorrang",
+            "is_correct": false
+          },
+          {
+            "text": "Claxonneren en versnellen zodat kruisend verkeer u hoort",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Het hebben van voorrang ontslaat u niet van de plicht om veilig rijgedrag te tonen. Bij slechte zichtbaarheid moet u altijd vaart minderen."
+      },
+      "EN": {
+        "question": "You are on a priority road (B9) approaching an intersection at high speed. No traffic on the side road but visibility is poor due to a bend. What do you do?",
+        "choices": [
+          {
+            "text": "Reduce speed until you have a good view of the intersection",
+            "is_correct": true
+          },
+          {
+            "text": "Continue at high speed since you have right of way",
+            "is_correct": false
+          },
+          {
+            "text": "Honk and accelerate so crossing traffic hears you",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Having right of way does not exempt you from the duty to show safe driving behaviour. In poor visibility you must always reduce speed."
+      },
+      "FR": {
+        "question": "Vous roulez sur une route prioritaire (B9) et approchez d'un carrefour à grande vitesse. Pas de trafic sur la voie latérale mais la visibilité est mauvaise en raison d'un virage. Que faites-vous ?",
+        "choices": [
+          {
+            "text": "Réduire la vitesse jusqu'à avoir une bonne vue du carrefour",
+            "is_correct": true
+          },
+          {
+            "text": "Continuer à grande vitesse car vous avez la priorité",
+            "is_correct": false
+          },
+          {
+            "text": "Klaxonner et accélérer pour que la circulation croisée vous entende",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Avoir la priorité ne vous dispense pas du devoir de conduite sécurisée. En cas de mauvaise visibilité, vous devez toujours réduire la vitesse."
+      },
+      "AR": {
+        "question": "أنت تسير على طريق الأولوية (B9) وتقترب من تقاطع بسرعة عالية. لا مركبات على الطريق الجانبي لكن الرؤية ضعيفة بسبب منعطف. ماذا تفعل؟",
+        "choices": [
+          {
+            "text": "قلل السرعة حتى تحصل على رؤية جيدة للتقاطع",
+            "is_correct": true
+          },
+          {
+            "text": "استمر بسرعة عالية لأن لديك الأولوية",
+            "is_correct": false
+          },
+          {
+            "text": "أدق البوق وأسرع حتى يسمعك المرور المتقاطع",
+            "is_correct": false
+          }
+        ],
+        "explanation": "امتلاك حق الأولوية لا يعفيك من واجب السلوك الآمن في القيادة. عند ضعف الرؤية يجب عليك دائماً تقليل السرعة."
+      }
+    }
   }
 ]

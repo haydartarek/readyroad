@@ -1,45 +1,57 @@
 {
-  "_IMPORTANT": "Each exam requires exactly 15 questions: 6 EASY + 6 MEDIUM + 3 HARD. No overlap between EXAM_1 and EXAM_2. You need 30 questions total (12 EASY + 12 MEDIUM + 6 HARD).",
-  "_TEMPLATE_STATUS": "INCOMPLETE — Only 5 of 30 required questions exist. Add 25 more questions before configuring exams.",
   "exam_1": {
-    "_note": "EXAM_1: Questions Q01-Q15 (6 EASY + 6 MEDIUM + 3 HARD)",
+    "_note": "EXAM_1: Q01-Q15 (6 EASY + 6 MEDIUM + 3 HARD)",
     "questions": [
       "C9_Q01",
       "C9_Q02",
       "C9_Q03",
       "C9_Q04",
       "C9_Q05",
-      "[C9_Q06]",
-      "[C9_Q07]",
-      "[C9_Q08]",
-      "[C9_Q09]",
-      "[C9_Q10]",
-      "[C9_Q11]",
-      "[C9_Q12]",
-      "[C9_Q13]",
-      "[C9_Q14]",
-      "[C9_Q15]"
-    ]
+      "C9_Q06",
+      "C9_Q07",
+      "C9_Q08",
+      "C9_Q09",
+      "C9_Q10",
+      "C9_Q11",
+      "C9_Q12",
+      "C9_Q13",
+      "C9_Q14",
+      "C9_Q15"
+    ],
+    "passing_score": 12,
+    "total_questions": 15,
+    "distribution": {
+      "EASY": 6,
+      "MEDIUM": 6,
+      "HARD": 3
+    }
   },
   "exam_2": {
-    "_note": "EXAM_2: Questions Q16-Q30 (6 EASY + 6 MEDIUM + 3 HARD) — NO overlap with EXAM_1",
+    "_note": "EXAM_2: Q16-Q30 (6 EASY + 6 MEDIUM + 3 HARD) — no overlap with EXAM_1",
     "questions": [
-      "[C9_Q16]",
-      "[C9_Q17]",
-      "[C9_Q18]",
-      "[C9_Q19]",
-      "[C9_Q20]",
-      "[C9_Q21]",
-      "[C9_Q22]",
-      "[C9_Q23]",
-      "[C9_Q24]",
-      "[C9_Q25]",
-      "[C9_Q26]",
-      "[C9_Q27]",
-      "[C9_Q28]",
-      "[C9_Q29]",
-      "[C9_Q30]"
-    ]
+      "C9_Q16",
+      "C9_Q17",
+      "C9_Q18",
+      "C9_Q19",
+      "C9_Q20",
+      "C9_Q21",
+      "C9_Q22",
+      "C9_Q23",
+      "C9_Q24",
+      "C9_Q25",
+      "C9_Q26",
+      "C9_Q27",
+      "C9_Q28",
+      "C9_Q29",
+      "C9_Q30"
+    ],
+    "passing_score": 12,
+    "total_questions": 15,
+    "distribution": {
+      "EASY": 6,
+      "MEDIUM": 6,
+      "HARD": 3
+    }
   },
   "passing_score": 12,
   "total_questions": 15,

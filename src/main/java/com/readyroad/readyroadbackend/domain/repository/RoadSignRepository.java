@@ -13,7 +13,11 @@ public interface RoadSignRepository extends JpaRepository<RoadSign, Long> {
 
     Optional<RoadSign> findBySignCode(String signCode);
 
+    Optional<RoadSign> findByNormalizedSignCode(String normalizedSignCode);
+
     boolean existsBySignCode(String signCode);
+
+    boolean existsByNormalizedSignCode(String normalizedSignCode);
 
     List<RoadSign> findAllByIsActiveTrueOrderBySignCodeAsc();
 

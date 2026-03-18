@@ -37,12 +37,12 @@ UPDATE traffic_signs SET image_url = 'images/signs/mandatory_signs/D4 Verplicht 
 -- =====================
 -- Parking Signs (E series) - parkeren
 -- =====================
-UPDATE traffic_signs SET image_url = 'images/signs/parking_signs/E9a Parkeren toegelaten.png' WHERE sign_code = 'E9a-v10';
+UPDATE traffic_signs SET image_url = NULL WHERE sign_code = 'E9a-v10'; -- image removed
 UPDATE traffic_signs SET image_url = 'images/signs/parking_signs/E9a - Parkeren toegelaten.png' WHERE sign_code = 'E9a-v2';
 UPDATE traffic_signs SET image_url = 'images/signs/parking_signs/E9a Elektrisch opladen.png' WHERE sign_code = 'E9a-v3';
 UPDATE traffic_signs SET image_url = 'images/signs/parking_signs/E9a parkeerschijf Parkeren beperkt in tijd, parkeerschijf verplicht.png' WHERE sign_code = 'E9a-v6';
 UPDATE traffic_signs SET image_url = 'images/signs/parking_signs/E9a mindervaliden Parkeren enkel toegelaten voor mindervaliden.png' WHERE sign_code = 'E9a-v7';
-UPDATE traffic_signs SET image_url = 'images/signs/parking_signs/E9g Verplicht parkeren op de rijbaan.png' WHERE sign_code = 'E9g-v1';
+UPDATE traffic_signs SET image_url = NULL WHERE sign_code = 'E9g-v1'; -- image removed
 
 -- =====================
 -- Information Signs (F series) - aanwijzingsborden

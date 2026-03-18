@@ -118,7 +118,7 @@ INSERT INTO traffic_signs (
  'Parking sign: Parking allowed for special destination. Follow the indicated parking rules.',
  'Panneau de stationnement : stationnement autorisé pour destination spéciale. Suivez les règles indiquées.',
  'علامة وقوف السيارات: وقوف مسموح لوجهة خاصة. اتبع قواعد وقوف السيارات المشار إليها.',
- 'images/signs/parkeren/E9a Parkeren toegelaten.png',  -- ✅ unified: was 'assets/'
+ '',  -- image removed
  'Parkeerbord: Parkeren toegelaten voor speciale bestemming. Volg de aangegeven parkeerregels.',
  'Parking sign: Parking allowed for special destination. Follow the indicated parking rules.',
  'Panneau de stationnement : stationnement autorisé pour destination spéciale. Suivez les règles indiquées.',
@@ -144,7 +144,7 @@ INSERT INTO traffic_signs (
  'Parking sign: Parking for bicycles and mopeds only. Follow the indicated parking rules.',
  'Panneau de stationnement : stationnement pour vélos et cyclomoteurs uniquement.',
  'علامة وقوف السيارات: وقوف للدراجات والدراجات البخارية فقط.',
- 'images/signs/parkeren/E9g Verplicht parkeren op de rijbaan.png',  -- ✅ unified: was 'assets/'
+ '',  -- image removed
  'Parkeerbord: Parkeren uitsluitend voor fietsen en bromfietsen. Volg de aangegeven parkeerregels.',
  'Parking sign: Parking for bicycles and mopeds only. Follow the indicated parking rules.',
  'Panneau de stationnement : stationnement pour vélos et cyclomoteurs uniquement.',

@@ -1,51 +1,41 @@
 {
-  "_IMPORTANT": "Each exam requires exactly 15 questions: 6 EASY + 6 MEDIUM + 3 HARD. No overlap between EXAM_1 and EXAM_2. You need 30 questions total (12 EASY + 12 MEDIUM + 6 HARD).",
-  "_TEMPLATE_STATUS": "INCOMPLETE — Only 5 of 30 required questions exist. Add 25 more questions before configuring exams.",
   "exam_1": {
-    "_note": "EXAM_1: Questions Q01-Q15 (6 EASY + 6 MEDIUM + 3 HARD)",
     "questions": [
       "A29_Q01",
       "A29_Q02",
       "A29_Q03",
       "A29_Q04",
       "A29_Q05",
-      "[A29_Q06]",
-      "[A29_Q07]",
-      "[A29_Q08]",
-      "[A29_Q09]",
-      "[A29_Q10]",
-      "[A29_Q11]",
-      "[A29_Q12]",
-      "[A29_Q13]",
-      "[A29_Q14]",
-      "[A29_Q15]"
+      "A29_Q06",
+      "A29_Q07",
+      "A29_Q08",
+      "A29_Q09",
+      "A29_Q10",
+      "A29_Q11",
+      "A29_Q12",
+      "A29_Q13",
+      "A29_Q14",
+      "A29_Q15"
     ]
   },
   "exam_2": {
-    "_note": "EXAM_2: Questions Q16-Q30 (6 EASY + 6 MEDIUM + 3 HARD) — NO overlap with EXAM_1",
     "questions": [
-      "[A29_Q16]",
-      "[A29_Q17]",
-      "[A29_Q18]",
-      "[A29_Q19]",
-      "[A29_Q20]",
-      "[A29_Q21]",
-      "[A29_Q22]",
-      "[A29_Q23]",
-      "[A29_Q24]",
-      "[A29_Q25]",
-      "[A29_Q26]",
-      "[A29_Q27]",
-      "[A29_Q28]",
-      "[A29_Q29]",
-      "[A29_Q30]"
+      "A29_Q16",
+      "A29_Q17",
+      "A29_Q18",
+      "A29_Q19",
+      "A29_Q20",
+      "A29_Q21",
+      "A29_Q22",
+      "A29_Q23",
+      "A29_Q24",
+      "A29_Q25",
+      "A29_Q26",
+      "A29_Q27",
+      "A29_Q28",
+      "A29_Q29",
+      "A29_Q30"
     ]
   },
-  "passing_score": 12,
-  "total_questions": 15,
-  "distribution": {
-    "EASY": 6,
-    "MEDIUM": 6,
-    "HARD": 3
-  }
+  "passing_score": 12
 }

@@ -18,6 +18,9 @@ public class RoadSign extends BaseEntity {
     @Column(name = "sign_code", nullable = false, length = 50)
     private String signCode;
 
+    @Column(name = "normalized_sign_code", nullable = false, length = 100)
+    private String normalizedSignCode;
+
     @Enumerated(EnumType.STRING)
     @Column(nullable = false, length = 20)
     private SignCategory category;
@@ -67,56 +70,134 @@ public class RoadSign extends BaseEntity {
     // ── Text normalisation ───────────────────────────────────────────────────
     @Override
     protected void normalizeTextFields() {
-        nameNl          = TextNormalizer.normalize(nameNl);
-        nameEn          = TextNormalizer.normalize(nameEn);
-        nameFr          = TextNormalizer.normalize(nameFr);
-        nameAr          = TextNormalizer.normalize(nameAr);
-        descriptionNl   = TextNormalizer.normalize(descriptionNl);
-        descriptionEn   = TextNormalizer.normalize(descriptionEn);
-        descriptionFr   = TextNormalizer.normalize(descriptionFr);
-        descriptionAr   = TextNormalizer.normalize(descriptionAr);
+        nameNl = TextNormalizer.normalize(nameNl);
+        nameEn = TextNormalizer.normalize(nameEn);
+        nameFr = TextNormalizer.normalize(nameFr);
+        nameAr = TextNormalizer.normalize(nameAr);
+        descriptionNl = TextNormalizer.normalize(descriptionNl);
+        descriptionEn = TextNormalizer.normalize(descriptionEn);
+        descriptionFr = TextNormalizer.normalize(descriptionFr);
+        descriptionAr = TextNormalizer.normalize(descriptionAr);
     }
 
     // ── Getters & Setters ────────────────────────────────────────────────────
-    public String getSignCode()                    { return signCode; }
-    public void   setSignCode(String v)            { this.signCode = v; }
+    public String getSignCode() {
+        return signCode;
+    }
 
-    public SignCategory getCategory()              { return category; }
-    public void         setCategory(SignCategory v){ this.category = v; }
+    public void setSignCode(String v) {
+        this.signCode = v;
+    }
 
-    public String getImagePath()                   { return imagePath; }
-    public void   setImagePath(String v)           { this.imagePath = v; }
+    public String getNormalizedSignCode() {
+        return normalizedSignCode;
+    }
 
-    public Boolean getSeriousViolation()           { return seriousViolation; }
-    public void    setSeriousViolation(Boolean v)  { this.seriousViolation = v; }
+    public void setNormalizedSignCode(String v) {
+        this.normalizedSignCode = v;
+    }
 
-    public String getNameNl()                      { return nameNl; }
-    public void   setNameNl(String v)              { this.nameNl = v; }
+    public SignCategory getCategory() {
+        return category;
+    }
 
-    public String getNameEn()                      { return nameEn; }
-    public void   setNameEn(String v)              { this.nameEn = v; }
+    public void setCategory(SignCategory v) {
+        this.category = v;
+    }
 
-    public String getNameFr()                      { return nameFr; }
-    public void   setNameFr(String v)              { this.nameFr = v; }
+    public String getImagePath() {
+        return imagePath;
+    }
 
-    public String getNameAr()                      { return nameAr; }
-    public void   setNameAr(String v)              { this.nameAr = v; }
+    public void setImagePath(String v) {
+        this.imagePath = v;
+    }
 
-    public String getDescriptionNl()               { return descriptionNl; }
-    public void   setDescriptionNl(String v)       { this.descriptionNl = v; }
+    public Boolean getSeriousViolation() {
+        return seriousViolation;
+    }
 
-    public String getDescriptionEn()               { return descriptionEn; }
-    public void   setDescriptionEn(String v)       { this.descriptionEn = v; }
+    public void setSeriousViolation(Boolean v) {
+        this.seriousViolation = v;
+    }
 
-    public String getDescriptionFr()               { return descriptionFr; }
-    public void   setDescriptionFr(String v)       { this.descriptionFr = v; }
+    public String getNameNl() {
+        return nameNl;
+    }
 
-    public String getDescriptionAr()               { return descriptionAr; }
-    public void   setDescriptionAr(String v)       { this.descriptionAr = v; }
+    public void setNameNl(String v) {
+        this.nameNl = v;
+    }
 
-    public Boolean getIsActive()                   { return isActive; }
-    public void    setIsActive(Boolean v)          { this.isActive = v; }
+    public String getNameEn() {
+        return nameEn;
+    }
 
-    public List<SignQuestion> getQuestions()        { return questions; }
-    public List<SignExam>     getExams()            { return exams; }
+    public void setNameEn(String v) {
+        this.nameEn = v;
+    }
+
+    public String getNameFr() {
+        return nameFr;
+    }
+
+    public void setNameFr(String v) {
+        this.nameFr = v;
+    }
+
+    public String getNameAr() {
+        return nameAr;
+    }
+
+    public void setNameAr(String v) {
+        this.nameAr = v;
+    }
+
+    public String getDescriptionNl() {
+        return descriptionNl;
+    }
+
+    public void setDescriptionNl(String v) {
+        this.descriptionNl = v;
+    }
+
+    public String getDescriptionEn() {
+        return descriptionEn;
+    }
+
+    public void setDescriptionEn(String v) {
+        this.descriptionEn = v;
+    }
+
+    public String getDescriptionFr() {
+        return descriptionFr;
+    }
+
+    public void setDescriptionFr(String v) {
+        this.descriptionFr = v;
+    }
+
+    public String getDescriptionAr() {
+        return descriptionAr;
+    }
+
+    public void setDescriptionAr(String v) {
+        this.descriptionAr = v;
+    }
+
+    public Boolean getIsActive() {
+        return isActive;
+    }
+
+    public void setIsActive(Boolean v) {
+        this.isActive = v;
+    }
+
+    public List<SignQuestion> getQuestions() {
+        return questions;
+    }
+
+    public List<SignExam> getExams() {
+        return exams;
+    }
 }

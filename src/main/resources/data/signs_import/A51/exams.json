@@ -1,51 +1,41 @@
 {
-  "_IMPORTANT": "Each exam requires exactly 15 questions: 6 EASY + 6 MEDIUM + 3 HARD. No overlap between EXAM_1 and EXAM_2. You need 30 questions total (12 EASY + 12 MEDIUM + 6 HARD).",
-  "_TEMPLATE_STATUS": "INCOMPLETE — Only 5 of 30 required questions exist. Add 25 more questions before configuring exams.",
   "exam_1": {
-    "_note": "EXAM_1: Questions Q01-Q15 (6 EASY + 6 MEDIUM + 3 HARD)",
     "questions": [
       "A51_Q01",
       "A51_Q02",
       "A51_Q03",
       "A51_Q04",
       "A51_Q05",
-      "[A51_Q06]",
-      "[A51_Q07]",
-      "[A51_Q08]",
-      "[A51_Q09]",
-      "[A51_Q10]",
-      "[A51_Q11]",
-      "[A51_Q12]",
-      "[A51_Q13]",
-      "[A51_Q14]",
-      "[A51_Q15]"
+      "A51_Q06",
+      "A51_Q07",
+      "A51_Q08",
+      "A51_Q09",
+      "A51_Q10",
+      "A51_Q11",
+      "A51_Q12",
+      "A51_Q13",
+      "A51_Q14",
+      "A51_Q15"
     ]
   },
   "exam_2": {
-    "_note": "EXAM_2: Questions Q16-Q30 (6 EASY + 6 MEDIUM + 3 HARD) — NO overlap with EXAM_1",
     "questions": [
-      "[A51_Q16]",
-      "[A51_Q17]",
-      "[A51_Q18]",
-      "[A51_Q19]",
-      "[A51_Q20]",
-      "[A51_Q21]",
-      "[A51_Q22]",
-      "[A51_Q23]",
-      "[A51_Q24]",
-      "[A51_Q25]",
-      "[A51_Q26]",
-      "[A51_Q27]",
-      "[A51_Q28]",
-      "[A51_Q29]",
-      "[A51_Q30]"
+      "A51_Q16",
+      "A51_Q17",
+      "A51_Q18",
+      "A51_Q19",
+      "A51_Q20",
+      "A51_Q21",
+      "A51_Q22",
+      "A51_Q23",
+      "A51_Q24",
+      "A51_Q25",
+      "A51_Q26",
+      "A51_Q27",
+      "A51_Q28",
+      "A51_Q29",
+      "A51_Q30"
     ]
   },
-  "passing_score": 12,
-  "total_questions": 15,
-  "distribution": {
-    "EASY": 6,
-    "MEDIUM": 6,
-    "HARD": 3
-  }
+  "passing_score": 12
 }

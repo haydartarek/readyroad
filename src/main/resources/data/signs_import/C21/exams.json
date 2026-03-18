@@ -1,45 +1,57 @@
 {
-  "_IMPORTANT": "Each exam requires exactly 15 questions: 6 EASY + 6 MEDIUM + 3 HARD. No overlap between EXAM_1 and EXAM_2. You need 30 questions total (12 EASY + 12 MEDIUM + 6 HARD).",
-  "_TEMPLATE_STATUS": "INCOMPLETE — Only 5 of 30 required questions exist. Add 25 more questions before configuring exams.",
   "exam_1": {
-    "_note": "EXAM_1: Questions Q01-Q15 (6 EASY + 6 MEDIUM + 3 HARD)",
+    "_note": "EXAM_1: Q01-Q15 (6 EASY + 6 MEDIUM + 3 HARD)",
     "questions": [
       "C21_Q01",
       "C21_Q02",
       "C21_Q03",
       "C21_Q04",
       "C21_Q05",
-      "[C21_Q06]",
-      "[C21_Q07]",
-      "[C21_Q08]",
-      "[C21_Q09]",
-      "[C21_Q10]",
-      "[C21_Q11]",
-      "[C21_Q12]",
-      "[C21_Q13]",
-      "[C21_Q14]",
-      "[C21_Q15]"
-    ]
+      "C21_Q06",
+      "C21_Q07",
+      "C21_Q08",
+      "C21_Q09",
+      "C21_Q10",
+      "C21_Q11",
+      "C21_Q12",
+      "C21_Q13",
+      "C21_Q14",
+      "C21_Q15"
+    ],
+    "passing_score": 12,
+    "total_questions": 15,
+    "distribution": {
+      "EASY": 6,
+      "MEDIUM": 6,
+      "HARD": 3
+    }
   },
   "exam_2": {
-    "_note": "EXAM_2: Questions Q16-Q30 (6 EASY + 6 MEDIUM + 3 HARD) — NO overlap with EXAM_1",
+    "_note": "EXAM_2: Q16-Q30 (6 EASY + 6 MEDIUM + 3 HARD) — no overlap with EXAM_1",
     "questions": [
-      "[C21_Q16]",
-      "[C21_Q17]",
-      "[C21_Q18]",
-      "[C21_Q19]",
-      "[C21_Q20]",
-      "[C21_Q21]",
-      "[C21_Q22]",
-      "[C21_Q23]",
-      "[C21_Q24]",
-      "[C21_Q25]",
-      "[C21_Q26]",
-      "[C21_Q27]",
-      "[C21_Q28]",
-      "[C21_Q29]",
-      "[C21_Q30]"
-    ]
+      "C21_Q16",
+      "C21_Q17",
+      "C21_Q18",
+      "C21_Q19",
+      "C21_Q20",
+      "C21_Q21",
+      "C21_Q22",
+      "C21_Q23",
+      "C21_Q24",
+      "C21_Q25",
+      "C21_Q26",
+      "C21_Q27",
+      "C21_Q28",
+      "C21_Q29",
+      "C21_Q30"
+    ],
+    "passing_score": 12,
+    "total_questions": 15,
+    "distribution": {
+      "EASY": 6,
+      "MEDIUM": 6,
+      "HARD": 3
+    }
   },
   "passing_score": 12,
   "total_questions": 15,

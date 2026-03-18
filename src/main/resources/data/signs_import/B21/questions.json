@@ -392,5 +392,1870 @@
         "explanation": "لافتات الأولوية ملزمة قانونياً لجميع مستخدمي الطريق. عدم الامتثال مخالفة قد تؤدي إلى غرامات وخصم نقاط من رخصة القيادة."
       }
     }
+  },
+  {
+    "question_id": "B21_Q06",
+    "type": "WHAT_DOES_IT_MEAN",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat betekent het bord B21 bij een smalle doorgang?",
+        "choices": [
+          {
+            "text": "U heeft voorrang op het verkeer uit de tegenovergestelde richting – zij moeten wachten",
+            "is_correct": true
+          },
+          {
+            "text": "U moet voorrang verlenen aan het tegenliggende verkeer",
+            "is_correct": false
+          },
+          {
+            "text": "U moet stoppen voor de doorgang",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Het bord B21 geeft aan dat u de prioriteit heeft bij de smalle doorgang en dat het tegenliggende verkeer moet wachten."
+      },
+      "EN": {
+        "question": "What does sign B21 mean at a narrow passage?",
+        "choices": [
+          {
+            "text": "You have priority over traffic from the opposite direction – they must wait",
+            "is_correct": true
+          },
+          {
+            "text": "You must give way to oncoming traffic",
+            "is_correct": false
+          },
+          {
+            "text": "You must stop before the passage",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Sign B21 indicates that you have priority at the narrow passage and oncoming traffic must wait."
+      },
+      "FR": {
+        "question": "Que signifie le panneau B21 à un passage étroit ?",
+        "choices": [
+          {
+            "text": "Vous avez la priorité sur le trafic venant en sens inverse – ils doivent attendre",
+            "is_correct": true
+          },
+          {
+            "text": "Vous devez céder le passage au trafic en sens inverse",
+            "is_correct": false
+          },
+          {
+            "text": "Vous devez vous arrêter avant le passage",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Le panneau B21 indique que vous avez la priorité au passage étroit et que le trafic en sens inverse doit attendre."
+      },
+      "AR": {
+        "question": "ماذا تعني اللافتة B21 عند ممر ضيق؟",
+        "choices": [
+          {
+            "text": "لديك الأولوية على حركة المرور من الاتجاه المعاكس – يجب عليهم الانتظار",
+            "is_correct": true
+          },
+          {
+            "text": "يجب عليك إعطاء الأولوية لحركة المرور القادمة",
+            "is_correct": false
+          },
+          {
+            "text": "يجب عليك التوقف قبل الممر",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تشير اللافتة B21 إلى أن لديك الأولوية عند الممر الضيق وأن حركة المرور القادمة يجب أن تنتظر."
+      }
+    }
+  },
+  {
+    "question_id": "B21_Q07",
+    "type": "TRUE_OR_FALSE",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Waar of niet waar: Bij bord B21 mag u de smalle doorgang inrijden zonder te wachten op tegenliggers.",
+        "choices": [
+          {
+            "text": "Waar – u heeft voorrang en mag doorrijden",
+            "is_correct": true
+          },
+          {
+            "text": "Niet waar – u moet altijd wachten op tegenliggers",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Waar. Bij bord B21 heeft u voorrang op de tegenliggers. U mag de smalle doorgang inrijden zonder te wachten."
+      },
+      "EN": {
+        "question": "True or false: With sign B21 you may enter the narrow passage without waiting for oncoming vehicles.",
+        "choices": [
+          {
+            "text": "True – you have priority and may proceed",
+            "is_correct": true
+          },
+          {
+            "text": "False – you must always wait for oncoming vehicles",
+            "is_correct": false
+          }
+        ],
+        "explanation": "True. With sign B21 you have priority over oncoming vehicles. You may enter the narrow passage without waiting."
+      },
+      "FR": {
+        "question": "Vrai ou faux : Avec le panneau B21, vous pouvez vous engager dans le passage étroit sans attendre les véhicules en sens inverse.",
+        "choices": [
+          {
+            "text": "Vrai – vous avez la priorité et pouvez continuer",
+            "is_correct": true
+          },
+          {
+            "text": "Faux – vous devez toujours attendre les véhicules en sens inverse",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Vrai. Avec le panneau B21, vous avez la priorité sur les véhicules en sens inverse. Vous pouvez vous engager dans le passage étroit sans attendre."
+      },
+      "AR": {
+        "question": "صحيح أم خاطئ: مع اللافتة B21 يمكنك دخول الممر الضيق دون الانتظار للمركبات القادمة.",
+        "choices": [
+          {
+            "text": "صحيح – لديك الأولوية ويمكنك المضي",
+            "is_correct": true
+          },
+          {
+            "text": "خاطئ – يجب عليك دائماً انتظار المركبات القادمة",
+            "is_correct": false
+          }
+        ],
+        "explanation": "صحيح. مع اللافتة B21 لديك الأولوية على المركبات القادمة. يمكنك دخول الممر الضيق دون الانتظار."
+      }
+    }
+  },
+  {
+    "question_id": "B21_Q08",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Bij bord B21, mag een tegenligger de smalle doorgang inrijden terwijl u er al inrijdt?",
+        "choices": [
+          {
+            "text": "Nee, de tegenligger moet wachten totdat u de doorgang volledig heeft gepasseerd",
+            "is_correct": false
+          },
+          {
+            "text": "Ja, als er genoeg ruimte is",
+            "is_correct": true
+          }
+        ],
+        "explanation": "Nee. Bij B21 heeft u de voorrang. De tegenligger moet wachten tot u de smalle doorgang volledig heeft gepasseerd."
+      },
+      "EN": {
+        "question": "With sign B21, may an oncoming vehicle enter the narrow passage while you are already driving in it?",
+        "choices": [
+          {
+            "text": "No, the oncoming vehicle must wait until you have completely passed through",
+            "is_correct": false
+          },
+          {
+            "text": "Yes, if there is enough room",
+            "is_correct": true
+          }
+        ],
+        "explanation": "No. With B21 you have priority. The oncoming vehicle must wait until you have completely passed through the narrow passage."
+      },
+      "FR": {
+        "question": "Avec le panneau B21, un véhicule en sens inverse peut-il s'engager dans le passage étroit pendant que vous y roulez déjà ?",
+        "choices": [
+          {
+            "text": "Non, le véhicule en sens inverse doit attendre que vous ayez complètement traversé le passage",
+            "is_correct": false
+          },
+          {
+            "text": "Oui, s'il y a assez de place",
+            "is_correct": true
+          }
+        ],
+        "explanation": "Non. Avec B21, vous avez la priorité. Le véhicule en sens inverse doit attendre que vous ayez complètement traversé le passage étroit."
+      },
+      "AR": {
+        "question": "مع اللافتة B21، هل يمكن للمركبة القادمة دخول الممر الضيق بينما أنت تسير فيه بالفعل؟",
+        "choices": [
+          {
+            "text": "لا، يجب على المركبة القادمة الانتظار حتى تمر بالكامل",
+            "is_correct": false
+          },
+          {
+            "text": "نعم، إذا كان هناك مجال كافٍ",
+            "is_correct": true
+          }
+        ],
+        "explanation": "لا. مع B21 لديك الأولوية. يجب على المركبة القادمة الانتظار حتى تمر عبر الممر الضيق بالكامل."
+      }
+    }
+  },
+  {
+    "question_id": "B21_Q09",
+    "type": "WHAT_SHOULD_YOU_DO",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U ziet bord B21 voor een smalle doorgang. Een tegenligger nadert. Wat doet u?",
+        "choices": [
+          {
+            "text": "Rijdt normaal de doorgang in – de tegenligger moet wachten",
+            "is_correct": true
+          },
+          {
+            "text": "Wacht totdat de tegenligger stopt",
+            "is_correct": false
+          },
+          {
+            "text": "Geeft de tegenligger voorrang",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Bij B21 heeft u voorrang. U rijdt de smalle doorgang in en de tegenligger is verplicht te stoppen en te wachten."
+      },
+      "EN": {
+        "question": "You see sign B21 before a narrow passage. An oncoming vehicle approaches. What do you do?",
+        "choices": [
+          {
+            "text": "Drive normally into the passage – the oncoming vehicle must wait",
+            "is_correct": true
+          },
+          {
+            "text": "Wait until the oncoming vehicle stops",
+            "is_correct": false
+          },
+          {
+            "text": "Give the oncoming vehicle priority",
+            "is_correct": false
+          }
+        ],
+        "explanation": "With B21 you have priority. You drive into the narrow passage and the oncoming vehicle is required to stop and wait."
+      },
+      "FR": {
+        "question": "Vous voyez le panneau B21 avant un passage étroit. Un véhicule en sens inverse approche. Que faites-vous ?",
+        "choices": [
+          {
+            "text": "Engagez-vous normalement dans le passage – le véhicule en sens inverse doit attendre",
+            "is_correct": true
+          },
+          {
+            "text": "Attendez que le véhicule en sens inverse s'arrête",
+            "is_correct": false
+          },
+          {
+            "text": "Cédez la priorité au véhicule en sens inverse",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Avec B21, vous avez la priorité. Vous vous engagez dans le passage étroit et le véhicule en sens inverse est obligé de s'arrêter et d'attendre."
+      },
+      "AR": {
+        "question": "ترى اللافتة B21 قبل ممر ضيق. مركبة قادمة تقترب. ماذا تفعل؟",
+        "choices": [
+          {
+            "text": "سر بشكل طبيعي في الممر – المركبة القادمة يجب أن تنتظر",
+            "is_correct": true
+          },
+          {
+            "text": "انتظر حتى تتوقف المركبة القادمة",
+            "is_correct": false
+          },
+          {
+            "text": "أعطِ المركبة القادمة الأولوية",
+            "is_correct": false
+          }
+        ],
+        "explanation": "مع B21 لديك الأولوية. تدخل الممر الضيق والمركبة القادمة ملزمة بالتوقف والانتظار."
+      }
+    }
+  },
+  {
+    "question_id": "B21_Q10",
+    "type": "WHAT_IS_PROHIBITED",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat is verboden voor de tegenligger bij een smalle doorgang B21?",
+        "choices": [
+          {
+            "text": "De smalle doorgang inrijden terwijl u er al in rijdt of al in de doorgang bent",
+            "is_correct": true
+          },
+          {
+            "text": "Wachten totdat u voorbij bent",
+            "is_correct": false
+          },
+          {
+            "text": "Zijn motor laten draaien tijdens het wachten",
+            "is_correct": false
+          }
+        ],
+        "explanation": "De tegenligger mag bij B21 niet de doorgang inrijden terwijl de bestuurder met voorrang (B21-kant) al in de doorgang rijdt."
+      },
+      "EN": {
+        "question": "What is prohibited for the oncoming vehicle at a narrow passage B21?",
+        "choices": [
+          {
+            "text": "Entering the narrow passage while you are already driving in it",
+            "is_correct": true
+          },
+          {
+            "text": "Waiting until you have passed",
+            "is_correct": false
+          },
+          {
+            "text": "Leaving their engine running while waiting",
+            "is_correct": false
+          }
+        ],
+        "explanation": "With B21 the oncoming vehicle may not enter the passage while the driver with priority (B21 side) is already driving in it."
+      },
+      "FR": {
+        "question": "Qu'est-il interdit pour le véhicule en sens inverse à un passage étroit B21 ?",
+        "choices": [
+          {
+            "text": "S'engager dans le passage étroit pendant que vous y roulez déjà",
+            "is_correct": true
+          },
+          {
+            "text": "Attendre que vous soyez passé",
+            "is_correct": false
+          },
+          {
+            "text": "Laisser tourner leur moteur pendant l'attente",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Avec B21, le véhicule en sens inverse ne peut pas s'engager dans le passage pendant que le conducteur ayant la priorité (côté B21) y roule déjà."
+      },
+      "AR": {
+        "question": "ما الذي يُحظر على المركبة القادمة عند الممر الضيق B21؟",
+        "choices": [
+          {
+            "text": "دخول الممر الضيق بينما أنت تسير فيه بالفعل",
+            "is_correct": true
+          },
+          {
+            "text": "الانتظار حتى تمر",
+            "is_correct": false
+          },
+          {
+            "text": "ترك محركها يعمل أثناء الانتظار",
+            "is_correct": false
+          }
+        ],
+        "explanation": "مع B21 لا يمكن للمركبة القادمة دخول الممر بينما السائق ذو الأولوية (جانب B21) يسير فيه بالفعل."
+      }
+    }
+  },
+  {
+    "question_id": "B21_Q11",
+    "type": "WHICH_SIGN",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Welke twee borden zijn tegengestelden qua smalle doorgangen?",
+        "choices": [
+          {
+            "text": "B19 (voorrang verlenen) en B21 (voorrang hebben) – ze gelden respectievelijk voor beide rijrichtingen van dezelfde smalle doorgang",
+            "is_correct": true
+          },
+          {
+            "text": "B1 en B5",
+            "is_correct": false
+          },
+          {
+            "text": "B9 en B11",
+            "is_correct": false
+          }
+        ],
+        "explanation": "B19 en B21 zijn elkaars tegengestelden bij smalle doorgangen: B19 staat aan de kant die voorrang moet verlenen, B21 aan de kant die voorrang heeft."
+      },
+      "EN": {
+        "question": "Which two signs are opposites regarding narrow passages?",
+        "choices": [
+          {
+            "text": "B19 (give way) and B21 (have priority) – they apply respectively to both directions of the same narrow passage",
+            "is_correct": true
+          },
+          {
+            "text": "B1 and B5",
+            "is_correct": false
+          },
+          {
+            "text": "B9 and B11",
+            "is_correct": false
+          }
+        ],
+        "explanation": "B19 and B21 are each other's opposites at narrow passages: B19 is on the side that must give way, B21 on the side that has priority."
+      },
+      "FR": {
+        "question": "Quels deux panneaux sont des opposés concernant les passages étroits ?",
+        "choices": [
+          {
+            "text": "B19 (céder le passage) et B21 (avoir la priorité) – ils s'appliquent respectivement aux deux sens de circulation du même passage étroit",
+            "is_correct": true
+          },
+          {
+            "text": "B1 et B5",
+            "is_correct": false
+          },
+          {
+            "text": "B9 et B11",
+            "is_correct": false
+          }
+        ],
+        "explanation": "B19 et B21 sont l'opposé l'un de l'autre aux passages étroits : B19 est du côté qui doit céder le passage, B21 du côté qui a la priorité."
+      },
+      "AR": {
+        "question": "أي لافتتين هما نقيضتان فيما يتعلق بالممرات الضيقة؟",
+        "choices": [
+          {
+            "text": "B19 (أعطِ الأولوية) وB21 (لديك الأولوية) – تسريان على كلا اتجاهي سير نفس الممر الضيق",
+            "is_correct": true
+          },
+          {
+            "text": "B1 وB5",
+            "is_correct": false
+          },
+          {
+            "text": "B9 وB11",
+            "is_correct": false
+          }
+        ],
+        "explanation": "B19 وB21 نقيضتان عند الممرات الضيقة: B19 على الجانب الذي يجب أن يعطي الأولوية، B21 على الجانب الذي لديه الأولوية."
+      }
+    }
+  },
+  {
+    "question_id": "B21_Q12",
+    "type": "TRUE_OR_FALSE",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Waar of niet waar: Bij bord B21 heeft de tegenligger het bord B19 aan zijn kant van de doorgang.",
+        "choices": [
+          {
+            "text": "Waar – B19 en B21 worden altijd samen geplaatst op dezelfde smalle doorgang voor respectievelijk elke rijrichting",
+            "is_correct": true
+          },
+          {
+            "text": "Niet waar – soms staat er geen bord aan de andere kant",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Waar. B19 en B21 zijn complementaire borden die samen worden geplaatst op dezelfde smalle doorgang: B19 voor de kant die moet wachten, B21 voor de kant met voorrang."
+      },
+      "EN": {
+        "question": "True or false: With sign B21 the oncoming vehicle has sign B19 on their side of the passage.",
+        "choices": [
+          {
+            "text": "True – B19 and B21 are always placed together on the same narrow passage for each direction respectively",
+            "is_correct": true
+          },
+          {
+            "text": "False – sometimes there is no sign on the other side",
+            "is_correct": false
+          }
+        ],
+        "explanation": "True. B19 and B21 are complementary signs placed together on the same narrow passage: B19 for the side that must wait, B21 for the side with priority."
+      },
+      "FR": {
+        "question": "Vrai ou faux : Avec le panneau B21, le véhicule en sens inverse a le panneau B19 de son côté du passage.",
+        "choices": [
+          {
+            "text": "Vrai – B19 et B21 sont toujours placés ensemble sur le même passage étroit pour chaque sens respectivement",
+            "is_correct": true
+          },
+          {
+            "text": "Faux – parfois il n'y a pas de panneau de l'autre côté",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Vrai. B19 et B21 sont des panneaux complémentaires placés ensemble sur le même passage étroit : B19 pour le côté qui doit attendre, B21 pour le côté prioritaire."
+      },
+      "AR": {
+        "question": "صحيح أم خاطئ: مع اللافتة B21 المركبة القادمة لديها اللافتة B19 على جانبها من الممر.",
+        "choices": [
+          {
+            "text": "صحيح – B19 وB21 توضعان دائماً معاً على نفس الممر الضيق لكل اتجاه على التوالي",
+            "is_correct": true
+          },
+          {
+            "text": "خاطئ – أحياناً لا توجد لافتة على الجانب الآخر",
+            "is_correct": false
+          }
+        ],
+        "explanation": "صحيح. B19 وB21 لافتتان تكميليتان توضعان معاً على نفس الممر الضيق: B19 للجانب الذي يجب أن ينتظر، B21 للجانب ذي الأولوية."
+      }
+    }
+  },
+  {
+    "question_id": "B21_Q13",
+    "type": "WHAT_DOES_IT_MEAN",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U rijdt op een weg met bord B21. Een motorrijder van de tegenovergestelde richting reed toch de smalle doorgang in. Wat is er juridisch?",
+        "choices": [
+          {
+            "text": "De motorrijder overtreedt de regel – hij had moeten wachten bij zijn bord B19",
+            "is_correct": true
+          },
+          {
+            "text": "U heeft de regel overtreden – u had moeten wachten",
+            "is_correct": false
+          },
+          {
+            "text": "Beiden hebben gelkijke schuld",
+            "is_correct": false
+          }
+        ],
+        "explanation": "De motorrijder die de doorgang inrijdt terwijl u er al in rijdt, overtreedt de verkeersregels (hij had het bord B19 en moest wachten)."
+      },
+      "EN": {
+        "question": "You drive on a road with sign B21. A motorcyclist from the opposite direction entered the narrow passage anyway. What is the legal situation?",
+        "choices": [
+          {
+            "text": "The motorcyclist violated the rule – they should have waited at their sign B19",
+            "is_correct": true
+          },
+          {
+            "text": "You violated the rule – you should have waited",
+            "is_correct": false
+          },
+          {
+            "text": "Both share equal blame",
+            "is_correct": false
+          }
+        ],
+        "explanation": "The motorcyclist who enters the passage while you are already in it violates traffic rules (they had sign B19 and had to wait)."
+      },
+      "FR": {
+        "question": "Vous roulez sur une route avec le panneau B21. Un motocycliste venant en sens inverse s'est quand même engagé dans le passage étroit. Quelle est la situation juridique ?",
+        "choices": [
+          {
+            "text": "Le motocycliste a enfreint la règle – il aurait dû attendre à son panneau B19",
+            "is_correct": true
+          },
+          {
+            "text": "Vous avez enfreint la règle – vous auriez dû attendre",
+            "is_correct": false
+          },
+          {
+            "text": "Les deux ont une responsabilité égale",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Le motocycliste qui entre dans le passage alors que vous y roulez déjà enfreint les règles de circulation (il avait le panneau B19 et devait attendre)."
+      },
+      "AR": {
+        "question": "تسير على طريق مع اللافتة B21. دراجة نارية من الاتجاه المعاكس دخلت الممر الضيق على أي حال. ما الوضع القانوني؟",
+        "choices": [
+          {
+            "text": "راكب الدراجة النارية انتهك القاعدة – كان يجب عليه الانتظار عند لافتته B19",
+            "is_correct": true
+          },
+          {
+            "text": "أنت انتهكت القاعدة – كان يجب عليك الانتظار",
+            "is_correct": false
+          },
+          {
+            "text": "كلاهما يتحمل المسؤولية المتساوية",
+            "is_correct": false
+          }
+        ],
+        "explanation": "راكب الدراجة النارية الذي يدخل الممر بينما أنت تسير فيه بالفعل ينتهك قواعد المرور (كان لديه لافتة B19 وكان عليه الانتظار)."
+      }
+    }
+  },
+  {
+    "question_id": "B21_Q14",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Bij bord B21, mag u de smalle doorgang inrijden zonder uw snelheid te verminderen?",
+        "choices": [
+          {
+            "text": "Nee, u moet uw snelheid aanpassen aan de enge ruimte van de doorgang",
+            "is_correct": false
+          },
+          {
+            "text": "Ja, u heeft voorrang zodat u normaal kan rijden",
+            "is_correct": true
+          }
+        ],
+        "explanation": "Nee. Ook al heeft u voorrang (B21), u moet altijd uw snelheid aanpassen aan de enge ruimte van een smalle doorgang."
+      },
+      "EN": {
+        "question": "With sign B21, may you enter the narrow passage without reducing your speed?",
+        "choices": [
+          {
+            "text": "No, you must adapt your speed to the narrow space of the passage",
+            "is_correct": false
+          },
+          {
+            "text": "Yes, you have priority so you can drive normally",
+            "is_correct": true
+          }
+        ],
+        "explanation": "No. Even though you have priority (B21), you must always adapt your speed to the narrow space of a narrow passage."
+      },
+      "FR": {
+        "question": "Avec le panneau B21, pouvez-vous vous engager dans le passage étroit sans réduire votre vitesse ?",
+        "choices": [
+          {
+            "text": "Non, vous devez adapter votre vitesse à l'espace étroit du passage",
+            "is_correct": false
+          },
+          {
+            "text": "Oui, vous avez la priorité donc vous pouvez rouler normalement",
+            "is_correct": true
+          }
+        ],
+        "explanation": "Non. Même si vous avez la priorité (B21), vous devez toujours adapter votre vitesse à l'espace étroit d'un passage étroit."
+      },
+      "AR": {
+        "question": "مع اللافتة B21، هل يمكنك دخول الممر الضيق دون تقليل سرعتك؟",
+        "choices": [
+          {
+            "text": "لا، يجب عليك تعديل سرعتك لتتناسب مع المجال الضيق للممر",
+            "is_correct": false
+          },
+          {
+            "text": "نعم، لديك الأولوية لذا يمكنك القيادة بشكل طبيعي",
+            "is_correct": true
+          }
+        ],
+        "explanation": "لا. حتى وإن كانت لديك الأولوية (B21)، يجب عليك دائماً تعديل سرعتك لتتناسب مع المجال الضيق."
+      }
+    }
+  },
+  {
+    "question_id": "B21_Q15",
+    "type": "WHAT_SHOULD_YOU_DO",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U gebruikt bord B21 voor een smalle doorgang. Er staat een fiets geparkeerd in de doorgang. Wat doet u?",
+        "choices": [
+          {
+            "text": "Verlaag uw snelheid en stuur voorzichtig langs het obstakel",
+            "is_correct": true
+          },
+          {
+            "text": "Rijd snel door want u heeft voorrang",
+            "is_correct": false
+          },
+          {
+            "text": "Stop toeteren totdat de fietser weg is",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ondanks uw voorrang (B21) moet u voorzichtig rijden bij obstakels in de doorgang. Rijd langzaam en vermijd het obstakel."
+      },
+      "EN": {
+        "question": "You use sign B21 for a narrow passage. A bicycle is parked in the passage. What do you do?",
+        "choices": [
+          {
+            "text": "Reduce your speed and steer carefully past the obstacle",
+            "is_correct": true
+          },
+          {
+            "text": "Drive quickly through since you have priority",
+            "is_correct": false
+          },
+          {
+            "text": "Keep honking until the cyclist is gone",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Despite your priority (B21) you must drive carefully around obstacles in the passage. Drive slowly and avoid the obstacle."
+      },
+      "FR": {
+        "question": "Vous utilisez le panneau B21 pour un passage étroit. Un vélo est garé dans le passage. Que faites-vous ?",
+        "choices": [
+          {
+            "text": "Réduire votre vitesse et diriger prudemment autour de l'obstacle",
+            "is_correct": true
+          },
+          {
+            "text": "Rouler vite à travers car vous avez la priorité",
+            "is_correct": false
+          },
+          {
+            "text": "Continuer à klaxonner jusqu'à ce que le cycliste soit parti",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Malgré votre priorité (B21), vous devez conduire prudemment autour des obstacles dans le passage. Roulez lentement et évitez l'obstacle."
+      },
+      "AR": {
+        "question": "تستخدم اللافتة B21 لممر ضيق. دراجة هوائية متوقفة في الممر. ماذا تفعل؟",
+        "choices": [
+          {
+            "text": "قلل سرعتك واتجه بعناية حول العائق",
+            "is_correct": true
+          },
+          {
+            "text": "سر بسرعة لأن لديك الأولوية",
+            "is_correct": false
+          },
+          {
+            "text": "استمر في دق البوق حتى يغادر الدراج",
+            "is_correct": false
+          }
+        ],
+        "explanation": "على الرغم من أولويتك (B21)، يجب عليك القيادة بحذر حول العوائق في الممر. سر ببطء وتجنب العائق."
+      }
+    }
+  },
+  {
+    "question_id": "B21_Q16",
+    "type": "WHAT_SHOULD_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U rijdt een smalle doorgang B21 in. Halverwege ziet u dat de doorgang geblokkeerd is door een omgevallen boom. Wat doet u?",
+        "choices": [
+          {
+            "text": "Stop veilig, zet de noodknipperlichten aan als beschikbaar, en waarschuw hulpdiensten",
+            "is_correct": true
+          },
+          {
+            "text": "Rijdt door  zelfs als het eng is",
+            "is_correct": false
+          },
+          {
+            "text": "Rijdt achteruit en laat de tegenligger door",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Bij een geblokkeerde doorgang stop je veilig, zet je de noodknipperlichten aan en bel je voor hulp."
+      },
+      "EN": {
+        "question": "You drive into narrow passage B21. Halfway through you see the passage is blocked by a fallen tree. What do you do?",
+        "choices": [
+          {
+            "text": "Stop safely, turn on hazard lights if available, and alert emergency services",
+            "is_correct": true
+          },
+          {
+            "text": "Drive through even if it is tight",
+            "is_correct": false
+          },
+          {
+            "text": "Reverse and let the oncoming vehicle through",
+            "is_correct": false
+          }
+        ],
+        "explanation": "When a passage is blocked you stop safely, turn on hazard lights and call for help."
+      },
+      "FR": {
+        "question": "Vous vous engagez dans le passage étroit B21. À mi-chemin vous voyez que le passage est bloqué par un arbre tombé. Que faites-vous ?",
+        "choices": [
+          {
+            "text": "Arrêtez-vous en sécurité, allumez les feux de détresse si disponibles et alertez les services d'urgence",
+            "is_correct": true
+          },
+          {
+            "text": "Continuez même si c'est serré",
+            "is_correct": false
+          },
+          {
+            "text": "Reculez et laissez passer le véhicule en sens inverse",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Quand un passage est bloqué, vous vous arrêtez en sécurité, allumez les feux de détresse et appelez à l'aide."
+      },
+      "AR": {
+        "question": "تدخل الممر الضيق B21. في منتصفه ترى أن الممر مسدود بشجرة ساقطة. ماذا تفعل؟",
+        "choices": [
+          {
+            "text": "توقف بأمان وشغّل أضواء الطوارئ إذا كانت متاحة وأبلغ خدمات الطوارئ",
+            "is_correct": true
+          },
+          {
+            "text": "استمر في القيادة حتى لو كان ضيقاً",
+            "is_correct": false
+          },
+          {
+            "text": "تراجع واسمح للمركبة القادمة بالمرور",
+            "is_correct": false
+          }
+        ],
+        "explanation": "عندما يكون الممر مسدوداً تتوقف بأمان وتشعل أضواء الطوارئ وتطلب المساعدة."
+      }
+    }
+  },
+  {
+    "question_id": "B21_Q17",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Bij bord B21 mag u toch wachten als er een rij tegenliggers staat?",
+        "choices": [
+          {
+            "text": "Ja, u mag vrijwillig wachten als het veiliger of efficiënter is voor het totale verkeersverloop",
+            "is_correct": true
+          },
+          {
+            "text": "Nee, bij B21 moet u altijd meteen doorrijden",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ja. Hoewel u voorrang heeft (B21), mag u vrijwillig wachten als het veiliger is voor het algehele verkeersverloop."
+      },
+      "EN": {
+        "question": "With sign B21, may you still wait if there is a queue of oncoming vehicles?",
+        "choices": [
+          {
+            "text": "Yes, you may voluntarily wait if it is safer or more efficient for the overall traffic flow",
+            "is_correct": true
+          },
+          {
+            "text": "No, with B21 you must always drive through immediately",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Yes. Although you have priority (B21), you may voluntarily wait if it is safer for overall traffic flow."
+      },
+      "FR": {
+        "question": "Avec le panneau B21, pouvez-vous quand même attendre s'il y a une longue file de véhicules en sens inverse ?",
+        "choices": [
+          {
+            "text": "Oui, vous pouvez attendre volontairement si c'est plus sûr ou plus efficace pour le flux de trafic global",
+            "is_correct": true
+          },
+          {
+            "text": "Non, avec B21 vous devez toujours continuer immédiatement",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Oui. Bien que vous ayez la priorité (B21), vous pouvez attendre volontairement si c'est plus sûr pour le flux de trafic global."
+      },
+      "AR": {
+        "question": "مع اللافتة B21، هل يمكنك الانتظار إذا كان هناك طابور من المركبات القادمة؟",
+        "choices": [
+          {
+            "text": "نعم، يمكنك الانتظار طوعاً إذا كان أكثر أماناً أو كفاءة لحركة المرور الإجمالية",
+            "is_correct": true
+          },
+          {
+            "text": "لا، مع B21 يجب عليك دائماً المضي فوراً",
+            "is_correct": false
+          }
+        ],
+        "explanation": "نعم. على الرغم من أن لديك الأولوية (B21)، يمكنك الانتظار طوعاً إذا كان أكثر أماناً لحركة المرور الإجمالية."
+      }
+    }
+  },
+  {
+    "question_id": "B21_Q18",
+    "type": "TRUE_OR_FALSE",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Waar of niet waar: Bij bord B21 in mist of slecht zicht mag u net zo snel rijden als normaal.",
+        "choices": [
+          {
+            "text": "Niet waar – bij slecht zicht moet u altijd uw snelheid aanpassen",
+            "is_correct": false
+          },
+          {
+            "text": "Waar – B21 geeft u het recht normale snelheid te rijden",
+            "is_correct": true
+          }
+        ],
+        "explanation": "Niet waar. Bij mist of slecht zicht moet u uw snelheid altijd aanpassen, ongeacht uw voorrangsstatus."
+      },
+      "EN": {
+        "question": "True or false: With sign B21 in fog or poor visibility you may drive just as fast as normal.",
+        "choices": [
+          {
+            "text": "False – in poor visibility you must always adapt your speed",
+            "is_correct": false
+          },
+          {
+            "text": "True – B21 gives you the right to drive at normal speed",
+            "is_correct": true
+          }
+        ],
+        "explanation": "False. In fog or poor visibility you must always adapt your speed, regardless of your priority status."
+      },
+      "FR": {
+        "question": "Vrai ou faux : Avec le panneau B21 dans le brouillard ou par mauvaise visibilité, vous pouvez rouler aussi vite que normalement.",
+        "choices": [
+          {
+            "text": "Faux – par mauvaise visibilité vous devez toujours adapter votre vitesse",
+            "is_correct": false
+          },
+          {
+            "text": "Vrai – B21 vous donne le droit de rouler à vitesse normale",
+            "is_correct": true
+          }
+        ],
+        "explanation": "Faux. Par brouillard ou mauvaise visibilité, vous devez toujours adapter votre vitesse, quelle que soit votre priorité."
+      },
+      "AR": {
+        "question": "صحيح أم خاطئ: مع اللافتة B21 في الضباب أو رؤية ضعيفة يمكنك السير بنفس السرعة الطبيعية.",
+        "choices": [
+          {
+            "text": "خاطئ – في الرؤية الضعيفة يجب عليك دائماً تعديل سرعتك",
+            "is_correct": false
+          },
+          {
+            "text": "صحيح – B21 تمنحك الحق في السير بالسرعة الطبيعية",
+            "is_correct": true
+          }
+        ],
+        "explanation": "خاطئ. في الضباب أو الرؤية الضعيفة يجب عليك دائماً تعديل سرعتك، بغض النظر عن حالة أولويتك."
+      }
+    }
+  },
+  {
+    "question_id": "B21_Q19",
+    "type": "WHAT_IS_PROHIBITED",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Bij bord B21: wat is verboden terwijl u de smalle doorgang passeert?",
+        "choices": [
+          {
+            "text": "Te snel rijden en daarbij schade riskeren aan de ruimteafbakeningen van de doorgang",
+            "is_correct": true
+          },
+          {
+            "text": "Uw snelheid verminderen bij het inrijden",
+            "is_correct": false
+          },
+          {
+            "text": "Uw richtingaanwijzer gebruiken",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ondanks voorrang (B21) is het verboden te snel door een smalle doorgang te rijden – u riskeert schade aan voertuig en omgeving."
+      },
+      "EN": {
+        "question": "With sign B21: what is prohibited while passing through the narrow passage?",
+        "choices": [
+          {
+            "text": "Driving too fast and thereby risking damage to the spatial boundaries of the passage",
+            "is_correct": true
+          },
+          {
+            "text": "Reducing your speed when entering",
+            "is_correct": false
+          },
+          {
+            "text": "Using your indicator",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Despite priority (B21), driving too fast through a narrow passage is prohibited – you risk damaging your vehicle and the surroundings."
+      },
+      "FR": {
+        "question": "Avec le panneau B21 : qu'est-il interdit pendant la traversée du passage étroit ?",
+        "choices": [
+          {
+            "text": "Rouler trop vite et risquer ainsi d'endommager les délimitations spatiales du passage",
+            "is_correct": true
+          },
+          {
+            "text": "Réduire votre vitesse en entrant",
+            "is_correct": false
+          },
+          {
+            "text": "Utiliser votre clignotant",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Malgré la priorité (B21), rouler trop vite dans un passage étroit est interdit – vous risquez d'endommager votre véhicule et les alentours."
+      },
+      "AR": {
+        "question": "مع اللافتة B21: ما الذي يُحظر أثناء المرور عبر الممر الضيق؟",
+        "choices": [
+          {
+            "text": "السير بسرعة كبيرة مما يخاطر بإتلاف الحدود المكانية للممر",
+            "is_correct": true
+          },
+          {
+            "text": "تقليل سرعتك عند الدخول",
+            "is_correct": false
+          },
+          {
+            "text": "استخدام إشارة الاتجاه",
+            "is_correct": false
+          }
+        ],
+        "explanation": "على الرغم من الأولوية (B21)، يُحظر السير بسرعة كبيرة عبر ممر ضيق – تخاطر بإتلاف سيارتك والمحيط."
+      }
+    }
+  },
+  {
+    "question_id": "B21_Q20",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U rijdt op een weg met bord B21. De smalle doorgang is deels geblokkeerd door een geparkeerde vrachtwagen. Wat doet u?",
+        "choices": [
+          {
+            "text": "Ga na of er voldoende ruimte is en rij voorzichtig door – anders wacht u op de vrachtwagen",
+            "is_correct": true
+          },
+          {
+            "text": "Rijdt snel door want u heeft voorrang",
+            "is_correct": false
+          },
+          {
+            "text": "Claxonneer de vrachtwagen",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ondanks voorrang (B21) mag u niet door een geblokkeerde doorgang rijden als het onveilig is. Beoordeel de veiligheid eerst."
+      },
+      "EN": {
+        "question": "You drive on a road with sign B21. The narrow passage is partly blocked by a parked truck. What do you do?",
+        "choices": [
+          {
+            "text": "Check if there is sufficient room and drive carefully through – otherwise wait for the truck",
+            "is_correct": true
+          },
+          {
+            "text": "Drive quickly through since you have priority",
+            "is_correct": false
+          },
+          {
+            "text": "Honk at the truck",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Despite priority (B21), you may not drive through a blocked passage if it is unsafe. Assess safety first."
+      },
+      "FR": {
+        "question": "Vous roulez sur une route avec le panneau B21. Le passage étroit est partiellement bloqué par un camion garé. Que faites-vous ?",
+        "choices": [
+          {
+            "text": "Vérifiez s'il y a suffisamment d'espace et traversez prudemment – sinon attendez le camion",
+            "is_correct": true
+          },
+          {
+            "text": "Roulez vite à travers car vous avez la priorité",
+            "is_correct": false
+          },
+          {
+            "text": "Klaxonnez le camion",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Malgré la priorité (B21), vous ne pouvez pas traverser un passage bloqué si c'est dangereux. Évaluez d'abord la sécurité."
+      },
+      "AR": {
+        "question": "تسير على طريق مع اللافتة B21. الممر الضيق مسدود جزئياً بشاحنة متوقفة. ماذا تفعل؟",
+        "choices": [
+          {
+            "text": "تحقق مما إذا كان هناك مجال كافٍ وسر بحذر – وإلا انتظر الشاحنة",
+            "is_correct": true
+          },
+          {
+            "text": "سر بسرعة لأن لديك الأولوية",
+            "is_correct": false
+          },
+          {
+            "text": "أدق بوق الشاحنة",
+            "is_correct": false
+          }
+        ],
+        "explanation": "على الرغم من الأولوية (B21)، لا يمكنك المرور عبر ممر مسدود إذا كان ذلك غير آمن. قيّم الأمان أولاً."
+      }
+    }
+  },
+  {
+    "question_id": "B21_Q21",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Mag de tegenligger bij B19/B21 de doorgang inrijden als u al halverwege bent maar even gestopt bent?",
+        "choices": [
+          {
+            "text": "Nee, u bent nog in de doorgang – ook al heeft u even gestopt behoudt u de voorrang zolang u er in rijdt",
+            "is_correct": false
+          },
+          {
+            "text": "Ja, als u gestopt bent kan de tegenligger doorrijden",
+            "is_correct": true
+          }
+        ],
+        "explanation": "Nee. Zolang u in de doorgang bent (al dan niet tijdelijk gestopt), heeft u nog steeds de voorrang (B21). De tegenligger moet wachten."
+      },
+      "EN": {
+        "question": "May the oncoming vehicle at B19/B21 enter the passage if you are already halfway through but have stopped momentarily?",
+        "choices": [
+          {
+            "text": "No, you are still in the passage – even if you have stopped momentarily you retain priority as long as you are in the passage",
+            "is_correct": false
+          },
+          {
+            "text": "Yes, if you have stopped the oncoming vehicle can proceed",
+            "is_correct": true
+          }
+        ],
+        "explanation": "No. As long as you are in the passage (whether or not temporarily stopped), you still have priority (B21). The oncoming vehicle must wait."
+      },
+      "FR": {
+        "question": "Le véhicule en sens inverse au B19/B21 peut-il s'engager dans le passage si vous êtes déjà à mi-chemin mais vous êtes arrêté un instant ?",
+        "choices": [
+          {
+            "text": "Non, vous êtes encore dans le passage – même si vous vous êtes arrêté un instant, vous conservez la priorité tant que vous y êtes",
+            "is_correct": false
+          },
+          {
+            "text": "Oui, si vous vous êtes arrêté le véhicule en sens inverse peut continuer",
+            "is_correct": true
+          }
+        ],
+        "explanation": "Non. Tant que vous êtes dans le passage (qu'il s'agisse ou non d'un arrêt temporaire), vous avez encore la priorité (B21). Le véhicule en sens inverse doit attendre."
+      },
+      "AR": {
+        "question": "هل يمكن للمركبة القادمة عند B19/B21 دخول الممر إذا كنت بالفعل في المنتصف لكنك توقفت لحظة؟",
+        "choices": [
+          {
+            "text": "لا، أنت لا تزال في الممر – حتى لو توقفت لحظة تحتفظ بالأولوية طالما أنت في الممر",
+            "is_correct": false
+          },
+          {
+            "text": "نعم، إذا توقفت يمكن للمركبة القادمة المضي",
+            "is_correct": true
+          }
+        ],
+        "explanation": "لا. طالما أنت في الممر (سواء توقفت مؤقتاً أم لا)، لا تزال لديك الأولوية (B21). يجب على المركبة القادمة الانتظار."
+      }
+    }
+  },
+  {
+    "question_id": "B21_Q22",
+    "type": "WHAT_SHOULD_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U heeft bord B21 en de tegenligger reed toch in de doorgang. U bent halverwege. Wat doet u?",
+        "choices": [
+          {
+            "text": "Rij zo kalm mogelijk door of rijd voorzichtig achteruit als het veiliger is – prioriteit heeft nu de veiligheid",
+            "is_correct": true
+          },
+          {
+            "text": "Claxonneer en rij door",
+            "is_correct": false
+          },
+          {
+            "text": "Rij snel door",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Bij een conflict in de doorgang gaat veiligheid altijd voor. Rij rustig door of rijd achteruit als dit veiliger is."
+      },
+      "EN": {
+        "question": "You have sign B21 and the oncoming vehicle entered the passage anyway. You are halfway through. What do you do?",
+        "choices": [
+          {
+            "text": "Drive through as calmly as possible or carefully reverse if it is safer – safety now has priority",
+            "is_correct": true
+          },
+          {
+            "text": "Honk and drive through",
+            "is_correct": false
+          },
+          {
+            "text": "Drive quickly through",
+            "is_correct": false
+          }
+        ],
+        "explanation": "When there is a conflict in the passage safety always comes first. Drive calmly through or reverse if this is safer."
+      },
+      "FR": {
+        "question": "Vous avez le panneau B21 et le véhicule en sens inverse s'est quand même engagé dans le passage. Vous êtes à mi-chemin. Que faites-vous ?",
+        "choices": [
+          {
+            "text": "Traversez aussi calmement que possible ou reculez prudemment si c'est plus sûr – la sécurité a maintenant la priorité",
+            "is_correct": true
+          },
+          {
+            "text": "Klaxonnez et continuez",
+            "is_correct": false
+          },
+          {
+            "text": "Roulez vite à travers",
+            "is_correct": false
+          }
+        ],
+        "explanation": "En cas de conflit dans le passage, la sécurité passe toujours en premier. Traversez calmement ou reculez si c'est plus sûr."
+      },
+      "AR": {
+        "question": "لديك اللافتة B21 والمركبة القادمة دخلت الممر على أي حال. أنت في المنتصف. ماذا تفعل؟",
+        "choices": [
+          {
+            "text": "سر بهدوء قدر الإمكان أو تراجع بحذر إذا كان أكثر أماناً – السلامة لها الأولوية الآن",
+            "is_correct": true
+          },
+          {
+            "text": "أدق البوق واستمر",
+            "is_correct": false
+          },
+          {
+            "text": "سر بسرعة",
+            "is_correct": false
+          }
+        ],
+        "explanation": "عند وجود تعارض في الممر، السلامة دائماً تأتي أولاً. سر بهدوء أو تراجع إذا كان ذلك أكثر أماناً."
+      }
+    }
+  },
+  {
+    "question_id": "B21_Q23",
+    "type": "TRUE_OR_FALSE",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Waar of niet waar: Bord B21 geeft u voorrang op voetgangers die de smalle doorgang oversteken.",
+        "choices": [
+          {
+            "text": "Niet waar – voetgangers hebben altijd voorrang op rijdend verkeer, ook in een smalle doorgang",
+            "is_correct": false
+          },
+          {
+            "text": "Waar – B21 geeft u absolute voorrang",
+            "is_correct": true
+          }
+        ],
+        "explanation": "Niet waar. Voetgangers hebben altijd voorrang op rijdend verkeer. Dit staat los van B21."
+      },
+      "EN": {
+        "question": "True or false: Sign B21 gives you priority over pedestrians crossing the narrow passage.",
+        "choices": [
+          {
+            "text": "False – pedestrians always have priority over moving vehicles, even in a narrow passage",
+            "is_correct": false
+          },
+          {
+            "text": "True – B21 gives you absolute priority",
+            "is_correct": true
+          }
+        ],
+        "explanation": "False. Pedestrians always have priority over moving vehicles. This is independent of B21."
+      },
+      "FR": {
+        "question": "Vrai ou faux : Le panneau B21 vous donne la priorité sur les piétons traversant le passage étroit.",
+        "choices": [
+          {
+            "text": "Faux – les piétons ont toujours la priorité sur les véhicules en mouvement, même dans un passage étroit",
+            "is_correct": false
+          },
+          {
+            "text": "Vrai – B21 vous donne la priorité absolue",
+            "is_correct": true
+          }
+        ],
+        "explanation": "Faux. Les piétons ont toujours la priorité sur les véhicules en mouvement. C'est indépendant du B21."
+      },
+      "AR": {
+        "question": "صحيح أم خاطئ: اللافتة B21 تمنحك الأولوية على المشاة الذين يعبرون الممر الضيق.",
+        "choices": [
+          {
+            "text": "خاطئ – المشاة دائماً لهم الأولوية على المركبات المتحركة، حتى في ممر ضيق",
+            "is_correct": false
+          },
+          {
+            "text": "صحيح – B21 تمنحك أولوية مطلقة",
+            "is_correct": true
+          }
+        ],
+        "explanation": "خاطئ. المشاة دائماً لهم الأولوية على المركبات المتحركة. هذا مستقل عن B21."
+      }
+    }
+  },
+  {
+    "question_id": "B21_Q24",
+    "type": "WHAT_IS_PROHIBITED",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat is verboden voor de tegenligger als u, B21 hebbend, al halverwege de doorgang bent?",
+        "choices": [
+          {
+            "text": "De doorgang inrijden van de andere kant",
+            "is_correct": true
+          },
+          {
+            "text": "Wachten aan de ingang",
+            "is_correct": false
+          },
+          {
+            "text": "Zijn richtingaanwijzer uitzetten",
+            "is_correct": false
+          }
+        ],
+        "explanation": "De tegenligger moet bij B19 wachten totdat de bestuurder met B21 volledig door de doorgang is. Inrijden terwijl die er in is, is verboden."
+      },
+      "EN": {
+        "question": "What is prohibited for the oncoming vehicle if you, having B21, are already halfway through the passage?",
+        "choices": [
+          {
+            "text": "Entering the passage from the other side",
+            "is_correct": true
+          },
+          {
+            "text": "Waiting at the entrance",
+            "is_correct": false
+          },
+          {
+            "text": "Turning off their indicator",
+            "is_correct": false
+          }
+        ],
+        "explanation": "The oncoming vehicle must wait at B19 until the driver with B21 has completely passed through. Entering while they are in the passage is prohibited."
+      },
+      "FR": {
+        "question": "Qu'est-il interdit pour le véhicule en sens inverse si vous, ayant le panneau B21, êtes déjà à mi-passage ?",
+        "choices": [
+          {
+            "text": "S'engager dans le passage de l'autre côté",
+            "is_correct": true
+          },
+          {
+            "text": "Attendre à l'entrée",
+            "is_correct": false
+          },
+          {
+            "text": "Éteindre leur clignotant",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Le véhicule en sens inverse doit attendre au B19 jusqu'à ce que le conducteur avec B21 soit complètement passé. S'engager pendant qu'il est dans le passage est interdit."
+      },
+      "AR": {
+        "question": "ما الذي يُحظر على المركبة القادمة إذا كنت أنت، الحاملة للافتة B21، بالفعل في منتصف الممر؟",
+        "choices": [
+          {
+            "text": "دخول الممر من الجانب الآخر",
+            "is_correct": true
+          },
+          {
+            "text": "الانتظار عند المدخل",
+            "is_correct": false
+          },
+          {
+            "text": "إيقاف تشغيل إشارة الاتجاه",
+            "is_correct": false
+          }
+        ],
+        "explanation": "يجب على المركبة القادمة الانتظار عند B19 حتى يمر السائق الحامل لـ B21 بالكامل. الدخول بينما هو في الممر محظور."
+      }
+    }
+  },
+  {
+    "question_id": "B21_Q25",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Met bord B21 nadert u de smalle doorgang. U ziet kinderen spelen in de buurt van de doorgang. Wat doet u?",
+        "choices": [
+          {
+            "text": "Vertraag sterk en bereid te stoppen als een kind de doorgang kan oprijden",
+            "is_correct": true
+          },
+          {
+            "text": "Rij normaal door want u heeft voorrang",
+            "is_correct": false
+          },
+          {
+            "text": "Claxonneer om de kinderen te waarschuwen en rij door",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Kinderen zijn onvoorspelbaar. Ondanks uw voorrang (B21) moet u extra voorzichtig zijn en bereid zijn te stoppen."
+      },
+      "EN": {
+        "question": "With sign B21 you approach the narrow passage. You see children playing near the passage. What do you do?",
+        "choices": [
+          {
+            "text": "Slow down significantly and be prepared to stop if a child can enter the passage",
+            "is_correct": true
+          },
+          {
+            "text": "Drive through normally since you have priority",
+            "is_correct": false
+          },
+          {
+            "text": "Honk to warn the children and drive through",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Children are unpredictable. Despite your priority (B21) you must be extra careful and be prepared to stop."
+      },
+      "FR": {
+        "question": "Avec le panneau B21, vous approchez du passage étroit. Vous voyez des enfants qui jouent près du passage. Que faites-vous ?",
+        "choices": [
+          {
+            "text": "Ralentissez considérablement et soyez prêt à vous arrêter si un enfant peut entrer dans le passage",
+            "is_correct": true
+          },
+          {
+            "text": "Roulez normalement car vous avez la priorité",
+            "is_correct": false
+          },
+          {
+            "text": "Klaxonnez pour avertir les enfants et continuez",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Les enfants sont imprévisibles. Malgré votre priorité (B21), vous devez être particulièrement prudent et prêt à vous arrêter."
+      },
+      "AR": {
+        "question": "مع اللافتة B21 تقترب من الممر الضيق. ترى أطفالاً يلعبون بالقرب من الممر. ماذا تفعل؟",
+        "choices": [
+          {
+            "text": "أبطئ بشكل ملحوظ واستعد للتوقف إذا تمكن طفل من دخول الممر",
+            "is_correct": true
+          },
+          {
+            "text": "سر بشكل طبيعي لأن لديك الأولوية",
+            "is_correct": false
+          },
+          {
+            "text": "أدق البوق لتحذير الأطفال واستمر",
+            "is_correct": false
+          }
+        ],
+        "explanation": "الأطفال غير متوقعين. على الرغم من أولويتك (B21)، يجب أن تكون أكثر حذراً ومستعداً للتوقف."
+      }
+    }
+  },
+  {
+    "question_id": "B21_Q26",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U heeft bord B21 en u bent bijna in de smalle doorgang. De tegenligger rijdt toch in. Mag u agressief claxonneren en verder rijden?",
+        "choices": [
+          {
+            "text": "Nee, agressief rijgedrag is verboden – beoordeel of u kunt doorrijden of beter achteruit kunt rijden",
+            "is_correct": false
+          },
+          {
+            "text": "Ja, u heeft voorrang en de tegenligger overtreedt de wet",
+            "is_correct": true
+          }
+        ],
+        "explanation": "Nee. Agressief rijgedrag is verboden, ongeacht wie de overtreder is. Beoordeel de situatie en handel veilig."
+      },
+      "EN": {
+        "question": "You have sign B21 and are almost in the narrow passage. The oncoming vehicle enters anyway. May you honk aggressively and drive on?",
+        "choices": [
+          {
+            "text": "No, aggressive driving behaviour is prohibited – assess whether you can continue or should reverse",
+            "is_correct": false
+          },
+          {
+            "text": "Yes, you have priority and the oncoming vehicle is breaking the law",
+            "is_correct": true
+          }
+        ],
+        "explanation": "No. Aggressive driving behaviour is prohibited regardless of who is the offender. Assess the situation and act safely."
+      },
+      "FR": {
+        "question": "Vous avez le panneau B21 et vous êtes presque dans le passage étroit. Le véhicule en sens inverse s'engage quand même. Pouvez-vous klaxonner de manière agressive et continuer ?",
+        "choices": [
+          {
+            "text": "Non, le comportement de conduite agressif est interdit – évaluez si vous pouvez continuer ou si vous devriez reculer",
+            "is_correct": false
+          },
+          {
+            "text": "Oui, vous avez la priorité et le véhicule en sens inverse enfreint la loi",
+            "is_correct": true
+          }
+        ],
+        "explanation": "Non. Le comportement de conduite agressif est interdit quel que soit le contrevenant. Évaluez la situation et agissez en toute sécurité."
+      },
+      "AR": {
+        "question": "لديك اللافتة B21 وأنت تقريباً في الممر الضيق. المركبة القادمة تدخل على أي حال. هل يمكنك دق البوق بعدوانية والاستمرار؟",
+        "choices": [
+          {
+            "text": "لا، سلوك القيادة العدواني محظور – قيّم ما إذا كان يمكنك الاستمرار أو يجب عليك التراجع",
+            "is_correct": false
+          },
+          {
+            "text": "نعم، لديك الأولوية والمركبة القادمة تخالف القانون",
+            "is_correct": true
+          }
+        ],
+        "explanation": "لا. سلوك القيادة العدواني محظور بغض النظر عن المخالف. قيّم الوضع وتصرف بأمان."
+      }
+    }
+  },
+  {
+    "question_id": "B21_Q27",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U rijdt door de smalle doorgang B21. Plotseling valt er een steen van een muur op uw voertuig. Wat doet u?",
+        "choices": [
+          {
+            "text": "Stop onmiddellijk op een veilige plek, schakel noodknipperlichten in en inspecteer het voertuig",
+            "is_correct": true
+          },
+          {
+            "text": "Rijdt door want u moet de doorgang uitkomen",
+            "is_correct": false
+          },
+          {
+            "text": "Rijdt achteruit de doorgang uit",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Bij een noodsituatie stopt u onmiddellijk veilig, zet u de noodknipperlichten aan en inspecteert u de schade."
+      },
+      "EN": {
+        "question": "You drive through narrow passage B21. Suddenly a stone falls from a wall onto your vehicle. What do you do?",
+        "choices": [
+          {
+            "text": "Stop immediately at a safe spot, activate hazard lights and inspect the vehicle",
+            "is_correct": true
+          },
+          {
+            "text": "Drive on since you need to exit the passage",
+            "is_correct": false
+          },
+          {
+            "text": "Reverse out of the passage",
+            "is_correct": false
+          }
+        ],
+        "explanation": "In an emergency you stop immediately and safely, activate hazard lights and inspect the damage."
+      },
+      "FR": {
+        "question": "Vous traversez le passage étroit B21. Soudainement une pierre tombe d'un mur sur votre véhicule. Que faites-vous ?",
+        "choices": [
+          {
+            "text": "Arrêtez-vous immédiatement dans un endroit sûr, activez les feux de détresse et inspectez le véhicule",
+            "is_correct": true
+          },
+          {
+            "text": "Continuez car vous devez sortir du passage",
+            "is_correct": false
+          },
+          {
+            "text": "Reculez hors du passage",
+            "is_correct": false
+          }
+        ],
+        "explanation": "En cas d'urgence, arrêtez-vous immédiatement en toute sécurité, activez les feux de détresse et inspectez les dégâts."
+      },
+      "AR": {
+        "question": "تمر عبر الممر الضيق B21. فجأة تسقط حجرة من جدار على سيارتك. ماذا تفعل؟",
+        "choices": [
+          {
+            "text": "توقف فوراً في مكان آمن وشغّل أضواء الطوارئ وافحص السيارة",
+            "is_correct": true
+          },
+          {
+            "text": "استمر في القيادة لأنك بحاجة للخروج من الممر",
+            "is_correct": false
+          },
+          {
+            "text": "تراجع خارج الممر",
+            "is_correct": false
+          }
+        ],
+        "explanation": "في حالة طارئة تتوقف فوراً وبأمان وتشغل أضواء الطوارئ وتفحص الأضرار."
+      }
+    }
+  },
+  {
+    "question_id": "B21_Q28",
+    "type": "TRUE_OR_FALSE",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Waar of niet waar: Als de smalle doorgang B21 langer dan 50 meter is, verliest het bord B21 zijn geldig na 50 meter.",
+        "choices": [
+          {
+            "text": "Niet waar – het bord B21 is geldig voor de hele lengte van de smalle doorgang totdat u er uit bent",
+            "is_correct": false
+          },
+          {
+            "text": "Waar – na 50 meter gelden andere regels",
+            "is_correct": true
+          }
+        ],
+        "explanation": "Niet waar. Het bord B21 is geldig voor de volledige lengte van de smalle doorgang, ongeacht hoe lang die is."
+      },
+      "EN": {
+        "question": "True or false: If the narrow passage B21 is longer than 50 metres, sign B21 loses its validity after 50 metres.",
+        "choices": [
+          {
+            "text": "False – sign B21 is valid for the entire length of the narrow passage until you exit",
+            "is_correct": false
+          },
+          {
+            "text": "True – after 50 metres other rules apply",
+            "is_correct": true
+          }
+        ],
+        "explanation": "False. Sign B21 is valid for the full length of the narrow passage regardless of how long it is."
+      },
+      "FR": {
+        "question": "Vrai ou faux : Si le passage étroit B21 fait plus de 50 mètres, le panneau B21 perd sa validité après 50 mètres.",
+        "choices": [
+          {
+            "text": "Faux – le panneau B21 est valable pour toute la longueur du passage étroit jusqu'à ce que vous en sortiez",
+            "is_correct": false
+          },
+          {
+            "text": "Vrai – après 50 mètres, d'autres règles s'appliquent",
+            "is_correct": true
+          }
+        ],
+        "explanation": "Faux. Le panneau B21 est valable pour toute la longueur du passage étroit, quelle que soit sa longueur."
+      },
+      "AR": {
+        "question": "صحيح أم خاطئ: إذا كان الممر الضيق B21 أطول من 50 متراً، تفقد اللافتة B21 صلاحيتها بعد 50 متراً.",
+        "choices": [
+          {
+            "text": "خاطئ – اللافتة B21 صالحة لكامل طول الممر الضيق حتى تخرج منه",
+            "is_correct": false
+          },
+          {
+            "text": "صحيح – بعد 50 متراً تسري قواعد أخرى",
+            "is_correct": true
+          }
+        ],
+        "explanation": "خاطئ. اللافتة B21 صالحة لكامل طول الممر الضيق بغض النظر عن طوله."
+      }
+    }
+  },
+  {
+    "question_id": "B21_Q29",
+    "type": "WHAT_IS_PROHIBITED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U nadert smalle doorgang B21. De tegenligger beweert dat hij ook een bord B21 heeft (geen B19). Wat is juridisch/correct?",
+        "choices": [
+          {
+            "text": "Dat is onmogelijk – dezelfde smalle doorgang kan niet beide kanten B21 geven; een van de borden is fout geplaatst of de bestuurder vergist zich",
+            "is_correct": true
+          },
+          {
+            "text": "U moet cedere want hij heeft ook voorrang",
+            "is_correct": false
+          },
+          {
+            "text": "Beiden stoppen",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Een smalle doorgang heeft altijd één kant B19 en één kant B21. Twee B21-kanten op dezelfde doorgang is onmogelijk. Een van de borden is onjuist geplaatst of de bestuurder vergist zich."
+      },
+      "EN": {
+        "question": "You approach narrow passage B21. The oncoming driver claims they also have a sign B21 (not B19). What is legal/correct?",
+        "choices": [
+          {
+            "text": "That is impossible – the same narrow passage cannot give B21 to both sides; one of the signs is wrongly placed or the driver is mistaken",
+            "is_correct": true
+          },
+          {
+            "text": "You must give way as they also have priority",
+            "is_correct": false
+          },
+          {
+            "text": "Both stop",
+            "is_correct": false
+          }
+        ],
+        "explanation": "A narrow passage always has one side B19 and one side B21. Two B21 sides on the same passage is impossible. One sign is wrongly placed or one driver is mistaken."
+      },
+      "FR": {
+        "question": "Vous approchez du passage étroit B21. Le conducteur en sens inverse prétend qu'il a aussi un panneau B21 (pas B19). Qu'est-ce qui est légal/correct ?",
+        "choices": [
+          {
+            "text": "C'est impossible – le même passage étroit ne peut pas donner B21 aux deux côtés ; l'un des panneaux est mal placé ou le conducteur se trompe",
+            "is_correct": true
+          },
+          {
+            "text": "Vous devez céder car il a aussi la priorité",
+            "is_correct": false
+          },
+          {
+            "text": "Les deux s'arrêtent",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Un passage étroit a toujours un côté B19 et un côté B21. Deux côtés B21 sur le même passage est impossible. Un panneau est mal placé ou un conducteur se trompe."
+      },
+      "AR": {
+        "question": "تقترب من الممر الضيق B21. السائق القادم يدعي أن لديه أيضاً لافتة B21 (وليس B19). ما هو القانوني/الصحيح؟",
+        "choices": [
+          {
+            "text": "هذا مستحيل – نفس الممر الضيق لا يمكنه منح B21 لكلا الجانبين؛ إحدى اللافتتين موضوعة بشكل خاطئ أو السائق مخطئ",
+            "is_correct": true
+          },
+          {
+            "text": "يجب عليك التنازل لأن لديه أيضاً الأولوية",
+            "is_correct": false
+          },
+          {
+            "text": "كلاهما يتوقف",
+            "is_correct": false
+          }
+        ],
+        "explanation": "الممر الضيق دائماً لديه جانب B19 وجانب B21. جانبان B21 على نفس الممر مستحيل. إحدى اللافتتين موضوعة بشكل خاطئ أو أحد السائقين مخطئ."
+      }
+    }
+  },
+  {
+    "question_id": "B21_Q30",
+    "type": "WHAT_SHOULD_YOU_DO",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U rijdt met B21 door een smalle doorgang. Halverwege is er een storing bij uw voertuig. Wat doet u als de tegenligger al bijna bij de ingang staat?",
+        "choices": [
+          {
+            "text": "Zet de noodknipperlichten aan, probeer het voertuig zo dicht mogelijk aan de kant te zetten en waarschuw de tegenligger met lichtflitsen",
+            "is_correct": true
+          },
+          {
+            "text": "Rij snel verder door",
+            "is_correct": false
+          },
+          {
+            "text": "Roep om hulp",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Bij een panne in een smalle doorgang: noodknipperlichten aan, voertuig veilig aan de kant en de situatie communiceren met de tegenligger via lichtflitsen."
+      },
+      "EN": {
+        "question": "You drive with B21 through a narrow passage. Halfway through your vehicle has a breakdown. What do you do if the oncoming vehicle is already almost at the entrance?",
+        "choices": [
+          {
+            "text": "Turn on hazard lights, try to move the vehicle as close to the side as possible and warn the oncoming vehicle with light flashes",
+            "is_correct": true
+          },
+          {
+            "text": "Drive quickly forward",
+            "is_correct": false
+          },
+          {
+            "text": "Call for help",
+            "is_correct": false
+          }
+        ],
+        "explanation": "When your vehicle breaks down in a narrow passage: activate hazard lights, safely move vehicle to the side and communicate the situation to the oncoming driver with light flashes."
+      },
+      "FR": {
+        "question": "Vous roulez avec le panneau B21 dans un passage étroit. À mi-chemin votre véhicule tombe en panne. Que faites-vous si le véhicule en sens inverse est déjà presque à l'entrée ?",
+        "choices": [
+          {
+            "text": "Allumez les feux de détresse, essayez de garer le véhicule aussi près du côté que possible et avertissez le véhicule en sens inverse avec des appels de phares",
+            "is_correct": true
+          },
+          {
+            "text": "Continuez rapidement",
+            "is_correct": false
+          },
+          {
+            "text": "Appelez à l'aide",
+            "is_correct": false
+          }
+        ],
+        "explanation": "En cas de panne dans un passage étroit : activez les feux de détresse, garez le véhicule en sécurité sur le côté et communiquez la situation au conducteur en sens inverse avec des appels de phares."
+      },
+      "AR": {
+        "question": "تسير مع اللافتة B21 عبر ممر ضيق. في المنتصف تتعطل سيارتك. ماذا تفعل إذا كانت المركبة القادمة بالقرب من المدخل؟",
+        "choices": [
+          {
+            "text": "شغّل أضواء الطوارئ وحاول تحريك السيارة قريباً من الجانب قدر الإمكان وحذّر المركبة القادمة بوميض الأضواء",
+            "is_correct": true
+          },
+          {
+            "text": "استمر في السير بسرعة",
+            "is_correct": false
+          },
+          {
+            "text": "اطلب المساعدة",
+            "is_correct": false
+          }
+        ],
+        "explanation": "عند تعطل سيارتك في ممر ضيق: شغّل أضواء الطوارئ وانقل السيارة بأمان إلى الجانب وتواصل مع السائق القادم بوميض الأضواء."
+      }
+    }
   }
 ]

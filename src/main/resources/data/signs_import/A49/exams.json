@@ -1,51 +1,41 @@
 {
-  "_IMPORTANT": "Each exam requires exactly 15 questions: 6 EASY + 6 MEDIUM + 3 HARD. No overlap between EXAM_1 and EXAM_2. You need 30 questions total (12 EASY + 12 MEDIUM + 6 HARD).",
-  "_TEMPLATE_STATUS": "INCOMPLETE — Only 5 of 30 required questions exist. Add 25 more questions before configuring exams.",
   "exam_1": {
-    "_note": "EXAM_1: Questions Q01-Q15 (6 EASY + 6 MEDIUM + 3 HARD)",
     "questions": [
       "A49_Q01",
       "A49_Q02",
       "A49_Q03",
       "A49_Q04",
       "A49_Q05",
-      "[A49_Q06]",
-      "[A49_Q07]",
-      "[A49_Q08]",
-      "[A49_Q09]",
-      "[A49_Q10]",
-      "[A49_Q11]",
-      "[A49_Q12]",
-      "[A49_Q13]",
-      "[A49_Q14]",
-      "[A49_Q15]"
+      "A49_Q06",
+      "A49_Q07",
+      "A49_Q08",
+      "A49_Q09",
+      "A49_Q10",
+      "A49_Q11",
+      "A49_Q12",
+      "A49_Q13",
+      "A49_Q14",
+      "A49_Q15"
     ]
   },
   "exam_2": {
-    "_note": "EXAM_2: Questions Q16-Q30 (6 EASY + 6 MEDIUM + 3 HARD) — NO overlap with EXAM_1",
     "questions": [
-      "[A49_Q16]",
-      "[A49_Q17]",
-      "[A49_Q18]",
-      "[A49_Q19]",
-      "[A49_Q20]",
-      "[A49_Q21]",
-      "[A49_Q22]",
-      "[A49_Q23]",
-      "[A49_Q24]",
-      "[A49_Q25]",
-      "[A49_Q26]",
-      "[A49_Q27]",
-      "[A49_Q28]",
-      "[A49_Q29]",
-      "[A49_Q30]"
+      "A49_Q16",
+      "A49_Q17",
+      "A49_Q18",
+      "A49_Q19",
+      "A49_Q20",
+      "A49_Q21",
+      "A49_Q22",
+      "A49_Q23",
+      "A49_Q24",
+      "A49_Q25",
+      "A49_Q26",
+      "A49_Q27",
+      "A49_Q28",
+      "A49_Q29",
+      "A49_Q30"
     ]
   },
-  "passing_score": 12,
-  "total_questions": 15,
-  "distribution": {
-    "EASY": 6,
-    "MEDIUM": 6,
-    "HARD": 3
-  }
+  "passing_score": 12
 }

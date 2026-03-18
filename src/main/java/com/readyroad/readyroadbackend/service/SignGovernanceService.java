@@ -5,7 +5,6 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.readyroad.readyroadbackend.domain.entity.TrafficSign;
 import com.readyroad.readyroadbackend.domain.repository.TrafficSignRepository;
-import com.readyroad.readyroadbackend.dto.SignGovernanceReport;
 import com.readyroad.readyroadbackend.dto.SignGovernanceReport.AuditResult;
 import com.readyroad.readyroadbackend.dto.SignGovernanceReport.SignAuditItem;
 import lombok.extern.slf4j.Slf4j;

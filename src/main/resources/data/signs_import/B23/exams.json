@@ -1,51 +1,54 @@
 {
-  "_IMPORTANT": "Each exam requires exactly 15 questions: 6 EASY + 6 MEDIUM + 3 HARD. No overlap between EXAM_1 and EXAM_2. You need 30 questions total (12 EASY + 12 MEDIUM + 6 HARD).",
-  "_TEMPLATE_STATUS": "INCOMPLETE — Only 5 of 30 required questions exist. Add 25 more questions before configuring exams.",
   "exam_1": {
-    "_note": "EXAM_1: Questions Q01-Q15 (6 EASY + 6 MEDIUM + 3 HARD)",
     "questions": [
       "B23_Q01",
       "B23_Q02",
+      "B23_Q06",
+      "B23_Q07",
+      "B23_Q08",
+      "B23_Q09",
       "B23_Q03",
       "B23_Q04",
+      "B23_Q10",
+      "B23_Q11",
+      "B23_Q12",
+      "B23_Q13",
       "B23_Q05",
-      "[B23_Q06]",
-      "[B23_Q07]",
-      "[B23_Q08]",
-      "[B23_Q09]",
-      "[B23_Q10]",
-      "[B23_Q11]",
-      "[B23_Q12]",
-      "[B23_Q13]",
-      "[B23_Q14]",
-      "[B23_Q15]"
-    ]
+      "B23_Q14",
+      "B23_Q15"
+    ],
+    "passing_score": 12,
+    "total_questions": 15,
+    "distribution": {
+      "EASY": 6,
+      "MEDIUM": 6,
+      "HARD": 3
+    }
   },
   "exam_2": {
-    "_note": "EXAM_2: Questions Q16-Q30 (6 EASY + 6 MEDIUM + 3 HARD) — NO overlap with EXAM_1",
     "questions": [
-      "[B23_Q16]",
-      "[B23_Q17]",
-      "[B23_Q18]",
-      "[B23_Q19]",
-      "[B23_Q20]",
-      "[B23_Q21]",
-      "[B23_Q22]",
-      "[B23_Q23]",
-      "[B23_Q24]",
-      "[B23_Q25]",
-      "[B23_Q26]",
-      "[B23_Q27]",
-      "[B23_Q28]",
-      "[B23_Q29]",
-      "[B23_Q30]"
-    ]
-  },
-  "passing_score": 12,
-  "total_questions": 15,
-  "distribution": {
-    "EASY": 6,
-    "MEDIUM": 6,
-    "HARD": 3
+      "B23_Q16",
+      "B23_Q17",
+      "B23_Q18",
+      "B23_Q19",
+      "B23_Q20",
+      "B23_Q21",
+      "B23_Q22",
+      "B23_Q23",
+      "B23_Q24",
+      "B23_Q25",
+      "B23_Q26",
+      "B23_Q27",
+      "B23_Q28",
+      "B23_Q29",
+      "B23_Q30"
+    ],
+    "passing_score": 12,
+    "total_questions": 15,
+    "distribution": {
+      "EASY": 5,
+      "MEDIUM": 7,
+      "HARD": 3
+    }
   }
 }

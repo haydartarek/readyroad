@@ -1,51 +1,41 @@
 {
-  "_IMPORTANT": "Each exam requires exactly 15 questions: 6 EASY + 6 MEDIUM + 3 HARD. No overlap between EXAM_1 and EXAM_2. You need 30 questions total (12 EASY + 12 MEDIUM + 6 HARD).",
-  "_TEMPLATE_STATUS": "INCOMPLETE — Only 5 of 30 required questions exist. Add 25 more questions before configuring exams.",
   "exam_1": {
-    "_note": "EXAM_1: Questions Q01-Q15 (6 EASY + 6 MEDIUM + 3 HARD)",
     "questions": [
       "A41_Q01",
       "A41_Q02",
       "A41_Q03",
       "A41_Q04",
       "A41_Q05",
-      "[A41_Q06]",
-      "[A41_Q07]",
-      "[A41_Q08]",
-      "[A41_Q09]",
-      "[A41_Q10]",
-      "[A41_Q11]",
-      "[A41_Q12]",
-      "[A41_Q13]",
-      "[A41_Q14]",
-      "[A41_Q15]"
+      "A41_Q06",
+      "A41_Q07",
+      "A41_Q08",
+      "A41_Q09",
+      "A41_Q10",
+      "A41_Q11",
+      "A41_Q12",
+      "A41_Q13",
+      "A41_Q14",
+      "A41_Q15"
     ]
   },
   "exam_2": {
-    "_note": "EXAM_2: Questions Q16-Q30 (6 EASY + 6 MEDIUM + 3 HARD) — NO overlap with EXAM_1",
     "questions": [
-      "[A41_Q16]",
-      "[A41_Q17]",
-      "[A41_Q18]",
-      "[A41_Q19]",
-      "[A41_Q20]",
-      "[A41_Q21]",
-      "[A41_Q22]",
-      "[A41_Q23]",
-      "[A41_Q24]",
-      "[A41_Q25]",
-      "[A41_Q26]",
-      "[A41_Q27]",
-      "[A41_Q28]",
-      "[A41_Q29]",
-      "[A41_Q30]"
+      "A41_Q16",
+      "A41_Q17",
+      "A41_Q18",
+      "A41_Q19",
+      "A41_Q20",
+      "A41_Q21",
+      "A41_Q22",
+      "A41_Q23",
+      "A41_Q24",
+      "A41_Q25",
+      "A41_Q26",
+      "A41_Q27",
+      "A41_Q28",
+      "A41_Q29",
+      "A41_Q30"
     ]
   },
-  "passing_score": 12,
-  "total_questions": 15,
-  "distribution": {
-    "EASY": 6,
-    "MEDIUM": 6,
-    "HARD": 3
-  }
+  "passing_score": 12
 }

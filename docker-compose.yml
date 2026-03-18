@@ -16,10 +16,10 @@ services:
     restart: unless-stopped
 
     environment:
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_ROOT_PASSWORD: "Hh06101987@"
       MYSQL_DATABASE: readyroad_prod
-      MYSQL_USER: ${DB_USERNAME}
-      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_USER: haydar
+      MYSQL_PASSWORD: "Hh06101987@"
       TZ: UTC
 
     ports:
@@ -70,16 +70,16 @@ services:
       DB_HOST: mysql
       DB_PORT: 3306
       DB_NAME: readyroad_prod
-      DB_USERNAME: ${DB_USERNAME}
-      DB_PASSWORD: ${DB_PASSWORD}
+      DB_USERNAME: haydar
+      DB_PASSWORD: "Hh06101987@"
 
       # JWT Configuration
-      JWT_SECRET: ${JWT_SECRET}
+      JWT_SECRET: "404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970337336763979244226452948404D6351"
       JWT_EXPIRATION: 86400000
       JWT_ISSUER: readyroad-backend
 
       # Admin Configuration
-      ADMIN_DEFAULT_PASSWORD: ${ADMIN_DEFAULT_PASSWORD}
+      ADMIN_DEFAULT_PASSWORD: "Admin2026Secure!"
 
       # Java Options
       JAVA_OPTS: "-Xms512m -Xmx1024m -XX:+UseContainerSupport -XX:MaxRAMPercentage=75.0"
@@ -91,12 +91,12 @@ services:
       READYROAD_SIGNS_IMPORT_PATH: /app/data/signs_import
 
       # Email / Password Reset
-      SMTP_HOST: ${SMTP_HOST:-smtp.gmail.com}
-      SMTP_PORT: ${SMTP_PORT:-587}
-      SMTP_USERNAME: ${SMTP_USERNAME:-}
-      SMTP_PASSWORD: ${SMTP_PASSWORD:-}
-      MAIL_FROM: ${MAIL_FROM:-noreply@readyroad.be}
-      FRONTEND_URL: ${FRONTEND_URL:-http://localhost:3000}
+      SMTP_HOST: smtp.gmail.com
+      SMTP_PORT: "587"
+      SMTP_USERNAME: heydertarek2000@gmail.com
+      SMTP_PASSWORD: sbkbntbnblijiuxn
+      MAIL_FROM: heydertarek2000@gmail.com
+      FRONTEND_URL: http://localhost:3000
 
     ports:
       - "8890:8890"
@@ -146,6 +146,9 @@ services:
 
     ports:
       - "3000:3000"
+
+    volumes:
+      - ../readyroad_front_end/web_app/public/images/signs:/app/public/images/signs:ro
 
     networks:
       - readyroad-network

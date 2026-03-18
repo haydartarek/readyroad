@@ -392,5 +392,1808 @@
         "explanation": "لافتات الأولوية ملزمة قانونياً لجميع مستخدمي الطريق. عدم الامتثال مخالفة قد تؤدي إلى غرامات وخصم نقاط من رخصة القيادة."
       }
     }
+  },
+  {
+    "question_id": "B1_Q06",
+    "type": "WHAT_DOES_IT_MEAN",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Welke vorm heeft het bord B1 'Voorrang verlenen'?",
+        "choices": [
+          { "text": "Omgekeerde driehoek met rode rand", "is_correct": true },
+          {
+            "text": "Ronde rode cirkel met witte diagonale balk",
+            "is_correct": false
+          },
+          { "text": "Gele ruit (diamant)", "is_correct": false }
+        ],
+        "explanation": "Het bord B1 heeft de vorm van een omgekeerde driehoek met een rode rand op witte achtergrond. Dit is uniek voor voorrangsborden waarbij u voorrang moet verlenen."
+      },
+      "EN": {
+        "question": "What shape is the B1 'Give way' sign?",
+        "choices": [
+          { "text": "Inverted triangle with red border", "is_correct": true },
+          {
+            "text": "Round red circle with white diagonal bar",
+            "is_correct": false
+          },
+          { "text": "Yellow diamond shape", "is_correct": false }
+        ],
+        "explanation": "The B1 sign is an inverted triangle with a red border on a white background. This is unique to give-way signs."
+      },
+      "FR": {
+        "question": "Quelle forme a le panneau B1 'Cédez le passage' ?",
+        "choices": [
+          { "text": "Triangle inversé avec bordure rouge", "is_correct": true },
+          {
+            "text": "Cercle rouge rond avec barre diagonale blanche",
+            "is_correct": false
+          },
+          { "text": "Forme de losange jaune", "is_correct": false }
+        ],
+        "explanation": "Le panneau B1 a la forme d'un triangle inversé avec une bordure rouge sur fond blanc. Ceci est unique aux panneaux de cédez le passage."
+      },
+      "AR": {
+        "question": "ما شكل اللافتة B1 'إعطاء الأولوية'؟",
+        "choices": [
+          { "text": "مثلث مقلوب بحافة حمراء", "is_correct": true },
+          { "text": "دائرة حمراء بشريط قطري أبيض", "is_correct": false },
+          { "text": "شكل معين أصفر", "is_correct": false }
+        ],
+        "explanation": "تتخذ اللافتة B1 شكل مثلث مقلوب بحافة حمراء على خلفية بيضاء. وهو شكل مميز للافتات إعطاء الأولوية."
+      }
+    }
+  },
+  {
+    "question_id": "B1_Q07",
+    "type": "WHAT_DOES_IT_MEAN",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat geeft het bord B1 aan op een kruispunt?",
+        "choices": [
+          {
+            "text": "Dat u voorrang moet verlenen aan bestuurders op de kruisende weg",
+            "is_correct": true
+          },
+          { "text": "Dat u altijd volledig moet stoppen", "is_correct": false },
+          {
+            "text": "Dat u voorrang hebt op alle andere voertuigen",
+            "is_correct": false
+          }
+        ],
+        "explanation": "B1 geeft aan dat u voorrang moet verlenen aan alle bestuurders die zich op de kruisende weg bevinden. U hoeft niet altijd volledig te stoppen, maar u moet wel stoppen indien nodig."
+      },
+      "EN": {
+        "question": "What does the B1 sign indicate at an intersection?",
+        "choices": [
+          {
+            "text": "That you must yield to drivers on the crossing road",
+            "is_correct": true
+          },
+          {
+            "text": "That you must always stop completely",
+            "is_correct": false
+          },
+          {
+            "text": "That you have priority over all other vehicles",
+            "is_correct": false
+          }
+        ],
+        "explanation": "B1 indicates that you must yield to all drivers on the crossing road. You don't always need to stop completely, but you must stop if necessary."
+      },
+      "FR": {
+        "question": "Que signifie le panneau B1 à un carrefour ?",
+        "choices": [
+          {
+            "text": "Que vous devez céder le passage aux conducteurs sur la route de croisement",
+            "is_correct": true
+          },
+          {
+            "text": "Que vous devez toujours vous arrêter complètement",
+            "is_correct": false
+          },
+          {
+            "text": "Que vous avez la priorité sur tous les autres véhicules",
+            "is_correct": false
+          }
+        ],
+        "explanation": "B1 indique que vous devez céder le passage à tous les conducteurs sur la route de croisement. Vous ne devez pas toujours vous arrêter complètement, mais vous devez le faire si nécessaire."
+      },
+      "AR": {
+        "question": "ماذا تشير اللافتة B1 عند التقاطع؟",
+        "choices": [
+          {
+            "text": "أنك يجب أن تعطي الأولوية للسائقين على الطريق المتقاطع",
+            "is_correct": true
+          },
+          { "text": "أنك يجب أن تتوقف تماماً دائماً", "is_correct": false },
+          {
+            "text": "أن لديك الأولوية على جميع المركبات الأخرى",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تشير B1 إلى أنك يجب إعطاء الأولوية لجميع السائقين على الطريق المتقاطع. لا يجب دائماً التوقف بشكل كامل، لكن يجب التوقف إذا لزم الأمر."
+      }
+    }
+  },
+  {
+    "question_id": "B1_Q08",
+    "type": "WHAT_DOES_IT_MEAN",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat moet u doen wanneer u een B1-bord ziet naderen?",
+        "choices": [
+          {
+            "text": "Vaart minderen en kruisend verkeer voorrang verlenen",
+            "is_correct": true
+          },
+          {
+            "text": "Uw hazardlichten aanzetten en doorrijden",
+            "is_correct": false
+          },
+          {
+            "text": "Toeter om andere bestuurders te waarschuwen",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Bij het naderen van een B1-bord moet u altijd vaart minderen. Vervolgens moet u eventueel kruisend verkeer de weg vrijmaken door te stoppen of te wachten."
+      },
+      "EN": {
+        "question": "What should you do when you see a B1 sign approaching?",
+        "choices": [
+          {
+            "text": "Reduce speed and yield to crossing traffic",
+            "is_correct": true
+          },
+          {
+            "text": "Turn on hazard lights and continue driving",
+            "is_correct": false
+          },
+          { "text": "Honk to warn other drivers", "is_correct": false }
+        ],
+        "explanation": "When approaching a B1 sign, you must always reduce speed. Then yield to any crossing traffic by stopping or waiting."
+      },
+      "FR": {
+        "question": "Que devez-vous faire lorsque vous voyez un panneau B1 s'approcher ?",
+        "choices": [
+          {
+            "text": "Réduire la vitesse et céder le passage aux véhicules croisant la route",
+            "is_correct": true
+          },
+          {
+            "text": "Allumer les feux de détresse et continuer à conduire",
+            "is_correct": false
+          },
+          {
+            "text": "Klaxonner pour avertir les autres conducteurs",
+            "is_correct": false
+          }
+        ],
+        "explanation": "En approchant d'un panneau B1, vous devez toujours réduire la vitesse. Ensuite, cédez le passage aux véhicules croisant en vous arrêtant ou en attendant."
+      },
+      "AR": {
+        "question": "ماذا يجب أن تفعل عندما تقترب من لافتة B1؟",
+        "choices": [
+          {
+            "text": "تقليل السرعة وإعطاء الأولوية للمرور المتقاطع",
+            "is_correct": true
+          },
+          {
+            "text": "تشغيل أضواء التحذير والاستمرار في القيادة",
+            "is_correct": false
+          },
+          {
+            "text": "الضغط على البوق لتحذير السائقين الآخرين",
+            "is_correct": false
+          }
+        ],
+        "explanation": "عند الاقتراب من لافتة B1، يجب دائماً تقليل السرعة. ثم أعط الأولوية لأي مرور متقاطع بالتوقف أو الانتظار."
+      }
+    }
+  },
+  {
+    "question_id": "B1_Q09",
+    "type": "WHAT_DOES_IT_MEAN",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Geldt de verplichting van het B1-bord ook als er geen verkeer aanwezig is?",
+        "choices": [
+          {
+            "text": "Ja, u moet altijd bereid zijn om te stoppen en voorrang te verlenen",
+            "is_correct": true
+          },
+          {
+            "text": "Nee, als er geen verkeer is, mag u gewoon doorrijden zonder te vertragen",
+            "is_correct": false
+          },
+          {
+            "text": "Alleen als er een politieagent aanwezig is",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Het B1-bord verplicht u altijd bereid te zijn om voorrang te verlenen. U moet altijd vertragen en controleren, ook al lijkt de weg vrij."
+      },
+      "EN": {
+        "question": "Does the B1 sign obligation apply even when there is no traffic?",
+        "choices": [
+          {
+            "text": "Yes, you must always be prepared to stop and yield",
+            "is_correct": true
+          },
+          {
+            "text": "No, if there is no traffic you may drive through without slowing down",
+            "is_correct": false
+          },
+          {
+            "text": "Only when a police officer is present",
+            "is_correct": false
+          }
+        ],
+        "explanation": "The B1 sign always requires you to be prepared to yield. You must always slow down and check, even if the road appears clear."
+      },
+      "FR": {
+        "question": "L'obligation du panneau B1 s'applique-t-elle même en l'absence de circulation ?",
+        "choices": [
+          {
+            "text": "Oui, vous devez toujours être prêt à vous arrêter et à céder le passage",
+            "is_correct": true
+          },
+          {
+            "text": "Non, s'il n'y a pas de circulation, vous pouvez continuer sans ralentir",
+            "is_correct": false
+          },
+          {
+            "text": "Seulement en présence d'un agent de police",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Le panneau B1 vous oblige toujours à être prêt à céder le passage. Vous devez toujours ralentir et vérifier, même si la route semble libre."
+      },
+      "AR": {
+        "question": "هل يسري التزام لافتة B1 حتى في غياب حركة المرور؟",
+        "choices": [
+          {
+            "text": "نعم، يجب أن تكون دائماً مستعداً للتوقف وإعطاء الأولوية",
+            "is_correct": true
+          },
+          {
+            "text": "لا، إذا لم يكن هناك مرور يمكنك المرور دون تباطؤ",
+            "is_correct": false
+          },
+          { "text": "فقط عند وجود ضابط شرطة", "is_correct": false }
+        ],
+        "explanation": "تلزمك لافتة B1 دائماً بأن تكون مستعداً لإعطاء الأولوية. يجب دائماً الإبطاء والتحقق، حتى لو بدا الطريق خالياً."
+      }
+    }
+  },
+  {
+    "question_id": "B1_Q10",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat is het verschil tussen bord B1 en bord B5?",
+        "choices": [
+          {
+            "text": "B1 verplicht u tot vertragen en eventueel stoppen; B5 verplicht u tot volledig stoppen",
+            "is_correct": true
+          },
+          {
+            "text": "B1 en B5 zijn identiek en betekenen hetzelfde",
+            "is_correct": false
+          },
+          {
+            "text": "B5 verplicht u enkel te vertragen; B1 verplicht u volledig te stoppen",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Bij B1 moet u voorrang verlenen en kunt u stapvoets doorrollen als de weg vrij is. Bij B5 moet u altijd volledig stoppen, ook als er geen verkeer is."
+      },
+      "EN": {
+        "question": "What is the difference between sign B1 and sign B5?",
+        "choices": [
+          {
+            "text": "B1 requires you to slow down and stop if necessary; B5 requires a complete stop",
+            "is_correct": true
+          },
+          {
+            "text": "B1 and B5 are identical and mean the same thing",
+            "is_correct": false
+          },
+          {
+            "text": "B5 requires only slowing down; B1 requires a complete stop",
+            "is_correct": false
+          }
+        ],
+        "explanation": "With B1 you must yield and can roll slowly forward if the road is clear. With B5 you must always stop completely, even if there is no traffic."
+      },
+      "FR": {
+        "question": "Quelle est la différence entre le panneau B1 et le panneau B5 ?",
+        "choices": [
+          {
+            "text": "B1 vous oblige à ralentir et à vous arrêter si nécessaire; B5 vous oblige à vous arrêter complètement",
+            "is_correct": true
+          },
+          {
+            "text": "B1 et B5 sont identiques et ont la même signification",
+            "is_correct": false
+          },
+          {
+            "text": "B5 vous oblige uniquement à ralentir; B1 vous oblige à vous arrêter complètement",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Avec B1, vous devez céder le passage et pouvez avancer lentement si la route est libre. Avec B5, vous devez toujours vous arrêter complètement, même s'il n'y a pas de circulation."
+      },
+      "AR": {
+        "question": "ما الفرق بين اللافتة B1 واللافتة B5؟",
+        "choices": [
+          {
+            "text": "B1 تلزم بالتباطؤ والتوقف عند الضرورة؛ B5 تلزم بالتوقف الكامل دائماً",
+            "is_correct": true
+          },
+          { "text": "B1 وB5 متطابقتان ولهما نفس المعنى", "is_correct": false },
+          {
+            "text": "B5 تلزم فقط بالتباطؤ؛ B1 تلزم بالتوقف الكامل",
+            "is_correct": false
+          }
+        ],
+        "explanation": "مع B1 يجب إعطاء الأولوية ويمكنك التحرك ببطء إذا كان الطريق خالياً. مع B5 يجب التوقف الكامل دائماً، حتى لو لم يكن هناك مرور."
+      }
+    }
+  },
+  {
+    "question_id": "B1_Q11",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U rijdt op een weg met een B1-bord en een voertuig komt van rechts. Wat doet u?",
+        "choices": [
+          {
+            "text": "Stoppen of vertragen en het voertuig van rechts laten passeren",
+            "is_correct": true
+          },
+          {
+            "text": "Doorrijden want u heeft de rechtstreekse baan",
+            "is_correct": false
+          },
+          {
+            "text": "Claxonneren zodat de andere bestuurder stopt",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Bij een B1-bord moet u altijd voorrang verlenen aan bestuurders op de kruisende weg, ongeacht de richting waaruit zij komen."
+      },
+      "EN": {
+        "question": "You are on a road with a B1 sign and a vehicle comes from the right. What do you do?",
+        "choices": [
+          {
+            "text": "Stop or slow down and let the vehicle from the right pass",
+            "is_correct": true
+          },
+          {
+            "text": "Continue driving because you have the direct lane",
+            "is_correct": false
+          },
+          { "text": "Honk so the other driver stops", "is_correct": false }
+        ],
+        "explanation": "With a B1 sign, you must always yield to drivers on the crossing road, regardless of the direction they come from."
+      },
+      "FR": {
+        "question": "Vous roulez sur une route avec un panneau B1 et un véhicule arrive de droite. Que faites-vous ?",
+        "choices": [
+          {
+            "text": "Vous arrêtez ou ralentissez et laissez passer le véhicule venant de droite",
+            "is_correct": true
+          },
+          {
+            "text": "Vous continuez car vous avez la voie directe",
+            "is_correct": false
+          },
+          {
+            "text": "Vous klaxonnez pour que l'autre conducteur s'arrête",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Avec un panneau B1, vous devez toujours céder le passage aux conducteurs sur la route de croisement, quelle que soit la direction d'où ils viennent."
+      },
+      "AR": {
+        "question": "أنت تسير على طريق به لافتة B1 وتأتي سيارة من اليمين. ماذا تفعل؟",
+        "choices": [
+          {
+            "text": "التوقف أو التباطؤ وإفساح المجال للسيارة القادمة من اليمين",
+            "is_correct": true
+          },
+          { "text": "الاستمرار لأن لديك المسار المباشر", "is_correct": false },
+          { "text": "الضغط على البوق لإيقاف السائق الآخر", "is_correct": false }
+        ],
+        "explanation": "مع لافتة B1، يجب دائماً إعطاء الأولوية للسائقين على الطريق المتقاطع، بغض النظر عن الاتجاه الذي يأتون منه."
+      }
+    }
+  },
+  {
+    "question_id": "B1_Q12",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Na welk bord eindigt de verplichting van het B1-bord?",
+        "choices": [
+          {
+            "text": "Het B1-bord geldt alleen voor het eerstvolgende kruispunt; daarna gelden de normale regels",
+            "is_correct": true
+          },
+          {
+            "text": "Het B1-bord geldt voor de hele weg tot een bord 'Einde voorrangsweg' verschijnt",
+            "is_correct": false
+          },
+          {
+            "text": "Het B1-bord geldt permanent voor de gehele rit",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Het B1-bord is een verkeersteken dat geldt voor het eerstvolgende kruispunt. Na het kruispunt vervalt de verplichting tenzij er een nieuw B1-bord staat."
+      },
+      "EN": {
+        "question": "After which sign does the B1 obligation end?",
+        "choices": [
+          {
+            "text": "The B1 sign applies only to the next intersection; normal rules apply after",
+            "is_correct": true
+          },
+          {
+            "text": "The B1 sign applies for the whole road until an 'End of priority road' sign appears",
+            "is_correct": false
+          },
+          {
+            "text": "The B1 sign applies permanently for the entire journey",
+            "is_correct": false
+          }
+        ],
+        "explanation": "The B1 sign applies to the next intersection. After the intersection, the obligation ends unless there is a new B1 sign."
+      },
+      "FR": {
+        "question": "Après quel panneau l'obligation du B1 prend-elle fin ?",
+        "choices": [
+          {
+            "text": "Le panneau B1 ne s'applique qu'au prochain carrefour; les règles normales s'appliquent ensuite",
+            "is_correct": true
+          },
+          {
+            "text": "Le panneau B1 s'applique à toute la route jusqu'à ce qu'un panneau 'Fin de route prioritaire' apparaisse",
+            "is_correct": false
+          },
+          {
+            "text": "Le panneau B1 s'applique en permanence pour tout le trajet",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Le panneau B1 s'applique au prochain carrefour. Après le carrefour, l'obligation prend fin sauf s'il y a un nouveau panneau B1."
+      },
+      "AR": {
+        "question": "بعد أي لافتة ينتهي التزام B1؟",
+        "choices": [
+          {
+            "text": "تُطبق لافتة B1 فقط على التقاطع التالي؛ بعدها تسري القواعد العادية",
+            "is_correct": true
+          },
+          {
+            "text": "تُطبق لافتة B1 على الطريق بأكمله حتى ظهور لافتة 'نهاية طريق الأولوية'",
+            "is_correct": false
+          },
+          {
+            "text": "تُطبق لافتة B1 بشكل دائم طوال الرحلة",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تُطبق لافتة B1 على التقاطع التالي. بعد التقاطع، ينتهي الالتزام ما لم تكن هناك لافتة B1 جديدة."
+      }
+    }
+  },
+  {
+    "question_id": "B1_Q13",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Geldt het B1-bord ook voor fietsers en bromfietsers?",
+        "choices": [
+          {
+            "text": "Ja, het B1-bord geldt voor alle bestuurders, inclusief fietsers en bromfietsers",
+            "is_correct": true
+          },
+          {
+            "text": "Nee, het geldt alleen voor motorvoertuigen",
+            "is_correct": false
+          },
+          {
+            "text": "Alleen voor voertuigen zwaarder dan 3,5 ton",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Voorrangsborden gelden voor alle weggebruikers die een voertuig besturen, inclusief fietsers, bromfietsers en motorrijders."
+      },
+      "EN": {
+        "question": "Does the B1 sign also apply to cyclists and moped riders?",
+        "choices": [
+          {
+            "text": "Yes, the B1 sign applies to all road users, including cyclists and moped riders",
+            "is_correct": true
+          },
+          {
+            "text": "No, it only applies to motor vehicles",
+            "is_correct": false
+          },
+          {
+            "text": "Only for vehicles heavier than 3.5 tons",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Priority signs apply to all road users driving a vehicle, including cyclists, moped riders and motorcyclists."
+      },
+      "FR": {
+        "question": "Le panneau B1 s'applique-t-il aussi aux cyclistes et aux conducteurs de cyclomoteurs ?",
+        "choices": [
+          {
+            "text": "Oui, le panneau B1 s'applique à tous les usagers de la route, y compris les cyclistes et les conducteurs de cyclomoteurs",
+            "is_correct": true
+          },
+          {
+            "text": "Non, il ne s'applique qu'aux véhicules motorisés",
+            "is_correct": false
+          },
+          {
+            "text": "Seulement pour les véhicules de plus de 3,5 tonnes",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Les panneaux de priorité s'appliquent à tous les usagers de la route conduisant un véhicule, y compris les cyclistes, les conducteurs de cyclomoteurs et les motocyclistes."
+      },
+      "AR": {
+        "question": "هل تسري لافتة B1 أيضاً على راكبي الدراجات والدراجات النارية الصغيرة؟",
+        "choices": [
+          {
+            "text": "نعم، تسري لافتة B1 على جميع مستخدمي الطريق، بما في ذلك راكبو الدراجات والدراجات الصغيرة",
+            "is_correct": true
+          },
+          { "text": "لا، تسري فقط على المركبات الآلية", "is_correct": false },
+          {
+            "text": "فقط للمركبات التي تزن أكثر من 3.5 طن",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تسري لافتات الأولوية على جميع مستخدمي الطريق الذين يقودون مركبة، بما في ذلك راكبو الدراجات والدراجات النارية الصغيرة والكبيرة."
+      }
+    }
+  },
+  {
+    "question_id": "B1_Q14",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Mag u bij een B1-bord doorrijden als u geen enkel voertuig ziet naderen?",
+        "choices": [
+          {
+            "text": "Ja, maar u moet eerst vaart minderen en controleren of het echt veilig is",
+            "is_correct": true
+          },
+          {
+            "text": "Nee, u moet altijd volledig stoppen bij een B1-bord",
+            "is_correct": false
+          },
+          {
+            "text": "Ja, het B1-bord is slechts een aanbeveling",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Bij een B1-bord hoeft u niet altijd volledig te stoppen, maar u moet altijd vaart minderen en goed controleren. Als de weg vrij is, kunt u voorzichtig doorrijden. Let op: bij twijfel altijd stoppen."
+      },
+      "EN": {
+        "question": "May you continue through a B1 sign if you see no approaching vehicles?",
+        "choices": [
+          {
+            "text": "Yes, but you must first slow down and check it is truly safe",
+            "is_correct": true
+          },
+          {
+            "text": "No, you must always stop completely at a B1 sign",
+            "is_correct": false
+          },
+          {
+            "text": "Yes, the B1 sign is merely a recommendation",
+            "is_correct": false
+          }
+        ],
+        "explanation": "At a B1 sign you do not always need to stop completely, but you must always slow down and check carefully. If the road is clear, you may proceed cautiously. When in doubt, always stop."
+      },
+      "FR": {
+        "question": "Pouvez-vous continuer à travers un panneau B1 si vous ne voyez aucun véhicule approcher ?",
+        "choices": [
+          {
+            "text": "Oui, mais vous devez d'abord ralentir et vérifier que c'est vraiment sûr",
+            "is_correct": true
+          },
+          {
+            "text": "Non, vous devez toujours vous arrêter complètement au panneau B1",
+            "is_correct": false
+          },
+          {
+            "text": "Oui, le panneau B1 n'est qu'une recommandation",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Au panneau B1, vous n'avez pas toujours besoin de vous arrêter complètement, mais vous devez toujours ralentir et vérifier attentivement. Si la route est libre, vous pouvez avancer prudemment. En cas de doute, arrêtez-vous toujours."
+      },
+      "AR": {
+        "question": "هل يجوز لك الاستمرار عند لافتة B1 إذا لم ترَ أي مركبة تقترب؟",
+        "choices": [
+          {
+            "text": "نعم، لكن يجب أولاً تقليل السرعة والتحقق من أنه آمن حقاً",
+            "is_correct": true
+          },
+          {
+            "text": "لا، يجب دائماً التوقف الكامل عند لافتة B1",
+            "is_correct": false
+          },
+          { "text": "نعم، لافتة B1 مجرد توصية", "is_correct": false }
+        ],
+        "explanation": "عند لافتة B1 لا يلزم دائماً التوقف الكامل، لكن يجب دائماً تقليل السرعة والتحقق بعناية. إذا كان الطريق خالياً، يمكنك المتابعة بحذر. عند الشك، توقف دائماً."
+      }
+    }
+  },
+  {
+    "question_id": "B1_Q15",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Heeft u bij een B1-bord voorrang op voetgangers op een voetgangersoversteekplaats op het kruispunt?",
+        "choices": [
+          {
+            "text": "Nee, voetgangers op een voetgangersoversteekplaats hebben altijd voorrang, ook bij een B1-bord",
+            "is_correct": true
+          },
+          {
+            "text": "Ja, het B1-bord geeft u volledige voorrang op alle weggebruikers",
+            "is_correct": false
+          },
+          {
+            "text": "Alleen als het verkeerslicht groen is voor voertuigen",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Het B1-bord regelt de voorrang tussen voertuigen onderling. Voetgangers op een voetgangersoversteekplaats hebben altijd voorrang ongeacht de verkeersborden voor voertuigen."
+      },
+      "EN": {
+        "question": "At a B1 sign, do you have priority over pedestrians on a pedestrian crossing at the intersection?",
+        "choices": [
+          {
+            "text": "No, pedestrians on a pedestrian crossing always have priority, even at a B1 sign",
+            "is_correct": true
+          },
+          {
+            "text": "Yes, the B1 sign gives you full priority over all road users",
+            "is_correct": false
+          },
+          {
+            "text": "Only when the traffic light is green for vehicles",
+            "is_correct": false
+          }
+        ],
+        "explanation": "The B1 sign regulates priority between vehicles. Pedestrians on a pedestrian crossing always have priority regardless of traffic signs for vehicles."
+      },
+      "FR": {
+        "question": "Au panneau B1, avez-vous la priorité sur les piétons sur un passage piéton au carrefour ?",
+        "choices": [
+          {
+            "text": "Non, les piétons sur un passage piéton ont toujours la priorité, même au panneau B1",
+            "is_correct": true
+          },
+          {
+            "text": "Oui, le panneau B1 vous donne la priorité totale sur tous les usagers de la route",
+            "is_correct": false
+          },
+          {
+            "text": "Seulement lorsque le feu est vert pour les véhicules",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Le panneau B1 règle la priorité entre les véhicules. Les piétons sur un passage piéton ont toujours la priorité quels que soient les panneaux de signalisation pour les véhicules."
+      },
+      "AR": {
+        "question": "عند لافتة B1، هل لديك الأولوية على المشاة عند ممر المشاة في التقاطع؟",
+        "choices": [
+          {
+            "text": "لا، المشاة على ممر المشاة لهم الأولوية دائماً، حتى عند لافتة B1",
+            "is_correct": true
+          },
+          {
+            "text": "نعم، لافتة B1 تمنحك الأولوية الكاملة على جميع مستخدمي الطريق",
+            "is_correct": false
+          },
+          { "text": "فقط عندما يكون الضوء أخضر للمركبات", "is_correct": false }
+        ],
+        "explanation": "تنظم لافتة B1 الأولوية بين المركبات. المشاة على ممر المشاة لهم دائماً الأولوية بغض النظر عن لافتات المرور للمركبات."
+      }
+    }
+  },
+  {
+    "question_id": "B1_Q16",
+    "type": "WHAT_DOES_IT_MEAN",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat is de officiële naam van het bord B1?",
+        "choices": [
+          { "text": "Voorrang verlenen", "is_correct": true },
+          { "text": "Stoppen en voorrang verlenen", "is_correct": false },
+          { "text": "Voorrangsweg", "is_correct": false }
+        ],
+        "explanation": "De officiële naam van bord B1 is 'Voorrang verlenen'. Het verplicht bestuurders om voorrang te verlenen aan verkeer op de kruisende weg."
+      },
+      "EN": {
+        "question": "What is the official name of sign B1?",
+        "choices": [
+          { "text": "Give way", "is_correct": true },
+          { "text": "Stop and give way", "is_correct": false },
+          { "text": "Priority road", "is_correct": false }
+        ],
+        "explanation": "The official name of sign B1 is 'Give way'. It requires drivers to yield to traffic on the crossing road."
+      },
+      "FR": {
+        "question": "Quel est le nom officiel du panneau B1 ?",
+        "choices": [
+          { "text": "Cédez le passage", "is_correct": true },
+          { "text": "Stop et cédez le passage", "is_correct": false },
+          { "text": "Route prioritaire", "is_correct": false }
+        ],
+        "explanation": "Le nom officiel du panneau B1 est 'Cédez le passage'. Il oblige les conducteurs à céder le passage aux véhicules sur la route de croisement."
+      },
+      "AR": {
+        "question": "ما الاسم الرسمي للافتة B1؟",
+        "choices": [
+          { "text": "إعطاء الأولوية", "is_correct": true },
+          { "text": "توقف وأعط الأولوية", "is_correct": false },
+          { "text": "طريق الأولوية", "is_correct": false }
+        ],
+        "explanation": "الاسم الرسمي للافتة B1 هو 'إعطاء الأولوية'. وهي تُلزم السائقين بإعطاء الأولوية للمرور على الطريق المتقاطع."
+      }
+    }
+  },
+  {
+    "question_id": "B1_Q17",
+    "type": "WHAT_DOES_IT_MEAN",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Hoeveel zijden heeft het bord B1?",
+        "choices": [
+          { "text": "Drie zijden (driehoek)", "is_correct": true },
+          {
+            "text": "Vier zijden (vierkant of rechthoek)",
+            "is_correct": false
+          },
+          { "text": "Nul zijden (cirkel)", "is_correct": false }
+        ],
+        "explanation": "Het B1-bord is een driehoek (omgekeerd geplaatst) met drie zijden. De punt van de driehoek wijst naar beneden."
+      },
+      "EN": {
+        "question": "How many sides does the B1 sign have?",
+        "choices": [
+          { "text": "Three sides (triangle)", "is_correct": true },
+          { "text": "Four sides (square or rectangle)", "is_correct": false },
+          { "text": "Zero sides (circle)", "is_correct": false }
+        ],
+        "explanation": "The B1 sign is a triangle (placed inverted) with three sides. The point of the triangle faces downward."
+      },
+      "FR": {
+        "question": "Combien de côtés a le panneau B1 ?",
+        "choices": [
+          { "text": "Trois côtés (triangle)", "is_correct": true },
+          { "text": "Quatre côtés (carré ou rectangle)", "is_correct": false },
+          { "text": "Zéro côté (cercle)", "is_correct": false }
+        ],
+        "explanation": "Le panneau B1 est un triangle (placé à l'envers) avec trois côtés. La pointe du triangle est dirigée vers le bas."
+      },
+      "AR": {
+        "question": "كم عدد أضلاع اللافتة B1؟",
+        "choices": [
+          { "text": "ثلاثة أضلاع (مثلث)", "is_correct": true },
+          { "text": "أربعة أضلاع (مربع أو مستطيل)", "is_correct": false },
+          { "text": "صفر أضلاع (دائرة)", "is_correct": false }
+        ],
+        "explanation": "اللافتة B1 عبارة عن مثلث (مقلوب) ذو ثلاثة أضلاع. رأس المثلث يتجه للأسفل."
+      }
+    }
+  },
+  {
+    "question_id": "B1_Q18",
+    "type": "WHAT_DOES_IT_MEAN",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Is het B1-bord een gebodsbord of een verbodsbord?",
+        "choices": [
+          {
+            "text": "Noch een gebod noch een verbod — het is een voorrangsbord dat voorrangregels oplegt",
+            "is_correct": true
+          },
+          {
+            "text": "Een gebodsbord dat u verplicht een bepaalde actie uit te voeren",
+            "is_correct": false
+          },
+          {
+            "text": "Een verbodsbord dat bepaald gedrag verbiedt",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Het B1-bord behoort tot de B-reeks 'voorrangsborden'. Het legt voorrangsregels op, maar wordt niet geclassificeerd als gebods- of verbodsbord."
+      },
+      "EN": {
+        "question": "Is the B1 sign a mandatory sign or a prohibition sign?",
+        "choices": [
+          {
+            "text": "Neither — it is a priority sign that imposes right-of-way rules",
+            "is_correct": true
+          },
+          {
+            "text": "A mandatory sign requiring you to perform a specific action",
+            "is_correct": false
+          },
+          {
+            "text": "A prohibition sign that forbids certain behaviour",
+            "is_correct": false
+          }
+        ],
+        "explanation": "The B1 sign belongs to the B-series 'priority signs'. It imposes right-of-way rules but is not classified as a mandatory or prohibition sign."
+      },
+      "FR": {
+        "question": "Le panneau B1 est-il un panneau d'obligation ou un panneau d'interdiction ?",
+        "choices": [
+          {
+            "text": "Ni l'un ni l'autre — c'est un panneau de priorité qui impose des règles de priorité",
+            "is_correct": true
+          },
+          {
+            "text": "Un panneau d'obligation vous obligeant à effectuer une action spécifique",
+            "is_correct": false
+          },
+          {
+            "text": "Un panneau d'interdiction qui interdit certains comportements",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Le panneau B1 appartient à la série B des 'panneaux de priorité'. Il impose des règles de priorité mais n'est pas classé comme panneau d'obligation ou d'interdiction."
+      },
+      "AR": {
+        "question": "هل لافتة B1 لافتة إلزام أم لافتة حظر؟",
+        "choices": [
+          {
+            "text": "لا هذه ولا تلك — إنها لافتة أولوية تفرض قواعد حق المرور",
+            "is_correct": true
+          },
+          {
+            "text": "لافتة إلزام تُلزمك بأداء إجراء محدد",
+            "is_correct": false
+          },
+          { "text": "لافتة حظر تحظر سلوكاً معيناً", "is_correct": false }
+        ],
+        "explanation": "تنتمي اللافتة B1 إلى السلسلة B 'لافتات الأولوية'. تفرض قواعد حق المرور لكنها غير مصنفة كلافتة إلزام أو حظر."
+      }
+    }
+  },
+  {
+    "question_id": "B1_Q19",
+    "type": "WHAT_DOES_IT_MEAN",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat is de kleur van het B1-bord?",
+        "choices": [
+          { "text": "Wit met rode rand", "is_correct": true },
+          { "text": "Geel met zwarte rand", "is_correct": false },
+          { "text": "Blauw met witte opdruk", "is_correct": false }
+        ],
+        "explanation": "Het B1-bord heeft een witte achtergrond met een rode rand. Dit onderscheidt het van gevaarsborden (wit met rode rand, driehoek met punt omhoog) en gebodsborden (blauw)."
+      },
+      "EN": {
+        "question": "What colour is the B1 sign?",
+        "choices": [
+          { "text": "White with red border", "is_correct": true },
+          { "text": "Yellow with black border", "is_correct": false },
+          { "text": "Blue with white print", "is_correct": false }
+        ],
+        "explanation": "The B1 sign has a white background with a red border. This distinguishes it from danger signs and mandatory signs."
+      },
+      "FR": {
+        "question": "De quelle couleur est le panneau B1 ?",
+        "choices": [
+          { "text": "Blanc avec bordure rouge", "is_correct": true },
+          { "text": "Jaune avec bordure noire", "is_correct": false },
+          { "text": "Bleu avec impression blanche", "is_correct": false }
+        ],
+        "explanation": "Le panneau B1 a un fond blanc avec une bordure rouge. Cela le distingue des panneaux de danger et des panneaux d'obligation."
+      },
+      "AR": {
+        "question": "ما لون اللافتة B1؟",
+        "choices": [
+          { "text": "أبيض بحافة حمراء", "is_correct": true },
+          { "text": "أصفر بحافة سوداء", "is_correct": false },
+          { "text": "أزرق بطباعة بيضاء", "is_correct": false }
+        ],
+        "explanation": "اللافتة B1 ذات خلفية بيضاء بحافة حمراء. هذا يميزها عن لافتات الخطر ولافتات الإلزام."
+      }
+    }
+  },
+  {
+    "question_id": "B1_Q20",
+    "type": "WHAT_DOES_IT_MEAN",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat is de betekenis van de omgekeerde driehoek op het B1-bord?",
+        "choices": [
+          {
+            "text": "Het symboliseert dat u uw rechten verliest en voorrang moet verlenen",
+            "is_correct": true
+          },
+          {
+            "text": "Het geeft de richting aan van het gevaar",
+            "is_correct": false
+          },
+          {
+            "text": "Het is decoratief en heeft geen specifieke betekenis",
+            "is_correct": false
+          }
+        ],
+        "explanation": "De omgekeerde driehoek (punt naar beneden) op het B1-bord is internationaal het symbool voor 'voorrang verlenen'. Het staat in tegenstelling tot de normale driehoek (punt omhoog) die voor gevaarsborden wordt gebruikt."
+      },
+      "EN": {
+        "question": "What does the inverted triangle on the B1 sign symbolise?",
+        "choices": [
+          {
+            "text": "It symbolises that you lose your right of way and must yield",
+            "is_correct": true
+          },
+          {
+            "text": "It indicates the direction of the hazard",
+            "is_correct": false
+          },
+          {
+            "text": "It is decorative and has no specific meaning",
+            "is_correct": false
+          }
+        ],
+        "explanation": "The inverted triangle (point facing down) on the B1 sign is internationally the symbol for 'give way'. It contrasts with the normal triangle (point up) used for danger signs."
+      },
+      "FR": {
+        "question": "Que symbolise le triangle inversé sur le panneau B1 ?",
+        "choices": [
+          {
+            "text": "Il symbolise que vous perdez votre priorité et devez céder le passage",
+            "is_correct": true
+          },
+          { "text": "Il indique la direction du danger", "is_correct": false },
+          {
+            "text": "Il est décoratif et n'a pas de signification spécifique",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Le triangle inversé (pointe vers le bas) sur le panneau B1 est internationalement le symbole du 'cédez le passage'. Il contraste avec le triangle normal (pointe vers le haut) utilisé pour les panneaux de danger."
+      },
+      "AR": {
+        "question": "ماذا يرمز المثلث المقلوب على اللافتة B1؟",
+        "choices": [
+          {
+            "text": "يرمز إلى أنك تفقد حق الأولوية ويجب عليك الإفساح",
+            "is_correct": true
+          },
+          { "text": "يشير إلى اتجاه الخطر", "is_correct": false },
+          { "text": "إنه ديكوري وليس له معنى محدد", "is_correct": false }
+        ],
+        "explanation": "المثلث المقلوب (الرأس للأسفل) على اللافتة B1 هو دولياً رمز 'إعطاء الأولوية'. ويتناقض مع المثلث العادي (الرأس للأعلى) المستخدم للافتات الخطر."
+      }
+    }
+  },
+  {
+    "question_id": "B1_Q21",
+    "type": "WHAT_DOES_IT_MEAN",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Waar wordt het B1-bord typisch geplaatst?",
+        "choices": [
+          {
+            "text": "Voor een kruispunt waar u geen voorrang heeft",
+            "is_correct": true
+          },
+          { "text": "Na een kruispunt als bevestiging", "is_correct": false },
+          {
+            "text": "In het midden van een rechte weg zonder kruispunten",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Het B1-bord wordt geplaatst vóór een kruispunt om bestuurders te informeren dat zij voorrang moeten verlenen aan bestuurders op de kruisende weg."
+      },
+      "EN": {
+        "question": "Where is the B1 sign typically placed?",
+        "choices": [
+          {
+            "text": "Before an intersection where you do not have right of way",
+            "is_correct": true
+          },
+          {
+            "text": "After an intersection as confirmation",
+            "is_correct": false
+          },
+          {
+            "text": "In the middle of a straight road with no intersections",
+            "is_correct": false
+          }
+        ],
+        "explanation": "The B1 sign is placed before an intersection to inform drivers that they must yield to drivers on the crossing road."
+      },
+      "FR": {
+        "question": "Où le panneau B1 est-il généralement placé ?",
+        "choices": [
+          {
+            "text": "Avant un carrefour où vous n'avez pas la priorité",
+            "is_correct": true
+          },
+          { "text": "Après un carrefour en confirmation", "is_correct": false },
+          {
+            "text": "Au milieu d'une route droite sans carrefours",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Le panneau B1 est placé avant un carrefour pour informer les conducteurs qu'ils doivent céder le passage aux conducteurs sur la route de croisement."
+      },
+      "AR": {
+        "question": "أين توضع لافتة B1 عادةً؟",
+        "choices": [
+          { "text": "قبل تقاطع لا تملك فيه حق الأولوية", "is_correct": true },
+          { "text": "بعد تقاطع كتأكيد", "is_correct": false },
+          { "text": "في منتصف طريق مستقيم بدون تقاطعات", "is_correct": false }
+        ],
+        "explanation": "توضع لافتة B1 قبل تقاطع لإعلام السائقين بأنهم يجب إعطاء الأولوية للسائقين على الطريق المتقاطع."
+      }
+    }
+  },
+  {
+    "question_id": "B1_Q22",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Bestuurder A heeft een B1-bord. Bestuurder B nadert van links over de kruisende weg. Wie heeft voorrang?",
+        "choices": [
+          {
+            "text": "Bestuurder B, want bestuurder A moet voorrang verlenen vanwege het B1-bord",
+            "is_correct": true
+          },
+          {
+            "text": "Bestuurder A, want rechts heeft voorrang op links",
+            "is_correct": false
+          },
+          {
+            "text": "Geen van beiden, ze moeten allebei stoppen",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Het B1-bord geeft aan dat bestuurder A voorrang moet verlenen aan alle bestuurders op de kruisende weg, ongeacht de richting (links of rechts)."
+      },
+      "EN": {
+        "question": "Driver A has a B1 sign. Driver B approaches from the left on the crossing road. Who has priority?",
+        "choices": [
+          {
+            "text": "Driver B, because driver A must yield due to the B1 sign",
+            "is_correct": true
+          },
+          {
+            "text": "Driver A, because right has priority over left",
+            "is_correct": false
+          },
+          { "text": "Neither, they must both stop", "is_correct": false }
+        ],
+        "explanation": "The B1 sign indicates that driver A must yield to all drivers on the crossing road, regardless of direction (left or right)."
+      },
+      "FR": {
+        "question": "Le conducteur A a un panneau B1. Le conducteur B approche de la gauche sur la route de croisement. Qui a la priorité ?",
+        "choices": [
+          {
+            "text": "Le conducteur B, car le conducteur A doit céder le passage en raison du panneau B1",
+            "is_correct": true
+          },
+          {
+            "text": "Le conducteur A, car la droite a la priorité sur la gauche",
+            "is_correct": false
+          },
+          {
+            "text": "Ni l'un ni l'autre, ils doivent tous les deux s'arrêter",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Le panneau B1 indique que le conducteur A doit céder le passage à tous les conducteurs sur la route de croisement, quelle que soit la direction (gauche ou droite)."
+      },
+      "AR": {
+        "question": "السائق A لديه لافتة B1. السائق B يقترب من اليسار على الطريق المتقاطع. من له الأولوية؟",
+        "choices": [
+          {
+            "text": "السائق B، لأن السائق A يجب إعطاء الأولوية بسبب لافتة B1",
+            "is_correct": true
+          },
+          {
+            "text": "السائق A، لأن اليمين له الأولوية على اليسار",
+            "is_correct": false
+          },
+          { "text": "لا أحد منهما، يجب على كليهما التوقف", "is_correct": false }
+        ],
+        "explanation": "تشير لافتة B1 إلى أن السائق A يجب إعطاء الأولوية لجميع السائقين على الطريق المتقاطع، بغض النظر عن الاتجاه (يسار أو يمين)."
+      }
+    }
+  },
+  {
+    "question_id": "B1_Q23",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U ziet een B1-bord. Er nadert een tram op de kruisende weg. Moet u de tram voorrang verlenen?",
+        "choices": [
+          {
+            "text": "Ja, trams hebben altijd voorrang ongeacht de verkeerstekens",
+            "is_correct": true
+          },
+          {
+            "text": "Nee, het B1-bord geldt niet voor trams",
+            "is_correct": false
+          },
+          {
+            "text": "Ja, maar pas als de tram zijn bel gebruikt",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Trams hebben in België altijd voorrang op ander gemotoriseerd verkeer, tenzij een verkeersteken of agent anders bepaalt. Bovendien verplicht het B1-bord u ook extra voorzichtig te zijn."
+      },
+      "EN": {
+        "question": "You see a B1 sign. A tram is approaching on the crossing road. Must you yield to the tram?",
+        "choices": [
+          {
+            "text": "Yes, trams always have priority regardless of traffic signs",
+            "is_correct": true
+          },
+          {
+            "text": "No, the B1 sign does not apply to trams",
+            "is_correct": false
+          },
+          {
+            "text": "Yes, but only when the tram rings its bell",
+            "is_correct": false
+          }
+        ],
+        "explanation": "In Belgium, trams always have priority over other motorised traffic unless a traffic sign or official directs otherwise. Additionally, the B1 sign requires you to be extra cautious."
+      },
+      "FR": {
+        "question": "Vous voyez un panneau B1. Un tram approche sur la route de croisement. Devez-vous lui céder le passage ?",
+        "choices": [
+          {
+            "text": "Oui, les trams ont toujours la priorité quels que soient les panneaux de signalisation",
+            "is_correct": true
+          },
+          {
+            "text": "Non, le panneau B1 ne s'applique pas aux trams",
+            "is_correct": false
+          },
+          {
+            "text": "Oui, mais seulement lorsque le tram sonne sa cloche",
+            "is_correct": false
+          }
+        ],
+        "explanation": "En Belgique, les trams ont toujours la priorité sur les autres véhicules motorisés sauf indication contraire d'un panneau ou d'un agent. De plus, le panneau B1 vous oblige à être particulièrement prudent."
+      },
+      "AR": {
+        "question": "ترى لافتة B1. ترام يقترب على الطريق المتقاطع. هل يجب إعطاء الترام الأولوية؟",
+        "choices": [
+          {
+            "text": "نعم، للترام دائماً الأولوية بغض النظر عن لافتات المرور",
+            "is_correct": true
+          },
+          { "text": "لا، لافتة B1 لا تنطبق على الترام", "is_correct": false },
+          { "text": "نعم، لكن فقط عندما يُدق الترام جرسه", "is_correct": false }
+        ],
+        "explanation": "في بلجيكا، للترام دائماً الأولوية على المركبات الآلية الأخرى ما لم يحدد لافتة أو ضابط خلاف ذلك. علاوة على ذلك، تُلزمك لافتة B1 بالحذر الإضافي."
+      }
+    }
+  },
+  {
+    "question_id": "B1_Q24",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Welke bestuurders moeten voorrang verlenen bij een B1-bord?",
+        "choices": [
+          {
+            "text": "De bestuurder die het B1-bord passeert, dient voorrang te verlenen aan ALLE bestuurders op de kruisende weg",
+            "is_correct": true
+          },
+          {
+            "text": "Alleen bestuurders van zware voertuigen",
+            "is_correct": false
+          },
+          {
+            "text": "Alleen als de andere bestuurder van rechts komt",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Het B1-bord verplicht de bestuurder die de kruising nadert om voorrang te verlenen aan alle bestuurders op de kruisende weg, ongeacht het type voertuig of richting."
+      },
+      "EN": {
+        "question": "Which drivers must yield at a B1 sign?",
+        "choices": [
+          {
+            "text": "The driver passing the B1 sign must yield to ALL drivers on the crossing road",
+            "is_correct": true
+          },
+          { "text": "Only drivers of heavy vehicles", "is_correct": false },
+          {
+            "text": "Only if the other driver comes from the right",
+            "is_correct": false
+          }
+        ],
+        "explanation": "The B1 sign obliges the driver approaching the intersection to yield to all drivers on the crossing road, regardless of vehicle type or direction."
+      },
+      "FR": {
+        "question": "Quels conducteurs doivent céder le passage au panneau B1 ?",
+        "choices": [
+          {
+            "text": "Le conducteur qui passe le panneau B1 doit céder le passage à TOUS les conducteurs sur la route de croisement",
+            "is_correct": true
+          },
+          {
+            "text": "Seulement les conducteurs de véhicules lourds",
+            "is_correct": false
+          },
+          {
+            "text": "Seulement si l'autre conducteur vient de droite",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Le panneau B1 oblige le conducteur qui approche du carrefour à céder le passage à tous les conducteurs sur la route de croisement, quel que soit le type de véhicule ou la direction."
+      },
+      "AR": {
+        "question": "أي السائقين يجب إعطاء الأولوية عند لافتة B1؟",
+        "choices": [
+          {
+            "text": "السائق الذي يمر بلافتة B1 يجب إعطاء الأولوية لجميع السائقين على الطريق المتقاطع",
+            "is_correct": true
+          },
+          { "text": "فقط سائقو المركبات الثقيلة", "is_correct": false },
+          {
+            "text": "فقط إذا كان السائق الآخر يأتي من اليمين",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تُلزم لافتة B1 السائق الذي يقترب من التقاطع بإعطاء الأولوية لجميع السائقين على الطريق المتقاطع، بغض النظر عن نوع المركبة أو الاتجاه."
+      }
+    }
+  },
+  {
+    "question_id": "B1_Q25",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat kunt u doen als u voor een B1-bord staat en er veel verkeer is op de kruisende weg?",
+        "choices": [
+          {
+            "text": "Wachten totdat u veilig kunt invoegen, ook al duurt dit lang",
+            "is_correct": true
+          },
+          { "text": "Noodstop maken en 112 bellen", "is_correct": false },
+          {
+            "text": "Na maximaal 30 seconden wachten alsnog doorrijden",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Bij drukte op de kruisende weg moet u geduldig wachten totdat u veilig kunt doorrijden. Er is geen tijdslimiet. Schakel eventueel terug naar een lagere versnelling om klaar te zijn om te rijden."
+      },
+      "EN": {
+        "question": "What should you do at a B1 sign when there is heavy traffic on the crossing road?",
+        "choices": [
+          {
+            "text": "Wait until you can safely merge, even if this takes a long time",
+            "is_correct": true
+          },
+          { "text": "Emergency stop and call 112", "is_correct": false },
+          {
+            "text": "After waiting a maximum of 30 seconds, drive through anyway",
+            "is_correct": false
+          }
+        ],
+        "explanation": "In heavy traffic on the crossing road, you must patiently wait until you can safely proceed. There is no time limit. Shift to a low gear if needed to be ready to drive."
+      },
+      "FR": {
+        "question": "Que devez-vous faire au panneau B1 lorsqu'il y a beaucoup de circulation sur la route de croisement ?",
+        "choices": [
+          {
+            "text": "Attendre que vous puissiez vous insérer en toute sécurité, même si cela prend longtemps",
+            "is_correct": true
+          },
+          { "text": "Arrêt d'urgence et appeler le 112", "is_correct": false },
+          {
+            "text": "Après avoir attendu au maximum 30 secondes, continuer quand même",
+            "is_correct": false
+          }
+        ],
+        "explanation": "En cas de forte circulation sur la route de croisement, vous devez attendre patiemment jusqu'à ce que vous puissiez avancer en toute sécurité. Il n'y a pas de limite de temps. Passez en vitesse basse si nécessaire pour être prêt à conduire."
+      },
+      "AR": {
+        "question": "ماذا يجب أن تفعل عند لافتة B1 عندما يكون هناك ازدحام على الطريق المتقاطع؟",
+        "choices": [
+          {
+            "text": "الانتظار حتى تتمكن من الاندماج بأمان، حتى لو استغرق ذلك وقتاً طويلاً",
+            "is_correct": true
+          },
+          { "text": "توقف طارئ والاتصال بالرقم 112", "is_correct": false },
+          {
+            "text": "بعد انتظار 30 ثانية كحد أقصى، التقدم على أي حال",
+            "is_correct": false
+          }
+        ],
+        "explanation": "في حالة حركة مرور كثيفة على الطريق المتقاطع، يجب الانتظار بصبر حتى تتمكن من المتابعة بأمان. لا يوجد حد زمني. تحول إلى تروس منخفضة إذا لزم الأمر للاستعداد للقيادة."
+      }
+    }
+  },
+  {
+    "question_id": "B1_Q26",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Is het B1-bord ook 's nachts en bij slecht zicht geldig?",
+        "choices": [
+          {
+            "text": "Ja, verkeersborden zijn altijd geldig, ongeacht de tijd van de dag of de weersomstandigheden",
+            "is_correct": true
+          },
+          {
+            "text": "Nee, 's nachts gelden de normale voorrangsregels van rechts",
+            "is_correct": false
+          },
+          {
+            "text": "Ja, maar alleen als het bord verlicht is",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Verkeersborden zijn permanent geldig. Het B1-bord behoudt zijn geldigheid 24/7, zelfs bij mist, regen, nacht of andere omstandigheden met beperkt zicht."
+      },
+      "EN": {
+        "question": "Is the B1 sign also valid at night and in poor visibility?",
+        "choices": [
+          {
+            "text": "Yes, traffic signs are always valid regardless of time of day or weather conditions",
+            "is_correct": true
+          },
+          {
+            "text": "No, at night the normal right-of-way rules from the right apply",
+            "is_correct": false
+          },
+          {
+            "text": "Yes, but only when the sign is illuminated",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Traffic signs are permanently valid. The B1 sign retains its validity 24/7, even in fog, rain, night or other low-visibility conditions."
+      },
+      "FR": {
+        "question": "Le panneau B1 est-il également valable la nuit et par mauvaise visibilité ?",
+        "choices": [
+          {
+            "text": "Oui, les panneaux de signalisation sont toujours valables quelle que soit l'heure ou les conditions météorologiques",
+            "is_correct": true
+          },
+          {
+            "text": "Non, la nuit, les règles normales de priorité à droite s'appliquent",
+            "is_correct": false
+          },
+          {
+            "text": "Oui, mais seulement lorsque le panneau est éclairé",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Les panneaux de signalisation sont valables en permanence. Le panneau B1 reste valable 24h/24, même par brouillard, pluie, nuit ou autres conditions de faible visibilité."
+      },
+      "AR": {
+        "question": "هل لافتة B1 سارية أيضاً في الليل وعند ضعف الرؤية؟",
+        "choices": [
+          {
+            "text": "نعم، لافتات المرور سارية دائماً بغض النظر عن الوقت أو الظروف الجوية",
+            "is_correct": true
+          },
+          {
+            "text": "لا، في الليل تسري قواعد الأولوية العادية من اليمين",
+            "is_correct": false
+          },
+          {
+            "text": "نعم، لكن فقط عندما تكون اللافتة مضاءة",
+            "is_correct": false
+          }
+        ],
+        "explanation": "لافتات المرور سارية بشكل دائم. تحتفظ لافتة B1 بصلاحيتها على مدار 24 ساعة، حتى في الضباب والمطر والليل وغيرها من أوضاع الرؤية المنخفضة."
+      }
+    }
+  },
+  {
+    "question_id": "B1_Q27",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U rijdt op een weg met een B1-bord. Op de kruisende weg staat een B9-bord (Voorrangsweg). Wie heeft voorrang?",
+        "choices": [
+          {
+            "text": "De bestuurder op de B9-weg heeft voorrang; u hebt als B1-gebruiker de verplichting te wachten",
+            "is_correct": true
+          },
+          {
+            "text": "Beide borden heffen elkaar op; de voorrang van rechts geldt weer",
+            "is_correct": false
+          },
+          {
+            "text": "U heeft voorrang want het B1-bord staat eerder",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Het B9-bord (Voorrangsweg) en het B1-bord (Voorrang verlenen) werken samen: de B9-weg heeft altijd voorrang en de B1-weg moet altijd wijken. Dit is het meest voorkomende systeem op doorgaande wegen."
+      },
+      "EN": {
+        "question": "You are on a road with a B1 sign. The crossing road has a B9 sign (Priority road). Who has priority?",
+        "choices": [
+          {
+            "text": "The driver on the B9 road has priority; as a B1 user you must wait",
+            "is_correct": true
+          },
+          {
+            "text": "Both signs cancel each other out; priority from the right applies",
+            "is_correct": false
+          },
+          {
+            "text": "You have priority because the B1 sign comes first",
+            "is_correct": false
+          }
+        ],
+        "explanation": "The B9 sign (Priority road) and B1 sign (Give way) work together: the B9 road always has priority and the B1 road must always yield. This is the most common system on through roads."
+      },
+      "FR": {
+        "question": "Vous roulez sur une route avec un panneau B1. La route de croisement a un panneau B9 (Route prioritaire). Qui a la priorité ?",
+        "choices": [
+          {
+            "text": "Le conducteur sur la route B9 a la priorité; en tant qu'utilisateur B1 vous devez attendre",
+            "is_correct": true
+          },
+          {
+            "text": "Les deux panneaux s'annulent; la priorité à droite s'applique à nouveau",
+            "is_correct": false
+          },
+          {
+            "text": "Vous avez la priorité car le panneau B1 vient en premier",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Le panneau B9 (Route prioritaire) et le panneau B1 (Cédez le passage) fonctionnent ensemble: la route B9 a toujours la priorité et la route B1 doit toujours céder. C'est le système le plus courant sur les routes de transit."
+      },
+      "AR": {
+        "question": "أنت على طريق به لافتة B1. الطريق المتقاطع به لافتة B9 (طريق الأولوية). من له الأولوية؟",
+        "choices": [
+          {
+            "text": "السائق على طريق B9 له الأولوية؛ بوصفك مستخدم B1 يجب عليك الانتظار",
+            "is_correct": true
+          },
+          {
+            "text": "كلتا اللافتتين تلغيان بعضهما؛ تسري قاعدة الأولوية من اليمين مجدداً",
+            "is_correct": false
+          },
+          {
+            "text": "لديك الأولوية لأن لافتة B1 تأتي أولاً",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تعمل لافتة B9 (طريق الأولوية) ولافتة B1 (إعطاء الأولوية) معاً: طريق B9 له الأولوية دائماً ويجب على طريق B1 الانتظار دائماً. هذا هو النظام الأكثر شيوعاً على الطرق العابرة."
+      }
+    }
+  },
+  {
+    "question_id": "B1_Q28",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat zijn de gevolgen als u een B1-bord negeert en een voertuig ramt op de kruisende weg?",
+        "choices": [
+          {
+            "text": "U bent aansprakelijk voor het veroorzaken van een verkeersongeval door voorrangsschending",
+            "is_correct": true
+          },
+          {
+            "text": "De botsende bestuurder is fout, omdat hij u had moeten laten voorgaan",
+            "is_correct": false
+          },
+          {
+            "text": "Zolang er geen letsel is, zijn er geen juridische gevolgen",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Het negeren van een B1-bord is een inbreuk op de verkeersregels. Als u hierdoor een botsing veroorzaakt, wordt u aansprakelijk gesteld. Dit kan leiden tot boetes, puntenaftrek op het rijbewijs en zelfs strafrechtelijke vervolging bij letsel."
+      },
+      "EN": {
+        "question": "What are the consequences if you ignore a B1 sign and collide with a vehicle on the crossing road?",
+        "choices": [
+          {
+            "text": "You are liable for causing a traffic accident through a right-of-way violation",
+            "is_correct": true
+          },
+          {
+            "text": "The colliding driver is at fault for not letting you through",
+            "is_correct": false
+          },
+          {
+            "text": "As long as there is no injury, there are no legal consequences",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ignoring a B1 sign is a traffic violation. If you cause a collision as a result, you will be held liable. This can lead to fines, points on your licence and even criminal prosecution if there are injuries."
+      },
+      "FR": {
+        "question": "Quelles sont les conséquences si vous ignorez un panneau B1 et entrez en collision avec un véhicule sur la route de croisement ?",
+        "choices": [
+          {
+            "text": "Vous êtes responsable d'avoir causé un accident de la route par violation de la priorité",
+            "is_correct": true
+          },
+          {
+            "text": "Le conducteur en collision est en faute pour ne pas vous avoir laissé passer",
+            "is_correct": false
+          },
+          {
+            "text": "Tant qu'il n'y a pas de blessure, il n'y a pas de conséquences juridiques",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ignorer un panneau B1 est une infraction au code de la route. Si vous causez une collision, vous serez tenu responsable. Cela peut entraîner des amendes, des points sur le permis et même des poursuites pénales en cas de blessures."
+      },
+      "AR": {
+        "question": "ما عواقب تجاهل لافتة B1 والاصطدام بمركبة على الطريق المتقاطع؟",
+        "choices": [
+          {
+            "text": "أنت مسؤول عن التسبب في حادث مروري بسبب انتهاك قاعدة الأولوية",
+            "is_correct": true
+          },
+          {
+            "text": "السائق المصطدم هو المخطئ لعدم إفساحه لك المجال",
+            "is_correct": false
+          },
+          {
+            "text": "ما دام لا يوجد إصابات، لا توجد عواقب قانونية",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تجاهل لافتة B1 مخالفة لقواعد المرور. إذا تسببت في تصادم نتيجة لذلك، ستُحاسَب. قد يؤدي ذلك إلى غرامات وخصم نقاط من الرخصة وحتى ملاحقة جنائية في حالة وقوع إصابات."
+      }
+    }
+  },
+  {
+    "question_id": "B1_Q29",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Kan een wegenbouwer of politie tijdelijk de verplichting van het B1-bord opheffen?",
+        "choices": [
+          {
+            "text": "Ja, een politieagent of erkende verkeersregelaar kan tijdelijk andere verkeersregels instellen die voorrang hebben op borden",
+            "is_correct": true
+          },
+          {
+            "text": "Nee, permanente borden kunnen nooit worden opgeheven",
+            "is_correct": false
+          },
+          {
+            "text": "Ja, maar alleen door de gemeente en niet door de politie",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Een politieagent of erkende verkeersregelaar kan ter plekke verkeersinstructies geven die voorrang hebben boven verkeersborden, inclusief B1. Tijdelijke borden bij werken kunnen het B1-bord ook tijdelijk vervangen of aanvullen."
+      },
+      "EN": {
+        "question": "Can a road worker or police officer temporarily override the B1 sign obligation?",
+        "choices": [
+          {
+            "text": "Yes, a police officer or authorised traffic controller can temporarily impose other rules that take priority over signs",
+            "is_correct": true
+          },
+          {
+            "text": "No, permanent signs cannot ever be overridden",
+            "is_correct": false
+          },
+          {
+            "text": "Yes, but only by the municipality and not by police",
+            "is_correct": false
+          }
+        ],
+        "explanation": "A police officer or authorised traffic controller can give on-site traffic instructions that take priority over traffic signs, including B1. Temporary signs at roadworks can also temporarily replace or supplement the B1 sign."
+      },
+      "FR": {
+        "question": "Un ouvrier routier ou un agent de police peut-il temporairement annuler l'obligation du panneau B1 ?",
+        "choices": [
+          {
+            "text": "Oui, un agent de police ou un régulateur de la circulation agréé peut temporairement imposer d'autres règles qui ont la priorité sur les panneaux",
+            "is_correct": true
+          },
+          {
+            "text": "Non, les panneaux permanents ne peuvent jamais être annulés",
+            "is_correct": false
+          },
+          {
+            "text": "Oui, mais seulement par la commune et non par la police",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Un agent de police ou un régulateur de la circulation agréé peut donner des instructions de circulation sur place qui ont la priorité sur les panneaux de signalisation, y compris B1. Les panneaux temporaires lors de travaux peuvent également remplacer ou compléter temporairement le panneau B1."
+      },
+      "AR": {
+        "question": "هل يمكن لعامل طريق أو ضابط شرطة إلغاء التزام لافتة B1 مؤقتاً؟",
+        "choices": [
+          {
+            "text": "نعم، يمكن لضابط شرطة أو منظم مرور معتمد فرض قواعد أخرى مؤقتاً تُقدَّم على اللافتات",
+            "is_correct": true
+          },
+          {
+            "text": "لا، اللافتات الدائمة لا يمكن إلغاؤها أبداً",
+            "is_correct": false
+          },
+          {
+            "text": "نعم، لكن فقط من قِبَل البلدية وليس الشرطة",
+            "is_correct": false
+          }
+        ],
+        "explanation": "يمكن لضابط شرطة أو منظم مرور معتمد إعطاء تعليمات مرورية في الموقع تُقدَّم على لافتات المرور بما فيها B1. يمكن أيضاً للافتات المؤقتة عند أعمال الطريق أن تحل مؤقتاً محل لافتة B1 أو تكملها."
+      }
+    }
+  },
+  {
+    "question_id": "B1_Q30",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U staat voor een B1-bord in een gevaarlijk kruispunt waarbij u niet ver kunt kijken. Hoe rijdt u dit kruispunt correct door?",
+        "choices": [
+          {
+            "text": "Langzaam oprukken tot u goed zicht heeft, dan stoppen en controleren voor u invoegt",
+            "is_correct": true
+          },
+          {
+            "text": "Snel doorrijden om niet te lang te blokkeren",
+            "is_correct": false
+          },
+          {
+            "text": "Toeter totdat u zeker bent dat anderen u zien, dan doorrijden",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Bij een kruispunt met beperkt zicht moet u extra voorzichtig zijn. Kruip langzaam op naar de hoek, wacht totdat u goed zicht heeft en u zeker bent dat u veilig kunt doorrijden. Dit is de correcte aanpak bij een B1-bord op een gevaarlijk kruispunt."
+      },
+      "EN": {
+        "question": "You are at a B1 sign at a dangerous intersection with poor visibility. How do you correctly handle this intersection?",
+        "choices": [
+          {
+            "text": "Creep forward slowly until you have a good view, then stop and check before merging",
+            "is_correct": true
+          },
+          {
+            "text": "Drive through quickly to avoid blocking for too long",
+            "is_correct": false
+          },
+          {
+            "text": "Honk until you are sure others see you, then drive through",
+            "is_correct": false
+          }
+        ],
+        "explanation": "At an intersection with limited visibility, you must be extra careful. Creep slowly to the corner, wait until you have a clear view and are sure you can drive through safely. This is the correct approach at a B1 sign at a dangerous intersection."
+      },
+      "FR": {
+        "question": "Vous êtes au panneau B1 à un carrefour dangereux avec une mauvaise visibilité. Comment gérez-vous correctement ce carrefour ?",
+        "choices": [
+          {
+            "text": "Avancez lentement jusqu'à avoir une bonne visibilité, puis arrêtez-vous et vérifiez avant de vous insérer",
+            "is_correct": true
+          },
+          {
+            "text": "Passez rapidement pour éviter de bloquer trop longtemps",
+            "is_correct": false
+          },
+          {
+            "text": "Klaxonnez jusqu'à ce que vous soyez sûr que les autres vous voient, puis passez",
+            "is_correct": false
+          }
+        ],
+        "explanation": "À un carrefour à visibilité limitée, vous devez être particulièrement prudent. Avancez lentement jusqu'au coin, attendez d'avoir une vue dégagée et d'être sûr de pouvoir passer en toute sécurité. C'est l'approche correcte au panneau B1 à un carrefour dangereux."
+      },
+      "AR": {
+        "question": "أنت عند لافتة B1 في تقاطع خطير مع ضعف الرؤية. كيف تتعامل مع هذا التقاطع بشكل صحيح؟",
+        "choices": [
+          {
+            "text": "التحرك للأمام ببطء حتى تحصل على رؤية جيدة، ثم التوقف والتحقق قبل الاندماج",
+            "is_correct": true
+          },
+          {
+            "text": "القيادة بسرعة لتجنب الانتظار طويلاً",
+            "is_correct": false
+          },
+          {
+            "text": "الضغط على البوق حتى تتأكد أن الآخرين يرونك، ثم المتابعة",
+            "is_correct": false
+          }
+        ],
+        "explanation": "في تقاطع محدود الرؤية، يجب أن تكون أكثر حذراً. تحرك ببطء نحو الزاوية، انتظر حتى تحصل على رؤية واضحة وتتأكد من إمكانية المتابعة بأمان. هذا هو النهج الصحيح عند لافتة B1 في تقاطع خطير."
+      }
+    }
   }
 ]

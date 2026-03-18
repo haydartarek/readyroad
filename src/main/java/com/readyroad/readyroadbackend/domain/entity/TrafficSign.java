@@ -29,7 +29,7 @@ public class TrafficSign extends BaseEntity {
     private Category category;
 
     @Column(nullable = false, length = 50)
-    private String signCode; // e.g., A1, B2, C3
+    private String signCode;
 
     @Column(nullable = false, columnDefinition = "TEXT")
     private String nameAr;
@@ -67,8 +67,14 @@ public class TrafficSign extends BaseEntity {
     @Column(columnDefinition = "TEXT")
     private String longDescriptionAr;
 
+    @Column(name = "normalized_sign_code", length = 100)
+    private String normalizedSignCode;
+
     @Column(length = 500)
     private String imageUrl;
+
+    @Column(name = "image_path", length = 500)
+    private String imagePath;
 
     @Column(nullable = false)
     private Boolean isActive = true;
@@ -186,12 +192,28 @@ public class TrafficSign extends BaseEntity {
         this.longDescriptionAr = longDescriptionAr;
     }
 
+    public String getNormalizedSignCode() {
+        return normalizedSignCode;
+    }
+
+    public void setNormalizedSignCode(String normalizedSignCode) {
+        this.normalizedSignCode = normalizedSignCode;
+    }
+
     public String getImageUrl() {
         return imageUrl;
     }
 
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+    }
+
+    public String getImagePath() {
+        return imagePath;
+    }
+
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
     }
 
     public Boolean getIsActive() {
@@ -204,14 +226,14 @@ public class TrafficSign extends BaseEntity {
 
     @Override
     protected void normalizeTextFields() {
-        nameAr            = TextNormalizer.normalize(nameAr);
-        nameEn            = TextNormalizer.normalize(nameEn);
-        nameNl            = TextNormalizer.normalize(nameNl);
-        nameFr            = TextNormalizer.normalize(nameFr);
-        descriptionAr     = TextNormalizer.normalize(descriptionAr);
-        descriptionEn     = TextNormalizer.normalize(descriptionEn);
-        descriptionNl     = TextNormalizer.normalize(descriptionNl);
-        descriptionFr     = TextNormalizer.normalize(descriptionFr);
+        nameAr = TextNormalizer.normalize(nameAr);
+        nameEn = TextNormalizer.normalize(nameEn);
+        nameNl = TextNormalizer.normalize(nameNl);
+        nameFr = TextNormalizer.normalize(nameFr);
+        descriptionAr = TextNormalizer.normalize(descriptionAr);
+        descriptionEn = TextNormalizer.normalize(descriptionEn);
+        descriptionNl = TextNormalizer.normalize(descriptionNl);
+        descriptionFr = TextNormalizer.normalize(descriptionFr);
         longDescriptionAr = TextNormalizer.normalize(longDescriptionAr);
         longDescriptionEn = TextNormalizer.normalize(longDescriptionEn);
         longDescriptionNl = TextNormalizer.normalize(longDescriptionNl);

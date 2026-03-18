@@ -1,51 +1,41 @@
 {
-  "_IMPORTANT": "Each exam requires exactly 15 questions: 6 EASY + 6 MEDIUM + 3 HARD. No overlap between EXAM_1 and EXAM_2. You need 30 questions total (12 EASY + 12 MEDIUM + 6 HARD).",
-  "_TEMPLATE_STATUS": "INCOMPLETE — Only 5 of 30 required questions exist. Add 25 more questions before configuring exams.",
   "exam_1": {
-    "_note": "EXAM_1: Questions Q01-Q15 (6 EASY + 6 MEDIUM + 3 HARD)",
     "questions": [
       "A25_Q01",
       "A25_Q02",
       "A25_Q03",
       "A25_Q04",
       "A25_Q05",
-      "[A25_Q06]",
-      "[A25_Q07]",
-      "[A25_Q08]",
-      "[A25_Q09]",
-      "[A25_Q10]",
-      "[A25_Q11]",
-      "[A25_Q12]",
-      "[A25_Q13]",
-      "[A25_Q14]",
-      "[A25_Q15]"
+      "A25_Q06",
+      "A25_Q07",
+      "A25_Q08",
+      "A25_Q09",
+      "A25_Q10",
+      "A25_Q11",
+      "A25_Q12",
+      "A25_Q13",
+      "A25_Q14",
+      "A25_Q15"
     ]
   },
   "exam_2": {
-    "_note": "EXAM_2: Questions Q16-Q30 (6 EASY + 6 MEDIUM + 3 HARD) — NO overlap with EXAM_1",
     "questions": [
-      "[A25_Q16]",
-      "[A25_Q17]",
-      "[A25_Q18]",
-      "[A25_Q19]",
-      "[A25_Q20]",
-      "[A25_Q21]",
-      "[A25_Q22]",
-      "[A25_Q23]",
-      "[A25_Q24]",
-      "[A25_Q25]",
-      "[A25_Q26]",
-      "[A25_Q27]",
-      "[A25_Q28]",
-      "[A25_Q29]",
-      "[A25_Q30]"
+      "A25_Q16",
+      "A25_Q17",
+      "A25_Q18",
+      "A25_Q19",
+      "A25_Q20",
+      "A25_Q21",
+      "A25_Q22",
+      "A25_Q23",
+      "A25_Q24",
+      "A25_Q25",
+      "A25_Q26",
+      "A25_Q27",
+      "A25_Q28",
+      "A25_Q29",
+      "A25_Q30"
     ]
   },
-  "passing_score": 12,
-  "total_questions": 15,
-  "distribution": {
-    "EASY": 6,
-    "MEDIUM": 6,
-    "HARD": 3
-  }
+  "passing_score": 12
 }

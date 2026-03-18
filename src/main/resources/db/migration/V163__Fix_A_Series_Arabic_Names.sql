@@ -1,0 +1,37 @@
+﻿-- V163: Fix Arabic names for A series signs
+SET NAMES utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+UPDATE traffic_signs SET name_ar = 'مخرج على رصيف أو ضفة نهر' WHERE sign_code = 'A11';
+UPDATE traffic_signs SET name_ar = 'مطب أو تعرج' WHERE sign_code = 'A13';
+UPDATE traffic_signs SET name_ar = 'مطب مرتفع' WHERE sign_code = 'A14';
+UPDATE traffic_signs SET name_ar = 'خطر الانزلاق' WHERE sign_code = 'A15';
+UPDATE traffic_signs SET name_ar = 'حصى متناثر' WHERE sign_code = 'A17';
+UPDATE traffic_signs SET name_ar = 'سقوط أحجار' WHERE sign_code = 'A19';
+UPDATE traffic_signs SET name_ar = 'منحنى خطير إلى اليسار' WHERE sign_code = 'A1a';
+UPDATE traffic_signs SET name_ar = 'منحنى خطير إلى اليمين' WHERE sign_code = 'A1b';
+UPDATE traffic_signs SET name_ar = 'منحنى مزدوج خطير (يسار-يمين)' WHERE sign_code = 'A1c';
+UPDATE traffic_signs SET name_ar = 'منحنى مزدوج خطير (يمين-يسار)' WHERE sign_code = 'A1d';
+UPDATE traffic_signs SET name_ar = 'عبور مشاة' WHERE sign_code = 'A21';
+UPDATE traffic_signs SET name_ar = 'تحذير وجود أطفال' WHERE sign_code = 'A23';
+UPDATE traffic_signs SET name_ar = 'عبور دراجات' WHERE sign_code = 'A25';
+UPDATE traffic_signs SET name_ar = 'عبور حيوانات برية' WHERE sign_code = 'A27';
+UPDATE traffic_signs SET name_ar = 'عبور ماشية' WHERE sign_code = 'A29';
+UPDATE traffic_signs SET name_ar = 'منحدر خطير' WHERE sign_code = 'A3';
+UPDATE traffic_signs SET name_ar = 'أعمال على الطريق' WHERE sign_code = 'A31';
+UPDATE traffic_signs SET name_ar = 'إشارة ضوئية' WHERE sign_code = 'A33';
+UPDATE traffic_signs SET name_ar = 'طائرات منخفضة الارتفاع' WHERE sign_code = 'A35';
+UPDATE traffic_signs SET name_ar = 'رياح جانبية' WHERE sign_code = 'A37';
+UPDATE traffic_signs SET name_ar = 'طريق ذو اتجاهين' WHERE sign_code = 'A39';
+UPDATE traffic_signs SET name_ar = 'تقاطع سكة حديد مع حواجز' WHERE sign_code = 'A41';
+UPDATE traffic_signs SET name_ar = 'تقاطع سكة حديد بدون حواجز' WHERE sign_code = 'A43';
+UPDATE traffic_signs SET name_ar = 'علامة تحذير' WHERE sign_code = 'A45';
+UPDATE traffic_signs SET name_ar = 'علامة تحذير مسارات متعددة' WHERE sign_code = 'A47';
+UPDATE traffic_signs SET name_ar = 'تقاطع مع مسار ترام أو قطار' WHERE sign_code = 'A49';
+UPDATE traffic_signs SET name_ar = 'صعود خطير' WHERE sign_code = 'A5';
+UPDATE traffic_signs SET name_ar = 'تحذير ازدحام' WHERE sign_code = 'A50';
+UPDATE traffic_signs SET name_ar = 'خطر عام' WHERE sign_code = 'A51';
+UPDATE traffic_signs SET name_ar = 'تحذير وتد قابل للطي' WHERE sign_code = 'A53';
+UPDATE traffic_signs SET name_ar = 'تضييق الطريق من الجانبين' WHERE sign_code = 'A7a';
+UPDATE traffic_signs SET name_ar = 'تضييق الطريق من اليمين' WHERE sign_code = 'A7b';
+UPDATE traffic_signs SET name_ar = 'تضييق الطريق من اليسار' WHERE sign_code = 'A7c';
+UPDATE traffic_signs SET name_ar = 'جسر متحرك' WHERE sign_code = 'A9';

@@ -1,51 +1,54 @@
 {
-  "_IMPORTANT": "Each exam requires exactly 15 questions: 6 EASY + 6 MEDIUM + 3 HARD. No overlap between EXAM_1 and EXAM_2. You need 30 questions total (12 EASY + 12 MEDIUM + 6 HARD).",
-  "_TEMPLATE_STATUS": "INCOMPLETE — Only 5 of 30 required questions exist. Add 25 more questions before configuring exams.",
   "exam_1": {
-    "_note": "EXAM_1: Questions Q01-Q15 (6 EASY + 6 MEDIUM + 3 HARD)",
     "questions": [
       "B15g_Q01",
       "B15g_Q02",
+      "B15g_Q06",
+      "B15g_Q07",
+      "B15g_Q08",
+      "B15g_Q09",
       "B15g_Q03",
       "B15g_Q04",
+      "B15g_Q10",
+      "B15g_Q11",
+      "B15g_Q12",
+      "B15g_Q13",
       "B15g_Q05",
-      "[B15g_Q06]",
-      "[B15g_Q07]",
-      "[B15g_Q08]",
-      "[B15g_Q09]",
-      "[B15g_Q10]",
-      "[B15g_Q11]",
-      "[B15g_Q12]",
-      "[B15g_Q13]",
-      "[B15g_Q14]",
-      "[B15g_Q15]"
-    ]
+      "B15g_Q14",
+      "B15g_Q15"
+    ],
+    "passing_score": 12,
+    "total_questions": 15,
+    "distribution": {
+      "EASY": 6,
+      "MEDIUM": 6,
+      "HARD": 3
+    }
   },
   "exam_2": {
-    "_note": "EXAM_2: Questions Q16-Q30 (6 EASY + 6 MEDIUM + 3 HARD) — NO overlap with EXAM_1",
     "questions": [
-      "[B15g_Q16]",
-      "[B15g_Q17]",
-      "[B15g_Q18]",
-      "[B15g_Q19]",
-      "[B15g_Q20]",
-      "[B15g_Q21]",
-      "[B15g_Q22]",
-      "[B15g_Q23]",
-      "[B15g_Q24]",
-      "[B15g_Q25]",
-      "[B15g_Q26]",
-      "[B15g_Q27]",
-      "[B15g_Q28]",
-      "[B15g_Q29]",
-      "[B15g_Q30]"
-    ]
-  },
-  "passing_score": 12,
-  "total_questions": 15,
-  "distribution": {
-    "EASY": 6,
-    "MEDIUM": 6,
-    "HARD": 3
+      "B15g_Q16",
+      "B15g_Q17",
+      "B15g_Q18",
+      "B15g_Q19",
+      "B15g_Q20",
+      "B15g_Q21",
+      "B15g_Q22",
+      "B15g_Q23",
+      "B15g_Q24",
+      "B15g_Q25",
+      "B15g_Q26",
+      "B15g_Q27",
+      "B15g_Q28",
+      "B15g_Q29",
+      "B15g_Q30"
+    ],
+    "passing_score": 12,
+    "total_questions": 15,
+    "distribution": {
+      "EASY": 5,
+      "MEDIUM": 7,
+      "HARD": 3
+    }
   }
 }

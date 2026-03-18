@@ -1,51 +1,41 @@
 {
-  "_IMPORTANT": "Each exam requires exactly 15 questions: 6 EASY + 6 MEDIUM + 3 HARD. No overlap between EXAM_1 and EXAM_2. You need 30 questions total (12 EASY + 12 MEDIUM + 6 HARD).",
-  "_TEMPLATE_STATUS": "INCOMPLETE — Only 5 of 30 required questions exist. Add 25 more questions before configuring exams.",
   "exam_1": {
-    "_note": "EXAM_1: Questions Q01-Q15 (6 EASY + 6 MEDIUM + 3 HARD)",
     "questions": [
       "A1c_Q01",
       "A1c_Q02",
       "A1c_Q03",
       "A1c_Q04",
       "A1c_Q05",
-      "[A1c_Q06]",
-      "[A1c_Q07]",
-      "[A1c_Q08]",
-      "[A1c_Q09]",
-      "[A1c_Q10]",
-      "[A1c_Q11]",
-      "[A1c_Q12]",
-      "[A1c_Q13]",
-      "[A1c_Q14]",
-      "[A1c_Q15]"
+      "A1c_Q06",
+      "A1c_Q07",
+      "A1c_Q08",
+      "A1c_Q09",
+      "A1c_Q10",
+      "A1c_Q11",
+      "A1c_Q12",
+      "A1c_Q13",
+      "A1c_Q14",
+      "A1c_Q15"
     ]
   },
   "exam_2": {
-    "_note": "EXAM_2: Questions Q16-Q30 (6 EASY + 6 MEDIUM + 3 HARD) — NO overlap with EXAM_1",
     "questions": [
-      "[A1c_Q16]",
-      "[A1c_Q17]",
-      "[A1c_Q18]",
-      "[A1c_Q19]",
-      "[A1c_Q20]",
-      "[A1c_Q21]",
-      "[A1c_Q22]",
-      "[A1c_Q23]",
-      "[A1c_Q24]",
-      "[A1c_Q25]",
-      "[A1c_Q26]",
-      "[A1c_Q27]",
-      "[A1c_Q28]",
-      "[A1c_Q29]",
-      "[A1c_Q30]"
+      "A1c_Q16",
+      "A1c_Q17",
+      "A1c_Q18",
+      "A1c_Q19",
+      "A1c_Q20",
+      "A1c_Q21",
+      "A1c_Q22",
+      "A1c_Q23",
+      "A1c_Q24",
+      "A1c_Q25",
+      "A1c_Q26",
+      "A1c_Q27",
+      "A1c_Q28",
+      "A1c_Q29",
+      "A1c_Q30"
     ]
   },
-  "passing_score": 12,
-  "total_questions": 15,
-  "distribution": {
-    "EASY": 6,
-    "MEDIUM": 6,
-    "HARD": 3
-  }
+  "passing_score": 12
 }

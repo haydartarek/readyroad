@@ -66,8 +66,9 @@ public class DataInitializer implements CommandLineRunner {
                 Map.entry("parkeerborden", "E"),
                 Map.entry("aanwijzingsborden", "F"),
                 Map.entry("onderborden", "G"),
+                Map.entry("fietsersborden", "M"),
                 Map.entry("zoneborden", "Z"),
-                Map.entry("afbakeningsborden", "M"),
+                Map.entry("afbakeningsborden", "T"),
                 Map.entry("informatieborden_en_tijdelijke_verkeersmaatregelen", "F"));
 
         int loaded = 0;
