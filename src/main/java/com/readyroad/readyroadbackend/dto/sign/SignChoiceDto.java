@@ -1,6 +1,8 @@
 package com.readyroad.readyroadbackend.dto.sign;
 
 import com.readyroad.readyroadbackend.domain.entity.SignChoice;
+import com.readyroad.readyroadbackend.domain.enums.SignQuestionType;
+import com.readyroad.readyroadbackend.util.SignQuestionTextSanitizer;
 
 /**
  * A single answer choice — intentionally omits {@code isCorrect}
@@ -15,13 +17,17 @@ public record SignChoiceDto(
         String textAr
 ) {
     public static SignChoiceDto from(SignChoice c) {
+        return from(c, null);
+    }
+
+    public static SignChoiceDto from(SignChoice c, SignQuestionType questionType) {
         return new SignChoiceDto(
                 c.getId(),
                 c.getDisplayOrder() != null ? c.getDisplayOrder() : 0,
-                c.getTextNl(),
-                c.getTextEn(),
-                c.getTextFr(),
-                c.getTextAr()
+                SignQuestionTextSanitizer.sanitizeChoice(questionType, c.getTextNl()),
+                SignQuestionTextSanitizer.sanitizeChoice(questionType, c.getTextEn()),
+                SignQuestionTextSanitizer.sanitizeChoice(questionType, c.getTextFr()),
+                SignQuestionTextSanitizer.sanitizeChoice(questionType, c.getTextAr())
         );
     }
 }

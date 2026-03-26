@@ -1,0 +1,597 @@
+﻿[
+  {
+    "question_id": "F91_Q01",
+    "type": "WHAT_DOES_IT_MEAN",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat betekent dit verkeersbord?",
+        "choices": [
+          {
+            "text": "Elke rijstrook heeft zijn eigen maximumsnelheid, aangegeven boven die rijstrook, zonder vermelding van de afstand waarvoor die limiet geldt",
+            "is_correct": true
+          },
+          {
+            "text": "Elke rijstrook heeft zijn eigen maximumsnelheid, aangegeven boven die rijstrook, met vermelding van de geldende afstand",
+            "is_correct": false
+          },
+          {
+            "text": "Een bijzondere rijstrookregeling is van kracht â€” lees het bord nauwkeurig en volg de specifieke aanwijzing",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F91 toont per rijstrook een aparte maximumsnelheid zonder afstandsaanduiding. De limiet geldt tot een nieuw bord of het einde van het wegvak. Het onderscheidende kenmerk ten opzichte van F89 is de afwezigheid van een afstandsaanduiding."
+      },
+      "EN": {
+        "question": "What does this traffic sign mean?",
+        "choices": [
+          {
+            "text": "Each lane has its own maximum speed, indicated above that lane, without any indication of the distance for which that limit applies",
+            "is_correct": true
+          },
+          {
+            "text": "Each lane has its own maximum speed, indicated above that lane, with a distance indication",
+            "is_correct": false
+          },
+          {
+            "text": "A special lane regulation is in force â€” read the sign carefully and follow the specific instruction",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F91 shows a separate maximum speed per lane without a distance indication. The limit applies until a new sign or the end of the road section. The distinguishing feature compared to F89 is the absence of a distance indication."
+      },
+      "FR": {
+        "question": "Que signifie ce panneau de signalisation?",
+        "choices": [
+          {
+            "text": "Chaque voie a sa propre vitesse maximale, indiqu\u00e9e au-dessus de cette voie, sans indication de la distance pour laquelle cette limite s'applique",
+            "is_correct": true
+          },
+          {
+            "text": "Chaque voie a sa propre vitesse maximale avec indication de distance",
+            "is_correct": false
+          },
+          {
+            "text": "Une r\u00e9glementation sp\u00e9ciale de voie est en vigueur \u2014 lisez attentivement le panneau",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F91 affiche une vitesse maximale s\u00e9par\u00e9e par voie sans indication de distance. La limite s'applique jusqu'\u00e0 un nouveau panneau ou la fin du tron\u00e7on. La caract\u00e9ristique distinctive par rapport \u00e0 F89 est l'absence d'indication de distance."
+      },
+      "AR": {
+        "question": "\u0645\u0627 \u0645\u0639\u0646\u0649 \u0647\u0630\u0647 \u0627\u0644\u0644\u0627\u0641\u062a\u0629\u061f",
+        "choices": [
+          {
+            "text": "\u0644\u0643\u0644 \u0645\u0633\u0627\u0631 \u062d\u062f\u0647 \u0627\u0644\u0623\u0642\u0635\u0649 \u0644\u0644\u0633\u0631\u0639\u0629 \u062f\u0648\u0646 \u0630\u0643\u0631 \u0627\u0644\u0645\u0633\u0627\u0641\u0629 \u0627\u0644\u062a\u064a \u064a\u0633\u0631\u064a \u0641\u064a\u0647\u0627",
+            "is_correct": true
+          },
+          {
+            "text": "\u0644\u0643\u0644 \u0645\u0633\u0627\u0631 \u062d\u062f\u0647 \u0627\u0644\u0623\u0642\u0635\u0649 \u0645\u0639 \u0630\u0643\u0631 \u0627\u0644\u0645\u0633\u0627\u0641\u0629",
+            "is_correct": false
+          },
+          {
+            "text": "\u062a\u0646\u0638\u064a\u0645 \u062e\u0627\u0635 \u0644\u0645\u0633\u0627\u0631 \u0628\u0639\u064a\u0646\u0647 \u2014 \u0627\u0642\u0631\u0623 \u0627\u0644\u0644\u0627\u0641\u062a\u0629 \u0628\u0639\u0646\u0627\u064a\u0629",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F91 \u062a\u0639\u0631\u0636 \u062d\u062f \u0633\u0631\u0639\u0629 \u0623\u0642\u0635\u0649 \u0644\u0643\u0644 \u0645\u0633\u0627\u0631 \u062f\u0648\u0646 \u0630\u0643\u0631 \u0645\u0633\u0627\u0641\u0629. \u064a\u0633\u0631\u064a \u0627\u0644\u062d\u062f \u062d\u062a\u0649 \u0644\u0627\u0641\u062a\u0629 \u062c\u062f\u064a\u062f\u0629 \u0623\u0648 \u0646\u0647\u0627\u064a\u0629 \u0627\u0644\u0642\u0633\u0645."
+      }
+    }
+  },
+  {
+    "question_id": "F91_Q02",
+    "type": "WHICH_SIGN",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Tot welke categorie verkeersborden behoort dit bord?",
+        "choices": [
+          { "text": "Wegbeheersingstekens (F-reeks)", "is_correct": true },
+          { "text": "Gevaarsborden (A-reeks)", "is_correct": false },
+          { "text": "Gebodsborden (D-reeks)", "is_correct": false }
+        ],
+        "explanation": "F91 behoort tot de F-reeks. De per-rijstrook aangegeven snelheidslimiet is bindend voor elke bestuurder in de betreffende rijstrook, ook zonder afstandsaanduiding."
+      },
+      "EN": {
+        "question": "To which category of traffic signs does this sign belong?",
+        "choices": [
+          { "text": "Road management signs (F-series)", "is_correct": true },
+          { "text": "Danger signs (A-series)", "is_correct": false },
+          { "text": "Mandatory signs (D-series)", "is_correct": false }
+        ],
+        "explanation": "F91 belongs to the F-series. The per-lane speed limit is mandatory for every driver in that lane, even without a distance indication."
+      },
+      "FR": {
+        "question": "\u00c0 quelle cat\u00e9gorie de panneaux appartient ce panneau?",
+        "choices": [
+          {
+            "text": "Panneaux de gestion de la route (s\u00e9rie F)",
+            "is_correct": true
+          },
+          { "text": "Panneaux de danger (s\u00e9rie A)", "is_correct": false },
+          {
+            "text": "Panneaux d'obligation (s\u00e9rie D)",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F91 appartient \u00e0 la s\u00e9rie F. La limite de vitesse par voie est obligatoire pour tout conducteur dans cette voie, m\u00eame sans indication de distance."
+      },
+      "AR": {
+        "question": "\u0625\u0644\u0649 \u0623\u064a \u0641\u0626\u0629 \u062a\u0646\u062a\u0645\u064a \u0647\u0630\u0647 \u0627\u0644\u0644\u0627\u0641\u062a\u0629\u061f",
+        "choices": [
+          {
+            "text": "\u0644\u0627\u0641\u062a\u0627\u062a \u0625\u062f\u0627\u0631\u0629 \u0627\u0644\u0637\u0631\u064a\u0642 (\u0627\u0644\u0641\u0626\u0629 F)",
+            "is_correct": true
+          },
+          {
+            "text": "\u0644\u0627\u0641\u062a\u0627\u062a \u0627\u0644\u062e\u0637\u0631 (\u0627\u0644\u0641\u0626\u0629 A)",
+            "is_correct": false
+          },
+          {
+            "text": "\u0644\u0627\u0641\u062a\u0627\u062a \u0627\u0644\u0625\u0644\u0632\u0627\u0645 (\u0627\u0644\u0641\u0626\u0629 D)",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F91 \u062a\u0646\u062a\u0645\u064a \u0625\u0644\u0649 \u0627\u0644\u0641\u0626\u0629 F. \u062d\u062f \u0627\u0644\u0633\u0631\u0639\u0629 \u0644\u0643\u0644 \u0645\u0633\u0627\u0631 \u0645\u0644\u0632\u0645 \u062d\u062a\u0649 \u0628\u062f\u0648\u0646 \u0630\u0643\u0631 \u0645\u0633\u0627\u0641\u0629."
+      }
+    }
+  },
+  {
+    "question_id": "F91_Q03",
+    "type": "HAZARD_IDENTIFICATION",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Welke wegsituatie kondigt dit bord aan?",
+        "choices": [
+          {
+            "text": "Elke rijstrook heeft een eigen snelheidsgrens â€” de limiet boven uw rijstrook geldt voor u zonder vermelding van de geldende afstand",
+            "is_correct": true
+          },
+          {
+            "text": "Elke rijstrook heeft een eigen snelheidsgrens met vermelding van de geldende afstand",
+            "is_correct": false
+          },
+          {
+            "text": "Een speciale rijstrookregeling is van kracht â€” lees en volg het bord exact",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F91 toont rijstrookspecifieke maximumsnelheden zonder afstandsaanduiding. De limiet is bindend en geldt tot een wijziging via een nieuw bord of het einde van het wegvak."
+      },
+      "EN": {
+        "question": "What road situation does this sign announce?",
+        "choices": [
+          {
+            "text": "Each lane has its own speed limit â€” the limit above your lane applies to you without a distance indication",
+            "is_correct": true
+          },
+          {
+            "text": "Each lane has its own speed limit with a distance indication",
+            "is_correct": false
+          },
+          {
+            "text": "A special lane regulation is in force â€” read and follow the sign exactly",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F91 shows lane-specific maximum speeds without a distance indication. The limit is mandatory and applies until changed by a new sign or the end of the road section."
+      },
+      "FR": {
+        "question": "Quelle situation routi\u00e8re ce panneau annonce-t-il?",
+        "choices": [
+          {
+            "text": "Chaque voie a sa propre limite de vitesse \u2014 la limite au-dessus de votre voie s'applique \u00e0 vous sans indication de distance",
+            "is_correct": true
+          },
+          {
+            "text": "Chaque voie a sa propre limite de vitesse avec indication de distance",
+            "is_correct": false
+          },
+          {
+            "text": "Une r\u00e9glementation sp\u00e9ciale de voie est en vigueur \u2014 lisez et suivez exactement",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F91 affiche des vitesses maximales sp\u00e9cifiques par voie sans indication de distance. La limite est obligatoire jusqu'\u00e0 un nouveau panneau ou la fin du tron\u00e7on."
+      },
+      "AR": {
+        "question": "\u0645\u0627 \u0627\u0644\u0648\u0636\u0639 \u0627\u0644\u0630\u064a \u062a\u064f\u0639\u0644\u0646 \u0639\u0646\u0647 \u0647\u0630\u0647 \u0627\u0644\u0644\u0627\u0641\u062a\u0629\u061f",
+        "choices": [
+          {
+            "text": "\u0644\u0643\u0644 \u0645\u0633\u0627\u0631 \u062d\u062f \u0633\u0631\u0639\u0629 \u062e\u0627\u0635 \u2014 \u064a\u0633\u0631\u064a \u0627\u0644\u062d\u062f \u0641\u0648\u0642 \u0645\u0633\u0627\u0631\u0643 \u0628\u062f\u0648\u0646 \u0630\u0643\u0631 \u0645\u0633\u0627\u0641\u0629",
+            "is_correct": true
+          },
+          {
+            "text": "\u0644\u0643\u0644 \u0645\u0633\u0627\u0631 \u062d\u062f \u0633\u0631\u0639\u0629 \u062e\u0627\u0635 \u0645\u0639 \u0630\u0643\u0631 \u0627\u0644\u0645\u0633\u0627\u0641\u0629",
+            "is_correct": false
+          },
+          {
+            "text": "\u062a\u0646\u0638\u064a\u0645 \u062e\u0627\u0635 \u0644\u0645\u0633\u0627\u0631 \u0628\u0639\u064a\u0646\u0647 \u2014 \u0627\u0642\u0631\u0623 \u0648\u0627\u062a\u0628\u0639 \u0628\u062f\u0642\u0629",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F91 \u062a\u0639\u0631\u0636 \u062d\u062f\u0648\u062f \u0633\u0631\u0639\u0629 \u062e\u0627\u0635\u0629 \u0628\u0643\u0644 \u0645\u0633\u0627\u0631 \u062f\u0648\u0646 \u0630\u0643\u0631 \u0645\u0633\u0627\u0641\u0629. \u0627\u0644\u062d\u062f \u0645\u0644\u0632\u0645 \u062d\u062a\u0649 \u0644\u0627\u0641\u062a\u0629 \u062c\u062f\u064a\u062f\u0629 \u0623\u0648 \u0646\u0647\u0627\u064a\u0629 \u0627\u0644\u0642\u0633\u0645."
+      }
+    }
+  },
+  {
+    "question_id": "F91_Q04",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat moet u weten over de geldigheid van de limiet bij F91?",
+        "choices": [
+          {
+            "text": "De limiet is bindend en blijft gelden tot een nieuw bord of het einde van het wegvak â€” de afwezigheid van een afstandsaanduiding maakt de limiet niet adviserend",
+            "is_correct": true
+          },
+          {
+            "text": "De limiet is adviserend omdat er geen afstand is aangegeven",
+            "is_correct": false
+          },
+          {
+            "text": "Dezelfde limiet geldt voor alle rijstroken zodra F91 zichtbaar is, ongeacht de aanduiding boven elke rijstrook",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Bij F91 is de limiet even bindend als bij F89. Het ontbreken van een afstandsaanduiding betekent niet dat de limiet adviserend is â€” zij geldt tot een wijziging door een nieuw bord of het einde van het wegvak."
+      },
+      "EN": {
+        "question": "What must you know about the validity of the limit under F91?",
+        "choices": [
+          {
+            "text": "The limit is mandatory and remains in force until a new sign or the end of the road section â€” the absence of a distance indication does not make the limit advisory",
+            "is_correct": true
+          },
+          {
+            "text": "The limit is advisory because no distance is indicated",
+            "is_correct": false
+          },
+          {
+            "text": "The same limit applies to all lanes once F91 is visible regardless of the indication above each lane",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Under F91 the limit is as binding as under F89. The absence of a distance indication does not make the limit advisory â€” it applies until changed by a new sign or the end of the road section."
+      },
+      "FR": {
+        "question": "Que devez-vous savoir sur la validit\u00e9 de la limite avec F91?",
+        "choices": [
+          {
+            "text": "La limite est obligatoire et reste en vigueur jusqu'\u00e0 un nouveau panneau ou la fin du tron\u00e7on \u2014 l'absence d'indication de distance ne rend pas la limite facultative",
+            "is_correct": true
+          },
+          {
+            "text": "La limite est indicative car aucune distance n'est indiqu\u00e9e",
+            "is_correct": false
+          },
+          {
+            "text": "La m\u00eame limite s'applique \u00e0 toutes les voies d\u00e8s que F91 est visible",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Sous F91 la limite est aussi contraignante que sous F89. L'absence d'indication de distance ne rend pas la limite facultative \u2014 elle s'applique jusqu'\u00e0 un nouveau panneau ou la fin du tron\u00e7on."
+      },
+      "AR": {
+        "question": "\u0645\u0627\u0630\u0627 \u064a\u062c\u0628 \u0623\u0646 \u062a\u0639\u0631\u0641 \u0639\u0646 \u0633\u0631\u064a\u0627\u0646 \u0627\u0644\u062d\u062f \u0641\u064a F91\u061f",
+        "choices": [
+          {
+            "text": "\u0627\u0644\u062d\u062f \u0645\u0644\u0632\u0645 \u0648\u064a\u0633\u0631\u064a \u062d\u062a\u0649 \u0644\u0627\u0641\u062a\u0629 \u062c\u062f\u064a\u062f\u0629 \u0623\u0648 \u0646\u0647\u0627\u064a\u0629 \u0627\u0644\u0642\u0633\u0645 \u2014 \u063a\u064a\u0627\u0628 \u0627\u0644\u0645\u0633\u0627\u0641\u0629 \u0644\u0627 \u064a\u062c\u0639\u0644\u0647 \u0625\u0631\u0634\u0627\u062f\u064a\u064b\u0627",
+            "is_correct": true
+          },
+          {
+            "text": "\u0627\u0644\u062d\u062f \u0625\u0631\u0634\u0627\u062f\u064a \u0644\u0623\u0646\u0647 \u0644\u0627 \u062a\u0648\u062c\u062f \u0645\u0633\u0627\u0641\u0629 \u0645\u062d\u062f\u062f\u0629",
+            "is_correct": false
+          },
+          {
+            "text": "\u064a\u0633\u0631\u064a \u0646\u0641\u0633 \u0627\u0644\u062d\u062f \u0639\u0644\u0649 \u062c\u0645\u064a\u0639 \u0627\u0644\u0645\u0633\u0627\u0631\u0627\u062a \u0628\u0645\u062c\u0631\u062f \u0631\u0624\u064a\u0629 F91",
+            "is_correct": false
+          }
+        ],
+        "explanation": "\u0641\u064a F91 \u0627\u0644\u062d\u062f \u0645\u0644\u0632\u0645 \u0643\u0645\u0627 \u0641\u064a F89. \u063a\u064a\u0627\u0628 \u0630\u0643\u0631 \u0627\u0644\u0645\u0633\u0627\u0641\u0629 \u0644\u0627 \u064a\u062c\u0639\u0644\u0647 \u0625\u0631\u0634\u0627\u062f\u064a\u064b\u0627."
+      }
+    }
+  },
+  {
+    "question_id": "F91_Q05",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U verandert van rijstrook onder F91. Uw vorige rijstrook toonde een lagere limiet, uw nieuwe rijstrook toont een hogere limiet. Geldt de hogere limiet van uw nieuwe rijstrook nu voor u?",
+        "choices": [
+          {
+            "text": "Ja, de limiet boven uw huidige rijstrook is nu van toepassing",
+            "is_correct": true
+          },
+          {
+            "text": "Neen, de limiet van uw vorige rijstrook blijft gelden tot het einde van het F91-bord",
+            "is_correct": false
+          },
+          {
+            "text": "Neen, u moet de laagste aangegeven limiet op het bord aanhouden",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Bij F91 bepaalt uw huidige rijstrook uw van toepassing zijnde limiet. Zodra u van rijstrook wisselt, geldt de limiet boven de nieuwe rijstrook."
+      },
+      "EN": {
+        "question": "You change lane under F91. Your previous lane showed a lower limit; your new lane shows a higher limit. Does the higher limit of your new lane now apply to you?",
+        "choices": [
+          {
+            "text": "Yes, the limit above your current lane now applies to you",
+            "is_correct": true
+          },
+          {
+            "text": "No, your previous lane's limit continues until the end of the F91 sign",
+            "is_correct": false
+          },
+          {
+            "text": "No, you must observe the lowest indicated limit on the sign",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Under F91 your current lane determines which limit applies. Once you change to a different lane, the limit above the new lane applies."
+      },
+      "FR": {
+        "question": "Vous changez de voie sous F91. Votre voie pr\u00e9c\u00e9dente affichait une limite plus basse; votre nouvelle voie affiche une limite plus \u00e9lev\u00e9e. La limite plus \u00e9lev\u00e9e de votre nouvelle voie s'applique-t-elle maintenant \u00e0 vous?",
+        "choices": [
+          {
+            "text": "Oui, la limite au-dessus de votre voie actuelle s'applique maintenant \u00e0 vous",
+            "is_correct": true
+          },
+          {
+            "text": "Non, la limite de votre voie pr\u00e9c\u00e9dente continue jusqu'\u00e0 la fin du panneau F91",
+            "is_correct": false
+          },
+          {
+            "text": "Non, vous devez respecter la limite la plus basse indiqu\u00e9e",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Sous F91 votre voie actuelle d\u00e9termine la limite applicable. D\u00e8s que vous changez de voie, la limite au-dessus de la nouvelle voie s'applique."
+      },
+      "AR": {
+        "question": "\u063a\u064a\u0631\u062a \u0645\u0633\u0627\u0631\u0643 \u0641\u064a F91. \u0645\u0633\u0627\u0631\u0643 \u0627\u0644\u0633\u0627\u0628\u0642 \u062d\u062f \u0623\u062f\u0646\u0649\u060c \u0627\u0644\u062c\u062f\u064a\u062f \u062d\u062f \u0623\u0639\u0644\u0649. \u0647\u0644 \u064a\u0633\u0631\u064a \u0627\u0644\u062d\u062f \u0627\u0644\u0623\u0639\u0644\u0649 \u0639\u0644\u064a\u0643 \u0627\u0644\u0622\u0646\u061f",
+        "choices": [
+          {
+            "text": "\u0646\u0639\u0645\u060c \u0627\u0644\u062d\u062f \u0641\u0648\u0642 \u0645\u0633\u0627\u0631\u0643 \u0627\u0644\u062d\u0627\u0644\u064a \u064a\u0633\u0631\u064a \u0639\u0644\u064a\u0643 \u0627\u0644\u0622\u0646",
+            "is_correct": true
+          },
+          {
+            "text": "\u0644\u0627\u060c \u064a\u0633\u062a\u0645\u0631 \u062d\u062f \u0645\u0633\u0627\u0631\u0643 \u0627\u0644\u0633\u0627\u0628\u0642 \u062d\u062a\u0649 \u0646\u0647\u0627\u064a\u0629 F91",
+            "is_correct": false
+          },
+          {
+            "text": "\u0644\u0627\u060c \u064a\u062c\u0628 \u0627\u062d\u062a\u0631\u0627\u0645 \u0623\u062f\u0646\u0649 \u062d\u062f \u0645\u0630\u0643\u0648\u0631",
+            "is_correct": false
+          }
+        ],
+        "explanation": "\u0641\u064a F91 \u064a\u062d\u062f\u062f \u0645\u0633\u0627\u0631\u0643 \u0627\u0644\u062d\u0627\u0644\u064a \u0627\u0644\u062d\u062f \u0627\u0644\u0645\u0637\u0628\u0651\u0642. \u0628\u0645\u062c\u0631\u062f \u0627\u0644\u062a\u063a\u064a\u064a\u0631 \u064a\u0633\u0631\u064a \u062d\u062f \u0627\u0644\u0645\u0633\u0627\u0631 \u0627\u0644\u062c\u062f\u064a\u062f."
+      }
+    }
+  },
+  {
+    "question_id": "F91_Q06",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat onderscheidt F91 van F89?",
+        "choices": [
+          {
+            "text": "F91 geeft de maximumsnelheid per rijstrook aan zonder afstandsaanduiding; F89 toont dezelfde informatie mÃ©t aanduiding van de afstand waarbinnen de limiet geldt",
+            "is_correct": true
+          },
+          {
+            "text": "F91 is een tijdelijk bord; F89 is permanent",
+            "is_correct": false
+          },
+          {
+            "text": "F91 is alleen bindend voor vrachtwagens en bussen",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F91 en F89 zijn inhoudelijk identiek qua rijstrookspecifieke snelheidslimieten. Het enige verschil: F89 vermeldt de afstand waarbinnen de limiet geldt; F91 vermeldt geen afstand."
+      },
+      "EN": {
+        "question": "What distinguishes F91 from F89?",
+        "choices": [
+          {
+            "text": "F91 shows the maximum speed per lane without a distance indication; F89 shows the same information with the distance for which the limit applies",
+            "is_correct": true
+          },
+          {
+            "text": "F91 is a temporary sign; F89 is permanent",
+            "is_correct": false
+          },
+          {
+            "text": "F91 is only mandatory for trucks and buses",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F91 and F89 are substantively identical for lane-specific speed limits. The only difference: F89 states the distance for which the limit applies; F91 does not state a distance."
+      },
+      "FR": {
+        "question": "Qu'est-ce qui distingue F91 de F89?",
+        "choices": [
+          {
+            "text": "F91 indique la vitesse maximale par voie sans indication de distance; F89 affiche les m\u00eames informations avec la distance pour laquelle la limite s'applique",
+            "is_correct": true
+          },
+          {
+            "text": "F91 est un panneau temporaire; F89 est permanent",
+            "is_correct": false
+          },
+          {
+            "text": "F91 n'est obligatoire que pour les camions et les bus",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F91 et F89 sont substantiellement identiques pour les limites sp\u00e9cifiques aux voies. La seule diff\u00e9rence: F89 mentionne la distance; F91 ne mentionne pas de distance."
+      },
+      "AR": {
+        "question": "\u0645\u0627 \u0627\u0644\u0630\u064a \u064a\u0645\u064a\u0632 F91 \u0639\u0646 F89\u061f",
+        "choices": [
+          {
+            "text": "F91 \u062a\u0639\u0631\u0636 \u0627\u0644\u062d\u062f \u0627\u0644\u0623\u0642\u0635\u0649 \u0628\u062f\u0648\u0646 \u0630\u0643\u0631 \u0645\u0633\u0627\u0641\u0629\u061b F89 \u062a\u0639\u0631\u0636\u0647 \u0645\u0639 \u0627\u0644\u0645\u0633\u0627\u0641\u0629",
+            "is_correct": true
+          },
+          {
+            "text": "F91 \u0645\u0624\u0642\u062a\u0629\u061b F89 \u062f\u0627\u0626\u0645\u0629",
+            "is_correct": false
+          },
+          {
+            "text": "F91 \u0645\u0644\u0632\u0645\u0629 \u0641\u0642\u0637 \u0644\u0644\u0634\u0627\u062d\u0646\u0627\u062a \u0648\u0627\u0644\u062d\u0627\u0641\u0644\u0627\u062a",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F91 \u0648 F89 \u0645\u062a\u0637\u0627\u0628\u0642\u062a\u0627\u0646 \u0641\u064a \u062d\u062f\u0648\u062f \u0627\u0644\u0633\u0631\u0639\u0629 \u0644\u0643\u0644 \u0645\u0633\u0627\u0631. \u0627\u0644\u0641\u0631\u0642 \u0627\u0644\u0648\u062d\u064a\u062f: F89 \u062a\u0630\u0643\u0631 \u0627\u0644\u0645\u0633\u0627\u0641\u0629\u060c F91 \u0644\u0627 \u062a\u0630\u0643\u0631\u0647\u0627."
+      }
+    }
+  },
+  {
+    "question_id": "F91_Q07",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "F91 toont een limiet boven uw rijstrook maar zonder afstandsaanduiding. Mag u die limiet overschrijden zodra het bord niet meer zichtbaar is in uw achteruitkijkspiegel?",
+        "choices": [
+          {
+            "text": "Neen, de limiet geldt tot een nieuw bord of het einde van het wegvak, ongeacht of u F91 nog ziet",
+            "is_correct": true
+          },
+          {
+            "text": "Ja, zonder afstandsaanduiding eindigt de limiet zodra u het bord niet meer ziet",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F91 geeft geen afstand aan maar de limiet is even bindend als F89. De limiet blijft gelden tot er een nieuw bord staat of het wegvak eindigt. De zichtbaarheid van het bord heeft geen invloed op de gelding van de limiet."
+      },
+      "EN": {
+        "question": "F91 shows a limit above your lane but without a distance indication. May you exceed that limit once the sign is no longer visible in your rear-view mirror?",
+        "choices": [
+          {
+            "text": "No, the limit applies until a new sign or the end of the road section, regardless of whether you can still see F91",
+            "is_correct": true
+          },
+          {
+            "text": "Yes, without a distance indication the limit ends once you can no longer see the sign",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F91 does not indicate a distance but the limit is as binding as F89. The limit remains in force until a new sign appears or the road section ends. The visibility of the sign does not affect when the limit ceases."
+      },
+      "FR": {
+        "question": "F91 affiche une limite au-dessus de votre voie mais sans indication de distance. Pouvez-vous d\u00e9passer cette limite d\u00e8s que le panneau n'est plus visible dans votre r\u00e9troviseur?",
+        "choices": [
+          {
+            "text": "Non, la limite s'applique jusqu'\u00e0 un nouveau panneau ou la fin du tron\u00e7on, que vous voyiez encore F91 ou non",
+            "is_correct": true
+          },
+          {
+            "text": "Oui, sans indication de distance la limite prend fin d\u00e8s que vous ne voyez plus le panneau",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F91 n'indique pas de distance mais la limite est aussi contraignante que F89. La limite reste en vigueur jusqu'\u00e0 un nouveau panneau ou la fin du tron\u00e7on."
+      },
+      "AR": {
+        "question": "F91 \u062a\u0639\u0631\u0636 \u062d\u062f\u064b\u0627 \u0641\u0648\u0642 \u0645\u0633\u0627\u0631\u0643 \u062f\u0648\u0646 \u0630\u0643\u0631 \u0645\u0633\u0627\u0641\u0629. \u0647\u0644 \u064a\u062c\u0648\u0632 \u062a\u062c\u0627\u0648\u0632 \u0627\u0644\u062d\u062f \u0628\u0639\u062f \u0623\u0646 \u062a\u062e\u062a\u0641\u064a \u0627\u0644\u0644\u0627\u0641\u062a\u0629 \u0645\u0646 \u0645\u0631\u0622\u0629 \u0627\u0644\u0631\u0624\u064a\u0629 \u0627\u0644\u062e\u0644\u0641\u064a\u0629\u061f",
+        "choices": [
+          {
+            "text": "\u0644\u0627\u060c \u064a\u0633\u0631\u064a \u0627\u0644\u062d\u062f \u062d\u062a\u0649 \u0644\u0627\u0641\u062a\u0629 \u062c\u062f\u064a\u062f\u0629 \u0623\u0648 \u0646\u0647\u0627\u064a\u0629 \u0627\u0644\u0642\u0633\u0645\u060c \u0628\u063a\u0636 \u0627\u0644\u0646\u0638\u0631 \u0639\u0646 \u0631\u0624\u064a\u0629 F91",
+            "is_correct": true
+          },
+          {
+            "text": "\u0646\u0639\u0645\u060c \u0628\u062f\u0648\u0646 \u0630\u0643\u0631 \u0645\u0633\u0627\u0641\u0629 \u064a\u0646\u062a\u0647\u064a \u0627\u0644\u062d\u062f \u062d\u064a\u0646 \u0644\u0627 \u062a\u0631\u0649 \u0627\u0644\u0644\u0627\u0641\u062a\u0629",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F91 \u0644\u0627 \u062a\u0630\u0643\u0631 \u0645\u0633\u0627\u0641\u0629 \u0644\u0643\u0646 \u0627\u0644\u062d\u062f \u0645\u0644\u0632\u0645 \u0643\u0645\u0627 \u0641\u064a F89. \u064a\u0633\u062a\u0645\u0631 \u0633\u0631\u064a\u0627\u0646 \u0627\u0644\u062d\u062f \u062d\u062a\u0649 \u0644\u0627\u0641\u062a\u0629 \u062c\u062f\u064a\u062f\u0629 \u0623\u0648 \u0646\u0647\u0627\u064a\u0629 \u0627\u0644\u0642\u0633\u0645."
+      }
+    }
+  },
+  {
+    "question_id": "F91_Q08",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Twee rijstroken tonen verschillende F91-limieten. U rijdt in de rijstrook met de lagere limiet maar aan de snelheid van de naastliggende rijstrook met de hogere limiet. Is dit toegestaan?",
+        "choices": [
+          {
+            "text": "Neen, de limiet boven uw rijstrook is bindend voor u â€” de hogere limiet van een naastliggende rijstrook geldt niet voor u",
+            "is_correct": true
+          },
+          {
+            "text": "Ja, een hogere limiet op een naastliggende rijstrook is ook op u van toepassing",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Bij F91 is elke rijstrooklimiet exclusief van toepassing op de bestuurders in die rijstrook. De limiet van een andere rijstrook is nooit van toepassing op u zolang u niet in die andere rijstrook rijdt."
+      },
+      "EN": {
+        "question": "Two lanes show different F91 limits. You are in the lane with the lower limit but driving at the speed of the adjacent higher-limit lane. Is this permitted?",
+        "choices": [
+          {
+            "text": "No, the limit above your lane is binding for you â€” the higher limit of an adjacent lane does not apply to you",
+            "is_correct": true
+          },
+          {
+            "text": "Yes, a higher limit on an adjacent lane also applies to you",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Under F91 each lane limit applies exclusively to drivers in that lane. The limit of another lane never applies to you as long as you are not in that other lane."
+      },
+      "FR": {
+        "question": "Deux voies affichent des limites F91 diff\u00e9rentes. Vous \u00eates dans la voie avec la limite inf\u00e9rieure mais vous roulez \u00e0 la vitesse de la voie adjacente \u00e0 limite plus \u00e9lev\u00e9e. Est-ce autoris\u00e9?",
+        "choices": [
+          {
+            "text": "Non, la limite au-dessus de votre voie vous est contraignante \u2014 la limite plus \u00e9lev\u00e9e d'une voie adjacente ne vous est pas applicable",
+            "is_correct": true
+          },
+          {
+            "text": "Oui, une limite plus \u00e9lev\u00e9e sur une voie adjacente vous est aussi applicable",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Avec F91 chaque limite de voie s'applique exclusivement aux conducteurs dans cette voie. La limite d'une autre voie ne vous est jamais applicable tant que vous n'\u00eates pas dans cette autre voie."
+      },
+      "AR": {
+        "question": "\u0645\u0633\u0627\u0631\u0627\u0646 \u0628\u062d\u062f\u0648\u062f F91 \u0645\u062e\u062a\u0644\u0641\u0629. \u0623\u0646\u062a \u0641\u064a \u0627\u0644\u0645\u0633\u0627\u0631 \u0630\u064a \u0627\u0644\u062d\u062f \u0627\u0644\u0623\u062f\u0646\u0649 \u0644\u0643\u0646\u0643 \u062a\u0633\u064a\u0631 \u0628\u0633\u0631\u0639\u0629 \u0627\u0644\u0645\u0633\u0627\u0631 \u0627\u0644\u0645\u062c\u0627\u0648\u0631. \u0647\u0644 \u0647\u0630\u0627 \u0645\u0633\u0645\u0648\u062d\u061f",
+        "choices": [
+          {
+            "text": "\u0644\u0627\u060c \u0627\u0644\u062d\u062f \u0641\u0648\u0642 \u0645\u0633\u0627\u0631\u0643 \u0645\u0644\u0632\u0645 \u0644\u0643 \u2014 \u0644\u0627 \u064a\u0633\u0631\u064a \u0639\u0644\u064a\u0643 \u062d\u062f \u0627\u0644\u0645\u0633\u0627\u0631 \u0627\u0644\u0645\u062c\u0627\u0648\u0631",
+            "is_correct": true
+          },
+          {
+            "text": "\u0646\u0639\u0645\u060c \u0627\u0644\u062d\u062f \u0627\u0644\u0623\u0639\u0644\u0649 \u0644\u0644\u0645\u0633\u0627\u0631 \u0627\u0644\u0645\u062c\u0627\u0648\u0631 \u064a\u0633\u0631\u064a \u0639\u0644\u064a\u0643 \u0623\u064a\u0636\u064b\u0627",
+            "is_correct": false
+          }
+        ],
+        "explanation": "\u0641\u064a F91 \u064a\u0633\u0631\u064a \u062d\u062f \u0643\u0644 \u0645\u0633\u0627\u0631 \u062d\u0635\u0631\u064a\u064b\u0627 \u0639\u0644\u0649 \u0633\u0627\u0626\u0642\u064a\u0647. \u0644\u0627 \u064a\u0633\u0631\u064a \u0639\u0644\u064a\u0643 \u062d\u062f \u0645\u0633\u0627\u0631 \u0622\u062e\u0631 \u0637\u0627\u0644\u0645\u0627 \u0644\u0645 \u062a\u0643\u0646 \u0641\u064a\u0647."
+      }
+    }
+  }
+]

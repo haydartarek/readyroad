@@ -1,83 +1,46 @@
-[
+﻿[
   {
     "question_id": "B15a_Q01",
     "type": "WHAT_DOES_IT_MEAN",
     "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE: Replace wrong answers with actual sign names from the same category.",
     "i18n": {
       "NL": {
         "question": "Wat betekent dit verkeersbord?",
         "choices": [
-          {
-            "text": "Voorrang op de kruisende zijwegen.",
-            "is_correct": true
-          },
-          {
-            "text": "Gevaarlijke bocht naar links",
-            "is_correct": false
-          },
-          {
-            "text": "Verbod voor alle voertuigen",
-            "is_correct": false
-          }
+          {"text": "U heeft voorrang op alle voertuigen die de kruisende zijwegen oprijden of verlaten", "is_correct": true},
+          {"text": "Alle bestuurders op het kruispunt hebben gelijke voorrang", "is_correct": false},
+          {"text": "U moet voorrang verlenen aan alle voertuigen op de kruisende zijwegen", "is_correct": false}
         ],
-        "explanation": "Voorrang. De horizontale streep van het symbool mag worden gewijzigd om duidelijker plaatsgesteldheid weer te geven."
+        "explanation": "Bord B15a geeft aan dat u voorrang heeft op bestuurders die de kruisende zijwegen oprijden of verlaten. Het symbool toont de wegconfiguratie."
       },
       "EN": {
         "question": "What does this traffic sign mean?",
         "choices": [
-          {
-            "text": "Priority op de kruisende zijwegen.",
-            "is_correct": true
-          },
-          {
-            "text": "Dangerous curve to the left",
-            "is_correct": false
-          },
-          {
-            "text": "Prohibited for all vehicles",
-            "is_correct": false
-          }
+          {"text": "You have priority over all vehicles entering or leaving the intersecting side roads", "is_correct": true},
+          {"text": "All drivers at the junction have equal priority", "is_correct": false},
+          {"text": "You must give way to all vehicles on the intersecting side roads", "is_correct": false}
         ],
-        "explanation": "Priority. The horizontal line may be modified to show local conditions."
+        "explanation": "Sign B15a indicates that you have priority over drivers entering or leaving the intersecting side roads. The symbol shows the road configuration."
       },
       "FR": {
         "question": "Que signifie ce panneau de signalisation ?",
         "choices": [
-          {
-            "text": "Priorité op de kruisende zijwegen.",
-            "is_correct": true
-          },
-          {
-            "text": "Virage dangereux à gauche",
-            "is_correct": false
-          },
-          {
-            "text": "Interdit à tous les véhicules",
-            "is_correct": false
-          }
+          {"text": "Vous avez la prioritÃ© sur tous les vÃ©hicules s'engageant ou quittant les routes latÃ©rales de croisement", "is_correct": true},
+          {"text": "Tous les conducteurs au carrefour ont une prioritÃ© Ã©gale", "is_correct": false},
+          {"text": "Vous devez cÃ©der le passage Ã  tous les vÃ©hicules sur les routes latÃ©rales de croisement", "is_correct": false}
         ],
-        "explanation": "Priorité. La ligne horizontale peut être modifiée pour montrer les conditions locales."
+        "explanation": "Le panneau B15a indique que vous avez la prioritÃ© sur les conducteurs s'engageant ou quittant les routes latÃ©rales de croisement. Le symbole montre la configuration de la route."
       },
       "AR": {
-        "question": "ماذا تعني لافتة المرور هذه؟",
+        "question": "Ù…Ø§Ø°Ø§ ØªØ¹Ù†ÙŠ Ù„Ø§ÙØªØ© Ø§Ù„Ù…Ø±ÙˆØ± Ù‡Ø°Ù‡ØŸ",
         "choices": [
-          {
-            "text": "أولوية على الطرق الجانبية المتقاطعة",
-            "is_correct": true
-          },
-          {
-            "text": "منعطف خطير إلى اليسار",
-            "is_correct": false
-          },
-          {
-            "text": "ممنوع لجميع المركبات",
-            "is_correct": false
-          }
+          {"text": "Ù„Ø¯ÙŠÙƒ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© Ø¹Ù„Ù‰ Ø¬Ù…ÙŠØ¹ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„ØªÙŠ ØªØ¯Ø®Ù„ Ø£Ùˆ ØªØºØ§Ø¯Ø± Ø§Ù„Ø·Ø±Ù‚ Ø§Ù„Ø¬Ø§Ù†Ø¨ÙŠØ© Ø§Ù„Ù…ØªÙ‚Ø§Ø·Ø¹Ø©", "is_correct": true},
+          {"text": "Ø¬Ù…ÙŠØ¹ Ø§Ù„Ø³Ø§Ø¦Ù‚ÙŠÙ† ÙÙŠ Ø§Ù„ØªÙ‚Ø§Ø·Ø¹ Ù„Ø¯ÙŠÙ‡Ù… Ø£ÙˆÙ„ÙˆÙŠØ© Ù…ØªØ³Ø§ÙˆÙŠØ©", "is_correct": false},
+          {"text": "ÙŠØ¬Ø¨ Ø¹Ù„ÙŠÙƒ Ø¥Ø¹Ø·Ø§Ø¡ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© Ù„Ø¬Ù…ÙŠØ¹ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±Ù‚ Ø§Ù„Ø¬Ø§Ù†Ø¨ÙŠØ© Ø§Ù„Ù…ØªÙ‚Ø§Ø·Ø¹Ø©", "is_correct": false}
         ],
-        "explanation": "أولوية. يمكن تعديل الخط الأفقي لإظهار الظروف المحلية."
+        "explanation": "ØªÙØ´ÙŠØ± Ù„Ø§ÙØªØ© B15a Ø¥Ù„Ù‰ Ø£Ù† Ù„Ø¯ÙŠÙƒ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© Ø¹Ù„Ù‰ Ø§Ù„Ø³Ø§Ø¦Ù‚ÙŠÙ† Ø§Ù„Ø°ÙŠÙ† ÙŠØ¯Ø®Ù„ÙˆÙ† Ø£Ùˆ ÙŠØºØ§Ø¯Ø±ÙˆÙ† Ø§Ù„Ø·Ø±Ù‚ Ø§Ù„Ø¬Ø§Ù†Ø¨ÙŠØ© Ø§Ù„Ù…ØªÙ‚Ø§Ø·Ø¹Ø©. ÙŠÙØ¸Ù‡Ø± Ø§Ù„Ø±Ù…Ø² ØªÙƒÙˆÙŠÙ† Ø§Ù„Ø·Ø±ÙŠÙ‚."
       }
     }
   },
@@ -86,162 +49,88 @@
     "type": "WHICH_SIGN",
     "difficulty": "EASY",
     "is_critical": false,
-    "show_sign": true,
-    "_note": "TEMPLATE: Ready to use — category identification question.",
+    "show_sign": false,
     "i18n": {
       "NL": {
-        "question": "Tot welke categorie verkeerstekens behoort dit bord?",
+        "question": "Welk bord geeft aan dat u voorrang heeft op de kruisende zijwegen?",
         "choices": [
-          {
-            "text": "Voorrangsborden (B-reeks)",
-            "is_correct": true
-          },
-          {
-            "text": "Gevaarsborden (A-reeks)",
-            "is_correct": false
-          },
-          {
-            "text": "Verbodsborden (C-reeks)",
-            "is_correct": false
-          }
+          {"text": "B15a â€“ Voorrang op de kruisende zijwegen", "is_correct": true},
+          {"text": "B17 â€“ Kruispunt met voorrang van rechts", "is_correct": false},
+          {"text": "B1 â€“ Voorrang verlenen", "is_correct": false}
         ],
-        "explanation": "Dit bord behoort tot de categorie 'Voorrangsborden (B-reeks)'. Elk type bord heeft een specifieke vorm en kleurschema."
+        "explanation": "B15a geeft specifiek uw voorrangsrecht op de zijwegen aan via een symbool van de wegconfiguratie. B17 is een kruispunt zonder bijzondere voorrang; B1 verplicht tot het verlenen."
       },
       "EN": {
-        "question": "To which category of traffic signs does this sign belong?",
+        "question": "Which sign indicates that you have priority over the intersecting side roads?",
         "choices": [
-          {
-            "text": "Priority signs (B-series)",
-            "is_correct": true
-          },
-          {
-            "text": "Danger signs (A-series)",
-            "is_correct": false
-          },
-          {
-            "text": "Prohibition signs (C-series)",
-            "is_correct": false
-          }
+          {"text": "B15a â€“ Priority over intersecting side roads", "is_correct": true},
+          {"text": "B17 â€“ Junction with right-of-way from the right", "is_correct": false},
+          {"text": "B1 â€“ Give way", "is_correct": false}
         ],
-        "explanation": "This sign belongs to the 'Priority signs (B-series)' category. Each type of sign has a specific shape and color scheme."
+        "explanation": "B15a specifically shows your right of way over side roads via a symbol of the road configuration. B17 is a junction with no special priority; B1 requires you to give way."
       },
       "FR": {
-        "question": "À quelle catégorie de panneaux de signalisation ce panneau appartient-il ?",
+        "question": "Quel panneau indique que vous avez la prioritÃ© sur les routes latÃ©rales de croisement ?",
         "choices": [
-          {
-            "text": "Panneaux de priorité (série B)",
-            "is_correct": true
-          },
-          {
-            "text": "Panneaux de danger (série A)",
-            "is_correct": false
-          },
-          {
-            "text": "Panneaux d'interdiction (série C)",
-            "is_correct": false
-          }
+          {"text": "B15a â€“ PrioritÃ© sur les routes latÃ©rales de croisement", "is_correct": true},
+          {"text": "B17 â€“ Carrefour avec prioritÃ© de droite", "is_correct": false},
+          {"text": "B1 â€“ CÃ©dez le passage", "is_correct": false}
         ],
-        "explanation": "Ce panneau appartient à la catégorie 'Panneaux de priorité (série B)'. Chaque type de panneau a une forme et un schéma de couleurs spécifiques."
+        "explanation": "B15a indique spÃ©cifiquement votre droit de prioritÃ© sur les routes latÃ©rales via un symbole de la configuration de la route. B17 est un carrefour sans prioritÃ© spÃ©ciale ; B1 impose de cÃ©der le passage."
       },
       "AR": {
-        "question": "إلى أي فئة من لافتات المرور تنتمي هذه اللافتة؟",
+        "question": "Ø£ÙŠ Ù„Ø§ÙØªØ© ØªÙØ´ÙŠØ± Ø¥Ù„Ù‰ Ø£Ù† Ù„Ø¯ÙŠÙƒ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±Ù‚ Ø§Ù„Ø¬Ø§Ù†Ø¨ÙŠØ© Ø§Ù„Ù…ØªÙ‚Ø§Ø·Ø¹Ø©ØŸ",
         "choices": [
-          {
-            "text": "لافتات الأولوية (سلسلة B)",
-            "is_correct": true
-          },
-          {
-            "text": "لافتات الخطر (سلسلة A)",
-            "is_correct": false
-          },
-          {
-            "text": "لافتات الحظر (سلسلة C)",
-            "is_correct": false
-          }
+          {"text": "B15a â€“ Ø£ÙˆÙ„ÙˆÙŠØ© Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±Ù‚ Ø§Ù„Ø¬Ø§Ù†Ø¨ÙŠØ© Ø§Ù„Ù…ØªÙ‚Ø§Ø·Ø¹Ø©", "is_correct": true},
+          {"text": "B17 â€“ ØªÙ‚Ø§Ø·Ø¹ Ù…Ø¹ Ù‚Ø§Ø¹Ø¯Ø© Ø£ÙˆÙ„ÙˆÙŠØ© Ø§Ù„ÙŠÙ…ÙŠÙ†", "is_correct": false},
+          {"text": "B1 â€“ Ø¥Ø¹Ø·Ø§Ø¡ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ©", "is_correct": false}
         ],
-        "explanation": "هذه اللافتة تنتمي إلى فئة 'لافتات الأولوية (سلسلة B)'. كل نوع من اللافتات له شكل ونظام ألوان محدد."
+        "explanation": "ØªÙØ´ÙŠØ± B15a ØªØ­Ø¯ÙŠØ¯Ø§Ù‹ Ø¥Ù„Ù‰ Ø­Ù‚ Ø£ÙˆÙ„ÙˆÙŠØªÙƒ Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±Ù‚ Ø§Ù„Ø¬Ø§Ù†Ø¨ÙŠØ© Ø¹Ø¨Ø± Ø±Ù…Ø² ÙŠÙØ¸Ù‡Ø± ØªÙƒÙˆÙŠÙ† Ø§Ù„Ø·Ø±ÙŠÙ‚. B17 ØªÙ‚Ø§Ø·Ø¹ Ø¨Ø¯ÙˆÙ† Ø£ÙˆÙ„ÙˆÙŠØ© Ø®Ø§ØµØ©Ø› B1 ØªÙÙ„Ø²Ù… Ø¨Ø¥Ø¹Ø·Ø§Ø¡ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ©."
       }
     }
   },
   {
     "question_id": "B15a_Q03",
-    "type": "WHAT_MUST_YOU_DO",
-    "difficulty": "MEDIUM",
+    "type": "HAZARD_IDENTIFICATION",
+    "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE (MEDIUM): Replace with sign-specific question for production.",
     "i18n": {
       "NL": {
-        "question": "Wat moet u doen wanneer u dit voorrangsbord ziet?",
+        "question": "Op welk gevaar wijst bord B15a ondanks uw voorrangsrecht?",
         "choices": [
-          {
-            "text": "De instructie van het bord correct opvolgen",
-            "is_correct": true
-          },
-          {
-            "text": "Het bord negeren als er geen ander verkeer is",
-            "is_correct": false
-          },
-          {
-            "text": "Flashen met de lichten om de voorrang te claimen",
-            "is_correct": false
-          }
+          {"text": "Bestuurders van zijstraten die uw voorrang negeren of het verkeer niet goed inschatten", "is_correct": true},
+          {"text": "Het bord garandeert absolute veiligheid; geen gevaar aanwezig", "is_correct": false},
+          {"text": "Gevaar van tegemoetkomend verkeer op uw rijvak", "is_correct": false}
         ],
-        "explanation": "Voorrangsborden regelen de doorstroming op kruispunten. Het correct opvolgen is wettelijk verplicht."
+        "explanation": "Ook met voorrangsrecht moet u waakzaam blijven. Bestuurders van zijstraten kunnen de situatie verkeerd beoordelen of uw voorrang negeren."
       },
       "EN": {
-        "question": "What must you do when you see this priority sign?",
+        "question": "What hazard does sign B15a point to despite your right of way?",
         "choices": [
-          {
-            "text": "Correctly follow the instruction of the sign",
-            "is_correct": true
-          },
-          {
-            "text": "Ignore the sign if there is no other traffic",
-            "is_correct": false
-          },
-          {
-            "text": "Flash lights to claim priority",
-            "is_correct": false
-          }
+          {"text": "Drivers from side streets who ignore your priority or misjudge the traffic", "is_correct": true},
+          {"text": "The sign guarantees absolute safety; no hazard present", "is_correct": false},
+          {"text": "Risk of oncoming traffic in your lane", "is_correct": false}
         ],
-        "explanation": "Priority signs regulate traffic flow at intersections. Correctly following them is legally mandatory."
+        "explanation": "Even with right of way you must remain vigilant. Drivers from side streets may misjudge the situation or ignore your priority."
       },
       "FR": {
-        "question": "Que devez-vous faire lorsque vous voyez ce panneau de priorité ?",
+        "question": "Ã€ quel danger le panneau B15a attire-t-il votre attention malgrÃ© votre droit de prioritÃ© ?",
         "choices": [
-          {
-            "text": "Suivre correctement l'instruction du panneau",
-            "is_correct": true
-          },
-          {
-            "text": "Ignorer le panneau s'il n'y a pas d'autre circulation",
-            "is_correct": false
-          },
-          {
-            "text": "Faire des appels de phares pour réclamer la priorité",
-            "is_correct": false
-          }
+          {"text": "Les conducteurs des rues latÃ©rales qui ignorent votre prioritÃ© ou mal Ã©valuent le trafic", "is_correct": true},
+          {"text": "Le panneau garantit une sÃ©curitÃ© absolue ; aucun danger prÃ©sent", "is_correct": false},
+          {"text": "Risque de trafic venant en sens inverse sur votre voie", "is_correct": false}
         ],
-        "explanation": "Les panneaux de priorité régulent la circulation aux intersections. Leur respect est légalement obligatoire."
+        "explanation": "MÃªme avec le droit de prioritÃ©, vous devez rester vigilant. Les conducteurs des rues latÃ©rales peuvent mal Ã©valuer la situation ou ignorer votre prioritÃ©."
       },
       "AR": {
-        "question": "ماذا يجب أن تفعل عندما ترى لافتة الأولوية هذه؟",
+        "question": "Ù…Ø§ Ø§Ù„Ø®Ø·Ø± Ø§Ù„Ø°ÙŠ ØªÙÙ†Ø¨Ù‘Ù‡ Ø¥Ù„ÙŠÙ‡ Ù„Ø§ÙØªØ© B15a Ø±ØºÙ… Ø§Ù…ØªÙ„Ø§ÙƒÙƒ Ø­Ù‚ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ©ØŸ",
         "choices": [
-          {
-            "text": "اتباع تعليمات اللافتة بشكل صحيح",
-            "is_correct": true
-          },
-          {
-            "text": "تجاهل اللافتة إذا لم يكن هناك مرور آخر",
-            "is_correct": false
-          },
-          {
-            "text": "تشغيل وميض الأضواء للمطالبة بالأولوية",
-            "is_correct": false
-          }
+          {"text": "Ø³Ø§Ø¦Ù‚ÙˆÙ† Ù…Ù† Ø§Ù„Ø´ÙˆØ§Ø±Ø¹ Ø§Ù„Ø¬Ø§Ù†Ø¨ÙŠØ© ÙŠØªØ¬Ø§Ù‡Ù„ÙˆÙ† Ø£ÙˆÙ„ÙˆÙŠØªÙƒ Ø£Ùˆ ÙŠÙÙ‚Ø¯Ù‘Ø±ÙˆÙ† Ø­Ø±ÙƒØ© Ø§Ù„Ù…Ø±ÙˆØ± Ø¨Ø´ÙƒÙ„ Ø®Ø§Ø·Ø¦", "is_correct": true},
+          {"text": "Ø§Ù„Ù„Ø§ÙØªØ© ØªØ¶Ù…Ù† Ø§Ù„Ø³Ù„Ø§Ù…Ø© Ø§Ù„Ù…Ø·Ù„Ù‚Ø©Ø› Ù„Ø§ ÙŠÙˆØ¬Ø¯ Ø®Ø·Ø±", "is_correct": false},
+          {"text": "Ø®Ø·Ø± Ù…Ù† Ø­Ø±ÙƒØ© Ù…Ø±ÙˆØ± Ù‚Ø§Ø¯Ù…Ø© ÙÙŠ Ù…Ø³Ø§Ø±Ùƒ", "is_correct": false}
         ],
-        "explanation": "تنظم لافتات الأولوية حركة المرور عند التقاطعات. الالتزام بها إلزامي قانونياً."
+        "explanation": "Ø­ØªÙ‰ Ù…Ø¹ Ø­Ù‚ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© ÙŠØ¬Ø¨ Ø£Ù† ØªØ¨Ù‚Ù‰ ÙŠÙ‚Ø¸Ø§Ù‹. Ù‚Ø¯ ÙŠÙÙ‚Ø¯Ù‘Ø± Ø³Ø§Ø¦Ù‚Ùˆ Ø§Ù„Ø´ÙˆØ§Ø±Ø¹ Ø§Ù„Ø¬Ø§Ù†Ø¨ÙŠØ© Ø§Ù„Ù…ÙˆÙ‚Ù Ø¨Ø´ÙƒÙ„ Ø®Ø§Ø·Ø¦ Ø£Ùˆ ÙŠØªØ¬Ø§Ù‡Ù„ÙˆÙ† Ø£ÙˆÙ„ÙˆÙŠØªÙƒ."
       }
     }
   },
@@ -251,2010 +140,214 @@
     "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE (MEDIUM): Replace with sign-specific question for production.",
     "i18n": {
       "NL": {
-        "question": "Wat is de gevolg van het niet naleven van een voorrangsbord?",
+        "question": "U rijdt op een weg met bord B15a. Wat moeten bestuurders op de zijstraten doen?",
         "choices": [
-          {
-            "text": "Zware overtreding met boete en mogelijke schorsing van het rijbewijs",
-            "is_correct": true
-          },
-          {
-            "text": "Enkel een mondelinge waarschuwing van de politie",
-            "is_correct": false
-          },
-          {
-            "text": "Geen straf als er geen ongeluk is",
-            "is_correct": false
-          }
+          {"text": "Zij moeten wachten en u voorrang geven voordat zij de weg oprijden of oversteken", "is_correct": true},
+          {"text": "Zij hebben de voorrang van rechts en mogen u voor laten gaan", "is_correct": false},
+          {"text": "Zij mogen oprijden als zij sneller zijn dan u", "is_correct": false}
         ],
-        "explanation": "Voorrangsborden niet respecteren is een zware overtreding die kan leiden tot hoge boetes en puntenaftrek."
+        "explanation": "Bord B15a verplicht bestuurders van de zijstraten om te wachten en voorrang te verlenen aan voertuigen op de hoofdweg."
       },
       "EN": {
-        "question": "What is the consequence of not complying with a priority sign?",
+        "question": "You are driving on a road with sign B15a. What must drivers on the side streets do?",
         "choices": [
-          {
-            "text": "Serious violation with fine and possible driver's license suspension",
-            "is_correct": true
-          },
-          {
-            "text": "Only an oral warning from the police",
-            "is_correct": false
-          },
-          {
-            "text": "No penalty if no accident occurred",
-            "is_correct": false
-          }
+          {"text": "They must wait and give you priority before entering or crossing the road", "is_correct": true},
+          {"text": "They have right-of-way from the right and may let you pass", "is_correct": false},
+          {"text": "They may enter if they are faster than you", "is_correct": false}
         ],
-        "explanation": "Not respecting priority signs is a serious violation leading to high fines and licence points deduction."
+        "explanation": "Sign B15a requires drivers on the side streets to wait and give way to vehicles on the main road."
       },
       "FR": {
-        "question": "Quelle est la conséquence du non-respect d'un panneau de priorité ?",
+        "question": "Vous circulez sur une route avec le panneau B15a. Que doivent faire les conducteurs sur les rues latÃ©rales ?",
         "choices": [
-          {
-            "text": "Infraction grave avec amende et suspension possible du permis de conduire",
-            "is_correct": true
-          },
-          {
-            "text": "Seulement un avertissement oral de la police",
-            "is_correct": false
-          },
-          {
-            "text": "Pas de peine s'il n'y a pas eu d'accident",
-            "is_correct": false
-          }
+          {"text": "Ils doivent attendre et vous cÃ©der la prioritÃ© avant de s'engager ou de traverser la route", "is_correct": true},
+          {"text": "Ils ont la prioritÃ© de droite et peuvent vous laisser passer", "is_correct": false},
+          {"text": "Ils peuvent s'engager s'ils sont plus rapides que vous", "is_correct": false}
         ],
-        "explanation": "Ne pas respecter les panneaux de priorité est une infraction grave menant à de lourdes amendes."
+        "explanation": "Le panneau B15a oblige les conducteurs des rues latÃ©rales Ã  attendre et Ã  cÃ©der la prioritÃ© aux vÃ©hicules sur la route principale."
       },
       "AR": {
-        "question": "ما هي عواقب عدم الامتثال للافتة الأولوية؟",
+        "question": "Ø£Ù†Øª ØªØ³ÙŠØ± Ø¹Ù„Ù‰ Ø·Ø±ÙŠÙ‚ Ø¨Ù‡ Ù„Ø§ÙØªØ© B15a. Ù…Ø§Ø°Ø§ ÙŠØ¬Ø¨ Ø¹Ù„Ù‰ Ø§Ù„Ø³Ø§Ø¦Ù‚ÙŠÙ† ÙÙŠ Ø§Ù„Ø´ÙˆØ§Ø±Ø¹ Ø§Ù„Ø¬Ø§Ù†Ø¨ÙŠØ© ÙØ¹Ù„Ù‡ØŸ",
         "choices": [
-          {
-            "text": "مخالفة خطيرة مع غرامة وسحب محتمل لرخصة القيادة",
-            "is_correct": true
-          },
-          {
-            "text": "تحذير شفهي فقط من الشرطة",
-            "is_correct": false
-          },
-          {
-            "text": "لا عقوبة إذا لم يحدث حادث",
-            "is_correct": false
-          }
+          {"text": "ÙŠØ¬Ø¨ Ø¹Ù„ÙŠÙ‡Ù… Ø§Ù„Ø§Ù†ØªØ¸Ø§Ø± ÙˆØ¥Ø¹Ø·Ø§Ø¤Ùƒ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© Ù‚Ø¨Ù„ Ø¯Ø®ÙˆÙ„ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø£Ùˆ Ø§Ø¬ØªÙŠØ§Ø²Ù‡", "is_correct": true},
+          {"text": "Ù„Ø¯ÙŠÙ‡Ù… Ø£ÙˆÙ„ÙˆÙŠØ© Ø§Ù„ÙŠÙ…ÙŠÙ† ÙˆÙŠÙ…ÙƒÙ†Ù‡Ù… ØªØ±ÙƒÙƒ ØªÙ…Ø±", "is_correct": false},
+          {"text": "ÙŠÙ…ÙƒÙ†Ù‡Ù… Ø§Ù„Ø¯Ø®ÙˆÙ„ Ø¥Ø°Ø§ ÙƒØ§Ù†ÙˆØ§ Ø£Ø³Ø±Ø¹ Ù…Ù†Ùƒ", "is_correct": false}
         ],
-        "explanation": "عدم احترام لافتات الأولوية مخالفة خطيرة تؤدي إلى غرامات كبيرة وخصم نقاط من رخصة القيادة."
+        "explanation": "ØªÙÙ„Ø²Ù… Ù„Ø§ÙØªØ© B15a Ø§Ù„Ø³Ø§Ø¦Ù‚ÙŠÙ† ÙÙŠ Ø§Ù„Ø´ÙˆØ§Ø±Ø¹ Ø§Ù„Ø¬Ø§Ù†Ø¨ÙŠØ© Ø¨Ø§Ù„Ø§Ù†ØªØ¸Ø§Ø± ÙˆØ¥Ø¹Ø·Ø§Ø¡ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© Ù„Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø±Ø¦ÙŠØ³ÙŠ."
       }
     }
   },
   {
     "question_id": "B15a_Q05",
-    "type": "IS_IT_ALLOWED",
-    "difficulty": "HARD",
-    "is_critical": true,
+    "type": "DRIVER_ACTION",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE (HARD): Replace with sign-specific question for production.",
     "i18n": {
       "NL": {
-        "question": "Bent u wettelijk verplicht dit voorrangsbord te respecteren?",
+        "question": "U rijdt op een weg met bord B15a. Een voertuig van de zijstraat rijdt toch op uw rijbaan. Wat doet u?",
         "choices": [
-          {
-            "text": "Ja, voorrangsborden zijn wettelijk bindend en moeten altijd worden nageleefd",
-            "is_correct": true
-          },
-          {
-            "text": "Nee, voorrangsborden zijn aanbevelingen die u naar eigen inzicht kunt volgen",
-            "is_correct": false
-          }
+          {"text": "U past uw snelheid aan om een aanrijding te vermijden, ook al heeft u het recht aan uw zijde", "is_correct": true},
+          {"text": "U rijdt onverminderd door want u heeft voorrang en de andere bestuurder is in de fout", "is_correct": false},
+          {"text": "U toet luidruchtig en remt pas op het allerlaatste moment", "is_correct": false}
         ],
-        "explanation": "Voorrangsborden zijn wettelijk bindend voor alle weggebruikers. Het niet naleven is een overtreding die kan leiden tot boetes en puntenaftrek."
+        "explanation": "Voorrang hebben vrijwaart u niet van de verplichting tot veilig rijden. U moet altijd een aanrijding vermijden, ook als een andere bestuurder uw voorrang schendt."
       },
       "EN": {
-        "question": "Are you legally required to respect this priority sign?",
+        "question": "You are on a road with sign B15a. A vehicle from the side road drives onto your lane anyway. What do you do?",
         "choices": [
-          {
-            "text": "Yes, priority signs are legally binding and must always be complied with",
-            "is_correct": true
-          },
-          {
-            "text": "No, priority signs are recommendations that you may follow at your own discretion",
-            "is_correct": false
-          }
+          {"text": "You adjust your speed to avoid a collision, even though you are in the right", "is_correct": true},
+          {"text": "You continue at full speed because you have priority and the other driver is at fault", "is_correct": false},
+          {"text": "You sound your horn loudly and brake only at the very last moment", "is_correct": false}
         ],
-        "explanation": "Priority signs are legally binding for all road users. Non-compliance is a violation that can lead to fines and licence points deduction."
+        "explanation": "Having priority does not exempt you from the duty to drive safely. You must always avoid a collision, even if another driver violates your right of way."
       },
       "FR": {
-        "question": "Êtes-vous légalement obligé de respecter ce panneau de priorité ?",
+        "question": "Vous circulez sur une route avec le panneau B15a. Un vÃ©hicule de la rue latÃ©rale s'engage tout de mÃªme sur votre voie. Que faites-vous ?",
         "choices": [
-          {
-            "text": "Oui, les panneaux de priorité sont juridiquement contraignants et doivent toujours être respectés",
-            "is_correct": true
-          },
-          {
-            "text": "Non, les panneaux de priorité sont des recommandations que vous pouvez suivre à votre discrétion",
-            "is_correct": false
-          }
+          {"text": "Vous adaptez votre vitesse pour Ã©viter une collision, mÃªme si vous avez la prioritÃ©", "is_correct": true},
+          {"text": "Vous continuez Ã  pleine vitesse car vous avez la prioritÃ© et l'autre conducteur est en faute", "is_correct": false},
+          {"text": "Vous klaxonnez fort et freinez seulement au tout dernier moment", "is_correct": false}
         ],
-        "explanation": "Les panneaux de priorité sont juridiquement contraignants pour tous les usagers. Le non-respect est une infraction pouvant mener à des amendes."
+        "explanation": "Avoir la prioritÃ© ne vous dispense pas de conduire en sÃ©curitÃ©. Vous devez toujours Ã©viter une collision, mÃªme si un autre conducteur viole votre droit de prioritÃ©."
       },
       "AR": {
-        "question": "هل أنت ملزم قانونياً باحترام لافتة الأولوية هذه؟",
+        "question": "Ø£Ù†Øª ØªØ³ÙŠØ± Ø¹Ù„Ù‰ Ø·Ø±ÙŠÙ‚ Ø¨Ù‡ Ù„Ø§ÙØªØ© B15a. Ù…Ø±ÙƒØ¨Ø© Ù…Ù† Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø¬Ø§Ù†Ø¨ÙŠ ØªØ¯Ø®Ù„ Ù…Ø³Ø§Ø±Ùƒ Ø±ØºÙ… Ø°Ù„Ùƒ. Ù…Ø§Ø°Ø§ ØªÙØ¹Ù„ØŸ",
         "choices": [
-          {
-            "text": "نعم، لافتات الأولوية ملزمة قانونياً ويجب الالتزام بها دائماً",
-            "is_correct": true
-          },
-          {
-            "text": "لا، لافتات الأولوية توصيات يمكنك اتباعها وفق تقديرك الخاص",
-            "is_correct": false
-          }
+          {"text": "ØªÙØ¹Ø¯Ù‘Ù„ Ø³Ø±Ø¹ØªÙƒ Ù„ØªØ¬Ù†Ø¨ Ø§Ù„Ø§ØµØ·Ø¯Ø§Ù… Ø­ØªÙ‰ Ù„Ùˆ ÙƒÙ†Øª Ø¹Ù„Ù‰ Ø­Ù‚", "is_correct": true},
+          {"text": "ØªØ³ØªÙ…Ø± Ø¨Ø§Ù„Ø³Ø±Ø¹Ø© Ø§Ù„ÙƒØ§Ù…Ù„Ø© Ù„Ø£Ù† Ù„Ø¯ÙŠÙƒ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© ÙˆØ§Ù„Ø³Ø§Ø¦Ù‚ Ø§Ù„Ø¢Ø®Ø± Ù…Ø®Ø·Ø¦", "is_correct": false},
+          {"text": "ØªØ¶ØºØ· Ø§Ù„Ù†ÙÙŠØ± Ø¨ØµÙˆØª Ø¹Ø§Ù„Ù ÙˆØªÙØ±Ù…Ù„ ÙÙ‚Ø· ÙÙŠ Ø§Ù„Ù„Ø­Ø¸Ø© Ø§Ù„Ø£Ø®ÙŠØ±Ø©", "is_correct": false}
         ],
-        "explanation": "لافتات الأولوية ملزمة قانونياً لجميع مستخدمي الطريق. عدم الامتثال مخالفة قد تؤدي إلى غرامات وخصم نقاط من رخصة القيادة."
+        "explanation": "Ø§Ù…ØªÙ„Ø§Ùƒ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© Ù„Ø§ ÙŠÙØ¹ÙÙŠÙƒ Ù…Ù† ÙˆØ§Ø¬Ø¨ Ø§Ù„Ù‚ÙŠØ§Ø¯Ø© Ø§Ù„Ø¢Ù…Ù†Ø©. ÙŠØ¬Ø¨ Ø¯Ø§Ø¦Ù…Ø§Ù‹ ØªØ¬Ù†Ø¨ Ø§Ù„Ø§ØµØ·Ø¯Ø§Ù… Ø­ØªÙ‰ Ù„Ùˆ Ø§Ù†ØªÙ‡Ùƒ Ø³Ø§Ø¦Ù‚ Ø¢Ø®Ø± Ø­Ù‚ Ø£ÙˆÙ„ÙˆÙŠØªÙƒ."
       }
     }
   },
   {
     "question_id": "B15a_Q06",
-    "type": "WHAT_DOES_IT_MEAN",
-    "difficulty": "EASY",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat geeft het bord B15a (Voorrang op de kruisende zijwegen) aan?",
+        "question": "Geeft bord B15a u ook voorrang op tegemoetkomend verkeer op dezelfde rijbaan?",
         "choices": [
-          {
-            "text": "U heeft voorrang op alle kruisende zijwegen",
-            "is_correct": true
-          },
-          {
-            "text": "U moet voorrang verlenen aan al het verkeer",
-            "is_correct": false
-          },
-          {
-            "text": "U nadert een gevaarlijk kruispunt",
-            "is_correct": false
-          }
+          {"text": "Nee, bord B15a geeft enkel voorrang op bestuurders van de kruisende zijwegen, niet op het tegemoetkomend verkeer", "is_correct": true},
+          {"text": "Ja, op een weg met bord B15a heeft u voorrang op al het andere verkeer inclusief tegemoetkomers", "is_correct": false},
+          {"text": "Alleen als het bord vergezeld wordt van een onderbord met pijl naar de tegenliggers", "is_correct": false}
         ],
-        "explanation": "Het bord B15a geeft aan dat u voorrang op alle kruisende zijwegen."
+        "explanation": "Bord B15a regelt uitsluitend de prioriteit op de kruisende zijwegen. Het rijgedrag tegenover tegemoetkomend verkeer op dezelfde weg wordt door andere regels bepaald."
       },
       "EN": {
-        "question": "What does sign B15a (Priority over all intersecting roads) indicate?",
+        "question": "Does sign B15a also give you priority over oncoming traffic in the same lane?",
         "choices": [
-          {
-            "text": "You have priority over all intersecting side roads",
-            "is_correct": true
-          },
-          {
-            "text": "You must give way to all traffic",
-            "is_correct": false
-          },
-          {
-            "text": "You are approaching a dangerous intersection",
-            "is_correct": false
-          }
+          {"text": "No, sign B15a only grants priority over drivers from the intersecting side roads, not over oncoming traffic", "is_correct": true},
+          {"text": "Yes, on a road with sign B15a you have priority over all other traffic including oncoming vehicles", "is_correct": false},
+          {"text": "Only if the sign is accompanied by a supplementary sign with an arrow toward oncoming traffic", "is_correct": false}
         ],
-        "explanation": "Sign B15a indicates that you have priority over all intersecting side roads."
+        "explanation": "Sign B15a exclusively regulates priority over intersecting side roads. Behaviour toward oncoming traffic on the same road is governed by other rules."
       },
       "FR": {
-        "question": "Que signifie le panneau B15a (Priorité sur toutes les routes transversales) ?",
+        "question": "Le panneau B15a vous donne-t-il Ã©galement la prioritÃ© sur les vÃ©hicules venant en sens inverse dans la mÃªme voie ?",
         "choices": [
-          {
-            "text": "Vous avez priorité sur toutes les voies transversales",
-            "is_correct": true
-          },
-          {
-            "text": "Vous devez céder le passage à tout le trafic",
-            "is_correct": false
-          },
-          {
-            "text": "Vous approchez d'un carrefour dangereux",
-            "is_correct": false
-          }
+          {"text": "Non, le panneau B15a accorde uniquement la prioritÃ© sur les conducteurs des routes latÃ©rales de croisement, pas sur les vÃ©hicules en sens inverse", "is_correct": true},
+          {"text": "Oui, sur une route avec le panneau B15a, vous avez la prioritÃ© sur tout autre trafic y compris les vÃ©hicules venant en sens inverse", "is_correct": false},
+          {"text": "Seulement si le panneau est accompagnÃ© d'un panneau additionnel avec une flÃ¨che vers les vÃ©hicules en sens inverse", "is_correct": false}
         ],
-        "explanation": "Le panneau B15a indique que vous avez priorité sur toutes les voies transversales."
+        "explanation": "Le panneau B15a rÃ©git exclusivement la prioritÃ© sur les routes latÃ©rales de croisement. Le comportement envers les vÃ©hicules venant en sens inverse est rÃ©gi par d'autres rÃ¨gles."
       },
       "AR": {
-        "question": "ماذا تشير اللافتة B15a (الأولوية على جميع الطرق المتقاطعة)؟",
+        "question": "Ù‡Ù„ ØªÙ…Ù†Ø­Ùƒ Ù„Ø§ÙØªØ© B15a Ø£ÙŠØ¶Ø§Ù‹ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© Ø¹Ù„Ù‰ Ø­Ø±ÙƒØ© Ø§Ù„Ù…Ø±ÙˆØ± Ø§Ù„Ù‚Ø§Ø¯Ù…Ø© ÙÙŠ Ù†ÙØ³ Ø§Ù„Ù…Ø³Ø§Ø±ØŸ",
         "choices": [
-          {
-            "text": "لديك الأولوية على جميع الطرق الجانبية المتقاطعة",
-            "is_correct": true
-          },
-          {
-            "text": "يجب عليك إعطاء الأولوية لجميع حركة المرور",
-            "is_correct": false
-          },
-          {
-            "text": "أنت تقترب من تقاطع خطير",
-            "is_correct": false
-          }
+          {"text": "Ù„Ø§ØŒ Ù„Ø§ÙØªØ© B15a ØªÙ…Ù†Ø­ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© ÙÙ‚Ø· Ø¹Ù„Ù‰ Ø§Ù„Ø³Ø§Ø¦Ù‚ÙŠÙ† Ù…Ù† Ø§Ù„Ø·Ø±Ù‚ Ø§Ù„Ø¬Ø§Ù†Ø¨ÙŠØ© Ø§Ù„Ù…ØªÙ‚Ø§Ø·Ø¹Ø© ÙˆÙ„ÙŠØ³ Ø¹Ù„Ù‰ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ù…Ù‚Ø§Ø¨Ù„Ø©", "is_correct": true},
+          {"text": "Ù†Ø¹Ù…ØŒ Ø¹Ù„Ù‰ Ø·Ø±ÙŠÙ‚ Ø¨Ù‡ Ù„Ø§ÙØªØ© B15a Ù„Ø¯ÙŠÙƒ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© Ø¹Ù„Ù‰ Ø¬Ù…ÙŠØ¹ Ø­Ø±ÙƒØ§Øª Ø§Ù„Ù…Ø±ÙˆØ± Ø§Ù„Ø£Ø®Ø±Ù‰ Ø¨Ù…Ø§ ÙÙŠÙ‡Ø§ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ù…Ù‚Ø§Ø¨Ù„Ø©", "is_correct": false},
+          {"text": "ÙÙ‚Ø· Ø¥Ø°Ø§ Ø§Ù‚ØªØ±Ù†Øª Ø§Ù„Ù„Ø§ÙØªØ© Ø¨Ù„ÙˆØ­Ø© Ø¥Ø¶Ø§ÙÙŠØ© Ø¨Ø³Ù‡Ù… Ù†Ø­Ùˆ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ù…Ù‚Ø§Ø¨Ù„Ø©", "is_correct": false}
         ],
-        "explanation": "تشير اللافتة B15a إلى أن لديك الأولوية على جميع الطرق الجانبية المتقاطعة."
+        "explanation": "ØªÙ†Ø¸Ù‘Ù… Ù„Ø§ÙØªØ© B15a Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±Ù‚ Ø§Ù„Ø¬Ø§Ù†Ø¨ÙŠØ© Ø§Ù„Ù…ØªÙ‚Ø§Ø·Ø¹Ø© ÙØ­Ø³Ø¨. Ø§Ù„Ø³Ù„ÙˆÙƒ ØªØ¬Ø§Ù‡ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ù‚Ø§Ø¯Ù…Ø© ÙÙŠ Ù†ÙØ³ Ø§Ù„Ø·Ø±ÙŠÙ‚ ØªØ­ÙƒÙ…Ù‡ Ù‚ÙˆØ§Ø¹Ø¯ Ø£Ø®Ø±Ù‰."
       }
     }
   },
   {
     "question_id": "B15a_Q07",
-    "type": "TRUE_OR_FALSE",
-    "difficulty": "EASY",
-    "is_critical": false,
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Waar of niet waar: Bij het bord B15a moeten bestuurders op alle kruisende zijwegen moeten voorrang verlenen.",
+        "question": "U rijdt op een weg met bord B15a. Een fietser wil vanuit een zijstraat de weg oprijden. Moet de fietser u voorrang verlenen?",
         "choices": [
-          {
-            "text": "Waar – zij zijn verplicht u voorrang te verlenen",
-            "is_correct": true
-          },
-          {
-            "text": "Niet waar – iedereen heeft hier gelijke rechten",
-            "is_correct": false
-          }
+          {"text": "Ja, bord B15a geldt voor alle weggebruikers die de kruisende zijweg gebruiken, inclusief fietsers", "is_correct": true},
+          {"text": "Nee, bord B15a geldt enkel voor motorvoertuigen, niet voor fietsers", "is_correct": false}
         ],
-        "explanation": "Waar. Het bord B15a geeft u voorrang op alle kruisende zijwegen. Bestuurders op alle kruisende zijwegen moeten voorrang verlenen."
+        "explanation": "Het voorrangsrecht van B15a geldt voor alle weggebruikers die de zijwegen gebruiken, ongeacht het type voertuig."
       },
       "EN": {
-        "question": "True or false: With sign B15a, drivers on all intersecting side roads must give way.",
+        "question": "You are on a road with sign B15a. A cyclist wants to enter the road from a side street. Must the cyclist give you priority?",
         "choices": [
-          {
-            "text": "True – they are obliged to give way to you",
-            "is_correct": true
-          },
-          {
-            "text": "False – everyone has equal rights here",
-            "is_correct": false
-          }
+          {"text": "Yes, sign B15a applies to all road users using the intersecting side road, including cyclists", "is_correct": true},
+          {"text": "No, sign B15a only applies to motor vehicles, not to cyclists", "is_correct": false}
         ],
-        "explanation": "True. Sign B15a gives you priority over all intersecting side roads. Drivers on all intersecting side roads must give way."
+        "explanation": "The right of way of B15a applies to all road users using the side roads, regardless of vehicle type."
       },
       "FR": {
-        "question": "Vrai ou faux : Avec le panneau B15a, les conducteurs sur toutes les voies transversales doivent céder le passage.",
+        "question": "Vous roulez sur une route avec le panneau B15a. Un cycliste veut s'engager sur la route depuis une rue latÃ©rale. Le cycliste doit-il vous cÃ©der la prioritÃ© ?",
         "choices": [
-          {
-            "text": "Vrai – ils sont obligés de vous céder le passage",
-            "is_correct": true
-          },
-          {
-            "text": "Faux – tout le monde a des droits égaux ici",
-            "is_correct": false
-          }
+          {"text": "Oui, le panneau B15a s'applique Ã  tous les usagers de la route utilisant la route latÃ©rale de croisement, y compris les cyclistes", "is_correct": true},
+          {"text": "Non, le panneau B15a s'applique uniquement aux vÃ©hicules Ã  moteur, pas aux cyclistes", "is_correct": false}
         ],
-        "explanation": "Vrai. Le panneau B15a vous donne priorité sur toutes les voies transversales. Les conducteurs sur toutes les voies transversales doivent céder le passage."
+        "explanation": "Le droit de prioritÃ© de B15a s'applique Ã  tous les usagers de la route empruntant les routes latÃ©rales, quel que soit le type de vÃ©hicule."
       },
       "AR": {
-        "question": "صحيح أم خاطئ: مع اللافتة B15a، يجب على السائقين في جميع الطرق الجانبية المتقاطعة إعطاء الأولوية.",
+        "question": "Ø£Ù†Øª ØªØ³ÙŠØ± Ø¹Ù„Ù‰ Ø·Ø±ÙŠÙ‚ Ø¨Ù‡ Ù„Ø§ÙØªØ© B15a. Ø¯Ø±Ø§Ø¬ÙŒ ÙŠØ±ÙŠØ¯ Ø¯Ø®ÙˆÙ„ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ù…Ù† Ø´Ø§Ø±Ø¹ Ø¬Ø§Ù†Ø¨ÙŠ. Ù‡Ù„ ÙŠØ¬Ø¨ Ø¹Ù„Ù‰ Ø§Ù„Ø¯Ø±Ø§Ø¬ Ø¥Ø¹Ø·Ø§Ø¤Ùƒ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ©ØŸ",
         "choices": [
-          {
-            "text": "صحيح – هم ملزمون بإعطائك الأولوية",
-            "is_correct": true
-          },
-          {
-            "text": "خاطئ – للجميع حقوق متساوية هنا",
-            "is_correct": false
-          }
+          {"text": "Ù†Ø¹Ù…ØŒ Ù„Ø§ÙØªØ© B15a ØªÙ†Ø·Ø¨Ù‚ Ø¹Ù„Ù‰ Ø¬Ù…ÙŠØ¹ Ù…Ø³ØªØ®Ø¯Ù…ÙŠ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø°ÙŠÙ† ÙŠØ³ØªØ®Ø¯Ù…ÙˆÙ† Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø¬Ø§Ù†Ø¨ÙŠ Ø§Ù„Ù…ØªÙ‚Ø§Ø·Ø¹ Ø¨Ù…Ø§ ÙÙŠÙ‡Ù… Ø±Ø§ÙƒØ¨Ùˆ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª", "is_correct": true},
+          {"text": "Ù„Ø§ØŒ Ù„Ø§ÙØªØ© B15a ØªÙ†Ø·Ø¨Ù‚ ÙÙ‚Ø· Ø¹Ù„Ù‰ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø°Ø§Øª Ø§Ù„Ù…Ø­Ø±Ùƒ ÙˆÙ„ÙŠØ³ Ø¹Ù„Ù‰ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª", "is_correct": false}
         ],
-        "explanation": "صحيح. اللافتة B15a تمنحك الأولوية على جميع الطرق الجانبية المتقاطعة. يجب على السائقين في جميع الطرق الجانبية المتقاطعة إعطاء الأولوية."
+        "explanation": "Ø­Ù‚ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© ÙÙŠ B15a ÙŠÙ†Ø·Ø¨Ù‚ Ø¹Ù„Ù‰ Ø¬Ù…ÙŠØ¹ Ù…Ø³ØªØ®Ø¯Ù…ÙŠ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø°ÙŠÙ† ÙŠØ³ØªØ®Ø¯Ù…ÙˆÙ† Ø§Ù„Ø·Ø±Ù‚ Ø§Ù„Ø¬Ø§Ù†Ø¨ÙŠØ© Ø¨ØºØ¶ Ø§Ù„Ù†Ø¸Ø± Ø¹Ù† Ù†ÙˆØ¹ Ø§Ù„Ù…Ø±ÙƒØ¨Ø©."
       }
     }
   },
   {
     "question_id": "B15a_Q08",
     "type": "IS_IT_ALLOWED",
-    "difficulty": "EASY",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "U ziet bord B15a. Mag u doorrijden zonder te stoppen bij het volgende kruispunt?",
-        "choices": [
-          {
-            "text": "Ja, u heeft voorrang op de aangegeven kruisende weg(en) en mag doorrijden",
-            "is_correct": true
-          },
-          {
-            "text": "Nee, u moet altijd stoppen bij elk kruispunt",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Ja. Het bord B15a geeft u voorrang. U moet de normale rijvoorzichtigheid betrachten maar hoeft niet te stoppen."
-      },
-      "EN": {
-        "question": "You see sign B15a. May you proceed without stopping at the next intersection?",
-        "choices": [
-          {
-            "text": "Yes, you have priority over the indicated crossing road(s) and may proceed",
-            "is_correct": true
-          },
-          {
-            "text": "No, you must always stop at every intersection",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Yes. Sign B15a gives you priority. You must exercise normal driving caution but do not need to stop."
-      },
-      "FR": {
-        "question": "Vous voyez le panneau B15a. Pouvez-vous continuer sans vous arrêter au prochain carrefour ?",
-        "choices": [
-          {
-            "text": "Oui, vous avez la priorité sur la/les route(s) transversale(s) indiquée(s) et pouvez continuer",
-            "is_correct": true
-          },
-          {
-            "text": "Non, vous devez toujours vous arrêter à chaque carrefour",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Oui. Le panneau B15a vous donne la priorité. Vous devez faire preuve d'une prudence normale mais n'avez pas besoin de vous arrêter."
-      },
-      "AR": {
-        "question": "ترى اللافتة B15a. هل يمكنك المضي قدماً دون التوقف عند التقاطع التالي؟",
-        "choices": [
-          {
-            "text": "نعم، لديك الأولوية على الطريق/الطرق المتقاطعة المشار إليها ويمكنك المضي",
-            "is_correct": true
-          },
-          {
-            "text": "لا، يجب عليك دائماً التوقف عند كل تقاطع",
-            "is_correct": false
-          }
-        ],
-        "explanation": "نعم. اللافتة B15a تمنحك الأولوية. يجب عليك توخي الحذر الطبيعي في القيادة لكنك لست بحاجة للتوقف."
-      }
-    }
-  },
-  {
-    "question_id": "B15a_Q09",
-    "type": "WHAT_SHOULD_YOU_DO",
-    "difficulty": "EASY",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "U rijdt op de weg met bord B15a. Een voertuig staat klaar vanuit de zijweg. Wat doet u?",
-        "choices": [
-          {
-            "text": "Normaal doorrijden – het voertuig op de zijweg heeft u voorrang te verlenen",
-            "is_correct": true
-          },
-          {
-            "text": "Vaart verminderen en wachten",
-            "is_correct": false
-          },
-          {
-            "text": "Stoppen en het voertuig laten gaan",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Het bord B15a geeft u voorrang. U mag normaal doorrijden terwijl het voertuig op de zijweg verplicht moet wachten."
-      },
-      "EN": {
-        "question": "You drive on the road with sign B15a. A vehicle is ready to enter from the side road. What do you do?",
-        "choices": [
-          {
-            "text": "Drive on normally – the vehicle on the side road must give way to you",
-            "is_correct": true
-          },
-          {
-            "text": "Reduce speed and wait",
-            "is_correct": false
-          },
-          {
-            "text": "Stop and let the vehicle go",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Sign B15a gives you priority. You may drive on normally while the vehicle on the side road is required to wait."
-      },
-      "FR": {
-        "question": "Vous roulez sur la route avec le panneau B15a. Un véhicule est prêt à s'engager depuis la voie latérale. Que faites-vous ?",
-        "choices": [
-          {
-            "text": "Continuer normalement – le véhicule sur la voie latérale doit vous céder le passage",
-            "is_correct": true
-          },
-          {
-            "text": "Réduire la vitesse et attendre",
-            "is_correct": false
-          },
-          {
-            "text": "S'arrêter et laisser passer le véhicule",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Le panneau B15a vous donne la priorité. Vous pouvez continuer normalement pendant que le véhicule sur la voie latérale est obligé d'attendre."
-      },
-      "AR": {
-        "question": "تسير على الطريق مع اللافتة B15a. مركبة مستعدة للدخول من الطريق الجانبي. ماذا تفعل؟",
-        "choices": [
-          {
-            "text": "استمر في السير بشكل طبيعي – المركبة على الطريق الجانبي يجب أن تعطيك الأولوية",
-            "is_correct": true
-          },
-          {
-            "text": "قلل السرعة وانتظر",
-            "is_correct": false
-          },
-          {
-            "text": "توقف ودع المركبة تمضي",
-            "is_correct": false
-          }
-        ],
-        "explanation": "اللافتة B15a تمنحك الأولوية. يمكنك الاستمرار بشكل طبيعي بينما المركبة على الطريق الجانبي مُلزمة بالانتظار."
-      }
-    }
-  },
-  {
-    "question_id": "B15a_Q10",
-    "type": "WHAT_IS_PROHIBITED",
-    "difficulty": "EASY",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Wat is verboden voor bestuurders op de in het bord B15a aangegeven zijweg?",
-        "choices": [
-          {
-            "text": "De doorkomende weg oprijden zonder voorrang te verlenen aan het verkeer op die weg",
-            "is_correct": true
-          },
-          {
-            "text": "Langzaam doorrijden op de zijweg",
-            "is_correct": false
-          },
-          {
-            "text": "Een richtingaanwijzer gebruiken",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Bestuurders op de zijweg zijn verplicht voorrang te verlenen aan het verkeer op de weg die met bord B15a is aangeduid."
-      },
-      "EN": {
-        "question": "What is prohibited for drivers on the side road indicated in sign B15a?",
-        "choices": [
-          {
-            "text": "Entering the through road without giving way to traffic on that road",
-            "is_correct": true
-          },
-          {
-            "text": "Driving slowly on the side road",
-            "is_correct": false
-          },
-          {
-            "text": "Using an indicator",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Drivers on the side road are required to give way to traffic on the road indicated by sign B15a."
-      },
-      "FR": {
-        "question": "Qu'est-il interdit aux conducteurs sur la voie latérale indiquée dans le panneau B15a ?",
-        "choices": [
-          {
-            "text": "S'engager sur la route passante sans céder le passage au trafic sur cette route",
-            "is_correct": true
-          },
-          {
-            "text": "Rouler lentement sur la voie latérale",
-            "is_correct": false
-          },
-          {
-            "text": "Utiliser un clignotant",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Les conducteurs sur la voie latérale sont tenus de céder le passage au trafic sur la route indiquée par le panneau B15a."
-      },
-      "AR": {
-        "question": "ما الذي يُحظر على السائقين في الطريق الجانبي المشار إليه في اللافتة B15a؟",
-        "choices": [
-          {
-            "text": "الدخول إلى الطريق الرئيسي دون إعطاء الأولوية لحركة المرور على ذلك الطريق",
-            "is_correct": true
-          },
-          {
-            "text": "السير ببطء على الطريق الجانبي",
-            "is_correct": false
-          },
-          {
-            "text": "استخدام إشارة الاتجاه",
-            "is_correct": false
-          }
-        ],
-        "explanation": "السائقون على الطريق الجانبي مُلزمون بإعطاء الأولوية لحركة المرور على الطريق المشار إليه في اللافتة B15a."
-      }
-    }
-  },
-  {
-    "question_id": "B15a_Q11",
-    "type": "WHICH_SIGN",
-    "difficulty": "EASY",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Bij welke borden-reeks hoort het bord B15a?",
-        "choices": [
-          {
-            "text": "De B-reeks (voorrangsborden)",
-            "is_correct": true
-          },
-          {
-            "text": "De A-reeks (gevaarsborden)",
-            "is_correct": false
-          },
-          {
-            "text": "De C-reeks (verbodsborden)",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Het bord B15a behoort tot de B-reeks, die betrekking heeft op voorrangsregels voor weggebruikers."
-      },
-      "EN": {
-        "question": "To which sign series does sign B15a belong?",
-        "choices": [
-          {
-            "text": "The B-series (priority signs)",
-            "is_correct": true
-          },
-          {
-            "text": "The A-series (danger signs)",
-            "is_correct": false
-          },
-          {
-            "text": "The C-series (prohibition signs)",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Sign B15a belongs to the B-series, which deals with right-of-way rules for road users."
-      },
-      "FR": {
-        "question": "À quelle série de panneaux appartient le panneau B15a ?",
-        "choices": [
-          {
-            "text": "La série B (panneaux de priorité)",
-            "is_correct": true
-          },
-          {
-            "text": "La série A (panneaux de danger)",
-            "is_correct": false
-          },
-          {
-            "text": "La série C (panneaux d'interdiction)",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Le panneau B15a appartient à la série B, qui traite des règles de priorité pour les usagers de la route."
-      },
-      "AR": {
-        "question": "إلى أي سلسلة لافتات تنتمي اللافتة B15a؟",
-        "choices": [
-          {
-            "text": "سلسلة B (لافتات الأولوية)",
-            "is_correct": true
-          },
-          {
-            "text": "سلسلة A (لافتات الخطر)",
-            "is_correct": false
-          },
-          {
-            "text": "سلسلة C (لافتات الحظر)",
-            "is_correct": false
-          }
-        ],
-        "explanation": "اللافتة B15a تنتمي إلى سلسلة B التي تتعامل مع قواعد حق الأولوية لمستخدمي الطريق."
-      }
-    }
-  },
-  {
-    "question_id": "B15a_Q12",
-    "type": "TRUE_OR_FALSE",
-    "difficulty": "EASY",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Waar of niet waar: Het bord B15a geeft de prioriteitsrichting of het patroon aan via pijltjes of diagrammen op het bord.",
-        "choices": [
-          {
-            "text": "Waar – de pijltjes of het diagram tonen wie en waar voorrang heeft",
-            "is_correct": true
-          },
-          {
-            "text": "Niet waar – het bord heeft geen extra aanduiding",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Waar. Borden uit de B15-reeks tonen via diagrammen of pijlen precies welke richting(en) voorrang hebt, wat complexe kruispunten verduidelijkt."
-      },
-      "EN": {
-        "question": "True or false: Sign B15a indicates the priority direction or pattern via arrows or diagrams on the sign.",
-        "choices": [
-          {
-            "text": "True – the arrows or diagram show who has priority where",
-            "is_correct": true
-          },
-          {
-            "text": "False – the sign has no additional indication",
-            "is_correct": false
-          }
-        ],
-        "explanation": "True. Signs from the B15 series show via diagrams or arrows exactly which direction(s) you have priority, clarifying complex intersections."
-      },
-      "FR": {
-        "question": "Vrai ou faux : Le panneau B15a indique la direction ou le schéma de priorité via des flèches ou des diagrammes sur le panneau.",
-        "choices": [
-          {
-            "text": "Vrai – les flèches ou le diagramme montrent qui a la priorité et où",
-            "is_correct": true
-          },
-          {
-            "text": "Faux – le panneau n'a pas d'indication supplémentaire",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Vrai. Les panneaux de la série B15 indiquent via des diagrammes ou des flèches exactement quelle(s) direction(s) vous avez la priorité, ce qui clarifie les carrefours complexes."
-      },
-      "AR": {
-        "question": "صحيح أم خاطئ: تشير اللافتة B15a إلى اتجاه أو نمط الأولوية عبر أسهم أو رسوم بيانية على اللافتة.",
-        "choices": [
-          {
-            "text": "صحيح – الأسهم أو الرسم البياني يُظهر من له الأولوية وأين",
-            "is_correct": true
-          },
-          {
-            "text": "خاطئ – اللافتة لا تحتوي على مؤشر إضافي",
-            "is_correct": false
-          }
-        ],
-        "explanation": "صحيح. تُظهر لافتات سلسلة B15 عبر الرسوم البيانية أو الأسهم بدقة الاتجاهات التي تتمتع فيها بالأولوية، مما يوضح التقاطعات المعقدة."
-      }
-    }
-  },
-  {
-    "question_id": "B15a_Q13",
-    "type": "WHAT_DOES_IT_MEAN",
-    "difficulty": "EASY",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Wat is het verschil tussen het bord B15a en het bord B9 (voorrangsweg)?",
-        "choices": [
-          {
-            "text": "B9 geeft doorlopende voorrang op de hele weg; B15a geeft specifieke voorrang op dit kruispunt",
-            "is_correct": true
-          },
-          {
-            "text": "Ze hebben exact dezelfde betekenis",
-            "is_correct": false
-          },
-          {
-            "text": "B9 is verplicht, {code} is optioneel",
-            "is_correct": false
-          }
-        ],
-        "explanation": "B9 staat op een volledige voorrangsweg; B15a geeft specifieke voorrangsinformatie op een bepaald kruispunt."
-      },
-      "EN": {
-        "question": "What is the difference between sign B15a and sign B9 (priority road)?",
-        "choices": [
-          {
-            "text": "B9 gives continuous priority on the whole road; B15a gives specific priority at this intersection",
-            "is_correct": true
-          },
-          {
-            "text": "They have exactly the same meaning",
-            "is_correct": false
-          },
-          {
-            "text": "B9 is mandatory, B15a is optional",
-            "is_correct": false
-          }
-        ],
-        "explanation": "B9 is placed on a full priority road; B15a gives specific priority information at a particular intersection."
-      },
-      "FR": {
-        "question": "Quelle est la différence entre le panneau B15a et le panneau B9 (route prioritaire) ?",
-        "choices": [
-          {
-            "text": "B9 donne la priorité continue sur toute la route ; B15a donne la priorité spécifique à ce carrefour",
-            "is_correct": true
-          },
-          {
-            "text": "Ils ont exactement la même signification",
-            "is_correct": false
-          },
-          {
-            "text": "B9 est obligatoire, B15a est facultatif",
-            "is_correct": false
-          }
-        ],
-        "explanation": "B9 est placé sur une route prioritaire complète ; B15a donne des informations de priorité spécifiques à un carrefour particulier."
-      },
-      "AR": {
-        "question": "ما الفرق بين اللافتة B15a واللافتة B9 (طريق الأولوية)؟",
-        "choices": [
-          {
-            "text": "B9 تمنح أولوية مستمرة على الطريق بكاملها؛ B15a تمنح أولوية محددة عند هذا التقاطع",
-            "is_correct": true
-          },
-          {
-            "text": "لهما نفس المعنى تماماً",
-            "is_correct": false
-          },
-          {
-            "text": "B9 إلزامية، B15a اختيارية",
-            "is_correct": false
-          }
-        ],
-        "explanation": "توضع B9 على طريق أولوية كاملة؛ B15a تعطي معلومات أولوية محددة عند تقاطع معين."
-      }
-    }
-  },
-  {
-    "question_id": "B15a_Q14",
-    "type": "IS_IT_ALLOWED",
-    "difficulty": "EASY",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Bij het bord B15a, heeft u ook voorrang op voetgangers op het kruispunt?",
-        "choices": [
-          {
-            "text": "Nee, voetgangers op een zebrapad hebben altijd voorrang boven rijdend verkeer",
-            "is_correct": false
-          },
-          {
-            "text": "Ja, uw voorrangsrecht geldt ook voor voetgangers",
-            "is_correct": true
-          }
-        ],
-        "explanation": "Nee. Het bord geeft voorrang tegenover rijdend verkeer op de zijwegen. Voetgangers op een zebrapad hebben altijd voorrang op voertuigen."
-      },
-      "EN": {
-        "question": "With sign B15a, do you also have priority over pedestrians at the intersection?",
-        "choices": [
-          {
-            "text": "No, pedestrians at a zebra crossing always have priority over moving traffic",
-            "is_correct": false
-          },
-          {
-            "text": "Yes, your right of way also applies to pedestrians",
-            "is_correct": true
-          }
-        ],
-        "explanation": "No. The sign gives priority over moving traffic on side roads. Pedestrians at a zebra crossing always have priority over vehicles."
-      },
-      "FR": {
-        "question": "Avec le panneau B15a, avez-vous également la priorité sur les piétons au carrefour ?",
-        "choices": [
-          {
-            "text": "Non, les piétons sur un passage piéton ont toujours la priorité sur la circulation roulante",
-            "is_correct": false
-          },
-          {
-            "text": "Oui, votre priorité s'applique aussi aux piétons",
-            "is_correct": true
-          }
-        ],
-        "explanation": "Non. Le panneau donne la priorité sur la circulation roulante des voies transversales. Les piétons sur un passage piéton ont toujours la priorité sur les véhicules."
-      },
-      "AR": {
-        "question": "مع اللافتة B15a، هل لديك أيضاً أولوية على المشاة عند التقاطع؟",
-        "choices": [
-          {
-            "text": "لا، المشاة على ممر المشاة دائماً لهم الأولوية على حركة المرور المتحركة",
-            "is_correct": false
-          },
-          {
-            "text": "نعم، حق أولويتك ينطبق أيضاً على المشاة",
-            "is_correct": true
-          }
-        ],
-        "explanation": "لا. اللافتة تمنح الأولوية على حركة المرور المتحركة على الطرق الجانبية. المشاة على ممر المشاة دائماً لهم الأولوية على المركبات."
-      }
-    }
-  },
-  {
-    "question_id": "B15a_Q15",
-    "type": "WHAT_SHOULD_YOU_DO",
-    "difficulty": "EASY",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "U rijdt op de weg met bord B15a en wil rechtsaf slaan. Heeft u nog steeds voorrang op het verkeer dat van rechts de weg oprijdt?",
-        "choices": [
-          {
-            "text": "Ja, zolang u nog op de voorrangsweg rijdt en de bocht nog niet ingegaan bent",
-            "is_correct": true
-          },
-          {
-            "text": "Nee, bij rechtsaf slaan verliest u alle voorrang",
-            "is_correct": false
-          },
-          {
-            "text": "Alleen als er geen ander verkeer is",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Zolang u nog op de weg rijdt die is aangeduid met bord B15a, geniet u de voorrang. Na het afslaan kunnen andere regels van kracht zijn."
-      },
-      "EN": {
-        "question": "You drive on the road with sign B15a and want to turn right. Do you still have priority over traffic entering from the right?",
-        "choices": [
-          {
-            "text": "Yes, as long as you are still on the priority road and have not yet entered the turn",
-            "is_correct": true
-          },
-          {
-            "text": "No, turning right means you lose all priority",
-            "is_correct": false
-          },
-          {
-            "text": "Only if there is no other traffic",
-            "is_correct": false
-          }
-        ],
-        "explanation": "As long as you are still on the road indicated by sign B15a you enjoy priority. After turning other rules may apply."
-      },
-      "FR": {
-        "question": "Vous roulez sur la route avec le panneau B15a et voulez tourner à droite. Avez-vous encore la priorité sur le trafic venant de la droite ?",
-        "choices": [
-          {
-            "text": "Oui, tant que vous êtes encore sur la route prioritaire et n'avez pas encore pris le virage",
-            "is_correct": true
-          },
-          {
-            "text": "Non, tourner à droite signifie que vous perdez toute priorité",
-            "is_correct": false
-          },
-          {
-            "text": "Seulement s'il n'y a pas d'autre circulation",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Tant que vous êtes encore sur la route indiquée par le panneau B15a, vous bénéficiez de la priorité. Après le virage, d'autres règles peuvent s'appliquer."
-      },
-      "AR": {
-        "question": "تسير على الطريق مع اللافتة B15a وتريد الانعطاف يميناً. هل لا تزال لديك الأولوية على حركة المرور القادمة من اليمين؟",
-        "choices": [
-          {
-            "text": "نعم، طالما أنك لا تزال على طريق الأولوية ولم تدخل المنعطف بعد",
-            "is_correct": true
-          },
-          {
-            "text": "لا، الانعطاف يميناً يعني أنك تفقد كل الأولوية",
-            "is_correct": false
-          },
-          {
-            "text": "فقط إذا لم يكن هناك مرور آخر",
-            "is_correct": false
-          }
-        ],
-        "explanation": "طالما أنك لا تزال على الطريق المشار إليه بالإشارة B15a، تتمتع بالأولوية. بعد الانعطاف قد تسري قواعد أخرى."
-      }
-    }
-  },
-  {
-    "question_id": "B15a_Q16",
-    "type": "WHAT_SHOULD_YOU_DO",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "U rijdt op de weg met bord B15a bij een slecht verlichte kruispunt 's nachts. Wat doet u?",
-        "choices": [
-          {
-            "text": "Gebruik koplampen en rij met verhoogde alertheid ondanks uw voorrangsrecht",
-            "is_correct": true
-          },
-          {
-            "text": "Rij snel door, u heeft voorrang",
-            "is_correct": false
-          },
-          {
-            "text": "Rij met stadslichten alleen",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Uw voorrangsrecht doet niets af aan de plicht om veilig te rijden. Bij slechte verlicht kruispunten 's nachts moet u extra alert zijn."
-      },
-      "EN": {
-        "question": "You drive on the road with sign B15a at a poorly lit intersection at night. What do you do?",
-        "choices": [
-          {
-            "text": "Use headlights and drive with heightened alertness despite your right of way",
-            "is_correct": true
-          },
-          {
-            "text": "Drive through quickly, you have right of way",
-            "is_correct": false
-          },
-          {
-            "text": "Drive with sidelights only",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Your right of way does not remove the duty to drive safely. At poorly lit intersections at night you must be extra alert."
-      },
-      "FR": {
-        "question": "Vous roulez sur la route avec le panneau B15a à un carrefour mal éclairé la nuit. Que faites-vous ?",
-        "choices": [
-          {
-            "text": "Utiliser les phares et conduire avec une vigilance accrue malgré votre droit de passage",
-            "is_correct": true
-          },
-          {
-            "text": "Passer rapidement, vous avez la priorité",
-            "is_correct": false
-          },
-          {
-            "text": "Conduire avec les feux de position seulement",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Votre droit de passage ne supprime pas le devoir de conduire en sécurité. Aux carrefours mal éclairés la nuit, vous devez être particulièrement vigilant."
-      },
-      "AR": {
-        "question": "تسير على الطريق مع اللافتة B15a عند تقاطع ضعيف الإضاءة في الليل. ماذا تفعل؟",
-        "choices": [
-          {
-            "text": "استخدم المصابيح الأمامية وسر باليقظة الفائقة على الرغم من حقك في الأولوية",
-            "is_correct": true
-          },
-          {
-            "text": "سر بسرعة، لديك الأولوية",
-            "is_correct": false
-          },
-          {
-            "text": "سر بالأضواء الجانبية فقط",
-            "is_correct": false
-          }
-        ],
-        "explanation": "حقك في الأولوية لا يلغي واجب القيادة الآمنة. عند التقاطعات ضعيفة الإضاءة في الليل يجب أن تكون أكثر يقظة."
-      }
-    }
-  },
-  {
-    "question_id": "B15a_Q17",
-    "type": "IS_IT_ALLOWED",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Mag u bij het bord B15a de maximumsnelheid overschrijden omdat u voorrang heeft?",
-        "choices": [
-          {
-            "text": "Nee, de maximumsnelheid moet altijd worden gerespecteerd",
-            "is_correct": false
-          },
-          {
-            "text": "Ja, voorang staat het rijden met hogere snelheid toe",
-            "is_correct": true
-          }
-        ],
-        "explanation": "Nee. Voorrang en maximumsnelheid zijn twee onafhankelijke zaken. U moet altijd de geldende snelheidslimiet respecteren."
-      },
-      "EN": {
-        "question": "With sign B15a, may you exceed the speed limit because you have right of way?",
-        "choices": [
-          {
-            "text": "No, the speed limit must always be respected",
-            "is_correct": false
-          },
-          {
-            "text": "Yes, right of way allows driving at higher speed",
-            "is_correct": true
-          }
-        ],
-        "explanation": "No. Right of way and speed limits are two independent matters. You must always respect the applicable speed limit."
-      },
-      "FR": {
-        "question": "Avec le panneau B15a, pouvez-vous dépasser la vitesse maximale car vous avez la priorité ?",
-        "choices": [
-          {
-            "text": "Non, la vitesse maximale doit toujours être respectée",
-            "is_correct": false
-          },
-          {
-            "text": "Oui, la priorité permet de rouler à vitesse plus élevée",
-            "is_correct": true
-          }
-        ],
-        "explanation": "Non. Priorité et vitesse maximale sont deux choses indépendantes. Vous devez toujours respecter la limite de vitesse applicable."
-      },
-      "AR": {
-        "question": "مع اللافتة B15a، هل يمكنك تجاوز الحد الأقصى للسرعة لأنك تتمتع بالأولوية؟",
-        "choices": [
-          {
-            "text": "لا، يجب دائماً احترام الحد الأقصى للسرعة",
-            "is_correct": false
-          },
-          {
-            "text": "نعم، الأولوية تسمح بالسير بسرعة أعلى",
-            "is_correct": true
-          }
-        ],
-        "explanation": "لا. الأولوية والحد الأقصى للسرعة مسألتان مستقلتان. يجب عليك دائماً احترام الحد الأقصى للسرعة المطبق."
-      }
-    }
-  },
-  {
-    "question_id": "B15a_Q18",
-    "type": "TRUE_OR_FALSE",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Waar of niet waar: Bord B15a ontheft u van de verplichting om voorzichtig te rijden en goed naar links en rechts te kijken.",
-        "choices": [
-          {
-            "text": "Niet waar – u moet altijd voorzichtig rijden en rondom kijken",
-            "is_correct": false
-          },
-          {
-            "text": "Waar – voorrang betekent dat anderen moeten opletten",
-            "is_correct": true
-          }
-        ],
-        "explanation": "Niet waar. Voorrang is een wettelijk recht maar ontheft u nooit van de plicht om verkeersveilig rijgedrag te tonen."
-      },
-      "EN": {
-        "question": "True or false: Sign B15a exempts you from the obligation to drive carefully and look left and right.",
-        "choices": [
-          {
-            "text": "False – you must always drive carefully and look around",
-            "is_correct": false
-          },
-          {
-            "text": "True – right of way means others must watch out",
-            "is_correct": true
-          }
-        ],
-        "explanation": "False. Right of way is a legal right but never exempts you from the duty to show road-safe driving behaviour."
-      },
-      "FR": {
-        "question": "Vrai ou faux : Le panneau B15a vous dispense de l'obligation de conduire prudemment et de regarder à gauche et à droite.",
-        "choices": [
-          {
-            "text": "Faux – vous devez toujours conduire prudemment et regarder autour de vous",
-            "is_correct": false
-          },
-          {
-            "text": "Vrai – la priorité signifie que les autres doivent faire attention",
-            "is_correct": true
-          }
-        ],
-        "explanation": "Faux. La priorité est un droit légal mais ne vous dispense jamais du devoir de faire preuve d'un comportement de conduite sécurisé."
-      },
-      "AR": {
-        "question": "صحيح أم خاطئ: اللافتة B15a تعفيك من الالتزام بالقيادة بحذر والنظر يميناً ويساراً.",
-        "choices": [
-          {
-            "text": "خاطئ – يجب عليك دائماً القيادة بحذر والنظر حولك",
-            "is_correct": false
-          },
-          {
-            "text": "صحيح – الأولوية تعني أن الآخرين يجب أن يكونوا حذرين",
-            "is_correct": true
-          }
-        ],
-        "explanation": "خاطئ. الأولوية حق قانوني لكنها لا تعفيك أبداً من واجب إظهار السلوك الآمن في القيادة."
-      }
-    }
-  },
-  {
-    "question_id": "B15a_Q19",
-    "type": "WHAT_IS_PROHIBITED",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Welk gedrag is verboden voor een bestuurder die vanuit de zijweg de weg met bord B15a wil oprijden?",
-        "choices": [
-          {
-            "text": "Oprijden zonder te stoppen of te vertragen en voorrang te verlenen",
-            "is_correct": true
-          },
-          {
-            "text": "Zijn richtingaanwijzer gebruiken voordat hij oprijdt",
-            "is_correct": false
-          },
-          {
-            "text": "Naar links en rechts kijken voor hij oprijdt",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Bestuurders die een weg met bord B15a oprijden via een zijweg, zijn verplicht te stoppen of te vertragen en voorrang te verlenen."
-      },
-      "EN": {
-        "question": "What behaviour is prohibited for a driver who wants to enter the road with sign B15a from the side road?",
-        "choices": [
-          {
-            "text": "Entering without stopping or slowing down and giving way",
-            "is_correct": true
-          },
-          {
-            "text": "Using their indicator before entering",
-            "is_correct": false
-          },
-          {
-            "text": "Looking left and right before entering",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Drivers entering a road with sign B15a from a side road are required to stop or slow down and give way."
-      },
-      "FR": {
-        "question": "Quel comportement est interdit pour un conducteur qui veut s'engager depuis la voie latérale sur la route avec le panneau B15a ?",
-        "choices": [
-          {
-            "text": "S'engager sans s'arrêter ou ralentir et céder le passage",
-            "is_correct": true
-          },
-          {
-            "text": "Utiliser leur clignotant avant de s'engager",
-            "is_correct": false
-          },
-          {
-            "text": "Regarder à gauche et à droite avant de s'engager",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Les conducteurs s'engageant sur une route avec le panneau B15a depuis une voie latérale sont tenus de s'arrêter ou de ralentir et de céder le passage."
-      },
-      "AR": {
-        "question": "ما السلوك المحظور على السائق الراغب في الدخول إلى الطريق مع اللافتة B15a من الطريق الجانبي؟",
-        "choices": [
-          {
-            "text": "الدخول دون التوقف أو التباطؤ وإعطاء الأولوية",
-            "is_correct": true
-          },
-          {
-            "text": "استخدام إشارة الاتجاه قبل الدخول",
-            "is_correct": false
-          },
-          {
-            "text": "النظر يميناً ويساراً قبل الدخول",
-            "is_correct": false
-          }
-        ],
-        "explanation": "السائقون الدخيلون إلى طريق مع اللافتة B15a من طريق جانبي مُلزمون بالتوقف أو التباطؤ وإعطاء الأولوية."
-      }
-    }
-  },
-  {
-    "question_id": "B15a_Q20",
-    "type": "WHAT_DOES_IT_MEAN",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "U staat op de zijweg en wil de weg met bord B15a oprijden. Een voertuig op die weg nadert. Wie heeft voorrang?",
-        "choices": [
-          {
-            "text": "Het rijdende voertuig op de weg met bord {code} heeft voorrang – u moet wachten",
-            "is_correct": true
-          },
-          {
-            "text": "U heeft voorrang omdat u als eerste aankwam",
-            "is_correct": false
-          },
-          {
-            "text": "Beiden hebben gelijke voorrang – wie er eerst is gaat voor",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Het bord B15a geeft het verkeer op die weg voorrang. Als bestuurder op de zijweg moet u wachten."
-      },
-      "EN": {
-        "question": "You are on the side road and want to enter the road with sign B15a. A vehicle on that road is approaching. Who has right of way?",
-        "choices": [
-          {
-            "text": "The moving vehicle on the road with sign B15a has right of way – you must wait",
-            "is_correct": true
-          },
-          {
-            "text": "You have right of way because you arrived first",
-            "is_correct": false
-          },
-          {
-            "text": "Both have equal right of way – first come first served",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Sign B15a gives right of way to traffic on that road. As a driver on the side road you must wait."
-      },
-      "FR": {
-        "question": "Vous êtes sur la voie latérale et voulez vous engager sur la route avec le panneau B15a. Un véhicule sur cette route approche. Qui a la priorité ?",
-        "choices": [
-          {
-            "text": "Le véhicule en mouvement sur la route avec le panneau B15a a la priorité – vous devez attendre",
-            "is_correct": true
-          },
-          {
-            "text": "Vous avez la priorité car vous êtes arrivé en premier",
-            "is_correct": false
-          },
-          {
-            "text": "Les deux ont la même priorité – premier arrivé premier servi",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Le panneau B15a donne la priorité au trafic sur cette route. En tant que conducteur sur la voie latérale, vous devez attendre."
-      },
-      "AR": {
-        "question": "أنت على الطريق الجانبي وتريد الدخول إلى الطريق مع اللافتة B15a. مركبة على ذلك الطريق تقترب. من له الأولوية؟",
-        "choices": [
-          {
-            "text": "المركبة المتحركة على الطريق مع اللافتة B15a لها الأولوية – يجب عليك الانتظار",
-            "is_correct": true
-          },
-          {
-            "text": "أنت لديك الأولوية لأنك وصلت أولاً",
-            "is_correct": false
-          },
-          {
-            "text": "كلاهما لهما أولوية متساوية – الأول في الوصول يكون الأول في المرور",
-            "is_correct": false
-          }
-        ],
-        "explanation": "اللافتة B15a تمنح الأولوية لحركة المرور على ذلك الطريق. بصفتك سائقاً على الطريق الجانبي يجب عليك الانتظار."
-      }
-    }
-  },
-  {
-    "question_id": "B15a_Q21",
-    "type": "IS_IT_ALLOWED",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Mag u als bestuurder op een weg met bord B15a toch stoppen om een bestuurder van de zijweg beleefd voorrang te verlenen?",
-        "choices": [
-          {
-            "text": "Ja, u mag vrijwillig stoppen maar het is niet verplicht",
-            "is_correct": true
-          },
-          {
-            "text": "Nee, stoppen is verboden op deze weg",
-            "is_correct": false
-          }
-        ],
-        "explanation": "U mag altijd vrijwillig voorrang verlenen, maar u bent er niet toe verplicht. Wees er voorzichtig mee zodat volgend verkeer niet in gevaar wordt gebracht."
-      },
-      "EN": {
-        "question": "As a driver on a road with sign B15a, may you voluntarily stop to politely give way to a driver from the side road?",
-        "choices": [
-          {
-            "text": "Yes, you may voluntarily stop but it is not required",
-            "is_correct": true
-          },
-          {
-            "text": "No, stopping is prohibited on this road",
-            "is_correct": false
-          }
-        ],
-        "explanation": "You may always voluntarily yield, but you are not required to. Be careful that following traffic is not endangered."
-      },
-      "FR": {
-        "question": "En tant que conducteur sur une route avec le panneau B15a, pouvez-vous vous arrêter volontairement pour céder aimablement le passage à un conducteur venant de la voie latérale ?",
-        "choices": [
-          {
-            "text": "Oui, vous pouvez vous arrêter volontairement mais ce n'est pas obligatoire",
-            "is_correct": true
-          },
-          {
-            "text": "Non, s'arrêter est interdit sur cette route",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Vous pouvez toujours céder le passage volontairement, mais vous n'y êtes pas obligé. Veillez à ne pas mettre en danger le trafic qui suit."
-      },
-      "AR": {
-        "question": "بصفتك سائقاً على طريق مع اللافتة B15a، هل يمكنك التوقف طوعاً لمنح سائق من الطريق الجانبي الأولوية بأدب؟",
-        "choices": [
-          {
-            "text": "نعم، يمكنك التوقف طوعاً لكنه ليس مطلوباً",
-            "is_correct": true
-          },
-          {
-            "text": "لا، التوقف محظور على هذا الطريق",
-            "is_correct": false
-          }
-        ],
-        "explanation": "يمكنك دائماً إعطاء الأولوية طوعاً، لكنك لست مُلزماً بذلك. احرص على عدم تعريض حركة المرور خلفك للخطر."
-      }
-    }
-  },
-  {
-    "question_id": "B15a_Q22",
-    "type": "WHAT_SHOULD_YOU_DO",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "U rijdt op de weg met bord B15a en een grote vrachtwagen verspert tijdelijk de kruisende zijweg. Wat doet u?",
-        "choices": [
-          {
-            "text": "Rij voorzichtig door en houd rekening met mogelijk verkeer dat als de vrachtwagen weg is de weg oprijdt",
-            "is_correct": true
-          },
-          {
-            "text": "Stopt u onmiddellijk",
-            "is_correct": false
-          },
-          {
-            "text": "Geeft u lichtsignalen",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Wees extra voorzichtig: zodra de vrachtwagen weg is, kan er snel verkeer vanuit de zijweg oprijen. Rij defensief."
-      },
-      "EN": {
-        "question": "You drive on the road with sign B15a and a large truck temporarily blocks the intersecting side road. What do you do?",
-        "choices": [
-          {
-            "text": "Drive carefully and account for possible traffic entering once the truck is gone",
-            "is_correct": true
-          },
-          {
-            "text": "Stop immediately",
-            "is_correct": false
-          },
-          {
-            "text": "Give light signals",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Be extra careful: once the truck is gone traffic may quickly enter from the side road. Drive defensively."
-      },
-      "FR": {
-        "question": "Vous roulez sur la route avec le panneau B15a et un grand camion bloque temporairement la voie transversale. Que faites-vous ?",
-        "choices": [
-          {
-            "text": "Rouler prudemment et tenir compte du trafic potentiel qui s'engagera une fois le camion parti",
-            "is_correct": true
-          },
-          {
-            "text": "S'arrêter immédiatement",
-            "is_correct": false
-          },
-          {
-            "text": "Donner des signaux lumineux",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Soyez particulièrement vigilant : une fois le camion parti, le trafic peut rapidement s'engager depuis la voie latérale. Conduisez de manière défensive."
-      },
-      "AR": {
-        "question": "تسير على الطريق مع اللافتة B15a وشاحنة كبيرة تسد مؤقتاً الطريق الجانبي المتقاطع. ماذا تفعل؟",
-        "choices": [
-          {
-            "text": "سر بحذر وراعِ حركة المرور المحتملة التي ستدخل بمجرد مغادرة الشاحنة",
-            "is_correct": true
-          },
-          {
-            "text": "توقف فوراً",
-            "is_correct": false
-          },
-          {
-            "text": "أعطِ إشارات ضوئية",
-            "is_correct": false
-          }
-        ],
-        "explanation": "كن أكثر حذراً: بمجرد مغادرة الشاحنة قد تدخل حركة المرور بسرعة من الطريق الجانبي. قُد بطريقة دفاعية."
-      }
-    }
-  },
-  {
-    "question_id": "B15a_Q23",
-    "type": "TRUE_OR_FALSE",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Waar of niet waar: Als u uw dimlicht aandoet op de weg met bord B15a, geeft dit aan de zijwegbestuurder een signaal dat hij mag doorrijden.",
-        "choices": [
-          {
-            "text": "Niet waar – dimlicht is voor zichtbaarheid, niet om voorrang te geven",
-            "is_correct": false
-          },
-          {
-            "text": "Waar – lichten aanfliksen geeft voorrang",
-            "is_correct": true
-          }
-        ],
-        "explanation": "Niet waar. Dimlicht of lichten aanfliksen communiceert geen officieel voorrangsrecht. U mag het gebruik niet zien als een officieel signaal."
-      },
-      "EN": {
-        "question": "True or false: If you flash your lights on the road with sign B15a, this signals to the side road driver that they may proceed.",
-        "choices": [
-          {
-            "text": "False – dipped headlights are for visibility, not to give right of way",
-            "is_correct": false
-          },
-          {
-            "text": "True – flashing lights grants right of way",
-            "is_correct": true
-          }
-        ],
-        "explanation": "False. Dipped headlights or flashing lights do not communicate official right of way. You should not treat this as an official signal."
-      },
-      "FR": {
-        "question": "Vrai ou faux : Si vous allumez vos feux de croisement sur la route avec le panneau B15a, cela signale au conducteur de la voie latérale qu'il peut avancer.",
-        "choices": [
-          {
-            "text": "Faux – les feux de croisement servent à la visibilité, pas à céder le passage",
-            "is_correct": false
-          },
-          {
-            "text": "Vrai – faire des appels de phares accorde la priorité",
-            "is_correct": true
-          }
-        ],
-        "explanation": "Faux. Les feux de croisement ou les appels de phares ne communiquent pas un droit de passage officiel. Vous ne devez pas l'utiliser comme un signal officiel."
-      },
-      "AR": {
-        "question": "صحيح أم خاطئ: إذا وميضت أضواءك على الطريق مع اللافتة B15a، فهذا يُشير لسائق الطريق الجانبي أنه يمكنه المضي.",
-        "choices": [
-          {
-            "text": "خاطئ – الأضواء الخافتة للرؤية وليست لإعطاء حق الأولوية",
-            "is_correct": false
-          },
-          {
-            "text": "صحيح – وميض الأضواء يمنح الأولوية",
-            "is_correct": true
-          }
-        ],
-        "explanation": "خاطئ. الأضواء الخافتة أو الوميض لا تُبلغ عن حق أولوية رسمي. لا ينبغي لك التعامل معها كإشارة رسمية."
-      }
-    }
-  },
-  {
-    "question_id": "B15a_Q24",
-    "type": "WHAT_MUST_YOU_DO",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Na het kruispunt met bord B15a rijdt u verder. Heeft bord B15a nog invloed op de volgende kruispunten?",
-        "choices": [
-          {
-            "text": "Nee, bord B15a is geldig voor het specifieke kruispunt waar het staat; bij elk volgend kruispunt gelden andere regels",
-            "is_correct": true
-          },
-          {
-            "text": "Ja, de voorrang geldt voor de volledige weg daarna",
-            "is_correct": false
-          },
-          {
-            "text": "Ja, maar alleen bij de eerstvolgende 3 kruispunten",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Bord B15a heeft betrekking op het specifieke kruispunt dat ermee is aangegeven. Voor de volgende kruispunten gelden de daar geplaatste borden."
-      },
-      "EN": {
-        "question": "After the intersection with sign B15a you continue driving. Does sign B15a still influence the next intersections?",
-        "choices": [
-          {
-            "text": "No, sign B15a is valid for the specific intersection where it stands; different rules apply at each following intersection",
-            "is_correct": true
-          },
-          {
-            "text": "Yes, the priority applies to the whole road afterwards",
-            "is_correct": false
-          },
-          {
-            "text": "Yes, but only for the next 3 intersections",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Sign B15a refers to the specific intersection it is associated with. The next intersections are governed by the signs placed there."
-      },
-      "FR": {
-        "question": "Après le carrefour avec le panneau B15a, vous continuez à rouler. Le panneau B15a a-t-il encore une influence sur les prochains carrefours ?",
-        "choices": [
-          {
-            "text": "Non, le panneau B15a est valable pour le carrefour spécifique où il se trouve ; des règles différentes s'appliquent à chaque carrefour suivant",
-            "is_correct": true
-          },
-          {
-            "text": "Oui, la priorité s'applique à toute la route suivante",
-            "is_correct": false
-          },
-          {
-            "text": "Oui, mais seulement pour les 3 prochains carrefours",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Le panneau B15a concerne le carrefour spécifique auquel il est associé. Les carrefours suivants sont gouvernés par les panneaux qui y sont placés."
-      },
-      "AR": {
-        "question": "بعد التقاطع مع اللافتة B15a تستمر في القيادة. هل لا تزال اللافتة B15a تؤثر على التقاطعات التالية؟",
-        "choices": [
-          {
-            "text": "لا، اللافتة B15a سارية للتقاطع المحدد الذي توجد فيه؛ تسري قواعد مختلفة عند كل تقاطع تالٍ",
-            "is_correct": true
-          },
-          {
-            "text": "نعم، تسري الأولوية على الطريق بأكملها بعد ذلك",
-            "is_correct": false
-          },
-          {
-            "text": "نعم، لكن فقط على التقاطعات الثلاث التالية",
-            "is_correct": false
-          }
-        ],
-        "explanation": "اللافتة B15a تشير إلى التقاطع المحدد المرتبطة به. التقاطعات التالية تحكمها اللافتات الموضوعة هناك."
-      }
-    }
-  },
-  {
-    "question_id": "B15a_Q25",
-    "type": "WHAT_IS_PROHIBITED",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "U rijdt op de weg met bord B15a. Wat is verboden ook al heeft u voorrang?",
-        "choices": [
-          {
-            "text": "Rijgerdag vertonen dat andere weggebruikers opzettelijk in gevaar brengt",
-            "is_correct": true
-          },
-          {
-            "text": "Uw rijsnelheid aanpassen aan de weersomstandigheden",
-            "is_correct": false
-          },
-          {
-            "text": "Uw richtingaanwijzer gebruiken bij het afslaan",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Zelfs als u voorrang heeft, is het verboden om gedrag te vertonen dat anderen opzettelijk in gevaar brengt. Verantwoord rijgedrag blijft altijd verplicht."
-      },
-      "EN": {
-        "question": "You drive on the road with sign B15a. What is prohibited even though you have right of way?",
-        "choices": [
-          {
-            "text": "Driving behaviour that intentionally endangers other road users",
-            "is_correct": true
-          },
-          {
-            "text": "Adjusting your driving speed to weather conditions",
-            "is_correct": false
-          },
-          {
-            "text": "Using your indicator when turning",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Even when you have right of way, behaviour that intentionally endangers others is prohibited. Responsible driving always remains mandatory."
-      },
-      "FR": {
-        "question": "Vous roulez sur la route avec le panneau B15a. Qu'est-il interdit même si vous avez la priorité ?",
-        "choices": [
-          {
-            "text": "Un comportement de conduite qui met intentionnellement en danger les autres usagers de la route",
-            "is_correct": true
-          },
-          {
-            "text": "Adapter votre vitesse aux conditions météorologiques",
-            "is_correct": false
-          },
-          {
-            "text": "Utiliser votre clignotant lors d'un virage",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Même lorsque vous avez la priorité, le comportement qui met intentionnellement les autres en danger est interdit. La conduite responsable reste toujours obligatoire."
-      },
-      "AR": {
-        "question": "تسير على الطريق مع اللافتة B15a. ما الذي يُحظر حتى ولو كانت لديك الأولوية؟",
-        "choices": [
-          {
-            "text": "سلوك القيادة الذي يعرض مستخدمي الطريق الآخرين للخطر عمداً",
-            "is_correct": true
-          },
-          {
-            "text": "تعديل سرعة قيادتك لظروف الطقس",
-            "is_correct": false
-          },
-          {
-            "text": "استخدام إشارة الاتجاه عند الانعطاف",
-            "is_correct": false
-          }
-        ],
-        "explanation": "حتى عندما يكون لديك حق الأولوية، يُحظر السلوك الذي يعرض الآخرين للخطر عمداً. القيادة المسؤولة تظل إلزامية في جميع الأوقات."
-      }
-    }
-  },
-  {
-    "question_id": "B15a_Q26",
-    "type": "IS_IT_ALLOWED",
     "difficulty": "HARD",
     "is_critical": true,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U rijdt op de weg met bord B15a in dichte mist. Mag u uw snelheid aanhouden omdat u voorrang heeft?",
+        "question": "Bord B15a staat op uw rijstrook. U wilt afslaan naar een zijstraat. Heeft u dan nog steeds voorrang op verkeer dat vanuit die zijstraat komt?",
         "choices": [
-          {
-            "text": "Nee, bij dichte mist bent u verplicht uw snelheid aan te passen aan de zichtbaarheid",
-            "is_correct": false
-          },
-          {
-            "text": "Ja, voorrang geeft u het recht uw snelheid aan te houden",
-            "is_correct": true
-          }
+          {"text": "Nee, wanneer u afsloeg naar de zijstraat verliest u het voorrangsrecht van B15a; u moet voorrang verlenen aan voertuigen die al op de zijstraat rijden", "is_correct": true},
+          {"text": "Ja, zolang u bord B15a gepasseerd bent, heeft u overal voorrang op dat kruispunt", "is_correct": false}
         ],
-        "explanation": "Nee. Bij dichte mist bent u wettelijk verplicht uw snelheid aan te passen aan de weersomstandigheden, ook op een voorrangsweg."
+        "explanation": "Het voorrangsrecht van B15a geldt enkel zolang u op de hoofdweg rijdt. Zodra u de zijstraat oprijdt, gelden de normale voorrangsregels voor die zijstraat."
       },
       "EN": {
-        "question": "You drive on the road with sign B15a in dense fog. May you maintain your speed because you have right of way?",
+        "question": "Sign B15a is on your road. You want to turn into a side street. Do you still have priority over traffic coming from that side street?",
         "choices": [
-          {
-            "text": "No, in dense fog you are required to adapt your speed to the visibility",
-            "is_correct": false
-          },
-          {
-            "text": "Yes, right of way entitles you to maintain your speed",
-            "is_correct": true
-          }
+          {"text": "No, when you turn into the side street you lose the B15a right of way; you must give way to vehicles already on the side street", "is_correct": true},
+          {"text": "Yes, as long as you passed sign B15a, you have priority everywhere at that junction", "is_correct": false}
         ],
-        "explanation": "No. In dense fog you are legally required to adapt your speed to weather conditions, even on a priority road."
+        "explanation": "The right of way of B15a only applies while you are on the main road. Once you enter the side street, normal priority rules for that side street apply."
       },
       "FR": {
-        "question": "Vous roulez sur la route avec le panneau B15a dans un brouillard dense. Pouvez-vous maintenir votre vitesse car vous avez la priorité ?",
+        "question": "Le panneau B15a se trouve sur votre voie. Vous souhaitez tourner dans une rue latÃ©rale. Avez-vous encore la prioritÃ© sur le trafic venant de cette rue latÃ©rale ?",
         "choices": [
-          {
-            "text": "Non, par brouillard dense vous êtes obligé d'adapter votre vitesse à la visibilité",
-            "is_correct": false
-          },
-          {
-            "text": "Oui, la priorité vous donne le droit de maintenir votre vitesse",
-            "is_correct": true
-          }
+          {"text": "Non, lorsque vous tournez dans la rue latÃ©rale, vous perdez le droit de prioritÃ© B15a ; vous devez cÃ©der le passage aux vÃ©hicules dÃ©jÃ  sur la rue latÃ©rale", "is_correct": true},
+          {"text": "Oui, tant que vous avez dÃ©passÃ© le panneau B15a, vous avez la prioritÃ© partout Ã  ce carrefour", "is_correct": false}
         ],
-        "explanation": "Non. Par brouillard dense, vous êtes légalement obligé d'adapter votre vitesse aux conditions météorologiques, même sur une route prioritaire."
+        "explanation": "Le droit de prioritÃ© de B15a ne s'applique que lorsque vous Ãªtes sur la route principale. DÃ¨s que vous vous engagez dans la rue latÃ©rale, les rÃ¨gles de prioritÃ© normales pour cette rue s'appliquent."
       },
       "AR": {
-        "question": "تسير على الطريق مع اللافتة B15a في ضباب كثيف. هل يمكنك الإبقاء على سرعتك لأن لديك الأولوية؟",
+        "question": "Ù„Ø§ÙØªØ© B15a Ù…ÙˆØ¬ÙˆØ¯Ø© Ø¹Ù„Ù‰ Ø·Ø±ÙŠÙ‚Ùƒ. ØªØ±ÙŠØ¯ Ø§Ù„Ø§Ù†Ø¹Ø·Ø§Ù Ù†Ø­Ùˆ Ø´Ø§Ø±Ø¹ Ø¬Ø§Ù†Ø¨ÙŠ. Ù‡Ù„ Ù„Ø§ ÙŠØ²Ø§Ù„ Ù„Ø¯ÙŠÙƒ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© Ø¹Ù„Ù‰ Ø­Ø±ÙƒØ© Ø§Ù„Ù…Ø±ÙˆØ± Ø§Ù„Ù‚Ø§Ø¯Ù…Ø© Ù…Ù† Ø°Ù„Ùƒ Ø§Ù„Ø´Ø§Ø±Ø¹ Ø§Ù„Ø¬Ø§Ù†Ø¨ÙŠØŸ",
         "choices": [
-          {
-            "text": "لا، في الضباب الكثيف ملزم بتكييف سرعتك مع مدى الرؤية",
-            "is_correct": false
-          },
-          {
-            "text": "نعم، الأولوية تمنحك الحق في الإبقاء على سرعتك",
-            "is_correct": true
-          }
+          {"text": "Ù„Ø§ØŒ Ø¹Ù†Ø¯ Ø§Ù†Ø¹Ø·Ø§ÙÙƒ Ù†Ø­Ùˆ Ø§Ù„Ø´Ø§Ø±Ø¹ Ø§Ù„Ø¬Ø§Ù†Ø¨ÙŠ ØªÙÙ‚Ø¯ Ø­Ù‚ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© B15aØ› ÙŠØ¬Ø¨ Ø¥Ø¹Ø·Ø§Ø¡ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© Ù„Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ù…ÙˆØ¬ÙˆØ¯Ø© ÙØ¹Ù„Ø§Ù‹ ÙÙŠ Ø§Ù„Ø´Ø§Ø±Ø¹ Ø§Ù„Ø¬Ø§Ù†Ø¨ÙŠ", "is_correct": true},
+          {"text": "Ù†Ø¹Ù…ØŒ Ù…Ø§ Ø¯Ù…Øª ØªØ¬Ø§ÙˆØ²Øª Ù„Ø§ÙØªØ© B15a ÙÙ„Ø¯ÙŠÙƒ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© ÙÙŠ ÙƒÙ„ Ù…ÙƒØ§Ù† Ø¨Ù‡Ø°Ø§ Ø§Ù„ØªÙ‚Ø§Ø·Ø¹", "is_correct": false}
         ],
-        "explanation": "لا. في الضباب الكثيف أنت ملزم قانونياً بتكييف سرعتك مع ظروف الطقس، حتى على طريق الأولوية."
-      }
-    }
-  },
-  {
-    "question_id": "B15a_Q27",
-    "type": "WHAT_MUST_YOU_DO",
-    "difficulty": "HARD",
-    "is_critical": true,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Op de weg met bord B15a rijdt een ambulance achter u met zwaailichten en sirene. Wat moet u doen?",
-        "choices": [
-          {
-            "text": "Opzij rijden en de ambulance doorlaten – hulpdiensten in noodgevallen hebben altijd absolute voorrang",
-            "is_correct": true
-          },
-          {
-            "text": "Doorrijden want u heeft voorrang op deze weg",
-            "is_correct": false
-          },
-          {
-            "text": "Versnellen zodat de ambulance u kan volgen",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Hulpdiensten in noodgevallen (met zwaailichten + sirene) hebben altijd absolute voorrang op alle andere voertuigen, ongeacht de borden."
-      },
-      "EN": {
-        "question": "On the road with sign B15a an ambulance drives behind you with flashing lights and siren. What must you do?",
-        "choices": [
-          {
-            "text": "Move aside and let the ambulance through – emergency services with lights and siren always have absolute priority",
-            "is_correct": true
-          },
-          {
-            "text": "Continue driving as you have right of way on this road",
-            "is_correct": false
-          },
-          {
-            "text": "Speed up so the ambulance can follow you",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Emergency services in urgent situations (with lights + siren) always have absolute right of way over all other vehicles, regardless of signs."
-      },
-      "FR": {
-        "question": "Sur la route avec le panneau B15a, une ambulance roule derrière vous avec gyrophares et sirène. Que devez-vous faire ?",
-        "choices": [
-          {
-            "text": "Dégagez la voie et laissez passer l'ambulance – les services d'urgence en situation d'urgence ont toujours la priorité absolue",
-            "is_correct": true
-          },
-          {
-            "text": "Continuer car vous avez la priorité sur cette route",
-            "is_correct": false
-          },
-          {
-            "text": "Accélérer pour que l'ambulance puisse vous suivre",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Les services d'urgence en situation urgente (avec gyrophares + sirène) ont toujours la priorité absolue sur tous les autres véhicules, quels que soient les panneaux."
-      },
-      "AR": {
-        "question": "على الطريق مع اللافتة B15a، سيارة إسعاف تسير خلفك بأضواء وامضة وصفارة. ماذا يجب أن تفعل؟",
-        "choices": [
-          {
-            "text": "تنحَّ جانباً واترك الإسعاف يمر – خدمات الطوارئ ذات الأضواء والصفارات دائماً لها أولوية مطلقة",
-            "is_correct": true
-          },
-          {
-            "text": "استمر في القيادة لأن لديك الأولوية على هذا الطريق",
-            "is_correct": false
-          },
-          {
-            "text": "أسرع حتى يتمكن الإسعاف من متابعتك",
-            "is_correct": false
-          }
-        ],
-        "explanation": "خدمات الطوارئ في المواقف العاجلة (بأضواء + صفارات) دائماً لها الأولوية المطلقة على جميع المركبات الأخرى، بغض النظر عن اللافتات."
-      }
-    }
-  },
-  {
-    "question_id": "B15a_Q28",
-    "type": "TRUE_OR_FALSE",
-    "difficulty": "HARD",
-    "is_critical": true,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Waar of niet waar: Als een bestuurder op de zijweg een bord B9 (voorrangsweg) ziet terwijl u nadert op de weg met bord B15a, heeft de bestuurder op de zijweg de volledige voorrang.",
-        "choices": [
-          {
-            "text": "Niet waar – een B9-bord op de zijweg geeft die weg voorrang, maar {code} geldt voor uw weg; beide borden kunnen tegelijk voorkomen op hetzelfde kruispunt",
-            "is_correct": false
-          },
-          {
-            "text": "Waar – B9 overschrijft altijd elk ander voorrangsbord",
-            "is_correct": true
-          }
-        ],
-        "explanation": "Niet waar. Bord B9 kan op de zijweg staan als die ook een voorrangsweg is. Dan zijn er conflicterende voorrangsborden en moet de feitelijke situatie worden beoordeeld. In de praktijk eindigt een B9-weg bij een B11 voor het kruispunt."
-      },
-      "EN": {
-        "question": "True or false: If a driver on the side road sees sign B9 (priority road) while you approach on the road with sign B15a, the driver on the side road has full right of way.",
-        "choices": [
-          {
-            "text": "False – a B9 sign on the side road gives that road priority, but B15a applies to your road; both signs can simultaneously appear at the same intersection",
-            "is_correct": false
-          },
-          {
-            "text": "True – B9 always overrides any other priority sign",
-            "is_correct": true
-          }
-        ],
-        "explanation": "False. Sign B9 can be on the side road if it is also a priority road. Then conflicting priority signs exist and the actual situation must be assessed. In practice a B9 road ends with B11 before the intersection."
-      },
-      "FR": {
-        "question": "Vrai ou faux : Si un conducteur sur la voie latérale voit un panneau B9 (route prioritaire) alors que vous approchez sur la route avec le panneau B15a, le conducteur sur la voie latérale a la priorité complète.",
-        "choices": [
-          {
-            "text": "Faux – un panneau B9 sur la voie latérale donne la priorité à cette voie, mais B15a s'applique à votre route ; les deux panneaux peuvent simultanément apparaître au même carrefour",
-            "is_correct": false
-          },
-          {
-            "text": "Vrai – B9 remplace toujours tout autre panneau de priorité",
-            "is_correct": true
-          }
-        ],
-        "explanation": "Faux. Le panneau B9 peut être sur la voie latérale si c'est aussi une route prioritaire. Il y a alors des panneaux de priorité conflictuels et la situation réelle doit être évaluée. En pratique, une route B9 se termine par B11 avant le carrefour."
-      },
-      "AR": {
-        "question": "صحيح أم خاطئ: إذا رأى سائق على الطريق الجانبي لافتة B9 (طريق الأولوية) بينما تقترب على الطريق مع اللافتة B15a، فإن سائق الطريق الجانبي لديه الأولوية الكاملة.",
-        "choices": [
-          {
-            "text": "خاطئ – لافتة B9 على الطريق الجانبي تمنح ذلك الطريق الأولوية، لكن B15a تسري على طريقك؛ كلتا اللافتتين يمكن أن تظهرا في نفس الوقت عند نفس التقاطع",
-            "is_correct": false
-          },
-          {
-            "text": "صحيح – B9 دائماً تتغلب على أي لافتة أولوية أخرى",
-            "is_correct": true
-          }
-        ],
-        "explanation": "خاطئ. اللافتة B9 يمكن أن تكون على الطريق الجانبي إذا كان أيضاً طريق أولوية. عندئذٍ توجد لافتات أولوية متعارضة ويجب تقييم الوضع الفعلي. من الناحية العملية، ينتهي طريق B9 بـ B11 قبل التقاطع."
-      }
-    }
-  },
-  {
-    "question_id": "B15a_Q29",
-    "type": "WHAT_IS_PROHIBITED",
-    "difficulty": "HARD",
-    "is_critical": true,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "U rijdt op de weg met bord B15a in een woonwijk en een kind steekt plotseling de weg over. Wat is verboden?",
-        "choices": [
-          {
-            "text": "Doorrijden en het kind niet proberen te vermijden",
-            "is_correct": true
-          },
-          {
-            "text": "Uw rijsnelheid verlagen",
-            "is_correct": false
-          },
-          {
-            "text": "Uitwijken om het kind te vermijden",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Het is altijd verboden om kwetsbare weggebruikers opzettelijk in gevaar te brengen. U moet onmiddellijk remmen en uitwijken als er een kind oversteekt."
-      },
-      "EN": {
-        "question": "You drive on the road with sign B15a in a residential area and a child suddenly crosses the road. What is prohibited?",
-        "choices": [
-          {
-            "text": "Driving on and not attempting to avoid the child",
-            "is_correct": true
-          },
-          {
-            "text": "Reducing your speed",
-            "is_correct": false
-          },
-          {
-            "text": "Swerving to avoid the child",
-            "is_correct": false
-          }
-        ],
-        "explanation": "It is always prohibited to intentionally endanger vulnerable road users. You must brake and swerve immediately when a child crosses."
-      },
-      "FR": {
-        "question": "Vous roulez sur la route avec le panneau B15a dans une zone résidentielle et un enfant traverse soudainement la route. Qu'est-il interdit ?",
-        "choices": [
-          {
-            "text": "Continuer à rouler sans essayer d'éviter l'enfant",
-            "is_correct": true
-          },
-          {
-            "text": "Réduire votre vitesse",
-            "is_correct": false
-          },
-          {
-            "text": "Déboîter pour éviter l'enfant",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Il est toujours interdit de mettre intentionnellement en danger les usagers vulnérables. Vous devez freiner et déboîter immédiatement quand un enfant traverse."
-      },
-      "AR": {
-        "question": "تسير على الطريق مع اللافتة B15a في حي سكني وطفل يعبر الطريق فجأة. ما الذي يُحظر؟",
-        "choices": [
-          {
-            "text": "الاستمرار في القيادة دون محاولة تجنب الطفل",
-            "is_correct": true
-          },
-          {
-            "text": "تقليل سرعتك",
-            "is_correct": false
-          },
-          {
-            "text": "الانحراف لتجنب الطفل",
-            "is_correct": false
-          }
-        ],
-        "explanation": "يُحظر دائماً تعريض مستخدمي الطريق الضعفاء للخطر عمداً. يجب عليك الكبح والانحراف فوراً عندما يعبر طفل الطريق."
-      }
-    }
-  },
-  {
-    "question_id": "B15a_Q30",
-    "type": "WHAT_SHOULD_YOU_DO",
-    "difficulty": "HARD",
-    "is_critical": true,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Op de weg met bord B15a nadert u een kruispunt. Tegelijkertijd zie je vanuit een zijweg een voertuig dat duidelijk niet gaat stoppen. Wat doet u?",
-        "choices": [
-          {
-            "text": "Vertraag onmiddellijk en bereid u voor om te remmen of uit te wijken om een botsing te vermijden",
-            "is_correct": true
-          },
-          {
-            "text": "Rij door want u heeft voorrang",
-            "is_correct": false
-          },
-          {
-            "text": "Claxonneer en rij door",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Zelfs als u voorrang heeft, moet u altijd de situatie inschatten en actie ondernemen om een botsing te voorkomen. Defensief rijden redt levens."
-      },
-      "EN": {
-        "question": "On the road with sign B15a you approach an intersection. Simultaneously you see a vehicle from a side road clearly not going to stop. What do you do?",
-        "choices": [
-          {
-            "text": "Slow down immediately and prepare to brake or swerve to avoid a collision",
-            "is_correct": true
-          },
-          {
-            "text": "Drive on since you have right of way",
-            "is_correct": false
-          },
-          {
-            "text": "Honk and drive on",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Even when you have right of way you must always assess the situation and take action to prevent a collision. Defensive driving saves lives."
-      },
-      "FR": {
-        "question": "Sur la route avec le panneau B15a, vous approchez d'un carrefour. Simultanément, vous voyez un véhicule d'une voie latérale qui ne va clairement pas s'arrêter. Que faites-vous ?",
-        "choices": [
-          {
-            "text": "Ralentir immédiatement et vous préparer à freiner ou à déboîter pour éviter une collision",
-            "is_correct": true
-          },
-          {
-            "text": "Continuer car vous avez la priorité",
-            "is_correct": false
-          },
-          {
-            "text": "Klaxonner et continuer",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Même lorsque vous avez la priorité, vous devez toujours évaluer la situation et prendre des mesures pour éviter une collision. La conduite défensive sauve des vies."
-      },
-      "AR": {
-        "question": "على الطريق مع اللافتة B15a تقترب من تقاطع. في نفس الوقت ترى مركبة من طريق جانبي من الواضح أنها لن تتوقف. ماذا تفعل؟",
-        "choices": [
-          {
-            "text": "أبطئ فوراً واستعد للكبح أو الانحراف لتجنب الاصطدام",
-            "is_correct": true
-          },
-          {
-            "text": "استمر في السير لأن لديك الأولوية",
-            "is_correct": false
-          },
-          {
-            "text": "أدق البوق واستمر",
-            "is_correct": false
-          }
-        ],
-        "explanation": "حتى عندما يكون لديك حق الأولوية يجب عليك دائماً تقييم الوضع واتخاذ إجراءات لمنع الاصطدام. القيادة الدفاعية تنقذ الأرواح."
+        "explanation": "Ø­Ù‚ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© ÙÙŠ B15a ÙŠÙ†Ø·Ø¨Ù‚ ÙÙ‚Ø· Ø¹Ù†Ø¯Ù…Ø§ ØªÙƒÙˆÙ† Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø±Ø¦ÙŠØ³ÙŠ. Ø¨Ù…Ø¬Ø±Ø¯ Ø¯Ø®ÙˆÙ„Ùƒ Ø§Ù„Ø´Ø§Ø±Ø¹ Ø§Ù„Ø¬Ø§Ù†Ø¨ÙŠ ØªØ³Ø±ÙŠ Ù‚ÙˆØ§Ø¹Ø¯ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© Ø§Ù„Ø¹Ø§Ø¯ÙŠØ© Ù„Ø°Ù„Ùƒ Ø§Ù„Ø´Ø§Ø±Ø¹."
       }
     }
   }

@@ -7,11 +7,13 @@ import jakarta.validation.ConstraintValidatorContext;
 /**
  * Validator for Traffic Sign Requirement - Story D3
  *
- * Ensures quiz questions comply with Belgian law by having traffic sign context.
- * Questions without traffic signs cannot be used in exams as they lack legal context.
+ * Ensures quiz questions comply with Belgian law by having traffic sign
+ * context.
+ * Questions without traffic signs cannot be used in exams as they lack legal
+ * context.
  */
 public class RequiresTrafficSignValidator
-    implements ConstraintValidator<RequiresTrafficSign, QuizQuestion> {
+        implements ConstraintValidator<RequiresTrafficSign, QuizQuestion> {
 
     @Override
     public boolean isValid(QuizQuestion question, ConstraintValidatorContext context) {
@@ -20,12 +22,12 @@ public class RequiresTrafficSignValidator
             return true;
         }
 
-        // Check if traffic sign is present
-        if (question.getTrafficSign() == null) {
+        // Check if road sign is present
+        if (question.getRoadSign() == null) {
             context.disableDefaultConstraintViolation();
             context.buildConstraintViolationWithTemplate(
-                "Question must reference a traffic sign to provide legal context for Belgian exams"
-            ).addConstraintViolation();
+                    "Question must reference a traffic sign to provide legal context for Belgian exams")
+                    .addConstraintViolation();
             return false;
         }
 

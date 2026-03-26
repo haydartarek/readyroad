@@ -4,6 +4,8 @@ import com.readyroad.readyroadbackend.domain.entity.SignQuestion;
 import com.readyroad.readyroadbackend.domain.enums.SignDifficulty;
 import com.readyroad.readyroadbackend.domain.enums.SignQuestionType;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -27,6 +29,9 @@ public interface SignQuestionRepository extends JpaRepository<SignQuestion, Long
             Long signId, SignQuestionType questionType);
 
     List<SignQuestion> findAllByIsActiveTrueAndDifficulty(SignDifficulty difficulty);
+
+    @Query("SELECT q FROM SignQuestion q WHERE q.isActive = true AND q.difficulty = :difficulty AND q.sign.isActive = true")
+    List<SignQuestion> findAllActiveForActiveSignsByDifficulty(@Param("difficulty") SignDifficulty difficulty);
 
     long countBySignId(Long signId);
 }

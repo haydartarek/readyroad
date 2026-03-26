@@ -1,84 +1,15 @@
-[
+﻿[
   {
     "question_id": "F4a_Q01",
     "type": "WHAT_DOES_IT_MEAN",
     "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE: Replace wrong answers with actual sign names from the same category.",
     "i18n": {
-      "NL": {
-        "question": "Wat betekent dit verkeersbord?",
-        "choices": [
-          {
-            "text": "Begin zone 30",
-            "is_correct": true
-          },
-          {
-            "text": "Rijden verboden in beide richtingen",
-            "is_correct": false
-          },
-          {
-            "text": "Gevaarsbord voor wegwerkzaamheden",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Dit bord geeft het begin van een zone 30 aan. In deze zone mag u niet sneller rijden dan 30 km/u. Deze zones worden vaak gebruikt in woonwijken om de verkeersveiligheid te verhogen."
-      },
-      "EN": {
-        "question": "What does this traffic sign mean?",
-        "choices": [
-          {
-            "text": "Start of 30 km/h zone",
-            "is_correct": true
-          },
-          {
-            "text": "Driving prohibited in both directions",
-            "is_correct": false
-          },
-          {
-            "text": "Danger sign for roadworks",
-            "is_correct": false
-          }
-        ],
-        "explanation": "This sign indicates the start of a 30 km/h zone. In this zone, you are not allowed to exceed 30 km/h. These zones are often used in residential areas to increase traffic safety."
-      },
-      "FR": {
-        "question": "Que signifie ce panneau de signalisation ?",
-        "choices": [
-          {
-            "text": "Début de zone 30",
-            "is_correct": true
-          },
-          {
-            "text": "Circulation interdite dans les deux sens",
-            "is_correct": false
-          },
-          {
-            "text": "Panneau de danger pour travaux",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Ce panneau indique le début d'une zone 30. Dans cette zone, vous ne pouvez pas dépasser 30 km/h. Ces zones sont souvent utilisées dans les quartiers résidentiels pour améliorer la sécurité routière."
-      },
-      "AR": {
-        "question": "ماذا تعني لافتة المرور هذه؟",
-        "choices": [
-          {
-            "text": "بداية منطقة سرعة 30 كم/س",
-            "is_correct": true
-          },
-          {
-            "text": "القيادة محظورة في كلا الاتجاهين",
-            "is_correct": false
-          },
-          {
-            "text": "لافتة خطر لأعمال الطريق",
-            "is_correct": false
-          }
-        ],
-        "explanation": "تشير هذه العلامة إلى بداية منطقة بسرعة 30 كم/ساعة. في هذه المنطقة، لا يُسمح لك بتجاوز 30 كم/ساعة. غالبًا ما تستخدم هذه المناطق في المناطق السكنية لزيادة السلامة المرورية."
-      }
+      "NL": { "question": "Wat betekent bord F4a 'Begin zone 30'?", "choices": [{ "text": "U rijdt een zone in waar de maximumsnelheid 30 km/u bedraagt, dag en nacht", "is_correct": true }, { "text": "U moet vertragen tot 30 km/u alleen wanneer er kinderen aanwezig zijn", "is_correct": false }, { "text": "De minimumsnelheid in deze zone is 30 km/u", "is_correct": false }], "explanation": "F4a markeert het begin van een zone 30 waar de maximumsnelheid constant 30 km/u is, ongeacht tijdstip of omstandigheden." },
+      "EN": { "question": "What does sign F4a 'Start of 30 km/h zone' mean?", "choices": [{ "text": "You are entering a zone where the maximum speed is 30 km/h at all times, day and night", "is_correct": true }, { "text": "You must slow to 30 km/h only when children are present", "is_correct": false }, { "text": "The minimum speed in this zone is 30 km/h", "is_correct": false }], "explanation": "F4a marks the start of a zone 30 where the maximum speed is a constant 30 km/h regardless of time or circumstances." },
+      "FR": { "question": "Que signifie le panneau F4a 'Debut zone 30' ?", "choices": [{ "text": "Vous entrez dans une zone ou la vitesse maximale est de 30 km/h jour et nuit", "is_correct": true }, { "text": "Vous devez ralentir a 30 km/h uniquement quand des enfants sont presents", "is_correct": false }, { "text": "La vitesse minimale dans cette zone est de 30 km/h", "is_correct": false }], "explanation": "F4a marque le debut d une zone 30 ou la vitesse maximale est constamment de 30 km/h quel que soit le moment ou les circonstances." },
+      "AR": { "question": "Ù…Ø§ Ù…Ø¹Ù†Ù‰ Ø§Ù„Ù„Ø§ÙØªØ© F4a 'Ø¨Ø¯Ø§ÙŠØ© Ù…Ù†Ø·Ù‚Ø© Ø³Ø±Ø¹Ø© 30 ÙƒÙ…/Ø³'ØŸ", "choices": [{ "text": "Ø£Ù†Øª Ø¯Ø§Ø®Ù„ Ù…Ù†Ø·Ù‚Ø© ÙŠÙƒÙˆÙ† ÙÙŠÙ‡Ø§ Ø§Ù„Ø­Ø¯ Ø§Ù„Ø£Ù‚ØµÙ‰ Ù„Ù„Ø³Ø±Ø¹Ø© 30 ÙƒÙ…/Ø³ Ù„ÙŠÙ„Ø§Ù‹ ÙˆÙ†Ù‡Ø§Ø±Ø§Ù‹", "is_correct": true }, { "text": "Ø¹Ù„ÙŠÙƒ Ø§Ù„ØªØ¨Ø§Ø·Ø¤ Ø¥Ù„Ù‰ 30 ÙƒÙ…/Ø³ ÙÙ‚Ø· Ø¹Ù†Ø¯ ÙˆØ¬ÙˆØ¯ Ø£Ø·ÙØ§Ù„", "is_correct": false }, { "text": "Ø§Ù„Ø­Ø¯ Ø§Ù„Ø£Ø¯Ù†Ù‰ Ù„Ù„Ø³Ø±Ø¹Ø© ÙÙŠ Ù‡Ø°Ù‡ Ø§Ù„Ù…Ù†Ø·Ù‚Ø© Ù‡Ùˆ 30 ÙƒÙ…/Ø³", "is_correct": false }], "explanation": "ØªØ­Ø¯Ø¯ F4a Ø¨Ø¯Ø§ÙŠØ© Ù…Ù†Ø·Ù‚Ø© 30 Ø­ÙŠØ« Ø§Ù„Ø­Ø¯ Ø§Ù„Ø£Ù‚ØµÙ‰ Ù„Ù„Ø³Ø±Ø¹Ø© 30 ÙƒÙ…/Ø³ Ø¨Ø§Ø³ØªÙ…Ø±Ø§Ø± Ø¨ØºØ¶ Ø§Ù„Ù†Ø¸Ø± Ø¹Ù† Ø§Ù„ÙˆÙ‚Øª Ø£Ùˆ Ø§Ù„Ø¸Ø±ÙˆÙ." }
     }
   },
   {
@@ -87,162 +18,24 @@
     "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE: Ready to use — category identification question.",
     "i18n": {
-      "NL": {
-        "question": "Tot welke categorie verkeerstekens behoort dit bord?",
-        "choices": [
-          {
-            "text": "Aanwijzingsborden (F-reeks)",
-            "is_correct": true
-          },
-          {
-            "text": "Gebodsborden (D-reeks)",
-            "is_correct": false
-          },
-          {
-            "text": "Parkeerregelementsborden (E-reeks)",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Dit bord behoort tot de categorie 'Aanwijzingsborden (F-reeks)'. Elk type bord heeft een specifieke vorm en kleurschema."
-      },
-      "EN": {
-        "question": "To which category of traffic signs does this sign belong?",
-        "choices": [
-          {
-            "text": "Information signs (F-series)",
-            "is_correct": true
-          },
-          {
-            "text": "Mandatory signs (D-series)",
-            "is_correct": false
-          },
-          {
-            "text": "Parking regulation signs (E-series)",
-            "is_correct": false
-          }
-        ],
-        "explanation": "This sign belongs to the 'Information signs (F-series)' category. Each type of sign has a specific shape and color scheme."
-      },
-      "FR": {
-        "question": "À quelle catégorie de panneaux de signalisation ce panneau appartient-il ?",
-        "choices": [
-          {
-            "text": "Panneaux d'indication (série F)",
-            "is_correct": true
-          },
-          {
-            "text": "Panneaux d'obligation (série D)",
-            "is_correct": false
-          },
-          {
-            "text": "Panneaux de stationnement (série E)",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Ce panneau appartient à la catégorie 'Panneaux d'indication (série F)'. Chaque type de panneau a une forme et un schéma de couleurs spécifiques."
-      },
-      "AR": {
-        "question": "إلى أي فئة من لافتات المرور تنتمي هذه اللافتة؟",
-        "choices": [
-          {
-            "text": "لافتات المعلومات (سلسلة F)",
-            "is_correct": true
-          },
-          {
-            "text": "لافتات الإلزام (سلسلة D)",
-            "is_correct": false
-          },
-          {
-            "text": "لافتات تنظيم الوقوف (سلسلة E)",
-            "is_correct": false
-          }
-        ],
-        "explanation": "هذه اللافتة تنتمي إلى فئة 'لافتات المعلومات (سلسلة F)'. كل نوع من اللافتات له شكل ونظام ألوان محدد."
-      }
+      "NL": { "question": "Welk bord markeert het einde van de zone 30 die begint met F4a?", "choices": [{ "text": "Bord F4b 'Einde zone 30' markeert het einde van de zone", "is_correct": true }, { "text": "Bord F3b 'Einde bebouwde kom' sluit de zone 30 af", "is_correct": false }, { "text": "Bord C43 (maximumsnelheid 50) heft de zone 30 op", "is_correct": false }], "explanation": "Zone 30 wordt altijd afgesloten met bord F4b 'Einde zone 30'. F4a en F4b werken als een paar." },
+      "EN": { "question": "Which sign marks the end of the zone 30 that starts with F4a?", "choices": [{ "text": "Sign F4b 'End of 30 km/h zone' marks the end of the zone", "is_correct": true }, { "text": "Sign F3b 'End of built-up area' closes the zone 30", "is_correct": false }, { "text": "Sign C43 (maximum speed 50) cancels the zone 30", "is_correct": false }], "explanation": "Zone 30 is always closed by sign F4b 'End of zone 30'. F4a and F4b work as a pair." },
+      "FR": { "question": "Quel panneau marque la fin de la zone 30 qui commence avec F4a ?", "choices": [{ "text": "Le panneau F4b 'Fin zone 30' marque la fin de la zone", "is_correct": true }, { "text": "Le panneau F3b 'Fin d agglomeration' ferme la zone 30", "is_correct": false }, { "text": "Le panneau C43 (vitesse maximale 50) annule la zone 30", "is_correct": false }], "explanation": "La zone 30 est toujours fermee par le panneau F4b. F4a et F4b fonctionnent en paire." },
+      "AR": { "question": "Ø£ÙŠ Ù„Ø§ÙØªØ© ØªØ­Ø¯Ø¯ Ù†Ù‡Ø§ÙŠØ© Ù…Ù†Ø·Ù‚Ø© 30 Ø§Ù„ØªÙŠ ØªØ¨Ø¯Ø£ Ø¨Ù€ F4aØŸ", "choices": [{ "text": "Ø§Ù„Ù„Ø§ÙØªØ© F4b 'Ù†Ù‡Ø§ÙŠØ© Ù…Ù†Ø·Ù‚Ø© Ø³Ø±Ø¹Ø© 30 ÙƒÙ…/Ø³' ØªØ­Ø¯Ø¯ Ù†Ù‡Ø§ÙŠØ© Ø§Ù„Ù…Ù†Ø·Ù‚Ø©", "is_correct": true }, { "text": "Ø§Ù„Ù„Ø§ÙØªØ© F3b 'Ù†Ù‡Ø§ÙŠØ© Ø§Ù„Ù…Ù†Ø·Ù‚Ø© Ø§Ù„Ù…Ø¨Ù†ÙŠØ©' ØªØºÙ„Ù‚ Ù…Ù†Ø·Ù‚Ø© 30", "is_correct": false }, { "text": "Ø§Ù„Ù„Ø§ÙØªØ© C43 (Ø³Ø±Ø¹Ø© Ù‚ØµÙˆÙ‰ 50) ØªÙ„ØºÙŠ Ù…Ù†Ø·Ù‚Ø© 30", "is_correct": false }], "explanation": "ÙŠØªÙ… Ø¯Ø§Ø¦Ù…Ø§Ù‹ Ø¥ØºÙ„Ø§Ù‚ Ù…Ù†Ø·Ù‚Ø© 30 Ø¨Ù„Ø§ÙØªØ© F4b. ØªØ¹Ù…Ù„ F4a Ùˆ F4b ÙƒØ²ÙˆØ¬." }
     }
   },
   {
     "question_id": "F4a_Q03",
-    "type": "WHAT_MUST_YOU_DO",
-    "difficulty": "MEDIUM",
+    "type": "HAZARD_IDENTIFICATION",
+    "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE (MEDIUM): Replace with sign-specific question for production.",
     "i18n": {
-      "NL": {
-        "question": "Welke informatie of aanwijzing geeft dit bord aan weggebruikers?",
-        "choices": [
-          {
-            "text": "Het bord geeft nuttige informatie of aanwijzingen over de wegsituatie of faciliteiten",
-            "is_correct": true
-          },
-          {
-            "text": "Het bord verbiedt een specifieke rijbeweging",
-            "is_correct": false
-          },
-          {
-            "text": "Het bord verplicht tot stoppen voor controle",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Aanwijzingsborden (F-reeks) geven weggebruikers nuttige informatie over de wegsituatie, faciliteiten of speciale rijstroken."
-      },
-      "EN": {
-        "question": "What information or guidance does this sign provide to road users?",
-        "choices": [
-          {
-            "text": "The sign provides useful information or guidance about the road situation or facilities",
-            "is_correct": true
-          },
-          {
-            "text": "The sign prohibits a specific driving maneuver",
-            "is_correct": false
-          },
-          {
-            "text": "The sign requires stopping for inspection",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Information signs (F-series) provide road users with useful info about road situation, facilities, or special lanes."
-      },
-      "FR": {
-        "question": "Quelles informations ce panneau fournit-il aux usagers de la route ?",
-        "choices": [
-          {
-            "text": "Le panneau fournit des informations utiles sur la situation routière ou les équipements",
-            "is_correct": true
-          },
-          {
-            "text": "Le panneau interdit une manœuvre de conduite spécifique",
-            "is_correct": false
-          },
-          {
-            "text": "Le panneau oblige à s'arrêter pour contrôle",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Les panneaux d'indication (série F) informent les usagers sur la situation routière, les équipements ou voies spéciales."
-      },
-      "AR": {
-        "question": "ما المعلومات أو التوجيهات التي توفرها هذه اللافتة لمستخدمي الطريق؟",
-        "choices": [
-          {
-            "text": "توفر اللافتة معلومات مفيدة أو توجيهات حول حالة الطريق أو المرافق",
-            "is_correct": true
-          },
-          {
-            "text": "اللافتة تحظر مناورة قيادة محددة",
-            "is_correct": false
-          },
-          {
-            "text": "اللافتة تفرض التوقف للفحص",
-            "is_correct": false
-          }
-        ],
-        "explanation": "لافتات المعلومات (سلسلة F) توفر لمستخدمي الطريق معلومات مفيدة حول حالة الطريق والمرافق."
-      }
+      "NL": { "question": "Waarom wordt een zone 30 (bord F4a) ingesteld in woonwijken en nabij scholen?", "choices": [{ "text": "Om kwetsbare weggebruikers zoals kinderen, fietsers en voetgangers te beschermen door de botssnelheid te verlagen", "is_correct": true }, { "text": "Om het parkeren te organiseren en parkeerproblemen op te lossen", "is_correct": false }, { "text": "Om vrachtverkeer te weren uit woongebieden", "is_correct": false }], "explanation": "Zone 30 verlaagt de rijsnelheid zodat bij een botsing de ernst van letsel sterk afneemt. Dit beschermt kwetsbare weggebruikers." },
+      "EN": { "question": "Why is a zone 30 (sign F4a) established in residential areas and near schools?", "choices": [{ "text": "To protect vulnerable road users such as children, cyclists and pedestrians by reducing impact speeds", "is_correct": true }, { "text": "To organise parking and solve parking problems", "is_correct": false }, { "text": "To keep heavy goods vehicles out of residential areas", "is_correct": false }], "explanation": "Zone 30 reduces driving speeds so that the severity of injury in a collision is greatly reduced, protecting vulnerable road users." },
+      "FR": { "question": "Pourquoi une zone 30 (panneau F4a) est-elle instauree dans les zones residentielles et pres des ecoles ?", "choices": [{ "text": "Pour proteger les usagers vulnerables tels que les enfants, cyclistes et pietons en reduisant les vitesses de choc", "is_correct": true }, { "text": "Pour organiser le stationnement et resoudre les problemes de parking", "is_correct": false }, { "text": "Pour interdire les poids lourds dans les zones residentielles", "is_correct": false }], "explanation": "La zone 30 reduit la vitesse de conduite afin que la gravite des blessures en cas de collision soit grandement reduite en protegant les usagers vulnerables." },
+      "AR": { "question": "Ù„Ù…Ø§Ø°Ø§ ÙŠØªÙ… Ø¥Ù†Ø´Ø§Ø¡ Ù…Ù†Ø·Ù‚Ø© 30 (Ù„Ø§ÙØªØ© F4a) ÙÙŠ Ø§Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ø³ÙƒÙ†ÙŠØ© ÙˆØ¨Ø§Ù„Ù‚Ø±Ø¨ Ù…Ù† Ø§Ù„Ù…Ø¯Ø§Ø±Ø³ØŸ", "choices": [{ "text": "Ù„Ø­Ù…Ø§ÙŠØ© Ù…Ø³ØªØ®Ø¯Ù…ÙŠ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø¶Ø¹ÙØ§Ø¡ ÙƒØ§Ù„Ø£Ø·ÙØ§Ù„ ÙˆØ§Ù„Ø¯Ø±Ø§Ø¬ÙŠÙ† ÙˆØ§Ù„Ù…Ø´Ø§Ø© Ø¹Ù† Ø·Ø±ÙŠÙ‚ ØªÙ‚Ù„ÙŠÙ„ Ø³Ø±Ø¹Ø§Øª Ø§Ù„ØªØµØ§Ø¯Ù…", "is_correct": true }, { "text": "Ù„ØªÙ†Ø¸ÙŠÙ… ÙˆÙ‚ÙˆÙ Ø§Ù„Ø³ÙŠØ§Ø±Ø§Øª ÙˆØ­Ù„ Ù…Ø´Ø§ÙƒÙ„ Ø§Ù„Ø§Ù†ØªØ¸Ø§Ø±", "is_correct": false }, { "text": "Ù„Ù…Ù†Ø¹ Ø§Ù„Ø´Ø§Ø­Ù†Ø§Øª Ø§Ù„Ø«Ù‚ÙŠÙ„Ø© Ù…Ù† Ø¯Ø®ÙˆÙ„ Ø§Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ø³ÙƒÙ†ÙŠØ©", "is_correct": false }], "explanation": "ØªÙ‚Ù„Ù„ Ù…Ù†Ø·Ù‚Ø© 30 Ù…Ù† Ø³Ø±Ø¹Ø© Ø§Ù„Ù‚ÙŠØ§Ø¯Ø© Ø¨Ø­ÙŠØ« ØªÙ‚Ù„ ÙƒØ«ÙŠØ±Ø§Ù‹ Ø®Ø·ÙˆØ±Ø© Ø§Ù„Ø¥ØµØ§Ø¨Ø§Øª Ø¹Ù†Ø¯ Ø§Ù„Ø§ØµØ·Ø¯Ø§Ù… Ù…Ù…Ø§ ÙŠØ­Ù…ÙŠ Ù…Ø³ØªØ®Ø¯Ù…ÙŠ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø¶Ø¹ÙØ§Ø¡." }
     }
   },
   {
@@ -251,146 +44,63 @@
     "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE (MEDIUM): Replace with sign-specific question for production.",
     "i18n": {
-      "NL": {
-        "question": "Wat is het kleurenschema van aanwijzingsborden in België?",
-        "choices": [
-          {
-            "text": "Blauw of groen achtergrond met witte symbolen en tekst",
-            "is_correct": true
-          },
-          {
-            "text": "Rode achtergrond met witte tekst",
-            "is_correct": false
-          },
-          {
-            "text": "Gele achtergrond met zwarte tekst",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Aanwijzingsborden hebben doorgaans een blauwe achtergrond (stedelijk) of groene achtergrond (autosnelweg)."
-      },
-      "EN": {
-        "question": "What is the color scheme of information signs in Belgium?",
-        "choices": [
-          {
-            "text": "Blue or green background with white symbols and text",
-            "is_correct": true
-          },
-          {
-            "text": "Red background with white text",
-            "is_correct": false
-          },
-          {
-            "text": "Yellow background with black text",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Information signs typically have a blue (urban) or green (motorway) background."
-      },
-      "FR": {
-        "question": "Quel est le schéma de couleurs des panneaux d'indication en Belgique ?",
-        "choices": [
-          {
-            "text": "Fond bleu ou vert avec des symboles et du texte blancs",
-            "is_correct": true
-          },
-          {
-            "text": "Fond rouge avec texte blanc",
-            "is_correct": false
-          },
-          {
-            "text": "Fond jaune avec texte noir",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Les panneaux d'indication ont généralement un fond bleu (urbain) ou vert (autoroute)."
-      },
-      "AR": {
-        "question": "ما هو نظام الألوان للافتات المعلومات في بلجيكا؟",
-        "choices": [
-          {
-            "text": "خلفية زرقاء أو خضراء مع رموز ونص أبيض",
-            "is_correct": true
-          },
-          {
-            "text": "خلفية حمراء مع نص أبيض",
-            "is_correct": false
-          },
-          {
-            "text": "خلفية صفراء مع نص أسود",
-            "is_correct": false
-          }
-        ],
-        "explanation": "لافتات المعلومات عادةً لها خلفية زرقاء (حضري) أو خضراء (طريق سريع)."
-      }
+      "NL": { "question": "U rijdt om 23:00 door een zone 30-straat die volledig verlaten is. Wat is de maximumsnelheid?", "choices": [{ "text": "30 km/u; de limiet geldt 24/24 ongeacht tijdstip of drukte op de weg", "is_correct": true }, { "text": "50 km/u; 's nachts geldt de normale stedelijke limiet van 50 km/u", "is_correct": false }, { "text": "Er is geen specifieke limiet; u beoordeelt de veilige snelheid zelf", "is_correct": false }], "explanation": "De maximumsnelheid in een zone 30 geldt altijd, dag en nacht, ongeacht of de weg druk of verlaten is." },
+      "EN": { "question": "You are driving through a zone 30 street at 23:00 and it is completely deserted. What is the maximum speed?", "choices": [{ "text": "30 km/h; the limit applies 24/7 regardless of time or traffic density", "is_correct": true }, { "text": "50 km/h; at night the normal urban limit of 50 km/h applies", "is_correct": false }, { "text": "There is no specific limit; you judge the safe speed yourself", "is_correct": false }], "explanation": "The maximum speed in a zone 30 always applies, day and night, regardless of whether the road is busy or deserted." },
+      "FR": { "question": "Vous roulez dans une rue zone 30 a 23h00 et elle est completement deserte. Quelle est la vitesse maximale ?", "choices": [{ "text": "30 km/h; la limite s applique 24h/24 quel que soit le moment ou la densite du trafic", "is_correct": true }, { "text": "50 km/h; la nuit la limite urbaine normale de 50 km/h s applique", "is_correct": false }, { "text": "Il n y a pas de limite specifique; vous jugez vous-meme la vitesse sure", "is_correct": false }], "explanation": "La vitesse maximale dans une zone 30 s applique toujours jour et nuit peu importe si la route est animee ou deserte." },
+      "AR": { "question": "ØªÙ‚ÙˆØ¯ Ø¹Ø¨Ø± Ø´Ø§Ø±Ø¹ Ù…Ù†Ø·Ù‚Ø© 30 Ø§Ù„Ø³Ø§Ø¹Ø© 23:00 ÙˆÙ‡Ùˆ Ø®Ø§Ù„Ù ØªÙ…Ø§Ù…Ø§Ù‹. Ù…Ø§ Ø§Ù„Ø­Ø¯ Ø§Ù„Ø£Ù‚ØµÙ‰ Ù„Ù„Ø³Ø±Ø¹Ø©ØŸ", "choices": [{ "text": "30 ÙƒÙ…/Ø³Ø› Ø§Ù„Ø­Ø¯ Ø³Ø§Ø±ÙŠ 24 Ø³Ø§Ø¹Ø© ÙŠÙˆÙ…ÙŠØ§Ù‹ Ø¨ØºØ¶ Ø§Ù„Ù†Ø¸Ø± Ø¹Ù† Ø§Ù„ÙˆÙ‚Øª Ø£Ùˆ ÙƒØ«Ø§ÙØ© Ø§Ù„Ù…Ø±ÙˆØ±", "is_correct": true }, { "text": "50 ÙƒÙ…/Ø³Ø› ÙÙŠ Ø§Ù„Ù„ÙŠÙ„ ÙŠÙ†Ø·Ø¨Ù‚ Ø§Ù„Ø­Ø¯ Ø§Ù„Ø­Ø¶Ø±ÙŠ Ø§Ù„Ø¹Ø§Ø¯ÙŠ Ø§Ù„Ø¨Ø§Ù„Øº 50 ÙƒÙ…/Ø³", "is_correct": false }, { "text": "Ù„Ø§ ÙŠÙˆØ¬Ø¯ Ø­Ø¯ Ù…Ø­Ø¯Ø¯Ø› ØªØ­ÙƒÙ… Ø¨Ù†ÙØ³Ùƒ Ø¹Ù„Ù‰ Ø§Ù„Ø³Ø±Ø¹Ø© Ø§Ù„Ø¢Ù…Ù†Ø©", "is_correct": false }], "explanation": "Ø§Ù„Ø­Ø¯ Ø§Ù„Ø£Ù‚ØµÙ‰ Ù„Ù„Ø³Ø±Ø¹Ø© ÙÙŠ Ù…Ù†Ø·Ù‚Ø© 30 ÙŠØ³Ø±ÙŠ Ø¯Ø§Ø¦Ù…Ø§Ù‹ Ù„ÙŠÙ„Ø§Ù‹ ÙˆÙ†Ù‡Ø§Ø±Ø§Ù‹ Ø¨ØºØ¶ Ø§Ù„Ù†Ø¸Ø± Ø¹Ù† Ø§Ø²Ø¯Ø­Ø§Ù… Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø£Ùˆ Ø®Ù„ÙˆÙ‡." }
     }
   },
   {
     "question_id": "F4a_Q05",
-    "type": "IS_IT_ALLOWED",
-    "difficulty": "HARD",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE (HARD): Replace with sign-specific question for production.",
     "i18n": {
-      "NL": {
-        "question": "Mag u als weggebruiker aanwijzingsborden negeren?",
-        "choices": [
-          {
-            "text": "Nee, aanwijzingsborden moeten worden opgevolgd want ze geven wettelijk bindende aanwijzingen",
-            "is_correct": true
-          },
-          {
-            "text": "Ja, aanwijzingsborden zijn vrijblijvend en kunnen naar eigen inzicht worden genegeerd",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Aanwijzingsborden geven wettelijk bindende aanwijzingen aan weggebruikers. Ze mogen niet worden genegeerd en dienen te worden nageleefd."
-      },
-      "EN": {
-        "question": "Are you as a road user allowed to ignore information signs?",
-        "choices": [
-          {
-            "text": "No, information signs must be followed as they provide legally binding directions",
-            "is_correct": true
-          },
-          {
-            "text": "Yes, information signs are optional and can be ignored at your own discretion",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Information signs provide legally binding guidance to road users. They must not be ignored and should be followed."
-      },
-      "FR": {
-        "question": "En tant qu'usager de la route, êtes-vous autorisé à ignorer les panneaux d'indication ?",
-        "choices": [
-          {
-            "text": "Non, les panneaux d'indication doivent être respectés car ils fournissent des indications juridiquement contraignantes",
-            "is_correct": true
-          },
-          {
-            "text": "Oui, les panneaux d'indication sont facultatifs et peuvent être ignorés à votre discrétion",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Les panneaux d'indication fournissent des directives juridiquement contraignantes aux usagers. Ils ne peuvent pas être ignorés."
-      },
-      "AR": {
-        "question": "هل يُسمح لك كمستخدم للطريق بتجاهل لافتات المعلومات؟",
-        "choices": [
-          {
-            "text": "لا، يجب اتباع لافتات المعلومات لأنها توفر توجيهات ملزمة قانونياً",
-            "is_correct": true
-          },
-          {
-            "text": "نعم، لافتات المعلومات اختيارية ويمكن تجاهلها وفق تقديرك الخاص",
-            "is_correct": false
-          }
-        ],
-        "explanation": "لافتات المعلومات توفر توجيهات ملزمة قانونياً لمستخدمي الطريق. لا يجوز تجاهلها ويجب الالتزام بها."
-      }
+      "NL": { "question": "In een zone 30: wie heeft voorrang op een ongeregeld kruispunt?", "choices": [{ "text": "Het verkeer van rechts, net als op elk ander kruispunt zonder speciale regeling", "is_correct": true }, { "text": "Fietsers hebben altijd voorrang op alle gemotoriseerde voertuigen in de zone 30", "is_correct": false }, { "text": "De bestuurder die het eerste aankomt heeft voorrang", "is_correct": false }], "explanation": "In een zone 30 gelden de normale voorrangsregels: op ongeregelde kruispunten heeft verkeer van rechts voorrang." },
+      "EN": { "question": "In a zone 30: who has priority at an unregulated intersection?", "choices": [{ "text": "Traffic from the right, just as at any other intersection without special regulation", "is_correct": true }, { "text": "Cyclists always have priority over all motor vehicles in zone 30", "is_correct": false }, { "text": "The driver who arrives first has priority", "is_correct": false }], "explanation": "In a zone 30 the normal priority rules apply: at unregulated intersections traffic from the right has priority." },
+      "FR": { "question": "Dans une zone 30 : qui a la priorite a un carrefour non reglemente ?", "choices": [{ "text": "Le trafic venant de droite, comme a tout autre carrefour sans reglementation speciale", "is_correct": true }, { "text": "Les cyclistes ont toujours la priorite sur tous les vehicules motorises dans la zone 30", "is_correct": false }, { "text": "Le conducteur qui arrive en premier a la priorite", "is_correct": false }], "explanation": "Dans une zone 30 les regles normales de priorite s appliquent: aux carrefours non reglementes le trafic venant de droite a la priorite." },
+      "AR": { "question": "ÙÙŠ Ù…Ù†Ø·Ù‚Ø© 30: Ù…Ù† Ù„Ù‡ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© ÙÙŠ ØªÙ‚Ø§Ø·Ø¹ ØºÙŠØ± Ù…Ù†Ø¸Ù…ØŸ", "choices": [{ "text": "Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ù‚Ø§Ø¯Ù…Ø© Ù…Ù† Ø§Ù„ÙŠÙ…ÙŠÙ† ÙƒÙ…Ø§ Ù‡Ùˆ Ø§Ù„Ø­Ø§Ù„ ÙÙŠ Ø£ÙŠ ØªÙ‚Ø§Ø·Ø¹ Ø¨Ø¯ÙˆÙ† ØªÙ†Ø¸ÙŠÙ… Ø®Ø§Øµ", "is_correct": true }, { "text": "Ø±Ø§ÙƒØ¨Ùˆ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø¯Ø§Ø¦Ù…Ø§Ù‹ Ù„Ø¯ÙŠÙ‡Ù… Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© Ø¹Ù„Ù‰ Ø¬Ù…ÙŠØ¹ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø°Ø§Øª Ø§Ù„Ù…Ø­Ø±Ùƒ ÙÙŠ Ù…Ù†Ø·Ù‚Ø© 30", "is_correct": false }, { "text": "Ø§Ù„Ø³Ø§Ø¦Ù‚ Ø§Ù„Ø°ÙŠ ÙŠØµÙ„ Ø£ÙˆÙ„Ø§Ù‹ Ù„Ù‡ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ©", "is_correct": false }], "explanation": "ÙÙŠ Ù…Ù†Ø·Ù‚Ø© 30 ØªØ³Ø±ÙŠ Ù‚ÙˆØ§Ø¹Ø¯ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© Ø§Ù„Ø¹Ø§Ø¯ÙŠØ©: ÙÙŠ Ø§Ù„ØªÙ‚Ø§Ø·Ø¹Ø§Øª ØºÙŠØ± Ø§Ù„Ù…Ù†Ø¸Ù…Ø© Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ù‚Ø§Ø¯Ù…Ø© Ù…Ù† Ø§Ù„ÙŠÙ…ÙŠÙ† Ù„Ù‡Ø§ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ©." }
+    }
+  },
+  {
+    "question_id": "F4a_Q06",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": { "question": "U rijdt 38 km/u in een zone 30. Wat zijn de gevolgen?", "choices": [{ "text": "U overtreedt de wet en riskeert een boete; de limiet is 30 km/u zonder tolerantie", "is_correct": true }, { "text": "38 km/u is aanvaardbaar want er is een officieuze tolerantie van 10 km/u", "is_correct": false }, { "text": "Niets; zone 30-borden zijn slechts aanbevelingen en niet wettelijk verplicht", "is_correct": false }], "explanation": "De maximumsnelheid van 30 km/u in een zone 30 is wettelijk verplicht. Iedere overschrijding kan beboet worden." },
+      "EN": { "question": "You are driving at 38 km/h in a zone 30. What are the consequences?", "choices": [{ "text": "You are breaking the law and risk a fine; the limit is 30 km/h with no official tolerance", "is_correct": true }, { "text": "38 km/h is acceptable because there is an unofficial tolerance of 10 km/h", "is_correct": false }, { "text": "Nothing; zone 30 signs are merely recommendations and not legally binding", "is_correct": false }], "explanation": "The maximum speed of 30 km/h in a zone 30 is legally binding. Any excess can be fined." },
+      "FR": { "question": "Vous roulez a 38 km/h dans une zone 30. Quelles sont les consequences ?", "choices": [{ "text": "Vous enfreignez la loi et risquez une amende; la limite est de 30 km/h sans tolerance officielle", "is_correct": true }, { "text": "38 km/h est acceptable car il y a une tolerance officieuse de 10 km/h", "is_correct": false }, { "text": "Rien; les panneaux zone 30 sont de simples recommandations et ne sont pas juridiquement contraignants", "is_correct": false }], "explanation": "La vitesse maximale de 30 km/h dans une zone 30 est juridiquement contraignante. Tout depassement peut etre sanctionne." },
+      "AR": { "question": "ØªÙ‚ÙˆØ¯ Ø¨Ø³Ø±Ø¹Ø© 38 ÙƒÙ…/Ø³ ÙÙŠ Ù…Ù†Ø·Ù‚Ø© 30. Ù…Ø§ Ù‡ÙŠ Ø§Ù„Ø¹ÙˆØ§Ù‚Ø¨ØŸ", "choices": [{ "text": "Ø£Ù†Øª ØªØ®Ø§Ù„Ù Ø§Ù„Ù‚Ø§Ù†ÙˆÙ† ÙˆØªØ®Ø§Ø·Ø± Ø¨ØºØ±Ø§Ù…Ø©Ø› Ø§Ù„Ø­Ø¯ 30 ÙƒÙ…/Ø³ Ø¯ÙˆÙ† Ù‡Ø§Ù…Ø´ ØªØ³Ø§Ù…Ø­ Ø±Ø³Ù…ÙŠ", "is_correct": true }, { "text": "38 ÙƒÙ…/Ø³ Ù…Ù‚Ø¨ÙˆÙ„ Ù„Ø£Ù† Ù‡Ù†Ø§Ùƒ Ù‡Ø§Ù…Ø´ ØªØ³Ø§Ù…Ø­ ØºÙŠØ± Ø±Ø³Ù…ÙŠ ÙŠØ¨Ù„Øº 10 ÙƒÙ…/Ø³", "is_correct": false }, { "text": "Ù„Ø§ Ø´ÙŠØ¡Ø› Ù„Ø§ÙØªØ§Øª Ù…Ù†Ø·Ù‚Ø© 30 Ù‡ÙŠ Ù…Ø¬Ø±Ø¯ ØªÙˆØµÙŠØ§Øª ÙˆÙ„ÙŠØ³Øª Ù…Ù„Ø²Ù…Ø© Ù‚Ø§Ù†ÙˆÙ†ÙŠØ§Ù‹", "is_correct": false }], "explanation": "Ø§Ù„Ø­Ø¯ Ø§Ù„Ø£Ù‚ØµÙ‰ Ù„Ù„Ø³Ø±Ø¹Ø© Ø§Ù„Ø¨Ø§Ù„Øº 30 ÙƒÙ…/Ø³ ÙÙŠ Ù…Ù†Ø·Ù‚Ø© 30 Ù…Ù„Ø²Ù… Ù‚Ø§Ù†ÙˆÙ†ÙŠØ§Ù‹. ÙŠÙ…ÙƒÙ† ØªØºØ±ÙŠÙ… Ø£ÙŠ ØªØ¬Ø§ÙˆØ²." }
+    }
+  },
+  {
+    "question_id": "F4a_Q07",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": { "question": "Bent u in een zone 30 (na bord F4a): is het toegestaan om 50 km/u te rijden?", "choices": [{ "text": "Nee, de maximumsnelheid in een zone 30 is 30 km/u op elk moment van de dag", "is_correct": true }, { "text": "Ja, 50 km/u is de standaard stedelijke limiet en geldt overal binnen de bebouwde kom", "is_correct": false }], "explanation": "Een zone 30 beperkt de maximumsnelheid tot 30 km/u. Dit geldt altijd, ook al geldt buiten de zone 50 km/u." },
+      "EN": { "question": "You are in a zone 30 (after sign F4a): is it allowed to drive at 50 km/h?", "choices": [{ "text": "No, the maximum speed in a zone 30 is 30 km/h at any time of day", "is_correct": true }, { "text": "Yes, 50 km/h is the standard urban limit and applies everywhere within the built-up area", "is_correct": false }], "explanation": "A zone 30 restricts the maximum speed to 30 km/h. This always applies even if the limit outside the zone is 50 km/h." },
+      "FR": { "question": "Vous etes dans une zone 30 (apres le panneau F4a) : est-il permis de rouler a 50 km/h ?", "choices": [{ "text": "Non, la vitesse maximale dans une zone 30 est de 30 km/h a tout moment de la journee", "is_correct": true }, { "text": "Oui, 50 km/h est la limite urbaine standard et s applique partout a l interieur de l agglomeration", "is_correct": false }], "explanation": "Une zone 30 limite la vitesse maximale a 30 km/h. Cela s applique toujours meme si la limite hors de la zone est de 50 km/h." },
+      "AR": { "question": "Ø£Ù†Øª ÙÙŠ Ù…Ù†Ø·Ù‚Ø© 30 (Ø¨Ø¹Ø¯ Ù„Ø§ÙØªØ© F4a): Ù‡Ù„ ÙŠÙØ³Ù…Ø­ Ø¨Ø§Ù„Ù‚ÙŠØ§Ø¯Ø© Ø¨Ø³Ø±Ø¹Ø© 50 ÙƒÙ…/Ø³ØŸ", "choices": [{ "text": "Ù„Ø§ Ø§Ù„Ø­Ø¯ Ø§Ù„Ø£Ù‚ØµÙ‰ Ù„Ù„Ø³Ø±Ø¹Ø© ÙÙŠ Ù…Ù†Ø·Ù‚Ø© 30 Ù‡Ùˆ 30 ÙƒÙ…/Ø³ ÙÙŠ Ø£ÙŠ ÙˆÙ‚Øª Ù…Ù† Ø§Ù„ÙŠÙˆÙ…", "is_correct": true }, { "text": "Ù†Ø¹Ù… 50 ÙƒÙ…/Ø³ Ù‡Ùˆ Ø§Ù„Ø­Ø¯ Ø§Ù„Ø­Ø¶Ø±ÙŠ Ø§Ù„Ù‚ÙŠØ§Ø³ÙŠ ÙˆÙŠØ·Ø¨Ù‚ ÙÙŠ ÙƒÙ„ Ù…ÙƒØ§Ù† Ø¯Ø§Ø®Ù„ Ø§Ù„Ù…Ù†Ø·Ù‚Ø© Ø§Ù„Ù…Ø¨Ù†ÙŠØ©", "is_correct": false }], "explanation": "ØªØ­ØµØ± Ù…Ù†Ø·Ù‚Ø© 30 Ø§Ù„Ø­Ø¯ Ø§Ù„Ø£Ù‚ØµÙ‰ Ù„Ù„Ø³Ø±Ø¹Ø© ÙÙŠ 30 ÙƒÙ…/Ø³. Ù‡Ø°Ø§ ÙŠÙ†Ø·Ø¨Ù‚ Ø¯Ø§Ø¦Ù…Ø§Ù‹ Ø­ØªÙ‰ Ù„Ùˆ ÙƒØ§Ù† Ø§Ù„Ø­Ø¯ Ø®Ø§Ø±Ø¬ Ø§Ù„Ù…Ù†Ø·Ù‚Ø© 50 ÙƒÙ…/Ø³." }
+    }
+  },
+  {
+    "question_id": "F4a_Q08",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": { "question": "In een zone 30 (bord F4a): is inhalen van andere voertuigen toegestaan als er geen apart verbodsbord staat?", "choices": [{ "text": "Ja, inhalen is in principe toegestaan in een zone 30 tenzij een specifiek verbodsbord (C37) het verbiedt", "is_correct": true }, { "text": "Nee, inhalen is altijd verboden in een zone 30 vanwege de lage snelheidslimiet", "is_correct": false }], "explanation": "Een zone 30 verbiedt inhalen niet. Inhalen is alleen verboden als bord C37 dit aangeeft, mits het veilig is." },
+      "EN": { "question": "In a zone 30 (sign F4a): is overtaking other vehicles allowed if there is no separate prohibition sign?", "choices": [{ "text": "Yes, overtaking is in principle allowed in a zone 30 unless a specific prohibition sign (C37) forbids it", "is_correct": true }, { "text": "No, overtaking is always forbidden in a zone 30 because of the low speed limit", "is_correct": false }], "explanation": "A zone 30 does not prohibit overtaking. Overtaking is only forbidden if sign C37 indicates this, provided it is safe." },
+      "FR": { "question": "Dans une zone 30 (panneau F4a) : le depassement d autres vehicules est-il autorise en l absence de panneau d interdiction specifique ?", "choices": [{ "text": "Oui, le depassement est en principe autorise dans une zone 30 sauf si un panneau d interdiction specifique (C37) l interdit", "is_correct": true }, { "text": "Non, le depassement est toujours interdit dans une zone 30 en raison de la limite de vitesse basse", "is_correct": false }], "explanation": "Une zone 30 n interdit pas le depassement. Celui-ci est interdit seulement si le panneau C37 l indique et uniquement si c est sur." },
+      "AR": { "question": "ÙÙŠ Ù…Ù†Ø·Ù‚Ø© 30 (Ù„Ø§ÙØªØ© F4a): Ù‡Ù„ ÙŠÙØ³Ù…Ø­ Ø¨ØªØ¬Ø§ÙˆØ² Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ø£Ø®Ø±Ù‰ Ø¥Ø°Ø§ Ù„Ù… ØªÙƒÙ† Ù‡Ù†Ø§Ùƒ Ù„Ø§ÙØªØ© Ø­Ø¸Ø± Ù…Ù†ÙØµÙ„Ø©ØŸ", "choices": [{ "text": "Ù†Ø¹Ù… Ø§Ù„ØªØ¬Ø§ÙˆØ² Ù…Ø³Ù…ÙˆØ­ Ø¨Ù‡ Ù…Ù† Ø­ÙŠØ« Ø§Ù„Ù…Ø¨Ø¯Ø£ ÙÙŠ Ù…Ù†Ø·Ù‚Ø© 30 Ù…Ø§ Ù„Ù… ØªØ­Ø¸Ø±Ù‡ Ù„Ø§ÙØªØ© Ø­Ø¸Ø± Ù…Ø­Ø¯Ø¯Ø© (C37)", "is_correct": true }, { "text": "Ù„Ø§ Ø§Ù„ØªØ¬Ø§ÙˆØ² Ù…Ø­Ø¸ÙˆØ± Ø¯Ø§Ø¦Ù…Ø§Ù‹ ÙÙŠ Ù…Ù†Ø·Ù‚Ø© 30 Ø¨Ø³Ø¨Ø¨ Ø§Ù„Ø­Ø¯ Ø§Ù„Ù…Ù†Ø®ÙØ¶ Ù„Ù„Ø³Ø±Ø¹Ø©", "is_correct": false }], "explanation": "Ù…Ù†Ø·Ù‚Ø© 30 Ù„Ø§ ØªØ­Ø¸Ø± Ø§Ù„ØªØ¬Ø§ÙˆØ². ÙŠÙØ­Ø¸Ø± Ø§Ù„ØªØ¬Ø§ÙˆØ² ÙÙ‚Ø· Ø¥Ø°Ø§ Ø£Ø´Ø§Ø±Øª Ù„Ø§ÙØªØ© C37 Ø¥Ù„Ù‰ Ø°Ù„Ùƒ Ø´Ø±ÙŠØ·Ø© Ø£Ù† ÙŠÙƒÙˆÙ† Ø¢Ù…Ù†Ø§Ù‹." }
     }
   }
 ]

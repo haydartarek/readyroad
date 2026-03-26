@@ -1,83 +1,46 @@
-[
+﻿[
   {
     "question_id": "B23_Q01",
     "type": "WHAT_DOES_IT_MEAN",
     "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE: Replace wrong answers with actual sign names from the same category.",
     "i18n": {
       "NL": {
         "question": "Wat betekent dit verkeersbord?",
         "choices": [
-          {
-            "text": "Fietsers en speed pedelecs mogen rechtdoor rijden en de verkeerslichten voorbijrijden",
-            "is_correct": true
-          },
-          {
-            "text": "Gevaarlijke bocht naar links",
-            "is_correct": false
-          },
-          {
-            "text": "Verbod voor alle voertuigen",
-            "is_correct": false
-          }
+          {"text": "Fietsers en speed pedelecs mogen rechtdoor rijden, ook als het verkeerslicht rood of oranjegeel is", "is_correct": true},
+          {"text": "Fietsers mogen bij rood licht rechtsaf slaan", "is_correct": false},
+          {"text": "Alle voertuigen mogen rechtdoor rijden bij een rood licht", "is_correct": false}
         ],
-        "explanation": "Deze verkeersbord wordt geplaatst bij kruispunten waar een fietspad aanwezig is. Fietsers mogen rechtsaf slaan zelfs wanneer het verkeerslicht rood is, op voorwaarde dat ze voorrang geven aan andere weggebruikers (zoals auto's en voetgangers) op de hoofdweg."
+        "explanation": "Bord B23 staat bij kruispunten met een fietspad. Fietsers en speed pedelecs mogen rechtdoor rijden bij een rood licht, mits ze voorrang verlenen aan de overige weggebruikers op de kruisende weg."
       },
       "EN": {
         "question": "What does this traffic sign mean?",
         "choices": [
-          {
-            "text": "Cyclists and speed pedelecs may go straight and pass traffic lights",
-            "is_correct": true
-          },
-          {
-            "text": "Dangerous curve to the left",
-            "is_correct": false
-          },
-          {
-            "text": "Prohibited for all vehicles",
-            "is_correct": false
-          }
+          {"text": "Cyclists and speed pedelecs may go straight even when the traffic light is red or amber", "is_correct": true},
+          {"text": "Cyclists may turn right at a red light", "is_correct": false},
+          {"text": "All vehicles may go straight at a red light", "is_correct": false}
         ],
-        "explanation": "This sign is placed at intersections with a bicycle path. Cyclists may turn right even when the traffic light is red, provided they give priority to other road users (such as cars and pedestrians) on the main road."
+        "explanation": "Sign B23 is placed at junctions with a cycle path. Cyclists and speed pedelecs may go straight at a red light, provided they give way to other road users on the crossing road."
       },
       "FR": {
         "question": "Que signifie ce panneau de signalisation ?",
         "choices": [
-          {
-            "text": "Les cyclistes et speed pedelecs peuvent aller tout droit et passer les feux",
-            "is_correct": true
-          },
-          {
-            "text": "Virage dangereux à gauche",
-            "is_correct": false
-          },
-          {
-            "text": "Interdit à tous les véhicules",
-            "is_correct": false
-          }
+          {"text": "Les cyclistes et speed pedelecs peuvent aller tout droit meme lorsque le feu est rouge ou orange", "is_correct": true},
+          {"text": "Les cyclistes peuvent tourner a droite au feu rouge", "is_correct": false},
+          {"text": "Tous les vehicules peuvent aller tout droit au feu rouge", "is_correct": false}
         ],
-        "explanation": "Ce panneau est placé aux carrefours avec une piste cyclable. Les cyclistes peuvent tourner à droite même lorsque le feu est rouge, à condition de céder le passage aux autres usagers de la route (comme les voitures et les piétons) sur la route principale."
+        "explanation": "Le panneau B23 est place aux carrefours avec une piste cyclable. Les cyclistes et speed pedelecs peuvent aller tout droit au feu rouge, a condition de ceder le passage aux autres usagers sur la route transversale."
       },
       "AR": {
-        "question": "ماذا تعني لافتة المرور هذه؟",
+        "question": "Ù…Ø§Ø°Ø§ ØªØ¹Ù†ÙŠ Ù„Ø§ÙØªØ© Ø§Ù„Ù…Ø±ÙˆØ± Ù‡Ø°Ù‡ØŸ",
         "choices": [
-          {
-            "text": "تقاطع مع ممر الدراجات - الاتجاه للأمام",
-            "is_correct": true
-          },
-          {
-            "text": "منعطف خطير إلى اليسار",
-            "is_correct": false
-          },
-          {
-            "text": "ممنوع لجميع المركبات",
-            "is_correct": false
-          }
+          {"text": "ÙŠØ¬ÙˆØ² Ù„Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª ÙˆØ³Ø¨ÙŠØ¯ Ø¨ÙŠØ¯ÙŠÙ„ÙŠÙƒØ³ Ø§Ù„Ø§Ø³ØªÙ…Ø±Ø§Ø± Ù„Ù„Ø§Ù…Ø§Ù… Ø­ØªÙ‰ Ø¹Ù†Ø¯Ù…Ø§ ØªÙƒÙˆÙ† Ø§Ù„Ø§Ø´Ø§Ø±Ø© Ø­Ù…Ø±Ø§Ø¡ Ø§Ùˆ Ø¨Ø±ØªÙ‚Ø§Ù„ÙŠØ©", "is_correct": true},
+          {"text": "ÙŠØ¬ÙˆØ² Ù„Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ù„Ø§Ù†Ø¹Ø·Ø§Ù ÙŠÙ…ÙŠÙ†Ø§ Ø¹Ù†Ø¯ Ø§Ù„Ø¶ÙˆØ¡ Ø§Ù„Ø§Ø­Ù…Ø±", "is_correct": false},
+          {"text": "ÙŠØ¬ÙˆØ² Ù„Ø¬Ù…ÙŠØ¹ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ø§Ø³ØªÙ…Ø±Ø§Ø± Ù„Ù„Ø§Ù…Ø§Ù… Ø¹Ù†Ø¯ Ø§Ù„Ø¶ÙˆØ¡ Ø§Ù„Ø§Ø­Ù…Ø±", "is_correct": false}
         ],
-        "explanation": "يتم وضع هذه العلامة عند التقاطعات مع مسار الدراجات. يجوز لراكبي الدراجات الانعطاف إلى اليمين حتى عندما تكون إشارة المرور حمراء، بشرط إعطاء الأولوية لمستخدمي الطريق الآخرين (مثل السيارات والمشاة) على الطريق الرئيسي."
+        "explanation": "ØªÙˆØ¶Ø¹ Ù„Ø§ÙØªØ© B23 Ø¹Ù†Ø¯ Ø§Ù„ØªÙ‚Ø§Ø·Ø¹Ø§Øª Ø°Ø§Øª Ù…Ø³Ø§Ø± Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª. ÙŠØ¬ÙˆØ² Ù„Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª ÙˆØ³Ø¨ÙŠØ¯ Ø¨ÙŠØ¯ÙŠÙ„ÙŠÙƒØ³ Ø§Ù„Ø§Ø³ØªÙ…Ø±Ø§Ø± Ù„Ù„Ø§Ù…Ø§Ù… Ø¹Ù†Ø¯ Ø§Ù„Ø¶ÙˆØ¡ Ø§Ù„Ø§Ø­Ù…Ø± Ø´Ø±ÙŠØ·Ø© Ø§Ø¹Ø·Ø§Ø¡ Ø§Ù„Ø§ÙˆÙ„ÙˆÙŠØ© Ù„Ù„Ù…Ø³ØªØ®Ø¯Ù…ÙŠÙ† Ø§Ù„Ø§Ø®Ø±ÙŠÙ† Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ù…ØªÙ‚Ø§Ø·Ø¹."
       }
     }
   },
@@ -86,162 +49,88 @@
     "type": "WHICH_SIGN",
     "difficulty": "EASY",
     "is_critical": false,
-    "show_sign": true,
-    "_note": "TEMPLATE: Ready to use — category identification question.",
+    "show_sign": false,
     "i18n": {
       "NL": {
-        "question": "Tot welke categorie verkeerstekens behoort dit bord?",
+        "question": "Welk bord geeft fietsers toestemming om rechtdoor te rijden bij een rood licht?",
         "choices": [
-          {
-            "text": "Voorrangsborden (B-reeks)",
-            "is_correct": true
-          },
-          {
-            "text": "Gevaarsborden (A-reeks)",
-            "is_correct": false
-          },
-          {
-            "text": "Verbodsborden (C-reeks)",
-            "is_correct": false
-          }
+          {"text": "B23 - Fietsers en speed pedelecs mogen rechtdoor bij rood licht", "is_correct": true},
+          {"text": "B22 - Fietsers en speed pedelecs mogen rechtsaf slaan bij rood licht", "is_correct": false},
+          {"text": "F13 - Verplicht rechtdoor voor alle verkeer", "is_correct": false}
         ],
-        "explanation": "Dit bord behoort tot de categorie 'Voorrangsborden (B-reeks)'. Elk type bord heeft een specifieke vorm en kleurschema."
+        "explanation": "B23 = rechtdoor bij rood voor fietsers en speed pedelecs. B22 = rechtsaf bij rood voor fietsers. F13 is een verplichte rijrichting voor alle weggebruikers en staat los van het rode licht."
       },
       "EN": {
-        "question": "To which category of traffic signs does this sign belong?",
+        "question": "Which sign gives cyclists permission to go straight at a red light?",
         "choices": [
-          {
-            "text": "Priority signs (B-series)",
-            "is_correct": true
-          },
-          {
-            "text": "Danger signs (A-series)",
-            "is_correct": false
-          },
-          {
-            "text": "Prohibition signs (C-series)",
-            "is_correct": false
-          }
+          {"text": "B23 - Cyclists and speed pedelecs may go straight at a red light", "is_correct": true},
+          {"text": "B22 - Cyclists and speed pedelecs may turn right at a red light", "is_correct": false},
+          {"text": "F13 - Compulsory straight ahead for all traffic", "is_correct": false}
         ],
-        "explanation": "This sign belongs to the 'Priority signs (B-series)' category. Each type of sign has a specific shape and color scheme."
+        "explanation": "B23 = go straight at red for cyclists and speed pedelecs. B22 = turn right at red for cyclists. F13 is a mandatory direction sign for all road users and is independent of the red light."
       },
       "FR": {
-        "question": "À quelle catégorie de panneaux de signalisation ce panneau appartient-il ?",
+        "question": "Quel panneau donne aux cyclistes la permission d aller tout droit au feu rouge ?",
         "choices": [
-          {
-            "text": "Panneaux de priorité (série B)",
-            "is_correct": true
-          },
-          {
-            "text": "Panneaux de danger (série A)",
-            "is_correct": false
-          },
-          {
-            "text": "Panneaux d'interdiction (série C)",
-            "is_correct": false
-          }
+          {"text": "B23 - Cyclistes et speed pedelecs peuvent aller tout droit au feu rouge", "is_correct": true},
+          {"text": "B22 - Cyclistes et speed pedelecs peuvent tourner a droite au feu rouge", "is_correct": false},
+          {"text": "F13 - Tout droit obligatoire pour tous les usagers", "is_correct": false}
         ],
-        "explanation": "Ce panneau appartient à la catégorie 'Panneaux de priorité (série B)'. Chaque type de panneau a une forme et un schéma de couleurs spécifiques."
+        "explanation": "B23 = tout droit au rouge pour les cyclistes et speed pedelecs. B22 = tourner a droite au rouge pour les cyclistes. F13 est un panneau de direction obligatoire pour tous les usagers, independant du feu rouge."
       },
       "AR": {
-        "question": "إلى أي فئة من لافتات المرور تنتمي هذه اللافتة؟",
+        "question": "Ø§ÙŠ Ù„Ø§ÙØªØ© ØªÙ…Ù†Ø­ Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ù„Ø§Ø°Ù† Ø¨Ø§Ù„Ø§Ø³ØªÙ…Ø±Ø§Ø± Ù„Ù„Ø§Ù…Ø§Ù… Ø¹Ù†Ø¯ Ø§Ù„Ø¶ÙˆØ¡ Ø§Ù„Ø§Ø­Ù…Ø±ØŸ",
         "choices": [
-          {
-            "text": "لافتات الأولوية (سلسلة B)",
-            "is_correct": true
-          },
-          {
-            "text": "لافتات الخطر (سلسلة A)",
-            "is_correct": false
-          },
-          {
-            "text": "لافتات الحظر (سلسلة C)",
-            "is_correct": false
-          }
+          {"text": "B23 - ÙŠØ¬ÙˆØ² Ù„Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª ÙˆØ³Ø¨ÙŠØ¯ Ø¨ÙŠØ¯ÙŠÙ„ÙŠÙƒØ³ Ø§Ù„Ø§Ø³ØªÙ…Ø±Ø§Ø± Ù„Ù„Ø§Ù…Ø§Ù… Ø¹Ù†Ø¯ Ø§Ù„Ø§Ø­Ù…Ø±", "is_correct": true},
+          {"text": "B22 - ÙŠØ¬ÙˆØ² Ù„Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª ÙˆØ³Ø¨ÙŠØ¯ Ø¨ÙŠØ¯ÙŠÙ„ÙŠÙƒØ³ Ø§Ù„Ø§Ù†Ø¹Ø·Ø§Ù ÙŠÙ…ÙŠÙ†Ø§ Ø¹Ù†Ø¯ Ø§Ù„Ø§Ø­Ù…Ø±", "is_correct": false},
+          {"text": "F13 - Ø§Ù„Ø§Ø³ØªÙ…Ø±Ø§Ø± Ø§Ù„Ø²Ø§Ù…ÙŠØ§ Ù„Ù„Ø§Ù…Ø§Ù… Ù„Ø¬Ù…ÙŠØ¹ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª", "is_correct": false}
         ],
-        "explanation": "هذه اللافتة تنتمي إلى فئة 'لافتات الأولوية (سلسلة B)'. كل نوع من اللافتات له شكل ونظام ألوان محدد."
+        "explanation": "B23 = Ø§Ù„Ø§Ø³ØªÙ…Ø±Ø§Ø± Ù„Ù„Ø§Ù…Ø§Ù… Ø¹Ù†Ø¯ Ø§Ù„Ø§Ø­Ù…Ø± Ù„Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª ÙˆØ³Ø¨ÙŠØ¯ Ø¨ÙŠØ¯ÙŠÙ„ÙŠÙƒØ³. B22 = Ø§Ù„Ø§Ù†Ø¹Ø·Ø§Ù ÙŠÙ…ÙŠÙ†Ø§ Ø¹Ù†Ø¯ Ø§Ù„Ø§Ø­Ù…Ø±. F13 Ù„Ø§ÙØªØ© Ø§ØªØ¬Ø§Ù‡ Ø§Ù„Ø²Ø§Ù…ÙŠ Ù„Ø¬Ù…ÙŠØ¹ Ø§Ù„Ù…Ø³ØªØ®Ø¯Ù…ÙŠÙ† ÙˆÙ…Ø³ØªÙ‚Ù„Ø© Ø¹Ù† Ø§Ù„Ø¶ÙˆØ¡ Ø§Ù„Ø§Ø­Ù…Ø±."
       }
     }
   },
   {
     "question_id": "B23_Q03",
-    "type": "WHAT_MUST_YOU_DO",
-    "difficulty": "MEDIUM",
+    "type": "HAZARD_IDENTIFICATION",
+    "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE (MEDIUM): Replace with sign-specific question for production.",
     "i18n": {
       "NL": {
-        "question": "Wat moet u doen wanneer u dit voorrangsbord ziet?",
+        "question": "Op welk gevaar moet een fietser met bord B23 extra letten als hij rechtdoor rijdt bij rood?",
         "choices": [
-          {
-            "text": "De instructie van het bord correct opvolgen",
-            "is_correct": true
-          },
-          {
-            "text": "Het bord negeren als er geen ander verkeer is",
-            "is_correct": false
-          },
-          {
-            "text": "Flashen met de lichten om de voorrang te claimen",
-            "is_correct": false
-          }
+          {"text": "Voertuigen en voetgangers die vanuit de kruisende weg groen licht hebben en de rijbaan of het zebrapad oversteken", "is_correct": true},
+          {"text": "Auto s achter hem die hetzelfde recht hebben om rechtdoor te rijden bij rood", "is_correct": false},
+          {"text": "Er is geen extra gevaar; bord B23 waarborgt zijn veiligheid", "is_correct": false}
         ],
-        "explanation": "Voorrangsborden regelen de doorstroming op kruispunten. Het correct opvolgen is wettelijk verplicht."
+        "explanation": "Bij bord B23 heeft het verkeer op de kruisende weg veelal groen licht. De fietser moet deze weggebruikers laten voorgaan voordat hij het kruispunt ingaat."
       },
       "EN": {
-        "question": "What must you do when you see this priority sign?",
+        "question": "What hazard must a cyclist with sign B23 watch out for extra when going straight at red?",
         "choices": [
-          {
-            "text": "Correctly follow the instruction of the sign",
-            "is_correct": true
-          },
-          {
-            "text": "Ignore the sign if there is no other traffic",
-            "is_correct": false
-          },
-          {
-            "text": "Flash lights to claim priority",
-            "is_correct": false
-          }
+          {"text": "Vehicles and pedestrians from the crossing road who have a green light and are crossing the carriageway or zebra crossing", "is_correct": true},
+          {"text": "Cars behind them that have the same right to go straight at red", "is_correct": false},
+          {"text": "There is no extra hazard; sign B23 ensures their safety", "is_correct": false}
         ],
-        "explanation": "Priority signs regulate traffic flow at intersections. Correctly following them is legally mandatory."
+        "explanation": "At sign B23 the traffic on the crossing road often has a green light. The cyclist must let these road users pass before entering the junction."
       },
       "FR": {
-        "question": "Que devez-vous faire lorsque vous voyez ce panneau de priorité ?",
+        "question": "A quel danger un cycliste avec le panneau B23 doit-il faire particulierement attention lorsqu il va tout droit au rouge ?",
         "choices": [
-          {
-            "text": "Suivre correctement l'instruction du panneau",
-            "is_correct": true
-          },
-          {
-            "text": "Ignorer le panneau s'il n'y a pas d'autre circulation",
-            "is_correct": false
-          },
-          {
-            "text": "Faire des appels de phares pour réclamer la priorité",
-            "is_correct": false
-          }
+          {"text": "Vehicules et pietons venant de la route transversale qui ont le feu vert et traversent la chaussee ou le passage pieton", "is_correct": true},
+          {"text": "Voitures derriere lui qui ont le meme droit d aller tout droit au rouge", "is_correct": false},
+          {"text": "Il n y a pas de danger supplementaire ; le panneau B23 garantit sa securite", "is_correct": false}
         ],
-        "explanation": "Les panneaux de priorité régulent la circulation aux intersections. Leur respect est légalement obligatoire."
+        "explanation": "Au panneau B23, le trafic sur la route transversale a souvent le feu vert. Le cycliste doit laisser passer ces usagers avant d entrer dans le carrefour."
       },
       "AR": {
-        "question": "ماذا يجب أن تفعل عندما ترى لافتة الأولوية هذه؟",
+        "question": "Ù…Ø§ Ø§Ù„Ø®Ø·Ø± Ø§Ù„Ø°ÙŠ ÙŠØ¬Ø¨ Ø¹Ù„Ù‰ Ø±Ø§ÙƒØ¨ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø© Ù…Ø¹ Ù„Ø§ÙØªØ© B23 Ø§Ù„Ø§Ù†ØªØ¨Ø§Ù‡ Ø§Ù„ÙŠÙ‡ Ø§Ø¶Ø§ÙÙŠØ§ Ø¹Ù†Ø¯ Ø§Ù„Ø§Ø³ØªÙ…Ø±Ø§Ø± Ù„Ù„Ø§Ù…Ø§Ù… Ø¨Ø§Ù„Ø§Ø­Ù…Ø±ØŸ",
         "choices": [
-          {
-            "text": "اتباع تعليمات اللافتة بشكل صحيح",
-            "is_correct": true
-          },
-          {
-            "text": "تجاهل اللافتة إذا لم يكن هناك مرور آخر",
-            "is_correct": false
-          },
-          {
-            "text": "تشغيل وميض الأضواء للمطالبة بالأولوية",
-            "is_correct": false
-          }
+          {"text": "Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª ÙˆØ§Ù„Ù…Ø´Ø§Ø© Ù…Ù† Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ù…ØªÙ‚Ø§Ø·Ø¹ Ø§Ù„Ø°ÙŠÙ† Ù„Ø¯ÙŠÙ‡Ù… Ø¶ÙˆØ¡ Ø§Ø®Ø¶Ø± ÙˆÙŠØ¹Ø¨Ø±ÙˆÙ† Ø§Ù„Ù…Ø³Ø§Ø± Ø§Ùˆ Ù…Ù…Ø± Ø§Ù„Ù…Ø´Ø§Ø©", "is_correct": true},
+          {"text": "Ø§Ù„Ø³ÙŠØ§Ø±Ø§Øª Ø®Ù„ÙÙ‡ Ø§Ù„ØªÙŠ Ù„Ù‡Ø§ Ù†ÙØ³ Ø§Ù„Ø­Ù‚ ÙÙŠ Ø§Ù„Ø§Ø³ØªÙ…Ø±Ø§Ø± Ù„Ù„Ø§Ù…Ø§Ù… Ø¨Ø§Ù„Ø§Ø­Ù…Ø±", "is_correct": false},
+          {"text": "Ù„Ø§ ÙŠÙˆØ¬Ø¯ Ø®Ø·Ø± Ø§Ø¶Ø§ÙÙŠØ› Ù„Ø§ÙØªØ© B23 ØªØ¶Ù…Ù† Ø³Ù„Ø§Ù…ØªÙ‡", "is_correct": false}
         ],
-        "explanation": "تنظم لافتات الأولوية حركة المرور عند التقاطعات. الالتزام بها إلزامي قانونياً."
+        "explanation": "Ø¹Ù†Ø¯ Ù„Ø§ÙØªØ© B23 ØºØ§Ù„Ø¨Ø§ Ù…Ø§ ÙŠÙƒÙˆÙ† Ù„Ù„Ù…Ø±ÙˆØ± Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ù…ØªÙ‚Ø§Ø·Ø¹ Ø¶ÙˆØ¡ Ø§Ø®Ø¶Ø±. ÙŠØ¬Ø¨ Ø¹Ù„Ù‰ Ø±Ø§ÙƒØ¨ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø© Ø§Ù† ÙŠØªØ±ÙƒÙ‡Ù… ÙŠÙ…Ø±ÙˆÙ† Ù‚Ø¨Ù„ Ø¯Ø®ÙˆÙ„ Ø§Ù„ØªÙ‚Ø§Ø·Ø¹."
       }
     }
   },
@@ -251,2010 +140,214 @@
     "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE (MEDIUM): Replace with sign-specific question for production.",
     "i18n": {
       "NL": {
-        "question": "Wat is de gevolg van het niet naleven van een voorrangsbord?",
+        "question": "U bent een fietser bij bord B23 en het licht staat op rood. Wat moet u doen voordat u rechtdoor rijdt?",
         "choices": [
-          {
-            "text": "Zware overtreding met boete en mogelijke schorsing van het rijbewijs",
-            "is_correct": true
-          },
-          {
-            "text": "Enkel een mondelinge waarschuwing van de politie",
-            "is_correct": false
-          },
-          {
-            "text": "Geen straf als er geen ongeluk is",
-            "is_correct": false
-          }
+          {"text": "Controleren of de kruisende weg vrij is en voorrang verlenen aan alle voertuigen en voetgangers met groen licht", "is_correct": true},
+          {"text": "Gewoon doorrijden want bord B23 heft de voorrangsregels op voor fietsers", "is_correct": false},
+          {"text": "Enkel op auto s letten; voetgangers hebben geen voorrang op fietsers", "is_correct": false}
         ],
-        "explanation": "Voorrangsborden niet respecteren is een zware overtreding die kan leiden tot hoge boetes en puntenaftrek."
+        "explanation": "Bord B23 ontheft de fietser niet van de voorrangsplicht. Hij moet de kruisende weg goed bekijken en wachten totdat hij veilig en zonder hinder van anderen kan oversteken."
       },
       "EN": {
-        "question": "What is the consequence of not complying with a priority sign?",
+        "question": "You are a cyclist at sign B23 and the light is red. What must you do before going straight?",
         "choices": [
-          {
-            "text": "Serious violation with fine and possible driver's license suspension",
-            "is_correct": true
-          },
-          {
-            "text": "Only an oral warning from the police",
-            "is_correct": false
-          },
-          {
-            "text": "No penalty if no accident occurred",
-            "is_correct": false
-          }
+          {"text": "Check that the crossing road is clear and give way to all vehicles and pedestrians with a green light", "is_correct": true},
+          {"text": "Just ride through because sign B23 suspends the right-of-way rules for cyclists", "is_correct": false},
+          {"text": "Only watch out for cars; pedestrians do not have priority over cyclists", "is_correct": false}
         ],
-        "explanation": "Not respecting priority signs is a serious violation leading to high fines and licence points deduction."
+        "explanation": "Sign B23 does not release the cyclist from the duty to give way. They must carefully check the crossing road and wait until they can cross safely without hindering others."
       },
       "FR": {
-        "question": "Quelle est la conséquence du non-respect d'un panneau de priorité ?",
+        "question": "Vous etes cycliste au panneau B23 et le feu est rouge. Que devez-vous faire avant d aller tout droit ?",
         "choices": [
-          {
-            "text": "Infraction grave avec amende et suspension possible du permis de conduire",
-            "is_correct": true
-          },
-          {
-            "text": "Seulement un avertissement oral de la police",
-            "is_correct": false
-          },
-          {
-            "text": "Pas de peine s'il n'y a pas eu d'accident",
-            "is_correct": false
-          }
+          {"text": "Verifier que la route transversale est degagee et ceder le passage a tous les vehicules et pietons ayant le feu vert", "is_correct": true},
+          {"text": "Passer directement car le panneau B23 suspend les regles de priorite pour les cyclistes", "is_correct": false},
+          {"text": "Ne surveiller que les voitures ; les pietons n ont pas la priorite sur les cyclistes", "is_correct": false}
         ],
-        "explanation": "Ne pas respecter les panneaux de priorité est une infraction grave menant à de lourdes amendes."
+        "explanation": "Le panneau B23 ne dispense pas le cycliste de l obligation de ceder le passage. Il doit bien verifier la route transversale et attendre de pouvoir traverser en toute securite."
       },
       "AR": {
-        "question": "ما هي عواقب عدم الامتثال للافتة الأولوية؟",
+        "question": "Ø§Ù†Øª Ø±Ø§ÙƒØ¨ Ø¯Ø±Ø§Ø¬Ø© Ø¹Ù†Ø¯ Ù„Ø§ÙØªØ© B23 ÙˆØ§Ù„Ø¶ÙˆØ¡ Ø§Ø­Ù…Ø±. Ù…Ø§Ø°Ø§ ÙŠØ¬Ø¨ Ø¹Ù„ÙŠÙƒ ÙØ¹Ù„Ù‡ Ù‚Ø¨Ù„ Ø§Ù„Ø§Ø³ØªÙ…Ø±Ø§Ø± Ù„Ù„Ø§Ù…Ø§Ù…ØŸ",
         "choices": [
-          {
-            "text": "مخالفة خطيرة مع غرامة وسحب محتمل لرخصة القيادة",
-            "is_correct": true
-          },
-          {
-            "text": "تحذير شفهي فقط من الشرطة",
-            "is_correct": false
-          },
-          {
-            "text": "لا عقوبة إذا لم يحدث حادث",
-            "is_correct": false
-          }
+          {"text": "Ø§Ù„ØªØ­Ù‚Ù‚ Ù…Ù† Ø®Ù„Ùˆ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ù…ØªÙ‚Ø§Ø·Ø¹ ÙˆØ§Ø¹Ø·Ø§Ø¡ Ø§Ù„Ø§ÙˆÙ„ÙˆÙŠØ© Ù„Ø¬Ù…ÙŠØ¹ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª ÙˆØ§Ù„Ù…Ø´Ø§Ø© Ø°ÙˆÙŠ Ø§Ù„Ø¶ÙˆØ¡ Ø§Ù„Ø§Ø®Ø¶Ø±", "is_correct": true},
+          {"text": "Ø§Ù„Ù…Ø¶ÙŠ Ù„Ù„Ø§Ù…Ø§Ù… Ù…Ø¨Ø§Ø´Ø±Ø© Ù„Ø§Ù† Ù„Ø§ÙØªØ© B23 ØªØ¹Ù„Ù‚ Ù‚ÙˆØ§Ø¹Ø¯ Ø§Ù„Ø§ÙˆÙ„ÙˆÙŠØ© Ø¨Ø§Ù„Ù†Ø³Ø¨Ø© Ù„Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª", "is_correct": false},
+          {"text": "Ø§Ù„Ø§Ù†ØªØ¨Ø§Ù‡ Ù„Ù„Ø³ÙŠØ§Ø±Ø§Øª ÙØ­Ø³Ø¨Ø› Ø§Ù„Ù…Ø´Ø§Ø© Ù„ÙŠØ³ Ù„Ù‡Ù… Ø§ÙˆÙ„ÙˆÙŠØ© Ø¹Ù„Ù‰ Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª", "is_correct": false}
         ],
-        "explanation": "عدم احترام لافتات الأولوية مخالفة خطيرة تؤدي إلى غرامات كبيرة وخصم نقاط من رخصة القيادة."
+        "explanation": "Ù„Ø§ÙØªØ© B23 Ù„Ø§ ØªØ¹ÙÙŠ Ø±Ø§ÙƒØ¨ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø© Ù…Ù† ÙˆØ§Ø¬Ø¨ Ø§Ø¹Ø·Ø§Ø¡ Ø§Ù„Ø§ÙˆÙ„ÙˆÙŠØ©. ÙŠØ¬Ø¨ Ø§Ù† ÙŠØªÙØ­Øµ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ù…ØªÙ‚Ø§Ø·Ø¹ Ø¬ÙŠØ¯Ø§ ÙˆÙŠÙ†ØªØ¸Ø± Ø­ØªÙ‰ ÙŠØªÙ…ÙƒÙ† Ù…Ù† Ø§Ù„Ø¹Ø¨ÙˆØ± Ø¨Ø§Ù…Ø§Ù† Ø¯ÙˆÙ† Ø§Ù† ÙŠØ¹ÙŠÙ‚ Ø§Ù„Ø§Ø®Ø±ÙŠÙ†."
       }
     }
   },
   {
     "question_id": "B23_Q05",
-    "type": "IS_IT_ALLOWED",
-    "difficulty": "HARD",
-    "is_critical": true,
+    "type": "DRIVER_ACTION",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE (HARD): Replace with sign-specific question for production.",
     "i18n": {
       "NL": {
-        "question": "Bent u wettelijk verplicht dit voorrangsbord te respecteren?",
+        "question": "U rijdt met uw auto en heeft groen licht op een kruispunt met bord B23. U ziet een fietser die rechtdoor wil rijden vanuit de fietsstrook. Wat doet u?",
         "choices": [
-          {
-            "text": "Ja, voorrangsborden zijn wettelijk bindend en moeten altijd worden nageleefd",
-            "is_correct": true
-          },
-          {
-            "text": "Nee, voorrangsborden zijn aanbevelingen die u naar eigen inzicht kunt volgen",
-            "is_correct": false
-          }
+          {"text": "U rijdt normaal door; de fietser moet u voorrang geven want u heeft groen licht", "is_correct": true},
+          {"text": "U stopt om de fietser voor te laten gaan want bord B23 geeft hem altijd voorrang", "is_correct": false},
+          {"text": "U versnelt om het kruispunt snel te verlaten zodat de fietser kan oversteken", "is_correct": false}
         ],
-        "explanation": "Voorrangsborden zijn wettelijk bindend voor alle weggebruikers. Het niet naleven is een overtreding die kan leiden tot boetes en puntenaftrek."
+        "explanation": "Als automobilist met groen licht heeft u voorrang. De fietser met bord B23 is verplicht u voorrang te verlenen. U hoeft niet te stoppen maar moet alert blijven."
       },
       "EN": {
-        "question": "Are you legally required to respect this priority sign?",
+        "question": "You are driving your car and have a green light at a junction with sign B23. You see a cyclist who wants to go straight from the cycle lane. What do you do?",
         "choices": [
-          {
-            "text": "Yes, priority signs are legally binding and must always be complied with",
-            "is_correct": true
-          },
-          {
-            "text": "No, priority signs are recommendations that you may follow at your own discretion",
-            "is_correct": false
-          }
+          {"text": "You continue normally; the cyclist must give way to you because you have a green light", "is_correct": true},
+          {"text": "You stop to let the cyclist pass because sign B23 always gives them priority", "is_correct": false},
+          {"text": "You accelerate to leave the junction quickly so the cyclist can cross", "is_correct": false}
         ],
-        "explanation": "Priority signs are legally binding for all road users. Non-compliance is a violation that can lead to fines and licence points deduction."
+        "explanation": "As a car driver with a green light you have priority. The cyclist with sign B23 is obliged to give way to you. You do not need to stop but must remain alert."
       },
       "FR": {
-        "question": "Êtes-vous légalement obligé de respecter ce panneau de priorité ?",
+        "question": "Vous conduisez votre voiture et avez le feu vert a un carrefour avec le panneau B23. Vous voyez un cycliste qui veut aller tout droit depuis la piste cyclable. Que faites-vous ?",
         "choices": [
-          {
-            "text": "Oui, les panneaux de priorité sont juridiquement contraignants et doivent toujours être respectés",
-            "is_correct": true
-          },
-          {
-            "text": "Non, les panneaux de priorité sont des recommandations que vous pouvez suivre à votre discrétion",
-            "is_correct": false
-          }
+          {"text": "Vous continuez normalement ; le cycliste doit vous ceder le passage car vous avez le feu vert", "is_correct": true},
+          {"text": "Vous vous arretez pour laisser passer le cycliste car le panneau B23 lui donne toujours la priorite", "is_correct": false},
+          {"text": "Vous accelerez pour quitter rapidement le carrefour afin que le cycliste puisse traverser", "is_correct": false}
         ],
-        "explanation": "Les panneaux de priorité sont juridiquement contraignants pour tous les usagers. Le non-respect est une infraction pouvant mener à des amendes."
+        "explanation": "En tant que conducteur avec le feu vert, vous avez la priorite. Le cycliste avec le panneau B23 est oblige de vous ceder le passage. Vous n avez pas besoin de vous arreter mais devez rester vigilant."
       },
       "AR": {
-        "question": "هل أنت ملزم قانونياً باحترام لافتة الأولوية هذه؟",
+        "question": "Ø§Ù†Øª ØªÙ‚ÙˆØ¯ Ø³ÙŠØ§Ø±ØªÙƒ ÙˆÙ„Ø¯ÙŠÙƒ Ø¶ÙˆØ¡ Ø§Ø®Ø¶Ø± Ø¹Ù†Ø¯ ØªÙ‚Ø§Ø·Ø¹ Ù…Ø¹ Ù„Ø§ÙØªØ© B23. ØªØ±Ù‰ Ø±Ø§ÙƒØ¨ Ø¯Ø±Ø§Ø¬Ø© ÙŠØ±ÙŠØ¯ Ø§Ù„Ø§Ø³ØªÙ…Ø±Ø§Ø± Ù„Ù„Ø§Ù…Ø§Ù… Ù…Ù† Ù…Ø³Ø§Ø± Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª. Ù…Ø§Ø°Ø§ ØªÙØ¹Ù„ØŸ",
         "choices": [
-          {
-            "text": "نعم، لافتات الأولوية ملزمة قانونياً ويجب الالتزام بها دائماً",
-            "is_correct": true
-          },
-          {
-            "text": "لا، لافتات الأولوية توصيات يمكنك اتباعها وفق تقديرك الخاص",
-            "is_correct": false
-          }
+          {"text": "ØªØ³ØªÙ…Ø± Ø¨Ø§Ù„Ù‚ÙŠØ§Ø¯Ø© Ø¨Ø´ÙƒÙ„ Ø·Ø¨ÙŠØ¹ÙŠØ› Ø±Ø§ÙƒØ¨ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø© ÙŠØ¬Ø¨ Ø§Ù† ÙŠØ¹Ø·ÙŠÙƒ Ø§Ù„Ø§ÙˆÙ„ÙˆÙŠØ© Ù„Ø§Ù† Ù„Ø¯ÙŠÙƒ Ø¶ÙˆØ¡ Ø§Ø®Ø¶Ø±", "is_correct": true},
+          {"text": "ØªØªÙˆÙ‚Ù Ù„ØªØ¯Ø¹ Ø±Ø§ÙƒØ¨ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø© ÙŠÙ…Ø± Ù„Ø§Ù† Ù„Ø§ÙØªØ© B23 ØªÙ…Ù†Ø­Ù‡ Ø§Ù„Ø§ÙˆÙ„ÙˆÙŠØ© Ø¯Ø§Ø¦Ù…Ø§", "is_correct": false},
+          {"text": "ØªØ³Ø±Ø¹ Ù„Ù…ØºØ§Ø¯Ø±Ø© Ø§Ù„ØªÙ‚Ø§Ø·Ø¹ Ø¨Ø³Ø±Ø¹Ø© Ø­ØªÙ‰ ÙŠØªÙ…ÙƒÙ† Ø±Ø§ÙƒØ¨ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø© Ù…Ù† Ø§Ù„Ø¹Ø¨ÙˆØ±", "is_correct": false}
         ],
-        "explanation": "لافتات الأولوية ملزمة قانونياً لجميع مستخدمي الطريق. عدم الامتثال مخالفة قد تؤدي إلى غرامات وخصم نقاط من رخصة القيادة."
+        "explanation": "Ø¨ØµÙØªÙƒ Ø³Ø§Ø¦Ù‚ Ø³ÙŠØ§Ø±Ø© ÙˆÙ„Ø¯ÙŠÙƒ Ø¶ÙˆØ¡ Ø§Ø®Ø¶Ø± ÙØ§Ù†Øª ØªÙ…Ù„Ùƒ Ø§Ù„Ø§ÙˆÙ„ÙˆÙŠØ©. Ø±Ø§ÙƒØ¨ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø© Ù…Ø¹ Ù„Ø§ÙØªØ© B23 Ù…Ù„Ø²Ù… Ø¨Ø¥Ø¹Ø·Ø§Ø¦Ùƒ Ø§Ù„Ø§ÙˆÙ„ÙˆÙŠØ©. Ù„Ø³Øª Ø¨Ø­Ø§Ø¬Ø© Ù„Ù„ØªÙˆÙ‚Ù Ù„ÙƒÙ† ÙŠØ¬Ø¨ Ø§Ù„Ø¨Ù‚Ø§Ø¡ ÙŠÙ‚Ø¸Ø§."
       }
     }
   },
   {
     "question_id": "B23_Q06",
-    "type": "WHAT_DOES_IT_MEAN",
-    "difficulty": "EASY",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat betekent bord B23?",
+        "question": "Wat is het verschil tussen bord B22 en bord B23?",
         "choices": [
-          {
-            "text": "Fietsers en speed pedelecs mogen bij een rood licht rechtdoor rijden mits ze voorrang verlenen aan het overige verkeer",
-            "is_correct": true
-          },
-          {
-            "text": "Alle voertuigen mogen rechtdoor bij rood",
-            "is_correct": false
-          },
-          {
-            "text": "Alleen bromfietsers mogen rechtdoor bij rood",
-            "is_correct": false
-          }
+          {"text": "B22 staat toe rechtsaf te slaan bij rood; B23 staat toe rechtdoor te rijden bij rood, maar beide vereisen voorrang verlenen", "is_correct": true},
+          {"text": "B22 is voor alle weggebruikers; B23 is enkel voor fietsers", "is_correct": false},
+          {"text": "B22 en B23 betekenen hetzelfde: vrij doorrijden bij rood voor fietsers", "is_correct": false}
         ],
-        "explanation": "B23 staat fietsers en speed pedelecs toe bij rood rechtdoor te rijden, op voorwaarde dat ze voorrang verlenen aan al het verkeer met groen."
+        "explanation": "B22 en B23 zijn twee verschillende borden voor fietsers en speed pedelecs. B22 = rechtsaf bij rood. B23 = rechtdoor bij rood. In beide gevallen geldt de voorrangsplicht."
       },
       "EN": {
-        "question": "What does sign B23 mean?",
+        "question": "What is the difference between sign B22 and sign B23?",
         "choices": [
-          {
-            "text": "Cyclists and speed pedelecs may go straight at a red light provided they give way to other traffic",
-            "is_correct": true
-          },
-          {
-            "text": "All vehicles may go straight at red",
-            "is_correct": false
-          },
-          {
-            "text": "Only mopeds may go straight at red",
-            "is_correct": false
-          }
+          {"text": "B22 allows turning right at red; B23 allows going straight at red, but both require giving way", "is_correct": true},
+          {"text": "B22 is for all road users; B23 is only for cyclists", "is_correct": false},
+          {"text": "B22 and B23 mean the same thing: free passage at red for cyclists", "is_correct": false}
         ],
-        "explanation": "B23 allows cyclists and speed pedelecs to go straight at red, on condition they give way to all traffic with green."
+        "explanation": "B22 and B23 are two different signs for cyclists and speed pedelecs. B22 = turn right at red. B23 = go straight at red. In both cases the duty to give way applies."
       },
       "FR": {
-        "question": "Que signifie le panneau B23 ?",
+        "question": "Quelle est la difference entre le panneau B22 et le panneau B23 ?",
         "choices": [
-          {
-            "text": "Les cyclistes et speed pedelecs peuvent aller tout droit au feu rouge à condition de céder le passage au trafic ayant le vert",
-            "is_correct": true
-          },
-          {
-            "text": "Tous les véhicules peuvent aller tout droit au rouge",
-            "is_correct": false
-          },
-          {
-            "text": "Seuls les cyclomoteurs peuvent aller tout droit au rouge",
-            "is_correct": false
-          }
+          {"text": "B22 permet de tourner a droite au rouge ; B23 permet d aller tout droit au rouge, mais les deux exigent de ceder le passage", "is_correct": true},
+          {"text": "B22 s applique a tous les usagers ; B23 s applique uniquement aux cyclistes", "is_correct": false},
+          {"text": "B22 et B23 signifient la meme chose : passage libre au rouge pour les cyclistes", "is_correct": false}
         ],
-        "explanation": "B23 permet aux cyclistes et speed pedelecs d'aller tout droit au rouge, à condition de céder le passage à tout trafic ayant le vert."
+        "explanation": "B22 et B23 sont deux panneaux differents pour les cyclistes et speed pedelecs. B22 = tourner a droite au rouge. B23 = aller tout droit au rouge. Dans les deux cas l obligation de ceder le passage s applique."
       },
       "AR": {
-        "question": "ماذا تعني اللافتة B23؟",
+        "question": "Ù…Ø§ Ø§Ù„ÙØ±Ù‚ Ø¨ÙŠÙ† Ù„Ø§ÙØªØ© B22 ÙˆÙ„Ø§ÙØªØ© B23ØŸ",
         "choices": [
-          {
-            "text": "الدراجون وسبيد بيدليك يمكنهم السير مباشرةً عند الضوء الأحمر شريطة إعطاء الأولوية لبقية حركة المرور",
-            "is_correct": true
-          },
-          {
-            "text": "جميع المركبات يمكنها السير مباشرةً عند الأحمر",
-            "is_correct": false
-          },
-          {
-            "text": "فقط دراجات الموبايل يمكنها السير مباشرةً عند الأحمر",
-            "is_correct": false
-          }
+          {"text": "B22 ØªØ³Ù…Ø­ Ø¨Ø§Ù„Ø§Ù†Ø¹Ø·Ø§Ù ÙŠÙ…ÙŠÙ†Ø§ Ø¹Ù†Ø¯ Ø§Ù„Ø§Ø­Ù…Ø±Ø› B23 ØªØ³Ù…Ø­ Ø¨Ø§Ù„Ø§Ø³ØªÙ…Ø±Ø§Ø± Ù„Ù„Ø§Ù…Ø§Ù… Ø¹Ù†Ø¯ Ø§Ù„Ø§Ø­Ù…Ø±ØŒ Ù„ÙƒÙ† ÙƒÙ„ØªÙŠÙ‡Ù…Ø§ ØªØ´ØªØ±Ø·Ø§Ù† Ø§Ø¹Ø·Ø§Ø¡ Ø§Ù„Ø§ÙˆÙ„ÙˆÙŠØ©", "is_correct": true},
+          {"text": "B22 Ù„Ø¬Ù…ÙŠØ¹ Ù…Ø³ØªØ®Ø¯Ù…ÙŠ Ø§Ù„Ø·Ø±ÙŠÙ‚Ø› B23 Ù„Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª ÙØ­Ø³Ø¨", "is_correct": false},
+          {"text": "B22 ÙˆB23 ØªØ¹Ù†ÙŠØ§Ù† Ù†ÙØ³ Ø§Ù„Ø´ÙŠØ¡: Ø¹Ø¨ÙˆØ± Ø­Ø± Ø¨Ø§Ù„Ø§Ø­Ù…Ø± Ù„Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª", "is_correct": false}
         ],
-        "explanation": "B23 تسمح للدراجين وسبيد بيدليك بالسير مباشرةً عند الأحمر، بشرط إعطاء الأولوية لجميع المرور الذي لديه الأخضر."
+        "explanation": "B22 ÙˆB23 Ù„Ø§ÙØªØªØ§Ù† Ù…Ø®ØªÙ„ÙØªØ§Ù† Ù„Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª ÙˆØ³Ø¨ÙŠØ¯ Ø¨ÙŠØ¯ÙŠÙ„ÙŠÙƒØ³. B22 = Ø§Ù„Ø§Ù†Ø¹Ø·Ø§Ù ÙŠÙ…ÙŠÙ†Ø§ Ø¹Ù†Ø¯ Ø§Ù„Ø§Ø­Ù…Ø±. B23 = Ø§Ù„Ø§Ø³ØªÙ…Ø±Ø§Ø± Ù„Ù„Ø§Ù…Ø§Ù… Ø¹Ù†Ø¯ Ø§Ù„Ø§Ø­Ù…Ø±. ÙÙŠ ÙƒÙ„ØªØ§ Ø§Ù„Ø­Ø§Ù„ØªÙŠÙ† ÙŠØ·Ø¨Ù‚ Ø§Ù„ØªØ²Ø§Ù… Ø§Ø¹Ø·Ø§Ø¡ Ø§Ù„Ø§ÙˆÙ„ÙˆÙŠØ©."
       }
     }
   },
   {
     "question_id": "B23_Q07",
-    "type": "TRUE_OR_FALSE",
-    "difficulty": "EASY",
-    "is_critical": false,
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Waar of niet waar: B23 is het zusterbordje van B22, maar dan voor rechtdoor rijden in plaats van rechtsaf slaan.",
+        "question": "U bent een autobestuurder en rijdt op een weg met bord B23. Mag u ook rechtdoor rijden bij rood op basis van dit bord?",
         "choices": [
-          {
-            "text": "Waar – B22 = rechtsaf, B23 = rechtdoor, beide bij rood voor fietsers/speed pedelecs",
-            "is_correct": true
-          },
-          {
-            "text": "Niet waar – ze hebben niets met elkaar te maken",
-            "is_correct": false
-          }
+          {"text": "Nee, bord B23 geldt uitsluitend voor fietsers en speed pedelecs en geeft autobestuurders geen enkel recht", "is_correct": true},
+          {"text": "Ja, bord B23 geldt voor alle weggebruikers in de rechtdoorstrook", "is_correct": false}
         ],
-        "explanation": "Waar. B22 staat fietsers toe rechtsaf te slaan bij rood; B23 staat hen toe rechtdoor te rijden bij rood."
+        "explanation": "Bord B23 richt zich enkel tot fietsers en speed pedelecs. Een autobestuurder moet altijd het rode licht respecteren en heeft geen recht op de uitzondering van B23."
       },
       "EN": {
-        "question": "True or false: B23 is the sister sign of B22, but for going straight instead of turning right.",
+        "question": "You are a car driver on a road with sign B23. May you also go straight at red based on this sign?",
         "choices": [
-          {
-            "text": "True – B22 = right turn, B23 = straight, both at red for cyclists/speed pedelecs",
-            "is_correct": true
-          },
-          {
-            "text": "False – they have nothing to do with each other",
-            "is_correct": false
-          }
+          {"text": "No, sign B23 exclusively applies to cyclists and speed pedelecs and gives car drivers no rights at all", "is_correct": true},
+          {"text": "Yes, sign B23 applies to all road users in the straight-ahead lane", "is_correct": false}
         ],
-        "explanation": "True. B22 allows cyclists to turn right at red; B23 allows them to go straight at red."
+        "explanation": "Sign B23 is directed only at cyclists and speed pedelecs. A car driver must always respect the red light and has no entitlement to the B23 exception."
       },
       "FR": {
-        "question": "Vrai ou faux : B23 est le panneau frère de B22, mais pour aller tout droit au lieu de tourner à droite.",
+        "question": "Vous etes conducteur automobile sur une route avec le panneau B23. Pouvez-vous vous aussi aller tout droit au rouge en vous basant sur ce panneau ?",
         "choices": [
-          {
-            "text": "Vrai – B22 = droite, B23 = tout droit, les deux au rouge pour les cyclistes/speed pedelecs",
-            "is_correct": true
-          },
-          {
-            "text": "Faux – ils n'ont rien à voir l'un avec l'autre",
-            "is_correct": false
-          }
+          {"text": "Non, le panneau B23 s applique exclusivement aux cyclistes et speed pedelecs et ne donne aucun droit aux conducteurs automobiles", "is_correct": true},
+          {"text": "Oui, le panneau B23 s applique a tous les usagers dans la voie tout droit", "is_correct": false}
         ],
-        "explanation": "Vrai. B22 permet aux cyclistes de tourner à droite au rouge ; B23 leur permet d'aller tout droit au rouge."
+        "explanation": "Le panneau B23 s adresse uniquement aux cyclistes et speed pedelecs. Un conducteur automobile doit toujours respecter le feu rouge et n a pas droit a l exception B23."
       },
       "AR": {
-        "question": "صحيح أم خاطئ: B23 هي اللافتة الشقيقة للافتة B22، لكن للسير مباشرةً بدلاً من الانعطاف يميناً.",
+        "question": "Ø§Ù†Øª Ø³Ø§Ø¦Ù‚ Ø³ÙŠØ§Ø±Ø© Ø¹Ù„Ù‰ Ø·Ø±ÙŠÙ‚ Ù…Ø¹ Ù„Ø§ÙØªØ© B23. Ù‡Ù„ ÙŠØ¬ÙˆØ² Ù„Ùƒ Ø§ÙŠØ¶Ø§ Ø§Ù„Ø§Ø³ØªÙ…Ø±Ø§Ø± Ù„Ù„Ø§Ù…Ø§Ù… Ø¹Ù†Ø¯ Ø§Ù„Ø§Ø­Ù…Ø± Ø§Ø³ØªÙ†Ø§Ø¯Ø§ Ø§Ù„Ù‰ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ",
         "choices": [
-          {
-            "text": "صحيح – B22 = يميناً، B23 = مباشرةً، كلتاهما عند الأحمر للدراجين/سبيد بيدليك",
-            "is_correct": true
-          },
-          {
-            "text": "خاطئ – لا علاقة بينهما",
-            "is_correct": false
-          }
+          {"text": "Ù„Ø§ØŒ Ù„Ø§ÙØªØ© B23 ØªÙ†Ø·Ø¨Ù‚ Ø­ØµØ±Ø§ Ø¹Ù„Ù‰ Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª ÙˆØ³Ø¨ÙŠØ¯ Ø¨ÙŠØ¯ÙŠÙ„ÙŠÙƒØ³ ÙˆÙ„Ø§ ØªÙ…Ù†Ø­ Ø³Ø§Ø¦Ù‚ÙŠ Ø§Ù„Ø³ÙŠØ§Ø±Ø§Øª Ø§ÙŠ Ø­Ù‚", "is_correct": true},
+          {"text": "Ù†Ø¹Ù…ØŒ Ù„Ø§ÙØªØ© B23 ØªÙ†Ø·Ø¨Ù‚ Ø¹Ù„Ù‰ Ø¬Ù…ÙŠØ¹ Ù…Ø³ØªØ®Ø¯Ù…ÙŠ Ø§Ù„Ø·Ø±ÙŠÙ‚ ÙÙŠ Ù…Ø³Ø§Ø± Ø§Ù„Ø§Ø³ØªÙ…Ø±Ø§Ø± Ù„Ù„Ø§Ù…Ø§Ù…", "is_correct": false}
         ],
-        "explanation": "صحيح. B22 تسمح للدراجين بالانعطاف يميناً عند الأحمر؛ B23 تسمح لهم بالسير مباشرةً عند الأحمر."
+        "explanation": "Ù„Ø§ÙØªØ© B23 Ù…ÙˆØ¬Ù‡Ø© ÙÙ‚Ø· Ù„Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª ÙˆØ³Ø¨ÙŠØ¯ Ø¨ÙŠØ¯ÙŠÙ„ÙŠÙƒØ³. Ø³Ø§Ø¦Ù‚ Ø§Ù„Ø³ÙŠØ§Ø±Ø© ÙŠØ¬Ø¨ Ø¯Ø§Ø¦Ù…Ø§ Ø§Ø­ØªØ±Ø§Ù… Ø§Ù„Ø¶ÙˆØ¡ Ø§Ù„Ø§Ø­Ù…Ø± ÙˆÙ„ÙŠØ³ Ù„Ù‡ Ø§Ù„Ø­Ù‚ ÙÙŠ Ø§Ø³ØªØ«Ù†Ø§Ø¡ B23."
       }
     }
   },
   {
     "question_id": "B23_Q08",
     "type": "IS_IT_ALLOWED",
-    "difficulty": "EASY",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Bij bord B23 staat het licht op rood en er rijdt verkeer van links met groen. Mag u als fietser rechtdoor rijden?",
-        "choices": [
-          {
-            "text": "Nee, u moet wachten – het verkeer met groen heeft voorrang",
-            "is_correct": false
-          },
-          {
-            "text": "Ja, B23 geeft u altijd recht om rechtdoor te rijden bij rood",
-            "is_correct": true
-          }
-        ],
-        "explanation": "Nee. Ook bij B23 moet u altijd voorrang verlenen aan verkeer dat groen heeft. Wacht tot het kruispunt vrij is."
-      },
-      "EN": {
-        "question": "With sign B23 the light is red and traffic from the left has green. May you as a cyclist go straight?",
-        "choices": [
-          {
-            "text": "No, you must wait – traffic with green has priority",
-            "is_correct": false
-          },
-          {
-            "text": "Yes, B23 always gives you the right to go straight at red",
-            "is_correct": true
-          }
-        ],
-        "explanation": "No. Even with B23 you must always give way to traffic that has green. Wait until the intersection is clear."
-      },
-      "FR": {
-        "question": "Avec le panneau B23, le feu est rouge et du trafic venant de gauche a le vert. Pouvez-vous en tant que cycliste aller tout droit ?",
-        "choices": [
-          {
-            "text": "Non, vous devez attendre – le trafic ayant le vert a la priorité",
-            "is_correct": false
-          },
-          {
-            "text": "Oui, B23 vous donne toujours le droit d'aller tout droit au rouge",
-            "is_correct": true
-          }
-        ],
-        "explanation": "Non. Même avec B23, vous devez toujours céder le passage au trafic ayant le vert. Attendez que le carrefour soit libre."
-      },
-      "AR": {
-        "question": "مع اللافتة B23 الضوء أحمر وهناك مرور من اليسار لديه الأخضر. هل يمكنك كراكب دراجة السير مباشرةً؟",
-        "choices": [
-          {
-            "text": "لا، يجب عليك الانتظار – المرور الذي لديه الأخضر له الأولوية",
-            "is_correct": false
-          },
-          {
-            "text": "نعم، B23 تمنحك دائماً الحق في السير مباشرةً عند الأحمر",
-            "is_correct": true
-          }
-        ],
-        "explanation": "لا. حتى مع B23 يجب عليك دائماً إعطاء الأولوية للمرور الذي لديه الأخضر. انتظر حتى يكون التقاطع خالياً."
-      }
-    }
-  },
-  {
-    "question_id": "B23_Q09",
-    "type": "WHAT_SHOULD_YOU_DO",
-    "difficulty": "EASY",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Als fietser bij bord B23 staat het licht op rood en het kruispunt is volledig vrij. Wat doet u?",
-        "choices": [
-          {
-            "text": "U mag voorzichtig rechtdoor rijden na te controleren dat het veilig is",
-            "is_correct": true
-          },
-          {
-            "text": "U moet wachten tot het licht op groen staat",
-            "is_correct": false
-          },
-          {
-            "text": "U moet stoppen en afstappen",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Bij B23 en een vrij kruispunt mag u als fietser rechtdoor rijden bij rood – maar altijd eerst goed controleren."
-      },
-      "EN": {
-        "question": "As a cyclist with sign B23 the light is red and the junction is completely clear. What do you do?",
-        "choices": [
-          {
-            "text": "You may carefully go straight after checking it is safe",
-            "is_correct": true
-          },
-          {
-            "text": "You must wait until the light turns green",
-            "is_correct": false
-          },
-          {
-            "text": "You must stop and dismount",
-            "is_correct": false
-          }
-        ],
-        "explanation": "With B23 and a clear junction you may as a cyclist go straight at red – but always check first."
-      },
-      "FR": {
-        "question": "En tant que cycliste avec le panneau B23, le feu est rouge et le carrefour est complètement libre. Que faites-vous ?",
-        "choices": [
-          {
-            "text": "Vous pouvez aller prudemment tout droit après avoir vérifié que c'est sûr",
-            "is_correct": true
-          },
-          {
-            "text": "Vous devez attendre que le feu passe au vert",
-            "is_correct": false
-          },
-          {
-            "text": "Vous devez vous arrêter et descendre de vélo",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Avec B23 et un carrefour libre, en tant que cycliste, vous pouvez aller tout droit au rouge – mais vérifiez toujours d'abord."
-      },
-      "AR": {
-        "question": "كراكب دراجة مع اللافتة B23 الضوء أحمر والتقاطع خالٍ تماماً. ماذا تفعل؟",
-        "choices": [
-          {
-            "text": "يمكنك السير مباشرةً بحذر بعد التحقق من الأمان",
-            "is_correct": true
-          },
-          {
-            "text": "يجب عليك الانتظار حتى يصبح الضوء أخضر",
-            "is_correct": false
-          },
-          {
-            "text": "يجب عليك التوقف والنزول من الدراجة",
-            "is_correct": false
-          }
-        ],
-        "explanation": "مع B23 وتقاطع خالٍ يمكنك كراكب دراجة السير مباشرةً عند الأحمر – لكن تحقق دائماً أولاً."
-      }
-    }
-  },
-  {
-    "question_id": "B23_Q10",
-    "type": "WHAT_IS_PROHIBITED",
-    "difficulty": "EASY",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Wat is verboden voor een fietser bij bord B23?",
-        "choices": [
-          {
-            "text": "Links- of rechtsaf slaan bij rood (enkel rechtdoor is toegestaan via B23)",
-            "is_correct": true
-          },
-          {
-            "text": "Rechtdoor rijden bij rood wanneer het kruispunt vrij is",
-            "is_correct": false
-          },
-          {
-            "text": "Voorzichtig rijden bij slecht zicht",
-            "is_correct": false
-          }
-        ],
-        "explanation": "B23 staat alleen rechtdoor rijden toe bij rood. Links- of rechtsaf slaan bij rood blijft verboden (tenzij ook B22 aanwezig)."
-      },
-      "EN": {
-        "question": "What is prohibited for a cyclist at sign B23?",
-        "choices": [
-          {
-            "text": "Turning left or right at red (only going straight is permitted via B23)",
-            "is_correct": true
-          },
-          {
-            "text": "Going straight at red when the intersection is clear",
-            "is_correct": false
-          },
-          {
-            "text": "Riding carefully in poor visibility",
-            "is_correct": false
-          }
-        ],
-        "explanation": "B23 only permits going straight at red. Turning left or right at red remains prohibited (unless B22 is also present)."
-      },
-      "FR": {
-        "question": "Qu'est-il interdit à un cycliste au panneau B23 ?",
-        "choices": [
-          {
-            "text": "Tourner à gauche ou à droite au rouge (seul aller tout droit est permis via B23)",
-            "is_correct": true
-          },
-          {
-            "text": "Aller tout droit au rouge quand le carrefour est libre",
-            "is_correct": false
-          },
-          {
-            "text": "Rouler prudemment par mauvaise visibilité",
-            "is_correct": false
-          }
-        ],
-        "explanation": "B23 permet uniquement d'aller tout droit au rouge. Tourner à gauche ou à droite au rouge reste interdit (sauf si B22 est également présent)."
-      },
-      "AR": {
-        "question": "ما الذي يُحظر على راكب الدراجة عند اللافتة B23؟",
-        "choices": [
-          {
-            "text": "الانعطاف يساراً أو يميناً عند الأحمر (يُسمح فقط بالسير مباشرةً عبر B23)",
-            "is_correct": true
-          },
-          {
-            "text": "السير مباشرةً عند الأحمر عندما يكون التقاطع خالياً",
-            "is_correct": false
-          },
-          {
-            "text": "القيادة بحذر في الرؤية الضعيفة",
-            "is_correct": false
-          }
-        ],
-        "explanation": "B23 تسمح فقط بالسير مباشرةً عند الأحمر. الانعطاف يساراً أو يميناً عند الأحمر لا يزال محظوراً (ما لم تكن B22 موجودة أيضاً)."
-      }
-    }
-  },
-  {
-    "question_id": "B23_Q11",
-    "type": "WHICH_SIGN",
-    "difficulty": "EASY",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Welk bord staat fietsers toe bij rood RECHTSAF te slaan (als aanvulling op B23)?",
-        "choices": [
-          {
-            "text": "Bord B22 – fietsers mogen rechtsaf slaan bij rood",
-            "is_correct": true
-          },
-          {
-            "text": "Bord B23 – fietsers mogen rechtdoor bij rood",
-            "is_correct": false
-          },
-          {
-            "text": "Bord B1 – voorrang verlenen",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Bord B22 is het aanvullende bord dat fietsers toestaat bij rood rechtsaf te slaan."
-      },
-      "EN": {
-        "question": "Which sign allows cyclists to turn RIGHT at red (complementing B23)?",
-        "choices": [
-          {
-            "text": "Sign B22 – cyclists may turn right at red",
-            "is_correct": true
-          },
-          {
-            "text": "Sign B23 – cyclists may go straight at red",
-            "is_correct": false
-          },
-          {
-            "text": "Sign B1 – give way",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Sign B22 is the complementary sign that allows cyclists to turn right at red."
-      },
-      "FR": {
-        "question": "Quel panneau permet aux cyclistes de tourner À DROITE au rouge (en complément de B23) ?",
-        "choices": [
-          {
-            "text": "Panneau B22 – les cyclistes peuvent tourner à droite au rouge",
-            "is_correct": true
-          },
-          {
-            "text": "Panneau B23 – les cyclistes peuvent aller tout droit au rouge",
-            "is_correct": false
-          },
-          {
-            "text": "Panneau B1 – céder le passage",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Le panneau B22 est le panneau complémentaire qui permet aux cyclistes de tourner à droite au rouge."
-      },
-      "AR": {
-        "question": "أي لافتة تسمح للدراجين بالانعطاف يميناً عند الأحمر (مكملةً للافتة B23)؟",
-        "choices": [
-          {
-            "text": "اللافتة B22 – الدراجون يمكنهم الانعطاف يميناً عند الأحمر",
-            "is_correct": true
-          },
-          {
-            "text": "اللافتة B23 – الدراجون يمكنهم السير مباشرةً عند الأحمر",
-            "is_correct": false
-          },
-          {
-            "text": "اللافتة B1 – أعطِ الأولوية",
-            "is_correct": false
-          }
-        ],
-        "explanation": "اللافتة B22 هي اللافتة التكميلية التي تسمح للدراجين بالانعطاف يميناً عند الأحمر."
-      }
-    }
-  },
-  {
-    "question_id": "B23_Q12",
-    "type": "TRUE_OR_FALSE",
-    "difficulty": "EASY",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Waar of niet waar: Bij bord B23 mag een gewone bromfiets klasse A ook rechtdoor rijden bij rood.",
-        "choices": [
-          {
-            "text": "Niet waar – B23 geldt alleen voor fietsers en speed pedelecs, niet voor bromfietsen",
-            "is_correct": false
-          },
-          {
-            "text": "Waar – alle lichte voertuigen profiteren van B23",
-            "is_correct": true
-          }
-        ],
-        "explanation": "Niet waar. B23 is uitsluitend voor fietsers en speed pedelecs. Bromfietsen vallen hier niet onder."
-      },
-      "EN": {
-        "question": "True or false: With sign B23 an ordinary class A moped may also go straight at red.",
-        "choices": [
-          {
-            "text": "False – B23 applies only to cyclists and speed pedelecs, not mopeds",
-            "is_correct": false
-          },
-          {
-            "text": "True – all light vehicles benefit from B23",
-            "is_correct": true
-          }
-        ],
-        "explanation": "False. B23 applies exclusively to cyclists and speed pedelecs. Mopeds are not covered."
-      },
-      "FR": {
-        "question": "Vrai ou faux : Avec le panneau B23, un cyclomoteur ordinaire de classe A peut aussi aller tout droit au rouge.",
-        "choices": [
-          {
-            "text": "Faux – B23 s'applique uniquement aux cyclistes et speed pedelecs, pas aux cyclomoteurs",
-            "is_correct": false
-          },
-          {
-            "text": "Vrai – tous les véhicules légers bénéficient de B23",
-            "is_correct": true
-          }
-        ],
-        "explanation": "Faux. B23 s'applique exclusivement aux cyclistes et speed pedelecs. Les cyclomoteurs ne sont pas couverts."
-      },
-      "AR": {
-        "question": "صحيح أم خاطئ: مع اللافتة B23 يمكن للدراجة البخارية العادية الفئة A أيضاً السير مباشرةً عند الأحمر.",
-        "choices": [
-          {
-            "text": "خاطئ – B23 تنطبق فقط على الدراجين وسبيد بيدليك، وليس الدراجات البخارية",
-            "is_correct": false
-          },
-          {
-            "text": "صحيح – جميع المركبات الخفيفة تستفيد من B23",
-            "is_correct": true
-          }
-        ],
-        "explanation": "خاطئ. B23 تنطبق حصراً على الدراجين وسبيد بيدليك. الدراجات البخارية غير مشمولة."
-      }
-    }
-  },
-  {
-    "question_id": "B23_Q13",
-    "type": "WHAT_DOES_IT_MEAN",
-    "difficulty": "EASY",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Wanneer mag een fietser bij B23 géén gebruik maken van de uitzondering?",
-        "choices": [
-          {
-            "text": "Als er verkeer met groen aankomt van links, rechts of recht voor – dan moet hij wachten",
-            "is_correct": true
-          },
-          {
-            "text": "Als het licht al lang rood staat",
-            "is_correct": false
-          },
-          {
-            "text": "Als er geen andere fietsers zijn",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Bij elk verkeer met groen dat het kruispunt nadert, moet de fietser bij B23 wachten en voorrang verlenen."
-      },
-      "EN": {
-        "question": "When may a cyclist with B23 NOT use the exception?",
-        "choices": [
-          {
-            "text": "When traffic with green approaches from left, right or straight ahead – they must wait",
-            "is_correct": true
-          },
-          {
-            "text": "When the light has been red for a long time",
-            "is_correct": false
-          },
-          {
-            "text": "When there are no other cyclists",
-            "is_correct": false
-          }
-        ],
-        "explanation": "When any traffic with green approaches the intersection, the cyclist with B23 must wait and give way."
-      },
-      "FR": {
-        "question": "Quand un cycliste avec B23 ne peut-il PAS utiliser l'exception ?",
-        "choices": [
-          {
-            "text": "Quand du trafic ayant le vert arrive de gauche, droite ou en face – il doit attendre",
-            "is_correct": true
-          },
-          {
-            "text": "Quand le feu est rouge depuis longtemps",
-            "is_correct": false
-          },
-          {
-            "text": "Quand il n'y a pas d'autres cyclistes",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Quand tout trafic ayant le vert approche du carrefour, le cycliste avec B23 doit attendre et céder le passage."
-      },
-      "AR": {
-        "question": "متى لا يمكن لراكب الدراجة مع B23 استخدام الاستثناء؟",
-        "choices": [
-          {
-            "text": "عندما يقترب مرور لديه الأخضر من اليسار أو اليمين أو من الأمام – يجب عليه الانتظار",
-            "is_correct": true
-          },
-          {
-            "text": "عندما يكون الضوء أحمر منذ وقت طويل",
-            "is_correct": false
-          },
-          {
-            "text": "عندما لا يوجد دراجون آخرون",
-            "is_correct": false
-          }
-        ],
-        "explanation": "عندما يقترب أي مرور لديه الأخضر من التقاطع، يجب على راكب الدراجة مع B23 الانتظار وإعطاء الأولوية."
-      }
-    }
-  },
-  {
-    "question_id": "B23_Q14",
-    "type": "IS_IT_ALLOWED",
-    "difficulty": "EASY",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "U bent fietser bij bord B23. Het licht staat op oranje. Mag u rechtdoor rijden?",
-        "choices": [
-          {
-            "text": "Nee, B23 geldt alleen bij rood; bij oranje geldt de normale stopplicht",
-            "is_correct": false
-          },
-          {
-            "text": "Ja, bij oranje mag u ook rechtdoor via B23",
-            "is_correct": true
-          }
-        ],
-        "explanation": "Nee. B23 geldt uitsluitend voor rood licht. Bij oranje geldt de normale stoplicht-regel."
-      },
-      "EN": {
-        "question": "You are a cyclist at sign B23. The light is amber. May you go straight?",
-        "choices": [
-          {
-            "text": "No, B23 only applies at red; at amber the normal stop rule applies",
-            "is_correct": false
-          },
-          {
-            "text": "Yes, at amber you may also go straight via B23",
-            "is_correct": true
-          }
-        ],
-        "explanation": "No. B23 applies exclusively at red. At amber the normal traffic light rule applies."
-      },
-      "FR": {
-        "question": "Vous êtes cycliste au panneau B23. Le feu est orange. Pouvez-vous aller tout droit ?",
-        "choices": [
-          {
-            "text": "Non, B23 s'applique uniquement au rouge ; à l'orange la règle d'arrêt normale s'applique",
-            "is_correct": false
-          },
-          {
-            "text": "Oui, à l'orange vous pouvez aussi aller tout droit via B23",
-            "is_correct": true
-          }
-        ],
-        "explanation": "Non. B23 s'applique exclusivement au rouge. À l'orange la règle normale du feu de circulation s'applique."
-      },
-      "AR": {
-        "question": "أنت راكب دراجة عند اللافتة B23. الضوء أصفر. هل يمكنك السير مباشرةً؟",
-        "choices": [
-          {
-            "text": "لا، B23 تنطبق فقط عند الأحمر؛ عند الأصفر تنطبق قاعدة التوقف العادية",
-            "is_correct": false
-          },
-          {
-            "text": "نعم، عند الأصفر يمكنك أيضاً السير مباشرةً عبر B23",
-            "is_correct": true
-          }
-        ],
-        "explanation": "لا. B23 تنطبق حصراً عند الأحمر. عند الأصفر تنطبق قاعدة إشارة المرور العادية."
-      }
-    }
-  },
-  {
-    "question_id": "B23_Q15",
-    "type": "WHAT_SHOULD_YOU_DO",
-    "difficulty": "EASY",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Als fietser bij bord B23 rijdt u rechtdoor bij rood. Er staat een voetganger op het fietspad voor u. Wat doet u?",
-        "choices": [
-          {
-            "text": "Stop of wijk uit – de voetganger heeft voorrang op u ook al rijdt u via B23",
-            "is_correct": true
-          },
-          {
-            "text": "Rij door want u heeft het recht via B23",
-            "is_correct": false
-          },
-          {
-            "text": "Claxonneer de voetganger en rij door",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Voetgangers en kwetsbare gebruikers hebben altijd voorrang. Stop of wijk voldoende uit, ook bij B23."
-      },
-      "EN": {
-        "question": "As a cyclist with sign B23 you go straight at red. A pedestrian stands on the cycle path ahead of you. What do you do?",
-        "choices": [
-          {
-            "text": "Stop or swerve – the pedestrian has priority over you even though you are riding via B23",
-            "is_correct": true
-          },
-          {
-            "text": "Ride on as you have the right via B23",
-            "is_correct": false
-          },
-          {
-            "text": "Honk at the pedestrian and ride on",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Pedestrians and vulnerable users always have priority. Stop or give sufficient way, even with B23."
-      },
-      "FR": {
-        "question": "En tant que cycliste avec le panneau B23, vous allez tout droit au rouge. Un piéton se trouve sur la piste cyclable devant vous. Que faites-vous ?",
-        "choices": [
-          {
-            "text": "Arrêtez-vous ou déviez – le piéton a la priorité sur vous même si vous roulez via B23",
-            "is_correct": true
-          },
-          {
-            "text": "Continuez car vous avez le droit via B23",
-            "is_correct": false
-          },
-          {
-            "text": "Klaxonnez le piéton et continuez",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Les piétons et les usagers vulnérables ont toujours la priorité. Arrêtez-vous ou déviez suffisamment, même avec B23."
-      },
-      "AR": {
-        "question": "كراكب دراجة مع اللافتة B23 تسير مباشرةً عند الأحمر. مشاة يقف على مسار الدراجات أمامك. ماذا تفعل؟",
-        "choices": [
-          {
-            "text": "توقف أو انحرف – المشاة لديهم الأولوية عليك حتى لو كنت تسير عبر B23",
-            "is_correct": true
-          },
-          {
-            "text": "استمر لأن لديك الحق عبر B23",
-            "is_correct": false
-          },
-          {
-            "text": "أدق بوق للمشاة واستمر",
-            "is_correct": false
-          }
-        ],
-        "explanation": "المشاة والمستخدمون الضعفاء دائماً لهم الأولوية. توقف أو انحرف بما يكفي، حتى مع B23."
-      }
-    }
-  },
-  {
-    "question_id": "B23_Q16",
-    "type": "WHAT_SHOULD_YOU_DO",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Bij bord B23 rijdt u als fietser rechtdoor bij rood. Er nadert een tram van rechts. Wat doet u?",
-        "choices": [
-          {
-            "text": "Wacht tot de tram voorbij is – trams hebben altijd absolute voorrang boven B23",
-            "is_correct": true
-          },
-          {
-            "text": "Rij snel door voor de tram",
-            "is_correct": false
-          },
-          {
-            "text": "Geef voorrang teken en rij door",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Trams hebben absolute voorrang op alle weggebruikers, ook op fietsers die van B23 gebruik maken."
-      },
-      "EN": {
-        "question": "With sign B23 you go straight at red as a cyclist. A tram approaches from the right. What do you do?",
-        "choices": [
-          {
-            "text": "Wait for the tram to pass – trams always have absolute priority over B23",
-            "is_correct": true
-          },
-          {
-            "text": "Ride quickly in front of the tram",
-            "is_correct": false
-          },
-          {
-            "text": "Give a priority signal and ride on",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Trams have absolute priority over all road users, including cyclists using B23."
-      },
-      "FR": {
-        "question": "Avec le panneau B23, vous allez tout droit au rouge en tant que cycliste. Un tram approche par la droite. Que faites-vous ?",
-        "choices": [
-          {
-            "text": "Attendez que le tram soit passé – les trams ont toujours la priorité absolue sur les B23",
-            "is_correct": true
-          },
-          {
-            "text": "Roulez vite devant le tram",
-            "is_correct": false
-          },
-          {
-            "text": "Donnez un signal de priorité et continuez",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Les trams ont la priorité absolue sur tous les usagers de la route, y compris les cyclistes utilisant B23."
-      },
-      "AR": {
-        "question": "مع اللافتة B23 تسير مباشرةً عند الأحمر كراكب دراجة. ترام يقترب من اليمين. ماذا تفعل؟",
-        "choices": [
-          {
-            "text": "انتظر حتى يمر الترام – الترامات دائماً لها أولوية مطلقة على B23",
-            "is_correct": true
-          },
-          {
-            "text": "سر بسرعة أمام الترام",
-            "is_correct": false
-          },
-          {
-            "text": "أعطِ إشارة أولوية واستمر",
-            "is_correct": false
-          }
-        ],
-        "explanation": "الترامات لها أولوية مطلقة على جميع مستخدمي الطريق، بما في ذلك الدراجون المستخدمون لـ B23."
-      }
-    }
-  },
-  {
-    "question_id": "B23_Q17",
-    "type": "IS_IT_ALLOWED",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Mogen two speed pedelecs naast elkaar rechtdoor rijden bij rood via B23?",
-        "choices": [
-          {
-            "text": "Nee, veiligheid en zichtbaarheid vereisen dat men achter elkaar rijdt bij het gebruik van B23",
-            "is_correct": false
-          },
-          {
-            "text": "Ja, speed pedelecs mogen naast elkaar rijden",
-            "is_correct": true
-          }
-        ],
-        "explanation": "Nee. Voor de veiligheid moet men achter elkaar rijden bij het gebruiken van B23 om het kruispunt veiliger te doorkruisen."
-      },
-      "EN": {
-        "question": "May two speed pedelecs ride side by side straight at red via B23?",
-        "choices": [
-          {
-            "text": "No, safety and visibility require riding in single file when using B23",
-            "is_correct": false
-          },
-          {
-            "text": "Yes, speed pedelecs may ride side by side",
-            "is_correct": true
-          }
-        ],
-        "explanation": "No. For safety, single-file riding is required when using B23 to cross the intersection more safely."
-      },
-      "FR": {
-        "question": "Deux speed pedelecs peuvent-ils rouler côte à côte tout droit au rouge via B23 ?",
-        "choices": [
-          {
-            "text": "Non, la sécurité et la visibilité exigent de rouler en file indienne lors de l'utilisation de B23",
-            "is_correct": false
-          },
-          {
-            "text": "Oui, les speed pedelecs peuvent rouler côte à côte",
-            "is_correct": true
-          }
-        ],
-        "explanation": "Non. Pour des raisons de sécurité, il faut rouler en file indienne lors de l'utilisation de B23 pour traverser le carrefour plus en sécurité."
-      },
-      "AR": {
-        "question": "هل يمكن لاثنين من سبيد بيدليك السير جنباً إلى جنب مباشرةً عند الأحمر عبر B23؟",
-        "choices": [
-          {
-            "text": "لا، الأمان والرؤية يتطلبان السير بالملف الفردي عند استخدام B23",
-            "is_correct": false
-          },
-          {
-            "text": "نعم، سبيد بيدليك يمكنهم السير جنباً إلى جنب",
-            "is_correct": true
-          }
-        ],
-        "explanation": "لا. للأمان، يلزم السير بملف فردي عند استخدام B23 لعبور التقاطع بشكل أكثر أماناً."
-      }
-    }
-  },
-  {
-    "question_id": "B23_Q18",
-    "type": "TRUE_OR_FALSE",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Waar of niet waar: Bij B23 moet de fietser altijd zijn hand uitsteken om rechtdoor te rijden bij rood.",
-        "choices": [
-          {
-            "text": "Niet waar – er is geen wettelijke verplichting om een handteken te geven bij B23 voor rechtdoor rijden",
-            "is_correct": false
-          },
-          {
-            "text": "Waar – een handteken is verplicht als signaal voor medeweggebruikers",
-            "is_correct": true
-          }
-        ],
-        "explanation": "Niet waar. Er is geen wettelijke verplichting voor een handteken bij het rechtdoor rijden via B23. Het is wel aan te raden om zichtbaar te zijn."
-      },
-      "EN": {
-        "question": "True or false: With B23 the cyclist must always extend their hand to go straight at red.",
-        "choices": [
-          {
-            "text": "False – there is no legal obligation to give a hand signal with B23 for going straight",
-            "is_correct": false
-          },
-          {
-            "text": "True – a hand signal is mandatory as a signal to other road users",
-            "is_correct": true
-          }
-        ],
-        "explanation": "False. There is no legal obligation to give a hand signal when going straight via B23. It is however recommended to remain visible."
-      },
-      "FR": {
-        "question": "Vrai ou faux : Avec B23, le cycliste doit toujours tendre la main pour aller tout droit au rouge.",
-        "choices": [
-          {
-            "text": "Faux – il n'y a pas d'obligation légale de donner un signal de main avec B23 pour aller tout droit",
-            "is_correct": false
-          },
-          {
-            "text": "Vrai – un signal de main est obligatoire comme signal pour les autres usagers",
-            "is_correct": true
-          }
-        ],
-        "explanation": "Faux. Il n'y a pas d'obligation légale de donner un signal de main en allant tout droit via B23. Il est cependant recommandé de rester visible."
-      },
-      "AR": {
-        "question": "صحيح أم خاطئ: مع B23 يجب على راكب الدراجة دائماً مد يده للسير مباشرةً عند الأحمر.",
-        "choices": [
-          {
-            "text": "خاطئ – لا يوجد التزام قانوني بإعطاء إشارة يد مع B23 للسير مباشرةً",
-            "is_correct": false
-          },
-          {
-            "text": "صحيح – إشارة اليد إلزامية كإشارة لمستخدمي الطريق الآخرين",
-            "is_correct": true
-          }
-        ],
-        "explanation": "خاطئ. لا يوجد التزام قانوني بإعطاء إشارة يد عند السير مباشرةً عبر B23. لكن يُنصح بالبقاء مرئياً."
-      }
-    }
-  },
-  {
-    "question_id": "B23_Q19",
-    "type": "WHAT_IS_PROHIBITED",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Bij B23 rijdt u als fietser rechtdoor bij rood. Wat is verboden?",
-        "choices": [
-          {
-            "text": "Andere verkeersdeelnemers in gevaar brengen door zonder te controleren door te rijden",
-            "is_correct": true
-          },
-          {
-            "text": "Uw snelheid verminderen bij het kruispunt",
-            "is_correct": false
-          },
-          {
-            "text": "Uw fietslicht aanzetten bij schemering",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Het is verboden andere weggebruikers in gevaar te brengen. U moet altijd controleren of het veilig is voor u rijdt bij B23."
-      },
-      "EN": {
-        "question": "With B23 you go straight at red as a cyclist. What is prohibited?",
-        "choices": [
-          {
-            "text": "Endangering other road users by riding without checking",
-            "is_correct": true
-          },
-          {
-            "text": "Reducing your speed at the intersection",
-            "is_correct": false
-          },
-          {
-            "text": "Turning on your bike light at dusk",
-            "is_correct": false
-          }
-        ],
-        "explanation": "It is prohibited to endanger other road users. You must always check it is safe before riding with B23."
-      },
-      "FR": {
-        "question": "Avec B23, vous allez tout droit au rouge en tant que cycliste. Qu'est-il interdit ?",
-        "choices": [
-          {
-            "text": "Mettre en danger d'autres usagers en roulant sans vérifier",
-            "is_correct": true
-          },
-          {
-            "text": "Réduire votre vitesse au carrefour",
-            "is_correct": false
-          },
-          {
-            "text": "Allumer votre feu de vélo au crépuscule",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Il est interdit de mettre en danger d'autres usagers. Vous devez toujours vérifier que c'est sûr avant de rouler avec B23."
-      },
-      "AR": {
-        "question": "مع B23 تسير مباشرةً عند الأحمر كراكب دراجة. ما الذي يُحظر؟",
-        "choices": [
-          {
-            "text": "تعريض مستخدمي الطريق الآخرين للخطر بالسير دون فحص",
-            "is_correct": true
-          },
-          {
-            "text": "تقليل سرعتك عند التقاطع",
-            "is_correct": false
-          },
-          {
-            "text": "تشغيل ضوء دراجتك عند الغسق",
-            "is_correct": false
-          }
-        ],
-        "explanation": "يُحظر تعريض مستخدمي الطريق الآخرين للخطر. يجب عليك دائماً التحقق من الأمان قبل السير مع B23."
-      }
-    }
-  },
-  {
-    "question_id": "B23_Q20",
-    "type": "WHAT_MUST_YOU_DO",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "U rijdt bij B23 rechtdoor bij rood en een auto met groen rijdt tegemoet op uw rechte baan. Wat moet u doen?",
-        "choices": [
-          {
-            "text": "Stop en laat de auto passeren – verkeer met groen heeft absoluut voorrang",
-            "is_correct": true
-          },
-          {
-            "text": "Rij door want u heeft het recht via B23",
-            "is_correct": false
-          },
-          {
-            "text": "Wijk af naar links om de auto te vermijden",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Verkeer met groen heeft altijd absolute voorrang bij B23. Stop en laat de auto passeren."
-      },
-      "EN": {
-        "question": "You ride with B23 straight at red and a car with green is approaching on your straight lane. What must you do?",
-        "choices": [
-          {
-            "text": "Stop and let the car pass – traffic with green has absolute priority",
-            "is_correct": true
-          },
-          {
-            "text": "Ride on as you have the right via B23",
-            "is_correct": false
-          },
-          {
-            "text": "Swerve left to avoid the car",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Traffic with green always has absolute priority at B23. Stop and let the car pass."
-      },
-      "FR": {
-        "question": "Vous roulez avec B23 tout droit au rouge et une voiture avec le vert approche sur votre voie droite. Que devez-vous faire ?",
-        "choices": [
-          {
-            "text": "Arrêtez-vous et laissez passer la voiture – le trafic ayant le vert a la priorité absolue",
-            "is_correct": true
-          },
-          {
-            "text": "Continuez car vous avez le droit via B23",
-            "is_correct": false
-          },
-          {
-            "text": "Déviez à gauche pour éviter la voiture",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Le trafic ayant le vert a toujours la priorité absolue au B23. Arrêtez-vous et laissez passer la voiture."
-      },
-      "AR": {
-        "question": "تسير مع B23 مباشرةً عند الأحمر وسيارة لديها الأخضر تقترب على مسارك المستقيم. ماذا يجب عليك فعله؟",
-        "choices": [
-          {
-            "text": "توقف ودع السيارة تمر – المرور الذي لديه الأخضر له أولوية مطلقة",
-            "is_correct": true
-          },
-          {
-            "text": "استمر لأن لديك الحق عبر B23",
-            "is_correct": false
-          },
-          {
-            "text": "انحرف يساراً لتجنب السيارة",
-            "is_correct": false
-          }
-        ],
-        "explanation": "المرور الذي لديه الأخضر دائماً له أولوية مطلقة في B23. توقف ودع السيارة تمر."
-      }
-    }
-  },
-  {
-    "question_id": "B23_Q21",
-    "type": "IS_IT_ALLOWED",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Mag een fietser bij B23 rechtdoor rijden bij rood op een weg met maximumsnelheid 70 km/h?",
-        "choices": [
-          {
-            "text": "Ja, B23 gaat over de verkeerslichtregel en is onafhankelijk van de snelheidslimiet van de weg",
-            "is_correct": true
-          },
-          {
-            "text": "Nee, op wegen > 50 km/h is B23 niet geldig",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Ja. B23 is een regeling voor verkeerslichten en staat los van de snelheidslimiet."
-      },
-      "EN": {
-        "question": "May a cyclist go straight at red with B23 on a road with a maximum speed of 70 km/h?",
-        "choices": [
-          {
-            "text": "Yes, B23 concerns the traffic light rule and is independent of the road speed limit",
-            "is_correct": true
-          },
-          {
-            "text": "No, on roads > 50 km/h B23 is not valid",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Yes. B23 is a traffic light regulation and is independent of the speed limit."
-      },
-      "FR": {
-        "question": "Un cycliste peut-il aller tout droit au rouge avec B23 sur une route avec une vitesse maximale de 70 km/h ?",
-        "choices": [
-          {
-            "text": "Oui, B23 concerne la règle des feux de circulation et est indépendant de la limite de vitesse de la route",
-            "is_correct": true
-          },
-          {
-            "text": "Non, sur les routes > 50 km/h, B23 n'est pas valable",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Oui. B23 est une réglementation de feux de circulation et est indépendant de la limite de vitesse."
-      },
-      "AR": {
-        "question": "هل يمكن لراكب الدراجة السير مباشرةً عند الأحمر مع B23 على طريق بسرعة قصوى 70 كم/ساعة؟",
-        "choices": [
-          {
-            "text": "نعم، B23 تتعلق بقاعدة إشارة المرور وهي مستقلة عن حد سرعة الطريق",
-            "is_correct": true
-          },
-          {
-            "text": "لا، على الطرق > 50 كم/ساعة B23 غير صالحة",
-            "is_correct": false
-          }
-        ],
-        "explanation": "نعم. B23 لائحة إشارات مرورية ومستقلة عن حد السرعة."
-      }
-    }
-  },
-  {
-    "question_id": "B23_Q22",
-    "type": "WHAT_SHOULD_YOU_DO",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "U heeft B23 en rijdt rechtdoor bij rood. Plotseling slaat de auto voor u ook af bij groen. Wat doet u?",
-        "choices": [
-          {
-            "text": "Rem onmiddellijk en geef de auto die groen heeft alle ruimte",
-            "is_correct": true
-          },
-          {
-            "text": "Rij door want u heeft het recht via B23",
-            "is_correct": false
-          },
-          {
-            "text": "Wijk uit naar links",
-            "is_correct": false
-          }
-        ],
-        "explanation": "De auto die groen heeft heeft absolute voorrang. Rem onmiddellijk en geef hem alle ruimte."
-      },
-      "EN": {
-        "question": "You have B23 and go straight at red. Suddenly the car in front of you also turns on green. What do you do?",
-        "choices": [
-          {
-            "text": "Brake immediately and give the car with green all the room",
-            "is_correct": true
-          },
-          {
-            "text": "Ride on as you have the right via B23",
-            "is_correct": false
-          },
-          {
-            "text": "Swerve to the left",
-            "is_correct": false
-          }
-        ],
-        "explanation": "The car with green has absolute priority. Brake immediately and give it all the room."
-      },
-      "FR": {
-        "question": "Vous avez B23 et allez tout droit au rouge. Soudainement la voiture devant vous tourne aussi avec le vert. Que faites-vous ?",
-        "choices": [
-          {
-            "text": "Freinez immédiatement et donnez toute la place à la voiture ayant le vert",
-            "is_correct": true
-          },
-          {
-            "text": "Continuez car vous avez le droit via B23",
-            "is_correct": false
-          },
-          {
-            "text": "Déviez vers la gauche",
-            "is_correct": false
-          }
-        ],
-        "explanation": "La voiture ayant le vert a la priorité absolue. Freinez immédiatement et donnez-lui toute la place."
-      },
-      "AR": {
-        "question": "لديك B23 وتسير مباشرةً عند الأحمر. فجأة السيارة أمامك تنعطف أيضاً عند الأخضر. ماذا تفعل؟",
-        "choices": [
-          {
-            "text": "اكبح فوراً وأعطِ السيارة ذات الأخضر كل المجال",
-            "is_correct": true
-          },
-          {
-            "text": "استمر لأن لديك الحق عبر B23",
-            "is_correct": false
-          },
-          {
-            "text": "انحرف إلى اليسار",
-            "is_correct": false
-          }
-        ],
-        "explanation": "السيارة التي لديها الأخضر لها أولوية مطلقة. اكبح فوراً وأعطها كل المجال."
-      }
-    }
-  },
-  {
-    "question_id": "B23_Q23",
-    "type": "TRUE_OR_FALSE",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Waar of niet waar: B23 kan op een kruispunt staan zonder dat er B22 aanwezig is.",
-        "choices": [
-          {
-            "text": "Waar – B22 en B23 zijn onafhankelijke borden, elk kan alleen staan",
-            "is_correct": true
-          },
-          {
-            "text": "Niet waar – ze staan altijd samen",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Waar. B22 en B23 zijn onafhankelijke borden. Elk kan afzonderlijk worden geplaatst of samen, afhankelijk van de verkeerssituatie."
-      },
-      "EN": {
-        "question": "True or false: B23 can stand at a junction without B22 being present.",
-        "choices": [
-          {
-            "text": "True – B22 and B23 are independent signs, each can stand alone",
-            "is_correct": true
-          },
-          {
-            "text": "False – they always stand together",
-            "is_correct": false
-          }
-        ],
-        "explanation": "True. B22 and B23 are independent signs. Each can be placed separately or together depending on the traffic situation."
-      },
-      "FR": {
-        "question": "Vrai ou faux : B23 peut se trouver à un carrefour sans que B22 soit présent.",
-        "choices": [
-          {
-            "text": "Vrai – B22 et B23 sont des panneaux indépendants, chacun peut être seul",
-            "is_correct": true
-          },
-          {
-            "text": "Faux – ils sont toujours ensemble",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Vrai. B22 et B23 sont des panneaux indépendants. Chacun peut être placé séparément ou ensemble selon la situation de trafic."
-      },
-      "AR": {
-        "question": "صحيح أم خاطئ: يمكن أن تكون B23 في تقاطع دون وجود B22.",
-        "choices": [
-          {
-            "text": "صحيح – B22 وB23 لافتتان مستقلتان، كل منهما يمكن أن تقف وحدها",
-            "is_correct": true
-          },
-          {
-            "text": "خاطئ – دائماً توجدان معاً",
-            "is_correct": false
-          }
-        ],
-        "explanation": "صحيح. B22 وB23 لافتتان مستقلتان. يمكن وضع كل منهما بشكل منفصل أو معاً حسب الوضع المروري."
-      }
-    }
-  },
-  {
-    "question_id": "B23_Q24",
-    "type": "WHAT_IS_PROHIBITED",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Bij B23 rijdt u rechtdoor bij rood. Een politieagent wenkt u te stoppen. Wat is verboden?",
-        "choices": [
-          {
-            "text": "Doorgaan en het stopteken negeren – politie-instructies gaan altijd voor",
-            "is_correct": true
-          },
-          {
-            "text": "Stoppen bij het stopteken",
-            "is_correct": false
-          },
-          {
-            "text": "Voorzichtig stoppen",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Politie-instructies gaan altijd boven alle verkeersregels inclusief B23. Doorgaan bij een stopteken is verboden."
-      },
-      "EN": {
-        "question": "With B23 you go straight at red. A police officer signals you to stop. What is prohibited?",
-        "choices": [
-          {
-            "text": "Continuing and ignoring the stop signal – police instructions always take precedence",
-            "is_correct": true
-          },
-          {
-            "text": "Stopping at the stop signal",
-            "is_correct": false
-          },
-          {
-            "text": "Stopping carefully",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Police instructions always take precedence over all traffic rules including B23. Continuing past a stop signal is prohibited."
-      },
-      "FR": {
-        "question": "Avec B23, vous allez tout droit au rouge. Un agent de police vous fait signe de vous arrêter. Qu'est-il interdit ?",
-        "choices": [
-          {
-            "text": "Continuer et ignorer le signal d'arrêt – les instructions de la police priment toujours",
-            "is_correct": true
-          },
-          {
-            "text": "S'arrêter au signal d'arrêt",
-            "is_correct": false
-          },
-          {
-            "text": "S'arrêter prudemment",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Les instructions de la police priment toujours sur toutes les règles de circulation y compris B23. Continuer malgré un signal d'arrêt est interdit."
-      },
-      "AR": {
-        "question": "مع B23 تسير مباشرةً عند الأحمر. ضابط شرطة يشير إليك بالتوقف. ما الذي يُحظر؟",
-        "choices": [
-          {
-            "text": "الاستمرار وتجاهل إشارة التوقف – تعليمات الشرطة دائماً تعلو",
-            "is_correct": true
-          },
-          {
-            "text": "التوقف عند إشارة التوقف",
-            "is_correct": false
-          },
-          {
-            "text": "التوقف بحذر",
-            "is_correct": false
-          }
-        ],
-        "explanation": "تعليمات الشرطة دائماً تعلو على جميع قواعد المرور بما فيها B23. الاستمرار رغم إشارة التوقف محظور."
-      }
-    }
-  },
-  {
-    "question_id": "B23_Q25",
-    "type": "WHAT_MUST_YOU_DO",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Bij B23 wilt u rechtdoor bij rood. Er staan twee auto's met groen te wachten om af te slaan voor u. Wat doet u?",
-        "choices": [
-          {
-            "text": "Wacht totdat beide auto's zijn afgeslagen en het kruispunt vrij is",
-            "is_correct": true
-          },
-          {
-            "text": "Rij door want B23 geeft u absolute voorrang",
-            "is_correct": false
-          },
-          {
-            "text": "Rij snel tussen de wachtende auto's door",
-            "is_correct": false
-          }
-        ],
-        "explanation": "U moet wachten totdat het kruispunt veilig is. Auto's met groen die willen afslaan hebben voorrang op u."
-      },
-      "EN": {
-        "question": "With B23 you want to go straight at red. Two cars with green are waiting to turn in front of you. What do you do?",
-        "choices": [
-          {
-            "text": "Wait until both cars have turned and the intersection is clear",
-            "is_correct": true
-          },
-          {
-            "text": "Ride on as B23 gives you absolute priority",
-            "is_correct": false
-          },
-          {
-            "text": "Ride quickly between the waiting cars",
-            "is_correct": false
-          }
-        ],
-        "explanation": "You must wait until the intersection is safe. Cars with green wanting to turn have priority over you."
-      },
-      "FR": {
-        "question": "Avec B23, vous voulez aller tout droit au rouge. Deux voitures avec le vert attendent de tourner devant vous. Que faites-vous ?",
-        "choices": [
-          {
-            "text": "Attendez que les deux voitures aient tourné et que le carrefour soit libre",
-            "is_correct": true
-          },
-          {
-            "text": "Continuez car B23 vous donne la priorité absolue",
-            "is_correct": false
-          },
-          {
-            "text": "Roulez rapidement entre les voitures en attente",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Vous devez attendre que le carrefour soit sûr. Les voitures avec le vert voulant tourner ont la priorité sur vous."
-      },
-      "AR": {
-        "question": "مع B23 تريد السير مباشرةً عند الأحمر. سيارتان لديهما الأخضر تنتظران للانعطاف أمامك. ماذا تفعل؟",
-        "choices": [
-          {
-            "text": "انتظر حتى تنعطف كلتا السيارتين ويصبح التقاطع خالياً",
-            "is_correct": true
-          },
-          {
-            "text": "استمر لأن B23 تمنحك الأولوية المطلقة",
-            "is_correct": false
-          },
-          {
-            "text": "سر بسرعة بين السيارات المنتظرة",
-            "is_correct": false
-          }
-        ],
-        "explanation": "يجب عليك الانتظار حتى يكون التقاطع آمناً. السيارات التي لديها الأخضر وتريد الانعطاف لها الأولوية عليك."
-      }
-    }
-  },
-  {
-    "question_id": "B23_Q26",
-    "type": "IS_IT_ALLOWED",
     "difficulty": "HARD",
     "is_critical": true,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Bij B23 rijdt u rechtdoor bij rood en u raakt een voetganger op het zebrapad. Bent u aansprakelijk?",
+        "question": "Geldt de toestemming van bord B23 op alle kruispunten, of enkel waar het bord geplaatst is?",
         "choices": [
-          {
-            "text": "Ja, u had de voetganger op het zebrapad moeten laten oversteken – die heeft altijd voorrang",
-            "is_correct": true
-          },
-          {
-            "text": "Nee, de voetganger had uw rijrichting moeten controleren",
-            "is_correct": false
-          }
+          {"text": "Enkel op het kruispunt waar het bord B23 fysiek aanwezig is", "is_correct": true},
+          {"text": "Op alle kruispunten met een verkeerslicht in Belgie", "is_correct": false}
         ],
-        "explanation": "Ja. Voetgangers op een zebrapad hebben absolute voorrang. Als u een voetganger op het zebrapad raakt terwijl u via B23 rijdt, bent u aansprakelijk."
+        "explanation": "Bord B23 geldt uitsluitend op het specifieke kruispunt waar het bord geplaatst is. Op een kruispunt zonder dit bord moet de fietser het rode licht respecteren."
       },
       "EN": {
-        "question": "With B23 you go straight at red and hit a pedestrian on the zebra crossing. Are you liable?",
+        "question": "Does the permission of sign B23 apply at all junctions, or only where the sign is placed?",
         "choices": [
-          {
-            "text": "Yes, you should have let the pedestrian cross – they always have priority",
-            "is_correct": true
-          },
-          {
-            "text": "No, the pedestrian should have checked your direction of travel",
-            "is_correct": false
-          }
+          {"text": "Only at the specific junction where sign B23 is physically present", "is_correct": true},
+          {"text": "At all junctions with a traffic light in Belgium", "is_correct": false}
         ],
-        "explanation": "Yes. Pedestrians on a zebra crossing have absolute priority. If you hit a pedestrian on the crossing while riding via B23, you are liable."
+        "explanation": "Sign B23 applies exclusively at the specific junction where the sign is installed. At a junction without this sign the cyclist must respect the red light."
       },
       "FR": {
-        "question": "Avec B23, vous allez tout droit au rouge et heurtez un piéton sur le passage piéton. Êtes-vous responsable ?",
+        "question": "La permission du panneau B23 s applique-t-elle a tous les carrefours, ou uniquement la ou le panneau est place ?",
         "choices": [
-          {
-            "text": "Oui, vous auriez dû laisser le piéton traverser – il a toujours la priorité",
-            "is_correct": true
-          },
-          {
-            "text": "Non, le piéton aurait dû vérifier votre direction de déplacement",
-            "is_correct": false
-          }
+          {"text": "Uniquement au carrefour specifique ou le panneau B23 est physiquement present", "is_correct": true},
+          {"text": "A tous les carrefours avec un feu de signalisation en Belgique", "is_correct": false}
         ],
-        "explanation": "Oui. Les piétons sur un passage piéton ont la priorité absolue. Si vous heurtez un piéton sur le passage en roulant via B23, vous en êtes responsable."
+        "explanation": "Le panneau B23 s applique exclusivement au carrefour specifique ou le panneau est installe. A un carrefour sans ce panneau, le cycliste doit respecter le feu rouge."
       },
       "AR": {
-        "question": "مع B23 تسير مباشرةً عند الأحمر وتصطدم بمشاة على ممر المشاة. هل أنت مسؤول؟",
+        "question": "Ù‡Ù„ ØªÙ†Ø·Ø¨Ù‚ ØµÙ„Ø§Ø­ÙŠØ© Ù„Ø§ÙØªØ© B23 Ø¹Ù„Ù‰ Ø¬Ù…ÙŠØ¹ Ø§Ù„ØªÙ‚Ø§Ø·Ø¹Ø§Øª Ø§Ù… ÙÙ‚Ø· Ø­ÙŠØ« ØªÙˆØ¶Ø¹ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ",
         "choices": [
-          {
-            "text": "نعم، كان يجب أن تسمح للمشاة بالعبور – لديهم الأولوية دائماً",
-            "is_correct": true
-          },
-          {
-            "text": "لا، كان على المشاة التحقق من اتجاه سيرك",
-            "is_correct": false
-          }
+          {"text": "ÙÙ‚Ø· Ø¹Ù†Ø¯ Ø§Ù„ØªÙ‚Ø§Ø·Ø¹ Ø§Ù„Ù…Ø­Ø¯Ø¯ Ø§Ù„Ø°ÙŠ ØªÙˆØ¬Ø¯ ÙÙŠÙ‡ Ù„Ø§ÙØªØ© B23 ÙØ¹Ù„ÙŠØ§", "is_correct": true},
+          {"text": "ÙÙŠ Ø¬Ù…ÙŠØ¹ Ø§Ù„ØªÙ‚Ø§Ø·Ø¹Ø§Øª Ø°Ø§Øª Ø§Ù„Ø§Ø´Ø§Ø±Ø§Øª Ø§Ù„Ø¶ÙˆØ¦ÙŠØ© ÙÙŠ Ø¨Ù„Ø¬ÙŠÙƒØ§", "is_correct": false}
         ],
-        "explanation": "نعم. المشاة على ممر المشاة لهم أولوية مطلقة. إذا صدمت مشاة على الممر أثناء القيادة عبر B23، أنت المسؤول."
-      }
-    }
-  },
-  {
-    "question_id": "B23_Q27",
-    "type": "WHAT_MUST_YOU_DO",
-    "difficulty": "HARD",
-    "is_critical": true,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Bij B23 rijdt u rechtdoor bij rood. Twee voertuigen met groen rijden tegelijkertijd van links en rechts. Wat doet u?",
-        "choices": [
-          {
-            "text": "Stop onmiddellijk – u kunt niet tegelijk twee voertuigen met groen inschatten; veiligheid voor alles",
-            "is_correct": true
-          },
-          {
-            "text": "Rij snel door tussen beide voertuigen",
-            "is_correct": false
-          },
-          {
-            "text": "Rij naar links om het voertuig van rechts te vermijden",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Als meerdere conflicten tegelijk optreden, stop onmiddellijk. U kunt de situatie niet volledig inschatten en veiligheid gaat boven rijrecht."
-      },
-      "EN": {
-        "question": "With B23 you go straight at red. Two vehicles with green drive simultaneously from left and right. What do you do?",
-        "choices": [
-          {
-            "text": "Stop immediately – you cannot assess two vehicles with green at the same time; safety above all",
-            "is_correct": true
-          },
-          {
-            "text": "Ride quickly between both vehicles",
-            "is_correct": false
-          },
-          {
-            "text": "Ride left to avoid the vehicle from the right",
-            "is_correct": false
-          }
-        ],
-        "explanation": "When multiple conflicts occur simultaneously, stop immediately. You cannot fully assess the situation and safety comes above right of way."
-      },
-      "FR": {
-        "question": "Avec B23, vous allez tout droit au rouge. Deux véhicules avec le vert roulent simultanément de gauche et de droite. Que faites-vous ?",
-        "choices": [
-          {
-            "text": "Arrêtez-vous immédiatement – vous ne pouvez pas évaluer deux véhicules avec le vert en même temps ; la sécurité avant tout",
-            "is_correct": true
-          },
-          {
-            "text": "Roulez vite entre les deux véhicules",
-            "is_correct": false
-          },
-          {
-            "text": "Roulez à gauche pour éviter le véhicule venant de droite",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Quand plusieurs conflits surviennent simultanément, arrêtez-vous immédiatement. Vous ne pouvez pas évaluer pleinement la situation et la sécurité passe avant le droit de passage."
-      },
-      "AR": {
-        "question": "مع B23 تسير مباشرةً عند الأحمر. مركبتان لديهما الأخضر تسيران في نفس الوقت من اليسار واليمين. ماذا تفعل؟",
-        "choices": [
-          {
-            "text": "توقف فوراً – لا يمكنك تقييم مركبتين لديهما الأخضر في نفس الوقت؛ السلامة فوق كل شيء",
-            "is_correct": true
-          },
-          {
-            "text": "سر بسرعة بين المركبتين",
-            "is_correct": false
-          },
-          {
-            "text": "سر يساراً لتجنب المركبة القادمة من اليمين",
-            "is_correct": false
-          }
-        ],
-        "explanation": "عندما تحدث تعارضات متعددة في نفس الوقت، توقف فوراً. لا يمكنك تقييم الوضع بالكامل والسلامة تعلو على حق المرور."
-      }
-    }
-  },
-  {
-    "question_id": "B23_Q28",
-    "type": "TRUE_OR_FALSE",
-    "difficulty": "HARD",
-    "is_critical": true,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Waar of niet waar: B23 geeft fietsers het recht ook bij rode voetgangersverkeerlichten rechtdoor te rijden.",
-        "choices": [
-          {
-            "text": "Niet waar – B23 geldt voor het verkeerslicht voor fietsers/voertuigen, niet voor voetgangerslichten",
-            "is_correct": false
-          },
-          {
-            "text": "Waar – alle rode lichten zijn hetzelfde",
-            "is_correct": true
-          }
-        ],
-        "explanation": "Niet waar. B23 is een uitzondering op het fietserslicht of voertuiglicht, niet op het voetgangersverkeerslicht."
-      },
-      "EN": {
-        "question": "True or false: B23 gives cyclists the right to go straight even at red pedestrian traffic lights.",
-        "choices": [
-          {
-            "text": "False – B23 applies to the traffic light for cyclists/vehicles, not to pedestrian lights",
-            "is_correct": false
-          },
-          {
-            "text": "True – all red lights are the same",
-            "is_correct": true
-          }
-        ],
-        "explanation": "False. B23 is an exception to the cyclist light or vehicle light, not to the pedestrian traffic light."
-      },
-      "FR": {
-        "question": "Vrai ou faux : B23 donne aux cyclistes le droit d'aller tout droit même aux feux piétons rouges.",
-        "choices": [
-          {
-            "text": "Faux – B23 s'applique au feu de circulation pour cyclistes/véhicules, pas aux feux piétons",
-            "is_correct": false
-          },
-          {
-            "text": "Vrai – tous les feux rouges sont identiques",
-            "is_correct": true
-          }
-        ],
-        "explanation": "Faux. B23 est une exception au feu cycliste ou au feu de véhicule, pas au feu de circulation piéton."
-      },
-      "AR": {
-        "question": "صحيح أم خاطئ: B23 تمنح الدراجين الحق في السير مباشرةً حتى عند إشارات مرور المشاة الحمراء.",
-        "choices": [
-          {
-            "text": "خاطئ – B23 تنطبق على إشارة المرور للدراجين/المركبات، وليس على إشارات المشاة",
-            "is_correct": false
-          },
-          {
-            "text": "صحيح – جميع الأضواء الحمراء متشابهة",
-            "is_correct": true
-          }
-        ],
-        "explanation": "خاطئ. B23 استثناء على ضوء الدراجة أو ضوء المركبة، وليس على إشارة مرور المشاة."
-      }
-    }
-  },
-  {
-    "question_id": "B23_Q29",
-    "type": "WHAT_IS_PROHIBITED",
-    "difficulty": "HARD",
-    "is_critical": true,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Wat is het gevaarlijkste en verboden gedrag bij B23?",
-        "choices": [
-          {
-            "text": "Rechtdoor rijden bij rood zonder te controleren of het kruispunt vrij is van verkeer met groen",
-            "is_correct": true
-          },
-          {
-            "text": "Langzaam oproeien bij rood",
-            "is_correct": false
-          },
-          {
-            "text": "Uw fietsverlichting aan hebben",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Het gevaarlijkste en verboden gedrag is doorgaan bij rood zonder te controleren op kruisend groen verkeer. Dit kan leiden tot ernstige botsingen."
-      },
-      "EN": {
-        "question": "What is the most dangerous and prohibited behaviour with B23?",
-        "choices": [
-          {
-            "text": "Going straight at red without checking if the intersection is clear of traffic with green",
-            "is_correct": true
-          },
-          {
-            "text": "Creeping slowly through at red",
-            "is_correct": false
-          },
-          {
-            "text": "Having your cycle lights on",
-            "is_correct": false
-          }
-        ],
-        "explanation": "The most dangerous and prohibited behaviour is proceeding at red without checking for crossing traffic with green. This can lead to serious collisions."
-      },
-      "FR": {
-        "question": "Quel est le comportement le plus dangereux et interdit avec B23 ?",
-        "choices": [
-          {
-            "text": "Aller tout droit au rouge sans vérifier que le carrefour est libre de trafic ayant le vert",
-            "is_correct": true
-          },
-          {
-            "text": "Avancer lentement au rouge",
-            "is_correct": false
-          },
-          {
-            "text": "Avoir vos feux de vélo allumés",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Le comportement le plus dangereux et interdit est de continuer au rouge sans vérifier le trafic croiseur ayant le vert. Cela peut entraîner de graves collisions."
-      },
-      "AR": {
-        "question": "ما هو أخطر السلوكيات وأكثرها حظراً مع B23؟",
-        "choices": [
-          {
-            "text": "السير مباشرةً عند الأحمر دون التحقق مما إذا كان التقاطع خالياً من المرور الذي لديه الأخضر",
-            "is_correct": true
-          },
-          {
-            "text": "الزحف ببطء عند الأحمر",
-            "is_correct": false
-          },
-          {
-            "text": "وجود أضواء دراجتك مشغّلة",
-            "is_correct": false
-          }
-        ],
-        "explanation": "أخطر السلوكيات وأكثرها حظراً هو المضي عند الأحمر دون التحقق من المرور المتقاطع الذي لديه الأخضر. يمكن أن يؤدي ذلك إلى اصطدامات خطيرة."
-      }
-    }
-  },
-  {
-    "question_id": "B23_Q30",
-    "type": "WHAT_SHOULD_YOU_DO",
-    "difficulty": "HARD",
-    "is_critical": true,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Bij B23 rijdt u rechtdoor bij rood. Tegelijkertijd: een ambulance met sirene nadert van links, een tram rijdt voor uw neus op de kruising en een voetganger loopt al half over het zebrapad. Wat doet u?",
-        "choices": [
-          {
-            "text": "Stop onmiddellijk en wacht – ambulance en tram hebben absolute voorrang, voetganger ook",
-            "is_correct": true
-          },
-          {
-            "text": "Rij snel tussen alles door",
-            "is_correct": false
-          },
-          {
-            "text": "Bel 112 en rij dan door",
-            "is_correct": false
-          }
-        ],
-        "explanation": "In zo'n complexe situatie stop je onmiddellijk. Ambulance, tram en voetgangers op zebrapad hebben allen absolute voorrang. Veiligheid berust op stoppen."
-      },
-      "EN": {
-        "question": "With B23 you go straight at red. Simultaneously: an ambulance with siren approaches from the left, a tram is crossing right in front of you and a pedestrian is already halfway across the zebra crossing. What do you do?",
-        "choices": [
-          {
-            "text": "Stop immediately and wait – ambulance and tram have absolute priority, so does the pedestrian",
-            "is_correct": true
-          },
-          {
-            "text": "Ride quickly between everything",
-            "is_correct": false
-          },
-          {
-            "text": "Call 112 and then ride on",
-            "is_correct": false
-          }
-        ],
-        "explanation": "In such a complex situation you stop immediately. Ambulance, tram and pedestrians on zebra crossing all have absolute priority. Safety relies on stopping."
-      },
-      "FR": {
-        "question": "Avec B23, vous allez tout droit au rouge. Simultanément : une ambulance avec sirène approche par la gauche, un tram traverse juste devant vous et un piéton est déjà à mi-chemin du passage piéton. Que faites-vous ?",
-        "choices": [
-          {
-            "text": "Arrêtez-vous immédiatement et attendez – l'ambulance et le tram ont la priorité absolue, le piéton aussi",
-            "is_correct": true
-          },
-          {
-            "text": "Roulez vite entre tout",
-            "is_correct": false
-          },
-          {
-            "text": "Appelez le 112 puis continuez",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Dans une telle situation complexe, vous vous arrêtez immédiatement. L'ambulance, le tram et les piétons sur le passage piéton ont tous la priorité absolue. La sécurité repose sur l'arrêt."
-      },
-      "AR": {
-        "question": "مع B23 تسير مباشرةً عند الأحمر. في نفس الوقت: إسعاف بصفارة يقترب من اليسار، وترام يعبر أمامك مباشرةً، ومشاة في منتصف ممر المشاة. ماذا تفعل؟",
-        "choices": [
-          {
-            "text": "توقف فوراً وانتظر – للإسعاف والترام أولوية مطلقة، وكذلك للمشاة",
-            "is_correct": true
-          },
-          {
-            "text": "سر بسرعة بين كل شيء",
-            "is_correct": false
-          },
-          {
-            "text": "اتصل بـ 112 ثم استمر",
-            "is_correct": false
-          }
-        ],
-        "explanation": "في مثل هذا الوضع المعقد تتوقف فوراً. الإسعاف والترام والمشاة على ممر المشاة جميعهم لهم أولوية مطلقة. السلامة تعتمد على التوقف."
+        "explanation": "ØªÙ†Ø·Ø¨Ù‚ Ù„Ø§ÙØªØ© B23 Ø­ØµØ±Ø§ Ø¹Ù„Ù‰ Ø§Ù„ØªÙ‚Ø§Ø·Ø¹ Ø§Ù„Ù…Ø­Ø¯Ø¯ Ø§Ù„Ø°ÙŠ ØªÙ… ØªØ±ÙƒÙŠØ¨ Ø§Ù„Ù„Ø§ÙØªØ© ÙÙŠÙ‡. Ø¹Ù†Ø¯ ØªÙ‚Ø§Ø·Ø¹ Ø¯ÙˆÙ† Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ© ÙŠØ¬Ø¨ Ø¹Ù„Ù‰ Ø±Ø§ÙƒØ¨ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø© Ø§Ø­ØªØ±Ø§Ù… Ø§Ù„Ø¶ÙˆØ¡ Ø§Ù„Ø§Ø­Ù…Ø±."
       }
     }
   }

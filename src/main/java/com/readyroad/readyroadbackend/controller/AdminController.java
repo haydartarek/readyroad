@@ -1,29 +1,23 @@
 package com.readyroad.readyroadbackend.controller;
 
 import com.readyroad.readyroadbackend.domain.entity.UserCategoryProgress;
-import com.readyroad.readyroadbackend.domain.repository.TrafficSignRepository;
+import com.readyroad.readyroadbackend.domain.repository.RoadSignRepository;
 import com.readyroad.readyroadbackend.domain.repository.UserRepository;
 import com.readyroad.readyroadbackend.domain.repository.UserCategoryProgressRepository;
 import com.readyroad.readyroadbackend.domain.entity.ExamSimulation;
 import com.readyroad.readyroadbackend.domain.repository.ExamSimulationRepository;
-import com.readyroad.readyroadbackend.domain.repository.QuizAttemptRepository;
 import com.readyroad.readyroadbackend.domain.repository.QuizQuestionRepository;
-
-import com.readyroad.readyroadbackend.domain.repository.QuizUserAnswerRepository;
 import com.readyroad.readyroadbackend.domain.enums.Role;
 import com.readyroad.readyroadbackend.domain.entity.User;
-import com.readyroad.readyroadbackend.dto.AdminExamQuestionRequest;
 import com.readyroad.readyroadbackend.dto.AdminQuizQuestionRequest;
 import com.readyroad.readyroadbackend.dto.CreateTrafficSignRequest;
 import com.readyroad.readyroadbackend.dto.SignGovernanceReport;
 import com.readyroad.readyroadbackend.dto.SignImportEntry;
-import com.readyroad.readyroadbackend.dto.response.AdminExamQuestionResponse;
 import com.readyroad.readyroadbackend.dto.response.AdminQuizQuestionResponse;
 import com.readyroad.readyroadbackend.dto.response.AdminTrafficSignResponse;
 import com.readyroad.readyroadbackend.dto.response.PageResponse;
 import com.readyroad.readyroadbackend.dto.response.TrafficSignResponse;
 import com.readyroad.readyroadbackend.service.AdminQuizService;
-import com.readyroad.readyroadbackend.service.ExamQuestionService;
 import com.readyroad.readyroadbackend.service.TrafficSignService;
 import com.readyroad.readyroadbackend.service.SignImportService;
 import com.readyroad.readyroadbackend.service.SignGovernanceService;
@@ -36,14 +30,11 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import com.readyroad.readyroadbackend.service.FileUploadService;
 import com.readyroad.readyroadbackend.service.NotificationService;
 
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Sort;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.HashMap;
@@ -70,16 +61,13 @@ import java.util.stream.Collectors;
 @PreAuthorize("hasRole('ADMIN')")
 public class AdminController {
 
-    private final TrafficSignRepository signRepository;
+    private final RoadSignRepository signRepository;
     private final UserRepository userRepository;
     private final ExamSimulationRepository examSimulationRepository;
-    private final QuizAttemptRepository quizAttemptRepository;
     private final QuizQuestionRepository quizQuestionRepository;
     private final UserCategoryProgressRepository categoryProgressRepository;
-    private final QuizUserAnswerRepository quizUserAnswerRepository;
     private final TrafficSignService trafficSignService;
     private final AdminQuizService adminQuizService;
-    private final ExamQuestionService examQuestionService;
     private final FileUploadService fileUploadService;
     private final SignImportService signImportService;
     private final SignGovernanceService signGovernanceService;
@@ -94,7 +82,7 @@ public class AdminController {
         log.info("📊 Admin dashboard accessed");
 
         Map<String, Object> stats = new HashMap<>();
-        stats.put("totalSigns", signRepository.count());
+        stats.put("totalSigns", signRepository.countByIsActiveTrue());
         stats.put("totalUsers", userRepository.count());
         stats.put("totalQuizAttempts", examSimulationRepository.count());
         stats.put("totalQuizQuestions", quizQuestionRepository.count());
@@ -288,12 +276,14 @@ public class AdminController {
             @RequestParam(defaultValue = "createdAt,desc") String sort,
             @RequestParam(required = false) String categoryCode,
             @RequestParam(required = false) String difficulty,
+            @RequestParam(required = false) String hasImage,
             @RequestParam(required = false) String q) {
 
-        log.info("📋 Admin quiz questions list: page={}, size={}, sort={}, category={}, difficulty={}, q={}",
-                page, size, sort, categoryCode, difficulty, q);
+        log.info(
+                "📋 Admin quiz questions list: page={}, size={}, sort={}, category={}, difficulty={}, hasImage={}, q={}",
+                page, size, sort, categoryCode, difficulty, hasImage, q);
         PageResponse<AdminQuizQuestionResponse> result = adminQuizService.getQuestionsPaginated(page, size, sort,
-                categoryCode, difficulty, q);
+                categoryCode, difficulty, hasImage, q);
         return ResponseEntity.ok(result);
     }
 
@@ -384,135 +374,6 @@ public class AdminController {
                     .body(Map.of("error",
                             "Cannot delete question — it is referenced by quiz attempts or user answers. Remove those references first."));
         }
-    }
-
-    // ═══════════════════════════════════════════════════
-    // Exam Question CRUD (/api/admin/exam/questions)
-    // ═══════════════════════════════════════════════════
-
-    /**
-     * GET /api/admin/exam/questions
-     * Paginated list of exam simulation questions for the admin panel.
-     */
-    @GetMapping("/exam/questions")
-    public ResponseEntity<PageResponse<AdminExamQuestionResponse>> listExamQuestions(
-            @RequestParam(defaultValue = "0") int page,
-            @RequestParam(defaultValue = "20") int size,
-            @RequestParam(required = false) String category,
-            @RequestParam(defaultValue = "id") String sortBy,
-            @RequestParam(defaultValue = "asc") String sortDir) {
-
-        Sort sort = sortDir.equalsIgnoreCase("desc")
-                ? Sort.by(sortBy).descending()
-                : Sort.by(sortBy).ascending();
-        Page<com.readyroad.readyroadbackend.domain.entity.ExamQuestion> pg = examQuestionService
-                .getQuestionsPaginated(PageRequest.of(page, size, sort));
-
-        List<AdminExamQuestionResponse> items = pg.getContent().stream()
-                .map(examQuestionService::toResponse)
-                .toList();
-
-        return ResponseEntity.ok(new PageResponse<>(items, pg.getNumber(), pg.getSize(),
-                pg.getTotalElements(), pg.getTotalPages()));
-    }
-
-    /**
-     * GET /api/admin/exam/questions/{id}
-     */
-    @GetMapping("/exam/questions/{id}")
-    public ResponseEntity<AdminExamQuestionResponse> getExamQuestion(@PathVariable Long id) {
-        return ResponseEntity.ok(examQuestionService.getAdminQuestionById(id));
-    }
-
-    /**
-     * POST /api/admin/exam/questions
-     */
-    @PostMapping("/exam/questions")
-    public ResponseEntity<AdminExamQuestionResponse> createExamQuestion(
-            @Valid @RequestBody AdminExamQuestionRequest request) {
-        log.info("📝 Admin creating exam question for category={}", request.getCategoryCode());
-        AdminExamQuestionResponse resp = examQuestionService.createQuestion(request);
-        log.info("✅ Exam question created id={}", resp.id());
-        return ResponseEntity.status(HttpStatus.CREATED).body(resp);
-    }
-
-    /**
-     * PUT /api/admin/exam/questions/{id}
-     */
-    @PutMapping("/exam/questions/{id}")
-    public ResponseEntity<AdminExamQuestionResponse> updateExamQuestion(
-            @PathVariable Long id,
-            @Valid @RequestBody AdminExamQuestionRequest request) {
-        log.info("✏️ Admin updating exam question id={}", id);
-        return ResponseEntity.ok(examQuestionService.updateQuestion(id, request));
-    }
-
-    /**
-     * DELETE /api/admin/exam/questions/{id}
-     */
-    @DeleteMapping("/exam/questions/{id}")
-    public ResponseEntity<?> deleteExamQuestion(@PathVariable Long id) {
-        log.info("🗑️ Admin deleting exam question id={}", id);
-        try {
-            examQuestionService.deleteQuestion(id);
-            return ResponseEntity.ok(Map.of("message", "Exam question deleted"));
-        } catch (DataIntegrityViolationException e) {
-            return ResponseEntity.status(HttpStatus.CONFLICT)
-                    .body(Map.of("error", "Cannot delete — referenced by exam sessions"));
-        }
-    }
-
-    // ═══════════════════════════════════════════════════
-    // Reset Test Data
-    // ═══════════════════════════════════════════════════
-
-    /**
-     * Reset (delete) all test data from quiz attempts and user answers.
-     * Only deletes records explicitly marked as isTestData=true.
-     * Does NOT touch real user data or quiz questions.
-     *
-     * POST /api/admin/reset-test-data
-     * Body: { "confirmation": "RESET TEST DATA" }
-     *
-     * Guardrails:
-     * - Requires exact typed confirmation string
-     * - Admin-only (class-level @PreAuthorize)
-     * - Logs who triggered it and deletion counts
-     * - Idempotent: second run returns 0 deletions
-     */
-    @PostMapping("/reset-test-data")
-    @Transactional
-    public ResponseEntity<?> resetTestData(
-            @RequestBody Map<String, String> request,
-            @org.springframework.security.core.annotation.AuthenticationPrincipal org.springframework.security.core.userdetails.UserDetails principal) {
-
-        String confirmation = request.get("confirmation");
-        if (!"RESET TEST DATA".equals(confirmation)) {
-            return ResponseEntity.badRequest()
-                    .body(Map.of("error",
-                            "Invalid confirmation. You must type exactly: RESET TEST DATA"));
-        }
-
-        String adminUser = principal != null ? principal.getUsername() : "unknown";
-        log.info("🧹 Reset test data triggered by admin: {}", adminUser);
-
-        // Count before deletion for reporting
-        long testAnswerCount = quizUserAnswerRepository.countByIsTestDataTrue();
-        long testAttemptCount = quizAttemptRepository.countByIsTestDataTrue();
-
-        // Delete answers first (they reference attempts), then attempts
-        int deletedAnswers = quizUserAnswerRepository.deleteAllTestData();
-        int deletedAttempts = quizAttemptRepository.deleteAllTestData();
-
-        log.info("✅ Reset test data completed by admin={}: deletedAnswers={}, deletedAttempts={}",
-                adminUser, deletedAnswers, deletedAttempts);
-
-        return ResponseEntity.ok(Map.of(
-                "message", "Test data reset completed successfully",
-                "deletedAnswers", deletedAnswers,
-                "deletedAttempts", deletedAttempts,
-                "previousTestAnswers", testAnswerCount,
-                "previousTestAttempts", testAttemptCount));
     }
 
     /**

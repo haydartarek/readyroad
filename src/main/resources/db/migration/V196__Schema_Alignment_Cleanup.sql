@@ -1,0 +1,2 @@
+-- Intentionally left blank.
+-- Version retained to preserve migration order after schema consolidation.

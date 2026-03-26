@@ -1,5 +1,6 @@
 package com.readyroad.readyroadbackend.config;
 
+import com.readyroad.readyroadbackend.domain.repository.RoadSignRepository;
 import com.readyroad.readyroadbackend.service.DataImportService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,6 +23,7 @@ public class DataImportRunner implements ApplicationRunner {
     private static final Logger log = LoggerFactory.getLogger(DataImportRunner.class);
 
     private final DataImportService dataImportService;
+    private final RoadSignRepository roadSignRepository;
 
     @Value("${readyroad.data-import.enabled:false}")
     private boolean importEnabled;
@@ -34,17 +36,20 @@ public class DataImportRunner implements ApplicationRunner {
             "category_descriptions.json"
     };
 
-    public DataImportRunner(DataImportService dataImportService) {
+    public DataImportRunner(DataImportService dataImportService, RoadSignRepository roadSignRepository) {
         this.dataImportService = dataImportService;
+        this.roadSignRepository = roadSignRepository;
     }
 
     @Override
     public void run(ApplicationArguments args) {
         if (!importEnabled) {
-            log.info("═══════════════════════════════════════════════════");
-            log.info("ℹ️  Data import is DISABLED");
-            log.info("Set readyroad.data-import.enabled=true to enable.");
-            log.info("═══════════════════════════════════════════════════");
+            return;
+        }
+
+        long activeSigns = roadSignRepository.countByIsActiveTrue();
+        if (activeSigns > 0) {
+            log.info("Legacy JSON data import skipped — {} active road signs already exist.", activeSigns);
             return;
         }
 

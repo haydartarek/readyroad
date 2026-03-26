@@ -199,8 +199,8 @@ public interface UserQuestionHistoryRepository extends JpaRepository<UserQuestio
         * Upsert a question-answered event (when user submits an answer in practice
         * mode).
         * INSERT if (user_id, question_ref_id) not seen before;
-        * UPDATE answer data and counters if record already exists (from prior show via
-        * SmartQuiz).
+        * UPDATE answer data and counters if record already exists from a prior quiz
+        * display event.
         * This prevents DataIntegrityViolationException when a question was already
         * shown
         * and is now being answered.

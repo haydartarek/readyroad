@@ -131,7 +131,10 @@ public record RoadSignDetailDto(
                 s.getDescriptionFr(),
                 s.getDescriptionAr(),
                 Boolean.TRUE.equals(s.getIsActive()),
-                s.getQuestions().stream().map(QuestionDto::from).toList()
+                s.getQuestions().stream()
+                        .filter(q -> Boolean.TRUE.equals(q.getIsActive()))
+                        .map(QuestionDto::from)
+                        .toList()
         );
     }
 }

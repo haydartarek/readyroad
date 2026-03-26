@@ -2,7 +2,6 @@ package com.readyroad.readyroadbackend.domain.repository;
 
 import com.readyroad.readyroadbackend.domain.entity.QuizAttempt;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
@@ -50,12 +49,4 @@ public interface QuizAttemptRepository extends JpaRepository<QuizAttempt, Long> 
        Long countGlobalCompleted();
 
        List<QuizAttempt> findByCompletedAtIsNotNullOrderByCompletedAtDesc(Pageable pageable);
-
-       // ── Test data management ──
-
-       long countByIsTestDataTrue();
-
-       @Modifying
-       @Query("DELETE FROM QuizAttempt a WHERE a.isTestData = true")
-       int deleteAllTestData();
 }

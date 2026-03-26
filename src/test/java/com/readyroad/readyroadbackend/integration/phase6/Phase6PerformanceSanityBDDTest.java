@@ -1,6 +1,7 @@
 package com.readyroad.readyroadbackend.integration.phase6;
 
 import com.readyroad.readyroadbackend.domain.entity.*;
+import com.readyroad.readyroadbackend.domain.enums.SignCategory;
 import com.readyroad.readyroadbackend.domain.repository.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -32,7 +33,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  *
  * Scenarios:
  * - Start exam responds within acceptable time budget via API
- * - Admin listing with filters responds within acceptable time budget (placeholder)
+ * - Admin listing with filters responds within acceptable time budget
+ * (placeholder)
  *
  * Note: Performance thresholds are configurable via test properties.
  * Default threshold: 1000ms (1 second)
@@ -53,7 +55,7 @@ public class Phase6PerformanceSanityBDDTest {
     private CategoryRepository categoryRepository;
 
     @Autowired
-    private TrafficSignRepository trafficSignRepository;
+    private RoadSignRepository roadSignRepository;
 
     @Autowired
     private QuizQuestionRepository quizQuestionRepository;
@@ -67,9 +69,9 @@ public class Phase6PerformanceSanityBDDTest {
     @BeforeEach
     void setUp() {
         mockMvc = MockMvcBuilders
-            .webAppContextSetup(context)
-            .apply(springSecurity())
-            .build();
+                .webAppContextSetup(context)
+                .apply(springSecurity())
+                .build();
 
         testUserId = 700L;
 
@@ -84,15 +86,16 @@ public class Phase6PerformanceSanityBDDTest {
         testCategory = categoryRepository.save(testCategory);
 
         // Create traffic sign
-        TrafficSign testSign = new TrafficSign();
+        RoadSign testSign = new RoadSign();
         testSign.setSignCode("PERF01");
+        testSign.setNormalizedSignCode("PERF01");
         testSign.setNameEn("Performance Test Sign");
         testSign.setNameAr("علامة اختبار الأداء");
         testSign.setNameNl("Prestatie testteken");
         testSign.setNameFr("Signe de test de performance");
-        testSign.setCategory(testCategory);
+        testSign.setCategory(SignCategory.DANGER);
         testSign.setIsActive(true);
-        testSign = trafficSignRepository.save(testSign);
+        testSign = roadSignRepository.save(testSign);
 
         // Create 51 compliant questions for performance test
         for (int i = 1; i <= 51; i++) {
@@ -104,7 +107,7 @@ public class Phase6PerformanceSanityBDDTest {
             question.setDifficultyLevel(QuizQuestion.DifficultyLevel.MEDIUM);
             question.setQuestionType(QuizQuestion.QuestionType.MULTIPLE_CHOICE);
             question.setCategory(testCategory);
-            question.setTrafficSign(testSign);
+            question.setRoadSign(testSign);
             question.setStatus(QuizQuestion.QuestionStatus.PUBLISHED);
             question.setPublishedAt(LocalDateTime.now().minusDays(1));
             question.setIsActive(true);
@@ -146,7 +149,7 @@ public class Phase6PerformanceSanityBDDTest {
         long startTime = System.currentTimeMillis();
 
         mockMvc.perform(post("/api/exams/simulations/start")
-                        .param("userId", testUserId.toString()))
+                .param("userId", testUserId.toString()))
                 .andExpect(status().isCreated()); // 201 Created (REST best practice for resource creation)
 
         long endTime = System.currentTimeMillis();
@@ -155,7 +158,7 @@ public class Phase6PerformanceSanityBDDTest {
         // Then: the request should complete under 1000 milliseconds
         assertThat(duration)
                 .as("Start exam API should respond within %dms (actual: %dms)",
-                    PERFORMANCE_THRESHOLD_MS, duration)
+                        PERFORMANCE_THRESHOLD_MS, duration)
                 .isLessThan(PERFORMANCE_THRESHOLD_MS);
     }
 
@@ -167,7 +170,8 @@ public class Phase6PerformanceSanityBDDTest {
         // 2. Filter parameters (status, search, etc.)
 
         // Given: an admin exists with valid JWT
-        // When: the admin calls GET "/api/admin/questions?status=PUBLISHED&search=urban" via API
+        // When: the admin calls GET
+        // "/api/admin/questions?status=PUBLISHED&search=urban" via API
         // Then: the request should complete under 1000 milliseconds
         // And: no service or DTO imports are required
 

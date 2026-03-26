@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.resource.NoResourceFoundException;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.time.LocalDateTime;
 import java.util.HashMap;
@@ -242,6 +243,21 @@ public class GlobalExceptionHandler {
     @ResponseBody
     public ResponseEntity<Map<String, String>> handleIllegalArgument(IllegalArgumentException ex) {
         return ResponseEntity.badRequest().body(Map.of("error", ex.getMessage()));
+    }
+
+    /**
+     * Preserve explicit HTTP status codes raised from services/controllers.
+     * Prevents business-rule errors (404/409/422...) from being downgraded to a
+     * generic 500 by the catch-all handler below.
+     */
+    @ExceptionHandler(ResponseStatusException.class)
+    @ResponseBody
+    public ResponseEntity<Map<String, Object>> handleResponseStatusException(ResponseStatusException ex) {
+        Map<String, Object> error = new HashMap<>();
+        error.put("error", ex.getStatusCode().toString());
+        error.put("message", ex.getReason() != null ? ex.getReason() : ex.getMessage());
+        error.put("timestamp", LocalDateTime.now());
+        return ResponseEntity.status(ex.getStatusCode()).body(error);
     }
 
     /**

@@ -12,7 +12,11 @@ public interface SignExamRepository extends JpaRepository<SignExam, Long> {
 
     List<SignExam> findAllBySignIdOrderByExamNumberAsc(Long signId);
 
+    List<SignExam> findAllBySignIdAndIsActiveTrueOrderByExamNumberAsc(Long signId);
+
     Optional<SignExam> findBySignIdAndExamNumber(Long signId, Integer examNumber);
+
+    Optional<SignExam> findBySignIdAndExamNumberAndIsActiveTrue(Long signId, Integer examNumber);
 
     void deleteAllBySignId(Long signId);
 }

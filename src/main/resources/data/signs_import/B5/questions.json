@@ -1,83 +1,46 @@
-[
+﻿[
   {
     "question_id": "B5_Q01",
     "type": "WHAT_DOES_IT_MEAN",
     "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE: Replace wrong answers with actual sign names from the same category.",
     "i18n": {
       "NL": {
         "question": "Wat betekent dit verkeersbord?",
         "choices": [
-          {
-            "text": "Stop en voorrang verlenen",
-            "is_correct": true
-          },
-          {
-            "text": "Gevaarlijke bocht naar links",
-            "is_correct": false
-          },
-          {
-            "text": "Verbod voor alle voertuigen",
-            "is_correct": false
-          }
+          {"text": "Volledig stoppen aan de stopstreep en daarna voorrang verlenen aan het kruisende verkeer", "is_correct": true},
+          {"text": "Vaart minderen en voorrang verlenen zonder volledig te stoppen", "is_correct": false},
+          {"text": "U rijdt op een voorrangsweg en heeft voorrang op het kruisende verkeer", "is_correct": false}
         ],
-        "explanation": "Verplichting om volledig te stoppen en voorrang te verlenen."
+        "explanation": "Bord B5 verplicht u volledig te stoppen aan de stopstreep en vervolgens voorrang te verlenen aan alle bestuurders op de kruisende weg."
       },
       "EN": {
         "question": "What does this traffic sign mean?",
         "choices": [
-          {
-            "text": "Stop and give way",
-            "is_correct": true
-          },
-          {
-            "text": "Dangerous curve to the left",
-            "is_correct": false
-          },
-          {
-            "text": "Prohibited for all vehicles",
-            "is_correct": false
-          }
+          {"text": "Stop completely at the stop line and then give way to crossing traffic", "is_correct": true},
+          {"text": "Reduce speed and give way without stopping completely", "is_correct": false},
+          {"text": "You are on a priority road and have priority over crossing traffic", "is_correct": false}
         ],
-        "explanation": "Stop and give way."
+        "explanation": "Sign B5 requires you to stop completely at the stop line and then give way to all drivers on the crossing road."
       },
       "FR": {
         "question": "Que signifie ce panneau de signalisation ?",
         "choices": [
-          {
-            "text": "Arrêt et cédez le passage",
-            "is_correct": true
-          },
-          {
-            "text": "Virage dangereux à gauche",
-            "is_correct": false
-          },
-          {
-            "text": "Interdit à tous les véhicules",
-            "is_correct": false
-          }
+          {"text": "S'arrÃªter complÃ¨tement Ã  la ligne d'arrÃªt puis cÃ©der le passage au trafic croisÃ©", "is_correct": true},
+          {"text": "RÃ©duire la vitesse et cÃ©der le passage sans s'arrÃªter complÃ¨tement", "is_correct": false},
+          {"text": "Vous Ãªtes sur une route prioritaire et avez la prioritÃ© sur le trafic croisÃ©", "is_correct": false}
         ],
-        "explanation": "Stop et cédez le passage."
+        "explanation": "Le panneau B5 vous oblige Ã  vous arrÃªter complÃ¨tement Ã  la ligne d'arrÃªt, puis Ã  cÃ©der le passage Ã  tous les conducteurs sur la route transversale."
       },
       "AR": {
-        "question": "ماذا تعني لافتة المرور هذه؟",
+        "question": "Ù…Ø§Ø°Ø§ ØªØ¹Ù†ÙŠ Ù„Ø§ÙØªØ© Ø§Ù„Ù…Ø±ÙˆØ± Ù‡Ø°Ù‡ØŸ",
         "choices": [
-          {
-            "text": "توقف وأفسح المجال",
-            "is_correct": true
-          },
-          {
-            "text": "منعطف خطير إلى اليسار",
-            "is_correct": false
-          },
-          {
-            "text": "ممنوع لجميع المركبات",
-            "is_correct": false
-          }
+          {"text": "Ø§Ù„ØªÙˆÙ‚Ù Ø§Ù„ÙƒØ§Ù…Ù„ Ø¹Ù†Ø¯ Ø®Ø· Ø§Ù„Ø¥ÙŠÙ‚Ø§Ù Ø«Ù… Ø¥Ø¹Ø·Ø§Ø¡ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© Ù„Ø­Ø±ÙƒØ© Ø§Ù„Ù…Ø±ÙˆØ± Ø§Ù„Ù…ØªÙ‚Ø§Ø·Ø¹Ø©", "is_correct": true},
+          {"text": "ØªØ®ÙÙŠÙ Ø§Ù„Ø³Ø±Ø¹Ø© ÙˆØ¥Ø¹Ø·Ø§Ø¡ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© Ø¯ÙˆÙ† Ø§Ù„ØªÙˆÙ‚Ù Ø§Ù„ÙƒØ§Ù…Ù„", "is_correct": false},
+          {"text": "Ø£Ù†Øª Ø¹Ù„Ù‰ Ø·Ø±ÙŠÙ‚ Ø£ÙˆÙ„ÙˆÙŠØ© ÙˆÙ„Ø¯ÙŠÙƒ Ø­Ù‚ Ø§Ù„Ù…Ø±ÙˆØ± Ø¹Ù„Ù‰ Ø­Ø±ÙƒØ© Ø§Ù„Ù…Ø±ÙˆØ± Ø§Ù„Ù…ØªÙ‚Ø§Ø·Ø¹Ø©", "is_correct": false}
         ],
-        "explanation": "توقف وأفسح المجال."
+        "explanation": "ØªÙÙ„Ø²Ù…Ùƒ Ù„Ø§ÙØªØ© B5 Ø¨Ø§Ù„ØªÙˆÙ‚Ù Ø§Ù„ÙƒØ§Ù…Ù„ Ø¹Ù†Ø¯ Ø®Ø· Ø§Ù„Ø¥ÙŠÙ‚Ø§Ù Ø«Ù… Ø¥Ø¹Ø·Ø§Ø¡ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© Ù„Ø¬Ù…ÙŠØ¹ Ø§Ù„Ø³Ø§Ø¦Ù‚ÙŠÙ† Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ù…ØªÙ‚Ø§Ø·Ø¹."
       }
     }
   },
@@ -86,162 +49,88 @@
     "type": "WHICH_SIGN",
     "difficulty": "EASY",
     "is_critical": false,
-    "show_sign": true,
-    "_note": "TEMPLATE: Ready to use — category identification question.",
+    "show_sign": false,
     "i18n": {
       "NL": {
-        "question": "Tot welke categorie verkeerstekens behoort dit bord?",
+        "question": "Welk bord verplicht u zowel volledig te stoppen als voorrang te verlenen?",
         "choices": [
-          {
-            "text": "Voorrangsborden (B-reeks)",
-            "is_correct": true
-          },
-          {
-            "text": "Gevaarsborden (A-reeks)",
-            "is_correct": false
-          },
-          {
-            "text": "Verbodsborden (C-reeks)",
-            "is_correct": false
-          }
+          {"text": "B5 â€“ Stoppen en voorrang verlenen", "is_correct": true},
+          {"text": "B1 â€“ Voorrang verlenen", "is_correct": false},
+          {"text": "B9 â€“ Voorrangsweg", "is_correct": false}
         ],
-        "explanation": "Dit bord behoort tot de categorie 'Voorrangsborden (B-reeks)'. Elk type bord heeft een specifieke vorm en kleurschema."
+        "explanation": "Alleen B5 verplicht tot een volledige stilstand Ã©n het verlenen van voorrang. B1 vereist enkel voorrang verlenen; B9 geeft aan dat u zelf voorrang heeft."
       },
       "EN": {
-        "question": "To which category of traffic signs does this sign belong?",
+        "question": "Which sign requires you both to stop completely and to give way?",
         "choices": [
-          {
-            "text": "Priority signs (B-series)",
-            "is_correct": true
-          },
-          {
-            "text": "Danger signs (A-series)",
-            "is_correct": false
-          },
-          {
-            "text": "Prohibition signs (C-series)",
-            "is_correct": false
-          }
+          {"text": "B5 â€“ Stop and give way", "is_correct": true},
+          {"text": "B1 â€“ Give way", "is_correct": false},
+          {"text": "B9 â€“ Priority road", "is_correct": false}
         ],
-        "explanation": "This sign belongs to the 'Priority signs (B-series)' category. Each type of sign has a specific shape and color scheme."
+        "explanation": "Only B5 requires a complete stop and giving way. B1 only requires giving way; B9 means you have priority."
       },
       "FR": {
-        "question": "À quelle catégorie de panneaux de signalisation ce panneau appartient-il ?",
+        "question": "Quel panneau vous oblige Ã  la fois Ã  vous arrÃªter complÃ¨tement et Ã  cÃ©der le passage ?",
         "choices": [
-          {
-            "text": "Panneaux de priorité (série B)",
-            "is_correct": true
-          },
-          {
-            "text": "Panneaux de danger (série A)",
-            "is_correct": false
-          },
-          {
-            "text": "Panneaux d'interdiction (série C)",
-            "is_correct": false
-          }
+          {"text": "B5 â€“ Stop et cÃ©dez le passage", "is_correct": true},
+          {"text": "B1 â€“ CÃ©dez le passage", "is_correct": false},
+          {"text": "B9 â€“ Route prioritaire", "is_correct": false}
         ],
-        "explanation": "Ce panneau appartient à la catégorie 'Panneaux de priorité (série B)'. Chaque type de panneau a une forme et un schéma de couleurs spécifiques."
+        "explanation": "Seul B5 impose un arrÃªt complet et le cÃ©der le passage. B1 impose uniquement de cÃ©der le passage ; B9 signifie que vous avez la prioritÃ©."
       },
       "AR": {
-        "question": "إلى أي فئة من لافتات المرور تنتمي هذه اللافتة؟",
+        "question": "Ø£ÙŠ Ù„Ø§ÙØªØ© ØªÙÙ„Ø²Ù…Ùƒ Ø¨Ø§Ù„ØªÙˆÙ‚Ù Ø§Ù„ÙƒØ§Ù…Ù„ ÙˆØ¥Ø¹Ø·Ø§Ø¡ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© Ù…Ø¹Ø§Ù‹ØŸ",
         "choices": [
-          {
-            "text": "لافتات الأولوية (سلسلة B)",
-            "is_correct": true
-          },
-          {
-            "text": "لافتات الخطر (سلسلة A)",
-            "is_correct": false
-          },
-          {
-            "text": "لافتات الحظر (سلسلة C)",
-            "is_correct": false
-          }
+          {"text": "B5 â€“ ØªÙˆÙ‚Ù ÙˆØ£Ø¹Ø· Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ©", "is_correct": true},
+          {"text": "B1 â€“ Ø¥Ø¹Ø·Ø§Ø¡ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ©", "is_correct": false},
+          {"text": "B9 â€“ Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ©", "is_correct": false}
         ],
-        "explanation": "هذه اللافتة تنتمي إلى فئة 'لافتات الأولوية (سلسلة B)'. كل نوع من اللافتات له شكل ونظام ألوان محدد."
+        "explanation": "ÙÙ‚Ø· B5 ÙŠÙÙ„Ø²Ù… Ø¨Ø§Ù„ØªÙˆÙ‚Ù Ø§Ù„ÙƒØ§Ù…Ù„ ÙˆØ¥Ø¹Ø·Ø§Ø¡ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© Ù…Ø¹Ø§Ù‹. B1 ÙŠÙÙ„Ø²Ù… ÙÙ‚Ø· Ø¨Ø¥Ø¹Ø·Ø§Ø¡ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ©Ø› B9 ÙŠØ¹Ù†ÙŠ Ø£Ù† Ù„Ø¯ÙŠÙƒ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ©."
       }
     }
   },
   {
     "question_id": "B5_Q03",
-    "type": "WHAT_MUST_YOU_DO",
-    "difficulty": "MEDIUM",
+    "type": "HAZARD_IDENTIFICATION",
+    "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE (MEDIUM): Replace with sign-specific question for production.",
     "i18n": {
       "NL": {
-        "question": "Wat moet u doen wanneer u dit voorrangsbord ziet?",
+        "question": "Op welk gevaar attendeert dit verkeersbord?",
         "choices": [
-          {
-            "text": "De instructie van het bord correct opvolgen",
-            "is_correct": true
-          },
-          {
-            "text": "Het bord negeren als er geen ander verkeer is",
-            "is_correct": false
-          },
-          {
-            "text": "Flashen met de lichten om de voorrang te claimen",
-            "is_correct": false
-          }
+          {"text": "Kruisend verkeer met voorrang; een volledige stilstand is noodzakelijk om veilig te controleren", "is_correct": true},
+          {"text": "Een gevaarlijke bocht met verminderd zicht verderop", "is_correct": false},
+          {"text": "Wegwerkzaamheden met tijdelijke rijstrookversmalling", "is_correct": false}
         ],
-        "explanation": "Voorrangsborden regelen de doorstroming op kruispunten. Het correct opvolgen is wettelijk verplicht."
+        "explanation": "Dit bord attendeert u op kruisend verkeer dat voorrang heeft. Door volledig te stoppen krijgt u het nodige overzicht om veilig in te voegen."
       },
       "EN": {
-        "question": "What must you do when you see this priority sign?",
+        "question": "What hazard does this traffic sign alert you to?",
         "choices": [
-          {
-            "text": "Correctly follow the instruction of the sign",
-            "is_correct": true
-          },
-          {
-            "text": "Ignore the sign if there is no other traffic",
-            "is_correct": false
-          },
-          {
-            "text": "Flash lights to claim priority",
-            "is_correct": false
-          }
+          {"text": "Crossing traffic with priority; a complete stop is required to check safely", "is_correct": true},
+          {"text": "A dangerous curve with reduced visibility ahead", "is_correct": false},
+          {"text": "Roadworks with temporary lane narrowing", "is_correct": false}
         ],
-        "explanation": "Priority signs regulate traffic flow at intersections. Correctly following them is legally mandatory."
+        "explanation": "This sign alerts you to crossing traffic that has priority. Stopping completely gives you the overview needed to merge safely."
       },
       "FR": {
-        "question": "Que devez-vous faire lorsque vous voyez ce panneau de priorité ?",
+        "question": "Ã€ quel danger ce panneau vous avertit-il ?",
         "choices": [
-          {
-            "text": "Suivre correctement l'instruction du panneau",
-            "is_correct": true
-          },
-          {
-            "text": "Ignorer le panneau s'il n'y a pas d'autre circulation",
-            "is_correct": false
-          },
-          {
-            "text": "Faire des appels de phares pour réclamer la priorité",
-            "is_correct": false
-          }
+          {"text": "Trafic croisÃ© prioritaire ; un arrÃªt complet est nÃ©cessaire pour vÃ©rifier en sÃ©curitÃ©", "is_correct": true},
+          {"text": "Un virage dangereux avec visibilitÃ© rÃ©duite plus loin", "is_correct": false},
+          {"text": "Travaux routiers avec rÃ©trÃ©cissement temporaire de voie", "is_correct": false}
         ],
-        "explanation": "Les panneaux de priorité régulent la circulation aux intersections. Leur respect est légalement obligatoire."
+        "explanation": "Ce panneau vous avertit d'un trafic croisÃ© prioritaire. Un arrÃªt complet vous donne la vue d'ensemble nÃ©cessaire pour s'insÃ©rer en sÃ©curitÃ©."
       },
       "AR": {
-        "question": "ماذا يجب أن تفعل عندما ترى لافتة الأولوية هذه؟",
+        "question": "Ù…Ø§ Ø§Ù„Ø®Ø·Ø± Ø§Ù„Ø°ÙŠ ØªÙ†Ø¨Ù‘Ù‡Ùƒ Ø¥Ù„ÙŠÙ‡ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ",
         "choices": [
-          {
-            "text": "اتباع تعليمات اللافتة بشكل صحيح",
-            "is_correct": true
-          },
-          {
-            "text": "تجاهل اللافتة إذا لم يكن هناك مرور آخر",
-            "is_correct": false
-          },
-          {
-            "text": "تشغيل وميض الأضواء للمطالبة بالأولوية",
-            "is_correct": false
-          }
+          {"text": "Ø­Ø±ÙƒØ© Ù…Ø±ÙˆØ± Ù…ØªÙ‚Ø§Ø·Ø¹Ø© Ù„Ù‡Ø§ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ©Ø› ÙŠÙ„Ø²Ù… Ø§Ù„ØªÙˆÙ‚Ù Ø§Ù„ÙƒØ§Ù…Ù„ Ù„Ù„ÙØ­Øµ Ø¨Ø£Ù…Ø§Ù†", "is_correct": true},
+          {"text": "Ù…Ù†Ø¹Ø·Ù Ø®Ø·ÙŠØ± Ø¨Ù…Ø±Ø¦ÙŠØ© Ù…Ø­Ø¯ÙˆØ¯Ø© Ø£Ù…Ø§Ù…Ùƒ", "is_correct": false},
+          {"text": "Ø£Ø¹Ù…Ø§Ù„ Ø·Ø±Ù‚ Ù…Ø¹ ØªØ¶ÙŠÙŠÙ‚ Ù…Ø¤Ù‚Øª Ù„Ù„Ù…Ø³Ø§Ø±", "is_correct": false}
         ],
-        "explanation": "تنظم لافتات الأولوية حركة المرور عند التقاطعات. الالتزام بها إلزامي قانونياً."
+        "explanation": "ØªÙ†Ø¨Ù‘Ù‡Ùƒ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ© Ø¥Ù„Ù‰ Ø­Ø±ÙƒØ© Ù…Ø±ÙˆØ± Ù…ØªÙ‚Ø§Ø·Ø¹Ø© Ù„Ù‡Ø§ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ©. Ø§Ù„ØªÙˆÙ‚Ù Ø§Ù„ÙƒØ§Ù…Ù„ ÙŠÙ…Ù†Ø­Ùƒ Ø§Ù„Ø±Ø¤ÙŠØ© Ø§Ù„Ø¶Ø±ÙˆØ±ÙŠØ© Ù„Ù„Ø§Ù†Ø¯Ù…Ø§Ø¬ Ø¨Ø£Ù…Ø§Ù†."
       }
     }
   },
@@ -251,1894 +140,214 @@
     "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE (MEDIUM): Replace with sign-specific question for production.",
     "i18n": {
       "NL": {
-        "question": "Wat is de gevolg van het niet naleven van een voorrangsbord?",
+        "question": "Wat moet u doen als u dit verkeersbord ziet?",
         "choices": [
-          {
-            "text": "Zware overtreding met boete en mogelijke schorsing van het rijbewijs",
-            "is_correct": true
-          },
-          {
-            "text": "Enkel een mondelinge waarschuwing van de politie",
-            "is_correct": false
-          },
-          {
-            "text": "Geen straf als er geen ongeluk is",
-            "is_correct": false
-          }
+          {"text": "Volledig tot stilstand komen aan de stopstreep, daarna alle richtingen controleren en enkel verder rijden als de weg vrij is", "is_correct": true},
+          {"text": "Vaart minderen tot 30 km/u en doorrijden als er geen verkeer zichtbaar is", "is_correct": false},
+          {"text": "Stoppen is enkel verplicht als er effectief verkeer op de kruisende weg rijdt", "is_correct": false}
         ],
-        "explanation": "Voorrangsborden niet respecteren is een zware overtreding die kan leiden tot hoge boetes en puntenaftrek."
+        "explanation": "Bord B5 vereist altijd een volledige stilstand, ongeacht of er verkeer zichtbaar is. Daarna controleert u alle richtingen en rijdt u enkel door als de weg vrij is."
       },
       "EN": {
-        "question": "What is the consequence of not complying with a priority sign?",
+        "question": "What must you do when you see this traffic sign?",
         "choices": [
-          {
-            "text": "Serious violation with fine and possible driver's license suspension",
-            "is_correct": true
-          },
-          {
-            "text": "Only an oral warning from the police",
-            "is_correct": false
-          },
-          {
-            "text": "No penalty if no accident occurred",
-            "is_correct": false
-          }
+          {"text": "Come to a complete stop at the stop line, then check all directions and only proceed when the road is clear", "is_correct": true},
+          {"text": "Reduce speed to 30 km/h and continue if no traffic is visible", "is_correct": false},
+          {"text": "Stopping is only required if traffic is actually on the crossing road", "is_correct": false}
         ],
-        "explanation": "Not respecting priority signs is a serious violation leading to high fines and licence points deduction."
+        "explanation": "Sign B5 always requires a complete stop, regardless of whether traffic is visible. Then check all directions and only proceed when the road is clear."
       },
       "FR": {
-        "question": "Quelle est la conséquence du non-respect d'un panneau de priorité ?",
+        "question": "Que devez-vous faire lorsque vous voyez ce panneau ?",
         "choices": [
-          {
-            "text": "Infraction grave avec amende et suspension possible du permis de conduire",
-            "is_correct": true
-          },
-          {
-            "text": "Seulement un avertissement oral de la police",
-            "is_correct": false
-          },
-          {
-            "text": "Pas de peine s'il n'y a pas eu d'accident",
-            "is_correct": false
-          }
+          {"text": "S'arrÃªter complÃ¨tement Ã  la ligne d'arrÃªt, vÃ©rifier toutes les directions et ne repartir que lorsque la voie est libre", "is_correct": true},
+          {"text": "RÃ©duire la vitesse Ã  30 km/h et continuer si aucun trafic n'est visible", "is_correct": false},
+          {"text": "L'arrÃªt n'est obligatoire que si du trafic circule effectivement sur la route transversale", "is_correct": false}
         ],
-        "explanation": "Ne pas respecter les panneaux de priorité est une infraction grave menant à de lourdes amendes."
+        "explanation": "Le panneau B5 exige toujours un arrÃªt complet, que du trafic soit visible ou non. VÃ©rifiez ensuite toutes les directions et ne repartez que lorsque la voie est libre."
       },
       "AR": {
-        "question": "ما هي عواقب عدم الامتثال للافتة الأولوية؟",
+        "question": "Ù…Ø§Ø°Ø§ ÙŠØ¬Ø¨ Ø¹Ù„ÙŠÙƒ Ø£Ù† ØªÙØ¹Ù„ Ø¹Ù†Ø¯ Ø±Ø¤ÙŠØ© Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ",
         "choices": [
-          {
-            "text": "مخالفة خطيرة مع غرامة وسحب محتمل لرخصة القيادة",
-            "is_correct": true
-          },
-          {
-            "text": "تحذير شفهي فقط من الشرطة",
-            "is_correct": false
-          },
-          {
-            "text": "لا عقوبة إذا لم يحدث حادث",
-            "is_correct": false
-          }
+          {"text": "Ø§Ù„ØªÙˆÙ‚Ù Ø§Ù„ÙƒØ§Ù…Ù„ Ø¹Ù†Ø¯ Ø®Ø· Ø§Ù„Ø¥ÙŠÙ‚Ø§Ù Ø«Ù… ÙØ­Øµ Ø¬Ù…ÙŠØ¹ Ø§Ù„Ø§ØªØ¬Ø§Ù‡Ø§Øª ÙˆØ§Ù„Ù…Ø¶ÙŠ ÙÙ‚Ø· Ø¹Ù†Ø¯ Ø®Ù„Ùˆ Ø§Ù„Ø·Ø±ÙŠÙ‚", "is_correct": true},
+          {"text": "ØªØ®ÙÙŠÙ Ø§Ù„Ø³Ø±Ø¹Ø© Ø¥Ù„Ù‰ 30 ÙƒÙ…/Ø³Ø§Ø¹Ø© ÙˆØ§Ù„Ø§Ø³ØªÙ…Ø±Ø§Ø± Ø¥Ø°Ø§ Ù„Ù… ØªÙƒÙ† Ù‡Ù†Ø§Ùƒ Ø­Ø±ÙƒØ© Ù…Ø±ÙˆØ± Ù…Ø±Ø¦ÙŠØ©", "is_correct": false},
+          {"text": "Ø§Ù„ØªÙˆÙ‚Ù Ù…Ø·Ù„ÙˆØ¨ ÙÙ‚Ø· Ø¥Ø°Ø§ ÙƒØ§Ù†Øª Ù‡Ù†Ø§Ùƒ Ø­Ø±ÙƒØ© Ù…Ø±ÙˆØ± ÙØ¹Ù„ÙŠØ© Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ù…ØªÙ‚Ø§Ø·Ø¹", "is_correct": false}
         ],
-        "explanation": "عدم احترام لافتات الأولوية مخالفة خطيرة تؤدي إلى غرامات كبيرة وخصم نقاط من رخصة القيادة."
+        "explanation": "ØªØ³ØªÙ„Ø²Ù… Ù„Ø§ÙØªØ© B5 Ø¯Ø§Ø¦Ù…Ø§Ù‹ ØªÙˆÙ‚ÙØ§Ù‹ ÙƒØ§Ù…Ù„Ø§Ù‹ Ø¨ØµØ±Ù Ø§Ù„Ù†Ø¸Ø± Ø¹Ù† ÙˆØ¬ÙˆØ¯ Ø­Ø±ÙƒØ© Ù…Ø±ÙˆØ± Ù…Ø±Ø¦ÙŠØ©. Ø«Ù… ØªÙØ­Øµ Ø¬Ù…ÙŠØ¹ Ø§Ù„Ø§ØªØ¬Ø§Ù‡Ø§Øª ÙˆÙ„Ø§ ØªÙ…Ø¶ÙŠ Ø¥Ù„Ø§ Ø¹Ù†Ø¯ Ø®Ù„Ùˆ Ø§Ù„Ø·Ø±ÙŠÙ‚."
       }
     }
   },
   {
     "question_id": "B5_Q05",
-    "type": "IS_IT_ALLOWED",
-    "difficulty": "HARD",
-    "is_critical": true,
+    "type": "DRIVER_ACTION",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE (HARD): Replace with sign-specific question for production.",
     "i18n": {
       "NL": {
-        "question": "Bent u wettelijk verplicht dit voorrangsbord te respecteren?",
+        "question": "U nadert een kruispunt met bord B5. Het kruispunt lijkt volledig leeg. Wat doet u?",
         "choices": [
-          {
-            "text": "Ja, voorrangsborden zijn wettelijk bindend en moeten altijd worden nageleefd",
-            "is_correct": true
-          },
-          {
-            "text": "Nee, voorrangsborden zijn aanbevelingen die u naar eigen inzicht kunt volgen",
-            "is_correct": false
-          }
+          {"text": "U stopt volledig aan de stopstreep, controleert alle richtingen en rijdt dan door", "is_correct": true},
+          {"text": "U vertraagt sterk maar stopt niet volledig omdat het kruispunt leeg is", "is_correct": false},
+          {"text": "U toetert om te signaleren en rijdt door als er geen reactie is", "is_correct": false}
         ],
-        "explanation": "Voorrangsborden zijn wettelijk bindend voor alle weggebruikers. Het niet naleven is een overtreding die kan leiden tot boetes en puntenaftrek."
+        "explanation": "Bord B5 verplicht altijd een volledige stilstand, ook als het kruispunt leeg lijkt. Onzichtbaar verkeer kan op de kruisende weg naderen."
       },
       "EN": {
-        "question": "Are you legally required to respect this priority sign?",
+        "question": "You are approaching a junction with sign B5. The junction appears completely empty. What do you do?",
         "choices": [
-          {
-            "text": "Yes, priority signs are legally binding and must always be complied with",
-            "is_correct": true
-          },
-          {
-            "text": "No, priority signs are recommendations that you may follow at your own discretion",
-            "is_correct": false
-          }
+          {"text": "You stop completely at the stop line, check all directions and then proceed", "is_correct": true},
+          {"text": "You slow down significantly but do not stop completely because the junction is empty", "is_correct": false},
+          {"text": "You sound your horn as a warning and proceed if there is no reaction", "is_correct": false}
         ],
-        "explanation": "Priority signs are legally binding for all road users. Non-compliance is a violation that can lead to fines and licence points deduction."
+        "explanation": "Sign B5 always requires a complete stop, even when the junction appears empty. Non-visible traffic may be approaching on the crossing road."
       },
       "FR": {
-        "question": "Êtes-vous légalement obligé de respecter ce panneau de priorité ?",
+        "question": "Vous approchez d'un carrefour avec le panneau B5. Le carrefour semble complÃ¨tement vide. Que faites-vous ?",
         "choices": [
-          {
-            "text": "Oui, les panneaux de priorité sont juridiquement contraignants et doivent toujours être respectés",
-            "is_correct": true
-          },
-          {
-            "text": "Non, les panneaux de priorité sont des recommandations que vous pouvez suivre à votre discrétion",
-            "is_correct": false
-          }
+          {"text": "Vous vous arrÃªtez complÃ¨tement Ã  la ligne d'arrÃªt, vÃ©rifiez toutes les directions et partez ensuite", "is_correct": true},
+          {"text": "Vous ralentissez fortement mais ne vous arrÃªtez pas complÃ¨tement car le carrefour est vide", "is_correct": false},
+          {"text": "Vous klaxonnez pour avertir et continuez s'il n'y a pas de rÃ©action", "is_correct": false}
         ],
-        "explanation": "Les panneaux de priorité sont juridiquement contraignants pour tous les usagers. Le non-respect est une infraction pouvant mener à des amendes."
+        "explanation": "Le panneau B5 impose toujours un arrÃªt complet, mÃªme si le carrefour semble vide. Du trafic non visible peut approcher sur la route transversale."
       },
       "AR": {
-        "question": "هل أنت ملزم قانونياً باحترام لافتة الأولوية هذه؟",
+        "question": "Ø£Ù†Øª ØªÙ‚ØªØ±Ø¨ Ù…Ù† ØªÙ‚Ø§Ø·Ø¹ Ø¨Ù‡ Ù„Ø§ÙØªØ© B5. ÙŠØ¨Ø¯Ùˆ Ø§Ù„ØªÙ‚Ø§Ø·Ø¹ ÙØ§Ø±ØºØ§Ù‹ ØªÙ…Ø§Ù…Ø§Ù‹. Ù…Ø§Ø°Ø§ ØªÙØ¹Ù„ØŸ",
         "choices": [
-          {
-            "text": "نعم، لافتات الأولوية ملزمة قانونياً ويجب الالتزام بها دائماً",
-            "is_correct": true
-          },
-          {
-            "text": "لا، لافتات الأولوية توصيات يمكنك اتباعها وفق تقديرك الخاص",
-            "is_correct": false
-          }
+          {"text": "ØªØªÙˆÙ‚Ù ÙƒÙ„ÙŠØ§Ù‹ Ø¹Ù†Ø¯ Ø®Ø· Ø§Ù„Ø¥ÙŠÙ‚Ø§Ù ÙˆØªÙØ­Øµ Ø¬Ù…ÙŠØ¹ Ø§Ù„Ø§ØªØ¬Ø§Ù‡Ø§Øª Ø«Ù… ØªÙ…Ø¶ÙŠ", "is_correct": true},
+          {"text": "ØªÙØ¨Ø·Ø¦ ÙƒØ«ÙŠØ±Ø§Ù‹ Ù„ÙƒÙ† Ù„Ø§ ØªØªÙˆÙ‚Ù ÙƒÙ„ÙŠØ§Ù‹ Ù„Ø£Ù† Ø§Ù„ØªÙ‚Ø§Ø·Ø¹ ÙØ§Ø±Øº", "is_correct": false},
+          {"text": "ØªÙÙ†Ø¨Ù‘Ù‡ Ø¨Ø§Ù„Ø¨ÙˆÙ‚ ÙˆØªÙ…Ø¶ÙŠ Ø¥Ø°Ø§ Ù„Ù… ÙŠÙƒÙ† Ù‡Ù†Ø§Ùƒ Ø±Ø¯ ÙØ¹Ù„", "is_correct": false}
         ],
-        "explanation": "لافتات الأولوية ملزمة قانونياً لجميع مستخدمي الطريق. عدم الامتثال مخالفة قد تؤدي إلى غرامات وخصم نقاط من رخصة القيادة."
+        "explanation": "ØªØ³ØªÙ„Ø²Ù… Ù„Ø§ÙØªØ© B5 Ø¯Ø§Ø¦Ù…Ø§Ù‹ ØªÙˆÙ‚ÙØ§Ù‹ ÙƒØ§Ù…Ù„Ø§Ù‹ Ø­ØªÙ‰ Ù„Ùˆ Ø¨Ø¯Ø§ Ø§Ù„ØªÙ‚Ø§Ø·Ø¹ ÙØ§Ø±ØºØ§Ù‹. Ù‚Ø¯ ØªÙ‚ØªØ±Ø¨ Ø­Ø±ÙƒØ© Ù…Ø±ÙˆØ± ØºÙŠØ± Ù…Ø±Ø¦ÙŠØ© Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ù…ØªÙ‚Ø§Ø·Ø¹."
       }
     }
   },
   {
     "question_id": "B5_Q06",
-    "type": "WHAT_DOES_IT_MEAN",
-    "difficulty": "EASY",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Welke vorm heeft het bord B5 'Stoppen en voorrang verlenen'?",
+        "question": "Wat is het essentiÃ«le verschil in gedragsregel tussen bord B5 en bord B1?",
         "choices": [
-          {
-            "text": "Achthoek (octagon) met rode achtergrond en witte letters STOP",
-            "is_correct": true
-          },
-          { "text": "Omgekeerde driehoek met rode rand", "is_correct": false },
-          { "text": "Ronde rode cirkel", "is_correct": false }
+          {"text": "B5 verplicht tot een volledige stilstand vÃ³Ã³r het verlenen van voorrang; B1 vereist enkel voorrang verlenen zonder verplichte stop", "is_correct": true},
+          {"text": "B1 verplicht tot stoppen; B5 verplicht enkel tot vaart minderen en voorrang verlenen", "is_correct": false},
+          {"text": "B5 en B1 zijn identiek: beide vereisen enkel voorrang verlenen", "is_correct": false}
         ],
-        "explanation": "Het B5-bord heeft de internationaal bekende achthoekige (octagonale) vorm met rode achtergrond en het woord STOP in witte letters. Dit is uniek voor stopborden wereldwijd."
+        "explanation": "Het sleutelonderscheid: B5 = stop + voorrang verlenen. B1 = alleen voorrang verlenen (stoppen is niet verplicht als u veilig kunt doorrijden)."
       },
       "EN": {
-        "question": "What shape is the B5 'Stop and give way' sign?",
+        "question": "What is the essential difference in required behaviour between sign B5 and sign B1?",
         "choices": [
-          {
-            "text": "Octagon with red background and white letters STOP",
-            "is_correct": true
-          },
-          { "text": "Inverted triangle with red border", "is_correct": false },
-          { "text": "Round red circle", "is_correct": false }
+          {"text": "B5 requires a complete stop before giving way; B1 only requires giving way without a mandatory stop", "is_correct": true},
+          {"text": "B1 requires stopping; B5 only requires reducing speed and giving way", "is_correct": false},
+          {"text": "B5 and B1 are identical: both only require giving way", "is_correct": false}
         ],
-        "explanation": "The B5 sign has the internationally recognised octagonal shape with a red background and the word STOP in white letters. This is unique to stop signs worldwide."
+        "explanation": "The key distinction: B5 = stop + give way. B1 = give way only (stopping is not required if you can safely pass through)."
       },
       "FR": {
-        "question": "Quelle forme a le panneau B5 'Stop et cédez le passage' ?",
+        "question": "Quelle est la diffÃ©rence essentielle de comportement entre le panneau B5 et le panneau B1 ?",
         "choices": [
-          {
-            "text": "Octogone avec fond rouge et lettres blanches STOP",
-            "is_correct": true
-          },
-          {
-            "text": "Triangle inversé avec bordure rouge",
-            "is_correct": false
-          },
-          { "text": "Cercle rouge rond", "is_correct": false }
+          {"text": "B5 impose un arrÃªt complet avant de cÃ©der le passage ; B1 exige uniquement de cÃ©der le passage sans arrÃªt obligatoire", "is_correct": true},
+          {"text": "B1 impose l'arrÃªt ; B5 impose uniquement de rÃ©duire la vitesse et de cÃ©der le passage", "is_correct": false},
+          {"text": "B5 et B1 sont identiques : tous deux n'exigent que de cÃ©der le passage", "is_correct": false}
         ],
-        "explanation": "Le panneau B5 a la forme octogonale internationalement reconnue avec un fond rouge et le mot STOP en lettres blanches. C'est unique pour les panneaux d'arrêt dans le monde entier."
+        "explanation": "La distinction clÃ© : B5 = arrÃªt + cÃ©der le passage. B1 = cÃ©der le passage uniquement (l'arrÃªt n'est pas obligatoire si vous pouvez passer en sÃ©curitÃ©)."
       },
       "AR": {
-        "question": "ما شكل اللافتة B5 'توقف وأعط الأولوية'؟",
+        "question": "Ù…Ø§ Ø§Ù„ÙØ±Ù‚ Ø§Ù„Ø¬ÙˆÙ‡Ø±ÙŠ ÙÙŠ Ø§Ù„Ø³Ù„ÙˆÙƒ Ø§Ù„Ù…Ø·Ù„ÙˆØ¨ Ø¨ÙŠÙ† Ø§Ù„Ù„Ø§ÙØªØ© B5 ÙˆØ§Ù„Ù„Ø§ÙØªØ© B1ØŸ",
         "choices": [
-          { "text": "مثمن بخلفية حمراء وأحرف STOP بيضاء", "is_correct": true },
-          { "text": "مثلث مقلوب بحافة حمراء", "is_correct": false },
-          { "text": "دائرة حمراء", "is_correct": false }
+          {"text": "B5 ÙŠÙÙ„Ø²Ù… Ø¨Ø§Ù„ØªÙˆÙ‚Ù Ø§Ù„ÙƒØ§Ù…Ù„ Ù‚Ø¨Ù„ Ø¥Ø¹Ø·Ø§Ø¡ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ©Ø› B1 ÙŠÙÙ„Ø²Ù… ÙÙ‚Ø· Ø¨Ø¥Ø¹Ø·Ø§Ø¡ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© Ø¯ÙˆÙ† Ø§Ø´ØªØ±Ø§Ø· Ø§Ù„ØªÙˆÙ‚Ù", "is_correct": true},
+          {"text": "B1 ÙŠÙÙ„Ø²Ù… Ø¨Ø§Ù„ØªÙˆÙ‚ÙØ› B5 ÙŠÙÙ„Ø²Ù… ÙÙ‚Ø· Ø¨ØªØ®ÙÙŠÙ Ø§Ù„Ø³Ø±Ø¹Ø© ÙˆØ¥Ø¹Ø·Ø§Ø¡ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ©", "is_correct": false},
+          {"text": "B5 ÙˆB1 Ù…ØªØ·Ø§Ø¨Ù‚Ø§Ù†: ÙƒÙ„Ø§Ù‡Ù…Ø§ ÙŠÙÙ„Ø²Ù… ÙÙ‚Ø· Ø¨Ø¥Ø¹Ø·Ø§Ø¡ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ©", "is_correct": false}
         ],
-        "explanation": "تتخذ اللافتة B5 الشكل المثمن المعروف دولياً بخلفية حمراء وكلمة STOP بأحرف بيضاء. وهو شكل فريد للافتات التوقف في جميع أنحاء العالم."
+        "explanation": "Ø§Ù„ØªÙ…ÙŠÙŠØ² Ø§Ù„Ø±Ø¦ÙŠØ³ÙŠ: B5 = ØªÙˆÙ‚Ù + Ø¥Ø¹Ø·Ø§Ø¡ Ø£ÙˆÙ„ÙˆÙŠØ©. B1 = Ø¥Ø¹Ø·Ø§Ø¡ Ø£ÙˆÙ„ÙˆÙŠØ© ÙÙ‚Ø· (Ø§Ù„ØªÙˆÙ‚Ù ØºÙŠØ± Ù…Ø·Ù„ÙˆØ¨ Ø¥Ø°Ø§ ÙƒØ§Ù† ÙŠÙ…ÙƒÙ†Ùƒ Ø§Ù„Ù…Ø±ÙˆØ± Ø¨Ø£Ù…Ø§Ù†)."
       }
     }
   },
   {
     "question_id": "B5_Q07",
-    "type": "WHAT_DOES_IT_MEAN",
-    "difficulty": "EASY",
-    "is_critical": false,
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat is het verschil tussen bord B5 en bord B1?",
+        "question": "U staat voor een kruispunt met bord B5. U kunt de kruisende weg volledig overzien en er is geen enkel voertuig te zien. Mag u doorrijden zonder volledig te stoppen?",
         "choices": [
-          {
-            "text": "Bij B5 moet u steeds volledig stoppen; bij B1 hoeft u enkel te stoppen als er verkeer is",
-            "is_correct": true
-          },
-          {
-            "text": "B1 en B5 zijn identiek en verplichten tot volledig stoppen",
-            "is_correct": false
-          },
-          {
-            "text": "Bij B5 mag u doorrijden als er geen verkeer is; bij B1 moet u altijd stoppen",
-            "is_correct": false
-          }
+          {"text": "Nee, bord B5 verplicht u altijd tot een volledige stilstand, ongeacht de verkeersituatie", "is_correct": true},
+          {"text": "Ja, als de weg aantoonbaar vrij is, hoeft u niet meer te stoppen", "is_correct": false}
         ],
-        "explanation": "Het cruciale verschil: B5 verplicht u altijd volledig tot stilstand te komen, ook als er geen enkel voertuig te zien is. B1 verplicht enkel tot stoppen als er effectief verkeer in de weg staat."
+        "explanation": "Bord B5 vereist een onvoorwaardelijke volledige stilstand. Er is geen uitzondering toegestaan, ook niet als de weg vrij lijkt."
       },
       "EN": {
-        "question": "What is the difference between sign B5 and sign B1?",
+        "question": "You are at a junction with sign B5. You can see the entire crossing road and no vehicle is visible. May you continue without stopping completely?",
         "choices": [
-          {
-            "text": "At B5 you must always stop completely; at B1 you only need to stop if there is traffic",
-            "is_correct": true
-          },
-          {
-            "text": "B1 and B5 are identical and both require a complete stop",
-            "is_correct": false
-          },
-          {
-            "text": "At B5 you may drive through if there is no traffic; at B1 you must always stop",
-            "is_correct": false
-          }
+          {"text": "No, sign B5 always requires a complete stop regardless of the traffic situation", "is_correct": true},
+          {"text": "Yes, if the road is demonstrably clear, you do not need to stop", "is_correct": false}
         ],
-        "explanation": "The key difference: B5 requires you to come to a complete stop every time, even if no vehicle is visible. B1 only requires stopping if there is actually traffic in the way."
+        "explanation": "Sign B5 requires an unconditional complete stop. No exception is permitted, even if the road appears clear."
       },
       "FR": {
-        "question": "Quelle est la différence entre le panneau B5 et le panneau B1 ?",
+        "question": "Vous Ãªtes Ã  un carrefour avec le panneau B5. Vous pouvez voir toute la route transversale et aucun vÃ©hicule n'est visible. Pouvez-vous continuer sans vous arrÃªter complÃ¨tement ?",
         "choices": [
-          {
-            "text": "Au B5 vous devez toujours vous arrêter complètement; au B1 vous devez seulement vous arrêter s'il y a de la circulation",
-            "is_correct": true
-          },
-          {
-            "text": "B1 et B5 sont identiques et obligent tous deux à s'arrêter complètement",
-            "is_correct": false
-          },
-          {
-            "text": "Au B5 vous pouvez passer s'il n'y a pas de circulation; au B1 vous devez toujours vous arrêter",
-            "is_correct": false
-          }
+          {"text": "Non, le panneau B5 impose toujours un arrÃªt complet quelle que soit la situation de trafic", "is_correct": true},
+          {"text": "Oui, si la route est manifestement libre, vous n'avez pas besoin de vous arrÃªter", "is_correct": false}
         ],
-        "explanation": "La différence cruciale: B5 vous oblige à vous arrêter complètement à chaque fois, même si aucun véhicule n'est visible. B1 oblige seulement à s'arrêter s'il y a effectivement de la circulation sur le chemin."
+        "explanation": "Le panneau B5 exige un arrÃªt complet inconditionnel. Aucune exception n'est permise, mÃªme si la voie semble libre."
       },
       "AR": {
-        "question": "ما الفرق بين اللافتة B5 واللافتة B1؟",
+        "question": "Ø£Ù†Øª Ø¹Ù†Ø¯ ØªÙ‚Ø§Ø·Ø¹ Ø¨Ù‡ Ù„Ø§ÙØªØ© B5. ÙŠÙ…ÙƒÙ†Ùƒ Ø±Ø¤ÙŠØ© Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ù…ØªÙ‚Ø§Ø·Ø¹ Ø¨Ø§Ù„ÙƒØ§Ù…Ù„ ÙˆÙ„Ø§ ØªÙØ±Ù‰ Ø£ÙŠ Ù…Ø±ÙƒØ¨Ø©. Ù‡Ù„ ÙŠØ¬ÙˆØ² Ù„Ùƒ Ø§Ù„Ø§Ø³ØªÙ…Ø±Ø§Ø± Ø¯ÙˆÙ† Ø§Ù„ØªÙˆÙ‚Ù Ø§Ù„ÙƒØ§Ù…Ù„ØŸ",
         "choices": [
-          {
-            "text": "عند B5 يجب دائماً التوقف الكامل؛ عند B1 تتوقف فقط إذا كان هناك مرور",
-            "is_correct": true
-          },
-          {
-            "text": "B1 وB5 متطابقتان وكلتاهما تلزم بالتوقف الكامل",
-            "is_correct": false
-          },
-          {
-            "text": "عند B5 يمكنك المرور إذا لم يكن هناك مرور؛ عند B1 يجب دائماً التوقف",
-            "is_correct": false
-          }
+          {"text": "Ù„Ø§ØŒ ØªÙÙ„Ø²Ù… Ù„Ø§ÙØªØ© B5 Ø¯Ø§Ø¦Ù…Ø§Ù‹ Ø¨Ø§Ù„ØªÙˆÙ‚Ù Ø§Ù„ÙƒØ§Ù…Ù„ Ø¨ØºØ¶ Ø§Ù„Ù†Ø¸Ø± Ø¹Ù† Ø­Ø§Ù„Ø© Ø§Ù„Ù…Ø±ÙˆØ±", "is_correct": true},
+          {"text": "Ù†Ø¹Ù…ØŒ Ø¥Ø°Ø§ ÙƒØ§Ù† Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø®Ø§Ù„ÙŠØ§Ù‹ Ø¨ÙˆØ¶ÙˆØ­ ÙÙ„Ø§ Ø­Ø§Ø¬Ø© Ù„Ù„ØªÙˆÙ‚Ù", "is_correct": false}
         ],
-        "explanation": "الفرق الجوهري: B5 تُلزم بالتوقف الكامل في كل مرة، حتى لو لم تكن هناك مركبة مرئية. B1 تُلزم بالتوقف فقط إذا كان هناك مرور فعلي في الطريق."
+        "explanation": "ØªØ³ØªÙ„Ø²Ù… Ù„Ø§ÙØªØ© B5 ØªÙˆÙ‚ÙØ§Ù‹ ÙƒØ§Ù…Ù„Ø§Ù‹ ØºÙŠØ± Ù…Ø´Ø±ÙˆØ·. Ù„Ø§ ÙŠÙØ³Ù…Ø­ Ø¨Ø£ÙŠ Ø§Ø³ØªØ«Ù†Ø§Ø¡ Ø­ØªÙ‰ Ù„Ùˆ Ø¨Ø¯Ø§ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø®Ø§Ù„ÙŠØ§Ù‹."
       }
     }
   },
   {
     "question_id": "B5_Q08",
-    "type": "WHAT_DOES_IT_MEAN",
-    "difficulty": "EASY",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Waar is het bord B5 typisch te vinden?",
-        "choices": [
-          {
-            "text": "Op gevaarlijke kruispunten met beperkt zicht of hoge snellheid op de kruisende weg",
-            "is_correct": true
-          },
-          {
-            "text": "Op elke kruispunt in een bebouwde gebied",
-            "is_correct": false
-          },
-          { "text": "Alleen op autosnelwegen", "is_correct": false }
-        ],
-        "explanation": "Het B5-bord wordt geplaatst op kruispunten die extra gevaarlijk zijn, zoals bij beperkt uitzicht, hoge snelheid op de kruisende weg, of een geschiedenis van ongelukken."
-      },
-      "EN": {
-        "question": "Where is the B5 sign typically found?",
-        "choices": [
-          {
-            "text": "At dangerous intersections with limited visibility or high speed on the crossing road",
-            "is_correct": true
-          },
-          {
-            "text": "At every intersection in a built-up area",
-            "is_correct": false
-          },
-          { "text": "Only on motorways", "is_correct": false }
-        ],
-        "explanation": "The B5 sign is placed at intersections that are particularly dangerous, such as limited visibility, high speed on the crossing road, or a history of accidents."
-      },
-      "FR": {
-        "question": "Où le panneau B5 est-il généralement trouvé ?",
-        "choices": [
-          {
-            "text": "Aux carrefours dangereux avec une visibilité limitée ou une vitesse élevée sur la route de croisement",
-            "is_correct": true
-          },
-          {
-            "text": "À chaque carrefour en agglomération",
-            "is_correct": false
-          },
-          { "text": "Uniquement sur les autoroutes", "is_correct": false }
-        ],
-        "explanation": "Le panneau B5 est placé aux carrefours particulièrement dangereux, comme une visibilité limitée, une vitesse élevée sur la route de croisement ou des antécédents d'accidents."
-      },
-      "AR": {
-        "question": "أين تُوجد لافتة B5 عادةً؟",
-        "choices": [
-          {
-            "text": "عند التقاطعات الخطرة ذات الرؤية المحدودة أو السرعة العالية على الطريق المتقاطع",
-            "is_correct": true
-          },
-          { "text": "عند كل تقاطع في المناطق المبنية", "is_correct": false },
-          { "text": "على الطرق السريعة فقط", "is_correct": false }
-        ],
-        "explanation": "توضع لافتة B5 عند التقاطعات الخطرة بشكل خاص، كالرؤية المحدودة أو السرعة العالية على الطريق المتقاطع أو وجود تاريخ من الحوادث."
-      }
-    }
-  },
-  {
-    "question_id": "B5_Q09",
-    "type": "WHAT_DOES_IT_MEAN",
-    "difficulty": "EASY",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Wat staat er op het bord B5?",
-        "choices": [
-          { "text": "Het woord STOP in grote letters", "is_correct": true },
-          { "text": "Een rood kruis", "is_correct": false },
-          { "text": "Een pijl naar links en rechts", "is_correct": false }
-        ],
-        "explanation": "Op het B5-bord staat het woord 'STOP' in grote witte letters op een rode achtergrond. Dit is internationaal uniform en herkenbaar in alle landen."
-      },
-      "EN": {
-        "question": "What is written on the B5 sign?",
-        "choices": [
-          { "text": "The word STOP in large letters", "is_correct": true },
-          { "text": "A red cross", "is_correct": false },
-          { "text": "An arrow pointing left and right", "is_correct": false }
-        ],
-        "explanation": "The B5 sign displays the word 'STOP' in large white letters on a red background. This is internationally uniform and recognisable in all countries."
-      },
-      "FR": {
-        "question": "Qu'est-ce qui est écrit sur le panneau B5 ?",
-        "choices": [
-          { "text": "Le mot STOP en grandes lettres", "is_correct": true },
-          { "text": "Une croix rouge", "is_correct": false },
-          {
-            "text": "Une flèche pointant vers la gauche et la droite",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Le panneau B5 affiche le mot 'STOP' en grandes lettres blanches sur fond rouge. C'est internationalement uniforme et reconnaissable dans tous les pays."
-      },
-      "AR": {
-        "question": "ما المكتوب على اللافتة B5؟",
-        "choices": [
-          { "text": "كلمة STOP بأحرف كبيرة", "is_correct": true },
-          { "text": "علامة زائد حمراء", "is_correct": false },
-          { "text": "سهم يشير لليسار واليمين", "is_correct": false }
-        ],
-        "explanation": "تعرض اللافتة B5 كلمة 'STOP' بأحرف بيضاء كبيرة على خلفية حمراء. وهي موحدة دولياً ومعروفة في جميع الدول."
-      }
-    }
-  },
-  {
-    "question_id": "B5_Q10",
-    "type": "WHAT_MUST_YOU_DO",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "U rijdt richting een B5-bord en de weg is volledig vrij. Wat moet u doen?",
-        "choices": [
-          {
-            "text": "Volledig tot stilstand komen, ook al is er geen verkeer zichtbaar",
-            "is_correct": true
-          },
-          {
-            "text": "Vertragen maar niet stoppen als er geen verkeer is",
-            "is_correct": false
-          },
-          {
-            "text": "Doorrijden want u kan zien dat de kruising vrij is",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Bij een B5-bord MOET u altijd volledig stoppen, zelfs als de weg volledig vrij lijkt. Dit is een absolute verplichting, in tegenstelling tot het B1-bord waarbij enkel gestopt moet worden bij aanwezig verkeer."
-      },
-      "EN": {
-        "question": "You are approaching a B5 sign and the road is completely clear. What must you do?",
-        "choices": [
-          {
-            "text": "Come to a complete stop, even if no traffic is visible",
-            "is_correct": true
-          },
-          {
-            "text": "Slow down but do not stop if there is no traffic",
-            "is_correct": false
-          },
-          {
-            "text": "Drive through because you can see the intersection is clear",
-            "is_correct": false
-          }
-        ],
-        "explanation": "At a B5 sign you MUST always stop completely, even if the road appears completely clear. This is an absolute requirement, unlike the B1 sign where you only need to stop when traffic is present."
-      },
-      "FR": {
-        "question": "Vous approchez d'un panneau B5 et la route est complètement libre. Que devez-vous faire ?",
-        "choices": [
-          {
-            "text": "Vous arrêter complètement, même si aucun véhicule n'est visible",
-            "is_correct": true
-          },
-          {
-            "text": "Ralentir mais ne pas vous arrêter s'il n'y a pas de circulation",
-            "is_correct": false
-          },
-          {
-            "text": "Continuer car vous pouvez voir que le carrefour est libre",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Au panneau B5, vous DEVEZ toujours vous arrêter complètement, même si la route semble complètement libre. C'est une obligation absolue, contrairement au panneau B1 où vous n'avez besoin de vous arrêter que lorsqu'il y a de la circulation."
-      },
-      "AR": {
-        "question": "أنت تقترب من لافتة B5 والطريق خالٍ تماماً. ماذا يجب أن تفعل؟",
-        "choices": [
-          {
-            "text": "التوقف الكامل، حتى لو لم تكن هناك مركبات مرئية",
-            "is_correct": true
-          },
-          {
-            "text": "التباطؤ دون التوقف إذا لم يكن هناك مرور",
-            "is_correct": false
-          },
-          { "text": "الاستمرار لأنك ترى أن التقاطع خالٍ", "is_correct": false }
-        ],
-        "explanation": "عند لافتة B5 يجب دائماً التوقف الكامل، حتى لو بدا الطريق خالياً تماماً. هذا التزام مطلق، على خلاف لافتة B1 حيث تتوقف فقط عند وجود مرور."
-      }
-    }
-  },
-  {
-    "question_id": "B5_Q11",
-    "type": "WHAT_MUST_YOU_DO",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Hoelang moet u stoppen bij een B5-bord?",
-        "choices": [
-          {
-            "text": "Totdat uw voertuig volledig stilstaat — er is geen minimumtijd, maar u moet echt stoppen",
-            "is_correct": true
-          },
-          {
-            "text": "Exact 3 seconden, dan mag u doorrijden",
-            "is_correct": false
-          },
-          {
-            "text": "Exact 1 minuut wachten voor u doorrijdt",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Er is geen wettelijke minimumtijd, maar uw voertuig moet echt tot stilstand komen (snelheidsmeter = 0). Daarna controleert u of de weg vrij is en rijdt u verder als het veilig is."
-      },
-      "EN": {
-        "question": "How long must you stop at a B5 sign?",
-        "choices": [
-          {
-            "text": "Until your vehicle is completely stationary — there is no minimum time, but you must truly stop",
-            "is_correct": true
-          },
-          {
-            "text": "Exactly 3 seconds, then you may drive on",
-            "is_correct": false
-          },
-          { "text": "Exactly 1 minute before driving on", "is_correct": false }
-        ],
-        "explanation": "There is no legal minimum time, but your vehicle must truly come to a standstill (speedometer = 0). After that you check whether the road is clear and drive on when safe."
-      },
-      "FR": {
-        "question": "Combien de temps devez-vous vous arrêter au panneau B5 ?",
-        "choices": [
-          {
-            "text": "Jusqu'à ce que votre véhicule soit complètement à l'arrêt — il n'y a pas de durée minimale, mais vous devez vraiment vous arrêter",
-            "is_correct": true
-          },
-          {
-            "text": "Exactement 3 secondes, puis vous pouvez continuer",
-            "is_correct": false
-          },
-          {
-            "text": "Exactement 1 minute avant de conduire",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Il n'y a pas de durée minimale légale, mais votre véhicule doit vraiment s'immobiliser (compteur = 0). Ensuite, vous vérifiez si la route est libre et vous continuez si c'est sûr."
-      },
-      "AR": {
-        "question": "كم من الوقت يجب أن تتوقف عند لافتة B5؟",
-        "choices": [
-          {
-            "text": "حتى تتوقف مركبتك تماماً — لا يوجد وقت أدنى، لكن يجب أن تتوقف فعلاً",
-            "is_correct": true
-          },
-          { "text": "بالضبط 3 ثوانٍ ثم يمكنك الاستمرار", "is_correct": false },
-          { "text": "بالضبط دقيقة واحدة قبل القيادة", "is_correct": false }
-        ],
-        "explanation": "لا يوجد وقت أدنى قانوني، لكن يجب أن تتوقف مركبتك فعلياً (عداد السرعة = 0). بعدها تتحقق من خلو الطريق وتستمر عندما يكون آمناً."
-      }
-    }
-  },
-  {
-    "question_id": "B5_Q12",
-    "type": "WHAT_MUST_YOU_DO",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Wat is na het stoppen bij B5 de volgorde van handelingen?",
-        "choices": [
-          {
-            "text": "Stoppen → Links en rechts kijken → Voorrang verlenen aan kruisend verkeer → Optrekken als het veilig is",
-            "is_correct": true
-          },
-          {
-            "text": "Stoppen → Optrekken → Dan kijken of er verkeer is",
-            "is_correct": false
-          },
-          { "text": "Toeter → Stoppen → Doorrijden", "is_correct": false }
-        ],
-        "explanation": "De correcte volgorde bij B5: eerst volledig stoppen, dan links en rechts controleren op kruisend verkeer, dan voorrang verlenen, en pas daarna veilig optrekken."
-      },
-      "EN": {
-        "question": "After stopping at B5, what is the correct sequence of actions?",
-        "choices": [
-          {
-            "text": "Stop → Look left and right → Yield to crossing traffic → Move off when safe",
-            "is_correct": true
-          },
-          {
-            "text": "Stop → Move off → Then check for traffic",
-            "is_correct": false
-          },
-          { "text": "Honk → Stop → Drive through", "is_correct": false }
-        ],
-        "explanation": "The correct sequence at B5: first stop completely, then check left and right for crossing traffic, then yield, and only then move off safely."
-      },
-      "FR": {
-        "question": "Après s'être arrêté au B5, quelle est la séquence correcte d'actions ?",
-        "choices": [
-          {
-            "text": "S'arrêter → Regarder à gauche et à droite → Céder le passage → Repartir quand c'est sûr",
-            "is_correct": true
-          },
-          {
-            "text": "S'arrêter → Repartir → Puis vérifier s'il y a de la circulation",
-            "is_correct": false
-          },
-          { "text": "Klaxonner → S'arrêter → Passer", "is_correct": false }
-        ],
-        "explanation": "La séquence correcte au B5: d'abord s'arrêter complètement, puis vérifier à gauche et à droite pour la circulation croisante, puis céder le passage, et seulement ensuite repartir en toute sécurité."
-      },
-      "AR": {
-        "question": "بعد التوقف عند B5، ما هو تسلسل الإجراءات الصحيح؟",
-        "choices": [
-          {
-            "text": "توقف → انظر يساراً ويميناً → أعط الأولوية للمرور المتقاطع → تحرك عندما يكون آمناً",
-            "is_correct": true
-          },
-          { "text": "توقف → تحرك → ثم تحقق من وجود مرور", "is_correct": false },
-          { "text": "اضغط البوق → توقف → استمر", "is_correct": false }
-        ],
-        "explanation": "التسلسل الصحيح عند B5: أولاً توقف كاملاً، ثم تحقق يساراً ويميناً من المرور المتقاطع، ثم أعط الأولوية، وبعدها فقط تحرك بأمان."
-      }
-    }
-  },
-  {
-    "question_id": "B5_Q13",
-    "type": "WHAT_MUST_YOU_DO",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Geldt het B5-bord ook voor fietsers?",
-        "choices": [
-          {
-            "text": "Ja, tenzij een onderbord of afzonderlijk fietserspictogram aangeeft dat het niet geldt voor fietsers",
-            "is_correct": true
-          },
-          {
-            "text": "Nee, het B5-bord geldt nooit voor fietsers",
-            "is_correct": false
-          },
-          {
-            "text": "Alleen als er een apart bord voor fietsers staat",
-            "is_correct": false
-          }
-        ],
-        "explanation": "In principe geldt het B5-bord voor alle weggebruikers. In sommige gevallen kan een onderbord of wijziging aangeven dat fietsers zijn vrijgesteld, maar de basisregel is dat het voor iedereen geldt."
-      },
-      "EN": {
-        "question": "Does the B5 sign also apply to cyclists?",
-        "choices": [
-          {
-            "text": "Yes, unless a supplementary sign or separate cyclist pictogram indicates it does not apply to cyclists",
-            "is_correct": true
-          },
-          {
-            "text": "No, the B5 sign never applies to cyclists",
-            "is_correct": false
-          },
-          {
-            "text": "Only if there is a separate sign for cyclists",
-            "is_correct": false
-          }
-        ],
-        "explanation": "In principle, the B5 sign applies to all road users. In some cases a supplementary sign may indicate that cyclists are exempt, but the basic rule is that it applies to everyone."
-      },
-      "FR": {
-        "question": "Le panneau B5 s'applique-t-il aussi aux cyclistes ?",
-        "choices": [
-          {
-            "text": "Oui, sauf si un panneau complémentaire ou un pictogramme cycliste séparé indique qu'il ne s'applique pas aux cyclistes",
-            "is_correct": true
-          },
-          {
-            "text": "Non, le panneau B5 ne s'applique jamais aux cyclistes",
-            "is_correct": false
-          },
-          {
-            "text": "Seulement s'il y a un panneau séparé pour les cyclistes",
-            "is_correct": false
-          }
-        ],
-        "explanation": "En principe, le panneau B5 s'applique à tous les usagers de la route. Dans certains cas, un panneau complémentaire peut indiquer que les cyclistes sont exemptés, mais la règle de base est qu'il s'applique à tous."
-      },
-      "AR": {
-        "question": "هل تسري لافتة B5 أيضاً على راكبي الدراجات؟",
-        "choices": [
-          {
-            "text": "نعم، ما لم تُشر لافتة تكميلية أو رمز دراجة منفصل إلى أنها لا تسري على الدراجات",
-            "is_correct": true
-          },
-          {
-            "text": "لا، لافتة B5 لا تسري أبداً على راكبي الدراجات",
-            "is_correct": false
-          },
-          {
-            "text": "فقط إذا كانت هناك لافتة منفصلة للدراجات",
-            "is_correct": false
-          }
-        ],
-        "explanation": "من حيث المبدأ، تسري لافتة B5 على جميع مستخدمي الطريق. في بعض الحالات قد تُشير لافتة تكميلية إلى إعفاء راكبي الدراجات، لكن القاعدة الأساسية هي أنها تسري على الجميع."
-      }
-    }
-  },
-  {
-    "question_id": "B5_Q14",
     "type": "IS_IT_ALLOWED",
     "difficulty": "HARD",
     "is_critical": true,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U rijdt aan 10 km/u langs een B5-bord en rolt door zonder volledig te stoppen. Is dit toegestaan?",
+        "question": "U rijdt 's nachts naar een kruispunt met bord B5. Is het verplicht ook 's nachts volledig te stoppen, zelfs als de weg verlicht is en vrij oogt?",
         "choices": [
-          {
-            "text": "Nee, zelfs bij zeer lage snelheid moet u volledig tot stilstand komen bij een B5-bord",
-            "is_correct": true
-          },
-          {
-            "text": "Ja, als u onder de 20 km/u rijdt, volstaat een vertraging",
-            "is_correct": false
-          },
-          {
-            "text": "Ja, als u kunt bewijzen dat de weg vrij was",
-            "is_correct": false
-          }
+          {"text": "Ja, de stopverplichting van bord B5 geldt dag en nacht zonder uitzondering", "is_correct": true},
+          {"text": "Nee, 's nachts bij een goed verlicht en leeg kruispunt volstaat sterk afremmen", "is_correct": false}
         ],
-        "explanation": "Doorrijden zonder volledig te stoppen bij een B5-bord is een overtreding, ongeacht uw snelheid. Zelfs aan 5 km/u moet u echt stoppen. Een 'rolling stop' is niet toegestaan."
+        "explanation": "De stopverplichting van bord B5 geldt altijd, dag Ã©n nacht. Er bestaat geen wettelijke uitzondering op basis van tijdstip of zichtbaarheid."
       },
       "EN": {
-        "question": "You drive at 10 km/h past a B5 sign and roll through without stopping completely. Is this permitted?",
+        "question": "You are driving at night toward a junction with sign B5. Are you required to stop completely at night too, even if the road is lit and appears clear?",
         "choices": [
-          {
-            "text": "No, even at very low speed you must come to a complete stop at a B5 sign",
-            "is_correct": true
-          },
-          {
-            "text": "Yes, if you drive under 20 km/h, slowing down is sufficient",
-            "is_correct": false
-          },
-          {
-            "text": "Yes, if you can prove the road was clear",
-            "is_correct": false
-          }
+          {"text": "Yes, the stop obligation of sign B5 applies day and night without exception", "is_correct": true},
+          {"text": "No, at night at a well-lit empty junction, heavy braking is sufficient", "is_correct": false}
         ],
-        "explanation": "Driving through without stopping completely at a B5 sign is a violation, regardless of your speed. Even at 5 km/h you must truly stop. A 'rolling stop' is not permitted."
+        "explanation": "The stop obligation of sign B5 always applies, day and night. There is no legal exception based on time of day or visibility."
       },
       "FR": {
-        "question": "Vous roulez à 10 km/h devant un panneau B5 et passez sans vous arrêter complètement. Est-ce permis ?",
+        "question": "Vous roulez de nuit vers un carrefour avec le panneau B5. ÃŠtes-vous obligÃ© de vous arrÃªter complÃ¨tement la nuit aussi, mÃªme si la route est Ã©clairÃ©e et semble libre ?",
         "choices": [
-          {
-            "text": "Non, même à très faible vitesse, vous devez vous arrêter complètement au panneau B5",
-            "is_correct": true
-          },
-          {
-            "text": "Oui, si vous roulez à moins de 20 km/h, ralentir suffit",
-            "is_correct": false
-          },
-          {
-            "text": "Oui, si vous pouvez prouver que la route était libre",
-            "is_correct": false
-          }
+          {"text": "Oui, l'obligation d'arrÃªt du panneau B5 s'applique de jour comme de nuit sans exception", "is_correct": true},
+          {"text": "Non, la nuit Ã  un carrefour bien Ã©clairÃ© et vide, un freinage fort suffit", "is_correct": false}
         ],
-        "explanation": "Passer sans s'arrêter complètement au panneau B5 est une infraction, quelle que soit votre vitesse. Même à 5 km/h, vous devez vraiment vous arrêter. Un 'arrêt roulant' n'est pas autorisé."
+        "explanation": "L'obligation d'arrÃªt du panneau B5 s'applique toujours, de jour comme de nuit. Il n'existe aucune exception lÃ©gale basÃ©e sur l'heure ou la visibilitÃ©."
       },
       "AR": {
-        "question": "تقود بسرعة 10 كم/ساعة أمام لافتة B5 وتمر دون التوقف الكامل. هل هذا مسموح؟",
+        "question": "Ø£Ù†Øª ØªØ³ÙŠØ± Ù„ÙŠÙ„Ø§Ù‹ Ù†Ø­Ùˆ ØªÙ‚Ø§Ø·Ø¹ Ø¨Ù‡ Ù„Ø§ÙØªØ© B5. Ù‡Ù„ ÙŠØ¬Ø¨ Ø¹Ù„ÙŠÙƒ Ø§Ù„ØªÙˆÙ‚Ù Ø§Ù„ÙƒØ§Ù…Ù„ Ù„ÙŠÙ„Ø§Ù‹ Ø£ÙŠØ¶Ø§Ù‹ Ø­ØªÙ‰ Ù„Ùˆ ÙƒØ§Ù† Ø§Ù„Ø·Ø±ÙŠÙ‚ Ù…Ø¶Ø§Ø¡Ù‹ ÙˆÙŠØ¨Ø¯Ùˆ Ø®Ø§Ù„ÙŠØ§Ù‹ØŸ",
         "choices": [
-          {
-            "text": "لا، حتى بسرعة منخفضة جداً يجب التوقف الكامل عند لافتة B5",
-            "is_correct": true
-          },
-          {
-            "text": "نعم، إذا كنت تقود بأقل من 20 كم/ساعة يكفي التباطؤ",
-            "is_correct": false
-          },
-          {
-            "text": "نعم، إذا كان بإمكانك إثبات أن الطريق كان خالياً",
-            "is_correct": false
-          }
+          {"text": "Ù†Ø¹Ù…ØŒ Ø§Ù„ØªØ²Ø§Ù… Ø§Ù„ØªÙˆÙ‚Ù ÙÙŠ Ù„Ø§ÙØªØ© B5 ÙŠÙ†Ø·Ø¨Ù‚ Ù„ÙŠÙ„Ø§Ù‹ ÙˆÙ†Ù‡Ø§Ø±Ø§Ù‹ Ø¯ÙˆÙ† Ø§Ø³ØªØ«Ù†Ø§Ø¡", "is_correct": true},
+          {"text": "Ù„Ø§ØŒ Ù„ÙŠÙ„Ø§Ù‹ Ø¹Ù†Ø¯ ØªÙ‚Ø§Ø·Ø¹ Ù…Ø¶Ø§Ø¡ ÙˆØ®Ø§Ù„Ù ÙŠÙƒÙÙŠ Ø§Ù„ÙØ±Ù…Ù„Ø© Ø§Ù„Ù‚ÙˆÙŠØ©", "is_correct": false}
         ],
-        "explanation": "المرور دون التوقف الكامل عند لافتة B5 مخالفة، بغض النظر عن سرعتك. حتى بسرعة 5 كم/ساعة يجب التوقف الفعلي. 'التوقف المتدحرج' غير مسموح به."
-      }
-    }
-  },
-  {
-    "question_id": "B5_Q15",
-    "type": "IS_IT_ALLOWED",
-    "difficulty": "HARD",
-    "is_critical": true,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Er staat een B5-bord maar ook een werknemer van een bouwbedrijf die aangeeft dat u mag doorrijden. Wat doet u?",
-        "choices": [
-          {
-            "text": "Alleen een erkende verkeersregelaar of politieagent mag u machtigen om door te rijden; een bouwvakker niet",
-            "is_correct": true
-          },
-          {
-            "text": "Als de bouwvakker een veiligheidshesje draagt, mag u vertrouwen op zijn aanwijzingen",
-            "is_correct": false
-          },
-          {
-            "text": "U mag altijd stoppen en wachten op officiële instructies",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Alleen een wettelijk erkende verkeersregelaar (politieagent of aangestelde verkeersregelaar) kan verkeersborden tijdelijk overrulen. Een gewone bouwvakker zonder officiële bevoegdheid mag dit niet."
-      },
-      "EN": {
-        "question": "There is a B5 sign but also a construction worker signalling that you may drive through. What do you do?",
-        "choices": [
-          {
-            "text": "Only an authorised traffic controller or police officer may authorise you to drive through; a construction worker may not",
-            "is_correct": true
-          },
-          {
-            "text": "If the construction worker wears a safety vest, you may trust his directions",
-            "is_correct": false
-          },
-          {
-            "text": "You may always stop and wait for official instructions",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Only a legally recognised traffic controller (police officer or appointed traffic controller) can temporarily override traffic signs. An ordinary construction worker without official authority cannot."
-      },
-      "FR": {
-        "question": "Il y a un panneau B5 mais aussi un ouvrier de construction qui vous indique que vous pouvez passer. Que faites-vous ?",
-        "choices": [
-          {
-            "text": "Seul un régulateur de la circulation agréé ou un agent de police peut vous autoriser à passer; un ouvrier de construction ne le peut pas",
-            "is_correct": true
-          },
-          {
-            "text": "Si l'ouvrier porte un gilet de sécurité, vous pouvez faire confiance à ses indications",
-            "is_correct": false
-          },
-          {
-            "text": "Vous pouvez toujours vous arrêter et attendre des instructions officielles",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Seul un régulateur de la circulation légalement reconnu (agent de police ou régulateur de la circulation désigné) peut temporairement passer outre les panneaux de signalisation. Un ouvrier ordinaire sans autorité officielle ne le peut pas."
-      },
-      "AR": {
-        "question": "هناك لافتة B5 لكن أيضاً عامل بناء يُشير لك بالمرور. ماذا تفعل؟",
-        "choices": [
-          {
-            "text": "فقط منظم مرور معتمد أو ضابط شرطة يمكنه تخويلك للمرور؛ عامل البناء لا يستطيع ذلك",
-            "is_correct": true
-          },
-          {
-            "text": "إذا كان عامل البناء يرتدي سترة أمان يمكنك الوثوق بتعليماته",
-            "is_correct": false
-          },
-          {
-            "text": "يمكنك دائماً التوقف والانتظار للحصول على تعليمات رسمية",
-            "is_correct": false
-          }
-        ],
-        "explanation": "فقط منظم مرور معترف به قانونياً (ضابط شرطة أو منظم مرور معين) يمكنه تجاوز لافتات المرور مؤقتاً. عامل البناء العادي بدون صلاحية رسمية لا يستطيع ذلك."
-      }
-    }
-  },
-  {
-    "question_id": "B5_Q16",
-    "type": "WHAT_DOES_IT_MEAN",
-    "difficulty": "EASY",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Welke kleur heeft de achtergrond van het B5-bord?",
-        "choices": [
-          { "text": "Rood", "is_correct": true },
-          { "text": "Wit", "is_correct": false },
-          { "text": "Geel", "is_correct": false }
-        ],
-        "explanation": "Het B5-bord heeft een rode achtergrond met witte tekst 'STOP'. De rode kleur is internationaal het signaalkleur voor gevaar en stop."
-      },
-      "EN": {
-        "question": "What colour is the background of the B5 sign?",
-        "choices": [
-          { "text": "Red", "is_correct": true },
-          { "text": "White", "is_correct": false },
-          { "text": "Yellow", "is_correct": false }
-        ],
-        "explanation": "The B5 sign has a red background with white text 'STOP'. The red colour is internationally the signal colour for danger and stop."
-      },
-      "FR": {
-        "question": "De quelle couleur est le fond du panneau B5 ?",
-        "choices": [
-          { "text": "Rouge", "is_correct": true },
-          { "text": "Blanc", "is_correct": false },
-          { "text": "Jaune", "is_correct": false }
-        ],
-        "explanation": "Le panneau B5 a un fond rouge avec le texte blanc 'STOP'. La couleur rouge est internationalement la couleur de signal pour le danger et l'arrêt."
-      },
-      "AR": {
-        "question": "ما لون خلفية اللافتة B5؟",
-        "choices": [
-          { "text": "أحمر", "is_correct": true },
-          { "text": "أبيض", "is_correct": false },
-          { "text": "أصفر", "is_correct": false }
-        ],
-        "explanation": "اللافتة B5 ذات خلفية حمراء بنص أبيض 'STOP'. اللون الأحمر هو دولياً لون الإشارة للخطر والتوقف."
-      }
-    }
-  },
-  {
-    "question_id": "B5_Q17",
-    "type": "WHAT_DOES_IT_MEAN",
-    "difficulty": "EASY",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Hoeveel zijden heeft het B5-bord?",
-        "choices": [
-          { "text": "Acht zijden (octagon)", "is_correct": true },
-          { "text": "Drie zijden (driehoek)", "is_correct": false },
-          { "text": "Zes zijden (hexagon)", "is_correct": false }
-        ],
-        "explanation": "Het B5-bord is een octagon (achthoek). Dit is de standaard vorm voor stopborden wereldwijd, vastgelegd in de Verdrag van Wenen inzake verkeerstekens."
-      },
-      "EN": {
-        "question": "How many sides does the B5 sign have?",
-        "choices": [
-          { "text": "Eight sides (octagon)", "is_correct": true },
-          { "text": "Three sides (triangle)", "is_correct": false },
-          { "text": "Six sides (hexagon)", "is_correct": false }
-        ],
-        "explanation": "The B5 sign is an octagon (8 sides). This is the standard shape for stop signs worldwide, established in the Vienna Convention on Road Signs."
-      },
-      "FR": {
-        "question": "Combien de côtés a le panneau B5 ?",
-        "choices": [
-          { "text": "Huit côtés (octogone)", "is_correct": true },
-          { "text": "Trois côtés (triangle)", "is_correct": false },
-          { "text": "Six côtés (hexagone)", "is_correct": false }
-        ],
-        "explanation": "Le panneau B5 est un octogone (8 côtés). C'est la forme standard pour les panneaux d'arrêt dans le monde entier, établie dans la Convention de Vienne sur les panneaux routiers."
-      },
-      "AR": {
-        "question": "كم عدد أضلاع اللافتة B5؟",
-        "choices": [
-          { "text": "ثمانية أضلاع (مثمن)", "is_correct": true },
-          { "text": "ثلاثة أضلاع (مثلث)", "is_correct": false },
-          { "text": "ستة أضلاع (سداسي)", "is_correct": false }
-        ],
-        "explanation": "اللافتة B5 مثمنة الشكل (8 أضلاع). هذا هو الشكل القياسي للافتات التوقف في جميع أنحاء العالم، المحدد في اتفاقية فيينا بشأن اللافتات المرورية."
-      }
-    }
-  },
-  {
-    "question_id": "B5_Q18",
-    "type": "WHAT_DOES_IT_MEAN",
-    "difficulty": "EASY",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Wat is de officiële naam van bord B5?",
-        "choices": [
-          { "text": "Stoppen en voorrang verlenen", "is_correct": true },
-          { "text": "Voorrang verlenen", "is_correct": false },
-          { "text": "Verplicht stoppen", "is_correct": false }
-        ],
-        "explanation": "De officiële naam van bord B5 is 'Stoppen en voorrang verlenen'. Het combineert twee verplichtingen: volledig stoppen én daarna voorrang verlenen aan kruisend verkeer."
-      },
-      "EN": {
-        "question": "What is the official name of sign B5?",
-        "choices": [
-          { "text": "Stop and give way", "is_correct": true },
-          { "text": "Give way", "is_correct": false },
-          { "text": "Mandatory stop", "is_correct": false }
-        ],
-        "explanation": "The official name of sign B5 is 'Stop and give way'. It combines two obligations: come to a complete stop AND then yield to crossing traffic."
-      },
-      "FR": {
-        "question": "Quel est le nom officiel du panneau B5 ?",
-        "choices": [
-          { "text": "Stop et cédez le passage", "is_correct": true },
-          { "text": "Cédez le passage", "is_correct": false },
-          { "text": "Arrêt obligatoire", "is_correct": false }
-        ],
-        "explanation": "Le nom officiel du panneau B5 est 'Stop et cédez le passage'. Il combine deux obligations: s'arrêter complètement ET ensuite céder le passage aux véhicules croisant la route."
-      },
-      "AR": {
-        "question": "ما الاسم الرسمي للافتة B5؟",
-        "choices": [
-          { "text": "توقف وأعط الأولوية", "is_correct": true },
-          { "text": "أعط الأولوية", "is_correct": false },
-          { "text": "توقف إلزامي", "is_correct": false }
-        ],
-        "explanation": "الاسم الرسمي للافتة B5 هو 'توقف وأعط الأولوية'. وهو يجمع بين التزامين: التوقف الكامل ثم إعطاء الأولوية للمرور المتقاطع."
-      }
-    }
-  },
-  {
-    "question_id": "B5_Q19",
-    "type": "WHAT_DOES_IT_MEAN",
-    "difficulty": "EASY",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Is het B5-bord internationaal erkend?",
-        "choices": [
-          {
-            "text": "Ja, het stopbord is internationaal gestandaardiseerd via de Verdrag van Wenen",
-            "is_correct": true
-          },
-          {
-            "text": "Nee, elke land heeft zijn eigen unieke stopbord",
-            "is_correct": false
-          },
-          { "text": "Ja, maar alleen in de Europese Unie", "is_correct": false }
-        ],
-        "explanation": "Het stopbord (achthoek met STOP) is internationaal gestandaardiseerd door de Verdrag van Wenen inzake verkeerstekens (1968) en is herkenbaar in meer dan 100 landen."
-      },
-      "EN": {
-        "question": "Is the B5 sign internationally recognised?",
-        "choices": [
-          {
-            "text": "Yes, the stop sign is internationally standardised via the Vienna Convention",
-            "is_correct": true
-          },
-          {
-            "text": "No, each country has its own unique stop sign",
-            "is_correct": false
-          },
-          {
-            "text": "Yes, but only within the European Union",
-            "is_correct": false
-          }
-        ],
-        "explanation": "The stop sign (octagon with STOP) is internationally standardised by the Vienna Convention on Road Signs (1968) and is recognisable in more than 100 countries."
-      },
-      "FR": {
-        "question": "Le panneau B5 est-il reconnu internationalement ?",
-        "choices": [
-          {
-            "text": "Oui, le panneau d'arrêt est standardisé internationalement via la Convention de Vienne",
-            "is_correct": true
-          },
-          {
-            "text": "Non, chaque pays a son propre panneau d'arrêt unique",
-            "is_correct": false
-          },
-          {
-            "text": "Oui, mais uniquement au sein de l'Union Européenne",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Le panneau d'arrêt (octogone avec STOP) est standardisé internationalement par la Convention de Vienne sur les panneaux routiers (1968) et est reconnaissable dans plus de 100 pays."
-      },
-      "AR": {
-        "question": "هل اللافتة B5 معترف بها دولياً؟",
-        "choices": [
-          {
-            "text": "نعم، لافتة التوقف موحدة دولياً عبر اتفاقية فيينا",
-            "is_correct": true
-          },
-          {
-            "text": "لا، كل دولة لها لافتة توقف فريدة خاصة بها",
-            "is_correct": false
-          },
-          { "text": "نعم، لكن فقط داخل الاتحاد الأوروبي", "is_correct": false }
-        ],
-        "explanation": "لافتة التوقف (المثمن بـ STOP) موحدة دولياً بموجب اتفاقية فيينا بشأن اللافتات المرورية (1968) ومعروفة في أكثر من 100 دولة."
-      }
-    }
-  },
-  {
-    "question_id": "B5_Q20",
-    "type": "WHAT_DOES_IT_MEAN",
-    "difficulty": "EASY",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Tot welke categorie verkeerstekens behoort het B5-bord?",
-        "choices": [
-          { "text": "B-reeks: Voorrangsborden", "is_correct": true },
-          { "text": "C-reeks: Verbodsborden", "is_correct": false },
-          { "text": "D-reeks: Gebodsborden", "is_correct": false }
-        ],
-        "explanation": "Het B5-bord behoort tot de B-reeks (voorrangsborden), samen met B1 (voorrang verlenen), B9 (voorrangsweg) en andere voorrangsregulerende borden."
-      },
-      "EN": {
-        "question": "To which category of traffic signs does the B5 sign belong?",
-        "choices": [
-          { "text": "B-series: Priority signs", "is_correct": true },
-          { "text": "C-series: Prohibition signs", "is_correct": false },
-          { "text": "D-series: Mandatory signs", "is_correct": false }
-        ],
-        "explanation": "The B5 sign belongs to the B-series (priority signs), together with B1 (give way), B9 (priority road) and other priority-regulating signs."
-      },
-      "FR": {
-        "question": "À quelle catégorie de panneaux de signalisation appartient le panneau B5 ?",
-        "choices": [
-          { "text": "Série B: Panneaux de priorité", "is_correct": true },
-          { "text": "Série C: Panneaux d'interdiction", "is_correct": false },
-          { "text": "Série D: Panneaux d'obligation", "is_correct": false }
-        ],
-        "explanation": "Le panneau B5 appartient à la série B (panneaux de priorité), avec B1 (cédez le passage), B9 (route prioritaire) et d'autres panneaux de régulation des priorités."
-      },
-      "AR": {
-        "question": "إلى أي فئة من لافتات المرور تنتمي اللافتة B5؟",
-        "choices": [
-          { "text": "السلسلة B: لافتات الأولوية", "is_correct": true },
-          { "text": "السلسلة C: لافتات الحظر", "is_correct": false },
-          { "text": "السلسلة D: لافتات الإلزام", "is_correct": false }
-        ],
-        "explanation": "تنتمي اللافتة B5 إلى السلسلة B (لافتات الأولوية)، مع B1 (إعطاء الأولوية) وB9 (طريق الأولوية) وغيرها من لافتات تنظيم الأولوية."
-      }
-    }
-  },
-  {
-    "question_id": "B5_Q21",
-    "type": "WHAT_DOES_IT_MEAN",
-    "difficulty": "EASY",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Mag u de motor uitzetten bij een B5-bord als u lang moet wachten?",
-        "choices": [
-          {
-            "text": "Ja, dit is milieuvriendelijk en toegestaan als u echt lang moet wachten",
-            "is_correct": true
-          },
-          {
-            "text": "Nee, u moet de motor altijd aan laten bij een B5-bord",
-            "is_correct": false
-          },
-          {
-            "text": "Alleen als u een elektrisch voertuig heeft",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Het is in sommige steden verplicht de motor uit te zetten bij lang stilstaan (anti-idling regelgeving). Er is echter geen verband met het B5-bord specifiek — het gaat om algemeen milieubeleid."
-      },
-      "EN": {
-        "question": "May you turn off the engine at a B5 sign if you have to wait a long time?",
-        "choices": [
-          {
-            "text": "Yes, this is environmentally friendly and permitted if you really have to wait a long time",
-            "is_correct": true
-          },
-          {
-            "text": "No, you must always keep the engine running at a B5 sign",
-            "is_correct": false
-          },
-          {
-            "text": "Only if you have an electric vehicle",
-            "is_correct": false
-          }
-        ],
-        "explanation": "In some cities it is mandatory to turn off the engine when stopped for a long time (anti-idling regulations). However, this is not specifically related to the B5 sign — it is a general environmental policy."
-      },
-      "FR": {
-        "question": "Pouvez-vous couper le moteur à un panneau B5 si vous devez attendre longtemps ?",
-        "choices": [
-          {
-            "text": "Oui, c'est écologique et autorisé si vous devez vraiment attendre longtemps",
-            "is_correct": true
-          },
-          {
-            "text": "Non, vous devez toujours garder le moteur allumé au panneau B5",
-            "is_correct": false
-          },
-          {
-            "text": "Seulement si vous avez un véhicule électrique",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Dans certaines villes, il est obligatoire de couper le moteur lors d'un arrêt prolongé (réglementations anti-ralenti). Cependant, cela n'est pas spécifiquement lié au panneau B5 — c'est une politique environnementale générale."
-      },
-      "AR": {
-        "question": "هل يمكنك إيقاف المحرك عند لافتة B5 إذا كنت بحاجة للانتظار طويلاً؟",
-        "choices": [
-          {
-            "text": "نعم، هذا صديق للبيئة ومسموح إذا كنت بحاجة حقاً للانتظار طويلاً",
-            "is_correct": true
-          },
-          {
-            "text": "لا، يجب دائماً إبقاء المحرك يعمل عند لافتة B5",
-            "is_correct": false
-          },
-          { "text": "فقط إذا كانت لديك سيارة كهربائية", "is_correct": false }
-        ],
-        "explanation": "في بعض المدن، يُلزم بإيقاف المحرك عند التوقف لفترة طويلة (لوائح مكافحة تشغيل المحرك أثناء التوقف). ومع ذلك، هذا غير مرتبط تحديداً بلافتة B5 — إنها سياسة بيئية عامة."
-      }
-    }
-  },
-  {
-    "question_id": "B5_Q22",
-    "type": "WHAT_MUST_YOU_DO",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "U heeft gestopt bij een B5-bord. Er nadert een voertuig van links. Wat doet u?",
-        "choices": [
-          {
-            "text": "Wachten tot het voertuig van links gepasseerd is voor u optrekt",
-            "is_correct": true
-          },
-          {
-            "text": "Optrekken want rechts gaat voor links",
-            "is_correct": false
-          },
-          {
-            "text": "Tegelijk optrekken met het voertuig van links",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Na het stoppen bij B5 moet u voorrang verlenen aan ALLE voertuigen op de kruisende weg, inclusief voertuigen van links. Het B5-bord overstijgt de gewone 'rechts heeft voorrang'-regel."
-      },
-      "EN": {
-        "question": "You have stopped at a B5 sign. A vehicle approaches from the left. What do you do?",
-        "choices": [
-          {
-            "text": "Wait until the vehicle from the left has passed before moving off",
-            "is_correct": true
-          },
-          {
-            "text": "Move off because right has priority over left",
-            "is_correct": false
-          },
-          {
-            "text": "Move off at the same time as the vehicle from the left",
-            "is_correct": false
-          }
-        ],
-        "explanation": "After stopping at B5, you must yield to ALL vehicles on the crossing road, including vehicles from the left. The B5 sign overrides the normal 'right has priority' rule."
-      },
-      "FR": {
-        "question": "Vous vous êtes arrêté au panneau B5. Un véhicule approche de la gauche. Que faites-vous ?",
-        "choices": [
-          {
-            "text": "Attendre que le véhicule de gauche soit passé avant de repartir",
-            "is_correct": true
-          },
-          {
-            "text": "Repartir car la droite a la priorité sur la gauche",
-            "is_correct": false
-          },
-          {
-            "text": "Repartir en même temps que le véhicule de gauche",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Après vous être arrêté au B5, vous devez céder le passage à TOUS les véhicules sur la route de croisement, y compris les véhicules venant de gauche. Le panneau B5 remplace la règle normale 'la droite est prioritaire'."
-      },
-      "AR": {
-        "question": "لقد توقفت عند لافتة B5. مركبة تقترب من اليسار. ماذا تفعل؟",
-        "choices": [
-          {
-            "text": "الانتظار حتى تمر المركبة القادمة من اليسار قبل التحرك",
-            "is_correct": true
-          },
-          {
-            "text": "التحرك لأن اليمين له الأولوية على اليسار",
-            "is_correct": false
-          },
-          {
-            "text": "التحرك في نفس وقت المركبة القادمة من اليسار",
-            "is_correct": false
-          }
-        ],
-        "explanation": "بعد التوقف عند B5، يجب إعطاء الأولوية لجميع المركبات على الطريق المتقاطع، بما في ذلك المركبات من اليسار. لافتة B5 تتجاوز قاعدة 'اليمين له الأولوية' العادية."
-      }
-    }
-  },
-  {
-    "question_id": "B5_Q23",
-    "type": "WHAT_MUST_YOU_DO",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Er is een B5-bord met een stopstreep op de weg. Waar stopt u?",
-        "choices": [
-          {
-            "text": "Op of voor de stopstreep — uw voertuig mag de streep niet overschrijden bij het stoppen",
-            "is_correct": true
-          },
-          {
-            "text": "Na de stopstreep zodat u beter zicht heeft",
-            "is_correct": false
-          },
-          {
-            "text": "Op de stopstreep met uw voorbumper 1 meter erna",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Bij een B5-bord met stopstreep moet u stoppen op of vóór de streep. Uw voertuig mag de stopstreep niet overschrijden bij de eerste stop. Pas als u wilt doorrijden mag u voorzichtig opschuiven voor beter zicht."
-      },
-      "EN": {
-        "question": "There is a B5 sign with a stop line on the road. Where do you stop?",
-        "choices": [
-          {
-            "text": "At or before the stop line — your vehicle must not cross the line when stopping",
-            "is_correct": true
-          },
-          {
-            "text": "After the stop line for better visibility",
-            "is_correct": false
-          },
-          {
-            "text": "On the stop line with your front bumper 1 metre past it",
-            "is_correct": false
-          }
-        ],
-        "explanation": "At a B5 sign with a stop line, you must stop at or before the line. Your vehicle must not cross the stop line on the first stop. Only when moving off may you creep forward carefully for a better view."
-      },
-      "FR": {
-        "question": "Il y a un panneau B5 avec une ligne d'arrêt sur la route. Où vous arrêtez-vous ?",
-        "choices": [
-          {
-            "text": "À ou avant la ligne d'arrêt — votre véhicule ne doit pas franchir la ligne lors de l'arrêt",
-            "is_correct": true
-          },
-          {
-            "text": "Après la ligne d'arrêt pour une meilleure visibilité",
-            "is_correct": false
-          },
-          {
-            "text": "Sur la ligne d'arrêt avec votre pare-chocs avant à 1 mètre après",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Au panneau B5 avec ligne d'arrêt, vous devez vous arrêter à ou avant la ligne. Votre véhicule ne doit pas franchir la ligne d'arrêt lors du premier arrêt. Ce n'est que lorsque vous repartez que vous pouvez avancer prudemment pour une meilleure visibilité."
-      },
-      "AR": {
-        "question": "هناك لافتة B5 مع خط توقف على الطريق. أين تتوقف؟",
-        "choices": [
-          {
-            "text": "عند خط التوقف أو قبله — يجب على مركبتك عدم تجاوز الخط عند التوقف",
-            "is_correct": true
-          },
-          { "text": "بعد خط التوقف للحصول على رؤية أفضل", "is_correct": false },
-          {
-            "text": "على خط التوقف مع المصد الأمامي على بعد متر منه",
-            "is_correct": false
-          }
-        ],
-        "explanation": "عند لافتة B5 مع خط توقف، يجب التوقف عند الخط أو قبله. يجب على مركبتك عدم تجاوز خط التوقف في أول توقف. فقط عند التحرك يمكنك التقدم ببطء للحصول على رؤية أفضل."
-      }
-    }
-  },
-  {
-    "question_id": "B5_Q24",
-    "type": "WHAT_MUST_YOU_DO",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Wat is de verplichting bij B5 als vergeleken met de regels bij verkeerslichten?",
-        "choices": [
-          {
-            "text": "B5 verplicht tot volledig stoppen; rood licht ook. Bij B5 rijdt u pas door als het veilig is, niet na een vast tijdsinterval",
-            "is_correct": true
-          },
-          {
-            "text": "B5 heeft dezelfde regels als het rode licht — na 3 seconden mag u doorrijden",
-            "is_correct": false
-          },
-          {
-            "text": "Bij B5 heeft u altijd minder verplichtingen dan bij rood licht",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Zowel B5 als rood verkeerslicht verplichten tot volledig stoppen. Het verschil: bij rood licht wacht u op het groen signaal. Bij B5 rijdt u door zodra het veilig is, ongeacht een tijdssignaal."
-      },
-      "EN": {
-        "question": "What is the obligation at B5 compared to the rules at traffic lights?",
-        "choices": [
-          {
-            "text": "B5 requires a complete stop; red light also. At B5 you drive through when safe, not after a fixed time interval",
-            "is_correct": true
-          },
-          {
-            "text": "B5 has the same rules as a red light — after 3 seconds you may drive through",
-            "is_correct": false
-          },
-          {
-            "text": "At B5 you always have fewer obligations than at a red light",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Both B5 and a red traffic light require a complete stop. The difference: at a red light you wait for the green signal. At B5 you drive through as soon as it is safe, regardless of a time signal."
-      },
-      "FR": {
-        "question": "Quelle est l'obligation au B5 par rapport aux règles aux feux de circulation ?",
-        "choices": [
-          {
-            "text": "B5 exige un arrêt complet; le feu rouge aussi. Au B5, vous passez quand c'est sûr, pas après un intervalle de temps fixe",
-            "is_correct": true
-          },
-          {
-            "text": "B5 a les mêmes règles qu'un feu rouge — après 3 secondes vous pouvez passer",
-            "is_correct": false
-          },
-          {
-            "text": "Au B5, vous avez toujours moins d'obligations qu'à un feu rouge",
-            "is_correct": false
-          }
-        ],
-        "explanation": "B5 et le feu rouge exigent tous deux un arrêt complet. La différence: au feu rouge, vous attendez le signal vert. Au B5, vous passez dès que c'est sûr, indépendamment d'un signal horaire."
-      },
-      "AR": {
-        "question": "ما الالتزام عند B5 مقارنة بقواعد إشارات المرور؟",
-        "choices": [
-          {
-            "text": "B5 تلزم بالتوقف الكامل؛ الضوء الأحمر أيضاً. عند B5 تمر عندما يكون آمناً، وليس بعد فترة زمنية محددة",
-            "is_correct": true
-          },
-          {
-            "text": "B5 لها نفس قواعد الضوء الأحمر — بعد 3 ثوانٍ يمكنك المرور",
-            "is_correct": false
-          },
-          {
-            "text": "عند B5 لديك دائماً التزامات أقل من الضوء الأحمر",
-            "is_correct": false
-          }
-        ],
-        "explanation": "كل من B5 والضوء الأحمر يستلزمان توقفاً كاملاً. الفرق: عند الضوء الأحمر تنتظر الإشارة الخضراء. عند B5 تمر بمجرد أن يكون آمناً، بغض النظر عن إشارة زمنية."
-      }
-    }
-  },
-  {
-    "question_id": "B5_Q25",
-    "type": "WHAT_MUST_YOU_DO",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Moet u ook stoppen bij B5 als er een ambulance achter u rijdt met zwaailicht?",
-        "choices": [
-          {
-            "text": "U moet ruimte maken voor de ambulance. Stop eventueel rechts van de weg zodat de ambulance ongehinderd kan passeren",
-            "is_correct": true
-          },
-          {
-            "text": "Nee, de ambulance heeft altijd voorrang op het B5-bord",
-            "is_correct": false
-          },
-          {
-            "text": "Ja, u moet stoppen bij het B5-bord en de ambulance zelf moet ook stoppen",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Prioritaire voertuigen (ambulance, brandweer, politie) met zwaailicht en sirene hebben absolute voorrang. U maakt ruimte voor hen, maar let ook op de veiligheid op het kruispunt."
-      },
-      "EN": {
-        "question": "Must you also stop at B5 if an ambulance with lights is driving behind you?",
-        "choices": [
-          {
-            "text": "You must make way for the ambulance. Stop if necessary on the right side of the road so the ambulance can pass unhindered",
-            "is_correct": true
-          },
-          {
-            "text": "No, the ambulance always has priority over the B5 sign",
-            "is_correct": false
-          },
-          {
-            "text": "Yes, you must stop at the B5 sign and the ambulance itself must also stop",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Priority vehicles (ambulance, fire brigade, police) with flashing lights and sirens have absolute priority. You make way for them, but also pay attention to safety at the intersection."
-      },
-      "FR": {
-        "question": "Devez-vous vous arrêter au B5 si une ambulance avec gyrophare roule derrière vous ?",
-        "choices": [
-          {
-            "text": "Vous devez céder le passage à l'ambulance. Arrêtez-vous si nécessaire sur le côté droit de la route pour que l'ambulance puisse passer sans entrave",
-            "is_correct": true
-          },
-          {
-            "text": "Non, l'ambulance a toujours la priorité sur le panneau B5",
-            "is_correct": false
-          },
-          {
-            "text": "Oui, vous devez vous arrêter au panneau B5 et l'ambulance elle-même doit aussi s'arrêter",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Les véhicules prioritaires (ambulance, pompiers, police) avec gyrophare et sirène ont la priorité absolue. Vous leur cédez le passage, mais faites aussi attention à la sécurité au carrefour."
-      },
-      "AR": {
-        "question": "هل يجب عليك أيضاً التوقف عند B5 إذا كانت سيارة إسعاف بأضواء تسير خلفك؟",
-        "choices": [
-          {
-            "text": "يجب إفساح المجال لسيارة الإسعاف. توقف إذا لزم على الجانب الأيمن من الطريق حتى تمر سيارة الإسعاف بحرية",
-            "is_correct": true
-          },
-          {
-            "text": "لا، سيارة الإسعاف لها الأولوية دائماً على لافتة B5",
-            "is_correct": false
-          },
-          {
-            "text": "نعم، يجب التوقف عند لافتة B5 وسيارة الإسعاف نفسها يجب أيضاً أن تتوقف",
-            "is_correct": false
-          }
-        ],
-        "explanation": "المركبات ذات الأولوية (إسعاف، إطفاء، شرطة) بأضواء وصفاراتها لها أولوية مطلقة. تفسح لهم المجال، لكن انتبه أيضاً للسلامة في التقاطع."
-      }
-    }
-  },
-  {
-    "question_id": "B5_Q26",
-    "type": "WHAT_MUST_YOU_DO",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Staat een B5-bord in combinatie met een B9-bord (voorrangsweg) op de zijstraat. Wie heeft voorrang?",
-        "choices": [
-          {
-            "text": "De bestuurder op de B9-voorrangsweg heeft voorrang; de B5-bestuurder moet volledig stoppen en wachten",
-            "is_correct": true
-          },
-          {
-            "text": "Beide borden heffen elkaar op; u mag gelijktijdig oprijden",
-            "is_correct": false
-          },
-          {
-            "text": "De B5-bestuurder heeft voorrang want hij stond eerder stil",
-            "is_correct": false
-          }
-        ],
-        "explanation": "B5 verplicht u tot volledig stoppen én voorrang verlenen. Als de kruisende weg een B9-voorrangsweg is, heeft die weg altijd voorrang. De combinatie B5+B9 is erg duidelijk: stop en geef voorrang."
-      },
-      "EN": {
-        "question": "A B5 sign is in combination with a B9 sign (priority road) on the side street. Who has priority?",
-        "choices": [
-          {
-            "text": "The driver on the B9 priority road has priority; the B5 driver must stop completely and wait",
-            "is_correct": true
-          },
-          {
-            "text": "Both signs cancel each other out; you may drive off simultaneously",
-            "is_correct": false
-          },
-          {
-            "text": "The B5 driver has priority because he was stationary first",
-            "is_correct": false
-          }
-        ],
-        "explanation": "B5 requires you to stop completely and yield. If the crossing road is a B9 priority road, that road always has priority. The combination B5+B9 is very clear: stop and give way."
-      },
-      "FR": {
-        "question": "Un panneau B5 est combiné avec un panneau B9 (route prioritaire) sur la rue latérale. Qui a la priorité ?",
-        "choices": [
-          {
-            "text": "Le conducteur sur la route prioritaire B9 a la priorité; le conducteur B5 doit s'arrêter complètement et attendre",
-            "is_correct": true
-          },
-          {
-            "text": "Les deux panneaux s'annulent; vous pouvez partir simultanément",
-            "is_correct": false
-          },
-          {
-            "text": "Le conducteur B5 a la priorité car il était à l'arrêt en premier",
-            "is_correct": false
-          }
-        ],
-        "explanation": "B5 vous oblige à vous arrêter complètement et à céder le passage. Si la route de croisement est une route prioritaire B9, cette route a toujours la priorité. La combinaison B5+B9 est très claire: arrêtez et cédez le passage."
-      },
-      "AR": {
-        "question": "لافتة B5 مقترنة بلافتة B9 (طريق الأولوية) على الشارع الجانبي. من له الأولوية؟",
-        "choices": [
-          {
-            "text": "السائق على طريق الأولوية B9 له الأولوية؛ سائق B5 يجب أن يتوقف كاملاً وينتظر",
-            "is_correct": true
-          },
-          {
-            "text": "كلتا اللافتتين تلغيان بعضهما؛ يمكنكما التحرك في نفس الوقت",
-            "is_correct": false
-          },
-          {
-            "text": "سائق B5 له الأولوية لأنه كان واقفاً أولاً",
-            "is_correct": false
-          }
-        ],
-        "explanation": "B5 تُلزمك بالتوقف الكامل وإعطاء الأولوية. إذا كان الطريق المتقاطع طريق أولوية B9، فلذلك الطريق الأولوية دائماً. التركيبة B5+B9 واضحة جداً: توقف وأعط الأولوية."
-      }
-    }
-  },
-  {
-    "question_id": "B5_Q27",
-    "type": "IS_IT_ALLOWED",
-    "difficulty": "HARD",
-    "is_critical": true,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "U nadert een B5-bord 's nachts en het bord is slecht verlicht. Bent u nog steeds verplicht te stoppen?",
-        "choices": [
-          {
-            "text": "Ja, de verplichting van het B5-bord geldt ongeacht de lichtomstandigheden",
-            "is_correct": true
-          },
-          {
-            "text": "Nee, als het bord niet zichtbaar verlicht is, vervalt de verplichting",
-            "is_correct": false
-          },
-          {
-            "text": "Alleen als u daadwerkelijk het bord kunt lezen",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Zodra een B5-bord officieel geplaatst is, is het geldig ongeacht de zichtbaarheid. Als bestuurder bent u verplicht uw snelheid aan te passen aan de omstandigheden en altijd op de uitkijk te zijn voor verkeersborden."
-      },
-      "EN": {
-        "question": "You are approaching a B5 sign at night and the sign is poorly lit. Are you still required to stop?",
-        "choices": [
-          {
-            "text": "Yes, the B5 sign obligation applies regardless of lighting conditions",
-            "is_correct": true
-          },
-          {
-            "text": "No, if the sign is not visibly illuminated the obligation lapses",
-            "is_correct": false
-          },
-          {
-            "text": "Only if you can actually read the sign",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Once a B5 sign is officially placed, it is valid regardless of visibility. As a driver you are obliged to adjust your speed to conditions and always be on the lookout for traffic signs."
-      },
-      "FR": {
-        "question": "Vous approchez d'un panneau B5 de nuit et le panneau est mal éclairé. Êtes-vous toujours obligé de vous arrêter ?",
-        "choices": [
-          {
-            "text": "Oui, l'obligation du panneau B5 s'applique quelles que soient les conditions d'éclairage",
-            "is_correct": true
-          },
-          {
-            "text": "Non, si le panneau n'est pas visiblement éclairé, l'obligation cesse",
-            "is_correct": false
-          },
-          {
-            "text": "Seulement si vous pouvez réellement lire le panneau",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Une fois qu'un panneau B5 est officiellement posé, il est valable quelle que soit la visibilité. En tant que conducteur, vous êtes tenu d'adapter votre vitesse aux conditions et d'être toujours aux aguets pour les panneaux de signalisation."
-      },
-      "AR": {
-        "question": "تقترب من لافتة B5 في الليل واللافتة غير مضاءة جيداً. هل لا تزال ملزماً بالتوقف؟",
-        "choices": [
-          {
-            "text": "نعم، التزام لافتة B5 ينطبق بغض النظر عن ظروف الإضاءة",
-            "is_correct": true
-          },
-          {
-            "text": "لا، إذا لم تكن اللافتة مضاءة بشكل مرئي ينتهي الالتزام",
-            "is_correct": false
-          },
-          {
-            "text": "فقط إذا كنت قادراً فعلياً على قراءة اللافتة",
-            "is_correct": false
-          }
-        ],
-        "explanation": "بمجرد وضع لافتة B5 رسمياً، فهي سارية بغض النظر عن الرؤية. بوصفك سائقاً أنت ملزم بتكييف سرعتك مع الظروف والانتباه دائماً للافتات المرورية."
-      }
-    }
-  },
-  {
-    "question_id": "B5_Q28",
-    "type": "IS_IT_ALLOWED",
-    "difficulty": "HARD",
-    "is_critical": true,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Mag u bij een B5-bord 'crossen' (snel en zonder te stoppen doorrijden) als er in geen baan verkeer zichtbaar is?",
-        "choices": [
-          {
-            "text": "Nee, dit is een overtreding ongeacht de verkeerssituatie. U riskeert een boete en puntenaftrek",
-            "is_correct": true
-          },
-          {
-            "text": "Ja, als u voldoende zicht heeft en zeker bent dat de weg vrij is",
-            "is_correct": false
-          },
-          { "text": "Ja, maar alleen overdag", "is_correct": false }
-        ],
-        "explanation": "Het 'doorcruisen' van een B5-bord zonder te stoppen is altijd een overtreding van het verkeersreglement, ongeacht de situatie. De wet vereist een volledige stop."
-      },
-      "EN": {
-        "question": "May you 'run' a B5 sign (drive through quickly without stopping) if no traffic is visible in any lane?",
-        "choices": [
-          {
-            "text": "No, this is a violation regardless of the traffic situation. You risk a fine and licence points",
-            "is_correct": true
-          },
-          {
-            "text": "Yes, if you have sufficient visibility and are certain the road is clear",
-            "is_correct": false
-          },
-          { "text": "Yes, but only during the day", "is_correct": false }
-        ],
-        "explanation": "Running a B5 sign without stopping is always a violation of traffic regulations, regardless of the situation. The law requires a complete stop."
-      },
-      "FR": {
-        "question": "Pouvez-vous 'griller' un panneau B5 (passer rapidement sans vous arrêter) si aucune circulation n'est visible dans aucune voie ?",
-        "choices": [
-          {
-            "text": "Non, c'est une infraction quelle que soit la situation de circulation. Vous risquez une amende et des points de permis",
-            "is_correct": true
-          },
-          {
-            "text": "Oui, si vous avez une visibilité suffisante et êtes certain que la route est libre",
-            "is_correct": false
-          },
-          { "text": "Oui, mais seulement en journée", "is_correct": false }
-        ],
-        "explanation": "Griller un panneau B5 sans s'arrêter est toujours une infraction au code de la route, quelle que soit la situation. La loi exige un arrêt complet."
-      },
-      "AR": {
-        "question": "هل يجوز لك تجاوز لافتة B5 (القيادة بسرعة دون توقف) إذا لم يكن هناك مرور مرئي في أي مسار؟",
-        "choices": [
-          {
-            "text": "لا، هذه مخالفة بغض النظر عن حالة المرور. تخاطر بغرامة وخصم نقاط من الرخصة",
-            "is_correct": true
-          },
-          {
-            "text": "نعم، إذا كانت لديك رؤية كافية وكنت متأكداً من أن الطريق خالٍ",
-            "is_correct": false
-          },
-          { "text": "نعم، لكن فقط خلال النهار", "is_correct": false }
-        ],
-        "explanation": "تجاوز لافتة B5 دون توقف هو دائماً مخالفة لأنظمة المرور، بغض النظر عن الوضع. يتطلب القانون توقفاً كاملاً."
-      }
-    }
-  },
-  {
-    "question_id": "B5_Q29",
-    "type": "IS_IT_ALLOWED",
-    "difficulty": "HARD",
-    "is_critical": true,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "U bent met de wagen gestopt bij B5. Er is ijs op de weg. U start op maar u rijdt uit. Wat is de correcte reactie?",
-        "choices": [
-          {
-            "text": "Rustig gas geven, stuur rechtzetten en wachten op veilig moment om de kruising over te steken",
-            "is_correct": true
-          },
-          {
-            "text": "Krachtig remmen zodat u toch stopt op de kruising",
-            "is_correct": false
-          },
-          {
-            "text": "Volgas geven om snel van de kruising weg te rijden",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Op glad ijs moet u kalm blijven. Hard remmen or gas geven verergert het slippen. Controleer het stuur rustig, wacht op de dooi of kruis voorzichtig wanneer het veilig is."
-      },
-      "EN": {
-        "question": "You have stopped at B5 in your car. There is ice on the road. You start off but skid. What is the correct reaction?",
-        "choices": [
-          {
-            "text": "Apply gentle throttle, steer straight and wait for a safe moment to cross the intersection",
-            "is_correct": true
-          },
-          {
-            "text": "Brake hard so you stop on the intersection",
-            "is_correct": false
-          },
-          {
-            "text": "Apply full throttle to get away from the intersection quickly",
-            "is_correct": false
-          }
-        ],
-        "explanation": "On black ice you must stay calm. Hard braking or acceleration worsens the skid. Steer gently, wait for thaw or cross carefully when safe."
-      },
-      "FR": {
-        "question": "Vous vous êtes arrêté au B5 dans votre voiture. Il y a de la glace sur la route. Vous démarrez mais vous dérapez. Quelle est la réaction correcte ?",
-        "choices": [
-          {
-            "text": "Accélérer doucement, redresser le volant et attendre le bon moment pour traverser le carrefour",
-            "is_correct": true
-          },
-          {
-            "text": "Freiner fort pour quand même s'arrêter sur le carrefour",
-            "is_correct": false
-          },
-          {
-            "text": "Appuyer à fond sur l'accélérateur pour s'éloigner rapidement du carrefour",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Sur la glace noire, vous devez rester calme. Freiner ou accélérer fort aggrave le dérapage. Dirigez doucement, attendez le dégel ou traversez prudemment quand c'est sûr."
-      },
-      "AR": {
-        "question": "لقد توقفت عند B5 في سيارتك. يوجد جليد على الطريق. تبدأ بالتحرك لكنك تنزلق. ما هو رد الفعل الصحيح؟",
-        "choices": [
-          {
-            "text": "الضغط برفق على الغاز وتصويب المقود والانتظار للحظة آمنة لعبور التقاطع",
-            "is_correct": true
-          },
-          { "text": "الكبح بقوة للتوقف على التقاطع", "is_correct": false },
-          {
-            "text": "الضغط على الغاز بالكامل للابتعاد بسرعة عن التقاطع",
-            "is_correct": false
-          }
-        ],
-        "explanation": "على الجليد يجب البقاء هادئاً. الكبح أو التسارع الشديد يُفاقم الانزلاق. وجّه المقود برفق، وانتظر الذوبان أو اعبر بحذر عندما يكون آمناً."
-      }
-    }
-  },
-  {
-    "question_id": "B5_Q30",
-    "type": "IS_IT_ALLOWED",
-    "difficulty": "HARD",
-    "is_critical": true,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Wat is de maximale straf voor het systematisch negeren van B5-borden in België?",
-        "choices": [
-          {
-            "text": "Boete + puntenaftrek op rijbewijs + mogelijke rijverbod bij herhaaldelijk negeren",
-            "is_correct": true
-          },
-          {
-            "text": "Enkel een waarschuwing bij eerste overtreding",
-            "is_correct": false
-          },
-          {
-            "text": "Automatische intrekking van het rijbewijs na één overtreding",
-            "is_correct": false
-          }
-        ],
-        "explanation": "In België kan het negeren van een stopbord bestraft worden met: een geldboete, puntenaftrek op het rijbewijs, en bij herhaalde overtredingen eventueel een tijdelijk rijverbod. Automatische intrekking na één overtreding is niet voorzien."
-      },
-      "EN": {
-        "question": "What is the maximum penalty for systematically ignoring B5 signs in Belgium?",
-        "choices": [
-          {
-            "text": "Fine + licence points deduction + possible driving ban for repeated violations",
-            "is_correct": true
-          },
-          {
-            "text": "Only a warning for the first violation",
-            "is_correct": false
-          },
-          {
-            "text": "Automatic licence revocation after one violation",
-            "is_correct": false
-          }
-        ],
-        "explanation": "In Belgium, ignoring a stop sign can be punished with: a monetary fine, licence points deduction, and for repeated violations possibly a temporary driving ban. Automatic revocation after one violation is not provided."
-      },
-      "FR": {
-        "question": "Quelle est la peine maximale pour l'ignorance systématique des panneaux B5 en Belgique ?",
-        "choices": [
-          {
-            "text": "Amende + retrait de points de permis + interdiction de conduire possible pour infractions répétées",
-            "is_correct": true
-          },
-          {
-            "text": "Seulement un avertissement pour la première infraction",
-            "is_correct": false
-          },
-          {
-            "text": "Retrait automatique du permis après une infraction",
-            "is_correct": false
-          }
-        ],
-        "explanation": "En Belgique, ignorer un panneau d'arrêt peut être puni d'une amende, d'un retrait de points de permis, et pour des infractions répétées éventuellement d'une interdiction temporaire de conduire. Le retrait automatique après une infraction n'est pas prévu."
-      },
-      "AR": {
-        "question": "ما الحد الأقصى للعقوبة على تجاهل لافتات B5 بشكل منهجي في بلجيكا؟",
-        "choices": [
-          {
-            "text": "غرامة + خصم نقاط من رخصة القيادة + حظر قيادة محتمل عند التكرار",
-            "is_correct": true
-          },
-          { "text": "تحذير فقط للمخالفة الأولى", "is_correct": false },
-          { "text": "سحب تلقائي للرخصة بعد مخالفة واحدة", "is_correct": false }
-        ],
-        "explanation": "في بلجيكا، يمكن أن يُعاقب على تجاهل لافتة التوقف بـ: غرامة مالية، وخصم نقاط من رخصة القيادة، وعند التكرار ربما حظر قيادة مؤقت. السحب التلقائي بعد مخالفة واحدة غير منصوص عليه."
+        "explanation": "Ø§Ù„ØªØ²Ø§Ù… Ø§Ù„ØªÙˆÙ‚Ù ÙÙŠ Ù„Ø§ÙØªØ© B5 ÙŠÙ†Ø·Ø¨Ù‚ Ø¯Ø§Ø¦Ù…Ø§Ù‹ Ù„ÙŠÙ„Ø§Ù‹ ÙˆÙ†Ù‡Ø§Ø±Ø§Ù‹. Ù„Ø§ ÙŠÙˆØ¬Ø¯ Ø§Ø³ØªØ«Ù†Ø§Ø¡ Ù‚Ø§Ù†ÙˆÙ†ÙŠ Ø¨Ù†Ø§Ø¡Ù‹ Ø¹Ù„Ù‰ Ø§Ù„ÙˆÙ‚Øª Ø£Ùˆ Ù…Ø³ØªÙˆÙ‰ Ø§Ù„Ø±Ø¤ÙŠØ©."
       }
     }
   }

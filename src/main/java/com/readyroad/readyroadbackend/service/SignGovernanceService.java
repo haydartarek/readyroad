@@ -3,8 +3,8 @@ package com.readyroad.readyroadbackend.service;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.readyroad.readyroadbackend.domain.entity.TrafficSign;
-import com.readyroad.readyroadbackend.domain.repository.TrafficSignRepository;
+import com.readyroad.readyroadbackend.domain.entity.RoadSign;
+import com.readyroad.readyroadbackend.domain.repository.RoadSignRepository;
 import com.readyroad.readyroadbackend.dto.SignGovernanceReport.AuditResult;
 import com.readyroad.readyroadbackend.dto.SignGovernanceReport.SignAuditItem;
 import lombok.extern.slf4j.Slf4j;
@@ -30,14 +30,14 @@ import java.util.stream.Collectors;
 @Slf4j
 public class SignGovernanceService {
 
-    private final TrafficSignRepository trafficSignRepository;
+    private final RoadSignRepository roadSignRepository;
     private final ObjectMapper objectMapper;
 
     @Value("${readyroad.signs.canonical-path:data/signs.json}")
     private String canonicalPath;
 
-    public SignGovernanceService(TrafficSignRepository trafficSignRepository, ObjectMapper objectMapper) {
-        this.trafficSignRepository = trafficSignRepository;
+    public SignGovernanceService(RoadSignRepository roadSignRepository, ObjectMapper objectMapper) {
+        this.roadSignRepository = roadSignRepository;
         this.objectMapper = objectMapper;
     }
 
@@ -47,9 +47,9 @@ public class SignGovernanceService {
      */
     public AuditResult audit() {
         Map<String, JsonNode> jsonSignsByCode = loadCanonicalSigns();
-        List<TrafficSign> dbSigns = trafficSignRepository.findAll();
-        Map<String, TrafficSign> dbSignsByCode = dbSigns.stream()
-                .collect(Collectors.toMap(TrafficSign::getSignCode, s -> s, (a, b) -> a));
+        List<RoadSign> dbSigns = roadSignRepository.findAll();
+        Map<String, RoadSign> dbSignsByCode = dbSigns.stream()
+                .collect(Collectors.toMap(RoadSign::getSignCode, s -> s, (a, b) -> a));
 
         List<SignAuditItem> details = new ArrayList<>();
         int fullyConsistent = 0;
@@ -58,7 +58,7 @@ public class SignGovernanceService {
         int orphanInJson = 0;
 
         // Check every DB sign against JSON
-        for (TrafficSign dbSign : dbSigns) {
+        for (RoadSign dbSign : dbSigns) {
             String code = dbSign.getSignCode();
             JsonNode jsonSign = jsonSignsByCode.get(code);
             if (jsonSign == null) {
@@ -106,22 +106,17 @@ public class SignGovernanceService {
      * Compare a single DB sign's long_description fields against its JSON
      * counterpart.
      */
-    private List<String> compareSign(TrafficSign dbSign, JsonNode jsonSign) {
+    private List<String> compareSign(RoadSign dbSign, JsonNode jsonSign) {
         List<String> issues = new ArrayList<>();
 
-        compareField(issues, dbSign.getSignCode(), "long_description_en",
-                dbSign.getLongDescriptionEn(), textOrNull(jsonSign, "long_description_en"));
-        compareField(issues, dbSign.getSignCode(), "long_description_nl",
-                dbSign.getLongDescriptionNl(), textOrNull(jsonSign, "long_description_nl"));
-        compareField(issues, dbSign.getSignCode(), "long_description_fr",
-                dbSign.getLongDescriptionFr(), textOrNull(jsonSign, "long_description_fr"));
-        compareField(issues, dbSign.getSignCode(), "long_description_ar",
-                dbSign.getLongDescriptionAr(), textOrNull(jsonSign, "long_description_ar"));
-
-        // Check completeness
-        if (!dbSign.isLongDescriptionComplete()) {
-            issues.add("isLongDescriptionComplete=false — at least one long_description field is null or empty");
-        }
+        compareField(issues, dbSign.getSignCode(), "description_en",
+                dbSign.getDescriptionEn(), textOrNull(jsonSign, "long_description_en"));
+        compareField(issues, dbSign.getSignCode(), "description_nl",
+                dbSign.getDescriptionNl(), textOrNull(jsonSign, "long_description_nl"));
+        compareField(issues, dbSign.getSignCode(), "description_fr",
+                dbSign.getDescriptionFr(), textOrNull(jsonSign, "long_description_fr"));
+        compareField(issues, dbSign.getSignCode(), "description_ar",
+                dbSign.getDescriptionAr(), textOrNull(jsonSign, "long_description_ar"));
 
         return issues;
     }

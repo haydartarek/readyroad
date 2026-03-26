@@ -1,11 +1,24 @@
 ﻿{
-    "name_ar":  "مخرج",
-    "category_code":  "G",
-    "name_en":  "Exit",
-    "is_end_sign":  false,
-    "image":  "images/signs/additional_signs/GXI Afrit.png",
-    "name_nl":  "Afrit",
-    "name_fr":  "Sortie",
-    "code":  "GXI",
-    "sign_code":  "GXI"
+  "code": "GXI",
+  "category": "ADDITIONAL",
+  "image_path": "images/signs/additional_signs/GXI Afrit.png",
+  "serious_violation": false,
+  "i18n": {
+    "NL": {
+      "name": "Afrit",
+      "description": "Afrit"
+    },
+    "EN": {
+      "name": "Exit",
+      "description": "Exit"
+    },
+    "FR": {
+      "name": "Sortie",
+      "description": "Sortie"
+    },
+    "AR": {
+      "name": "مخرج",
+      "description": "مخرج"
+    }
+  }
 }

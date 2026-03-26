@@ -1,0 +1,618 @@
+[
+  {
+    "question_id": "F50bis-fietsers_Q01",
+    "type": "WHAT_DOES_IT_MEAN",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat betekent dit verkeersbord voor fietsers?",
+        "choices": [
+          {
+            "text": "Opgepast: bij het afslaan kunnen fietsers van rechts oversteken of rechtdoor rijden",
+            "is_correct": true
+          },
+          {
+            "text": "Fietsers moeten verplicht rechts afslaan",
+            "is_correct": false
+          },
+          {
+            "text": "Alleen fietsers mogen deze straat in",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Deze variant waarschuwt bestuurders die van richting veranderen dat fietsers van rechts kunnen oversteken of hun traject rechtdoor verderzetten."
+      },
+      "EN": {
+        "question": "What does this traffic sign mean for cyclists?",
+        "choices": [
+          {
+            "text": "Caution: when turning, cyclists may cross from the right or continue straight",
+            "is_correct": true
+          },
+          {
+            "text": "Cyclists are obliged to turn right",
+            "is_correct": false
+          },
+          {
+            "text": "Only cyclists may enter this street",
+            "is_correct": false
+          }
+        ],
+        "explanation": "This variant warns drivers who change direction that cyclists may cross from the right or continue straight ahead."
+      },
+      "FR": {
+        "question": "Que signifie ce panneau pour les cyclistes ?",
+        "choices": [
+          {
+            "text": "Attention : en tournant, des cyclistes peuvent traverser par la droite ou continuer tout droit",
+            "is_correct": true
+          },
+          {
+            "text": "Les cyclistes sont obliges de tourner a droite",
+            "is_correct": false
+          },
+          {
+            "text": "Seuls les cyclistes peuvent entrer dans cette rue",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Cette variante avertit les conducteurs qui changent de direction que des cyclistes peuvent traverser par la droite ou poursuivre leur trajectoire tout droit."
+      },
+      "AR": {
+        "question": "ما معنى هذه الإشارة بالنسبة لراكبي الدراجات؟",
+        "choices": [
+          {
+            "text": "تحذير: عند الانعطاف قد يعبر الدراجون من اليمين أو يواصلون السير مباشرة",
+            "is_correct": true
+          },
+          {
+            "text": "يجب على الدراجين الانعطاف يمينًا",
+            "is_correct": false
+          },
+          {
+            "text": "يسمح فقط للدراجين بدخول هذا الشارع",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تحذر هذه النسخة السائقين الذين يغيرون اتجاههم من أن الدراجين قد يعبرون من اليمين أو يواصلون السير مباشرة."
+      }
+    }
+  },
+  {
+    "question_id": "F50bis-fietsers_Q02",
+    "type": "WHICH_SIGN",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat is de functie van deze F50bis-variant?",
+        "choices": [
+          {
+            "text": "Ze waarschuwt specifiek voor fietsers bij een richtingsverandering",
+            "is_correct": true
+          },
+          {
+            "text": "Ze vervangt elk fietspadbord",
+            "is_correct": false
+          },
+          {
+            "text": "Ze verbiedt voetgangers op het kruispunt",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Deze F50bis-variant is een waarschuwing voor conflict met fietsers wanneer een bestuurder afslaat."
+      },
+      "EN": {
+        "question": "What is the purpose of this F50bis variant?",
+        "choices": [
+          {
+            "text": "It specifically warns about cyclists when changing direction",
+            "is_correct": true
+          },
+          {
+            "text": "It replaces every cycle-track sign",
+            "is_correct": false
+          },
+          {
+            "text": "It prohibits pedestrians at the junction",
+            "is_correct": false
+          }
+        ],
+        "explanation": "This F50bis variant warns about a conflict with cyclists when a driver turns."
+      },
+      "FR": {
+        "question": "Quelle est la fonction de cette variante F50bis ?",
+        "choices": [
+          {
+            "text": "Elle avertit specifiquement de la presence de cyclistes lors d un changement de direction",
+            "is_correct": true
+          },
+          {
+            "text": "Elle remplace chaque panneau de piste cyclable",
+            "is_correct": false
+          },
+          {
+            "text": "Elle interdit les pietons au carrefour",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Cette variante F50bis avertit d un conflit possible avec des cyclistes lorsqu un conducteur tourne."
+      },
+      "AR": {
+        "question": "ما وظيفة هذه النسخة من F50bis؟",
+        "choices": [
+          {
+            "text": "إنها تحذر تحديدًا من وجود دراجين عند تغيير الاتجاه",
+            "is_correct": true
+          },
+          {
+            "text": "إنها تستبدل كل إشارة لمسار الدراجات",
+            "is_correct": false
+          },
+          {
+            "text": "إنها تمنع المشاة عند التقاطع",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تحذر هذه النسخة من F50bis من احتمال تعارض مع الدراجين عندما ينعطف السائق."
+      }
+    }
+  },
+  {
+    "question_id": "F50bis-fietsers_Q03",
+    "type": "HAZARD_IDENTIFICATION",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Welk gevaar benadrukt dit bord vooral?",
+        "choices": [
+          {
+            "text": "Fietsers kunnen parallel rechtdoor rijden terwijl u afslaat",
+            "is_correct": true
+          },
+          {
+            "text": "Voetgangers mogen de rijbaan plots afsluiten",
+            "is_correct": false
+          },
+          {
+            "text": "Tegemoetkomend verkeer rijdt altijd door rood",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Het bord waarschuwt voor het conflict tussen afslaand verkeer en fietsers die hun traject rechtdoor voortzetten."
+      },
+      "EN": {
+        "question": "Which hazard does this sign mainly highlight?",
+        "choices": [
+          {
+            "text": "Cyclists may continue straight alongside you while you turn",
+            "is_correct": true
+          },
+          {
+            "text": "Pedestrians may suddenly block the carriageway",
+            "is_correct": false
+          },
+          {
+            "text": "Oncoming traffic always drives through red",
+            "is_correct": false
+          }
+        ],
+        "explanation": "The sign warns about the conflict between turning vehicles and cyclists who continue straight."
+      },
+      "FR": {
+        "question": "Quel danger ce panneau souligne-t-il surtout ?",
+        "choices": [
+          {
+            "text": "Des cyclistes peuvent continuer tout droit a cote de vous pendant que vous tournez",
+            "is_correct": true
+          },
+          {
+            "text": "Des pietons peuvent bloquer soudainement la chaussee",
+            "is_correct": false
+          },
+          {
+            "text": "Le trafic venant en sens inverse passe toujours au rouge",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Le panneau avertit du conflit entre les vehicules qui tournent et les cyclistes qui poursuivent leur trajectoire tout droit."
+      },
+      "AR": {
+        "question": "ما الخطر الذي تؤكد عليه هذه الإشارة بشكل رئيسي؟",
+        "choices": [
+          {
+            "text": "قد يواصل الدراجون السير مباشرة بمحاذاتك بينما تنعطف",
+            "is_correct": true
+          },
+          {
+            "text": "قد يغلق المشاة الطريق فجأة",
+            "is_correct": false
+          },
+          {
+            "text": "تمر المركبات القادمة عكس الاتجاه دائمًا عند الضوء الأحمر",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تحذر الإشارة من التعارض بين المركبات التي تنعطف والدراجين الذين يواصلون مسارهم مباشرة."
+      }
+    }
+  },
+  {
+    "question_id": "F50bis-fietsers_Q04",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U wil rechts afslaan en een fietser nadert van rechts. Wat doet u?",
+        "choices": [
+          {
+            "text": "Vertragen en voorrang geven aan de fietser",
+            "is_correct": true
+          },
+          {
+            "text": "Doorrijden omdat u al richting heeft aangegeven",
+            "is_correct": false
+          },
+          {
+            "text": "De fietser dwingen te stoppen met claxon en handgebaar",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Wanneer fietsers kunnen oversteken of rechtdoor rijden, moet afslaand verkeer snelheid minderen en voorrang geven."
+      },
+      "EN": {
+        "question": "You want to turn right and a cyclist approaches from the right. What do you do?",
+        "choices": [
+          {
+            "text": "Slow down and give way to the cyclist",
+            "is_correct": true
+          },
+          {
+            "text": "Continue because you have already indicated",
+            "is_correct": false
+          },
+          {
+            "text": "Force the cyclist to stop with your horn and hand signal",
+            "is_correct": false
+          }
+        ],
+        "explanation": "When cyclists may cross or continue straight, turning traffic must slow down and give way."
+      },
+      "FR": {
+        "question": "Vous voulez tourner a droite et un cycliste arrive par la droite. Que faites-vous ?",
+        "choices": [
+          {
+            "text": "Ralentir et ceder le passage au cycliste",
+            "is_correct": true
+          },
+          {
+            "text": "Continuer parce que vous avez deja mis votre clignotant",
+            "is_correct": false
+          },
+          {
+            "text": "Forcer le cycliste a s arreter avec le klaxon et un geste",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Lorsque des cyclistes peuvent traverser ou continuer tout droit, le trafic tournant doit ralentir et ceder le passage."
+      },
+      "AR": {
+        "question": "أنت تريد الانعطاف يمينًا ويقترب دراج من الجهة اليمنى. ماذا تفعل؟",
+        "choices": [
+          {
+            "text": "تخفف السرعة وتعطي الأولوية للدراج",
+            "is_correct": true
+          },
+          {
+            "text": "تتابع لأنك أشرت مسبقًا",
+            "is_correct": false
+          },
+          {
+            "text": "تجبر الدراج على التوقف باستخدام المنبه وإشارة اليد",
+            "is_correct": false
+          }
+        ],
+        "explanation": "عندما يمكن للدراجين العبور أو متابعة السير مباشرة، يجب على المركبات المنعطفة أن تخفف السرعة وتعطي الأولوية."
+      }
+    }
+  },
+  {
+    "question_id": "F50bis-fietsers_Q05",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Hoe verhoudt deze waarschuwing zich tot een gewone fietsoversteekplaats?",
+        "choices": [
+          {
+            "text": "Ze vraagt dezelfde voorzichtigheid: vertragen en zo nodig stoppen voor fietsers",
+            "is_correct": true
+          },
+          {
+            "text": "Ze is minder streng omdat het enkel een informatiebord is",
+            "is_correct": false
+          },
+          {
+            "text": "Ze laat u voorrang nemen als u groter bent dan de fietser",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ook al is dit een waarschuwings- of informatiebord, het doel blijft conflicten met fietsers vermijden door tijdig te vertragen en voorrang te geven."
+      },
+      "EN": {
+        "question": "How does this warning compare to a normal cyclist crossing?",
+        "choices": [
+          {
+            "text": "It requires the same caution: slow down and stop if necessary for cyclists",
+            "is_correct": true
+          },
+          {
+            "text": "It is less strict because it is only an information sign",
+            "is_correct": false
+          },
+          {
+            "text": "It lets you take priority if your vehicle is larger than the bicycle",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Even though it is an information or warning sign, the goal remains to avoid conflicts with cyclists by slowing down in time and giving way."
+      },
+      "FR": {
+        "question": "Comment cet avertissement se compare-t-il a un passage cycliste ordinaire ?",
+        "choices": [
+          {
+            "text": "Il exige la meme prudence : ralentir et s arreter si necessaire pour les cyclistes",
+            "is_correct": true
+          },
+          {
+            "text": "Il est moins strict parce que c est seulement un panneau d information",
+            "is_correct": false
+          },
+          {
+            "text": "Il vous permet de prendre la priorite si votre vehicule est plus grand que le velo",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Meme s il s agit d un panneau d information ou d avertissement, l objectif reste d eviter les conflits avec les cyclistes en ralentissant a temps et en cedant le passage."
+      },
+      "AR": {
+        "question": "كيف تقارن هذه الإشارة التحذيرية بممر دراجات عادي؟",
+        "choices": [
+          {
+            "text": "تتطلب الحذر نفسه: خفف السرعة وتوقف إذا لزم الأمر للدراجين",
+            "is_correct": true
+          },
+          {
+            "text": "هي أقل صرامة لأنها مجرد إشارة معلومات",
+            "is_correct": false
+          },
+          {
+            "text": "تسمح لك بأخذ الأولوية إذا كانت مركبتك أكبر من الدراجة",
+            "is_correct": false
+          }
+        ],
+        "explanation": "حتى لو كانت إشارة معلومات أو تحذير، يبقى الهدف تجنب التعارض مع الدراجين عبر التخفيف المبكر وإعطاء الأولوية."
+      }
+    }
+  },
+  {
+    "question_id": "F50bis-fietsers_Q06",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Welke wegmarkering hoort vaak bij deze situatie?",
+        "choices": [
+          {
+            "text": "Een gemarkeerde fietsoversteek of een conflictvlak bij het afslaan",
+            "is_correct": true
+          },
+          {
+            "text": "Een spoorwegovergang zonder slagbomen",
+            "is_correct": false
+          },
+          {
+            "text": "Een uitsluitend zebrapad zonder fietsmarkering",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Deze waarschuwing staat vaak bij een fietsoversteek of conflictvlak waar fietsers het traject van afslaande voertuigen kruisen."
+      },
+      "EN": {
+        "question": "Which road marking often accompanies this situation?",
+        "choices": [
+          {
+            "text": "A marked cycle crossing or conflict area where vehicles turn",
+            "is_correct": true
+          },
+          {
+            "text": "A level crossing without barriers",
+            "is_correct": false
+          },
+          {
+            "text": "A zebra crossing only, without cycle markings",
+            "is_correct": false
+          }
+        ],
+        "explanation": "This warning often appears near a cycle crossing or conflict area where cyclists intersect with turning vehicles."
+      },
+      "FR": {
+        "question": "Quel marquage routier accompagne souvent cette situation ?",
+        "choices": [
+          {
+            "text": "Un passage cycliste marque ou une zone de conflit lors du virage",
+            "is_correct": true
+          },
+          {
+            "text": "Un passage a niveau sans barrieres",
+            "is_correct": false
+          },
+          {
+            "text": "Uniquement un zebra sans marquage cycliste",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Cet avertissement se trouve souvent pres d un passage cycliste ou d une zone de conflit ou les cyclistes croisent la trajectoire des vehicules qui tournent."
+      },
+      "AR": {
+        "question": "ما علامة الطريق التي ترافق هذا الوضع غالبًا؟",
+        "choices": [
+          {
+            "text": "ممر دراجات مُعلَّم أو منطقة تعارض عند الانعطاف",
+            "is_correct": true
+          },
+          {
+            "text": "معبر سكة حديد بلا حواجز",
+            "is_correct": false
+          },
+          {
+            "text": "ممر مشاة فقط دون علامات دراجات",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تظهر هذه الإشارة غالبًا قرب ممر دراجات أو منطقة تعارض حيث يقطع الدراجون مسار المركبات المنعطفة."
+      }
+    }
+  },
+  {
+    "question_id": "F50bis-fietsers_Q07",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Mag u doorrijden als een fietser al gepasseerd is maar een tweede fietser nog nadert?",
+        "choices": [
+          {
+            "text": "Nee, zolang een tweede fietser nog wil oversteken of rechtdoor wil rijden moet u wachten",
+            "is_correct": true
+          },
+          {
+            "text": "Ja, zodra de eerste fietser voorbij is mag u vertrekken",
+            "is_correct": false
+          }
+        ],
+        "explanation": "U moet rekening houden met alle fietsers die de oversteek of het conflictvlak nog gebruiken of gaan gebruiken."
+      },
+      "EN": {
+        "question": "May you continue if one cyclist has already passed but a second cyclist is still approaching?",
+        "choices": [
+          {
+            "text": "No, as long as another cyclist still wants to cross or continue straight you must wait",
+            "is_correct": true
+          },
+          {
+            "text": "Yes, once the first cyclist has passed you may leave",
+            "is_correct": false
+          }
+        ],
+        "explanation": "You must account for all cyclists who still use or are about to use the crossing or conflict area."
+      },
+      "FR": {
+        "question": "Pouvez-vous continuer si un cycliste est deja passe mais qu un deuxieme cycliste approche encore ?",
+        "choices": [
+          {
+            "text": "Non, tant qu un autre cycliste veut encore traverser ou continuer tout droit vous devez attendre",
+            "is_correct": true
+          },
+          {
+            "text": "Oui, des que le premier cycliste est passe vous pouvez repartir",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Vous devez tenir compte de tous les cyclistes qui utilisent encore ou vont utiliser le passage ou la zone de conflit."
+      },
+      "AR": {
+        "question": "هل يمكنك المتابعة إذا مر دراج أول بالفعل لكن دراجًا ثانيًا ما زال يقترب؟",
+        "choices": [
+          {
+            "text": "لا، ما دام هناك دراج آخر يريد العبور أو متابعة السير مباشرة فيجب الانتظار",
+            "is_correct": true
+          },
+          {
+            "text": "نعم، بمجرد مرور الدراج الأول يمكنك الانطلاق",
+            "is_correct": false
+          }
+        ],
+        "explanation": "يجب أن تراعي جميع الدراجين الذين لا يزالون يستخدمون الممر أو منطقة التعارض أو سيستخدمونها."
+      }
+    }
+  },
+  {
+    "question_id": "F50bis-fietsers_Q08",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Mag een tractor deze oversteekplaats passeren zonder te stoppen als er geen fietsers zichtbaar zijn?",
+        "choices": [
+          {
+            "text": "Ja, als er niemand oversteekt of wil oversteken hoeft u niet te stoppen",
+            "is_correct": true
+          },
+          {
+            "text": "Nee, een tractor moet hier altijd volledig stoppen",
+            "is_correct": false
+          }
+        ],
+        "explanation": "De bestuurder moet vooral vertragen en klaar zijn om te stoppen. Als er geen fietser aanwezig is of wil oversteken, is doorrijden toegelaten."
+      },
+      "EN": {
+        "question": "May a tractor pass this crossing without stopping if no cyclists are visible?",
+        "choices": [
+          {
+            "text": "Yes, if nobody is crossing or intending to cross you do not have to stop",
+            "is_correct": true
+          },
+          {
+            "text": "No, a tractor must always come to a complete stop here",
+            "is_correct": false
+          }
+        ],
+        "explanation": "The driver must mainly slow down and be ready to stop. If no cyclist is present or intends to cross, driving on is allowed."
+      },
+      "FR": {
+        "question": "Un tracteur peut-il passer ce passage sans s arreter si aucun cycliste n est visible ?",
+        "choices": [
+          {
+            "text": "Oui, si personne ne traverse ou n a l intention de traverser vous n etes pas oblige de vous arreter",
+            "is_correct": true
+          },
+          {
+            "text": "Non, un tracteur doit toujours s arreter completement ici",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Le conducteur doit surtout ralentir et etre pret a s arreter. Si aucun cycliste n est present ou n a l intention de traverser, il peut continuer."
+      },
+      "AR": {
+        "question": "هل يمكن لجرار أن يمر من هذا الممر دون توقف إذا لم يكن هناك دراجون مرئيون؟",
+        "choices": [
+          {
+            "text": "نعم، إذا لم يكن أحد يعبر أو ينوي العبور فلا يجب التوقف",
+            "is_correct": true
+          },
+          {
+            "text": "لا، يجب على الجرار أن يتوقف هنا دائمًا توقفًا كاملًا",
+            "is_correct": false
+          }
+        ],
+        "explanation": "يجب على السائق أساسًا أن يخفف السرعة وأن يكون مستعدًا للتوقف. إذا لم يكن هناك دراج حاضر أو ينوي العبور، فيجوز المتابعة."
+      }
+    }
+  }
+]

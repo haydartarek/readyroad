@@ -1,566 +1,499 @@
 {
-    "info": {
-        "_postman_id": "readyroad-smoke-test-2026",
-        "name": "ReadyRoad Backend - Smoke Test Suite",
-        "description": "🚀 **Automated Smoke Test Suite for ReadyRoad Backend**\n\n**Purpose:** Fail-fast validation of critical endpoints with automated test scripts.\n\n**Usage:**\n1. Select 'ReadyRoad Local' environment\n2. Run entire collection (Runner or CLI)\n3. Review test results - all tests must pass\n4. If any test fails, backend is unstable\n\n**Critical Endpoints Tested:**\n- ✅ Health checks (custom + actuator)\n- ✅ Categories API\n- ✅ Traffic Signs API\n- ✅ Lessons API\n- ✅ Exam Questions API\n- ✅ OpenAPI documentation\n- ❌ Wrong paths (must return 404)\n\n**Test Scripts:** Every request includes automated assertions:\n- Status code validation\n- Response time checks\n- JSON structure validation\n- Data type verification\n\n**Run with Newman CLI:**\n```bash\nnewman run ReadyRoad.smoke-test.postman_collection.json -e ReadyRoad.local.postman_environment.json --reporters cli,html\n```\n\n**Date:** January 22, 2026 (FIXED)",
-        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  "info": {
+    "_postman_id": "readyroad-smoke-test-2026",
+    "name": "ReadyRoad Backend - Smoke Test Suite",
+    "description": "🚀 **Automated Smoke Test Suite for ReadyRoad Backend**\n\n**Purpose:** Fail-fast validation of critical endpoints with automated test scripts.\n\n**Usage:**\n1. Select 'ReadyRoad Local' environment\n2. Run entire collection (Runner or CLI)\n3. Review test results - all tests must pass\n4. If any test fails, backend is unstable\n\n**Critical Endpoints Tested:**\n- ✅ Health checks (custom + actuator)\n- ✅ Categories API\n- ✅ Traffic Signs API\n- ✅ Lessons API\n- ✅ Exam Questions API\n- ✅ OpenAPI documentation\n- ❌ Wrong paths (must return 404)\n\n**Test Scripts:** Every request includes automated assertions:\n- Status code validation\n- Response time checks\n- JSON structure validation\n- Data type verification\n\n**Run with Newman CLI:**\n```bash\nnewman run ReadyRoad.smoke-test.postman_collection.json -e ReadyRoad.local.postman_environment.json --reporters cli,html\n```\n\n**Date:** January 22, 2026 (FIXED)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "🔥 Smoke Tests - Critical Path",
+      "item": [
+        {
+          "name": "✅ Health Check - Custom",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// Critical: Backend must be UP",
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Response time is acceptable\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                  "});",
+                  "",
+                  "pm.test(\"Response is JSON\", function () {",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "",
+                  "pm.test(\"Health status is UP\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.status).to.eql(\"UP\");",
+                  "});",
+                  "",
+                  "pm.test(\"Response contains required fields\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('status');",
+                  "    pm.expect(jsonData).to.have.property('message');",
+                  "    pm.expect(jsonData).to.have.property('timestamp');",
+                  "    pm.expect(jsonData).to.have.property('version');",
+                  "});",
+                  "",
+                  "// Save timestamp for later",
+                  "pm.environment.set(\"backend_last_health_check\", new Date().toISOString());"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/health",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "health"
+              ]
+            },
+            "description": "**CRITICAL:** Custom health endpoint must return status UP.\n\nIf this fails, backend is down or misconfigured."
+          },
+          "response": []
+        },
+        {
+          "name": "✅ Categories - Get All",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// Critical: Categories must be accessible",
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Response time is acceptable\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(2000);",
+                  "});",
+                  "",
+                  "pm.test(\"Response is JSON array\", function () {",
+                  "    pm.response.to.be.json;",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.be.an('array');",
+                  "});",
+                  "",
+                  "pm.test(\"Categories exist\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.length).to.be.above(0);",
+                  "});",
+                  "",
+                  "pm.test(\"Category structure is valid\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    if (jsonData.length > 0) {",
+                  "        var category = jsonData[0];",
+                  "        pm.expect(category).to.have.property('id');",
+                  "        pm.expect(category).to.have.property('code');",
+                  "        pm.expect(category).to.have.property('nameEn');",
+                  "    }",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/categories",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "categories"
+              ]
+            },
+            "description": "**CRITICAL:** Categories API must be accessible and return data."
+          },
+          "response": []
+        },
+        {
+          "name": "✅ Traffic Signs - Get All",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// Critical: Traffic signs must be accessible",
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Response time is acceptable\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(3000);",
+                  "});",
+                  "",
+                  "pm.test(\"Response is JSON array\", function () {",
+                  "    pm.response.to.be.json;",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.be.an('array');",
+                  "});",
+                  "",
+                  "pm.test(\"Traffic signs exist\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.length).to.be.above(0);",
+                  "});",
+                  "",
+                  "pm.test(\"Traffic sign structure is valid\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    if (jsonData.length > 0) {",
+                  "        var sign = jsonData[0];",
+                  "        pm.expect(sign).to.have.property('id');",
+                  "        pm.expect(sign).to.have.property('signCode');",
+                  "        pm.expect(sign).to.have.property('nameEn');",
+                  "    }",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/traffic-signs",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "traffic-signs"
+              ]
+            },
+            "description": "**CRITICAL:** Traffic signs API must use correct path (traffic-signs with hyphen)."
+          },
+          "response": []
+        },
+        {
+          "name": "✅ Lessons - Get All",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// Critical: Lessons must be accessible",
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Response time is acceptable\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(2000);",
+                  "});",
+                  "",
+                  "pm.test(\"Response is JSON array\", function () {",
+                  "    pm.response.to.be.json;",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.be.an('array');",
+                  "});",
+                  "",
+                  "pm.test(\"Lessons exist\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.length).to.be.above(0);",
+                  "});",
+                  "",
+                  "pm.test(\"Lesson structure is valid\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    if (jsonData.length > 0) {",
+                  "        var lesson = jsonData[0];",
+                  "        pm.expect(lesson).to.have.property('id');",
+                  "        pm.expect(lesson).to.have.property('titleEn');",
+                  "    }",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/lessons",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "lessons"
+              ]
+            },
+            "description": "**CRITICAL:** Lessons API must be accessible."
+          },
+          "response": []
+        },
+        {
+          "name": "✅ OpenAPI Docs - JSON",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// Critical: OpenAPI documentation must be available",
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Response time is acceptable\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(2000);",
+                  "});",
+                  "",
+                  "pm.test(\"Response is JSON\", function () {",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "",
+                  "pm.test(\"OpenAPI structure is valid\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('openapi');",
+                  "    pm.expect(jsonData).to.have.property('info');",
+                  "    pm.expect(jsonData).to.have.property('paths');",
+                  "});",
+                  "",
+                  "pm.test(\"API version is documented\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.info).to.have.property('title');",
+                  "    pm.expect(jsonData.info).to.have.property('version');",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/v3/api-docs",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v3",
+                "api-docs"
+              ]
+            },
+            "description": "**CRITICAL:** OpenAPI documentation must be accessible."
+          },
+          "response": []
+        },
+        {
+          "name": "✅ Actuator Health",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// Critical: Actuator health must be UP",
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Response time is acceptable\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                  "});",
+                  "",
+                  "pm.test(\"Response is JSON\", function () {",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "",
+                  "pm.test(\"Actuator status is UP\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('status');",
+                  "    pm.expect(jsonData.status).to.eql('UP');",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/actuator/health",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "actuator",
+                "health"
+              ]
+            },
+            "description": "**CRITICAL:** Spring Boot Actuator must report UP status."
+          },
+          "response": []
+        }
+      ],
+      "description": "**Critical Path Smoke Tests**\n\nThese requests MUST all pass for the backend to be considered stable.\n\nIf any test fails:\n- Backend is NOT ready for use\n- Do NOT proceed with further testing\n- Fix the failing endpoint immediately"
     },
-    "item": [
+    {
+      "name": "❌ Negative Tests - Must Fail",
+      "item": [
         {
-            "name": "🔥 Smoke Tests - Critical Path",
-            "item": [
-                {
-                    "name": "✅ Health Check - Custom",
-                    "event": [
-                        {
-                            "listen": "test",
-                            "script": {
-                                "exec": [
-                                    "// Critical: Backend must be UP",
-                                    "pm.test(\"Status code is 200\", function () {",
-                                    "    pm.response.to.have.status(200);",
-                                    "});",
-                                    "",
-                                    "pm.test(\"Response time is acceptable\", function () {",
-                                    "    pm.expect(pm.response.responseTime).to.be.below(1000);",
-                                    "});",
-                                    "",
-                                    "pm.test(\"Response is JSON\", function () {",
-                                    "    pm.response.to.be.json;",
-                                    "});",
-                                    "",
-                                    "pm.test(\"Health status is UP\", function () {",
-                                    "    var jsonData = pm.response.json();",
-                                    "    pm.expect(jsonData.status).to.eql(\"UP\");",
-                                    "});",
-                                    "",
-                                    "pm.test(\"Response contains required fields\", function () {",
-                                    "    var jsonData = pm.response.json();",
-                                    "    pm.expect(jsonData).to.have.property('status');",
-                                    "    pm.expect(jsonData).to.have.property('message');",
-                                    "    pm.expect(jsonData).to.have.property('timestamp');",
-                                    "    pm.expect(jsonData).to.have.property('version');",
-                                    "});",
-                                    "",
-                                    "// Save timestamp for later",
-                                    "pm.environment.set(\"backend_last_health_check\", new Date().toISOString());"
-                                ],
-                                "type": "text/javascript"
-                            }
-                        }
-                    ],
-                    "request": {
-                        "method": "GET",
-                        "header": [],
-                        "url": {
-                            "raw": "{{baseUrl}}/api/health",
-                            "host": [
-                                "{{baseUrl}}"
-                            ],
-                            "path": [
-                                "api",
-                                "health"
-                            ]
-                        },
-                        "description": "**CRITICAL:** Custom health endpoint must return status UP.\n\nIf this fails, backend is down or misconfigured."
-                    },
-                    "response": []
-                },
-                {
-                    "name": "✅ Categories - Get All",
-                    "event": [
-                        {
-                            "listen": "test",
-                            "script": {
-                                "exec": [
-                                    "// Critical: Categories must be accessible",
-                                    "pm.test(\"Status code is 200\", function () {",
-                                    "    pm.response.to.have.status(200);",
-                                    "});",
-                                    "",
-                                    "pm.test(\"Response time is acceptable\", function () {",
-                                    "    pm.expect(pm.response.responseTime).to.be.below(2000);",
-                                    "});",
-                                    "",
-                                    "pm.test(\"Response is JSON array\", function () {",
-                                    "    pm.response.to.be.json;",
-                                    "    var jsonData = pm.response.json();",
-                                    "    pm.expect(jsonData).to.be.an('array');",
-                                    "});",
-                                    "",
-                                    "pm.test(\"Categories exist\", function () {",
-                                    "    var jsonData = pm.response.json();",
-                                    "    pm.expect(jsonData.length).to.be.above(0);",
-                                    "});",
-                                    "",
-                                    "pm.test(\"Category structure is valid\", function () {",
-                                    "    var jsonData = pm.response.json();",
-                                    "    if (jsonData.length > 0) {",
-                                    "        var category = jsonData[0];",
-                                    "        pm.expect(category).to.have.property('id');",
-                                    "        pm.expect(category).to.have.property('code');",
-                                    "        pm.expect(category).to.have.property('nameEn');",
-                                    "    }",
-                                    "});"
-                                ],
-                                "type": "text/javascript"
-                            }
-                        }
-                    ],
-                    "request": {
-                        "method": "GET",
-                        "header": [],
-                        "url": {
-                            "raw": "{{baseUrl}}/api/categories",
-                            "host": [
-                                "{{baseUrl}}"
-                            ],
-                            "path": [
-                                "api",
-                                "categories"
-                            ]
-                        },
-                        "description": "**CRITICAL:** Categories API must be accessible and return data."
-                    },
-                    "response": []
-                },
-                {
-                    "name": "✅ Traffic Signs - Get All",
-                    "event": [
-                        {
-                            "listen": "test",
-                            "script": {
-                                "exec": [
-                                    "// Critical: Traffic signs must be accessible",
-                                    "pm.test(\"Status code is 200\", function () {",
-                                    "    pm.response.to.have.status(200);",
-                                    "});",
-                                    "",
-                                    "pm.test(\"Response time is acceptable\", function () {",
-                                    "    pm.expect(pm.response.responseTime).to.be.below(3000);",
-                                    "});",
-                                    "",
-                                    "pm.test(\"Response is JSON array\", function () {",
-                                    "    pm.response.to.be.json;",
-                                    "    var jsonData = pm.response.json();",
-                                    "    pm.expect(jsonData).to.be.an('array');",
-                                    "});",
-                                    "",
-                                    "pm.test(\"Traffic signs exist\", function () {",
-                                    "    var jsonData = pm.response.json();",
-                                    "    pm.expect(jsonData.length).to.be.above(0);",
-                                    "});",
-                                    "",
-                                    "pm.test(\"Traffic sign structure is valid\", function () {",
-                                    "    var jsonData = pm.response.json();",
-                                    "    if (jsonData.length > 0) {",
-                                    "        var sign = jsonData[0];",
-                                    "        pm.expect(sign).to.have.property('id');",
-                                    "        pm.expect(sign).to.have.property('signCode');",
-                                    "        pm.expect(sign).to.have.property('nameEn');",
-                                    "    }",
-                                    "});"
-                                ],
-                                "type": "text/javascript"
-                            }
-                        }
-                    ],
-                    "request": {
-                        "method": "GET",
-                        "header": [],
-                        "url": {
-                            "raw": "{{baseUrl}}/api/traffic-signs",
-                            "host": [
-                                "{{baseUrl}}"
-                            ],
-                            "path": [
-                                "api",
-                                "traffic-signs"
-                            ]
-                        },
-                        "description": "**CRITICAL:** Traffic signs API must use correct path (traffic-signs with hyphen)."
-                    },
-                    "response": []
-                },
-                {
-                    "name": "✅ Lessons - Get All",
-                    "event": [
-                        {
-                            "listen": "test",
-                            "script": {
-                                "exec": [
-                                    "// Critical: Lessons must be accessible",
-                                    "pm.test(\"Status code is 200\", function () {",
-                                    "    pm.response.to.have.status(200);",
-                                    "});",
-                                    "",
-                                    "pm.test(\"Response time is acceptable\", function () {",
-                                    "    pm.expect(pm.response.responseTime).to.be.below(2000);",
-                                    "});",
-                                    "",
-                                    "pm.test(\"Response is JSON array\", function () {",
-                                    "    pm.response.to.be.json;",
-                                    "    var jsonData = pm.response.json();",
-                                    "    pm.expect(jsonData).to.be.an('array');",
-                                    "});",
-                                    "",
-                                    "pm.test(\"Lessons exist\", function () {",
-                                    "    var jsonData = pm.response.json();",
-                                    "    pm.expect(jsonData.length).to.be.above(0);",
-                                    "});",
-                                    "",
-                                    "pm.test(\"Lesson structure is valid\", function () {",
-                                    "    var jsonData = pm.response.json();",
-                                    "    if (jsonData.length > 0) {",
-                                    "        var lesson = jsonData[0];",
-                                    "        pm.expect(lesson).to.have.property('id');",
-                                    "        pm.expect(lesson).to.have.property('titleEn');",
-                                    "    }",
-                                    "});"
-                                ],
-                                "type": "text/javascript"
-                            }
-                        }
-                    ],
-                    "request": {
-                        "method": "GET",
-                        "header": [],
-                        "url": {
-                            "raw": "{{baseUrl}}/api/lessons",
-                            "host": [
-                                "{{baseUrl}}"
-                            ],
-                            "path": [
-                                "api",
-                                "lessons"
-                            ]
-                        },
-                        "description": "**CRITICAL:** Lessons API must be accessible."
-                    },
-                    "response": []
-                },
-                {
-                    "name": "✅ Exam Questions - Random",
-                    "event": [
-                        {
-                            "listen": "test",
-                            "script": {
-                                "exec": [
-                                    "// Critical: Random exam questions must work",
-                                    "pm.test(\"Status code is 200\", function () {",
-                                    "    pm.response.to.have.status(200);",
-                                    "});",
-                                    "",
-                                    "pm.test(\"Response time is acceptable\", function () {",
-                                    "    pm.expect(pm.response.responseTime).to.be.below(3000);",
-                                    "});",
-                                    "",
-                                    "pm.test(\"Response is JSON array\", function () {",
-                                    "    pm.response.to.be.json;",
-                                    "    var jsonData = pm.response.json();",
-                                    "    pm.expect(jsonData).to.be.an('array');",
-                                    "});",
-                                    "",
-                                    "pm.test(\"Returns exactly 5 questions\", function () {",
-                                    "    var jsonData = pm.response.json();",
-                                    "    pm.expect(jsonData.length).to.eql(5);",
-                                    "});",
-                                    "",
-                                    "pm.test(\"Question structure is valid\", function () {",
-                                    "    var jsonData = pm.response.json();",
-                                    "    if (jsonData.length > 0) {",
-                                    "        var question = jsonData[0];",
-                                    "        pm.expect(question).to.have.property('id');",
-                                    "        pm.expect(question).to.have.property('questionEn');",
-                                    "        pm.expect(question).to.have.property('options');",
-                                    "        pm.expect(question.options).to.be.an('array');",
-                                    "    }",
-                                    "});"
-                                ],
-                                "type": "text/javascript"
-                            }
-                        }
-                    ],
-                    "request": {
-                        "method": "GET",
-                        "header": [],
-                        "url": {
-                            "raw": "{{baseUrl}}/api/exam-questions/random?limit=5",
-                            "host": [
-                                "{{baseUrl}}"
-                            ],
-                            "path": [
-                                "api",
-                                "exam-questions",
-                                "random"
-                            ],
-                            "query": [
-                                {
-                                    "key": "limit",
-                                    "value": "5",
-                                    "description": "Number of questions"
-                                }
-                            ]
-                        },
-                        "description": "**CRITICAL:** Random exam questions must return correct count."
-                    },
-                    "response": []
-                },
-                {
-                    "name": "✅ OpenAPI Docs - JSON",
-                    "event": [
-                        {
-                            "listen": "test",
-                            "script": {
-                                "exec": [
-                                    "// Critical: OpenAPI documentation must be available",
-                                    "pm.test(\"Status code is 200\", function () {",
-                                    "    pm.response.to.have.status(200);",
-                                    "});",
-                                    "",
-                                    "pm.test(\"Response time is acceptable\", function () {",
-                                    "    pm.expect(pm.response.responseTime).to.be.below(2000);",
-                                    "});",
-                                    "",
-                                    "pm.test(\"Response is JSON\", function () {",
-                                    "    pm.response.to.be.json;",
-                                    "});",
-                                    "",
-                                    "pm.test(\"OpenAPI structure is valid\", function () {",
-                                    "    var jsonData = pm.response.json();",
-                                    "    pm.expect(jsonData).to.have.property('openapi');",
-                                    "    pm.expect(jsonData).to.have.property('info');",
-                                    "    pm.expect(jsonData).to.have.property('paths');",
-                                    "});",
-                                    "",
-                                    "pm.test(\"API version is documented\", function () {",
-                                    "    var jsonData = pm.response.json();",
-                                    "    pm.expect(jsonData.info).to.have.property('title');",
-                                    "    pm.expect(jsonData.info).to.have.property('version');",
-                                    "});"
-                                ],
-                                "type": "text/javascript"
-                            }
-                        }
-                    ],
-                    "request": {
-                        "method": "GET",
-                        "header": [],
-                        "url": {
-                            "raw": "{{baseUrl}}/v3/api-docs",
-                            "host": [
-                                "{{baseUrl}}"
-                            ],
-                            "path": [
-                                "v3",
-                                "api-docs"
-                            ]
-                        },
-                        "description": "**CRITICAL:** OpenAPI documentation must be accessible."
-                    },
-                    "response": []
-                },
-                {
-                    "name": "✅ Actuator Health",
-                    "event": [
-                        {
-                            "listen": "test",
-                            "script": {
-                                "exec": [
-                                    "// Critical: Actuator health must be UP",
-                                    "pm.test(\"Status code is 200\", function () {",
-                                    "    pm.response.to.have.status(200);",
-                                    "});",
-                                    "",
-                                    "pm.test(\"Response time is acceptable\", function () {",
-                                    "    pm.expect(pm.response.responseTime).to.be.below(1000);",
-                                    "});",
-                                    "",
-                                    "pm.test(\"Response is JSON\", function () {",
-                                    "    pm.response.to.be.json;",
-                                    "});",
-                                    "",
-                                    "pm.test(\"Actuator status is UP\", function () {",
-                                    "    var jsonData = pm.response.json();",
-                                    "    pm.expect(jsonData).to.have.property('status');",
-                                    "    pm.expect(jsonData.status).to.eql('UP');",
-                                    "});"
-                                ],
-                                "type": "text/javascript"
-                            }
-                        }
-                    ],
-                    "request": {
-                        "method": "GET",
-                        "header": [],
-                        "url": {
-                            "raw": "{{baseUrl}}/actuator/health",
-                            "host": [
-                                "{{baseUrl}}"
-                            ],
-                            "path": [
-                                "actuator",
-                                "health"
-                            ]
-                        },
-                        "description": "**CRITICAL:** Spring Boot Actuator must report UP status."
-                    },
-                    "response": []
-                }
-            ],
-            "description": "**Critical Path Smoke Tests**\n\nThese requests MUST all pass for the backend to be considered stable.\n\nIf any test fails:\n- Backend is NOT ready for use\n- Do NOT proceed with further testing\n- Fix the failing endpoint immediately"
+          "name": "❌ Wrong Path: /api/courses",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// This MUST return 404",
+                  "pm.test(\"Status code is 404 (correct behavior)\", function () {",
+                  "    pm.response.to.have.status(404);",
+                  "});",
+                  "",
+                  "pm.test(\"Response time is acceptable\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/courses",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "courses"
+              ]
+            },
+            "description": "**NEGATIVE TEST:** This endpoint does NOT exist.\n\nCorrect path: /api/lessons\n\nMust return 404."
+          },
+          "response": []
         },
         {
-            "name": "❌ Negative Tests - Must Fail",
-            "item": [
-                {
-                    "name": "❌ Wrong Path: /api/courses",
-                    "event": [
-                        {
-                            "listen": "test",
-                            "script": {
-                                "exec": [
-                                    "// This MUST return 404",
-                                    "pm.test(\"Status code is 404 (correct behavior)\", function () {",
-                                    "    pm.response.to.have.status(404);",
-                                    "});",
-                                    "",
-                                    "pm.test(\"Response time is acceptable\", function () {",
-                                    "    pm.expect(pm.response.responseTime).to.be.below(1000);",
-                                    "});"
-                                ],
-                                "type": "text/javascript"
-                            }
-                        }
-                    ],
-                    "request": {
-                        "method": "GET",
-                        "header": [],
-                        "url": {
-                            "raw": "{{baseUrl}}/api/courses",
-                            "host": [
-                                "{{baseUrl}}"
-                            ],
-                            "path": [
-                                "api",
-                                "courses"
-                            ]
-                        },
-                        "description": "**NEGATIVE TEST:** This endpoint does NOT exist.\n\nCorrect path: /api/lessons\n\nMust return 404."
-                    },
-                    "response": []
-                },
-                {
-                    "name": "❌ Wrong Path: /api/signs",
-                    "event": [
-                        {
-                            "listen": "test",
-                            "script": {
-                                "exec": [
-                                    "// This MUST return 404",
-                                    "pm.test(\"Status code is 404 (correct behavior)\", function () {",
-                                    "    pm.response.to.have.status(404);",
-                                    "});",
-                                    "",
-                                    "pm.test(\"Response time is acceptable\", function () {",
-                                    "    pm.expect(pm.response.responseTime).to.be.below(1000);",
-                                    "});"
-                                ],
-                                "type": "text/javascript"
-                            }
-                        }
-                    ],
-                    "request": {
-                        "method": "GET",
-                        "header": [],
-                        "url": {
-                            "raw": "{{baseUrl}}/api/signs",
-                            "host": [
-                                "{{baseUrl}}"
-                            ],
-                            "path": [
-                                "api",
-                                "signs"
-                            ]
-                        },
-                        "description": "**NEGATIVE TEST:** This endpoint does NOT exist.\n\nCorrect path: /api/traffic-signs\n\nMust return 404."
-                    },
-                    "response": []
-                },
-                {
-                    "name": "❌ Wrong Path: /api/trafficsigns",
-                    "event": [
-                        {
-                            "listen": "test",
-                            "script": {
-                                "exec": [
-                                    "// This MUST return 404",
-                                    "pm.test(\"Status code is 404 (correct behavior)\", function () {",
-                                    "    pm.response.to.have.status(404);",
-                                    "});",
-                                    "",
-                                    "pm.test(\"Response time is acceptable\", function () {",
-                                    "    pm.expect(pm.response.responseTime).to.be.below(1000);",
-                                    "});"
-                                ],
-                                "type": "text/javascript"
-                            }
-                        }
-                    ],
-                    "request": {
-                        "method": "GET",
-                        "header": [],
-                        "url": {
-                            "raw": "{{baseUrl}}/api/trafficsigns",
-                            "host": [
-                                "{{baseUrl}}"
-                            ],
-                            "path": [
-                                "api",
-                                "trafficsigns"
-                            ]
-                        },
-                        "description": "**NEGATIVE TEST:** This endpoint does NOT exist.\n\nCorrect path: /api/traffic-signs (with hyphen)\n\nMust return 404."
-                    },
-                    "response": []
-                }
-            ],
-            "description": "**Negative Tests - Wrong Paths**\n\nThese requests MUST return 404 to verify routing is correct.\n\nIf any returns 200:\n- Routing is misconfigured\n- Controller mapping is wrong\n- Security bypass detected"
-        }
-    ],
-    "event": [
-        {
-            "listen": "prerequest",
-            "script": {
-                "type": "text/javascript",
+          "name": "❌ Wrong Path: /api/signs",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
                 "exec": [
-                    "// Collection-level pre-request script",
-                    "console.log('🚀 Starting smoke test run...');",
-                    "console.log('Base URL:', pm.environment.get('baseUrl'));",
-                    "console.log('Timestamp:', new Date().toISOString());"
-                ]
+                  "// This MUST return 404",
+                  "pm.test(\"Status code is 404 (correct behavior)\", function () {",
+                  "    pm.response.to.have.status(404);",
+                  "});",
+                  "",
+                  "pm.test(\"Response time is acceptable\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
             }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/signs",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "signs"
+              ]
+            },
+            "description": "**NEGATIVE TEST:** This endpoint does NOT exist.\n\nCorrect path: /api/traffic-signs\n\nMust return 404."
+          },
+          "response": []
         },
         {
-            "listen": "test",
-            "script": {
-                "type": "text/javascript",
+          "name": "❌ Wrong Path: /api/trafficsigns",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
                 "exec": [
-                    "// Collection-level test script runs after each request",
-                    "const testResults = pm.response.code === 200 || pm.response.code === 404;",
-                    "",
-                    "if (!testResults) {",
-                    "    console.error('❌ Unexpected status code:', pm.response.code);",
-                    "}"
-                ]
+                  "// This MUST return 404",
+                  "pm.test(\"Status code is 404 (correct behavior)\", function () {",
+                  "    pm.response.to.have.status(404);",
+                  "});",
+                  "",
+                  "pm.test(\"Response time is acceptable\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
             }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/trafficsigns",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "trafficsigns"
+              ]
+            },
+            "description": "**NEGATIVE TEST:** This endpoint does NOT exist.\n\nCorrect path: /api/traffic-signs (with hyphen)\n\nMust return 404."
+          },
+          "response": []
         }
-    ],
-    "variable": [
-        {
-            "key": "baseUrl",
-            "value": "http://localhost:8890",
-            "type": "string"
-        }
-    ]
+      ],
+      "description": "**Negative Tests - Wrong Paths**\n\nThese requests MUST return 404 to verify routing is correct.\n\nIf any returns 200:\n- Routing is misconfigured\n- Controller mapping is wrong\n- Security bypass detected"
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "// Collection-level pre-request script",
+          "console.log('🚀 Starting smoke test run...');",
+          "console.log('Base URL:', pm.environment.get('baseUrl'));",
+          "console.log('Timestamp:', new Date().toISOString());"
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "// Collection-level test script runs after each request",
+          "const testResults = pm.response.code === 200 || pm.response.code === 404;",
+          "",
+          "if (!testResults) {",
+          "    console.error('❌ Unexpected status code:', pm.response.code);",
+          "}"
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8890",
+      "type": "string"
+    }
+  ]
 }

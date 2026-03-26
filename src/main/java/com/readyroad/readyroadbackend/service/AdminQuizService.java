@@ -20,8 +20,11 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -48,7 +51,7 @@ public class AdminQuizService {
 
     public PageResponse<AdminQuizQuestionResponse> getQuestionsPaginated(
             int page, int size, String sortParam,
-            String categoryCode, String difficultyLevel, String q) {
+            String categoryCode, String difficultyLevel, String hasImage, String q) {
 
         page = Math.max(0, page);
         size = Math.max(1, Math.min(size, 100));
@@ -59,15 +62,31 @@ public class AdminQuizService {
         String catFilter = (categoryCode != null && !categoryCode.isBlank()) ? categoryCode.trim() : null;
         String qFilter = (q != null && !q.isBlank()) ? q.trim() : null;
         QuizQuestion.DifficultyLevel diffFilter = parseDifficulty(difficultyLevel);
+        Boolean hasImageFilter = parseHasImage(hasImage);
 
         Page<QuizQuestion> questionPage = questionRepository.findAdminQuestions(
-                catFilter, diffFilter, qFilter, pageable);
+                catFilter, diffFilter, hasImageFilter, qFilter, pageable);
 
         List<AdminQuizQuestionResponse> items = questionPage.getContent().stream()
                 .map(this::toResponse)
                 .collect(Collectors.toList());
 
         return PageResponse.of(items, page, size, questionPage.getTotalElements());
+    }
+
+    private Boolean parseHasImage(String hasImage) {
+        if (hasImage == null || hasImage.isBlank()) {
+            return null;
+        }
+
+        String normalized = hasImage.trim().toLowerCase();
+        if (normalized.equals("yes") || normalized.equals("true")) {
+            return true;
+        }
+        if (normalized.equals("no") || normalized.equals("false")) {
+            return false;
+        }
+        return null;
     }
 
     // ─── Get single ────────────────────────────────────
@@ -119,11 +138,6 @@ public class AdminQuizService {
         QuizQuestion question = questionRepository.findByIdWithOptions(id)
                 .orElseThrow(() -> new IllegalArgumentException("Quiz question not found with id: " + id));
 
-        // Production-like edit protection: block meaning-changing fields if referenced
-        if (isQuestionReferenced(id)) {
-            checkMeaningChangingFields(question, request);
-        }
-
         // Update category if changed
         if (!question.getCategory().getCode().equals(request.getCategoryCode())) {
             Category category = categoryRepository.findByCode(request.getCategoryCode())
@@ -134,22 +148,49 @@ public class AdminQuizService {
 
         mapRequestToEntity(request, question);
 
-        // Sync options: clear existing and re-add as new
-        question.getOptions().clear();
+        List<QuizAnswerOption> existingOptions = new ArrayList<>(question.getOptions());
+        Map<Long, QuizAnswerOption> existingById = existingOptions.stream()
+                .filter(option -> option.getId() != null)
+                .collect(Collectors.toMap(QuizAnswerOption::getId, option -> option));
+
+        for (int index = 0; index < existingOptions.size(); index++) {
+            existingOptions.get(index).setDisplayOrder(1000 + index);
+        }
+        questionRepository.flush();
+
+        List<QuizAnswerOption> unmatchedExistingOptions = existingOptions.stream()
+                .filter(option -> option.getId() != null)
+                .sorted(Comparator.comparing(QuizAnswerOption::getId))
+                .collect(Collectors.toCollection(ArrayList::new));
+
         for (AdminQuizQuestionRequest.OptionDTO optDto : request.getOptions()) {
-            QuizAnswerOption option = new QuizAnswerOption();
+            QuizAnswerOption option = optDto.getId() != null ? existingById.get(optDto.getId()) : null;
+            if (option == null) {
+                if (!unmatchedExistingOptions.isEmpty()) {
+                    option = unmatchedExistingOptions.remove(0);
+                } else {
+                    option = new QuizAnswerOption();
+                    question.addOption(option);
+                }
+            } else {
+                unmatchedExistingOptions.remove(option);
+            }
+
             option.setOptionTextEn(optDto.getTextEn());
             option.setOptionTextAr(optDto.getTextAr() != null ? optDto.getTextAr() : "");
             option.setOptionTextNl(optDto.getTextNl() != null ? optDto.getTextNl() : "");
             option.setOptionTextFr(optDto.getTextFr() != null ? optDto.getTextFr() : "");
             option.setIsCorrect(optDto.getIsCorrect() != null ? optDto.getIsCorrect() : false);
             option.setDisplayOrder(optDto.getDisplayOrder() != null ? optDto.getDisplayOrder() : 0);
-            question.addOption(option);
         }
 
-        QuizQuestion saved = questionRepository.save(question);
-        log.info("✅ Quiz question updated id={}", saved.getId());
-        return toResponse(saved);
+        for (QuizAnswerOption staleOption : unmatchedExistingOptions) {
+            question.removeOption(staleOption);
+        }
+
+        questionRepository.flush();
+        log.info("✅ Quiz question updated id={}", question.getId());
+        return toResponse(question);
     }
 
     // ─── Options policy validation ─────────────────────
@@ -202,66 +243,6 @@ public class AdminQuizService {
         }
     }
 
-    /**
-     * Block meaning-changing field edits when a question is referenced by
-     * attempts/answers.
-     * This prevents historical corruption — the same production rule in all
-     * environments.
-     * Safe fields (always editable): question text translations, explanations,
-     * isActive, contentImageUrl (cosmetic).
-     * Blocked fields: category, difficulty, questionType, options (correct answer /
-     * option set changes).
-     */
-    private void checkMeaningChangingFields(QuizQuestion existing, AdminQuizQuestionRequest request) {
-        // Category change blocked
-        if (!existing.getCategory().getCode().equals(request.getCategoryCode())) {
-            throw new IllegalStateException(
-                    "Cannot change category — this question is referenced by quiz attempts. " +
-                            "Create a new question instead.");
-        }
-
-        // Difficulty change blocked
-        String existingDiff = existing.getDifficultyLevel() != null ? existing.getDifficultyLevel().name() : "EASY";
-        String requestDiff = request.getDifficultyLevel() != null ? request.getDifficultyLevel().toUpperCase().trim()
-                : "EASY";
-        if (!existingDiff.equals(requestDiff)) {
-            throw new IllegalStateException(
-                    "Cannot change difficulty — this question is referenced by quiz attempts. " +
-                            "Create a new question instead.");
-        }
-
-        // Question type change blocked
-        String existingType = existing.getQuestionType() != null ? existing.getQuestionType().name()
-                : "MULTIPLE_CHOICE";
-        String requestType = request.getQuestionType() != null ? request.getQuestionType().toUpperCase().trim()
-                : "MULTIPLE_CHOICE";
-        if (!existingType.equals(requestType)) {
-            throw new IllegalStateException(
-                    "Cannot change question type — this question is referenced by quiz attempts. " +
-                            "Create a new question instead.");
-        }
-
-        // Correct answer change blocked: compare which options are marked correct
-        List<Boolean> existingCorrect = existing.getOptions().stream()
-                .map(QuizAnswerOption::getIsCorrect)
-                .collect(Collectors.toList());
-        List<Boolean> requestCorrect = request.getOptions().stream()
-                .map(o -> o.getIsCorrect() != null ? o.getIsCorrect() : false)
-                .collect(Collectors.toList());
-        if (!existingCorrect.equals(requestCorrect)) {
-            throw new IllegalStateException(
-                    "Cannot change correct answers — this question is referenced by quiz attempts. " +
-                            "Create a new question instead.");
-        }
-
-        // Number of options change blocked
-        if (existing.getOptions().size() != request.getOptions().size()) {
-            throw new IllegalStateException(
-                    "Cannot change the number of options — this question is referenced by quiz attempts. " +
-                            "Create a new question instead.");
-        }
-    }
-
     // ─── Delete ────────────────────────────────────────
 
     @Transactional
@@ -305,10 +286,10 @@ public class AdminQuizService {
         question.setQuestionNl(request.getQuestionNl() != null ? request.getQuestionNl() : "");
         question.setQuestionFr(request.getQuestionFr() != null ? request.getQuestionFr() : "");
 
-        question.setExplanationEn(request.getExplanationEn());
-        question.setExplanationAr(request.getExplanationAr());
-        question.setExplanationNl(request.getExplanationNl());
-        question.setExplanationFr(request.getExplanationFr());
+        question.setExplanationEn(null);
+        question.setExplanationAr(null);
+        question.setExplanationNl(null);
+        question.setExplanationFr(null);
 
         question.setContentImageUrl(request.getContentImageUrl());
         question.setIsActive(request.getIsActive() != null ? request.getIsActive() : true);
@@ -340,10 +321,6 @@ public class AdminQuizService {
                 q.getQuestionAr(),
                 q.getQuestionNl(),
                 q.getQuestionFr(),
-                q.getExplanationEn(),
-                q.getExplanationAr(),
-                q.getExplanationNl(),
-                q.getExplanationFr(),
                 q.getContentImageUrl(),
                 q.getIsActive(),
                 q.getStatus() != null ? q.getStatus().name() : null,

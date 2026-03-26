@@ -1,83 +1,46 @@
-[
+﻿[
   {
     "question_id": "D1a_Q01",
     "type": "WHAT_DOES_IT_MEAN",
     "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE: Replace wrong answers with actual sign names from the same category.",
     "i18n": {
       "NL": {
         "question": "Wat betekent dit verkeersbord?",
         "choices": [
-          {
-            "text": "Verplichting rechtdoor",
-            "is_correct": true
-          },
-          {
-            "text": "Parkeerverbod",
-            "is_correct": false
-          },
-          {
-            "text": "Maximumsnelheid 30 km/u",
-            "is_correct": false
-          }
+          {"text": "Verplichting rechtdoor", "is_correct": true},
+          {"text": "Verplichting links afslaan", "is_correct": false},
+          {"text": "Verplichting rechts afslaan", "is_correct": false}
         ],
-        "explanation": "Verplichting de door de pijl aangeduide richting te volgen."
+        "explanation": "D1a verplicht de bestuurder om rechtdoor te rijden. Afslaan naar links of rechts is verboden."
       },
       "EN": {
         "question": "What does this traffic sign mean?",
         "choices": [
-          {
-            "text": "Mandatory straight ahead",
-            "is_correct": true
-          },
-          {
-            "text": "No parking",
-            "is_correct": false
-          },
-          {
-            "text": "Maximum speed 30 km/h",
-            "is_correct": false
-          }
+          {"text": "Mandatory straight ahead", "is_correct": true},
+          {"text": "Mandatory left turn", "is_correct": false},
+          {"text": "Mandatory right turn", "is_correct": false}
         ],
-        "explanation": "Obligation to follow the direction indicated by the arrow."
+        "explanation": "D1a requires the driver to go straight ahead. Turning left or right is prohibited."
       },
       "FR": {
         "question": "Que signifie ce panneau de signalisation ?",
         "choices": [
-          {
-            "text": "Obligation d'aller tout droit",
-            "is_correct": true
-          },
-          {
-            "text": "Interdiction de stationner",
-            "is_correct": false
-          },
-          {
-            "text": "Vitesse maximale 30 km/h",
-            "is_correct": false
-          }
+          {"text": "Obligation d'aller tout droit", "is_correct": true},
+          {"text": "Obligation de tourner a gauche", "is_correct": false},
+          {"text": "Obligation de tourner a droite", "is_correct": false}
         ],
-        "explanation": "Obligation de suivre la direction indiquée par la flèche."
+        "explanation": "D1a oblige le conducteur a aller tout droit. Tourner a gauche ou a droite est interdit."
       },
       "AR": {
-        "question": "ماذا تعني لافتة المرور هذه؟",
+        "question": "Ù…Ø§Ø°Ø§ ØªØ¹Ù†ÙŠ Ù„Ø§ÙØªØ© Ø§Ù„Ù…Ø±ÙˆØ± Ù‡Ø°Ù‡ØŸ",
         "choices": [
-          {
-            "text": "طريق إجباري إلى الأمام",
-            "is_correct": true
-          },
-          {
-            "text": "حظر الوقوف",
-            "is_correct": false
-          },
-          {
-            "text": "السرعة القصوى 30 كم/س",
-            "is_correct": false
-          }
+          {"text": "Ø·Ø±ÙŠÙ‚ Ø¥Ø¬Ø¨Ø§Ø±ÙŠ Ø¥Ù„Ù‰ Ø§Ù„Ø£Ù…Ø§Ù…", "is_correct": true},
+          {"text": "Ø¥Ù„Ø²Ø§Ù…ÙŠØ© Ø§Ù„Ù‚ÙŠØ§Ø¯Ø© Ø¨Ø§ØªØ¬Ø§Ù‡ Ø§Ù„ÙŠØ³Ø§Ø±", "is_correct": false},
+          {"text": "Ø¥Ù„Ø²Ø§Ù…ÙŠØ© Ø§Ù„Ù‚ÙŠØ§Ø¯Ø© Ø¨Ø§ØªØ¬Ø§Ù‡ Ø§Ù„ÙŠÙ…ÙŠÙ†", "is_correct": false}
         ],
-        "explanation": "واجب اتباع الاتجاه المحدد بالسهم."
+        "explanation": "ØªÙÙ„Ø²Ù… D1a Ø§Ù„Ø³Ø§Ø¦Ù‚ Ø¨Ø§Ù„Ø³ÙŠØ± Ù„Ù„Ø£Ù…Ø§Ù… Ù…Ø¨Ø§Ø´Ø±Ø©. Ø§Ù„Ø§Ù†Ø¹Ø·Ø§Ù ÙŠØ³Ø§Ø±Ø§Ù‹ Ø£Ùˆ ÙŠÙ…ÙŠÙ†Ø§Ù‹ Ù…Ø­Ø¸ÙˆØ±."
       }
     }
   },
@@ -87,161 +50,87 @@
     "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE: Ready to use — category identification question.",
     "i18n": {
       "NL": {
-        "question": "Tot welke categorie verkeerstekens behoort dit bord?",
+        "question": "Tot welke categorie verkeersborden behoort dit bord?",
         "choices": [
-          {
-            "text": "Gebodsborden (D-reeks)",
-            "is_correct": true
-          },
-          {
-            "text": "Verbodsborden (C-reeks)",
-            "is_correct": false
-          },
-          {
-            "text": "Aanwijzingsborden (F-reeks)",
-            "is_correct": false
-          }
+          {"text": "Gebodsborden (D-reeks)", "is_correct": true},
+          {"text": "Verbodsborden (C-reeks)", "is_correct": false},
+          {"text": "Parkeerborden (E-reeks)", "is_correct": false}
         ],
-        "explanation": "Dit bord behoort tot de categorie 'Gebodsborden (D-reeks)'. Elk type bord heeft een specifieke vorm en kleurschema."
+        "explanation": "D-reeksborden zijn gebodstekens. D1a verplicht bestuurders om de aangeduide richting te volgen."
       },
       "EN": {
         "question": "To which category of traffic signs does this sign belong?",
         "choices": [
-          {
-            "text": "Mandatory signs (D-series)",
-            "is_correct": true
-          },
-          {
-            "text": "Prohibition signs (C-series)",
-            "is_correct": false
-          },
-          {
-            "text": "Information signs (F-series)",
-            "is_correct": false
-          }
+          {"text": "Mandatory signs (D-series)", "is_correct": true},
+          {"text": "Prohibition signs (C-series)", "is_correct": false},
+          {"text": "Parking signs (E-series)", "is_correct": false}
         ],
-        "explanation": "This sign belongs to the 'Mandatory signs (D-series)' category. Each type of sign has a specific shape and color scheme."
+        "explanation": "D-series signs are mandatory signs. D1a requires drivers to follow the indicated direction."
       },
       "FR": {
-        "question": "À quelle catégorie de panneaux de signalisation ce panneau appartient-il ?",
+        "question": "A quelle categorie de panneaux de signalisation appartient ce panneau ?",
         "choices": [
-          {
-            "text": "Panneaux d'obligation (série D)",
-            "is_correct": true
-          },
-          {
-            "text": "Panneaux d'interdiction (série C)",
-            "is_correct": false
-          },
-          {
-            "text": "Panneaux d'indication (série F)",
-            "is_correct": false
-          }
+          {"text": "Panneaux d'obligation (serie D)", "is_correct": true},
+          {"text": "Panneaux d'interdiction (serie C)", "is_correct": false},
+          {"text": "Panneaux de stationnement (serie E)", "is_correct": false}
         ],
-        "explanation": "Ce panneau appartient à la catégorie 'Panneaux d'obligation (série D)'. Chaque type de panneau a une forme et un schéma de couleurs spécifiques."
+        "explanation": "Les panneaux de la serie D sont des panneaux d'obligation. D1a oblige les conducteurs a suivre la direction indiquee."
       },
       "AR": {
-        "question": "إلى أي فئة من لافتات المرور تنتمي هذه اللافتة؟",
+        "question": "Ø¥Ù„Ù‰ Ø£ÙŠ ÙØ¦Ø© Ù…Ù† Ù„Ø§ÙØªØ§Øª Ø§Ù„Ù…Ø±ÙˆØ± ØªÙ†ØªÙ…ÙŠ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ",
         "choices": [
-          {
-            "text": "لافتات الإلزام (سلسلة D)",
-            "is_correct": true
-          },
-          {
-            "text": "لافتات الحظر (سلسلة C)",
-            "is_correct": false
-          },
-          {
-            "text": "لافتات المعلومات (سلسلة F)",
-            "is_correct": false
-          }
+          {"text": "Ù„Ø§ÙØªØ§Øª Ø¥Ù„Ø²Ø§Ù…ÙŠØ© (Ø§Ù„Ø³Ù„Ø³Ù„Ø© D)", "is_correct": true},
+          {"text": "Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø­Ø¸Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© C)", "is_correct": false},
+          {"text": "Ù„Ø§ÙØªØ§Øª Ø§Ù„ÙˆÙ‚ÙˆÙ (Ø§Ù„Ø³Ù„Ø³Ù„Ø© E)", "is_correct": false}
         ],
-        "explanation": "هذه اللافتة تنتمي إلى فئة 'لافتات الإلزام (سلسلة D)'. كل نوع من اللافتات له شكل ونظام ألوان محدد."
+        "explanation": "Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø³Ù„Ø³Ù„Ø© D Ù‡ÙŠ Ù„Ø§ÙØªØ§Øª Ø¥Ù„Ø²Ø§Ù…ÙŠØ©. ØªÙÙ„Ø²Ù… D1a Ø§Ù„Ø³Ø§Ø¦Ù‚ÙŠÙ† Ø¨Ø§ØªØ¨Ø§Ø¹ Ø§Ù„Ø§ØªØ¬Ø§Ù‡ Ø§Ù„Ù…Ø´Ø§Ø± Ø¥Ù„ÙŠÙ‡."
       }
     }
   },
   {
     "question_id": "D1a_Q03",
-    "type": "WHAT_MUST_YOU_DO",
-    "difficulty": "MEDIUM",
+    "type": "HAZARD_IDENTIFICATION",
+    "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE (MEDIUM): Replace with sign-specific question for production.",
     "i18n": {
       "NL": {
-        "question": "Welke richting of actie schrijft dit gebodsbord voor?",
+        "question": "Wat verwacht dit bord van u als bestuurder op dit kruispunt?",
         "choices": [
-          {
-            "text": "De richting of actie die op het bord is aangeduid moet worden gevolgd",
-            "is_correct": true
-          },
-          {
-            "text": "De bestuurder mag zelf een richting kiezen",
-            "is_correct": false
-          },
-          {
-            "text": "Alleen verplicht voor vrachtverkeer",
-            "is_correct": false
-          }
+          {"text": "Rechtdoor rijden zoals de pijl aangeeft", "is_correct": true},
+          {"text": "Vaart minderen en voorrang verlenen aan kruisend verkeer", "is_correct": false},
+          {"text": "Stoppen en links of rechts afslaan indien de weg vrij is", "is_correct": false}
         ],
-        "explanation": "Gebodsborden schrijven een verplichte actie voor. Het niet volgen van de aangeduide richting is een overtreding."
+        "explanation": "D1a legt een verplichting op om de door de pijl aangeduide richting te volgen. Afslaan of stoppen is niet aan de orde."
       },
       "EN": {
-        "question": "Which direction or action does this mandatory sign prescribe?",
+        "question": "What does this sign expect of you as a driver at this junction?",
         "choices": [
-          {
-            "text": "The direction or action indicated on the sign must be followed",
-            "is_correct": true
-          },
-          {
-            "text": "The driver may choose their own direction",
-            "is_correct": false
-          },
-          {
-            "text": "Only mandatory for freight traffic",
-            "is_correct": false
-          }
+          {"text": "Drive straight ahead as indicated by the arrow", "is_correct": true},
+          {"text": "Slow down and give way to crossing traffic", "is_correct": false},
+          {"text": "Stop and turn left or right if the road is clear", "is_correct": false}
         ],
-        "explanation": "Mandatory signs prescribe a compulsory action. Not following the indicated direction is a violation."
+        "explanation": "D1a imposes an obligation to follow the direction indicated by the arrow. Turning or stopping is not required."
       },
       "FR": {
-        "question": "Quelle direction ou action ce panneau d'obligation prescrit-il ?",
+        "question": "Qu'attend ce panneau de vous en tant que conducteur a ce carrefour ?",
         "choices": [
-          {
-            "text": "La direction ou l'action indiquée sur le panneau doit être suivie",
-            "is_correct": true
-          },
-          {
-            "text": "Le conducteur peut choisir sa propre direction",
-            "is_correct": false
-          },
-          {
-            "text": "Obligatoire uniquement pour les véhicules de transport",
-            "is_correct": false
-          }
+          {"text": "Aller tout droit comme indique par la fleche", "is_correct": true},
+          {"text": "Ralentir et ceder le passage au trafic croisant", "is_correct": false},
+          {"text": "S'arreter et tourner a gauche ou a droite si la route est libre", "is_correct": false}
         ],
-        "explanation": "Les panneaux d'obligation prescrivent une action obligatoire. Ne pas la suivre constitue une infraction."
+        "explanation": "D1a impose l'obligation de suivre la direction indiquee par la fleche. Tourner ou s'arreter n'est pas requis."
       },
       "AR": {
-        "question": "ما الاتجاه أو الإجراء الذي تفرضه هذه اللافتة الإلزامية؟",
+        "question": "Ù…Ø§Ø°Ø§ ØªØªÙˆÙ‚Ø¹ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ© Ù…Ù†Ùƒ ÙƒØ³Ø§Ø¦Ù‚ ÙÙŠ Ù‡Ø°Ø§ Ø§Ù„ØªÙ‚Ø§Ø·Ø¹ØŸ",
         "choices": [
-          {
-            "text": "يجب اتباع الاتجاه أو الإجراء المشار إليه على اللافتة",
-            "is_correct": true
-          },
-          {
-            "text": "يمكن للسائق اختيار اتجاهه الخاص",
-            "is_correct": false
-          },
-          {
-            "text": "إلزامي فقط لحركة الشحن",
-            "is_correct": false
-          }
+          {"text": "Ø§Ù„Ø³ÙŠØ± Ù„Ù„Ø£Ù…Ø§Ù… ÙƒÙ…Ø§ ØªØ´ÙŠØ± Ø§Ù„Ø³Ù‡Ù…", "is_correct": true},
+          {"text": "ØªØ¨Ø§Ø·Ø¤ ÙˆØ¥Ø¹Ø·Ø§Ø¡ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© Ù„Ù„Ù…Ø±ÙˆØ± Ø§Ù„Ù…ØªÙ‚Ø§Ø·Ø¹", "is_correct": false},
+          {"text": "Ø§Ù„ØªÙˆÙ‚Ù ÙˆØ§Ù„Ø§Ù†Ø¹Ø·Ø§Ù ÙŠØ³Ø§Ø±Ø§Ù‹ Ø£Ùˆ ÙŠÙ…ÙŠÙ†Ø§Ù‹ Ø¥Ø°Ø§ ÙƒØ§Ù† Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø®Ø§Ù„ÙŠØ§Ù‹", "is_correct": false}
         ],
-        "explanation": "اللافتات الإلزامية تفرض إجراءً إلزامياً. عدم اتباع الاتجاه المشار إليه يعد مخالفة."
+        "explanation": "ØªÙØ±Ø¶ D1a Ø§Ù„Ø§Ù„ØªØ²Ø§Ù… Ø¨Ø§ØªØ¨Ø§Ø¹ Ø§Ù„Ø§ØªØ¬Ø§Ù‡ Ø§Ù„Ù…Ø´Ø§Ø± Ø¥Ù„ÙŠÙ‡ Ø¨Ø§Ù„Ø³Ù‡Ù…. Ø§Ù„Ø§Ù†Ø¹Ø·Ø§Ù Ø£Ùˆ Ø§Ù„ØªÙˆÙ‚Ù ØºÙŠØ± Ù…Ø·Ù„ÙˆØ¨."
       }
     }
   },
@@ -251,145 +140,214 @@
     "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE (MEDIUM): Replace with sign-specific question for production.",
     "i18n": {
       "NL": {
-        "question": "Voor wie gelden gebodsborden?",
+        "question": "U nadert een kruispunt met bord D1a maar uw bestemming ligt links. Wat moet u doen?",
         "choices": [
-          {
-            "text": "Voor alle weggebruikers tenzij specifieke uitzonderingen zijn aangeduid",
-            "is_correct": true
-          },
-          {
-            "text": "Alleen voor personenwagens",
-            "is_correct": false
-          },
-          {
-            "text": "Alleen voor professionele chauffeurs",
-            "is_correct": false
-          }
+          {"text": "Rechtdoor rijden en verderop een andere route kiezen", "is_correct": true},
+          {"text": "Linksaf slaan want uw bestemming heeft prioriteit", "is_correct": false},
+          {"text": "Stoppen en wachten tot het kruispunt vrij is om dan links af te slaan", "is_correct": false}
         ],
-        "explanation": "Gebodsborden zijn van toepassing op alle weggebruikers. Extra borden kunnen uitzonderingen aangeven voor bepaalde voertuigcategorieën."
+        "explanation": "D1a is wettelijk bindend. Linksaf slaan is verboden, ook als uw bestemming zich in die richting bevindt."
       },
       "EN": {
-        "question": "For whom do mandatory signs apply?",
+        "question": "You are approaching a junction with sign D1a but your destination is to the left. What must you do?",
         "choices": [
-          {
-            "text": "For all road users unless specific exceptions are indicated",
-            "is_correct": true
-          },
-          {
-            "text": "Only for passenger cars",
-            "is_correct": false
-          },
-          {
-            "text": "Only for professional drivers",
-            "is_correct": false
-          }
+          {"text": "Go straight ahead and find an alternative route further on", "is_correct": true},
+          {"text": "Turn left because your destination takes priority", "is_correct": false},
+          {"text": "Stop and wait until the junction is clear to then turn left", "is_correct": false}
         ],
-        "explanation": "Mandatory signs apply to all road users. Additional signs may indicate exceptions for specific vehicle categories."
+        "explanation": "D1a is legally binding. Turning left is prohibited even if your destination lies in that direction."
       },
       "FR": {
-        "question": "À qui s'appliquent les panneaux d'obligation ?",
+        "question": "Vous approchez d'un carrefour avec le panneau D1a mais votre destination est a gauche. Que devez-vous faire ?",
         "choices": [
-          {
-            "text": "Pour tous les usagers sauf exceptions spécifiques indiquées",
-            "is_correct": true
-          },
-          {
-            "text": "Seulement pour les voitures de tourisme",
-            "is_correct": false
-          },
-          {
-            "text": "Seulement pour les conducteurs professionnels",
-            "is_correct": false
-          }
+          {"text": "Aller tout droit et trouver un itineraire alternatif plus loin", "is_correct": true},
+          {"text": "Tourner a gauche car votre destination est prioritaire", "is_correct": false},
+          {"text": "Vous arreter et attendre que le carrefour soit libre pour tourner a gauche", "is_correct": false}
         ],
-        "explanation": "Les panneaux d'obligation s'appliquent à tous. Des panneaux supplémentaires peuvent indiquer des exceptions."
+        "explanation": "D1a est juridiquement contraignant. Tourner a gauche est interdit meme si votre destination se trouve dans cette direction."
       },
       "AR": {
-        "question": "لمن تنطبق اللافتات الإلزامية؟",
+        "question": "Ø£Ù†Øª ØªÙ‚ØªØ±Ø¨ Ù…Ù† ØªÙ‚Ø§Ø·Ø¹ Ù…Ø¹ Ù„Ø§ÙØªØ© D1a Ù„ÙƒÙ† ÙˆØ¬Ù‡ØªÙƒ Ø¹Ù„Ù‰ Ø§Ù„ÙŠØ³Ø§Ø±. Ù…Ø§Ø°Ø§ ÙŠØ¬Ø¨ Ø¹Ù„ÙŠÙƒ ÙØ¹Ù„Ù‡ØŸ",
         "choices": [
-          {
-            "text": "لجميع مستخدمي الطريق ما لم تكن هناك استثناءات محددة مشار إليها",
-            "is_correct": true
-          },
-          {
-            "text": "فقط للسيارات الخاصة",
-            "is_correct": false
-          },
-          {
-            "text": "فقط للسائقين المحترفين",
-            "is_correct": false
-          }
+          {"text": "Ø§Ù„Ø³ÙŠØ± Ù„Ù„Ø£Ù…Ø§Ù… ÙˆØ§Ø®ØªÙŠØ§Ø± Ø·Ø±ÙŠÙ‚ Ø¨Ø¯ÙŠÙ„ ÙÙŠ ÙˆÙ‚Øª Ù„Ø§Ø­Ù‚", "is_correct": true},
+          {"text": "Ø§Ù„Ø§Ù†Ø¹Ø·Ø§Ù ÙŠØ³Ø§Ø±Ø§Ù‹ Ù„Ø£Ù† ÙˆØ¬Ù‡ØªÙƒ Ù„Ù‡Ø§ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ©", "is_correct": false},
+          {"text": "Ø§Ù„ØªÙˆÙ‚Ù ÙˆØ§Ù„Ø§Ù†ØªØ¸Ø§Ø± Ø­ØªÙ‰ ÙŠØ®Ù„Ùˆ Ø§Ù„ØªÙ‚Ø§Ø·Ø¹ Ù„Ù„Ø§Ù†Ø¹Ø·Ø§Ù ÙŠØ³Ø§Ø±Ø§Ù‹", "is_correct": false}
         ],
-        "explanation": "اللافتات الإلزامية تنطبق على جميع مستخدمي الطريق. لافتات إضافية قد تشير إلى استثناءات لفئات معينة."
+        "explanation": "D1a Ù…Ù„Ø²Ù…Ø© Ù‚Ø§Ù†ÙˆÙ†ÙŠØ§Ù‹. Ø§Ù„Ø§Ù†Ø¹Ø·Ø§Ù ÙŠØ³Ø§Ø±Ø§Ù‹ Ù…Ø­Ø¸ÙˆØ± Ø­ØªÙ‰ Ù„Ùˆ ÙƒØ§Ù†Øª ÙˆØ¬Ù‡ØªÙƒ ÙÙŠ ØªÙ„Ùƒ Ø§Ù„Ø¬Ù‡Ø©."
       }
     }
   },
   {
     "question_id": "D1a_Q05",
-    "type": "IS_IT_ALLOWED",
-    "difficulty": "HARD",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE (HARD): Replace with sign-specific question for production.",
     "i18n": {
       "NL": {
-        "question": "Bent u verplicht de richting of actie van dit gebodsbord te volgen?",
+        "question": "Uw GPS zegt u linksaf te slaan maar bord D1a staat op het kruispunt. Wat doet u?",
         "choices": [
-          {
-            "text": "Ja, gebodsborden zijn wettelijk bindend en de aangeduide richting of actie moet altijd worden gevolgd",
-            "is_correct": true
-          },
-          {
-            "text": "Nee, gebodsborden zijn aanbevelingen die u kunt negeren als uw bestemming anders ligt",
-            "is_correct": false
-          }
+          {"text": "Het bord volgen en rechtdoor rijden; de GPS aanpassen na het kruispunt", "is_correct": true},
+          {"text": "De GPS volgen want die kent de meest recente verkeerssituatie", "is_correct": false},
+          {"text": "Stoppen om de GPS opnieuw in te stellen voor u verder rijdt", "is_correct": false}
         ],
-        "explanation": "Gebodsborden zijn wettelijk bindend voor alle weggebruikers. Het negeren van de aangeduide richting is een verkeersovertreding."
+        "explanation": "Verkeersborden hebben altijd voorrang op navigatieapparatuur. D1a verplicht rechtdoor te rijden, ongeacht de GPS-aanwijzing."
       },
       "EN": {
-        "question": "Are you required to follow the direction or action indicated by this mandatory sign?",
+        "question": "Your GPS tells you to turn left but sign D1a is posted at the junction. What do you do?",
         "choices": [
-          {
-            "text": "Yes, mandatory signs are legally binding and the indicated direction or action must always be followed",
-            "is_correct": true
-          },
-          {
-            "text": "No, mandatory signs are recommendations that you may ignore if your destination is in a different direction",
-            "is_correct": false
-          }
+          {"text": "Follow the sign and go straight ahead; recalculate the GPS after the junction", "is_correct": true},
+          {"text": "Follow the GPS because it has the most up-to-date traffic information", "is_correct": false},
+          {"text": "Stop to reset the GPS before continuing", "is_correct": false}
         ],
-        "explanation": "Mandatory signs are legally binding for all road users. Ignoring the indicated direction constitutes a traffic violation."
+        "explanation": "Traffic signs always take precedence over navigation devices. D1a requires going straight ahead regardless of GPS instructions."
       },
       "FR": {
-        "question": "Êtes-vous obligé de suivre la direction ou l'action indiquée par ce panneau d'obligation ?",
+        "question": "Votre GPS vous dit de tourner a gauche mais le panneau D1a est place au carrefour. Que faites-vous ?",
         "choices": [
-          {
-            "text": "Oui, les panneaux d'obligation sont juridiquement contraignants et la direction ou l'action indiquée doit toujours être suivie",
-            "is_correct": true
-          },
-          {
-            "text": "Non, les panneaux d'obligation sont des recommandations que vous pouvez ignorer si votre destination est ailleurs",
-            "is_correct": false
-          }
+          {"text": "Suivre le panneau et aller tout droit; recalculer le GPS apres le carrefour", "is_correct": true},
+          {"text": "Suivre le GPS car il dispose des informations de circulation les plus recentes", "is_correct": false},
+          {"text": "Vous arreter pour reinitialiser le GPS avant de continuer", "is_correct": false}
         ],
-        "explanation": "Les panneaux d'obligation sont contraignants pour tous. Ignorer la direction indiquée constitue une infraction."
+        "explanation": "Les panneaux de signalisation ont toujours la priorite sur les appareils de navigation. D1a oblige a aller tout droit independamment des instructions GPS."
       },
       "AR": {
-        "question": "هل أنت ملزم باتباع الاتجاه أو الإجراء المشار إليه في هذه اللافتة الإلزامية؟",
+        "question": "ÙŠØ·Ù„Ø¨ Ù…Ù†Ùƒ GPS Ø§Ù„Ø§Ù†Ø¹Ø·Ø§Ù ÙŠØ³Ø§Ø±Ø§Ù‹ Ù„ÙƒÙ† Ù„Ø§ÙØªØ© D1a Ù…ÙˆØ¬ÙˆØ¯Ø© Ø¹Ù†Ø¯ Ø§Ù„ØªÙ‚Ø§Ø·Ø¹. Ù…Ø§Ø°Ø§ ØªÙØ¹Ù„ØŸ",
         "choices": [
-          {
-            "text": "نعم، اللافتات الإلزامية ملزمة قانونياً ويجب دائماً اتباع الاتجاه أو الإجراء المشار إليه",
-            "is_correct": true
-          },
-          {
-            "text": "لا، اللافتات الإلزامية توصيات يمكنك تجاهلها إذا كانت وجهتك في اتجاه مختلف",
-            "is_correct": false
-          }
+          {"text": "Ø§ØªØ¨Ø§Ø¹ Ø§Ù„Ù„Ø§ÙØªØ© ÙˆØ§Ù„Ø³ÙŠØ± Ù„Ù„Ø£Ù…Ø§Ù…Ø› ÙˆØ¥Ø¹Ø§Ø¯Ø© Ø­Ø³Ø§Ø¨ Ù…Ø³Ø§Ø± GPS Ø¨Ø¹Ø¯ Ø§Ù„ØªÙ‚Ø§Ø·Ø¹", "is_correct": true},
+          {"text": "Ø§ØªØ¨Ø§Ø¹ GPS Ù„Ø£Ù†Ù‘ Ù„Ø¯ÙŠÙ‡ Ø£Ø­Ø¯Ø« Ù…Ø¹Ù„ÙˆÙ…Ø§Øª Ø­Ø±ÙƒØ© Ø§Ù„Ù…Ø±ÙˆØ±", "is_correct": false},
+          {"text": "Ø§Ù„ØªÙˆÙ‚Ù Ù„Ø¥Ø¹Ø§Ø¯Ø© Ø¶Ø¨Ø· GPS Ù‚Ø¨Ù„ Ø§Ù„Ù…ØªØ§Ø¨Ø¹Ø©", "is_correct": false}
         ],
-        "explanation": "اللافتات الإلزامية ملزمة قانونياً لجميع مستخدمي الطريق. تجاهل الاتجاه المشار إليه يعد مخالفة مرورية."
+        "explanation": "Ù„Ø§ÙØªØ§Øª Ø§Ù„Ù…Ø±ÙˆØ± Ø¯Ø§Ø¦Ù…Ø§Ù‹ Ù„Ù‡Ø§ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© Ø¹Ù„Ù‰ Ø£Ø¬Ù‡Ø²Ø© Ø§Ù„Ù…Ù„Ø§Ø­Ø©. ØªÙÙ„Ø²Ù… D1a Ø¨Ø§Ù„Ø³ÙŠØ± Ù„Ù„Ø£Ù…Ø§Ù… Ø¨ØºØ¶ Ø§Ù„Ù†Ø¸Ø± Ø¹Ù† ØªØ¹Ù„ÙŠÙ…Ø§Øª GPS."
+      }
+    }
+  },
+  {
+    "question_id": "D1a_Q06",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Geldt bord D1a uitsluitend voor personenwagens of voor alle bestuurders?",
+        "choices": [
+          {"text": "Voor alle bestuurders, tenzij een onderbord een specifieke uitzondering maakt", "is_correct": true},
+          {"text": "Alleen voor personenwagens; vrachtwagens mogen afslaan", "is_correct": false},
+          {"text": "Alleen voor motorvoertuigen; fietsers mogen vrij rijden", "is_correct": false}
+        ],
+        "explanation": "Gebodsborden van de D-reeks gelden voor alle weggebruikers tenzij een bijkomend onderbord een andere categorie uitsluit."
+      },
+      "EN": {
+        "question": "Does sign D1a apply only to cars or to all drivers?",
+        "choices": [
+          {"text": "To all drivers, unless a supplementary sign makes a specific exception", "is_correct": true},
+          {"text": "Only to cars; trucks may turn", "is_correct": false},
+          {"text": "Only to motor vehicles; cyclists may ride freely", "is_correct": false}
+        ],
+        "explanation": "D-series mandatory signs apply to all road users unless an additional supplementary sign excludes a specific category."
+      },
+      "FR": {
+        "question": "Le panneau D1a s'applique-t-il uniquement aux voitures ou a tous les conducteurs ?",
+        "choices": [
+          {"text": "A tous les conducteurs, sauf si un panneau complementaire prevoit une exception specifique", "is_correct": true},
+          {"text": "Uniquement aux voitures; les camions peuvent tourner", "is_correct": false},
+          {"text": "Uniquement aux vehicules a moteur; les cyclistes peuvent circuler librement", "is_correct": false}
+        ],
+        "explanation": "Les panneaux d'obligation de la serie D s'appliquent a tous les usagers de la route sauf si un panneau complementaire exclut une categorie specifique."
+      },
+      "AR": {
+        "question": "Ù‡Ù„ ØªÙ†Ø·Ø¨Ù‚ Ù„Ø§ÙØªØ© D1a ÙÙ‚Ø· Ø¹Ù„Ù‰ Ø§Ù„Ø³ÙŠØ§Ø±Ø§Øª Ø£Ù… Ø¹Ù„Ù‰ Ø¬Ù…ÙŠØ¹ Ø§Ù„Ø³Ø§Ø¦Ù‚ÙŠÙ†ØŸ",
+        "choices": [
+          {"text": "Ø¹Ù„Ù‰ Ø¬Ù…ÙŠØ¹ Ø§Ù„Ø³Ø§Ø¦Ù‚ÙŠÙ†ØŒ Ù…Ø§ Ù„Ù… ØªÙØ­Ø¯Ø¯ Ù„Ø§ÙØªØ© ØªÙƒÙ…ÙŠÙ„ÙŠØ© Ø§Ø³ØªØ«Ù†Ø§Ø¡Ù‹ Ù…Ø¹ÙŠÙ†Ø§Ù‹", "is_correct": true},
+          {"text": "Ø¹Ù„Ù‰ Ø§Ù„Ø³ÙŠØ§Ø±Ø§Øª ÙÙ‚Ø·Ø› ÙŠØ¬ÙˆØ² Ù„Ù„Ø´Ø§Ø­Ù†Ø§Øª Ø§Ù„Ø§Ù†Ø¹Ø·Ø§Ù", "is_correct": false},
+          {"text": "Ø¹Ù„Ù‰ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ø¢Ù„ÙŠØ© ÙÙ‚Ø·Ø› ÙŠØ¬ÙˆØ² Ù„Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ù„Ø³ÙŠØ± Ø¨Ø­Ø±ÙŠØ©", "is_correct": false}
+        ],
+        "explanation": "ØªÙ†Ø·Ø¨Ù‚ Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø¥Ù„Ø²Ø§Ù… Ù…Ù† Ø§Ù„Ø³Ù„Ø³Ù„Ø© D Ø¹Ù„Ù‰ Ø¬Ù…ÙŠØ¹ Ù…Ø³ØªØ®Ø¯Ù…ÙŠ Ø§Ù„Ø·Ø±ÙŠÙ‚ØŒ Ù…Ø§ Ù„Ù… ØªØ³ØªØ«Ù†Ù Ù„Ø§ÙØªØ© ØªÙƒÙ…ÙŠÙ„ÙŠØ© ÙØ¦Ø© Ù…Ø¹ÙŠÙ†Ø©."
+      }
+    }
+  },
+  {
+    "question_id": "D1a_Q07",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Bord D1a staat op een kruispunt. De weg rechts is leeg. Mag u rechtsaf slaan?",
+        "choices": [
+          {"text": "Neen, D1a verplicht rechtdoor; u mag niet rechtsaf slaan", "is_correct": true},
+          {"text": "Ja, rechtsaf is toegestaan als er geen tegenliggend verkeer is", "is_correct": false}
+        ],
+        "explanation": "D1a verbiedt alle richtingsveranderingen. Of de weg links of rechts leeg is, doet niet ter zake."
+      },
+      "EN": {
+        "question": "Sign D1a is posted at a junction. The road to the right is empty. May you turn right?",
+        "choices": [
+          {"text": "No, D1a requires straight ahead; turning right is not permitted", "is_correct": true},
+          {"text": "Yes, turning right is allowed if there is no oncoming traffic", "is_correct": false}
+        ],
+        "explanation": "D1a prohibits all changes of direction. Whether the road to the left or right is empty is irrelevant."
+      },
+      "FR": {
+        "question": "Le panneau D1a est place a un carrefour. La route a droite est vide. Pouvez-vous tourner a droite ?",
+        "choices": [
+          {"text": "Non, D1a impose d'aller tout droit; tourner a droite n'est pas permis", "is_correct": true},
+          {"text": "Oui, tourner a droite est autorise s'il n'y a pas de vehicule venant en sens inverse", "is_correct": false}
+        ],
+        "explanation": "D1a interdit tout changement de direction. Que la route a gauche ou a droite soit vide n'a aucune importance."
+      },
+      "AR": {
+        "question": "Ù„Ø§ÙØªØ© D1a Ù…ÙˆØ¬ÙˆØ¯Ø© Ø¹Ù†Ø¯ ØªÙ‚Ø§Ø·Ø¹. Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø¹Ù„Ù‰ Ø§Ù„ÙŠÙ…ÙŠÙ† Ø®Ø§Ù„Ù. Ù‡Ù„ ÙŠÙ…ÙƒÙ†Ùƒ Ø§Ù„Ø§Ù†Ø¹Ø·Ø§Ù ÙŠÙ…ÙŠÙ†Ø§Ù‹ØŸ",
+        "choices": [
+          {"text": "Ù„Ø§ØŒ ØªÙÙ„Ø²Ù… D1a Ø¨Ø§Ù„Ø³ÙŠØ± Ù„Ù„Ø£Ù…Ø§Ù…Ø› Ø§Ù„Ø§Ù†Ø¹Ø·Ø§Ù ÙŠÙ…ÙŠÙ†Ø§Ù‹ ØºÙŠØ± Ù…Ø³Ù…ÙˆØ­", "is_correct": true},
+          {"text": "Ù†Ø¹Ù…ØŒ Ø§Ù„Ø§Ù†Ø¹Ø·Ø§Ù ÙŠÙ…ÙŠÙ†Ø§Ù‹ Ø¬Ø§Ø¦Ø² Ø¥Ø°Ø§ Ù„Ù… ÙŠÙƒÙ† Ù‡Ù†Ø§Ùƒ Ù…Ø±ÙˆØ± Ù‚Ø§Ø¯Ù…", "is_correct": false}
+        ],
+        "explanation": "ØªØ­Ø¸Ø± D1a Ø¬Ù…ÙŠØ¹ ØªØºÙŠÙŠØ±Ø§Øª Ø§Ù„Ø§ØªØ¬Ø§Ù‡. Ø³ÙˆØ§Ø¡ ÙƒØ§Ù† Ø§Ù„Ø·Ø±ÙŠÙ‚ ÙŠØ³Ø§Ø±Ø§Ù‹ Ø£Ùˆ ÙŠÙ…ÙŠÙ†Ø§Ù‹ Ø®Ø§Ù„ÙŠØ§Ù‹ Ù„Ø§ ÙŠÙ‡Ù…."
+      }
+    }
+  },
+  {
+    "question_id": "D1a_Q08",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U hebt uw afslag gemist en staat nu voor bord D1a. Mag u keren om uw afslag alsnog te nemen?",
+        "choices": [
+          {"text": "Neen, D1a verplicht rechtdoor; keren is een richtingsverandering die verboden is op deze plek", "is_correct": true},
+          {"text": "Ja, keren is toegestaan als er voldoende ruimte is en geen ander verkeer", "is_correct": false}
+        ],
+        "explanation": "D1a verbiedt alle richtingen behalve rechtdoor. Keren (omdraaien) is eveneens verboden op een punt waar D1a geldt."
+      },
+      "EN": {
+        "question": "You have missed your turn and are now facing sign D1a. May you make a U-turn to take your exit?",
+        "choices": [
+          {"text": "No, D1a requires straight ahead; making a U-turn is a direction change prohibited at this location", "is_correct": true},
+          {"text": "Yes, a U-turn is allowed if there is enough space and no other traffic", "is_correct": false}
+        ],
+        "explanation": "D1a prohibits all directions except straight ahead. Making a U-turn is also prohibited at a point where D1a applies."
+      },
+      "FR": {
+        "question": "Vous avez rate votre sortie et vous vous trouvez maintenant face au panneau D1a. Pouvez-vous faire demi-tour pour prendre votre sortie ?",
+        "choices": [
+          {"text": "Non, D1a impose d'aller tout droit; faire demi-tour est un changement de direction interdit a cet endroit", "is_correct": true},
+          {"text": "Oui, un demi-tour est autorise s'il y a suffisamment d'espace et aucun autre vehicule", "is_correct": false}
+        ],
+        "explanation": "D1a interdit toutes les directions sauf tout droit. Faire demi-tour est egalement interdit a un endroit ou D1a s'applique."
+      },
+      "AR": {
+        "question": "Ù„Ù‚Ø¯ ÙØ§ØªÙƒ Ø§Ù„Ù…Ø®Ø±Ø¬ ÙˆØ£Ù†Øª Ø§Ù„Ø¢Ù† Ø£Ù…Ø§Ù… Ù„Ø§ÙØªØ© D1a. Ù‡Ù„ ÙŠÙ…ÙƒÙ†Ùƒ Ø§Ù„Ø§Ø³ØªØ¯Ø§Ø±Ø© Ù„Ø£Ø®Ø° Ù…Ø®Ø±Ø¬ÙƒØŸ",
+        "choices": [
+          {"text": "Ù„Ø§ØŒ ØªÙÙ„Ø²Ù… D1a Ø¨Ø§Ù„Ø³ÙŠØ± Ù„Ù„Ø£Ù…Ø§Ù…Ø› Ø§Ù„Ø§Ø³ØªØ¯Ø§Ø±Ø© Ù‡ÙŠ ØªØºÙŠÙŠØ± Ø§ØªØ¬Ø§Ù‡ Ù…Ø­Ø¸ÙˆØ± ÙÙŠ Ù‡Ø°Ø§ Ø§Ù„Ù…ÙˆÙ‚Ø¹", "is_correct": true},
+          {"text": "Ù†Ø¹Ù…ØŒ Ø§Ù„Ø§Ø³ØªØ¯Ø§Ø±Ø© Ø¬Ø§Ø¦Ø²Ø© Ø¥Ø°Ø§ ÙƒØ§Ù† Ù‡Ù†Ø§Ùƒ Ù…Ø³Ø§Ø­Ø© ÙƒØ§ÙÙŠØ© ÙˆÙ„Ø§ Ù…Ø±ÙˆØ± Ø¢Ø®Ø±", "is_correct": false}
+        ],
+        "explanation": "ØªØ­Ø¸Ø± D1a Ø¬Ù…ÙŠØ¹ Ø§Ù„Ø§ØªØ¬Ø§Ù‡Ø§Øª Ù…Ø§ Ø¹Ø¯Ø§ Ù„Ù„Ø£Ù…Ø§Ù…. Ø§Ù„Ø§Ø³ØªØ¯Ø§Ø±Ø© Ø£ÙŠØ¶Ø§Ù‹ Ù…Ø­Ø¸ÙˆØ±Ø© Ø¹Ù†Ø¯ Ù†Ù‚Ø·Ø© ØªØ³Ø±ÙŠ ÙÙŠÙ‡Ø§ D1a."
       }
     }
   }

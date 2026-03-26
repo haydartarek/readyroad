@@ -1,7 +1,7 @@
 package com.readyroad.readyroadbackend.service;
 
-import com.readyroad.readyroadbackend.domain.entity.TrafficSign;
-import com.readyroad.readyroadbackend.domain.repository.TrafficSignRepository;
+import com.readyroad.readyroadbackend.domain.entity.RoadSign;
+import com.readyroad.readyroadbackend.domain.repository.RoadSignRepository;
 import com.readyroad.readyroadbackend.dto.SignImportEntry;
 import com.readyroad.readyroadbackend.dto.SignImportEntry.ImportItemResult;
 import com.readyroad.readyroadbackend.dto.SignImportEntry.ImportResult;
@@ -22,10 +22,10 @@ import java.util.Optional;
 @Slf4j
 public class SignImportService {
 
-    private final TrafficSignRepository trafficSignRepository;
+    private final RoadSignRepository roadSignRepository;
 
-    public SignImportService(TrafficSignRepository trafficSignRepository) {
-        this.trafficSignRepository = trafficSignRepository;
+    public SignImportService(RoadSignRepository roadSignRepository) {
+        this.roadSignRepository = roadSignRepository;
     }
 
     /**
@@ -64,7 +64,7 @@ public class SignImportService {
             }
 
             // Find sign by code
-            Optional<TrafficSign> signOpt = trafficSignRepository.findBySignCode(entry.code());
+            Optional<RoadSign> signOpt = roadSignRepository.findFirstBySignCodeOrderByIdAsc(entry.code());
             if (signOpt.isEmpty()) {
                 details.add(new ImportItemResult(
                         entry.code(), "error", "Sign not found in database"));
@@ -72,17 +72,17 @@ public class SignImportService {
                 continue;
             }
 
-            TrafficSign sign = signOpt.get();
+            RoadSign sign = signOpt.get();
 
-            // Check if anything actually changed
+            // Check if anything actually changed (map longDescription → description)
             boolean changed = false;
-            if (isDifferent(sign.getLongDescriptionEn(), entry.longDescriptionEn()))
+            if (isDifferent(sign.getDescriptionEn(), entry.longDescriptionEn()))
                 changed = true;
-            if (isDifferent(sign.getLongDescriptionNl(), entry.longDescriptionNl()))
+            if (isDifferent(sign.getDescriptionNl(), entry.longDescriptionNl()))
                 changed = true;
-            if (isDifferent(sign.getLongDescriptionFr(), entry.longDescriptionFr()))
+            if (isDifferent(sign.getDescriptionFr(), entry.longDescriptionFr()))
                 changed = true;
-            if (isDifferent(sign.getLongDescriptionAr(), entry.longDescriptionAr()))
+            if (isDifferent(sign.getDescriptionAr(), entry.longDescriptionAr()))
                 changed = true;
 
             if (!changed) {
@@ -94,14 +94,14 @@ public class SignImportService {
 
             if (!dryRun) {
                 if (entry.longDescriptionEn() != null)
-                    sign.setLongDescriptionEn(entry.longDescriptionEn());
+                    sign.setDescriptionEn(entry.longDescriptionEn());
                 if (entry.longDescriptionNl() != null)
-                    sign.setLongDescriptionNl(entry.longDescriptionNl());
+                    sign.setDescriptionNl(entry.longDescriptionNl());
                 if (entry.longDescriptionFr() != null)
-                    sign.setLongDescriptionFr(entry.longDescriptionFr());
+                    sign.setDescriptionFr(entry.longDescriptionFr());
                 if (entry.longDescriptionAr() != null)
-                    sign.setLongDescriptionAr(entry.longDescriptionAr());
-                trafficSignRepository.save(sign);
+                    sign.setDescriptionAr(entry.longDescriptionAr());
+                roadSignRepository.save(sign);
             }
 
             details.add(new ImportItemResult(

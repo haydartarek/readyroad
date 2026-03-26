@@ -1,83 +1,82 @@
-[
+﻿[
   {
     "question_id": "E5_Q01",
     "type": "WHAT_DOES_IT_MEAN",
     "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE: Replace wrong answers with actual sign names from the same category.",
     "i18n": {
       "NL": {
-        "question": "Wat betekent dit verkeersbord?",
+        "question": "Wat betekent bord E5?",
         "choices": [
           {
-            "text": "Parkeerverbod van de 1e tot de 15e van de maand",
+            "text": "Parkeerverbod aan dÃ©ze zijde van de weg van de 1e tot en met de 15e van de maand",
             "is_correct": true
           },
           {
-            "text": "Verplichte rijrichting rechts",
+            "text": "Parkeerverbod de hele maand door aan beide zijden",
             "is_correct": false
           },
           {
-            "text": "Gevaarlijk kruispunt",
+            "text": "Parking verplicht van de 1e tot de 15e",
             "is_correct": false
           }
         ],
-        "explanation": "Parkeren is toegelaten."
+        "explanation": "E5 is een afwisselend parkeerverbod: de 1e tot en met de 15e geldt het verbod aan de kant waar E5 staat."
       },
       "EN": {
-        "question": "What does this traffic sign mean?",
+        "question": "What does sign E5 mean?",
         "choices": [
           {
-            "text": "No parking from the 1st to the 15th of the month",
+            "text": "No parking on this side from the 1st to the 15th of the month",
             "is_correct": true
           },
           {
-            "text": "Mandatory direction right",
+            "text": "No parking all month long on both sides",
             "is_correct": false
           },
           {
-            "text": "Dangerous intersection",
+            "text": "Parking required from the 1st to the 15th",
             "is_correct": false
           }
         ],
-        "explanation": "No parking on this side from the 1st to the 15th of the month."
+        "explanation": "E5 is an alternating parking ban: from the 1st to the 15th the ban applies on the side where E5 is posted."
       },
       "FR": {
-        "question": "Que signifie ce panneau de signalisation ?",
+        "question": "Que signifie le panneau E5 ?",
         "choices": [
           {
-            "text": "Interdiction de stationnement du 1er au 15 du mois",
+            "text": "Interdiction de stationner de ce cote du 1er au 15 du mois",
             "is_correct": true
           },
           {
-            "text": "Direction obligatoire à droite",
+            "text": "Interdiction de stationner tout le mois des deux cotes",
             "is_correct": false
           },
           {
-            "text": "Carrefour dangereux",
+            "text": "Stationnement obligatoire du 1er au 15",
             "is_correct": false
           }
         ],
-        "explanation": "Stationnement interdit de ce côté du 1er au 15 du mois."
+        "explanation": "E5 est une interdiction de stationnement alternee: du 1er au 15 l'interdiction s'applique du cote ou E5 est place."
       },
       "AR": {
-        "question": "ماذا تعني لافتة المرور هذه؟",
+        "question": "Ù…Ø§ Ù…Ø¹Ù†Ù‰ Ù„Ø§ÙØªØ© E5ØŸ",
         "choices": [
           {
-            "text": "ممنوع ركن السيارات من 1 إلى 15 من الشهر",
+            "text": "Ù…Ù…Ù†ÙˆØ¹ Ø§Ù„ÙˆÙ‚ÙˆÙ Ø¹Ù„Ù‰ Ù‡Ø°Ø§ Ø§Ù„Ø¬Ø§Ù†Ø¨ Ù…Ù† Ø§Ù„ÙŠÙˆÙ… 1 Ø­ØªÙ‰ 15 Ù…Ù† Ø§Ù„Ø´Ù‡Ø±",
             "is_correct": true
           },
           {
-            "text": "الاتجاه الإلزامي يميناً",
+            "text": "Ù…Ù…Ù†ÙˆØ¹ Ø§Ù„ÙˆÙ‚ÙˆÙ Ø·ÙˆØ§Ù„ Ø§Ù„Ø´Ù‡Ø± Ø¹Ù„Ù‰ ÙƒÙ„Ø§ Ø§Ù„Ø¬Ø§Ù†Ø¨ÙŠÙ†",
             "is_correct": false
           },
           {
-            "text": "تقاطع خطير",
+            "text": "Ø§Ù„ÙˆÙ‚ÙˆÙ Ø¥Ù„Ø²Ø§Ù…ÙŠ Ù…Ù† 1 Ø­ØªÙ‰ 15",
             "is_correct": false
           }
         ],
-        "explanation": "ممنوع ركن السيارات في هذا الجانب من 1 إلى 15 من الشهر."
+        "explanation": "E5 Ø­Ø¸Ø± ÙˆÙ‚ÙˆÙ Ù…ØªÙ†Ø§ÙˆØ¨: Ù…Ù† 1 Ø­ØªÙ‰ 15 ÙŠØ³Ø±ÙŠ Ø§Ù„Ø­Ø¸Ø± Ø¹Ù„Ù‰ Ø§Ù„Ø¬Ø§Ù†Ø¨ Ø§Ù„Ø°ÙŠ ÙˆÙØ¶Ø¹Øª ÙÙŠÙ‡ E5."
       }
     }
   },
@@ -87,161 +86,159 @@
     "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE: Ready to use — category identification question.",
     "i18n": {
       "NL": {
-        "question": "Tot welke categorie verkeerstekens behoort dit bord?",
+        "question": "Welk bord geldt de rest van de maand (16e tot einde)?",
         "choices": [
           {
-            "text": "Parkeerregelementsborden (E-reeks)",
+            "text": "E7 aan de overkant verbiedt parkeren van de 16e tot het einde van de maand",
             "is_correct": true
           },
           {
-            "text": "Verbodsborden (C-reeks)",
+            "text": "Er geldt geen enkel bord voor de rest van de maand",
             "is_correct": false
           },
           {
-            "text": "Gebodsborden (D-reeks)",
+            "text": "E5 geldt de rest van de maand ook",
             "is_correct": false
           }
         ],
-        "explanation": "Dit bord behoort tot de categorie 'Parkeerregelementsborden (E-reeks)'. Elk type bord heeft een specifieke vorm en kleurschema."
+        "explanation": "E5 en E7 werken samen als paarsysteem: E5 aan de ene kant (1-15), E7 aan de andere kant (16-einde)."
       },
       "EN": {
-        "question": "To which category of traffic signs does this sign belong?",
+        "question": "Which sign applies for the rest of the month (16th to end)?",
         "choices": [
           {
-            "text": "Parking regulation signs (E-series)",
+            "text": "E7 on the other side forbids parking from the 16th to the end of the month",
             "is_correct": true
           },
           {
-            "text": "Prohibition signs (C-series)",
+            "text": "No sign applies for the rest of the month",
             "is_correct": false
           },
           {
-            "text": "Mandatory signs (D-series)",
+            "text": "E5 also applies for the rest of the month",
             "is_correct": false
           }
         ],
-        "explanation": "This sign belongs to the 'Parking regulation signs (E-series)' category. Each type of sign has a specific shape and color scheme."
+        "explanation": "E5 and E7 work together as a pair system: E5 on one side (1-15), E7 on the other side (16-end)."
       },
       "FR": {
-        "question": "À quelle catégorie de panneaux de signalisation ce panneau appartient-il ?",
+        "question": "Quel panneau s'applique le reste du mois (16 a fin) ?",
         "choices": [
           {
-            "text": "Panneaux de stationnement (série E)",
+            "text": "E7 de l'autre cote interdit le stationnement du 16 a la fin du mois",
             "is_correct": true
           },
           {
-            "text": "Panneaux d'interdiction (série C)",
+            "text": "Aucun panneau ne s'applique pour le reste du mois",
             "is_correct": false
           },
           {
-            "text": "Panneaux d'obligation (série D)",
+            "text": "E5 s'applique aussi pour le reste du mois",
             "is_correct": false
           }
         ],
-        "explanation": "Ce panneau appartient à la catégorie 'Panneaux de stationnement (série E)'. Chaque type de panneau a une forme et un schéma de couleurs spécifiques."
+        "explanation": "E5 et E7 fonctionnent en tandem: E5 d'un cote (1-15), E7 de l'autre cote (16-fin)."
       },
       "AR": {
-        "question": "إلى أي فئة من لافتات المرور تنتمي هذه اللافتة؟",
+        "question": "Ø£ÙŠ Ù„Ø§ÙØªØ© ØªÙ†Ø·Ø¨Ù‚ Ø¹Ù„Ù‰ Ø¨Ù‚ÙŠØ© Ø§Ù„Ø´Ù‡Ø± (Ù…Ù† 16 Ø­ØªÙ‰ Ø§Ù„Ù†Ù‡Ø§ÙŠØ©)ØŸ",
         "choices": [
           {
-            "text": "لافتات تنظيم الوقوف (سلسلة E)",
+            "text": "E7 Ø¹Ù„Ù‰ Ø§Ù„Ø¬Ø§Ù†Ø¨ Ø§Ù„Ø¢Ø®Ø± ØªØ­Ø¸Ø± Ø§Ù„ÙˆÙ‚ÙˆÙ Ù…Ù† 16 Ø­ØªÙ‰ Ù†Ù‡Ø§ÙŠØ© Ø§Ù„Ø´Ù‡Ø±",
             "is_correct": true
           },
           {
-            "text": "لافتات الحظر (سلسلة C)",
+            "text": "Ù„Ø§ ØªÙˆØ¬Ø¯ Ù„Ø§ÙØªØ© Ù„Ø¨Ù‚ÙŠØ© Ø§Ù„Ø´Ù‡Ø±",
             "is_correct": false
           },
           {
-            "text": "لافتات الإلزام (سلسلة D)",
+            "text": "E5 ØªÙ†Ø·Ø¨Ù‚ Ø£ÙŠØ¶Ø§Ù‹ Ø¹Ù„Ù‰ Ø¨Ù‚ÙŠØ© Ø§Ù„Ø´Ù‡Ø±",
             "is_correct": false
           }
         ],
-        "explanation": "هذه اللافتة تنتمي إلى فئة 'لافتات تنظيم الوقوف (سلسلة E)'. كل نوع من اللافتات له شكل ونظام ألوان محدد."
+        "explanation": "E5 ÙˆE7 ÙŠØ¹Ù…Ù„Ø§Ù† Ù…Ø¹Ø§Ù‹ ÙƒÙ†Ø¸Ø§Ù… Ù…ØªÙ†Ø§ÙˆØ¨: E5 Ø¹Ù„Ù‰ Ø¬Ø§Ù†Ø¨ (1-15)ØŒ E7 Ø¹Ù„Ù‰ Ø§Ù„Ø¬Ø§Ù†Ø¨ Ø§Ù„Ø¢Ø®Ø± (16-Ø§Ù„Ù†Ù‡Ø§ÙŠØ©)."
       }
     }
   },
   {
     "question_id": "E5_Q03",
-    "type": "WHAT_MUST_YOU_DO",
-    "difficulty": "MEDIUM",
+    "type": "HAZARD_IDENTIFICATION",
+    "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE (MEDIUM): Replace with sign-specific question for production.",
     "i18n": {
       "NL": {
-        "question": "Mag u uw voertuig parkeren op de plaats aangeduid door dit bord?",
+        "question": "Waarom bestaat het systeem E5/E7 met afwisselend parkeren?",
         "choices": [
           {
-            "text": "Dit hangt af van de specifieke parkeerregels op het bord",
+            "text": "Om straatreiniging en onderhoud aan beide zijden van de weg mogelijk te maken",
             "is_correct": true
           },
           {
-            "text": "Ja, altijd toegestaan als er een vrije plek is",
+            "text": "Om meer parkeertijd voor bewoners te creÃ«ren",
             "is_correct": false
           },
           {
-            "text": "Nee, nooit toegestaan op de openbare weg",
+            "text": "Om het verkeer te vertragen in woonwijken",
             "is_correct": false
           }
         ],
-        "explanation": "Parkeerregelementsborden geven specifieke regels aan over waar, wanneer en hoe lang u mag parkeren. Lees elk bord zorgvuldig."
+        "explanation": "Het E5/E7-systeem laat toe de straat om de twee weken volledig schoon te maken."
       },
       "EN": {
-        "question": "Are you allowed to park your vehicle at the location indicated by this sign?",
+        "question": "Why does the alternating E5/E7 parking system exist?",
         "choices": [
           {
-            "text": "This depends on the specific parking rules indicated on the sign",
+            "text": "To allow street cleaning and maintenance on both sides of the road",
             "is_correct": true
           },
           {
-            "text": "Yes, always allowed if there is a free space",
+            "text": "To create more parking time for residents",
             "is_correct": false
           },
           {
-            "text": "No, never allowed on the public road",
+            "text": "To slow traffic in residential areas",
             "is_correct": false
           }
         ],
-        "explanation": "Parking regulation signs specify rules about where, when, and how long you may park. Read each sign carefully."
+        "explanation": "The E5/E7 system allows the street to be fully cleaned every two weeks."
       },
       "FR": {
-        "question": "Êtes-vous autorisé à garer votre véhicule à cet endroit ?",
+        "question": "Pourquoi le systeme E5/E7 de stationnement alternatif existe-t-il ?",
         "choices": [
           {
-            "text": "Cela dépend des règles spécifiques indiquées sur le panneau",
+            "text": "Pour permettre le nettoyage et l'entretien des deux cotes de la route",
             "is_correct": true
           },
           {
-            "text": "Oui, toujours autorisé s'il y a une place libre",
+            "text": "Pour creer plus de temps de stationnement pour les residents",
             "is_correct": false
           },
           {
-            "text": "Non, jamais autorisé sur la voie publique",
+            "text": "Pour ralentir la circulation dans les zones residentielles",
             "is_correct": false
           }
         ],
-        "explanation": "Les panneaux de stationnement spécifient où, quand et combien de temps vous pouvez stationner."
+        "explanation": "Le systeme E5/E7 permet de nettoyer completement la rue toutes les deux semaines."
       },
       "AR": {
-        "question": "هل يُسمح لك بوقوف مركبتك في المكان الذي تشير إليه هذه اللافتة؟",
+        "question": "Ù„Ù…Ø§Ø°Ø§ ÙŠÙˆØ¬Ø¯ Ù†Ø¸Ø§Ù… Ø§Ù„ÙˆÙ‚ÙˆÙ Ø§Ù„Ù…ØªÙ†Ø§ÙˆØ¨ E5/E7ØŸ",
         "choices": [
           {
-            "text": "يعتمد ذلك على قواعد الوقوف المحددة المشار إليها على اللافتة",
+            "text": "Ù„Ù„Ø³Ù…Ø§Ø­ Ø¨ØªÙ†Ø¸ÙŠÙ ÙˆØµÙŠØ§Ù†Ø© Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø¹Ù„Ù‰ ÙƒÙ„Ø§ Ø§Ù„Ø¬Ø§Ù†Ø¨ÙŠÙ†",
             "is_correct": true
           },
           {
-            "text": "نعم، مسموح دائماً إذا كان هناك مكان فارغ",
+            "text": "Ù„Ø²ÙŠØ§Ø¯Ø© ÙˆÙ‚Øª Ø§Ù„ÙˆÙ‚ÙˆÙ Ù„Ù„Ù…Ù‚ÙŠÙ…ÙŠÙ†",
             "is_correct": false
           },
           {
-            "text": "لا، غير مسموح أبداً على الطريق العام",
+            "text": "Ù„Ø¥Ø¨Ø·Ø§Ø¡ Ø§Ù„Ù…Ø±ÙˆØ± ÙÙŠ Ø§Ù„Ø£Ø­ÙŠØ§Ø¡ Ø§Ù„Ø³ÙƒÙ†ÙŠØ©",
             "is_correct": false
           }
         ],
-        "explanation": "لافتات تنظيم الوقوف تحدد قواعد حول أين ومتى وكم من الوقت يمكنك الوقوف. اقرأ كل لافتة بعناية."
+        "explanation": "Ù†Ø¸Ø§Ù… E5/E7 ÙŠÙØªÙŠØ­ ØªÙ†Ø¸ÙŠÙ Ø§Ù„Ø´Ø§Ø±Ø¹ Ø¨Ø§Ù„ÙƒØ§Ù…Ù„ ÙƒÙ„ Ø£Ø³Ø¨ÙˆØ¹ÙŠÙ†."
       }
     }
   },
@@ -251,145 +248,370 @@
     "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE (MEDIUM): Replace with sign-specific question for production.",
     "i18n": {
       "NL": {
-        "question": "Wat is het verschil tussen parkeren en stilstaan?",
+        "question": "Vandaag is het 10e van de maand. Staat u bij een E5-bord. Mag u parkeren?",
         "choices": [
           {
-            "text": "Stilstaan is een korte stop (chauffeur blijft aanwezig), parkeren is langer of chauffeur verlaat voertuig",
+            "text": "Neen: de 10e valt in de periode 1-15, dus parkeren aan deze zijde is verboden",
             "is_correct": true
           },
           {
-            "text": "Er is geen verschil, het zijn synoniemen",
+            "text": "Ja: de 10e is een even dag en even dagen zijn vrij",
             "is_correct": false
           },
           {
-            "text": "Stilstaan betekent motor uitzetten",
+            "text": "Ja: het verbod begint pas op de 15e",
             "is_correct": false
           }
         ],
-        "explanation": "Stilstaan = kort stoppen terwijl de bestuurder beschikbaar blijft. Parkeren = langer of bestuurder verlaat het voertuig."
+        "explanation": "E5 verbiedt parkeren van 1 t/m 15. Op de 10e (dus in die periode) is parkeren hier verboden."
       },
       "EN": {
-        "question": "What is the difference between parking and stopping?",
+        "question": "Today is the 10th of the month. You are at an E5 sign. May you park?",
         "choices": [
           {
-            "text": "Stopping is a brief halt (driver remains present), parking is longer or driver leaves vehicle",
+            "text": "No: the 10th falls within the 1st-15th period so parking on this side is forbidden",
             "is_correct": true
           },
           {
-            "text": "There is no difference, they are synonyms",
+            "text": "Yes: the 10th is an even day and even days are free",
             "is_correct": false
           },
           {
-            "text": "Stopping means turning off the engine",
+            "text": "Yes: the ban only starts on the 15th",
             "is_correct": false
           }
         ],
-        "explanation": "Stopping = brief halt while driver remains available. Parking = longer stop or driver leaves the vehicle."
+        "explanation": "E5 forbids parking from the 1st to the 15th. On the 10th (within that period) parking here is forbidden."
       },
       "FR": {
-        "question": "Quelle est la différence entre le stationnement et l'arrêt ?",
+        "question": "Aujourd'hui c'est le 10 du mois. Vous etes a un panneau E5. Pouvez-vous vous garer ?",
         "choices": [
           {
-            "text": "L'arrêt est court (conducteur présent), le stationnement est plus long ou conducteur quitte le véhicule",
+            "text": "Non: le 10 tombe dans la periode 1-15 donc le stationnement de ce cote est interdit",
             "is_correct": true
           },
           {
-            "text": "Il n'y a pas de différence, ce sont des synonymes",
+            "text": "Oui: le 10 est un jour pair et les jours pairs sont libres",
             "is_correct": false
           },
           {
-            "text": "Arrêter signifie éteindre le moteur",
+            "text": "Oui: l'interdiction ne commence qu'a partir du 15",
             "is_correct": false
           }
         ],
-        "explanation": "Arrêt = court, conducteur disponible. Stationnement = plus long ou conducteur quitte le véhicule."
+        "explanation": "E5 interdit le stationnement du 1er au 15. Le 10 (dans cette periode) le stationnement est interdit."
       },
       "AR": {
-        "question": "ما الفرق بين الوقوف والتوقف؟",
+        "question": "Ø§Ù„ÙŠÙˆÙ… Ù‡Ùˆ Ø§Ù„Ø¹Ø§Ø´Ø± Ù…Ù† Ø§Ù„Ø´Ù‡Ø±. Ø£Ù†Øª Ø¹Ù†Ø¯ Ù„Ø§ÙØªØ© E5. Ù‡Ù„ ÙŠØ¬ÙˆØ² Ù„Ùƒ Ø§Ù„ÙˆÙ‚ÙˆÙØŸ",
         "choices": [
           {
-            "text": "التوقف وقفة قصيرة (السائق يبقى موجوداً)، الوقوف أطول أو السائق يغادر المركبة",
+            "text": "Ù„Ø§: Ø§Ù„Ø¹Ø§Ø´Ø± ÙŠÙ‚Ø¹ ÙÙŠ ÙØªØ±Ø© 1-15 Ù„Ø°Ø§ Ø§Ù„ÙˆÙ‚ÙˆÙ Ø¹Ù„Ù‰ Ù‡Ø°Ø§ Ø§Ù„Ø¬Ø§Ù†Ø¨ Ù…Ø­Ø¸ÙˆØ±",
             "is_correct": true
           },
           {
-            "text": "لا فرق، فهما مترادفان",
+            "text": "Ù†Ø¹Ù…: Ø§Ù„Ø¹Ø§Ø´Ø± ÙŠÙˆÙ… Ø²ÙˆØ¬ÙŠ ÙˆØ§Ù„Ø£ÙŠØ§Ù… Ø§Ù„Ø²ÙˆØ¬ÙŠØ© Ø­Ø±Ø©",
             "is_correct": false
           },
           {
-            "text": "التوقف يعني إطفاء المحرك",
+            "text": "Ù†Ø¹Ù…: Ø§Ù„Ø­Ø¸Ø± Ù„Ø§ ÙŠØ¨Ø¯Ø£ Ø¥Ù„Ø§ ÙÙŠ Ø§Ù„ÙŠÙˆÙ… 15",
             "is_correct": false
           }
         ],
-        "explanation": "التوقف = وقفة قصيرة مع بقاء السائق متاحاً. الوقوف = أطول أو السائق يغادر المركبة."
+        "explanation": "E5 ØªØ­Ø¸Ø± Ø§Ù„ÙˆÙ‚ÙˆÙ Ù…Ù† 1 Ø­ØªÙ‰ 15. ÙÙŠ Ø§Ù„ÙŠÙˆÙ… 10 (Ø¶Ù…Ù† ØªÙ„Ùƒ Ø§Ù„ÙØªØ±Ø©) Ø§Ù„ÙˆÙ‚ÙˆÙ Ù‡Ù†Ø§ Ù…Ø­Ø¸ÙˆØ±."
       }
     }
   },
   {
     "question_id": "E5_Q05",
-    "type": "IS_IT_ALLOWED",
-    "difficulty": "HARD",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE (HARD): Replace with sign-specific question for production.",
     "i18n": {
       "NL": {
-        "question": "Mag u parkeren op een plaats aangeduid met een parkeerverbodsbord?",
+        "question": "Vandaag is het 20e. Staat u bij E5. Mag u parkeren?",
         "choices": [
           {
-            "text": "Nee, parkeren is verboden op plaatsen aangeduid met een parkeerverbodsbord",
+            "text": "Ja: de 20e valt buiten de 1-15-periode; E5 is niet actief; u mag parkeren tenzij een ander bord dit verbiedt",
             "is_correct": true
           },
           {
-            "text": "Ja, parkeren is altijd toegestaan zolang u niet langer dan 15 minuten blijft",
+            "text": "Neen: E5 geldt de hele maand door",
+            "is_correct": false
+          },
+          {
+            "text": "Neen: de 20e valt in de E7-periode en parkeren is dan overal verboden",
             "is_correct": false
           }
         ],
-        "explanation": "Parkeerverbodsborden verbieden parkeren op de aangeduide plaats. Overtredingen kunnen leiden tot een boete of het wegslepen van uw voertuig."
+        "explanation": "E5 is enkel actief van 1 t/m 15. Van de 16e tot maandeinde is de overkant (E7) verboden; dÃ©ze zijde (E5) is vrij."
       },
       "EN": {
-        "question": "Are you allowed to park in a place marked with a no-parking sign?",
+        "question": "Today is the 20th. You are at an E5 sign. May you park?",
         "choices": [
           {
-            "text": "No, parking is prohibited in places marked with a no-parking sign",
+            "text": "Yes: the 20th is outside the 1-15 period; E5 is not active; you may park unless another sign forbids it",
             "is_correct": true
           },
           {
-            "text": "Yes, parking is always allowed as long as you do not stay longer than 15 minutes",
+            "text": "No: E5 applies all month long",
+            "is_correct": false
+          },
+          {
+            "text": "No: the 20th falls in the E7 period and parking is then forbidden everywhere",
             "is_correct": false
           }
         ],
-        "explanation": "No-parking signs prohibit parking at the indicated location. Violations can result in a fine or having your vehicle towed."
+        "explanation": "E5 is only active from the 1st to the 15th. From the 16th to month end the opposite side (E7) is restricted; this side (E5) is free."
       },
       "FR": {
-        "question": "Êtes-vous autorisé à stationner à un endroit signalé par un panneau d'interdiction de stationnement ?",
+        "question": "Aujourd'hui c'est le 20. Vous etes a un panneau E5. Pouvez-vous vous garer ?",
         "choices": [
           {
-            "text": "Non, le stationnement est interdit aux endroits signalés par un panneau d'interdiction de stationnement",
+            "text": "Oui: le 20 est en dehors de la periode 1-15; E5 n'est pas actif; vous pouvez vous garer sauf si un autre panneau l'interdit",
             "is_correct": true
           },
           {
-            "text": "Oui, le stationnement est toujours autorisé tant que vous ne restez pas plus de 15 minutes",
+            "text": "Non: E5 s'applique tout le mois",
+            "is_correct": false
+          },
+          {
+            "text": "Non: le 20 tombe dans la periode E7 et le stationnement est alors interdit partout",
             "is_correct": false
           }
         ],
-        "explanation": "Les panneaux d'interdiction de stationnement interdisent de stationner à l'endroit indiqué. Les infractions peuvent entraîner une amende ou le remorquage du véhicule."
+        "explanation": "E5 n'est actif que du 1er au 15. Du 16 a la fin du mois le cote oppose (E7) est restreint; ce cote (E5) est libre."
       },
       "AR": {
-        "question": "هل يُسمح لك بالوقوف في مكان يُشار إليه بلافتة حظر الوقوف؟",
+        "question": "Ø§Ù„ÙŠÙˆÙ… Ù‡Ùˆ Ø§Ù„Ø¹Ø´Ø±ÙˆÙ†. Ø£Ù†Øª Ø¹Ù†Ø¯ Ù„Ø§ÙØªØ© E5. Ù‡Ù„ ÙŠØ¬ÙˆØ² Ù„Ùƒ Ø§Ù„ÙˆÙ‚ÙˆÙØŸ",
         "choices": [
           {
-            "text": "لا، الوقوف محظور في الأماكن التي تشير إليها لافتة حظر الوقوف",
+            "text": "Ù†Ø¹Ù…: Ø§Ù„Ø¹Ø´Ø±ÙˆÙ† Ø®Ø§Ø±Ø¬ ÙØªØ±Ø© 1-15Ø› E5 ØºÙŠØ± Ù†Ø´Ø·Ø©Ø› ÙŠÙ…ÙƒÙ†Ùƒ Ø§Ù„ÙˆÙ‚ÙˆÙ Ù…Ø§ Ù„Ù… ØªÙ…Ù†Ø¹Ù‡ Ù„Ø§ÙØªØ© Ø£Ø®Ø±Ù‰",
             "is_correct": true
           },
           {
-            "text": "نعم، الوقوف مسموح دائماً ما لم تبقَ أكثر من 15 دقيقة",
+            "text": "Ù„Ø§: E5 ØªÙ†Ø·Ø¨Ù‚ Ø·ÙˆØ§Ù„ Ø§Ù„Ø´Ù‡Ø±",
+            "is_correct": false
+          },
+          {
+            "text": "Ù„Ø§: Ø§Ù„Ø¹Ø´Ø±ÙˆÙ† ÙŠÙ‚Ø¹ ÙÙŠ ÙØªØ±Ø© E7 ÙˆØ§Ù„ÙˆÙ‚ÙˆÙ Ù…Ø­Ø¸ÙˆØ± ÙÙŠ ÙƒÙ„ Ù…ÙƒØ§Ù†",
             "is_correct": false
           }
         ],
-        "explanation": "لافتات حظر الوقوف تحظر الوقوف في المكان المشار إليه. المخالفات قد تؤدي إلى غرامة أو سحب مركبتك."
+        "explanation": "E5 Ù†Ø´Ø·Ø© ÙÙ‚Ø· Ù…Ù† 1 Ø­ØªÙ‰ 15. Ù…Ù† 16 Ø­ØªÙ‰ Ù†Ù‡Ø§ÙŠØ© Ø§Ù„Ø´Ù‡Ø± Ø§Ù„Ø¬Ø§Ù†Ø¨ Ø§Ù„Ø¢Ø®Ø± (E7) Ù…Ù‚ÙŠÙ‘Ø¯Ø› Ù‡Ø°Ø§ Ø§Ù„Ø¬Ø§Ù†Ø¨ (E5) Ø­Ø±."
+      }
+    }
+  },
+  {
+    "question_id": "E5_Q06",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U parkeert op de 14e bij E5 en wil de auto laten staan tot de 16e. Wat is het probleem?",
+        "choices": [
+          {
+            "text": "Vanaf de 15e geldt de overgang naar E7; u moet de auto verplaatsen voor de 16e",
+            "is_correct": true
+          },
+          {
+            "text": "Er is geen probleem; afwisselend parkeren laat altijd 2 dagen marge",
+            "is_correct": false
+          },
+          {
+            "text": "U moet de auto verplaatsen op de 14e zelf",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Op de 14e is E5 actief (verbod 1-15). Op de 15e wordt de auto al in de verbodzone geparkeerd. U moet de auto uiterlijk de avond van de 14e of de vroege ochtend van de 15e verplaatsen."
+      },
+      "EN": {
+        "question": "You park on the 14th under E5 and want to leave the car until the 16th. What is the problem?",
+        "choices": [
+          {
+            "text": "From the 15th the ban switches to E7; you must move the car before the 16th",
+            "is_correct": true
+          },
+          {
+            "text": "There is no problem; alternating parking always allows a 2-day grace period",
+            "is_correct": false
+          },
+          {
+            "text": "You must move the car on the 14th itself",
+            "is_correct": false
+          }
+        ],
+        "explanation": "On the 14th E5 is active (ban 1-15). On the 15th the car is already in the restriction zone. You must move the car at the latest on the evening of the 14th or early morning of the 15th."
+      },
+      "FR": {
+        "question": "Vous vous garez le 14 sous E5 et voulez laisser la voiture jusqu'au 16. Quel est le probleme ?",
+        "choices": [
+          {
+            "text": "A partir du 15 l'interdiction passe a E7; vous devez deplacer la voiture avant le 16",
+            "is_correct": true
+          },
+          {
+            "text": "Il n'y a pas de probleme; le stationnement alternatif permet toujours une marge de 2 jours",
+            "is_correct": false
+          },
+          {
+            "text": "Vous devez deplacer la voiture le 14 lui-meme",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Le 14 E5 est actif (interdiction 1-15). Le 15 la voiture est deja dans la zone d'interdiction. Vous devez deplacer la voiture au plus tard le soir du 14 ou tot le matin du 15."
+      },
+      "AR": {
+        "question": "ØªÙ‚Ù ÙŠÙˆÙ… 14 Ø¹Ù†Ø¯ E5 ÙˆØªØ±ÙŠØ¯ Ø¥Ø¨Ù‚Ø§Ø¡ Ø§Ù„Ø³ÙŠØ§Ø±Ø© Ø­ØªÙ‰ ÙŠÙˆÙ… 16. Ù…Ø§ Ø§Ù„Ù…Ø´ÙƒÙ„Ø©ØŸ",
+        "choices": [
+          {
+            "text": "Ù…Ù† ÙŠÙˆÙ… 15 ÙŠÙ†ØªÙ‚Ù„ Ø§Ù„Ø­Ø¸Ø± Ø¥Ù„Ù‰ E7Ø› ÙŠØ¬Ø¨ Ù†Ù‚Ù„ Ø§Ù„Ø³ÙŠØ§Ø±Ø© Ù‚Ø¨Ù„ ÙŠÙˆÙ… 16",
+            "is_correct": true
+          },
+          {
+            "text": "Ù„Ø§ ØªÙˆØ¬Ø¯ Ù…Ø´ÙƒÙ„Ø©Ø› Ø§Ù„ÙˆÙ‚ÙˆÙ Ø§Ù„Ù…ØªÙ†Ø§ÙˆØ¨ ÙŠÙ…Ù†Ø­ Ø¯Ø§Ø¦Ù…Ø§Ù‹ Ù‡Ø§Ù…Ø´ ÙŠÙˆÙ…ÙŠÙ†",
+            "is_correct": false
+          },
+          {
+            "text": "ÙŠØ¬Ø¨ Ù†Ù‚Ù„ Ø§Ù„Ø³ÙŠØ§Ø±Ø© ÙÙŠ ÙŠÙˆÙ… 14 Ù†ÙØ³Ù‡",
+            "is_correct": false
+          }
+        ],
+        "explanation": "ÙÙŠ ÙŠÙˆÙ… 14 ØªÙƒÙˆÙ† E5 Ù†Ø´Ø·Ø© (Ø­Ø¸Ø± 1-15). ÙÙŠ ÙŠÙˆÙ… 15 ØªÙƒÙˆÙ† Ø§Ù„Ø³ÙŠØ§Ø±Ø© ÙÙŠ Ù…Ù†Ø·Ù‚Ø© Ø§Ù„Ø­Ø¸Ø±. ÙŠØ¬Ø¨ Ù†Ù‚Ù„Ù‡Ø§ ÙÙŠ Ø£Ù‚ØµÙ‰ ØªÙ‚Ø¯ÙŠØ± Ù…Ø³Ø§Ø¡ ÙŠÙˆÙ… 14 Ø£Ùˆ ØµØ¨Ø§Ø­ ÙŠÙˆÙ… 15 Ù…Ø¨ÙƒØ±Ø§Ù‹."
+      }
+    }
+  },
+  {
+    "question_id": "E5_Q07",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Vandaag is de 1e van de maand, 6u 's ochtends. Mag u naast E5 parkeren?",
+        "choices": [
+          {
+            "text": "Neen: het verbod geldt de gehele dag van de 1e, ook vroeg in de ochtend",
+            "is_correct": true
+          },
+          {
+            "text": "Ja: voor 8u gelden tijdelijke parkeerborden niet",
+            "is_correct": false
+          }
+        ],
+        "explanation": "E5 geldt voor het volledige etmaal van de 1e tot en met de 15e, ook om 6u 's ochtends."
+      },
+      "EN": {
+        "question": "Today is the 1st of the month at 6am. May you park next to E5?",
+        "choices": [
+          {
+            "text": "No: the ban applies for the entire day of the 1st, including early morning",
+            "is_correct": true
+          },
+          {
+            "text": "Yes: before 8am temporary parking signs do not apply",
+            "is_correct": false
+          }
+        ],
+        "explanation": "E5 applies for the full 24 hours of the 1st through the 15th, including at 6am."
+      },
+      "FR": {
+        "question": "Aujourd'hui c'est le 1er du mois a 6h du matin. Pouvez-vous vous garer a cote de E5 ?",
+        "choices": [
+          {
+            "text": "Non: l'interdiction s'applique toute la journee du 1er y compris tot le matin",
+            "is_correct": true
+          },
+          {
+            "text": "Oui: avant 8h les panneaux de stationnement temporaires ne s'appliquent pas",
+            "is_correct": false
+          }
+        ],
+        "explanation": "E5 s'applique pour les 24 heures completes du 1er au 15, y compris a 6h du matin."
+      },
+      "AR": {
+        "question": "Ø§Ù„ÙŠÙˆÙ… Ù‡Ùˆ Ø§Ù„Ø£ÙˆÙ„ Ù…Ù† Ø§Ù„Ø´Ù‡Ø± Ø§Ù„Ø³Ø§Ø¹Ø© 6 ØµØ¨Ø§Ø­Ø§Ù‹. Ù‡Ù„ ÙŠØ¬ÙˆØ² Ø§Ù„ÙˆÙ‚ÙˆÙ Ø¨Ø¬Ø§Ù†Ø¨ E5ØŸ",
+        "choices": [
+          {
+            "text": "Ù„Ø§: Ø§Ù„Ø­Ø¸Ø± ÙŠØ³Ø±ÙŠ Ø·ÙˆØ§Ù„ ÙŠÙˆÙ… Ø§Ù„Ø£ÙˆÙ„ Ø¨Ù…Ø§ ÙÙŠÙ‡ Ø§Ù„ØµØ¨Ø§Ø­ Ø§Ù„Ø¨Ø§ÙƒØ±",
+            "is_correct": true
+          },
+          {
+            "text": "Ù†Ø¹Ù…: Ù‚Ø¨Ù„ Ø§Ù„Ø³Ø§Ø¹Ø© 8 Ù„Ø§ ØªÙ†Ø·Ø¨Ù‚ Ù„Ø§ÙØªØ§Øª Ø§Ù„ÙˆÙ‚ÙˆÙ Ø§Ù„Ù…Ø¤Ù‚ØªØ©",
+            "is_correct": false
+          }
+        ],
+        "explanation": "E5 ØªØ³Ø±ÙŠ Ù„ÙƒØ§Ù…Ù„ 24 Ø³Ø§Ø¹Ø© Ù…Ù† Ø§Ù„ÙŠÙˆÙ… 1 Ø­ØªÙ‰ 15 Ø¨Ù…Ø§ ÙÙŠÙ‡ Ø§Ù„Ø³Ø§Ø¹Ø© 6 ØµØ¨Ø§Ø­Ø§Ù‹."
+      }
+    }
+  },
+  {
+    "question_id": "E5_Q08",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Is het toegestaan de hele nacht te parkeren bij E5 van de 14e op de 15e?",
+        "choices": [
+          {
+            "text": "Neen: zodra de 15e begint is parkeren aan de E5-zijde verboden; u moet de auto voor de 15e weghalen",
+            "is_correct": true
+          },
+          {
+            "text": "Ja: een overgangsperiode van 24 uur is wettelijk voorzien bij afwisselend parkeren",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Het verbod van E5 start op de 1e en eindigt op de 15e. Parkeren op de nacht van 14 op 15 is verboden vanaf het begin van de 15e dag."
+      },
+      "EN": {
+        "question": "Is it allowed to park overnight from the 14th to the 15th next to E5?",
+        "choices": [
+          {
+            "text": "No: as soon as the 15th begins parking on the E5 side is forbidden; you must remove the car before the 15th",
+            "is_correct": true
+          },
+          {
+            "text": "Yes: a 24-hour grace period is legally foreseen for alternating parking",
+            "is_correct": false
+          }
+        ],
+        "explanation": "The E5 ban starts on the 1st and ends on the 15th. Parking overnight from the 14th to the 15th is forbidden from the start of the 15th day."
+      },
+      "FR": {
+        "question": "Est-il permis de se garer toute la nuit du 14 au 15 a cote de E5 ?",
+        "choices": [
+          {
+            "text": "Non: des le debut du 15 le stationnement du cote E5 est interdit; vous devez deplacer la voiture avant le 15",
+            "is_correct": true
+          },
+          {
+            "text": "Oui: une periode de grace de 24 heures est legalement prevue pour le stationnement alternatif",
+            "is_correct": false
+          }
+        ],
+        "explanation": "L'interdiction E5 commence le 1er et finit le 15. Se garer nuit du 14 au 15 est interdit des le debut du 15."
+      },
+      "AR": {
+        "question": "Ù‡Ù„ ÙŠÙØ³Ù…Ø­ Ø¨Ø§Ù„ÙˆÙ‚ÙˆÙ Ø·ÙˆØ§Ù„ Ø§Ù„Ù„ÙŠÙ„ Ù…Ù† ÙŠÙˆÙ… 14 Ø¥Ù„Ù‰ 15 Ø¨Ø¬ÙˆØ§Ø± E5ØŸ",
+        "choices": [
+          {
+            "text": "Ù„Ø§: Ø¨Ù…Ø¬Ø±Ø¯ Ø¨Ø¯Ø§ÙŠØ© ÙŠÙˆÙ… 15 ÙŠÙƒÙˆÙ† Ø§Ù„ÙˆÙ‚ÙˆÙ Ø¹Ù„Ù‰ Ø¬Ø§Ù†Ø¨ E5 Ù…Ø­Ø¸ÙˆØ±Ø§Ù‹Ø› ÙŠØ¬Ø¨ Ù†Ù‚Ù„ Ø§Ù„Ø³ÙŠØ§Ø±Ø© Ù‚Ø¨Ù„ ÙŠÙˆÙ… 15",
+            "is_correct": true
+          },
+          {
+            "text": "Ù†Ø¹Ù…: ÙŠÙÙ†Øµ Ù‚Ø§Ù†ÙˆÙ†Ø§Ù‹ Ø¹Ù„Ù‰ ÙØªØ±Ø© Ø³Ù…Ø§Ø­ Ù…Ø¯ØªÙ‡Ø§ 24 Ø³Ø§Ø¹Ø© Ù„Ù„ÙˆÙ‚ÙˆÙ Ø§Ù„Ù…ØªÙ†Ø§ÙˆØ¨",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ø­Ø¸Ø± E5 ÙŠØ¨Ø¯Ø£ ÙŠÙˆÙ… 1 ÙˆÙŠÙ†ØªÙ‡ÙŠ ÙŠÙˆÙ… 15. Ø§Ù„ÙˆÙ‚ÙˆÙ Ù„ÙŠÙ„Ø© 14 Ø¥Ù„Ù‰ 15 Ù…Ø­Ø¸ÙˆØ± Ù…Ù† Ø¨Ø¯Ø§ÙŠØ© ÙŠÙˆÙ… 15."
       }
     }
   }

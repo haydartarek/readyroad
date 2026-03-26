@@ -1,0 +1,594 @@
+﻿[
+  {
+    "question_id": "F98_Q01",
+    "type": "WHAT_DOES_IT_MEAN",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat betekent dit verkeersbord?",
+        "choices": [
+          {
+            "text": "Een bijzondere rijstrookregeling is van kracht â€” lees het bord nauwkeurig en volg de specifieke aanwijzing die erop staat",
+            "is_correct": true
+          },
+          {
+            "text": "Elke rijstrook heeft zijn eigen maximumsnelheid, aangegeven boven die rijstrook, met vermelding van de geldende afstand",
+            "is_correct": false
+          },
+          {
+            "text": "Een rijstrook eindigt â€” voeg tijdig samen met de naastliggende rijstrook",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F98 kondigt een bijzondere rijstrookregeling aan die van toepassing is op de specifiek aangegeven rijstrook. De exacte inhoud van de regeling staat op het bord zelf â€” er is geen vaste universele betekenis."
+      },
+      "EN": {
+        "question": "What does this traffic sign mean?",
+        "choices": [
+          {
+            "text": "A special lane regulation is in force â€” read the sign carefully and follow the specific instruction shown on it",
+            "is_correct": true
+          },
+          {
+            "text": "Each lane has its own maximum speed, indicated above that lane, with a distance indication",
+            "is_correct": false
+          },
+          {
+            "text": "A lane ends â€” merge into the adjacent lane in good time",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F98 announces a special lane regulation that applies to the specifically indicated lane. The exact content of the regulation is shown on the sign itself â€” there is no fixed universal meaning."
+      },
+      "FR": {
+        "question": "Que signifie ce panneau de signalisation?",
+        "choices": [
+          {
+            "text": "Une r\u00e9glementation sp\u00e9ciale de voie est en vigueur \u2014 lisez attentivement le panneau et suivez l'instruction sp\u00e9cifique qui y figure",
+            "is_correct": true
+          },
+          {
+            "text": "Chaque voie a sa propre vitesse maximale avec indication de distance",
+            "is_correct": false
+          },
+          {
+            "text": "Une voie se termine \u2014 rabattez-vous \u00e0 temps",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F98 annonce une r\u00e9glementation sp\u00e9ciale de voie applicable \u00e0 la voie sp\u00e9cifiquement indiqu\u00e9e. Le contenu exact de la r\u00e9glementation est indiqu\u00e9 sur le panneau lui-m\u00eame."
+      },
+      "AR": {
+        "question": "\u0645\u0627 \u0645\u0639\u0646\u0649 \u0647\u0630\u0647 \u0627\u0644\u0644\u0627\u0641\u062a\u0629\u061f",
+        "choices": [
+          {
+            "text": "\u062a\u0646\u0638\u064a\u0645 \u062e\u0627\u0635 \u0644\u0645\u0633\u0627\u0631 \u0628\u0639\u064a\u0646\u0647 \u2014 \u0627\u0642\u0631\u0623 \u0627\u0644\u0644\u0627\u0641\u062a\u0629 \u0628\u0639\u0646\u0627\u064a\u0629 \u0648\u0627\u062a\u0628\u0639 \u0627\u0644\u062a\u0639\u0644\u064a\u0645\u0627\u062a \u0627\u0644\u0645\u062d\u062f\u062f\u0629",
+            "is_correct": true
+          },
+          {
+            "text": "\u0644\u0643\u0644 \u0645\u0633\u0627\u0631 \u062d\u062f\u0647 \u0627\u0644\u0623\u0642\u0635\u0649 \u0645\u0639 \u0630\u0643\u0631 \u0627\u0644\u0645\u0633\u0627\u0641\u0629",
+            "is_correct": false
+          },
+          {
+            "text": "\u0645\u0633\u0627\u0631 \u064a\u0646\u062a\u0647\u064a \u2014 \u0627\u0646\u062f\u0645\u062c \u0641\u064a \u0627\u0644\u0648\u0642\u062a \u0627\u0644\u0645\u0646\u0627\u0633\u0628",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F98 \u062a\u064f\u0639\u0644\u0646 \u062a\u0646\u0638\u064a\u0645\u064b\u0627 \u062e\u0627\u0635\u064b\u0627 \u0644\u0645\u0633\u0627\u0631 \u0645\u062d\u062f\u062f. \u0627\u0644\u0645\u062d\u062a\u0648\u0649 \u0627\u0644\u062f\u0642\u064a\u0642 \u0645\u0628\u064a\u0651\u0646 \u0639\u0644\u0649 \u0627\u0644\u0644\u0627\u0641\u062a\u0629 \u0630\u0627\u062a\u0647\u0627."
+      }
+    }
+  },
+  {
+    "question_id": "F98_Q02",
+    "type": "WHICH_SIGN",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Tot welke categorie verkeersborden behoort dit bord?",
+        "choices": [
+          { "text": "Wegbeheersingstekens (F-reeks)", "is_correct": true },
+          { "text": "Gevaarsborden (A-reeks)", "is_correct": false },
+          { "text": "Gebodsborden (D-reeks)", "is_correct": false }
+        ],
+        "explanation": "F98 behoort tot de F-reeks. De bijzondere rijstrookregeling is bindend voor bestuurders in de betreffende rijstrook, ook al lijkt het bord informatief."
+      },
+      "EN": {
+        "question": "To which category of traffic signs does this sign belong?",
+        "choices": [
+          { "text": "Road management signs (F-series)", "is_correct": true },
+          { "text": "Danger signs (A-series)", "is_correct": false },
+          { "text": "Mandatory signs (D-series)", "is_correct": false }
+        ],
+        "explanation": "F98 belongs to the F-series. The special lane regulation is binding for drivers in the relevant lane even though the sign may appear informational."
+      },
+      "FR": {
+        "question": "\u00c0 quelle cat\u00e9gorie de panneaux appartient ce panneau?",
+        "choices": [
+          {
+            "text": "Panneaux de gestion de la route (s\u00e9rie F)",
+            "is_correct": true
+          },
+          { "text": "Panneaux de danger (s\u00e9rie A)", "is_correct": false },
+          {
+            "text": "Panneaux d'obligation (s\u00e9rie D)",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F98 appartient \u00e0 la s\u00e9rie F. La r\u00e9glementation sp\u00e9ciale de voie est contraignante pour les conducteurs dans la voie concern\u00e9e."
+      },
+      "AR": {
+        "question": "\u0625\u0644\u0649 \u0623\u064a \u0641\u0626\u0629 \u062a\u0646\u062a\u0645\u064a \u0647\u0630\u0647 \u0627\u0644\u0644\u0627\u0641\u062a\u0629\u061f",
+        "choices": [
+          {
+            "text": "\u0644\u0627\u0641\u062a\u0627\u062a \u0625\u062f\u0627\u0631\u0629 \u0627\u0644\u0637\u0631\u064a\u0642 (\u0627\u0644\u0641\u0626\u0629 F)",
+            "is_correct": true
+          },
+          {
+            "text": "\u0644\u0627\u0641\u062a\u0627\u062a \u0627\u0644\u062e\u0637\u0631 (\u0627\u0644\u0641\u0626\u0629 A)",
+            "is_correct": false
+          },
+          {
+            "text": "\u0644\u0627\u0641\u062a\u0627\u062a \u0627\u0644\u0625\u0644\u0632\u0627\u0645 (\u0627\u0644\u0641\u0626\u0629 D)",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F98 \u062a\u0646\u062a\u0645\u064a \u0625\u0644\u0649 \u0627\u0644\u0641\u0626\u0629 F. \u0627\u0644\u062a\u0646\u0638\u064a\u0645 \u0627\u0644\u062e\u0627\u0635 \u0645\u0644\u0632\u0645 \u0644\u0633\u0627\u0626\u0642\u064a \u0627\u0644\u0645\u0633\u0627\u0631 \u0627\u0644\u0645\u0639\u0646\u064a."
+      }
+    }
+  },
+  {
+    "question_id": "F98_Q03",
+    "type": "HAZARD_IDENTIFICATION",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Welke wegsituatie kondigt dit bord aan?",
+        "choices": [
+          {
+            "text": "Een speciale rijstrookregeling is van kracht in de aangeduide rijstrook â€” de exacte regel staat op het bord en moet nauwkeurig worden gevolgd",
+            "is_correct": true
+          },
+          {
+            "text": "Elke rijstrook heeft zijn eigen snelheidsgrens â€” de limiet boven uw rijstrook geldt voor u",
+            "is_correct": false
+          },
+          {
+            "text": "Een rijstrook eindigt â€” tijdig samenvoegen is vereist",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F98 kondigt een specifieke rijstrookregeling aan die uitsluitend geldt voor de aangeduide rijstrook. De bestuurder moet het bord lezen en de specifieke aanwijzing opvolgen."
+      },
+      "EN": {
+        "question": "What road situation does this sign announce?",
+        "choices": [
+          {
+            "text": "A special lane regulation is in force in the indicated lane â€” the exact rule is on the sign and must be followed precisely",
+            "is_correct": true
+          },
+          {
+            "text": "Each lane has its own speed limit â€” the limit above your lane applies to you",
+            "is_correct": false
+          },
+          {
+            "text": "A lane ends â€” merging in good time is required",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F98 announces a specific lane regulation that applies exclusively to the indicated lane. The driver must read the sign and follow the specific instruction."
+      },
+      "FR": {
+        "question": "Quelle situation routi\u00e8re ce panneau annonce-t-il?",
+        "choices": [
+          {
+            "text": "Une r\u00e9glementation sp\u00e9ciale de voie est en vigueur dans la voie indiqu\u00e9e \u2014 la r\u00e8gle exacte figure sur le panneau et doit \u00eatre suivie pr\u00e9cis\u00e9ment",
+            "is_correct": true
+          },
+          {
+            "text": "Chaque voie a sa propre limite de vitesse \u2014 la limite au-dessus de votre voie vous est applicable",
+            "is_correct": false
+          },
+          {
+            "text": "Une voie se termine \u2014 se rabattre \u00e0 temps est requis",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F98 annonce une r\u00e9glementation sp\u00e9cifique de voie qui s'applique exclusivement \u00e0 la voie indiqu\u00e9e. Le conducteur doit lire le panneau et suivre l'instruction sp\u00e9cifique."
+      },
+      "AR": {
+        "question": "\u0645\u0627 \u0627\u0644\u0648\u0636\u0639 \u0627\u0644\u0630\u064a \u062a\u064f\u0639\u0644\u0646 \u0639\u0646\u0647 \u0647\u0630\u0647 \u0627\u0644\u0644\u0627\u0641\u062a\u0629\u061f",
+        "choices": [
+          {
+            "text": "\u062a\u0646\u0638\u064a\u0645 \u062e\u0627\u0635 \u0641\u064a \u0627\u0644\u0645\u0633\u0627\u0631 \u0627\u0644\u0645\u062d\u062f\u062f \u2014 \u0627\u0644\u0642\u0627\u0639\u062f\u0629 \u0645\u0628\u064a\u0651\u0646\u0629 \u0639\u0644\u0649 \u0627\u0644\u0644\u0627\u0641\u062a\u0629 \u0648\u064a\u062c\u0628 \u0627\u062a\u0628\u0627\u0639\u0647\u0627 \u0628\u062f\u0642\u0629",
+            "is_correct": true
+          },
+          {
+            "text": "\u0644\u0643\u0644 \u0645\u0633\u0627\u0631 \u062d\u062f \u0633\u0631\u0639\u0629 \u062e\u0627\u0635",
+            "is_correct": false
+          },
+          {
+            "text": "\u0645\u0633\u0627\u0631 \u064a\u0646\u062a\u0647\u064a \u2014 \u0627\u0644\u0627\u0646\u062f\u0645\u0627\u062c \u0636\u0631\u0648\u0631\u064a",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F98 \u062a\u064f\u0639\u0644\u0646 \u062a\u0646\u0638\u064a\u0645\u064b\u0627 \u062e\u0627\u0635\u064b\u0627 \u064a\u0646\u0637\u0628\u0642 \u062d\u0635\u0631\u064a\u064b\u0627 \u0639\u0644\u0649 \u0627\u0644\u0645\u0633\u0627\u0631 \u0627\u0644\u0645\u062d\u062f\u062f. \u064a\u062c\u0628 \u0642\u0631\u0627\u0621\u0629 \u0627\u0644\u0644\u0627\u0641\u062a\u0629 \u0648\u0627\u062a\u0628\u0627\u0639 \u0627\u0644\u062a\u0639\u0644\u064a\u0645\u0627\u062a."
+      }
+    }
+  },
+  {
+    "question_id": "F98_Q04",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat moet u doen wanneer u F98 ziet?",
+        "choices": [
+          {
+            "text": "Het bord nauwkeurig lezen en de specifieke rijstrookregeling volgen die erop staat aangegeven",
+            "is_correct": true
+          },
+          {
+            "text": "Het bord negeren omdat F98 uitsluitend geldt voor vrachtwagens en bussen",
+            "is_correct": false
+          },
+          {
+            "text": "Van rijstrook wisselen om de bijzondere regeling te vermijden",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F98 geldt voor elke bestuurder in de aangeduide rijstrook. De inhoud van de regeling staat op het bord en moet worden nageleefd. Het bord negeren of van rijstrook wisselen om het te vermijden is niet toegestaan."
+      },
+      "EN": {
+        "question": "What must you do when you see F98?",
+        "choices": [
+          {
+            "text": "Read the sign carefully and follow the specific lane regulation shown on it",
+            "is_correct": true
+          },
+          {
+            "text": "Ignore the sign because F98 applies only to trucks and buses",
+            "is_correct": false
+          },
+          {
+            "text": "Change lane to avoid the special regulation",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F98 applies to every driver in the indicated lane. The content of the regulation is on the sign and must be complied with. Ignoring the sign or changing lane to avoid it is not permitted."
+      },
+      "FR": {
+        "question": "Que devez-vous faire lorsque vous voyez F98?",
+        "choices": [
+          {
+            "text": "Lire attentivement le panneau et suivre la r\u00e9glementation sp\u00e9cifique de voie qui y figure",
+            "is_correct": true
+          },
+          {
+            "text": "Ignorer le panneau car F98 s'applique uniquement aux camions et aux bus",
+            "is_correct": false
+          },
+          {
+            "text": "Changer de voie pour \u00e9viter la r\u00e9glementation sp\u00e9ciale",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F98 s'applique \u00e0 tout conducteur dans la voie indiqu\u00e9e. Le contenu de la r\u00e9glementation figure sur le panneau et doit \u00eatre respect\u00e9. Ignorer le panneau ou changer de voie pour l'\u00e9viter n'est pas autoris\u00e9."
+      },
+      "AR": {
+        "question": "\u0645\u0627\u0630\u0627 \u064a\u062c\u0628 \u0623\u0646 \u062a\u0641\u0639\u0644 \u0639\u0646\u062f \u0631\u0624\u064a\u0629 F98\u061f",
+        "choices": [
+          {
+            "text": "\u0642\u0631\u0627\u0621\u0629 \u0627\u0644\u0644\u0627\u0641\u062a\u0629 \u0628\u0639\u0646\u0627\u064a\u0629 \u0648\u0627\u062a\u0628\u0627\u0639 \u0627\u0644\u062a\u0646\u0638\u064a\u0645 \u0627\u0644\u062e\u0627\u0635 \u0627\u0644\u0645\u062d\u062f\u062f",
+            "is_correct": true
+          },
+          {
+            "text": "\u062a\u062c\u0627\u0647\u0644 \u0627\u0644\u0644\u0627\u0641\u062a\u0629 \u0644\u0623\u0646\u0647\u0627 \u062a\u062e\u0635 \u0627\u0644\u0634\u0627\u062d\u0646\u0627\u062a \u0648\u0627\u0644\u062d\u0627\u0641\u0644\u0627\u062a \u0641\u0642\u0637",
+            "is_correct": false
+          },
+          {
+            "text": "\u062a\u063a\u064a\u064a\u0631 \u0627\u0644\u0645\u0633\u0627\u0631 \u0644\u062a\u062c\u0646\u0628 \u0627\u0644\u062a\u0646\u0638\u064a\u0645 \u0627\u0644\u062e\u0627\u0635",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F98 \u062a\u0633\u0631\u064a \u0639\u0644\u0649 \u0643\u0644 \u0633\u0627\u0626\u0642 \u0641\u064a \u0627\u0644\u0645\u0633\u0627\u0631 \u0627\u0644\u0645\u062d\u062f\u062f. \u062a\u062c\u0627\u0647\u0644 \u0627\u0644\u0644\u0627\u0641\u062a\u0629 \u0623\u0648 \u062a\u063a\u064a\u064a\u0631 \u0627\u0644\u0645\u0633\u0627\u0631 \u0644\u062a\u062c\u0646\u0628\u0647\u0627 \u063a\u064a\u0631 \u0645\u0633\u0645\u0648\u062d."
+      }
+    }
+  },
+  {
+    "question_id": "F98_Q05",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "F98 toont een bijzondere regeling voor uw rijstrook maar u weet niet precies wat er van u verwacht wordt. Wat doet u?",
+        "choices": [
+          {
+            "text": "Uw snelheid verminderen en het bord aandachtig lezen om de specifieke aanwijzing te begrijpen alvorens verder te rijden",
+            "is_correct": true
+          },
+          {
+            "text": "Van rijstrook veranderen om de bijzondere regeling te vermijden",
+            "is_correct": false
+          },
+          {
+            "text": "Gewoon doorrijden â€” F98-borden zijn vrijblijvend voor particuliere bestuurders",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Bij twijfel over de inhoud van F98 is voorzichtigheid geboden. Snelheid verminderen en het bord aandachtig lezen is de juiste aanpak. F98 is nooit vrijblijvend en bewust van rijstrook veranderen om het te vermijden is een overtreding."
+      },
+      "EN": {
+        "question": "F98 shows a special regulation for your lane but you are not sure exactly what is expected of you. What do you do?",
+        "choices": [
+          {
+            "text": "Reduce your speed and read the sign attentively to understand the specific instruction before continuing",
+            "is_correct": true
+          },
+          {
+            "text": "Change lane to avoid the special regulation",
+            "is_correct": false
+          },
+          {
+            "text": "Simply continue driving â€” F98 signs are non-binding for private drivers",
+            "is_correct": false
+          }
+        ],
+        "explanation": "When in doubt about the content of F98, caution is required. Reducing speed and reading the sign carefully is the correct approach. F98 is never non-binding and deliberately changing lane to avoid it is an infraction."
+      },
+      "FR": {
+        "question": "F98 affiche une r\u00e9glementation sp\u00e9ciale pour votre voie mais vous n'\u00eates pas certain de ce qui est attendu de vous. Que faites-vous?",
+        "choices": [
+          {
+            "text": "R\u00e9duire votre vitesse et lire attentivement le panneau pour comprendre l'instruction sp\u00e9cifique avant de continuer",
+            "is_correct": true
+          },
+          {
+            "text": "Changer de voie pour \u00e9viter la r\u00e9glementation sp\u00e9ciale",
+            "is_correct": false
+          },
+          {
+            "text": "Continuer \u00e0 rouler normalement \u2014 les panneaux F98 ne sont pas contraignants pour les conducteurs priv\u00e9s",
+            "is_correct": false
+          }
+        ],
+        "explanation": "En cas de doute sur le contenu de F98, la prudence s'impose. R\u00e9duire la vitesse et lire attentivement le panneau est la bonne approche. F98 n'est jamais facultatif."
+      },
+      "AR": {
+        "question": "F98 \u062a\u0639\u0631\u0636 \u062a\u0646\u0638\u064a\u0645\u064b\u0627 \u062e\u0627\u0635\u064b\u0627 \u0644\u0645\u0633\u0627\u0631\u0643 \u0644\u0643\u0646\u0643 \u063a\u064a\u0631 \u0645\u062a\u0623\u0643\u062f \u0645\u0645\u0627 \u0647\u0648 \u0645\u0637\u0644\u0648\u0628 \u0645\u0646\u0643. \u0645\u0627\u0630\u0627 \u062a\u0641\u0639\u0644\u061f",
+        "choices": [
+          {
+            "text": "\u062e\u0641\u0651\u0636 \u0633\u0631\u0639\u062a\u0643 \u0648\u0627\u0642\u0631\u0623 \u0627\u0644\u0644\u0627\u0641\u062a\u0629 \u0628\u0639\u0646\u0627\u064a\u0629 \u0644\u0641\u0647\u0645 \u0627\u0644\u062a\u0639\u0644\u064a\u0645\u0627\u062a \u0642\u0628\u0644 \u0627\u0644\u0645\u062a\u0627\u0628\u0639\u0629",
+            "is_correct": true
+          },
+          {
+            "text": "\u063a\u064a\u0651\u0631 \u0627\u0644\u0645\u0633\u0627\u0631 \u0644\u062a\u062c\u0646\u0628 \u0627\u0644\u062a\u0646\u0638\u064a\u0645 \u0627\u0644\u062e\u0627\u0635",
+            "is_correct": false
+          },
+          {
+            "text": "\u0648\u0627\u0635\u0644 \u0627\u0644\u0633\u064a\u0631 \u2014 F98 \u063a\u064a\u0631 \u0645\u0644\u0632\u0645\u0629 \u0644\u0644\u0633\u0627\u0626\u0642\u064a\u0646 \u0627\u0644\u062e\u0635\u0648\u0635\u064a\u064a\u0646",
+            "is_correct": false
+          }
+        ],
+        "explanation": "\u0639\u0646\u062f \u0627\u0644\u0634\u0643 \u0641\u064a \u0645\u062d\u062a\u0648\u0649 F98 \u064a\u062c\u0628 \u0627\u0644\u062a\u062d\u0644\u064a. \u062a\u062e\u0641\u064a\u0636 \u0627\u0644\u0633\u0631\u0639\u0629 \u0648\u0642\u0631\u0627\u0621\u0629 \u0627\u0644\u0644\u0627\u0641\u062a\u0629 \u0627\u0644\u0646\u0647\u062c \u0627\u0644\u0635\u062d\u064a\u062d. F98 \u0644\u064a\u0633\u062a \u0627\u062e\u062a\u064a\u0627\u0631\u064a\u0629."
+      }
+    }
+  },
+  {
+    "question_id": "F98_Q06",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Voor welke bestuurders geldt de aanwijzing op F98?",
+        "choices": [
+          {
+            "text": "Uitsluitend voor bestuurders in de rijstrook waarboven of waarop F98 van toepassing is",
+            "is_correct": true
+          },
+          {
+            "text": "Voor alle voertuigen op de rijbaan, ongeacht welke rijstrook zij bezetten",
+            "is_correct": false
+          },
+          {
+            "text": "Alleen voor vrachtwagens, bussen en taxi's",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F98 is rijstrookspecifiek. Alleen bestuurders in de rijstrook waarop het bord van toepassing is, zijn verplicht de aanwijzing te volgen. Bestuurders in andere rijstroken zijn niet betrokken bij F98 van een andere rijstrook."
+      },
+      "EN": {
+        "question": "For which drivers does the instruction on F98 apply?",
+        "choices": [
+          {
+            "text": "Exclusively for drivers in the lane above which or to which F98 applies",
+            "is_correct": true
+          },
+          {
+            "text": "For all vehicles on the carriageway regardless of which lane they occupy",
+            "is_correct": false
+          },
+          { "text": "Only for trucks, buses and taxis", "is_correct": false }
+        ],
+        "explanation": "F98 is lane-specific. Only drivers in the lane to which the sign applies are required to follow the instruction. Drivers in other lanes are not affected by an F98 on a different lane."
+      },
+      "FR": {
+        "question": "Pour quels conducteurs l'instruction de F98 s'applique-t-elle?",
+        "choices": [
+          {
+            "text": "Exclusivement pour les conducteurs dans la voie au-dessus de laquelle ou pour laquelle F98 s'applique",
+            "is_correct": true
+          },
+          {
+            "text": "Pour tous les v\u00e9hicules sur la chauss\u00e9e quelle que soit la voie qu'ils occupent",
+            "is_correct": false
+          },
+          {
+            "text": "Uniquement pour les camions, les bus et les taxis",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F98 est sp\u00e9cifique \u00e0 la voie. Seuls les conducteurs dans la voie \u00e0 laquelle le panneau s'applique sont tenus de suivre l'instruction."
+      },
+      "AR": {
+        "question": "\u0639\u0644\u0649 \u0623\u064a \u0633\u0627\u0626\u0642\u064a\u0646 \u062a\u0633\u0631\u064a \u062a\u0639\u0644\u064a\u0645\u0627\u062a F98\u061f",
+        "choices": [
+          {
+            "text": "\u062d\u0635\u0631\u064a\u064b\u0627 \u0639\u0644\u0649 \u0633\u0627\u0626\u0642\u064a \u0627\u0644\u0645\u0633\u0627\u0631 \u0627\u0644\u0645\u062d\u062f\u062f \u0641\u064a F98",
+            "is_correct": true
+          },
+          {
+            "text": "\u0639\u0644\u0649 \u062c\u0645\u064a\u0639 \u0627\u0644\u0645\u0631\u0643\u0628\u0627\u062a \u0628\u063a\u0636 \u0627\u0644\u0646\u0638\u0631 \u0639\u0646 \u0645\u0633\u0627\u0631\u064a\u0647\u0627",
+            "is_correct": false
+          },
+          {
+            "text": "\u0641\u0642\u0637 \u0639\u0644\u0649 \u0627\u0644\u0634\u0627\u062d\u0646\u0627\u062a \u0648\u0627\u0644\u062d\u0627\u0641\u0644\u0627\u062a \u0648\u0633\u064a\u0627\u0631\u0627\u062a \u0627\u0644\u0623\u062c\u0631\u0629",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F98 \u062e\u0627\u0635\u0629 \u0628\u0627\u0644\u0645\u0633\u0627\u0631. \u0641\u0642\u0637 \u0633\u0627\u0626\u0642\u0648 \u0627\u0644\u0645\u0633\u0627\u0631 \u0627\u0644\u0645\u0639\u0646\u064a \u0645\u0644\u0632\u0645\u0648\u0646 \u0628\u0627\u062a\u0628\u0627\u0639 \u0627\u0644\u062a\u0639\u0644\u064a\u0645\u0627\u062a."
+      }
+    }
+  },
+  {
+    "question_id": "F98_Q07",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "F98 toont een bijzondere rijstrookregeling voor uw rijstrook. Mag u van rijstrook veranderen om deze regeling te vermijden?",
+        "choices": [
+          {
+            "text": "Neen, u bent verplicht de rijstrookregeling te volgen zolang u in de aangeduide rijstrook rijdt",
+            "is_correct": true
+          },
+          {
+            "text": "Ja, als u tijdig van rijstrook verandert heeft de regeling geen betrekking meer op u",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F98 is bindend voor elke bestuurder in de betreffende rijstrook. Van rijstrook wisselen met het uitdrukkelijke doel de F98-regeling te omzeilen is een overtreding. U dient de regeling te volgen zolang u in de aangeduide rijstrook rijdt."
+      },
+      "EN": {
+        "question": "F98 shows a special lane regulation for your lane. May you change lane to avoid this regulation?",
+        "choices": [
+          {
+            "text": "No, you are required to follow the lane regulation for as long as you are in the indicated lane",
+            "is_correct": true
+          },
+          {
+            "text": "Yes, if you change lane in time the regulation no longer applies to you",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F98 is binding on every driver in the relevant lane. Changing lane with the express intention of circumventing the F98 regulation is an infraction. You must follow the regulation for as long as you are in the indicated lane."
+      },
+      "FR": {
+        "question": "F98 affiche une r\u00e9glementation sp\u00e9ciale pour votre voie. Pouvez-vous changer de voie pour \u00e9viter cette r\u00e9glementation?",
+        "choices": [
+          {
+            "text": "Non, vous \u00eates tenu de suivre la r\u00e9glementation de voie tant que vous \u00eates dans la voie indiqu\u00e9e",
+            "is_correct": true
+          },
+          {
+            "text": "Oui, si vous changez de voie \u00e0 temps la r\u00e9glementation ne vous concerne plus",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F98 est contraignant pour tout conducteur dans la voie concern\u00e9e. Changer de voie avec l'intention expresse de contourner la r\u00e9glementation F98 est une infraction."
+      },
+      "AR": {
+        "question": "F98 \u062a\u0639\u0631\u0636 \u062a\u0646\u0638\u064a\u0645\u064b\u0627 \u062e\u0627\u0635\u064b\u0627 \u0644\u0645\u0633\u0627\u0631\u0643. \u0647\u0644 \u064a\u062c\u0648\u0632 \u062a\u063a\u064a\u064a\u0631 \u0627\u0644\u0645\u0633\u0627\u0631 \u0644\u062a\u062c\u0646\u0628 \u0647\u0630\u0627 \u0627\u0644\u062a\u0646\u0638\u064a\u0645\u061f",
+        "choices": [
+          {
+            "text": "\u0644\u0627\u060c \u064a\u062c\u0628 \u0627\u062a\u0628\u0627\u0639 \u0627\u0644\u062a\u0646\u0638\u064a\u0645 \u0637\u0627\u0644\u0645\u0627 \u0623\u0646\u062a \u0641\u064a \u0627\u0644\u0645\u0633\u0627\u0631 \u0627\u0644\u0645\u062d\u062f\u062f",
+            "is_correct": true
+          },
+          {
+            "text": "\u0646\u0639\u0645\u060c \u0625\u0630\u0627 \u063a\u064a\u0651\u0631\u062a \u0627\u0644\u0645\u0633\u0627\u0631 \u0641\u0627\u0644\u062a\u0646\u0638\u064a\u0645 \u0644\u0645 \u064a\u0639\u062f \u064a\u062e\u0635\u0643",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F98 \u0645\u0644\u0632\u0645\u0629 \u0644\u0643\u0644 \u0633\u0627\u0626\u0642 \u0641\u064a \u0627\u0644\u0645\u0633\u0627\u0631 \u0627\u0644\u0645\u0639\u0646\u064a. \u062a\u063a\u064a\u064a\u0631 \u0627\u0644\u0645\u0633\u0627\u0631 \u0628\u0647\u062f\u0641 \u062a\u062c\u0646\u0628 F98 \u064a\u064f\u0639\u062f \u0645\u062e\u0627\u0644\u0641\u0629."
+      }
+    }
+  },
+  {
+    "question_id": "F98_Q08",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U begrijpt de bijzondere regeling op F98 niet volledig. Is het toegestaan uw snelheid aanzienlijk te verminderen totdat u de aanwijzing begrijpt?",
+        "choices": [
+          {
+            "text": "Ja, een voorzichtige snelheidsvermindering is gepast wanneer u onzeker bent over een rijstrookregeling",
+            "is_correct": true
+          },
+          {
+            "text": "Neen, plotseling aanzienlijk vertragen in een rijstrook is gevaarlijker dan gewoon doorrijden",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Voorzichtigheid bij onduidelijkheid is een correct en veilig rijprincipe. Snelheid verminderen om een bord te kunnen lezen en begrijpen is altijd beter dan zonder begrip doorrijden. Let wel op het achterliggende verkeer bij het afremmen."
+      },
+      "EN": {
+        "question": "You do not fully understand the special regulation on F98. Is it permitted to reduce your speed considerably until you understand the instruction?",
+        "choices": [
+          {
+            "text": "Yes, a cautious speed reduction is appropriate when you are uncertain about a lane regulation",
+            "is_correct": true
+          },
+          {
+            "text": "No, suddenly slowing down significantly in a lane is more dangerous than simply continuing to drive",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Caution when uncertain is a correct and safe driving principle. Reducing speed to read and understand a sign is always better than continuing without understanding. Be mindful of traffic behind you when braking."
+      },
+      "FR": {
+        "question": "Vous ne comprenez pas pleinement la r\u00e9glementation sp\u00e9ciale sur F98. Est-il permis de r\u00e9duire consid\u00e9rablement votre vitesse jusqu'\u00e0 ce que vous compreniez l'instruction?",
+        "choices": [
+          {
+            "text": "Oui, une r\u00e9duction prudente de la vitesse est appropri\u00e9e quand vous \u00eates incertain d'une r\u00e9glementation de voie",
+            "is_correct": true
+          },
+          {
+            "text": "Non, freiner brusquement dans une voie est plus dangereux que de continuer \u00e0 rouler normalement",
+            "is_correct": false
+          }
+        ],
+        "explanation": "La prudence en cas d'incertitude est un principe de conduite correct et s\u00fbr. R\u00e9duire la vitesse pour lire et comprendre un panneau est toujours pr\u00e9f\u00e9rable \u00e0 continuer sans comprendre."
+      },
+      "AR": {
+        "question": "\u0644\u0627 \u062a\u0641\u0647\u0645 \u062a\u0645\u0627\u0645\u064b\u0627 \u0627\u0644\u062a\u0646\u0638\u064a\u0645 \u0627\u0644\u062e\u0627\u0635 \u0639\u0644\u0649 F98. \u0647\u0644 \u064a\u062c\u0648\u0632 \u062a\u062e\u0641\u064a\u0636 \u0633\u0631\u0639\u062a\u0643 \u0628\u0634\u0643\u0644 \u0643\u0628\u064a\u0631 \u062d\u062a\u0649 \u062a\u0641\u0647\u0645 \u0627\u0644\u062a\u0639\u0644\u064a\u0645\u0627\u062a\u061f",
+        "choices": [
+          {
+            "text": "\u0646\u0639\u0645\u060c \u062a\u062e\u0641\u064a\u0636 \u0627\u0644\u0633\u0631\u0639\u0629 \u0628\u062d\u0630\u0631 \u0645\u0646\u0627\u0633\u0628 \u0639\u0646\u062f \u0639\u062f\u0645 \u0627\u0644\u062a\u0623\u0643\u062f \u0645\u0646 \u062a\u0646\u0638\u064a\u0645 \u0627\u0644\u0645\u0633\u0627\u0631",
+            "is_correct": true
+          },
+          {
+            "text": "\u0644\u0627\u060c \u0627\u0644\u062a\u0628\u0627\u0637\u0624 \u0627\u0644\u0645\u0641\u0627\u062c\u0626 \u0623\u062e\u0637\u0631 \u0645\u0646 \u0645\u0648\u0627\u0635\u0644\u0629 \u0627\u0644\u0633\u064a\u0631",
+            "is_correct": false
+          }
+        ],
+        "explanation": "\u0627\u0644\u062a\u062d\u0644\u064a \u0639\u0646\u062f \u0639\u062f\u0645 \u0627\u0644\u062a\u0623\u0643\u062f \u0645\u0628\u062f\u0623 \u0642\u064a\u0627\u062f\u0629 \u0635\u062d\u064a\u062d. \u062a\u062e\u0641\u064a\u0636 \u0627\u0644\u0633\u0631\u0639\u0629 \u0644\u0642\u0631\u0627\u0621\u0629 \u0627\u0644\u0644\u0627\u0641\u062a\u0629 \u0623\u0641\u0636\u0644 \u0645\u0646 \u0627\u0644\u0645\u062a\u0627\u0628\u0639\u0629 \u0628\u062f\u0648\u0646 \u0641\u0647\u0645."
+      }
+    }
+  }
+]

@@ -4,9 +4,12 @@ import com.readyroad.readyroadbackend.domain.entity.*;
 import com.readyroad.readyroadbackend.domain.entity.SignPracticeSession.SessionStatus;
 import com.readyroad.readyroadbackend.domain.enums.SignCategory;
 import com.readyroad.readyroadbackend.domain.enums.SignDifficulty;
+import com.readyroad.readyroadbackend.domain.enums.SignQuestionType;
 import com.readyroad.readyroadbackend.domain.repository.*;
 import com.readyroad.readyroadbackend.dto.RoadSignSummaryDto;
 import com.readyroad.readyroadbackend.dto.sign.*;
+import com.readyroad.readyroadbackend.util.RouteCodeNormalizer;
+import com.readyroad.readyroadbackend.util.SignQuestionTextSanitizer;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -16,6 +19,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.time.LocalDateTime;
 import java.util.*;
+import java.util.Locale;
 import java.util.stream.Collectors;
 
 /**
@@ -47,6 +51,7 @@ public class SignQuizService {
         private final UserWeakAreaRepository weakAreaRepo;
         private final UserErrorPatternRepository errorPatternRepo;
         private final SignExamResultRepository signExamResultRepo;
+        private final CanonicalSignCatalogService canonicalSignCatalogService;
         // Bridge: sign quiz answers → main dashboard category progress
         private final CategoryRepository categoryRepo;
         private final UserCategoryProgressRepository categoryProgressRepo;
@@ -61,6 +66,7 @@ public class SignQuizService {
         public List<RoadSignSummaryDto> getActiveSigns() {
                 return roadSignRepo.findAllByIsActiveTrueOrderBySignCodeAsc()
                                 .stream()
+                                .filter(canonicalSignCatalogService::isPubliclyAllowed)
                                 .map(RoadSignSummaryDto::from)
                                 .toList();
         }
@@ -82,22 +88,18 @@ public class SignQuizService {
         @Transactional
         public SignPracticeSessionDto startPracticeSession(Long userId, String signCode) {
 
-                RoadSign sign = roadSignRepo.findBySignCode(signCode.toUpperCase())
-                                .orElseThrow(() -> new ResponseStatusException(
-                                                HttpStatus.NOT_FOUND, "Sign not found: " + signCode));
-
-                if (!Boolean.TRUE.equals(sign.getIsActive())) {
-                        throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Sign not active: " + signCode);
-                }
+                RoadSign sign = findActiveSignOrThrow(signCode);
 
                 // Idempotent: return existing IN_PROGRESS session if present
                 Optional<SignPracticeSession> existing = sessionRepo.findByUserIdAndSignIdAndStatus(userId,
                                 sign.getId(), SessionStatus.IN_PROGRESS);
                 if (existing.isPresent()) {
                         SignPracticeSession s = existing.get();
-                        List<SignQuizQuestionDto> questions = buildQuestionDtos(s.getTotalQuestions(), sign.getId());
-                        log.info("Returning existing IN_PROGRESS session {} for user {} / sign {}",
-                                        s.getId(), userId, signCode);
+                        List<Long> answeredQuestionIds = answerRepo.findQuestionIdsBySessionId(s.getId());
+                        List<SignQuizQuestionDto> questions = buildRemainingQuestionDtos(sign.getId(),
+                                        answeredQuestionIds);
+                        log.info("Returning existing IN_PROGRESS session {} for user {} / sign {} ({} answered, {} remaining)",
+                                        s.getId(), userId, signCode, answeredQuestionIds.size(), questions.size());
                         return SignPracticeSessionDto.from(s, questions);
                 }
 
@@ -264,6 +266,7 @@ public class SignQuizService {
                 double accuracy = answeredCount == 0 ? 0.0
                                 : (session.getCorrectCount() * 100.0 / answeredCount);
                 int totalAttempts = (int) answeredCount;
+                SignQuestionType questionType = question.getQuestionType();
 
                 // ── Build and return response ─────────────────────────────────────────
                 return new SignPracticeAnswerResponse(
@@ -271,15 +274,21 @@ public class SignQuizService {
                                 isCorrect,
 
                                 selected.getId(),
-                                selected.getTextNl(), selected.getTextEn(),
-                                selected.getTextFr(), selected.getTextAr(),
+                                SignQuestionTextSanitizer.sanitizeChoice(questionType, selected.getTextNl()),
+                                SignQuestionTextSanitizer.sanitizeChoice(questionType, selected.getTextEn()),
+                                SignQuestionTextSanitizer.sanitizeChoice(questionType, selected.getTextFr()),
+                                SignQuestionTextSanitizer.sanitizeChoice(questionType, selected.getTextAr()),
 
                                 correct.getId(),
-                                correct.getTextNl(), correct.getTextEn(),
-                                correct.getTextFr(), correct.getTextAr(),
+                                SignQuestionTextSanitizer.sanitizeChoice(questionType, correct.getTextNl()),
+                                SignQuestionTextSanitizer.sanitizeChoice(questionType, correct.getTextEn()),
+                                SignQuestionTextSanitizer.sanitizeChoice(questionType, correct.getTextFr()),
+                                SignQuestionTextSanitizer.sanitizeChoice(questionType, correct.getTextAr()),
 
-                                question.getExplanationNl(), question.getExplanationEn(),
-                                question.getExplanationFr(), question.getExplanationAr(),
+                                SignQuestionTextSanitizer.sanitizeExplanation(questionType, question.getExplanationNl()),
+                                SignQuestionTextSanitizer.sanitizeExplanation(questionType, question.getExplanationEn()),
+                                SignQuestionTextSanitizer.sanitizeExplanation(questionType, question.getExplanationFr()),
+                                SignQuestionTextSanitizer.sanitizeExplanation(questionType, question.getExplanationAr()),
 
                                 (int) answeredCount,
                                 session.getTotalQuestions(),
@@ -316,38 +325,15 @@ public class SignQuizService {
         /**
          * Returns the ordered questions for a sign exam (no DB session created).
          *
-         * <p>
-         * <b>Exam-2 lock rule:</b> If the requested {@code examNumber} is 2 the user
-         * must have at least one passed Exam-1 result for this sign; otherwise a
-         * {@code 423 LOCKED} response is thrown so the frontend can show a meaningful
-         * "Complete Exam 1 first" message.
-         * </p>
-         *
          * @param signCode   road sign code
-         * @param examNumber 1 or 2
-         * @param userId     authenticated user ID (used for Exam-2 lock check only)
+         * @param examNumber exam number (currently only 1 is supported)
          */
         @Transactional(readOnly = true)
-        public SignExamQuestionsDto getExamQuestions(String signCode, int examNumber, Long userId) {
+        public SignExamQuestionsDto getExamQuestions(String signCode, int examNumber) {
 
-                RoadSign sign = roadSignRepo.findBySignCode(signCode.toUpperCase())
-                                .orElseThrow(() -> new ResponseStatusException(
-                                                HttpStatus.NOT_FOUND, "Sign not found: " + signCode));
+                RoadSign sign = findActiveSignOrThrow(signCode);
 
-                // ── Exam-2 lock ───────────────────────────────────────────────────────
-                if (examNumber == 2) {
-                        boolean passedExam1 = signExamResultRepo
-                                        .existsByUserIdAndSignCodeAndExamNumberAndPassedTrue(
-                                                        userId, sign.getSignCode(), 1);
-                        if (!passedExam1) {
-                                throw new ResponseStatusException(
-                                                HttpStatus.LOCKED,
-                                                "Exam 2 is locked. Complete and pass Exam 1 for sign " + signCode
-                                                                + " first.");
-                        }
-                }
-
-                SignExam exam = examRepo.findBySignIdAndExamNumber(sign.getId(), examNumber)
+                SignExam exam = examRepo.findBySignIdAndExamNumberAndIsActiveTrue(sign.getId(), examNumber)
                                 .orElseThrow(() -> new ResponseStatusException(
                                                 HttpStatus.NOT_FOUND,
                                                 "Exam " + examNumber + " not found for sign: " + signCode));
@@ -374,25 +360,28 @@ public class SignQuizService {
          * </p>
          *
          * @param signCode   road sign code
-         * @param examNumber 1 or 2
-         * @param answers    list of (questionId, choiceId) pairs
+         * @param examNumber exam number
+         * @param answers    list of (questionId, choiceId) pairs; may be empty
          * @param userId     authenticated user ID (for V11 tracking)
          */
         @Transactional
         public SignExamResultDto submitExam(String signCode, int examNumber,
                         List<SignExamAnswerItem> answers, Long userId) {
 
-                RoadSign sign = roadSignRepo.findBySignCode(signCode.toUpperCase())
-                                .orElseThrow(() -> new ResponseStatusException(
-                                                HttpStatus.NOT_FOUND, "Sign not found: " + signCode));
+                RoadSign sign = findActiveSignOrThrow(signCode);
 
-                SignExam exam = examRepo.findBySignIdAndExamNumber(sign.getId(), examNumber)
+                SignExam exam = examRepo.findBySignIdAndExamNumberAndIsActiveTrue(sign.getId(), examNumber)
                                 .orElseThrow(() -> new ResponseStatusException(
                                                 HttpStatus.NOT_FOUND,
                                                 "Exam " + examNumber + " not found for sign: " + signCode));
 
                 List<SignExamQuestion> examQuestions = exam.getExamQuestions();
                 int linkedCount = examQuestions.size();
+
+                if (answers.isEmpty()) {
+                        log.info("Exam {}/{} submitted by user {} with no answers; all questions will be marked unanswered",
+                                        signCode, examNumber, userId);
+                }
 
                 // Build a map questionId → submittedChoiceId from the request
                 Map<Long, Long> submittedMap = answers.stream()
@@ -411,6 +400,7 @@ public class SignQuizService {
                         SignQuestion q = eq.getQuestion();
                         Long qId = q.getId();
                         Long submitted = submittedMap.get(qId);
+                        SignQuestionType questionType = q.getQuestionType();
 
                         // Find correct choice
                         SignChoice correctChoice = q.getChoices().stream()
@@ -430,12 +420,14 @@ public class SignQuizService {
                                                 null, // isCorrect
                                                 null, // selectedChoiceId
                                                 correctChoice != null ? correctChoice.getId() : null,
-                                                correctChoice != null ? correctChoice.getTextNl() : null,
-                                                correctChoice != null ? correctChoice.getTextEn() : null,
-                                                correctChoice != null ? correctChoice.getTextFr() : null,
-                                                correctChoice != null ? correctChoice.getTextAr() : null,
-                                                q.getExplanationNl(), q.getExplanationEn(),
-                                                q.getExplanationFr(), q.getExplanationAr()));
+                                                correctChoice != null ? SignQuestionTextSanitizer.sanitizeChoice(questionType, correctChoice.getTextNl()) : null,
+                                                correctChoice != null ? SignQuestionTextSanitizer.sanitizeChoice(questionType, correctChoice.getTextEn()) : null,
+                                                correctChoice != null ? SignQuestionTextSanitizer.sanitizeChoice(questionType, correctChoice.getTextFr()) : null,
+                                                correctChoice != null ? SignQuestionTextSanitizer.sanitizeChoice(questionType, correctChoice.getTextAr()) : null,
+                                                SignQuestionTextSanitizer.sanitizeExplanation(questionType, q.getExplanationNl()),
+                                                SignQuestionTextSanitizer.sanitizeExplanation(questionType, q.getExplanationEn()),
+                                                SignQuestionTextSanitizer.sanitizeExplanation(questionType, q.getExplanationFr()),
+                                                SignQuestionTextSanitizer.sanitizeExplanation(questionType, q.getExplanationAr())));
                                 continue;
                         }
 
@@ -463,12 +455,14 @@ public class SignQuizService {
                                         isCorrect,
                                         submitted,
                                         correctChoice != null ? correctChoice.getId() : null,
-                                        correctChoice != null ? correctChoice.getTextNl() : null,
-                                        correctChoice != null ? correctChoice.getTextEn() : null,
-                                        correctChoice != null ? correctChoice.getTextFr() : null,
-                                        correctChoice != null ? correctChoice.getTextAr() : null,
-                                        q.getExplanationNl(), q.getExplanationEn(),
-                                        q.getExplanationFr(), q.getExplanationAr()));
+                                        correctChoice != null ? SignQuestionTextSanitizer.sanitizeChoice(questionType, correctChoice.getTextNl()) : null,
+                                        correctChoice != null ? SignQuestionTextSanitizer.sanitizeChoice(questionType, correctChoice.getTextEn()) : null,
+                                        correctChoice != null ? SignQuestionTextSanitizer.sanitizeChoice(questionType, correctChoice.getTextFr()) : null,
+                                        correctChoice != null ? SignQuestionTextSanitizer.sanitizeChoice(questionType, correctChoice.getTextAr()) : null,
+                                        SignQuestionTextSanitizer.sanitizeExplanation(questionType, q.getExplanationNl()),
+                                        SignQuestionTextSanitizer.sanitizeExplanation(questionType, q.getExplanationEn()),
+                                        SignQuestionTextSanitizer.sanitizeExplanation(questionType, q.getExplanationFr()),
+                                        SignQuestionTextSanitizer.sanitizeExplanation(questionType, q.getExplanationAr())));
                 }
 
                 // ── Passing threshold ─────────────────────────────────────────────────
@@ -502,13 +496,12 @@ public class SignQuizService {
                         }
                 }
 
-                // ── Save exam result (for exam-2 unlock tracking) ────────────────────
+                // ── Save exam result ──────────────────────────────────────────────────
                 try {
                         SignExamResult result = new SignExamResult();
                         result.setUserId(userId);
                         result.setSignId(sign.getId());
                         result.setSignCode(sign.getSignCode());
-                        result.setExamNumber(examNumber);
                         result.setTotalQuestions(linkedCount);
                         result.setAnsweredCount(answeredCount);
                         result.setCorrectCount(correctCount);
@@ -517,8 +510,8 @@ public class SignQuizService {
                         result.setPassed(passed);
                         result.setCompletedAt(LocalDateTime.now());
                         signExamResultRepo.save(result);
-                        log.info("Saved SignExamResult id={} user={} sign={} exam={} passed={}",
-                                        result.getId(), userId, sign.getSignCode(), examNumber, passed);
+                        log.info("Saved SignExamResult id={} user={} sign={} passed={}",
+                                        result.getId(), userId, sign.getSignCode(), passed);
                 } catch (Exception e) {
                         // Non-fatal — log and continue so the user still gets their result
                         log.error("Failed to save SignExamResult for user={} sign={} exam={}: {}",
@@ -546,32 +539,31 @@ public class SignQuizService {
         // ── 7. User progress for a single sign ──────────────────────────────────
 
         /**
-         * Returns the progress snapshot for a single sign (practice + exam 1 + exam 2).
+         * Returns the progress snapshot for a single sign (practice + exam).
          * Used by the sign hub page.
          */
         @Transactional(readOnly = true)
         public SignUserProgressDto getUserSignProgress(String signCode, Long userId) {
-                RoadSign sign = roadSignRepo.findBySignCode(signCode.toUpperCase())
-                                .orElseThrow(() -> new ResponseStatusException(
-                                                HttpStatus.NOT_FOUND, "Sign not found: " + signCode));
+                RoadSign sign = findActiveSignOrThrow(signCode);
                 return buildProgressDto(sign, userId);
         }
 
         /**
-         * Returns the progress snapshot for EVERY active sign (practice + exam 1 + exam
-         * 2).
+         * Returns the progress snapshot for EVERY active sign (practice + exam).
          * Used by the signs list page to show progress badges without N+1 round-trips.
          */
         @Transactional(readOnly = true)
         public List<SignUserProgressDto> getAllUserProgress(Long userId) {
                 return roadSignRepo.findAllByIsActiveTrueOrderBySignCodeAsc()
                                 .stream()
+                                .filter(canonicalSignCatalogService::isPubliclyAllowed)
                                 .map(sign -> buildProgressDto(sign, userId))
                                 .toList();
         }
 
         private SignUserProgressDto buildProgressDto(RoadSign sign, Long userId) {
                 String code = sign.getSignCode();
+                String routeCode = canonicalSignCatalogService.routeCodeFor(sign);
                 Long signId = sign.getId();
 
                 // Practice
@@ -582,27 +574,18 @@ public class SignQuizService {
                                 ? sessionRepo.findBestScorePctByUserIdAndSignId(userId, signId)
                                 : null;
 
-                // Exam 1
-                boolean exam1Attempted = signExamResultRepo.existsByUserIdAndSignCodeAndExamNumber(userId, code, 1);
-                boolean exam1Passed = signExamResultRepo.existsByUserIdAndSignCodeAndExamNumberAndPassedTrue(userId,
-                                code, 1);
-                Double exam1Best = exam1Attempted
-                                ? signExamResultRepo.findBestScorePctByUserIdAndSignCodeAndExamNumber(userId, code, 1)
+                // Exam
+                boolean examAttempted = signExamResultRepo.existsByUserIdAndSignCode(userId, code);
+                boolean examPassed = signExamResultRepo.existsByUserIdAndSignCodeAndPassedTrue(userId, code);
+                Double examBest = examAttempted
+                                ? signExamResultRepo.findBestScorePctByUserIdAndSignCode(userId, code)
                                 : null;
-                int exam1Attempts = (int) signExamResultRepo.countByUserIdAndSignCodeAndExamNumber(userId, code, 1);
-
-                // Exam 2 (unlocked only after passing exam 1)
-                boolean exam2Attempted = signExamResultRepo.existsByUserIdAndSignCodeAndExamNumber(userId, code, 2);
-                boolean exam2Passed = signExamResultRepo.existsByUserIdAndSignCodeAndExamNumberAndPassedTrue(userId,
-                                code, 2);
-                Double exam2Best = exam2Attempted
-                                ? signExamResultRepo.findBestScorePctByUserIdAndSignCodeAndExamNumber(userId, code, 2)
-                                : null;
-                int exam2Attempts = (int) signExamResultRepo.countByUserIdAndSignCodeAndExamNumber(userId, code, 2);
+                int examAttempts = (int) signExamResultRepo.countByUserIdAndSignCode(userId, code);
 
                 return new SignUserProgressDto(
                                 signId,
                                 code,
+                                routeCode,
                                 sign.getCategory(),
                                 sign.getImagePath(),
                                 sign.getNameNl(),
@@ -612,15 +595,10 @@ public class SignQuizService {
                                 practiceStarted,
                                 practiceCompleted,
                                 practiceBestScore,
-                                exam1Attempted,
-                                exam1Passed,
-                                exam1Best,
-                                exam1Attempts,
-                                exam1Passed, // exam2Unlocked == exam1Passed
-                                exam2Attempted,
-                                exam2Passed,
-                                exam2Best,
-                                exam2Attempts);
+                                examAttempted,
+                                examPassed,
+                                examBest,
+                                examAttempts);
         }
 
         // ── Private helpers ──────────────────────────────────────────────────────
@@ -644,12 +622,53 @@ public class SignQuizService {
          * Reloads question DTOs for an existing session (used when returning an
          * idempotent session response).
          */
-        private List<SignQuizQuestionDto> buildQuestionDtos(int totalQuestions, Long signId) {
+        private List<SignQuizQuestionDto> buildRemainingQuestionDtos(Long signId, Collection<Long> answeredQuestionIds) {
+                Set<Long> answeredIds = answeredQuestionIds == null
+                                ? Collections.emptySet()
+                                : new HashSet<>(answeredQuestionIds);
                 List<SignQuestion> qs = questionRepo.findAllBySignIdAndIsActiveTrue(signId);
                 return qs.stream()
-                                .limit(totalQuestions)
+                                .filter(question -> !answeredIds.contains(question.getId()))
                                 .map(SignQuizQuestionDto::from)
                                 .toList();
+        }
+
+        private RoadSign findActiveSignOrThrow(String identifier) {
+                return findSignByRouteOrCode(identifier)
+                                .filter(sign -> Boolean.TRUE.equals(sign.getIsActive()))
+                                .orElseThrow(() -> new ResponseStatusException(
+                                                HttpStatus.NOT_FOUND, "Sign not found: " + identifier));
+        }
+
+        private Optional<RoadSign> findSignByRouteOrCode(String identifier) {
+                String routeKey = normalizeRouteKey(identifier);
+                if (!routeKey.isBlank()) {
+                        Optional<RoadSign> byRoute = roadSignRepo.findByNormalizedSignCode(routeKey);
+                        if (byRoute.isPresent()) {
+                                return byRoute;
+                        }
+                }
+
+                String raw = identifier == null ? "" : identifier.trim();
+                if (raw.isBlank()) {
+                        return Optional.empty();
+                }
+
+                Optional<RoadSign> byCode = roadSignRepo.findFirstBySignCodeOrderByIdAsc(raw);
+                if (byCode.isPresent()) {
+                        return byCode;
+                }
+
+                String upper = raw.toUpperCase(Locale.ROOT);
+                if (!upper.equals(raw)) {
+                        return roadSignRepo.findFirstBySignCodeOrderByIdAsc(upper);
+                }
+
+                return Optional.empty();
+        }
+
+        private static String normalizeRouteKey(String value) {
+                return RouteCodeNormalizer.normalize(value);
         }
 
         /**
@@ -684,6 +703,7 @@ public class SignQuizService {
                         case CYCLIST -> "M";
                         case DELINEATION -> "M";
                         case ZONE -> "Z";
+                        case ROAD_MANAGEMENT -> "F";
                 };
         }
 
@@ -730,11 +750,11 @@ public class SignQuizService {
         @Transactional(readOnly = true)
         public List<SignQuizQuestionDto> getRandomSignPracticeQuestions() {
                 List<SignQuestion> easy = new ArrayList<>(
-                                questionRepo.findAllByIsActiveTrueAndDifficulty(SignDifficulty.EASY));
+                                questionRepo.findAllActiveForActiveSignsByDifficulty(SignDifficulty.EASY));
                 List<SignQuestion> medium = new ArrayList<>(
-                                questionRepo.findAllByIsActiveTrueAndDifficulty(SignDifficulty.MEDIUM));
+                                questionRepo.findAllActiveForActiveSignsByDifficulty(SignDifficulty.MEDIUM));
                 List<SignQuestion> hard = new ArrayList<>(
-                                questionRepo.findAllByIsActiveTrueAndDifficulty(SignDifficulty.HARD));
+                                questionRepo.findAllActiveForActiveSignsByDifficulty(SignDifficulty.HARD));
 
                 Collections.shuffle(easy);
                 Collections.shuffle(medium);

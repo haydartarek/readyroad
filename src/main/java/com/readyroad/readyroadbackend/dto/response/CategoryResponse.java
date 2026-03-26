@@ -11,7 +11,8 @@ public record CategoryResponse(
         String descriptionEn,
         String descriptionNl,
         String descriptionFr,
-        Integer displayOrder
+        Integer displayOrder,
+        Long signCount
 ) {
 }
 

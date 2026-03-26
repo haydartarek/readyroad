@@ -3,6 +3,7 @@ package com.readyroad.readyroadbackend.integration.phase6;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.readyroad.readyroadbackend.domain.entity.*;
+import com.readyroad.readyroadbackend.domain.enums.SignCategory;
 import com.readyroad.readyroadbackend.domain.repository.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
@@ -71,19 +72,19 @@ public class Phase6TimeExpiryConsistencyBDDTest {
     private CategoryRepository categoryRepository;
 
     @Autowired
-    private TrafficSignRepository trafficSignRepository;
+    private RoadSignRepository roadSignRepository;
 
     private MockMvc mockMvc;
     private Long testUserId;
     private Category testCategory;
-    private TrafficSign testSign;
+    private RoadSign testSign;
 
     @BeforeEach
     void setUp() {
         mockMvc = MockMvcBuilders
-            .webAppContextSetup(context)
-            .apply(springSecurity())
-            .build();
+                .webAppContextSetup(context)
+                .apply(springSecurity())
+                .build();
 
         testUserId = 500L;
 
@@ -98,15 +99,16 @@ public class Phase6TimeExpiryConsistencyBDDTest {
         testCategory = categoryRepository.save(testCategory);
 
         // Create traffic sign
-        testSign = new TrafficSign();
+        testSign = new RoadSign();
         testSign.setSignCode("EXP01");
+        testSign.setNormalizedSignCode("EXP01");
         testSign.setNameEn("Expiry Test Sign");
         testSign.setNameAr("علامة اختبار الانتهاء");
         testSign.setNameNl("Verval testteken");
         testSign.setNameFr("Signe de test d'expiration");
-        testSign.setCategory(testCategory);
+        testSign.setCategory(SignCategory.DANGER);
         testSign.setIsActive(true);
-        testSign = trafficSignRepository.save(testSign);
+        testSign = roadSignRepository.save(testSign);
 
         // Create 51 compliant questions
         for (int i = 1; i <= 51; i++) {
@@ -118,7 +120,7 @@ public class Phase6TimeExpiryConsistencyBDDTest {
             question.setDifficultyLevel(QuizQuestion.DifficultyLevel.MEDIUM);
             question.setQuestionType(QuizQuestion.QuestionType.MULTIPLE_CHOICE);
             question.setCategory(testCategory);
-            question.setTrafficSign(testSign);
+            question.setRoadSign(testSign);
             question.setStatus(QuizQuestion.QuestionStatus.PUBLISHED);
             question.setPublishedAt(LocalDateTime.now().minusDays(1));
             question.setIsActive(true);
@@ -176,7 +178,8 @@ public class Phase6TimeExpiryConsistencyBDDTest {
                 """;
 
         // Then: the response status should be 409/410
-        MvcResult result = mockMvc.perform(post("/api/exams/simulations/" + examId + "/questions/" + questionId + "/answer")
+        MvcResult result = mockMvc
+                .perform(post("/api/exams/simulations/" + examId + "/questions/" + questionId + "/answer")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(requestBody))
                 .andExpect(status().is4xxClientError()) // 409 or 410
@@ -249,8 +252,8 @@ public class Phase6TimeExpiryConsistencyBDDTest {
 
         // Then: the API must reject the request
         mockMvc.perform(post("/api/exams/simulations/" + examId + "/answers")
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content(answerRequest))
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(answerRequest))
                 .andExpect(status().is4xxClientError());
 
         // And: no internal service or DTO assumptions are required

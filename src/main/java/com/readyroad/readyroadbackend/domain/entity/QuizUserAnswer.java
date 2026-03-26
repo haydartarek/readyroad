@@ -51,9 +51,6 @@ public class QuizUserAnswer {
     @Column(name = "answered_at", nullable = false, updatable = false)
     private LocalDateTime answeredAt;
 
-    @Column(name = "is_test_data", nullable = false)
-    private Boolean isTestData = false;
-
     @PrePersist
     protected void onAnswer() {
         if (answeredAt == null) {

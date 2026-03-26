@@ -3,6 +3,7 @@ package com.readyroad.readyroadbackend.integration.phase6;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.readyroad.readyroadbackend.domain.entity.*;
+import com.readyroad.readyroadbackend.domain.enums.SignCategory;
 import com.readyroad.readyroadbackend.domain.model.UserQuestionHistory;
 import com.readyroad.readyroadbackend.domain.repository.*;
 import org.junit.jupiter.api.BeforeEach;
@@ -37,7 +38,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * ✅ JSON assertions
  *
  * Scenarios:
- * - Practice submissions update overall and category progress consistently via API
+ * - Practice submissions update overall and category progress consistently via
+ * API
  * - Progress verification does not rely on progress DTOs
  */
 @SpringBootTest
@@ -57,7 +59,7 @@ public class Phase6DataIntegrityOverTimeBDDTest {
     private CategoryRepository categoryRepository;
 
     @Autowired
-    private TrafficSignRepository trafficSignRepository;
+    private RoadSignRepository roadSignRepository;
 
     @Autowired
     private QuizQuestionRepository quizQuestionRepository;
@@ -74,9 +76,9 @@ public class Phase6DataIntegrityOverTimeBDDTest {
     @BeforeEach
     void setUp() {
         mockMvc = MockMvcBuilders
-            .webAppContextSetup(context)
-            .apply(springSecurity())
-            .build();
+                .webAppContextSetup(context)
+                .apply(springSecurity())
+                .build();
 
         testUserId = 600L;
 
@@ -91,15 +93,16 @@ public class Phase6DataIntegrityOverTimeBDDTest {
         testCategory = categoryRepository.save(testCategory);
 
         // Create traffic sign
-        TrafficSign testSign = new TrafficSign();
+        RoadSign testSign = new RoadSign();
         testSign.setSignCode("INT01");
+        testSign.setNormalizedSignCode("INT01");
         testSign.setNameEn("Integrity Test Sign");
         testSign.setNameAr("علامة اختبار السلامة");
         testSign.setNameNl("Integriteit testteken");
         testSign.setNameFr("Signe de test d'intégrité");
-        testSign.setCategory(testCategory);
+        testSign.setCategory(SignCategory.DANGER);
         testSign.setIsActive(true);
-        testSign = trafficSignRepository.save(testSign);
+        testSign = roadSignRepository.save(testSign);
 
         // Create 15 compliant questions
         for (int i = 1; i <= 15; i++) {
@@ -111,12 +114,13 @@ public class Phase6DataIntegrityOverTimeBDDTest {
             question.setDifficultyLevel(QuizQuestion.DifficultyLevel.MEDIUM);
             question.setQuestionType(QuizQuestion.QuestionType.MULTIPLE_CHOICE);
             question.setCategory(testCategory);
-            question.setTrafficSign(testSign);
+            question.setRoadSign(testSign);
             question.setStatus(QuizQuestion.QuestionStatus.PUBLISHED);
             question.setPublishedAt(LocalDateTime.now().minusDays(1));
             question.setIsActive(true);
 
-            // ✅ Add options BEFORE saving to satisfy Belgian validation (2-3 options required)
+            // ✅ Add options BEFORE saving to satisfy Belgian validation (2-3 options
+            // required)
             QuizAnswerOption correctOption = new QuizAnswerOption();
             correctOption.setQuestion(question);
             correctOption.setOptionTextEn("Correct Option");

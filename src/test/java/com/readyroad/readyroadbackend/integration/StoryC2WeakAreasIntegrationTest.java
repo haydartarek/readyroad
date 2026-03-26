@@ -72,7 +72,7 @@ public class StoryC2WeakAreasIntegrationTest {
         createProgress(testUserId, zonesCategory.getId(), 10, 9, 90.0);        // 90%
 
         // When: I request weak area recommendations
-        List<WeakAreaRecommendationResponse> recommendations = analyticsService.getWeakAreaRecommendations(testUserId);
+        List<WeakAreaRecommendationResponse> recommendations = analyticsService.getWeakAreaRecommendations(testUserId).getWeakAreas();
 
         // Then: Response should contain exactly 3 items
         assertThat(recommendations).hasSize(3);
@@ -103,7 +103,7 @@ public class StoryC2WeakAreasIntegrationTest {
         createProgress(testUserId, priorityCategory.getId(), 20, 14, 70.0);    // 70%
 
         // When: I request weak area recommendations
-        List<WeakAreaRecommendationResponse> recommendations = analyticsService.getWeakAreaRecommendations(testUserId);
+        List<WeakAreaRecommendationResponse> recommendations = analyticsService.getWeakAreaRecommendations(testUserId).getWeakAreas();
 
         // Then: First item currentAccuracy should be less than or equal to second item
         assertThat(recommendations).isNotEmpty();
@@ -129,7 +129,7 @@ public class StoryC2WeakAreasIntegrationTest {
         createProgress(testUserId, priorityCategory.getId(), 20, 14, 70.0);
 
         // When: I request weak area recommendations
-        List<WeakAreaRecommendationResponse> recommendations = analyticsService.getWeakAreaRecommendations(testUserId);
+        List<WeakAreaRecommendationResponse> recommendations = analyticsService.getWeakAreaRecommendations(testUserId).getWeakAreas();
 
         // Then: Every item targetAccuracy should be 80.0
         assertThat(recommendations).isNotEmpty();
@@ -149,7 +149,7 @@ public class StoryC2WeakAreasIntegrationTest {
         createProgress(testUserId, priorityCategory.getId(), 20, 16, 80.0);    // 80%
 
         // When: I request weak area recommendations
-        List<WeakAreaRecommendationResponse> recommendations = analyticsService.getWeakAreaRecommendations(testUserId);
+        List<WeakAreaRecommendationResponse> recommendations = analyticsService.getWeakAreaRecommendations(testUserId).getWeakAreas();
 
         // Then: The weakest category recommendedDifficulty should be "EASY"
         assertThat(recommendations).isNotEmpty();
@@ -174,7 +174,7 @@ public class StoryC2WeakAreasIntegrationTest {
         createProgress(user999, parkingCategory.getId(), 20, 19, 95.0);
 
         // When: I request recommendations for user 888
-        List<WeakAreaRecommendationResponse> recommendations = analyticsService.getWeakAreaRecommendations(user888);
+        List<WeakAreaRecommendationResponse> recommendations = analyticsService.getWeakAreaRecommendations(user888).getWeakAreas();
 
         // Then: Recommendations must reflect only user 888 progress
         assertThat(recommendations).isNotEmpty();
@@ -195,7 +195,7 @@ public class StoryC2WeakAreasIntegrationTest {
         Long newUserId = 999L;
 
         // When: I request recommendations
-        List<WeakAreaRecommendationResponse> recommendations = analyticsService.getWeakAreaRecommendations(newUserId);
+        List<WeakAreaRecommendationResponse> recommendations = analyticsService.getWeakAreaRecommendations(newUserId).getWeakAreas();
 
         // Then: Response should be empty
         assertThat(recommendations).isEmpty();
@@ -209,7 +209,7 @@ public class StoryC2WeakAreasIntegrationTest {
         createProgress(testUserId, parkingCategory.getId(), 4, 2, 50.0);
 
         // When: I request recommendations
-        List<WeakAreaRecommendationResponse> recommendations = analyticsService.getWeakAreaRecommendations(testUserId);
+        List<WeakAreaRecommendationResponse> recommendations = analyticsService.getWeakAreaRecommendations(testUserId).getWeakAreas();
 
         // Then: Response should be empty (need >= 5 attempts for measurable accuracy)
         assertThat(recommendations).isEmpty();
@@ -223,7 +223,7 @@ public class StoryC2WeakAreasIntegrationTest {
         createProgress(testUserId, parkingCategory.getId(), 10, 6, 60.0);
 
         // When: I request recommendations
-        List<WeakAreaRecommendationResponse> recommendations = analyticsService.getWeakAreaRecommendations(testUserId);
+        List<WeakAreaRecommendationResponse> recommendations = analyticsService.getWeakAreaRecommendations(testUserId).getWeakAreas();
 
         // Then: Response should contain 2 items (not 3, because only 2 measurable)
         assertThat(recommendations).hasSize(2);

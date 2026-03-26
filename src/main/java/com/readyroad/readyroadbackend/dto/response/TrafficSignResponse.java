@@ -4,6 +4,7 @@ public record TrafficSignResponse(
                 Long id,
                 String signCode,
                 String categoryCode,
+                String routeCode,
                 String nameAr,
                 String nameEn,
                 String nameNl,

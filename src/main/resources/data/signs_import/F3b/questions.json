@@ -1,83 +1,46 @@
-[
+﻿[
   {
     "question_id": "F3b_Q01",
     "type": "WHAT_DOES_IT_MEAN",
     "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE: Replace wrong answers with actual sign names from the same category.",
     "i18n": {
       "NL": {
-        "question": "Wat betekent dit verkeersbord?",
+        "question": "Wat betekent bord F3b 'Einde van een bebouwde kom'?",
         "choices": [
-          {
-            "text": "Einde van een bebouwde kom",
-            "is_correct": true
-          },
-          {
-            "text": "Rijden verboden in beide richtingen",
-            "is_correct": false
-          },
-          {
-            "text": "Gevaarsbord voor wegwerkzaamheden",
-            "is_correct": false
-          }
+          { "text": "U verlaat de bebouwde kom; de stedelijke verkeersregels gelden niet meer en de maximumsnelheid wordt 90 km/u op gewone wegen", "is_correct": true },
+          { "text": "U rijdt een nieuwe bebouwde kom in met dezelfde verkeersregels", "is_correct": false },
+          { "text": "U moet stoppen en voorrang verlenen aan verkeer van rechts", "is_correct": false }
         ],
-        "explanation": "Dit bord geeft aan dat je de bebouwde kom verlaat. Vanaf hier gelden de verkeersregels voor buiten de bebouwde kom, zoals een maximumsnelheid van 70 of 90 km/u, afhankelijk van de weg en andere aanwijzingen."
+        "explanation": "F3b markeert het einde van een bebouwde kom. Voorbij dit bord gelden de stedelijke verkeersregels niet meer en geldt op gewone wegen 90 km/u tenzij anders aangegeven."
       },
       "EN": {
-        "question": "What does this traffic sign mean?",
+        "question": "What does sign F3b 'End of built-up area' mean?",
         "choices": [
-          {
-            "text": "End of built-up area",
-            "is_correct": true
-          },
-          {
-            "text": "Driving prohibited in both directions",
-            "is_correct": false
-          },
-          {
-            "text": "Danger sign for roadworks",
-            "is_correct": false
-          }
+          { "text": "You are leaving the built-up area; urban traffic rules no longer apply and the speed limit becomes 90 km/h on ordinary roads", "is_correct": true },
+          { "text": "You are entering a new built-up area with the same traffic rules", "is_correct": false },
+          { "text": "You must stop and give way to traffic from the right", "is_correct": false }
         ],
-        "explanation": "This sign indicates that you are leaving the built-up area (residential zone). From this point, rules for outside built-up areas apply, with maximum speeds typically of 70 or 90 km/h, depending on road conditions and other signs."
+        "explanation": "F3b marks the end of a built-up area. Beyond this sign urban traffic rules no longer apply and the limit on ordinary roads is 90 km/h unless otherwise indicated."
       },
       "FR": {
-        "question": "Que signifie ce panneau de signalisation ?",
+        "question": "Que signifie le panneau F3b 'Fin d agglomeration' ?",
         "choices": [
-          {
-            "text": "Fin d'une agglomération",
-            "is_correct": true
-          },
-          {
-            "text": "Circulation interdite dans les deux sens",
-            "is_correct": false
-          },
-          {
-            "text": "Panneau de danger pour travaux",
-            "is_correct": false
-          }
+          { "text": "Vous quittez l agglomeration; les regles urbaines ne s appliquent plus et la vitesse passe a 90 km/h sur les routes ordinaires", "is_correct": true },
+          { "text": "Vous entrez dans une nouvelle agglomeration avec les memes regles", "is_correct": false },
+          { "text": "Vous devez vous arreter et ceder le passage au trafic venant de droite", "is_correct": false }
         ],
-        "explanation": "Ce panneau indique que vous quittez l'agglomération (zone résidentielle). À partir de ce point, les règles hors agglomération s'appliquent, avec des vitesses maximales généralement de 70 ou 90 km/h, selon les conditions et la signalisation."
+        "explanation": "F3b marque la fin d une agglomeration. Au-dela de ce panneau les regles urbaines ne s appliquent plus et la vitesse sur les routes ordinaires est de 90 km/h sauf indication contraire."
       },
       "AR": {
-        "question": "ماذا تعني لافتة المرور هذه؟",
+        "question": "Ù…Ø§ Ù…Ø¹Ù†Ù‰ Ø§Ù„Ù„Ø§ÙØªØ© F3b 'Ø¹Ù„Ø§Ù…Ø© Ø§Ù†ØªÙ‡Ø§Ø¡ Ø§Ù„Ù…Ø¯ÙŠÙ†Ø©'ØŸ",
         "choices": [
-          {
-            "text": "علامة انتهاء المدينة",
-            "is_correct": true
-          },
-          {
-            "text": "القيادة محظورة في كلا الاتجاهين",
-            "is_correct": false
-          },
-          {
-            "text": "لافتة خطر لأعمال الطريق",
-            "is_correct": false
-          }
+          { "text": "Ø£Ù†Øª Ù…ØºØ§Ø¯Ø± Ø§Ù„Ù…Ù†Ø·Ù‚Ø© Ø§Ù„Ù…Ø¨Ù†ÙŠØ©Ø› Ù„Ù… ØªØ¹Ø¯ Ø§Ù„Ù‚ÙˆØ§Ø¹Ø¯ Ø§Ù„Ø­Ø¶Ø±ÙŠØ© Ø³Ø§Ø±ÙŠØ© ÙˆÙŠØµØ¨Ø­ Ø§Ù„Ø­Ø¯ Ø§Ù„Ø£Ù‚ØµÙ‰ 90 ÙƒÙ…/Ø³ Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±Ù‚ Ø§Ù„Ø¹Ø§Ø¯ÙŠØ©", "is_correct": true },
+          { "text": "Ø£Ù†Øª Ø¯Ø§Ø®Ù„ Ù…Ù†Ø·Ù‚Ø© Ù…Ø¨Ù†ÙŠØ© Ø¬Ø¯ÙŠØ¯Ø© Ø¨Ù†ÙØ³ Ø§Ù„Ù‚ÙˆØ§Ø¹Ø¯", "is_correct": false },
+          { "text": "ÙŠØ¬Ø¨ Ø£Ù† ØªØªÙˆÙ‚Ù ÙˆØªØªÙ†Ø§Ø²Ù„ Ø¹Ù† Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© Ù„Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ù‚Ø§Ø¯Ù…Ø© Ù…Ù† Ø§Ù„ÙŠÙ…ÙŠÙ†", "is_correct": false }
         ],
-        "explanation": "تشير هذه العلامة إلى مغادرتك المنطقة المبنية (المنطقة السكنية). من هذه النقطة، يتم تطبيق قواعد المناطق المبنية الخارجية، بسرعات قصوى تبلغ عادةً 70 أو 90 كم/ساعة، اعتمادًا على ظروف الطريق واللافتات الأخرى."
+        "explanation": "ØªØ­Ø¯Ø¯ F3b Ù†Ù‡Ø§ÙŠØ© Ø§Ù„Ù…Ù†Ø·Ù‚Ø© Ø§Ù„Ù…Ø¨Ù†ÙŠØ©. Ø¨Ø¹Ø¯ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ© Ù„Ø§ ØªØ³Ø±ÙŠ Ø§Ù„Ù‚ÙˆØ§Ø¹Ø¯ Ø§Ù„Ø­Ø¶Ø±ÙŠØ© ÙˆÙŠØµØ¨Ø­ Ø§Ù„Ø­Ø¯ 90 ÙƒÙ…/Ø³ Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±Ù‚ Ø§Ù„Ø¹Ø§Ø¯ÙŠØ© Ù…Ø§ Ù„Ù… ÙŠÙØ´Ø± Ø¥Ù„Ù‰ Ø®Ù„Ø§Ù Ø°Ù„Ùƒ."
       }
     }
   },
@@ -87,161 +50,87 @@
     "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE: Ready to use — category identification question.",
     "i18n": {
       "NL": {
-        "question": "Tot welke categorie verkeerstekens behoort dit bord?",
+        "question": "Tot welke categorie behoort bord F3b?",
         "choices": [
-          {
-            "text": "Aanwijzingsborden (F-reeks)",
-            "is_correct": true
-          },
-          {
-            "text": "Gebodsborden (D-reeks)",
-            "is_correct": false
-          },
-          {
-            "text": "Parkeerregelementsborden (E-reeks)",
-            "is_correct": false
-          }
+          { "text": "Informatief bord (F-reeks): geeft informatie over wegsituaties en geldende regels", "is_correct": true },
+          { "text": "Verbodsbord (C-reeks): verbiedt een bepaalde actie of rijrichting", "is_correct": false },
+          { "text": "Waarschuwingsbord (A-reeks): waarschuwt voor gevaar op de weg", "is_correct": false }
         ],
-        "explanation": "Dit bord behoort tot de categorie 'Aanwijzingsborden (F-reeks)'. Elk type bord heeft een specifieke vorm en kleurschema."
+        "explanation": "Borden van de F-reeks zijn informatieve borden. Ze geven aan welke regels of infrastructuur van toepassing zijn, zoals grenzen van bebouwde kommen."
       },
       "EN": {
-        "question": "To which category of traffic signs does this sign belong?",
+        "question": "Which category does sign F3b belong to?",
         "choices": [
-          {
-            "text": "Information signs (F-series)",
-            "is_correct": true
-          },
-          {
-            "text": "Mandatory signs (D-series)",
-            "is_correct": false
-          },
-          {
-            "text": "Parking regulation signs (E-series)",
-            "is_correct": false
-          }
+          { "text": "Information sign (F-series): provides information about road situations and applicable rules", "is_correct": true },
+          { "text": "Prohibition sign (C-series): prohibits a specific action or direction of travel", "is_correct": false },
+          { "text": "Warning sign (A-series): warns of a hazard on the road", "is_correct": false }
         ],
-        "explanation": "This sign belongs to the 'Information signs (F-series)' category. Each type of sign has a specific shape and color scheme."
+        "explanation": "F-series signs are information signs. They indicate which rules or infrastructure apply, such as the boundaries of built-up areas."
       },
       "FR": {
-        "question": "À quelle catégorie de panneaux de signalisation ce panneau appartient-il ?",
+        "question": "A quelle categorie appartient le panneau F3b ?",
         "choices": [
-          {
-            "text": "Panneaux d'indication (série F)",
-            "is_correct": true
-          },
-          {
-            "text": "Panneaux d'obligation (série D)",
-            "is_correct": false
-          },
-          {
-            "text": "Panneaux de stationnement (série E)",
-            "is_correct": false
-          }
+          { "text": "Panneau d information (serie F): fournit des informations sur les situations routieres et les regles applicables", "is_correct": true },
+          { "text": "Panneau d interdiction (serie C): interdit une action ou une direction specifique", "is_correct": false },
+          { "text": "Panneau d avertissement (serie A): avertit d un danger sur la route", "is_correct": false }
         ],
-        "explanation": "Ce panneau appartient à la catégorie 'Panneaux d'indication (série F)'. Chaque type de panneau a une forme et un schéma de couleurs spécifiques."
+        "explanation": "Les panneaux de la serie F sont des panneaux d information. Ils indiquent quelles regles ou infrastructures s appliquent comme les limites d agglomerations."
       },
       "AR": {
-        "question": "إلى أي فئة من لافتات المرور تنتمي هذه اللافتة؟",
+        "question": "Ø¥Ù„Ù‰ Ø£ÙŠ ÙØ¦Ø© ØªÙ†ØªÙ…ÙŠ Ø§Ù„Ù„Ø§ÙØªØ© F3bØŸ",
         "choices": [
-          {
-            "text": "لافتات المعلومات (سلسلة F)",
-            "is_correct": true
-          },
-          {
-            "text": "لافتات الإلزام (سلسلة D)",
-            "is_correct": false
-          },
-          {
-            "text": "لافتات تنظيم الوقوف (سلسلة E)",
-            "is_correct": false
-          }
+          { "text": "Ù„Ø§ÙØªØ© Ø¥Ø¹Ù„Ø§Ù…ÙŠØ© (Ø§Ù„Ø³Ù„Ø³Ù„Ø© F): ØªÙ‚Ø¯Ù… Ù…Ø¹Ù„ÙˆÙ…Ø§Øª Ø­ÙˆÙ„ Ø£ÙˆØ¶Ø§Ø¹ Ø§Ù„Ø·Ø±ÙŠÙ‚ ÙˆØ§Ù„Ù‚ÙˆØ§Ø¹Ø¯ Ø§Ù„Ù…Ø·Ø¨Ù‚Ø©", "is_correct": true },
+          { "text": "Ù„Ø§ÙØªØ© Ø­Ø¸Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© C): ØªØ­Ø¸Ø± Ø¥Ø¬Ø±Ø§Ø¡Ù‹ Ø£Ùˆ Ø§ØªØ¬Ø§Ù‡Ø§Ù‹ Ù…Ø¹ÙŠÙ†Ø§Ù‹", "is_correct": false },
+          { "text": "Ù„Ø§ÙØªØ© ØªØ­Ø°ÙŠØ± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© A): ØªØ­Ø°Ø± Ù…Ù† Ø®Ø·Ø± Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±ÙŠÙ‚", "is_correct": false }
         ],
-        "explanation": "هذه اللافتة تنتمي إلى فئة 'لافتات المعلومات (سلسلة F)'. كل نوع من اللافتات له شكل ونظام ألوان محدد."
+        "explanation": "Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø³Ù„Ø³Ù„Ø© F Ù‡ÙŠ Ù„Ø§ÙØªØ§Øª Ø¥Ø¹Ù„Ø§Ù…ÙŠØ©. ØªØ´ÙŠØ± Ø¥Ù„Ù‰ Ø§Ù„Ù‚ÙˆØ§Ø¹Ø¯ Ø£Ùˆ Ø§Ù„Ø¨Ù†ÙŠØ© Ø§Ù„ØªØ­ØªÙŠØ© Ø§Ù„Ù…Ø·Ø¨Ù‚Ø© Ù…Ø«Ù„ Ø­Ø¯ÙˆØ¯ Ø§Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ù…Ø¨Ù†ÙŠØ©."
       }
     }
   },
   {
     "question_id": "F3b_Q03",
-    "type": "WHAT_MUST_YOU_DO",
-    "difficulty": "MEDIUM",
+    "type": "HAZARD_IDENTIFICATION",
+    "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE (MEDIUM): Replace with sign-specific question for production.",
     "i18n": {
       "NL": {
-        "question": "Welke informatie of aanwijzing geeft dit bord aan weggebruikers?",
+        "question": "Welk gevaar moet u in acht nemen vlak na bord F3b?",
         "choices": [
-          {
-            "text": "Het bord geeft nuttige informatie of aanwijzingen over de wegsituatie of faciliteiten",
-            "is_correct": true
-          },
-          {
-            "text": "Het bord verbiedt een specifieke rijbeweging",
-            "is_correct": false
-          },
-          {
-            "text": "Het bord verplicht tot stoppen voor controle",
-            "is_correct": false
-          }
+          { "text": "Fietsers en voetgangers kunnen de rijbaan nog kruisen; verhoog uw snelheid geleidelijk en blijf alert", "is_correct": true },
+          { "text": "Er is geen gevaar; buiten de bebouwde kom rijdt iedereen automatisch veiliger", "is_correct": false },
+          { "text": "U moet direct stoppen om uw spiegels en banden te controleren", "is_correct": false }
         ],
-        "explanation": "Aanwijzingsborden (F-reeks) geven weggebruikers nuttige informatie over de wegsituatie, faciliteiten of speciale rijstroken."
+        "explanation": "Ook voorbij het einde van een bebouwde kom kunnen er kwetsbare weggebruikers zijn. Verhoog uw snelheid geleidelijk en blijf alert op fietsers en voetgangers."
       },
       "EN": {
-        "question": "What information or guidance does this sign provide to road users?",
+        "question": "What hazard must you consider just after sign F3b?",
         "choices": [
-          {
-            "text": "The sign provides useful information or guidance about the road situation or facilities",
-            "is_correct": true
-          },
-          {
-            "text": "The sign prohibits a specific driving maneuver",
-            "is_correct": false
-          },
-          {
-            "text": "The sign requires stopping for inspection",
-            "is_correct": false
-          }
+          { "text": "Cyclists and pedestrians may still cross the road; increase your speed gradually and remain alert", "is_correct": true },
+          { "text": "There is no hazard; outside built-up areas everyone automatically drives more safely", "is_correct": false },
+          { "text": "You must stop immediately to check your mirrors and tyres", "is_correct": false }
         ],
-        "explanation": "Information signs (F-series) provide road users with useful info about road situation, facilities, or special lanes."
+        "explanation": "Even just beyond the end of a built-up area there may be vulnerable road users. Increase speed gradually and stay alert for cyclists and pedestrians."
       },
       "FR": {
-        "question": "Quelles informations ce panneau fournit-il aux usagers de la route ?",
+        "question": "Quel danger devez-vous prendre en compte juste apres le panneau F3b ?",
         "choices": [
-          {
-            "text": "Le panneau fournit des informations utiles sur la situation routière ou les équipements",
-            "is_correct": true
-          },
-          {
-            "text": "Le panneau interdit une manœuvre de conduite spécifique",
-            "is_correct": false
-          },
-          {
-            "text": "Le panneau oblige à s'arrêter pour contrôle",
-            "is_correct": false
-          }
+          { "text": "Des cyclistes et pietons peuvent encore traverser; augmentez votre vitesse progressivement et restez vigilant", "is_correct": true },
+          { "text": "Il n y a pas de danger; hors agglomeration tout le monde roule automatiquement plus en securite", "is_correct": false },
+          { "text": "Vous devez vous arreter immediatement pour controler vos retroviseurs et pneus", "is_correct": false }
         ],
-        "explanation": "Les panneaux d'indication (série F) informent les usagers sur la situation routière, les équipements ou voies spéciales."
+        "explanation": "Meme juste apres la fin d une agglomeration il peut y avoir des usagers vulnerables. Augmentez la vitesse progressivement et restez attentif aux cyclistes et pietons."
       },
       "AR": {
-        "question": "ما المعلومات أو التوجيهات التي توفرها هذه اللافتة لمستخدمي الطريق؟",
+        "question": "Ù…Ø§ Ø§Ù„Ø®Ø·Ø± Ø§Ù„Ø°ÙŠ ÙŠØ¬Ø¨ Ù…Ø±Ø§Ø¹Ø§ØªÙ‡ Ù…Ø¨Ø§Ø´Ø±Ø© Ø¨Ø¹Ø¯ Ù„Ø§ÙØªØ© F3bØŸ",
         "choices": [
-          {
-            "text": "توفر اللافتة معلومات مفيدة أو توجيهات حول حالة الطريق أو المرافق",
-            "is_correct": true
-          },
-          {
-            "text": "اللافتة تحظر مناورة قيادة محددة",
-            "is_correct": false
-          },
-          {
-            "text": "اللافتة تفرض التوقف للفحص",
-            "is_correct": false
-          }
+          { "text": "Ù‚Ø¯ ÙŠØ¹Ø¨Ø± Ø§Ù„Ø¯Ø±Ø§Ø¬ÙˆÙ† ÙˆØ§Ù„Ù…Ø´Ø§Ø© Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø¨Ø¹Ø¯ Ø§Ù„Ù„Ø§ÙØªØ©Ø› Ø§Ø±ÙØ¹ Ø³Ø±Ø¹ØªÙƒ ØªØ¯Ø±ÙŠØ¬ÙŠØ§Ù‹ ÙˆØ§Ø¨Ù‚ ÙŠÙ‚Ø¸Ø§Ù‹", "is_correct": true },
+          { "text": "Ù„Ø§ ÙŠÙˆØ¬Ø¯ Ø®Ø·Ø±Ø› Ø®Ø§Ø±Ø¬ Ø§Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ù…Ø¨Ù†ÙŠØ© ÙŠÙ‚ÙˆØ¯ Ø§Ù„Ø¬Ù…ÙŠØ¹ Ø¨Ø£Ù…Ø§Ù† ØªÙ„Ù‚Ø§Ø¦ÙŠØ§Ù‹", "is_correct": false },
+          { "text": "ÙŠØ¬Ø¨ Ø£Ù† ØªØªÙˆÙ‚Ù ÙÙˆØ±Ø§Ù‹ Ù„Ù„ØªØ­Ù‚Ù‚ Ù…Ù† Ø§Ù„Ù…Ø±Ø§ÙŠØ§ ÙˆØ§Ù„Ø¥Ø·Ø§Ø±Ø§Øª", "is_correct": false }
         ],
-        "explanation": "لافتات المعلومات (سلسلة F) توفر لمستخدمي الطريق معلومات مفيدة حول حالة الطريق والمرافق."
+        "explanation": "Ø­ØªÙ‰ Ø¨Ø¹Ø¯ Ù†Ù‡Ø§ÙŠØ© Ø§Ù„Ù…Ù†Ø·Ù‚Ø© Ø§Ù„Ù…Ø¨Ù†ÙŠØ© Ù‚Ø¯ ÙŠÙƒÙˆÙ† Ù‡Ù†Ø§Ùƒ Ù…Ø³ØªØ®Ø¯Ù…Ùˆ Ø·Ø±ÙŠÙ‚ Ø¶Ø¹ÙØ§Ø¡. Ø§Ø±ÙØ¹ Ø³Ø±Ø¹ØªÙƒ ØªØ¯Ø±ÙŠØ¬ÙŠØ§Ù‹ ÙˆØ§Ø¨Ù‚ ÙŠÙ‚Ø¸Ø§Ù‹ Ù„Ù„Ø¯Ø±Ø§Ø¬ÙŠÙ† ÙˆØ§Ù„Ù…Ø´Ø§Ø©."
       }
     }
   },
@@ -251,145 +140,214 @@
     "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE (MEDIUM): Replace with sign-specific question for production.",
     "i18n": {
       "NL": {
-        "question": "Wat is het kleurenschema van aanwijzingsborden in België?",
+        "question": "U passeert bord F3b op een gewone weg en er staat geen ander snelheidsbord. Wat is de maximumsnelheid?",
         "choices": [
-          {
-            "text": "Blauw of groen achtergrond met witte symbolen en tekst",
-            "is_correct": true
-          },
-          {
-            "text": "Rode achtergrond met witte tekst",
-            "is_correct": false
-          },
-          {
-            "text": "Gele achtergrond met zwarte tekst",
-            "is_correct": false
-          }
+          { "text": "90 km/u, want dat is de wettelijke standaardsnelheid op gewone wegen buiten de bebouwde kom in Belgie", "is_correct": true },
+          { "text": "50 km/u, want de bebouwde-kom-limiet blijft van kracht tot een expliciet snelheidsbord", "is_correct": false },
+          { "text": "120 km/u, want buiten de bebouwde kom geldt de snelwegsnelheid", "is_correct": false }
         ],
-        "explanation": "Aanwijzingsborden hebben doorgaans een blauwe achtergrond (stedelijk) of groene achtergrond (autosnelweg)."
+        "explanation": "Op gewone wegen buiten de bebouwde kom geldt in Belgie een standaard maximumsnelheid van 90 km/u, tenzij een bord anders aangeeft."
       },
       "EN": {
-        "question": "What is the color scheme of information signs in Belgium?",
+        "question": "You pass sign F3b on an ordinary road and there is no other speed sign. What is the maximum speed?",
         "choices": [
-          {
-            "text": "Blue or green background with white symbols and text",
-            "is_correct": true
-          },
-          {
-            "text": "Red background with white text",
-            "is_correct": false
-          },
-          {
-            "text": "Yellow background with black text",
-            "is_correct": false
-          }
+          { "text": "90 km/h, because that is the legal default speed on ordinary roads outside built-up areas in Belgium", "is_correct": true },
+          { "text": "50 km/h, because the built-up area limit stays in force until an explicit speed sign", "is_correct": false },
+          { "text": "120 km/h, because outside built-up areas the motorway speed applies", "is_correct": false }
         ],
-        "explanation": "Information signs typically have a blue (urban) or green (motorway) background."
+        "explanation": "On ordinary roads outside built-up areas in Belgium the default maximum speed is 90 km/h unless a sign indicates otherwise."
       },
       "FR": {
-        "question": "Quel est le schéma de couleurs des panneaux d'indication en Belgique ?",
+        "question": "Vous depassez le panneau F3b sur une route ordinaire et il n y a pas d autre panneau de vitesse. Quelle est la vitesse maximale ?",
         "choices": [
-          {
-            "text": "Fond bleu ou vert avec des symboles et du texte blancs",
-            "is_correct": true
-          },
-          {
-            "text": "Fond rouge avec texte blanc",
-            "is_correct": false
-          },
-          {
-            "text": "Fond jaune avec texte noir",
-            "is_correct": false
-          }
+          { "text": "90 km/h, car c est la vitesse legale par defaut sur les routes ordinaires hors agglomeration en Belgique", "is_correct": true },
+          { "text": "50 km/h, car la limite d agglomeration reste en vigueur jusqu a un panneau de vitesse explicite", "is_correct": false },
+          { "text": "120 km/h, car hors agglomeration la vitesse autoroute s applique", "is_correct": false }
         ],
-        "explanation": "Les panneaux d'indication ont généralement un fond bleu (urbain) ou vert (autoroute)."
+        "explanation": "Sur les routes ordinaires hors agglomeration en Belgique la vitesse maximale par defaut est de 90 km/h sauf indication contraire d un panneau."
       },
       "AR": {
-        "question": "ما هو نظام الألوان للافتات المعلومات في بلجيكا؟",
+        "question": "ØªØ¬Ø§ÙˆØ²Øª Ù„Ø§ÙØªØ© F3b Ø¹Ù„Ù‰ Ø·Ø±ÙŠÙ‚ Ø¹Ø§Ø¯ÙŠ ÙˆÙ„Ø§ ØªÙˆØ¬Ø¯ Ù„Ø§ÙØªØ© Ø³Ø±Ø¹Ø© Ø£Ø®Ø±Ù‰. Ù…Ø§ Ø§Ù„Ø­Ø¯ Ø§Ù„Ø£Ù‚ØµÙ‰ Ù„Ù„Ø³Ø±Ø¹Ø©ØŸ",
         "choices": [
-          {
-            "text": "خلفية زرقاء أو خضراء مع رموز ونص أبيض",
-            "is_correct": true
-          },
-          {
-            "text": "خلفية حمراء مع نص أبيض",
-            "is_correct": false
-          },
-          {
-            "text": "خلفية صفراء مع نص أسود",
-            "is_correct": false
-          }
+          { "text": "90 ÙƒÙ…/Ø³ Ù„Ø£Ù† Ù‡Ø°Ø§ Ù‡Ùˆ Ø§Ù„Ø­Ø¯ Ø§Ù„Ù‚Ø§Ù†ÙˆÙ†ÙŠ Ø§Ù„Ø§ÙØªØ±Ø§Ø¶ÙŠ Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±Ù‚ Ø§Ù„Ø¹Ø§Ø¯ÙŠØ© Ø®Ø§Ø±Ø¬ Ø§Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ù…Ø¨Ù†ÙŠØ© ÙÙŠ Ø¨Ù„Ø¬ÙŠÙƒØ§", "is_correct": true },
+          { "text": "50 ÙƒÙ…/Ø³ Ù„Ø£Ù† Ø­Ø¯ Ø§Ù„Ù…Ù†Ø·Ù‚Ø© Ø§Ù„Ù…Ø¨Ù†ÙŠØ© ÙŠØ¨Ù‚Ù‰ Ø³Ø§Ø±ÙŠØ§Ù‹ Ø­ØªÙ‰ Ø¸Ù‡ÙˆØ± Ù„Ø§ÙØªØ© Ø³Ø±Ø¹Ø© ØµØ±ÙŠØ­Ø©", "is_correct": false },
+          { "text": "120 ÙƒÙ…/Ø³ Ù„Ø£Ù† Ø³Ø±Ø¹Ø© Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø³Ø±ÙŠØ¹ ØªØ·Ø¨Ù‚ Ø®Ø§Ø±Ø¬ Ø§Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ù…Ø¨Ù†ÙŠØ©", "is_correct": false }
         ],
-        "explanation": "لافتات المعلومات عادةً لها خلفية زرقاء (حضري) أو خضراء (طريق سريع)."
+        "explanation": "Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±Ù‚ Ø§Ù„Ø¹Ø§Ø¯ÙŠØ© Ø®Ø§Ø±Ø¬ Ø§Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ù…Ø¨Ù†ÙŠØ© ÙÙŠ Ø¨Ù„Ø¬ÙŠÙƒØ§ Ø§Ù„Ø­Ø¯ Ø§Ù„Ø£Ù‚ØµÙ‰ Ø§Ù„Ø§ÙØªØ±Ø§Ø¶ÙŠ Ù‡Ùˆ 90 ÙƒÙ…/Ø³ Ù…Ø§ Ù„Ù… ØªØ´Ø± Ù„Ø§ÙØªØ© Ø¥Ù„Ù‰ Ø®Ù„Ø§Ù Ø°Ù„Ùƒ."
       }
     }
   },
   {
     "question_id": "F3b_Q05",
-    "type": "IS_IT_ALLOWED",
-    "difficulty": "HARD",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE (HARD): Replace with sign-specific question for production.",
     "i18n": {
       "NL": {
-        "question": "Mag u als weggebruiker aanwijzingsborden negeren?",
+        "question": "Na bord F3b ziet u een fietser op de rijbaan. Hoe haalt u in?",
         "choices": [
-          {
-            "text": "Nee, aanwijzingsborden moeten worden opgevolgd want ze geven wettelijk bindende aanwijzingen",
-            "is_correct": true
-          },
-          {
-            "text": "Ja, aanwijzingsborden zijn vrijblijvend en kunnen naar eigen inzicht worden genegeerd",
-            "is_correct": false
-          }
+          { "text": "Voorzichtig inhalen met minstens 1 meter zijdelingse afstand; ook buiten de bebouwde kom hebben fietsers recht op de rijbaan", "is_correct": true },
+          { "text": "Toeter om de fietser naar het fietspad te sturen; fietsers zijn op dit soort wegen niet welkom", "is_correct": false },
+          { "text": "Direct met maximumsnelheid passeren want u heeft voorrang buiten de bebouwde kom", "is_correct": false }
         ],
-        "explanation": "Aanwijzingsborden geven wettelijk bindende aanwijzingen aan weggebruikers. Ze mogen niet worden genegeerd en dienen te worden nageleefd."
+        "explanation": "Fietsers zijn toegestaan op gewone wegen buiten de bebouwde kom. U haalt in met minstens 1 meter zijdelingse afstand en alleen als het veilig is."
       },
       "EN": {
-        "question": "Are you as a road user allowed to ignore information signs?",
+        "question": "After sign F3b you see a cyclist on the road. How do you overtake?",
         "choices": [
-          {
-            "text": "No, information signs must be followed as they provide legally binding directions",
-            "is_correct": true
-          },
-          {
-            "text": "Yes, information signs are optional and can be ignored at your own discretion",
-            "is_correct": false
-          }
+          { "text": "Overtake carefully with at least 1 metre lateral clearance; cyclists are entitled to use the road outside built-up areas too", "is_correct": true },
+          { "text": "Sound your horn to direct the cyclist to the cycle path; cyclists are not welcome on these roads", "is_correct": false },
+          { "text": "Pass immediately at maximum speed because you have priority outside built-up areas", "is_correct": false }
         ],
-        "explanation": "Information signs provide legally binding guidance to road users. They must not be ignored and should be followed."
+        "explanation": "Cyclists are permitted on ordinary roads outside built-up areas. Overtake with at least 1 metre clearance and only when safe to do so."
       },
       "FR": {
-        "question": "En tant qu'usager de la route, êtes-vous autorisé à ignorer les panneaux d'indication ?",
+        "question": "Apres le panneau F3b vous voyez un cycliste sur la route. Comment le depassez-vous ?",
         "choices": [
-          {
-            "text": "Non, les panneaux d'indication doivent être respectés car ils fournissent des indications juridiquement contraignantes",
-            "is_correct": true
-          },
-          {
-            "text": "Oui, les panneaux d'indication sont facultatifs et peuvent être ignorés à votre discrétion",
-            "is_correct": false
-          }
+          { "text": "Depasser avec prudence et au moins 1 metre de distance laterale; les cyclistes ont le droit d utiliser la route hors agglomeration aussi", "is_correct": true },
+          { "text": "Klaxonner pour diriger le cycliste vers la piste cyclable; les cyclistes ne sont pas bienvenus sur ces routes", "is_correct": false },
+          { "text": "Passer immediatement a vitesse maximale car vous avez la priorite hors agglomeration", "is_correct": false }
         ],
-        "explanation": "Les panneaux d'indication fournissent des directives juridiquement contraignantes aux usagers. Ils ne peuvent pas être ignorés."
+        "explanation": "Les cyclistes sont autorises sur les routes ordinaires hors agglomeration. Depassez avec au moins 1 metre de distance et seulement quand c est possible en toute securite."
       },
       "AR": {
-        "question": "هل يُسمح لك كمستخدم للطريق بتجاهل لافتات المعلومات؟",
+        "question": "Ø¨Ø¹Ø¯ Ù„Ø§ÙØªØ© F3b ØªØ±Ù‰ Ø¯Ø±Ø§Ø¬Ø§Ù‹ Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±ÙŠÙ‚. ÙƒÙŠÙ ØªØªØ¬Ø§ÙˆØ²Ù‡ØŸ",
         "choices": [
-          {
-            "text": "لا، يجب اتباع لافتات المعلومات لأنها توفر توجيهات ملزمة قانونياً",
-            "is_correct": true
-          },
-          {
-            "text": "نعم، لافتات المعلومات اختيارية ويمكن تجاهلها وفق تقديرك الخاص",
-            "is_correct": false
-          }
+          { "text": "ØªØ¬Ø§ÙˆØ²Ù‡ Ø¨Ø­Ø°Ø± Ù…Ø¹ Ù…Ø³Ø§ÙØ© Ø¬Ø§Ù†Ø¨ÙŠØ© Ù„Ø§ ØªÙ‚Ù„ Ø¹Ù† Ù…ØªØ± ÙˆØ§Ø­Ø¯Ø› ÙŠØ­Ù‚ Ù„Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ø³ØªØ®Ø¯Ø§Ù… Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø®Ø§Ø±Ø¬ Ø§Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ù…Ø¨Ù†ÙŠØ© Ø£ÙŠØ¶Ø§Ù‹", "is_correct": true },
+          { "text": "Ø§Ø³ØªØ®Ø¯Ù… Ø§Ù„Ø¨ÙˆÙ‚ Ù„ØªÙˆØ¬ÙŠÙ‡ Ø§Ù„Ø¯Ø±Ø§Ø¬ Ø¥Ù„Ù‰ Ù…Ø³Ø§Ø± Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§ØªØ› Ù„Ø§ Ù…ÙƒØ§Ù† Ù„Ù„Ø¯Ø±Ø§Ø¬ÙŠÙ† Ø¹Ù„Ù‰ Ù‡Ø°Ù‡ Ø§Ù„Ø·Ø±Ù‚", "is_correct": false },
+          { "text": "ØªØ¬Ø§ÙˆØ²Ù‡ ÙÙˆØ±Ø§Ù‹ Ø¨Ø§Ù„Ø³Ø±Ø¹Ø© Ø§Ù„Ù‚ØµÙˆÙ‰ Ù„Ø£Ù† Ù„Ø¯ÙŠÙƒ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© Ø®Ø§Ø±Ø¬ Ø§Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ù…Ø¨Ù†ÙŠØ©", "is_correct": false }
         ],
-        "explanation": "لافتات المعلومات توفر توجيهات ملزمة قانونياً لمستخدمي الطريق. لا يجوز تجاهلها ويجب الالتزام بها."
+        "explanation": "ÙŠÙØ³Ù…Ø­ Ù„Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø¨Ø§Ù„Ø·Ø±Ù‚ Ø§Ù„Ø¹Ø§Ø¯ÙŠØ© Ø®Ø§Ø±Ø¬ Ø§Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ù…Ø¨Ù†ÙŠØ©. ØªØ¬Ø§ÙˆØ²Ù‡Ù… Ø¨Ù…Ø³Ø§ÙØ© Ù„Ø§ ØªÙ‚Ù„ Ø¹Ù† Ù…ØªØ± ÙˆØ§Ø­Ø¯ ÙˆÙÙ‚Ø· Ø¹Ù†Ø¯Ù…Ø§ ÙŠÙƒÙˆÙ† Ø°Ù„Ùƒ Ø¢Ù…Ù†Ø§Ù‹."
+      }
+    }
+  },
+  {
+    "question_id": "F3b_Q06",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U rijdt buiten de bebouwde kom (voorbij bord F3b) bij invallende duisternis. Wat is verplicht qua verlichting?",
+        "choices": [
+          { "text": "Dimlichten of grootlichten inschakelen; verlichting bij duisternis is verplicht op alle wegen in Belgie", "is_correct": true },
+          { "text": "Niets; buiten de bebouwde kom is verlichting niet verplicht door het lage verkeersvolume", "is_correct": false },
+          { "text": "Alleen achterlichten; grootlichten zijn optioneel op buiten-de-kom-wegen", "is_correct": false }
+        ],
+        "explanation": "Bij duisternis of verminderd zicht zijn dimlichten of grootlichten verplicht op alle Belgische wegen, binnen en buiten de bebouwde kom."
+      },
+      "EN": {
+        "question": "You are driving outside the built-up area (past sign F3b) as darkness falls. What lighting is required?",
+        "choices": [
+          { "text": "Switch on dipped or full headlights; lighting in darkness is compulsory on all roads in Belgium", "is_correct": true },
+          { "text": "Nothing; outside built-up areas lighting is not compulsory due to low traffic volume", "is_correct": false },
+          { "text": "Rear lights only; headlights are optional on outside-built-up-area roads", "is_correct": false }
+        ],
+        "explanation": "In darkness or reduced visibility dipped or full headlights are compulsory on all Belgian roads, inside and outside built-up areas."
+      },
+      "FR": {
+        "question": "Vous roulez hors agglomeration (apres le panneau F3b) a l approche de la nuit. Quel eclairage est obligatoire ?",
+        "choices": [
+          { "text": "Allumer les feux de croisement ou les feux de route; l eclairage est obligatoire dans l obscurite sur toutes les routes de Belgique", "is_correct": true },
+          { "text": "Rien; hors agglomeration l eclairage n est pas obligatoire en raison du faible volume de circulation", "is_correct": false },
+          { "text": "Uniquement les feux arriere; les phares sont optionnels sur les routes hors agglomeration", "is_correct": false }
+        ],
+        "explanation": "Dans l obscurite ou par visibilite reduite les feux de croisement ou de route sont obligatoires sur toutes les routes belges en et hors agglomeration."
+      },
+      "AR": {
+        "question": "ØªÙ‚ÙˆØ¯ Ø®Ø§Ø±Ø¬ Ø§Ù„Ù…Ù†Ø·Ù‚Ø© Ø§Ù„Ù…Ø¨Ù†ÙŠØ© (Ø¨Ø¹Ø¯ Ù„Ø§ÙØªØ© F3b) Ù…Ø¹ Ø­Ù„ÙˆÙ„ Ø§Ù„Ø¸Ù„Ø§Ù…. Ù…Ø§ Ø§Ù„Ø¥Ø¶Ø§Ø¡Ø© Ø§Ù„Ù…Ø·Ù„ÙˆØ¨Ø©ØŸ",
+        "choices": [
+          { "text": "ØªØ´ØºÙŠÙ„ Ø§Ù„Ø£Ø¶ÙˆØ§Ø¡ Ø§Ù„Ø®Ø§ÙØªØ© Ø£Ùˆ Ø§Ù„ÙƒØ§Ù…Ù„Ø©Ø› Ø§Ù„Ø¥Ø¶Ø§Ø¡Ø© ÙÙŠ Ø§Ù„Ø¸Ù„Ø§Ù… Ø¥Ù„Ø²Ø§Ù…ÙŠØ© Ø¹Ù„Ù‰ Ø¬Ù…ÙŠØ¹ Ø·Ø±Ù‚ Ø¨Ù„Ø¬ÙŠÙƒØ§", "is_correct": true },
+          { "text": "Ù„Ø§ Ø´ÙŠØ¡Ø› Ø®Ø§Ø±Ø¬ Ø§Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ù…Ø¨Ù†ÙŠØ© Ø§Ù„Ø¥Ø¶Ø§Ø¡Ø© ØºÙŠØ± Ø¥Ù„Ø²Ø§Ù…ÙŠØ© Ø¨Ø³Ø¨Ø¨ Ø§Ù†Ø®ÙØ§Ø¶ Ø­Ø±ÙƒØ© Ø§Ù„Ù…Ø±ÙˆØ±", "is_correct": false },
+          { "text": "Ø§Ù„Ø£Ø¶ÙˆØ§Ø¡ Ø§Ù„Ø®Ù„ÙÙŠØ© ÙÙ‚Ø·Ø› Ø§Ù„Ù…ØµØ§Ø¨ÙŠØ­ Ø§Ù„Ø£Ù…Ø§Ù…ÙŠØ© Ø§Ø®ØªÙŠØ§Ø±ÙŠØ© Ø¹Ù„Ù‰ Ø·Ø±Ù‚ Ø®Ø§Ø±Ø¬ Ø§Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ù…Ø¨Ù†ÙŠØ©", "is_correct": false }
+        ],
+        "explanation": "ÙÙŠ Ø§Ù„Ø¸Ù„Ø§Ù… Ø£Ùˆ Ù‚Ù„Ø© Ø§Ù„Ø±Ø¤ÙŠØ© ØªÙƒÙˆÙ† Ø§Ù„Ø£Ø¶ÙˆØ§Ø¡ Ø§Ù„Ø®Ø§ÙØªØ© Ø£Ùˆ Ø§Ù„ÙƒØ§Ù…Ù„Ø© Ø¥Ù„Ø²Ø§Ù…ÙŠØ© Ø¹Ù„Ù‰ Ø¬Ù…ÙŠØ¹ Ø·Ø±Ù‚ Ø¨Ù„Ø¬ÙŠÙƒØ§ Ø¯Ø§Ø®Ù„ ÙˆØ®Ø§Ø±Ø¬ Ø§Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ù…Ø¨Ù†ÙŠØ©."
+      }
+    }
+  },
+  {
+    "question_id": "F3b_Q07",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U passeert bord F3b op een gewone weg zonder ander snelheidsbord. Is 90 km/u direct toegestaan?",
+        "choices": [
+          { "text": "Ja, 90 km/u is de wettelijke standaardsnelheid op gewone wegen buiten de bebouwde kom in Belgie", "is_correct": true },
+          { "text": "Nee, u moet wachten op een expliciet snelheidsbord alvorens sneller te rijden dan 50 km/u", "is_correct": false }
+        ],
+        "explanation": "Buiten de bebouwde kom geldt op gewone wegen automatisch 90 km/u als maximumsnelheid zonder extra bord."
+      },
+      "EN": {
+        "question": "You pass sign F3b on an ordinary road with no other speed sign. Is 90 km/h immediately allowed?",
+        "choices": [
+          { "text": "Yes, 90 km/h is the legal default speed on ordinary roads outside built-up areas in Belgium", "is_correct": true },
+          { "text": "No, you must wait for an explicit speed sign before driving faster than 50 km/h", "is_correct": false }
+        ],
+        "explanation": "Outside built-up areas on ordinary roads 90 km/h applies automatically as the maximum speed without any additional sign."
+      },
+      "FR": {
+        "question": "Vous depassez le panneau F3b sur une route ordinaire sans autre panneau de vitesse. 90 km/h est-il immediatement autorise ?",
+        "choices": [
+          { "text": "Oui, 90 km/h est la vitesse legale par defaut sur les routes ordinaires hors agglomeration en Belgique", "is_correct": true },
+          { "text": "Non, vous devez attendre un panneau de vitesse explicite avant de rouler a plus de 50 km/h", "is_correct": false }
+        ],
+        "explanation": "Hors agglomeration sur les routes ordinaires 90 km/h s applique automatiquement comme vitesse maximale sans panneau supplementaire."
+      },
+      "AR": {
+        "question": "ØªØ¬Ø§ÙˆØ²Øª Ù„Ø§ÙØªØ© F3b Ø¹Ù„Ù‰ Ø·Ø±ÙŠÙ‚ Ø¹Ø§Ø¯ÙŠ Ø¯ÙˆÙ† Ù„Ø§ÙØªØ© Ø³Ø±Ø¹Ø© Ø£Ø®Ø±Ù‰. Ù‡Ù„ 90 ÙƒÙ…/Ø³ Ù…Ø³Ù…ÙˆØ­ Ø¨Ù‡ ÙÙˆØ±Ø§Ù‹ØŸ",
+        "choices": [
+          { "text": "Ù†Ø¹Ù… 90 ÙƒÙ…/Ø³ Ù‡Ùˆ Ø§Ù„Ø­Ø¯ Ø§Ù„Ù‚Ø§Ù†ÙˆÙ†ÙŠ Ø§Ù„Ø§ÙØªØ±Ø§Ø¶ÙŠ Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±Ù‚ Ø§Ù„Ø¹Ø§Ø¯ÙŠØ© Ø®Ø§Ø±Ø¬ Ø§Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ù…Ø¨Ù†ÙŠØ© ÙÙŠ Ø¨Ù„Ø¬ÙŠÙƒØ§", "is_correct": true },
+          { "text": "Ù„Ø§ ÙŠØ¬Ø¨ Ø§Ù„Ø§Ù†ØªØ¸Ø§Ø± Ø­ØªÙ‰ Ø¸Ù‡ÙˆØ± Ù„Ø§ÙØªØ© Ø³Ø±Ø¹Ø© ØµØ±ÙŠØ­Ø© Ù‚Ø¨Ù„ Ø§Ù„Ù‚ÙŠØ§Ø¯Ø© Ø¨Ø£ÙƒØ«Ø± Ù…Ù† 50 ÙƒÙ…/Ø³", "is_correct": false }
+        ],
+        "explanation": "Ø®Ø§Ø±Ø¬ Ø§Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ù…Ø¨Ù†ÙŠØ© Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±Ù‚ Ø§Ù„Ø¹Ø§Ø¯ÙŠØ© ÙŠØ³Ø±ÙŠ ØªÙ„Ù‚Ø§Ø¦ÙŠØ§Ù‹ 90 ÙƒÙ…/Ø³ ÙƒØ­Ø¯ Ø£Ù‚ØµÙ‰ Ø¯ÙˆÙ† Ø§Ù„Ø­Ø§Ø¬Ø© Ø¥Ù„Ù‰ Ù„Ø§ÙØªØ© Ø¥Ø¶Ø§ÙÙŠØ©."
+      }
+    }
+  },
+  {
+    "question_id": "F3b_Q08",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Buiten de bebouwde kom (voorbij bord F3b): is het toegestaan een mobiele telefoon in de hand te houden tijdens het rijden?",
+        "choices": [
+          { "text": "Nee, het verbod op handheld telefoongebruik geldt op alle wegen in Belgie, ook buiten de bebouwde kom", "is_correct": true },
+          { "text": "Ja, buiten de bebouwde kom gelden minder regels en is het telefoonverbod niet van kracht", "is_correct": false }
+        ],
+        "explanation": "Het verbod op het handheld gebruiken van een mobiele telefoon geldt op alle Belgische wegen, ongeacht of u in of buiten de bebouwde kom rijdt."
+      },
+      "EN": {
+        "question": "Outside the built-up area (past sign F3b): is it allowed to hold a mobile phone while driving?",
+        "choices": [
+          { "text": "No, the handheld phone ban applies on all roads in Belgium, including outside built-up areas", "is_correct": true },
+          { "text": "Yes, outside built-up areas fewer rules apply and the phone ban is not in force", "is_correct": false }
+        ],
+        "explanation": "The ban on using a handheld mobile phone applies on all Belgian roads regardless of whether you are inside or outside a built-up area."
+      },
+      "FR": {
+        "question": "Hors agglomeration (apres le panneau F3b) : est-il permis de tenir un telephone en main en conduisant ?",
+        "choices": [
+          { "text": "Non, l interdiction du telephone tenu en main s applique sur toutes les routes de Belgique y compris hors agglomeration", "is_correct": true },
+          { "text": "Oui, hors agglomeration moins de regles s appliquent et l interdiction du telephone n est pas en vigueur", "is_correct": false }
+        ],
+        "explanation": "L interdiction d utiliser un telephone tenu en main s applique sur toutes les routes belges qu on soit en agglomeration ou hors agglomeration."
+      },
+      "AR": {
+        "question": "Ø®Ø§Ø±Ø¬ Ø§Ù„Ù…Ù†Ø·Ù‚Ø© Ø§Ù„Ù…Ø¨Ù†ÙŠØ© (Ø¨Ø¹Ø¯ Ù„Ø§ÙØªØ© F3b): Ù‡Ù„ ÙŠÙØ³Ù…Ø­ Ø¨Ø§Ù„Ø¥Ù…Ø³Ø§Ùƒ Ø¨Ø§Ù„Ù‡Ø§ØªÙ Ø§Ù„Ù…Ø­Ù…ÙˆÙ„ Ø£Ø«Ù†Ø§Ø¡ Ø§Ù„Ù‚ÙŠØ§Ø¯Ø©ØŸ",
+        "choices": [
+          { "text": "Ù„Ø§ ÙŠØ³Ø±ÙŠ Ø­Ø¸Ø± Ø§Ø³ØªØ®Ø¯Ø§Ù… Ø§Ù„Ù‡Ø§ØªÙ Ø¨Ø§Ù„ÙŠØ¯ Ø¹Ù„Ù‰ Ø¬Ù…ÙŠØ¹ Ø·Ø±Ù‚ Ø¨Ù„Ø¬ÙŠÙƒØ§ Ø¨Ù…Ø§ ÙÙŠÙ‡Ø§ Ø®Ø§Ø±Ø¬ Ø§Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ù…Ø¨Ù†ÙŠØ©", "is_correct": true },
+          { "text": "Ù†Ø¹Ù… Ø®Ø§Ø±Ø¬ Ø§Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ù…Ø¨Ù†ÙŠØ© ØªØ³Ø±ÙŠ Ù‚ÙˆØ§Ø¹Ø¯ Ø£Ù‚Ù„ ÙˆØ­Ø¸Ø± Ø§Ù„Ù‡Ø§ØªÙ ØºÙŠØ± Ù…ÙØ¹Ù‘Ù„", "is_correct": false }
+        ],
+        "explanation": "ÙŠØ³Ø±ÙŠ Ø­Ø¸Ø± Ø§Ø³ØªØ®Ø¯Ø§Ù… Ø§Ù„Ù‡Ø§ØªÙ Ø§Ù„Ù…Ø­Ù…ÙˆÙ„ Ø¨Ø§Ù„ÙŠØ¯ Ø¹Ù„Ù‰ Ø¬Ù…ÙŠØ¹ Ø·Ø±Ù‚ Ø¨Ù„Ø¬ÙŠÙƒØ§ Ø¨ØºØ¶ Ø§Ù„Ù†Ø¸Ø± Ø¹Ù† ÙƒÙˆÙ†Ùƒ Ø¯Ø§Ø®Ù„ Ø£Ùˆ Ø®Ø§Ø±Ø¬ Ø§Ù„Ù…Ù†Ø·Ù‚Ø© Ø§Ù„Ù…Ø¨Ù†ÙŠØ©."
       }
     }
   }

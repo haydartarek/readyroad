@@ -10,7 +10,7 @@ public class TrafficSign extends BaseEntity {
     /**
      * Computed governance flag: true only when all 4 long_description fields are
      * present and non-empty.
-     * Not persisted — derived at read time.
+     * Not persisted â€” derived at read time.
      */
     @Transient
     public boolean isLongDescriptionComplete() {

@@ -39,15 +39,15 @@ import static org.junit.jupiter.api.Assertions.*;
 @DisplayName("Content Swap Proof Test - Grand Contract Validation")
 public class ContentSwapProofTest {
 
-    // Phase 3 Note: SmartQuizService now requires dependencies
-    // This test focuses on mapper behavior (content-agnostic), not service logic
+    // This test focuses on mapper behavior (content-agnostic), not delivery-service
+    // wiring.
     private QuizQuestionMapper quizQuestionMapper;
 
     @BeforeEach
     void setUp() {
         // Initialize mapper (no Spring context needed)
         quizQuestionMapper = new QuizQuestionMapper();
-        // SmartQuizService not needed for mapper tests
+        // Delivery services are not needed for mapper tests
     }
 
     /**
@@ -204,8 +204,8 @@ public class ContentSwapProofTest {
                 - DTOs work as-is
 
                 Step 3: API Testing (1 hour)
-                - Test /api/smart-quiz/generate
-                - Test /api/smart-quiz/submit
+                - Test /api/quiz/random
+                - Test /api/quiz/questions/{questionId}/answer
                 - Verify responses
 
                 Step 4: Frontend (8 hours)

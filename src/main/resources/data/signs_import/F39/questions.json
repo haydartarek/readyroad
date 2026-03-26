@@ -1,0 +1,597 @@
+﻿[
+  {
+    "question_id": "F39_Q01",
+    "type": "WHAT_DOES_IT_MEAN",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat betekent dit verkeersbord?",
+        "choices": [
+          {
+            "text": "Aankondiging van een omleiding: een omleidingsroute zal verderop worden aangegeven",
+            "is_correct": true
+          },
+          {
+            "text": "Voorwegwijzer uitwijking: een alternatieve uitrit of omleidingsroute is iets verderop beschikbaar",
+            "is_correct": false
+          },
+          {
+            "text": "Tijdelijke rijstrookverdeling met afstandsaanduiding: de weg is tijdelijk herverdeeld",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F39 kondigt op voorhand een omleiding aan. De doorgaande weg is op dit punt niet noodzakelijk al afgesloten maar de bestuurder wordt gewaarschuwd dat hij verderop een omleidingsroute zal moeten volgen of aantreffen."
+      },
+      "EN": {
+        "question": "What does this traffic sign mean?",
+        "choices": [
+          {
+            "text": "Advance announcement of a diversion: a diversion route will be indicated further ahead",
+            "is_correct": true
+          },
+          {
+            "text": "Advance diversion sign: an alternative exit or diversion route is available a little further ahead",
+            "is_correct": false
+          },
+          {
+            "text": "Temporary lane division with distance indication: the road has been temporarily redistributed",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F39 announces a diversion in advance. The through road is not necessarily already closed at this point, but the driver is warned that a diversion route will need to be followed or will be encountered further ahead."
+      },
+      "FR": {
+        "question": "Que signifie ce panneau de signalisation?",
+        "choices": [
+          {
+            "text": "Annonce d'une d\u00e9viation: un itin\u00e9raire de d\u00e9viation sera indiqu\u00e9 plus loin",
+            "is_correct": true
+          },
+          {
+            "text": "Pr\u00e9-signalisation de d\u00e9viation: une sortie alternative est disponible un peu plus loin",
+            "is_correct": false
+          },
+          {
+            "text": "R\u00e9partition temporaire des voies avec indication de distance",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F39 annonce pr\u00e9alablement une d\u00e9viation. La route principale n'est pas n\u00e9cessairement d\u00e9j\u00e0 ferm\u00e9e \u00e0 ce point, mais le conducteur est averti qu'un itin\u00e9raire de d\u00e9viation sera \u00e0 suivre plus loin."
+      },
+      "AR": {
+        "question": "\u0645\u0627 \u0645\u0639\u0646\u0649 \u0647\u0630\u0647 \u0627\u0644\u0644\u0627\u0641\u062a\u0629\u061f",
+        "choices": [
+          {
+            "text": "\u0625\u0639\u0644\u0627\u0646 \u0645\u0633\u0628\u0642 \u0639\u0646 \u062a\u062d\u0648\u064a\u0644\u0629: \u0633\u064a\u062a\u0645 \u0627\u0644\u0625\u0634\u0627\u0631\u0629 \u0625\u0644\u0649 \u0645\u0633\u0627\u0631 \u0627\u0644\u062a\u062d\u0648\u064a\u0644\u0629 \u0644\u0627\u062d\u0642\u064b\u0627",
+            "is_correct": true
+          },
+          {
+            "text": "\u0644\u0627\u0641\u062a\u0629 \u0625\u0646\u0630\u0627\u0631 \u0645\u0633\u0628\u0642: \u0645\u062e\u0631\u062c \u0628\u062f\u064a\u0644 \u0645\u062a\u0627\u062d \u0642\u0631\u064a\u0628\u064b\u0627",
+            "is_correct": false
+          },
+          {
+            "text": "\u062a\u0648\u0632\u064a\u0639 \u0645\u0624\u0642\u062a \u0644\u0644\u0645\u0633\u0627\u0631\u0627\u062a \u0645\u0639 \u0630\u0643\u0631 \u0627\u0644\u0645\u0633\u0627\u0641\u0629",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F39 \u062a\u064f\u0639\u0644\u0646 \u0645\u0633\u0628\u0642\u064b\u0627 \u0639\u0646 \u062a\u062d\u0648\u064a\u0644\u0629. \u0627\u0644\u0637\u0631\u064a\u0642 \u0644\u064a\u0633 \u0628\u0627\u0644\u0636\u0631\u0648\u0631\u0629 \u0645\u063a\u0644\u0642\u064b\u0627 \u0628\u0639\u062f\u060c \u0644\u0643\u0646 \u064a\u062c\u0628 \u0627\u0644\u062a\u0623\u0647\u0628 \u0644\u0627\u062a\u0628\u0627\u0639 \u0645\u0633\u0627\u0631 \u0627\u0644\u062a\u062d\u0648\u064a\u0644\u0629."
+      }
+    }
+  },
+  {
+    "question_id": "F39_Q02",
+    "type": "WHICH_SIGN",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Tot welke categorie verkeersborden behoort dit bord?",
+        "choices": [
+          { "text": "Wegbeheersingstekens (F-reeks)", "is_correct": true },
+          { "text": "Gevaarsborden (A-reeks)", "is_correct": false },
+          { "text": "Gebodsborden (D-reeks)", "is_correct": false }
+        ],
+        "explanation": "F39 behoort tot de F-reeks. De omleidingsaankondiging is bindend: de bestuurder moet de aangekondigde omleidingsroute volgen of een wettelijk toegankelijk alternatief gebruiken."
+      },
+      "EN": {
+        "question": "To which category of traffic signs does this sign belong?",
+        "choices": [
+          { "text": "Road management signs (F-series)", "is_correct": true },
+          { "text": "Danger signs (A-series)", "is_correct": false },
+          { "text": "Mandatory signs (D-series)", "is_correct": false }
+        ],
+        "explanation": "F39 belongs to the F-series. The diversion announcement is binding: the driver must follow the announced diversion route or use a legally accessible alternative."
+      },
+      "FR": {
+        "question": "\u00c0 quelle cat\u00e9gorie de panneaux appartient ce panneau?",
+        "choices": [
+          {
+            "text": "Panneaux de gestion de la route (s\u00e9rie F)",
+            "is_correct": true
+          },
+          { "text": "Panneaux de danger (s\u00e9rie A)", "is_correct": false },
+          {
+            "text": "Panneaux d'obligation (s\u00e9rie D)",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F39 appartient \u00e0 la s\u00e9rie F. L'annonce de d\u00e9viation est contraignante."
+      },
+      "AR": {
+        "question": "\u0625\u0644\u0649 \u0623\u064a \u0641\u0626\u0629 \u062a\u0646\u062a\u0645\u064a \u0647\u0630\u0647 \u0627\u0644\u0644\u0627\u0641\u062a\u0629\u061f",
+        "choices": [
+          {
+            "text": "\u0644\u0627\u0641\u062a\u0627\u062a \u0625\u062f\u0627\u0631\u0629 \u0627\u0644\u0637\u0631\u064a\u0642 (\u0627\u0644\u0641\u0626\u0629 F)",
+            "is_correct": true
+          },
+          {
+            "text": "\u0644\u0627\u0641\u062a\u0627\u062a \u0627\u0644\u062e\u0637\u0631 (\u0627\u0644\u0641\u0626\u0629 A)",
+            "is_correct": false
+          },
+          {
+            "text": "\u0644\u0627\u0641\u062a\u0627\u062a \u0627\u0644\u0625\u0644\u0632\u0627\u0645 (\u0627\u0644\u0641\u0626\u0629 D)",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F39 \u062a\u0646\u062a\u0645\u064a \u0625\u0644\u0649 \u0627\u0644\u0641\u0626\u0629 F. \u0625\u0639\u0644\u0627\u0646 \u0627\u0644\u062a\u062d\u0648\u064a\u0644\u0629 \u0645\u0644\u0632\u0645."
+      }
+    }
+  },
+  {
+    "question_id": "F39_Q03",
+    "type": "HAZARD_IDENTIFICATION",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Welke wegsituatie kondigt dit bord aan?",
+        "choices": [
+          {
+            "text": "Een omleiding is verderop op de weg van kracht â€” de weg wordt verderop onderbroken of vereist een omleidingsroute; de weg is op dit punt niet noodzakelijk al afgesloten",
+            "is_correct": true
+          },
+          {
+            "text": "Een alternatieve uitrit is iets verderop beschikbaar â€” de doorgaande weg is niet noodzakelijk afgesloten",
+            "is_correct": false
+          },
+          {
+            "text": "De weg is tijdelijk herverdeeld â€” volg de tijdelijke rijstrookindeling voor de aangegeven afstand",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F39 is een vooraankondiging. Op het punt van het bord is de weg nog niet per se afgesloten; de bestuurder moet zich echter voorbereiden op een omleidingsroute verderop of een wettelijk toegankelijk alternatief zoeken."
+      },
+      "EN": {
+        "question": "What road situation does this sign announce?",
+        "choices": [
+          {
+            "text": "A diversion is in force further ahead â€” the road will be interrupted or requires a diversion route; the road is not necessarily already closed at this point",
+            "is_correct": true
+          },
+          {
+            "text": "An alternative exit is available a little further ahead â€” the through road is not necessarily closed",
+            "is_correct": false
+          },
+          {
+            "text": "The road has been temporarily redistributed â€” follow the temporary lane layout for the indicated distance",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F39 is an advance warning. At the sign location the road is not yet necessarily closed; however the driver must prepare to follow a diversion route further ahead or seek a legally accessible alternative."
+      },
+      "FR": {
+        "question": "Quelle situation routi\u00e8re ce panneau annonce-t-il?",
+        "choices": [
+          {
+            "text": "Une d\u00e9viation est en vigueur plus loin \u2014 la route sera interrompue; la route n\u2019est pas n\u00e9cessairement d\u00e9j\u00e0 ferm\u00e9e \u00e0 ce point",
+            "is_correct": true
+          },
+          {
+            "text": "Une sortie alternative est disponible un peu plus loin \u2014 la route principale n'est pas n\u00e9cessairement ferm\u00e9e",
+            "is_correct": false
+          },
+          {
+            "text": "La route a \u00e9t\u00e9 temporairement r\u00e9organis\u00e9e \u2014 suivez la disposition temporaire des voies",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F39 est un avertissement pr\u00e9alable. \u00c0 l'emplacement du panneau, la route n'est pas encore n\u00e9cessairement ferm\u00e9e; cependant le conducteur doit se pr\u00e9parer \u00e0 suivre un itin\u00e9raire de d\u00e9viation plus loin."
+      },
+      "AR": {
+        "question": "\u0645\u0627 \u0627\u0644\u0648\u0636\u0639 \u0627\u0644\u0630\u064a \u062a\u064f\u0639\u0644\u0646 \u0639\u0646\u0647 \u0647\u0630\u0647 \u0627\u0644\u0644\u0627\u0641\u062a\u0629\u061f",
+        "choices": [
+          {
+            "text": "\u062a\u062d\u0648\u064a\u0644\u0629 \u0633\u062a\u0643\u0648\u0646 \u0633\u0627\u0631\u064a\u0629 \u0623\u0645\u0627\u0645\u0643 \u2014 \u0627\u0644\u0637\u0631\u064a\u0642 \u0644\u064a\u0633 \u0628\u0627\u0644\u0636\u0631\u0648\u0631\u0629 \u0645\u063a\u0644\u0642\u064b\u0627 \u0628\u0639\u062f",
+            "is_correct": true
+          },
+          {
+            "text": "\u0645\u062e\u0631\u062c \u0628\u062f\u064a\u0644 \u0645\u062a\u0627\u062d \u0642\u0631\u064a\u0628\u064b\u0627 \u2014 \u0627\u0644\u0637\u0631\u064a\u0642 \u0627\u0644\u0631\u0626\u064a\u0633\u064a \u0644\u064a\u0633 \u0645\u063a\u0644\u0642\u064b\u0627",
+            "is_correct": false
+          },
+          {
+            "text": "\u0627\u0644\u0637\u0631\u064a\u0642 \u0645\u0639\u0627\u062f \u062a\u0648\u0632\u064a\u0639\u0647 \u0645\u0624\u0642\u062a\u064b\u0627",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F39 \u062a\u062d\u0630\u064a\u0631 \u0645\u0633\u0628\u0642. \u0639\u0646\u062f \u0627\u0644\u0644\u0627\u0641\u062a\u0629 \u0627\u0644\u0637\u0631\u064a\u0642 \u0644\u064a\u0633 \u0645\u063a\u0644\u0642\u064b\u0627 \u0628\u0639\u062f\u061b \u0644\u0643\u0646 \u064a\u062c\u0628 \u0627\u0644\u0627\u0633\u062a\u0639\u062f\u0627\u062f \u0644\u0627\u062a\u0628\u0627\u0639 \u0645\u0633\u0627\u0631 \u0627\u0644\u062a\u062d\u0648\u064a\u0644\u0629."
+      }
+    }
+  },
+  {
+    "question_id": "F39_Q04",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat moet u doen wanneer u F39 ziet?",
+        "choices": [
+          {
+            "text": "Voorbereiden om de aangekondigde omleidingsroute te volgen â€” of een wettelijk toegankelijke alternatieve route zoeken als die beschikbaar is",
+            "is_correct": true
+          },
+          {
+            "text": "Onmiddellijk omkeren â€” de weg voor u is nu al afgesloten",
+            "is_correct": false
+          },
+          {
+            "text": "Verder rijden en wachten op expliciete stopborden voordat u actie onderneemt",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F39 is een advance warning: de bestuurder moet zich mentaal en rijdynamisch voorbereiden op de omleiding. Als er een wettelijk toegankelijke alternatieve route beschikbaar is, mag die worden gebruikt in plaats van de aangekondigde omleidingsroute. Niet de weg op blijven rijden zonder voorbereiding."
+      },
+      "EN": {
+        "question": "What must you do when you see F39?",
+        "choices": [
+          {
+            "text": "Prepare to follow the announced diversion route â€” or seek a legally accessible alternative route if one is available",
+            "is_correct": true
+          },
+          {
+            "text": "Turn around immediately â€” the road ahead is already closed",
+            "is_correct": false
+          },
+          {
+            "text": "Continue driving and wait for explicit stop signs before taking action",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F39 is an advance warning: the driver must prepare mentally and dynamically for the diversion. If a legally accessible alternative route is available, it may be used instead of the announced diversion. Do not continue without preparation."
+      },
+      "FR": {
+        "question": "Que devez-vous faire lorsque vous voyez F39?",
+        "choices": [
+          {
+            "text": "Vous pr\u00e9parer \u00e0 suivre l'itin\u00e9raire de d\u00e9viation annonc\u00e9 \u2014 ou chercher un itin\u00e9raire alternatif l\u00e9galement accessible s'il en existe un",
+            "is_correct": true
+          },
+          {
+            "text": "Faire demi-tour imm\u00e9diatement \u2014 la route devant vous est d\u00e9j\u00e0 ferm\u00e9e",
+            "is_correct": false
+          },
+          {
+            "text": "Continuer \u00e0 rouler et attendre des panneaux d'arr\u00eat explicites avant d'agir",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F39 est un avertissement pr\u00e9alable: le conducteur doit se pr\u00e9parer mentalement \u00e0 la d\u00e9viation. S'il existe un itin\u00e9raire alternatif l\u00e9galement accessible, il peut \u00eatre utilis\u00e9 \u00e0 la place."
+      },
+      "AR": {
+        "question": "\u0645\u0627\u0630\u0627 \u064a\u062c\u0628 \u0623\u0646 \u062a\u0641\u0639\u0644 \u0639\u0646\u062f \u0631\u0624\u064a\u0629 F39\u061f",
+        "choices": [
+          {
+            "text": "\u0627\u0644\u0627\u0633\u062a\u0639\u062f\u0627\u062f \u0644\u0627\u062a\u0628\u0627\u0639 \u0645\u0633\u0627\u0631 \u0627\u0644\u062a\u062d\u0648\u064a\u0644\u0629 \u0623\u0648 \u0627\u0644\u0628\u062d\u062b \u0639\u0646 \u0628\u062f\u064a\u0644 \u0645\u0634\u0631\u0648\u0639",
+            "is_correct": true
+          },
+          {
+            "text": "\u0627\u0644\u0627\u0633\u062a\u062f\u0627\u0631\u0629 \u0641\u0648\u0631\u064b\u0627 \u2014 \u0627\u0644\u0637\u0631\u064a\u0642 \u0645\u063a\u0644\u0648\u0642 \u0628\u0627\u0644\u0641\u0639\u0644",
+            "is_correct": false
+          },
+          {
+            "text": "\u0645\u0648\u0627\u0635\u0644\u0629 \u0627\u0644\u0633\u064a\u0631 \u0648\u0627\u0646\u062a\u0638\u0627\u0631 \u0644\u0627\u0641\u062a\u0627\u062a \u0627\u0644\u0648\u0642\u0641 \u0642\u0628\u0644 \u0627\u0644\u062a\u0635\u0631\u0641",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F39 \u062a\u062d\u0630\u064a\u0631 \u0645\u0633\u0628\u0642. \u064a\u062c\u0628 \u0627\u0644\u062a\u062d\u0636\u064f\u0631 \u0644\u0627\u062a\u0628\u0627\u0639 \u0627\u0644\u062a\u062d\u0648\u064a\u0644\u0629 \u0623\u0648 \u0627\u0633\u062a\u062e\u062f\u0627\u0645 \u0628\u062f\u064a\u0644 \u0645\u0634\u0631\u0648\u0639 \u0625\u0646 \u0648\u064f\u062c\u062f."
+      }
+    }
+  },
+  {
+    "question_id": "F39_Q05",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "F39 kondigt een omleiding aan. U kent een parallelle weg die wettelijk beschikbaar is voor alle verkeer. Mag u die gebruiken in plaats van de omleidingsroute?",
+        "choices": [
+          {
+            "text": "Ja, F39 kondigt de beschikbaarheid van een omleidingsroute aan maar verplicht u niet die te gebruiken als een wettelijk toegankelijk alternatief beschikbaar is",
+            "is_correct": true
+          },
+          {
+            "text": "Neen, u bent verplicht de aangekondigde omleidingsroute te volgen zonder uitzondering",
+            "is_correct": false
+          },
+          {
+            "text": "Neen, alle doorgaande routes zijn bij een omleidingsbord verboden behalve de aangekondigde omleiding",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F39 voorziet in een omleidingsroute maar verbiedt geen wettelijk toegankelijke alternatieve routes. Als een parallelle weg open en legaal beschikbaar is voor alle verkeer, mag de bestuurder die gebruiken."
+      },
+      "EN": {
+        "question": "F39 announces a diversion. You know of a parallel road that is legally available for all traffic. May you use it instead of the diversion route?",
+        "choices": [
+          {
+            "text": "Yes, F39 announces the availability of a diversion route but does not require you to use it if a legally accessible alternative is available",
+            "is_correct": true
+          },
+          {
+            "text": "No, you are required to follow the announced diversion route without exception",
+            "is_correct": false
+          },
+          {
+            "text": "No, all through routes are prohibited when a diversion sign is present except the announced diversion",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F39 provides a diversion route but does not prohibit legally accessible alternative routes. If a parallel road is open and legally available for all traffic, the driver may use it."
+      },
+      "FR": {
+        "question": "F39 annonce une d\u00e9viation. Vous connaissez une route parall\u00e8le l\u00e9galement accessible \u00e0 tout le trafic. Pouvez-vous l'utiliser \u00e0 la place de l'itin\u00e9raire de d\u00e9viation?",
+        "choices": [
+          {
+            "text": "Oui, F39 annonce la disponibilit\u00e9 d'un itin\u00e9raire de d\u00e9viation mais ne vous oblige pas \u00e0 l'utiliser si un itin\u00e9raire alternatif l\u00e9galement accessible existe",
+            "is_correct": true
+          },
+          {
+            "text": "Non, vous \u00eates tenu de suivre l'itin\u00e9raire de d\u00e9viation annonc\u00e9 sans exception",
+            "is_correct": false
+          },
+          {
+            "text": "Non, toutes les routes de transit sont interdites en pr\u00e9sence d'un panneau de d\u00e9viation sauf la d\u00e9viation annonc\u00e9e",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F39 pr\u00e9voit un itin\u00e9raire de d\u00e9viation mais n'interdit pas les routes alternatives l\u00e9galement accessibles."
+      },
+      "AR": {
+        "question": "F39 \u062a\u064f\u0639\u0644\u0646 \u062a\u062d\u0648\u064a\u0644\u0629. \u062a\u0639\u0631\u0641 \u0637\u0631\u064a\u0642\u064b\u0627 \u0645\u0648\u0627\u0632\u064a\u064b\u0627 \u0645\u062a\u0627\u062d\u064b\u0627 \u0642\u0627\u0646\u0648\u0646\u064a\u064b\u0627. \u0647\u0644 \u064a\u062c\u0648\u0632 \u0627\u0633\u062a\u062e\u062f\u0627\u0645\u0647 \u0628\u062f\u0644\u0627\u064b \u0645\u0646 \u0627\u0644\u062a\u062d\u0648\u064a\u0644\u0629\u061f",
+        "choices": [
+          {
+            "text": "\u0646\u0639\u0645\u060c F39 \u062a\u064f\u0639\u0644\u0646 \u0639\u0646 \u0645\u0633\u0627\u0631 \u0627\u0644\u062a\u062d\u0648\u064a\u0644\u0629 \u0648\u0644\u0643\u0646 \u0644\u0627 \u062a\u0648\u062c\u0628 \u0627\u0633\u062a\u062e\u062f\u0627\u0645\u0647 \u0625\u0646 \u0648\u064f\u062c\u062f \u0628\u062f\u064a\u0644 \u0645\u0634\u0631\u0648\u0639",
+            "is_correct": true
+          },
+          {
+            "text": "\u0644\u0627\u060c \u064a\u062c\u0628 \u0627\u062a\u0628\u0627\u0639 \u0645\u0633\u0627\u0631 \u0627\u0644\u062a\u062d\u0648\u064a\u0644\u0629 \u062f\u0648\u0646 \u0627\u0633\u062a\u062b\u0646\u0627\u0621",
+            "is_correct": false
+          },
+          {
+            "text": "\u0644\u0627\u060c \u062c\u0645\u064a\u0639 \u0627\u0644\u0637\u0631\u0642 \u0645\u062d\u0638\u0648\u0631\u0629 \u0625\u0644\u0627 \u0645\u0633\u0627\u0631 \u0627\u0644\u062a\u062d\u0648\u064a\u0644\u0629",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F39 \u062a\u0648\u0641\u0651\u0631 \u0645\u0633\u0627\u0631 \u0627\u0644\u062a\u062d\u0648\u064a\u0644\u0629 \u0644\u0643\u0646\u0647\u0627 \u0644\u0627 \u062a\u062d\u0638\u0631 \u0627\u0644\u0637\u0631\u0642 \u0627\u0644\u0628\u062f\u064a\u0644\u0629 \u0627\u0644\u0645\u062a\u0627\u062d\u0629 \u0642\u0627\u0646\u0648\u0646\u064a\u064b\u0627."
+      }
+    }
+  },
+  {
+    "question_id": "F39_Q06",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat is het verschil tussen F39 en F81?",
+        "choices": [
+          {
+            "text": "F39 kondigt op voorhand een omleiding aan die verderop zal gelden; F81 wijst op de uitrijpunt of uitwijkingsroute zelf die beschikbaar is",
+            "is_correct": true
+          },
+          {
+            "text": "F39 wordt alleen gebruikt bij wegwerkzaamheden; F81 is gereserveerd voor evenementen en incidenten",
+            "is_correct": false
+          },
+          {
+            "text": "F39 is een permanent bord; F81 is altijd tijdelijk",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F39 is een vooraankondiging: de omleiding komt verderop. F81 is een bord dat de uitrijmogelijkheid of de uitwijkingsroute zelf aangeeft, d.w.z. de bestuurder benadert het punt van de uitrit. Beide zijn F-reeksborden maar ze geven verschillende fasen van de omleidingsinfrastructuur aan."
+      },
+      "EN": {
+        "question": "What is the difference between F39 and F81?",
+        "choices": [
+          {
+            "text": "F39 announces a diversion in advance that will apply further ahead; F81 indicates the actual exit point or diversion route that is available",
+            "is_correct": true
+          },
+          {
+            "text": "F39 is used only for roadworks; F81 is reserved for events and incidents",
+            "is_correct": false
+          },
+          {
+            "text": "F39 is a permanent sign; F81 is always temporary",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F39 is an advance announcement: the diversion is coming up ahead. F81 is a sign indicating the actual exit or diversion route itself, i.e., the driver is approaching the exit point. Both are F-series signs but indicate different phases of the diversion infrastructure."
+      },
+      "FR": {
+        "question": "Quelle est la diff\u00e9rence entre F39 et F81?",
+        "choices": [
+          {
+            "text": "F39 annonce pr\u00e9alablement une d\u00e9viation qui sera applicable plus loin; F81 indique le point de sortie effectif ou l'itin\u00e9raire de d\u00e9viation lui-m\u00eame",
+            "is_correct": true
+          },
+          {
+            "text": "F39 est utilis\u00e9 uniquement pour les travaux; F81 est r\u00e9serv\u00e9 aux \u00e9v\u00e9nements et incidents",
+            "is_correct": false
+          },
+          {
+            "text": "F39 est un panneau permanent; F81 est toujours temporaire",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F39 est une annonce pr\u00e9alable: la d\u00e9viation est \u00e0 venir. F81 indique le point de sortie effectif ou l'itin\u00e9raire de d\u00e9viation lui-m\u00eame."
+      },
+      "AR": {
+        "question": "\u0645\u0627 \u0627\u0644\u0641\u0631\u0642 \u0628\u064a\u0646 F39 \u0648F81\u061f",
+        "choices": [
+          {
+            "text": "F39 \u062a\u064f\u0639\u0644\u0646 \u0645\u0633\u0628\u0642\u064b\u0627 \u0639\u0646 \u062a\u062d\u0648\u064a\u0644\u0629 \u0633\u062a\u0643\u0648\u0646 \u0644\u0627\u062d\u0642\u064b\u0627\u061b F81 \u062a\u062f\u0644 \u0639\u0644\u0649 \u0646\u0642\u0637\u0629 \u0627\u0644\u062e\u0631\u0648\u062c \u0627\u0644\u0641\u0639\u0644\u064a\u0629 \u0623\u0648 \u0645\u0633\u0627\u0631 \u0627\u0644\u062a\u062d\u0648\u064a\u0644\u0629 \u0646\u0641\u0633\u0647",
+            "is_correct": true
+          },
+          {
+            "text": "F39 \u0644\u0623\u0634\u063a\u0627\u0644 \u0627\u0644\u0637\u0631\u0642 \u0641\u0642\u0637\u061b F81 \u0644\u0644\u0641\u0639\u0627\u0644\u064a\u0627\u062a \u0648\u0627\u0644\u062d\u0648\u0627\u062f\u062b",
+            "is_correct": false
+          },
+          {
+            "text": "F39 \u062f\u0627\u0626\u0645\u0629\u061b F81 \u0645\u0624\u0642\u062a\u0629 \u062f\u0627\u0626\u0645\u064b\u0627",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F39 \u0625\u0639\u0644\u0627\u0646 \u0645\u0633\u0628\u0642. F81 \u062a\u062f\u0644 \u0639\u0644\u0649 \u0646\u0642\u0637\u0629 \u0627\u0644\u062e\u0631\u0648\u062c / \u0645\u0633\u0627\u0631 \u0627\u0644\u062a\u062d\u0648\u064a\u0644\u0629 \u0646\u0641\u0633\u0647. \u0643\u0644\u062a\u0627\u0647\u0645\u0627 \u0641\u0626\u0629 F \u0644\u0643\u0646 \u062a\u0645\u062b\u0644\u0627\u0646 \u0645\u0631\u062d\u0644\u062a\u064a\u0646 \u0645\u062e\u062a\u0644\u0641\u062a\u064a\u0646."
+      }
+    }
+  },
+  {
+    "question_id": "F39_Q07",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "F39 kondigt een omleiding aan. U kent een parallelle weg die wettelijk open is voor alle verkeer. Mag u die weg gebruiken in plaats van de aangekondigde omleidingsroute?",
+        "choices": [
+          {
+            "text": "Ja, F39 kondigt de beschikbaarheid van een omleidingsroute aan maar verplicht u niet die te gebruiken als een wettelijk toegankelijk alternatief open is",
+            "is_correct": true
+          },
+          {
+            "text": "Neen, bij een omleidingsbord bent u altijd verplicht de aangekondigde omleidingsroute te volgen",
+            "is_correct": false
+          }
+        ],
+        "explanation": "De omleidingsroute van F39 is een aangeboden route, geen exclusieve verplichting om iedere andere route uit te sluiten. Een wettelijk open alternatieve weg mag worden gebruikt. De omleidingsroute is verplicht wanneer de doorgaande weg daadwerkelijk afgesloten is en geen wettelijk alternatief beschikbaar is."
+      },
+      "EN": {
+        "question": "F39 announces a diversion. You know of a parallel road that is legally open for all traffic. May you use that road instead of the announced diversion route?",
+        "choices": [
+          {
+            "text": "Yes, F39 announces the availability of a diversion route but does not require you to use it if a legally accessible alternative is open",
+            "is_correct": true
+          },
+          {
+            "text": "No, when a diversion sign is shown you are always required to follow the announced diversion route",
+            "is_correct": false
+          }
+        ],
+        "explanation": "The diversion route announced by F39 is an offered route, not an exclusive obligation that excludes every other route. A legally open alternative road may be used. The diversion route is only compulsory when the through road is actually closed and no legal alternative is available."
+      },
+      "FR": {
+        "question": "F39 annonce une d\u00e9viation. Vous connaissez une route parall\u00e8le l\u00e9galement ouverte \u00e0 tout le trafic. Pouvez-vous utiliser cette route \u00e0 la place de l'itin\u00e9raire de d\u00e9viation annonc\u00e9?",
+        "choices": [
+          {
+            "text": "Oui, F39 annonce la disponibilit\u00e9 d'un itin\u00e9raire de d\u00e9viation mais ne vous oblige pas \u00e0 l'utiliser si un itin\u00e9raire alternatif l\u00e9galement accessible est ouvert",
+            "is_correct": true
+          },
+          {
+            "text": "Non, en pr\u00e9sence d'un panneau de d\u00e9viation vous \u00eates toujours tenu de suivre l'itin\u00e9raire annonc\u00e9",
+            "is_correct": false
+          }
+        ],
+        "explanation": "L'itin\u00e9raire de d\u00e9viation annonc\u00e9 par F39 est un itin\u00e9raire propos\u00e9, non une obligation exclusive excluant tout autre itin\u00e9raire. Une route alternative l\u00e9galement ouverte peut \u00eatre utilis\u00e9e."
+      },
+      "AR": {
+        "question": "F39 \u062a\u064f\u0639\u0644\u0646 \u062a\u062d\u0648\u064a\u0644\u0629. \u062a\u0639\u0631\u0641 \u0637\u0631\u064a\u0642\u064b\u0627 \u0645\u0648\u0627\u0632\u064a\u064b\u0627 \u0645\u0641\u062a\u0648\u062d\u064b\u0627 \u0642\u0627\u0646\u0648\u0646\u064a\u064b\u0627. \u0647\u0644 \u064a\u062c\u0648\u0632 \u0627\u0633\u062a\u062e\u062f\u0627\u0645\u0647 \u0628\u062f\u0644\u0627\u064b \u0645\u0646 \u0645\u0633\u0627\u0631 \u0627\u0644\u062a\u062d\u0648\u064a\u0644\u0629\u061f",
+        "choices": [
+          {
+            "text": "\u0646\u0639\u0645\u060c F39 \u062a\u064f\u0639\u0644\u0646 \u0639\u0646 \u0645\u0633\u0627\u0631 \u0627\u0644\u062a\u062d\u0648\u064a\u0644\u0629 \u0644\u0643\u0646 \u0644\u0627 \u062a\u0648\u062c\u0628 \u0627\u0633\u062a\u062e\u062f\u0627\u0645\u0647 \u0625\u0646 \u0648\u064f\u062c\u062f \u0628\u062f\u064a\u0644 \u0645\u0634\u0631\u0648\u0639",
+            "is_correct": true
+          },
+          {
+            "text": "\u0644\u0627\u060c \u0639\u0646\u062f \u0648\u062c\u0648\u062f \u0644\u0627\u0641\u062a\u0629 \u062a\u062d\u0648\u064a\u0644\u0629 \u064a\u062c\u0628 \u062f\u0627\u0626\u0645\u064b\u0627 \u0627\u062a\u0628\u0627\u0639 \u0627\u0644\u0645\u0633\u0627\u0631 \u0627\u0644\u0645\u0639\u0644\u0646",
+            "is_correct": false
+          }
+        ],
+        "explanation": "\u0645\u0633\u0627\u0631 F39 \u0645\u0633\u0627\u0631 \u0645\u0642\u062a\u0631\u062d\u060c \u0644\u064a\u0633 \u0625\u0644\u0632\u0627\u0645\u064b\u0627 \u062d\u0635\u0631\u064a\u064b\u0627. \u0627\u0644\u0637\u0631\u064a\u0642 \u0627\u0644\u0628\u062f\u064a\u0644 \u0627\u0644\u0645\u0634\u0631\u0648\u0639 \u064a\u064f\u0633\u062a\u062e\u062f\u0645."
+      }
+    }
+  },
+  {
+    "question_id": "F39_Q08",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U heeft de omleidingsroute van F39 genomen. Onderweg vindt u een wettelijk open kortere weg. Mag u de omleidingsroute vÃ³Ã³r het officiÃ«le einde verlaten?",
+        "choices": [
+          {
+            "text": "Ja, de omleidingsroute is een aanbevolen route â€” u mag deze verlaten als u een wettelijk toegankelijke kortere weg heeft gevonden",
+            "is_correct": true
+          },
+          {
+            "text": "Neen, u moet de volledige omleidingsroute afleggen tot aan het officiÃ«le einde ervan",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F39 en de daarmee verbonden omleidingsroute zijn bedoeld om bestuurders langs de afgesloten weg te leiden. Ze verbieden geen wettelijk toegankelijke alternatieve routes. Als de bestuurder onderweg een wettelijk open kortere weg vindt, mag hij de omleidingsroute verlaten."
+      },
+      "EN": {
+        "question": "You have taken the diversion route announced by F39. En route you find a legally open shorter road. May you leave the diversion route before its official end?",
+        "choices": [
+          {
+            "text": "Yes, the diversion route is a recommended route â€” you may leave it if you have found a legally accessible shorter road",
+            "is_correct": true
+          },
+          {
+            "text": "No, you must complete the entire diversion route up to its official end",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F39 and its associated diversion route are intended to guide drivers past the closed road. They do not prohibit legally accessible alternative routes. If the driver finds a legally open shorter road en route, they may leave the diversion route."
+      },
+      "FR": {
+        "question": "Vous avez emprunt\u00e9 l'itin\u00e9raire de d\u00e9viation annonc\u00e9 par F39. En cours de route, vous trouvez une route plus courte l\u00e9galement ouverte. Pouvez-vous quitter l'itin\u00e9raire de d\u00e9viation avant sa fin officielle?",
+        "choices": [
+          {
+            "text": "Oui, l'itin\u00e9raire de d\u00e9viation est un itin\u00e9raire recommand\u00e9 \u2014 vous pouvez le quitter si vous avez trouv\u00e9 une route plus courte l\u00e9galement accessible",
+            "is_correct": true
+          },
+          {
+            "text": "Non, vous devez parcourir l'itin\u00e9raire de d\u00e9viation complet jusqu'\u00e0 sa fin officielle",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F39 et son itin\u00e9raire de d\u00e9viation associ\u00e9 sont destin\u00e9s \u00e0 guider les conducteurs autour de la route ferm\u00e9e. Ils n'interdisent pas les routes alternatives l\u00e9galement accessibles."
+      },
+      "AR": {
+        "question": "\u0633\u0644\u0643\u062a \u0645\u0633\u0627\u0631 \u0627\u0644\u062a\u062d\u0648\u064a\u0644\u0629 \u0627\u0644\u0645\u064f\u0639\u0644\u0646 \u0645\u0646 F39. \u0641\u064a \u0627\u0644\u0637\u0631\u064a\u0642 \u0648\u062c\u062f\u062a \u0637\u0631\u064a\u0642\u064b\u0627 \u0623\u0642\u0635\u0631 \u0645\u0641\u062a\u0648\u062d\u064b\u0627 \u0642\u0627\u0646\u0648\u0646\u064a\u064b\u0627. \u0647\u0644 \u064a\u062c\u0648\u0632 \u0645\u063a\u0627\u062f\u0631\u0629 \u0645\u0633\u0627\u0631 \u0627\u0644\u062a\u062d\u0648\u064a\u0644\u0629 \u0642\u0628\u0644 \u0646\u0647\u0627\u064a\u062a\u0647 \u0627\u0644\u0631\u0633\u0645\u064a\u0629\u061f",
+        "choices": [
+          {
+            "text": "\u0646\u0639\u0645\u060c \u0645\u0633\u0627\u0631 \u0627\u0644\u062a\u062d\u0648\u064a\u0644\u0629 \u0645\u0624\u0634\u0631 \u0648\u064a\u062c\u0648\u0632 \u0645\u063a\u0627\u062f\u0631\u062a\u0647 \u0625\u0646 \u0648\u064f\u062c\u062f \u0637\u0631\u064a\u0642 \u0623\u0642\u0635\u0631 \u0645\u0634\u0631\u0648\u0639",
+            "is_correct": true
+          },
+          {
+            "text": "\u0644\u0627\u060c \u064a\u062c\u0628 \u0625\u062a\u0645\u0627\u0645 \u0645\u0633\u0627\u0631 \u0627\u0644\u062a\u062d\u0648\u064a\u0644\u0629 \u0643\u0627\u0645\u0644\u0627\u064b \u062d\u062a\u0649 \u0646\u0647\u0627\u064a\u062a\u0647 \u0627\u0644\u0631\u0633\u0645\u064a\u0629",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F39 \u0648\u0645\u0633\u0627\u0631 \u0627\u0644\u062a\u062d\u0648\u064a\u0644\u0629 \u0645\u0633\u0627\u0631 \u0645\u0642\u062a\u0631\u062d. \u0644\u0627 \u064a\u062d\u0638\u0631\u0627\u0646 \u0627\u0644\u0637\u0631\u0642 \u0627\u0644\u0628\u062f\u064a\u0644\u0629 \u0627\u0644\u0645\u0634\u0631\u0648\u0639\u0629."
+      }
+    }
+  }
+]

@@ -5,79 +5,42 @@
     "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE: Replace wrong answers with actual sign names from the same category.",
     "i18n": {
       "NL": {
-        "question": "Wat betekent dit verkeersbord?",
+        "question": "Wat betekent bord E9b?",
         "choices": [
-          {
-            "text": "Parkeren uitsluitend voor auto s",
-            "is_correct": true
-          },
-          {
-            "text": "Verplichte rijrichting rechts",
-            "is_correct": false
-          },
-          {
-            "text": "Gevaarlijk kruispunt",
-            "is_correct": false
-          }
+          { "text": "Parkeren uitsluitend toegelaten voor personenwagens", "is_correct": true },
+          { "text": "Parkeerverbod voor alle voertuigen", "is_correct": false },
+          { "text": "Voetgangerszone", "is_correct": false }
         ],
-        "explanation": "Parkeren enkel toegestaan voor motorfietsen, personenauto's, auto's dubbel gebruik, minibussen."
+        "explanation": "Bord E9b (Parking voor auto's) reserveert de parkeerplaats voor personenwagens."
       },
       "EN": {
-        "question": "What does this traffic sign mean?",
+        "question": "What does sign E9b mean?",
         "choices": [
-          {
-            "text": "Parking for cars only",
-            "is_correct": true
-          },
-          {
-            "text": "Mandatory direction right",
-            "is_correct": false
-          },
-          {
-            "text": "Dangerous intersection",
-            "is_correct": false
-          }
+          { "text": "Parking permitted exclusively for passenger cars", "is_correct": true },
+          { "text": "No parking for all vehicles", "is_correct": false },
+          { "text": "Pedestrian zone", "is_correct": false }
         ],
-        "explanation": "Parking only allowed for motorcycles, passenger cars, dual-use cars, minibuses."
+        "explanation": "Sign E9b (Parking for cars) reserves the parking space exclusively for passenger cars."
       },
       "FR": {
-        "question": "Que signifie ce panneau de signalisation ?",
+        "question": "Que signifie le panneau E9b ?",
         "choices": [
-          {
-            "text": "Stationnement reserve aux voitures",
-            "is_correct": true
-          },
-          {
-            "text": "Direction obligatoire à droite",
-            "is_correct": false
-          },
-          {
-            "text": "Carrefour dangereux",
-            "is_correct": false
-          }
+          { "text": "Stationnement autorise exclusivement pour voitures particulieres", "is_correct": true },
+          { "text": "Interdiction de stationner pour tous les vehicules", "is_correct": false },
+          { "text": "Zone pietonne", "is_correct": false }
         ],
-        "explanation": "Stationnement autorisé uniquement pour les motocyclettes, voitures particulières, voitures à double usage, minibus."
+        "explanation": "Le panneau E9b (Parking pour voitures) reserve la place de stationnement exclusivement pour voitures particulieres."
       },
       "AR": {
-        "question": "ماذا تعني لافتة المرور هذه؟",
+        "question": "ما معنى لافتة E9b؟",
         "choices": [
-          {
-            "text": "مواقف للسيارات فقط",
-            "is_correct": true
-          },
-          {
-            "text": "الاتجاه الإلزامي يميناً",
-            "is_correct": false
-          },
-          {
-            "text": "تقاطع خطير",
-            "is_correct": false
-          }
+          { "text": "الوقوف مسموح حصراً للسيارات الخاصة", "is_correct": true },
+          { "text": "ممنوع الوقوف لجميع المركبات", "is_correct": false },
+          { "text": "منطقة مشاة", "is_correct": false }
         ],
-        "explanation": "وقوف السيارات مسموح به فقط للدراجات النارية والسيارات الخاصة وسيارات الاستخدام المزدوج والحافلات الصغيرة."
+        "explanation": "لافتة E9b (موقف للسيارات الخاصة) تحجز الموقف حصراً للسيارات الخاصة."
       }
     }
   },
@@ -87,161 +50,87 @@
     "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE: Ready to use — category identification question.",
     "i18n": {
       "NL": {
-        "question": "Tot welke categorie verkeerstekens behoort dit bord?",
+        "question": "Tot welke reeks behoort E9b?",
         "choices": [
-          {
-            "text": "Parkeerregelementsborden (E-reeks)",
-            "is_correct": true
-          },
-          {
-            "text": "Verbodsborden (C-reeks)",
-            "is_correct": false
-          },
-          {
-            "text": "Gebodsborden (D-reeks)",
-            "is_correct": false
-          }
+          { "text": "E-reeks: parkeer- en stilstandsreglementsborden", "is_correct": true },
+          { "text": "C-reeks: verbodsborden", "is_correct": false },
+          { "text": "F-reeks: informatieborden", "is_correct": false }
         ],
-        "explanation": "Dit bord behoort tot de categorie 'Parkeerregelementsborden (E-reeks)'. Elk type bord heeft een specifieke vorm en kleurschema."
+        "explanation": "De E-reeks bevat alle parkeer- en stilstandsreglementsborden."
       },
       "EN": {
-        "question": "To which category of traffic signs does this sign belong?",
+        "question": "To which series does E9b belong?",
         "choices": [
-          {
-            "text": "Parking regulation signs (E-series)",
-            "is_correct": true
-          },
-          {
-            "text": "Prohibition signs (C-series)",
-            "is_correct": false
-          },
-          {
-            "text": "Mandatory signs (D-series)",
-            "is_correct": false
-          }
+          { "text": "E-series: parking and stopping regulation signs", "is_correct": true },
+          { "text": "C-series: prohibitory signs", "is_correct": false },
+          { "text": "F-series: information signs", "is_correct": false }
         ],
-        "explanation": "This sign belongs to the 'Parking regulation signs (E-series)' category. Each type of sign has a specific shape and color scheme."
+        "explanation": "The E-series contains all parking and stopping regulation signs."
       },
       "FR": {
-        "question": "À quelle catégorie de panneaux de signalisation ce panneau appartient-il ?",
+        "question": "A quelle serie appartient E9b ?",
         "choices": [
-          {
-            "text": "Panneaux de stationnement (série E)",
-            "is_correct": true
-          },
-          {
-            "text": "Panneaux d'interdiction (série C)",
-            "is_correct": false
-          },
-          {
-            "text": "Panneaux d'obligation (série D)",
-            "is_correct": false
-          }
+          { "text": "Serie E: panneaux de reglementation du stationnement", "is_correct": true },
+          { "text": "Serie C: panneaux d'interdiction", "is_correct": false },
+          { "text": "Serie F: panneaux d'information", "is_correct": false }
         ],
-        "explanation": "Ce panneau appartient à la catégorie 'Panneaux de stationnement (série E)'. Chaque type de panneau a une forme et un schéma de couleurs spécifiques."
+        "explanation": "La serie E contient tous les panneaux de reglementation du stationnement et de l'arret."
       },
       "AR": {
-        "question": "إلى أي فئة من لافتات المرور تنتمي هذه اللافتة؟",
+        "question": "إلى أي سلسلة تنتمي E9b؟",
         "choices": [
-          {
-            "text": "لافتات تنظيم الوقوف (سلسلة E)",
-            "is_correct": true
-          },
-          {
-            "text": "لافتات الحظر (سلسلة C)",
-            "is_correct": false
-          },
-          {
-            "text": "لافتات الإلزام (سلسلة D)",
-            "is_correct": false
-          }
+          { "text": "السلسلة E: لافتات تنظيم الوقوف والتوقف", "is_correct": true },
+          { "text": "السلسلة C: لافتات الحظر", "is_correct": false },
+          { "text": "السلسلة F: لافتات المعلومات", "is_correct": false }
         ],
-        "explanation": "هذه اللافتة تنتمي إلى فئة 'لافتات تنظيم الوقوف (سلسلة E)'. كل نوع من اللافتات له شكل ونظام ألوان محدد."
+        "explanation": "السلسلة E تحتوي على جميع لافتات تنظيم الوقوف والتوقف."
       }
     }
   },
   {
     "question_id": "E9b_Q03",
-    "type": "WHAT_MUST_YOU_DO",
-    "difficulty": "MEDIUM",
+    "type": "HAZARD_IDENTIFICATION",
+    "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE (MEDIUM): Replace with sign-specific question for production.",
     "i18n": {
       "NL": {
-        "question": "Mag u uw voertuig parkeren op de plaats aangeduid door dit bord?",
+        "question": "Waarom zijn er gereserveerde parkeerplaatsen voor personenwagens?",
         "choices": [
-          {
-            "text": "Dit hangt af van de specifieke parkeerregels op het bord",
-            "is_correct": true
-          },
-          {
-            "text": "Ja, altijd toegestaan als er een vrije plek is",
-            "is_correct": false
-          },
-          {
-            "text": "Nee, nooit toegestaan op de openbare weg",
-            "is_correct": false
-          }
+          { "text": "Om te garanderen dat personenwagens altijd een gepaste plek kunnen vinden dicht bij hun bestemming", "is_correct": true },
+          { "text": "Om de straat te verfraaien met categoriespecifieke borden", "is_correct": false },
+          { "text": "Om de parkeeropbrengsten te verhogen", "is_correct": false }
         ],
-        "explanation": "Parkeerregelementsborden geven specifieke regels aan over waar, wanneer en hoe lang u mag parkeren. Lees elk bord zorgvuldig."
+        "explanation": "Gereserveerde plekken voor personenwagens voorkomen dat ze moeten zoeken naar een geschikte ruimte."
       },
       "EN": {
-        "question": "Are you allowed to park your vehicle at the location indicated by this sign?",
+        "question": "Why are parking spaces reserved for passenger cars?",
         "choices": [
-          {
-            "text": "This depends on the specific parking rules indicated on the sign",
-            "is_correct": true
-          },
-          {
-            "text": "Yes, always allowed if there is a free space",
-            "is_correct": false
-          },
-          {
-            "text": "No, never allowed on the public road",
-            "is_correct": false
-          }
+          { "text": "To ensure passenger cars can always find a suitable space close to their destination", "is_correct": true },
+          { "text": "To beautify the street with category-specific signs", "is_correct": false },
+          { "text": "To increase parking revenue", "is_correct": false }
         ],
-        "explanation": "Parking regulation signs specify rules about where, when, and how long you may park. Read each sign carefully."
+        "explanation": "Reserved spaces for passenger cars prevent them from having to search for a suitable space."
       },
       "FR": {
-        "question": "Êtes-vous autorisé à garer votre véhicule à cet endroit ?",
+        "question": "Pourquoi des places de stationnement sont-elles reservees aux voitures particulieres ?",
         "choices": [
-          {
-            "text": "Cela dépend des règles spécifiques indiquées sur le panneau",
-            "is_correct": true
-          },
-          {
-            "text": "Oui, toujours autorisé s'il y a une place libre",
-            "is_correct": false
-          },
-          {
-            "text": "Non, jamais autorisé sur la voie publique",
-            "is_correct": false
-          }
+          { "text": "Pour garantir que les voitures particulieres trouvent toujours une place adaptee pres de leur destination", "is_correct": true },
+          { "text": "Pour embellir la rue avec des panneaux specifiques a la categorie", "is_correct": false },
+          { "text": "Pour augmenter les recettes de stationnement", "is_correct": false }
         ],
-        "explanation": "Les panneaux de stationnement spécifient où, quand et combien de temps vous pouvez stationner."
+        "explanation": "Les places reservees pour voitures particulieres les empechent de chercher un emplacement adapte."
       },
       "AR": {
-        "question": "هل يُسمح لك بوقوف مركبتك في المكان الذي تشير إليه هذه اللافتة؟",
+        "question": "لماذا تُحجز مواقف للسيارات الخاصة؟",
         "choices": [
-          {
-            "text": "يعتمد ذلك على قواعد الوقوف المحددة المشار إليها على اللافتة",
-            "is_correct": true
-          },
-          {
-            "text": "نعم، مسموح دائماً إذا كان هناك مكان فارغ",
-            "is_correct": false
-          },
-          {
-            "text": "لا، غير مسموح أبداً على الطريق العام",
-            "is_correct": false
-          }
+          { "text": "لضمان أن السيارات الخاصة تجد دائماً مكاناً مناسباً بالقرب من وجهتها", "is_correct": true },
+          { "text": "لتجميل الشارع بلافتات خاصة بكل فئة", "is_correct": false },
+          { "text": "لزيادة إيرادات الوقوف", "is_correct": false }
         ],
-        "explanation": "لافتات تنظيم الوقوف تحدد قواعد حول أين ومتى وكم من الوقت يمكنك الوقوف. اقرأ كل لافتة بعناية."
+        "explanation": "المواقف المحجوزة للسيارات الخاصة تمنعها من البحث عن مكان مناسب."
       }
     }
   },
@@ -251,145 +140,214 @@
     "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE (MEDIUM): Replace with sign-specific question for production.",
     "i18n": {
       "NL": {
-        "question": "Wat is het verschil tussen parkeren en stilstaan?",
+        "question": "U rijdt een personenwagen. Mag u parkeren bij E9b?",
         "choices": [
-          {
-            "text": "Stilstaan is een korte stop (chauffeur blijft aanwezig), parkeren is langer of chauffeur verlaat voertuig",
-            "is_correct": true
-          },
-          {
-            "text": "Er is geen verschil, het zijn synoniemen",
-            "is_correct": false
-          },
-          {
-            "text": "Stilstaan betekent motor uitzetten",
-            "is_correct": false
-          }
+          { "text": "Ja: E9b is voorbehouden voor personenwagens en u rijdt er een", "is_correct": true },
+          { "text": "Neen: E9b is enkel voor vrachtwagens", "is_correct": false },
+          { "text": "Ja, maar alleen buiten de spitsuren", "is_correct": false }
         ],
-        "explanation": "Stilstaan = kort stoppen terwijl de bestuurder beschikbaar blijft. Parkeren = langer of bestuurder verlaat het voertuig."
+        "explanation": "E9b reserveert de plek uitsluitend voor personenwagens. Omdat u een personenwagen rijdt, is parkeren hier toegestaan."
       },
       "EN": {
-        "question": "What is the difference between parking and stopping?",
+        "question": "You drive a passenger car. May you park under E9b?",
         "choices": [
-          {
-            "text": "Stopping is a brief halt (driver remains present), parking is longer or driver leaves vehicle",
-            "is_correct": true
-          },
-          {
-            "text": "There is no difference, they are synonyms",
-            "is_correct": false
-          },
-          {
-            "text": "Stopping means turning off the engine",
-            "is_correct": false
-          }
+          { "text": "Yes: E9b is reserved for passenger cars and you are driving one", "is_correct": true },
+          { "text": "No: E9b is only for trucks", "is_correct": false },
+          { "text": "Yes, but only outside peak hours", "is_correct": false }
         ],
-        "explanation": "Stopping = brief halt while driver remains available. Parking = longer stop or driver leaves the vehicle."
+        "explanation": "E9b reserves the space exclusively for passenger cars. Since you drive one, parking here is permitted."
       },
       "FR": {
-        "question": "Quelle est la différence entre le stationnement et l'arrêt ?",
+        "question": "Vous conduisez une voiture particuliere. Pouvez-vous vous garer sous E9b ?",
         "choices": [
-          {
-            "text": "L'arrêt est court (conducteur présent), le stationnement est plus long ou conducteur quitte le véhicule",
-            "is_correct": true
-          },
-          {
-            "text": "Il n'y a pas de différence, ce sont des synonymes",
-            "is_correct": false
-          },
-          {
-            "text": "Arrêter signifie éteindre le moteur",
-            "is_correct": false
-          }
+          { "text": "Oui : E9b est reserve aux voitures particulieres et vous en conduisez une", "is_correct": true },
+          { "text": "Non : E9b est uniquement pour les camions", "is_correct": false },
+          { "text": "Oui, mais seulement hors heures de pointe", "is_correct": false }
         ],
-        "explanation": "Arrêt = court, conducteur disponible. Stationnement = plus long ou conducteur quitte le véhicule."
+        "explanation": "E9b reserve la place exclusivement aux voitures particulieres. Puisque vous en conduisez une, se garer ici est autorise."
       },
       "AR": {
-        "question": "ما الفرق بين الوقوف والتوقف؟",
+        "question": "تقود سيارة خاصة. هل يجوز لك الوقوف تحت E9b؟",
         "choices": [
-          {
-            "text": "التوقف وقفة قصيرة (السائق يبقى موجوداً)، الوقوف أطول أو السائق يغادر المركبة",
-            "is_correct": true
-          },
-          {
-            "text": "لا فرق، فهما مترادفان",
-            "is_correct": false
-          },
-          {
-            "text": "التوقف يعني إطفاء المحرك",
-            "is_correct": false
-          }
+          { "text": "نعم: E9b محجوزة للسيارات الخاصة وأنت تقود واحدة", "is_correct": true },
+          { "text": "لا: E9b مخصصة للشاحنات فقط", "is_correct": false },
+          { "text": "نعم، لكن خارج ساعات الذروة فقط", "is_correct": false }
         ],
-        "explanation": "التوقف = وقفة قصيرة مع بقاء السائق متاحاً. الوقوف = أطول أو السائق يغادر المركبة."
+        "explanation": "E9b تحجز المكان حصراً للسيارات الخاصة. بما أنك تقود سيارة خاصة، يُسمح لك بالوقوف هنا."
       }
     }
   },
   {
     "question_id": "E9b_Q05",
-    "type": "IS_IT_ALLOWED",
-    "difficulty": "HARD",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE (HARD): Replace with sign-specific question for production.",
     "i18n": {
       "NL": {
-        "question": "Mag u parkeren op een plaats aangeduid met een parkeerverbodsbord?",
+        "question": "Geldt E9b voor alle tijdstippen van de dag?",
         "choices": [
-          {
-            "text": "Nee, parkeren is verboden op plaatsen aangeduid met een parkeerverbodsbord",
-            "is_correct": true
-          },
-          {
-            "text": "Ja, parkeren is altijd toegestaan zolang u niet langer dan 15 minuten blijft",
-            "is_correct": false
-          }
+          { "text": "Tenzij een onderbord een tijdsbeperking aangeeft, geldt de reservering 24 uur op 24", "is_correct": true },
+          { "text": "Neen: enkel van 8u tot 20u", "is_correct": false },
+          { "text": "Neen: enkel op werkdagen", "is_correct": false }
         ],
-        "explanation": "Parkeerverbodsborden verbieden parkeren op de aangeduide plaats. Overtredingen kunnen leiden tot een boete of het wegslepen van uw voertuig."
+        "explanation": "Zonder onderbord is de reservering permanent. Een onderbord kan tijden of dagen beperken."
       },
       "EN": {
-        "question": "Are you allowed to park in a place marked with a no-parking sign?",
+        "question": "Does E9b apply at all times of day?",
         "choices": [
-          {
-            "text": "No, parking is prohibited in places marked with a no-parking sign",
-            "is_correct": true
-          },
-          {
-            "text": "Yes, parking is always allowed as long as you do not stay longer than 15 minutes",
-            "is_correct": false
-          }
+          { "text": "Unless a supplementary sign indicates a time restriction, the reservation applies 24 hours a day", "is_correct": true },
+          { "text": "No: only from 08:00 to 20:00", "is_correct": false },
+          { "text": "No: only on working days", "is_correct": false }
         ],
-        "explanation": "No-parking signs prohibit parking at the indicated location. Violations can result in a fine or having your vehicle towed."
+        "explanation": "Without a supplementary sign the reservation is permanent. A supplementary sign can restrict times or days."
       },
       "FR": {
-        "question": "Êtes-vous autorisé à stationner à un endroit signalé par un panneau d'interdiction de stationnement ?",
+        "question": "E9b s'applique-t-il a toute heure de la journee ?",
         "choices": [
-          {
-            "text": "Non, le stationnement est interdit aux endroits signalés par un panneau d'interdiction de stationnement",
-            "is_correct": true
-          },
-          {
-            "text": "Oui, le stationnement est toujours autorisé tant que vous ne restez pas plus de 15 minutes",
-            "is_correct": false
-          }
+          { "text": "Sauf indication contraire d'un panneau complementaire, la reservation s'applique 24 heures sur 24", "is_correct": true },
+          { "text": "Non: seulement de 8h a 20h", "is_correct": false },
+          { "text": "Non: seulement les jours ouvrables", "is_correct": false }
         ],
-        "explanation": "Les panneaux d'interdiction de stationnement interdisent de stationner à l'endroit indiqué. Les infractions peuvent entraîner une amende ou le remorquage du véhicule."
+        "explanation": "Sans panneau complementaire la reservation est permanente. Un panneau complementaire peut restreindre les heures ou les jours."
       },
       "AR": {
-        "question": "هل يُسمح لك بالوقوف في مكان يُشار إليه بلافتة حظر الوقوف؟",
+        "question": "هل تنطبق E9b في جميع أوقات اليوم؟",
         "choices": [
-          {
-            "text": "لا، الوقوف محظور في الأماكن التي تشير إليها لافتة حظر الوقوف",
-            "is_correct": true
-          },
-          {
-            "text": "نعم، الوقوف مسموح دائماً ما لم تبقَ أكثر من 15 دقيقة",
-            "is_correct": false
-          }
+          { "text": "ما لم تشر لافتة تكميلية إلى قيود زمنية، يسري الحجز 24 ساعة يومياً", "is_correct": true },
+          { "text": "لا: فقط من 08:00 حتى 20:00", "is_correct": false },
+          { "text": "لا: فقط في أيام العمل", "is_correct": false }
         ],
-        "explanation": "لافتات حظر الوقوف تحظر الوقوف في المكان المشار إليه. المخالفات قد تؤدي إلى غرامة أو سحب مركبتك."
+        "explanation": "بدون لافتة تكميلية يكون الحجز دائماً. اللافتة التكميلية يمكنها تقييد الأوقات أو الأيام."
+      }
+    }
+  },
+  {
+    "question_id": "E9b_Q06",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat is de sanctie voor het parkeren op een E9b-plek zonder personenwagen te rijden?",
+        "choices": [
+          { "text": "Een parkeerretributie en mogelijk wegsleepkosten", "is_correct": true },
+          { "text": "Enkel een waarschuwing bij de eerste overtreding", "is_correct": false },
+          { "text": "Intrekking van het rijbewijs", "is_correct": false }
+        ],
+        "explanation": "Parkeren op een voor personenwagens gereserveerde plek is een overtreding die bestraft wordt met een boete en eventueel wegslepen."
+      },
+      "EN": {
+        "question": "What is the sanction for parking in an E9b space without driving a passenger car?",
+        "choices": [
+          { "text": "A parking fine and possibly towing costs", "is_correct": true },
+          { "text": "Only a warning for the first offence", "is_correct": false },
+          { "text": "Suspension of the driving licence", "is_correct": false }
+        ],
+        "explanation": "Parking in a space reserved for passenger cars is a violation punishable by a fine and possibly towing."
+      },
+      "FR": {
+        "question": "Quelle est la sanction pour se garer sur une place E9b sans conduire une voiture particuliere ?",
+        "choices": [
+          { "text": "Une retribution de stationnement et eventuellement des frais de remorquage", "is_correct": true },
+          { "text": "Seulement un avertissement pour la premiere infraction", "is_correct": false },
+          { "text": "Retrait du permis de conduire", "is_correct": false }
+        ],
+        "explanation": "Se garer sur une place reservee pour voitures particulieres est une infraction passible d'une amende et eventuellement du remorquage."
+      },
+      "AR": {
+        "question": "ما العقوبة على الوقوف في موقف E9b دون قيادة سيارة خاصة؟",
+        "choices": [
+          { "text": "غرامة وقوف وربما تكاليف سحب", "is_correct": true },
+          { "text": "تحذير فقط عند المخالفة الأولى", "is_correct": false },
+          { "text": "سحب رخصة القيادة", "is_correct": false }
+        ],
+        "explanation": "الوقوف في موقف محجوز للسيارات الخاصة مخالفة يُعاقب عليها بغرامة وربما السحب."
+      }
+    }
+  },
+  {
+    "question_id": "E9b_Q07",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Mag u bij E9b parkeren als de gereserveerde plek al lange tijd leeg staat?",
+        "choices": [
+          { "text": "Neen: de reservering geldt ongeacht de bezetting van de plek", "is_correct": true },
+          { "text": "Ja: een ongebruikte plek mag vrij worden geparkeerd", "is_correct": false }
+        ],
+        "explanation": "De reservering voor personenwagens is permanent en onafhankelijk van of de plek leeg of bezet is."
+      },
+      "EN": {
+        "question": "May you park under E9b if the reserved space has been empty for a long time?",
+        "choices": [
+          { "text": "No: the reservation applies regardless of the occupancy of the space", "is_correct": true },
+          { "text": "Yes: an unused space may be freely parked in", "is_correct": false }
+        ],
+        "explanation": "The reservation for passenger cars is permanent and independent of whether the space is empty or occupied."
+      },
+      "FR": {
+        "question": "Pouvez-vous vous garer sous E9b si la place reservee est vide depuis longtemps ?",
+        "choices": [
+          { "text": "Non: la reservation s'applique quelle que soit l'occupation de la place", "is_correct": true },
+          { "text": "Oui: une place inutilisee peut etre librement occupee", "is_correct": false }
+        ],
+        "explanation": "La reservation pour voitures particulieres est permanente et independante du fait que la place soit libre ou occupee."
+      },
+      "AR": {
+        "question": "هل يجوز الوقوف تحت E9b إذا كان الموقف المحجوز فارغاً منذ فترة طويلة؟",
+        "choices": [
+          { "text": "لا: الحجز ينطبق بصرف النظر عن إشغال الموقف", "is_correct": true },
+          { "text": "نعم: الموقف غير المستخدم يمكن الوقوف فيه بحرية", "is_correct": false }
+        ],
+        "explanation": "الحجز للسيارات الخاصة دائم ومستقل عن كون الموقف فارغاً أم مشغولاً."
+      }
+    }
+  },
+  {
+    "question_id": "E9b_Q08",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Is het toegestaan even te stoppen naast een E9b-teken om iets achter in uw wagen te zetten?",
+        "choices": [
+          { "text": "Neen tenzij E9b gecombineerd is met E3: stoppen op een gereserveerde standplaats is voor een normale parkeerzone niet verboden, maar de plek bezetten terwijl u het voertuig verlaat wel", "is_correct": true },
+          { "text": "Ja: stoppen is nooit gereglementeerd door E-reeksborden", "is_correct": false }
+        ],
+        "explanation": "E9-reeksborden regelen parkeren. Kort stoppen (met u erbij) is normaliter toegestaan tenzij ook E3 geldt."
+      },
+      "EN": {
+        "question": "Is it allowed to briefly stop next to an E9b sign to put something in the back of your car?",
+        "choices": [
+          { "text": "No unless E9b is combined with E3: stopping on a reserved space is not forbidden in a normal parking zone but occupying it while leaving the vehicle is", "is_correct": true },
+          { "text": "Yes: stopping is never regulated by E-series signs", "is_correct": false }
+        ],
+        "explanation": "E9-series signs regulate parking. Brief stopping (staying with vehicle) is normally permitted unless E3 also applies."
+      },
+      "FR": {
+        "question": "Est-il permis de s'arreter brievement a cote d'un panneau E9b pour mettre quelque chose dans le coffre ?",
+        "choices": [
+          { "text": "Non sauf si E9b est combine avec E3: s'arreter sur une place reservee n'est pas interdit dans une zone normale mais occuper la place en quittant le vehicule l'est", "is_correct": true },
+          { "text": "Oui: l'arret n'est jamais reglemente par les panneaux de la serie E", "is_correct": false }
+        ],
+        "explanation": "Les panneaux serie E9 reglementent le stationnement. Un arret bref (en restant) est normalement autorise sauf si E3 s'applique aussi."
+      },
+      "AR": {
+        "question": "هل يجوز التوقف لفترة قصيرة بجوار لافتة E9b لوضع شيء في صندوق سيارتك؟",
+        "choices": [
+          { "text": "لا إلا إذا كانت E9b مقترنة بـ E3: التوقف في موقف محجوز لا يُحظر في المنطقة العادية لكن شغل المكان مع مغادرة المركبة محظور", "is_correct": true },
+          { "text": "نعم: التوقف لا تُنظّمه لافتات السلسلة E أبداً", "is_correct": false }
+        ],
+        "explanation": "لافتات السلسلة E9 تُنظّم الوقوف. التوقف القصير (مع البقاء بجانب المركبة) مسموح عادةً إلا إذا كانت E3 تنطبق أيضاً."
       }
     }
   }

@@ -1,8 +1,10 @@
 package com.readyroad.readyroadbackend.mapper;
 
-import com.readyroad.readyroadbackend.domain.entity.TrafficSign;
+import com.readyroad.readyroadbackend.domain.entity.RoadSign;
+import com.readyroad.readyroadbackend.domain.enums.SignCategory;
 import com.readyroad.readyroadbackend.dto.response.AdminTrafficSignResponse;
 import com.readyroad.readyroadbackend.dto.response.TrafficSignResponse;
+import com.readyroad.readyroadbackend.service.CanonicalSignCatalogService;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
@@ -10,6 +12,30 @@ import java.util.Map;
 
 @Component
 public class TrafficSignMapper {
+
+    private final CanonicalSignCatalogService canonicalSignCatalogService;
+
+    public TrafficSignMapper(CanonicalSignCatalogService canonicalSignCatalogService) {
+        this.canonicalSignCatalogService = canonicalSignCatalogService;
+    }
+
+    // ── SignCategory enum → category letter code (for API responses / folder
+    // lookup)
+    private static final Map<SignCategory, String> CATEGORY_TO_LETTER;
+    static {
+        CATEGORY_TO_LETTER = new HashMap<>();
+        CATEGORY_TO_LETTER.put(SignCategory.DANGER, "A");
+        CATEGORY_TO_LETTER.put(SignCategory.PRIORITY, "B");
+        CATEGORY_TO_LETTER.put(SignCategory.PROHIBITION, "C");
+        CATEGORY_TO_LETTER.put(SignCategory.MANDATORY, "D");
+        CATEGORY_TO_LETTER.put(SignCategory.PARKING, "E");
+        CATEGORY_TO_LETTER.put(SignCategory.INFORMATION, "F");
+        CATEGORY_TO_LETTER.put(SignCategory.ADDITIONAL, "G");
+        CATEGORY_TO_LETTER.put(SignCategory.CYCLIST, "M");
+        CATEGORY_TO_LETTER.put(SignCategory.DELINEATION, "T");
+        CATEGORY_TO_LETTER.put(SignCategory.ZONE, "Z");
+        CATEGORY_TO_LETTER.put(SignCategory.ROAD_MANAGEMENT, "F");
+    }
 
     // ── Category letter → public images folder ──────────────────────────────
     private static final Map<String, String> CATEGORY_FOLDER_MAP;
@@ -47,7 +73,7 @@ public class TrafficSignMapper {
     }
 
     // ── Resolver ─────────────────────────────────────────────────────────────
-    private String buildCanonicalImageUrl(String signCode, String categoryCode, String rawImageUrl) {
+    private String buildCanonicalImageUrl(String signCode, String categoryCode, String rawImagePath) {
         // 1. Explicit override
         if (signCode != null && SIGN_CODE_OVERRIDES.containsKey(signCode)) {
             return SIGN_CODE_OVERRIDES.get(signCode);
@@ -58,57 +84,62 @@ public class TrafficSignMapper {
                 : (signCode != null && !signCode.isEmpty() ? signCode.substring(0, 1).toUpperCase() : "");
         String folder = CATEGORY_FOLDER_MAP.get(catLetter);
         String filename = null;
-        if (rawImageUrl != null && !rawImageUrl.isEmpty()) {
-            int lastSlash = rawImageUrl.lastIndexOf('/');
-            filename = (lastSlash >= 0) ? rawImageUrl.substring(lastSlash + 1) : rawImageUrl;
+        if (rawImagePath != null && !rawImagePath.isEmpty()) {
+            int lastSlash = rawImagePath.lastIndexOf('/');
+            filename = (lastSlash >= 0) ? rawImagePath.substring(lastSlash + 1) : rawImagePath;
         }
         if (folder != null && filename != null && !filename.isEmpty()) {
             return "/images/signs/" + folder + "/" + filename;
         }
         // 3. Fallback — return raw value unchanged
-        return rawImageUrl;
+        return rawImagePath;
     }
 
-    public TrafficSignResponse toResponse(TrafficSign sign) {
+    public TrafficSignResponse toResponse(RoadSign sign) {
+        String catLetter = CATEGORY_TO_LETTER.getOrDefault(sign.getCategory(), "");
+        CanonicalSignCatalogService.ResolvedSignData resolved = canonicalSignCatalogService.resolve(sign);
         return new TrafficSignResponse(
                 sign.getId(),
-                sign.getSignCode(),
-                sign.getCategory().getCode(),
-                sign.getNameAr(),
-                sign.getNameEn(),
-                sign.getNameNl(),
-                sign.getNameFr(),
-                sign.getDescriptionAr(),
-                sign.getDescriptionEn(),
-                sign.getDescriptionNl(),
-                sign.getDescriptionFr(),
-                sign.getLongDescriptionEn(),
-                sign.getLongDescriptionNl(),
-                sign.getLongDescriptionFr(),
-                sign.getLongDescriptionAr(),
-                sign.isLongDescriptionComplete(),
-                buildCanonicalImageUrl(sign.getSignCode(), sign.getCategory().getCode(), sign.getImageUrl()));
+                resolved.signCode(),
+                catLetter,
+                canonicalSignCatalogService.routeCodeFor(sign),
+                resolved.nameAr(),
+                resolved.nameEn(),
+                resolved.nameNl(),
+                resolved.nameFr(),
+                resolved.descriptionAr(),
+                resolved.descriptionEn(),
+                resolved.descriptionNl(),
+                resolved.descriptionFr(),
+                resolved.longDescriptionEn(),
+                resolved.longDescriptionNl(),
+                resolved.longDescriptionFr(),
+                resolved.longDescriptionAr(),
+                resolved.hasLongDescription(),
+                buildCanonicalImageUrl(resolved.signCode(), catLetter, resolved.imagePath()));
     }
 
-    public AdminTrafficSignResponse toAdminResponse(TrafficSign sign) {
+    public AdminTrafficSignResponse toAdminResponse(RoadSign sign) {
+        String catLetter = CATEGORY_TO_LETTER.getOrDefault(sign.getCategory(), "");
+        CanonicalSignCatalogService.ResolvedSignData resolved = canonicalSignCatalogService.resolve(sign);
         return new AdminTrafficSignResponse(
                 sign.getId(),
                 sign.getSignCode(),
-                sign.getCategory().getCode(),
-                sign.getNameAr(),
-                sign.getNameEn(),
-                sign.getNameNl(),
-                sign.getNameFr(),
-                sign.getDescriptionAr(),
-                sign.getDescriptionEn(),
-                sign.getDescriptionNl(),
-                sign.getDescriptionFr(),
-                sign.getLongDescriptionEn(),
-                sign.getLongDescriptionNl(),
-                sign.getLongDescriptionFr(),
-                sign.getLongDescriptionAr(),
-                sign.isLongDescriptionComplete(),
-                buildCanonicalImageUrl(sign.getSignCode(), sign.getCategory().getCode(), sign.getImageUrl()),
+                catLetter,
+                resolved.nameAr(),
+                resolved.nameEn(),
+                resolved.nameNl(),
+                resolved.nameFr(),
+                resolved.descriptionAr(),
+                resolved.descriptionEn(),
+                resolved.descriptionNl(),
+                resolved.descriptionFr(),
+                resolved.longDescriptionEn(),
+                resolved.longDescriptionNl(),
+                resolved.longDescriptionFr(),
+                resolved.longDescriptionAr(),
+                resolved.hasLongDescription(),
+                buildCanonicalImageUrl(sign.getSignCode(), catLetter, resolved.imagePath()),
                 sign.getIsActive(),
                 sign.getCreatedAt(),
                 sign.getUpdatedAt());

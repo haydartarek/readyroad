@@ -4,6 +4,8 @@ import com.readyroad.readyroadbackend.domain.entity.SignChoice;
 import com.readyroad.readyroadbackend.domain.entity.SignPracticeAnswer;
 import com.readyroad.readyroadbackend.domain.entity.SignPracticeSession;
 import com.readyroad.readyroadbackend.domain.entity.SignQuestion;
+import com.readyroad.readyroadbackend.domain.enums.SignQuestionType;
+import com.readyroad.readyroadbackend.util.SignQuestionTextSanitizer;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -62,6 +64,7 @@ public record SignPracticeResultDto(
         public static QuestionResultItem from(SignPracticeAnswer a) {
             SignQuestion q      = a.getQuestion();
             SignChoice   picked = a.getChoice();
+            SignQuestionType questionType = q.getQuestionType();
 
             // Find the correct choice (the one with isCorrect=true)
             SignChoice correct = q.getChoices().stream()
@@ -78,15 +81,21 @@ public record SignPracticeResultDto(
                     Boolean.TRUE.equals(a.getIsCorrect()),
 
                     picked.getId(),
-                    picked.getTextNl(), picked.getTextEn(),
-                    picked.getTextFr(), picked.getTextAr(),
+                    SignQuestionTextSanitizer.sanitizeChoice(questionType, picked.getTextNl()),
+                    SignQuestionTextSanitizer.sanitizeChoice(questionType, picked.getTextEn()),
+                    SignQuestionTextSanitizer.sanitizeChoice(questionType, picked.getTextFr()),
+                    SignQuestionTextSanitizer.sanitizeChoice(questionType, picked.getTextAr()),
 
                     correct.getId(),
-                    correct.getTextNl(), correct.getTextEn(),
-                    correct.getTextFr(), correct.getTextAr(),
+                    SignQuestionTextSanitizer.sanitizeChoice(questionType, correct.getTextNl()),
+                    SignQuestionTextSanitizer.sanitizeChoice(questionType, correct.getTextEn()),
+                    SignQuestionTextSanitizer.sanitizeChoice(questionType, correct.getTextFr()),
+                    SignQuestionTextSanitizer.sanitizeChoice(questionType, correct.getTextAr()),
 
-                    q.getExplanationNl(), q.getExplanationEn(),
-                    q.getExplanationFr(), q.getExplanationAr()
+                    SignQuestionTextSanitizer.sanitizeExplanation(questionType, q.getExplanationNl()),
+                    SignQuestionTextSanitizer.sanitizeExplanation(questionType, q.getExplanationEn()),
+                    SignQuestionTextSanitizer.sanitizeExplanation(questionType, q.getExplanationFr()),
+                    SignQuestionTextSanitizer.sanitizeExplanation(questionType, q.getExplanationAr())
             );
         }
     }

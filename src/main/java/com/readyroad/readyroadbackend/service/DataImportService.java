@@ -6,12 +6,14 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.readyroad.readyroadbackend.domain.entity.Category;
 import com.readyroad.readyroadbackend.domain.entity.QuizAnswerOption;
 import com.readyroad.readyroadbackend.domain.entity.QuizQuestion;
-import com.readyroad.readyroadbackend.domain.entity.TrafficSign;
+import com.readyroad.readyroadbackend.domain.entity.RoadSign;
+import com.readyroad.readyroadbackend.domain.enums.SignCategory;
 import com.readyroad.readyroadbackend.domain.repository.CategoryRepository;
 import com.readyroad.readyroadbackend.domain.repository.QuizQuestionRepository;
-import com.readyroad.readyroadbackend.domain.repository.TrafficSignRepository;
+import com.readyroad.readyroadbackend.domain.repository.RoadSignRepository;
 import com.readyroad.readyroadbackend.dto.ImportReport;
 import com.readyroad.readyroadbackend.util.PlaceholderDetector;
+import com.readyroad.readyroadbackend.util.RouteCodeNormalizer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -28,8 +30,26 @@ public class DataImportService {
     private static final Logger log = LoggerFactory.getLogger(DataImportService.class);
 
     private final CategoryRepository categoryRepository;
-    private final TrafficSignRepository trafficSignRepository;
+    private final RoadSignRepository roadSignRepository;
     private final QuizQuestionRepository quizQuestionRepository;
+    private final CanonicalSignCatalogService canonicalSignCatalogService;
+
+    // Letter code → SignCategory enum
+    private static final Map<String, SignCategory> LETTER_TO_SIGN_CATEGORY;
+    static {
+        LETTER_TO_SIGN_CATEGORY = new java.util.HashMap<>();
+        LETTER_TO_SIGN_CATEGORY.put("A", SignCategory.DANGER);
+        LETTER_TO_SIGN_CATEGORY.put("B", SignCategory.PRIORITY);
+        LETTER_TO_SIGN_CATEGORY.put("C", SignCategory.PROHIBITION);
+        LETTER_TO_SIGN_CATEGORY.put("D", SignCategory.MANDATORY);
+        LETTER_TO_SIGN_CATEGORY.put("E", SignCategory.PARKING);
+        LETTER_TO_SIGN_CATEGORY.put("F", SignCategory.INFORMATION);
+        LETTER_TO_SIGN_CATEGORY.put("G", SignCategory.ADDITIONAL);
+        LETTER_TO_SIGN_CATEGORY.put("H", SignCategory.INFORMATION);
+        LETTER_TO_SIGN_CATEGORY.put("M", SignCategory.CYCLIST);
+        LETTER_TO_SIGN_CATEGORY.put("T", SignCategory.DELINEATION);
+        LETTER_TO_SIGN_CATEGORY.put("Z", SignCategory.ZONE);
+    }
     private final ObjectMapper objectMapper;
 
     // Mapping from JSON category names to database category codes
@@ -39,6 +59,7 @@ public class DataImportService {
             Map.entry("verbodsborden", "C"),
             Map.entry("gebodsborden", "D"),
             Map.entry("parkeer- en stilstaanborden", "E"),
+            Map.entry("parkeerborden", "E"),
             Map.entry("parkeren", "E"),
             Map.entry("aanwijzingsborden", "F"),
             Map.entry("onderborden", "G"),
@@ -48,13 +69,15 @@ public class DataImportService {
             Map.entry("Informatieborden_en_tijdelijke_verkeersmaatregelen", "H"));
 
     public DataImportService(CategoryRepository categoryRepository,
-            TrafficSignRepository trafficSignRepository,
+            RoadSignRepository roadSignRepository,
             QuizQuestionRepository quizQuestionRepository,
-            ObjectMapper objectMapper) {
+            ObjectMapper objectMapper,
+            CanonicalSignCatalogService canonicalSignCatalogService) {
         this.categoryRepository = categoryRepository;
-        this.trafficSignRepository = trafficSignRepository;
+        this.roadSignRepository = roadSignRepository;
         this.quizQuestionRepository = quizQuestionRepository;
         this.objectMapper = objectMapper;
+        this.canonicalSignCatalogService = canonicalSignCatalogService;
     }
 
     /**
@@ -160,6 +183,8 @@ public class DataImportService {
             if (signCode == null) {
                 signCode = getTextOrNull(signNode, "id");
             }
+            String routeSource = firstNonBlank(getTextOrNull(signNode, "id"), signCode);
+            String routeKey = normalizeRouteKey(routeSource);
             if (signCode == null) {
                 skipped++;
                 continue;
@@ -179,14 +204,12 @@ public class DataImportService {
                 continue;
             }
 
-            Optional<Category> optCategory = categoryRepository.findByCode(categoryCode);
-            if (optCategory.isEmpty()) {
-                log.warn("⚠️  Category {} not found in DB for sign {}", categoryCode, signCode);
+            SignCategory signCategory = LETTER_TO_SIGN_CATEGORY.get(categoryCode);
+            if (signCategory == null) {
+                log.warn("⚠️  No SignCategory mapping for letter: {} (sign: {})", categoryCode, signCode);
                 skipped++;
                 continue;
             }
-
-            Category category = optCategory.get();
 
             String nameNl = getTextOrNull(signNode, "title_nl");
             if (nameNl == null)
@@ -211,22 +234,23 @@ public class DataImportService {
             String descFr = getTextOrNull(signNode, "long_description_fr");
             String descAr = getTextOrNull(signNode, "long_description_ar");
 
-            String imageUrl = getTextOrNull(signNode, "image");
+            String imagePath = getTextOrNull(signNode, "image");
 
-            Optional<TrafficSign> existingSign = trafficSignRepository.findBySignCode(signCode);
+            Optional<RoadSign> existingSign = findExistingSign(routeKey, signCode);
 
-            TrafficSign sign;
+            RoadSign sign;
             if (existingSign.isPresent()) {
                 sign = existingSign.get();
                 updated++;
             } else {
-                sign = new TrafficSign();
+                sign = new RoadSign();
                 sign.setSignCode(signCode);
+                sign.setNormalizedSignCode(routeKey);
                 sign.setIsActive(true);
                 created++;
             }
 
-            sign.setCategory(category);
+            sign.setCategory(signCategory);
             sign.setNameNl(nameNl);
             sign.setNameEn(nameEn);
             sign.setNameFr(nameFr);
@@ -239,10 +263,11 @@ public class DataImportService {
                 sign.setDescriptionFr(descFr);
             if (descAr != null)
                 sign.setDescriptionAr(descAr);
-            if (imageUrl != null)
-                sign.setImageUrl(imageUrl);
+            if (imagePath != null)
+                sign.setImagePath(imagePath);
+            canonicalSignCatalogService.applyCanonicalFields(sign);
 
-            trafficSignRepository.save(sign);
+            roadSignRepository.save(sign);
         }
 
         log.info("✅ Traffic signs import complete: {} created, {} updated, {} skipped", created, updated, skipped);
@@ -308,14 +333,16 @@ public class DataImportService {
                     b.incSkipped().warn("No category mapping for '" + categoryName + "' (sign: " + signCode + ")");
                     continue;
                 }
+                String routeSource = firstNonBlank(getTextOrNull(signNode, "id"), signCode);
+                String routeKey = normalizeRouteKey(routeSource);
 
-                Optional<Category> optCat = categoryRepository.findByCode(categoryCode);
-                if (optCat.isEmpty()) {
-                    b.incSkipped().warn("Category " + categoryCode + " not in DB (sign: " + signCode + ")");
+                SignCategory signCategory = LETTER_TO_SIGN_CATEGORY.get(categoryCode);
+                if (signCategory == null) {
+                    b.incSkipped().warn("No SignCategory for letter '" + categoryCode + "' (sign: " + signCode + ")");
                     continue;
                 }
 
-                Optional<TrafficSign> existing = trafficSignRepository.findBySignCode(signCode);
+                Optional<RoadSign> existing = findExistingSign(routeKey, signCode);
                 if (existing.isPresent()) {
                     b.incUpdated();
                 } else {
@@ -323,15 +350,15 @@ public class DataImportService {
                 }
 
                 if (!dryRun) {
-                    Category category = optCat.get();
                     final String sc = signCode;
-                    TrafficSign sign = existing.orElseGet(() -> {
-                        TrafficSign s = new TrafficSign();
+                    RoadSign sign = existing.orElseGet(() -> {
+                        RoadSign s = new RoadSign();
                         s.setSignCode(sc);
+                        s.setNormalizedSignCode(routeKey);
                         s.setIsActive(true);
                         return s;
                     });
-                    sign.setCategory(category);
+                    sign.setCategory(signCategory);
                     String nameNl = getTextOrNull(signNode, "title_nl");
                     if (nameNl == null)
                         nameNl = getTextOrNull(signNode, "title");
@@ -364,10 +391,11 @@ public class DataImportService {
                     String descAr = getTextOrNull(signNode, "long_description_ar");
                     if (descAr != null)
                         sign.setDescriptionAr(descAr);
-                    String imageUrl = getTextOrNull(signNode, "image");
-                    if (imageUrl != null)
-                        sign.setImageUrl(imageUrl);
-                    trafficSignRepository.save(sign);
+                    String imagePath = getTextOrNull(signNode, "image");
+                    if (imagePath != null)
+                        sign.setImagePath(imagePath);
+                    canonicalSignCatalogService.applyCanonicalFields(sign);
+                    roadSignRepository.save(sign);
                 }
             }
         } catch (Exception e) {
@@ -375,6 +403,34 @@ public class DataImportService {
             b.error("Failed to parse signs JSON: " + e.getMessage());
         }
         return b.build();
+    }
+
+    private Optional<RoadSign> findExistingSign(String routeKey, String signCode) {
+        if (!routeKey.isBlank()) {
+            Optional<RoadSign> byRoute = roadSignRepository.findByNormalizedSignCode(routeKey);
+            if (byRoute.isPresent()) {
+                return byRoute;
+            }
+        }
+
+        if (routeKey.isBlank() || routeKey.equals(normalizeRouteKey(signCode))) {
+            return roadSignRepository.findFirstBySignCodeOrderByIdAsc(signCode);
+        }
+
+        return Optional.empty();
+    }
+
+    private static String firstNonBlank(String... values) {
+        for (String value : values) {
+            if (value != null && !value.trim().isEmpty()) {
+                return value.trim();
+            }
+        }
+        return "";
+    }
+
+    private static String normalizeRouteKey(String value) {
+        return RouteCodeNormalizer.normalize(value);
     }
 
     // ── Category Descriptions ─────────────────────────────────────

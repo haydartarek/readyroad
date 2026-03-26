@@ -460,7 +460,7 @@ Feature: Feature B Endpoints Verification (Answer Submission & Progress Tracking
     And question with id 42 exists
     When I submit an answer for question 42
     Then user_question_history.last_shown_at should be updated
-    And SmartQuizService should exclude question 42 from generation for 24 hours
+    And future quiz generation should exclude question 42 from generation for 24 hours
     And this enforces Law #1: 24-hour cooldown
 
   @integration @law2
@@ -468,7 +468,7 @@ Feature: Feature B Endpoints Verification (Answer Submission & Progress Tracking
     Given I am authenticated as user 888
     And my category "Traffic Signs" has mastery level ADVANCED
     When I generate a new quiz for "Traffic Signs"
-    Then SmartQuizService should use my difficulty level
+    Then quiz generation should use my recommended difficulty level
     And questions should match my proficiency based on progress data
 
   @integration @exam-simulation
@@ -476,8 +476,8 @@ Feature: Feature B Endpoints Verification (Answer Submission & Progress Tracking
     Given I am authenticated as user 888
     And I have extensive practice history
     When I start an exam simulation (Story A1)
-    Then the exam should use SmartQuizService
-    And SmartQuizService should respect my progress and history
+    Then the exam should use the active theory-question bank
+    And the selection logic should respect my progress and history
     And question selection should be influenced by my weak categories
 
   # ═══════════════════════════════════════════════════════════════════════

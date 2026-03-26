@@ -17,5 +17,7 @@ public enum SignCategory {
     ADDITIONAL,
     CYCLIST,
     DELINEATION,
-    ZONE
+    ZONE,
+    /** F-series road management signs (e.g. F39, F79, F81...) */
+    ROAD_MANAGEMENT
 }

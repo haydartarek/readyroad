@@ -100,7 +100,7 @@ public class OverallProgressResponse {
     private Integer signPracticeCount;
 
     /**
-     * Total number of sign exam submissions (exam 1 + exam 2).
+     * Total number of sign exam submissions.
      */
     private Integer signExamCount;
 

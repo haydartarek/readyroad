@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -26,7 +27,7 @@ import java.util.stream.Collectors;
  * - Complies with Law #5: Deliberate Ignorance
  *
  * Used by:
- * - SmartQuizService (when fully restored)
+ * - QuizController delivery flows
  * - Tests (ContentSwapProofTest)
  *
  * @see com.readyroad.readyroadbackend.dto.QuizQuestionDTO
@@ -73,9 +74,8 @@ public class QuizQuestionMapper {
             dto.setCategoryNameFr(question.getCategory().getNameFr());
         }
 
-        // Options: filter placeholder / corrupted translations, then shuffle.
-        // Correct answer identity is always tracked by stable option ID, never by
-        // visual position, so filtering here is safe.
+        // Options: filter placeholder / corrupted translations, then shuffle
+        // the delivery order so the correct answer is not fixed in one slot.
         if (question.getOptions() != null) {
             List<QuizAnswerOptionDTO> optionDTOs = question.getOptions().stream()
                     .filter(option -> {
@@ -89,9 +89,15 @@ public class QuizQuestionMapper {
                         }
                         return !placeholder;
                     })
+                    .sorted(Comparator.comparing(
+                            QuizAnswerOption::getDisplayOrder,
+                            Comparator.nullsLast(Integer::compareTo)))
                     .map(this::toOptionDTO)
                     .collect(Collectors.toCollection(ArrayList::new));
             Collections.shuffle(optionDTOs);
+            for (int i = 0; i < optionDTOs.size(); i++) {
+                optionDTOs.get(i).setDisplayOrder(i + 1);
+            }
             dto.setOptions(optionDTOs);
         }
 

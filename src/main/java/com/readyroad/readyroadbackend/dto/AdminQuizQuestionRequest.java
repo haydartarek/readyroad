@@ -35,11 +35,6 @@ public class AdminQuizQuestionRequest {
     private String questionNl;
     private String questionFr;
 
-    private String explanationEn;
-    private String explanationAr;
-    private String explanationNl;
-    private String explanationFr;
-
     private String contentImageUrl;
 
     private Boolean isActive;

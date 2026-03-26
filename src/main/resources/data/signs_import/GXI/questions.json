@@ -1,0 +1,354 @@
+﻿[
+  {
+    "question_id": "GXI_Q01",
+    "type": "WHAT_DOES_IT_MEAN",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat betekent het bord GXI op een autosnelweg of autoweg?",
+        "choices": [
+          { "text": "GXI kondigt een afrit aan: een rijstrook die van de hoofd-rijbaan afsplitst en bestuurders naar een ander wegennet leidt", "is_correct": true },
+          { "text": "GXI duidt een gevaarlijke bocht aan die bestuurders moet waarschuwen te vertragen", "is_correct": false },
+          { "text": "GXI toont het einde van de autosnelweg en het begin van een gewone weg", "is_correct": false }
+        ],
+        "explanation": "GXI is het afritleidingsbord voor autosnelwegen en autowegen. Het geeft aan dat u een vertakkingspunt nadert en dat u hier de hoofd-rijbaan kunt verlaten om een andere route te nemen."
+      },
+      "EN": {
+        "question": "What does sign GXI mean on a motorway or expressway?",
+        "choices": [
+          { "text": "GXI announces an exit: a lane that splits off from the main carriageway and guides drivers to another road network", "is_correct": true },
+          { "text": "GXI marks a dangerous bend that warns drivers to slow down", "is_correct": false },
+          { "text": "GXI shows the end of the motorway and the beginning of an ordinary road", "is_correct": false }
+        ],
+        "explanation": "GXI is the exit guidance sign for motorways and expressways. It indicates that you are approaching a junction point and that you can leave the main carriageway here to take another route."
+      },
+      "FR": {
+        "question": "Que signifie le panneau GXI sur une autoroute ou une route pour automobiles ?",
+        "choices": [
+          { "text": "GXI annonce une sortie: une voie qui se separe de la chaussee principale et guide les conducteurs vers un autre reseau routier", "is_correct": true },
+          { "text": "GXI signale un virage dangereux qui avertit les conducteurs de ralentir", "is_correct": false },
+          { "text": "GXI indique la fin de l'autoroute et le debut d'une route ordinaire", "is_correct": false }
+        ],
+        "explanation": "GXI est le panneau de guidage de sortie pour les autoroutes et routes pour automobiles. Il indique que vous approchez d'un point de bifurcation et que vous pouvez quitter la chaussee principale ici pour prendre un autre itineraire."
+      },
+      "AR": {
+        "question": "Ù…Ø§ Ù…Ø¹Ù†Ù‰ Ù„Ø§ÙØªØ© GXI Ø¹Ù„Ù‰ Ø·Ø±ÙŠÙ‚ Ø³Ø±ÙŠØ¹ Ø£Ùˆ Ø³ÙŠØ§Ø±Ø§ØªØŸ",
+        "choices": [
+          { "text": "GXI ØªÙØ¹Ù„Ù† Ø¹Ù† Ù…Ø®Ø±Ø¬: Ù…Ø³Ø§Ø± ÙŠÙ†Ø´Ø¹Ø¨ Ø¹Ù† Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø±Ø¦ÙŠØ³ÙŠ ÙˆÙŠÙØ±Ø´Ø¯ Ø§Ù„Ø³Ø§Ø¦Ù‚ÙŠÙ† Ø¥Ù„Ù‰ Ø´Ø¨ÙƒØ© Ø·Ø±Ù‚ Ø£Ø®Ø±Ù‰", "is_correct": true },
+          { "text": "GXI ØªÙØ­Ø¯Ø¯ Ù…Ù†Ø¹Ø·ÙØ§Ù‹ Ø®Ø·ÙŠØ±Ø§Ù‹ ÙŠÙØ­Ø°Ø± Ø§Ù„Ø³Ø§Ø¦Ù‚ÙŠÙ† Ù…Ù† Ø§Ù„ØªØ¨Ø§Ø·Ø¤", "is_correct": false },
+          { "text": "GXI ØªÙØ´ÙŠØ± Ø¥Ù„Ù‰ Ù†Ù‡Ø§ÙŠØ© Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø³Ø±ÙŠØ¹ ÙˆØ¨Ø¯Ø§ÙŠØ© Ø·Ø±ÙŠÙ‚ Ø¹Ø§Ø¯ÙŠ", "is_correct": false }
+        ],
+        "explanation": "GXI Ù‡ÙŠ Ù„Ø§ÙØªØ© Ø¥Ø±Ø´Ø§Ø¯ Ø§Ù„Ù…Ø®Ø±Ø¬ Ù„Ù„Ø·Ø±Ù‚ Ø§Ù„Ø³Ø±ÙŠØ¹Ø© ÙˆØ·Ø±Ù‚ Ø§Ù„Ø³ÙŠØ§Ø±Ø§Øª. ØªÙØ´ÙŠØ± Ø¥Ù„Ù‰ Ø§Ù‚ØªØ±Ø§Ø¨Ùƒ Ù…Ù† Ù†Ù‚Ø·Ø© ØªÙØ±Ø¹ ÙˆÙŠÙ…ÙƒÙ†Ùƒ Ù‡Ù†Ø§ Ù…ØºØ§Ø¯Ø±Ø© Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø±Ø¦ÙŠØ³ÙŠ Ù„Ù„Ø³ÙŠØ± ÙÙŠ Ø·Ø±ÙŠÙ‚ Ø¢Ø®Ø±."
+      }
+    }
+  },
+  {
+    "question_id": "GXI_Q02",
+    "type": "WHICH_SIGN",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Tot welke categorie behoort bord GXI en op welk type weg komt het voor?",
+        "choices": [
+          { "text": "GXI behoort tot de G-reeks (aanvullende en informatieve borden) en is specifiek voor autosnelwegen en autowegen", "is_correct": true },
+          { "text": "GXI is een waarschuwingsbord (A-reeks) voor gevaarlijke wegtoestanden", "is_correct": false },
+          { "text": "GXI is een gebodsbord (D-reeks) dat een verplichte richting aangeeft", "is_correct": false }
+        ],
+        "explanation": "GXI behoort tot de G-reeks aanvullende borden en wordt uitsluitend gebruikt op autosnelwegen en autowegen om afritsituaties aan te geven. Op gewone wegen worden andere typen richtingaanwijzers gebruikt."
+      },
+      "EN": {
+        "question": "To which category does sign GXI belong and on which type of road does it appear?",
+        "choices": [
+          { "text": "GXI belongs to the G-series (additional and information signs) and is specific to motorways and expressways", "is_correct": true },
+          { "text": "GXI is a warning sign (A-series) for dangerous road conditions", "is_correct": false },
+          { "text": "GXI is a mandatory sign (D-series) indicating a compulsory direction", "is_correct": false }
+        ],
+        "explanation": "GXI belongs to the G-series additional signs and is used exclusively on motorways and expressways to indicate exit situations. On ordinary roads different types of direction indicators are used."
+      },
+      "FR": {
+        "question": "A quelle categorie appartient le panneau GXI et sur quel type de route apparait-il ?",
+        "choices": [
+          { "text": "GXI appartient a la serie G (panneaux additionnels et informatifs) et est specifique aux autoroutes et routes pour automobiles", "is_correct": true },
+          { "text": "GXI est un panneau de danger (serie A) pour conditions de route dangereuses", "is_correct": false },
+          { "text": "GXI est un panneau d'obligation (serie D) indiquant une direction obligatoire", "is_correct": false }
+        ],
+        "explanation": "GXI appartient aux panneaux additionnels de la serie G et est utilise exclusivement sur les autoroutes et routes pour automobiles pour indiquer les situations de sortie. Sur les routes ordinaires d'autres types d'indicateurs de direction sont utilises."
+      },
+      "AR": {
+        "question": "Ø¥Ù„Ù‰ Ø£ÙŠ ÙØ¦Ø© ØªÙ†ØªÙ…ÙŠ Ù„Ø§ÙØªØ© GXI ÙˆØ¹Ù„Ù‰ Ø£ÙŠ Ù†ÙˆØ¹ Ù…Ù† Ø§Ù„Ø·Ø±Ù‚ ØªØ¸Ù‡Ø±ØŸ",
+        "choices": [
+          { "text": "GXI ØªÙ†ØªÙ…ÙŠ Ø¥Ù„Ù‰ Ø§Ù„Ø³Ù„Ø³Ù„Ø© G (Ù„Ø§ÙØªØ§Øª Ø¥Ø¶Ø§ÙÙŠØ© ÙˆØ¥Ø¹Ù„Ø§Ù…ÙŠØ©) ÙˆØ®Ø§ØµØ© Ø¨Ø§Ù„Ø·Ø±Ù‚ Ø§Ù„Ø³Ø±ÙŠØ¹Ø© ÙˆØ·Ø±Ù‚ Ø§Ù„Ø³ÙŠØ§Ø±Ø§Øª", "is_correct": true },
+          { "text": "GXI Ù„Ø§ÙØªØ© ØªØ­Ø°ÙŠØ± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© A) Ù„Ø£ÙˆØ¶Ø§Ø¹ Ø·Ø±ÙŠÙ‚ Ø®Ø·ÙŠØ±Ø©", "is_correct": false },
+          { "text": "GXI Ù„Ø§ÙØªØ© Ø¥Ù„Ø²Ø§Ù…ÙŠØ© (Ø§Ù„Ø³Ù„Ø³Ù„Ø© D) ØªÙØ´ÙŠØ± Ø¥Ù„Ù‰ Ø§ØªØ¬Ø§Ù‡ Ø¥Ø¬Ø¨Ø§Ø±ÙŠ", "is_correct": false }
+        ],
+        "explanation": "GXI ØªÙ†ØªÙ…ÙŠ Ø¥Ù„Ù‰ Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø³Ù„Ø³Ù„Ø© G Ø§Ù„Ø¥Ø¶Ø§ÙÙŠØ© ÙˆØªÙØ³ØªØ®Ø¯Ù… Ø­ØµØ±Ø§Ù‹ Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±Ù‚ Ø§Ù„Ø³Ø±ÙŠØ¹Ø© ÙˆØ·Ø±Ù‚ Ø§Ù„Ø³ÙŠØ§Ø±Ø§Øª Ù„Ù„Ø¥Ø´Ø§Ø±Ø© Ø¥Ù„Ù‰ Ù…ÙˆØ§Ù‚Ù Ø§Ù„Ù…Ø®Ø±Ø¬. Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±Ù‚ Ø§Ù„Ø¹Ø§Ø¯ÙŠØ© ØªÙØ³ØªØ®Ø¯Ù… Ø£Ù†ÙˆØ§Ø¹ Ø£Ø®Ø±Ù‰ Ù…Ù† Ù…Ø¤Ø´Ø±Ø§Øª Ø§Ù„Ø§ØªØ¬Ø§Ù‡."
+      }
+    }
+  },
+  {
+    "question_id": "GXI_Q03",
+    "type": "HAZARD_IDENTIFICATION",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Welk gevaar is verbonden aan een afrit (GXI) als u te laat beslist om die te nemen?",
+        "choices": [
+          { "text": "Plotseling remmen of scherp sturen om de afrit te halen veroorzaakt gevaar voor uzelf en achteropkomend verkeer", "is_correct": true },
+          { "text": "Er is geen gevaar want de afritstrook is altijd lang genoeg om laat af te slaan", "is_correct": false },
+          { "text": "Het gevaar beperkt zich tot het oplopen van een boete voor het verkeerd gebruik van de rijstroken", "is_correct": false }
+        ],
+        "explanation": "Laattijdig beslissen om een afrit te nemen kan leiden tot abrupt remmen, gevaarlijk sturen of zelfs rijden over de markering. Dit brengt uzelf en andere weggebruikers ernstig in gevaar. Op een autosnelweg is achteruitrijden om een gemiste afrit te nemen verboden."
+      },
+      "EN": {
+        "question": "What hazard is associated with an exit (GXI) if you decide too late to take it?",
+        "choices": [
+          { "text": "Sudden braking or sharp steering to catch the exit creates danger for yourself and following traffic", "is_correct": true },
+          { "text": "There is no danger because the exit lane is always long enough for a late exit", "is_correct": false },
+          { "text": "The hazard is limited to receiving a fine for improper use of lanes", "is_correct": false }
+        ],
+        "explanation": "Deciding too late to take an exit can lead to abrupt braking, dangerous steering or even crossing the road markings. This seriously endangers you and other road users. Reversing on a motorway to reach a missed exit is forbidden."
+      },
+      "FR": {
+        "question": "Quel danger est associe a une sortie (GXI) si vous decidez trop tard de la prendre ?",
+        "choices": [
+          { "text": "Un freinage soudain ou une direction brusque pour prendre la sortie cree un danger pour vous et les vehicules qui suivent", "is_correct": true },
+          { "text": "Il n'y a aucun danger car la voie de sortie est toujours assez longue pour une sortie tardive", "is_correct": false },
+          { "text": "Le danger se limite a recevoir une amende pour utilisation incorrecte des voies", "is_correct": false }
+        ],
+        "explanation": "Decider trop tard de prendre une sortie peut conduire a un freinage brusque, une conduite dangereuse ou meme a traverser les marquages routiers. Cela met serieusement en danger vous-meme et les autres usagers. Faire marche arriere sur une autoroute pour atteindre une sortie manquee est interdit."
+      },
+      "AR": {
+        "question": "Ù…Ø§ Ø§Ù„Ø®Ø·Ø± Ø§Ù„Ù…Ø±ØªØ¨Ø· Ø¨Ù…Ø®Ø±Ø¬ (GXI) Ø¥Ø°Ø§ Ù‚Ø±Ø±Øª Ù…ØªØ£Ø®Ø±Ø§Ù‹ Ø§Ù„Ø§Ù†Ø¹Ø·Ø§Ù Ù†Ø­ÙˆÙ‡ØŸ",
+        "choices": [
+          { "text": "Ø§Ù„ÙƒØ¨Ø­ Ø§Ù„Ù…ÙØ§Ø¬Ø¦ Ø£Ùˆ Ø§Ù„ØªÙˆØ¬ÙŠÙ‡ Ø§Ù„Ø­Ø§Ø¯ Ù„Ù„ÙˆØµÙˆÙ„ Ø¥Ù„Ù‰ Ø§Ù„Ù…Ø®Ø±Ø¬ ÙŠÙØ´ÙƒÙ‘Ù„ Ø®Ø·Ø±Ø§Ù‹ Ø¹Ù„Ù‰ Ù†ÙØ³Ùƒ ÙˆØ¹Ù„Ù‰ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø®Ù„ÙÙƒ", "is_correct": true },
+          { "text": "Ù„Ø§ ÙŠÙˆØ¬Ø¯ Ø®Ø·Ø± Ù„Ø£Ù† Ù…Ø³Ø§Ø± Ø§Ù„Ù…Ø®Ø±Ø¬ Ø·ÙˆÙŠÙ„ Ø¯Ø§Ø¦Ù…Ø§Ù‹ Ø¨Ù…Ø§ ÙŠÙƒÙÙŠ Ù„Ù„Ø§Ù†Ø¹Ø·Ø§Ù Ø§Ù„Ù…ØªØ£Ø®Ø±", "is_correct": false },
+          { "text": "Ø§Ù„Ø®Ø·Ø± Ù…Ø­Ø¯ÙˆØ¯ Ø¨Ø§Ù„Ø­ØµÙˆÙ„ Ø¹Ù„Ù‰ ØºØ±Ø§Ù…Ø© Ù„Ø³ÙˆØ¡ Ø§Ø³ØªØ®Ø¯Ø§Ù… Ø§Ù„Ø­Ø§Ø±Ø§Øª", "is_correct": false }
+        ],
+        "explanation": "Ø§ØªØ®Ø§Ø° Ù‚Ø±Ø§Ø± Ù…ØªØ£Ø®Ø± Ø¨Ø£Ø®Ø° Ø§Ù„Ù…Ø®Ø±Ø¬ Ù‚Ø¯ ÙŠØ¤Ø¯ÙŠ Ø¥Ù„Ù‰ ÙƒØ¨Ø­ Ù…ÙØ§Ø¬Ø¦ Ø£Ùˆ Ù‚ÙŠØ§Ø¯Ø© Ø®Ø·ÙŠØ±Ø© Ø£Ùˆ Ø­ØªÙ‰ ØªØ¬Ø§ÙˆØ² Ø§Ù„Ø¹Ù„Ø§Ù…Ø§Øª Ø§Ù„Ø£Ø±Ø¶ÙŠØ©. Ù‡Ø°Ø§ ÙŠÙØ¹Ø±Ù‘Ø¶Ùƒ Ø£Ù†Øª ÙˆÙ…Ø³ØªØ®Ø¯Ù…ÙŠ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø¢Ø®Ø±ÙŠÙ† Ù„Ø®Ø·Ø± Ø¬Ø³ÙŠÙ…. Ø§Ù„Ø±Ø¬ÙˆØ¹ Ù„Ù„Ø®Ù„Ù Ø¹Ù„Ù‰ Ø·Ø±ÙŠÙ‚ Ø³Ø±ÙŠØ¹ Ù„Ù„ÙˆØµÙˆÙ„ Ø¥Ù„Ù‰ Ù…Ø®Ø±Ø¬ ÙØ§Ø¦Øª Ù…Ø­Ø¸ÙˆØ±."
+      }
+    }
+  },
+  {
+    "question_id": "GXI_Q04",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U ziet bord GXI op een autosnelweg en wil die afrit nemen. Hoe bereidt u zich voor op een veilige manier?",
+        "choices": [
+          { "text": "Schakelen naar de rechterrijstrook ruim voor de afrit, snelheid aanpassen aan de afritstrook en de afritmarkering volgen zonder abrupt te sturen of te remmen", "is_correct": true },
+          { "text": "Krachtig remmen zodra u de afrit bereikt om voldoende snelheid te verliezen", "is_correct": false },
+          { "text": "De linkerrijstrook aanhouden tot het laatste moment en dan snel oversteken", "is_correct": false }
+        ],
+        "explanation": "Een veilige afritmanoeuvre vereist tijdig wisselen naar de rechterrijstrook, rustig vertragen en de afritsignalisatie opvolgen. Abrupt remmen of sturen op de hoofd-rijbaan is gevaarlijk voor achteropkomend verkeer."
+      },
+      "EN": {
+        "question": "You see sign GXI on a motorway and want to take that exit. How do you prepare safely?",
+        "choices": [
+          { "text": "Move to the right lane well before the exit, adjust speed for the exit lane and follow the exit markings without abrupt steering or braking", "is_correct": true },
+          { "text": "Brake hard as soon as you reach the exit to lose sufficient speed", "is_correct": false },
+          { "text": "Stay in the left lane until the last moment and then quickly cut across", "is_correct": false }
+        ],
+        "explanation": "A safe exit manoeuvre requires timely movement to the right lane, gradual deceleration and following the exit signage. Abrupt braking or steering on the main carriageway is dangerous for traffic following behind."
+      },
+      "FR": {
+        "question": "Vous voyez le panneau GXI sur une autoroute et voulez prendre cette sortie. Comment vous preparez-vous en toute securite ?",
+        "choices": [
+          { "text": "Passez sur la voie de droite bien avant la sortie, adaptez votre vitesse pour la voie de sortie et suivez le marquage de sortie sans braquer ni freiner brusquement", "is_correct": true },
+          { "text": "Freinez fort des que vous atteignez la sortie pour perdre suffisamment de vitesse", "is_correct": false },
+          { "text": "Restez sur la voie de gauche jusqu'au dernier moment puis traversez rapidement", "is_correct": false }
+        ],
+        "explanation": "Une manoeuvre de sortie sure necessite un passage en temps utile sur la voie de droite, une deceleration progressive et le suivi de la signalisation de sortie. Freiner ou braquer brusquement sur la chaussee principale est dangereux pour le trafic qui suit."
+      },
+      "AR": {
+        "question": "ØªØ±Ù‰ Ù„Ø§ÙØªØ© GXI Ø¹Ù„Ù‰ Ø·Ø±ÙŠÙ‚ Ø³Ø±ÙŠØ¹ ÙˆØªØ±ÙŠØ¯ Ø£Ø®Ø° Ø°Ù„Ùƒ Ø§Ù„Ù…Ø®Ø±Ø¬. ÙƒÙŠÙ ØªØªØ­Ø¶Ø± Ø¨Ø£Ù…Ø§Ù†ØŸ",
+        "choices": [
+          { "text": "Ø§Ù„Ø§Ù†ØªÙ‚Ø§Ù„ Ø¥Ù„Ù‰ Ø§Ù„Ø­Ø§Ø±Ø© Ø§Ù„ÙŠÙ…Ù†Ù‰ Ù‚Ø¨Ù„ Ø§Ù„Ù…Ø®Ø±Ø¬ Ø¨ÙØ³Ø­Ø© ÙƒØ§ÙÙŠØ©ØŒ ØªÙƒÙŠÙŠÙ Ø§Ù„Ø³Ø±Ø¹Ø© Ù„Ù…Ø³Ø§Ø± Ø§Ù„Ù…Ø®Ø±Ø¬ ÙˆØ§ØªØ¨Ø§Ø¹ Ø¹Ù„Ø§Ù…Ø§Øª Ø§Ù„Ù…Ø®Ø±Ø¬ Ø¯ÙˆÙ† ØªÙˆØ¬ÙŠÙ‡ Ø£Ùˆ ÙƒØ¨Ø­ Ù…ÙØ§Ø¬Ø¦", "is_correct": true },
+          { "text": "Ø§Ù„ÙƒØ¨Ø­ Ø¨Ù‚ÙˆØ© ÙÙˆØ± ÙˆØµÙˆÙ„Ùƒ Ù„Ù„Ù…Ø®Ø±Ø¬ Ù„ÙÙ‚Ø¯Ø§Ù† Ø³Ø±Ø¹Ø© ÙƒØ§ÙÙŠØ©", "is_correct": false },
+          { "text": "Ø§Ù„Ø¨Ù‚Ø§Ø¡ ÙÙŠ Ø§Ù„Ø­Ø§Ø±Ø© Ø§Ù„ÙŠØ³Ø±Ù‰ Ø­ØªÙ‰ Ø§Ù„Ù„Ø­Ø¸Ø© Ø§Ù„Ø£Ø®ÙŠØ±Ø© Ø«Ù… Ø§Ù„Ù‚Ø·Ø¹ Ø¨Ø³Ø±Ø¹Ø©", "is_correct": false }
+        ],
+        "explanation": "Ù…Ù†Ø§ÙˆØ±Ø© Ø§Ù„Ù…Ø®Ø±Ø¬ Ø§Ù„Ø¢Ù…Ù†Ø© ØªØªØ·Ù„Ø¨ Ø§Ù„Ø§Ù†ØªÙ‚Ø§Ù„ ÙÙŠ Ø§Ù„ÙˆÙ‚Øª Ø§Ù„Ù…Ù†Ø§Ø³Ø¨ Ø¥Ù„Ù‰ Ø§Ù„Ø­Ø§Ø±Ø© Ø§Ù„ÙŠÙ…Ù†Ù‰ ÙˆØ§Ù„ØªØ¨Ø§Ø·Ø¤ Ø§Ù„ØªØ¯Ø±ÙŠØ¬ÙŠ ÙˆØ§ØªØ¨Ø§Ø¹ Ø¥Ø´Ø§Ø±Ø§Øª Ø§Ù„Ù…Ø®Ø±Ø¬. Ø§Ù„ÙƒØ¨Ø­ Ø£Ùˆ Ø§Ù„ØªÙˆØ¬ÙŠÙ‡ Ø§Ù„Ù…ÙØ§Ø¬Ø¦ Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø±Ø¦ÙŠØ³ÙŠ Ø®Ø·ÙŠØ± Ø¹Ù„Ù‰ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„ØªÙŠ Ø®Ù„ÙÙƒ."
+      }
+    }
+  },
+  {
+    "question_id": "GXI_Q05",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U heeft de afrit (GXI) gemist. Wat moet u doen?",
+        "choices": [
+          { "text": "Doorrijden tot de volgende afrit; achteruitrijden op een autosnelweg is strikt verboden en levensgevaarlijk", "is_correct": true },
+          { "text": "Stoppen op de pechstrook en wachten tot de weg vrij is om te keren", "is_correct": false },
+          { "text": "Achteruitrijden op de afritstrook om de weg opnieuw in te slaan", "is_correct": false }
+        ],
+        "explanation": "Op een autosnelweg is achteruitrijden en keren verboden en levensgevaarlijk door het snelrijdend verkeer. U rijdt door naar de eerstvolgende afrit en volgt dan de omleiding."
+      },
+      "EN": {
+        "question": "You have missed the exit (GXI). What must you do?",
+        "choices": [
+          { "text": "Continue to the next exit; reversing on a motorway is strictly forbidden and extremely dangerous", "is_correct": true },
+          { "text": "Stop on the hard shoulder and wait until the road is clear to turn around", "is_correct": false },
+          { "text": "Reverse on the exit ramp to re-enter the road", "is_correct": false }
+        ],
+        "explanation": "On a motorway reversing and turning around is forbidden and extremely dangerous due to fast-moving traffic. You continue to the next exit and then follow the detour."
+      },
+      "FR": {
+        "question": "Vous avez rate la sortie (GXI). Que devez-vous faire ?",
+        "choices": [
+          { "text": "Continuez jusqu'a la prochaine sortie; faire marche arriere sur une autoroute est strictement interdit et extremement dangereux", "is_correct": true },
+          { "text": "Arretez-vous sur la bande d'arret d'urgence et attendez que la route soit libre pour faire demi-tour", "is_correct": false },
+          { "text": "Faites marche arriere sur la voie de sortie pour revenir sur la route", "is_correct": false }
+        ],
+        "explanation": "Sur une autoroute faire marche arriere et faire demi-tour est interdit et extremement dangereux en raison du trafic a grande vitesse. Vous continuez jusqu'a la prochaine sortie puis suivez le detour."
+      },
+      "AR": {
+        "question": "ÙØ§ØªÙƒ Ø§Ù„Ù…Ø®Ø±Ø¬ (GXI). Ù…Ø§Ø°Ø§ ÙŠØ¬Ø¨ Ø£Ù† ØªÙØ¹Ù„ØŸ",
+        "choices": [
+          { "text": "Ø£ÙƒÙ…Ù„ Ø­ØªÙ‰ Ø§Ù„Ù…Ø®Ø±Ø¬ Ø§Ù„ØªØ§Ù„ÙŠØ› Ø§Ù„Ø±Ø¬ÙˆØ¹ Ù„Ù„Ø®Ù„Ù Ø¹Ù„Ù‰ Ø·Ø±ÙŠÙ‚ Ø³Ø±ÙŠØ¹ Ù…Ø­Ø¸ÙˆØ± ØªÙ…Ø§Ù…Ø§Ù‹ ÙˆØ¨Ø§Ù„Øº Ø§Ù„Ø®Ø·ÙˆØ±Ø©", "is_correct": true },
+          { "text": "Ù‚Ù Ø¹Ù„Ù‰ Ø­Ø§Ø±Ø© Ø§Ù„Ø·ÙˆØ§Ø±Ø¦ ÙˆØ§Ù†ØªØ¸Ø± Ø­ØªÙ‰ ÙŠØ®Ù„Ùˆ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ù„Ù„Ø¯ÙˆØ±Ø§Ù†", "is_correct": false },
+          { "text": "Ø§Ø³Ù„Ùƒ Ø§Ù„Ù…Ø³Ø§Ø± Ø§Ù„Ø¹ÙƒØ³ÙŠ Ø¹Ù„Ù‰ Ù…Ø³Ø§Ø± Ø§Ù„Ù…Ø®Ø±Ø¬ Ù„Ù„Ø¹ÙˆØ¯Ø© Ø¥Ù„Ù‰ Ø§Ù„Ø·Ø±ÙŠÙ‚", "is_correct": false }
+        ],
+        "explanation": "Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø³Ø±ÙŠØ¹ Ø§Ù„Ø±Ø¬ÙˆØ¹ Ù„Ù„Ø®Ù„Ù ÙˆØ§Ù„Ø¯ÙˆØ±Ø§Ù† Ù…Ø­Ø¸ÙˆØ± ÙˆØ¨Ø§Ù„Øº Ø§Ù„Ø®Ø·ÙˆØ±Ø© Ø¨Ø³Ø¨Ø¨ Ø­Ø±ÙƒØ© Ø§Ù„Ù…Ø±ÙˆØ± Ø§Ù„Ø³Ø±ÙŠØ¹Ø©. Ø£ÙƒÙ…Ù„ Ø­ØªÙ‰ Ø§Ù„Ù…Ø®Ø±Ø¬ Ø§Ù„ØªØ§Ù„ÙŠ Ø«Ù… Ø§ØªØ¨Ø¹ Ø§Ù„Ù…Ø³Ø§Ø± Ø§Ù„Ø¨Ø¯ÙŠÙ„."
+      }
+    }
+  },
+  {
+    "question_id": "GXI_Q06",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Op welke rijstrook dient u zich te bevinden wanneer u GXI nadert en de afrit wil nemen?",
+        "choices": [
+          { "text": "Op de rechterrijstrook of de afritsignaalstrook, ruim voor de divergeermarkering zodat u de rijstroom niet verstoort", "is_correct": true },
+          { "text": "Op de linkerrijstrook zodat u het andere verkeer kunt zien naderen", "is_correct": false },
+          { "text": "U kunt elke rijstrook aanhouden want alle rijstroken leiden naar de afrit", "is_correct": false }
+        ],
+        "explanation": "Bij een naderende afrit op de autosnelweg dient u tijdig over te schakelen naar de rechterrijstrook (of de voorgekeurde afritsstrook) en pas te vertragen op de afritstrook zelf, niet op de hoofd-rijbaan."
+      },
+      "EN": {
+        "question": "Which lane should you be in as you approach GXI and want to take the exit?",
+        "choices": [
+          { "text": "The right-hand lane or exit deceleration lane, well before the diverge marking so you do not disrupt traffic flow", "is_correct": true },
+          { "text": "The left-hand lane so you can see other traffic approaching", "is_correct": false },
+          { "text": "You can use any lane because all lanes lead to the exit", "is_correct": false }
+        ],
+        "explanation": "When approaching an exit on a motorway you should move to the right-hand lane (or designated exit lane) in good time and decelerate only on the exit lane itself, not on the main carriageway."
+      },
+      "FR": {
+        "question": "Sur quelle voie devez-vous vous trouver lorsque vous approchez de GXI et voulez prendre la sortie ?",
+        "choices": [
+          { "text": "Sur la voie de droite ou la voie de decele- ration de sortie, bien avant le marquage de divergence afin de ne pas perturber le flux de circulation", "is_correct": true },
+          { "text": "Sur la voie de gauche afin de pouvoir voir les autres vehicules approcher", "is_correct": false },
+          { "text": "Vous pouvez utiliser n'importe quelle voie car toutes les voies menent a la sortie", "is_correct": false }
+        ],
+        "explanation": "Lorsque vous approchez d'une sortie sur autoroute vous devez vous mettre en temps utile sur la voie de droite (ou la voie de sortie designee) et ne decelerer que sur la voie de sortie elle-meme, pas sur la chaussee principale."
+      },
+      "AR": {
+        "question": "ÙÙŠ Ø£ÙŠ Ø­Ø§Ø±Ø© ÙŠØ¬Ø¨ Ø£Ù† ØªÙƒÙˆÙ† Ø¹Ù†Ø¯ Ø§Ù‚ØªØ±Ø§Ø¨Ùƒ Ù…Ù† GXI ÙˆØªØ±ÙŠØ¯ Ø£Ø®Ø° Ø§Ù„Ù…Ø®Ø±Ø¬ØŸ",
+        "choices": [
+          { "text": "ÙÙŠ Ø§Ù„Ø­Ø§Ø±Ø© Ø§Ù„ÙŠÙ…Ù†Ù‰ Ø£Ùˆ Ø­Ø§Ø±Ø© Ø§Ù„ØªØ¨Ø§Ø·Ø¤ Ù„Ù„Ù…Ø®Ø±Ø¬ØŒ Ù‚Ø¨Ù„ Ø¹Ù„Ø§Ù…Ø© Ø§Ù„ØªÙØ±Ø¹ Ø¨ÙØ³Ø­Ø© ÙƒØ§ÙÙŠØ© Ø­ØªÙ‰ Ù„Ø§ ØªÙØ¹ÙŠÙ‚ Ø³ÙŠØ± Ø§Ù„Ù…Ø±ÙˆØ±", "is_correct": true },
+          { "text": "ÙÙŠ Ø§Ù„Ø­Ø§Ø±Ø© Ø§Ù„ÙŠØ³Ø±Ù‰ Ø­ØªÙ‰ ØªØªÙ…ÙƒÙ† Ù…Ù† Ø±Ø¤ÙŠØ© Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ø£Ø®Ø±Ù‰ ØªÙ‚ØªØ±Ø¨", "is_correct": false },
+          { "text": "ÙŠÙ…ÙƒÙ†Ùƒ Ø§Ø³ØªØ®Ø¯Ø§Ù… Ø£ÙŠ Ø­Ø§Ø±Ø© Ù„Ø£Ù† Ø¬Ù…ÙŠØ¹ Ø§Ù„Ø­Ø§Ø±Ø§Øª ØªØ¤Ø¯ÙŠ Ø¥Ù„Ù‰ Ø§Ù„Ù…Ø®Ø±Ø¬", "is_correct": false }
+        ],
+        "explanation": "Ø¹Ù†Ø¯ Ø§Ù„Ø§Ù‚ØªØ±Ø§Ø¨ Ù…Ù† Ù…Ø®Ø±Ø¬ Ø¹Ù„Ù‰ Ø·Ø±ÙŠÙ‚ Ø³Ø±ÙŠØ¹ ÙŠØ¬Ø¨ Ø§Ù„Ø§Ù†ØªÙ‚Ø§Ù„ ÙÙŠ Ø§Ù„ÙˆÙ‚Øª Ø§Ù„Ù…Ù†Ø§Ø³Ø¨ Ø¥Ù„Ù‰ Ø§Ù„Ø­Ø§Ø±Ø© Ø§Ù„ÙŠÙ…Ù†Ù‰ (Ø£Ùˆ Ø­Ø§Ø±Ø© Ø§Ù„Ù…Ø®Ø±Ø¬ Ø§Ù„Ù…Ø®ØµØµØ©) ÙˆØ§Ù„ØªØ¨Ø§Ø·Ø¤ ÙÙ‚Ø· Ø¹Ù„Ù‰ Ù…Ø³Ø§Ø± Ø§Ù„Ù…Ø®Ø±Ø¬ Ø°Ø§ØªÙ‡ Ù„Ø§ Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø±Ø¦ÙŠØ³ÙŠ."
+      }
+    }
+  },
+  {
+    "question_id": "GXI_Q07",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Is het toegestaan te stoppen of te parkeren op een afritsstrook die door GXI wordt aangeduid?",
+        "choices": [
+          { "text": "Neen: stoppen en parkeren op afritsstroken van autosnelwegen en autowegen is verboden tenzij bij pech of nood; de strook is uitsluitend bestemd voor het manoeuvre van de afrit", "is_correct": true },
+          { "text": "Ja: de afritsstrook staat los van de hoofd-rijbaan en parkeren is er vrij toegestaan", "is_correct": false }
+        ],
+        "explanation": "Afritsstroken zijn rijstroken van de autosnelweg. Stoppen of parkeren erop is verboden, behalve bij een voertuigpanne of noodgeval. Een gestopt voertuig op een afritsstrook vormt een ernstig gevaar voor het afrittende verkeer."
+      },
+      "EN": {
+        "question": "Is it allowed to stop or park on an exit ramp indicated by GXI?",
+        "choices": [
+          { "text": "No: stopping and parking on exit ramps of motorways and expressways is forbidden except in case of breakdown or emergency; the ramp is solely intended for the exit manoeuvre", "is_correct": true },
+          { "text": "Yes: the exit ramp is separate from the main carriageway and parking is freely allowed there", "is_correct": false }
+        ],
+        "explanation": "Exit ramps are lanes of the motorway. Stopping or parking on them is forbidden except in case of vehicle breakdown or emergency. A stopped vehicle on an exit ramp poses a serious danger to exiting traffic."
+      },
+      "FR": {
+        "question": "Est-il permis de s'arreter ou de se garer sur une bretelle de sortie signalee par GXI ?",
+        "choices": [
+          { "text": "Non: s'arreter et se garer sur les bretelles de sortie des autoroutes et routes pour automobiles est interdit sauf en cas de panne ou d'urgence; la bretelle est uniquement destinee a la manoeuvre de sortie", "is_correct": true },
+          { "text": "Oui: la bretelle de sortie est separee de la chaussee principale et le stationnement y est librement autorise", "is_correct": false }
+        ],
+        "explanation": "Les bretelles de sortie sont des voies de l'autoroute. S'y arreter ou s'y garer est interdit sauf en cas de panne vehicule ou d'urgence. Un vehicule arrete sur une bretelle de sortie represente un danger serieux pour le trafic sortant."
+      },
+      "AR": {
+        "question": "Ù‡Ù„ ÙŠÙØ³Ù…Ø­ Ø¨Ø§Ù„ØªÙˆÙ‚Ù Ø£Ùˆ Ø§Ù„ÙˆÙ‚ÙˆÙ Ø¹Ù„Ù‰ Ù…Ø³Ø§Ø± Ø§Ù„Ù…Ø®Ø±Ø¬ Ø§Ù„Ù…ÙØ´Ø§Ø± Ø¥Ù„ÙŠÙ‡ Ø¨Ù€ GXIØŸ",
+        "choices": [
+          { "text": "Ù„Ø§: Ø§Ù„ØªÙˆÙ‚Ù ÙˆØ§Ù„ÙˆÙ‚ÙˆÙ Ø¹Ù„Ù‰ Ù…Ø³Ø§Ø±Ø§Øª Ù…Ø®Ø§Ø±Ø¬ Ø§Ù„Ø·Ø±Ù‚ Ø§Ù„Ø³Ø±ÙŠØ¹Ø© ÙˆØ·Ø±Ù‚ Ø§Ù„Ø³ÙŠØ§Ø±Ø§Øª Ù…Ø­Ø¸ÙˆØ± Ø¥Ù„Ø§ ÙÙŠ Ø­Ø§Ù„Ø§Øª Ø§Ù„Ø¹Ø·Ù„ Ø£Ùˆ Ø§Ù„Ø·ÙˆØ§Ø±Ø¦Ø› Ø§Ù„Ù…Ø³Ø§Ø± Ù…Ø®ØµØµ ÙÙ‚Ø· Ù„Ù…Ù†Ø§ÙˆØ±Ø© Ø§Ù„Ù…Ø®Ø±Ø¬", "is_correct": true },
+          { "text": "Ù†Ø¹Ù…: Ù…Ø³Ø§Ø± Ø§Ù„Ù…Ø®Ø±Ø¬ Ù…Ù†ÙØµÙ„ Ø¹Ù† Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø±Ø¦ÙŠØ³ÙŠ ÙˆØ§Ù„ÙˆÙ‚ÙˆÙ Ù…Ø³Ù…ÙˆØ­ Ø¨Ù‡ Ø¨Ø­Ø±ÙŠØ©", "is_correct": false }
+        ],
+        "explanation": "Ù…Ø³Ø§Ø±Ø§Øª Ø§Ù„Ù…Ø®Ø§Ø±Ø¬ Ù‡ÙŠ Ø­Ø§Ø±Ø§Øª Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø³Ø±ÙŠØ¹. Ø§Ù„ØªÙˆÙ‚Ù Ø£Ùˆ Ø§Ù„ÙˆÙ‚ÙˆÙ Ø¹Ù„ÙŠÙ‡Ø§ Ù…Ø­Ø¸ÙˆØ± Ø¥Ù„Ø§ ÙÙŠ Ø­Ø§Ù„Ø© Ø¹Ø·Ù„ Ø§Ù„Ù…Ø±ÙƒØ¨Ø© Ø£Ùˆ Ø§Ù„Ø·ÙˆØ§Ø±Ø¦. Ù…Ø±ÙƒØ¨Ø© Ù…ØªÙˆÙ‚ÙØ© Ø¹Ù„Ù‰ Ù…Ø³Ø§Ø± Ù…Ø®Ø±Ø¬ ØªÙØ´ÙƒÙ‘Ù„ Ø®Ø·Ø±Ø§Ù‹ Ø¬Ø³ÙŠÙ…Ø§Ù‹ Ø¹Ù„Ù‰ Ø§Ù„Ù…Ø±ÙˆØ± Ø§Ù„Ø®Ø§Ø±Ø¬."
+      }
+    }
+  },
+  {
+    "question_id": "GXI_Q08",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Is het toegestaan achteruit te rijden op een autosnelweg nadat u de door GXI aangeduide afrit heeft gemist?",
+        "choices": [
+          { "text": "Neen: achteruitrijden op een autosnelweg is strikt verboden; u moet doorrijden naar de volgende afrit", "is_correct": true },
+          { "text": "Ja: mits u de alarmlichten aanzet en langzaam achteruitrijdt via de pechstrook", "is_correct": false }
+        ],
+        "explanation": "Achteruitrijden op autosnelwegen is te allen tijde verboden, ongeacht de reden. Zelfs via de pechstrook achteruitrijden stelt u en andere weggebruikers bloot aan levensgevaar."
+      },
+      "EN": {
+        "question": "Is it allowed to reverse on a motorway after missing the exit indicated by GXI?",
+        "choices": [
+          { "text": "No: reversing on a motorway is strictly forbidden; you must continue to the next exit", "is_correct": true },
+          { "text": "Yes: provided you switch on hazard lights and reverse slowly via the hard shoulder", "is_correct": false }
+        ],
+        "explanation": "Reversing on motorways is forbidden at all times regardless of the reason. Even reversing via the hard shoulder exposes you and other road users to life-threatening danger."
+      },
+      "FR": {
+        "question": "Est-il permis de faire marche arriere sur une autoroute apres avoir rate la sortie indiquee par GXI ?",
+        "choices": [
+          { "text": "Non: faire marche arriere sur une autoroute est strictement interdit; vous devez continuer jusqu'a la prochaine sortie", "is_correct": true },
+          { "text": "Oui: a condition d'allumer les feux de detresse et de reculer lentement via la bande d'arret d'urgence", "is_correct": false }
+        ],
+        "explanation": "Faire marche arriere sur les autoroutes est interdit en tout temps quelle que soit la raison. Meme reculer via la bande d'arret d'urgence vous expose ainsi que les autres usagers a un danger mortel."
+      },
+      "AR": {
+        "question": "Ù‡Ù„ ÙŠÙØ³Ù…Ø­ Ø¨Ø§Ù„Ø±Ø¬ÙˆØ¹ Ù„Ù„Ø®Ù„Ù Ø¹Ù„Ù‰ Ø·Ø±ÙŠÙ‚ Ø³Ø±ÙŠØ¹ Ø¨Ø¹Ø¯ ØªÙÙˆÙŠØª Ø§Ù„Ù…Ø®Ø±Ø¬ Ø§Ù„Ù…ÙØ´Ø§Ø± Ø¥Ù„ÙŠÙ‡ Ø¨Ù€ GXIØŸ",
+        "choices": [
+          { "text": "Ù„Ø§: Ø§Ù„Ø±Ø¬ÙˆØ¹ Ù„Ù„Ø®Ù„Ù Ø¹Ù„Ù‰ Ø·Ø±ÙŠÙ‚ Ø³Ø±ÙŠØ¹ Ù…Ø­Ø¸ÙˆØ± ØªÙ…Ø§Ù…Ø§Ù‹Ø› ÙŠØ¬Ø¨ Ø§Ù„Ø§Ø³ØªÙ…Ø±Ø§Ø± Ø­ØªÙ‰ Ø§Ù„Ù…Ø®Ø±Ø¬ Ø§Ù„ØªØ§Ù„ÙŠ", "is_correct": true },
+          { "text": "Ù†Ø¹Ù…: Ø´Ø±ÙŠØ·Ø© ØªØ´ØºÙŠÙ„ Ø£Ø¶ÙˆØ§Ø¡ Ø§Ù„Ø®Ø·Ø± ÙˆØ§Ù„Ø±Ø¬ÙˆØ¹ Ø¨Ø¨Ø·Ø¡ Ø¹Ø¨Ø± Ø­Ø§Ø±Ø© Ø§Ù„Ø·ÙˆØ§Ø±Ø¦", "is_correct": false }
+        ],
+        "explanation": "Ø§Ù„Ø±Ø¬ÙˆØ¹ Ù„Ù„Ø®Ù„Ù Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±Ù‚ Ø§Ù„Ø³Ø±ÙŠØ¹Ø© Ù…Ø­Ø¸ÙˆØ± ÙÙŠ Ø¬Ù…ÙŠØ¹ Ø§Ù„Ø£ÙˆÙ‚Ø§Øª Ø¨ØµØ±Ù Ø§Ù„Ù†Ø¸Ø± Ø¹Ù† Ø§Ù„Ø³Ø¨Ø¨. Ø­ØªÙ‰ Ø§Ù„Ø±Ø¬ÙˆØ¹ Ø¹Ø¨Ø± Ø­Ø§Ø±Ø© Ø§Ù„Ø·ÙˆØ§Ø±Ø¦ ÙŠÙØ¹Ø±Ù‘Ø¶Ùƒ Ø£Ù†Øª ÙˆØ³Ø§Ø¦Ø± Ù…Ø³ØªØ®Ø¯Ù…ÙŠ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ù„Ø®Ø·Ø± ÙŠÙ‡Ø¯Ø¯ Ø§Ù„Ø­ÙŠØ§Ø©."
+      }
+    }
+  }
+]

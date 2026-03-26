@@ -33,16 +33,17 @@ public record SignQuizQuestionDto(
 
         List<SignChoiceDto> choices) {
     public static SignQuizQuestionDto from(SignQuestion q) {
+        SignQuestionType questionType = q.getQuestionType();
         // Shuffle choices so the correct answer is not always in position 1.
         // Validation uses stable choice IDs (FK), never visual position.
         List<SignChoiceDto> choices = q.getChoices().stream()
-                .map(SignChoiceDto::from)
+                .map(choice -> SignChoiceDto.from(choice, questionType))
                 .collect(Collectors.toCollection(ArrayList::new));
         Collections.shuffle(choices);
         return new SignQuizQuestionDto(
                 q.getId(),
                 q.getQuestionRef(),
-                q.getQuestionType(),
+                questionType,
                 q.getDifficulty(),
                 Boolean.TRUE.equals(q.getIsCritical()),
                 Boolean.TRUE.equals(q.getShowSign()),

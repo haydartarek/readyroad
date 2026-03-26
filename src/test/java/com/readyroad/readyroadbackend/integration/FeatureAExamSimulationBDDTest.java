@@ -197,7 +197,7 @@ public class FeatureAExamSimulationBDDTest {
         @DisplayName("@A1 Starting an exam respects category distribution rules")
         void startingExamRespectsCategoryDistributionRules() {
             // Given: System has configured exam category distribution rules
-            // (SmartQuizService handles this internally)
+            // (handled by the active exam selection flow)
 
             // When: User requests to start a new exam
             ExamSimulation exam = examService.startExamSimulation(testUserId);

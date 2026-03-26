@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.readyroad.readyroadbackend.domain.entity.*;
 import com.readyroad.readyroadbackend.domain.enums.Role;
+import com.readyroad.readyroadbackend.domain.enums.SignCategory;
 import com.readyroad.readyroadbackend.domain.repository.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -68,7 +69,7 @@ public class Phase6BelgianInvariantsRuntimeBDDTest {
     private CategoryRepository categoryRepository;
 
     @Autowired
-    private TrafficSignRepository trafficSignRepository;
+    private RoadSignRepository roadSignRepository;
 
     @Autowired
     private PasswordEncoder passwordEncoder;
@@ -76,14 +77,14 @@ public class Phase6BelgianInvariantsRuntimeBDDTest {
     private MockMvc mockMvc;
     private User testUser;
     private Category testCategory;
-    private TrafficSign testSign;
+    private RoadSign testSign;
 
     @BeforeEach
     void setUp() {
         mockMvc = MockMvcBuilders
-            .webAppContextSetup(context)
-            .apply(springSecurity())
-            .build();
+                .webAppContextSetup(context)
+                .apply(springSecurity())
+                .build();
 
         // Create test user
         testUser = new User();
@@ -108,15 +109,16 @@ public class Phase6BelgianInvariantsRuntimeBDDTest {
         testCategory = categoryRepository.save(testCategory);
 
         // Create test traffic sign
-        testSign = new TrafficSign();
+        testSign = new RoadSign();
         testSign.setSignCode("B1");
+        testSign.setNormalizedSignCode("B1");
         testSign.setNameEn("Priority Sign");
         testSign.setNameAr("إشارة الأولوية");
         testSign.setNameNl("Voorrangsbord");
         testSign.setNameFr("Panneau de priorité");
-        testSign.setCategory(testCategory);
+        testSign.setCategory(SignCategory.PRIORITY);
         testSign.setIsActive(true);
-        testSign = trafficSignRepository.save(testSign);
+        testSign = roadSignRepository.save(testSign);
 
         // Seed compliant published question pool (60 questions for exam)
         seedCompliantPublishedQuestionPool(60);
@@ -137,8 +139,8 @@ public class Phase6BelgianInvariantsRuntimeBDDTest {
         MvcResult result = mockMvc.perform(post("/api/exams/simulations/start")
                 .param("userId", testUser.getId().toString())
                 .contentType(MediaType.APPLICATION_JSON))
-            .andExpect(status().isCreated())
-            .andReturn();
+                .andExpect(status().isCreated())
+                .andReturn();
 
         // Parse JSON response without DTO mapping
         String responseBody = result.getResponse().getContentAsString();
@@ -157,40 +159,40 @@ public class Phase6BelgianInvariantsRuntimeBDDTest {
             assertThat(optionsArray.isArray()).isTrue();
             int optionCount = optionsArray.size();
             assertThat(optionCount)
-                .as("Question %d should have 2-3 options", questionId)
-                .isBetween(2, 3);
+                    .as("Question %d should have 2-3 options", questionId)
+                    .isBetween(2, 3);
 
             // NL translation required
             String questionNl = questionNode.path("questionTextNl").asText();
             assertThat(questionNl)
-                .as("Question %d should have NL translation", questionId)
-                .isNotNull()
-                .isNotBlank();
+                    .as("Question %d should have NL translation", questionId)
+                    .isNotNull()
+                    .isNotBlank();
 
             // FR translation required
             String questionFr = questionNode.path("questionTextFr").asText();
             assertThat(questionFr)
-                .as("Question %d should have FR translation", questionId)
-                .isNotNull()
-                .isNotBlank();
+                    .as("Question %d should have FR translation", questionId)
+                    .isNotNull()
+                    .isNotBlank();
 
             // Verify from DB
             QuizQuestion dbQuestion = questionRepository.findById(questionId).orElseThrow();
 
             // Should be published
             assertThat(dbQuestion.getStatus())
-                .as("Question %d should be PUBLISHED", questionId)
-                .isEqualTo(QuizQuestion.QuestionStatus.PUBLISHED);
+                    .as("Question %d should be PUBLISHED", questionId)
+                    .isEqualTo(QuizQuestion.QuestionStatus.PUBLISHED);
 
             // Should be active
             assertThat(dbQuestion.getIsActive())
-                .as("Question %d should be active", questionId)
-                .isTrue();
+                    .as("Question %d should be active", questionId)
+                    .isTrue();
 
             // Traffic sign linkage
-            assertThat(dbQuestion.getTrafficSign())
-                .as("Question %d should be linked to traffic sign", questionId)
-                .isNotNull();
+            assertThat(dbQuestion.getRoadSign())
+                    .as("Question %d should be linked to traffic sign", questionId)
+                    .isNotNull();
         }
     }
 
@@ -203,14 +205,14 @@ public class Phase6BelgianInvariantsRuntimeBDDTest {
     void draftAndInactiveQuestionsNeverAppearInExam() throws Exception {
         // Given: We have DRAFT and inactive questions seeded in setUp()
         List<Long> draftQuestionIds = questionRepository.findAll().stream()
-            .filter(q -> q.getStatus() == QuizQuestion.QuestionStatus.DRAFT)
-            .map(QuizQuestion::getId)
-            .toList();
+                .filter(q -> q.getStatus() == QuizQuestion.QuestionStatus.DRAFT)
+                .map(QuizQuestion::getId)
+                .toList();
 
         List<Long> inactiveQuestionIds = questionRepository.findAll().stream()
-            .filter(q -> q.getStatus() == QuizQuestion.QuestionStatus.PUBLISHED && !q.getIsActive())
-            .map(QuizQuestion::getId)
-            .toList();
+                .filter(q -> q.getStatus() == QuizQuestion.QuestionStatus.PUBLISHED && !q.getIsActive())
+                .map(QuizQuestion::getId)
+                .toList();
 
         assertThat(draftQuestionIds).as("Setup should create DRAFT questions").isNotEmpty();
         assertThat(inactiveQuestionIds).as("Setup should create inactive questions").isNotEmpty();
@@ -219,8 +221,8 @@ public class Phase6BelgianInvariantsRuntimeBDDTest {
         MvcResult result = mockMvc.perform(post("/api/exams/simulations/start")
                 .param("userId", testUser.getId().toString())
                 .contentType(MediaType.APPLICATION_JSON))
-            .andExpect(status().isCreated())
-            .andReturn();
+                .andExpect(status().isCreated())
+                .andReturn();
 
         // Parse JSON response without DTO mapping
         String responseBody = result.getResponse().getContentAsString();
@@ -237,12 +239,12 @@ public class Phase6BelgianInvariantsRuntimeBDDTest {
         }
 
         assertThat(returnedQuestionIds)
-            .as("Exam should not contain DRAFT questions")
-            .doesNotContainAnyElementsOf(draftQuestionIds);
+                .as("Exam should not contain DRAFT questions")
+                .doesNotContainAnyElementsOf(draftQuestionIds);
 
         assertThat(returnedQuestionIds)
-            .as("Exam should not contain inactive questions")
-            .doesNotContainAnyElementsOf(inactiveQuestionIds);
+                .as("Exam should not contain inactive questions")
+                .doesNotContainAnyElementsOf(inactiveQuestionIds);
     }
 
     // ==========================================
@@ -259,7 +261,7 @@ public class Phase6BelgianInvariantsRuntimeBDDTest {
             question.setQuestionType(QuizQuestion.QuestionType.MULTIPLE_CHOICE);
             question.setDifficultyLevel(QuizQuestion.DifficultyLevel.MEDIUM);
             question.setCategory(testCategory);
-            question.setTrafficSign(testSign);
+            question.setRoadSign(testSign);
             question.setIsActive(true);
             question.setStatus(QuizQuestion.QuestionStatus.PUBLISHED);
 
@@ -282,7 +284,7 @@ public class Phase6BelgianInvariantsRuntimeBDDTest {
         draft.setQuestionType(QuizQuestion.QuestionType.MULTIPLE_CHOICE);
         draft.setDifficultyLevel(QuizQuestion.DifficultyLevel.EASY);
         draft.setCategory(testCategory);
-        draft.setTrafficSign(testSign);
+        draft.setRoadSign(testSign);
         draft.setIsActive(true);
         draft.setStatus(QuizQuestion.QuestionStatus.DRAFT);
 
@@ -302,7 +304,7 @@ public class Phase6BelgianInvariantsRuntimeBDDTest {
         inactive.setQuestionType(QuizQuestion.QuestionType.MULTIPLE_CHOICE);
         inactive.setDifficultyLevel(QuizQuestion.DifficultyLevel.EASY);
         inactive.setCategory(testCategory);
-        inactive.setTrafficSign(testSign);
+        inactive.setRoadSign(testSign);
         inactive.setIsActive(false); // ❌ Inactive
         inactive.setStatus(QuizQuestion.QuestionStatus.PUBLISHED);
 

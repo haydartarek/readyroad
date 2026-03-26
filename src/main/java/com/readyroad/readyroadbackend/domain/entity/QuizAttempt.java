@@ -47,9 +47,6 @@ public class QuizAttempt extends BaseEntity {
     @Column(name = "completed_at")
     private LocalDateTime completedAt;
 
-    @Column(name = "is_test_data", nullable = false)
-    private Boolean isTestData = false;
-
     @PrePersist
     protected void onCreateAttempt() {
         if (startedAt == null) {

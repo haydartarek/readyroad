@@ -1,0 +1,549 @@
+﻿[
+  {
+    "question_id": "D9a_Q01",
+    "type": "WHAT_DOES_IT_MEAN",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat betekent dit verkeersbord?",
+        "choices": [
+          {
+            "text": "Voorbehouden weg: voetgangers links, fietsers rechts",
+            "is_correct": true
+          },
+          {
+            "text": "Voorbehouden weg: fietsers links, voetgangers rechts",
+            "is_correct": false
+          },
+          {
+            "text": "Verplicht fietspad, voetgangers niet toegelaten",
+            "is_correct": false
+          }
+        ],
+        "explanation": "D9a geeft aan dat de helft van de weg voorbehouden is voor voetgangers (links) en de andere helft voor fietsers (rechts). Elke groep heeft een eigen strook."
+      },
+      "EN": {
+        "question": "What does this traffic sign mean?",
+        "choices": [
+          {
+            "text": "Reserved path: pedestrians on the left, cyclists on the right",
+            "is_correct": true
+          },
+          {
+            "text": "Reserved path: cyclists on the left, pedestrians on the right",
+            "is_correct": false
+          },
+          {
+            "text": "Mandatory cycle path, pedestrians not permitted",
+            "is_correct": false
+          }
+        ],
+        "explanation": "D9a indicates that one side of the path is reserved for pedestrians (left) and the other for cyclists (right). Each group has a separate lane."
+      },
+      "FR": {
+        "question": "Que signifie ce panneau de signalisation ?",
+        "choices": [
+          {
+            "text": "Voie reservee: pietons a gauche, cyclistes a droite",
+            "is_correct": true
+          },
+          {
+            "text": "Voie reservee: cyclistes a gauche, pietons a droite",
+            "is_correct": false
+          },
+          {
+            "text": "Piste cyclable obligatoire, pietons non autorises",
+            "is_correct": false
+          }
+        ],
+        "explanation": "D9a indique qu'une moitie de la voie est reservee aux pietons (gauche) et l'autre aux cyclistes (droite). Chaque groupe dispose d'une bande separee."
+      },
+      "AR": {
+        "question": "Ù…Ø§Ø°Ø§ ØªØ¹Ù†ÙŠ Ù„Ø§ÙØªØ© Ø§Ù„Ù…Ø±ÙˆØ± Ù‡Ø°Ù‡ØŸ",
+        "choices": [
+          { "text": "Ù…Ø³Ø§Ø± Ù…Ø®ØµØµ: Ù…Ø´Ø§Ø© ÙŠØ³Ø§Ø±ØŒ Ø¯Ø±Ø§Ø¬ÙˆÙ† ÙŠÙ…ÙŠÙ†", "is_correct": true },
+          { "text": "Ù…Ø³Ø§Ø± Ù…Ø®ØµØµ: Ø¯Ø±Ø§Ø¬ÙˆÙ† ÙŠØ³Ø§Ø±ØŒ Ù…Ø´Ø§Ø© ÙŠÙ…ÙŠÙ†", "is_correct": false },
+          {
+            "text": "Ù…Ø³Ø§Ø± Ø¯Ø±Ø§Ø¬Ø§Øª Ø¥Ù„Ø²Ø§Ù…ÙŠØŒ Ø§Ù„Ù…Ø´Ø§Ø© ØºÙŠØ± Ù…Ø³Ù…ÙˆØ­ Ù„Ù‡Ù…",
+            "is_correct": false
+          }
+        ],
+        "explanation": "ØªØ´ÙŠØ± D9a Ø¥Ù„Ù‰ Ø£Ù† Ù†ØµÙ Ø§Ù„Ù…Ø³Ø§Ø± Ù…Ø®ØµØµ Ù„Ù„Ù…Ø´Ø§Ø© (ÙŠØ³Ø§Ø±) ÙˆØ§Ù„Ù†ØµÙ Ø§Ù„Ø¢Ø®Ø± Ù„Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª (ÙŠÙ…ÙŠÙ†). Ù„ÙƒÙ„ Ù…Ø¬Ù…ÙˆØ¹Ø© Ù…Ø³Ø§Ø±Ù‡Ø§ Ø§Ù„Ù…Ù†ÙØµÙ„."
+      }
+    }
+  },
+  {
+    "question_id": "D9a_Q02",
+    "type": "WHICH_SIGN",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Tot welke categorie verkeersborden behoort dit bord?",
+        "choices": [
+          { "text": "Gebodsborden (D-reeks)", "is_correct": true },
+          { "text": "Verbodsborden (C-reeks)", "is_correct": false },
+          { "text": "Parkeerborden (E-reeks)", "is_correct": false }
+        ],
+        "explanation": "D-reeksborden zijn gebodstekens. D9a bepaalt hoe de weg verdeeld is tussen voetgangers en fietsers."
+      },
+      "EN": {
+        "question": "To which category of traffic signs does this sign belong?",
+        "choices": [
+          { "text": "Mandatory signs (D-series)", "is_correct": true },
+          { "text": "Prohibition signs (C-series)", "is_correct": false },
+          { "text": "Parking signs (E-series)", "is_correct": false }
+        ],
+        "explanation": "D-series signs are mandatory signs. D9a prescribes how the path is divided between pedestrians and cyclists."
+      },
+      "FR": {
+        "question": "A quelle categorie de panneaux de signalisation appartient ce panneau ?",
+        "choices": [
+          { "text": "Panneaux d'obligation (serie D)", "is_correct": true },
+          { "text": "Panneaux d'interdiction (serie C)", "is_correct": false },
+          { "text": "Panneaux de stationnement (serie E)", "is_correct": false }
+        ],
+        "explanation": "Les panneaux de la serie D sont des panneaux d'obligation. D9a prescrit la maniere dont la voie est partagee entre pietons et cyclistes."
+      },
+      "AR": {
+        "question": "Ø¥Ù„Ù‰ Ø£ÙŠ ÙØ¦Ø© Ù…Ù† Ù„Ø§ÙØªØ§Øª Ø§Ù„Ù…Ø±ÙˆØ± ØªÙ†ØªÙ…ÙŠ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ",
+        "choices": [
+          { "text": "Ù„Ø§ÙØªØ§Øª Ø¥Ù„Ø²Ø§Ù…ÙŠØ© (Ø§Ù„Ø³Ù„Ø³Ù„Ø© D)", "is_correct": true },
+          { "text": "Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø­Ø¸Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© C)", "is_correct": false },
+          { "text": "Ù„Ø§ÙØªØ§Øª Ø§Ù„ÙˆÙ‚ÙˆÙ (Ø§Ù„Ø³Ù„Ø³Ù„Ø© E)", "is_correct": false }
+        ],
+        "explanation": "Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø³Ù„Ø³Ù„Ø© D Ù‡ÙŠ Ù„Ø§ÙØªØ§Øª Ø¥Ù„Ø²Ø§Ù…ÙŠØ©. ØªÙØ­Ø¯Ù‘Ø¯ D9a ÙƒÙŠÙÙŠØ© ØªÙ‚Ø³ÙŠÙ… Ø§Ù„Ù…Ø³Ø§Ø± Ø¨ÙŠÙ† Ø§Ù„Ù…Ø´Ø§Ø© ÙˆØ±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª."
+      }
+    }
+  },
+  {
+    "question_id": "D9a_Q03",
+    "type": "HAZARD_IDENTIFICATION",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Bord D9a verdeelt het pad in twee secties. Welke indeling toont het?",
+        "choices": [
+          { "text": "Voetgangers links, fietsers rechts", "is_correct": true },
+          { "text": "Fietsers links, voetgangers rechts", "is_correct": false },
+          {
+            "text": "Voetgangers en fietsers delen dezelfde onverdeelde ruimte",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Op een D9a-pad zijn de zijden strikt gescheiden: voetgangers aan de linkerkant, fietsers aan de rechterkant."
+      },
+      "EN": {
+        "question": "Sign D9a divides the path into two sections. Which arrangement does it show?",
+        "choices": [
+          {
+            "text": "Pedestrians on the left, cyclists on the right",
+            "is_correct": true
+          },
+          {
+            "text": "Cyclists on the left, pedestrians on the right",
+            "is_correct": false
+          },
+          {
+            "text": "Pedestrians and cyclists share the same undivided space",
+            "is_correct": false
+          }
+        ],
+        "explanation": "On a D9a path, the sides are strictly separated: pedestrians on the left side, cyclists on the right side."
+      },
+      "FR": {
+        "question": "Le panneau D9a divise le chemin en deux sections. Quelle disposition montre-t-il ?",
+        "choices": [
+          {
+            "text": "Pietons a gauche, cyclistes a droite",
+            "is_correct": true
+          },
+          {
+            "text": "Cyclistes a gauche, pietons a droite",
+            "is_correct": false
+          },
+          {
+            "text": "Pietons et cyclistes partagent le meme espace non divise",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Sur une voie D9a, les cotes sont strictement separes: pietons a gauche, cyclistes a droite."
+      },
+      "AR": {
+        "question": "Ù„Ø§ÙØªØ© D9a ØªÙ‚Ø³Ù‘Ù… Ø§Ù„Ù…Ø³Ø§Ø± Ø¥Ù„Ù‰ Ù‚Ø³Ù…ÙŠÙ†. Ù…Ø§ Ø§Ù„ØªØ±ØªÙŠØ¨ Ø§Ù„Ø°ÙŠ ØªÙØ¸Ù‡Ø±Ù‡ØŸ",
+        "choices": [
+          { "text": "Ù…Ø´Ø§Ø© Ø¹Ù„Ù‰ Ø§Ù„ÙŠØ³Ø§Ø±ØŒ Ø¯Ø±Ø§Ø¬ÙˆÙ† Ø¹Ù„Ù‰ Ø§Ù„ÙŠÙ…ÙŠÙ†", "is_correct": true },
+          { "text": "Ø¯Ø±Ø§Ø¬ÙˆÙ† Ø¹Ù„Ù‰ Ø§Ù„ÙŠØ³Ø§Ø±ØŒ Ù…Ø´Ø§Ø© Ø¹Ù„Ù‰ Ø§Ù„ÙŠÙ…ÙŠÙ†", "is_correct": false },
+          {
+            "text": "Ø§Ù„Ù…Ø´Ø§Ø© ÙˆØ§Ù„Ø¯Ø±Ø§Ø¬ÙˆÙ† ÙŠØ´ØªØ±ÙƒÙˆÙ† ÙÙŠ Ù†ÙØ³ Ø§Ù„Ù…Ø³Ø§Ø­Ø© ØºÙŠØ± Ø§Ù„Ù…Ù‚Ø³Ù‘Ù…Ø©",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ø¹Ù„Ù‰ Ù…Ø³Ø§Ø± D9aØŒ ØªÙƒÙˆÙ† Ø§Ù„Ø¬Ø§Ù†Ø¨Ø§Ù† Ù…Ù†ÙØµÙ„Ø§Ù† ØªÙ…Ø§Ù…Ø§Ù‹: Ø§Ù„Ù…Ø´Ø§Ø© Ø¹Ù„Ù‰ Ø§Ù„ÙŠØ³Ø§Ø±ØŒ ÙˆØ±Ø§ÙƒØ¨Ùˆ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø¹Ù„Ù‰ Ø§Ù„ÙŠÙ…ÙŠÙ†."
+      }
+    }
+  },
+  {
+    "question_id": "D9a_Q04",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U rijdt op een D9a-pad. Welke kant moet u als fietser gebruiken?",
+        "choices": [
+          {
+            "text": "De rechterkant, voorbehouden voor fietsers",
+            "is_correct": true
+          },
+          {
+            "text": "Elk kant, zolang u voorzichtig rijdt",
+            "is_correct": false
+          },
+          {
+            "text": "De linkerkant, omdat fietsers voorrang hebben",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Op een D9a-pad gebruiken fietsers de rechterkant. Zij mogen niet op de linkerkant rijden die voor voetgangers is voorbehouden."
+      },
+      "EN": {
+        "question": "You are cycling on a D9a path. Which side must you use?",
+        "choices": [
+          {
+            "text": "The right side, reserved for cyclists",
+            "is_correct": true
+          },
+          {
+            "text": "Either side, as long as you cycle carefully",
+            "is_correct": false
+          },
+          {
+            "text": "The left side, because cyclists have priority",
+            "is_correct": false
+          }
+        ],
+        "explanation": "On a D9a path, cyclists use the right side. They must not ride on the left side which is reserved for pedestrians."
+      },
+      "FR": {
+        "question": "Vous circulez sur une voie D9a. De quel cote devez-vous rouler en tant que cycliste ?",
+        "choices": [
+          {
+            "text": "Le cote droit, reserve aux cyclistes",
+            "is_correct": true
+          },
+          {
+            "text": "L'un ou l'autre cote, tant que vous roulez prudemment",
+            "is_correct": false
+          },
+          {
+            "text": "Le cote gauche, car les cyclistes ont la priorite",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Sur une voie D9a, les cyclistes utilisent le cote droit. Ils ne doivent pas rouler sur le cote gauche qui est reserve aux pietons."
+      },
+      "AR": {
+        "question": "Ø£Ù†Øª ØªØ±ÙƒØ¨ Ø¯Ø±Ø§Ø¬ØªÙƒ Ø¹Ù„Ù‰ Ù…Ø³Ø§Ø± D9a. Ø£ÙŠ Ø¬Ø§Ù†Ø¨ ÙŠØ¬Ø¨ Ø¹Ù„ÙŠÙƒ Ø§Ø³ØªØ®Ø¯Ø§Ù…Ù‡ØŸ",
+        "choices": [
+          {
+            "text": "Ø§Ù„Ø¬Ø§Ù†Ø¨ Ø§Ù„Ø£ÙŠÙ…Ù†ØŒ Ø§Ù„Ù…Ø®ØµØµ Ù„Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª",
+            "is_correct": true
+          },
+          { "text": "Ø£ÙŠ Ø¬Ø§Ù†Ø¨ØŒ Ø·Ø§Ù„Ù…Ø§ ØªØ³ÙŠØ± Ø¨Ø­Ø°Ø±", "is_correct": false },
+          {
+            "text": "Ø§Ù„Ø¬Ø§Ù†Ø¨ Ø§Ù„Ø£ÙŠØ³Ø±ØŒ Ù„Ø£Ù† Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ù„Ù‡Ù… Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ©",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ø¹Ù„Ù‰ Ù…Ø³Ø§Ø± D9aØŒ ÙŠØ³ØªØ®Ø¯Ù… Ø±Ø§ÙƒØ¨Ùˆ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ù„Ø¬Ø§Ù†Ø¨ Ø§Ù„Ø£ÙŠÙ…Ù†. Ù„Ø§ ÙŠØ¬ÙˆØ² Ù„Ù‡Ù… Ø§Ù„Ù‚ÙŠØ§Ø¯Ø© Ø¹Ù„Ù‰ Ø§Ù„Ø¬Ø§Ù†Ø¨ Ø§Ù„Ø£ÙŠØ³Ø± Ø§Ù„Ù…Ø®ØµØµ Ù„Ù„Ù…Ø´Ø§Ø©."
+      }
+    }
+  },
+  {
+    "question_id": "D9a_Q05",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U bent een voetganger op een D9a-pad. Welke kant moet u gebruiken?",
+        "choices": [
+          {
+            "text": "De linkerkant, voorbehouden voor voetgangers",
+            "is_correct": true
+          },
+          {
+            "text": "Beide kanten; de verdeling is slechts advies",
+            "is_correct": false
+          },
+          {
+            "text": "De rechterkant, zodat u het naderende fietsverkeer kunt zien",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Op een D9a-pad gebruiken voetgangers de linkerkant. Zij mogen niet op de rechterkant lopen die voor fietsers is voorbehouden."
+      },
+      "EN": {
+        "question": "You are a pedestrian on a D9a path. Which side must you use?",
+        "choices": [
+          {
+            "text": "The left side, reserved for pedestrians",
+            "is_correct": true
+          },
+          {
+            "text": "Either side; the division is advisory only",
+            "is_correct": false
+          },
+          {
+            "text": "The right side, so you can face oncoming cyclists",
+            "is_correct": false
+          }
+        ],
+        "explanation": "On a D9a path, pedestrians use the left side. They must not walk on the right side which is reserved for cyclists."
+      },
+      "FR": {
+        "question": "Vous etes un pieton sur une voie D9a. De quel cote devez-vous marcher ?",
+        "choices": [
+          { "text": "Le cote gauche, reserve aux pietons", "is_correct": true },
+          {
+            "text": "L'un ou l'autre cote; la division n'est qu'indicative",
+            "is_correct": false
+          },
+          {
+            "text": "Le cote droit, pour faire face aux cyclistes venant en sens inverse",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Sur une voie D9a, les pietons utilisent le cote gauche. Ils ne doivent pas marcher sur le cote droit qui est reserve aux cyclistes."
+      },
+      "AR": {
+        "question": "Ø£Ù†Øª Ù…Ø´Ø§Ø© Ø¹Ù„Ù‰ Ù…Ø³Ø§Ø± D9a. Ø£ÙŠ Ø¬Ø§Ù†Ø¨ ÙŠØ¬Ø¨ Ø¹Ù„ÙŠÙƒ Ø§Ø³ØªØ®Ø¯Ø§Ù…Ù‡ØŸ",
+        "choices": [
+          { "text": "Ø§Ù„Ø¬Ø§Ù†Ø¨ Ø§Ù„Ø£ÙŠØ³Ø±ØŒ Ø§Ù„Ù…Ø®ØµØµ Ù„Ù„Ù…Ø´Ø§Ø©", "is_correct": true },
+          { "text": "Ø£ÙŠ Ø¬Ø§Ù†Ø¨Ø› Ø§Ù„ØªÙ‚Ø³ÙŠÙ… Ø§Ø³ØªØ±Ø´Ø§Ø¯ÙŠ ÙÙ‚Ø·", "is_correct": false },
+          {
+            "text": "Ø§Ù„Ø¬Ø§Ù†Ø¨ Ø§Ù„Ø£ÙŠÙ…Ù†ØŒ Ø­ØªÙ‰ ØªÙˆØ§Ø¬Ù‡ Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ù„Ù‚Ø§Ø¯Ù…ÙŠÙ†",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ø¹Ù„Ù‰ Ù…Ø³Ø§Ø± D9aØŒ ÙŠØ³ØªØ®Ø¯Ù… Ø§Ù„Ù…Ø´Ø§Ø© Ø§Ù„Ø¬Ø§Ù†Ø¨ Ø§Ù„Ø£ÙŠØ³Ø±. Ù„Ø§ ÙŠØ¬ÙˆØ² Ù„Ù‡Ù… Ø§Ù„Ù…Ø´ÙŠ Ø¹Ù„Ù‰ Ø§Ù„Ø¬Ø§Ù†Ø¨ Ø§Ù„Ø£ÙŠÙ…Ù† Ø§Ù„Ù…Ø®ØµØµ Ù„Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª."
+      }
+    }
+  },
+  {
+    "question_id": "D9a_Q06",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat is het belangrijkste verschil tussen bord D9a en bord D9b?",
+        "choices": [
+          {
+            "text": "D9a scheidt voetgangers (links) en fietsers (rechts) in aparte stroken; D9b toont een gemeenschappelijke ruimte zonder scheiding",
+            "is_correct": true
+          },
+          {
+            "text": "D9a is voor stedelijke gebieden; D9b is voor landelijke wegen",
+            "is_correct": false
+          },
+          {
+            "text": "D9a geldt enkel voor fietsers; D9b geldt enkel voor voetgangers",
+            "is_correct": false
+          }
+        ],
+        "explanation": "D9a heeft duidelijk gescheiden stroken voor elk gebruikerstype. D9b toont een gedeelde ruimte zonder vaste scheiding tussen voetgangers en fietsers."
+      },
+      "EN": {
+        "question": "What is the key difference between sign D9a and sign D9b?",
+        "choices": [
+          {
+            "text": "D9a separates pedestrians (left) and cyclists (right) into distinct sections; D9b shows a shared space without division",
+            "is_correct": true
+          },
+          {
+            "text": "D9a is for urban areas; D9b is for rural roads",
+            "is_correct": false
+          },
+          {
+            "text": "D9a applies to cyclists only; D9b applies to pedestrians only",
+            "is_correct": false
+          }
+        ],
+        "explanation": "D9a has clearly separated lanes for each type of user. D9b shows a shared space without a fixed separation between pedestrians and cyclists."
+      },
+      "FR": {
+        "question": "Quelle est la principale difference entre le panneau D9a et le panneau D9b ?",
+        "choices": [
+          {
+            "text": "D9a separe les pietons (gauche) et les cyclistes (droite) en sections distinctes; D9b montre un espace partage sans division",
+            "is_correct": true
+          },
+          {
+            "text": "D9a est pour les zones urbaines; D9b est pour les routes rurales",
+            "is_correct": false
+          },
+          {
+            "text": "D9a s'applique uniquement aux cyclistes; D9b s'applique uniquement aux pietons",
+            "is_correct": false
+          }
+        ],
+        "explanation": "D9a dispose de voies clairement separees pour chaque type d'usager. D9b montre un espace partage sans separation fixe entre pietons et cyclistes."
+      },
+      "AR": {
+        "question": "Ù…Ø§ Ø§Ù„ÙØ±Ù‚ Ø§Ù„Ø±Ø¦ÙŠØ³ÙŠ Ø¨ÙŠÙ† Ù„Ø§ÙØªØ© D9a ÙˆÙ„Ø§ÙØªØ© D9bØŸ",
+        "choices": [
+          {
+            "text": "ØªÙØµÙ„ D9a Ø¨ÙŠÙ† Ø§Ù„Ù…Ø´Ø§Ø© (ÙŠØ³Ø§Ø±) ÙˆØ±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª (ÙŠÙ…ÙŠÙ†) ÙÙŠ Ø£Ù‚Ø³Ø§Ù… Ù…Ù†ÙØµÙ„Ø©Ø› Ø¨ÙŠÙ†Ù…Ø§ ØªÙØ¸Ù‡Ø± D9b Ù…Ø³Ø§Ø­Ø© Ù…Ø´ØªØ±ÙƒØ© Ø¨Ø¯ÙˆÙ† ØªÙ‚Ø³ÙŠÙ…",
+            "is_correct": true
+          },
+          {
+            "text": "D9a Ù„Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ø­Ø¶Ø±ÙŠØ©Ø› D9b Ù„Ù„Ø·Ø±Ù‚ Ø§Ù„Ø±ÙŠÙÙŠØ©",
+            "is_correct": false
+          },
+          {
+            "text": "D9a ØªÙ†Ø·Ø¨Ù‚ ÙÙ‚Ø· Ø¹Ù„Ù‰ Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§ØªØ› D9b ØªÙ†Ø·Ø¨Ù‚ ÙÙ‚Ø· Ø¹Ù„Ù‰ Ø§Ù„Ù…Ø´Ø§Ø©",
+            "is_correct": false
+          }
+        ],
+        "explanation": "ØªØªÙ…ÙŠØ² D9a Ø¨Ù…Ø³Ø§Ø±Ø§Øª Ù…Ù†ÙØµÙ„Ø© Ø¨ÙˆØ¶ÙˆØ­ Ù„ÙƒÙ„ Ù†ÙˆØ¹ Ù…Ù† Ø§Ù„Ù…Ø³ØªØ®Ø¯Ù…ÙŠÙ†. Ø¨ÙŠÙ†Ù…Ø§ ØªÙØ¸Ù‡Ø± D9b Ù…Ø³Ø§Ø­Ø© Ù…Ø´ØªØ±ÙƒØ© Ø¨Ø¯ÙˆÙ† ÙØµÙ„ Ø«Ø§Ø¨Øª Ø¨ÙŠÙ† Ø§Ù„Ù…Ø´Ø§Ø© ÙˆØ±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª."
+      }
+    }
+  },
+  {
+    "question_id": "D9a_Q07",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "De voetgangersstrook van een D9a-pad is druk. Mag een voetganger overlopen naar de fietsersstrook?",
+        "choices": [
+          {
+            "text": "Neen, elke gebruiker moet in zijn aangewezen strook blijven",
+            "is_correct": true
+          },
+          {
+            "text": "Ja, als de voetgangersstrook te vol is",
+            "is_correct": false
+          }
+        ],
+        "explanation": "D9a legt een strikte scheiding op. De drukte in een strook vormt geen uitzondering; voetgangers moeten de linkerstrook blijven gebruiken."
+      },
+      "EN": {
+        "question": "The pedestrian section of a D9a path is crowded. May a pedestrian walk on the cyclist section?",
+        "choices": [
+          {
+            "text": "No, each user must keep to their designated section",
+            "is_correct": true
+          },
+          {
+            "text": "Yes, if the pedestrian section is too full",
+            "is_correct": false
+          }
+        ],
+        "explanation": "D9a imposes a strict separation. Crowding in one section does not create an exception; pedestrians must remain in the left section."
+      },
+      "FR": {
+        "question": "La section pietons d'une voie D9a est bondee. Un pieton peut-il passer sur la section cycliste ?",
+        "choices": [
+          {
+            "text": "Non, chaque usager doit rester dans sa section designee",
+            "is_correct": true
+          },
+          {
+            "text": "Oui, si la section pietons est trop pleine",
+            "is_correct": false
+          }
+        ],
+        "explanation": "D9a impose une separation stricte. L'affluence dans une section ne constitue pas une exception; les pietons doivent rester dans la section gauche."
+      },
+      "AR": {
+        "question": "Ù‚Ø³Ù… Ø§Ù„Ù…Ø´Ø§Ø© ÙÙŠ Ù…Ø³Ø§Ø± D9a Ù…Ø²Ø¯Ø­Ù…. Ù‡Ù„ ÙŠÙ…ÙƒÙ† Ù„Ù…Ø´Ø§Ø© Ø§Ù„Ù…Ø´ÙŠ Ø¹Ù„Ù‰ Ù‚Ø³Ù… Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§ØªØŸ",
+        "choices": [
+          {
+            "text": "Ù„Ø§ØŒ ÙŠØ¬Ø¨ Ø¹Ù„Ù‰ ÙƒÙ„ Ù…Ø³ØªØ®Ø¯Ù… Ø§Ù„Ø¨Ù‚Ø§Ø¡ ÙÙŠ Ù‚Ø³Ù…Ù‡ Ø§Ù„Ù…Ø®ØµØµ",
+            "is_correct": true
+          },
+          {
+            "text": "Ù†Ø¹Ù…ØŒ Ø¥Ø°Ø§ ÙƒØ§Ù† Ù‚Ø³Ù… Ø§Ù„Ù…Ø´Ø§Ø© Ù…Ù…ØªÙ„Ø¦Ø§Ù‹ Ø¬Ø¯Ø§Ù‹",
+            "is_correct": false
+          }
+        ],
+        "explanation": "ØªÙØ±Ø¶ D9a ÙØµÙ„Ø§Ù‹ ØµØ§Ø±Ù…Ø§Ù‹. Ø§Ù„Ø§Ø²Ø¯Ø­Ø§Ù… ÙÙŠ Ø£Ø­Ø¯ Ø§Ù„Ø£Ù‚Ø³Ø§Ù… Ù„Ø§ ÙŠÙØ´ÙƒÙ‘Ù„ Ø§Ø³ØªØ«Ù†Ø§Ø¡Ù‹Ø› ÙŠØ¬Ø¨ Ø¹Ù„Ù‰ Ø§Ù„Ù…Ø´Ø§Ø© Ø§Ù„Ø¨Ù‚Ø§Ø¡ ÙÙŠ Ø§Ù„Ù‚Ø³Ù… Ø§Ù„Ø£ÙŠØ³Ø±."
+      }
+    }
+  },
+  {
+    "question_id": "D9a_Q08",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "De voetgangersstrook van een D9a-pad is leeg. Mag een fietser de voetgangersstrook gebruiken voor extra ruimte?",
+        "choices": [
+          {
+            "text": "Neen, fietsers moeten de rechter fietsersstrook gebruiken ongeacht de bezetting van de voetgangersstrook",
+            "is_correct": true
+          },
+          {
+            "text": "Ja, als de voetgangersstrook onbezet is",
+            "is_correct": false
+          }
+        ],
+        "explanation": "D9a verplicht fietsers uitsluitend de rechterstrook te gebruiken. De beschikbaarheid van de voetgangersstrook verandert niets aan deze verplichting."
+      },
+      "EN": {
+        "question": "The pedestrian section of a D9a path is empty. May a cyclist use the pedestrian section for more space?",
+        "choices": [
+          {
+            "text": "No, cyclists must use the right cyclist section regardless of the pedestrian section's occupancy",
+            "is_correct": true
+          },
+          {
+            "text": "Yes, if the pedestrian section is unoccupied",
+            "is_correct": false
+          }
+        ],
+        "explanation": "D9a requires cyclists to use the right section exclusively. The availability of the pedestrian section does not change this obligation."
+      },
+      "FR": {
+        "question": "La section pietons d'une voie D9a est vide. Un cycliste peut-il utiliser la section pietons pour avoir plus d'espace ?",
+        "choices": [
+          {
+            "text": "Non, les cyclistes doivent utiliser la section cycliste droite quelle que soit l'occupation de la section pietons",
+            "is_correct": true
+          },
+          {
+            "text": "Oui, si la section pietons est inoccupee",
+            "is_correct": false
+          }
+        ],
+        "explanation": "D9a oblige les cyclistes a utiliser exclusivement la section droite. La disponibilite de la section pietons ne modifie pas cette obligation."
+      },
+      "AR": {
+        "question": "Ù‚Ø³Ù… Ø§Ù„Ù…Ø´Ø§Ø© ÙÙŠ Ù…Ø³Ø§Ø± D9a ÙØ§Ø±Øº. Ù‡Ù„ ÙŠÙ…ÙƒÙ† Ù„Ø±Ø§ÙƒØ¨ Ø¯Ø±Ø§Ø¬Ø© Ø§Ø³ØªØ®Ø¯Ø§Ù… Ù‚Ø³Ù… Ø§Ù„Ù…Ø´Ø§Ø© Ù„Ù…Ø³Ø§Ø­Ø© Ø£ÙƒØ¨Ø±ØŸ",
+        "choices": [
+          {
+            "text": "Ù„Ø§ØŒ ÙŠØ¬Ø¨ Ø¹Ù„Ù‰ Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ø³ØªØ®Ø¯Ø§Ù… Ù‚Ø³Ù… Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ù„Ø£ÙŠÙ…Ù† Ø¨ØºØ¶ Ø§Ù„Ù†Ø¸Ø± Ø¹Ù† Ø¥Ø´ØºØ§Ù„ Ù‚Ø³Ù… Ø§Ù„Ù…Ø´Ø§Ø©",
+            "is_correct": true
+          },
+          { "text": "Ù†Ø¹Ù…ØŒ Ø¥Ø°Ø§ ÙƒØ§Ù† Ù‚Ø³Ù… Ø§Ù„Ù…Ø´Ø§Ø© Ø®Ø§Ù„ÙŠØ§Ù‹", "is_correct": false }
+        ],
+        "explanation": "ØªÙÙ„Ø²Ù… D9a Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø¨Ø§Ø³ØªØ®Ø¯Ø§Ù… Ø§Ù„Ù‚Ø³Ù… Ø§Ù„Ø£ÙŠÙ…Ù† Ø­ØµØ±Ø§Ù‹. ØªÙˆÙØ± Ù‚Ø³Ù… Ø§Ù„Ù…Ø´Ø§Ø© Ù„Ø§ ÙŠÙØºÙŠÙ‘Ø± Ù‡Ø°Ø§ Ø§Ù„Ø§Ù„ØªØ²Ø§Ù…."
+      }
+    }
+  }
+]

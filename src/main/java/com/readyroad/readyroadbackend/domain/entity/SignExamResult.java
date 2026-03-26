@@ -5,28 +5,20 @@ import java.time.LocalDateTime;
 
 /**
  * Records every sign-exam submission for a user.
- *
- * Business rule: Exam 2 for a given sign is locked until the user has
- * at least one {@code passed = true} record with {@code examNumber = 1}
- * for that sign.
  */
 @Entity
-@Table(
-    name = "sign_exam_results",
-    indexes = {
-        @Index(name = "idx_ser_user_sign",      columnList = "user_id, sign_id"),
-        @Index(name = "idx_ser_user_sign_exam",  columnList = "user_id, sign_id, exam_number"),
-        @Index(name = "idx_ser_passed",          columnList = "passed"),
-        @Index(name = "idx_ser_completed_at",    columnList = "completed_at")
-    }
-)
+@Table(name = "sign_exam_results", indexes = {
+        @Index(name = "idx_ser_user_sign", columnList = "user_id, sign_id"),
+        @Index(name = "idx_ser_passed", columnList = "passed"),
+        @Index(name = "idx_ser_completed_at", columnList = "completed_at")
+})
 public class SignExamResult {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    /** FK → users.id  (cascade delete handled by DB constraint) */
+    /** FK → users.id (cascade delete handled by DB constraint) */
     @Column(name = "user_id", nullable = false)
     private Long userId;
 
@@ -37,10 +29,6 @@ public class SignExamResult {
     /** Short code such as "A1a" — stored for quick look-ups without a JOIN */
     @Column(name = "sign_code", nullable = false, length = 50)
     private String signCode;
-
-    /** 1 or 2 */
-    @Column(name = "exam_number", nullable = false)
-    private Integer examNumber;
 
     @Column(name = "total_questions", nullable = false)
     private Integer totalQuestions;
@@ -70,46 +58,98 @@ public class SignExamResult {
     @PrePersist
     protected void onCreate() {
         LocalDateTime now = LocalDateTime.now();
-        if (completedAt == null) completedAt = now;
+        if (completedAt == null)
+            completedAt = now;
         createdAt = now;
     }
 
     // ── Getters & Setters ────────────────────────────────────────────────────
 
-    public Long    getId()                          { return id; }
+    public Long getId() {
+        return id;
+    }
 
-    public Long    getUserId()                      { return userId; }
-    public void    setUserId(Long v)                { this.userId = v; }
+    public Long getUserId() {
+        return userId;
+    }
 
-    public Long    getSignId()                      { return signId; }
-    public void    setSignId(Long v)                { this.signId = v; }
+    public void setUserId(Long v) {
+        this.userId = v;
+    }
 
-    public String  getSignCode()                    { return signCode; }
-    public void    setSignCode(String v)            { this.signCode = v; }
+    public Long getSignId() {
+        return signId;
+    }
 
-    public Integer getExamNumber()                  { return examNumber; }
-    public void    setExamNumber(Integer v)         { this.examNumber = v; }
+    public void setSignId(Long v) {
+        this.signId = v;
+    }
 
-    public Integer getTotalQuestions()              { return totalQuestions; }
-    public void    setTotalQuestions(Integer v)     { this.totalQuestions = v; }
+    public String getSignCode() {
+        return signCode;
+    }
 
-    public Integer getAnsweredCount()               { return answeredCount; }
-    public void    setAnsweredCount(Integer v)      { this.answeredCount = v; }
+    public void setSignCode(String v) {
+        this.signCode = v;
+    }
 
-    public Integer getCorrectCount()                { return correctCount; }
-    public void    setCorrectCount(Integer v)       { this.correctCount = v; }
+    public Integer getTotalQuestions() {
+        return totalQuestions;
+    }
 
-    public Integer getRequiredToPass()              { return requiredToPass; }
-    public void    setRequiredToPass(Integer v)     { this.requiredToPass = v; }
+    public void setTotalQuestions(Integer v) {
+        this.totalQuestions = v;
+    }
 
-    public Double  getScorePct()                    { return scorePct; }
-    public void    setScorePct(Double v)            { this.scorePct = v; }
+    public Integer getAnsweredCount() {
+        return answeredCount;
+    }
 
-    public Boolean getPassed()                      { return passed; }
-    public void    setPassed(Boolean v)             { this.passed = v; }
+    public void setAnsweredCount(Integer v) {
+        this.answeredCount = v;
+    }
 
-    public LocalDateTime getCompletedAt()           { return completedAt; }
-    public void          setCompletedAt(LocalDateTime v) { this.completedAt = v; }
+    public Integer getCorrectCount() {
+        return correctCount;
+    }
 
-    public LocalDateTime getCreatedAt()             { return createdAt; }
+    public void setCorrectCount(Integer v) {
+        this.correctCount = v;
+    }
+
+    public Integer getRequiredToPass() {
+        return requiredToPass;
+    }
+
+    public void setRequiredToPass(Integer v) {
+        this.requiredToPass = v;
+    }
+
+    public Double getScorePct() {
+        return scorePct;
+    }
+
+    public void setScorePct(Double v) {
+        this.scorePct = v;
+    }
+
+    public Boolean getPassed() {
+        return passed;
+    }
+
+    public void setPassed(Boolean v) {
+        this.passed = v;
+    }
+
+    public LocalDateTime getCompletedAt() {
+        return completedAt;
+    }
+
+    public void setCompletedAt(LocalDateTime v) {
+        this.completedAt = v;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
 }

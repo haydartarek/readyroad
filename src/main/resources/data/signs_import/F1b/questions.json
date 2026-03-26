@@ -1,396 +1,618 @@
-[
+﻿[
   {
-    "question_id": "F1b-v2_Q01",
-    "type": "WHAT_DOES_IT_MEAN",
+    "question_id": "F1b_Q01",
+    "is_critical": false,
     "difficulty": "EASY",
-    "is_critical": false,
-    "show_sign": true,
-    "_note": "TEMPLATE: Replace wrong answers with actual sign names from the same category.",
     "i18n": {
       "NL": {
-        "question": "Wat betekent dit verkeersbord?",
         "choices": [
           {
-            "text": "Begin van een bebouwde kom",
+            "text": "U rijdt een bebouwde kom binnen: maximumsnelheid 50 km/u en stedelijke verkeersregels gelden",
             "is_correct": true
           },
           {
-            "text": "Rijden verboden in beide richtingen",
+            "text": "U verlaat een bebouwde kom",
             "is_correct": false
           },
           {
-            "text": "Gevaarsbord voor wegwerkzaamheden",
+            "text": "Parkeren verboden in dit gebied",
             "is_correct": false
           }
         ],
-        "explanation": "Dit bord geeft aan dat je een bebouwde kom binnenrijdt, wat betekent dat de stadsregels van toepassing worden vanaf dit bord, zoals de maximumsnelheid van 50 km/u of de aangegeven snelheid, en de algemene verkeersregels zoals voorrang en inhalen."
+        "question": "Wat betekent bord F1b?",
+        "explanation": "F1b markeert het begin van een bebouwde kom. Zodra u dit bord passeert, geldt een snelheidslimiet van 50 km/u tenzij een ander bord een lagere limiet aangeeft."
       },
       "EN": {
-        "question": "What does this traffic sign mean?",
         "choices": [
           {
-            "text": "Start of built-up area",
+            "text": "You are entering a built-up area: maximum speed 50 km/h and urban traffic rules apply",
             "is_correct": true
           },
           {
-            "text": "Driving prohibited in both directions",
+            "text": "You are leaving a built-up area",
             "is_correct": false
           },
           {
-            "text": "Danger sign for roadworks",
+            "text": "Parking forbidden in this area",
             "is_correct": false
           }
         ],
-        "explanation": "This sign indicates that you are entering a built-up area, which means that urban rules apply from this sign, such as the maximum speed of 50 km/h or the indicated speed, and general traffic rules such as priority and overtaking."
+        "question": "What does sign F1b mean?",
+        "explanation": "F1b marks the start of a built-up area. Once you pass this sign, a 50 km/h speed limit applies unless another sign shows a lower limit."
       },
       "FR": {
-        "question": "Que signifie ce panneau de signalisation ?",
         "choices": [
           {
-            "text": "Début d'agglomération",
+            "text": "Vous entrez dans une agglomeration: vitesse maximale 50 km/h et regles de circulation urbaine s'appliquent",
             "is_correct": true
           },
           {
-            "text": "Circulation interdite dans les deux sens",
+            "text": "Vous quittez une agglomeration",
             "is_correct": false
           },
           {
-            "text": "Panneau de danger pour travaux",
+            "text": "Stationnement interdit dans cette zone",
             "is_correct": false
           }
         ],
-        "explanation": "Ce panneau indique que vous entrez dans une agglomération, ce qui signifie que les règles urbaines s'appliquent à partir de ce panneau, comme la vitesse maximale de 50 km/h ou la vitesse indiquée, et les règles générales de circulation comme la priorité et le dépassement."
+        "question": "Que signifie le panneau F1b ?",
+        "explanation": "F1b marque le debut d'une agglomeration. Des que vous passez ce panneau, une limite de vitesse de 50 km/h s'applique."
       },
       "AR": {
-        "question": "ماذا تعني لافتة المرور هذه؟",
         "choices": [
           {
-            "text": "علامة دخول المدينة",
+            "text": "Ø§Ù†Øª ØªØ¯Ø®Ù„ Ù…Ù†Ø·Ù‚Ø© Ø¹Ù…Ø±Ø§Ù†ÙŠØ©: Ø§Ù„Ø³Ø±Ø¹Ø© Ø§Ù„Ù‚ØµÙˆÙ‰ 50 ÙƒÙ…/Ø³ ÙˆØªØ³Ø±ÙŠ Ù‚ÙˆØ§Ø¹Ø¯ Ø§Ù„Ù…Ø±ÙˆØ± Ø§Ù„Ø­Ø¶Ø±ÙŠ",
             "is_correct": true
           },
           {
-            "text": "القيادة محظورة في كلا الاتجاهين",
+            "text": "Ø§Ù†Øª ØªØºØ§Ø¯Ø± Ù…Ù†Ø·Ù‚Ø© Ø¹Ù…Ø±Ø§Ù†ÙŠØ©",
             "is_correct": false
           },
           {
-            "text": "لافتة خطر لأعمال الطريق",
+            "text": "Ø§Ù„ÙˆÙ‚ÙˆÙ Ù…Ù…Ù†ÙˆØ¹ ÙÙŠ Ù‡Ø°Ù‡ Ø§Ù„Ù…Ù†Ø·Ù‚Ø©",
             "is_correct": false
           }
         ],
-        "explanation": "تشير هذه العلامة إلى أنك داخل منطقة مبنية، مما يعني أن القواعد الحضرية تنطبق من هذه العلامة، مثل السرعة القصوى 50 كم/ساعة أو السرعة المشار إليها، وقواعد المرور العامة مثل الأولوية والتجاوز."
+        "question": "Ù…Ø§ Ù…Ø¹Ù†Ù‰ Ù„Ø§ÙØªØ© F1bØŸ",
+        "explanation": "F1b ØªÙØ¹Ù„Ù‘Ù… Ø¨Ø¯Ø§ÙŠØ© Ø§Ù„Ù…Ù†Ø·Ù‚Ø© Ø§Ù„Ø¹Ù…Ø±Ø§Ù†ÙŠØ©. Ø¨Ù…Ø¬Ø±Ø¯ Ù…Ø±ÙˆØ±Ùƒ Ø¨Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ© ÙŠØ³Ø±ÙŠ Ø­Ø¯ Ø§Ù„Ø³Ø±Ø¹Ø© 50 ÙƒÙ…/Ø³ Ù…Ø§ Ù„Ù… ØªÙØ´Ø± Ù„Ø§ÙØªØ© Ø§Ø®Ø±Ù‰ Ù„Ø­Ø¯ Ø§Ø¯Ù†Ù‰."
       }
-    }
+    },
+    "show_sign": true,
+    "type": "WHAT_DOES_IT_MEAN"
   },
   {
-    "question_id": "F1b-v2_Q02",
-    "type": "WHICH_SIGN",
+    "question_id": "F1b_Q02",
+    "is_critical": false,
     "difficulty": "EASY",
-    "is_critical": false,
-    "show_sign": true,
-    "_note": "TEMPLATE: Ready to use — category identification question.",
     "i18n": {
       "NL": {
-        "question": "Tot welke categorie verkeerstekens behoort dit bord?",
         "choices": [
           {
-            "text": "Aanwijzingsborden (F-reeks)",
+            "text": "F3b: einde van een bebouwde kom",
             "is_correct": true
           },
           {
-            "text": "Gebodsborden (D-reeks)",
+            "text": "F4b: einde zone 30",
             "is_correct": false
           },
           {
-            "text": "Parkeerregelementsborden (E-reeks)",
+            "text": "F7: einde autosnelweg",
             "is_correct": false
           }
         ],
-        "explanation": "Dit bord behoort tot de categorie 'Aanwijzingsborden (F-reeks)'. Elk type bord heeft een specifieke vorm en kleurschema."
+        "question": "Welk bord is het tegengestelde van F1b?",
+        "explanation": "F1b (begin bebouwde kom) en F3b (einde bebouwde kom) vormen een koppel. F3b staat aan de andere kant van de kom."
       },
       "EN": {
-        "question": "To which category of traffic signs does this sign belong?",
         "choices": [
           {
-            "text": "Information signs (F-series)",
+            "text": "F3b: end of built-up area",
             "is_correct": true
           },
           {
-            "text": "Mandatory signs (D-series)",
+            "text": "F4b: end of zone 30",
             "is_correct": false
           },
           {
-            "text": "Parking regulation signs (E-series)",
+            "text": "F7: end of motorway",
             "is_correct": false
           }
         ],
-        "explanation": "This sign belongs to the 'Information signs (F-series)' category. Each type of sign has a specific shape and color scheme."
+        "question": "Which sign is the opposite of F1b?",
+        "explanation": "F1b (start built-up area) and F3b (end built-up area) form a pair. F3b is placed at the other side of the village."
       },
       "FR": {
-        "question": "À quelle catégorie de panneaux de signalisation ce panneau appartient-il ?",
         "choices": [
           {
-            "text": "Panneaux d'indication (série F)",
+            "text": "F3b: fin d'une agglomeration",
             "is_correct": true
           },
           {
-            "text": "Panneaux d'obligation (série D)",
+            "text": "F4b: fin de zone 30",
             "is_correct": false
           },
           {
-            "text": "Panneaux de stationnement (série E)",
+            "text": "F7: fin d'autoroute",
             "is_correct": false
           }
         ],
-        "explanation": "Ce panneau appartient à la catégorie 'Panneaux d'indication (série F)'. Chaque type de panneau a une forme et un schéma de couleurs spécifiques."
+        "question": "Quel panneau est l'oppose de F1b ?",
+        "explanation": "F1b (debut agglomeration) et F3b (fin agglomeration) forment un duo. F3b est place de l'autre cote du village."
       },
       "AR": {
-        "question": "إلى أي فئة من لافتات المرور تنتمي هذه اللافتة؟",
         "choices": [
           {
-            "text": "لافتات المعلومات (سلسلة F)",
+            "text": "F3b: Ù†Ù‡Ø§ÙŠØ© Ø§Ù„Ù…Ù†Ø·Ù‚Ø© Ø§Ù„Ø¹Ù…Ø±Ø§Ù†ÙŠØ©",
             "is_correct": true
           },
           {
-            "text": "لافتات الإلزام (سلسلة D)",
+            "text": "F4b: Ù†Ù‡Ø§ÙŠØ© Ù…Ù†Ø·Ù‚Ø© Ø³Ø±Ø¹Ø© 30",
             "is_correct": false
           },
           {
-            "text": "لافتات تنظيم الوقوف (سلسلة E)",
+            "text": "F7: Ù†Ù‡Ø§ÙŠØ© Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø³Ø±ÙŠØ¹",
             "is_correct": false
           }
         ],
-        "explanation": "هذه اللافتة تنتمي إلى فئة 'لافتات المعلومات (سلسلة F)'. كل نوع من اللافتات له شكل ونظام ألوان محدد."
+        "question": "Ù…Ø§ Ø§Ù„Ù„Ø§ÙØªØ© Ø§Ù„Ù…Ù‚Ø§Ø¨Ù„Ø© Ù„Ù„Ø§ÙØªØ© F1bØŸ",
+        "explanation": "F1b (Ø¨Ø¯Ø§ÙŠØ© Ø§Ù„Ù…Ù†Ø·Ù‚Ø© Ø§Ù„Ø¹Ù…Ø±Ø§Ù†ÙŠØ©) ÙˆF3b (Ù†Ù‡Ø§ÙŠØªÙ‡Ø§) ÙŠØ¹Ù…Ù„Ø§Ù† Ù…Ø¹Ø§Ù‹ ÙƒØ²ÙˆØ¬."
       }
-    }
+    },
+    "show_sign": true,
+    "type": "WHICH_SIGN"
   },
   {
-    "question_id": "F1b-v2_Q03",
-    "type": "WHAT_MUST_YOU_DO",
+    "question_id": "F1b_Q03",
+    "is_critical": false,
+    "difficulty": "EASY",
+    "i18n": {
+      "NL": {
+        "choices": [
+          {
+            "text": "Voetgangers, fietsers en spelende kinderen naast de rijbaan; meer kansen op conflicten bij lagere snelheden",
+            "is_correct": true
+          },
+          {
+            "text": "Gevaar van dieren op de rijbaan",
+            "is_correct": false
+          },
+          {
+            "text": "Gevaar van ijzel op snelwegen",
+            "is_correct": false
+          }
+        ],
+        "question": "Welk gevaar is specifiek voor bebouwde kommen aangeduid door F1b?",
+        "explanation": "In bebouwde kommen zijn er kwetsbare weggebruikers zoals voetgangers en kinderen die dicht bij de rijbaan kunnen zijn. Lagere snelheid vermindert het risico."
+      },
+      "EN": {
+        "choices": [
+          {
+            "text": "Pedestrians, cyclists and playing children near the road; higher chance of conflicts at lower speeds",
+            "is_correct": true
+          },
+          {
+            "text": "Risk of animals on motorways",
+            "is_correct": false
+          },
+          {
+            "text": "Risk of ice on motorways",
+            "is_correct": false
+          }
+        ],
+        "question": "What hazard is specific to built-up areas indicated by F1b?",
+        "explanation": "In built-up areas there are vulnerable road users such as pedestrians and children who may be close to the road."
+      },
+      "FR": {
+        "choices": [
+          {
+            "text": "Pietons, cyclistes et enfants jouant pres de la route; risque eleve de conflits a vitesse reduite",
+            "is_correct": true
+          },
+          {
+            "text": "Risque d'animaux sur l'autoroute",
+            "is_correct": false
+          },
+          {
+            "text": "Risque de verglas sur les autoroutes",
+            "is_correct": false
+          }
+        ],
+        "question": "Quel danger est propre aux agglomerations signalees par F1b ?",
+        "explanation": "Dans les agglomerations il y a des usagers vulnerables comme des pietons et des enfants proches de la route."
+      },
+      "AR": {
+        "choices": [
+          {
+            "text": "Ø§Ù„Ù…Ø´Ø§Ø© ÙˆØ±Ø§ÙƒØ¨Ùˆ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª ÙˆØ§Ù„Ø§Ø·ÙØ§Ù„ Ø§Ù„Ø°ÙŠÙ† ÙŠÙ„Ø¹Ø¨ÙˆÙ† Ø¨Ø§Ù„Ù‚Ø±Ø¨ Ù…Ù† Ø§Ù„Ø·Ø±ÙŠÙ‚",
+            "is_correct": true
+          },
+          {
+            "text": "Ø®Ø·Ø± Ø§Ù„Ø­ÙŠÙˆØ§Ù†Ø§Øª Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±Ù‚ Ø§Ù„Ø³Ø±ÙŠØ¹Ø©",
+            "is_correct": false
+          },
+          {
+            "text": "Ø®Ø·Ø± Ø§Ù„Ø¬Ù„ÙŠØ¯ Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±Ù‚ Ø§Ù„Ø³Ø±ÙŠØ¹Ø©",
+            "is_correct": false
+          }
+        ],
+        "question": "Ù…Ø§ Ø§Ù„Ø®Ø·Ø± Ø§Ù„Ø®Ø§Øµ Ø¨Ø§Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ø¹Ù…Ø±Ø§Ù†ÙŠØ© Ø§Ù„Ø°ÙŠ ØªÙØ´ÙŠØ± Ø¥Ù„ÙŠÙ‡ F1bØŸ",
+        "explanation": "ÙÙŠ Ø§Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ø¹Ù…Ø±Ø§Ù†ÙŠØ© ÙŠÙˆØ¬Ø¯ Ù…Ø³ØªØ®Ø¯Ù…Ùˆ Ø·Ø±ÙŠÙ‚ Ø¶Ø¹ÙØ§Ø¡ ÙƒØ§Ù„Ù…Ø´Ø§Ø© ÙˆØ§Ù„Ø§Ø·ÙØ§Ù„ Ø¨Ø§Ù„Ù‚Ø±Ø¨ Ù…Ù† Ø§Ù„Ø·Ø±ÙŠÙ‚."
+      }
+    },
+    "show_sign": true,
+    "type": "HAZARD_IDENTIFICATION"
+  },
+  {
+    "question_id": "F1b_Q04",
+    "is_critical": false,
     "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "_note": "TEMPLATE (MEDIUM): Replace with sign-specific question for production.",
     "i18n": {
       "NL": {
-        "question": "Welke informatie of aanwijzing geeft dit bord aan weggebruikers?",
         "choices": [
           {
-            "text": "Het bord geeft nuttige informatie of aanwijzingen over de wegsituatie of faciliteiten",
+            "text": "50 km/u tenzij een ander bord een lagere limiet aangeeft",
             "is_correct": true
           },
           {
-            "text": "Het bord verbiedt een specifieke rijbeweging",
+            "text": "70 km/u",
             "is_correct": false
           },
           {
-            "text": "Het bord verplicht tot stoppen voor controle",
+            "text": "30 km/u",
             "is_correct": false
           }
         ],
-        "explanation": "Aanwijzingsborden (F-reeks) geven weggebruikers nuttige informatie over de wegsituatie, faciliteiten of speciale rijstroken."
+        "question": "U passeert F1b. Welke maximumsnelheid geldt nu onmiddellijk?",
+        "explanation": "De standaard snelheidslimiet binnen een bebouwde kom is 50 km/u. Lokale borden (bv. zone 30) kunnen een lagere limiet opleggen."
       },
       "EN": {
-        "question": "What information or guidance does this sign provide to road users?",
         "choices": [
           {
-            "text": "The sign provides useful information or guidance about the road situation or facilities",
+            "text": "50 km/h unless another sign indicates a lower limit",
             "is_correct": true
           },
           {
-            "text": "The sign prohibits a specific driving maneuver",
+            "text": "70 km/h",
             "is_correct": false
           },
           {
-            "text": "The sign requires stopping for inspection",
+            "text": "30 km/h",
             "is_correct": false
           }
         ],
-        "explanation": "Information signs (F-series) provide road users with useful info about road situation, facilities, or special lanes."
+        "question": "You pass F1b. What maximum speed now applies immediately?",
+        "explanation": "The default speed limit inside a built-up area is 50 km/h. Local signs (e.g. zone 30) may impose a lower limit."
       },
       "FR": {
-        "question": "Quelles informations ce panneau fournit-il aux usagers de la route ?",
         "choices": [
           {
-            "text": "Le panneau fournit des informations utiles sur la situation routière ou les équipements",
+            "text": "50 km/h sauf si un autre panneau indique une limite inferieure",
             "is_correct": true
           },
           {
-            "text": "Le panneau interdit une manœuvre de conduite spécifique",
+            "text": "70 km/h",
             "is_correct": false
           },
           {
-            "text": "Le panneau oblige à s'arrêter pour contrôle",
+            "text": "30 km/h",
             "is_correct": false
           }
         ],
-        "explanation": "Les panneaux d'indication (série F) informent les usagers sur la situation routière, les équipements ou voies spéciales."
+        "question": "Vous passez F1b. Quelle vitesse maximale s'applique desormais ?",
+        "explanation": "La limite de vitesse par defaut dans une agglomeration est de 50 km/h. Des panneaux locaux peuvent imposer une limite inferieure."
       },
       "AR": {
-        "question": "ما المعلومات أو التوجيهات التي توفرها هذه اللافتة لمستخدمي الطريق؟",
         "choices": [
           {
-            "text": "توفر اللافتة معلومات مفيدة أو توجيهات حول حالة الطريق أو المرافق",
+            "text": "50 ÙƒÙ…/Ø³ Ù…Ø§ Ù„Ù… ØªÙØ´Ø± Ù„Ø§ÙØªØ© Ø§Ø®Ø±Ù‰ Ù„Ø­Ø¯ Ø§Ø¯Ù†Ù‰",
             "is_correct": true
           },
           {
-            "text": "اللافتة تحظر مناورة قيادة محددة",
+            "text": "70 ÙƒÙ…/Ø³",
             "is_correct": false
           },
           {
-            "text": "اللافتة تفرض التوقف للفحص",
+            "text": "30 ÙƒÙ…/Ø³",
             "is_correct": false
           }
         ],
-        "explanation": "لافتات المعلومات (سلسلة F) توفر لمستخدمي الطريق معلومات مفيدة حول حالة الطريق والمرافق."
+        "question": "Ø¹Ø¨Ø±Øª Ù„Ø§ÙØªØ© F1b. Ù…Ø§ Ø§Ù„Ø³Ø±Ø¹Ø© Ø§Ù„Ù‚ØµÙˆÙ‰ Ø§Ù„ØªÙŠ ØªØ³Ø±ÙŠ Ø§Ù„Ø§Ù†ØŸ",
+        "explanation": "Ø§Ù„Ø­Ø¯ Ø§Ù„Ø§ÙØªØ±Ø§Ø¶ÙŠ Ù„Ù„Ø³Ø±Ø¹Ø© Ø¯Ø§Ø®Ù„ Ø§Ù„Ù…Ù†Ø·Ù‚Ø© Ø§Ù„Ø¹Ù…Ø±Ø§Ù†ÙŠØ© Ù‡Ùˆ 50 ÙƒÙ…/Ø³. Ø§Ù„Ù„Ø§ÙØªØ§Øª Ø§Ù„Ù…Ø­Ù„ÙŠØ© ÙƒÙ…Ù†Ø·Ù‚Ø© 30 Ù‚Ø¯ ØªÙØ±Ø¶ Ø­Ø¯Ø§Ù‹ Ø§Ø¯Ù†Ù‰."
       }
-    }
+    },
+    "show_sign": true,
+    "type": "WHAT_MUST_YOU_DO"
   },
   {
-    "question_id": "F1b-v2_Q04",
-    "type": "WHAT_MUST_YOU_DO",
+    "question_id": "F1b_Q05",
+    "is_critical": false,
     "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "_note": "TEMPLATE (MEDIUM): Replace with sign-specific question for production.",
     "i18n": {
       "NL": {
-        "question": "Wat is het kleurenschema van aanwijzingsborden in België?",
         "choices": [
           {
-            "text": "Blauw of groen achtergrond met witte symbolen en tekst",
+            "text": "Parkeer- en stilstandsregels voor bebouwde kommen, inhaalverboden en lagere snelheidslimieten",
             "is_correct": true
           },
           {
-            "text": "Rode achtergrond met witte tekst",
+            "text": "De regels voor autosnelwegen",
             "is_correct": false
           },
           {
-            "text": "Gele achtergrond met zwarte tekst",
+            "text": "Geen nieuwe regels: alleen de snelheidslimiet verandert",
             "is_correct": false
           }
         ],
-        "explanation": "Aanwijzingsborden hebben doorgaans een blauwe achtergrond (stedelijk) of groene achtergrond (autosnelweg)."
+        "question": "Welke extra verkeersregels treden in werking na F1b?",
+        "explanation": "Binnen een bebouwde kom gelden specifieke regels: lagere snelheid, bijzondere aandacht voor voetgangers, verbod te parkeren op bepaalde plaatsen enz."
       },
       "EN": {
-        "question": "What is the color scheme of information signs in Belgium?",
         "choices": [
           {
-            "text": "Blue or green background with white symbols and text",
+            "text": "Parking and stopping rules for built-up areas, overtaking restrictions and lower speed limits",
             "is_correct": true
           },
           {
-            "text": "Red background with white text",
+            "text": "The rules for motorways",
             "is_correct": false
           },
           {
-            "text": "Yellow background with black text",
+            "text": "No new rules: only the speed limit changes",
             "is_correct": false
           }
         ],
-        "explanation": "Information signs typically have a blue (urban) or green (motorway) background."
+        "question": "Which extra traffic rules come into effect after F1b?",
+        "explanation": "Inside a built-up area specific rules apply: lower speed, extra attention for pedestrians, prohibition to park in certain places, etc."
       },
       "FR": {
-        "question": "Quel est le schéma de couleurs des panneaux d'indication en Belgique ?",
         "choices": [
           {
-            "text": "Fond bleu ou vert avec des symboles et du texte blancs",
+            "text": "Regles de stationnement et d'arret pour les agglomerations, interdictions de depassement et limites de vitesse reduites",
             "is_correct": true
           },
           {
-            "text": "Fond rouge avec texte blanc",
+            "text": "Les regles des autoroutes",
             "is_correct": false
           },
           {
-            "text": "Fond jaune avec texte noir",
+            "text": "Aucune nouvelle regle: seule la limite de vitesse change",
             "is_correct": false
           }
         ],
-        "explanation": "Les panneaux d'indication ont généralement un fond bleu (urbain) ou vert (autoroute)."
+        "question": "Quelles regles de circulation supplementaires entrent en vigueur apres F1b ?",
+        "explanation": "Dans une agglomeration des regles specifiques s'appliquent: vitesse reduite, attention aux pietons, interdiction de stationner a certains endroits."
       },
       "AR": {
-        "question": "ما هو نظام الألوان للافتات المعلومات في بلجيكا؟",
         "choices": [
           {
-            "text": "خلفية زرقاء أو خضراء مع رموز ونص أبيض",
+            "text": "Ù‚ÙˆØ§Ø¹Ø¯ Ø§Ù„ÙˆÙ‚ÙˆÙ ÙˆØ§Ù„ØªÙˆÙ‚Ù Ù„Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ø¹Ù…Ø±Ø§Ù†ÙŠØ© ÙˆÙ‚ÙŠÙˆØ¯ Ø§Ù„ØªØ¬Ø§ÙˆØ² ÙˆÙ…Ø­Ø¯Ø¯Ø§Øª Ø§Ù„Ø³Ø±Ø¹Ø© Ø§Ù„Ù…Ù†Ø®ÙØ¶Ø©",
             "is_correct": true
           },
           {
-            "text": "خلفية حمراء مع نص أبيض",
+            "text": "Ù‚ÙˆØ§Ø¹Ø¯ Ø§Ù„Ø·Ø±Ù‚ Ø§Ù„Ø³Ø±ÙŠØ¹Ø©",
             "is_correct": false
           },
           {
-            "text": "خلفية صفراء مع نص أسود",
+            "text": "Ù„Ø§ Ù‚ÙˆØ§Ø¹Ø¯ Ø¬Ø¯ÙŠØ¯Ø©: ÙÙ‚Ø· Ø­Ø¯ Ø§Ù„Ø³Ø±Ø¹Ø© ÙŠØªØºÙŠØ±",
             "is_correct": false
           }
         ],
-        "explanation": "لافتات المعلومات عادةً لها خلفية زرقاء (حضري) أو خضراء (طريق سريع)."
+        "question": "Ù…Ø§ Ø§Ù„Ù‚ÙˆØ§Ø¹Ø¯ Ø§Ù„Ø§Ø¶Ø§ÙÙŠØ© Ù„Ù„Ù…Ø±ÙˆØ± Ø§Ù„ØªÙŠ ØªØ³Ø±ÙŠ Ø¨Ø¹Ø¯ F1bØŸ",
+        "explanation": "Ø¯Ø§Ø®Ù„ Ø§Ù„Ù…Ù†Ø·Ù‚Ø© Ø§Ù„Ø¹Ù…Ø±Ø§Ù†ÙŠØ© ØªØ³Ø±ÙŠ Ù‚ÙˆØ§Ø¹Ø¯ Ø®Ø§ØµØ©: Ø³Ø±Ø¹Ø© Ù…Ù†Ø®ÙØ¶Ø© ÙˆØ§Ù‡ØªÙ…Ø§Ù… Ø§Ø¶Ø§ÙÙŠ Ø¨Ø§Ù„Ù…Ø´Ø§Ø© ÙˆØ­Ø¸Ø± ÙˆÙ‚ÙˆÙ ÙÙŠ Ø§Ù…Ø§ÙƒÙ† Ù…Ø¹ÙŠÙ†Ø©."
       }
-    }
+    },
+    "show_sign": true,
+    "type": "WHAT_MUST_YOU_DO"
   },
   {
-    "question_id": "F1b-v2_Q05",
-    "type": "IS_IT_ALLOWED",
+    "question_id": "F1b_Q06",
+    "is_critical": false,
+    "difficulty": "MEDIUM",
+    "i18n": {
+      "NL": {
+        "choices": [
+          {
+            "text": "U moet uw snelheid aanpassen voordat u het bord passeert zodat u de limiet niet overschrijdt bij binnenkomst",
+            "is_correct": true
+          },
+          {
+            "text": "Pas na het passeren van het bord",
+            "is_correct": false
+          },
+          {
+            "text": "Zodra u het bord ziet op een afstand van 100 m",
+            "is_correct": false
+          }
+        ],
+        "question": "Moet u snelheid minderen zodra u F1b ziet of pas nadat u het passeert?",
+        "explanation": "U moet uw snelheid aanpassen op het moment dat u de bebouwde kom binnenrijdt. Het bord zelf markeert de grens."
+      },
+      "EN": {
+        "choices": [
+          {
+            "text": "You must adjust your speed before passing the sign so you do not exceed the limit on entry",
+            "is_correct": true
+          },
+          {
+            "text": "Only after passing the sign",
+            "is_correct": false
+          },
+          {
+            "text": "As soon as you see the sign at 100 m distance",
+            "is_correct": false
+          }
+        ],
+        "question": "Must you reduce speed as soon as you see F1b or only after you pass it?",
+        "explanation": "You must adjust your speed at the point you enter the built-up area. The sign itself marks the boundary."
+      },
+      "FR": {
+        "choices": [
+          {
+            "text": "Vous devez adapter votre vitesse avant de passer le panneau pour ne pas depasser la limite a l'entree",
+            "is_correct": true
+          },
+          {
+            "text": "Seulement apres avoir depasse le panneau",
+            "is_correct": false
+          },
+          {
+            "text": "Des que vous voyez le panneau a 100 m",
+            "is_correct": false
+          }
+        ],
+        "question": "Devez-vous reduire votre vitesse des que vous voyez F1b ou seulement apres l'avoir depasse ?",
+        "explanation": "Vous devez adapter votre vitesse au moment ou vous entrez dans l'agglomeration. Le panneau lui-meme marque la limite."
+      },
+      "AR": {
+        "choices": [
+          {
+            "text": "ÙŠØ¬Ø¨ ØªÙƒÙŠÙŠÙ Ø³Ø±Ø¹ØªÙƒ Ù‚Ø¨Ù„ ØªØ¬Ø§ÙˆØ² Ø§Ù„Ù„Ø§ÙØªØ© Ø­ØªÙ‰ Ù„Ø§ ØªØªØ¬Ø§ÙˆØ² Ø§Ù„Ø­Ø¯ Ø¹Ù†Ø¯ Ø§Ù„Ø¯Ø®ÙˆÙ„",
+            "is_correct": true
+          },
+          {
+            "text": "ÙÙ‚Ø· Ø¨Ø¹Ø¯ ØªØ¬Ø§ÙˆØ² Ø§Ù„Ù„Ø§ÙØªØ©",
+            "is_correct": false
+          },
+          {
+            "text": "Ø¨Ù…Ø¬Ø±Ø¯ Ø±Ø¤ÙŠØ© Ø§Ù„Ù„Ø§ÙØªØ© Ø¹Ù„Ù‰ Ø¨Ø¹Ø¯ 100 Ù…",
+            "is_correct": false
+          }
+        ],
+        "question": "Ù‡Ù„ ÙŠØ¬Ø¨ ØªØ®ÙÙŠØ¶ Ø§Ù„Ø³Ø±Ø¹Ø© Ø¨Ù…Ø¬Ø±Ø¯ Ø±Ø¤ÙŠØ© F1b Ø§Ù… ÙÙ‚Ø· Ø¨Ø¹Ø¯ ØªØ¬Ø§ÙˆØ²Ù‡Ø§ØŸ",
+        "explanation": "ÙŠØ¬Ø¨ ØªÙƒÙŠÙŠÙ Ø³Ø±Ø¹ØªÙƒ Ù„Ø­Ø¸Ø© Ø¯Ø®ÙˆÙ„ Ø§Ù„Ù…Ù†Ø·Ù‚Ø© Ø§Ù„Ø¹Ù…Ø±Ø§Ù†ÙŠØ©. Ø§Ù„Ù„Ø§ÙØªØ© Ù†ÙØ³Ù‡Ø§ ØªÙØ­Ø¯Ù‘Ø¯ Ø§Ù„Ø­Ø¯."
+      }
+    },
+    "show_sign": true,
+    "type": "WHAT_MUST_YOU_DO"
+  },
+  {
+    "question_id": "F1b_Q07",
+    "is_critical": true,
     "difficulty": "HARD",
-    "is_critical": false,
-    "show_sign": true,
-    "_note": "TEMPLATE (HARD): Replace with sign-specific question for production.",
     "i18n": {
       "NL": {
-        "question": "Mag u als weggebruiker aanwijzingsborden negeren?",
         "choices": [
           {
-            "text": "Nee, aanwijzingsborden moeten worden opgevolgd want ze geven wettelijk bindende aanwijzingen",
+            "text": "Neen: de maximumsnelheid van 50 km/u geldt ongeacht de wegbreedte of het verkeersniveau",
             "is_correct": true
           },
           {
-            "text": "Ja, aanwijzingsborden zijn vrijblijvend en kunnen naar eigen inzicht worden genegeerd",
+            "text": "Ja: brede wegen hebben een hogere limiet",
             "is_correct": false
           }
         ],
-        "explanation": "Aanwijzingsborden geven wettelijk bindende aanwijzingen aan weggebruikers. Ze mogen niet worden genegeerd en dienen te worden nageleefd."
+        "question": "Mag u 70 km/u rijden net na F1b als de weg breed is en er weinig verkeer is?",
+        "explanation": "De snelheidslimiet van 50 km/u in een bebouwde kom is absoluut. Wegbreedte of verkeersdruk veranderen niets aan de wettelijke limiet."
       },
       "EN": {
-        "question": "Are you as a road user allowed to ignore information signs?",
         "choices": [
           {
-            "text": "No, information signs must be followed as they provide legally binding directions",
+            "text": "No: the maximum speed of 50 km/h applies regardless of road width or traffic level",
             "is_correct": true
           },
           {
-            "text": "Yes, information signs are optional and can be ignored at your own discretion",
+            "text": "Yes: wide roads have a higher limit",
             "is_correct": false
           }
         ],
-        "explanation": "Information signs provide legally binding guidance to road users. They must not be ignored and should be followed."
+        "question": "May you drive 70 km/h just after F1b if the road is wide and there is little traffic?",
+        "explanation": "The 50 km/h speed limit in a built-up area is absolute. Road width or traffic pressure do not change the legal limit."
       },
       "FR": {
-        "question": "En tant qu'usager de la route, êtes-vous autorisé à ignorer les panneaux d'indication ?",
         "choices": [
           {
-            "text": "Non, les panneaux d'indication doivent être respectés car ils fournissent des indications juridiquement contraignantes",
+            "text": "Non: la vitesse maximale de 50 km/h s'applique quelle que soit la largeur de la route ou le niveau de trafic",
             "is_correct": true
           },
           {
-            "text": "Oui, les panneaux d'indication sont facultatifs et peuvent être ignorés à votre discrétion",
+            "text": "Oui: les routes larges ont une limite plus elevee",
             "is_correct": false
           }
         ],
-        "explanation": "Les panneaux d'indication fournissent des directives juridiquement contraignantes aux usagers. Ils ne peuvent pas être ignorés."
+        "question": "Pouvez-vous rouler a 70 km/h juste apres F1b si la route est large et qu'il y a peu de trafic ?",
+        "explanation": "La limite de vitesse de 50 km/h dans une agglomeration est absolue. La largeur de la route ou la pression du trafic ne changent pas la limite legale."
       },
       "AR": {
-        "question": "هل يُسمح لك كمستخدم للطريق بتجاهل لافتات المعلومات؟",
         "choices": [
           {
-            "text": "لا، يجب اتباع لافتات المعلومات لأنها توفر توجيهات ملزمة قانونياً",
+            "text": "Ù„Ø§: Ø­Ø¯ Ø§Ù„Ø³Ø±Ø¹Ø© 50 ÙƒÙ…/Ø³ ÙŠÙ†Ø·Ø¨Ù‚ Ø¨ØµØ±Ù Ø§Ù„Ù†Ø¸Ø± Ø¹Ù† Ø¹Ø±Ø¶ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ùˆ Ù…Ø³ØªÙˆÙ‰ Ø§Ù„Ø­Ø±ÙƒØ©",
             "is_correct": true
           },
           {
-            "text": "نعم، لافتات المعلومات اختيارية ويمكن تجاهلها وفق تقديرك الخاص",
+            "text": "Ù†Ø¹Ù…: Ø§Ù„Ø·Ø±Ù‚ Ø§Ù„Ø¹Ø±ÙŠØ¶Ø© Ù„Ù‡Ø§ Ø­Ø¯ Ø§Ø¹Ù„Ù‰",
             "is_correct": false
           }
         ],
-        "explanation": "لافتات المعلومات توفر توجيهات ملزمة قانونياً لمستخدمي الطريق. لا يجوز تجاهلها ويجب الالتزام بها."
+        "question": "Ù‡Ù„ ÙŠØ¬ÙˆØ² Ø§Ù„Ø³ÙŠØ± Ø¨Ø³Ø±Ø¹Ø© 70 ÙƒÙ…/Ø³ Ø¨Ø¹Ø¯ F1b Ø¥Ø°Ø§ ÙƒØ§Ù† Ø§Ù„Ø·Ø±ÙŠÙ‚ ÙˆØ§Ø³Ø¹Ø§Ù‹ ÙˆØ§Ù„Ø­Ø±ÙƒØ© Ø®ÙÙŠÙØ©ØŸ",
+        "explanation": "Ø­Ø¯ Ø§Ù„Ø³Ø±Ø¹Ø© 50 ÙƒÙ…/Ø³ ÙÙŠ Ø§Ù„Ù…Ù†Ø·Ù‚Ø© Ø§Ù„Ø¹Ù…Ø±Ø§Ù†ÙŠØ© Ù…Ø·Ù„Ù‚. Ø¹Ø±Ø¶ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ùˆ ÙƒØ«Ø§ÙØ© Ø§Ù„Ù…Ø±ÙˆØ± Ù„Ø§ ÙŠØºÙŠÙ‘Ø±Ø§Ù† Ø§Ù„Ø­Ø¯ Ø§Ù„Ù‚Ø§Ù†ÙˆÙ†ÙŠ."
       }
-    }
+    },
+    "show_sign": true,
+    "type": "IS_IT_ALLOWED"
+  },
+  {
+    "question_id": "F1b_Q08",
+    "is_critical": true,
+    "difficulty": "HARD",
+    "i18n": {
+      "NL": {
+        "choices": [
+          {
+            "text": "Neen: binnen een bebouwde kom moet u altijd voetgangers laten oversteken op een zebrapad of bord F49",
+            "is_correct": true
+          },
+          {
+            "text": "Ja: voorrang geldt altijd voor gemotoriseerd verkeer",
+            "is_correct": false
+          }
+        ],
+        "question": "Is het toegestaan in een bebouwde kom voetgangers die oversteken te negeren als u voorrang heeft?",
+        "explanation": "Binnen een bebouwde kom hebben voetgangers op een zebrapad of oversteekplaats (F49) absolute voorrang. U bent verplicht te stoppen."
+      },
+      "EN": {
+        "choices": [
+          {
+            "text": "No: inside a built-up area you must always let pedestrians cross at a zebra crossing or F49 sign",
+            "is_correct": true
+          },
+          {
+            "text": "Yes: right of way always applies to motorised traffic",
+            "is_correct": false
+          }
+        ],
+        "question": "Is it allowed in a built-up area to ignore pedestrians crossing if you have right of way?",
+        "explanation": "Inside a built-up area pedestrians at a zebra crossing or crossing sign (F49) have absolute priority. You are obliged to stop."
+      },
+      "FR": {
+        "choices": [
+          {
+            "text": "Non: dans une agglomeration vous devez toujours laisser traverser les pietons sur un passage cloute ou panneau F49",
+            "is_correct": true
+          },
+          {
+            "text": "Oui: la priorite s'applique toujours aux vehicules motorises",
+            "is_correct": false
+          }
+        ],
+        "question": "Est-il permis dans une agglomeration d'ignorer les pietons qui traversent si vous avez la priorite ?",
+        "explanation": "Dans une agglomeration les pietons sur un passage cloute (F49) ont la priorite absolue. Vous etes oblige de vous arreter."
+      },
+      "AR": {
+        "choices": [
+          {
+            "text": "Ù„Ø§: Ø¯Ø§Ø®Ù„ Ø§Ù„Ù…Ù†Ø·Ù‚Ø© Ø§Ù„Ø¹Ù…Ø±Ø§Ù†ÙŠØ© ÙŠØ¬Ø¨ Ø¯Ø§Ø¦Ù…Ø§Ù‹ Ø§Ù„Ø³Ù…Ø§Ø­ Ù„Ù„Ù…Ø´Ø§Ø© Ø¨Ø§Ù„Ø¹Ø¨ÙˆØ± Ø¹Ù†Ø¯ Ù…Ù…Ø± Ø§Ù„Ù…Ø´Ø§Ø© Ø§Ùˆ Ù„Ø§ÙØªØ© F49",
+            "is_correct": true
+          },
+          {
+            "text": "Ù†Ø¹Ù…: Ø§Ù„Ø§ÙˆÙ„ÙˆÙŠØ© ØªÙ†Ø·Ø¨Ù‚ Ø¯Ø§Ø¦Ù…Ø§Ù‹ Ø¹Ù„Ù‰ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ø¢Ù„ÙŠØ©",
+            "is_correct": false
+          }
+        ],
+        "question": "Ù‡Ù„ ÙŠÙØ³Ù…Ø­ Ø¯Ø§Ø®Ù„ Ø§Ù„Ù…Ù†Ø·Ù‚Ø© Ø§Ù„Ø¹Ù…Ø±Ø§Ù†ÙŠØ© Ø¨ØªØ¬Ø§Ù‡Ù„ Ø§Ù„Ù…Ø´Ø§Ø© Ø§Ù„Ø¹Ø§Ø¨Ø±ÙŠÙ† Ø¥Ø°Ø§ ÙƒØ§Ù†Øª Ù„Ø¯ÙŠÙƒ Ø§Ù„Ø§ÙˆÙ„ÙˆÙŠØ©ØŸ",
+        "explanation": "Ø¯Ø§Ø®Ù„ Ø§Ù„Ù…Ù†Ø·Ù‚Ø© Ø§Ù„Ø¹Ù…Ø±Ø§Ù†ÙŠØ© Ù„Ù„Ù…Ø´Ø§Ø© Ø¹Ù†Ø¯ Ù…Ù…Ø± Ø§Ù„Ø¹Ø¨ÙˆØ± (F49) Ø§ÙˆÙ„ÙˆÙŠØ© Ù…Ø·Ù„Ù‚Ø©. Ø§Ù†Øª Ù…Ù„Ø²Ù… Ø¨Ø§Ù„ØªÙˆÙ‚Ù."
+      }
+    },
+    "show_sign": true,
+    "type": "IS_IT_ALLOWED"
   }
 ]

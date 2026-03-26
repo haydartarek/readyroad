@@ -60,8 +60,8 @@ public class QuizQuestion extends BaseEntity {
     private Category category;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "traffic_sign_id")
-    private TrafficSign trafficSign;
+    @JoinColumn(name = "road_sign_id")
+    private RoadSign roadSign;
 
     // Law #6 (Grand Contract): Generic content image URL
     // Move ImageUrl from TrafficSign to QuizQuestion to make it generic
@@ -98,7 +98,8 @@ public class QuizQuestion extends BaseEntity {
     @Column(name = "typical_error_type", length = 30)
     private TypicalErrorType typicalErrorType;
 
-    // Whether the explanation is specific to the sign and context - Context-specific explanation
+    // Whether the explanation is specific to the sign and context -
+    // Context-specific explanation
     @Column(name = "context_specific")
     private Boolean contextSpecific = true;
 
@@ -162,14 +163,14 @@ public class QuizQuestion extends BaseEntity {
 
     @Override
     protected void normalizeTextFields() {
-        questionAr         = TextNormalizer.normalize(questionAr);
-        questionEn         = TextNormalizer.normalize(questionEn);
-        questionNl         = TextNormalizer.normalize(questionNl);
-        questionFr         = TextNormalizer.normalize(questionFr);
-        explanationAr      = TextNormalizer.normalize(explanationAr);
-        explanationEn      = TextNormalizer.normalize(explanationEn);
-        explanationNl      = TextNormalizer.normalize(explanationNl);
-        explanationFr      = TextNormalizer.normalize(explanationFr);
+        questionAr = TextNormalizer.normalize(questionAr);
+        questionEn = TextNormalizer.normalize(questionEn);
+        questionNl = TextNormalizer.normalize(questionNl);
+        questionFr = TextNormalizer.normalize(questionFr);
+        explanationAr = TextNormalizer.normalize(explanationAr);
+        explanationEn = TextNormalizer.normalize(explanationEn);
+        explanationNl = TextNormalizer.normalize(explanationNl);
+        explanationFr = TextNormalizer.normalize(explanationFr);
         errorExplanationAr = TextNormalizer.normalize(errorExplanationAr);
         errorExplanationEn = TextNormalizer.normalize(errorExplanationEn);
         errorExplanationNl = TextNormalizer.normalize(errorExplanationNl);

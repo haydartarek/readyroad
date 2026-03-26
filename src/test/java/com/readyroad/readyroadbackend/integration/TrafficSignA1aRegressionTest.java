@@ -1,9 +1,8 @@
 package com.readyroad.readyroadbackend.integration;
 
-import com.readyroad.readyroadbackend.domain.entity.Category;
-import com.readyroad.readyroadbackend.domain.entity.TrafficSign;
-import com.readyroad.readyroadbackend.domain.repository.CategoryRepository;
-import com.readyroad.readyroadbackend.domain.repository.TrafficSignRepository;
+import com.readyroad.readyroadbackend.domain.entity.RoadSign;
+import com.readyroad.readyroadbackend.domain.enums.SignCategory;
+import com.readyroad.readyroadbackend.domain.repository.RoadSignRepository;
 import com.readyroad.readyroadbackend.dto.response.TrafficSignResponse;
 import com.readyroad.readyroadbackend.service.TrafficSignService;
 import org.junit.jupiter.api.*;
@@ -53,7 +52,8 @@ class TrafficSignA1aRegressionTest {
     private static final String LONG_DESC_FR = "Avertissement d'un virage dangereux à gauche à environ 150 mètres. Réduisez votre vitesse et soyez attentif.";
 
     /**
-     * Detects literal escaped unicode sequences like \u0639 or \u00E9 in strings
+     * Detects literal escaped unicode sequences like \\u0639 or \\u00E9 in
+     * strings.
      */
     private static final Pattern ESCAPED_UNICODE = Pattern.compile("\\\\u[0-9A-Fa-f]{4}");
 
@@ -61,38 +61,22 @@ class TrafficSignA1aRegressionTest {
     private TrafficSignService trafficSignService;
 
     @Autowired
-    private TrafficSignRepository trafficSignRepository;
+    private RoadSignRepository RoadSignRepository;
 
-    @Autowired
-    private CategoryRepository categoryRepository;
-
-    private TrafficSign a1a;
+    private RoadSign a1a;
 
     @BeforeEach
     void seedA1a() {
-        // Create category A if it doesn't exist
-        Category categoryA = categoryRepository.findByCode(CATEGORY_CODE)
-                .orElseGet(() -> {
-                    Category cat = new Category();
-                    cat.setCode(CATEGORY_CODE);
-                    cat.setNameEn("Danger Signs");
-                    cat.setNameAr("علامات الخطر");
-                    cat.setNameNl("Gevaarsborden");
-                    cat.setNameFr("Panneaux de danger");
-                    cat.setIsActive(true);
-                    cat.setDisplayOrder(1);
-                    return categoryRepository.save(cat);
-                });
-
         // If A1a already exists (from another test), delete it to start fresh
-        trafficSignRepository.findBySignCode(SIGN_CODE)
-                .ifPresent(trafficSignRepository::delete);
-        trafficSignRepository.flush();
+        RoadSignRepository.findBySignCode(SIGN_CODE)
+                .ifPresent(RoadSignRepository::delete);
+        RoadSignRepository.flush();
 
         // Insert A1a with canonical V86 data
-        a1a = new TrafficSign();
+        a1a = new RoadSign();
         a1a.setSignCode(SIGN_CODE);
-        a1a.setCategory(categoryA);
+        a1a.setNormalizedSignCode(SIGN_CODE.toLowerCase());
+        a1a.setCategory(SignCategory.DANGER);
         a1a.setNameEn(NAME_EN);
         a1a.setNameAr(NAME_AR);
         a1a.setNameNl(NAME_NL);
@@ -101,13 +85,9 @@ class TrafficSignA1aRegressionTest {
         a1a.setDescriptionAr(DESC_AR);
         a1a.setDescriptionNl(DESC_NL);
         a1a.setDescriptionFr(DESC_FR);
-        a1a.setImageUrl("images/signs/danger_signs/A1a.png");
+        a1a.setImagePath("images/signs/danger_signs/A1a.png");
         a1a.setIsActive(true);
-        a1a.setLongDescriptionEn(LONG_DESC_EN);
-        a1a.setLongDescriptionAr(LONG_DESC_AR);
-        a1a.setLongDescriptionNl(LONG_DESC_NL);
-        a1a.setLongDescriptionFr(LONG_DESC_FR);
-        a1a = trafficSignRepository.saveAndFlush(a1a);
+        a1a = RoadSignRepository.saveAndFlush(a1a);
     }
 
     // ── Scenario: API response correctness for A1a ─────
@@ -140,14 +120,15 @@ class TrafficSignA1aRegressionTest {
         }
 
         @Test
-        @DisplayName("Given A1a has long descriptions, When getSignByCode is called, Then all 4 long descriptions are returned")
-        void a1a_has_long_descriptions() {
+        @DisplayName("Given A1a exists in road_signs, When getSignByCode is called, Then long descriptions remain unavailable")
+        void a1a_has_no_long_descriptions_in_road_signs() {
             TrafficSignResponse response = trafficSignService.getSignByCode(SIGN_CODE);
 
-            assertThat(response.longDescriptionEn()).isNotBlank().isEqualTo(LONG_DESC_EN);
-            assertThat(response.longDescriptionAr()).isNotBlank().isEqualTo(LONG_DESC_AR);
-            assertThat(response.longDescriptionNl()).isNotBlank().isEqualTo(LONG_DESC_NL);
-            assertThat(response.longDescriptionFr()).isNotBlank().isEqualTo(LONG_DESC_FR);
+            assertThat(response.longDescriptionEn()).isNull();
+            assertThat(response.longDescriptionAr()).isNull();
+            assertThat(response.longDescriptionNl()).isNull();
+            assertThat(response.longDescriptionFr()).isNull();
+            assertThat(response.isLongDescriptionComplete()).isFalse();
         }
 
         @Test

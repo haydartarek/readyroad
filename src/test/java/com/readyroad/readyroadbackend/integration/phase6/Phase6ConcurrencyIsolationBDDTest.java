@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.readyroad.readyroadbackend.config.TestDataSeederConfig;
 import com.readyroad.readyroadbackend.domain.entity.*;
 import com.readyroad.readyroadbackend.domain.enums.Role;
+import com.readyroad.readyroadbackend.domain.enums.SignCategory;
 import com.readyroad.readyroadbackend.domain.repository.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -68,7 +69,7 @@ public class Phase6ConcurrencyIsolationBDDTest {
     private CategoryRepository categoryRepository;
 
     @Autowired
-    private TrafficSignRepository trafficSignRepository;
+    private RoadSignRepository roadSignRepository;
 
     @Autowired
     private ExamSimulationRepository examSimulationRepository;
@@ -86,14 +87,14 @@ public class Phase6ConcurrencyIsolationBDDTest {
     private User userA;
     private User userB;
     private Category testCategory;
-    private TrafficSign testSign;
+    private RoadSign testSign;
 
     @BeforeEach
     void setUp() {
         mockMvc = MockMvcBuilders
-            .webAppContextSetup(context)
-            .apply(springSecurity())
-            .build();
+                .webAppContextSetup(context)
+                .apply(springSecurity())
+                .build();
 
         // ✅ Clean up any existing exams to prevent 409 conflicts (FK-safe order)
         examAnswerRepository.deleteAllInBatch();
@@ -125,15 +126,16 @@ public class Phase6ConcurrencyIsolationBDDTest {
         }
 
         // Create test traffic sign
-        testSign = new TrafficSign();
+        testSign = new RoadSign();
         testSign.setSignCode("A10");
+        testSign.setNormalizedSignCode("A10");
         testSign.setNameEn("Stop Sign");
         testSign.setNameAr("إشارة قف");
         testSign.setNameNl("Stopbord");
         testSign.setNameFr("Panneau d'arrêt");
-        testSign.setCategory(testCategory);
+        testSign.setCategory(SignCategory.DANGER);
         testSign.setIsActive(true);
-        testSign = trafficSignRepository.save(testSign);
+        testSign = roadSignRepository.save(testSign);
 
         // TestDataSeederConfig has already seeded 60 published questions
         // Verify they exist
@@ -156,8 +158,8 @@ public class Phase6ConcurrencyIsolationBDDTest {
                 return mockMvc.perform(post("/api/exams/simulations/start")
                         .param("userId", userA.getId().toString())
                         .contentType(MediaType.APPLICATION_JSON))
-                    .andExpect(status().isCreated())
-                    .andReturn();
+                        .andExpect(status().isCreated())
+                        .andReturn();
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
@@ -168,8 +170,8 @@ public class Phase6ConcurrencyIsolationBDDTest {
                 return mockMvc.perform(post("/api/exams/simulations/start")
                         .param("userId", userB.getId().toString())
                         .contentType(MediaType.APPLICATION_JSON))
-                    .andExpect(status().isCreated())
-                    .andReturn();
+                        .andExpect(status().isCreated())
+                        .andReturn();
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
@@ -188,18 +190,18 @@ public class Phase6ConcurrencyIsolationBDDTest {
         Long examIdB = responseB.path("examId").asLong();
 
         assertThat(examIdA)
-            .as("User A should have valid examId")
-            .isNotNull()
-            .isPositive();
+                .as("User A should have valid examId")
+                .isNotNull()
+                .isPositive();
 
         assertThat(examIdB)
-            .as("User B should have valid examId")
-            .isNotNull()
-            .isPositive();
+                .as("User B should have valid examId")
+                .isNotNull()
+                .isPositive();
 
         assertThat(examIdA)
-            .as("User A and B should have different examIds")
-            .isNotEqualTo(examIdB);
+                .as("User A and B should have different examIds")
+                .isNotEqualTo(examIdB);
     }
 
     // ==========================================
@@ -213,14 +215,14 @@ public class Phase6ConcurrencyIsolationBDDTest {
         MvcResult resultA = mockMvc.perform(post("/api/exams/simulations/start")
                 .param("userId", userA.getId().toString())
                 .contentType(MediaType.APPLICATION_JSON))
-            .andExpect(status().isCreated())
-            .andReturn();
+                .andExpect(status().isCreated())
+                .andReturn();
 
         MvcResult resultB = mockMvc.perform(post("/api/exams/simulations/start")
                 .param("userId", userB.getId().toString())
                 .contentType(MediaType.APPLICATION_JSON))
-            .andExpect(status().isCreated())
-            .andReturn();
+                .andExpect(status().isCreated())
+                .andReturn();
 
         // Parse JSON responses without DTO mapping
         JsonNode responseA = objectMapper.readTree(resultA.getResponse().getContentAsString());
@@ -230,17 +232,18 @@ public class Phase6ConcurrencyIsolationBDDTest {
         Long examIdB = responseB.path("examId").asLong();
 
         // When: User A tries to access User B's exam results
-        // Note: In dev mode, userId is fallback to 1, so we simulate by checking DB isolation
+        // Note: In dev mode, userId is fallback to 1, so we simulate by checking DB
+        // isolation
         mockMvc.perform(get("/api/exams/simulations/" + examIdB + "/results")
                 .param("userId", userA.getId().toString())
                 .contentType(MediaType.APPLICATION_JSON))
-            .andExpect(status().is4xxClientError()); // Should be 403 or 404
+                .andExpect(status().is4xxClientError()); // Should be 403 or 404
 
         // When: User B tries to access User A's exam results
         mockMvc.perform(get("/api/exams/simulations/" + examIdA + "/results")
                 .param("userId", userB.getId().toString())
                 .contentType(MediaType.APPLICATION_JSON))
-            .andExpect(status().is4xxClientError()); // Should be 403 or 404
+                .andExpect(status().is4xxClientError()); // Should be 403 or 404
     }
 
     // ==========================================
@@ -254,14 +257,14 @@ public class Phase6ConcurrencyIsolationBDDTest {
         MvcResult resultA = mockMvc.perform(post("/api/exams/simulations/start")
                 .param("userId", userA.getId().toString())
                 .contentType(MediaType.APPLICATION_JSON))
-            .andExpect(status().isCreated())
-            .andReturn();
+                .andExpect(status().isCreated())
+                .andReturn();
 
         MvcResult resultB = mockMvc.perform(post("/api/exams/simulations/start")
                 .param("userId", userB.getId().toString())
                 .contentType(MediaType.APPLICATION_JSON))
-            .andExpect(status().isCreated())
-            .andReturn();
+                .andExpect(status().isCreated())
+                .andReturn();
 
         // Parse JSON responses without DTO mapping
         JsonNode responseA = objectMapper.readTree(resultA.getResponse().getContentAsString());
@@ -279,25 +282,25 @@ public class Phase6ConcurrencyIsolationBDDTest {
         mockMvc.perform(post("/api/exams/simulations/" + examIdA + "/questions/" + questionIdA + "/answer")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(String.format("{\"selectedOptionId\":%d}", optionIdA)))
-            .andExpect(status().isOk());
+                .andExpect(status().isOk());
 
         // Then: User A exam should record 1 answer
         long answersForExamA = examAnswerRepository.findAll().stream()
-            .filter(a -> a.getExam().getId().equals(examIdA))
-            .count();
+                .filter(a -> a.getExam().getId().equals(examIdA))
+                .count();
 
         assertThat(answersForExamA)
-            .as("User A exam should have 1 answer")
-            .isEqualTo(1);
+                .as("User A exam should have 1 answer")
+                .isEqualTo(1);
 
         // And: User B exam should record 0 answers
         long answersForExamB = examAnswerRepository.findAll().stream()
-            .filter(a -> a.getExam().getId().equals(examIdB))
-            .count();
+                .filter(a -> a.getExam().getId().equals(examIdB))
+                .count();
 
         assertThat(answersForExamB)
-            .as("User B exam should have 0 answers")
-            .isEqualTo(0);
+                .as("User B exam should have 0 answers")
+                .isEqualTo(0);
     }
 
     // ==========================================

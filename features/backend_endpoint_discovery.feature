@@ -24,8 +24,8 @@ Feature: Backend endpoint discovery and API documentation
       | /api/categories                       | 200    |
       | /api/traffic-signs                    | 200    |
       | /api/lessons                          | 200    |
-      | /api/exam-questions                   | 200    |
-      | /api/exam-questions/random            | 200    |
+      | /api/quiz/stats                       | 200    |
+      | /api/quiz/random?count=5              | 200    |
       | /api/practice-questions/lesson/1      | 200    |
       | /swagger-ui.html                      | 200    |
       | /swagger-ui/index.html                | 200    |
@@ -80,7 +80,7 @@ Feature: Backend endpoint discovery and API documentation
       | Categories          | /api/categories                        |
       | Traffic Signs       | /api/traffic-signs                     |
       | Lessons             | /api/lessons                           |
-      | Exam Questions      | /api/exam-questions/random?limit=5     |
+      | Quiz Questions      | /api/quiz/random?count=5               |
       | Practice Questions  | /api/practice-questions/lesson/1       |
       | Swagger UI          | /swagger-ui.html                       |
       | OpenAPI Spec        | /v3/api-docs                           |

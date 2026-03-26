@@ -1,395 +1,617 @@
-[
+﻿[
   {
-    "question_id": "E9a-v4_Q01",
+    "question_id": "E9a-disc_Q01",
     "type": "WHAT_DOES_IT_MEAN",
     "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE: Replace wrong answers with actual sign names from the same category.",
     "i18n": {
       "NL": {
-        "question": "Wat betekent dit verkeersbord?",
+        "question": "Wat betekent bord E9a-disc?",
         "choices": [
           {
-            "text": "Parkeren beperkt in tijd met parkeerschijf",
+            "text": "Parkeren toegestaan enkel met parkeerschijf die de aankomstijd toont; beperkt in duur",
             "is_correct": true
           },
           {
-            "text": "Verplichte rijrichting rechts",
+            "text": "Parkeren verboden behalve met een abonnement",
             "is_correct": false
           },
           {
-            "text": "Gevaarlijk kruispunt",
+            "text": "Fietsen mogen hier geparkeerd worden met een fietsslot",
             "is_correct": false
           }
         ],
-        "explanation": "Parkeren met beperkte parkeertijd (parkeerschijf verplicht)."
+        "explanation": "E9a-disc staat parkeerschijfparkeren toe: u stelt de aankomsttijd in en mag parkeren voor de aangegeven maximumduur."
       },
       "EN": {
-        "question": "What does this traffic sign mean?",
+        "question": "What does sign E9a-disc mean?",
         "choices": [
           {
-            "text": "Time-limited parking with parking disc",
+            "text": "Parking permitted only with a parking disc showing arrival time; limited in duration",
             "is_correct": true
           },
           {
-            "text": "Mandatory direction right",
+            "text": "Parking forbidden except with a subscription",
             "is_correct": false
           },
           {
-            "text": "Dangerous intersection",
+            "text": "Bicycles may be parked here with a lock",
             "is_correct": false
           }
         ],
-        "explanation": "Time-limited parking with parking disc required."
+        "explanation": "E9a-disc allows disc parking: you set the arrival time and may park for the indicated maximum duration."
       },
       "FR": {
-        "question": "Que signifie ce panneau de signalisation ?",
+        "question": "Que signifie le panneau E9a-disc ?",
         "choices": [
           {
-            "text": "Stationnement limite dans le temps avec disque de stationnement",
+            "text": "Stationnement autorise uniquement avec un disque de stationnement indiquant l'heure d'arrivee; duree limitee",
             "is_correct": true
           },
           {
-            "text": "Direction obligatoire à droite",
+            "text": "Stationnement interdit sauf abonnement",
             "is_correct": false
           },
           {
-            "text": "Carrefour dangereux",
+            "text": "Les velos peuvent etre stationnes ici avec un cadenas",
             "is_correct": false
           }
         ],
-        "explanation": "Stationnement à durée limitée avec disque de stationnement obligatoire."
+        "explanation": "E9a-disc autorise le stationnement au disque: vous regelez l'heure d'arrivee et pouvez stationner pour la duree maximale indiquee."
       },
       "AR": {
-        "question": "ماذا تعني لافتة المرور هذه؟",
+        "question": "Ù…Ø§ Ù…Ø¹Ù†Ù‰ Ù„Ø§ÙØªØ© E9a-discØŸ",
         "choices": [
           {
-            "text": "وقوف السيارات لفترة محدودة مع قرص وقوف السيارات",
+            "text": "Ø§Ù„ÙˆÙ‚ÙˆÙ Ù…Ø³Ù…ÙˆØ­ ÙÙ‚Ø· Ù…Ø¹ Ù‚Ø±Øµ ÙˆÙ‚ÙˆÙ ÙŠÙØ¸Ù‡Ø± ÙˆÙ‚Øª Ø§Ù„ÙˆØµÙˆÙ„Ø› Ù…Ø­Ø¯ÙˆØ¯ Ø§Ù„Ù…Ø¯Ø©",
             "is_correct": true
           },
           {
-            "text": "الاتجاه الإلزامي يميناً",
+            "text": "Ø§Ù„ÙˆÙ‚ÙˆÙ Ù…Ø­Ø¸ÙˆØ± Ø¥Ù„Ø§ Ø¨Ø§Ù„Ø§Ø´ØªØ±Ø§Ùƒ",
             "is_correct": false
           },
           {
-            "text": "تقاطع خطير",
+            "text": "ÙŠÙ…ÙƒÙ† Ø±ÙƒÙ† Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ù‡Ù†Ø§ Ø¨Ù‚ÙÙ„",
             "is_correct": false
           }
         ],
-        "explanation": "وقوف محدود بالوقت مع إلزامية قرص الوقوف."
+        "explanation": "E9a-disc ØªÙØªÙŠØ­ Ø§Ù„ÙˆÙ‚ÙˆÙ Ø¨Ø§Ù„Ù‚Ø±Øµ: ØªØ¶Ø¨Ø· ÙˆÙ‚Øª Ø§Ù„ÙˆØµÙˆÙ„ ÙˆÙŠÙ…ÙƒÙ†Ùƒ Ø§Ù„ÙˆÙ‚ÙˆÙ Ù„Ù„Ù…Ø¯Ø© Ø§Ù„Ù‚ØµÙˆÙ‰ Ø§Ù„Ù…Ø´Ø§Ø± Ø¥Ù„ÙŠÙ‡Ø§."
       }
     }
   },
   {
-    "question_id": "E9a-v4_Q02",
+    "question_id": "E9a-disc_Q02",
     "type": "WHICH_SIGN",
     "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE: Ready to use — category identification question.",
     "i18n": {
       "NL": {
-        "question": "Tot welke categorie verkeerstekens behoort dit bord?",
+        "question": "Wat is het doel van de parkeerschijf bij E9a-disc?",
         "choices": [
           {
-            "text": "Parkeerregelementsborden (E-reeks)",
+            "text": "De aankomsttijd vastleggen, zodat handhavers kunnen controleren of de maximale parkeertijd overschreden is",
             "is_correct": true
           },
           {
-            "text": "Verbodsborden (C-reeks)",
+            "text": "De identiteit van de bestuurder registreren",
             "is_correct": false
           },
           {
-            "text": "Gebodsborden (D-reeks)",
+            "text": "Het maximumgewicht van het voertuig noteren",
             "is_correct": false
           }
         ],
-        "explanation": "Dit bord behoort tot de categorie 'Parkeerregelementsborden (E-reeks)'. Elk type bord heeft een specifieke vorm en kleurschema."
+        "explanation": "De parkeerschijf is een mechanisch toestel waarop u de aankomsttijd instelt; handhavers lezen die af om te controleren of de limiet bereikt is."
       },
       "EN": {
-        "question": "To which category of traffic signs does this sign belong?",
+        "question": "What is the purpose of the parking disc with E9a-disc?",
         "choices": [
           {
-            "text": "Parking regulation signs (E-series)",
+            "text": "To record the arrival time so enforcers can check whether the maximum parking time has been exceeded",
             "is_correct": true
           },
           {
-            "text": "Prohibition signs (C-series)",
+            "text": "To register the identity of the driver",
             "is_correct": false
           },
           {
-            "text": "Mandatory signs (D-series)",
+            "text": "To note the maximum weight of the vehicle",
             "is_correct": false
           }
         ],
-        "explanation": "This sign belongs to the 'Parking regulation signs (E-series)' category. Each type of sign has a specific shape and color scheme."
+        "explanation": "The parking disc is a mechanical device on which you set the arrival time; enforcers read it to check whether the limit has been reached."
       },
       "FR": {
-        "question": "À quelle catégorie de panneaux de signalisation ce panneau appartient-il ?",
+        "question": "Quel est le but du disque de stationnement avec E9a-disc ?",
         "choices": [
           {
-            "text": "Panneaux de stationnement (série E)",
+            "text": "Enregistrer l'heure d'arrivee afin que les agents puissent verifier si la duree maximale de stationnement est depassee",
             "is_correct": true
           },
           {
-            "text": "Panneaux d'interdiction (série C)",
+            "text": "Enregistrer l'identite du conducteur",
             "is_correct": false
           },
           {
-            "text": "Panneaux d'obligation (série D)",
+            "text": "Noter le poids maximum du vehicule",
             "is_correct": false
           }
         ],
-        "explanation": "Ce panneau appartient à la catégorie 'Panneaux de stationnement (série E)'. Chaque type de panneau a une forme et un schéma de couleurs spécifiques."
+        "explanation": "Le disque de stationnement est un dispositif mecanique sur lequel vous regelez l'heure d'arrivee; les agents le lisent pour verifier si la limite est atteinte."
       },
       "AR": {
-        "question": "إلى أي فئة من لافتات المرور تنتمي هذه اللافتة؟",
+        "question": "Ù…Ø§ Ø§Ù„ØºØ±Ø¶ Ù…Ù† Ù‚Ø±Øµ Ø§Ù„ÙˆÙ‚ÙˆÙ Ù…Ø¹ E9a-discØŸ",
         "choices": [
           {
-            "text": "لافتات تنظيم الوقوف (سلسلة E)",
+            "text": "ØªØ³Ø¬ÙŠÙ„ ÙˆÙ‚Øª Ø§Ù„ÙˆØµÙˆÙ„ Ø­ØªÙ‰ ÙŠØªÙ…ÙƒÙ† Ø§Ù„Ù…Ø­Ù‚Ù‚ÙˆÙ† Ù…Ù† Ø§Ù„ØªØ­Ù‚Ù‚ Ù…Ù† ØªØ¬Ø§ÙˆØ² Ø§Ù„ÙˆÙ‚Øª Ø§Ù„Ø£Ù‚ØµÙ‰ Ù„Ù„ÙˆÙ‚ÙˆÙ",
             "is_correct": true
           },
           {
-            "text": "لافتات الحظر (سلسلة C)",
+            "text": "ØªØ³Ø¬ÙŠÙ„ Ù‡ÙˆÙŠØ© Ø§Ù„Ø³Ø§Ø¦Ù‚",
             "is_correct": false
           },
           {
-            "text": "لافتات الإلزام (سلسلة D)",
+            "text": "ØªØ¯ÙˆÙŠÙ† Ø§Ù„Ø­Ù…ÙˆÙ„Ø© Ø§Ù„Ù‚ØµÙˆÙ‰ Ù„Ù„Ù…Ø±ÙƒØ¨Ø©",
             "is_correct": false
           }
         ],
-        "explanation": "هذه اللافتة تنتمي إلى فئة 'لافتات تنظيم الوقوف (سلسلة E)'. كل نوع من اللافتات له شكل ونظام ألوان محدد."
+        "explanation": "Ù‚Ø±Øµ Ø§Ù„ÙˆÙ‚ÙˆÙ Ø¬Ù‡Ø§Ø² Ù…ÙŠÙƒØ§Ù†ÙŠÙƒÙŠ ØªØ¶Ø¨Ø· Ø¹Ù„ÙŠÙ‡ ÙˆÙ‚Øª Ø§Ù„ÙˆØµÙˆÙ„Ø› ÙŠÙ‚Ø±Ø£Ù‡ Ø§Ù„Ù…Ø­Ù‚Ù‚ÙˆÙ† Ù„Ù„ØªØ­Ù‚Ù‚ Ù…Ù† Ø§Ù„ÙˆØµÙˆÙ„ Ø¥Ù„Ù‰ Ø§Ù„Ø­Ø¯."
       }
     }
   },
   {
-    "question_id": "E9a-v4_Q03",
+    "question_id": "E9a-disc_Q03",
+    "type": "HAZARD_IDENTIFICATION",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Welk probleem lost E9a-disc op in drukke winkelstraten?",
+        "choices": [
+          {
+            "text": "Langdurig parkeren door enkele bestuurders die andere klanten de toegang beletten",
+            "is_correct": true
+          },
+          {
+            "text": "Gevaarlijk rijgedrag door te snel rijden",
+            "is_correct": false
+          },
+          {
+            "text": "Sluipverkeer in woonwijken",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Door de tijdslimiet rouleren parkeerplaatsen: klanten kunnen altijd een vrije plek vinden in de buurt van winkels."
+      },
+      "EN": {
+        "question": "What problem does E9a-disc solve in busy shopping streets?",
+        "choices": [
+          {
+            "text": "Long-term parking by a few drivers that prevents other customers from accessing the parking",
+            "is_correct": true
+          },
+          {
+            "text": "Dangerous driving behaviour due to excessive speed",
+            "is_correct": false
+          },
+          {
+            "text": "Rat-running in residential areas",
+            "is_correct": false
+          }
+        ],
+        "explanation": "The time limit causes parking spaces to turn over: customers can always find a free space near shops."
+      },
+      "FR": {
+        "question": "Quel probleme E9a-disc resout-il dans les rues commercantes animees ?",
+        "choices": [
+          {
+            "text": "Le stationnement longue duree par quelques conducteurs qui empeche d'autres clients d'acceder au stationnement",
+            "is_correct": true
+          },
+          {
+            "text": "Comportement de conduite dangereux en raison d'une vitesse excessive",
+            "is_correct": false
+          },
+          {
+            "text": "Circulation de transit dans les zones residentielles",
+            "is_correct": false
+          }
+        ],
+        "explanation": "La limite de temps permet la rotation des places: les clients peuvent toujours trouver une place libre pres des commerces."
+      },
+      "AR": {
+        "question": "Ù…Ø§ Ø§Ù„Ù…Ø´ÙƒÙ„Ø© Ø§Ù„ØªÙŠ ØªØ­Ù„Ù‡Ø§ E9a-disc ÙÙŠ Ø§Ù„Ø´ÙˆØ§Ø±Ø¹ Ø§Ù„ØªØ¬Ø§Ø±ÙŠØ© Ø§Ù„Ù…Ø²Ø¯Ø­Ù…Ø©ØŸ",
+        "choices": [
+          {
+            "text": "Ø§Ù„ÙˆÙ‚ÙˆÙ Ù„ÙØªØ±Ø§Øª Ø·ÙˆÙŠÙ„Ø© Ù…Ù† Ù‚Ø¨Ù„ Ø¨Ø¹Ø¶ Ø§Ù„Ø³Ø§Ø¦Ù‚ÙŠÙ† Ù…Ù…Ø§ ÙŠÙ…Ù†Ø¹ Ø§Ù„Ø¹Ù…Ù„Ø§Ø¡ Ø§Ù„Ø¢Ø®Ø±ÙŠÙ† Ù…Ù† Ø§Ù„ÙˆØµÙˆÙ„",
+            "is_correct": true
+          },
+          {
+            "text": "Ø³Ù„ÙˆÙƒ Ø§Ù„Ù‚ÙŠØ§Ø¯Ø© Ø§Ù„Ø®Ø·ÙŠØ± Ø¨Ø³Ø¨Ø¨ Ø§Ù„Ø³Ø±Ø¹Ø© Ø§Ù„Ù…ÙØ±Ø·Ø©",
+            "is_correct": false
+          },
+          {
+            "text": "Ø­Ø±ÙƒØ© Ø§Ù„Ù…Ø±ÙˆØ± Ø§Ù„Ù…Ø§Ø±Ø© ÙÙŠ Ø§Ù„Ø£Ø­ÙŠØ§Ø¡ Ø§Ù„Ø³ÙƒÙ†ÙŠØ©",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ø§Ù„Ø­Ø¯ Ø§Ù„Ø²Ù…Ù†ÙŠ ÙŠÙØªÙŠØ­ Ø¯ÙˆØ±Ø§Ù† Ù…ÙˆØ§Ù‚Ù Ø§Ù„Ø³ÙŠØ§Ø±Ø§Øª: ÙŠÙ…ÙƒÙ† Ù„Ù„Ø¹Ù…Ù„Ø§Ø¡ Ø¯Ø§Ø¦Ù…Ø§Ù‹ Ø¥ÙŠØ¬Ø§Ø¯ Ù…ÙƒØ§Ù† Ø®Ø§Ù„Ù Ø¨Ø§Ù„Ù‚Ø±Ø¨ Ù…Ù† Ø§Ù„Ù…Ø­Ù„Ø§Øª."
+      }
+    }
+  },
+  {
+    "question_id": "E9a-disc_Q04",
     "type": "WHAT_MUST_YOU_DO",
     "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE (MEDIUM): Replace with sign-specific question for production.",
     "i18n": {
       "NL": {
-        "question": "Mag u uw voertuig parkeren op de plaats aangeduid door dit bord?",
+        "question": "U parkeert bij E9a-disc om 10h22. Welke tijd stelt u in op de parkeerschijf?",
         "choices": [
           {
-            "text": "Dit hangt af van de specifieke parkeerregels op het bord",
+            "text": "De eerstvolgende halve of hele uur na aankomst: 10h30 (parkeerschijven gaan per half uur)",
             "is_correct": true
           },
           {
-            "text": "Ja, altijd toegestaan als er een vrije plek is",
+            "text": "10h22 exact",
             "is_correct": false
           },
           {
-            "text": "Nee, nooit toegestaan op de openbare weg",
+            "text": "De vertrektijd die u verwacht",
             "is_correct": false
           }
         ],
-        "explanation": "Parkeerregelementsborden geven specifieke regels aan over waar, wanneer en hoe lang u mag parkeren. Lees elk bord zorgvuldig."
+        "explanation": "Parkeerschijven zijn ingedeeld in stappen van 30 minuten. U rondt de aankomsttijd af naar het eerstvolgende halve uur (of heel uur in sommige gemeenten)."
       },
       "EN": {
-        "question": "Are you allowed to park your vehicle at the location indicated by this sign?",
+        "question": "You park under E9a-disc at 10:22. What time do you set on the parking disc?",
         "choices": [
           {
-            "text": "This depends on the specific parking rules indicated on the sign",
+            "text": "The next half or full hour after arrival: 10:30 (parking discs work in 30-minute intervals)",
             "is_correct": true
           },
           {
-            "text": "Yes, always allowed if there is a free space",
+            "text": "10:22 exactly",
             "is_correct": false
           },
           {
-            "text": "No, never allowed on the public road",
+            "text": "The departure time you expect",
             "is_correct": false
           }
         ],
-        "explanation": "Parking regulation signs specify rules about where, when, and how long you may park. Read each sign carefully."
+        "explanation": "Parking discs are divided into 30-minute steps. You round the arrival time up to the next half-hour (or full hour in some municipalities)."
       },
       "FR": {
-        "question": "Êtes-vous autorisé à garer votre véhicule à cet endroit ?",
+        "question": "Vous vous garez sous E9a-disc a 10h22. Quelle heure reglez-vous sur le disque de stationnement ?",
         "choices": [
           {
-            "text": "Cela dépend des règles spécifiques indiquées sur le panneau",
+            "text": "La prochaine demi-heure ou heure complete apres l'arrivee: 10h30 (les disques fonctionnent par tranches de 30 minutes)",
             "is_correct": true
           },
           {
-            "text": "Oui, toujours autorisé s'il y a une place libre",
+            "text": "10h22 exactement",
             "is_correct": false
           },
           {
-            "text": "Non, jamais autorisé sur la voie publique",
+            "text": "L'heure de depart prevue",
             "is_correct": false
           }
         ],
-        "explanation": "Les panneaux de stationnement spécifient où, quand et combien de temps vous pouvez stationner."
+        "explanation": "Les disques de stationnement sont divises en tranches de 30 minutes. Vous arrondissez l'heure d'arrivee a la prochaine demi-heure (ou heure dans certaines communes)."
       },
       "AR": {
-        "question": "هل يُسمح لك بوقوف مركبتك في المكان الذي تشير إليه هذه اللافتة؟",
+        "question": "ØªÙ‚Ù ØªØ­Øª E9a-disc Ø§Ù„Ø³Ø§Ø¹Ø© 10:22. Ù…Ø§ Ø§Ù„ÙˆÙ‚Øª Ø§Ù„Ø°ÙŠ ØªØ¶Ø¨Ø·Ù‡ Ø¹Ù„Ù‰ Ù‚Ø±Øµ Ø§Ù„ÙˆÙ‚ÙˆÙØŸ",
         "choices": [
           {
-            "text": "يعتمد ذلك على قواعد الوقوف المحددة المشار إليها على اللافتة",
+            "text": "Ù†ØµÙ Ø§Ù„Ø³Ø§Ø¹Ø© Ø£Ùˆ Ø§Ù„Ø³Ø§Ø¹Ø© Ø§Ù„ÙƒØ§Ù…Ù„Ø© Ø§Ù„ØªØ§Ù„ÙŠØ© Ø¨Ø¹Ø¯ Ø§Ù„ÙˆØµÙˆÙ„: 10:30 (Ø£Ù‚Ø±Ø§Øµ Ø§Ù„ÙˆÙ‚ÙˆÙ ØªØ¹Ù…Ù„ Ø¨ÙØªØ±Ø§Øª 30 Ø¯Ù‚ÙŠÙ‚Ø©)",
             "is_correct": true
           },
           {
-            "text": "نعم، مسموح دائماً إذا كان هناك مكان فارغ",
+            "text": "10:22 Ø¨Ø§Ù„Ø¶Ø¨Ø·",
             "is_correct": false
           },
           {
-            "text": "لا، غير مسموح أبداً على الطريق العام",
+            "text": "ÙˆÙ‚Øª Ø§Ù„Ù…ØºØ§Ø¯Ø±Ø© Ø§Ù„Ù…ØªÙˆÙ‚Ø¹",
             "is_correct": false
           }
         ],
-        "explanation": "لافتات تنظيم الوقوف تحدد قواعد حول أين ومتى وكم من الوقت يمكنك الوقوف. اقرأ كل لافتة بعناية."
+        "explanation": "Ø£Ù‚Ø±Ø§Øµ Ø§Ù„ÙˆÙ‚ÙˆÙ Ù…Ù‚Ø³Ù‘Ù…Ø© Ø¥Ù„Ù‰ ÙØªØ±Ø§Øª 30 Ø¯Ù‚ÙŠÙ‚Ø©. ØªÙ‚Ø±Ù‘Ø¨ ÙˆÙ‚Øª Ø§Ù„ÙˆØµÙˆÙ„ Ø¥Ù„Ù‰ Ù†ØµÙ Ø§Ù„Ø³Ø§Ø¹Ø© Ø§Ù„ØªØ§Ù„ÙŠ (Ø£Ùˆ Ø§Ù„Ø³Ø§Ø¹Ø© Ø§Ù„ÙƒØ§Ù…Ù„Ø© ÙÙŠ Ø¨Ø¹Ø¶ Ø§Ù„Ø¨Ù„Ø¯ÙŠØ§Øª)."
       }
     }
   },
   {
-    "question_id": "E9a-v4_Q04",
+    "question_id": "E9a-disc_Q05",
     "type": "WHAT_MUST_YOU_DO",
     "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE (MEDIUM): Replace with sign-specific question for production.",
     "i18n": {
       "NL": {
-        "question": "Wat is het verschil tussen parkeren en stilstaan?",
+        "question": "U bent te laat teruggekeerd en de parkeertijd met E9a-disc is verstreken. Wat riskeert u?",
         "choices": [
           {
-            "text": "Stilstaan is een korte stop (chauffeur blijft aanwezig), parkeren is langer of chauffeur verlaat voertuig",
+            "text": "Een parkeerretributie (boete) voor het overschrijden van de maximale parkeertijd",
             "is_correct": true
           },
           {
-            "text": "Er is geen verschil, het zijn synoniemen",
+            "text": "Onmiddellijke wegsleepkosten",
             "is_correct": false
           },
           {
-            "text": "Stilstaan betekent motor uitzetten",
+            "text": "Verlies van het rijbewijs",
             "is_correct": false
           }
         ],
-        "explanation": "Stilstaan = kort stoppen terwijl de bestuurder beschikbaar blijft. Parkeren = langer of bestuurder verlaat het voertuig."
+        "explanation": "Bij overschrijding van de toegestane parkeerduur bij E9a-disc riskeert u een gemeentelijke parkeerboete."
       },
       "EN": {
-        "question": "What is the difference between parking and stopping?",
+        "question": "You returned too late and the E9a-disc parking time has expired. What do you risk?",
         "choices": [
           {
-            "text": "Stopping is a brief halt (driver remains present), parking is longer or driver leaves vehicle",
+            "text": "A parking fine for exceeding the maximum parking time",
             "is_correct": true
           },
           {
-            "text": "There is no difference, they are synonyms",
+            "text": "Immediate towing costs",
             "is_correct": false
           },
           {
-            "text": "Stopping means turning off the engine",
+            "text": "Loss of your driving licence",
             "is_correct": false
           }
         ],
-        "explanation": "Stopping = brief halt while driver remains available. Parking = longer stop or driver leaves the vehicle."
+        "explanation": "Exceeding the permitted parking time under E9a-disc risks a municipal parking fine."
       },
       "FR": {
-        "question": "Quelle est la différence entre le stationnement et l'arrêt ?",
+        "question": "Vous etes rentre trop tard et le temps de stationnement E9a-disc est expire. Qu'est-ce que vous risquez ?",
         "choices": [
           {
-            "text": "L'arrêt est court (conducteur présent), le stationnement est plus long ou conducteur quitte le véhicule",
+            "text": "Une retribution de stationnement (amende) pour depassement de la duree maximale de stationnement",
             "is_correct": true
           },
           {
-            "text": "Il n'y a pas de différence, ce sont des synonymes",
+            "text": "Des frais de remorquage immediats",
             "is_correct": false
           },
           {
-            "text": "Arrêter signifie éteindre le moteur",
+            "text": "La perte du permis de conduire",
             "is_correct": false
           }
         ],
-        "explanation": "Arrêt = court, conducteur disponible. Stationnement = plus long ou conducteur quitte le véhicule."
+        "explanation": "Le depassement de la duree de stationnement autorisee sous E9a-disc risque une amende de stationnement communale."
       },
       "AR": {
-        "question": "ما الفرق بين الوقوف والتوقف؟",
+        "question": "Ø¹Ø¯Øª Ù…ØªØ£Ø®Ø±Ø§Ù‹ ÙˆØ§Ù†ØªÙ‡Øª Ù…Ø¯Ø© Ø§Ù„ÙˆÙ‚ÙˆÙ ÙÙŠ E9a-disc. Ø¨Ù…Ø§Ø°Ø§ ØªØ®Ø§Ø·Ø±ØŸ",
         "choices": [
           {
-            "text": "التوقف وقفة قصيرة (السائق يبقى موجوداً)، الوقوف أطول أو السائق يغادر المركبة",
+            "text": "ØºØ±Ø§Ù…Ø© ÙˆÙ‚ÙˆÙ Ù„ØªØ¬Ø§ÙˆØ² Ø§Ù„ÙˆÙ‚Øª Ø§Ù„Ø£Ù‚ØµÙ‰ Ù„Ù„ÙˆÙ‚ÙˆÙ",
             "is_correct": true
           },
           {
-            "text": "لا فرق، فهما مترادفان",
+            "text": "ØªÙƒØ§Ù„ÙŠÙ Ø³Ø­Ø¨ ÙÙˆØ±ÙŠØ©",
             "is_correct": false
           },
           {
-            "text": "التوقف يعني إطفاء المحرك",
+            "text": "ÙÙ‚Ø¯Ø§Ù† Ø±Ø®ØµØ© Ø§Ù„Ù‚ÙŠØ§Ø¯Ø©",
             "is_correct": false
           }
         ],
-        "explanation": "التوقف = وقفة قصيرة مع بقاء السائق متاحاً. الوقوف = أطول أو السائق يغادر المركبة."
+        "explanation": "ØªØ¬Ø§ÙˆØ² Ù…Ø¯Ø© Ø§Ù„ÙˆÙ‚ÙˆÙ Ø§Ù„Ù…Ø³Ù…ÙˆØ­ Ø¨Ù‡Ø§ ØªØ­Øª E9a-disc ÙŠÙØ¹Ø±Ù‘Ø¶Ùƒ Ù„ØºØ±Ø§Ù…Ø© ÙˆÙ‚ÙˆÙ Ø¨Ù„Ø¯ÙŠØ©."
       }
     }
   },
   {
-    "question_id": "E9a-v4_Q05",
+    "question_id": "E9a-disc_Q06",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Geldt de parkeerschijfverplichting bij E9a-disc ook 's nachts?",
+        "choices": [
+          {
+            "text": "Alleen tijdens de uren aangegeven op het onderbord; buiten die uren is de schijf doorgaans niet verplicht",
+            "is_correct": true
+          },
+          {
+            "text": "Ja: 24 uur op 24, 7 dagen op 7",
+            "is_correct": false
+          },
+          {
+            "text": "Neen: de schijf is nooit verplicht in het weekend",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Het onderbord bij E9a-disc geeft de geldingstijden aan. Ontbreekt een onderbord, dan geldt de schijfplicht 24/7."
+      },
+      "EN": {
+        "question": "Does the disc requirement under E9a-disc apply at night too?",
+        "choices": [
+          {
+            "text": "Only during the hours shown on the supplementary sign; outside those hours the disc is generally not required",
+            "is_correct": true
+          },
+          {
+            "text": "Yes: 24 hours a day 7 days a week",
+            "is_correct": false
+          },
+          {
+            "text": "No: the disc is never required at weekends",
+            "is_correct": false
+          }
+        ],
+        "explanation": "The supplementary sign next to E9a-disc shows the applicable times. If there is no supplementary sign the disc is required 24/7."
+      },
+      "FR": {
+        "question": "L'obligation du disque de stationnement E9a-disc s'applique-t-elle aussi la nuit ?",
+        "choices": [
+          {
+            "text": "Seulement pendant les heures indiquees sur le panneau complementaire; en dehors de ces heures le disque n'est generalement pas obligatoire",
+            "is_correct": true
+          },
+          {
+            "text": "Oui: 24 heures sur 24 7 jours sur 7",
+            "is_correct": false
+          },
+          {
+            "text": "Non: le disque n'est jamais obligatoire le week-end",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Le panneau complementaire indique les heures applicables. En l'absence de panneau complementaire le disque est obligatoire 24h/24."
+      },
+      "AR": {
+        "question": "Ù‡Ù„ ØªÙ†Ø·Ø¨Ù‚ Ù…ØªØ·Ù„Ø¨Ø§Øª Ø§Ù„Ù‚Ø±Øµ ÙÙŠ E9a-disc Ù„ÙŠÙ„Ø§Ù‹ Ø£ÙŠØ¶Ø§Ù‹ØŸ",
+        "choices": [
+          {
+            "text": "ÙÙ‚Ø· Ø®Ù„Ø§Ù„ Ø§Ù„Ø³Ø§Ø¹Ø§Øª Ø§Ù„Ù…Ø¹Ø±ÙˆØ¶Ø© Ø¹Ù„Ù‰ Ø§Ù„Ù„Ø§ÙØªØ© Ø§Ù„ØªÙƒÙ…ÙŠÙ„ÙŠØ©Ø› Ø®Ø§Ø±Ø¬ ØªÙ„Ùƒ Ø§Ù„Ø³Ø§Ø¹Ø§Øª Ù„Ø§ ÙŠÙØ´ØªØ±Ø· Ø§Ù„Ù‚Ø±Øµ Ø¹Ø§Ø¯Ø©Ù‹",
+            "is_correct": true
+          },
+          {
+            "text": "Ù†Ø¹Ù…: 24 Ø³Ø§Ø¹Ø© ÙŠÙˆÙ…ÙŠØ§Ù‹ 7 Ø£ÙŠØ§Ù… Ø£Ø³Ø¨ÙˆØ¹ÙŠØ§Ù‹",
+            "is_correct": false
+          },
+          {
+            "text": "Ù„Ø§: Ù„Ø§ ÙŠÙØ´ØªØ±Ø· Ø§Ù„Ù‚Ø±Øµ Ø£Ø¨Ø¯Ø§Ù‹ ÙÙŠ Ø¹Ø·Ù„Ø© Ù†Ù‡Ø§ÙŠØ© Ø§Ù„Ø£Ø³Ø¨ÙˆØ¹",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ø§Ù„Ù„Ø§ÙØªØ© Ø§Ù„ØªÙƒÙ…ÙŠÙ„ÙŠØ© Ø¨Ø¬ÙˆØ§Ø± E9a-disc ØªÙØ¸Ù‡Ø± Ø£ÙˆÙ‚Ø§Øª Ø§Ù„Ø³Ø±ÙŠØ§Ù†. ÙÙŠ ØºÙŠØ§Ø¨ Ù„Ø§ÙØªØ© ØªÙƒÙ…ÙŠÙ„ÙŠØ© ÙŠÙƒÙˆÙ† Ø§Ù„Ù‚Ø±Øµ Ù…Ø·Ù„ÙˆØ¨Ø§Ù‹ 24/7."
+      }
+    }
+  },
+  {
+    "question_id": "E9a-disc_Q07",
     "type": "IS_IT_ALLOWED",
     "difficulty": "HARD",
-    "is_critical": false,
+    "is_critical": true,
     "show_sign": true,
-    "_note": "TEMPLATE (HARD): Replace with sign-specific question for production.",
     "i18n": {
       "NL": {
-        "question": "Mag u parkeren op een plaats aangeduid met een parkeerverbodsbord?",
+        "question": "Mag u bij E9a-disc parkeren zonder parkeerschijf als er geen andere auto staat en de plek overduidelijk vrij is?",
         "choices": [
           {
-            "text": "Nee, parkeren is verboden op plaatsen aangeduid met een parkeerverbodsbord",
+            "text": "Neen: de schijfverplichting geldt zodra u parkeert, ongeacht of de plek bezet is",
             "is_correct": true
           },
           {
-            "text": "Ja, parkeren is altijd toegestaan zolang u niet langer dan 15 minuten blijft",
+            "text": "Ja: als de plek vrij is, is er geen reden voor controle",
             "is_correct": false
           }
         ],
-        "explanation": "Parkeerverbodsborden verbieden parkeren op de aangeduide plaats. Overtredingen kunnen leiden tot een boete of het wegslepen van uw voertuig."
+        "explanation": "De schijfverplichting staat los van het druk- of leegstandspercentage. U bent altijd verplicht de schijf te plaatsen bij E9a-disc."
       },
       "EN": {
-        "question": "Are you allowed to park in a place marked with a no-parking sign?",
+        "question": "May you park under E9a-disc without a disc if no other car is there and the space is clearly free?",
         "choices": [
           {
-            "text": "No, parking is prohibited in places marked with a no-parking sign",
+            "text": "No: the disc requirement applies as soon as you park regardless of whether the space is occupied",
             "is_correct": true
           },
           {
-            "text": "Yes, parking is always allowed as long as you do not stay longer than 15 minutes",
+            "text": "Yes: if the space is free there is no reason for enforcement",
             "is_correct": false
           }
         ],
-        "explanation": "No-parking signs prohibit parking at the indicated location. Violations can result in a fine or having your vehicle towed."
+        "explanation": "The disc requirement is independent of occupancy rates. You are always required to place the disc under E9a-disc."
       },
       "FR": {
-        "question": "Êtes-vous autorisé à stationner à un endroit signalé par un panneau d'interdiction de stationnement ?",
+        "question": "Pouvez-vous vous garer sous E9a-disc sans disque si aucune autre voiture n'est la et que la place est evidemment libre ?",
         "choices": [
           {
-            "text": "Non, le stationnement est interdit aux endroits signalés par un panneau d'interdiction de stationnement",
+            "text": "Non: l'obligation du disque s'applique des que vous vous garez quelle que soit l'occupation",
             "is_correct": true
           },
           {
-            "text": "Oui, le stationnement est toujours autorisé tant que vous ne restez pas plus de 15 minutes",
+            "text": "Oui: si la place est libre il n'y a aucune raison de controle",
             "is_correct": false
           }
         ],
-        "explanation": "Les panneaux d'interdiction de stationnement interdisent de stationner à l'endroit indiqué. Les infractions peuvent entraîner une amende ou le remorquage du véhicule."
+        "explanation": "L'obligation du disque est independante du taux d'occupation. Vous etes toujours oblige de placer le disque sous E9a-disc."
       },
       "AR": {
-        "question": "هل يُسمح لك بالوقوف في مكان يُشار إليه بلافتة حظر الوقوف؟",
+        "question": "Ù‡Ù„ ÙŠØ¬ÙˆØ² Ø§Ù„ÙˆÙ‚ÙˆÙ ØªØ­Øª E9a-disc Ø¨Ø¯ÙˆÙ† Ù‚Ø±Øµ Ø¥Ø°Ø§ Ù„Ù… ØªÙƒÙ† Ù‡Ù†Ø§Ùƒ Ø³ÙŠØ§Ø±Ø§Øª Ø£Ø®Ø±Ù‰ ÙˆØ§Ù„Ù…ÙƒØ§Ù† ÙˆØ§Ø¶Ø­ Ø§Ù„Ø®Ù„ÙˆØŸ",
         "choices": [
           {
-            "text": "لا، الوقوف محظور في الأماكن التي تشير إليها لافتة حظر الوقوف",
+            "text": "Ù„Ø§: Ø´Ø±Ø· Ø§Ù„Ù‚Ø±Øµ ÙŠÙ†Ø·Ø¨Ù‚ Ø¨Ù…Ø¬Ø±Ø¯ Ø§Ù„ÙˆÙ‚ÙˆÙ Ø¨ØµØ±Ù Ø§Ù„Ù†Ø¸Ø± Ø¹Ù† Ø§Ù„Ø¥Ø´ØºØ§Ù„",
             "is_correct": true
           },
           {
-            "text": "نعم، الوقوف مسموح دائماً ما لم تبقَ أكثر من 15 دقيقة",
+            "text": "Ù†Ø¹Ù…: Ø¥Ø°Ø§ ÙƒØ§Ù† Ø§Ù„Ù…ÙƒØ§Ù† Ø®Ø§Ù„ÙŠØ§Ù‹ Ù„Ø§ ÙŠÙˆØ¬Ø¯ Ø³Ø¨Ø¨ Ù„Ù„ØªÙØªÙŠØ´",
             "is_correct": false
           }
         ],
-        "explanation": "لافتات حظر الوقوف تحظر الوقوف في المكان المشار إليه. المخالفات قد تؤدي إلى غرامة أو سحب مركبتك."
+        "explanation": "Ø´Ø±Ø· Ø§Ù„Ù‚Ø±Øµ Ù…Ø³ØªÙ‚Ù„ Ø¹Ù† Ù…Ø¹Ø¯Ù„Ø§Øª Ø§Ù„Ø¥Ø´ØºØ§Ù„. ÙŠØ¬Ø¨ Ø¯Ø§Ø¦Ù…Ø§Ù‹ ÙˆØ¶Ø¹ Ø§Ù„Ù‚Ø±Øµ ØªØ­Øª E9a-disc."
+      }
+    }
+  },
+  {
+    "question_id": "E9a-disc_Q08",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Mag u na het plaatsen van de parkeerschijf vertrekken en uren later terugkomen om de schijf opnieuw in te stellen?",
+        "choices": [
+          {
+            "text": "Neen: de schijf mag niet worden bijgesteld nadat het voertuig reeds geparkeerd staat; dat wordt beschouwd als fraude",
+            "is_correct": true
+          },
+          {
+            "text": "Ja: u mag de schijf bijstellen zolang de maximumtijd nog niet verstreken is",
+            "is_correct": false
+          }
+        ],
+        "explanation": "De parkeerschijf mag uitsluitend bij aankomst worden ingesteld. Bijstellen nadien is fraude en is verboden."
+      },
+      "EN": {
+        "question": "May you leave after placing the disc and come back hours later to reset it?",
+        "choices": [
+          {
+            "text": "No: the disc may not be readjusted after the vehicle is already parked; that is considered fraud",
+            "is_correct": true
+          },
+          {
+            "text": "Yes: you may adjust the disc as long as the maximum time has not yet expired",
+            "is_correct": false
+          }
+        ],
+        "explanation": "The parking disc may only be set upon arrival. Readjusting it afterwards is fraud and is forbidden."
+      },
+      "FR": {
+        "question": "Pouvez-vous partir apres avoir place le disque et revenir des heures plus tard pour le regler a nouveau ?",
+        "choices": [
+          {
+            "text": "Non: le disque ne peut pas etre reajuste apres que le vehicule est deja gare; cela est considere comme une fraude",
+            "is_correct": true
+          },
+          {
+            "text": "Oui: vous pouvez ajuster le disque tant que le temps maximum n'est pas expire",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Le disque de stationnement ne peut etre regle qu'a l'arrivee. Le reajuster ensuite est une fraude et est interdit."
+      },
+      "AR": {
+        "question": "Ù‡Ù„ ÙŠØ¬ÙˆØ² Ø§Ù„Ù…ØºØ§Ø¯Ø±Ø© Ø¨Ø¹Ø¯ ÙˆØ¶Ø¹ Ø§Ù„Ù‚Ø±Øµ ÙˆØ§Ù„Ø¹ÙˆØ¯Ø© Ù„Ø§Ø­Ù‚Ø§Ù‹ Ù„Ø¥Ø¹Ø§Ø¯Ø© Ø¶Ø¨Ø·Ù‡ØŸ",
+        "choices": [
+          {
+            "text": "Ù„Ø§: Ù„Ø§ ÙŠÙ…ÙƒÙ† Ø¥Ø¹Ø§Ø¯Ø© Ø¶Ø¨Ø· Ø§Ù„Ù‚Ø±Øµ Ø¨Ø¹Ø¯ ÙˆÙ‚ÙˆÙ Ø§Ù„Ù…Ø±ÙƒØ¨Ø©Ø› ÙŠÙØ¹Ø¯Ù‘ Ø°Ù„Ùƒ Ø§Ø­ØªÙŠØ§Ù„Ø§Ù‹",
+            "is_correct": true
+          },
+          {
+            "text": "Ù†Ø¹Ù…: ÙŠÙ…ÙƒÙ† ØªØ¹Ø¯ÙŠÙ„ Ø§Ù„Ù‚Ø±Øµ Ø·Ø§Ù„Ù…Ø§ Ù„Ù… ØªÙ†ØªÙ‡Ù Ø§Ù„Ù…Ø¯Ø© Ø§Ù„Ù‚ØµÙˆÙ‰",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ù„Ø§ ÙŠØ¬ÙˆØ² Ø¶Ø¨Ø· Ù‚Ø±Øµ Ø§Ù„ÙˆÙ‚ÙˆÙ Ø¥Ù„Ø§ Ø¹Ù†Ø¯ Ø§Ù„ÙˆØµÙˆÙ„. Ø¥Ø¹Ø§Ø¯Ø© Ø¶Ø¨Ø·Ù‡ Ù„Ø§Ø­Ù‚Ø§Ù‹ ØªÙØ¹Ø¯Ù‘ Ø§Ø­ØªÙŠØ§Ù„Ø§Ù‹ ÙˆÙ‡ÙŠ Ù…Ø­Ø¸ÙˆØ±Ø©."
       }
     }
   }

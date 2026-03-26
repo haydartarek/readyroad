@@ -1,83 +1,46 @@
-[
+﻿[
   {
     "question_id": "B22_Q01",
     "type": "WHAT_DOES_IT_MEAN",
     "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE: Replace wrong answers with actual sign names from the same category.",
     "i18n": {
       "NL": {
         "question": "Wat betekent dit verkeersbord?",
         "choices": [
-          {
-            "text": "Fietsers mogen rechtsaf bij rood licht",
-            "is_correct": true
-          },
-          {
-            "text": "Gevaarlijke bocht naar links",
-            "is_correct": false
-          },
-          {
-            "text": "Verbod voor alle voertuigen",
-            "is_correct": false
-          }
+          {"text": "Fietsers en speed pedelecs mogen rechtsaf slaan, ook als het verkeerslicht rood of oranjegeel is", "is_correct": true},
+          {"text": "Fietsers mogen in alle richtingen rijden, ongeacht de kleur van het verkeerslicht", "is_correct": false},
+          {"text": "Alle voertuigen mogen rechtsaf slaan bij rood licht", "is_correct": false}
         ],
-        "explanation": "Fietsers mogen rechtsaf slaan, wanneer het verkeerslicht op rood of oranjegeel staat, op voorwaarde dat zij hierbij voorrang verlenen aan de andere weggebruikers."
+        "explanation": "Bord B22 staat bij kruispunten met een verkeerslicht. Het geeft fietsers en speed pedelecs het recht rechtsaf te slaan, ook als het licht rood of oranjegeel is, maar zij moeten voorrang verlenen."
       },
       "EN": {
         "question": "What does this traffic sign mean?",
         "choices": [
-          {
-            "text": "Cyclists may turn right at red light",
-            "is_correct": true
-          },
-          {
-            "text": "Dangerous curve to the left",
-            "is_correct": false
-          },
-          {
-            "text": "Prohibited for all vehicles",
-            "is_correct": false
-          }
+          {"text": "Cyclists and speed pedelecs may turn right even when the traffic light is red or amber", "is_correct": true},
+          {"text": "Cyclists may go in all directions regardless of the traffic light colour", "is_correct": false},
+          {"text": "All vehicles may turn right at a red light", "is_correct": false}
         ],
-        "explanation": "Cyclists may turn right when traffic light is red or amber, provided they give way to other road users."
+        "explanation": "Sign B22 is placed at junctions with traffic lights. It gives cyclists and speed pedelecs the right to turn right even when the light is red or amber, but they must give way."
       },
       "FR": {
         "question": "Que signifie ce panneau de signalisation ?",
         "choices": [
-          {
-            "text": "Les cyclistes peuvent tourner à droite au feu rouge",
-            "is_correct": true
-          },
-          {
-            "text": "Virage dangereux à gauche",
-            "is_correct": false
-          },
-          {
-            "text": "Interdit à tous les véhicules",
-            "is_correct": false
-          }
+          {"text": "Les cyclistes et les speed pedelecs peuvent tourner a droite meme lorsque le feu est rouge ou orange", "is_correct": true},
+          {"text": "Les cyclistes peuvent aller dans toutes les directions quelle que soit la couleur du feu", "is_correct": false},
+          {"text": "Tous les vehicules peuvent tourner a droite au feu rouge", "is_correct": false}
         ],
-        "explanation": "Les cyclistes peuvent tourner à droite au feu rouge ou orange, à condition de céder le passage aux autres usagers."
+        "explanation": "Le panneau B22 est place aux carrefours avec feux de signalisation. Il donne aux cyclistes et speed pedelecs le droit de tourner a droite meme lorsque le feu est rouge ou orange, mais ils doivent ceder le passage."
       },
       "AR": {
-        "question": "ماذا تعني لافتة المرور هذه؟",
+        "question": "Ù…Ø§Ø°Ø§ ØªØ¹Ù†ÙŠ Ù„Ø§ÙØªØ© Ø§Ù„Ù…Ø±ÙˆØ± Ù‡Ø°Ù‡ØŸ",
         "choices": [
-          {
-            "text": "يجوز لراكبي الدراجات الانعطاف إلى اليمين عند الإشارة الحمراء",
-            "is_correct": true
-          },
-          {
-            "text": "منعطف خطير إلى اليسار",
-            "is_correct": false
-          },
-          {
-            "text": "ممنوع لجميع المركبات",
-            "is_correct": false
-          }
+          {"text": "ÙŠØ¬ÙˆØ² Ù„Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª ÙˆØ³Ø¨ÙŠØ¯ Ø¨ÙŠØ¯ÙŠÙ„ÙŠÙƒØ³ Ø§Ù„Ø§Ù†Ø¹Ø·Ø§Ù ÙŠÙ…ÙŠÙ†Ø§ Ø­ØªÙ‰ Ø¹Ù†Ø¯Ù…Ø§ ØªÙƒÙˆÙ† Ø§Ù„Ø§Ø´Ø§Ø±Ø© Ø­Ù…Ø±Ø§Ø¡ Ø§Ùˆ Ø¨Ø±ØªÙ‚Ø§Ù„ÙŠØ©", "is_correct": true},
+          {"text": "ÙŠØ¬ÙˆØ² Ù„Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ù„Ø³ÙŠØ± ÙÙŠ Ø¬Ù…ÙŠØ¹ Ø§Ù„Ø§ØªØ¬Ø§Ù‡Ø§Øª Ø¨ØºØ¶ Ø§Ù„Ù†Ø¸Ø± Ø¹Ù† Ù„ÙˆÙ† Ø§Ù„Ø§Ø´Ø§Ø±Ø©", "is_correct": false},
+          {"text": "ÙŠØ¬ÙˆØ² Ù„Ø¬Ù…ÙŠØ¹ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ø§Ù†Ø¹Ø·Ø§Ù ÙŠÙ…ÙŠÙ†Ø§ Ø¹Ù†Ø¯ Ø§Ù„Ø¶ÙˆØ¡ Ø§Ù„Ø§Ø­Ù…Ø±", "is_correct": false}
         ],
-        "explanation": "يجوز لراكبي الدراجات الانعطاف إلى اليمين عندما تكون إشارة المرور حمراء أو كهرمانية، بشرط إفساح المجال لمستخدمي الطريق الآخرين."
+        "explanation": "ØªÙˆØ¶Ø¹ Ù„Ø§ÙØªØ© B22 Ø¹Ù†Ø¯ Ø§Ù„ØªÙ‚Ø§Ø·Ø¹Ø§Øª Ø°Ø§Øª Ø§Ù„Ø§Ø´Ø§Ø±Ø§Øª Ø§Ù„Ø¶ÙˆØ¦ÙŠØ©. ØªÙ…Ù†Ø­ Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª ÙˆØ³Ø¨ÙŠØ¯ Ø¨ÙŠØ¯ÙŠÙ„ÙŠÙƒØ³ Ø­Ù‚ Ø§Ù„Ø§Ù†Ø¹Ø·Ø§Ù ÙŠÙ…ÙŠÙ†Ø§ Ø­ØªÙ‰ Ø¹Ù†Ø¯ Ø§Ù„Ø¶ÙˆØ¡ Ø§Ù„Ø§Ø­Ù…Ø± Ø§Ùˆ Ø§Ù„Ø¨Ø±ØªÙ‚Ø§Ù„ÙŠ Ù„ÙƒÙ† ÙŠØ¬Ø¨ Ø§Ø¹Ø·Ø§Ø¡ Ø§Ù„Ø§ÙˆÙ„ÙˆÙŠØ©."
       }
     }
   },
@@ -86,162 +49,88 @@
     "type": "WHICH_SIGN",
     "difficulty": "EASY",
     "is_critical": false,
-    "show_sign": true,
-    "_note": "TEMPLATE: Ready to use — category identification question.",
+    "show_sign": false,
     "i18n": {
       "NL": {
-        "question": "Tot welke categorie verkeerstekens behoort dit bord?",
+        "question": "Welk bord geeft fietsers het recht rechtsaf te slaan bij een rood licht?",
         "choices": [
-          {
-            "text": "Voorrangsborden (B-reeks)",
-            "is_correct": true
-          },
-          {
-            "text": "Gevaarsborden (A-reeks)",
-            "is_correct": false
-          },
-          {
-            "text": "Verbodsborden (C-reeks)",
-            "is_correct": false
-          }
+          {"text": "B22 - Fietsers en speed pedelecs mogen rechtsaf bij rood", "is_correct": true},
+          {"text": "B23 - Fietsers en speed pedelecs mogen rechtdoor bij rood", "is_correct": false},
+          {"text": "F19 - Verplicht rechtsaf voor fietsers", "is_correct": false}
         ],
-        "explanation": "Dit bord behoort tot de categorie 'Voorrangsborden (B-reeks)'. Elk type bord heeft een specifieke vorm en kleurschema."
+        "explanation": "B22 = rechtsaf bij rood voor fietsers. B23 = rechtdoor bij rood voor fietsers. F19 is een verplichte rijrichting, niet een uitzondering op het rode licht."
       },
       "EN": {
-        "question": "To which category of traffic signs does this sign belong?",
+        "question": "Which sign gives cyclists the right to turn right at a red light?",
         "choices": [
-          {
-            "text": "Priority signs (B-series)",
-            "is_correct": true
-          },
-          {
-            "text": "Danger signs (A-series)",
-            "is_correct": false
-          },
-          {
-            "text": "Prohibition signs (C-series)",
-            "is_correct": false
-          }
+          {"text": "B22 - Cyclists and speed pedelecs may turn right at red", "is_correct": true},
+          {"text": "B23 - Cyclists and speed pedelecs may go straight at red", "is_correct": false},
+          {"text": "F19 - Compulsory turn right for cyclists", "is_correct": false}
         ],
-        "explanation": "This sign belongs to the 'Priority signs (B-series)' category. Each type of sign has a specific shape and color scheme."
+        "explanation": "B22 = turn right at red for cyclists. B23 = go straight at red for cyclists. F19 is a mandatory direction sign, not an exception to the red light."
       },
       "FR": {
-        "question": "À quelle catégorie de panneaux de signalisation ce panneau appartient-il ?",
+        "question": "Quel panneau donne aux cyclistes le droit de tourner a droite au feu rouge ?",
         "choices": [
-          {
-            "text": "Panneaux de priorité (série B)",
-            "is_correct": true
-          },
-          {
-            "text": "Panneaux de danger (série A)",
-            "is_correct": false
-          },
-          {
-            "text": "Panneaux d'interdiction (série C)",
-            "is_correct": false
-          }
+          {"text": "B22 - Cyclistes et speed pedelecs peuvent tourner a droite au rouge", "is_correct": true},
+          {"text": "B23 - Cyclistes et speed pedelecs peuvent aller tout droit au rouge", "is_correct": false},
+          {"text": "F19 - Tournez obligatoirement a droite pour les cyclistes", "is_correct": false}
         ],
-        "explanation": "Ce panneau appartient à la catégorie 'Panneaux de priorité (série B)'. Chaque type de panneau a une forme et un schéma de couleurs spécifiques."
+        "explanation": "B22 = tourner a droite au rouge pour les cyclistes. B23 = aller tout droit au rouge pour les cyclistes. F19 est un panneau de direction obligatoire, pas une exception au feu rouge."
       },
       "AR": {
-        "question": "إلى أي فئة من لافتات المرور تنتمي هذه اللافتة؟",
+        "question": "Ø§ÙŠ Ù„Ø§ÙØªØ© ØªÙ…Ù†Ø­ Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø­Ù‚ Ø§Ù„Ø§Ù†Ø¹Ø·Ø§Ù ÙŠÙ…ÙŠÙ†Ø§ Ø¹Ù†Ø¯ Ø§Ù„Ø¶ÙˆØ¡ Ø§Ù„Ø§Ø­Ù…Ø±ØŸ",
         "choices": [
-          {
-            "text": "لافتات الأولوية (سلسلة B)",
-            "is_correct": true
-          },
-          {
-            "text": "لافتات الخطر (سلسلة A)",
-            "is_correct": false
-          },
-          {
-            "text": "لافتات الحظر (سلسلة C)",
-            "is_correct": false
-          }
+          {"text": "B22 - ÙŠØ¬ÙˆØ² Ù„Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª ÙˆØ³Ø¨ÙŠØ¯ Ø¨ÙŠØ¯ÙŠÙ„ÙŠÙƒØ³ Ø§Ù„Ø§Ù†Ø¹Ø·Ø§Ù ÙŠÙ…ÙŠÙ†Ø§ Ø¹Ù†Ø¯ Ø§Ù„Ø§Ø­Ù…Ø±", "is_correct": true},
+          {"text": "B23 - ÙŠØ¬ÙˆØ² Ù„Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª ÙˆØ³Ø¨ÙŠØ¯ Ø¨ÙŠØ¯ÙŠÙ„ÙŠÙƒØ³ Ø§Ù„Ø³ÙŠØ± Ù„Ù„Ø§Ù…Ø§Ù… Ø¹Ù†Ø¯ Ø§Ù„Ø§Ø­Ù…Ø±", "is_correct": false},
+          {"text": "F19 - Ø§Ù„Ø§Ù†Ø¹Ø·Ø§Ù Ø§Ù„Ø§Ù„Ø²Ø§Ù…ÙŠ ÙŠÙ…ÙŠÙ†Ø§ Ù„Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª", "is_correct": false}
         ],
-        "explanation": "هذه اللافتة تنتمي إلى فئة 'لافتات الأولوية (سلسلة B)'. كل نوع من اللافتات له شكل ونظام ألوان محدد."
+        "explanation": "B22 = Ø§Ù„Ø§Ù†Ø¹Ø·Ø§Ù ÙŠÙ…ÙŠÙ†Ø§ Ø¹Ù†Ø¯ Ø§Ù„Ø§Ø­Ù…Ø± Ù„Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª. B23 = Ø§Ù„Ø³ÙŠØ± Ù„Ù„Ø§Ù…Ø§Ù… Ø¹Ù†Ø¯ Ø§Ù„Ø§Ø­Ù…Ø± Ù„Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª. F19 Ù„Ø§ÙØªØ© Ø§ØªØ¬Ø§Ù‡ Ø§Ù„Ø²Ø§Ù…ÙŠ ÙˆÙ„ÙŠØ³Øª Ø§Ø³ØªØ«Ù†Ø§Ø¡ Ù…Ù† Ø§Ù„Ø¶ÙˆØ¡ Ø§Ù„Ø§Ø­Ù…Ø±."
       }
     }
   },
   {
     "question_id": "B22_Q03",
-    "type": "WHAT_MUST_YOU_DO",
-    "difficulty": "MEDIUM",
+    "type": "HAZARD_IDENTIFICATION",
+    "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE (MEDIUM): Replace with sign-specific question for production.",
     "i18n": {
       "NL": {
-        "question": "Wat moet u doen wanneer u dit voorrangsbord ziet?",
+        "question": "Op welk gevaar moet een fietser met bord B22 extra letten als hij rechtsaf slaat bij rood?",
         "choices": [
-          {
-            "text": "De instructie van het bord correct opvolgen",
-            "is_correct": true
-          },
-          {
-            "text": "Het bord negeren als er geen ander verkeer is",
-            "is_correct": false
-          },
-          {
-            "text": "Flashen met de lichten om de voorrang te claimen",
-            "is_correct": false
-          }
+          {"text": "Voertuigen en voetgangers die groen licht hebben en de kruisende weg of het zebrapad gebruiken", "is_correct": true},
+          {"text": "Verkeerslichten die van rood naar groen overgaan terwijl hij al de bocht neemt", "is_correct": false},
+          {"text": "Het verkeersbordengemak geeft absolute doorgang; er is geen extra gevaar", "is_correct": false}
         ],
-        "explanation": "Voorrangsborden regelen de doorstroming op kruispunten. Het correct opvolgen is wettelijk verplicht."
+        "explanation": "Bij bord B22 moet de fietser voorrang verlenen aan alle andere weggebruikers die groen licht hebben. Dat omvat voetgangers op het zebrapad en voertuigen die kruisen."
       },
       "EN": {
-        "question": "What must you do when you see this priority sign?",
+        "question": "What hazard must a cyclist with sign B22 watch out for extra when turning right at red?",
         "choices": [
-          {
-            "text": "Correctly follow the instruction of the sign",
-            "is_correct": true
-          },
-          {
-            "text": "Ignore the sign if there is no other traffic",
-            "is_correct": false
-          },
-          {
-            "text": "Flash lights to claim priority",
-            "is_correct": false
-          }
+          {"text": "Vehicles and pedestrians who have a green light and are using the crossing road or zebra crossing", "is_correct": true},
+          {"text": "Traffic lights changing from red to green while they are already taking the bend", "is_correct": false},
+          {"text": "The sign guarantees absolute passage; there is no extra hazard", "is_correct": false}
         ],
-        "explanation": "Priority signs regulate traffic flow at intersections. Correctly following them is legally mandatory."
+        "explanation": "At sign B22 the cyclist must give way to all other road users who have a green light. This includes pedestrians on the zebra crossing and crossing vehicles."
       },
       "FR": {
-        "question": "Que devez-vous faire lorsque vous voyez ce panneau de priorité ?",
+        "question": "A quel danger un cycliste avec le panneau B22 doit-il faire particulierement attention lorsqu il tourne a droite au rouge ?",
         "choices": [
-          {
-            "text": "Suivre correctement l'instruction du panneau",
-            "is_correct": true
-          },
-          {
-            "text": "Ignorer le panneau s'il n'y a pas d'autre circulation",
-            "is_correct": false
-          },
-          {
-            "text": "Faire des appels de phares pour réclamer la priorité",
-            "is_correct": false
-          }
+          {"text": "Les vehicules et les pietons qui ont le feu vert et utilisent la route transversale ou le passage pieton", "is_correct": true},
+          {"text": "Les feux de signalisation passant au vert pendant qu il prend deja le virage", "is_correct": false},
+          {"text": "Le panneau garantit un passage absolu ; il n y a pas de danger supplementaire", "is_correct": false}
         ],
-        "explanation": "Les panneaux de priorité régulent la circulation aux intersections. Leur respect est légalement obligatoire."
+        "explanation": "Au panneau B22, le cycliste doit ceder le passage a tous les autres usagers qui ont le feu vert. Cela inclut les pietons sur le passage et les vehicules qui traversent."
       },
       "AR": {
-        "question": "ماذا يجب أن تفعل عندما ترى لافتة الأولوية هذه؟",
+        "question": "Ù…Ø§ Ø§Ù„Ø®Ø·Ø± Ø§Ù„Ø°ÙŠ ÙŠØ¬Ø¨ Ø¹Ù„Ù‰ Ø±Ø§ÙƒØ¨ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø© Ù…Ø¹ Ù„Ø§ÙØªØ© B22 Ø§Ù„Ø§Ù†ØªØ¨Ø§Ù‡ Ø§Ù„ÙŠÙ‡ Ø§Ø¶Ø§ÙÙŠØ§ Ø¹Ù†Ø¯ Ø§Ù„Ø§Ù†Ø¹Ø·Ø§Ù ÙŠÙ…ÙŠÙ†Ø§ Ø¨Ø§Ù„Ø§Ø­Ù…Ø±ØŸ",
         "choices": [
-          {
-            "text": "اتباع تعليمات اللافتة بشكل صحيح",
-            "is_correct": true
-          },
-          {
-            "text": "تجاهل اللافتة إذا لم يكن هناك مرور آخر",
-            "is_correct": false
-          },
-          {
-            "text": "تشغيل وميض الأضواء للمطالبة بالأولوية",
-            "is_correct": false
-          }
+          {"text": "Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª ÙˆØ§Ù„Ù…Ø´Ø§Ø© Ø§Ù„Ø°ÙŠÙ† Ù„Ø¯ÙŠÙ‡Ù… Ø¶ÙˆØ¡ Ø§Ø®Ø¶Ø± ÙˆÙŠØ³ØªØ®Ø¯Ù…ÙˆÙ† Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ù…ØªÙ‚Ø§Ø·Ø¹ Ø§Ùˆ Ù…Ù…Ø± Ø§Ù„Ù…Ø´Ø§Ø©", "is_correct": true},
+          {"text": "ØªØ­ÙˆÙ„ Ø§Ù„Ø§Ø´Ø§Ø±Ø§Øª Ù…Ù† Ø§Ù„Ø§Ø­Ù…Ø± Ø§Ù„Ù‰ Ø§Ù„Ø§Ø®Ø¶Ø± Ø¨ÙŠÙ†Ù…Ø§ ÙŠÙ‚ÙˆÙ… Ø¨Ø§Ø®Ø° Ø§Ù„Ù…Ù†Ø¹Ø·Ù", "is_correct": false},
+          {"text": "Ø§Ù„Ù„Ø§ÙØªØ© ØªØ¶Ù…Ù† Ø¹Ø¨ÙˆØ±Ø§ Ù…Ø·Ù„Ù‚Ø§ ÙˆÙ„Ø§ ÙŠÙˆØ¬Ø¯ Ø®Ø·Ø± Ø§Ø¶Ø§ÙÙŠ", "is_correct": false}
         ],
-        "explanation": "تنظم لافتات الأولوية حركة المرور عند التقاطعات. الالتزام بها إلزامي قانونياً."
+        "explanation": "Ø¹Ù†Ø¯ Ù„Ø§ÙØªØ© B22 ÙŠØ¬Ø¨ Ø¹Ù„Ù‰ Ø±Ø§ÙƒØ¨ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø© Ø§Ø¹Ø·Ø§Ø¡ Ø§Ù„Ø§ÙˆÙ„ÙˆÙŠØ© Ù„Ø¬Ù…ÙŠØ¹ Ù…Ø³ØªØ®Ø¯Ù…ÙŠ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø§Ø®Ø±ÙŠÙ† Ø§Ù„Ø°ÙŠÙ† Ù„Ø¯ÙŠÙ‡Ù… Ø¶ÙˆØ¡ Ø§Ø®Ø¶Ø±. ÙŠØ´Ù…Ù„ Ø°Ù„Ùƒ Ø§Ù„Ù…Ø´Ø§Ø© Ø¹Ù„Ù‰ Ù…Ù…Ø± Ø§Ù„Ù…Ø´Ø§Ø© ÙˆØ§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ù…ØªÙ‚Ø§Ø·Ø¹Ø©."
       }
     }
   },
@@ -251,2010 +140,214 @@
     "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE (MEDIUM): Replace with sign-specific question for production.",
     "i18n": {
       "NL": {
-        "question": "Wat is de gevolg van het niet naleven van een voorrangsbord?",
+        "question": "U bent een fietser en ziet bord B22 bij een rood verkeerslicht. Wat moet u doen als u rechtsaf wilt slaan?",
         "choices": [
-          {
-            "text": "Zware overtreding met boete en mogelijke schorsing van het rijbewijs",
-            "is_correct": true
-          },
-          {
-            "text": "Enkel een mondelinge waarschuwing van de politie",
-            "is_correct": false
-          },
-          {
-            "text": "Geen straf als er geen ongeluk is",
-            "is_correct": false
-          }
+          {"text": "U mag rechtsaf slaan maar moet voorrang verlenen aan alle andere weggebruikers die groen licht hebben", "is_correct": true},
+          {"text": "U mag rechtsaf slaan zonder enige verplichting want het bord geeft u absolute voorrang", "is_correct": false},
+          {"text": "U moet wachten tot het licht groen wordt voordat u rechtsaf slaat", "is_correct": false}
         ],
-        "explanation": "Voorrangsborden niet respecteren is een zware overtreding die kan leiden tot hoge boetes en puntenaftrek."
+        "explanation": "Bord B22 staat fietsers toe rechtsaf te slaan bij rood, maar de voorrangsplicht tegenover overige weggebruikers blijft volledig van kracht."
       },
       "EN": {
-        "question": "What is the consequence of not complying with a priority sign?",
+        "question": "You are a cyclist and see sign B22 at a red traffic light. What must you do if you want to turn right?",
         "choices": [
-          {
-            "text": "Serious violation with fine and possible driver's license suspension",
-            "is_correct": true
-          },
-          {
-            "text": "Only an oral warning from the police",
-            "is_correct": false
-          },
-          {
-            "text": "No penalty if no accident occurred",
-            "is_correct": false
-          }
+          {"text": "You may turn right but must give way to all other road users who have a green light", "is_correct": true},
+          {"text": "You may turn right without any obligation because the sign gives you absolute priority", "is_correct": false},
+          {"text": "You must wait until the light turns green before turning right", "is_correct": false}
         ],
-        "explanation": "Not respecting priority signs is a serious violation leading to high fines and licence points deduction."
+        "explanation": "Sign B22 allows cyclists to turn right at red, but the obligation to give way to other road users remains fully in force."
       },
       "FR": {
-        "question": "Quelle est la conséquence du non-respect d'un panneau de priorité ?",
+        "question": "Vous etes cycliste et voyez le panneau B22 a un feu rouge. Que devez-vous faire si vous voulez tourner a droite ?",
         "choices": [
-          {
-            "text": "Infraction grave avec amende et suspension possible du permis de conduire",
-            "is_correct": true
-          },
-          {
-            "text": "Seulement un avertissement oral de la police",
-            "is_correct": false
-          },
-          {
-            "text": "Pas de peine s'il n'y a pas eu d'accident",
-            "is_correct": false
-          }
+          {"text": "Vous pouvez tourner a droite mais devez ceder le passage a tous les autres usagers qui ont le feu vert", "is_correct": true},
+          {"text": "Vous pouvez tourner a droite sans aucune obligation car le panneau vous donne la priorite absolue", "is_correct": false},
+          {"text": "Vous devez attendre que le feu passe au vert avant de tourner a droite", "is_correct": false}
         ],
-        "explanation": "Ne pas respecter les panneaux de priorité est une infraction grave menant à de lourdes amendes."
+        "explanation": "Le panneau B22 permet aux cyclistes de tourner a droite au rouge, mais l obligation de ceder le passage aux autres usagers reste entierement en vigueur."
       },
       "AR": {
-        "question": "ما هي عواقب عدم الامتثال للافتة الأولوية؟",
+        "question": "Ø§Ù†Øª Ø±Ø§ÙƒØ¨ Ø¯Ø±Ø§Ø¬Ø© ÙˆØªØ±Ù‰ Ù„Ø§ÙØªØ© B22 Ø¹Ù†Ø¯ Ø§Ø´Ø§Ø±Ø© Ø­Ù…Ø±Ø§Ø¡. Ù…Ø§Ø°Ø§ ÙŠØ¬Ø¨ Ø¹Ù„ÙŠÙƒ ÙØ¹Ù„Ù‡ Ø§Ø°Ø§ Ø§Ø±Ø¯Øª Ø§Ù„Ø§Ù†Ø¹Ø·Ø§Ù ÙŠÙ…ÙŠÙ†Ø§ØŸ",
         "choices": [
-          {
-            "text": "مخالفة خطيرة مع غرامة وسحب محتمل لرخصة القيادة",
-            "is_correct": true
-          },
-          {
-            "text": "تحذير شفهي فقط من الشرطة",
-            "is_correct": false
-          },
-          {
-            "text": "لا عقوبة إذا لم يحدث حادث",
-            "is_correct": false
-          }
+          {"text": "ÙŠØ¬ÙˆØ² Ù„Ùƒ Ø§Ù„Ø§Ù†Ø¹Ø·Ø§Ù ÙŠÙ…ÙŠÙ†Ø§ Ù„ÙƒÙ† ÙŠØ¬Ø¨ Ø§Ø¹Ø·Ø§Ø¡ Ø§Ù„Ø§ÙˆÙ„ÙˆÙŠØ© Ù„Ø¬Ù…ÙŠØ¹ Ù…Ø³ØªØ®Ø¯Ù…ÙŠ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø§Ø®Ø±ÙŠÙ† Ø§Ù„Ø°ÙŠÙ† Ù„Ø¯ÙŠÙ‡Ù… Ø¶ÙˆØ¡ Ø§Ø®Ø¶Ø±", "is_correct": true},
+          {"text": "ÙŠØ¬ÙˆØ² Ù„Ùƒ Ø§Ù„Ø§Ù†Ø¹Ø·Ø§Ù ÙŠÙ…ÙŠÙ†Ø§ Ø¯ÙˆÙ† Ø§ÙŠ Ø§Ù„ØªØ²Ø§Ù… Ù„Ø§Ù† Ø§Ù„Ù„Ø§ÙØªØ© ØªÙ…Ù†Ø­Ùƒ Ø§Ù„Ø§ÙˆÙ„ÙˆÙŠØ© Ø§Ù„Ù…Ø·Ù„Ù‚Ø©", "is_correct": false},
+          {"text": "ÙŠØ¬Ø¨ Ø§Ù„Ø§Ù†ØªØ¸Ø§Ø± Ø­ØªÙ‰ ÙŠØªØ­ÙˆÙ„ Ø§Ù„Ø¶ÙˆØ¡ Ø§Ù„Ù‰ Ø§Ù„Ø§Ø®Ø¶Ø± Ù‚Ø¨Ù„ Ø§Ù„Ø§Ù†Ø¹Ø·Ø§Ù ÙŠÙ…ÙŠÙ†Ø§", "is_correct": false}
         ],
-        "explanation": "عدم احترام لافتات الأولوية مخالفة خطيرة تؤدي إلى غرامات كبيرة وخصم نقاط من رخصة القيادة."
+        "explanation": "ØªØ³Ù…Ø­ Ù„Ø§ÙØªØ© B22 Ù„Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø¨Ø§Ù„Ø§Ù†Ø¹Ø·Ø§Ù ÙŠÙ…ÙŠÙ†Ø§ Ø¹Ù†Ø¯ Ø§Ù„Ø§Ø­Ù…Ø± Ù„ÙƒÙ† Ø§Ù„ØªØ²Ø§Ù… Ø§Ø¹Ø·Ø§Ø¡ Ø§Ù„Ø§ÙˆÙ„ÙˆÙŠØ© Ù„Ù…Ø³ØªØ®Ø¯Ù…ÙŠ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø§Ø®Ø±ÙŠÙ† ÙŠØ¨Ù‚Ù‰ Ø³Ø§Ø±ÙŠØ§ Ø¨Ø§Ù„ÙƒØ§Ù…Ù„."
       }
     }
   },
   {
     "question_id": "B22_Q05",
-    "type": "IS_IT_ALLOWED",
-    "difficulty": "HARD",
-    "is_critical": true,
+    "type": "DRIVER_ACTION",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE (HARD): Replace with sign-specific question for production.",
     "i18n": {
       "NL": {
-        "question": "Bent u wettelijk verplicht dit voorrangsbord te respecteren?",
+        "question": "U bent een fietser met bord B22 en slaat rechtsaf bij rood. Een voetganger steekt tegelijk het zebrapad over. Wat doet u?",
         "choices": [
-          {
-            "text": "Ja, voorrangsborden zijn wettelijk bindend en moeten altijd worden nageleefd",
-            "is_correct": true
-          },
-          {
-            "text": "Nee, voorrangsborden zijn aanbevelingen die u naar eigen inzicht kunt volgen",
-            "is_correct": false
-          }
+          {"text": "U stopt en laat de voetganger oversteken want hij heeft voorrang op u", "is_correct": true},
+          {"text": "U rijdt vlug door want het bord B22 geeft u voorrang op alle overige weggebruikers", "is_correct": false},
+          {"text": "U toetert om de voetganger te waarschuwen en rijdt dan door", "is_correct": false}
         ],
-        "explanation": "Voorrangsborden zijn wettelijk bindend voor alle weggebruikers. Het niet naleven is een overtreding die kan leiden tot boetes en puntenaftrek."
+        "explanation": "Fietser met B22 moet altijd voorrang verlenen aan weggebruikers die groen licht hebben, inclusief voetgangers op een zebrapad met groen voetgangerslicht."
       },
       "EN": {
-        "question": "Are you legally required to respect this priority sign?",
+        "question": "You are a cyclist with sign B22 and are turning right at red. A pedestrian is crossing the zebra crossing at the same time. What do you do?",
         "choices": [
-          {
-            "text": "Yes, priority signs are legally binding and must always be complied with",
-            "is_correct": true
-          },
-          {
-            "text": "No, priority signs are recommendations that you may follow at your own discretion",
-            "is_correct": false
-          }
+          {"text": "You stop and let the pedestrian cross because they have priority over you", "is_correct": true},
+          {"text": "You speed through because sign B22 gives you priority over all other road users", "is_correct": false},
+          {"text": "You sound your horn to warn the pedestrian and then continue", "is_correct": false}
         ],
-        "explanation": "Priority signs are legally binding for all road users. Non-compliance is a violation that can lead to fines and licence points deduction."
+        "explanation": "A cyclist with B22 must always give way to road users who have a green light, including pedestrians at a zebra crossing with a green pedestrian signal."
       },
       "FR": {
-        "question": "Êtes-vous légalement obligé de respecter ce panneau de priorité ?",
+        "question": "Vous etes cycliste avec le panneau B22 et tournez a droite au rouge. Un pieton traverse en meme temps le passage pieton. Que faites-vous ?",
         "choices": [
-          {
-            "text": "Oui, les panneaux de priorité sont juridiquement contraignants et doivent toujours être respectés",
-            "is_correct": true
-          },
-          {
-            "text": "Non, les panneaux de priorité sont des recommandations que vous pouvez suivre à votre discrétion",
-            "is_correct": false
-          }
+          {"text": "Vous vous arretez et laissez le pieton traverser car il a la priorite sur vous", "is_correct": true},
+          {"text": "Vous passez rapidement car le panneau B22 vous donne la priorite sur tous les autres usagers", "is_correct": false},
+          {"text": "Vous klaxonnez pour avertir le pieton et continuez ensuite", "is_correct": false}
         ],
-        "explanation": "Les panneaux de priorité sont juridiquement contraignants pour tous les usagers. Le non-respect est une infraction pouvant mener à des amendes."
+        "explanation": "Le cycliste avec B22 doit toujours ceder le passage aux usagers qui ont le feu vert, y compris les pietons au passage pieton avec signal vert."
       },
       "AR": {
-        "question": "هل أنت ملزم قانونياً باحترام لافتة الأولوية هذه؟",
+        "question": "Ø§Ù†Øª Ø±Ø§ÙƒØ¨ Ø¯Ø±Ø§Ø¬Ø© Ù…Ø¹ Ù„Ø§ÙØªØ© B22 ÙˆØªÙ†Ø¹Ø·Ù ÙŠÙ…ÙŠÙ†Ø§ Ø¹Ù†Ø¯ Ø§Ù„Ø§Ø­Ù…Ø±. ÙŠØ¹Ø¨Ø± Ù…Ø´Ø§Ù‡ Ù…Ù…Ø± Ø§Ù„Ù…Ø´Ø§Ø© ÙÙŠ Ù†ÙØ³ Ø§Ù„ÙˆÙ‚Øª. Ù…Ø§Ø°Ø§ ØªÙØ¹Ù„ØŸ",
         "choices": [
-          {
-            "text": "نعم، لافتات الأولوية ملزمة قانونياً ويجب الالتزام بها دائماً",
-            "is_correct": true
-          },
-          {
-            "text": "لا، لافتات الأولوية توصيات يمكنك اتباعها وفق تقديرك الخاص",
-            "is_correct": false
-          }
+          {"text": "ØªØªÙˆÙ‚Ù ÙˆØªØªØ±Ùƒ Ø§Ù„Ù…Ø´Ø§Ù‡ ÙŠØ¹Ø¨Ø± Ù„Ø§Ù† Ù„Ù‡ Ø§Ù„Ø§ÙˆÙ„ÙˆÙŠØ© Ø¹Ù„ÙŠÙƒ", "is_correct": true},
+          {"text": "ØªÙ…Ø± Ø¨Ø³Ø±Ø¹Ø© Ù„Ø§Ù† Ù„Ø§ÙØªØ© B22 ØªÙ…Ù†Ø­Ùƒ Ø§Ù„Ø§ÙˆÙ„ÙˆÙŠØ© Ø¹Ù„Ù‰ Ø¬Ù…ÙŠØ¹ Ù…Ø³ØªØ®Ø¯Ù…ÙŠ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø§Ø®Ø±ÙŠÙ†", "is_correct": false},
+          {"text": "ØªØ¶ØºØ· Ø§Ù„Ù†ÙÙŠØ± Ù„ØªØ­Ø°ÙŠØ± Ø§Ù„Ù…Ø´Ø§Ù‡ Ø«Ù… ØªØ³ØªÙ…Ø±", "is_correct": false}
         ],
-        "explanation": "لافتات الأولوية ملزمة قانونياً لجميع مستخدمي الطريق. عدم الامتثال مخالفة قد تؤدي إلى غرامات وخصم نقاط من رخصة القيادة."
+        "explanation": "Ø±Ø§ÙƒØ¨ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø© Ù…Ø¹ B22 ÙŠØ¬Ø¨ Ø§Ù† ÙŠØ¹Ø·ÙŠ Ø¯Ø§Ø¦Ù…Ø§ Ø§Ù„Ø§ÙˆÙ„ÙˆÙŠØ© Ù„Ù…Ø³ØªØ®Ø¯Ù…ÙŠ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø°ÙŠÙ† Ù„Ø¯ÙŠÙ‡Ù… Ø¶ÙˆØ¡ Ø§Ø®Ø¶Ø± Ø¨Ù…Ø§ ÙÙŠÙ‡Ù… Ø§Ù„Ù…Ø´Ø§Ø© Ø¹Ù†Ø¯ Ù…Ù…Ø± Ø§Ù„Ù…Ø´Ø§Ø© Ø¨Ø¶ÙˆØ¡ Ù…Ø´Ø§Ù‡ Ø§Ø®Ø¶Ø±."
       }
     }
   },
   {
     "question_id": "B22_Q06",
-    "type": "WHAT_DOES_IT_MEAN",
-    "difficulty": "EASY",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat betekent bord B22?",
+        "question": "Geldt bord B22 ook voor speed pedelecs?",
         "choices": [
-          {
-            "text": "Fietsers en speed pedelecs mogen bij een rood licht rechtsaf slaan mits ze voorrang verlenen aan het overige verkeer",
-            "is_correct": true
-          },
-          {
-            "text": "Alle voertuigen mogen rechtsaf bij rood",
-            "is_correct": false
-          },
-          {
-            "text": "Alleen bromfietsers mogen rechtsaf bij rood",
-            "is_correct": false
-          }
+          {"text": "Ja, bord B22 geldt uitdrukkelijk voor zowel fietsers als speed pedelecs", "is_correct": true},
+          {"text": "Nee, bord B22 geldt enkel voor gewone fietsen, niet voor gemotoriseerde speed pedelecs", "is_correct": false},
+          {"text": "Alleen als de speed pedelec in de fietsstrook rijdt", "is_correct": false}
         ],
-        "explanation": "B22 is een uitzonderingsbord voor fietsers en speed pedelecs: bij rood mogen ze rechtsaf slaan, maar ze moeten wel voorrang verlenen aan groen verkeer."
+        "explanation": "De volledige benaming van het bord is Fietsers en speed pedelecs mogen rechtsaf slaan. Speed pedelecs vallen uitdrukkelijk onder het toepassingsgebied van dit bord."
       },
       "EN": {
-        "question": "What does sign B22 mean?",
+        "question": "Does sign B22 also apply to speed pedelecs?",
         "choices": [
-          {
-            "text": "Cyclists and speed pedelecs may turn right at a red light provided they give way to other traffic",
-            "is_correct": true
-          },
-          {
-            "text": "All vehicles may turn right at red",
-            "is_correct": false
-          },
-          {
-            "text": "Only mopeds may turn right at red",
-            "is_correct": false
-          }
+          {"text": "Yes, sign B22 explicitly applies to both cyclists and speed pedelecs", "is_correct": true},
+          {"text": "No, sign B22 only applies to ordinary bicycles, not to motorised speed pedelecs", "is_correct": false},
+          {"text": "Only if the speed pedelec is riding in the cycle lane", "is_correct": false}
         ],
-        "explanation": "B22 is an exception sign for cyclists and speed pedelecs: at red they may turn right but must give way to traffic with green."
+        "explanation": "The full name of the sign is Cyclists and speed pedelecs may turn right. Speed pedelecs are explicitly within the scope of this sign."
       },
       "FR": {
-        "question": "Que signifie le panneau B22 ?",
+        "question": "Le panneau B22 s applique-t-il egalement aux speed pedelecs ?",
         "choices": [
-          {
-            "text": "Les cyclistes et speed pedelecs peuvent tourner à droite au feu rouge à condition de céder le passage au trafic ayant le vert",
-            "is_correct": true
-          },
-          {
-            "text": "Tous les véhicules peuvent tourner à droite au rouge",
-            "is_correct": false
-          },
-          {
-            "text": "Seuls les cyclomoteurs peuvent tourner à droite au rouge",
-            "is_correct": false
-          }
+          {"text": "Oui, le panneau B22 s applique explicitement aux cyclistes et aux speed pedelecs", "is_correct": true},
+          {"text": "Non, le panneau B22 ne s applique qu aux velos ordinaires, pas aux speed pedelecs motorises", "is_correct": false},
+          {"text": "Seulement si le speed pedelec roule dans la piste cyclable", "is_correct": false}
         ],
-        "explanation": "B22 est un panneau d'exception pour les cyclistes et speed pedelecs : au rouge ils peuvent tourner à droite mais doivent céder le passage au trafic ayant le vert."
+        "explanation": "Le nom complet du panneau est Cyclistes et speed pedelecs peuvent tourner a droite. Les speed pedelecs sont explicitement dans le champ d application de ce panneau."
       },
       "AR": {
-        "question": "ماذا تعني اللافتة B22؟",
+        "question": "Ù‡Ù„ ØªÙ†Ø·Ø¨Ù‚ Ù„Ø§ÙØªØ© B22 Ø§ÙŠØ¶Ø§ Ø¹Ù„Ù‰ Ø³Ø¨ÙŠØ¯ Ø¨ÙŠØ¯ÙŠÙ„ÙŠÙƒØ³ØŸ",
         "choices": [
-          {
-            "text": "الدراجون وسبيد بيدليك يمكنهم الانعطاف يميناً عند الضوء الأحمر شريطة إعطاء الأولوية لبقية حركة المرور",
-            "is_correct": true
-          },
-          {
-            "text": "جميع المركبات يمكنها الانعطاف يميناً عند الأحمر",
-            "is_correct": false
-          },
-          {
-            "text": "فقط دراجات الموبايل يمكنها الانعطاف يميناً عند الأحمر",
-            "is_correct": false
-          }
+          {"text": "Ù†Ø¹Ù…ØŒ Ù„Ø§ÙØªØ© B22 ØªÙ†Ø·Ø¨Ù‚ ØµØ±Ø§Ø­Ø© Ø¹Ù„Ù‰ Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª ÙˆØ³Ø¨ÙŠØ¯ Ø¨ÙŠØ¯ÙŠÙ„ÙŠÙƒØ³ Ù…Ø¹Ø§", "is_correct": true},
+          {"text": "Ù„Ø§ØŒ Ù„Ø§ÙØªØ© B22 ØªÙ†Ø·Ø¨Ù‚ ÙÙ‚Ø· Ø¹Ù„Ù‰ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ù„Ø¹Ø§Ø¯ÙŠØ© ÙˆÙ„ÙŠØ³ Ø³Ø¨ÙŠØ¯ Ø¨ÙŠØ¯ÙŠÙ„ÙŠÙƒØ³ Ø°Ø§Øª Ø§Ù„Ù…Ø­Ø±Ùƒ", "is_correct": false},
+          {"text": "ÙÙ‚Ø· Ø§Ø°Ø§ ÙƒØ§Ù† Ø³Ø¨ÙŠØ¯ Ø¨ÙŠØ¯ÙŠÙ„ÙŠÙƒØ³ ÙŠØ³ÙŠØ± ÙÙŠ Ù…Ø³Ø§Ø± Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª", "is_correct": false}
         ],
-        "explanation": "B22 لافتة استثناء للدراجين وسبيد بيدليك: عند الأحمر يمكنهم الانعطاف يميناً لكن يجب إعطاء الأولوية للمرور ذي الإشارة الخضراء."
+        "explanation": "Ø§Ù„Ø§Ø³Ù… Ø§Ù„ÙƒØ§Ù…Ù„ Ù„Ù„Ø§ÙØªØ© Ù‡Ùˆ ÙŠØ¬ÙˆØ² Ù„Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª ÙˆØ³Ø¨ÙŠØ¯ Ø¨ÙŠØ¯ÙŠÙ„ÙŠÙƒØ³ Ø§Ù„Ø§Ù†Ø¹Ø·Ø§Ù ÙŠÙ…ÙŠÙ†Ø§. Ø³Ø¨ÙŠØ¯ Ø¨ÙŠØ¯ÙŠÙ„ÙŠÙƒØ³ Ù…Ø´Ù…ÙˆÙ„ ØµØ±Ø§Ø­Ø© ÙÙŠ Ù†Ø·Ø§Ù‚ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©."
       }
     }
   },
   {
     "question_id": "B22_Q07",
-    "type": "TRUE_OR_FALSE",
-    "difficulty": "EASY",
-    "is_critical": false,
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Waar of niet waar: Bij bord B22 mag een gewone auto ook rechtsaf slaan bij rood.",
+        "question": "U bent een gewone motorrijder en ziet bord B22 bij een rood licht. Mag u ook rechtsaf slaan?",
         "choices": [
-          {
-            "text": "Niet waar – B22 geldt alleen voor fietsers en speed pedelecs, niet voor auto's",
-            "is_correct": false
-          },
-          {
-            "text": "Waar – alle voertuigen profiteren van B22",
-            "is_correct": true
-          }
+          {"text": "Nee, bord B22 geldt uitsluitend voor fietsers en speed pedelecs, niet voor motorrijders", "is_correct": true},
+          {"text": "Ja, bord B22 geldt voor alle tweewielers", "is_correct": false}
         ],
-        "explanation": "Niet waar. B22 geldt uitsluitend voor fietsers en speed pedelecs. Auto's en andere motorvoertuigen moeten altijd bij rood wachten."
+        "explanation": "Bord B22 is specifiek bedoeld voor fietsers en speed pedelecs. Een motorrijder valt niet onder het toepassingsgebied en moet wachten op groen licht."
       },
       "EN": {
-        "question": "True or false: With sign B22 a regular car may also turn right at red.",
+        "question": "You are a regular motorcyclist and see sign B22 at a red light. May you also turn right?",
         "choices": [
-          {
-            "text": "False – B22 applies only to cyclists and speed pedelecs, not to cars",
-            "is_correct": false
-          },
-          {
-            "text": "True – all vehicles benefit from B22",
-            "is_correct": true
-          }
+          {"text": "No, sign B22 exclusively applies to cyclists and speed pedelecs, not to motorcyclists", "is_correct": true},
+          {"text": "Yes, sign B22 applies to all two-wheelers", "is_correct": false}
         ],
-        "explanation": "False. B22 applies exclusively to cyclists and speed pedelecs. Cars and other motor vehicles must always wait at red."
+        "explanation": "Sign B22 is specifically intended for cyclists and speed pedelecs. A motorcyclist is outside the scope and must wait for a green light."
       },
       "FR": {
-        "question": "Vrai ou faux : Avec le panneau B22, une voiture ordinaire peut aussi tourner à droite au rouge.",
+        "question": "Vous etes un motocycliste ordinaire et voyez le panneau B22 a un feu rouge. Pouvez-vous vous aussi tourner a droite ?",
         "choices": [
-          {
-            "text": "Faux – B22 s'applique uniquement aux cyclistes et speed pedelecs, pas aux voitures",
-            "is_correct": false
-          },
-          {
-            "text": "Vrai – tous les véhicules bénéficient de B22",
-            "is_correct": true
-          }
+          {"text": "Non, le panneau B22 s applique exclusivement aux cyclistes et speed pedelecs, pas aux motocyclistes", "is_correct": true},
+          {"text": "Oui, le panneau B22 s applique a tous les deux-roues", "is_correct": false}
         ],
-        "explanation": "Faux. B22 s'applique exclusivement aux cyclistes et speed pedelecs. Les voitures et autres véhicules à moteur doivent toujours attendre au rouge."
+        "explanation": "Le panneau B22 est specifiquement destine aux cyclistes et speed pedelecs. Un motocycliste n est pas dans le champ d application et doit attendre le feu vert."
       },
       "AR": {
-        "question": "صحيح أم خاطئ: مع اللافتة B22 يمكن للسيارة العادية أيضاً الانعطاف يميناً عند الأحمر.",
+        "question": "Ø§Ù†Øª Ø³Ø§Ø¦Ù‚ Ø¯Ø±Ø§Ø¬Ø© Ù†Ø§Ø±ÙŠØ© Ø¹Ø§Ø¯ÙŠØ© ÙˆØªØ±Ù‰ Ù„Ø§ÙØªØ© B22 Ø¹Ù†Ø¯ Ø§Ù„Ø¶ÙˆØ¡ Ø§Ù„Ø§Ø­Ù…Ø±. Ù‡Ù„ ÙŠØ¬ÙˆØ² Ù„Ùƒ Ø§ÙŠØ¶Ø§ Ø§Ù„Ø§Ù†Ø¹Ø·Ø§Ù ÙŠÙ…ÙŠÙ†Ø§ØŸ",
         "choices": [
-          {
-            "text": "خاطئ – B22 تنطبق فقط على الدراجين وسبيد بيدليك، وليس على السيارات",
-            "is_correct": false
-          },
-          {
-            "text": "صحيح – جميع المركبات تستفيد من B22",
-            "is_correct": true
-          }
+          {"text": "Ù„Ø§ØŒ Ù„Ø§ÙØªØ© B22 ØªÙ†Ø·Ø¨Ù‚ Ø­ØµØ±Ø§ Ø¹Ù„Ù‰ Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª ÙˆØ³Ø¨ÙŠØ¯ Ø¨ÙŠØ¯ÙŠÙ„ÙŠÙƒØ³ ÙˆÙ„ÙŠØ³ Ø¹Ù„Ù‰ Ø³Ø§Ø¦Ù‚ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ù„Ù†Ø§Ø±ÙŠØ©", "is_correct": true},
+          {"text": "Ù†Ø¹Ù…ØŒ Ù„Ø§ÙØªØ© B22 ØªÙ†Ø·Ø¨Ù‚ Ø¹Ù„Ù‰ Ø¬Ù…ÙŠØ¹ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø°Ø§Øª Ø§Ù„Ø¹Ø¬Ù„ØªÙŠÙ†", "is_correct": false}
         ],
-        "explanation": "خاطئ. B22 تنطبق حصراً على الدراجين وسبيد بيدليك. يجب على السيارات والمركبات الأخرى دائماً الانتظار عند الأحمر."
+        "explanation": "Ù„Ø§ÙØªØ© B22 Ù…Ø®ØµØµØ© ØªØ­Ø¯ÙŠØ¯Ø§ Ù„Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª ÙˆØ³Ø¨ÙŠØ¯ Ø¨ÙŠØ¯ÙŠÙ„ÙŠÙƒØ³. Ø³Ø§Ø¦Ù‚ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø© Ø§Ù„Ù†Ø§Ø±ÙŠØ© Ø®Ø§Ø±Ø¬ Ù†Ø·Ø§Ù‚ Ø§Ù„ØªØ·Ø¨ÙŠÙ‚ ÙˆÙŠØ¬Ø¨ Ø§Ù† ÙŠÙ†ØªØ¸Ø± Ø§Ù„Ø¶ÙˆØ¡ Ø§Ù„Ø§Ø®Ø¶Ø±."
       }
     }
   },
   {
     "question_id": "B22_Q08",
     "type": "IS_IT_ALLOWED",
-    "difficulty": "EASY",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Bij bord B22 staat het licht op rood en er rijdt verkeer van links. Mag u rechtsaf slaan?",
-        "choices": [
-          {
-            "text": "Nee, u moet wachten en voorrang verlenen aan het verkeer dat groen heeft",
-            "is_correct": false
-          },
-          {
-            "text": "Ja, B22 geeft u het recht om altijd rechtsaf te slaan bij rood",
-            "is_correct": true
-          }
-        ],
-        "explanation": "Nee. B22 geeft het recht om rechtsaf te slaan bij rood, maar u moet altijd voorrang verlenen aan verkeer dat groen heeft. Wacht tot het veilig is."
-      },
-      "EN": {
-        "question": "With sign B22 the light is red and traffic is approaching from the left. May you turn right?",
-        "choices": [
-          {
-            "text": "No, you must wait and give way to traffic that has green",
-            "is_correct": false
-          },
-          {
-            "text": "Yes, B22 gives you the right to always turn right at red",
-            "is_correct": true
-          }
-        ],
-        "explanation": "No. B22 gives the right to turn right at red but you must always give way to traffic that has green. Wait until it is safe."
-      },
-      "FR": {
-        "question": "Avec le panneau B22, le feu est rouge et du trafic arrive par la gauche. Pouvez-vous tourner à droite ?",
-        "choices": [
-          {
-            "text": "Non, vous devez attendre et céder le passage au trafic qui a le vert",
-            "is_correct": false
-          },
-          {
-            "text": "Oui, B22 vous donne le droit de toujours tourner à droite au rouge",
-            "is_correct": true
-          }
-        ],
-        "explanation": "Non. B22 donne le droit de tourner à droite au rouge mais vous devez toujours céder le passage au trafic ayant le vert. Attendez que ce soit sûr."
-      },
-      "AR": {
-        "question": "مع اللافتة B22 الضوء أحمر وهناك مرور قادم من اليسار. هل يمكنك الانعطاف يميناً؟",
-        "choices": [
-          {
-            "text": "لا، يجب عليك الانتظار وإعطاء الأولوية للمرور الذي لديه الأخضر",
-            "is_correct": false
-          },
-          {
-            "text": "نعم، B22 تمنحك الحق دائماً في الانعطاف يميناً عند الأحمر",
-            "is_correct": true
-          }
-        ],
-        "explanation": "لا. B22 تمنح الحق في الانعطاف يميناً عند الأحمر لكن يجب دائماً إعطاء الأولوية للمرور الذي لديه الأخضر. انتظر حتى يكون آمناً."
-      }
-    }
-  },
-  {
-    "question_id": "B22_Q09",
-    "type": "WHAT_SHOULD_YOU_DO",
-    "difficulty": "EASY",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Als fietser bij bord B22 staat het licht op rood en het kruispunt is volledig vrij. Wat doet u?",
-        "choices": [
-          {
-            "text": "U mag voorzichtig rechtsaf slaan na te controleren dat het veilig is",
-            "is_correct": true
-          },
-          {
-            "text": "U moet wachten tot het licht op groen staat",
-            "is_correct": false
-          },
-          {
-            "text": "U moet stoppen en afstappen",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Bij een vrij kruispunt mag u als fietser bij B22 rechtsaf slaan bij rood – maar controleer altijd of dit werkelijk veilig is."
-      },
-      "EN": {
-        "question": "As a cyclist with sign B22 the light is red and the junction is completely clear. What do you do?",
-        "choices": [
-          {
-            "text": "You may carefully turn right after checking it is safe",
-            "is_correct": true
-          },
-          {
-            "text": "You must wait until the light turns green",
-            "is_correct": false
-          },
-          {
-            "text": "You must stop and dismount",
-            "is_correct": false
-          }
-        ],
-        "explanation": "At a clear junction you may as a cyclist with B22 turn right at red – but always check that this is truly safe."
-      },
-      "FR": {
-        "question": "En tant que cycliste avec le panneau B22, le feu est rouge et le carrefour est complètement libre. Que faites-vous ?",
-        "choices": [
-          {
-            "text": "Vous pouvez tourner prudemment à droite après avoir vérifié que c'est sûr",
-            "is_correct": true
-          },
-          {
-            "text": "Vous devez attendre que le feu passe au vert",
-            "is_correct": false
-          },
-          {
-            "text": "Vous devez vous arrêter et descendre de vélo",
-            "is_correct": false
-          }
-        ],
-        "explanation": "À un carrefour libre, en tant que cycliste avec B22, vous pouvez tourner à droite au rouge – mais vérifiez toujours que c'est vraiment sûr."
-      },
-      "AR": {
-        "question": "كراكب دراجة مع اللافتة B22 الضوء أحمر والتقاطع خالٍ تماماً. ماذا تفعل؟",
-        "choices": [
-          {
-            "text": "يمكنك الانعطاف يميناً بحذر بعد التحقق من الأمان",
-            "is_correct": true
-          },
-          {
-            "text": "يجب عليك الانتظار حتى يصبح الضوء أخضر",
-            "is_correct": false
-          },
-          {
-            "text": "يجب عليك التوقف والنزول من الدراجة",
-            "is_correct": false
-          }
-        ],
-        "explanation": "عند تقاطع خالٍ يمكنك كراكب دراجة مع B22 الانعطاف يميناً عند الأحمر – لكن تحقق دائماً من الأمان الفعلي."
-      }
-    }
-  },
-  {
-    "question_id": "B22_Q10",
-    "type": "WHAT_IS_PROHIBITED",
-    "difficulty": "EASY",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Wat is verboden voor een fietser bij bord B22?",
-        "choices": [
-          {
-            "text": "De andere richtingen (rechtdoor of linksaf) rijden bij rood",
-            "is_correct": true
-          },
-          {
-            "text": "Rechtsaf slaan bij rood wanneer het veilig is",
-            "is_correct": false
-          },
-          {
-            "text": "Voorzichtig rijden bij rood",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Bij B22 geldt de uitzondering alleen voor rechtsaf slaan. Rechtdoor rijden of linksaf slaan bij rood blijft verboden."
-      },
-      "EN": {
-        "question": "What is prohibited for a cyclist at sign B22?",
-        "choices": [
-          {
-            "text": "Going in other directions (straight or left) at red",
-            "is_correct": true
-          },
-          {
-            "text": "Turning right at red when it is safe",
-            "is_correct": false
-          },
-          {
-            "text": "Riding carefully at red",
-            "is_correct": false
-          }
-        ],
-        "explanation": "With B22 the exception only applies to turning right. Going straight or turning left at red remains prohibited."
-      },
-      "FR": {
-        "question": "Qu'est-il interdit à un cycliste au panneau B22 ?",
-        "choices": [
-          {
-            "text": "Aller dans d'autres directions (tout droit ou à gauche) au rouge",
-            "is_correct": true
-          },
-          {
-            "text": "Tourner à droite au rouge quand c'est sûr",
-            "is_correct": false
-          },
-          {
-            "text": "Rouler prudemment au rouge",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Avec B22, l'exception s'applique uniquement au virage à droite. Aller tout droit ou tourner à gauche au rouge reste interdit."
-      },
-      "AR": {
-        "question": "ما الذي يُحظر على راكب الدراجة عند اللافتة B22؟",
-        "choices": [
-          {
-            "text": "السير في اتجاهات أخرى (مباشرة أو يساراً) عند الأحمر",
-            "is_correct": true
-          },
-          {
-            "text": "الانعطاف يميناً عند الأحمر عندما يكون آمناً",
-            "is_correct": false
-          },
-          {
-            "text": "القيادة بحذر عند الأحمر",
-            "is_correct": false
-          }
-        ],
-        "explanation": "مع B22 الاستثناء ينطبق فقط على الانعطاف يميناً. السير مباشرة أو الانعطاف يساراً عند الأحمر لا يزال محظوراً."
-      }
-    }
-  },
-  {
-    "question_id": "B22_Q11",
-    "type": "WHICH_SIGN",
-    "difficulty": "EASY",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Welk bord staat fietsers toe bij rood RECHTDOOR te rijden (als aanvulling op B22)?",
-        "choices": [
-          {
-            "text": "Bord B23 – fietsers mogen rechtdoor rijden bij rood",
-            "is_correct": true
-          },
-          {
-            "text": "Bord B22 – fietsers mogen rechtsaf bij rood",
-            "is_correct": false
-          },
-          {
-            "text": "Bord B9 – voorrangsweg",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Bord B23 is het aanvullende bord dat fietsers toestaat bij rood rechtdoor te rijden."
-      },
-      "EN": {
-        "question": "Which sign allows cyclists to go STRAIGHT at red (complementing B22)?",
-        "choices": [
-          {
-            "text": "Sign B23 – cyclists may go straight at red",
-            "is_correct": true
-          },
-          {
-            "text": "Sign B22 – cyclists may turn right at red",
-            "is_correct": false
-          },
-          {
-            "text": "Sign B9 – priority road",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Sign B23 is the complementary sign that allows cyclists to go straight at red."
-      },
-      "FR": {
-        "question": "Quel panneau permet aux cyclistes d'aller TOUT DROIT au rouge (en complément de B22) ?",
-        "choices": [
-          {
-            "text": "Panneau B23 – les cyclistes peuvent aller tout droit au rouge",
-            "is_correct": true
-          },
-          {
-            "text": "Panneau B22 – les cyclistes peuvent tourner à droite au rouge",
-            "is_correct": false
-          },
-          {
-            "text": "Panneau B9 – route prioritaire",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Le panneau B23 est le panneau complémentaire qui permet aux cyclistes d'aller tout droit au rouge."
-      },
-      "AR": {
-        "question": "أي لافتة تسمح للدراجين بالسير مباشرةً عند الأحمر (مكملةً للافتة B22)؟",
-        "choices": [
-          {
-            "text": "اللافتة B23 – الدراجون يمكنهم السير مباشرةً عند الأحمر",
-            "is_correct": true
-          },
-          {
-            "text": "اللافتة B22 – الدراجون يمكنهم الانعطاف يميناً عند الأحمر",
-            "is_correct": false
-          },
-          {
-            "text": "اللافتة B9 – طريق الأولوية",
-            "is_correct": false
-          }
-        ],
-        "explanation": "اللافتة B23 هي اللافتة التكميلية التي تسمح للدراجين بالسير مباشرةً عند الأحمر."
-      }
-    }
-  },
-  {
-    "question_id": "B22_Q12",
-    "type": "TRUE_OR_FALSE",
-    "difficulty": "EASY",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Waar of niet waar: Speed pedelecs vallen ook onder de uitzondering van bord B22.",
-        "choices": [
-          {
-            "text": "Waar – B22 geldt uitdrukkelijk voor zowel fietsers als speed pedelecs",
-            "is_correct": true
-          },
-          {
-            "text": "Niet waar – alleen gewone fietsen",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Waar. De volledige naam van B22 omschrijft zowel fietsers als speed pedelecs."
-      },
-      "EN": {
-        "question": "True or false: Speed pedelecs are also covered by the exception of sign B22.",
-        "choices": [
-          {
-            "text": "True – B22 explicitly applies to both cyclists and speed pedelecs",
-            "is_correct": true
-          },
-          {
-            "text": "False – only ordinary bicycles",
-            "is_correct": false
-          }
-        ],
-        "explanation": "True. The full description of B22 covers both cyclists and speed pedelecs."
-      },
-      "FR": {
-        "question": "Vrai ou faux : Les speed pedelecs sont également couverts par l'exception du panneau B22.",
-        "choices": [
-          {
-            "text": "Vrai – B22 s'applique explicitement aux cyclistes et aux speed pedelecs",
-            "is_correct": true
-          },
-          {
-            "text": "Faux – uniquement les vélos ordinaires",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Vrai. La description complète de B22 couvre à la fois les cyclistes et les speed pedelecs."
-      },
-      "AR": {
-        "question": "صحيح أم خاطئ: سبيد بيدليك يندرجون أيضاً تحت استثناء اللافتة B22.",
-        "choices": [
-          {
-            "text": "صحيح – B22 تنطبق صراحةً على كلٍّ من الدراجين وسبيد بيدليك",
-            "is_correct": true
-          },
-          {
-            "text": "خاطئ – فقط الدراجات العادية",
-            "is_correct": false
-          }
-        ],
-        "explanation": "صحيح. الوصف الكامل للافتة B22 يشمل كلاً من الدراجين وسبيد بيدليك."
-      }
-    }
-  },
-  {
-    "question_id": "B22_Q13",
-    "type": "WHAT_DOES_IT_MEAN",
-    "difficulty": "EASY",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Moet een fietser bij bord B22 absoluut stoppen voor het rode licht voordat hij rechtsaf slaat?",
-        "choices": [
-          {
-            "text": "Nee, als het veilig is mag hij rustig doorrijden en rechtsaf slaan – maar hij moet voorrang verlenen",
-            "is_correct": true
-          },
-          {
-            "text": "Ja, hij moet volledig stoppen voor de stopstreep",
-            "is_correct": false
-          },
-          {
-            "text": "Ja, hij moet altijd afstappen",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Bij B22 hoeft de fietser niet verplicht te stoppen maar hij moet altijd voorrang verlenen aan kruisend verkeer dat groen heeft."
-      },
-      "EN": {
-        "question": "Does a cyclist at sign B22 have to stop absolutely at the red light before turning right?",
-        "choices": [
-          {
-            "text": "No, if it is safe he may ride calmly and turn right – but he must give way",
-            "is_correct": true
-          },
-          {
-            "text": "Yes, he must stop completely at the stop line",
-            "is_correct": false
-          },
-          {
-            "text": "Yes, he must always dismount",
-            "is_correct": false
-          }
-        ],
-        "explanation": "With B22 the cyclist does not have to stop but must always give way to crossing traffic that has green."
-      },
-      "FR": {
-        "question": "Un cycliste au panneau B22 doit-il absolument s'arrêter au feu rouge avant de tourner à droite ?",
-        "choices": [
-          {
-            "text": "Non, s'il est sûr il peut rouler calmement et tourner à droite – mais il doit céder le passage",
-            "is_correct": true
-          },
-          {
-            "text": "Oui, il doit s'arrêter complètement à la ligne d'arrêt",
-            "is_correct": false
-          },
-          {
-            "text": "Oui, il doit toujours descendre de vélo",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Avec B22, le cycliste n'est pas obligé de s'arrêter mais doit toujours céder le passage au trafic qui croise et qui a le vert."
-      },
-      "AR": {
-        "question": "هل يجب على راكب الدراجة عند اللافتة B22 التوقف تماماً عند الضوء الأحمر قبل الانعطاف يميناً؟",
-        "choices": [
-          {
-            "text": "لا، إذا كان آمناً يمكنه القيادة بهدوء والانعطاف يميناً – لكن يجب إعطاء الأولوية",
-            "is_correct": true
-          },
-          {
-            "text": "نعم، يجب عليه التوقف الكامل عند خط التوقف",
-            "is_correct": false
-          },
-          {
-            "text": "نعم، يجب عليه دائماً النزول من الدراجة",
-            "is_correct": false
-          }
-        ],
-        "explanation": "مع B22 لا يتعين على راكب الدراجة التوقف لكن يجب دائماً إعطاء الأولوية لحركة المرور المتقاطعة التي لديها الأخضر."
-      }
-    }
-  },
-  {
-    "question_id": "B22_Q14",
-    "type": "IS_IT_ALLOWED",
-    "difficulty": "EASY",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "U bent fietser bij bord B22 en het licht staat op oranje. Mag u rechtsaf slaan?",
-        "choices": [
-          {
-            "text": "Nee, B22 geldt alleen bij rood; bij oranje geldt de normale regel (stoppen tenzij onmogelijk)",
-            "is_correct": false
-          },
-          {
-            "text": "Ja, bij oranje mag u ook rechtsaf slaan via B22",
-            "is_correct": true
-          }
-        ],
-        "explanation": "Nee. B22 is specifiek voor rood licht. Bij oranje geldt de normale regel: u moet stoppen tenzij dit onmogelijk is."
-      },
-      "EN": {
-        "question": "You are a cyclist at sign B22 and the light is amber. May you turn right?",
-        "choices": [
-          {
-            "text": "No, B22 only applies at red; at amber the normal rule applies (stop unless impossible)",
-            "is_correct": false
-          },
-          {
-            "text": "Yes, at amber you may also turn right via B22",
-            "is_correct": true
-          }
-        ],
-        "explanation": "No. B22 is specific to red. At amber the normal rule applies: you must stop unless it is impossible."
-      },
-      "FR": {
-        "question": "Vous êtes cycliste au panneau B22 et le feu est orange. Pouvez-vous tourner à droite ?",
-        "choices": [
-          {
-            "text": "Non, B22 s'applique uniquement au rouge ; à l'orange la règle normale s'applique (s'arrêter sauf si impossible)",
-            "is_correct": false
-          },
-          {
-            "text": "Oui, à l'orange vous pouvez aussi tourner à droite via B22",
-            "is_correct": true
-          }
-        ],
-        "explanation": "Non. B22 est spécifique au rouge. À l'orange la règle normale s'applique : vous devez vous arrêter sauf si c'est impossible."
-      },
-      "AR": {
-        "question": "أنت راكب دراجة عند اللافتة B22 والضوء أصفر. هل يمكنك الانعطاف يميناً؟",
-        "choices": [
-          {
-            "text": "لا، B22 تنطبق فقط عند الأحمر؛ عند الأصفر تنطبق القاعدة العادية (التوقف ما لم يكن مستحيلاً)",
-            "is_correct": false
-          },
-          {
-            "text": "نعم، عند الأصفر يمكنك أيضاً الانعطاف يميناً عبر B22",
-            "is_correct": true
-          }
-        ],
-        "explanation": "لا. B22 خاصة بالأحمر. عند الأصفر تنطبق القاعدة العادية: يجب عليك التوقف ما لم يكن مستحيلاً."
-      }
-    }
-  },
-  {
-    "question_id": "B22_Q15",
-    "type": "WHAT_SHOULD_YOU_DO",
-    "difficulty": "EASY",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Als fietser bij bord B22 wil u rechtsaf slaan bij rood. Er staan voetgangers op het zebrapad rechts. Wat doet u?",
-        "choices": [
-          {
-            "text": "Wacht totdat de voetgangers het zebrapad volledig hebben overgestoken voor u rechtsaf slaat",
-            "is_correct": true
-          },
-          {
-            "text": "Sla rechtsaf want B22 geeft u voorrang",
-            "is_correct": false
-          },
-          {
-            "text": "Claxonneer de voetgangers",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Voetgangers op een zebrapad hebben altijd voorrang op rijdend verkeer. U moet wachten, ook bij B22."
-      },
-      "EN": {
-        "question": "As a cyclist with sign B22 you want to turn right at red. There are pedestrians on the zebra crossing on the right. What do you do?",
-        "choices": [
-          {
-            "text": "Wait until the pedestrians have completely crossed before turning right",
-            "is_correct": true
-          },
-          {
-            "text": "Turn right as B22 gives you priority",
-            "is_correct": false
-          },
-          {
-            "text": "Honk at the pedestrians",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Pedestrians on a zebra crossing always have priority over moving vehicles. You must wait, even with B22."
-      },
-      "FR": {
-        "question": "En tant que cycliste avec le panneau B22, vous voulez tourner à droite au rouge. Il y a des piétons sur le passage piéton à droite. Que faites-vous ?",
-        "choices": [
-          {
-            "text": "Attendez que les piétons aient complètement traversé avant de tourner à droite",
-            "is_correct": true
-          },
-          {
-            "text": "Tournez à droite car B22 vous donne la priorité",
-            "is_correct": false
-          },
-          {
-            "text": "Klaxonnez les piétons",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Les piétons sur un passage piéton ont toujours la priorité sur les véhicules en mouvement. Vous devez attendre, même avec B22."
-      },
-      "AR": {
-        "question": "كراكب دراجة مع اللافتة B22 تريد الانعطاف يميناً عند الأحمر. هناك مشاة على ممر المشاة على اليمين. ماذا تفعل؟",
-        "choices": [
-          {
-            "text": "انتظر حتى يعبر المشاة بالكامل قبل الانعطاف يميناً",
-            "is_correct": true
-          },
-          {
-            "text": "انعطف يميناً لأن B22 تمنحك الأولوية",
-            "is_correct": false
-          },
-          {
-            "text": "أدق بوق للمشاة",
-            "is_correct": false
-          }
-        ],
-        "explanation": "المشاة على ممر المشاة دائماً لهم الأولوية على المركبات المتحركة. يجب عليك الانتظار، حتى مع B22."
-      }
-    }
-  },
-  {
-    "question_id": "B22_Q16",
-    "type": "WHAT_SHOULD_YOU_DO",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Bij bord B22 wilt u als fietser rechtsaf slaan bij rood. Er naderden een tram van links. Wat doet u?",
-        "choices": [
-          {
-            "text": "Wacht tot de tram voorbij is – trams hebben altijd absolute voorrang",
-            "is_correct": true
-          },
-          {
-            "text": "Sla rechtsaf voor de tram",
-            "is_correct": false
-          },
-          {
-            "text": "Geef lichtsignalen en sla af",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Trams hebben altijd absolute voorrang, ook boven B22-fietsers."
-      },
-      "EN": {
-        "question": "With sign B22 you want to turn right at red as a cyclist. A tram approaches from the left. What do you do?",
-        "choices": [
-          {
-            "text": "Wait for the tram to pass – trams always have absolute priority",
-            "is_correct": true
-          },
-          {
-            "text": "Turn right in front of the tram",
-            "is_correct": false
-          },
-          {
-            "text": "Give light signals and turn",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Trams always have absolute priority, even over B22 cyclists."
-      },
-      "FR": {
-        "question": "Avec le panneau B22 vous voulez tourner à droite au rouge en tant que cycliste. Un tram approche par la gauche. Que faites-vous ?",
-        "choices": [
-          {
-            "text": "Attendez que le tram soit passé – les trams ont toujours la priorité absolue",
-            "is_correct": true
-          },
-          {
-            "text": "Tournez à droite devant le tram",
-            "is_correct": false
-          },
-          {
-            "text": "Donnez des signaux lumineux et tournez",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Les trams ont toujours la priorité absolue, même sur les cyclistes B22."
-      },
-      "AR": {
-        "question": "مع اللافتة B22 تريد الانعطاف يميناً عند الأحمر كراكب دراجة. ترام يقترب من اليسار. ماذا تفعل؟",
-        "choices": [
-          {
-            "text": "انتظر حتى يمر الترام – الترامات دائماً لها أولوية مطلقة",
-            "is_correct": true
-          },
-          {
-            "text": "انعطف يميناً أمام الترام",
-            "is_correct": false
-          },
-          {
-            "text": "أعطِ إشارات ضوئية وانعطف",
-            "is_correct": false
-          }
-        ],
-        "explanation": "الترامات دائماً لها أولوية مطلقة، حتى على دراجي B22."
-      }
-    }
-  },
-  {
-    "question_id": "B22_Q17",
-    "type": "IS_IT_ALLOWED",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Mag een speed pedelec bij bord B22 rechtsaf slaan bij rood?",
-        "choices": [
-          {
-            "text": "Ja, speed pedelecs zijn expliciet vermeld in B22 en mogen rechtsaf slaan bij rood mits voorrang verlenen",
-            "is_correct": true
-          },
-          {
-            "text": "Nee, alleen gewone fietsers mogen dit",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Ja. B22 vermeldt uitdrukkelijk speed pedelecs naast fietsers. Beiden mogen rechtsaf slaan bij rood."
-      },
-      "EN": {
-        "question": "May a speed pedelec turn right at red with sign B22?",
-        "choices": [
-          {
-            "text": "Yes, speed pedelecs are explicitly mentioned in B22 and may turn right at red provided they give way",
-            "is_correct": true
-          },
-          {
-            "text": "No, only ordinary cyclists may do this",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Yes. B22 explicitly mentions speed pedelecs in addition to cyclists. Both may turn right at red."
-      },
-      "FR": {
-        "question": "Un speed pedelec peut-il tourner à droite au rouge avec le panneau B22 ?",
-        "choices": [
-          {
-            "text": "Oui, les speed pedelecs sont explicitement mentionnés dans B22 et peuvent tourner à droite au rouge à condition de céder le passage",
-            "is_correct": true
-          },
-          {
-            "text": "Non, seuls les cyclistes ordinaires peuvent le faire",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Oui. B22 mentionne explicitement les speed pedelecs en plus des cyclistes. Les deux peuvent tourner à droite au rouge."
-      },
-      "AR": {
-        "question": "هل يمكن لسبيد بيدليك الانعطاف يميناً عند الأحمر مع اللافتة B22؟",
-        "choices": [
-          {
-            "text": "نعم، سبيد بيدليك مذكورون صراحةً في B22 ويمكنهم الانعطاف يميناً عند الأحمر شريطة إعطاء الأولوية",
-            "is_correct": true
-          },
-          {
-            "text": "لا، فقط الدراجون العاديون يمكنهم ذلك",
-            "is_correct": false
-          }
-        ],
-        "explanation": "نعم. B22 تذكر صراحةً سبيد بيدليك بالإضافة إلى الدراجين. كلاهما يمكنه الانعطاف يميناً عند الأحمر."
-      }
-    }
-  },
-  {
-    "question_id": "B22_Q18",
-    "type": "TRUE_OR_FALSE",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Waar of niet waar: Bij bord B22 geldt de uitzondering ook voor elektrische steps (e-steps).",
-        "choices": [
-          {
-            "text": "Niet waar – B22 geldt specifiek voor fietsers en speed pedelecs, niet voor e-steps",
-            "is_correct": false
-          },
-          {
-            "text": "Waar – alle lichte elektrische voertuigen profiteren van B22",
-            "is_correct": true
-          }
-        ],
-        "explanation": "Niet waar. B22 is specifiek voor fietsers en speed pedelecs. Elektrische steps vallen hier niet onder."
-      },
-      "EN": {
-        "question": "True or false: With sign B22 the exception also applies to electric scooters (e-scooters).",
-        "choices": [
-          {
-            "text": "False – B22 specifically applies to cyclists and speed pedelecs, not e-scooters",
-            "is_correct": false
-          },
-          {
-            "text": "True – all light electric vehicles benefit from B22",
-            "is_correct": true
-          }
-        ],
-        "explanation": "False. B22 is specifically for cyclists and speed pedelecs. Electric scooters are not covered."
-      },
-      "FR": {
-        "question": "Vrai ou faux : Avec le panneau B22, l'exception s'applique aussi aux trottinettes électriques (e-trottinettes).",
-        "choices": [
-          {
-            "text": "Faux – B22 s'applique spécifiquement aux cyclistes et speed pedelecs, pas aux e-trottinettes",
-            "is_correct": false
-          },
-          {
-            "text": "Vrai – tous les véhicules légers électriques bénéficient de B22",
-            "is_correct": true
-          }
-        ],
-        "explanation": "Faux. B22 est spécifiquement pour les cyclistes et speed pedelecs. Les trottinettes électriques ne sont pas couvertes."
-      },
-      "AR": {
-        "question": "صحيح أم خاطئ: مع اللافتة B22 ينطبق الاستثناء أيضاً على السكوترات الكهربائية.",
-        "choices": [
-          {
-            "text": "خاطئ – B22 تنطبق تحديداً على الدراجين وسبيد بيدليك، وليس السكوترات الكهربائية",
-            "is_correct": false
-          },
-          {
-            "text": "صحيح – جميع المركبات الكهربائية الخفيفة تستفيد من B22",
-            "is_correct": true
-          }
-        ],
-        "explanation": "خاطئ. B22 خاصة بالدراجين وسبيد بيدليك. السكوترات الكهربائية غير مشمولة."
-      }
-    }
-  },
-  {
-    "question_id": "B22_Q19",
-    "type": "WHAT_IS_PROHIBITED",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Bij bord B22 slaat u als fietser rechtsaf bij rood. Wat is verboden?",
-        "choices": [
-          {
-            "text": "Voorrang nemen op een voetganger die het zebrapad al is ingestapt",
-            "is_correct": true
-          },
-          {
-            "text": "Voorzichtig rechtsaf slaan",
-            "is_correct": false
-          },
-          {
-            "text": "Controleren of het kruispunt vrij is",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Het is verboden voorrang te nemen op voetgangers die een zebrapad al zijn ingestapt. Dit geldt ook voor B22-fietsers."
-      },
-      "EN": {
-        "question": "With sign B22 you turn right at red as a cyclist. What is prohibited?",
-        "choices": [
-          {
-            "text": "Taking priority over a pedestrian who has already stepped onto the zebra crossing",
-            "is_correct": true
-          },
-          {
-            "text": "Carefully turning right",
-            "is_correct": false
-          },
-          {
-            "text": "Checking if the intersection is clear",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Taking priority over pedestrians who have already stepped onto a zebra crossing is prohibited. This also applies to B22 cyclists."
-      },
-      "FR": {
-        "question": "Avec le panneau B22, vous tournez à droite au rouge en tant que cycliste. Qu'est-il interdit ?",
-        "choices": [
-          {
-            "text": "Prendre la priorité sur un piéton qui est déjà engagé sur le passage piéton",
-            "is_correct": true
-          },
-          {
-            "text": "Tourner prudemment à droite",
-            "is_correct": false
-          },
-          {
-            "text": "Vérifier si le carrefour est libre",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Il est interdit de prendre la priorité sur les piétons déjà engagés sur un passage piéton. Cela s'applique aussi aux cyclistes B22."
-      },
-      "AR": {
-        "question": "مع اللافتة B22 تنعطف يميناً عند الأحمر كراكب دراجة. ما الذي يُحظر؟",
-        "choices": [
-          {
-            "text": "أخذ الأولوية على مشاة دخلوا ممر المشاة بالفعل",
-            "is_correct": true
-          },
-          {
-            "text": "الانعطاف يميناً بحذر",
-            "is_correct": false
-          },
-          {
-            "text": "التحقق مما إذا كان التقاطع خالياً",
-            "is_correct": false
-          }
-        ],
-        "explanation": "يُحظر أخذ الأولوية على مشاة دخلوا ممر المشاة بالفعل. ينطبق هذا أيضاً على دراجي B22."
-      }
-    }
-  },
-  {
-    "question_id": "B22_Q20",
-    "type": "WHAT_MUST_YOU_DO",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "U fietst bij bord B22. Terwijl u rechtsaf slaat bij rood schiet plotseling een kind de weg op. Wat doet u?",
-        "choices": [
-          {
-            "text": "Rem onmiddellijk en stop – de veiligheid van het kind gaat boven alles",
-            "is_correct": true
-          },
-          {
-            "text": "Rij door want u heeft het recht om te rijden via B22",
-            "is_correct": false
-          },
-          {
-            "text": "Claxonneer het kind",
-            "is_correct": false
-          }
-        ],
-        "explanation": "De veiligheid van kwetsbare weggebruikers gaat altijd boven uw rijrecht. Stop onmiddellijk."
-      },
-      "EN": {
-        "question": "You cycle with sign B22. While turning right at red a child suddenly darts onto the road. What do you do?",
-        "choices": [
-          {
-            "text": "Brake immediately and stop – the safety of the child comes above everything",
-            "is_correct": true
-          },
-          {
-            "text": "Ride on as you have the right to ride via B22",
-            "is_correct": false
-          },
-          {
-            "text": "Honk at the child",
-            "is_correct": false
-          }
-        ],
-        "explanation": "The safety of vulnerable road users always comes above your right of way. Stop immediately."
-      },
-      "FR": {
-        "question": "Vous cyclez avec le panneau B22. En tournant à droite au rouge, un enfant surgit soudainement sur la route. Que faites-vous ?",
-        "choices": [
-          {
-            "text": "Freinez immédiatement et arrêtez-vous – la sécurité de l'enfant passe avant tout",
-            "is_correct": true
-          },
-          {
-            "text": "Continuez car vous avez le droit de circuler via B22",
-            "is_correct": false
-          },
-          {
-            "text": "Klaxonnez l'enfant",
-            "is_correct": false
-          }
-        ],
-        "explanation": "La sécurité des usagers vulnérables de la route passe toujours avant votre droit de passage. Arrêtez-vous immédiatement."
-      },
-      "AR": {
-        "question": "تركب دراجة مع اللافتة B22. أثناء الانعطاف يميناً عند الأحمر يندفع طفل فجأة على الطريق. ماذا تفعل؟",
-        "choices": [
-          {
-            "text": "اكبح فوراً وتوقف – سلامة الطفل تعلو فوق كل شيء",
-            "is_correct": true
-          },
-          {
-            "text": "استمر في القيادة لأن لديك الحق في السير عبر B22",
-            "is_correct": false
-          },
-          {
-            "text": "أدق بوق للطفل",
-            "is_correct": false
-          }
-        ],
-        "explanation": "سلامة مستخدمي الطريق الضعفاء دائماً تعلو على حق المرور. توقف فوراً."
-      }
-    }
-  },
-  {
-    "question_id": "B22_Q21",
-    "type": "IS_IT_ALLOWED",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Mag een fietser bij B22 rechtsaf rijden zelfs als het verkeerslicht een rood fietsersignaal toont?",
-        "choices": [
-          {
-            "text": "Ja, B22 is een uitzondering op het rode fietsersignaal specifiek voor rechtsaf slaan",
-            "is_correct": true
-          },
-          {
-            "text": "Nee, een rood fietsersignaal is absoluut en mag niet worden genegeerd",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Ja. B22 is specifiek bedoeld als uitzondering op het stoplicht voor fietsers die rechtsaf willen slaan."
-      },
-      "EN": {
-        "question": "May a cyclist turn right with B22 even if the traffic signal shows a red cyclist signal?",
-        "choices": [
-          {
-            "text": "Yes, B22 is an exception to the red cyclist signal specifically for turning right",
-            "is_correct": true
-          },
-          {
-            "text": "No, a red cyclist signal is absolute and must not be ignored",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Yes. B22 is specifically intended as an exception to traffic signals for cyclists who want to turn right."
-      },
-      "FR": {
-        "question": "Un cycliste peut-il tourner à droite avec B22 même si le signal lumineux affiche un signal cycliste rouge ?",
-        "choices": [
-          {
-            "text": "Oui, B22 est une exception au signal cycliste rouge spécifiquement pour tourner à droite",
-            "is_correct": true
-          },
-          {
-            "text": "Non, un signal cycliste rouge est absolu et ne peut pas être ignoré",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Oui. B22 est spécifiquement conçu comme une exception aux feux de circulation pour les cyclistes qui veulent tourner à droite."
-      },
-      "AR": {
-        "question": "هل يمكن لراكب الدراجة الانعطاف يميناً مع B22 حتى لو كانت إشارة المرور تُظهر إشارة دراجة حمراء؟",
-        "choices": [
-          {
-            "text": "نعم، B22 استثناء على إشارة الدراجة الحمراء تحديداً للانعطاف يميناً",
-            "is_correct": true
-          },
-          {
-            "text": "لا، إشارة الدراجة الحمراء مطلقة ولا يمكن تجاهلها",
-            "is_correct": false
-          }
-        ],
-        "explanation": "نعم. B22 مصممة تحديداً كاستثناء على إشارات المرور للدراجين الذين يريدون الانعطاف يميناً."
-      }
-    }
-  },
-  {
-    "question_id": "B22_Q22",
-    "type": "WHAT_SHOULD_YOU_DO",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "U nadert als fietser een kruispunt met bord B22. Het rode licht staat al lang op rood maar er rijdt geen verkeer. Hoe rijdt u?",
-        "choices": [
-          {
-            "text": "Controleer opnieuw of het kruispunt echt vrij is, verleen voorrang indien nodig, dan rustig rechtsaf",
-            "is_correct": true
-          },
-          {
-            "text": "Rijd zo snel mogelijk rechtsaf om het kruispunt te verlaten",
-            "is_correct": false
-          },
-          {
-            "text": "Wacht toch op groen om zeker te zijn",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Ook al staat het licht lang op rood: controleer altijd goed voor u rechtsaf slaat bij B22. Rijgedrag: rustig, voorzichtig."
-      },
-      "EN": {
-        "question": "You approach as a cyclist an intersection with sign B22. The red light has been on for a long time but no traffic is moving. How do you ride?",
-        "choices": [
-          {
-            "text": "Check again that the intersection is truly clear, give way if necessary, then calmly turn right",
-            "is_correct": true
-          },
-          {
-            "text": "Drive as fast as possible to the right to leave the intersection",
-            "is_correct": false
-          },
-          {
-            "text": "Wait for green to be certain",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Even if the light has been red for a long time: always check carefully before turning right with B22. Riding style: calm, careful."
-      },
-      "FR": {
-        "question": "Vous approchez en tant que cycliste d'un carrefour avec le panneau B22. Le feu rouge est au rouge depuis longtemps mais aucun trafic ne circule. Comment roulez-vous ?",
-        "choices": [
-          {
-            "text": "Vérifiez encore que le carrefour est vraiment libre, cédez le passage si nécessaire, puis tournez calmement à droite",
-            "is_correct": true
-          },
-          {
-            "text": "Roulez aussi vite que possible à droite pour quitter le carrefour",
-            "is_correct": false
-          },
-          {
-            "text": "Attendez quand même le vert pour être certain",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Même si le feu est rouge depuis longtemps : vérifiez toujours attentivement avant de tourner à droite avec B22. Style de conduite : calme, prudent."
-      },
-      "AR": {
-        "question": "تقترب كراكب دراجة من تقاطع مع اللافتة B22. الضوء الأحمر مضى عليه وقت طويل لكن لا يوجد مرور. كيف تسير؟",
-        "choices": [
-          {
-            "text": "تحقق مرة أخرى من أن التقاطع خالٍ فعلاً، أعطِ الأولوية إذا لزم الأمر، ثم انعطف يميناً بهدوء",
-            "is_correct": true
-          },
-          {
-            "text": "سر بأسرع ما يمكن يميناً لمغادرة التقاطع",
-            "is_correct": false
-          },
-          {
-            "text": "انتظر الأخضر لتكون متأكداً",
-            "is_correct": false
-          }
-        ],
-        "explanation": "حتى لو كان الضوء أحمر منذ وقت طويل: تحقق دائماً جيداً قبل الانعطاف يميناً مع B22. أسلوب القيادة: هادئ ومتأنٍ."
-      }
-    }
-  },
-  {
-    "question_id": "B22_Q23",
-    "type": "TRUE_OR_FALSE",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Waar of niet waar: Bord B22 kan in combinatie staan met bord B23 op hetzelfde kruispunt.",
-        "choices": [
-          {
-            "text": "Waar – B22 (rechtsaf) en B23 (rechtdoor) kunnen samen worden gebruikt om fietsers meer vrijheden te geven",
-            "is_correct": true
-          },
-          {
-            "text": "Niet waar – ze staan nooit samen",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Waar. B22 en B23 kunnen samen worden geplaatst om fietsers zowel het rechtsaf slaan als rechtdoor rijden bij rood toe te staan."
-      },
-      "EN": {
-        "question": "True or false: Sign B22 can be used in combination with sign B23 at the same intersection.",
-        "choices": [
-          {
-            "text": "True – B22 (right) and B23 (straight) can be used together to give cyclists more freedom",
-            "is_correct": true
-          },
-          {
-            "text": "False – they are never placed together",
-            "is_correct": false
-          }
-        ],
-        "explanation": "True. B22 and B23 can be placed together to allow cyclists both to turn right and go straight at red."
-      },
-      "FR": {
-        "question": "Vrai ou faux : Le panneau B22 peut être utilisé en combinaison avec le panneau B23 au même carrefour.",
-        "choices": [
-          {
-            "text": "Vrai – B22 (droite) et B23 (tout droit) peuvent être utilisés ensemble pour donner plus de liberté aux cyclistes",
-            "is_correct": true
-          },
-          {
-            "text": "Faux – ils ne sont jamais placés ensemble",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Vrai. B22 et B23 peuvent être placés ensemble pour permettre aux cyclistes à la fois de tourner à droite et d'aller tout droit au rouge."
-      },
-      "AR": {
-        "question": "صحيح أم خاطئ: يمكن استخدام اللافتة B22 مع اللافتة B23 في نفس التقاطع.",
-        "choices": [
-          {
-            "text": "صحيح – B22 (يميناً) وB23 (مباشرةً) يمكن استخدامهما معاً لمنح الدراجين مزيداً من الحرية",
-            "is_correct": true
-          },
-          {
-            "text": "خاطئ – لا توضعان معاً أبداً",
-            "is_correct": false
-          }
-        ],
-        "explanation": "صحيح. يمكن وضع B22 وB23 معاً للسماح للدراجين بالانعطاف يميناً والسير مباشرةً عند الأحمر."
-      }
-    }
-  },
-  {
-    "question_id": "B22_Q24",
-    "type": "WHAT_IS_PROHIBITED",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Bij B22 slaat een fietser rechtsaf bij rood. Een politieagent geeft hem een stopteken. Wat moet de fietser doen?",
-        "choices": [
-          {
-            "text": "Stoppen – politie-instructies gaan boven alle verkeersregels inclusief B22",
-            "is_correct": true
-          },
-          {
-            "text": "Doorgaan want hij heeft het recht via B22",
-            "is_correct": false
-          },
-          {
-            "text": "Negeren en snel doorrijden",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Politie-instructies gaan altijd boven verkeersregels, inclusief B22. De fietser moet stoppen."
-      },
-      "EN": {
-        "question": "With B22 a cyclist turns right at red. A police officer gives them a stop signal. What must the cyclist do?",
-        "choices": [
-          {
-            "text": "Stop – police instructions take precedence over all traffic rules including B22",
-            "is_correct": true
-          },
-          {
-            "text": "Continue as they have the right via B22",
-            "is_correct": false
-          },
-          {
-            "text": "Ignore it and ride on quickly",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Police instructions always take precedence over traffic rules, including B22. The cyclist must stop."
-      },
-      "FR": {
-        "question": "Avec B22, un cycliste tourne à droite au rouge. Un agent de police lui fait signe de s'arrêter. Que doit faire le cycliste ?",
-        "choices": [
-          {
-            "text": "S'arrêter – les instructions de la police priment sur toutes les règles de circulation y compris B22",
-            "is_correct": true
-          },
-          {
-            "text": "Continuer car il a le droit via B22",
-            "is_correct": false
-          },
-          {
-            "text": "L'ignorer et continuer rapidement",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Les instructions de la police priment toujours sur les règles de circulation, y compris B22. Le cycliste doit s'arrêter."
-      },
-      "AR": {
-        "question": "مع B22 ينعطف دراج يميناً عند الأحمر. يعطيه ضابط شرطة إشارة توقف. ماذا يجب على الدراج فعله؟",
-        "choices": [
-          {
-            "text": "التوقف – تعليمات الشرطة تعلو على جميع قواعد المرور بما فيها B22",
-            "is_correct": true
-          },
-          {
-            "text": "الاستمرار لأن لديه الحق عبر B22",
-            "is_correct": false
-          },
-          {
-            "text": "تجاهلها والاستمرار بسرعة",
-            "is_correct": false
-          }
-        ],
-        "explanation": "تعليمات الشرطة دائماً تعلو على قواعد المرور، بما فيها B22. يجب على الدراج التوقف."
-      }
-    }
-  },
-  {
-    "question_id": "B22_Q25",
-    "type": "WHAT_MUST_YOU_DO",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "U nadert als fietser B22 bij nacht en het is slecht zicht. Hoe rijdt u rechtsaf bij rood?",
-        "choices": [
-          {
-            "text": "Extra langzaam, extra controleren aan alle kanten, en lichten aan – slechte zicht vereist meer voorzichtigheid",
-            "is_correct": true
-          },
-          {
-            "text": "Normaal snel rechtsaf, B22 maakt het veilig",
-            "is_correct": false
-          },
-          {
-            "text": "Wacht op groen want bij nacht is B22 niet geldig",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Bij slecht zicht moet u extra voorzichtig zijn en langzamer rijden. B22 ontslaat u niet van de plicht veilig te rijden."
-      },
-      "EN": {
-        "question": "You approach as a cyclist B22 at night and visibility is poor. How do you turn right at red?",
-        "choices": [
-          {
-            "text": "Extra slowly, extra checking in all directions, and lights on – poor visibility requires more caution",
-            "is_correct": true
-          },
-          {
-            "text": "Normally fast to the right, B22 makes it safe",
-            "is_correct": false
-          },
-          {
-            "text": "Wait for green as B22 is not valid at night",
-            "is_correct": false
-          }
-        ],
-        "explanation": "In poor visibility you must be extra careful and ride slower. B22 does not relieve you of the duty to ride safely."
-      },
-      "FR": {
-        "question": "Vous approchez en tant que cycliste B22 la nuit et la visibilité est mauvaise. Comment tournez-vous à droite au rouge ?",
-        "choices": [
-          {
-            "text": "Très lentement, vérifier extra dans toutes les directions, et feux allumés – la mauvaise visibilité exige plus de prudence",
-            "is_correct": true
-          },
-          {
-            "text": "Normalement vite à droite, B22 le rend sûr",
-            "is_correct": false
-          },
-          {
-            "text": "Attendez le vert car B22 n'est pas valable la nuit",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Par mauvaise visibilité, vous devez être extra prudent et rouler plus lentement. B22 ne vous dispense pas du devoir de rouler en sécurité."
-      },
-      "AR": {
-        "question": "تقترب كراكب دراجة من B22 ليلاً والرؤية ضعيفة. كيف تنعطف يميناً عند الأحمر؟",
-        "choices": [
-          {
-            "text": "ببطء شديد مع فحص إضافي في جميع الاتجاهات والأضواء مشغّلة – الرؤية الضعيفة تتطلب مزيداً من الحذر",
-            "is_correct": true
-          },
-          {
-            "text": "بسرعة عادية يميناً، B22 تجعلها آمنة",
-            "is_correct": false
-          },
-          {
-            "text": "انتظر الأخضر لأن B22 غير صالحة ليلاً",
-            "is_correct": false
-          }
-        ],
-        "explanation": "في الرؤية الضعيفة يجب أن تكون أكثر حذراً وتسير ببطء. B22 لا تعفيك من واجب القيادة الآمنة."
-      }
-    }
-  },
-  {
-    "question_id": "B22_Q26",
-    "type": "IS_IT_ALLOWED",
     "difficulty": "HARD",
     "is_critical": true,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Bij B22 rijdt een fietser rechtsaf bij rood maar raakt een auto die groen heeft. Wie is aansprakelijk?",
+        "question": "U bent een fietser met bord B22. Het licht staat op rood maar er is geen enkel voertuig of voetganger zichtbaar. Mag u rechtsaf slaan?",
         "choices": [
-          {
-            "text": "De fietser – hij had voorrang moeten verlenen aan het verkeer met groen licht",
-            "is_correct": false
-          },
-          {
-            "text": "De autobestuurder – hij reed met groen en had moeten uitwijken",
-            "is_correct": true
-          }
+          {"text": "Ja, bord B22 staat u toe rechtsaf te slaan bij rood als u voorrang verleent; als de weg vrij is, rijdt u door", "is_correct": true},
+          {"text": "Nee, u moet altijd wachten tot het licht groen is, ongeacht bord B22", "is_correct": false}
         ],
-        "explanation": "De fietser. Bij B22 moet u altijd voorrang verlenen aan verkeer met groen. Als u niet voorrang verleent en er een botsing is, bent u aansprakelijk."
+        "explanation": "Bord B22 geeft u het recht rechtsaf te slaan bij rood. Als er geen voertuigen of voetgangers zijn waaraan u voorrang moet verlenen, mag u doorrijden."
       },
       "EN": {
-        "question": "With B22 a cyclist turns right at red but hits a car that has green. Who is liable?",
+        "question": "You are a cyclist with sign B22. The light is red but no vehicle or pedestrian is visible. May you turn right?",
         "choices": [
-          {
-            "text": "The cyclist – they should have given way to traffic with a green light",
-            "is_correct": false
-          },
-          {
-            "text": "The car driver – they rode with green and should have swerved",
-            "is_correct": true
-          }
+          {"text": "Yes, sign B22 allows you to turn right at red as long as you give way; if the road is clear, you continue", "is_correct": true},
+          {"text": "No, you must always wait for the green light regardless of sign B22", "is_correct": false}
         ],
-        "explanation": "The cyclist. With B22 you must always give way to traffic with green. If you fail to give way and a collision occurs, you are liable."
+        "explanation": "Sign B22 gives you the right to turn right at red. If there are no vehicles or pedestrians to give way to, you may proceed."
       },
       "FR": {
-        "question": "Avec B22, un cycliste tourne à droite au rouge mais heurte une voiture qui a le vert. Qui est responsable ?",
+        "question": "Vous etes cycliste avec le panneau B22. Le feu est rouge mais aucun vehicule ou pieton n est visible. Pouvez-vous tourner a droite ?",
         "choices": [
-          {
-            "text": "Le cycliste – il aurait dû céder le passage au trafic ayant le feu vert",
-            "is_correct": false
-          },
-          {
-            "text": "Le conducteur de la voiture – il roulait avec le feu vert et aurait dû s'écarter",
-            "is_correct": true
-          }
+          {"text": "Oui, le panneau B22 vous permet de tourner a droite au rouge tant que vous cedez le passage ; si la voie est libre, vous passez", "is_correct": true},
+          {"text": "Non, vous devez toujours attendre le feu vert independamment du panneau B22", "is_correct": false}
         ],
-        "explanation": "Le cycliste. Avec B22, vous devez toujours céder le passage au trafic ayant le vert. Si vous ne cédez pas le passage et qu'il y a une collision, vous en êtes responsable."
+        "explanation": "Le panneau B22 vous donne le droit de tourner a droite au rouge. S il n y a aucun vehicule ou pieton a qui ceder le passage, vous pouvez passer."
       },
       "AR": {
-        "question": "مع B22 ينعطف دراج يميناً عند الأحمر لكنه يصطدم بسيارة لديها الأخضر. من المسؤول؟",
+        "question": "Ø§Ù†Øª Ø±Ø§ÙƒØ¨ Ø¯Ø±Ø§Ø¬Ø© Ù…Ø¹ Ù„Ø§ÙØªØ© B22. Ø§Ù„Ø¶ÙˆØ¡ Ø§Ø­Ù…Ø± ÙˆÙ„Ø§ ØªÙØ±Ù‰ Ø§ÙŠ Ù…Ø±ÙƒØ¨Ø© Ø§Ùˆ Ù…Ø´Ø§Ù‡. Ù‡Ù„ ÙŠØ¬ÙˆØ² Ø§Ù„Ø§Ù†Ø¹Ø·Ø§Ù ÙŠÙ…ÙŠÙ†Ø§ØŸ",
         "choices": [
-          {
-            "text": "الدراج – كان يجب عليه إعطاء الأولوية للمرور ذي الضوء الأخضر",
-            "is_correct": false
-          },
-          {
-            "text": "سائق السيارة – كان يسير بالأخضر وكان يجب عليه الانحراف",
-            "is_correct": true
-          }
+          {"text": "Ù†Ø¹Ù…ØŒ Ù„Ø§ÙØªØ© B22 ØªØ³Ù…Ø­ Ù„Ùƒ Ø¨Ø§Ù„Ø§Ù†Ø¹Ø·Ø§Ù ÙŠÙ…ÙŠÙ†Ø§ Ø¹Ù†Ø¯ Ø§Ù„Ø§Ø­Ù…Ø± Ø·Ø§Ù„Ù…Ø§ Ø§Ø¹Ø·ÙŠØª Ø§Ù„Ø§ÙˆÙ„ÙˆÙŠØ©Ø› Ø§Ø°Ø§ ÙƒØ§Ù† Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø®Ø§Ù„ÙŠØ§ ØªÙ…Ø¶ÙŠ", "is_correct": true},
+          {"text": "Ù„Ø§ØŒ ÙŠØ¬Ø¨ Ø¯Ø§Ø¦Ù…Ø§ Ø§Ù†ØªØ¸Ø§Ø± Ø§Ù„Ø¶ÙˆØ¡ Ø§Ù„Ø§Ø®Ø¶Ø± Ø¨ØºØ¶ Ø§Ù„Ù†Ø¸Ø± Ø¹Ù† Ù„Ø§ÙØªØ© B22", "is_correct": false}
         ],
-        "explanation": "الدراج. مع B22 يجب عليك دائماً إعطاء الأولوية للمرور الذي لديه الأخضر. إذا لم تعطِ الأولوية وحدث اصطدام، أنت المسؤول."
-      }
-    }
-  },
-  {
-    "question_id": "B22_Q27",
-    "type": "WHAT_MUST_YOU_DO",
-    "difficulty": "HARD",
-    "is_critical": true,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Bij bord B22 slaat u rechtsaf bij rood. Er rijdt een fietskoerierster met hoge snelheid van rechtsaf. Wat doet u?",
-        "choices": [
-          {
-            "text": "Stop of vertraag en laat de koerierster passeren – alle verkeer met groen gaat voor",
-            "is_correct": true
-          },
-          {
-            "text": "Rij door want B22 geeft u recht op de weg",
-            "is_correct": false
-          },
-          {
-            "text": "Rij sneller om de koerierster voor te zijn",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Alle verkeer dat groen heeft gaat voor bij B22, inclusief fietsers. Vertraag of stop."
-      },
-      "EN": {
-        "question": "With sign B22 you turn right at red. A cycle courier is riding fast from the right. What do you do?",
-        "choices": [
-          {
-            "text": "Stop or slow down and let the courier pass – all traffic with green comes first",
-            "is_correct": true
-          },
-          {
-            "text": "Ride on as B22 gives you right of way",
-            "is_correct": false
-          },
-          {
-            "text": "Ride faster to get ahead of the courier",
-            "is_correct": false
-          }
-        ],
-        "explanation": "All traffic with green has priority at B22, including cyclists. Slow down or stop."
-      },
-      "FR": {
-        "question": "Avec le panneau B22, vous tournez à droite au rouge. Une cycliste coursière roule rapidement depuis la droite. Que faites-vous ?",
-        "choices": [
-          {
-            "text": "Arrêtez ou ralentissez et laissez la coursière passer – tout trafic ayant le vert passe en premier",
-            "is_correct": true
-          },
-          {
-            "text": "Continuez car B22 vous donne la priorité",
-            "is_correct": false
-          },
-          {
-            "text": "Roulez plus vite pour devancer la coursière",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Tout trafic ayant le vert a la priorité au B22, y compris les cyclistes. Ralentissez ou arrêtez-vous."
-      },
-      "AR": {
-        "question": "مع اللافتة B22 تنعطف يميناً عند الأحمر. ساعي دراجة يسير بسرعة من اليمين. ماذا تفعل؟",
-        "choices": [
-          {
-            "text": "توقف أو أبطئ والسماح للساعي بالمرور – جميع المرور ذي الأخضر له الأولوية",
-            "is_correct": true
-          },
-          {
-            "text": "استمر لأن B22 تمنحك حق المرور",
-            "is_correct": false
-          },
-          {
-            "text": "سر بشكل أسرع للتقدم على الساعي",
-            "is_correct": false
-          }
-        ],
-        "explanation": "جميع المرور الذي لديه الأخضر له الأولوية في B22، بما في ذلك الدراجون. أبطئ أو توقف."
-      }
-    }
-  },
-  {
-    "question_id": "B22_Q28",
-    "type": "TRUE_OR_FALSE",
-    "difficulty": "HARD",
-    "is_critical": true,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Waar of niet waar: Als er geen bord B22 staat bij een verkeerslicht, mag een fietser toch rechtsaf bij rood als het voorzichtig en veilig is.",
-        "choices": [
-          {
-            "text": "Niet waar – zonder bord B22 geldt voor iedereen het rode licht als stop, inclusief fietsers",
-            "is_correct": false
-          },
-          {
-            "text": "Waar – fietsers mogen altijd voorzichtig rechtsaf bij rood",
-            "is_correct": true
-          }
-        ],
-        "explanation": "Niet waar. Zonder bord B22 is het rode licht voor iedereen een absoluut stopsignaal, inclusief fietsers."
-      },
-      "EN": {
-        "question": "True or false: If there is no sign B22 at a traffic light, a cyclist may still turn right at red if it is done carefully and safely.",
-        "choices": [
-          {
-            "text": "False – without sign B22 the red light means stop for everyone including cyclists",
-            "is_correct": false
-          },
-          {
-            "text": "True – cyclists may always carefully turn right at red",
-            "is_correct": true
-          }
-        ],
-        "explanation": "False. Without sign B22 the red light is an absolute stop signal for everyone, including cyclists."
-      },
-      "FR": {
-        "question": "Vrai ou faux : S'il n'y a pas de panneau B22 à un feu de circulation, un cycliste peut quand même tourner à droite au rouge si c'est fait prudemment et en toute sécurité.",
-        "choices": [
-          {
-            "text": "Faux – sans panneau B22, le feu rouge signifie arrêt pour tout le monde y compris les cyclistes",
-            "is_correct": false
-          },
-          {
-            "text": "Vrai – les cyclistes peuvent toujours tourner prudemment à droite au rouge",
-            "is_correct": true
-          }
-        ],
-        "explanation": "Faux. Sans panneau B22, le feu rouge est un signal d'arrêt absolu pour tout le monde, y compris les cyclistes."
-      },
-      "AR": {
-        "question": "صحيح أم خاطئ: إذا لم تكن هناك لافتة B22 عند إشارة المرور، يمكن للدراج الانعطاف يميناً عند الأحمر إذا تم ذلك بحذر وأمان.",
-        "choices": [
-          {
-            "text": "خاطئ – بدون لافتة B22 الضوء الأحمر يعني التوقف للجميع بما فيهم الدراجون",
-            "is_correct": false
-          },
-          {
-            "text": "صحيح – الدراجون يمكنهم دائماً الانعطاف يميناً بحذر عند الأحمر",
-            "is_correct": true
-          }
-        ],
-        "explanation": "خاطئ. بدون لافتة B22 الضوء الأحمر إشارة توقف مطلقة للجميع، بما فيهم الدراجون."
-      }
-    }
-  },
-  {
-    "question_id": "B22_Q29",
-    "type": "WHAT_IS_PROHIBITED",
-    "difficulty": "HARD",
-    "is_critical": true,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Bij bord B22 slaat u rechtsaf bij rood en bijna raakt u een blinde voetganger. Wat is het verboden gedrag?",
-        "choices": [
-          {
-            "text": "De voetganger de weg blokkeren of niet voldoende uitwijken zodat hij gevaar loopt",
-            "is_correct": true
-          },
-          {
-            "text": "Uw snelheid verminderen omdat u de voetganger opmerkt",
-            "is_correct": false
-          },
-          {
-            "text": "Volledig stoppen voor de veiligheid van de voetganger",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Het is verboden blinde of kwetsbare voetgangers in gevaar te brengen. U moet altijd stoppen of voldoende uitwijken."
-      },
-      "EN": {
-        "question": "With sign B22 you turn right at red and nearly hit a blind pedestrian. What is the prohibited behaviour?",
-        "choices": [
-          {
-            "text": "Blocking the pedestrian's path or not giving sufficient way so they are in danger",
-            "is_correct": true
-          },
-          {
-            "text": "Reducing your speed because you notice the pedestrian",
-            "is_correct": false
-          },
-          {
-            "text": "Stopping completely for the pedestrian's safety",
-            "is_correct": false
-          }
-        ],
-        "explanation": "It is prohibited to endanger blind or vulnerable pedestrians. You must always stop or give sufficient way."
-      },
-      "FR": {
-        "question": "Avec le panneau B22, vous tournez à droite au rouge et vous manquez presque de heurter un piéton aveugle. Quel est le comportement interdit ?",
-        "choices": [
-          {
-            "text": "Bloquer le chemin du piéton ou ne pas s'écarter suffisamment pour qu'il soit en danger",
-            "is_correct": true
-          },
-          {
-            "text": "Réduire votre vitesse parce que vous remarquez le piéton",
-            "is_correct": false
-          },
-          {
-            "text": "S'arrêter complètement pour la sécurité du piéton",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Il est interdit de mettre en danger les piétons aveugles ou vulnérables. Vous devez toujours vous arrêter ou vous écarter suffisamment."
-      },
-      "AR": {
-        "question": "مع اللافتة B22 تنعطف يميناً عند الأحمر وتكاد تصطدم بمشاة أعمى. ما هو السلوك المحظور؟",
-        "choices": [
-          {
-            "text": "سد طريق المشاة أو عدم الانحراف بما يكفي بحيث يتعرض للخطر",
-            "is_correct": true
-          },
-          {
-            "text": "تقليل سرعتك لأنك لاحظت المشاة",
-            "is_correct": false
-          },
-          {
-            "text": "التوقف الكامل لأمان المشاة",
-            "is_correct": false
-          }
-        ],
-        "explanation": "يُحظر تعريض المشاة العميان أو الضعفاء للخطر. يجب عليك دائماً التوقف أو الانحراف بما يكفي."
-      }
-    }
-  },
-  {
-    "question_id": "B22_Q30",
-    "type": "WHAT_SHOULD_YOU_DO",
-    "difficulty": "HARD",
-    "is_critical": true,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Bij B22 staat u als fietser klaar om rechtsaf te slaan bij rood. Er naderden tegelijk: een fiets van links met groen, een voetganger op het zebrapad en een tram van rechts. Wat doet u?",
-        "choices": [
-          {
-            "text": "Wacht totdat alle drie de conflicten zijn opgelost voor u veilig rechtsaf kunt slaan",
-            "is_correct": true
-          },
-          {
-            "text": "Rij snel rechtsaf voor iedereen er is",
-            "is_correct": false
-          },
-          {
-            "text": "Rij langs de tram want die staat het verst weg",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Meerdere conflicten tegelijk: wacht geduldig tot het kruispunt volledig vrij is. Veiligheid gaat boven snelheid."
-      },
-      "EN": {
-        "question": "With B22 you are ready as a cyclist to turn right at red. Approaching simultaneously: a bicycle from the left with green, a pedestrian on the zebra crossing and a tram from the right. What do you do?",
-        "choices": [
-          {
-            "text": "Wait until all three conflicts are resolved before you can safely turn right",
-            "is_correct": true
-          },
-          {
-            "text": "Quickly turn right before everyone gets there",
-            "is_correct": false
-          },
-          {
-            "text": "Ride past the tram as it is furthest away",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Multiple conflicts simultaneously: wait patiently until the intersection is completely clear. Safety comes before speed."
-      },
-      "FR": {
-        "question": "Avec B22, vous êtes prêt en tant que cycliste à tourner à droite au rouge. Approchant simultanément : un vélo par la gauche avec le vert, un piéton sur le passage piéton et un tram par la droite. Que faites-vous ?",
-        "choices": [
-          {
-            "text": "Attendez que les trois conflits soient résolus avant de pouvoir tourner à droite en toute sécurité",
-            "is_correct": true
-          },
-          {
-            "text": "Tournez rapidement à droite avant que tout le monde arrive",
-            "is_correct": false
-          },
-          {
-            "text": "Roulez devant le tram car il est le plus loin",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Plusieurs conflits simultanément : attendez patiemment que le carrefour soit complètement libre. La sécurité passe avant la vitesse."
-      },
-      "AR": {
-        "question": "مع B22 أنت مستعد كراكب دراجة للانعطاف يميناً عند الأحمر. تقترب في نفس الوقت: دراجة من اليسار لديها الأخضر، مشاة على ممر المشاة، وترام من اليمين. ماذا تفعل؟",
-        "choices": [
-          {
-            "text": "انتظر حتى تُحل جميع التعارضات الثلاثة قبل أن تتمكن من الانعطاف يميناً بأمان",
-            "is_correct": true
-          },
-          {
-            "text": "انعطف يميناً بسرعة قبل وصول الجميع",
-            "is_correct": false
-          },
-          {
-            "text": "سر بجانب الترام لأنه الأبعد",
-            "is_correct": false
-          }
-        ],
-        "explanation": "تعارضات متعددة في نفس الوقت: انتظر بصبر حتى يكون التقاطع خالياً تماماً. السلامة تعلو على السرعة."
+        "explanation": "ØªÙ…Ù†Ø­Ùƒ Ù„Ø§ÙØªØ© B22 Ø­Ù‚ Ø§Ù„Ø§Ù†Ø¹Ø·Ø§Ù ÙŠÙ…ÙŠÙ†Ø§ Ø¹Ù†Ø¯ Ø§Ù„Ø§Ø­Ù…Ø±. Ø§Ø°Ø§ Ù„Ù… ØªÙƒÙ† Ù‡Ù†Ø§Ùƒ Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ùˆ Ù…Ø´Ø§Ø© ØªØ¹Ø·ÙŠÙ‡Ù… Ø§Ù„Ø§ÙˆÙ„ÙˆÙŠØ© ÙŠÙ…ÙƒÙ†Ùƒ Ø§Ù„Ù…Ø¶ÙŠ."
       }
     }
   }

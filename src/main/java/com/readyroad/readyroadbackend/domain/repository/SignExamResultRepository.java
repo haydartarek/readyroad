@@ -7,52 +7,35 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-import java.util.Optional;
 
 @Repository
 public interface SignExamResultRepository extends JpaRepository<SignExamResult, Long> {
 
-    /** Check if user has passed exam 1 for a given sign (used to unlock exam 2). */
-    boolean existsByUserIdAndSignCodeAndExamNumberAndPassedTrue(
-            Long userId, String signCode, Integer examNumber);
+        /** Has the user ever attempted the exam for this sign? */
+        boolean existsByUserIdAndSignCode(Long userId, String signCode);
 
-    /** Has user ever attempted a specific exam for this sign? */
-    boolean existsByUserIdAndSignCodeAndExamNumber(Long userId, String signCode, Integer examNumber);
+        /** Has the user passed the exam for this sign at least once? */
+        boolean existsByUserIdAndSignCodeAndPassedTrue(Long userId, String signCode);
 
-    /** Get all results for a specific user+sign+exam combo, best score first. */
-    @Query("SELECT r FROM SignExamResult r " +
-           "WHERE r.userId = :userId AND r.signCode = :signCode AND r.examNumber = :examNumber " +
-           "ORDER BY r.scorePct DESC, r.completedAt DESC")
-    List<SignExamResult> findByUserIdAndSignCodeAndExamNumber(
-            @Param("userId") Long userId,
-            @Param("signCode") String signCode,
-            @Param("examNumber") Integer examNumber);
+        /** Return all results for a user on a specific sign, latest first. */
+        List<SignExamResult> findByUserIdAndSignCodeOrderByCompletedAtDesc(
+                        Long userId, String signCode);
 
-    /** Return the latest attempt for a user+sign+exam. */
-    Optional<SignExamResult> findTopByUserIdAndSignCodeAndExamNumberOrderByCompletedAtDesc(
-            Long userId, String signCode, Integer examNumber);
+        /** Get the best score for a user+sign. */
+        @Query("SELECT MAX(r.scorePct) FROM SignExamResult r " +
+                        "WHERE r.userId = :userId AND r.signCode = :signCode")
+        Double findBestScorePctByUserIdAndSignCode(
+                        @Param("userId") Long userId,
+                        @Param("signCode") String signCode);
 
-    /** Return all results for a user on a specific sign (both exams). */
-    List<SignExamResult> findByUserIdAndSignCodeOrderByCompletedAtDesc(
-            Long userId, String signCode);
+        /** Count all attempts for a user+sign. */
+        long countByUserIdAndSignCode(Long userId, String signCode);
 
-    /** Get best score for a user+sign+exam. */
-    @Query("SELECT MAX(r.scorePct) FROM SignExamResult r " +
-           "WHERE r.userId = :userId AND r.signCode = :signCode AND r.examNumber = :examNumber")
-    Double findBestScorePctByUserIdAndSignCodeAndExamNumber(
-            @Param("userId") Long userId,
-            @Param("signCode") String signCode,
-            @Param("examNumber") Integer examNumber);
+        /** How many distinct signs the user has passed the exam for. */
+        @Query("SELECT COUNT(DISTINCT r.signCode) FROM SignExamResult r " +
+                        "WHERE r.userId = :userId AND r.passed = true")
+        long countDistinctSignsWithPassedExam(@Param("userId") Long userId);
 
-    /** Count attempts for a user+sign+exam. */
-    long countByUserIdAndSignCodeAndExamNumber(Long userId, String signCode, Integer examNumber);
-
-    /** Summary: how many signs the user has passed exam 1 for. */
-    @Query("SELECT COUNT(DISTINCT r.signCode) FROM SignExamResult r " +
-           "WHERE r.userId = :userId AND r.examNumber = 1 AND r.passed = true")
-    long countDistinctSignsWithPassedExam1(@Param("userId") Long userId);
-
-    /** Total sign exam submissions for a user (all exam numbers). */
-    long countByUserId(Long userId);
+        /** Total sign exam submissions for a user. */
+        long countByUserId(Long userId);
 }
-

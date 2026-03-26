@@ -495,7 +495,8 @@ public class ExamService {
         }
 
         // ── History: Record exam answers in user_question_history ─────────────
-        // Required for study streak calculation and SmartQuiz 24h cooldown (Law #1).
+        // Required for study streak calculation and question-history freshness
+        // tracking.
         try {
             LocalDateTime now_ldt2 = LocalDateTime.now();
             for (ExamSimulationAnswer answer : answers) {
@@ -901,10 +902,6 @@ public class ExamService {
                             .selectedOptionText(selectedOption.getOptionTextEn())
                             .correctOptionId(correctOption.getId())
                             .correctOptionText(correctOption.getOptionTextEn())
-                            .explanationEn(question.getExplanationEn())
-                            .explanationAr(question.getExplanationAr())
-                            .explanationNl(question.getExplanationNl())
-                            .explanationFr(question.getExplanationFr())
                             .categoryName(
                                     question.getCategory() != null ? question.getCategory().getNameEn() : "Unknown")
                             // Production enhancements (v2.0)
@@ -953,10 +950,6 @@ public class ExamService {
                             .selectedOptionText(selectedOption.getOptionTextEn())
                             .correctOptionId(correctOption.getId())
                             .correctOptionText(correctOption.getOptionTextEn())
-                            .explanationEn(question.getExplanationEn())
-                            .explanationAr(question.getExplanationAr())
-                            .explanationNl(question.getExplanationNl())
-                            .explanationFr(question.getExplanationFr())
                             .categoryName(
                                     question.getCategory() != null ? question.getCategory().getNameEn() : "Unknown")
                             .categoryCode(question.getCategory() != null ? question.getCategory().getCode() : null)

@@ -3,10 +3,11 @@ package com.readyroad.readyroadbackend.integration;
 import com.readyroad.readyroadbackend.domain.entity.Category;
 import com.readyroad.readyroadbackend.domain.entity.QuizAnswerOption;
 import com.readyroad.readyroadbackend.domain.entity.QuizQuestion;
-import com.readyroad.readyroadbackend.domain.entity.TrafficSign;
+import com.readyroad.readyroadbackend.domain.entity.RoadSign;
+import com.readyroad.readyroadbackend.domain.enums.SignCategory;
 import com.readyroad.readyroadbackend.domain.repository.CategoryRepository;
 import com.readyroad.readyroadbackend.domain.repository.QuizQuestionRepository;
-import com.readyroad.readyroadbackend.domain.repository.TrafficSignRepository;
+import com.readyroad.readyroadbackend.domain.repository.RoadSignRepository;
 import com.readyroad.readyroadbackend.exception.BelgianComplianceException;
 import com.readyroad.readyroadbackend.exception.QuestionNotFoundException;
 import com.readyroad.readyroadbackend.service.QuestionPublishService;
@@ -42,13 +43,13 @@ public class BelgianComplianceGatesIntegrationTest {
     private QuizQuestionRepository questionRepository;
 
     @Autowired
-    private TrafficSignRepository trafficSignRepository;
+    private RoadSignRepository RoadSignRepository;
 
     @Autowired
     private CategoryRepository categoryRepository;
 
     private Category testCategory;
-    private TrafficSign testSign;
+    private RoadSign testSign;
 
     @BeforeEach
     void setUp() {
@@ -64,15 +65,16 @@ public class BelgianComplianceGatesIntegrationTest {
         testCategory = categoryRepository.save(testCategory);
 
         // Create test traffic sign
-        testSign = new TrafficSign();
+        testSign = new RoadSign();
         testSign.setSignCode("A1");
+        testSign.setNormalizedSignCode("a1");
         testSign.setNameEn("Danger Ahead");
         testSign.setNameAr("خطر أمامك");
         testSign.setNameNl("Gevaar vooruit");
         testSign.setNameFr("Danger devant");
-        testSign.setCategory(testCategory);
+        testSign.setCategory(SignCategory.DANGER);
         testSign.setIsActive(true);
-        testSign = trafficSignRepository.save(testSign);
+        testSign = RoadSignRepository.save(testSign);
     }
 
     // ==========================================
@@ -84,7 +86,7 @@ public class BelgianComplianceGatesIntegrationTest {
     void cannotPublishWithoutTrafficSign() {
         // Given: A valid question WITHOUT traffic sign
         QuizQuestion question = createValidQuestion();
-        question.setTrafficSign(null); // Remove traffic sign
+        question.setRoadSign(null); // Remove traffic sign
         question = questionRepository.save(question);
 
         Long questionId = question.getId();
@@ -101,7 +103,7 @@ public class BelgianComplianceGatesIntegrationTest {
     void canPublishWithTrafficSign() {
         // Given: A valid question WITH traffic sign
         QuizQuestion question = createValidQuestion();
-        question.setTrafficSign(testSign);
+        question.setRoadSign(testSign);
         question = questionRepository.save(question);
 
         // When: Publishing
@@ -111,7 +113,7 @@ public class BelgianComplianceGatesIntegrationTest {
         QuizQuestion published = questionRepository.findById(question.getId()).orElseThrow();
         assertThat(published.getStatus()).isEqualTo(QuizQuestion.QuestionStatus.PUBLISHED);
         assertThat(published.getPublishedAt()).isNotNull();
-        assertThat(published.getTrafficSign()).isNotNull();
+        assertThat(published.getRoadSign()).isNotNull();
     }
 
     @Test
@@ -119,7 +121,7 @@ public class BelgianComplianceGatesIntegrationTest {
     void trafficSignLinkageIsStable() {
         // Given: A published question
         QuizQuestion question = createValidQuestion();
-        question.setTrafficSign(testSign);
+        question.setRoadSign(testSign);
         question = questionRepository.save(question);
         publishService.publishQuestion(question.getId());
 
@@ -131,8 +133,8 @@ public class BelgianComplianceGatesIntegrationTest {
         QuizQuestion fetch2 = questionRepository.findById(questionId).orElseThrow();
 
         // Then: Same traffic sign every time
-        assertThat(fetch1.getTrafficSign().getId()).isEqualTo(expectedSignId);
-        assertThat(fetch2.getTrafficSign().getId()).isEqualTo(expectedSignId);
+        assertThat(fetch1.getRoadSign().getId()).isEqualTo(expectedSignId);
+        assertThat(fetch2.getRoadSign().getId()).isEqualTo(expectedSignId);
     }
 
     // ==========================================
@@ -204,7 +206,7 @@ public class BelgianComplianceGatesIntegrationTest {
     void canPublishReturnsFalseForInvalid() {
         // Given: A question without traffic sign
         QuizQuestion question = createValidQuestion();
-        question.setTrafficSign(null);
+        question.setRoadSign(null);
         question = questionRepository.save(question);
 
         // When: Checking if publishable
@@ -237,7 +239,7 @@ public class BelgianComplianceGatesIntegrationTest {
         question = questionRepository.save(question);
 
         // Now violate publish rules
-        question.setTrafficSign(null); // Missing sign
+        question.setRoadSign(null); // Missing sign
         question.setQuestionNl(null);  // Missing NL
         question = questionRepository.save(question);
 
@@ -260,7 +262,7 @@ public class BelgianComplianceGatesIntegrationTest {
         question.setQuestionType(QuizQuestion.QuestionType.MULTIPLE_CHOICE);
         question.setDifficultyLevel(QuizQuestion.DifficultyLevel.MEDIUM);
         question.setCategory(testCategory);
-        question.setTrafficSign(testSign);
+        question.setRoadSign(testSign);
         question.setIsActive(true);
         question.setStatus(QuizQuestion.QuestionStatus.DRAFT);
 

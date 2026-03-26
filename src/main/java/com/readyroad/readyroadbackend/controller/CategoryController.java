@@ -44,7 +44,7 @@ public class CategoryController {
     public ResponseEntity<List<CategoryResponse>> getAllCategories() {
         log.debug("REST request to get all active categories");
         
-        List<CategoryResponse> categories = categoryService.getAllActiveCategories();
+        List<CategoryResponse> categories = categoryService.getAllPublicTrafficSignCategories();
         
         log.debug("Returning {} categories", categories.size());
         return ResponseEntity.ok(categories);
@@ -74,7 +74,7 @@ public class CategoryController {
     ) {
         log.debug("REST request to get category with code: {}", code);
         
-        CategoryResponse category = categoryService.getCategoryByCode(code.toUpperCase());
+        CategoryResponse category = categoryService.getPublicTrafficSignCategoryByCode(code.toUpperCase());
         
         log.debug("Category found successfully: {}", code.toUpperCase());
         return ResponseEntity.ok(category);

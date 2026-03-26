@@ -24,6 +24,14 @@ public interface SignPracticeAnswerRepository extends JpaRepository<SignPractice
             """)
     List<SignPracticeAnswer> findAllBySessionIdWithDetails(@Param("sessionId") Long sessionId);
 
+    /** IDs of questions that have already been answered in the session. */
+    @Query("""
+            SELECT a.question.id FROM SignPracticeAnswer a
+            WHERE a.session.id = :sessionId
+            ORDER BY a.answeredAt ASC
+            """)
+    List<Long> findQuestionIdsBySessionId(@Param("sessionId") Long sessionId);
+
     /** Count of answers already submitted for a session (to detect completion). */
     long countBySessionId(Long sessionId);
 }

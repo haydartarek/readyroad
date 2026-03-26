@@ -1,83 +1,46 @@
-[
+﻿[
   {
     "question_id": "B19_Q01",
     "type": "WHAT_DOES_IT_MEAN",
     "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE: Replace wrong answers with actual sign names from the same category.",
     "i18n": {
       "NL": {
         "question": "Wat betekent dit verkeersbord?",
         "choices": [
-          {
-            "text": "Voorrang verlenen aan tegenliggers",
-            "is_correct": true
-          },
-          {
-            "text": "Gevaarlijke bocht naar links",
-            "is_correct": false
-          },
-          {
-            "text": "Verbod voor alle voertuigen",
-            "is_correct": false
-          }
+          {"text": "Smalle doorgang: u moet voorrang verlenen aan bestuurders die uit de tegenovergestelde richting komen", "is_correct": true},
+          {"text": "Smalle doorgang: u heeft voorrang op bestuurders die uit de tegenovergestelde richting komen", "is_correct": false},
+          {"text": "Doorgang verboden voor voertuigen breder dan aangegeven", "is_correct": false}
         ],
-        "explanation": "Smalle doorgang. Gebod doorgang te verlenen aan de bestuurders die uit de tegenovergestelde richting komen."
+        "explanation": "Bord B19 geeft aan dat er een smalle doorgang is waarbij u voorrang moet verlenen aan het tegemoetkomend verkeer. U wacht totdat de doorgang vrij is."
       },
       "EN": {
         "question": "What does this traffic sign mean?",
         "choices": [
-          {
-            "text": "Give way to oncoming traffic",
-            "is_correct": true
-          },
-          {
-            "text": "Dangerous curve to the left",
-            "is_correct": false
-          },
-          {
-            "text": "Prohibited for all vehicles",
-            "is_correct": false
-          }
+          {"text": "Narrow passage: you must give way to drivers coming from the opposite direction", "is_correct": true},
+          {"text": "Narrow passage: you have priority over drivers coming from the opposite direction", "is_correct": false},
+          {"text": "No entry for vehicles wider than indicated", "is_correct": false}
         ],
-        "explanation": "Narrow passage. Obligation to give way to drivers from the opposite direction."
+        "explanation": "Sign B19 indicates a narrow passage where you must give way to oncoming traffic. You wait until the passage is clear."
       },
       "FR": {
         "question": "Que signifie ce panneau de signalisation ?",
         "choices": [
-          {
-            "text": "Céder le passage aux véhicules venant en sens inverse",
-            "is_correct": true
-          },
-          {
-            "text": "Virage dangereux à gauche",
-            "is_correct": false
-          },
-          {
-            "text": "Interdit à tous les véhicules",
-            "is_correct": false
-          }
+          {"text": "Passage etroit : vous devez ceder le passage aux conducteurs venant en sens inverse", "is_correct": true},
+          {"text": "Passage etroit : vous avez la priorite sur les conducteurs venant en sens inverse", "is_correct": false},
+          {"text": "Acces interdit aux vehicules plus larges qu indique", "is_correct": false}
         ],
-        "explanation": "Passage étroit. Obligation de céder le passage aux conducteurs venant en sens inverse."
+        "explanation": "Le panneau B19 indique un passage etroit ou vous devez ceder le passage au trafic venant en sens inverse. Vous attendez que le passage soit libre."
       },
       "AR": {
-        "question": "ماذا تعني لافتة المرور هذه؟",
+        "question": "Ù…Ø§Ø°Ø§ ØªØ¹Ù†ÙŠ Ù„Ø§ÙØªØ© Ø§Ù„Ù…Ø±ÙˆØ± Ù‡Ø°Ù‡ØŸ",
         "choices": [
-          {
-            "text": "إفساح المجال لحركة المرور القادمة",
-            "is_correct": true
-          },
-          {
-            "text": "منعطف خطير إلى اليسار",
-            "is_correct": false
-          },
-          {
-            "text": "ممنوع لجميع المركبات",
-            "is_correct": false
-          }
+          {"text": "Ù…Ù…Ø± Ø¶ÙŠÙ‚: ÙŠØ¬Ø¨ Ø¹Ù„ÙŠÙƒ Ø§Ø¹Ø·Ø§Ø¡ Ø§Ù„Ø§ÙˆÙ„ÙˆÙŠØ© Ù„Ù„Ø³Ø§Ø¦Ù‚ÙŠÙ† Ø§Ù„Ù‚Ø§Ø¯Ù…ÙŠÙ† Ù…Ù† Ø§Ù„Ø§ØªØ¬Ø§Ù‡ Ø§Ù„Ù…Ø¹Ø§ÙƒØ³", "is_correct": true},
+          {"text": "Ù…Ù…Ø± Ø¶ÙŠÙ‚: Ù„Ø¯ÙŠÙƒ Ø§Ù„Ø§ÙˆÙ„ÙˆÙŠØ© Ø¹Ù„Ù‰ Ø§Ù„Ø³Ø§Ø¦Ù‚ÙŠÙ† Ø§Ù„Ù‚Ø§Ø¯Ù…ÙŠÙ† Ù…Ù† Ø§Ù„Ø§ØªØ¬Ø§Ù‡ Ø§Ù„Ù…Ø¹Ø§ÙƒØ³", "is_correct": false},
+          {"text": "Ù…Ù…Ù†ÙˆØ¹ Ø¯Ø®ÙˆÙ„ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ø§Ø¹Ø±Ø¶ Ù…Ù† Ø§Ù„Ù…Ù‚Ø§Ø³ Ø§Ù„Ù…Ø­Ø¯Ø¯", "is_correct": false}
         ],
-        "explanation": "ممر ضيق. واجب إعطاء الأولوية للسائقين القادمين من الاتجاه المعاكس."
+        "explanation": "ØªØ´ÙŠØ± Ù„Ø§ÙØªØ© B19 Ø§Ù„Ù‰ Ù…Ù…Ø± Ø¶ÙŠÙ‚ ÙŠØ¬Ø¨ ÙÙŠÙ‡ Ø§Ø¹Ø·Ø§Ø¡ Ø§Ù„Ø§ÙˆÙ„ÙˆÙŠØ© Ù„Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ù…Ù‚Ø§Ø¨Ù„Ø©. ØªÙ†ØªØ¸Ø± Ø­ØªÙ‰ ÙŠØ®Ù„Ùˆ Ø§Ù„Ù…Ù…Ø±."
       }
     }
   },
@@ -86,162 +49,88 @@
     "type": "WHICH_SIGN",
     "difficulty": "EASY",
     "is_critical": false,
-    "show_sign": true,
-    "_note": "TEMPLATE: Ready to use — category identification question.",
+    "show_sign": false,
     "i18n": {
       "NL": {
-        "question": "Tot welke categorie verkeerstekens behoort dit bord?",
+        "question": "Welk bord geeft aan dat u bij een smalle doorgang voorrang moet verlenen aan het tegemoetkomend verkeer?",
         "choices": [
-          {
-            "text": "Voorrangsborden (B-reeks)",
-            "is_correct": true
-          },
-          {
-            "text": "Gevaarsborden (A-reeks)",
-            "is_correct": false
-          },
-          {
-            "text": "Verbodsborden (C-reeks)",
-            "is_correct": false
-          }
+          {"text": "B19 - Smalle doorgang voorrang verlenen", "is_correct": true},
+          {"text": "B21 - Smalle doorgang voorrang hebben", "is_correct": false},
+          {"text": "B1 - Voorrang verlenen", "is_correct": false}
         ],
-        "explanation": "Dit bord behoort tot de categorie 'Voorrangsborden (B-reeks)'. Elk type bord heeft een specifieke vorm en kleurschema."
+        "explanation": "B19 verplicht u voorrang te verlenen bij een smalle doorgang. B21 geeft aan u juist voorrang heeft. B1 geldt op kruispunten, niet bij smalle doorgangen."
       },
       "EN": {
-        "question": "To which category of traffic signs does this sign belong?",
+        "question": "Which sign indicates that at a narrow passage you must give way to oncoming traffic?",
         "choices": [
-          {
-            "text": "Priority signs (B-series)",
-            "is_correct": true
-          },
-          {
-            "text": "Danger signs (A-series)",
-            "is_correct": false
-          },
-          {
-            "text": "Prohibition signs (C-series)",
-            "is_correct": false
-          }
+          {"text": "B19 - Narrow passage give way", "is_correct": true},
+          {"text": "B21 - Narrow passage priority", "is_correct": false},
+          {"text": "B1 - Give way", "is_correct": false}
         ],
-        "explanation": "This sign belongs to the 'Priority signs (B-series)' category. Each type of sign has a specific shape and color scheme."
+        "explanation": "B19 requires you to give way at a narrow passage. B21 means you have priority instead. B1 applies at junctions, not at narrow passages."
       },
       "FR": {
-        "question": "À quelle catégorie de panneaux de signalisation ce panneau appartient-il ?",
+        "question": "Quel panneau indique qu au passage etroit vous devez ceder le passage au trafic venant en sens inverse ?",
         "choices": [
-          {
-            "text": "Panneaux de priorité (série B)",
-            "is_correct": true
-          },
-          {
-            "text": "Panneaux de danger (série A)",
-            "is_correct": false
-          },
-          {
-            "text": "Panneaux d'interdiction (série C)",
-            "is_correct": false
-          }
+          {"text": "B19 - Passage etroit ceder le passage", "is_correct": true},
+          {"text": "B21 - Passage etroit priorite", "is_correct": false},
+          {"text": "B1 - Cedez le passage", "is_correct": false}
         ],
-        "explanation": "Ce panneau appartient à la catégorie 'Panneaux de priorité (série B)'. Chaque type de panneau a une forme et un schéma de couleurs spécifiques."
+        "explanation": "B19 vous oblige a ceder le passage au passage etroit. B21 signifie que vous avez la priorite. B1 s applique aux carrefours, pas aux passages etroits."
       },
       "AR": {
-        "question": "إلى أي فئة من لافتات المرور تنتمي هذه اللافتة؟",
+        "question": "Ø§ÙŠ Ù„Ø§ÙØªØ© ØªØ´ÙŠØ± Ø§Ù„Ù‰ Ø§Ù†Ù‡ Ø¹Ù†Ø¯ Ø§Ù„Ù…Ù…Ø± Ø§Ù„Ø¶ÙŠÙ‚ ÙŠØ¬Ø¨ Ø¹Ù„ÙŠÙƒ Ø§Ø¹Ø·Ø§Ø¡ Ø§Ù„Ø§ÙˆÙ„ÙˆÙŠØ© Ù„Ø­Ø±ÙƒØ© Ø§Ù„Ù…Ø±ÙˆØ± Ø§Ù„Ù…Ù‚Ø§Ø¨Ù„Ø©ØŸ",
         "choices": [
-          {
-            "text": "لافتات الأولوية (سلسلة B)",
-            "is_correct": true
-          },
-          {
-            "text": "لافتات الخطر (سلسلة A)",
-            "is_correct": false
-          },
-          {
-            "text": "لافتات الحظر (سلسلة C)",
-            "is_correct": false
-          }
+          {"text": "B19 - Ø§Ù„Ù…Ù…Ø± Ø§Ù„Ø¶ÙŠÙ‚ Ø§Ø¹Ø·Ø§Ø¡ Ø§Ù„Ø§ÙˆÙ„ÙˆÙŠØ©", "is_correct": true},
+          {"text": "B21 - Ø§Ù„Ù…Ù…Ø± Ø§Ù„Ø¶ÙŠÙ‚ Ø§Ù„Ø§ÙˆÙ„ÙˆÙŠØ©", "is_correct": false},
+          {"text": "B1 - Ø§Ø¹Ø·Ø§Ø¡ Ø§Ù„Ø§ÙˆÙ„ÙˆÙŠØ©", "is_correct": false}
         ],
-        "explanation": "هذه اللافتة تنتمي إلى فئة 'لافتات الأولوية (سلسلة B)'. كل نوع من اللافتات له شكل ونظام ألوان محدد."
+        "explanation": "B19 ØªÙ„Ø²Ù…Ùƒ Ø¨Ø§Ø¹Ø·Ø§Ø¡ Ø§Ù„Ø§ÙˆÙ„ÙˆÙŠØ© Ø¹Ù†Ø¯ Ø§Ù„Ù…Ù…Ø± Ø§Ù„Ø¶ÙŠÙ‚. B21 ØªØ¹Ù†ÙŠ Ø§Ù† Ù„Ø¯ÙŠÙƒ Ø§Ù„Ø§ÙˆÙ„ÙˆÙŠØ©. B1 ØªÙ†Ø·Ø¨Ù‚ Ø¹Ù„Ù‰ Ø§Ù„ØªÙ‚Ø§Ø·Ø¹Ø§Øª ÙˆÙ„ÙŠØ³ Ø§Ù„Ù…Ù…Ø±Ø§Øª Ø§Ù„Ø¶ÙŠÙ‚Ø©."
       }
     }
   },
   {
     "question_id": "B19_Q03",
-    "type": "WHAT_MUST_YOU_DO",
-    "difficulty": "MEDIUM",
+    "type": "HAZARD_IDENTIFICATION",
+    "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE (MEDIUM): Replace with sign-specific question for production.",
     "i18n": {
       "NL": {
-        "question": "Wat moet u doen wanneer u dit voorrangsbord ziet?",
+        "question": "Op welk gevaar wijst bord B19?",
         "choices": [
-          {
-            "text": "De instructie van het bord correct opvolgen",
-            "is_correct": true
-          },
-          {
-            "text": "Het bord negeren als er geen ander verkeer is",
-            "is_correct": false
-          },
-          {
-            "text": "Flashen met de lichten om de voorrang te claimen",
-            "is_correct": false
-          }
+          {"text": "Een doorgang die te smal is voor twee voertuigen tegelijk; tegemoetkomend verkeer heeft doorgang voorrang", "is_correct": true},
+          {"text": "Gevaar van overstekende voetgangers in een smalle straat", "is_correct": false},
+          {"text": "Gevaar van rijbaanversmalling door tijdelijke werken", "is_correct": false}
         ],
-        "explanation": "Voorrangsborden regelen de doorstroming op kruispunten. Het correct opvolgen is wettelijk verplicht."
+        "explanation": "B19 attendeert u op een doorgang die slechts een voertuig breed is. Het tegemoetkomend verkeer is al in de doorgang of heeft er voorrang op; u moet wachten."
       },
       "EN": {
-        "question": "What must you do when you see this priority sign?",
+        "question": "What hazard does sign B19 warn about?",
         "choices": [
-          {
-            "text": "Correctly follow the instruction of the sign",
-            "is_correct": true
-          },
-          {
-            "text": "Ignore the sign if there is no other traffic",
-            "is_correct": false
-          },
-          {
-            "text": "Flash lights to claim priority",
-            "is_correct": false
-          }
+          {"text": "A passage too narrow for two vehicles simultaneously; oncoming traffic has passage priority", "is_correct": true},
+          {"text": "Danger of crossing pedestrians in a narrow street", "is_correct": false},
+          {"text": "Danger of lane narrowing due to temporary works", "is_correct": false}
         ],
-        "explanation": "Priority signs regulate traffic flow at intersections. Correctly following them is legally mandatory."
+        "explanation": "B19 alerts you to a passage only one vehicle wide. Oncoming traffic is already in the passage or has priority; you must wait."
       },
       "FR": {
-        "question": "Que devez-vous faire lorsque vous voyez ce panneau de priorité ?",
+        "question": "A quel danger le panneau B19 avertit-il ?",
         "choices": [
-          {
-            "text": "Suivre correctement l'instruction du panneau",
-            "is_correct": true
-          },
-          {
-            "text": "Ignorer le panneau s'il n'y a pas d'autre circulation",
-            "is_correct": false
-          },
-          {
-            "text": "Faire des appels de phares pour réclamer la priorité",
-            "is_correct": false
-          }
+          {"text": "Un passage trop etroit pour deux vehicules simultanement ; le trafic venant en sens inverse a la priorite de passage", "is_correct": true},
+          {"text": "Danger de pietons traversant dans une rue etroite", "is_correct": false},
+          {"text": "Danger de retrecissement de voie du aux travaux temporaires", "is_correct": false}
         ],
-        "explanation": "Les panneaux de priorité régulent la circulation aux intersections. Leur respect est légalement obligatoire."
+        "explanation": "B19 vous avertit d un passage large d un seul vehicule. Le trafic venant en sens inverse est deja dans le passage ou a la priorite ; vous devez attendre."
       },
       "AR": {
-        "question": "ماذا يجب أن تفعل عندما ترى لافتة الأولوية هذه؟",
+        "question": "Ù…Ø§ Ø§Ù„Ø®Ø·Ø± Ø§Ù„Ø°ÙŠ ØªÙ†Ø¨Ù‡ Ø§Ù„ÙŠÙ‡ Ù„Ø§ÙØªØ© B19ØŸ",
         "choices": [
-          {
-            "text": "اتباع تعليمات اللافتة بشكل صحيح",
-            "is_correct": true
-          },
-          {
-            "text": "تجاهل اللافتة إذا لم يكن هناك مرور آخر",
-            "is_correct": false
-          },
-          {
-            "text": "تشغيل وميض الأضواء للمطالبة بالأولوية",
-            "is_correct": false
-          }
+          {"text": "Ù…Ù…Ø± Ø¶ÙŠÙ‚ Ù„Ø§ ÙŠØªØ³Ø¹ Ø§Ù„Ø§ Ù„Ù…Ø±ÙƒØ¨Ø© ÙˆØ§Ø­Ø¯Ø© ÙÙŠ ÙˆÙ‚Øª ÙˆØ§Ø­Ø¯Ø› Ù„Ø­Ø±ÙƒØ© Ø§Ù„Ù…Ø±ÙˆØ± Ø§Ù„Ù…Ù‚Ø§Ø¨Ù„Ø© Ø§ÙˆÙ„ÙˆÙŠØ© Ø§Ù„Ø¹Ø¨ÙˆØ±", "is_correct": true},
+          {"text": "Ø®Ø·Ø± Ù…Ù† Ø¹Ø¨ÙˆØ± Ø§Ù„Ù…Ø´Ø§Ø© ÙÙŠ Ø´Ø§Ø±Ø¹ Ø¶ÙŠÙ‚", "is_correct": false},
+          {"text": "Ø®Ø·Ø± Ù…Ù† ØªØ¶ÙŠÙŠÙ‚ Ø§Ù„Ù…Ø³Ø§Ø± Ø¨Ø³Ø¨Ø¨ Ø§Ø¹Ù…Ø§Ù„ Ù…Ø¤Ù‚ØªØ©", "is_correct": false}
         ],
-        "explanation": "تنظم لافتات الأولوية حركة المرور عند التقاطعات. الالتزام بها إلزامي قانونياً."
+        "explanation": "ØªÙ†Ø¨Ù‡Ùƒ B19 Ø§Ù„Ù‰ Ù…Ù…Ø± Ø¨Ø¹Ø±Ø¶ Ù…Ø±ÙƒØ¨Ø© ÙˆØ§Ø­Ø¯Ø© ÙÙ‚Ø·. Ø­Ø±ÙƒØ© Ø§Ù„Ù…Ø±ÙˆØ± Ø§Ù„Ù…Ù‚Ø§Ø¨Ù„Ø© Ù…ÙˆØ¬ÙˆØ¯Ø© Ø¨Ø§Ù„ÙØ¹Ù„ ÙÙŠ Ø§Ù„Ù…Ù…Ø± Ø§Ùˆ Ù„Ù‡Ø§ Ø§Ù„Ø§ÙˆÙ„ÙˆÙŠØ©Ø› ÙŠØ¬Ø¨ Ø§Ù† ØªÙ†ØªØ¸Ø±."
       }
     }
   },
@@ -251,2010 +140,214 @@
     "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE (MEDIUM): Replace with sign-specific question for production.",
     "i18n": {
       "NL": {
-        "question": "Wat is de gevolg van het niet naleven van een voorrangsbord?",
+        "question": "Wat moet u doen als u bord B19 ziet en een tegenligger al in de smalle doorgang rijdt?",
         "choices": [
-          {
-            "text": "Zware overtreding met boete en mogelijke schorsing van het rijbewijs",
-            "is_correct": true
-          },
-          {
-            "text": "Enkel een mondelinge waarschuwing van de politie",
-            "is_correct": false
-          },
-          {
-            "text": "Geen straf als er geen ongeluk is",
-            "is_correct": false
-          }
+          {"text": "Stoppen voor de doorgang en wachten totdat de tegenligger volledig gepasseerd is", "is_correct": true},
+          {"text": "De doorgang inrijden en zo ver mogelijk naar rechts gaan om de tegenligger te laten passeren", "is_correct": false},
+          {"text": "Doorrijden en de tegenligger laten uitwijken want hij heeft ook een spiegel", "is_correct": false}
         ],
-        "explanation": "Voorrangsborden niet respecteren is een zware overtreding die kan leiden tot hoge boetes en puntenaftrek."
+        "explanation": "Bord B19 verplicht u te wachten buiten de doorgang totdat het tegemoetkomende voertuig volledig voorbij is. De doorgang is te smal voor twee voertuigen."
       },
       "EN": {
-        "question": "What is the consequence of not complying with a priority sign?",
+        "question": "What must you do when you see sign B19 and an oncoming vehicle is already in the narrow passage?",
         "choices": [
-          {
-            "text": "Serious violation with fine and possible driver's license suspension",
-            "is_correct": true
-          },
-          {
-            "text": "Only an oral warning from the police",
-            "is_correct": false
-          },
-          {
-            "text": "No penalty if no accident occurred",
-            "is_correct": false
-          }
+          {"text": "Stop before the passage and wait until the oncoming vehicle has completely passed", "is_correct": true},
+          {"text": "Enter the passage and move as far right as possible to let the oncoming vehicle pass", "is_correct": false},
+          {"text": "Continue and let the oncoming vehicle swerve because it also has mirrors", "is_correct": false}
         ],
-        "explanation": "Not respecting priority signs is a serious violation leading to high fines and licence points deduction."
+        "explanation": "Sign B19 requires you to wait outside the passage until the oncoming vehicle has fully passed. The passage is too narrow for two vehicles."
       },
       "FR": {
-        "question": "Quelle est la conséquence du non-respect d'un panneau de priorité ?",
+        "question": "Que devez-vous faire lorsque vous voyez le panneau B19 et qu un vehicule venant en sens inverse est deja dans le passage etroit ?",
         "choices": [
-          {
-            "text": "Infraction grave avec amende et suspension possible du permis de conduire",
-            "is_correct": true
-          },
-          {
-            "text": "Seulement un avertissement oral de la police",
-            "is_correct": false
-          },
-          {
-            "text": "Pas de peine s'il n'y a pas eu d'accident",
-            "is_correct": false
-          }
+          {"text": "S arreter avant le passage et attendre que le vehicule venant en sens inverse soit completement passe", "is_correct": true},
+          {"text": "S engager dans le passage et aller le plus a droite possible pour laisser passer le vehicule venant en sens inverse", "is_correct": false},
+          {"text": "Continuer et laisser le vehicule venant en sens inverse s ecarter car il a aussi des retroviseurs", "is_correct": false}
         ],
-        "explanation": "Ne pas respecter les panneaux de priorité est une infraction grave menant à de lourdes amendes."
+        "explanation": "Le panneau B19 vous oblige a attendre hors du passage jusqu a ce que le vehicule venant en sens inverse soit completement passe. Le passage est trop etroit pour deux vehicules."
       },
       "AR": {
-        "question": "ما هي عواقب عدم الامتثال للافتة الأولوية؟",
+        "question": "Ù…Ø§Ø°Ø§ ÙŠØ¬Ø¨ Ø¹Ù„ÙŠÙƒ ÙØ¹Ù„Ù‡ Ø¹Ù†Ø¯ Ø±Ø¤ÙŠØ© Ù„Ø§ÙØªØ© B19 ÙˆÙ…Ø±ÙƒØ¨Ø© Ù…Ù‚Ø§Ø¨Ù„Ø© Ù…ÙˆØ¬ÙˆØ¯Ø© Ø¨Ø§Ù„ÙØ¹Ù„ ÙÙŠ Ø§Ù„Ù…Ù…Ø± Ø§Ù„Ø¶ÙŠÙ‚ØŸ",
         "choices": [
-          {
-            "text": "مخالفة خطيرة مع غرامة وسحب محتمل لرخصة القيادة",
-            "is_correct": true
-          },
-          {
-            "text": "تحذير شفهي فقط من الشرطة",
-            "is_correct": false
-          },
-          {
-            "text": "لا عقوبة إذا لم يحدث حادث",
-            "is_correct": false
-          }
+          {"text": "Ø§Ù„ØªÙˆÙ‚Ù Ù‚Ø¨Ù„ Ø§Ù„Ù…Ù…Ø± ÙˆØ§Ù„Ø§Ù†ØªØ¸Ø§Ø± Ø­ØªÙ‰ ØªÙ…Ø± Ø§Ù„Ù…Ø±ÙƒØ¨Ø© Ø§Ù„Ù…Ù‚Ø§Ø¨Ù„Ø© Ø¨Ø§Ù„ÙƒØ§Ù…Ù„", "is_correct": true},
+          {"text": "Ø§Ù„Ø¯Ø®ÙˆÙ„ Ø§Ù„Ù‰ Ø§Ù„Ù…Ù…Ø± ÙˆØ§Ù„Ø§Ù†Ø­Ø±Ø§Ù Ù‚Ø¯Ø± Ø§Ù„Ù…Ø³ØªØ·Ø§Ø¹ Ø§Ù„Ù‰ Ø§Ù„ÙŠÙ…ÙŠÙ† Ù„Ù„Ø³Ù…Ø§Ø­ Ù„Ù„Ù…Ø±ÙƒØ¨Ø© Ø§Ù„Ù…Ù‚Ø§Ø¨Ù„Ø© Ø¨Ø§Ù„Ù…Ø±ÙˆØ±", "is_correct": false},
+          {"text": "Ø§Ù„Ø§Ø³ØªÙ…Ø±Ø§Ø± ÙˆØ§Ù„Ø³Ù…Ø§Ø­ Ù„Ù„Ù…Ø±ÙƒØ¨Ø© Ø§Ù„Ù…Ù‚Ø§Ø¨Ù„Ø© Ø¨Ø§Ù„ØªØ­Ø±Ùƒ Ø¬Ø§Ù†Ø¨Ø§ Ù„Ø§Ù† Ù„Ø¯ÙŠÙ‡Ø§ Ù…Ø±Ø§ÙŠØ§ Ø§ÙŠØ¶Ø§", "is_correct": false}
         ],
-        "explanation": "عدم احترام لافتات الأولوية مخالفة خطيرة تؤدي إلى غرامات كبيرة وخصم نقاط من رخصة القيادة."
+        "explanation": "ØªÙ„Ø²Ù…Ùƒ Ù„Ø§ÙØªØ© B19 Ø¨Ø§Ù„Ø§Ù†ØªØ¸Ø§Ø± Ø®Ø§Ø±Ø¬ Ø§Ù„Ù…Ù…Ø± Ø­ØªÙ‰ ØªÙ…Ø± Ø§Ù„Ù…Ø±ÙƒØ¨Ø© Ø§Ù„Ù…Ù‚Ø§Ø¨Ù„Ø© Ø¨Ø§Ù„ÙƒØ§Ù…Ù„. Ø§Ù„Ù…Ù…Ø± Ø¶ÙŠÙ‚ Ø¬Ø¯Ø§ Ù„Ù…Ø±ÙƒØ¨ØªÙŠÙ†."
       }
     }
   },
   {
     "question_id": "B19_Q05",
-    "type": "IS_IT_ALLOWED",
-    "difficulty": "HARD",
-    "is_critical": true,
+    "type": "DRIVER_ACTION",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE (HARD): Replace with sign-specific question for production.",
     "i18n": {
       "NL": {
-        "question": "Bent u wettelijk verplicht dit voorrangsbord te respecteren?",
+        "question": "U nadert een smalle doorgang met bord B19. De doorgang is momenteel leeg. Wat doet u?",
         "choices": [
-          {
-            "text": "Ja, voorrangsborden zijn wettelijk bindend en moeten altijd worden nageleefd",
-            "is_correct": true
-          },
-          {
-            "text": "Nee, voorrangsborden zijn aanbevelingen die u naar eigen inzicht kunt volgen",
-            "is_correct": false
-          }
+          {"text": "U kijkt of er tegemoetkomend verkeer in aantocht is; als de doorgang echt vrij is, rijdt u door", "is_correct": true},
+          {"text": "U stopt altijd volledig, ook als er geen enkel voertuig zichtbaar is", "is_correct": false},
+          {"text": "U rijdt snel door om zeker als eerste de doorgang te passeren", "is_correct": false}
         ],
-        "explanation": "Voorrangsborden zijn wettelijk bindend voor alle weggebruikers. Het niet naleven is een overtreding die kan leiden tot boetes en puntenaftrek."
+        "explanation": "B19 verplicht u enkel te wachten als er tegemoetkomend verkeer is. Als de doorgang vrij is en er geen tegenligger nadert, mag u doorrijden."
       },
       "EN": {
-        "question": "Are you legally required to respect this priority sign?",
+        "question": "You are approaching a narrow passage with sign B19. The passage is currently empty. What do you do?",
         "choices": [
-          {
-            "text": "Yes, priority signs are legally binding and must always be complied with",
-            "is_correct": true
-          },
-          {
-            "text": "No, priority signs are recommendations that you may follow at your own discretion",
-            "is_correct": false
-          }
+          {"text": "You check whether oncoming traffic is approaching; if the passage is truly clear, you drive through", "is_correct": true},
+          {"text": "You always stop completely, even if no vehicle is visible", "is_correct": false},
+          {"text": "You drive through quickly to make sure you are first to pass the passage", "is_correct": false}
         ],
-        "explanation": "Priority signs are legally binding for all road users. Non-compliance is a violation that can lead to fines and licence points deduction."
+        "explanation": "B19 only requires you to wait when oncoming traffic is present. If the passage is clear and no oncoming vehicle is approaching, you may drive through."
       },
       "FR": {
-        "question": "Êtes-vous légalement obligé de respecter ce panneau de priorité ?",
+        "question": "Vous approchez d un passage etroit avec le panneau B19. Le passage est actuellement vide. Que faites-vous ?",
         "choices": [
-          {
-            "text": "Oui, les panneaux de priorité sont juridiquement contraignants et doivent toujours être respectés",
-            "is_correct": true
-          },
-          {
-            "text": "Non, les panneaux de priorité sont des recommandations que vous pouvez suivre à votre discrétion",
-            "is_correct": false
-          }
+          {"text": "Vous verifiez si du trafic venant en sens inverse approche ; si le passage est vraiment libre, vous passez", "is_correct": true},
+          {"text": "Vous vous arretez toujours completement, meme si aucun vehicule n est visible", "is_correct": false},
+          {"text": "Vous passez rapidement pour etre sur d etre le premier a traverser le passage", "is_correct": false}
         ],
-        "explanation": "Les panneaux de priorité sont juridiquement contraignants pour tous les usagers. Le non-respect est une infraction pouvant mener à des amendes."
+        "explanation": "B19 ne vous oblige a attendre que lorsque du trafic venant en sens inverse est present. Si le passage est libre et qu aucun vehicule n approche, vous pouvez passer."
       },
       "AR": {
-        "question": "هل أنت ملزم قانونياً باحترام لافتة الأولوية هذه؟",
+        "question": "Ø§Ù†Øª ØªÙ‚ØªØ±Ø¨ Ù…Ù† Ù…Ù…Ø± Ø¶ÙŠÙ‚ Ø¨Ù‡ Ù„Ø§ÙØªØ© B19. Ø§Ù„Ù…Ù…Ø± ÙØ§Ø±Øº Ø­Ø§Ù„ÙŠØ§. Ù…Ø§Ø°Ø§ ØªÙØ¹Ù„ØŸ",
         "choices": [
-          {
-            "text": "نعم، لافتات الأولوية ملزمة قانونياً ويجب الالتزام بها دائماً",
-            "is_correct": true
-          },
-          {
-            "text": "لا، لافتات الأولوية توصيات يمكنك اتباعها وفق تقديرك الخاص",
-            "is_correct": false
-          }
+          {"text": "ØªØªØ­Ù‚Ù‚ Ù…Ù† Ø§Ù‚ØªØ±Ø§Ø¨ Ù…Ø±ÙƒØ¨Ø© Ù…Ù‚Ø§Ø¨Ù„Ø©Ø› Ø§Ø°Ø§ ÙƒØ§Ù† Ø§Ù„Ù…Ù…Ø± ÙØ§Ø±ØºØ§ Ø­Ù‚Ø§ ØªÙ…Ø¶ÙŠ", "is_correct": true},
+          {"text": "ØªØªÙˆÙ‚Ù Ø¯Ø§Ø¦Ù…Ø§ ÙƒÙ„ÙŠØ§ Ø­ØªÙ‰ Ù„Ùˆ Ù„Ù… ØªÙƒÙ† Ù‡Ù†Ø§Ùƒ Ù…Ø±ÙƒØ¨Ø© Ù…Ø±Ø¦ÙŠØ©", "is_correct": false},
+          {"text": "ØªÙ…Ø± Ø¨Ø³Ø±Ø¹Ø© Ù„ØªÙƒÙˆÙ† Ø§Ù„Ø§ÙˆÙ„ ÙÙŠ Ø§Ø¬ØªÙŠØ§Ø² Ø§Ù„Ù…Ù…Ø±", "is_correct": false}
         ],
-        "explanation": "لافتات الأولوية ملزمة قانونياً لجميع مستخدمي الطريق. عدم الامتثال مخالفة قد تؤدي إلى غرامات وخصم نقاط من رخصة القيادة."
+        "explanation": "B19 ØªÙ„Ø²Ù…Ùƒ Ø¨Ø§Ù„Ø§Ù†ØªØ¸Ø§Ø± ÙÙ‚Ø· Ø¹Ù†Ø¯ ÙˆØ¬ÙˆØ¯ Ù…Ø±ÙƒØ¨Ø© Ù…Ù‚Ø§Ø¨Ù„Ø©. Ø§Ø°Ø§ ÙƒØ§Ù† Ø§Ù„Ù…Ù…Ø± Ø®Ø§Ù„ÙŠØ§ ÙˆÙ„Ø§ ØªÙ‚ØªØ±Ø¨ Ù…Ø±ÙƒØ¨Ø© Ù…Ù‚Ø§Ø¨Ù„Ø© ÙŠÙ…ÙƒÙ†Ùƒ Ø§Ù„Ù…Ø¶ÙŠ."
       }
     }
   },
   {
     "question_id": "B19_Q06",
-    "type": "WHAT_DOES_IT_MEAN",
-    "difficulty": "EASY",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat betekent het bord B19 bij een smalle doorgang?",
+        "question": "Wat is het verschil in gedragsregel tussen bord B19 en bord B21?",
         "choices": [
-          {
-            "text": "U moet voorrang verlenen aan het verkeer dat u tegemoetkomt vanuit de tegenovergestelde richting",
-            "is_correct": true
-          },
-          {
-            "text": "U heeft voorrang op al het tegenliggende verkeer",
-            "is_correct": false
-          },
-          {
-            "text": "U moet stoppen en terugrijden",
-            "is_correct": false
-          }
+          {"text": "Bij B19 moet u wachten en voorrang verlenen aan tegenliggers; bij B21 heeft u juist voorrang op tegenliggers", "is_correct": true},
+          {"text": "B19 en B21 zijn identiek: beide verplichten u te wachten voor tegenliggers", "is_correct": false},
+          {"text": "B21 verplicht tot stoppen; B19 verplicht enkel tot vaart minderen", "is_correct": false}
         ],
-        "explanation": "Het bord B19 geeft aan dat de doorgang smal is en dat u voorrang moet verlenen aan voertuigen die u tegemoet komen."
+        "explanation": "B19 = wachten en voorrang verlenen aan tegenkomend verkeer. B21 = u heeft voorrang; het tegemoetkomend verkeer moet wachten. Beide borden staan steeds als paar geplaatst aan beide uiteinden van de smalle doorgang."
       },
       "EN": {
-        "question": "What does sign B19 mean at a narrow passage?",
+        "question": "What is the difference in required behaviour between sign B19 and sign B21?",
         "choices": [
-          {
-            "text": "You must give way to traffic approaching from the opposite direction",
-            "is_correct": true
-          },
-          {
-            "text": "You have priority over all oncoming traffic",
-            "is_correct": false
-          },
-          {
-            "text": "You must stop and reverse",
-            "is_correct": false
-          }
+          {"text": "At B19 you must wait and give way to oncoming traffic; at B21 you have priority over oncoming traffic", "is_correct": true},
+          {"text": "B19 and B21 are identical: both require you to wait for oncoming traffic", "is_correct": false},
+          {"text": "B21 requires a complete stop; B19 only requires reducing speed", "is_correct": false}
         ],
-        "explanation": "Sign B19 indicates the passage is narrow and you must give way to vehicles coming towards you."
+        "explanation": "B19 = wait and give way to oncoming traffic. B21 = you have priority; oncoming traffic must wait. Both signs are always placed as a pair at each end of the narrow passage."
       },
       "FR": {
-        "question": "Que signifie le panneau B19 à un passage étroit ?",
+        "question": "Quelle est la difference de comportement requis entre le panneau B19 et le panneau B21 ?",
         "choices": [
-          {
-            "text": "Vous devez céder le passage au trafic venant en sens inverse",
-            "is_correct": true
-          },
-          {
-            "text": "Vous avez la priorité sur tout le trafic en sens inverse",
-            "is_correct": false
-          },
-          {
-            "text": "Vous devez vous arrêter et reculer",
-            "is_correct": false
-          }
+          {"text": "Avec B19 vous devez attendre et ceder le passage aux vehicules venant en sens inverse ; avec B21 vous avez la priorite sur les vehicules venant en sens inverse", "is_correct": true},
+          {"text": "B19 et B21 sont identiques : tous deux vous obligent a attendre les vehicules venant en sens inverse", "is_correct": false},
+          {"text": "B21 impose un arret complet ; B19 impose uniquement de reduire la vitesse", "is_correct": false}
         ],
-        "explanation": "Le panneau B19 indique que le passage est étroit et que vous devez céder le passage aux véhicules venant en sens inverse."
+        "explanation": "B19 = attendre et ceder le passage au trafic venant en sens inverse. B21 = vous avez la priorite ; le trafic venant en sens inverse doit attendre. Les deux panneaux sont toujours places en paire a chaque extremite du passage etroit."
       },
       "AR": {
-        "question": "ماذا تعني اللافتة B19 عند ممر ضيق؟",
+        "question": "Ù…Ø§ Ø§Ù„ÙØ±Ù‚ ÙÙŠ Ø§Ù„Ø³Ù„ÙˆÙƒ Ø§Ù„Ù…Ø·Ù„ÙˆØ¨ Ø¨ÙŠÙ† Ù„Ø§ÙØªØ© B19 ÙˆÙ„Ø§ÙØªØ© B21ØŸ",
         "choices": [
-          {
-            "text": "يجب عليك إعطاء الأولوية لحركة المرور القادمة من الاتجاه المعاكس",
-            "is_correct": true
-          },
-          {
-            "text": "لديك الأولوية على جميع حركة المرور القادمة في الاتجاه المعاكس",
-            "is_correct": false
-          },
-          {
-            "text": "يجب عليك التوقف والتراجع للخلف",
-            "is_correct": false
-          }
+          {"text": "Ø¹Ù†Ø¯ B19 ÙŠØ¬Ø¨ Ø§Ù„Ø§Ù†ØªØ¸Ø§Ø± ÙˆØ§Ø¹Ø·Ø§Ø¡ Ø§Ù„Ø§ÙˆÙ„ÙˆÙŠØ© Ù„Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ù…Ù‚Ø§Ø¨Ù„Ø©Ø› Ø¹Ù†Ø¯ B21 Ù„Ø¯ÙŠÙƒ Ø§Ù„Ø§ÙˆÙ„ÙˆÙŠØ© Ø¹Ù„Ù‰ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ù…Ù‚Ø§Ø¨Ù„Ø©", "is_correct": true},
+          {"text": "B19 ÙˆB21 Ù…ØªØ·Ø§Ø¨Ù‚ØªØ§Ù†: ÙƒÙ„ØªØ§Ù‡Ù…Ø§ ØªÙ„Ø²Ù…Ùƒ Ø¨Ø§Ù„Ø§Ù†ØªØ¸Ø§Ø± Ù„Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ù…Ù‚Ø§Ø¨Ù„Ø©", "is_correct": false},
+          {"text": "B21 ØªØ³ØªÙ„Ø²Ù… Ø§Ù„ØªÙˆÙ‚Ù Ø§Ù„ÙƒØ§Ù…Ù„Ø› B19 ØªØ³ØªÙ„Ø²Ù… ÙÙ‚Ø· ØªØ®ÙÙŠÙ Ø§Ù„Ø³Ø±Ø¹Ø©", "is_correct": false}
         ],
-        "explanation": "تشير اللافتة B19 إلى أن الممر ضيق وأنك يجب أن تعطي الأولوية للمركبات القادمة نحوك."
+        "explanation": "B19 = Ø§Ù†ØªØ¸Ø± ÙˆØ§Ø¹Ø· Ø§Ù„Ø§ÙˆÙ„ÙˆÙŠØ© Ù„Ù„Ù…Ø±ÙˆØ± Ø§Ù„Ù…Ù‚Ø§Ø¨Ù„. B21 = Ù„Ø¯ÙŠÙƒ Ø§Ù„Ø§ÙˆÙ„ÙˆÙŠØ©Ø› Ø§Ù„Ù…Ø±ÙˆØ± Ø§Ù„Ù…Ù‚Ø§Ø¨Ù„ ÙŠØ¬Ø¨ Ø§Ù† ÙŠÙ†ØªØ¸Ø±. ØªÙˆØ¶Ø¹ Ø§Ù„Ù„Ø§ÙØªØªØ§Ù† Ø¯Ø§Ø¦Ù…Ø§ ÙƒØ²ÙˆØ¬ Ø¹Ù†Ø¯ ÙƒÙ„ Ù†Ù‡Ø§ÙŠØ© Ù…Ù† Ø§Ù„Ù…Ù…Ø± Ø§Ù„Ø¶ÙŠÙ‚."
       }
     }
   },
   {
     "question_id": "B19_Q07",
-    "type": "TRUE_OR_FALSE",
-    "difficulty": "EASY",
-    "is_critical": false,
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Waar of niet waar: Bij het bord B19 moet u wachten totdat het tegenliggende rijvak vrij is voor u de smalle doorgang inrijdt.",
+        "question": "U staat voor een smalle doorgang met bord B19. Er is een tegenligger in de doorgang. Mag u de doorgang inrijden om hem sneller door te laten?",
         "choices": [
-          {
-            "text": "Waar – u moet wachten en voorrang verlenen aan het tegenliggende verkeer",
-            "is_correct": true
-          },
-          {
-            "text": "Niet waar – u mag gelijktijdig rijden als het net past",
-            "is_correct": false
-          }
+          {"text": "Nee, u mag de doorgang niet inrijden zolang de tegenligger er nog in rijdt; u wacht buiten de doorgang", "is_correct": true},
+          {"text": "Ja, als u voetpas rijdt kunt u de doorgang inrijden en de situatie inschatten", "is_correct": false}
         ],
-        "explanation": "Waar. Bij B19 moet u wachten totdat het tegenliggende rijvak volledig vrij is voor u de smalle doorgang inrijdt."
+        "explanation": "Bord B19 verplicht u buiten de doorgang te wachten totdat de tegenligger er volledig uit is. De doorgang is te smal voor twee voertuigen naast elkaar."
       },
       "EN": {
-        "question": "True or false: With sign B19 you must wait until the oncoming lane is clear before entering the narrow passage.",
+        "question": "You are waiting before a narrow passage with sign B19. An oncoming vehicle is in the passage. May you enter the passage to let it through faster?",
         "choices": [
-          {
-            "text": "True – you must wait and give way to oncoming traffic",
-            "is_correct": true
-          },
-          {
-            "text": "False – you may drive simultaneously if it just fits",
-            "is_correct": false
-          }
+          {"text": "No, you may not enter the passage while the oncoming vehicle is still in it; you wait outside", "is_correct": true},
+          {"text": "Yes, if you drive at walking pace you may enter and assess the situation", "is_correct": false}
         ],
-        "explanation": "True. With B19 you must wait until the oncoming lane is completely clear before entering the narrow passage."
+        "explanation": "Sign B19 requires you to wait outside the passage until the oncoming vehicle has fully exited. The passage is too narrow for two vehicles side by side."
       },
       "FR": {
-        "question": "Vrai ou faux : Avec le panneau B19, vous devez attendre que la voie en sens inverse soit libre avant de vous engager dans le passage étroit.",
+        "question": "Vous attendez devant un passage etroit avec le panneau B19. Un vehicule venant en sens inverse est dans le passage. Pouvez-vous entrer dans le passage pour le laisser passer plus vite ?",
         "choices": [
-          {
-            "text": "Vrai – vous devez attendre et céder le passage au trafic en sens inverse",
-            "is_correct": true
-          },
-          {
-            "text": "Faux – vous pouvez rouler simultanément si ça rentre tout juste",
-            "is_correct": false
-          }
+          {"text": "Non, vous ne pouvez pas entrer dans le passage tant que le vehicule venant en sens inverse s y trouve encore ; vous attendez dehors", "is_correct": true},
+          {"text": "Oui, si vous roulez au pas vous pouvez entrer et evaluer la situation", "is_correct": false}
         ],
-        "explanation": "Vrai. Avec B19, vous devez attendre que la voie en sens inverse soit complètement libre avant de vous engager dans le passage étroit."
+        "explanation": "Le panneau B19 vous oblige a attendre hors du passage jusqu a ce que le vehicule venant en sens inverse en soit completement sorti. Le passage est trop etroit pour deux vehicules cote a cote."
       },
       "AR": {
-        "question": "صحيح أم خاطئ: مع اللافتة B19 يجب عليك الانتظار حتى يكون المسار المقابل خالياً قبل دخول الممر الضيق.",
+        "question": "Ø§Ù†Øª ØªÙ†ØªØ¸Ø± Ø§Ù…Ø§Ù… Ù…Ù…Ø± Ø¶ÙŠÙ‚ Ø¨Ù‡ Ù„Ø§ÙØªØ© B19. Ù…Ø±ÙƒØ¨Ø© Ù…Ù‚Ø§Ø¨Ù„Ø© Ù…ÙˆØ¬ÙˆØ¯Ø© ÙÙŠ Ø§Ù„Ù…Ù…Ø±. Ù‡Ù„ ÙŠØ¬ÙˆØ² Ù„Ùƒ Ø§Ù„Ø¯Ø®ÙˆÙ„ Ø§Ù„Ù‰ Ø§Ù„Ù…Ù…Ø± Ù„ØªØ³Ø±ÙŠØ¹ Ø¹Ø¨ÙˆØ±Ù‡Ø§ØŸ",
         "choices": [
-          {
-            "text": "صحيح – يجب عليك الانتظار وإعطاء الأولوية لحركة المرور القادمة",
-            "is_correct": true
-          },
-          {
-            "text": "خاطئ – يمكنك السير في نفس الوقت إذا كان المجال ضيقاً للتو",
-            "is_correct": false
-          }
+          {"text": "Ù„Ø§ØŒ Ù„Ø§ ÙŠØ­Ù‚ Ù„Ùƒ Ø¯Ø®ÙˆÙ„ Ø§Ù„Ù…Ù…Ø± Ù…Ø§ Ø¯Ø§Ù…Øª Ø§Ù„Ù…Ø±ÙƒØ¨Ø© Ø§Ù„Ù…Ù‚Ø§Ø¨Ù„Ø© Ù„Ø§ ØªØ²Ø§Ù„ Ø¨Ø¯Ø§Ø®Ù„Ù‡Ø› ØªÙ†ØªØ¸Ø± Ø®Ø§Ø±Ø¬Ù‡", "is_correct": true},
+          {"text": "Ù†Ø¹Ù…ØŒ Ø§Ø°Ø§ Ø³Ø±Øª Ø¨Ø³Ø±Ø¹Ø© Ø§Ù„Ù…Ø´ÙŠ ÙŠÙ…ÙƒÙ†Ùƒ Ø§Ù„Ø¯Ø®ÙˆÙ„ ÙˆØªÙ‚ÙŠÙŠÙ… Ø§Ù„Ù…ÙˆÙ‚Ù", "is_correct": false}
         ],
-        "explanation": "صحيح. مع B19 يجب عليك الانتظار حتى يكون المسار المقابل خالياً تماماً قبل دخول الممر الضيق."
+        "explanation": "ØªÙ„Ø²Ù…Ùƒ Ù„Ø§ÙØªØ© B19 Ø¨Ø§Ù„Ø§Ù†ØªØ¸Ø§Ø± Ø®Ø§Ø±Ø¬ Ø§Ù„Ù…Ù…Ø± Ø­ØªÙ‰ ØªØ®Ø±Ø¬ Ø§Ù„Ù…Ø±ÙƒØ¨Ø© Ø§Ù„Ù…Ù‚Ø§Ø¨Ù„Ø© Ù…Ù†Ù‡ Ø¨Ø§Ù„ÙƒØ§Ù…Ù„. Ø§Ù„Ù…Ù…Ø± Ø¶ÙŠÙ‚ Ø¬Ø¯Ø§ Ù„Ù…Ø±ÙƒØ¨ØªÙŠÙ† Ø¬Ù†Ø¨Ø§ Ø§Ù„Ù‰ Ø¬Ù†Ø¨."
       }
     }
   },
   {
     "question_id": "B19_Q08",
     "type": "IS_IT_ALLOWED",
-    "difficulty": "EASY",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Mag u bij het bord B19 de smalle doorgang inrijden als er een tegenligger aankomt?",
-        "choices": [
-          {
-            "text": "Nee, u moet wachten en de tegenligger de doorgang laten passeren",
-            "is_correct": false
-          },
-          {
-            "text": "Ja, zolang u voorzichtig bent",
-            "is_correct": true
-          }
-        ],
-        "explanation": "Nee. Het bord B19 verplicht u uitdrukkelijk te wachten totdat het tegenliggende verkeer de smalle doorgang heeft gepasseerd."
-      },
-      "EN": {
-        "question": "With sign B19, may you enter the narrow passage if an oncoming vehicle is approaching?",
-        "choices": [
-          {
-            "text": "No, you must wait and let the oncoming vehicle pass through",
-            "is_correct": false
-          },
-          {
-            "text": "Yes, as long as you are careful",
-            "is_correct": true
-          }
-        ],
-        "explanation": "No. Sign B19 explicitly requires you to wait until oncoming traffic has passed through the narrow passage."
-      },
-      "FR": {
-        "question": "Avec le panneau B19, pouvez-vous vous engager dans le passage étroit si un véhicule en sens inverse approche ?",
-        "choices": [
-          {
-            "text": "Non, vous devez attendre que le véhicule en sens inverse ait traversé le passage",
-            "is_correct": false
-          },
-          {
-            "text": "Oui, tant que vous êtes prudent",
-            "is_correct": true
-          }
-        ],
-        "explanation": "Non. Le panneau B19 vous oblige explicitement à attendre que le trafic en sens inverse ait traversé le passage étroit."
-      },
-      "AR": {
-        "question": "مع اللافتة B19، هل يمكنك دخول الممر الضيق إذا كانت مركبة قادمة تقترب؟",
-        "choices": [
-          {
-            "text": "لا، يجب عليك الانتظار والسماح للمركبة القادمة بالمرور",
-            "is_correct": false
-          },
-          {
-            "text": "نعم، طالما أنك حذر",
-            "is_correct": true
-          }
-        ],
-        "explanation": "لا. تُلزمك اللافتة B19 صراحةً بالانتظار حتى تمر حركة المرور القادمة عبر الممر الضيق."
-      }
-    }
-  },
-  {
-    "question_id": "B19_Q09",
-    "type": "WHAT_SHOULD_YOU_DO",
-    "difficulty": "EASY",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "U rijdt naar een smalle doorgang met bord B19. U ziet een naderende auto van de andere kant. Wat doet u?",
-        "choices": [
-          {
-            "text": "Stop voor de doorgang en wacht tot de tegenligger voorbij is",
-            "is_correct": true
-          },
-          {
-            "text": "Rijd snel door voor de andere auto er is",
-            "is_correct": false
-          },
-          {
-            "text": "Geef lichtsignalen en rij door",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Bij B19 stopt u voor de smalle doorgang en wacht u totdat de naderende auto volledig de doorgang heeft gepasseerd."
-      },
-      "EN": {
-        "question": "You drive towards a narrow passage with sign B19. You see an approaching car from the other side. What do you do?",
-        "choices": [
-          {
-            "text": "Stop before the passage and wait until the oncoming car has passed",
-            "is_correct": true
-          },
-          {
-            "text": "Drive quickly through before the other car gets there",
-            "is_correct": false
-          },
-          {
-            "text": "Give light signals and drive on",
-            "is_correct": false
-          }
-        ],
-        "explanation": "With B19 you stop before the narrow passage and wait until the approaching car has completely passed through it."
-      },
-      "FR": {
-        "question": "Vous roulez vers un passage étroit avec le panneau B19. Vous voyez une voiture approchant de l'autre côté. Que faites-vous ?",
-        "choices": [
-          {
-            "text": "Arrêtez-vous avant le passage et attendez que la voiture en sens inverse soit passée",
-            "is_correct": true
-          },
-          {
-            "text": "Roulez vite à travers avant que l'autre voiture n'arrive",
-            "is_correct": false
-          },
-          {
-            "text": "Donnez des signaux lumineux et continuez",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Avec B19, vous vous arrêtez avant le passage étroit et attendez que la voiture approchante l'ait complètement traversé."
-      },
-      "AR": {
-        "question": "تسير نحو ممر ضيق مع اللافتة B19. ترى سيارة مقبلة من الجانب الآخر. ماذا تفعل؟",
-        "choices": [
-          {
-            "text": "توقف قبل الممر وانتظر حتى تمر السيارة القادمة",
-            "is_correct": true
-          },
-          {
-            "text": "سر بسرعة قبل أن تصل السيارة الأخرى",
-            "is_correct": false
-          },
-          {
-            "text": "أعطِ إشارات ضوئية واستمر",
-            "is_correct": false
-          }
-        ],
-        "explanation": "مع B19 تتوقف قبل الممر الضيق وتنتظر حتى تمر السيارة المقبلة بشكل كامل."
-      }
-    }
-  },
-  {
-    "question_id": "B19_Q10",
-    "type": "WHAT_IS_PROHIBITED",
-    "difficulty": "EASY",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Wat is verboden wanneer u bord B19 ziet en er is een tegenligger in de smalle doorgang?",
-        "choices": [
-          {
-            "text": "De smalle doorgang inrijden terwijl er een tegenligger in zit",
-            "is_correct": true
-          },
-          {
-            "text": "Wachten aan de ingang van de doorgang",
-            "is_correct": false
-          },
-          {
-            "text": "Uw richtingaanwijzer uitzetten",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Het is verboden de smalle doorgang in te rijden als er al een tegenligger in rijdt. U moet wachten totdat de doorgang vrij is."
-      },
-      "EN": {
-        "question": "What is prohibited when you see sign B19 and there is an oncoming vehicle in the narrow passage?",
-        "choices": [
-          {
-            "text": "Entering the narrow passage while an oncoming vehicle is in it",
-            "is_correct": true
-          },
-          {
-            "text": "Waiting at the entrance of the passage",
-            "is_correct": false
-          },
-          {
-            "text": "Turning off your indicator",
-            "is_correct": false
-          }
-        ],
-        "explanation": "It is prohibited to enter the narrow passage while an oncoming vehicle is already in it. You must wait until the passage is clear."
-      },
-      "FR": {
-        "question": "Qu'est-il interdit lorsque vous voyez le panneau B19 et qu'il y a un véhicule en sens inverse dans le passage étroit ?",
-        "choices": [
-          {
-            "text": "S'engager dans le passage étroit pendant qu'un véhicule en sens inverse s'y trouve",
-            "is_correct": true
-          },
-          {
-            "text": "Attendre à l'entrée du passage",
-            "is_correct": false
-          },
-          {
-            "text": "Éteindre votre clignotant",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Il est interdit de s'engager dans le passage étroit alors qu'un véhicule en sens inverse s'y trouve déjà. Vous devez attendre que le passage soit libre."
-      },
-      "AR": {
-        "question": "ما الذي يُحظر عندما ترى اللافتة B19 وهناك مركبة قادمة في الممر الضيق؟",
-        "choices": [
-          {
-            "text": "دخول الممر الضيق بينما توجد فيه مركبة قادمة",
-            "is_correct": true
-          },
-          {
-            "text": "الانتظار عند مدخل الممر",
-            "is_correct": false
-          },
-          {
-            "text": "إيقاف تشغيل إشارة الاتجاه",
-            "is_correct": false
-          }
-        ],
-        "explanation": "يُحظر دخول الممر الضيق بينما توجد فيه مركبة قادمة بالفعل. يجب عليك الانتظار حتى يكون الممر خالياً."
-      }
-    }
-  },
-  {
-    "question_id": "B19_Q11",
-    "type": "WHICH_SIGN",
-    "difficulty": "EASY",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Welk bord geeft aan dat u voorrang HAS (het tegengestelde van B19)?",
-        "choices": [
-          {
-            "text": "Bord B21 – smalle doorgang met voorrang ten opzichte van het tegenliggende verkeer",
-            "is_correct": true
-          },
-          {
-            "text": "Bord B1 – voorrang verlenen",
-            "is_correct": false
-          },
-          {
-            "text": "Bord B9 – voorrangsweg",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Bord B21 is het tegengestelde van B19: het geeft u voorrang op tegenliggende voertuigen in een smalle doorgang."
-      },
-      "EN": {
-        "question": "Which sign indicates that you HAVE priority (the opposite of B19)?",
-        "choices": [
-          {
-            "text": "Sign B21 – narrow passage with priority over oncoming traffic",
-            "is_correct": true
-          },
-          {
-            "text": "Sign B1 – give way",
-            "is_correct": false
-          },
-          {
-            "text": "Sign B9 – priority road",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Sign B21 is the opposite of B19: it gives you priority over oncoming vehicles in a narrow passage."
-      },
-      "FR": {
-        "question": "Quel panneau indique que vous AVEZ la priorité (l'opposé de B19) ?",
-        "choices": [
-          {
-            "text": "Panneau B21 – passage étroit avec priorité sur le trafic en sens inverse",
-            "is_correct": true
-          },
-          {
-            "text": "Panneau B1 – céder le passage",
-            "is_correct": false
-          },
-          {
-            "text": "Panneau B9 – route prioritaire",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Le panneau B21 est l'opposé de B19 : il vous donne la priorité sur les véhicules en sens inverse dans un passage étroit."
-      },
-      "AR": {
-        "question": "أي لافتة تشير إلى أن لديك الأولوية (عكس B19)؟",
-        "choices": [
-          {
-            "text": "اللافتة B21 – ممر ضيق مع الأولوية على حركة المرور القادمة",
-            "is_correct": true
-          },
-          {
-            "text": "اللافتة B1 – أعطِ الأولوية",
-            "is_correct": false
-          },
-          {
-            "text": "اللافتة B9 – طريق الأولوية",
-            "is_correct": false
-          }
-        ],
-        "explanation": "اللافتة B21 هي عكس B19: تمنحك الأولوية على المركبات القادمة في ممر ضيق."
-      }
-    }
-  },
-  {
-    "question_id": "B19_Q12",
-    "type": "TRUE_OR_FALSE",
-    "difficulty": "EASY",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Waar of niet waar: Bord B19 wordt normaal aan het begin van de smalle doorgang geplaatst vanuit uw rijrichting.",
-        "choices": [
-          {
-            "text": "Waar – het bord staat aan uw kant van de doorgang en geeft aan dat u voorrang moet verlenen",
-            "is_correct": true
-          },
-          {
-            "text": "Niet waar – het bord staat in het midden van de doorgang",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Waar. Het bord B19 wordt aan het begin van de smalle doorgang geplaatst aan de kant van de bestuurder die voorrang moet verlenen."
-      },
-      "EN": {
-        "question": "True or false: Sign B19 is normally placed at the beginning of the narrow passage from your direction of travel.",
-        "choices": [
-          {
-            "text": "True – the sign is on your side of the passage indicating you must give way",
-            "is_correct": true
-          },
-          {
-            "text": "False – the sign is in the middle of the passage",
-            "is_correct": false
-          }
-        ],
-        "explanation": "True. Sign B19 is placed at the beginning of the narrow passage on the side of the driver who must give way."
-      },
-      "FR": {
-        "question": "Vrai ou faux : Le panneau B19 est normalement placé au début du passage étroit depuis votre sens de circulation.",
-        "choices": [
-          {
-            "text": "Vrai – le panneau est de votre côté du passage indiquant que vous devez céder le passage",
-            "is_correct": true
-          },
-          {
-            "text": "Faux – le panneau est au milieu du passage",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Vrai. Le panneau B19 est placé au début du passage étroit du côté du conducteur qui doit céder le passage."
-      },
-      "AR": {
-        "question": "صحيح أم خاطئ: توضع اللافتة B19 عادةً في بداية الممر الضيق من اتجاه سيرك.",
-        "choices": [
-          {
-            "text": "صحيح – اللافتة على جانبك من الممر مما يشير إلى أنك يجب أن تعطي الأولوية",
-            "is_correct": true
-          },
-          {
-            "text": "خاطئ – اللافتة في منتصف الممر",
-            "is_correct": false
-          }
-        ],
-        "explanation": "صحيح. توضع اللافتة B19 في بداية الممر الضيق على جانب السائق الذي يجب أن يعطي الأولوية."
-      }
-    }
-  },
-  {
-    "question_id": "B19_Q13",
-    "type": "WHAT_DOES_IT_MEAN",
-    "difficulty": "EASY",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Welke kleurcode heeft het bord B19?",
-        "choices": [
-          {
-            "text": "Rood en blauw – rood voor het tegenliggende verkeer dat voorrang heeft, blauw voor uw richting",
-            "is_correct": true
-          },
-          {
-            "text": "Geel en zwart",
-            "is_correct": false
-          },
-          {
-            "text": "Groen en wit",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Bord B19 heeft een rode pijl (tegenligger met voorrang) en een blauwe pijl (u zonder voorrang), wat de voorrangshiërarchie visualiseert."
-      },
-      "EN": {
-        "question": "What colour code does sign B19 have?",
-        "choices": [
-          {
-            "text": "Red and blue – red for the oncoming traffic that has priority, blue for your direction",
-            "is_correct": true
-          },
-          {
-            "text": "Yellow and black",
-            "is_correct": false
-          },
-          {
-            "text": "Green and white",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Sign B19 has a red arrow (oncoming traffic with priority) and a blue arrow (you without priority), visualising the priority hierarchy."
-      },
-      "FR": {
-        "question": "Quel code couleur a le panneau B19 ?",
-        "choices": [
-          {
-            "text": "Rouge et bleu – rouge pour le trafic en sens inverse qui a la priorité, bleu pour votre direction",
-            "is_correct": true
-          },
-          {
-            "text": "Jaune et noir",
-            "is_correct": false
-          },
-          {
-            "text": "Vert et blanc",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Le panneau B19 a une flèche rouge (trafic en sens inverse avec priorité) et une flèche bleue (vous sans priorité), visualisant la hiérarchie des priorités."
-      },
-      "AR": {
-        "question": "ما رمز اللون للافتة B19؟",
-        "choices": [
-          {
-            "text": "أحمر وأزرق – أحمر لحركة المرور القادمة التي لها الأولوية، أزرق لاتجاهك",
-            "is_correct": true
-          },
-          {
-            "text": "أصفر وأسود",
-            "is_correct": false
-          },
-          {
-            "text": "أخضر وأبيض",
-            "is_correct": false
-          }
-        ],
-        "explanation": "اللافتة B19 لديها سهم أحمر (حركة المرور القادمة ذات الأولوية) وسهم أزرق (أنت بدون أولوية)، مما يُصور تسلسل الأولوية."
-      }
-    }
-  },
-  {
-    "question_id": "B19_Q14",
-    "type": "IS_IT_ALLOWED",
-    "difficulty": "EASY",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Bij bord B19 staat er niemand in de smalle doorgang. Mag u doorrijden?",
-        "choices": [
-          {
-            "text": "Ja, als de doorgang vrij is mag u er doorrijden",
-            "is_correct": true
-          },
-          {
-            "text": "Nee, u moet altijd wachten bij B19",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Ja. Als er geen tegenligger is mag u normaal doorrijden door de smalle doorgang. U moet alleen wachten als er een tegenligger aankomt of al in de doorgang rijdt."
-      },
-      "EN": {
-        "question": "With sign B19 there is nobody in the narrow passage. May you proceed?",
-        "choices": [
-          {
-            "text": "Yes, if the passage is clear you may drive through",
-            "is_correct": true
-          },
-          {
-            "text": "No, you must always wait with B19",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Yes. If there is no oncoming vehicle you may drive normally through the narrow passage. You only need to wait if an oncoming vehicle is approaching or already in the passage."
-      },
-      "FR": {
-        "question": "Avec le panneau B19, il n'y a personne dans le passage étroit. Pouvez-vous continuer ?",
-        "choices": [
-          {
-            "text": "Oui, si le passage est libre vous pouvez passer",
-            "is_correct": true
-          },
-          {
-            "text": "Non, vous devez toujours attendre avec B19",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Oui. S'il n'y a pas de véhicule en sens inverse, vous pouvez rouler normalement à travers le passage étroit. Vous devez seulement attendre si un véhicule en sens inverse approche ou se trouve déjà dans le passage."
-      },
-      "AR": {
-        "question": "مع اللافتة B19 لا أحد في الممر الضيق. هل يمكنك المضي قدماً؟",
-        "choices": [
-          {
-            "text": "نعم، إذا كان الممر خالياً يمكنك المرور",
-            "is_correct": true
-          },
-          {
-            "text": "لا، يجب عليك دائماً الانتظار مع B19",
-            "is_correct": false
-          }
-        ],
-        "explanation": "نعم. إذا لم تكن هناك مركبة قادمة يمكنك السير بشكل طبيعي عبر الممر الضيق. تحتاج فقط للانتظار إذا كانت مركبة قادمة تقترب أو تسير بالفعل في الممر."
-      }
-    }
-  },
-  {
-    "question_id": "B19_Q15",
-    "type": "WHAT_SHOULD_YOU_DO",
-    "difficulty": "EASY",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "U bent door de smalle doorgang B19 gereden. Een andere auto wacht aan de andere kant. Wat verwacht u van die auto?",
-        "choices": [
-          {
-            "text": "Niets – die auto heeft het bord B21 (of geen bord) en mag nu doorrijden als de doorgang vrij is",
-            "is_correct": true
-          },
-          {
-            "text": "Die auto moet ook wachten",
-            "is_correct": false
-          },
-          {
-            "text": "Die auto moet stoppen en nooit de doorgang passeren",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Nadat u door de doorgang bent, is die vrij voor het verkeer van de andere kant. Als zij het bord B21 hebben of geen bord, mogen ze doorrijden."
-      },
-      "EN": {
-        "question": "You have driven through the narrow passage B19. Another car waits on the other side. What do you expect of that car?",
-        "choices": [
-          {
-            "text": "Nothing – that car has sign B21 (or no sign) and may now proceed when the passage is clear",
-            "is_correct": true
-          },
-          {
-            "text": "That car must also wait",
-            "is_correct": false
-          },
-          {
-            "text": "That car must stop and never pass through",
-            "is_correct": false
-          }
-        ],
-        "explanation": "After you have passed through, the passage is clear for traffic from the other side. If they have sign B21 or no sign they may proceed."
-      },
-      "FR": {
-        "question": "Vous avez traversé le passage étroit B19. Une autre voiture attend de l'autre côté. Qu'attendez-vous de cette voiture ?",
-        "choices": [
-          {
-            "text": "Rien – cette voiture a le panneau B21 (ou pas de panneau) et peut maintenant continuer si le passage est libre",
-            "is_correct": true
-          },
-          {
-            "text": "Cette voiture doit aussi attendre",
-            "is_correct": false
-          },
-          {
-            "text": "Cette voiture doit s'arrêter et ne jamais traverser le passage",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Après votre passage, le passage est libre pour le trafic de l'autre côté. S'ils ont le panneau B21 ou pas de panneau, ils peuvent continuer."
-      },
-      "AR": {
-        "question": "لقد مررت عبر الممر الضيق B19. سيارة أخرى تنتظر على الجانب الآخر. ماذا تتوقع من تلك السيارة؟",
-        "choices": [
-          {
-            "text": "لا شيء – تلك السيارة لديها اللافتة B21 (أو لا لافتة) ويمكنها الآن المضي إذا كان الممر خالياً",
-            "is_correct": true
-          },
-          {
-            "text": "تلك السيارة يجب أن تنتظر أيضاً",
-            "is_correct": false
-          },
-          {
-            "text": "تلك السيارة يجب أن تتوقف ولا تمر أبداً",
-            "is_correct": false
-          }
-        ],
-        "explanation": "بعد مرورك، الممر خالٍ لحركة المرور من الجانب الآخر. إذا كان لديهم اللافتة B21 أو لا لافتة يمكنهم المضي."
-      }
-    }
-  },
-  {
-    "question_id": "B19_Q16",
-    "type": "WHAT_SHOULD_YOU_DO",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "U rijdt naar smalle doorgang B19. Er rijdt een vrachtwagen van de andere kant. Kunt u gelijktijdig door de smalle doorgang?",
-        "choices": [
-          {
-            "text": "Nee, u moet definitief wachten totdat de vrachtwagen volledig gepasseerd is voor u inrijdt",
-            "is_correct": true
-          },
-          {
-            "text": "Ja, als u voorzichtig bent kan het",
-            "is_correct": false
-          },
-          {
-            "text": "Ja, vrachtwagens hebben geen voorrang bij B19",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Bij B19 moet u altijd wachten op tegenliggend verkeer. Een grote vrachtwagen kan de doorgang geheel vullen – u moet wachten."
-      },
-      "EN": {
-        "question": "You drive towards narrow passage B19. A truck drives from the other side. Can you simultaneously go through the narrow passage?",
-        "choices": [
-          {
-            "text": "No, you must definitely wait until the truck has completely passed before entering",
-            "is_correct": true
-          },
-          {
-            "text": "Yes, if you are careful it is possible",
-            "is_correct": false
-          },
-          {
-            "text": "Yes, trucks have no priority at B19",
-            "is_correct": false
-          }
-        ],
-        "explanation": "With B19 you must always wait for oncoming traffic. A large truck can fill the entire passage – you must wait."
-      },
-      "FR": {
-        "question": "Vous roulez vers le passage étroit B19. Un camion vient de l'autre côté. Pouvez-vous traverser le passage étroit simultanément ?",
-        "choices": [
-          {
-            "text": "Non, vous devez absolument attendre que le camion soit complètement passé avant de vous engager",
-            "is_correct": true
-          },
-          {
-            "text": "Oui, si vous êtes prudent c'est possible",
-            "is_correct": false
-          },
-          {
-            "text": "Oui, les camions n'ont pas la priorité au B19",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Avec B19, vous devez toujours attendre le trafic en sens inverse. Un grand camion peut remplir tout le passage – vous devez attendre."
-      },
-      "AR": {
-        "question": "تسير نحو الممر الضيق B19. شاحنة تسير من الجانب الآخر. هل يمكنك المرور عبر الممر الضيق في نفس الوقت؟",
-        "choices": [
-          {
-            "text": "لا، يجب عليك بالتأكيد الانتظار حتى تمر الشاحنة بالكامل قبل الدخول",
-            "is_correct": true
-          },
-          {
-            "text": "نعم، إذا كنت حذراً فهذا ممكن",
-            "is_correct": false
-          },
-          {
-            "text": "نعم، للشاحنات لا أولوية في B19",
-            "is_correct": false
-          }
-        ],
-        "explanation": "مع B19 يجب عليك دائماً انتظار حركة المرور القادمة. شاحنة كبيرة يمكنها ملء الممر بالكامل – يجب عليك الانتظار."
-      }
-    }
-  },
-  {
-    "question_id": "B19_Q17",
-    "type": "IS_IT_ALLOWED",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Bij smalle doorgang B19 wacht u op uw beurt. Er vormt zich een lange rij tegenliggers. Mag u tussendoor glippen als er even een kleine opening is?",
-        "choices": [
-          {
-            "text": "Nee, u moet wachten totdat de doorgang volledig vrij is; in een klein gat glippen is gevaarlijk en verboden",
-            "is_correct": false
-          },
-          {
-            "text": "Ja, als er genoeg ruimte is mag u glippen",
-            "is_correct": true
-          }
-        ],
-        "explanation": "Nee. U moet wachten tot de doorgang volledig vrij is. Door een kleine opening glippen is gevaarlijk en verboden bij B19."
-      },
-      "EN": {
-        "question": "At narrow passage B19 you wait your turn. A long queue of oncoming traffic forms. May you slip through when there is a small gap?",
-        "choices": [
-          {
-            "text": "No, you must wait until the passage is fully clear; slipping through a small gap is dangerous and prohibited",
-            "is_correct": false
-          },
-          {
-            "text": "Yes, if there is enough space you may slip through",
-            "is_correct": true
-          }
-        ],
-        "explanation": "No. You must wait until the passage is completely clear. Slipping through a small gap is dangerous and prohibited with B19."
-      },
-      "FR": {
-        "question": "Au passage étroit B19, vous attendez votre tour. Une longue file de trafic en sens inverse se forme. Pouvez-vous vous faufiler pendant une petite ouverture ?",
-        "choices": [
-          {
-            "text": "Non, vous devez attendre que le passage soit complètement libre ; se faufiler dans un petit espace est dangereux et interdit",
-            "is_correct": false
-          },
-          {
-            "text": "Oui, s'il y a assez d'espace vous pouvez vous faufiler",
-            "is_correct": true
-          }
-        ],
-        "explanation": "Non. Vous devez attendre que le passage soit complètement libre. Se faufiler dans un petit espace est dangereux et interdit avec B19."
-      },
-      "AR": {
-        "question": "عند الممر الضيق B19 تنتظر دورك. تتشكل طابور طويل من حركة المرور القادمة. هل يمكنك التسلل عند فتحة صغيرة؟",
-        "choices": [
-          {
-            "text": "لا، يجب عليك الانتظار حتى يكون الممر خالياً تماماً؛ التسلل عبر فتحة صغيرة خطير ومحظور",
-            "is_correct": false
-          },
-          {
-            "text": "نعم، إذا كان هناك مساحة كافية يمكنك التسلل",
-            "is_correct": true
-          }
-        ],
-        "explanation": "لا. يجب عليك الانتظار حتى يكون الممر خالياً تماماً. التسلل عبر فتحة صغيرة خطير ومحظور مع B19."
-      }
-    }
-  },
-  {
-    "question_id": "B19_Q18",
-    "type": "TRUE_OR_FALSE",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Waar of niet waar: Als u al halfweg de smalle doorgang B19 bent en er rijdt toch een tegenligger in, heeft de tegenligger het overtreden.",
-        "choices": [
-          {
-            "text": "Waar – degene die de doorgang inrijdt terwijl de andere bestuurder al in de doorgang is, overtreedt de regel",
-            "is_correct": true
-          },
-          {
-            "text": "Niet waar – u had moeten wachten ondanks halfweg te zijn",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Waar. Degene die de doorgang inrijdt terwijl een andere bestuurder er al in rijdt, overtreedt de regel (bij B19 bent u het die moet wachten; bij B21 is het de tegenligger)."
-      },
-      "EN": {
-        "question": "True or false: If you are already halfway through narrow passage B19 and an oncoming vehicle enters anyway, the oncoming vehicle has violated the rule.",
-        "choices": [
-          {
-            "text": "True – the one who enters the passage while the other driver is already in it has violated the rule",
-            "is_correct": true
-          },
-          {
-            "text": "False – you should have waited even though you were halfway",
-            "is_correct": false
-          }
-        ],
-        "explanation": "True. The one who enters the passage while another driver is already in it has violated the rule (with B19 it is you who must wait; with B21 it is the oncoming vehicle)."
-      },
-      "FR": {
-        "question": "Vrai ou faux : Si vous êtes déjà à mi-chemin dans le passage étroit B19 et qu'un véhicule en sens inverse s'y engage quand même, ce véhicule a enfreint la règle.",
-        "choices": [
-          {
-            "text": "Vrai – celui qui s'engage dans le passage alors que l'autre conducteur s'y trouve déjà a enfreint la règle",
-            "is_correct": true
-          },
-          {
-            "text": "Faux – vous auriez dû attendre même si vous étiez à mi-chemin",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Vrai. Celui qui s'engage dans le passage alors qu'un autre conducteur s'y trouve déjà a enfreint la règle (avec B19, c'est vous qui devez attendre ; avec B21, c'est le véhicule en sens inverse)."
-      },
-      "AR": {
-        "question": "صحيح أم خاطئ: إذا كنت بالفعل في منتصف الممر الضيق B19 ودخلت مركبة قادمة على أي حال، فإن المركبة القادمة قد انتهكت القاعدة.",
-        "choices": [
-          {
-            "text": "صحيح – من يدخل الممر بينما السائق الآخر موجود فيه بالفعل قد انتهك القاعدة",
-            "is_correct": true
-          },
-          {
-            "text": "خاطئ – كان يجب عليك الانتظار رغم كونك في المنتصف",
-            "is_correct": false
-          }
-        ],
-        "explanation": "صحيح. من يدخل الممر بينما سائق آخر موجود فيه بالفعل قد انتهك القاعدة (مع B19 أنت من يجب أن ينتظر؛ مع B21 المركبة القادمة هي من يجب أن تنتظر)."
-      }
-    }
-  },
-  {
-    "question_id": "B19_Q19",
-    "type": "WHAT_IS_PROHIBITED",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "U heeft lang gewacht bij smalle doorgang B19. Nu is het eindelijk vrij. Wat is verboden bij het inrijden?",
-        "choices": [
-          {
-            "text": "Te snel inrijden en geen ruimte te laten voor eventuele obstakels",
-            "is_correct": true
-          },
-          {
-            "text": "Gebruik van uw richtingaanwijzer",
-            "is_correct": false
-          },
-          {
-            "text": "Uw snelheid aanpassen aan de enge ruimte",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Bij een smalle doorgang moet u langzaam rijden en ruimte laten voor eventuele obstakels, ook als de doorgang officieel vrij lijkt."
-      },
-      "EN": {
-        "question": "You have waited long at narrow passage B19. Now it is finally clear. What is prohibited when entering?",
-        "choices": [
-          {
-            "text": "Entering too fast without leaving space for possible obstacles",
-            "is_correct": true
-          },
-          {
-            "text": "Using your indicator",
-            "is_correct": false
-          },
-          {
-            "text": "Adapting your speed to the narrow space",
-            "is_correct": false
-          }
-        ],
-        "explanation": "At a narrow passage you must drive slowly and leave space for possible obstacles, even when the passage appears officially clear."
-      },
-      "FR": {
-        "question": "Vous avez longtemps attendu au passage étroit B19. Maintenant il est enfin libre. Qu'est-il interdit en entrant ?",
-        "choices": [
-          {
-            "text": "Entrer trop vite sans laisser d'espace pour les éventuels obstacles",
-            "is_correct": true
-          },
-          {
-            "text": "Utiliser votre clignotant",
-            "is_correct": false
-          },
-          {
-            "text": "Adapter votre vitesse à l'espace étroit",
-            "is_correct": false
-          }
-        ],
-        "explanation": "À un passage étroit, vous devez rouler lentement et laisser de l'espace pour les éventuels obstacles, même quand le passage semble officiellement libre."
-      },
-      "AR": {
-        "question": "لقد انتظرت طويلاً عند الممر الضيق B19. الآن أصبح خالياً أخيراً. ما الذي يُحظر عند الدخول؟",
-        "choices": [
-          {
-            "text": "الدخول بسرعة كبيرة دون ترك مجال للعوائق المحتملة",
-            "is_correct": true
-          },
-          {
-            "text": "استخدام إشارة الاتجاه",
-            "is_correct": false
-          },
-          {
-            "text": "تعديل سرعتك بما يتناسب مع المجال الضيق",
-            "is_correct": false
-          }
-        ],
-        "explanation": "عند الممر الضيق يجب عليك السير ببطء وترك مجال للعوائق المحتملة، حتى عندما يبدو الممر خالياً رسمياً."
-      }
-    }
-  },
-  {
-    "question_id": "B19_Q20",
-    "type": "WHAT_DOES_IT_MEAN",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Staat bord B19 alleen op wegen of ook op andere plaatsen zoals tunnels?",
-        "choices": [
-          {
-            "text": "B19 kan geplaatst worden op elke smalle doorgang: een weg, tunnel, brug of viaduct",
-            "is_correct": true
-          },
-          {
-            "text": "Alleen op gewone wegen",
-            "is_correct": false
-          },
-          {
-            "text": "Alleen in bebouwde kommen",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Bord B19 kan geplaatst zijn op elke locatie met een smalle doorgang: een weg, tunnel, brug of viaduct."
-      },
-      "EN": {
-        "question": "Is sign B19 only on roads or also in other places such as tunnels?",
-        "choices": [
-          {
-            "text": "B19 can be placed at any narrow passage: a road, tunnel, bridge or viaduct",
-            "is_correct": true
-          },
-          {
-            "text": "Only on ordinary roads",
-            "is_correct": false
-          },
-          {
-            "text": "Only in built-up areas",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Sign B19 can be placed at any location with a narrow passage: a road, tunnel, bridge or viaduct."
-      },
-      "FR": {
-        "question": "Le panneau B19 est-il uniquement sur les routes ou aussi dans d'autres endroits comme les tunnels ?",
-        "choices": [
-          {
-            "text": "B19 peut être placé à n'importe quel passage étroit : une route, tunnel, pont ou viaduc",
-            "is_correct": true
-          },
-          {
-            "text": "Uniquement sur les routes ordinaires",
-            "is_correct": false
-          },
-          {
-            "text": "Uniquement en agglomération",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Le panneau B19 peut être placé à n'importe quel endroit avec un passage étroit : une route, un tunnel, un pont ou un viaduc."
-      },
-      "AR": {
-        "question": "هل اللافتة B19 على الطرق فقط أم أيضاً في أماكن أخرى كالأنفاق؟",
-        "choices": [
-          {
-            "text": "يمكن وضع B19 عند أي ممر ضيق: طريق أو نفق أو جسر أو جسر علوي",
-            "is_correct": true
-          },
-          {
-            "text": "فقط على الطرق العادية",
-            "is_correct": false
-          },
-          {
-            "text": "فقط في مناطق البناء",
-            "is_correct": false
-          }
-        ],
-        "explanation": "يمكن وضع اللافتة B19 في أي موقع يحتوي على ممر ضيق: طريق أو نفق أو جسر أو جسر علوي."
-      }
-    }
-  },
-  {
-    "question_id": "B19_Q21",
-    "type": "IS_IT_ALLOWED",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Mag u bij bord B19 claxonneren om de tegenligger sneller te laten rijden?",
-        "choices": [
-          {
-            "text": "Nee, claxonneren om anderen te dringen om sneller te rijden is onbeleefde en verboden hindernis",
-            "is_correct": false
-          },
-          {
-            "text": "Ja, claxonneren is toegestaan om de verkeersflow te verbeteren",
-            "is_correct": true
-          }
-        ],
-        "explanation": "Nee. Claxonneren om anderen onder druk te zetten is agressief rijgedrag en is verboden, ongeacht de verkeerssituatie."
-      },
-      "EN": {
-        "question": "With sign B19, may you honk to make the oncoming vehicle drive faster?",
-        "choices": [
-          {
-            "text": "No, honking to pressure others to drive faster is aggressive and prohibited",
-            "is_correct": false
-          },
-          {
-            "text": "Yes, honking is permitted to improve traffic flow",
-            "is_correct": true
-          }
-        ],
-        "explanation": "No. Honking to pressure others is aggressive driving behaviour and is prohibited, regardless of the traffic situation."
-      },
-      "FR": {
-        "question": "Avec le panneau B19, pouvez-vous klaxonner pour faire rouler plus vite le véhicule en sens inverse ?",
-        "choices": [
-          {
-            "text": "Non, klaxonner pour presser les autres à rouler plus vite est agressif et interdit",
-            "is_correct": false
-          },
-          {
-            "text": "Oui, klaxonner est autorisé pour améliorer le flux de trafic",
-            "is_correct": true
-          }
-        ],
-        "explanation": "Non. Klaxonner pour faire pression sur les autres est un comportement de conduite agressif et est interdit, quelle que soit la situation de trafic."
-      },
-      "AR": {
-        "question": "مع اللافتة B19، هل يمكنك دق البوق لإجبار المركبة القادمة على السير بشكل أسرع؟",
-        "choices": [
-          {
-            "text": "لا، دق البوق لإجبار الآخرين على السير بشكل أسرع سلوك عدواني ومحظور",
-            "is_correct": false
-          },
-          {
-            "text": "نعم، دق البوق مسموح به لتحسين تدفق المرور",
-            "is_correct": true
-          }
-        ],
-        "explanation": "لا. دق البوق لإجبار الآخرين سلوك قيادة عدواني ومحظور، بغض النظر عن الوضع المروري."
-      }
-    }
-  },
-  {
-    "question_id": "B19_Q22",
-    "type": "WHAT_SHOULD_YOU_DO",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "U nadert smalle doorgang B19 maar er staat al een lange wachtrij auto's voor u. Wat doet u?",
-        "choices": [
-          {
-            "text": "Sluit aan achteraan de rij en wacht geduldig totdat u aan de beurt bent",
-            "is_correct": true
-          },
-          {
-            "text": "Rij langs de rij via de tegenovergestelde rijbaan",
-            "is_correct": false
-          },
-          {
-            "text": "Gebruik uw claxon en rijstrookwissel",
-            "is_correct": false
-          }
-        ],
-        "explanation": "U moet netjes achter de bestaande wachtrij wachten. Het is verboden om via de tegenkomende rijbaan de rij voor te steken."
-      },
-      "EN": {
-        "question": "You approach narrow passage B19 but there is already a long queue of cars in front of you. What do you do?",
-        "choices": [
-          {
-            "text": "Join at the back of the queue and wait patiently for your turn",
-            "is_correct": true
-          },
-          {
-            "text": "Drive along the queue using the opposite lane",
-            "is_correct": false
-          },
-          {
-            "text": "Use your horn and change lanes",
-            "is_correct": false
-          }
-        ],
-        "explanation": "You must wait neatly behind the existing queue. It is prohibited to jump the queue via the oncoming lane."
-      },
-      "FR": {
-        "question": "Vous approchez du passage étroit B19 mais il y a déjà une longue file de voitures devant vous. Que faites-vous ?",
-        "choices": [
-          {
-            "text": "Rejoignez la file par derrière et attendez patiemment votre tour",
-            "is_correct": true
-          },
-          {
-            "text": "Roulez le long de la file via la voie en sens inverse",
-            "is_correct": false
-          },
-          {
-            "text": "Utilisez votre klaxon et changez de voie",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Vous devez attendre sagement derrière la file existante. Il est interdit de griller la file via la voie en sens inverse."
-      },
-      "AR": {
-        "question": "تقترب من الممر الضيق B19 لكن هناك طابور طويل من السيارات أمامك بالفعل. ماذا تفعل؟",
-        "choices": [
-          {
-            "text": "انضم إلى آخر الطابور وانتظر بصبر حتى يحين دورك",
-            "is_correct": true
-          },
-          {
-            "text": "سر على طول الطابور عبر المسار المقابل",
-            "is_correct": false
-          },
-          {
-            "text": "استخدم بوقك وابدّل المسار",
-            "is_correct": false
-          }
-        ],
-        "explanation": "يجب عليك الانتظار بشكل صحيح خلف الطابور الموجود. يُحظر تجاوز الطابور عبر المسار القادم."
-      }
-    }
-  },
-  {
-    "question_id": "B19_Q23",
-    "type": "TRUE_OR_FALSE",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Waar of niet waar: Bij B19 moet u aan de kant van de weg wachten als er geen wachtplaats is.",
-        "choices": [
-          {
-            "text": "Waar – als er geen speciale wachtplaats is stopt u zo dicht mogelijk aan de kant van de weg zonder te blokkeren",
-            "is_correct": true
-          },
-          {
-            "text": "Niet waar – u mag midden op de weg wachten",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Waar. Als er geen vaste wachtplaats is, stopt u zo dicht mogelijk aan de kant van de weg zonder het overige verkeer of de doorgang te blokkeren."
-      },
-      "EN": {
-        "question": "True or false: With B19 you must wait at the side of the road if there is no waiting area.",
-        "choices": [
-          {
-            "text": "True – if there is no special waiting area you stop as close to the edge of the road as possible without blocking",
-            "is_correct": true
-          },
-          {
-            "text": "False – you may wait in the middle of the road",
-            "is_correct": false
-          }
-        ],
-        "explanation": "True. If there is no fixed waiting area you stop as close to the edge of the road as possible without blocking other traffic or the passage."
-      },
-      "FR": {
-        "question": "Vrai ou faux : Avec B19, vous devez attendre sur le côté de la route s'il n'y a pas de zone d'attente.",
-        "choices": [
-          {
-            "text": "Vrai – s'il n'y a pas de zone d'attente spéciale, vous vous arrêtez aussi près du bord de la route que possible sans bloquer",
-            "is_correct": true
-          },
-          {
-            "text": "Faux – vous pouvez attendre au milieu de la route",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Vrai. S'il n'y a pas de zone d'attente fixe, vous vous arrêtez aussi près du bord de la route que possible sans bloquer les autres véhicules ni le passage."
-      },
-      "AR": {
-        "question": "صحيح أم خاطئ: مع B19 يجب عليك الانتظار على جانب الطريق إذا لم تكن هناك منطقة انتظار.",
-        "choices": [
-          {
-            "text": "صحيح – إذا لم تكن هناك منطقة انتظار خاصة تتوقف قريباً من حافة الطريق قدر الإمكان دون إعاقة",
-            "is_correct": true
-          },
-          {
-            "text": "خاطئ – يمكنك الانتظار في منتصف الطريق",
-            "is_correct": false
-          }
-        ],
-        "explanation": "صحيح. إذا لم تكن هناك منطقة انتظار محددة، تتوقف قريباً من حافة الطريق قدر الإمكان دون إعاقة حركة المرور الأخرى أو الممر."
-      }
-    }
-  },
-  {
-    "question_id": "B19_Q24",
-    "type": "WHAT_MUST_YOU_DO",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "U wacht bij bord B19. Door de hoge snelheid van de tegenligger kan hij niet tijdig stoppen. Wat moet u doen?",
-        "choices": [
-          {
-            "text": "Bereid u voor om zo snel mogelijk achteruit te rijden of obstakels te vermijden",
-            "is_correct": true
-          },
-          {
-            "text": "Rij door want de tegenligger moet stoppen",
-            "is_correct": false
-          },
-          {
-            "text": "Claxonneer en rij door",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Zelfs als de tegenligger fouten maakt, bent u verplicht een botsing te vermijden. Rijdt achteruit als het nodig is voor de veiligheid."
-      },
-      "EN": {
-        "question": "You wait at sign B19. Due to the high speed of the oncoming vehicle it cannot stop in time. What must you do?",
-        "choices": [
-          {
-            "text": "Prepare to reverse as quickly as possible or avoid obstacles",
-            "is_correct": true
-          },
-          {
-            "text": "Drive on since the oncoming vehicle must stop",
-            "is_correct": false
-          },
-          {
-            "text": "Honk and drive on",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Even if the oncoming vehicle makes mistakes, you are required to avoid a collision. Reverse if necessary for safety."
-      },
-      "FR": {
-        "question": "Vous attendez au panneau B19. En raison de la vitesse élevée du véhicule en sens inverse, il ne peut pas s'arrêter à temps. Que devez-vous faire ?",
-        "choices": [
-          {
-            "text": "Préparez-vous à reculer aussi vite que possible ou à éviter les obstacles",
-            "is_correct": true
-          },
-          {
-            "text": "Continuez car le véhicule en sens inverse doit s'arrêter",
-            "is_correct": false
-          },
-          {
-            "text": "Klaxonnez et continuez",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Même si le véhicule en sens inverse fait des erreurs, vous êtes obligé d'éviter une collision. Reculez si nécessaire pour la sécurité."
-      },
-      "AR": {
-        "question": "تنتظر عند اللافتة B19. بسبب السرعة العالية للمركبة القادمة لا يمكنها التوقف في الوقت المناسب. ماذا يجب أن تفعل؟",
-        "choices": [
-          {
-            "text": "استعد للتراجع للخلف بأسرع ما يمكن أو تجنب العوائق",
-            "is_correct": true
-          },
-          {
-            "text": "استمر في السير لأن المركبة القادمة يجب أن تتوقف",
-            "is_correct": false
-          },
-          {
-            "text": "أدق البوق واستمر",
-            "is_correct": false
-          }
-        ],
-        "explanation": "حتى لو أخطأت المركبة القادمة، ملزم بتجنب الاصطدام. تراجع للخلف إذا لزم الأمر من أجل السلامة."
-      }
-    }
-  },
-  {
-    "question_id": "B19_Q25",
-    "type": "WHAT_IS_PROHIBITED",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Bij een smalle doorgang met bord B19 wacht u al 5 minuten. Wat is verboden terwijl u wacht?",
-        "choices": [
-          {
-            "text": "De doorgang blokkeren door midden op de weg te staan zodat tegenliggers er niet voorbij kunnen",
-            "is_correct": true
-          },
-          {
-            "text": "Uw motor laten draaien tijdens het wachten",
-            "is_correct": false
-          },
-          {
-            "text": "Uw richtingaanwijzer aanzetten",
-            "is_correct": false
-          }
-        ],
-        "explanation": "U moet de doorgang vrijhouden voor tegenliggend verkeer. Midden op de weg staan en blokkeren is verboden."
-      },
-      "EN": {
-        "question": "At a narrow passage with sign B19 you have been waiting for 5 minutes. What is prohibited while waiting?",
-        "choices": [
-          {
-            "text": "Blocking the passage by standing in the middle of the road so oncoming vehicles cannot pass",
-            "is_correct": true
-          },
-          {
-            "text": "Leaving your engine running while waiting",
-            "is_correct": false
-          },
-          {
-            "text": "Turning on your indicator",
-            "is_correct": false
-          }
-        ],
-        "explanation": "You must keep the passage clear for oncoming traffic. Standing in the middle of the road and blocking it is prohibited."
-      },
-      "FR": {
-        "question": "À un passage étroit avec le panneau B19 vous attendez depuis 5 minutes. Qu'est-il interdit pendant l'attente ?",
-        "choices": [
-          {
-            "text": "Bloquer le passage en se tenant au milieu de la route pour que les véhicules en sens inverse ne puissent pas passer",
-            "is_correct": true
-          },
-          {
-            "text": "Laisser tourner votre moteur pendant l'attente",
-            "is_correct": false
-          },
-          {
-            "text": "Allumer votre clignotant",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Vous devez garder le passage libre pour le trafic en sens inverse. Se tenir au milieu de la route et le bloquer est interdit."
-      },
-      "AR": {
-        "question": "عند ممر ضيق مع اللافتة B19 انتظرت 5 دقائق. ما الذي يُحظر أثناء الانتظار؟",
-        "choices": [
-          {
-            "text": "سد الممر بالوقوف في منتصف الطريق حتى لا تتمكن المركبات القادمة من المرور",
-            "is_correct": true
-          },
-          {
-            "text": "ترك محركك يعمل أثناء الانتظار",
-            "is_correct": false
-          },
-          {
-            "text": "تشغيل إشارة الاتجاه",
-            "is_correct": false
-          }
-        ],
-        "explanation": "يجب عليك إبقاء الممر خالياً لحركة المرور القادمة. الوقوف في منتصف الطريق وسده محظور."
-      }
-    }
-  },
-  {
-    "question_id": "B19_Q26",
-    "type": "IS_IT_ALLOWED",
     "difficulty": "HARD",
     "is_critical": true,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Bij smalle doorgang B19, een ambulance komt van de tegenondergestelde richting. Mag u toch rijden om de ambulance te laten doorrijden?",
+        "question": "Bord B19 staat op uw kant van de smalle doorgang. Aan de andere kant staat geen bord. Heeft het tegemoetkomend verkeer dan automatisch bord B21?",
         "choices": [
-          {
-            "text": "Nee, u moet wachten en de ambulance de doorgang laten passeren – hulpdiensten hebben altijd absolute voorrang",
-            "is_correct": false
-          },
-          {
-            "text": "Ja, rijdt snel door zodat de ambulance aan is",
-            "is_correct": true
-          }
+          {"text": "Ja, bord B19 en B21 worden altijd als paar geplaatst: aan de ene kant B19 en aan de andere kant B21", "is_correct": true},
+          {"text": "Nee, zonder bord B21 aan de overkant gelden geen bijzondere voorrangsregels bij die doorgang", "is_correct": false}
         ],
-        "explanation": "Nee. Hulpdiensten hebben absolute voorrang. U moet wachten en de ambulance als eerste de smalle doorgang laten passeren."
+        "explanation": "Bord B19 wordt steeds gecombineerd met bord B21 aan het andere uiteinde van de smalle doorgang. Het ontbreken van het bord aan de andere kant is een tekort in de signalisatie, niet een wijziging van de regel."
       },
       "EN": {
-        "question": "At narrow passage B19 an ambulance comes from the opposite direction. May you still drive to let the ambulance proceed?",
+        "question": "Sign B19 is on your side of the narrow passage. There is no sign on the other side. Does oncoming traffic automatically have sign B21?",
         "choices": [
-          {
-            "text": "No, you must wait and let the ambulance pass through the passage – emergency services always have absolute priority",
-            "is_correct": false
-          },
-          {
-            "text": "Yes, drive quickly through so the ambulance can proceed",
-            "is_correct": true
-          }
+          {"text": "Yes, signs B19 and B21 are always placed as a pair: B19 on one side and B21 on the other side", "is_correct": true},
+          {"text": "No, without sign B21 on the other side, no special priority rules apply at that passage", "is_correct": false}
         ],
-        "explanation": "No. Emergency services have absolute priority. You must wait and let the ambulance pass through the narrow passage first."
+        "explanation": "Sign B19 is always combined with sign B21 at the other end of the narrow passage. The absence of the sign on the other side is a signage deficiency, not a change to the rule."
       },
       "FR": {
-        "question": "Au passage étroit B19, une ambulance vient en sens inverse. Pouvez-vous quand même rouler pour laisser passer l'ambulance ?",
+        "question": "Le panneau B19 se trouve de votre cote du passage etroit. Il n y a pas de panneau de l autre cote. Le trafic venant en sens inverse a-t-il automatiquement le panneau B21 ?",
         "choices": [
-          {
-            "text": "Non, vous devez attendre et laisser l'ambulance traverser le passage – les services d'urgence ont toujours la priorité absolue",
-            "is_correct": false
-          },
-          {
-            "text": "Oui, roulez vite à travers pour que l'ambulance puisse avancer",
-            "is_correct": true
-          }
+          {"text": "Oui, les panneaux B19 et B21 sont toujours places en paire : B19 d un cote et B21 de l autre", "is_correct": true},
+          {"text": "Non, sans panneau B21 de l autre cote, aucune regle de priorite speciale ne s applique a ce passage", "is_correct": false}
         ],
-        "explanation": "Non. Les services d'urgence ont la priorité absolue. Vous devez attendre et laisser l'ambulance traverser le passage étroit en premier."
+        "explanation": "Le panneau B19 est toujours combine avec le panneau B21 a l autre extremite du passage etroit. L absence du panneau de l autre cote est une deficience de signalisation, pas une modification de la regle."
       },
       "AR": {
-        "question": "عند الممر الضيق B19، سيارة إسعاف تأتي من الاتجاه المعاكس. هل يمكنك السير للسماح للإسعاف بالمضي؟",
+        "question": "Ù„Ø§ÙØªØ© B19 Ù…ÙˆØ¬ÙˆØ¯Ø© Ø¹Ù„Ù‰ Ø¬Ø§Ù†Ø¨Ùƒ Ù…Ù† Ø§Ù„Ù…Ù…Ø± Ø§Ù„Ø¶ÙŠÙ‚. Ù„Ø§ ØªÙˆØ¬Ø¯ Ù„Ø§ÙØªØ© Ø¹Ù„Ù‰ Ø§Ù„Ø¬Ø§Ù†Ø¨ Ø§Ù„Ø§Ø®Ø±. Ù‡Ù„ ÙŠÙ…ØªÙ„Ùƒ Ø­Ø±ÙƒØ© Ø§Ù„Ù…Ø±ÙˆØ± Ø§Ù„Ù…Ù‚Ø§Ø¨Ù„Ø© Ù„Ø§ÙØªØ© B21 ØªÙ„Ù‚Ø§Ø¦ÙŠØ§ØŸ",
         "choices": [
-          {
-            "text": "لا، يجب عليك الانتظار والسماح للإسعاف بالمرور – خدمات الطوارئ دائماً لها أولوية مطلقة",
-            "is_correct": false
-          },
-          {
-            "text": "نعم، سر بسرعة حتى يتمكن الإسعاف من المضي",
-            "is_correct": true
-          }
+          {"text": "Ù†Ø¹Ù…ØŒ Ù„Ø§ÙØªØªØ§ B19 ÙˆB21 ØªÙˆØ¶Ø¹Ø§Ù† Ø¯Ø§Ø¦Ù…Ø§ ÙƒØ²ÙˆØ¬: B19 Ø¹Ù„Ù‰ Ø¬Ø§Ù†Ø¨ ÙˆB21 Ø¹Ù„Ù‰ Ø§Ù„Ø¬Ø§Ù†Ø¨ Ø§Ù„Ø§Ø®Ø±", "is_correct": true},
+          {"text": "Ù„Ø§ØŒ Ø¨Ø¯ÙˆÙ† Ù„Ø§ÙØªØ© B21 Ø¹Ù„Ù‰ Ø§Ù„Ø¬Ø§Ù†Ø¨ Ø§Ù„Ø§Ø®Ø± Ù„Ø§ ØªØ³Ø±ÙŠ Ù‚ÙˆØ§Ø¹Ø¯ Ø§ÙˆÙ„ÙˆÙŠØ© Ø®Ø§ØµØ© Ø¹Ù†Ø¯ Ø°Ù„Ùƒ Ø§Ù„Ù…Ù…Ø±", "is_correct": false}
         ],
-        "explanation": "لا. لخدمات الطوارئ أولوية مطلقة. يجب عليك الانتظار والسماح للإسعاف بالمرور عبر الممر الضيق أولاً."
-      }
-    }
-  },
-  {
-    "question_id": "B19_Q27",
-    "type": "WHAT_MUST_YOU_DO",
-    "difficulty": "HARD",
-    "is_critical": true,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "U wacht bij B19 en de tegenligger rijdt al door de doorgang maar stopt plotseling. Wat doet u?",
-        "choices": [
-          {
-            "text": "Wacht geduldig totdat de situatie is opgelost (voertuig verder gereden of teruggereden)",
-            "is_correct": true
-          },
-          {
-            "text": "Rijdt zelf ook in de doorgang",
-            "is_correct": false
-          },
-          {
-            "text": "Claxonneer agressief",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Wacht geduldig. het is de verantwoordelijkheid van de bestuurder met voorrang (B21) of de tegenligger om de situatie op te lossen. Rij nooit in een geblokkeerde doorgang."
-      },
-      "EN": {
-        "question": "You wait at B19 and the oncoming vehicle is already through the passage but stops suddenly. What do you do?",
-        "choices": [
-          {
-            "text": "Wait patiently until the situation is resolved (vehicle drives on or reverses)",
-            "is_correct": true
-          },
-          {
-            "text": "Drive into the passage yourself",
-            "is_correct": false
-          },
-          {
-            "text": "Honk aggressively",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Wait patiently. It is the responsibility of the driver with priority (B21) or the oncoming driver to resolve the situation. Never drive into a blocked passage."
-      },
-      "FR": {
-        "question": "Vous attendez au B19 et le véhicule en sens inverse est déjà dans le passage mais s'arrête soudainement. Que faites-vous ?",
-        "choices": [
-          {
-            "text": "Attendez patiemment que la situation soit résolue (le véhicule continue ou recule)",
-            "is_correct": true
-          },
-          {
-            "text": "Entrez vous-même dans le passage",
-            "is_correct": false
-          },
-          {
-            "text": "Klaxonnez de manière agressive",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Attendez patiemment. C'est la responsabilité du conducteur avec priorité (B21) ou du conducteur en sens inverse de résoudre la situation. Ne vous engagez jamais dans un passage bloqué."
-      },
-      "AR": {
-        "question": "تنتظر عند B19 والمركبة القادمة موجودة بالفعل في الممر لكنها توقفت فجأة. ماذا تفعل؟",
-        "choices": [
-          {
-            "text": "انتظر بصبر حتى تُحل المشكلة (السيارة تسير أو تتراجع)",
-            "is_correct": true
-          },
-          {
-            "text": "ادخل الممر بنفسك",
-            "is_correct": false
-          },
-          {
-            "text": "أدق البوق بعدوانية",
-            "is_correct": false
-          }
-        ],
-        "explanation": "انتظر بصبر. من مسؤولية السائق ذي الأولوية (B21) أو السائق القادم حل الوضع. لا تدخل أبداً ممراً مسدوداً."
-      }
-    }
-  },
-  {
-    "question_id": "B19_Q28",
-    "type": "TRUE_OR_FALSE",
-    "difficulty": "HARD",
-    "is_critical": true,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Waar of niet waar: Bij nacht en weinig verkeer bij een smalle doorgang B19 mag u toch inrijden als de tegenligger nog ver weg is.",
-        "choices": [
-          {
-            "text": "Niet waar – ook als de tegenligger ver weg is, moet u wachten totdat die volledig de doorgang heeft verlaten of er nog niet in is",
-            "is_correct": false
-          },
-          {
-            "text": "Waar – bij genoeg afstand is het veilig",
-            "is_correct": true
-          }
-        ],
-        "explanation": "Niet waar. U kunt de afstand en snelheid verkeerd inschatten. Veiligheid vereist dat u wacht totdat de doorgang volledig vrij is."
-      },
-      "EN": {
-        "question": "True or false: At night with little traffic at narrow passage B19 you may still enter if the oncoming vehicle is still far away.",
-        "choices": [
-          {
-            "text": "False – even when the oncoming vehicle is far away you must wait until it has completely left the passage or has not yet entered",
-            "is_correct": false
-          },
-          {
-            "text": "True – with enough distance it is safe",
-            "is_correct": true
-          }
-        ],
-        "explanation": "False. You may misjudge distance and speed. Safety requires you to wait until the passage is completely clear."
-      },
-      "FR": {
-        "question": "Vrai ou faux : La nuit avec peu de trafic à un passage étroit B19, vous pouvez quand même vous engager si le véhicule en sens inverse est encore loin.",
-        "choices": [
-          {
-            "text": "Faux – même lorsque le véhicule en sens inverse est loin, vous devez attendre qu'il ait complètement quitté le passage ou n'y soit pas encore entré",
-            "is_correct": false
-          },
-          {
-            "text": "Vrai – avec suffisamment de distance c'est sûr",
-            "is_correct": true
-          }
-        ],
-        "explanation": "Faux. Vous pourriez mal estimer la distance et la vitesse. La sécurité exige que vous attendiez que le passage soit complètement libre."
-      },
-      "AR": {
-        "question": "صحيح أم خاطئ: في الليل مع قليل من حركة المرور عند الممر الضيق B19 يمكنك الدخول إذا كانت المركبة القادمة لا تزال بعيدة.",
-        "choices": [
-          {
-            "text": "خاطئ – حتى عندما تكون المركبة القادمة بعيدة يجب عليك الانتظار حتى تغادر الممر بالكامل أو لم تدخله بعد",
-            "is_correct": false
-          },
-          {
-            "text": "صحيح – مع مسافة كافية يكون ذلك آمناً",
-            "is_correct": true
-          }
-        ],
-        "explanation": "خاطئ. قد تُقدّر المسافة والسرعة بشكل خاطئ. تتطلب السلامة منك الانتظار حتى يكون الممر خالياً تماماً."
-      }
-    }
-  },
-  {
-    "question_id": "B19_Q29",
-    "type": "WHAT_IS_PROHIBITED",
-    "difficulty": "HARD",
-    "is_critical": true,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Wat is het meest gevaarlijke en verboden gedrag bij bord B19?",
-        "choices": [
-          {
-            "text": "De smalle doorgang inrijden terwijl een tegenligger al in de doorgang rijdt",
-            "is_correct": true
-          },
-          {
-            "text": "Wachten aan de ingang",
-            "is_correct": false
-          },
-          {
-            "text": "Uw motor uitzetten tijdens het wachten",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Het meest gevaarlijke en verboden gedrag is de smalle doorgang inrijden terwijl er al een tegenligger in rijdt. Dit kan leiden tot een frontale botsing."
-      },
-      "EN": {
-        "question": "What is the most dangerous and prohibited behaviour with sign B19?",
-        "choices": [
-          {
-            "text": "Entering the narrow passage while an oncoming vehicle is already driving in it",
-            "is_correct": true
-          },
-          {
-            "text": "Waiting at the entrance",
-            "is_correct": false
-          },
-          {
-            "text": "Turning off your engine while waiting",
-            "is_correct": false
-          }
-        ],
-        "explanation": "The most dangerous and prohibited behaviour is entering the narrow passage while an oncoming vehicle is already driving in it. This can lead to a head-on collision."
-      },
-      "FR": {
-        "question": "Quel est le comportement le plus dangereux et interdit avec le panneau B19 ?",
-        "choices": [
-          {
-            "text": "S'engager dans le passage étroit alors qu'un véhicule en sens inverse s'y trouve déjà",
-            "is_correct": true
-          },
-          {
-            "text": "Attendre à l'entrée",
-            "is_correct": false
-          },
-          {
-            "text": "Couper votre moteur pendant l'attente",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Le comportement le plus dangereux et interdit est de s'engager dans le passage étroit alors qu'un véhicule en sens inverse s'y trouve déjà. Cela peut entraîner une collision frontale."
-      },
-      "AR": {
-        "question": "ما هو أخطر السلوكيات وأكثرها حظراً مع اللافتة B19؟",
-        "choices": [
-          {
-            "text": "دخول الممر الضيق بينما مركبة قادمة تسير فيه بالفعل",
-            "is_correct": true
-          },
-          {
-            "text": "الانتظار عند المدخل",
-            "is_correct": false
-          },
-          {
-            "text": "إيقاف تشغيل محركك أثناء الانتظار",
-            "is_correct": false
-          }
-        ],
-        "explanation": "أخطر السلوكيات وأكثرها حظراً هو دخول الممر الضيق بينما مركبة قادمة تسير فيه بالفعل. يمكن أن يؤدي ذلك إلى تصادم أمامي."
-      }
-    }
-  },
-  {
-    "question_id": "B19_Q30",
-    "type": "WHAT_SHOULD_YOU_DO",
-    "difficulty": "HARD",
-    "is_critical": true,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "In een tunnel met bord B19 rijdt u in. Halverwege de tunnel stokt het tegenliggende verkeer. Wat doet u?",
-        "choices": [
-          {
-            "text": "Stop, zet de noodknipperlichten aan en wacht rustig – nooit achteruit rijden in een tunnel tenzij aangewezen",
-            "is_correct": true
-          },
-          {
-            "text": "Rij snel achteruit de tunnel uit",
-            "is_correct": false
-          },
-          {
-            "text": "Geef lichtsignalen en claxonneer",
-            "is_correct": false
-          }
-        ],
-        "explanation": "In een tunnel nooit panisch achteruit rijden. Zet noodknipperlichtenaan, blijf kalm en wacht op instructies of totdat het tegenliggende verkeer rijdt."
-      },
-      "EN": {
-        "question": "In a tunnel with sign B19 you drive in. Halfway through the tunnel oncoming traffic stalls. What do you do?",
-        "choices": [
-          {
-            "text": "Stop, turn on hazard lights and wait calmly – never reverse in a tunnel unless directed to",
-            "is_correct": true
-          },
-          {
-            "text": "Drive quickly in reverse out of the tunnel",
-            "is_correct": false
-          },
-          {
-            "text": "Give light signals and honk",
-            "is_correct": false
-          }
-        ],
-        "explanation": "In a tunnel never reverse in a panic. Turn on hazard lights, stay calm and wait for instructions or until oncoming traffic moves."
-      },
-      "FR": {
-        "question": "Dans un tunnel avec le panneau B19, vous vous engagez. À mi-tunnel, le trafic en sens inverse se bloque. Que faites-vous ?",
-        "choices": [
-          {
-            "text": "Arrêtez-vous, allumez les feux de détresse et attendez calmement – ne jamais reculer dans un tunnel sauf sur instruction",
-            "is_correct": true
-          },
-          {
-            "text": "Reculez rapidement hors du tunnel",
-            "is_correct": false
-          },
-          {
-            "text": "Donnez des signaux lumineux et klaxonnez",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Dans un tunnel, ne jamais reculer dans la panique. Allumez les feux de détresse, restez calme et attendez les instructions ou que le trafic en sens inverse avance."
-      },
-      "AR": {
-        "question": "في نفق مع اللافتة B19 تدخل. في منتصف النفق تتوقف حركة المرور القادمة. ماذا تفعل؟",
-        "choices": [
-          {
-            "text": "توقف وشغّل أضواء الطوارئ وانتظر بهدوء – لا تتراجع أبداً في نفق ما لم يُطلب منك ذلك",
-            "is_correct": true
-          },
-          {
-            "text": "تراجع بسرعة خارج النفق",
-            "is_correct": false
-          },
-          {
-            "text": "أعطِ إشارات ضوئية وأدق البوق",
-            "is_correct": false
-          }
-        ],
-        "explanation": "في النفق لا تتراجع بذعر. شغّل أضواء الطوارئ، ابق هادئاً وانتظر التعليمات أو حتى تتحرك حركة المرور القادمة."
+        "explanation": "Ù„Ø§ÙØªØ© B19 ØªÙˆØ¶Ø¹ Ø¯Ø§Ø¦Ù…Ø§ Ù…Ù‚Ø±ÙˆÙ†Ø© Ø¨Ù„Ø§ÙØªØ© B21 Ø¹Ù†Ø¯ Ø§Ù„Ø·Ø±Ù Ø§Ù„Ø§Ø®Ø± Ù„Ù„Ù…Ù…Ø± Ø§Ù„Ø¶ÙŠÙ‚. ØºÙŠØ§Ø¨ Ø§Ù„Ù„Ø§ÙØªØ© Ø¹Ù„Ù‰ Ø§Ù„Ø¬Ø§Ù†Ø¨ Ø§Ù„Ø§Ø®Ø± Ù‡Ùˆ Ù‚ØµÙˆØ± ÙÙŠ Ø§Ù„Ø§Ø´Ø§Ø±Ø§Øª ÙˆÙ„ÙŠØ³ ØªØºÙŠÙŠØ±Ø§ Ù„Ù„Ù‚Ø§Ø¹Ø¯Ø©."
       }
     }
   }

@@ -1,0 +1,576 @@
+﻿[
+  {
+    "question_id": "D9b_Q01",
+    "type": "WHAT_DOES_IT_MEAN",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat betekent dit verkeersbord?",
+        "choices": [
+          {
+            "text": "Voorbehouden weg: voetgangers en fietsers gemeenschappelijk, fietser links",
+            "is_correct": true
+          },
+          {
+            "text": "Voorbehouden weg: voetgangers links, fietsers rechts",
+            "is_correct": false
+          },
+          {
+            "text": "Verplicht fietspad, voetgangers niet toegelaten",
+            "is_correct": false
+          }
+        ],
+        "explanation": "D9b geeft aan dat voetgangers en fietsers dezelfde onverdeelde ruimte delen, waarbij het fieterssymbool links is afgebeeld. Er is geen vaste scheiding tussen beide groepen."
+      },
+      "EN": {
+        "question": "What does this traffic sign mean?",
+        "choices": [
+          {
+            "text": "Reserved shared path: pedestrians and cyclists together, cyclist symbol on the left",
+            "is_correct": true
+          },
+          {
+            "text": "Reserved path: pedestrians on the left, cyclists on the right",
+            "is_correct": false
+          },
+          {
+            "text": "Mandatory cycle path, pedestrians not permitted",
+            "is_correct": false
+          }
+        ],
+        "explanation": "D9b indicates that pedestrians and cyclists share the same undivided space, with the cyclist symbol shown on the left. There is no fixed separation between the two groups."
+      },
+      "FR": {
+        "question": "Que signifie ce panneau de signalisation ?",
+        "choices": [
+          {
+            "text": "Voie partagee reservee: pietons et cyclistes ensemble, cycliste a gauche",
+            "is_correct": true
+          },
+          {
+            "text": "Voie reservee: pietons a gauche, cyclistes a droite",
+            "is_correct": false
+          },
+          {
+            "text": "Piste cyclable obligatoire, pietons non autorises",
+            "is_correct": false
+          }
+        ],
+        "explanation": "D9b indique que les pietons et les cyclistes partagent le meme espace non divise, avec le symbole cycliste affiche a gauche. Il n'y a pas de separation fixe entre les deux groupes."
+      },
+      "AR": {
+        "question": "Ù…Ø§Ø°Ø§ ØªØ¹Ù†ÙŠ Ù„Ø§ÙØªØ© Ø§Ù„Ù…Ø±ÙˆØ± Ù‡Ø°Ù‡ØŸ",
+        "choices": [
+          {
+            "text": "Ù…Ø³Ø§Ø± Ù…Ø´ØªØ±Ùƒ Ù…Ø®ØµØµ: Ù…Ø´Ø§Ø© ÙˆØ¯Ø±Ø§Ø¬ÙˆÙ† Ù…Ø¹Ø§Ù‹ØŒ Ø±Ù…Ø² Ø§Ù„Ø¯Ø±Ø§Ø¬Ø© Ø¹Ù„Ù‰ Ø§Ù„ÙŠØ³Ø§Ø±",
+            "is_correct": true
+          },
+          { "text": "Ù…Ø³Ø§Ø± Ù…Ø®ØµØµ: Ù…Ø´Ø§Ø© ÙŠØ³Ø§Ø±ØŒ Ø¯Ø±Ø§Ø¬ÙˆÙ† ÙŠÙ…ÙŠÙ†", "is_correct": false },
+          {
+            "text": "Ù…Ø³Ø§Ø± Ø¯Ø±Ø§Ø¬Ø§Øª Ø¥Ù„Ø²Ø§Ù…ÙŠØŒ Ø§Ù„Ù…Ø´Ø§Ø© ØºÙŠØ± Ù…Ø³Ù…ÙˆØ­ Ù„Ù‡Ù…",
+            "is_correct": false
+          }
+        ],
+        "explanation": "ØªØ´ÙŠØ± D9b Ø¥Ù„Ù‰ Ø£Ù† Ø§Ù„Ù…Ø´Ø§Ø© ÙˆØ±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª ÙŠØ´ØªØ±ÙƒÙˆÙ† ÙÙŠ Ù†ÙØ³ Ø§Ù„Ù…Ø³Ø§Ø­Ø© ØºÙŠØ± Ø§Ù„Ù…Ù‚Ø³Ù‘Ù…Ø©ØŒ Ù…Ø¹ Ø±Ù…Ø² Ø§Ù„Ø¯Ø±Ø§Ø¬Ø© Ø¹Ù„Ù‰ Ø§Ù„ÙŠØ³Ø§Ø±. Ù„Ø§ ÙŠÙˆØ¬Ø¯ ÙØµÙ„ Ø«Ø§Ø¨Øª Ø¨ÙŠÙ† Ø§Ù„Ù…Ø¬Ù…ÙˆØ¹ØªÙŠÙ†."
+      }
+    }
+  },
+  {
+    "question_id": "D9b_Q02",
+    "type": "WHICH_SIGN",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Tot welke categorie verkeersborden behoort dit bord?",
+        "choices": [
+          { "text": "Gebodsborden (D-reeks)", "is_correct": true },
+          { "text": "Verbodsborden (C-reeks)", "is_correct": false },
+          { "text": "Parkeerborden (E-reeks)", "is_correct": false }
+        ],
+        "explanation": "D-reeksborden zijn gebodstekens. D9b bepaalt dat voetgangers en fietsers de weg gemeenschappelijk gebruiken."
+      },
+      "EN": {
+        "question": "To which category of traffic signs does this sign belong?",
+        "choices": [
+          { "text": "Mandatory signs (D-series)", "is_correct": true },
+          { "text": "Prohibition signs (C-series)", "is_correct": false },
+          { "text": "Parking signs (E-series)", "is_correct": false }
+        ],
+        "explanation": "D-series signs are mandatory signs. D9b prescribes that pedestrians and cyclists use the path together."
+      },
+      "FR": {
+        "question": "A quelle categorie de panneaux de signalisation appartient ce panneau ?",
+        "choices": [
+          { "text": "Panneaux d'obligation (serie D)", "is_correct": true },
+          { "text": "Panneaux d'interdiction (serie C)", "is_correct": false },
+          { "text": "Panneaux de stationnement (serie E)", "is_correct": false }
+        ],
+        "explanation": "Les panneaux de la serie D sont des panneaux d'obligation. D9b prescrit que pietons et cyclistes utilisent le chemin ensemble."
+      },
+      "AR": {
+        "question": "Ø¥Ù„Ù‰ Ø£ÙŠ ÙØ¦Ø© Ù…Ù† Ù„Ø§ÙØªØ§Øª Ø§Ù„Ù…Ø±ÙˆØ± ØªÙ†ØªÙ…ÙŠ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ",
+        "choices": [
+          { "text": "Ù„Ø§ÙØªØ§Øª Ø¥Ù„Ø²Ø§Ù…ÙŠØ© (Ø§Ù„Ø³Ù„Ø³Ù„Ø© D)", "is_correct": true },
+          { "text": "Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø­Ø¸Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© C)", "is_correct": false },
+          { "text": "Ù„Ø§ÙØªØ§Øª Ø§Ù„ÙˆÙ‚ÙˆÙ (Ø§Ù„Ø³Ù„Ø³Ù„Ø© E)", "is_correct": false }
+        ],
+        "explanation": "Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø³Ù„Ø³Ù„Ø© D Ù‡ÙŠ Ù„Ø§ÙØªØ§Øª Ø¥Ù„Ø²Ø§Ù…ÙŠØ©. ØªÙØ­Ø¯Ù‘Ø¯ D9b Ø£Ù† Ø§Ù„Ù…Ø´Ø§Ø© ÙˆØ±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª ÙŠØ³ØªØ®Ø¯Ù…ÙˆÙ† Ø§Ù„Ù…Ø³Ø§Ø± Ù…Ø¹Ø§Ù‹."
+      }
+    }
+  },
+  {
+    "question_id": "D9b_Q03",
+    "type": "HAZARD_IDENTIFICATION",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Bord D9b toont een gedeeld pad. Hoe zijn de gebruikers gerangschikt?",
+        "choices": [
+          {
+            "text": "Voetgangers en fietsers delen dezelfde ruimte, het fietssymbool staat links afgebeeld",
+            "is_correct": true
+          },
+          {
+            "text": "Fietsers rechts, voetgangers links in strikt gescheiden stroken",
+            "is_correct": false
+          },
+          {
+            "text": "Het pad is uitsluitend voor fietsers",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Op een D9b-pad is er geen vaste scheiding: voetgangers en fietsers delen de beschikbare ruimte en moeten rekening met elkaar houden."
+      },
+      "EN": {
+        "question": "Sign D9b indicates a shared path. How are users arranged?",
+        "choices": [
+          {
+            "text": "Pedestrians and cyclists share the same space, with the cyclist symbol shown on the left",
+            "is_correct": true
+          },
+          {
+            "text": "Cyclists on the right, pedestrians on the left in strictly separated lanes",
+            "is_correct": false
+          },
+          {
+            "text": "The path is reserved for cyclists only",
+            "is_correct": false
+          }
+        ],
+        "explanation": "On a D9b path there is no fixed separation: pedestrians and cyclists share the available space and must be considerate of each other."
+      },
+      "FR": {
+        "question": "Le panneau D9b indique un chemin partage. Comment les usagers sont-ils organises ?",
+        "choices": [
+          {
+            "text": "Pietons et cyclistes partagent le meme espace, le symbole cycliste est affiche a gauche",
+            "is_correct": true
+          },
+          {
+            "text": "Cyclistes a droite, pietons a gauche dans des voies strictement separees",
+            "is_correct": false
+          },
+          {
+            "text": "Le chemin est exclusivement reserve aux cyclistes",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Sur une voie D9b, il n'y a pas de separation fixe: pietons et cyclistes partagent l'espace disponible et doivent tenir compte des uns des autres."
+      },
+      "AR": {
+        "question": "Ù„Ø§ÙØªØ© D9b ØªØ´ÙŠØ± Ø¥Ù„Ù‰ Ù…Ø³Ø§Ø± Ù…Ø´ØªØ±Ùƒ. ÙƒÙŠÙ ÙŠÙƒÙˆÙ† ØªØ±ØªÙŠØ¨ Ø§Ù„Ù…Ø³ØªØ®Ø¯Ù…ÙŠÙ†ØŸ",
+        "choices": [
+          {
+            "text": "Ø§Ù„Ù…Ø´Ø§Ø© ÙˆØ±Ø§ÙƒØ¨Ùˆ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª ÙŠØ´ØªØ±ÙƒÙˆÙ† ÙÙŠ Ù†ÙØ³ Ø§Ù„Ù…Ø³Ø§Ø­Ø©ØŒ ÙˆØ±Ù…Ø² Ø§Ù„Ø¯Ø±Ø§Ø¬Ø© Ù…Ø¹Ø±ÙˆØ¶ Ø¹Ù„Ù‰ Ø§Ù„ÙŠØ³Ø§Ø±",
+            "is_correct": true
+          },
+          {
+            "text": "Ø§Ù„Ø¯Ø±Ø§Ø¬ÙˆÙ† Ø¹Ù„Ù‰ Ø§Ù„ÙŠÙ…ÙŠÙ†ØŒ ÙˆØ§Ù„Ù…Ø´Ø§Ø© Ø¹Ù„Ù‰ Ø§Ù„ÙŠØ³Ø§Ø± ÙÙŠ Ù…Ø³Ø§Ø±Ø§Øª Ù…Ù†ÙØµÙ„Ø© ØªÙ…Ø§Ù…Ø§Ù‹",
+            "is_correct": false
+          },
+          { "text": "Ø§Ù„Ù…Ø³Ø§Ø± Ù…Ø®ØµØµ Ø­ØµØ±Ø§Ù‹ Ù„Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª", "is_correct": false }
+        ],
+        "explanation": "Ø¹Ù„Ù‰ Ù…Ø³Ø§Ø± D9b Ù„Ø§ ÙŠÙˆØ¬Ø¯ ÙØµÙ„ Ø«Ø§Ø¨Øª: ÙŠØ´ØªØ±Ùƒ Ø§Ù„Ù…Ø´Ø§Ø© ÙˆØ±Ø§ÙƒØ¨Ùˆ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª ÙÙŠ Ø§Ù„Ù…Ø³Ø§Ø­Ø© Ø§Ù„Ù…ØªØ§Ø­Ø© ÙˆÙŠØ¬Ø¨ Ø£Ù† ÙŠØªØ¹Ø§Ù…Ù„ÙˆØ§ Ù…Ø¹ Ø¨Ø¹Ø¶Ù‡Ù… Ø¨Ù…Ø±Ø§Ø¹Ø§Ø©."
+      }
+    }
+  },
+  {
+    "question_id": "D9b_Q04",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U rijdt op een D9b-pad. Wat moet u als fietser doen met betrekking tot voetgangers?",
+        "choices": [
+          {
+            "text": "De ruimte delen met voetgangers en bijzondere zorg voor hen aan de dag leggen",
+            "is_correct": true
+          },
+          {
+            "text": "U heeft voorrang; voetgangers moeten voor u uitwijken",
+            "is_correct": false
+          },
+          {
+            "text": "Uitsluitend aan de linkerkant van het pad rijden",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Op een D9b-pad hebben fietsers geen voorrang op voetgangers. Beide gebruikers delen de ruimte en moeten voorzichtig en respectvol zijn."
+      },
+      "EN": {
+        "question": "You are cycling on a D9b path. What must you do regarding pedestrians?",
+        "choices": [
+          {
+            "text": "Share the space with pedestrians and exercise special care for them",
+            "is_correct": true
+          },
+          {
+            "text": "You have priority; pedestrians must yield to you",
+            "is_correct": false
+          },
+          {
+            "text": "Cycle only on the left side of the path",
+            "is_correct": false
+          }
+        ],
+        "explanation": "On a D9b path, cyclists do not have priority over pedestrians. Both users share the space and must act with care and respect."
+      },
+      "FR": {
+        "question": "Vous cyclez sur une voie D9b. Que devez-vous faire concernant les pietons ?",
+        "choices": [
+          {
+            "text": "Partager l'espace avec les pietons et faire preuve d'une attention particuliere envers eux",
+            "is_correct": true
+          },
+          {
+            "text": "Vous avez la priorite; les pietons doivent vous ceder le passage",
+            "is_correct": false
+          },
+          {
+            "text": "Rouler uniquement sur le cote gauche du chemin",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Sur une voie D9b, les cyclistes n'ont pas la priorite sur les pietons. Les deux usagers partagent l'espace et doivent agir avec prudence et respect."
+      },
+      "AR": {
+        "question": "Ø£Ù†Øª ØªØ±ÙƒØ¨ Ø¯Ø±Ø§Ø¬ØªÙƒ Ø¹Ù„Ù‰ Ù…Ø³Ø§Ø± D9b. Ù…Ø§Ø°Ø§ ÙŠØ¬Ø¨ Ø¹Ù„ÙŠÙƒ ÙØ¹Ù„Ù‡ ØªØ¬Ø§Ù‡ Ø§Ù„Ù…Ø´Ø§Ø©ØŸ",
+        "choices": [
+          {
+            "text": "Ù…Ø´Ø§Ø±ÙƒØ© Ø§Ù„Ù…Ø³Ø§Ø­Ø© Ù…Ø¹ Ø§Ù„Ù…Ø´Ø§Ø© ÙˆØ¥ÙŠÙ„Ø§Ø¡ Ø¹Ù†Ø§ÙŠØ© Ø®Ø§ØµØ© Ù„Ù‡Ù…",
+            "is_correct": true
+          },
+          {
+            "text": "Ù„Ø¯ÙŠÙƒ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ©Ø› ÙŠØ¬Ø¨ Ø¹Ù„Ù‰ Ø§Ù„Ù…Ø´Ø§Ø© Ø¥ÙØ³Ø§Ø­ Ø§Ù„Ù…Ø¬Ø§Ù„ Ù„Ùƒ",
+            "is_correct": false
+          },
+          {
+            "text": "Ø§Ù„Ù‚ÙŠØ§Ø¯Ø© ÙÙ‚Ø· Ø¹Ù„Ù‰ Ø§Ù„Ø¬Ø§Ù†Ø¨ Ø§Ù„Ø£ÙŠØ³Ø± Ù…Ù† Ø§Ù„Ù…Ø³Ø§Ø±",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ø¹Ù„Ù‰ Ù…Ø³Ø§Ø± D9bØŒ Ù„Ø§ ÙŠØªÙ…ØªØ¹ Ø±Ø§ÙƒØ¨Ùˆ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø¨Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© Ø¹Ù„Ù‰ Ø§Ù„Ù…Ø´Ø§Ø©. ÙŠØ´ØªØ±Ùƒ ÙƒÙ„Ø§ Ø§Ù„Ù…Ø³ØªØ®Ø¯Ù…ÙŠÙ† ÙÙŠ Ø§Ù„Ù…Ø³Ø§Ø­Ø© ÙˆÙŠØ¬Ø¨ Ø£Ù† ÙŠØªØµØ±ÙÙˆØ§ Ø¨Ø­Ø°Ø± ÙˆØ§Ø­ØªØ±Ø§Ù…."
+      }
+    }
+  },
+  {
+    "question_id": "D9b_Q05",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U bent een voetganger op een D9b-pad. Een fietser nadert van achter. Wat moet u doen?",
+        "choices": [
+          {
+            "text": "Oplettend zijn en de fietser voorzichtig laten passeren; u deelt de ruimte",
+            "is_correct": true
+          },
+          {
+            "text": "Naar de rechterrand gaan, want fietsers hebben voorrang op dit pad",
+            "is_correct": false
+          },
+          {
+            "text": "Stoppen; u mag niet lopen zolang er fietsers aanwezig zijn",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Op een D9b-pad hebben fietsers geen voorrang op voetgangers. U hoeft niet te stoppen maar u houdt rekening met de fietser en laat hem veilig passeren."
+      },
+      "EN": {
+        "question": "You are a pedestrian on a D9b path. A cyclist is approaching from behind. What must you do?",
+        "choices": [
+          {
+            "text": "Stay alert and allow the cyclist to pass safely; you share the space",
+            "is_correct": true
+          },
+          {
+            "text": "Move to the right edge because cyclists have priority on this path",
+            "is_correct": false
+          },
+          {
+            "text": "Stop; you are not permitted to walk while cyclists are present",
+            "is_correct": false
+          }
+        ],
+        "explanation": "On a D9b path, cyclists do not have priority over pedestrians. You do not need to stop but you remain considerate and allow the cyclist to pass safely."
+      },
+      "FR": {
+        "question": "Vous etes un pieton sur une voie D9b. Un cycliste s'approche par derriere. Que devez-vous faire ?",
+        "choices": [
+          {
+            "text": "Rester attentif et laisser le cycliste passer prudemment; vous partagez l'espace",
+            "is_correct": true
+          },
+          {
+            "text": "Vous deplacer vers le bord droit car les cyclistes ont la priorite sur ce chemin",
+            "is_correct": false
+          },
+          {
+            "text": "Vous arreter; vous n'etes pas autorise a marcher tant que des cyclistes sont presents",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Sur une voie D9b, les cyclistes n'ont pas la priorite sur les pietons. Vous n'avez pas besoin de vous arreter mais vous restez attentif et laissez le cycliste passer en securite."
+      },
+      "AR": {
+        "question": "Ø£Ù†Øª Ù…Ø´Ø§Ø© Ø¹Ù„Ù‰ Ù…Ø³Ø§Ø± D9b. Ø±Ø§ÙƒØ¨ Ø¯Ø±Ø§Ø¬Ø© ÙŠÙ‚ØªØ±Ø¨ Ù…Ù† Ø§Ù„Ø®Ù„Ù. Ù…Ø§Ø°Ø§ ÙŠØ¬Ø¨ Ø¹Ù„ÙŠÙƒ ÙØ¹Ù„Ù‡ØŸ",
+        "choices": [
+          {
+            "text": "ÙƒÙ† ÙŠÙ‚Ø¸Ø§Ù‹ ÙˆØ§Ø³Ù…Ø­ Ù„Ø±Ø§ÙƒØ¨ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø© Ø¨Ø§Ù„Ù…Ø±ÙˆØ± Ø¨Ø£Ù…Ø§Ù†Ø› Ø£Ù†ØªÙ…Ø§ ØªØ´ØªØ±ÙƒØ§Ù† ÙÙŠ Ø§Ù„Ù…Ø³Ø§Ø­Ø©",
+            "is_correct": true
+          },
+          {
+            "text": "Ø§Ù„ØªØ­Ø±Ùƒ Ø¥Ù„Ù‰ Ø§Ù„Ø­Ø§ÙØ© Ø§Ù„ÙŠÙ…Ù†Ù‰ Ù„Ø£Ù† Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ù„Ù‡Ù… Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© Ø¹Ù„Ù‰ Ù‡Ø°Ø§ Ø§Ù„Ù…Ø³Ø§Ø±",
+            "is_correct": false
+          },
+          {
+            "text": "Ø§Ù„ØªÙˆÙ‚ÙØ› Ù„Ø§ ÙŠÙØ³Ù…Ø­ Ù„Ùƒ Ø¨Ø§Ù„Ù…Ø´ÙŠ Ø·Ø§Ù„Ù…Ø§ Ø±Ø§ÙƒØ¨Ùˆ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ù…ÙˆØ¬ÙˆØ¯ÙˆÙ†",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ø¹Ù„Ù‰ Ù…Ø³Ø§Ø± D9bØŒ Ù„Ø§ ÙŠØªÙ…ØªØ¹ Ø±Ø§ÙƒØ¨Ùˆ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø¨Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© Ø¹Ù„Ù‰ Ø§Ù„Ù…Ø´Ø§Ø©. Ù„Ø§ ØªØ­ØªØ§Ø¬ Ù„Ù„ØªÙˆÙ‚Ù Ù„ÙƒÙ†Ùƒ ØªØ¨Ù‚Ù‰ ÙŠÙ‚Ø¸Ø§Ù‹ ÙˆØªØ³Ù…Ø­ Ù„Ø±Ø§ÙƒØ¨ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø© Ø¨Ø§Ù„Ù…Ø±ÙˆØ± Ø¨Ø£Ù…Ø§Ù†."
+      }
+    }
+  },
+  {
+    "question_id": "D9b_Q06",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat is het belangrijkste verschil tussen bord D9b en bord D9a?",
+        "choices": [
+          {
+            "text": "D9b toont een gedeelde onverdeelde ruimte voor zowel voetgangers als fietsers; D9a scheidt hen in aparte linker- en rechterstroken",
+            "is_correct": true
+          },
+          {
+            "text": "D9b is voor landelijke gebieden; D9a is voor stedelijke wegen",
+            "is_correct": false
+          },
+          {
+            "text": "D9b geldt enkel voor voetgangers; D9a geldt enkel voor fietsers",
+            "is_correct": false
+          }
+        ],
+        "explanation": "D9b heeft geen vaste scheiding tussen voetgangers en fietsers. D9a heeft strikt gescheiden stroken: voetgangers links, fietsers rechts."
+      },
+      "EN": {
+        "question": "What is the key difference between sign D9b and sign D9a?",
+        "choices": [
+          {
+            "text": "D9b shows a shared undivided space for both pedestrians and cyclists; D9a separates them into distinct left and right sections",
+            "is_correct": true
+          },
+          {
+            "text": "D9b is for rural areas; D9a is for urban roads",
+            "is_correct": false
+          },
+          {
+            "text": "D9b applies only to pedestrians; D9a applies only to cyclists",
+            "is_correct": false
+          }
+        ],
+        "explanation": "D9b has no fixed separation between pedestrians and cyclists. D9a has strictly separated sections: pedestrians on the left, cyclists on the right."
+      },
+      "FR": {
+        "question": "Quelle est la principale difference entre le panneau D9b et le panneau D9a ?",
+        "choices": [
+          {
+            "text": "D9b montre un espace non divise partage pour les pietons et les cyclistes; D9a les separe en sections distinctes gauche et droite",
+            "is_correct": true
+          },
+          {
+            "text": "D9b est pour les zones rurales; D9a est pour les routes urbaines",
+            "is_correct": false
+          },
+          {
+            "text": "D9b s'applique uniquement aux pietons; D9a s'applique uniquement aux cyclistes",
+            "is_correct": false
+          }
+        ],
+        "explanation": "D9b n'a pas de separation fixe entre pietons et cyclistes. D9a a des sections strictement separees: pietons a gauche, cyclistes a droite."
+      },
+      "AR": {
+        "question": "Ù…Ø§ Ø§Ù„ÙØ±Ù‚ Ø§Ù„Ø±Ø¦ÙŠØ³ÙŠ Ø¨ÙŠÙ† Ù„Ø§ÙØªØ© D9b ÙˆÙ„Ø§ÙØªØ© D9aØŸ",
+        "choices": [
+          {
+            "text": "ØªÙØ¸Ù‡Ø± D9b Ù…Ø³Ø§Ø­Ø© Ù…Ø´ØªØ±ÙƒØ© ØºÙŠØ± Ù…Ù‚Ø³Ù‘Ù…Ø© Ù„Ù„Ù…Ø´Ø§Ø© ÙˆØ±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§ØªØ› Ø¨ÙŠÙ†Ù…Ø§ ØªÙØµÙ„ D9a Ø¨ÙŠÙ†Ù‡Ù…Ø§ ÙÙŠ Ø£Ù‚Ø³Ø§Ù… ÙŠØ³Ø§Ø± ÙˆÙŠÙ…ÙŠÙ† Ù…Ù†ÙØµÙ„Ø©",
+            "is_correct": true
+          },
+          {
+            "text": "D9b Ù„Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ø±ÙŠÙÙŠØ©Ø› D9a Ù„Ù„Ø·Ø±Ù‚ Ø§Ù„Ø­Ø¶Ø±ÙŠØ©",
+            "is_correct": false
+          },
+          {
+            "text": "D9b ØªÙ†Ø·Ø¨Ù‚ ÙÙ‚Ø· Ø¹Ù„Ù‰ Ø§Ù„Ù…Ø´Ø§Ø©Ø› D9a ØªÙ†Ø·Ø¨Ù‚ ÙÙ‚Ø· Ø¹Ù„Ù‰ Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ù„Ø§ ÙŠÙˆØ¬Ø¯ ÙÙŠ D9b ÙØµÙ„ Ø«Ø§Ø¨Øª Ø¨ÙŠÙ† Ø§Ù„Ù…Ø´Ø§Ø© ÙˆØ±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª. Ø£Ù…Ø§ D9a ÙÙ„Ù‡Ø§ Ø£Ù‚Ø³Ø§Ù… Ù…Ù†ÙØµÙ„Ø© ØªÙ…Ø§Ù…Ø§Ù‹: Ø§Ù„Ù…Ø´Ø§Ø© Ø¹Ù„Ù‰ Ø§Ù„ÙŠØ³Ø§Ø±ØŒ ÙˆØ±Ø§ÙƒØ¨Ùˆ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø¹Ù„Ù‰ Ø§Ù„ÙŠÙ…ÙŠÙ†."
+      }
+    }
+  },
+  {
+    "question_id": "D9b_Q07",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Er zijn geen voetgangers op een D9b-pad. Mag een fietser aan hoge snelheid rijden?",
+        "choices": [
+          {
+            "text": "Neen, op een gedeeld D9b-pad moeten fietsers altijd een snelheid aanhouden die de veiligheid van voetgangers waarborgt",
+            "is_correct": true
+          },
+          {
+            "text": "Ja, als er geen voetgangers aanwezig zijn is er geen snelheidsbeperking",
+            "is_correct": false
+          }
+        ],
+        "explanation": "D9b is een gedeelde weg. Fietsers moeten altijd rekening houden met de aanwezigheid van voetgangers en een gepaste snelheid aanhouden, ook als het pad tijdelijk leeg is."
+      },
+      "EN": {
+        "question": "There are no pedestrians on a D9b path. May a cyclist ride at high speed?",
+        "choices": [
+          {
+            "text": "No, on a shared D9b path cyclists must always maintain a speed that ensures the safety of pedestrians",
+            "is_correct": true
+          },
+          {
+            "text": "Yes, if no pedestrians are present there is no speed restriction",
+            "is_correct": false
+          }
+        ],
+        "explanation": "D9b is a shared path. Cyclists must always account for the possible presence of pedestrians and maintain an appropriate speed, even when the path appears temporarily empty."
+      },
+      "FR": {
+        "question": "Il n'y a pas de pietons sur une voie D9b. Un cycliste peut-il rouler a grande vitesse ?",
+        "choices": [
+          {
+            "text": "Non, sur une voie D9b partagee les cyclistes doivent toujours maintenir une vitesse qui garantit la securite des pietons",
+            "is_correct": true
+          },
+          {
+            "text": "Oui, si aucun pieton n'est present il n'y a pas de restriction de vitesse",
+            "is_correct": false
+          }
+        ],
+        "explanation": "D9b est une voie partagee. Les cyclistes doivent toujours tenir compte de la presence eventuelle de pietons et maintenir une vitesse adequate, meme si le chemin semble temporairement vide."
+      },
+      "AR": {
+        "question": "Ù„Ø§ ÙŠÙˆØ¬Ø¯ Ù…Ø´Ø§Ø© Ø¹Ù„Ù‰ Ù…Ø³Ø§Ø± D9b. Ù‡Ù„ ÙŠÙ…ÙƒÙ† Ù„Ø±Ø§ÙƒØ¨ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø© Ø§Ù„Ù‚ÙŠØ§Ø¯Ø© Ø¨Ø³Ø±Ø¹Ø© Ø¹Ø§Ù„ÙŠØ©ØŸ",
+        "choices": [
+          {
+            "text": "Ù„Ø§ØŒ Ø¹Ù„Ù‰ Ù…Ø³Ø§Ø± D9b Ø§Ù„Ù…Ø´ØªØ±Ùƒ ÙŠØ¬Ø¨ Ø¹Ù„Ù‰ Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø¯Ø§Ø¦Ù…Ø§Ù‹ Ø§Ù„Ø­ÙØ§Ø¸ Ø¹Ù„Ù‰ Ø³Ø±Ø¹Ø© ØªØ¶Ù…Ù† Ø³Ù„Ø§Ù…Ø© Ø§Ù„Ù…Ø´Ø§Ø©",
+            "is_correct": true
+          },
+          {
+            "text": "Ù†Ø¹Ù…ØŒ Ø¥Ø°Ø§ Ù„Ù… ÙŠÙƒÙ† Ù‡Ù†Ø§Ùƒ Ù…Ø´Ø§Ø© ÙÙ„Ø§ ÙŠÙˆØ¬Ø¯ Ù‚ÙŠØ¯ Ø¹Ù„Ù‰ Ø§Ù„Ø³Ø±Ø¹Ø©",
+            "is_correct": false
+          }
+        ],
+        "explanation": "D9b Ù…Ø³Ø§Ø± Ù…Ø´ØªØ±Ùƒ. ÙŠØ¬Ø¨ Ø¹Ù„Ù‰ Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø¯Ø§Ø¦Ù…Ø§Ù‹ Ù…Ø±Ø§Ø¹Ø§Ø© Ø§Ø­ØªÙ…Ø§Ù„ ÙˆØ¬ÙˆØ¯ Ù…Ø´Ø§Ø© ÙˆØ§Ù„Ø­ÙØ§Ø¸ Ø¹Ù„Ù‰ Ø³Ø±Ø¹Ø© Ù…Ù†Ø§Ø³Ø¨Ø©ØŒ Ø­ØªÙ‰ Ø¹Ù†Ø¯Ù…Ø§ ÙŠØ¨Ø¯Ùˆ Ø§Ù„Ù…Ø³Ø§Ø± ÙØ§Ø±ØºØ§Ù‹ Ù…Ø¤Ù‚ØªØ§Ù‹."
+      }
+    }
+  },
+  {
+    "question_id": "D9b_Q08",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Geeft bord D9b fietsers voorrang op voetgangers op het gedeelde pad?",
+        "choices": [
+          {
+            "text": "Neen, fietsers en voetgangers delen de ruimte gelijkwaardig; fietsers moeten de nodige zorg betonen aan voetgangers",
+            "is_correct": true
+          },
+          {
+            "text": "Ja, het fietssymbool links geeft aan dat fietsers voorrang hebben",
+            "is_correct": false
+          }
+        ],
+        "explanation": "D9b kent geen voorrangsregel tussen fietsers en voetgangers. Het fietssymbool links verwijst enkel naar de layout van het bord, niet naar een voorrangsregel."
+      },
+      "EN": {
+        "question": "Does sign D9b give cyclists priority over pedestrians on the shared path?",
+        "choices": [
+          {
+            "text": "No, cyclists and pedestrians share the space equally; cyclists must show due care to pedestrians",
+            "is_correct": true
+          },
+          {
+            "text": "Yes, the cyclist symbol on the left indicates cyclist priority",
+            "is_correct": false
+          }
+        ],
+        "explanation": "D9b establishes no priority rule between cyclists and pedestrians. The cyclist symbol on the left refers only to the layout of the sign, not to any priority rule."
+      },
+      "FR": {
+        "question": "Le panneau D9b donne-t-il la priorite aux cyclistes sur les pietons sur le chemin partage ?",
+        "choices": [
+          {
+            "text": "Non, cyclistes et pietons partagent l'espace de facon egale; les cyclistes doivent faire preuve de l'attention voulue envers les pietons",
+            "is_correct": true
+          },
+          {
+            "text": "Oui, le symbole cycliste a gauche indique la priorite aux cyclistes",
+            "is_correct": false
+          }
+        ],
+        "explanation": "D9b n'etablit aucune regle de priorite entre cyclistes et pietons. Le symbole cycliste a gauche se refere uniquement a la disposition du panneau, pas a une regle de priorite."
+      },
+      "AR": {
+        "question": "Ù‡Ù„ ØªÙ…Ù†Ø­ Ù„Ø§ÙØªØ© D9b Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© Ø¹Ù„Ù‰ Ø§Ù„Ù…Ø´Ø§Ø© ÙÙŠ Ø§Ù„Ù…Ø³Ø§Ø± Ø§Ù„Ù…Ø´ØªØ±ÙƒØŸ",
+        "choices": [
+          {
+            "text": "Ù„Ø§ØŒ ÙŠØ´ØªØ±Ùƒ Ø±Ø§ÙƒØ¨Ùˆ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª ÙˆØ§Ù„Ù…Ø´Ø§Ø© ÙÙŠ Ø§Ù„Ù…Ø³Ø§Ø­Ø© Ø¨Ø§Ù„ØªØ³Ø§ÙˆÙŠØ› ÙŠØ¬Ø¨ Ø¹Ù„Ù‰ Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø¥ÙŠÙ„Ø§Ø¡ Ø§Ù„Ø¹Ù†Ø§ÙŠØ© Ø§Ù„Ù„Ø§Ø²Ù…Ø© Ù„Ù„Ù…Ø´Ø§Ø©",
+            "is_correct": true
+          },
+          {
+            "text": "Ù†Ø¹Ù…ØŒ Ø±Ù…Ø² Ø§Ù„Ø¯Ø±Ø§Ø¬Ø© Ø¹Ù„Ù‰ Ø§Ù„ÙŠØ³Ø§Ø± ÙŠØ´ÙŠØ± Ø¥Ù„Ù‰ Ø£ÙˆÙ„ÙˆÙŠØ© Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ù„Ø§ ØªÙÙ†Ø´Ø¦ D9b Ø£ÙŠ Ù‚Ø§Ø¹Ø¯Ø© Ø£ÙˆÙ„ÙˆÙŠØ© Ø¨ÙŠÙ† Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª ÙˆØ§Ù„Ù…Ø´Ø§Ø©. Ø±Ù…Ø² Ø§Ù„Ø¯Ø±Ø§Ø¬Ø© Ø¹Ù„Ù‰ Ø§Ù„ÙŠØ³Ø§Ø± ÙŠØ´ÙŠØ± ÙÙ‚Ø· Ø¥Ù„Ù‰ ØªØ®Ø·ÙŠØ· Ø§Ù„Ù„Ø§ÙØªØ©ØŒ ÙˆÙ„ÙŠØ³ Ø¥Ù„Ù‰ Ø£ÙŠ Ù‚Ø§Ø¹Ø¯Ø© Ø£ÙˆÙ„ÙˆÙŠØ©."
+      }
+    }
+  }
+]

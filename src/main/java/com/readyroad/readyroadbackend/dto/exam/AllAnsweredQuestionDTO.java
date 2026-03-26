@@ -33,12 +33,6 @@ public class AllAnsweredQuestionDTO {
     private Long correctOptionId;
     private String correctOptionText;
 
-    // Explanation
-    private String explanationEn;
-    private String explanationAr;
-    private String explanationNl;
-    private String explanationFr;
-
     // Category
     private String categoryName;
     private String categoryCode;

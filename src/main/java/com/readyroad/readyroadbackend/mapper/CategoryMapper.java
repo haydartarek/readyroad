@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class CategoryMapper {
 
-    public CategoryResponse toResponse(Category category) {
+    public CategoryResponse toResponse(Category category, long signCount) {
         return new CategoryResponse(
                 category.getId(),
                 category.getCode(),
@@ -19,7 +19,8 @@ public class CategoryMapper {
                 category.getDescriptionEn(),
                 category.getDescriptionNl(),
                 category.getDescriptionFr(),
-                category.getDisplayOrder()
+                category.getDisplayOrder(),
+                signCount
         );
     }
 }

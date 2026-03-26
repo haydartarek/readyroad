@@ -4,8 +4,8 @@ package com.readyroad.readyroadbackend.domain.enums;
  * Question type for the Sign Quiz System.
  *
  * Choice-count rule (enforced by the Importer):
- *   IS_IT_ALLOWED  → exactly 2 choices (Yes / No binary)
- *   all other types → exactly 3 choices
+ * IS_IT_ALLOWED → exactly 2 choices (Yes / No binary)
+ * all other types → exactly 3 choices
  */
 public enum SignQuestionType {
 
@@ -19,5 +19,16 @@ public enum SignQuestionType {
     WHAT_MUST_YOU_DO,
 
     /** Q05 — Is [action] allowed / required? (HARD, binary Yes/No) */
-    IS_IT_ALLOWED
+    IS_IT_ALLOWED,
+
+    /** Q03 variant — What hazard does this sign warn about? (MEDIUM, 3 choices) */
+    HAZARD_IDENTIFICATION,
+
+    /** Q05 variant — What action must the driver take? (HARD, 3 choices) */
+    DRIVER_ACTION,
+
+    /**
+     * Q06 variant — Where/how far from X is the sign placed? (MEDIUM, 3 choices)
+     */
+    SIGN_PLACEMENT_DISTANCE
 }

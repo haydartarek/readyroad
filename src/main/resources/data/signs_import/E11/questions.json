@@ -1,83 +1,82 @@
-[
+﻿[
   {
     "question_id": "E11_Q01",
     "type": "WHAT_DOES_IT_MEAN",
     "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE: Replace wrong answers with actual sign names from the same category.",
     "i18n": {
       "NL": {
-        "question": "Wat betekent dit verkeersbord?",
+        "question": "Wat betekent bord E11?",
         "choices": [
           {
-            "text": "Halfmaandelijks parkeren",
+            "text": "Halfmaandelijks afwisselend parkeren: E5 (1-15) en E7 (16-einde) tegelijk zichtbaar in Ã©Ã©n combinatiebord",
             "is_correct": true
           },
           {
-            "text": "Verplichte rijrichting rechts",
+            "text": "Parkeerverbod de eerste Ã©n de laatste dag van de maand",
             "is_correct": false
           },
           {
-            "text": "Gevaarlijk kruispunt",
+            "text": "Verplicht parkeren 11 dagen per maand",
             "is_correct": false
           }
         ],
-        "explanation": "Parkeren is afwisselend toegelaten afhankelijk van de periode."
+        "explanation": "E11 is het gecombineerde overzichtsbord dat zowel E5 als E7 tegelijk aangeeft voor betere leesbaarheid."
       },
       "EN": {
-        "question": "What does this traffic sign mean?",
+        "question": "What does sign E11 mean?",
         "choices": [
           {
-            "text": "Half-monthly parking",
+            "text": "Half-monthly alternating parking: E5 (1-15) and E7 (16-end) shown simultaneously in one combination sign",
             "is_correct": true
           },
           {
-            "text": "Mandatory direction right",
+            "text": "Parking ban on the first and last day of the month",
             "is_correct": false
           },
           {
-            "text": "Dangerous intersection",
+            "text": "Compulsory parking 11 days per month",
             "is_correct": false
           }
         ],
-        "explanation": "Half-monthly alternate-side parking permitted depending on the period of the month."
+        "explanation": "E11 is the combined overview sign that shows both E5 and E7 simultaneously for better readability."
       },
       "FR": {
-        "question": "Que signifie ce panneau de signalisation ?",
+        "question": "Que signifie le panneau E11 ?",
         "choices": [
           {
-            "text": "Stationnement semi-mensuel",
+            "text": "Stationnement alternatif semi-mensuel: E5 (1-15) et E7 (16-fin) affiches simultanement dans un panneau combine",
             "is_correct": true
           },
           {
-            "text": "Direction obligatoire à droite",
+            "text": "Interdiction de stationnement le premier et le dernier jour du mois",
             "is_correct": false
           },
           {
-            "text": "Carrefour dangereux",
+            "text": "Stationnement obligatoire 11 jours par mois",
             "is_correct": false
           }
         ],
-        "explanation": "Stationnement semi-mensuel autorisé de manière alternée selon la période du mois."
+        "explanation": "E11 est le panneau de synthese qui affiche E5 et E7 simultanement pour une meilleure lisibilite."
       },
       "AR": {
-        "question": "ماذا تعني لافتة المرور هذه؟",
+        "question": "Ù…Ø§ Ù…Ø¹Ù†Ù‰ Ù„Ø§ÙØªØ© E11ØŸ",
         "choices": [
           {
-            "text": "مواقف سيارات نصف شهرية",
+            "text": "ÙˆÙ‚ÙˆÙ Ù…ØªÙ†Ø§ÙˆØ¨ Ù†ØµÙ Ø´Ù‡Ø±ÙŠ: E5 (1-15) ÙˆE7 (16-Ø§Ù„Ù†Ù‡Ø§ÙŠØ©) Ù…Ø¹Ø±ÙˆØ¶ØªØ§Ù† Ù…Ø¹Ø§Ù‹ ÙÙŠ Ù„Ø§ÙØªØ© Ù…Ø¬Ù…Ù‘Ø¹Ø©",
             "is_correct": true
           },
           {
-            "text": "الاتجاه الإلزامي يميناً",
+            "text": "Ø­Ø¸Ø± ÙˆÙ‚ÙˆÙ ÙÙŠ Ø£ÙˆÙ„ ÙˆØ¢Ø®Ø± ÙŠÙˆÙ… Ù…Ù† Ø§Ù„Ø´Ù‡Ø±",
             "is_correct": false
           },
           {
-            "text": "تقاطع خطير",
+            "text": "ÙˆÙ‚ÙˆÙ Ø¥Ù„Ø²Ø§Ù…ÙŠ 11 ÙŠÙˆÙ…Ø§Ù‹ ÙÙŠ Ø§Ù„Ø´Ù‡Ø±",
             "is_correct": false
           }
         ],
-        "explanation": "وقوف السيارات نصف الشهري المتناوب مسموح به حسب فترة الشهر."
+        "explanation": "E11 Ù‡ÙŠ Ø§Ù„Ù„Ø§ÙØªØ© Ø§Ù„Ù…Ø¬Ù…Ù‘Ø¹Ø© Ø§Ù„ØªÙŠ ØªØ¹Ø±Ø¶ E5 ÙˆE7 Ù…Ø¹Ø§Ù‹ Ù„ØªØ³Ù‡ÙŠÙ„ Ø§Ù„Ù‚Ø±Ø§Ø¡Ø©."
       }
     }
   },
@@ -87,161 +86,159 @@
     "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE: Ready to use — category identification question.",
     "i18n": {
       "NL": {
-        "question": "Tot welke categorie verkeerstekens behoort dit bord?",
+        "question": "Wat tonen de twee pijlen op E11?",
         "choices": [
           {
-            "text": "Parkeerregelementsborden (E-reeks)",
+            "text": "De zijde van de weg en de verbodperiode: bovenste pijl (E5-kant, 1-15), onderste pijl (E7-kant, 16-einde)",
             "is_correct": true
           },
           {
-            "text": "Verbodsborden (C-reeks)",
+            "text": "Twee rijrichtingen waar inhalen is verboden",
             "is_correct": false
           },
           {
-            "text": "Gebodsborden (D-reeks)",
+            "text": "Twee tijdvakken per dag waarop parkeren verboden is",
             "is_correct": false
           }
         ],
-        "explanation": "Dit bord behoort tot de categorie 'Parkeerregelementsborden (E-reeks)'. Elk type bord heeft een specifieke vorm en kleurschema."
+        "explanation": "E11 toont beide verbodperiodes in Ã©Ã©n bord: welke kant welk dagbereik heeft."
       },
       "EN": {
-        "question": "To which category of traffic signs does this sign belong?",
+        "question": "What do the two arrows on E11 show?",
         "choices": [
           {
-            "text": "Parking regulation signs (E-series)",
+            "text": "The side of the road and the ban period: upper arrow (E5 side, 1-15), lower arrow (E7 side, 16-end)",
             "is_correct": true
           },
           {
-            "text": "Prohibition signs (C-series)",
+            "text": "Two driving directions where overtaking is forbidden",
             "is_correct": false
           },
           {
-            "text": "Mandatory signs (D-series)",
+            "text": "Two daily time periods when parking is forbidden",
             "is_correct": false
           }
         ],
-        "explanation": "This sign belongs to the 'Parking regulation signs (E-series)' category. Each type of sign has a specific shape and color scheme."
+        "explanation": "E11 shows both ban periods in one sign: which side has which date range."
       },
       "FR": {
-        "question": "À quelle catégorie de panneaux de signalisation ce panneau appartient-il ?",
+        "question": "Que montrent les deux fleches sur E11 ?",
         "choices": [
           {
-            "text": "Panneaux de stationnement (série E)",
+            "text": "Le cote de la route et la periode d'interdiction: fleche superieure (cote E5, 1-15), fleche inferieure (cote E7, 16-fin)",
             "is_correct": true
           },
           {
-            "text": "Panneaux d'interdiction (série C)",
+            "text": "Deux sens de circulation ou le depassement est interdit",
             "is_correct": false
           },
           {
-            "text": "Panneaux d'obligation (série D)",
+            "text": "Deux periodes horaires quotidiennes ou le stationnement est interdit",
             "is_correct": false
           }
         ],
-        "explanation": "Ce panneau appartient à la catégorie 'Panneaux de stationnement (série E)'. Chaque type de panneau a une forme et un schéma de couleurs spécifiques."
+        "explanation": "E11 montre les deux periodes d'interdiction dans un seul panneau: quel cote correspond a quel plage de dates."
       },
       "AR": {
-        "question": "إلى أي فئة من لافتات المرور تنتمي هذه اللافتة؟",
+        "question": "Ù…Ø§Ø°Ø§ ØªÙØ¸Ù‡Ø± Ø§Ù„Ø³Ù‡Ù…Ø§Ù† Ø¹Ù„Ù‰ E11ØŸ",
         "choices": [
           {
-            "text": "لافتات تنظيم الوقوف (سلسلة E)",
+            "text": "Ø¬Ø§Ù†Ø¨ Ø§Ù„Ø·Ø±ÙŠÙ‚ ÙˆÙØªØ±Ø© Ø§Ù„Ø­Ø¸Ø±: Ø§Ù„Ø³Ù‡Ù… Ø§Ù„Ø¹Ù„ÙˆÙŠ (Ø¬Ø§Ù†Ø¨ E5ØŒ 1-15)ØŒ Ø§Ù„Ø³Ù‡Ù… Ø§Ù„Ø³ÙÙ„ÙŠ (Ø¬Ø§Ù†Ø¨ E7ØŒ 16-Ø§Ù„Ù†Ù‡Ø§ÙŠØ©)",
             "is_correct": true
           },
           {
-            "text": "لافتات الحظر (سلسلة C)",
+            "text": "Ø§ØªØ¬Ø§Ù‡Ø§Ù† Ù„Ù„Ø³ÙŠØ± ÙŠÙØ­Ø¸Ø± ÙÙŠÙ‡Ù…Ø§ Ø§Ù„ØªØ¬Ø§ÙˆØ²",
             "is_correct": false
           },
           {
-            "text": "لافتات الإلزام (سلسلة D)",
+            "text": "ÙØªØ±ØªØ§Ù† ÙŠÙˆÙ…ÙŠØ© ÙŠÙØ­Ø¸Ø± ÙÙŠÙ‡Ù…Ø§ Ø§Ù„ÙˆÙ‚ÙˆÙ",
             "is_correct": false
           }
         ],
-        "explanation": "هذه اللافتة تنتمي إلى فئة 'لافتات تنظيم الوقوف (سلسلة E)'. كل نوع من اللافتات له شكل ونظام ألوان محدد."
+        "explanation": "E11 ØªÙØ¸Ù‡Ø± ÙƒÙ„ØªØ§ ÙØªØ±ØªÙŠ Ø§Ù„Ø­Ø¸Ø± ÙÙŠ Ù„Ø§ÙØªØ© ÙˆØ§Ø­Ø¯Ø©: Ø£ÙŠ Ø¬Ø§Ù†Ø¨ Ù„Ù‡ Ø£ÙŠ Ù†Ø·Ø§Ù‚ ØªÙˆØ§Ø±ÙŠØ®."
       }
     }
   },
   {
     "question_id": "E11_Q03",
-    "type": "WHAT_MUST_YOU_DO",
-    "difficulty": "MEDIUM",
+    "type": "HAZARD_IDENTIFICATION",
+    "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE (MEDIUM): Replace with sign-specific question for production.",
     "i18n": {
       "NL": {
-        "question": "Mag u uw voertuig parkeren op de plaats aangeduid door dit bord?",
+        "question": "Waarom gebruikt men E11 in plaats van losse E5 en E7-borden?",
         "choices": [
           {
-            "text": "Dit hangt af van de specifieke parkeerregels op het bord",
+            "text": "Om verwarring te vermijden: bestuurders zien in Ã©Ã©n oogopslag de regels voor beide zijden",
             "is_correct": true
           },
           {
-            "text": "Ja, altijd toegestaan als er een vrije plek is",
+            "text": "Omdat losse E5/E7-borden juridisch ongeldig zijn als ze apart staan",
             "is_correct": false
           },
           {
-            "text": "Nee, nooit toegestaan op de openbare weg",
+            "text": "Om ruimte te besparen want slechts Ã©Ã©n bord is goedkoper",
             "is_correct": false
           }
         ],
-        "explanation": "Parkeerregelementsborden geven specifieke regels aan over waar, wanneer en hoe lang u mag parkeren. Lees elk bord zorgvuldig."
+        "explanation": "E11 is een informatieve samenvatting die bestuurders direct een volledig overzicht geeft van het afwisselend parkeersysteem."
       },
       "EN": {
-        "question": "Are you allowed to park your vehicle at the location indicated by this sign?",
+        "question": "Why is E11 used instead of separate E5 and E7 signs?",
         "choices": [
           {
-            "text": "This depends on the specific parking rules indicated on the sign",
+            "text": "To avoid confusion: drivers see the rules for both sides at a single glance",
             "is_correct": true
           },
           {
-            "text": "Yes, always allowed if there is a free space",
+            "text": "Because separate E5/E7 signs are legally invalid when placed separately",
             "is_correct": false
           },
           {
-            "text": "No, never allowed on the public road",
+            "text": "To save space as only one sign is cheaper",
             "is_correct": false
           }
         ],
-        "explanation": "Parking regulation signs specify rules about where, when, and how long you may park. Read each sign carefully."
+        "explanation": "E11 is an informative summary that gives drivers an immediate complete overview of the alternating parking system."
       },
       "FR": {
-        "question": "Êtes-vous autorisé à garer votre véhicule à cet endroit ?",
+        "question": "Pourquoi utilise-t-on E11 plutot que des panneaux E5 et E7 separes ?",
         "choices": [
           {
-            "text": "Cela dépend des règles spécifiques indiquées sur le panneau",
+            "text": "Pour eviter la confusion: les conducteurs voient les regles des deux cotes d'un seul coup d'oeil",
             "is_correct": true
           },
           {
-            "text": "Oui, toujours autorisé s'il y a une place libre",
+            "text": "Parce que les panneaux E5/E7 separes sont juridiquement invalides s'ils sont places separement",
             "is_correct": false
           },
           {
-            "text": "Non, jamais autorisé sur la voie publique",
+            "text": "Pour economiser de l'espace car un seul panneau est moins cher",
             "is_correct": false
           }
         ],
-        "explanation": "Les panneaux de stationnement spécifient où, quand et combien de temps vous pouvez stationner."
+        "explanation": "E11 est un resume informatif qui donne aux conducteurs un apercu complet du systeme de stationnement alternatif en un seul regard."
       },
       "AR": {
-        "question": "هل يُسمح لك بوقوف مركبتك في المكان الذي تشير إليه هذه اللافتة؟",
+        "question": "Ù„Ù…Ø§Ø°Ø§ ØªÙØ³ØªØ®Ø¯Ù… E11 Ø¨Ø¯Ù„Ø§Ù‹ Ù…Ù† Ù„Ø§ÙØªØªÙŠ E5 ÙˆE7 Ø§Ù„Ù…Ù†ÙØµÙ„ØªÙŠÙ†ØŸ",
         "choices": [
           {
-            "text": "يعتمد ذلك على قواعد الوقوف المحددة المشار إليها على اللافتة",
+            "text": "Ù„ØªÙØ§Ø¯ÙŠ Ø§Ù„Ø§Ø±ØªØ¨Ø§Ùƒ: ÙŠØ±Ù‰ Ø§Ù„Ø³Ø§Ø¦Ù‚ÙˆÙ† Ù‚ÙˆØ§Ø¹Ø¯ ÙƒÙ„Ø§ Ø§Ù„Ø¬Ø§Ù†Ø¨ÙŠÙ† Ø¯ÙØ¹Ø© ÙˆØ§Ø­Ø¯Ø©",
             "is_correct": true
           },
           {
-            "text": "نعم، مسموح دائماً إذا كان هناك مكان فارغ",
+            "text": "Ù„Ø£Ù† Ù„Ø§ÙØªØªÙŠ E5/E7 Ø§Ù„Ù…Ù†ÙØµÙ„ØªÙŠÙ† ØºÙŠØ± ØµØ§Ù„Ø­ØªÙŠÙ† Ù‚Ø§Ù†ÙˆÙ†Ø§Ù‹ Ø¹Ù†Ø¯ ÙˆØ¶Ø¹Ù‡Ù…Ø§ Ù…Ù†ÙØµÙ„ØªÙŠÙ†",
             "is_correct": false
           },
           {
-            "text": "لا، غير مسموح أبداً على الطريق العام",
+            "text": "Ù„ØªÙˆÙÙŠØ± Ø§Ù„Ù…Ø³Ø§Ø­Ø© Ù„Ø£Ù† Ù„Ø§ÙØªØ© ÙˆØ§Ø­Ø¯Ø© Ø£Ø±Ø®Øµ",
             "is_correct": false
           }
         ],
-        "explanation": "لافتات تنظيم الوقوف تحدد قواعد حول أين ومتى وكم من الوقت يمكنك الوقوف. اقرأ كل لافتة بعناية."
+        "explanation": "E11 Ù…Ù„Ø®Øµ Ù…Ø¹Ù„ÙˆÙ…Ø§ØªÙŠ ÙŠÙ…Ù†Ø­ Ø§Ù„Ø³Ø§Ø¦Ù‚ÙŠÙ† Ù†Ø¸Ø±Ø© Ø´Ø§Ù…Ù„Ø© ÙÙˆØ±ÙŠØ© Ø¹Ù„Ù‰ Ù†Ø¸Ø§Ù… Ø§Ù„ÙˆÙ‚ÙˆÙ Ø§Ù„Ù…ØªÙ†Ø§ÙˆØ¨."
       }
     }
   },
@@ -251,145 +248,370 @@
     "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE (MEDIUM): Replace with sign-specific question for production.",
     "i18n": {
       "NL": {
-        "question": "Wat is het verschil tussen parkeren en stilstaan?",
+        "question": "Vandaag is de 10e. U staat bij E11 dat E5 (boven) en E7 (onder) toont. Aan welke kant mag u niet parkeren?",
         "choices": [
           {
-            "text": "Stilstaan is een korte stop (chauffeur blijft aanwezig), parkeren is langer of chauffeur verlaat voertuig",
+            "text": "Aan de E5-kant (boven in het bord): 1-15 is de verbodperiode voor die kant",
             "is_correct": true
           },
           {
-            "text": "Er is geen verschil, het zijn synoniemen",
+            "text": "Aan de E7-kant want E7 is altijd actief",
             "is_correct": false
           },
           {
-            "text": "Stilstaan betekent motor uitzetten",
+            "text": "Aan beide kanten want E11 verbiedt parkeren aan beide kanten tegelijk",
             "is_correct": false
           }
         ],
-        "explanation": "Stilstaan = kort stoppen terwijl de bestuurder beschikbaar blijft. Parkeren = langer of bestuurder verlaat het voertuig."
+        "explanation": "Op de 10e (in periode 1-15) is de E5-kant verboden. De E7-kant (16-einde) is vrij."
       },
       "EN": {
-        "question": "What is the difference between parking and stopping?",
+        "question": "Today is the 10th. You are at an E11 sign showing E5 (top) and E7 (bottom). On which side may you NOT park?",
         "choices": [
           {
-            "text": "Stopping is a brief halt (driver remains present), parking is longer or driver leaves vehicle",
+            "text": "On the E5 side (top of the sign): 1-15 is the ban period for that side",
             "is_correct": true
           },
           {
-            "text": "There is no difference, they are synonyms",
+            "text": "On the E7 side because E7 is always active",
             "is_correct": false
           },
           {
-            "text": "Stopping means turning off the engine",
+            "text": "On both sides because E11 forbids parking on both sides simultaneously",
             "is_correct": false
           }
         ],
-        "explanation": "Stopping = brief halt while driver remains available. Parking = longer stop or driver leaves the vehicle."
+        "explanation": "On the 10th (within period 1-15) the E5 side is forbidden. The E7 side (16-end) is free."
       },
       "FR": {
-        "question": "Quelle est la différence entre le stationnement et l'arrêt ?",
+        "question": "Aujourd'hui c'est le 10. Vous etes a un panneau E11 montrant E5 (haut) et E7 (bas). De quel cote ne pouvez-vous PAS vous garer ?",
         "choices": [
           {
-            "text": "L'arrêt est court (conducteur présent), le stationnement est plus long ou conducteur quitte le véhicule",
+            "text": "Du cote E5 (haut du panneau): 1-15 est la periode d'interdiction pour ce cote",
             "is_correct": true
           },
           {
-            "text": "Il n'y a pas de différence, ce sont des synonymes",
+            "text": "Du cote E7 car E7 est toujours actif",
             "is_correct": false
           },
           {
-            "text": "Arrêter signifie éteindre le moteur",
+            "text": "Des deux cotes car E11 interdit le stationnement des deux cotes simultanement",
             "is_correct": false
           }
         ],
-        "explanation": "Arrêt = court, conducteur disponible. Stationnement = plus long ou conducteur quitte le véhicule."
+        "explanation": "Le 10 (dans la periode 1-15) le cote E5 est interdit. Le cote E7 (16-fin) est libre."
       },
       "AR": {
-        "question": "ما الفرق بين الوقوف والتوقف؟",
+        "question": "Ø§Ù„ÙŠÙˆÙ… Ù‡Ùˆ Ø§Ù„Ø¹Ø§Ø´Ø±. Ø£Ù†Øª Ø¹Ù†Ø¯ Ù„Ø§ÙØªØ© E11 ØªØ¹Ø±Ø¶ E5 (Ø£Ø¹Ù„Ù‰) ÙˆE7 (Ø£Ø³ÙÙ„). Ø¹Ù„Ù‰ Ø£ÙŠ Ø¬Ø§Ù†Ø¨ Ù„Ø§ ÙŠØ¬ÙˆØ² Ø§Ù„ÙˆÙ‚ÙˆÙØŸ",
         "choices": [
           {
-            "text": "التوقف وقفة قصيرة (السائق يبقى موجوداً)، الوقوف أطول أو السائق يغادر المركبة",
+            "text": "Ø¹Ù„Ù‰ Ø¬Ø§Ù†Ø¨ E5 (Ø£Ø¹Ù„Ù‰ Ø§Ù„Ù„Ø§ÙØªØ©): 1-15 Ù‡ÙŠ ÙØªØ±Ø© Ø§Ù„Ø­Ø¸Ø± Ù„Ø°Ù„Ùƒ Ø§Ù„Ø¬Ø§Ù†Ø¨",
             "is_correct": true
           },
           {
-            "text": "لا فرق، فهما مترادفان",
+            "text": "Ø¹Ù„Ù‰ Ø¬Ø§Ù†Ø¨ E7 Ù„Ø£Ù† E7 Ù†Ø´Ø·Ø© Ø¯Ø§Ø¦Ù…Ø§Ù‹",
             "is_correct": false
           },
           {
-            "text": "التوقف يعني إطفاء المحرك",
+            "text": "Ø¹Ù„Ù‰ ÙƒÙ„Ø§ Ø§Ù„Ø¬Ø§Ù†Ø¨ÙŠÙ† Ù„Ø£Ù† E11 ØªØ­Ø¸Ø± Ø§Ù„ÙˆÙ‚ÙˆÙ Ø¹Ù„Ù‰ Ø§Ù„Ø¬Ø§Ù†Ø¨ÙŠÙ† ÙÙŠ Ø¢Ù†Ù ÙˆØ§Ø­Ø¯",
             "is_correct": false
           }
         ],
-        "explanation": "التوقف = وقفة قصيرة مع بقاء السائق متاحاً. الوقوف = أطول أو السائق يغادر المركبة."
+        "explanation": "ÙÙŠ Ø§Ù„ÙŠÙˆÙ… Ø§Ù„Ø¹Ø§Ø´Ø± (ÙØªØ±Ø© 1-15) Ø¬Ø§Ù†Ø¨ E5 Ù…Ø­Ø¸ÙˆØ±. Ø¬Ø§Ù†Ø¨ E7 (16-Ø§Ù„Ù†Ù‡Ø§ÙŠØ©) Ø­Ø±."
       }
     }
   },
   {
     "question_id": "E11_Q05",
-    "type": "IS_IT_ALLOWED",
-    "difficulty": "HARD",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE (HARD): Replace with sign-specific question for production.",
     "i18n": {
       "NL": {
-        "question": "Mag u parkeren op een plaats aangeduid met een parkeerverbodsbord?",
+        "question": "U ziet E11 maar kent het systeem niet. Wat doet u?",
         "choices": [
           {
-            "text": "Nee, parkeren is verboden op plaatsen aangeduid met een parkeerverbodsbord",
+            "text": "U leest het bord zorgvuldig: bovenste helft = E5-kant (1-15), onderste helft = E7-kant (16-einde); dan kijkt u naar de datum",
             "is_correct": true
           },
           {
-            "text": "Ja, parkeren is altijd toegestaan zolang u niet langer dan 15 minuten blijft",
+            "text": "U negeert het bord want E11 is alleen voor bewoners",
+            "is_correct": false
+          },
+          {
+            "text": "U parkeert aan de kant met de laagste nummering",
             "is_correct": false
           }
         ],
-        "explanation": "Parkeerverbodsborden verbieden parkeren op de aangeduide plaats. Overtredingen kunnen leiden tot een boete of het wegslepen van uw voertuig."
+        "explanation": "E11 is ontworpen om intuÃ¯tief leesbaar te zijn. Kijk naar de datum en de kant van de weg om de juiste regel toe te passen."
       },
       "EN": {
-        "question": "Are you allowed to park in a place marked with a no-parking sign?",
+        "question": "You see E11 but do not know the system. What do you do?",
         "choices": [
           {
-            "text": "No, parking is prohibited in places marked with a no-parking sign",
+            "text": "Read the sign carefully: top half = E5 side (1-15), bottom half = E7 side (16-end); then check the date",
             "is_correct": true
           },
           {
-            "text": "Yes, parking is always allowed as long as you do not stay longer than 15 minutes",
+            "text": "Ignore the sign because E11 is only for residents",
+            "is_correct": false
+          },
+          {
+            "text": "Park on the side with the lowest number",
             "is_correct": false
           }
         ],
-        "explanation": "No-parking signs prohibit parking at the indicated location. Violations can result in a fine or having your vehicle towed."
+        "explanation": "E11 is designed to be intuitively readable. Check the date and the side of the road to apply the correct rule."
       },
       "FR": {
-        "question": "Êtes-vous autorisé à stationner à un endroit signalé par un panneau d'interdiction de stationnement ?",
+        "question": "Vous voyez E11 mais ne connaissez pas le systeme. Que faites-vous ?",
         "choices": [
           {
-            "text": "Non, le stationnement est interdit aux endroits signalés par un panneau d'interdiction de stationnement",
+            "text": "Lisez attentivement le panneau: moitie superieure = cote E5 (1-15), moitie inferieure = cote E7 (16-fin); puis regardez la date",
             "is_correct": true
           },
           {
-            "text": "Oui, le stationnement est toujours autorisé tant que vous ne restez pas plus de 15 minutes",
+            "text": "Ignorez le panneau car E11 est seulement pour les riverains",
+            "is_correct": false
+          },
+          {
+            "text": "Garez-vous du cote avec le numero le plus bas",
             "is_correct": false
           }
         ],
-        "explanation": "Les panneaux d'interdiction de stationnement interdisent de stationner à l'endroit indiqué. Les infractions peuvent entraîner une amende ou le remorquage du véhicule."
+        "explanation": "E11 est concu pour etre lisible intuitivement. Regardez la date et le cote de la route pour appliquer la bonne regle."
       },
       "AR": {
-        "question": "هل يُسمح لك بالوقوف في مكان يُشار إليه بلافتة حظر الوقوف؟",
+        "question": "ØªØ±Ù‰ E11 Ù„ÙƒÙ†Ùƒ Ù„Ø§ ØªØ¹Ø±Ù Ø§Ù„Ù†Ø¸Ø§Ù…. Ù…Ø§Ø°Ø§ ØªÙØ¹Ù„ØŸ",
         "choices": [
           {
-            "text": "لا، الوقوف محظور في الأماكن التي تشير إليها لافتة حظر الوقوف",
+            "text": "Ø§Ù‚Ø±Ø£ Ø§Ù„Ù„Ø§ÙØªØ© Ø¨Ø¹Ù†Ø§ÙŠØ©: Ø§Ù„Ù†ØµÙ Ø§Ù„Ø¹Ù„ÙˆÙŠ = Ø¬Ø§Ù†Ø¨ E5 (1-15)ØŒ Ø§Ù„Ù†ØµÙ Ø§Ù„Ø³ÙÙ„ÙŠ = Ø¬Ø§Ù†Ø¨ E7 (16-Ø§Ù„Ù†Ù‡Ø§ÙŠØ©)Ø› Ø«Ù… ØªØ­Ù‚Ù‚ Ù…Ù† Ø§Ù„ØªØ§Ø±ÙŠØ®",
             "is_correct": true
           },
           {
-            "text": "نعم، الوقوف مسموح دائماً ما لم تبقَ أكثر من 15 دقيقة",
+            "text": "ØªØ¬Ø§Ù‡Ù„ Ø§Ù„Ù„Ø§ÙØªØ© Ù„Ø£Ù† E11 Ù„Ù„Ù…Ù‚ÙŠÙ…ÙŠÙ† ÙÙ‚Ø·",
+            "is_correct": false
+          },
+          {
+            "text": "Ù‚Ù Ø¹Ù„Ù‰ Ø§Ù„Ø¬Ø§Ù†Ø¨ Ø°ÙŠ Ø§Ù„Ø±Ù‚Ù… Ø§Ù„Ø£Ø¯Ù†Ù‰",
             "is_correct": false
           }
         ],
-        "explanation": "لافتات حظر الوقوف تحظر الوقوف في المكان المشار إليه. المخالفات قد تؤدي إلى غرامة أو سحب مركبتك."
+        "explanation": "E11 Ù…ÙØµÙ…ÙŽÙ‘Ù…Ø© Ù„ØªÙƒÙˆÙ† Ø³Ù‡Ù„Ø© Ø§Ù„Ù‚Ø±Ø§Ø¡Ø© Ø¨Ø¯ÙŠÙ‡ÙŠØ§Ù‹. ØªØ­Ù‚Ù‚ Ù…Ù† Ø§Ù„ØªØ§Ø±ÙŠØ® ÙˆØ¬Ø§Ù†Ø¨ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ù„ØªØ·Ø¨ÙŠÙ‚ Ø§Ù„Ù‚Ø§Ø¹Ø¯Ø© Ø§Ù„ØµØ­ÙŠØ­Ø©."
+      }
+    }
+  },
+  {
+    "question_id": "E11_Q06",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Is E11 verplicht of optioneel naast de E5/E7-borden?",
+        "choices": [
+          {
+            "text": "E11 is een informatief aanvullend bord; E5 en E7 blijven de wettelijk bindende tekens",
+            "is_correct": true
+          },
+          {
+            "text": "E11 vervangt E5 en E7; die zijn overbodig als E11 aanwezig is",
+            "is_correct": false
+          },
+          {
+            "text": "E11 is verplicht opgesteld tegenover elke E5",
+            "is_correct": false
+          }
+        ],
+        "explanation": "E5 en E7 zijn de wettelijk bindende borden. E11 biedt aanvullende informatie maar is niet verplicht."
+      },
+      "EN": {
+        "question": "Is E11 mandatory or optional alongside E5/E7 signs?",
+        "choices": [
+          {
+            "text": "E11 is an informational additional sign; E5 and E7 remain the legally binding signs",
+            "is_correct": true
+          },
+          {
+            "text": "E11 replaces E5 and E7; those are redundant when E11 is present",
+            "is_correct": false
+          },
+          {
+            "text": "E11 is always placed opposite every E5",
+            "is_correct": false
+          }
+        ],
+        "explanation": "E5 and E7 are the legally binding signs. E11 provides additional information but is not mandatory."
+      },
+      "FR": {
+        "question": "E11 est-il obligatoire ou facultatif a cote des panneaux E5/E7 ?",
+        "choices": [
+          {
+            "text": "E11 est un panneau additionnel informatif; E5 et E7 restent les panneaux juridiquement contraignants",
+            "is_correct": true
+          },
+          {
+            "text": "E11 remplace E5 et E7; ceux-ci sont superflus quand E11 est present",
+            "is_correct": false
+          },
+          {
+            "text": "E11 est toujours place en face de chaque E5",
+            "is_correct": false
+          }
+        ],
+        "explanation": "E5 et E7 sont les panneaux juridiquement contraignants. E11 fournit des informations supplementaires mais n'est pas obligatoire."
+      },
+      "AR": {
+        "question": "Ù‡Ù„ E11 Ø¥Ù„Ø²Ø§Ù…ÙŠØ© Ø£Ù… Ø§Ø®ØªÙŠØ§Ø±ÙŠØ© Ø¨Ø¬Ø§Ù†Ø¨ Ù„Ø§ÙØªØªÙŠ E5/E7ØŸ",
+        "choices": [
+          {
+            "text": "E11 Ù„Ø§ÙØªØ© Ù…Ø¹Ù„ÙˆÙ…Ø§ØªÙŠØ© Ø¥Ø¶Ø§ÙÙŠØ©Ø› E5 ÙˆE7 ØªØ¨Ù‚ÙŠØ§Ù† Ø§Ù„Ù„Ø§ÙØªØªÙŠÙ† Ø§Ù„Ù…Ù„Ø²Ù…ØªÙŠÙ† Ù‚Ø§Ù†ÙˆÙ†Ø§Ù‹",
+            "is_correct": true
+          },
+          {
+            "text": "E11 ØªØ­Ù„ Ù…Ø­Ù„ E5 ÙˆE7Ø› Ù‡Ø§ØªØ§Ù† ØºÙŠØ± Ø¶Ø±ÙˆØ±ÙŠØªÙŠÙ† Ø¹Ù†Ø¯ ÙˆØ¬ÙˆØ¯ E11",
+            "is_correct": false
+          },
+          {
+            "text": "E11 ØªÙˆØ¶Ø¹ Ø¯Ø§Ø¦Ù…Ø§Ù‹ Ù…Ù‚Ø§Ø¨Ù„ ÙƒÙ„ E5",
+            "is_correct": false
+          }
+        ],
+        "explanation": "E5 ÙˆE7 Ù‡Ù…Ø§ Ø§Ù„Ù„Ø§ÙØªØªØ§Ù† Ø§Ù„Ù…Ù„Ø²Ù…ØªØ§Ù† Ù‚Ø§Ù†ÙˆÙ†Ø§Ù‹. E11 ØªÙ‚Ø¯Ù… Ù…Ø¹Ù„ÙˆÙ…Ø§Øª Ø¥Ø¶Ø§ÙÙŠØ© Ù„ÙƒÙ†Ù‡Ø§ Ù„ÙŠØ³Øª Ø¥Ù„Ø²Ø§Ù…ÙŠØ©."
+      }
+    }
+  },
+  {
+    "question_id": "E11_Q07",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Mag u bij E11 de E5-kant negeren omdat u de E11 moeilijk leesbaar vindt?",
+        "choices": [
+          {
+            "text": "Neen: onleesbaar bord is geen geldig excuus voor overtreding; de E5/E7-borden gelden sowieso",
+            "is_correct": true
+          },
+          {
+            "text": "Ja: als het bord onduidelijk is, mag u de meest gunstige interpretatie kiezen",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Het wettelijk vermoeden is dat een rechtsgeldig geplaatst bord duidelijk genoeg is. Onleesbaarheid vrijwaart u niet van een sanctie."
+      },
+      "EN": {
+        "question": "May you ignore the E5 side of E11 because you find E11 hard to read?",
+        "choices": [
+          {
+            "text": "No: finding a sign difficult to read is not a valid excuse for a violation; the E5/E7 signs are legally valid regardless",
+            "is_correct": true
+          },
+          {
+            "text": "Yes: if the sign is unclear you may choose the most favourable interpretation",
+            "is_correct": false
+          }
+        ],
+        "explanation": "The legal presumption is that a lawfully placed sign is clear enough. Difficulty reading it does not exempt you from a sanction."
+      },
+      "FR": {
+        "question": "Pouvez-vous ignorer le cote E5 de E11 parce que vous trouvez E11 difficile a lire ?",
+        "choices": [
+          {
+            "text": "Non: trouver un panneau difficile a lire n'est pas une excuse valide pour une infraction; les panneaux E5/E7 sont juridiquement valables quoi qu'il arrive",
+            "is_correct": true
+          },
+          {
+            "text": "Oui: si le panneau est peu clair vous pouvez choisir l'interpretation la plus favorable",
+            "is_correct": false
+          }
+        ],
+        "explanation": "La presomption legale est qu'un panneau correctement place est suffisamment clair. La difficulte a le lire ne vous exonere pas d'une sanction."
+      },
+      "AR": {
+        "question": "Ù‡Ù„ ÙŠØ¬ÙˆØ² ØªØ¬Ø§Ù‡Ù„ Ø¬Ø§Ù†Ø¨ E5 ÙÙŠ E11 Ù„Ø£Ù†Ùƒ ØªØ¬Ø¯ E11 ØµØ¹Ø¨Ø© Ø§Ù„Ù‚Ø±Ø§Ø¡Ø©ØŸ",
+        "choices": [
+          {
+            "text": "Ù„Ø§: ØµØ¹ÙˆØ¨Ø© Ù‚Ø±Ø§Ø¡Ø© Ø§Ù„Ù„Ø§ÙØªØ© Ù„ÙŠØ³Øª Ø¹Ø°Ø±Ø§Ù‹ Ù…Ù‚Ø¨ÙˆÙ„Ø§Ù‹ Ù„Ù„Ù…Ø®Ø§Ù„ÙØ©Ø› Ù„Ø§ÙØªØªØ§ E5/E7 ØµØ§Ù„Ø­ØªØ§Ù† Ù‚Ø§Ù†ÙˆÙ†Ø§Ù‹ Ø¹Ù„Ù‰ Ø£ÙŠ Ø­Ø§Ù„",
+            "is_correct": true
+          },
+          {
+            "text": "Ù†Ø¹Ù…: Ø¥Ø°Ø§ ÙƒØ§Ù†Øª Ø§Ù„Ù„Ø§ÙØªØ© ØºÙŠØ± ÙˆØ§Ø¶Ø­Ø© ÙŠÙ…ÙƒÙ†Ùƒ Ø§Ø®ØªÙŠØ§Ø± Ø§Ù„ØªÙØ³ÙŠØ± Ø§Ù„Ø£ÙØ¶Ù„",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ø§Ù„Ø§ÙØªØ±Ø§Ø¶ Ø§Ù„Ù‚Ø§Ù†ÙˆÙ†ÙŠ Ù‡Ùˆ Ø£Ù† Ø§Ù„Ù„Ø§ÙØªØ© Ø§Ù„Ù…ÙˆØ¶ÙˆØ¹Ø© Ù‚Ø§Ù†ÙˆÙ†ÙŠØ§Ù‹ ÙˆØ§Ø¶Ø­Ø© Ø¨Ù…Ø§ ÙŠÙƒÙÙŠ. ØµØ¹ÙˆØ¨Ø© Ù‚Ø±Ø§Ø¡ØªÙ‡Ø§ Ù„Ø§ ØªØ¹ÙÙŠÙƒ Ù…Ù† Ø§Ù„Ø¹Ù‚ÙˆØ¨Ø©."
+      }
+    }
+  },
+  {
+    "question_id": "E11_Q08",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Is het toegestaan bij E11 een maand lang ononderbroken te parkeren aan de E7-kant?",
+        "choices": [
+          {
+            "text": "Neen: van de 16e tot het einde van de maand is de E7-kant verboden; ononderbroken parkeren is niet mogelijk",
+            "is_correct": true
+          },
+          {
+            "text": "Ja: als u aanwezig blijft bij het voertuig is langdurig parkeren altijd toegestaan",
+            "is_correct": false
+          }
+        ],
+        "explanation": "E7 verbiedt parkeren van 16 t/m einde. Ononderbroken een maand parkeren aan de E7-kant is dus onmogelijk."
+      },
+      "EN": {
+        "question": "Is it allowed to park uninterruptedly for a month on the E7 side under E11?",
+        "choices": [
+          {
+            "text": "No: from the 16th to the end of the month the E7 side is forbidden; uninterrupted parking for a month is not possible",
+            "is_correct": true
+          },
+          {
+            "text": "Yes: if you stay with the vehicle long-term parking is always allowed",
+            "is_correct": false
+          }
+        ],
+        "explanation": "E7 forbids parking from the 16th to month end. Parking continuously for a month on the E7 side is therefore not possible."
+      },
+      "FR": {
+        "question": "Est-il permis de se garer ininterrompument pendant un mois du cote E7 sous E11 ?",
+        "choices": [
+          {
+            "text": "Non: du 16 a la fin du mois le cote E7 est interdit; le stationnement ininterrompu d'un mois n'est pas possible",
+            "is_correct": true
+          },
+          {
+            "text": "Oui: si vous restez aupres du vehicule le stationnement longue duree est toujours autorise",
+            "is_correct": false
+          }
+        ],
+        "explanation": "E7 interdit le stationnement du 16 a la fin du mois. Stationner continuellement un mois du cote E7 est donc impossible."
+      },
+      "AR": {
+        "question": "Ù‡Ù„ ÙŠÙØ³Ù…Ø­ Ø¨Ø§Ù„ÙˆÙ‚ÙˆÙ Ø§Ù„Ù…ØªÙˆØ§ØµÙ„ Ù„Ø´Ù‡Ø± ÙƒØ§Ù…Ù„ Ø¹Ù„Ù‰ Ø¬Ø§Ù†Ø¨ E7 ØªØ­Øª E11ØŸ",
+        "choices": [
+          {
+            "text": "Ù„Ø§: Ù…Ù† ÙŠÙˆÙ… 16 Ø­ØªÙ‰ Ù†Ù‡Ø§ÙŠØ© Ø§Ù„Ø´Ù‡Ø± Ø¬Ø§Ù†Ø¨ E7 Ù…Ø­Ø¸ÙˆØ±Ø› Ø§Ù„ÙˆÙ‚ÙˆÙ Ø§Ù„Ù…ØªÙˆØ§ØµÙ„ Ù„Ø´Ù‡Ø± ÙƒØ§Ù…Ù„ ØºÙŠØ± Ù…Ù…ÙƒÙ†",
+            "is_correct": true
+          },
+          {
+            "text": "Ù†Ø¹Ù…: Ø¥Ø°Ø§ Ø¨Ù‚ÙŠØª Ù…Ø¹ Ø§Ù„Ù…Ø±ÙƒØ¨Ø© ÙŠÙØ³Ù…Ø­ Ø¨Ø§Ù„ÙˆÙ‚ÙˆÙ Ø·ÙˆÙŠÙ„ Ø§Ù„Ø£Ù…Ø¯ Ø¯Ø§Ø¦Ù…Ø§Ù‹",
+            "is_correct": false
+          }
+        ],
+        "explanation": "E7 ØªØ­Ø¸Ø± Ø§Ù„ÙˆÙ‚ÙˆÙ Ù…Ù† 16 Ø­ØªÙ‰ Ù†Ù‡Ø§ÙŠØ© Ø§Ù„Ø´Ù‡Ø±. Ø§Ù„ÙˆÙ‚ÙˆÙ Ø§Ù„Ù…ØªÙˆØ§ØµÙ„ Ù„Ø´Ù‡Ø± ÙƒØ§Ù…Ù„ Ø¹Ù„Ù‰ Ø¬Ø§Ù†Ø¨ E7 ØºÙŠØ± Ù…Ù…ÙƒÙ†."
       }
     }
   }

@@ -34,14 +34,12 @@ import java.util.List;
  *
  * **Phase 2 Restoration:** Implemented January 18, 2026
  *
- * Provides REST endpoints for basic quiz generation WITHOUT Smart Quiz features:
+ * Provides REST endpoints for the current theory-question bank:
  * - ✅ Random quiz generation
  * - ✅ Category-filtered quiz generation
- * - ❌ NO 24-hour cooldown (deferred to SmartQuizController)
+ * - ❌ NO 24-hour cooldown
  * - ❌ NO user history tracking
  * - ❌ NO adaptive difficulty
- *
- * For Smart Quiz features, see SmartQuizController (Phase 3).
  */
 @RestController
 @RequestMapping("/api/quiz")
@@ -239,7 +237,7 @@ public class QuizController {
 
     // ============================================================================
     // BELGIAN THEORY EXAM — /api/quiz/theory-exam
-    // Distribution: 20 EASY + 18 MEDIUM + 12 HARD = 50 questions
+    // Distribution: 20 EASY + 20 MEDIUM + 10 HARD = 50 questions
     // Per-question timer enforced client-side (15 seconds)
     // Pass threshold: 41/50 (Belgian rijbewijs B standard)
     // Stateless — no DB session, no history written
@@ -247,12 +245,12 @@ public class QuizController {
 
     /**
      * Fetch 50 questions for a Belgian theory exam practice session.
-     * Distribution: 20 easy / 18 medium / 12 hard, fully shuffled.
+     * Distribution: 20 easy / 20 medium / 10 hard, fully shuffled.
      *
      * GET /api/quiz/theory-exam
      */
     @GetMapping("/theory-exam")
-    @Operation(summary = "Get Belgian theory exam question set (20E+18M+12H)")
+    @Operation(summary = "Get Belgian theory exam question set (20E+20M+10H)")
     public ResponseEntity<List<QuizQuestionDTO>> getTheoryExamQuestions(
             Authentication authentication) {
         Long userId = authenticationUtil.extractUserId(authentication);

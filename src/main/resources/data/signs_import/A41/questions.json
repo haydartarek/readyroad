@@ -1,83 +1,82 @@
-[
+﻿[
   {
     "question_id": "A41_Q01",
     "type": "WHAT_DOES_IT_MEAN",
     "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE: Replace wrong answers with actual sign names from the same category.",
     "i18n": {
       "NL": {
         "question": "Wat betekent dit verkeersbord?",
         "choices": [
           {
-            "text": "Overweg met slagbomen",
+            "text": "Spoorwegovergang met slagbomen: een spoorwegovergang met automatische of bediende slagbomen ligt voor u",
             "is_correct": true
           },
           {
-            "text": "Verbod om in te halen",
+            "text": "Tolbrug: u nadert een betaalpost op een brug of snelweg",
             "is_correct": false
           },
           {
-            "text": "Maximumsnelheid 50 km/u",
+            "text": "Maximale asdruk: voertuigen boven een bepaald gewicht mogen niet verder",
             "is_correct": false
           }
         ],
-        "explanation": "Overweg met slagbomen."
+        "explanation": "A41 kondigt een spoorwegovergang aan die uitgerust is met slagbomen. Treinen hebben altijd absolute voorrang. U moet stoppen zodra de slagbomen zakken of de lichten beginnen te knipperen."
       },
       "EN": {
         "question": "What does this traffic sign mean?",
         "choices": [
           {
-            "text": "Railway crossing with barriers",
+            "text": "Level crossing with barriers: a railway crossing equipped with automatic or operated barriers lies ahead",
             "is_correct": true
           },
           {
-            "text": "Prohibition to overtake",
+            "text": "Toll bridge: you are approaching a payment point on a bridge or motorway",
             "is_correct": false
           },
           {
-            "text": "Maximum speed 50 km/h",
+            "text": "Maximum axle load: vehicles above a certain weight may not continue",
             "is_correct": false
           }
         ],
-        "explanation": "Level crossing with barriers."
+        "explanation": "A41 announces a level crossing equipped with barriers. Trains always have absolute priority. You must stop as soon as the barriers lower or the lights start flashing."
       },
       "FR": {
         "question": "Que signifie ce panneau de signalisation ?",
         "choices": [
           {
-            "text": "Passage à niveau avec barrières",
+            "text": "Passage Ã  niveau avec barriÃ¨res: un passage Ã  niveau Ã©quipÃ© de barriÃ¨res automatiques ou actionnÃ©es se trouve devant vous",
             "is_correct": true
           },
           {
-            "text": "Interdiction de dépasser",
+            "text": "Pont Ã  pÃ©age: vous approchez d'un poste de paiement sur un pont ou une autoroute",
             "is_correct": false
           },
           {
-            "text": "Vitesse maximale 50 km/h",
+            "text": "Charge maximale Ã  l'essieu: les vÃ©hicules dÃ©passant un certain poids ne peuvent pas continuer",
             "is_correct": false
           }
         ],
-        "explanation": "Passage à niveau avec barrières."
+        "explanation": "A41 annonce un passage Ã  niveau Ã©quipÃ© de barriÃ¨res. Les trains ont toujours la prioritÃ© absolue. Vous devez vous arrÃªter dÃ¨s que les barriÃ¨res s'abaissent ou que les feux commencent Ã  clignoter."
       },
       "AR": {
-        "question": "ماذا تعني لافتة المرور هذه؟",
+        "question": "Ù…Ø§ Ù…Ø¹Ù†Ù‰ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ",
         "choices": [
           {
-            "text": "تقاطع سكة حديدية مزود بحاجز",
+            "text": "Ù…Ø¹Ø¨Ø± Ø³ÙƒØ© Ø­Ø¯ÙŠØ¯ Ø¨Ø­ÙˆØ§Ø¬Ø²: ÙŠÙˆØ¬Ø¯ Ø£Ù…Ø§Ù…Ùƒ Ù…Ø¹Ø¨Ø± Ø³ÙƒØ© Ø­Ø¯ÙŠØ¯ Ù…Ø¬Ù‡Ù‘Ø² Ø¨Ø­ÙˆØ§Ø¬Ø² Ø£ÙˆØªÙˆÙ…Ø§ØªÙŠÙƒÙŠØ© Ø£Ùˆ ÙŠØ¯ÙˆÙŠØ©",
             "is_correct": true
           },
           {
-            "text": "حظر التجاوز",
+            "text": "Ø¬Ø³Ø± Ø±Ø³ÙˆÙ…: Ø£Ù†Øª ØªÙ‚ØªØ±Ø¨ Ù…Ù† Ù†Ù‚Ø·Ø© Ø¯ÙØ¹ Ø¹Ù„Ù‰ Ø¬Ø³Ø± Ø£Ùˆ Ø·Ø±ÙŠÙ‚ Ø³Ø±ÙŠØ¹",
             "is_correct": false
           },
           {
-            "text": "السرعة القصوى 50 كم/س",
+            "text": "Ø§Ù„Ø­Ø¯ Ø§Ù„Ø£Ù‚ØµÙ‰ Ù„Ø­Ù…Ù„ Ø§Ù„Ù…Ø­ÙˆØ±: Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„ØªÙŠ ØªØ²ÙŠØ¯ Ø¹Ù† ÙˆØ²Ù† Ù…Ø¹ÙŠÙ† Ù„Ø§ ÙŠÙ…ÙƒÙ†Ù‡Ø§ Ø§Ù„Ù…ÙˆØ§ØµÙ„Ø©",
             "is_correct": false
           }
         ],
-        "explanation": "معبر سكة حديد بحواجز."
+        "explanation": "ØªÙØ¹Ù„Ù† A41 Ø¹Ù† Ù…Ø¹Ø¨Ø± Ø³ÙƒØ© Ø­Ø¯ÙŠØ¯ Ù…Ø¬Ù‡Ù‘Ø² Ø¨Ø­ÙˆØ§Ø¬Ø². Ù„Ù„Ù‚Ø·Ø§Ø±Ø§Øª Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© Ø§Ù„Ù…Ø·Ù„Ù‚Ø© Ø¯Ø§Ø¦Ù…Ø§Ù‹. ÙŠØ¬Ø¨ Ø§Ù„ØªÙˆÙ‚Ù ÙÙˆØ± Ù†Ø²ÙˆÙ„ Ø§Ù„Ø­ÙˆØ§Ø¬Ø² Ø£Ùˆ Ø¨Ø¯Ø¡ ÙˆÙ…ÙŠØ¶ Ø§Ù„Ø£Ø¶ÙˆØ§Ø¡."
       }
     }
   },
@@ -87,7 +86,6 @@
     "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE: Ready to use — category identification question.",
     "i18n": {
       "NL": {
         "question": "Tot welke categorie verkeerstekens behoort dit bord?",
@@ -97,7 +95,7 @@
             "is_correct": true
           },
           {
-            "text": "Voorrangsborden (B-reeks)",
+            "text": "Aanwijzingsborden (D-reeks)",
             "is_correct": false
           },
           {
@@ -105,7 +103,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "Dit bord behoort tot de categorie 'Gevaarsborden (A-reeks)'. Elk type bord heeft een specifieke vorm en kleurschema."
+        "explanation": "A41 behoort tot de gevaarsborden (A-reeks). Het is driehoekig met een rode rand en een witte achtergrond."
       },
       "EN": {
         "question": "To which category of traffic signs does this sign belong?",
@@ -115,7 +113,7 @@
             "is_correct": true
           },
           {
-            "text": "Priority signs (B-series)",
+            "text": "Indication signs (D-series)",
             "is_correct": false
           },
           {
@@ -123,125 +121,124 @@
             "is_correct": false
           }
         ],
-        "explanation": "This sign belongs to the 'Danger signs (A-series)' category. Each type of sign has a specific shape and color scheme."
+        "explanation": "A41 belongs to the danger signs (A-series). It is triangular with a red border and white background."
       },
       "FR": {
-        "question": "À quelle catégorie de panneaux de signalisation ce panneau appartient-il ?",
+        "question": "Ã€ quelle catÃ©gorie de panneaux de signalisation ce panneau appartient-il ?",
         "choices": [
           {
-            "text": "Panneaux de danger (série A)",
+            "text": "Panneaux de danger (sÃ©rie A)",
             "is_correct": true
           },
           {
-            "text": "Panneaux de priorité (série B)",
+            "text": "Panneaux de prescription (sÃ©rie D)",
             "is_correct": false
           },
           {
-            "text": "Panneaux d'interdiction (série C)",
+            "text": "Panneaux d'interdiction (sÃ©rie C)",
             "is_correct": false
           }
         ],
-        "explanation": "Ce panneau appartient à la catégorie 'Panneaux de danger (série A)'. Chaque type de panneau a une forme et un schéma de couleurs spécifiques."
+        "explanation": "A41 appartient aux panneaux de danger (sÃ©rie A). Il est triangulaire avec une bordure rouge sur fond blanc."
       },
       "AR": {
-        "question": "إلى أي فئة من لافتات المرور تنتمي هذه اللافتة؟",
+        "question": "Ø¥Ù„Ù‰ Ø£ÙŠ ÙØ¦Ø© Ù…Ù† Ù„Ø§ÙØªØ§Øª Ø§Ù„Ù…Ø±ÙˆØ± ØªÙ†ØªÙ…ÙŠ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ",
         "choices": [
           {
-            "text": "لافتات الخطر (سلسلة A)",
+            "text": "Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© A)",
             "is_correct": true
           },
           {
-            "text": "لافتات الأولوية (سلسلة B)",
+            "text": "Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø¥Ø±Ø´Ø§Ø¯ (Ø§Ù„Ø³Ù„Ø³Ù„Ø© D)",
             "is_correct": false
           },
           {
-            "text": "لافتات الحظر (سلسلة C)",
+            "text": "Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø­Ø¸Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© C)",
             "is_correct": false
           }
         ],
-        "explanation": "هذه اللافتة تنتمي إلى فئة 'لافتات الخطر (سلسلة A)'. كل نوع من اللافتات له شكل ونظام ألوان محدد."
+        "explanation": "ØªÙ†ØªÙ…ÙŠ A41 Ø¥Ù„Ù‰ Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© A). ÙˆÙ‡ÙŠ Ù…Ø«Ù„Ø«Ø© Ø¨Ø­Ø§ÙØ© Ø­Ù…Ø±Ø§Ø¡ ÙˆØ®Ù„ÙÙŠØ© Ø¨ÙŠØ¶Ø§Ø¡."
       }
     }
   },
   {
     "question_id": "A41_Q03",
-    "type": "WHAT_MUST_YOU_DO",
-    "difficulty": "MEDIUM",
+    "type": "HAZARD_IDENTIFICATION",
+    "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE (MEDIUM): Replace with sign-specific question for production.",
     "i18n": {
       "NL": {
-        "question": "Wat moet u doen wanneer u dit gevaarsbord ziet?",
+        "question": "Welk gevaar kondigt dit bord aan?",
         "choices": [
           {
-            "text": "Snelheid verminderen en extra opletten",
+            "text": "Een trein kan de overweg kruisen; de slagbomen dalen en de lichten knipperen â€” u moet stoppen en wachten",
             "is_correct": true
           },
           {
-            "text": "Stoppen en uitstappen",
+            "text": "Gevaar van scheefzakking van de rijbaan door de trillingen van de trein",
             "is_correct": false
           },
           {
-            "text": "De rijstrook wisselen",
+            "text": "Gevaar van elektrische kabels boven de rijbaan afkomstig van de spoorleiding",
             "is_correct": false
           }
         ],
-        "explanation": "Gevaarsborden waarschuwen voor gevaarlijke situaties. U moet uw snelheid aanpassen en extra voorzichtig zijn."
+        "explanation": "Bij een spoorwegovergang met slagbomen is het gevaar dat een trein de overweg nadert of kruist. De slagbomen en knipperlichten zijn de waarschuwingssignalen. U mag nooit de rijbaan oprijden als de slagbomen dalen of de lichten knipperen."
       },
       "EN": {
-        "question": "What should you do when you see this danger sign?",
+        "question": "What hazard does this sign announce?",
         "choices": [
           {
-            "text": "Reduce speed and pay extra attention",
+            "text": "A train may cross the level crossing; the barriers lower and the lights flash â€” you must stop and wait",
             "is_correct": true
           },
           {
-            "text": "Stop and get out of the vehicle",
+            "text": "Risk of road subsidence due to vibrations from the train",
             "is_correct": false
           },
           {
-            "text": "Change lane immediately",
+            "text": "Risk of electric cables above the carriageway from the overhead rail line",
             "is_correct": false
           }
         ],
-        "explanation": "Danger signs warn of hazardous situations on the road. You must adjust your speed and be extra careful."
+        "explanation": "At a level crossing with barriers the hazard is that a train is approaching or crossing. The barriers and flashing lights are the warning signals. You must never enter the carriageway when the barriers are lowering or the lights are flashing."
       },
       "FR": {
-        "question": "Que devez-vous faire lorsque vous voyez ce panneau de danger ?",
+        "question": "Quel danger ce panneau annonce-t-il ?",
         "choices": [
           {
-            "text": "Réduire la vitesse et faire particulièrement attention",
+            "text": "Un train peut traverser le passage Ã  niveau; les barriÃ¨res s'abaissent et les feux clignotent â€” vous devez vous arrÃªter et attendre",
             "is_correct": true
           },
           {
-            "text": "Arrêter et descendre du véhicule",
+            "text": "Risque d'affaissement de la chaussÃ©e dÃ» aux vibrations du train",
             "is_correct": false
           },
           {
-            "text": "Changer de voie immédiatement",
+            "text": "Risque de cÃ¢bles Ã©lectriques au-dessus de la chaussÃ©e provenant de la ligne aÃ©rienne ferroviaire",
             "is_correct": false
           }
         ],
-        "explanation": "Les panneaux de danger avertissent des situations dangereuses. Vous devez adapter votre vitesse et être particulièrement prudent."
+        "explanation": "Ã€ un passage Ã  niveau avec barriÃ¨res, le danger est qu'un train approche ou traverse. Les barriÃ¨res et les feux clignotants sont les signaux d'avertissement. Vous ne devez jamais vous engager sur la voie ferrÃ©e lorsque les barriÃ¨res s'abaissent ou que les feux clignotent."
       },
       "AR": {
-        "question": "ماذا يجب أن تفعل عندما ترى هذه اللافتة التحذيرية؟",
+        "question": "Ù…Ø§ Ø§Ù„Ø®Ø·Ø± Ø§Ù„Ø°ÙŠ ØªÙØ¹Ù„Ù† Ø¹Ù†Ù‡ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ",
         "choices": [
           {
-            "text": "تقليل السرعة والانتباه بشكل إضافي",
+            "text": "Ù‚Ø¯ ÙŠØ¹Ø¨Ø± Ù‚Ø·Ø§Ø± Ù…Ø¹Ø¨Ø± Ø³ÙƒØ© Ø§Ù„Ø­Ø¯ÙŠØ¯Ø› ØªÙ†Ø²Ù„ Ø§Ù„Ø­ÙˆØ§Ø¬Ø² ÙˆØªÙˆÙ…Ø¶ Ø§Ù„Ø£Ø¶ÙˆØ§Ø¡ â€” ÙŠØ¬Ø¨ Ø§Ù„ØªÙˆÙ‚Ù ÙˆØ§Ù„Ø§Ù†ØªØ¸Ø§Ø±",
             "is_correct": true
           },
           {
-            "text": "التوقف والنزول من المركبة",
+            "text": "Ø®Ø·Ø± Ù‡Ø¨ÙˆØ· Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø¨Ø³Ø¨Ø¨ Ø§Ù‡ØªØ²Ø§Ø²Ø§Øª Ø§Ù„Ù‚Ø·Ø§Ø±",
             "is_correct": false
           },
           {
-            "text": "تغيير المسار فوراً",
+            "text": "Ø®Ø·Ø± ÙƒØ§Ø¨Ù„Ø§Øª ÙƒÙ‡Ø±Ø¨Ø§Ø¦ÙŠØ© ÙÙˆÙ‚ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ù…Ù† Ø®Ø· Ø§Ù„Ø³ÙƒØ© Ø§Ù„Ø­Ø¯ÙŠØ¯ÙŠØ© Ø§Ù„Ø¹Ù„ÙˆÙŠ",
             "is_correct": false
           }
         ],
-        "explanation": "تحذر لافتات الخطر من المواقف الخطرة على الطريق. يجب عليك تعديل سرعتك وأن تكون أكثر حذراً."
+        "explanation": "Ø¹Ù†Ø¯ Ù…Ø¹Ø¨Ø± Ø³ÙƒØ© Ø§Ù„Ø­Ø¯ÙŠØ¯ Ø¨Ø§Ù„Ø­ÙˆØ§Ø¬Ø² Ø§Ù„Ø®Ø·Ø± Ù‡Ùˆ Ø£Ù† Ù‚Ø·Ø§Ø±Ø§Ù‹ ÙŠÙ‚ØªØ±Ø¨ Ø£Ùˆ ÙŠØ¹Ø¨Ø±. Ø§Ù„Ø­ÙˆØ§Ø¬Ø² ÙˆØ§Ù„Ø£Ø¶ÙˆØ§Ø¡ Ø§Ù„ÙˆØ§Ù…Ø¶Ø© Ù‡ÙŠ Ø¥Ø´Ø§Ø±Ø§Øª Ø§Ù„ØªØ­Ø°ÙŠØ±. ÙŠØ¬Ø¨ Ø£Ù„Ø§ ØªØ¯Ø®Ù„ Ø§Ù„Ù…Ø¹Ø¨Ø± Ø£Ø¨Ø¯Ø§Ù‹ Ø­ÙŠÙ† ØªÙ†Ø²Ù„ Ø§Ù„Ø­ÙˆØ§Ø¬Ø² Ø£Ùˆ ØªÙˆÙ…Ø¶ Ø§Ù„Ø£Ø¶ÙˆØ§Ø¡."
       }
     }
   },
@@ -251,2090 +248,370 @@
     "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE (MEDIUM): Replace with sign-specific question for production.",
     "i18n": {
       "NL": {
-        "question": "Op welke afstand van het gevaar wordt een gevaarsbord buiten de bebouwde kom geplaatst?",
+        "question": "U nadert een spoorwegovergang en ziet bord A41. De slagbomen zijn nog omhoog. Hoe rijdt u?",
         "choices": [
           {
-            "text": "Ongeveer 150 meter voor het gevaar",
+            "text": "Snelheid verminderen, aandachtig zijn voor knipperlichten en geluidsignalen, bereid zijn om te stoppen zodra de slagbomen beginnen te dalen",
             "is_correct": true
           },
           {
-            "text": "Precies op de plek van het gevaar",
+            "text": "Op normale snelheid doorrijden want de slagbomen zijn nog omhoog",
             "is_correct": false
           },
           {
-            "text": "Op 500 meter voor het gevaar",
+            "text": "Versnellen om de overweg te passeren vÃ³Ã³r de slagbomen mogelijkerwijs dalen",
             "is_correct": false
           }
         ],
-        "explanation": "Buiten de bebouwde kom worden gevaarsborden op ±150 m geplaatst. In de bebouwde kom is dit ±50 m."
+        "explanation": "Ook als de slagbomen omhoog zijn, moet u uw snelheid verminderen en klaar zijn om te stoppen. De slagbomen en lichten kunnen op elk moment activeren. Versnellen is gevaarlijk en onjuist."
       },
       "EN": {
-        "question": "At what distance from the hazard is a danger sign placed outside built-up areas?",
+        "question": "You are approaching a level crossing and you see sign A41. The barriers are still up. How do you drive?",
         "choices": [
           {
-            "text": "Approximately 150 meters before the hazard",
+            "text": "Reduce speed, watch carefully for flashing lights and audible signals, be ready to stop as soon as the barriers start to lower",
             "is_correct": true
           },
           {
-            "text": "Exactly at the hazard location",
+            "text": "Continue at normal speed because the barriers are still up",
             "is_correct": false
           },
           {
-            "text": "500 meters before the hazard",
+            "text": "Accelerate to cross the level crossing before the barriers possibly lower",
             "is_correct": false
           }
         ],
-        "explanation": "Outside built-up areas, danger signs are placed ±150 m before the hazard. Inside built-up areas it is ±50 m."
+        "explanation": "Even when the barriers are up you must reduce speed and be ready to stop. The barriers and lights can activate at any moment. Accelerating is dangerous and incorrect."
       },
       "FR": {
-        "question": "À quelle distance du danger un panneau de danger est-il placé hors agglomération ?",
+        "question": "Vous approchez d'un passage Ã  niveau et vous voyez le panneau A41. Les barriÃ¨res sont encore relevÃ©es. Comment conduisez-vous ?",
         "choices": [
           {
-            "text": "Environ 150 mètres avant le danger",
+            "text": "RÃ©duire la vitesse, surveiller attentivement les feux clignotants et les signaux sonores, Ãªtre prÃªt Ã  s'arrÃªter dÃ¨s que les barriÃ¨res commencent Ã  s'abaisser",
             "is_correct": true
           },
           {
-            "text": "Exactement à l'endroit du danger",
+            "text": "Continuer Ã  vitesse normale car les barriÃ¨res sont encore relevÃ©es",
             "is_correct": false
           },
           {
-            "text": "500 mètres avant le danger",
+            "text": "AccÃ©lÃ©rer pour traverser le passage Ã  niveau avant que les barriÃ¨res ne s'abaissent Ã©ventuellement",
             "is_correct": false
           }
         ],
-        "explanation": "Hors agglomération, les panneaux de danger sont placés à ±150 m. En agglomération, c'est ±50 m."
+        "explanation": "MÃªme lorsque les barriÃ¨res sont relevÃ©es, vous devez rÃ©duire votre vitesse et Ãªtre prÃªt Ã  vous arrÃªter. Les barriÃ¨res et les feux peuvent s'activer Ã  tout moment. AccÃ©lÃ©rer est dangereux et incorrect."
       },
       "AR": {
-        "question": "على أي مسافة من الخطر توضع لافتة الخطر خارج المناطق المبنية؟",
+        "question": "Ø£Ù†Øª ØªÙ‚ØªØ±Ø¨ Ù…Ù† Ù…Ø¹Ø¨Ø± Ø³ÙƒØ© Ø­Ø¯ÙŠØ¯ ÙˆØªØ±Ù‰ Ø§Ù„Ù„Ø§ÙØªØ© A41. Ø§Ù„Ø­ÙˆØ§Ø¬Ø² Ù„Ø§ ØªØ²Ø§Ù„ Ù…Ø±ÙÙˆØ¹Ø©. ÙƒÙŠÙ ØªÙ‚ÙˆØ¯ØŸ",
         "choices": [
           {
-            "text": "حوالي 150 متر قبل الخطر",
+            "text": "ØªØ®ÙÙŠØ¶ Ø§Ù„Ø³Ø±Ø¹Ø© ÙˆØ§Ù„Ù…Ø±Ø§Ù‚Ø¨Ø© Ø§Ù„Ø¯Ù‚ÙŠÙ‚Ø© Ù„Ù„Ø£Ø¶ÙˆØ§Ø¡ Ø§Ù„ÙˆØ§Ù…Ø¶Ø© ÙˆØ§Ù„Ø¥Ø´Ø§Ø±Ø§Øª Ø§Ù„ØµÙˆØªÙŠØ© ÙˆØ§Ù„Ø§Ø³ØªØ¹Ø¯Ø§Ø¯ Ù„Ù„ØªÙˆÙ‚Ù ÙÙˆØ± Ø¨Ø¯Ø¡ Ù†Ø²ÙˆÙ„ Ø§Ù„Ø­ÙˆØ§Ø¬Ø²",
             "is_correct": true
           },
           {
-            "text": "مباشرة عند موقع الخطر",
+            "text": "Ø§Ù„Ø§Ø³ØªÙ…Ø±Ø§Ø± Ø¨Ø§Ù„Ø³Ø±Ø¹Ø© Ø§Ù„Ø§Ø¹ØªÙŠØ§Ø¯ÙŠØ© Ù„Ø£Ù† Ø§Ù„Ø­ÙˆØ§Ø¬Ø² Ù„Ø§ ØªØ²Ø§Ù„ Ù…Ø±ÙÙˆØ¹Ø©",
             "is_correct": false
           },
           {
-            "text": "500 متر قبل الخطر",
+            "text": "Ø§Ù„ØªØ³Ø§Ø±Ø¹ Ù„Ø¹Ø¨ÙˆØ± Ø§Ù„Ù…Ø¹Ø¨Ø± Ù‚Ø¨Ù„ Ø£Ù† ØªÙ†Ø²Ù„ Ø§Ù„Ø­ÙˆØ§Ø¬Ø²",
             "is_correct": false
           }
         ],
-        "explanation": "خارج المناطق المبنية توضع لافتات الخطر على مسافة ±150 متر. داخل المناطق المبنية تكون المسافة ±50 متر."
+        "explanation": "Ø­ØªÙ‰ Ø¹Ù†Ø¯Ù…Ø§ ØªÙƒÙˆÙ† Ø§Ù„Ø­ÙˆØ§Ø¬Ø² Ù…Ø±ÙÙˆØ¹Ø© ÙŠØ¬Ø¨ ØªØ®ÙÙŠØ¶ Ø§Ù„Ø³Ø±Ø¹Ø© ÙˆØ§Ù„Ø§Ø³ØªØ¹Ø¯Ø§Ø¯ Ù„Ù„ØªÙˆÙ‚Ù. Ø§Ù„Ø­ÙˆØ§Ø¬Ø² ÙˆØ§Ù„Ø£Ø¶ÙˆØ§Ø¡ ÙŠÙ…ÙƒÙ† Ø£Ù† ØªÙ†Ø´Ø· ÙÙŠ Ø£ÙŠ Ù„Ø­Ø¸Ø©. Ø§Ù„ØªØ³Ø§Ø±Ø¹ Ø®Ø·ÙŠØ± ÙˆØºÙŠØ± ØµØ­ÙŠØ­."
       }
     }
   },
   {
     "question_id": "A41_Q05",
-    "type": "IS_IT_ALLOWED",
-    "difficulty": "HARD",
-    "is_critical": true,
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE (HARD): Replace with sign-specific question for production.",
     "i18n": {
       "NL": {
-        "question": "Bent u verplicht uw rijgedrag aan te passen wanneer u dit gevaarsbord ziet?",
+        "question": "De slagbomen zijn neergelaten en de lichten knipperen. U staat stil voor de overweg. Wanneer mag u doorrijden?",
         "choices": [
           {
-            "text": "Ja, gevaarsborden verplichten u uw snelheid aan te passen en extra voorzichtig te zijn",
+            "text": "Pas als de slagbomen volledig omhoog zijn EN de lichten gestopt zijn met knipperen; beide voorwaarden moeten vervuld zijn",
             "is_correct": true
           },
           {
-            "text": "Nee, gevaarsborden zijn louter informatief en vereisen geen aanpassing van uw rijgedrag",
+            "text": "Zodra de trein gepasseerd is, ook al zijn de slagbomen nog niet volledig omhoog",
+            "is_correct": false
+          },
+          {
+            "text": "Zodra de slagbomen half omhoog zijn en er geen tweede trein zichtbaar is",
             "is_correct": false
           }
         ],
-        "explanation": "Gevaarsborden waarschuwen voor gevaarlijke situaties en verplichten u uw rijgedrag aan te passen. U moet uw snelheid verminderen en extra voorzichtig zijn."
+        "explanation": "U mag pas rijden als de slagbomen volledig zijn opgeheven EN de knipperlichten uitgedoofd zijn. Een tweede trein in de tegenovergestelde richting is mogelijk. Wacht tot alle signalen bevestigen dat de overweg vrij is."
       },
       "EN": {
-        "question": "Are you required to adapt your driving behaviour when you see this danger sign?",
+        "question": "The barriers are down and the lights are flashing. You are stopped in front of the level crossing. When may you drive on?",
         "choices": [
           {
-            "text": "Yes, danger signs require you to adjust your speed and be extra cautious",
+            "text": "Only when the barriers are fully raised AND the lights have stopped flashing; both conditions must be met",
             "is_correct": true
           },
           {
-            "text": "No, danger signs are purely informational and do not require any change in driving behaviour",
+            "text": "As soon as the train has passed, even if the barriers have not yet fully risen",
+            "is_correct": false
+          },
+          {
+            "text": "As soon as the barriers are half raised and no second train is visible",
             "is_correct": false
           }
         ],
-        "explanation": "Danger signs warn of hazardous situations and require you to adapt your driving behaviour. You must reduce your speed and be extra careful."
+        "explanation": "You may only drive when the barriers are fully raised AND the flashing lights have gone out. A second train in the opposite direction is possible. Wait until all signals confirm the crossing is clear."
       },
       "FR": {
-        "question": "Êtes-vous obligé d'adapter votre comportement de conduite lorsque vous voyez ce panneau de danger ?",
+        "question": "Les barriÃ¨res sont abaissÃ©es et les feux clignotent. Vous Ãªtes arrÃªtÃ© devant le passage Ã  niveau. Quand pouvez-vous repartir ?",
         "choices": [
           {
-            "text": "Oui, les panneaux de danger vous obligent à adapter votre vitesse et à être particulièrement prudent",
+            "text": "Seulement lorsque les barriÃ¨res sont entiÃ¨rement relevÃ©es ET que les feux ont cessÃ© de clignoter; les deux conditions doivent Ãªtre remplies",
             "is_correct": true
           },
           {
-            "text": "Non, les panneaux de danger sont purement informatifs et ne nécessitent pas d'adaptation de la conduite",
+            "text": "DÃ¨s que le train est passÃ©, mÃªme si les barriÃ¨res ne sont pas encore entiÃ¨rement relevÃ©es",
+            "is_correct": false
+          },
+          {
+            "text": "DÃ¨s que les barriÃ¨res sont Ã  moitiÃ© relevÃ©es et qu'aucun deuxiÃ¨me train n'est visible",
             "is_correct": false
           }
         ],
-        "explanation": "Les panneaux de danger avertissent des situations dangereuses et vous obligent à adapter votre conduite. Vous devez réduire votre vitesse et être particulièrement prudent."
+        "explanation": "Vous ne pouvez conduire que lorsque les barriÃ¨res sont entiÃ¨rement relevÃ©es ET que les feux clignotants se sont Ã©teints. Un deuxiÃ¨me train dans la direction opposÃ©e est possible. Attendez que tous les signaux confirment que le passage est libre."
       },
       "AR": {
-        "question": "هل أنت ملزم بتعديل سلوك قيادتك عندما ترى لافتة الخطر هذه؟",
+        "question": "Ø§Ù„Ø­ÙˆØ§Ø¬Ø² Ù…Ù†Ø®ÙØ¶Ø© ÙˆØ§Ù„Ø£Ø¶ÙˆØ§Ø¡ ØªÙˆÙ…Ø¶. Ø£Ù†Øª Ù…ØªÙˆÙ‚Ù Ø£Ù…Ø§Ù… Ø§Ù„Ù…Ø¹Ø¨Ø±. Ù…ØªÙ‰ ÙŠÙØ³Ù…Ø­ Ù„Ùƒ Ø¨Ø§Ù„Ù…ÙˆØ§ØµÙ„Ø©ØŸ",
         "choices": [
           {
-            "text": "نعم، لافتات الخطر تلزمك بتعديل سرعتك وأن تكون أكثر حذراً",
+            "text": "ÙÙ‚Ø· Ø¹Ù†Ø¯Ù…Ø§ ØªØ±ØªÙØ¹ Ø§Ù„Ø­ÙˆØ§Ø¬Ø² Ø¨Ø§Ù„ÙƒØ§Ù…Ù„ ÙˆØªØªÙˆÙ‚Ù Ø§Ù„Ø£Ø¶ÙˆØ§Ø¡ Ø¹Ù† Ø§Ù„ÙˆÙ…ÙŠØ¶Ø› ÙŠØ¬Ø¨ Ø§Ø³ØªÙŠÙØ§Ø¡ Ø§Ù„Ø´Ø±Ø·ÙŠÙ† Ù…Ø¹Ø§Ù‹",
             "is_correct": true
           },
           {
-            "text": "لا، لافتات الخطر معلوماتية بحتة ولا تتطلب أي تغيير في سلوك القيادة",
+            "text": "ÙÙˆØ± Ù…Ø±ÙˆØ± Ø§Ù„Ù‚Ø·Ø§Ø± Ø­ØªÙ‰ Ù„Ùˆ Ù„Ù… ØªØ±ØªÙØ¹ Ø§Ù„Ø­ÙˆØ§Ø¬Ø² Ø¨Ø§Ù„ÙƒØ§Ù…Ù„ Ø¨Ø¹Ø¯",
+            "is_correct": false
+          },
+          {
+            "text": "Ø­Ø§Ù„Ù…Ø§ ØªØ±ØªÙØ¹ Ø§Ù„Ø­ÙˆØ§Ø¬Ø² Ø¥Ù„Ù‰ Ø§Ù„Ù…Ù†ØªØµÙ ÙˆÙ„Ø§ ÙŠÙØ±Ù‰ Ù‚Ø·Ø§Ø± Ø«Ø§Ù†Ù",
             "is_correct": false
           }
         ],
-        "explanation": "تحذر لافتات الخطر من المواقف الخطرة وتلزمك بتعديل سلوك قيادتك. يجب عليك تقليل سرعتك وأن تكون أكثر حذراً."
+        "explanation": "ÙŠÙ…ÙƒÙ†Ùƒ Ø§Ù„Ù‚ÙŠØ§Ø¯Ø© ÙÙ‚Ø· Ø­ÙŠÙ† ØªØ±ØªÙØ¹ Ø§Ù„Ø­ÙˆØ§Ø¬Ø² Ø¨Ø§Ù„ÙƒØ§Ù…Ù„ ÙˆØªÙ†Ø·ÙØ¦ Ø§Ù„Ø£Ø¶ÙˆØ§Ø¡ Ø§Ù„ÙˆØ§Ù…Ø¶Ø©. Ù‚Ø·Ø§Ø± Ø«Ø§Ù†Ù ÙÙŠ Ø§Ù„Ø§ØªØ¬Ø§Ù‡ Ø§Ù„Ù…Ø¹Ø§ÙƒØ³ Ù…Ù…ÙƒÙ†. Ø§Ù†ØªØ¸Ø± Ø­ØªÙ‰ ØªØ¤ÙƒØ¯ Ø¬Ù…ÙŠØ¹ Ø§Ù„Ø¥Ø´Ø§Ø±Ø§Øª Ø£Ù† Ø§Ù„Ù…Ø¹Ø¨Ø± Ø®Ø§Ù„Ù."
       }
     }
   },
   {
     "question_id": "A41_Q06",
-    "type": "WHAT_DOES_IT_MEAN",
-    "difficulty": "EASY",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Welke richting wijst de bocht aan op dit waarschuwingsbord?",
+        "question": "Uw voertuig valt stil op de spoorwegovergang. Wat doet u onmiddellijk?",
         "choices": [
           {
-            "text": "Naar links",
+            "text": "Iedereen laten uitstappen, het voertuig van de spoorweg duwen indien mogelijk, 112 bellen en het noodnummer van de spoorwegen melden (bord bij de overweg)",
             "is_correct": true
           },
           {
-            "text": "Naar rechts",
+            "text": "In het stilgevallen voertuig blijven en wachten op hulp van passerende bestuurders",
             "is_correct": false
           },
           {
-            "text": "Rechtdoor",
+            "text": "Het voertuig zelf proberen te starten en zo snel mogelijk van de overweg rijden",
             "is_correct": false
           }
         ],
-        "explanation": "Het bord Railway crossing with barriers toont een gevaarlijke bocht naar links. De pijl op het bord geeft altijd de richting van de bocht aan."
+        "explanation": "Als uw voertuig op een spoorwegovergang stilstaat, is dit levensbedreigend. Iedereen moet onmiddellijk uitstappen en zo ver mogelijk van de overweg staan. Bel 112 en het noodnummer vermeld op het bord bij de overweg. Probeer het voertuig weg te duwen als dat veilig is."
       },
       "EN": {
-        "question": "Which direction does the curve indicate on this warning sign?",
+        "question": "Your vehicle breaks down on the level crossing. What do you do immediately?",
         "choices": [
           {
-            "text": "To the left",
+            "text": "Get everyone out, push the vehicle off the railway if possible, call 112 and report the emergency number of the railway authority (sign at the crossing)",
             "is_correct": true
           },
           {
-            "text": "To the right",
+            "text": "Stay in the stationary vehicle and wait for help from passing drivers",
             "is_correct": false
           },
           {
-            "text": "Straight ahead",
+            "text": "Try to restart the vehicle yourself and drive off the crossing as fast as possible",
             "is_correct": false
           }
         ],
-        "explanation": "Sign Railway crossing with barriers shows a dangerous curve to the left. The arrow on the sign always indicates the direction of the curve."
+        "explanation": "If your vehicle breaks down on a level crossing this is life-threatening. Everyone must get out immediately and stand as far as possible from the crossing. Call 112 and the emergency number shown on the sign at the crossing. Try to push the vehicle away if it is safe to do so."
       },
       "FR": {
-        "question": "Quelle direction indique le virage sur ce panneau d'avertissement ?",
+        "question": "Votre vÃ©hicule tombe en panne sur le passage Ã  niveau. Que faites-vous immÃ©diatement ?",
         "choices": [
           {
-            "text": "À gauche",
+            "text": "Faire sortir tout le monde, pousser le vÃ©hicule hors des voies si possible, appeler le 112 et signaler le numÃ©ro d'urgence de la sociÃ©tÃ© ferroviaire (panneau au passage Ã  niveau)",
             "is_correct": true
           },
           {
-            "text": "À droite",
+            "text": "Rester dans le vÃ©hicule immobilisÃ© et attendre l'aide de conducteurs qui passent",
             "is_correct": false
           },
           {
-            "text": "Tout droit",
+            "text": "Essayer de redÃ©marrer le vÃ©hicule soi-mÃªme et quitter le passage Ã  niveau le plus vite possible",
             "is_correct": false
           }
         ],
-        "explanation": "Le panneau Railway crossing with barriers indique un virage dangereux à gauche. La flèche sur le panneau indique toujours la direction du virage."
+        "explanation": "Si votre vÃ©hicule tombe en panne sur un passage Ã  niveau, c'est une situation mettant la vie en danger. Tout le monde doit sortir immÃ©diatement et se tenir le plus loin possible du passage. Appelez le 112 et le numÃ©ro d'urgence indiquÃ© sur le panneau au passage Ã  niveau. Essayez de pousser le vÃ©hicule en dehors des rails si cela est possible en toute sÃ©curitÃ©."
       },
       "AR": {
-        "question": "ما الاتجاه الذي يشير إليه المنحنى على لافتة التحذير هذه؟",
+        "question": "ØªØ¹Ø·Ù‘Ù„Øª Ù…Ø±ÙƒØ¨ØªÙƒ Ø¹Ù„Ù‰ Ù…Ø¹Ø¨Ø± Ø³ÙƒØ© Ø§Ù„Ø­Ø¯ÙŠØ¯. Ù…Ø§Ø°Ø§ ØªÙØ¹Ù„ ÙÙˆØ±Ø§Ù‹ØŸ",
         "choices": [
           {
-            "text": "إلى اليسار",
+            "text": "Ø¥Ø®Ø±Ø§Ø¬ Ø§Ù„Ø¬Ù…ÙŠØ¹ ÙˆØ¯ÙØ¹ Ø§Ù„Ù…Ø±ÙƒØ¨Ø© Ø¹Ù† Ø§Ù„Ø³ÙƒØ© Ø¥Ù† Ø£Ù…ÙƒÙ† ÙˆØ§Ù„Ø§ØªØµØ§Ù„ Ø¨Ù€ 112 ÙˆØ§Ù„Ø¥Ø¨Ù„Ø§Øº Ø¹Ù† Ø±Ù‚Ù… Ø§Ù„Ø·ÙˆØ§Ø±Ø¦ Ù„Ø³Ù„Ø·Ø© Ø§Ù„Ø³ÙƒÙƒ Ø§Ù„Ø­Ø¯ÙŠØ¯ÙŠØ© (Ø§Ù„Ù„Ø§ÙØªØ© Ø¹Ù†Ø¯ Ø§Ù„Ù…Ø¹Ø¨Ø±)",
             "is_correct": true
           },
           {
-            "text": "إلى اليمين",
+            "text": "Ø§Ù„Ø¨Ù‚Ø§Ø¡ ÙÙŠ Ø§Ù„Ù…Ø±ÙƒØ¨Ø© Ø§Ù„Ù…ØªÙˆÙ‚ÙØ© ÙˆØ§Ù†ØªØ¸Ø§Ø± Ø§Ù„Ù…Ø³Ø§Ø¹Ø¯Ø© Ù…Ù† Ø§Ù„Ø³Ø§Ø¦Ù‚ÙŠÙ† Ø§Ù„Ù…Ø§Ø±Ù‘ÙŠÙ†",
             "is_correct": false
           },
           {
-            "text": "للأمام مباشرة",
+            "text": "Ù…Ø­Ø§ÙˆÙ„Ø© Ø¥Ø¹Ø§Ø¯Ø© ØªØ´ØºÙŠÙ„ Ø§Ù„Ù…Ø±ÙƒØ¨Ø© Ø¨Ù†ÙØ³Ùƒ ÙˆÙ…ØºØ§Ø¯Ø±Ø© Ø§Ù„Ù…Ø¹Ø¨Ø± Ø¨Ø£Ø³Ø±Ø¹ Ù…Ø§ ÙŠÙ…ÙƒÙ†",
             "is_correct": false
           }
         ],
-        "explanation": "تُظهر اللافتة Railway crossing with barriers منحنى خطيراً إلى اليسار. يشير السهم على اللافتة دائماً إلى اتجاه المنحنى."
+        "explanation": "ØªØ¹Ø·Ù‘Ù„ Ù…Ø±ÙƒØ¨ØªÙƒ Ø¹Ù„Ù‰ Ù…Ø¹Ø¨Ø± Ø³ÙƒØ© Ø§Ù„Ø­Ø¯ÙŠØ¯ ÙˆØ¶Ø¹ ÙŠÙ‡Ø¯Ø¯ Ø§Ù„Ø­ÙŠØ§Ø©. ÙŠØ¬Ø¨ Ø¹Ù„Ù‰ Ø§Ù„Ø¬Ù…ÙŠØ¹ Ø§Ù„Ø®Ø±ÙˆØ¬ ÙÙˆØ±Ø§Ù‹ ÙˆØ§Ù„ÙˆÙ‚ÙˆÙ Ø¨Ø¹ÙŠØ¯Ø§Ù‹ Ù‚Ø¯Ø± Ø§Ù„Ø¥Ù…ÙƒØ§Ù† Ø¹Ù† Ø§Ù„Ù…Ø¹Ø¨Ø±. Ø§ØªØµÙ„ Ø¨Ù€ 112 ÙˆØ±Ù‚Ù… Ø§Ù„Ø·ÙˆØ§Ø±Ø¦ Ø§Ù„Ù…Ø¯ÙˆÙ‘Ù† Ø¹Ù„Ù‰ Ø§Ù„Ù„Ø§ÙØªØ© Ø¹Ù†Ø¯ Ø§Ù„Ù…Ø¹Ø¨Ø±. Ø­Ø§ÙˆÙ„ Ø¯ÙØ¹ Ø§Ù„Ù…Ø±ÙƒØ¨Ø© Ø¨Ø¹ÙŠØ¯Ø§Ù‹ Ø¹Ù† Ø§Ù„Ø³ÙƒØ© Ø¥Ø°Ø§ ÙƒØ§Ù† Ø°Ù„Ùƒ Ø¢Ù…Ù†Ø§Ù‹."
       }
     }
   },
   {
     "question_id": "A41_Q07",
-    "type": "WHAT_DOES_IT_MEAN",
-    "difficulty": "EASY",
-    "is_critical": false,
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat is de vorm van een gevaarsbord zoals dit bord?",
+        "question": "De slagbomen zijn halfweg omhooggestoken en de lichten knipperen niet meer. Mag u de overweg oprijden?",
         "choices": [
           {
-            "text": "Driehoekig met rode rand",
+            "text": "Neen, u moet wachten tot de slagbomen volledig omhoog zijn en de lichten volledig gestopt zijn met knipperen",
             "is_correct": true
           },
           {
-            "text": "Rond met rode rand",
-            "is_correct": false
-          },
-          {
-            "text": "Rechthoekig met blauwe achtergrond",
+            "text": "Ja, halve slagbomen en gestopte lichten betekenen dat het veilig is",
             "is_correct": false
           }
         ],
-        "explanation": "Alle gevaarsborden (A-reeks) in België hebben een driehoekige vorm met een rode rand op een witte achtergrond."
+        "explanation": "Halve slagbomen betekenen dat het systeem nog in beweging is. Er kan nog een tweede trein komen vanuit de andere richting. U mag de overweg pas oprijden als de slagbomen volledig omhoog zijn Ã©n de knipperlichten uitgedoofd zijn."
       },
       "EN": {
-        "question": "What is the shape of a danger sign like this one?",
+        "question": "The barriers are halfway up and the lights are no longer flashing. Is it allowed to drive onto the level crossing?",
         "choices": [
           {
-            "text": "Triangular with red border",
+            "text": "No, you must wait until the barriers are fully up and the lights have completely stopped flashing",
             "is_correct": true
           },
           {
-            "text": "Round with red border",
-            "is_correct": false
-          },
-          {
-            "text": "Rectangular with blue background",
+            "text": "Yes, half-raised barriers and stopped lights mean it is safe",
             "is_correct": false
           }
         ],
-        "explanation": "All danger signs (A-series) in Belgium are triangular with a red border on a white background."
+        "explanation": "Half-raised barriers mean the system is still in motion. A second train may still come from the other direction. You may only drive onto the crossing when the barriers are fully up AND the flashing lights have gone out."
       },
       "FR": {
-        "question": "Quelle est la forme d'un panneau de danger comme celui-ci ?",
+        "question": "Les barriÃ¨res sont Ã  moitiÃ© relevÃ©es et les feux ne clignotent plus. Est-il permis de s'engager sur le passage Ã  niveau ?",
         "choices": [
           {
-            "text": "Triangulaire avec bordure rouge",
+            "text": "Non, vous devez attendre que les barriÃ¨res soient entiÃ¨rement relevÃ©es et que les feux aient complÃ¨tement cessÃ© de clignoter",
             "is_correct": true
           },
           {
-            "text": "Rond avec bordure rouge",
-            "is_correct": false
-          },
-          {
-            "text": "Rectangulaire avec fond bleu",
+            "text": "Oui, des barriÃ¨res Ã  moitiÃ© relevÃ©es et des feux arrÃªtÃ©s signifient que c'est sÃ»r",
             "is_correct": false
           }
         ],
-        "explanation": "Tous les panneaux de danger (série A) en Belgique sont triangulaires avec une bordure rouge sur fond blanc."
+        "explanation": "Des barriÃ¨res Ã  moitiÃ© relevÃ©es signifient que le systÃ¨me est encore en mouvement. Un deuxiÃ¨me train peut encore venir de l'autre direction. Vous ne pouvez vous engager sur le passage que lorsque les barriÃ¨res sont entiÃ¨rement relevÃ©es ET que les feux clignotants se sont Ã©teints."
       },
       "AR": {
-        "question": "ما شكل لافتة الخطر مثل هذه؟",
+        "question": "Ø§Ù„Ø­ÙˆØ§Ø¬Ø² ÙÙŠ Ù…Ù†ØªØµÙ Ø§Ù„Ø§Ø±ØªÙØ§Ø¹ ÙˆØ§Ù„Ø£Ø¶ÙˆØ§Ø¡ ØªÙˆÙ‚Ù‘ÙØª Ø¹Ù† Ø§Ù„ÙˆÙ…ÙŠØ¶. Ù‡Ù„ ÙŠÙØ³Ù…Ø­ Ø¨Ø¯Ø®ÙˆÙ„ Ø§Ù„Ù…Ø¹Ø¨Ø±ØŸ",
         "choices": [
           {
-            "text": "مثلثة الشكل بحافة حمراء",
+            "text": "Ù„Ø§ØŒ ÙŠØ¬Ø¨ Ø§Ù„Ø§Ù†ØªØ¸Ø§Ø± Ø­ØªÙ‰ ØªØ±ØªÙØ¹ Ø§Ù„Ø­ÙˆØ§Ø¬Ø² Ø¨Ø§Ù„ÙƒØ§Ù…Ù„ ÙˆØªØªÙˆÙ‚Ù Ø§Ù„Ø£Ø¶ÙˆØ§Ø¡ ØªÙ…Ø§Ù…Ø§Ù‹ Ø¹Ù† Ø§Ù„ÙˆÙ…ÙŠØ¶",
             "is_correct": true
           },
           {
-            "text": "دائرية بحافة حمراء",
-            "is_correct": false
-          },
-          {
-            "text": "مستطيلة بخلفية زرقاء",
+            "text": "Ù†Ø¹Ù…ØŒ Ø§Ù„Ø­ÙˆØ§Ø¬Ø² ÙÙŠ Ø§Ù„Ù…Ù†ØªØµÙ ÙˆØ§Ù„Ø£Ø¶ÙˆØ§Ø¡ Ø§Ù„Ù…ØªÙˆÙ‚ÙØ© ØªØ¹Ù†ÙŠ Ø£Ù† Ø§Ù„ÙˆØ¶Ø¹ Ø¢Ù…Ù†",
             "is_correct": false
           }
         ],
-        "explanation": "جميع لافتات الخطر (سلسلة A) في بلجيكا مثلثة الشكل بحافة حمراء على خلفية بيضاء."
+        "explanation": "Ø§Ù„Ø­ÙˆØ§Ø¬Ø² ÙÙŠ Ù…Ù†ØªØµÙ Ø§Ù„Ø§Ø±ØªÙØ§Ø¹ ØªØ¹Ù†ÙŠ Ø£Ù† Ø§Ù„Ù†Ø¸Ø§Ù… Ù„Ø§ ÙŠØ²Ø§Ù„ ÙÙŠ Ø­Ø±ÙƒØ©. Ù‚Ø¯ ÙŠØ£ØªÙŠ Ù‚Ø·Ø§Ø± Ø«Ø§Ù†Ù Ù…Ù† Ø§Ù„Ø§ØªØ¬Ø§Ù‡ Ø§Ù„Ø¢Ø®Ø±. ÙŠÙ…ÙƒÙ†Ùƒ Ø¯Ø®ÙˆÙ„ Ø§Ù„Ù…Ø¹Ø¨Ø± ÙÙ‚Ø· Ø­ÙŠÙ† ØªØ±ØªÙØ¹ Ø§Ù„Ø­ÙˆØ§Ø¬Ø² Ø¨Ø§Ù„ÙƒØ§Ù…Ù„ ÙˆØªÙ†Ø·ÙØ¦ Ø§Ù„Ø£Ø¶ÙˆØ§Ø¡ Ø§Ù„ÙˆØ§Ù…Ø¶Ø© ØªÙ…Ø§Ù…Ø§Ù‹."
       }
     }
   },
   {
     "question_id": "A41_Q08",
-    "type": "WHAT_DOES_IT_MEAN",
-    "difficulty": "EASY",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Wat waarschuwt dit bord u voor?",
-        "choices": [
-          {
-            "text": "Een scherpe bocht in de weg naar links",
-            "is_correct": true
-          },
-          {
-            "text": "Een kruispunt verderop",
-            "is_correct": false
-          },
-          {
-            "text": "Een versmalling van de rijbaan",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Bord Railway crossing with barriers waarschuwt specifiek voor een gevaarlijke, scherpe bocht naar links in de weg."
-      },
-      "EN": {
-        "question": "What does this sign warn you about?",
-        "choices": [
-          {
-            "text": "A sharp curve in the road to the left",
-            "is_correct": true
-          },
-          {
-            "text": "An intersection ahead",
-            "is_correct": false
-          },
-          {
-            "text": "A narrowing of the road",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Sign Railway crossing with barriers specifically warns about a dangerous sharp curve to the left in the road."
-      },
-      "FR": {
-        "question": "De quoi ce panneau vous avertit-il ?",
-        "choices": [
-          {
-            "text": "Un virage serré à gauche dans la route",
-            "is_correct": true
-          },
-          {
-            "text": "Un carrefour plus loin",
-            "is_correct": false
-          },
-          {
-            "text": "Un rétrécissement de la chaussée",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Le panneau Railway crossing with barriers avertit spécifiquement d'un virage dangereux et serré à gauche dans la route."
-      },
-      "AR": {
-        "question": "مِمَّ تحذرك هذه اللافتة؟",
-        "choices": [
-          {
-            "text": "منعطف حاد في الطريق إلى اليسار",
-            "is_correct": true
-          },
-          {
-            "text": "تقاطع في الأمام",
-            "is_correct": false
-          },
-          {
-            "text": "ضيق في الطريق",
-            "is_correct": false
-          }
-        ],
-        "explanation": "تحذر اللافتة Railway crossing with barriers تحديداً من منعطف خطير وحاد إلى اليسار في الطريق."
-      }
-    }
-  },
-  {
-    "question_id": "A41_Q09",
-    "type": "WHAT_DOES_IT_MEAN",
-    "difficulty": "EASY",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Hoe verschilt bord A1a van bord A1b?",
-        "choices": [
-          {
-            "text": "A1a is een bocht naar links, A1b is een bocht naar rechts",
-            "is_correct": true
-          },
-          {
-            "text": "A1a is een dubbele bocht, A1b is een enkele bocht",
-            "is_correct": false
-          },
-          {
-            "text": "Er is geen verschil tussen beide borden",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Bord Railway crossing with barriers waarschuwt voor een gevaarlijke bocht naar links, terwijl bord A1b waarschuwt voor een gevaarlijke bocht naar rechts."
-      },
-      "EN": {
-        "question": "How does sign A1a differ from sign A1b?",
-        "choices": [
-          {
-            "text": "A1a is a curve to the left, A1b is a curve to the right",
-            "is_correct": true
-          },
-          {
-            "text": "A1a is a double curve, A1b is a single curve",
-            "is_correct": false
-          },
-          {
-            "text": "There is no difference between the two signs",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Sign Railway crossing with barriers warns of a dangerous curve to the left, while sign A1b warns of a dangerous curve to the right."
-      },
-      "FR": {
-        "question": "Comment le panneau A1a diffère-t-il du panneau A1b ?",
-        "choices": [
-          {
-            "text": "A1a est un virage à gauche, A1b est un virage à droite",
-            "is_correct": true
-          },
-          {
-            "text": "A1a est un double virage, A1b est un simple virage",
-            "is_correct": false
-          },
-          {
-            "text": "Il n'y a pas de différence entre les deux panneaux",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Le panneau Railway crossing with barriers avertit d'un virage dangereux à gauche, tandis que le panneau A1b avertit d'un virage dangereux à droite."
-      },
-      "AR": {
-        "question": "كيف تختلف اللافتة A1a عن اللافتة A1b؟",
-        "choices": [
-          {
-            "text": "A1a منعطف إلى اليسار، A1b منعطف إلى اليمين",
-            "is_correct": true
-          },
-          {
-            "text": "A1a منعطف مزدوج، A1b منعطف فردي",
-            "is_correct": false
-          },
-          {
-            "text": "لا يوجد فرق بين اللافتتين",
-            "is_correct": false
-          }
-        ],
-        "explanation": "تحذر اللافتة Railway crossing with barriers من منعطف خطير إلى اليسار، بينما تحذر اللافتة A1b من منعطف خطير إلى اليمين."
-      }
-    }
-  },
-  {
-    "question_id": "A41_Q10",
-    "type": "WHAT_DOES_IT_MEAN",
-    "difficulty": "EASY",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Voor wie geldt de waarschuwing op dit bord?",
-        "choices": [
-          {
-            "text": "Voor alle weggebruikers",
-            "is_correct": true
-          },
-          {
-            "text": "Alleen voor vrachtwagens",
-            "is_correct": false
-          },
-          {
-            "text": "Alleen voor motorrijders",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Gevaarsborden gelden voor alle weggebruikers: auto's, motoren, vrachtwagens, fietsers en voetgangers."
-      },
-      "EN": {
-        "question": "Who does the warning on this sign apply to?",
-        "choices": [
-          {
-            "text": "All road users",
-            "is_correct": true
-          },
-          {
-            "text": "Only trucks",
-            "is_correct": false
-          },
-          {
-            "text": "Only motorcyclists",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Danger signs apply to all road users: cars, motorcycles, trucks, cyclists and pedestrians."
-      },
-      "FR": {
-        "question": "À qui s'applique l'avertissement sur ce panneau ?",
-        "choices": [
-          {
-            "text": "À tous les usagers de la route",
-            "is_correct": true
-          },
-          {
-            "text": "Uniquement aux camions",
-            "is_correct": false
-          },
-          {
-            "text": "Uniquement aux motocyclistes",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Les panneaux de danger s'appliquent à tous les usagers de la route : voitures, motos, camions, cyclistes et piétons."
-      },
-      "AR": {
-        "question": "لمن ينطبق التحذير على هذه اللافتة؟",
-        "choices": [
-          {
-            "text": "لجميع مستخدمي الطريق",
-            "is_correct": true
-          },
-          {
-            "text": "للشاحنات فقط",
-            "is_correct": false
-          },
-          {
-            "text": "لراكبي الدراجات النارية فقط",
-            "is_correct": false
-          }
-        ],
-        "explanation": "تنطبق لافتات الخطر على جميع مستخدمي الطريق: السيارات والدراجات النارية والشاحنات والدراجات الهوائية والمشاة."
-      }
-    }
-  },
-  {
-    "question_id": "A41_Q11",
-    "type": "WHAT_MUST_YOU_DO",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Mag u inhalen vlak na het zien van dit bord?",
-        "choices": [
-          {
-            "text": "Nee, inhalen in een gevaarlijke bocht is verboden en gevaarlijk",
-            "is_correct": true
-          },
-          {
-            "text": "Ja, als er niemand tegenkomt",
-            "is_correct": false
-          },
-          {
-            "text": "Ja, als u snel genoeg bent",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Inhalen in of vlak voor een gevaarlijke bocht is verboden omdat het zicht beperkt is en het risico op een frontale botsing groot is."
-      },
-      "EN": {
-        "question": "Are you allowed to overtake just after seeing this sign?",
-        "choices": [
-          {
-            "text": "No, overtaking in a dangerous curve is forbidden and dangerous",
-            "is_correct": true
-          },
-          {
-            "text": "Yes, if no one is coming",
-            "is_correct": false
-          },
-          {
-            "text": "Yes, if you are fast enough",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Overtaking in or just before a dangerous curve is prohibited because visibility is limited and the risk of a head-on collision is high."
-      },
-      "FR": {
-        "question": "Êtes-vous autorisé à dépasser juste après avoir vu ce panneau ?",
-        "choices": [
-          {
-            "text": "Non, dépasser dans un virage dangereux est interdit et dangereux",
-            "is_correct": true
-          },
-          {
-            "text": "Oui, si personne ne vient en sens inverse",
-            "is_correct": false
-          },
-          {
-            "text": "Oui, si vous êtes assez rapide",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Dépasser dans ou juste avant un virage dangereux est interdit car la visibilité est limitée et le risque de collision frontale est élevé."
-      },
-      "AR": {
-        "question": "هل يُسمح لك بالتجاوز بعد رؤية هذه اللافتة مباشرة؟",
-        "choices": [
-          {
-            "text": "لا، التجاوز في منعطف خطير محظور وخطير",
-            "is_correct": true
-          },
-          {
-            "text": "نعم، إذا لم يكن هناك أحد قادم",
-            "is_correct": false
-          },
-          {
-            "text": "نعم، إذا كنت سريعاً بما يكفي",
-            "is_correct": false
-          }
-        ],
-        "explanation": "يُحظر التجاوز في المنعطف الخطير أو قبله مباشرة لأن الرؤية محدودة وخطر الاصطدام الأمامي مرتفع."
-      }
-    }
-  },
-  {
-    "question_id": "A41_Q12",
-    "type": "WHAT_MUST_YOU_DO",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Hoe moet u sturen wanneer u een gevaarlijke bocht naar links nadert zoals aangegeven door dit bord?",
-        "choices": [
-          {
-            "text": "Geleidelijk naar links sturen terwijl u vaart mindert",
-            "is_correct": true
-          },
-          {
-            "text": "Abrupt naar links sturen op hoge snelheid",
-            "is_correct": false
-          },
-          {
-            "text": "Naar de rechterkant van de weg uitwijken",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Bij een gevaarlijke bocht naar links moet u tijdig vaart minderen en geleidelijk sturen om controle over het voertuig te behouden."
-      },
-      "EN": {
-        "question": "How should you steer when approaching a dangerous left curve as indicated by this sign?",
-        "choices": [
-          {
-            "text": "Steer gradually to the left while reducing speed",
-            "is_correct": true
-          },
-          {
-            "text": "Steer abruptly to the left at high speed",
-            "is_correct": false
-          },
-          {
-            "text": "Swerve to the right side of the road",
-            "is_correct": false
-          }
-        ],
-        "explanation": "When approaching a dangerous left curve, you must slow down in time and steer gradually to maintain vehicle control."
-      },
-      "FR": {
-        "question": "Comment devez-vous braquer en approchant d'un virage dangereux à gauche comme indiqué par ce panneau ?",
-        "choices": [
-          {
-            "text": "Braquer progressivement à gauche en réduisant la vitesse",
-            "is_correct": true
-          },
-          {
-            "text": "Braquer brusquement à gauche à grande vitesse",
-            "is_correct": false
-          },
-          {
-            "text": "Dévier vers le côté droit de la route",
-            "is_correct": false
-          }
-        ],
-        "explanation": "En approchant d'un virage dangereux à gauche, vous devez ralentir à temps et braquer progressivement pour garder le contrôle du véhicule."
-      },
-      "AR": {
-        "question": "كيف يجب أن توجه السيارة عند الاقتراب من منعطف خطير إلى اليسار كما تشير هذه اللافتة؟",
-        "choices": [
-          {
-            "text": "التوجيه تدريجياً إلى اليسار مع تقليل السرعة",
-            "is_correct": true
-          },
-          {
-            "text": "التوجيه فجأة إلى اليسار بسرعة عالية",
-            "is_correct": false
-          },
-          {
-            "text": "الانحراف نحو الجانب الأيمن من الطريق",
-            "is_correct": false
-          }
-        ],
-        "explanation": "عند الاقتراب من منعطف خطير إلى اليسار، يجب عليك التباطؤ مسبقاً والتوجيه تدريجياً للحفاظ على السيطرة على المركبة."
-      }
-    }
-  },
-  {
-    "question_id": "A41_Q13",
-    "type": "WHAT_MUST_YOU_DO",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Wat doet u met uw lichten bij nacht wanneer u dit bord ziet in een onverlichte zone?",
-        "choices": [
-          {
-            "text": "Groot licht gebruiken en snelheid verminderen",
-            "is_correct": true
-          },
-          {
-            "text": "Lichten uitdoen om andere bestuurders niet te verblinden",
-            "is_correct": false
-          },
-          {
-            "text": "Gewoon doorrijden zonder aanpassing",
-            "is_correct": false
-          }
-        ],
-        "explanation": "In een onverlichte bocht kunt u groot licht gebruiken om de bocht beter te zien. Schakel tijdig terug naar dimlicht bij tegenliggers."
-      },
-      "EN": {
-        "question": "What do you do with your lights at night when you see this sign in an unlit area?",
-        "choices": [
-          {
-            "text": "Use full beam and reduce speed",
-            "is_correct": true
-          },
-          {
-            "text": "Turn off lights to avoid blinding other drivers",
-            "is_correct": false
-          },
-          {
-            "text": "Continue driving without any adjustment",
-            "is_correct": false
-          }
-        ],
-        "explanation": "In an unlit curve, you can use full beam to see the bend better. Switch back to dipped headlights in time when there is oncoming traffic."
-      },
-      "FR": {
-        "question": "Que faites-vous avec vos feux la nuit lorsque vous voyez ce panneau dans une zone non éclairée ?",
-        "choices": [
-          {
-            "text": "Utiliser les pleins phares et réduire la vitesse",
-            "is_correct": true
-          },
-          {
-            "text": "Éteindre les feux pour ne pas éblouir les autres conducteurs",
-            "is_correct": false
-          },
-          {
-            "text": "Continuer à conduire sans aucun ajustement",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Dans un virage non éclairé, vous pouvez utiliser les pleins phares pour mieux voir le virage. Repassez aux feux de croisement à temps lorsqu'il y a de la circulation venant en sens inverse."
-      },
-      "AR": {
-        "question": "ماذا تفعل بالأضواء ليلاً عندما ترى هذه اللافتة في منطقة غير مضاءة؟",
-        "choices": [
-          {
-            "text": "استخدام الأضواء العالية وتقليل السرعة",
-            "is_correct": true
-          },
-          {
-            "text": "إطفاء الأضواء لتجنب إبهار السائقين الآخرين",
-            "is_correct": false
-          },
-          {
-            "text": "الاستمرار في القيادة دون أي تعديل",
-            "is_correct": false
-          }
-        ],
-        "explanation": "في منعطف غير مضاء، يمكنك استخدام الأضواء العالية لرؤية المنعطف بشكل أفضل. تحول إلى أضواء الغمز في الوقت المناسب عند وجود سيارات قادمة."
-      }
-    }
-  },
-  {
-    "question_id": "A41_Q14",
-    "type": "WHAT_MUST_YOU_DO",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Hoe past u uw rijpositie aan wanneer u dit bord ziet?",
-        "choices": [
-          {
-            "text": "Rechtshouden en voldoende afstand bewaren van de middenlijn",
-            "is_correct": true
-          },
-          {
-            "text": "De middenlijn opzoeken voor een betere zichthoek",
-            "is_correct": false
-          },
-          {
-            "text": "Zo ver mogelijk naar links rijden",
-            "is_correct": false
-          }
-        ],
-        "explanation": "In een bocht naar links is het belangrijk om rechts te houden en afstand te bewaren van de middenlijn om tegenliggers ruimte te geven en zijdelingse botsingen te vermijden."
-      },
-      "EN": {
-        "question": "How do you adjust your road position when you see this sign?",
-        "choices": [
-          {
-            "text": "Keep right and maintain sufficient distance from the centre line",
-            "is_correct": true
-          },
-          {
-            "text": "Move towards the centre line for a better viewing angle",
-            "is_correct": false
-          },
-          {
-            "text": "Drive as far left as possible",
-            "is_correct": false
-          }
-        ],
-        "explanation": "In a left curve, it is important to keep right and maintain distance from the centre line to give oncoming traffic room and avoid side collisions."
-      },
-      "FR": {
-        "question": "Comment adaptez-vous votre position sur la route lorsque vous voyez ce panneau ?",
-        "choices": [
-          {
-            "text": "Rester à droite et maintenir une distance suffisante par rapport à la ligne médiane",
-            "is_correct": true
-          },
-          {
-            "text": "Se rapprocher de la ligne médiane pour un meilleur angle de vision",
-            "is_correct": false
-          },
-          {
-            "text": "Rouler le plus à gauche possible",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Dans un virage à gauche, il est important de rester à droite et de maintenir la distance par rapport à la ligne médiane pour laisser de la place aux véhicules venant en sens inverse."
-      },
-      "AR": {
-        "question": "كيف تضبط موضعك على الطريق عند رؤية هذه اللافتة؟",
-        "choices": [
-          {
-            "text": "الإبقاء على اليمين والحفاظ على مسافة كافية من خط المنتصف",
-            "is_correct": true
-          },
-          {
-            "text": "الاقتراب من خط المنتصف للحصول على زاوية رؤية أفضل",
-            "is_correct": false
-          },
-          {
-            "text": "القيادة بأقصى ما يمكن إلى اليسار",
-            "is_correct": false
-          }
-        ],
-        "explanation": "في منعطف إلى اليسار، من المهم الإبقاء على اليمين والحفاظ على المسافة من خط المنتصف لإفساح المجال للسيارات القادمة."
-      }
-    }
-  },
-  {
-    "question_id": "A41_Q15",
     "type": "IS_IT_ALLOWED",
     "difficulty": "HARD",
     "is_critical": true,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Mag u uw claxon gebruiken wanneer u een gevaarlijke bocht naar links nadert in een zone waar dit verboden is?",
+        "question": "Mag u om de gesloten slagbomen heen zigzaggen als u haast heeft en er geen trein zichtbaar is?",
         "choices": [
           {
-            "text": "Nee, het gebruik van de claxon is verboden in zones met verbodsbord, ook bij gevaarlijke bochten",
+            "text": "Neen, de slagbomen omzeilen is uiterst gevaarlijk, wettelijk verboden en kan leiden tot een fatale botsing met een trein",
             "is_correct": true
           },
           {
-            "text": "Ja, om andere weggebruikers te waarschuwen in de bocht",
+            "text": "Ja, als er duidelijk geen trein in zicht is en u absoluut moet doorrijden",
             "is_correct": false
           }
         ],
-        "explanation": "In zones waar het gebruik van de claxon verboden is, mag u deze niet gebruiken, ook niet bij gevaarlijke bochten. U moet de snelheid aanpassen en de veiligheidsregels respecteren."
+        "explanation": "Het is absoluut verboden de slagbomen te omzeilen. Treinen naderen snel en stil; 'geen trein zichtbaar' biedt geen zekerheid. Bovendien kan een tweede trein vanuit de andere richting komen. Dit is een ernstige overtreding die tot de zwaarste verkeersboetes en zelfs rijontzegging kan leiden."
       },
       "EN": {
-        "question": "Are you allowed to use your horn when approaching a dangerous left curve in a zone where it is prohibited?",
+        "question": "Is it allowed to zigzag around closed barriers if you are in a hurry and no train is visible?",
         "choices": [
           {
-            "text": "No, using the horn is prohibited in zones with a prohibition sign, even near dangerous curves",
+            "text": "No, bypassing the barriers is extremely dangerous, legally prohibited and can lead to a fatal collision with a train",
             "is_correct": true
           },
           {
-            "text": "Yes, to warn other road users in the curve",
+            "text": "Yes, if there is clearly no train in sight and you absolutely must get through",
             "is_correct": false
           }
         ],
-        "explanation": "In zones where the use of the horn is prohibited, you may not use it, even near dangerous curves. You must adjust your speed and follow safety rules."
+        "explanation": "It is absolutely prohibited to bypass the barriers. Trains approach quickly and quietly; 'no train visible' provides no certainty. Moreover a second train may come from the other direction. This is a serious offence that can lead to the heaviest traffic fines and even disqualification from driving."
       },
       "FR": {
-        "question": "Êtes-vous autorisé à utiliser votre klaxon en approchant d'un virage dangereux à gauche dans une zone où c'est interdit ?",
+        "question": "Est-il permis de zigzaguer autour de barriÃ¨res fermÃ©es si vous Ãªtes pressÃ© et qu'aucun train n'est visible ?",
         "choices": [
           {
-            "text": "Non, l'utilisation du klaxon est interdite dans les zones avec panneau d'interdiction, même près des virages dangereux",
+            "text": "Non, contourner les barriÃ¨res est extrÃªmement dangereux, lÃ©galement interdit et peut entraÃ®ner une collision fatale avec un train",
             "is_correct": true
           },
           {
-            "text": "Oui, pour avertir les autres usagers de la route dans le virage",
+            "text": "Oui, s'il n'y a clairement pas de train en vue et que vous devez absolument passer",
             "is_correct": false
           }
         ],
-        "explanation": "Dans les zones où l'utilisation du klaxon est interdite, vous ne pouvez pas l'utiliser, même près des virages dangereux. Vous devez adapter votre vitesse et respecter les règles de sécurité."
+        "explanation": "Il est absolument interdit de contourner les barriÃ¨res. Les trains approchent rapidement et silencieusement; 'aucun train visible' ne garantit rien. De plus, un deuxiÃ¨me train peut venir de l'autre direction. Il s'agit d'une infraction grave pouvant entraÃ®ner les amendes les plus lourdes et mÃªme la suspension du permis de conduire."
       },
       "AR": {
-        "question": "هل يُسمح لك باستخدام البوق عند الاقتراب من منعطف خطير إلى اليسار في منطقة محظور فيها ذلك؟",
+        "question": "Ù‡Ù„ ÙŠÙØ³Ù…Ø­ Ø¨Ø§Ù„ØªØ¹Ø±Ù‘Ø¬ Ø­ÙˆÙ„ Ø§Ù„Ø­ÙˆØ§Ø¬Ø² Ø§Ù„Ù…ØºÙ„Ù‚Ø© Ø¥Ø°Ø§ ÙƒÙ†Øª Ù…Ø³ØªØ¹Ø¬Ù„Ø§Ù‹ ÙˆÙ„Ù… ÙŠÙƒÙ† Ù‡Ù†Ø§Ùƒ Ù‚Ø·Ø§Ø± Ù…Ø±Ø¦ÙŠØŸ",
         "choices": [
           {
-            "text": "لا، استخدام البوق محظور في المناطق التي تحمل لافتة حظر، حتى بالقرب من المنعطفات الخطيرة",
+            "text": "Ù„Ø§ØŒ ØªØ¬Ø§ÙˆØ² Ø§Ù„Ø­ÙˆØ§Ø¬Ø² Ø¨Ø§Ù„Øº Ø§Ù„Ø®Ø·ÙˆØ±Ø© ÙˆÙ…Ø­Ø¸ÙˆØ± Ù‚Ø§Ù†ÙˆÙ†Ø§Ù‹ ÙˆÙ‚Ø¯ ÙŠØ¤Ø¯ÙŠ Ø¥Ù„Ù‰ ØªØµØ§Ø¯Ù… Ù…Ù…ÙŠØª Ù…Ø¹ Ù‚Ø·Ø§Ø±",
             "is_correct": true
           },
           {
-            "text": "نعم، لتحذير مستخدمي الطريق الآخرين في المنعطف",
+            "text": "Ù†Ø¹Ù…ØŒ Ø¥Ø°Ø§ ÙƒØ§Ù† Ù„Ø§ ÙŠÙˆØ¬Ø¯ Ù‚Ø·Ø§Ø± Ù…Ø±Ø¦ÙŠ Ø¨ÙˆØ¶ÙˆØ­ ÙˆÙƒÙ†Øª Ù…Ø¶Ø·Ø±Ø§Ù‹ ØªÙ…Ø§Ù…Ø§Ù‹ Ù„Ù„Ù…Ø±ÙˆØ±",
             "is_correct": false
           }
         ],
-        "explanation": "في المناطق التي يُحظر فيها استخدام البوق، لا يجوز استخدامه حتى بالقرب من المنعطفات الخطيرة. يجب عليك ضبط سرعتك واتباع قواعد السلامة."
-      }
-    }
-  },
-  {
-    "question_id": "A41_Q16",
-    "type": "WHAT_DOES_IT_MEAN",
-    "difficulty": "EASY",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Welk gevaar kondigt dit bord aan?",
-        "choices": [
-          {
-            "text": "Een gevaarlijke bocht naar links",
-            "is_correct": true
-          },
-          {
-            "text": "Een gevaarlijk kruispunt",
-            "is_correct": false
-          },
-          {
-            "text": "Een gevaarlijke helling",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Bord Railway crossing with barriers kondigt een gevaarlijke bocht naar links aan. Het symbool op het bord toont duidelijk de richting van de bocht."
-      },
-      "EN": {
-        "question": "Which hazard does this sign announce?",
-        "choices": [
-          {
-            "text": "A dangerous curve to the left",
-            "is_correct": true
-          },
-          {
-            "text": "A dangerous intersection",
-            "is_correct": false
-          },
-          {
-            "text": "A dangerous slope",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Sign Railway crossing with barriers announces a dangerous curve to the left. The symbol on the sign clearly shows the direction of the curve."
-      },
-      "FR": {
-        "question": "Quel danger ce panneau annonce-t-il ?",
-        "choices": [
-          {
-            "text": "Un virage dangereux à gauche",
-            "is_correct": true
-          },
-          {
-            "text": "Un carrefour dangereux",
-            "is_correct": false
-          },
-          {
-            "text": "Une pente dangereuse",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Le panneau Railway crossing with barriers annonce un virage dangereux à gauche. Le symbole sur le panneau montre clairement la direction du virage."
-      },
-      "AR": {
-        "question": "ما الخطر الذي تعلن عنه هذه اللافتة؟",
-        "choices": [
-          {
-            "text": "منعطف خطير إلى اليسار",
-            "is_correct": true
-          },
-          {
-            "text": "تقاطع خطير",
-            "is_correct": false
-          },
-          {
-            "text": "منحدر خطير",
-            "is_correct": false
-          }
-        ],
-        "explanation": "تُعلن اللافتة Railway crossing with barriers عن منعطف خطير إلى اليسار. يُظهر الرمز على اللافتة بوضوح اتجاه المنعطف."
-      }
-    }
-  },
-  {
-    "question_id": "A41_Q17",
-    "type": "WHAT_DOES_IT_MEAN",
-    "difficulty": "EASY",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "In welke reeks verkeersborden is dit bord ingedeeld?",
-        "choices": [
-          {
-            "text": "A-reeks (gevaarsborden)",
-            "is_correct": true
-          },
-          {
-            "text": "D-reeks (gebodsborden)",
-            "is_correct": false
-          },
-          {
-            "text": "F-reeks (aanwijzingsborden)",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Bord Railway crossing with barriers behoort tot de A-reeks, de gevaarsborden. Deze borden zijn driehoekig met een rode rand."
-      },
-      "EN": {
-        "question": "In which series of traffic signs is this sign classified?",
-        "choices": [
-          {
-            "text": "A-series (danger signs)",
-            "is_correct": true
-          },
-          {
-            "text": "D-series (mandatory signs)",
-            "is_correct": false
-          },
-          {
-            "text": "F-series (indication signs)",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Sign Railway crossing with barriers belongs to the A-series, the danger signs. These signs are triangular with a red border."
-      },
-      "FR": {
-        "question": "Dans quelle série de panneaux de signalisation ce panneau est-il classé ?",
-        "choices": [
-          {
-            "text": "Série A (panneaux de danger)",
-            "is_correct": true
-          },
-          {
-            "text": "Série D (panneaux d'obligation)",
-            "is_correct": false
-          },
-          {
-            "text": "Série F (panneaux d'indication)",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Le panneau Railway crossing with barriers appartient à la série A, les panneaux de danger. Ces panneaux sont triangulaires avec une bordure rouge."
-      },
-      "AR": {
-        "question": "في أي سلسلة من لافتات المرور تُصنَّف هذه اللافتة؟",
-        "choices": [
-          {
-            "text": "السلسلة A (لافتات الخطر)",
-            "is_correct": true
-          },
-          {
-            "text": "السلسلة D (لافتات الإلزام)",
-            "is_correct": false
-          },
-          {
-            "text": "السلسلة F (لافتات الإرشاد)",
-            "is_correct": false
-          }
-        ],
-        "explanation": "تنتمي اللافتة Railway crossing with barriers إلى السلسلة A، لافتات الخطر. هذه اللافتات مثلثة الشكل بحافة حمراء."
-      }
-    }
-  },
-  {
-    "question_id": "A41_Q18",
-    "type": "WHAT_DOES_IT_MEAN",
-    "difficulty": "EASY",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Wat is de achtergrondkleur van dit gevaarsbord?",
-        "choices": [
-          {
-            "text": "Wit",
-            "is_correct": true
-          },
-          {
-            "text": "Geel",
-            "is_correct": false
-          },
-          {
-            "text": "Blauw",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Gevaarsborden in België hebben een witte achtergrond met een rode rand en een zwart symbool. Dit is internationaal gestandaardiseerd."
-      },
-      "EN": {
-        "question": "What is the background colour of this danger sign?",
-        "choices": [
-          {
-            "text": "White",
-            "is_correct": true
-          },
-          {
-            "text": "Yellow",
-            "is_correct": false
-          },
-          {
-            "text": "Blue",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Danger signs in Belgium have a white background with a red border and a black symbol. This is internationally standardised."
-      },
-      "FR": {
-        "question": "Quelle est la couleur de fond de ce panneau de danger ?",
-        "choices": [
-          {
-            "text": "Blanc",
-            "is_correct": true
-          },
-          {
-            "text": "Jaune",
-            "is_correct": false
-          },
-          {
-            "text": "Bleu",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Les panneaux de danger en Belgique ont un fond blanc avec une bordure rouge et un symbole noir. Cela est standardisé au niveau international."
-      },
-      "AR": {
-        "question": "ما لون خلفية لافتة الخطر هذه؟",
-        "choices": [
-          {
-            "text": "أبيض",
-            "is_correct": true
-          },
-          {
-            "text": "أصفر",
-            "is_correct": false
-          },
-          {
-            "text": "أزرق",
-            "is_correct": false
-          }
-        ],
-        "explanation": "لافتات الخطر في بلجيكا ذات خلفية بيضاء بحافة حمراء ورمز أسود. وهذا موحد على المستوى الدولي."
-      }
-    }
-  },
-  {
-    "question_id": "A41_Q19",
-    "type": "WHAT_DOES_IT_MEAN",
-    "difficulty": "EASY",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Wat vertelt dit bord u over de nabije omgeving?",
-        "choices": [
-          {
-            "text": "Er bevindt zich een gevaarlijke bocht naar links in de buurt",
-            "is_correct": true
-          },
-          {
-            "text": "Er is een veilige parkeerplaats in de buurt",
-            "is_correct": false
-          },
-          {
-            "text": "Er is een benzinestation in de buurt",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Dit gevaarsbord informeert u dat u binnenkort een gevaarlijke bocht naar links zult tegenkomen en dat u uw rijgedrag moet aanpassen."
-      },
-      "EN": {
-        "question": "What does this sign tell you about the nearby surroundings?",
-        "choices": [
-          {
-            "text": "There is a dangerous left curve nearby",
-            "is_correct": true
-          },
-          {
-            "text": "There is a safe parking area nearby",
-            "is_correct": false
-          },
-          {
-            "text": "There is a petrol station nearby",
-            "is_correct": false
-          }
-        ],
-        "explanation": "This danger sign informs you that you will soon encounter a dangerous left curve and that you must adjust your driving."
-      },
-      "FR": {
-        "question": "Que vous dit ce panneau sur l'environnement proche ?",
-        "choices": [
-          {
-            "text": "Il y a un virage dangereux à gauche à proximité",
-            "is_correct": true
-          },
-          {
-            "text": "Il y a une aire de stationnement sûre à proximité",
-            "is_correct": false
-          },
-          {
-            "text": "Il y a une station-service à proximité",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Ce panneau de danger vous informe que vous allez bientôt rencontrer un virage dangereux à gauche et que vous devez adapter votre conduite."
-      },
-      "AR": {
-        "question": "ماذا تخبرك هذه اللافتة عن المحيط القريب؟",
-        "choices": [
-          {
-            "text": "يوجد منعطف خطير إلى اليسار بالقرب",
-            "is_correct": true
-          },
-          {
-            "text": "يوجد موقف سيارات آمن بالقرب",
-            "is_correct": false
-          },
-          {
-            "text": "يوجد محطة وقود بالقرب",
-            "is_correct": false
-          }
-        ],
-        "explanation": "تُعلمك لافتة الخطر هذه أنك ستواجه قريباً منعطفاً خطيراً إلى اليسار وأنه يجب عليك تعديل قيادتك."
-      }
-    }
-  },
-  {
-    "question_id": "A41_Q20",
-    "type": "WHAT_DOES_IT_MEAN",
-    "difficulty": "EASY",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Hoe lang blijft de waarschuwing van dit bord van kracht?",
-        "choices": [
-          {
-            "text": "Tot voorbij het gevaar (de bocht)",
-            "is_correct": true
-          },
-          {
-            "text": "Voor de rest van de rit",
-            "is_correct": false
-          },
-          {
-            "text": "Slechts 100 meter na het bord",
-            "is_correct": false
-          }
-        ],
-        "explanation": "De waarschuwing van een gevaarsbord geldt tot voorbij het gevaar. Eenmaal de bocht gepasseerd, is de waarschuwing niet meer van toepassing."
-      },
-      "EN": {
-        "question": "How long does the warning of this sign remain in effect?",
-        "choices": [
-          {
-            "text": "Until past the hazard (the curve)",
-            "is_correct": true
-          },
-          {
-            "text": "For the rest of the journey",
-            "is_correct": false
-          },
-          {
-            "text": "Only 100 metres after the sign",
-            "is_correct": false
-          }
-        ],
-        "explanation": "The warning of a danger sign applies until past the hazard. Once the curve is passed, the warning no longer applies."
-      },
-      "FR": {
-        "question": "Combien de temps l'avertissement de ce panneau reste-t-il en vigueur ?",
-        "choices": [
-          {
-            "text": "Jusqu'après le danger (le virage)",
-            "is_correct": true
-          },
-          {
-            "text": "Pour le reste du trajet",
-            "is_correct": false
-          },
-          {
-            "text": "Seulement 100 mètres après le panneau",
-            "is_correct": false
-          }
-        ],
-        "explanation": "L'avertissement d'un panneau de danger s'applique jusqu'après le danger. Une fois le virage passé, l'avertissement ne s'applique plus."
-      },
-      "AR": {
-        "question": "كم من الوقت يبقى تحذير هذه اللافتة سارياً؟",
-        "choices": [
-          {
-            "text": "حتى تجاوز الخطر (المنعطف)",
-            "is_correct": true
-          },
-          {
-            "text": "لبقية الرحلة",
-            "is_correct": false
-          },
-          {
-            "text": "فقط 100 متر بعد اللافتة",
-            "is_correct": false
-          }
-        ],
-        "explanation": "ينطبق تحذير لافتة الخطر حتى تجاوز الخطر. بمجرد تجاوز المنعطف، لا ينطبق التحذير بعد الآن."
-      }
-    }
-  },
-  {
-    "question_id": "A41_Q21",
-    "type": "WHAT_MUST_YOU_DO",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Op welke afstand van het gevaar wordt dit bord geplaatst binnen de bebouwde kom?",
-        "choices": [
-          {
-            "text": "Ongeveer 50 meter voor het gevaar",
-            "is_correct": true
-          },
-          {
-            "text": "Ongeveer 150 meter voor het gevaar",
-            "is_correct": false
-          },
-          {
-            "text": "Op de exacte locatie van de bocht",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Binnen de bebouwde kom worden gevaarsborden op ±50 meter voor het gevaar geplaatst. Buiten de bebouwde kom is dit ±150 meter."
-      },
-      "EN": {
-        "question": "At what distance from the hazard is this sign placed within built-up areas?",
-        "choices": [
-          {
-            "text": "Approximately 50 metres before the hazard",
-            "is_correct": true
-          },
-          {
-            "text": "Approximately 150 metres before the hazard",
-            "is_correct": false
-          },
-          {
-            "text": "At the exact location of the curve",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Within built-up areas, danger signs are placed ±50 metres before the hazard. Outside built-up areas it is ±150 metres."
-      },
-      "FR": {
-        "question": "À quelle distance du danger ce panneau est-il placé en agglomération ?",
-        "choices": [
-          {
-            "text": "Environ 50 mètres avant le danger",
-            "is_correct": true
-          },
-          {
-            "text": "Environ 150 mètres avant le danger",
-            "is_correct": false
-          },
-          {
-            "text": "À l'emplacement exact du virage",
-            "is_correct": false
-          }
-        ],
-        "explanation": "En agglomération, les panneaux de danger sont placés à ±50 mètres avant le danger. Hors agglomération, c'est ±150 mètres."
-      },
-      "AR": {
-        "question": "على أي مسافة من الخطر توضع هذه اللافتة داخل المناطق المبنية؟",
-        "choices": [
-          {
-            "text": "حوالي 50 متر قبل الخطر",
-            "is_correct": true
-          },
-          {
-            "text": "حوالي 150 متر قبل الخطر",
-            "is_correct": false
-          },
-          {
-            "text": "في الموقع الدقيق للمنعطف",
-            "is_correct": false
-          }
-        ],
-        "explanation": "داخل المناطق المبنية، توضع لافتات الخطر على مسافة ±50 متر قبل الخطر. خارج المناطق المبنية تكون ±150 متر."
-      }
-    }
-  },
-  {
-    "question_id": "A41_Q22",
-    "type": "WHAT_MUST_YOU_DO",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Welke rijstijl is het veiligst in een gevaarlijke bocht naar links zoals aangegeven door dit bord?",
-        "choices": [
-          {
-            "text": "Voor de bocht afremmen, in de bocht stabiel gas geven",
-            "is_correct": true
-          },
-          {
-            "text": "In de bocht hard remmen om de snelheid te beheersen",
-            "is_correct": false
-          },
-          {
-            "text": "Gas geven in de bocht voor meer stabiliteit",
-            "is_correct": false
-          }
-        ],
-        "explanation": "De juiste techniek is om voor de bocht te remmen tot de juiste snelheid, en dan in de bocht geleidelijk gas te geven voor stabiliteit. Hard remmen in een bocht kan leiden tot verlies van controle."
-      },
-      "EN": {
-        "question": "What is the safest driving style in a dangerous left curve as indicated by this sign?",
-        "choices": [
-          {
-            "text": "Brake before the curve, apply stable throttle in the curve",
-            "is_correct": true
-          },
-          {
-            "text": "Brake hard in the curve to control speed",
-            "is_correct": false
-          },
-          {
-            "text": "Accelerate in the curve for more stability",
-            "is_correct": false
-          }
-        ],
-        "explanation": "The correct technique is to brake before the curve to the right speed, then gradually apply the throttle in the curve for stability. Hard braking in a curve can lead to loss of control."
-      },
-      "FR": {
-        "question": "Quel est le style de conduite le plus sûr dans un virage dangereux à gauche comme indiqué par ce panneau ?",
-        "choices": [
-          {
-            "text": "Freiner avant le virage, accélérer de manière stable dans le virage",
-            "is_correct": true
-          },
-          {
-            "text": "Freiner fort dans le virage pour contrôler la vitesse",
-            "is_correct": false
-          },
-          {
-            "text": "Accélérer dans le virage pour plus de stabilité",
-            "is_correct": false
-          }
-        ],
-        "explanation": "La technique correcte est de freiner avant le virage à la bonne vitesse, puis d'accélérer progressivement dans le virage pour la stabilité. Un freinage brutal dans un virage peut entraîner une perte de contrôle."
-      },
-      "AR": {
-        "question": "ما أسلوب القيادة الأكثر أماناً في منعطف خطير إلى اليسار كما تشير هذه اللافتة؟",
-        "choices": [
-          {
-            "text": "الفرملة قبل المنعطف، وإعطاء غاز ثابت داخل المنعطف",
-            "is_correct": true
-          },
-          {
-            "text": "الفرملة بقوة داخل المنعطف للتحكم في السرعة",
-            "is_correct": false
-          },
-          {
-            "text": "التسارع داخل المنعطف لمزيد من الثبات",
-            "is_correct": false
-          }
-        ],
-        "explanation": "التقنية الصحيحة هي الفرملة قبل المنعطف للوصول إلى السرعة المناسبة، ثم إعطاء الغاز تدريجياً داخل المنعطف للثبات. قد تؤدي الفرملة الحادة داخل المنعطف إلى فقدان السيطرة."
-      }
-    }
-  },
-  {
-    "question_id": "A41_Q23",
-    "type": "WHAT_MUST_YOU_DO",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Wat moet u doen als de weg nat is wanneer u dit bord ziet?",
-        "choices": [
-          {
-            "text": "Extra vroeg snelheid verminderen omdat de remafstand toeneemt op nat wegdek",
-            "is_correct": true
-          },
-          {
-            "text": "Dezelfde snelheid aanhouden als bij droog wegdek",
-            "is_correct": false
-          },
-          {
-            "text": "Stoppen voor de bocht tot het droog is",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Op nat wegdek is de remafstand langer en vermindert de grip. Bij een gevaarlijke bocht moet u extra vroeg en meer afremmen om de bocht veilig te nemen."
-      },
-      "EN": {
-        "question": "What should you do when the road is wet when you see this sign?",
-        "choices": [
-          {
-            "text": "Reduce speed even earlier because braking distance increases on wet roads",
-            "is_correct": true
-          },
-          {
-            "text": "Maintain the same speed as on dry roads",
-            "is_correct": false
-          },
-          {
-            "text": "Stop before the curve until the road is dry",
-            "is_correct": false
-          }
-        ],
-        "explanation": "On wet roads, braking distance is longer and grip decreases. At a dangerous curve, you must brake even earlier and more firmly to take the curve safely."
-      },
-      "FR": {
-        "question": "Que devez-vous faire lorsque la route est mouillée lorsque vous voyez ce panneau ?",
-        "choices": [
-          {
-            "text": "Réduire la vitesse encore plus tôt car la distance de freinage augmente sur chaussée mouillée",
-            "is_correct": true
-          },
-          {
-            "text": "Maintenir la même vitesse que sur chaussée sèche",
-            "is_correct": false
-          },
-          {
-            "text": "S'arrêter avant le virage jusqu'à ce que la route soit sèche",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Sur chaussée mouillée, la distance de freinage est plus longue et l'adhérence diminue. Dans un virage dangereux, vous devez freiner encore plus tôt et plus fort pour prendre le virage en toute sécurité."
-      },
-      "AR": {
-        "question": "ماذا يجب أن تفعل عندما تكون الطريق مبللة عند رؤية هذه اللافتة؟",
-        "choices": [
-          {
-            "text": "تقليل السرعة في وقت أبكر لأن مسافة الفرملة تزداد على الطرق المبللة",
-            "is_correct": true
-          },
-          {
-            "text": "الحفاظ على نفس السرعة كما على الطرق الجافة",
-            "is_correct": false
-          },
-          {
-            "text": "التوقف قبل المنعطف حتى تجف الطريق",
-            "is_correct": false
-          }
-        ],
-        "explanation": "على الطرق المبللة، تكون مسافة الفرملة أطول وتنخفض الجاذبية. عند المنعطف الخطير، يجب عليك الفرملة في وقت أبكر وبشكل أقوى لأخذ المنعطف بأمان."
-      }
-    }
-  },
-  {
-    "question_id": "A41_Q24",
-    "type": "WHAT_MUST_YOU_DO",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Hoe ver moet u minimaal achter het voertuig voor u rijden wanneer u dit bord ziet?",
-        "choices": [
-          {
-            "text": "Meer afstand dan normaal, aangepast aan snelheid en weersomstandigheden",
-            "is_correct": true
-          },
-          {
-            "text": "Exact 3 meter, ongeacht de snelheid",
-            "is_correct": false
-          },
-          {
-            "text": "Minder afstand omdat u trager rijdt",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Bij een gevaarlijke bocht moet u een grotere veiligheidsafstand bewaren dan normaal, want bij noodremming of uitwijken heeft u meer ruimte nodig."
-      },
-      "EN": {
-        "question": "What minimum following distance should you keep behind the vehicle in front when you see this sign?",
-        "choices": [
-          {
-            "text": "More than normal, adjusted to speed and weather conditions",
-            "is_correct": true
-          },
-          {
-            "text": "Exactly 3 metres, regardless of speed",
-            "is_correct": false
-          },
-          {
-            "text": "Less distance because you are driving slower",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Near a dangerous curve, you must maintain a greater safety distance than normal, because in case of emergency braking or swerving you need more space."
-      },
-      "FR": {
-        "question": "Quelle distance de sécurité minimale devez-vous maintenir derrière le véhicule devant vous lorsque vous voyez ce panneau ?",
-        "choices": [
-          {
-            "text": "Plus que la normale, adaptée à la vitesse et aux conditions météorologiques",
-            "is_correct": true
-          },
-          {
-            "text": "Exactement 3 mètres, quelle que soit la vitesse",
-            "is_correct": false
-          },
-          {
-            "text": "Moins de distance car vous roulez plus lentement",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Près d'un virage dangereux, vous devez maintenir une distance de sécurité plus grande que la normale, car en cas de freinage d'urgence ou d'écart, vous avez besoin de plus d'espace."
-      },
-      "AR": {
-        "question": "ما الحد الأدنى لمسافة الأمان التي يجب أن تحافظ عليها خلف السيارة أمامك عند رؤية هذه اللافتة؟",
-        "choices": [
-          {
-            "text": "أكثر من المعتاد، مع مراعاة السرعة والظروف الجوية",
-            "is_correct": true
-          },
-          {
-            "text": "3 أمتار بالضبط، بغض النظر عن السرعة",
-            "is_correct": false
-          },
-          {
-            "text": "مسافة أقل لأنك تسير بسرعة أبطأ",
-            "is_correct": false
-          }
-        ],
-        "explanation": "بالقرب من المنعطف الخطير، يجب عليك الحفاظ على مسافة أمان أكبر من المعتاد، لأنك في حالة الفرملة الطارئة أو الانحراف تحتاج إلى مساحة أكبر."
-      }
-    }
-  },
-  {
-    "question_id": "A41_Q25",
-    "type": "WHAT_MUST_YOU_DO",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Wat doet u met uw gsm wanneer u dit gevaarsbord ziet?",
-        "choices": [
-          {
-            "text": "U legt de gsm weg en concentreert zich volledig op de weg",
-            "is_correct": true
-          },
-          {
-            "text": "U mag de gsm blijven gebruiken via handsfree",
-            "is_correct": false
-          },
-          {
-            "text": "U stuurt snel een bericht om te waarschuwen dat u in een gevaarlijke zone rijdt",
-            "is_correct": false
-          }
-        ],
-        "explanation": "In een gevaarlijke bocht vereist de situatie uw volledige aandacht. Elk gebruik van de gsm, zelfs handsfree, vermindert uw concentratie en verhoogt het risico op een accident."
-      },
-      "EN": {
-        "question": "What do you do with your mobile phone when you see this danger sign?",
-        "choices": [
-          {
-            "text": "You put the phone away and concentrate fully on the road",
-            "is_correct": true
-          },
-          {
-            "text": "You may continue using the phone via hands-free",
-            "is_correct": false
-          },
-          {
-            "text": "You quickly send a message to warn that you are in a dangerous zone",
-            "is_correct": false
-          }
-        ],
-        "explanation": "In a dangerous curve, the situation requires your full attention. Any use of the mobile phone, even hands-free, reduces your concentration and increases the risk of an accident."
-      },
-      "FR": {
-        "question": "Que faites-vous avec votre téléphone portable lorsque vous voyez ce panneau de danger ?",
-        "choices": [
-          {
-            "text": "Vous rangez le téléphone et vous concentrez pleinement sur la route",
-            "is_correct": true
-          },
-          {
-            "text": "Vous pouvez continuer à utiliser le téléphone en mode mains libres",
-            "is_correct": false
-          },
-          {
-            "text": "Vous envoyez rapidement un message pour avertir que vous êtes dans une zone dangereuse",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Dans un virage dangereux, la situation exige toute votre attention. Toute utilisation du téléphone portable, même en mains libres, réduit votre concentration et augmente le risque d'accident."
-      },
-      "AR": {
-        "question": "ماذا تفعل بهاتفك المحمول عند رؤية هذه اللافتة التحذيرية؟",
-        "choices": [
-          {
-            "text": "تضع الهاتف جانباً وتركز تماماً على الطريق",
-            "is_correct": true
-          },
-          {
-            "text": "يمكنك الاستمرار في استخدام الهاتف عبر الهاتف الحر",
-            "is_correct": false
-          },
-          {
-            "text": "ترسل رسالة سريعة للتحذير من أنك في منطقة خطيرة",
-            "is_correct": false
-          }
-        ],
-        "explanation": "في المنعطف الخطير، يتطلب الوضع انتباهك الكامل. أي استخدام للهاتف المحمول، حتى عبر الهاتف الحر، يقلل من تركيزك ويزيد من خطر وقوع حادث."
-      }
-    }
-  },
-  {
-    "question_id": "A41_Q26",
-    "type": "WHAT_MUST_YOU_DO",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Hoe gedraagt u zich tegenover fietsers wanneer u dit bord ziet in een smalle weg?",
-        "choices": [
-          {
-            "text": "Extra voorzichtig zijn en voldoende zijdelingse afstand bewaren bij het passeren",
-            "is_correct": true
-          },
-          {
-            "text": "Snel passeren zodat u de bocht veilig kunt nemen",
-            "is_correct": false
-          },
-          {
-            "text": "Op de claxon drukken zodat de fietser weet dat u eraan komt",
-            "is_correct": false
-          }
-        ],
-        "explanation": "In een gevaarlijke bocht op een smalle weg moet u extra voorzichtig zijn met kwetsbare weggebruikers zoals fietsers. U moet voldoende ruimte laten en langzaam voorbijrijden."
-      },
-      "EN": {
-        "question": "How do you behave towards cyclists when you see this sign on a narrow road?",
-        "choices": [
-          {
-            "text": "Be extra careful and maintain sufficient lateral distance when passing",
-            "is_correct": true
-          },
-          {
-            "text": "Pass quickly so you can take the curve safely",
-            "is_correct": false
-          },
-          {
-            "text": "Sound the horn so the cyclist knows you are coming",
-            "is_correct": false
-          }
-        ],
-        "explanation": "In a dangerous curve on a narrow road, you must be extra careful with vulnerable road users such as cyclists. You must leave enough space and pass slowly."
-      },
-      "FR": {
-        "question": "Comment vous comportez-vous vis-à-vis des cyclistes lorsque vous voyez ce panneau sur une route étroite ?",
-        "choices": [
-          {
-            "text": "Être particulièrement prudent et maintenir une distance latérale suffisante lors du dépassement",
-            "is_correct": true
-          },
-          {
-            "text": "Dépasser rapidement pour pouvoir prendre le virage en toute sécurité",
-            "is_correct": false
-          },
-          {
-            "text": "Klaxonner pour que le cycliste sache que vous arrivez",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Dans un virage dangereux sur une route étroite, vous devez être particulièrement prudent avec les usagers vulnérables comme les cyclistes. Vous devez laisser suffisamment d'espace et passer lentement."
-      },
-      "AR": {
-        "question": "كيف تتصرف تجاه الدراجين عند رؤية هذه اللافتة على طريق ضيق؟",
-        "choices": [
-          {
-            "text": "توخي الحذر الشديد والحفاظ على مسافة جانبية كافية عند المرور",
-            "is_correct": true
-          },
-          {
-            "text": "المرور بسرعة حتى تتمكن من أخذ المنعطف بأمان",
-            "is_correct": false
-          },
-          {
-            "text": "ضغط البوق حتى يعلم الدراج بقدومك",
-            "is_correct": false
-          }
-        ],
-        "explanation": "في المنعطف الخطير على طريق ضيق، يجب عليك توخي الحذر الشديد مع مستخدمي الطريق الضعفاء كالدراجين. يجب عليك ترك مساحة كافية والمرور ببطء."
-      }
-    }
-  },
-  {
-    "question_id": "A41_Q27",
-    "type": "IS_IT_ALLOWED",
-    "difficulty": "HARD",
-    "is_critical": true,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Mag u de rijstrook wisselen vlak voor een gevaarlijke bocht naar links zoals aangegeven door dit bord?",
-        "choices": [
-          {
-            "text": "Nee, rijstrookwisselingen in of vlak voor een gevaarlijke bocht zijn gevaarlijk en verboden",
-            "is_correct": true
-          },
-          {
-            "text": "Ja, als u eerder wil zijn dan het voertuig naast u",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Vlak voor en in een gevaarlijke bocht is rijstrookwisseling verboden vanwege het beperkte zicht en de verhoogde kans op een verkeersongeval."
-      },
-      "EN": {
-        "question": "Are you allowed to change lanes just before a dangerous left curve as indicated by this sign?",
-        "choices": [
-          {
-            "text": "No, lane changes in or just before a dangerous curve are dangerous and prohibited",
-            "is_correct": true
-          },
-          {
-            "text": "Yes, if you want to get ahead of the vehicle next to you",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Just before and in a dangerous curve, lane changes are prohibited due to limited visibility and the increased risk of a traffic accident."
-      },
-      "FR": {
-        "question": "Êtes-vous autorisé à changer de voie juste avant un virage dangereux à gauche comme indiqué par ce panneau ?",
-        "choices": [
-          {
-            "text": "Non, les changements de voie dans ou juste avant un virage dangereux sont dangereux et interdits",
-            "is_correct": true
-          },
-          {
-            "text": "Oui, si vous voulez dépasser le véhicule à côté de vous",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Juste avant et dans un virage dangereux, les changements de voie sont interdits en raison de la visibilité limitée et du risque accru d'accident de la circulation."
-      },
-      "AR": {
-        "question": "هل يُسمح لك بتغيير المسار قبيل منعطف خطير إلى اليسار كما تشير هذه اللافتة؟",
-        "choices": [
-          {
-            "text": "لا، تغيير المسار في المنعطف الخطير أو قبله مباشرة خطير ومحظور",
-            "is_correct": true
-          },
-          {
-            "text": "نعم، إذا أردت التقدم على السيارة المجاورة لك",
-            "is_correct": false
-          }
-        ],
-        "explanation": "قبيل المنعطف الخطير وفيه، يُحظر تغيير المسار بسبب محدودية الرؤية وزيادة خطر وقوع حادث مروري."
-      }
-    }
-  },
-  {
-    "question_id": "A41_Q28",
-    "type": "IS_IT_ALLOWED",
-    "difficulty": "HARD",
-    "is_critical": true,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Mag u keren (een U-bocht maken) ter hoogte van een gevaarlijke bocht zoals aangegeven door dit bord?",
-        "choices": [
-          {
-            "text": "Nee, keren ter hoogte van een gevaarlijke bocht is verboden wegens het risico voor andere weggebruikers",
-            "is_correct": true
-          },
-          {
-            "text": "Ja, als u snel genoeg keert en er geen tegenligger is",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Keren is verboden op plaatsen waar het zicht onvoldoende is, zoals in of vlak voor een gevaarlijke bocht. Dit is gevaarlijk voor uzelf en andere weggebruikers."
-      },
-      "EN": {
-        "question": "Are you allowed to make a U-turn at the level of a dangerous curve as indicated by this sign?",
-        "choices": [
-          {
-            "text": "No, turning at a dangerous curve is prohibited due to the risk to other road users",
-            "is_correct": true
-          },
-          {
-            "text": "Yes, if you turn quickly enough and there is no oncoming traffic",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Turning is prohibited in places where visibility is insufficient, such as in or just before a dangerous curve. This is dangerous for yourself and other road users."
-      },
-      "FR": {
-        "question": "Êtes-vous autorisé à faire demi-tour au niveau d'un virage dangereux comme indiqué par ce panneau ?",
-        "choices": [
-          {
-            "text": "Non, faire demi-tour au niveau d'un virage dangereux est interdit en raison du risque pour les autres usagers de la route",
-            "is_correct": true
-          },
-          {
-            "text": "Oui, si vous faites demi-tour assez rapidement et qu'il n'y a pas de circulation venant en sens inverse",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Le demi-tour est interdit dans les endroits où la visibilité est insuffisante, comme dans ou juste avant un virage dangereux. C'est dangereux pour vous-même et les autres usagers de la route."
-      },
-      "AR": {
-        "question": "هل يُسمح لك بالاستدارة (دوران U) عند منعطف خطير كما تشير هذه اللافتة؟",
-        "choices": [
-          {
-            "text": "لا، الاستدارة عند منعطف خطير محظورة بسبب الخطر على مستخدمي الطريق الآخرين",
-            "is_correct": true
-          },
-          {
-            "text": "نعم، إذا استدرت بسرعة كافية ولم يكن هناك مرور قادم",
-            "is_correct": false
-          }
-        ],
-        "explanation": "تُحظر الاستدارة في الأماكن التي تكون فيها الرؤية غير كافية، كالمنعطف الخطير أو قبله مباشرة. هذا خطير عليك وعلى مستخدمي الطريق الآخرين."
-      }
-    }
-  },
-  {
-    "question_id": "A41_Q29",
-    "type": "IS_IT_ALLOWED",
-    "difficulty": "HARD",
-    "is_critical": true,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Mag een leerling-bestuurder harder dan 90 km/u rijden wanneer hij dit bord ziet op een gewestweg?",
-        "choices": [
-          {
-            "text": "Nee, leerling-bestuurders zijn beperkt tot 90 km/u en moeten bij gevaarsborden altijd vaart minderen",
-            "is_correct": true
-          },
-          {
-            "text": "Ja, als de snelheidslimiet op de weg hoger is dan 90 km/u",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Leerling-bestuurders (rijden met begeleid rijden of met een rijschool) zijn wettelijk beperkt tot maximum 90 km/u. Bij gevaarsborden is het bovendien verplicht de snelheid aan te passen."
-      },
-      "EN": {
-        "question": "Is a learner driver allowed to exceed 90 km/h when they see this sign on a regional road?",
-        "choices": [
-          {
-            "text": "No, learner drivers are limited to 90 km/h and must always reduce speed at danger signs",
-            "is_correct": true
-          },
-          {
-            "text": "Yes, if the speed limit on the road is higher than 90 km/h",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Learner drivers (accompanied driving or driving school) are legally limited to a maximum of 90 km/h. At danger signs, they are also required to adjust their speed."
-      },
-      "FR": {
-        "question": "Un conducteur débutant est-il autorisé à dépasser 90 km/h lorsqu'il voit ce panneau sur une route régionale ?",
-        "choices": [
-          {
-            "text": "Non, les conducteurs débutants sont limités à 90 km/h et doivent toujours réduire leur vitesse aux panneaux de danger",
-            "is_correct": true
-          },
-          {
-            "text": "Oui, si la limitation de vitesse sur la route est supérieure à 90 km/h",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Les conducteurs débutants (conduite accompagnée ou auto-école) sont légalement limités à 90 km/h maximum. Aux panneaux de danger, ils sont également tenus d'adapter leur vitesse."
-      },
-      "AR": {
-        "question": "هل يُسمح لسائق المتدرب بتجاوز 90 كم/س عند رؤية هذه اللافتة على طريق إقليمي؟",
-        "choices": [
-          {
-            "text": "لا، يُقيَّد سائقو المتدربين بـ90 كم/س ويجب عليهم دائماً تقليل السرعة عند لافتات الخطر",
-            "is_correct": true
-          },
-          {
-            "text": "نعم، إذا كان حد السرعة على الطريق أعلى من 90 كم/س",
-            "is_correct": false
-          }
-        ],
-        "explanation": "يُقيَّد سائقو المتدربين (القيادة المرافقة أو مدرسة القيادة) قانونياً بحد أقصى 90 كم/س. عند لافتات الخطر، يُلزمون أيضاً بضبط سرعتهم."
-      }
-    }
-  },
-  {
-    "question_id": "A41_Q30",
-    "type": "IS_IT_ALLOWED",
-    "difficulty": "HARD",
-    "is_critical": true,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Is het toegestaan om te stoppen of te parkeren direct na een gevaarlijke bocht zoals aangegeven door dit bord?",
-        "choices": [
-          {
-            "text": "Nee, stoppen of parkeren net na een gevaarlijke bocht is verboden wegens het beperkte zicht voor andere bestuurders",
-            "is_correct": true
-          },
-          {
-            "text": "Ja, als het een noodgeval is en u de veiligheidsvest draagt",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Stoppen of parkeren is verboden op plaatsen waar het zicht beperkt is, zoals net na een gevaarlijke bocht. Andere bestuurders kunnen uw voertuig te laat zien, wat ernstige ongelukken kan veroorzaken. In noodgevallen zet u uw voertuig zo ver mogelijk weg van de rijbaan en plaatst u een gevarendriehoek."
-      },
-      "EN": {
-        "question": "Is it permitted to stop or park immediately after a dangerous curve as indicated by this sign?",
-        "choices": [
-          {
-            "text": "No, stopping or parking just after a dangerous curve is prohibited due to limited visibility for other drivers",
-            "is_correct": true
-          },
-          {
-            "text": "Yes, if it is an emergency and you are wearing a safety vest",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Stopping or parking is prohibited in places where visibility is limited, such as just after a dangerous curve. Other drivers may see your vehicle too late, which can cause serious accidents. In emergencies, place your vehicle as far from the road as possible and set up a warning triangle."
-      },
-      "FR": {
-        "question": "Est-il permis de s'arrêter ou de se garer juste après un virage dangereux comme indiqué par ce panneau ?",
-        "choices": [
-          {
-            "text": "Non, s'arrêter ou se garer juste après un virage dangereux est interdit en raison de la visibilité limitée pour les autres conducteurs",
-            "is_correct": true
-          },
-          {
-            "text": "Oui, si c'est une urgence et que vous portez un gilet de sécurité",
-            "is_correct": false
-          }
-        ],
-        "explanation": "S'arrêter ou se garer est interdit dans les endroits où la visibilité est limitée, comme juste après un virage dangereux. Les autres conducteurs peuvent voir votre véhicule trop tard, ce qui peut causer de graves accidents. En cas d'urgence, placez votre véhicule le plus loin possible de la chaussée et installez un triangle de signalisation."
-      },
-      "AR": {
-        "question": "هل يُسمح بالوقوف أو الركن مباشرة بعد منعطف خطير كما تشير هذه اللافتة؟",
-        "choices": [
-          {
-            "text": "لا، الوقوف أو الركن بعد منعطف خطير مباشرة محظور بسبب محدودية الرؤية للسائقين الآخرين",
-            "is_correct": true
-          },
-          {
-            "text": "نعم، إذا كانت حالة طوارئ وكنت ترتدي سترة السلامة",
-            "is_correct": false
-          }
-        ],
-        "explanation": "يُحظر الوقوف أو الركن في الأماكن ذات الرؤية المحدودة، كما هو الحال بعد منعطف خطير مباشرة. قد يرى السائقون الآخرون سيارتك متأخراً مما قد يسبب حوادث خطيرة. في حالات الطوارئ، ضع سيارتك بعيداً عن الطريق قدر الإمكان وضع مثلث التحذير."
+        "explanation": "ÙŠÙØ­Ø¸Ø± ØªØ¬Ø§ÙˆØ² Ø§Ù„Ø­ÙˆØ§Ø¬Ø² Ø­Ø¸Ø±Ø§Ù‹ Ù…Ø·Ù„Ù‚Ø§Ù‹. ØªÙ‚ØªØ±Ø¨ Ø§Ù„Ù‚Ø·Ø§Ø±Ø§Øª Ø¨Ø³Ø±Ø¹Ø© ÙˆØµÙ…ØªØ› 'Ù„Ø§ ÙŠÙˆØ¬Ø¯ Ù‚Ø·Ø§Ø± Ù…Ø±Ø¦ÙŠ' Ù„Ø§ ÙŠÙ…Ù†Ø­ Ø£ÙŠ Ø¶Ù…Ø§Ù†. Ø¹Ù„Ø§ÙˆØ© Ø¹Ù„Ù‰ Ø°Ù„Ùƒ Ù‚Ø¯ ÙŠØ£ØªÙŠ Ù‚Ø·Ø§Ø± Ø«Ø§Ù†Ù Ù…Ù† Ø§Ù„Ø§ØªØ¬Ø§Ù‡ Ø§Ù„Ø¢Ø®Ø±. Ù‡Ø°Ù‡ Ù…Ø®Ø§Ù„ÙØ© Ø®Ø·ÙŠØ±Ø© Ù‚Ø¯ ØªÙØ¶ÙŠ Ø¥Ù„Ù‰ Ø£Ø«Ù‚Ù„ Ø§Ù„ØºØ±Ø§Ù…Ø§Øª Ø§Ù„Ù…Ø±ÙˆØ±ÙŠØ© ÙˆØ­ØªÙ‰ Ø³Ø­Ø¨ Ø±Ø®ØµØ© Ø§Ù„Ù‚ÙŠØ§Ø¯Ø©."
       }
     }
   }

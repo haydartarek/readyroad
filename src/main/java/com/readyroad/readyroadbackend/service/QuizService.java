@@ -26,16 +26,15 @@ import java.util.stream.Collectors;
  * **Phase 2 Restoration:** Implemented January 18, 2026
  * **Fixed:** February 5, 2026 - LazyInitializationException resolved
  *
- * Provides basic quiz generation functionality WITHOUT Smart Quiz features:
+ * Provides basic quiz generation functionality for the current theory-question
+ * bank:
  * - ✅ Random question selection (two-step approach with @EntityGraph)
  * - ✅ Category filtering
  * - ✅ Belgian compliance validation
- * - ❌ NO 24-hour cooldown (deferred to SmartQuizService)
+ * - ❌ NO 24-hour cooldown
  * - ❌ NO user history tracking
  * - ❌ NO adaptive difficulty
  * - ❌ NO error pattern analysis
- *
- * For Smart Quiz features, see SmartQuizService (Phase 3).
  */
 @Service
 @RequiredArgsConstructor
@@ -294,7 +293,7 @@ public class QuizService {
 
     // ─────────────────────────────────────────────────────────────────────────
     // Belgian Theory Exam (practice/random) — stateless, no DB session
-    // Distribution: 20 EASY + 18 MEDIUM + 12 HARD = 50 questions
+    // Distribution: 20 EASY + 20 MEDIUM + 10 HARD = 50 questions
     // ─────────────────────────────────────────────────────────────────────────
 
     private static final int THEORY_EASY_COUNT = 20;
@@ -303,7 +302,7 @@ public class QuizService {
     private static final int THEORY_PASSING_SCORE = 41;
 
     /**
-     * Return 50 randomly selected questions (20E+18M+12H) for a Belgian theory exam
+     * Return 50 randomly selected questions (20E+20M+10H) for a Belgian theory exam
      * practice session. Shuffled so difficulty distribution is not predictable.
      * Uses 2-step native RAND() pattern to avoid full-table scans.
      */
@@ -441,10 +440,6 @@ public class QuizService {
                     .correctOptionFr(correctOption != null ? correctOption.getOptionTextFr() : null)
                     .isCorrect(isCorrect)
                     .wasTimeout(isTimeout)
-                    .explanationEn(q.getExplanationEn())
-                    .explanationAr(q.getExplanationAr())
-                    .explanationNl(q.getExplanationNl())
-                    .explanationFr(q.getExplanationFr())
                     .categoryNameEn(catEn)
                     .categoryNameAr(catAr)
                     .categoryNameNl(catNl)

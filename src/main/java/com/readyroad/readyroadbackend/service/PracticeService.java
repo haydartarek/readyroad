@@ -197,9 +197,9 @@ public class PracticeService {
         private void recordAnswerHistory(Long userId, Long questionId, boolean isCorrect, Integer timeTakenSeconds) {
                 int timeTaken = timeTakenSeconds != null ? timeTakenSeconds : 0;
 
-                // Use upsert to handle the case where the question was already shown via SmartQuiz.
+                // Use upsert to handle the case where the question was already shown previously.
                 // historyRepository.save() causes DataIntegrityViolationException (Duplicate Key)
-                // because SmartQuizService already INSERT'd a row for the same (user_id, question_ref_id).
+                // because a prior delivery may already have INSERT'd a row for the same (user_id, question_ref_id).
                 historyRepository.upsertQuestionAnswered(userId, questionId, LocalDateTime.now(), isCorrect, timeTaken);
 
                 log.debug("Recorded answer in history: userId={}, questionId={}, isCorrect={}",

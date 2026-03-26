@@ -133,7 +133,6 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.GET, "/api/lessons/**").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/questions/public").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/categories/**").permitAll()
-                        .requestMatchers(HttpMethod.GET, "/api/smart-quiz/**").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/quiz/**").permitAll()
 
                         // ═══════════════════════════════════════════════════════════

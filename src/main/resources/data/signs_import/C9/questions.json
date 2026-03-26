@@ -1,83 +1,46 @@
-[
+﻿[
   {
     "question_id": "C9_Q01",
     "type": "WHAT_DOES_IT_MEAN",
     "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE: Replace wrong answers with actual sign names from the same category.",
     "i18n": {
       "NL": {
         "question": "Wat betekent dit verkeersbord?",
         "choices": [
-          {
-            "text": "Verboden toegang voor bestuurders van bromfietsen",
-            "is_correct": true
-          },
-          {
-            "text": "Voorrang verlenen",
-            "is_correct": false
-          },
-          {
-            "text": "Gevaar op de weg",
-            "is_correct": false
-          }
+          { "text": "Verboden toegang voor bestuurders van bromfietsen: bromfietsen mogen deze weg niet oprijden", "is_correct": true },
+          { "text": "Verboden richting voor alle bestuurders: geen enkel voertuig mag deze weg oprijden (dat is C1)", "is_correct": false },
+          { "text": "Verboden toegang voor motorrijders: motorfietsen mogen deze weg niet oprijden (dat is C13)", "is_correct": false }
         ],
-        "explanation": "Verboden toegang voor bromfietsen."
+        "explanation": "C9 geldt uitsluitend voor bromfietsen (klasse A en B). C1 verbiedt alle bestuurders; C13 verbiedt motorfietsen. Andere weggebruikers worden door C9 niet getroffen."
       },
       "EN": {
         "question": "What does this traffic sign mean?",
         "choices": [
-          {
-            "text": "No moped riders",
-            "is_correct": true
-          },
-          {
-            "text": "Give way",
-            "is_correct": false
-          },
-          {
-            "text": "Danger on the road",
-            "is_correct": false
-          }
+          { "text": "No entry for moped riders: mopeds are not allowed on this road", "is_correct": true },
+          { "text": "No entry for all vehicles: no vehicle may use this road (that is C1)", "is_correct": false },
+          { "text": "No entry for motorcycle riders: motorcycles may not enter this road (that is C13)", "is_correct": false }
         ],
-        "explanation": "No entry for mopeds."
+        "explanation": "C9 applies exclusively to mopeds (class A and B). C1 prohibits all drivers; C13 prohibits motorcycles. Other road users are not affected by C9."
       },
       "FR": {
         "question": "Que signifie ce panneau de signalisation ?",
         "choices": [
-          {
-            "text": "Accès interdit aux conducteurs de cyclomoteurs",
-            "is_correct": true
-          },
-          {
-            "text": "Cédez le passage",
-            "is_correct": false
-          },
-          {
-            "text": "Danger sur la route",
-            "is_correct": false
-          }
+          { "text": "Acces interdit aux conducteurs de cyclomoteurs: les cyclomoteurs ne peuvent pas emprunter cette route", "is_correct": true },
+          { "text": "Sens interdit pour tous les conducteurs: aucun vehicule ne peut emprunter cette route (c'est C1)", "is_correct": false },
+          { "text": "Acces interdit aux motocyclistes: les motos ne peuvent pas entrer sur cette route (c'est C13)", "is_correct": false }
         ],
-        "explanation": "Accès interdit aux cyclomoteurs."
+        "explanation": "C9 s'applique exclusivement aux cyclomoteurs (classe A et B). C1 interdit tous les conducteurs; C13 interdit les motocycles. Les autres usagers de la route ne sont pas concernes par C9."
       },
       "AR": {
-        "question": "ماذا تعني لافتة المرور هذه؟",
+        "question": "Ù…Ø§ Ù…Ø¹Ù†Ù‰ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ",
         "choices": [
-          {
-            "text": "ممنوع دخول سائقي الدراجات النارية",
-            "is_correct": true
-          },
-          {
-            "text": "أعطِ الأولوية",
-            "is_correct": false
-          },
-          {
-            "text": "خطر على الطريق",
-            "is_correct": false
-          }
+          { "text": "Ù…Ù…Ù†ÙˆØ¹ Ø¯Ø®ÙˆÙ„ Ø³Ø§Ø¦Ù‚ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ù„Ø¨Ø®Ø§Ø±ÙŠØ© Ø§Ù„ØµØºÙŠØ±Ø©: Ù„Ø§ ÙŠØ³Ù…Ø­ Ù„Ù‡Ø§ Ø¨Ø§Ù„Ø¯Ø®ÙˆÙ„ Ø¥Ù„Ù‰ Ù‡Ø°Ø§ Ø§Ù„Ø·Ø±ÙŠÙ‚", "is_correct": true },
+          { "text": "Ù…Ù…Ù†ÙˆØ¹ Ø§Ù„Ø¯Ø®ÙˆÙ„ Ù„Ø¬Ù…ÙŠØ¹ Ø§Ù„Ø³Ø§Ø¦Ù‚ÙŠÙ†: Ù„Ø§ ÙŠØ­Ù‚ Ù„Ø£ÙŠ Ù…Ø±ÙƒØ¨Ø© Ø¯Ø®ÙˆÙ„ Ù‡Ø°Ø§ Ø§Ù„Ø·Ø±ÙŠÙ‚ (ØªÙ„Ùƒ Ù‡ÙŠ C1)", "is_correct": false },
+          { "text": "Ù…Ù…Ù†ÙˆØ¹ Ø¯Ø®ÙˆÙ„ Ø³Ø§Ø¦Ù‚ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ù„Ù†Ø§Ø±ÙŠØ©: Ø§Ù„Ù…ÙˆØªÙˆØ³ÙŠÙƒÙ„Ø§Øª Ù…Ù…Ù†ÙˆØ¹Ø© Ù…Ù† Ø§Ù„Ø¯Ø®ÙˆÙ„ (ØªÙ„Ùƒ Ù‡ÙŠ C13)", "is_correct": false }
         ],
-        "explanation": "لا يوجد دخول للدراجات البخارية."
+        "explanation": "ØªÙ†Ø·Ø¨Ù‚ C9 Ø­ØµØ±Ø§Ù‹ Ø¹Ù„Ù‰ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ù„Ø¨Ø®Ø§Ø±ÙŠØ© Ø§Ù„ØµØºÙŠØ±Ø© (ÙØ¦Ø© A ÙˆB). C1 ØªØ­Ø¸Ø± Ø¬Ù…ÙŠØ¹ Ø§Ù„Ø³Ø§Ø¦Ù‚ÙŠÙ†Ø› C13 ØªØ­Ø¸Ø± Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ù„Ù†Ø§Ø±ÙŠØ©. Ù„Ø§ ØªØªØ£Ø«Ø± Ø¨Ù€C9 ÙØ¦Ø§Øª Ø§Ù„Ù…Ø³ØªØ®Ø¯Ù…ÙŠÙ† Ø§Ù„Ø£Ø®Ø±Ù‰."
       }
     }
   },
@@ -87,161 +50,87 @@
     "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE: Ready to use — category identification question.",
     "i18n": {
       "NL": {
         "question": "Tot welke categorie verkeerstekens behoort dit bord?",
         "choices": [
-          {
-            "text": "Verbodsborden (C-reeks)",
-            "is_correct": true
-          },
-          {
-            "text": "Gevaarsborden (A-reeks)",
-            "is_correct": false
-          },
-          {
-            "text": "Gebodsborden (D-reeks)",
-            "is_correct": false
-          }
+          { "text": "Verbodsborden (C-reeks): ronde borden met rode rand op witte achtergrond", "is_correct": true },
+          { "text": "Gevaarsborden (A-reeks): driehoekige borden met rode rand", "is_correct": false },
+          { "text": "Aanwijzingsborden (D-reeks): borden met blauwe achtergrond", "is_correct": false }
         ],
-        "explanation": "Dit bord behoort tot de categorie 'Verbodsborden (C-reeks)'. Elk type bord heeft een specifieke vorm en kleurschema."
+        "explanation": "C9 behoort tot de verbodsborden (C-reeks). Ze zijn rond met een rode rand op witte achtergrond. Gevaarsborden (A) zijn driehoekig; aanwijzingsborden (D) zijn blauw."
       },
       "EN": {
         "question": "To which category of traffic signs does this sign belong?",
         "choices": [
-          {
-            "text": "Prohibition signs (C-series)",
-            "is_correct": true
-          },
-          {
-            "text": "Danger signs (A-series)",
-            "is_correct": false
-          },
-          {
-            "text": "Mandatory signs (D-series)",
-            "is_correct": false
-          }
+          { "text": "Prohibition signs (C-series): round signs with a red border on a white background", "is_correct": true },
+          { "text": "Danger signs (A-series): triangular signs with a red border", "is_correct": false },
+          { "text": "Compulsory signs (D-series): signs with a blue background", "is_correct": false }
         ],
-        "explanation": "This sign belongs to the 'Prohibition signs (C-series)' category. Each type of sign has a specific shape and color scheme."
+        "explanation": "C9 belongs to the prohibition signs (C-series). They are round with a red border on a white background. Danger signs (A) are triangular; compulsory signs (D) are blue."
       },
       "FR": {
-        "question": "À quelle catégorie de panneaux de signalisation ce panneau appartient-il ?",
+        "question": "A quelle categorie de panneaux de signalisation ce panneau appartient-il ?",
         "choices": [
-          {
-            "text": "Panneaux d'interdiction (série C)",
-            "is_correct": true
-          },
-          {
-            "text": "Panneaux de danger (série A)",
-            "is_correct": false
-          },
-          {
-            "text": "Panneaux d'obligation (série D)",
-            "is_correct": false
-          }
+          { "text": "Panneaux d'interdiction (serie C): panneaux ronds a bordure rouge sur fond blanc", "is_correct": true },
+          { "text": "Panneaux de danger (serie A): panneaux triangulaires a bordure rouge", "is_correct": false },
+          { "text": "Panneaux d'obligation (serie D): panneaux a fond bleu", "is_correct": false }
         ],
-        "explanation": "Ce panneau appartient à la catégorie 'Panneaux d'interdiction (série C)'. Chaque type de panneau a une forme et un schéma de couleurs spécifiques."
+        "explanation": "C9 appartient aux panneaux d'interdiction (serie C). Ils sont ronds avec une bordure rouge sur fond blanc. Les panneaux de danger (A) sont triangulaires; les panneaux d'obligation (D) sont bleus."
       },
       "AR": {
-        "question": "إلى أي فئة من لافتات المرور تنتمي هذه اللافتة؟",
+        "question": "Ø¥Ù„Ù‰ Ø£ÙŠ ÙØ¦Ø© Ù…Ù† Ù„Ø§ÙØªØ§Øª Ø§Ù„Ù…Ø±ÙˆØ± ØªÙ†ØªÙ…ÙŠ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ",
         "choices": [
-          {
-            "text": "لافتات الحظر (سلسلة C)",
-            "is_correct": true
-          },
-          {
-            "text": "لافتات الخطر (سلسلة A)",
-            "is_correct": false
-          },
-          {
-            "text": "لافتات الإلزام (سلسلة D)",
-            "is_correct": false
-          }
+          { "text": "Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø­Ø¸Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© C): Ù„Ø§ÙØªØ§Øª Ø¯Ø§Ø¦Ø±ÙŠØ© Ø¨Ø­Ø§ÙØ© Ø­Ù…Ø±Ø§Ø¡ Ø¹Ù„Ù‰ Ø®Ù„ÙÙŠØ© Ø¨ÙŠØ¶Ø§Ø¡", "is_correct": true },
+          { "text": "Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© A): Ù„Ø§ÙØªØ§Øª Ù…Ø«Ù„Ø«Ø© Ø¨Ø­Ø§ÙØ© Ø­Ù…Ø±Ø§Ø¡", "is_correct": false },
+          { "text": "Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø¥Ù„Ø²Ø§Ù… (Ø§Ù„Ø³Ù„Ø³Ù„Ø© D): Ù„Ø§ÙØªØ§Øª Ø¨Ø®Ù„ÙÙŠØ© Ø²Ø±Ù‚Ø§Ø¡", "is_correct": false }
         ],
-        "explanation": "هذه اللافتة تنتمي إلى فئة 'لافتات الحظر (سلسلة C)'. كل نوع من اللافتات له شكل ونظام ألوان محدد."
+        "explanation": "ØªÙ†ØªÙ…ÙŠ C9 Ø¥Ù„Ù‰ Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø­Ø¸Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© C). ÙˆÙ‡ÙŠ Ø¯Ø§Ø¦Ø±ÙŠØ© Ø¨Ø­Ø§ÙØ© Ø­Ù…Ø±Ø§Ø¡ Ø¹Ù„Ù‰ Ø®Ù„ÙÙŠØ© Ø¨ÙŠØ¶Ø§Ø¡. Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± (A) Ù…Ø«Ù„Ø«Ø©Ø› Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø¥Ù„Ø²Ø§Ù… (D) Ø²Ø±Ù‚Ø§Ø¡."
       }
     }
   },
   {
     "question_id": "C9_Q03",
-    "type": "WHAT_MUST_YOU_DO",
-    "difficulty": "MEDIUM",
+    "type": "HAZARD_IDENTIFICATION",
+    "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE (MEDIUM): Replace with sign-specific question for production.",
     "i18n": {
       "NL": {
-        "question": "Is de actie die dit verbodsbord aanduidt toegestaan?",
+        "question": "Op welke weggebruikers is de beperking van dit bord van toepassing?",
         "choices": [
-          {
-            "text": "Nee, de actie is verboden voor alle of bepaalde weggebruikers",
-            "is_correct": true
-          },
-          {
-            "text": "Ja, de actie is altijd toegestaan",
-            "is_correct": false
-          },
-          {
-            "text": "Alleen verboden voor vrachtwagens",
-            "is_correct": false
-          }
+          { "text": "Uitsluitend op bestuurders van bromfietsen (klasse A en B)", "is_correct": true },
+          { "text": "Op alle tweewielers, inclusief fietsers op gewone trapfietsen", "is_correct": false },
+          { "text": "Op alle motorvoertuigen, inclusief personenwagens", "is_correct": false }
         ],
-        "explanation": "Verbodsborden verbieden een bepaalde actie. Het overtreden ervan is een zware overtreding met hoge boetes."
+        "explanation": "C9 verbiedt enkel bromfietsen (klasse A: max 45 km/u, en klasse B: speed pedelecs). Gewone fietsers en autobestuurders worden niet getroffen. Wil men ook andere voertuigen weren, dan zijn aanvullende borden nodig."
       },
       "EN": {
-        "question": "Is the action indicated by this prohibition sign permitted?",
+        "question": "To which road users does the restriction of this sign apply?",
         "choices": [
-          {
-            "text": "No, the action is prohibited for all or specific road users",
-            "is_correct": true
-          },
-          {
-            "text": "Yes, the action is always permitted",
-            "is_correct": false
-          },
-          {
-            "text": "Only prohibited for trucks",
-            "is_correct": false
-          }
+          { "text": "Exclusively to moped riders (class A and B mopeds)", "is_correct": true },
+          { "text": "To all two-wheelers, including cyclists on regular pedal bicycles", "is_correct": false },
+          { "text": "To all motor vehicles, including passenger cars", "is_correct": false }
         ],
-        "explanation": "Prohibition signs forbid a specific action. Violating them is a serious offense with heavy fines."
+        "explanation": "C9 only prohibits mopeds (class A: max 45 km/h, and class B: speed pedelecs). Regular cyclists and car drivers are not affected. To exclude other vehicles, additional signs are required."
       },
       "FR": {
-        "question": "L'action indiquée par ce panneau d'interdiction est-elle autorisée ?",
+        "question": "A quels usagers de la route la restriction de ce panneau s'applique-t-elle ?",
         "choices": [
-          {
-            "text": "Non, la action est interdite pour tous ou certains usagers de la route",
-            "is_correct": true
-          },
-          {
-            "text": "Oui, l'action est toujours autorisée",
-            "is_correct": false
-          },
-          {
-            "text": "Seulement interdit aux camions",
-            "is_correct": false
-          }
+          { "text": "Exclusivement aux conducteurs de cyclomoteurs (classe A et B)", "is_correct": true },
+          { "text": "A tous les deux-roues, y compris les cyclistes sur des velos ordinaires a pedales", "is_correct": false },
+          { "text": "A tous les vehicules a moteur, y compris les voitures particulieres", "is_correct": false }
         ],
-        "explanation": "Les panneaux d'interdiction interdisent une action. Les violer est une infraction grave."
+        "explanation": "C9 interdit uniquement les cyclomoteurs (classe A: max 45 km/h, et classe B: speed pedelecs). Les cyclistes ordinaires et les automobilistes ne sont pas concernes. Pour exclure d'autres vehicules, des panneaux supplementaires sont necessaires."
       },
       "AR": {
-        "question": "هل الإجراء الذي تشير إليه لافتة الحظر هذه مسموح به؟",
+        "question": "Ø¹Ù„Ù‰ Ø£ÙŠ Ù…Ø³ØªØ®Ø¯Ù…ÙŠ Ø§Ù„Ø·Ø±ÙŠÙ‚ ÙŠÙ†Ø·Ø¨Ù‚ Ø§Ù„Ø­Ø¸Ø± Ø§Ù„Ù…ÙØ±ÙˆØ¶ Ø¨Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ",
         "choices": [
-          {
-            "text": "لا، الإجراء محظور لجميع مستخدمي الطريق أو بعضهم",
-            "is_correct": true
-          },
-          {
-            "text": "نعم، الإجراء مسموح به دائماً",
-            "is_correct": false
-          },
-          {
-            "text": "محظور فقط للشاحنات",
-            "is_correct": false
-          }
+          { "text": "Ø­ØµØ±Ø§Ù‹ Ø¹Ù„Ù‰ Ø³Ø§Ø¦Ù‚ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ù„Ø¨Ø®Ø§Ø±ÙŠØ© Ø§Ù„ØµØºÙŠØ±Ø© (ÙØ¦Ø© A ÙˆB)", "is_correct": true },
+          { "text": "Ø¹Ù„Ù‰ Ø¬Ù…ÙŠØ¹ Ø°ÙˆÙŠ Ø§Ù„Ø¹Ø¬Ù„ØªÙŠÙ† Ø¨Ù…Ø§ ÙÙŠÙ‡Ù… Ø±Ø§ÙƒØ¨Ùˆ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ù„Ø¹Ø§Ø¯ÙŠØ©", "is_correct": false },
+          { "text": "Ø¹Ù„Ù‰ Ø¬Ù…ÙŠØ¹ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø°Ø§Øª Ø§Ù„Ù…Ø­Ø±Ùƒ Ø¨Ù…Ø§ ÙÙŠÙ‡Ø§ Ø§Ù„Ø³ÙŠØ§Ø±Ø§Øª Ø§Ù„Ø®Ø§ØµØ©", "is_correct": false }
         ],
-        "explanation": "لافتات الحظر تمنع إجراءً محدداً. انتهاكها يعد مخالفة خطيرة مع غرامات ثقيلة."
+        "explanation": "ØªØ­Ø¸Ø± C9 Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ù„Ø¨Ø®Ø§Ø±ÙŠØ© Ø§Ù„ØµØºÙŠØ±Ø© ÙÙ‚Ø· (ÙØ¦Ø© A: Ø£Ù‚ØµÙ‰ 45 ÙƒÙ…/Ø³Ø§Ø¹Ø©ØŒ ÙˆÙØ¦Ø© B: Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ù„ÙƒÙ‡Ø±Ø¨Ø§Ø¦ÙŠØ© Ø§Ù„Ø³Ø±ÙŠØ¹Ø©). Ø§Ù„Ø¯Ø±Ø§Ø¬ÙˆÙ† Ø§Ù„Ø¹Ø§Ø¯ÙŠÙˆÙ† ÙˆØ³Ø§Ø¦Ù‚Ùˆ Ø§Ù„Ø³ÙŠØ§Ø±Ø§Øª Ù„Ø§ ÙŠØªØ£Ø«Ø±ÙˆÙ†. Ù„Ø§Ø³ØªØ¨Ø¹Ø§Ø¯ Ù…Ø±ÙƒØ¨Ø§Øª Ø£Ø®Ø±Ù‰ ØªÙ†ØµØ¨ Ù„Ø§ÙØªØ§Øª Ø¥Ø¶Ø§ÙÙŠØ©."
       }
     }
   },
@@ -251,2170 +140,214 @@
     "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE (MEDIUM): Replace with sign-specific question for production.",
     "i18n": {
       "NL": {
-        "question": "Wat is de gevolg van het negeren van een verbodsbord?",
+        "question": "U rijdt op uw bromfiets en ziet bord C9. Wat doet u?",
         "choices": [
-          {
-            "text": "Zware verkeersboete en mogelijk strafrechtelijke vervolging",
-            "is_correct": true
-          },
-          {
-            "text": "Slechts een mondelinge waarschuwing",
-            "is_correct": false
-          },
-          {
-            "text": "Geen gevolgen als er geen ongeluk plaatsvindt",
-            "is_correct": false
-          }
+          { "text": "Omdraaien en een alternatieve route nemen; de weg is verboden voor bromfietsen", "is_correct": true },
+          { "text": "Afstappen en de bromfiets te voet meenemen; dat maakt het verbod ongeldig", "is_correct": false },
+          { "text": "Langzaam doorrijden want het verbod geldt alleen tijdens drukke uren", "is_correct": false }
         ],
-        "explanation": "Verbodsborden zijn wettelijk bindend. Negeren kan leiden tot zware boetes, verlies van rijbewijs en strafrechtelijke vervolging."
+        "explanation": "C9 verbiedt bromfietsen toegang tot de weg, ongeacht het tijdstip en ongeacht of u rijdt of te voet loopt. Een bromfiets te voet meenemen heft het verbod niet op. U moet een andere route kiezen."
       },
       "EN": {
-        "question": "What is the consequence of ignoring a prohibition sign?",
+        "question": "You are riding your moped and see sign C9. What do you do?",
         "choices": [
-          {
-            "text": "Heavy traffic fine and possible criminal prosecution",
-            "is_correct": true
-          },
-          {
-            "text": "Only an oral warning",
-            "is_correct": false
-          },
-          {
-            "text": "No consequences if no accident occurs",
-            "is_correct": false
-          }
+          { "text": "Turn around and take an alternative route; the road is prohibited for mopeds", "is_correct": true },
+          { "text": "Dismount and walk with your moped; that makes the prohibition invalid", "is_correct": false },
+          { "text": "Continue slowly because the prohibition only applies during busy hours", "is_correct": false }
         ],
-        "explanation": "Prohibition signs are legally binding. Ignoring them can lead to heavy fines, loss of licence, and criminal prosecution."
+        "explanation": "C9 prohibits mopeds from accessing the road regardless of the time and regardless of whether you are riding or walking. Walking a moped does not lift the prohibition. You must choose another route."
       },
       "FR": {
-        "question": "Quelle est la conséquence d'ignorer un panneau d'interdiction ?",
+        "question": "Vous roulez en cyclomoteur et vous voyez le panneau C9. Que faites-vous ?",
         "choices": [
-          {
-            "text": "Lourde amende de circulation et poursuite pénale possible",
-            "is_correct": true
-          },
-          {
-            "text": "Seulement un avertissement oral",
-            "is_correct": false
-          },
-          {
-            "text": "Aucune conséquence s'il n'y a pas d'accident",
-            "is_correct": false
-          }
+          { "text": "Faire demi-tour et prendre un itineraire alternatif; la route est interdite aux cyclomoteurs", "is_correct": true },
+          { "text": "Descendre et pousser le cyclomoteur a pied; cela rend l'interdiction invalide", "is_correct": false },
+          { "text": "Continuer lentement car l'interdiction ne s'applique que pendant les heures chargees", "is_correct": false }
         ],
-        "explanation": "Les panneaux sont contraignants. Les ignorer peut mener à de lourdes amendes et des poursuites pénales."
+        "explanation": "C9 interdit aux cyclomoteurs l'acces a la route, quel que soit le moment et que vous rouliez ou marchiez. Pousser un cyclomoteur a pied ne leve pas l'interdiction. Vous devez choisir un autre itineraire."
       },
       "AR": {
-        "question": "ما هي عواقب تجاهل لافتة الحظر؟",
+        "question": "Ø£Ù†Øª ØªÙ‚ÙˆØ¯ Ø¯Ø±Ø§Ø¬ØªÙƒ Ø§Ù„Ø¨Ø®Ø§Ø±ÙŠØ© Ø§Ù„ØµØºÙŠØ±Ø© ÙˆØªØ±Ù‰ Ø§Ù„Ù„Ø§ÙØªØ© C9. Ù…Ø§Ø°Ø§ ØªÙØ¹Ù„ØŸ",
         "choices": [
-          {
-            "text": "غرامة مرور ثقيلة وملاحقة جنائية محتملة",
-            "is_correct": true
-          },
-          {
-            "text": "تحذير شفهي فقط",
-            "is_correct": false
-          },
-          {
-            "text": "لا عواقب إذا لم يحدث حادث",
-            "is_correct": false
-          }
+          { "text": "Ø§Ù„Ø§Ù†Ø¹Ø·Ø§Ù ÙˆØ§Ù„Ø¹ÙˆØ¯Ø© ÙˆØ§Ø®ØªÙŠØ§Ø± Ù…Ø³Ø§Ø± Ø¨Ø¯ÙŠÙ„Ø› Ø§Ù„Ø·Ø±ÙŠÙ‚ Ù…Ø­Ø¸ÙˆØ± Ø¹Ù„Ù‰ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ù„Ø¨Ø®Ø§Ø±ÙŠØ© Ø§Ù„ØµØºÙŠØ±Ø©", "is_correct": true },
+          { "text": "Ø§Ù„Ù†Ø²ÙˆÙ„ Ù…Ù† Ø§Ù„Ø¯Ø±Ø§Ø¬Ø© ÙˆØ³Ø­Ø¨Ù‡Ø§ Ø³ÙŠØ±Ø§Ù‹ Ø¹Ù„Ù‰ Ø§Ù„Ø£Ù‚Ø¯Ø§Ù… Ù„Ø£Ù† Ø°Ù„Ùƒ ÙŠÙ„ØºÙŠ Ø§Ù„Ø­Ø¸Ø±", "is_correct": false },
+          { "text": "Ø§Ù„Ø§Ø³ØªÙ…Ø±Ø§Ø± Ø¨Ø¨Ø·Ø¡ Ù„Ø£Ù† Ø§Ù„Ø­Ø¸Ø± ÙŠÙ†Ø·Ø¨Ù‚ ÙÙ‚Ø· ÙÙŠ Ø£ÙˆÙ‚Ø§Øª Ø§Ù„Ø§Ø²Ø¯Ø­Ø§Ù…", "is_correct": false }
         ],
-        "explanation": "لافتات الحظر ملزمة قانونياً. تجاهلها قد يؤدي إلى غرامات ثقيلة وفقدان الرخصة وملاحقة جنائية."
+        "explanation": "ØªØ­Ø¸Ø± C9 Ø¹Ù„Ù‰ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ù„Ø¨Ø®Ø§Ø±ÙŠØ© Ø§Ù„ØµØºÙŠØ±Ø© Ø§Ù„ÙˆØµÙˆÙ„ Ø¥Ù„Ù‰ Ù‡Ø°Ø§ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø¨ØµØ±Ù Ø§Ù„Ù†Ø¸Ø± Ø¹Ù† Ø§Ù„ÙˆÙ‚Øª ÙˆØ¨ØµØ±Ù Ø§Ù„Ù†Ø¸Ø± Ø¹Ù† ÙƒÙˆÙ†Ùƒ ØªÙ‚ÙˆØ¯ Ø£Ùˆ ØªØ³ÙŠØ±. Ø¯ÙØ¹ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø© Ø³ÙŠØ±Ø§Ù‹ Ù„Ø§ ÙŠØ±ÙØ¹ Ø§Ù„Ø­Ø¸Ø±. ÙŠØ¬Ø¨ Ø§Ø®ØªÙŠØ§Ø± Ù…Ø³Ø§Ø± Ø¢Ø®Ø±."
       }
     }
   },
   {
     "question_id": "C9_Q05",
-    "type": "IS_IT_ALLOWED",
-    "difficulty": "HARD",
-    "is_critical": true,
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE (HARD): Replace with sign-specific question for production.",
     "i18n": {
       "NL": {
-        "question": "Is de actie aangeduid door dit verbodsbord ooit toegestaan voor gewone weggebruikers?",
+        "question": "U bent per vergissing op uw bromfiets een door C9 verboden weg opgereden. Wat doet u?",
         "choices": [
-          {
-            "text": "Nee, de verboden actie is nooit toegestaan voor gewone weggebruikers",
-            "is_correct": true
-          },
-          {
-            "text": "Ja, in dringende situaties is de verboden actie altijd toegestaan",
-            "is_correct": false
-          }
+          { "text": "Zo snel en veilig mogelijk omdraaien en de weg op de juiste manier verlaten", "is_correct": true },
+          { "text": "Doorrijden tot de volgende kruising en van daar een andere weg nemen", "is_correct": false },
+          { "text": "Stoppen en ter plaatse wachten op aanwijzingen van de politie", "is_correct": false }
         ],
-        "explanation": "Verbodsborden zijn bindend voor alle gewone weggebruikers. Uitzonderingen gelden alleen voor specifieke voertuigen zoals hulpdiensten in noodsituaties."
+        "explanation": "U moet de verboden weg zo snel mogelijk verlaten op de veiligste manier. Doorrijden vergroot de begane overtreding. Stoppen midden op de rijbaan vormt een gevaar voor het overige verkeer."
       },
       "EN": {
-        "question": "Is the action indicated by this prohibition sign ever permitted for ordinary road users?",
+        "question": "You have mistakenly ridden your moped onto a road prohibited by C9. What do you do?",
         "choices": [
-          {
-            "text": "No, the prohibited action is never permitted for ordinary road users",
-            "is_correct": true
-          },
-          {
-            "text": "Yes, in urgent situations the prohibited action is always permitted",
-            "is_correct": false
-          }
+          { "text": "Turn around as quickly and safely as possible and leave the road the correct way", "is_correct": true },
+          { "text": "Continue to the next junction and then take a different road from there", "is_correct": false },
+          { "text": "Stop and wait on the spot for instructions from the police", "is_correct": false }
         ],
-        "explanation": "Prohibition signs are binding for all ordinary road users. Exceptions apply only to specific vehicles such as emergency services in emergency situations."
+        "explanation": "You must leave the prohibited road as quickly as possible in the safest way. Continuing increases the offence already committed. Stopping in the middle of the road creates a danger for other traffic."
       },
       "FR": {
-        "question": "L'action indiquée par ce panneau d'interdiction est-elle jamais permise aux usagers ordinaires de la route ?",
+        "question": "Vous avez emprunte par erreur en cyclomoteur une route interdite par C9. Que faites-vous ?",
         "choices": [
-          {
-            "text": "Non, l'action interdite n'est jamais permise aux usagers ordinaires de la route",
-            "is_correct": true
-          },
-          {
-            "text": "Oui, dans les situations urgentes, l'action interdite est toujours permise",
-            "is_correct": false
-          }
+          { "text": "Faire demi-tour aussi vite et aussi surement que possible et quitter la route correctement", "is_correct": true },
+          { "text": "Continuer jusqu'au prochain carrefour et prendre ensuite une autre route", "is_correct": false },
+          { "text": "S'arreter sur place et attendre les instructions de la police", "is_correct": false }
         ],
-        "explanation": "Les panneaux d'interdiction sont contraignants pour tous les usagers ordinaires. Des exceptions s'appliquent uniquement aux véhicules d'urgence."
+        "explanation": "Vous devez quitter la route interdite le plus vite et le plus surement possible. Continuer aggrave l'infraction deja commise. S'arreter au milieu de la chaussee constitue un danger pour les autres usagers."
       },
       "AR": {
-        "question": "هل الإجراء المشار إليه بلافتة الحظر هذه مسموح به أحياناً لمستخدمي الطريق العاديين؟",
+        "question": "Ø¯Ø®Ù„Øª Ø¨Ø¯Ø±Ø§Ø¬ØªÙƒ Ø§Ù„Ø¨Ø®Ø§Ø±ÙŠØ© Ø§Ù„ØµØºÙŠØ±Ø© Ø¹Ù† Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø®Ø·Ø£ Ø·Ø±ÙŠÙ‚Ø§Ù‹ Ù…Ø­Ø¸ÙˆØ±Ø§Ù‹ Ø¨Ù…ÙˆØ¬Ø¨ C9. Ù…Ø§Ø°Ø§ ØªÙØ¹Ù„ØŸ",
         "choices": [
-          {
-            "text": "لا، الإجراء المحظور لا يُسمح به أبداً لمستخدمي الطريق العاديين",
-            "is_correct": true
-          },
-          {
-            "text": "نعم، في الحالات العاجلة الإجراء المحظور مسموح به دائماً",
-            "is_correct": false
-          }
+          { "text": "Ø§Ù„Ø§Ù†Ø¹Ø·Ø§Ù Ø¨Ø£Ø³Ø±Ø¹ ÙˆØ£Ø£Ù…Ù† Ù…Ø§ ÙŠÙ…ÙƒÙ† ÙˆÙ…ØºØ§Ø¯Ø±Ø© Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø¨Ø§Ù„Ø·Ø±ÙŠÙ‚Ø© Ø§Ù„ØµØ­ÙŠØ­Ø©", "is_correct": true },
+          { "text": "Ø§Ù„Ø§Ø³ØªÙ…Ø±Ø§Ø± Ø­ØªÙ‰ Ø§Ù„ØªÙ‚Ø§Ø·Ø¹ Ø§Ù„ØªØ§Ù„ÙŠ Ø«Ù… Ø§Ø®ØªÙŠØ§Ø± Ø·Ø±ÙŠÙ‚ Ø¢Ø®Ø± Ù…Ù† Ù‡Ù†Ø§Ùƒ", "is_correct": false },
+          { "text": "Ø§Ù„ØªÙˆÙ‚Ù ÙÙŠ Ù…ÙƒØ§Ù†Ùƒ ÙˆØ§Ù†ØªØ¸Ø§Ø± ØªØ¹Ù„ÙŠÙ…Ø§Øª Ø§Ù„Ø´Ø±Ø·Ø©", "is_correct": false }
         ],
-        "explanation": "لافتات الحظر ملزمة لجميع مستخدمي الطريق العاديين. الاستثناءات تنطبق فقط على مركبات محددة كخدمات الطوارئ."
+        "explanation": "ÙŠØ¬Ø¨ Ù…ØºØ§Ø¯Ø±Ø© Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ù…Ø­Ø¸ÙˆØ± Ø¨Ø£Ø³Ø±Ø¹ ÙˆÙ‚Øª Ù…Ù…ÙƒÙ† ÙˆØ¨Ø£Ø£Ù…Ù† Ø·Ø±ÙŠÙ‚Ø©. Ø§Ù„Ø§Ø³ØªÙ…Ø±Ø§Ø± ÙŠÙØ§Ù‚Ù… Ø§Ù„Ù…Ø®Ø§Ù„ÙØ© Ø§Ù„Ù…Ø±ØªÙƒØ¨Ø©. Ø§Ù„ØªÙˆÙ‚Ù ÙÙŠ Ù…Ù†ØªØµÙ Ø§Ù„Ø·Ø±ÙŠÙ‚ ÙŠØ´ÙƒÙ‘Ù„ Ø®Ø·Ø±Ø§Ù‹ Ø¹Ù„Ù‰ Ø¨Ù‚ÙŠØ© Ø­Ø±ÙƒØ© Ø§Ù„Ù…Ø±ÙˆØ±."
       }
     }
   },
   {
     "question_id": "C9_Q06",
-    "type": "WHAT_DOES_IT_MEAN",
-    "difficulty": "EASY",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat verbiedt verkeersbord C9?",
+        "question": "U rijdt op een speed pedelec (klasse B bromfiets). Geldt bord C9 ook voor u?",
         "choices": [
-          {
-            "text": "Verboden toegang voor bestuurders van bromfietsen",
-            "is_correct": true
-          },
-          {
-            "text": "Verboden toegang voor fietsers",
-            "is_correct": false
-          },
-          {
-            "text": "Verboden toegang voor bestuurders van rijwielen met motor",
-            "is_correct": false
-          }
+          { "text": "Ja, een speed pedelec is wettelijk een bromfiets klasse B en valt volledig onder de werking van C9", "is_correct": true },
+          { "text": "Neen, een speed pedelec is een elektrisch trapvoertuig en wordt behandeld als een gewone fiets", "is_correct": false },
+          { "text": "Alleen als er een aanvullend pictogram van een speed pedelec aan het bord is bevestigd", "is_correct": false }
         ],
-        "explanation": "Verboden toegang voor bestuurders van bromfietsen."
+        "explanation": "In Belgie wordt een speed pedelec (elektrische fiets die sneller gaat dan 25 km/u) geclassificeerd als bromfiets klasse B. C9 is dus van toepassing, ook zonder extra pictogram aan het bord."
       },
       "EN": {
-        "question": "What does traffic sign C9 prohibit?",
+        "question": "You are riding a speed pedelec (class B moped). Does sign C9 also apply to you?",
         "choices": [
-          {
-            "text": "No entry for moped riders",
-            "is_correct": true
-          },
-          {
-            "text": "No entry for cyclists",
-            "is_correct": false
-          },
-          {
-            "text": "No entry for motorised two-wheelers",
-            "is_correct": false
-          }
+          { "text": "Yes, a speed pedelec is legally a class B moped and falls fully under C9", "is_correct": true },
+          { "text": "No, a speed pedelec is an electric pedal vehicle and is treated as a regular bicycle", "is_correct": false },
+          { "text": "Only if an additional speed pedelec pictogram is attached to the sign", "is_correct": false }
         ],
-        "explanation": "No entry for moped riders."
+        "explanation": "In Belgium a speed pedelec (electric bicycle that exceeds 25 km/h) is classified as a class B moped. C9 therefore applies, even without an extra pictogram on the sign."
       },
       "FR": {
-        "question": "Qu'interdit le panneau de signalisation C9 ?",
+        "question": "Vous roulez en speed pedelec (cyclomoteur de classe B). Le panneau C9 s'applique-t-il aussi a vous ?",
         "choices": [
-          {
-            "text": "Accès interdit aux conducteurs de cyclomoteurs",
-            "is_correct": true
-          },
-          {
-            "text": "Accès interdit aux cyclistes",
-            "is_correct": false
-          },
-          {
-            "text": "Accès interdit aux conducteurs de véhicules à moteur à deux roues",
-            "is_correct": false
-          }
+          { "text": "Oui, un speed pedelec est legalement un cyclomoteur de classe B et releve entierement de C9", "is_correct": true },
+          { "text": "Non, un speed pedelec est un vehicule electrique a pedales et est traite comme un velo ordinaire", "is_correct": false },
+          { "text": "Seulement si un pictogramme de speed pedelec supplementaire est fixe au panneau", "is_correct": false }
         ],
-        "explanation": "Accès interdit aux conducteurs de cyclomoteurs."
+        "explanation": "En Belgique, un speed pedelec (velo electrique depassant 25 km/h) est classifie comme cyclomoteur de classe B. C9 s'applique donc, meme sans pictogramme supplementaire sur le panneau."
       },
       "AR": {
-        "question": "ما الذي يحظره علامة المرور C9؟",
+        "question": "Ø£Ù†Øª ØªÙ‚ÙˆØ¯ Ø¯Ø±Ø§Ø¬Ø© ÙƒÙ‡Ø±Ø¨Ø§Ø¦ÙŠØ© Ø³Ø±ÙŠØ¹Ø© (speed pedelec - ÙØ¦Ø© B Ù…Ù† Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ù„Ø¨Ø®Ø§Ø±ÙŠØ© Ø§Ù„ØµØºÙŠØ±Ø©). Ù‡Ù„ ØªÙ†Ø·Ø¨Ù‚ Ø§Ù„Ù„Ø§ÙØªØ© C9 Ø¹Ù„ÙŠÙƒ Ø£ÙŠØ¶Ø§Ù‹ØŸ",
         "choices": [
-          {
-            "text": "ممنوع الدخول لسائقي الدراجات النارية",
-            "is_correct": true
-          },
-          {
-            "text": "ممنوع الدخول للدراجين",
-            "is_correct": false
-          },
-          {
-            "text": "ممنوع الدخول للدراجات الآلية ذات العجلتين",
-            "is_correct": false
-          }
+          { "text": "Ù†Ø¹Ù…ØŒ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø© Ø§Ù„ÙƒÙ‡Ø±Ø¨Ø§Ø¦ÙŠØ© Ø§Ù„Ø³Ø±ÙŠØ¹Ø© ØªØ¹Ø¯Ù‘ Ù‚Ø§Ù†ÙˆÙ†ÙŠØ§Ù‹ Ø¯Ø±Ø§Ø¬Ø© Ø¨Ø®Ø§Ø±ÙŠØ© ØµØºÙŠØ±Ø© ÙØ¦Ø© B ÙˆØªØ®Ø¶Ø¹ ÙƒÙ„ÙŠØ§Ù‹ Ù„Ù€C9", "is_correct": true },
+          { "text": "Ù„Ø§ØŒ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø© Ø§Ù„ÙƒÙ‡Ø±Ø¨Ø§Ø¦ÙŠØ© Ø§Ù„Ø³Ø±ÙŠØ¹Ø© ÙˆØ³ÙŠÙ„Ø© ÙƒÙ‡Ø±Ø¨Ø§Ø¦ÙŠØ© Ø¨Ø¯ÙˆØ§Ø³Ø§Øª ÙˆØªØ¹Ø§Ù…Ù„ ÙƒØ¯Ø±Ø§Ø¬Ø© Ø¹Ø§Ø¯ÙŠØ©", "is_correct": false },
+          { "text": "ÙÙ‚Ø· Ø¥Ø°Ø§ ÙƒØ§Ù†Øª Ù‡Ù†Ø§Ùƒ ØµÙˆØ±Ø© Ø±Ù…Ø²ÙŠØ© Ø¥Ø¶Ø§ÙÙŠØ© Ù„Ø¯Ø±Ø§Ø¬Ø© ÙƒÙ‡Ø±Ø¨Ø§Ø¦ÙŠØ© Ø³Ø±ÙŠØ¹Ø© Ù…Ù„ØµÙ‚Ø© Ø¹Ù„Ù‰ Ø§Ù„Ù„Ø§ÙØªØ©", "is_correct": false }
         ],
-        "explanation": "ممنوع الدخول لسائقي الدراجات النارية."
+        "explanation": "ÙÙŠ Ø¨Ù„Ø¬ÙŠÙƒØ§ ØªØµÙ†Ù‘Ù Ø§Ù„Ø¯Ø±Ø§Ø¬Ø© Ø§Ù„ÙƒÙ‡Ø±Ø¨Ø§Ø¦ÙŠØ© Ø§Ù„Ø³Ø±ÙŠØ¹Ø© (Ø§Ù„ØªÙŠ ØªØªØ¬Ø§ÙˆØ² Ø³Ø±Ø¹ØªÙ‡Ø§ 25 ÙƒÙ…/Ø³Ø§Ø¹Ø©) ÙƒØ¯Ø±Ø§Ø¬Ø© Ø¨Ø®Ø§Ø±ÙŠØ© ØµØºÙŠØ±Ø© ÙØ¦Ø© B. ÙˆØ¨Ø§Ù„ØªØ§Ù„ÙŠ ØªÙ†Ø·Ø¨Ù‚ C9 Ø­ØªÙ‰ Ø¨Ø¯ÙˆÙ† ØµÙˆØ±Ø© Ø±Ù…Ø²ÙŠØ© Ø¥Ø¶Ø§ÙÙŠØ© Ø¹Ù„Ù‰ Ø§Ù„Ù„Ø§ÙØªØ©."
       }
     }
   },
   {
     "question_id": "C9_Q07",
-    "type": "WHICH_SIGN",
-    "difficulty": "EASY",
-    "is_critical": false,
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Tot welke reeks verkeerstekens behoort dit bord?",
+        "question": "De weg met bord C9 ziet er volledig verlaten uit. Mag u er als bromfietser toch oprijden?",
         "choices": [
-          {
-            "text": "Verbodsborden (C-reeks)",
-            "is_correct": true
-          },
-          {
-            "text": "Gevaarsborden (A-reeks)",
-            "is_correct": false
-          },
-          {
-            "text": "Gebodsborden (D-reeks)",
-            "is_correct": false
-          }
+          { "text": "Neen, het oprijden van een C9-verboden weg is altijd verboden voor bromfietsen ongeacht de verkeerssituatie; dit is een ernstige verkeersovertreding", "is_correct": true },
+          { "text": "Ja, als er geen andere weggebruikers zijn vormt u geen gevaar en mag u doorrijden", "is_correct": false }
         ],
-        "explanation": "Verbodsborden (C-reeks) zijn ronde borden met rode rand op witte achtergrond."
+        "explanation": "C9 is een absoluut verbod. De aanwezigheid of afwezigheid van andere weggebruikers heeft geen invloed op de geldigheid. Overtreden van C9 levert een ernstige verkeersovertreding op."
       },
       "EN": {
-        "question": "To which series of traffic signs does this sign belong?",
+        "question": "The road marked with C9 appears completely deserted. Is it allowed to ride your moped on it anyway?",
         "choices": [
-          {
-            "text": "Prohibition signs (C-series)",
-            "is_correct": true
-          },
-          {
-            "text": "Warning signs (A-series)",
-            "is_correct": false
-          },
-          {
-            "text": "Mandatory signs (D-series)",
-            "is_correct": false
-          }
+          { "text": "No, entering a road prohibited by C9 is always forbidden for mopeds regardless of the traffic situation; this is a serious traffic offence", "is_correct": true },
+          { "text": "Yes, if there are no other road users you pose no danger and may ride through", "is_correct": false }
         ],
-        "explanation": "Prohibition signs (C-series) are round with a red border on white background."
+        "explanation": "C9 is an absolute prohibition. The presence or absence of other road users has no effect on its validity. Violating C9 constitutes a serious traffic offence."
       },
       "FR": {
-        "question": "À quelle série de panneaux de signalisation appartient ce panneau ?",
+        "question": "La route avec le panneau C9 semble completement deserte. Est-il quand meme permis d'y rouler en cyclomoteur ?",
         "choices": [
-          {
-            "text": "Panneaux d'interdiction (série C)",
-            "is_correct": true
-          },
-          {
-            "text": "Panneaux de danger (série A)",
-            "is_correct": false
-          },
-          {
-            "text": "Panneaux d'obligation (série D)",
-            "is_correct": false
-          }
+          { "text": "Non, s'engager sur une route interdite par C9 est toujours interdit aux cyclomoteurs quelle que soit la situation du trafic; c'est une infraction grave au code de la route", "is_correct": true },
+          { "text": "Oui, s'il n'y a pas d'autres usagers vous ne representez aucun danger et vous pouvez passer", "is_correct": false }
         ],
-        "explanation": "Les panneaux d'interdiction (série C) sont ronds avec un bord rouge sur fond blanc."
+        "explanation": "C9 est une interdiction absolue. La presence ou l'absence d'autres usagers n'a aucun effet sur sa validite. Violer C9 constitue une infraction grave au code de la route."
       },
       "AR": {
-        "question": "إلى أي سلسلة من علامات المرور ينتمي هذا اللافتة؟",
+        "question": "Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ù…Ø´Ø§Ø± Ø¥Ù„ÙŠÙ‡ Ø¨Ù€C9 ÙŠØ¨Ø¯Ùˆ Ù…Ù‡Ø¬ÙˆØ±Ø§Ù‹ ØªÙ…Ø§Ù…Ø§Ù‹. Ù‡Ù„ ÙŠØ³Ù…Ø­ Ù„Ùƒ Ø¨Ù‚ÙŠØ§Ø¯Ø© Ø¯Ø±Ø§Ø¬ØªÙƒ Ø§Ù„Ø¨Ø®Ø§Ø±ÙŠØ© Ø§Ù„ØµØºÙŠØ±Ø© Ø¹Ù„ÙŠÙ‡ Ø±ØºÙ… Ø°Ù„ÙƒØŸ",
         "choices": [
-          {
-            "text": "لافتات الحظر (سلسلة C)",
-            "is_correct": true
-          },
-          {
-            "text": "لافتات التحذير (سلسلة A)",
-            "is_correct": false
-          },
-          {
-            "text": "لافتات الإلزام (سلسلة D)",
-            "is_correct": false
-          }
+          { "text": "Ù„Ø§ØŒ Ø¯Ø®ÙˆÙ„ Ø·Ø±ÙŠÙ‚ Ù…Ø­Ø¸ÙˆØ± Ø¨Ù€C9 Ø¹Ù„Ù‰ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø© Ø§Ù„Ø¨Ø®Ø§Ø±ÙŠØ© Ø§Ù„ØµØºÙŠØ±Ø© Ù…Ø­Ø¸ÙˆØ± Ø¯Ø§Ø¦Ù…Ø§Ù‹ Ø¨ØµØ±Ù Ø§Ù„Ù†Ø¸Ø± Ø¹Ù† Ø­Ø§Ù„Ø© Ø§Ù„Ù…Ø±ÙˆØ±Ø› ÙˆÙ‡Ø°Ø§ ÙŠØ´ÙƒÙ‘Ù„ Ù…Ø®Ø§Ù„ÙØ© Ù…Ø±ÙˆØ±ÙŠØ© Ø®Ø·ÙŠØ±Ø©", "is_correct": true },
+          { "text": "Ù†Ø¹Ù…ØŒ Ø¥Ø°Ø§ Ù„Ù… ÙŠÙƒÙ† Ù‡Ù†Ø§Ùƒ Ù…Ø³ØªØ®Ø¯Ù…ÙˆÙ† Ø¢Ø®Ø±ÙˆÙ† ÙØ£Ù†Øª Ù„Ø§ ØªØ´ÙƒÙ‘Ù„ Ø®Ø·Ø±Ø§Ù‹ ÙˆÙŠÙ…ÙƒÙ†Ùƒ Ø§Ù„Ù…Ø±ÙˆØ±", "is_correct": false }
         ],
-        "explanation": "لافتات الحظر (سلسلة C) دائرية بحافة حمراء على خلفية بيضاء."
+        "explanation": "C9 Ø­Ø¸Ø± Ù…Ø·Ù„Ù‚. ÙˆØ¬ÙˆØ¯ Ø£Ùˆ ØºÙŠØ§Ø¨ Ù…Ø³ØªØ®Ø¯Ù…ÙŠÙ† Ø¢Ø®Ø±ÙŠÙ† Ù„Ù„Ø·Ø±ÙŠÙ‚ Ù„Ø§ ÙŠØ¤Ø«Ø± Ø¹Ù„Ù‰ ØµØ­ØªÙ‡. Ø§Ù†ØªÙ‡Ø§Ùƒ C9 ÙŠØ´ÙƒÙ‘Ù„ Ù…Ø®Ø§Ù„ÙØ© Ù…Ø±ÙˆØ±ÙŠØ© Ø®Ø·ÙŠØ±Ø©."
       }
     }
   },
   {
     "question_id": "C9_Q08",
-    "type": "WHAT_DOES_IT_MEAN",
-    "difficulty": "EASY",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Wie mag de weg NIET oprijden bij bord C9?",
-        "choices": [
-          {
-            "text": "bestuurders van bromfietsen",
-            "is_correct": true
-          },
-          {
-            "text": "Alleen vrachtwagens",
-            "is_correct": false
-          },
-          {
-            "text": "Alleen voetgangers",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Bord C9: toegang voor bromfietsen verboden is"
-      },
-      "EN": {
-        "question": "Who may NOT use the road at sign C9?",
-        "choices": [
-          {
-            "text": "moped riders",
-            "is_correct": true
-          },
-          {
-            "text": "Only trucks",
-            "is_correct": false
-          },
-          {
-            "text": "Only pedestrians",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Sign C9: entry for mopeds is forbidden"
-      },
-      "FR": {
-        "question": "Qui ne peut PAS emprunter la route au panneau C9 ?",
-        "choices": [
-          {
-            "text": "conducteurs de cyclomoteurs",
-            "is_correct": true
-          },
-          {
-            "text": "Uniquement les camions",
-            "is_correct": false
-          },
-          {
-            "text": "Uniquement les piétons",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Panneau C9 : l'accès est interdit aux cyclomoteurs"
-      },
-      "AR": {
-        "question": "من لا يحق له استخدام الطريق عند اللافتة C9؟",
-        "choices": [
-          {
-            "text": "سائقي الدراجات البخارية",
-            "is_correct": true
-          },
-          {
-            "text": "فقط الشاحنات",
-            "is_correct": false
-          },
-          {
-            "text": "فقط المشاة",
-            "is_correct": false
-          }
-        ],
-        "explanation": "اللافتة C9: الدخول محظور للدراجات البخارية"
-      }
-    }
-  },
-  {
-    "question_id": "C9_Q09",
-    "type": "WHAT_DOES_IT_MEAN",
-    "difficulty": "EASY",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Wat is de vorm en kleur van een verbodsbord zoals C9?",
-        "choices": [
-          {
-            "text": "Rond, witte achtergrond, rode rand",
-            "is_correct": true
-          },
-          {
-            "text": "Driehoekig, witte achtergrond, rode rand",
-            "is_correct": false
-          },
-          {
-            "text": "Vierkant, blauwe achtergrond, wit symbool",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Verbodsborden zijn altijd rond met een rode rand op witte achtergrond."
-      },
-      "EN": {
-        "question": "What is the shape and colour of a prohibition sign like C9?",
-        "choices": [
-          {
-            "text": "Round, white background, red border",
-            "is_correct": true
-          },
-          {
-            "text": "Triangular, white background, red border",
-            "is_correct": false
-          },
-          {
-            "text": "Square, blue background, white symbol",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Prohibition signs are always round with a red border on a white background."
-      },
-      "FR": {
-        "question": "Quelle est la forme et la couleur d'un panneau d'interdiction comme C9 ?",
-        "choices": [
-          {
-            "text": "Rond, fond blanc, bord rouge",
-            "is_correct": true
-          },
-          {
-            "text": "Triangulaire, fond blanc, bord rouge",
-            "is_correct": false
-          },
-          {
-            "text": "Carré, fond bleu, symbole blanc",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Les panneaux d'interdiction sont toujours ronds avec un bord rouge sur fond blanc."
-      },
-      "AR": {
-        "question": "ما هو شكل ولون لافتة الحظر مثل C9؟",
-        "choices": [
-          {
-            "text": "دائري، خلفية بيضاء، حافة حمراء",
-            "is_correct": true
-          },
-          {
-            "text": "مثلثي، خلفية بيضاء، حافة حمراء",
-            "is_correct": false
-          },
-          {
-            "text": "مربع، خلفية زرقاء، رمز أبيض",
-            "is_correct": false
-          }
-        ],
-        "explanation": "لافتات الحظر دائماً دائرية بحافة حمراء على خلفية بيضاء."
-      }
-    }
-  },
-  {
-    "question_id": "C9_Q10",
-    "type": "WHAT_DOES_IT_MEAN",
-    "difficulty": "EASY",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Vanaf welk punt geldt een verbodsbord?",
-        "choices": [
-          {
-            "text": "Vanaf het punt waar het bord geplaatst is",
-            "is_correct": true
-          },
-          {
-            "text": "Vanaf 50 meter na het bord",
-            "is_correct": false
-          },
-          {
-            "text": "Enkel bij de eerstvolgende kruising",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Een verbodsbord geldt onmiddellijk vanaf de plaatsingslocatie, tenzij het bord zelf een andere afstand aangeeft."
-      },
-      "EN": {
-        "question": "From which point does a prohibition sign apply?",
-        "choices": [
-          {
-            "text": "From the point where the sign is placed",
-            "is_correct": true
-          },
-          {
-            "text": "From 50 metres after the sign",
-            "is_correct": false
-          },
-          {
-            "text": "Only at the next intersection",
-            "is_correct": false
-          }
-        ],
-        "explanation": "A prohibition sign applies immediately from its placement location, unless the sign itself indicates a different distance."
-      },
-      "FR": {
-        "question": "À partir de quel point un panneau d'interdiction est-il applicable ?",
-        "choices": [
-          {
-            "text": "À partir de l'endroit où le panneau est placé",
-            "is_correct": true
-          },
-          {
-            "text": "À 50 mètres après le panneau",
-            "is_correct": false
-          },
-          {
-            "text": "Seulement au prochain carrefour",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Un panneau d'interdiction s'applique immédiatement à partir de son emplacement, sauf si le panneau lui-même indique une distance différente."
-      },
-      "AR": {
-        "question": "من أي نقطة تسري لافتة الحظر؟",
-        "choices": [
-          {
-            "text": "من النقطة التي تُوضع فيها اللافتة",
-            "is_correct": true
-          },
-          {
-            "text": "من 50 متراً بعد اللافتة",
-            "is_correct": false
-          },
-          {
-            "text": "فقط عند التقاطع التالي",
-            "is_correct": false
-          }
-        ],
-        "explanation": "تسري لافتة الحظر فوراً من موضعها، إلا إذا كانت اللافتة نفسها تشير إلى مسافة مختلفة."
-      }
-    }
-  },
-  {
-    "question_id": "C9_Q11",
-    "type": "WHAT_DOES_IT_MEAN",
-    "difficulty": "EASY",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Is bord C9 een permanent verbod of een tijdelijk verbod?",
-        "choices": [
-          {
-            "text": "Permanent, tenzij een ander bord het opheft",
-            "is_correct": true
-          },
-          {
-            "text": "Altijd tijdelijk van aard",
-            "is_correct": false
-          },
-          {
-            "text": "Alleen geldig tijdens de dag",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Verbodsborden zijn permanent van kracht tenzij een opheffingsbord (zoals C45 of C46) het verbod beëindigt."
-      },
-      "EN": {
-        "question": "Is sign C9 a permanent prohibition or a temporary one?",
-        "choices": [
-          {
-            "text": "Permanent, unless another sign cancels it",
-            "is_correct": true
-          },
-          {
-            "text": "Always temporary",
-            "is_correct": false
-          },
-          {
-            "text": "Only valid during the day",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Prohibition signs are permanently in force unless an end sign (such as C45 or C46) terminates the prohibition."
-      },
-      "FR": {
-        "question": "Le panneau C9 est-il une interdiction permanente ou temporaire ?",
-        "choices": [
-          {
-            "text": "Permanente, sauf si un autre panneau l'annule",
-            "is_correct": true
-          },
-          {
-            "text": "Toujours temporaire",
-            "is_correct": false
-          },
-          {
-            "text": "Valable uniquement de jour",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Les panneaux d'interdiction sont permanents sauf si un panneau de fin (comme C45 ou C46) met fin à l'interdiction."
-      },
-      "AR": {
-        "question": "هل اللافتة C9 حظر دائم أم مؤقت؟",
-        "choices": [
-          {
-            "text": "دائم، ما لم تلغِه لافتة أخرى",
-            "is_correct": true
-          },
-          {
-            "text": "مؤقت دائماً",
-            "is_correct": false
-          },
-          {
-            "text": "صالح فقط خلال النهار",
-            "is_correct": false
-          }
-        ],
-        "explanation": "لافتات الحظر سارية بشكل دائم ما لم تنهِها لافتة إنهاء (مثل C45 أو C46)."
-      }
-    }
-  },
-  {
-    "question_id": "C9_Q12",
-    "type": "WHAT_MUST_YOU_DO",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "U nadert een weg met bord C9. Wat doet u?",
-        "choices": [
-          {
-            "text": "U rijdt de weg niet op omdat toegang voor bromfietsen verboden is",
-            "is_correct": true
-          },
-          {
-            "text": "U rijdt verder en let goed op het verkeer",
-            "is_correct": false
-          },
-          {
-            "text": "U rijdt de weg op als er geen verkeer is",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Bord C9 is een verbodsbord. U mag deze weg niet oprijden."
-      },
-      "EN": {
-        "question": "You approach a road with sign C9. What do you do?",
-        "choices": [
-          {
-            "text": "You do not enter the road because entry for mopeds is forbidden",
-            "is_correct": true
-          },
-          {
-            "text": "You continue and pay attention to traffic",
-            "is_correct": false
-          },
-          {
-            "text": "You enter the road if there is no traffic",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Sign C9 is a prohibition sign. You must not enter this road."
-      },
-      "FR": {
-        "question": "Vous approchez d'une route avec le panneau C9. Que faites-vous ?",
-        "choices": [
-          {
-            "text": "Vous n'entrez pas sur la route car l'accès est interdit aux cyclomoteurs",
-            "is_correct": true
-          },
-          {
-            "text": "Vous continuez et faites attention au trafic",
-            "is_correct": false
-          },
-          {
-            "text": "Vous entrez sur la route s'il n'y a pas de trafic",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Le panneau C9 est un panneau d'interdiction. Vous ne devez pas entrer sur cette route."
-      },
-      "AR": {
-        "question": "تقترب من طريق بها اللافتة C9. ماذا تفعل؟",
-        "choices": [
-          {
-            "text": "لا تدخل الطريق لأن الدخول محظور للدراجات البخارية",
-            "is_correct": true
-          },
-          {
-            "text": "تكمل وتنتبه لحركة المرور",
-            "is_correct": false
-          },
-          {
-            "text": "تدخل الطريق إذا لم يكن هناك مرور",
-            "is_correct": false
-          }
-        ],
-        "explanation": "اللافتة C9 هي لافتة حظر. يجب ألا تدخل هذا الطريق."
-      }
-    }
-  },
-  {
-    "question_id": "C9_Q13",
-    "type": "WHAT_MUST_YOU_DO",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "U rijdt al op een weg en ziet bord C9 in uw rijrichting. Wat doet u?",
-        "choices": [
-          {
-            "text": "U stopt, keert om en verlaat de weg via de toegestane rijrichting",
-            "is_correct": true
-          },
-          {
-            "text": "U rijdt door want u was al op de weg",
-            "is_correct": false
-          },
-          {
-            "text": "U rijdt langzamer en rijdt verder",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Als u bord C1 of een ander verbodsbord ziet in uw rijrichting terwijl u al op de weg bent, moet u zo snel mogelijk keren of de weg verlaten."
-      },
-      "EN": {
-        "question": "You are already driving on a road and see sign C9 in your direction. What do you do?",
-        "choices": [
-          {
-            "text": "You stop, turn around and leave the road via the permitted direction",
-            "is_correct": true
-          },
-          {
-            "text": "You continue because you were already on the road",
-            "is_correct": false
-          },
-          {
-            "text": "You slow down and continue",
-            "is_correct": false
-          }
-        ],
-        "explanation": "If you see a prohibition sign in your direction while already on the road, you must turn around or leave the road as quickly as possible."
-      },
-      "FR": {
-        "question": "Vous roulez déjà sur une route et voyez le panneau C9 dans votre direction. Que faites-vous ?",
-        "choices": [
-          {
-            "text": "Vous vous arrêtez, faites demi-tour et quittez la route par la direction autorisée",
-            "is_correct": true
-          },
-          {
-            "text": "Vous continuez car vous étiez déjà sur la route",
-            "is_correct": false
-          },
-          {
-            "text": "Vous ralentissez et continuez",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Si vous voyez un panneau d'interdiction dans votre direction alors que vous êtes déjà sur la route, vous devez faire demi-tour ou quitter la route le plus vite possible."
-      },
-      "AR": {
-        "question": "أنت تقود بالفعل على طريق وترى اللافتة C9 في اتجاهك. ماذا تفعل؟",
-        "choices": [
-          {
-            "text": "توقف، انعطف واغادر الطريق عبر الاتجاه المسموح به",
-            "is_correct": true
-          },
-          {
-            "text": "تكمل لأنك كنت بالفعل على الطريق",
-            "is_correct": false
-          },
-          {
-            "text": "تبطئ وتكمل",
-            "is_correct": false
-          }
-        ],
-        "explanation": "إذا رأيت لافتة حظر في اتجاهك بينما أنت بالفعل على الطريق، يجب عليك الانعطاف أو مغادرة الطريق في أقرب وقت ممكن."
-      }
-    }
-  },
-  {
-    "question_id": "C9_Q14",
-    "type": "WHAT_MUST_YOU_DO",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Geldt bord C9 ook voor bestuurders die al op de weg rijden voor het bord geplaatst werd?",
-        "choices": [
-          {
-            "text": "Ja, het verbodsbord geldt zodra het geplaatst is, voor iedereen",
-            "is_correct": true
-          },
-          {
-            "text": "Nee, alleen voor nieuwe gebruikers",
-            "is_correct": false
-          },
-          {
-            "text": "Alleen als er politietoezicht is",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Een verbodsbord geldt voor alle weggebruikers vanaf het moment van plaatsing, ongeacht of ze al op de weg reden."
-      },
-      "EN": {
-        "question": "Does sign C9 also apply to drivers who were already on the road before the sign was placed?",
-        "choices": [
-          {
-            "text": "Yes, the prohibition sign applies from the moment it is placed, for everyone",
-            "is_correct": true
-          },
-          {
-            "text": "No, only for new users",
-            "is_correct": false
-          },
-          {
-            "text": "Only when there is police supervision",
-            "is_correct": false
-          }
-        ],
-        "explanation": "A prohibition sign applies to all road users from the moment of placement, regardless of whether they were already on the road."
-      },
-      "FR": {
-        "question": "Le panneau C9 s'applique-t-il aussi aux conducteurs qui étaient déjà sur la route avant que le panneau soit placé ?",
-        "choices": [
-          {
-            "text": "Oui, le panneau d'interdiction s'applique dès son placement, pour tout le monde",
-            "is_correct": true
-          },
-          {
-            "text": "Non, uniquement pour les nouveaux utilisateurs",
-            "is_correct": false
-          },
-          {
-            "text": "Seulement en cas de surveillance policière",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Un panneau d'interdiction s'applique à tous les usagers de la route dès son placement, peu importe s'ils étaient déjà sur la route."
-      },
-      "AR": {
-        "question": "هل تنطبق اللافتة C9 أيضاً على السائقين الذين كانوا بالفعل على الطريق قبل وضع اللافتة؟",
-        "choices": [
-          {
-            "text": "نعم، لافتة الحظر سارية من لحظة وضعها، على الجميع",
-            "is_correct": true
-          },
-          {
-            "text": "لا، فقط للمستخدمين الجدد",
-            "is_correct": false
-          },
-          {
-            "text": "فقط عند وجود إشراف شرطي",
-            "is_correct": false
-          }
-        ],
-        "explanation": "لافتة الحظر تنطبق على جميع مستخدمي الطريق من لحظة وضعها، بغض النظر عما إذا كانوا بالفعل على الطريق."
-      }
-    }
-  },
-  {
-    "question_id": "C9_Q15",
-    "type": "WHAT_MUST_YOU_DO",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Bord C9 staat aan het begin van een straat. Mag u als bestuurders van bromfietsen de straat inrijden?",
-        "choices": [
-          {
-            "text": "Nee, het bord verbiedt u uitdrukkelijk de straat in te rijden",
-            "is_correct": true
-          },
-          {
-            "text": "Ja, als u langzaam rijdt",
-            "is_correct": false
-          },
-          {
-            "text": "Ja, als er geen ander verkeer is",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Bord C9 verbiedt bestuurders van bromfietsen de weg te berijden. Dit geldt altijd, ongeacht snelheid of verkeersdrukte."
-      },
-      "EN": {
-        "question": "Sign C9 is at the beginning of a street. May you as moped riders enter the street?",
-        "choices": [
-          {
-            "text": "No, the sign explicitly prohibits you from entering the street",
-            "is_correct": true
-          },
-          {
-            "text": "Yes, if you drive slowly",
-            "is_correct": false
-          },
-          {
-            "text": "Yes, if there is no other traffic",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Sign C9 prohibits moped riders from using the road. This always applies, regardless of speed or traffic volume."
-      },
-      "FR": {
-        "question": "Le panneau C9 est au début d'une rue. Pouvez-vous en tant que conducteurs de cyclomoteurs entrer dans la rue ?",
-        "choices": [
-          {
-            "text": "Non, le panneau vous interdit explicitement d'entrer dans la rue",
-            "is_correct": true
-          },
-          {
-            "text": "Oui, si vous roulez lentement",
-            "is_correct": false
-          },
-          {
-            "text": "Oui, s'il n'y a pas d'autre trafic",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Le panneau C9 interdit à conducteurs de cyclomoteurs d'utiliser la route. Cela s'applique toujours, quelle que soit la vitesse ou l'intensité du trafic."
-      },
-      "AR": {
-        "question": "اللافتة C9 موجودة في بداية شارع. هل يمكنك كـسائقي الدراجات البخارية الدخول إلى الشارع؟",
-        "choices": [
-          {
-            "text": "لا، تحظر اللافتة صراحةً دخولك إلى الشارع",
-            "is_correct": true
-          },
-          {
-            "text": "نعم، إذا قدت ببطء",
-            "is_correct": false
-          },
-          {
-            "text": "نعم، إذا لم يكن هناك مرور آخر",
-            "is_correct": false
-          }
-        ],
-        "explanation": "اللافتة C9 تحظر على سائقي الدراجات البخارية استخدام الطريق. هذا ينطبق دائماً، بغض النظر عن السرعة أو كثافة المرور."
-      }
-    }
-  },
-  {
-    "question_id": "C9_Q16",
-    "type": "WHAT_DOES_IT_MEAN",
-    "difficulty": "EASY",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Welke kleur heeft de rand van een verbodsbord zoals C9?",
-        "choices": [
-          {
-            "text": "Rood",
-            "is_correct": true
-          },
-          {
-            "text": "Blauw",
-            "is_correct": false
-          },
-          {
-            "text": "Geel",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Verbodsborden hebben altijd een rode rand."
-      },
-      "EN": {
-        "question": "What colour is the border of a prohibition sign like C9?",
-        "choices": [
-          {
-            "text": "Red",
-            "is_correct": true
-          },
-          {
-            "text": "Blue",
-            "is_correct": false
-          },
-          {
-            "text": "Yellow",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Prohibition signs always have a red border."
-      },
-      "FR": {
-        "question": "De quelle couleur est le bord d'un panneau d'interdiction comme C9 ?",
-        "choices": [
-          {
-            "text": "Rouge",
-            "is_correct": true
-          },
-          {
-            "text": "Bleu",
-            "is_correct": false
-          },
-          {
-            "text": "Jaune",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Les panneaux d'interdiction ont toujours un bord rouge."
-      },
-      "AR": {
-        "question": "ما لون حافة لافتة الحظر مثل C9؟",
-        "choices": [
-          {
-            "text": "أحمر",
-            "is_correct": true
-          },
-          {
-            "text": "أزرق",
-            "is_correct": false
-          },
-          {
-            "text": "أصفر",
-            "is_correct": false
-          }
-        ],
-        "explanation": "لافتات الحظر دائماً لها حافة حمراء."
-      }
-    }
-  },
-  {
-    "question_id": "C9_Q17",
-    "type": "WHAT_DOES_IT_MEAN",
-    "difficulty": "EASY",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Bord C9 hangt aan het begin van een weg. Voor welk traject geldt het verbod?",
-        "choices": [
-          {
-            "text": "Vanaf het bord tot het einde van de weg of tot een opheffingsbord",
-            "is_correct": true
-          },
-          {
-            "text": "Enkel voor de eerste 100 meter",
-            "is_correct": false
-          },
-          {
-            "text": "Enkel op het kruispunt",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Het verbod geldt vanaf het bord tot het einde van de weg of tot een opheffingsbord (C45 of C46)."
-      },
-      "EN": {
-        "question": "Sign C9 is at the beginning of a road. For which stretch does the prohibition apply?",
-        "choices": [
-          {
-            "text": "From the sign to the end of the road or until a cancellation sign",
-            "is_correct": true
-          },
-          {
-            "text": "Only for the first 100 metres",
-            "is_correct": false
-          },
-          {
-            "text": "Only at the intersection",
-            "is_correct": false
-          }
-        ],
-        "explanation": "The prohibition applies from the sign to the end of the road or until a cancellation sign (C45 or C46)."
-      },
-      "FR": {
-        "question": "Le panneau C9 est au début d'une route. Pour quel tronçon l'interdiction s'applique-t-elle ?",
-        "choices": [
-          {
-            "text": "Du panneau jusqu'à la fin de la route ou jusqu'à un panneau de fin",
-            "is_correct": true
-          },
-          {
-            "text": "Seulement pour les 100 premiers mètres",
-            "is_correct": false
-          },
-          {
-            "text": "Seulement au carrefour",
-            "is_correct": false
-          }
-        ],
-        "explanation": "L'interdiction s'applique du panneau jusqu'à la fin de la route ou jusqu'à un panneau de fin (C45 ou C46)."
-      },
-      "AR": {
-        "question": "اللافتة C9 موجودة في بداية طريق. لأي مقطع تسري الحظر؟",
-        "choices": [
-          {
-            "text": "من اللافتة حتى نهاية الطريق أو حتى لافتة إلغاء",
-            "is_correct": true
-          },
-          {
-            "text": "فقط لأول 100 متر",
-            "is_correct": false
-          },
-          {
-            "text": "فقط عند التقاطع",
-            "is_correct": false
-          }
-        ],
-        "explanation": "تسري الحظر من اللافتة حتى نهاية الطريق أو حتى لافتة إلغاء (C45 أو C46)."
-      }
-    }
-  },
-  {
-    "question_id": "C9_Q18",
-    "type": "WHAT_DOES_IT_MEAN",
-    "difficulty": "EASY",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Welk bord heft het verbod van bord C9 op?",
-        "choices": [
-          {
-            "text": "C46 – Einde van alle plaatselijke verbodsbepalingen",
-            "is_correct": true
-          },
-          {
-            "text": "B1 – Voorrang verlenen",
-            "is_correct": false
-          },
-          {
-            "text": "A1 – Gevaarlijke bocht",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Bord C46 heft alle plaatselijke verbodsbepalingen op voor voertuigen in beweging."
-      },
-      "EN": {
-        "question": "Which sign cancels the prohibition of sign C9?",
-        "choices": [
-          {
-            "text": "C46 – End of all local prohibitions",
-            "is_correct": true
-          },
-          {
-            "text": "B1 – Give way",
-            "is_correct": false
-          },
-          {
-            "text": "A1 – Dangerous bend",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Sign C46 cancels all local prohibitions for moving vehicles."
-      },
-      "FR": {
-        "question": "Quel panneau annule l'interdiction du panneau C9 ?",
-        "choices": [
-          {
-            "text": "C46 – Fin de toutes les interdictions locales",
-            "is_correct": true
-          },
-          {
-            "text": "B1 – Cédez le passage",
-            "is_correct": false
-          },
-          {
-            "text": "A1 – Virage dangereux",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Le panneau C46 annule toutes les interdictions locales pour les véhicules en mouvement."
-      },
-      "AR": {
-        "question": "أي لافتة تلغي الحظر الخاص باللافتة C9؟",
-        "choices": [
-          {
-            "text": "C46 – نهاية جميع الحظر المحلية",
-            "is_correct": true
-          },
-          {
-            "text": "B1 – أعطِ الأولوية",
-            "is_correct": false
-          },
-          {
-            "text": "A1 – منعطف خطير",
-            "is_correct": false
-          }
-        ],
-        "explanation": "اللافتة C46 تلغي جميع الحظر المحلية للمركبات المتحركة."
-      }
-    }
-  },
-  {
-    "question_id": "C9_Q19",
-    "type": "WHAT_DOES_IT_MEAN",
-    "difficulty": "EASY",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Wat is het gevolg van het negeren van bord C9?",
-        "choices": [
-          {
-            "text": "Een zware verkeersovertreding met een hoge GAS-boete",
-            "is_correct": true
-          },
-          {
-            "text": "Een waarschuwing zonder boete",
-            "is_correct": false
-          },
-          {
-            "text": "Geen gevolgen als er geen politie aanwezig is",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Het negeren van een verbodsbord levert een zware GAS-boete op en kan leiden tot rijverbod."
-      },
-      "EN": {
-        "question": "What is the consequence of ignoring sign C9?",
-        "choices": [
-          {
-            "text": "A serious traffic violation with a high GAS fine",
-            "is_correct": true
-          },
-          {
-            "text": "A warning without a fine",
-            "is_correct": false
-          },
-          {
-            "text": "No consequences if no police is present",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Ignoring a prohibition sign results in a serious GAS fine and can lead to a driving ban."
-      },
-      "FR": {
-        "question": "Quelle est la conséquence d'ignorer le panneau C9 ?",
-        "choices": [
-          {
-            "text": "Une infraction grave avec une lourde amende GAS",
-            "is_correct": true
-          },
-          {
-            "text": "Un avertissement sans amende",
-            "is_correct": false
-          },
-          {
-            "text": "Aucune conséquence s'il n'y a pas de police",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Ignorer un panneau d'interdiction entraîne une lourde amende GAS et peut conduire à une suspension du permis."
-      },
-      "AR": {
-        "question": "ما هو عواقب تجاهل اللافتة C9؟",
-        "choices": [
-          {
-            "text": "مخالفة مرورية خطيرة مع غرامة GAS عالية",
-            "is_correct": true
-          },
-          {
-            "text": "تحذير بدون غرامة",
-            "is_correct": false
-          },
-          {
-            "text": "لا عواقب إذا لم تكن الشرطة حاضرة",
-            "is_correct": false
-          }
-        ],
-        "explanation": "تجاهل لافتة الحظر يؤدي إلى غرامة GAS خطيرة ويمكن أن يؤدي إلى حظر قيادة."
-      }
-    }
-  },
-  {
-    "question_id": "C9_Q20",
-    "type": "WHAT_DOES_IT_MEAN",
-    "difficulty": "EASY",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Wat is het verschil tussen een verbodsbord (C-reeks) en een gebodsbord (D-reeks)?",
-        "choices": [
-          {
-            "text": "Verbodsborden verbieden iets; gebodsborden verplichten iets",
-            "is_correct": true
-          },
-          {
-            "text": "Verbodsborden zijn vierkant; gebodsborden zijn rond",
-            "is_correct": false
-          },
-          {
-            "text": "Er is geen verschil; beide zijn blauw",
-            "is_correct": false
-          }
-        ],
-        "explanation": "C-borden (verbodsborden) zijn rood-wit en verbieden een actie; D-borden (gebodsborden) zijn blauw en verplichten een actie."
-      },
-      "EN": {
-        "question": "What is the difference between a prohibition sign (C-series) and a mandatory sign (D-series)?",
-        "choices": [
-          {
-            "text": "Prohibition signs forbid something; mandatory signs require something",
-            "is_correct": true
-          },
-          {
-            "text": "Prohibition signs are square; mandatory signs are round",
-            "is_correct": false
-          },
-          {
-            "text": "There is no difference; both are blue",
-            "is_correct": false
-          }
-        ],
-        "explanation": "C-signs (prohibition signs) are red-white and forbid an action; D-signs (mandatory signs) are blue and require an action."
-      },
-      "FR": {
-        "question": "Quelle est la différence entre un panneau d'interdiction (série C) et un panneau d'obligation (série D) ?",
-        "choices": [
-          {
-            "text": "Les panneaux d'interdiction interdisent quelque chose ; les panneaux d'obligation imposent quelque chose",
-            "is_correct": true
-          },
-          {
-            "text": "Les panneaux d'interdiction sont carrés ; les panneaux d'obligation sont ronds",
-            "is_correct": false
-          },
-          {
-            "text": "Il n'y a pas de différence ; les deux sont bleus",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Les panneaux C (interdiction) sont rouge-blanc et interdisent une action ; les panneaux D (obligation) sont bleus et imposent une action."
-      },
-      "AR": {
-        "question": "ما الفرق بين لافتة الحظر (سلسلة C) ولافتة الإلزام (سلسلة D)؟",
-        "choices": [
-          {
-            "text": "لافتات الحظر تحظر شيئاً؛ لافتات الإلزام تلزم بشيء",
-            "is_correct": true
-          },
-          {
-            "text": "لافتات الحظر مربعة؛ لافتات الإلزام دائرية",
-            "is_correct": false
-          },
-          {
-            "text": "لا يوجد فرق؛ كلاهما أزرق",
-            "is_correct": false
-          }
-        ],
-        "explanation": "لافتات C (الحظر) حمراء-بيضاء وتحظر فعلاً؛ لافتات D (الإلزام) زرقاء وتلزم بفعل."
-      }
-    }
-  },
-  {
-    "question_id": "C9_Q21",
-    "type": "WHAT_DOES_IT_MEAN",
-    "difficulty": "EASY",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Mag een nooddienstvoertuig (ambulance, politie) voorbijrijden aan bord C9?",
-        "choices": [
-          {
-            "text": "Ja, hulpdiensten mogen in noodgeval verbods- en gebodsborden negeren",
-            "is_correct": true
-          },
-          {
-            "text": "Nee, zelfs ambulances moeten het verbod respecteren",
-            "is_correct": false
-          },
-          {
-            "text": "Alleen politievoertuigen mogen voorbijrijden",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Hulpdiensten (brandweer, ambulance, politie) mogen in noodgevallen verbodsborden negeren om levens te redden."
-      },
-      "EN": {
-        "question": "May an emergency vehicle (ambulance, police) pass sign C9?",
-        "choices": [
-          {
-            "text": "Yes, emergency services may ignore prohibition signs in an emergency",
-            "is_correct": true
-          },
-          {
-            "text": "No, even ambulances must respect the prohibition",
-            "is_correct": false
-          },
-          {
-            "text": "Only police vehicles may pass",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Emergency services (fire, ambulance, police) may ignore prohibition signs in emergencies to save lives."
-      },
-      "FR": {
-        "question": "Un véhicule d'urgence (ambulance, police) peut-il passer le panneau C9 ?",
-        "choices": [
-          {
-            "text": "Oui, les services d'urgence peuvent ignorer les panneaux d'interdiction en cas d'urgence",
-            "is_correct": true
-          },
-          {
-            "text": "Non, même les ambulances doivent respecter l'interdiction",
-            "is_correct": false
-          },
-          {
-            "text": "Seuls les véhicules de police peuvent passer",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Les services d'urgence (pompiers, ambulance, police) peuvent ignorer les panneaux d'interdiction en cas d'urgence pour sauver des vies."
-      },
-      "AR": {
-        "question": "هل يمكن لمركبة الطوارئ (سيارة إسعاف، شرطة) المرور عبر اللافتة C9؟",
-        "choices": [
-          {
-            "text": "نعم، خدمات الطوارئ يمكنها تجاهل لافتات الحظر في حالات الطوارئ",
-            "is_correct": true
-          },
-          {
-            "text": "لا، حتى سيارات الإسعاف يجب أن تحترم الحظر",
-            "is_correct": false
-          },
-          {
-            "text": "فقط مركبات الشرطة يمكنها المرور",
-            "is_correct": false
-          }
-        ],
-        "explanation": "خدمات الطوارئ (إطفاء، إسعاف، شرطة) يمكنها تجاهل لافتات الحظر في حالات الطوارئ لإنقاذ الأرواح."
-      }
-    }
-  },
-  {
-    "question_id": "C9_Q22",
-    "type": "WHAT_MUST_YOU_DO",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "U wilt een zijstraat inrijden maar ziet bord C9 aan het begin ervan. Wat is de juiste actie?",
-        "choices": [
-          {
-            "text": "U rijdt de zijstraat niet in en zoekt een andere route",
-            "is_correct": true
-          },
-          {
-            "text": "U rijdt de zijstraat in als er geen tegenliggers zijn",
-            "is_correct": false
-          },
-          {
-            "text": "U rijdt de zijstraat in en geeft een teken aan andere bestuurders",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Bord C9 is een verbod. U mag de straat niet inrijden en moet een andere route zoeken."
-      },
-      "EN": {
-        "question": "You want to enter a side street but see sign C9 at its beginning. What is the correct action?",
-        "choices": [
-          {
-            "text": "You do not enter the side street and look for another route",
-            "is_correct": true
-          },
-          {
-            "text": "You enter the side street if there are no oncoming vehicles",
-            "is_correct": false
-          },
-          {
-            "text": "You enter the side street and signal to other drivers",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Sign C9 is a prohibition. You must not enter the street and must find another route."
-      },
-      "FR": {
-        "question": "Vous voulez entrer dans une rue latérale mais vous voyez le panneau C9 à son début. Quelle est la bonne action ?",
-        "choices": [
-          {
-            "text": "Vous n'entrez pas dans la rue latérale et cherchez une autre route",
-            "is_correct": true
-          },
-          {
-            "text": "Vous entrez dans la rue latérale s'il n'y a pas de véhicules en sens inverse",
-            "is_correct": false
-          },
-          {
-            "text": "Vous entrez dans la rue latérale et signalez aux autres conducteurs",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Le panneau C9 est une interdiction. Vous ne devez pas entrer dans la rue et devez chercher une autre route."
-      },
-      "AR": {
-        "question": "تريد الدخول إلى شارع جانبي ولكنك ترى اللافتة C9 في بدايته. ما هو الإجراء الصحيح؟",
-        "choices": [
-          {
-            "text": "لا تدخل الشارع الجانبي وابحث عن طريق آخر",
-            "is_correct": true
-          },
-          {
-            "text": "تدخل الشارع الجانبي إذا لم تكن هناك مركبات مقابلة",
-            "is_correct": false
-          },
-          {
-            "text": "تدخل الشارع الجانبي وتشير إلى السائقين الآخرين",
-            "is_correct": false
-          }
-        ],
-        "explanation": "اللافتة C9 هي حظر. يجب ألا تدخل الشارع ويجب البحث عن طريق آخر."
-      }
-    }
-  },
-  {
-    "question_id": "C9_Q23",
-    "type": "WHAT_MUST_YOU_DO",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Bord C9 staat bij een tunnel ingang. Welke actie neemt u?",
-        "choices": [
-          {
-            "text": "U rijdt de tunnel niet in en zoekt een alternatieve route",
-            "is_correct": true
-          },
-          {
-            "text": "U rijdt de tunnel in als de tunnel verlicht is",
-            "is_correct": false
-          },
-          {
-            "text": "U rijdt de tunnel in als er geen ander verkeer is",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Een verbodsbord bij een tunnel betekent dat u de tunnel niet mag inrijden. Zoek altijd een alternatieve route."
-      },
-      "EN": {
-        "question": "Sign C9 is at a tunnel entrance. What action do you take?",
-        "choices": [
-          {
-            "text": "You do not enter the tunnel and look for an alternative route",
-            "is_correct": true
-          },
-          {
-            "text": "You enter the tunnel if it is lit",
-            "is_correct": false
-          },
-          {
-            "text": "You enter the tunnel if there is no other traffic",
-            "is_correct": false
-          }
-        ],
-        "explanation": "A prohibition sign at a tunnel means you may not enter the tunnel. Always look for an alternative route."
-      },
-      "FR": {
-        "question": "Le panneau C9 est à l'entrée d'un tunnel. Quelle action prenez-vous ?",
-        "choices": [
-          {
-            "text": "Vous n'entrez pas dans le tunnel et cherchez un itinéraire alternatif",
-            "is_correct": true
-          },
-          {
-            "text": "Vous entrez dans le tunnel s'il est éclairé",
-            "is_correct": false
-          },
-          {
-            "text": "Vous entrez dans le tunnel s'il n'y a pas d'autre trafic",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Un panneau d'interdiction à l'entrée d'un tunnel signifie que vous ne pouvez pas entrer dans le tunnel. Cherchez toujours un itinéraire alternatif."
-      },
-      "AR": {
-        "question": "اللافتة C9 موجودة عند مدخل نفق. ما الإجراء الذي تتخذه؟",
-        "choices": [
-          {
-            "text": "لا تدخل النفق وابحث عن طريق بديل",
-            "is_correct": true
-          },
-          {
-            "text": "تدخل النفق إذا كان مضاءً",
-            "is_correct": false
-          },
-          {
-            "text": "تدخل النفق إذا لم يكن هناك مرور آخر",
-            "is_correct": false
-          }
-        ],
-        "explanation": "لافتة الحظر عند مدخل النفق تعني أنك لا يمكنك الدخول إلى النفق. ابحث دائماً عن طريق بديل."
-      }
-    }
-  },
-  {
-    "question_id": "C9_Q24",
-    "type": "WHAT_MUST_YOU_DO",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Mag een bewoner die in de straat woont toch de weg met bord C9 in?",
-        "choices": [
-          {
-            "text": "Nee, tenzij een onderbord een uitzondering aangeeft voor bewoners",
-            "is_correct": true
-          },
-          {
-            "text": "Ja, bewoners hebben altijd toegang",
-            "is_correct": false
-          },
-          {
-            "text": "Ja, als bewoners langzaam rijden",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Verbodsborden gelden ook voor bewoners, tenzij een onderbord 'uitgezonderd bewoners' of vergelijkbaar aangeeft."
-      },
-      "EN": {
-        "question": "May a resident who lives in the street still use the road with sign C9?",
-        "choices": [
-          {
-            "text": "No, unless an additional panel indicates an exception for residents",
-            "is_correct": true
-          },
-          {
-            "text": "Yes, residents always have access",
-            "is_correct": false
-          },
-          {
-            "text": "Yes, if residents drive slowly",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Prohibition signs also apply to residents, unless an additional sign states 'residents excepted' or similar."
-      },
-      "FR": {
-        "question": "Un résident qui habite dans la rue peut-il quand même utiliser la route avec le panneau C9 ?",
-        "choices": [
-          {
-            "text": "Non, sauf si un panneau additionnel indique une exception pour les résidents",
-            "is_correct": true
-          },
-          {
-            "text": "Oui, les résidents ont toujours accès",
-            "is_correct": false
-          },
-          {
-            "text": "Oui, si les résidents roulent lentement",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Les panneaux d'interdiction s'appliquent aussi aux résidents, sauf si un panneau additionnel indique 'résidents exceptés' ou similaire."
-      },
-      "AR": {
-        "question": "هل يمكن للمقيم الذي يعيش في الشارع استخدام الطريق بها اللافتة C9؟",
-        "choices": [
-          {
-            "text": "لا، إلا إذا أشارت لافتة إضافية إلى استثناء للمقيمين",
-            "is_correct": true
-          },
-          {
-            "text": "نعم، للمقيمين دائماً حق الوصول",
-            "is_correct": false
-          },
-          {
-            "text": "نعم، إذا قاد المقيمون ببطء",
-            "is_correct": false
-          }
-        ],
-        "explanation": "لافتات الحظر تنطبق أيضاً على المقيمين، إلا إذا كانت لافتة إضافية تنص على 'المقيمون مستثنون' أو ما شابه ذلك."
-      }
-    }
-  },
-  {
-    "question_id": "C9_Q25",
-    "type": "WHAT_MUST_YOU_DO",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Een onderbord onder bord C9 vermeldt 'uitgezonderd leveringen'. Wat betekent dit?",
-        "choices": [
-          {
-            "text": "Voertuigen die leveringen uitvoeren mogen de weg wel berijden",
-            "is_correct": true
-          },
-          {
-            "text": "Het verbod geldt niet meer",
-            "is_correct": false
-          },
-          {
-            "text": "Alleen voetgangers zijn uitgezonderd",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Een onderbord kan uitzonderingen toevoegen aan een verbodsbord. 'Uitgezonderd leveringen' betekent dat bezorgvoertuigen de weg mogen berijden."
-      },
-      "EN": {
-        "question": "An additional sign under sign C9 states 'except deliveries'. What does this mean?",
-        "choices": [
-          {
-            "text": "Vehicles making deliveries may use the road",
-            "is_correct": true
-          },
-          {
-            "text": "The prohibition no longer applies",
-            "is_correct": false
-          },
-          {
-            "text": "Only pedestrians are excepted",
-            "is_correct": false
-          }
-        ],
-        "explanation": "An additional sign can add exceptions to a prohibition sign. 'Except deliveries' means delivery vehicles may use the road."
-      },
-      "FR": {
-        "question": "Un panneau additionnel sous le panneau C9 indique 'sauf livraisons'. Qu'est-ce que cela signifie ?",
-        "choices": [
-          {
-            "text": "Les véhicules effectuant des livraisons peuvent emprunter la route",
-            "is_correct": true
-          },
-          {
-            "text": "L'interdiction ne s'applique plus",
-            "is_correct": false
-          },
-          {
-            "text": "Seuls les piétons sont exceptés",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Un panneau additionnel peut ajouter des exceptions à un panneau d'interdiction. 'Sauf livraisons' signifie que les véhicules de livraison peuvent emprunter la route."
-      },
-      "AR": {
-        "question": "لافتة إضافية تحت اللافتة C9 تنص على 'باستثناء التوصيلات'. ماذا يعني هذا؟",
-        "choices": [
-          {
-            "text": "المركبات التي تقوم بالتوصيل يمكنها استخدام الطريق",
-            "is_correct": true
-          },
-          {
-            "text": "الحظر لم يعد ينطبق",
-            "is_correct": false
-          },
-          {
-            "text": "فقط المشاة مستثنون",
-            "is_correct": false
-          }
-        ],
-        "explanation": "يمكن للافتة إضافية إضافة استثناءات للافتة الحظر. 'باستثناء التوصيلات' تعني أن مركبات التوصيل يمكنها استخدام الطريق."
-      }
-    }
-  },
-  {
-    "question_id": "C9_Q26",
-    "type": "WHAT_MUST_YOU_DO",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "U rijdt 's nachts en ziet bord C9. Geldt het verbod ook 's nachts?",
-        "choices": [
-          {
-            "text": "Ja, het verbod geldt dag en nacht tenzij een onderbord een tijdsbeperking aangeeft",
-            "is_correct": true
-          },
-          {
-            "text": "Nee, verbodsborden gelden alleen overdag",
-            "is_correct": false
-          },
-          {
-            "text": "Nee, 's nachts gelden andere regels",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Verbodsborden gelden 24/7, dag en nacht, tenzij een tijdsonderbord een beperking aangeeft."
-      },
-      "EN": {
-        "question": "You are driving at night and see sign C9. Does the prohibition also apply at night?",
-        "choices": [
-          {
-            "text": "Yes, the prohibition applies day and night unless a time sub-sign specifies otherwise",
-            "is_correct": true
-          },
-          {
-            "text": "No, prohibition signs only apply during the day",
-            "is_correct": false
-          },
-          {
-            "text": "No, different rules apply at night",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Prohibition signs apply 24/7, day and night, unless a time sub-sign specifies a limit."
-      },
-      "FR": {
-        "question": "Vous conduisez de nuit et voyez le panneau C9. L'interdiction s'applique-t-elle aussi de nuit ?",
-        "choices": [
-          {
-            "text": "Oui, l'interdiction s'applique jour et nuit sauf si un panneau horaire précise une restriction",
-            "is_correct": true
-          },
-          {
-            "text": "Non, les panneaux d'interdiction ne s'appliquent que de jour",
-            "is_correct": false
-          },
-          {
-            "text": "Non, d'autres règles s'appliquent de nuit",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Les panneaux d'interdiction s'appliquent 24h/24, 7j/7, sauf si un panneau horaire spécifie une limite."
-      },
-      "AR": {
-        "question": "تقود في الليل وترى اللافتة C9. هل ينطبق الحظر أيضاً في الليل؟",
-        "choices": [
-          {
-            "text": "نعم، الحظر ينطبق ليلاً ونهاراً إلا إذا حددت لافتة زمنية استثناءً",
-            "is_correct": true
-          },
-          {
-            "text": "لا، لافتات الحظر تنطبق فقط خلال النهار",
-            "is_correct": false
-          },
-          {
-            "text": "لا، قواعد مختلفة تنطبق في الليل",
-            "is_correct": false
-          }
-        ],
-        "explanation": "لافتات الحظر سارية 24/7، ليلاً ونهاراً، إلا إذا حددت لافتة زمنية قيداً."
-      }
-    }
-  },
-  {
-    "question_id": "C9_Q27",
     "type": "IS_IT_ALLOWED",
     "difficulty": "HARD",
     "is_critical": true,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U bent bestuurders van bromfietsen en nadert bord C9. Er staat een onderbord 'ma–vr 07:00–19:00'. Het is zaterdagmiddag. Mag u de weg in?",
+        "question": "Een fietser op een gewone trapfiets wil een weg met bord C9 oprijden. Is dat toegestaan?",
         "choices": [
-          {
-            "text": "Ja, op zaterdag geldt het verbod niet (buiten de aangegeven tijden)",
-            "is_correct": true
-          },
-          {
-            "text": "Nee, het verbod geldt altijd",
-            "is_correct": false
-          },
-          {
-            "text": "Nee, ook in het weekend geldt het verbod",
-            "is_correct": false
-          }
+          { "text": "Ja, C9 verbiedt uitsluitend bromfietsen; gewone fietsen zijn niet door dit bord verboden", "is_correct": true },
+          { "text": "Neen, C9 verbiedt alle tweewielers inclusief gewone trapfietsen", "is_correct": false }
         ],
-        "explanation": "Het onderbord beperkt het verbod tot werkdagen (ma–vr) tussen 07:00 en 19:00. Op zaterdag valt dit buiten de verbodstijden, dus u mag de weg wel in."
+        "explanation": "C9 geldt specifiek voor bromfietsen (klasse A en B). Een gewone fiets (trapfiets zonder motor) valt hier niet onder. Wil men ook fietsers weren, dan moet daarvoor een apart bord worden aangebracht."
       },
       "EN": {
-        "question": "You are moped riders and approach sign C9. There is a sub-sign 'Mon–Fri 07:00–19:00'. It is Saturday afternoon. May you enter the road?",
+        "question": "A cyclist on a regular pedal bicycle wants to enter a road with sign C9. Is that allowed?",
         "choices": [
-          {
-            "text": "Yes, on Saturday the prohibition does not apply (outside of the indicated times)",
-            "is_correct": true
-          },
-          {
-            "text": "No, the prohibition always applies",
-            "is_correct": false
-          },
-          {
-            "text": "No, the prohibition also applies on weekends",
-            "is_correct": false
-          }
+          { "text": "Yes, C9 exclusively prohibits mopeds; regular pedal bicycles are not prohibited by this sign", "is_correct": true },
+          { "text": "No, C9 prohibits all two-wheelers including regular pedal bicycles", "is_correct": false }
         ],
-        "explanation": "The sub-sign restricts the prohibition to weekdays (Mon–Fri) between 07:00 and 19:00. On Saturday this falls outside the prohibited times, so you may enter the road."
+        "explanation": "C9 specifically applies to mopeds (class A and B). A regular bicycle (pedal bike without a motor) is not covered. To also prohibit cyclists, a separate sign must be placed."
       },
       "FR": {
-        "question": "Vous êtes conducteurs de cyclomoteurs et approchez le panneau C9. Il y a un panneau complémentaire 'lun–ven 07h00–19h00'. C'est samedi après-midi. Pouvez-vous entrer sur la route ?",
+        "question": "Un cycliste sur un velo ordinaire a pedales veut s'engager sur une route avec le panneau C9. Est-ce autorise ?",
         "choices": [
-          {
-            "text": "Oui, le samedi l'interdiction ne s'applique pas (en dehors des heures indiquées)",
-            "is_correct": true
-          },
-          {
-            "text": "Non, l'interdiction s'applique toujours",
-            "is_correct": false
-          },
-          {
-            "text": "Non, l'interdiction s'applique aussi le week-end",
-            "is_correct": false
-          }
+          { "text": "Oui, C9 interdit exclusivement les cyclomoteurs; les velos ordinaires a pedales ne sont pas interdits par ce panneau", "is_correct": true },
+          { "text": "Non, C9 interdit tous les deux-roues y compris les velos ordinaires a pedales", "is_correct": false }
         ],
-        "explanation": "Le panneau complémentaire restreint l'interdiction aux jours ouvrables (lun–ven) entre 07h00 et 19h00. Le samedi tombe en dehors des heures d'interdiction, donc vous pouvez entrer sur la route."
+        "explanation": "C9 s'applique specifiquement aux cyclomoteurs (classe A et B). Un velo ordinaire (a pedales sans moteur) n'en est pas concerne. Pour interdire egalement les cyclistes, un panneau separe doit etre appose."
       },
       "AR": {
-        "question": "أنت سائقي الدراجات البخارية وتقترب من اللافتة C9. هناك لافتة إضافية 'الإثنين–الجمعة 07:00–19:00'. إنه ظهر السبت. هل يمكنك الدخول إلى الطريق؟",
+        "question": "Ø¯Ø±Ø§Ø¬ Ø¹Ù„Ù‰ Ø¯Ø±Ø§Ø¬Ø© Ø¹Ø§Ø¯ÙŠØ© Ø°Ø§Øª Ø¯ÙˆØ§Ø³Ø§Øª ÙŠØ±ÙŠØ¯ Ø¯Ø®ÙˆÙ„ Ø·Ø±ÙŠÙ‚ Ø¹Ù„ÙŠÙ‡ Ø§Ù„Ù„Ø§ÙØªØ© C9. Ù‡Ù„ ÙŠØ³Ù…Ø­ Ø¨Ø°Ù„ÙƒØŸ",
         "choices": [
-          {
-            "text": "نعم، يوم السبت لا ينطبق الحظر (خارج الأوقات المحددة)",
-            "is_correct": true
-          },
-          {
-            "text": "لا، الحظر ينطبق دائماً",
-            "is_correct": false
-          },
-          {
-            "text": "لا، الحظر ينطبق أيضاً في عطلة نهاية الأسبوع",
-            "is_correct": false
-          }
+          { "text": "Ù†Ø¹Ù…ØŒ C9 ØªØ­Ø¸Ø± Ø­ØµØ±Ø§Ù‹ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ù„Ø¨Ø®Ø§Ø±ÙŠØ© Ø§Ù„ØµØºÙŠØ±Ø©Ø› Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ù„Ø¹Ø§Ø¯ÙŠØ© Ø°Ø§Øª Ø§Ù„Ø¯ÙˆØ§Ø³Ø§Øª Ù„Ø§ ÙŠØ­Ø¸Ø±Ù‡Ø§ Ù‡Ø°Ø§ Ø§Ù„Ø¯Ø§Ø±", "is_correct": true },
+          { "text": "Ù„Ø§ØŒ C9 ØªØ­Ø¸Ø± Ø¬Ù…ÙŠØ¹ Ø°ÙˆÙŠ Ø§Ù„Ø¹Ø¬Ù„ØªÙŠÙ† Ø¨Ù…Ø§ ÙÙŠÙ‡Ù… Ø±Ø§ÙƒØ¨Ùˆ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ù„Ø¹Ø§Ø¯ÙŠØ©", "is_correct": false }
         ],
-        "explanation": "اللافتة الإضافية تقيّد الحظر بأيام العمل (الإثنين–الجمعة) بين 07:00 و19:00. يوم السبت يقع خارج أوقات الحظر، لذا يمكنك الدخول إلى الطريق."
-      }
-    }
-  },
-  {
-    "question_id": "C9_Q28",
-    "type": "IS_IT_ALLOWED",
-    "difficulty": "HARD",
-    "is_critical": true,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "Bord C9 staat aan het begin van een straat met een onderbord 'uitgezonderd plaatselijk verkeer'. U woont in een andere straat in dezelfde wijk. Mag u de straat in?",
-        "choices": [
-          {
-            "text": "Nee, 'plaatselijk verkeer' betekent enkel bestemmingenverkeer voor die straat zelf",
-            "is_correct": true
-          },
-          {
-            "text": "Ja, als wijkbewoner bent u 'plaatselijk verkeer'",
-            "is_correct": false
-          },
-          {
-            "text": "Ja, als u snel doorrijdt",
-            "is_correct": false
-          }
-        ],
-        "explanation": "'Plaatselijk verkeer' of 'bestemmingsverkeer' verwijst naar mensen die een bestemming hebben in die specifieke straat (bewoners, bezoekers). Als u enkel doorrijdt bent u geen plaatselijk verkeer."
-      },
-      "EN": {
-        "question": "Sign C9 is at the beginning of a street with a sub-sign 'except local traffic'. You live in another street in the same neighbourhood. May you enter the street?",
-        "choices": [
-          {
-            "text": "No, 'local traffic' means only destination traffic for that specific street",
-            "is_correct": true
-          },
-          {
-            "text": "Yes, as a neighbourhood resident you are 'local traffic'",
-            "is_correct": false
-          },
-          {
-            "text": "Yes, if you drive through quickly",
-            "is_correct": false
-          }
-        ],
-        "explanation": "'Local traffic' or 'destination traffic' refers to people who have a destination in that specific street (residents, visitors). If you are just passing through you are not local traffic."
-      },
-      "FR": {
-        "question": "Le panneau C9 est au début d'une rue avec un panneau complémentaire 'sauf circulation locale'. Vous habitez dans une autre rue du même quartier. Pouvez-vous entrer dans la rue ?",
-        "choices": [
-          {
-            "text": "Non, 'circulation locale' signifie uniquement le trafic ayant une destination dans cette rue spécifique",
-            "is_correct": true
-          },
-          {
-            "text": "Oui, en tant que résident du quartier vous êtes 'circulation locale'",
-            "is_correct": false
-          },
-          {
-            "text": "Oui, si vous traversez rapidement",
-            "is_correct": false
-          }
-        ],
-        "explanation": "'Circulation locale' ou 'trafic de destination' désigne les personnes ayant une destination dans cette rue spécifique (résidents, visiteurs). Si vous ne faites que passer, vous n'êtes pas une circulation locale."
-      },
-      "AR": {
-        "question": "اللافتة C9 موجودة في بداية شارع مع لافتة إضافية 'باستثناء المرور المحلي'. أنت تعيش في شارع آخر في نفس الحي. هل يمكنك الدخول إلى الشارع؟",
-        "choices": [
-          {
-            "text": "لا، 'المرور المحلي' يعني فقط المرور المتجه إلى وجهة في ذلك الشارع المحدد",
-            "is_correct": true
-          },
-          {
-            "text": "نعم، كمقيم في الحي أنت 'مرور محلي'",
-            "is_correct": false
-          },
-          {
-            "text": "نعم، إذا مررت بسرعة",
-            "is_correct": false
-          }
-        ],
-        "explanation": "'المرور المحلي' أو 'مرور الوجهة' يشير إلى الأشخاص الذين لديهم وجهة في ذلك الشارع المحدد (المقيمون، الزوار). إذا كنت فقط تعبر فأنت لست مروراً محلياً."
-      }
-    }
-  },
-  {
-    "question_id": "C9_Q29",
-    "type": "IS_IT_ALLOWED",
-    "difficulty": "HARD",
-    "is_critical": true,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "U ziet bord C9 aan de ene kant van een weg maar niet aan de andere kant. Geldt het verbod voor beide rijrichtingen?",
-        "choices": [
-          {
-            "text": "Nee, het verbod geldt enkel voor de rijrichting waarbij het bord staat",
-            "is_correct": true
-          },
-          {
-            "text": "Ja, een verbodsbord geldt altijd voor beide richtingen",
-            "is_correct": false
-          },
-          {
-            "text": "Ja, tenzij er pijlen op het bord staan",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Een verbodsbord geldt enkel voor de rijrichting waarvoor het geplaatst is. Als het bord slechts aan één kant staat, geldt het enkel voor die rijrichting."
-      },
-      "EN": {
-        "question": "You see sign C9 on one side of a road but not on the other. Does the prohibition apply to both directions?",
-        "choices": [
-          {
-            "text": "No, the prohibition only applies to the direction for which the sign is placed",
-            "is_correct": true
-          },
-          {
-            "text": "Yes, a prohibition sign always applies to both directions",
-            "is_correct": false
-          },
-          {
-            "text": "Yes, unless arrows are on the sign",
-            "is_correct": false
-          }
-        ],
-        "explanation": "A prohibition sign only applies to the direction of travel for which it is placed. If the sign is only on one side, it only applies to that direction."
-      },
-      "FR": {
-        "question": "Vous voyez le panneau C9 d'un côté de la route mais pas de l'autre. L'interdiction s'applique-t-elle aux deux sens de circulation ?",
-        "choices": [
-          {
-            "text": "Non, l'interdiction ne s'applique qu'au sens de circulation pour lequel le panneau est placé",
-            "is_correct": true
-          },
-          {
-            "text": "Oui, un panneau d'interdiction s'applique toujours aux deux sens",
-            "is_correct": false
-          },
-          {
-            "text": "Oui, sauf si des flèches figurent sur le panneau",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Un panneau d'interdiction ne s'applique qu'au sens de circulation pour lequel il est placé. Si le panneau n'est que d'un côté, il ne s'applique qu'à ce sens."
-      },
-      "AR": {
-        "question": "ترى اللافتة C9 على أحد جانبي الطريق ولكن ليس على الجانب الآخر. هل ينطبق الحظر على كلا الاتجاهين؟",
-        "choices": [
-          {
-            "text": "لا، الحظر ينطبق فقط على اتجاه السير الذي وضعت فيه اللافتة",
-            "is_correct": true
-          },
-          {
-            "text": "نعم، لافتة الحظر تنطبق دائماً على كلا الاتجاهين",
-            "is_correct": false
-          },
-          {
-            "text": "نعم، إلا إذا كانت هناك أسهم على اللافتة",
-            "is_correct": false
-          }
-        ],
-        "explanation": "لافتة الحظر تنطبق فقط على اتجاه السير الذي وضعت من أجله. إذا كانت اللافتة على جانب واحد فقط، فإنها تنطبق فقط على ذلك الاتجاه."
-      }
-    }
-  },
-  {
-    "question_id": "C9_Q30",
-    "type": "IS_IT_ALLOWED",
-    "difficulty": "HARD",
-    "is_critical": true,
-    "show_sign": true,
-    "i18n": {
-      "NL": {
-        "question": "U bent bestuurders van bromfietsen. U rijdt op een eenrichtingsstraat in de verkeerde richting en ziet bord C9. Wat is de correcte reactie?",
-        "choices": [
-          {
-            "text": "U stopt onmiddellijk, keert om en verlaat de straat op de wettelijk toegestane manier",
-            "is_correct": true
-          },
-          {
-            "text": "U rijdt door omdat u al op de weg bent",
-            "is_correct": false
-          },
-          {
-            "text": "U rijdt achteruit tot aan de ingang van de straat",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Als u de verkeerde richting in bent gereden of een verbodsbord passeert, moet u zo snel en veilig mogelijk stoppen, keren en de weg correct verlaten."
-      },
-      "EN": {
-        "question": "You are moped riders. You are driving on a one-way street in the wrong direction and see sign C9. What is the correct reaction?",
-        "choices": [
-          {
-            "text": "You stop immediately, turn around and leave the street in the legally permitted way",
-            "is_correct": true
-          },
-          {
-            "text": "You continue because you are already on the road",
-            "is_correct": false
-          },
-          {
-            "text": "You reverse to the entrance of the street",
-            "is_correct": false
-          }
-        ],
-        "explanation": "If you have driven in the wrong direction or passed a prohibition sign, you must stop, turn around and leave the road correctly as quickly and safely as possible."
-      },
-      "FR": {
-        "question": "Vous êtes conducteurs de cyclomoteurs. Vous roulez dans une rue à sens unique dans le mauvais sens et voyez le panneau C9. Quelle est la réaction correcte ?",
-        "choices": [
-          {
-            "text": "Vous arrêtez immédiatement, faites demi-tour et quittez la rue de manière légalement autorisée",
-            "is_correct": true
-          },
-          {
-            "text": "Vous continuez car vous êtes déjà sur la route",
-            "is_correct": false
-          },
-          {
-            "text": "Vous faites marche arrière jusqu'à l'entrée de la rue",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Si vous avez pris la mauvaise direction ou passé un panneau d'interdiction, vous devez vous arrêter, faire demi-tour et quitter la route correctement le plus vite et le plus sûrement possible."
-      },
-      "AR": {
-        "question": "أنت سائقي الدراجات البخارية. تقود في شارع ذو اتجاه واحد في الاتجاه الخاطئ وترى اللافتة C9. ما هو رد الفعل الصحيح؟",
-        "choices": [
-          {
-            "text": "توقف فوراً، انعطف واغادر الشارع بالطريقة المسموح بها قانوناً",
-            "is_correct": true
-          },
-          {
-            "text": "تكمل لأنك بالفعل على الطريق",
-            "is_correct": false
-          },
-          {
-            "text": "تتراجع إلى مدخل الشارع",
-            "is_correct": false
-          }
-        ],
-        "explanation": "إذا قدت في الاتجاه الخاطئ أو تجاوزت لافتة حظر، يجب عليك التوقف، الانعطاف ومغادرة الطريق بشكل صحيح في أسرع وأأمن وقت ممكن."
+        "explanation": "ØªÙ†Ø·Ø¨Ù‚ C9 ØªØ­Ø¯ÙŠØ¯Ø§Ù‹ Ø¹Ù„Ù‰ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ù„Ø¨Ø®Ø§Ø±ÙŠØ© Ø§Ù„ØµØºÙŠØ±Ø© (ÙØ¦Ø© A ÙˆB). Ø§Ù„Ø¯Ø±Ø§Ø¬Ø© Ø§Ù„Ø¹Ø§Ø¯ÙŠØ© (Ø°Ø§Øª Ø§Ù„Ø¯ÙˆØ§Ø³Ø§Øª Ø¨Ù„Ø§ Ù…Ø­Ø±Ùƒ) Ù„Ø§ ØªÙ†Ø¯Ø±Ø¬ Ø¶Ù…Ù†Ù‡Ø§. Ù„Ø­Ø¸Ø± Ø§Ù„Ø¯Ø±Ø§Ø¬ÙŠÙ† Ø£ÙŠØ¶Ø§Ù‹ ÙŠØ¬Ø¨ Ù†ØµØ¨ Ù„Ø§ÙØªØ© Ù…Ù†ÙØµÙ„Ø©."
       }
     }
   }

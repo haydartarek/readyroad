@@ -106,7 +106,8 @@ public interface QuizQuestionRepository extends JpaRepository<QuizQuestion, Long
                         @Param("difficulty") QuizQuestion.DifficultyLevel difficulty);
 
         /**
-         * Theory exam: Get random question IDs by difficulty level (native, for 2-step pattern)
+         * Theory exam: Get random question IDs by difficulty level (native, for 2-step
+         * pattern)
          *
          * @param difficulty Difficulty level string ("EASY", "MEDIUM", "HARD")
          * @param limit      Maximum number of IDs to return
@@ -119,8 +120,10 @@ public interface QuizQuestionRepository extends JpaRepository<QuizQuestion, Long
                         @Param("limit") int limit);
 
         /**
-         * Theory exam answer check: fetch questions with options AND category eagerly loaded.
-         * Used by checkTheoryExamAnswers to avoid lazy-loading issues on category fields.
+         * Theory exam answer check: fetch questions with options AND category eagerly
+         * loaded.
+         * Used by checkTheoryExamAnswers to avoid lazy-loading issues on category
+         * fields.
          *
          * @param ids List of question IDs
          * @return Questions with options and category loaded
@@ -149,14 +152,15 @@ public interface QuizQuestionRepository extends JpaRepository<QuizQuestion, Long
          */
         Long countByCategoryIdAndIsActiveTrueAndStatus(Long categoryId, QuizQuestion.QuestionStatus status);
 
-        // ========== Phase 3: Smart Quiz Methods (24h Cooldown) ==========
+        // ========== Paged Delivery Methods (cooldown-aware generation) ==========
 
         /**
-         * Find random PUBLISHED questions with Pageable support (for SmartQuizService).
+         * Find random PUBLISHED questions with Pageable support for active quiz
+         * generation.
          * Filters: isActive=true AND status=PUBLISHED (Belgian compliance).
          * EntityGraph: Eager-load options to prevent N+1 queries
          */
-        @EntityGraph(attributePaths = { "options", "category", "trafficSign" })
+        @EntityGraph(attributePaths = { "options", "category" })
         @Query("SELECT DISTINCT qq FROM QuizQuestion qq WHERE qq.isActive = true AND qq.status = 'PUBLISHED'")
         List<QuizQuestion> findRandomQuestionsWithOptions(Pageable pageable);
 
@@ -165,7 +169,7 @@ public interface QuizQuestionRepository extends JpaRepository<QuizQuestion, Long
          * Filters: isActive=true AND status=PUBLISHED (Belgian compliance).
          * EntityGraph: Eager-load options to prevent N+1 queries
          */
-        @EntityGraph(attributePaths = { "options", "category", "trafficSign" })
+        @EntityGraph(attributePaths = { "options", "category" })
         @Query("SELECT DISTINCT qq FROM QuizQuestion qq WHERE qq.category.id = :categoryId " +
                         "AND qq.isActive = true AND qq.status = 'PUBLISHED'")
         List<QuizQuestion> findRandomQuestionsByCategoryWithOptions(
@@ -215,6 +219,9 @@ public interface QuizQuestionRepository extends JpaRepository<QuizQuestion, Long
         @Query("SELECT qq FROM QuizQuestion qq JOIN qq.category c WHERE " +
                         "(:categoryCode IS NULL OR c.code = :categoryCode) AND " +
                         "(:difficulty IS NULL OR qq.difficultyLevel = :difficulty) AND " +
+                        "(:hasImage IS NULL OR " +
+                        " (:hasImage = true AND LENGTH(TRIM(COALESCE(qq.contentImageUrl, ''))) > 0) OR " +
+                        " (:hasImage = false AND LENGTH(TRIM(COALESCE(qq.contentImageUrl, ''))) = 0)) AND " +
                         "(:q IS NULL OR " +
                         " LOWER(qq.questionEn) LIKE LOWER(CONCAT('%', :q, '%')) OR " +
                         " LOWER(qq.questionAr) LIKE LOWER(CONCAT('%', :q, '%')) OR " +
@@ -223,6 +230,7 @@ public interface QuizQuestionRepository extends JpaRepository<QuizQuestion, Long
         Page<QuizQuestion> findAdminQuestions(
                         @Param("categoryCode") String categoryCode,
                         @Param("difficulty") QuizQuestion.DifficultyLevel difficulty,
+                        @Param("hasImage") Boolean hasImage,
                         @Param("q") String q,
                         Pageable pageable);
 

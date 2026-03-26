@@ -1,9 +1,9 @@
 package com.readyroad.readyroadbackend.service;
 
 import com.readyroad.readyroadbackend.domain.entity.Lesson;
-import com.readyroad.readyroadbackend.domain.entity.TrafficSign;
+import com.readyroad.readyroadbackend.domain.entity.RoadSign;
 import com.readyroad.readyroadbackend.domain.repository.LessonRepository;
-import com.readyroad.readyroadbackend.domain.repository.TrafficSignRepository;
+import com.readyroad.readyroadbackend.domain.repository.RoadSignRepository;
 import com.readyroad.readyroadbackend.dto.response.SearchResponse;
 import com.readyroad.readyroadbackend.dto.response.SearchResponse.SearchResultItem;
 import lombok.RequiredArgsConstructor;
@@ -16,7 +16,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class SearchService {
 
-    private final TrafficSignRepository trafficSignRepository;
+    private final RoadSignRepository roadSignRepository;
     private final LessonRepository lessonRepository;
 
     public SearchResponse search(String query, String language) {
@@ -24,11 +24,10 @@ public class SearchService {
             return new SearchResponse(query, List.of());
         }
 
-        String searchTerm = "%" + query.toLowerCase() + "%";
         List<SearchResultItem> results = new ArrayList<>();
 
-        // Search traffic signs (limit 10)
-        List<TrafficSign> signs = trafficSignRepository.searchTrafficSigns(searchTerm);
+        // Search road signs (limit 10)
+        List<RoadSign> signs = roadSignRepository.searchRoadSigns(query.trim());
         signs.stream()
                 .limit(10)
                 .forEach(sign -> results.add(new SearchResultItem(
@@ -52,7 +51,7 @@ public class SearchService {
         return new SearchResponse(query, results);
     }
 
-    private String getTrafficSignName(TrafficSign sign, String language) {
+    private String getTrafficSignName(RoadSign sign, String language) {
         return switch (language.toLowerCase()) {
             case "ar" -> sign.getNameAr();
             case "nl" -> sign.getNameNl();
@@ -61,7 +60,7 @@ public class SearchService {
         };
     }
 
-    private String getTrafficSignDescription(TrafficSign sign, String language) {
+    private String getTrafficSignDescription(RoadSign sign, String language) {
         String desc = switch (language.toLowerCase()) {
             case "ar" -> sign.getDescriptionAr();
             case "nl" -> sign.getDescriptionNl();
