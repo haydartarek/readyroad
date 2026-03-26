@@ -1,16 +1,31 @@
-﻿.env
-logs/
-target/
-.idea/
+﻿# Environment
+.env
 
+# Logs
+logs/
 *.log
+
+# Build folders
+target/
+build/
+dist/
+node_modules/
+.next/
+
+# IDE
+.idea/
+*.iml
+
+# Text files
 *.txt
 
+# Windows reserved / junk
 nul
+*.null
 
-
-nul
-
+# Scripts
+*.ps1
+*.py
 
 # Backup files
 *.bak
@@ -18,3 +33,6 @@ nul
 *.old
 *.tmp
 
+# OS files
+.DS_Store
+Thumbs.db
