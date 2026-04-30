@@ -10,7 +10,9 @@ import com.readyroad.readyroadbackend.domain.repository.*;
 import com.readyroad.readyroadbackend.dto.RoadSignDetailDto;
 import com.readyroad.readyroadbackend.dto.RoadSignSummaryDto;
 import com.readyroad.readyroadbackend.dto.SignImportResultDto;
+import com.readyroad.readyroadbackend.util.DrivingTextSanitizer;
 import com.readyroad.readyroadbackend.util.ImportedTextSanitizer;
+import com.readyroad.readyroadbackend.util.PlaceholderDetector;
 import com.readyroad.readyroadbackend.util.RouteCodeNormalizer;
 import com.readyroad.readyroadbackend.util.SignQuestionTextSanitizer;
 import com.readyroad.readyroadbackend.util.TextNormalizer;
@@ -35,12 +37,13 @@ import java.util.*;
  * <li>Directory scan — collect sign folders</li>
  * <li>File existence — sign.json, questions.json, exams.json</li>
  * <li>sign.json validation — code, category, i18n (NL/EN/FR/AR)</li>
- * <li>questions.json validation — types, choices count:
- * IS_IT_ALLOWED→2, others→3, anything else→reject</li>
+ * <li>questions.json validation — hard questions expose 2 choices, easy/medium
+ * expose up to 3 choices</li>
  * <li>exams.json validation — 8 questions in exam_1 (3 EASY + 3 MEDIUM + 2
  * HARD)</li>
  * <li>Upsert road_signs</li>
- * <li>Upsert sign_questions + sign_choices in place (preserve historical FK integrity)</li>
+ * <li>Upsert sign_questions + sign_choices in place (preserve historical FK
+ * integrity)</li>
  * <li>Upsert sign_exams + sign_exam_questions in place</li>
  * <li>Save sign_import_runs and return result</li>
  * </ol>
@@ -65,6 +68,7 @@ public class SignQuizImportService {
     private final SignImportRunRepository importRunRepo;
     private final ObjectMapper mapper;
     private final CanonicalSignCatalogService canonicalSignCatalogService;
+    private final RoadSignReferenceTextResolver roadSignReferenceTextResolver;
     /**
      * Used for per-sign transaction isolation.
      * Each sign is committed independently so a DB error in one sign
@@ -72,7 +76,7 @@ public class SignQuizImportService {
      */
     private final TransactionTemplate txTemplate;
 
-    @Value("${readyroad.signs-import.path:C:/Users/haydar/Desktop/end_project/readyroad/src/main/resources/data/signs_import}")
+    @Value("${readyroad.signs-import.path:src/main/resources/data/signs_import}")
     private String signsImportPath;
 
     public SignQuizImportService(RoadSignRepository roadSignRepo,
@@ -81,7 +85,8 @@ public class SignQuizImportService {
             SignImportRunRepository importRunRepo,
             ObjectMapper mapper,
             PlatformTransactionManager txManager,
-            CanonicalSignCatalogService canonicalSignCatalogService) {
+            CanonicalSignCatalogService canonicalSignCatalogService,
+            RoadSignReferenceTextResolver roadSignReferenceTextResolver) {
         this.roadSignRepo = roadSignRepo;
         this.questionRepo = questionRepo;
         this.examRepo = examRepo;
@@ -89,6 +94,7 @@ public class SignQuizImportService {
         this.mapper = mapper;
         this.txTemplate = new TransactionTemplate(txManager);
         this.canonicalSignCatalogService = canonicalSignCatalogService;
+        this.roadSignReferenceTextResolver = roadSignReferenceTextResolver;
     }
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -102,7 +108,7 @@ public class SignQuizImportService {
      *
      * <p>
      * Steps 2-5 (JSON parsing + validation) run outside any transaction.
- * Steps 6-8 (DB upsert) run inside a per-sign {@code txTemplate.execute}.
+     * Steps 6-8 (DB upsert) run inside a per-sign {@code txTemplate.execute}.
      * Step 9 (run-record save) runs in its own transaction.
      * </p>
      *
@@ -113,10 +119,10 @@ public class SignQuizImportService {
         log.info("═══ Sign Quiz Import started by [{}] ═══", performedBy);
 
         // Step 1 — scan directory
-        File importDir = new File(signsImportPath);
+        File importDir = resolveImportDirectory();
         if (!importDir.exists() || !importDir.isDirectory()) {
             return failRun(performedBy, startMs,
-                    "Import directory not found: " + signsImportPath);
+                    "Import directory not found: " + importDir.getAbsolutePath());
         }
 
         File[] signDirs = importDir.listFiles(File::isDirectory);
@@ -256,6 +262,26 @@ public class SignQuizImportService {
         return saved;
     }
 
+    private File resolveImportDirectory() {
+        List<File> candidates = new ArrayList<>();
+
+        if (signsImportPath != null && !signsImportPath.isBlank()) {
+            candidates.add(new File(signsImportPath));
+        }
+
+        candidates.add(new File("src/main/resources/data/signs_import"));
+        candidates.add(new File("readyroad/src/main/resources/data/signs_import"));
+
+        for (File candidate : candidates) {
+            File absoluteCandidate = candidate.getAbsoluteFile();
+            if (absoluteCandidate.exists() && absoluteCandidate.isDirectory()) {
+                return absoluteCandidate;
+            }
+        }
+
+        return candidates.get(0).getAbsoluteFile();
+    }
+
     // ─────────────────────────────────────────────────────────────────────────
     // Step 3 — Validate sign.json
     // ─────────────────────────────────────────────────────────────────────────
@@ -281,6 +307,14 @@ public class SignQuizImportService {
             if (!i18n.has(lang)) {
                 throw new ImportValidationException("sign.json i18n missing language: " + lang);
             }
+
+            JsonNode langNode = i18n.path(lang);
+            validateImportedText(
+                    langNode.path("name").asText("").trim(),
+                    "sign.json i18n[" + lang + "].name");
+            validateImportedText(
+                    langNode.path("description").asText("").trim(),
+                    "sign.json i18n[" + lang + "].description");
         }
     }
 
@@ -308,8 +342,9 @@ public class SignQuizImportService {
 
             // validate difficulty
             String diff = q.path("difficulty").asText("").trim();
+            SignDifficulty difficulty;
             try {
-                SignDifficulty.valueOf(diff);
+                difficulty = SignDifficulty.valueOf(diff);
             } catch (IllegalArgumentException ex) {
                 throw new ImportValidationException(
                         "[" + qid + "] Unknown difficulty: " + diff);
@@ -328,6 +363,13 @@ public class SignQuizImportService {
                             "[" + qid + "] i18n missing language: " + lang);
                 }
 
+                validateImportedText(
+                        langNode.path("question").asText("").trim(),
+                        "[" + qid + "][" + lang + "] question");
+                validateImportedText(
+                        langNode.path("explanation").asText("").trim(),
+                        "[" + qid + "][" + lang + "] explanation");
+
                 JsonNode choices = langNode.path("choices");
                 if (!choices.isArray()) {
                     throw new ImportValidationException(
@@ -335,12 +377,7 @@ public class SignQuizImportService {
                 }
 
                 int choiceCount = choices.size();
-                // IS_IT_ALLOWED is binary. All other supported question types
-                // must offer three choices.
-                int required = (qType == SignQuestionType.IS_IT_ALLOWED)
-                        ? REQUIRED_CHOICES_BINARY
-                        : REQUIRED_CHOICES_MULTI;
-
+                int required = expectedChoiceCount(difficulty, qType);
                 if (choiceCount != required) {
                     throw new ImportValidationException(
                             "[" + qid + "][" + lang + "] difficulty=" + diff
@@ -349,9 +386,14 @@ public class SignQuizImportService {
 
                 // exactly 1 correct choice per language
                 long correctCount = 0;
+                int choiceIndex = 0;
                 for (JsonNode c : choices) {
+                    validateImportedText(
+                            c.path("text").asText("").trim(),
+                            "[" + qid + "][" + lang + "] choice[" + choiceIndex + "]");
                     if (c.path("is_correct").asBoolean(false))
                         correctCount++;
+                    choiceIndex++;
                 }
                 if (correctCount != 1) {
                     throw new ImportValidationException(
@@ -502,10 +544,10 @@ public class SignQuizImportService {
         sign.setNameEn(text(i18n, "EN", "name"));
         sign.setNameFr(text(i18n, "FR", "name"));
         sign.setNameAr(text(i18n, "AR", "name"));
-        sign.setDescriptionNl(text(i18n, "NL", "description"));
-        sign.setDescriptionEn(text(i18n, "EN", "description"));
-        sign.setDescriptionFr(text(i18n, "FR", "description"));
-        sign.setDescriptionAr(text(i18n, "AR", "description"));
+        sign.setDescriptionNl(DrivingTextSanitizer.sanitize("NL", text(i18n, "NL", "description")));
+        sign.setDescriptionEn(DrivingTextSanitizer.sanitize("EN", text(i18n, "EN", "description")));
+        sign.setDescriptionFr(DrivingTextSanitizer.sanitize("FR", text(i18n, "FR", "description")));
+        sign.setDescriptionAr(DrivingTextSanitizer.sanitize("AR", text(i18n, "AR", "description")));
         canonicalSignCatalogService.applyCanonicalFields(sign);
 
         return roadSignRepo.save(sign);
@@ -538,14 +580,22 @@ public class SignQuizImportService {
             question.setIsActive(true);
 
             JsonNode i18n = q.path("i18n");
-            question.setQuestionNl(text(i18n, "NL", "question"));
-            question.setQuestionEn(text(i18n, "EN", "question"));
-            question.setQuestionFr(text(i18n, "FR", "question"));
-            question.setQuestionAr(text(i18n, "AR", "question"));
-            question.setExplanationNl(SignQuestionTextSanitizer.sanitizeExplanation(questionType, text(i18n, "NL", "explanation")));
-            question.setExplanationEn(SignQuestionTextSanitizer.sanitizeExplanation(questionType, text(i18n, "EN", "explanation")));
-            question.setExplanationFr(SignQuestionTextSanitizer.sanitizeExplanation(questionType, text(i18n, "FR", "explanation")));
-            question.setExplanationAr(SignQuestionTextSanitizer.sanitizeExplanation(questionType, text(i18n, "AR", "explanation")));
+            question.setQuestionNl(
+                    SignQuestionTextSanitizer.sanitizeQuestion(questionType, "NL", text(i18n, "NL", "question")));
+            question.setQuestionEn(
+                    SignQuestionTextSanitizer.sanitizeQuestion(questionType, "EN", text(i18n, "EN", "question")));
+            question.setQuestionFr(
+                    SignQuestionTextSanitizer.sanitizeQuestion(questionType, "FR", text(i18n, "FR", "question")));
+            question.setQuestionAr(
+                    SignQuestionTextSanitizer.sanitizeQuestion(questionType, "AR", text(i18n, "AR", "question")));
+            question.setExplanationNl(
+                    SignQuestionTextSanitizer.sanitizeExplanation(questionType, "NL", text(i18n, "NL", "explanation")));
+            question.setExplanationEn(
+                    SignQuestionTextSanitizer.sanitizeExplanation(questionType, "EN", text(i18n, "EN", "explanation")));
+            question.setExplanationFr(
+                    SignQuestionTextSanitizer.sanitizeExplanation(questionType, "FR", text(i18n, "FR", "explanation")));
+            question.setExplanationAr(
+                    SignQuestionTextSanitizer.sanitizeExplanation(questionType, "AR", text(i18n, "AR", "explanation")));
 
             SignQuestion saved = questionRepo.save(question);
             syncChoices(saved, i18n, isNew, questionType);
@@ -597,8 +647,8 @@ public class SignQuizImportService {
 
             exam.setSign(sign);
             exam.setExamNumber(examNumber);
-            exam.setPassingScore(examsNode.path("passing_score").asInt(12));
-            exam.setTotalQuestions(examsNode.path("total_questions").asInt(15));
+            exam.setPassingScore(examsNode.path("passing_score").asInt(6));
+            exam.setTotalQuestions(examsNode.path("total_questions").asInt(REQUIRED_EXAM_QUESTIONS));
             exam.setIsActive(true);
 
             JsonNode dist = examsNode.path("distribution");
@@ -660,7 +710,7 @@ public class SignQuizImportService {
         String normalized = code.toLowerCase().replaceAll("[^a-z0-9]+", "_");
         return roadSignRepo.findFirstByNormalizedSignCodeAndIsActiveTrueOrderByIdAsc(normalized)
                 .or(() -> roadSignRepo.findFirstBySignCodeAndIsActiveTrueOrderByIdAsc(code))
-                .map(RoadSignDetailDto::from);
+                .map(sign -> RoadSignDetailDto.from(sign, roadSignReferenceTextResolver));
     }
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -681,10 +731,12 @@ public class SignQuizImportService {
             return null;
         return SignQuestionTextSanitizer.sanitizeChoice(
                 questionType,
+                lang,
                 ImportedTextSanitizer.sanitize(choices.get(idx).path("text").asText(null)));
     }
 
-    private void syncChoices(SignQuestion question, JsonNode i18n, boolean isNewQuestion, SignQuestionType questionType) {
+    private void syncChoices(SignQuestion question, JsonNode i18n, boolean isNewQuestion,
+            SignQuestionType questionType) {
         List<ImportedChoiceData> importedChoices = buildImportedChoices(i18n, questionType);
         if (importedChoices.isEmpty()) {
             throw new IllegalStateException("Question " + question.getQuestionRef() + " has no choices");
@@ -707,12 +759,6 @@ public class SignQuizImportService {
         existingChoices.sort(Comparator.comparing(
                 choice -> Optional.ofNullable(choice.getDisplayOrder()).orElse(Integer.MAX_VALUE)));
 
-        if (existingChoices.size() != importedChoices.size()) {
-            throw new IllegalStateException("Question " + question.getQuestionRef()
-                    + " choice count mismatch: existing=" + existingChoices.size()
-                    + ", imported=" + importedChoices.size());
-        }
-
         Map<String, Deque<SignChoice>> choicesByFingerprint = new HashMap<>();
         for (SignChoice existingChoice : existingChoices) {
             choicesByFingerprint
@@ -721,41 +767,31 @@ public class SignQuizImportService {
         }
 
         List<SignChoice> remainingExisting = new ArrayList<>(existingChoices);
-        Map<SignChoice, ImportedChoiceData> assignments = new LinkedHashMap<>();
-
+        int order = 1;
         for (ImportedChoiceData importedChoice : importedChoices) {
+            SignChoice chosen = null;
             Deque<SignChoice> exactMatches = choicesByFingerprint.get(importedChoice.fingerprint());
             if (exactMatches != null && !exactMatches.isEmpty()) {
-                SignChoice matched = exactMatches.removeFirst();
-                assignments.put(matched, importedChoice);
-                remainingExisting.remove(matched);
+                chosen = exactMatches.removeFirst();
             }
-        }
-
-        List<ImportedChoiceData> unmatchedImported = new ArrayList<>();
-        for (ImportedChoiceData importedChoice : importedChoices) {
-            if (!assignments.containsValue(importedChoice)) {
-                unmatchedImported.add(importedChoice);
+            if (chosen == null) {
+                chosen = findBestChoiceMatch(remainingExisting, importedChoice);
             }
-        }
-
-        for (ImportedChoiceData importedChoice : unmatchedImported) {
-            SignChoice bestMatch = findBestChoiceMatch(remainingExisting, importedChoice);
-            if (bestMatch == null) {
-                throw new IllegalStateException("Unable to map imported choice for question "
-                        + question.getQuestionRef());
+            if (chosen == null) {
+                chosen = new SignChoice();
+                chosen.setQuestion(question);
+                question.addChoice(chosen);
+            } else {
+                remainingExisting.remove(chosen);
             }
-            assignments.put(bestMatch, importedChoice);
-            remainingExisting.remove(bestMatch);
+            chosen.setDisplayOrder(order++);
+            applyChoiceData(chosen, importedChoice);
         }
 
-        if (!remainingExisting.isEmpty() || assignments.size() != importedChoices.size()) {
-            throw new IllegalStateException("Choice synchronization left unmatched rows for question "
-                    + question.getQuestionRef());
-        }
-
-        for (Map.Entry<SignChoice, ImportedChoiceData> entry : assignments.entrySet()) {
-            applyChoiceData(entry.getKey(), entry.getValue());
+        int hiddenOrder = importedChoices.size() + 100;
+        for (SignChoice legacyChoice : remainingExisting) {
+            legacyChoice.setDisplayOrder(hiddenOrder++);
+            legacyChoice.setIsCorrect(false);
         }
     }
 
@@ -816,6 +852,13 @@ public class SignQuizImportService {
         choice.setTextEn(importedChoice.textEn());
         choice.setTextFr(importedChoice.textFr());
         choice.setTextAr(importedChoice.textAr());
+    }
+
+    private int expectedChoiceCount(SignDifficulty difficulty, SignQuestionType questionType) {
+        if (difficulty == SignDifficulty.HARD || questionType == SignQuestionType.IS_IT_ALLOWED) {
+            return REQUIRED_CHOICES_BINARY;
+        }
+        return REQUIRED_CHOICES_MULTI;
     }
 
     private String choiceFingerprint(SignChoice choice) {
@@ -908,7 +951,8 @@ public class SignQuizImportService {
         int deactivated = 0;
 
         for (RoadSign sign : activeSigns) {
-            Optional<CanonicalSignCatalogService.CanonicalSignSeed> seedOpt = canonicalSignCatalogService.findSeedFor(sign);
+            Optional<CanonicalSignCatalogService.CanonicalSignSeed> seedOpt = canonicalSignCatalogService
+                    .findSeedFor(sign);
             if (seedOpt.isEmpty()) {
                 sign.setIsActive(false);
                 roadSignRepo.save(sign);
@@ -956,7 +1000,7 @@ public class SignQuizImportService {
                         .thenComparingInt(sign -> examCountBySignId.computeIfAbsent(
                                 sign.getId(), id -> examRepo.findAllBySignIdOrderByExamNumberAsc(id).size()))
                         .thenComparingInt(sign -> Boolean.TRUE.equals(sign.getIsActive()) ? 1 : 0)
-                .thenComparingLong(RoadSign::getId))
+                        .thenComparingLong(RoadSign::getId))
                 .orElseThrow(() -> new IllegalStateException("Expected at least one road sign in canonical group"));
     }
 
@@ -1004,13 +1048,11 @@ public class SignQuizImportService {
             }
 
             for (SignQuestion question : activeQuestions) {
-                long correctChoices = question.getChoices().stream()
+                long correctChoices = question.getDeliverableChoices().stream()
                         .filter(choice -> Boolean.TRUE.equals(choice.getIsCorrect()))
                         .count();
-                int expectedChoiceCount = question.getQuestionType() == SignQuestionType.IS_IT_ALLOWED
-                        ? REQUIRED_CHOICES_BINARY
-                        : REQUIRED_CHOICES_MULTI;
-                int actualChoiceCount = question.getChoices().size();
+                int expectedChoiceCount = expectedChoiceCount(question.getDifficulty(), question.getQuestionType());
+                int actualChoiceCount = question.getDeliverableChoices().size();
 
                 if (actualChoiceCount != expectedChoiceCount) {
                     issues.add("Question " + question.getQuestionRef()
@@ -1106,6 +1148,19 @@ public class SignQuizImportService {
         String v = node.path(field).asText("").trim();
         if (v.isEmpty()) {
             throw new ImportValidationException("sign.json missing required field: " + field);
+        }
+    }
+
+    private void validateImportedText(String value, String context) throws ImportValidationException {
+        if (value == null || value.isBlank()) {
+            throw new ImportValidationException(context + " must not be blank");
+        }
+
+        if (PlaceholderDetector.hasPlaceholderNonBlank(value)
+                || value.indexOf('\uFFFD') >= 0
+                || value.contains("�")
+                || ImportedTextSanitizer.requiresRepair(value)) {
+            throw new ImportValidationException(context + " contains placeholder or corrupted text");
         }
     }
 

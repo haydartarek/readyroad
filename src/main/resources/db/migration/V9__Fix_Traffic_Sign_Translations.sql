@@ -1,9 +1,7 @@
-﻿-- V9__Fix_Traffic_Sign_Translations.sql
+-- V9__Fix_Traffic_Sign_Translations.sql
 -- Ø¥ØµÙ„Ø§Ø­ Ø§Ù„ØªØ±Ø¬Ù…Ø§Øª Ø§Ù„Ø®Ø§Ø·Ø¦Ø© Ù„Ù„Ø¥Ø´Ø§Ø±Ø§Øª Ø§Ù„Ù…Ø±ÙˆØ±ÙŠØ©
 -- Fix incorrect translations for traffic signs
 -- Updated: 2026-02-27 - Added real translations, name_nl, updated_at, B11/F7 fixes
-
-USE readyroad_prod;
 
 -- ========================================
 -- Category A: Warning Signs
@@ -325,7 +323,7 @@ UPDATE traffic_signs SET
   name_nl = 'Rechtsaf rijden verplicht',
   name_fr = 'Direction obligatoire Ã  droite',
   updated_at = NOW()
-WHERE sign_code = 'D1b';
+WHERE sign_code = 'D1b-links';
 
 -- D1c: Links aanhouden verplicht
 UPDATE traffic_signs SET
@@ -388,7 +386,7 @@ UPDATE traffic_signs SET
   name_nl = 'Verplicht rechts voor voertuigen met gevaarlijke goederen',
   name_fr = 'Obligatoire Ã  droite pour vÃ©hicules transportant marchandises dangereuses',
   updated_at = NOW()
-WHERE sign_code = 'D4';
+WHERE sign_code = 'D4-rechtdoor';
 
 -- D9a: Rijbaan gedeeld voor voetgangers en fietsers (voetgangers links)
 UPDATE traffic_signs SET
@@ -399,14 +397,7 @@ UPDATE traffic_signs SET
   updated_at = NOW()
 WHERE sign_code = 'D9a';
 
--- D9b: Rijbaan gedeeld voor voetgangers en fietsers (fietsers links)
-UPDATE traffic_signs SET
-  name_ar = 'Ø¬Ø²Ø¡ Ù…Ù† Ø§Ù„Ø·Ø±ÙŠÙ‚ Ù…Ø­Ø¬ÙˆØ² Ù„Ù„Ù…Ø´Ø§Ø© ÙˆØ§Ù„Ø¯Ø±Ø§Ø¬ÙŠÙ† (Ø¯Ø±Ø§Ø¬Ø§Øª ÙŠØ³Ø§Ø±Ø§Ù‹)',
-  name_en = 'Shared road section for pedestrians and cyclists (cyclists left)',
-  name_nl = 'Rijbaan gedeeld voor voetgangers en fietsers (fietsers links)',
-  name_fr = 'Partie de route rÃ©servÃ©e aux piÃ©tons et cyclistes (cyclistes Ã  gauche)',
-  updated_at = NOW()
-WHERE sign_code = 'D9b';
+
 
 -- D10: Gemengd fiets-/voetpad (shared use path, no separation)
 UPDATE traffic_signs SET

@@ -5,243 +5,204 @@
     "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE: Replace wrong answers with actual sign names from the same category.",
     "i18n": {
       "NL": {
         "question": "Wat betekent dit verkeersbord?",
         "choices": [
           {
-            "text": "Opgelet file",
+            "text": "Filevorming",
             "is_correct": true
           },
           {
-            "text": "Verbod om in te halen",
+            "text": "Versmalling van de rijbaan",
             "is_correct": false
           },
           {
-            "text": "Maximumsnelheid 50 km/u",
+            "text": "Overweg voor één spoor",
             "is_correct": false
           }
         ],
-        "explanation": "File."
+        "explanation": "A50 waarschuwt voor filevorming of sterk vertraagd verkeer voor u."
       },
       "EN": {
         "question": "What does this traffic sign mean?",
         "choices": [
           {
-            "text": "Traffic jam ahead",
+            "text": "Traffic congestion ahead",
             "is_correct": true
           },
           {
-            "text": "Prohibition to overtake",
+            "text": "Road narrows",
             "is_correct": false
           },
           {
-            "text": "Maximum speed 50 km/h",
+            "text": "Single-track level crossing",
             "is_correct": false
           }
         ],
-        "explanation": "This sign warns of possible traffic congestion. Reduce your speed and maintain a safe distance to avoid accidents."
+        "explanation": "This sign warns of traffic congestion or slow-moving traffic ahead."
       },
       "FR": {
         "question": "Que signifie ce panneau de signalisation ?",
         "choices": [
           {
-            "text": "Attention embouteillage",
+            "text": "Embouteillage",
             "is_correct": true
           },
           {
-            "text": "Interdiction de dÃ©passer",
+            "text": "Rétrécissement de la chaussée",
             "is_correct": false
           },
           {
-            "text": "Vitesse maximale 50 km/h",
+            "text": "Passage à niveau à une seule voie",
             "is_correct": false
           }
         ],
-        "explanation": "Ce panneau avertit d'un embouteillage possible. RÃ©duisez votre vitesse et gardez une distance de sÃ©curitÃ© pour Ã©viter les accidents."
+        "explanation": "A50 avertit d'un embouteillage ou d'un trafic fortement ralenti devant vous."
       },
       "AR": {
-        "question": "Ù…Ø§Ø°Ø§ ØªØ¹Ù†ÙŠ Ù„Ø§ÙØªØ© Ø§Ù„Ù…Ø±ÙˆØ± Ù‡Ø°Ù‡ØŸ",
+        "question": "ما معنى هذه العلامة المرورية؟",
         "choices": [
           {
-            "text": "Ø§Ø²Ø¯Ø­Ø§Ù… Ù…Ø±ÙˆØ±ÙŠ",
+            "text": "تحذير من ازدحام مروري",
             "is_correct": true
           },
           {
-            "text": "Ø­Ø¸Ø± Ø§Ù„ØªØ¬Ø§ÙˆØ²",
+            "text": "تضييق الطريق",
             "is_correct": false
           },
           {
-            "text": "Ø§Ù„Ø³Ø±Ø¹Ø© Ø§Ù„Ù‚ØµÙˆÙ‰ 50 ÙƒÙ…/Ø³",
+            "text": "معبر سكة حديد ذو مسار واحد",
             "is_correct": false
           }
         ],
-        "explanation": "ØªØ­Ø°Ø± Ù‡Ø°Ù‡ Ø§Ù„Ø¹Ù„Ø§Ù…Ø© Ù…Ù† Ø§Ø­ØªÙ…Ø§Ù„ Ø­Ø¯ÙˆØ« Ø§Ø²Ø¯Ø­Ø§Ù… Ù…Ø±ÙˆØ±ÙŠ. Ø®ÙÙ Ù…Ù† Ø³Ø±Ø¹ØªÙƒ ÙˆØ­Ø§ÙØ¸ Ø¹Ù„Ù‰ Ù…Ø³Ø§ÙØ© Ø¢Ù…Ù†Ø© Ù„ØªØ¬Ù†Ø¨ ÙˆÙ‚ÙˆØ¹ Ø§Ù„Ø­ÙˆØ§Ø¯Ø«."
+        "explanation": "تحذّر A50 من وجود ازدحام مروري أو حركة بطيئة أمامك."
       }
     }
-  },
+  },
   {
     "question_id": "A50_Q02",
     "type": "WHICH_SIGN",
     "difficulty": "EASY",
     "is_critical": false,
-    "show_sign": true,
-    "_note": "TEMPLATE: Ready to use â€” category identification question.",
+    "show_sign": false,
     "i18n": {
       "NL": {
-        "question": "Tot welke categorie verkeerstekens behoort dit bord?",
+        "question": "Welk bord waarschuwt voor filevorming?",
         "choices": [
-          {
-            "text": "Gevaarsborden (A-reeks)",
-            "is_correct": true
-          },
-          {
-            "text": "Voorrangsborden (B-reeks)",
-            "is_correct": false
-          },
-          {
-            "text": "Verbodsborden (C-reeks)",
-            "is_correct": false
-          }
+          { "text": "Het bord dat waarschuwt voor file of langzaam rijdend verkeer verderop", "is_correct": true },
+          { "text": "Het bord dat waarschuwt voor wegwerkzaamheden op of langs de rijbaan", "is_correct": false },
+          { "text": "Het bord dat waarschuwt voor een niet nader aangeduid gevaar", "is_correct": false }
         ],
-        "explanation": "Dit bord behoort tot de categorie 'Gevaarsborden (A-reeks)'. Elk type bord heeft een specifieke vorm en kleurschema."
+        "explanation": "Het gevaarsbord A50 waarschuwt specifiek voor filevorming. Het bord voor wegwerkzaamheden (A31) geldt voor werken op de weg. Het bord voor overige gevaren (A51) geldt voor gevaren zonder specifiek symbool."
       },
       "EN": {
-        "question": "To which category of traffic signs does this sign belong?",
+        "question": "Which sign warns of traffic jams?",
         "choices": [
-          {
-            "text": "Danger signs (A-series)",
-            "is_correct": true
-          },
-          {
-            "text": "Priority signs (B-series)",
-            "is_correct": false
-          },
-          {
-            "text": "Prohibition signs (C-series)",
-            "is_correct": false
-          }
+          { "text": "The sign that warns of a traffic jam or slow-moving traffic ahead", "is_correct": true },
+          { "text": "The sign that warns of roadworks on or alongside the carriageway", "is_correct": false },
+          { "text": "The sign that warns of an unspecified hazard", "is_correct": false }
         ],
-        "explanation": "This sign belongs to the 'Danger signs (A-series)' category. Each type of sign has a specific shape and color scheme."
+        "explanation": "Danger sign A50 specifically warns of traffic jams. The roadworks sign (A31) applies to works on the road. The general hazard sign (A51) applies to hazards without a specific symbol."
       },
       "FR": {
-        "question": "Ã€ quelle catÃ©gorie de panneaux de signalisation ce panneau appartient-il ?",
+        "question": "Quel panneau signale un risque d’embouteillage ?",
         "choices": [
-          {
-            "text": "Panneaux de danger (sÃ©rie A)",
-            "is_correct": true
-          },
-          {
-            "text": "Panneaux de prioritÃ© (sÃ©rie B)",
-            "is_correct": false
-          },
-          {
-            "text": "Panneaux d'interdiction (sÃ©rie C)",
-            "is_correct": false
-          }
+          { "text": "Le panneau qui avertit d’un embouteillage ou d’une circulation lente", "is_correct": true },
+          { "text": "Le panneau qui avertit de travaux sur la chaussée ou à ses abords", "is_correct": false },
+          { "text": "Le panneau qui avertit d’un danger non précisé", "is_correct": false }
         ],
-        "explanation": "Ce panneau appartient Ã  la catÃ©gorie 'Panneaux de danger (sÃ©rie A)'. Chaque type de panneau a une forme et un schÃ©ma de couleurs spÃ©cifiques."
+        "explanation": "Le panneau de danger A50 signale spécifiquement un risque d’embouteillage. Le panneau travaux (A31) concerne les travaux sur la route. Le panneau danger général (A51) concerne des dangers sans symbole spécifique."
       },
       "AR": {
-        "question": "Ø¥Ù„Ù‰ Ø£ÙŠ ÙØ¦Ø© Ù…Ù† Ù„Ø§ÙØªØ§Øª Ø§Ù„Ù…Ø±ÙˆØ± ØªÙ†ØªÙ…ÙŠ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ",
+        "question": "أي علامة مرورية تُحذّر من تشكل أزمة مرورية؟",
         "choices": [
-          {
-            "text": "Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± (Ø³Ù„Ø³Ù„Ø© A)",
-            "is_correct": true
-          },
-          {
-            "text": "Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© (Ø³Ù„Ø³Ù„Ø© B)",
-            "is_correct": false
-          },
-          {
-            "text": "Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø­Ø¸Ø± (Ø³Ù„Ø³Ù„Ø© C)",
-            "is_correct": false
-          }
+          { "text": "العلامة التي تُحذّر من أزمة مرورية أو حركة بطيئة أمامك", "is_correct": true },
+          { "text": "العلامة التي تُحذّر من أشغال على الطريق أو على جانبه", "is_correct": false },
+          { "text": "العلامة التي تُحذّر من خطر غير محدد", "is_correct": false }
         ],
-        "explanation": "Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ© ØªÙ†ØªÙ…ÙŠ Ø¥Ù„Ù‰ ÙØ¦Ø© 'Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± (Ø³Ù„Ø³Ù„Ø© A)'. ÙƒÙ„ Ù†ÙˆØ¹ Ù…Ù† Ø§Ù„Ù„Ø§ÙØªØ§Øª Ù„Ù‡ Ø´ÙƒÙ„ ÙˆÙ†Ø¸Ø§Ù… Ø£Ù„ÙˆØ§Ù† Ù…Ø­Ø¯Ø¯."
+        "explanation": "علامة الخطر A50 تُحذّر تحديدًا من تشكل الأزمة المرورية. علامة الأشغال (A31) تختص بأعمال على الطريق. علامة الخطر العام (A51) تختص بخطر دون رمز محدد."
       }
     }
   },
   {
     "question_id": "A50_Q03",
-    "type": "WHAT_MUST_YOU_DO",
+    "type": "HAZARD_IDENTIFICATION",
     "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE (MEDIUM): Replace with sign-specific question for production.",
     "i18n": {
       "NL": {
-        "question": "Wat moet u doen wanneer u dit gevaarsbord ziet?",
+        "question": "Welk gevaar hoort bij dit bord?",
         "choices": [
           {
-            "text": "Snelheid verminderen en extra opletten",
+            "text": "File of langzaam rijdend verkeer voor u",
             "is_correct": true
           },
           {
-            "text": "Stoppen en uitstappen",
+            "text": "Een onverwachte overweg zonder slagbomen",
             "is_correct": false
           },
           {
-            "text": "De rijstrook wisselen",
+            "text": "Een rijbaan die plots in twee richtingen verandert",
             "is_correct": false
           }
         ],
-        "explanation": "Gevaarsborden waarschuwen voor gevaarlijke situaties. U moet uw snelheid aanpassen en extra voorzichtig zijn."
+        "explanation": "Het gevaar is dat verkeer voor u stilstaand of sterk vertraagd kan zijn. Daardoor kan plots remmen nodig zijn."
       },
       "EN": {
-        "question": "What should you do when you see this danger sign?",
+        "question": "What hazard is associated with this sign?",
         "choices": [
           {
-            "text": "Reduce speed and pay extra attention",
+            "text": "Traffic congestion or slow-moving traffic ahead",
             "is_correct": true
           },
           {
-            "text": "Stop and get out of the vehicle",
+            "text": "An unexpected level crossing without barriers",
             "is_correct": false
           },
           {
-            "text": "Change lane immediately",
+            "text": "A carriageway that suddenly changes to two-way traffic",
             "is_correct": false
           }
         ],
-        "explanation": "Danger signs warn of hazardous situations on the road. You must adjust your speed and be extra careful."
+        "explanation": "The hazard is that traffic ahead may be stationary or moving very slowly. That means sudden braking may be necessary."
       },
       "FR": {
-        "question": "Que devez-vous faire lorsque vous voyez ce panneau de danger ?",
+        "question": "Quel danger est associé à ce panneau ?",
         "choices": [
           {
-            "text": "RÃ©duire la vitesse et faire particuliÃ¨rement attention",
+            "text": "Embouteillage ou trafic fortement ralenti devant vous",
             "is_correct": true
           },
           {
-            "text": "ArrÃªter et descendre du vÃ©hicule",
+            "text": "Un passage à niveau inattendu sans barrières",
             "is_correct": false
           },
           {
-            "text": "Changer de voie immÃ©diatement",
+            "text": "Une chaussée qui passe soudainement à double sens",
             "is_correct": false
           }
         ],
-        "explanation": "Les panneaux de danger avertissent des situations dangereuses. Vous devez adapter votre vitesse et Ãªtre particuliÃ¨rement prudent."
+        "explanation": "Le danger est que la circulation devant vous peut être à l'arrêt ou fortement ralentie. Un freinage brusque peut donc devenir nécessaire."
       },
       "AR": {
-        "question": "Ù…Ø§Ø°Ø§ ÙŠØ¬Ø¨ Ø£Ù† ØªÙØ¹Ù„ Ø¹Ù†Ø¯Ù…Ø§ ØªØ±Ù‰ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ© Ø§Ù„ØªØ­Ø°ÙŠØ±ÙŠØ©ØŸ",
+        "question": "ما الخطر المرتبط بهذه العلامة المرورية؟",
         "choices": [
           {
-            "text": "ØªÙ‚Ù„ÙŠÙ„ Ø§Ù„Ø³Ø±Ø¹Ø© ÙˆØ§Ù„Ø§Ù†ØªØ¨Ø§Ù‡ Ø¨Ø´ÙƒÙ„ Ø¥Ø¶Ø§ÙÙŠ",
+            "text": "وجود ازدحام أو حركة مرور بطيئة أمامك",
             "is_correct": true
           },
           {
-            "text": "Ø§Ù„ØªÙˆÙ‚Ù ÙˆØ§Ù„Ù†Ø²ÙˆÙ„ Ù…Ù† Ø§Ù„Ù…Ø±ÙƒØ¨Ø©",
+            "text": "وجود معبر سكة حديد مفاجئ بدون حواجز",
             "is_correct": false
           },
           {
-            "text": "ØªØºÙŠÙŠØ± Ø§Ù„Ù…Ø³Ø§Ø± ÙÙˆØ±Ø§Ù‹",
+            "text": "تحول الطريق فجأة إلى سير في اتجاهين",
             "is_correct": false
           }
         ],
-        "explanation": "ØªØ­Ø°Ø± Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± Ù…Ù† Ø§Ù„Ù…ÙˆØ§Ù‚Ù Ø§Ù„Ø®Ø·Ø±Ø© Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±ÙŠÙ‚. ÙŠØ¬Ø¨ Ø¹Ù„ÙŠÙƒ ØªØ¹Ø¯ÙŠÙ„ Ø³Ø±Ø¹ØªÙƒ ÙˆØ£Ù† ØªÙƒÙˆÙ† Ø£ÙƒØ«Ø± Ø­Ø°Ø±Ø§Ù‹."
+        "explanation": "الخطر هو أن حركة المرور أمامك قد تكون متوقفة أو بطيئة جداً. لذلك قد تضطر إلى الفرملة المفاجئة."
       }
     }
   },
@@ -251,79 +212,78 @@
     "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE (MEDIUM): Replace with sign-specific question for production.",
     "i18n": {
       "NL": {
-        "question": "Op welke afstand van het gevaar wordt een gevaarsbord buiten de bebouwde kom geplaatst?",
+        "question": "Hoe reageert u best bij dit bord?",
         "choices": [
           {
-            "text": "Ongeveer 150 meter voor het gevaar",
+            "text": "Snelheid verminderen en voorbereid zijn op plots remmen",
             "is_correct": true
           },
           {
-            "text": "Precies op de plek van het gevaar",
+            "text": "In dezelfde snelheid doorrijden zolang de weg nog vrij lijkt",
             "is_correct": false
           },
           {
-            "text": "Op 500 meter voor het gevaar",
+            "text": "Pas reageren wanneer u al vlak bij de file bent",
             "is_correct": false
           }
         ],
-        "explanation": "Buiten de bebouwde kom worden gevaarsborden op Â±150 m geplaatst. In de bebouwde kom is dit Â±50 m."
+        "explanation": "Bij dit bord doet u er goed aan tijdig snelheid te verminderen. Wees voorbereid op stilstaand of traag verkeer en op plots remmen van voertuigen voor u."
       },
       "EN": {
-        "question": "At what distance from the hazard is a danger sign placed outside built-up areas?",
+        "question": "How should you react when you see this sign?",
         "choices": [
           {
-            "text": "Approximately 150 meters before the hazard",
+            "text": "Reduce speed and be prepared for sudden stops",
             "is_correct": true
           },
           {
-            "text": "Exactly at the hazard location",
+            "text": "Continue at the same speed as long as the road still looks clear",
             "is_correct": false
           },
           {
-            "text": "500 meters before the hazard",
+            "text": "Only react when you are already very close to the congestion",
             "is_correct": false
           }
         ],
-        "explanation": "Outside built-up areas, danger signs are placed Â±150 m before the hazard. Inside built-up areas it is Â±50 m."
+        "explanation": "When you see this sign, reduce speed in time. Be prepared for stationary or slow-moving traffic and for sudden braking by vehicles ahead."
       },
       "FR": {
-        "question": "Ã€ quelle distance du danger un panneau de danger est-il placÃ© hors agglomÃ©ration ?",
+        "question": "Comment devriez-vous réagir en voyant ce panneau ?",
         "choices": [
           {
-            "text": "Environ 150 mÃ¨tres avant le danger",
+            "text": "Réduire la vitesse et se préparer à un arrêt brusque",
             "is_correct": true
           },
           {
-            "text": "Exactement Ã  l'endroit du danger",
+            "text": "Continuer à la même vitesse tant que la route semble encore libre",
             "is_correct": false
           },
           {
-            "text": "500 mÃ¨tres avant le danger",
+            "text": "Ne réagir que lorsque vous êtes déjà tout près de l'embouteillage",
             "is_correct": false
           }
         ],
-        "explanation": "Hors agglomÃ©ration, les panneaux de danger sont placÃ©s Ã  Â±150 m. En agglomÃ©ration, c'est Â±50 m."
+        "explanation": "Lorsque vous voyez ce panneau, réduisez votre vitesse à temps. Préparez-vous à une circulation à l'arrêt ou ralentie et à un freinage soudain des véhicules devant vous."
       },
       "AR": {
-        "question": "Ø¹Ù„Ù‰ Ø£ÙŠ Ù…Ø³Ø§ÙØ© Ù…Ù† Ø§Ù„Ø®Ø·Ø± ØªÙˆØ¶Ø¹ Ù„Ø§ÙØªØ© Ø§Ù„Ø®Ø·Ø± Ø®Ø§Ø±Ø¬ Ø§Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ù…Ø¨Ù†ÙŠØ©ØŸ",
+        "question": "كيف ينبغي أن تتصرف عند رؤية هذه العلامة؟",
         "choices": [
           {
-            "text": "Ø­ÙˆØ§Ù„ÙŠ 150 Ù…ØªØ± Ù‚Ø¨Ù„ Ø§Ù„Ø®Ø·Ø±",
+            "text": "تخفيف السرعة والاستعداد للتوقف المفاجئ",
             "is_correct": true
           },
           {
-            "text": "Ù…Ø¨Ø§Ø´Ø±Ø© Ø¹Ù†Ø¯ Ù…ÙˆÙ‚Ø¹ Ø§Ù„Ø®Ø·Ø±",
+            "text": "متابعة السير بالسرعة نفسها ما دام الطريق يبدو خالياً",
             "is_correct": false
           },
           {
-            "text": "500 Ù…ØªØ± Ù‚Ø¨Ù„ Ø§Ù„Ø®Ø·Ø±",
+            "text": "عدم التفاعل إلا عندما تقترب جداً من الازدحام",
             "is_correct": false
           }
         ],
-        "explanation": "Ø®Ø§Ø±Ø¬ Ø§Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ù…Ø¨Ù†ÙŠØ© ØªÙˆØ¶Ø¹ Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± Ø¹Ù„Ù‰ Ù…Ø³Ø§ÙØ© Â±150 Ù…ØªØ±. Ø¯Ø§Ø®Ù„ Ø§Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ù…Ø¨Ù†ÙŠØ© ØªÙƒÙˆÙ† Ø§Ù„Ù…Ø³Ø§ÙØ© Â±50 Ù…ØªØ±."
+        "explanation": "عندما ترى هذه العلامة، خفف سرعتك مبكراً. كن مستعداً لوجود حركة مرور متوقفة أو بطيئة وللفرملة المفاجئة من المركبات أمامك."
       }
     }
   },
@@ -333,63 +293,62 @@
     "difficulty": "HARD",
     "is_critical": true,
     "show_sign": true,
-    "_note": "TEMPLATE (HARD): Replace with sign-specific question for production.",
     "i18n": {
       "NL": {
-        "question": "Bent u verplicht uw rijgedrag aan te passen wanneer u dit gevaarsbord ziet?",
+        "question": "Doet u er goed aan uw rijgedrag aan te passen bij dit bord?",
         "choices": [
           {
-            "text": "Ja, gevaarsborden verplichten u uw snelheid aan te passen en extra voorzichtig te zijn",
+            "text": "Ja, door mogelijke filevorming",
             "is_correct": true
           },
           {
-            "text": "Nee, gevaarsborden zijn louter informatief en vereisen geen aanpassing van uw rijgedrag",
+            "text": "Nee, zolang het verkeer nog rijdt",
             "is_correct": false
           }
         ],
-        "explanation": "Gevaarsborden waarschuwen voor gevaarlijke situaties en verplichten u uw rijgedrag aan te passen. U moet uw snelheid verminderen en extra voorzichtig zijn."
+        "explanation": "Ja. Dit bord waarschuwt dat filevorming plots kan ontstaan. U doet er dus goed aan uw snelheid, volgafstand en aandacht aan te passen."
       },
       "EN": {
-        "question": "Are you required to adapt your driving behaviour when you see this danger sign?",
+        "question": "Should you adapt your driving behaviour when you see this sign?",
         "choices": [
           {
-            "text": "Yes, danger signs require you to adjust your speed and be extra cautious",
+            "text": "Yes, due to possible sudden congestion",
             "is_correct": true
           },
           {
-            "text": "No, danger signs are purely informational and do not require any change in driving behaviour",
+            "text": "No, as long as traffic is still moving",
             "is_correct": false
           }
         ],
-        "explanation": "Danger signs warn of hazardous situations and require you to adapt your driving behaviour. You must reduce your speed and be extra careful."
+        "explanation": "Yes. This sign warns that congestion may appear suddenly. You should therefore adapt your speed, following distance, and level of attention."
       },
       "FR": {
-        "question": "ÃŠtes-vous obligÃ© d'adapter votre comportement de conduite lorsque vous voyez ce panneau de danger ?",
+        "question": "Devrait-on adapter sa conduite avec ce panneau ?",
         "choices": [
           {
-            "text": "Oui, les panneaux de danger vous obligent Ã  adapter votre vitesse et Ã  Ãªtre particuliÃ¨rement prudent",
+            "text": "Oui, en raison d'un embouteillage possible",
             "is_correct": true
           },
           {
-            "text": "Non, les panneaux de danger sont purement informatifs et ne nÃ©cessitent pas d'adaptation de la conduite",
+            "text": "Non, tant que la circulation roule encore",
             "is_correct": false
           }
         ],
-        "explanation": "Les panneaux de danger avertissent des situations dangereuses et vous obligent Ã  adapter votre conduite. Vous devez rÃ©duire votre vitesse et Ãªtre particuliÃ¨rement prudent."
+        "explanation": "Oui. Ce panneau avertit qu'un embouteillage peut apparaître soudainement. Vous devriez donc adapter votre vitesse, votre distance de suivi et votre attention."
       },
       "AR": {
-        "question": "Ù‡Ù„ Ø£Ù†Øª Ù…Ù„Ø²Ù… Ø¨ØªØ¹Ø¯ÙŠÙ„ Ø³Ù„ÙˆÙƒ Ù‚ÙŠØ§Ø¯ØªÙƒ Ø¹Ù†Ø¯Ù…Ø§ ØªØ±Ù‰ Ù„Ø§ÙØªØ© Ø§Ù„Ø®Ø·Ø± Ù‡Ø°Ù‡ØŸ",
+        "question": "هل ينبغي عليك تعديل سلوك قيادتك عند رؤية هذه العلامة؟",
         "choices": [
           {
-            "text": "Ù†Ø¹Ù…ØŒ Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± ØªÙ„Ø²Ù…Ùƒ Ø¨ØªØ¹Ø¯ÙŠÙ„ Ø³Ø±Ø¹ØªÙƒ ÙˆØ£Ù† ØªÙƒÙˆÙ† Ø£ÙƒØ«Ø± Ø­Ø°Ø±Ø§Ù‹",
+            "text": "نعم، بسبب احتمال وجود ازدحام مفاجئ",
             "is_correct": true
           },
           {
-            "text": "Ù„Ø§ØŒ Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± Ù…Ø¹Ù„ÙˆÙ…Ø§ØªÙŠØ© Ø¨Ø­ØªØ© ÙˆÙ„Ø§ ØªØªØ·Ù„Ø¨ Ø£ÙŠ ØªØºÙŠÙŠØ± ÙÙŠ Ø³Ù„ÙˆÙƒ Ø§Ù„Ù‚ÙŠØ§Ø¯Ø©",
+            "text": "لا، ما دامت حركة المرور لا تزال تسير",
             "is_correct": false
           }
         ],
-        "explanation": "ØªØ­Ø°Ø± Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± Ù…Ù† Ø§Ù„Ù…ÙˆØ§Ù‚Ù Ø§Ù„Ø®Ø·Ø±Ø© ÙˆØªÙ„Ø²Ù…Ùƒ Ø¨ØªØ¹Ø¯ÙŠÙ„ Ø³Ù„ÙˆÙƒ Ù‚ÙŠØ§Ø¯ØªÙƒ. ÙŠØ¬Ø¨ Ø¹Ù„ÙŠÙƒ ØªÙ‚Ù„ÙŠÙ„ Ø³Ø±Ø¹ØªÙƒ ÙˆØ£Ù† ØªÙƒÙˆÙ† Ø£ÙƒØ«Ø± Ø­Ø°Ø±Ø§Ù‹."
+        "explanation": "نعم. تحذر هذه العلامة من أن الازدحام قد يظهر فجأة. لذلك ينبغي أن تعدل سرعتك ومسافة الأمان ومستوى انتباهك."
       }
     }
   },
@@ -416,10 +375,10 @@
             "is_correct": false
           }
         ],
-        "explanation": "Bij kans op file moet u tijdig snelheid minderen en extra afstand houden om kop-staartaanrijdingen te vermijden."
+        "explanation": "Wanneer filevorming mogelijk is, doet u er goed aan vroegtijdig te vertragen en extra volgafstand te houden om kop-staartaanrijdingen te vermijden."
       },
       "EN": {
-        "question": "What is the safest reaction when this sign warns of a traffic jam?",
+        "question": "What is the safest reaction when this sign warns of traffic congestion?",
         "choices": [
           {
             "text": "Reduce speed and keep a greater following distance",
@@ -434,28 +393,28 @@
             "is_correct": false
           }
         ],
-        "explanation": "When congestion is possible, slow down in time and leave more distance to avoid rear-end collisions."
+        "explanation": "When congestion may occur, slow down early and leave more distance to avoid rear-end collisions."
       },
       "FR": {
-        "question": "Quelle est la reaction la plus sure lorsque ce panneau annonce un embouteillage ?",
+        "question": "Quelle est la réaction la plus sûre lorsque ce panneau annonce un embouteillage ?",
         "choices": [
           {
-            "text": "Reduire la vitesse et garder une plus grande distance de suivi",
+            "text": "Réduire la vitesse et garder une plus grande distance de suivi",
             "is_correct": true
           },
           {
-            "text": "Rouler plus pres du vehicule devant vous",
+            "text": "Rouler plus près du véhicule devant vous",
             "is_correct": false
           },
           {
-            "text": "Changer de voie plus brusquement pour eviter la file",
+            "text": "Changer de voie plus brusquement pour éviter la file",
             "is_correct": false
           }
         ],
-        "explanation": "En cas de risque d embouteillage il faut ralentir a temps et garder plus de distance pour eviter les collisions par l arriere."
+        "explanation": "En cas de risque d'embouteillage, il vaut mieux ralentir à temps et garder plus de distance pour éviter les collisions arrière."
       },
       "AR": {
-        "question": "ما التصرف الأكثر أماناً عندما تحذر هذه اللافتة من ازدحام مروري؟",
+        "question": "ما التصرف الأكثر أماناً عندما تحذر هذه العلامة المرورية من ازدحام مروري؟",
         "choices": [
           {
             "text": "تخفيف السرعة وترك مسافة أمان أكبر",
@@ -470,7 +429,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "عند احتمال وجود ازدحام يجب تخفيف السرعة مبكراً وترك مسافة أكبر لتجنب الاصطدام الخلفي."
+        "explanation": "عند احتمال وجود ازدحام ينبغي أن تخفف السرعة مبكراً وأن تترك مسافة أكبر لتجنب الاصطدامات الخلفية."
       }
     }
   },
@@ -497,7 +456,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "Dit bord waarschuwt voor file of sterk vertraagd verkeer op de weg voor u."
+        "explanation": "Dit bord waarschuwt voor filevorming of sterk vertraagd verkeer voor u."
       },
       "EN": {
         "question": "What situation does this sign warn you about?",
@@ -511,47 +470,47 @@
             "is_correct": false
           },
           {
-            "text": "A railway crossing",
+            "text": "A level crossing",
             "is_correct": false
           }
         ],
-        "explanation": "This sign warns of a queue or heavily slowed traffic ahead of you."
+        "explanation": "This sign warns of traffic that may be stationary or heavily slowed ahead of you."
       },
       "FR": {
         "question": "Quelle situation ce panneau annonce-t-il ?",
         "choices": [
           {
-            "text": "Un trafic a l arret ou fortement ralenti devant vous",
+            "text": "Un trafic à l'arrêt ou fortement ralenti devant vous",
             "is_correct": true
           },
           {
-            "text": "Un retrecissement de la route",
+            "text": "Un rétrécissement de la route",
             "is_correct": false
           },
           {
-            "text": "Un passage a niveau",
+            "text": "Un passage à niveau",
             "is_correct": false
           }
         ],
         "explanation": "Ce panneau annonce un embouteillage ou un trafic fortement ralenti devant vous."
       },
       "AR": {
-        "question": "عن أي حالة تحذر هذه اللافتة؟",
+        "question": "ما الحالة التي تحذر منها هذه العلامة المرورية؟",
         "choices": [
           {
-            "text": "عن حركة مرور متوقفة أو بطيئة جداً أمامك",
+            "text": "وجود حركة مرور متوقفة أو بطيئة أمامك",
             "is_correct": true
           },
           {
-            "text": "عن تضييق في الطريق",
+            "text": "وجود تضييق في الطريق",
             "is_correct": false
           },
           {
-            "text": "عن معبر سكة حديد",
+            "text": "وجود معبر سكة حديد",
             "is_correct": false
           }
         ],
-        "explanation": "تحذر هذه اللافتة من وجود طابور سيارات أو حركة مرور بطيئة جداً أمامك."
+        "explanation": "تحذر هذه العلامة من وجود حركة مرور متوقفة أو بطيئة أمامك."
       }
     }
   },
@@ -572,16 +531,12 @@
           {
             "text": "Omdat u dan sneller mag rijden",
             "is_correct": false
-          },
-          {
-            "text": "Omdat andere voertuigen dan verplicht moeten uitwijken",
-            "is_correct": false
           }
         ],
-        "explanation": "In fileverkeer wordt vaak plots geremd. Extra volgafstand geeft u tijd om veilig te reageren."
+        "explanation": "Bij filevorming wordt vaak plots geremd. Extra volgafstand geeft u meer tijd om veilig te reageren."
       },
       "EN": {
-        "question": "Why is an extra following distance important when this sign appears?",
+        "question": "Why is extra following distance important when this sign appears?",
         "choices": [
           {
             "text": "To avoid rear-end collisions when traffic brakes suddenly",
@@ -590,34 +545,26 @@
           {
             "text": "Because you are then allowed to drive faster",
             "is_correct": false
-          },
-          {
-            "text": "Because other vehicles must then move aside",
-            "is_correct": false
           }
         ],
-        "explanation": "Traffic jams often cause sudden braking. Extra following distance gives you time to react safely."
+        "explanation": "Congestion often leads to sudden braking. Extra following distance gives you more time to react safely."
       },
       "FR": {
-        "question": "Pourquoi une distance de suivi supplementaire est-elle importante lorsque ce panneau apparait ?",
+        "question": "Pourquoi une distance de suivi supplémentaire est-elle importante lorsque ce panneau apparaît ?",
         "choices": [
           {
-            "text": "Pour eviter les collisions arriere lors de freinages soudains",
+            "text": "Pour éviter les collisions arrière lors de freinages soudains",
             "is_correct": true
           },
           {
             "text": "Parce que vous pouvez alors rouler plus vite",
             "is_correct": false
-          },
-          {
-            "text": "Parce que les autres vehicules doivent s ecarter",
-            "is_correct": false
           }
         ],
-        "explanation": "Dans un embouteillage les freinages soudains sont frequents. Une plus grande distance vous laisse le temps de reagir en securite."
+        "explanation": "Dans un embouteillage, les freinages soudains sont fréquents. Une plus grande distance vous laisse le temps de réagir en sécurité."
       },
       "AR": {
-        "question": "لماذا تكون مسافة الأمان الإضافية مهمة عندما تظهر هذه اللافتة؟",
+        "question": "لماذا تكون مسافة الأمان الإضافية مهمة عندما تظهر هذه العلامة المرورية؟",
         "choices": [
           {
             "text": "لتجنب الاصطدامات الخلفية عند الفرملة المفاجئة",
@@ -626,13 +573,9 @@
           {
             "text": "لأنك عندها تستطيع القيادة أسرع",
             "is_correct": false
-          },
-          {
-            "text": "لأن بقية المركبات يجب أن تفسح لك الطريق",
-            "is_correct": false
           }
         ],
-        "explanation": "في الازدحام يحدث التوقف المفاجئ كثيراً. تمنحك مسافة الأمان الأكبر وقتاً للتصرف بأمان."
+        "explanation": "في الازدحام تكون الفرملة المفاجئة شائعة. تمنحك مسافة الأمان الإضافية وقتاً أكبر للتصرف بأمان."
       }
     }
   }

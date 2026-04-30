@@ -1,4 +1,4 @@
-﻿[
+[
   {
     "question_id": "B5_Q01",
     "type": "WHAT_DOES_IT_MEAN",
@@ -9,38 +9,74 @@
       "NL": {
         "question": "Wat betekent dit verkeersbord?",
         "choices": [
-          {"text": "Volledig stoppen aan de stopstreep en daarna voorrang verlenen aan het kruisende verkeer", "is_correct": true},
-          {"text": "Vaart minderen en voorrang verlenen zonder volledig te stoppen", "is_correct": false},
-          {"text": "U rijdt op een voorrangsweg en heeft voorrang op het kruisende verkeer", "is_correct": false}
+          {
+            "text": "Volledig stoppen aan de stopstreep en daarna voorrang verlenen aan het kruisende verkeer",
+            "is_correct": true
+          },
+          {
+            "text": "Vaart minderen en voorrang verlenen zonder volledig te stoppen",
+            "is_correct": false
+          },
+          {
+            "text": "U rijdt op een voorrangsweg en heeft voorrang op het kruisende verkeer",
+            "is_correct": false
+          }
         ],
-        "explanation": "Bord B5 verplicht u volledig te stoppen aan de stopstreep en vervolgens voorrang te verlenen aan alle bestuurders op de kruisende weg."
+        "explanation": "Dit bord geeft aan dat u volledig moet stoppen voordat u voorrang verleent aan het kruisende verkeer."
       },
       "EN": {
         "question": "What does this traffic sign mean?",
         "choices": [
-          {"text": "Stop completely at the stop line and then give way to crossing traffic", "is_correct": true},
-          {"text": "Reduce speed and give way without stopping completely", "is_correct": false},
-          {"text": "You are on a priority road and have priority over crossing traffic", "is_correct": false}
+          {
+            "text": "Stop completely at the stop line and then give way to crossing traffic",
+            "is_correct": true
+          },
+          {
+            "text": "Reduce speed and give way without stopping completely",
+            "is_correct": false
+          },
+          {
+            "text": "You are on a priority road and have priority over crossing traffic",
+            "is_correct": false
+          }
         ],
-        "explanation": "Sign B5 requires you to stop completely at the stop line and then give way to all drivers on the crossing road."
+        "explanation": "This sign indicates that you must stop completely before giving way to crossing traffic."
       },
       "FR": {
         "question": "Que signifie ce panneau de signalisation ?",
         "choices": [
-          {"text": "S'arrÃªter complÃ¨tement Ã  la ligne d'arrÃªt puis cÃ©der le passage au trafic croisÃ©", "is_correct": true},
-          {"text": "RÃ©duire la vitesse et cÃ©der le passage sans s'arrÃªter complÃ¨tement", "is_correct": false},
-          {"text": "Vous Ãªtes sur une route prioritaire et avez la prioritÃ© sur le trafic croisÃ©", "is_correct": false}
+          {
+            "text": "S\u0027arr\u00eater compl\u00e8tement \u00e0 la ligne d\u0027arr\u00eat puis c\u00e9der le passage au trafic crois\u00e9",
+            "is_correct": true
+          },
+          {
+            "text": "R\u00e9duire la vitesse et c\u00e9der le passage sans s\u0027arr\u00eater compl\u00e8tement",
+            "is_correct": false
+          },
+          {
+            "text": "Vous \u00eates sur une route prioritaire et avez la priorit\u00e9 sur le trafic crois\u00e9",
+            "is_correct": false
+          }
         ],
-        "explanation": "Le panneau B5 vous oblige Ã  vous arrÃªter complÃ¨tement Ã  la ligne d'arrÃªt, puis Ã  cÃ©der le passage Ã  tous les conducteurs sur la route transversale."
+        "explanation": "Ce panneau indique que vous devez vous arr\u00eater compl\u00e8tement avant de c\u00e9der le passage au trafic crois\u00e9."
       },
       "AR": {
-        "question": "Ù…Ø§Ø°Ø§ ØªØ¹Ù†ÙŠ Ù„Ø§ÙØªØ© Ø§Ù„Ù…Ø±ÙˆØ± Ù‡Ø°Ù‡ØŸ",
+        "question": "\u0645\u0627 \u0645\u0639\u0646\u0649 \u0647\u0630\u0647 \u0627\u0644\u0639\u0644\u0627\u0645\u0629 \u0627\u0644\u0645\u0631\u0648\u0631\u064a\u0629\u061f",
         "choices": [
-          {"text": "Ø§Ù„ØªÙˆÙ‚Ù Ø§Ù„ÙƒØ§Ù…Ù„ Ø¹Ù†Ø¯ Ø®Ø· Ø§Ù„Ø¥ÙŠÙ‚Ø§Ù Ø«Ù… Ø¥Ø¹Ø·Ø§Ø¡ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© Ù„Ø­Ø±ÙƒØ© Ø§Ù„Ù…Ø±ÙˆØ± Ø§Ù„Ù…ØªÙ‚Ø§Ø·Ø¹Ø©", "is_correct": true},
-          {"text": "ØªØ®ÙÙŠÙ Ø§Ù„Ø³Ø±Ø¹Ø© ÙˆØ¥Ø¹Ø·Ø§Ø¡ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© Ø¯ÙˆÙ† Ø§Ù„ØªÙˆÙ‚Ù Ø§Ù„ÙƒØ§Ù…Ù„", "is_correct": false},
-          {"text": "Ø£Ù†Øª Ø¹Ù„Ù‰ Ø·Ø±ÙŠÙ‚ Ø£ÙˆÙ„ÙˆÙŠØ© ÙˆÙ„Ø¯ÙŠÙƒ Ø­Ù‚ Ø§Ù„Ù…Ø±ÙˆØ± Ø¹Ù„Ù‰ Ø­Ø±ÙƒØ© Ø§Ù„Ù…Ø±ÙˆØ± Ø§Ù„Ù…ØªÙ‚Ø§Ø·Ø¹Ø©", "is_correct": false}
+          {
+            "text": "\u0627\u0644\u062a\u0648\u0642\u0641 \u0627\u0644\u0643\u0627\u0645\u0644 \u0639\u0646\u062f \u062e\u0637 \u0627\u0644\u0625\u064a\u0642\u0627\u0641 \u062b\u0645 \u0625\u0639\u0637\u0627\u0621 \u0627\u0644\u0623\u0648\u0644\u0648\u064a\u0629 \u0644\u062d\u0631\u0643\u0629 \u0627\u0644\u0645\u0631\u0648\u0631 \u0627\u0644\u0645\u062a\u0642\u0627\u0637\u0639\u0629",
+            "is_correct": true
+          },
+          {
+            "text": "\u062a\u062e\u0641\u064a\u0641 \u0627\u0644\u0633\u0631\u0639\u0629 \u0648\u0625\u0639\u0637\u0627\u0621 \u0627\u0644\u0623\u0648\u0644\u0648\u064a\u0629 \u062f\u0648\u0646 \u0627\u0644\u062a\u0648\u0642\u0641 \u0627\u0644\u0643\u0627\u0645\u0644",
+            "is_correct": false
+          },
+          {
+            "text": "\u0623\u0646\u062a \u0639\u0644\u0649 \u0637\u0631\u064a\u0642 \u0623\u0648\u0644\u0648\u064a\u0629 \u0648\u0644\u062f\u064a\u0643 \u062d\u0642 \u0627\u0644\u0645\u0631\u0648\u0631 \u0639\u0644\u0649 \u062d\u0631\u0643\u0629 \u0627\u0644\u0645\u0631\u0648\u0631 \u0627\u0644\u0645\u062a\u0642\u0627\u0637\u0639\u0629",
+            "is_correct": false
+          }
         ],
-        "explanation": "ØªÙÙ„Ø²Ù…Ùƒ Ù„Ø§ÙØªØ© B5 Ø¨Ø§Ù„ØªÙˆÙ‚Ù Ø§Ù„ÙƒØ§Ù…Ù„ Ø¹Ù†Ø¯ Ø®Ø· Ø§Ù„Ø¥ÙŠÙ‚Ø§Ù Ø«Ù… Ø¥Ø¹Ø·Ø§Ø¡ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© Ù„Ø¬Ù…ÙŠØ¹ Ø§Ù„Ø³Ø§Ø¦Ù‚ÙŠÙ† Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ù…ØªÙ‚Ø§Ø·Ø¹."
+        "explanation": "\u062a\u062f\u0644 \u0647\u0630\u0647 \u0627\u0644\u0639\u0644\u0627\u0645\u0629 \u0639\u0644\u0649 \u0623\u0646\u0647 \u064a\u062c\u0628 \u0627\u0644\u062a\u0648\u0642\u0641 \u0627\u0644\u0643\u0627\u0645\u0644 \u0642\u0628\u0644 \u0625\u0639\u0637\u0627\u0621 \u0627\u0644\u0623\u0648\u0644\u0648\u064a\u0629 \u0644\u062d\u0631\u0643\u0629 \u0627\u0644\u0645\u0631\u0648\u0631 \u0627\u0644\u0645\u062a\u0642\u0627\u0637\u0639\u0629."
       }
     }
   },
@@ -54,38 +90,53 @@
       "NL": {
         "question": "Welk bord verplicht u zowel volledig te stoppen als voorrang te verlenen?",
         "choices": [
-          {"text": "B5 â€“ Stoppen en voorrang verlenen", "is_correct": true},
-          {"text": "B1 â€“ Voorrang verlenen", "is_correct": false},
-          {"text": "B9 â€“ Voorrangsweg", "is_correct": false}
+          {
+            "text": "B5 \u2013 Stoppen en voorrang verlenen",
+            "is_correct": true
+          },
+          { "text": "B1 \u2013 Voorrang verlenen", "is_correct": false },
+          { "text": "B9 \u2013 Voorrangsweg", "is_correct": false }
         ],
-        "explanation": "Alleen B5 verplicht tot een volledige stilstand Ã©n het verlenen van voorrang. B1 vereist enkel voorrang verlenen; B9 geeft aan dat u zelf voorrang heeft."
+        "explanation": "Alleen B5 verplicht tot een volledige stilstand \u00e9n het verlenen van voorrang. B1 vereist enkel voorrang verlenen; B9 geeft aan dat u zelf voorrang heeft."
       },
       "EN": {
         "question": "Which sign requires you both to stop completely and to give way?",
         "choices": [
-          {"text": "B5 â€“ Stop and give way", "is_correct": true},
-          {"text": "B1 â€“ Give way", "is_correct": false},
-          {"text": "B9 â€“ Priority road", "is_correct": false}
+          { "text": "B5 \u2013 Stop and give way", "is_correct": true },
+          { "text": "B1 \u2013 Give way", "is_correct": false },
+          { "text": "B9 \u2013 Priority road", "is_correct": false }
         ],
         "explanation": "Only B5 requires a complete stop and giving way. B1 only requires giving way; B9 means you have priority."
       },
       "FR": {
-        "question": "Quel panneau vous oblige Ã  la fois Ã  vous arrÃªter complÃ¨tement et Ã  cÃ©der le passage ?",
+        "question": "Quel panneau vous oblige \u00e0 la fois \u00e0 vous arr\u00eater compl\u00e8tement et \u00e0 c\u00e9der le passage ?",
         "choices": [
-          {"text": "B5 â€“ Stop et cÃ©dez le passage", "is_correct": true},
-          {"text": "B1 â€“ CÃ©dez le passage", "is_correct": false},
-          {"text": "B9 â€“ Route prioritaire", "is_correct": false}
+          {
+            "text": "B5 \u2013 Stop et c\u00e9dez le passage",
+            "is_correct": true
+          },
+          { "text": "B1 \u2013 C\u00e9dez le passage", "is_correct": false },
+          { "text": "B9 \u2013 Route prioritaire", "is_correct": false }
         ],
-        "explanation": "Seul B5 impose un arrÃªt complet et le cÃ©der le passage. B1 impose uniquement de cÃ©der le passage ; B9 signifie que vous avez la prioritÃ©."
+        "explanation": "Seul B5 impose un arr\u00eat complet et le c\u00e9der le passage. B1 impose uniquement de c\u00e9der le passage ; B9 signifie que vous avez la priorit\u00e9."
       },
       "AR": {
-        "question": "Ø£ÙŠ Ù„Ø§ÙØªØ© ØªÙÙ„Ø²Ù…Ùƒ Ø¨Ø§Ù„ØªÙˆÙ‚Ù Ø§Ù„ÙƒØ§Ù…Ù„ ÙˆØ¥Ø¹Ø·Ø§Ø¡ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© Ù…Ø¹Ø§Ù‹ØŸ",
+        "question": "\u0623\u064a \u0639\u0644\u0627\u0645\u0629 \u062a\u064f\u0644\u0632\u0645\u0643 \u0628\u0627\u0644\u062a\u0648\u0642\u0641 \u0627\u0644\u0643\u0627\u0645\u0644 \u0648\u0625\u0639\u0637\u0627\u0621 \u0627\u0644\u0623\u0648\u0644\u0648\u064a\u0629\u061f",
         "choices": [
-          {"text": "B5 â€“ ØªÙˆÙ‚Ù ÙˆØ£Ø¹Ø· Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ©", "is_correct": true},
-          {"text": "B1 â€“ Ø¥Ø¹Ø·Ø§Ø¡ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ©", "is_correct": false},
-          {"text": "B9 â€“ Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ©", "is_correct": false}
+          {
+            "text": "B5 \u2013 \u062a\u0648\u0642\u0641 \u0648\u0623\u0639\u0637 \u0627\u0644\u0623\u0648\u0644\u0648\u064a\u0629",
+            "is_correct": true
+          },
+          {
+            "text": "B1 \u2013 \u0625\u0639\u0637\u0627\u0621 \u0627\u0644\u0623\u0648\u0644\u0648\u064a\u0629",
+            "is_correct": false
+          },
+          {
+            "text": "B9 \u2013 \u0637\u0631\u064a\u0642 \u0630\u0648 \u0623\u0648\u0644\u0648\u064a\u0629",
+            "is_correct": false
+          }
         ],
-        "explanation": "ÙÙ‚Ø· B5 ÙŠÙÙ„Ø²Ù… Ø¨Ø§Ù„ØªÙˆÙ‚Ù Ø§Ù„ÙƒØ§Ù…Ù„ ÙˆØ¥Ø¹Ø·Ø§Ø¡ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© Ù…Ø¹Ø§Ù‹. B1 ÙŠÙÙ„Ø²Ù… ÙÙ‚Ø· Ø¨Ø¥Ø¹Ø·Ø§Ø¡ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ©Ø› B9 ÙŠØ¹Ù†ÙŠ Ø£Ù† Ù„Ø¯ÙŠÙƒ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ©."
+        "explanation": "\u0641\u0642\u0637 B5 \u064a\u064f\u0644\u0632\u0645 \u0628\u0627\u0644\u062a\u0648\u0642\u0641 \u0627\u0644\u0643\u0627\u0645\u0644 \u0648\u0625\u0639\u0637\u0627\u0621 \u0627\u0644\u0623\u0648\u0644\u0648\u064a\u0629 \u0645\u0639\u0627\u064b. B1 \u064a\u064f\u0644\u0632\u0645 \u0641\u0642\u0637 \u0628\u0625\u0639\u0637\u0627\u0621 \u0627\u0644\u0623\u0648\u0644\u0648\u064a\u0629\u061b B9 \u064a\u0639\u0646\u064a \u0623\u0646 \u0644\u062f\u064a\u0643 \u0627\u0644\u0623\u0648\u0644\u0648\u064a\u0629."
       }
     }
   },
@@ -99,38 +150,74 @@
       "NL": {
         "question": "Op welk gevaar attendeert dit verkeersbord?",
         "choices": [
-          {"text": "Kruisend verkeer met voorrang; een volledige stilstand is noodzakelijk om veilig te controleren", "is_correct": true},
-          {"text": "Een gevaarlijke bocht met verminderd zicht verderop", "is_correct": false},
-          {"text": "Wegwerkzaamheden met tijdelijke rijstrookversmalling", "is_correct": false}
+          {
+            "text": "Kruisend verkeer met voorrang op het kruispunt",
+            "is_correct": true
+          },
+          {
+            "text": "Een gevaarlijke bocht met verminderd zicht verderop",
+            "is_correct": false
+          },
+          {
+            "text": "Wegwerkzaamheden met tijdelijke rijstrookversmalling",
+            "is_correct": false
+          }
         ],
-        "explanation": "Dit bord attendeert u op kruisend verkeer dat voorrang heeft. Door volledig te stoppen krijgt u het nodige overzicht om veilig in te voegen."
+        "explanation": "Dit bord attendeert u op kruisend verkeer dat voorrang heeft op het kruispunt."
       },
       "EN": {
         "question": "What hazard does this traffic sign alert you to?",
         "choices": [
-          {"text": "Crossing traffic with priority; a complete stop is required to check safely", "is_correct": true},
-          {"text": "A dangerous curve with reduced visibility ahead", "is_correct": false},
-          {"text": "Roadworks with temporary lane narrowing", "is_correct": false}
+          {
+            "text": "Crossing traffic with priority at the junction",
+            "is_correct": true
+          },
+          {
+            "text": "A dangerous curve with reduced visibility ahead",
+            "is_correct": false
+          },
+          {
+            "text": "Roadworks with temporary lane narrowing",
+            "is_correct": false
+          }
         ],
-        "explanation": "This sign alerts you to crossing traffic that has priority. Stopping completely gives you the overview needed to merge safely."
+        "explanation": "This sign warns of crossing traffic that has priority at the junction."
       },
       "FR": {
-        "question": "Ã€ quel danger ce panneau vous avertit-il ?",
+        "question": "\u00c0 quel danger ce panneau vous avertit-il ?",
         "choices": [
-          {"text": "Trafic croisÃ© prioritaire ; un arrÃªt complet est nÃ©cessaire pour vÃ©rifier en sÃ©curitÃ©", "is_correct": true},
-          {"text": "Un virage dangereux avec visibilitÃ© rÃ©duite plus loin", "is_correct": false},
-          {"text": "Travaux routiers avec rÃ©trÃ©cissement temporaire de voie", "is_correct": false}
+          {
+            "text": "Trafic crois\u00e9 prioritaire au carrefour",
+            "is_correct": true
+          },
+          {
+            "text": "Un virage dangereux avec visibilit\u00e9 r\u00e9duite plus loin",
+            "is_correct": false
+          },
+          {
+            "text": "Travaux routiers avec r\u00e9tr\u00e9cissement temporaire de voie",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ce panneau vous avertit d'un trafic croisÃ© prioritaire. Un arrÃªt complet vous donne la vue d'ensemble nÃ©cessaire pour s'insÃ©rer en sÃ©curitÃ©."
+        "explanation": "Ce panneau vous avertit d\u0027un trafic crois\u00e9 prioritaire au carrefour."
       },
       "AR": {
-        "question": "Ù…Ø§ Ø§Ù„Ø®Ø·Ø± Ø§Ù„Ø°ÙŠ ØªÙ†Ø¨Ù‘Ù‡Ùƒ Ø¥Ù„ÙŠÙ‡ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ",
+        "question": "\u0645\u0627 \u0647\u0648 \u0627\u0644\u062e\u0637\u0631 \u0627\u0644\u0630\u064a \u062a\u0634\u064a\u0631 \u0625\u0644\u064a\u0647 \u0647\u0630\u0647 \u0627\u0644\u0639\u0644\u0627\u0645\u0629 \u0627\u0644\u0645\u0631\u0648\u0631\u064a\u0629\u061f",
         "choices": [
-          {"text": "Ø­Ø±ÙƒØ© Ù…Ø±ÙˆØ± Ù…ØªÙ‚Ø§Ø·Ø¹Ø© Ù„Ù‡Ø§ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ©Ø› ÙŠÙ„Ø²Ù… Ø§Ù„ØªÙˆÙ‚Ù Ø§Ù„ÙƒØ§Ù…Ù„ Ù„Ù„ÙØ­Øµ Ø¨Ø£Ù…Ø§Ù†", "is_correct": true},
-          {"text": "Ù…Ù†Ø¹Ø·Ù Ø®Ø·ÙŠØ± Ø¨Ù…Ø±Ø¦ÙŠØ© Ù…Ø­Ø¯ÙˆØ¯Ø© Ø£Ù…Ø§Ù…Ùƒ", "is_correct": false},
-          {"text": "Ø£Ø¹Ù…Ø§Ù„ Ø·Ø±Ù‚ Ù…Ø¹ ØªØ¶ÙŠÙŠÙ‚ Ù…Ø¤Ù‚Øª Ù„Ù„Ù…Ø³Ø§Ø±", "is_correct": false}
+          {
+            "text": "\u062d\u0631\u0643\u0629 \u0645\u0631\u0648\u0631 \u0645\u062a\u0642\u0627\u0637\u0639\u0629 \u0644\u0647\u0627 \u0627\u0644\u0623\u0648\u0644\u0648\u064a\u0629 \u0639\u0646\u062f \u0627\u0644\u062a\u0642\u0627\u0637\u0639",
+            "is_correct": true
+          },
+          {
+            "text": "\u0645\u0646\u0639\u0637\u0641 \u062e\u0637\u064a\u0631 \u0628\u0645\u0631\u0626\u064a\u0629 \u0645\u062d\u062f\u0648\u062f\u0629 \u0623\u0645\u0627\u0645\u0643",
+            "is_correct": false
+          },
+          {
+            "text": "\u0623\u0639\u0645\u0627\u0644 \u0637\u0631\u0642 \u0645\u0639 \u062a\u0636\u064a\u064a\u0642 \u0645\u0624\u0642\u062a \u0644\u0644\u0645\u0633\u0627\u0631",
+            "is_correct": false
+          }
         ],
-        "explanation": "ØªÙ†Ø¨Ù‘Ù‡Ùƒ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ© Ø¥Ù„Ù‰ Ø­Ø±ÙƒØ© Ù…Ø±ÙˆØ± Ù…ØªÙ‚Ø§Ø·Ø¹Ø© Ù„Ù‡Ø§ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ©. Ø§Ù„ØªÙˆÙ‚Ù Ø§Ù„ÙƒØ§Ù…Ù„ ÙŠÙ…Ù†Ø­Ùƒ Ø§Ù„Ø±Ø¤ÙŠØ© Ø§Ù„Ø¶Ø±ÙˆØ±ÙŠØ© Ù„Ù„Ø§Ù†Ø¯Ù…Ø§Ø¬ Ø¨Ø£Ù…Ø§Ù†."
+        "explanation": "\u062a\u0646\u0628\u0651\u0647\u0643 \u0647\u0630\u0647 \u0627\u0644\u0639\u0644\u0627\u0645\u0629 \u0625\u0644\u0649 \u062d\u0631\u0643\u0629 \u0645\u0631\u0648\u0631 \u0645\u062a\u0642\u0627\u0637\u0639\u0629 \u0644\u0647\u0627 \u0627\u0644\u0623\u0648\u0644\u0648\u064a\u0629 \u0639\u0646\u062f \u0627\u0644\u062a\u0642\u0627\u0637\u0639."
       }
     }
   },
@@ -144,38 +231,74 @@
       "NL": {
         "question": "Wat moet u doen als u dit verkeersbord ziet?",
         "choices": [
-          {"text": "Volledig tot stilstand komen aan de stopstreep, daarna alle richtingen controleren en enkel verder rijden als de weg vrij is", "is_correct": true},
-          {"text": "Vaart minderen tot 30 km/u en doorrijden als er geen verkeer zichtbaar is", "is_correct": false},
-          {"text": "Stoppen is enkel verplicht als er effectief verkeer op de kruisende weg rijdt", "is_correct": false}
+          {
+            "text": "Volledig tot stilstand komen aan de stopstreep, daarna alle richtingen controleren en enkel verder rijden als de weg vrij is",
+            "is_correct": true
+          },
+          {
+            "text": "Vaart minderen tot 30 km/u en doorrijden als er geen verkeer zichtbaar is",
+            "is_correct": false
+          },
+          {
+            "text": "Stoppen is enkel verplicht als er effectief verkeer op de kruisende weg rijdt",
+            "is_correct": false
+          }
         ],
         "explanation": "Bord B5 vereist altijd een volledige stilstand, ongeacht of er verkeer zichtbaar is. Daarna controleert u alle richtingen en rijdt u enkel door als de weg vrij is."
       },
       "EN": {
         "question": "What must you do when you see this traffic sign?",
         "choices": [
-          {"text": "Come to a complete stop at the stop line, then check all directions and only proceed when the road is clear", "is_correct": true},
-          {"text": "Reduce speed to 30 km/h and continue if no traffic is visible", "is_correct": false},
-          {"text": "Stopping is only required if traffic is actually on the crossing road", "is_correct": false}
+          {
+            "text": "Come to a complete stop at the stop line, then check all directions and only proceed when the road is clear",
+            "is_correct": true
+          },
+          {
+            "text": "Reduce speed to 30 km/h and continue if no traffic is visible",
+            "is_correct": false
+          },
+          {
+            "text": "Stopping is only required if traffic is actually on the crossing road",
+            "is_correct": false
+          }
         ],
         "explanation": "Sign B5 always requires a complete stop, regardless of whether traffic is visible. Then check all directions and only proceed when the road is clear."
       },
       "FR": {
         "question": "Que devez-vous faire lorsque vous voyez ce panneau ?",
         "choices": [
-          {"text": "S'arrÃªter complÃ¨tement Ã  la ligne d'arrÃªt, vÃ©rifier toutes les directions et ne repartir que lorsque la voie est libre", "is_correct": true},
-          {"text": "RÃ©duire la vitesse Ã  30 km/h et continuer si aucun trafic n'est visible", "is_correct": false},
-          {"text": "L'arrÃªt n'est obligatoire que si du trafic circule effectivement sur la route transversale", "is_correct": false}
+          {
+            "text": "S\u0027arr\u00eater compl\u00e8tement \u00e0 la ligne d\u0027arr\u00eat, v\u00e9rifier toutes les directions et ne repartir que lorsque la voie est libre",
+            "is_correct": true
+          },
+          {
+            "text": "R\u00e9duire la vitesse \u00e0 30 km/h et continuer si aucun trafic n\u0027est visible",
+            "is_correct": false
+          },
+          {
+            "text": "L\u0027arr\u00eat n\u0027est obligatoire que si du trafic circule effectivement sur la route transversale",
+            "is_correct": false
+          }
         ],
-        "explanation": "Le panneau B5 exige toujours un arrÃªt complet, que du trafic soit visible ou non. VÃ©rifiez ensuite toutes les directions et ne repartez que lorsque la voie est libre."
+        "explanation": "Le panneau B5 exige toujours un arr\u00eat complet, que du trafic soit visible ou non. V\u00e9rifiez ensuite toutes les directions et ne repartez que lorsque la voie est libre."
       },
       "AR": {
-        "question": "Ù…Ø§Ø°Ø§ ÙŠØ¬Ø¨ Ø¹Ù„ÙŠÙƒ Ø£Ù† ØªÙØ¹Ù„ Ø¹Ù†Ø¯ Ø±Ø¤ÙŠØ© Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ",
+        "question": "\u0645\u0627\u0630\u0627 \u064a\u062c\u0628 \u0639\u0644\u064a\u0643 \u0623\u0646 \u062a\u0641\u0639\u0644 \u0639\u0646\u062f \u0631\u0624\u064a\u0629 \u0647\u0630\u0647 \u0627\u0644\u0639\u0644\u0627\u0645\u0629 \u0627\u0644\u0645\u0631\u0648\u0631\u064a\u0629\u061f",
         "choices": [
-          {"text": "Ø§Ù„ØªÙˆÙ‚Ù Ø§Ù„ÙƒØ§Ù…Ù„ Ø¹Ù†Ø¯ Ø®Ø· Ø§Ù„Ø¥ÙŠÙ‚Ø§Ù Ø«Ù… ÙØ­Øµ Ø¬Ù…ÙŠØ¹ Ø§Ù„Ø§ØªØ¬Ø§Ù‡Ø§Øª ÙˆØ§Ù„Ù…Ø¶ÙŠ ÙÙ‚Ø· Ø¹Ù†Ø¯ Ø®Ù„Ùˆ Ø§Ù„Ø·Ø±ÙŠÙ‚", "is_correct": true},
-          {"text": "ØªØ®ÙÙŠÙ Ø§Ù„Ø³Ø±Ø¹Ø© Ø¥Ù„Ù‰ 30 ÙƒÙ…/Ø³Ø§Ø¹Ø© ÙˆØ§Ù„Ø§Ø³ØªÙ…Ø±Ø§Ø± Ø¥Ø°Ø§ Ù„Ù… ØªÙƒÙ† Ù‡Ù†Ø§Ùƒ Ø­Ø±ÙƒØ© Ù…Ø±ÙˆØ± Ù…Ø±Ø¦ÙŠØ©", "is_correct": false},
-          {"text": "Ø§Ù„ØªÙˆÙ‚Ù Ù…Ø·Ù„ÙˆØ¨ ÙÙ‚Ø· Ø¥Ø°Ø§ ÙƒØ§Ù†Øª Ù‡Ù†Ø§Ùƒ Ø­Ø±ÙƒØ© Ù…Ø±ÙˆØ± ÙØ¹Ù„ÙŠØ© Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ù…ØªÙ‚Ø§Ø·Ø¹", "is_correct": false}
+          {
+            "text": "\u0627\u0644\u062a\u0648\u0642\u0641 \u0627\u0644\u0643\u0627\u0645\u0644 \u0639\u0646\u062f \u062e\u0637 \u0627\u0644\u0625\u064a\u0642\u0627\u0641 \u062b\u0645 \u0641\u062d\u0635 \u062c\u0645\u064a\u0639 \u0627\u0644\u0627\u062a\u062c\u0627\u0647\u0627\u062a \u0648\u0627\u0644\u0645\u0636\u064a \u0641\u0642\u0637 \u0639\u0646\u062f \u062e\u0644\u0648 \u0627\u0644\u0637\u0631\u064a\u0642",
+            "is_correct": true
+          },
+          {
+            "text": "\u062a\u062e\u0641\u064a\u0641 \u0627\u0644\u0633\u0631\u0639\u0629 \u0625\u0644\u0649 30 \u0643\u0645/\u0633\u0627\u0639\u0629 \u0648\u0627\u0644\u0627\u0633\u062a\u0645\u0631\u0627\u0631 \u0625\u0630\u0627 \u0644\u0645 \u062a\u0643\u0646 \u0647\u0646\u0627\u0643 \u062d\u0631\u0643\u0629 \u0645\u0631\u0648\u0631 \u0645\u0631\u0626\u064a\u0629",
+            "is_correct": false
+          },
+          {
+            "text": "\u0627\u0644\u062a\u0648\u0642\u0641 \u0645\u0637\u0644\u0648\u0628 \u0641\u0642\u0637 \u0625\u0630\u0627 \u0643\u0627\u0646\u062a \u0647\u0646\u0627\u0643 \u062d\u0631\u0643\u0629 \u0645\u0631\u0648\u0631 \u0641\u0639\u0644\u064a\u0629 \u0639\u0644\u0649 \u0627\u0644\u0637\u0631\u064a\u0642 \u0627\u0644\u0645\u062a\u0642\u0627\u0637\u0639",
+            "is_correct": false
+          }
         ],
-        "explanation": "ØªØ³ØªÙ„Ø²Ù… Ù„Ø§ÙØªØ© B5 Ø¯Ø§Ø¦Ù…Ø§Ù‹ ØªÙˆÙ‚ÙØ§Ù‹ ÙƒØ§Ù…Ù„Ø§Ù‹ Ø¨ØµØ±Ù Ø§Ù„Ù†Ø¸Ø± Ø¹Ù† ÙˆØ¬ÙˆØ¯ Ø­Ø±ÙƒØ© Ù…Ø±ÙˆØ± Ù…Ø±Ø¦ÙŠØ©. Ø«Ù… ØªÙØ­Øµ Ø¬Ù…ÙŠØ¹ Ø§Ù„Ø§ØªØ¬Ø§Ù‡Ø§Øª ÙˆÙ„Ø§ ØªÙ…Ø¶ÙŠ Ø¥Ù„Ø§ Ø¹Ù†Ø¯ Ø®Ù„Ùˆ Ø§Ù„Ø·Ø±ÙŠÙ‚."
+        "explanation": "\u062a\u0633\u062a\u0644\u0632\u0645 \u0639\u0644\u0627\u0645\u0629 \u0645\u0631\u0648\u0631\u064a\u0629 B5 \u062f\u0627\u0626\u0645\u0627\u064b \u062a\u0648\u0642\u0641\u0627\u064b \u0643\u0627\u0645\u0644\u0627\u064b \u0628\u0635\u0631\u0641 \u0627\u0644\u0646\u0638\u0631 \u0639\u0646 \u0648\u062c\u0648\u062f \u062d\u0631\u0643\u0629 \u0645\u0631\u0648\u0631 \u0645\u0631\u0626\u064a\u0629. \u062b\u0645 \u062a\u0641\u062d\u0635 \u062c\u0645\u064a\u0639 \u0627\u0644\u0627\u062a\u062c\u0627\u0647\u0627\u062a \u0648\u0644\u0627 \u062a\u0645\u0636\u064a \u0625\u0644\u0627 \u0639\u0646\u062f \u062e\u0644\u0648 \u0627\u0644\u0637\u0631\u064a\u0642."
       }
     }
   },
@@ -189,38 +312,74 @@
       "NL": {
         "question": "U nadert een kruispunt met bord B5. Het kruispunt lijkt volledig leeg. Wat doet u?",
         "choices": [
-          {"text": "U stopt volledig aan de stopstreep, controleert alle richtingen en rijdt dan door", "is_correct": true},
-          {"text": "U vertraagt sterk maar stopt niet volledig omdat het kruispunt leeg is", "is_correct": false},
-          {"text": "U toetert om te signaleren en rijdt door als er geen reactie is", "is_correct": false}
+          {
+            "text": "U stopt volledig aan de stopstreep, controleert alle richtingen en rijdt dan door",
+            "is_correct": true
+          },
+          {
+            "text": "U vertraagt sterk maar stopt niet volledig omdat het kruispunt leeg is",
+            "is_correct": false
+          },
+          {
+            "text": "U toetert om te signaleren en rijdt door als er geen reactie is",
+            "is_correct": false
+          }
         ],
         "explanation": "Bord B5 verplicht altijd een volledige stilstand, ook als het kruispunt leeg lijkt. Onzichtbaar verkeer kan op de kruisende weg naderen."
       },
       "EN": {
         "question": "You are approaching a junction with sign B5. The junction appears completely empty. What do you do?",
         "choices": [
-          {"text": "You stop completely at the stop line, check all directions and then proceed", "is_correct": true},
-          {"text": "You slow down significantly but do not stop completely because the junction is empty", "is_correct": false},
-          {"text": "You sound your horn as a warning and proceed if there is no reaction", "is_correct": false}
+          {
+            "text": "You stop completely at the stop line, check all directions and then proceed",
+            "is_correct": true
+          },
+          {
+            "text": "You slow down significantly but do not stop completely because the junction is empty",
+            "is_correct": false
+          },
+          {
+            "text": "You sound your horn as a warning and proceed if there is no reaction",
+            "is_correct": false
+          }
         ],
         "explanation": "Sign B5 always requires a complete stop, even when the junction appears empty. Non-visible traffic may be approaching on the crossing road."
       },
       "FR": {
-        "question": "Vous approchez d'un carrefour avec le panneau B5. Le carrefour semble complÃ¨tement vide. Que faites-vous ?",
+        "question": "Vous approchez d\u0027un carrefour avec le panneau B5. Le carrefour semble compl\u00e8tement vide. Que faites-vous ?",
         "choices": [
-          {"text": "Vous vous arrÃªtez complÃ¨tement Ã  la ligne d'arrÃªt, vÃ©rifiez toutes les directions et partez ensuite", "is_correct": true},
-          {"text": "Vous ralentissez fortement mais ne vous arrÃªtez pas complÃ¨tement car le carrefour est vide", "is_correct": false},
-          {"text": "Vous klaxonnez pour avertir et continuez s'il n'y a pas de rÃ©action", "is_correct": false}
+          {
+            "text": "Vous vous arr\u00eater compl\u00e8tement \u00e0 la ligne d\u0027arr\u00eat, v\u00e9rifiez toutes les directions et partez ensuite",
+            "is_correct": true
+          },
+          {
+            "text": "Vous ralentissez fortement mais ne vous arr\u00eatez pas compl\u00e8tement car le carrefour est vide",
+            "is_correct": false
+          },
+          {
+            "text": "Vous klaxonnez pour avertir et continuez s\u0027il n\u0027y a pas de r\u00e9action",
+            "is_correct": false
+          }
         ],
-        "explanation": "Le panneau B5 impose toujours un arrÃªt complet, mÃªme si le carrefour semble vide. Du trafic non visible peut approcher sur la route transversale."
+        "explanation": "Le panneau B5 impose toujours un arr\u00eat complet, m\u00eame si le carrefour semble vide. Du trafic non visible peut approcher sur la route transversale."
       },
       "AR": {
-        "question": "Ø£Ù†Øª ØªÙ‚ØªØ±Ø¨ Ù…Ù† ØªÙ‚Ø§Ø·Ø¹ Ø¨Ù‡ Ù„Ø§ÙØªØ© B5. ÙŠØ¨Ø¯Ùˆ Ø§Ù„ØªÙ‚Ø§Ø·Ø¹ ÙØ§Ø±ØºØ§Ù‹ ØªÙ…Ø§Ù…Ø§Ù‹. Ù…Ø§Ø°Ø§ ØªÙØ¹Ù„ØŸ",
+        "question": "\u0623\u0646\u062a \u062a\u0642\u062a\u0631\u0628 \u0645\u0646 \u062a\u0642\u0627\u0637\u0639 \u0628\u0647 \u0639\u0644\u0627\u0645\u0629 \u0645\u0631\u0648\u0631\u064a\u0629 B5. \u064a\u0628\u062f\u0648 \u0627\u0644\u062a\u0642\u0627\u0637\u0639 \u0641\u0627\u0631\u063a\u0627\u064b \u062a\u0645\u0627\u0645\u0627\u064b. \u0645\u0627\u0630\u0627 \u062a\u0641\u0639\u0644\u061f",
         "choices": [
-          {"text": "ØªØªÙˆÙ‚Ù ÙƒÙ„ÙŠØ§Ù‹ Ø¹Ù†Ø¯ Ø®Ø· Ø§Ù„Ø¥ÙŠÙ‚Ø§Ù ÙˆØªÙØ­Øµ Ø¬Ù…ÙŠØ¹ Ø§Ù„Ø§ØªØ¬Ø§Ù‡Ø§Øª Ø«Ù… ØªÙ…Ø¶ÙŠ", "is_correct": true},
-          {"text": "ØªÙØ¨Ø·Ø¦ ÙƒØ«ÙŠØ±Ø§Ù‹ Ù„ÙƒÙ† Ù„Ø§ ØªØªÙˆÙ‚Ù ÙƒÙ„ÙŠØ§Ù‹ Ù„Ø£Ù† Ø§Ù„ØªÙ‚Ø§Ø·Ø¹ ÙØ§Ø±Øº", "is_correct": false},
-          {"text": "ØªÙÙ†Ø¨Ù‘Ù‡ Ø¨Ø§Ù„Ø¨ÙˆÙ‚ ÙˆØªÙ…Ø¶ÙŠ Ø¥Ø°Ø§ Ù„Ù… ÙŠÙƒÙ† Ù‡Ù†Ø§Ùƒ Ø±Ø¯ ÙØ¹Ù„", "is_correct": false}
+          {
+            "text": "\u062a\u062a\u0648\u0642\u0641 \u0643\u0644\u064a\u0627\u064b \u0639\u0646\u062f \u062e\u0637 \u0627\u0644\u0625\u064a\u0642\u0627\u0641 \u0648\u062a\u0641\u062d\u0635 \u062c\u0645\u064a\u0639 \u0627\u0644\u0627\u062a\u062c\u0627\u0647\u0627\u062a \u062b\u0645 \u062a\u0645\u0636\u064a",
+            "is_correct": true
+          },
+          {
+            "text": "\u062a\u064f\u0628\u0637\u0626 \u0643\u062b\u064a\u0631\u0627\u064b \u0644\u0643\u0646 \u0644\u0627 \u062a\u062a\u0648\u0642\u0641 \u0643\u0644\u064a\u0627\u064b \u0644\u0623\u0646 \u0627\u0644\u062a\u0642\u0627\u0637\u0639 \u0641\u0627\u0631\u063a",
+            "is_correct": false
+          },
+          {
+            "text": "\u062a\u064f\u0646\u0628\u0651\u0647 \u0628\u0627\u0644\u0628\u0648\u0642 \u0648\u062a\u0645\u0636\u064a \u0625\u0630\u0627 \u0644\u0645 \u064a\u0643\u0646 \u0647\u0646\u0627\u0643 \u0631\u062f \u0641\u0639\u0644",
+            "is_correct": false
+          }
         ],
-        "explanation": "ØªØ³ØªÙ„Ø²Ù… Ù„Ø§ÙØªØ© B5 Ø¯Ø§Ø¦Ù…Ø§Ù‹ ØªÙˆÙ‚ÙØ§Ù‹ ÙƒØ§Ù…Ù„Ø§Ù‹ Ø­ØªÙ‰ Ù„Ùˆ Ø¨Ø¯Ø§ Ø§Ù„ØªÙ‚Ø§Ø·Ø¹ ÙØ§Ø±ØºØ§Ù‹. Ù‚Ø¯ ØªÙ‚ØªØ±Ø¨ Ø­Ø±ÙƒØ© Ù…Ø±ÙˆØ± ØºÙŠØ± Ù…Ø±Ø¦ÙŠØ© Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ù…ØªÙ‚Ø§Ø·Ø¹."
+        "explanation": "\u062a\u0633\u062a\u0644\u0632\u0645 \u0639\u0644\u0627\u0645\u0629 \u0645\u0631\u0648\u0631\u064a\u0629 B5 \u062f\u0627\u0626\u0645\u0627\u064b \u062a\u0648\u0642\u0641\u0627\u064b \u0643\u0627\u0645\u0644\u0627\u064b \u062d\u062a\u0649 \u0644\u0648 \u0628\u062f\u0627 \u0627\u0644\u062a\u0642\u0627\u0637\u0639 \u0641\u0627\u0631\u063a\u0627\u064b. \u0642\u062f \u062a\u0642\u062a\u0631\u0628 \u062d\u0631\u0643\u0629 \u0645\u0631\u0648\u0631 \u063a\u064a\u0631 \u0645\u0631\u0626\u064a\u0629 \u0639\u0644\u0649 \u0627\u0644\u0637\u0631\u064a\u0642 \u0627\u0644\u0645\u062a\u0642\u0627\u0637\u0639."
       }
     }
   },
@@ -232,40 +391,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat is het essentiÃ«le verschil in gedragsregel tussen bord B5 en bord B1?",
+        "question": "Wat is het essenti\u00eble verschil in gedragsregel tussen bord B5 en bord B1?",
         "choices": [
-          {"text": "B5 verplicht tot een volledige stilstand vÃ³Ã³r het verlenen van voorrang; B1 vereist enkel voorrang verlenen zonder verplichte stop", "is_correct": true},
-          {"text": "B1 verplicht tot stoppen; B5 verplicht enkel tot vaart minderen en voorrang verlenen", "is_correct": false},
-          {"text": "B5 en B1 zijn identiek: beide vereisen enkel voorrang verlenen", "is_correct": false}
+          {
+            "text": "B5 verplicht tot een volledige stilstand v\u00f3\u00f3r het verlenen van voorrang; B1 vereist enkel voorrang verlenen zonder verplichte stop",
+            "is_correct": true
+          },
+          {
+            "text": "B1 verplicht tot stoppen; B5 verplicht enkel tot vaart minderen en voorrang verlenen",
+            "is_correct": false
+          },
+          {
+            "text": "B5 en B1 zijn identiek: beide vereisen enkel voorrang verlenen",
+            "is_correct": false
+          }
         ],
         "explanation": "Het sleutelonderscheid: B5 = stop + voorrang verlenen. B1 = alleen voorrang verlenen (stoppen is niet verplicht als u veilig kunt doorrijden)."
       },
       "EN": {
         "question": "What is the essential difference in required behaviour between sign B5 and sign B1?",
         "choices": [
-          {"text": "B5 requires a complete stop before giving way; B1 only requires giving way without a mandatory stop", "is_correct": true},
-          {"text": "B1 requires stopping; B5 only requires reducing speed and giving way", "is_correct": false},
-          {"text": "B5 and B1 are identical: both only require giving way", "is_correct": false}
+          {
+            "text": "B5 requires a complete stop before giving way; B1 only requires giving way without a mandatory stop",
+            "is_correct": true
+          },
+          {
+            "text": "B1 requires stopping; B5 only requires reducing speed and giving way",
+            "is_correct": false
+          },
+          {
+            "text": "B5 and B1 are identical: both only require giving way",
+            "is_correct": false
+          }
         ],
         "explanation": "The key distinction: B5 = stop + give way. B1 = give way only (stopping is not required if you can safely pass through)."
       },
       "FR": {
-        "question": "Quelle est la diffÃ©rence essentielle de comportement entre le panneau B5 et le panneau B1 ?",
+        "question": "Quelle est la diff\u00e9rence essentielle de comportement entre le panneau B5 et le panneau B1 ?",
         "choices": [
-          {"text": "B5 impose un arrÃªt complet avant de cÃ©der le passage ; B1 exige uniquement de cÃ©der le passage sans arrÃªt obligatoire", "is_correct": true},
-          {"text": "B1 impose l'arrÃªt ; B5 impose uniquement de rÃ©duire la vitesse et de cÃ©der le passage", "is_correct": false},
-          {"text": "B5 et B1 sont identiques : tous deux n'exigent que de cÃ©der le passage", "is_correct": false}
+          {
+            "text": "B5 impose un arr\u00eat complet avant de c\u00e9der le passage ; B1 exige uniquement de c\u00e9der le passage sans arr\u00eat obligatoire",
+            "is_correct": true
+          },
+          {
+            "text": "B1 impose l\u0027arr\u00eat ; B5 impose uniquement de r\u00e9duire la vitesse et de c\u00e9der le passage",
+            "is_correct": false
+          },
+          {
+            "text": "B5 et B1 sont identiques : tous deux n\u0027exigent que de c\u00e9der le passage",
+            "is_correct": false
+          }
         ],
-        "explanation": "La distinction clÃ© : B5 = arrÃªt + cÃ©der le passage. B1 = cÃ©der le passage uniquement (l'arrÃªt n'est pas obligatoire si vous pouvez passer en sÃ©curitÃ©)."
+        "explanation": "La distinction cl\u00e9 : B5 = arr\u00eat + c\u00e9der le passage. B1 = c\u00e9der le passage uniquement (l\u0027arr\u00eat n\u0027est pas obligatoire si vous pouvez passer en s\u00e9curit\u00e9)."
       },
       "AR": {
-        "question": "Ù…Ø§ Ø§Ù„ÙØ±Ù‚ Ø§Ù„Ø¬ÙˆÙ‡Ø±ÙŠ ÙÙŠ Ø§Ù„Ø³Ù„ÙˆÙƒ Ø§Ù„Ù…Ø·Ù„ÙˆØ¨ Ø¨ÙŠÙ† Ø§Ù„Ù„Ø§ÙØªØ© B5 ÙˆØ§Ù„Ù„Ø§ÙØªØ© B1ØŸ",
+        "question": "\u0645\u0627 \u0627\u0644\u0641\u0631\u0642 \u0627\u0644\u062c\u0648\u0647\u0631\u064a \u0641\u064a \u0627\u0644\u0633\u0644\u0648\u0643 \u0627\u0644\u0645\u0637\u0644\u0648\u0628 \u0628\u064a\u0646 \u0627\u0644\u0639\u0644\u0627\u0645\u0629 \u0627\u0644\u0645\u0631\u0648\u0631\u064a\u0629 B5 \u0648\u0627\u0644\u0639\u0644\u0627\u0645\u0629 \u0627\u0644\u0645\u0631\u0648\u0631\u064a\u0629 B1\u061f",
         "choices": [
-          {"text": "B5 ÙŠÙÙ„Ø²Ù… Ø¨Ø§Ù„ØªÙˆÙ‚Ù Ø§Ù„ÙƒØ§Ù…Ù„ Ù‚Ø¨Ù„ Ø¥Ø¹Ø·Ø§Ø¡ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ©Ø› B1 ÙŠÙÙ„Ø²Ù… ÙÙ‚Ø· Ø¨Ø¥Ø¹Ø·Ø§Ø¡ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© Ø¯ÙˆÙ† Ø§Ø´ØªØ±Ø§Ø· Ø§Ù„ØªÙˆÙ‚Ù", "is_correct": true},
-          {"text": "B1 ÙŠÙÙ„Ø²Ù… Ø¨Ø§Ù„ØªÙˆÙ‚ÙØ› B5 ÙŠÙÙ„Ø²Ù… ÙÙ‚Ø· Ø¨ØªØ®ÙÙŠÙ Ø§Ù„Ø³Ø±Ø¹Ø© ÙˆØ¥Ø¹Ø·Ø§Ø¡ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ©", "is_correct": false},
-          {"text": "B5 ÙˆB1 Ù…ØªØ·Ø§Ø¨Ù‚Ø§Ù†: ÙƒÙ„Ø§Ù‡Ù…Ø§ ÙŠÙÙ„Ø²Ù… ÙÙ‚Ø· Ø¨Ø¥Ø¹Ø·Ø§Ø¡ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ©", "is_correct": false}
+          {
+            "text": "B5 \u064a\u064f\u0644\u0632\u0645 \u0628\u0627\u0644\u062a\u0648\u0642\u0641 \u0627\u0644\u0643\u0627\u0645\u0644 \u0642\u0628\u0644 \u0625\u0639\u0637\u0627\u0621 \u0627\u0644\u0623\u0648\u0644\u0648\u064a\u0629\u061b B1 \u064a\u064f\u0644\u0632\u0645 \u0641\u0642\u0637 \u0628\u0625\u0639\u0637\u0627\u0621 \u0627\u0644\u0623\u0648\u0644\u0648\u064a\u0629 \u062f\u0648\u0646 \u0627\u0634\u062a\u0631\u0627\u0637 \u0627\u0644\u062a\u0648\u0642\u0641",
+            "is_correct": true
+          },
+          {
+            "text": "B1 \u064a\u064f\u0644\u0632\u0645 \u0628\u0627\u0644\u062a\u0648\u0642\u0641\u061b B5 \u064a\u064f\u0644\u0632\u0645 \u0641\u0642\u0637 \u0628\u062a\u062e\u0641\u064a\u0641 \u0627\u0644\u0633\u0631\u0639\u0629 \u0648\u0625\u0639\u0637\u0627\u0621 \u0627\u0644\u0623\u0648\u0644\u0648\u064a\u0629",
+            "is_correct": false
+          },
+          {
+            "text": "B5 \u0648B1 \u0645\u062a\u0637\u0627\u0628\u0642\u0627\u0646: \u0643\u0644\u0627\u0647\u0645\u0627 \u064a\u064f\u0644\u0632\u0645 \u0641\u0642\u0637 \u0628\u0625\u0639\u0637\u0627\u0621 \u0627\u0644\u0623\u0648\u0644\u0648\u064a\u0629",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ø§Ù„ØªÙ…ÙŠÙŠØ² Ø§Ù„Ø±Ø¦ÙŠØ³ÙŠ: B5 = ØªÙˆÙ‚Ù + Ø¥Ø¹Ø·Ø§Ø¡ Ø£ÙˆÙ„ÙˆÙŠØ©. B1 = Ø¥Ø¹Ø·Ø§Ø¡ Ø£ÙˆÙ„ÙˆÙŠØ© ÙÙ‚Ø· (Ø§Ù„ØªÙˆÙ‚Ù ØºÙŠØ± Ù…Ø·Ù„ÙˆØ¨ Ø¥Ø°Ø§ ÙƒØ§Ù† ÙŠÙ…ÙƒÙ†Ùƒ Ø§Ù„Ù…Ø±ÙˆØ± Ø¨Ø£Ù…Ø§Ù†)."
+        "explanation": "\u0627\u0644\u062a\u0645\u064a\u064a\u0632 \u0627\u0644\u0631\u0626\u064a\u0633\u064a: B5 = \u062a\u0648\u0642\u0641 + \u0625\u0639\u0637\u0627\u0621 \u0623\u0648\u0644\u0648\u064a\u0629. B1 = \u0625\u0639\u0637\u0627\u0621 \u0623\u0648\u0644\u0648\u064a\u0629 \u0641\u0642\u0637 (\u0627\u0644\u062a\u0648\u0642\u0641 \u063a\u064a\u0631 \u0645\u0637\u0644\u0648\u0628 \u0625\u0630\u0627 \u0643\u0627\u0646 \u064a\u0645\u0643\u0646\u0643 \u0627\u0644\u0645\u0631\u0648\u0631 \u0628\u0623\u0645\u0627\u0646)."
       }
     }
   },
@@ -279,34 +474,58 @@
       "NL": {
         "question": "U staat voor een kruispunt met bord B5. U kunt de kruisende weg volledig overzien en er is geen enkel voertuig te zien. Mag u doorrijden zonder volledig te stoppen?",
         "choices": [
-          {"text": "Nee, bord B5 verplicht u altijd tot een volledige stilstand, ongeacht de verkeersituatie", "is_correct": true},
-          {"text": "Ja, als de weg aantoonbaar vrij is, hoeft u niet meer te stoppen", "is_correct": false}
+          {
+            "text": "Nee, bord B5 verplicht u altijd tot een volledige stilstand, ongeacht de verkeersituatie",
+            "is_correct": true
+          },
+          {
+            "text": "Ja, als de weg aantoonbaar vrij is, hoeft u niet meer te stoppen",
+            "is_correct": false
+          }
         ],
         "explanation": "Bord B5 vereist een onvoorwaardelijke volledige stilstand. Er is geen uitzondering toegestaan, ook niet als de weg vrij lijkt."
       },
       "EN": {
         "question": "You are at a junction with sign B5. You can see the entire crossing road and no vehicle is visible. May you continue without stopping completely?",
         "choices": [
-          {"text": "No, sign B5 always requires a complete stop regardless of the traffic situation", "is_correct": true},
-          {"text": "Yes, if the road is demonstrably clear, you do not need to stop", "is_correct": false}
+          {
+            "text": "No, sign B5 always requires a complete stop regardless of the traffic situation",
+            "is_correct": true
+          },
+          {
+            "text": "Yes, if the road is demonstrably clear, you do not need to stop",
+            "is_correct": false
+          }
         ],
         "explanation": "Sign B5 requires an unconditional complete stop. No exception is permitted, even if the road appears clear."
       },
       "FR": {
-        "question": "Vous Ãªtes Ã  un carrefour avec le panneau B5. Vous pouvez voir toute la route transversale et aucun vÃ©hicule n'est visible. Pouvez-vous continuer sans vous arrÃªter complÃ¨tement ?",
+        "question": "Vous \u00eates \u00e0 un carrefour avec le panneau B5. Vous pouvez voir toute la route transversale et aucun v\u00e9hicule n\u0027est visible. Pouvez-vous continuer sans vous arr\u00eater compl\u00e8tement ?",
         "choices": [
-          {"text": "Non, le panneau B5 impose toujours un arrÃªt complet quelle que soit la situation de trafic", "is_correct": true},
-          {"text": "Oui, si la route est manifestement libre, vous n'avez pas besoin de vous arrÃªter", "is_correct": false}
+          {
+            "text": "Non, le panneau B5 impose toujours un arr\u00eat complet quelle que soit la situation de trafic",
+            "is_correct": true
+          },
+          {
+            "text": "Oui, si la route est manifestement libre, vous n\u0027avez pas besoin de vous arr\u00eater",
+            "is_correct": false
+          }
         ],
-        "explanation": "Le panneau B5 exige un arrÃªt complet inconditionnel. Aucune exception n'est permise, mÃªme si la voie semble libre."
+        "explanation": "Le panneau B5 exige un arr\u00eat complet inconditionnel. Aucune exception n\u0027est permise, m\u00eame si la voie semble libre."
       },
       "AR": {
-        "question": "Ø£Ù†Øª Ø¹Ù†Ø¯ ØªÙ‚Ø§Ø·Ø¹ Ø¨Ù‡ Ù„Ø§ÙØªØ© B5. ÙŠÙ…ÙƒÙ†Ùƒ Ø±Ø¤ÙŠØ© Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ù…ØªÙ‚Ø§Ø·Ø¹ Ø¨Ø§Ù„ÙƒØ§Ù…Ù„ ÙˆÙ„Ø§ ØªÙØ±Ù‰ Ø£ÙŠ Ù…Ø±ÙƒØ¨Ø©. Ù‡Ù„ ÙŠØ¬ÙˆØ² Ù„Ùƒ Ø§Ù„Ø§Ø³ØªÙ…Ø±Ø§Ø± Ø¯ÙˆÙ† Ø§Ù„ØªÙˆÙ‚Ù Ø§Ù„ÙƒØ§Ù…Ù„ØŸ",
+        "question": "\u0623\u0646\u062a \u0639\u0646\u062f \u062a\u0642\u0627\u0637\u0639 \u0628\u0647 \u0639\u0644\u0627\u0645\u0629 \u0645\u0631\u0648\u0631\u064a\u0629 B5. \u064a\u0645\u0643\u0646\u0643 \u0631\u0624\u064a\u0629 \u0627\u0644\u0637\u0631\u064a\u0642 \u0627\u0644\u0645\u062a\u0642\u0627\u0637\u0639 \u0628\u0627\u0644\u0643\u0627\u0645\u0644 \u0648\u0644\u0627 \u062a\u064f\u0631\u0649 \u0623\u064a \u0645\u0631\u0643\u0628\u0629. \u0647\u0644 \u064a\u062c\u0648\u0632 \u0644\u0643 \u0627\u0644\u0627\u0633\u062a\u0645\u0631\u0627\u0631 \u062f\u0648\u0646 \u0627\u0644\u062a\u0648\u0642\u0641 \u0627\u0644\u0643\u0627\u0645\u0644\u061f",
         "choices": [
-          {"text": "Ù„Ø§ØŒ ØªÙÙ„Ø²Ù… Ù„Ø§ÙØªØ© B5 Ø¯Ø§Ø¦Ù…Ø§Ù‹ Ø¨Ø§Ù„ØªÙˆÙ‚Ù Ø§Ù„ÙƒØ§Ù…Ù„ Ø¨ØºØ¶ Ø§Ù„Ù†Ø¸Ø± Ø¹Ù† Ø­Ø§Ù„Ø© Ø§Ù„Ù…Ø±ÙˆØ±", "is_correct": true},
-          {"text": "Ù†Ø¹Ù…ØŒ Ø¥Ø°Ø§ ÙƒØ§Ù† Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø®Ø§Ù„ÙŠØ§Ù‹ Ø¨ÙˆØ¶ÙˆØ­ ÙÙ„Ø§ Ø­Ø§Ø¬Ø© Ù„Ù„ØªÙˆÙ‚Ù", "is_correct": false}
+          {
+            "text": "\u0644\u0627\u060c \u062a\u064f\u0644\u0632\u0645 \u0639\u0644\u0627\u0645\u0629 \u0645\u0631\u0648\u0631\u064a\u0629 B5 \u062f\u0627\u0626\u0645\u0627\u064b \u0628\u0627\u0644\u062a\u0648\u0642\u0641 \u0627\u0644\u0643\u0627\u0645\u0644 \u0628\u063a\u0636 \u0627\u0644\u0646\u0638\u0631 \u0639\u0646 \u062d\u0627\u0644\u0629 \u0627\u0644\u0645\u0631\u0648\u0631",
+            "is_correct": true
+          },
+          {
+            "text": "\u0646\u0639\u0645\u060c \u0625\u0630\u0627 \u0643\u0627\u0646 \u0627\u0644\u0637\u0631\u064a\u0642 \u062e\u0627\u0644\u064a\u0627\u064b \u0628\u0648\u0636\u0648\u062d \u0641\u0644\u0627 \u062d\u0627\u062c\u0629 \u0644\u0644\u062a\u0648\u0642\u0641",
+            "is_correct": false
+          }
         ],
-        "explanation": "ØªØ³ØªÙ„Ø²Ù… Ù„Ø§ÙØªØ© B5 ØªÙˆÙ‚ÙØ§Ù‹ ÙƒØ§Ù…Ù„Ø§Ù‹ ØºÙŠØ± Ù…Ø´Ø±ÙˆØ·. Ù„Ø§ ÙŠÙØ³Ù…Ø­ Ø¨Ø£ÙŠ Ø§Ø³ØªØ«Ù†Ø§Ø¡ Ø­ØªÙ‰ Ù„Ùˆ Ø¨Ø¯Ø§ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø®Ø§Ù„ÙŠØ§Ù‹."
+        "explanation": "\u062a\u0633\u062a\u0644\u0632\u0645 \u0639\u0644\u0627\u0645\u0629 \u0645\u0631\u0648\u0631\u064a\u0629 B5 \u062a\u0648\u0642\u0641\u0627\u064b \u0643\u0627\u0645\u0644\u0627\u064b \u063a\u064a\u0631 \u0645\u0634\u0631\u0648\u0637. \u0644\u0627 \u064a\u064f\u0633\u0645\u062d \u0628\u0623\u064a \u0627\u0633\u062a\u062b\u0646\u0627\u0621 \u062d\u062a\u0649 \u0644\u0648 \u0628\u062f\u0627 \u0627\u0644\u0637\u0631\u064a\u0642 \u062e\u0627\u0644\u064a\u0627\u064b."
       }
     }
   },
@@ -318,36 +537,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U rijdt 's nachts naar een kruispunt met bord B5. Is het verplicht ook 's nachts volledig te stoppen, zelfs als de weg verlicht is en vrij oogt?",
+        "question": "U rijdt \u0027s nachts naar een kruispunt met bord B5. Is het verplicht ook \u0027s nachts volledig te stoppen, zelfs als de weg verlicht is en vrij oogt?",
         "choices": [
-          {"text": "Ja, de stopverplichting van bord B5 geldt dag en nacht zonder uitzondering", "is_correct": true},
-          {"text": "Nee, 's nachts bij een goed verlicht en leeg kruispunt volstaat sterk afremmen", "is_correct": false}
+          {
+            "text": "Ja, de stopverplichting van bord B5 geldt dag en nacht zonder uitzondering",
+            "is_correct": true
+          },
+          {
+            "text": "Nee, \u0027s nachts bij een goed verlicht en leeg kruispunt volstaat sterk afremmen",
+            "is_correct": false
+          }
         ],
-        "explanation": "De stopverplichting van bord B5 geldt altijd, dag Ã©n nacht. Er bestaat geen wettelijke uitzondering op basis van tijdstip of zichtbaarheid."
+        "explanation": "De stopverplichting van bord B5 geldt altijd, dag \u00e9n nacht. Er bestaat geen wettelijke uitzondering op basis van tijdstip of zichtbaarheid."
       },
       "EN": {
         "question": "You are driving at night toward a junction with sign B5. Are you required to stop completely at night too, even if the road is lit and appears clear?",
         "choices": [
-          {"text": "Yes, the stop obligation of sign B5 applies day and night without exception", "is_correct": true},
-          {"text": "No, at night at a well-lit empty junction, heavy braking is sufficient", "is_correct": false}
+          {
+            "text": "Yes, the stop obligation of sign B5 applies day and night without exception",
+            "is_correct": true
+          },
+          {
+            "text": "No, at night at a well-lit empty junction, heavy braking is sufficient",
+            "is_correct": false
+          }
         ],
         "explanation": "The stop obligation of sign B5 always applies, day and night. There is no legal exception based on time of day or visibility."
       },
       "FR": {
-        "question": "Vous roulez de nuit vers un carrefour avec le panneau B5. ÃŠtes-vous obligÃ© de vous arrÃªter complÃ¨tement la nuit aussi, mÃªme si la route est Ã©clairÃ©e et semble libre ?",
+        "question": "Vous roulez de nuit vers un carrefour avec le panneau B5. \u00cates-vous oblig\u00e9 de vous arr\u00eater compl\u00e8tement la nuit aussi, m\u00eame si la route est \u00e9clair\u00e9e et semble libre ?",
         "choices": [
-          {"text": "Oui, l'obligation d'arrÃªt du panneau B5 s'applique de jour comme de nuit sans exception", "is_correct": true},
-          {"text": "Non, la nuit Ã  un carrefour bien Ã©clairÃ© et vide, un freinage fort suffit", "is_correct": false}
+          {
+            "text": "Oui, l\u0027obligation d\u0027arr\u00eat du panneau B5 s\u0027applique de jour comme de nuit sans exception",
+            "is_correct": true
+          },
+          {
+            "text": "Non, la nuit \u00e0 un carrefour bien \u00e9clair\u00e9 et vide, un freinage fort suffit",
+            "is_correct": false
+          }
         ],
-        "explanation": "L'obligation d'arrÃªt du panneau B5 s'applique toujours, de jour comme de nuit. Il n'existe aucune exception lÃ©gale basÃ©e sur l'heure ou la visibilitÃ©."
+        "explanation": "L\u0027obligation d\u0027arr\u00eat du panneau B5 s\u0027applique toujours, de jour comme de nuit. Il n\u0027existe aucune exception l\u00e9gale bas\u00e9e sur l\u0027heure ou la visibilit\u00e9."
       },
       "AR": {
-        "question": "Ø£Ù†Øª ØªØ³ÙŠØ± Ù„ÙŠÙ„Ø§Ù‹ Ù†Ø­Ùˆ ØªÙ‚Ø§Ø·Ø¹ Ø¨Ù‡ Ù„Ø§ÙØªØ© B5. Ù‡Ù„ ÙŠØ¬Ø¨ Ø¹Ù„ÙŠÙƒ Ø§Ù„ØªÙˆÙ‚Ù Ø§Ù„ÙƒØ§Ù…Ù„ Ù„ÙŠÙ„Ø§Ù‹ Ø£ÙŠØ¶Ø§Ù‹ Ø­ØªÙ‰ Ù„Ùˆ ÙƒØ§Ù† Ø§Ù„Ø·Ø±ÙŠÙ‚ Ù…Ø¶Ø§Ø¡Ù‹ ÙˆÙŠØ¨Ø¯Ùˆ Ø®Ø§Ù„ÙŠØ§Ù‹ØŸ",
+        "question": "\u0623\u0646\u062a \u062a\u0633\u064a\u0631 \u0644\u064a\u0644\u0627\u064b \u0646\u062d\u0648 \u062a\u0642\u0627\u0637\u0639 \u0628\u0647 \u0639\u0644\u0627\u0645\u0629 \u0645\u0631\u0648\u0631\u064a\u0629 B5. \u0647\u0644 \u064a\u062c\u0628 \u0639\u0644\u064a\u0643 \u0627\u0644\u062a\u0648\u0642\u0641 \u0627\u0644\u0643\u0627\u0645\u0644 \u0644\u064a\u0644\u0627\u064b \u0623\u064a\u0636\u0627\u064b \u062d\u062a\u0649 \u0644\u0648 \u0643\u0627\u0646 \u0627\u0644\u0637\u0631\u064a\u0642 \u0645\u0636\u0627\u0621\u064b \u0648\u064a\u0628\u062f\u0648 \u062e\u0627\u0644\u064a\u0627\u064b\u061f",
         "choices": [
-          {"text": "Ù†Ø¹Ù…ØŒ Ø§Ù„ØªØ²Ø§Ù… Ø§Ù„ØªÙˆÙ‚Ù ÙÙŠ Ù„Ø§ÙØªØ© B5 ÙŠÙ†Ø·Ø¨Ù‚ Ù„ÙŠÙ„Ø§Ù‹ ÙˆÙ†Ù‡Ø§Ø±Ø§Ù‹ Ø¯ÙˆÙ† Ø§Ø³ØªØ«Ù†Ø§Ø¡", "is_correct": true},
-          {"text": "Ù„Ø§ØŒ Ù„ÙŠÙ„Ø§Ù‹ Ø¹Ù†Ø¯ ØªÙ‚Ø§Ø·Ø¹ Ù…Ø¶Ø§Ø¡ ÙˆØ®Ø§Ù„Ù ÙŠÙƒÙÙŠ Ø§Ù„ÙØ±Ù…Ù„Ø© Ø§Ù„Ù‚ÙˆÙŠØ©", "is_correct": false}
+          {
+            "text": "\u0646\u0639\u0645\u060c \u0627\u0644\u062a\u0632\u0627\u0645 \u0627\u0644\u062a\u0648\u0642\u0641 \u0641\u064a \u0639\u0644\u0627\u0645\u0629 \u0645\u0631\u0648\u0631\u064a\u0629 B5 \u064a\u0646\u0637\u0628\u0642 \u0644\u064a\u0644\u0627\u064b \u0648\u0646\u0647\u0627\u0631\u0627\u064b \u062f\u0648\u0646 \u0627\u0633\u062a\u062b\u0646\u0627\u0621",
+            "is_correct": true
+          },
+          {
+            "text": "\u0644\u0627\u060c \u0644\u064a\u0644\u0627\u064b \u0639\u0646\u062f \u062a\u0642\u0627\u0637\u0639 \u0645\u0636\u0627\u0621 \u0648\u062e\u0627\u0644\u064d \u064a\u0643\u0641\u064a \u0627\u0644\u0641\u0631\u0645\u0644\u0629 \u0627\u0644\u0642\u0648\u064a\u0629",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ø§Ù„ØªØ²Ø§Ù… Ø§Ù„ØªÙˆÙ‚Ù ÙÙŠ Ù„Ø§ÙØªØ© B5 ÙŠÙ†Ø·Ø¨Ù‚ Ø¯Ø§Ø¦Ù…Ø§Ù‹ Ù„ÙŠÙ„Ø§Ù‹ ÙˆÙ†Ù‡Ø§Ø±Ø§Ù‹. Ù„Ø§ ÙŠÙˆØ¬Ø¯ Ø§Ø³ØªØ«Ù†Ø§Ø¡ Ù‚Ø§Ù†ÙˆÙ†ÙŠ Ø¨Ù†Ø§Ø¡Ù‹ Ø¹Ù„Ù‰ Ø§Ù„ÙˆÙ‚Øª Ø£Ùˆ Ù…Ø³ØªÙˆÙ‰ Ø§Ù„Ø±Ø¤ÙŠØ©."
+        "explanation": "\u0627\u0644\u062a\u0632\u0627\u0645 \u0627\u0644\u062a\u0648\u0642\u0641 \u0641\u064a \u0639\u0644\u0627\u0645\u0629 \u0645\u0631\u0648\u0631\u064a\u0629 B5 \u064a\u0646\u0637\u0628\u0642 \u062f\u0627\u0626\u0645\u0627\u064b \u0644\u064a\u0644\u0627\u064b \u0648\u0646\u0647\u0627\u0631\u0627\u064b. \u0644\u0627 \u064a\u0648\u062c\u062f \u0627\u0633\u062a\u062b\u0646\u0627\u0621 \u0642\u0627\u0646\u0648\u0646\u064a \u0628\u0646\u0627\u0621\u064b \u0639\u0644\u0649 \u0627\u0644\u0648\u0642\u062a \u0623\u0648 \u0645\u0633\u062a\u0648\u0649 \u0627\u0644\u0631\u0624\u064a\u0629."
       }
     }
   }

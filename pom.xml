@@ -30,6 +30,7 @@
         <java.version>21</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <mockito.version>5.20.0</mockito.version>
     </properties>
     <dependencies>
         <dependency>
@@ -152,6 +153,31 @@
     </dependencies>
 
     <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <excludes>
+                    <exclude>data/canonical_sign_images.json</exclude>
+                    <exclude>data/category_descriptions.json</exclude>
+                    <exclude>data/lessons_content.json</exclude>
+                    <exclude>data/multilingual_traffic_terms.json</exclude>
+                    <exclude>data/sign_index.json</exclude>
+                    <exclude>data/signs.json</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <directory>data</directory>
+                <includes>
+                    <include>canonical_sign_images.json</include>
+                    <include>category_descriptions.json</include>
+                    <include>lessons_content.json</include>
+                    <include>multilingual_traffic_terms.json</include>
+                    <include>sign_index.json</include>
+                    <include>signs.json</include>
+                </includes>
+                <targetPath>data</targetPath>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -190,6 +216,7 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <configuration>
+                    <argLine>-javaagent:${settings.localRepository}/org/mockito/mockito-core/${mockito.version}/mockito-core-${mockito.version}.jar -XX:+EnableDynamicAgentLoading</argLine>
                     <excludes>
                         <exclude>**/*IntegrationTest.java</exclude>
                         <exclude>**/*BDDTest.java</exclude>

@@ -80,7 +80,7 @@ class AuthenticationIntegrationTest {
     private String jwtToken;  // Not static anymore
     private static final String TEST_USERNAME = "integration_test";
     private static final String TEST_EMAIL = "integration@test.com";
-    private static final String TEST_PASSWORD = "TestPassword123";
+    private static final String TEST_PASSWORD = "TestPassword123!";
     private static final String TEST_FULL_NAME = "Integration Test User";
 
     @BeforeEach
@@ -177,7 +177,7 @@ class AuthenticationIntegrationTest {
     @DisplayName("3. Protected endpoint returns 401 without JWT (secure mode)")
     void testProtectedEndpointRejectsAnonymous() throws Exception {
         // When & Then - Access protected endpoint without Authorization header
-        mockMvc.perform(get("/api/categories"))
+        mockMvc.perform(get("/api/users/me"))
                 .andExpect(status().isUnauthorized());
     }
 
@@ -190,9 +190,11 @@ class AuthenticationIntegrationTest {
         assertThat(jwtToken).isNotEmpty();
 
         // When & Then - Access protected endpoint with JWT
-        mockMvc.perform(get("/api/categories")
+        mockMvc.perform(get("/api/users/me")
                         .header("Authorization", "Bearer " + jwtToken))
-                .andExpect(status().isOk());
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.username").value(TEST_USERNAME))
+                .andExpect(jsonPath("$.email").value(TEST_EMAIL));
     }
 
     @Test
@@ -200,7 +202,7 @@ class AuthenticationIntegrationTest {
     @DisplayName("5. Invalid JWT returns 401")
     void testInvalidJWTReturnsUnauthorized() throws Exception {
         // When & Then - Access with invalid JWT
-        mockMvc.perform(get("/api/categories")
+        mockMvc.perform(get("/api/users/me")
                         .header("Authorization", "Bearer invalid.jwt.token"))
                 .andExpect(status().isUnauthorized());
     }
@@ -210,6 +212,8 @@ class AuthenticationIntegrationTest {
     @DisplayName("6. Login with wrong password returns 401")
     void testLoginWithWrongPasswordFails() throws Exception {
         // Given
+        createTestUser();
+
         LoginRequest request = new LoginRequest();
         request.setUsername(TEST_USERNAME);
         request.setPassword("WrongPassword123");
@@ -240,6 +244,25 @@ class AuthenticationIntegrationTest {
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(request)))
                 .andExpect(status().isBadRequest())
-                .andExpect(jsonPath("$.error").value("Username already exists"));
+                .andExpect(jsonPath("$.error").value("Username already exists."));
+    }
+
+    @Test
+    @Order(8)
+    @DisplayName("8. Login with email returns 200 and valid JWT token")
+    void testLoginWithEmailReturnsJWT() throws Exception {
+        createTestUser();
+
+        LoginRequest request = new LoginRequest();
+        request.setUsername(TEST_EMAIL);
+        request.setPassword(TEST_PASSWORD);
+
+        mockMvc.perform(post("/api/auth/login")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(request)))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.token").exists())
+                .andExpect(jsonPath("$.email").value(TEST_EMAIL))
+                .andExpect(jsonPath("$.username").value(TEST_USERNAME));
     }
 }

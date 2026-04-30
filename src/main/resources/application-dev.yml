@@ -14,8 +14,8 @@ spring:
   # Development Database Configuration
   datasource:
     url: jdbc:mysql://localhost:3306/readyroad?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
-    username: ${DB_USERNAME:haydar}
-    password: ${DB_PASSWORD:Hh06101987@}
+    username: ${DB_USERNAME:}
+    password: ${DB_PASSWORD:}
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   # JPA Configuration
@@ -54,12 +54,11 @@ logging:
 
 jwt:
   enabled: true
-  secret-key: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970337336763979244226452948404D6351
+  secret-key: ${JWT_SECRET:}
   expiration: 86400000
   refresh-token:
     expiration: 604800000
   issuer: readyroad-backend
-
 
 ---
 # NOTE: In dev mode, JWT is ENABLED but all endpoints remain accessible for testing

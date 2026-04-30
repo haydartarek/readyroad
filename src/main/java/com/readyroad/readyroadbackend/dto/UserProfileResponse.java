@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 /**
  * User Profile Response DTO
@@ -24,4 +25,6 @@ public class UserProfileResponse {
     private String role;
     private Boolean isActive;
     private LocalDateTime createdAt;
+    private List<String> linkedProviders;
+    private Boolean googleLinked;
 }

@@ -35,5 +35,9 @@ public record SignUserProgressDto(
                 /** Best exam 1 score percentage, null if never attempted. */
                 Double exam1BestScorePct,
                 /** Number of exam 1 attempts. */
-                int exam1Attempts) {
+                int exam1Attempts,
+                /** Configured number of questions for exam 1, null if no active exam exists. */
+                Integer exam1TotalQuestions,
+                /** Configured passing score for exam 1, null if no active exam exists. */
+                Integer exam1PassingScore) {
 }

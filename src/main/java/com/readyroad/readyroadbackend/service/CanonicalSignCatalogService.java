@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.readyroad.readyroadbackend.domain.entity.RoadSign;
 import com.readyroad.readyroadbackend.domain.enums.SignCategory;
+import com.readyroad.readyroadbackend.util.DrivingTextSanitizer;
 import com.readyroad.readyroadbackend.util.RouteCodeNormalizer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -161,14 +162,14 @@ public class CanonicalSignCatalogService {
                         sign.getSignCode()),
                 firstUsable(seed != null ? seed.nameFr() : null, sign.getNameFr(), sign.getNameEn(),
                         sign.getSignCode()),
-                firstUsable(seed != null ? seed.shortDescriptionEn() : null, sign.getDescriptionEn()),
-                firstUsable(seed != null ? seed.shortDescriptionAr() : null, sign.getDescriptionAr()),
-                firstUsable(seed != null ? seed.shortDescriptionNl() : null, sign.getDescriptionNl()),
-                firstUsable(seed != null ? seed.shortDescriptionFr() : null, sign.getDescriptionFr()),
-                firstUsable(seed != null ? seed.longDescriptionEn() : null, sign.getDescriptionEn()),
-                firstUsable(seed != null ? seed.longDescriptionNl() : null, sign.getDescriptionNl()),
-                firstUsable(seed != null ? seed.longDescriptionFr() : null, sign.getDescriptionFr()),
-                firstUsable(seed != null ? seed.longDescriptionAr() : null, sign.getDescriptionAr()),
+                DrivingTextSanitizer.sanitize("EN", firstUsable(seed != null ? seed.shortDescriptionEn() : null, sign.getDescriptionEn())),
+                DrivingTextSanitizer.sanitize("AR", firstUsable(seed != null ? seed.shortDescriptionAr() : null, sign.getDescriptionAr())),
+                DrivingTextSanitizer.sanitize("NL", firstUsable(seed != null ? seed.shortDescriptionNl() : null, sign.getDescriptionNl())),
+                DrivingTextSanitizer.sanitize("FR", firstUsable(seed != null ? seed.shortDescriptionFr() : null, sign.getDescriptionFr())),
+                DrivingTextSanitizer.sanitize("EN", firstUsable(seed != null ? seed.longDescriptionEn() : null, sign.getDescriptionEn())),
+                DrivingTextSanitizer.sanitize("NL", firstUsable(seed != null ? seed.longDescriptionNl() : null, sign.getDescriptionNl())),
+                DrivingTextSanitizer.sanitize("FR", firstUsable(seed != null ? seed.longDescriptionFr() : null, sign.getDescriptionFr())),
+                DrivingTextSanitizer.sanitize("AR", firstUsable(seed != null ? seed.longDescriptionAr() : null, sign.getDescriptionAr())),
                 !isBlank(seed != null ? seed.longDescriptionEn() : null)
                         || !isBlank(seed != null ? seed.longDescriptionNl() : null)
                         || !isBlank(seed != null ? seed.longDescriptionFr() : null)
@@ -195,10 +196,10 @@ public class CanonicalSignCatalogService {
         sign.setNameAr(seed.nameAr());
         sign.setNameNl(seed.nameNl());
         sign.setNameFr(seed.nameFr());
-        sign.setDescriptionEn(seed.shortDescriptionEn());
-        sign.setDescriptionAr(seed.shortDescriptionAr());
-        sign.setDescriptionNl(seed.shortDescriptionNl());
-        sign.setDescriptionFr(seed.shortDescriptionFr());
+        sign.setDescriptionEn(DrivingTextSanitizer.sanitize("EN", seed.shortDescriptionEn()));
+        sign.setDescriptionAr(DrivingTextSanitizer.sanitize("AR", seed.shortDescriptionAr()));
+        sign.setDescriptionNl(DrivingTextSanitizer.sanitize("NL", seed.shortDescriptionNl()));
+        sign.setDescriptionFr(DrivingTextSanitizer.sanitize("FR", seed.shortDescriptionFr()));
         if (!seed.imagePath().isBlank()) {
             sign.setImagePath(stripLeadingSlash(seed.imagePath()));
         }

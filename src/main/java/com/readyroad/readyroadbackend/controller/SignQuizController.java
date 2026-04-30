@@ -126,6 +126,18 @@ public class SignQuizController {
         return ResponseEntity.ok(signQuizService.getPracticeResults(sessionId, userId));
     }
 
+    @GetMapping("/practice/history")
+    @Operation(summary = "Get sign practice history", description = "Returns sign practice sessions for the authenticated user, including in-progress sessions.")
+    @ApiResponses({
+            @ApiResponse(responseCode = "200", description = "Practice history returned"),
+            @ApiResponse(responseCode = "401", description = "JWT not provided or invalid")
+    })
+    public ResponseEntity<SignQuizService.SignPracticeHistoryResponse> getPracticeHistory(Authentication auth) {
+        Long userId = authUtil.extractUserId(auth);
+        log.debug("GET /practice/history — user {}", userId);
+        return ResponseEntity.ok(signQuizService.getPracticeHistory(userId));
+    }
+
     // ── GET /api/sign-quiz/exam/{signCode}/{examNumber} ──────────────────────
 
     @GetMapping("/exam/{signCode}/{examNumber}")
@@ -152,7 +164,7 @@ public class SignQuizController {
     @PostMapping("/exam/{signCode}/{examNumber}/submit")
     @Operation(summary = "Submit exam answers (stateless)", description = "Evaluates all submitted answers at once. "
             + "An empty answers array is allowed and is scored as a fully unanswered attempt. "
-            + "Passing threshold: ≥ 80% of linked questions. "
+                        + "Passing threshold: configured per exam template. "
             + "Updates user_weak_areas in V11 after evaluation.")
     @ApiResponses({
             @ApiResponse(responseCode = "200", description = "Exam result returned"),
@@ -175,6 +187,33 @@ public class SignQuizController {
         SignExamResultDto result = signQuizService.submitExam(
                 signCode, examNumber, request.answers(), userId);
         return ResponseEntity.ok(result);
+    }
+
+    @GetMapping("/exam-history")
+    @Operation(summary = "Get sign exam history", description = "Returns stored results for sign-specific exams completed by the authenticated user.")
+    @ApiResponses({
+            @ApiResponse(responseCode = "200", description = "History returned"),
+            @ApiResponse(responseCode = "401", description = "JWT not provided or invalid")
+    })
+    public ResponseEntity<SignExamHistoryResponseDto> getSignExamHistory(Authentication auth) {
+        Long userId = authUtil.extractUserId(auth);
+        log.debug("GET /exam-history — user {}", userId);
+        return ResponseEntity.ok(signQuizService.getSignExamHistory(userId));
+    }
+
+    @GetMapping("/exam-results/{resultId}")
+    @Operation(summary = "Get one stored sign exam result", description = "Returns one stored sign-specific exam result, including question review when available.")
+    @ApiResponses({
+            @ApiResponse(responseCode = "200", description = "Result returned"),
+            @ApiResponse(responseCode = "404", description = "Result not found"),
+            @ApiResponse(responseCode = "401", description = "JWT not provided or invalid")
+    })
+    public ResponseEntity<SignExamResultDto> getSignExamResult(
+            @PathVariable Long resultId,
+            Authentication auth) {
+        Long userId = authUtil.extractUserId(auth);
+        log.debug("GET /exam-results/{} — user {}", resultId, userId);
+        return ResponseEntity.ok(signQuizService.getStoredSignExamResult(resultId, userId));
     }
 
     // ── GET /api/sign-quiz/signs/{signCode}/status ───────────────────────────
@@ -215,32 +254,65 @@ public class SignQuizController {
     // ── GET /api/sign-quiz/random-practice ──────────────────────────────────
 
     @GetMapping("/random-practice")
-    @Operation(summary = "Get random sign practice questions (stateless)", description = "Returns 50 randomly selected active sign questions (20 EASY + 18 MEDIUM + 12 HARD), "
-            + "shuffled. No session is created. Choices are returned WITHOUT the isCorrect flag.")
+    @Operation(summary = "Start or resume mixed sign exam", description = "Creates or resumes a persistent 50-question mixed traffic-sign exam session "
+            + "(20 EASY + 20 MEDIUM + 10 HARD). Questions shown to the user are excluded from future mixed-sign sessions for 24 hours.")
     @ApiResponses({
-            @ApiResponse(responseCode = "200", description = "50 shuffled sign questions returned"),
+            @ApiResponse(responseCode = "200", description = "Session started or resumed"),
+            @ApiResponse(responseCode = "409", description = "Not enough fresh questions remain because of the 24h cooldown"),
             @ApiResponse(responseCode = "401", description = "JWT not provided or invalid")
     })
-    public ResponseEntity<List<SignQuizQuestionDto>> getRandomPractice(Authentication auth) {
-        log.debug("GET /random-practice — user {}", authUtil.extractUserId(auth));
-        return ResponseEntity.ok(signQuizService.getRandomSignPracticeQuestions());
+    public ResponseEntity<SignRandomPracticeSessionDto> getRandomPractice(Authentication auth) {
+        Long userId = authUtil.extractUserId(auth);
+        log.debug("GET /random-practice — user {}", userId);
+        return ResponseEntity.ok(signQuizService.startRandomSignPracticeSession(userId));
     }
 
     // ── POST /api/sign-quiz/random-practice/check ────────────────────────────
 
     @PostMapping("/random-practice/check")
-    @Operation(summary = "Check random sign practice answers (stateless)", description = "Evaluates all submitted answers for a random-practice session. "
-            + "No DB write — purely stateless. Passing score: 41/50.")
+    @Operation(summary = "Submit mixed sign exam answers", description = "Submits answers for the persistent mixed traffic-sign exam. "
+            + "Stores the result, updates dashboard metrics, and creates a pass/fail notification that links to dashboard exam results.")
     @ApiResponses({
             @ApiResponse(responseCode = "200", description = "Practice result returned"),
-            @ApiResponse(responseCode = "400", description = "Empty or invalid request body"),
+            @ApiResponse(responseCode = "400", description = "Invalid request body"),
+            @ApiResponse(responseCode = "404", description = "Session not found"),
+            @ApiResponse(responseCode = "409", description = "Session expired or already closed"),
             @ApiResponse(responseCode = "401", description = "JWT not provided or invalid")
     })
     public ResponseEntity<SignRandomPracticeResultDto> checkRandomPractice(
-            @RequestBody List<SignRandomPracticeAnswerRequest> answers,
+            @Valid @RequestBody SignRandomPracticeSubmitRequest request,
             Authentication auth) {
-        log.debug("POST /random-practice/check — user {}, {} answers",
-                authUtil.extractUserId(auth), answers.size());
-        return ResponseEntity.ok(signQuizService.checkRandomSignPracticeAnswers(answers));
+        Long userId = authUtil.extractUserId(auth);
+        log.debug("POST /random-practice/check — user {}, session {}, {} answers",
+                userId, request.sessionId(), request.answers().size());
+        return ResponseEntity.ok(signQuizService.submitRandomSignPracticeAnswers(
+                request.sessionId(), request.answers(), userId));
+    }
+
+    @GetMapping("/random-practice/history")
+    @Operation(summary = "Get mixed sign exam history", description = "Returns mixed-sign random exam sessions for the authenticated user, including in-progress and terminal sessions.")
+    @ApiResponses({
+            @ApiResponse(responseCode = "200", description = "History returned"),
+            @ApiResponse(responseCode = "401", description = "JWT not provided or invalid")
+    })
+    public ResponseEntity<SignRandomPracticeHistoryResponseDto> getRandomPracticeHistory(Authentication auth) {
+        Long userId = authUtil.extractUserId(auth);
+        log.debug("GET /random-practice/history — user {}", userId);
+        return ResponseEntity.ok(signQuizService.getRandomSignPracticeHistory(userId));
+    }
+
+    @GetMapping("/random-practice/{sessionId}/results")
+    @Operation(summary = "Get one mixed sign exam result", description = "Returns the stored result for a mixed-sign random exam session.")
+    @ApiResponses({
+            @ApiResponse(responseCode = "200", description = "Result returned"),
+            @ApiResponse(responseCode = "404", description = "Session not found"),
+            @ApiResponse(responseCode = "401", description = "JWT not provided or invalid")
+    })
+    public ResponseEntity<SignRandomPracticeResultDto> getRandomPracticeResult(
+            @PathVariable Long sessionId,
+            Authentication auth) {
+        Long userId = authUtil.extractUserId(auth);
+        log.debug("GET /random-practice/{}/results — user {}", sessionId, userId);
+        return ResponseEntity.ok(signQuizService.getRandomSignPracticeResult(sessionId, userId));
     }
 }

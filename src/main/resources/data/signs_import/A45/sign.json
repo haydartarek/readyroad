@@ -1,24 +1,24 @@
-﻿{
-    "code":  "A45",
-    "category":  "DANGER",
-    "image_path":  "images/signs/danger_signs/A45 waarschuwings kruis.png",
-    "serious_violation":  false,
-    "i18n":  {
-                 "NL":  {
-                            "name":  "waarschuwings kruis",
-                            "description":  "Overweg voor enkel spoor."
-                        },
-                 "EN":  {
-                            "name":  "Warning cross",
-                            "description":  "Single track railway crossing."
-                        },
-                 "FR":  {
-                            "name":  "Croix d\u0027avertissement",
-                            "description":  "Passage à niveau à voie unique."
-                        },
-                 "AR":  {
-                            "name":  "صليب تحذير",
-                            "description":  "معبر سكة حديد ذو خط واحد."
-                        }
-             }
+{
+  "code": "A45",
+  "category": "DANGER",
+  "image_path": "images/signs/danger_signs/A45 Overweg voor enkel spoor.png",
+  "serious_violation": false,
+  "i18n": {
+    "NL": {
+      "name": "Overweg voor enkel spoor",
+      "description": "Duidt de exacte plaats aan van een spoorwegovergang met één spoor. Dit Sint-Andrieskruis staat op de overweg zelf en niet vooraf."
+    },
+    "EN": {
+      "name": "Single-track level crossing (Saint Andrew's cross)",
+      "description": "Marks the exact location of a single-track level crossing. This Saint Andrew's cross is placed at the crossing itself, not in advance."
+    },
+    "FR": {
+      "name": "Passage à niveau à une voie",
+      "description": "Marque l'emplacement exact d'un passage à niveau à voie unique. Cette croix de Saint-André est placée au passage lui-même, et non en amont."
+    },
+    "AR": {
+      "name": "معبر سكة حديد بمسار واحد",
+      "description": "يدل على الموقع الدقيق لمعبر سكة حديد بمسار واحد. يُوضع صليب القديس أندرو هذا عند المعبر نفسه وليس قبله."
+    }
+  }
 }

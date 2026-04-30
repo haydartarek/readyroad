@@ -14,7 +14,7 @@ UPDATE traffic_signs
 SET    name_nl            = 'Gevaarlijke bocht naar rechts',
        name_en            = 'Dangerous curve to the right',
        name_fr            = 'Virage dangereux à droite',
-       name_ar            = 'منحنى خطير إلى اليمين',
+    name_ar            = 'منعطف خطير إلى اليمين',
        description_nl     = 'Waarschuwing voor een gevaarlijke bocht naar rechts.',
        description_en     = 'Dangerous bend to the right.',
        description_fr     = 'Virage dangereux à droite.',
@@ -30,7 +30,7 @@ UPDATE traffic_signs
 SET    name_nl            = 'Gevaarlijke bocht naar links',
        name_en            = 'Dangerous curve to the left',
        name_fr            = 'Virage dangereux à gauche',
-       name_ar            = 'منحنى خطير إلى اليسار',
+    name_ar            = 'منعطف خطير إلى اليسار',
        description_nl     = 'Waarschuwing voor een gevaarlijke bocht naar links.',
        description_en     = 'Dangerous bend to the left.',
        description_fr     = 'Virage dangereux à gauche.',
@@ -46,7 +46,7 @@ UPDATE traffic_signs
 SET    name_nl            = 'Gevaarlijke dubbele bocht (rechts-links)',
        name_en            = 'Dangerous double curve (right-left)',
        name_fr            = 'Double virage dangereux (droite-gauche)',
-       name_ar            = 'منحنى مزدوج خطير (يمين-يسار)',
+    name_ar            = 'منعطف مزدوج خطير (يمين-يسار)',
        description_nl     = 'Gevaarlijke dubbele bochten, de eerste naar rechts.',
        description_en     = 'Dangerous bend. First bend to the right.',
        description_fr     = 'Virages dangereux, le premier à droite.',
@@ -62,7 +62,7 @@ UPDATE traffic_signs
 SET    name_nl            = 'Gevaarlijke dubbele bocht (links-rechts)',
        name_en            = 'Dangerous double curve (left-right)',
        name_fr            = 'Double virage dangereux (gauche-droite)',
-       name_ar            = 'منحنى مزدوج خطير (يسار-يمين)',
+    name_ar            = 'منعطف مزدوج خطير (يسار-يمين)',
        description_nl     = 'Gevaarlijke dubbele bochten, de eerste naar links.',
        description_en     = 'Dangerous bend. First bend to the left.',
        description_fr     = 'Virages dangereux, le premier à gauche.',
@@ -122,10 +122,10 @@ WHERE  sign_code = 'A11';
 -- PART 8 : Fix A33 image_url
 --          V103 pointed A33 to 'A33 Beweegbare brug.png' (A9 content).
 --          That file has been renamed on disk to 'A9 Beweegbare brug.png'.
---          A33 (Verkeerslichten) should use the already-existing A33-v1 image.
+--          A33 (Verkeerslichten) should use the canonical A33 image.
 -- ─────────────────────────────────────────────────────────────
 UPDATE traffic_signs
-SET    image_url  = 'images/signs/danger_signs/A33-v1 Verkeerslichten.png',
+SET    image_url  = 'images/signs/danger_signs/A33 Verkeerslichten.png',
        updated_at = NOW()
 WHERE  sign_code = 'A33';
 

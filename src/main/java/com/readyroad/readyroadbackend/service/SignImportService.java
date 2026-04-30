@@ -5,6 +5,7 @@ import com.readyroad.readyroadbackend.domain.repository.RoadSignRepository;
 import com.readyroad.readyroadbackend.dto.SignImportEntry;
 import com.readyroad.readyroadbackend.dto.SignImportEntry.ImportItemResult;
 import com.readyroad.readyroadbackend.dto.SignImportEntry.ImportResult;
+import com.readyroad.readyroadbackend.util.DrivingTextSanitizer;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -94,13 +95,13 @@ public class SignImportService {
 
             if (!dryRun) {
                 if (entry.longDescriptionEn() != null)
-                    sign.setDescriptionEn(entry.longDescriptionEn());
+                    sign.setDescriptionEn(DrivingTextSanitizer.sanitize("EN", entry.longDescriptionEn()));
                 if (entry.longDescriptionNl() != null)
-                    sign.setDescriptionNl(entry.longDescriptionNl());
+                    sign.setDescriptionNl(DrivingTextSanitizer.sanitize("NL", entry.longDescriptionNl()));
                 if (entry.longDescriptionFr() != null)
-                    sign.setDescriptionFr(entry.longDescriptionFr());
+                    sign.setDescriptionFr(DrivingTextSanitizer.sanitize("FR", entry.longDescriptionFr()));
                 if (entry.longDescriptionAr() != null)
-                    sign.setDescriptionAr(entry.longDescriptionAr());
+                    sign.setDescriptionAr(DrivingTextSanitizer.sanitize("AR", entry.longDescriptionAr()));
                 roadSignRepository.save(sign);
             }
 

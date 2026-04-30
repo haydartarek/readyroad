@@ -1,6 +1,4 @@
 -- V7__Add_Content_Tables.sql
-USE readyroad_prod;
-
 -- ========================================
 -- Traffic Rules Table
 -- ========================================

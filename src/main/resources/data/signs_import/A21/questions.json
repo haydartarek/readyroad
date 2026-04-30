@@ -1,4 +1,4 @@
-﻿[
+[
   {
     "question_id": "A21_Q01",
     "type": "WHAT_DOES_IT_MEAN",
@@ -11,36 +11,45 @@
         "choices": [
           { "text": "Oversteekplaats voor voetgangers", "is_correct": true },
           { "text": "Opgelet kinderen", "is_correct": false },
-          { "text": "Oversteekplaats voor fietsers", "is_correct": false }
+          {
+            "text": "Oversteekplaats voor fietsers en bromfietsers",
+            "is_correct": false
+          }
         ],
-        "explanation": "Dit bord waarschuwt voor een voetgangersoversteekplaats (zebrapad). U moet voorrang verlenen aan overstekende voetgangers."
+        "explanation": "Dit bord waarschuwt voor een voetgangersoversteekplaats (zebrapad) waar voetgangers kunnen oversteken of op het punt staan over te steken."
       },
       "EN": {
         "question": "What does this traffic sign mean?",
         "choices": [
           { "text": "Pedestrian crossing", "is_correct": true },
           { "text": "Warning: children", "is_correct": false },
-          { "text": "Cyclist crossing", "is_correct": false }
+          { "text": "Cyclist and moped crossing", "is_correct": false }
         ],
-        "explanation": "This sign warns of a pedestrian crossing (zebra crossing). You must give way to crossing pedestrians."
+        "explanation": "This sign warns of a pedestrian crossing (zebra crossing) where pedestrians may cross or be about to cross the road."
       },
       "FR": {
         "question": "Que signifie ce panneau de signalisation ?",
         "choices": [
-          { "text": "Passage pour piÃ©tons", "is_correct": true },
+          { "text": "Passage pour piétons", "is_correct": true },
           { "text": "Attention: enfants", "is_correct": false },
-          { "text": "TraversÃ©e de cyclistes", "is_correct": false }
+          {
+            "text": "Traversée pour cyclistes et cyclomoteurs",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ce panneau avertit d'un passage pour piÃ©tons (passage cloutÃ©). Vous devez cÃ©der la prioritÃ© aux piÃ©tons qui traversent."
+        "explanation": "Ce panneau avertit d'un passage pour piétons (passage clouté) où des piétons peuvent traverser ou être sur le point de traverser la chaussée."
       },
       "AR": {
-        "question": "Ù…Ø§Ø°Ø§ ØªØ¹Ù†ÙŠ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ",
+        "question": "ما معنى هذه العلامة المرورية؟",
         "choices": [
-          { "text": "Ù…Ù…Ø± Ø¹Ø¨ÙˆØ± Ø§Ù„Ù…Ø´Ø§Ø©", "is_correct": true },
-          { "text": "ØªØ­Ø°ÙŠØ±: Ø£Ø·ÙØ§Ù„", "is_correct": false },
-          { "text": "Ù…Ù…Ø± Ø¹Ø¨ÙˆØ± Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª", "is_correct": false }
+          { "text": "ممر عبور المشاة", "is_correct": true },
+          { "text": "علامة تحذير: أطفال", "is_correct": false },
+          {
+            "text": "ممر عبور الدراجات والدراجات البخارية",
+            "is_correct": false
+          }
         ],
-        "explanation": "ØªØ­Ø°Ø± Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ© Ù…Ù† ÙˆØ¬ÙˆØ¯ Ù…Ù…Ø± Ø¹Ø¨ÙˆØ± Ù„Ù„Ù…Ø´Ø§Ø© (Ù…Ù…Ø± Ø§Ù„Ø­Ù…Ø§Ø± Ø§Ù„ÙˆØ­Ø´ÙŠ). ÙŠØ¬Ø¨ Ø¥Ø¹Ø·Ø§Ø¡ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© Ù„Ù„Ù…Ø´Ø§Ø© Ø§Ù„Ø¹Ø§Ø¨Ø±ÙŠÙ†."
+        "explanation": "تحذر هذه العلامة المرورية من وجود ممر عبور للمشاة (ممر الحمار الوحشي) حيث قد يعبر المشاة الطريق أو يكونون على وشك العبور."
       }
     }
   },
@@ -49,43 +58,79 @@
     "type": "WHICH_SIGN",
     "difficulty": "EASY",
     "is_critical": false,
-    "show_sign": true,
+    "show_sign": false,
     "i18n": {
       "NL": {
-        "question": "Tot welke categorie verkeerstekens behoort dit bord?",
+        "question": "Welk bord waarschuwt voor een voetgangersoversteekplaats?",
         "choices": [
-          { "text": "Gevaarsborden (A-reeks)", "is_correct": true },
-          { "text": "Voorrangsborden (B-reeks)", "is_correct": false },
-          { "text": "Verbodsborden (C-reeks)", "is_correct": false }
+          {
+            "text": "Het bord dat waarschuwt voor overstekende voetgangers op een zebrapad",
+            "is_correct": true
+          },
+          {
+            "text": "Het bord dat waarschuwt voor overstekende kinderen",
+            "is_correct": false
+          },
+          {
+            "text": "Het bord dat waarschuwt voor overstekende fietsers en bromfietsers",
+            "is_correct": false
+          }
         ],
-        "explanation": "Dit bord behoort tot de gevaarsborden (A-reeks). Alle gevaarsborden zijn driehoekig met een rode rand op een witte achtergrond."
+        "explanation": "Het gevaarsbord A21 waarschuwt specifiek voor een voetgangersoversteekplaats (zebrapad). Het bord voor kinderen (A23) en het bord voor fietsers (A25) zien er gelijkaardig uit maar duiden andere gevaren aan."
       },
       "EN": {
-        "question": "To which category of traffic signs does this sign belong?",
+        "question": "Which sign warns of a pedestrian crossing?",
         "choices": [
-          { "text": "Danger signs (A-series)", "is_correct": true },
-          { "text": "Priority signs (B-series)", "is_correct": false },
-          { "text": "Prohibition signs (C-series)", "is_correct": false }
+          {
+            "text": "The sign that warns of pedestrians crossing at a zebra crossing",
+            "is_correct": true
+          },
+          {
+            "text": "The sign that warns of children crossing",
+            "is_correct": false
+          },
+          {
+            "text": "The sign that warns of cyclists and moped riders crossing",
+            "is_correct": false
+          }
         ],
-        "explanation": "This sign belongs to the danger signs (A-series). All danger signs are triangular with a red border on a white background."
+        "explanation": "Danger sign A21 specifically warns of a pedestrian crossing (zebra crossing). The children sign (A23) and the cyclist crossing sign (A25) look similar but indicate different hazards."
       },
       "FR": {
-        "question": "Ã€ quelle catÃ©gorie de panneaux de signalisation ce panneau appartient-il ?",
+        "question": "Quel panneau signale un passage pour piétons ?",
         "choices": [
-          { "text": "Panneaux de danger (sÃ©rie A)", "is_correct": true },
-          { "text": "Panneaux de prioritÃ© (sÃ©rie B)", "is_correct": false },
-          { "text": "Panneaux d'interdiction (sÃ©rie C)", "is_correct": false }
+          {
+            "text": "Le panneau qui avertit de la présence d'un passage pour piétons (passage clouté)",
+            "is_correct": true
+          },
+          {
+            "text": "Le panneau qui avertit de la présence d'enfants traversant",
+            "is_correct": false
+          },
+          {
+            "text": "Le panneau qui avertit de la présence de cyclistes et cyclomotoristes traversant",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ce panneau appartient aux panneaux de danger (sÃ©rie A). Tous les panneaux de danger sont triangulaires avec une bordure rouge sur fond blanc."
+        "explanation": "Le panneau de danger A21 signale spécifiquement un passage pour piétons (passage clouté). Le panneau enfants (A23) et le panneau cyclistes (A25) ont une apparence similaire mais indiquent des dangers différents."
       },
       "AR": {
-        "question": "Ø¥Ù„Ù‰ Ø£ÙŠ ÙØ¦Ø© Ù…Ù† Ù„Ø§ÙØªØ§Øª Ø§Ù„Ù…Ø±ÙˆØ± ØªÙ†ØªÙ…ÙŠ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ",
+        "question": "أي علامة مرورية تُحذّر من وجود ممر عبور للمشاة؟",
         "choices": [
-          { "text": "Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± (Ø³Ù„Ø³Ù„Ø© A)", "is_correct": true },
-          { "text": "Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© (Ø³Ù„Ø³Ù„Ø© B)", "is_correct": false },
-          { "text": "Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø­Ø¸Ø± (Ø³Ù„Ø³Ù„Ø© C)", "is_correct": false }
+          {
+            "text": "العلامة التي تُحذّر من وجود ممر عبور للمشاة (الممر المخطط)",
+            "is_correct": true
+          },
+          {
+            "text": "العلامة التي تُحذّر من وجود أطفال يعبرون الطريق",
+            "is_correct": false
+          },
+          {
+            "text": "العلامة التي تُحذّر من وجود دراجين ودراجات بخارية تعبر الطريق",
+            "is_correct": false
+          }
         ],
-        "explanation": "ØªÙ†ØªÙ…ÙŠ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ© Ø¥Ù„Ù‰ Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± (Ø³Ù„Ø³Ù„Ø© A). Ø¬Ù…ÙŠØ¹ Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± Ù…Ø«Ù„Ø«Ø© Ø¨Ø­Ø§ÙØ© Ø­Ù…Ø±Ø§Ø¡ Ø¹Ù„Ù‰ Ø®Ù„ÙÙŠØ© Ø¨ÙŠØ¶Ø§Ø¡."
+        "explanation": "علامة الخطر A21 تُحذّر تحديداً من ممر عبور المشاة (الممر المخطط). علامة الأطفال (A23) وعلامة الدراجات (A25) تبدو مشابهة لكنها تُشير إلى أخطار مختلفة."
       }
     }
   },
@@ -100,7 +145,7 @@
         "question": "Welk gevaar kondigt dit bord aan?",
         "choices": [
           {
-            "text": "Voetgangers die de rijbaan oversteken of gaan oversteken",
+            "text": "Voetgangers die oversteken of willen oversteken",
             "is_correct": true
           },
           {
@@ -112,7 +157,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "Dit bord kondigt een zebrapad aan waar voetgangers de rijbaan oversteken of op het punt staan dit te doen. U moet hun doorgang laten."
+        "explanation": "Dit bord kondigt een zebrapad aan waar voetgangers de rijbaan kunnen oversteken of willen oversteken."
       },
       "EN": {
         "question": "What hazard does this sign announce?",
@@ -127,34 +172,34 @@
           },
           { "text": "School children waiting for a bus", "is_correct": false }
         ],
-        "explanation": "This sign announces a zebra crossing where pedestrians are crossing or about to cross. You must let them pass."
+        "explanation": "This sign announces a zebra crossing where pedestrians may be crossing or about to cross the road."
       },
       "FR": {
         "question": "Quel danger ce panneau annonce-t-il ?",
         "choices": [
           {
-            "text": "Des piÃ©tons traversant ou sur le point de traverser la chaussÃ©e",
+            "text": "Des piétons traversant ou sur le point de traverser",
             "is_correct": true
           },
           {
-            "text": "Des cyclistes traversant la chaussÃ©e sans s'arrÃªter",
+            "text": "Des cyclistes traversant la chaussée sans s'arrêter",
             "is_correct": false
           },
-          { "text": "Des Ã©coliers attendant le bus", "is_correct": false }
+          { "text": "Des écoliers attendant le bus", "is_correct": false }
         ],
-        "explanation": "Ce panneau annonce un passage cloutÃ© oÃ¹ des piÃ©tons traversent ou sont sur le point de traverser. Vous devez leur laisser le passage."
+        "explanation": "Ce panneau annonce un passage clouté où des piétons peuvent traverser ou sont sur le point de traverser."
       },
       "AR": {
-        "question": "Ù…Ø§ Ø§Ù„Ø®Ø·Ø± Ø§Ù„Ø°ÙŠ ØªØ¹Ù„Ù†Ù‡ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ",
+        "question": "ما الخطر الذي يُحذّرك منه هذا اللوح قبل ممر عبور المشاة؟",
         "choices": [
           {
-            "text": "Ù…Ø´Ø§Ø© ÙŠØ¹Ø¨Ø±ÙˆÙ† Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø£Ùˆ Ø¹Ù„Ù‰ ÙˆØ´Ùƒ Ø§Ù„Ø¹Ø¨ÙˆØ±",
+            "text": "مشاة يعبرون الطريق أو على وشك العبور",
             "is_correct": true
           },
-          { "text": "Ø¯Ø±Ø§Ø¬ÙˆÙ† ÙŠØ¹Ø¨Ø±ÙˆÙ† Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø¯ÙˆÙ† ØªÙˆÙ‚Ù", "is_correct": false },
-          { "text": "Ø£Ø·ÙØ§Ù„ Ù…Ø¯Ø§Ø±Ø³ ÙŠÙ†ØªØ¸Ø±ÙˆÙ† Ø§Ù„Ø­Ø§ÙÙ„Ø©", "is_correct": false }
+          { "text": "دراجون يعبرون الطريق دون توقف", "is_correct": false },
+          { "text": "أطفال مدارس ينتظرون الحافلة", "is_correct": false }
         ],
-        "explanation": "ØªØ¹Ù„Ù† Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ© Ø¹Ù† Ù…Ù…Ø± Ù…Ø´Ø§Ø© Ø­ÙŠØ« ÙŠØ¹Ø¨Ø± Ø§Ù„Ù…Ø´Ø§Ø© Ø£Ùˆ Ø¹Ù„Ù‰ ÙˆØ´Ùƒ Ø§Ù„Ø¹Ø¨ÙˆØ±. ÙŠØ¬Ø¨ Ø§Ù„Ø³Ù…Ø§Ø­ Ù„Ù‡Ù… Ø¨Ø§Ù„Ù…Ø±ÙˆØ±."
+        "explanation": "تُحذّر هذه العلامة من ممر مشاة حيث قد يعبر المشاة الطريق أو يكونون على وشك العبور."
       }
     }
   },
@@ -169,7 +214,7 @@
         "question": "Wat moet u doen wanneer u dit bord ziet?",
         "choices": [
           {
-            "text": "Uw snelheid verminderen, attent zijn op voetgangers en stoppen als zij oversteken of willen oversteken",
+            "text": "Snelheid verminderen, opletten voor voetgangers en stoppen indien nodig",
             "is_correct": true
           },
           {
@@ -181,13 +226,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "Bij een voetgangersoversteekplaats moet u uw snelheid verminderen, opletten voor voetgangers en stoppen om hen voorrang te verlenen."
+        "explanation": "Bij een voetgangersoversteekplaats vermindert u best uw snelheid en let u op voetgangers. U moet stoppen als voetgangers oversteken of willen oversteken."
       },
       "EN": {
-        "question": "What must you do when you see this sign?",
+        "question": "What should you do when you see this sign?",
         "choices": [
           {
-            "text": "Reduce speed, be alert for pedestrians and stop if they are crossing or about to cross",
+            "text": "Reduce speed, stay alert for pedestrians and stop if they are crossing or about to cross",
             "is_correct": true
           },
           {
@@ -199,40 +244,40 @@
             "is_correct": false
           }
         ],
-        "explanation": "At a pedestrian crossing you must reduce speed, watch for pedestrians and stop to give them priority."
+        "explanation": "You should reduce speed and stay alert for pedestrians. You must stop if pedestrians are crossing or about to cross."
       },
       "FR": {
         "question": "Que devez-vous faire lorsque vous voyez ce panneau ?",
         "choices": [
           {
-            "text": "RÃ©duire la vitesse, Ãªtre attentif aux piÃ©tons et s'arrÃªter s'ils traversent ou sont sur le point de traverser",
+            "text": "Réduire la vitesse, être attentif aux piétons et s'arrêter si nécessaire",
             "is_correct": true
           },
           {
-            "text": "Continuer si aucun piÃ©ton n'est visible",
+            "text": "Continuer si aucun piéton n'est visible",
             "is_correct": false
           },
           {
-            "text": "DÃ©passer pour franchir rapidement le passage",
+            "text": "Dépasser pour franchir rapidement le passage",
             "is_correct": false
           }
         ],
-        "explanation": "Ã€ un passage pour piÃ©tons, rÃ©duisez la vitesse, surveillez les piÃ©tons et arrÃªtez-vous pour leur cÃ©der la prioritÃ©."
+        "explanation": "À l'approche d'un passage pour piétons, vous devriez réduire la vitesse et rester attentif aux piétons. Vous devez vous arrêter s'ils traversent ou sont sur le point de traverser."
       },
       "AR": {
-        "question": "Ù…Ø§Ø°Ø§ ÙŠØ¬Ø¨ Ø£Ù† ØªÙØ¹Ù„ Ø¹Ù†Ø¯Ù…Ø§ ØªØ±Ù‰ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ",
+        "question": "ماذا ينبغي عليك فعله عند رؤية هذه العلامة المرورية؟",
         "choices": [
           {
-            "text": "ØªÙ‚Ù„ÙŠÙ„ Ø§Ù„Ø³Ø±Ø¹Ø© ÙˆØ§Ù„Ø§Ù†ØªØ¨Ø§Ù‡ Ù„Ù„Ù…Ø´Ø§Ø© ÙˆØ§Ù„ØªÙˆÙ‚Ù Ø¥Ø°Ø§ ÙƒØ§Ù†ÙˆØ§ ÙŠØ¹Ø¨Ø±ÙˆÙ† Ø£Ùˆ Ø¹Ù„Ù‰ ÙˆØ´Ùƒ Ø§Ù„Ø¹Ø¨ÙˆØ±",
+            "text": "تقليل السرعة والانتباه للمشاة والتوقف إذا كانوا يعبرون أو على وشك العبور",
             "is_correct": true
           },
           {
-            "text": "Ø§Ù„Ø§Ø³ØªÙ…Ø±Ø§Ø± Ø¥Ø°Ø§ Ù„Ù… ÙŠÙƒÙ† Ù‡Ù†Ø§Ùƒ Ù…Ø´Ø§Ø© Ù…Ø±Ø¦ÙŠÙˆÙ†",
+            "text": "الاستمرار إذا لم يكن هناك مشاة مرئيون",
             "is_correct": false
           },
-          { "text": "Ø§Ù„ØªØ¬Ø§ÙˆØ² Ù„Ø¹Ø¨ÙˆØ± Ø§Ù„Ù…Ù…Ø± Ø¨Ø³Ø±Ø¹Ø©", "is_correct": false }
+          { "text": "التجاوز لعبور الممر بسرعة", "is_correct": false }
         ],
-        "explanation": "Ø¹Ù†Ø¯ Ù…Ù…Ø± Ø§Ù„Ù…Ø´Ø§Ø© ÙŠØ¬Ø¨ ØªÙ‚Ù„ÙŠÙ„ Ø§Ù„Ø³Ø±Ø¹Ø© ÙˆÙ…Ø±Ø§Ù‚Ø¨Ø© Ø§Ù„Ù…Ø´Ø§Ø© ÙˆØ§Ù„ØªÙˆÙ‚Ù Ù„Ø¥Ø¹Ø·Ø§Ø¦Ù‡Ù… Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ©."
+        "explanation": "عند ممر المشاة ينبغي تقليل السرعة والانتباه للمشاة. يجب التوقف إذا كان المشاة يعبرون أو على وشك العبور."
       }
     }
   },
@@ -251,7 +296,7 @@
             "is_correct": true
           },
           {
-            "text": "Doorbijden want de voetganger staat aan de rand en loopt nog niet",
+            "text": "Doorrijden want de voetganger staat aan de rand en loopt nog niet",
             "is_correct": false
           },
           {
@@ -259,7 +304,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "'s Nachts is de zichtbaarheid verminderd en een voetganger die staat te wachten bij een zebrapad heeft het recht om over te steken. U bent verplicht te stoppen."
+        "explanation": "'s Nachts is de zichtbaarheid verminderd. U moet stoppen als de voetganger oversteekt of duidelijk wil oversteken."
       },
       "EN": {
         "question": "You are driving at night at 50 km/h and approach this sign. A pedestrian is standing at the edge of the zebra crossing. What do you do?",
@@ -277,49 +322,49 @@
             "is_correct": false
           }
         ],
-        "explanation": "At night visibility is reduced and a pedestrian waiting at a zebra crossing has the right to cross. You are required to stop."
+        "explanation": "At night visibility is reduced. You must stop if the pedestrian is crossing or clearly intends to cross."
       },
       "FR": {
-        "question": "Vous roulez de nuit Ã  50 km/h et approchez ce panneau. Un piÃ©ton se tient au bord du passage cloutÃ©. Que faites-vous ?",
+        "question": "Vous roulez de nuit à 50 km/h et approchez ce panneau. Un piéton se tient au bord du passage clouté. Que faites-vous ?",
         "choices": [
           {
-            "text": "RÃ©duire la vitesse, s'arrÃªter avant le passage et laisser le piÃ©ton traverser",
+            "text": "Réduire la vitesse, s'arrêter avant le passage et laisser le piéton traverser",
             "is_correct": true
           },
           {
-            "text": "Continuer car le piÃ©ton est au bord et n'a pas encore commencÃ© Ã  traverser",
+            "text": "Continuer car le piéton est au bord et n'a pas encore commencé à traverser",
             "is_correct": false
           },
           {
-            "text": "Klaxonner pour que le piÃ©ton sache que vous arrivez",
+            "text": "Klaxonner pour que le piéton sache que vous arrivez",
             "is_correct": false
           }
         ],
-        "explanation": "De nuit, la visibilitÃ© est rÃ©duite et un piÃ©ton attendant Ã  un passage cloutÃ© a le droit de traverser. Vous Ãªtes obligÃ© de vous arrÃªter."
+        "explanation": "De nuit, la visibilité est réduite. Vous devez vous arrêter si le piéton traverse ou montre clairement l'intention de traverser."
       },
       "AR": {
-        "question": "Ø£Ù†Øª ØªÙ‚ÙˆØ¯ Ù„ÙŠÙ„Ø§Ù‹ Ø¨Ø³Ø±Ø¹Ø© 50 ÙƒÙ…/Ø³Ø§Ø¹Ø© ÙˆØªÙ‚ØªØ±Ø¨ Ù…Ù† Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©. Ø£Ø­Ø¯ Ø§Ù„Ù…Ø´Ø§Ø© ÙŠÙ‚Ù Ø¹Ù†Ø¯ Ø­Ø§ÙØ© Ù…Ù…Ø± Ø§Ù„Ù…Ø´Ø§Ø©. Ù…Ø§Ø°Ø§ ØªÙØ¹Ù„ØŸ",
+        "question": "أنت تقود ليلاً بسرعة 50 كم/ساعة وتقترب من هذه العلامة المرورية. أحد المشاة يقف عند حافة ممر المشاة. ماذا تفعل؟",
         "choices": [
           {
-            "text": "ØªÙ‚Ù„ÙŠÙ„ Ø§Ù„Ø³Ø±Ø¹Ø© ÙˆØ§Ù„ØªÙˆÙ‚Ù Ù‚Ø¨Ù„ Ø§Ù„Ù…Ù…Ø± ÙˆØ§Ù„Ø³Ù…Ø§Ø­ Ù„Ù„Ù…Ø´Ø§Ø© Ø¨Ø§Ù„Ø¹Ø¨ÙˆØ±",
+            "text": "تقليل السرعة والتوقف قبل الممر والسماح للمشاة بالعبور",
             "is_correct": true
           },
           {
-            "text": "Ø§Ù„Ø§Ø³ØªÙ…Ø±Ø§Ø± Ù„Ø£Ù† Ø§Ù„Ù…Ø´Ø§Ø© Ø¹Ù†Ø¯ Ø§Ù„Ø­Ø§ÙØ© ÙˆÙ„Ù… ÙŠØ¨Ø¯Ø£ Ø¨Ø§Ù„Ø¹Ø¨ÙˆØ± Ø¨Ø¹Ø¯",
+            "text": "الاستمرار في القيادة لأن المشاة ما زال عند الحافة ولم يبدأ العبور بعد",
             "is_correct": false
           },
           {
-            "text": "Ø§Ù„Ø¶ØºØ· Ø¹Ù„Ù‰ Ø§Ù„Ø¨ÙˆÙ‚ Ø­ØªÙ‰ ÙŠØ¹Ø±Ù Ø§Ù„Ù…Ø´Ø§Ø© Ø¨Ø£Ù†Ùƒ Ù‚Ø§Ø¯Ù…",
+            "text": "أستخدم المنبّه حتى يعرف المشاة أنني قادم",
             "is_correct": false
           }
         ],
-        "explanation": "Ù„ÙŠÙ„Ø§Ù‹ ØªÙƒÙˆÙ† Ø§Ù„Ø±Ø¤ÙŠØ© Ù…Ø­Ø¯ÙˆØ¯Ø© ÙˆØ§Ù„Ù…Ø´Ø§Ø© Ø§Ù„Ø°ÙŠ ÙŠÙ†ØªØ¸Ø± Ø¹Ù†Ø¯ Ù…Ù…Ø± Ø§Ù„Ù…Ø´Ø§Ø© Ù„Ø¯ÙŠÙ‡ Ø§Ù„Ø­Ù‚ ÙÙŠ Ø§Ù„Ø¹Ø¨ÙˆØ±. Ø£Ù†Øª Ù…Ù„Ø²Ù… Ø¨Ø§Ù„ØªÙˆÙ‚Ù."
+        "explanation": "ليلاً تكون الرؤية محدودة. يجب التوقف إذا كان المشاة يعبرون أو يظهرون بوضوح نيتهم في العبور."
       }
     }
   },
   {
     "question_id": "A21_Q06",
-    "type": "WHAT_MUST_YOU_DO",
+    "type": "SIGN_PLACEMENT_DISTANCE",
     "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
@@ -331,7 +376,7 @@
           { "text": "Precies op de gevaarlijke plek", "is_correct": false },
           { "text": "Op 500 meter voor het gevaar", "is_correct": false }
         ],
-        "explanation": "Buiten de bebouwde kom worden gevaarsborden op Â±150 meter voor het gevaar geplaatst. Binnen de bebouwde kom is dit Â±50 meter."
+        "explanation": "Buiten de bebouwde kom worden gevaarsborden op ±150 meter voor het gevaar geplaatst. Binnen de bebouwde kom is dit ±50 meter."
       },
       "EN": {
         "question": "At what distance is this danger sign placed outside built-up areas?",
@@ -343,25 +388,25 @@
           { "text": "Exactly at the hazard location", "is_correct": false },
           { "text": "500 metres before the hazard", "is_correct": false }
         ],
-        "explanation": "Outside built-up areas, danger signs are placed Â±150 metres before the hazard. Inside built-up areas it is Â±50 metres."
+        "explanation": "Outside built-up areas, danger signs are placed ±150 metres before the hazard. Inside built-up areas it is ±50 metres."
       },
       "FR": {
-        "question": "Ã€ quelle distance ce panneau de danger est-il placÃ© hors agglomÃ©ration ?",
+        "question": "À quelle distance ce panneau de danger est-il placé hors agglomération ?",
         "choices": [
-          { "text": "Environ 150 mÃ¨tres avant le danger", "is_correct": true },
-          { "text": "Exactement Ã  l'endroit du danger", "is_correct": false },
-          { "text": "500 mÃ¨tres avant le danger", "is_correct": false }
+          { "text": "Environ 150 mètres avant le danger", "is_correct": true },
+          { "text": "Exactement à l'endroit du danger", "is_correct": false },
+          { "text": "500 mètres avant le danger", "is_correct": false }
         ],
-        "explanation": "Hors agglomÃ©ration, les panneaux de danger sont placÃ©s Ã  Â±150 mÃ¨tres avant le danger. En agglomÃ©ration, c'est Â±50 mÃ¨tres."
+        "explanation": "Hors agglomération, les panneaux de danger sont placés à ±150 mètres avant le danger. En agglomération, c'est ±50 mètres."
       },
       "AR": {
-        "question": "Ø¹Ù„Ù‰ Ø£ÙŠ Ù…Ø³Ø§ÙØ© ØªÙˆØ¶Ø¹ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ© Ø§Ù„ØªØ­Ø°ÙŠØ±ÙŠØ© Ø®Ø§Ø±Ø¬ Ø§Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ù…Ø¨Ù†ÙŠØ©ØŸ",
+        "question": "على أي مسافة توضع هذه العلامة المرورية التحذيرية خارج المنطقة السكنية؟",
         "choices": [
-          { "text": "Ø­ÙˆØ§Ù„ÙŠ 150 Ù…ØªØ± Ù‚Ø¨Ù„ Ø§Ù„Ø®Ø·Ø±", "is_correct": true },
-          { "text": "Ù…Ø¨Ø§Ø´Ø±Ø© Ø¹Ù†Ø¯ Ù…ÙˆÙ‚Ø¹ Ø§Ù„Ø®Ø·Ø±", "is_correct": false },
-          { "text": "500 Ù…ØªØ± Ù‚Ø¨Ù„ Ø§Ù„Ø®Ø·Ø±", "is_correct": false }
+          { "text": "حوالي 150 متر قبل الخطر", "is_correct": true },
+          { "text": "مباشرة عند موقع الخطر", "is_correct": false },
+          { "text": "500 متر قبل الخطر", "is_correct": false }
         ],
-        "explanation": "Ø®Ø§Ø±Ø¬ Ø§Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ù…Ø¨Ù†ÙŠØ© ØªÙˆØ¶Ø¹ Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± Ø¹Ù„Ù‰ Ù…Ø³Ø§ÙØ© Â±150 Ù…ØªØ± Ù‚Ø¨Ù„ Ø§Ù„Ø®Ø·Ø±. Ø¯Ø§Ø®Ù„ Ø§Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ù…Ø¨Ù†ÙŠØ© ØªÙƒÙˆÙ† Ø§Ù„Ù…Ø³Ø§ÙØ© Â±50 Ù…ØªØ±."
+        "explanation": "خارج المنطقة السكنية توضع علامات الخطر على مسافة ±150 متر قبل الخطر. داخل المنطقة السكنية تكون المسافة ±50 متر."
       }
     }
   },
@@ -373,15 +418,15 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Bent u verplicht te stoppen voor voetgangers die een zebrapad oversteken of op het punt staan dit te doen?",
+        "question": "Bent u verplicht te stoppen voor voetgangers bij een zebrapad?",
         "choices": [
           { "text": "Ja", "is_correct": true },
           { "text": "Nee", "is_correct": false }
         ],
-        "explanation": "Bij een zebrapad bent u verplicht voorrang te verlenen aan voetgangers die oversteken of op het punt staan over te steken."
+        "explanation": "Bij een zebrapad bent u verplicht te stoppen voor voetgangers die oversteken of willen oversteken."
       },
       "EN": {
-        "question": "Are you required to stop for pedestrians who are crossing or about to cross at a pedestrian crossing?",
+        "question": "Are you required to stop for pedestrians crossing or about to cross at a pedestrian crossing?",
         "choices": [
           { "text": "Yes", "is_correct": true },
           { "text": "No", "is_correct": false }
@@ -389,20 +434,20 @@
         "explanation": "At a pedestrian crossing, you are required to give way to pedestrians who are crossing or about to cross."
       },
       "FR": {
-        "question": "ÃŠtes-vous obligÃ© de vous arrÃªter pour les piÃ©tons qui traversent ou sont sur le point de traverser un passage pour piÃ©tons ?",
+        "question": "Êtes-vous obligé de vous arrêter pour les piétons à un passage pour piétons ?",
         "choices": [
           { "text": "Oui", "is_correct": true },
           { "text": "Non", "is_correct": false }
         ],
-        "explanation": "Ã€ un passage pour piÃ©tons, vous Ãªtes obligÃ© de cÃ©der la prioritÃ© aux piÃ©tons qui traversent ou sont sur le point de traverser."
+        "explanation": "À un passage pour piétons, vous êtes obligé de céder la priorité aux piétons qui traversent ou sont sur le point de traverser."
       },
       "AR": {
-        "question": "Ù‡Ù„ Ø£Ù†Øª Ù…Ù„Ø²Ù… Ø¨Ø§Ù„ØªÙˆÙ‚Ù Ù„Ù„Ù…Ø´Ø§Ø© Ø§Ù„Ø°ÙŠÙ† ÙŠØ¹Ø¨Ø±ÙˆÙ† Ø£Ùˆ Ø¹Ù„Ù‰ ÙˆØ´Ùƒ Ø§Ù„Ø¹Ø¨ÙˆØ± ÙÙŠ Ù…Ù…Ø± Ù„Ù„Ù…Ø´Ø§Ø©ØŸ",
+        "question": "هل أنت ملزم بالتوقف للمشاة الذين يعبرون أو على وشك العبور عند ممر المشاة؟",
         "choices": [
-          { "text": "Ù†Ø¹Ù…", "is_correct": true },
-          { "text": "Ù„Ø§", "is_correct": false }
+          { "text": "نعم", "is_correct": true },
+          { "text": "لا", "is_correct": false }
         ],
-        "explanation": "Ø¹Ù†Ø¯ Ù…Ù…Ø± Ø§Ù„Ù…Ø´Ø§Ø©ØŒ Ø£Ù†Øª Ù…Ù„Ø²Ù… Ø¨Ø¥Ø¹Ø·Ø§Ø¡ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© Ù„Ù„Ù…Ø´Ø§Ø© Ø§Ù„Ø°ÙŠÙ† ÙŠØ¹Ø¨Ø±ÙˆÙ† Ø£Ùˆ Ø¹Ù„Ù‰ ÙˆØ´Ùƒ Ø§Ù„Ø¹Ø¨ÙˆØ±."
+        "explanation": "عند ممر المشاة، أنت ملزم بإعطاء الأولوية للمشاة الذين يعبرون أو على وشك العبور."
       }
     }
   },
@@ -414,7 +459,7 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Mag u inhalen vlak voor een voetgangersoversteekplaats?",
+        "question": "Mag u vlak voor een zebrapad inhalen?",
         "choices": [
           { "text": "Nee", "is_correct": true },
           { "text": "Ja", "is_correct": false }
@@ -422,7 +467,7 @@
         "explanation": "Inhalen vlak voor een voetgangersoversteekplaats is verboden. Een inhalend voertuig kan een overstekende voetganger niet tijdig zien."
       },
       "EN": {
-        "question": "Is it allowed to overtake just before a pedestrian crossing?",
+        "question": "Is it allowed to overtake immediately before a pedestrian crossing?",
         "choices": [
           { "text": "No", "is_correct": true },
           { "text": "Yes", "is_correct": false }
@@ -430,20 +475,20 @@
         "explanation": "Overtaking just before a pedestrian crossing is prohibited. An overtaking vehicle may not see a crossing pedestrian in time."
       },
       "FR": {
-        "question": "ÃŠtes-vous autorisÃ© Ã  dÃ©passer juste avant un passage pour piÃ©tons ?",
+        "question": "Êtes-vous autorisé à dépasser juste avant un passage pour piétons ?",
         "choices": [
           { "text": "Non", "is_correct": true },
           { "text": "Oui", "is_correct": false }
         ],
-        "explanation": "DÃ©passer juste avant un passage pour piÃ©tons est interdit. Un vÃ©hicule dÃ©passant ne peut pas voir un piÃ©ton traversant Ã  temps."
+        "explanation": "Dépasser juste avant un passage pour piétons est interdit. Un véhicule dépassant ne peut pas voir un piéton traversant à temps."
       },
       "AR": {
-        "question": "Ù‡Ù„ ÙŠÙØ³Ù…Ø­ Ø¨Ø§Ù„ØªØ¬Ø§ÙˆØ² Ù‚Ø¨ÙŠÙ„ Ù…Ù…Ø± Ø¹Ø¨ÙˆØ± Ø§Ù„Ù…Ø´Ø§Ø© Ù…Ø¨Ø§Ø´Ø±Ø©ØŸ",
+        "question": "هل يُسمح بالتجاوز مباشرة قبل ممر عبور المشاة؟",
         "choices": [
-          { "text": "Ù„Ø§", "is_correct": true },
-          { "text": "Ù†Ø¹Ù…", "is_correct": false }
+          { "text": "لا", "is_correct": true },
+          { "text": "نعم", "is_correct": false }
         ],
-        "explanation": "ÙŠÙØ­Ø¸Ø± Ø§Ù„ØªØ¬Ø§ÙˆØ² Ù‚Ø¨ÙŠÙ„ Ù…Ù…Ø± Ø¹Ø¨ÙˆØ± Ø§Ù„Ù…Ø´Ø§Ø© Ù…Ø¨Ø§Ø´Ø±Ø©. Ø§Ù„Ù…Ø±ÙƒØ¨Ø© Ø§Ù„Ù…ØªØ¬Ø§ÙˆÙØ²Ø© Ù‚Ø¯ Ù„Ø§ ØªØ±Ù‰ Ø§Ù„Ù…Ø´Ø§Ø© Ø§Ù„Ø¹Ø§Ø¨Ø±ÙŠÙ† ÙÙŠ Ø§Ù„ÙˆÙ‚Øª Ø§Ù„Ù…Ù†Ø§Ø³Ø¨."
+        "explanation": "يُحظر التجاوز قبيل ممر عبور المشاة مباشرة. المركبة المتجاوِزة قد لا ترى المشاة العابرين في الوقت المناسب."
       }
     }
   }

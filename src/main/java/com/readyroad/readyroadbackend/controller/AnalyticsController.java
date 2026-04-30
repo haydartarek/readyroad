@@ -151,49 +151,4 @@ public class AnalyticsController {
         return ResponseEntity.ok(overview);
     }
 
-    // ═══════════════════════════════════════════════════════════════
-    // 🔧 HELPER METHODS (Optional - if you prefer not to use AuthenticationUtil)
-    // ═══════════════════════════════════════════════════════════════
-
-    /**
-     * Alternative helper method for extracting user ID directly from Authentication
-     * 
-     * <p><b>Note:</b> This method is kept for reference but not used in this implementation.
-     * We use {@link AuthenticationUtil#extractUserId(Authentication)} instead for better
-     * consistency across the application and support for dev/production modes.</p>
-     * 
-     * @param authentication Spring Security Authentication object
-     * @return User ID
-     * @throws IllegalStateException if user is not authenticated or principal type is invalid
-     */
-    @SuppressWarnings("unused")
-    private Long extractUserIdDirect(Authentication authentication) {
-        if (authentication == null || !authentication.isAuthenticated()) {
-            log.error("User is not authenticated");
-            throw new IllegalStateException("User must be authenticated");
-        }
-
-        Object principal = authentication.getPrincipal();
-        
-        // Handle User principal (most common case)
-        if (principal instanceof com.readyroad.readyroadbackend.domain.entity.User user) {
-            log.debug("Extracted user ID: {} from User principal", user.getId());
-            return user.getId();
-        }
-        
-        // Handle UserDetails principal (fallback)
-        if (principal instanceof org.springframework.security.core.userdetails.UserDetails userDetails) {
-            String username = userDetails.getUsername();
-            log.debug("Extracting user ID from UserDetails username: {}", username);
-            
-            throw new IllegalStateException(
-                "Cannot extract user ID from UserDetails. Principal must be User entity.");
-        }
-
-        // Unknown principal type
-        log.error("Unknown principal type: {}", principal.getClass().getName());
-        throw new IllegalStateException(
-            "Cannot extract user ID from authentication principal of type: " + 
-            principal.getClass().getName());
-    }
 }

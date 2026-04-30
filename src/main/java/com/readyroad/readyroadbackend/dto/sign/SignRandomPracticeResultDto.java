@@ -1,13 +1,18 @@
 package com.readyroad.readyroadbackend.dto.sign;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 /**
- * Result of a random-sign-practice check (stateless, no DB session).
- * Returned by POST /api/sign-quiz/random-practice/check
+ * Result of a persisted mixed-sign random practice session.
  */
 public record SignRandomPracticeResultDto(
+        Long sessionId,
+        String status,
+        LocalDateTime startedAt,
+        LocalDateTime completedAt,
         int    totalQuestions,
+        int    answeredCount,
         int    correctAnswers,
         int    wrongAnswers,
         int    unanswered,

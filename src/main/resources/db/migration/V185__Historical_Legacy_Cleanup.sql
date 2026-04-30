@@ -1,0 +1,2 @@
+-- Historical legacy cleanup intentionally left empty.
+-- The curated C-sign set does not include non-canonical C-speed variants.

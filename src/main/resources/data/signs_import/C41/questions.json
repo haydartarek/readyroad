@@ -1,10 +1,602 @@
-﻿[
-  {"question_id":"C41_Q01","type":"WHAT_DOES_IT_MEAN","difficulty":"EASY","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Wat betekent dit verkeersbord?","choices":[{"text":"Einde van het inhaalbod voor vrachtwagens ingesteld door C39","is_correct":true},{"text":"Begin van een inhaalbod voor vrachtwagens","is_correct":false},{"text":"Einde van alle lokale verboden","is_correct":false}],"explanation":"C41 heft het inhaalbod van C39 op. Vrachtwagens mogen vanaf dit punt weer inhalen mits de overige verkeersregels dit toelaten."},"EN":{"question":"What does this traffic sign mean?","choices":[{"text":"End of the overtaking prohibition for lorries imposed by C39","is_correct":true},{"text":"Start of an overtaking prohibition for lorries","is_correct":false},{"text":"End of all local prohibitions","is_correct":false}],"explanation":"C41 lifts the overtaking prohibition of C39. Lorries may overtake again from this point provided the other traffic rules permit it."},"FR":{"question":"Que signifie ce panneau ?","choices":[{"text":"Fin de l interdiction de depassement pour les camions imposee par C39","is_correct":true},{"text":"Debut d une interdiction de depassement pour les camions","is_correct":false},{"text":"Fin de toutes les interdictions locales","is_correct":false}],"explanation":"C41 leve l interdiction de depassement de C39. Les camions peuvent a nouveau depasser a partir de ce point si les autres regles de circulation le permettent."},"AR":{"question":"Ù…Ø§Ø°Ø§ ØªØ¹Ù†ÙŠ Ù„Ø§ÙØªØ© Ø§Ù„Ù…Ø±ÙˆØ± Ù‡Ø°Ù‡ØŸ","choices":[{"text":"Ù†Ù‡Ø§ÙŠØ© Ø­Ø¸Ø± Ø§Ù„ØªØ¬Ø§ÙˆØ² Ù„Ù„Ø´Ø§Ø­Ù†Ø§Øª Ø§Ù„Ù…ÙØ±ÙˆØ¶ Ø¨Ù€C39","is_correct":true},{"text":"Ø¨Ø¯Ø§ÙŠØ© Ø­Ø¸Ø± Ø§Ù„ØªØ¬Ø§ÙˆØ² Ù„Ù„Ø´Ø§Ø­Ù†Ø§Øª","is_correct":false},{"text":"Ù†Ù‡Ø§ÙŠØ© Ø¬Ù…ÙŠØ¹ Ø§Ù„Ø­Ø¸Ø± Ø§Ù„Ù…Ø­Ù„ÙŠØ©","is_correct":false}],"explanation":"ØªØ±ÙØ¹ C41 Ø­Ø¸Ø± Ø§Ù„ØªØ¬Ø§ÙˆØ² Ø§Ù„Ù…ÙØ±ÙˆØ¶ Ø¨Ù€C39. ÙŠØ¬ÙˆØ² Ù„Ù„Ø´Ø§Ø­Ù†Ø§Øª Ø§Ù„ØªØ¬Ø§ÙˆØ² Ù…Ø¬Ø¯Ø¯Ø§ Ù…Ù† Ù‡Ø°Ù‡ Ø§Ù„Ù†Ù‚Ø·Ø© Ø§Ø°Ø§ Ø³Ù…Ø­Øª Ù‚ÙˆØ§Ø¹Ø¯ Ø§Ù„Ù…Ø±ÙˆØ± Ø§Ù„Ø§Ø®Ø±Ù‰ Ø¨Ø°Ù„Ùƒ."}}},
-  {"question_id":"C41_Q02","type":"WHICH_SIGN","difficulty":"EASY","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Tot welke categorie behoort dit bord?","choices":[{"text":"Verbodsborden (C-reeks)","is_correct":true},{"text":"Gevaarsborden (A-reeks)","is_correct":false},{"text":"Gebodsborden (D-reeks)","is_correct":false}],"explanation":"Verbodsborden (C-reeks) omvatten ook einde-verbodsborden die eerder ingestelde verboden opheffen."},"EN":{"question":"To which category does this sign belong?","choices":[{"text":"Prohibition signs (C-series)","is_correct":true},{"text":"Danger signs (A-series)","is_correct":false},{"text":"Mandatory signs (D-series)","is_correct":false}],"explanation":"Prohibition signs (C-series) also include end-of-prohibition signs that lift previously imposed prohibitions."},"FR":{"question":"A quelle categorie appartient ce panneau ?","choices":[{"text":"Panneaux d interdiction (serie C)","is_correct":true},{"text":"Panneaux de danger (serie A)","is_correct":false},{"text":"Panneaux d obligation (serie D)","is_correct":false}],"explanation":"Les panneaux d interdiction (serie C) comprennent aussi les panneaux de fin d interdiction qui levent les interdictions precedemment imposees."},"AR":{"question":"Ø§Ù„Ù‰ Ø§ÙŠ ÙØ¦Ø© ØªÙ†ØªÙ…ÙŠ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ","choices":[{"text":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø­Ø¸Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© C)","is_correct":true},{"text":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© A)","is_correct":false},{"text":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø§Ù„Ø²Ø§Ù… (Ø§Ù„Ø³Ù„Ø³Ù„Ø© D)","is_correct":false}],"explanation":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø­Ø¸Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© C) ØªØ´Ù…Ù„ Ø§ÙŠØ¶Ø§ Ù„Ø§ÙØªØ§Øª Ù†Ù‡Ø§ÙŠØ© Ø§Ù„Ø­Ø¸Ø± Ø§Ù„ØªÙŠ ØªØ±ÙØ¹ Ø§Ù„Ø­Ø¸Ø± Ø§Ù„Ù…ÙØ±ÙˆØ¶ Ù…Ø³Ø¨Ù‚Ø§."}}},
-  {"question_id":"C41_Q03","type":"HAZARD_IDENTIFICATION","difficulty":"EASY","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Welk verbod heft bord C41 precies op?","choices":[{"text":"Het inhaalbod van C39 voor vrachtwagens en gelijkgestelde zware voertuigen","is_correct":true},{"text":"Het inhaalbod van C35 voor alle motorvoertuigen","is_correct":false},{"text":"Alle verboden die ooit op deze weg zijn ingesteld","is_correct":false}],"explanation":"C41 heft uitsluitend het inhaalbod van C39 op voor vrachtwagens. Het inhaalbod voor alle voertuigen (C35) wordt opgeheven door C37."},"EN":{"question":"Which prohibition does sign C41 specifically lift?","choices":[{"text":"The overtaking prohibition of C39 for lorries and equivalent heavy vehicles","is_correct":true},{"text":"The overtaking prohibition of C35 for all motor vehicles","is_correct":false},{"text":"All prohibitions ever imposed on this road","is_correct":false}],"explanation":"C41 exclusively lifts the overtaking prohibition of C39 for lorries. The overtaking prohibition for all vehicles (C35) is lifted by C37."},"FR":{"question":"Quelle interdiction le panneau C41 leve-t-il precisement ?","choices":[{"text":"L interdiction de depassement de C39 pour les camions et les vehicules lourds equivalents","is_correct":true},{"text":"L interdiction de depassement de C35 pour tous les vehicules a moteur","is_correct":false},{"text":"Toutes les interdictions jamais imposees sur cette route","is_correct":false}],"explanation":"C41 leve exclusivement l interdiction de depassement de C39 pour les camions. L interdiction de depassement pour tous les vehicules (C35) est levee par C37."},"AR":{"question":"Ù…Ø§ Ø§Ù„Ø­Ø¸Ø± Ø§Ù„Ø°ÙŠ ØªØ±ÙØ¹Ù‡ Ù„Ø§ÙØªØ© C41 Ø¨Ø§Ù„ØªØ­Ø¯ÙŠØ¯ØŸ","choices":[{"text":"Ø­Ø¸Ø± Ø§Ù„ØªØ¬Ø§ÙˆØ² Ø§Ù„Ù…ÙØ±ÙˆØ¶ Ø¨Ù€C39 Ù„Ù„Ø´Ø§Ø­Ù†Ø§Øª ÙˆØ§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ø«Ù‚ÙŠÙ„Ø© Ø§Ù„Ù…Ø¹Ø§Ø¯Ù„Ø©","is_correct":true},{"text":"Ø­Ø¸Ø± Ø§Ù„ØªØ¬Ø§ÙˆØ² Ø§Ù„Ù…ÙØ±ÙˆØ¶ Ø¨Ù€C35 Ù„Ø¬Ù…ÙŠØ¹ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ø¢Ù„ÙŠØ©","is_correct":false},{"text":"Ø¬Ù…ÙŠØ¹ Ø§Ù„Ø­Ø¸Ø± Ø§Ù„ØªÙŠ ÙÙØ±Ø¶Øª Ø¹Ù„Ù‰ Ù‡Ø°Ø§ Ø§Ù„Ø·Ø±ÙŠÙ‚","is_correct":false}],"explanation":"ØªØ±ÙØ¹ C41 Ø­ØµØ±Ø§ Ø­Ø¸Ø± Ø§Ù„ØªØ¬Ø§ÙˆØ² Ø§Ù„Ù…ÙØ±ÙˆØ¶ Ø¨Ù€C39 Ù„Ù„Ø´Ø§Ø­Ù†Ø§Øª. Ø­Ø¸Ø± Ø§Ù„ØªØ¬Ø§ÙˆØ² Ù„Ø¬Ù…ÙŠØ¹ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª (C35) ÙŠÙØ±ÙØ¹ Ø¨ÙˆØ§Ø³Ø·Ø© C37."}}},
-  {"question_id":"C41_Q04","type":"WHAT_MUST_YOU_DO","difficulty":"MEDIUM","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Wat betekent bord C41 voor een vrachtwagenchauffeur na het passeren ervan?","choices":[{"text":"Het inhaalbod van C39 geldt niet langer va dit punt en de chauffeur mag weer inhalen als de overige regels het toelaten","is_correct":true},{"text":"De chauffeur moet vaart minderen na het passeren van C41","is_correct":false},{"text":"De chauffeur mag onmiddellijk inhalen zonder verdere beoordeling","is_correct":false}],"explanation":"C41 heft het inhaalbod van C39 op. De chauffeur mag weer inhalen maar moet alle andere verkeersregels zoals voldoende zicht en veilige afstand nog steeds naleven."},"EN":{"question":"What does sign C41 mean for a lorry driver after passing it?","choices":[{"text":"The overtaking prohibition of C39 no longer applies from this point and the driver may overtake again if the other rules permit it","is_correct":true},{"text":"The driver must slow down after passing C41","is_correct":false},{"text":"The driver may immediately overtake without further assessment","is_correct":false}],"explanation":"C41 lifts the overtaking prohibition of C39. The driver may overtake again but must still observe all other traffic rules such as sufficient visibility and safe distance."},"FR":{"question":"Que signifie le panneau C41 pour un conducteur de camion apres l avoir depasse ?","choices":[{"text":"L interdiction de depassement de C39 ne s applique plus a partir de ce point et le conducteur peut a nouveau depasser si les autres regles le permettent","is_correct":true},{"text":"Le conducteur doit ralentir apres avoir depasse C41","is_correct":false},{"text":"Le conducteur peut depasser immediatement sans evaluation supplementaire","is_correct":false}],"explanation":"C41 leve l interdiction de depassement de C39. Le conducteur peut a nouveau depasser mais doit encore respecter toutes les autres regles de circulation telles que la visibilite suffisante et la distance de securite."},"AR":{"question":"Ù…Ø§Ø°Ø§ ØªØ¹Ù†ÙŠ Ù„Ø§ÙØªØ© C41 Ù„Ø³Ø§Ø¦Ù‚ Ø´Ø§Ø­Ù†Ø© Ø¨Ø¹Ø¯ ØªØ¬Ø§ÙˆØ²Ù‡Ø§ØŸ","choices":[{"text":"Ù„Ù… ÙŠØ¹Ø¯ Ø­Ø¸Ø± Ø§Ù„ØªØ¬Ø§ÙˆØ² Ø§Ù„Ù…ÙØ±ÙˆØ¶ Ø¨Ù€C39 Ø³Ø§Ø±ÙŠØ§ Ù…Ù† Ù‡Ø°Ù‡ Ø§Ù„Ù†Ù‚Ø·Ø© ÙˆÙŠØ¬ÙˆØ² Ù„Ù„Ø³Ø§Ø¦Ù‚ Ø§Ù„ØªØ¬Ø§ÙˆØ² Ù…Ø¬Ø¯Ø¯Ø§ Ø§Ø°Ø§ Ø³Ù…Ø­Øª Ø§Ù„Ù‚ÙˆØ§Ø¹Ø¯ Ø§Ù„Ø§Ø®Ø±Ù‰ Ø¨Ø°Ù„Ùƒ","is_correct":true},{"text":"ÙŠØ¬Ø¨ Ø¹Ù„Ù‰ Ø§Ù„Ø³Ø§Ø¦Ù‚ Ø§Ù„ØªØ¨Ø§Ø·Ø¤ Ø¨Ø¹Ø¯ ØªØ¬Ø§ÙˆØ² C41","is_correct":false},{"text":"ÙŠØ¬ÙˆØ² Ù„Ù„Ø³Ø§Ø¦Ù‚ Ø§Ù„ØªØ¬Ø§ÙˆØ² ÙÙˆØ±Ø§ Ø¯ÙˆÙ† ØªÙ‚ÙŠÙŠÙ… Ø§Ø¶Ø§ÙÙŠ","is_correct":false}],"explanation":"ØªØ±ÙØ¹ C41 Ø­Ø¸Ø± Ø§Ù„ØªØ¬Ø§ÙˆØ² Ø§Ù„Ù…ÙØ±ÙˆØ¶ Ø¨Ù€C39. ÙŠØ¬ÙˆØ² Ù„Ù„Ø³Ø§Ø¦Ù‚ Ø§Ù„ØªØ¬Ø§ÙˆØ² Ù…Ø¬Ø¯Ø¯Ø§ Ù„ÙƒÙ† ÙŠØ¬Ø¨ Ø§Ù„Ø§Ù…ØªØ«Ø§Ù„ Ù„Ø¬Ù…ÙŠØ¹ Ù‚ÙˆØ§Ø¹Ø¯ Ø§Ù„Ù…Ø±ÙˆØ± Ø§Ù„Ø§Ø®Ø±Ù‰ ÙƒØ§Ù„Ø±Ø¤ÙŠØ© Ø§Ù„ÙƒØ§ÙÙŠØ© ÙˆØ§Ù„Ù…Ø³Ø§ÙØ© Ø§Ù„Ø¢Ù…Ù†Ø©."}}},
-  {"question_id":"C41_Q05","type":"WHAT_MUST_YOU_DO","difficulty":"MEDIUM","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Als er geen bord C41 aanwezig is, wanneer eindigt het inhaalbod van C39 dan?","choices":[{"text":"Op een kruispunt, bij de bebouwde komgrens of bij een einde-verbodsbord","is_correct":true},{"text":"Na 1 kilometer automatisch","is_correct":false},{"text":"Nooit, het verbod blijft voor altijd geldig","is_correct":false}],"explanation":"Net als C35 eindigt het inhaalbod van C39 op een kruispunt, aan de bebouwde komgrens of aan een wettelijke einddatum of afstand op een onderbord."},"EN":{"question":"If there is no sign C41 present, when does the overtaking prohibition of C39 end?","choices":[{"text":"At an intersection, at the built-up area boundary or at an end-of-prohibition sign","is_correct":true},{"text":"After 1 kilometre automatically","is_correct":false},{"text":"Never, the prohibition remains valid forever","is_correct":false}],"explanation":"Just like C35 the overtaking prohibition of C39 ends at an intersection, at the built-up area boundary or at a legally defined end date or distance on a sub-sign."},"FR":{"question":"S il n y a pas de panneau C41, quand l interdiction de depassement de C39 prend-elle fin ?","choices":[{"text":"A un carrefour, a la limite de l agglomeration ou a un panneau de fin d interdiction","is_correct":true},{"text":"Apres 1 kilometre automatiquement","is_correct":false},{"text":"Jamais, l interdiction reste valable pour toujours","is_correct":false}],"explanation":"Comme C35 l interdiction de depassement de C39 prend fin a un carrefour, a la limite de l agglomeration ou a la date de fin ou la distance legalement definie sur un panneau complementaire."},"AR":{"question":"Ø§Ø°Ø§ Ù„Ù… ØªÙƒÙ† Ù„Ø§ÙØªØ© C41 Ù…ÙˆØ¬ÙˆØ¯Ø©ØŒ Ù…ØªÙ‰ ÙŠÙ†ØªÙ‡ÙŠ Ø­Ø¸Ø± Ø§Ù„ØªØ¬Ø§ÙˆØ² Ø§Ù„Ù…ÙØ±ÙˆØ¶ Ø¨Ù€C39ØŸ","choices":[{"text":"Ø¹Ù†Ø¯ ØªÙ‚Ø§Ø·Ø¹ØŒ Ø¹Ù†Ø¯ Ø­Ø¯ Ø§Ù„Ù…Ù†Ø·Ù‚Ø© Ø§Ù„Ø¹Ù…Ø±Ø§Ù†ÙŠØ©ØŒ Ø§Ùˆ Ø¹Ù†Ø¯ Ù„Ø§ÙØªØ© Ù†Ù‡Ø§ÙŠØ© Ø§Ù„Ø­Ø¸Ø±","is_correct":true},{"text":"Ø¨Ø¹Ø¯ 1 ÙƒÙ… ØªÙ„Ù‚Ø§Ø¦ÙŠØ§","is_correct":false},{"text":"Ø§Ø¨Ø¯Ø§ØŒ Ø§Ù„Ø­Ø¸Ø± ÙŠØ¨Ù‚Ù‰ Ø³Ø§Ø±ÙŠØ§ Ù„Ù„Ø§Ø¨Ø¯","is_correct":false}],"explanation":"ØªÙ…Ø§Ù…Ø§ Ù…Ø«Ù„ C35 ÙŠÙ†ØªÙ‡ÙŠ Ø­Ø¸Ø± Ø§Ù„ØªØ¬Ø§ÙˆØ² Ø§Ù„Ù…ÙØ±ÙˆØ¶ Ø¨Ù€C39 Ø¹Ù†Ø¯ ØªÙ‚Ø§Ø·Ø¹ØŒ Ø¹Ù†Ø¯ Ø­Ø¯ Ø§Ù„Ù…Ù†Ø·Ù‚Ø© Ø§Ù„Ø¹Ù…Ø±Ø§Ù†ÙŠØ©ØŒ Ø§Ùˆ Ø¹Ù†Ø¯ ØªØ§Ø±ÙŠØ® Ø§Ù†ØªÙ‡Ø§Ø¡ Ø§Ùˆ Ù…Ø³Ø§ÙØ© Ù…Ø­Ø¯Ø¯Ø© Ù‚Ø§Ù†ÙˆÙ†Ø§ Ø¹Ù„Ù‰ Ù„Ø§ÙØªØ© ÙØ±Ø¹ÙŠØ©."}}},
-  {"question_id":"C41_Q06","type":"WHAT_MUST_YOU_DO","difficulty":"MEDIUM","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Heft bord C41 ook het inhaalbod voor alle voertuigen (C35) op?","choices":[{"text":"Nee, C41 heft uitsluitend het inhaalbod van C39 op; het inhaalbod voor alle voertuigen (C35) vereist bord C37","is_correct":true},{"text":"Ja, C41 heft alle inhaalboden op de weg op","is_correct":false},{"text":"Ja, maar alleen voor vrachtwagens zwaarder dan 10 ton","is_correct":false}],"explanation":"C41 en C37 zijn afzonderlijke borden. C41 eindigt C39 (vrachtwagens), C37 eindigt C35 (alle voertuigen). Elk bord heft uitsluitend het bijbehorende verbod op."},"EN":{"question":"Does sign C41 also lift the overtaking prohibition for all vehicles (C35)?","choices":[{"text":"No, C41 exclusively lifts the overtaking prohibition of C39; the prohibition for all vehicles (C35) requires sign C37","is_correct":true},{"text":"Yes, C41 lifts all overtaking prohibitions on the road","is_correct":false},{"text":"Yes, but only for lorries heavier than 10 tonnes","is_correct":false}],"explanation":"C41 and C37 are separate signs. C41 ends C39 (lorries), C37 ends C35 (all vehicles). Each sign exclusively lifts its corresponding prohibition."},"FR":{"question":"Le panneau C41 leve-t-il aussi l interdiction de depassement pour tous les vehicules (C35) ?","choices":[{"text":"Non, C41 leve exclusivement l interdiction de depassement de C39; l interdiction pour tous les vehicules (C35) necessite le panneau C37","is_correct":true},{"text":"Oui, C41 leve toutes les interdictions de depassement sur la route","is_correct":false},{"text":"Oui, mais seulement pour les camions de plus de 10 tonnes","is_correct":false}],"explanation":"C41 et C37 sont des panneaux distincts. C41 termine C39 (camions), C37 termine C35 (tous vehicules). Chaque panneau leve exclusivement l interdiction correspondante."},"AR":{"question":"Ù‡Ù„ ØªØ±ÙØ¹ Ù„Ø§ÙØªØ© C41 Ø§ÙŠØ¶Ø§ Ø­Ø¸Ø± Ø§Ù„ØªØ¬Ø§ÙˆØ² Ù„Ø¬Ù…ÙŠØ¹ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª (C35)ØŸ","choices":[{"text":"Ù„Ø§ØŒ ØªØ±ÙØ¹ C41 Ø­ØµØ±Ø§ Ø­Ø¸Ø± Ø§Ù„ØªØ¬Ø§ÙˆØ² Ø§Ù„Ù…ÙØ±ÙˆØ¶ Ø¨Ù€C39Ø› Ø§Ù„Ø­Ø¸Ø± Ù„Ø¬Ù…ÙŠØ¹ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª (C35) ÙŠØªØ·Ù„Ø¨ Ù„Ø§ÙØªØ© C37","is_correct":true},{"text":"Ù†Ø¹Ù…ØŒ ØªØ±ÙØ¹ C41 Ø¬Ù…ÙŠØ¹ Ø­Ø¸Ø± Ø§Ù„ØªØ¬Ø§ÙˆØ² Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±ÙŠÙ‚","is_correct":false},{"text":"Ù†Ø¹Ù…ØŒ Ù„ÙƒÙ† ÙÙ‚Ø· Ù„Ù„Ø´Ø§Ø­Ù†Ø§Øª Ø§Ù„Ø§Ø«Ù‚Ù„ Ù…Ù† 10 Ø·Ù†","is_correct":false}],"explanation":"C41 ÙˆC37 Ù„Ø§ÙØªØªØ§Ù† Ù…Ù†ÙØµÙ„ØªØ§Ù†. C41 ØªÙ†Ù‡ÙŠ C39 (Ø§Ù„Ø´Ø§Ø­Ù†Ø§Øª)ØŒ C37 ØªÙ†Ù‡ÙŠ C35 (Ø¬Ù…ÙŠØ¹ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª). ÙƒÙ„ Ù„Ø§ÙØªØ© ØªØ±ÙØ¹ Ø­ØµØ±Ø§ Ø§Ù„Ø­Ø¸Ø± Ø§Ù„Ù…Ù‚Ø§Ø¨Ù„ Ù„Ù‡Ø§."}}},
-  {"question_id":"C41_Q07","type":"IS_IT_ALLOWED","difficulty":"HARD","is_critical":true,"show_sign":true,"i18n":{"NL":{"question":"Mag een vrachtwagen bij bord C41 onmiddellijk inhalen ook al is het zicht beperkt?","choices":[{"text":"Nee, C41 heft alleen het inhaalbod van C39 op; alle andere veiligheidsregels zoals voldoende zicht blijven gelden","is_correct":true},{"text":"Ja, het zicht is niet relevant want het inhaalbod ist opgeheven","is_correct":false}],"explanation":"C41 heft C39 op maar legt geen recht tot inhalen op onder alle omstandigheden. Alle andere verkeersveiligheidsregels blijven van kracht. Dit is een ernstige verkeersovertreding bij onveilig inhalen."},"EN":{"question":"May a lorry at sign C41 immediately overtake even if visibility is limited?","choices":[{"text":"No, C41 only lifts the overtaking prohibition of C39; all other safety rules such as sufficient visibility remain in force","is_correct":true},{"text":"Yes, visibility is not relevant because the overtaking prohibition has been lifted","is_correct":false}],"explanation":"C41 lifts C39 but does not impose a right to overtake under all circumstances. All other traffic safety rules remain in force. This is a serious traffic offence for unsafe overtaking."},"FR":{"question":"Un camion peut-il au panneau C41 depasser immediatement meme si la visibilite est limitee ?","choices":[{"text":"Non, C41 ne leve que l interdiction de depassement de C39; toutes les autres regles de securite comme la visibilite suffisante restent en vigueur","is_correct":true},{"text":"Oui, la visibilite n est pas pertinente car l interdiction de depassement a ete levee","is_correct":false}],"explanation":"C41 leve C39 mais n impose pas un droit de depasser dans toutes les circonstances. Toutes les autres regles de securite routiere restent en vigueur. Il s agit d une infraction grave au code de la route pour un depassement dangereux."},"AR":{"question":"Ù‡Ù„ ÙŠØ¬ÙˆØ² Ù„Ø´Ø§Ø­Ù†Ø© Ø¹Ù†Ø¯ Ù„Ø§ÙØªØ© C41 Ø§Ù„ØªØ¬Ø§ÙˆØ² ÙÙˆØ±Ø§ Ø­ØªÙ‰ Ù„Ùˆ ÙƒØ§Ù†Øª Ø§Ù„Ø±Ø¤ÙŠØ© Ù…Ø­Ø¯ÙˆØ¯Ø©ØŸ","choices":[{"text":"Ù„Ø§ØŒ ØªØ±ÙØ¹ C41 ÙÙ‚Ø· Ø­Ø¸Ø± Ø§Ù„ØªØ¬Ø§ÙˆØ² Ø§Ù„Ù…ÙØ±ÙˆØ¶ Ø¨Ù€C39Ø› ØªØ¨Ù‚Ù‰ Ø¬Ù…ÙŠØ¹ Ù‚ÙˆØ§Ø¹Ø¯ Ø§Ù„Ø³Ù„Ø§Ù…Ø© Ø§Ù„Ø§Ø®Ø±Ù‰ ÙƒØ§Ù„Ø±Ø¤ÙŠØ© Ø§Ù„ÙƒØ§ÙÙŠØ© Ø³Ø§Ø±ÙŠØ©","is_correct":true},{"text":"Ù†Ø¹Ù…ØŒ Ø§Ù„Ø±Ø¤ÙŠØ© ØºÙŠØ± Ø°Ø§Øª ØµÙ„Ø© Ù„Ø£Ù† Ø­Ø¸Ø± Ø§Ù„ØªØ¬Ø§ÙˆØ² Ù‚Ø¯ Ø±ÙÙØ¹","is_correct":false}],"explanation":"ØªØ±ÙØ¹ C41 Ø§Ù„Ø­Ø¸Ø± C39 Ù„ÙƒÙ† Ù„Ø§ ØªÙØ±Ø¶ Ø­Ù‚Ø§ ÙÙŠ Ø§Ù„ØªØ¬Ø§ÙˆØ² ÙÙŠ Ø¬Ù…ÙŠØ¹ Ø§Ù„Ø¸Ø±ÙˆÙ. ØªØ¨Ù‚Ù‰ Ø¬Ù…ÙŠØ¹ Ù‚ÙˆØ§Ø¹Ø¯ Ø³Ù„Ø§Ù…Ø© Ø§Ù„Ù…Ø±ÙˆØ± Ø§Ù„Ø§Ø®Ø±Ù‰ Ø³Ø§Ø±ÙŠØ©. Ù‡Ø°Ù‡ Ù…Ø®Ø§Ù„ÙØ© Ù…Ø±ÙˆØ±ÙŠØ© Ø®Ø·ÙŠØ±Ø© Ù„Ù„ØªØ¬Ø§ÙˆØ² ØºÙŠØ± Ø§Ù„Ø¢Ù…Ù†."}}},
-  {"question_id":"C41_Q08","type":"IS_IT_ALLOWED","difficulty":"HARD","is_critical":true,"show_sign":true,"i18n":{"NL":{"question":"U rijdt als vrachtwagenchauffeur in de geldigheidszone van C39 en ziet bord C41 aan de overkant van een kruispunt. Mag u al voor het kruispunt inhalen?","choices":[{"text":"Nee, C41 geldt pas vanaf de exacte positie van het bord; voor dat punt blijft C39 van kracht","is_correct":true},{"text":"Ja, het zicht van C41 geeft aan dat het verbod bijna voorbij is","is_correct":false}],"explanation":"Het inhaalbod voor vrachtwagens geldt tot het exacte punt van C41. Inhalen voor dat punt is een overtreding van C39 ook al is C41 zichtbaar. Dit is een ernstige verkeersovertreding."},"EN":{"question":"You are driving as a lorry driver in the validity zone of C39 and see sign C41 on the other side of an intersection. May you already overtake before the intersection?","choices":[{"text":"No, C41 only takes effect from the exact position of the sign; before that point C39 remains in force","is_correct":true},{"text":"Yes, the sight of C41 indicates that the prohibition is nearly over","is_correct":false}],"explanation":"The lorry overtaking prohibition applies until the exact point of C41. Overtaking before that point is a violation of C39 even if C41 is visible. This is a serious traffic offence."},"FR":{"question":"Vous conduisez un camion dans la zone de validite de C39 et vous voyez le panneau C41 de l autre cote d un carrefour. Pouvez-vous deja depasser avant le carrefour ?","choices":[{"text":"Non, C41 ne prend effet qu a partir de la position exacte du panneau; avant ce point C39 reste en vigueur","is_correct":true},{"text":"Oui, la vue de C41 indique que l interdiction est presque terminee","is_correct":false}],"explanation":"L interdiction de depassement pour les camions s applique jusqu au point exact de C41. Depasser avant ce point constitue une infraction a C39 meme si C41 est visible. Il s agit d une infraction grave au code de la route."},"AR":{"question":"ØªÙ‚ÙˆØ¯ Ø´Ø§Ø­Ù†Ø© ÙÙŠ Ù…Ù†Ø·Ù‚Ø© ØµÙ„Ø§Ø­ÙŠØ© C39 ÙˆØªØ±Ù‰ Ù„Ø§ÙØªØ© C41 Ø¹Ù„Ù‰ Ø§Ù„Ø¬Ø§Ù†Ø¨ Ø§Ù„Ø¢Ø®Ø± Ù…Ù† Ø§Ù„ØªÙ‚Ø§Ø·Ø¹. Ù‡Ù„ ÙŠØ¬ÙˆØ² Ù„Ùƒ Ø§Ù„ØªØ¬Ø§ÙˆØ² Ù‚Ø¨Ù„ Ø§Ù„ØªÙ‚Ø§Ø·Ø¹ØŸ","choices":[{"text":"Ù„Ø§ØŒ ØªØ³Ø±ÙŠ C41 ÙÙ‚Ø· Ù…Ù† Ø§Ù„Ù…ÙˆÙ‚Ø¹ Ø§Ù„Ø¯Ù‚ÙŠÙ‚ Ù„Ù„Ø§ÙØªØ©Ø› Ù‚Ø¨Ù„ ØªÙ„Ùƒ Ø§Ù„Ù†Ù‚Ø·Ø© ØªØ¨Ù‚Ù‰ C39 Ø³Ø§Ø±ÙŠØ©","is_correct":true},{"text":"Ù†Ø¹Ù…ØŒ Ø±Ø¤ÙŠØ© C41 ØªØ´ÙŠØ± Ø§Ù„Ù‰ Ø§Ù† Ø§Ù„Ø­Ø¸Ø± ÙŠÙˆØ´Ùƒ Ø¹Ù„Ù‰ Ø§Ù„Ø§Ù†ØªÙ‡Ø§Ø¡","is_correct":false}],"explanation":"ÙŠÙ†Ø·Ø¨Ù‚ Ø­Ø¸Ø± Ø§Ù„ØªØ¬Ø§ÙˆØ² Ù„Ù„Ø´Ø§Ø­Ù†Ø§Øª Ø­ØªÙ‰ Ø§Ù„Ù†Ù‚Ø·Ø© Ø§Ù„Ø¯Ù‚ÙŠÙ‚Ø© Ù„Ù€C41. Ø§Ù„ØªØ¬Ø§ÙˆØ² Ù‚Ø¨Ù„ ØªÙ„Ùƒ Ø§Ù„Ù†Ù‚Ø·Ø© Ù…Ø®Ø§Ù„ÙØ© Ù„Ù€C39 Ø­ØªÙ‰ Ù„Ùˆ ÙƒØ§Ù†Øª C41 Ù…Ø±Ø¦ÙŠØ©. Ù‡Ø°Ù‡ Ù…Ø®Ø§Ù„ÙØ© Ù…Ø±ÙˆØ±ÙŠØ© Ø®Ø·ÙŠØ±Ø©."}}}
+[
+  {
+    "question_id": "C41_Q01",
+    "type": "WHAT_DOES_IT_MEAN",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat betekent dit verkeersbord?",
+        "choices": [
+          {
+            "text": "Einde van het verbod opgelegd door bord C39",
+            "is_correct": true
+          },
+          {
+            "text": "Begin van het verbod opgelegd door bord C39",
+            "is_correct": false
+          },
+          {
+            "text": "Einde van alle verkeersverboden",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dit bord geeft aan dat het verbod opgelegd door bord C39 eindigt."
+      },
+      "EN": {
+        "question": "What does this traffic sign mean?",
+        "choices": [
+          {
+            "text": "End of the prohibition imposed by sign C39",
+            "is_correct": true
+          },
+          {
+            "text": "Start of the prohibition imposed by sign C39",
+            "is_correct": false
+          },
+          {
+            "text": "End of all traffic prohibitions",
+            "is_correct": false
+          }
+        ],
+        "explanation": "This sign indicates that the prohibition imposed by sign C39 ends."
+      },
+      "FR": {
+        "question": "Que signifie ce panneau ?",
+        "choices": [
+          {
+            "text": "Fin de l’interdiction imposée par le panneau C39",
+            "is_correct": true
+          },
+          {
+            "text": "Début de l’interdiction imposée par le panneau C39",
+            "is_correct": false
+          },
+          {
+            "text": "Fin de toutes les interdictions de circulation",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ce panneau indique que l’interdiction imposée par le panneau C39 prend fin."
+      },
+      "AR": {
+        "question": "ما معنى هذه العلامة المرورية؟",
+        "choices": [
+          {
+            "text": "نهاية الحظر الذي تفرضه العلامة C39",
+            "is_correct": true
+          },
+          {
+            "text": "بداية الحظر الذي تفرضه العلامة C39",
+            "is_correct": false
+          },
+          {
+            "text": "نهاية جميع محظورات المرور",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تدل هذه العلامة على أن الحظر الذي تفرضه العلامة C39 ينتهي."
+      }
+    }
+  },
+  {
+    "question_id": "C41_Q02",
+    "type": "HAZARD_IDENTIFICATION",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Welk verbod wordt door dit bord opgeheven?",
+        "choices": [
+          {
+            "text": "Het verbod van bord C39",
+            "is_correct": true
+          },
+          {
+            "text": "Het verbod van bord C35",
+            "is_correct": false
+          },
+          {
+            "text": "Een verbod om te keren",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dit bord heft het verbod op dat eerder werd opgelegd door bord C39."
+      },
+      "EN": {
+        "question": "Which prohibition is lifted by this sign?",
+        "choices": [
+          {
+            "text": "The prohibition of sign C39",
+            "is_correct": true
+          },
+          {
+            "text": "The prohibition of sign C35",
+            "is_correct": false
+          },
+          {
+            "text": "A prohibition on making a U-turn",
+            "is_correct": false
+          }
+        ],
+        "explanation": "This sign lifts the prohibition that was previously imposed by sign C39."
+      },
+      "FR": {
+        "question": "Quelle interdiction est levée par ce panneau ?",
+        "choices": [
+          {
+            "text": "L’interdiction du panneau C39",
+            "is_correct": true
+          },
+          {
+            "text": "L’interdiction du panneau C35",
+            "is_correct": false
+          },
+          {
+            "text": "Une interdiction de faire demi-tour",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ce panneau lève l’interdiction qui avait été imposée auparavant par le panneau C39."
+      },
+      "AR": {
+        "question": "أي حظر ترفعه هذه العلامة؟",
+        "choices": [
+          {
+            "text": "الحظر الذي تفرضه العلامة C39",
+            "is_correct": true
+          },
+          {
+            "text": "الحظر الذي تفرضه العلامة C35",
+            "is_correct": false
+          },
+          {
+            "text": "حظر الاستدارة",
+            "is_correct": false
+          }
+        ],
+        "explanation": "ترفع هذه العلامة الحظر الذي كانت قد فرضته سابقًا العلامة C39."
+      }
+    }
+  },
+  {
+    "question_id": "C41_Q03",
+    "type": "HAZARD_IDENTIFICATION",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat verandert er vanaf dit bord?",
+        "choices": [
+          {
+            "text": "Het verbod van C39 geldt vanaf hier niet meer",
+            "is_correct": true
+          },
+          {
+            "text": "Het verbod van C39 begint vanaf hier",
+            "is_correct": false
+          },
+          {
+            "text": "Vanaf hier geldt een algemeen inhaalverbod",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Vanaf dit bord eindigt het verbod dat door C39 was opgelegd."
+      },
+      "EN": {
+        "question": "What changes from this sign onward?",
+        "choices": [
+          {
+            "text": "The prohibition of C39 no longer applies from here",
+            "is_correct": true
+          },
+          {
+            "text": "The prohibition of C39 starts from here",
+            "is_correct": false
+          },
+          {
+            "text": "A general overtaking prohibition applies from here",
+            "is_correct": false
+          }
+        ],
+        "explanation": "From this sign onward, the prohibition imposed by C39 ends."
+      },
+      "FR": {
+        "question": "Qu’est-ce qui change à partir de ce panneau ?",
+        "choices": [
+          {
+            "text": "L’interdiction de C39 ne s’applique plus à partir d’ici",
+            "is_correct": true
+          },
+          {
+            "text": "L’interdiction de C39 commence à partir d’ici",
+            "is_correct": false
+          },
+          {
+            "text": "Une interdiction générale de dépasser s’applique à partir d’ici",
+            "is_correct": false
+          }
+        ],
+        "explanation": "À partir de ce panneau, l’interdiction imposée par C39 prend fin."
+      },
+      "AR": {
+        "question": "ما الذي يتغير ابتداءً من هذه العلامة؟",
+        "choices": [
+          {
+            "text": "لم يعد حظر C39 ساريًا ابتداءً من هنا",
+            "is_correct": true
+          },
+          {
+            "text": "يبدأ حظر C39 ابتداءً من هنا",
+            "is_correct": false
+          },
+          {
+            "text": "يصبح هناك حظر عام على التجاوز ابتداءً من هنا",
+            "is_correct": false
+          }
+        ],
+        "explanation": "ابتداءً من هذه العلامة ينتهي الحظر الذي كانت تفرضه C39."
+      }
+    }
+  },
+  {
+    "question_id": "C41_Q04",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat betekent dit bord voor uw rijgedrag nadat u het bent voorbijgereden?",
+        "choices": [
+          {
+            "text": "Het verbod van C39 is opgeheven en u beoordeelt opnieuw de verkeerssituatie",
+            "is_correct": true
+          },
+          {
+            "text": "U moet vanaf hier altijd inhalen",
+            "is_correct": false
+          },
+          {
+            "text": "U moet voortaan altijd achter andere voertuigen blijven",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Na dit bord geldt het verbod van C39 niet meer, maar u moet nog altijd rekening houden met de verkeerssituatie."
+      },
+      "EN": {
+        "question": "What does this sign mean for your driving after you have passed it?",
+        "choices": [
+          {
+            "text": "The prohibition of C39 has ended and you assess the traffic situation again",
+            "is_correct": true
+          },
+          {
+            "text": "From here you must always overtake",
+            "is_correct": false
+          },
+          {
+            "text": "From now on you must always stay behind other vehicles",
+            "is_correct": false
+          }
+        ],
+        "explanation": "After this sign, the prohibition of C39 no longer applies, but you must still take the traffic situation into account."
+      },
+      "FR": {
+        "question": "Que signifie ce panneau pour votre conduite après l’avoir dépassé ?",
+        "choices": [
+          {
+            "text": "L’interdiction de C39 est levée et vous réévaluez la situation de circulation",
+            "is_correct": true
+          },
+          {
+            "text": "À partir d’ici vous devez toujours dépasser",
+            "is_correct": false
+          },
+          {
+            "text": "Désormais vous devez toujours rester derrière les autres véhicules",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Après ce panneau, l’interdiction de C39 ne s’applique plus, mais vous devez toujours tenir compte de la situation de circulation."
+      },
+      "AR": {
+        "question": "ماذا تعني هذه العلامة لسلوك قيادتك بعد تجاوزها؟",
+        "choices": [
+          {
+            "text": "ينتهي حظر C39 وتعيد تقييم وضع المرور من جديد",
+            "is_correct": true
+          },
+          {
+            "text": "يجب عليك من هنا أن تتجاوز دائمًا",
+            "is_correct": false
+          },
+          {
+            "text": "يجب عليك من الآن أن تبقى دائمًا خلف المركبات الأخرى",
+            "is_correct": false
+          }
+        ],
+        "explanation": "بعد هذه العلامة لا يعود حظر C39 ساريًا، لكن يجب عليك دائمًا مراعاة وضع المرور."
+      }
+    }
+  },
+  {
+    "question_id": "C41_Q05",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U reed voordien in een zone met C39 en passeert nu dit bord. Wat doet u?",
+        "choices": [
+          {
+            "text": "U weet dat het eerdere verbod eindigt vanaf dit punt",
+            "is_correct": true
+          },
+          {
+            "text": "U blijft het eerdere verbod onbeperkt toepassen",
+            "is_correct": false
+          },
+          {
+            "text": "U negeert vanaf nu alle andere verkeersregels",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dit bord geeft het einde aan van het verbod dat eerder door C39 was opgelegd."
+      },
+      "EN": {
+        "question": "You were previously driving in a zone with C39 and now pass this sign. What do you do?",
+        "choices": [
+          {
+            "text": "You understand that the earlier prohibition ends from this point",
+            "is_correct": true
+          },
+          {
+            "text": "You continue to apply the earlier prohibition without limit",
+            "is_correct": false
+          },
+          {
+            "text": "From now on you ignore all other traffic rules",
+            "is_correct": false
+          }
+        ],
+        "explanation": "This sign marks the end of the prohibition that was previously imposed by C39."
+      },
+      "FR": {
+        "question": "Vous rouliez auparavant dans une zone avec C39 et vous passez maintenant ce panneau. Que faites-vous ?",
+        "choices": [
+          {
+            "text": "Vous comprenez que l’interdiction précédente prend fin à partir de ce point",
+            "is_correct": true
+          },
+          {
+            "text": "Vous continuez à appliquer l’interdiction précédente sans limite",
+            "is_correct": false
+          },
+          {
+            "text": "À partir de maintenant vous ignorez toutes les autres règles de circulation",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ce panneau indique la fin de l’interdiction qui avait été imposée auparavant par C39."
+      },
+      "AR": {
+        "question": "كنت تقود سابقًا داخل منطقة عليها C39 والآن تجاوزت هذه العلامة. ماذا تفعل؟",
+        "choices": [
+          {
+            "text": "تفهم أن الحظر السابق ينتهي ابتداءً من هذه النقطة",
+            "is_correct": true
+          },
+          {
+            "text": "تستمر في تطبيق الحظر السابق بلا حدود",
+            "is_correct": false
+          },
+          {
+            "text": "تتجاهل من الآن جميع قواعد المرور الأخرى",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تحدد هذه العلامة نهاية الحظر الذي كانت قد فرضته C39."
+      }
+    }
+  },
+  {
+    "question_id": "C41_Q06",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Mag het verbod van C39 na dit bord nog verder als geldig worden beschouwd?",
+        "choices": [
+          {
+            "text": "Nee, dit bord geeft juist aan dat dat verbod eindigt",
+            "is_correct": true
+          },
+          {
+            "text": "Ja, het verbod van C39 blijft altijd verder gelden",
+            "is_correct": false
+          }
+        ],
+        "explanation": "C41 duidt het einde aan van het verbod dat door C39 was opgelegd."
+      },
+      "EN": {
+        "question": "May the prohibition of C39 still be considered valid after this sign?",
+        "choices": [
+          {
+            "text": "No, this sign specifically indicates that that prohibition ends",
+            "is_correct": true
+          },
+          {
+            "text": "Yes, the prohibition of C39 always continues to apply",
+            "is_correct": false
+          }
+        ],
+        "explanation": "C41 indicates the end of the prohibition that was imposed by C39."
+      },
+      "FR": {
+        "question": "L’interdiction de C39 peut-elle encore être considérée comme valable après ce panneau ?",
+        "choices": [
+          {
+            "text": "Non, ce panneau indique précisément que cette interdiction prend fin",
+            "is_correct": true
+          },
+          {
+            "text": "Oui, l’interdiction de C39 continue toujours à s’appliquer",
+            "is_correct": false
+          }
+        ],
+        "explanation": "C41 indique la fin de l’interdiction qui avait été imposée par C39."
+      },
+      "AR": {
+        "question": "هل يمكن اعتبار حظر C39 ما زال ساريًا بعد هذه العلامة؟",
+        "choices": [
+          {
+            "text": "لا، فهذه العلامة تدل تحديدًا على أن ذلك الحظر ينتهي",
+            "is_correct": true
+          },
+          {
+            "text": "نعم، يبقى حظر C39 ساريًا دائمًا",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تدل C41 على نهاية الحظر الذي كانت قد فرضته C39."
+      }
+    }
+  },
+  {
+    "question_id": "C41_Q07",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Betekent dit bord dat u vanaf hier zonder verdere beoordeling mag inhalen?",
+        "choices": [
+          {
+            "text": "Nee, alleen het verbod van C39 eindigt; u moet de situatie blijven beoordelen",
+            "is_correct": true
+          },
+          {
+            "text": "Ja, vanaf dit bord mag u altijd zonder meer inhalen",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dit bord beëindigt alleen het verbod van C39. U moet nog steeds rekening houden met de verkeerssituatie."
+      },
+      "EN": {
+        "question": "Does this sign mean that from here on you may overtake without any further assessment?",
+        "choices": [
+          {
+            "text": "No, only the prohibition of C39 ends; you must continue to assess the situation",
+            "is_correct": true
+          },
+          {
+            "text": "Yes, from this sign on you may always overtake without further thought",
+            "is_correct": false
+          }
+        ],
+        "explanation": "This sign only ends the prohibition of C39. You must still take the traffic situation into account."
+      },
+      "FR": {
+        "question": "Ce panneau signifie-t-il qu’à partir d’ici vous pouvez dépasser sans autre évaluation ?",
+        "choices": [
+          {
+            "text": "Non, seule l’interdiction de C39 prend fin; vous devez continuer à évaluer la situation",
+            "is_correct": true
+          },
+          {
+            "text": "Oui, à partir de ce panneau vous pouvez toujours dépasser sans autre réflexion",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ce panneau met seulement fin à l’interdiction de C39. Vous devez toujours tenir compte de la situation de circulation."
+      },
+      "AR": {
+        "question": "هل تعني هذه العلامة أنه يجوز لك من هنا التجاوز دون أي تقييم إضافي؟",
+        "choices": [
+          {
+            "text": "لا، الذي ينتهي فقط هو حظر C39، ويجب أن تواصل تقييم الوضع",
+            "is_correct": true
+          },
+          {
+            "text": "نعم، ابتداءً من هذه العلامة يجوز لك دائمًا التجاوز دون تفكير إضافي",
+            "is_correct": false
+          }
+        ],
+        "explanation": "هذه العلامة تنهي فقط حظر C39، ويجب عليك دائمًا مراعاة وضع المرور."
+      }
+    }
+  },
+  {
+    "question_id": "C41_Q08",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Betekent dit bord dat alle vroegere verboden op die weg zijn opgeheven?",
+        "choices": [
+          {
+            "text": "Nee, dit bord verwijst alleen naar het verbod van C39",
+            "is_correct": true
+          },
+          {
+            "text": "Ja, vanaf hier zijn alle vroegere verboden automatisch opgeheven",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dit bord beëindigt specifiek het verbod dat door C39 was opgelegd."
+      },
+      "EN": {
+        "question": "Does this sign mean that all earlier prohibitions on that road are lifted?",
+        "choices": [
+          {
+            "text": "No, this sign refers only to the prohibition of C39",
+            "is_correct": true
+          },
+          {
+            "text": "Yes, from here all earlier prohibitions are automatically lifted",
+            "is_correct": false
+          }
+        ],
+        "explanation": "This sign specifically ends the prohibition that was imposed by C39."
+      },
+      "FR": {
+        "question": "Ce panneau signifie-t-il que toutes les interdictions antérieures sur cette route sont levées ?",
+        "choices": [
+          {
+            "text": "Non, ce panneau vise seulement l’interdiction de C39",
+            "is_correct": true
+          },
+          {
+            "text": "Oui, à partir d’ici toutes les interdictions antérieures sont automatiquement levées",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ce panneau met fin spécifiquement à l’interdiction qui avait été imposée par C39."
+      },
+      "AR": {
+        "question": "هل تعني هذه العلامة أن جميع المحظورات السابقة على هذا الطريق قد رُفعت؟",
+        "choices": [
+          {
+            "text": "لا، فهذه العلامة تشير فقط إلى الحظر الذي تفرضه C39",
+            "is_correct": true
+          },
+          {
+            "text": "نعم، من هنا تُرفع تلقائيًا جميع المحظورات السابقة",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تنهي هذه العلامة تحديدًا الحظر الذي كانت قد فرضته C39."
+      }
+    }
+  }
 ]

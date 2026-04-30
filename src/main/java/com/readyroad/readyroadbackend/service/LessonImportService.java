@@ -8,6 +8,7 @@ import com.readyroad.readyroadbackend.domain.entity.LessonPage;
 import com.readyroad.readyroadbackend.domain.repository.LessonRepository;
 import com.readyroad.readyroadbackend.dto.response.LessonImportResult;
 import com.readyroad.readyroadbackend.dto.response.LessonImportResult.LessonImportItem;
+import com.readyroad.readyroadbackend.util.DrivingTextSanitizer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -34,6 +35,7 @@ import java.util.Optional;
 public class LessonImportService {
 
     private static final Logger log = LoggerFactory.getLogger(LessonImportService.class);
+    private static final String CANONICAL_LESSONS_RESOURCE = "data/lessons_content.json";
 
     private final LessonRepository lessonRepository;
     private final ObjectMapper objectMapper;
@@ -63,18 +65,14 @@ public class LessonImportService {
     }
 
     /**
-     * Import from the bundled classpath resource {@code data/lessons_content.json}.
+     * Import from the single bundled canonical resource.
      */
     @Transactional
     public LessonImportResult importFromClasspath() {
-        InputStream is = getClass().getClassLoader().getResourceAsStream("data/lessons_content.json");
-        if (is == null) {
-            // Try alternative location
-            is = getClass().getClassLoader().getResourceAsStream("data/lessen.json");
-        }
+        InputStream is = getClass().getClassLoader().getResourceAsStream(CANONICAL_LESSONS_RESOURCE);
         if (is == null) {
             return new LessonImportResult(false, 0, 0, 0, 0,
-                    List.of("lessons_content.json not found on classpath"), List.of());
+                    List.of(CANONICAL_LESSONS_RESOURCE + " not found on classpath"), List.of());
         }
         return doImport(is, false);
     }
@@ -170,10 +168,10 @@ public class LessonImportService {
         lesson.setTitleEn(textOr(node, "title_en", textOr(node, "title", "")));
         lesson.setTitleFr(textOr(node, "title_fr", textOr(node, "title", "")));
         lesson.setTitleAr(textOr(node, "title_ar", textOr(node, "title", "")));
-        lesson.setDescriptionNl(textOr(node, "description_nl", textOr(node, "description", "")));
-        lesson.setDescriptionEn(textOr(node, "description_en", textOr(node, "description", "")));
-        lesson.setDescriptionFr(textOr(node, "description_fr", textOr(node, "description", "")));
-        lesson.setDescriptionAr(textOr(node, "description_ar", textOr(node, "description", "")));
+        lesson.setDescriptionNl(sanitize("NL", textOr(node, "description_nl", textOr(node, "description", ""))));
+        lesson.setDescriptionEn(sanitize("EN", textOr(node, "description_en", textOr(node, "description", ""))));
+        lesson.setDescriptionFr(sanitize("FR", textOr(node, "description_fr", textOr(node, "description", ""))));
+        lesson.setDescriptionAr(sanitize("AR", textOr(node, "description_ar", textOr(node, "description", ""))));
         lesson.setIcon(textOr(node, "icon", "📖"));
         lesson.setDisplayOrder(index + 1);
         lesson.setIsActive(true);
@@ -196,10 +194,10 @@ public class LessonImportService {
                 page.setTitleEn(textOr(pageNode, "title_en", textOr(pageNode, "title", "")));
                 page.setTitleFr(textOr(pageNode, "title_fr", textOr(pageNode, "title", "")));
                 page.setTitleAr(textOr(pageNode, "title_ar", textOr(pageNode, "title", "")));
-                page.setContentNl(textOr(pageNode, "content_nl", textOr(pageNode, "content", "")));
-                page.setContentEn(textOr(pageNode, "content_en", textOr(pageNode, "content", "")));
-                page.setContentFr(textOr(pageNode, "content_fr", textOr(pageNode, "content", "")));
-                page.setContentAr(textOr(pageNode, "content_ar", textOr(pageNode, "content", "")));
+                page.setContentNl(sanitize("NL", textOr(pageNode, "content_nl", textOr(pageNode, "content", ""))));
+                page.setContentEn(sanitize("EN", textOr(pageNode, "content_en", textOr(pageNode, "content", ""))));
+                page.setContentFr(sanitize("FR", textOr(pageNode, "content_fr", textOr(pageNode, "content", ""))));
+                page.setContentAr(sanitize("AR", textOr(pageNode, "content_ar", textOr(pageNode, "content", ""))));
                 page.setBulletPointsNl(jsonArrayToString(pageNode, "bulletPoints_nl", "bulletPoints"));
                 page.setBulletPointsEn(jsonArrayToString(pageNode, "bulletPoints_en", "bulletPoints"));
                 page.setBulletPointsFr(jsonArrayToString(pageNode, "bulletPoints_fr", "bulletPoints"));
@@ -245,7 +243,7 @@ public class LessonImportService {
         JsonNode child = node.path(field);
         if (child.isMissingNode() || child.isNull())
             return fallback;
-        return child.asText(fallback);
+        return normalizeText(child.asText(fallback));
     }
 
     private int intOr(JsonNode node, String field, int fallback) {
@@ -274,10 +272,34 @@ public class LessonImportService {
         }
         try {
             List<String> list = objectMapper.convertValue(arr, new TypeReference<List<String>>() {
-            });
+            }).stream()
+                    .map(this::normalizeText)
+                    .filter(item -> item != null && !item.isBlank())
+                    .toList();
             return objectMapper.writeValueAsString(list);
         } catch (Exception e) {
             return "[]";
         }
+    }
+
+    private String normalizeText(String value) {
+        if (value == null) {
+            return null;
+        }
+
+        return value
+                .replace("\uFEFF", "")
+                .replace("\u200B", "")
+                .replace("\u200C", "")
+                .replace("\u200D", "")
+                .replace('\u00A0', ' ')
+                .replaceAll("[ \\t]+\\n", "\n")
+                .replaceAll("\\n{3,}", "\n\n")
+                .replaceAll(" {2,}", " ")
+                .trim();
+    }
+
+    private String sanitize(String languageCode, String value) {
+        return DrivingTextSanitizer.sanitize(languageCode, value);
     }
 }

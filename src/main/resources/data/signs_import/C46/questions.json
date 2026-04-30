@@ -1,10 +1,602 @@
-﻿[
-  {"question_id":"C46_Q01","type":"WHAT_DOES_IT_MEAN","difficulty":"EASY","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Wat betekent dit verkeersbord?","choices":[{"text":"Einde van alle plaatselijke verboden die eerder zijn opgelegd","is_correct":true},{"text":"Begin van een zone met bijzondere verkeersregels","is_correct":false},{"text":"Einde van de bebouwde kom","is_correct":false}],"explanation":"C46 heft in een keer alle lokaal ingevoerde verboden op, zoals snelheidsbeperkingen en inhaalverboden."},"EN":{"question":"What does this traffic sign mean?","choices":[{"text":"End of all local prohibitions previously imposed","is_correct":true},{"text":"Start of a zone with special traffic rules","is_correct":false},{"text":"End of the built-up area","is_correct":false}],"explanation":"C46 cancels at once all locally introduced prohibitions such as speed limits and overtaking bans."},"FR":{"question":"Que signifie ce panneau ?","choices":[{"text":"Fin de toutes les interdictions locales precedemment imposees","is_correct":true},{"text":"Debut d une zone avec des regles de circulation speciales","is_correct":false},{"text":"Fin de l agglomeration","is_correct":false}],"explanation":"C46 leve d un coup toutes les interdictions introduites localement comme les limitations de vitesse et les interdictions de depassement."},"AR":{"question":"Ù…Ø§Ø°Ø§ ØªØ¹Ù†ÙŠ Ù„Ø§ÙØªØ© Ø§Ù„Ù…Ø±ÙˆØ± Ù‡Ø°Ù‡ØŸ","choices":[{"text":"Ù†Ù‡Ø§ÙŠØ© Ø¬Ù…ÙŠØ¹ Ø§Ù„Ø­Ø¸Ø± Ø§Ù„Ù…Ø­Ù„ÙŠ Ø§Ù„Ù…ÙØ±ÙˆØ¶ Ø³Ø§Ø¨Ù‚Ø§","is_correct":true},{"text":"Ø¨Ø¯Ø§ÙŠØ© Ù…Ù†Ø·Ù‚Ø© Ø°Ø§Øª Ù‚ÙˆØ§Ø¹Ø¯ Ù…Ø±ÙˆØ± Ø®Ø§ØµØ©","is_correct":false},{"text":"Ù†Ù‡Ø§ÙŠØ© Ø§Ù„Ù…Ù†Ø·Ù‚Ø© Ø§Ù„Ø¹Ù…Ø±Ø§Ù†ÙŠØ©","is_correct":false}],"explanation":"ØªÙ„ØºÙŠ C46 Ø¯ÙØ¹Ø© ÙˆØ§Ø­Ø¯Ø© Ø¬Ù…ÙŠØ¹ Ø§Ù„Ø­Ø¸Ø± Ø§Ù„Ù…Ø­Ù„ÙŠ Ø§Ù„Ù…ÙØ¯Ø®ÙŽÙ„ Ù…Ø«Ù„ Ø­Ø¯ÙˆØ¯ Ø§Ù„Ø³Ø±Ø¹Ø© ÙˆØ­Ø¸Ø± Ø§Ù„ØªØ®Ø·ÙŠ."}}},
-  {"question_id":"C46_Q02","type":"WHICH_SIGN","difficulty":"EASY","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Tot welke categorie behoort dit bord?","choices":[{"text":"Verbodsborden (C-reeks)","is_correct":true},{"text":"Gevaarsborden (A-reeks)","is_correct":false},{"text":"Gebodsborden (D-reeks)","is_correct":false}],"explanation":"Verbodsborden (C-reeks) zijn rond met rode rand. C46 is een eindbord dat alle lokale verboden opheft."},"EN":{"question":"To which category does this sign belong?","choices":[{"text":"Prohibition signs (C-series)","is_correct":true},{"text":"Danger signs (A-series)","is_correct":false},{"text":"Mandatory signs (D-series)","is_correct":false}],"explanation":"Prohibition signs (C-series) are round with a red border. C46 is an end-sign that cancels all local prohibitions."},"FR":{"question":"A quelle categorie appartient ce panneau ?","choices":[{"text":"Panneaux d interdiction (serie C)","is_correct":true},{"text":"Panneaux de danger (serie A)","is_correct":false},{"text":"Panneaux d obligation (serie D)","is_correct":false}],"explanation":"Les panneaux d interdiction (serie C) sont ronds avec un bord rouge. C46 est un panneau de fin qui leve toutes les interdictions locales."},"AR":{"question":"Ø§Ù„Ù‰ Ø§ÙŠ ÙØ¦Ø© ØªÙ†ØªÙ…ÙŠ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ","choices":[{"text":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø­Ø¸Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© C)","is_correct":true},{"text":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© A)","is_correct":false},{"text":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø§Ù„Ø²Ø§Ù… (Ø§Ù„Ø³Ù„Ø³Ù„Ø© D)","is_correct":false}],"explanation":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø­Ø¸Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© C) Ù…Ø³ØªØ¯ÙŠØ±Ø© Ø°Ø§Øª Ø­Ø¯ Ø§Ø­Ù…Ø±. C46 Ù„Ø§ÙØªØ© Ù†Ù‡Ø§ÙŠØ© ØªÙ„ØºÙŠ Ø¬Ù…ÙŠØ¹ Ø§Ù„Ø­Ø¸Ø± Ø§Ù„Ù…Ø­Ù„ÙŠ."}}},
-  {"question_id":"C46_Q03","type":"HAZARD_IDENTIFICATION","difficulty":"EASY","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Wat is het verschil tussen bord C45 en bord C46?","choices":[{"text":"C45 heft alleen een snelheidsbeperking op; C46 heft alle lokale verboden tegelijk op","is_correct":true},{"text":"C45 heft alle verboden op; C46 heft alleen een snelheidsbeperking op","is_correct":false},{"text":"C45 en C46 zijn identiek en kunnen door elkaar worden gebruikt","is_correct":false}],"explanation":"C45 is specifiek voor snelheidsbeperkingen (C43). C46 heft alle lokaal ingevoerde verboden in een keer op."},"EN":{"question":"What is the difference between sign C45 and sign C46?","choices":[{"text":"C45 cancels only a speed restriction; C46 cancels all local prohibitions at once","is_correct":true},{"text":"C45 cancels all prohibitions; C46 cancels only a speed restriction","is_correct":false},{"text":"C45 and C46 are identical and can be used interchangeably","is_correct":false}],"explanation":"C45 is specific to speed restrictions (C43). C46 cancels all locally introduced prohibitions at once."},"FR":{"question":"Quelle est la difference entre le panneau C45 et le panneau C46 ?","choices":[{"text":"C45 leve uniquement une restriction de vitesse; C46 leve toutes les interdictions locales a la fois","is_correct":true},{"text":"C45 leve toutes les interdictions; C46 leve uniquement une restriction de vitesse","is_correct":false},{"text":"C45 et C46 sont identiques et peuvent etre utilises de maniere interchangeable","is_correct":false}],"explanation":"C45 est specifique aux restrictions de vitesse (C43). C46 leve toutes les interdictions introduites localement a la fois."},"AR":{"question":"Ù…Ø§ Ø§Ù„ÙØ±Ù‚ Ø¨ÙŠÙ† Ù„Ø§ÙØªØ© C45 ÙˆÙ„Ø§ÙØªØ© C46ØŸ","choices":[{"text":"ØªÙ„ØºÙŠ C45 ÙÙ‚Ø· Ù‚ÙŠØ¯ Ø§Ù„Ø³Ø±Ø¹Ø©Ø› Ø¨ÙŠÙ†Ù…Ø§ ØªÙ„ØºÙŠ C46 Ø¬Ù…ÙŠØ¹ Ø§Ù„Ø­Ø¸Ø± Ø§Ù„Ù…Ø­Ù„ÙŠ Ø¯ÙØ¹Ø© ÙˆØ§Ø­Ø¯Ø©","is_correct":true},{"text":"ØªÙ„ØºÙŠ C45 Ø¬Ù…ÙŠØ¹ Ø§Ù„Ø­Ø¸Ø±Ø› Ø¨ÙŠÙ†Ù…Ø§ ØªÙ„ØºÙŠ C46 ÙÙ‚Ø· Ù‚ÙŠØ¯ Ø§Ù„Ø³Ø±Ø¹Ø©","is_correct":false},{"text":"C45 ÙˆC46 Ù…ØªØ·Ø§Ø¨Ù‚ØªØ§Ù† ÙˆÙŠÙ…ÙƒÙ† Ø§Ø³ØªØ®Ø¯Ø§Ù…Ù‡Ù…Ø§ Ø¨Ø§Ù„ØªØ¨Ø§Ø¯Ù„","is_correct":false}],"explanation":"C45 Ø®Ø§ØµØ© Ø¨Ù‚ÙŠÙˆØ¯ Ø§Ù„Ø³Ø±Ø¹Ø© (C43). ØªÙ„ØºÙŠ C46 Ø¬Ù…ÙŠØ¹ Ø§Ù„Ø­Ø¸Ø± Ø§Ù„Ù…Ø­Ù„ÙŠ Ø§Ù„Ù…ÙØ¯Ø®ÙŽÙ„ Ø¯ÙØ¹Ø© ÙˆØ§Ø­Ø¯Ø©."}}},
-  {"question_id":"C46_Q04","type":"WHAT_MUST_YOU_DO","difficulty":"MEDIUM","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Heft bord C46 ook wettelijke snelheidslimieten op die los staan van lokale borden?","choices":[{"text":"Nee, C46 heft uitsluitend lokaal ingevoerde verboden op; wettelijke standaardlimieten blijven van kracht","is_correct":true},{"text":"Ja, C46 heft alle snelheidslimieten op inclusief de snelheidswetten","is_correct":false},{"text":"Ja, na C46 is er geen snelheidslimiet meer op welk wegtype dan ook","is_correct":false}],"explanation":"C46 werkt op lokale borden. De wettelijke standaardlimieten per wegtype (50/90/120) blijven altijd van kracht."},"EN":{"question":"Does sign C46 also cancel the legal speed limits that exist independently of local signs?","choices":[{"text":"No, C46 cancels only locally introduced prohibitions; legal default limits remain in force","is_correct":true},{"text":"Yes, C46 cancels all speed limits including the speed laws","is_correct":false},{"text":"Yes, after C46 there is no speed limit anymore on any road type","is_correct":false}],"explanation":"C46 works on local signs. The legal default limits per road type (50/90/120) always remain in force."},"FR":{"question":"Le panneau C46 leve-t-il aussi les limitations de vitesse legales qui existent independamment des panneaux locaux ?","choices":[{"text":"Non, C46 leve uniquement les interdictions introduites localement; les limites legales par defaut restent en vigueur","is_correct":true},{"text":"Oui, C46 leve toutes les limitations de vitesse y compris les lois sur la vitesse","is_correct":false},{"text":"Oui, apres C46 il n y a plus de limitation de vitesse sur quelque type de route que ce soit","is_correct":false}],"explanation":"C46 agit sur les panneaux locaux. Les limites legales par defaut par type de route (50/90/120) restent toujours en vigueur."},"AR":{"question":"Ù‡Ù„ ØªÙ„ØºÙŠ Ù„Ø§ÙØªØ© C46 Ø§ÙŠØ¶Ø§ Ø­Ø¯ÙˆØ¯ Ø§Ù„Ø³Ø±Ø¹Ø© Ø§Ù„Ù‚Ø§Ù†ÙˆÙ†ÙŠØ© Ø§Ù„Ù…Ø³ØªÙ‚Ù„Ø© Ø¹Ù† Ø§Ù„Ù„Ø§ÙØªØ§Øª Ø§Ù„Ù…Ø­Ù„ÙŠØ©ØŸ","choices":[{"text":"Ù„Ø§ØŒ ØªÙ„ØºÙŠ C46 ÙÙ‚Ø· Ø§Ù„Ø­Ø¸Ø± Ø§Ù„Ù…Ø­Ù„ÙŠØ› ØªØ¨Ù‚Ù‰ Ø§Ù„Ø­Ø¯ÙˆØ¯ Ø§Ù„Ù‚Ø§Ù†ÙˆÙ†ÙŠØ© Ø§Ù„Ø§ÙØªØ±Ø§Ø¶ÙŠØ© Ø³Ø§Ø±ÙŠØ©","is_correct":true},{"text":"Ù†Ø¹Ù…ØŒ ØªÙ„ØºÙŠ C46 Ø¬Ù…ÙŠØ¹ Ø­Ø¯ÙˆØ¯ Ø§Ù„Ø³Ø±Ø¹Ø© Ø¨Ù…Ø§ ÙÙŠÙ‡Ø§ Ù‚ÙˆØ§Ù†ÙŠÙ† Ø§Ù„Ø³Ø±Ø¹Ø©","is_correct":false},{"text":"Ù†Ø¹Ù…ØŒ Ø¨Ø¹Ø¯ C46 Ù„Ø§ ÙŠÙˆØ¬Ø¯ Ø­Ø¯ Ø³Ø±Ø¹Ø© Ø¨Ø¹Ø¯ Ø§Ù„Ø¢Ù† Ø¹Ù„Ù‰ Ø§ÙŠ Ù†ÙˆØ¹ Ø·Ø±ÙŠÙ‚","is_correct":false}],"explanation":"ØªØ¹Ù…Ù„ C46 Ø¹Ù„Ù‰ Ø§Ù„Ù„Ø§ÙØªØ§Øª Ø§Ù„Ù…Ø­Ù„ÙŠØ©. ØªØ¨Ù‚Ù‰ Ø§Ù„Ø­Ø¯ÙˆØ¯ Ø§Ù„Ù‚Ø§Ù†ÙˆÙ†ÙŠØ© Ø§Ù„Ø§ÙØªØ±Ø§Ø¶ÙŠØ© Ù„ÙƒÙ„ Ù†ÙˆØ¹ Ø·Ø±ÙŠÙ‚ (50/90/120) Ø³Ø§Ø±ÙŠØ© Ø¯Ø§Ø¦Ù…Ø§."}}},
-  {"question_id":"C46_Q05","type":"WHAT_MUST_YOU_DO","difficulty":"MEDIUM","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Op een weg geldt bord C43_70 en daarna C35 (inhaalverbod). U passeert bord C46. Welke verboden zijn nu opgeheven?","choices":[{"text":"Zowel de 70 km/h beperking als het inhaalverbod zijn opgeheven","is_correct":true},{"text":"Alleen de 70 km/h beperking is opgeheven; het inhaalverbod blijft van kracht","is_correct":false},{"text":"Geen van de verboden; C46 heft alleen door C45 opgeheven beperkingen op","is_correct":false}],"explanation":"C46 heft alle lokale verboden tegelijk op, zowel C43_70 als C35. Daarna gelden de standaard wettelijke limieten."},"EN":{"question":"On a road sign C43_70 applies and then C35 (no overtaking). You pass sign C46. Which prohibitions are now cancelled?","choices":[{"text":"Both the 70 km/h restriction and the overtaking ban are cancelled","is_correct":true},{"text":"Only the 70 km/h restriction is cancelled; the overtaking ban remains in force","is_correct":false},{"text":"None of the prohibitions; C46 only cancels restrictions previously cancelled by C45","is_correct":false}],"explanation":"C46 cancels all local prohibitions at once, both C43_70 and C35. Afterwards the standard legal limits apply."},"FR":{"question":"Sur une route le panneau C43_70 s applique puis C35 (interdiction de depassement). Vous passez le panneau C46. Quelles interdictions sont desormais levees ?","choices":[{"text":"La restriction de 70 km/h et l interdiction de depassement sont toutes les deux levees","is_correct":true},{"text":"Seule la restriction de 70 km/h est levee; l interdiction de depassement reste en vigueur","is_correct":false},{"text":"Aucune des interdictions; C46 ne leve que les restrictions precedemment levees par C45","is_correct":false}],"explanation":"C46 leve toutes les interdictions locales a la fois tant C43_70 que C35. Ensuite les limites legales standard s appliquent."},"AR":{"question":"Ø¹Ù„Ù‰ Ø·Ø±ÙŠÙ‚ ØªØ³Ø±ÙŠ Ù„Ø§ÙØªØ© C43_70 Ø«Ù… C35 (Ø­Ø¸Ø± Ø§Ù„ØªØ®Ø·ÙŠ). ØªØ¬ØªØ§Ø² Ù„Ø§ÙØªØ© C46. Ø§ÙŠ Ø­Ø¸Ø±Ø§Øª ØªÙ… Ø§Ù„ØºØ§Ø¤Ù‡Ø§ Ø§Ù„Ø¢Ù†ØŸ","choices":[{"text":"Ø§Ù„ØºÙŠ ÙƒÙ„ Ù…Ù† Ù‚ÙŠØ¯ 70 ÙƒÙ…/Ø³ ÙˆØ­Ø¸Ø± Ø§Ù„ØªØ®Ø·ÙŠ","is_correct":true},{"text":"Ø§Ù„ØºÙŠ ÙÙ‚Ø· Ù‚ÙŠØ¯ 70 ÙƒÙ…/Ø³Ø› ÙŠØ¨Ù‚Ù‰ Ø­Ø¸Ø± Ø§Ù„ØªØ®Ø·ÙŠ Ø³Ø§Ø±ÙŠØ§","is_correct":false},{"text":"Ù„Ø§ Ø´ÙŠØ¡ Ù…Ù† Ø§Ù„Ø­Ø¸Ø±Ø§ØªØ› ØªÙ„ØºÙŠ C46 ÙÙ‚Ø· Ø§Ù„Ù‚ÙŠÙˆØ¯ Ø§Ù„ØªÙŠ Ø§Ù„ØºØªÙ‡Ø§ C45 Ø³Ø§Ø¨Ù‚Ø§","is_correct":false}],"explanation":"ØªÙ„ØºÙŠ C46 Ø¬Ù…ÙŠØ¹ Ø§Ù„Ø­Ø¸Ø± Ø§Ù„Ù…Ø­Ù„ÙŠ Ø¯ÙØ¹Ø© ÙˆØ§Ø­Ø¯Ø©ØŒ C43_70 ÙˆC35 Ù…Ø¹Ø§. Ø¨Ø¹Ø¯ Ø°Ù„Ùƒ ØªØ³Ø±ÙŠ Ø§Ù„Ø­Ø¯ÙˆØ¯ Ø§Ù„Ù‚Ø§Ù†ÙˆÙ†ÙŠØ© Ø§Ù„Ø§ÙØªØ±Ø§Ø¶ÙŠØ©."}}},
-  {"question_id":"C46_Q06","type":"WHAT_MUST_YOU_DO","difficulty":"MEDIUM","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Welk effect heeft C46 op nationale verboden zoals het rijden zonder veiligheidsgordel?","choices":[{"text":"C46 heeft geen effect op nationale verboden; die blijven altijd van kracht ongeacht C46","is_correct":true},{"text":"C46 heft ook nationale verboden op in de zone na het bord","is_correct":false},{"text":"C46 maakt tijdelijk rijden zonder gordel toegestaan op kleine wegen","is_correct":false}],"explanation":"C46 werkt uitsluitend op lokaal ingevoerde verboden via verkeersborden. Nationale wetgeving zoals gordelplicht of rijden onder invloed wordt niet beinvloed."},"EN":{"question":"What effect does C46 have on national prohibitions such as driving without a seatbelt?","choices":[{"text":"C46 has no effect on national prohibitions; those always remain in force regardless of C46","is_correct":true},{"text":"C46 also cancels national prohibitions in the zone after the sign","is_correct":false},{"text":"C46 temporarily allows driving without a seatbelt on minor roads","is_correct":false}],"explanation":"C46 works exclusively on locally introduced prohibitions via traffic signs. National legislation such as the seatbelt obligation or drink-driving is not affected."},"FR":{"question":"Quel effet C46 a-t-il sur les interdictions nationales comme conduire sans ceinture de securite ?","choices":[{"text":"C46 n a aucun effet sur les interdictions nationales; celles-ci restent toujours en vigueur quel que soit C46","is_correct":true},{"text":"C46 leve aussi les interdictions nationales dans la zone apres le panneau","is_correct":false},{"text":"C46 permet temporairement de conduire sans ceinture sur les petites routes","is_correct":false}],"explanation":"C46 agit exclusivement sur les interdictions localement introduites via les panneaux de signalisation. La legislation nationale comme l obligation de ceinture ou la conduite en etat d ivresse n est pas affectee."},"AR":{"question":"Ù…Ø§ ØªØ£Ø«ÙŠØ± C46 Ø¹Ù„Ù‰ Ø§Ù„Ø­Ø¸Ø± Ø§Ù„ÙˆØ·Ù†ÙŠ Ù…Ø«Ù„ Ø§Ù„Ù‚ÙŠØ§Ø¯Ø© Ø¨Ø¯ÙˆÙ† Ø­Ø²Ø§Ù… Ø§Ù…Ø§Ù†ØŸ","choices":[{"text":"Ù„Ø§ ÙŠÙˆØ¬Ø¯ Ù„Ù€C46 Ø§ÙŠ ØªØ£Ø«ÙŠØ± Ø¹Ù„Ù‰ Ø§Ù„Ø­Ø¸Ø± Ø§Ù„ÙˆØ·Ù†ÙŠØ› ÙŠØ¨Ù‚Ù‰ Ø°Ù„Ùƒ Ø³Ø§Ø±ÙŠØ§ Ø¯Ø§Ø¦Ù…Ø§ Ø¨ØºØ¶ Ø§Ù„Ù†Ø¸Ø± Ø¹Ù† C46","is_correct":true},{"text":"ØªÙ„ØºÙŠ C46 Ø§ÙŠØ¶Ø§ Ø§Ù„Ø­Ø¸Ø± Ø§Ù„ÙˆØ·Ù†ÙŠ ÙÙŠ Ø§Ù„Ù…Ù†Ø·Ù‚Ø© Ø¨Ø¹Ø¯ Ø§Ù„Ù„Ø§ÙØªØ©","is_correct":false},{"text":"ØªØ³Ù…Ø­ C46 Ù…Ø¤Ù‚ØªØ§ Ø¨Ø§Ù„Ù‚ÙŠØ§Ø¯Ø© Ø¨Ø¯ÙˆÙ† Ø­Ø²Ø§Ù… Ø§Ù…Ø§Ù† Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±Ù‚ Ø§Ù„ØµØºÙŠØ±Ø©","is_correct":false}],"explanation":"ØªØ¹Ù…Ù„ C46 Ø­ØµØ±Ø§ Ø¹Ù„Ù‰ Ø§Ù„Ø­Ø¸Ø± Ø§Ù„Ù…Ø­Ù„ÙŠ Ø§Ù„Ù…ÙØ¯Ø®ÙŽÙ„ Ø¹Ø¨Ø± Ù„Ø§ÙØªØ§Øª Ø§Ù„Ù…Ø±ÙˆØ±. Ù„Ø§ ØªØªØ£Ø«Ø± Ø§Ù„ØªØ´Ø±ÙŠØ¹Ø§Øª Ø§Ù„ÙˆØ·Ù†ÙŠØ© Ù…Ø«Ù„ Ø§Ù„Ø²Ø§Ù…ÙŠØ© Ø­Ø²Ø§Ù… Ø§Ù„Ø§Ù…Ø§Ù† Ø§Ùˆ Ø§Ù„Ù‚ÙŠØ§Ø¯Ø© ØªØ­Øª Ø§Ù„ØªØ£Ø«ÙŠØ±."}}},
-  {"question_id":"C46_Q07","type":"IS_IT_ALLOWED","difficulty":"HARD","is_critical":true,"show_sign":true,"i18n":{"NL":{"question":"Na bord C46 rijdt u op een weg buiten de bebouwde kom. Mag u onbeperkt snel rijden?","choices":[{"text":"Nee, de wettelijke limiet van 90 km/h buiten de bebouwde kom blijft gelden","is_correct":true},{"text":"Ja, C46 heft alle beperkingen op inclusief de wettelijke limieten","is_correct":false}],"explanation":"C46 heft lokale borden op maar nooit de wettelijke standaardlimieten. Dit is een ernstige verkeersovertreding als u de wettelijke limiet overschrijdt."},"EN":{"question":"After sign C46 you are on a road outside the built-up area. May you drive without any speed restriction?","choices":[{"text":"No, the legal limit of 90 km/h outside the built-up area still applies","is_correct":true},{"text":"Yes, C46 cancels all restrictions including the legal limits","is_correct":false}],"explanation":"C46 cancels local signs but never the legal default limits. This is a serious traffic offence if you exceed the legal limit."},"FR":{"question":"Apres le panneau C46 vous etes sur une route hors agglomeration. Pouvez-vous rouler sans limitation de vitesse ?","choices":[{"text":"Non, la limite legale de 90 km/h hors agglomeration s applique toujours","is_correct":true},{"text":"Oui, C46 leve toutes les restrictions y compris les limites legales","is_correct":false}],"explanation":"C46 leve les panneaux locaux mais jamais les limites legales par defaut. Il s agit d une infraction grave au code de la route si vous depassez la limite legale."},"AR":{"question":"Ø¨Ø¹Ø¯ Ù„Ø§ÙØªØ© C46 Ø§Ù†Øª Ø¹Ù„Ù‰ Ø·Ø±ÙŠÙ‚ Ø®Ø§Ø±Ø¬ Ø§Ù„Ù…Ù†Ø·Ù‚Ø© Ø§Ù„Ø¹Ù…Ø±Ø§Ù†ÙŠØ©. Ù‡Ù„ ÙŠØ¬ÙˆØ² Ù„Ùƒ Ø§Ù„Ø³ÙŠØ± Ø¨Ø¯ÙˆÙ† Ø§ÙŠ Ù‚ÙŠØ¯ Ø¹Ù„Ù‰ Ø§Ù„Ø³Ø±Ø¹Ø©ØŸ","choices":[{"text":"Ù„Ø§ØŒ ÙŠØ¨Ù‚Ù‰ Ø§Ù„Ø­Ø¯ Ø§Ù„Ù‚Ø§Ù†ÙˆÙ†ÙŠ 90 ÙƒÙ…/Ø³ Ø®Ø§Ø±Ø¬ Ø§Ù„Ù…Ù†Ø·Ù‚Ø© Ø§Ù„Ø¹Ù…Ø±Ø§Ù†ÙŠØ© Ø³Ø§Ø±ÙŠØ§","is_correct":true},{"text":"Ù†Ø¹Ù…ØŒ ØªÙ„ØºÙŠ C46 Ø¬Ù…ÙŠØ¹ Ø§Ù„Ù‚ÙŠÙˆØ¯ Ø¨Ù…Ø§ ÙÙŠÙ‡Ø§ Ø§Ù„Ø­Ø¯ÙˆØ¯ Ø§Ù„Ù‚Ø§Ù†ÙˆÙ†ÙŠØ©","is_correct":false}],"explanation":"ØªÙ„ØºÙŠ C46 Ø§Ù„Ù„Ø§ÙØªØ§Øª Ø§Ù„Ù…Ø­Ù„ÙŠØ© Ù„ÙƒÙ† Ù„ÙŠØ³ Ø§Ù„Ø­Ø¯ÙˆØ¯ Ø§Ù„Ù‚Ø§Ù†ÙˆÙ†ÙŠØ© Ø§Ù„Ø§ÙØªØ±Ø§Ø¶ÙŠØ© Ø§Ø¨Ø¯Ø§. Ù‡Ø°Ù‡ Ù…Ø®Ø§Ù„ÙØ© Ù…Ø±ÙˆØ±ÙŠØ© Ø®Ø·ÙŠØ±Ø© Ø§Ø°Ø§ ØªØ¬Ø§ÙˆØ²Øª Ø§Ù„Ø­Ø¯ Ø§Ù„Ù‚Ø§Ù†ÙˆÙ†ÙŠ."}}},
-  {"question_id":"C46_Q08","type":"IS_IT_ALLOWED","difficulty":"HARD","is_critical":true,"show_sign":true,"i18n":{"NL":{"question":"Is inhalen toegestaan direct na bord C46 als er eerder een bord C35 stond?","choices":[{"text":"Ja, C46 heft C35 op waardoor inhalen weer is toegestaan mits veilig","is_correct":true},{"text":"Nee, C35 kan alleen worden opgeheven door bord C37; niet door C46","is_correct":false}],"explanation":"C46 heft alle lokale verboden op, inclusief een inhaalverbod van C35. Inhalen is weer toegestaan tenzij een nieuw bord het verbiedt. Dit is pas een ernstige verkeersovertreding als er alsnog een overtreding begaan wordt."},"EN":{"question":"Is overtaking allowed immediately after sign C46 if there was a sign C35 earlier?","choices":[{"text":"Yes, C46 cancels C35 so overtaking is allowed again provided it is safe","is_correct":true},{"text":"No, C35 can only be cancelled by sign C37; not by C46","is_correct":false}],"explanation":"C46 cancels all local prohibitions including an overtaking ban from C35. Overtaking is allowed again unless a new sign prohibits it. This is a serious traffic offence only if a further violation is committed."},"FR":{"question":"Le depassement est-il autorise immediatement apres le panneau C46 s il y avait un panneau C35 auparavant ?","choices":[{"text":"Oui, C46 leve C35 donc le depassement est a nouveau autorise si c est securitaire","is_correct":true},{"text":"Non, C35 ne peut etre leve que par le panneau C37; pas par C46","is_correct":false}],"explanation":"C46 leve toutes les interdictions locales y compris une interdiction de depassement de C35. Le depassement est a nouveau autorise sauf si un nouveau panneau l interdit. Il s agit d une infraction grave au code de la route seulement si une nouvelle infraction est commise."},"AR":{"question":"Ù‡Ù„ Ø§Ù„ØªØ®Ø·ÙŠ Ù…Ø³Ù…ÙˆØ­ ÙÙˆØ±Ø§ Ø¨Ø¹Ø¯ Ù„Ø§ÙØªØ© C46 Ø§Ø°Ø§ ÙƒØ§Ù†Øª Ù‡Ù†Ø§Ùƒ Ù„Ø§ÙØªØ© C35 Ø³Ø§Ø¨Ù‚Ø§ØŸ","choices":[{"text":"Ù†Ø¹Ù…ØŒ ØªÙ„ØºÙŠ C46 Ù„Ø§ÙØªØ© C35 Ù„Ø°Ø§ ÙŠÙØ³Ù…Ø­ Ø¨Ø§Ù„ØªØ®Ø·ÙŠ Ù…Ø¬Ø¯Ø¯Ø§ Ø¨Ø´Ø±Ø· Ø§Ù„Ø§Ù…Ø§Ù†","is_correct":true},{"text":"Ù„Ø§ØŒ ÙŠÙ…ÙƒÙ† Ø§Ù„ØºØ§Ø¡ C35 ÙÙ‚Ø· Ø¨ÙˆØ§Ø³Ø·Ø© Ø§Ù„Ù„Ø§ÙØªØ© C37 ÙˆÙ„ÙŠØ³ C46","is_correct":false}],"explanation":"ØªÙ„ØºÙŠ C46 Ø¬Ù…ÙŠØ¹ Ø§Ù„Ø­Ø¸Ø± Ø§Ù„Ù…Ø­Ù„ÙŠ Ø¨Ù…Ø§ ÙÙŠÙ‡ Ø­Ø¸Ø± Ø§Ù„ØªØ®Ø·ÙŠ Ù…Ù† C35. ÙŠÙØ³Ù…Ø­ Ø¨Ø§Ù„ØªØ®Ø·ÙŠ Ù…Ø¬Ø¯Ø¯Ø§ Ù…Ø§ Ù„Ù… ØªØ­Ø¸Ø±Ù‡ Ù„Ø§ÙØªØ© Ø¬Ø¯ÙŠØ¯Ø©. Ù‡Ø°Ù‡ Ù…Ø®Ø§Ù„ÙØ© Ù…Ø±ÙˆØ±ÙŠØ© Ø®Ø·ÙŠØ±Ø© ÙÙ‚Ø· Ø§Ø°Ø§ Ø§Ø±ØªÙÙƒØ¨Øª Ù…Ø®Ø§Ù„ÙØ© Ø§Ø¶Ø§ÙÙŠØ©."}}}
+[
+  {
+    "question_id": "C46_Q01",
+    "type": "WHAT_DOES_IT_MEAN",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat betekent dit verkeersbord?",
+        "choices": [
+          {
+            "text": "Einde van alle plaatselijke verbodsbepalingen opgelegd aan de voertuigen in beweging",
+            "is_correct": true
+          },
+          {
+            "text": "Begin van alle plaatselijke verbodsbepalingen voor voertuigen in beweging",
+            "is_correct": false
+          },
+          {
+            "text": "Einde van alle parkeerverboden",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dit bord geeft aan dat alle plaatselijke verbodsbepalingen opgelegd aan de voertuigen in beweging eindigen."
+      },
+      "EN": {
+        "question": "What does this traffic sign mean?",
+        "choices": [
+          {
+            "text": "End of all local prohibitions imposed on moving vehicles",
+            "is_correct": true
+          },
+          {
+            "text": "Start of all local prohibitions for moving vehicles",
+            "is_correct": false
+          },
+          {
+            "text": "End of all parking prohibitions",
+            "is_correct": false
+          }
+        ],
+        "explanation": "This sign indicates that all local prohibitions imposed on moving vehicles end."
+      },
+      "FR": {
+        "question": "Que signifie ce panneau ?",
+        "choices": [
+          {
+            "text": "Fin de toutes les interdictions locales imposées aux véhicules en mouvement",
+            "is_correct": true
+          },
+          {
+            "text": "Début de toutes les interdictions locales pour les véhicules en mouvement",
+            "is_correct": false
+          },
+          {
+            "text": "Fin de toutes les interdictions de stationnement",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ce panneau indique que toutes les interdictions locales imposées aux véhicules en mouvement prennent fin."
+      },
+      "AR": {
+        "question": "ما معنى هذه العلامة المرورية؟",
+        "choices": [
+          {
+            "text": "نهاية جميع المحظورات المحلية المفروضة على المركبات المتحركة",
+            "is_correct": true
+          },
+          {
+            "text": "بداية جميع المحظورات المحلية للمركبات المتحركة",
+            "is_correct": false
+          },
+          {
+            "text": "نهاية جميع محظورات الوقوف",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تدل هذه العلامة على أن جميع المحظورات المحلية المفروضة على المركبات المتحركة تنتهي."
+      }
+    }
+  },
+  {
+    "question_id": "C46_Q02",
+    "type": "HAZARD_IDENTIFICATION",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Op welke verboden heeft dit bord betrekking?",
+        "choices": [
+          {
+            "text": "Op plaatselijke verbodsbepalingen voor voertuigen in beweging",
+            "is_correct": true
+          },
+          {
+            "text": "Op alle parkeerregels",
+            "is_correct": false
+          },
+          {
+            "text": "Alleen op verbodsbepalingen voor voetgangers",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dit bord heeft betrekking op plaatselijke verbodsbepalingen opgelegd aan voertuigen in beweging."
+      },
+      "EN": {
+        "question": "To which prohibitions does this sign relate?",
+        "choices": [
+          {
+            "text": "To local prohibitions for moving vehicles",
+            "is_correct": true
+          },
+          {
+            "text": "To all parking rules",
+            "is_correct": false
+          },
+          {
+            "text": "Only to prohibitions for pedestrians",
+            "is_correct": false
+          }
+        ],
+        "explanation": "This sign relates to local prohibitions imposed on moving vehicles."
+      },
+      "FR": {
+        "question": "À quelles interdictions ce panneau se rapporte-t-il ?",
+        "choices": [
+          {
+            "text": "Aux interdictions locales imposées aux véhicules en mouvement",
+            "is_correct": true
+          },
+          {
+            "text": "À toutes les règles de stationnement",
+            "is_correct": false
+          },
+          {
+            "text": "Seulement aux interdictions pour les piétons",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ce panneau se rapporte aux interdictions locales imposées aux véhicules en mouvement."
+      },
+      "AR": {
+        "question": "على أي محظورات تتعلق هذه العلامة؟",
+        "choices": [
+          {
+            "text": "على المحظورات المحلية المفروضة على المركبات المتحركة",
+            "is_correct": true
+          },
+          {
+            "text": "على جميع قواعد الوقوف",
+            "is_correct": false
+          },
+          {
+            "text": "فقط على المحظورات الخاصة بالمشاة",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تتعلق هذه العلامة بالمحظورات المحلية المفروضة على المركبات المتحركة."
+      }
+    }
+  },
+  {
+    "question_id": "C46_Q03",
+    "type": "HAZARD_IDENTIFICATION",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat verandert er vanaf dit bord?",
+        "choices": [
+          {
+            "text": "De plaatselijke verbodsbepalingen voor voertuigen in beweging eindigen",
+            "is_correct": true
+          },
+          {
+            "text": "Er beginnen nieuwe plaatselijke verbodsbepalingen",
+            "is_correct": false
+          },
+          {
+            "text": "Alle verkeersregels vervallen",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Vanaf dit bord eindigen de plaatselijke verbodsbepalingen voor voertuigen in beweging."
+      },
+      "EN": {
+        "question": "What changes from this sign onward?",
+        "choices": [
+          {
+            "text": "The local prohibitions for moving vehicles end",
+            "is_correct": true
+          },
+          {
+            "text": "New local prohibitions begin",
+            "is_correct": false
+          },
+          {
+            "text": "All traffic rules cease to apply",
+            "is_correct": false
+          }
+        ],
+        "explanation": "From this sign onward, the local prohibitions for moving vehicles end."
+      },
+      "FR": {
+        "question": "Qu’est-ce qui change à partir de ce panneau ?",
+        "choices": [
+          {
+            "text": "Les interdictions locales pour les véhicules en mouvement prennent fin",
+            "is_correct": true
+          },
+          {
+            "text": "De nouvelles interdictions locales commencent",
+            "is_correct": false
+          },
+          {
+            "text": "Toutes les règles de circulation cessent de s’appliquer",
+            "is_correct": false
+          }
+        ],
+        "explanation": "À partir de ce panneau, les interdictions locales pour les véhicules en mouvement prennent fin."
+      },
+      "AR": {
+        "question": "ما الذي يتغير ابتداءً من هذه العلامة؟",
+        "choices": [
+          {
+            "text": "تنتهي المحظورات المحلية الخاصة بالمركبات المتحركة",
+            "is_correct": true
+          },
+          {
+            "text": "تبدأ محظورات محلية جديدة",
+            "is_correct": false
+          },
+          {
+            "text": "تنتهي جميع قواعد المرور",
+            "is_correct": false
+          }
+        ],
+        "explanation": "ابتداءً من هذه العلامة تنتهي المحظورات المحلية الخاصة بالمركبات المتحركة."
+      }
+    }
+  },
+  {
+    "question_id": "C46_Q04",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat betekent dit bord voor uw rijgedrag nadat u het bent voorbijgereden?",
+        "choices": [
+          {
+            "text": "De plaatselijke verbodsbepalingen voor voertuigen in beweging gelden vanaf hier niet meer",
+            "is_correct": true
+          },
+          {
+            "text": "U moet voortaan stoppen bij elk kruispunt",
+            "is_correct": false
+          },
+          {
+            "text": "U moet vanaf hier altijd trager rijden",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Na dit bord gelden de plaatselijke verbodsbepalingen voor voertuigen in beweging niet meer."
+      },
+      "EN": {
+        "question": "What does this sign mean for your driving after you have passed it?",
+        "choices": [
+          {
+            "text": "The local prohibitions for moving vehicles no longer apply from here",
+            "is_correct": true
+          },
+          {
+            "text": "From now on you must stop at every intersection",
+            "is_correct": false
+          },
+          {
+            "text": "From here you must always drive more slowly",
+            "is_correct": false
+          }
+        ],
+        "explanation": "After this sign, the local prohibitions for moving vehicles no longer apply."
+      },
+      "FR": {
+        "question": "Que signifie ce panneau pour votre conduite après l’avoir dépassé ?",
+        "choices": [
+          {
+            "text": "Les interdictions locales pour les véhicules en mouvement ne s’appliquent plus à partir d’ici",
+            "is_correct": true
+          },
+          {
+            "text": "Désormais vous devez vous arrêter à chaque carrefour",
+            "is_correct": false
+          },
+          {
+            "text": "À partir d’ici vous devez toujours rouler plus lentement",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Après ce panneau, les interdictions locales pour les véhicules en mouvement ne s’appliquent plus."
+      },
+      "AR": {
+        "question": "ماذا تعني هذه العلامة لسلوك قيادتك بعد تجاوزها؟",
+        "choices": [
+          {
+            "text": "لم تعد المحظورات المحلية الخاصة بالمركبات المتحركة سارية من هنا",
+            "is_correct": true
+          },
+          {
+            "text": "يجب عليك من الآن التوقف عند كل تقاطع",
+            "is_correct": false
+          },
+          {
+            "text": "يجب عليك من هنا أن تسير أبطأ دائمًا",
+            "is_correct": false
+          }
+        ],
+        "explanation": "بعد هذه العلامة لا تعود المحظورات المحلية الخاصة بالمركبات المتحركة سارية."
+      }
+    }
+  },
+  {
+    "question_id": "C46_Q05",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U reed voordien in een zone met plaatselijke verbodsbepalingen voor voertuigen in beweging en passeert nu dit bord. Wat begrijpt u?",
+        "choices": [
+          {
+            "text": "Dat die plaatselijke verbodsbepalingen eindigen",
+            "is_correct": true
+          },
+          {
+            "text": "Dat alle verkeersregels voortaan niet meer gelden",
+            "is_correct": false
+          },
+          {
+            "text": "Dat alleen parkeerregels veranderen",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dit bord geeft het einde aan van de plaatselijke verbodsbepalingen opgelegd aan voertuigen in beweging."
+      },
+      "EN": {
+        "question": "You were previously in a zone with local prohibitions for moving vehicles and now pass this sign. What do you understand?",
+        "choices": [
+          {
+            "text": "That those local prohibitions end",
+            "is_correct": true
+          },
+          {
+            "text": "That all traffic rules no longer apply from now on",
+            "is_correct": false
+          },
+          {
+            "text": "That only parking rules change",
+            "is_correct": false
+          }
+        ],
+        "explanation": "This sign marks the end of the local prohibitions imposed on moving vehicles."
+      },
+      "FR": {
+        "question": "Vous rouliez auparavant dans une zone avec des interdictions locales pour les véhicules en mouvement et vous passez maintenant ce panneau. Que comprenez-vous ?",
+        "choices": [
+          {
+            "text": "Que ces interdictions locales prennent fin",
+            "is_correct": true
+          },
+          {
+            "text": "Que toutes les règles de circulation ne s’appliquent plus désormais",
+            "is_correct": false
+          },
+          {
+            "text": "Que seules les règles de stationnement changent",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ce panneau indique la fin des interdictions locales imposées aux véhicules en mouvement."
+      },
+      "AR": {
+        "question": "كنت سابقًا داخل منطقة فيها محظورات محلية على المركبات المتحركة ثم تجاوزت هذه العلامة. ماذا تفهم؟",
+        "choices": [
+          {
+            "text": "أن تلك المحظورات المحلية تنتهي",
+            "is_correct": true
+          },
+          {
+            "text": "أن جميع قواعد المرور لم تعد سارية من الآن",
+            "is_correct": false
+          },
+          {
+            "text": "أن الذي يتغير فقط هو قواعد الوقوف",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تدل هذه العلامة على نهاية المحظورات المحلية المفروضة على المركبات المتحركة."
+      }
+    }
+  },
+  {
+    "question_id": "C46_Q06",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Betekent dit bord dat de plaatselijke verbodsbepalingen voor voertuigen in beweging nog blijven gelden?",
+        "choices": [
+          {
+            "text": "Nee, dit bord duidt juist het einde ervan aan",
+            "is_correct": true
+          },
+          {
+            "text": "Ja, die verbodsbepalingen blijven verder gelden",
+            "is_correct": false
+          }
+        ],
+        "explanation": "C46 duidt het einde aan van alle plaatselijke verbodsbepalingen opgelegd aan voertuigen in beweging."
+      },
+      "EN": {
+        "question": "Does this sign mean that the local prohibitions for moving vehicles still continue to apply?",
+        "choices": [
+          {
+            "text": "No, this sign specifically marks their end",
+            "is_correct": true
+          },
+          {
+            "text": "Yes, those prohibitions continue to apply",
+            "is_correct": false
+          }
+        ],
+        "explanation": "C46 indicates the end of all local prohibitions imposed on moving vehicles."
+      },
+      "FR": {
+        "question": "Ce panneau signifie-t-il que les interdictions locales pour les véhicules en mouvement continuent encore à s’appliquer ?",
+        "choices": [
+          {
+            "text": "Non, ce panneau indique précisément leur fin",
+            "is_correct": true
+          },
+          {
+            "text": "Oui, ces interdictions continuent à s’appliquer",
+            "is_correct": false
+          }
+        ],
+        "explanation": "C46 indique la fin de toutes les interdictions locales imposées aux véhicules en mouvement."
+      },
+      "AR": {
+        "question": "هل تعني هذه العلامة أن المحظورات المحلية الخاصة بالمركبات المتحركة ما زالت مستمرة؟",
+        "choices": [
+          {
+            "text": "لا، فهذه العلامة تدل تحديدًا على نهايتها",
+            "is_correct": true
+          },
+          {
+            "text": "نعم، تبقى تلك المحظورات سارية",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تدل C46 على نهاية جميع المحظورات المحلية المفروضة على المركبات المتحركة."
+      }
+    }
+  },
+  {
+    "question_id": "C46_Q07",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Betekent dit bord dat alle vroegere plaatselijke verbodsbepalingen voor voertuigen in beweging eindigen?",
+        "choices": [
+          {
+            "text": "Ja, dit bord duidt het einde aan van alle plaatselijke verbodsbepalingen voor voertuigen in beweging",
+            "is_correct": true
+          },
+          {
+            "text": "Nee, slechts één plaatselijk verbod eindigt",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dit bord beëindigt alle plaatselijke verbodsbepalingen opgelegd aan voertuigen in beweging."
+      },
+      "EN": {
+        "question": "Does this sign mean that all previous local prohibitions for moving vehicles end?",
+        "choices": [
+          {
+            "text": "Yes, this sign marks the end of all local prohibitions for moving vehicles",
+            "is_correct": true
+          },
+          {
+            "text": "No, only one local prohibition ends",
+            "is_correct": false
+          }
+        ],
+        "explanation": "This sign ends all local prohibitions imposed on moving vehicles."
+      },
+      "FR": {
+        "question": "Ce panneau signifie-t-il que toutes les interdictions locales antérieures pour les véhicules en mouvement prennent fin ?",
+        "choices": [
+          {
+            "text": "Oui, ce panneau indique la fin de toutes les interdictions locales pour les véhicules en mouvement",
+            "is_correct": true
+          },
+          {
+            "text": "Non, une seule interdiction locale prend fin",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ce panneau met fin à toutes les interdictions locales imposées aux véhicules en mouvement."
+      },
+      "AR": {
+        "question": "هل تعني هذه العلامة أن جميع المحظورات المحلية السابقة الخاصة بالمركبات المتحركة تنتهي؟",
+        "choices": [
+          {
+            "text": "نعم، فهذه العلامة تدل على نهاية جميع المحظورات المحلية الخاصة بالمركبات المتحركة",
+            "is_correct": true
+          },
+          {
+            "text": "لا، ينتهي فقط حظر محلي واحد",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تنهي هذه العلامة جميع المحظورات المحلية المفروضة على المركبات المتحركة."
+      }
+    }
+  },
+  {
+    "question_id": "C46_Q08",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Betekent dit bord dat alle verkeersregels vanaf hier zijn opgeheven?",
+        "choices": [
+          {
+            "text": "Nee, alleen de plaatselijke verbodsbepalingen voor voertuigen in beweging eindigen",
+            "is_correct": true
+          },
+          {
+            "text": "Ja, vanaf hier gelden geen verkeersregels meer",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dit bord beëindigt alleen de plaatselijke verbodsbepalingen opgelegd aan voertuigen in beweging."
+      },
+      "EN": {
+        "question": "Does this sign mean that all traffic rules are lifted from here on?",
+        "choices": [
+          {
+            "text": "No, only the local prohibitions for moving vehicles end",
+            "is_correct": true
+          },
+          {
+            "text": "Yes, from here no traffic rules apply anymore",
+            "is_correct": false
+          }
+        ],
+        "explanation": "This sign only ends the local prohibitions imposed on moving vehicles."
+      },
+      "FR": {
+        "question": "Ce panneau signifie-t-il que toutes les règles de circulation sont levées à partir d’ici ?",
+        "choices": [
+          {
+            "text": "Non, seules les interdictions locales pour les véhicules en mouvement prennent fin",
+            "is_correct": true
+          },
+          {
+            "text": "Oui, à partir d’ici plus aucune règle de circulation ne s’applique",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ce panneau met seulement fin aux interdictions locales imposées aux véhicules en mouvement."
+      },
+      "AR": {
+        "question": "هل تعني هذه العلامة أن جميع قواعد المرور قد أُلغيت ابتداءً من هنا؟",
+        "choices": [
+          {
+            "text": "لا، الذي ينتهي فقط هو المحظورات المحلية الخاصة بالمركبات المتحركة",
+            "is_correct": true
+          },
+          {
+            "text": "نعم، من هنا لا تعود أي قواعد مرور سارية",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تنهي هذه العلامة فقط المحظورات المحلية المفروضة على المركبات المتحركة."
+      }
+    }
+  }
 ]

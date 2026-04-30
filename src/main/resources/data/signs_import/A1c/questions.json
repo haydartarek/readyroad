@@ -1,4 +1,4 @@
-﻿[
+[
   {
     "question_id": "A1c_Q01",
     "type": "WHAT_DOES_IT_MEAN",
@@ -7,40 +7,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat betekent dit verkeersbord?",
+        "question": "Wat betekent dit bord?",
         "choices": [
-          { "text": "Gevaarlijke dubbele of meer dan twee bochten, de eerste naar links", "is_correct": true },
-          { "text": "Gevaarlijke dubbele of meer dan twee bochten, de eerste naar rechts", "is_correct": false },
-          { "text": "Gevaarlijke bocht naar links", "is_correct": false }
+          {
+            "text": "Dubbele bocht (eerste naar links)",
+            "is_correct": true
+          },
+          {
+            "text": "Opeenvolgende gevaarlijke bochten, eerst naar rechts",
+            "is_correct": false
+          },
+          {
+            "text": "Gevaarlijke bocht naar links",
+            "is_correct": false
+          }
         ],
-        "explanation": "Dit bord waarschuwt voor een opeenvolging van gevaarlijke bochten waarbij de eerste naar links gaat. Pas uw snelheid aan voor de volledige reeks."
+        "explanation": "Dit bord waarschuwt voor opeenvolgende gevaarlijke bochten, waarvan de eerste naar links gaat."
       },
       "EN": {
-        "question": "What does this traffic sign mean?",
+        "question": "What does this sign mean?",
         "choices": [
-          { "text": "Dangerous double or more bends, first to the left", "is_correct": true },
-          { "text": "Dangerous double bend, first to the right", "is_correct": false },
-          { "text": "Dangerous curve to the left", "is_correct": false }
+          {
+            "text": "Double bend (first to the left)",
+            "is_correct": true
+          },
+          {
+            "text": "A succession of dangerous bends, first to the right",
+            "is_correct": false
+          },
+          {
+            "text": "A dangerous bend to the left",
+            "is_correct": false
+          }
         ],
-        "explanation": "This sign warns of a succession of dangerous bends where the first one is to the left. Adjust your speed for the entire series."
+        "explanation": "This sign indicates a succession of dangerous bends, first to the left."
       },
       "FR": {
-        "question": "Que signifie ce panneau de signalisation ?",
+        "question": "Que signifie ce panneau ?",
         "choices": [
-          { "text": "Double virage dangereux ou plus, le premier Ã  gauche", "is_correct": true },
-          { "text": "Double virage, le premier Ã  droite", "is_correct": false },
-          { "text": "Virage dangereux Ã  gauche", "is_correct": false }
+          {
+            "text": "Double virage (premier à gauche)",
+            "is_correct": true
+          },
+          {
+            "text": "Succession de virages dangereux, le premier à droite",
+            "is_correct": false
+          },
+          {
+            "text": "Virage dangereux à gauche",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ce panneau avertit d'une succession de virages dangereux dont le premier est Ã  gauche. Adaptez votre vitesse pour toute la sÃ©rie."
+        "explanation": "Ce panneau indique une succession de virages dangereux, le premier à gauche."
       },
       "AR": {
-        "question": "Ù…Ø§ Ù…Ø¹Ù†Ù‰ Ù„Ø§ÙØªØ© Ø§Ù„Ù…Ø±ÙˆØ± Ù‡Ø°Ù‡ØŸ",
+        "question": "ما معنى هذه العلامة؟",
         "choices": [
-          { "text": "ØªØ¹Ø±Ø¬Ø§Øª Ø®Ø·ÙŠØ±Ø© Ù…ØªØ¹Ø¯Ø¯Ø©ØŒ Ø§Ù„Ø£ÙˆÙ„ Ø¥Ù„Ù‰ Ø§Ù„ÙŠØ³Ø§Ø±", "is_correct": true },
-          { "text": "ØªØ¹Ø±Ø¬Ø§Øª Ø®Ø·ÙŠØ±Ø© Ù…ØªØ¹Ø¯Ø¯Ø©ØŒ Ø§Ù„Ø£ÙˆÙ„ Ø¥Ù„Ù‰ Ø§Ù„ÙŠÙ…ÙŠÙ†", "is_correct": false },
-          { "text": "Ù…Ù†Ø­Ù†Ù‰ Ø®Ø·ÙŠØ± Ø¥Ù„Ù‰ Ø§Ù„ÙŠØ³Ø§Ø±", "is_correct": false }
+          {
+            "text": "منعطف مزدوج (الأول إلى اليسار)",
+            "is_correct": true
+          },
+          {
+            "text": "تعاقب منعطفات خطيرة، الأول إلى اليمين",
+            "is_correct": false
+          },
+          {
+            "text": "منعطف خطير إلى اليسار",
+            "is_correct": false
+          }
         ],
-        "explanation": "ØªØ­Ø°Ø± Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ© Ù…Ù† Ø³Ù„Ø³Ù„Ø© Ù…Ù†Ø¹Ø·ÙØ§Øª Ø®Ø·ÙŠØ±Ø© Ù…ØªØªØ§Ù„ÙŠØ© ÙŠÙƒÙˆÙ† Ø£ÙˆÙ„Ù‡Ø§ Ø¥Ù„Ù‰ Ø§Ù„ÙŠØ³Ø§Ø±. Ø§Ø¶Ø¨Ø· Ø³Ø±Ø¹ØªÙƒ Ù„ÙƒØ§Ù…Ù„ Ø§Ù„Ø³Ù„Ø³Ù„Ø©."
+        "explanation": "تشير هذه العلامة إلى تعاقب منعطفات خطيرة، أولها إلى اليسار."
       }
     }
   },
@@ -54,38 +90,74 @@
       "NL": {
         "question": "Tot welke categorie verkeerstekens behoort dit bord?",
         "choices": [
-          { "text": "Gevaarsborden (A-reeks)", "is_correct": true },
-          { "text": "Voorrangsborden (B-reeks)", "is_correct": false },
-          { "text": "Verbodsborden (C-reeks)", "is_correct": false }
+          {
+            "text": "Gevaarsborden",
+            "is_correct": true
+          },
+          {
+            "text": "Voorrangsborden",
+            "is_correct": false
+          },
+          {
+            "text": "Verbodsborden",
+            "is_correct": false
+          }
         ],
-        "explanation": "Dit bord behoort tot de gevaarsborden (A-reeks). Alle gevaarsborden zijn driehoekig met een rode rand op een witte achtergrond."
+        "explanation": "Dit bord behoort tot de gevaarsborden. Alle gevaarsborden zijn driehoekig met een rode rand op een witte achtergrond."
       },
       "EN": {
         "question": "To which category of traffic signs does this sign belong?",
         "choices": [
-          { "text": "Danger signs (A-series)", "is_correct": true },
-          { "text": "Priority signs (B-series)", "is_correct": false },
-          { "text": "Prohibition signs (C-series)", "is_correct": false }
+          {
+            "text": "Warning signs",
+            "is_correct": true
+          },
+          {
+            "text": "Priority signs",
+            "is_correct": false
+          },
+          {
+            "text": "Prohibition signs",
+            "is_correct": false
+          }
         ],
-        "explanation": "This sign belongs to the danger signs (A-series). All danger signs are triangular with a red border on a white background."
+        "explanation": "This sign belongs to the warning signs. All warning signs are triangular with a red border on a white background."
       },
       "FR": {
-        "question": "Ã€ quelle catÃ©gorie de panneaux de signalisation ce panneau appartient-il ?",
+        "question": "À quelle catégorie appartient ce panneau de signalisation ?",
         "choices": [
-          { "text": "Panneaux de danger (sÃ©rie A)", "is_correct": true },
-          { "text": "Panneaux de prioritÃ© (sÃ©rie B)", "is_correct": false },
-          { "text": "Panneaux d'interdiction (sÃ©rie C)", "is_correct": false }
+          {
+            "text": "Panneaux de danger",
+            "is_correct": true
+          },
+          {
+            "text": "Panneaux de priorité",
+            "is_correct": false
+          },
+          {
+            "text": "Panneaux d'interdiction",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ce panneau appartient aux panneaux de danger (sÃ©rie A). Tous les panneaux de danger sont triangulaires avec une bordure rouge sur fond blanc."
+        "explanation": "Ce panneau appartient aux panneaux de danger. Tous les panneaux de danger sont triangulaires avec une bordure rouge sur fond blanc."
       },
       "AR": {
-        "question": "Ø¥Ù„Ù‰ Ø£ÙŠ ÙØ¦Ø© Ù…Ù† Ù„Ø§ÙØªØ§Øª Ø§Ù„Ù…Ø±ÙˆØ± ØªÙ†ØªÙ…ÙŠ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ",
+        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
         "choices": [
-          { "text": "Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± (Ø³Ù„Ø³Ù„Ø© A)", "is_correct": true },
-          { "text": "Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© (Ø³Ù„Ø³Ù„Ø© B)", "is_correct": false },
-          { "text": "Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø­Ø¸Ø± (Ø³Ù„Ø³Ù„Ø© C)", "is_correct": false }
+          {
+            "text": "علامات الخطر",
+            "is_correct": true
+          },
+          {
+            "text": "علامات الأولوية",
+            "is_correct": false
+          },
+          {
+            "text": "علامات الحظر",
+            "is_correct": false
+          }
         ],
-        "explanation": "ØªÙ†ØªÙ…ÙŠ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ© Ø¥Ù„Ù‰ Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± (Ø³Ù„Ø³Ù„Ø© A). Ø¬Ù…ÙŠØ¹ Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± Ù…Ø«Ù„Ø«Ø© Ø¨Ø­Ø§ÙØ© Ø­Ù…Ø±Ø§Ø¡ Ø¹Ù„Ù‰ Ø®Ù„ÙÙŠØ© Ø¨ÙŠØ¶Ø§Ø¡."
+        "explanation": "تنتمي هذه العلامة المرورية إلى علامات الخطر. جميع علامات الخطر مثلثة بحافة حمراء على خلفية بيضاء."
       }
     }
   },
@@ -99,38 +171,74 @@
       "NL": {
         "question": "Welk gevaar kondigt dit bord aan?",
         "choices": [
-          { "text": "Een reeks opeenvolgende gevaarlijke bochten waarbij de eerste naar links gaat", "is_correct": true },
-          { "text": "Een enkele scherpe bocht naar links met een steile helling erna", "is_correct": false },
-          { "text": "Een gevaarlijke oversteek met slecht zicht", "is_correct": false }
+          {
+            "text": "Opeenvolgende gevaarlijke bochten waarbij voortdurende richtingsveranderingen het risico op controleverlies vergroten, met de eerste bocht naar links",
+            "is_correct": true
+          },
+          {
+            "text": "Een enkele gevaarlijke bocht naar links, geen opeenvolgende bochten",
+            "is_correct": false
+          },
+          {
+            "text": "Een gevaarlijke oversteek met slecht zicht",
+            "is_correct": false
+          }
         ],
-        "explanation": "Dit bord kondigt meerdere gevaarlijke bochten aan. Na de eerste bocht naar links volgen nog meer gevaarlijke bochten. U moet uw rijgedrag aanpassen voor de volledige reeks."
+        "explanation": "Dit bord kondigt opeenvolgende gevaarlijke bochten aan waarbij voortdurende richtingsveranderingen het risico op controleverlies vergroten. Het gevaar stopt dus niet na de eerste bocht naar links."
       },
       "EN": {
-        "question": "What hazard does this sign announce?",
+        "question": "What hazard does this sign indicate?",
         "choices": [
-          { "text": "A series of consecutive dangerous bends where the first is to the left", "is_correct": true },
-          { "text": "A single sharp bend to the left followed by a steep descent", "is_correct": false },
-          { "text": "A dangerous crossing with poor visibility", "is_correct": false }
+          {
+            "text": "A succession of dangerous bends where continuous changes in direction increase the risk of losing control, first to the left",
+            "is_correct": true
+          },
+          {
+            "text": "A single dangerous bend to the left, not a sequence of bends",
+            "is_correct": false
+          },
+          {
+            "text": "A dangerous crossing with poor visibility",
+            "is_correct": false
+          }
         ],
-        "explanation": "This sign announces multiple dangerous bends. After the first bend to the left there are more dangerous bends ahead. You must adapt your driving for the entire series."
+        "explanation": "This sign indicates a succession of dangerous bends where continuous changes in direction increase the risk of losing control. The danger does not end after the first bend to the left."
       },
       "FR": {
-        "question": "Quel danger ce panneau annonce-t-il ?",
+        "question": "Quel danger indique ce panneau de signalisation ?",
         "choices": [
-          { "text": "Une sÃ©rie de virages dangereux consÃ©cutifs dont le premier est Ã  gauche", "is_correct": true },
-          { "text": "Un seul virage serrÃ© Ã  gauche suivi d'une descente raide", "is_correct": false },
-          { "text": "Un carrefour dangereux avec mauvaise visibilitÃ©", "is_correct": false }
+          {
+            "text": "Une succession de virages dangereux où les changements continus de direction augmentent le risque de perte de contrôle, le premier étant à gauche",
+            "is_correct": true
+          },
+          {
+            "text": "Un seul virage dangereux à gauche, pas une succession de virages",
+            "is_correct": false
+          },
+          {
+            "text": "Un carrefour dangereux avec mauvaise visibilité",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ce panneau annonce plusieurs virages dangereux. AprÃ¨s le premier virage Ã  gauche, il y a encore d'autres virages dangereux. Vous devez adapter votre conduite pour toute la sÃ©rie."
+        "explanation": "Ce panneau indique une succession de virages dangereux où les changements continus de direction augmentent le risque de perte de contrôle. Le danger ne s'arrête donc pas après le premier virage à gauche."
       },
       "AR": {
-        "question": "Ù…Ø§ Ø§Ù„Ø®Ø·Ø± Ø§Ù„Ø°ÙŠ ØªØ¹Ù„Ù†Ù‡ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ",
+        "question": "ما هو الخطر الذي تشير إليه هذه العلامة المرورية؟",
         "choices": [
-          { "text": "Ø³Ù„Ø³Ù„Ø© Ù…Ù†Ø¹Ø·ÙØ§Øª Ø®Ø·ÙŠØ±Ø© Ù…ØªØªØ§Ù„ÙŠØ© ÙŠÙƒÙˆÙ† Ø£ÙˆÙ„Ù‡Ø§ Ø¥Ù„Ù‰ Ø§Ù„ÙŠØ³Ø§Ø±", "is_correct": true },
-          { "text": "Ù…Ù†Ø¹Ø·Ù Ø­Ø§Ø¯ ÙˆØ§Ø­Ø¯ Ø¥Ù„Ù‰ Ø§Ù„ÙŠØ³Ø§Ø± ÙŠØ¹Ù‚Ø¨Ù‡ Ù…Ù†Ø­Ø¯Ø± Ø´Ø¯ÙŠØ¯", "is_correct": false },
-          { "text": "ØªÙ‚Ø§Ø·Ø¹ Ø®Ø·ÙŠØ± Ù…Ø¹ Ø±Ø¤ÙŠØ© Ø³ÙŠØ¦Ø©", "is_correct": false }
+          {
+            "text": "سلسلة من المنعطفات الخطيرة حيث تزيد تغييرات الاتجاه المتواصلة من خطر فقدان السيطرة، وأولها إلى اليسار",
+            "is_correct": true
+          },
+          {
+            "text": "منعطف خطير واحد إلى اليسار، وليس سلسلة من المنعطفات",
+            "is_correct": false
+          },
+          {
+            "text": "تقاطع خطير مع رؤية سيئة",
+            "is_correct": false
+          }
         ],
-        "explanation": "ØªØ¹Ù„Ù† Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ© Ø¹Ù† Ù…Ù†Ø¹Ø·ÙØ§Øª Ø®Ø·ÙŠØ±Ø© Ù…ØªØ¹Ø¯Ø¯Ø©. Ø¨Ø¹Ø¯ Ø§Ù„Ù…Ù†Ø¹Ø·Ù Ø§Ù„Ø£ÙˆÙ„ Ø¥Ù„Ù‰ Ø§Ù„ÙŠØ³Ø§Ø± ØªÙˆØ¬Ø¯ Ù…Ù†Ø¹Ø·ÙØ§Øª Ø®Ø·ÙŠØ±Ø© Ø£Ø®Ø±Ù‰. ÙŠØ¬Ø¨ ØªØ¹Ø¯ÙŠÙ„ Ø³Ù„ÙˆÙƒ Ø§Ù„Ù‚ÙŠØ§Ø¯Ø© Ù„ÙƒØ§Ù…Ù„ Ø§Ù„Ø³Ù„Ø³Ù„Ø©."
+        "explanation": "تشير هذه العلامة المرورية إلى سلسلة من المنعطفات الخطيرة حيث تزيد تغييرات الاتجاه المتواصلة من خطر فقدان السيطرة. لذلك لا ينتهي الخطر بعد المنعطف الأول إلى اليسار."
       }
     }
   },
@@ -142,40 +250,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat moet u doen wanneer u dit bord ziet?",
+        "question": "Wat doet u best wanneer u dit bord ziet?",
         "choices": [
-          { "text": "Snelheid verminderen en aangepast blijven rijden voor de volledige reeks bochten", "is_correct": true },
-          { "text": "Enkel voor de eerste bocht afremmen en daarna de snelheid hervatten", "is_correct": false },
-          { "text": "Stoppen en de situatie verkennen alvorens verder te rijden", "is_correct": false }
+          {
+            "text": "Snelheid verminderen en aangepast blijven rijden tijdens alle opeenvolgende bochten",
+            "is_correct": true
+          },
+          {
+            "text": "Enkel voor de eerste bocht afremmen en daarna de snelheid hervatten",
+            "is_correct": false
+          },
+          {
+            "text": "Stoppen en de situatie verkennen alvorens verder te rijden",
+            "is_correct": false
+          }
         ],
-        "explanation": "Dit bord kondigt meerdere bochten aan. U moet uw snelheid aanpassen voor de volledige reeks, niet enkel de eerste bocht."
+        "explanation": "Dit bord kondigt meerdere bochten aan. U doet er goed aan uw snelheid aan te passen voor alle opeenvolgende bochten, niet enkel de eerste bocht."
       },
       "EN": {
-        "question": "What must you do when you see this sign?",
+        "question": "What should you do when approaching this sequence of bends?",
         "choices": [
-          { "text": "Reduce speed and maintain adjusted driving through the entire series of bends", "is_correct": true },
-          { "text": "Only brake for the first bend and then resume speed", "is_correct": false },
-          { "text": "Stop and assess the situation before continuing", "is_correct": false }
+          {
+            "text": "Reduce speed and maintain controlled driving through the entire sequence of bends",
+            "is_correct": true
+          },
+          {
+            "text": "Only brake for the first bend and then resume speed",
+            "is_correct": false
+          },
+          {
+            "text": "Stop and assess the situation before continuing",
+            "is_correct": false
+          }
         ],
-        "explanation": "This sign announces multiple bends. You must adjust your speed for the entire series, not just the first bend."
+        "explanation": "This sign indicates a succession of dangerous bends. You should reduce speed and maintain controlled driving through the entire sequence, not just the first bend."
       },
       "FR": {
-        "question": "Que devez-vous faire lorsque vous voyez ce panneau ?",
+        "question": "Que devriez-vous faire en approchant de cette succession de virages ?",
         "choices": [
-          { "text": "RÃ©duire la vitesse et maintenir une conduite adaptÃ©e pour toute la sÃ©rie de virages", "is_correct": true },
-          { "text": "Ne freiner que pour le premier virage puis reprendre la vitesse", "is_correct": false },
-          { "text": "S'arrÃªter et Ã©valuer la situation avant de continuer", "is_correct": false }
+          {
+            "text": "Réduire la vitesse et garder une conduite adaptée tout au long de la succession de virages",
+            "is_correct": true
+          },
+          {
+            "text": "Ne freiner que pour le premier virage puis reprendre la vitesse",
+            "is_correct": false
+          },
+          {
+            "text": "S'arrêter et évaluer la situation avant de continuer",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ce panneau annonce plusieurs virages. Vous devez adapter votre vitesse pour toute la sÃ©rie, pas seulement le premier virage."
+        "explanation": "Ce panneau annonce plusieurs virages. Vous devriez adapter votre vitesse pour l'ensemble des virages, pas seulement le premier."
       },
       "AR": {
-        "question": "Ù…Ø§Ø°Ø§ ÙŠØ¬Ø¨ Ø£Ù† ØªÙØ¹Ù„ Ø¹Ù†Ø¯ Ø±Ø¤ÙŠØ© Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ",
+        "question": "ماذا ينبغي أن تفعل عند الاقتراب من هذه السلسلة من المنعطفات؟",
         "choices": [
-          { "text": "ØªÙ‚Ù„ÙŠÙ„ Ø§Ù„Ø³Ø±Ø¹Ø© ÙˆØ§Ù„Ø­ÙØ§Ø¸ Ø¹Ù„Ù‰ Ø§Ù„Ù‚ÙŠØ§Ø¯Ø© Ø§Ù„Ù…Ù†Ø§Ø³Ø¨Ø© Ø·ÙˆØ§Ù„ Ø³Ù„Ø³Ù„Ø© Ø§Ù„Ù…Ù†Ø¹Ø·ÙØ§Øª Ø¨Ø£ÙƒÙ…Ù„Ù‡Ø§", "is_correct": true },
-          { "text": "Ø§Ù„ÙƒØ¨Ø­ ÙÙ‚Ø· Ù„Ù„Ù…Ù†Ø¹Ø·Ù Ø§Ù„Ø£ÙˆÙ„ Ø«Ù… Ø§Ø³ØªØ¹Ø§Ø¯Ø© Ø§Ù„Ø³Ø±Ø¹Ø©", "is_correct": false },
-          { "text": "Ø§Ù„ØªÙˆÙ‚Ù ÙˆØªÙ‚ÙŠÙŠÙ… Ø§Ù„ÙˆØ¶Ø¹ Ù‚Ø¨Ù„ Ø§Ù„Ù…ÙˆØ§ØµÙ„Ø©", "is_correct": false }
+          {
+            "text": "تقليل السرعة والحفاظ على قيادة متزنة على امتداد جميع المنعطفات",
+            "is_correct": true
+          },
+          {
+            "text": "الكبح فقط للمنعطف الأول ثم استعادة السرعة",
+            "is_correct": false
+          },
+          {
+            "text": "التوقف وتقييم الوضع قبل المواصلة",
+            "is_correct": false
+          }
         ],
-        "explanation": "ØªØ¹Ù„Ù† Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ© Ø¹Ù† Ù…Ù†Ø¹Ø·ÙØ§Øª Ù…ØªØ¹Ø¯Ø¯Ø©. ÙŠØ¬Ø¨ Ø¶Ø¨Ø· Ø³Ø±Ø¹ØªÙƒ Ù„ÙƒØ§Ù…Ù„ Ø§Ù„Ø³Ù„Ø³Ù„Ø©ØŒ ÙˆÙ„ÙŠØ³ ÙÙ‚Ø· Ø§Ù„Ù…Ù†Ø¹Ø·Ù Ø§Ù„Ø£ÙˆÙ„."
+        "explanation": "تشير هذه العلامة المرورية إلى تعاقب منعطفات متعددة. ينبغي ضبط سرعتك على امتداد جميع المنعطفات، وليس فقط المنعطف الأول."
       }
     }
   },
@@ -187,40 +331,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "De weg is nat en u nadert een reeks bochten waarvan de eerste naar links gaat. U rijdt 90 km/u en ziet dit bord. Wat doet u als eerste?",
+        "question": "De weg is nat en u nadert opeenvolgende bochten waarvan de eerste naar links gaat. U rijdt 90 km/u en ziet dit bord. Wat doet u als eerste?",
         "choices": [
-          { "text": "Sterk vertragen vÃ³Ã³r de eerste bocht en vaart houden voor de volledige reeks", "is_correct": true },
-          { "text": "Na de eerste bocht uw snelheid opnieuw verhogen richting de tweede bocht", "is_correct": false },
-          { "text": "De tegenrijbaan deels gebruiken om de binnenbochten te nemen", "is_correct": false }
+          {
+            "text": "Sterk vertragen vóór de eerste bocht en de snelheid laag houden tijdens alle opeenvolgende bochten",
+            "is_correct": true
+          },
+          {
+            "text": "Na de eerste bocht uw snelheid opnieuw verhogen richting de tweede bocht",
+            "is_correct": false
+          },
+          {
+            "text": "De tegenrijbaan deels gebruiken om de binnenbochten te nemen",
+            "is_correct": false
+          }
         ],
-        "explanation": "Op een natte weg bij een reeks bochten moet u vÃ³Ã³r de eerste bocht sterk vertragen. Tussen de bochten mag u de snelheid niet verhogen en u rijdt altijd op uw rijbaan."
+        "explanation": "Op een natte weg met opeenvolgende bochten moet u vóór de eerste bocht sterk vertragen. Tussen de bochten verhoogt u de snelheid niet en u blijft altijd op uw rijstrook."
       },
       "EN": {
-        "question": "The road is wet and you approach a series of bends, first to the left, driving at 90 km/h. You see this sign. What do you do first?",
+        "question": "The road is wet and you approach a succession of dangerous bends, first to the left, driving at 90 km/h. You see this sign. What do you do first?",
         "choices": [
-          { "text": "Slow down significantly before the first bend and maintain reduced speed through the entire series", "is_correct": true },
-          { "text": "Increase speed again after the first bend heading into the second", "is_correct": false },
-          { "text": "Partially use the opposite lane to take the inside of the bends", "is_correct": false }
+          {
+            "text": "Slow down significantly before the first bend and maintain reduced speed through the entire sequence",
+            "is_correct": true
+          },
+          {
+            "text": "Increase speed again after the first bend heading into the second",
+            "is_correct": false
+          },
+          {
+            "text": "Partially use the opposite lane to take the inside of the bends",
+            "is_correct": false
+          }
         ],
-        "explanation": "On a wet road near a series of bends, you must slow down significantly before the first bend. Do not increase speed between bends and always stay in your lane."
+        "explanation": "On a wet road near a succession of dangerous bends, you should slow down significantly before the first bend. Do not increase speed between bends and always stay in your lane."
       },
       "FR": {
-        "question": "La route est mouillÃ©e et vous approchez d'une sÃ©rie de virages dont le premier est Ã  gauche, Ã  90 km/h. Vous voyez ce panneau. Que faites-vous en premier ?",
+        "question": "La route est mouillée et vous approchez d'une succession de virages dont le premier est à gauche, à 90 km/h. Vous voyez ce panneau. Que faites-vous en premier ?",
         "choices": [
-          { "text": "Ralentir fortement avant le premier virage et maintenir la vitesse rÃ©duite sur toute la sÃ©rie", "is_correct": true },
-          { "text": "Reprendre de la vitesse aprÃ¨s le premier virage en direction du second", "is_correct": false },
-          { "text": "Utiliser partiellement la voie opposÃ©e pour prendre l'intÃ©rieur des virages", "is_correct": false }
+          {
+            "text": "Ralentir fortement avant le premier virage et maintenir une vitesse réduite sur l'ensemble des virages",
+            "is_correct": true
+          },
+          {
+            "text": "Reprendre de la vitesse après le premier virage en direction du second",
+            "is_correct": false
+          },
+          {
+            "text": "Utiliser partiellement la voie opposée pour prendre l'intérieur des virages",
+            "is_correct": false
+          }
         ],
-        "explanation": "Sur route mouillÃ©e face Ã  une sÃ©rie de virages, ralentissez fortement avant le premier. Ne reprenez pas de vitesse entre les virages et restez toujours dans votre voie."
+        "explanation": "Sur route mouillée face à une succession de virages, ralentissez fortement avant le premier. Ne reprenez pas de vitesse entre les virages et restez toujours dans votre voie."
       },
       "AR": {
-        "question": "Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø±Ø·Ø¨ ÙˆØ£Ù†Øª ØªÙ‚ØªØ±Ø¨ Ù…Ù† Ø³Ù„Ø³Ù„Ø© Ù…Ù†Ø¹Ø·ÙØ§Øª Ø£ÙˆÙ„Ù‡Ø§ Ø¥Ù„Ù‰ Ø§Ù„ÙŠØ³Ø§Ø± Ø¨Ø³Ø±Ø¹Ø© 90 ÙƒÙ…/Ø³Ø§Ø¹Ø©. ØªØ±Ù‰ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©. Ù…Ø§Ø°Ø§ ØªÙØ¹Ù„ Ø£ÙˆÙ„Ø§Ù‹ØŸ",
+        "question": "أنت تقود بسرعة 90 كم/ساعة على طريق مبلل، وأمامك تعاقب منعطفات أولها إلى اليسار. ترى هذه العلامة المرورية. ماذا تفعل أولاً؟",
         "choices": [
-          { "text": "Ø§Ù„ØªØ¨Ø§Ø·Ø¤ Ø¨Ø´ÙƒÙ„ Ù…Ù„Ø­ÙˆØ¸ Ù‚Ø¨Ù„ Ø§Ù„Ù…Ù†Ø¹Ø·Ù Ø§Ù„Ø£ÙˆÙ„ ÙˆØ§Ù„Ø­ÙØ§Ø¸ Ø¹Ù„Ù‰ Ø§Ù„Ø³Ø±Ø¹Ø© Ø§Ù„Ù…Ù†Ø®ÙØ¶Ø© Ø·ÙˆØ§Ù„ Ø§Ù„Ø³Ù„Ø³Ù„Ø©", "is_correct": true },
-          { "text": "Ø²ÙŠØ§Ø¯Ø© Ø§Ù„Ø³Ø±Ø¹Ø© Ù…Ø¬Ø¯Ø¯Ø§Ù‹ Ø¨Ø¹Ø¯ Ø§Ù„Ù…Ù†Ø¹Ø·Ù Ø§Ù„Ø£ÙˆÙ„ Ù†Ø­Ùˆ Ø§Ù„Ø«Ø§Ù†ÙŠ", "is_correct": false },
-          { "text": "Ø§Ø³ØªØ®Ø¯Ø§Ù… Ø¬Ø²Ø¡ Ù…Ù† Ù…Ø³Ø§Ø± Ø§Ù„Ø§ØªØ¬Ø§Ù‡ Ø§Ù„Ù…Ø¹Ø§ÙƒØ³ Ù„Ø£Ø®Ø° Ø§Ù„Ø¬Ø§Ù†Ø¨ Ø§Ù„Ø¯Ø§Ø®Ù„ÙŠ Ù…Ù† Ø§Ù„Ù…Ù†Ø¹Ø·ÙØ§Øª", "is_correct": false }
+          {
+            "text": "التباطؤ بشكل ملحوظ قبل المنعطف الأول والحفاظ على سرعة منخفضة على امتداد جميع المنعطفات",
+            "is_correct": true
+          },
+          {
+            "text": "زيادة السرعة مجددًا بعد المنعطف الأول نحو الثاني",
+            "is_correct": false
+          },
+          {
+            "text": "استخدام جزء من مسار الاتجاه المعاكس لأخذ الجانب الداخلي من المنعطفات",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø±Ø·Ø¨ Ø£Ù…Ø§Ù… Ø³Ù„Ø³Ù„Ø© Ù…Ù†Ø¹Ø·ÙØ§ØªØŒ ØªØ¨Ø§Ø·Ø£ Ø¨Ø´ÙƒÙ„ Ù…Ù„Ø­ÙˆØ¸ Ù‚Ø¨Ù„ Ø§Ù„Ù…Ù†Ø¹Ø·Ù Ø§Ù„Ø£ÙˆÙ„. Ù„Ø§ ØªØ²Ø¯ Ø§Ù„Ø³Ø±Ø¹Ø© Ø¨ÙŠÙ† Ø§Ù„Ù…Ù†Ø¹Ø·ÙØ§Øª ÙˆØ§Ø¨Ù‚ Ø¯Ø§Ø¦Ù…Ø§Ù‹ ÙÙŠ Ù…Ø³Ø§Ø±Ùƒ."
+        "explanation": "على طريق مبلل مع تعاقب منعطفات، خفف السرعة بشكل ملحوظ قبل المنعطف الأول. لا تزد السرعة بين المنعطفات وابقَ دائمًا في مسارك."
       }
     }
   },
@@ -234,38 +414,74 @@
       "NL": {
         "question": "Op welke afstand wordt dit gevaarsbord buiten de bebouwde kom geplaatst?",
         "choices": [
-          { "text": "Ongeveer 150 meter voor het gevaar", "is_correct": true },
-          { "text": "Precies op de gevaarlijke plek", "is_correct": false },
-          { "text": "Op 500 meter voor het gevaar", "is_correct": false }
+          {
+            "text": "Ongeveer 150 meter voor het gevaar",
+            "is_correct": true
+          },
+          {
+            "text": "Precies op de gevaarlijke plek",
+            "is_correct": false
+          },
+          {
+            "text": "Op 500 meter voor het gevaar",
+            "is_correct": false
+          }
         ],
-        "explanation": "Buiten de bebouwde kom worden gevaarsborden op Â±150 meter voor het gevaar geplaatst. Binnen de bebouwde kom is dit Â±50 meter."
+        "explanation": "Buiten de bebouwde kom worden gevaarsborden op ±150 meter voor het gevaar geplaatst. Binnen de bebouwde kom is dit ±50 meter."
       },
       "EN": {
         "question": "At what distance is this danger sign placed outside built-up areas?",
         "choices": [
-          { "text": "Approximately 150 metres before the hazard", "is_correct": true },
-          { "text": "Exactly at the hazard location", "is_correct": false },
-          { "text": "500 metres before the hazard", "is_correct": false }
+          {
+            "text": "Approximately 150 metres before the hazard",
+            "is_correct": true
+          },
+          {
+            "text": "Exactly at the hazard location",
+            "is_correct": false
+          },
+          {
+            "text": "500 metres before the hazard",
+            "is_correct": false
+          }
         ],
-        "explanation": "Outside built-up areas, danger signs are placed Â±150 metres before the hazard. Inside built-up areas it is Â±50 metres."
+        "explanation": "Outside built-up areas, danger signs are placed ±150 metres before the hazard. Inside built-up areas it is ±50 metres."
       },
       "FR": {
-        "question": "Ã€ quelle distance ce panneau de danger est-il placÃ© hors agglomÃ©ration ?",
+        "question": "À quelle distance ce panneau de danger est-il placé hors agglomération ?",
         "choices": [
-          { "text": "Environ 150 mÃ¨tres avant le danger", "is_correct": true },
-          { "text": "Exactement Ã  l'endroit du danger", "is_correct": false },
-          { "text": "500 mÃ¨tres avant le danger", "is_correct": false }
+          {
+            "text": "Environ 150 mètres avant le danger",
+            "is_correct": true
+          },
+          {
+            "text": "Exactement à l'endroit du danger",
+            "is_correct": false
+          },
+          {
+            "text": "500 mètres avant le danger",
+            "is_correct": false
+          }
         ],
-        "explanation": "Hors agglomÃ©ration, les panneaux de danger sont placÃ©s Ã  Â±150 mÃ¨tres avant le danger. En agglomÃ©ration, c'est Â±50 mÃ¨tres."
+        "explanation": "Hors agglomération, les panneaux de danger sont placés à ±150 mètres avant le danger. En agglomération, c'est ±50 mètres."
       },
       "AR": {
-        "question": "Ø¹Ù„Ù‰ Ø£ÙŠ Ù…Ø³Ø§ÙØ© ØªÙˆØ¶Ø¹ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ© Ø§Ù„ØªØ­Ø°ÙŠØ±ÙŠØ© Ø®Ø§Ø±Ø¬ Ø§Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ù…Ø¨Ù†ÙŠØ©ØŸ",
+        "question": "ما هي المسافة التي توضع عندها هذه العلامة التحذيرية خارج المنطقة السكنية؟",
         "choices": [
-          { "text": "Ø­ÙˆØ§Ù„ÙŠ 150 Ù…ØªØ± Ù‚Ø¨Ù„ Ø§Ù„Ø®Ø·Ø±", "is_correct": true },
-          { "text": "Ù…Ø¨Ø§Ø´Ø±Ø© Ø¹Ù†Ø¯ Ù…ÙˆÙ‚Ø¹ Ø§Ù„Ø®Ø·Ø±", "is_correct": false },
-          { "text": "500 Ù…ØªØ± Ù‚Ø¨Ù„ Ø§Ù„Ø®Ø·Ø±", "is_correct": false }
+          {
+            "text": "حوالي 150 متر قبل الخطر",
+            "is_correct": true
+          },
+          {
+            "text": "مباشرة عند موقع الخطر",
+            "is_correct": false
+          },
+          {
+            "text": "500 متر قبل الخطر",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ø®Ø§Ø±Ø¬ Ø§Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ù…Ø¨Ù†ÙŠØ© ØªÙˆØ¶Ø¹ Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± Ø¹Ù„Ù‰ Ù…Ø³Ø§ÙØ© Â±150 Ù…ØªØ± Ù‚Ø¨Ù„ Ø§Ù„Ø®Ø·Ø±. Ø¯Ø§Ø®Ù„ Ø§Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ù…Ø¨Ù†ÙŠØ© ØªÙƒÙˆÙ† Ø§Ù„Ù…Ø³Ø§ÙØ© Â±50 Ù…ØªØ±."
+        "explanation": "خارج المنطقة السكنية توضع علامات الخطر على مسافة ±150 متر قبل الخطر. داخل المنطقة السكنية تكون المسافة ±50 متر."
       }
     }
   },
@@ -277,36 +493,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Mag u inhalen tussen de opeenvolgende bochten die dit bord aankondigt?",
+        "question": "Is het aan te raden om in te halen tussen de opeenvolgende bochten die dit bord aankondigt?",
         "choices": [
-          { "text": "Nee", "is_correct": true },
-          { "text": "Ja", "is_correct": false }
+          {
+            "text": "Nee",
+            "is_correct": true
+          },
+          {
+            "text": "Ja",
+            "is_correct": false
+          }
         ],
-        "explanation": "Tussen opeenvolgende gevaarlijke bochten is inhalen verboden. U naast een ingehaald voertuig bevinden in een bocht is extreem gevaarlijk."
+        "explanation": "Nee, dat is meestal niet raadzaam door beperkt zicht en een verhoogd risico tussen opeenvolgende bochten."
       },
       "EN": {
-        "question": "Is it allowed to overtake between the consecutive bends announced by this sign?",
+        "question": "Is overtaking advisable between consecutive bends announced by this sign?",
         "choices": [
-          { "text": "No", "is_correct": true },
-          { "text": "Yes", "is_correct": false }
+          {
+            "text": "No",
+            "is_correct": true
+          },
+          {
+            "text": "Yes",
+            "is_correct": false
+          }
         ],
-        "explanation": "Overtaking between consecutive dangerous bends is prohibited. Being alongside another vehicle in a bend is extremely dangerous."
+        "explanation": "No, it is generally not advisable because visibility may be limited and the risk increases between consecutive bends."
       },
       "FR": {
-        "question": "ÃŠtes-vous autorisÃ© Ã  dÃ©passer entre les virages consÃ©cutifs annoncÃ©s par ce panneau ?",
+        "question": "Est-il conseillé de dépasser entre les virages consécutifs annoncés par ce panneau de signalisation ?",
         "choices": [
-          { "text": "Non", "is_correct": true },
-          { "text": "Oui", "is_correct": false }
+          {
+            "text": "Non",
+            "is_correct": true
+          },
+          {
+            "text": "Oui",
+            "is_correct": false
+          }
         ],
-        "explanation": "DÃ©passer entre des virages dangereux consÃ©cutifs est interdit. Se trouver Ã  cÃ´tÃ© d'un autre vÃ©hicule dans un virage est extrÃªmement dangereux."
+        "explanation": "Non, ce n'est généralement pas conseillé car la visibilité peut être réduite et le risque augmente entre des virages consécutifs."
       },
       "AR": {
-        "question": "Ù‡Ù„ ÙŠÙØ³Ù…Ø­ Ø¨Ø§Ù„ØªØ¬Ø§ÙˆØ² Ø¨ÙŠÙ† Ø§Ù„Ù…Ù†Ø¹Ø·ÙØ§Øª Ø§Ù„Ù…ØªØªØ§Ù„ÙŠØ© Ø§Ù„ØªÙŠ ØªØ¹Ù„Ù†Ù‡Ø§ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ",
+        "question": "هل يُنصح بالتجاوز بين المنعطفات المتتالية التي تشير إليها هذه العلامة؟",
         "choices": [
-          { "text": "Ù„Ø§", "is_correct": true },
-          { "text": "Ù†Ø¹Ù…", "is_correct": false }
+          {
+            "text": "لا",
+            "is_correct": true
+          },
+          {
+            "text": "نعم",
+            "is_correct": false
+          }
         ],
-        "explanation": "ÙŠÙØ­Ø¸Ø± Ø§Ù„ØªØ¬Ø§ÙˆØ² Ø¨ÙŠÙ† Ø§Ù„Ù…Ù†Ø¹Ø·ÙØ§Øª Ø§Ù„Ø®Ø·ÙŠØ±Ø© Ø§Ù„Ù…ØªØªØ§Ù„ÙŠØ©. Ø§Ù„ÙˆÙ‚ÙˆÙ Ø¨Ø¬Ø§Ù†Ø¨ Ù…Ø±ÙƒØ¨Ø© Ø£Ø®Ø±Ù‰ ÙÙŠ Ù…Ù†Ø¹Ø·Ù Ø£Ù…Ø± Ø¨Ø§Ù„Øº Ø§Ù„Ø®Ø·ÙˆØ±Ø©."
+        "explanation": "لا، لا يُنصح بذلك عادةً لأن الرؤية قد تكون محدودة ويزداد الخطر بين المنعطفات المتتالية."
       }
     }
   },
@@ -318,36 +558,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Moet u uw snelheid verminderen voor de volledige reeks bochten die dit bord aankondigt, niet alleen voor de eerste?",
+        "question": "Doet u er goed aan uw snelheid aan te passen op de hele reeks bochten die dit verkeersbord aankondigt?",
         "choices": [
-          { "text": "Ja", "is_correct": true },
-          { "text": "Nee", "is_correct": false }
+          {
+            "text": "Ja",
+            "is_correct": true
+          },
+          {
+            "text": "Nee",
+            "is_correct": false
+          }
         ],
-        "explanation": "Dit bord kondigt meerdere gevaarlijke bochten aan. U moet uw snelheid aanpassen voor de volledige reeks, niet enkel de eerste bocht."
+        "explanation": "Dit bord kondigt meerdere gevaarlijke bochten aan. U doet er goed aan uw snelheid aan te passen voor de hele reeks bochten, niet alleen voor de eerste."
       },
       "EN": {
-        "question": "Must you maintain reduced speed through the entire series of bends announced by this sign, not just the first?",
+        "question": "Should you maintain reduced speed throughout the entire sequence of bends?",
         "choices": [
-          { "text": "Yes", "is_correct": true },
-          { "text": "No", "is_correct": false }
+          {
+            "text": "Yes",
+            "is_correct": true
+          },
+          {
+            "text": "No",
+            "is_correct": false
+          }
         ],
-        "explanation": "This sign announces a series of dangerous bends. You must adapt your speed for the entire sequence, not just the first bend."
+        "explanation": "This sign announces a succession of dangerous bends. You should adapt your speed for the entire sequence, not just the first bend."
       },
       "FR": {
-        "question": "Devez-vous maintenir une vitesse rÃ©duite sur toute la sÃ©rie de virages annoncÃ©s, pas seulement le premier ?",
+        "question": "Devrait-on maintenir une vitesse réduite sur toute la séquence de virages annoncée par ce panneau ?",
         "choices": [
-          { "text": "Oui", "is_correct": true },
-          { "text": "Non", "is_correct": false }
+          {
+            "text": "Oui",
+            "is_correct": true
+          },
+          {
+            "text": "Non",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ce panneau annonce une sÃ©rie de virages dangereux. Vous devez adapter votre vitesse pour toute la sÃ©quence, pas seulement le premier virage."
+        "explanation": "Ce panneau annonce une succession de virages dangereux. Vous devriez adapter votre vitesse pour toute la séquence, pas seulement le premier virage."
       },
       "AR": {
-        "question": "Ù‡Ù„ ÙŠØ¬Ø¨ Ø§Ù„Ø­ÙØ§Ø¸ Ø¹Ù„Ù‰ Ø§Ù„Ø³Ø±Ø¹Ø© Ø§Ù„Ù…Ù†Ø®ÙØ¶Ø© Ø·ÙˆØ§Ù„ Ø³Ù„Ø³Ù„Ø© Ø§Ù„Ù…Ù†Ø¹Ø·ÙØ§Øª Ø§Ù„Ù…Ø¹Ù„Ù†Ø©ØŒ ÙˆÙ„ÙŠØ³ ÙÙ‚Ø· Ø§Ù„Ø£ÙˆÙ„ØŸ",
+        "question": "هل ينبغي أن تحافظ على سرعة منخفضة على امتداد جميع المنعطفات؟",
         "choices": [
-          { "text": "Ù†Ø¹Ù…", "is_correct": true },
-          { "text": "Ù„Ø§", "is_correct": false }
+          {
+            "text": "نعم",
+            "is_correct": true
+          },
+          {
+            "text": "لا",
+            "is_correct": false
+          }
         ],
-        "explanation": "ØªØ¹Ù„Ù† Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ© Ø¹Ù† Ø³Ù„Ø³Ù„Ø© Ù…Ù† Ø§Ù„Ù…Ù†Ø¹Ø·ÙØ§Øª Ø§Ù„Ø®Ø·ÙŠØ±Ø©. ÙŠØ¬Ø¨ Ø¶Ø¨Ø· Ø³Ø±Ø¹ØªÙƒ Ù„ÙƒØ§Ù…Ù„ Ø§Ù„Ø³Ù„Ø³Ù„Ø©ØŒ ÙˆÙ„ÙŠØ³ ÙÙ‚Ø· Ø§Ù„Ù…Ù†Ø¹Ø·Ù Ø§Ù„Ø£ÙˆÙ„."
+        "explanation": "تشير هذه العلامة المرورية إلى سلسلة من المنعطفات الخطيرة. ينبغي تعديل سرعتك على امتداد جميع المنعطفات، وليس فقط المنعطف الأول."
       }
     }
   }

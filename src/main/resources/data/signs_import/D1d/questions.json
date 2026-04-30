@@ -1,4 +1,4 @@
-﻿[
+[
   {
     "question_id": "D1d_Q01",
     "type": "WHAT_DOES_IT_MEAN",
@@ -9,83 +9,155 @@
       "NL": {
         "question": "Wat betekent dit verkeersbord?",
         "choices": [
-          {"text": "Verplichting rechts aanhouden", "is_correct": true},
-          {"text": "Verplichting links aanhouden", "is_correct": false},
-          {"text": "Verplichting links afslaan", "is_correct": false}
+          {
+            "text": "Verplichting rechts aanhouden",
+            "is_correct": true
+          },
+          {
+            "text": "Verplichting links aanhouden",
+            "is_correct": false
+          },
+          {
+            "text": "Verplichting rechtdoor rijden",
+            "is_correct": false
+          }
         ],
-        "explanation": "Dit bord verplicht alle bestuurders om rechts aan te houden op de rijbaan."
+        "explanation": "Dit bord geeft aan dat u de door de pijl aangeduide richting moet volgen, namelijk rechts aanhouden."
       },
       "EN": {
         "question": "What does this traffic sign mean?",
         "choices": [
-          {"text": "Keep to the right", "is_correct": true},
-          {"text": "Keep to the left", "is_correct": false},
-          {"text": "Mandatory left turn", "is_correct": false}
+          {
+            "text": "Keep to the right",
+            "is_correct": true
+          },
+          {
+            "text": "Keep to the left",
+            "is_correct": false
+          },
+          {
+            "text": "Mandatory straight ahead",
+            "is_correct": false
+          }
         ],
-        "explanation": "This sign requires all drivers to keep to the right side of the road."
+        "explanation": "This sign indicates that you must follow the direction shown by the arrow, namely keep to the right."
       },
       "FR": {
         "question": "Que signifie ce panneau de signalisation ?",
         "choices": [
-          {"text": "Obligation de serrer a droite", "is_correct": true},
-          {"text": "Obligation de serrer a gauche", "is_correct": false},
-          {"text": "Obligation de tourner a gauche", "is_correct": false}
+          {
+            "text": "Obligation de serrer à droite",
+            "is_correct": true
+          },
+          {
+            "text": "Obligation de serrer à gauche",
+            "is_correct": false
+          },
+          {
+            "text": "Obligation d'aller tout droit",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ce panneau oblige les conducteurs a serrer a droite de la chaussee."
+        "explanation": "Ce panneau indique que vous devez suivre la direction indiquée par la flèche, à savoir serrer à droite."
       },
       "AR": {
-        "question": "Ù…Ø§Ø°Ø§ ØªØ¹Ù†ÙŠ Ù„Ø§ÙØªØ© Ø§Ù„Ù…Ø±ÙˆØ± Ù‡Ø°Ù‡ØŸ",
+        "question": "ما معنى هذه العلامة المرورية؟",
         "choices": [
-          {"text": "Ø¥Ù„Ø²Ø§Ù… Ø§Ù„Ø¥Ù…Ø³Ø§Ùƒ Ø¨Ø§Ù„ÙŠÙ…ÙŠÙ†", "is_correct": true},
-          {"text": "Ø¥Ù„Ø²Ø§Ù… Ø§Ù„Ø¥Ù…Ø³Ø§Ùƒ Ø¨Ø§Ù„ÙŠØ³Ø§Ø±", "is_correct": false},
-          {"text": "Ø¥Ù„Ø²Ø§Ù…ÙŠØ© Ø§Ù„Ù‚ÙŠØ§Ø¯Ø© Ø¨Ø§ØªØ¬Ø§Ù‡ Ø§Ù„ÙŠØ³Ø§Ø±", "is_correct": false}
+          {
+            "text": "إلزامية الالتزام باليمين",
+            "is_correct": true
+          },
+          {
+            "text": "إلزامية الالتزام باليسار",
+            "is_correct": false
+          },
+          {
+            "text": "إلزامية السير إلى الأمام",
+            "is_correct": false
+          }
         ],
-        "explanation": "ØªÙÙ„Ø²Ù… Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ© Ø¬Ù…ÙŠØ¹ Ø§Ù„Ø³Ø§Ø¦Ù‚ÙŠÙ† Ø¨Ø§Ù„Ø§Ù„ØªØ²Ø§Ù… Ø¨Ø§Ù„Ø¬Ø§Ù†Ø¨ Ø§Ù„Ø£ÙŠÙ…Ù† Ù…Ù† Ø§Ù„Ø·Ø±ÙŠÙ‚."
+        "explanation": "تدل هذه العلامة على أنه يجب اتباع الاتجاه الذي يشير إليه السهم، أي الالتزام باليمين."
       }
     }
   },
   {
     "question_id": "D1d_Q02",
-    "type": "WHICH_SIGN",
+    "type": "HAZARD_IDENTIFICATION",
     "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Tot welke categorie verkeersborden behoort dit bord?",
+        "question": "Op welke richting heeft dit bord betrekking?",
         "choices": [
-          {"text": "Gebodsborden (D-reeks)", "is_correct": true},
-          {"text": "Verbodsborden (C-reeks)", "is_correct": false},
-          {"text": "Parkeerborden (E-reeks)", "is_correct": false}
+          {
+            "text": "Op de richting rechts",
+            "is_correct": true
+          },
+          {
+            "text": "Op de richting links",
+            "is_correct": false
+          },
+          {
+            "text": "Op de richting rechtdoor",
+            "is_correct": false
+          }
         ],
-        "explanation": "D-reeksborden zijn gebodstekens. D1d verplicht bestuurders rechts aan te houden."
+        "explanation": "Dit bord heeft betrekking op de richting die door de pijl wordt aangeduid, namelijk rechts."
       },
       "EN": {
-        "question": "To which category of traffic signs does this sign belong?",
+        "question": "Which direction does this sign apply to?",
         "choices": [
-          {"text": "Mandatory signs (D-series)", "is_correct": true},
-          {"text": "Prohibition signs (C-series)", "is_correct": false},
-          {"text": "Parking signs (E-series)", "is_correct": false}
+          {
+            "text": "The right direction",
+            "is_correct": true
+          },
+          {
+            "text": "The left direction",
+            "is_correct": false
+          },
+          {
+            "text": "The straight-ahead direction",
+            "is_correct": false
+          }
         ],
-        "explanation": "D-series signs are mandatory signs. D1d requires drivers to keep to the right."
+        "explanation": "This sign applies to the direction indicated by the arrow, namely right."
       },
       "FR": {
-        "question": "A quelle categorie de panneaux de signalisation appartient ce panneau ?",
+        "question": "À quelle direction ce panneau s'applique-t-il ?",
         "choices": [
-          {"text": "Panneaux d'obligation (serie D)", "is_correct": true},
-          {"text": "Panneaux d'interdiction (serie C)", "is_correct": false},
-          {"text": "Panneaux de stationnement (serie E)", "is_correct": false}
+          {
+            "text": "À la direction de droite",
+            "is_correct": true
+          },
+          {
+            "text": "À la direction de gauche",
+            "is_correct": false
+          },
+          {
+            "text": "À la direction tout droit",
+            "is_correct": false
+          }
         ],
-        "explanation": "Les panneaux de la serie D sont des panneaux d'obligation. D1d oblige les conducteurs a serrer a droite."
+        "explanation": "Ce panneau s'applique à la direction indiquée par la flèche, à savoir la droite."
       },
       "AR": {
-        "question": "Ø¥Ù„Ù‰ Ø£ÙŠ ÙØ¦Ø© Ù…Ù† Ù„Ø§ÙØªØ§Øª Ø§Ù„Ù…Ø±ÙˆØ± ØªÙ†ØªÙ…ÙŠ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ",
+        "question": "على أي اتجاه تنطبق هذه العلامة؟",
         "choices": [
-          {"text": "Ù„Ø§ÙØªØ§Øª Ø¥Ù„Ø²Ø§Ù…ÙŠØ© (Ø§Ù„Ø³Ù„Ø³Ù„Ø© D)", "is_correct": true},
-          {"text": "Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø­Ø¸Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© C)", "is_correct": false},
-          {"text": "Ù„Ø§ÙØªØ§Øª Ø§Ù„ÙˆÙ‚ÙˆÙ (Ø§Ù„Ø³Ù„Ø³Ù„Ø© E)", "is_correct": false}
+          {
+            "text": "على الاتجاه إلى اليمين",
+            "is_correct": true
+          },
+          {
+            "text": "على الاتجاه إلى اليسار",
+            "is_correct": false
+          },
+          {
+            "text": "على الاتجاه إلى الأمام",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø³Ù„Ø³Ù„Ø© D Ù‡ÙŠ Ù„Ø§ÙØªØ§Øª Ø¥Ù„Ø²Ø§Ù…ÙŠØ©. ØªÙÙ„Ø²Ù… D1d Ø§Ù„Ø³Ø§Ø¦Ù‚ÙŠÙ† Ø¨Ø§Ù„Ø§Ù„ØªØ²Ø§Ù… Ø¨Ø§Ù„Ø¬Ø§Ù†Ø¨ Ø§Ù„Ø£ÙŠÙ…Ù†."
+        "explanation": "تنطبق هذه العلامة على الاتجاه الذي يشير إليه السهم، وهو الاتجاه إلى اليمين."
       }
     }
   },
@@ -97,40 +169,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat verplicht dit bord u te doen op de rijbaan?",
+        "question": "Wat geeft dit bord precies aan?",
         "choices": [
-          {"text": "Rechts aanhouden langs de rechterrand van de rijbaan", "is_correct": true},
-          {"text": "Vaart minderen tot 30 km/u", "is_correct": false},
-          {"text": "Links aanhouden om tegenliggers voorrang te verlenen", "is_correct": false}
+          {
+            "text": "Dat u rechts moet aanhouden",
+            "is_correct": true
+          },
+          {
+            "text": "Dat u vrij mag kiezen tussen links en rechts",
+            "is_correct": false
+          },
+          {
+            "text": "Dat u moet stoppen voor het obstakel",
+            "is_correct": false
+          }
         ],
-        "explanation": "D1d legt de verplichting op om rechts aan te houden. Alle weggebruikers moeten dit bord respecteren."
+        "explanation": "Dit bord geeft precies aan dat u de aangeduide richting moet volgen en dus rechts moet aanhouden."
       },
       "EN": {
-        "question": "What does this sign require you to do on the road?",
+        "question": "What exactly does this sign indicate?",
         "choices": [
-          {"text": "Keep to the right side of the road", "is_correct": true},
-          {"text": "Reduce speed to 30 km/h", "is_correct": false},
-          {"text": "Keep to the left to give way to oncoming vehicles", "is_correct": false}
+          {
+            "text": "That you must keep to the right",
+            "is_correct": true
+          },
+          {
+            "text": "That you may choose freely between left and right",
+            "is_correct": false
+          },
+          {
+            "text": "That you must stop before the obstacle",
+            "is_correct": false
+          }
         ],
-        "explanation": "D1d imposes an obligation to keep to the right. All road users must comply."
+        "explanation": "This sign indicates that you must follow the direction shown and therefore keep to the right."
       },
       "FR": {
-        "question": "Qu'est-ce que ce panneau vous oblige a faire sur la chaussee ?",
+        "question": "Qu'indique précisément ce panneau ?",
         "choices": [
-          {"text": "Serrer sur la droite de la chaussee", "is_correct": true},
-          {"text": "Reduire la vitesse a 30 km/h", "is_correct": false},
-          {"text": "Serrer a gauche pour ceder le passage aux vehicules venant en sens inverse", "is_correct": false}
+          {
+            "text": "Que vous devez serrer à droite",
+            "is_correct": true
+          },
+          {
+            "text": "Que vous pouvez choisir librement entre la gauche et la droite",
+            "is_correct": false
+          },
+          {
+            "text": "Que vous devez vous arrêter avant l'obstacle",
+            "is_correct": false
+          }
         ],
-        "explanation": "D1d impose l'obligation de serrer a droite. Tous les usagers de la route doivent respecter cette obligation."
+        "explanation": "Ce panneau indique précisément que vous devez suivre la direction montrée et donc serrer à droite."
       },
       "AR": {
-        "question": "Ù…Ø§Ø°Ø§ ØªÙÙ„Ø²Ù…Ùƒ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ© Ø¨ÙØ¹Ù„Ù‡ Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±ÙŠÙ‚ØŸ",
+        "question": "ماذا تشير هذه العلامة تحديدًا؟",
         "choices": [
-          {"text": "Ø§Ù„Ø§Ù„ØªØ²Ø§Ù… Ø¨Ø§Ù„Ø¬Ø§Ù†Ø¨ Ø§Ù„Ø£ÙŠÙ…Ù† Ù…Ù† Ø§Ù„Ø·Ø±ÙŠÙ‚", "is_correct": true},
-          {"text": "ØªØ®ÙÙŠØ¶ Ø§Ù„Ø³Ø±Ø¹Ø© Ø¥Ù„Ù‰ 30 ÙƒÙ…/Ø³", "is_correct": false},
-          {"text": "Ø§Ù„Ø§Ù„ØªØ²Ø§Ù… Ø¨Ø§Ù„Ø¬Ø§Ù†Ø¨ Ø§Ù„Ø£ÙŠØ³Ø± Ù„Ø¥ÙØ³Ø§Ø­ Ø§Ù„Ù…Ø¬Ø§Ù„ Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ù…Ù‚Ø§Ø¨Ù„Ø©", "is_correct": false}
+          {
+            "text": "إلى أنه يجب عليك الالتزام باليمين",
+            "is_correct": true
+          },
+          {
+            "text": "إلى أنه يمكنك الاختيار بحرية بين اليسار واليمين",
+            "is_correct": false
+          },
+          {
+            "text": "إلى أنه يجب عليك التوقف قبل العائق",
+            "is_correct": false
+          }
         ],
-        "explanation": "ØªÙØ±Ø¶ D1d ÙˆØ§Ø¬Ø¨ Ø§Ù„Ø§Ù„ØªØ²Ø§Ù… Ø¨Ø§Ù„Ø¬Ø§Ù†Ø¨ Ø§Ù„Ø£ÙŠÙ…Ù†. ÙŠØ¬Ø¨ Ø¹Ù„Ù‰ Ø¬Ù…ÙŠØ¹ Ù…Ø³ØªØ®Ø¯Ù…ÙŠ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø§Ù…ØªØ«Ø§Ù„."
+        "explanation": "تشير هذه العلامة تحديدًا إلى ضرورة اتباع الاتجاه المبيّن، وبالتالي الالتزام باليمين."
       }
     }
   },
@@ -142,40 +250,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U rijdt op een weg waar bord D1d staat. Een geparkeerd voertuig blokkeert gedeeltelijk de rechterkant. Wat moet u doen?",
+        "question": "U nadert een hindernis waarop dit bord is geplaatst. Wat moet u doen?",
         "choices": [
-          {"text": "Zo dicht mogelijk rechts passeren en daarna direct terug rechts blijven rijden", "is_correct": true},
-          {"text": "Tijdelijk naar links rijden totdat u het voertuig gepasseerd bent", "is_correct": false},
-          {"text": "Stoppen en wachten tot het voertuig wegrijdt", "is_correct": false}
+          {
+            "text": "De hindernis voorbijrijden langs de rechterkant",
+            "is_correct": true
+          },
+          {
+            "text": "De hindernis voorbijrijden langs de linkerkant",
+            "is_correct": false
+          },
+          {
+            "text": "Voor de hindernis stoppen en wachten",
+            "is_correct": false
+          }
         ],
-        "explanation": "D1d verplicht rechts aanhouden. Bij een tijdelijke belemmering passeert u het obstakel terwijl u zo ver rechts mogelijk blijft, en hervat u onmiddellijk uw rechterpositie."
+        "explanation": "Wanneer dit verkeersbord op een hindernis is geplaatst, moet u de hindernis voorbijrijden langs de kant waar de pijl naar wijst, dus langs rechts."
       },
       "EN": {
-        "question": "You are driving on a road with sign D1d. A parked vehicle partially blocks the right side. What must you do?",
+        "question": "You are approaching an obstacle on which this sign is placed. What must you do?",
         "choices": [
-          {"text": "Pass as far right as possible and immediately return to the right side", "is_correct": true},
-          {"text": "Drive temporarily on the left side until you have passed the vehicle", "is_correct": false},
-          {"text": "Stop and wait until the vehicle moves", "is_correct": false}
+          {
+            "text": "Pass the obstacle on the right side",
+            "is_correct": true
+          },
+          {
+            "text": "Pass the obstacle on the left side",
+            "is_correct": false
+          },
+          {
+            "text": "Stop and wait in front of the obstacle",
+            "is_correct": false
+          }
         ],
-        "explanation": "D1d requires keeping right. When a temporary obstruction is present, you pass while staying as far right as possible and immediately resume the right-side position."
+        "explanation": "When this sign is placed on an obstacle, you must pass the obstacle on the side indicated by the arrow, so on the right side."
       },
       "FR": {
-        "question": "Vous circulez sur une voie avec le panneau D1d. Un vehicule gare bloque partiellement le cote droit. Que devez-vous faire ?",
+        "question": "Vous approchez d'un obstacle sur lequel ce panneau est placé. Que devez-vous faire ?",
         "choices": [
-          {"text": "Passer en restant le plus a droite possible et reprendre immediatement votre position droite", "is_correct": true},
-          {"text": "Rouler temporairement a gauche jusqu'a ce que vous ayez depasse le vehicule", "is_correct": false},
-          {"text": "Vous arreter et attendre que le vehicule parte", "is_correct": false}
+          {
+            "text": "Dépasser l'obstacle par la droite",
+            "is_correct": true
+          },
+          {
+            "text": "Dépasser l'obstacle par la gauche",
+            "is_correct": false
+          },
+          {
+            "text": "Vous arrêter et attendre devant l'obstacle",
+            "is_correct": false
+          }
         ],
-        "explanation": "D1d oblige a serrer a droite. En presence d'une obstruction temporaire, passez en restant le plus a droite possible et reprenez immediatement votre position droite."
+        "explanation": "Lorsque ce panneau est placé sur un obstacle, vous devez dépasser l'obstacle du côté indiqué par la flèche, donc par la droite."
       },
       "AR": {
-        "question": "Ø£Ù†Øª ØªØ³ÙŠØ± Ø¹Ù„Ù‰ Ø·Ø±ÙŠÙ‚ Ø¹Ù„ÙŠÙ‡ Ù„Ø§ÙØªØ© D1d. Ù…Ø±ÙƒØ¨Ø© Ù…ØªÙˆÙ‚ÙØ© ØªØ³Ø¯ Ø¬Ø²Ø¦ÙŠØ§Ù‹ Ø§Ù„Ø¬Ø§Ù†Ø¨ Ø§Ù„Ø£ÙŠÙ…Ù†. Ù…Ø§Ø°Ø§ ÙŠØ¬Ø¨ Ø¹Ù„ÙŠÙƒ ÙØ¹Ù„Ù‡ØŸ",
+        "question": "أنت تقترب من عائق وُضعت عليه هذه العلامة. ماذا يجب أن تفعل؟",
         "choices": [
-          {"text": "Ø§Ù„Ù…Ø±ÙˆØ± Ø¨Ø£Ù‚ØµÙ‰ Ù…Ø§ ÙŠÙ…ÙƒÙ† Ù†Ø­Ùˆ Ø§Ù„ÙŠÙ…ÙŠÙ† ÙˆØ§Ù„Ø¹ÙˆØ¯Ø© Ø§Ù„ÙÙˆØ±ÙŠØ© Ø¥Ù„Ù‰ ÙˆØ¶Ø¹ Ø§Ù„ÙŠÙ…ÙŠÙ†", "is_correct": true},
-          {"text": "Ø§Ù„Ù‚ÙŠØ§Ø¯Ø© Ù…Ø¤Ù‚ØªØ§Ù‹ Ø¹Ù„Ù‰ Ø§Ù„Ø¬Ø§Ù†Ø¨ Ø§Ù„Ø£ÙŠØ³Ø± Ø­ØªÙ‰ ØªØªØ¬Ø§ÙˆØ² Ø§Ù„Ù…Ø±ÙƒØ¨Ø©", "is_correct": false},
-          {"text": "Ø§Ù„ØªÙˆÙ‚Ù ÙˆØ§Ù„Ø§Ù†ØªØ¸Ø§Ø± Ø­ØªÙ‰ ØªØºØ§Ø¯Ø± Ø§Ù„Ù…Ø±ÙƒØ¨Ø©", "is_correct": false}
+          {
+            "text": "تتجاوز العائق من الجهة اليمنى",
+            "is_correct": true
+          },
+          {
+            "text": "تتجاوز العائق من الجهة اليسرى",
+            "is_correct": false
+          },
+          {
+            "text": "تتوقف أمام العائق وتنتظر",
+            "is_correct": false
+          }
         ],
-        "explanation": "ØªÙÙ„Ø²Ù… D1d Ø¨Ø§Ù„Ø§Ù„ØªØ²Ø§Ù… Ø¨Ø§Ù„ÙŠÙ…ÙŠÙ†. Ø¹Ù†Ø¯ ÙˆØ¬ÙˆØ¯ Ø¹Ø§Ø¦Ù‚ Ù…Ø¤Ù‚ØªØŒ ØªÙ…Ø± Ø¨Ø£Ù‚ØµÙ‰ ÙŠÙ…ÙŠÙ† Ù…Ù…ÙƒÙ† ÙˆØªØ³ØªØ£Ù†Ù Ø§Ù„ÙˆØ¶Ø¹ Ø§Ù„Ø£ÙŠÙ…Ù† ÙÙˆØ±Ø§Ù‹."
+        "explanation": "عندما توضع هذه العلامة على عائق، يجب تجاوز العائق من الجهة التي يشير إليها السهم، أي من اليمين."
       }
     }
   },
@@ -187,85 +331,157 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Een tegenligger rijdt in het midden van de rijbaan. Bord D1d is aanwezig. Wat moet u doen?",
+        "question": "U ziet dit bord naast een verkeersgeleider of middeneiland. Hoe moet u rijden?",
         "choices": [
-          {"text": "Rechts aanhouden en indien nodig de tegenligger waarschuwen met knipperlichten", "is_correct": true},
-          {"text": "Naar links uitwijken om een botsing te voorkomen", "is_correct": false},
-          {"text": "Stoppen en wachten tot de tegenligger rechts rijdt", "is_correct": false}
+          {
+            "text": "U moet rechts aanhouden",
+            "is_correct": true
+          },
+          {
+            "text": "U mag vrij kiezen langs welke kant u rijdt",
+            "is_correct": false
+          },
+          {
+            "text": "U moet links aanhouden",
+            "is_correct": false
+          }
         ],
-        "explanation": "D1d is een wettelijke verplichting voor u. U houdt rechts aan en kunt de tegenligger waarschuwen, maar uw positie is correct."
+        "explanation": "Dit bord verplicht u de richting van de pijl te volgen. In dit geval moet u rechts aanhouden."
       },
       "EN": {
-        "question": "An oncoming vehicle is driving in the middle of the road. Sign D1d is present. What must you do?",
+        "question": "You see this sign next to a traffic island or central divider. How must you drive?",
         "choices": [
-          {"text": "Keep right and warn the oncoming driver with flashing lights if necessary", "is_correct": true},
-          {"text": "Move to the left to avoid a collision", "is_correct": false},
-          {"text": "Stop and wait until the oncoming vehicle drives right", "is_correct": false}
+          {
+            "text": "You must keep to the right",
+            "is_correct": true
+          },
+          {
+            "text": "You may choose freely on which side to drive",
+            "is_correct": false
+          },
+          {
+            "text": "You must keep to the left",
+            "is_correct": false
+          }
         ],
-        "explanation": "D1d is a legal obligation for you. Keep to the right and signal the oncoming driver if needed, but your position is correct."
+        "explanation": "This sign requires you to follow the direction of the arrow. In this case, you must keep to the right."
       },
       "FR": {
-        "question": "Un vehicule venant en sens inverse roule au milieu de la chaussee. Le panneau D1d est present. Que devez-vous faire ?",
+        "question": "Vous voyez ce panneau à côté d'un îlot de circulation ou d'un terre-plein central. Comment devez-vous rouler ?",
         "choices": [
-          {"text": "Serrer a droite et avertir le conducteur venant en sens inverse par appels de phares si necessaire", "is_correct": true},
-          {"text": "Devier a gauche pour eviter une collision", "is_correct": false},
-          {"text": "Vous arreter et attendre que le vehicule venant en sens inverse se deplace a droite", "is_correct": false}
+          {
+            "text": "Vous devez serrer à droite",
+            "is_correct": true
+          },
+          {
+            "text": "Vous pouvez choisir librement de quel côté rouler",
+            "is_correct": false
+          },
+          {
+            "text": "Vous devez serrer à gauche",
+            "is_correct": false
+          }
         ],
-        "explanation": "D1d est une obligation legale pour vous. Serrez a droite et signalez le conducteur venant en sens inverse si necessaire, mais votre position est correcte."
+        "explanation": "Ce panneau vous oblige à suivre la direction de la flèche. Dans ce cas, vous devez serrer à droite."
       },
       "AR": {
-        "question": "Ù…Ø±ÙƒØ¨Ø© Ù‚Ø§Ø¯Ù…Ø© ØªØ³ÙŠØ± ÙÙŠ Ù…Ù†ØªØµÙ Ø§Ù„Ø·Ø±ÙŠÙ‚. Ø§Ù„Ù„Ø§ÙØªØ© D1d Ù…ÙˆØ¬ÙˆØ¯Ø©. Ù…Ø§Ø°Ø§ ÙŠØ¬Ø¨ Ø¹Ù„ÙŠÙƒ ÙØ¹Ù„Ù‡ØŸ",
+        "question": "ترى هذه العلامة بجانب جزيرة مرورية أو جزيرة وسطية. كيف يجب أن تسير؟",
         "choices": [
-          {"text": "Ø§Ù„Ø§Ù„ØªØ²Ø§Ù… Ø¨Ø§Ù„ÙŠÙ…ÙŠÙ† ÙˆØªØ­Ø°ÙŠØ± Ø§Ù„Ø³Ø§Ø¦Ù‚ Ø§Ù„Ù‚Ø§Ø¯Ù… Ø¨Ø§Ù„Ø£Ø¶ÙˆØ§Ø¡ Ø§Ù„ÙˆØ§Ù…Ø¶Ø© Ø¹Ù†Ø¯ Ø§Ù„Ø­Ø§Ø¬Ø©", "is_correct": true},
-          {"text": "Ø§Ù„Ø§Ù†Ø­Ø±Ø§Ù Ø¥Ù„Ù‰ Ø§Ù„ÙŠØ³Ø§Ø± Ù„ØªØ¬Ù†Ø¨ Ø§Ù„ØªØµØ§Ø¯Ù…", "is_correct": false},
-          {"text": "Ø§Ù„ØªÙˆÙ‚Ù ÙˆØ§Ù„Ø§Ù†ØªØ¸Ø§Ø± Ø­ØªÙ‰ ÙŠØªØ­ÙˆÙ„ Ø§Ù„Ø³Ø§Ø¦Ù‚ Ø§Ù„Ù‚Ø§Ø¯Ù… Ø¥Ù„Ù‰ Ø§Ù„ÙŠÙ…ÙŠÙ†", "is_correct": false}
+          {
+            "text": "يجب أن تلتزم باليمين",
+            "is_correct": true
+          },
+          {
+            "text": "يمكنك اختيار الجهة التي تسير منها بحرية",
+            "is_correct": false
+          },
+          {
+            "text": "يجب أن تلتزم باليسار",
+            "is_correct": false
+          }
         ],
-        "explanation": "ØªÙØ¹Ø¯Ù‘ D1d Ø§Ù„ØªØ²Ø§Ù…Ø§Ù‹ Ù‚Ø§Ù†ÙˆÙ†ÙŠØ§Ù‹ Ø¹Ù„ÙŠÙƒ. Ø§Ù„ØªØ²Ù… Ø¨Ø§Ù„ÙŠÙ…ÙŠÙ† ÙˆØ£Ø´ÙØ± Ø¥Ù„Ù‰ Ø§Ù„Ø³Ø§Ø¦Ù‚ Ø§Ù„Ù‚Ø§Ø¯Ù… Ø¹Ù†Ø¯ Ø§Ù„Ø¶Ø±ÙˆØ±Ø©ØŒ Ù„ÙƒÙ† ÙˆØ¶Ø¹Ùƒ ØµØ­ÙŠØ­."
+        "explanation": "تلزمك هذه العلامة باتباع اتجاه السهم. وفي هذه الحالة يجب الالتزام باليمين."
       }
     }
   },
   {
     "question_id": "D1d_Q06",
-    "type": "WHAT_MUST_YOU_DO",
+    "type": "IS_IT_ALLOWED",
     "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U rijdt op een smalle weg met bord D1d en wilt in een bocht iets naar links zwenken voor meer comfort. Is dat toegestaan?",
+        "question": "Mag u aan dit punt links voorbij de hindernis rijden?",
         "choices": [
-          {"text": "Neen, bord D1d verplicht u rechts aan te houden ook in bochten", "is_correct": true},
-          {"text": "Ja, in bochten mag u de rijlijn aanpassen voor meer stabiliteit", "is_correct": false},
-          {"text": "Ja, als er geen tegenliggend verkeer zichtbaar is", "is_correct": false}
+          {
+            "text": "Nee, u moet rechts voorbijrijden",
+            "is_correct": true
+          },
+          {
+            "text": "Ja, als er weinig verkeer is",
+            "is_correct": false
+          },
+          {
+            "text": "Ja, als de linkerkant vrijer lijkt",
+            "is_correct": false
+          }
         ],
-        "explanation": "De verplichting van D1d geldt ook in bochten. U moet rechts aanhouden ongeacht de bochtvorm."
+        "explanation": "Dit bord verplicht u de richting van de pijl te volgen. U mag dus niet links voorbij de hindernis rijden."
       },
       "EN": {
-        "question": "You are on a narrow road with sign D1d and want to move slightly left in a bend for more comfort. Is this allowed?",
+        "question": "May you pass the obstacle on the left at this point?",
         "choices": [
-          {"text": "No, sign D1d requires you to keep right even in bends", "is_correct": true},
-          {"text": "Yes, in bends you may adjust your line for more stability", "is_correct": false},
-          {"text": "Yes, as long as no oncoming traffic is visible", "is_correct": false}
+          {
+            "text": "No, you must pass on the right",
+            "is_correct": true
+          },
+          {
+            "text": "Yes, if there is little traffic",
+            "is_correct": false
+          },
+          {
+            "text": "Yes, if the left side seems clearer",
+            "is_correct": false
+          }
         ],
-        "explanation": "The obligation of D1d also applies in bends. You must keep to the right regardless of the bend shape."
+        "explanation": "This sign requires you to follow the direction of the arrow. Therefore, you may not pass the obstacle on the left."
       },
       "FR": {
-        "question": "Vous roulez sur une route etroite avec le panneau D1d et souhaitez vous deplacer legerement a gauche dans un virage pour plus de confort. Est-ce autorise ?",
+        "question": "Pouvez-vous dépasser l'obstacle par la gauche à cet endroit ?",
         "choices": [
-          {"text": "Non, le panneau D1d vous oblige a serrer a droite meme dans les virages", "is_correct": true},
-          {"text": "Oui, dans les virages vous pouvez ajuster votre trajectoire pour plus de stabilite", "is_correct": false},
-          {"text": "Oui, tant qu'aucun vehicule venant en sens inverse n'est visible", "is_correct": false}
+          {
+            "text": "Non, vous devez le dépasser par la droite",
+            "is_correct": true
+          },
+          {
+            "text": "Oui, s'il y a peu de circulation",
+            "is_correct": false
+          },
+          {
+            "text": "Oui, si le côté gauche semble plus libre",
+            "is_correct": false
+          }
         ],
-        "explanation": "L'obligation de D1d s'applique egalement dans les virages. Vous devez serrer a droite quelle que soit la forme du virage."
+        "explanation": "Ce panneau vous oblige à suivre la direction de la flèche. Vous ne pouvez donc pas dépasser l'obstacle par la gauche."
       },
       "AR": {
-        "question": "Ø£Ù†Øª Ø¹Ù„Ù‰ Ø·Ø±ÙŠÙ‚ Ø¶ÙŠÙ‚ Ù…Ø¹ Ù„Ø§ÙØªØ© D1d ÙˆØªØ±ÙŠØ¯ Ø§Ù„Ø§Ù†Ø²ÙŠØ§Ø­ Ù‚Ù„ÙŠÙ„Ø§Ù‹ Ø¥Ù„Ù‰ Ø§Ù„ÙŠØ³Ø§Ø± ÙÙŠ Ù…Ù†Ø¹Ø·Ù Ù„Ù…Ø²ÙŠØ¯ Ù…Ù† Ø§Ù„Ø±Ø§Ø­Ø©. Ù‡Ù„ Ù‡Ø°Ø§ Ù…Ø³Ù…ÙˆØ­ Ø¨Ù‡ØŸ",
+        "question": "هل يجوز لك تجاوز العائق من الجهة اليسرى عند هذه النقطة؟",
         "choices": [
-          {"text": "Ù„Ø§ØŒ ØªÙÙ„Ø²Ù…Ùƒ Ù„Ø§ÙØªØ© D1d Ø¨Ø§Ù„Ø§Ù„ØªØ²Ø§Ù… Ø¨Ø§Ù„ÙŠÙ…ÙŠÙ† Ø­ØªÙ‰ ÙÙŠ Ø§Ù„Ù…Ù†Ø¹Ø·ÙØ§Øª", "is_correct": true},
-          {"text": "Ù†Ø¹Ù…ØŒ ÙŠÙ…ÙƒÙ†Ùƒ ÙÙŠ Ø§Ù„Ù…Ù†Ø¹Ø·ÙØ§Øª ØªØ¹Ø¯ÙŠÙ„ Ù…Ø³Ø§Ø±Ùƒ Ù„Ù…Ø²ÙŠØ¯ Ù…Ù† Ø§Ù„Ø§Ø³ØªÙ‚Ø±Ø§Ø±", "is_correct": false},
-          {"text": "Ù†Ø¹Ù…ØŒ Ø·Ø§Ù„Ù…Ø§ Ù„Ø§ ÙŠÙˆØ¬Ø¯ Ù…Ø±ÙˆØ± Ù‚Ø§Ø¯Ù… Ù…Ù† Ø§Ù„Ø§ØªØ¬Ø§Ù‡ Ø§Ù„Ù…Ø¹Ø§ÙƒØ³", "is_correct": false}
+          {
+            "text": "لا، يجب أن تتجاوزه من الجهة اليمنى",
+            "is_correct": true
+          },
+          {
+            "text": "نعم، إذا كانت حركة المرور قليلة",
+            "is_correct": false
+          },
+          {
+            "text": "نعم، إذا بدت الجهة اليسرى أكثر فراغًا",
+            "is_correct": false
+          }
         ],
-        "explanation": "ØªØ³Ø±ÙŠ Ø¥Ù„Ø²Ø§Ù…ÙŠØ© D1d Ø£ÙŠØ¶Ø§Ù‹ ÙÙŠ Ø§Ù„Ù…Ù†Ø¹Ø·ÙØ§Øª. ÙŠØ¬Ø¨ Ø¹Ù„ÙŠÙƒ Ø§Ù„Ø§Ù„ØªØ²Ø§Ù… Ø¨Ø§Ù„ÙŠÙ…ÙŠÙ† Ø¨ØºØ¶ Ø§Ù„Ù†Ø¸Ø± Ø¹Ù† Ø´ÙƒÙ„ Ø§Ù„Ù…Ù†Ø¹Ø·Ù."
+        "explanation": "تلزمك هذه العلامة باتباع اتجاه السهم، لذلك لا يجوز لك تجاوز العائق من الجهة اليسرى."
       }
     }
   },
@@ -277,36 +493,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Bord D1d staat verderop. De rechterkant van de weg is tijdelijk versmald door wegenwerken. Mag u in het midden van de rijbaan rijden?",
+        "question": "De weg is volledig vrij. Mag u toch links van de hindernis rijden?",
         "choices": [
-          {"text": "Neen, u moet rechts aanhouden ook als de beschikbare ruimte kleiner is", "is_correct": true},
-          {"text": "Ja, bij wegenwerken vervalt de verplichting van bord D1d tijdelijk", "is_correct": false}
+          {
+            "text": "Nee, de verplichting blijft rechts",
+            "is_correct": true
+          },
+          {
+            "text": "Ja, als er geen ander verkeer is",
+            "is_correct": false
+          }
         ],
-        "explanation": "Wegenwerken vormen geen uitzondering op de verplichting van D1d. U houdt rechts aan in de beschikbare rijruimte."
+        "explanation": "Ook als de weg vrij is, blijft de door het bord aangeduide richting rechts."
       },
       "EN": {
-        "question": "Sign D1d is posted ahead. The right side of the road is temporarily narrowed by roadworks. May you drive in the middle of the lane?",
+        "question": "The road is completely clear. May you still pass to the left of the obstacle?",
         "choices": [
-          {"text": "No, you must keep to the right even if the available space is reduced", "is_correct": true},
-          {"text": "Yes, roadworks temporarily suspend the obligation of sign D1d", "is_correct": false}
+          {
+            "text": "No, the obligation remains to the right",
+            "is_correct": true
+          },
+          {
+            "text": "Yes, if there is no other traffic",
+            "is_correct": false
+          }
         ],
-        "explanation": "Roadworks do not create an exception to D1d. You continue to keep right within the available road space."
+        "explanation": "Even if the road is clear, the direction indicated by the sign remains to the right."
       },
       "FR": {
-        "question": "Le panneau D1d est place devant vous. Le cote droit de la route est temporairement retreci par des travaux. Pouvez-vous rouler au milieu de la chaussee ?",
+        "question": "La route est complètement libre. Pouvez-vous quand même passer à gauche de l'obstacle ?",
         "choices": [
-          {"text": "Non, vous devez serrer a droite meme si l'espace disponible est reduit", "is_correct": true},
-          {"text": "Oui, les travaux suspendent temporairement l'obligation du panneau D1d", "is_correct": false}
+          {
+            "text": "Non, l'obligation reste à droite",
+            "is_correct": true
+          },
+          {
+            "text": "Oui, s'il n'y a pas d'autre circulation",
+            "is_correct": false
+          }
         ],
-        "explanation": "Les travaux ne constituent pas une exception a D1d. Vous continuez a serrer a droite dans l'espace routier disponible."
+        "explanation": "Même si la route est libre, la direction indiquée par le panneau reste la droite."
       },
       "AR": {
-        "question": "Ø§Ù„Ù„Ø§ÙØªØ© D1d Ù…Ø¹Ù„Ù‘Ù‚Ø© Ø£Ù…Ø§Ù…Ùƒ. Ø§Ù„Ø¬Ø§Ù†Ø¨ Ø§Ù„Ø£ÙŠÙ…Ù† Ù…Ù† Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø¶ÙÙŠÙÙ‘Ù‚ Ù…Ø¤Ù‚ØªØ§Ù‹ Ø¨Ø³Ø¨Ø¨ Ø£Ø¹Ù…Ø§Ù„ Ø§Ù„Ø·Ø±ÙŠÙ‚. Ù‡Ù„ ÙŠÙ…ÙƒÙ†Ùƒ Ø§Ù„Ø³ÙŠØ± ÙÙŠ Ù…Ù†ØªØµÙ Ø§Ù„Ù…Ø³Ø§Ø±ØŸ",
+        "question": "الطريق خالٍ تمامًا. هل يجوز لك رغم ذلك المرور من الجهة اليسرى للعائق؟",
         "choices": [
-          {"text": "Ù„Ø§ØŒ ÙŠØ¬Ø¨ Ø¹Ù„ÙŠÙƒ Ø§Ù„Ø§Ù„ØªØ²Ø§Ù… Ø¨Ø§Ù„ÙŠÙ…ÙŠÙ† Ø­ØªÙ‰ Ù„Ùˆ ÙƒØ§Ù†Øª Ø§Ù„Ù…Ø³Ø§Ø­Ø© Ø§Ù„Ù…ØªØ§Ø­Ø© Ù…Ø­Ø¯ÙˆØ¯Ø©", "is_correct": true},
-          {"text": "Ù†Ø¹Ù…ØŒ Ø£Ø¹Ù…Ø§Ù„ Ø§Ù„Ø·Ø±ÙŠÙ‚ ØªØ¹Ù„Ù‘Ù‚ Ø¥Ù„Ø²Ø§Ù…ÙŠØ© D1d Ù…Ø¤Ù‚ØªØ§Ù‹", "is_correct": false}
+          {
+            "text": "لا، يبقى الالتزام من الجهة اليمنى",
+            "is_correct": true
+          },
+          {
+            "text": "نعم، إذا لم تكن هناك حركة مرور أخرى",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ø£Ø¹Ù…Ø§Ù„ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ù„Ø§ ØªÙØ´ÙƒÙ‘Ù„ Ø§Ø³ØªØ«Ù†Ø§Ø¡Ù‹ Ù…Ù† D1d. ÙˆØ§ØµÙ„ Ø§Ù„Ø§Ù„ØªØ²Ø§Ù… Ø¨Ø§Ù„ÙŠÙ…ÙŠÙ† Ø¶Ù…Ù† Ø§Ù„Ù…Ø³Ø§Ø­Ø© Ø§Ù„Ù…ØªØ§Ø­Ø©."
+        "explanation": "حتى إذا كان الطريق خاليًا، يبقى الاتجاه الذي تشير إليه العلامة هو اليمين."
       }
     }
   },
@@ -318,36 +558,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U nadert een ruime bocht met bord D1d. Om meer rijcomfort te hebben, wil u dichter naar het midden van de rijbaan rijden. Mag dat?",
+        "question": "Mag u zelf kiezen langs welke kant u een hindernis voorbijrijdt als dit bord erop staat?",
         "choices": [
-          {"text": "Neen, bord D1d verplicht u rechts aan te houden ongeacht de bochtvorm of het rijcomfort", "is_correct": true},
-          {"text": "Ja, in een ruime bocht mag u iets naar links schuiven als dit veiliger aanvoelt", "is_correct": false}
+          {
+            "text": "Nee, u moet de pijl volgen",
+            "is_correct": true
+          },
+          {
+            "text": "Ja, als beide kanten open zijn",
+            "is_correct": false
+          }
         ],
-        "explanation": "D1d kent geen uitzondering voor bochten. Ook in een ruime bocht blijft de verplichting rechts aanhouden van kracht."
+        "explanation": "Wanneer dit bord op een hindernis is geplaatst, moet u de hindernis voorbijrijden langs de kant waar de pijl naar wijst."
       },
       "EN": {
-        "question": "You are approaching a wide bend with sign D1d. For more comfort, you want to drive closer to the centre. Is this allowed?",
+        "question": "May you choose yourself on which side to pass an obstacle when this sign is placed on it?",
         "choices": [
-          {"text": "No, sign D1d requires you to keep right regardless of the bend shape or driving comfort", "is_correct": true},
-          {"text": "Yes, in a wide bend you may shift slightly to the left if it feels safer", "is_correct": false}
+          {
+            "text": "No, you must follow the arrow",
+            "is_correct": true
+          },
+          {
+            "text": "Yes, if both sides are open",
+            "is_correct": false
+          }
         ],
-        "explanation": "D1d makes no exception for bends. Even in a wide bend, the obligation to keep right remains in force."
+        "explanation": "When this sign is placed on an obstacle, you must pass the obstacle on the side indicated by the arrow."
       },
       "FR": {
-        "question": "Vous approchez d'un large virage avec le panneau D1d. Pour plus de confort, vous voulez vous rapprocher du centre de la chaussee. Est-ce autorise ?",
+        "question": "Pouvez-vous choisir vous-même de quel côté dépasser un obstacle lorsque ce panneau y est placé ?",
         "choices": [
-          {"text": "Non, le panneau D1d vous oblige a serrer a droite quelle que soit la forme du virage ou le confort de conduite", "is_correct": true},
-          {"text": "Oui, dans un large virage vous pouvez vous deplacer legerement vers la gauche si cela semble plus sur", "is_correct": false}
+          {
+            "text": "Non, vous devez suivre la flèche",
+            "is_correct": true
+          },
+          {
+            "text": "Oui, si les deux côtés sont libres",
+            "is_correct": false
+          }
         ],
-        "explanation": "D1d ne prevoit aucune exception pour les virages. Meme dans un large virage, l'obligation de serrer a droite reste en vigueur."
+        "explanation": "Lorsque ce panneau est placé sur un obstacle, vous devez dépasser l'obstacle du côté indiqué par la flèche."
       },
       "AR": {
-        "question": "Ø£Ù†Øª ØªÙ‚ØªØ±Ø¨ Ù…Ù† Ù…Ù†Ø¹Ø·Ù ÙˆØ§Ø³Ø¹ Ù…Ø¹ Ù„Ø§ÙØªØ© D1d. Ù„Ù…Ø²ÙŠØ¯ Ù…Ù† Ø§Ù„Ø±Ø§Ø­Ø©ØŒ ØªØ±ÙŠØ¯ Ø§Ù„Ù‚ÙŠØ§Ø¯Ø© Ø£Ù‚Ø±Ø¨ Ù…Ù† Ù…Ø±ÙƒØ² Ø§Ù„Ø·Ø±ÙŠÙ‚. Ù‡Ù„ Ù‡Ø°Ø§ Ù…Ø³Ù…ÙˆØ­ Ø¨Ù‡ØŸ",
+        "question": "هل يجوز لك أن تختار بنفسك من أي جهة تتجاوز العائق عندما تكون هذه العلامة موضوعة عليه؟",
         "choices": [
-          {"text": "Ù„Ø§ØŒ ØªÙÙ„Ø²Ù…Ùƒ Ù„Ø§ÙØªØ© D1d Ø¨Ø§Ù„Ø§Ù„ØªØ²Ø§Ù… Ø¨Ø§Ù„ÙŠÙ…ÙŠÙ† Ø¨ØºØ¶ Ø§Ù„Ù†Ø¸Ø± Ø¹Ù† Ø´ÙƒÙ„ Ø§Ù„Ù…Ù†Ø¹Ø·Ù Ø£Ùˆ Ø±Ø§Ø­Ø© Ø§Ù„Ù‚ÙŠØ§Ø¯Ø©", "is_correct": true},
-          {"text": "Ù†Ø¹Ù…ØŒ ÙÙŠ Ù…Ù†Ø¹Ø·Ù ÙˆØ§Ø³Ø¹ ÙŠÙ…ÙƒÙ†Ùƒ Ø§Ù„Ø§Ù†Ø²ÙŠØ§Ø­ Ù‚Ù„ÙŠÙ„Ø§Ù‹ Ø¥Ù„Ù‰ Ø§Ù„ÙŠØ³Ø§Ø± Ø¥Ø°Ø§ Ø´Ø¹Ø±Øª Ø¨Ø£Ù†Ù‡ Ø£ÙƒØ«Ø± Ø£Ù…Ø§Ù†Ø§Ù‹", "is_correct": false}
+          {
+            "text": "لا، يجب عليك اتباع السهم",
+            "is_correct": true
+          },
+          {
+            "text": "نعم، إذا كانت الجهتان مفتوحتين",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ù„Ø§ ØªÙÙ†Øµ D1d Ø¹Ù„Ù‰ Ø£ÙŠ Ø§Ø³ØªØ«Ù†Ø§Ø¡ Ù„Ù„Ù…Ù†Ø¹Ø·ÙØ§Øª. Ø­ØªÙ‰ ÙÙŠ Ù…Ù†Ø¹Ø·Ù ÙˆØ§Ø³Ø¹ØŒ ØªØ¨Ù‚Ù‰ Ø¥Ù„Ø²Ø§Ù…ÙŠØ© Ø§Ù„Ø§Ù„ØªØ²Ø§Ù… Ø¨Ø§Ù„ÙŠÙ…ÙŠÙ† Ø³Ø§Ø±ÙŠØ©."
+        "explanation": "عندما توضع هذه العلامة على عائق، يجب تجاوز العائق من الجهة التي يشير إليها السهم."
       }
     }
   }

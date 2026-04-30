@@ -1,4 +1,4 @@
-﻿[
+[
   {
     "question_id": "A47_Q01",
     "type": "WHAT_DOES_IT_MEAN",
@@ -9,83 +9,119 @@
       "NL": {
         "question": "Wat betekent dit verkeersbord?",
         "choices": [
-          {"text": "Waarschuwingskruis voor een spoorwegovergang met twee of meer sporen.", "is_correct": true},
-          {"text": "Waarschuwingskruis voor een spoorwegovergang met slechts Ã©Ã©n spoor.", "is_correct": false},
-          {"text": "Verbod om de spoorwegovergang te passeren.", "is_correct": false}
+          {
+            "text": "Overweg met meerdere sporen",
+            "is_correct": true
+          },
+          {
+            "text": "Overweg voor één spoor.",
+            "is_correct": false
+          },
+          {
+            "text": "Verbod om de overweg te passeren.",
+            "is_correct": false
+          }
         ],
-        "explanation": "Het A47-bord is het waarschuwingskruis voor een overweg met meerdere sporen. Na het passeren van een trein kan een tweede trein op een ander spoor volgen."
+        "explanation": "A47 geeft een spoorwegovergang met meerdere sporen aan die zich op deze exacte plaats bevindt."
       },
       "EN": {
         "question": "What does this traffic sign mean?",
         "choices": [
-          {"text": "Warning cross for a railway crossing with two or more tracks.", "is_correct": true},
-          {"text": "Warning cross for a railway crossing with only one track.", "is_correct": false},
-          {"text": "Prohibition to pass the railway crossing.", "is_correct": false}
+          {
+            "text": "Level crossing with multiple tracks",
+            "is_correct": true
+          },
+          {
+            "text": "Level crossing with one track.",
+            "is_correct": false
+          },
+          {
+            "text": "Prohibition to use the level crossing.",
+            "is_correct": false
+          }
         ],
-        "explanation": "The A47 sign is the warning cross for a multi-track crossing. After one train passes, a second train on another track may follow."
+        "explanation": "A47 indicates a level crossing with multiple tracks at this exact location."
       },
       "FR": {
-        "question": "Que signifie ce panneau de signalisation?",
+        "question": "Que signifie ce panneau de signalisation ?",
         "choices": [
-          {"text": "Croix d'avertissement pour un passage Ã  niveau Ã  deux voies ou plus.", "is_correct": true},
-          {"text": "Croix d'avertissement pour un passage Ã  niveau Ã  une seule voie.", "is_correct": false},
-          {"text": "Interdiction de passer le passage Ã  niveau.", "is_correct": false}
+          {
+            "text": "Passage à niveau à plusieurs voies",
+            "is_correct": true
+          },
+          {
+            "text": "Passage à niveau à une seule voie.",
+            "is_correct": false
+          },
+          {
+            "text": "Interdiction d'utiliser le passage à niveau.",
+            "is_correct": false
+          }
         ],
-        "explanation": "Le panneau A47 est la croix d'avertissement pour un passage Ã  plusieurs voies. AprÃ¨s le passage d'un train, un deuxiÃ¨me train sur une autre voie peut suivre."
+        "explanation": "A47 indique un passage à niveau à plusieurs voies situé à cette position exacte."
       },
       "AR": {
-        "question": "Ù…Ø§Ø°Ø§ ØªØ¹Ù†ÙŠ Ù‡Ø°Ù‡ Ø§Ù„Ø¹Ù„Ø§Ù…Ø© Ø§Ù„Ù…Ø±ÙˆØ±ÙŠØ©ØŸ",
+        "question": "ما معنى هذه العلامة المرورية؟",
         "choices": [
-          {"text": "ØµÙ„ÙŠØ¨ ØªØ­Ø°ÙŠØ± Ù„Ù…Ø¹Ø¨Ø± Ø³ÙƒØ© Ø­Ø¯ÙŠØ¯ Ø°Ùˆ Ø®Ø·ÙŠÙ† Ø£Ùˆ Ø£ÙƒØ«Ø±.", "is_correct": true},
-          {"text": "ØµÙ„ÙŠØ¨ ØªØ­Ø°ÙŠØ± Ù„Ù…Ø¹Ø¨Ø± Ø³ÙƒØ© Ø­Ø¯ÙŠØ¯ Ø°Ùˆ Ø®Ø· ÙˆØ§Ø­Ø¯ ÙÙ‚Ø·.", "is_correct": false},
-          {"text": "Ø­Ø¸Ø± Ø¹Ø¨ÙˆØ± Ù…Ø¹Ø¨Ø± Ø§Ù„Ø³ÙƒØ© Ø§Ù„Ø­Ø¯ÙŠØ¯ÙŠØ©.", "is_correct": false}
+          {
+            "text": "معبر سكة حديد بعدة مسارات",
+            "is_correct": true
+          },
+          {
+            "text": "معبر سكة حديد ذو مسار واحد.",
+            "is_correct": false
+          },
+          {
+            "text": "حظر استخدام معبر سكة حديد.",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ø¹Ù„Ø§Ù…Ø© A47 Ù‡ÙŠ ØµÙ„ÙŠØ¨ Ø§Ù„ØªØ­Ø°ÙŠØ± Ù„Ù…Ø¹Ø¨Ø± Ù…ØªØ¹Ø¯Ø¯ Ø§Ù„Ù…Ø³Ø§Ø±Ø§Øª. Ø¨Ø¹Ø¯ Ù…Ø±ÙˆØ± Ù‚Ø·Ø§Ø±ØŒ Ù‚Ø¯ ÙŠØªØ¨Ø¹Ù‡ Ù‚Ø·Ø§Ø± Ø«Ø§Ù†Ù Ø¹Ù„Ù‰ Ù…Ø³Ø§Ø± Ø¢Ø®Ø±."
+        "explanation": "تشير A47 إلى معبر سكة حديد بعدة مسارات يقع في هذا الموضع تحديداً."
       }
     }
-  },
+  },
   {
     "question_id": "A47_Q02",
     "type": "WHICH_SIGN",
     "difficulty": "EASY",
     "is_critical": false,
-    "show_sign": true,
+    "show_sign": false,
     "i18n": {
       "NL": {
-        "question": "Tot welke categorie verkeerstekens behoort dit bord?",
+        "question": "Welk bord waarschuwt voor een overweg met meerdere sporen?",
         "choices": [
-          {"text": "Gevaarsborden (A-reeks)", "is_correct": true},
-          {"text": "Voorrangsborden (B-reeks)", "is_correct": false},
-          {"text": "Verbodsborden (C-reeks)", "is_correct": false}
+          { "text": "Het bord dat waarschuwt voor een overweg met twee of meer sporen", "is_correct": true },
+          { "text": "Het bord dat waarschuwt voor een overweg met één spoor", "is_correct": false },
+          { "text": "Het bord dat waarschuwt voor een overweg zonder slagbomen", "is_correct": false }
         ],
-        "explanation": "Dit is een gevaarsbord (driehoekig, rode rand). Het behoort tot de A-reeks en waarschuwt voor gevaarlijke situaties."
+        "explanation": "Het gevaarsbord A47 waarschuwt specifiek voor een overweg met meerdere sporen. Het bord één spoor (A45) geldt voor een eensporig overweg. Het bord zonder slagbomen (A43) geldt voor een overweg zonder barrières."
       },
       "EN": {
-        "question": "To which category of traffic signs does this sign belong?",
+        "question": "Which sign warns of a level crossing with multiple tracks?",
         "choices": [
-          {"text": "Danger signs (A-series)", "is_correct": true},
-          {"text": "Priority signs (B-series)", "is_correct": false},
-          {"text": "Prohibition signs (C-series)", "is_correct": false}
+          { "text": "The sign that warns of a level crossing with two or more tracks", "is_correct": true },
+          { "text": "The sign that warns of a level crossing with one track", "is_correct": false },
+          { "text": "The sign that warns of a level crossing without barriers", "is_correct": false }
         ],
-        "explanation": "This is a danger sign (triangular, red border). It belongs to the A-series and warns of hazardous situations."
+        "explanation": "Danger sign A47 specifically warns of a level crossing with multiple tracks. The one track sign (A45) applies to a single-track crossing. The sign without barriers (A43) applies to a crossing without barriers."
       },
       "FR": {
-        "question": "Ã€ quelle catÃ©gorie de panneaux de signalisation appartient ce panneau?",
+        "question": "Quel panneau signale un passage à niveau à plusieurs voies ?",
         "choices": [
-          {"text": "Panneaux de danger (sÃ©rie A)", "is_correct": true},
-          {"text": "Panneaux de prioritÃ© (sÃ©rie B)", "is_correct": false},
-          {"text": "Panneaux d'interdiction (sÃ©rie C)", "is_correct": false}
+          { "text": "Le panneau qui avertit d’un passage à niveau à deux voies ou plus", "is_correct": true },
+          { "text": "Le panneau qui avertit d’un passage à niveau à une seule voie", "is_correct": false },
+          { "text": "Le panneau qui avertit d’un passage à niveau sans barrières", "is_correct": false }
         ],
-        "explanation": "C'est un panneau de danger (triangulaire, bordure rouge). Il appartient Ã  la sÃ©rie A et avertit de situations dangereuses."
+        "explanation": "Le panneau de danger A47 signale spécifiquement un passage à niveau à plusieurs voies. Le panneau une voie (A45) concerne un passage à voie unique. Le panneau sans barrières (A43) concerne un passage sans barrières."
       },
       "AR": {
-        "question": "Ø¥Ù„Ù‰ Ø£ÙŠ ÙØ¦Ø© Ù…Ù† Ø¹Ù„Ø§Ù…Ø§Øª Ø§Ù„Ù…Ø±ÙˆØ± ØªÙ†ØªÙ…ÙŠ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ",
+        "question": "أي علامة مرورية تُحذّر من تقاطع سككة حديدية بخطوط متعددة؟",
         "choices": [
-          {"text": "Ø¹Ù„Ø§Ù…Ø§Øª Ø§Ù„Ø®Ø·Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© Ø£)", "is_correct": true},
-          {"text": "Ø¹Ù„Ø§Ù…Ø§Øª Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© (Ø§Ù„Ø³Ù„Ø³Ù„Ø© Ø¨)", "is_correct": false},
-          {"text": "Ø¹Ù„Ø§Ù…Ø§Øª Ø§Ù„Ø­Ø¸Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© Ø¬)", "is_correct": false}
+          { "text": "العلامة التي تُحذّر من تقاطع سككة حديدية بخطين أو أكثر", "is_correct": true },
+          { "text": "العلامة التي تُحذّر من تقاطع سككة حديدية بخط واحد", "is_correct": false },
+          { "text": "العلامة التي تُحذّر من تقاطع سككة حديدية بدون حواجز", "is_correct": false }
         ],
-        "explanation": "Ù‡Ø°Ù‡ Ø¹Ù„Ø§Ù…Ø© Ø®Ø·Ø± (Ù…Ø«Ù„Ø«Ø©ØŒ Ø­Ø¯ÙˆØ¯ Ø­Ù…Ø±Ø§Ø¡). ØªÙ†ØªÙ…ÙŠ Ø¥Ù„Ù‰ Ø§Ù„Ø³Ù„Ø³Ù„Ø© Ø£ ÙˆØªØ­Ø°Ø± Ù…Ù† Ø§Ù„Ù…ÙˆØ§Ù‚Ù Ø§Ù„Ø®Ø·Ø±Ø©."
+        "explanation": "علامة الخطر A47 تُحذّر تحديدًا من تقاطع سككة حديدية بخطوط متعددة. علامة خط واحد (A45) تختص بخط واحد. علامة بدون حواجز (A43) تختص بتقاطع بدون حواجز."
       }
     }
   },
@@ -99,38 +135,74 @@
       "NL": {
         "question": "Voor welk gevaar waarschuwt dit bord?",
         "choices": [
-          {"text": "Een spoorwegovergang met meerdere sporen, waarbij meerdere treinen kunnen passeren.", "is_correct": true},
-          {"text": "Een spoorwegovergang met Ã©Ã©n spoor.", "is_correct": false},
-          {"text": "Een kruispunt met tram en autoverkeer.", "is_correct": false}
+          {
+            "text": "Een spoorwegovergang met twee of meer sporen waar meerdere treinen kunnen passeren.",
+            "is_correct": true
+          },
+          {
+            "text": "Een spoorwegovergang met één spoor.",
+            "is_correct": false
+          },
+          {
+            "text": "Een kruispunt met tram en autoverkeer.",
+            "is_correct": false
+          }
         ],
-        "explanation": "Het A47-bord waarschuwt voor een overweg met twee of meer sporen. Er kan na de eerste trein direct een tweede trein volgen op een ander spoor."
+        "explanation": "Het gevaar is dat u een overweg met twee of meer sporen nadert. Na één passerende trein kan op een ander spoor meteen nog een trein volgen, dus u doet er goed aan alle sporen te blijven controleren."
       },
       "EN": {
         "question": "What hazard does this sign warn about?",
         "choices": [
-          {"text": "A multi-track railway crossing where multiple trains may pass.", "is_correct": true},
-          {"text": "A single-track railway crossing.", "is_correct": false},
-          {"text": "An intersection with tram and road traffic.", "is_correct": false}
+          {
+            "text": "A level crossing with two or more tracks where multiple trains may pass.",
+            "is_correct": true
+          },
+          {
+            "text": "A single-track level crossing.",
+            "is_correct": false
+          },
+          {
+            "text": "An intersection with tram and road traffic.",
+            "is_correct": false
+          }
         ],
-        "explanation": "The A47 sign warns of a crossing with two or more tracks. A second train on another track may immediately follow the first."
+        "explanation": "The hazard is that you are approaching a level crossing with two or more tracks. After one train has passed, another may immediately follow on a different track, so you should keep checking all tracks."
       },
       "FR": {
-        "question": "Contre quel danger ce panneau avertit-il?",
+        "question": "Contre quel danger ce panneau avertit-il ?",
         "choices": [
-          {"text": "Un passage Ã  niveau Ã  plusieurs voies oÃ¹ plusieurs trains peuvent passer.", "is_correct": true},
-          {"text": "Un passage Ã  niveau Ã  une seule voie.", "is_correct": false},
-          {"text": "Un carrefour avec tram et circulation routiÃ¨re.", "is_correct": false}
+          {
+            "text": "Un passage à niveau à deux voies ou plus où plusieurs trains peuvent passer.",
+            "is_correct": true
+          },
+          {
+            "text": "Un passage à niveau à une seule voie.",
+            "is_correct": false
+          },
+          {
+            "text": "Un carrefour avec tram et circulation routière.",
+            "is_correct": false
+          }
         ],
-        "explanation": "Le panneau A47 avertit d'un passage avec deux voies ou plus. Un deuxiÃ¨me train sur une autre voie peut suivre immÃ©diatement le premier."
+        "explanation": "Le danger est que vous approchez d'un passage à niveau à deux voies ou plus. Après un train, un autre peut immédiatement suivre sur une voie différente, il vaut donc mieux continuer à vérifier toutes les voies."
       },
       "AR": {
-        "question": "Ø¹Ù† Ø£ÙŠ Ø®Ø·Ø± ØªØ­Ø°Ø± Ù‡Ø°Ù‡ Ø§Ù„Ø¹Ù„Ø§Ù…Ø©ØŸ",
+        "question": "عن أي خطر تحذر هذه العلامة؟",
         "choices": [
-          {"text": "Ù…Ø¹Ø¨Ø± Ø³ÙƒØ© Ø­Ø¯ÙŠØ¯ Ù…ØªØ¹Ø¯Ø¯ Ø§Ù„Ù…Ø³Ø§Ø±Ø§Øª Ø­ÙŠØ« Ù‚Ø¯ ØªÙ…Ø± Ù‚Ø·Ø§Ø±Ø§Øª Ù…ØªØ¹Ø¯Ø¯Ø©.", "is_correct": true},
-          {"text": "Ù…Ø¹Ø¨Ø± Ø³ÙƒØ© Ø­Ø¯ÙŠØ¯ Ø°Ùˆ Ø®Ø· ÙˆØ§Ø­Ø¯.", "is_correct": false},
-          {"text": "ØªÙ‚Ø§Ø·Ø¹ Ù…Ø¹ Ø­Ø±ÙƒØ© Ø§Ù„ØªØ±Ø§Ù… ÙˆØ­Ø±ÙƒØ© Ø§Ù„Ø³ÙŠØ§Ø±Ø§Øª.", "is_correct": false}
+          {
+            "text": "معبر سكة حديد بمسارين أو أكثر حيث قد تمر أكثر من قطار.",
+            "is_correct": true
+          },
+          {
+            "text": "معبر سكة حديد ذو مسار واحد.",
+            "is_correct": false
+          },
+          {
+            "text": "تقاطع مع حركة الترام وحركة السيارات.",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ø¹Ù„Ø§Ù…Ø© A47 ØªØ­Ø°Ø± Ù…Ù† Ù…Ø¹Ø¨Ø± Ø°Ùˆ Ù…Ø³Ø§Ø±ÙŠÙ† Ø£Ùˆ Ø£ÙƒØ«Ø±. Ù‚Ø·Ø§Ø± Ø«Ø§Ù†Ù Ø¹Ù„Ù‰ Ù…Ø³Ø§Ø± Ø¢Ø®Ø± Ù‚Ø¯ ÙŠØªØ¨Ø¹ Ø§Ù„Ø£ÙˆÙ„ Ù…Ø¨Ø§Ø´Ø±Ø©."
+        "explanation": "الخطر هو أنك تقترب من معبر سكة حديد بمسارين أو أكثر. بعد مرور قطار، قد يتبعه قطار آخر فوراً على مسار مختلف، لذلك ينبغي أن تستمر في التحقق من جميع المسارات."
       }
     }
   },
@@ -142,40 +214,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat moet u doen wanneer u dit bord ziet bij een overweg met meerdere sporen?",
+        "question": "Wat doet u best wanneer u dit bord ziet bij een overweg met meerdere sporen?",
         "choices": [
-          {"text": "Na de eerste trein wachten en alle sporen controleren voordat u de overweg oversteekt.", "is_correct": true},
-          {"text": "Direct na de eerste trein oversteken terwijl de overweg leeg lijkt.", "is_correct": false},
-          {"text": "Alleen kijken of er geen trein op het eerste spoor nadert.", "is_correct": false}
+          {
+            "text": "Na de eerste trein wachten en alle sporen controleren voordat u oversteekt.",
+            "is_correct": true
+          },
+          {
+            "text": "Direct na de eerste trein oversteken terwijl de overweg leeg lijkt.",
+            "is_correct": false
+          },
+          {
+            "text": "Alleen kijken of er geen trein op het eerste spoor nadert.",
+            "is_correct": false
+          }
         ],
-        "explanation": "Bij meerdere sporen moet u na elke trein alle sporen controleren. Een tweede trein kan onmiddellijk na de eerste rijden op een ander spoor."
+        "explanation": "Ga nooit ervan uit dat de overweg vrij is na de eerste trein. Wacht en controleer alle sporen opnieuw, want op een ander spoor kan meteen nog een trein volgen."
       },
       "EN": {
-        "question": "What must you do when you see this sign at a multi-track crossing?",
+        "question": "What should you do when you see this sign at a level crossing with multiple tracks?",
         "choices": [
-          {"text": "After the first train, wait and check all tracks before crossing.", "is_correct": true},
-          {"text": "Cross immediately after the first train while the crossing looks empty.", "is_correct": false},
-          {"text": "Only check if no train is approaching on the first track.", "is_correct": false}
+          {
+            "text": "After the first train, wait and check all tracks before crossing.",
+            "is_correct": true
+          },
+          {
+            "text": "Cross immediately after the first train while the level crossing looks empty.",
+            "is_correct": false
+          },
+          {
+            "text": "Only check whether no train is approaching on the first track.",
+            "is_correct": false
+          }
         ],
-        "explanation": "With multiple tracks you must check all tracks after each train. A second train may travel immediately after the first on another track."
+        "explanation": "Never assume the level crossing is clear after the first train. Wait and check all tracks again, because another train may immediately follow on a different track."
       },
       "FR": {
-        "question": "Que devez-vous faire lorsque vous voyez ce panneau Ã  un passage Ã  plusieurs voies?",
+        "question": "Que devriez-vous faire lorsque vous voyez ce panneau à un passage à plusieurs voies ?",
         "choices": [
-          {"text": "AprÃ¨s le premier train, attendre et vÃ©rifier toutes les voies avant de traverser.", "is_correct": true},
-          {"text": "Traverser immÃ©diatement aprÃ¨s le premier train quand le passage semble libre.", "is_correct": false},
-          {"text": "VÃ©rifier seulement si aucun train n'approche sur la premiÃ¨re voie.", "is_correct": false}
+          {
+            "text": "Après le premier train, attendre et vérifier toutes les voies avant de traverser.",
+            "is_correct": true
+          },
+          {
+            "text": "Traverser immédiatement après le premier train alors que le passage semble libre.",
+            "is_correct": false
+          },
+          {
+            "text": "Vérifier seulement si aucun train n'approche sur la première voie.",
+            "is_correct": false
+          }
         ],
-        "explanation": "Avec plusieurs voies, vous devez vÃ©rifier toutes les voies aprÃ¨s chaque train. Un deuxiÃ¨me train peut circuler immÃ©diatement aprÃ¨s le premier sur une autre voie."
+        "explanation": "Ne supposez jamais que le passage est libre après le premier train. Attendez et vérifiez à nouveau toutes les voies, car un autre train peut immédiatement suivre sur une voie différente."
       },
       "AR": {
-        "question": "Ù…Ø§Ø°Ø§ ÙŠØ¬Ø¨ Ø£Ù† ØªÙØ¹Ù„ Ø¹Ù†Ø¯ Ø±Ø¤ÙŠØ© Ù‡Ø°Ù‡ Ø§Ù„Ø¹Ù„Ø§Ù…Ø© Ø¹Ù†Ø¯ Ù…Ø¹Ø¨Ø± Ù…ØªØ¹Ø¯Ø¯ Ø§Ù„Ù…Ø³Ø§Ø±Ø§ØªØŸ",
+        "question": "ماذا ينبغي أن تفعل عند رؤية هذه العلامة عند معبر سكة حديد بمسارين أو أكثر؟",
         "choices": [
-          {"text": "Ø¨Ø¹Ø¯ Ø§Ù„Ù‚Ø·Ø§Ø± Ø§Ù„Ø£ÙˆÙ„ØŒ Ø§Ù†ØªØ¸Ø± ÙˆØªØ­Ù‚Ù‚ Ù…Ù† Ø¬Ù…ÙŠØ¹ Ø§Ù„Ù…Ø³Ø§Ø±Ø§Øª Ù‚Ø¨Ù„ Ø§Ù„Ø¹Ø¨ÙˆØ±.", "is_correct": true},
-          {"text": "Ø§Ø¹Ø¨Ø± Ù…Ø¨Ø§Ø´Ø±Ø© Ø¨Ø¹Ø¯ Ø§Ù„Ù‚Ø·Ø§Ø± Ø§Ù„Ø£ÙˆÙ„ Ø¹Ù†Ø¯Ù…Ø§ ÙŠØ¨Ø¯Ùˆ Ø§Ù„Ù…Ø¹Ø¨Ø± ÙØ§Ø±ØºØ§Ù‹.", "is_correct": false},
-          {"text": "ØªØ­Ù‚Ù‚ ÙÙ‚Ø· Ù…Ù…Ø§ Ø¥Ø°Ø§ ÙƒØ§Ù† Ù„Ø§ ÙŠÙ‚ØªØ±Ø¨ Ù‚Ø·Ø§Ø± Ø¹Ù„Ù‰ Ø§Ù„Ù…Ø³Ø§Ø± Ø§Ù„Ø£ÙˆÙ„.", "is_correct": false}
+          {
+            "text": "بعد مرور القطار الأول، انتظر وتحقق من جميع المسارات قبل العبور.",
+            "is_correct": true
+          },
+          {
+            "text": "اعبر مباشرة بعد القطار الأول عندما يبدو المعبر خالياً.",
+            "is_correct": false
+          },
+          {
+            "text": "تحقق فقط مما إذا كان لا يقترب قطار على المسار الأول.",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ù…Ø¹ Ù…Ø³Ø§Ø±Ø§Øª Ù…ØªØ¹Ø¯Ø¯Ø© ÙŠØ¬Ø¨ Ø§Ù„ØªØ­Ù‚Ù‚ Ù…Ù† Ø¬Ù…ÙŠØ¹ Ø§Ù„Ù…Ø³Ø§Ø±Ø§Øª Ø¨Ø¹Ø¯ ÙƒÙ„ Ù‚Ø·Ø§Ø±. Ù‚Ø¯ ÙŠØ³ÙŠØ± Ù‚Ø·Ø§Ø± Ø«Ø§Ù†Ù Ù…Ø¨Ø§Ø´Ø±Ø© Ø¨Ø¹Ø¯ Ø§Ù„Ø£ÙˆÙ„ Ø¹Ù„Ù‰ Ù…Ø³Ø§Ø± Ø¢Ø®Ø±."
+        "explanation": "لا تفترض أبداً أن المعبر أصبح خالياً بعد القطار الأول. انتظر وتحقق من جميع المسارات مرة أخرى، فقد يتبع القطارَ الأولَ قطارٌ آخر فوراً على مسار مختلف."
       }
     }
   },
@@ -187,40 +295,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Welk rijgedrag is correct bij een spoorwegovergang met meerdere sporen?",
+        "question": "Welk rijgedrag is correct bij een overweg voor twee of meer sporen?",
         "choices": [
-          {"text": "Volledig stoppen, alle sporen in beide richtingen controleren en pas rijden als alle sporen veilig zijn.", "is_correct": true},
-          {"text": "Stoppen na de eerste trein en dan direct rijden.", "is_correct": false},
-          {"text": "Langzaam rijden en alleen stoppen als u een trein ziet.", "is_correct": false}
+          {
+            "text": "Volledig stoppen, alle sporen in beide richtingen controleren en pas rijden als alle sporen vrij zijn.",
+            "is_correct": true
+          },
+          {
+            "text": "Stoppen na de eerste trein en dan direct rijden.",
+            "is_correct": false
+          },
+          {
+            "text": "Langzaam rijden en alleen stoppen als u een trein ziet.",
+            "is_correct": false
+          }
         ],
-        "explanation": "Bij een overweg met meerdere sporen is extra voorzichtigheid vereist. Controleer elk spoor afzonderlijk in beide richtingen voor u de overweg oprijdt."
+        "explanation": "Bij een overweg met meerdere sporen doet u er goed aan volledig te stoppen en elk spoor in beide richtingen te controleren. Rijd pas verder wanneer alle sporen volledig vrij zijn."
       },
       "EN": {
-        "question": "What driving behaviour is correct at a multi-track level crossing?",
+        "question": "What driving behaviour is correct at a level crossing with two or more tracks?",
         "choices": [
-          {"text": "Stop completely, check all tracks in both directions, and only proceed when all tracks are clear.", "is_correct": true},
-          {"text": "Stop after the first train and then drive immediately.", "is_correct": false},
-          {"text": "Drive slowly and only stop if you see a train.", "is_correct": false}
+          {
+            "text": "Stop completely, check all tracks in both directions, and proceed only when all tracks are clear.",
+            "is_correct": true
+          },
+          {
+            "text": "Stop after the first train and then drive immediately.",
+            "is_correct": false
+          },
+          {
+            "text": "Drive slowly and only stop if you see a train.",
+            "is_correct": false
+          }
         ],
-        "explanation": "At a multi-track crossing extra caution is required. Check each track individually in both directions before driving onto the crossing."
+        "explanation": "At a level crossing with two or more tracks, you should stop completely and check each track in both directions. Proceed only when every track is fully clear."
       },
       "FR": {
-        "question": "Quel comportement de conduite est correct Ã  un passage Ã  niveau Ã  plusieurs voies?",
+        "question": "Quel comportement de conduite est correct à un passage à niveau à deux voies ou plus ?",
         "choices": [
-          {"text": "S'arrÃªter complÃ¨tement, vÃ©rifier toutes les voies dans les deux sens et ne s'engager que quand toutes les voies sont libres.", "is_correct": true},
-          {"text": "S'arrÃªter aprÃ¨s le premier train et partir immÃ©diatement.", "is_correct": false},
-          {"text": "Rouler lentement et ne s'arrÃªter que si vous voyez un train.", "is_correct": false}
+          {
+            "text": "S'arrêter complètement, vérifier toutes les voies dans les deux sens et ne s'engager que lorsque toutes les voies sont libres.",
+            "is_correct": true
+          },
+          {
+            "text": "S'arrêter après le premier train et partir immédiatement.",
+            "is_correct": false
+          },
+          {
+            "text": "Rouler lentement et ne s'arrêter que si vous voyez un train.",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ã€ un passage Ã  plusieurs voies, une prudence supplÃ©mentaire est requise. VÃ©rifiez chaque voie individuellement dans les deux sens avant de vous engager sur le passage."
+        "explanation": "À un passage à niveau à deux voies ou plus, vous devriez vous arrêter complètement et vérifier chaque voie dans les deux sens. Ne vous engagez que lorsque toutes les voies sont entièrement libres."
       },
       "AR": {
-        "question": "Ù…Ø§ Ù‡Ùˆ Ø³Ù„ÙˆÙƒ Ø§Ù„Ù‚ÙŠØ§Ø¯Ø© Ø§Ù„ØµØ­ÙŠØ­ Ø¹Ù†Ø¯ Ù…Ø¹Ø¨Ø± Ø³ÙƒØ© Ø­Ø¯ÙŠØ¯ Ù…ØªØ¹Ø¯Ø¯ Ø§Ù„Ù…Ø³Ø§Ø±Ø§ØªØŸ",
+        "question": "ما هو سلوك القيادة الصحيح عند معبر سكة حديد بمسارين أو أكثر؟",
         "choices": [
-          {"text": "ØªÙˆÙ‚Ù ØªÙ…Ø§Ù…Ø§Ù‹ØŒ ØªØ­Ù‚Ù‚ Ù…Ù† Ø¬Ù…ÙŠØ¹ Ø§Ù„Ù…Ø³Ø§Ø±Ø§Øª ÙÙŠ ÙƒÙ„Ø§ Ø§Ù„Ø§ØªØ¬Ø§Ù‡ÙŠÙ†ØŒ ÙˆØªØ§Ø¨Ø¹ ÙÙ‚Ø· Ø¹Ù†Ø¯Ù…Ø§ ØªÙƒÙˆÙ† Ø¬Ù…ÙŠØ¹ Ø§Ù„Ù…Ø³Ø§Ø±Ø§Øª Ø®Ø§Ù„ÙŠØ©.", "is_correct": true},
-          {"text": "ØªÙˆÙ‚Ù Ø¨Ø¹Ø¯ Ø§Ù„Ù‚Ø·Ø§Ø± Ø§Ù„Ø£ÙˆÙ„ Ø«Ù… Ø§Ù†Ø·Ù„Ù‚ Ù…Ø¨Ø§Ø´Ø±Ø©.", "is_correct": false},
-          {"text": "Ø³ÙØ± Ø¨Ø¨Ø·Ø¡ ÙˆØªÙˆÙ‚Ù ÙÙ‚Ø· Ø¥Ø°Ø§ Ø±Ø£ÙŠØª Ù‚Ø·Ø§Ø±Ø§Ù‹.", "is_correct": false}
+          {
+            "text": "توقف تماماً، تحقق من جميع المسارات في كلا الاتجاهين، وتابع فقط عندما تكون جميع المسارات خالية.",
+            "is_correct": true
+          },
+          {
+            "text": "توقف بعد القطار الأول ثم انطلق مباشرة.",
+            "is_correct": false
+          },
+          {
+            "text": "سِر ببطء وتوقف فقط إذا رأيت قطاراً.",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ø¹Ù†Ø¯ Ù…Ø¹Ø¨Ø± Ù…ØªØ¹Ø¯Ø¯ Ø§Ù„Ù…Ø³Ø§Ø±Ø§Øª ÙŠÙ„Ø²Ù… ØªÙˆØ®ÙŠ Ø§Ù„Ø­Ø°Ø± Ø§Ù„Ø¥Ø¶Ø§ÙÙŠ. ØªØ­Ù‚Ù‚ Ù…Ù† ÙƒÙ„ Ù…Ø³Ø§Ø± Ø¹Ù„Ù‰ Ø­Ø¯Ø© ÙÙŠ ÙƒÙ„Ø§ Ø§Ù„Ø§ØªØ¬Ø§Ù‡ÙŠÙ† Ù‚Ø¨Ù„ Ø§Ù„Ø¯Ø®ÙˆÙ„ Ø¥Ù„Ù‰ Ø§Ù„Ù…Ø¹Ø¨Ø±."
+        "explanation": "عند معبر سكة حديد بمسارين أو أكثر ينبغي أن تتوقف تماماً وأن تتحقق من كل مسار في كلا الاتجاهين. لا تتابع السير إلا عندما تكون جميع المسارات خالية تماماً."
       }
     }
   },
@@ -232,40 +376,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Op welke afstand wordt dit gevaarsbord buiten de bebouwde kom geplaatst?",
+        "question": "Op welke afstand van het gevaar wordt dit bord geplaatst?",
         "choices": [
-          {"text": "Â±150 meter voor het gevaar", "is_correct": true},
-          {"text": "Ter hoogte van het gevaar zelf", "is_correct": false},
-          {"text": "500 meter voor het gevaar", "is_correct": false}
+          {
+            "text": "Ter hoogte van het gevaar zelf, bij de overweg.",
+            "is_correct": true
+          },
+          {
+            "text": "Ongeveer 150 meter voor het gevaar.",
+            "is_correct": false
+          },
+          {
+            "text": "Ongeveer 500 meter voor het gevaar.",
+            "is_correct": false
+          }
         ],
-        "explanation": "Buiten de bebouwde kom wordt een gevaarsbord op Â±150 meter voor het gevaar geplaatst. Binnen de bebouwde kom is dat Â±50 meter."
+        "explanation": "Deze markering is geen vooraankondiging op afstand. Ze staat bij de overweg zelf en duidt precies de plaats van het gevaar aan."
       },
       "EN": {
-        "question": "At what distance is this danger sign placed outside built-up areas?",
+        "question": "At what distance from the hazard is this sign placed?",
         "choices": [
-          {"text": "Â±150 meters before the hazard", "is_correct": true},
-          {"text": "At the location of the hazard itself", "is_correct": false},
-          {"text": "500 meters before the hazard", "is_correct": false}
+          {
+            "text": "At the hazard itself, at the level crossing.",
+            "is_correct": true
+          },
+          {
+            "text": "About 150 meters before the hazard.",
+            "is_correct": false
+          },
+          {
+            "text": "About 500 meters before the hazard.",
+            "is_correct": false
+          }
         ],
-        "explanation": "Outside built-up areas, a danger sign is placed Â±150 meters before the hazard. Inside built-up areas it is Â±50 meters."
+        "explanation": "This marker is not an advance warning sign placed at a distance. It stands at the level crossing itself and marks the exact place of the hazard."
       },
       "FR": {
-        "question": "Ã€ quelle distance ce panneau de danger est-il placÃ© hors agglomÃ©ration?",
+        "question": "À quelle distance du danger ce panneau est-il placé ?",
         "choices": [
-          {"text": "Â±150 mÃ¨tres avant le danger", "is_correct": true},
-          {"text": "Ã€ l'endroit mÃªme du danger", "is_correct": false},
-          {"text": "500 mÃ¨tres avant le danger", "is_correct": false}
+          {
+            "text": "À l'endroit même du danger, au passage à niveau.",
+            "is_correct": true
+          },
+          {
+            "text": "À environ 150 mètres avant le danger.",
+            "is_correct": false
+          },
+          {
+            "text": "À environ 500 mètres avant le danger.",
+            "is_correct": false
+          }
         ],
-        "explanation": "Hors agglomÃ©ration, un panneau de danger est placÃ© Ã  Â±150 mÃ¨tres avant le danger. En agglomÃ©ration, c'est Â±50 mÃ¨tres."
+        "explanation": "Ce marquage n'est pas un panneau d'annonce placé à distance. Il se trouve au passage à niveau lui-même et indique l'endroit exact du danger."
       },
       "AR": {
-        "question": "Ø¹Ù„Ù‰ Ø£ÙŠ Ù…Ø³Ø§ÙØ© ÙŠÙÙˆØ¶Ø¹ Ù‡Ø°Ø§ Ø§Ù„Ù„Ø§ÙØªØ© Ø§Ù„ØªØ­Ø°ÙŠØ±ÙŠØ© Ø®Ø§Ø±Ø¬ Ø§Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ù…Ø¨Ù†ÙŠØ©ØŸ",
+        "question": "على أي مسافة من الخطر تُوضع هذه العلامة المرورية؟",
         "choices": [
-          {"text": "Â±150 Ù…ØªØ± Ù‚Ø¨Ù„ Ø§Ù„Ø®Ø·Ø±", "is_correct": true},
-          {"text": "Ø¹Ù†Ø¯ Ù…ÙˆÙ‚Ø¹ Ø§Ù„Ø®Ø·Ø± Ù†ÙØ³Ù‡", "is_correct": false},
-          {"text": "500 Ù…ØªØ± Ù‚Ø¨Ù„ Ø§Ù„Ø®Ø·Ø±", "is_correct": false}
+          {
+            "text": "عند موقع الخطر نفسه، أي عند معبر سكة حديد.",
+            "is_correct": true
+          },
+          {
+            "text": "على بعد نحو 150 متراً قبل الخطر.",
+            "is_correct": false
+          },
+          {
+            "text": "على بعد نحو 500 متر قبل الخطر.",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ø®Ø§Ø±Ø¬ Ø§Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ù…Ø¨Ù†ÙŠØ©ØŒ ØªÙÙˆØ¶Ø¹ Ø¹Ù„Ø§Ù…Ø© Ø§Ù„Ø®Ø·Ø± Ø¹Ù„Ù‰ Ù…Ø³Ø§ÙØ© Â±150 Ù…ØªØ± Ù‚Ø¨Ù„ Ø§Ù„Ø®Ø·Ø±. Ø¯Ø§Ø®Ù„ Ø§Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ù…Ø¨Ù†ÙŠØ© ØªÙƒÙˆÙ† Ø§Ù„Ù…Ø³Ø§ÙØ© Â±50 Ù…ØªØ±."
+        "explanation": "هذه العلامة ليست علامة تحذير مسبق توضع على مسافة. بل توضع عند معبر سكة حديد نفسه وتدل على مكان الخطر بدقة."
       }
     }
   },
@@ -279,34 +459,58 @@
       "NL": {
         "question": "Mag u de overweg oprijden nadat de eerste trein is gepasseerd maar de knipperlichten nog actief zijn?",
         "choices": [
-          {"text": "Nee", "is_correct": true},
-          {"text": "Ja", "is_correct": false}
+          {
+            "text": "Nee",
+            "is_correct": true
+          },
+          {
+            "text": "Ja",
+            "is_correct": false
+          }
         ],
-        "explanation": "Er zijn meerdere sporen. Na de eerste trein kan onmiddellijk een tweede trein volgen op een ander spoor. Wacht altijd tot alle seinen veilig zijn."
+        "explanation": "Bij een overweg met meerdere sporen kan na de eerste trein meteen een tweede volgen op een ander spoor. Wacht altijd tot alle signalen uit zijn en alle sporen veilig zijn."
       },
       "EN": {
-        "question": "Is it allowed to drive onto the crossing after the first train has passed but warning lights are still active?",
+        "question": "Is it allowed to drive onto the level crossing after the first train has passed while the warning lights are still active?",
         "choices": [
-          {"text": "No", "is_correct": true},
-          {"text": "Yes", "is_correct": false}
+          {
+            "text": "No",
+            "is_correct": true
+          },
+          {
+            "text": "Yes",
+            "is_correct": false
+          }
         ],
-        "explanation": "There are multiple tracks. After the first train, a second train may follow immediately on another track. Always wait until all signals indicate it is safe."
+        "explanation": "At a level crossing with multiple tracks, a second train may follow immediately after the first on another track. Always wait until all signals are off and all tracks are safe."
       },
       "FR": {
-        "question": "Est-il permis de s'engager sur le passage aprÃ¨s le passage du premier train si les feux clignotants sont encore actifs?",
+        "question": "Est-il permis de s'engager sur le passage à niveau après le passage du premier train alors que les feux clignotants sont encore actifs ?",
         "choices": [
-          {"text": "Non", "is_correct": true},
-          {"text": "Oui", "is_correct": false}
+          {
+            "text": "Non",
+            "is_correct": true
+          },
+          {
+            "text": "Oui",
+            "is_correct": false
+          }
         ],
-        "explanation": "Il y a plusieurs voies. AprÃ¨s le premier train, un deuxiÃ¨me peut suivre immÃ©diatement sur une autre voie. Attendez toujours que tous les signaux indiquent la sÃ©curitÃ©."
+        "explanation": "À un passage à niveau à plusieurs voies, un deuxième train peut suivre immédiatement le premier sur une autre voie. Attendez toujours que tous les signaux soient éteints et que toutes les voies soient sûres."
       },
       "AR": {
-        "question": "Ù‡Ù„ ÙŠÙØ³Ù…Ø­ Ø¨Ø§Ù„Ø¯Ø®ÙˆÙ„ Ø¥Ù„Ù‰ Ø§Ù„Ù…Ø¹Ø¨Ø± Ø¨Ø¹Ø¯ Ù…Ø±ÙˆØ± Ø§Ù„Ù‚Ø·Ø§Ø± Ø§Ù„Ø£ÙˆÙ„ Ø¨ÙŠÙ†Ù…Ø§ Ù„Ø§ ØªØ²Ø§Ù„ Ø£Ø¶ÙˆØ§Ø¡ Ø§Ù„ØªØ­Ø°ÙŠØ± Ù†Ø´Ø·Ø©ØŸ",
+        "question": "هل يُسمح بالدخول إلى معبر سكة حديد بعد مرور القطار الأول بينما لا تزال أضواء التحذير نشطة؟",
         "choices": [
-          {"text": "Ù„Ø§", "is_correct": true},
-          {"text": "Ù†Ø¹Ù…", "is_correct": false}
+          {
+            "text": "لا",
+            "is_correct": true
+          },
+          {
+            "text": "نعم",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ù‡Ù†Ø§Ùƒ Ù…Ø³Ø§Ø±Ø§Øª Ù…ØªØ¹Ø¯Ø¯Ø©. Ø¨Ø¹Ø¯ Ø§Ù„Ù‚Ø·Ø§Ø± Ø§Ù„Ø£ÙˆÙ„ØŒ Ù‚Ø¯ ÙŠØªØ¨Ø¹Ù‡ Ù‚Ø·Ø§Ø± Ø«Ø§Ù†Ù Ù…Ø¨Ø§Ø´Ø±Ø© Ø¹Ù„Ù‰ Ù…Ø³Ø§Ø± Ø¢Ø®Ø±. Ø§Ù†ØªØ¸Ø± Ø¯Ø§Ø¦Ù…Ø§Ù‹ Ø­ØªÙ‰ ØªØ´ÙŠØ± Ø¬Ù…ÙŠØ¹ Ø§Ù„Ø¥Ø´Ø§Ø±Ø§Øª Ø¥Ù„Ù‰ Ø§Ù„Ø£Ù…Ø§Ù†."
+        "explanation": "عند معبر سكة حديد بمسارات متعددة قد يتبع القطارَ الأولَ قطارٌ ثانٍ فوراً على مسار آخر. انتظر دائماً حتى تنطفئ جميع الإشارات وتصبح كل المسارات آمنة."
       }
     }
   },
@@ -318,36 +522,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Mag u stoppen op de spoorwegovergang om anderen te laten passeren?",
+        "question": "Mag u stoppen op de overweg om anderen te laten passeren?",
         "choices": [
-          {"text": "Nee", "is_correct": true},
-          {"text": "Ja", "is_correct": false}
+          {
+            "text": "Nee",
+            "is_correct": true
+          },
+          {
+            "text": "Ja",
+            "is_correct": false
+          }
         ],
-        "explanation": "Stoppen op de spoorwegovergang is absoluut verboden en levensgevaarlijk. Als u de overweg oprijdt, moet de uitgang vrij zijn."
+        "explanation": "Stoppen op een overweg is absoluut verboden en levensgevaarlijk. Rijd alleen de overweg op wanneer de uitgang vrij is en u zonder te stoppen kunt doorrijden."
       },
       "EN": {
         "question": "Is it allowed to stop on the level crossing to let others pass?",
         "choices": [
-          {"text": "No", "is_correct": true},
-          {"text": "Yes", "is_correct": false}
+          {
+            "text": "No",
+            "is_correct": true
+          },
+          {
+            "text": "Yes",
+            "is_correct": false
+          }
         ],
-        "explanation": "Stopping on a level crossing is absolutely prohibited and life-threatening. When you drive onto the crossing, the exit must be clear."
+        "explanation": "Stopping on a level crossing is absolutely prohibited and life-threatening. Only enter the level crossing when the exit is clear and you can continue without stopping."
       },
       "FR": {
-        "question": "Est-il permis de s'arrÃªter sur le passage Ã  niveau pour laisser passer les autres?",
+        "question": "Est-il permis de s'arrêter sur le passage à niveau pour laisser passer les autres ?",
         "choices": [
-          {"text": "Non", "is_correct": true},
-          {"text": "Oui", "is_correct": false}
+          {
+            "text": "Non",
+            "is_correct": true
+          },
+          {
+            "text": "Oui",
+            "is_correct": false
+          }
         ],
-        "explanation": "S'arrÃªter sur un passage Ã  niveau est absolument interdit et mortel. Quand vous vous engagez sur le passage, la sortie doit Ãªtre libre."
+        "explanation": "S'arrêter sur un passage à niveau est absolument interdit et extrêmement dangereux. N'entrez sur le passage que lorsque la sortie est libre et que vous pouvez continuer sans vous arrêter."
       },
       "AR": {
-        "question": "Ù‡Ù„ ÙŠÙØ³Ù…Ø­ Ø¨Ø§Ù„ØªÙˆÙ‚Ù Ø¹Ù„Ù‰ Ù…Ø¹Ø¨Ø± Ø§Ù„Ø³ÙƒØ© Ø§Ù„Ø­Ø¯ÙŠØ¯ÙŠØ© Ù„Ù„Ø³Ù…Ø§Ø­ Ù„Ù„Ø¢Ø®Ø±ÙŠÙ† Ø¨Ø§Ù„Ù…Ø±ÙˆØ±ØŸ",
+        "question": "هل يُسمح بالتوقف على معبر سكة حديد للسماح للآخرين بالمرور؟",
         "choices": [
-          {"text": "Ù„Ø§", "is_correct": true},
-          {"text": "Ù†Ø¹Ù…", "is_correct": false}
+          {
+            "text": "لا",
+            "is_correct": true
+          },
+          {
+            "text": "نعم",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ø§Ù„ØªÙˆÙ‚Ù Ø¹Ù„Ù‰ Ù…Ø¹Ø¨Ø± Ø§Ù„Ø³ÙƒØ© Ø§Ù„Ø­Ø¯ÙŠØ¯ÙŠØ© Ù…Ø­Ø¸ÙˆØ± ØªÙ…Ø§Ù…Ø§Ù‹ ÙˆÙ…Ù…ÙŠØª. Ø¹Ù†Ø¯Ù…Ø§ ØªØ¯Ø®Ù„ Ø§Ù„Ù…Ø¹Ø¨Ø± ÙŠØ¬Ø¨ Ø£Ù† ÙŠÙƒÙˆÙ† Ø§Ù„Ù…Ø®Ø±Ø¬ Ø®Ø§Ù„ÙŠØ§Ù‹."
+        "explanation": "التوقف على معبر سكة حديد محظور تماماً وشديد الخطورة. لا تدخل المعبر إلا عندما يكون المخرج خالياً ويمكنك المتابعة دون توقف."
       }
     }
   }

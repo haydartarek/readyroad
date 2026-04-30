@@ -6,6 +6,9 @@ import com.readyroad.readyroadbackend.domain.entity.SignQuestion;
 import com.readyroad.readyroadbackend.domain.enums.SignCategory;
 import com.readyroad.readyroadbackend.domain.enums.SignDifficulty;
 import com.readyroad.readyroadbackend.domain.enums.SignQuestionType;
+import com.readyroad.readyroadbackend.service.RoadSignReferenceTextResolver;
+import com.readyroad.readyroadbackend.util.DrivingTextSanitizer;
+import com.readyroad.readyroadbackend.util.SignQuestionTextSanitizer;
 
 import java.util.List;
 
@@ -76,19 +79,63 @@ public record RoadSignDetailDto(
                 String  textAr
         ) {
             public static ChoiceDto from(SignChoice c) {
+                return from(c, null);
+            }
+
+            public static ChoiceDto from(SignChoice c, RoadSignReferenceTextResolver resolver) {
                 return new ChoiceDto(
                         c.getId(),
                         c.getDisplayOrder() != null ? c.getDisplayOrder() : 0,
                         Boolean.TRUE.equals(c.getIsCorrect()),
-                        c.getTextNl(),
-                        c.getTextEn(),
-                        c.getTextFr(),
-                        c.getTextAr()
+                        resolveChoice(resolver, c.getQuestion() != null ? c.getQuestion().getQuestionType() : null, c.getTextNl(), "NL"),
+                        resolveChoice(resolver, c.getQuestion() != null ? c.getQuestion().getQuestionType() : null, c.getTextEn(), "EN"),
+                        resolveChoice(resolver, c.getQuestion() != null ? c.getQuestion().getQuestionType() : null, c.getTextFr(), "FR"),
+                        resolveChoice(resolver, c.getQuestion() != null ? c.getQuestion().getQuestionType() : null, c.getTextAr(), "AR")
                 );
+            }
+
+            static String resolve(RoadSignReferenceTextResolver resolver, String value, String language) {
+                String sanitized = DrivingTextSanitizer.sanitize(language, value);
+                if (resolver == null) {
+                    return sanitized;
+                }
+
+                return switch (language) {
+                    case "NL" -> resolver.resolveNl(sanitized);
+                    case "EN" -> resolver.resolveEn(sanitized);
+                    case "FR" -> resolver.resolveFr(sanitized);
+                    case "AR" -> resolver.resolveAr(sanitized);
+                    default -> sanitized;
+                };
+            }
+
+            static String resolveChoice(
+                    RoadSignReferenceTextResolver resolver,
+                    SignQuestionType questionType,
+                    String value,
+                    String language) {
+                String sanitized = questionType == null
+                        ? DrivingTextSanitizer.sanitize(language, value)
+                        : SignQuestionTextSanitizer.sanitizeChoice(questionType, language, value);
+                if (resolver == null) {
+                    return sanitized;
+                }
+
+                return switch (language) {
+                    case "NL" -> resolver.resolveNl(sanitized);
+                    case "EN" -> resolver.resolveEn(sanitized);
+                    case "FR" -> resolver.resolveFr(sanitized);
+                    case "AR" -> resolver.resolveAr(sanitized);
+                    default -> sanitized;
+                };
             }
         }
 
         public static QuestionDto from(SignQuestion q) {
+            return from(q, null);
+        }
+
+        public static QuestionDto from(SignQuestion q, RoadSignReferenceTextResolver resolver) {
             return new QuestionDto(
                     q.getId(),
                     q.getQuestionRef(),
@@ -96,16 +143,34 @@ public record RoadSignDetailDto(
                     q.getDifficulty(),
                     Boolean.TRUE.equals(q.getIsCritical()),
                     Boolean.TRUE.equals(q.getShowSign()),
-                    q.getQuestionNl(),
-                    q.getQuestionEn(),
-                    q.getQuestionFr(),
-                    q.getQuestionAr(),
-                    q.getExplanationNl(),
-                    q.getExplanationEn(),
-                    q.getExplanationFr(),
-                    q.getExplanationAr(),
-                    q.getChoices().stream().map(ChoiceDto::from).toList()
+                    resolveQuestion(resolver, q.getQuestionType(), q.getQuestionNl(), "NL"),
+                    resolveQuestion(resolver, q.getQuestionType(), q.getQuestionEn(), "EN"),
+                    resolveQuestion(resolver, q.getQuestionType(), q.getQuestionFr(), "FR"),
+                    resolveQuestion(resolver, q.getQuestionType(), q.getQuestionAr(), "AR"),
+                    resolveExplanation(resolver, q.getQuestionType(), q.getExplanationNl(), "NL"),
+                    resolveExplanation(resolver, q.getQuestionType(), q.getExplanationEn(), "EN"),
+                    resolveExplanation(resolver, q.getQuestionType(), q.getExplanationFr(), "FR"),
+                    resolveExplanation(resolver, q.getQuestionType(), q.getExplanationAr(), "AR"),
+                    q.getDeliverableChoices().stream().map(choice -> ChoiceDto.from(choice, resolver)).toList()
             );
+        }
+
+        private static String resolveQuestion(
+                RoadSignReferenceTextResolver resolver,
+                SignQuestionType questionType,
+                String value,
+                String language) {
+            String sanitized = SignQuestionTextSanitizer.sanitizeQuestion(questionType, language, value);
+            return ChoiceDto.resolve(resolver, sanitized, language);
+        }
+
+        private static String resolveExplanation(
+                RoadSignReferenceTextResolver resolver,
+                SignQuestionType questionType,
+                String value,
+                String language) {
+            String sanitized = SignQuestionTextSanitizer.sanitizeExplanation(questionType, language, value);
+            return ChoiceDto.resolve(resolver, sanitized, language);
         }
     }
 
@@ -116,6 +181,10 @@ public record RoadSignDetailDto(
      * Must be called while a JPA transaction is active so lazy collections load.
      */
     public static RoadSignDetailDto from(RoadSign s) {
+        return from(s, null);
+    }
+
+    public static RoadSignDetailDto from(RoadSign s, RoadSignReferenceTextResolver resolver) {
         return new RoadSignDetailDto(
                 s.getId(),
                 s.getSignCode(),
@@ -133,7 +202,7 @@ public record RoadSignDetailDto(
                 Boolean.TRUE.equals(s.getIsActive()),
                 s.getQuestions().stream()
                         .filter(q -> Boolean.TRUE.equals(q.getIsActive()))
-                        .map(QuestionDto::from)
+                        .map(q -> QuestionDto.from(q, resolver))
                         .toList()
         );
     }

@@ -1,5 +1,6 @@
 package com.readyroad.readyroadbackend.dto.sign;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 /**
@@ -7,8 +8,16 @@ import java.util.List;
  * Reveals correctness for every question (post-exam feedback).
  */
 public record SignExamResultDto(
+        Long resultId,
         String signCode,
+        String routeCode,
+        String signImagePath,
+        String nameNl,
+        String nameEn,
+        String nameFr,
+        String nameAr,
         int    examNumber,
+        LocalDateTime completedAt,
 
         // ── Score summary ──────────────────────────────────────────────────
         int    totalLinked,
@@ -18,7 +27,7 @@ public record SignExamResultDto(
         int    wrongAnswers,
         double scorePercentage,
 
-        /** Minimum correct answers needed to pass (ceil(totalLinked × 0.8)). */
+    /** Minimum correct answers needed to pass (configured exam passing score). */
         int     passingThreshold,
         boolean passed,
         /** "PASSED" or "FAILED" */

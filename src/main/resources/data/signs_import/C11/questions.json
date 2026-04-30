@@ -1,10 +1,602 @@
-﻿[
-  {"question_id":"C11_Q01","type":"WHAT_DOES_IT_MEAN","difficulty":"EASY","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Wat betekent dit verkeersbord?","choices":[{"text":"Verboden toegang voor bestuurders van rijwielen met motor","is_correct":true},{"text":"Verboden toegang voor fietsers en bromfietsers","is_correct":false},{"text":"Verboden toegang voor tweewielige fietsen","is_correct":false}],"explanation":"C11 verbiedt rijwielen met motor toegang, d.w.z. motorfietsen en scooters met motor. Het maakt geen onderscheid tussen lichte of zware motoren."},"EN":{"question":"What does this traffic sign mean?","choices":[{"text":"No motorized bicycles","is_correct":true},{"text":"No bicycles and mopeds","is_correct":false},{"text":"No bicycles","is_correct":false}],"explanation":"C11 prohibits motorized bicycles, i.e. motorcycles and motor scooters. It does not distinguish between light or heavy engines."},"FR":{"question":"Que signifie ce panneau de signalisation ?","choices":[{"text":"Acces interdit aux conducteurs de cyclomoteurs","is_correct":true},{"text":"Acces interdit aux cyclistes et cyclomotoristes","is_correct":false},{"text":"Acces interdit aux velos","is_correct":false}],"explanation":"C11 interdit aux cyclomoteurs l acces, c est-a-dire les motos et scooters motorises. Il ne distingue pas entre moteurs legers et lourds."},"AR":{"question":"Ù…Ø§Ø°Ø§ ØªØ¹Ù†ÙŠ Ù„Ø§ÙØªØ© Ø§Ù„Ù…Ø±ÙˆØ± Ù‡Ø°Ù‡ØŸ","choices":[{"text":"Ù…Ù…Ù†ÙˆØ¹ Ø¯Ø®ÙˆÙ„ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ù„Ù†Ø§Ø±ÙŠØ© Ø§Ù„ØµØºÙŠØ±Ø©","is_correct":true},{"text":"Ù…Ù…Ù†ÙˆØ¹ Ø¯Ø®ÙˆÙ„ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ù„Ù‡ÙˆØ§Ø¦ÙŠØ© ÙˆØ§Ù„Ù†Ø§Ø±ÙŠØ© Ø§Ù„ØµØºÙŠØ±Ø©","is_correct":false},{"text":"Ù…Ù…Ù†ÙˆØ¹ Ø¯Ø®ÙˆÙ„ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ù„Ù‡ÙˆØ§Ø¦ÙŠØ©","is_correct":false}],"explanation":"ØªØ­Ø¸Ø± C11 Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ù„Ù†Ø§Ø±ÙŠØ© Ù…Ù† Ø§Ù„Ø¯Ø®ÙˆÙ„ØŒ Ø§ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ù„Ù†Ø§Ø±ÙŠØ© ÙˆØ³ÙƒÙˆØªØ±. Ù„Ø§ ØªÙØ±Ù‚ Ø¨ÙŠÙ† Ø§Ù„Ù…Ø­Ø±ÙƒØ§Øª Ø§Ù„Ø®ÙÙŠÙØ© ÙˆØ§Ù„Ø«Ù‚ÙŠÙ„Ø©."}}},
-  {"question_id":"C11_Q02","type":"WHICH_SIGN","difficulty":"EASY","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Tot welke categorie verkeersborden behoort dit bord?","choices":[{"text":"Verbodsborden (C-reeks)","is_correct":true},{"text":"Gevaarsborden (A-reeks)","is_correct":false},{"text":"Gebodsborden (D-reeks)","is_correct":false}],"explanation":"Verbodsborden (C-reeks) zijn rond met een rode rand en witte achtergrond. Ze leggen een verbod op een bepaalde weggebruiker of handeling."},"EN":{"question":"To which category of traffic signs does this sign belong?","choices":[{"text":"Prohibition signs (C-series)","is_correct":true},{"text":"Danger signs (A-series)","is_correct":false},{"text":"Mandatory signs (D-series)","is_correct":false}],"explanation":"Prohibition signs (C-series) are round with a red border and white background. They impose a prohibition on a certain road user or action."},"FR":{"question":"A quelle categorie de panneaux de signalisation appartient ce panneau ?","choices":[{"text":"Panneaux d interdiction (serie C)","is_correct":true},{"text":"Panneaux de danger (serie A)","is_correct":false},{"text":"Panneaux d obligation (serie D)","is_correct":false}],"explanation":"Les panneaux d interdiction (serie C) sont ronds avec un bord rouge et un fond blanc. Ils imposent une interdiction a un usager ou une action specifique."},"AR":{"question":"Ø§Ù„Ù‰ Ø§ÙŠ ÙØ¦Ø© Ù…Ù† Ù„Ø§ÙØªØ§Øª Ø§Ù„Ù…Ø±ÙˆØ± ØªÙ†ØªÙ…ÙŠ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ","choices":[{"text":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø­Ø¸Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© C)","is_correct":true},{"text":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© A)","is_correct":false},{"text":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø§Ù„Ø²Ø§Ù… (Ø§Ù„Ø³Ù„Ø³Ù„Ø© D)","is_correct":false}],"explanation":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø­Ø¸Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© C) Ù…Ø³ØªØ¯ÙŠØ±Ø© Ø°Ø§Øª Ø­Ø¯ Ø§Ø­Ù…Ø± ÙˆØ®Ù„ÙÙŠØ© Ø¨ÙŠØ¶Ø§Ø¡. ÙˆÙ‡ÙŠ ØªÙØ±Ø¶ Ø­Ø¸Ø±Ø§ Ø¹Ù„Ù‰ Ù…Ø³ØªØ®Ø¯Ù… Ø·Ø±ÙŠÙ‚ Ù…Ø¹ÙŠÙ† Ø§Ùˆ ÙØ¹Ù„ Ù…Ø­Ø¯Ø¯."}}},
-  {"question_id":"C11_Q03","type":"HAZARD_IDENTIFICATION","difficulty":"EASY","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Wat verbiedt dit bord precies?","choices":[{"text":"De toegang voor alle voertuigen aangedreven door een motor en gelijkgesteld met rijwielen","is_correct":true},{"text":"De toegang voor alle tweewielers inclusief gewone fietsen","is_correct":false},{"text":"De toegang voor voertuigen zwaarder dan 3500 kg","is_correct":false}],"explanation":"C11 treft rijwielen met motor: motorfietsen en scooters van alle motorinhoud. Gewone fietsen zijn niet betrokken; voor hen bestaan afzonderlijke borden."},"EN":{"question":"What exactly does this sign prohibit?","choices":[{"text":"Entry for all vehicles powered by an engine and classified as bicycles","is_correct":true},{"text":"Entry for all two-wheelers including ordinary bicycles","is_correct":false},{"text":"Entry for vehicles heavier than 3500 kg","is_correct":false}],"explanation":"C11 affects motorized bicycles: motorcycles and scooters of all engine capacities. Ordinary bicycles are not involved; separate signs exist for them."},"FR":{"question":"Que interdit exactement ce panneau ?","choices":[{"text":"L acces a tous les vehicules propulses par un moteur et assimiles a des cycles","is_correct":true},{"text":"L acces a tous les deux-roues y compris les velos ordinaires","is_correct":false},{"text":"L acces aux vehicules de plus de 3500 kg","is_correct":false}],"explanation":"C11 concerne les cycles motorises : motos et scooters de toutes cylindrees. Les velos ordinaires ne sont pas concernes ; des panneaux separes existent pour eux."},"AR":{"question":"Ù…Ø§ Ø§Ù„Ø°ÙŠ ØªØ­Ø¸Ø±Ù‡ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ© Ø¨Ø§Ù„Ø¶Ø¨Ø·ØŸ","choices":[{"text":"Ø¯Ø®ÙˆÙ„ Ø¬Ù…ÙŠØ¹ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø°Ø§Øª Ø§Ù„Ù…Ø­Ø±Ùƒ Ø§Ù„Ù…ØµÙ†ÙØ© ÙƒØ¯Ø±Ø§Ø¬Ø§Øª","is_correct":true},{"text":"Ø¯Ø®ÙˆÙ„ Ø¬Ù…ÙŠØ¹ Ø°ÙˆÙŠ Ø§Ù„Ø¹Ø¬Ù„ØªÙŠÙ† Ø¨Ù…Ø§ ÙÙŠ Ø°Ù„Ùƒ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ù„Ø¹Ø§Ø¯ÙŠØ©","is_correct":false},{"text":"Ø¯Ø®ÙˆÙ„ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ø§Ø«Ù‚Ù„ Ù…Ù† 3500 ÙƒÙŠÙ„ÙˆØºØ±Ø§Ù…","is_correct":false}],"explanation":"ØªØ³ØªÙ‡Ø¯Ù C11 Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø°Ø§Øª Ø§Ù„Ù…Ø­Ø±Ùƒ: Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ù„Ù†Ø§Ø±ÙŠØ© ÙˆØ§Ù„Ø³ÙƒÙˆØªØ± Ø¨Ø¬Ù…ÙŠØ¹ Ø³Ø¹Ø§Øª Ø§Ù„Ù…Ø­Ø±Ùƒ. Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ù„Ø¹Ø§Ø¯ÙŠØ© ØºÙŠØ± Ù…Ø¹Ù†ÙŠØ©Ø› ØªÙˆØ¬Ø¯ Ù„Ø§ÙØªØ§Øª Ù…Ù†ÙØµÙ„Ø© Ù„Ù‡Ø§."}}},
-  {"question_id":"C11_Q04","type":"WHAT_MUST_YOU_DO","difficulty":"MEDIUM","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"U rijdt op een motorfiets en ziet bord C11. Wat doet u?","choices":[{"text":"U rijdt niet in en zoekt een andere route","is_correct":true},{"text":"U rijdt in als uw motor minder dan 50cc heeft","is_correct":false},{"text":"U rijdt in als u langzaam rijdt","is_correct":false}],"explanation":"C11 geldt voor alle motorfietsen ongeacht motorinhoud of snelheid. Er bestaat geen wettelijke uitzondering."},"EN":{"question":"You are riding a motorcycle and see sign C11. What do you do?","choices":[{"text":"Do not enter and find another route","is_correct":true},{"text":"You may enter if your motorcycle has less than 50cc","is_correct":false},{"text":"You may enter if you ride slowly","is_correct":false}],"explanation":"C11 applies to all motorcycles regardless of engine capacity or speed. No legal exception exists."},"FR":{"question":"Vous circulez a moto et voyez le panneau C11. Que faites-vous ?","choices":[{"text":"Ne pas entrer et trouver un autre itineraire","is_correct":true},{"text":"Vous pouvez entrer si votre moto fait moins de 50cc","is_correct":false},{"text":"Vous pouvez entrer si vous roulez lentement","is_correct":false}],"explanation":"C11 s applique a toutes les motos quelle que soit la cylindree ou la vitesse. Il n existe pas d exception legale."},"AR":{"question":"Ø§Ù†Øª ØªÙ‚ÙˆØ¯ Ø¯Ø±Ø§Ø¬Ø© Ù†Ø§Ø±ÙŠØ© ÙˆØªØ±Ù‰ Ù„Ø§ÙØªØ© C11. Ù…Ø§Ø°Ø§ ØªÙØ¹Ù„ØŸ","choices":[{"text":"Ù„Ø§ ØªØ¯Ø®Ù„ ÙˆØ§Ø¨Ø­Ø« Ø¹Ù† Ø·Ø±ÙŠÙ‚ Ø¢Ø®Ø±","is_correct":true},{"text":"ÙŠÙ…ÙƒÙ†Ùƒ Ø§Ù„Ø¯Ø®ÙˆÙ„ Ø§Ø°Ø§ ÙƒØ§Ù† Ù…Ø­Ø±Ùƒ Ø¯Ø±Ø§Ø¬ØªÙƒ Ø§Ù‚Ù„ Ù…Ù† 50 Ø³Ù… Ù…ÙƒØ¹Ø¨","is_correct":false},{"text":"ÙŠÙ…ÙƒÙ†Ùƒ Ø§Ù„Ø¯Ø®ÙˆÙ„ Ø§Ø°Ø§ Ø³Ø±Øª Ø¨Ø¨Ø·Ø¡","is_correct":false}],"explanation":"ØªÙ†Ø·Ø¨Ù‚ C11 Ø¹Ù„Ù‰ Ø¬Ù…ÙŠØ¹ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ù„Ù†Ø§Ø±ÙŠØ© Ø¨ØºØ¶ Ø§Ù„Ù†Ø¸Ø± Ø¹Ù† Ø³Ø¹Ø© Ø§Ù„Ù…Ø­Ø±Ùƒ Ø§Ùˆ Ø§Ù„Ø³Ø±Ø¹Ø©. Ù„Ø§ ÙŠÙˆØ¬Ø¯ Ø§Ø³ØªØ«Ù†Ø§Ø¡ Ù‚Ø§Ù†ÙˆÙ†ÙŠ."}}},
-  {"question_id":"C11_Q05","type":"WHAT_MUST_YOU_DO","difficulty":"MEDIUM","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"U rijdt op een scooter en wilt de weg inrijden die afgesloten is voor motoren (C11). Uw bestemming ligt vlakbij. Wat doet u?","choices":[{"text":"U zoekt een omweg want het bord geldt ook voor scooters","is_correct":true},{"text":"U rijdt in want snelle scooters zijn geen rijwielen met motor","is_correct":false},{"text":"U rijdt in als u een parkeerplek zoekt","is_correct":false}],"explanation":"Scooters zijn rijwielen met motor en vallen volledig onder C11. Uw bestemming of de reden van uw rit verandert niets aan het verbod."},"EN":{"question":"You are on a scooter and want to enter a road closed to motorized bicycles (C11). Your destination is nearby. What do you do?","choices":[{"text":"Take a detour because the sign also applies to scooters","is_correct":true},{"text":"Enter because fast scooters are not motorized bicycles","is_correct":false},{"text":"Enter if you are looking for a parking space","is_correct":false}],"explanation":"Scooters are motorized bicycles and fall entirely under C11. Your destination or reason for travel does not change the prohibition."},"FR":{"question":"Vous etes en scooter et voulez emprunter une route fermee aux cyclomoteurs (C11). Votre destination est a proximite. Que faites-vous ?","choices":[{"text":"Prendre un detour car le panneau s applique aussi aux scooters","is_correct":true},{"text":"Entrer car les scooters rapides ne sont pas des cyclomoteurs","is_correct":false},{"text":"Entrer si vous cherchez une place de stationnement","is_correct":false}],"explanation":"Les scooters sont des cyclomoteurs et relevent entierement du C11. Votre destination ou la raison de votre trajet ne change pas l interdiction."},"AR":{"question":"Ø§Ù†Øª Ø¹Ù„Ù‰ Ø³ÙƒÙˆØªØ± ÙˆØªØ±ÙŠØ¯ Ø¯Ø®ÙˆÙ„ Ø·Ø±ÙŠÙ‚ Ù…ØºÙ„Ù‚ Ø§Ù…Ø§Ù… Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ù„Ù†Ø§Ø±ÙŠØ© (C11). ÙˆØ¬Ù‡ØªÙƒ Ù‚Ø±ÙŠØ¨Ø©. Ù…Ø§Ø°Ø§ ØªÙØ¹Ù„ØŸ","choices":[{"text":"Ø®Ø° Ø·Ø±ÙŠÙ‚Ø§ Ù…Ù„ØªÙØ§ Ù„Ø§Ù† Ø§Ù„Ù„Ø§ÙØªØ© ØªÙ†Ø·Ø¨Ù‚ Ø§ÙŠØ¶Ø§ Ø¹Ù„Ù‰ Ø§Ù„Ø³ÙƒÙˆØªØ±","is_correct":true},{"text":"Ø§Ø¯Ø®Ù„ Ù„Ø§Ù† Ø§Ù„Ø³ÙƒÙˆØªØ± Ø§Ù„Ø³Ø±ÙŠØ¹ Ù„ÙŠØ³ Ø¯Ø±Ø§Ø¬Ø© Ù†Ø§Ø±ÙŠØ© ØµØºÙŠØ±Ø©","is_correct":false},{"text":"Ø§Ø¯Ø®Ù„ Ø§Ø°Ø§ ÙƒÙ†Øª ØªØ¨Ø­Ø« Ø¹Ù† Ù…ÙƒØ§Ù† Ù„Ù„ÙˆÙ‚ÙˆÙ","is_correct":false}],"explanation":"Ø§Ù„Ø³ÙƒÙˆØªØ± Ù‡Ùˆ Ø¯Ø±Ø§Ø¬Ø© Ù†Ø§Ø±ÙŠØ© ÙˆÙŠØ®Ø¶Ø¹ ÙƒÙ„ÙŠØ§ Ù„Ù„Ø§ÙØªØ© C11. ÙˆØ¬Ù‡ØªÙƒ Ø§Ùˆ Ø³Ø¨Ø¨ Ø±Ø­Ù„ØªÙƒ Ù„Ø§ ÙŠØºÙŠØ± Ø§Ù„Ø­Ø¸Ø±."}}},
-  {"question_id":"C11_Q06","type":"WHAT_MUST_YOU_DO","difficulty":"MEDIUM","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Welk bord verbiedt uitsluitend de toegang voor gewone fietsen zonder motor?","choices":[{"text":"C11b - Verboden toegang voor tweewielige fietsen","is_correct":true},{"text":"C11 - Verboden toegang voor rijwielen met motor","is_correct":false},{"text":"C11a - Verboden toegang voor fietsers en bromfietsers","is_correct":false}],"explanation":"C11b geldt voor gewone fietsen. C11 is voor motorfietsen. C11a verbiedt zowel fietsen als bromfietsen. Elk bord heeft zijn eigen toepassingsgebied."},"EN":{"question":"Which sign exclusively prohibits access for ordinary bicycles without an engine?","choices":[{"text":"C11b - No bicycles","is_correct":true},{"text":"C11 - No motorized bicycles","is_correct":false},{"text":"C11a - No bicycles and mopeds","is_correct":false}],"explanation":"C11b applies to ordinary bicycles. C11 is for motorcycles. C11a prohibits both bicycles and mopeds. Each sign has its own scope."},"FR":{"question":"Quel panneau interdit uniquement l acces aux velos ordinaires sans moteur ?","choices":[{"text":"C11b - Acces interdit aux velos","is_correct":true},{"text":"C11 - Acces interdit aux cyclomoteurs","is_correct":false},{"text":"C11a - Acces interdit aux cyclistes et aux cyclomotoristes","is_correct":false}],"explanation":"C11b s applique aux velos ordinaires. C11 est pour les motos. C11a interdit a la fois les velos et les cyclomoteurs. Chaque panneau a son propre champ d application."},"AR":{"question":"Ø§ÙŠ Ù„Ø§ÙØªØ© ØªØ­Ø¸Ø± Ø­ØµØ±Ø§ Ø¯Ø®ÙˆÙ„ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ù„Ø¹Ø§Ø¯ÙŠØ© Ø¨Ù„Ø§ Ù…Ø­Ø±ÙƒØŸ","choices":[{"text":"C11b - Ù…Ù…Ù†ÙˆØ¹ Ø¯Ø®ÙˆÙ„ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ù„Ù‡ÙˆØ§Ø¦ÙŠØ©","is_correct":true},{"text":"C11 - Ù…Ù…Ù†ÙˆØ¹ Ø¯Ø®ÙˆÙ„ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ù„Ù†Ø§Ø±ÙŠØ© Ø§Ù„ØµØºÙŠØ±Ø©","is_correct":false},{"text":"C11a - Ù…Ù…Ù†ÙˆØ¹ Ø¯Ø®ÙˆÙ„ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ù„Ù‡ÙˆØ§Ø¦ÙŠØ© ÙˆØ§Ù„Ù†Ø§Ø±ÙŠØ© Ø§Ù„ØµØºÙŠØ±Ø©","is_correct":false}],"explanation":"C11b ØªÙ†Ø·Ø¨Ù‚ Ø¹Ù„Ù‰ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ù„Ø¹Ø§Ø¯ÙŠØ©. C11 Ù„Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ù„Ù†Ø§Ø±ÙŠØ©. C11a ØªØ­Ø¸Ø± Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª ÙˆØ§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ù„Ù†Ø§Ø±ÙŠØ© Ø§Ù„ØµØºÙŠØ±Ø© Ù…Ø¹Ø§. Ù„ÙƒÙ„ Ù„Ø§ÙØªØ© Ù†Ø·Ø§Ù‚ ØªØ·Ø¨ÙŠÙ‚Ù‡Ø§ Ø§Ù„Ø®Ø§Øµ."}}},
-  {"question_id":"C11_Q07","type":"IS_IT_ALLOWED","difficulty":"HARD","is_critical":true,"show_sign":true,"i18n":{"NL":{"question":"Mag een motorrijder de weg inrijden als hij zijn motor aan de hand meeneemt?","choices":[{"text":"Nee, de motorrijder is een bestuurder van een rijwiel met motor en het bord C11 geldt voor hem","is_correct":true},{"text":"Ja, als de motor niet rijdend is geldt het verbod niet","is_correct":false}],"explanation":"C11 verbiedt het berijden van de weg. Een motor aan de hand meenemen valt buiten de rijverplichting, maar de motorrijder als weggebruiker blijft onderworpen aan de verkeersregels. Voorzichtigheid is geboden. Dit is een ernstige verkeersovertreding."},"EN":{"question":"May a motorcyclist enter the road by walking their motorcycle alongside them?","choices":[{"text":"No, the motorcyclist is a driver of a motorized bicycle and sign C11 applies to them","is_correct":true},{"text":"Yes, if the engine is not running the prohibition does not apply","is_correct":false}],"explanation":"C11 prohibits driving on the road. Walking a motorcycle does not constitute riding, but the road user remains subject to traffic rules. Caution is required. This is a serious traffic offence."},"FR":{"question":"Un motocycliste peut-il emprunter la route en poussant sa moto ?","choices":[{"text":"Non, le motocycliste est un conducteur de cyclomoteur et le panneau C11 s applique a lui","is_correct":true},{"text":"Oui, si le moteur ne tourne pas l interdiction ne s applique pas","is_correct":false}],"explanation":"C11 interdit de circuler sur la route. Pousser une moto ne constitue pas une conduite, mais l usager reste soumis au code de la route. La prudence s impose. Il s agit d une infraction grave au code de la route."},"AR":{"question":"Ù‡Ù„ ÙŠØ¬ÙˆØ² Ù„Ø³Ø§Ø¦Ù‚ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø© Ø§Ù„Ù†Ø§Ø±ÙŠØ© Ø¯Ø®ÙˆÙ„ Ø§Ù„Ø·Ø±ÙŠÙ‚ ÙˆØ¯ÙØ¹ Ø¯Ø±Ø§Ø¬ØªÙ‡ Ø¨Ø¬Ø§Ù†Ø¨Ù‡ØŸ","choices":[{"text":"Ù„Ø§ØŒ Ø³Ø§Ø¦Ù‚ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø© Ø§Ù„Ù†Ø§Ø±ÙŠØ© Ù‡Ùˆ Ø³Ø§Ø¦Ù‚ Ø¯Ø±Ø§Ø¬Ø© Ø¨Ù…Ø­Ø±Ùƒ ÙˆÙ„Ø§ÙØªØ© C11 ØªÙ†Ø·Ø¨Ù‚ Ø¹Ù„ÙŠÙ‡","is_correct":true},{"text":"Ù†Ø¹Ù…ØŒ Ø§Ø°Ø§ ÙƒØ§Ù† Ø§Ù„Ù…Ø­Ø±Ùƒ Ù…ØªÙˆÙ‚ÙØ§ ÙØ§Ù„Ø­Ø¸Ø± Ù„Ø§ ÙŠÙ†Ø·Ø¨Ù‚","is_correct":false}],"explanation":"ØªØ­Ø¸Ø± C11 Ø§Ù„Ø³ÙŠØ± Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±ÙŠÙ‚. Ø¯ÙØ¹ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø© Ù„Ø§ ÙŠØ¹Ø¯ Ù‚ÙŠØ§Ø¯Ø©ØŒ Ù„ÙƒÙ† Ù…Ø³ØªØ®Ø¯Ù… Ø§Ù„Ø·Ø±ÙŠÙ‚ ÙŠØ¨Ù‚Ù‰ Ø®Ø§Ø¶Ø¹Ø§ Ù„Ù‚ÙˆØ§Ø¹Ø¯ Ø§Ù„Ù…Ø±ÙˆØ±. Ø§Ù„Ø­Ø°Ø± Ø¶Ø±ÙˆØ±ÙŠ. Ù‡Ø°Ù‡ Ù…Ø®Ø§Ù„ÙØ© Ù…Ø±ÙˆØ±ÙŠØ© Ø®Ø·ÙŠØ±Ø©."}}},
-  {"question_id":"C11_Q08","type":"IS_IT_ALLOWED","difficulty":"HARD","is_critical":true,"show_sign":true,"i18n":{"NL":{"question":"Geldt bord C11 ook voor elektrische motorfietsen zonder verbrandingsmotor?","choices":[{"text":"Ja, elektrische motorfietsen zijn rijwielen met motor en vallen onder C11","is_correct":true},{"text":"Nee, C11 geldt enkel voor motoren met een verbrandingsmotor","is_correct":false}],"explanation":"Een elektrische motorfiets is wettelijk een rijwiel met motor. Het type aandrijving maakt geen verschil. C11 verbiedt toegang voor alle rijwielen met motor. Dit is een ernstige verkeersovertreding."},"EN":{"question":"Does sign C11 also apply to electric motorcycles without a combustion engine?","choices":[{"text":"Yes, electric motorcycles are motorized bicycles and fall under C11","is_correct":true},{"text":"No, C11 only applies to motorcycles with a combustion engine","is_correct":false}],"explanation":"An electric motorcycle is legally a motorized bicycle. The type of propulsion makes no difference. C11 prohibits access for all motorized bicycles. This is a serious traffic offence."},"FR":{"question":"Le panneau C11 s applique-t-il aussi aux motos electriques sans moteur a combustion ?","choices":[{"text":"Oui, les motos electriques sont des cyclomoteurs et relevent du C11","is_correct":true},{"text":"Non, C11 ne s applique qu aux motos a moteur a combustion","is_correct":false}],"explanation":"Une moto electrique est legalement un cyclomoteur. Le type de propulsion ne fait aucune difference. C11 interdit l acces a tous les cyclomoteurs. Il s agit d une infraction grave au code de la route."},"AR":{"question":"Ù‡Ù„ ØªÙ†Ø·Ø¨Ù‚ Ù„Ø§ÙØªØ© C11 Ø§ÙŠØ¶Ø§ Ø¹Ù„Ù‰ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ù„Ù†Ø§Ø±ÙŠØ© Ø§Ù„ÙƒÙ‡Ø±Ø¨Ø§Ø¦ÙŠØ© Ø¨Ù„Ø§ Ù…Ø­Ø±Ùƒ Ø§Ø­ØªØ±Ø§Ù‚ØŸ","choices":[{"text":"Ù†Ø¹Ù…ØŒ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ù„Ù†Ø§Ø±ÙŠØ© Ø§Ù„ÙƒÙ‡Ø±Ø¨Ø§Ø¦ÙŠØ© Ù‡ÙŠ Ø¯Ø±Ø§Ø¬Ø§Øª Ø¨Ù…Ø­Ø±Ùƒ ÙˆØªØ®Ø¶Ø¹ Ù„Ù„Ø§ÙØªØ© C11","is_correct":true},{"text":"Ù„Ø§ØŒ C11 ØªÙ†Ø·Ø¨Ù‚ ÙÙ‚Ø· Ø¹Ù„Ù‰ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø°Ø§Øª Ù…Ø­Ø±Ùƒ Ø§Ù„Ø§Ø­ØªØ±Ø§Ù‚","is_correct":false}],"explanation":"Ø§Ù„Ø¯Ø±Ø§Ø¬Ø© Ø§Ù„Ù†Ø§Ø±ÙŠØ© Ø§Ù„ÙƒÙ‡Ø±Ø¨Ø§Ø¦ÙŠØ© Ù‡ÙŠ Ù‚Ø§Ù†ÙˆÙ†ÙŠØ§ Ø¯Ø±Ø§Ø¬Ø© Ø¨Ù…Ø­Ø±Ùƒ. Ù†ÙˆØ¹ Ø§Ù„Ø¯ÙØ¹ Ù„Ø§ ÙŠØ­Ø¯Ø« ÙØ±Ù‚Ø§. ØªØ­Ø¸Ø± C11 Ø§Ù„Ø¯Ø®ÙˆÙ„ Ù„Ø¬Ù…ÙŠØ¹ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø°Ø§Øª Ø§Ù„Ù…Ø­Ø±Ùƒ. Ù‡Ø°Ù‡ Ù…Ø®Ø§Ù„ÙØ© Ù…Ø±ÙˆØ±ÙŠØ© Ø®Ø·ÙŠØ±Ø©."}}}
+[
+  {
+    "question_id": "C11_Q01",
+    "type": "WHAT_DOES_IT_MEAN",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat betekent dit verkeersbord?",
+        "choices": [
+          {
+            "text": "Verboden toegang voor bestuurders van rijwielen",
+            "is_correct": true
+          },
+          {
+            "text": "Verboden toegang voor bromfietsers",
+            "is_correct": false
+          },
+          {
+            "text": "Verboden toegang voor alle bestuurders",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dit bord geeft aan dat bestuurders van rijwielen deze doorgang niet mogen gebruiken."
+      },
+      "EN": {
+        "question": "What does this traffic sign mean?",
+        "choices": [
+          {
+            "text": "No entry for riders of bicycles",
+            "is_correct": true
+          },
+          {
+            "text": "No entry for riders of mopeds",
+            "is_correct": false
+          },
+          {
+            "text": "No entry for all drivers",
+            "is_correct": false
+          }
+        ],
+        "explanation": "This sign indicates that riders of bicycles may not use this access."
+      },
+      "FR": {
+        "question": "Que signifie ce panneau de signalisation ?",
+        "choices": [
+          {
+            "text": "Accès interdit aux conducteurs de bicyclettes",
+            "is_correct": true
+          },
+          {
+            "text": "Accès interdit aux conducteurs de cyclomoteurs",
+            "is_correct": false
+          },
+          {
+            "text": "Accès interdit à tous les conducteurs",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ce panneau indique que les conducteurs de bicyclettes ne peuvent pas utiliser cet accès."
+      },
+      "AR": {
+        "question": "ما معنى هذه العلامة المرورية؟",
+        "choices": [
+          {
+            "text": "ممنوع دخول راكبي الدراجات الهوائية",
+            "is_correct": true
+          },
+          {
+            "text": "ممنوع دخول سائقي الدراجات النارية الصغيرة",
+            "is_correct": false
+          },
+          {
+            "text": "ممنوع الدخول لجميع السائقين",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تعني هذه العلامة أن راكبي الدراجات الهوائية لا يجوز لهم استخدام هذا المدخل."
+      }
+    }
+  },
+  {
+    "question_id": "C11_Q02",
+    "type": "HAZARD_IDENTIFICATION",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Op wie is dit verbod van toepassing?",
+        "choices": [
+          {
+            "text": "Op bestuurders van rijwielen",
+            "is_correct": true
+          },
+          {
+            "text": "Op bestuurders van bromfietsen",
+            "is_correct": false
+          },
+          {
+            "text": "Op alle tweewielers",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Het verbod is specifiek gericht op bestuurders van rijwielen."
+      },
+      "EN": {
+        "question": "To whom does this prohibition apply?",
+        "choices": [
+          {
+            "text": "To riders of bicycles",
+            "is_correct": true
+          },
+          {
+            "text": "To riders of mopeds",
+            "is_correct": false
+          },
+          {
+            "text": "To all two-wheelers",
+            "is_correct": false
+          }
+        ],
+        "explanation": "The prohibition specifically applies to riders of bicycles."
+      },
+      "FR": {
+        "question": "À qui s’applique cette interdiction ?",
+        "choices": [
+          {
+            "text": "Aux conducteurs de bicyclettes",
+            "is_correct": true
+          },
+          {
+            "text": "Aux conducteurs de cyclomoteurs",
+            "is_correct": false
+          },
+          {
+            "text": "À tous les deux-roues",
+            "is_correct": false
+          }
+        ],
+        "explanation": "L’interdiction vise spécifiquement les conducteurs de bicyclettes."
+      },
+      "AR": {
+        "question": "على من ينطبق هذا الحظر؟",
+        "choices": [
+          {
+            "text": "على راكبي الدراجات الهوائية",
+            "is_correct": true
+          },
+          {
+            "text": "على سائقي الدراجات النارية الصغيرة",
+            "is_correct": false
+          },
+          {
+            "text": "على جميع المركبات ذات العجلتين",
+            "is_correct": false
+          }
+        ],
+        "explanation": "ينطبق هذا الحظر تحديدًا على راكبي الدراجات الهوائية."
+      }
+    }
+  },
+  {
+    "question_id": "C11_Q03",
+    "type": "HAZARD_IDENTIFICATION",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat verbiedt dit bord precies?",
+        "choices": [
+          {
+            "text": "De toegang voor rijwielen",
+            "is_correct": true
+          },
+          {
+            "text": "De toegang voor bromfietsen",
+            "is_correct": false
+          },
+          {
+            "text": "De toegang voor alle voertuigen",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dit bord verbiedt specifiek de toegang voor rijwielen."
+      },
+      "EN": {
+        "question": "What exactly does this sign prohibit?",
+        "choices": [
+          {
+            "text": "Entry for bicycles",
+            "is_correct": true
+          },
+          {
+            "text": "Entry for mopeds",
+            "is_correct": false
+          },
+          {
+            "text": "Entry for all vehicles",
+            "is_correct": false
+          }
+        ],
+        "explanation": "This sign specifically prohibits entry for bicycles."
+      },
+      "FR": {
+        "question": "Que interdit exactement ce panneau ?",
+        "choices": [
+          {
+            "text": "L’accès aux bicyclettes",
+            "is_correct": true
+          },
+          {
+            "text": "L’accès aux cyclomoteurs",
+            "is_correct": false
+          },
+          {
+            "text": "L’accès à tous les véhicules",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ce panneau interdit spécifiquement l’accès aux bicyclettes."
+      },
+      "AR": {
+        "question": "ما الذي تحظره هذه العلامة المرورية بالضبط؟",
+        "choices": [
+          {
+            "text": "دخول الدراجات الهوائية",
+            "is_correct": true
+          },
+          {
+            "text": "دخول الدراجات النارية الصغيرة",
+            "is_correct": false
+          },
+          {
+            "text": "دخول جميع المركبات",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تحظر هذه العلامة تحديدًا دخول الدراجات الهوائية."
+      }
+    }
+  },
+  {
+    "question_id": "C11_Q04",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U rijdt op een fiets en ziet dit bord. Wat doet u?",
+        "choices": [
+          {
+            "text": "Niet inrijden en een andere route nemen",
+            "is_correct": true
+          },
+          {
+            "text": "Toch inrijden als de weg rustig is",
+            "is_correct": false
+          },
+          {
+            "text": "Doorrijden als u langzaam fietst",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Omdat fietsers onder dit verbod vallen, moet u een andere route kiezen."
+      },
+      "EN": {
+        "question": "You are riding a bicycle and see this sign. What should you do?",
+        "choices": [
+          {
+            "text": "Do not enter and take another route",
+            "is_correct": true
+          },
+          {
+            "text": "Enter if the road is quiet",
+            "is_correct": false
+          },
+          {
+            "text": "Continue if you ride slowly",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Because cyclists are included in this prohibition, you should choose another route."
+      },
+      "FR": {
+        "question": "Vous circulez à vélo et voyez ce panneau. Que devez-vous faire ?",
+        "choices": [
+          {
+            "text": "Ne pas entrer et prendre un autre itinéraire",
+            "is_correct": true
+          },
+          {
+            "text": "Entrer si la route est calme",
+            "is_correct": false
+          },
+          {
+            "text": "Continuer si vous roulez lentement",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Comme les cyclistes sont visés par cette interdiction, il faut choisir un autre itinéraire."
+      },
+      "AR": {
+        "question": "أنت تقود دراجة هوائية وترى هذه العلامة. ماذا ينبغي أن تفعل؟",
+        "choices": [
+          {
+            "text": "لا تدخل واختر طريقًا آخر",
+            "is_correct": true
+          },
+          {
+            "text": "ادخل إذا كان الطريق هادئًا",
+            "is_correct": false
+          },
+          {
+            "text": "تابع إذا كنت تسير ببطء",
+            "is_correct": false
+          }
+        ],
+        "explanation": "بما أن راكبي الدراجات الهوائية مشمولون بهذا الحظر، ينبغي اختيار طريق آخر."
+      }
+    }
+  },
+  {
+    "question_id": "C11_Q05",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Uw bestemming ligt vlak achter dit bord. Wat doet u met uw fiets?",
+        "choices": [
+          {
+            "text": "Een alternatieve route zoeken",
+            "is_correct": true
+          },
+          {
+            "text": "Toch doorrijden omdat het dichtbij is",
+            "is_correct": false
+          },
+          {
+            "text": "Alleen kort doorrijden",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ook als uw bestemming dichtbij ligt, blijft de toegangsbeperking voor rijwielen gelden."
+      },
+      "EN": {
+        "question": "Your destination is just beyond this sign. What do you do with your bicycle?",
+        "choices": [
+          {
+            "text": "Find an alternative route",
+            "is_correct": true
+          },
+          {
+            "text": "Continue because it is nearby",
+            "is_correct": false
+          },
+          {
+            "text": "Only continue for a short distance",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Even if your destination is nearby, the access restriction for bicycles still applies."
+      },
+      "FR": {
+        "question": "Votre destination se trouve juste après ce panneau. Que faites-vous avec votre vélo ?",
+        "choices": [
+          {
+            "text": "Chercher un autre itinéraire",
+            "is_correct": true
+          },
+          {
+            "text": "Continuer parce que c’est tout près",
+            "is_correct": false
+          },
+          {
+            "text": "Continuer seulement sur une courte distance",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Même si la destination est proche, la restriction d’accès pour les bicyclettes reste valable."
+      },
+      "AR": {
+        "question": "تقع وجهتك مباشرة بعد هذه العلامة. ماذا تفعل بدراجتك الهوائية؟",
+        "choices": [
+          {
+            "text": "ابحث عن طريق بديل",
+            "is_correct": true
+          },
+          {
+            "text": "واصل السير لأنها قريبة",
+            "is_correct": false
+          },
+          {
+            "text": "تابع لمسافة قصيرة فقط",
+            "is_correct": false
+          }
+        ],
+        "explanation": "حتى لو كانت وجهتك قريبة، يبقى المنع قائمًا على الدراجات الهوائية."
+      }
+    }
+  },
+  {
+    "question_id": "C11_Q06",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Mag een bestuurder van een bromfiets deze weg gebruiken ondanks dit bord?",
+        "choices": [
+          {
+            "text": "Ja, het bord richt zich op rijwielen",
+            "is_correct": true
+          },
+          {
+            "text": "Nee, het bord verbiedt ook bromfietsen",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dit bord is gericht op rijwielen. Een bromfiets valt daar niet automatisch onder."
+      },
+      "EN": {
+        "question": "May the rider of a moped use this road despite this sign?",
+        "choices": [
+          {
+            "text": "Yes, the sign targets bicycles",
+            "is_correct": true
+          },
+          {
+            "text": "No, the sign also bans mopeds",
+            "is_correct": false
+          }
+        ],
+        "explanation": "This sign is aimed at bicycles. A moped is not automatically included."
+      },
+      "FR": {
+        "question": "Le conducteur d’un cyclomoteur peut-il utiliser cette route malgré ce panneau ?",
+        "choices": [
+          {
+            "text": "Oui, le panneau vise les bicyclettes",
+            "is_correct": true
+          },
+          {
+            "text": "Non, le panneau interdit aussi les cyclomoteurs",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ce panneau vise les bicyclettes. Un cyclomoteur n’est pas automatiquement compris."
+      },
+      "AR": {
+        "question": "هل يجوز لسائق دراجة نارية صغيرة استعمال هذا الطريق رغم هذه العلامة؟",
+        "choices": [
+          {
+            "text": "نعم، العلامة تستهدف الدراجات الهوائية",
+            "is_correct": true
+          },
+          {
+            "text": "لا، العلامة تحظر أيضًا الدراجات النارية الصغيرة",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تستهدف هذه العلامة الدراجات الهوائية. أما الدراجة النارية الصغيرة فلا تندرج تلقائيًا ضمنها."
+      }
+    }
+  },
+  {
+    "question_id": "C11_Q07",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "De weg lijkt volledig leeg. Mag een fietser toch inrijden?",
+        "choices": [
+          {
+            "text": "Nee, het bord blijft gelden ook als de weg leeg lijkt",
+            "is_correct": true
+          },
+          {
+            "text": "Ja, als er niemand is mag het",
+            "is_correct": false
+          }
+        ],
+        "explanation": "De zichtbare verkeerssituatie verandert de betekenis van het bord niet. Voor fietsers blijft deze toegang verboden."
+      },
+      "EN": {
+        "question": "The road looks completely empty. May a cyclist still enter?",
+        "choices": [
+          {
+            "text": "No, the sign still applies even if the road looks empty",
+            "is_correct": true
+          },
+          {
+            "text": "Yes, if no one is there it is allowed",
+            "is_correct": false
+          }
+        ],
+        "explanation": "The visible traffic situation does not change the meaning of the sign. For cyclists, this access remains prohibited."
+      },
+      "FR": {
+        "question": "La route semble complètement vide. Un cycliste peut-il quand même y entrer ?",
+        "choices": [
+          {
+            "text": "Non, le panneau reste valable même si la route semble vide",
+            "is_correct": true
+          },
+          {
+            "text": "Oui, s’il n’y a personne c’est permis",
+            "is_correct": false
+          }
+        ],
+        "explanation": "La situation visible sur la route ne change pas la signification du panneau. Pour les cyclistes, cet accès reste interdit."
+      },
+      "AR": {
+        "question": "يبدو الطريق خاليًا تمامًا. هل يجوز لراكب دراجة هوائية رغم ذلك الدخول؟",
+        "choices": [
+          {
+            "text": "لا، تبقى العلامة سارية حتى لو بدا الطريق خاليًا",
+            "is_correct": true
+          },
+          {
+            "text": "نعم، إذا لم يكن هناك أحد فهذا مسموح",
+            "is_correct": false
+          }
+        ],
+        "explanation": "الوضع الظاهر على الطريق لا يغيّر معنى العلامة. وبالنسبة لراكبي الدراجات الهوائية يبقى هذا المدخل محظورًا."
+      }
+    }
+  },
+  {
+    "question_id": "C11_Q08",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Geldt dit bord ook voor een elektrische fiets?",
+        "choices": [
+          {
+            "text": "Ja, ook een elektrische fiets valt onder rijwielen",
+            "is_correct": true
+          },
+          {
+            "text": "Nee, alleen gewone fietsen zonder ondersteuning vallen eronder",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Voor de betekenis van dit bord is het relevant dat het voertuig een rijwiel is. De aanwezigheid van elektrische ondersteuning verandert die betekenis niet."
+      },
+      "EN": {
+        "question": "Does this sign also apply to an electric bicycle?",
+        "choices": [
+          {
+            "text": "Yes, an electric bicycle also falls under bicycles",
+            "is_correct": true
+          },
+          {
+            "text": "No, only ordinary bicycles without assistance are covered",
+            "is_correct": false
+          }
+        ],
+        "explanation": "For the meaning of this sign, what matters is that the vehicle is a bicycle. Electric assistance does not change that meaning."
+      },
+      "FR": {
+        "question": "Ce panneau s’applique-t-il aussi à une bicyclette électrique ?",
+        "choices": [
+          {
+            "text": "Oui, une bicyclette électrique relève aussi des bicyclettes",
+            "is_correct": true
+          },
+          {
+            "text": "Non, seules les bicyclettes ordinaires sans assistance sont visées",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Pour la signification de ce panneau, l’élément important est que le véhicule soit une bicyclette. L’assistance électrique ne change pas cette signification."
+      },
+      "AR": {
+        "question": "هل تنطبق هذه العلامة أيضًا على الدراجة الهوائية الكهربائية؟",
+        "choices": [
+          {
+            "text": "نعم، الدراجة الهوائية الكهربائية تندرج أيضًا ضمن الدراجات الهوائية",
+            "is_correct": true
+          },
+          {
+            "text": "لا، المقصود فقط الدراجات العادية بلا مساعدة",
+            "is_correct": false
+          }
+        ],
+        "explanation": "المهم في معنى هذه العلامة هو أن المركبة دراجة هوائية. والمساعدة الكهربائية لا تغيّر هذا المعنى."
+      }
+    }
+  }
 ]

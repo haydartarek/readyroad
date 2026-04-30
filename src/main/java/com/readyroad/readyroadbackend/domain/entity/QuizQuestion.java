@@ -2,8 +2,6 @@ package com.readyroad.readyroadbackend.domain.entity;
 
 import com.readyroad.readyroadbackend.util.TextNormalizer;
 import com.readyroad.readyroadbackend.validation.BelgianOptionsCount;
-import com.readyroad.readyroadbackend.validation.PublishValidation;
-import com.readyroad.readyroadbackend.validation.RequiresTrafficSign;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,19 +10,16 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 /**
  * Quiz Question Entity
  * Quiz Question
  *
- * **Phase 2 Restoration:** Re-enabled January 18, 2026
- * Used for smart quiz generation with 24-hour cooldown
- *
- * **Stories D3/D4:** Belgian Compliance Enforcement
- * - Traffic sign required for exam questions
- * - Publish-time validation gates
- * - Immutable compliance after publish
+ * Core entity for the current theory-question bank.
+ * The active delivery workflow now relies on isActive + status synchronization
+ * from admin CRUD and import flows instead of a separate manual publish mode.
  */
 @Entity
 @Table(name = "quiz_questions")
@@ -32,7 +27,6 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
-@RequiresTrafficSign(groups = PublishValidation.class) // D3: Traffic sign required for publish
 public class QuizQuestion extends BaseEntity {
 
     @Column(nullable = false, columnDefinition = "TEXT")
@@ -80,7 +74,8 @@ public class QuizQuestion extends BaseEntity {
     @Column(columnDefinition = "TEXT")
     private String explanationFr;
 
-    // Custom error explanation - Error explanations
+    // Legacy error-explanation fields kept only for backward-compatible reads.
+    // The current admin workflow no longer writes or exposes them.
     @Column(name = "error_explanation_ar", columnDefinition = "TEXT")
     private String errorExplanationAr;
 
@@ -93,17 +88,16 @@ public class QuizQuestion extends BaseEntity {
     @Column(name = "error_explanation_fr", columnDefinition = "TEXT")
     private String errorExplanationFr;
 
-    // Common error type - Typical error type for this question
+    // Legacy metadata retained for compatibility with older rows/imports.
     @Enumerated(EnumType.STRING)
     @Column(name = "typical_error_type", length = 30)
     private TypicalErrorType typicalErrorType;
 
-    // Whether the explanation is specific to the sign and context -
-    // Context-specific explanation
+    // Legacy flag retained for compatibility; current admin workflow forces false.
     @Column(name = "context_specific")
-    private Boolean contextSpecific = true;
+    private Boolean contextSpecific = false;
 
-    // Whether it requires the sign image - Requires sign image
+    // Legacy flag retained for compatibility; current admin workflow forces false.
     @Column(name = "requires_sign_image")
     private Boolean requiresSignImage = false;
 
@@ -159,6 +153,24 @@ public class QuizQuestion extends BaseEntity {
     public void removeOption(QuizAnswerOption option) {
         options.remove(option);
         option.setQuestion(null);
+    }
+
+    @Transient
+    public int getExpectedOptionCount() {
+        return difficultyLevel == DifficultyLevel.HARD ? 2 : 3;
+    }
+
+    @Transient
+    public List<QuizAnswerOption> getDeliverableOptions() {
+        if (options == null || options.isEmpty()) {
+            return List.of();
+        }
+        return options.stream()
+                .sorted(Comparator.comparing(
+                        QuizAnswerOption::getDisplayOrder,
+                        Comparator.nullsLast(Integer::compareTo)))
+                .limit(getExpectedOptionCount())
+                .toList();
     }
 
     @Override

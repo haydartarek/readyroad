@@ -12,6 +12,7 @@ import com.readyroad.readyroadbackend.domain.repository.CategoryRepository;
 import com.readyroad.readyroadbackend.domain.repository.QuizQuestionRepository;
 import com.readyroad.readyroadbackend.domain.repository.RoadSignRepository;
 import com.readyroad.readyroadbackend.dto.ImportReport;
+import com.readyroad.readyroadbackend.util.DrivingTextSanitizer;
 import com.readyroad.readyroadbackend.util.PlaceholderDetector;
 import com.readyroad.readyroadbackend.util.RouteCodeNormalizer;
 import org.slf4j.Logger;
@@ -22,6 +23,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.io.File;
 import java.io.IOException;
 import java.security.MessageDigest;
+import java.time.LocalDateTime;
 import java.util.*;
 
 @Service
@@ -33,6 +35,7 @@ public class DataImportService {
     private final RoadSignRepository roadSignRepository;
     private final QuizQuestionRepository quizQuestionRepository;
     private final CanonicalSignCatalogService canonicalSignCatalogService;
+    private final BackendMessageService messages;
 
     // Letter code → SignCategory enum
     private static final Map<String, SignCategory> LETTER_TO_SIGN_CATEGORY;
@@ -72,12 +75,14 @@ public class DataImportService {
             RoadSignRepository roadSignRepository,
             QuizQuestionRepository quizQuestionRepository,
             ObjectMapper objectMapper,
-            CanonicalSignCatalogService canonicalSignCatalogService) {
+            CanonicalSignCatalogService canonicalSignCatalogService,
+            BackendMessageService messages) {
         this.categoryRepository = categoryRepository;
         this.roadSignRepository = roadSignRepository;
         this.quizQuestionRepository = quizQuestionRepository;
         this.objectMapper = objectMapper;
         this.canonicalSignCatalogService = canonicalSignCatalogService;
+        this.messages = messages;
     }
 
     /**
@@ -102,7 +107,7 @@ public class DataImportService {
             log.error("═══════════════════════════════════════════════════");
             log.error("❌ Data import failed: {}", e.getMessage(), e);
             log.error("═══════════════════════════════════════════════════");
-            throw new RuntimeException("Data import failed", e);
+            throw new RuntimeException(messages.get("admin.import.failed"), e);
         }
     }
 
@@ -145,13 +150,13 @@ public class DataImportService {
             String descAr = getTextOrNull(descriptions, "description_ar");
 
             if (descNl != null)
-                category.setDescriptionNl(descNl);
+                category.setDescriptionNl(DrivingTextSanitizer.sanitize("NL", descNl));
             if (descEn != null)
-                category.setDescriptionEn(descEn);
+                category.setDescriptionEn(DrivingTextSanitizer.sanitize("EN", descEn));
             if (descFr != null)
-                category.setDescriptionFr(descFr);
+                category.setDescriptionFr(DrivingTextSanitizer.sanitize("FR", descFr));
             if (descAr != null)
-                category.setDescriptionAr(descAr);
+                category.setDescriptionAr(DrivingTextSanitizer.sanitize("AR", descAr));
 
             categoryRepository.save(category);
             updated++;
@@ -256,13 +261,13 @@ public class DataImportService {
             sign.setNameFr(nameFr);
             sign.setNameAr(nameAr);
             if (descNl != null)
-                sign.setDescriptionNl(descNl);
+                sign.setDescriptionNl(DrivingTextSanitizer.sanitize("NL", descNl));
             if (descEn != null)
-                sign.setDescriptionEn(descEn);
+                sign.setDescriptionEn(DrivingTextSanitizer.sanitize("EN", descEn));
             if (descFr != null)
-                sign.setDescriptionFr(descFr);
+                sign.setDescriptionFr(DrivingTextSanitizer.sanitize("FR", descFr));
             if (descAr != null)
-                sign.setDescriptionAr(descAr);
+                sign.setDescriptionAr(DrivingTextSanitizer.sanitize("AR", descAr));
             if (imagePath != null)
                 sign.setImagePath(imagePath);
             canonicalSignCatalogService.applyCanonicalFields(sign);
@@ -318,19 +323,19 @@ public class DataImportService {
                 if (signCode == null)
                     signCode = getTextOrNull(signNode, "id");
                 if (signCode == null) {
-                    b.incSkipped().warn("Sign entry without code/id — skipped");
+                    b.incSkipped().warn(messages.get("admin.import.sign.missing_code"));
                     continue;
                 }
 
                 String categoryName = getTextOrNull(signNode, "category");
                 if (categoryName == null) {
-                    b.incSkipped().warn("Sign " + signCode + " has no category — skipped");
+                    b.incSkipped().warn(messages.get("admin.import.sign.missing_category", signCode));
                     continue;
                 }
 
                 String categoryCode = CATEGORY_NAME_TO_CODE.get(categoryName);
                 if (categoryCode == null) {
-                    b.incSkipped().warn("No category mapping for '" + categoryName + "' (sign: " + signCode + ")");
+                    b.incSkipped().warn(messages.get("admin.import.sign.category_mapping_missing", categoryName, signCode));
                     continue;
                 }
                 String routeSource = firstNonBlank(getTextOrNull(signNode, "id"), signCode);
@@ -338,7 +343,7 @@ public class DataImportService {
 
                 SignCategory signCategory = LETTER_TO_SIGN_CATEGORY.get(categoryCode);
                 if (signCategory == null) {
-                    b.incSkipped().warn("No SignCategory for letter '" + categoryCode + "' (sign: " + signCode + ")");
+                    b.incSkipped().warn(messages.get("admin.import.sign.sign_category_missing", categoryCode, signCode));
                     continue;
                 }
 
@@ -381,16 +386,16 @@ public class DataImportService {
                     if (descNl == null)
                         descNl = getTextOrNull(signNode, "long_description");
                     if (descNl != null)
-                        sign.setDescriptionNl(descNl);
+                        sign.setDescriptionNl(DrivingTextSanitizer.sanitize("NL", descNl));
                     String descEn = getTextOrNull(signNode, "long_description_en");
                     if (descEn != null)
-                        sign.setDescriptionEn(descEn);
+                        sign.setDescriptionEn(DrivingTextSanitizer.sanitize("EN", descEn));
                     String descFr = getTextOrNull(signNode, "long_description_fr");
                     if (descFr != null)
-                        sign.setDescriptionFr(descFr);
+                        sign.setDescriptionFr(DrivingTextSanitizer.sanitize("FR", descFr));
                     String descAr = getTextOrNull(signNode, "long_description_ar");
                     if (descAr != null)
-                        sign.setDescriptionAr(descAr);
+                        sign.setDescriptionAr(DrivingTextSanitizer.sanitize("AR", descAr));
                     String imagePath = getTextOrNull(signNode, "image");
                     if (imagePath != null)
                         sign.setImagePath(imagePath);
@@ -400,7 +405,7 @@ public class DataImportService {
             }
         } catch (Exception e) {
             log.error("Signs upload import failed: {}", e.getMessage());
-            b.error("Failed to parse signs JSON: " + e.getMessage());
+            b.error(messages.get("admin.import.parse_signs_failed", e.getMessage()));
         }
         return b.build();
     }
@@ -448,13 +453,13 @@ public class DataImportService {
 
                 String categoryCode = CATEGORY_NAME_TO_CODE.get(categoryName);
                 if (categoryCode == null) {
-                    b.incSkipped().warn("No mapping for category '" + categoryName + "'");
+                    b.incSkipped().warn(messages.get("admin.import.category.mapping_missing", categoryName));
                     continue;
                 }
 
                 Optional<Category> optCat = categoryRepository.findByCode(categoryCode);
                 if (optCat.isEmpty()) {
-                    b.incSkipped().warn("Category " + categoryCode + " not in DB");
+                    b.incSkipped().warn(messages.get("admin.import.category.not_found", categoryCode));
                     continue;
                 }
 
@@ -466,19 +471,19 @@ public class DataImportService {
                     String dFr = getTextOrNull(descriptions, "description_fr");
                     String dAr = getTextOrNull(descriptions, "description_ar");
                     if (dNl != null)
-                        category.setDescriptionNl(dNl);
+                        category.setDescriptionNl(DrivingTextSanitizer.sanitize("NL", dNl));
                     if (dEn != null)
-                        category.setDescriptionEn(dEn);
+                        category.setDescriptionEn(DrivingTextSanitizer.sanitize("EN", dEn));
                     if (dFr != null)
-                        category.setDescriptionFr(dFr);
+                        category.setDescriptionFr(DrivingTextSanitizer.sanitize("FR", dFr));
                     if (dAr != null)
-                        category.setDescriptionAr(dAr);
+                        category.setDescriptionAr(DrivingTextSanitizer.sanitize("AR", dAr));
                     categoryRepository.save(category);
                 }
             }
         } catch (Exception e) {
             log.error("Categories upload import failed: {}", e.getMessage());
-            b.error("Failed to parse categories JSON: " + e.getMessage());
+            b.error(messages.get("admin.import.parse_categories_failed", e.getMessage()));
         }
         return b.build();
     }
@@ -493,29 +498,27 @@ public class DataImportService {
             });
             for (int i = 0; i < questions.size(); i++) {
                 JsonNode qNode = questions.get(i);
-                String label = "Question #" + (i + 1);
-
                 String catCode = getTextOrNull(qNode, "categoryCode");
                 if (catCode == null) {
-                    b.incSkipped().warn(label + ": missing categoryCode");
+                    b.incSkipped().warn(messages.get("admin.import.quiz.missing_category", i + 1));
                     continue;
                 }
 
                 Optional<Category> optCat = categoryRepository.findByCode(catCode);
                 if (optCat.isEmpty()) {
-                    b.incSkipped().warn(label + ": category '" + catCode + "' not in DB");
+                    b.incSkipped().warn(messages.get("admin.import.quiz.category_not_found", i + 1, catCode));
                     continue;
                 }
 
                 String qEn = getTextOrNull(qNode, "questionEn");
                 if (qEn == null) {
-                    b.incSkipped().warn(label + ": missing questionEn");
+                    b.incSkipped().warn(messages.get("admin.import.quiz.missing_question_en", i + 1));
                     continue;
                 }
 
                 JsonNode optionsNode = qNode.get("options");
                 if (optionsNode == null || !optionsNode.isArray() || optionsNode.size() < 2) {
-                    b.incSkipped().warn(label + ": requires at least 2 options");
+                    b.incSkipped().warn(messages.get("admin.import.quiz.options_min", i + 1));
                     continue;
                 }
 
@@ -528,7 +531,7 @@ public class DataImportService {
                     }
                 }
                 if (!hasCorrect) {
-                    b.incSkipped().warn(label + ": no correct option marked");
+                    b.incSkipped().warn(messages.get("admin.import.quiz.no_correct", i + 1));
                     continue;
                 }
 
@@ -538,13 +541,13 @@ public class DataImportService {
                     Category category = optCat.get();
                     QuizQuestion qq = new QuizQuestion();
                     qq.setCategory(category);
-                    qq.setQuestionEn(qEn);
-                    qq.setQuestionAr(
-                            getTextOrNull(qNode, "questionAr") != null ? getTextOrNull(qNode, "questionAr") : qEn);
-                    qq.setQuestionNl(
-                            getTextOrNull(qNode, "questionNl") != null ? getTextOrNull(qNode, "questionNl") : qEn);
-                    qq.setQuestionFr(
-                            getTextOrNull(qNode, "questionFr") != null ? getTextOrNull(qNode, "questionFr") : qEn);
+                    qq.setQuestionEn(DrivingTextSanitizer.sanitize("EN", qEn));
+                    qq.setQuestionAr(DrivingTextSanitizer.sanitize("AR",
+                            getTextOrNull(qNode, "questionAr") != null ? getTextOrNull(qNode, "questionAr") : qEn));
+                    qq.setQuestionNl(DrivingTextSanitizer.sanitize("NL",
+                            getTextOrNull(qNode, "questionNl") != null ? getTextOrNull(qNode, "questionNl") : qEn));
+                    qq.setQuestionFr(DrivingTextSanitizer.sanitize("FR",
+                            getTextOrNull(qNode, "questionFr") != null ? getTextOrNull(qNode, "questionFr") : qEn));
 
                     String diff = getTextOrNull(qNode, "difficultyLevel");
                     qq.setDifficultyLevel(parseDifficulty(diff));
@@ -552,13 +555,14 @@ public class DataImportService {
                     String qType = getTextOrNull(qNode, "questionType");
                     qq.setQuestionType(parseQuestionType(qType));
 
-                    qq.setExplanationEn(getTextOrNull(qNode, "explanationEn"));
-                    qq.setExplanationAr(getTextOrNull(qNode, "explanationAr"));
-                    qq.setExplanationNl(getTextOrNull(qNode, "explanationNl"));
-                    qq.setExplanationFr(getTextOrNull(qNode, "explanationFr"));
+                    qq.setExplanationEn(DrivingTextSanitizer.sanitize("EN", getTextOrNull(qNode, "explanationEn")));
+                    qq.setExplanationAr(DrivingTextSanitizer.sanitize("AR", getTextOrNull(qNode, "explanationAr")));
+                    qq.setExplanationNl(DrivingTextSanitizer.sanitize("NL", getTextOrNull(qNode, "explanationNl")));
+                    qq.setExplanationFr(DrivingTextSanitizer.sanitize("FR", getTextOrNull(qNode, "explanationFr")));
                     qq.setContentImageUrl(getTextOrNull(qNode, "contentImageUrl"));
                     qq.setIsActive(true);
-                    qq.setStatus(QuizQuestion.QuestionStatus.DRAFT);
+                    qq.setStatus(QuizQuestion.QuestionStatus.PUBLISHED);
+                    qq.setPublishedAt(LocalDateTime.now());
 
                     int order = 0;
                     for (JsonNode optNode : optionsNode) {
@@ -576,10 +580,10 @@ public class DataImportService {
                             order++;
                             continue;
                         }
-                        opt.setOptionTextEn(tEn);
-                        opt.setOptionTextAr(tAr);
-                        opt.setOptionTextNl(tNl);
-                        opt.setOptionTextFr(tFr);
+                        opt.setOptionTextEn(DrivingTextSanitizer.sanitize("EN", tEn));
+                        opt.setOptionTextAr(DrivingTextSanitizer.sanitize("AR", tAr));
+                        opt.setOptionTextNl(DrivingTextSanitizer.sanitize("NL", tNl));
+                        opt.setOptionTextFr(DrivingTextSanitizer.sanitize("FR", tFr));
                         JsonNode ic = optNode.get("isCorrect");
                         opt.setIsCorrect(ic != null && ic.asBoolean());
                         opt.setDisplayOrder(order++);
@@ -591,7 +595,7 @@ public class DataImportService {
             }
         } catch (Exception e) {
             log.error("Quiz questions upload import failed: {}", e.getMessage());
-            b.error("Failed to parse quiz questions JSON: " + e.getMessage());
+            b.error(messages.get("admin.import.parse_quiz_failed", e.getMessage()));
         }
         return b.build();
     }

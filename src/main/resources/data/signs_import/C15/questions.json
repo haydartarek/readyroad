@@ -1,10 +1,602 @@
-﻿[
-  {"question_id":"C15_Q01","type":"WHAT_DOES_IT_MEAN","difficulty":"EASY","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Wat betekent dit verkeersbord?","choices":[{"text":"Verboden toegang voor ruiters","is_correct":true},{"text":"Verboden toegang voor bestuurders van gespannen","is_correct":false},{"text":"Verboden toegang voor voetgangers","is_correct":false}],"explanation":"C15 verbiedt enkel ruiters (personen te paard). Gespannen worden geregeld door C13 en voetgangers door C19."},"EN":{"question":"What does this traffic sign mean?","choices":[{"text":"No entry for horse riders","is_correct":true},{"text":"No entry for drivers of horse-drawn vehicles","is_correct":false},{"text":"No entry for pedestrians","is_correct":false}],"explanation":"C15 only prohibits horse riders. Horse-drawn vehicle drivers fall under C13 and pedestrians under C19."},"FR":{"question":"Que signifie ce panneau ?","choices":[{"text":"Acces interdit aux cavaliers","is_correct":true},{"text":"Acces interdit aux conducteurs d attelages","is_correct":false},{"text":"Acces interdit aux pietons","is_correct":false}],"explanation":"C15 interdit uniquement les cavaliers (personnes a cheval). Les conducteurs d attelages relevent du C13 et les pietons du C19."},"AR":{"question":"Ù…Ø§Ø°Ø§ ØªØ¹Ù†ÙŠ Ù„Ø§ÙØªØ© Ø§Ù„Ù…Ø±ÙˆØ± Ù‡Ø°Ù‡ØŸ","choices":[{"text":"Ù…Ù…Ù†ÙˆØ¹ Ø¯Ø®ÙˆÙ„ Ø§Ù„ÙØ±Ø³Ø§Ù†","is_correct":true},{"text":"Ù…Ù…Ù†ÙˆØ¹ Ø¯Ø®ÙˆÙ„ Ø³Ø§Ø¦Ù‚ÙŠ Ø§Ù„Ø¹Ø±Ø¨Ø§Øª Ø§Ù„Ø­ÙŠÙˆØ§Ù†ÙŠØ©","is_correct":false},{"text":"Ù…Ù…Ù†ÙˆØ¹ Ø¯Ø®ÙˆÙ„ Ø§Ù„Ù…Ø´Ø§Ø©","is_correct":false}],"explanation":"ØªØ­Ø¸Ø± C15 Ø§Ù„ÙØ±Ø³Ø§Ù† ÙÙ‚Ø·. Ø³Ø§Ø¦Ù‚Ùˆ Ø§Ù„Ø¹Ø±Ø¨Ø§Øª Ø§Ù„Ø­ÙŠÙˆØ§Ù†ÙŠØ© ÙŠÙ†Ø¯Ø±Ø¬ÙˆÙ† ØªØ­Øª C13 ÙˆØ§Ù„Ù…Ø´Ø§Ø© ØªØ­Øª C19."}}},
-  {"question_id":"C15_Q02","type":"WHICH_SIGN","difficulty":"EASY","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Tot welke categorie verkeersborden behoort dit bord?","choices":[{"text":"Verbodsborden (C-reeks)","is_correct":true},{"text":"Gevaarsborden (A-reeks)","is_correct":false},{"text":"Gebodsborden (D-reeks)","is_correct":false}],"explanation":"Verbodsborden (C-reeks) zijn rond met rode rand en verbieden bepaalde weggebruikers of bewegingen."},"EN":{"question":"To which category of traffic signs does this sign belong?","choices":[{"text":"Prohibition signs (C-series)","is_correct":true},{"text":"Danger signs (A-series)","is_correct":false},{"text":"Mandatory signs (D-series)","is_correct":false}],"explanation":"Prohibition signs (C-series) are round with a red border and prohibit specific road users or movements."},"FR":{"question":"A quelle categorie appartient ce panneau ?","choices":[{"text":"Panneaux d interdiction (serie C)","is_correct":true},{"text":"Panneaux de danger (serie A)","is_correct":false},{"text":"Panneaux d obligation (serie D)","is_correct":false}],"explanation":"Les panneaux d interdiction (serie C) sont ronds avec un bord rouge et interdisent des usagers ou mouvements specifiques."},"AR":{"question":"Ø§Ù„Ù‰ Ø§ÙŠ ÙØ¦Ø© ØªÙ†ØªÙ…ÙŠ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ","choices":[{"text":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø­Ø¸Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© C)","is_correct":true},{"text":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© A)","is_correct":false},{"text":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø§Ù„Ø²Ø§Ù… (Ø§Ù„Ø³Ù„Ø³Ù„Ø© D)","is_correct":false}],"explanation":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø­Ø¸Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© C) Ù…Ø³ØªØ¯ÙŠØ±Ø© Ø°Ø§Øª Ø­Ø¯ Ø§Ø­Ù…Ø± ÙˆØªØ­Ø¸Ø± Ù…Ø³ØªØ®Ø¯Ù…ÙŠ Ø·Ø±ÙŠÙ‚ Ø§Ùˆ Ø­Ø±ÙƒØ§Øª Ù…Ø­Ø¯Ø¯Ø©."}}},
-  {"question_id":"C15_Q03","type":"HAZARD_IDENTIFICATION","difficulty":"EASY","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Wie wordt specifiek verboden door bord C15?","choices":[{"text":"Personen die te paard rijden (ruiters)","is_correct":true},{"text":"Alle mensen die met dieren reizen","is_correct":false},{"text":"Eigenaren van paarden die langs de weg lopen","is_correct":false}],"explanation":"C15 verbiedt ruiters: personen te paard op de openbare weg. Wie zijn paard aan de hand leidt als voetganger, valt niet onder dit bord."},"EN":{"question":"Who is specifically prohibited by sign C15?","choices":[{"text":"Persons riding on horseback (horse riders)","is_correct":true},{"text":"All people travelling with animals","is_correct":false},{"text":"Owners leading their horses on foot along the road","is_correct":false}],"explanation":"C15 prohibits horse riders: persons on horseback on a public road. Someone leading their horse on foot as a pedestrian does not fall under this sign."},"FR":{"question":"Qui est specifiquement interdit par le panneau C15 ?","choices":[{"text":"Les personnes qui montent a cheval (cavaliers)","is_correct":true},{"text":"Toutes les personnes voyageant avec des animaux","is_correct":false},{"text":"Les proprietaires qui menent leur cheval a pied","is_correct":false}],"explanation":"C15 interdit les cavaliers: les personnes a cheval sur la voie publique. Quelqu un qui mene son cheval a pied en tant que pieton ne releve pas de ce panneau."},"AR":{"question":"Ù…Ù† ÙŠÙØ­Ø¸Ø± ØªØ­Ø¯ÙŠØ¯Ø§ Ø¨Ù„Ø§ÙØªØ© C15ØŸ","choices":[{"text":"Ø§Ù„Ø§Ø´Ø®Ø§Øµ Ø§Ù„Ø±Ø§ÙƒØ¨ÙˆÙ† Ù„Ù„Ø®ÙŠÙˆÙ„ (Ø§Ù„ÙØ±Ø³Ø§Ù†)","is_correct":true},{"text":"Ø¬Ù…ÙŠØ¹ Ø§Ù„Ø§Ø´Ø®Ø§Øµ Ø§Ù„Ù…Ø³Ø§ÙØ±ÙŠÙ† Ù…Ø¹ Ø§Ù„Ø­ÙŠÙˆØ§Ù†Ø§Øª","is_correct":false},{"text":"Ø§ØµØ­Ø§Ø¨ Ø§Ù„Ø®ÙŠÙˆÙ„ Ø§Ù„Ø°ÙŠÙ† ÙŠÙ‚ÙˆØ¯ÙˆÙ†Ù‡Ø§ Ù…Ø´ÙŠØ§","is_correct":false}],"explanation":"ØªØ­Ø¸Ø± C15 Ø§Ù„ÙØ±Ø³Ø§Ù†: Ø§Ù„Ø§Ø´Ø®Ø§Øµ Ø¹Ù„Ù‰ Ø¸Ù‡ÙˆØ± Ø§Ù„Ø®ÙŠÙˆÙ„ ÙÙŠ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø¹Ø§Ù…. Ù…Ù† ÙŠÙ‚ÙˆØ¯ Ø­ØµØ§Ù†Ù‡ Ø³ÙŠØ±Ø§ ÙƒÙ…Ø´Ø§Ø© Ù„Ø§ ÙŠÙ†Ø¯Ø±Ø¬ ØªØ­Øª Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©."}}},
-  {"question_id":"C15_Q04","type":"WHAT_MUST_YOU_DO","difficulty":"MEDIUM","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"U rijdt te paard en ziet bord C15. Wat doet u?","choices":[{"text":"Van het paard afstijgen en een alternatieve route zoeken of het paard aan de hand nemen als voetganger","is_correct":true},{"text":"Doorrijden als er geen ander verkeer is","is_correct":false},{"text":"Doorrijden langs de berm","is_correct":false}],"explanation":"C15 verbiedt u als ruiter de toegang. U kunt afstijgen en als voetganger verder lopen of een andere route nemen."},"EN":{"question":"You are riding a horse and see sign C15. What do you do?","choices":[{"text":"Dismount and find an alternative route or lead the horse on foot as a pedestrian","is_correct":true},{"text":"Continue if there is no other traffic","is_correct":false},{"text":"Continue along the verge","is_correct":false}],"explanation":"C15 prohibits you as a rider from entering. You can dismount and continue on foot as a pedestrian or take another route."},"FR":{"question":"Vous montez a cheval et voyez le panneau C15. Que faites-vous ?","choices":[{"text":"Descendre de cheval et chercher un itineraire alternatif ou mener le cheval a pied en tant que pieton","is_correct":true},{"text":"Continuer s il n y a pas d autre trafic","is_correct":false},{"text":"Continuer le long de la berme","is_correct":false}],"explanation":"C15 vous interdit l acces en tant que cavalier. Vous pouvez descendre et continuer a pied en tant que pieton ou emprunter un autre itineraire."},"AR":{"question":"Ø§Ù†Øª ØªØ±ÙƒØ¨ Ø­ØµØ§Ù†Ø§ ÙˆØªØ±Ù‰ Ù„Ø§ÙØªØ© C15. Ù…Ø§Ø°Ø§ ØªÙØ¹Ù„ØŸ","choices":[{"text":"Ø§Ù†Ø²Ù„ Ø¹Ù† Ø§Ù„Ø­ØµØ§Ù† ÙˆØ§Ø¨Ø­Ø« Ø¹Ù† Ø·Ø±ÙŠÙ‚ Ø¨Ø¯ÙŠÙ„ Ø§Ùˆ Ù‚Ø¯ Ø§Ù„Ø­ØµØ§Ù† Ù…Ø´ÙŠØ§ ÙƒÙ…Ø´Ø§Ø©","is_correct":true},{"text":"ØªØ§Ø¨Ø¹ Ø§Ø°Ø§ Ù„Ù… ÙŠÙƒÙ† Ù‡Ù†Ø§Ùƒ Ù…Ø±ÙˆØ± Ø¢Ø®Ø±","is_correct":false},{"text":"ØªØ§Ø¨Ø¹ Ø¹Ù„Ù‰ Ø·ÙˆÙ„ Ø§Ù„ÙƒØªÙ","is_correct":false}],"explanation":"ØªØ­Ø¸Ø± C15 Ø¹Ù„ÙŠÙƒ ÙƒÙØ§Ø±Ø³ Ø§Ù„Ø¯Ø®ÙˆÙ„. ÙŠÙ…ÙƒÙ†Ùƒ Ø§Ù„Ù†Ø²ÙˆÙ„ ÙˆØ§Ù„Ù…ØªØ§Ø¨Ø¹Ø© Ù…Ø´ÙŠØ§ ÙƒÙ…Ø´Ø§Ø© Ø§Ùˆ Ø§Ø®Ø° Ø·Ø±ÙŠÙ‚ Ø¢Ø®Ø±."}}},
-  {"question_id":"C15_Q05","type":"WHAT_MUST_YOU_DO","difficulty":"MEDIUM","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Mag een politieagent te paard een weg berijden waarop bord C15 staat?","choices":[{"text":"Ja, politie en hulpdiensten kunnen een specifieke ontheffing hebben voor hun dienstvoertuig inclusief dienstpaarden","is_correct":true},{"text":"Nee, ook politie te paard valt volledig onder het verbod C15","is_correct":false},{"text":"Alleen als er een noodsituatie is","is_correct":false}],"explanation":"Politie en hulpdiensten kunnen ontheffingen hebben die hen toelaten ook verboden wegen te berijden in de uitoefening van hun taak. Voor reguliere weggebruikers geldt het verbod onverkort."},"EN":{"question":"May a police officer on horseback ride on a road with sign C15?","choices":[{"text":"Yes, police and emergency services may have a specific exemption for their service animals including horses","is_correct":true},{"text":"No, mounted police also fall fully under the prohibition C15","is_correct":false},{"text":"Only if there is an emergency","is_correct":false}],"explanation":"Police and emergency services may have exemptions allowing them to use prohibited roads in the exercise of their duties. The prohibition applies in full to regular road users."},"FR":{"question":"Un policier a cheval peut-il emprunter une route avec le panneau C15 ?","choices":[{"text":"Oui, la police et les services d urgence peuvent disposer d une derogation specifique pour leurs animaux de service y compris les chevaux","is_correct":true},{"text":"Non, la police montee releve entierement de l interdiction C15","is_correct":false},{"text":"Seulement en cas d urgence","is_correct":false}],"explanation":"La police et les services d urgence peuvent disposer de derogations leur permettant d emprunter des routes interdites dans l exercice de leurs fonctions. L interdiction s applique integralement aux usagers ordinaires."},"AR":{"question":"Ù‡Ù„ ÙŠØ¬ÙˆØ² Ù„Ø¶Ø§Ø¨Ø· Ø´Ø±Ø·Ø© Ø¹Ù„Ù‰ Ø­ØµØ§Ù† Ø±ÙƒÙˆØ¨ Ø·Ø±ÙŠÙ‚ Ø¨Ù‡ Ù„Ø§ÙØªØ© C15ØŸ","choices":[{"text":"Ù†Ø¹Ù…ØŒ Ù‚Ø¯ ØªÙ…ØªÙ„Ùƒ Ø§Ù„Ø´Ø±Ø·Ø© ÙˆØ®Ø¯Ù…Ø§Øª Ø§Ù„Ø·ÙˆØ§Ø±Ø¦ Ø§Ø³ØªØ«Ù†Ø§Ø¡ Ù…Ø­Ø¯Ø¯Ø§ Ù„Ø­ÙŠÙˆØ§Ù†Ø§ØªÙ‡Ù… Ø§Ù„Ø®Ø¯Ù…ÙŠØ© Ø¨Ù…Ø§ ÙÙŠÙ‡Ø§ Ø§Ù„Ø®ÙŠÙˆÙ„","is_correct":true},{"text":"Ù„Ø§ØŒ Ø´Ø±Ø·Ø© Ø§Ù„ÙØ±Ø³Ø§Ù† ØªÙ†Ø¯Ø±Ø¬ ØªÙ…Ø§Ù…Ø§ ØªØ­Øª Ø­Ø¸Ø± C15","is_correct":false},{"text":"ÙÙ‚Ø· ÙÙŠ Ø­Ø§Ù„Ø§Øª Ø§Ù„Ø·ÙˆØ§Ø±Ø¦","is_correct":false}],"explanation":"Ù‚Ø¯ ØªÙ…ØªÙ„Ùƒ Ø§Ù„Ø´Ø±Ø·Ø© ÙˆØ®Ø¯Ù…Ø§Øª Ø§Ù„Ø·ÙˆØ§Ø±Ø¦ Ø§Ø³ØªØ«Ù†Ø§Ø¡Ø§Øª ØªØªÙŠØ­ Ù„Ù‡Ø§ Ø§Ø³ØªØ®Ø¯Ø§Ù… Ø§Ù„Ø·Ø±Ù‚ Ø§Ù„Ù…Ø­Ø¸ÙˆØ±Ø© Ø§Ø«Ù†Ø§Ø¡ Ø§Ø¯Ø§Ø¡ Ù…Ù‡Ø§Ù…Ù‡Ø§. Ø§Ù„Ø­Ø¸Ø± ÙŠØ³Ø±ÙŠ ÙƒØ§Ù…Ù„Ø§ Ø¹Ù„Ù‰ Ù…Ø³ØªØ®Ø¯Ù…ÙŠ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø¹Ø§Ø¯ÙŠÙŠÙ†."}}},
-  {"question_id":"C15_Q06","type":"WHAT_MUST_YOU_DO","difficulty":"MEDIUM","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"U wandelt en leidt uw paard aan de hand waarop een weg staat met bord C15. Mag u erover?","choices":[{"text":"Ja, als voetganger die een paard aan de hand meeneemt bent u geen ruiter en valt u niet onder C15","is_correct":true},{"text":"Nee, C15 verbiedt de aanwezigheid van paarden ongeacht of u rijdt of loopt","is_correct":false},{"text":"Alleen als het paard een masker draagt zodat het geen andere weggebruikers afschrikt","is_correct":false}],"explanation":"C15 verbiedt ruiters, dat wil zeggen personen te paard. Als u te voet loopt en uw paard aan de hand meeneemt, bent u geen ruiter maar een voetganger. Voetgangers vallen niet onder C15."},"EN":{"question":"You are walking and leading your horse by hand on a road with sign C15. May you use it?","choices":[{"text":"Yes, as a pedestrian leading a horse you are not a rider and do not fall under C15","is_correct":true},{"text":"No, C15 prohibits the presence of horses regardless of whether you ride or walk","is_correct":false},{"text":"Only if the horse wears a muzzle so it does not frighten other road users","is_correct":false}],"explanation":"C15 prohibits horse riders, meaning persons on horseback. If you walk on foot and lead your horse by hand, you are not a rider but a pedestrian. Pedestrians do not fall under C15."},"FR":{"question":"Vous marchez et menez votre cheval a main sur une route avec le panneau C15. Pouvez-vous l emprunter ?","choices":[{"text":"Oui, en tant que pieton menant un cheval vous n etes pas un cavalier et ne relevez pas du C15","is_correct":true},{"text":"Non, C15 interdit la presence de chevaux qu on soit a cheval ou a pied","is_correct":false},{"text":"Seulement si le cheval porte une museliere pour ne pas effrayer les autres usagers","is_correct":false}],"explanation":"C15 interdit les cavaliers c est-a-dire les personnes a cheval. Si vous marchez a pied et menez votre cheval a main vous n etes pas un cavalier mais un pieton. Les pietons ne relevent pas du C15."},"AR":{"question":"Ø§Ù†Øª ØªÙ…Ø´ÙŠ ÙˆØªÙ‚ÙˆØ¯ Ø­ØµØ§Ù†Ùƒ Ø¨Ø§Ù„ÙŠØ¯ Ø¹Ù„Ù‰ Ø·Ø±ÙŠÙ‚ Ø¨Ù‡ Ù„Ø§ÙØªØ© C15. Ù‡Ù„ ÙŠØ¬ÙˆØ² Ù„Ùƒ Ø§Ø³ØªØ®Ø¯Ø§Ù…Ù‡ØŸ","choices":[{"text":"Ù†Ø¹Ù…ØŒ Ø¨ÙˆØµÙÙƒ Ù…Ø´Ø§Ø© ØªÙ‚ÙˆØ¯ Ø­ØµØ§Ù†Ø§ Ù„Ø³Øª ÙØ§Ø±Ø³Ø§ ÙˆÙ„Ø§ ØªÙ†Ø¯Ø±Ø¬ ØªØ­Øª C15","is_correct":true},{"text":"Ù„Ø§ØŒ C15 ØªØ­Ø¸Ø± ÙˆØ¬ÙˆØ¯ Ø§Ù„Ø®ÙŠÙˆÙ„ Ø³ÙˆØ§Ø¡ Ø±ÙƒØ¨Øª Ø§Ù… Ù…Ø´ÙŠØª","is_correct":false},{"text":"ÙÙ‚Ø· Ø§Ø°Ø§ ÙƒØ§Ù† Ø§Ù„Ø­ØµØ§Ù† ÙŠØ±ØªØ¯ÙŠ ÙƒÙ…Ø§Ù…Ø© Ø­ØªÙ‰ Ù„Ø§ ÙŠØ®ÙŠÙ Ù…Ø³ØªØ®Ø¯Ù…ÙŠ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø¢Ø®Ø±ÙŠÙ†","is_correct":false}],"explanation":"ØªØ­Ø¸Ø± C15 Ø§Ù„ÙØ±Ø³Ø§Ù† Ø§ÙŠ Ø§Ù„Ø§Ø´Ø®Ø§Øµ Ø¹Ù„Ù‰ Ø¸Ù‡ÙˆØ± Ø§Ù„Ø®ÙŠÙˆÙ„. Ø§Ø°Ø§ Ù…Ø´ÙŠØª Ù‚Ø§Ø¦Ø¯Ø§ Ø­ØµØ§Ù†Ùƒ Ø¨Ø§Ù„ÙŠØ¯ ÙØ§Ù†Øª Ù„Ø³Øª ÙØ§Ø±Ø³Ø§ Ø¨Ù„ Ù…Ø´Ø§Ø©. Ø§Ù„Ù…Ø´Ø§Ø© Ù„Ø§ ÙŠÙ†Ø¯Ø±Ø¬ÙˆÙ† ØªØ­Øª C15."}}},
-  {"question_id":"C15_Q07","type":"IS_IT_ALLOWED","difficulty":"HARD","is_critical":true,"show_sign":true,"i18n":{"NL":{"question":"Mag een ruiter de verboden weg oprijden als hij zeker weet dat er geen verkeer is?","choices":[{"text":"Nee, C15 verbiedt toegang ongeacht de verkeersdrukte","is_correct":true},{"text":"Ja, bij gebrek aan ander verkeer is het verbod niet van toepassing","is_correct":false}],"explanation":"Verbodsborden zijn absoluut en afhankelijk niet van de aanwezigheid van ander verkeer. Dit is een ernstige verkeersovertreding."},"EN":{"question":"May a horse rider use the prohibited road if they are certain there is no traffic?","choices":[{"text":"No, C15 prohibits entry regardless of traffic density","is_correct":true},{"text":"Yes, in the absence of other traffic the prohibition does not apply","is_correct":false}],"explanation":"Prohibition signs are absolute and do not depend on the presence of other traffic. This is a serious traffic offence."},"FR":{"question":"Un cavalier peut-il emprunter la route interdite s il est certain qu il n y a pas de trafic ?","choices":[{"text":"Non, C15 interdit l acces quelle que soit la densite du trafic","is_correct":true},{"text":"Oui, en l absence d autre trafic l interdiction ne s applique pas","is_correct":false}],"explanation":"Les panneaux d interdiction sont absolus et ne dependent pas de la presence d autre trafic. Il s agit d une infraction grave au code de la route."},"AR":{"question":"Ù‡Ù„ ÙŠØ¬ÙˆØ² Ù„Ù„ÙØ§Ø±Ø³ Ø§Ø³ØªØ®Ø¯Ø§Ù… Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ù…Ø­Ø¸ÙˆØ± Ø§Ø°Ø§ ÙƒØ§Ù† Ù…ØªØ§ÙƒØ¯Ø§ Ù…Ù† ØºÙŠØ§Ø¨ Ø§Ù„Ù…Ø±ÙˆØ±ØŸ","choices":[{"text":"Ù„Ø§ØŒ C15 ØªØ­Ø¸Ø± Ø§Ù„Ø¯Ø®ÙˆÙ„ Ø¨ØºØ¶ Ø§Ù„Ù†Ø¸Ø± Ø¹Ù† ÙƒØ«Ø§ÙØ© Ø§Ù„Ù…Ø±ÙˆØ±","is_correct":true},{"text":"Ù†Ø¹Ù…ØŒ ÙÙŠ ØºÙŠØ§Ø¨ Ø§Ù„Ù…Ø±ÙˆØ± Ø§Ù„Ø¢Ø®Ø± Ù„Ø§ ÙŠØ³Ø±ÙŠ Ø§Ù„Ø­Ø¸Ø±","is_correct":false}],"explanation":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø­Ø¸Ø± Ù…Ø·Ù„Ù‚Ø© ÙˆÙ„Ø§ ØªØ¹ØªÙ…Ø¯ Ø¹Ù„Ù‰ ÙˆØ¬ÙˆØ¯ Ù…Ø±ÙˆØ± Ø¢Ø®Ø±. Ù‡Ø°Ù‡ Ù…Ø®Ø§Ù„ÙØ© Ù…Ø±ÙˆØ±ÙŠØ© Ø®Ø·ÙŠØ±Ø©."}}},
-  {"question_id":"C15_Q08","type":"IS_IT_ALLOWED","difficulty":"HARD","is_critical":true,"show_sign":true,"i18n":{"NL":{"question":"Is een ponyrijder (kind op pony) ook gebonden aan bord C15?","choices":[{"text":"Ja, C15 geldt voor alle ruiters ongeacht het type paard of de leeftijd van de ruiter","is_correct":true},{"text":"Nee, ponys zijn geen paarden en vallen niet onder C15","is_correct":false}],"explanation":"C15 verbiedt ruiters als categorie. Het maakt niet uit welk type paard of pony wordt bereden of hoe oud de ruiter is. Dit is een ernstige verkeersovertreding."},"EN":{"question":"Is a pony rider (child on pony) also bound by sign C15?","choices":[{"text":"Yes, C15 applies to all riders regardless of the type of horse or the age of the rider","is_correct":true},{"text":"No, ponies are not horses and do not fall under C15","is_correct":false}],"explanation":"C15 prohibits riders as a category. It does not matter what type of horse or pony is ridden or how old the rider is. This is a serious traffic offence."},"FR":{"question":"Un cavalier de poney (enfant sur un poney) est-il aussi soumis au panneau C15 ?","choices":[{"text":"Oui, C15 s applique a tous les cavaliers quel que soit le type de cheval ou l age du cavalier","is_correct":true},{"text":"Non, les poneys ne sont pas des chevaux et ne relevent pas du C15","is_correct":false}],"explanation":"C15 interdit les cavaliers en tant que categorie. Peu importe le type de cheval ou de poney monte ou l age du cavalier. Il s agit d une infraction grave au code de la route."},"AR":{"question":"Ù‡Ù„ ÙŠØ®Ø¶Ø¹ Ø±Ø§ÙƒØ¨ Ø§Ù„Ù…Ù‡Ø± (Ø·ÙÙ„ Ø¹Ù„Ù‰ Ù…Ù‡Ø±) Ø§ÙŠØ¶Ø§ Ù„Ù„Ø§ÙØªØ© C15ØŸ","choices":[{"text":"Ù†Ø¹Ù…ØŒ C15 ØªÙ†Ø·Ø¨Ù‚ Ø¹Ù„Ù‰ Ø¬Ù…ÙŠØ¹ Ø§Ù„ÙØ±Ø³Ø§Ù† Ø¨ØºØ¶ Ø§Ù„Ù†Ø¸Ø± Ø¹Ù† Ù†ÙˆØ¹ Ø§Ù„Ø­ØµØ§Ù† Ø§Ùˆ Ø¹Ù…Ø± Ø§Ù„ÙØ§Ø±Ø³","is_correct":true},{"text":"Ù„Ø§ØŒ Ø§Ù„Ù…Ù‡ÙˆØ± Ù„ÙŠØ³Øª Ø®ÙŠÙˆÙ„Ø§ ÙˆÙ„Ø§ ØªÙ†Ø¯Ø±Ø¬ ØªØ­Øª C15","is_correct":false}],"explanation":"ØªØ­Ø¸Ø± C15 Ø§Ù„ÙØ±Ø³Ø§Ù† ÙƒÙØ¦Ø©. Ù„Ø§ ÙŠÙ‡Ù… Ù†ÙˆØ¹ Ø§Ù„Ø­ØµØ§Ù† Ø§Ùˆ Ø§Ù„Ù…Ù‡Ø± Ø§Ù„Ù…Ø³ØªØ®Ø¯Ù… Ø§Ùˆ Ø¹Ù…Ø± Ø§Ù„ÙØ§Ø±Ø³. Ù‡Ø°Ù‡ Ù…Ø®Ø§Ù„ÙØ© Ù…Ø±ÙˆØ±ÙŠØ© Ø®Ø·ÙŠØ±Ø©."}}}
+[
+  {
+    "question_id": "C15_Q01",
+    "type": "WHAT_DOES_IT_MEAN",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat betekent dit verkeersbord?",
+        "choices": [
+          {
+            "text": "Verboden toegang voor ruiters",
+            "is_correct": true
+          },
+          {
+            "text": "Verboden toegang voor bestuurders van gespannen",
+            "is_correct": false
+          },
+          {
+            "text": "Verboden toegang voor voetgangers",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dit bord geeft aan dat ruiters deze doorgang niet mogen gebruiken."
+      },
+      "EN": {
+        "question": "What does this traffic sign mean?",
+        "choices": [
+          {
+            "text": "No entry for horse riders",
+            "is_correct": true
+          },
+          {
+            "text": "No entry for drivers of animal-drawn vehicles",
+            "is_correct": false
+          },
+          {
+            "text": "No entry for pedestrians",
+            "is_correct": false
+          }
+        ],
+        "explanation": "This sign indicates that horse riders may not use this access."
+      },
+      "FR": {
+        "question": "Que signifie ce panneau ?",
+        "choices": [
+          {
+            "text": "Accès interdit aux cavaliers",
+            "is_correct": true
+          },
+          {
+            "text": "Accès interdit aux conducteurs d’attelages",
+            "is_correct": false
+          },
+          {
+            "text": "Accès interdit aux piétons",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ce panneau indique que les cavaliers ne peuvent pas utiliser cet accès."
+      },
+      "AR": {
+        "question": "ما معنى هذه العلامة المرورية؟",
+        "choices": [
+          {
+            "text": "ممنوع دخول الفرسان",
+            "is_correct": true
+          },
+          {
+            "text": "ممنوع دخول سائقي العربات التي تجرها الحيوانات",
+            "is_correct": false
+          },
+          {
+            "text": "ممنوع دخول المشاة",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تعني هذه العلامة أن الفرسان لا يجوز لهم استخدام هذا المدخل."
+      }
+    }
+  },
+  {
+    "question_id": "C15_Q02",
+    "type": "HAZARD_IDENTIFICATION",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Op wie is dit verbod van toepassing?",
+        "choices": [
+          {
+            "text": "Op ruiters",
+            "is_correct": true
+          },
+          {
+            "text": "Op alle weggebruikers met dieren",
+            "is_correct": false
+          },
+          {
+            "text": "Op bestuurders van voertuigen",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Het verbod is specifiek gericht op ruiters."
+      },
+      "EN": {
+        "question": "To whom does this prohibition apply?",
+        "choices": [
+          {
+            "text": "To horse riders",
+            "is_correct": true
+          },
+          {
+            "text": "To all road users with animals",
+            "is_correct": false
+          },
+          {
+            "text": "To drivers of vehicles",
+            "is_correct": false
+          }
+        ],
+        "explanation": "The prohibition specifically applies to horse riders."
+      },
+      "FR": {
+        "question": "À qui s’applique cette interdiction ?",
+        "choices": [
+          {
+            "text": "Aux cavaliers",
+            "is_correct": true
+          },
+          {
+            "text": "À tous les usagers avec des animaux",
+            "is_correct": false
+          },
+          {
+            "text": "Aux conducteurs de véhicules",
+            "is_correct": false
+          }
+        ],
+        "explanation": "L’interdiction vise spécifiquement les cavaliers."
+      },
+      "AR": {
+        "question": "على من ينطبق هذا الحظر؟",
+        "choices": [
+          {
+            "text": "على الفرسان",
+            "is_correct": true
+          },
+          {
+            "text": "على جميع مستخدمي الطريق مع الحيوانات",
+            "is_correct": false
+          },
+          {
+            "text": "على سائقي المركبات",
+            "is_correct": false
+          }
+        ],
+        "explanation": "ينطبق هذا الحظر تحديدًا على الفرسان."
+      }
+    }
+  },
+  {
+    "question_id": "C15_Q03",
+    "type": "HAZARD_IDENTIFICATION",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wie wordt door dit bord precies geweerd?",
+        "choices": [
+          {
+            "text": "Personen die te paard rijden",
+            "is_correct": true
+          },
+          {
+            "text": "Iedereen die een paard bij zich heeft",
+            "is_correct": false
+          },
+          {
+            "text": "Alle dieren op de weg",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dit bord verbiedt specifiek personen die te paard rijden."
+      },
+      "EN": {
+        "question": "Who exactly is excluded by this sign?",
+        "choices": [
+          {
+            "text": "Persons riding on horseback",
+            "is_correct": true
+          },
+          {
+            "text": "Anyone who has a horse with them",
+            "is_correct": false
+          },
+          {
+            "text": "All animals on the road",
+            "is_correct": false
+          }
+        ],
+        "explanation": "This sign specifically prohibits persons riding on horseback."
+      },
+      "FR": {
+        "question": "Qui est exactement visé par ce panneau ?",
+        "choices": [
+          {
+            "text": "Les personnes à cheval",
+            "is_correct": true
+          },
+          {
+            "text": "Toute personne accompagnée d’un cheval",
+            "is_correct": false
+          },
+          {
+            "text": "Tous les animaux sur la route",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ce panneau interdit spécifiquement les personnes à cheval."
+      },
+      "AR": {
+        "question": "من الذي تستهدفه هذه العلامة على وجه الدقة؟",
+        "choices": [
+          {
+            "text": "الأشخاص الذين يركبون الخيل",
+            "is_correct": true
+          },
+          {
+            "text": "كل من يكون معه حصان",
+            "is_correct": false
+          },
+          {
+            "text": "جميع الحيوانات على الطريق",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تحظر هذه العلامة تحديدًا الأشخاص الذين يركبون الخيل."
+      }
+    }
+  },
+  {
+    "question_id": "C15_Q04",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U rijdt te paard en ziet dit bord. Wat doet u?",
+        "choices": [
+          {
+            "text": "Niet inrijden en een andere route nemen",
+            "is_correct": true
+          },
+          {
+            "text": "Doorrijden als er geen ander verkeer is",
+            "is_correct": false
+          },
+          {
+            "text": "Doorrijden langs de berm",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Omdat ruiters onder dit verbod vallen, moet u een andere route kiezen."
+      },
+      "EN": {
+        "question": "You are riding a horse and see this sign. What should you do?",
+        "choices": [
+          {
+            "text": "Do not enter and take another route",
+            "is_correct": true
+          },
+          {
+            "text": "Continue if there is no other traffic",
+            "is_correct": false
+          },
+          {
+            "text": "Continue along the verge",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Because horse riders are included in this prohibition, you should choose another route."
+      },
+      "FR": {
+        "question": "Vous montez à cheval et voyez ce panneau. Que devez-vous faire ?",
+        "choices": [
+          {
+            "text": "Ne pas entrer et prendre un autre itinéraire",
+            "is_correct": true
+          },
+          {
+            "text": "Continuer s’il n’y a pas d’autre circulation",
+            "is_correct": false
+          },
+          {
+            "text": "Continuer le long de la berme",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Comme les cavaliers sont visés par cette interdiction, il faut choisir un autre itinéraire."
+      },
+      "AR": {
+        "question": "أنت تركب حصانًا وترى هذه العلامة. ماذا ينبغي أن تفعل؟",
+        "choices": [
+          {
+            "text": "لا تدخل واختر طريقًا آخر",
+            "is_correct": true
+          },
+          {
+            "text": "تابع إذا لم تكن هناك حركة مرور أخرى",
+            "is_correct": false
+          },
+          {
+            "text": "تابع على جانب الطريق",
+            "is_correct": false
+          }
+        ],
+        "explanation": "بما أن الفرسان مشمولون بهذا الحظر، ينبغي اختيار طريق آخر."
+      }
+    }
+  },
+  {
+    "question_id": "C15_Q05",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Uw bestemming ligt vlak achter dit bord. Wat doet u als ruiter?",
+        "choices": [
+          {
+            "text": "Een alternatieve route zoeken",
+            "is_correct": true
+          },
+          {
+            "text": "Toch doorgaan omdat het dichtbij is",
+            "is_correct": false
+          },
+          {
+            "text": "Alleen kort verder rijden",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ook als uw bestemming dichtbij ligt, blijft de toegangsbeperking voor ruiters gelden."
+      },
+      "EN": {
+        "question": "Your destination is just beyond this sign. What do you do as a horse rider?",
+        "choices": [
+          {
+            "text": "Find an alternative route",
+            "is_correct": true
+          },
+          {
+            "text": "Continue because it is nearby",
+            "is_correct": false
+          },
+          {
+            "text": "Only continue for a short distance",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Even if your destination is nearby, the access restriction for horse riders still applies."
+      },
+      "FR": {
+        "question": "Votre destination se trouve juste après ce panneau. Que faites-vous en tant que cavalier ?",
+        "choices": [
+          {
+            "text": "Chercher un autre itinéraire",
+            "is_correct": true
+          },
+          {
+            "text": "Continuer parce que c’est tout près",
+            "is_correct": false
+          },
+          {
+            "text": "Continuer seulement sur une courte distance",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Même si la destination est proche, la restriction d’accès pour les cavaliers reste valable."
+      },
+      "AR": {
+        "question": "تقع وجهتك مباشرة بعد هذه العلامة. ماذا تفعل بصفتك فارسًا؟",
+        "choices": [
+          {
+            "text": "ابحث عن طريق بديل",
+            "is_correct": true
+          },
+          {
+            "text": "واصل السير لأنها قريبة",
+            "is_correct": false
+          },
+          {
+            "text": "تابع لمسافة قصيرة فقط",
+            "is_correct": false
+          }
+        ],
+        "explanation": "حتى لو كانت وجهتك قريبة، يبقى المنع قائمًا على الفرسان."
+      }
+    }
+  },
+  {
+    "question_id": "C15_Q06",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Mag iemand die te voet een paard leidt deze weg gebruiken ondanks dit bord?",
+        "choices": [
+          {
+            "text": "Ja, het bord richt zich op ruiters",
+            "is_correct": true
+          },
+          {
+            "text": "Nee, het bord verbiedt ook iedereen met een paard",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dit bord is gericht op ruiters. Iemand die te voet een paard leidt, valt daar niet automatisch onder."
+      },
+      "EN": {
+        "question": "May someone walking and leading a horse use this road despite this sign?",
+        "choices": [
+          {
+            "text": "Yes, the sign targets horse riders",
+            "is_correct": true
+          },
+          {
+            "text": "No, the sign also bans anyone with a horse",
+            "is_correct": false
+          }
+        ],
+        "explanation": "This sign is aimed at horse riders. Someone walking and leading a horse is not automatically included."
+      },
+      "FR": {
+        "question": "Une personne à pied menant un cheval peut-elle utiliser cette route malgré ce panneau ?",
+        "choices": [
+          {
+            "text": "Oui, le panneau vise les cavaliers",
+            "is_correct": true
+          },
+          {
+            "text": "Non, le panneau interdit aussi toute personne avec un cheval",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ce panneau vise les cavaliers. Une personne à pied menant un cheval n’est pas automatiquement comprise."
+      },
+      "AR": {
+        "question": "هل يجوز لشخص يمشي ويقود حصانًا باليد استعمال هذا الطريق رغم هذه العلامة؟",
+        "choices": [
+          {
+            "text": "نعم، العلامة تستهدف الفرسان",
+            "is_correct": true
+          },
+          {
+            "text": "لا، العلامة تحظر أيضًا كل من معه حصان",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تستهدف هذه العلامة الفرسان. أما الشخص الذي يمشي ويقود حصانًا باليد فلا يندرج تلقائيًا ضمنها."
+      }
+    }
+  },
+  {
+    "question_id": "C15_Q07",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "De weg lijkt volledig leeg. Mag een ruiter toch inrijden?",
+        "choices": [
+          {
+            "text": "Nee, het bord blijft gelden ook als de weg leeg lijkt",
+            "is_correct": true
+          },
+          {
+            "text": "Ja, als er niemand is mag het",
+            "is_correct": false
+          }
+        ],
+        "explanation": "De zichtbare verkeerssituatie verandert de betekenis van het bord niet. Voor ruiters blijft deze toegang verboden."
+      },
+      "EN": {
+        "question": "The road looks completely empty. May a horse rider still enter?",
+        "choices": [
+          {
+            "text": "No, the sign still applies even if the road looks empty",
+            "is_correct": true
+          },
+          {
+            "text": "Yes, if no one is there it is allowed",
+            "is_correct": false
+          }
+        ],
+        "explanation": "The visible traffic situation does not change the meaning of the sign. For horse riders, this access remains prohibited."
+      },
+      "FR": {
+        "question": "La route semble complètement vide. Un cavalier peut-il quand même y entrer ?",
+        "choices": [
+          {
+            "text": "Non, le panneau reste valable même si la route semble vide",
+            "is_correct": true
+          },
+          {
+            "text": "Oui, s’il n’y a personne c’est permis",
+            "is_correct": false
+          }
+        ],
+        "explanation": "La situation visible sur la route ne change pas la signification du panneau. Pour les cavaliers, cet accès reste interdit."
+      },
+      "AR": {
+        "question": "يبدو الطريق خاليًا تمامًا. هل يجوز لفارس رغم ذلك الدخول؟",
+        "choices": [
+          {
+            "text": "لا، تبقى العلامة سارية حتى لو بدا الطريق خاليًا",
+            "is_correct": true
+          },
+          {
+            "text": "نعم، إذا لم يكن هناك أحد فهذا مسموح",
+            "is_correct": false
+          }
+        ],
+        "explanation": "الوضع الظاهر على الطريق لا يغيّر معنى العلامة. وبالنسبة للفرسان يبقى هذا المدخل محظورًا."
+      }
+    }
+  },
+  {
+    "question_id": "C15_Q08",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Mag een ruiter deze weg gebruiken als hij alleen een korte doorgang nodig heeft?",
+        "choices": [
+          {
+            "text": "Nee, het bord blijft gelden ook voor een korte doorgang",
+            "is_correct": true
+          },
+          {
+            "text": "Ja, een korte doorgang is toegestaan",
+            "is_correct": false
+          }
+        ],
+        "explanation": "De duur van de doorgang verandert de betekenis van het bord niet. Voor ruiters blijft deze toegang verboden."
+      },
+      "EN": {
+        "question": "May a horse rider use this road if only a short passage is needed?",
+        "choices": [
+          {
+            "text": "No, the sign still applies even for a short passage",
+            "is_correct": true
+          },
+          {
+            "text": "Yes, a short passage is allowed",
+            "is_correct": false
+          }
+        ],
+        "explanation": "The length of the passage does not change the meaning of the sign. For horse riders, this access remains prohibited."
+      },
+      "FR": {
+        "question": "Un cavalier peut-il utiliser cette route s’il n’a besoin que d’un court passage ?",
+        "choices": [
+          {
+            "text": "Non, le panneau reste valable même pour un court passage",
+            "is_correct": true
+          },
+          {
+            "text": "Oui, un court passage est autorisé",
+            "is_correct": false
+          }
+        ],
+        "explanation": "La durée du passage ne change pas la signification du panneau. Pour les cavaliers, cet accès reste interdit."
+      },
+      "AR": {
+        "question": "هل يجوز لفارس استعمال هذا الطريق إذا كان يحتاج فقط إلى مرور قصير؟",
+        "choices": [
+          {
+            "text": "لا، تبقى العلامة سارية حتى في حالة المرور القصير",
+            "is_correct": true
+          },
+          {
+            "text": "نعم، المرور القصير مسموح",
+            "is_correct": false
+          }
+        ],
+        "explanation": "مدة المرور لا تغيّر معنى العلامة. وبالنسبة للفرسان يبقى هذا المدخل محظورًا."
+      }
+    }
+  }
 ]

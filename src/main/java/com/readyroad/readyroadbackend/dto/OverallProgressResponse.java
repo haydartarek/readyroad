@@ -110,6 +110,58 @@ public class OverallProgressResponse {
     private Integer signPassedCount;
 
     /**
+     * Total number of completed mixed traffic-sign exam sessions from
+     * /practice/random.
+     */
+    private Integer signRandomExamCount;
+
+    /**
+     * Number of passed mixed traffic-sign exam sessions from /practice/random.
+     */
+    private Integer signRandomExamPassedCount;
+
+    /**
+     * Number of lessons the user has started reading.
+     */
+    private Integer lessonsStartedCount;
+
+    /**
+     * Number of lessons the user has completed.
+     */
+    private Integer lessonsCompletedCount;
+
+    /**
+     * Number of currently unfinished learning activities across the dashboard.
+     * This includes:
+     * - active theory exams
+     * - in-progress sign practice sessions
+     * - active mixed traffic-sign exams
+     */
+    private Integer incompleteActivitiesCount;
+
+    /**
+     * Number of active theory exams currently in progress.
+     */
+    private Integer activeTheoryExamCount;
+
+    /**
+     * Number of in-progress sign practice sessions.
+     */
+    private Integer incompleteSignPracticeCount;
+
+    /**
+     * Number of active mixed traffic-sign exam sessions.
+     */
+    private Integer activeRandomSignExamCount;
+
+    /**
+     * Weakest traffic-sign level entries for the user.
+     * This complements category-level weak areas by surfacing specific signs
+     * (for example: A37) that still need improvement.
+     */
+    private List<SignWeaknessSummary> weakSigns;
+
+    /**
      * Summary of progress for a specific category.
      * Used in weakCategories, strongCategories, and mostStudiedCategories lists.
      */
@@ -138,5 +190,33 @@ public class OverallProgressResponse {
          * Number of questions attempted in this category
          */
         private Integer attempted;
+    }
+
+    /**
+     * Sign-level weakness summary used in the dashboard.
+     */
+    @Data
+    @Builder
+    @AllArgsConstructor
+    @NoArgsConstructor
+    public static class SignWeaknessSummary {
+
+        /** Canonical sign code, e.g. A37 */
+        private String signCode;
+
+        /** Localized names for direct dashboard rendering */
+        private String signNameEn;
+        private String signNameNl;
+        private String signNameFr;
+        private String signNameAr;
+
+        /** Accuracy percentage for this sign (0-100) */
+        private BigDecimal accuracy;
+
+        /** Number of answered questions accumulated for this sign */
+        private Integer attempted;
+
+        /** Number of wrong answers for this sign */
+        private Integer wrongAnswers;
     }
 }

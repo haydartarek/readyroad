@@ -1,12 +1,12 @@
 -- ============================================================
 -- V165__Add_Missing_D_Category_Signs.sql
 -- Add missing D category mandatory signs:
--- D1b-rechts, D5, D7, D9a, D9b
+-- D1b-rechts, D5, D7, D9a
 -- ============================================================
 
 SET NAMES utf8mb4;
 
-DELETE FROM traffic_signs WHERE sign_code IN ('D1b-rechts','D5','D7','D9a','D9b');
+DELETE FROM traffic_signs WHERE sign_code IN ('D1b-rechts','D5','D7','D9a');
 
 INSERT INTO traffic_signs (
     category_id, sign_code, normalized_sign_code,
@@ -65,17 +65,4 @@ INSERT INTO traffic_signs (
  'Ce panneau indique qu une partie de la route est reservee aux pietons et cyclistes (variante a).',
  'images/signs/mandatory_signs/D9a Deel van de weg voorbehouden voor voetgangers en fietsers.png',
  'images/signs/mandatory_signs/D9a Deel van de weg voorbehouden voor voetgangers en fietsers.png',
- 1, NOW(), NOW()),
-
-(4, 'D9b', 'D9b',
- 'جزء من الطريق مخصص للمشاة والدراجات (ب)',
- 'Part of the road reserved for pedestrians and cyclists (variant b)',
- 'Deel van de weg voorbehouden voor voetgangers en fietsers',
- 'Partie de la route réservée aux piétons et cyclistes (variante b)',
- 'جزء من الطريق مخصص للمشاة والدراجين (variant b).',
- 'This sign indicates that part of the road is reserved for pedestrians and cyclists (variant b).',
- 'Dit bord geeft aan dat een deel van de weg voorbehouden is voor voetgangers en fietsers (variant b).',
- 'Ce panneau indique qu une partie de la route est reservee aux pietons et cyclistes (variante b).',
- 'images/signs/mandatory_signs/D9b Deel van de weg voorbehouden voor voetgangers en fietsers.png',
- 'images/signs/mandatory_signs/D9b Deel van de weg voorbehouden voor voetgangers en fietsers.png',
  1, NOW(), NOW());

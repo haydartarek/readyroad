@@ -36,7 +36,6 @@ import java.util.Map;
 @RequiredArgsConstructor
 @Slf4j
 @Tag(name = "Progress Tracking", description = "Feature B: View learning progress and statistics")
-@CrossOrigin(origins = "*")
 public class ProgressController {
 
     private final ProgressService progressService;
@@ -67,9 +66,7 @@ public class ProgressController {
      * @return Overall progress with statistics
      */
     @GetMapping("/overall")
-    @Operation(
-        summary = "Get overall learning progress (Story B2)",
-        description = """
+    @Operation(summary = "Get overall learning progress (Story B2)", description = """
             Returns comprehensive learning progress including:
             - Total attempts and accuracy
             - Mastery level assessment
@@ -78,23 +75,10 @@ public class ProgressController {
             - Study streak tracking
             - Questions remaining count
             - Completed exams summary
-            """,
-        security = @SecurityRequirement(name = "none")
-    )
+            """, security = @SecurityRequirement(name = "none"))
     @ApiResponses(value = {
-        @ApiResponse(
-            responseCode = "200",
-            description = "Overall progress retrieved successfully",
-            content = @Content(
-                mediaType = "application/json",
-                schema = @Schema(implementation = OverallProgressResponse.class)
-            )
-        ),
-        @ApiResponse(
-            responseCode = "401",
-            description = "User not authenticated",
-            content = @Content
-        )
+            @ApiResponse(responseCode = "200", description = "Overall progress retrieved successfully", content = @Content(mediaType = "application/json", schema = @Schema(implementation = OverallProgressResponse.class))),
+            @ApiResponse(responseCode = "401", description = "User not authenticated", content = @Content)
     })
     public ResponseEntity<OverallProgressResponse> getOverallProgress(
             Authentication authentication) {
@@ -116,11 +100,10 @@ public class ProgressController {
         OverallProgressResponse response = progressService.getOverallProgress(userId);
 
         log.info("Overall progress retrieved for user {}: {} attempts, {}% accuracy, difficulty: {}",
-            userId,
-            response.getTotalAttempted(),
-            response.getOverallAccuracy(),
-            response.getRecommendedDifficulty()
-        );
+                userId,
+                response.getTotalAttempted(),
+                response.getOverallAccuracy(),
+                response.getRecommendedDifficulty());
 
         return ResponseEntity.ok(response);
     }
@@ -148,36 +131,21 @@ public class ProgressController {
      * @return List of category progress entries
      */
     @GetMapping("/categories")
-    @Operation(
-        summary = "Get category-level progress (Story B3)",
-        description = """
+    @Operation(summary = "Get category-level progress (Story B3)", description = """
             Returns detailed progress for each category:
             - Category-specific statistics
             - Individual mastery levels
             - Weak/strong category flags
             - Recommended difficulty per category
             - Last practiced timestamp
-            
+
             Key Differences:
             - Mastery Level: Past performance (entity-based, optimistic)
             - Difficulty Recommendation: Future practice (service-based, conservative)
-            """,
-        security = @SecurityRequirement(name = "none")
-    )
+            """, security = @SecurityRequirement(name = "none"))
     @ApiResponses(value = {
-        @ApiResponse(
-            responseCode = "200",
-            description = "Category progress retrieved successfully",
-            content = @Content(
-                mediaType = "application/json",
-                schema = @Schema(implementation = CategoryProgressResponse.class)
-            )
-        ),
-        @ApiResponse(
-            responseCode = "401",
-            description = "User not authenticated",
-            content = @Content
-        )
+            @ApiResponse(responseCode = "200", description = "Category progress retrieved successfully", content = @Content(mediaType = "application/json", schema = @Schema(implementation = CategoryProgressResponse.class))),
+            @ApiResponse(responseCode = "401", description = "User not authenticated", content = @Content)
     })
     public ResponseEntity<List<CategoryProgressResponse>> getCategoryProgress(
             Authentication authentication) {
@@ -199,9 +167,8 @@ public class ProgressController {
         List<CategoryProgressResponse> response = progressService.getCategoryProgress(userId);
 
         log.info("Category progress retrieved for user {}: {} categories with data",
-            userId,
-            response.size()
-        );
+                userId,
+                response.size());
 
         return ResponseEntity.ok(response);
     }
@@ -218,21 +185,12 @@ public class ProgressController {
      * @return Study recommendations based on weak areas
      */
     @GetMapping("/recommendations")
-    @Operation(
-        summary = "Get study recommendations",
-        description = "Returns personalized study recommendations based on weak areas. " +
-                      "This is an alias endpoint for /api/users/me/analytics/weak-areas",
-        security = @SecurityRequirement(name = "bearer-jwt")
-    )
+    @Operation(summary = "Get study recommendations", description = "Returns personalized study recommendations based on weak areas. "
+            +
+            "This is an alias endpoint for /api/users/me/analytics/weak-areas", security = @SecurityRequirement(name = "bearer-jwt"))
     @ApiResponses(value = {
-        @ApiResponse(
-            responseCode = "200",
-            description = "Recommendations retrieved successfully"
-        ),
-        @ApiResponse(
-            responseCode = "401",
-            description = "Unauthorized - Authentication required"
-        )
+            @ApiResponse(responseCode = "200", description = "Recommendations retrieved successfully"),
+            @ApiResponse(responseCode = "401", description = "Unauthorized - Authentication required")
     })
     public ResponseEntity<?> getRecommendations(Authentication authentication) {
         log.info("GET /api/users/me/progress/recommendations - Recommendations requested");
@@ -250,12 +208,12 @@ public class ProgressController {
         log.info("Fetching recommendations for user {}", userId);
 
         // For now, return a simple response
-        // In a real implementation, this would call AnalyticsService.getWeakAreaRecommendations
+        // In a real implementation, this would call
+        // AnalyticsService.getWeakAreaRecommendations
         return ResponseEntity.ok(Map.of(
-            "message", "Recommendations endpoint working",
-            "userId", userId,
-            "recommendations", List.of()
-        ));
+                "message", "Recommendations endpoint working",
+                "userId", userId,
+                "recommendations", List.of()));
     }
 
     // ============================================================================

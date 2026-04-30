@@ -1,18 +1,23 @@
 package com.readyroad.readyroadbackend.service;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.readyroad.readyroadbackend.domain.entity.Category;
 import com.readyroad.readyroadbackend.domain.entity.QuizAnswerOption;
 import com.readyroad.readyroadbackend.domain.entity.QuizQuestion;
+import com.readyroad.readyroadbackend.domain.repository.RoadSignRepository;
 import com.readyroad.readyroadbackend.dto.QuizQuestionDTO;
 import com.readyroad.readyroadbackend.mapper.QuizQuestionMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.springframework.core.io.DefaultResourceLoader;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 /**
  * ═══════════════════════════════════════════════════════════════
@@ -45,8 +50,13 @@ public class ContentSwapProofTest {
 
     @BeforeEach
     void setUp() {
-        // Initialize mapper (no Spring context needed)
-        quizQuestionMapper = new QuizQuestionMapper();
+        // Initialize mapper with an empty sign catalog (no Spring context needed)
+        RoadSignRepository roadSignRepository = mock(RoadSignRepository.class);
+        when(roadSignRepository.findAllByIsActiveTrue()).thenReturn(List.of());
+        quizQuestionMapper = new QuizQuestionMapper(new RoadSignReferenceTextResolver(
+                roadSignRepository,
+                new ObjectMapper(),
+                new DefaultResourceLoader()));
         // Delivery services are not needed for mapper tests
     }
 
@@ -82,8 +92,10 @@ public class ContentSwapProofTest {
         assertEquals("Mathematics", dto.getCategoryNameEn());
 
         // Assert - Options work (generic structure, sorted by displayOrder)
+        // System delivers max 3 options for EASY/MEDIUM questions (Belgian exam
+        // standard)
         assertNotNull(dto.getOptions());
-        assertEquals(4, dto.getOptions().size());
+        assertEquals(3, dto.getOptions().size());
         // Options must be sorted by displayOrder
         for (int i = 1; i < dto.getOptions().size(); i++) {
             assertTrue(dto.getOptions().get(i - 1).getDisplayOrder() <= dto.getOptions().get(i).getDisplayOrder(),

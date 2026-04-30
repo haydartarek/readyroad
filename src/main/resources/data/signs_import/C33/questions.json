@@ -1,10 +1,602 @@
-﻿[
-  {"question_id":"C33_Q01","type":"WHAT_DOES_IT_MEAN","difficulty":"EASY","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Wat betekent dit verkeersbord?","choices":[{"text":"Verboden een U-bocht te maken","is_correct":true},{"text":"Verboden linksaf te slaan","is_correct":false},{"text":"Verboden rechtsaf te slaan","is_correct":false}],"explanation":"C33 verbiedt het keren (U-bocht) op het punt of de weg waar het bord is geplaatst."},"EN":{"question":"What does this traffic sign mean?","choices":[{"text":"No U-turn","is_correct":true},{"text":"No left turn","is_correct":false},{"text":"No right turn","is_correct":false}],"explanation":"C33 prohibits making a U-turn at the point or on the road where the sign is placed."},"FR":{"question":"Que signifie ce panneau ?","choices":[{"text":"Interdiction de faire demi-tour","is_correct":true},{"text":"Interdiction de tourner a gauche","is_correct":false},{"text":"Interdiction de tourner a droite","is_correct":false}],"explanation":"C33 interdit de faire demi-tour au point ou sur la route ou le panneau est place."},"AR":{"question":"Ù…Ø§Ø°Ø§ ØªØ¹Ù†ÙŠ Ù„Ø§ÙØªØ© Ø§Ù„Ù…Ø±ÙˆØ± Ù‡Ø°Ù‡ØŸ","choices":[{"text":"Ù…Ù…Ù†ÙˆØ¹ Ø§Ù„Ø§Ø³ØªØ¯Ø§Ø±Ø©","is_correct":true},{"text":"Ù…Ù…Ù†ÙˆØ¹ Ø§Ù„Ø§Ù†Ø¹Ø·Ø§Ù ÙŠØ³Ø§Ø±Ø§","is_correct":false},{"text":"Ù…Ù…Ù†ÙˆØ¹ Ø§Ù„Ø§Ù†Ø¹Ø·Ø§Ù ÙŠÙ…ÙŠÙ†Ø§","is_correct":false}],"explanation":"ØªØ­Ø¸Ø± C33 Ø§Ù„Ø§Ø³ØªØ¯Ø§Ø±Ø© Ø¹Ù†Ø¯ Ø§Ù„Ù†Ù‚Ø·Ø© Ø§Ùˆ Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„ØªÙŠ ØªÙˆØ¶Ø¹ ÙÙŠÙ‡Ø§ Ø§Ù„Ù„Ø§ÙØªØ©."}}},
-  {"question_id":"C33_Q02","type":"WHICH_SIGN","difficulty":"EASY","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Tot welke categorie behoort dit bord?","choices":[{"text":"Verbodsborden (C-reeks)","is_correct":true},{"text":"Gevaarsborden (A-reeks)","is_correct":false},{"text":"Gebodsborden (D-reeks)","is_correct":false}],"explanation":"Verbodsborden (C-reeks) zijn rond met rode rand en verbieden specifieke rijmanoeuvres."},"EN":{"question":"To which category does this sign belong?","choices":[{"text":"Prohibition signs (C-series)","is_correct":true},{"text":"Danger signs (A-series)","is_correct":false},{"text":"Mandatory signs (D-series)","is_correct":false}],"explanation":"Prohibition signs (C-series) are round with a red border and prohibit specific driving manoeuvres."},"FR":{"question":"A quelle categorie appartient ce panneau ?","choices":[{"text":"Panneaux d interdiction (serie C)","is_correct":true},{"text":"Panneaux de danger (serie A)","is_correct":false},{"text":"Panneaux d obligation (serie D)","is_correct":false}],"explanation":"Les panneaux d interdiction (serie C) sont ronds avec un bord rouge et interdisent des manoeuvres de conduite specifiques."},"AR":{"question":"Ø§Ù„Ù‰ Ø§ÙŠ ÙØ¦Ø© ØªÙ†ØªÙ…ÙŠ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ","choices":[{"text":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø­Ø¸Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© C)","is_correct":true},{"text":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© A)","is_correct":false},{"text":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø§Ù„Ø²Ø§Ù… (Ø§Ù„Ø³Ù„Ø³Ù„Ø© D)","is_correct":false}],"explanation":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø­Ø¸Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© C) Ù…Ø³ØªØ¯ÙŠØ±Ø© Ø°Ø§Øª Ø­Ø¯ Ø§Ø­Ù…Ø± ÙˆØªØ­Ø¸Ø± Ù…Ù†Ø§ÙˆØ±Ø§Øª Ù‚ÙŠØ§Ø¯Ø© Ù…Ø­Ø¯Ø¯Ø©."}}},
-  {"question_id":"C33_Q03","type":"HAZARD_IDENTIFICATION","difficulty":"EASY","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Wat is een U-bocht in de context van bord C33?","choices":[{"text":"Een draaibewegeing van 180 graden die het voertuig in de tegengestelde rijrichting brengt","is_correct":true},{"text":"Een bocht van 90 graden naar links","is_correct":false},{"text":"Het parkeren aan de linkerkant van de rijbaan","is_correct":false}],"explanation":"Een U-bocht is een keerbewegeing waarbij het voertuig volledig van rijrichting verandert. C33 verbiedt deze manoeuvre op het aangeduide punt."},"EN":{"question":"What is a U-turn in the context of sign C33?","choices":[{"text":"A 180-degree turning movement that brings the vehicle in the opposite direction of travel","is_correct":true},{"text":"A 90-degree bend to the left","is_correct":false},{"text":"Parking on the left side of the carriageway","is_correct":false}],"explanation":"A U-turn is a reversing movement where the vehicle completely changes direction of travel. C33 prohibits this manoeuvre at the indicated point."},"FR":{"question":"Qu est-ce qu un demi-tour dans le contexte du panneau C33 ?","choices":[{"text":"Un mouvement de rotation de 180 degres qui amene le vehicule dans la direction de conduite opposee","is_correct":true},{"text":"Un virage a 90 degres vers la gauche","is_correct":false},{"text":"Le stationnement du cote gauche de la chaussee","is_correct":false}],"explanation":"Un demi-tour est un mouvement de retournement ou le vehicule change completement de direction de deplacement. C33 interdit cette manoeuvre au point indique."},"AR":{"question":"Ù…Ø§ Ø§Ù„Ø§Ø³ØªØ¯Ø§Ø±Ø© ÙÙŠ Ø³ÙŠØ§Ù‚ Ù„Ø§ÙØªØ© C33ØŸ","choices":[{"text":"Ø­Ø±ÙƒØ© Ø¯ÙˆØ±Ø§Ù† Ø¨Ø²Ø§ÙˆÙŠØ© 180 Ø¯Ø±Ø¬Ø© ØªØ¶Ø¹ Ø§Ù„Ù…Ø±ÙƒØ¨Ø© ÙÙŠ Ø§ØªØ¬Ø§Ù‡ Ø§Ù„Ø³ÙŠØ± Ø§Ù„Ù…Ø¹Ø§ÙƒØ³","is_correct":true},{"text":"Ù…Ù†Ø­Ù†Ù‰ Ø¨Ø²Ø§ÙˆÙŠØ© 90 Ø¯Ø±Ø¬Ø© ÙŠØ³Ø§Ø±Ø§","is_correct":false},{"text":"Ø§Ù„ÙˆÙ‚ÙˆÙ Ø¹Ù„Ù‰ Ø§Ù„Ø¬Ø§Ù†Ø¨ Ø§Ù„Ø£ÙŠØ³Ø± Ù…Ù† Ù…Ø³Ø§Ø± Ø§Ù„Ø³ÙŠØ§Ø±Ø§Øª","is_correct":false}],"explanation":"Ø§Ù„Ø§Ø³ØªØ¯Ø§Ø±Ø© Ù‡ÙŠ Ø­Ø±ÙƒØ© Ø§Ù†Ù‚Ù„Ø§Ø¨ ØªØºÙŠØ± ÙÙŠÙ‡Ø§ Ø§Ù„Ù…Ø±ÙƒØ¨Ø© Ø§ØªØ¬Ø§Ù‡ Ø§Ù„Ø³ÙŠØ± ÙƒÙ„ÙŠØ§. ØªØ­Ø¸Ø± C33 Ù‡Ø°Ù‡ Ø§Ù„Ù…Ù†Ø§ÙˆØ±Ø© Ø¹Ù†Ø¯ Ø§Ù„Ù†Ù‚Ø·Ø© Ø§Ù„Ù…Ø­Ø¯Ø¯Ø©."}}},
-  {"question_id":"C33_Q04","type":"WHAT_MUST_YOU_DO","difficulty":"MEDIUM","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"U wilt keren op een weg met bord C33. Wat zijn uw opties?","choices":[{"text":"Doorrijden en een volgende kruispunt of toegestane locatie zoeken om te keren","is_correct":true},{"text":"Achteruitrijden op de rijbaan","is_correct":false},{"text":"Een draaipunt zoeken op de stoep","is_correct":false}],"explanation":"C33 verbiedt keren op dit punt. U moet doorrijden naar een veilige en toegestane plek om te keren."},"EN":{"question":"You want to turn around on a road with sign C33. What are your options?","choices":[{"text":"Continue and find the next intersection or permitted location to turn around","is_correct":true},{"text":"Drive in reverse on the carriageway","is_correct":false},{"text":"Find a turning point on the pavement","is_correct":false}],"explanation":"C33 prohibits turning around at this point. You must continue to a safe and permitted place to turn."},"FR":{"question":"Vous voulez faire demi-tour sur une route avec le panneau C33. Quelles sont vos options ?","choices":[{"text":"Continuer et trouver le prochain carrefour ou emplacement autorise pour faire demi-tour","is_correct":true},{"text":"Reculer sur la chaussee","is_correct":false},{"text":"Trouver un point de retournement sur le trottoir","is_correct":false}],"explanation":"C33 interdit de faire demi-tour en ce point. Vous devez continuer jusqu a un endroit sur et autorise pour faire demi-tour."},"AR":{"question":"ØªØ±ÙŠØ¯ Ø§Ù„Ø§Ø³ØªØ¯Ø§Ø±Ø© Ø¹Ù„Ù‰ Ø·Ø±ÙŠÙ‚ Ø¨Ù‡ Ù„Ø§ÙØªØ© C33. Ù…Ø§ Ø®ÙŠØ§Ø±Ø§ØªÙƒØŸ","choices":[{"text":"ØªØªØ§Ø¨Ø¹ ÙˆØªØ¬Ø¯ Ø§Ù„ØªÙ‚Ø§Ø·Ø¹ Ø§Ù„ØªØ§Ù„ÙŠ Ø§Ùˆ Ø§Ù„Ù…ÙˆÙ‚Ø¹ Ø§Ù„Ù…Ø³Ù…ÙˆØ­ Ø¨Ù‡ Ù„Ù„Ø§Ø³ØªØ¯Ø§Ø±Ø©","is_correct":true},{"text":"Ø§Ù„Ø±Ø¬ÙˆØ¹ Ø¨Ø§Ù„Ø¹ÙƒØ³ Ø¹Ù„Ù‰ Ù…Ø³Ø§Ø± Ø§Ù„Ø³ÙŠØ§Ø±Ø§Øª","is_correct":false},{"text":"Ø§ÙŠØ¬Ø§Ø¯ Ù†Ù‚Ø·Ø© Ø§Ø³ØªØ¯Ø§Ø±Ø© Ø¹Ù„Ù‰ Ø§Ù„Ø±ØµÙŠÙ","is_correct":false}],"explanation":"ØªØ­Ø¸Ø± C33 Ø§Ù„Ø§Ø³ØªØ¯Ø§Ø±Ø© ÙÙŠ Ù‡Ø°Ù‡ Ø§Ù„Ù†Ù‚Ø·Ø©. ÙŠØ¬Ø¨ Ø§Ù„Ù…ØªØ§Ø¨Ø¹Ø© Ø§Ù„Ù‰ Ù…ÙƒØ§Ù† Ø¢Ù…Ù† ÙˆÙ…Ø³Ù…ÙˆØ­ Ø¨Ù‡ Ù„Ù„Ø§Ø³ØªØ¯Ø§Ø±Ø©."}}},
-  {"question_id":"C33_Q05","type":"WHAT_MUST_YOU_DO","difficulty":"MEDIUM","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Verbiedt C33 ook een driepuntskeer op de weg?","choices":[{"text":"Ja, een driepuntskeer resulteert in dezelfde tegengestelde richting als een U-bocht en is ook verboden","is_correct":true},{"text":"Nee, een driepuntskeer is technisch geen U-bocht en is toegestaan","is_correct":false},{"text":"Alleen als de weg smaller is dan 6 meter","is_correct":false}],"explanation":"C33 verbiedt het keren in de tegengestelde richting, wat zowel een vloeiende U-bocht als een driepuntskeer omvat. Het resultaat (omgekeerde rijrichting) is het criterium."},"EN":{"question":"Does C33 also prohibit a three-point turn on the road?","choices":[{"text":"Yes, a three-point turn results in the same opposite direction as a U-turn and is also prohibited","is_correct":true},{"text":"No, a three-point turn is technically not a U-turn and is permitted","is_correct":false},{"text":"Only if the road is narrower than 6 metres","is_correct":false}],"explanation":"C33 prohibits turning to the opposite direction which includes both a smooth U-turn and a three-point turn. The result (reversed direction of travel) is the criterion."},"FR":{"question":"C33 interdit-il aussi le retournement en trois points sur la route ?","choices":[{"text":"Oui, un retournement en trois points aboutit dans la meme direction opposee qu un demi-tour et est aussi interdit","is_correct":true},{"text":"Non, un retournement en trois points n est techniquement pas un demi-tour et est autorise","is_correct":false},{"text":"Seulement si la route est plus etroite que 6 metres","is_correct":false}],"explanation":"C33 interdit de tourner dans la direction opposee ce qui inclut a la fois un demi-tour fluide et un retournement en trois points. Le resultat (direction de marche inversee) est le critere."},"AR":{"question":"Ù‡Ù„ ØªØ­Ø¸Ø± C33 Ø§ÙŠØ¶Ø§ Ø§Ù„Ø§Ø³ØªØ¯Ø§Ø±Ø© Ø¨Ø«Ù„Ø§Ø« Ù†Ù‚Ø§Ø· Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±ÙŠÙ‚ØŸ","choices":[{"text":"Ù†Ø¹Ù…ØŒ Ø§Ù„Ø§Ø³ØªØ¯Ø§Ø±Ø© Ø¨Ø«Ù„Ø§Ø« Ù†Ù‚Ø§Ø· ØªØ¤Ø¯ÙŠ Ø§Ù„Ù‰ Ù†ÙØ³ Ø§Ù„Ø§ØªØ¬Ø§Ù‡ Ø§Ù„Ù…Ø¹Ø§ÙƒØ³ ÙƒØ§Ù„Ø§Ø³ØªØ¯Ø§Ø±Ø© Ø§Ù„ÙƒØ§Ù…Ù„Ø© ÙˆÙ‡ÙŠ Ù…Ø­Ø¸ÙˆØ±Ø© Ø§ÙŠØ¶Ø§","is_correct":true},{"text":"Ù„Ø§ØŒ Ø§Ù„Ø§Ø³ØªØ¯Ø§Ø±Ø© Ø¨Ø«Ù„Ø§Ø« Ù†Ù‚Ø§Ø· Ù„ÙŠØ³Øª ØªÙ‚Ù†ÙŠØ§ Ø§Ø³ØªØ¯Ø§Ø±Ø© ÙˆÙ‡ÙŠ Ù…Ø³Ù…ÙˆØ­ Ø¨Ù‡Ø§","is_correct":false},{"text":"ÙÙ‚Ø· Ø§Ø°Ø§ ÙƒØ§Ù† Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ø¶ÙŠÙ‚ Ù…Ù† 6 Ø§Ù…ØªØ§Ø±","is_correct":false}],"explanation":"ØªØ­Ø¸Ø± C33 Ø§Ù„ØªØ­ÙˆÙ„ Ø§Ù„Ù‰ Ø§Ù„Ø§ØªØ¬Ø§Ù‡ Ø§Ù„Ù…Ø¹Ø§ÙƒØ³ Ù…Ù…Ø§ ÙŠØ´Ù…Ù„ Ø§Ù„Ø§Ø³ØªØ¯Ø§Ø±Ø© Ø§Ù„Ø³Ù„Ø³Ø© ÙˆØ§Ù„Ø§Ø³ØªØ¯Ø§Ø±Ø© Ø¨Ø«Ù„Ø§Ø« Ù†Ù‚Ø§Ø·. Ø§Ù„Ù†ØªÙŠØ¬Ø© (Ø§ØªØ¬Ø§Ù‡ Ø§Ù„Ø³ÙŠØ± Ø§Ù„Ù…Ø¹ÙƒÙˆØ³) Ù‡ÙŠ Ø§Ù„Ù…Ø¹ÙŠØ§Ø±."}}},
-  {"question_id":"C33_Q06","type":"WHAT_MUST_YOU_DO","difficulty":"MEDIUM","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Op welk exact punt geldt het verbod van bord C33?","choices":[{"text":"Uitsluitend op het punt waar het bord is geplaatst; verdere weg is niet gedekt tenzij een nieuw bord volgt","is_correct":true},{"text":"Geldt voor de gehele weg tot de volgende gemeente","is_correct":false},{"text":"Geldt voor de gehele weg tot er een ander verbodsbord staat","is_correct":false}],"explanation":"C33 geldt op het specifieke punt waar het bord staat. Het verbod heeft geen doorlopende werking op de rest van de weg."},"EN":{"question":"At which exact point does the prohibition of sign C33 apply?","choices":[{"text":"Exclusively at the point where the sign is placed; the further road is not covered unless a new sign follows","is_correct":true},{"text":"Applies to the entire road until the next municipality","is_correct":false},{"text":"Applies to the entire road until another prohibition sign is posted","is_correct":false}],"explanation":"C33 applies at the specific point where the sign stands. The prohibition does not have a continuing effect on the rest of the road."},"FR":{"question":"A quel point exact l interdiction du panneau C33 s applique-t-elle ?","choices":[{"text":"Exclusivement au point ou le panneau est place; la suite de la route n est pas couverte sauf si un nouveau panneau suit","is_correct":true},{"text":"S applique a toute la route jusqu a la prochaine commune","is_correct":false},{"text":"S applique a toute la route jusqu a ce qu un autre panneau d interdiction soit affiche","is_correct":false}],"explanation":"C33 s applique au point specifique ou se trouve le panneau. L interdiction n a pas d effet continu sur le reste de la route."},"AR":{"question":"Ø¹Ù†Ø¯ Ø§ÙŠ Ù†Ù‚Ø·Ø© Ø¨Ø§Ù„Ø¶Ø¨Ø· ÙŠÙ†Ø·Ø¨Ù‚ Ø­Ø¸Ø± Ù„Ø§ÙØªØ© C33ØŸ","choices":[{"text":"Ø­ØµØ±Ø§ Ø¹Ù†Ø¯ Ø§Ù„Ù†Ù‚Ø·Ø© Ø§Ù„ØªÙŠ ØªÙˆØ¶Ø¹ ÙÙŠÙ‡Ø§ Ø§Ù„Ù„Ø§ÙØªØ©Ø› Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø§Ø¨Ø¹Ø¯ ØºÙŠØ± Ù…Ø´Ù…ÙˆÙ„ Ù…Ø§ Ù„Ù… ØªØªØ¨Ø¹ Ù„Ø§ÙØªØ© Ø¬Ø¯ÙŠØ¯Ø©","is_correct":true},{"text":"ÙŠØ³Ø±ÙŠ Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø¨Ø£ÙƒÙ…Ù„Ù‡ Ø­ØªÙ‰ Ø§Ù„Ø¨Ù„Ø¯Ø© Ø§Ù„ØªØ§Ù„ÙŠØ©","is_correct":false},{"text":"ÙŠØ³Ø±ÙŠ Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø¨Ø£ÙƒÙ…Ù„Ù‡ Ø­ØªÙ‰ ØªÙØ±ÙØ¹ Ù„Ø§ÙØªØ© Ø­Ø¸Ø± Ø§Ø®Ø±Ù‰","is_correct":false}],"explanation":"ØªØ³Ø±ÙŠ C33 Ø¹Ù†Ø¯ Ø§Ù„Ù†Ù‚Ø·Ø© Ø§Ù„Ù…Ø­Ø¯Ø¯Ø© Ø§Ù„ØªÙŠ ØªÙˆØ¶Ø¹ ÙÙŠÙ‡Ø§ Ø§Ù„Ù„Ø§ÙØªØ©. Ø§Ù„Ø­Ø¸Ø± Ù„Ø§ ÙŠØ³Ø±ÙŠ Ø¨Ø§Ø³ØªÙ…Ø±Ø§Ø± Ø¹Ù„Ù‰ Ø¨Ù‚ÙŠØ© Ø§Ù„Ø·Ø±ÙŠÙ‚."}}},
-  {"question_id":"C33_Q07","type":"IS_IT_ALLOWED","difficulty":"HARD","is_critical":true,"show_sign":true,"i18n":{"NL":{"question":"Mag u bij bord C33 achteruitrijden en dan de rijrichting omgooien als technische omzeiling?","choices":[{"text":"Nee, achteruitrijden als omzeiling van C33 is ook verboden; het resultaat is een keerbewegeing","is_correct":true},{"text":"Ja, achteruitrijden is geen U-bocht en is technisch toegestaan","is_correct":false}],"explanation":"C33 verbiedt het keren van de rijrichting. Achteruitrijden om daarna vooruit te rijden in de omgekeerde richting omzeilt het verbod niet. Dit is een ernstige verkeersovertreding."},"EN":{"question":"May you reverse at sign C33 and then swap the direction of travel as a technical bypass?","choices":[{"text":"No, reversing as a bypass of C33 is also prohibited; the result is a turning movement","is_correct":true},{"text":"Yes, reversing is not a U-turn and is technically permitted","is_correct":false}],"explanation":"C33 prohibits reversing the direction of travel. Reversing and then driving forward in the opposite direction does not bypass the prohibition. This is a serious traffic offence."},"FR":{"question":"Pouvez-vous reculer au panneau C33 puis inverser la direction de conduite comme contournement technique ?","choices":[{"text":"Non, reculer comme contournement de C33 est aussi interdit; le resultat est un mouvement de retournement","is_correct":true},{"text":"Oui, reculer n est pas un demi-tour et est techniquement permis","is_correct":false}],"explanation":"C33 interdit d inverser la direction de deplacement. Reculer puis avancer dans la direction opposee ne contourne pas l interdiction. Il s agit d une infraction grave au code de la route."},"AR":{"question":"Ù‡Ù„ ÙŠØ¬ÙˆØ² Ù„Ùƒ Ø§Ù„Ø±Ø¬ÙˆØ¹ Ø¨Ø§Ù„Ø¹ÙƒØ³ Ø¹Ù†Ø¯ Ù„Ø§ÙØªØ© C33 Ø«Ù… ØªØºÙŠÙŠØ± Ø§ØªØ¬Ø§Ù‡ Ø§Ù„Ø³ÙŠØ± ÙƒØªØ­Ø§ÙŠÙ„ ØªÙ‚Ù†ÙŠØŸ","choices":[{"text":"Ù„Ø§ØŒ Ø§Ù„Ø±Ø¬ÙˆØ¹ Ø¨Ø§Ù„Ø¹ÙƒØ³ ÙƒØªØ­Ø§ÙŠÙ„ Ø¹Ù„Ù‰ C33 Ù…Ø­Ø¸ÙˆØ± Ø§ÙŠØ¶Ø§Ø› Ø§Ù„Ù†ØªÙŠØ¬Ø© Ù‡ÙŠ Ø­Ø±ÙƒØ© Ø§Ø³ØªØ¯Ø§Ø±Ø©","is_correct":true},{"text":"Ù†Ø¹Ù…ØŒ Ø§Ù„Ø±Ø¬ÙˆØ¹ Ø¨Ø§Ù„Ø¹ÙƒØ³ Ù„ÙŠØ³ Ø§Ø³ØªØ¯Ø§Ø±Ø© ÙˆÙ‡Ùˆ Ù…Ø³Ù…ÙˆØ­ Ø¨Ù‡ ØªÙ‚Ù†ÙŠØ§","is_correct":false}],"explanation":"ØªØ­Ø¸Ø± C33 Ø¹ÙƒØ³ Ø§ØªØ¬Ø§Ù‡ Ø§Ù„Ø³ÙŠØ±. Ø§Ù„Ø±Ø¬ÙˆØ¹ Ø¨Ø§Ù„Ø¹ÙƒØ³ Ø«Ù… Ø§Ù„Ø³ÙŠØ± Ù„Ù„Ø£Ù…Ø§Ù… ÙÙŠ Ø§Ù„Ø§ØªØ¬Ø§Ù‡ Ø§Ù„Ù…Ø¹Ø§ÙƒØ³ Ù„Ø§ ÙŠØªØ­Ø§ÙŠÙ„ Ø¹Ù„Ù‰ Ø§Ù„Ø­Ø¸Ø±. Ù‡Ø°Ù‡ Ù…Ø®Ø§Ù„ÙØ© Ù…Ø±ÙˆØ±ÙŠØ© Ø®Ø·ÙŠØ±Ø©."}}},
-  {"question_id":"C33_Q08","type":"IS_IT_ALLOWED","difficulty":"HARD","is_critical":true,"show_sign":true,"i18n":{"NL":{"question":"Mag u bij bord C33 in een zijstraat rijden, even stoppen en dan terugkomen in de verboden rijrichting?","choices":[{"text":"Nee, als u de zijstraat gebruikt enkel om het keerpunt te omzeilen en vervolgens terugkeert op de weg in de omgekeerde richting is dit een overtreding van C33","is_correct":true},{"text":"Ja, u verlaat de weg en keert buiten de geldigheidszone terug","is_correct":false}],"explanation":"Het gebruiken van een zijstraat puur als technisch keerpunt om terug te keren op dezelfde weg in omgekeerde richting is een omzeiling van C33. Dit is een ernstige verkeersovertreding."},"EN":{"question":"May you at sign C33 drive into a side street, stop briefly and then come back on the prohibited direction?","choices":[{"text":"No, using the side street solely to bypass the turning point and then returning on the road in the opposite direction is a violation of C33","is_correct":true},{"text":"Yes, you leave the road and return outside the zone of validity","is_correct":false}],"explanation":"Using a side street purely as a technical turning point to return on the same road in reverse direction is a circumvention of C33. This is a serious traffic offence."},"FR":{"question":"Pouvez-vous au panneau C33 entrer dans une rue laterale, m arreter brievement et revenir ensuite dans la direction interdite ?","choices":[{"text":"Non, utiliser la rue laterale uniquement pour contourner le point de retournement puis revenir sur la route dans la direction opposee est une infraction a C33","is_correct":true},{"text":"Oui, vous quittez la route et revenez en dehors de la zone de validite","is_correct":false}],"explanation":"Utiliser une rue laterale purement comme point de retournement technique pour revenir sur la meme route en direction inverse est un contournement de C33. Il s agit d une infraction grave au code de la route."},"AR":{"question":"Ù‡Ù„ ÙŠØ¬ÙˆØ² Ù„Ùƒ Ø¹Ù†Ø¯ Ù„Ø§ÙØªØ© C33 Ø§Ù„Ø¯Ø®ÙˆÙ„ Ø§Ù„Ù‰ Ø´Ø§Ø±Ø¹ Ø¬Ø§Ù†Ø¨ÙŠ ÙˆØ§Ù„ØªÙˆÙ‚Ù Ù„Ø­Ø¸Ø© Ø«Ù… Ø§Ù„Ø¹ÙˆØ¯Ø© ÙÙŠ Ø§Ù„Ø§ØªØ¬Ø§Ù‡ Ø§Ù„Ù…Ø­Ø¸ÙˆØ±ØŸ","choices":[{"text":"Ù„Ø§ØŒ Ø§Ø³ØªØ®Ø¯Ø§Ù… Ø§Ù„Ø´Ø§Ø±Ø¹ Ø§Ù„Ø¬Ø§Ù†Ø¨ÙŠ ÙÙ‚Ø· Ù„Ù„ØªØ­Ø§ÙŠÙ„ Ø¹Ù„Ù‰ Ù†Ù‚Ø·Ø© Ø§Ù„Ø§Ø³ØªØ¯Ø§Ø±Ø© Ø«Ù… Ø§Ù„Ø¹ÙˆØ¯Ø© Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±ÙŠÙ‚ ÙÙŠ Ø§Ù„Ø§ØªØ¬Ø§Ù‡ Ø§Ù„Ù…Ø¹Ø§ÙƒØ³ ÙŠÙØ¹Ø¯Ù‘ Ù…Ø®Ø§Ù„ÙØ© C33","is_correct":true},{"text":"Ù†Ø¹Ù…ØŒ ØªØºØ§Ø¯Ø± Ø§Ù„Ø·Ø±ÙŠÙ‚ ÙˆØªØ¹ÙˆØ¯ Ø®Ø§Ø±Ø¬ Ù…Ù†Ø·Ù‚Ø© Ø§Ù„ØµÙ„Ø§Ø­ÙŠØ©","is_correct":false}],"explanation":"Ø§Ø³ØªØ®Ø¯Ø§Ù… Ø§Ù„Ø´Ø§Ø±Ø¹ Ø§Ù„Ø¬Ø§Ù†Ø¨ÙŠ ÙƒÙ†Ù‚Ø·Ø© Ø§Ø³ØªØ¯Ø§Ø±Ø© ØªÙ‚Ù†ÙŠØ© ÙÙ‚Ø· Ù„Ù„Ø¹ÙˆØ¯Ø© Ø¹Ù„Ù‰ Ù†ÙØ³ Ø§Ù„Ø·Ø±ÙŠÙ‚ ÙÙŠ Ø§Ù„Ø§ØªØ¬Ø§Ù‡ Ø§Ù„Ù…Ø¹Ø§ÙƒØ³ Ù‡Ùˆ ØªØ­Ø§ÙŠÙ„ Ø¹Ù„Ù‰ C33. Ù‡Ø°Ù‡ Ù…Ø®Ø§Ù„ÙØ© Ù…Ø±ÙˆØ±ÙŠØ© Ø®Ø·ÙŠØ±Ø©."}}}
+[
+  {
+    "question_id": "C33_Q01",
+    "type": "WHAT_DOES_IT_MEAN",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat betekent dit verkeersbord?",
+        "choices": [
+          {
+            "text": "Vanaf dit bord tot en met het volgend kruispunt is keren verboden",
+            "is_correct": true
+          },
+          {
+            "text": "Vanaf dit bord is links afslaan verboden",
+            "is_correct": false
+          },
+          {
+            "text": "Vanaf dit bord is rechts afslaan verboden",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dit bord geeft aan dat keren verboden is vanaf het bord tot en met het volgend kruispunt."
+      },
+      "EN": {
+        "question": "What does this traffic sign mean?",
+        "choices": [
+          {
+            "text": "From this sign up to and including the next intersection, making a U-turn is prohibited",
+            "is_correct": true
+          },
+          {
+            "text": "From this sign, turning left is prohibited",
+            "is_correct": false
+          },
+          {
+            "text": "From this sign, turning right is prohibited",
+            "is_correct": false
+          }
+        ],
+        "explanation": "This sign indicates that making a U-turn is prohibited from the sign up to and including the next intersection."
+      },
+      "FR": {
+        "question": "Que signifie ce panneau ?",
+        "choices": [
+          {
+            "text": "À partir de ce signal jusqu’au prochain carrefour inclus, il est interdit de faire demi-tour",
+            "is_correct": true
+          },
+          {
+            "text": "À partir de ce signal, il est interdit de tourner à gauche",
+            "is_correct": false
+          },
+          {
+            "text": "À partir de ce signal, il est interdit de tourner à droite",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ce panneau indique qu’il est interdit de faire demi-tour à partir du signal jusqu’au prochain carrefour inclus."
+      },
+      "AR": {
+        "question": "ما معنى هذه العلامة المرورية؟",
+        "choices": [
+          {
+            "text": "ابتداءً من هذه العلامة وحتى التقاطع التالي شاملًا، الاستدارة ممنوعة",
+            "is_correct": true
+          },
+          {
+            "text": "ابتداءً من هذه العلامة، الانعطاف يسارًا ممنوع",
+            "is_correct": false
+          },
+          {
+            "text": "ابتداءً من هذه العلامة، الانعطاف يمينًا ممنوع",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تدل هذه العلامة على أن الاستدارة ممنوعة ابتداءً من العلامة وحتى التقاطع التالي شاملًا."
+      }
+    }
+  },
+  {
+    "question_id": "C33_Q02",
+    "type": "HAZARD_IDENTIFICATION",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Over welk traject geldt dit verbod?",
+        "choices": [
+          {
+            "text": "Vanaf het bord tot en met het volgend kruispunt",
+            "is_correct": true
+          },
+          {
+            "text": "Alleen precies ter hoogte van het bord",
+            "is_correct": false
+          },
+          {
+            "text": "Tot het einde van de hele straat",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Het verbod geldt vanaf het bord tot en met het volgend kruispunt."
+      },
+      "EN": {
+        "question": "Over which stretch does this prohibition apply?",
+        "choices": [
+          {
+            "text": "From the sign up to and including the next intersection",
+            "is_correct": true
+          },
+          {
+            "text": "Only exactly at the point of the sign",
+            "is_correct": false
+          },
+          {
+            "text": "Until the end of the whole street",
+            "is_correct": false
+          }
+        ],
+        "explanation": "The prohibition applies from the sign up to and including the next intersection."
+      },
+      "FR": {
+        "question": "Sur quel tronçon cette interdiction s’applique-t-elle ?",
+        "choices": [
+          {
+            "text": "À partir du signal jusqu’au prochain carrefour inclus",
+            "is_correct": true
+          },
+          {
+            "text": "Uniquement exactement à l’endroit du signal",
+            "is_correct": false
+          },
+          {
+            "text": "Jusqu’à la fin de toute la rue",
+            "is_correct": false
+          }
+        ],
+        "explanation": "L’interdiction s’applique à partir du signal jusqu’au prochain carrefour inclus."
+      },
+      "AR": {
+        "question": "على أي مقطع يطبق هذا الحظر؟",
+        "choices": [
+          {
+            "text": "من العلامة وحتى التقاطع التالي شاملًا",
+            "is_correct": true
+          },
+          {
+            "text": "فقط تمامًا عند موضع العلامة",
+            "is_correct": false
+          },
+          {
+            "text": "حتى نهاية الشارع كله",
+            "is_correct": false
+          }
+        ],
+        "explanation": "يطبق الحظر من العلامة وحتى التقاطع التالي شاملًا."
+      }
+    }
+  },
+  {
+    "question_id": "C33_Q03",
+    "type": "HAZARD_IDENTIFICATION",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Welke manoeuvre is verboden door dit bord?",
+        "choices": [
+          {
+            "text": "Keren",
+            "is_correct": true
+          },
+          {
+            "text": "Links afslaan",
+            "is_correct": false
+          },
+          {
+            "text": "Rechts afslaan",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dit bord verbiedt de manoeuvre waarbij u uw rijrichting omkeert."
+      },
+      "EN": {
+        "question": "Which manoeuvre is prohibited by this sign?",
+        "choices": [
+          {
+            "text": "Making a U-turn",
+            "is_correct": true
+          },
+          {
+            "text": "Turning left",
+            "is_correct": false
+          },
+          {
+            "text": "Turning right",
+            "is_correct": false
+          }
+        ],
+        "explanation": "This sign prohibits the manoeuvre by which you reverse your direction of travel."
+      },
+      "FR": {
+        "question": "Quelle manœuvre est interdite par ce panneau ?",
+        "choices": [
+          {
+            "text": "Faire demi-tour",
+            "is_correct": true
+          },
+          {
+            "text": "Tourner à gauche",
+            "is_correct": false
+          },
+          {
+            "text": "Tourner à droite",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ce panneau interdit la manœuvre par laquelle vous inversez votre sens de marche."
+      },
+      "AR": {
+        "question": "ما المناورة التي تمنعها هذه العلامة؟",
+        "choices": [
+          {
+            "text": "الاستدارة",
+            "is_correct": true
+          },
+          {
+            "text": "الانعطاف يسارًا",
+            "is_correct": false
+          },
+          {
+            "text": "الانعطاف يمينًا",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تمنع هذه العلامة المناورة التي تعكس بها اتجاه سيرك."
+      }
+    }
+  },
+  {
+    "question_id": "C33_Q04",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U wilt terugkeren terwijl u zich nog vóór het volgend kruispunt bevindt. Wat moet u doen?",
+        "choices": [
+          {
+            "text": "Niet keren en verder rijden tot buiten de geldigheidszone",
+            "is_correct": true
+          },
+          {
+            "text": "Toch keren als de weg vrij is",
+            "is_correct": false
+          },
+          {
+            "text": "Keren als u uw richtingaanwijzer gebruikt",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Zolang u zich tussen het bord en het volgend kruispunt bevindt, mag u niet keren."
+      },
+      "EN": {
+        "question": "You want to turn around while you are still before the next intersection. What must you do?",
+        "choices": [
+          {
+            "text": "Do not make a U-turn and continue until you are beyond the zone of validity",
+            "is_correct": true
+          },
+          {
+            "text": "Still make a U-turn if the road is clear",
+            "is_correct": false
+          },
+          {
+            "text": "Make a U-turn if you use your indicator",
+            "is_correct": false
+          }
+        ],
+        "explanation": "As long as you are between the sign and the next intersection, you may not make a U-turn."
+      },
+      "FR": {
+        "question": "Vous voulez revenir en arrière alors que vous êtes encore avant le prochain carrefour. Que devez-vous faire ?",
+        "choices": [
+          {
+            "text": "Ne pas faire demi-tour et continuer jusqu’à être au-delà de la zone de validité",
+            "is_correct": true
+          },
+          {
+            "text": "Faire quand même demi-tour si la route est libre",
+            "is_correct": false
+          },
+          {
+            "text": "Faire demi-tour si vous utilisez votre clignotant",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Tant que vous vous trouvez entre le signal et le prochain carrefour, vous ne pouvez pas faire demi-tour."
+      },
+      "AR": {
+        "question": "تريد الرجوع بينما ما زلت قبل التقاطع التالي. ماذا يجب أن تفعل؟",
+        "choices": [
+          {
+            "text": "لا تستدر وتابع السير حتى تتجاوز منطقة السريان",
+            "is_correct": true
+          },
+          {
+            "text": "استدر إذا كان الطريق خاليًا",
+            "is_correct": false
+          },
+          {
+            "text": "استدر إذا استعملت الغماز",
+            "is_correct": false
+          }
+        ],
+        "explanation": "ما دمت بين العلامة والتقاطع التالي، فلا يجوز لك القيام بالاستدارة."
+      }
+    }
+  },
+  {
+    "question_id": "C33_Q05",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat moet u doen als u merkt dat u in de verkeerde richting rijdt binnen de geldigheidszone van dit bord?",
+        "choices": [
+          {
+            "text": "Verder rijden en pas keren waar dit weer toegelaten is",
+            "is_correct": true
+          },
+          {
+            "text": "Onmiddellijk keren om tijd te winnen",
+            "is_correct": false
+          },
+          {
+            "text": "Stilstaan en dan toch keren",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Binnen de geldigheidszone van dit bord blijft keren verboden."
+      },
+      "EN": {
+        "question": "What must you do if you realize you are going the wrong way within the validity zone of this sign?",
+        "choices": [
+          {
+            "text": "Continue driving and only make a U-turn where it is allowed again",
+            "is_correct": true
+          },
+          {
+            "text": "Make a U-turn immediately to save time",
+            "is_correct": false
+          },
+          {
+            "text": "Stop and then make a U-turn anyway",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Within the validity zone of this sign, making a U-turn remains prohibited."
+      },
+      "FR": {
+        "question": "Que devez-vous faire si vous vous rendez compte que vous allez dans la mauvaise direction dans la zone de validité de ce panneau ?",
+        "choices": [
+          {
+            "text": "Continuer à rouler et ne faire demi-tour que là où cela est à nouveau autorisé",
+            "is_correct": true
+          },
+          {
+            "text": "Faire immédiatement demi-tour pour gagner du temps",
+            "is_correct": false
+          },
+          {
+            "text": "S’arrêter puis faire quand même demi-tour",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dans la zone de validité de ce panneau, faire demi-tour reste interdit."
+      },
+      "AR": {
+        "question": "ماذا يجب أن تفعل إذا اكتشفت أنك تسير في الاتجاه الخاطئ داخل منطقة سريان هذه العلامة؟",
+        "choices": [
+          {
+            "text": "تابع السير ولا تستدر إلا حيث يصبح ذلك مسموحًا من جديد",
+            "is_correct": true
+          },
+          {
+            "text": "استدر فورًا لتوفير الوقت",
+            "is_correct": false
+          },
+          {
+            "text": "توقف ثم استدر رغم ذلك",
+            "is_correct": false
+          }
+        ],
+        "explanation": "يبقى القيام بالاستدارة ممنوعًا داخل منطقة سريان هذه العلامة."
+      }
+    }
+  },
+  {
+    "question_id": "C33_Q06",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Mag u na het volgend kruispunt opnieuw keren als er geen ander verbod geldt?",
+        "choices": [
+          {
+            "text": "Ja, want dit verbod geldt slechts tot en met het volgend kruispunt",
+            "is_correct": true
+          },
+          {
+            "text": "Nee, het verbod blijft gelden tot het einde van de straat",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dit bord geldt vanaf het bord tot en met het volgend kruispunt."
+      },
+      "EN": {
+        "question": "May you make a U-turn again after the next intersection if no other prohibition applies?",
+        "choices": [
+          {
+            "text": "Yes, because this prohibition only applies up to and including the next intersection",
+            "is_correct": true
+          },
+          {
+            "text": "No, the prohibition remains in force until the end of the street",
+            "is_correct": false
+          }
+        ],
+        "explanation": "This sign applies from the sign up to and including the next intersection."
+      },
+      "FR": {
+        "question": "Pouvez-vous à nouveau faire demi-tour après le prochain carrefour si aucune autre interdiction ne s’applique ?",
+        "choices": [
+          {
+            "text": "Oui, car cette interdiction ne s’applique que jusqu’au prochain carrefour inclus",
+            "is_correct": true
+          },
+          {
+            "text": "Non, l’interdiction reste valable jusqu’à la fin de la rue",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ce panneau s’applique à partir du signal jusqu’au prochain carrefour inclus."
+      },
+      "AR": {
+        "question": "هل يجوز لك أن تستدير من جديد بعد التقاطع التالي إذا لم يوجد حظر آخر؟",
+        "choices": [
+          {
+            "text": "نعم، لأن هذا الحظر يسري فقط حتى التقاطع التالي شاملًا",
+            "is_correct": true
+          },
+          {
+            "text": "لا، يبقى الحظر ساريًا حتى نهاية الشارع",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تسري هذه العلامة من موضعها وحتى التقاطع التالي شاملًا."
+      }
+    }
+  },
+  {
+    "question_id": "C33_Q07",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "De weg is volledig vrij. Mag u binnen de geldigheidszone toch keren?",
+        "choices": [
+          {
+            "text": "Nee, het verbod blijft gelden",
+            "is_correct": true
+          },
+          {
+            "text": "Ja, als u niemand hindert",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ook als de weg vrij is, blijft keren verboden binnen de geldigheidszone van dit bord."
+      },
+      "EN": {
+        "question": "The road is completely clear. May you still make a U-turn within the validity zone?",
+        "choices": [
+          {
+            "text": "No, the prohibition remains in force",
+            "is_correct": true
+          },
+          {
+            "text": "Yes, if you do not hinder anyone",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Even if the road is clear, making a U-turn remains prohibited within the validity zone of this sign."
+      },
+      "FR": {
+        "question": "La route est complètement libre. Pouvez-vous quand même faire demi-tour dans la zone de validité ?",
+        "choices": [
+          {
+            "text": "Non, l’interdiction reste en vigueur",
+            "is_correct": true
+          },
+          {
+            "text": "Oui, si vous ne gênez personne",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Même si la route est libre, faire demi-tour reste interdit dans la zone de validité de ce panneau."
+      },
+      "AR": {
+        "question": "الطريق خالٍ تمامًا. هل يجوز لك رغم ذلك أن تستدير داخل منطقة السريان؟",
+        "choices": [
+          {
+            "text": "لا، يبقى الحظر ساريًا",
+            "is_correct": true
+          },
+          {
+            "text": "نعم، إذا لم تعق أحدًا",
+            "is_correct": false
+          }
+        ],
+        "explanation": "حتى إذا كان الطريق خاليًا، تبقى الاستدارة ممنوعة داخل منطقة سريان هذه العلامة."
+      }
+    }
+  },
+  {
+    "question_id": "C33_Q08",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Mag u binnen de geldigheidszone toch keren omdat u anders moet omrijden?",
+        "choices": [
+          {
+            "text": "Nee, het verbod blijft gelden",
+            "is_correct": true
+          },
+          {
+            "text": "Ja, als het alleen is om tijd te besparen",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ook als omrijden minder handig is, blijft keren verboden tot en met het volgend kruispunt."
+      },
+      "EN": {
+        "question": "May you still make a U-turn within the validity zone because otherwise you have to take a detour?",
+        "choices": [
+          {
+            "text": "No, the prohibition remains in force",
+            "is_correct": true
+          },
+          {
+            "text": "Yes, if it is only to save time",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Even if a detour is less convenient, making a U-turn remains prohibited up to and including the next intersection."
+      },
+      "FR": {
+        "question": "Pouvez-vous quand même faire demi-tour dans la zone de validité parce que sinon vous devez faire un détour ?",
+        "choices": [
+          {
+            "text": "Non, l’interdiction reste en vigueur",
+            "is_correct": true
+          },
+          {
+            "text": "Oui, si c’est seulement pour gagner du temps",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Même si le détour est moins pratique, faire demi-tour reste interdit jusqu’au prochain carrefour inclus."
+      },
+      "AR": {
+        "question": "هل يجوز لك رغم ذلك أن تستدير داخل منطقة السريان لأنك ستضطر otherwise إلى سلوك طريق أطول؟",
+        "choices": [
+          {
+            "text": "لا، يبقى الحظر ساريًا",
+            "is_correct": true
+          },
+          {
+            "text": "نعم، إذا كان ذلك فقط لتوفير الوقت",
+            "is_correct": false
+          }
+        ],
+        "explanation": "حتى إذا كان الطريق البديل أقل ملاءمة، تبقى الاستدارة ممنوعة حتى التقاطع التالي شاملًا."
+      }
+    }
+  }
 ]

@@ -38,18 +38,16 @@ class TrafficSignA1aRegressionTest {
     // ── Canonical V6 / V86 values ──────────────────────
     private static final String SIGN_CODE = "A1a";
     private static final String CATEGORY_CODE = "A";
+    // Values come from signs.json canonical catalog (title_* /
+    // long_description_*_official fields)
     private static final String NAME_EN = "Dangerous bend to the left";
-    private static final String NAME_AR = "منعطف خطر لليسار";
-    private static final String NAME_NL = "Gevaarlijke bocht naar links.";
+    private static final String NAME_AR = "منعطف خطير إلى اليسار";
+    private static final String NAME_NL = "Gevaarlijke bocht naar links";
     private static final String NAME_FR = "Virage dangereux à gauche";
-    private static final String DESC_EN = "Dangerous bend to the left";
-    private static final String DESC_AR = "منعطف خطر لليسار";
-    private static final String DESC_NL = "Gevaarlijke bocht naar links.";
-    private static final String DESC_FR = "Virage dangereux à gauche";
-    private static final String LONG_DESC_EN = "Warning for a dangerous curve to the left at approximately 150 meters. Reduce your speed and pay attention.";
-    private static final String LONG_DESC_AR = "تحذير من منعطف خطير إلى اليسار على مسافة 150 متر تقريباً. خفف من سرعتك وانتبه.";
-    private static final String LONG_DESC_NL = "Waarschuwing voor een gevaarlijke bocht naar links op ongeveer 150 meter afstand. Verminder uw snelheid en let goed op.";
-    private static final String LONG_DESC_FR = "Avertissement d'un virage dangereux à gauche à environ 150 mètres. Réduisez votre vitesse et soyez attentif.";
+    private static final String DESC_EN = "Warns of a dangerous bend to the left where loss of control or reduced visibility may occur, especially at higher speeds.";
+    private static final String DESC_AR = "تحذير من منعطف خطير إلى اليسار حيث قد يحدث فقدان للسيطرة أو تتراجع الرؤية، خصوصاً عند السرعات العالية.";
+    private static final String DESC_NL = "Waarschuwt voor een gevaarlijke bocht naar links waar de weg scherp van richting verandert en verlies van controle of beperkt zicht kan optreden, vooral bij hogere snelheid.";
+    private static final String DESC_FR = "Avertit d'un virage dangereux à gauche où une perte de contrôle ou une visibilité réduite peut se produire, surtout à vitesse élevée.";
 
     /**
      * Detects literal escaped unicode sequences like \\u0639 or \\u00E9 in
@@ -120,15 +118,17 @@ class TrafficSignA1aRegressionTest {
         }
 
         @Test
-        @DisplayName("Given A1a exists in road_signs, When getSignByCode is called, Then long descriptions remain unavailable")
+        @DisplayName("Given A1a in road_signs without long desc, When getSignByCode is called, Then catalog enriches with long descriptions")
         void a1a_has_no_long_descriptions_in_road_signs() {
             TrafficSignResponse response = trafficSignService.getSignByCode(SIGN_CODE);
 
-            assertThat(response.longDescriptionEn()).isNull();
-            assertThat(response.longDescriptionAr()).isNull();
-            assertThat(response.longDescriptionNl()).isNull();
-            assertThat(response.longDescriptionFr()).isNull();
-            assertThat(response.isLongDescriptionComplete()).isFalse();
+            // signs.json provides long descriptions for A1a — catalog enriches even when
+            // road_signs row has none
+            assertThat(response.longDescriptionEn()).isNotBlank();
+            assertThat(response.longDescriptionNl()).isNotBlank();
+            assertThat(response.longDescriptionFr()).isNotBlank();
+            assertThat(response.longDescriptionAr()).isNotBlank();
+            assertThat(response.isLongDescriptionComplete()).isTrue();
         }
 
         @Test
@@ -239,7 +239,7 @@ class TrafficSignA1aRegressionTest {
             assertThat(response.nameEn().toLowerCase()).contains("left");
             assertThat(response.nameFr().toLowerCase()).contains("gauche");
             assertThat(response.nameNl().toLowerCase()).contains("links");
-            assertThat(response.nameAr()).contains("لليسار");
+            assertThat(response.nameAr()).contains("اليسار"); // matches لليسار and إلى اليسار
         }
 
         @Test

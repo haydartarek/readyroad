@@ -6,9 +6,7 @@ import com.readyroad.readyroadbackend.dto.TheoryExamAnswerRequest;
 import com.readyroad.readyroadbackend.dto.TheoryExamQuestionResultDTO;
 import com.readyroad.readyroadbackend.dto.TheoryExamResultDTO;
 import com.readyroad.readyroadbackend.exception.BelgianComplianceException;
-import com.readyroad.readyroadbackend.exception.TranslationRequiredException;
 import com.readyroad.readyroadbackend.util.PlaceholderDetector;
-import com.readyroad.readyroadbackend.validation.TranslationValidator;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -44,6 +42,8 @@ public class QuizService {
 
     private final QuizQuestionRepository quizQuestionRepository;
     private final com.readyroad.readyroadbackend.domain.repository.CategoryRepository categoryRepository;
+    private final RoadSignReferenceTextResolver roadSignReferenceTextResolver;
+    private final BackendMessageService messages;
 
     /**
      * Maximum questions allowed per quiz to prevent abuse
@@ -121,14 +121,14 @@ public class QuizService {
         log.info("🎲 Generating quiz for category {} with {} questions", categoryId, count);
 
         if (categoryId == null) {
-            throw new IllegalArgumentException("Category ID cannot be null");
+            throw new IllegalArgumentException(messages.get("quiz.category_required"));
         }
 
         // Validate category exists
         boolean categoryExists = categoryRepository.existsById(categoryId);
         if (!categoryExists) {
             log.error("❌ Category not found: {}", categoryId);
-            throw new IllegalArgumentException("Category not found: " + categoryId);
+            throw new IllegalArgumentException(messages.get("quiz.category_not_found", categoryId));
         }
 
         // Validate and cap the count
@@ -196,7 +196,7 @@ public class QuizService {
      */
     public Long getActiveQuestionsByCategory(Long categoryId) {
         if (categoryId == null) {
-            throw new IllegalArgumentException("Category ID cannot be null");
+            throw new IllegalArgumentException(messages.get("quiz.category_required"));
         }
         Long count = quizQuestionRepository.countByCategoryIdAndIsActiveTrueAndStatus(
                 categoryId, QuizQuestion.QuestionStatus.PUBLISHED);
@@ -212,13 +212,18 @@ public class QuizService {
      */
     public void validateBelgianCompliance(QuizQuestion question) {
         if (question.getOptions() == null || question.getOptions().isEmpty()) {
-            throw new BelgianComplianceException("Question must have options");
+            throw new BelgianComplianceException(messages.get("quiz.compliance.options_required"));
         }
 
-        int optionCount = question.getOptions().size();
+        int optionCount = question.getDeliverableOptions().size();
+        int expectedCount = question.getExpectedOptionCount();
         if (optionCount < 2 || optionCount > 3) {
             throw new BelgianComplianceException(
-                    String.format("Belgian standard requires 2-3 options only. Found: %d", optionCount));
+                    messages.get("quiz.compliance.options_range", optionCount));
+        }
+        if (question.getDifficultyLevel() == QuizQuestion.DifficultyLevel.HARD && optionCount != expectedCount) {
+            throw new BelgianComplianceException(
+                    messages.get("quiz.compliance.hard_exact", expectedCount, optionCount));
         }
 
         log.debug("✅ Question {} validated: {} options (compliant)",
@@ -236,59 +241,9 @@ public class QuizService {
         if (question.getOptions() == null) {
             return false;
         }
-        int count = question.getOptions().size();
-        return count >= 2 && count <= 3;
-    }
-
-    /**
-     * Publish a question - Story D2
-     *
-     * Requirements before publication:
-     * 1. Must have 2-3 options (Story D1)
-     * 2. Must have NL translation (Story D2)
-     * 3. Must have FR translation (Story D2)
-     *
-     * @param questionId Question ID to publish
-     * @throws IllegalArgumentException     if question not found
-     * @throws BelgianComplianceException   if options count invalid
-     * @throws TranslationRequiredException if translations missing
-     */
-    @Transactional
-    public void publishQuestion(Long questionId) {
-        QuizQuestion question = quizQuestionRepository.findById(questionId)
-                .orElseThrow(() -> new IllegalArgumentException("Question not found: " + questionId));
-
-        // Story D1: Validate Belgian compliance (2-3 options)
-        validateBelgianCompliance(question);
-
-        // Story D2: Validate required translations (NL + FR)
-        TranslationValidator.validatePublicationRequirements(question);
-
-        // Mark as active and published
-        question.setIsActive(true);
-        question.setStatus(QuizQuestion.QuestionStatus.PUBLISHED);
-        question.setPublishedAt(java.time.LocalDateTime.now());
-        quizQuestionRepository.save(question);
-
-        log.info("✅ Question {} published successfully (NL/FR verified, {} options)",
-                questionId, question.getOptions().size());
-    }
-
-    /**
-     * Unpublish a question (mark as draft).
-     *
-     * @param questionId Question ID to unpublish
-     */
-    @Transactional
-    public void unpublishQuestion(Long questionId) {
-        QuizQuestion question = quizQuestionRepository.findById(questionId)
-                .orElseThrow(() -> new IllegalArgumentException("Question not found: " + questionId));
-
-        question.setIsActive(false);
-        question.setStatus(QuizQuestion.QuestionStatus.DRAFT);
-        quizQuestionRepository.save(question);
-
-        log.info("ℹ️ Question {} unpublished (marked as draft)", questionId);
+        int count = question.getDeliverableOptions().size();
+        return count >= 2 && count <= 3
+                && (question.getDifficultyLevel() != QuizQuestion.DifficultyLevel.HARD || count == 2);
     }
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -355,7 +310,7 @@ public class QuizService {
         if (question.getOptions() == null) {
             return false;
         }
-        long validCount = question.getOptions().stream()
+        long validCount = question.getDeliverableOptions().stream()
                 .filter(option -> !PlaceholderDetector.hasPlaceholder(
                         option.getOptionTextEn(), option.getOptionTextNl(),
                         option.getOptionTextFr(), option.getOptionTextAr()))
@@ -402,7 +357,7 @@ public class QuizService {
                 continue;
 
             // Find the correct option
-            var correctOption = q.getOptions().stream()
+            var correctOption = q.getDeliverableOptions().stream()
                     .filter(o -> Boolean.TRUE.equals(o.getIsCorrect()))
                     .findFirst().orElse(null);
 
@@ -428,16 +383,16 @@ public class QuizService {
 
             results.add(TheoryExamQuestionResultDTO.builder()
                     .questionId(q.getId())
-                    .questionEn(q.getQuestionEn())
-                    .questionAr(q.getQuestionAr())
-                    .questionNl(q.getQuestionNl())
-                    .questionFr(q.getQuestionFr())
+                    .questionEn(roadSignReferenceTextResolver.resolveEn(q.getQuestionEn()))
+                    .questionAr(roadSignReferenceTextResolver.resolveAr(q.getQuestionAr()))
+                    .questionNl(roadSignReferenceTextResolver.resolveNl(q.getQuestionNl()))
+                    .questionFr(roadSignReferenceTextResolver.resolveFr(q.getQuestionFr()))
                     .selectedOptionId(answer.getSelectedOptionId())
                     .correctOptionId(correctOption != null ? correctOption.getId() : null)
-                    .correctOptionEn(correctOption != null ? correctOption.getOptionTextEn() : null)
-                    .correctOptionAr(correctOption != null ? correctOption.getOptionTextAr() : null)
-                    .correctOptionNl(correctOption != null ? correctOption.getOptionTextNl() : null)
-                    .correctOptionFr(correctOption != null ? correctOption.getOptionTextFr() : null)
+                    .correctOptionEn(correctOption != null ? roadSignReferenceTextResolver.resolveEn(correctOption.getOptionTextEn()) : null)
+                    .correctOptionAr(correctOption != null ? roadSignReferenceTextResolver.resolveAr(correctOption.getOptionTextAr()) : null)
+                    .correctOptionNl(correctOption != null ? roadSignReferenceTextResolver.resolveNl(correctOption.getOptionTextNl()) : null)
+                    .correctOptionFr(correctOption != null ? roadSignReferenceTextResolver.resolveFr(correctOption.getOptionTextFr()) : null)
                     .isCorrect(isCorrect)
                     .wasTimeout(isTimeout)
                     .categoryNameEn(catEn)

@@ -8,7 +8,10 @@ import lombok.NoArgsConstructor;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "user_weak_areas", uniqueConstraints = @UniqueConstraint(columnNames = { "user_id", "category_id" }))
+@Table(name = "user_weak_areas", uniqueConstraints = {
+        @UniqueConstraint(name = "uk_user_category", columnNames = { "user_id", "category" }),
+        @UniqueConstraint(name = "uk_user_sign", columnNames = { "user_id", "traffic_sign_code" })
+})
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -22,9 +25,11 @@ public class UserWeakArea {
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "category_id")
-    private Category category;
+    @Column(name = "category", length = 50)
+    private String category;
+
+    @Column(name = "traffic_sign_code", length = 50)
+    private String trafficSignCode;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "road_sign_id")

@@ -30,6 +30,9 @@ public class SignExamResult {
     @Column(name = "sign_code", nullable = false, length = 50)
     private String signCode;
 
+    @Column(name = "exam_number", nullable = false)
+    private Integer examNumber = 1;
+
     @Column(name = "total_questions", nullable = false)
     private Integer totalQuestions;
 
@@ -48,6 +51,10 @@ public class SignExamResult {
 
     @Column(name = "passed", nullable = false)
     private Boolean passed = false;
+
+    @Lob
+    @Column(name = "question_results_json", columnDefinition = "LONGTEXT")
+    private String questionResultsJson;
 
     @Column(name = "completed_at", nullable = false)
     private LocalDateTime completedAt;
@@ -91,6 +98,14 @@ public class SignExamResult {
 
     public void setSignCode(String v) {
         this.signCode = v;
+    }
+
+    public Integer getExamNumber() {
+        return examNumber;
+    }
+
+    public void setExamNumber(Integer v) {
+        this.examNumber = v;
     }
 
     public Integer getTotalQuestions() {
@@ -139,6 +154,14 @@ public class SignExamResult {
 
     public void setPassed(Boolean v) {
         this.passed = v;
+    }
+
+    public String getQuestionResultsJson() {
+        return questionResultsJson;
+    }
+
+    public void setQuestionResultsJson(String v) {
+        this.questionResultsJson = v;
     }
 
     public LocalDateTime getCompletedAt() {

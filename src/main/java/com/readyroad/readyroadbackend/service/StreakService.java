@@ -16,7 +16,8 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
- * Streak Service — calculates consecutive study days and fires milestone notifications.
+ * Streak Service — calculates consecutive study days and fires milestone
+ * notifications.
  *
  * Streak milestones: 3, 7, 14, 30 days.
  * Dedup: if a STREAK_ACHIEVED notification was sent in the last 12 hours, skip.
@@ -28,8 +29,8 @@ import java.util.stream.Collectors;
 public class StreakService {
 
     private final UserQuestionHistoryRepository historyRepository;
-    private final NotificationRepository        notificationRepository;
-    private final NotificationService           notificationService;
+    private final NotificationRepository notificationRepository;
+    private final NotificationService notificationService;
 
     /** Streak milestone days that trigger a notification */
     private static final Set<Integer> MILESTONES = Set.of(3, 7, 14, 30);
@@ -82,26 +83,26 @@ public class StreakService {
      * Calculate consecutive study days using answered_at history.
      *
      * Algorithm:
-     *  1. Load distinct answered dates (descending order) from the repository.
-     *  2. If most recent date is neither today nor yesterday → streak is 0.
-     *  3. Walk backwards counting consecutive days that differ by exactly 1.
+     * 1. Load distinct answered dates (descending order) from the repository.
+     * 2. If most recent date is neither today nor yesterday → streak is 0.
+     * 3. Walk backwards counting consecutive days that differ by exactly 1.
      */
     private int calculateStreak(Long userId) {
-        List<String> rawDates = historyRepository.findDistinctAnswerDatesByUserId(userId);
+        List<LocalDate> rawDates = historyRepository.findDistinctAnswerDatesByUserId(userId);
 
         if (rawDates == null || rawDates.isEmpty()) {
             return 0;
         }
 
         List<LocalDate> dates = rawDates.stream()
-                .filter(s -> s != null && !s.isEmpty())
-                .map(LocalDate::parse)
+                .filter(date -> date != null)
                 .sorted(Comparator.reverseOrder())
                 .collect(Collectors.toList());
 
-        if (dates.isEmpty()) return 0;
+        if (dates.isEmpty())
+            return 0;
 
-        LocalDate today     = LocalDate.now();
+        LocalDate today = LocalDate.now();
         LocalDate yesterday = today.minusDays(1);
         LocalDate mostRecent = dates.get(0);
 
@@ -112,7 +113,7 @@ public class StreakService {
 
         int streak = 1;
         for (int i = 1; i < dates.size(); i++) {
-            LocalDate prev    = dates.get(i - 1);
+            LocalDate prev = dates.get(i - 1);
             LocalDate current = dates.get(i);
             if (prev.minusDays(1).equals(current)) {
                 streak++;

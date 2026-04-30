@@ -5,161 +5,123 @@
     "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE: Replace wrong answers with actual sign names from the same category.",
     "i18n": {
       "NL": {
         "question": "Wat betekent dit verkeersbord?",
         "choices": [
           {
-            "text": "Algemeen gevaar",
+            "text": "Gevaar zonder specifiek symbool",
             "is_correct": true
           },
           {
-            "text": "Verbod om in te halen",
+            "text": "Filevorming",
             "is_correct": false
           },
           {
-            "text": "Maximumsnelheid 50 km/u",
+            "text": "Overweg voor één spoor",
             "is_correct": false
           }
         ],
-        "explanation": "Gevaar dat niet door een speciaal symbool wordt bepaald. Een onderbord duidt de aard van het gevaar aan."
+        "explanation": "Dit bord waarschuwt voor een algemeen gevaar dat niet met een specifiek symbool wordt weergegeven."
       },
       "EN": {
         "question": "What does this traffic sign mean?",
         "choices": [
           {
-            "text": "General danger",
+            "text": "General danger (unspecified)",
             "is_correct": true
           },
           {
-            "text": "Prohibition to overtake",
+            "text": "Traffic congestion ahead",
             "is_correct": false
           },
           {
-            "text": "Maximum speed 50 km/h",
+            "text": "Single-track level crossing",
             "is_correct": false
           }
         ],
-        "explanation": "Danger not specified by a special symbol. A sub-sign indicates the nature of the danger."
+        "explanation": "This sign indicates a general danger that is not specified by a symbol."
       },
       "FR": {
         "question": "Que signifie ce panneau de signalisation ?",
         "choices": [
           {
-            "text": "Danger gÃ©nÃ©ral",
+            "text": "Danger non spécifié",
             "is_correct": true
           },
           {
-            "text": "Interdiction de dÃ©passer",
+            "text": "Embouteillage",
             "is_correct": false
           },
           {
-            "text": "Vitesse maximale 50 km/h",
+            "text": "Passage à niveau à une seule voie",
             "is_correct": false
           }
         ],
-        "explanation": "Danger non spÃ©cifiÃ© par un symbole spÃ©cial. Un panneau additionnel indique la nature du danger."
+        "explanation": "Ce panneau indique un danger général qui n'est pas précisé par un symbole spécifique."
       },
       "AR": {
-        "question": "Ù…Ø§Ø°Ø§ ØªØ¹Ù†ÙŠ Ù„Ø§ÙØªØ© Ø§Ù„Ù…Ø±ÙˆØ± Ù‡Ø°Ù‡ØŸ",
+        "question": "ما معنى هذه العلامة المرورية؟",
         "choices": [
           {
-            "text": "Ø®Ø·Ø± Ø¹Ø§Ù…",
+            "text": "خطر غير محدد",
             "is_correct": true
           },
           {
-            "text": "Ø­Ø¸Ø± Ø§Ù„ØªØ¬Ø§ÙˆØ²",
+            "text": "تحذير من ازدحام مروري",
             "is_correct": false
           },
           {
-            "text": "Ø§Ù„Ø³Ø±Ø¹Ø© Ø§Ù„Ù‚ØµÙˆÙ‰ 50 ÙƒÙ…/Ø³",
+            "text": "معبر سكة حديد ذو مسار واحد",
             "is_correct": false
           }
         ],
-        "explanation": "Ø®Ø·Ø± ØºÙŠØ± Ù…Ø­Ø¯Ø¯ Ø¨Ø±Ù…Ø² Ø®Ø§Øµ. Ø¹Ù„Ø§Ù…Ø© ÙØ±Ø¹ÙŠØ© ØªØ´ÙŠØ± Ø¥Ù„Ù‰ Ø·Ø¨ÙŠØ¹Ø© Ø§Ù„Ø®Ø·Ø±."
+        "explanation": "تشير هذه العلامة إلى خطر عام لا يُمثَّل برمز خاص."
       }
     }
-  },
+  },
   {
     "question_id": "A51_Q02",
     "type": "WHICH_SIGN",
     "difficulty": "EASY",
     "is_critical": false,
-    "show_sign": true,
-    "_note": "TEMPLATE: Ready to use â€” category identification question.",
+    "show_sign": false,
     "i18n": {
       "NL": {
-        "question": "Tot welke categorie verkeerstekens behoort dit bord?",
+        "question": "Welk bord waarschuwt voor een niet nader aangeduid gevaar?",
         "choices": [
-          {
-            "text": "Gevaarsborden (A-reeks)",
-            "is_correct": true
-          },
-          {
-            "text": "Voorrangsborden (B-reeks)",
-            "is_correct": false
-          },
-          {
-            "text": "Verbodsborden (C-reeks)",
-            "is_correct": false
-          }
+          { "text": "Het bord dat waarschuwt voor een gevaar waarvoor geen specifiek symbool bestaat", "is_correct": true },
+          { "text": "Het bord dat waarschuwt voor filevorming of langzaam rijdend verkeer", "is_correct": false },
+          { "text": "Het bord dat waarschuwt voor wegwerkzaamheden", "is_correct": false }
         ],
-        "explanation": "Dit bord behoort tot de categorie 'Gevaarsborden (A-reeks)'. Elk type bord heeft een specifieke vorm en kleurschema."
+        "explanation": "Het gevaarsbord A51 waarschuwt voor gevaren zonder specifiek symbool. Het bord voor filevorming (A50) geldt voor file of langzame verkeer. Het bord voor werkzaamheden (A31) geldt voor werken op de weg."
       },
       "EN": {
-        "question": "To which category of traffic signs does this sign belong?",
+        "question": "Which sign warns of an unspecified hazard?",
         "choices": [
-          {
-            "text": "Danger signs (A-series)",
-            "is_correct": true
-          },
-          {
-            "text": "Priority signs (B-series)",
-            "is_correct": false
-          },
-          {
-            "text": "Prohibition signs (C-series)",
-            "is_correct": false
-          }
+          { "text": "The sign that warns of a hazard for which no specific symbol exists", "is_correct": true },
+          { "text": "The sign that warns of a traffic jam or slow-moving traffic", "is_correct": false },
+          { "text": "The sign that warns of roadworks", "is_correct": false }
         ],
-        "explanation": "This sign belongs to the 'Danger signs (A-series)' category. Each type of sign has a specific shape and color scheme."
+        "explanation": "Danger sign A51 warns of hazards without a specific symbol. The traffic jam sign (A50) applies to slow or queuing traffic. The roadworks sign (A31) applies to works on the road."
       },
       "FR": {
-        "question": "Ã€ quelle catÃ©gorie de panneaux de signalisation ce panneau appartient-il ?",
+        "question": "Quel panneau signale un danger non précisé ?",
         "choices": [
-          {
-            "text": "Panneaux de danger (sÃ©rie A)",
-            "is_correct": true
-          },
-          {
-            "text": "Panneaux de prioritÃ© (sÃ©rie B)",
-            "is_correct": false
-          },
-          {
-            "text": "Panneaux d'interdiction (sÃ©rie C)",
-            "is_correct": false
-          }
+          { "text": "Le panneau qui avertit d’un danger pour lequel il n’existe pas de symbole spécifique", "is_correct": true },
+          { "text": "Le panneau qui avertit d’un embouteillage ou d’une circulation lente", "is_correct": false },
+          { "text": "Le panneau qui avertit de travaux routiers", "is_correct": false }
         ],
-        "explanation": "Ce panneau appartient Ã  la catÃ©gorie 'Panneaux de danger (sÃ©rie A)'. Chaque type de panneau a une forme et un schÃ©ma de couleurs spÃ©cifiques."
+        "explanation": "Le panneau de danger A51 avertit de dangers sans symbole spécifique. Le panneau embouteillage (A50) concerne la circulation lente ou en file. Le panneau travaux (A31) concerne les travaux sur la route."
       },
       "AR": {
-        "question": "Ø¥Ù„Ù‰ Ø£ÙŠ ÙØ¦Ø© Ù…Ù† Ù„Ø§ÙØªØ§Øª Ø§Ù„Ù…Ø±ÙˆØ± ØªÙ†ØªÙ…ÙŠ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ",
+        "question": "أي علامة مرورية تُحذّر من خطر غير محدد؟",
         "choices": [
-          {
-            "text": "Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± (Ø³Ù„Ø³Ù„Ø© A)",
-            "is_correct": true
-          },
-          {
-            "text": "Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© (Ø³Ù„Ø³Ù„Ø© B)",
-            "is_correct": false
-          },
-          {
-            "text": "Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø­Ø¸Ø± (Ø³Ù„Ø³Ù„Ø© C)",
-            "is_correct": false
-          }
+          { "text": "العلامة التي تُحذّر من خطر لا يوجد له رمز محدد", "is_correct": true },
+          { "text": "العلامة التي تُحذّر من أزمة مرورية أو حركة بطيئة", "is_correct": false },
+          { "text": "العلامة التي تُحذّر من أشغال الطريق", "is_correct": false }
         ],
-        "explanation": "Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ© ØªÙ†ØªÙ…ÙŠ Ø¥Ù„Ù‰ ÙØ¦Ø© 'Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± (Ø³Ù„Ø³Ù„Ø© A)'. ÙƒÙ„ Ù†ÙˆØ¹ Ù…Ù† Ø§Ù„Ù„Ø§ÙØªØ§Øª Ù„Ù‡ Ø´ÙƒÙ„ ÙˆÙ†Ø¸Ø§Ù… Ø£Ù„ÙˆØ§Ù† Ù…Ø­Ø¯Ø¯."
+        "explanation": "علامة الخطر A51 تُحذّر من خطر بدون رمز محدد. علامة الأزمة (A50) تختص بحركة بطيئة أو أزمة. علامة الأشغال (A31) تختص بأعمال على الطريق."
       }
     }
   },
@@ -169,161 +131,159 @@
     "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE (MEDIUM): Replace with sign-specific question for production.",
     "i18n": {
       "NL": {
-        "question": "Wat moet u doen wanneer u dit gevaarsbord ziet?",
+        "question": "Hoe reageert u best wanneer u dit bord ziet?",
         "choices": [
           {
-            "text": "Snelheid verminderen en extra opletten",
+            "text": "Voorzichtig zijn en voorbereid zijn op een niet nader aangeduid gevaar",
             "is_correct": true
           },
           {
-            "text": "Stoppen en uitstappen",
+            "text": "Doorrijden zonder extra aandacht omdat het gevaar niet zichtbaar is",
             "is_correct": false
           },
           {
-            "text": "De rijstrook wisselen",
+            "text": "Alleen letten op de rode rand van het bord",
             "is_correct": false
           }
         ],
-        "explanation": "Gevaarsborden waarschuwen voor gevaarlijke situaties. U moet uw snelheid aanpassen en extra voorzichtig zijn."
+        "explanation": "Dit bord waarschuwt voor een gevaar waarvan de precieze aard niet op het bord zelf staat. U doet er dus goed aan voorzichtig te zijn en te letten op een eventueel onderbord."
       },
       "EN": {
-        "question": "What should you do when you see this danger sign?",
+        "question": "How should you react when you see this sign?",
         "choices": [
           {
-            "text": "Reduce speed and pay extra attention",
+            "text": "Be cautious and prepare for a danger that is not specified on the sign itself",
             "is_correct": true
           },
           {
-            "text": "Stop and get out of the vehicle",
+            "text": "Continue normally because the danger is not visible",
             "is_correct": false
           },
           {
-            "text": "Change lane immediately",
+            "text": "Only pay attention to the red border",
             "is_correct": false
           }
         ],
-        "explanation": "Danger signs warn of hazardous situations on the road. You must adjust your speed and be extra careful."
+        "explanation": "This sign warns of a danger whose exact nature is not shown on the sign itself. You should therefore remain cautious and check for any supplementary plate."
       },
       "FR": {
-        "question": "Que devez-vous faire lorsque vous voyez ce panneau de danger ?",
+        "question": "Comment devriez-vous réagir lorsque vous voyez ce panneau ?",
         "choices": [
           {
-            "text": "RÃ©duire la vitesse et faire particuliÃ¨rement attention",
+            "text": "Être prudent et se préparer à un danger qui n'est pas précisé sur le panneau lui-même",
             "is_correct": true
           },
           {
-            "text": "ArrÃªter et descendre du vÃ©hicule",
+            "text": "Continuer normalement puisque le danger n'est pas visible",
             "is_correct": false
           },
           {
-            "text": "Changer de voie immÃ©diatement",
+            "text": "Regarder seulement la bordure rouge",
             "is_correct": false
           }
         ],
-        "explanation": "Les panneaux de danger avertissent des situations dangereuses. Vous devez adapter votre vitesse et Ãªtre particuliÃ¨rement prudent."
+        "explanation": "Ce panneau avertit d'un danger dont la nature exacte n'est pas indiquée sur le panneau lui-même. Vous devriez donc rester prudent et vérifier s'il y a un panneau additionnel."
       },
       "AR": {
-        "question": "Ù…Ø§Ø°Ø§ ÙŠØ¬Ø¨ Ø£Ù† ØªÙØ¹Ù„ Ø¹Ù†Ø¯Ù…Ø§ ØªØ±Ù‰ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ© Ø§Ù„ØªØ­Ø°ÙŠØ±ÙŠØ©ØŸ",
+        "question": "كيف ينبغي أن تتصرف عندما ترى هذه العلامة المرورية؟",
         "choices": [
           {
-            "text": "ØªÙ‚Ù„ÙŠÙ„ Ø§Ù„Ø³Ø±Ø¹Ø© ÙˆØ§Ù„Ø§Ù†ØªØ¨Ø§Ù‡ Ø¨Ø´ÙƒÙ„ Ø¥Ø¶Ø§ÙÙŠ",
+            "text": "توخي الحذر والاستعداد لخطر لا توضحه العلامة بنفسها",
             "is_correct": true
           },
           {
-            "text": "Ø§Ù„ØªÙˆÙ‚Ù ÙˆØ§Ù„Ù†Ø²ÙˆÙ„ Ù…Ù† Ø§Ù„Ù…Ø±ÙƒØ¨Ø©",
+            "text": "متابعة القيادة بشكل عادي لأن الخطر غير ظاهر",
             "is_correct": false
           },
           {
-            "text": "ØªØºÙŠÙŠØ± Ø§Ù„Ù…Ø³Ø§Ø± ÙÙˆØ±Ø§Ù‹",
+            "text": "الاكتفاء بملاحظة شكل العلامة فقط",
             "is_correct": false
           }
         ],
-        "explanation": "ØªØ­Ø°Ø± Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± Ù…Ù† Ø§Ù„Ù…ÙˆØ§Ù‚Ù Ø§Ù„Ø®Ø·Ø±Ø© Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±ÙŠÙ‚. ÙŠØ¬Ø¨ Ø¹Ù„ÙŠÙƒ ØªØ¹Ø¯ÙŠÙ„ Ø³Ø±Ø¹ØªÙƒ ÙˆØ£Ù† ØªÙƒÙˆÙ† Ø£ÙƒØ«Ø± Ø­Ø°Ø±Ø§Ù‹."
+        "explanation": "تحذر هذه العلامة من خطر لا توضحه بنفسها بشكل مباشر. لذلك ينبغي أن تكون حذراً وأن تنتبه إلى أي لوحة إضافية مرافقة لها."
       }
     }
   },
   {
     "question_id": "A51_Q04",
-    "type": "WHAT_MUST_YOU_DO",
+    "type": "WHAT_DOES_IT_MEAN",
     "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE (MEDIUM): Replace with sign-specific question for production.",
     "i18n": {
       "NL": {
-        "question": "Op welke afstand van het gevaar wordt een gevaarsbord buiten de bebouwde kom geplaatst?",
+        "question": "Hoe weet u welk specifiek gevaar dit bord aankondigt?",
         "choices": [
           {
-            "text": "Ongeveer 150 meter voor het gevaar",
+            "text": "Via een onderbord dat het gevaar nader omschrijft",
             "is_correct": true
           },
           {
-            "text": "Precies op de plek van het gevaar",
+            "text": "Via de kleur van de rode rand",
             "is_correct": false
           },
           {
-            "text": "Op 500 meter voor het gevaar",
+            "text": "Dit bord heeft altijd dezelfde betekenis zonder extra informatie",
             "is_correct": false
           }
         ],
-        "explanation": "Buiten de bebouwde kom worden gevaarsborden op Â±150 m geplaatst. In de bebouwde kom is dit Â±50 m."
+        "explanation": "A51 verwijst alleen naar een algemeen gevaar. Het specifieke gevaar verneemt u via het onderbord dat extra uitleg geeft."
       },
       "EN": {
-        "question": "At what distance from the hazard is a danger sign placed outside built-up areas?",
+        "question": "How do you know which specific danger this sign announces?",
         "choices": [
           {
-            "text": "Approximately 150 meters before the hazard",
+            "text": "By a supplementary plate that specifies the danger",
             "is_correct": true
           },
           {
-            "text": "Exactly at the hazard location",
+            "text": "By the color of the red border",
             "is_correct": false
           },
           {
-            "text": "500 meters before the hazard",
+            "text": "This sign always has the same meaning without extra information",
             "is_correct": false
           }
         ],
-        "explanation": "Outside built-up areas, danger signs are placed Â±150 m before the hazard. Inside built-up areas it is Â±50 m."
+        "explanation": "A51 refers only to a general danger. You learn the specific danger from the supplementary plate that provides extra detail."
       },
       "FR": {
-        "question": "Ã€ quelle distance du danger un panneau de danger est-il placÃ© hors agglomÃ©ration ?",
+        "question": "Comment savez-vous quel danger précis ce panneau annonce ?",
         "choices": [
           {
-            "text": "Environ 150 mÃ¨tres avant le danger",
+            "text": "Grâce à un panneau additionnel qui précise le danger",
             "is_correct": true
           },
           {
-            "text": "Exactement Ã  l'endroit du danger",
+            "text": "Grâce à la couleur de la bordure rouge",
             "is_correct": false
           },
           {
-            "text": "500 mÃ¨tres avant le danger",
+            "text": "Ce panneau a toujours la même signification sans information supplémentaire",
             "is_correct": false
           }
         ],
-        "explanation": "Hors agglomÃ©ration, les panneaux de danger sont placÃ©s Ã  Â±150 m. En agglomÃ©ration, c'est Â±50 m."
+        "explanation": "A51 annonce seulement un danger général. Vous connaissez le danger précis grâce au panneau additionnel qui donne une information complémentaire."
       },
       "AR": {
-        "question": "Ø¹Ù„Ù‰ Ø£ÙŠ Ù…Ø³Ø§ÙØ© Ù…Ù† Ø§Ù„Ø®Ø·Ø± ØªÙˆØ¶Ø¹ Ù„Ø§ÙØªØ© Ø§Ù„Ø®Ø·Ø± Ø®Ø§Ø±Ø¬ Ø§Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ù…Ø¨Ù†ÙŠØ©ØŸ",
+        "question": "كيف تعرف نوع الخطر المحدد الذي تشير إليه هذه العلامة؟",
         "choices": [
           {
-            "text": "Ø­ÙˆØ§Ù„ÙŠ 150 Ù…ØªØ± Ù‚Ø¨Ù„ Ø§Ù„Ø®Ø·Ø±",
+            "text": "من خلال لوحة إضافية توضح نوع الخطر",
             "is_correct": true
           },
           {
-            "text": "Ù…Ø¨Ø§Ø´Ø±Ø© Ø¹Ù†Ø¯ Ù…ÙˆÙ‚Ø¹ Ø§Ù„Ø®Ø·Ø±",
+            "text": "من لون الحافة الحمراء",
             "is_correct": false
           },
           {
-            "text": "500 Ù…ØªØ± Ù‚Ø¨Ù„ Ø§Ù„Ø®Ø·Ø±",
+            "text": "هذه العلامة لها دائماً نفس المعنى من دون معلومات إضافية",
             "is_correct": false
           }
         ],
-        "explanation": "Ø®Ø§Ø±Ø¬ Ø§Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ù…Ø¨Ù†ÙŠØ© ØªÙˆØ¶Ø¹ Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± Ø¹Ù„Ù‰ Ù…Ø³Ø§ÙØ© Â±150 Ù…ØªØ±. Ø¯Ø§Ø®Ù„ Ø§Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ù…Ø¨Ù†ÙŠØ© ØªÙƒÙˆÙ† Ø§Ù„Ù…Ø³Ø§ÙØ© Â±50 Ù…ØªØ±."
+        "explanation": "تشير A51 إلى خطر عام فقط، أما نوع الخطر بالتحديد فيُعرف من اللوحة الإضافية المرافقة."
       }
     }
   },
@@ -333,63 +293,62 @@
     "difficulty": "HARD",
     "is_critical": true,
     "show_sign": true,
-    "_note": "TEMPLATE (HARD): Replace with sign-specific question for production.",
     "i18n": {
       "NL": {
-        "question": "Bent u verplicht uw rijgedrag aan te passen wanneer u dit gevaarsbord ziet?",
+        "question": "Mag u dit bord negeren als het gevaar niet meteen duidelijk is?",
         "choices": [
           {
-            "text": "Ja, gevaarsborden verplichten u uw snelheid aan te passen en extra voorzichtig te zijn",
+            "text": "Nee, u moet altijd voorzichtig blijven en rekening houden met een mogelijk gevaar",
             "is_correct": true
           },
           {
-            "text": "Nee, gevaarsborden zijn louter informatief en vereisen geen aanpassing van uw rijgedrag",
+            "text": "Ja, zolang u geen gevaar ziet, hoeft u niets aan te passen",
             "is_correct": false
           }
         ],
-        "explanation": "Gevaarsborden waarschuwen voor gevaarlijke situaties en verplichten u uw rijgedrag aan te passen. U moet uw snelheid verminderen en extra voorzichtig zijn."
+        "explanation": "Dit bord betekent dat er een mogelijk gevaar aanwezig is, ook al is dat niet onmiddellijk zichtbaar op het bord zelf. Daarom mag u het nooit negeren."
       },
       "EN": {
-        "question": "Are you required to adapt your driving behaviour when you see this danger sign?",
+        "question": "Can you ignore this sign if the danger is not immediately clear?",
         "choices": [
           {
-            "text": "Yes, danger signs require you to adjust your speed and be extra cautious",
+            "text": "No, you should remain cautious and take possible danger into account",
             "is_correct": true
           },
           {
-            "text": "No, danger signs are purely informational and do not require any change in driving behaviour",
+            "text": "Yes, if you do not see the danger, no adjustment is needed",
             "is_correct": false
           }
         ],
-        "explanation": "Danger signs warn of hazardous situations and require you to adapt your driving behaviour. You must reduce your speed and be extra careful."
+        "explanation": "This sign means there is a possible danger, even if it is not immediately visible on the sign itself. That is why you should never ignore it."
       },
       "FR": {
-        "question": "ÃŠtes-vous obligÃ© d'adapter votre comportement de conduite lorsque vous voyez ce panneau de danger ?",
+        "question": "Pouvez-vous ignorer ce panneau si le danger n'est pas immédiatement clair ?",
         "choices": [
           {
-            "text": "Oui, les panneaux de danger vous obligent Ã  adapter votre vitesse et Ã  Ãªtre particuliÃ¨rement prudent",
+            "text": "Non, vous devriez rester prudent et tenir compte d'un danger possible",
             "is_correct": true
           },
           {
-            "text": "Non, les panneaux de danger sont purement informatifs et ne nÃ©cessitent pas d'adaptation de la conduite",
+            "text": "Oui, si vous ne voyez pas le danger, aucune adaptation n'est nécessaire",
             "is_correct": false
           }
         ],
-        "explanation": "Les panneaux de danger avertissent des situations dangereuses et vous obligent Ã  adapter votre conduite. Vous devez rÃ©duire votre vitesse et Ãªtre particuliÃ¨rement prudent."
+        "explanation": "Ce panneau signifie qu'un danger possible existe, même s'il n'apparaît pas clairement sur le panneau lui-même. Vous ne devriez donc jamais l'ignorer."
       },
       "AR": {
-        "question": "Ù‡Ù„ Ø£Ù†Øª Ù…Ù„Ø²Ù… Ø¨ØªØ¹Ø¯ÙŠÙ„ Ø³Ù„ÙˆÙƒ Ù‚ÙŠØ§Ø¯ØªÙƒ Ø¹Ù†Ø¯Ù…Ø§ ØªØ±Ù‰ Ù„Ø§ÙØªØ© Ø§Ù„Ø®Ø·Ø± Ù‡Ø°Ù‡ØŸ",
+        "question": "هل يمكنك تجاهل هذه العلامة إذا لم يكن الخطر واضحاً فوراً؟",
         "choices": [
           {
-            "text": "Ù†Ø¹Ù…ØŒ Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± ØªÙ„Ø²Ù…Ùƒ Ø¨ØªØ¹Ø¯ÙŠÙ„ Ø³Ø±Ø¹ØªÙƒ ÙˆØ£Ù† ØªÙƒÙˆÙ† Ø£ÙƒØ«Ø± Ø­Ø°Ø±Ø§Ù‹",
+            "text": "لا، ينبغي أن تبقى حذراً وتأخذ احتمال وجود خطر بعين الاعتبار",
             "is_correct": true
           },
           {
-            "text": "Ù„Ø§ØŒ Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± Ù…Ø¹Ù„ÙˆÙ…Ø§ØªÙŠØ© Ø¨Ø­ØªØ© ÙˆÙ„Ø§ ØªØªØ·Ù„Ø¨ Ø£ÙŠ ØªØºÙŠÙŠØ± ÙÙŠ Ø³Ù„ÙˆÙƒ Ø§Ù„Ù‚ÙŠØ§Ø¯Ø©",
+            "text": "نعم، إذا لم يكن الخطر ظاهراً فلا حاجة لتعديل القيادة",
             "is_correct": false
           }
         ],
-        "explanation": "ØªØ­Ø°Ø± Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± Ù…Ù† Ø§Ù„Ù…ÙˆØ§Ù‚Ù Ø§Ù„Ø®Ø·Ø±Ø© ÙˆØªÙ„Ø²Ù…Ùƒ Ø¨ØªØ¹Ø¯ÙŠÙ„ Ø³Ù„ÙˆÙƒ Ù‚ÙŠØ§Ø¯ØªÙƒ. ÙŠØ¬Ø¨ Ø¹Ù„ÙŠÙƒ ØªÙ‚Ù„ÙŠÙ„ Ø³Ø±Ø¹ØªÙƒ ÙˆØ£Ù† ØªÙƒÙˆÙ† Ø£ÙƒØ«Ø± Ø­Ø°Ø±Ø§Ù‹."
+        "explanation": "هذه العلامة تعني وجود خطر محتمل حتى لو لم يتضح فوراً من الرمز نفسه. لذلك لا يجوز تجاهلها."
       }
     }
   },
@@ -401,76 +360,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Hoe verneemt u welk specifiek gevaar dit bord aankondigt?",
+        "question": "Kunt u uit het hoofdbord alleen afleiden welk exact gevaar aanwezig is?",
         "choices": [
           {
-            "text": "Via een onderbord dat het gevaar nader omschrijft",
+            "text": "Nee, meestal is bijkomende uitleg via een onderbord nodig",
             "is_correct": true
           },
           {
-            "text": "Via de kleur van de rode rand",
+            "text": "Ja, dit bord toont altijd precies welk gevaar aanwezig is",
             "is_correct": false
           },
           {
-            "text": "Dit bord betekent altijd exact hetzelfde zonder extra informatie",
+            "text": "Alleen buiten de bebouwde kom is extra uitleg nodig",
             "is_correct": false
           }
         ],
-        "explanation": "A51 duidt een algemeen gevaar aan. Een onderbord kan verduidelijken welk specifiek gevaar aanwezig is."
+        "explanation": "Het hoofdbord duidt alleen een algemeen gevaar aan. De exacte aard van het gevaar kan met een onderbord nader worden uitgelegd."
       },
       "EN": {
-        "question": "How do you know which specific danger this sign is warning about?",
+        "question": "Can you determine the exact danger from the main sign alone?",
         "choices": [
           {
-            "text": "By means of a supplementary plate that specifies the danger",
+            "text": "No, additional explanation by a supplementary plate is often needed",
             "is_correct": true
           },
           {
-            "text": "By the color of the red border",
+            "text": "Yes, this sign always shows exactly which danger is present",
             "is_correct": false
           },
           {
-            "text": "This sign always has one exact meaning without extra information",
+            "text": "Extra explanation is needed only outside built-up areas",
             "is_correct": false
           }
         ],
-        "explanation": "A51 indicates a general danger. A supplementary plate can clarify the specific danger involved."
+        "explanation": "The main sign indicates only a general danger. The exact nature of the danger can be explained further by a supplementary plate."
       },
       "FR": {
-        "question": "Comment savez-vous quel danger precis ce panneau annonce ?",
+        "question": "Pouvez-vous déterminer le danger exact à partir du panneau principal seul ?",
         "choices": [
           {
-            "text": "Au moyen d un panneau additionnel qui precise le danger",
+            "text": "Non, une explication complémentaire par un panneau additionnel est souvent nécessaire",
             "is_correct": true
           },
           {
-            "text": "Grace a la couleur de la bordure rouge",
+            "text": "Oui, ce panneau montre toujours exactement quel danger est présent",
             "is_correct": false
           },
           {
-            "text": "Ce panneau a toujours une seule signification sans information complementaire",
+            "text": "Une explication supplémentaire n'est nécessaire qu'hors agglomération",
             "is_correct": false
           }
         ],
-        "explanation": "A51 indique un danger general. Un panneau additionnel peut preciser la nature exacte du danger."
+        "explanation": "Le panneau principal indique seulement un danger général. La nature exacte du danger peut être précisée davantage par un panneau additionnel."
       },
       "AR": {
-        "question": "كيف تعرف ما الخطر المحدد الذي تعلنه هذه اللافتة؟",
+        "question": "هل يمكن معرفة نوع الخطر الدقيق من اللوحة الرئيسية وحدها؟",
         "choices": [
           {
-            "text": "بواسطة لوحة إضافية تشرح نوع الخطر",
+            "text": "لا، غالباً ما تكون هناك حاجة إلى لوحة إضافية لشرح الخطر بدقة",
             "is_correct": true
           },
           {
-            "text": "من لون الحافة الحمراء",
+            "text": "نعم، هذه العلامة توضح دائماً نوع الخطر بدقة من تلقاء نفسها",
             "is_correct": false
           },
           {
-            "text": "هذه اللافتة لها دائماً معنى واحد من دون معلومات إضافية",
+            "text": "الحاجة إلى شرح إضافي تقتصر على الطرق خارج المناطق السكنية",
             "is_correct": false
           }
         ],
-        "explanation": "تشير A51 إلى خطر عام، ويمكن للوحة إضافية أن توضح طبيعة هذا الخطر."
+        "explanation": "تشير اللوحة الرئيسية إلى خطر عام فقط. ويمكن للوحة إضافية أن تشرح طبيعة هذا الخطر بشكل أدق."
       }
     }
   },
@@ -482,76 +441,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat betekent dit bord zonder aanvullend symbool of onderbord?",
+        "question": "Wanneer wordt dit bord gebruikt?",
         "choices": [
           {
-            "text": "Er is een algemeen gevaar dat apart moet worden verduidelijkt",
+            "text": "Wanneer een gevaar niet met een specifiek symbool kan worden weergegeven",
             "is_correct": true
           },
           {
-            "text": "Er geldt een verplichte rijrichting",
+            "text": "Wanneer een verplichte rijrichting moet worden aangeduid",
             "is_correct": false
           },
           {
-            "text": "Er geldt parkeerverbod",
+            "text": "Wanneer parkeren verboden is",
             "is_correct": false
           }
         ],
-        "explanation": "Dit is het algemene gevaarsbord. De precieze aard van het gevaar kan met een onderbord worden meegedeeld."
+        "explanation": "Dit bord wordt gebruikt wanneer er een gevaar is waarvoor geen apart speciaal symbool bestaat of wanneer extra verduidelijking nodig is."
       },
       "EN": {
-        "question": "What does this sign mean if there is no extra symbol or supplementary plate?",
+        "question": "When is this sign used?",
         "choices": [
           {
-            "text": "There is a general danger that must be clarified separately",
+            "text": "When a danger cannot be represented by a specific symbol",
             "is_correct": true
           },
           {
-            "text": "A direction is mandatory",
+            "text": "When a mandatory direction must be indicated",
             "is_correct": false
           },
           {
-            "text": "Parking is prohibited",
+            "text": "When parking is prohibited",
             "is_correct": false
           }
         ],
-        "explanation": "This is the general danger sign. The exact nature of the danger may be explained by a supplementary plate."
+        "explanation": "This sign is used when there is a danger for which no separate special symbol exists, or when extra clarification is needed."
       },
       "FR": {
-        "question": "Que signifie ce panneau sans symbole ou panneau additionnel ?",
+        "question": "Quand ce panneau est-il utilisé ?",
         "choices": [
           {
-            "text": "Il annonce un danger general qui doit etre precise separement",
+            "text": "Lorsqu'un danger ne peut pas être représenté par un symbole spécifique",
             "is_correct": true
           },
           {
-            "text": "Une direction est obligatoire",
+            "text": "Lorsqu'une direction obligatoire doit être indiquée",
             "is_correct": false
           },
           {
-            "text": "Le stationnement est interdit",
+            "text": "Lorsque le stationnement est interdit",
             "is_correct": false
           }
         ],
-        "explanation": "Il s agit du panneau de danger general. La nature exacte du danger peut etre indiquee par un panneau additionnel."
+        "explanation": "Ce panneau est utilisé lorsqu'il existe un danger pour lequel aucun symbole spécial distinct n'existe, ou lorsqu'une précision supplémentaire est nécessaire."
       },
       "AR": {
-        "question": "ماذا تعني هذه اللافتة إذا لم توجد لوحة أو رمز إضافي؟",
+        "question": "متى تُستخدم هذه العلامة المرورية؟",
         "choices": [
           {
-            "text": "يوجد خطر عام يجب توضيحه بشكل منفصل",
+            "text": "عندما يكون هناك خطر لا يمكن التعبير عنه برمز خاص",
             "is_correct": true
           },
           {
-            "text": "هناك اتجاه إلزامي",
+            "text": "عندما يكون هناك اتجاه إلزامي",
             "is_correct": false
           },
           {
-            "text": "الوقوف ممنوع",
+            "text": "عندما يكون الوقوف ممنوعاً",
             "is_correct": false
           }
         ],
-        "explanation": "هذه هي لافتة الخطر العام. ويمكن توضيح نوع الخطر بدقة بواسطة لوحة إضافية."
+        "explanation": "تُستخدم هذه العلامة عندما يوجد خطر يحتاج إلى توضيح إضافي ولا يوجد له رمز خاص مستقل."
       }
     }
   },
@@ -563,7 +522,7 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat moet u vooral doen wanneer dit bord met een onderbord wordt gecombineerd?",
+        "question": "Wat doet u er vooral goed aan te doen wanneer dit bord met een onderbord wordt gecombineerd?",
         "choices": [
           {
             "text": "Uw rijgedrag aanpassen aan het gevaar dat op het onderbord staat",
@@ -572,13 +531,9 @@
           {
             "text": "Het onderbord negeren en alleen naar de vorm kijken",
             "is_correct": false
-          },
-          {
-            "text": "Aannemen dat u altijd voorrang hebt",
-            "is_correct": false
           }
         ],
-        "explanation": "Bij A51 bepaalt het onderbord welk gevaar u moet verwachten. U moet dus uw rijgedrag aan die concrete situatie aanpassen."
+        "explanation": "Bij A51 bepaalt het onderbord welk gevaar u kunt verwachten. U doet er dus goed aan uw rijgedrag aan die concrete situatie aan te passen."
       },
       "EN": {
         "question": "What should you mainly do when this sign is combined with a supplementary plate?",
@@ -590,49 +545,37 @@
           {
             "text": "Ignore the plate and only look at the shape of the main sign",
             "is_correct": false
-          },
-          {
-            "text": "Assume you always have priority",
-            "is_correct": false
           }
         ],
-        "explanation": "With A51, the supplementary plate tells you which danger to expect. You must adapt your driving to that specific situation."
+        "explanation": "With A51, the supplementary plate tells you which danger to expect. You should adapt your driving to that specific situation."
       },
       "FR": {
-        "question": "Que devez-vous surtout faire lorsque ce panneau est combine avec un panneau additionnel ?",
+        "question": "Que devriez-vous surtout faire lorsque ce panneau est combiné avec un panneau additionnel ?",
         "choices": [
           {
-            "text": "Adapter votre conduite au danger indique sur le panneau additionnel",
+            "text": "Adapter votre conduite au danger indiqué sur le panneau additionnel",
             "is_correct": true
           },
           {
             "text": "Ignorer le panneau additionnel et regarder seulement la forme",
             "is_correct": false
-          },
-          {
-            "text": "Supposer que vous avez toujours la priorite",
-            "is_correct": false
           }
         ],
-        "explanation": "Avec A51, le panneau additionnel precise le danger. Vous devez donc adapter votre conduite a cette situation concrete."
+        "explanation": "Avec A51, le panneau additionnel précise le danger. Vous devriez donc adapter votre conduite à cette situation concrète."
       },
       "AR": {
-        "question": "ما الذي يجب عليك فعله أساساً عندما تُدمج هذه اللافتة مع لوحة إضافية؟",
+        "question": "ما الذي ينبغي عليك فعله أساساً عندما تُستخدم هذه العلامة مع لوحة إضافية؟",
         "choices": [
           {
             "text": "تعديل قيادتك وفق الخطر المذكور على اللوحة الإضافية",
             "is_correct": true
           },
           {
-            "text": "تجاهل اللوحة الإضافية والاكتفاء بشكل اللافتة",
-            "is_correct": false
-          },
-          {
-            "text": "الافتراض بأن لك الأفضلية دائماً",
+            "text": "تجاهل اللوحة الإضافية والاكتفاء بشكل العلامة المرورية",
             "is_correct": false
           }
         ],
-        "explanation": "عند استخدام A51 مع لوحة إضافية فإن اللوحة توضح نوع الخطر، ويجب أن تعدل قيادتك وفق ذلك الخطر المحدد."
+        "explanation": "عند استخدام A51 مع لوحة إضافية فإن اللوحة تحدد نوع الخطر، لذلك ينبغي أن تعدل قيادتك بحسب هذا الخطر المحدد."
       }
     }
   }

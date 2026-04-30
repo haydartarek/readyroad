@@ -1,4 +1,4 @@
-﻿[
+[
   {
     "question_id": "A5_Q01",
     "type": "WHAT_DOES_IT_MEAN",
@@ -9,38 +9,74 @@
       "NL": {
         "question": "Wat betekent dit verkeersbord?",
         "choices": [
-          { "text": "Gevaarlijke helling", "is_correct": true },
-          { "text": "Gevaarlijke daling", "is_correct": false },
-          { "text": "Rijbaanversmalling", "is_correct": false }
+          {
+            "text": "Steile helling",
+            "is_correct": true
+          },
+          {
+            "text": "Gevaarlijke daling",
+            "is_correct": false
+          },
+          {
+            "text": "Rijbaanversmalling",
+            "is_correct": false
+          }
         ],
-        "explanation": "Dit bord waarschuwt voor een gevaarlijke helling vooruit. Zwaar verkeer kan vaart verliezen en langzamer worden. Houd voldoende afstand."
+        "explanation": "Dit bord waarschuwt voor een steile helling vooruit."
       },
       "EN": {
-        "question": "What does this traffic sign mean?",
+        "question": "What does this sign mean?",
         "choices": [
-          { "text": "Dangerous incline", "is_correct": true },
-          { "text": "Dangerous descent", "is_correct": false },
-          { "text": "Road narrows", "is_correct": false }
+          {
+            "text": "Steep ascent",
+            "is_correct": true
+          },
+          {
+            "text": "Dangerous descent",
+            "is_correct": false
+          },
+          {
+            "text": "Road narrows",
+            "is_correct": false
+          }
         ],
-        "explanation": "This sign warns of a dangerous incline ahead. Heavy vehicles may slow down significantly. Keep sufficient distance."
+        "explanation": "This sign warns of a steep ascent ahead."
       },
       "FR": {
-        "question": "Que signifie ce panneau de signalisation ?",
+        "question": "Que signifie ce panneau ?",
         "choices": [
-          { "text": "Pente dangereuse", "is_correct": true },
-          { "text": "Descente dangereuse", "is_correct": false },
-          { "text": "RÃ©trÃ©cissement de la chaussÃ©e", "is_correct": false }
+          {
+            "text": "Forte montée",
+            "is_correct": true
+          },
+          {
+            "text": "Descente dangereuse",
+            "is_correct": false
+          },
+          {
+            "text": "Rétrécissement de la chaussée",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ce panneau avertit d'une pente dangereuse en avant. Les vÃ©hicules lourds peuvent ralentir considÃ©rablement. Maintenez une distance suffisante."
+        "explanation": "Ce panneau avertit d'une forte montée."
       },
       "AR": {
-        "question": "Ù…Ø§ Ù…Ø¹Ù†Ù‰ Ù„Ø§ÙØªØ© Ø§Ù„Ù…Ø±ÙˆØ± Ù‡Ø°Ù‡ØŸ",
+        "question": "ما معنى هذه العلامة؟",
         "choices": [
-          { "text": "ØµØ¹ÙˆØ¯ Ø®Ø·ÙŠØ±", "is_correct": true },
-          { "text": "Ø§Ù†Ø­Ø¯Ø§Ø± Ø®Ø·ÙŠØ±", "is_correct": false },
-          { "text": "ØªØ¶ÙŠÙ‚ Ø§Ù„Ø·Ø±ÙŠÙ‚", "is_correct": false }
+          {
+            "text": "صعود شديد",
+            "is_correct": true
+          },
+          {
+            "text": "انحدار خطير",
+            "is_correct": false
+          },
+          {
+            "text": "تضيق الطريق",
+            "is_correct": false
+          }
         ],
-        "explanation": "ØªØ­Ø°Ø± Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ© Ù…Ù† ØµØ¹ÙˆØ¯ Ø®Ø·ÙŠØ± Ø£Ù…Ø§Ù…Ùƒ. Ù‚Ø¯ ØªØªØ¨Ø§Ø·Ø£ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ø«Ù‚ÙŠÙ„Ø© Ø¨Ø´ÙƒÙ„ Ù…Ù„Ø­ÙˆØ¸. Ø§Ø­ØªÙØ¸ Ø¨Ù…Ø³Ø§ÙØ© ÙƒØ§ÙÙŠØ©."
+        "explanation": "تشير هذه العلامة إلى صعود شديد أمامك."
       }
     }
   },
@@ -54,38 +90,74 @@
       "NL": {
         "question": "Tot welke categorie verkeerstekens behoort dit bord?",
         "choices": [
-          { "text": "Gevaarsborden (A-reeks)", "is_correct": true },
-          { "text": "Voorrangsborden (B-reeks)", "is_correct": false },
-          { "text": "Verbodsborden (C-reeks)", "is_correct": false }
+          {
+            "text": "Gevaarsborden",
+            "is_correct": true
+          },
+          {
+            "text": "Voorrangsborden",
+            "is_correct": false
+          },
+          {
+            "text": "Verbodsborden",
+            "is_correct": false
+          }
         ],
-        "explanation": "Dit bord behoort tot de gevaarsborden (A-reeks). Alle gevaarsborden zijn driehoekig met een rode rand op een witte achtergrond."
+        "explanation": "Dit bord behoort tot de gevaarsborden. Alle gevaarsborden zijn driehoekig met een rode rand op een witte achtergrond."
       },
       "EN": {
         "question": "To which category of traffic signs does this sign belong?",
         "choices": [
-          { "text": "Danger signs (A-series)", "is_correct": true },
-          { "text": "Priority signs (B-series)", "is_correct": false },
-          { "text": "Prohibition signs (C-series)", "is_correct": false }
+          {
+            "text": "Warning signs",
+            "is_correct": true
+          },
+          {
+            "text": "Priority signs",
+            "is_correct": false
+          },
+          {
+            "text": "Prohibition signs",
+            "is_correct": false
+          }
         ],
-        "explanation": "This sign belongs to the danger signs (A-series). All danger signs are triangular with a red border on a white background."
+        "explanation": "This sign belongs to the warning signs. All warning signs are triangular with a red border on a white background."
       },
       "FR": {
-        "question": "Ã€ quelle catÃ©gorie de panneaux de signalisation ce panneau appartient-il ?",
+        "question": "À quelle catégorie de panneaux de signalisation ce panneau appartient-il ?",
         "choices": [
-          { "text": "Panneaux de danger (sÃ©rie A)", "is_correct": true },
-          { "text": "Panneaux de prioritÃ© (sÃ©rie B)", "is_correct": false },
-          { "text": "Panneaux d'interdiction (sÃ©rie C)", "is_correct": false }
+          {
+            "text": "Panneaux de danger",
+            "is_correct": true
+          },
+          {
+            "text": "Panneaux de priorité",
+            "is_correct": false
+          },
+          {
+            "text": "Panneaux d'interdiction",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ce panneau appartient aux panneaux de danger (sÃ©rie A). Tous les panneaux de danger sont triangulaires avec une bordure rouge sur fond blanc."
+        "explanation": "Ce panneau appartient aux panneaux de danger. Tous les panneaux de danger sont triangulaires avec une bordure rouge sur fond blanc."
       },
       "AR": {
-        "question": "Ø¥Ù„Ù‰ Ø£ÙŠ ÙØ¦Ø© Ù…Ù† Ù„Ø§ÙØªØ§Øª Ø§Ù„Ù…Ø±ÙˆØ± ØªÙ†ØªÙ…ÙŠ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ",
+        "question": "إلى أي فئة تنتمي هذه العلامة؟",
         "choices": [
-          { "text": "Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± (Ø³Ù„Ø³Ù„Ø© A)", "is_correct": true },
-          { "text": "Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© (Ø³Ù„Ø³Ù„Ø© B)", "is_correct": false },
-          { "text": "Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø­Ø¸Ø± (Ø³Ù„Ø³Ù„Ø© C)", "is_correct": false }
+          {
+            "text": "علامات الخطر",
+            "is_correct": true
+          },
+          {
+            "text": "علامات الأولوية",
+            "is_correct": false
+          },
+          {
+            "text": "علامات الحظر",
+            "is_correct": false
+          }
         ],
-        "explanation": "ØªÙ†ØªÙ…ÙŠ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ© Ø¥Ù„Ù‰ Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± (Ø³Ù„Ø³Ù„Ø© A). Ø¬Ù…ÙŠØ¹ Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± Ù…Ø«Ù„Ø«Ø© Ø¨Ø­Ø§ÙØ© Ø­Ù…Ø±Ø§Ø¡ Ø¹Ù„Ù‰ Ø®Ù„ÙÙŠØ© Ø¨ÙŠØ¶Ø§Ø¡."
+        "explanation": "تنتمي هذه العلامة إلى علامات الخطر. جميع علامات الخطر مثلثة الشكل، ذات حافة حمراء وخلفية بيضاء."
       }
     }
   },
@@ -99,38 +171,74 @@
       "NL": {
         "question": "Welk gevaar kondigt dit bord aan?",
         "choices": [
-          { "text": "Een steile helling waarbij trage voertuigen het verkeer kunnen blokkeren en inhalen gevaarlijk wordt", "is_correct": true },
-          { "text": "Een steile daling waarbij de remmen kunnen oververhitten", "is_correct": false },
-          { "text": "Een kruising met beperkt zicht aan de top van de helling", "is_correct": false }
+          {
+            "text": "Een steile helling waarbij trage voertuigen het verkeer kunnen blokkeren en inhalen gevaarlijk wordt",
+            "is_correct": true
+          },
+          {
+            "text": "Een steile daling waarbij de remmen kunnen oververhitten",
+            "is_correct": false
+          },
+          {
+            "text": "Een kruising met beperkt zicht aan de top van de helling",
+            "is_correct": false
+          }
         ],
         "explanation": "Op een gevaarlijke helling kunnen zware of trage voertuigen sterk vertragen, waardoor de doorstroming stagneert. Inhalen met beperkt zicht is gevaarlijk."
       },
       "EN": {
-        "question": "What hazard does this sign announce?",
+        "question": "What hazard does this sign indicate?",
         "choices": [
-          { "text": "A steep incline where slow vehicles may block traffic and overtaking becomes dangerous", "is_correct": true },
-          { "text": "A steep descent where brakes can overheat", "is_correct": false },
-          { "text": "An intersection with limited visibility at the top of the hill", "is_correct": false }
+          {
+            "text": "A steep ascent where slow vehicles may reduce traffic flow",
+            "is_correct": true
+          },
+          {
+            "text": "A steep descent where brakes can overheat",
+            "is_correct": false
+          },
+          {
+            "text": "An intersection with limited visibility at the top of the hill",
+            "is_correct": false
+          }
         ],
-        "explanation": "On a dangerous incline, heavy or slow vehicles may decelerate significantly, blocking traffic flow. Overtaking with limited visibility is dangerous."
+        "explanation": "On a steep ascent, heavy or slow vehicles may slow down significantly and reduce traffic flow. Overtaking is dangerous when visibility is limited."
       },
       "FR": {
-        "question": "Quel danger ce panneau annonce-t-il ?",
+        "question": "Quel danger indique ce panneau ?",
         "choices": [
-          { "text": "Une cÃ´te raide oÃ¹ des vÃ©hicules lents peuvent bloquer la circulation et oÃ¹ dÃ©passer devient dangereux", "is_correct": true },
-          { "text": "Une descente raide oÃ¹ les freins peuvent surchauffer", "is_correct": false },
-          { "text": "Un carrefour avec visibilitÃ© limitÃ©e au sommet de la cÃ´te", "is_correct": false }
+          {
+            "text": "Une montée dangereuse où des véhicules lents peuvent bloquer la circulation et où dépasser devient dangereux",
+            "is_correct": true
+          },
+          {
+            "text": "Une descente raide où les freins peuvent surchauffer",
+            "is_correct": false
+          },
+          {
+            "text": "Un carrefour avec visibilité limitée au sommet de la côte",
+            "is_correct": false
+          }
         ],
-        "explanation": "Dans une pente dangereuse, les vÃ©hicules lourds ou lents peuvent fortement ralentir, bloquant la circulation. DÃ©passer avec une visibilitÃ© limitÃ©e est dangereux."
+        "explanation": "Dans une montée dangereuse, les véhicules lourds ou lents peuvent fortement ralentir et bloquer la circulation. Dépasser avec une visibilité limitée est dangereux."
       },
       "AR": {
-        "question": "Ù…Ø§ Ø§Ù„Ø®Ø·Ø± Ø§Ù„Ø°ÙŠ ØªØ¹Ù„Ù†Ù‡ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ",
+        "question": "ما الخطر الذي تشير إليه هذه العلامة؟",
         "choices": [
-          { "text": "ØµØ¹ÙˆØ¯ Ø´Ø¯ÙŠØ¯ Ù‚Ø¯ ØªØ¹ÙŠÙ‚ ÙÙŠÙ‡ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ø¨Ø·ÙŠØ¦Ø© Ø­Ø±ÙƒØ© Ø§Ù„Ù…Ø±ÙˆØ± ÙˆÙŠØµØ¨Ø­ Ø§Ù„ØªØ¬Ø§ÙˆØ² Ø®Ø·ÙŠØ±Ø§Ù‹", "is_correct": true },
-          { "text": "Ù…Ù†Ø­Ø¯Ø± Ø´Ø¯ÙŠØ¯ Ù‚Ø¯ ØªØ³Ø®Ù† ÙÙŠÙ‡ Ø§Ù„ÙØ±Ø§Ù…Ù„ Ø¨Ø´ÙƒÙ„ Ù…ÙØ±Ø·", "is_correct": false },
-          { "text": "ØªÙ‚Ø§Ø·Ø¹ Ù…Ø¹ Ø±Ø¤ÙŠØ© Ù…Ø­Ø¯ÙˆØ¯Ø© Ø¹Ù†Ø¯ Ù‚Ù…Ø© Ø§Ù„ØªÙ„", "is_correct": false }
+          {
+            "text": "صعود شديد قد تعيق فيه المركبات البطيئة حركة المرور ويصبح التجاوز خطيرًا",
+            "is_correct": true
+          },
+          {
+            "text": "منحدر شديد قد تسخن فيه الفرامل بشكل مفرط",
+            "is_correct": false
+          },
+          {
+            "text": "تقاطع مع رؤية محدودة عند قمة التل",
+            "is_correct": false
+          }
         ],
-        "explanation": "ÙÙŠ Ø§Ù„ØµØ¹ÙˆØ¯ Ø§Ù„Ø®Ø·ÙŠØ± Ù‚Ø¯ ØªØªØ¨Ø§Ø·Ø£ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ø«Ù‚ÙŠÙ„Ø© Ø£Ùˆ Ø§Ù„Ø¨Ø·ÙŠØ¦Ø© Ø¨Ø´ÙƒÙ„ Ù…Ù„Ø­ÙˆØ¸ Ù…Ù…Ø§ ÙŠØ¹ÙŠÙ‚ Ø­Ø±ÙƒØ© Ø§Ù„Ù…Ø±ÙˆØ±. Ø§Ù„ØªØ¬Ø§ÙˆØ² Ù…Ø¹ Ø±Ø¤ÙŠØ© Ù…Ø­Ø¯ÙˆØ¯Ø© Ø®Ø·ÙŠØ±."
+        "explanation": "في الصعود الشديد قد تتباطأ المركبات الثقيلة أو البطيئة بشكل ملحوظ، مما يعيق حركة المرور. ويكون التجاوز خطيرًا عند محدودية الرؤية."
       }
     }
   },
@@ -142,40 +250,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat moet u doen wanneer u dit bord voor een gevaarlijke helling ziet?",
+        "question": "Wat doet u best wanneer u dit bord voor een gevaarlijke helling ziet?",
         "choices": [
-          { "text": "Anticiperen op trage voertuigen en voldoende volgafstand bewaren", "is_correct": true },
-          { "text": "Inhalen voor u de helling opgaat zodat u niet vastloopt achter traag verkeer", "is_correct": false },
-          { "text": "Uw snelheid verhogen om de helling snel te beklimmen voor traag verkeer u inhaalt", "is_correct": false }
+          {
+            "text": "Anticiperen op trage voertuigen en voldoende volgafstand bewaren",
+            "is_correct": true
+          },
+          {
+            "text": "Inhalen voor u de helling opgaat zodat u niet vastloopt achter traag verkeer",
+            "is_correct": false
+          },
+          {
+            "text": "Uw snelheid verhogen om de helling snel te beklimmen voor traag verkeer u inhaalt",
+            "is_correct": false
+          }
         ],
-        "explanation": "Op een gevaarlijke helling kunt u traag verkeer verwachten. Bewaar voldoende afstand. Inhalen voor de helling zonder voldoende zicht is gevaarlijk."
+        "explanation": "Op een gevaarlijke helling kunt u traag verkeer verwachten. U doet er goed aan voldoende afstand te bewaren. Inhalen voor de helling zonder voldoende zicht is gevaarlijk."
       },
       "EN": {
-        "question": "What must you do when you see this sign for a dangerous incline?",
+        "question": "What should you do when you see this sign for a steep ascent?",
         "choices": [
-          { "text": "Anticipate slow vehicles and maintain sufficient following distance", "is_correct": true },
-          { "text": "Overtake before climbing the hill so you are not stuck behind slow traffic", "is_correct": false },
-          { "text": "Increase speed to climb the hill quickly before slow traffic catches you", "is_correct": false }
+          {
+            "text": "Anticipate slow vehicles and maintain sufficient following distance",
+            "is_correct": true
+          },
+          {
+            "text": "Overtake before climbing the hill so you are not stuck behind slow traffic",
+            "is_correct": false
+          },
+          {
+            "text": "Increase speed to climb the hill quickly before slow traffic catches you",
+            "is_correct": false
+          }
         ],
-        "explanation": "On a dangerous incline, expect slow traffic. Maintain sufficient following distance. Overtaking before the hill without enough visibility is dangerous."
+        "explanation": "On a steep ascent, expect slow traffic. Maintain sufficient following distance. Overtaking before the hill without enough visibility is dangerous."
       },
       "FR": {
-        "question": "Que devez-vous faire lorsque vous voyez ce panneau de pente dangereuse ?",
+        "question": "Que devriez-vous faire lorsque vous voyez ce panneau de montée dangereuse ?",
         "choices": [
-          { "text": "Anticiper les vÃ©hicules lents et maintenir une distance de sÃ©curitÃ© suffisante", "is_correct": true },
-          { "text": "DÃ©passer avant d'aborder la cÃ´te pour ne pas Ãªtre bloquÃ© par la circulation lente", "is_correct": false },
-          { "text": "AccÃ©lÃ©rer pour gravir la cÃ´te rapidement avant d'Ãªtre rattrapÃ© par la circulation lente", "is_correct": false }
+          {
+            "text": "Anticiper les véhicules lents et maintenir une distance de sécurité suffisante",
+            "is_correct": true
+          },
+          {
+            "text": "Dépasser avant d'aborder la côte pour ne pas être bloqué par la circulation lente",
+            "is_correct": false
+          },
+          {
+            "text": "Accélérer pour gravir la côte rapidement avant d'être rattrapé par la circulation lente",
+            "is_correct": false
+          }
         ],
-        "explanation": "Dans une pente dangereuse, attendez-vous Ã  du trafic lent. Maintenez une distance de sÃ©curitÃ© suffisante. DÃ©passer avant la cÃ´te sans visibilitÃ© suffisante est dangereux."
+        "explanation": "Dans une montée dangereuse, attendez-vous à des véhicules lents. Vous devriez maintenir une distance de sécurité suffisante. Dépasser avant la côte sans visibilité suffisante est dangereux."
       },
       "AR": {
-        "question": "Ù…Ø§Ø°Ø§ ÙŠØ¬Ø¨ Ø£Ù† ØªÙØ¹Ù„ Ø¹Ù†Ø¯ Ø±Ø¤ÙŠØ© Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ© Ù„Ù„ØµØ¹ÙˆØ¯ Ø§Ù„Ø®Ø·ÙŠØ±ØŸ",
+        "question": "ماذا ينبغي أن تفعل عند رؤية هذه العلامة الخاصة بالصعود الشديد؟",
         "choices": [
-          { "text": "ØªÙˆÙ‚Ø¹ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ø¨Ø·ÙŠØ¦Ø© ÙˆØ§Ù„Ø­ÙØ§Ø¸ Ø¹Ù„Ù‰ Ù…Ø³Ø§ÙØ© Ø£Ù…Ø§Ù† ÙƒØ§ÙÙŠØ©", "is_correct": true },
-          { "text": "Ø§Ù„ØªØ¬Ø§ÙˆØ² Ù‚Ø¨Ù„ Ø§Ù„ØµØ¹ÙˆØ¯ Ø­ØªÙ‰ Ù„Ø§ ØªØ¹Ù„Ù‚ Ø®Ù„Ù Ø§Ù„Ù…Ø±ÙˆØ± Ø§Ù„Ø¨Ø·ÙŠØ¡", "is_correct": false },
-          { "text": "Ø²ÙŠØ§Ø¯Ø© Ø§Ù„Ø³Ø±Ø¹Ø© Ù„ØªØ³Ù„Ù‚ Ø§Ù„ØªÙ„ Ø¨Ø³Ø±Ø¹Ø© Ù‚Ø¨Ù„ Ø£Ù† ÙŠÙ„Ø­Ù‚ Ø¨Ùƒ Ø§Ù„Ù…Ø±ÙˆØ± Ø§Ù„Ø¨Ø·ÙŠØ¡", "is_correct": false }
+          {
+            "text": "توقع المركبات البطيئة والحفاظ على مسافة أمان كافية",
+            "is_correct": true
+          },
+          {
+            "text": "التجاوز قبل الصعود حتى لا تعلق خلف المرور البطيء",
+            "is_correct": false
+          },
+          {
+            "text": "زيادة السرعة لتسلق التل بسرعة قبل أن يلحق بك المرور البطيء",
+            "is_correct": false
+          }
         ],
-        "explanation": "ÙÙŠ Ø§Ù„ØµØ¹ÙˆØ¯ Ø§Ù„Ø®Ø·ÙŠØ± ØªÙˆÙ‚Ø¹ Ù…Ø±ÙˆØ±Ø§Ù‹ Ø¨Ø·ÙŠØ¦Ø§Ù‹. Ø­Ø§ÙØ¸ Ø¹Ù„Ù‰ Ù…Ø³Ø§ÙØ© Ø£Ù…Ø§Ù† ÙƒØ§ÙÙŠØ©. Ø§Ù„ØªØ¬Ø§ÙˆØ² Ù‚Ø¨Ù„ Ø§Ù„ØªÙ„ Ø¨Ø¯ÙˆÙ† Ø±Ø¤ÙŠØ© ÙƒØ§ÙÙŠØ© Ø®Ø·ÙŠØ±."
+        "explanation": "في الصعود الشديد توقع وجود مركبات بطيئة. ينبغي الحفاظ على مسافة أمان كافية. التجاوز قبل التل من دون رؤية كافية خطر."
       }
     }
   },
@@ -189,38 +333,74 @@
       "NL": {
         "question": "U rijdt 90 km/u en ziet dit bord voor een gevaarlijke helling met beperkt zicht. Een vrachtwagen rijdt voor u. Wat doet u als eerste?",
         "choices": [
-          { "text": "Meer afstand houden tot de vrachtwagen en niet inhalen wegens beperkt zicht", "is_correct": true },
-          { "text": "De vrachtwagen snel inhalen voor u de helling begint", "is_correct": false },
-          { "text": "Dicht achter de vrachtwagen rijden om in zijn slipstream te blijven", "is_correct": false }
+          {
+            "text": "Meer afstand houden tot de vrachtwagen en niet inhalen wegens beperkt zicht",
+            "is_correct": true
+          },
+          {
+            "text": "De vrachtwagen snel inhalen voor u de helling begint",
+            "is_correct": false
+          },
+          {
+            "text": "Dicht achter de vrachtwagen rijden om in zijn slipstream te blijven",
+            "is_correct": false
+          }
         ],
         "explanation": "Bij beperkt zicht op een gevaarlijke helling mag u niet inhalen. Meer afstand houden vergroot uw reactietijd en stopafstand."
       },
       "EN": {
-        "question": "You are driving at 90 km/h and see this sign for a dangerous incline with limited visibility. A truck is ahead of you. What do you do first?",
+        "question": "You are driving at 90 km/h and see this sign for a steep ascent with limited visibility. A truck is ahead of you. What do you do first?",
         "choices": [
-          { "text": "Increase following distance from the truck and do not overtake due to limited visibility", "is_correct": true },
-          { "text": "Quickly overtake the truck before the incline starts", "is_correct": false },
-          { "text": "Drive close behind the truck to stay in its slipstream", "is_correct": false }
+          {
+            "text": "Increase following distance from the truck and do not overtake due to limited visibility",
+            "is_correct": true
+          },
+          {
+            "text": "Quickly overtake the truck before the incline starts",
+            "is_correct": false
+          },
+          {
+            "text": "Drive close behind the truck to stay in its slipstream",
+            "is_correct": false
+          }
         ],
-        "explanation": "With limited visibility on a dangerous incline, overtaking is not allowed. Increasing following distance extends your reaction time and stopping distance."
+        "explanation": "With limited visibility on a steep ascent, overtaking is dangerous due to limited visibility. Increasing following distance extends your reaction time and stopping distance."
       },
       "FR": {
-        "question": "Vous roulez Ã  90 km/h et voyez ce panneau pour une pente dangereuse avec visibilitÃ© limitÃ©e. Un camion est devant vous. Que faites-vous en premier ?",
+        "question": "Vous roulez à 90 km/h et voyez ce panneau pour une montée dangereuse avec visibilité limitée. Un camion est devant vous. Que faites-vous en premier ?",
         "choices": [
-          { "text": "Augmenter la distance avec le camion et ne pas dÃ©passer en raison de la visibilitÃ© limitÃ©e", "is_correct": true },
-          { "text": "DÃ©passer rapidement le camion avant que la cÃ´te ne commence", "is_correct": false },
-          { "text": "Rouler juste derriÃ¨re le camion pour rester dans son sillage", "is_correct": false }
+          {
+            "text": "Augmenter la distance avec le camion et ne pas dépasser en raison de la visibilité limitée",
+            "is_correct": true
+          },
+          {
+            "text": "Dépasser rapidement le camion avant que la côte ne commence",
+            "is_correct": false
+          },
+          {
+            "text": "Rouler juste derrière le camion pour rester dans son sillage",
+            "is_correct": false
+          }
         ],
-        "explanation": "Avec une visibilitÃ© limitÃ©e dans une pente dangereuse, dÃ©passer n'est pas autorisÃ©. Augmenter la distance rallonge votre temps de rÃ©action et votre distance d'arrÃªt."
+        "explanation": "Avec une visibilité limitée dans une montée dangereuse, dépasser n'est pas autorisé. Augmenter la distance rallonge votre temps de réaction et votre distance d'arrêt."
       },
       "AR": {
-        "question": "Ø£Ù†Øª ØªØ³ÙŠØ± Ø¨Ø³Ø±Ø¹Ø© 90 ÙƒÙ…/Ø³Ø§Ø¹Ø© ÙˆØªØ±Ù‰ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ© Ù„ØµØ¹ÙˆØ¯ Ø®Ø·ÙŠØ± Ù…Ø¹ Ø±Ø¤ÙŠØ© Ù…Ø­Ø¯ÙˆØ¯Ø©. Ø´Ø§Ø­Ù†Ø© Ø£Ù…Ø§Ù…Ùƒ. Ù…Ø§Ø°Ø§ ØªÙØ¹Ù„ Ø£ÙˆÙ„Ø§Ù‹ØŸ",
+        "question": "أنت تسير بسرعة 90 كم/ساعة وترى هذه العلامة قبل صعود خطير مع رؤية محدودة، وشاحنة أمامك. ماذا تفعل أولًا؟",
         "choices": [
-          { "text": "Ø²ÙŠØ§Ø¯Ø© Ø§Ù„Ù…Ø³Ø§ÙØ© Ø¹Ù† Ø§Ù„Ø´Ø§Ø­Ù†Ø© ÙˆØ¹Ø¯Ù… Ø§Ù„ØªØ¬Ø§ÙˆØ² Ø¨Ø³Ø¨Ø¨ Ù…Ø­Ø¯ÙˆØ¯ÙŠØ© Ø§Ù„Ø±Ø¤ÙŠØ©", "is_correct": true },
-          { "text": "ØªØ¬Ø§ÙˆØ² Ø§Ù„Ø´Ø§Ø­Ù†Ø© Ø¨Ø³Ø±Ø¹Ø© Ù‚Ø¨Ù„ Ø£Ù† ÙŠØ¨Ø¯Ø£ Ø§Ù„ØµØ¹ÙˆØ¯", "is_correct": false },
-          { "text": "Ø§Ù„Ø³ÙŠØ± Ù‚Ø±ÙŠØ¨Ø§Ù‹ Ø®Ù„Ù Ø§Ù„Ø´Ø§Ø­Ù†Ø© Ù„Ù„Ø¨Ù‚Ø§Ø¡ ÙÙŠ Ù…Ø¬Ø±Ù‰ Ù‡ÙˆØ§Ø¦Ù‡Ø§", "is_correct": false }
+          {
+            "text": "زيادة المسافة عن الشاحنة وعدم التجاوز بسبب محدودية الرؤية",
+            "is_correct": true
+          },
+          {
+            "text": "تجاوز الشاحنة بسرعة قبل أن يبدأ الصعود",
+            "is_correct": false
+          },
+          {
+            "text": "السير قريبًا خلف الشاحنة للبقاء في مجرى هوائها",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ù…Ø¹ Ø±Ø¤ÙŠØ© Ù…Ø­Ø¯ÙˆØ¯Ø© ÙÙŠ ØµØ¹ÙˆØ¯ Ø®Ø·ÙŠØ±ØŒ Ø§Ù„ØªØ¬Ø§ÙˆØ² ØºÙŠØ± Ù…Ø³Ù…ÙˆØ­. Ø²ÙŠØ§Ø¯Ø© Ù…Ø³Ø§ÙØ© Ø§Ù„Ù…ØªØ§Ø¨Ø¹Ø© ØªÙ…Ø¯Ø¯ ÙˆÙ‚Øª Ø±Ø¯ ÙØ¹Ù„Ùƒ ÙˆÙ…Ø³Ø§ÙØ© Ø§Ù„ØªÙˆÙ‚Ù."
+        "explanation": "التجاوز خطر بسبب محدودية الرؤية في صعود شديد. زيادة مسافة المتابعة تمنحك وقت رد فعل ومسافة توقف أكبر."
       }
     }
   },
@@ -234,38 +414,74 @@
       "NL": {
         "question": "Op welke afstand wordt dit gevaarsbord buiten de bebouwde kom geplaatst?",
         "choices": [
-          { "text": "Ongeveer 150 meter voor het gevaar", "is_correct": true },
-          { "text": "Precies op de gevaarlijke plek", "is_correct": false },
-          { "text": "Op 500 meter voor het gevaar", "is_correct": false }
+          {
+            "text": "Ongeveer 150 meter voor het gevaar",
+            "is_correct": true
+          },
+          {
+            "text": "Precies op de gevaarlijke plek",
+            "is_correct": false
+          },
+          {
+            "text": "Op 500 meter voor het gevaar",
+            "is_correct": false
+          }
         ],
-        "explanation": "Buiten de bebouwde kom worden gevaarsborden op Â±150 meter voor het gevaar geplaatst. Binnen de bebouwde kom is dit Â±50 meter."
+        "explanation": "Buiten de bebouwde kom worden gevaarsborden op ±150 meter voor het gevaar geplaatst. Binnen de bebouwde kom is dit ±50 meter."
       },
       "EN": {
         "question": "At what distance is this danger sign placed outside built-up areas?",
         "choices": [
-          { "text": "Approximately 150 metres before the hazard", "is_correct": true },
-          { "text": "Exactly at the hazard location", "is_correct": false },
-          { "text": "500 metres before the hazard", "is_correct": false }
+          {
+            "text": "Approximately 150 metres before the hazard",
+            "is_correct": true
+          },
+          {
+            "text": "Exactly at the hazard location",
+            "is_correct": false
+          },
+          {
+            "text": "500 metres before the hazard",
+            "is_correct": false
+          }
         ],
-        "explanation": "Outside built-up areas, danger signs are placed Â±150 metres before the hazard. Inside built-up areas it is Â±50 metres."
+        "explanation": "Outside built-up areas, danger signs are placed ±150 metres before the hazard. Inside built-up areas it is ±50 metres."
       },
       "FR": {
-        "question": "Ã€ quelle distance ce panneau de danger est-il placÃ© hors agglomÃ©ration ?",
+        "question": "À quelle distance ce panneau de danger est-il placé hors agglomération ?",
         "choices": [
-          { "text": "Environ 150 mÃ¨tres avant le danger", "is_correct": true },
-          { "text": "Exactement Ã  l'endroit du danger", "is_correct": false },
-          { "text": "500 mÃ¨tres avant le danger", "is_correct": false }
+          {
+            "text": "Environ 150 mètres avant le danger",
+            "is_correct": true
+          },
+          {
+            "text": "Exactement à l'endroit du danger",
+            "is_correct": false
+          },
+          {
+            "text": "500 mètres avant le danger",
+            "is_correct": false
+          }
         ],
-        "explanation": "Hors agglomÃ©ration, les panneaux de danger sont placÃ©s Ã  Â±150 mÃ¨tres avant le danger. En agglomÃ©ration, c'est Â±50 mÃ¨tres."
+        "explanation": "Hors agglomération, les panneaux de danger sont placés à ±150 mètres avant le danger. En agglomération, c'est ±50 mètres."
       },
       "AR": {
-        "question": "Ø¹Ù„Ù‰ Ø£ÙŠ Ù…Ø³Ø§ÙØ© ØªÙˆØ¶Ø¹ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ© Ø§Ù„ØªØ­Ø°ÙŠØ±ÙŠØ© Ø®Ø§Ø±Ø¬ Ø§Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ù…Ø¨Ù†ÙŠØ©ØŸ",
+        "question": "على أي مسافة توضع هذه العلامة التحذيرية خارج المنطقة السكنية؟",
         "choices": [
-          { "text": "Ø­ÙˆØ§Ù„ÙŠ 150 Ù…ØªØ± Ù‚Ø¨Ù„ Ø§Ù„Ø®Ø·Ø±", "is_correct": true },
-          { "text": "Ù…Ø¨Ø§Ø´Ø±Ø© Ø¹Ù†Ø¯ Ù…ÙˆÙ‚Ø¹ Ø§Ù„Ø®Ø·Ø±", "is_correct": false },
-          { "text": "500 Ù…ØªØ± Ù‚Ø¨Ù„ Ø§Ù„Ø®Ø·Ø±", "is_correct": false }
+          {
+            "text": "حوالي 150 متر قبل الخطر",
+            "is_correct": true
+          },
+          {
+            "text": "مباشرة عند موقع الخطر",
+            "is_correct": false
+          },
+          {
+            "text": "500 متر قبل الخطر",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ø®Ø§Ø±Ø¬ Ø§Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ù…Ø¨Ù†ÙŠØ© ØªÙˆØ¶Ø¹ Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± Ø¹Ù„Ù‰ Ù…Ø³Ø§ÙØ© Â±150 Ù…ØªØ± Ù‚Ø¨Ù„ Ø§Ù„Ø®Ø·Ø±. Ø¯Ø§Ø®Ù„ Ø§Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ù…Ø¨Ù†ÙŠØ© ØªÙƒÙˆÙ† Ø§Ù„Ù…Ø³Ø§ÙØ© Â±50 Ù…ØªØ±."
+        "explanation": "خارج المنطقة السكنية توضع علامات الخطر على بعد نحو 150 مترًا قبل الخطر. داخل المنطقة السكنية تكون المسافة نحو 50 مترًا."
       }
     }
   },
@@ -277,36 +493,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Mag u inhalen op een gevaarlijke helling met beperkt zicht?",
+        "question": "Is het aan te raden om in te halen op een gevaarlijke helling met beperkt zicht?",
         "choices": [
-          { "text": "Nee", "is_correct": true },
-          { "text": "Ja", "is_correct": false }
+          {
+            "text": "Nee",
+            "is_correct": true
+          },
+          {
+            "text": "Ja",
+            "is_correct": false
+          }
         ],
-        "explanation": "Inhalen op een gevaarlijke helling met beperkt zicht is verboden. Tegemoetkomend verkeer is niet op tijd zichtbaar."
+        "explanation": "Nee, dat is niet raadzaam. Tegemoetkomend verkeer is niet op tijd zichtbaar."
       },
       "EN": {
-        "question": "Is it allowed to overtake on a steep incline with limited visibility?",
+        "question": "Is overtaking advisable on a steep ascent with limited visibility?",
         "choices": [
-          { "text": "No", "is_correct": true },
-          { "text": "Yes", "is_correct": false }
+          {
+            "text": "No",
+            "is_correct": true
+          },
+          {
+            "text": "Yes",
+            "is_correct": false
+          }
         ],
-        "explanation": "Overtaking on a steep incline with limited visibility is prohibited. Oncoming traffic is not visible in time."
+        "explanation": "Overtaking on a steep ascent with limited visibility is dangerous due to limited visibility. Oncoming traffic is not visible in time."
       },
       "FR": {
-        "question": "ÃŠtes-vous autorisÃ© Ã  dÃ©passer sur une pente dangereuse avec visibilitÃ© rÃ©duite ?",
+        "question": "Est-il conseillé de dépasser dans une montée dangereuse avec visibilité réduite ?",
         "choices": [
-          { "text": "Non", "is_correct": true },
-          { "text": "Oui", "is_correct": false }
+          {
+            "text": "Non",
+            "is_correct": true
+          },
+          {
+            "text": "Oui",
+            "is_correct": false
+          }
         ],
-        "explanation": "DÃ©passer dans une pente dangereuse avec visibilitÃ© rÃ©duite est interdit. Les vÃ©hicules en sens inverse ne sont pas visibles Ã  temps."
+        "explanation": "Dépasser dans une montée dangereuse avec visibilité réduite n'est pas conseillé. Les véhicules en sens inverse ne sont pas visibles à temps."
       },
       "AR": {
-        "question": "Ù‡Ù„ ÙŠÙØ³Ù…Ø­ Ø¨Ø§Ù„ØªØ¬Ø§ÙˆØ² ÙÙŠ ØµØ¹ÙˆØ¯ Ø®Ø·ÙŠØ± Ù…Ø¹ Ø±Ø¤ÙŠØ© Ù…Ø­Ø¯ÙˆØ¯Ø©ØŸ",
+        "question": "هل يُنصح بالتجاوز في صعود شديد مع رؤية محدودة؟",
         "choices": [
-          { "text": "Ù„Ø§", "is_correct": true },
-          { "text": "Ù†Ø¹Ù…", "is_correct": false }
+          {
+            "text": "لا",
+            "is_correct": true
+          },
+          {
+            "text": "نعم",
+            "is_correct": false
+          }
         ],
-        "explanation": "ÙŠÙØ­Ø¸Ø± Ø§Ù„ØªØ¬Ø§ÙˆØ² ÙÙŠ ØµØ¹ÙˆØ¯ Ø®Ø·ÙŠØ± Ù…Ø¹ Ø±Ø¤ÙŠØ© Ù…Ø­Ø¯ÙˆØ¯Ø©. Ù„Ø§ ÙŠÙ…ÙƒÙ† Ø±Ø¤ÙŠØ© Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ù‚Ø§Ø¯Ù…Ø© ÙÙŠ Ø§Ù„ÙˆÙ‚Øª Ø§Ù„Ù…Ù†Ø§Ø³Ø¨."
+        "explanation": "لا يُنصح بالتجاوز في صعود شديد مع رؤية محدودة. لا يمكن رؤية المركبات القادمة في الوقت المناسب."
       }
     }
   },
@@ -320,34 +560,58 @@
       "NL": {
         "question": "Is een traag voertuig op een gevaarlijke helling verplicht rechts te houden zodat sneller verkeer kan inhalen?",
         "choices": [
-          { "text": "Ja", "is_correct": true },
-          { "text": "Nee", "is_correct": false }
+          {
+            "text": "Ja",
+            "is_correct": true
+          },
+          {
+            "text": "Nee",
+            "is_correct": false
+          }
         ],
         "explanation": "Een voertuig dat merkbaar langzamer rijdt dan de andere voertuigen is verplicht de rijbaan vrij te maken door rechts te houden."
       },
       "EN": {
-        "question": "Is a slow vehicle on a steep incline required to keep right to allow faster vehicles to overtake?",
+        "question": "Is a slow vehicle on a steep ascent required to keep right to allow faster vehicles to overtake?",
         "choices": [
-          { "text": "Yes", "is_correct": true },
-          { "text": "No", "is_correct": false }
+          {
+            "text": "Yes",
+            "is_correct": true
+          },
+          {
+            "text": "No",
+            "is_correct": false
+          }
         ],
         "explanation": "A vehicle that drives noticeably slower than others is required to free the lane by keeping right."
       },
       "FR": {
-        "question": "Un vÃ©hicule lent dans une pente dangereuse est-il obligÃ© de se tenir Ã  droite pour permettre le dÃ©passement ?",
+        "question": "Un véhicule lent dans une montée dangereuse est-il obligé de se tenir à droite pour permettre le dépassement ?",
         "choices": [
-          { "text": "Oui", "is_correct": true },
-          { "text": "Non", "is_correct": false }
+          {
+            "text": "Oui",
+            "is_correct": true
+          },
+          {
+            "text": "Non",
+            "is_correct": false
+          }
         ],
-        "explanation": "Un vÃ©hicule roulant notablement moins vite que les autres est obligÃ© de libÃ©rer la voie en se tenant Ã  droite."
+        "explanation": "Un véhicule roulant notablement moins vite que les autres est obligé de libérer la voie en se tenant à droite."
       },
       "AR": {
-        "question": "Ù‡Ù„ ØªÙÙ„Ø²Ù… Ø§Ù„Ù…Ø±ÙƒØ¨Ø© Ø§Ù„Ø¨Ø·ÙŠØ¦Ø© ÙÙŠ Ø§Ù„ØµØ¹ÙˆØ¯ Ø§Ù„Ø®Ø·ÙŠØ± Ø¨Ø§Ù„Ø¨Ù‚Ø§Ø¡ Ø¹Ù„Ù‰ Ø§Ù„ÙŠÙ…ÙŠÙ† Ù„Ù„Ø³Ù…Ø§Ø­ Ù„Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ø£Ø³Ø±Ø¹ Ø¨Ø§Ù„ØªØ¬Ø§ÙˆØ²ØŸ",
+        "question": "هل تُلزم المركبة البطيئة في الصعود الشديد بالبقاء على اليمين للسماح للمركبات الأسرع بالتجاوز؟",
         "choices": [
-          { "text": "Ù†Ø¹Ù…", "is_correct": true },
-          { "text": "Ù„Ø§", "is_correct": false }
+          {
+            "text": "نعم",
+            "is_correct": true
+          },
+          {
+            "text": "لا",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ø§Ù„Ù…Ø±ÙƒØ¨Ø© Ø§Ù„ØªÙŠ ØªØ³ÙŠØ± Ø¨Ø´ÙƒÙ„ Ù…Ù„Ø­ÙˆØ¸ Ø£Ø¨Ø·Ø£ Ù…Ù† ØºÙŠØ±Ù‡Ø§ Ù…Ù„Ø²Ù…Ø© Ø¨Ø¥Ø®Ù„Ø§Ø¡ Ø§Ù„Ù…Ø³Ø§Ø± Ø¨Ø§Ù„Ø¨Ù‚Ø§Ø¡ Ø¹Ù„Ù‰ Ø§Ù„ÙŠÙ…ÙŠÙ†."
+        "explanation": "المركبة التي تسير أبطأ من غيرها بشكل ملحوظ ملزمة بإخلاء المسار بالبقاء على اليمين."
       }
     }
   }

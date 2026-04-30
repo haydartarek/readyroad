@@ -25,6 +25,7 @@ public class DevExamService {
     private final DevExamQuestionRepository questionRepo;
     private final DevExamChoiceRepository choiceRepo;
     private final DevExamSettingRepository settingRepo;
+    private final BackendMessageService messages;
 
     // ─── Categories ─────────────────────────────────────────────────────────
 
@@ -36,7 +37,7 @@ public class DevExamService {
 
     public DevExamCategoryDto getCategoryBySlug(String slug, String lang) {
         DevExamCategory cat = categoryRepo.findActiveBySlug(slug)
-                .orElseThrow(() -> new IllegalArgumentException("Category not found: " + slug));
+                .orElseThrow(() -> new IllegalArgumentException(messages.get("quiz.category_not_found", slug)));
         return toCategoryDto(cat, lang);
     }
 
@@ -44,13 +45,13 @@ public class DevExamService {
 
     public List<DevExamQuestionDto> getQuestions(String slug, String level, String lang, int limit) {
         DevExamCategory cat = categoryRepo.findActiveBySlug(slug)
-                .orElseThrow(() -> new IllegalArgumentException("Category not found: " + slug));
+                .orElseThrow(() -> new IllegalArgumentException(messages.get("quiz.category_not_found", slug)));
 
         DevExamDifficulty difficulty;
         try {
             difficulty = DevExamDifficulty.valueOf(level.toUpperCase());
         } catch (IllegalArgumentException e) {
-            throw new IllegalArgumentException("Invalid difficulty level: " + level);
+            throw new IllegalArgumentException(messages.get("assessment.invalid_difficulty", level));
         }
 
         List<DevExamQuestion> questions = questionRepo.findRandomByCategoryAndDifficulty(
@@ -63,22 +64,22 @@ public class DevExamService {
 
     public DevExamAnswerCheckDto checkAnswer(Long questionId, Long choiceId) {
         DevExamQuestion question = questionRepo.findById(questionId)
-                .orElseThrow(() -> new IllegalArgumentException("Question not found: " + questionId));
+                .orElseThrow(() -> new IllegalArgumentException(messages.get("error.question.not_found") + ": " + questionId));
 
         if (!Boolean.TRUE.equals(question.getIsActive())) {
-            throw new IllegalArgumentException("Question is inactive: " + questionId);
+            throw new IllegalArgumentException(messages.get("assessment.question_inactive", questionId));
         }
 
         choiceRepo.findByIdAndQuestion_Id(choiceId, questionId)
                 .orElseThrow(() -> new IllegalArgumentException(
-                        "Choice " + choiceId + " does not belong to question " + questionId));
+                        messages.get("assessment.choice_mismatch", choiceId, questionId)));
 
         Long correctChoiceId = choiceRepo.findByQuestion_IdOrderBySortOrder(questionId).stream()
                 .filter(choice -> Boolean.TRUE.equals(choice.getIsCorrect()))
                 .map(DevExamChoice::getId)
                 .findFirst()
                 .orElseThrow(() -> new IllegalStateException(
-                        "No correct choice configured for question " + questionId));
+                        messages.get("assessment.correct_choice_missing", questionId)));
 
         DevExamAnswerCheckDto dto = new DevExamAnswerCheckDto();
         dto.setCorrectChoiceId(correctChoiceId);
@@ -153,7 +154,7 @@ public class DevExamService {
                 .collect(Collectors.toCollection(ArrayList::new));
 
         if (correctChoices.size() != 1) {
-            throw new IllegalStateException("Expected exactly one correct choice for assessment question " + questionId);
+            throw new IllegalStateException(messages.get("assessment.correct_choice_expected", questionId));
         }
 
         if (allChoices.size() <= 3) {

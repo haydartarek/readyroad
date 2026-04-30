@@ -4,7 +4,9 @@ import com.readyroad.readyroadbackend.domain.entity.QuizAnswerOption;
 import com.readyroad.readyroadbackend.domain.entity.QuizQuestion;
 import com.readyroad.readyroadbackend.dto.QuizAnswerOptionDTO;
 import com.readyroad.readyroadbackend.dto.QuizQuestionDTO;
+import com.readyroad.readyroadbackend.service.RoadSignReferenceTextResolver;
 import com.readyroad.readyroadbackend.util.PlaceholderDetector;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
@@ -35,7 +37,10 @@ import java.util.stream.Collectors;
  */
 @Component
 @Slf4j
+@RequiredArgsConstructor
 public class QuizQuestionMapper {
+
+    private final RoadSignReferenceTextResolver roadSignReferenceTextResolver;
 
     /**
      * Convert QuizQuestion entity to DTO
@@ -52,10 +57,10 @@ public class QuizQuestionMapper {
 
         // Basic fields
         dto.setId(question.getId());
-        dto.setQuestionAr(question.getQuestionAr());
-        dto.setQuestionEn(question.getQuestionEn());
-        dto.setQuestionNl(question.getQuestionNl());
-        dto.setQuestionFr(question.getQuestionFr());
+        dto.setQuestionAr(roadSignReferenceTextResolver.resolveAr(question.getQuestionAr()));
+        dto.setQuestionEn(roadSignReferenceTextResolver.resolveEn(question.getQuestionEn()));
+        dto.setQuestionNl(roadSignReferenceTextResolver.resolveNl(question.getQuestionNl()));
+        dto.setQuestionFr(roadSignReferenceTextResolver.resolveFr(question.getQuestionFr()));
 
         // Type and difficulty
         dto.setQuestionType(question.getQuestionType());
@@ -77,7 +82,7 @@ public class QuizQuestionMapper {
         // Options: filter placeholder / corrupted translations, then shuffle
         // the delivery order so the correct answer is not fixed in one slot.
         if (question.getOptions() != null) {
-            List<QuizAnswerOptionDTO> optionDTOs = question.getOptions().stream()
+            List<QuizAnswerOptionDTO> optionDTOs = question.getDeliverableOptions().stream()
                     .filter(option -> {
                         boolean placeholder = PlaceholderDetector.hasPlaceholder(
                                 option.getOptionTextEn(), option.getOptionTextNl(),
@@ -115,10 +120,10 @@ public class QuizQuestionMapper {
 
         QuizAnswerOptionDTO dto = new QuizAnswerOptionDTO();
         dto.setId(option.getId());
-        dto.setOptionTextAr(option.getOptionTextAr());
-        dto.setOptionTextEn(option.getOptionTextEn());
-        dto.setOptionTextNl(option.getOptionTextNl());
-        dto.setOptionTextFr(option.getOptionTextFr());
+        dto.setOptionTextAr(roadSignReferenceTextResolver.resolveAr(option.getOptionTextAr()));
+        dto.setOptionTextEn(roadSignReferenceTextResolver.resolveEn(option.getOptionTextEn()));
+        dto.setOptionTextNl(roadSignReferenceTextResolver.resolveNl(option.getOptionTextNl()));
+        dto.setOptionTextFr(roadSignReferenceTextResolver.resolveFr(option.getOptionTextFr()));
         dto.setDisplayOrder(option.getDisplayOrder());
         // isCorrect is NOT set (security - client should not know correct answer)
 

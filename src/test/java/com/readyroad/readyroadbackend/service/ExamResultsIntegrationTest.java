@@ -1,14 +1,11 @@
 package com.readyroad.readyroadbackend.service;
 
 import com.readyroad.readyroadbackend.BaseIntegrationTest;
-import com.readyroad.readyroadbackend.domain.entity.Category;
 import com.readyroad.readyroadbackend.domain.entity.ExamSimulation;
-import com.readyroad.readyroadbackend.domain.entity.ExamSimulationAnswer;
 import com.readyroad.readyroadbackend.domain.entity.ExamSimulationQuestion;
 import com.readyroad.readyroadbackend.domain.entity.QuizAnswerOption;
 import com.readyroad.readyroadbackend.domain.entity.QuizQuestion;
-import com.readyroad.readyroadbackend.domain.repository.CategoryRepository;
-import com.readyroad.readyroadbackend.domain.repository.ExamSimulationAnswerRepository;
+
 import com.readyroad.readyroadbackend.domain.repository.ExamSimulationQuestionRepository;
 import com.readyroad.readyroadbackend.domain.repository.ExamSimulationRepository;
 import com.readyroad.readyroadbackend.domain.repository.QuizQuestionRepository;
@@ -52,24 +49,13 @@ class ExamResultsIntegrationTest extends BaseIntegrationTest {
         private ExamSimulationQuestionRepository examQuestionRepository;
 
         @Autowired
-        private ExamSimulationAnswerRepository answerRepository;
-
-        @Autowired
         private QuizQuestionRepository quizQuestionRepository;
 
-        @Autowired
-        private CategoryRepository categoryRepository;
-
         private Long testUserId;
-        private Category testCategory;
 
         @BeforeEach
         void setUp() {
                 testUserId = 999L;
-
-                // ✅ Use categories seeded by BaseIntegrationTest (no duplication)
-                var categories = categoryRepository.findAll();
-                testCategory = categories.isEmpty() ? null : categories.get(0);
 
                 // ✅ BaseIntegrationTest already seeded 200 PUBLISHED questions
                 long questionCount = quizQuestionRepository.count();
@@ -99,7 +85,7 @@ class ExamResultsIntegrationTest extends BaseIntegrationTest {
                                         .selectedOptionId(correctOption.getId())
                                         .build();
 
-                        examService.submitAnswer(exam.getId(), esq.getQuestionId(), request);
+                        examService.submitAnswer(exam.getId(), esq.getQuestionId(), request, testUserId);
                 }
 
                 // Submit 5 wrong answers
@@ -116,7 +102,7 @@ class ExamResultsIntegrationTest extends BaseIntegrationTest {
                                         .selectedOptionId(wrongOption.getId())
                                         .build();
 
-                        examService.submitAnswer(exam.getId(), esq.getQuestionId(), request);
+                        examService.submitAnswer(exam.getId(), esq.getQuestionId(), request, testUserId);
                 }
 
                 // Mark exam as completed
@@ -200,7 +186,7 @@ class ExamResultsIntegrationTest extends BaseIntegrationTest {
                                         .selectedOptionId(correctOption.getId())
                                         .build();
 
-                        examService.submitAnswer(exam.getId(), esq.getQuestionId(), request);
+                        examService.submitAnswer(exam.getId(), esq.getQuestionId(), request, testUserId);
                 }
 
                 // Mark as completed

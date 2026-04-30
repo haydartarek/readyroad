@@ -85,7 +85,7 @@ INSERT INTO quiz_answer_options (question_id, option_text_ar, option_text_en, op
 (@q9, 'خط أبيض على الأرض', 'A white line on the ground', 'Een witte lijn op de grond', 'Une ligne blanche sur le sol', false, 2, NOW());
 
 INSERT INTO quiz_questions (question_ar, question_en, question_nl, question_fr, question_type, difficulty_level, category_id, is_active, status, created_at, updated_at)
-VALUES ('ماذا يعني لافتة منطقة سكنية Woonerf / Zone résidentielle؟', 'What does a Woonerf / Residential Zone sign mean?', 'Wat betekent een Woonerf-bord?', 'Que signifie un panneau Zone résidentielle?', 'MULTIPLE_CHOICE', 'MEDIUM', 8, true, 'PUBLISHED', NOW(), NOW());
+VALUES ('ماذا يعني علامة منطقة سكنية Woonerf / Zone résidentielle؟', 'What does a Woonerf / Residential Zone sign mean?', 'Wat betekent een Woonerf-bord?', 'Que signifie un panneau Zone résidentielle?', 'MULTIPLE_CHOICE', 'MEDIUM', 8, true, 'PUBLISHED', NOW(), NOW());
 SET @q10 = LAST_INSERT_ID();
 INSERT INTO quiz_answer_options (question_id, option_text_ar, option_text_en, option_text_nl, option_text_fr, is_correct, display_order, created_at) VALUES
 (@q10, 'منطقة مشتركة بين المشاة والمركبات بقواعد خاصة', 'A shared area for pedestrians and vehicles with special rules', 'Een gedeeld gebied voor voetgangers en voertuigen met speciale regels', 'Une zone partagée entre piétons et véhicules avec des règles spéciales', true,  1, NOW()),
@@ -108,7 +108,7 @@ INSERT INTO quiz_answer_options (question_id, option_text_ar, option_text_en, op
 (@q12, 'لا يوجد فرق', 'There is no difference', 'Er is geen verschil', 'Il n''y a pas de différence', false, 2, NOW());
 
 INSERT INTO quiz_questions (question_ar, question_en, question_nl, question_fr, question_type, difficulty_level, category_id, is_active, status, created_at, updated_at)
-VALUES ('ماذا يعني لافتة منطقة المشاة؟', 'What does a pedestrian zone sign mean?', 'Wat betekent een voetgangerszone-bord?', 'Que signifie un panneau zone piétonne?', 'MULTIPLE_CHOICE', 'EASY', 8, true, 'PUBLISHED', NOW(), NOW());
+VALUES ('ماذا يعني علامة منطقة المشاة؟', 'What does a pedestrian zone sign mean?', 'Wat betekent een voetgangerszone-bord?', 'Que signifie un panneau zone piétonne?', 'MULTIPLE_CHOICE', 'EASY', 8, true, 'PUBLISHED', NOW(), NOW());
 SET @q13 = LAST_INSERT_ID();
 INSERT INTO quiz_answer_options (question_id, option_text_ar, option_text_en, option_text_nl, option_text_fr, is_correct, display_order, created_at) VALUES
 (@q13, 'المنطقة مخصصة للمشاة، المركبات ممنوعة إلا بإذن', 'The zone is for pedestrians only, vehicles are prohibited unless authorised', 'De zone is voorbehouden voor voetgangers, voertuigen zijn verboden tenzij gemachtigd', 'La zone est réservée aux piétons, les véhicules sont interdits sauf autorisation', true,  1, NOW()),
@@ -186,11 +186,11 @@ INSERT INTO quiz_answer_options (question_id, option_text_ar, option_text_en, op
 (@q21, 'الطريق مغلق للمشاة فقط', 'The road is closed for pedestrians only', 'De weg is alleen afgesloten voor voetgangers', 'La route est fermée pour les piétons uniquement', false, 3, NOW());
 
 INSERT INTO quiz_questions (question_ar, question_en, question_nl, question_fr, question_type, difficulty_level, category_id, is_active, status, created_at, updated_at)
-VALUES ('ما الفرق بين اللافتات الدائمة والمؤقتة لأشغال الطريق؟', 'What is the difference between permanent and temporary road work signs?', 'Wat is het verschil tussen permanente en tijdelijke wegenwerken-borden?', 'Quelle est la différence entre les panneaux permanents et temporaires de travaux routiers?', 'MULTIPLE_CHOICE', 'MEDIUM', 17, true, 'PUBLISHED', NOW(), NOW());
+VALUES ('ما الفرق بين العلامات الدائمة والمؤقتة لأشغال الطريق؟', 'What is the difference between permanent and temporary road work signs?', 'Wat is het verschil tussen permanente en tijdelijke wegenwerken-borden?', 'Quelle est la différence entre les panneaux permanents et temporaires de travaux routiers?', 'MULTIPLE_CHOICE', 'MEDIUM', 17, true, 'PUBLISHED', NOW(), NOW());
 SET @q22 = LAST_INSERT_ID();
 INSERT INTO quiz_answer_options (question_id, option_text_ar, option_text_en, option_text_nl, option_text_fr, is_correct, display_order, created_at) VALUES
-(@q22, 'اللافتات المؤقتة لها خلفية صفراء في بلجيكا', 'Temporary signs have a yellow background in Belgium', 'Tijdelijke borden hebben een gele achtergrond in België', 'Les panneaux temporaires ont un fond jaune en Belgique', true,  1, NOW()),
-(@q22, 'اللافتات المؤقتة أصغر حجماً', 'Temporary signs are smaller in size', 'Tijdelijke borden zijn kleiner van formaat', 'Les panneaux temporaires sont plus petits', false, 2, NOW());
+(@q22, 'العلامات المؤقتة لها خلفية صفراء في بلجيكا', 'Temporary signs have a yellow background in Belgium', 'Tijdelijke borden hebben een gele achtergrond in België', 'Les panneaux temporaires ont un fond jaune en Belgique', true,  1, NOW()),
+(@q22, 'العلامات المؤقتة أصغر حجماً', 'Temporary signs are smaller in size', 'Tijdelijke borden zijn kleiner van formaat', 'Les panneaux temporaires sont plus petits', false, 2, NOW());
 
 INSERT INTO quiz_questions (question_ar, question_en, question_nl, question_fr, question_type, difficulty_level, category_id, is_active, status, created_at, updated_at)
 VALUES ('ما السلوك الصحيح عند اقتراب منطقة أشغال؟', 'What is the correct behaviour when approaching a road work zone?', 'Wat is het correcte gedrag bij het naderen van een werkenzone?', 'Quel est le comportement correct en approchant d''une zone de travaux?', 'MULTIPLE_CHOICE', 'EASY', 17, true, 'PUBLISHED', NOW(), NOW());
@@ -224,7 +224,7 @@ INSERT INTO quiz_answer_options (question_id, option_text_ar, option_text_en, op
 (@q26, 'يختار السائق', 'The driver chooses', 'De bestuurder kiest', 'Le conducteur choisit', false, 3, NOW());
 
 INSERT INTO quiz_questions (question_ar, question_en, question_nl, question_fr, question_type, difficulty_level, category_id, is_active, status, created_at, updated_at)
-VALUES ('ما لون خلفية لافتات أشغال الطريق المؤقتة في بلجيكا؟', 'What background colour do temporary road work signs have in Belgium?', 'Welke achtergrondkleur hebben tijdelijke wegenwerken-borden in België?', 'De quelle couleur est le fond des panneaux de travaux temporaires en Belgique?', 'MULTIPLE_CHOICE', 'EASY', 17, true, 'PUBLISHED', NOW(), NOW());
+VALUES ('ما لون خلفية علامات أشغال الطريق المؤقتة في بلجيكا؟', 'What background colour do temporary road work signs have in Belgium?', 'Welke achtergrondkleur hebben tijdelijke wegenwerken-borden in België?', 'De quelle couleur est le fond des panneaux de travaux temporaires en Belgique?', 'MULTIPLE_CHOICE', 'EASY', 17, true, 'PUBLISHED', NOW(), NOW());
 SET @q27 = LAST_INSERT_ID();
 INSERT INTO quiz_answer_options (question_id, option_text_ar, option_text_en, option_text_nl, option_text_fr, is_correct, display_order, created_at) VALUES
 (@q27, 'أصفر', 'Yellow', 'Geel', 'Jaune', true,  1, NOW()),

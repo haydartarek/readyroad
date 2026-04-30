@@ -5,7 +5,6 @@ import com.readyroad.readyroadbackend.domain.entity.QuizAnswerOption;
 import com.readyroad.readyroadbackend.domain.entity.QuizQuestion;
 import com.readyroad.readyroadbackend.domain.repository.CategoryRepository;
 import com.readyroad.readyroadbackend.domain.repository.QuizQuestionRepository;
-import com.readyroad.readyroadbackend.exception.BelgianComplianceException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -59,8 +58,8 @@ class BelgianComplianceIntegrationTest {
 
         // When & Then - Should fail at save time due to @BelgianOptionsCount validation
         assertThatThrownBy(() -> questionRepository.save(question))
-            .isInstanceOf(jakarta.validation.ConstraintViolationException.class)
-            .hasMessageContaining("Belgian standard requires 2-3 options");
+                .isInstanceOf(jakarta.validation.ConstraintViolationException.class)
+                .hasMessageContaining("Belgian standard requires 2-3 options");
     }
 
     @Test
@@ -71,8 +70,8 @@ class BelgianComplianceIntegrationTest {
 
         // When & Then - Should fail at save time due to @BelgianOptionsCount validation
         assertThatThrownBy(() -> questionRepository.save(question))
-            .isInstanceOf(jakarta.validation.ConstraintViolationException.class)
-            .hasMessageContaining("Belgian standard requires 2-3 options");
+                .isInstanceOf(jakarta.validation.ConstraintViolationException.class)
+                .hasMessageContaining("Belgian standard requires 2-3 options");
     }
 
     @Test
@@ -84,7 +83,7 @@ class BelgianComplianceIntegrationTest {
 
         // When & Then - Should not throw
         assertThatCode(() -> quizService.validateBelgianCompliance(savedQuestion))
-            .doesNotThrowAnyException();
+                .doesNotThrowAnyException();
     }
 
     @Test
@@ -96,7 +95,7 @@ class BelgianComplianceIntegrationTest {
 
         // When & Then - Should not throw
         assertThatCode(() -> quizService.validateBelgianCompliance(savedQuestion))
-            .doesNotThrowAnyException();
+                .doesNotThrowAnyException();
     }
 
     @Test

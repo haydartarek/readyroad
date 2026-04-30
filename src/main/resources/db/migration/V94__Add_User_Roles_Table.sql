@@ -4,10 +4,8 @@
 -- Completes what V28 originally missed in the live DB:
 --   • idx_users_role index
 --   • user_roles reference table + seed data
---   • admin@readyroad.be default admin user
+--   • user_roles seed data
 -- ========================================
-
-USE readyroad_prod;
 
 -- Role index (speeds up Spring Security role lookups)
 SET @idx_exists = (SELECT COUNT(*) FROM INFORMATION_SCHEMA.STATISTICS
@@ -31,10 +29,6 @@ INSERT IGNORE INTO user_roles (role_name, description, permissions) VALUES
 ('ADMIN',      'Full system administrator','{"all":true}'),
 ('INSTRUCTOR', 'Lesson content manager',   '{"lessons":true,"questions":true,"users:read":true}');
 
--- Ensure admin@readyroad.be exists (default password: 'password')
-INSERT IGNORE INTO users (email, username, full_name, password_hash, role, is_active, is_locked, created_at)
-VALUES (
-    'admin@readyroad.be', 'admin_be', 'ReadyRoad Admin',
-    '$2a$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
-    'ADMIN', TRUE, FALSE, NOW()
-);
+-- Default admin creation is handled by DefaultAdminInitializer using
+-- ADMIN_DEFAULT_PASSWORD / readyroad.admin.default-password.
+-- Do not seed production credentials from Flyway.

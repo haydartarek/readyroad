@@ -391,8 +391,8 @@ Signs may indicate other limits!', 'La limite de vitesse standard en Belgique :
 
 Les panneaux peuvent indiquer d''autres limites !', 'الحد الأقصى للسرعة القياسية في بلجيكا:
 
-• داخل المناطق المبنية: 50 كم/ساعة
-• خارج المناطق المبنية: 70 كم/ساعة
+• داخل المنطقة السكنية: 50 كم/ساعة
+• خارج المنطقة السكنية: 70 كم/ساعة
 • الطريق السريع: 120 كم/ساعة
 • بعض الطرق السريعة: 90 كم/ساعة
 
@@ -650,7 +650,7 @@ Une bonne connaissance de la route vous aidera à conduire en toute sécurité e
 • Témoins : en cas de panne ou de danger', 'الإضاءة الصحيحة إلزامية:
 
 • الضوء المنخفض: في حالة ضعف الرؤية وفي الليل
-• الضوء الرئيسي: خارج المناطق المبنية (بدون حركة المرور القادمة)
+• الضوء الرئيسي: خارج المنطقة السكنية (بدون حركة المرور القادمة)
 • ضوء وامض: عند تغيير الاتجاه
 • أضواء التحذير: في حالة حدوث عطل أو خطر', '["Zichtbaar zijn is essentieel","Andere waarschuwen voor je acties","Groot licht dimmen voor tegenliggers","Mistlicht alleen bij mist"]', '["Being visible is essential","Others warn about your actions","Dim high beam for oncoming traffic","Fog lights only in fog"]', '["Être visible est essentiel","D''autres mettent en garde contre vos actions","Feux de route atténués pour la circulation venant en sens inverse","Feux antibrouillard uniquement dans le brouillard"]', '["أن تكون مرئيًا أمر ضروري","يحذر الآخرون من أفعالك","شعاع عالٍ خافت لحركة المرور القادمة","مصابيح الضباب فقط في الضباب"]'),
   ((SELECT id FROM lessons WHERE lesson_code='les-6'), 3, 'Alcohol en Drugs', 'Alcohol and Drugs', 'Alcool et drogues', 'الكحول والمخدرات', 'Rijden onder invloed is VERBODEN en gevaarlijk:
@@ -2192,7 +2192,7 @@ En cas de mauvaise visibilité ou d''obscurité, une utilisation correcte des fe
 • Pas avec le trafic suivant
 • Feux de route automatiques : restez vigilant', 'تستخدم الضوء العالي لرؤية أفضل على مسافة أكبر:
 
-• خارج المناطق المبنية فقط
+• خارج المنطقة السكنية فقط
 • مدى يصل إلى 100 متر
 • ليس في حركة المرور القادمة
 • خافتة عندما تقترب من الآخرين
@@ -2310,7 +2310,7 @@ En cas de mauvaise visibilité ou d''obscurité, une utilisation correcte des fe
 
 • في حالة الخطر المباشر
 • لمنع وقوع حادث
-• خارج المناطق المبنية عندما يكون الأمر غير واضح
+• خارج المنطقة السكنية عندما يكون الأمر غير واضح
 • ليس للتعبير عن الإحباط
 • عدم تشجيع الآخرين
 • ممنوع في المناطق المبنية (ما لم يكن ذلك ضروريا)', '["Kort en krachtig signaal geven","Kinderen niet laten schrikken","Niet claxonneren naar fietsers/voetgangers","Bij gevaar: wel gebruik maken","''s Nachts: lichtsignaal i.p.v. claxon","Misbruik = boete mogelijk","Geduld tonen in plaats van claxonneren"]', '["Give a short and powerful signal","Do not frighten children","Do not honk at cyclists/pedestrians","In case of danger: use it","At night: light signal instead of horn","Abuse = fine possible","Show patience instead of honking the horn"]', '["Donnez un signal court et puissant","N''effrayez pas les enfants","Ne klaxonnez pas en direction des cyclistes/piétons","En cas de danger : utilisez-le","La nuit : signal lumineux au lieu du klaxon","Abus = amende possible","Faites preuve de patience au lieu de klaxonner"]', '["إعطاء إشارة قصيرة وقوية","لا تخيف الأطفال","لا تطلق البوق على راكبي الدراجات/المشاة","في حالة الخطر: استخدمه","في الليل: إشارة ضوئية بدلاً من البوق","الإساءة = الغرامة الممكنة","أظهر الصبر بدلاً من إطلاق البوق"]'),
@@ -2653,7 +2653,7 @@ Chaque phase est tout aussi importante pour un dépassement en toute sécurité.
 • لا تتجاوز الحد الأقصى للسرعة
 • سريع بما فيه الكفاية لإبقاء المناورة قصيرة
 • القيادة بجانب الآخرين لفترة طويلة أمر خطير
-• خفض التروس في الوقت المناسب
+• خفض الغيار في الوقت المناسب
 • بعد التجاوز: استأنف السرعة العادية', '["Te langzaam = te lang duren","Te snel = onveilig en illegaal","Goede inschatting maken","Motorvermogen kennen","Bij twijfel over vermogen: niet inhalen","Maximumsnelheid blijft gelden"]', '["Too slow = taking too long","Too fast = unsafe and illegal","Make a good estimate","Know engine power","If in doubt about power: do not overtake","Speed ​​limit remains in effect"]', '["Trop lent = prend trop de temps","Trop rapide = dangereux et illégal","Faites une bonne estimation","Connaître la puissance du moteur","En cas de doute sur la puissance : ne dépassez pas","La limitation de vitesse reste en vigueur"]', '["بطيء جدًا = يستغرق وقتًا طويلاً","سريع جدًا = غير آمن وغير قانوني","قم بعمل تقدير جيد","تعرف على قوة المحرك","إذا كنت في شك من السلطة: لا تتجاوز","يبقى الحد الأقصى للسرعة ساري المفعول"]'),
   ((SELECT id FROM lessons WHERE lesson_code='les-16'), 5, 'Afstand en Ruimte', 'Distance and Space', 'Distance et espace', 'المسافة والفضاء', 'Veilige afstanden bij inhalen:
 
@@ -3375,7 +3375,7 @@ Cette règle s''applique à presque toutes les intersections sans signalisation.
 • على الطرق السريعة والطرق السريعة
 • عند القيادة خارج ساحة انتظار السيارات/الساحة إلى الطريق العام
 • الترام له الأولوية دائمًا
-• عندما يأمر ضابط الشرطة', '["Borden gaan voor basis regel","Groen licht = jij hebt voorrang","Uitrijden = voorrang verlenen","Tram is uitzondering","Agent boven alles","Check altijd signalisatie"]', '["Signs go for basic rule","Green light = you have priority","Exit = give priority","Tram is an exception","Agent above all","Always check signage"]', '["Les signes servent de règle de base","Feu vert = vous êtes prioritaire","Quitter = donner la priorité","Le tramway est une exception","Agent avant tout","Vérifiez toujours la signalisation"]', '["العلامات تذهب للقاعدة الأساسية","الضوء الأخضر = لديك الأولوية","الخروج = إعطاء الأولوية","الترام استثناء","الوكيل قبل كل شيء","تحقق دائمًا من اللافتات"]'),
+• عندما يأمر ضابط الشرطة', '["Borden gaan voor basis regel","Groen licht = jij hebt voorrang","Uitrijden = voorrang verlenen","Tram is uitzondering","Agent boven alles","Check altijd signalisatie"]', '["Signs go for basic rule","Green light = you have priority","Exit = give priority","Tram is an exception","Agent above all","Always check signage"]', '["Les signes servent de règle de base","Feu vert = vous êtes prioritaire","Quitter = donner la priorité","Le tramway est une exception","Agent avant tout","Vérifiez toujours la signalisation"]', '["العلامات تذهب للقاعدة الأساسية","الضوء الأخضر = لديك الأولوية","الخروج = إعطاء الأولوية","الترام استثناء","الوكيل قبل كل شيء","تحقق دائمًا من العلامات"]'),
   ((SELECT id FROM lessons WHERE lesson_code='les-19'), 6, 'Gevaarlijke Situaties', 'Dangerous Situations', 'Situations dangereuses', 'حالات خطيرة', 'Extra oplettend bij:
 
 • Onoverzichtelijke kruispunten
@@ -4038,7 +4038,7 @@ L''ignorer est très dangereux : les véhicules venant en sens inverse ne vous a
 • في بعض الأحيان الدراجات البخارية من الدرجة الأولى
 • خدمات الطوارئ في حاجة إليها
 • الشرطة أثناء المطاردة
-• مركبات الصيانة البلدية', '["Lees onderborden goed","Respecteer uitzonderingen","Fietsers verwachten","Ambulance = ruimte maken","Jij bent NIET uitzondering","Boete blijft voor je gelden"]', '["Read signage carefully","Respect exceptions","Expect cyclists","Ambulance = making space","You are NOT the exception","The fine continues to apply to you"]', '["Lisez attentivement la signalisation","Respecter les exceptions","Attendez-vous aux cyclistes","Ambulance = faire de la place","Vous n''êtes PAS l''exception","L''amende continue de s''appliquer à vous"]', '["اقرأ اللافتات بعناية","احترام الاستثناءات","توقع راكبي الدراجات","سيارة الإسعاف = إفساح المجال","أنت لست الاستثناء","يستمر تطبيق الغرامة عليك"]'),
+• مركبات الصيانة البلدية', '["Lees onderborden goed","Respecteer uitzonderingen","Fietsers verwachten","Ambulance = ruimte maken","Jij bent NIET uitzondering","Boete blijft voor je gelden"]', '["Read signage carefully","Respect exceptions","Expect cyclists","Ambulance = making space","You are NOT the exception","The fine continues to apply to you"]', '["Lisez attentivement la signalisation","Respecter les exceptions","Attendez-vous aux cyclistes","Ambulance = faire de la place","Vous n''êtes PAS l''exception","L''amende continue de s''appliquer à vous"]', '["اقرأ العلامات بعناية","احترام الاستثناءات","توقع راكبي الدراجات","سيارة الإسعاف = إفساح المجال","أنت لست الاستثناء","يستمر تطبيق الغرامة عليك"]'),
   ((SELECT id FROM lessons WHERE lesson_code='les-22'), 5, 'Gevaren bij Negeren', 'Dangers of Ignoring', 'Les dangers d''ignorer', 'مخاطر التجاهل', 'Waarom dit zo gevaarlijk is:
 
 • Frontale botsing zeer waarschijnlijk

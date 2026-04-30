@@ -61,7 +61,7 @@ public class LessonController {
      * all pages have been read.
      *
      * POST /api/lessons/{idOrCode}/progress
-     * Body: { "totalPages": N }
+     * Body: { "totalPages": N, "pageNumber": P }
      */
     @PostMapping("/{idOrCode}/progress")
     @Operation(summary = "Mark a page as read (requires authentication)")
@@ -75,9 +75,10 @@ public class LessonController {
 
         int totalPages = body.getOrDefault("totalPages",
                 lesson.pages() != null ? lesson.pages().size() : 1);
+        Integer pageNumber = body.get("pageNumber");
 
         Map<String, Object> result = lessonProgressService.markPageRead(
-                userId, lesson.id(), totalPages);
+                userId, lesson.id(), totalPages, pageNumber);
 
         return ResponseEntity.ok(result);
     }

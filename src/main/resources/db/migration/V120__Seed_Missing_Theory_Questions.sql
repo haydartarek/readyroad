@@ -21,11 +21,11 @@ INSERT INTO quiz_questions
 VALUES
   (124, 2, 'MULTIPLE_CHOICE', 'EASY', 1, 'PUBLISHED', NOW(),
    'What does a yellow diamond-shaped sign indicate to drivers in Belgium?',
-   'ماذا يعني اللافتة المعينية الصفراء على الطرق البلجيكية؟',
+   'ماذا يعني العلامة المعينية الصفراء على الطرق البلجيكية؟',
    'Wat geeft een geel ruitvormig bord aan voor bestuurders in België?',
    'Que signifie un panneau en forme de losange jaune pour les conducteurs en Belgique?',
    'A yellow diamond sign (B1) means you are on a priority road. Other traffic must yield to you at intersections unless signs indicate otherwise.',
-   'اللافتة المعينية الصفراء (B1) تعني أنك على طريق ذي أولوية. يجب على المركبات الأخرى إعطاءك الأولوية عند التقاطعات.',
+   'العلامة المعينية الصفراء (B1) تعني أنك على طريق ذي أولوية. يجب على المركبات الأخرى إعطاءك الأولوية عند التقاطعات.',
    'Een geel ruitvormig bord (B1) betekent dat u op een voorrangsweg rijdt. Ander verkeer moet voorrang aan u verlenen bij kruispunten.',
    'Un panneau losange jaune (B1) signifie que vous êtes sur une route prioritaire. Les autres véhicules doivent vous céder le passage aux intersections.',
    'SIGN_CONFUSION', 1, 0);
@@ -55,11 +55,11 @@ INSERT INTO quiz_questions
 VALUES
   (125, 4, 'MULTIPLE_CHOICE', 'EASY', 1, 'PUBLISHED', NOW(),
    'What does a blue circular sign with a white upward arrow mean?',
-   'ماذا يعني اللافتة الدائرية الزرقاء ذات السهم الأبيض الموجه للأعلى؟',
+   'ماذا يعني العلامة الدائرية الزرقاء ذات السهم الأبيض الموجه للأعلى؟',
    'Wat betekent een blauw rond bord met een witte pijl omhoog?',
    'Que signifie un panneau circulaire bleu avec une flèche blanche vers le haut?',
    'Blue circular signs with white arrows are mandatory direction signs. An upward arrow means you must continue straight ahead — no turning is permitted at that point.',
-   'اللافتات الدائرية الزرقاء ذات الأسهم البيضاء هي لافتات اتجاه إلزامي. السهم الموجه للأعلى يعني يجب الاستمرار في السير مستقيماً دون انعطاف.',
+   'العلامات الدائرية الزرقاء ذات الأسهم البيضاء هي علامات اتجاه إلزامي. السهم الموجه للأعلى يعني يجب الاستمرار في السير مستقيماً دون انعطاف.',
    'Blauwe ronde borden met witte pijlen zijn verplichte richtingsborden. Een pijl omhoog betekent dat u rechtdoor moet rijden — afslaan is op dat punt niet toegestaan.',
    'Les panneaux circulaires bleus avec des flèches blanches sont des panneaux de direction obligatoire. Une flèche vers le haut signifie que vous devez continuer tout droit, sans tourner.',
    'SIGN_CONFUSION', 1, 0);
@@ -93,11 +93,11 @@ INSERT INTO quiz_questions
 VALUES
   (126, 1, 'MULTIPLE_CHOICE', 'MEDIUM', 1, 'PUBLISHED', NOW(),
    'What does a red-bordered triangular sign with an exclamation mark indicate?',
-   'ماذا يعني اللافتة المثلثة ذات الإطار الأحمر وعلامة التعجب؟',
+   'ماذا يعني العلامة المثلثة ذات الإطار الأحمر وعلامة التعجب؟',
    'Wat geeft een driehoekig bord met rode rand en uitroepteken aan?',
    'Que signifie un panneau triangulaire à bordure rouge avec un point d''exclamation?',
    'A triangle with an exclamation mark (A51) is a general danger sign. It warns of a hazard ahead that is not covered by a more specific sign. Reduce speed and proceed cautiously.',
-   'المثلث مع علامة التعجب (A51) هو لافتة خطر عام. يحذر من خطر في الأمام لا تغطيه لافتة أكثر تحديداً. قلل السرعة وتقدم بحذر.',
+   'المثلث مع علامة التعجب (A51) هو علامة خطر عام. يحذر من خطر في الأمام لا تغطيه علامة أكثر تحديداً. قلل السرعة وتقدم بحذر.',
    'Een driehoek met uitroepteken (A51) is een algemeen gevaarsbord. Het waarschuwt voor een gevaar vooruit dat niet door een specifiekere aanduiding wordt gedekt. Snelheid verminderen en voorzichtig rijden.',
    'Un triangle avec un point d''exclamation (A51) est un panneau de danger général. Il avertit d''un danger en avant non couvert par un panneau plus spécifique. Réduire la vitesse et procéder avec prudence.',
    'SIGN_CONFUSION', 1, 0);
@@ -127,11 +127,11 @@ INSERT INTO quiz_questions
 VALUES
   (127, 1, 'MULTIPLE_CHOICE', 'MEDIUM', 1, 'PUBLISHED', NOW(),
    'What should you do when you see a slippery road warning sign?',
-   'ماذا يجب أن تفعل عندما ترى لافتة تحذير من الطريق الزلق؟',
+   'ماذا يجب أن تفعل عندما ترى علامة تحذير من الطريق الزلق؟',
    'Wat moet u doen wanneer u een waarschuwingsbord voor een glad wegdek ziet?',
    'Que devez-vous faire lorsque vous voyez un panneau d''avertissement de chaussée glissante?',
    'A slippery road sign requires you to reduce speed and increase following distance. Braking distances are much longer on slippery surfaces, so extra caution is essential.',
-   'لافتة الطريق الزلق تتطلب منك تقليل السرعة وزيادة مسافة الأمان. مسافات التوقف أطول كثيراً على الأسطح الزلقة لذا الحذر الإضافي ضروري.',
+   'علامة الطريق الزلق تتطلب منك تقليل السرعة وزيادة مسافة الأمان. مسافات التوقف أطول كثيراً على الأسطح الزلقة لذا الحذر الإضافي ضروري.',
    'Een glad wegbord vereist dat u snelheid vermindert en rijafstand vergroot. Remafstanden zijn veel langer op gladde oppervlakken, dus extra voorzichtigheid is essentieel.',
    'Un panneau de chaussée glissante vous oblige à réduire la vitesse et augmenter la distance de sécurité. Les distances de freinage sont bien plus longues sur les surfaces glissantes.',
    'RULE_OVERGENERALIZATION', 1, 0);
@@ -161,11 +161,11 @@ INSERT INTO quiz_questions
 VALUES
   (128, 2, 'MULTIPLE_CHOICE', 'MEDIUM', 1, 'PUBLISHED', NOW(),
    'What does an inverted triangle with a red border (give-way sign) require of you?',
-   'ماذا تتطلب لافتة المثلث المقلوب ذو الإطار الأحمر منك؟',
+   'ماذا تتطلب علامة المثلث المقلوب ذو الإطار الأحمر منك؟',
    'Wat vereist een omgekeerde driehoek met rode rand (voorrangsbord) van u?',
    'Qu''exige de vous un triangle inversé à bordure rouge (panneau cédez le passage)?',
    'The give-way sign (B1a/B17) means you must yield to all traffic on the intersecting road. You may proceed when it is safe, but you do not need to stop completely unless necessary.',
-   'لافتة إعطاء الأولوية (B1a/B17) تعني يجب إعطاء الأولوية لجميع المركبات على الطريق المتقاطع. يمكنك المتابعة عند الأمان ولكن لا تحتاج للتوقف الكامل إلا إذا لزم.',
+   'علامة إعطاء الأولوية (B1a/B17) تعني يجب إعطاء الأولوية لجميع المركبات على الطريق المتقاطع. يمكنك المتابعة عند الأمان ولكن لا تحتاج للتوقف الكامل إلا إذا لزم.',
    'Het voorrangsbord (B1a/B17) betekent dat u voorrang moet verlenen aan al het verkeer op de kruisende weg. U mag doorrijden als het veilig is, maar u hoeft niet volledig te stoppen tenzij nodig.',
    'Le panneau cédez le passage (B1a/B17) signifie que vous devez céder le passage à tout le trafic sur la route croisée. Vous pouvez avancer quand c''est sécuritaire, sans nécessairement vous arrêter.',
    'PRIORITY_MISUNDERSTANDING', 1, 0);
@@ -195,11 +195,11 @@ INSERT INTO quiz_questions
 VALUES
   (129, 2, 'MULTIPLE_CHOICE', 'MEDIUM', 1, 'PUBLISHED', NOW(),
    'At a Belgian intersection with no traffic signs, which vehicle has priority?',
-   'عند تقاطع بلجيكي بدون لافتات مرورية، أي مركبة لها حق الأولوية؟',
+   'عند تقاطع بلجيكي بدون علامات مرورية، أي مركبة لها حق الأولوية؟',
    'Op een Belgisch kruispunt zonder verkeersborden, welk voertuig heeft voorrang?',
    'À une intersection belge sans panneaux de signalisation, quel véhicule a la priorité?',
    'In Belgium, the default rule is priority to the right (priorité à droite). At intersections without signs, any vehicle approaching from the right has priority over you.',
-   'في بلجيكا القاعدة الافتراضية هي الأولوية لليمين. عند التقاطعات بدون لافتات، أي مركبة تأتي من اليمين لها الأولوية عليك.',
+   'في بلجيكا القاعدة الافتراضية هي الأولوية لليمين. عند التقاطعات بدون علامات، أي مركبة تأتي من اليمين لها الأولوية عليك.',
    'In België is de standaardregel voorrang van rechts. Op kruispunten zonder borden heeft elk voertuig dat van rechts nadert voorrang op u.',
    'En Belgique, la règle par défaut est la priorité à droite. Aux intersections sans panneaux, tout véhicule venant de droite a la priorité sur vous.',
    'PRIORITY_MISUNDERSTANDING', 1, 0);
@@ -233,7 +233,7 @@ VALUES
    'Wat betekent een witte cirkel met rode rand en een horizontale witte balk in het midden?',
    'Que signifie un cercle blanc à bordure rouge avec une barre horizontale blanche au centre?',
    'This is the C1 "No Entry" sign. It prohibits all vehicles from entering. It is commonly placed at the entry of one-way streets and restricted zones.',
-   'هذه لافتة C1 "ممنوع الدخول". تحظر دخول جميع المركبات. يُضعها عادة عند مدخل الطرق ذات الاتجاه الواحد والمناطق المقيدة.',
+   'هذه علامة C1 "ممنوع الدخول". تحظر دخول جميع المركبات. يُضعها عادة عند مدخل الطرق ذات الاتجاه الواحد والمناطق المقيدة.',
    'Dit is het C1 "Verboden toegang"-bord. Het verbiedt alle voertuigen om in te rijden. Het wordt gewoonlijk geplaatst bij de ingang van eenrichtingswegen en beperkte zones.',
    'C''est le panneau C1 "Accès interdit". Il interdit à tous les véhicules d''entrer. Il est couramment placé à l''entrée des sens uniques et des zones restreintes.',
    'SIGN_CONFUSION', 1, 0);
@@ -263,11 +263,11 @@ INSERT INTO quiz_questions
 VALUES
   (131, 3, 'MULTIPLE_CHOICE', 'MEDIUM', 1, 'PUBLISHED', NOW(),
    'What does a round sign with a black number inside a red circle indicate?',
-   'ماذا يعني اللافتة الدائرية بأرقام سوداء داخل دائرة حمراء؟',
+   'ماذا يعني العلامة الدائرية بأرقام سوداء داخل دائرة حمراء؟',
    'Wat geeft een rond bord met een zwart getal binnen een rode cirkel aan?',
    'Que signifie un panneau rond avec un chiffre noir à l''intérieur d''un cercle rouge?',
    'A red circle with a number inside is a maximum speed limit sign (C43). Drivers must not exceed this speed. It overrides any default speed limit for that road type.',
-   'الدائرة الحمراء مع رقم بداخلها هي لافتة الحد الأقصى للسرعة (C43). يجب على السائقين عدم تجاوز هذه السرعة. تتجاوز الحد الافتراضي لذلك النوع من الطريق.',
+   'الدائرة الحمراء مع رقم بداخلها هي علامة الحد الأقصى للسرعة (C43). يجب على السائقين عدم تجاوز هذه السرعة. تتجاوز الحد الافتراضي لذلك النوع من الطريق.',
    'Een rode cirkel met een getal erin is een maximumsnelheidslimietbord (C43). Bestuurders mogen deze snelheid niet overschrijden. Het vervangt elke standaard snelheidslimiet voor dat wegtype.',
    'Un cercle rouge avec un chiffre est un panneau de vitesse maximale (C43). Les conducteurs ne doivent pas dépasser cette vitesse. Il remplace toute limite de vitesse par défaut pour ce type de route.',
    'SPEED_LIMIT_ERROR', 1, 0);
@@ -297,11 +297,11 @@ INSERT INTO quiz_questions
 VALUES
   (132, 4, 'MULTIPLE_CHOICE', 'MEDIUM', 1, 'PUBLISHED', NOW(),
    'What does a blue circular sign with a white arrow pointing to the right mean?',
-   'ماذا يعني اللافتة الدائرية الزرقاء ذات السهم الأبيض المشير إلى اليمين؟',
+   'ماذا يعني العلامة الدائرية الزرقاء ذات السهم الأبيض المشير إلى اليمين؟',
    'Wat betekent een blauw rond bord met een witte pijl naar rechts?',
    'Que signifie un panneau rond bleu avec une flèche blanche pointant vers la droite?',
    'A blue circle with a rightward white arrow (D5) is a mandatory direction sign. You must turn right at this junction. It is an obligation, not a suggestion.',
-   'الدائرة الزرقاء مع السهم الأبيض المشير يميناً (D5) هي لافتة اتجاه إلزامي. يجب الانعطاف يميناً عند هذا التقاطع. هذا التزام وليس اقتراحاً.',
+   'الدائرة الزرقاء مع السهم الأبيض المشير يميناً (D5) هي علامة اتجاه إلزامي. يجب الانعطاف يميناً عند هذا التقاطع. هذا التزام وليس اقتراحاً.',
    'Een blauwe cirkel met een witte pijl naar rechts (D5) is een verplicht richtingsbord. U moet rechtsaf slaan op dit kruispunt. Het is een verplichting, geen suggestie.',
    'Un cercle bleu avec une flèche blanche vers la droite (D5) est un panneau de direction obligatoire. Vous devez tourner à droite à cette jonction. C''est une obligation.',
    'SIGN_CONFUSION', 1, 0);
@@ -331,11 +331,11 @@ INSERT INTO quiz_questions
 VALUES
   (133, 4, 'MULTIPLE_CHOICE', 'MEDIUM', 1, 'PUBLISHED', NOW(),
    'Blue circular signs with white symbols in Belgian road signs belong to which category?',
-   'اللافتات الدائرية الزرقاء ذات الرموز البيضاء في علامات الطريق البلجيكية تنتمي إلى أي فئة؟',
+   'العلامات الدائرية الزرقاء ذات الرموز البيضاء في علامات الطريق البلجيكية تنتمي إلى أي فئة؟',
    'Blauwe ronde borden met witte symbolen bij Belgische verkeersborden behoren tot welke categorie?',
    'Les panneaux circulaires bleus avec des symboles blancs dans la signalisation belge appartiennent à quelle catégorie?',
    'In Belgian road sign classification, blue circular signs indicate obligations or mandatory instructions (category D). They tell you what you must do, as opposed to red circles which prohibit actions.',
-   'في تصنيف علامات الطريق البلجيكية، اللافتات الدائرية الزرقاء تشير إلى الالتزامات أو التعليمات الإلزامية (الفئة D). تخبرك بما يجب فعله، بعكس الدوائر الحمراء التي تحظر أفعالاً.',
+   'في تصنيف علامات الطريق البلجيكية، العلامات الدائرية الزرقاء تشير إلى الالتزامات أو التعليمات الإلزامية (الفئة D). تخبرك بما يجب فعله، بعكس الدوائر الحمراء التي تحظر أفعالاً.',
    'In de Belgische verkeersbordclassificatie geven blauwe ronde borden verplichtingen of verplichte instructies aan (categorie D). Ze vertellen u wat u moet doen, in tegenstelling tot rode cirkels die handelingen verbieden.',
    'Dans la classification belge des panneaux, les panneaux ronds bleus indiquent des obligations ou instructions obligatoires (catégorie D). Ils indiquent ce que vous devez faire, par opposition aux cercles rouges qui interdisent.',
    'SIGN_CONFUSION', 0, 0);
@@ -344,15 +344,15 @@ INSERT INTO quiz_answer_options
   (id, question_id, option_text_en, option_text_ar, option_text_nl, option_text_fr, is_correct, display_order)
 VALUES
   (620, 133, 'Obligation or mandatory instruction signs',
-   'لافتات الالتزام أو التعليمات الإلزامية',
+   'علامات الالتزام أو التعليمات الإلزامية',
    'Gebodsverkeerstekens of verplichtingsborden',
    'Panneaux d''obligation ou d''instruction obligatoire', 1, 1),
   (621, 133, 'Information and service signs',
-   'لافتات المعلومات والخدمات',
+   'علامات المعلومات والخدمات',
    'Informatie- en dienstenborden',
    'Panneaux d''information et de services', 0, 2),
   (622, 133, 'Warning and danger signs',
-   'لافتات التحذير والخطر',
+   'علامات التحذير والخطر',
    'Waarschuwings- en gevaarsborden',
    'Panneaux d''avertissement et de danger', 0, 3);
 
@@ -365,11 +365,11 @@ INSERT INTO quiz_questions
 VALUES
   (134, 5, 'MULTIPLE_CHOICE', 'MEDIUM', 1, 'PUBLISHED', NOW(),
    'What does a blue sign with the letter P and a red diagonal line through it mean?',
-   'ماذا يعني اللافتة الزرقاء التي تحمل الحرف P وعليها خط أحمر قطري؟',
+   'ماذا يعني العلامة الزرقاء التي تحمل الحرف P وعليها خط أحمر قطري؟',
    'Wat betekent een blauw bord met de letter P en een rode diagonale streep erdoor?',
    'Que signifie un panneau bleu avec la lettre P et une ligne diagonale rouge?',
    'A blue P sign with a red diagonal line is the E3 "no parking" sign. Parking is prohibited but brief stopping to drop off a passenger is still permitted.',
-   'اللافتة الزرقاء P مع الخط الأحمر القطري هي لافتة E3 "ممنوع الوقوف". الوقوف محظور لكن التوقف القصير لإنزال راكب لا يزال مسموحاً به.',
+   'العلامة الزرقاء P مع الخط الأحمر القطري هي علامة E3 "ممنوع الوقوف". الوقوف محظور لكن التوقف القصير لإنزال راكب لا يزال مسموحاً به.',
    'Een blauw P-bord met een rode diagonale streep is het E3 "verboden te parkeren"-bord. Parkeren is verboden maar kort stoppen om een passagier af te zetten is nog steeds toegestaan.',
    'Un panneau P bleu avec une ligne diagonale rouge est le panneau E3 "stationnement interdit". Le stationnement est interdit mais un bref arrêt pour déposer un passager est encore autorisé.',
    'ZONE_CONFUSION', 1, 0);
@@ -399,11 +399,11 @@ INSERT INTO quiz_questions
 VALUES
   (135, 5, 'MULTIPLE_CHOICE', 'MEDIUM', 1, 'PUBLISHED', NOW(),
    'What does a blue rectangular sign showing only the letter P indicate?',
-   'ماذا تدل اللافتة المستطيلة الزرقاء التي تحمل الحرف P فقط؟',
+   'ماذا تدل العلامة المستطيلة الزرقاء التي تحمل الحرف P فقط؟',
    'Wat geeft een blauw rechthoekig bord met alleen de letter P aan?',
    'Que signifie un panneau rectangulaire bleu affichant uniquement la lettre P?',
    'A plain blue P sign (E9a) indicates a permitted public parking area. Unless supplementary signs restrict the time or user type, parking is allowed for all vehicles.',
-   'اللافتة الزرقاء P البسيطة (E9a) تشير إلى منطقة وقوف عامة مسموح بها. ما لم تقيّدها لافتات تكميلية تقيد الوقت أو نوع المستخدم، الوقوف مسموح لجميع المركبات.',
+   'العلامة الزرقاء P البسيطة (E9a) تشير إلى منطقة وقوف عامة مسموح بها. ما لم تقيّدها علامات تكميلية تقيد الوقت أو نوع المستخدم، الوقوف مسموح لجميع المركبات.',
    'Een gewoon blauw P-bord (E9a) geeft een toegestane openbare parkeerplaats aan. Tenzij aanvullende borden de tijd of het gebruikerstype beperken, is parkeren toegestaan voor alle voertuigen.',
    'Un simple panneau P bleu (E9a) indique une zone de stationnement public autorisé. Sauf si des panneaux complémentaires restreignent la durée ou le type d''utilisateur, le stationnement est autorisé.',
    'ZONE_CONFUSION', 1, 0);
@@ -437,11 +437,11 @@ INSERT INTO quiz_questions
 VALUES
   (136, 1, 'MULTIPLE_CHOICE', 'HARD', 1, 'PUBLISHED', NOW(),
    'A triangular warning sign shows a car with wavy lines beneath it. What specific hazard does this indicate?',
-   'تُظهر لافتة تحذير مثلثة سيارة مع خطوط متموجة تحتها. ما الخطر المحدد الذي تشير إليه؟',
+   'تُظهر علامة تحذير مثلثة سيارة مع خطوط متموجة تحتها. ما الخطر المحدد الذي تشير إليه؟',
    'Een driehoekig waarschuwingsbord toont een auto met golvende lijnen eronder. Welk specifiek gevaar geeft dit aan?',
    'Un panneau d''avertissement triangulaire montre une voiture avec des lignes ondulées en dessous. Quel danger spécifique cela indique-t-il?',
    'The A1a sign shows a skidding car over wavy lines indicating a slippery road surface. This is different from the general "uneven surface" sign. It warns specifically of grip loss risk, often near bridges or shaded sections.',
-   'لافتة A1a تُظهر سيارة تنزلق فوق خطوط متموجة مشيرة إلى سطح طريق زلق. تختلف عن لافتة السطح غير المستوي. تحذر تحديداً من خطر فقدان الإمساك بالطريق.',
+   'علامة A1a تُظهر سيارة تنزلق فوق خطوط متموجة مشيرة إلى سطح طريق زلق. تختلف عن علامة السطح غير المستوي. تحذر تحديداً من خطر فقدان الإمساك بالطريق.',
    'Het A1a-bord toont een glijdende auto over golvende lijnen die een glad wegoppervlak aangeven. Dit verschilt van het algemene "ongelijk oppervlak"-bord. Het waarschuwt specifiek voor het risico van grip verlies.',
    'Le panneau A1a montre une voiture en dérapage sur des lignes ondulées indiquant une surface glissante. C''est différent du panneau "surface inégale". Il avertit spécifiquement du risque de perte d''adhérence.',
    'SIGN_CONFUSION', 1, 0);
@@ -471,11 +471,11 @@ INSERT INTO quiz_questions
 VALUES
   (137, 1, 'MULTIPLE_CHOICE', 'HARD', 1, 'PUBLISHED', NOW(),
    'A triangular danger sign shows two arrows pointing toward each other from the sides. What does this warn about?',
-   'تُظهر لافتة خطر مثلثة سهمين يشيران من الجانبين نحو بعضهما. عن ماذا تحذر هذه اللافتة؟',
+  'تُظهر علامة خطر مثلثة سهمين يشيران من الجانبين نحو بعضهما. ما الخطر الذي تشير إليه هذه العلامة المرورية؟',
    'Een driehoekig gevaarsbord toont twee pijlen die van de zijkanten naar elkaar toe wijzen. Waarvoor waarschuwt dit?',
    'Un panneau de danger triangulaire montre deux flèches pointant l''une vers l''autre depuis les côtés. De quoi avertit-il?',
    'The A7a "road narrows on both sides" sign warns that the carriageway reduces in width. This may require extra caution when meeting oncoming traffic. Drivers should slow and be prepared to give way.',
-   'لافتة A7a "تضييق الطريق من كلا الجانبين" تحذر من أن حارة الطريق تضيق. قد يتطلب هذا توخي الحذر عند مرور مركبات مقابلة. يجب على السائقين التباطؤ والاستعداد لإعطاء الأولوية.',
+   'علامة A7a "تضييق الطريق من كلا الجانبين" تحذر من أن حارة الطريق تضيق. قد يتطلب هذا توخي الحذر عند مرور مركبات مقابلة. يجب على السائقين التباطؤ والاستعداد لإعطاء الأولوية.',
    'Het A7a-bord "weg versmalt aan beide zijden" waarschuwt dat de rijbaan smaller wordt. Dit vereist mogelijk extra voorzichtigheid bij tegemoetkomend verkeer. Bestuurders moeten vertragen.',
    'Le panneau A7a "chaussée rétrécie des deux côtés" avertit que la chaussée se réduit en largeur. Cela peut nécessiter une prudence supplémentaire pour le trafic venant en sens inverse.',
    'SIGN_CONFUSION', 1, 0);
@@ -539,11 +539,11 @@ INSERT INTO quiz_questions
 VALUES
   (139, 3, 'MULTIPLE_CHOICE', 'HARD', 1, 'PUBLISHED', NOW(),
    'A white circle with multiple diagonal grey lines is posted after a series of restrictions. What does this sign mean?',
-   'دائرة بيضاء بخطوط رمادية قطرية متعددة مُنشرة بعد سلسلة من القيود. ماذا تعني هذه اللافتة؟',
+  'دائرة بيضاء بخطوط رمادية قطرية متعددة تظهر بعد سلسلة من القيود. ماذا تعني هذه العلامة المرورية؟',
    'Een witte cirkel met meerdere diagonale grijze lijnen staat na een reeks beperkingen. Wat betekent dit bord?',
    'Un cercle blanc avec plusieurs lignes grises diagonales est placé après une série de restrictions. Que signifie ce panneau?',
    'This C99 sign cancels all previous prohibitions that were signed on the road (such as speed limits, overtaking bans, etc.). The normal traffic rules resume from this point onwards.',
-   'لافتة C99 تلغي جميع الحظر السابق الذي تم الإشارة إليه على الطريق (مثل حدود السرعة وحظر التجاوز وما إلى ذلك). تستأنف قواعد المرور العادية من هذه النقطة.',
+   'علامة C99 تلغي جميع الحظر السابق الذي تم الإشارة إليه على الطريق (مثل حدود السرعة وحظر التجاوز وما إلى ذلك). تستأنف قواعد المرور العادية من هذه النقطة.',
    'Dit C99-bord heft alle eerder aangeduide verboden op de weg op (zoals snelheidslimieten, inhaalverboden, enz.). De normale verkeersregels hervatten vanaf dit punt.',
    'Ce panneau C99 annule toutes les interdictions précédemment signalées sur la route (limites de vitesse, interdictions de dépassement, etc.). Les règles normales de circulation reprennent.',
    'RULE_OVERGENERALIZATION', 1, 0);
@@ -573,11 +573,11 @@ INSERT INTO quiz_questions
 VALUES
   (140, 4, 'MULTIPLE_CHOICE', 'HARD', 1, 'PUBLISHED', NOW(),
    'A blue circular sign shows a bicycle symbol and a pedestrian symbol separated by a vertical line. What does this indicate?',
-   'تُظهر لافتة دائرية زرقاء رمز دراجة ورمز مشاة مفصولَين بخط عمودي. ماذا يعني هذا؟',
+   'تُظهر علامة دائرية زرقاء رمز دراجة ورمز مشاة مفصولَين بخط عمودي. ماذا يعني هذا؟',
    'Een blauw rond bord toont een fietssymbool en een voetgangerssymbool gescheiden door een verticale lijn. Wat geeft dit aan?',
    'Un panneau rond bleu montre un symbole de vélo et un symbole piéton séparés par une ligne verticale. Que signifie cela?',
    'The D10 sign indicates a shared path that is divided: one side for cyclists and one for pedestrians. Both users must stay in their designated zone. This is different from D9 where they share the full path without separation.',
-   'لافتة D10 تشير إلى مسار مشترك مقسم: جانب للدراجات وآخر للمشاة. يجب أن يبقى كلا المستخدمين في منطقتهم المخصصة. تختلف عن D9 حيث يتقاسمون المسار الكامل.',
+   'علامة D10 تشير إلى مسار مشترك مقسم: جانب للدراجات وآخر للمشاة. يجب أن يبقى كلا المستخدمين في منطقتهم المخصصة. تختلف عن D9 حيث يتقاسمون المسار الكامل.',
    'Het D10-bord geeft een gedeeld pad aan dat verdeeld is: één zijde voor fietsers en één voor voetgangers. Beide gebruikers moeten in hun aangewezen zone blijven. Dit verschilt van D9 waar ze het gehele pad delen.',
    'Le panneau D10 indique un chemin partagé divisé: un côté pour les cyclistes et un pour les piétons. Les deux utilisateurs doivent rester dans leur zone désignée. Différent du D9 où ils partagent l''intégralité.',
    'SIGN_CONFUSION', 1, 0);
@@ -607,7 +607,7 @@ INSERT INTO quiz_questions
 VALUES
   (141, 5, 'MULTIPLE_CHOICE', 'HARD', 1, 'PUBLISHED', NOW(),
    'What is the key legal difference between an E1 (no stopping) sign and an E3 (no parking) sign in Belgium?',
-   'ما الفرق القانوني الرئيسي بين لافتة E1 (ممنوع التوقف) ولافتة E3 (ممنوع الركن) في بلجيكا؟',
+   'ما الفرق القانوني الرئيسي بين علامة E1 (ممنوع التوقف) وعلامة E3 (ممنوع الركن) في بلجيكا؟',
    'Wat is het belangrijkste juridische verschil tussen een E1-bord (verboden te stoppen) en een E3-bord (verboden te parkeren) in België?',
    'Quelle est la différence juridique essentielle entre un panneau E1 (arrêt interdit) et un panneau E3 (stationnement interdit) en Belgique?',
    'E1 (no stopping) prohibits any form of stopping, even momentarily. E3 (no parking) only prohibits leaving a vehicle unattended but allows brief stops for loading, unloading or dropping off passengers.',
@@ -641,11 +641,11 @@ INSERT INTO quiz_questions
 VALUES
   (142, 6, 'MULTIPLE_CHOICE', 'HARD', 1, 'PUBLISHED', NOW(),
    'A blue rectangular information sign displays the letter H with a directional arrow. What does this sign indicate?',
-   'تُظهر لافتة معلومات مستطيلة زرقاء الحرف H مع سهم اتجاه. ماذا تشير هذه اللافتة؟',
+  'تُظهر علامة معلومات مستطيلة زرقاء الحرف H مع سهم اتجاه. ماذا تشير هذه العلامة المرورية؟',
    'Een blauw rechthoekig informatiebord toont de letter H met een richtingspijl. Wat geeft dit bord aan?',
    'Un panneau d''information rectangulaire bleu affiche la lettre H avec une flèche directionnelle. Que signifie ce panneau?',
    'The letter H on a blue information sign stands for "Hôpital" (French) or "Hospital". It is a service direction sign and guides drivers toward the nearest hospital. These signs are part of the F-category (information signs) in Belgian road sign classification.',
-   'الحرف H على لافتة معلومات زرقاء يرمز إلى "Hôpital" (بالفرنسية) أو المستشفى. هي لافتة اتجاه خدمة وترشد السائقين نحو أقرب مستشفى. تنتمي هذه اللافتات إلى الفئة F (لافتات المعلومات) في تصنيف علامات الطريق البلجيكية.',
+  'الحرف H على علامة معلومات زرقاء يرمز إلى "Hôpital" (بالفرنسية) أو المستشفى. وهي علامة اتجاه خدمية ترشد السائقين نحو أقرب مستشفى. تنتمي هذه العلامات إلى الفئة F (علامات المعلومات) في تصنيف علامات الطريق البلجيكية.',
    'De letter H op een blauw informatiebord staat voor "Hôpital" (Frans) of ziekenhuis. Het is een dienstrichtingsbord en begeleidt bestuurders naar het dichtstbijzijnde ziekenhuis. Deze borden behoren tot de F-categorie in de Belgische verkeersbordclassificatie.',
    'La lettre H sur un panneau d''information bleu signifie "Hôpital". C''est un panneau de direction de service qui guide les conducteurs vers l''hôpital le plus proche. Ces panneaux font partie de la catégorie F des panneaux belges.',
    'SIGN_CONFUSION', 0, 0);

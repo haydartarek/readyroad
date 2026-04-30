@@ -21,28 +21,13 @@
     </appender>
 
     <!-- ✅ Application Loggers -->
-    <logger name="com.readyroad" level="DEBUG" additivity="false">
+    <logger name="com.readyroad" level="INFO" additivity="false">
         <appender-ref ref="CONSOLE"/>
         <appender-ref ref="FILE"/>
     </logger>
 
     <!-- ✅ Lifecycle Events Logger -->
-    <logger name="com.readyroad.readyroadbackend.domain.model" level="DEBUG" additivity="false">
-        <appender-ref ref="CONSOLE"/>
-    </logger>
-
-    <!-- ✅ Hibernate SQL Logger -->
-    <logger name="org.hibernate.SQL" level="DEBUG" additivity="false">
-        <appender-ref ref="CONSOLE"/>
-    </logger>
-
-    <!-- ✅ Hibernate Parameters Logger -->
-    <logger name="org.hibernate.type.descriptor.sql.BasicBinder" level="TRACE" additivity="false">
-        <appender-ref ref="CONSOLE"/>
-    </logger>
-
-    <!-- ✅ Hibernate Events (PrePersist/PreUpdate) -->
-    <logger name="org.hibernate.event" level="DEBUG" additivity="false">
+    <logger name="com.readyroad.readyroadbackend.domain.model" level="INFO" additivity="false">
         <appender-ref ref="CONSOLE"/>
     </logger>
 
@@ -50,6 +35,12 @@
     <logger name="org.springframework" level="INFO"/>
     <logger name="org.springframework.security" level="INFO"/>
     <logger name="org.springframework.test" level="INFO"/>
+    <logger name="org.hibernate.orm.deprecation" level="ERROR"/>
+    <logger name="org.hibernate.SQL" level="WARN"/>
+    <logger name="org.hibernate.type.descriptor.sql.BasicBinder" level="WARN"/>
+    <logger name="org.hibernate.event" level="WARN"/>
+    <logger name="org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl" level="ERROR"/>
+    <logger name="org.hibernate.orm.jdbc.error" level="ERROR"/>
 
     <!-- ✅ Root Logger -->
     <root level="INFO">

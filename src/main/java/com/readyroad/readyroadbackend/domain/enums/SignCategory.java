@@ -2,10 +2,9 @@ package com.readyroad.readyroadbackend.domain.enums;
 
 /**
  * Category for road signs in the Sign Quiz System.
- * Maps to the first letter/prefix of the Belgian sign code:
- * A → DANGER, B → PRIORITY, C → PROHIBITION, D → MANDATORY,
- * E → PARKING, F → INFORMATION, G → ADDITIONAL,
- * M → CYCLIST, TYPE-* → DELINEATION, Z → ZONE
+ * Maps to the leading code family of the Belgian sign identifier:
+ * danger, priority, prohibition, mandatory, parking, information,
+ * additional, cyclist, delineation, and zone.
  */
 public enum SignCategory {
     DANGER,
@@ -18,6 +17,6 @@ public enum SignCategory {
     CYCLIST,
     DELINEATION,
     ZONE,
-    /** F-series road management signs (e.g. F39, F79, F81...) */
+    /** Road-management signs such as F39, F79, and F81. */
     ROAD_MANAGEMENT
 }

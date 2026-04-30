@@ -1,10 +1,602 @@
-﻿[
-  {"question_id":"C24a_Q01","type":"WHAT_DOES_IT_MEAN","difficulty":"EASY","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Wat betekent dit verkeersbord?","choices":[{"text":"Verboden toegang voor voertuigen met gevaarlijke goederen","is_correct":true},{"text":"Verboden toegang voor voertuigen met ontvlambare stoffen","is_correct":false},{"text":"Verboden toegang voor voertuigen met verontreinigende stoffen","is_correct":false}],"explanation":"C24a verbiedt alle voertuigen met gevaarlijke goederen in het algemeen. C24b is specifiek voor ontvlambare/ontplofbare en C24c voor verontreinigende stoffen."},"EN":{"question":"What does this traffic sign mean?","choices":[{"text":"No entry for vehicles carrying dangerous goods","is_correct":true},{"text":"No entry for vehicles carrying flammable substances","is_correct":false},{"text":"No entry for vehicles carrying polluting substances","is_correct":false}],"explanation":"C24a prohibits all vehicles carrying dangerous goods in general. C24b is specific to flammable/explosive and C24c to polluting substances."},"FR":{"question":"Que signifie ce panneau ?","choices":[{"text":"Acces interdit aux vehicules transportant des marchandises dangereuses","is_correct":true},{"text":"Acces interdit aux vehicules transportant des substances inflammables","is_correct":false},{"text":"Acces interdit aux vehicules transportant des substances polluantes","is_correct":false}],"explanation":"C24a interdit tous les vehicules transportant des marchandises dangereuses en general. C24b est specifique aux substancens inflammables/explosives et C24c aux substances polluantes."},"AR":{"question":"Ù…Ø§Ø°Ø§ ØªØ¹Ù†ÙŠ Ù„Ø§ÙØªØ© Ø§Ù„Ù…Ø±ÙˆØ± Ù‡Ø°Ù‡ØŸ","choices":[{"text":"Ù…Ù…Ù†ÙˆØ¹ Ø¯Ø®ÙˆÙ„ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„ØªÙŠ ØªÙ†Ù‚Ù„ Ø¨Ø¶Ø§Ø¦Ø¹ Ø®Ø·Ø±Ø©","is_correct":true},{"text":"Ù…Ù…Ù†ÙˆØ¹ Ø¯Ø®ÙˆÙ„ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„ØªÙŠ ØªÙ†Ù‚Ù„ Ù…ÙˆØ§Ø¯ Ù‚Ø§Ø¨Ù„Ø© Ù„Ù„Ø§Ø´ØªØ¹Ø§Ù„","is_correct":false},{"text":"Ù…Ù…Ù†ÙˆØ¹ Ø¯Ø®ÙˆÙ„ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„ØªÙŠ ØªÙ†Ù‚Ù„ Ù…ÙˆØ§Ø¯ Ù…Ù„ÙˆØ«Ø©","is_correct":false}],"explanation":"ØªØ­Ø¸Ø± C24a Ø¬Ù…ÙŠØ¹ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„ØªÙŠ ØªÙ†Ù‚Ù„ Ø¨Ø¶Ø§Ø¦Ø¹ Ø®Ø·Ø±Ø© Ø¨ÙˆØ¬Ù‡ Ø¹Ø§Ù…. C24b Ø®Ø§ØµØ© Ø¨Ø§Ù„Ù…ÙˆØ§Ø¯ Ø§Ù„Ù‚Ø§Ø¨Ù„Ø© Ù„Ù„Ø§Ø´ØªØ¹Ø§Ù„/Ø§Ù„Ø§Ù†ÙØ¬Ø§Ø± ÙˆC24c Ø¨Ø§Ù„Ù…ÙˆØ§Ø¯ Ø§Ù„Ù…Ù„ÙˆØ«Ø©."}}},
-  {"question_id":"C24a_Q02","type":"WHICH_SIGN","difficulty":"EASY","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Tot welke categorie behoort dit bord?","choices":[{"text":"Verbodsborden (C-reeks)","is_correct":true},{"text":"Gevaarsborden (A-reeks)","is_correct":false},{"text":"Gebodsborden (D-reeks)","is_correct":false}],"explanation":"Verbodsborden (C-reeks) zijn rond met rode rand."},"EN":{"question":"To which category does this sign belong?","choices":[{"text":"Prohibition signs (C-series)","is_correct":true},{"text":"Danger signs (A-series)","is_correct":false},{"text":"Mandatory signs (D-series)","is_correct":false}],"explanation":"Prohibition signs (C-series) are round with a red border."},"FR":{"question":"A quelle categorie appartient ce panneau ?","choices":[{"text":"Panneaux d interdiction (serie C)","is_correct":true},{"text":"Panneaux de danger (serie A)","is_correct":false},{"text":"Panneaux d obligation (serie D)","is_correct":false}],"explanation":"Les panneaux d interdiction (serie C) sont ronds avec un bord rouge."},"AR":{"question":"Ø§Ù„Ù‰ Ø§ÙŠ ÙØ¦Ø© ØªÙ†ØªÙ…ÙŠ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ","choices":[{"text":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø­Ø¸Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© C)","is_correct":true},{"text":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© A)","is_correct":false},{"text":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø§Ù„Ø²Ø§Ù… (Ø§Ù„Ø³Ù„Ø³Ù„Ø© D)","is_correct":false}],"explanation":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø­Ø¸Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© C) Ù…Ø³ØªØ¯ÙŠØ±Ø© Ø°Ø§Øª Ø­Ø¯ Ø§Ø­Ù…Ø±."}}},
-  {"question_id":"C24a_Q03","type":"HAZARD_IDENTIFICATION","difficulty":"EASY","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Op basis van welk criterium wordt een voertuig verboden door C24a?","choices":[{"text":"Het voertuig vervoert goederen die als gevaarlijk zijn geclassificeerd (ADR-transport)","is_correct":true},{"text":"Het voertuig is groter dan een gewone bestelwagen","is_correct":false},{"text":"Het voertuig vervoert meer dan 1000 kg aan lading","is_correct":false}],"explanation":"C24a slaat op voertuigen die goederen vervoeren die wettelijk als gevaarlijk zijn geclassificeerd, zoals chemicaliÃ«n, explosieven of radioactieve stoffen, geregeld door het ADR-verdrag."},"EN":{"question":"On what criterion is a vehicle prohibited by C24a?","choices":[{"text":"The vehicle carries goods classified as dangerous (ADR transport)","is_correct":true},{"text":"The vehicle is larger than a standard van","is_correct":false},{"text":"The vehicle carries more than 1000 kg of cargo","is_correct":false}],"explanation":"C24a refers to vehicles carrying goods legally classified as dangerous, such as chemicals, explosives or radioactive substances, regulated by the ADR convention."},"FR":{"question":"Sur quel critere un vehicule est-il interdit par C24a ?","choices":[{"text":"Le vehicule transporte des marchandises classifiees comme dangereuses (transport ADR)","is_correct":true},{"text":"Le vehicule est plus grand qu une camionnette standard","is_correct":false},{"text":"Le vehicule transporte plus de 1000 kg de chargement","is_correct":false}],"explanation":"C24a vise les vehicules transportant des marchandises legalement classifiees comme dangereuses telles que produits chimiques explosifs ou substances radioactives reglementees par la convention ADR."},"AR":{"question":"Ø¹Ù„Ù‰ Ø§ÙŠ Ù…Ø¹ÙŠØ§Ø± ØªØ­Ø¸Ø± C24a Ù…Ø±ÙƒØ¨Ø©ØŸ","choices":[{"text":"Ø§Ù„Ù…Ø±ÙƒØ¨Ø© ØªÙ†Ù‚Ù„ Ø¨Ø¶Ø§Ø¦Ø¹ Ù…ØµÙ†ÙØ© Ø®Ø·Ø±Ø© (Ù†Ù‚Ù„ ADR)","is_correct":true},{"text":"Ø§Ù„Ù…Ø±ÙƒØ¨Ø© Ø§ÙƒØ¨Ø± Ù…Ù† Ø´Ø§Ø­Ù†Ø© Ù‚ÙŠØ§Ø³ÙŠØ©","is_correct":false},{"text":"Ø§Ù„Ù…Ø±ÙƒØ¨Ø© ØªÙ†Ù‚Ù„ Ø§ÙƒØ«Ø± Ù…Ù† 1000 ÙƒØ¬Ù… Ù…Ù† Ø§Ù„Ø¨Ø¶Ø§Ø¦Ø¹","is_correct":false}],"explanation":"ØªØ´ÙŠØ± C24a Ø§Ù„Ù‰ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„ØªÙŠ ØªÙ†Ù‚Ù„ Ø¨Ø¶Ø§Ø¦Ø¹ Ù…ØµÙ†ÙØ© Ù‚Ø§Ù†ÙˆÙ†Ø§ ÙƒØ®Ø·Ø±Ø© ÙƒØ§Ù„Ù…ÙˆØ§Ø¯ Ø§Ù„ÙƒÙŠÙ…ÙŠØ§Ø¦ÙŠØ© ÙˆØ§Ù„Ù…ØªÙØ¬Ø±Ø§Øª ÙˆØ§Ù„Ù…ÙˆØ§Ø¯ Ø§Ù„Ù…Ø´Ø¹Ø© Ø§Ù„Ù…Ù†Ø¸Ù…Ø© Ø¨Ø§ØªÙØ§Ù‚ÙŠØ© ADR."}}},
-  {"question_id":"C24a_Q04","type":"WHAT_MUST_YOU_DO","difficulty":"MEDIUM","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"U rijdt een tankwagen met brandbare vloeistoffen en ziet bord C24a. Wat doet u?","choices":[{"text":"Stoppen en een alternatieve route nemen","is_correct":true},{"text":"Doorrijden want tankwagens zijn altijd vergezeld van een begeleider","is_correct":false},{"text":"Doorrijden als de tankwagen volledig leeg is","is_correct":false}],"explanation":"C24a verbiedt het vervoer van gevaarlijke goederen op die weg. Een tankwagen met brandbare vloeistoffen valt hier volledig onder. U dient een alternatieve route te kiezen."},"EN":{"question":"You are driving a tanker with flammable liquids and see sign C24a. What do you do?","choices":[{"text":"Stop and take an alternative route","is_correct":true},{"text":"Continue because tankers are always accompanied by an escort","is_correct":false},{"text":"Continue if the tanker is completely empty","is_correct":false}],"explanation":"C24a prohibits the transport of dangerous goods on that road. A tanker with flammable liquids falls fully under this. You must choose an alternative route."},"FR":{"question":"Vous conduisez un camion-citerne avec des liquides inflammables et voyez le panneau C24a. Que faites-vous ?","choices":[{"text":"S arreter et prendre un itineraire alternatif","is_correct":true},{"text":"Continuer car les camions-citernes sont toujours accompagnes d un escorte","is_correct":false},{"text":"Continuer si le camion-citerne est completement vide","is_correct":false}],"explanation":"C24a interdit le transport de marchandises dangereuses sur cette route. Un camion-citerne avec des liquides inflammables releve entierement de cette interdiction. Vous devez choisir un itineraire alternatif."},"AR":{"question":"Ø§Ù†Øª ØªÙ‚ÙˆØ¯ Ù†Ø§Ù‚Ù„Ø© ØµÙ‡Ø±ÙŠØ¬ Ø¨Ø³ÙˆØ§Ø¦Ù„ Ù‚Ø§Ø¨Ù„Ø© Ù„Ù„Ø§Ø´ØªØ¹Ø§Ù„ ÙˆØªØ±Ù‰ Ù„Ø§ÙØªØ© C24a. Ù…Ø§Ø°Ø§ ØªÙØ¹Ù„ØŸ","choices":[{"text":"ØªÙˆÙ‚Ù ÙˆØ®Ø° Ø·Ø±ÙŠÙ‚Ø§ Ø¨Ø¯ÙŠÙ„Ø§","is_correct":true},{"text":"ØªØ§Ø¨Ø¹ Ù„Ø§Ù† Ø§Ù„Ù†Ø§Ù‚Ù„Ø§Øª Ø¯Ø§Ø¦Ù…Ø§ Ù…Ø±Ø§ÙÙŽÙ‚Ø© Ø¨Ù…Ø±Ø§ÙÙ‚","is_correct":false},{"text":"ØªØ§Ø¨Ø¹ Ø§Ø°Ø§ ÙƒØ§Ù†Øª Ø§Ù„Ù†Ø§Ù‚Ù„Ø© ÙØ§Ø±ØºØ© ØªÙ…Ø§Ù…Ø§","is_correct":false}],"explanation":"ØªØ­Ø¸Ø± C24a Ù†Ù‚Ù„ Ø§Ù„Ø¨Ø¶Ø§Ø¦Ø¹ Ø§Ù„Ø®Ø·Ø±Ø© Ø¹Ù„Ù‰ Ø°Ù„Ùƒ Ø§Ù„Ø·Ø±ÙŠÙ‚. Ø§Ù„Ù†Ø§Ù‚Ù„Ø© Ø¨Ø³ÙˆØ§Ø¦Ù„ Ù‚Ø§Ø¨Ù„Ø© Ù„Ù„Ø§Ø´ØªØ¹Ø§Ù„ ØªÙ†Ø¯Ø±Ø¬ ÙƒÙ„ÙŠØ§ ØªØ­Øª Ù‡Ø°Ø§. ÙŠØ¬Ø¨ Ø¹Ù„ÙŠÙƒ Ø§Ø®ØªÙŠØ§Ø± Ø·Ø±ÙŠÙ‚ Ø¨Ø¯ÙŠÙ„."}}},
-  {"question_id":"C24a_Q05","type":"WHAT_MUST_YOU_DO","difficulty":"MEDIUM","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Geldt C24a ook voor een voertuig dat slechts een kleine hoeveelheid gevaarlijke goederen vervoert (vrijgestelde hoeveelheid)?","choices":[{"text":"Nee, voertuigen die vallen onder de ADR-vrijstellingsdrempel hoeven C24a niet te volgen","is_correct":true},{"text":"Ja, elke hoeveelheid gevaarlijke goederen hoe klein ook valt onder C24a","is_correct":false},{"text":"Alleen als het voertuig een ADR-plaatje draagt","is_correct":false}],"explanation":"ADR kent vrijgestelde hoeveelheden waarbij bepaalde kleine hoeveelheden gevaarlijke goederen niet aan alle ADR-verplichtingen hoeven te voldoen. Als een voertuig onder deze drempelwaarde valt, kan C24a in sommige gevallen niet van toepassing zijn."},"EN":{"question":"Does C24a also apply to a vehicle carrying only a small quantity of dangerous goods (exempt quantity)?","choices":[{"text":"No, vehicles below the ADR exemption threshold do not need to follow C24a","is_correct":true},{"text":"Yes, any quantity of dangerous goods however small falls under C24a","is_correct":false},{"text":"Only if the vehicle displays an ADR plate","is_correct":false}],"explanation":"ADR provides exempt quantities where certain small amounts of dangerous goods do not need to comply with all ADR requirements. If a vehicle falls below this threshold C24a may not apply in some cases."},"FR":{"question":"C24a s applique-t-il aussi a un vehicule transportant seulement une petite quantite de marchandises dangereuses (quantite exemptee) ?","choices":[{"text":"Non, les vehicules en dessous du seuil d exemption ADR ne sont pas tenus de respecter C24a","is_correct":true},{"text":"Oui, toute quantite de marchandises dangereuses si petite soit-elle releve du C24a","is_correct":false},{"text":"Seulement si le vehicule affiche une plaque ADR","is_correct":false}],"explanation":"L ADR prevoit des quantites exemptees ou certaines petites quantites de marchandises dangereuses n ont pas besoin de se conformer a toutes les exigences ADR. Si un vehicule est en dessous de ce seuil C24a peut ne pas s appliquer dans certains cas."},"AR":{"question":"Ù‡Ù„ ØªÙ†Ø·Ø¨Ù‚ C24a Ø§ÙŠØ¶Ø§ Ø¹Ù„Ù‰ Ù…Ø±ÙƒØ¨Ø© ØªÙ†Ù‚Ù„ ÙƒÙ…ÙŠØ© ØµØºÙŠØ±Ø© ÙÙ‚Ø· Ù…Ù† Ø§Ù„Ø¨Ø¶Ø§Ø¦Ø¹ Ø§Ù„Ø®Ø·Ø±Ø© (Ø§Ù„ÙƒÙ…ÙŠØ© Ø§Ù„Ù…Ø¹ÙØ§Ø©)ØŸ","choices":[{"text":"Ù„Ø§ØŒ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø¯ÙˆÙ† Ø¹ØªØ¨Ø© Ø§Ù„Ø§Ø¹ÙØ§Ø¡ ADR Ù„Ø§ ÙŠØªØ¹ÙŠÙ† Ø¹Ù„ÙŠÙ‡Ø§ Ø§ØªØ¨Ø§Ø¹ C24a","is_correct":true},{"text":"Ù†Ø¹Ù…ØŒ Ø§ÙŠ ÙƒÙ…ÙŠØ© Ù…Ù† Ø§Ù„Ø¨Ø¶Ø§Ø¦Ø¹ Ø§Ù„Ø®Ø·Ø±Ø© Ù…Ù‡Ù…Ø§ ØµØºØ±Øª ØªÙ†Ø¯Ø±Ø¬ ØªØ­Øª C24a","is_correct":false},{"text":"ÙÙ‚Ø· Ø§Ø°Ø§ ÙƒØ§Ù†Øª Ø§Ù„Ù…Ø±ÙƒØ¨Ø© ØªØ¹Ø±Ø¶ Ù„ÙˆØ­Ø© ADR","is_correct":false}],"explanation":"ÙŠÙˆÙØ± ADR ÙƒÙ…ÙŠØ§Øª Ù…Ø¹ÙØ§Ø© Ø­ÙŠØ« Ù„Ø§ ÙŠØªØ¹ÙŠÙ† Ø¹Ù„Ù‰ ÙƒÙ…ÙŠØ§Øª ØµØºÙŠØ±Ø© Ù…Ø¹ÙŠÙ†Ø© Ù…Ù† Ø§Ù„Ø¨Ø¶Ø§Ø¦Ø¹ Ø§Ù„Ø®Ø·Ø±Ø© Ø§Ù„Ø§Ù…ØªØ«Ø§Ù„ Ù„Ø¬Ù…ÙŠØ¹ Ù…ØªØ·Ù„Ø¨Ø§Øª ADR. Ø§Ø°Ø§ ÙƒØ§Ù†Øª Ø§Ù„Ù…Ø±ÙƒØ¨Ø© Ø¯ÙˆÙ† Ù‡Ø°Ù‡ Ø§Ù„Ø¹ØªØ¨Ø© ÙÙ‚Ø¯ Ù„Ø§ ØªÙ†Ø·Ø¨Ù‚ C24a ÙÙŠ Ø¨Ø¹Ø¶ Ø§Ù„Ø­Ø§Ù„Ø§Øª."}}},
-  {"question_id":"C24a_Q06","type":"WHAT_MUST_YOU_DO","difficulty":"MEDIUM","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Geldt bord C24a alleen op de plek waar het bord staat of voor een gehele zone?","choices":[{"text":"Het verbod geldt vanaf het bord tot aan het einde van de weg of tot aan het opheffingsbord","is_correct":true},{"text":"Het verbod geldt alleen op de plek van het bord zelf","is_correct":false},{"text":"Het verbod geldt voor een zone van 500 meter voorbij het bord","is_correct":false}],"explanation":"Een verbodsbord is van kracht vanaf het punt waar het staat en geldt voor de volledige weg of zone die erna volgt, tot het expliciet wordt opgeheven door een ander bord of het einde van de weg."},"EN":{"question":"Does sign C24a apply only at the location where the sign is placed or for an entire zone?","choices":[{"text":"The prohibition applies from the sign until the end of the road or until a cancellation sign","is_correct":true},{"text":"The prohibition only applies at the exact location of the sign itself","is_correct":false},{"text":"The prohibition applies for a zone of 500 metres beyond the sign","is_correct":false}],"explanation":"A prohibition sign is in force from the point where it is placed and applies to the entire road or zone that follows until it is explicitly cancelled by another sign or the end of the road."},"FR":{"question":"Le panneau C24a s applique-t-il seulement a l endroit ou il est place ou pour toute une zone ?","choices":[{"text":"L interdiction s applique depuis le panneau jusqu a la fin de la route ou jusqu a un panneau de levee","is_correct":true},{"text":"L interdiction ne s applique qu a l emplacement exact du panneau lui-meme","is_correct":false},{"text":"L interdiction s applique pour une zone de 500 metres au-dela du panneau","is_correct":false}],"explanation":"Un panneau d interdiction est en vigueur a partir de l endroit ou il est place et s applique a toute la route ou zone qui suit jusqu a ce qu il soit explicitement leve par un autre panneau ou la fin de la route."},"AR":{"question":"Ù‡Ù„ ØªÙ†Ø·Ø¨Ù‚ Ù„Ø§ÙØªØ© C24a ÙÙ‚Ø· ÙÙŠ Ù…ÙƒØ§Ù† ÙˆØ¶Ø¹ Ø§Ù„Ù„Ø§ÙØªØ© Ø§Ù… Ù„Ù…Ù†Ø·Ù‚Ø© ÙƒØ§Ù…Ù„Ø©ØŸ","choices":[{"text":"ÙŠØ³Ø±ÙŠ Ø§Ù„Ø­Ø¸Ø± Ù…Ù† Ø§Ù„Ù„Ø§ÙØªØ© Ø­ØªÙ‰ Ù†Ù‡Ø§ÙŠØ© Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ùˆ Ø­ØªÙ‰ Ù„Ø§ÙØªØ© Ø§Ù„Ø§Ù„ØºØ§Ø¡","is_correct":true},{"text":"ÙŠØ³Ø±ÙŠ Ø§Ù„Ø­Ø¸Ø± ÙÙ‚Ø· ÙÙŠ Ø§Ù„Ù…ÙˆÙ‚Ø¹ Ø§Ù„Ø¯Ù‚ÙŠÙ‚ Ù„Ù„Ø§ÙØªØ© Ø°Ø§ØªÙ‡Ø§","is_correct":false},{"text":"ÙŠØ³Ø±ÙŠ Ø§Ù„Ø­Ø¸Ø± Ù„Ù…Ù†Ø·Ù‚Ø© 500 Ù…ØªØ± Ù…Ø§ Ø¨Ø¹Ø¯ Ø§Ù„Ù„Ø§ÙØªØ©","is_correct":false}],"explanation":"Ù„Ø§ÙØªØ© Ø§Ù„Ø­Ø¸Ø± Ø³Ø§Ø±ÙŠØ© Ø§Ù„Ù…ÙØ¹ÙˆÙ„ Ù…Ù† Ø§Ù„Ù†Ù‚Ø·Ø© Ø§Ù„ØªÙŠ ÙˆÙØ¶Ø¹Øª ÙÙŠÙ‡Ø§ ÙˆØªÙ†Ø·Ø¨Ù‚ Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ùˆ Ø§Ù„Ù…Ù†Ø·Ù‚Ø© Ø§Ù„ÙƒØ§Ù…Ù„Ø© Ø§Ù„ØªØ§Ù„ÙŠØ© Ø­ØªÙ‰ ØªÙÙ„ØºÙ‰ ØµØ±Ø§Ø­Ø© Ø¨Ù„Ø§ÙØªØ© Ø§Ø®Ø±Ù‰ Ø§Ùˆ Ù†Ù‡Ø§ÙŠØ© Ø§Ù„Ø·Ø±ÙŠÙ‚."}}},
-  {"question_id":"C24a_Q07","type":"IS_IT_ALLOWED","difficulty":"HARD","is_critical":true,"show_sign":true,"i18n":{"NL":{"question":"Mag een tankwagen met gevaarlijke vloeistoffen de verboden weg oprijden als hij enkel passagiers afzet en dan de goederen via een andere route levert?","choices":[{"text":"Nee, het verbod geldt voor het voertuig zelf zodra het gevaarlijke goederen aan boord heeft","is_correct":true},{"text":"Ja, als het voertuig de goederen niet actief levert op de verboden weg","is_correct":false}],"explanation":"C24a verbiedt het voertuig op de weg te komen zolang het gevaarlijke goederen vervoert. De reden voor de rit of het afzetten van passagiers verandert de verbodsstatus niet. Dit is een ernstige verkeersovertreding."},"EN":{"question":"May a tanker with dangerous liquids use the prohibited road if it is only dropping off passengers and then delivering the goods via another route?","choices":[{"text":"No, the prohibition applies to the vehicle itself as soon as it has dangerous goods on board","is_correct":true},{"text":"Yes, if the vehicle is not actively delivering the goods on the prohibited road","is_correct":false}],"explanation":"C24a prohibits the vehicle from entering the road as long as it is carrying dangerous goods. The purpose of the journey or dropping off passengers does not change the prohibition status. This is a serious traffic offence."},"FR":{"question":"Un camion-citerne avec des liquides dangereux peut-il emprunter la route interdite s il ne fait que deposer des passagers et livrer ensuite les marchandises par une autre route ?","choices":[{"text":"Non, l interdiction s applique au vehicule lui-meme des qu il a des marchandises dangereuses a bord","is_correct":true},{"text":"Oui, si le vehicule ne livre pas activement les marchandises sur la route interdite","is_correct":false}],"explanation":"C24a interdit au vehicule d emprunter la route tant qu il transporte des marchandises dangereuses. La raison du trajet ou le fait de deposer des passagers ne change pas le statut d interdiction. Il s agit d une infraction grave au code de la route."},"AR":{"question":"Ù‡Ù„ ÙŠØ¬ÙˆØ² Ù„Ù†Ø§Ù‚Ù„Ø© ØµÙ‡Ø±ÙŠØ¬ Ø¨Ø³ÙˆØ§Ø¦Ù„ Ø®Ø·Ø±Ø© Ø§Ø³ØªØ®Ø¯Ø§Ù… Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ù…Ø­Ø¸ÙˆØ± Ø§Ø°Ø§ ÙƒØ§Ù†Øª ØªÙØ±Øº Ø±ÙƒØ§Ø¨Ø§ ÙÙ‚Ø· Ø«Ù… ØªÙˆØµÙ„ Ø§Ù„Ø¨Ø¶Ø§Ø¦Ø¹ Ø¹Ø¨Ø± Ø·Ø±ÙŠÙ‚ Ø¢Ø®Ø±ØŸ","choices":[{"text":"Ù„Ø§ØŒ Ø§Ù„Ø­Ø¸Ø± ÙŠØ³Ø±ÙŠ Ø¹Ù„Ù‰ Ø§Ù„Ù…Ø±ÙƒØ¨Ø© Ø°Ø§ØªÙ‡Ø§ ÙÙˆØ± ÙˆØ¬ÙˆØ¯ Ø¨Ø¶Ø§Ø¦Ø¹ Ø®Ø·Ø±Ø© Ø¹Ù„Ù‰ Ù…ØªÙ†Ù‡Ø§","is_correct":true},{"text":"Ù†Ø¹Ù…ØŒ Ø§Ø°Ø§ Ù„Ù… ØªÙƒÙ† Ø§Ù„Ù…Ø±ÙƒØ¨Ø© ØªÙˆØµÙ„ Ø§Ù„Ø¨Ø¶Ø§Ø¦Ø¹ ÙØ¹Ù„ÙŠØ§ Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ù…Ø­Ø¸ÙˆØ±","is_correct":false}],"explanation":"ØªØ­Ø¸Ø± C24a Ø¹Ù„Ù‰ Ø§Ù„Ù…Ø±ÙƒØ¨Ø© Ø¯Ø®ÙˆÙ„ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø·Ø§Ù„Ù…Ø§ ØªÙ†Ù‚Ù„ Ø¨Ø¶Ø§Ø¦Ø¹ Ø®Ø·Ø±Ø©. Ø§Ù„ØºØ±Ø¶ Ù…Ù† Ø§Ù„Ø±Ø­Ù„Ø© Ø§Ùˆ Ø§ÙØ±Ø§Øº Ø§Ù„Ø±ÙƒØ§Ø¨ Ù„Ø§ ÙŠØºÙŠØ± Ø­Ø§Ù„Ø© Ø§Ù„Ø­Ø¸Ø±. Ù‡Ø°Ù‡ Ù…Ø®Ø§Ù„ÙØ© Ù…Ø±ÙˆØ±ÙŠØ© Ø®Ø·ÙŠØ±Ø©."}}},
-  {"question_id":"C24a_Q08","type":"IS_IT_ALLOWED","difficulty":"HARD","is_critical":true,"show_sign":true,"i18n":{"NL":{"question":"Mag een voertuig met gevaarlijke goederen de verboden weg gebruiken als de chauffeur een ADR-certificaat heeft?","choices":[{"text":"Nee, een ADR-certificaat is een vakbekwaamheidsbewijs maar geen ontheffing van het verbodsbord","is_correct":true},{"text":"Ja, het ADR-certificaat geeft recht op gebruik van alle wegen","is_correct":false}],"explanation":"Een ADR-certificaat bewijst dat de chauffeur opgeleid is voor het vervoer van gevaarlijke goederen. Het vervangt geen ontheffing van de bevoegde wegbeheerder. Dit is een ernstige verkeersovertreding."},"EN":{"question":"May a vehicle with dangerous goods use the prohibited road if the driver holds an ADR certificate?","choices":[{"text":"No, an ADR certificate is a professional competence document not an exemption from the prohibition sign","is_correct":true},{"text":"Yes, the ADR certificate entitles the holder to use all roads","is_correct":false}],"explanation":"An ADR certificate proves that the driver is trained for the transport of dangerous goods. It does not replace an exemption from the competent road authority. This is a serious traffic offence."},"FR":{"question":"Un vehicule transportant des marchandises dangereuses peut-il emprunter la route interdite si le conducteur possede un certificat ADR ?","choices":[{"text":"Non, un certificat ADR est un document de competences professionnelles et non une derogation au panneau d interdiction","is_correct":true},{"text":"Oui, le certificat ADR donne droit a l utilisation de toutes les routes","is_correct":false}],"explanation":"Un certificat ADR prouve que le conducteur est forme pour le transport de marchandises dangereuses. Il ne remplace pas une derogation de l autorite routiere competente. Il s agit d une infraction grave au code de la route."},"AR":{"question":"Ù‡Ù„ ÙŠØ¬ÙˆØ² Ù„Ù…Ø±ÙƒØ¨Ø© Ø¨Ø¨Ø¶Ø§Ø¦Ø¹ Ø®Ø·Ø±Ø© Ø§Ø³ØªØ®Ø¯Ø§Ù… Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ù…Ø­Ø¸ÙˆØ± Ø§Ø°Ø§ ÙƒØ§Ù† Ø§Ù„Ø³Ø§Ø¦Ù‚ ÙŠØ­Ù…Ù„ Ø´Ù‡Ø§Ø¯Ø© ADRØŸ","choices":[{"text":"Ù„Ø§ØŒ Ø´Ù‡Ø§Ø¯Ø© ADR ÙˆØ«ÙŠÙ‚Ø© ÙƒÙØ§Ø¡Ø© Ù…Ù‡Ù†ÙŠØ© ÙˆÙ„ÙŠØ³Øª Ø§Ø³ØªØ«Ù†Ø§Ø¡ Ù…Ù† Ù„Ø§ÙØªØ© Ø§Ù„Ø­Ø¸Ø±","is_correct":true},{"text":"Ù†Ø¹Ù…ØŒ Ø´Ù‡Ø§Ø¯Ø© ADR ØªØ®ÙˆÙ„ ØµØ§Ø­Ø¨Ù‡Ø§ Ø§Ø³ØªØ®Ø¯Ø§Ù… Ø¬Ù…ÙŠØ¹ Ø§Ù„Ø·Ø±Ù‚","is_correct":false}],"explanation":"ØªØ«Ø¨Øª Ø´Ù‡Ø§Ø¯Ø© ADR Ø§Ù† Ø§Ù„Ø³Ø§Ø¦Ù‚ Ù…Ø¯Ø±Ø¨ Ø¹Ù„Ù‰ Ù†Ù‚Ù„ Ø§Ù„Ø¨Ø¶Ø§Ø¦Ø¹ Ø§Ù„Ø®Ø·Ø±Ø©. ÙˆÙ‡ÙŠ Ù„Ø§ ØªØ­Ù„ Ù…Ø­Ù„ Ø§Ø³ØªØ«Ù†Ø§Ø¡ Ù…Ù† Ø³Ù„Ø·Ø© Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ù…Ø®ØªØµØ©. Ù‡Ø°Ù‡ Ù…Ø®Ø§Ù„ÙØ© Ù…Ø±ÙˆØ±ÙŠØ© Ø®Ø·ÙŠØ±Ø©."}}}
+[
+  {
+    "question_id": "C24a_Q01",
+    "type": "WHAT_DOES_IT_MEAN",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat betekent dit verkeersbord?",
+        "choices": [
+          {
+            "text": "Verboden toegang voor voertuigen die gevaarlijke goederen vervoeren",
+            "is_correct": true
+          },
+          {
+            "text": "Verboden toegang voor voertuigen met gewone vracht",
+            "is_correct": false
+          },
+          {
+            "text": "Verboden toegang voor lege vrachtwagens",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dit bord geeft aan dat bestuurders van voertuigen die gevaarlijke goederen vervoeren hier niet mogen inrijden."
+      },
+      "EN": {
+        "question": "What does this traffic sign mean?",
+        "choices": [
+          {
+            "text": "No entry for vehicles carrying dangerous goods",
+            "is_correct": true
+          },
+          {
+            "text": "No entry for vehicles carrying ordinary goods",
+            "is_correct": false
+          },
+          {
+            "text": "No entry for empty trucks",
+            "is_correct": false
+          }
+        ],
+        "explanation": "This sign indicates that drivers of vehicles carrying dangerous goods may not enter here."
+      },
+      "FR": {
+        "question": "Que signifie ce panneau ?",
+        "choices": [
+          {
+            "text": "Accès interdit aux véhicules transportant des marchandises dangereuses",
+            "is_correct": true
+          },
+          {
+            "text": "Accès interdit aux véhicules transportant des marchandises ordinaires",
+            "is_correct": false
+          },
+          {
+            "text": "Accès interdit aux camions vides",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ce panneau indique que les conducteurs de véhicules transportant des marchandises dangereuses ne peuvent pas entrer ici."
+      },
+      "AR": {
+        "question": "ما معنى هذه العلامة المرورية؟",
+        "choices": [
+          {
+            "text": "ممنوع دخول المركبات التي تنقل بضائع خطرة",
+            "is_correct": true
+          },
+          {
+            "text": "ممنوع دخول المركبات التي تنقل بضائع عادية",
+            "is_correct": false
+          },
+          {
+            "text": "ممنوع دخول الشاحنات الفارغة",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تدل هذه العلامة على أن سائقي المركبات التي تنقل بضائع خطرة لا يجوز لهم الدخول من هنا."
+      }
+    }
+  },
+  {
+    "question_id": "C24a_Q02",
+    "type": "HAZARD_IDENTIFICATION",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Op wie is dit verbod van toepassing?",
+        "choices": [
+          {
+            "text": "Op bestuurders van voertuigen die gevaarlijke goederen vervoeren",
+            "is_correct": true
+          },
+          {
+            "text": "Op alle autobestuurders",
+            "is_correct": false
+          },
+          {
+            "text": "Alleen op bestuurders van bussen",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Het verbod geldt voor bestuurders van voertuigen die gevaarlijke goederen vervoeren."
+      },
+      "EN": {
+        "question": "To whom does this prohibition apply?",
+        "choices": [
+          {
+            "text": "To drivers of vehicles carrying dangerous goods",
+            "is_correct": true
+          },
+          {
+            "text": "To all car drivers",
+            "is_correct": false
+          },
+          {
+            "text": "Only to bus drivers",
+            "is_correct": false
+          }
+        ],
+        "explanation": "The prohibition applies to drivers of vehicles carrying dangerous goods."
+      },
+      "FR": {
+        "question": "À qui s’applique cette interdiction ?",
+        "choices": [
+          {
+            "text": "Aux conducteurs de véhicules transportant des marchandises dangereuses",
+            "is_correct": true
+          },
+          {
+            "text": "À tous les automobilistes",
+            "is_correct": false
+          },
+          {
+            "text": "Seulement aux conducteurs d’autobus",
+            "is_correct": false
+          }
+        ],
+        "explanation": "L’interdiction s’applique aux conducteurs de véhicules transportant des marchandises dangereuses."
+      },
+      "AR": {
+        "question": "على من ينطبق هذا الحظر؟",
+        "choices": [
+          {
+            "text": "على سائقي المركبات التي تنقل بضائع خطرة",
+            "is_correct": true
+          },
+          {
+            "text": "على جميع سائقي السيارات",
+            "is_correct": false
+          },
+          {
+            "text": "فقط على سائقي الحافلات",
+            "is_correct": false
+          }
+        ],
+        "explanation": "ينطبق هذا الحظر على سائقي المركبات التي تنقل بضائع خطرة."
+      }
+    }
+  },
+  {
+    "question_id": "C24a_Q03",
+    "type": "HAZARD_IDENTIFICATION",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat verbiedt dit bord precies?",
+        "choices": [
+          {
+            "text": "De toegang voor voertuigen die gevaarlijke goederen vervoeren",
+            "is_correct": true
+          },
+          {
+            "text": "De toegang voor alle voertuigen met lading",
+            "is_correct": false
+          },
+          {
+            "text": "De toegang voor alle zware voertuigen",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dit bord verbiedt specifiek de toegang voor voertuigen die gevaarlijke goederen vervoeren."
+      },
+      "EN": {
+        "question": "What exactly does this sign prohibit?",
+        "choices": [
+          {
+            "text": "Access for vehicles carrying dangerous goods",
+            "is_correct": true
+          },
+          {
+            "text": "Access for all loaded vehicles",
+            "is_correct": false
+          },
+          {
+            "text": "Access for all heavy vehicles",
+            "is_correct": false
+          }
+        ],
+        "explanation": "This sign specifically prohibits access for vehicles carrying dangerous goods."
+      },
+      "FR": {
+        "question": "Qu’interdit précisément ce panneau ?",
+        "choices": [
+          {
+            "text": "L’accès des véhicules transportant des marchandises dangereuses",
+            "is_correct": true
+          },
+          {
+            "text": "L’accès de tous les véhicules chargés",
+            "is_correct": false
+          },
+          {
+            "text": "L’accès de tous les véhicules lourds",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ce panneau interdit précisément l’accès aux véhicules transportant des marchandises dangereuses."
+      },
+      "AR": {
+        "question": "ما الذي تمنعه هذه العلامة تحديدًا؟",
+        "choices": [
+          {
+            "text": "دخول المركبات التي تنقل بضائع خطرة",
+            "is_correct": true
+          },
+          {
+            "text": "دخول جميع المركبات المحملة",
+            "is_correct": false
+          },
+          {
+            "text": "دخول جميع المركبات الثقيلة",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تمنع هذه العلامة تحديدًا دخول المركبات التي تنقل بضائع خطرة."
+      }
+    }
+  },
+  {
+    "question_id": "C24a_Q04",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U bestuurt een voertuig dat gevaarlijke goederen vervoert en u ziet dit bord. Wat moet u doen?",
+        "choices": [
+          {
+            "text": "Niet inrijden en een andere route nemen",
+            "is_correct": true
+          },
+          {
+            "text": "Toch doorrijden als de weg vrij is",
+            "is_correct": false
+          },
+          {
+            "text": "Langzaam verder rijden",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Als u gevaarlijke goederen vervoert, mag u hier niet inrijden en moet u een andere route nemen."
+      },
+      "EN": {
+        "question": "You are driving a vehicle carrying dangerous goods and you see this sign. What must you do?",
+        "choices": [
+          {
+            "text": "Do not enter and take another route",
+            "is_correct": true
+          },
+          {
+            "text": "Continue if the road is clear",
+            "is_correct": false
+          },
+          {
+            "text": "Proceed slowly",
+            "is_correct": false
+          }
+        ],
+        "explanation": "If you are carrying dangerous goods, you may not enter here and must take another route."
+      },
+      "FR": {
+        "question": "Vous conduisez un véhicule transportant des marchandises dangereuses et vous voyez ce panneau. Que devez-vous faire ?",
+        "choices": [
+          {
+            "text": "Ne pas entrer et prendre un autre itinéraire",
+            "is_correct": true
+          },
+          {
+            "text": "Continuer si la route est libre",
+            "is_correct": false
+          },
+          {
+            "text": "Avancer lentement",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Si vous transportez des marchandises dangereuses, vous ne pouvez pas entrer ici et devez prendre un autre itinéraire."
+      },
+      "AR": {
+        "question": "أنت تقود مركبة تنقل بضائع خطرة وترى هذه العلامة. ماذا يجب أن تفعل؟",
+        "choices": [
+          {
+            "text": "لا تدخل واسلك طريقًا آخر",
+            "is_correct": true
+          },
+          {
+            "text": "تابع إذا كان الطريق خاليًا",
+            "is_correct": false
+          },
+          {
+            "text": "واصل السير ببطء",
+            "is_correct": false
+          }
+        ],
+        "explanation": "إذا كنت تنقل بضائع خطرة فلا يجوز لك الدخول من هنا ويجب أن تسلك طريقًا آخر."
+      }
+    }
+  },
+  {
+    "question_id": "C24a_Q05",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Uw bestemming ligt achter dit bord en u vervoert gevaarlijke goederen. Wat doet u?",
+        "choices": [
+          {
+            "text": "U rijdt hier niet in en kiest een andere toegelaten route",
+            "is_correct": true
+          },
+          {
+            "text": "U rijdt toch door omdat uw bestemming daar ligt",
+            "is_correct": false
+          },
+          {
+            "text": "U wacht en rijdt daarna toch door",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ook als uw bestemming verderop ligt, blijft de toegang verboden voor voertuigen die gevaarlijke goederen vervoeren."
+      },
+      "EN": {
+        "question": "Your destination is beyond this sign and you are carrying dangerous goods. What do you do?",
+        "choices": [
+          {
+            "text": "Do not enter here and choose another permitted route",
+            "is_correct": true
+          },
+          {
+            "text": "Continue because your destination is there",
+            "is_correct": false
+          },
+          {
+            "text": "Wait and then continue anyway",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Even if your destination is beyond the sign, access remains prohibited for vehicles carrying dangerous goods."
+      },
+      "FR": {
+        "question": "Votre destination se trouve après ce panneau et vous transportez des marchandises dangereuses. Que faites-vous ?",
+        "choices": [
+          {
+            "text": "Vous n’entrez pas ici et choisissez un autre itinéraire autorisé",
+            "is_correct": true
+          },
+          {
+            "text": "Vous continuez parce que votre destination est là",
+            "is_correct": false
+          },
+          {
+            "text": "Vous attendez puis vous passez quand même",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Même si votre destination se trouve après le panneau, l’accès reste interdit aux véhicules transportant des marchandises dangereuses."
+      },
+      "AR": {
+        "question": "وجهتك تقع بعد هذه العلامة وأنت تنقل بضائع خطرة. ماذا تفعل؟",
+        "choices": [
+          {
+            "text": "لا تدخل من هنا واختر طريقًا آخر مسموحًا",
+            "is_correct": true
+          },
+          {
+            "text": "تابع لأن وجهتك هناك",
+            "is_correct": false
+          },
+          {
+            "text": "انتظر ثم اعبر رغم ذلك",
+            "is_correct": false
+          }
+        ],
+        "explanation": "حتى إذا كانت وجهتك بعد العلامة، يبقى الدخول ممنوعًا على المركبات التي تنقل بضائع خطرة."
+      }
+    }
+  },
+  {
+    "question_id": "C24a_Q06",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Mag een personenauto zonder gevaarlijke goederen hier verder rijden?",
+        "choices": [
+          {
+            "text": "Ja, dit verbod is niet op die auto van toepassing",
+            "is_correct": true
+          },
+          {
+            "text": "Nee, geen enkel voertuig mag hier verder rijden",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dit verbod geldt voor voertuigen die gevaarlijke goederen vervoeren, niet voor een personenauto zonder gevaarlijke goederen."
+      },
+      "EN": {
+        "question": "May a passenger car without dangerous goods continue here?",
+        "choices": [
+          {
+            "text": "Yes, this prohibition does not apply to that car",
+            "is_correct": true
+          },
+          {
+            "text": "No, no vehicle may continue here",
+            "is_correct": false
+          }
+        ],
+        "explanation": "This prohibition applies to vehicles carrying dangerous goods, not to a passenger car without dangerous goods."
+      },
+      "FR": {
+        "question": "Une voiture particulière sans marchandises dangereuses peut-elle continuer ici ?",
+        "choices": [
+          {
+            "text": "Oui, cette interdiction ne s’applique pas à cette voiture",
+            "is_correct": true
+          },
+          {
+            "text": "Non, aucun véhicule ne peut continuer ici",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Cette interdiction s’applique aux véhicules transportant des marchandises dangereuses, pas à une voiture particulière qui n’en transporte pas."
+      },
+      "AR": {
+        "question": "هل يجوز لسيارة ركاب لا تنقل بضائع خطرة أن تتابع السير هنا؟",
+        "choices": [
+          {
+            "text": "نعم، هذا الحظر لا ينطبق على تلك السيارة",
+            "is_correct": true
+          },
+          {
+            "text": "لا، لا يجوز لأي مركبة المتابعة هنا",
+            "is_correct": false
+          }
+        ],
+        "explanation": "ينطبق هذا الحظر على المركبات التي تنقل بضائع خطرة، وليس على سيارة ركاب لا تنقل بضائع خطرة."
+      }
+    }
+  },
+  {
+    "question_id": "C24a_Q07",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "De weg is volledig vrij. Mag een voertuig met gevaarlijke goederen toch inrijden?",
+        "choices": [
+          {
+            "text": "Nee, het verbod blijft gelden",
+            "is_correct": true
+          },
+          {
+            "text": "Ja, als er geen ander verkeer is",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ook als de weg vrij is, blijft het verbod gelden voor voertuigen die gevaarlijke goederen vervoeren."
+      },
+      "EN": {
+        "question": "The road is completely empty. May a vehicle carrying dangerous goods still enter?",
+        "choices": [
+          {
+            "text": "No, the prohibition remains in force",
+            "is_correct": true
+          },
+          {
+            "text": "Yes, if there is no other traffic",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Even if the road is empty, the prohibition remains in force for vehicles carrying dangerous goods."
+      },
+      "FR": {
+        "question": "La route est complètement vide. Un véhicule transportant des marchandises dangereuses peut-il quand même entrer ?",
+        "choices": [
+          {
+            "text": "Non, l’interdiction reste en vigueur",
+            "is_correct": true
+          },
+          {
+            "text": "Oui, s’il n’y a pas d’autre circulation",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Même si la route est vide, l’interdiction reste en vigueur pour les véhicules transportant des marchandises dangereuses."
+      },
+      "AR": {
+        "question": "الطريق خالٍ تمامًا. هل يجوز لمركبة تنقل بضائع خطرة أن تدخل رغم ذلك؟",
+        "choices": [
+          {
+            "text": "لا، يبقى الحظر ساريًا",
+            "is_correct": true
+          },
+          {
+            "text": "نعم، إذا لم تكن هناك حركة مرور أخرى",
+            "is_correct": false
+          }
+        ],
+        "explanation": "حتى إذا كان الطريق خاليًا، يبقى الحظر ساريًا على المركبات التي تنقل بضائع خطرة."
+      }
+    }
+  },
+  {
+    "question_id": "C24a_Q08",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Mag een voertuig met gevaarlijke goederen deze weg kort gebruiken om snel door te rijden?",
+        "choices": [
+          {
+            "text": "Nee, het verbod blijft gelden",
+            "is_correct": true
+          },
+          {
+            "text": "Ja, als het maar voor een kort stuk is",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ook voor een korte doorgang blijft de toegang verboden voor voertuigen die gevaarlijke goederen vervoeren."
+      },
+      "EN": {
+        "question": "May a vehicle carrying dangerous goods use this road briefly just to pass through quickly?",
+        "choices": [
+          {
+            "text": "No, the prohibition remains in force",
+            "is_correct": true
+          },
+          {
+            "text": "Yes, if it is only for a short distance",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Even for a short passage, access remains prohibited for vehicles carrying dangerous goods."
+      },
+      "FR": {
+        "question": "Un véhicule transportant des marchandises dangereuses peut-il utiliser brièvement cette route juste pour passer rapidement ?",
+        "choices": [
+          {
+            "text": "Non, l’interdiction reste en vigueur",
+            "is_correct": true
+          },
+          {
+            "text": "Oui, si ce n’est que pour une courte distance",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Même pour un passage bref, l’accès reste interdit aux véhicules transportant des marchandises dangereuses."
+      },
+      "AR": {
+        "question": "هل يجوز لمركبة تنقل بضائع خطرة استخدام هذا الطريق لمسافة قصيرة فقط من أجل المرور السريع؟",
+        "choices": [
+          {
+            "text": "لا، يبقى الحظر ساريًا",
+            "is_correct": true
+          },
+          {
+            "text": "نعم، إذا كان ذلك لمسافة قصيرة فقط",
+            "is_correct": false
+          }
+        ],
+        "explanation": "حتى في حالة المرور القصير، يبقى الدخول ممنوعًا على المركبات التي تنقل بضائع خطرة."
+      }
+    }
+  }
 ]

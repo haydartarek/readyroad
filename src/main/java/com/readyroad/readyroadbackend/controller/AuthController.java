@@ -1,14 +1,20 @@
 package com.readyroad.readyroadbackend.controller;
 
 import com.readyroad.readyroadbackend.domain.entity.User;
+import com.readyroad.readyroadbackend.domain.enums.AuthProvider;
+import com.readyroad.readyroadbackend.domain.repository.AuthIdentityRepository;
 import com.readyroad.readyroadbackend.domain.repository.UserRepository;
 import com.readyroad.readyroadbackend.dto.AuthResponse;
 import com.readyroad.readyroadbackend.dto.ForgotPasswordRequest;
+import com.readyroad.readyroadbackend.dto.GoogleAuthExchangeRequest;
 import com.readyroad.readyroadbackend.dto.LoginRequest;
 import com.readyroad.readyroadbackend.dto.RegisterRequest;
 import com.readyroad.readyroadbackend.dto.ResetPasswordRequest;
 import com.readyroad.readyroadbackend.service.AuthService;
+import com.readyroad.readyroadbackend.service.AdminSystemSettingsService;
+import com.readyroad.readyroadbackend.service.BackendMessageService;
 import com.readyroad.readyroadbackend.service.PasswordResetService;
+import com.readyroad.readyroadbackend.service.SocialAuthService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -40,7 +46,11 @@ public class AuthController {
 
     private final AuthService authService;
     private final UserRepository userRepository;
+    private final AuthIdentityRepository authIdentityRepository;
     private final PasswordResetService passwordResetService;
+    private final AdminSystemSettingsService adminSystemSettingsService;
+    private final SocialAuthService socialAuthService;
+    private final BackendMessageService messages;
 
     /**
      * Register a new user
@@ -50,6 +60,11 @@ public class AuthController {
      */
     @PostMapping("/register")
     public ResponseEntity<?> register(@Valid @RequestBody RegisterRequest request) {
+        if (!adminSystemSettingsService.areRegistrationsAllowed()) {
+            Map<String, String> error = new HashMap<>();
+            error.put("error", messages.get("auth.register.disabled"));
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).body(error);
+        }
         try {
             AuthResponse response = authService.register(request);
             return ResponseEntity.status(HttpStatus.CREATED).body(response);
@@ -68,28 +83,21 @@ public class AuthController {
      */
     @PostMapping("/login")
     public ResponseEntity<?> login(@Valid @RequestBody LoginRequest request) {
-        log.info("========================================");
-        log.info("🔐 LOGIN REQUEST RECEIVED");
-        log.info("========================================");
-        log.info("Username: {}", request.getUsername());
-        log.info("========================================");
-
         try {
-            log.info("🔄 Calling AuthService.login()...");
             AuthResponse response = authService.login(request);
-            log.info("✅ Login successful!");
-            log.info("User ID: {}", response.getUserId());
-            log.info("========================================");
             return ResponseEntity.ok(response);
         } catch (Exception e) {
-            log.error("❌ LOGIN FAILED");
-            log.error("Exception Type: {}", e.getClass().getName());
-            log.error("Error Message: {}", e.getMessage());
-            log.info("========================================");
+            log.warn("Login failed for identifier={}: {}", request.getUsername(), e.getMessage());
             Map<String, String> error = new HashMap<>();
-            error.put("error", "Invalid username or password");
+            error.put("error", messages.get("auth.login.invalid_credentials"));
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(error);
         }
+    }
+
+    @PostMapping("/google/exchange")
+    public ResponseEntity<AuthResponse> exchangeGoogleCode(@Valid @RequestBody GoogleAuthExchangeRequest request) {
+        AuthResponse response = socialAuthService.authenticateWithGoogle(request);
+        return ResponseEntity.ok(response);
     }
 
     /**
@@ -105,7 +113,7 @@ public class AuthController {
 
         if (authentication == null || !authentication.isAuthenticated()) {
             Map<String, String> error = new HashMap<>();
-            error.put("error", "Not authenticated");
+            error.put("error", messages.get("auth.not_authenticated"));
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(error);
         }
 
@@ -117,17 +125,17 @@ public class AuthController {
         if (principal instanceof User) {
             user = (User) principal;
         } else if (principal instanceof String username) {
-            // Fallback: load user from database by username
-            user = userRepository.findByUsername(username)
+            // Fallback: load user from database by username or email identifier
+            user = userRepository.findByUsernameOrEmailIgnoreCase(username)
                     .orElse(null);
             if (user == null) {
                 Map<String, String> error = new HashMap<>();
-                error.put("error", "User not found");
+                error.put("error", messages.get("auth.user_not_found"));
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
             }
         } else {
             Map<String, String> error = new HashMap<>();
-            error.put("error", "Not authenticated");
+            error.put("error", messages.get("auth.not_authenticated"));
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(error);
         }
 
@@ -139,6 +147,13 @@ public class AuthController {
         userInfo.put("role", user.getRole());
         userInfo.put("isActive", user.getIsActive());
         userInfo.put("createdAt", user.getCreatedAt() != null ? user.getCreatedAt().toString() : null);
+        userInfo.put(
+                "linkedProviders",
+                authIdentityRepository.findByUserId(user.getId()).stream()
+                        .map(identity -> identity.getProvider().name())
+                        .sorted()
+                        .toList());
+        userInfo.put("googleLinked", authIdentityRepository.existsByUserIdAndProvider(user.getId(), AuthProvider.GOOGLE));
 
         return ResponseEntity.ok(userInfo);
     }
@@ -152,7 +167,7 @@ public class AuthController {
     public ResponseEntity<?> health() {
         Map<String, String> response = new HashMap<>();
         response.put("status", "UP");
-        response.put("service", "Authentication Service");
+        response.put("service", messages.get("auth.health.service"));
         return ResponseEntity.ok(response);
     }
 
@@ -169,7 +184,7 @@ public class AuthController {
             @Valid @RequestBody ForgotPasswordRequest request) {
         passwordResetService.forgotPassword(request.getEmail());
         return ResponseEntity.ok(Map.of(
-                "message", "If that email is registered you will receive a reset link shortly."));
+                "message", messages.get("auth.forgot_password.sent")));
     }
 
     /**
@@ -182,7 +197,7 @@ public class AuthController {
             @Valid @RequestBody ResetPasswordRequest request) {
         try {
             passwordResetService.resetPassword(request.getToken(), request.getNewPassword());
-            return ResponseEntity.ok(Map.of("message", "Password updated successfully."));
+            return ResponseEntity.ok(Map.of("message", messages.get("auth.reset_password.updated")));
         } catch (IllegalArgumentException ex) {
             return ResponseEntity.badRequest().body(Map.of("error", ex.getMessage()));
         }

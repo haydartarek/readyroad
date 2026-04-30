@@ -1,7 +1,7 @@
 -- ============================================================
 -- V166__Fix_D_Category_Signs_Alignment.sql
 -- 1. D1d already inserted manually — verify/skip if exists
--- 2. Add D1a-links and D1a-rechts if not exist
+-- 2. Add D1c and D1d if not exist
 -- ============================================================
 
 SET NAMES utf8mb4;
@@ -17,14 +17,14 @@ UPDATE traffic_signs SET
     updated_at = NOW()
 WHERE sign_code = 'D1d';
 
--- D1a-links: uses D1c image (correct by design)
+-- D1c: uses D1c image (correct by design)
 INSERT INTO traffic_signs (
     category_id, sign_code, normalized_sign_code,
     name_ar, name_en, name_nl, name_fr,
     description_ar, description_en, description_nl, description_fr,
     image_url, image_path, is_active, created_at, updated_at
 )
-SELECT 4, 'D1a-links', 'D1a-links',
+SELECT 4, 'D1c', 'd1c',
  'إلزام الإمساك باليسار',
  'Mandatory keep left',
  'Verplichting links aanhouden',
@@ -36,16 +36,16 @@ SELECT 4, 'D1a-links', 'D1a-links',
  'images/signs/mandatory_signs/D1c Verplichting links aanhouden.png',
  'images/signs/mandatory_signs/D1c Verplichting links aanhouden.png',
  1, NOW(), NOW()
-WHERE NOT EXISTS (SELECT 1 FROM traffic_signs WHERE sign_code = 'D1a-links');
+WHERE NOT EXISTS (SELECT 1 FROM traffic_signs WHERE sign_code = 'D1c');
 
--- D1a-rechts: uses D1d image (correct by design)
+-- D1d: uses D1d image (correct by design)
 INSERT INTO traffic_signs (
     category_id, sign_code, normalized_sign_code,
     name_ar, name_en, name_nl, name_fr,
     description_ar, description_en, description_nl, description_fr,
     image_url, image_path, is_active, created_at, updated_at
 )
-SELECT 4, 'D1a-rechts', 'D1a-rechts',
+SELECT 4, 'D1d', 'd1d',
  'إلزام الإمساك باليمين',
  'Mandatory keep right',
  'Verplichting rechts aanhouden',
@@ -57,4 +57,4 @@ SELECT 4, 'D1a-rechts', 'D1a-rechts',
  'images/signs/mandatory_signs/D1d Verplichting rechts aanhouden.png',
  'images/signs/mandatory_signs/D1d Verplichting rechts aanhouden.png',
  1, NOW(), NOW()
-WHERE NOT EXISTS (SELECT 1 FROM traffic_signs WHERE sign_code = 'D1a-rechts');
+WHERE NOT EXISTS (SELECT 1 FROM traffic_signs WHERE sign_code = 'D1d');

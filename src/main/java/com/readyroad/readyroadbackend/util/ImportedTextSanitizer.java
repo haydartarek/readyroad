@@ -74,6 +74,19 @@ public final class ImportedTextSanitizer {
         return best;
     }
 
+    public static boolean requiresRepair(String value) {
+        if (value == null) {
+            return false;
+        }
+
+        String trimmed = value.trim();
+        if (trimmed.isEmpty()) {
+            return false;
+        }
+
+        return !trimmed.equals(sanitize(trimmed));
+    }
+
     private static boolean looksLikeMojibake(String value) {
         return value.indexOf('Ã') >= 0
                 || value.indexOf('Ø') >= 0

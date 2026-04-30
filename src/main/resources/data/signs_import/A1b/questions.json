@@ -1,4 +1,4 @@
-﻿[
+[
   {
     "question_id": "A1b_Q01",
     "type": "WHAT_DOES_IT_MEAN",
@@ -7,40 +7,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat betekent dit verkeersbord?",
+        "question": "Wat betekent dit bord?",
         "choices": [
-          { "text": "Gevaarlijke bocht naar rechts", "is_correct": true },
-          { "text": "Gevaarlijke bocht naar links", "is_correct": false },
-          { "text": "Gevaarlijke dubbele bocht", "is_correct": false }
+          {
+            "text": "Gevaarlijke bocht naar rechts",
+            "is_correct": true
+          },
+          {
+            "text": "Gevaarlijke bocht naar links",
+            "is_correct": false
+          },
+          {
+            "text": "Gevaarlijke dubbele bocht",
+            "is_correct": false
+          }
         ],
-        "explanation": "Dit bord waarschuwt voor een gevaarlijke bocht naar rechts die voor u ligt. Verminder uw snelheid en houd uw rijbaan aan."
+        "explanation": "Dit bord waarschuwt voor een gevaarlijke bocht naar rechts."
       },
       "EN": {
-        "question": "What does this traffic sign mean?",
+        "question": "What does this sign mean?",
         "choices": [
-          { "text": "Dangerous curve to the right", "is_correct": true },
-          { "text": "Dangerous curve to the left", "is_correct": false },
-          { "text": "Dangerous double bend", "is_correct": false }
+          {
+            "text": "Dangerous bend to the right",
+            "is_correct": true
+          },
+          {
+            "text": "Dangerous bend to the left",
+            "is_correct": false
+          },
+          {
+            "text": "Dangerous double bend",
+            "is_correct": false
+          }
         ],
-        "explanation": "This sign warns of a dangerous curve to the right ahead. Reduce your speed and stay in your lane."
+        "explanation": "This sign indicates a dangerous bend to the right."
       },
       "FR": {
-        "question": "Que signifie ce panneau de signalisation ?",
+        "question": "Que signifie ce panneau ?",
         "choices": [
-          { "text": "Virage dangereux Ã  droite", "is_correct": true },
-          { "text": "Virage dangereux Ã  gauche", "is_correct": false },
-          { "text": "Double virage dangereux", "is_correct": false }
+          {
+            "text": "Virage dangereux à droite",
+            "is_correct": true
+          },
+          {
+            "text": "Virage dangereux à gauche",
+            "is_correct": false
+          },
+          {
+            "text": "Double virage dangereux",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ce panneau avertit d'un virage dangereux Ã  droite devant vous. RÃ©duisez votre vitesse et restez dans votre voie."
+        "explanation": "Ce panneau indique un virage dangereux à droite."
       },
       "AR": {
-        "question": "Ù…Ø§ Ù…Ø¹Ù†Ù‰ Ù„Ø§ÙØªØ© Ø§Ù„Ù…Ø±ÙˆØ± Ù‡Ø°Ù‡ØŸ",
+        "question": "ما معنى هذه العلامة؟",
         "choices": [
-          { "text": "Ù…Ù†Ø­Ù†Ù‰ Ø®Ø·ÙŠØ± Ø¥Ù„Ù‰ Ø§Ù„ÙŠÙ…ÙŠÙ†", "is_correct": true },
-          { "text": "Ù…Ù†Ø­Ù†Ù‰ Ø®Ø·ÙŠØ± Ø¥Ù„Ù‰ Ø§Ù„ÙŠØ³Ø§Ø±", "is_correct": false },
-          { "text": "ØªØ¹Ø±Ø¬Ø§Øª Ø®Ø·ÙŠØ±Ø© Ù…Ø²Ø¯ÙˆØ¬Ø©", "is_correct": false }
+          {
+            "text": "منعطف خطير إلى اليمين",
+            "is_correct": true
+          },
+          {
+            "text": "منعطف خطير إلى اليسار",
+            "is_correct": false
+          },
+          {
+            "text": "منعطف مزدوج خطير",
+            "is_correct": false
+          }
         ],
-        "explanation": "ØªØ­Ø°Ø± Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ© Ù…Ù† Ù…Ù†Ø­Ù†Ù‰ Ø®Ø·ÙŠØ± Ø¥Ù„Ù‰ Ø§Ù„ÙŠÙ…ÙŠÙ† Ø£Ù…Ø§Ù…Ùƒ. Ù‚Ù„Ù„ Ø³Ø±Ø¹ØªÙƒ ÙˆØ§Ø¨Ù‚ ÙÙŠ Ù…Ø³Ø§Ø±Ùƒ."
+        "explanation": "تشير هذه العلامة إلى وجود منعطف خطير إلى اليمين."
       }
     }
   },
@@ -54,38 +90,74 @@
       "NL": {
         "question": "Tot welke categorie verkeerstekens behoort dit bord?",
         "choices": [
-          { "text": "Gevaarsborden (A-reeks)", "is_correct": true },
-          { "text": "Voorrangsborden (B-reeks)", "is_correct": false },
-          { "text": "Verbodsborden (C-reeks)", "is_correct": false }
+          {
+            "text": "Gevaarsborden",
+            "is_correct": true
+          },
+          {
+            "text": "Voorrangsborden",
+            "is_correct": false
+          },
+          {
+            "text": "Verbodsborden",
+            "is_correct": false
+          }
         ],
-        "explanation": "Dit bord behoort tot de gevaarsborden (A-reeks). Alle gevaarsborden zijn driehoekig met een rode rand op een witte achtergrond."
+        "explanation": "Dit bord behoort tot de gevaarsborden. Alle gevaarsborden zijn driehoekig met een rode rand op een witte achtergrond."
       },
       "EN": {
         "question": "To which category of traffic signs does this sign belong?",
         "choices": [
-          { "text": "Danger signs (A-series)", "is_correct": true },
-          { "text": "Priority signs (B-series)", "is_correct": false },
-          { "text": "Prohibition signs (C-series)", "is_correct": false }
+          {
+            "text": "Warning signs",
+            "is_correct": true
+          },
+          {
+            "text": "Priority signs",
+            "is_correct": false
+          },
+          {
+            "text": "Prohibition signs",
+            "is_correct": false
+          }
         ],
-        "explanation": "This sign belongs to the danger signs (A-series). All danger signs are triangular with a red border on a white background."
+        "explanation": "This sign belongs to the warning signs. All warning signs are triangular with a red border on a white background."
       },
       "FR": {
-        "question": "Ã€ quelle catÃ©gorie de panneaux de signalisation ce panneau appartient-il ?",
+        "question": "À quelle catégorie de panneaux de signalisation ce panneau appartient-il ?",
         "choices": [
-          { "text": "Panneaux de danger (sÃ©rie A)", "is_correct": true },
-          { "text": "Panneaux de prioritÃ© (sÃ©rie B)", "is_correct": false },
-          { "text": "Panneaux d'interdiction (sÃ©rie C)", "is_correct": false }
+          {
+            "text": "Panneaux de danger",
+            "is_correct": true
+          },
+          {
+            "text": "Panneaux de priorité",
+            "is_correct": false
+          },
+          {
+            "text": "Panneaux d'interdiction",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ce panneau appartient aux panneaux de danger (sÃ©rie A). Tous les panneaux de danger sont triangulaires avec une bordure rouge sur fond blanc."
+        "explanation": "Ce panneau appartient aux panneaux de danger. Tous les panneaux de danger sont triangulaires avec une bordure rouge sur fond blanc."
       },
       "AR": {
-        "question": "Ø¥Ù„Ù‰ Ø£ÙŠ ÙØ¦Ø© Ù…Ù† Ù„Ø§ÙØªØ§Øª Ø§Ù„Ù…Ø±ÙˆØ± ØªÙ†ØªÙ…ÙŠ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ",
+        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
         "choices": [
-          { "text": "Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± (Ø³Ù„Ø³Ù„Ø© A)", "is_correct": true },
-          { "text": "Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© (Ø³Ù„Ø³Ù„Ø© B)", "is_correct": false },
-          { "text": "Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø­Ø¸Ø± (Ø³Ù„Ø³Ù„Ø© C)", "is_correct": false }
+          {
+            "text": "علامات الخطر",
+            "is_correct": true
+          },
+          {
+            "text": "علامات الأولوية",
+            "is_correct": false
+          },
+          {
+            "text": "علامات الحظر",
+            "is_correct": false
+          }
         ],
-        "explanation": "ØªÙ†ØªÙ…ÙŠ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ© Ø¥Ù„Ù‰ Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± (Ø³Ù„Ø³Ù„Ø© A). Ø¬Ù…ÙŠØ¹ Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± Ù…Ø«Ù„Ø«Ø© Ø¨Ø­Ø§ÙØ© Ø­Ù…Ø±Ø§Ø¡ Ø¹Ù„Ù‰ Ø®Ù„ÙÙŠØ© Ø¨ÙŠØ¶Ø§Ø¡."
+        "explanation": "تنتمي هذه العلامة المرورية إلى علامات الخطر. جميع علامات الخطر مثلثة بحافة حمراء على خلفية بيضاء."
       }
     }
   },
@@ -100,7 +172,7 @@
         "question": "Welk gevaar kondigt dit bord aan?",
         "choices": [
           {
-            "text": "Een scherpe bocht naar rechts waarbij het voertuig kan slippen of van de rijbaan kan raken",
+            "text": "Een gevaarlijke bocht naar rechts waarbij het voertuig kan slippen, de controle verliezen of naar het midden van de rijbaan kan driften",
             "is_correct": true
           },
           {
@@ -112,13 +184,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "Dit bord kondigt een gevaarlijke bocht naar rechts aan. Het gevaar is dat voertuigen de binnenbocht snijden of van de rijbaan raken."
+        "explanation": "Dit bord kondigt een gevaarlijke bocht naar rechts aan. Het gevaar is dat voertuigen de controle verliezen, de binnenbocht snijden of naar het midden van de rijbaan driften."
       },
       "EN": {
-        "question": "What hazard does this sign announce?",
+        "question": "What hazard does this sign indicate?",
         "choices": [
           {
-            "text": "A sharp bend to the right where the vehicle may skid or leave the road",
+            "text": "A dangerous bend to the right where vehicles may skid, lose control, or drift toward the centre of the road",
             "is_correct": true
           },
           {
@@ -130,40 +202,43 @@
             "is_correct": false
           }
         ],
-        "explanation": "This sign announces a dangerous curve to the right. The hazard is that vehicles may cut the inside of the bend or leave the road."
+        "explanation": "This sign indicates a dangerous bend to the right. The hazard is that vehicles may lose control, cut the inside of the bend, or drift toward the centre of the road."
       },
       "FR": {
         "question": "Quel danger ce panneau annonce-t-il ?",
         "choices": [
           {
-            "text": "Un virage serrÃ© Ã  droite oÃ¹ le vÃ©hicule peut dÃ©raper ou quitter la chaussÃ©e",
+            "text": "Un virage dangereux à droite où le véhicule peut déraper, perdre le contrôle ou dériver vers le centre de la route",
             "is_correct": true
           },
           {
-            "text": "Un rÃ©trÃ©cissement de la chaussÃ©e obligeant Ã  se rabattre",
+            "text": "Un rétrécissement de la chaussée obligeant à se rabattre",
             "is_correct": false
           },
           {
-            "text": "Un carrefour dangereux avec visibilitÃ© limitÃ©e",
+            "text": "Un carrefour dangereux avec visibilité limitée",
             "is_correct": false
           }
         ],
-        "explanation": "Ce panneau annonce un virage dangereux Ã  droite. Le danger est que les vÃ©hicules coupent l'intÃ©rieur du virage ou quittent la chaussÃ©e."
+        "explanation": "Ce panneau annonce un virage dangereux à droite. Le danger est que les véhicules perdent le contrôle, coupent l'intérieur du virage ou dérivent vers le centre de la route."
       },
       "AR": {
-        "question": "Ù…Ø§ Ø§Ù„Ø®Ø·Ø± Ø§Ù„Ø°ÙŠ ØªØ¹Ù„Ù†Ù‡ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ",
+        "question": "ما هو الخطر الذي تشير إليه هذه العلامة المرورية؟",
         "choices": [
           {
-            "text": "Ù…Ù†Ø¹Ø·Ù Ø­Ø§Ø¯ Ø¥Ù„Ù‰ Ø§Ù„ÙŠÙ…ÙŠÙ† Ù‚Ø¯ ØªÙ†Ø²Ù„Ù‚ ÙÙŠÙ‡ Ø§Ù„Ù…Ø±ÙƒØ¨Ø© Ø£Ùˆ ØªØ®Ø±Ø¬ Ø¹Ù† Ø§Ù„Ø·Ø±ÙŠÙ‚",
+            "text": "منعطف خطير إلى اليمين قد تنزلق فيه المركبة أو تفقد السيطرة أو تنحرف نحو وسط الطريق",
             "is_correct": true
           },
           {
-            "text": "ØªØ¶ÙŠÙ‚ ÙÙŠ Ø§Ù„Ø·Ø±ÙŠÙ‚ ÙŠØ³ØªÙˆØ¬Ø¨ Ø§Ù„Ø§Ù†Ø¯Ù…Ø§Ø¬ ÙÙŠ Ø§Ù„Ù…Ø±ÙˆØ±",
+            "text": "تضيق في الطريق يستوجب الاندماج في المرور",
             "is_correct": false
           },
-          { "text": "ØªÙ‚Ø§Ø·Ø¹ Ø®Ø·ÙŠØ± Ù…Ø¹ Ø±Ø¤ÙŠØ© Ù…Ø­Ø¯ÙˆØ¯Ø©", "is_correct": false }
+          {
+            "text": "تقاطع خطير مع رؤية محدودة",
+            "is_correct": false
+          }
         ],
-        "explanation": "ØªØ¹Ù„Ù† Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ© Ø¹Ù† Ù…Ù†Ø­Ù†Ù‰ Ø®Ø·ÙŠØ± Ø¥Ù„Ù‰ Ø§Ù„ÙŠÙ…ÙŠÙ†. Ø§Ù„Ø®Ø·Ø± Ù‡Ùˆ Ø£Ù† Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ù‚Ø¯ ØªÙ‚Ø·Ø¹ Ø§Ù„Ø¬Ø§Ù†Ø¨ Ø§Ù„Ø¯Ø§Ø®Ù„ÙŠ Ù…Ù† Ø§Ù„Ù…Ù†Ø¹Ø·Ù Ø£Ùˆ ØªØ®Ø±Ø¬ Ø¹Ù† Ø§Ù„Ø·Ø±ÙŠÙ‚."
+        "explanation": "تشير هذه العلامة المرورية إلى منعطف خطير إلى اليمين. الخطر هو أن المركبات قد تفقد السيطرة أو تقطع الجانب الداخلي من المنعطف أو تنحرف نحو وسط الطريق."
       }
     }
   },
@@ -175,10 +250,10 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat moet u doen wanneer u dit bord ziet?",
+        "question": "Wat doet u best wanneer u dit bord ziet?",
         "choices": [
           {
-            "text": "Snelheid verminderen vÃ³Ã³r de bocht en uw rijbaan aanhouden",
+            "text": "Snelheid verminderen vóór de bocht en uw rijbaan aanhouden",
             "is_correct": true
           },
           {
@@ -190,10 +265,10 @@
             "is_correct": false
           }
         ],
-        "explanation": "Bij een gevaarlijke bocht naar rechts moet u vÃ³Ã³r de bocht vertragen en in uw rijbaan blijven. Naar de berm sturen of versnellen is gevaarlijk."
+        "explanation": "Bij een gevaarlijke bocht naar rechts doet u er goed aan vóór de bocht te vertragen en in uw rijbaan te blijven. Naar de berm sturen of versnellen is gevaarlijk."
       },
       "EN": {
-        "question": "What must you do when you see this sign?",
+        "question": "What should you do when you see this sign?",
         "choices": [
           {
             "text": "Reduce speed before the bend and stay in your lane",
@@ -203,42 +278,48 @@
             "text": "Keep right by steering towards the verge",
             "is_correct": false
           },
-          { "text": "Accelerate to pass the bend quickly", "is_correct": false }
-        ],
-        "explanation": "Near a dangerous curve to the right, you must slow down before the bend and stay in your lane. Steering towards the verge or accelerating is dangerous."
-      },
-      "FR": {
-        "question": "Que devez-vous faire lorsque vous voyez ce panneau ?",
-        "choices": [
           {
-            "text": "RÃ©duire la vitesse avant le virage et rester dans votre voie",
-            "is_correct": true
-          },
-          {
-            "text": "Se tenir Ã  droite en dirigeant vers l'accotement",
-            "is_correct": false
-          },
-          {
-            "text": "AccÃ©lÃ©rer pour passer le virage rapidement",
+            "text": "Accelerate to pass the bend quickly",
             "is_correct": false
           }
         ],
-        "explanation": "PrÃ¨s d'un virage dangereux Ã  droite, vous devez ralentir avant le virage et rester dans votre voie. Diriger vers l'accotement ou accÃ©lÃ©rer est dangereux."
+        "explanation": "Near a dangerous bend to the right, you should slow down before the bend and stay in your lane. Steering towards the verge or accelerating is dangerous."
       },
-      "AR": {
-        "question": "Ù…Ø§Ø°Ø§ ÙŠØ¬Ø¨ Ø£Ù† ØªÙØ¹Ù„ Ø¹Ù†Ø¯ Ø±Ø¤ÙŠØ© Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ",
+      "FR": {
+        "question": "Que devriez-vous faire lorsque vous voyez ce panneau ?",
         "choices": [
           {
-            "text": "ØªÙ‚Ù„ÙŠÙ„ Ø§Ù„Ø³Ø±Ø¹Ø© Ù‚Ø¨Ù„ Ø§Ù„Ù…Ù†Ø¹Ø·Ù ÙˆØ§Ù„Ø¨Ù‚Ø§Ø¡ ÙÙŠ Ù…Ø³Ø§Ø±Ùƒ",
+            "text": "Réduire la vitesse avant le virage et rester dans votre voie",
             "is_correct": true
           },
           {
-            "text": "Ø§Ù„Ø¨Ù‚Ø§Ø¡ Ø¹Ù„Ù‰ Ø§Ù„ÙŠÙ…ÙŠÙ† Ø¨Ø§Ù„ØªÙˆØ¬Ù‡ Ù†Ø­Ùˆ Ø§Ù„ÙƒØªÙ",
+            "text": "Se tenir à droite en dirigeant vers l'accotement",
             "is_correct": false
           },
-          { "text": "Ø§Ù„ØªØ³Ø§Ø±Ø¹ Ù„ØªØ¬Ø§ÙˆØ² Ø§Ù„Ù…Ù†Ø¹Ø·Ù Ø¨Ø³Ø±Ø¹Ø©", "is_correct": false }
+          {
+            "text": "Accélérer pour passer le virage rapidement",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ø¨Ø§Ù„Ù‚Ø±Ø¨ Ù…Ù† Ù…Ù†Ø­Ù†Ù‰ Ø®Ø·ÙŠØ± Ø¥Ù„Ù‰ Ø§Ù„ÙŠÙ…ÙŠÙ†ØŒ ÙŠØ¬Ø¨ Ø§Ù„ØªØ¨Ø§Ø·Ø¤ Ù‚Ø¨Ù„ Ø§Ù„Ù…Ù†Ø¹Ø·Ù ÙˆØ§Ù„Ø¨Ù‚Ø§Ø¡ ÙÙŠ Ù…Ø³Ø§Ø±Ùƒ. Ø§Ù„ØªÙˆØ¬Ù‡ Ù†Ø­Ùˆ Ø§Ù„ÙƒØªÙ Ø£Ùˆ Ø§Ù„ØªØ³Ø§Ø±Ø¹ Ø®Ø·ÙŠØ±."
+        "explanation": "Près d'un virage dangereux à droite, vous devriez ralentir avant le virage et rester dans votre voie. Diriger vers l'accotement ou accélérer est dangereux."
+      },
+      "AR": {
+        "question": "ماذا ينبغي أن تفعل عند رؤية هذه العلامة المرورية؟",
+        "choices": [
+          {
+            "text": "تقليل السرعة قبل المنعطف والبقاء في مسارك",
+            "is_correct": true
+          },
+          {
+            "text": "البقاء على اليمين بالتوجه نحو حافة الطريق",
+            "is_correct": false
+          },
+          {
+            "text": "التسارع لتجاوز المنعطف بسرعة",
+            "is_correct": false
+          }
+        ],
+        "explanation": "بالقرب من منعطف خطير إلى اليمين، ينبغي التباطؤ قبل المنعطف والبقاء في مسارك. التوجه نحو حافة الطريق أو التسارع خطير."
       }
     }
   },
@@ -253,7 +334,7 @@
         "question": "Het is nacht en u rijdt 90 km/u. U ziet dit bord voor een gevaarlijke bocht naar rechts. Wat doet u als eerste?",
         "choices": [
           {
-            "text": "Vaart minderen vÃ³Ã³r de bocht en de juiste rijlijn aanhouden",
+            "text": "Vaart minderen vóór de bocht en de juiste rijlijn aanhouden",
             "is_correct": true
           },
           {
@@ -265,10 +346,10 @@
             "is_correct": false
           }
         ],
-        "explanation": "Bij nacht is het zicht in bochten extra beperkt. U moet vÃ³Ã³r de bocht remmen en de juiste rijlijn aanhouden. Naar het midden rijden vergroot de botsingsrisico's met tegemoetkomend verkeer."
+        "explanation": "Bij nacht is het zicht in bochten extra beperkt. U doet er goed aan vóór de bocht te remmen en de juiste rijlijn aan te houden. Naar het midden rijden vergroot het risico op een botsing met tegemoetkomend verkeer."
       },
       "EN": {
-        "question": "It is night and you are driving at 90 km/h. You see this sign for a dangerous curve to the right. What do you do first?",
+        "question": "It is night and you are driving at 90 km/h. You see this sign for a dangerous bend to the right. What do you do first?",
         "choices": [
           {
             "text": "Reduce speed before the bend and maintain the correct line",
@@ -283,13 +364,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "At night, visibility in bends is extra limited. You must brake before the bend and maintain the correct line. Moving to the centre increases collision risk with oncoming traffic."
+        "explanation": "At night, visibility in bends is extra limited. You should brake before the bend and maintain the correct line. Moving to the centre increases collision risk with oncoming traffic."
       },
       "FR": {
-        "question": "Il fait nuit et vous roulez Ã  90 km/h. Vous voyez ce panneau pour un virage dangereux Ã  droite. Que faites-vous en premier ?",
+        "question": "Il fait nuit et vous roulez à 90 km/h. Vous voyez ce panneau pour un virage dangereux à droite. Que faites-vous en premier ?",
         "choices": [
           {
-            "text": "RÃ©duire la vitesse avant le virage et maintenir la bonne trajectoire",
+            "text": "Réduire la vitesse avant le virage et maintenir la bonne trajectoire",
             "is_correct": true
           },
           {
@@ -297,32 +378,35 @@
             "is_correct": false
           },
           {
-            "text": "Se dÃ©placer vers le centre de la route pour mieux voir",
+            "text": "Se déplacer vers le centre de la route pour mieux voir",
             "is_correct": false
           }
         ],
-        "explanation": "La nuit, la visibilitÃ© dans les virages est encore plus limitÃ©e. Vous devez freiner avant le virage et maintenir la bonne trajectoire. Se dÃ©placer vers le centre augmente le risque de collision avec les vÃ©hicules venant en sens inverse."
+        "explanation": "La nuit, la visibilité dans les virages est encore plus limitée. Vous devriez freiner avant le virage et maintenir la bonne trajectoire. Se déplacer vers le centre augmente le risque de collision avec les véhicules venant en sens inverse."
       },
       "AR": {
-        "question": "Ø§Ù„ÙˆÙ‚Øª Ù„ÙŠÙ„ ÙˆØ£Ù†Øª ØªØ³ÙŠØ± Ø¨Ø³Ø±Ø¹Ø© 90 ÙƒÙ…/Ø³Ø§Ø¹Ø©. ØªØ±Ù‰ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ© Ù„Ù…Ù†Ø­Ù†Ù‰ Ø®Ø·ÙŠØ± Ø¥Ù„Ù‰ Ø§Ù„ÙŠÙ…ÙŠÙ†. Ù…Ø§Ø°Ø§ ØªÙØ¹Ù„ Ø£ÙˆÙ„Ø§Ù‹ØŸ",
+        "question": "الوقت ليل وأنت تسير بسرعة 90 كم/ساعة. ترى هذه العلامة المرورية التي تشير إلى منعطف خطير إلى اليمين. ماذا تفعل أولاً؟",
         "choices": [
           {
-            "text": "ØªÙ‚Ù„ÙŠÙ„ Ø§Ù„Ø³Ø±Ø¹Ø© Ù‚Ø¨Ù„ Ø§Ù„Ù…Ù†Ø¹Ø·Ù ÙˆØ§Ù„Ø­ÙØ§Ø¸ Ø¹Ù„Ù‰ Ø§Ù„Ù…Ø³Ø§Ø± Ø§Ù„ØµØ­ÙŠØ­",
+            "text": "تقليل السرعة قبل المنعطف والحفاظ على المسار الصحيح",
             "is_correct": true
           },
           {
-            "text": "ØªØ´ØºÙŠÙ„ Ø§Ù„Ø£Ø¶ÙˆØ§Ø¡ Ø§Ù„Ø¹Ø§Ù„ÙŠØ© ÙˆØ§Ù„Ø­ÙØ§Ø¸ Ø¹Ù„Ù‰ Ø§Ù„Ø³Ø±Ø¹Ø©",
+            "text": "تشغيل الأضواء العالية والحفاظ على السرعة",
             "is_correct": false
           },
-          { "text": "Ø§Ù„ØªØ­Ø±Ùƒ Ù†Ø­Ùˆ Ù…Ù†ØªØµÙ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ù„Ø±Ø¤ÙŠØ© Ø£ÙØ¶Ù„", "is_correct": false }
+          {
+            "text": "التحرك نحو منتصف الطريق لرؤية أفضل",
+            "is_correct": false
+          }
         ],
-        "explanation": "ÙÙŠ Ø§Ù„Ù„ÙŠÙ„ØŒ Ø§Ù„Ø±Ø¤ÙŠØ© ÙÙŠ Ø§Ù„Ù…Ù†Ø¹Ø·ÙØ§Øª Ù…Ø­Ø¯ÙˆØ¯Ø© Ø¨Ø´ÙƒÙ„ Ø¥Ø¶Ø§ÙÙŠ. ÙŠØ¬Ø¨ Ø§Ù„ÙƒØ¨Ø­ Ù‚Ø¨Ù„ Ø§Ù„Ù…Ù†Ø¹Ø·Ù ÙˆØ§Ù„Ø­ÙØ§Ø¸ Ø¹Ù„Ù‰ Ø§Ù„Ù…Ø³Ø§Ø± Ø§Ù„ØµØ­ÙŠØ­. Ø§Ù„ØªØ­Ø±Ùƒ Ù†Ø­Ùˆ Ø§Ù„Ù…Ù†ØªØµÙ ÙŠØ²ÙŠØ¯ Ù…Ù† Ø®Ø·Ø± Ø§Ù„ØªØµØ§Ø¯Ù… Ù…Ø¹ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ù‚Ø§Ø¯Ù…Ø©."
+        "explanation": "في الليل، الرؤية في المنعطفات محدودة بشكل إضافي. ينبغي الكبح قبل المنعطف والحفاظ على المسار الصحيح. التحرك نحو المنتصف يزيد من خطر التصادم مع المركبات القادمة."
       }
     }
   },
   {
     "question_id": "A1b_Q06",
-    "type": "WHAT_MUST_YOU_DO",
+    "type": "SIGN_PLACEMENT_DISTANCE",
     "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
@@ -330,11 +414,20 @@
       "NL": {
         "question": "Op welke afstand wordt dit gevaarsbord buiten de bebouwde kom geplaatst?",
         "choices": [
-          { "text": "Ongeveer 150 meter voor het gevaar", "is_correct": true },
-          { "text": "Precies op de gevaarlijke plek", "is_correct": false },
-          { "text": "Op 500 meter voor het gevaar", "is_correct": false }
+          {
+            "text": "Ongeveer 150 meter voor het gevaar",
+            "is_correct": true
+          },
+          {
+            "text": "Precies op de gevaarlijke plek",
+            "is_correct": false
+          },
+          {
+            "text": "Op 500 meter voor het gevaar",
+            "is_correct": false
+          }
         ],
-        "explanation": "Buiten de bebouwde kom worden gevaarsborden op Â±150 meter voor het gevaar geplaatst. Binnen de bebouwde kom is dit Â±50 meter."
+        "explanation": "Buiten de bebouwde kom worden gevaarsborden op ±150 meter voor het gevaar geplaatst. Binnen de bebouwde kom is dit ±50 meter."
       },
       "EN": {
         "question": "At what distance is this danger sign placed outside built-up areas?",
@@ -343,28 +436,52 @@
             "text": "Approximately 150 metres before the hazard",
             "is_correct": true
           },
-          { "text": "Exactly at the hazard location", "is_correct": false },
-          { "text": "500 metres before the hazard", "is_correct": false }
+          {
+            "text": "Exactly at the hazard location",
+            "is_correct": false
+          },
+          {
+            "text": "500 metres before the hazard",
+            "is_correct": false
+          }
         ],
-        "explanation": "Outside built-up areas, danger signs are placed Â±150 metres before the hazard. Inside built-up areas it is Â±50 metres."
+        "explanation": "Outside built-up areas, danger signs are placed ±150 metres before the hazard. Inside built-up areas it is ±50 metres."
       },
       "FR": {
-        "question": "Ã€ quelle distance ce panneau de danger est-il placÃ© hors agglomÃ©ration ?",
+        "question": "À quelle distance ce panneau de danger est-il placé hors agglomération ?",
         "choices": [
-          { "text": "Environ 150 mÃ¨tres avant le danger", "is_correct": true },
-          { "text": "Exactement Ã  l'endroit du danger", "is_correct": false },
-          { "text": "500 mÃ¨tres avant le danger", "is_correct": false }
+          {
+            "text": "Environ 150 mètres avant le danger",
+            "is_correct": true
+          },
+          {
+            "text": "Exactement à l'endroit du danger",
+            "is_correct": false
+          },
+          {
+            "text": "500 mètres avant le danger",
+            "is_correct": false
+          }
         ],
-        "explanation": "Hors agglomÃ©ration, les panneaux de danger sont placÃ©s Ã  Â±150 mÃ¨tres avant le danger. En agglomÃ©ration, c'est Â±50 mÃ¨tres."
+        "explanation": "Hors agglomération, les panneaux de danger sont placés à ±150 mètres avant le danger. En agglomération, c'est ±50 mètres."
       },
       "AR": {
-        "question": "Ø¹Ù„Ù‰ Ø£ÙŠ Ù…Ø³Ø§ÙØ© ØªÙˆØ¶Ø¹ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ© Ø§Ù„ØªØ­Ø°ÙŠØ±ÙŠØ© Ø®Ø§Ø±Ø¬ Ø§Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ù…Ø¨Ù†ÙŠØ©ØŸ",
+        "question": "ما هي المسافة التي توضع عندها هذه العلامة التحذيرية خارج المنطقة السكنية؟",
         "choices": [
-          { "text": "Ø­ÙˆØ§Ù„ÙŠ 150 Ù…ØªØ± Ù‚Ø¨Ù„ Ø§Ù„Ø®Ø·Ø±", "is_correct": true },
-          { "text": "Ù…Ø¨Ø§Ø´Ø±Ø© Ø¹Ù†Ø¯ Ù…ÙˆÙ‚Ø¹ Ø§Ù„Ø®Ø·Ø±", "is_correct": false },
-          { "text": "500 Ù…ØªØ± Ù‚Ø¨Ù„ Ø§Ù„Ø®Ø·Ø±", "is_correct": false }
+          {
+            "text": "حوالي 150 متر قبل الخطر",
+            "is_correct": true
+          },
+          {
+            "text": "مباشرة عند موقع الخطر",
+            "is_correct": false
+          },
+          {
+            "text": "500 متر قبل الخطر",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ø®Ø§Ø±Ø¬ Ø§Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ù…Ø¨Ù†ÙŠØ© ØªÙˆØ¶Ø¹ Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± Ø¹Ù„Ù‰ Ù…Ø³Ø§ÙØ© Â±150 Ù…ØªØ± Ù‚Ø¨Ù„ Ø§Ù„Ø®Ø·Ø±. Ø¯Ø§Ø®Ù„ Ø§Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ù…Ø¨Ù†ÙŠØ© ØªÙƒÙˆÙ† Ø§Ù„Ù…Ø³Ø§ÙØ© Â±50 Ù…ØªØ±."
+        "explanation": "خارج المنطقة السكنية توضع علامات الخطر على مسافة ±150 متر قبل الخطر. داخل المنطقة السكنية تكون المسافة ±50 متر."
       }
     }
   },
@@ -376,36 +493,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Mag u inhalen vlak voor een gevaarlijke bocht naar rechts?",
+        "question": "Is het aan te raden om vlak voor een gevaarlijke bocht naar rechts in te halen?",
         "choices": [
-          { "text": "Nee", "is_correct": true },
-          { "text": "Ja", "is_correct": false }
+          {
+            "text": "Nee",
+            "is_correct": true
+          },
+          {
+            "text": "Ja",
+            "is_correct": false
+          }
         ],
-        "explanation": "Inhalen voor een gevaarlijke bocht is verboden vanwege beperkt zicht en het risico op een frontale botsing."
+        "explanation": "Nee, dat is meestal niet raadzaam door beperkt zicht en een verhoogd risico op een frontale botsing."
       },
       "EN": {
-        "question": "Is it allowed to overtake just before a dangerous curve to the right?",
+        "question": "Is overtaking advisable before a dangerous bend to the right?",
         "choices": [
-          { "text": "No", "is_correct": true },
-          { "text": "Yes", "is_correct": false }
+          {
+            "text": "No",
+            "is_correct": true
+          },
+          {
+            "text": "Yes",
+            "is_correct": false
+          }
         ],
-        "explanation": "Overtaking before a dangerous curve is prohibited due to limited visibility and the risk of a head-on collision."
+        "explanation": "No, it is generally not advisable because visibility may be limited and the risk of a head-on collision increases."
       },
       "FR": {
-        "question": "ÃŠtes-vous autorisÃ© Ã  dÃ©passer juste avant un virage dangereux Ã  droite ?",
+        "question": "Est-il conseillé de dépasser juste avant un virage dangereux à droite ?",
         "choices": [
-          { "text": "Non", "is_correct": true },
-          { "text": "Oui", "is_correct": false }
+          {
+            "text": "Non",
+            "is_correct": true
+          },
+          {
+            "text": "Oui",
+            "is_correct": false
+          }
         ],
-        "explanation": "DÃ©passer avant un virage dangereux est interdit en raison de la visibilitÃ© rÃ©duite et du risque de collision frontale."
+        "explanation": "Non, ce n'est généralement pas conseillé en raison de la visibilité réduite et du risque accru de collision frontale."
       },
       "AR": {
-        "question": "Ù‡Ù„ ÙŠÙØ³Ù…Ø­ Ø¨Ø§Ù„ØªØ¬Ø§ÙˆØ² Ù‚Ø¨ÙŠÙ„ Ù…Ù†Ø­Ù†Ù‰ Ø®Ø·ÙŠØ± Ø¥Ù„Ù‰ Ø§Ù„ÙŠÙ…ÙŠÙ† Ù…Ø¨Ø§Ø´Ø±Ø©ØŸ",
+        "question": "هل يُنصح بالتجاوز قبل منعطف خطير إلى اليمين؟",
         "choices": [
-          { "text": "Ù„Ø§", "is_correct": true },
-          { "text": "Ù†Ø¹Ù…", "is_correct": false }
+          {
+            "text": "لا",
+            "is_correct": true
+          },
+          {
+            "text": "نعم",
+            "is_correct": false
+          }
         ],
-        "explanation": "ÙŠÙØ­Ø¸Ø± Ø§Ù„ØªØ¬Ø§ÙˆØ² Ù‚Ø¨Ù„ Ø§Ù„Ù…Ù†Ø­Ù†Ù‰ Ø§Ù„Ø®Ø·ÙŠØ± Ø¨Ø³Ø¨Ø¨ Ù…Ø­Ø¯ÙˆØ¯ÙŠØ© Ø§Ù„Ø±Ø¤ÙŠØ© ÙˆØ®Ø·Ø± Ø§Ù„ØªØµØ§Ø¯Ù… Ø§Ù„Ø£Ù…Ø§Ù…ÙŠ."
+        "explanation": "لا، لا يُنصح بذلك عادةً بسبب محدودية الرؤية وازدياد خطر الاصطدام الأمامي."
       }
     }
   },
@@ -419,34 +560,58 @@
       "NL": {
         "question": "Mag u de doorlopende middenstreep overschrijden vlak voor een gevaarlijke bocht naar rechts?",
         "choices": [
-          { "text": "Nee", "is_correct": true },
-          { "text": "Ja", "is_correct": false }
+          {
+            "text": "Nee",
+            "is_correct": true
+          },
+          {
+            "text": "Ja",
+            "is_correct": false
+          }
         ],
         "explanation": "Een doorlopende middenstreep mag nooit worden overschreden. Dit geldt ook vlak voor of in een gevaarlijke bocht."
       },
       "EN": {
-        "question": "Is it allowed to cross the solid centre line just before a dangerous curve to the right?",
+        "question": "Is it allowed to cross the solid centre line just before a dangerous bend to the right?",
         "choices": [
-          { "text": "No", "is_correct": true },
-          { "text": "Yes", "is_correct": false }
+          {
+            "text": "No",
+            "is_correct": true
+          },
+          {
+            "text": "Yes",
+            "is_correct": false
+          }
         ],
-        "explanation": "A solid centre line must never be crossed. This applies even just before or in a dangerous curve."
+        "explanation": "A solid centre line must never be crossed. This applies even just before or in a dangerous bend."
       },
       "FR": {
-        "question": "ÃŠtes-vous autorisÃ© Ã  franchir la ligne axiale continue juste avant un virage dangereux Ã  droite ?",
+        "question": "Êtes-vous autorisé à franchir la ligne axiale continue juste avant un virage dangereux à droite ?",
         "choices": [
-          { "text": "Non", "is_correct": true },
-          { "text": "Oui", "is_correct": false }
+          {
+            "text": "Non",
+            "is_correct": true
+          },
+          {
+            "text": "Oui",
+            "is_correct": false
+          }
         ],
-        "explanation": "Une ligne axiale continue ne doit jamais Ãªtre franchie. Cela s'applique Ã©galement juste avant ou dans un virage dangereux."
+        "explanation": "Une ligne axiale continue ne doit jamais être franchie. Cela s'applique également juste avant ou dans un virage dangereux."
       },
       "AR": {
-        "question": "Ù‡Ù„ ÙŠÙØ³Ù…Ø­ Ø¨ØªØ¬Ø§ÙˆØ² Ø§Ù„Ø®Ø· Ø§Ù„Ø£ÙˆØ³Ø· Ø§Ù„Ù…ØªØµÙ„ Ù‚Ø¨ÙŠÙ„ Ù…Ù†Ø­Ù†Ù‰ Ø®Ø·ÙŠØ± Ø¥Ù„Ù‰ Ø§Ù„ÙŠÙ…ÙŠÙ† Ù…Ø¨Ø§Ø´Ø±Ø©ØŸ",
+        "question": "هل يُسمح بتجاوز الخط الأوسط المتصل قبل الوصول إلى منعطف خطير إلى اليمين؟",
         "choices": [
-          { "text": "Ù„Ø§", "is_correct": true },
-          { "text": "Ù†Ø¹Ù…", "is_correct": false }
+          {
+            "text": "لا",
+            "is_correct": true
+          },
+          {
+            "text": "نعم",
+            "is_correct": false
+          }
         ],
-        "explanation": "ÙŠÙÙ…Ù†Ø¹ ØªØ¬Ø§ÙˆØ² Ø§Ù„Ø®Ø· Ø§Ù„Ø£ÙˆØ³Ø· Ø§Ù„Ù…ØªØµÙ„ ÙÙŠ Ø¬Ù…ÙŠØ¹ Ø§Ù„Ø£Ø­ÙˆØ§Ù„ØŒ Ø¨Ù…Ø§ ÙÙŠ Ø°Ù„Ùƒ Ù‚Ø¨ÙŠÙ„ Ø§Ù„Ù…Ù†Ø¹Ø·Ù Ø§Ù„Ø®Ø·ÙŠØ± Ø£Ùˆ Ø¯Ø§Ø®Ù„Ù‡."
+        "explanation": "يُمنع تجاوز الخط الأوسط المتصل في جميع الأحوال، بما في ذلك قبل المنعطف الخطير أو داخله."
       }
     }
   }

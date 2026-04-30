@@ -14,10 +14,10 @@ services:
     restart: unless-stopped
 
     environment:
-      MYSQL_ROOT_PASSWORD: "Hh06101987@"
-      MYSQL_DATABASE: readyroad_prod
-      MYSQL_USER: haydar
-      MYSQL_PASSWORD: "Hh06101987@"
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:?MYSQL_ROOT_PASSWORD must be set}
+      MYSQL_DATABASE: ${DB_NAME:-readyroad_prod}
+      MYSQL_USER: ${DB_USERNAME:?DB_USERNAME must be set}
+      MYSQL_PASSWORD: ${DB_PASSWORD:?DB_PASSWORD must be set}
       TZ: UTC
 
     ports:
@@ -25,7 +25,7 @@ services:
 
     volumes:
       - mysql_data:/var/lib/mysql
-      - ./init-db.sql:/docker-entrypoint-initdb.d/init-db.sql:ro
+      - ./init-db.sql/readyroad-init.sql:/docker-entrypoint-initdb.d/readyroad-init.sql:ro
 
     networks:
       - readyroad-network
@@ -67,17 +67,17 @@ services:
       # Database Configuration
       DB_HOST: mysql
       DB_PORT: 3306
-      DB_NAME: readyroad_prod
-      DB_USERNAME: haydar
-      DB_PASSWORD: "Hh06101987@"
+      DB_NAME: ${DB_NAME:-readyroad_prod}
+      DB_USERNAME: ${DB_USERNAME:?DB_USERNAME must be set}
+      DB_PASSWORD: ${DB_PASSWORD:?DB_PASSWORD must be set}
 
       # JWT Configuration
-      JWT_SECRET: "404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970337336763979244226452948404D6351"
+      JWT_SECRET: ${JWT_SECRET:?JWT_SECRET must be set}
       JWT_EXPIRATION: 86400000
       JWT_ISSUER: readyroad-backend
 
       # Admin Configuration
-      ADMIN_DEFAULT_PASSWORD: "Admin2026Secure!"
+      ADMIN_DEFAULT_PASSWORD: ${ADMIN_DEFAULT_PASSWORD:?ADMIN_DEFAULT_PASSWORD must be set}
 
       # Java Options
       JAVA_OPTS: "-Xms512m -Xmx1024m -XX:+UseContainerSupport -XX:MaxRAMPercentage=75.0"
@@ -91,10 +91,22 @@ services:
       # Email / Password Reset
       SMTP_HOST: smtp.gmail.com
       SMTP_PORT: "587"
-      SMTP_USERNAME: heydertarek2000@gmail.com
-      SMTP_PASSWORD: sbkbntbnblijiuxn
-      MAIL_FROM: heydertarek2000@gmail.com
-      FRONTEND_URL: http://localhost:3000
+      SMTP_USERNAME: ${SMTP_USERNAME:-}
+      SMTP_PASSWORD: ${SMTP_PASSWORD:-}
+      MAIL_FROM: ${MAIL_FROM:-noreply@readyroad.be}
+      FRONTEND_URL: ${FRONTEND_URL:-http://localhost:3000}
+
+      # CORS — allowed origins for the backend API
+      # Set CORS_ALLOWED_ORIGINS in .env to a comma-separated list of frontend origins.
+      # Example: CORS_ALLOWED_ORIGINS=https://app.readyroad.be,https://www.readyroad.be
+      # Falls back to localhost:3000 (development only) when not set.
+      CORS_ALLOWED_ORIGINS: ${CORS_ALLOWED_ORIGINS:-http://localhost:3000}
+
+      # Google OAuth / Social Login
+      GOOGLE_OAUTH_CLIENT_ID: ${GOOGLE_OAUTH_CLIENT_ID:-}
+      GOOGLE_OAUTH_CLIENT_SECRET: ${GOOGLE_OAUTH_CLIENT_SECRET:-}
+      GOOGLE_OAUTH_TOKEN_URI: ${GOOGLE_OAUTH_TOKEN_URI:-https://oauth2.googleapis.com/token}
+      GOOGLE_OAUTH_USER_INFO_URI: ${GOOGLE_OAUTH_USER_INFO_URI:-https://openidconnect.googleapis.com/v1/userinfo}
 
     ports:
       - "8890:8890"
@@ -139,6 +151,8 @@ services:
     environment:
       # Runtime env — used by the BFF proxy (server-side only)
       BACKEND_URL: http://backend:8890/api
+      FRONTEND_URL: ${FRONTEND_URL:-http://localhost:3000}
+      GOOGLE_OAUTH_CLIENT_ID: ${GOOGLE_OAUTH_CLIENT_ID:-}
       NODE_ENV: production
       TZ: UTC
 

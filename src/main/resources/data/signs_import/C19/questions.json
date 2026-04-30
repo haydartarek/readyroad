@@ -1,10 +1,602 @@
-﻿[
-  {"question_id":"C19_Q01","type":"WHAT_DOES_IT_MEAN","difficulty":"EASY","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Wat betekent dit verkeersbord?","choices":[{"text":"Verboden toegang voor voetgangers","is_correct":true},{"text":"Verboden toegang voor fietsers","is_correct":false},{"text":"Verboden toegang voor bestuurders van handkarren","is_correct":false}],"explanation":"C19 verbiedt voetgangers de weg te gebruiken. Fietsers worden geregeld door C11b en handkarren door C17."},"EN":{"question":"What does this traffic sign mean?","choices":[{"text":"No entry for pedestrians","is_correct":true},{"text":"No entry for cyclists","is_correct":false},{"text":"No entry for handcart users","is_correct":false}],"explanation":"C19 prohibits pedestrians from using the road. Cyclists are covered by C11b and handcart users by C17."},"FR":{"question":"Que signifie ce panneau ?","choices":[{"text":"Acces interdit aux pietons","is_correct":true},{"text":"Acces interdit aux cyclistes","is_correct":false},{"text":"Acces interdit aux conducteurs de charrettes a bras","is_correct":false}],"explanation":"C19 interdit aux pietons d emprunter la route. Les cyclistes sont couverts par le C11b et les conducteurs de charrettes a bras par le C17."},"AR":{"question":"Ù…Ø§Ø°Ø§ ØªØ¹Ù†ÙŠ Ù„Ø§ÙØªØ© Ø§Ù„Ù…Ø±ÙˆØ± Ù‡Ø°Ù‡ØŸ","choices":[{"text":"Ù…Ù…Ù†ÙˆØ¹ Ø¯Ø®ÙˆÙ„ Ø§Ù„Ù…Ø´Ø§Ø©","is_correct":true},{"text":"Ù…Ù…Ù†ÙˆØ¹ Ø¯Ø®ÙˆÙ„ Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª","is_correct":false},{"text":"Ù…Ù…Ù†ÙˆØ¹ Ø¯Ø®ÙˆÙ„ Ù…Ø³ØªØ®Ø¯Ù…ÙŠ Ø§Ù„Ø¹Ø±Ø¨Ø§Øª Ø§Ù„ÙŠØ¯ÙˆÙŠØ©","is_correct":false}],"explanation":"ØªØ­Ø¸Ø± C19 Ø§Ù„Ù…Ø´Ø§Ø© Ù…Ù† Ø§Ø³ØªØ®Ø¯Ø§Ù… Ø§Ù„Ø·Ø±ÙŠÙ‚. Ø±Ø§ÙƒØ¨Ùˆ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ù…Ø´Ù…ÙˆÙ„ÙˆÙ† Ø¨Ù€C11b ÙˆÙ…Ø³ØªØ®Ø¯Ù…Ùˆ Ø§Ù„Ø¹Ø±Ø¨Ø§Øª Ø§Ù„ÙŠØ¯ÙˆÙŠØ© Ø¨Ù€C17."}}},
-  {"question_id":"C19_Q02","type":"WHICH_SIGN","difficulty":"EASY","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Tot welke categorie behoort dit bord?","choices":[{"text":"Verbodsborden (C-reeks)","is_correct":true},{"text":"Gevaarsborden (A-reeks)","is_correct":false},{"text":"Gebodsborden (D-reeks)","is_correct":false}],"explanation":"Verbodsborden (C-reeks) zijn rond met rode rand en verbieden bepaalde weggebruikers."},"EN":{"question":"To which category does this sign belong?","choices":[{"text":"Prohibition signs (C-series)","is_correct":true},{"text":"Danger signs (A-series)","is_correct":false},{"text":"Mandatory signs (D-series)","is_correct":false}],"explanation":"Prohibition signs (C-series) are round with a red border and prohibit certain road users."},"FR":{"question":"A quelle categorie appartient ce panneau ?","choices":[{"text":"Panneaux d interdiction (serie C)","is_correct":true},{"text":"Panneaux de danger (serie A)","is_correct":false},{"text":"Panneaux d obligation (serie D)","is_correct":false}],"explanation":"Les panneaux d interdiction (serie C) sont ronds avec un bord rouge et interdisent certains usagers."},"AR":{"question":"Ø§Ù„Ù‰ Ø§ÙŠ ÙØ¦Ø© ØªÙ†ØªÙ…ÙŠ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ","choices":[{"text":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø­Ø¸Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© C)","is_correct":true},{"text":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© A)","is_correct":false},{"text":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø§Ù„Ø²Ø§Ù… (Ø§Ù„Ø³Ù„Ø³Ù„Ø© D)","is_correct":false}],"explanation":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø­Ø¸Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© C) Ù…Ø³ØªØ¯ÙŠØ±Ø© Ø°Ø§Øª Ø­Ø¯ Ø§Ø­Ù…Ø± ÙˆØªØ­Ø¸Ø± Ù…Ø³ØªØ®Ø¯Ù…ÙŠ Ø·Ø±ÙŠÙ‚ Ù…Ø¹ÙŠÙ†ÙŠÙ†."}}},
-  {"question_id":"C19_Q03","type":"HAZARD_IDENTIFICATION","difficulty":"EASY","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Welke weggebruiker is verboden door bord C19?","choices":[{"text":"Voetgangers op de openbare weg","is_correct":true},{"text":"Voetgangers en fietsers samen","is_correct":false},{"text":"Voetgangers en bestuurders van handkarren","is_correct":false}],"explanation":"C19 verbiedt uitsluitend voetgangers. Fietsers worden door andere borden geregeld. De combinatie voetgangers en handkarren is ook onjuist."},"EN":{"question":"Which road user is prohibited by sign C19?","choices":[{"text":"Pedestrians on the public road","is_correct":true},{"text":"Pedestrians and cyclists together","is_correct":false},{"text":"Pedestrians and handcart drivers","is_correct":false}],"explanation":"C19 exclusively prohibits pedestrians. Cyclists are regulated by other signs. The combination of pedestrians and handcart drivers is also incorrect."},"FR":{"question":"Quel usager est interdit par le panneau C19 ?","choices":[{"text":"Les pietons sur la voie publique","is_correct":true},{"text":"Les pietons et les cyclistes ensemble","is_correct":false},{"text":"Les pietons et les conducteurs de charrettes a bras","is_correct":false}],"explanation":"C19 interdit exclusivement les pietons. Les cyclistes sont reglementes par d autres panneaux. La combinaison pietons et charrettes a bras est aussi incorrecte."},"AR":{"question":"Ù…Ù† ÙŠÙØ­Ø¸Ø± Ø¨Ù„Ø§ÙØªØ© C19ØŸ","choices":[{"text":"Ø§Ù„Ù…Ø´Ø§Ø© ÙÙŠ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø¹Ø§Ù…","is_correct":true},{"text":"Ø§Ù„Ù…Ø´Ø§Ø© ÙˆØ±Ø§ÙƒØ¨Ùˆ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ù…Ø¹Ø§","is_correct":false},{"text":"Ø§Ù„Ù…Ø´Ø§Ø© ÙˆÙ…Ø³ØªØ®Ø¯Ù…Ùˆ Ø§Ù„Ø¹Ø±Ø¨Ø§Øª Ø§Ù„ÙŠØ¯ÙˆÙŠØ©","is_correct":false}],"explanation":"ØªØ­Ø¸Ø± C19 Ø§Ù„Ù…Ø´Ø§Ø© Ø­ØµØ±Ø§. Ø±Ø§ÙƒØ¨Ùˆ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ù…Ù†Ø¸Ù…ÙˆÙ† Ø¨Ù„Ø§ÙØªØ§Øª Ø§Ø®Ø±Ù‰. Ø§Ù„Ø¬Ù…Ø¹ Ø¨ÙŠÙ† Ø§Ù„Ù…Ø´Ø§Ø© ÙˆØ§Ù„Ø¹Ø±Ø¨Ø§Øª Ø§Ù„ÙŠØ¯ÙˆÙŠØ© Ø§ÙŠØ¶Ø§ ØºÙŠØ± ØµØ­ÙŠØ­."}}},
-  {"question_id":"C19_Q04","type":"WHAT_MUST_YOU_DO","difficulty":"MEDIUM","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"U bent te voet en ziet bord C19. Wat doet u?","choices":[{"text":"Stoppen en een alternatieve route zoeken","is_correct":true},{"text":"Doorlopen als er geen rijdende voertuigen zijn","is_correct":false},{"text":"Doorlopen als u zich langs de rand van de weg houdt","is_correct":false}],"explanation":"C19 verbiedt u als voetganger de toegang tot deze weg. U dient een andere route te zoeken ongeacht de verkeersintensiteit of uw positie op de weg."},"EN":{"question":"You are on foot and see sign C19. What do you do?","choices":[{"text":"Stop and find an alternative route","is_correct":true},{"text":"Continue if there are no moving vehicles","is_correct":false},{"text":"Continue if you stay at the edge of the road","is_correct":false}],"explanation":"C19 prohibits you as a pedestrian from entering this road. You must find another route regardless of traffic intensity or your position on the road."},"FR":{"question":"Vous etes a pied et voyez le panneau C19. Que faites-vous ?","choices":[{"text":"S arreter et chercher un itineraire alternatif","is_correct":true},{"text":"Continuer s il n y a pas de vehicules en circulation","is_correct":false},{"text":"Continuer en restant sur le bord de la route","is_correct":false}],"explanation":"C19 vous interdit l acces a cette route en tant que pieton. Vous devez chercher un autre itineraire quelle que soit l intensite du trafic ou votre position sur la route."},"AR":{"question":"Ø§Ù†Øª Ù…Ø´Ø§Ø© ÙˆØªØ±Ù‰ Ù„Ø§ÙØªØ© C19. Ù…Ø§Ø°Ø§ ØªÙØ¹Ù„ØŸ","choices":[{"text":"ØªÙˆÙ‚Ù ÙˆØ§Ø¨Ø­Ø« Ø¹Ù† Ø·Ø±ÙŠÙ‚ Ø¨Ø¯ÙŠÙ„","is_correct":true},{"text":"ØªØ§Ø¨Ø¹ Ø§Ø°Ø§ Ù„Ù… ØªÙƒÙ† Ù‡Ù†Ø§Ùƒ Ù…Ø±ÙƒØ¨Ø§Øª Ø³Ø§Ø¦Ø±Ø©","is_correct":false},{"text":"ØªØ§Ø¨Ø¹ Ø§Ø°Ø§ Ø¨Ù‚ÙŠØª Ø¹Ù„Ù‰ Ø­Ø§ÙØ© Ø§Ù„Ø·Ø±ÙŠÙ‚","is_correct":false}],"explanation":"ØªØ­Ø¸Ø± C19 Ø¹Ù„ÙŠÙƒ ÙƒÙ…Ø´Ø§Ø© Ø¯Ø®ÙˆÙ„ Ù‡Ø°Ø§ Ø§Ù„Ø·Ø±ÙŠÙ‚. ÙŠØ¬Ø¨ Ø¹Ù„ÙŠÙƒ Ø§ÙŠØ¬Ø§Ø¯ Ø·Ø±ÙŠÙ‚ Ø¢Ø®Ø± Ø¨ØºØ¶ Ø§Ù„Ù†Ø¸Ø± Ø¹Ù† ÙƒØ«Ø§ÙØ© Ø§Ù„Ù…Ø±ÙˆØ± Ø§Ùˆ Ù…ÙˆÙ‚Ø¹Ùƒ Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±ÙŠÙ‚."}}},
-  {"question_id":"C19_Q05","type":"WHAT_MUST_YOU_DO","difficulty":"MEDIUM","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Staat er een bord C19 aan het begin van een tunnel. Mag u er als voetganger toch doorheen als er een noodgeval is?","choices":[{"text":"Nee, tenzij er een officiÃ«le nooduitgang of aangewezen route voor voetgangers is voorzien","is_correct":true},{"text":"Ja, in geval van nood geldt C19 niet","is_correct":false},{"text":"Alleen als u een veiligheidsvest draagt","is_correct":false}],"explanation":"C19 geldt ook in tunnels. Voor noodsituaties zijn er aangewezen nooduitgangen of evacuatieroutes. Het willekeurig negeeren van het verbod vergroot het gevaar."},"EN":{"question":"Sign C19 is placed at the entrance of a tunnel. May you as a pedestrian pass through if there is an emergency?","choices":[{"text":"No, unless an official emergency exit or designated pedestrian route is provided","is_correct":true},{"text":"Yes, in an emergency C19 does not apply","is_correct":false},{"text":"Only if you wear a safety vest","is_correct":false}],"explanation":"C19 also applies in tunnels. For emergencies there are designated emergency exits or evacuation routes. Randomly ignoring the prohibition increases the danger."},"FR":{"question":"Un panneau C19 est place a l entree d un tunnel. Pouvez-vous en tant que pieton le traverser en cas d urgence ?","choices":[{"text":"Non, sauf si une sortie de secours officielle ou un itineraire pedestre designe est prevu","is_correct":true},{"text":"Oui, en cas d urgence C19 ne s applique pas","is_correct":false},{"text":"Seulement si vous portez un gilet de securite","is_correct":false}],"explanation":"C19 s applique aussi dans les tunnels. Pour les urgences des sorties de secours ou itineraires d evacuation designes sont prevus. Ignorer l interdiction de facon aleatoire augmente le danger."},"AR":{"question":"Ù„Ø§ÙØªØ© C19 Ù…ÙˆØ¶ÙˆØ¹Ø© Ø¹Ù†Ø¯ Ù…Ø¯Ø®Ù„ Ù†ÙÙ‚. Ù‡Ù„ ÙŠØ¬ÙˆØ² Ù„Ùƒ ÙƒÙ…Ø´Ø§Ø© Ø§Ù„Ø¹Ø¨ÙˆØ± ÙÙŠ Ø­Ø§Ù„Ø© Ø·ÙˆØ§Ø±Ø¦ØŸ","choices":[{"text":"Ù„Ø§ØŒ Ù…Ø§ Ù„Ù… ØªØªÙˆÙØ± Ù…Ø®Ø±Ø¬ Ø·ÙˆØ§Ø±Ø¦ Ø±Ø³Ù…ÙŠ Ø§Ùˆ Ù…Ø³Ø§Ø± Ù…Ø®ØµØµ Ù„Ù„Ù…Ø´Ø§Ø©","is_correct":true},{"text":"Ù†Ø¹Ù…ØŒ ÙÙŠ Ø­Ø§Ù„Ø§Øª Ø§Ù„Ø·ÙˆØ§Ø±Ø¦ Ù„Ø§ ØªØ³Ø±ÙŠ C19","is_correct":false},{"text":"ÙÙ‚Ø· Ø§Ø°Ø§ ÙƒÙ†Øª ØªØ±ØªØ¯ÙŠ Ø³ØªØ±Ø© Ø§Ù…Ø§Ù†","is_correct":false}],"explanation":"ØªØ³Ø±ÙŠ C19 Ø§ÙŠØ¶Ø§ ÙÙŠ Ø§Ù„Ø§Ù†ÙØ§Ù‚. ÙÙŠ Ø­Ø§Ù„Ø§Øª Ø§Ù„Ø·ÙˆØ§Ø±Ø¦ ØªÙˆØ¬Ø¯ Ù…Ø®Ø§Ø±Ø¬ Ø·ÙˆØ§Ø±Ø¦ Ø§Ùˆ Ù…Ø³Ø§Ø±Ø§Øª Ø§Ø®Ù„Ø§Ø¡ Ù…Ø®ØµØµØ©. ØªØ¬Ø§Ù‡Ù„ Ø§Ù„Ø­Ø¸Ø± Ø¹Ø´ÙˆØ§Ø¦ÙŠØ§ ÙŠØ²ÙŠØ¯ Ø§Ù„Ø®Ø·Ø±."}}},
-  {"question_id":"C19_Q06","type":"WHAT_MUST_YOU_DO","difficulty":"MEDIUM","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Geldt bord C19 ook voor personen in een rolstoel?","choices":[{"text":"Ja, een rolstoelgebruiker is wettelijk een voetganger en valt onder C19","is_correct":true},{"text":"Nee, rolstoelen zijn voertuigen en vallen niet onder C19","is_correct":false},{"text":"Alleen als de rolstoel elektrisch is","is_correct":false}],"explanation":"In het Belgisch verkeersrecht wordt een rolstoelgebruiker beschouwd als voetganger. C19 geldt dus ook voor rolstoelen, zowel manuele als elektrische."},"EN":{"question":"Does sign C19 also apply to persons in a wheelchair?","choices":[{"text":"Yes, a wheelchair user is legally a pedestrian and falls under C19","is_correct":true},{"text":"No, wheelchairs are vehicles and do not fall under C19","is_correct":false},{"text":"Only if the wheelchair is electric","is_correct":false}],"explanation":"Under Belgian traffic law a wheelchair user is considered a pedestrian. C19 therefore also applies to wheelchairs, both manual and electric."},"FR":{"question":"Le panneau C19 s applique-t-il aussi aux personnes en fauteuil roulant ?","choices":[{"text":"Oui, un utilisateur de fauteuil roulant est legalement un pieton et releve du C19","is_correct":true},{"text":"Non, les fauteuils roulants sont des vehicules et ne relevent pas du C19","is_correct":false},{"text":"Seulement si le fauteuil roulant est electrique","is_correct":false}],"explanation":"En droit belge de la circulation un utilisateur de fauteuil roulant est considere comme un pieton. C19 s applique donc aussi aux fauteuils roulants manuels et electriques."},"AR":{"question":"Ù‡Ù„ ØªÙ†Ø·Ø¨Ù‚ Ù„Ø§ÙØªØ© C19 Ø§ÙŠØ¶Ø§ Ø¹Ù„Ù‰ Ø§Ù„Ø§Ø´Ø®Ø§Øµ ÙÙŠ Ø§Ù„ÙƒØ±Ø§Ø³ÙŠ Ø§Ù„Ù…ØªØ­Ø±ÙƒØ©ØŸ","choices":[{"text":"Ù†Ø¹Ù…ØŒ Ù…Ø³ØªØ®Ø¯Ù… Ø§Ù„ÙƒØ±Ø³ÙŠ Ø§Ù„Ù…ØªØ­Ø±Ùƒ Ù‡Ùˆ Ù‚Ø§Ù†ÙˆÙ†ÙŠØ§ Ù…Ø´Ø§Ø© ÙˆÙŠÙ†Ø¯Ø±Ø¬ ØªØ­Øª C19","is_correct":true},{"text":"Ù„Ø§ØŒ Ø§Ù„ÙƒØ±Ø§Ø³ÙŠ Ø§Ù„Ù…ØªØ­Ø±ÙƒØ© Ù…Ø±ÙƒØ¨Ø§Øª ÙˆÙ„Ø§ ØªÙ†Ø¯Ø±Ø¬ ØªØ­Øª C19","is_correct":false},{"text":"ÙÙ‚Ø· Ø§Ø°Ø§ ÙƒØ§Ù† Ø§Ù„ÙƒØ±Ø³ÙŠ Ø§Ù„Ù…ØªØ­Ø±Ùƒ ÙƒÙ‡Ø±Ø¨Ø§Ø¦ÙŠØ§","is_correct":false}],"explanation":"Ø¨Ù…ÙˆØ¬Ø¨ Ù‚Ø§Ù†ÙˆÙ† Ø§Ù„Ù…Ø±ÙˆØ± Ø§Ù„Ø¨Ù„Ø¬ÙŠÙƒÙŠ ÙŠÙØ¹ØªØ¨Ø± Ù…Ø³ØªØ®Ø¯Ù… Ø§Ù„ÙƒØ±Ø³ÙŠ Ø§Ù„Ù…ØªØ­Ø±Ùƒ Ù…Ø´Ø§Ø©. Ø§Ø° ØªØ³Ø±ÙŠ C19 Ø§ÙŠØ¶Ø§ Ø¹Ù„Ù‰ Ø§Ù„ÙƒØ±Ø§Ø³ÙŠ Ø§Ù„Ù…ØªØ­Ø±ÙƒØ© Ø§Ù„ÙŠØ¯ÙˆÙŠØ© ÙˆØ§Ù„ÙƒÙ‡Ø±Ø¨Ø§Ø¦ÙŠØ©."}}},
-  {"question_id":"C19_Q07","type":"IS_IT_ALLOWED","difficulty":"HARD","is_critical":true,"show_sign":true,"i18n":{"NL":{"question":"Mag u als voetganger een verboden weg oversteken om uw bus te halen als er geen andere oversteekplaats in de buurt is?","choices":[{"text":"Nee, C19 verbiedt het gebruik van de weg als voetganger ongeacht de reden","is_correct":true},{"text":"Ja, als er geen alternatief is mag u tijdelijk de weg oversteken","is_correct":false}],"explanation":"C19 geldt ongeacht de reden waarvoor u de weg wil gebruiken. Tijdgebrek of gebrek aan alternatieven vrijstelt niet. Dit is een ernstige verkeersovertreding."},"EN":{"question":"As a pedestrian, may you cross a prohibited road to catch your bus if there is no other crossing nearby?","choices":[{"text":"No, C19 prohibits use of the road as a pedestrian regardless of the reason","is_correct":true},{"text":"Yes, if there is no alternative you may temporarily cross the road","is_correct":false}],"explanation":"C19 applies regardless of the reason you wish to use the road. Lack of time or lack of alternatives does not exempt you. This is a serious traffic offence."},"FR":{"question":"En tant que pieton pouvez-vous traverser une route interdite pour attraper votre bus s il n y a pas d autre passage a proximite ?","choices":[{"text":"Non, C19 interdit l utilisation de la route en tant que pieton quelle qu en soit la raison","is_correct":true},{"text":"Oui, s il n y a pas d alternative vous pouvez traverser temporairement la route","is_correct":false}],"explanation":"C19 s applique quelle que soit la raison pour laquelle vous souhaitez utiliser la route. Le manque de temps ou d alternatives ne vous en exempte pas. Il s agit d une infraction grave au code de la route."},"AR":{"question":"Ø¨ÙˆØµÙÙƒ Ù…Ø´Ø§Ø© Ù‡Ù„ ÙŠØ¬ÙˆØ² Ù„Ùƒ Ø¹Ø¨ÙˆØ± Ø·Ø±ÙŠÙ‚ Ù…Ø­Ø¸ÙˆØ± Ù„Ù„Ø­Ø§Ù‚ Ø¨Ø­Ø§ÙÙ„ØªÙƒ Ø§Ø°Ø§ Ù„Ù… ÙŠÙƒÙ† Ù‡Ù†Ø§Ùƒ Ù…Ù…Ø± Ø¢Ø®Ø± Ù‚Ø±ÙŠØ¨ØŸ","choices":[{"text":"Ù„Ø§ØŒ C19 ØªØ­Ø¸Ø± Ø§Ø³ØªØ®Ø¯Ø§Ù… Ø§Ù„Ø·Ø±ÙŠÙ‚ ÙƒÙ…Ø´Ø§Ø© Ø¨ØºØ¶ Ø§Ù„Ù†Ø¸Ø± Ø¹Ù† Ø§Ù„Ø³Ø¨Ø¨","is_correct":true},{"text":"Ù†Ø¹Ù…ØŒ Ø§Ø°Ø§ Ù„Ù… ÙŠÙƒÙ† Ù‡Ù†Ø§Ùƒ Ø¨Ø¯ÙŠÙ„ ÙŠØ¬ÙˆØ² Ù„Ùƒ Ø¹Ø¨ÙˆØ± Ø§Ù„Ø·Ø±ÙŠÙ‚ Ù…Ø¤Ù‚ØªØ§","is_correct":false}],"explanation":"ØªØ³Ø±ÙŠ C19 Ø¨ØºØ¶ Ø§Ù„Ù†Ø¸Ø± Ø¹Ù† Ø³Ø¨Ø¨ Ø§Ù„Ø±ØºØ¨Ø© ÙÙŠ Ø§Ø³ØªØ®Ø¯Ø§Ù… Ø§Ù„Ø·Ø±ÙŠÙ‚. Ø¶ÙŠÙ‚ Ø§Ù„ÙˆÙ‚Øª Ø§Ùˆ ØºÙŠØ§Ø¨ Ø§Ù„Ø¨Ø¯Ø§Ø¦Ù„ Ù„Ø§ ÙŠØ¹ÙÙŠÙƒ. Ù‡Ø°Ù‡ Ù…Ø®Ø§Ù„ÙØ© Ù…Ø±ÙˆØ±ÙŠØ© Ø®Ø·ÙŠØ±Ø©."}}},
-  {"question_id":"C19_Q08","type":"IS_IT_ALLOWED","difficulty":"HARD","is_critical":true,"show_sign":true,"i18n":{"NL":{"question":"Mag een kind te voet een weg op met bord C19 om naar de overkant te gaan?","choices":[{"text":"Nee, C19 geldt voor iedereen inclusief kinderen","is_correct":true},{"text":"Ja, C19 geldt niet voor kinderen onder de 12 jaar","is_correct":false}],"explanation":"Verbodsborden kennen geen leeftijdsuitzondering. C19 geldt voor alle voetgangers ongeacht leeftijd. Dit is een ernstige verkeersovertreding."},"EN":{"question":"May a child on foot enter a road with sign C19 to cross to the other side?","choices":[{"text":"No, C19 applies to everyone including children","is_correct":true},{"text":"Yes, C19 does not apply to children under 12","is_correct":false}],"explanation":"Prohibition signs have no age exception. C19 applies to all pedestrians regardless of age. This is a serious traffic offence."},"FR":{"question":"Un enfant a pied peut-il emprunter une route avec le panneau C19 pour traverser de l autre cote ?","choices":[{"text":"Non, C19 s applique a tous y compris aux enfants","is_correct":true},{"text":"Oui, C19 ne s applique pas aux enfants de moins de 12 ans","is_correct":false}],"explanation":"Les panneaux d interdiction ne comportent pas d exception d age. C19 s applique a tous les pietons quel que soit leur age. Il s agit d une infraction grave au code de la route."},"AR":{"question":"Ù‡Ù„ ÙŠØ¬ÙˆØ² Ù„Ø·ÙÙ„ Ù…Ø´Ø§Ø© Ø¯Ø®ÙˆÙ„ Ø·Ø±ÙŠÙ‚ Ø¨Ù‡ Ù„Ø§ÙØªØ© C19 Ù„Ù„Ø¹Ø¨ÙˆØ± Ø§Ù„Ù‰ Ø§Ù„Ø¬Ø§Ù†Ø¨ Ø§Ù„Ø¢Ø®Ø±ØŸ","choices":[{"text":"Ù„Ø§ØŒ C19 ØªÙ†Ø·Ø¨Ù‚ Ø¹Ù„Ù‰ Ø§Ù„Ø¬Ù…ÙŠØ¹ Ø¨Ù…Ø§ ÙÙŠÙ‡Ù… Ø§Ù„Ø§Ø·ÙØ§Ù„","is_correct":true},{"text":"Ù†Ø¹Ù…ØŒ C19 Ù„Ø§ ØªÙ†Ø·Ø¨Ù‚ Ø¹Ù„Ù‰ Ø§Ù„Ø§Ø·ÙØ§Ù„ Ø¯ÙˆÙ† 12 Ø¹Ø§Ù…Ø§","is_correct":false}],"explanation":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø­Ø¸Ø± Ù„Ø§ Ø§Ø³ØªØ«Ù†Ø§Ø¡ Ø¨Ø§Ù„Ø¹Ù…Ø± ÙÙŠÙ‡Ø§. C19 ØªÙ†Ø·Ø¨Ù‚ Ø¹Ù„Ù‰ Ø¬Ù…ÙŠØ¹ Ø§Ù„Ù…Ø´Ø§Ø© Ø¨ØºØ¶ Ø§Ù„Ù†Ø¸Ø± Ø¹Ù† Ø§Ù„Ø³Ù†. Ù‡Ø°Ù‡ Ù…Ø®Ø§Ù„ÙØ© Ù…Ø±ÙˆØ±ÙŠØ© Ø®Ø·ÙŠØ±Ø©."}}}
+[
+  {
+    "question_id": "C19_Q01",
+    "type": "WHAT_DOES_IT_MEAN",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat betekent dit verkeersbord?",
+        "choices": [
+          {
+            "text": "Verboden toegang voor voetgangers",
+            "is_correct": true
+          },
+          {
+            "text": "Verboden toegang voor fietsers",
+            "is_correct": false
+          },
+          {
+            "text": "Verboden toegang voor bestuurders van handkarren",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dit bord geeft aan dat voetgangers deze doorgang niet mogen gebruiken."
+      },
+      "EN": {
+        "question": "What does this traffic sign mean?",
+        "choices": [
+          {
+            "text": "No entry for pedestrians",
+            "is_correct": true
+          },
+          {
+            "text": "No entry for cyclists",
+            "is_correct": false
+          },
+          {
+            "text": "No entry for drivers of handcarts",
+            "is_correct": false
+          }
+        ],
+        "explanation": "This sign indicates that pedestrians may not use this access."
+      },
+      "FR": {
+        "question": "Que signifie ce panneau ?",
+        "choices": [
+          {
+            "text": "Accès interdit aux piétons",
+            "is_correct": true
+          },
+          {
+            "text": "Accès interdit aux cyclistes",
+            "is_correct": false
+          },
+          {
+            "text": "Accès interdit aux conducteurs de charrettes à bras",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ce panneau indique que les piétons ne peuvent pas utiliser cet accès."
+      },
+      "AR": {
+        "question": "ما معنى هذه العلامة المرورية؟",
+        "choices": [
+          {
+            "text": "ممنوع دخول المشاة",
+            "is_correct": true
+          },
+          {
+            "text": "ممنوع دخول راكبي الدراجات",
+            "is_correct": false
+          },
+          {
+            "text": "ممنوع دخول سائقي العربات اليدوية",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تعني هذه العلامة أن المشاة لا يجوز لهم استخدام هذا المدخل."
+      }
+    }
+  },
+  {
+    "question_id": "C19_Q02",
+    "type": "HAZARD_IDENTIFICATION",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Op wie is dit verbod van toepassing?",
+        "choices": [
+          {
+            "text": "Op voetgangers",
+            "is_correct": true
+          },
+          {
+            "text": "Op fietsers",
+            "is_correct": false
+          },
+          {
+            "text": "Op alle weggebruikers",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Het verbod is specifiek gericht op voetgangers."
+      },
+      "EN": {
+        "question": "To whom does this prohibition apply?",
+        "choices": [
+          {
+            "text": "To pedestrians",
+            "is_correct": true
+          },
+          {
+            "text": "To cyclists",
+            "is_correct": false
+          },
+          {
+            "text": "To all road users",
+            "is_correct": false
+          }
+        ],
+        "explanation": "The prohibition specifically applies to pedestrians."
+      },
+      "FR": {
+        "question": "À qui s’applique cette interdiction ?",
+        "choices": [
+          {
+            "text": "Aux piétons",
+            "is_correct": true
+          },
+          {
+            "text": "Aux cyclistes",
+            "is_correct": false
+          },
+          {
+            "text": "À tous les usagers de la route",
+            "is_correct": false
+          }
+        ],
+        "explanation": "L’interdiction vise spécifiquement les piétons."
+      },
+      "AR": {
+        "question": "على من ينطبق هذا الحظر؟",
+        "choices": [
+          {
+            "text": "على المشاة",
+            "is_correct": true
+          },
+          {
+            "text": "على راكبي الدراجات",
+            "is_correct": false
+          },
+          {
+            "text": "على جميع مستخدمي الطريق",
+            "is_correct": false
+          }
+        ],
+        "explanation": "ينطبق هذا الحظر تحديدًا على المشاة."
+      }
+    }
+  },
+  {
+    "question_id": "C19_Q03",
+    "type": "HAZARD_IDENTIFICATION",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Welke weggebruiker wordt door dit bord verboden?",
+        "choices": [
+          {
+            "text": "Voetgangers",
+            "is_correct": true
+          },
+          {
+            "text": "Voetgangers en fietsers samen",
+            "is_correct": false
+          },
+          {
+            "text": "Voetgangers en bestuurders van handkarren",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dit bord verbiedt specifiek voetgangers."
+      },
+      "EN": {
+        "question": "Which road user is prohibited by this sign?",
+        "choices": [
+          {
+            "text": "Pedestrians",
+            "is_correct": true
+          },
+          {
+            "text": "Pedestrians and cyclists together",
+            "is_correct": false
+          },
+          {
+            "text": "Pedestrians and handcart drivers",
+            "is_correct": false
+          }
+        ],
+        "explanation": "This sign specifically prohibits pedestrians."
+      },
+      "FR": {
+        "question": "Quel usager est interdit par ce panneau ?",
+        "choices": [
+          {
+            "text": "Les piétons",
+            "is_correct": true
+          },
+          {
+            "text": "Les piétons et les cyclistes ensemble",
+            "is_correct": false
+          },
+          {
+            "text": "Les piétons et les conducteurs de charrettes à bras",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ce panneau interdit spécifiquement les piétons."
+      },
+      "AR": {
+        "question": "أي مستخدم طريق تحظره هذه العلامة؟",
+        "choices": [
+          {
+            "text": "المشاة",
+            "is_correct": true
+          },
+          {
+            "text": "المشاة وراكبو الدراجات معًا",
+            "is_correct": false
+          },
+          {
+            "text": "المشاة وسائقو العربات اليدوية",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تحظر هذه العلامة تحديدًا المشاة."
+      }
+    }
+  },
+  {
+    "question_id": "C19_Q04",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U bent te voet en ziet dit bord. Wat doet u?",
+        "choices": [
+          {
+            "text": "Stoppen en een alternatieve route zoeken",
+            "is_correct": true
+          },
+          {
+            "text": "Doorlopen als er geen verkeer is",
+            "is_correct": false
+          },
+          {
+            "text": "Doorlopen langs de rand van de weg",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Omdat voetgangers onder dit verbod vallen, moet u een andere route zoeken."
+      },
+      "EN": {
+        "question": "You are on foot and see this sign. What should you do?",
+        "choices": [
+          {
+            "text": "Stop and find an alternative route",
+            "is_correct": true
+          },
+          {
+            "text": "Continue if there is no traffic",
+            "is_correct": false
+          },
+          {
+            "text": "Continue along the edge of the road",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Because pedestrians are included in this prohibition, you should find another route."
+      },
+      "FR": {
+        "question": "Vous êtes à pied et voyez ce panneau. Que devez-vous faire ?",
+        "choices": [
+          {
+            "text": "S’arrêter et chercher un autre itinéraire",
+            "is_correct": true
+          },
+          {
+            "text": "Continuer s’il n’y a pas de circulation",
+            "is_correct": false
+          },
+          {
+            "text": "Continuer le long du bord de la route",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Comme les piétons sont visés par cette interdiction, il faut chercher un autre itinéraire."
+      },
+      "AR": {
+        "question": "أنت تسير على قدميك وترى هذه العلامة. ماذا ينبغي أن تفعل؟",
+        "choices": [
+          {
+            "text": "توقف وابحث عن طريق بديل",
+            "is_correct": true
+          },
+          {
+            "text": "تابع إذا لم تكن هناك حركة مرور",
+            "is_correct": false
+          },
+          {
+            "text": "تابع على طرف الطريق",
+            "is_correct": false
+          }
+        ],
+        "explanation": "بما أن المشاة مشمولون بهذا الحظر، ينبغي البحث عن طريق آخر."
+      }
+    }
+  },
+  {
+    "question_id": "C19_Q05",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Uw bestemming ligt vlak achter dit bord. Wat doet u als voetganger?",
+        "choices": [
+          {
+            "text": "Een alternatieve route zoeken",
+            "is_correct": true
+          },
+          {
+            "text": "Toch doorgaan omdat het dichtbij is",
+            "is_correct": false
+          },
+          {
+            "text": "Alleen kort doorgaan",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ook als uw bestemming dichtbij ligt, blijft de toegangsbeperking voor voetgangers gelden."
+      },
+      "EN": {
+        "question": "Your destination is just beyond this sign. What do you do as a pedestrian?",
+        "choices": [
+          {
+            "text": "Find an alternative route",
+            "is_correct": true
+          },
+          {
+            "text": "Continue because it is nearby",
+            "is_correct": false
+          },
+          {
+            "text": "Only continue for a short distance",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Even if your destination is nearby, the access restriction for pedestrians still applies."
+      },
+      "FR": {
+        "question": "Votre destination se trouve juste après ce panneau. Que faites-vous en tant que piéton ?",
+        "choices": [
+          {
+            "text": "Chercher un autre itinéraire",
+            "is_correct": true
+          },
+          {
+            "text": "Continuer parce que c’est tout près",
+            "is_correct": false
+          },
+          {
+            "text": "Continuer seulement sur une courte distance",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Même si la destination est proche, la restriction d’accès pour les piétons reste valable."
+      },
+      "AR": {
+        "question": "تقع وجهتك مباشرة بعد هذه العلامة. ماذا تفعل بصفتك من المشاة؟",
+        "choices": [
+          {
+            "text": "ابحث عن طريق بديل",
+            "is_correct": true
+          },
+          {
+            "text": "واصل السير لأنها قريبة",
+            "is_correct": false
+          },
+          {
+            "text": "تابع لمسافة قصيرة فقط",
+            "is_correct": false
+          }
+        ],
+        "explanation": "حتى لو كانت وجهتك قريبة، يبقى المنع قائمًا على المشاة."
+      }
+    }
+  },
+  {
+    "question_id": "C19_Q06",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Mag een fietser deze weg gebruiken ondanks dit bord?",
+        "choices": [
+          {
+            "text": "Ja, het bord richt zich op voetgangers",
+            "is_correct": true
+          },
+          {
+            "text": "Nee, het bord verbiedt ook fietsers",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dit bord is gericht op voetgangers. Een fietser valt daar niet automatisch onder."
+      },
+      "EN": {
+        "question": "May a cyclist use this road despite this sign?",
+        "choices": [
+          {
+            "text": "Yes, the sign targets pedestrians",
+            "is_correct": true
+          },
+          {
+            "text": "No, the sign also bans cyclists",
+            "is_correct": false
+          }
+        ],
+        "explanation": "This sign is aimed at pedestrians. A cyclist is not automatically included."
+      },
+      "FR": {
+        "question": "Un cycliste peut-il utiliser cette route malgré ce panneau ?",
+        "choices": [
+          {
+            "text": "Oui, le panneau vise les piétons",
+            "is_correct": true
+          },
+          {
+            "text": "Non, le panneau interdit aussi les cyclistes",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ce panneau vise les piétons. Un cycliste n’est pas automatiquement compris."
+      },
+      "AR": {
+        "question": "هل يجوز لراكب دراجة استعمال هذا الطريق رغم هذه العلامة؟",
+        "choices": [
+          {
+            "text": "نعم، العلامة تستهدف المشاة",
+            "is_correct": true
+          },
+          {
+            "text": "لا، العلامة تحظر أيضًا راكبي الدراجات",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تستهدف هذه العلامة المشاة. أما راكب الدراجة فلا يندرج تلقائيًا ضمنها."
+      }
+    }
+  },
+  {
+    "question_id": "C19_Q07",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "De weg lijkt volledig leeg. Mag een voetganger toch doorgaan?",
+        "choices": [
+          {
+            "text": "Nee, het bord blijft gelden ook als de weg leeg lijkt",
+            "is_correct": true
+          },
+          {
+            "text": "Ja, als er niemand is mag het",
+            "is_correct": false
+          }
+        ],
+        "explanation": "De zichtbare verkeerssituatie verandert de betekenis van het bord niet. Voor voetgangers blijft deze toegang verboden."
+      },
+      "EN": {
+        "question": "The road looks completely empty. May a pedestrian still continue?",
+        "choices": [
+          {
+            "text": "No, the sign still applies even if the road looks empty",
+            "is_correct": true
+          },
+          {
+            "text": "Yes, if no one is there it is allowed",
+            "is_correct": false
+          }
+        ],
+        "explanation": "The visible traffic situation does not change the meaning of the sign. For pedestrians, this access remains prohibited."
+      },
+      "FR": {
+        "question": "La route semble complètement vide. Un piéton peut-il quand même continuer ?",
+        "choices": [
+          {
+            "text": "Non, le panneau reste valable même si la route semble vide",
+            "is_correct": true
+          },
+          {
+            "text": "Oui, s’il n’y a personne c’est permis",
+            "is_correct": false
+          }
+        ],
+        "explanation": "La situation visible sur la route ne change pas la signification du panneau. Pour les piétons, cet accès reste interdit."
+      },
+      "AR": {
+        "question": "يبدو الطريق خاليًا تمامًا. هل يجوز لمشاة رغم ذلك المتابعة؟",
+        "choices": [
+          {
+            "text": "لا، تبقى العلامة سارية حتى لو بدا الطريق خاليًا",
+            "is_correct": true
+          },
+          {
+            "text": "نعم، إذا لم يكن هناك أحد فهذا مسموح",
+            "is_correct": false
+          }
+        ],
+        "explanation": "الوضع الظاهر على الطريق لا يغيّر معنى العلامة. وبالنسبة للمشاة يبقى هذا المدخل محظورًا."
+      }
+    }
+  },
+  {
+    "question_id": "C19_Q08",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Mag een voetganger deze weg gebruiken als hij alleen een korte doorgang nodig heeft?",
+        "choices": [
+          {
+            "text": "Nee, het bord blijft gelden ook voor een korte doorgang",
+            "is_correct": true
+          },
+          {
+            "text": "Ja, een korte doorgang is toegestaan",
+            "is_correct": false
+          }
+        ],
+        "explanation": "De duur van de doorgang verandert de betekenis van het bord niet. Voor voetgangers blijft deze toegang verboden."
+      },
+      "EN": {
+        "question": "May a pedestrian use this road if only a short passage is needed?",
+        "choices": [
+          {
+            "text": "No, the sign still applies even for a short passage",
+            "is_correct": true
+          },
+          {
+            "text": "Yes, a short passage is allowed",
+            "is_correct": false
+          }
+        ],
+        "explanation": "The length of the passage does not change the meaning of the sign. For pedestrians, this access remains prohibited."
+      },
+      "FR": {
+        "question": "Un piéton peut-il utiliser cette route s’il n’a besoin que d’un court passage ?",
+        "choices": [
+          {
+            "text": "Non, le panneau reste valable même pour un court passage",
+            "is_correct": true
+          },
+          {
+            "text": "Oui, un court passage est autorisé",
+            "is_correct": false
+          }
+        ],
+        "explanation": "La durée du passage ne change pas la signification du panneau. Pour les piétons, cet accès reste interdit."
+      },
+      "AR": {
+        "question": "هل يجوز لمشاة استخدام هذا الطريق إذا كان يحتاج فقط إلى مرور قصير؟",
+        "choices": [
+          {
+            "text": "لا، تبقى العلامة سارية حتى في حالة المرور القصير",
+            "is_correct": true
+          },
+          {
+            "text": "نعم، المرور القصير مسموح",
+            "is_correct": false
+          }
+        ],
+        "explanation": "مدة المرور لا تغيّر معنى العلامة. وبالنسبة للمشاة يبقى هذا المدخل محظورًا."
+      }
+    }
+  }
 ]

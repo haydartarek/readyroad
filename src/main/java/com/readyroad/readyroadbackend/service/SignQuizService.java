@@ -1,5 +1,7 @@
 package com.readyroad.readyroadbackend.service;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.readyroad.readyroadbackend.domain.entity.*;
 import com.readyroad.readyroadbackend.domain.entity.SignPracticeSession.SessionStatus;
 import com.readyroad.readyroadbackend.domain.enums.SignCategory;
@@ -20,6 +22,7 @@ import org.springframework.web.server.ResponseStatusException;
 import java.time.LocalDateTime;
 import java.util.*;
 import java.util.Locale;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 /**
@@ -47,14 +50,51 @@ public class SignQuizService {
         private final SignExamRepository examRepo;
         private final SignPracticeSessionRepository sessionRepo;
         private final SignPracticeAnswerRepository answerRepo;
+        private final SignRandomPracticeSessionRepository randomPracticeSessionRepo;
+        private final SignRandomPracticeQuestionRepository randomPracticeQuestionRepo;
         private final UserRepository userRepo;
         private final UserWeakAreaRepository weakAreaRepo;
         private final UserErrorPatternRepository errorPatternRepo;
         private final SignExamResultRepository signExamResultRepo;
         private final CanonicalSignCatalogService canonicalSignCatalogService;
+        private final RoadSignReferenceTextResolver roadSignReferenceTextResolver;
+        private final NotificationService notificationService;
+        private final ObjectMapper objectMapper;
         // Bridge: sign quiz answers → main dashboard category progress
         private final CategoryRepository categoryRepo;
         private final UserCategoryProgressRepository categoryProgressRepo;
+
+        private static final int RANDOM_PRACTICE_TOTAL = 50;
+        private static final int RANDOM_PRACTICE_EASY = 20;
+        private static final int RANDOM_PRACTICE_MEDIUM = 20;
+        private static final int RANDOM_PRACTICE_HARD = 10;
+        private static final int RANDOM_PRACTICE_PASSING_SCORE = 41;
+        private static final int RANDOM_PRACTICE_COOLDOWN_HOURS = 24;
+
+        private static final Pattern DIRECT_SIGN_CODE_PATTERN = Pattern.compile("^[A-Za-z]+[0-9]+[A-Za-z0-9]*$");
+
+        public record SignPracticeHistoryItem(
+                        Long sessionId,
+                        String signCode,
+                        String nameNl,
+                        String nameEn,
+                        String nameFr,
+                        String nameAr,
+                        String status,
+                        int totalQuestions,
+                        int answeredCount,
+                        int correctAnswers,
+                        int wrongAnswers,
+                        double scorePercentage,
+                        boolean passed,
+                        LocalDateTime startedAt,
+                        LocalDateTime completedAt) {
+        }
+
+        public record SignPracticeHistoryResponse(
+                        int totalSessions,
+                        List<SignPracticeHistoryItem> sessions) {
+        }
 
         // ── 1. Get active signs ──────────────────────────────────────────────────
 
@@ -130,7 +170,7 @@ public class SignQuizService {
 
                 // Map questions to DTOs (no isCorrect)
                 List<SignQuizQuestionDto> questionDtos = shuffled.stream()
-                                .map(SignQuizQuestionDto::from)
+                                .map(question -> SignQuizQuestionDto.from(question, roadSignReferenceTextResolver))
                                 .toList();
 
                 log.info("Started practice session {} for user {} / sign {} ({} questions)",
@@ -189,7 +229,7 @@ public class SignQuizService {
                 }
 
                 // ── Load & validate choice (must belong to the question) ─────────────
-                SignChoice selected = question.getChoices().stream()
+                SignChoice selected = question.getDeliverableChoices().stream()
                                 .filter(c -> c.getId().equals(choiceId))
                                 .findFirst()
                                 .orElseThrow(() -> new ResponseStatusException(
@@ -197,10 +237,13 @@ public class SignQuizService {
                                                 "Choice " + choiceId + " does not belong to question " + questionId));
 
                 // ── Find the correct choice for feedback ─────────────────────────────
-                SignChoice correct = question.getChoices().stream()
+                SignChoice correct = question.getDeliverableChoices().stream()
                                 .filter(c -> Boolean.TRUE.equals(c.getIsCorrect()))
                                 .findFirst()
-                                .orElse(selected); // defensive fallback
+                                .orElseThrow(() -> new ResponseStatusException(
+                                                HttpStatus.INTERNAL_SERVER_ERROR,
+                                                "Question " + questionId
+                                                                + " has no correct choice — data integrity error"));
 
                 boolean isCorrect = Boolean.TRUE.equals(selected.getIsCorrect());
 
@@ -274,21 +317,25 @@ public class SignQuizService {
                                 isCorrect,
 
                                 selected.getId(),
-                                SignQuestionTextSanitizer.sanitizeChoice(questionType, selected.getTextNl()),
-                                SignQuestionTextSanitizer.sanitizeChoice(questionType, selected.getTextEn()),
-                                SignQuestionTextSanitizer.sanitizeChoice(questionType, selected.getTextFr()),
-                                SignQuestionTextSanitizer.sanitizeChoice(questionType, selected.getTextAr()),
+                                sanitizeAndResolveChoice(questionType, TextLanguage.NL, selected.getTextNl()),
+                                sanitizeAndResolveChoice(questionType, TextLanguage.EN, selected.getTextEn()),
+                                sanitizeAndResolveChoice(questionType, TextLanguage.FR, selected.getTextFr()),
+                                sanitizeAndResolveChoice(questionType, TextLanguage.AR, selected.getTextAr()),
 
                                 correct.getId(),
-                                SignQuestionTextSanitizer.sanitizeChoice(questionType, correct.getTextNl()),
-                                SignQuestionTextSanitizer.sanitizeChoice(questionType, correct.getTextEn()),
-                                SignQuestionTextSanitizer.sanitizeChoice(questionType, correct.getTextFr()),
-                                SignQuestionTextSanitizer.sanitizeChoice(questionType, correct.getTextAr()),
+                                sanitizeAndResolveChoice(questionType, TextLanguage.NL, correct.getTextNl()),
+                                sanitizeAndResolveChoice(questionType, TextLanguage.EN, correct.getTextEn()),
+                                sanitizeAndResolveChoice(questionType, TextLanguage.FR, correct.getTextFr()),
+                                sanitizeAndResolveChoice(questionType, TextLanguage.AR, correct.getTextAr()),
 
-                                SignQuestionTextSanitizer.sanitizeExplanation(questionType, question.getExplanationNl()),
-                                SignQuestionTextSanitizer.sanitizeExplanation(questionType, question.getExplanationEn()),
-                                SignQuestionTextSanitizer.sanitizeExplanation(questionType, question.getExplanationFr()),
-                                SignQuestionTextSanitizer.sanitizeExplanation(questionType, question.getExplanationAr()),
+                                sanitizeAndResolveExplanation(questionType, TextLanguage.NL,
+                                                question.getExplanationNl()),
+                                sanitizeAndResolveExplanation(questionType, TextLanguage.EN,
+                                                question.getExplanationEn()),
+                                sanitizeAndResolveExplanation(questionType, TextLanguage.FR,
+                                                question.getExplanationFr()),
+                                sanitizeAndResolveExplanation(questionType, TextLanguage.AR,
+                                                question.getExplanationAr()),
 
                                 (int) answeredCount,
                                 session.getTotalQuestions(),
@@ -317,7 +364,17 @@ public class SignQuizService {
                 // Load answers with question + choice eagerly (JOIN FETCH in repo)
                 List<SignPracticeAnswer> answers = answerRepo.findAllBySessionIdWithDetails(sessionId);
 
-                return SignPracticeResultDto.from(session, answers);
+                return SignPracticeResultDto.from(session, answers, roadSignReferenceTextResolver);
+        }
+
+        @Transactional(readOnly = true)
+        public SignPracticeHistoryResponse getPracticeHistory(Long userId) {
+                List<SignPracticeHistoryItem> sessions = sessionRepo.findAllByUserIdOrderByStartedAtDesc(userId)
+                                .stream()
+                                .map(this::toPracticeHistoryItem)
+                                .toList();
+
+                return new SignPracticeHistoryResponse(sessions.size(), sessions);
         }
 
         // ── 5. Get exam questions (stateless) ────────────────────────────────────
@@ -340,7 +397,8 @@ public class SignQuizService {
 
                 List<SignQuizQuestionDto> questions = new ArrayList<>(
                                 exam.getExamQuestions().stream()
-                                                .map(eq -> SignQuizQuestionDto.from(eq.getQuestion()))
+                                                .map(eq -> SignQuizQuestionDto.from(eq.getQuestion(),
+                                                                roadSignReferenceTextResolver))
                                                 .toList());
                 Collections.shuffle(questions);
 
@@ -353,7 +411,7 @@ public class SignQuizService {
          * Evaluates all submitted exam answers in one request.
          *
          * <p>
-         * Passing rule: {@code correctAnswers >= ceil(linkedCount × 0.8)}
+         * Passing rule: {@code correctAnswers >= exam.passingScore}
          * </p>
          * <p>
          * V11: updates {@code user_weak_areas} for the sign in bulk.
@@ -403,7 +461,7 @@ public class SignQuizService {
                         SignQuestionType questionType = q.getQuestionType();
 
                         // Find correct choice
-                        SignChoice correctChoice = q.getChoices().stream()
+                        SignChoice correctChoice = q.getDeliverableChoices().stream()
                                         .filter(c -> Boolean.TRUE.equals(c.getIsCorrect()))
                                         .findFirst()
                                         .orElse(null);
@@ -414,27 +472,37 @@ public class SignQuizService {
                                                 qId,
                                                 q.getQuestionRef(),
                                                 q.getDifficulty().name(),
-                                                q.getQuestionNl(), q.getQuestionEn(),
-                                                q.getQuestionFr(), q.getQuestionAr(),
+                                                resolveText(TextLanguage.NL, q.getQuestionNl()),
+                                                resolveText(TextLanguage.EN, q.getQuestionEn()),
+                                                resolveText(TextLanguage.FR, q.getQuestionFr()),
+                                                resolveText(TextLanguage.AR, q.getQuestionAr()),
                                                 false, // answered
                                                 null, // isCorrect
                                                 null, // selectedChoiceId
                                                 correctChoice != null ? correctChoice.getId() : null,
-                                                correctChoice != null ? SignQuestionTextSanitizer.sanitizeChoice(questionType, correctChoice.getTextNl()) : null,
-                                                correctChoice != null ? SignQuestionTextSanitizer.sanitizeChoice(questionType, correctChoice.getTextEn()) : null,
-                                                correctChoice != null ? SignQuestionTextSanitizer.sanitizeChoice(questionType, correctChoice.getTextFr()) : null,
-                                                correctChoice != null ? SignQuestionTextSanitizer.sanitizeChoice(questionType, correctChoice.getTextAr()) : null,
-                                                SignQuestionTextSanitizer.sanitizeExplanation(questionType, q.getExplanationNl()),
-                                                SignQuestionTextSanitizer.sanitizeExplanation(questionType, q.getExplanationEn()),
-                                                SignQuestionTextSanitizer.sanitizeExplanation(questionType, q.getExplanationFr()),
-                                                SignQuestionTextSanitizer.sanitizeExplanation(questionType, q.getExplanationAr())));
+                                                correctChoice != null ? sanitizeAndResolveChoice(questionType,
+                                                                TextLanguage.NL, correctChoice.getTextNl()) : null,
+                                                correctChoice != null ? sanitizeAndResolveChoice(questionType,
+                                                                TextLanguage.EN, correctChoice.getTextEn()) : null,
+                                                correctChoice != null ? sanitizeAndResolveChoice(questionType,
+                                                                TextLanguage.FR, correctChoice.getTextFr()) : null,
+                                                correctChoice != null ? sanitizeAndResolveChoice(questionType,
+                                                                TextLanguage.AR, correctChoice.getTextAr()) : null,
+                                                sanitizeAndResolveExplanation(questionType, TextLanguage.NL,
+                                                                q.getExplanationNl()),
+                                                sanitizeAndResolveExplanation(questionType, TextLanguage.EN,
+                                                                q.getExplanationEn()),
+                                                sanitizeAndResolveExplanation(questionType, TextLanguage.FR,
+                                                                q.getExplanationFr()),
+                                                sanitizeAndResolveExplanation(questionType, TextLanguage.AR,
+                                                                q.getExplanationAr())));
                                 continue;
                         }
 
                         answeredCount++;
 
                         // Validate submitted choice belongs to this question
-                        SignChoice selectedChoice = q.getChoices().stream()
+                        SignChoice selectedChoice = q.getDeliverableChoices().stream()
                                         .filter(c -> c.getId().equals(submitted))
                                         .findFirst()
                                         .orElse(null);
@@ -449,24 +517,44 @@ public class SignQuizService {
                                         qId,
                                         q.getQuestionRef(),
                                         q.getDifficulty().name(),
-                                        q.getQuestionNl(), q.getQuestionEn(),
-                                        q.getQuestionFr(), q.getQuestionAr(),
+                                        resolveText(TextLanguage.NL, q.getQuestionNl()),
+                                        resolveText(TextLanguage.EN, q.getQuestionEn()),
+                                        resolveText(TextLanguage.FR, q.getQuestionFr()),
+                                        resolveText(TextLanguage.AR, q.getQuestionAr()),
                                         true, // answered
                                         isCorrect,
                                         submitted,
                                         correctChoice != null ? correctChoice.getId() : null,
-                                        correctChoice != null ? SignQuestionTextSanitizer.sanitizeChoice(questionType, correctChoice.getTextNl()) : null,
-                                        correctChoice != null ? SignQuestionTextSanitizer.sanitizeChoice(questionType, correctChoice.getTextEn()) : null,
-                                        correctChoice != null ? SignQuestionTextSanitizer.sanitizeChoice(questionType, correctChoice.getTextFr()) : null,
-                                        correctChoice != null ? SignQuestionTextSanitizer.sanitizeChoice(questionType, correctChoice.getTextAr()) : null,
-                                        SignQuestionTextSanitizer.sanitizeExplanation(questionType, q.getExplanationNl()),
-                                        SignQuestionTextSanitizer.sanitizeExplanation(questionType, q.getExplanationEn()),
-                                        SignQuestionTextSanitizer.sanitizeExplanation(questionType, q.getExplanationFr()),
-                                        SignQuestionTextSanitizer.sanitizeExplanation(questionType, q.getExplanationAr())));
+                                        correctChoice != null
+                                                        ? sanitizeAndResolveChoice(questionType, TextLanguage.NL,
+                                                                        correctChoice.getTextNl())
+                                                        : null,
+                                        correctChoice != null
+                                                        ? sanitizeAndResolveChoice(questionType, TextLanguage.EN,
+                                                                        correctChoice.getTextEn())
+                                                        : null,
+                                        correctChoice != null
+                                                        ? sanitizeAndResolveChoice(questionType, TextLanguage.FR,
+                                                                        correctChoice.getTextFr())
+                                                        : null,
+                                        correctChoice != null
+                                                        ? sanitizeAndResolveChoice(questionType, TextLanguage.AR,
+                                                                        correctChoice.getTextAr())
+                                                        : null,
+                                        sanitizeAndResolveExplanation(questionType, TextLanguage.NL,
+                                                        q.getExplanationNl()),
+                                        sanitizeAndResolveExplanation(questionType, TextLanguage.EN,
+                                                        q.getExplanationEn()),
+                                        sanitizeAndResolveExplanation(questionType, TextLanguage.FR,
+                                                        q.getExplanationFr()),
+                                        sanitizeAndResolveExplanation(questionType, TextLanguage.AR,
+                                                        q.getExplanationAr())));
                 }
 
                 // ── Passing threshold ─────────────────────────────────────────────────
-                int requiredToPass = (int) Math.ceil(linkedCount * 0.8);
+                int requiredToPass = exam.getPassingScore() != null
+                                ? exam.getPassingScore()
+                                : (int) Math.ceil(linkedCount * 0.8);
                 boolean passed = correctCount >= requiredToPass;
                 double scorePct = linkedCount == 0 ? 0.0
                                 : Math.round(correctCount * 100.0 / linkedCount * 100.0) / 100.0;
@@ -496,12 +584,15 @@ public class SignQuizService {
                         }
                 }
 
+                SignExamResult persistedResult = null;
+
                 // ── Save exam result ──────────────────────────────────────────────────
                 try {
                         SignExamResult result = new SignExamResult();
                         result.setUserId(userId);
                         result.setSignId(sign.getId());
                         result.setSignCode(sign.getSignCode());
+                        result.setExamNumber(examNumber);
                         result.setTotalQuestions(linkedCount);
                         result.setAnsweredCount(answeredCount);
                         result.setCorrectCount(correctCount);
@@ -509,31 +600,129 @@ public class SignQuizService {
                         result.setScorePct(scorePct);
                         result.setPassed(passed);
                         result.setCompletedAt(LocalDateTime.now());
-                        signExamResultRepo.save(result);
+                        result.setQuestionResultsJson(objectMapper.writeValueAsString(results));
+                        persistedResult = signExamResultRepo.save(result);
                         log.info("Saved SignExamResult id={} user={} sign={} passed={}",
-                                        result.getId(), userId, sign.getSignCode(), passed);
+                                        persistedResult.getId(), userId, sign.getSignCode(), passed);
                 } catch (Exception e) {
                         // Non-fatal — log and continue so the user still gets their result
                         log.error("Failed to save SignExamResult for user={} sign={} exam={}: {}",
                                         userId, sign.getSignCode(), examNumber, e.getMessage(), e);
                 }
 
+                if (persistedResult != null) {
+                        try {
+                                if (passed) {
+                                        notificationService.createSignExamPassedNotification(
+                                                        userId,
+                                                        persistedResult.getId(),
+                                                        correctCount,
+                                                        linkedCount);
+                                } else {
+                                        notificationService.createSignExamFailedNotification(
+                                                        userId,
+                                                        persistedResult.getId(),
+                                                        correctCount,
+                                                        linkedCount,
+                                                        Math.max(0, requiredToPass - correctCount));
+                                }
+                        } catch (Exception e) {
+                                log.warn("Failed to create sign-exam notification for result {}: {}",
+                                                persistedResult.getId(), e.getMessage());
+                        }
+                }
+
                 log.info("Exam {}/{} submitted by user {} — {}/{} correct, passed={}",
                                 signCode, examNumber, userId, correctCount, linkedCount, passed);
 
-                return new SignExamResultDto(
-                                sign.getSignCode(),
+                return buildStoredSignExamResultDto(
+                                persistedResult,
+                                sign,
                                 examNumber,
                                 linkedCount,
                                 answeredCount,
-                                linkedCount - answeredCount,
                                 correctCount,
-                                answeredCount - correctCount,
-                                scorePct,
                                 requiredToPass,
+                                scorePct,
                                 passed,
-                                passed ? "PASSED" : "FAILED",
                                 results);
+        }
+
+        // ── 6b. Sign exam history/results ───────────────────────────────────────
+
+        @Transactional(readOnly = true)
+        public SignExamHistoryResponseDto getSignExamHistory(Long userId) {
+                List<SignExamResult> results = signExamResultRepo.findByUserIdOrderByCompletedAtDesc(userId);
+                Map<Long, RoadSign> signsById = roadSignRepo.findAllById(results.stream()
+                                .map(SignExamResult::getSignId)
+                                .filter(Objects::nonNull)
+                                .distinct()
+                                .toList())
+                                .stream()
+                                .collect(Collectors.toMap(RoadSign::getId, sign -> sign));
+
+                List<SignExamHistoryItemDto> items = results.stream()
+                                .map(result -> {
+                                        RoadSign sign = signsById.get(result.getSignId());
+                                        return new SignExamHistoryItemDto(
+                                                        result.getId(),
+                                                        result.getSignCode(),
+                                                        sign != null ? canonicalSignCatalogService.routeCodeFor(sign)
+                                                                        : result.getSignCode(),
+                                                        sign != null ? sign.getImagePath() : null,
+                                                        sign != null ? sign.getNameNl() : null,
+                                                        sign != null ? sign.getNameEn() : null,
+                                                        sign != null ? sign.getNameFr() : null,
+                                                        sign != null ? sign.getNameAr() : null,
+                                                        result.getExamNumber() != null ? result.getExamNumber() : 1,
+                                                        result.getTotalQuestions() != null ? result.getTotalQuestions()
+                                                                        : 0,
+                                                        result.getAnsweredCount() != null ? result.getAnsweredCount()
+                                                                        : 0,
+                                                        result.getCorrectCount() != null ? result.getCorrectCount() : 0,
+                                                        Math.max(0,
+                                                                        (result.getAnsweredCount() != null
+                                                                                        ? result.getAnsweredCount()
+                                                                                        : 0)
+                                                                                        - (result.getCorrectCount() != null
+                                                                                                        ? result.getCorrectCount()
+                                                                                                        : 0)),
+                                                        Math.max(0,
+                                                                        (result.getTotalQuestions() != null
+                                                                                        ? result.getTotalQuestions()
+                                                                                        : 0)
+                                                                                        - (result.getAnsweredCount() != null
+                                                                                                        ? result.getAnsweredCount()
+                                                                                                        : 0)),
+                                                        result.getScorePct() != null ? result.getScorePct() : 0.0,
+                                                        result.getRequiredToPass() != null ? result.getRequiredToPass()
+                                                                        : 0,
+                                                        Boolean.TRUE.equals(result.getPassed()),
+                                                        result.getCompletedAt());
+                                })
+                                .toList();
+
+                return new SignExamHistoryResponseDto(items.size(), items);
+        }
+
+        @Transactional(readOnly = true)
+        public SignExamResultDto getStoredSignExamResult(Long resultId, Long userId) {
+                SignExamResult storedResult = signExamResultRepo.findByIdAndUserId(resultId, userId)
+                                .orElseThrow(() -> new ResponseStatusException(
+                                                HttpStatus.NOT_FOUND, "Sign exam result not found"));
+
+                RoadSign sign = roadSignRepo.findById(storedResult.getSignId()).orElse(null);
+                return buildStoredSignExamResultDto(
+                                storedResult,
+                                sign,
+                                storedResult.getExamNumber() != null ? storedResult.getExamNumber() : 1,
+                                storedResult.getTotalQuestions() != null ? storedResult.getTotalQuestions() : 0,
+                                storedResult.getAnsweredCount() != null ? storedResult.getAnsweredCount() : 0,
+                                storedResult.getCorrectCount() != null ? storedResult.getCorrectCount() : 0,
+                                storedResult.getRequiredToPass() != null ? storedResult.getRequiredToPass() : 0,
+                                storedResult.getScorePct() != null ? storedResult.getScorePct() : 0.0,
+                                Boolean.TRUE.equals(storedResult.getPassed()),
+                                readStoredQuestionResults(storedResult));
         }
 
         // ── 7. User progress for a single sign ──────────────────────────────────
@@ -581,6 +770,7 @@ public class SignQuizService {
                                 ? signExamResultRepo.findBestScorePctByUserIdAndSignCode(userId, code)
                                 : null;
                 int examAttempts = (int) signExamResultRepo.countByUserIdAndSignCode(userId, code);
+                Optional<SignExam> exam1Config = examRepo.findBySignIdAndExamNumberAndIsActiveTrue(signId, 1);
 
                 return new SignUserProgressDto(
                                 signId,
@@ -598,7 +788,66 @@ public class SignQuizService {
                                 examAttempted,
                                 examPassed,
                                 examBest,
-                                examAttempts);
+                                examAttempts,
+                                exam1Config.map(SignExam::getTotalQuestions).orElse(null),
+                                exam1Config.map(SignExam::getPassingScore).orElse(null));
+        }
+
+        private SignExamResultDto buildStoredSignExamResultDto(
+                        SignExamResult storedResult,
+                        RoadSign sign,
+                        int examNumber,
+                        int totalLinked,
+                        int answeredCount,
+                        int correctCount,
+                        int requiredToPass,
+                        double scorePct,
+                        boolean passed,
+                        List<SignExamResultDto.ExamQuestionResult> questionResults) {
+                int unansweredCount = Math.max(0, totalLinked - answeredCount);
+                int wrongCount = Math.max(0, answeredCount - correctCount);
+                String signCode = sign != null ? sign.getSignCode()
+                                : storedResult != null ? storedResult.getSignCode() : null;
+
+                return new SignExamResultDto(
+                                storedResult != null ? storedResult.getId() : null,
+                                signCode,
+                                sign != null ? canonicalSignCatalogService.routeCodeFor(sign) : signCode,
+                                sign != null ? sign.getImagePath() : null,
+                                sign != null ? sign.getNameNl() : null,
+                                sign != null ? sign.getNameEn() : null,
+                                sign != null ? sign.getNameFr() : null,
+                                sign != null ? sign.getNameAr() : null,
+                                examNumber,
+                                storedResult != null ? storedResult.getCompletedAt() : LocalDateTime.now(),
+                                totalLinked,
+                                answeredCount,
+                                unansweredCount,
+                                correctCount,
+                                wrongCount,
+                                scorePct,
+                                requiredToPass,
+                                passed,
+                                passed ? "PASSED" : "FAILED",
+                                questionResults);
+        }
+
+        private List<SignExamResultDto.ExamQuestionResult> readStoredQuestionResults(SignExamResult storedResult) {
+                if (storedResult == null || storedResult.getQuestionResultsJson() == null
+                                || storedResult.getQuestionResultsJson().isBlank()) {
+                        return List.of();
+                }
+
+                try {
+                        return objectMapper.readValue(
+                                        storedResult.getQuestionResultsJson(),
+                                        new TypeReference<List<SignExamResultDto.ExamQuestionResult>>() {
+                                        });
+                } catch (Exception e) {
+                        log.warn("Failed to parse stored sign exam question results for result {}: {}",
+                                        storedResult.getId(), e.getMessage());
+                        return List.of();
+                }
         }
 
         // ── Private helpers ──────────────────────────────────────────────────────
@@ -622,49 +871,51 @@ public class SignQuizService {
          * Reloads question DTOs for an existing session (used when returning an
          * idempotent session response).
          */
-        private List<SignQuizQuestionDto> buildRemainingQuestionDtos(Long signId, Collection<Long> answeredQuestionIds) {
+        private List<SignQuizQuestionDto> buildRemainingQuestionDtos(Long signId,
+                        Collection<Long> answeredQuestionIds) {
                 Set<Long> answeredIds = answeredQuestionIds == null
                                 ? Collections.emptySet()
                                 : new HashSet<>(answeredQuestionIds);
                 List<SignQuestion> qs = questionRepo.findAllBySignIdAndIsActiveTrue(signId);
                 return qs.stream()
                                 .filter(question -> !answeredIds.contains(question.getId()))
-                                .map(SignQuizQuestionDto::from)
+                                .map(question -> SignQuizQuestionDto.from(question, roadSignReferenceTextResolver))
                                 .toList();
         }
 
         private RoadSign findActiveSignOrThrow(String identifier) {
                 return findSignByRouteOrCode(identifier)
                                 .filter(sign -> Boolean.TRUE.equals(sign.getIsActive()))
+                                .filter(canonicalSignCatalogService::isPubliclyAllowed)
                                 .orElseThrow(() -> new ResponseStatusException(
                                                 HttpStatus.NOT_FOUND, "Sign not found: " + identifier));
         }
 
         private Optional<RoadSign> findSignByRouteOrCode(String identifier) {
-                String routeKey = normalizeRouteKey(identifier);
-                if (!routeKey.isBlank()) {
-                        Optional<RoadSign> byRoute = roadSignRepo.findByNormalizedSignCode(routeKey);
-                        if (byRoute.isPresent()) {
-                                return byRoute;
-                        }
-                }
-
-                String raw = identifier == null ? "" : identifier.trim();
+                String raw = RouteCodeNormalizer.resolveLegacyAlias(identifier);
                 if (raw.isBlank()) {
                         return Optional.empty();
                 }
 
-                Optional<RoadSign> byCode = roadSignRepo.findFirstBySignCodeOrderByIdAsc(raw);
-                if (byCode.isPresent()) {
-                        return byCode;
+                Optional<RoadSign> byExactCode = roadSignRepo.findFirstActiveBySignCodeCaseSensitive(raw);
+                if (byExactCode.isPresent()) {
+                        return byExactCode;
                 }
 
-                String upper = raw.toUpperCase(Locale.ROOT);
-                if (!upper.equals(raw)) {
-                        return roadSignRepo.findFirstBySignCodeOrderByIdAsc(upper);
+                if (looksLikeDirectSignCode(raw)) {
+                        return Optional.empty();
                 }
 
-                return Optional.empty();
+                String routeKey = normalizeRouteKey(raw);
+                if (routeKey.isBlank()) {
+                        return Optional.empty();
+                }
+
+                return roadSignRepo.findByNormalizedSignCode(routeKey);
+        }
+
+        private static boolean looksLikeDirectSignCode(String value) {
+                return DIRECT_SIGN_CODE_PATTERN.matcher(value).matches();
         }
 
         private static String normalizeRouteKey(String value) {
@@ -739,92 +990,441 @@ public class SignQuizService {
                                 progress.getAccuracyRate());
         }
 
-        // ── Random Sign Practice (stateless, 50 questions across all signs) ──────
+        // ── Random Sign Practice (persistent 50-question mixed sign exam) ──────
 
-        /**
-         * Returns 50 randomly selected active sign questions (20 EASY + 18 MEDIUM + 12
-         * HARD),
-         * shuffled together. Used by the free-practice endpoint — no session is
-         * created.
-         */
-        @Transactional(readOnly = true)
-        public List<SignQuizQuestionDto> getRandomSignPracticeQuestions() {
-                List<SignQuestion> easy = new ArrayList<>(
-                                questionRepo.findAllActiveForActiveSignsByDifficulty(SignDifficulty.EASY));
-                List<SignQuestion> medium = new ArrayList<>(
-                                questionRepo.findAllActiveForActiveSignsByDifficulty(SignDifficulty.MEDIUM));
-                List<SignQuestion> hard = new ArrayList<>(
-                                questionRepo.findAllActiveForActiveSignsByDifficulty(SignDifficulty.HARD));
+        @Transactional
+        public SignRandomPracticeSessionDto startRandomSignPracticeSession(Long userId) {
+                expireRandomPracticeSessionIfNeeded(userId);
 
-                Collections.shuffle(easy);
-                Collections.shuffle(medium);
-                Collections.shuffle(hard);
-
-                List<SignQuestion> selected = new ArrayList<>();
-                selected.addAll(easy.subList(0, Math.min(20, easy.size())));
-                selected.addAll(medium.subList(0, Math.min(18, medium.size())));
-                selected.addAll(hard.subList(0, Math.min(12, hard.size())));
-                Collections.shuffle(selected);
-
-                return selected.stream().map(SignQuizQuestionDto::from).toList();
-        }
-
-        /**
-         * Evaluates answers for a random sign practice session (stateless — no DB
-         * write).
-         * Passing score: 41 / 50 (Belgian standard).
-         */
-        @Transactional(readOnly = true)
-        public SignRandomPracticeResultDto checkRandomSignPracticeAnswers(
-                        List<SignRandomPracticeAnswerRequest> answers) {
-
-                int correct = 0, wrong = 0, unanswered = 0;
-                List<SignRandomPracticeResultDto.QuestionResult> qResults = new ArrayList<>();
-
-                for (var answer : answers) {
-                        SignQuestion q = questionRepo.findById(answer.questionId())
-                                        .orElseThrow(() -> new ResponseStatusException(
-                                                        HttpStatus.NOT_FOUND,
-                                                        "Question not found: " + answer.questionId()));
-
-                        SignChoice correctChoice = q.getChoices().stream()
-                                        .filter(c -> Boolean.TRUE.equals(c.getIsCorrect()))
-                                        .findFirst()
-                                        .orElse(null);
-
-                        boolean wasTimeout = answer.selectedChoiceId() == null;
-                        boolean isCorrect = !wasTimeout && correctChoice != null
-                                        && correctChoice.getId().equals(answer.selectedChoiceId());
-
-                        if (wasTimeout)
-                                unanswered++;
-                        else if (isCorrect)
-                                correct++;
-                        else
-                                wrong++;
-
-                        qResults.add(new SignRandomPracticeResultDto.QuestionResult(
-                                        q.getId(),
-                                        q.getQuestionNl(), q.getQuestionEn(), q.getQuestionFr(), q.getQuestionAr(),
-                                        answer.selectedChoiceId(),
-                                        correctChoice != null ? correctChoice.getId() : null,
-                                        correctChoice != null ? correctChoice.getTextNl() : null,
-                                        correctChoice != null ? correctChoice.getTextEn() : null,
-                                        correctChoice != null ? correctChoice.getTextFr() : null,
-                                        correctChoice != null ? correctChoice.getTextAr() : null,
-                                        isCorrect, wasTimeout,
-                                        q.getExplanationNl(), q.getExplanationEn(), q.getExplanationFr(),
-                                        q.getExplanationAr(),
-                                        q.getSign() != null ? q.getSign().getSignCode() : null,
-                                        q.getSign() != null ? q.getSign().getImagePath() : null,
-                                        q.getDifficulty() != null ? q.getDifficulty().name() : null));
+                Optional<SignRandomPracticeSession> active = randomPracticeSessionRepo
+                                .findFirstByUser_IdAndStatusOrderByStartedAtDesc(
+                                                userId, SignRandomPracticeSession.SessionStatus.IN_PROGRESS);
+                if (active.isPresent() && !active.get().isExpired()) {
+                        SignRandomPracticeSession session = active.get();
+                        return SignRandomPracticeSessionDto.from(
+                                        session,
+                                        loadRandomPracticeQuestionDtos(session.getId()));
                 }
 
-                int total = answers.size();
-                int passingScore = 41;
-                double pct = total > 0 ? (double) correct / total * 100.0 : 0.0;
+                User user = userRepo.findById(userId)
+                                .orElseThrow(() -> new ResponseStatusException(
+                                                HttpStatus.UNAUTHORIZED, "User not found"));
+
+                LocalDateTime now = LocalDateTime.now();
+                LocalDateTime cooldownCutoff = now.minusHours(RANDOM_PRACTICE_COOLDOWN_HOURS);
+                Set<Long> excludedQuestionIds = new HashSet<>(
+                                randomPracticeQuestionRepo.findDistinctRecentQuestionIdsByUserIdSince(
+                                                userId, cooldownCutoff));
+
+                List<SignQuestion> easyPool = filterEligibleRandomPracticeQuestions(
+                                questionRepo.findAllActiveForActiveSignsByDifficulty(SignDifficulty.EASY),
+                                excludedQuestionIds);
+                List<SignQuestion> mediumPool = filterEligibleRandomPracticeQuestions(
+                                questionRepo.findAllActiveForActiveSignsByDifficulty(SignDifficulty.MEDIUM),
+                                excludedQuestionIds);
+                List<SignQuestion> hardPool = filterEligibleRandomPracticeQuestions(
+                                questionRepo.findAllActiveForActiveSignsByDifficulty(SignDifficulty.HARD),
+                                excludedQuestionIds);
+
+                if (easyPool.size() < RANDOM_PRACTICE_EASY ||
+                                mediumPool.size() < RANDOM_PRACTICE_MEDIUM ||
+                                hardPool.size() < RANDOM_PRACTICE_HARD) {
+                        throw new ResponseStatusException(
+                                        HttpStatus.CONFLICT,
+                                        "Not enough fresh sign questions are available right now. Try again later.");
+                }
+
+                Collections.shuffle(easyPool);
+                Collections.shuffle(mediumPool);
+                Collections.shuffle(hardPool);
+
+                List<SignQuestion> selected = new ArrayList<>(RANDOM_PRACTICE_TOTAL);
+                selected.addAll(easyPool.subList(0, RANDOM_PRACTICE_EASY));
+                selected.addAll(mediumPool.subList(0, RANDOM_PRACTICE_MEDIUM));
+                selected.addAll(hardPool.subList(0, RANDOM_PRACTICE_HARD));
+                Collections.shuffle(selected);
+
+                SignRandomPracticeSession session = new SignRandomPracticeSession();
+                session.setUser(user);
+                session.setTotalQuestions(RANDOM_PRACTICE_TOTAL);
+                session.setPassingScore(RANDOM_PRACTICE_PASSING_SCORE);
+                session.setStatus(SignRandomPracticeSession.SessionStatus.IN_PROGRESS);
+                session.setStartedAt(now);
+                session.setExpiresAt(now.plusHours(RANDOM_PRACTICE_COOLDOWN_HOURS));
+                session = randomPracticeSessionRepo.save(session);
+
+                int order = 1;
+                for (SignQuestion question : selected) {
+                        SignRandomPracticeQuestion row = new SignRandomPracticeQuestion();
+                        row.setSession(session);
+                        row.setQuestion(question);
+                        row.setQuestionOrder(order++);
+                        randomPracticeQuestionRepo.save(row);
+                }
+
+                return SignRandomPracticeSessionDto.from(session, loadRandomPracticeQuestionDtos(session.getId()));
+        }
+
+        @Transactional
+        public SignRandomPracticeResultDto submitRandomSignPracticeAnswers(
+                        Long sessionId,
+                        List<SignRandomPracticeAnswerRequest> answers,
+                        Long userId) {
+                SignRandomPracticeSession session = randomPracticeSessionRepo.findByIdAndUserId(sessionId, userId)
+                                .orElseThrow(() -> new ResponseStatusException(
+                                                HttpStatus.NOT_FOUND, "Random practice session not found"));
+
+                if (session.getStatus() == SignRandomPracticeSession.SessionStatus.COMPLETED) {
+                        return getRandomSignPracticeResult(sessionId, userId);
+                }
+
+                if (session.isExpired()) {
+                        session.setStatus(SignRandomPracticeSession.SessionStatus.EXPIRED);
+                        randomPracticeSessionRepo.save(session);
+                        throw new ResponseStatusException(
+                                        HttpStatus.CONFLICT,
+                                        "This mixed sign exam expired. Start a new one to continue.");
+                }
+
+                List<SignRandomPracticeQuestion> rows = randomPracticeQuestionRepo.findBySessionIdOrderByQuestionOrder(
+                                sessionId);
+                Map<Long, Long> submittedMap = new HashMap<>();
+                for (SignRandomPracticeAnswerRequest answer : answers) {
+                        submittedMap.putIfAbsent(answer.questionId(), answer.selectedChoiceId());
+                }
+
+                int correctCount = 0;
+                int answeredCount = 0;
+                LocalDateTime answeredAt = LocalDateTime.now();
+                Map<String, int[]> signStats = new HashMap<>();
+                Map<String, Category> categoryCache = new HashMap<>();
+
+                for (SignRandomPracticeQuestion row : rows) {
+                        SignQuestion question = row.getQuestion();
+                        question.getDeliverableChoices().stream()
+                                        .filter(c -> Boolean.TRUE.equals(c.getIsCorrect()))
+                                        .findFirst()
+                                        .orElseThrow(() -> new ResponseStatusException(
+                                                        HttpStatus.UNPROCESSABLE_CONTENT,
+                                                        "Question has no correct choice: " + question.getId()));
+
+                        Long submittedChoiceId = submittedMap.get(question.getId());
+                        boolean wasTimeout = submittedChoiceId == null;
+                        SignChoice selectedChoice = null;
+                        if (!wasTimeout) {
+                                selectedChoice = question.getDeliverableChoices().stream()
+                                                .filter(choice -> choice.getId().equals(submittedChoiceId))
+                                                .findFirst()
+                                                .orElseThrow(() -> new ResponseStatusException(
+                                                                HttpStatus.BAD_REQUEST,
+                                                                "Choice " + submittedChoiceId
+                                                                                + " does not belong to question "
+                                                                                + question.getId()));
+                                answeredCount++;
+                        }
+
+                        boolean isCorrect = !wasTimeout && selectedChoice != null
+                                        && Boolean.TRUE.equals(selectedChoice.getIsCorrect());
+                        if (isCorrect) {
+                                correctCount++;
+                        }
+
+                        row.setSelectedChoice(selectedChoice);
+                        row.setIsCorrect(isCorrect);
+                        row.setWasTimeout(wasTimeout);
+                        row.setAnsweredAt(answeredAt);
+
+                        String signCode = question.getSign().getSignCode();
+                        int[] signCounters = signStats.computeIfAbsent(signCode, ignored -> new int[] { 0, 0, 0 });
+                        signCounters[0] += 1;
+                        if (isCorrect) {
+                                signCounters[1] += 1;
+                        } else {
+                                signCounters[2] += 1;
+                        }
+
+                        try {
+                                String catCode = signCategoryToCode(question.getSign().getCategory());
+                                Category category = categoryCache.computeIfAbsent(catCode,
+                                                code -> categoryRepo.findByCode(code).orElse(null));
+                                if (category != null) {
+                                        updateSignCategoryProgress(userId, category, isCorrect);
+                                }
+                        } catch (Exception e) {
+                                log.warn("Dashboard bridge (random sign exam) failed for user={} question={}: {}",
+                                                userId, question.getId(), e.getMessage());
+                        }
+
+                        if (!wasTimeout && !isCorrect) {
+                                try {
+                                        errorPatternRepo.insertSignError(
+                                                        userId,
+                                                        resolveErrorType(question.getSign().getCategory()),
+                                                        question.getId(),
+                                                        signCode);
+                                } catch (Exception e) {
+                                        log.warn("Random sign exam error pattern insert failed for user={} question={}: {}",
+                                                        userId, question.getId(), e.getMessage());
+                                }
+                        }
+                }
+
+                randomPracticeQuestionRepo.saveAll(rows);
+
+                signStats.forEach((signCode, counters) -> {
+                        try {
+                                weakAreaRepo.upsertBySignCode(userId, signCode, counters[0], counters[1], counters[2]);
+                        } catch (Exception e) {
+                                log.warn("Random sign exam weak-area upsert failed for user={} sign={}: {}",
+                                                userId, signCode, e.getMessage());
+                        }
+                });
+
+                int totalQuestions = rows.size();
+                int unanswered = totalQuestions - answeredCount;
+                int wrongAnswers = answeredCount - correctCount;
+                double scorePct = totalQuestions == 0 ? 0.0
+                                : Math.round(correctCount * 10000.0 / totalQuestions) / 100.0;
+                boolean passed = correctCount >= session.getPassingScore();
+
+                session.setAnsweredCount(answeredCount);
+                session.setCorrectCount(correctCount);
+                session.setScorePct(scorePct);
+                session.setPassed(passed);
+                session.setCompletedAt(LocalDateTime.now());
+                session.setStatus(SignRandomPracticeSession.SessionStatus.COMPLETED);
+                randomPracticeSessionRepo.save(session);
+
+                try {
+                        if (passed) {
+                                notificationService.createRandomSignExamPassedNotification(
+                                                userId, session.getId(), correctCount, totalQuestions);
+                        } else {
+                                int pointsShort = session.getPassingScore() - correctCount;
+                                notificationService.createRandomSignExamFailedNotification(
+                                                userId, session.getId(), correctCount, totalQuestions,
+                                                pointsShort);
+                        }
+                } catch (Exception e) {
+                        log.warn("Random sign exam notification failed for session {}: {}", sessionId,
+                                        e.getMessage());
+                }
+
                 return new SignRandomPracticeResultDto(
-                                total, correct, wrong, unanswered, pct, correct >= passingScore, passingScore,
-                                qResults);
+                                session.getId(),
+                                session.getStatus().name(),
+                                session.getStartedAt(),
+                                session.getCompletedAt(),
+                                totalQuestions,
+                                answeredCount,
+                                correctCount,
+                                wrongAnswers,
+                                unanswered,
+                                scorePct,
+                                passed,
+                                session.getPassingScore(),
+                                rows.stream().map(this::toRandomPracticeQuestionResult).toList());
+        }
+
+        @Transactional(readOnly = true)
+        public SignRandomPracticeHistoryResponseDto getRandomSignPracticeHistory(Long userId) {
+                List<SignRandomPracticeHistoryItemDto> sessions = randomPracticeSessionRepo
+                                .findAllByUserIdOrderByStartedAtDesc(userId)
+                                .stream()
+                                .map(this::toRandomPracticeHistoryItem)
+                                .toList();
+                return new SignRandomPracticeHistoryResponseDto(sessions.size(), sessions);
+        }
+
+        @Transactional(readOnly = true)
+        public SignRandomPracticeResultDto getRandomSignPracticeResult(Long sessionId, Long userId) {
+                SignRandomPracticeSession session = randomPracticeSessionRepo.findByIdAndUserId(sessionId, userId)
+                                .orElseThrow(() -> new ResponseStatusException(
+                                                HttpStatus.NOT_FOUND, "Random practice session not found"));
+                List<SignRandomPracticeQuestion> rows = randomPracticeQuestionRepo.findBySessionIdOrderByQuestionOrder(
+                                sessionId);
+                int totalQuestions = rows.size();
+                int answeredCount = session.getAnsweredCount() != null ? session.getAnsweredCount()
+                                : (int) rows.stream().filter(row -> !Boolean.TRUE.equals(row.getWasTimeout())).count();
+                int correctAnswers = session.getCorrectCount() != null ? session.getCorrectCount()
+                                : (int) rows.stream().filter(row -> Boolean.TRUE.equals(row.getIsCorrect())).count();
+                int unanswered = totalQuestions - answeredCount;
+                int wrongAnswers = answeredCount - correctAnswers;
+                double scorePct = session.getScorePct() != null ? session.getScorePct()
+                                : (totalQuestions == 0 ? 0.0
+                                                : Math.round(correctAnswers * 10000.0 / totalQuestions) / 100.0);
+                boolean passed = Boolean.TRUE.equals(session.getPassed());
+
+                return new SignRandomPracticeResultDto(
+                                session.getId(),
+                                session.getStatus().name(),
+                                session.getStartedAt(),
+                                session.getCompletedAt(),
+                                totalQuestions,
+                                answeredCount,
+                                correctAnswers,
+                                wrongAnswers,
+                                unanswered,
+                                scorePct,
+                                passed,
+                                session.getPassingScore(),
+                                rows.stream().map(this::toRandomPracticeQuestionResult).toList());
+        }
+
+        private void expireRandomPracticeSessionIfNeeded(Long userId) {
+                randomPracticeSessionRepo.findFirstByUser_IdAndStatusOrderByStartedAtDesc(
+                                userId, SignRandomPracticeSession.SessionStatus.IN_PROGRESS)
+                                .ifPresent(session -> {
+                                        if (session.isExpired()) {
+                                                session.setStatus(SignRandomPracticeSession.SessionStatus.EXPIRED);
+                                                randomPracticeSessionRepo.save(session);
+                                        }
+                                });
+        }
+
+        private SignPracticeHistoryItem toPracticeHistoryItem(SignPracticeSession session) {
+                int answeredCount = (int) answerRepo.countBySessionId(session.getId());
+                int totalQuestions = session.getTotalQuestions();
+                int correctAnswers = session.getCorrectCount();
+                int wrongAnswers = Math.max(0, answeredCount - correctAnswers);
+                double scorePct = totalQuestions == 0 ? 0.0
+                                : Math.round(correctAnswers * 10000.0 / totalQuestions) / 100.0;
+                boolean passed = session.getStatus() == SessionStatus.COMPLETED && scorePct >= 80.0;
+
+                return new SignPracticeHistoryItem(
+                                session.getId(),
+                                session.getSignCode(),
+                                session.getSign().getNameNl(),
+                                session.getSign().getNameEn(),
+                                session.getSign().getNameFr(),
+                                session.getSign().getNameAr(),
+                                session.getStatus().name(),
+                                totalQuestions,
+                                answeredCount,
+                                correctAnswers,
+                                wrongAnswers,
+                                scorePct,
+                                passed,
+                                session.getStartedAt(),
+                                session.getCompletedAt());
+        }
+
+        private List<SignQuestion> filterEligibleRandomPracticeQuestions(
+                        List<SignQuestion> questions,
+                        Set<Long> excludedQuestionIds) {
+                return new ArrayList<>(questions.stream()
+                                .filter(question -> question.getSign() != null
+                                                && canonicalSignCatalogService.isPubliclyAllowed(question.getSign()))
+                                .filter(question -> !excludedQuestionIds.contains(question.getId()))
+                                .filter(this::hasValidRandomPracticeChoices)
+                                .toList());
+        }
+
+        private boolean hasValidRandomPracticeChoices(SignQuestion question) {
+                long correctChoices = question.getDeliverableChoices().stream()
+                                .filter(choice -> Boolean.TRUE.equals(choice.getIsCorrect()))
+                                .count();
+                int totalChoices = question.getDeliverableChoices().size();
+                return correctChoices == 1
+                                && totalChoices >= 2
+                                && totalChoices <= 3
+                                && (question.getDifficulty() != SignDifficulty.HARD || totalChoices == 2);
+        }
+
+        private List<SignQuizQuestionDto> loadRandomPracticeQuestionDtos(Long sessionId) {
+                return randomPracticeQuestionRepo.findBySessionIdOrderByQuestionOrder(sessionId)
+                                .stream()
+                                .map(SignRandomPracticeQuestion::getQuestion)
+                                .map(question -> SignQuizQuestionDto.from(question, roadSignReferenceTextResolver))
+                                .toList();
+        }
+
+        private SignRandomPracticeHistoryItemDto toRandomPracticeHistoryItem(SignRandomPracticeSession session) {
+                int totalQuestions = session.getTotalQuestions() != null ? session.getTotalQuestions() : 0;
+                int answeredCount = session.getAnsweredCount() != null ? session.getAnsweredCount() : 0;
+                int correctAnswers = session.getCorrectCount() != null ? session.getCorrectCount() : 0;
+                int unanswered = Math.max(0, totalQuestions - answeredCount);
+                int wrongAnswers = Math.max(0, answeredCount - correctAnswers);
+                double scorePct = session.getScorePct() != null ? session.getScorePct() : 0.0;
+                return new SignRandomPracticeHistoryItemDto(
+                                session.getId(),
+                                session.getStatus().name(),
+                                totalQuestions,
+                                answeredCount,
+                                correctAnswers,
+                                wrongAnswers,
+                                unanswered,
+                                scorePct,
+                                Boolean.TRUE.equals(session.getPassed()),
+                                session.getPassingScore(),
+                                session.getStartedAt(),
+                                session.getCompletedAt());
+        }
+
+        private SignRandomPracticeResultDto.QuestionResult toRandomPracticeQuestionResult(
+                        SignRandomPracticeQuestion row) {
+                SignQuestion question = row.getQuestion();
+                SignQuestionType questionType = question.getQuestionType();
+                SignChoice correctChoice = question.getDeliverableChoices().stream()
+                                .filter(choice -> Boolean.TRUE.equals(choice.getIsCorrect()))
+                                .findFirst()
+                                .orElse(null);
+
+                return new SignRandomPracticeResultDto.QuestionResult(
+                                question.getId(),
+                                resolveText(TextLanguage.NL, question.getQuestionNl()),
+                                resolveText(TextLanguage.EN, question.getQuestionEn()),
+                                resolveText(TextLanguage.FR, question.getQuestionFr()),
+                                resolveText(TextLanguage.AR, question.getQuestionAr()),
+                                row.getSelectedChoice() != null ? row.getSelectedChoice().getId() : null,
+                                correctChoice != null ? correctChoice.getId() : null,
+                                correctChoice != null ? sanitizeAndResolveChoice(questionType, TextLanguage.NL,
+                                                correctChoice.getTextNl()) : null,
+                                correctChoice != null ? sanitizeAndResolveChoice(questionType, TextLanguage.EN,
+                                                correctChoice.getTextEn()) : null,
+                                correctChoice != null ? sanitizeAndResolveChoice(questionType, TextLanguage.FR,
+                                                correctChoice.getTextFr()) : null,
+                                correctChoice != null ? sanitizeAndResolveChoice(questionType, TextLanguage.AR,
+                                                correctChoice.getTextAr()) : null,
+                                Boolean.TRUE.equals(row.getIsCorrect()),
+                                Boolean.TRUE.equals(row.getWasTimeout()),
+                                sanitizeAndResolveExplanation(questionType, TextLanguage.NL,
+                                                question.getExplanationNl()),
+                                sanitizeAndResolveExplanation(questionType, TextLanguage.EN,
+                                                question.getExplanationEn()),
+                                sanitizeAndResolveExplanation(questionType, TextLanguage.FR,
+                                                question.getExplanationFr()),
+                                sanitizeAndResolveExplanation(questionType, TextLanguage.AR,
+                                                question.getExplanationAr()),
+                                question.getSign() != null ? question.getSign().getSignCode() : null,
+                                question.getSign() != null ? question.getSign().getImagePath() : null,
+                                question.getDifficulty() != null ? question.getDifficulty().name() : null);
+        }
+
+        private String resolveText(TextLanguage language, String value) {
+                return switch (language) {
+                        case NL -> roadSignReferenceTextResolver.resolveNl(value);
+                        case EN -> roadSignReferenceTextResolver.resolveEn(value);
+                        case FR -> roadSignReferenceTextResolver.resolveFr(value);
+                        case AR -> roadSignReferenceTextResolver.resolveAr(value);
+                };
+        }
+
+        private String sanitizeAndResolveChoice(SignQuestionType questionType, TextLanguage language, String value) {
+                return resolveText(language,
+                                SignQuestionTextSanitizer.sanitizeChoice(questionType, language.name(), value));
+        }
+
+        private String sanitizeAndResolveExplanation(SignQuestionType questionType, TextLanguage language,
+                        String value) {
+                return resolveText(language,
+                                SignQuestionTextSanitizer.sanitizeExplanation(questionType, language.name(), value));
+        }
+
+        private enum TextLanguage {
+                NL,
+                EN,
+                FR,
+                AR
         }
 }

@@ -1,293 +1,246 @@
 -- =============================================================================
--- V146: Enforce canonical mandatory_signs filenames across all D-series signs
--- =============================================================================
--- Root cause:
---   1. D1c row holds "rechts afslaan" data but image was patched to D1c path
---      by V142. The sign_code and canonical image are both wrong for this row.
---   2. D1a-links / D1a-rechts use non-canonical sign_codes (should be D1c / D1d).
---   3. D3a/D3b names have extra parenthetical suffix not present in filenames.
---   4. D4, D4-links, D4-rechts use Dutch-suffix codes vs. canonical D4-straight,
---      D4-left, D4-right as required by the finalized filename set.
---   5. D1b sign_code must become D1b-left (left-turn variant).
---   6. D5, D7, D9a, D9b exist on disk but have no rows in either table.
--- =============================================================================
--- Disk canonical filenames (source of truth):
---   D1a   Verplichting rechtdoor.png
---   D1b   Verplichting links afslaan.png
---   D1b   Verplichting rechts afslaan.png
---   D1c   Verplichting links aanhouden.png
---   D1d   Verplichting rechts aanhouden.png
---   D1e   Verplicht de aangeduide richting te volgen (linksaf).png
---   D1f   Verplicht de aangeduide richting te volgen (rechtsaf).png
---   D3a   Verplicht een van de pijlen te volgen.png
---   D3b   Verplicht een van de pijlen te volgen.png
---   D4    Verplicht linksaf voor voertuigen die gevaarlijke goederen vervoeren.png
---   D4    Verplicht rechtdoor voor voertuigen die gevaarlijke goederen vervoeren.png
---   D4    Verplicht rechts voor voertuigen die gevaarlijke goederen vervoeren.png
---   D5    Verplicht rondgaand verkeer.png
---   D7    Verplicht fietspad.png
---   D9a   Deel van de weg voorbehouden voor voetgangers en fietsers.png
---   D9b   Deel van de weg voorbehouden voor voetgangers en fietsers.png
---   D10   Deel van de weg voorbehouden voor voetgangers en fietsers.png
---   D11   Verplichte weg voor voetgangers.png
+-- V146: Align D-series mandatory signs with disk canonical set (signs_import)
+-- Canonical D codes on disk:
+-- D10, D11, D13, D1a, D1b-links, D1b-rechts, D1c, D1d, D1e, D1f,
+-- D3a, D3b, D4-links, D4-rechtdoor, D4-rechts, D5, D7, D9a
 -- =============================================================================
 
--- =============================================================================
--- SECTION 1: traffic_signs — rename sign_codes, fix images, fix names
--- Order matters to avoid unique-key conflicts during renames.
--- =============================================================================
+SET NAMES utf8mb4;
 
--- Step 1a: D1c (confused row with wrong image) → D1b-right + fix image_path/url
+-- -----------------------------------------------------------------------------
+-- 1) traffic_signs: keep only D codes present in the disk allowlist
+-- -----------------------------------------------------------------------------
+DELETE FROM traffic_signs
+WHERE sign_code LIKE 'D%'
+  AND sign_code NOT IN (
+    'D10','D11','D13','D1a','D1b-links','D1b-rechts','D1c','D1d','D1e','D1f',
+    'D3a','D3b','D4-links','D4-rechtdoor','D4-rechts','D5','D7','D9a'
+  );
+
+-- Enforce canonical NL names and canonical image paths for allowed D rows
 UPDATE traffic_signs
-SET   sign_code              = 'D1b-right',
-      name_nl                = 'Verplichting rechts afslaan',
-      name_en                = 'Mandatory right turn',
-      name_fr                = 'Obligation de tourner à droite',
-      image_url              = 'images/signs/mandatory_signs/D1b Verplichting rechts afslaan.png',
-      image_path             = 'images/signs/mandatory_signs/D1b Verplichting rechts afslaan.png',
-      updated_at             = NOW()
-WHERE sign_code = 'D1c';
+SET name_nl = CASE sign_code
+    WHEN 'D10' THEN 'Deel van de weg voorbehouden voor voetgangers en fietsers'
+    WHEN 'D11' THEN 'Verplichte weg voor voetgangers'
+    WHEN 'D13' THEN 'Verplichte weg voor ruiters'
+    WHEN 'D1a' THEN 'Verplichting rechtdoor'
+    WHEN 'D1b-links' THEN 'Verplichting links afslaan'
+    WHEN 'D1b-rechts' THEN 'Verplichting rechts afslaan'
+    WHEN 'D1c' THEN 'Verplichting links aanhouden'
+    WHEN 'D1d' THEN 'Verplichting rechts aanhouden'
+    WHEN 'D1e' THEN 'Verplicht links afslaan'
+    WHEN 'D1f' THEN 'Verplicht rechts afslaan'
+    WHEN 'D3a' THEN 'Verplicht één van de pijlen te volgen'
+    WHEN 'D3b' THEN 'Verplicht één van de pijlen te volgen'
+    WHEN 'D4-links' THEN 'Verplicht links afslaan gevaarlijke goederen'
+    WHEN 'D4-rechtdoor' THEN 'Verplicht rechtdoor gevaarlijke goederen'
+    WHEN 'D4-rechts' THEN 'Verplicht rechts afslaan gevaarlijke goederen'
+    WHEN 'D5' THEN 'Verplicht rondgaand verkeer'
+    WHEN 'D7' THEN 'Verplicht fietspad'
+    WHEN 'D9a' THEN 'Deel van de weg voorbehouden voor voetgangers en fietsers'
+    ELSE name_nl
+  END,
+  image_url = CASE sign_code
+    WHEN 'D10' THEN 'images/signs/mandatory_signs/D10 Deel van de weg voorbehouden voor voetgangers en fietsers.png'
+    WHEN 'D11' THEN 'images/signs/mandatory_signs/D11 Verplichte weg voor voetgangers.png'
+    WHEN 'D13' THEN 'images/signs/mandatory_signs/D13 Verplichte weg voor ruiters.png'
+    WHEN 'D1a' THEN 'images/signs/mandatory_signs/D1a Verplichting rechtdoor.png'
+    WHEN 'D1b-links' THEN 'images/signs/mandatory_signs/D1b Verplichting links afslaan.png'
+    WHEN 'D1b-rechts' THEN 'images/signs/mandatory_signs/D1b Verplichting rechts afslaan.png'
+    WHEN 'D1c' THEN 'images/signs/mandatory_signs/D1c Verplichting links aanhouden.png'
+    WHEN 'D1d' THEN 'images/signs/mandatory_signs/D1d Verplichting rechts aanhouden.png'
+    WHEN 'D1e' THEN 'images/signs/mandatory_signs/D1e Verplicht links afslaan.png'
+    WHEN 'D1f' THEN 'images/signs/mandatory_signs/D1f Verplicht rechts afslaan.png'
+    WHEN 'D3a' THEN 'images/signs/mandatory_signs/D3a Verplicht één van de pijlen te volgen.png'
+    WHEN 'D3b' THEN 'images/signs/mandatory_signs/D3b Verplicht één van de pijlen te volgen.png'
+    WHEN 'D4-links' THEN 'images/signs/mandatory_signs/D4 Verplicht links afslaan gevaarlijke goederen.png'
+    WHEN 'D4-rechtdoor' THEN 'images/signs/mandatory_signs/D4 Verplicht rechtdoor gevaarlijke goederen.png'
+    WHEN 'D4-rechts' THEN 'images/signs/mandatory_signs/D4 Verplicht rechts afslaan gevaarlijke goederen.png'
+    WHEN 'D5' THEN 'images/signs/mandatory_signs/D5 Verplicht rondgaand verkeer.png'
+    WHEN 'D7' THEN 'images/signs/mandatory_signs/D7 Verplicht fietspad.png'
+    WHEN 'D9a' THEN 'images/signs/mandatory_signs/D9a Deel van de weg voorbehouden voor voetgangers en fietsers.png'
+    ELSE image_url
+  END,
+  image_path = CASE sign_code
+    WHEN 'D10' THEN 'images/signs/mandatory_signs/D10 Deel van de weg voorbehouden voor voetgangers en fietsers.png'
+    WHEN 'D11' THEN 'images/signs/mandatory_signs/D11 Verplichte weg voor voetgangers.png'
+    WHEN 'D13' THEN 'images/signs/mandatory_signs/D13 Verplichte weg voor ruiters.png'
+    WHEN 'D1a' THEN 'images/signs/mandatory_signs/D1a Verplichting rechtdoor.png'
+    WHEN 'D1b-links' THEN 'images/signs/mandatory_signs/D1b Verplichting links afslaan.png'
+    WHEN 'D1b-rechts' THEN 'images/signs/mandatory_signs/D1b Verplichting rechts afslaan.png'
+    WHEN 'D1c' THEN 'images/signs/mandatory_signs/D1c Verplichting links aanhouden.png'
+    WHEN 'D1d' THEN 'images/signs/mandatory_signs/D1d Verplichting rechts aanhouden.png'
+    WHEN 'D1e' THEN 'images/signs/mandatory_signs/D1e Verplicht links afslaan.png'
+    WHEN 'D1f' THEN 'images/signs/mandatory_signs/D1f Verplicht rechts afslaan.png'
+    WHEN 'D3a' THEN 'images/signs/mandatory_signs/D3a Verplicht één van de pijlen te volgen.png'
+    WHEN 'D3b' THEN 'images/signs/mandatory_signs/D3b Verplicht één van de pijlen te volgen.png'
+    WHEN 'D4-links' THEN 'images/signs/mandatory_signs/D4 Verplicht links afslaan gevaarlijke goederen.png'
+    WHEN 'D4-rechtdoor' THEN 'images/signs/mandatory_signs/D4 Verplicht rechtdoor gevaarlijke goederen.png'
+    WHEN 'D4-rechts' THEN 'images/signs/mandatory_signs/D4 Verplicht rechts afslaan gevaarlijke goederen.png'
+    WHEN 'D5' THEN 'images/signs/mandatory_signs/D5 Verplicht rondgaand verkeer.png'
+    WHEN 'D7' THEN 'images/signs/mandatory_signs/D7 Verplicht fietspad.png'
+    WHEN 'D9a' THEN 'images/signs/mandatory_signs/D9a Deel van de weg voorbehouden voor voetgangers en fietsers.png'
+    ELSE image_path
+  END,
+  normalized_sign_code = LOWER(sign_code),
+  updated_at = NOW()
+WHERE sign_code IN (
+  'D10','D11','D13','D1a','D1b-links','D1b-rechts','D1c','D1d','D1e','D1f',
+  'D3a','D3b','D4-links','D4-rechtdoor','D4-rechts','D5','D7','D9a'
+);
 
--- Step 1b: D1a-links → D1c (image was already correct: D1c Verplichting links aanhouden.png)
-UPDATE traffic_signs
-SET   sign_code   = 'D1c',
-      name_nl     = 'Verplichting links aanhouden',
-      name_en     = 'Mandatory keep left',
-      name_fr     = 'Obligation de serrer à gauche',
-      updated_at  = NOW()
-WHERE sign_code = 'D1a-links';
+-- Ensure D5/D7/D9a exist in traffic_signs (historically missing in some datasets)
+INSERT INTO traffic_signs (
+  category_id, sign_code, normalized_sign_code,
+  name_nl, name_en, name_fr, name_ar,
+  description_nl, description_en, description_fr, description_ar,
+  image_url, image_path, is_active, created_at, updated_at
+)
+SELECT (SELECT id FROM categories WHERE code = 'D'),
+       src.sign_code,
+       LOWER(src.sign_code),
+       src.name_nl,
+       src.name_en,
+       src.name_fr,
+       src.name_ar,
+       src.description_nl,
+       src.description_en,
+       src.description_fr,
+       src.description_ar,
+       src.image_path,
+       src.image_path,
+       1,
+       NOW(),
+       NOW()
+FROM (
+  SELECT 'D5' AS sign_code,
+         'Verplicht rondgaand verkeer' AS name_nl,
+         'Mandatory roundabout' AS name_en,
+         'Circulation giratoire obligatoire' AS name_fr,
+         'دوران إلزامي' AS name_ar,
+         'Verplicht rondgaand verkeer.' AS description_nl,
+         'Mandatory roundabout.' AS description_en,
+         'Circulation giratoire obligatoire.' AS description_fr,
+         'دوران إلزامي.' AS description_ar,
+         'images/signs/mandatory_signs/D5 Verplicht rondgaand verkeer.png' AS image_path
+  UNION ALL
+  SELECT 'D7',
+         'Verplicht fietspad',
+         'Mandatory cycle path',
+         'Piste cyclable obligatoire',
+         'مسار دراجات إلزامي',
+         'Verplicht fietspad.',
+         'Mandatory cycle path.',
+         'Piste cyclable obligatoire.',
+         'مسار دراجات إلزامي.',
+         'images/signs/mandatory_signs/D7 Verplicht fietspad.png'
+  UNION ALL
+  SELECT 'D9a',
+         'Deel van de weg voorbehouden voor voetgangers en fietsers',
+         'Part of the road reserved for pedestrians and cyclists',
+         'Partie de la voie réservée aux piétons et aux cyclistes',
+         'جزء من الطريق مخصص للمشاة والدراجين',
+         'Deel van de weg voorbehouden voor voetgangers en fietsers.',
+         'Part of the road reserved for pedestrians and cyclists.',
+         'Partie de la voie réservée aux piétons et aux cyclistes.',
+         'جزء من الطريق مخصص للمشاة والدراجين.',
+         'images/signs/mandatory_signs/D9a Deel van de weg voorbehouden voor voetgangers en fietsers.png'
+) src
+WHERE NOT EXISTS (
+  SELECT 1 FROM traffic_signs t WHERE t.sign_code = src.sign_code
+);
 
--- Step 1c: D1a-rechts → D1d (image was already correct: D1d Verplichting rechts aanhouden.png)
-UPDATE traffic_signs
-SET   sign_code   = 'D1d',
-      name_nl     = 'Verplichting rechts aanhouden',
-      name_en     = 'Mandatory keep right',
-      name_fr     = 'Obligation de serrer à droite',
-      updated_at  = NOW()
-WHERE sign_code = 'D1a-rechts';
+-- -----------------------------------------------------------------------------
+-- 2) road_signs: same disk allowlist cleanup as traffic_signs
+-- -----------------------------------------------------------------------------
+DELETE FROM road_signs
+WHERE sign_code LIKE 'D%'
+  AND sign_code NOT IN (
+    'D10','D11','D13','D1a','D1b-links','D1b-rechts','D1c','D1d','D1e','D1f',
+    'D3a','D3b','D4-links','D4-rechtdoor','D4-rechts','D5','D7','D9a'
+  );
 
--- Step 1d: D1b → D1b-left (left-turn canonical variant)
-UPDATE traffic_signs
-SET   sign_code  = 'D1b-left',
-      updated_at = NOW()
-WHERE sign_code = 'D1b';
-
--- Step 1e: D3a — remove extra parenthetical "(rechtdoor of linksaf)" from name_nl
-UPDATE traffic_signs
-SET   name_nl    = 'Verplicht één van de pijlen te volgen',
-      name_en    = 'Mandatory to follow one of the arrows',
-      name_fr    = 'Obligation de suivre une des flèches',
-      updated_at = NOW()
-WHERE sign_code = 'D3a';
-
--- Step 1f: D3b — remove extra parenthetical "(rechtdoor of rechtsaf)" from name_nl
-UPDATE traffic_signs
-SET   name_nl    = 'Verplicht één van de pijlen te volgen',
-      name_en    = 'Mandatory to follow one of the arrows',
-      name_fr    = 'Obligation de suivre une des flèches',
-      updated_at = NOW()
-WHERE sign_code = 'D3b';
-
--- Step 1g: D4 → D4-straight
-UPDATE traffic_signs
-SET   sign_code  = 'D4-straight',
-      updated_at = NOW()
-WHERE sign_code = 'D4';
-
--- Step 1h: D4-links → D4-left
-UPDATE traffic_signs
-SET   sign_code  = 'D4-left',
-      updated_at = NOW()
-WHERE sign_code = 'D4-links';
-
--- Step 1i: D4-rechts → D4-right
-UPDATE traffic_signs
-SET   sign_code  = 'D4-right',
-      updated_at = NOW()
-WHERE sign_code = 'D4-rechts';
-
--- Step 1j: INSERT missing D5, D7, D9a, D9b into traffic_signs
-INSERT INTO traffic_signs
-  (category_id, sign_code, normalized_sign_code, name_nl, name_en, name_fr, name_ar,
-   description_nl, description_en, description_fr, description_ar,
-   image_url, image_path, is_active, created_at, updated_at)
-VALUES
-  (4, 'D5', 'D5',
-   'Verplicht rondgaand verkeer',
-   'Mandatory roundabout',
-   'Circulation giratoire obligatoire',
-   'دوران إلزامي',
-   'Verplicht rondgaand verkeer. Bestuurders in de rotonde hebben voorrang.',
-   'Mandatory roundabout. Drivers already in the roundabout have priority.',
-   'Circulation giratoire obligatoire. Les conducteurs dans le giratoire ont la priorité.',
-   'دوران إلزامي. يتمتع السائقون في الدوار بحق الأولوية.',
-   'images/signs/mandatory_signs/D5 Verplicht rondgaand verkeer.png',
-   'images/signs/mandatory_signs/D5 Verplicht rondgaand verkeer.png',
-   1, NOW(), NOW()),
-
-  (4, 'D7', 'D7',
-   'Verplicht fietspad',
-   'Mandatory cycle path',
-   'Piste cyclable obligatoire',
-   'مسار دراجات إلزامي',
-   'Verplicht fietspad. Alleen fietsen zijn toegelaten op dit pad.',
-   'Mandatory cycle path. Only bicycles are allowed on this path.',
-   'Piste cyclable obligatoire. Seuls les vélos sont autorisés sur cette piste.',
-   'مسار الدراجات إلزامي. يُسمح فقط للدراجات على هذا المسار.',
-   'images/signs/mandatory_signs/D7 Verplicht fietspad.png',
-   'images/signs/mandatory_signs/D7 Verplicht fietspad.png',
-   1, NOW(), NOW()),
-
-  (4, 'D9a', 'D9a',
-   'Deel van de weg voorbehouden voor voetgangers en fietsers',
-   'Part of the road reserved for pedestrians and cyclists',
-   'Partie de la voie réservée aux piétons et aux cyclistes',
-   'جزء من الطريق مخصص للمشاة والدراجين',
-   'Deel van de weg voorbehouden voor voetgangers (links) en fietsers (rechts).',
-   'Part of the road reserved for pedestrians (left) and cyclists (right).',
-   'Partie de la voie réservée aux piétons (gauche) et aux cyclistes (droite).',
-   'جزء من الطريق مخصص للمشاة (يسار) والدراجين (يمين).',
-   'images/signs/mandatory_signs/D9a Deel van de weg voorbehouden voor voetgangers en fietsers.png',
-   'images/signs/mandatory_signs/D9a Deel van de weg voorbehouden voor voetgangers en fietsers.png',
-   1, NOW(), NOW()),
-
-  (4, 'D9b', 'D9b',
-   'Deel van de weg voorbehouden voor voetgangers en fietsers',
-   'Part of the road reserved for pedestrians and cyclists',
-   'Partie de la voie réservée aux piétons et aux cyclistes',
-   'جزء من الطريق مخصص للمشاة والدراجين',
-   'Deel van de weg voorbehouden voor voetgangers en fietsers (fietser links).',
-   'Part of the road reserved for pedestrians and cyclists (cyclist left).',
-   'Partie de la voie réservée aux piétons et aux cyclistes (cycliste à gauche).',
-   'جزء من الطريق مخصص للمشاة والدراجين (الدراجة على اليسار).',
-   'images/signs/mandatory_signs/D9b Deel van de weg voorbehouden voor voetgangers en fietsers.png',
-   'images/signs/mandatory_signs/D9b Deel van de weg voorbehouden voor voetgangers en fietsers.png',
-   1, NOW(), NOW());
-
--- =============================================================================
--- SECTION 2: road_signs — same renames + normalized_sign_code must stay in sync
--- =============================================================================
-
--- Step 2a: D1c → D1b-right + fix image_path
 UPDATE road_signs
-SET   sign_code              = 'D1b-right',
-      normalized_sign_code   = 'D1b-right',
-      name_nl                = 'Verplichting rechts afslaan',
-      name_en                = 'Mandatory right turn',
-      name_fr                = 'Obligation de tourner à droite',
-      image_path             = 'images/signs/mandatory_signs/D1b Verplichting rechts afslaan.png',
-      updated_at             = NOW()
-WHERE sign_code = 'D1c';
+SET category = 'MANDATORY',
+    serious_violation = 0,
+    name_nl = CASE sign_code
+      WHEN 'D10' THEN 'Deel van de weg voorbehouden voor voetgangers en fietsers'
+      WHEN 'D11' THEN 'Verplichte weg voor voetgangers'
+      WHEN 'D13' THEN 'Verplichte weg voor ruiters'
+      WHEN 'D1a' THEN 'Verplichting rechtdoor'
+      WHEN 'D1b-links' THEN 'Verplichting links afslaan'
+      WHEN 'D1b-rechts' THEN 'Verplichting rechts afslaan'
+      WHEN 'D1c' THEN 'Verplichting links aanhouden'
+      WHEN 'D1d' THEN 'Verplichting rechts aanhouden'
+      WHEN 'D1e' THEN 'Verplicht links afslaan'
+      WHEN 'D1f' THEN 'Verplicht rechts afslaan'
+      WHEN 'D3a' THEN 'Verplicht één van de pijlen te volgen'
+      WHEN 'D3b' THEN 'Verplicht één van de pijlen te volgen'
+      WHEN 'D4-links' THEN 'Verplicht links afslaan gevaarlijke goederen'
+      WHEN 'D4-rechtdoor' THEN 'Verplicht rechtdoor gevaarlijke goederen'
+      WHEN 'D4-rechts' THEN 'Verplicht rechts afslaan gevaarlijke goederen'
+      WHEN 'D5' THEN 'Verplicht rondgaand verkeer'
+      WHEN 'D7' THEN 'Verplicht fietspad'
+      WHEN 'D9a' THEN 'Deel van de weg voorbehouden voor voetgangers en fietsers'
+      ELSE name_nl
+    END,
+    image_path = CASE sign_code
+      WHEN 'D10' THEN 'images/signs/mandatory_signs/D10 Deel van de weg voorbehouden voor voetgangers en fietsers.png'
+      WHEN 'D11' THEN 'images/signs/mandatory_signs/D11 Verplichte weg voor voetgangers.png'
+      WHEN 'D13' THEN 'images/signs/mandatory_signs/D13 Verplichte weg voor ruiters.png'
+      WHEN 'D1a' THEN 'images/signs/mandatory_signs/D1a Verplichting rechtdoor.png'
+      WHEN 'D1b-links' THEN 'images/signs/mandatory_signs/D1b Verplichting links afslaan.png'
+      WHEN 'D1b-rechts' THEN 'images/signs/mandatory_signs/D1b Verplichting rechts afslaan.png'
+      WHEN 'D1c' THEN 'images/signs/mandatory_signs/D1c Verplichting links aanhouden.png'
+      WHEN 'D1d' THEN 'images/signs/mandatory_signs/D1d Verplichting rechts aanhouden.png'
+      WHEN 'D1e' THEN 'images/signs/mandatory_signs/D1e Verplicht links afslaan.png'
+      WHEN 'D1f' THEN 'images/signs/mandatory_signs/D1f Verplicht rechts afslaan.png'
+      WHEN 'D3a' THEN 'images/signs/mandatory_signs/D3a Verplicht één van de pijlen te volgen.png'
+      WHEN 'D3b' THEN 'images/signs/mandatory_signs/D3b Verplicht één van de pijlen te volgen.png'
+      WHEN 'D4-links' THEN 'images/signs/mandatory_signs/D4 Verplicht links afslaan gevaarlijke goederen.png'
+      WHEN 'D4-rechtdoor' THEN 'images/signs/mandatory_signs/D4 Verplicht rechtdoor gevaarlijke goederen.png'
+      WHEN 'D4-rechts' THEN 'images/signs/mandatory_signs/D4 Verplicht rechts afslaan gevaarlijke goederen.png'
+      WHEN 'D5' THEN 'images/signs/mandatory_signs/D5 Verplicht rondgaand verkeer.png'
+      WHEN 'D7' THEN 'images/signs/mandatory_signs/D7 Verplicht fietspad.png'
+      WHEN 'D9a' THEN 'images/signs/mandatory_signs/D9a Deel van de weg voorbehouden voor voetgangers en fietsers.png'
+      ELSE image_path
+    END,
+    normalized_sign_code = LOWER(sign_code),
+    updated_at = NOW()
+WHERE sign_code IN (
+  'D10','D11','D13','D1a','D1b-links','D1b-rechts','D1c','D1d','D1e','D1f',
+  'D3a','D3b','D4-links','D4-rechtdoor','D4-rechts','D5','D7','D9a'
+);
 
--- Step 2b: D1a-links → D1c
-UPDATE road_signs
-SET   sign_code              = 'D1c',
-      normalized_sign_code   = 'D1c',
-      name_nl                = 'Verplichting links aanhouden',
-      name_en                = 'Mandatory keep left',
-      name_fr                = 'Obligation de serrer à gauche',
-      updated_at             = NOW()
-WHERE sign_code = 'D1a-links';
-
--- Step 2c: D1a-rechts → D1d
-UPDATE road_signs
-SET   sign_code              = 'D1d',
-      normalized_sign_code   = 'D1d',
-      name_nl                = 'Verplichting rechts aanhouden',
-      name_en                = 'Mandatory keep right',
-      name_fr                = 'Obligation de serrer à droite',
-      updated_at             = NOW()
-WHERE sign_code = 'D1a-rechts';
-
--- Step 2d: D1b → D1b-left
-UPDATE road_signs
-SET   sign_code              = 'D1b-left',
-      normalized_sign_code   = 'D1b-left',
-      updated_at             = NOW()
-WHERE sign_code = 'D1b';
-
--- Step 2e: D3a name fix
-UPDATE road_signs
-SET   name_nl    = 'Verplicht één van de pijlen te volgen',
-      name_en    = 'Mandatory to follow one of the arrows',
-      name_fr    = 'Obligation de suivre une des flèches',
-      updated_at = NOW()
-WHERE sign_code = 'D3a';
-
--- Step 2f: D3b name fix
-UPDATE road_signs
-SET   name_nl    = 'Verplicht één van de pijlen te volgen',
-      name_en    = 'Mandatory to follow one of the arrows',
-      name_fr    = 'Obligation de suivre une des flèches',
-      updated_at = NOW()
-WHERE sign_code = 'D3b';
-
--- Step 2g: D4 → D4-straight
-UPDATE road_signs
-SET   sign_code              = 'D4-straight',
-      normalized_sign_code   = 'D4-straight',
-      updated_at             = NOW()
-WHERE sign_code = 'D4';
-
--- Step 2h: D4-links → D4-left
-UPDATE road_signs
-SET   sign_code              = 'D4-left',
-      normalized_sign_code   = 'D4-left',
-      updated_at             = NOW()
-WHERE sign_code = 'D4-links';
-
--- Step 2i: D4-rechts → D4-right
-UPDATE road_signs
-SET   sign_code              = 'D4-right',
-      normalized_sign_code   = 'D4-right',
-      updated_at             = NOW()
-WHERE sign_code = 'D4-rechts';
-
--- Step 2j: INSERT missing D5, D7, D9a, D9b into road_signs
-INSERT INTO road_signs
-  (sign_code, normalized_sign_code, category, image_path, serious_violation,
-   name_nl, name_en, name_fr, name_ar,
-   description_nl, description_en, description_fr, description_ar,
-   is_active, created_at, updated_at)
-VALUES
-  ('D5', 'D5', 'MANDATORY',
-   'images/signs/mandatory_signs/D5 Verplicht rondgaand verkeer.png', 0,
-   'Verplicht rondgaand verkeer', 'Mandatory roundabout', 'Circulation giratoire obligatoire', 'دوران إلزامي',
-   'Verplicht rondgaand verkeer. Bestuurders in de rotonde hebben voorrang.',
-   'Mandatory roundabout. Drivers already in the roundabout have priority.',
-   'Circulation giratoire obligatoire. Les conducteurs dans le giratoire ont la priorité.',
-   'دوران إلزامي. يتمتع السائقون في الدوار بحق الأولوية.',
-   1, NOW(), NOW()),
-
-  ('D7', 'D7', 'MANDATORY',
-   'images/signs/mandatory_signs/D7 Verplicht fietspad.png', 0,
-   'Verplicht fietspad', 'Mandatory cycle path', 'Piste cyclable obligatoire', 'مسار دراجات إلزامي',
-   'Verplicht fietspad. Alleen fietsen zijn toegelaten op dit pad.',
-   'Mandatory cycle path. Only bicycles are allowed on this path.',
-   'Piste cyclable obligatoire. Seuls les vélos sont autorisés sur cette piste.',
-   'مسار الدراجات إلزامي. يُسمح فقط للدراجات على هذا المسار.',
-   1, NOW(), NOW()),
-
-  ('D9a', 'D9a', 'MANDATORY',
-   'images/signs/mandatory_signs/D9a Deel van de weg voorbehouden voor voetgangers en fietsers.png', 0,
-   'Deel van de weg voorbehouden voor voetgangers en fietsers',
-   'Part of the road reserved for pedestrians and cyclists',
-   'Partie de la voie réservée aux piétons et aux cyclistes',
-   'جزء من الطريق مخصص للمشاة والدراجين',
-   'Deel van de weg voorbehouden voor voetgangers (links) en fietsers (rechts).',
-   'Part of the road reserved for pedestrians (left) and cyclists (right).',
-   'Partie de la voie réservée aux piétons (gauche) et aux cyclistes (droite).',
-   'جزء من الطريق مخصص للمشاة (يسار) والدراجين (يمين).',
-   1, NOW(), NOW()),
-
-  ('D9b', 'D9b', 'MANDATORY',
-   'images/signs/mandatory_signs/D9b Deel van de weg voorbehouden voor voetgangers en fietsers.png', 0,
-   'Deel van de weg voorbehouden voor voetgangers en fietsers',
-   'Part of the road reserved for pedestrians and cyclists',
-   'Partie de la voie réservée aux piétons et aux cyclistes',
-   'جزء من الطريق مخصص للمشاة والدراجين',
-   'Deel van de weg voorbehouden voor voetgangers en fietsers (fietser links).',
-   'Part of the road reserved for pedestrians and cyclists (cyclist left).',
-   'Partie de la voie réservée aux piétons et aux cyclistes (cycliste à gauche).',
-   'جزء من الطريق مخصص للمشاة والدراجين (الدراجة على اليسار).',
-   1, NOW(), NOW());
+-- Backfill missing road_signs rows for canonical D allowlist from traffic_signs
+INSERT INTO road_signs (
+  sign_code, normalized_sign_code, category,
+  image_path, serious_violation,
+  name_nl, name_en, name_fr, name_ar,
+  description_nl, description_en, description_fr, description_ar,
+  is_active
+)
+SELECT ts.sign_code,
+       LOWER(ts.sign_code),
+       'MANDATORY',
+       COALESCE(NULLIF(ts.image_path, ''), COALESCE(ts.image_url, '')),
+       0,
+       ts.name_nl,
+       ts.name_en,
+       ts.name_fr,
+       ts.name_ar,
+       ts.description_nl,
+       ts.description_en,
+       ts.description_fr,
+       ts.description_ar,
+       ts.is_active
+FROM traffic_signs ts
+WHERE ts.sign_code IN (
+  'D10','D11','D13','D1a','D1b-links','D1b-rechts','D1c','D1d','D1e','D1f',
+  'D3a','D3b','D4-links','D4-rechtdoor','D4-rechts','D5','D7','D9a'
+)
+AND NOT EXISTS (
+  SELECT 1
+  FROM road_signs rs
+  WHERE rs.sign_code = ts.sign_code
+);

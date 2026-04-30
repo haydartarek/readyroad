@@ -5,6 +5,7 @@ import com.readyroad.readyroadbackend.domain.entity.SignPracticeAnswer;
 import com.readyroad.readyroadbackend.domain.entity.SignPracticeSession;
 import com.readyroad.readyroadbackend.domain.entity.SignQuestion;
 import com.readyroad.readyroadbackend.domain.enums.SignQuestionType;
+import com.readyroad.readyroadbackend.service.RoadSignReferenceTextResolver;
 import com.readyroad.readyroadbackend.util.SignQuestionTextSanitizer;
 
 import java.time.LocalDateTime;
@@ -62,12 +63,16 @@ public record SignPracticeResultDto(
             String explanationAr
     ) {
         public static QuestionResultItem from(SignPracticeAnswer a) {
+            return from(a, null);
+        }
+
+        public static QuestionResultItem from(SignPracticeAnswer a, RoadSignReferenceTextResolver resolver) {
             SignQuestion q      = a.getQuestion();
             SignChoice   picked = a.getChoice();
             SignQuestionType questionType = q.getQuestionType();
 
             // Find the correct choice (the one with isCorrect=true)
-            SignChoice correct = q.getChoices().stream()
+            SignChoice correct = q.getDeliverableChoices().stream()
                     .filter(c -> Boolean.TRUE.equals(c.getIsCorrect()))
                     .findFirst()
                     .orElse(picked); // fallback (should never happen)
@@ -76,27 +81,78 @@ public record SignPracticeResultDto(
                     q.getId(),
                     q.getQuestionRef(),
                     q.getDifficulty().name(),
-                    q.getQuestionNl(), q.getQuestionEn(),
-                    q.getQuestionFr(), q.getQuestionAr(),
+                    resolveSanitizedQuestion(resolver, Language.NL, questionType, q.getQuestionNl()),
+                    resolveSanitizedQuestion(resolver, Language.EN, questionType, q.getQuestionEn()),
+                    resolveSanitizedQuestion(resolver, Language.FR, questionType, q.getQuestionFr()),
+                    resolveSanitizedQuestion(resolver, Language.AR, questionType, q.getQuestionAr()),
                     Boolean.TRUE.equals(a.getIsCorrect()),
 
                     picked.getId(),
-                    SignQuestionTextSanitizer.sanitizeChoice(questionType, picked.getTextNl()),
-                    SignQuestionTextSanitizer.sanitizeChoice(questionType, picked.getTextEn()),
-                    SignQuestionTextSanitizer.sanitizeChoice(questionType, picked.getTextFr()),
-                    SignQuestionTextSanitizer.sanitizeChoice(questionType, picked.getTextAr()),
+                    resolveSanitizedChoice(resolver, Language.NL, questionType, picked.getTextNl()),
+                    resolveSanitizedChoice(resolver, Language.EN, questionType, picked.getTextEn()),
+                    resolveSanitizedChoice(resolver, Language.FR, questionType, picked.getTextFr()),
+                    resolveSanitizedChoice(resolver, Language.AR, questionType, picked.getTextAr()),
 
                     correct.getId(),
-                    SignQuestionTextSanitizer.sanitizeChoice(questionType, correct.getTextNl()),
-                    SignQuestionTextSanitizer.sanitizeChoice(questionType, correct.getTextEn()),
-                    SignQuestionTextSanitizer.sanitizeChoice(questionType, correct.getTextFr()),
-                    SignQuestionTextSanitizer.sanitizeChoice(questionType, correct.getTextAr()),
+                    resolveSanitizedChoice(resolver, Language.NL, questionType, correct.getTextNl()),
+                    resolveSanitizedChoice(resolver, Language.EN, questionType, correct.getTextEn()),
+                    resolveSanitizedChoice(resolver, Language.FR, questionType, correct.getTextFr()),
+                    resolveSanitizedChoice(resolver, Language.AR, questionType, correct.getTextAr()),
 
-                    SignQuestionTextSanitizer.sanitizeExplanation(questionType, q.getExplanationNl()),
-                    SignQuestionTextSanitizer.sanitizeExplanation(questionType, q.getExplanationEn()),
-                    SignQuestionTextSanitizer.sanitizeExplanation(questionType, q.getExplanationFr()),
-                    SignQuestionTextSanitizer.sanitizeExplanation(questionType, q.getExplanationAr())
+                    resolveSanitizedExplanation(resolver, Language.NL, questionType, q.getExplanationNl()),
+                    resolveSanitizedExplanation(resolver, Language.EN, questionType, q.getExplanationEn()),
+                    resolveSanitizedExplanation(resolver, Language.FR, questionType, q.getExplanationFr()),
+                    resolveSanitizedExplanation(resolver, Language.AR, questionType, q.getExplanationAr())
             );
+        }
+
+        private static String resolve(
+                RoadSignReferenceTextResolver resolver,
+                Language language,
+                String value) {
+            if (resolver == null) {
+                return value;
+            }
+            return switch (language) {
+                case NL -> resolver.resolveNl(value);
+                case EN -> resolver.resolveEn(value);
+                case FR -> resolver.resolveFr(value);
+                case AR -> resolver.resolveAr(value);
+            };
+        }
+
+        private static String resolveSanitizedChoice(
+                RoadSignReferenceTextResolver resolver,
+                Language language,
+                SignQuestionType questionType,
+                String value) {
+            String sanitized = SignQuestionTextSanitizer.sanitizeChoice(questionType, language.name(), value);
+            return resolve(resolver, language, sanitized);
+        }
+
+        private static String resolveSanitizedQuestion(
+                RoadSignReferenceTextResolver resolver,
+                Language language,
+                SignQuestionType questionType,
+                String value) {
+            String sanitized = SignQuestionTextSanitizer.sanitizeQuestion(questionType, language.name(), value);
+            return resolve(resolver, language, sanitized);
+        }
+
+        private static String resolveSanitizedExplanation(
+                RoadSignReferenceTextResolver resolver,
+                Language language,
+                SignQuestionType questionType,
+                String value) {
+            String sanitized = SignQuestionTextSanitizer.sanitizeExplanation(questionType, language.name(), value);
+            return resolve(resolver, language, sanitized);
+        }
+
+        private enum Language {
+            NL,
+            EN,
+            FR,
+            AR
         }
     }
 
@@ -104,6 +160,13 @@ public record SignPracticeResultDto(
 
     public static SignPracticeResultDto from(SignPracticeSession s,
                                              List<SignPracticeAnswer> answers) {
+        return from(s, answers, null);
+    }
+
+    public static SignPracticeResultDto from(
+            SignPracticeSession s,
+            List<SignPracticeAnswer> answers,
+            RoadSignReferenceTextResolver resolver) {
         int correct = s.getCorrectCount();
         int total   = answers.size();
         double pct  = total == 0 ? 0.0 : (correct * 100.0 / total);
@@ -123,7 +186,7 @@ public record SignPracticeResultDto(
                 pct >= 80.0,
                 s.getStartedAt(),
                 s.getCompletedAt(),
-                answers.stream().map(QuestionResultItem::from).toList()
+                answers.stream().map(answer -> QuestionResultItem.from(answer, resolver)).toList()
         );
     }
 }

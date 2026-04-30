@@ -1,10 +1,602 @@
-﻿[
-  {"question_id":"C23_Q01","type":"WHAT_DOES_IT_MEAN","difficulty":"EASY","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Wat betekent dit verkeersbord?","choices":[{"text":"Verboden toegang voor voertuigen voor het vervoer van zaken","is_correct":true},{"text":"Verboden toegang voor autobussen","is_correct":false},{"text":"Verboden toegang voor voertuigen met gevaarlijke goederen","is_correct":false}],"explanation":"C23 verbiedt vrachtvoertuigen voor goederenvervoer. Autobussen vallen onder C22a en gevaarlijke goederen onder C24."},"EN":{"question":"What does this traffic sign mean?","choices":[{"text":"No entry for goods vehicles","is_correct":true},{"text":"No entry for buses","is_correct":false},{"text":"No entry for vehicles carrying dangerous goods","is_correct":false}],"explanation":"C23 prohibits goods vehicles. Buses fall under C22a and dangerous goods under C24."},"FR":{"question":"Que signifie ce panneau ?","choices":[{"text":"Acces interdit aux vehicules affectes au transport de marchandises","is_correct":true},{"text":"Acces interdit aux autobus","is_correct":false},{"text":"Acces interdit aux vehicules transportant des marchandises dangereuses","is_correct":false}],"explanation":"C23 interdit les vehicules de transport de marchandises. Les autobus relevent du C22a et les marchandises dangereuses du C24."},"AR":{"question":"Ù…Ø§Ø°Ø§ ØªØ¹Ù†ÙŠ Ù„Ø§ÙØªØ© Ø§Ù„Ù…Ø±ÙˆØ± Ù‡Ø°Ù‡ØŸ","choices":[{"text":"Ù…Ù…Ù†ÙˆØ¹ Ø¯Ø®ÙˆÙ„ Ù…Ø±ÙƒØ¨Ø§Øª Ù†Ù‚Ù„ Ø§Ù„Ø¨Ø¶Ø§Ø¦Ø¹","is_correct":true},{"text":"Ù…Ù…Ù†ÙˆØ¹ Ø¯Ø®ÙˆÙ„ Ø§Ù„Ø­Ø§ÙÙ„Ø§Øª","is_correct":false},{"text":"Ù…Ù…Ù†ÙˆØ¹ Ø¯Ø®ÙˆÙ„ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„ØªÙŠ ØªÙ†Ù‚Ù„ Ø¨Ø¶Ø§Ø¦Ø¹ Ø®Ø·Ø±Ø©","is_correct":false}],"explanation":"ØªØ­Ø¸Ø± C23 Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ø´Ø­Ù†. Ø§Ù„Ø­Ø§ÙÙ„Ø§Øª ØªÙ†Ø¯Ø±Ø¬ ØªØ­Øª C22a ÙˆØ§Ù„Ø¨Ø¶Ø§Ø¦Ø¹ Ø§Ù„Ø®Ø·Ø±Ø© ØªØ­Øª C24."}}},
-  {"question_id":"C23_Q02","type":"WHICH_SIGN","difficulty":"EASY","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Tot welke categorie behoort dit bord?","choices":[{"text":"Verbodsborden (C-reeks)","is_correct":true},{"text":"Gevaarsborden (A-reeks)","is_correct":false},{"text":"Gebodsborden (D-reeks)","is_correct":false}],"explanation":"Verbodsborden (C-reeks) zijn rond met rode rand en verbieden bepaalde voertuigen."},"EN":{"question":"To which category does this sign belong?","choices":[{"text":"Prohibition signs (C-series)","is_correct":true},{"text":"Danger signs (A-series)","is_correct":false},{"text":"Mandatory signs (D-series)","is_correct":false}],"explanation":"Prohibition signs (C-series) are round with a red border and prohibit certain vehicles."},"FR":{"question":"A quelle categorie appartient ce panneau ?","choices":[{"text":"Panneaux d interdiction (serie C)","is_correct":true},{"text":"Panneaux de danger (serie A)","is_correct":false},{"text":"Panneaux d obligation (serie D)","is_correct":false}],"explanation":"Les panneaux d interdiction (serie C) sont ronds avec un bord rouge et interdisent certains vehicules."},"AR":{"question":"Ø§Ù„Ù‰ Ø§ÙŠ ÙØ¦Ø© ØªÙ†ØªÙ…ÙŠ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ","choices":[{"text":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø­Ø¸Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© C)","is_correct":true},{"text":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© A)","is_correct":false},{"text":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø§Ù„Ø²Ø§Ù… (Ø§Ù„Ø³Ù„Ø³Ù„Ø© D)","is_correct":false}],"explanation":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø­Ø¸Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© C) Ù…Ø³ØªØ¯ÙŠØ±Ø© Ø°Ø§Øª Ø­Ø¯ Ø§Ø­Ù…Ø± ÙˆØªØ­Ø¸Ø± Ù…Ø±ÙƒØ¨Ø§Øª Ù…Ø¹ÙŠÙ†Ø©."}}},
-  {"question_id":"C23_Q03","type":"HAZARD_IDENTIFICATION","difficulty":"EASY","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Welk type voertuig wordt door C23 verboden?","choices":[{"text":"Voertuigen bestemd voor het beroepsmatig vervoer van goederen","is_correct":true},{"text":"Alle vrachtwagens ongeacht of ze beladen zijn","is_correct":false},{"text":"Personenwagens die ook goederen in de kofferbak vervoeren","is_correct":false}],"explanation":"C23 richt zich op voertuigen waarvan het voornaamste doel het vervoer van goederen is. Lege vrachtwagens zijn ook verboden. Gewone personenwagens met goederen in de kofferbak zijn geen goederenvoertuigen."},"EN":{"question":"Which type of vehicle is prohibited by C23?","choices":[{"text":"Vehicles designed for the professional transport of goods","is_correct":true},{"text":"All lorries regardless of whether they are loaded","is_correct":false},{"text":"Passenger cars that also carry goods in the boot","is_correct":false}],"explanation":"C23 targets vehicles whose primary purpose is the transport of goods. Empty lorries are also prohibited. Ordinary passenger cars with goods in the boot are not goods vehicles."},"FR":{"question":"Quel type de vehicule est interdit par C23 ?","choices":[{"text":"Vehicules destines au transport professionnel de marchandises","is_correct":true},{"text":"Tous les camions qu ils soient charges ou non","is_correct":false},{"text":"Les voitures particulieres qui transportent aussi des marchandises dans le coffre","is_correct":false}],"explanation":"C23 cible les vehicules dont l objectif principal est le transport de marchandises. Les camions vides sont aussi interdits. Les voitures ordinaires avec des marchandises dans le coffre ne sont pas des vehicules de marchandises."},"AR":{"question":"Ù…Ø§ Ù†ÙˆØ¹ Ø§Ù„Ù…Ø±ÙƒØ¨Ø© Ø§Ù„ØªÙŠ ØªØ­Ø¸Ø±Ù‡Ø§ C23ØŸ","choices":[{"text":"Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ù…Ø®ØµØµØ© Ù„Ù„Ù†Ù‚Ù„ Ø§Ù„Ù…Ù‡Ù†ÙŠ Ù„Ù„Ø¨Ø¶Ø§Ø¦Ø¹","is_correct":true},{"text":"Ø¬Ù…ÙŠØ¹ Ø§Ù„Ø´Ø§Ø­Ù†Ø§Øª Ø¨ØºØ¶ Ø§Ù„Ù†Ø¸Ø± Ø¹Ù† ÙƒÙˆÙ†Ù‡Ø§ Ù…Ø­Ù…Ù„Ø©","is_correct":false},{"text":"Ø§Ù„Ø³ÙŠØ§Ø±Ø§Øª Ø§Ù„ØªÙŠ ØªÙ†Ù‚Ù„ Ø§ÙŠØ¶Ø§ Ø¨Ø¶Ø§Ø¦Ø¹ ÙÙŠ ØµÙ†Ø¯ÙˆÙ‚Ù‡Ø§ Ø§Ù„Ø®Ù„ÙÙŠ","is_correct":false}],"explanation":"ØªØ³ØªÙ‡Ø¯Ù C23 Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„ØªÙŠ Ù‡Ø¯ÙÙ‡Ø§ Ø§Ù„Ø§Ø³Ø§Ø³ÙŠ Ù†Ù‚Ù„ Ø§Ù„Ø¨Ø¶Ø§Ø¦Ø¹. Ø§Ù„Ø´Ø§Ø­Ù†Ø§Øª Ø§Ù„ÙØ§Ø±ØºØ© Ø§ÙŠØ¶Ø§ Ù…Ø­Ø¸ÙˆØ±Ø©. Ø§Ù„Ø³ÙŠØ§Ø±Ø§Øª Ø§Ù„Ø¹Ø§Ø¯ÙŠØ© Ø§Ù„ØªÙŠ ØªØ­Ù…Ù„ Ø¨Ø¶Ø§Ø¦Ø¹ ÙÙŠ ØµÙ†Ø¯ÙˆÙ‚ Ø®Ù„ÙÙŠ Ù„ÙŠØ³Øª Ù…Ø±ÙƒØ¨Ø§Øª Ø´Ø­Ù†."}}},
-  {"question_id":"C23_Q04","type":"WHAT_MUST_YOU_DO","difficulty":"MEDIUM","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"U rijdt met een lege bestelwagen en ziet bord C23. Mag u doorrijden?","choices":[{"text":"Nee, C23 verbiedt goederenvoertuigen ongeacht of ze beladen zijn","is_correct":true},{"text":"Ja, een lege bestelwagen vervoert geen goederen en mag doorrijden","is_correct":false},{"text":"Ja, bestelwagens zijn kleiner dan vrachtwagens en vallen niet onder C23","is_correct":false}],"explanation":"C23 kijkt naar het type voertuig, niet naar de lading. Een lege bestelwagen of vrachtwagen is nog steeds een voertuig voor goederenvervoer en is verboden."},"EN":{"question":"You are driving an empty van and see sign C23. May you continue?","choices":[{"text":"No, C23 prohibits goods vehicles regardless of whether they are loaded","is_correct":true},{"text":"Yes, an empty van carries no goods and may continue","is_correct":false},{"text":"Yes, vans are smaller than lorries and do not fall under C23","is_correct":false}],"explanation":"C23 looks at the vehicle type, not the cargo. An empty van or lorry is still a goods vehicle and is prohibited."},"FR":{"question":"Vous conduisez une camionnette vide et voyez le panneau C23. Pouvez-vous continuer ?","choices":[{"text":"Non, C23 interdit les vehicules de marchandises qu ils soient charges ou non","is_correct":true},{"text":"Oui, une camionnette vide ne transporte pas de marchandises et peut continuer","is_correct":false},{"text":"Oui, les camionnettes sont plus petites que les camions et ne relevent pas du C23","is_correct":false}],"explanation":"C23 tient compte du type de vehicule et non du chargement. Une camionnette ou un camion vide reste un vehicule de transport de marchandises et est interdit."},"AR":{"question":"Ø§Ù†Øª ØªÙ‚ÙˆØ¯ Ø´Ø§Ø­Ù†Ø© ØµØºÙŠØ±Ø© ÙØ§Ø±ØºØ© ÙˆØªØ±Ù‰ Ù„Ø§ÙØªØ© C23. Ù‡Ù„ ÙŠØ¬ÙˆØ² Ù„Ùƒ Ø§Ù„Ù…ØªØ§Ø¨Ø¹Ø©ØŸ","choices":[{"text":"Ù„Ø§ØŒ C23 ØªØ­Ø¸Ø± Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ø´Ø­Ù† Ø¨ØºØ¶ Ø§Ù„Ù†Ø¸Ø± Ø¹Ù† ÙƒÙˆÙ†Ù‡Ø§ Ù…Ø­Ù…Ù„Ø©","is_correct":true},{"text":"Ù†Ø¹Ù…ØŒ Ø§Ù„Ø´Ø§Ø­Ù†Ø© Ø§Ù„ØµØºÙŠØ±Ø© Ø§Ù„ÙØ§Ø±ØºØ© Ù„Ø§ ØªÙ†Ù‚Ù„ Ø¨Ø¶Ø§Ø¦Ø¹ ÙˆÙŠØ¬ÙˆØ² Ù„Ù‡Ø§ Ø§Ù„Ù…ØªØ§Ø¨Ø¹Ø©","is_correct":false},{"text":"Ù†Ø¹Ù…ØŒ Ø§Ù„Ø´Ø§Ø­Ù†Ø§Øª Ø§Ù„ØµØºÙŠØ±Ø© Ø§ØµØºØ± Ù…Ù† Ø§Ù„Ø´Ø§Ø­Ù†Ø§Øª Ø§Ù„ÙƒØ¨ÙŠØ±Ø© ÙˆÙ„Ø§ ØªÙ†Ø¯Ø±Ø¬ ØªØ­Øª C23","is_correct":false}],"explanation":"ØªÙ†Ø¸Ø± C23 Ø§Ù„Ù‰ Ù†ÙˆØ¹ Ø§Ù„Ù…Ø±ÙƒØ¨Ø© Ù„Ø§ Ø§Ù„Ù‰ Ø§Ù„Ø´Ø­Ù†Ø©. Ø§Ù„Ø´Ø§Ø­Ù†Ø© Ø§Ù„ØµØºÙŠØ±Ø© Ø§Ùˆ Ø§Ù„ÙƒØ¨ÙŠØ±Ø© Ø§Ù„ÙØ§Ø±ØºØ© Ù„Ø§ ØªØ²Ø§Ù„ Ù…Ø±ÙƒØ¨Ø© Ø´Ø­Ù† ÙˆÙ‡ÙŠ Ù…Ø­Ø¸ÙˆØ±Ø©."}}},
-  {"question_id":"C23_Q05","type":"WHAT_MUST_YOU_DO","difficulty":"MEDIUM","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"U rijdt met een kleine bestelbus voor persoonlijk gebruik (geen beroepsvervoer). Geldt C23 ook voor u?","choices":[{"text":"Nee, een bestelbus voor privÃ©gebruik is geen beroepsmatig goederenvoertuig en valt niet onder C23","is_correct":true},{"text":"Ja, elk voertuig dat meer dan 2 m3 laadruimte heeft valt onder C23","is_correct":false},{"text":"Ja, alle bestelwagens worden automatisch als goederenvoertuig beschouwd","is_correct":false}],"explanation":"C23 verbiedt voertuigen voor het beroepsmatig of commercieel vervoer van goederen. Een bestelbus die privÃ© wordt gebruikt voor niet-commercieel transport valt hier niet onder."},"EN":{"question":"You are driving a small van for personal use (not commercial transport). Does C23 also apply to you?","choices":[{"text":"No, a van for private use is not a commercial goods vehicle and does not fall under C23","is_correct":true},{"text":"Yes, any vehicle with more than 2 m3 of load space falls under C23","is_correct":false},{"text":"Yes, all vans are automatically considered goods vehicles","is_correct":false}],"explanation":"C23 prohibits vehicles for the professional or commercial transport of goods. A van used privately for non-commercial transport does not fall under this."},"FR":{"question":"Vous conduisez un petit fourgon pour usage personnel (pas de transport commercial). C23 s applique-t-il aussi a vous ?","choices":[{"text":"Non, un fourgon pour usage prive n est pas un vehicule utilitaire commercial et ne releve pas du C23","is_correct":true},{"text":"Oui, tout vehicule de plus de 2 m3 d espace de chargement releve du C23","is_correct":false},{"text":"Oui, tous les fourgons sont automatiquement consideres comme des vehicules utilitaires","is_correct":false}],"explanation":"C23 interdit les vehicules pour le transport professionnel ou commercial de marchandises. Un fourgon utilise en prive pour un transport non commercial ne releve pas de cette reglementation."},"AR":{"question":"Ø§Ù†Øª ØªÙ‚ÙˆØ¯ Ø³ÙŠØ§Ø±Ø© ÙØ§Ù† ØµØºÙŠØ±Ø© Ù„Ù„Ø§Ø³ØªØ®Ø¯Ø§Ù… Ø§Ù„Ø´Ø®ØµÙŠ (Ù„ÙŠØ³ Ù†Ù‚Ù„Ø§ ØªØ¬Ø§Ø±ÙŠØ§). Ù‡Ù„ ØªÙ†Ø·Ø¨Ù‚ C23 Ø¹Ù„ÙŠÙƒ Ø§ÙŠØ¶Ø§ØŸ","choices":[{"text":"Ù„Ø§ØŒ Ø³ÙŠØ§Ø±Ø© Ø§Ù„ÙØ§Ù† Ù„Ù„Ø§Ø³ØªØ®Ø¯Ø§Ù… Ø§Ù„Ø®Ø§Øµ Ù„ÙŠØ³Øª Ù…Ø±ÙƒØ¨Ø© Ø´Ø­Ù† ØªØ¬Ø§Ø±ÙŠØ© ÙˆÙ„Ø§ ØªÙ†Ø¯Ø±Ø¬ ØªØ­Øª C23","is_correct":true},{"text":"Ù†Ø¹Ù…ØŒ Ø§ÙŠ Ù…Ø±ÙƒØ¨Ø© Ø¨Ù…Ø³Ø§Ø­Ø© ØªØ­Ù…ÙŠÙ„ Ø§ÙƒØ«Ø± Ù…Ù† 2 Ù…3 ØªÙ†Ø¯Ø±Ø¬ ØªØ­Øª C23","is_correct":false},{"text":"Ù†Ø¹Ù…ØŒ Ø¬Ù…ÙŠØ¹ Ø³ÙŠØ§Ø±Ø§Øª Ø§Ù„ÙØ§Ù† ØªÙØ¹ØªØ¨Ø± ØªÙ„Ù‚Ø§Ø¦ÙŠØ§ Ù…Ø±ÙƒØ¨Ø§Øª Ø´Ø­Ù†","is_correct":false}],"explanation":"ØªØ­Ø¸Ø± C23 Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ù…Ø®ØµØµØ© Ù„Ù„Ù†Ù‚Ù„ Ø§Ù„Ù…Ù‡Ù†ÙŠ Ø§Ùˆ Ø§Ù„ØªØ¬Ø§Ø±ÙŠ Ù„Ù„Ø¨Ø¶Ø§Ø¦Ø¹. Ø³ÙŠØ§Ø±Ø© Ø§Ù„ÙØ§Ù† Ø§Ù„Ù…Ø³ØªØ®Ø¯Ù…Ø© Ø¨Ø´ÙƒÙ„ Ø®Ø§Øµ Ù„Ù„Ù†Ù‚Ù„ ØºÙŠØ± Ø§Ù„ØªØ¬Ø§Ø±ÙŠ Ù„Ø§ ØªÙ†Ø¯Ø±Ø¬ ØªØ­Øª Ù‡Ø°Ø§ Ø§Ù„Ø­ÙƒÙ…."}}},
-  {"question_id":"C23_Q06","type":"WHAT_MUST_YOU_DO","difficulty":"MEDIUM","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Geldt bord C23 ook voor combinaties van vrachtwagen met oplegger?","choices":[{"text":"Ja, een oplegger combinatie is een voertuig voor het vervoer van goederen en valt volledig onder C23","is_correct":true},{"text":"Nee, de oplegger wordt apart beschouwd en valt buiten C23","is_correct":false},{"text":"Alleen als het gecombineerde voertuig langer is dan 18 meter","is_correct":false}],"explanation":"C23 verbiedt goederenvoertuigen als categorie. Een combinatie van trekker en oplegger is een goederenvoertuig en valt volledig onder dit bord."},"EN":{"question":"Does sign C23 also apply to lorry and semi-trailer combinations?","choices":[{"text":"Yes, a semi-trailer combination is a goods vehicle and falls fully under C23","is_correct":true},{"text":"No, the semi-trailer is considered separately and falls outside C23","is_correct":false},{"text":"Only if the combined vehicle is more than 18 metres long","is_correct":false}],"explanation":"C23 prohibits goods vehicles as a category. A tractor and semi-trailer combination is a goods vehicle and falls fully under this sign."},"FR":{"question":"Le panneau C23 s applique-t-il aussi aux ensembles camion-remorque ?","choices":[{"text":"Oui, un ensemble semi-remorque est un vehicule de marchandises et releve entierement du C23","is_correct":true},{"text":"Non, la semi-remorque est consideree separement et ne releve pas du C23","is_correct":false},{"text":"Seulement si l ensemble est plus long de 18 metres","is_correct":false}],"explanation":"C23 interdit les vehicules de marchandises en tant que categorie. Un ensemble tracteur-semi-remorque est un vehicule de marchandises et releve entierement de ce panneau."},"AR":{"question":"Ù‡Ù„ ØªÙ†Ø·Ø¨Ù‚ Ù„Ø§ÙØªØ© C23 Ø§ÙŠØ¶Ø§ Ø¹Ù„Ù‰ ØªØ´ÙƒÙŠÙ„Ø§Øª Ø§Ù„Ø´Ø§Ø­Ù†Ø© Ù…Ø¹ Ø§Ù„Ù…Ù‚Ø·ÙˆØ±Ø©ØŸ","choices":[{"text":"Ù†Ø¹Ù…ØŒ ØªØ´ÙƒÙŠÙ„Ø© Ø§Ù„Ù…Ù‚Ø·ÙˆØ±Ø© Ù…Ø±ÙƒØ¨Ø© Ø´Ø­Ù† ÙˆØªÙ†Ø¯Ø±Ø¬ ÙƒÙ„ÙŠØ§ ØªØ­Øª C23","is_correct":true},{"text":"Ù„Ø§ØŒ Ø§Ù„Ù…Ù‚Ø·ÙˆØ±Ø© ØªÙØ¹ØªØ¨Ø± Ø¨Ø´ÙƒÙ„ Ù…Ù†ÙØµÙ„ ÙˆÙ„Ø§ ØªÙ†Ø¯Ø±Ø¬ ØªØ­Øª C23","is_correct":false},{"text":"ÙÙ‚Ø· Ø§Ø°Ø§ ÙƒØ§Ù†Øª Ø§Ù„Ù…Ø±ÙƒØ¨Ø© Ø§Ù„Ù…Ø¬Ù…Ø¹Ø© Ø§Ø·ÙˆÙ„ Ù…Ù† 18 Ù…ØªØ±Ø§","is_correct":false}],"explanation":"ØªØ­Ø¸Ø± C23 Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ø´Ø­Ù† ÙƒÙØ¦Ø©. ØªØ´ÙƒÙŠÙ„Ø© Ø§Ù„Ø¬Ø±Ø§Ø± ÙˆØ§Ù„Ù…Ù‚Ø·ÙˆØ±Ø© Ù…Ø±ÙƒØ¨Ø© Ø´Ø­Ù† ÙˆØªÙ†Ø¯Ø±Ø¬ ÙƒÙ„ÙŠØ§ ØªØ­Øª Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©."}}},
-  {"question_id":"C23_Q07","type":"IS_IT_ALLOWED","difficulty":"HARD","is_critical":true,"show_sign":true,"i18n":{"NL":{"question":"Mag een vrachtwagenchauffeur de verboden weg gebruiken als zijn GPS de korste route via die weg aangeeft?","choices":[{"text":"Nee, de aanwijzing van een GPS is geen rechtvaardiging voor het negeren van een verbodsbord","is_correct":true},{"text":"Ja, GPS-aanbevelingen overschrijven lokale verbodsborden","is_correct":false}],"explanation":"GPS geeft routesuggesties maar is niet juridisch bindend. Bestuurders zijn zelf verantwoordelijk voor de naleving van de verkeersborden. Dit is een ernstige verkeersovertreding."},"EN":{"question":"May a lorry driver use the prohibited road if their GPS indicates the shortest route via that road?","choices":[{"text":"No, a GPS instruction is not a justification for ignoring a prohibition sign","is_correct":true},{"text":"Yes, GPS recommendations override local prohibition signs","is_correct":false}],"explanation":"GPS provides route suggestions but is not legally binding. Drivers are themselves responsible for complying with traffic signs. This is a serious traffic offence."},"FR":{"question":"Un camionneur peut-il emprunter la route interdite si son GPS indique le chemin le plus court via cette route ?","choices":[{"text":"Non, l indication d un GPS ne justifie pas de negliger un panneau d interdiction","is_correct":true},{"text":"Oui, les recommandations GPS annulent les panneaux d interdiction locaux","is_correct":false}],"explanation":"Le GPS fournit des suggestions de routes mais n est pas juridiquement contraignant. Les conducteurs sont eux-memes responsables du respect des panneaux de signalisation. Il s agit d une infraction grave au code de la route."},"AR":{"question":"Ù‡Ù„ ÙŠØ¬ÙˆØ² Ù„Ø³Ø§Ø¦Ù‚ Ø§Ù„Ø´Ø§Ø­Ù†Ø© Ø§Ø³ØªØ®Ø¯Ø§Ù… Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ù…Ø­Ø¸ÙˆØ± Ø§Ø°Ø§ Ø§Ø´Ø§Ø± Ù†Ø¸Ø§Ù… GPS Ø§Ù„Ø®Ø§Øµ Ø¨Ù‡ Ø§Ù„Ù‰ Ø§Ù‚ØµØ± Ø·Ø±ÙŠÙ‚ Ø¹Ø¨Ø± Ø°Ù„Ùƒ Ø§Ù„Ø·Ø±ÙŠÙ‚ØŸ","choices":[{"text":"Ù„Ø§ØŒ ØªØ¹Ù„ÙŠÙ…Ø§Øª GPS Ù„Ø§ ØªØ¨Ø±Ø± ØªØ¬Ø§Ù‡Ù„ Ù„Ø§ÙØªØ© Ø­Ø¸Ø±","is_correct":true},{"text":"Ù†Ø¹Ù…ØŒ ØªÙˆØµÙŠØ§Øª GPS ØªØªØ¬Ø§ÙˆØ² Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø­Ø¸Ø± Ø§Ù„Ù…Ø­Ù„ÙŠØ©","is_correct":false}],"explanation":"ÙŠÙ‚Ø¯Ù… GPS Ø§Ù‚ØªØ±Ø§Ø­Ø§Øª Ù…Ø³Ø§Ø± Ù„ÙƒÙ†Ù‡ Ù„ÙŠØ³ Ù…Ù„Ø²Ù…Ø§ Ù‚Ø§Ù†ÙˆÙ†ÙŠØ§. Ø§Ù„Ø³Ø§Ø¦Ù‚ÙˆÙ† Ù…Ø³Ø¤ÙˆÙ„ÙˆÙ† Ù‡Ù… Ø§Ù†ÙØ³Ù‡Ù… Ø¹Ù† Ø§Ù„Ø§Ù„ØªØ²Ø§Ù… Ø¨Ù„Ø§ÙØªØ§Øª Ø§Ù„Ù…Ø±ÙˆØ±. Ù‡Ø°Ù‡ Ù…Ø®Ø§Ù„ÙØ© Ù…Ø±ÙˆØ±ÙŠØ© Ø®Ø·ÙŠØ±Ø©."}}},
-  {"question_id":"C23_Q08","type":"IS_IT_ALLOWED","difficulty":"HARD","is_critical":true,"show_sign":true,"i18n":{"NL":{"question":"Mag een leverancier met een vrachtwagen goederen leveren aan een bedrijf op de verboden straat als er geen andere toegang is?","choices":[{"text":"Nee, tenzij de wegbeheerder een specifieke ontheffing heeft verleend","is_correct":true},{"text":"Ja, leveringen zijn altijd toegestaan ongeacht het verbod","is_correct":false}],"explanation":"Verbodsborden zijn absoluut. Zelfs als er geen andere toegang is, mag u de weg niet op zonder ontheffing. De wegbeheerder kan voor specifieke situaties een uitzondering toestaan. Dit is een ernstige verkeersovertreding."},"EN":{"question":"May a supplier with a lorry deliver goods to a business on the prohibited street if there is no other access?","choices":[{"text":"No, unless the road authority has granted a specific exemption","is_correct":true},{"text":"Yes, deliveries are always allowed regardless of the prohibition","is_correct":false}],"explanation":"Prohibition signs are absolute. Even if there is no other access, you may not enter the road without an exemption. The road authority may permit an exception for specific situations. This is a serious traffic offence."},"FR":{"question":"Un fournisseur avec un camion peut-il livrer des marchandises a une entreprise dans la rue interdite s il n y a pas d autre acces ?","choices":[{"text":"Non, sauf si le gestionnaire de la voirie a accorde une derogation specifique","is_correct":true},{"text":"Oui, les livraisons sont toujours autorisees quelle que soit l interdiction","is_correct":false}],"explanation":"Les panneaux d interdiction sont absolus. Meme s il n y a pas d autre acces vous ne pouvez pas emprunter la route sans derogation. Le gestionnaire de la voirie peut autoriser une exception pour des situations specifiques. Il s agit d une infraction grave au code de la route."},"AR":{"question":"Ù‡Ù„ ÙŠØ¬ÙˆØ² Ù„Ù…ÙˆØ±Ø¯ Ø¨Ø´Ø§Ø­Ù†Ø© ØªÙˆØµÙŠÙ„ Ø¨Ø¶Ø§Ø¦Ø¹ Ù„Ø´Ø±ÙƒØ© ÙÙŠ Ø§Ù„Ø´Ø§Ø±Ø¹ Ø§Ù„Ù…Ø­Ø¸ÙˆØ± Ø§Ø°Ø§ Ù„Ù… ØªÙƒÙ† Ù‡Ù†Ø§Ùƒ Ø·Ø±ÙŠÙ‚ ÙˆØµÙˆÙ„ Ø§Ø®Ø±Ù‰ØŸ","choices":[{"text":"Ù„Ø§ØŒ Ù…Ø§ Ù„Ù… ØªÙ…Ù†Ø­ Ø³Ù„Ø·Ø© Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ø³ØªØ«Ù†Ø§Ø¡ Ù…Ø­Ø¯Ø¯Ø§","is_correct":true},{"text":"Ù†Ø¹Ù…ØŒ Ø§Ù„ØªÙˆØµÙŠÙ„Ø§Øª Ù…Ø³Ù…ÙˆØ­Ø© Ø¯Ø§Ø¦Ù…Ø§ Ø¨ØºØ¶ Ø§Ù„Ù†Ø¸Ø± Ø¹Ù† Ø§Ù„Ø­Ø¸Ø±","is_correct":false}],"explanation":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø­Ø¸Ø± Ù…Ø·Ù„Ù‚Ø©. Ø­ØªÙ‰ Ø§Ø°Ø§ Ù„Ù… ØªÙƒÙ† Ù‡Ù†Ø§Ùƒ Ø·Ø±ÙŠÙ‚ ÙˆØµÙˆÙ„ Ø§Ø®Ø±Ù‰ Ù„Ø§ ÙŠØ¬ÙˆØ² Ù„Ùƒ Ø¯Ø®ÙˆÙ„ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø¨Ø¯ÙˆÙ† Ø§Ø³ØªØ«Ù†Ø§Ø¡. Ù‚Ø¯ ØªØ³Ù…Ø­ Ø³Ù„Ø·Ø© Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø¨Ø§Ø³ØªØ«Ù†Ø§Ø¡ Ù„Ø­Ø§Ù„Ø§Øª Ù…Ø­Ø¯Ø¯Ø©. Ù‡Ø°Ù‡ Ù…Ø®Ø§Ù„ÙØ© Ù…Ø±ÙˆØ±ÙŠØ© Ø®Ø·ÙŠØ±Ø©."}}}
+[
+  {
+    "question_id": "C23_Q01",
+    "type": "WHAT_DOES_IT_MEAN",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat betekent dit verkeersbord?",
+        "choices": [
+          {
+            "text": "Verboden toegang voor bestuurders van voertuigen bestemd of gebruikt voor het vervoer van zaken",
+            "is_correct": true
+          },
+          {
+            "text": "Verboden toegang voor bestuurders van autocars",
+            "is_correct": false
+          },
+          {
+            "text": "Verboden toegang voor voertuigen die gevaarlijke goederen vervoeren",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dit bord geeft aan dat bestuurders van voertuigen bestemd of gebruikt voor het vervoer van zaken deze doorgang niet mogen gebruiken."
+      },
+      "EN": {
+        "question": "What does this traffic sign mean?",
+        "choices": [
+          {
+            "text": "No entry for drivers of vehicles intended or used for the transport of goods",
+            "is_correct": true
+          },
+          {
+            "text": "No entry for drivers of coaches",
+            "is_correct": false
+          },
+          {
+            "text": "No entry for vehicles carrying dangerous goods",
+            "is_correct": false
+          }
+        ],
+        "explanation": "This sign indicates that drivers of vehicles intended or used for the transport of goods may not use this access."
+      },
+      "FR": {
+        "question": "Que signifie ce panneau ?",
+        "choices": [
+          {
+            "text": "Accès interdit aux conducteurs de véhicules destinés ou utilisés pour le transport de marchandises",
+            "is_correct": true
+          },
+          {
+            "text": "Accès interdit aux conducteurs d’autocars",
+            "is_correct": false
+          },
+          {
+            "text": "Accès interdit aux véhicules transportant des marchandises dangereuses",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ce panneau indique que les conducteurs de véhicules destinés ou utilisés pour le transport de marchandises ne peuvent pas utiliser cet accès."
+      },
+      "AR": {
+        "question": "ما معنى هذه العلامة المرورية؟",
+        "choices": [
+          {
+            "text": "ممنوع دخول سائقي المركبات المخصصة أو المستخدمة لنقل البضائع",
+            "is_correct": true
+          },
+          {
+            "text": "ممنوع دخول سائقي الحافلات السياحية",
+            "is_correct": false
+          },
+          {
+            "text": "ممنوع دخول المركبات التي تنقل بضائع خطرة",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تعني هذه العلامة أن سائقي المركبات المخصصة أو المستخدمة لنقل البضائع لا يجوز لهم استخدام هذا المدخل."
+      }
+    }
+  },
+  {
+    "question_id": "C23_Q02",
+    "type": "HAZARD_IDENTIFICATION",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Op wie is dit verbod van toepassing?",
+        "choices": [
+          {
+            "text": "Op bestuurders van voertuigen bestemd of gebruikt voor het vervoer van zaken",
+            "is_correct": true
+          },
+          {
+            "text": "Op bestuurders van alle grote voertuigen",
+            "is_correct": false
+          },
+          {
+            "text": "Op alle bestuurders met lading",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Het verbod is specifiek gericht op bestuurders van voertuigen bestemd of gebruikt voor het vervoer van zaken."
+      },
+      "EN": {
+        "question": "To whom does this prohibition apply?",
+        "choices": [
+          {
+            "text": "To drivers of vehicles intended or used for the transport of goods",
+            "is_correct": true
+          },
+          {
+            "text": "To drivers of all large vehicles",
+            "is_correct": false
+          },
+          {
+            "text": "To all drivers carrying cargo",
+            "is_correct": false
+          }
+        ],
+        "explanation": "The prohibition specifically applies to drivers of vehicles intended or used for the transport of goods."
+      },
+      "FR": {
+        "question": "À qui s’applique cette interdiction ?",
+        "choices": [
+          {
+            "text": "Aux conducteurs de véhicules destinés ou utilisés pour le transport de marchandises",
+            "is_correct": true
+          },
+          {
+            "text": "Aux conducteurs de tous les grands véhicules",
+            "is_correct": false
+          },
+          {
+            "text": "À tous les conducteurs transportant une charge",
+            "is_correct": false
+          }
+        ],
+        "explanation": "L’interdiction vise spécifiquement les conducteurs de véhicules destinés ou utilisés pour le transport de marchandises."
+      },
+      "AR": {
+        "question": "على من ينطبق هذا الحظر؟",
+        "choices": [
+          {
+            "text": "على سائقي المركبات المخصصة أو المستخدمة لنقل البضائع",
+            "is_correct": true
+          },
+          {
+            "text": "على سائقي جميع المركبات الكبيرة",
+            "is_correct": false
+          },
+          {
+            "text": "على جميع السائقين الذين يحملون حمولة",
+            "is_correct": false
+          }
+        ],
+        "explanation": "ينطبق هذا الحظر تحديداً على سائقي المركبات المخصصة أو المستخدمة لنقل البضائع."
+      }
+    }
+  },
+  {
+    "question_id": "C23_Q03",
+    "type": "HAZARD_IDENTIFICATION",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Welk voertuig wordt door dit bord geweerd?",
+        "choices": [
+          {
+            "text": "Een voertuig bestemd of gebruikt voor het vervoer van zaken",
+            "is_correct": true
+          },
+          {
+            "text": "Een autocar",
+            "is_correct": false
+          },
+          {
+            "text": "Een gewone personenwagen met bagage",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dit bord weert voertuigen die bestemd of gebruikt zijn voor het vervoer van zaken."
+      },
+      "EN": {
+        "question": "Which vehicle is excluded by this sign?",
+        "choices": [
+          {
+            "text": "A vehicle intended or used for the transport of goods",
+            "is_correct": true
+          },
+          {
+            "text": "A coach",
+            "is_correct": false
+          },
+          {
+            "text": "An ordinary passenger car with luggage",
+            "is_correct": false
+          }
+        ],
+        "explanation": "This sign excludes vehicles intended or used for the transport of goods."
+      },
+      "FR": {
+        "question": "Quel véhicule est écarté par ce panneau ?",
+        "choices": [
+          {
+            "text": "Un véhicule destiné ou utilisé pour le transport de marchandises",
+            "is_correct": true
+          },
+          {
+            "text": "Un autocar",
+            "is_correct": false
+          },
+          {
+            "text": "Une voiture ordinaire avec des bagages",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ce panneau écarte les véhicules destinés ou utilisés pour le transport de marchandises."
+      },
+      "AR": {
+        "question": "أي مركبة تمنعها هذه العلامة؟",
+        "choices": [
+          {
+            "text": "مركبة مخصصة أو مستخدمة لنقل البضائع",
+            "is_correct": true
+          },
+          {
+            "text": "حافلة سياحية",
+            "is_correct": false
+          },
+          {
+            "text": "سيارة ركاب عادية مع أمتعة",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تمنع هذه العلامة المركبات المخصصة أو المستخدمة لنقل البضائع."
+      }
+    }
+  },
+  {
+    "question_id": "C23_Q04",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U bestuurt een voertuig voor goederenvervoer en ziet dit bord. Wat doet u?",
+        "choices": [
+          {
+            "text": "Niet inrijden en een andere route nemen",
+            "is_correct": true
+          },
+          {
+            "text": "Toch inrijden als er weinig verkeer is",
+            "is_correct": false
+          },
+          {
+            "text": "Toch inrijden als de straat breed genoeg lijkt",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Omdat voertuigen voor goederenvervoer onder dit verbod vallen, moet u een andere route kiezen."
+      },
+      "EN": {
+        "question": "You are driving a goods vehicle and see this sign. What should you do?",
+        "choices": [
+          {
+            "text": "Do not enter and take another route",
+            "is_correct": true
+          },
+          {
+            "text": "Enter if there is little traffic",
+            "is_correct": false
+          },
+          {
+            "text": "Enter if the street seems wide enough",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Because goods vehicles are included in this prohibition, you should choose another route."
+      },
+      "FR": {
+        "question": "Vous conduisez un véhicule de transport de marchandises et voyez ce panneau. Que devez-vous faire ?",
+        "choices": [
+          {
+            "text": "Ne pas entrer et prendre un autre itinéraire",
+            "is_correct": true
+          },
+          {
+            "text": "Entrer s’il y a peu de circulation",
+            "is_correct": false
+          },
+          {
+            "text": "Entrer si la rue semble assez large",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Comme les véhicules de transport de marchandises sont visés par cette interdiction, il faut choisir un autre itinéraire."
+      },
+      "AR": {
+        "question": "أنت تقود مركبة لنقل البضائع وترى هذه العلامة. ماذا ينبغي أن تفعل؟",
+        "choices": [
+          {
+            "text": "لا تدخل واختر طريقاً آخر",
+            "is_correct": true
+          },
+          {
+            "text": "ادخل إذا كانت حركة المرور خفيفة",
+            "is_correct": false
+          },
+          {
+            "text": "ادخل إذا بدا الشارع عريضاً بما يكفي",
+            "is_correct": false
+          }
+        ],
+        "explanation": "بما أن مركبات نقل البضائع مشمولة بهذا الحظر، ينبغي اختيار طريق آخر."
+      }
+    }
+  },
+  {
+    "question_id": "C23_Q05",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Uw bestemming ligt vlak achter dit bord. Wat doet u met uw voertuig voor goederenvervoer?",
+        "choices": [
+          {
+            "text": "Een alternatieve route zoeken",
+            "is_correct": true
+          },
+          {
+            "text": "Toch doorgaan omdat het dichtbij is",
+            "is_correct": false
+          },
+          {
+            "text": "Alleen kort doorgaan",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ook als uw bestemming dichtbij ligt, blijft de toegangsbeperking voor voertuigen voor goederenvervoer gelden."
+      },
+      "EN": {
+        "question": "Your destination is just beyond this sign. What do you do with your goods vehicle?",
+        "choices": [
+          {
+            "text": "Find an alternative route",
+            "is_correct": true
+          },
+          {
+            "text": "Continue because it is nearby",
+            "is_correct": false
+          },
+          {
+            "text": "Only continue for a short distance",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Even if your destination is nearby, the access restriction for goods vehicles still applies."
+      },
+      "FR": {
+        "question": "Votre destination se trouve juste après ce panneau. Que faites-vous avec votre véhicule de transport de marchandises ?",
+        "choices": [
+          {
+            "text": "Chercher un autre itinéraire",
+            "is_correct": true
+          },
+          {
+            "text": "Continuer parce que c’est tout près",
+            "is_correct": false
+          },
+          {
+            "text": "Continuer seulement sur une courte distance",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Même si la destination est proche, la restriction d’accès pour les véhicules de transport de marchandises reste valable."
+      },
+      "AR": {
+        "question": "تقع وجهتك مباشرة بعد هذه العلامة. ماذا تفعل بمركبتك المخصصة لنقل البضائع؟",
+        "choices": [
+          {
+            "text": "ابحث عن طريق بديل",
+            "is_correct": true
+          },
+          {
+            "text": "واصل السير لأنها قريبة",
+            "is_correct": false
+          },
+          {
+            "text": "تابع لمسافة قصيرة فقط",
+            "is_correct": false
+          }
+        ],
+        "explanation": "حتى لو كانت وجهتك قريبة، يبقى المنع قائماً على المركبات المخصصة أو المستخدمة لنقل البضائع."
+      }
+    }
+  },
+  {
+    "question_id": "C23_Q06",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Mag een gewone personenwagen deze weg gebruiken ondanks dit bord?",
+        "choices": [
+          {
+            "text": "Ja, het bord richt zich op voertuigen voor goederenvervoer",
+            "is_correct": true
+          },
+          {
+            "text": "Nee, het bord verbiedt alle voertuigen met bagage",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dit bord is gericht op voertuigen bestemd of gebruikt voor het vervoer van zaken. Een gewone personenwagen valt daar niet automatisch onder."
+      },
+      "EN": {
+        "question": "May an ordinary passenger car use this road despite this sign?",
+        "choices": [
+          {
+            "text": "Yes, the sign targets vehicles used for the transport of goods",
+            "is_correct": true
+          },
+          {
+            "text": "No, the sign bans all vehicles carrying luggage",
+            "is_correct": false
+          }
+        ],
+        "explanation": "This sign is aimed at vehicles intended or used for the transport of goods. An ordinary passenger car is not automatically included."
+      },
+      "FR": {
+        "question": "Une voiture particulière peut-elle utiliser cette route malgré ce panneau ?",
+        "choices": [
+          {
+            "text": "Oui, le panneau vise les véhicules destinés ou utilisés pour le transport de marchandises",
+            "is_correct": true
+          },
+          {
+            "text": "Non, le panneau interdit tous les véhicules avec des bagages",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ce panneau vise les véhicules destinés ou utilisés pour le transport de marchandises. Une voiture particulière n’est pas automatiquement comprise."
+      },
+      "AR": {
+        "question": "هل يجوز لسيارة ركاب عادية استعمال هذا الطريق رغم هذه العلامة؟",
+        "choices": [
+          {
+            "text": "نعم، العلامة تستهدف المركبات المخصصة أو المستخدمة لنقل البضائع",
+            "is_correct": true
+          },
+          {
+            "text": "لا، العلامة تحظر جميع المركبات التي تحمل أمتعة",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تستهدف هذه العلامة المركبات المخصصة أو المستخدمة لنقل البضائع. أما سيارة الركاب العادية فلا تندرج تلقائياً ضمنها."
+      }
+    }
+  },
+  {
+    "question_id": "C23_Q07",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "De weg lijkt volledig leeg. Mag een bestuurder van een voertuig voor goederenvervoer toch inrijden?",
+        "choices": [
+          {
+            "text": "Nee, het bord blijft gelden ook als de weg leeg lijkt",
+            "is_correct": true
+          },
+          {
+            "text": "Ja, als er geen verkeer is mag het",
+            "is_correct": false
+          }
+        ],
+        "explanation": "De zichtbare verkeerssituatie verandert de betekenis van het bord niet. Voor voertuigen voor goederenvervoer blijft deze toegang verboden."
+      },
+      "EN": {
+        "question": "The road looks completely empty. May the driver of a goods vehicle still enter?",
+        "choices": [
+          {
+            "text": "No, the sign still applies even if the road looks empty",
+            "is_correct": true
+          },
+          {
+            "text": "Yes, if there is no traffic it is allowed",
+            "is_correct": false
+          }
+        ],
+        "explanation": "The visible traffic situation does not change the meaning of the sign. For goods vehicles, this access remains prohibited."
+      },
+      "FR": {
+        "question": "La route semble complètement vide. Un conducteur de véhicule de transport de marchandises peut-il quand même entrer ?",
+        "choices": [
+          {
+            "text": "Non, le panneau reste valable même si la route semble vide",
+            "is_correct": true
+          },
+          {
+            "text": "Oui, s’il n’y a pas de circulation c’est permis",
+            "is_correct": false
+          }
+        ],
+        "explanation": "La situation visible sur la route ne change pas la signification du panneau. Pour les véhicules de transport de marchandises, cet accès reste interdit."
+      },
+      "AR": {
+        "question": "يبدو الطريق خالياً تماماً. هل يجوز لسائق مركبة مخصصة لنقل البضائع رغم ذلك الدخول؟",
+        "choices": [
+          {
+            "text": "لا، تبقى العلامة سارية حتى لو بدا الطريق خالياً",
+            "is_correct": true
+          },
+          {
+            "text": "نعم، إذا لم تكن هناك حركة مرور فهذا مسموح",
+            "is_correct": false
+          }
+        ],
+        "explanation": "الوضع الظاهر على الطريق لا يغيّر معنى العلامة. وبالنسبة لمركبات نقل البضائع يبقى هذا المدخل محظوراً."
+      }
+    }
+  },
+  {
+    "question_id": "C23_Q08",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Mag een bestuurder van een voertuig voor goederenvervoer deze weg gebruiken als hij alleen een korte doorgang nodig heeft?",
+        "choices": [
+          {
+            "text": "Nee, het bord blijft gelden ook voor een korte doorgang",
+            "is_correct": true
+          },
+          {
+            "text": "Ja, een korte doorgang is toegestaan",
+            "is_correct": false
+          }
+        ],
+        "explanation": "De duur van de doorgang verandert de betekenis van het bord niet. Voor voertuigen voor goederenvervoer blijft deze toegang verboden."
+      },
+      "EN": {
+        "question": "May the driver of a goods vehicle use this road if only a short passage is needed?",
+        "choices": [
+          {
+            "text": "No, the sign still applies even for a short passage",
+            "is_correct": true
+          },
+          {
+            "text": "Yes, a short passage is allowed",
+            "is_correct": false
+          }
+        ],
+        "explanation": "The length of the passage does not change the meaning of the sign. For goods vehicles, this access remains prohibited."
+      },
+      "FR": {
+        "question": "Un conducteur de véhicule de transport de marchandises peut-il utiliser cette route s’il n’a besoin que d’un court passage ?",
+        "choices": [
+          {
+            "text": "Non, le panneau reste valable même pour un court passage",
+            "is_correct": true
+          },
+          {
+            "text": "Oui, un court passage est autorisé",
+            "is_correct": false
+          }
+        ],
+        "explanation": "La durée du passage ne change pas la signification du panneau. Pour les véhicules de transport de marchandises, cet accès reste interdit."
+      },
+      "AR": {
+        "question": "هل يجوز لسائق مركبة مخصصة لنقل البضائع استخدام هذا الطريق إذا كان يحتاج فقط إلى مرور قصير؟",
+        "choices": [
+          {
+            "text": "لا، تبقى العلامة سارية حتى في حالة المرور القصير",
+            "is_correct": true
+          },
+          {
+            "text": "نعم، المرور القصير مسموح",
+            "is_correct": false
+          }
+        ],
+        "explanation": "مدة المرور لا تغيّر معنى العلامة. وبالنسبة للمركبات المخصصة أو المستخدمة لنقل البضائع يبقى هذا المدخل محظوراً."
+      }
+    }
+  }
 ]

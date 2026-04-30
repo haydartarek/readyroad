@@ -1,4 +1,4 @@
-﻿[
+[
   {
     "question_id": "A11_Q01",
     "type": "WHAT_DOES_IT_MEAN",
@@ -9,7 +9,7 @@
       "NL": {
         "question": "Wat betekent dit verkeersbord?",
         "choices": [
-          { "text": "Uitweg op kaai of oever", "is_correct": true },
+          { "text": "Uitweg op een kaai of oever", "is_correct": true },
           { "text": "Beweegbare brug", "is_correct": false },
           { "text": "Kade of waterloop", "is_correct": false }
         ],
@@ -18,29 +18,32 @@
       "EN": {
         "question": "What does this traffic sign mean?",
         "choices": [
-          { "text": "Exit to quay or embankment", "is_correct": true },
+          {
+            "text": "Quay or riverbank ahead",
+            "is_correct": true
+          },
           { "text": "Movable bridge", "is_correct": false },
           { "text": "Quay or waterway", "is_correct": false }
         ],
-        "explanation": "This sign warns that the road exits onto a quay or embankment. There is a risk of driving into the water."
+        "explanation": "This sign warns that the road leads to a quay or riverbank. There is a real risk of driving into the water."
       },
       "FR": {
         "question": "Que signifie ce panneau de signalisation ?",
         "choices": [
-          { "text": "Sortie sur quai ou berge", "is_correct": true },
+          { "text": "Quai ou berge", "is_correct": true },
           { "text": "Pont mobile", "is_correct": false },
           { "text": "Quai ou cours d'eau", "is_correct": false }
         ],
-        "explanation": "Ce panneau avertit que la route dÃ©bouche sur un quai ou une berge. Il existe un risque de tomber dans l'eau."
+        "explanation": "Ce panneau avertit que la route débouche sur un quai ou une berge. Il existe un risque de tomber dans l'eau."
       },
       "AR": {
-        "question": "Ù…Ø§Ø°Ø§ ØªØ¹Ù†ÙŠ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ",
+        "question": "ما معنى هذه العلامة المرورية؟",
         "choices": [
-          { "text": "Ù…Ø®Ø±Ø¬ Ø¹Ù„Ù‰ Ø±ØµÙŠÙ Ø£Ùˆ Ø¶ÙØ©", "is_correct": true },
-          { "text": "Ø¬Ø³Ø± Ù…ØªØ­Ø±Ùƒ", "is_correct": false },
-          { "text": "Ø±ØµÙŠÙ Ø£Ùˆ Ù…Ø¬Ø±Ù‰ Ù…Ø§Ø¦ÙŠ", "is_correct": false }
+          { "text": "نهاية الطريق عند رصيف أو ضفة", "is_correct": true },
+          { "text": "جسر متحرك", "is_correct": false },
+          { "text": "رصيف أو مجرى مائي", "is_correct": false }
         ],
-        "explanation": "ØªØ­Ø°Ø± Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ© Ù…Ù† Ø£Ù† Ø§Ù„Ø·Ø±ÙŠÙ‚ ÙŠÙ†ØªÙ‡ÙŠ Ø¹Ù†Ø¯ Ø±ØµÙŠÙ Ø£Ùˆ Ø¶ÙØ©. ÙŠÙˆØ¬Ø¯ Ø®Ø·Ø± Ø§Ù„Ø³Ù‚ÙˆØ· ÙÙŠ Ø§Ù„Ù…Ø§Ø¡."
+        "explanation": "تحذر هذه العلامة من أن الطريق ينتهي عند رصيف أو ضفة، ويوجد خطر حقيقي بالسقوط في الماء."
       }
     }
   },
@@ -54,38 +57,38 @@
       "NL": {
         "question": "Tot welke categorie verkeerstekens behoort dit bord?",
         "choices": [
-          { "text": "Gevaarsborden (A-reeks)", "is_correct": true },
-          { "text": "Voorrangsborden (B-reeks)", "is_correct": false },
-          { "text": "Verbodsborden (C-reeks)", "is_correct": false }
+          { "text": "Gevaarsborden", "is_correct": true },
+          { "text": "Voorrangsborden", "is_correct": false },
+          { "text": "Verbodsborden", "is_correct": false }
         ],
-        "explanation": "Dit bord behoort tot de gevaarsborden (A-reeks). Alle gevaarsborden zijn driehoekig met een rode rand op een witte achtergrond."
+        "explanation": "Dit bord behoort tot de gevaarsborden. Alle gevaarsborden zijn driehoekig met een rode rand op een witte achtergrond."
       },
       "EN": {
         "question": "To which category of traffic signs does this sign belong?",
         "choices": [
-          { "text": "Danger signs (A-series)", "is_correct": true },
-          { "text": "Priority signs (B-series)", "is_correct": false },
-          { "text": "Prohibition signs (C-series)", "is_correct": false }
+          { "text": "Warning signs", "is_correct": true },
+          { "text": "Priority signs", "is_correct": false },
+          { "text": "Prohibition signs", "is_correct": false }
         ],
-        "explanation": "This sign belongs to the danger signs (A-series). All danger signs are triangular with a red border on a white background."
+        "explanation": "This sign belongs to the warning signs. All warning signs are triangular with a red border on a white background."
       },
       "FR": {
-        "question": "Ã€ quelle catÃ©gorie de panneaux de signalisation ce panneau appartient-il ?",
+        "question": "À quelle catégorie de panneaux de signalisation ce panneau appartient-il ?",
         "choices": [
-          { "text": "Panneaux de danger (sÃ©rie A)", "is_correct": true },
-          { "text": "Panneaux de prioritÃ© (sÃ©rie B)", "is_correct": false },
-          { "text": "Panneaux d'interdiction (sÃ©rie C)", "is_correct": false }
+          { "text": "Panneaux de danger", "is_correct": true },
+          { "text": "Panneaux de priorité", "is_correct": false },
+          { "text": "Panneaux d'interdiction", "is_correct": false }
         ],
-        "explanation": "Ce panneau appartient aux panneaux de danger (sÃ©rie A). Tous les panneaux de danger sont triangulaires avec une bordure rouge sur fond blanc."
+        "explanation": "Ce panneau appartient aux panneaux de danger. Tous les panneaux de danger sont triangulaires avec une bordure rouge sur fond blanc."
       },
       "AR": {
-        "question": "Ø¥Ù„Ù‰ Ø£ÙŠ ÙØ¦Ø© Ù…Ù† Ù„Ø§ÙØªØ§Øª Ø§Ù„Ù…Ø±ÙˆØ± ØªÙ†ØªÙ…ÙŠ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ",
+        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
         "choices": [
-          { "text": "Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± (Ø³Ù„Ø³Ù„Ø© A)", "is_correct": true },
-          { "text": "Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© (Ø³Ù„Ø³Ù„Ø© B)", "is_correct": false },
-          { "text": "Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø­Ø¸Ø± (Ø³Ù„Ø³Ù„Ø© C)", "is_correct": false }
+          { "text": "علامات الخطر", "is_correct": true },
+          { "text": "علامات الأولوية", "is_correct": false },
+          { "text": "علامات الحظر", "is_correct": false }
         ],
-        "explanation": "ØªÙ†ØªÙ…ÙŠ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ© Ø¥Ù„Ù‰ Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± (Ø³Ù„Ø³Ù„Ø© A). Ø¬Ù…ÙŠØ¹ Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± Ù…Ø«Ù„Ø«Ø© Ø¨Ø­Ø§ÙØ© Ø­Ù…Ø±Ø§Ø¡ Ø¹Ù„Ù‰ Ø®Ù„ÙÙŠØ© Ø¨ÙŠØ¶Ø§Ø¡."
+        "explanation": "تنتمي هذه العلامة المرورية إلى علامات الخطر. جميع علامات الخطر مثلثة بحافة حمراء على خلفية بيضاء."
       }
     }
   },
@@ -99,38 +102,68 @@
       "NL": {
         "question": "Welk gevaar kondigt dit bord aan?",
         "choices": [
-          { "text": "Het risico om van de kaai of oever in het water te rijden", "is_correct": true },
-          { "text": "Een plotse versmalling van de rijbaan tot Ã©Ã©n rijstrook", "is_correct": false },
-          { "text": "Een gevaarlijk kruispunt met voorrangsregeling", "is_correct": false }
+          {
+            "text": "Het risico om van de kaai of oever in het water te rijden",
+            "is_correct": true
+          },
+          {
+            "text": "Een plotse versmalling van de rijbaan tot één rijstrook",
+            "is_correct": false
+          },
+          {
+            "text": "Een gevaarlijk kruispunt met voorrangsregeling",
+            "is_correct": false
+          }
         ],
         "explanation": "Dit bord waarschuwt voor het gevaar van in het water rijden doordat de weg uitgeeft op een kaai of oever zonder voldoende bescherming."
       },
       "EN": {
-        "question": "What hazard does this sign announce?",
+        "question": "What hazard does this sign indicate?",
         "choices": [
-          { "text": "The risk of driving off the quay or embankment into the water", "is_correct": true },
-          { "text": "A sudden narrowing of the road to one lane", "is_correct": false },
-          { "text": "A dangerous junction with right-of-way rules", "is_correct": false }
+          {
+            "text": "The risk of driving off the quay or riverbank into the water",
+            "is_correct": true
+          },
+          {
+            "text": "A sudden narrowing of the road to one lane",
+            "is_correct": false
+          },
+          {
+            "text": "A dangerous junction with right-of-way rules",
+            "is_correct": false
+          }
         ],
-        "explanation": "This sign warns of the danger of driving into the water because the road exits onto a quay or embankment without sufficient protection."
+        "explanation": "This sign warns of the danger of driving into the water because the road exits onto a quay or riverbank without sufficient protection."
       },
       "FR": {
         "question": "Quel danger ce panneau annonce-t-il ?",
         "choices": [
-          { "text": "Le risque de tomber dans l'eau en quittant le quai ou la berge", "is_correct": true },
-          { "text": "Un rÃ©trÃ©cissement soudain de la route Ã  une voie", "is_correct": false },
-          { "text": "Un carrefour dangereux avec rÃ¨gles de prioritÃ©", "is_correct": false }
+          {
+            "text": "Le risque de tomber dans l'eau en quittant le quai ou la berge",
+            "is_correct": true
+          },
+          {
+            "text": "Un rétrécissement soudain de la route à une voie",
+            "is_correct": false
+          },
+          {
+            "text": "Un carrefour dangereux avec règles de priorité",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ce panneau avertit du danger de tomber dans l'eau car la route dÃ©bouche sur un quai ou une berge sans protection suffisante."
+        "explanation": "Ce panneau avertit du danger de tomber dans l'eau car la route débouche sur un quai ou une berge sans protection suffisante."
       },
       "AR": {
-        "question": "Ù…Ø§ Ø§Ù„Ø®Ø·Ø± Ø§Ù„Ø°ÙŠ ØªØ¹Ù„Ù†Ù‡ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ",
+        "question": "ما هو الخطر الذي تشير إليه هذه العلامة المرورية؟",
         "choices": [
-          { "text": "Ø®Ø·Ø± Ø§Ù„Ø³Ù‚ÙˆØ· ÙÙŠ Ø§Ù„Ù…Ø§Ø¡ Ø¹Ù†Ø¯ Ù…ØºØ§Ø¯Ø±Ø© Ø§Ù„Ø±ØµÙŠÙ Ø£Ùˆ Ø§Ù„Ø¶ÙØ©", "is_correct": true },
-          { "text": "ØªØ¶ÙŠÙ‚ Ù…ÙØ§Ø¬Ø¦ Ù„Ù„Ø·Ø±ÙŠÙ‚ Ø¥Ù„Ù‰ Ù…Ø³Ø§Ø± ÙˆØ§Ø­Ø¯", "is_correct": false },
-          { "text": "ØªÙ‚Ø§Ø·Ø¹ Ø®Ø·ÙŠØ± Ù…Ø¹ Ù‚ÙˆØ§Ø¹Ø¯ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ©", "is_correct": false }
+          {
+            "text": "خطر السقوط في الماء عند الوصول إلى رصيف أو ضفة",
+            "is_correct": true
+          },
+          { "text": "تضييق مفاجئ للطريق إلى مسار واحد", "is_correct": false },
+          { "text": "تقاطع خطير مع قواعد الأولوية", "is_correct": false }
         ],
-        "explanation": "ØªØ­Ø°Ø± Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ© Ù…Ù† Ø®Ø·Ø± Ø§Ù„Ø³Ù‚ÙˆØ· ÙÙŠ Ø§Ù„Ù…Ø§Ø¡ Ù„Ø£Ù† Ø§Ù„Ø·Ø±ÙŠÙ‚ ÙŠÙ†ØªÙ‡ÙŠ Ø¹Ù†Ø¯ Ø±ØµÙŠÙ Ø£Ùˆ Ø¶ÙØ© Ø¨Ø¯ÙˆÙ† Ø­Ù…Ø§ÙŠØ© ÙƒØ§ÙÙŠØ©."
+        "explanation": "تحذر هذه العلامة المرورية من خطر السقوط في الماء لأن الطريق ينتهي عند رصيف أو ضفة بدون حماية كافية."
       }
     }
   },
@@ -142,40 +175,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat moet u doen wanneer u dit bord ziet?",
+        "question": "Wat doet u best wanneer u dit bord ziet?",
         "choices": [
-          { "text": "Sterk vaart minderen en bereid zijn volledig te stoppen voor de rand van de kaai of oever", "is_correct": true },
-          { "text": "Doorrijden aan normale snelheid en de situatie ter plaatse beoordelen", "is_correct": false },
-          { "text": "Verhogen van de snelheid om de kaai snel te passeren", "is_correct": false }
+          {
+            "text": "Snelheid verminderen en bereid zijn te stoppen voor de rand van de kaai of oever",
+            "is_correct": true
+          },
+          {
+            "text": "Doorrijden aan normale snelheid en de situatie ter plaatse beoordelen",
+            "is_correct": false
+          },
+          {
+            "text": "Verhogen van de snelheid om de kaai snel te passeren",
+            "is_correct": false
+          }
         ],
-        "explanation": "Bij een uitweg op kaai of oever moet u drastisch vaart minderen. De weg eindigt aan water en het gevaar op in het water rijden is reÃ«el."
+        "explanation": "Bij een weg die uitgeeft op een kaai of oever doet u er goed aan de snelheid te verminderen en bereid te zijn te stoppen voor de rand. De weg kan abrupt eindigen aan het water en het risico om erin te rijden is reëel."
       },
       "EN": {
-        "question": "What must you do when you see this sign?",
+        "question": "What should you do when you see this sign?",
         "choices": [
-          { "text": "Greatly reduce speed and be prepared to stop completely before the edge of the quay or embankment", "is_correct": true },
-          { "text": "Continue at normal speed and assess the situation on site", "is_correct": false },
-          { "text": "Increase speed to pass the quay area quickly", "is_correct": false }
+          {
+            "text": "Reduce speed and be prepared to stop before the edge of the quay or riverbank",
+            "is_correct": true
+          },
+          {
+            "text": "Continue at normal speed and assess the situation on site",
+            "is_correct": false
+          },
+          {
+            "text": "Increase speed to pass the quay area quickly",
+            "is_correct": false
+          }
         ],
-        "explanation": "Where a road exits onto a quay or embankment you must drastically reduce speed. The road ends at water and the risk of driving in is real."
+        "explanation": "When a road leads to a quay or riverbank, you should reduce speed and be prepared to stop before the edge."
       },
       "FR": {
-        "question": "Que devez-vous faire lorsque vous voyez ce panneau ?",
+        "question": "Que devriez-vous faire lorsque vous voyez ce panneau ?",
         "choices": [
-          { "text": "RÃ©duire fortement la vitesse et Ãªtre prÃªt Ã  s'arrÃªter complÃ¨tement avant le bord du quai ou de la berge", "is_correct": true },
-          { "text": "Continuer Ã  vitesse normale et Ã©valuer la situation sur place", "is_correct": false },
-          { "text": "AccÃ©lÃ©rer pour passer rapidement la zone du quai", "is_correct": false }
+          {
+            "text": "Réduire la vitesse et être prêt à s'arrêter avant le bord du quai ou de la berge",
+            "is_correct": true
+          },
+          {
+            "text": "Continuer à vitesse normale et évaluer la situation sur place",
+            "is_correct": false
+          },
+          {
+            "text": "Accélérer pour passer rapidement la zone du quai",
+            "is_correct": false
+          }
         ],
-        "explanation": "LÃ  oÃ¹ une route dÃ©bouche sur un quai ou une berge, vous devez rÃ©duire drastiquement la vitesse. La route se termine Ã  l'eau et le risque d'y tomber est rÃ©el."
+        "explanation": "Lorsqu'une route débouche sur un quai ou une berge, vous devriez réduire la vitesse et être prêt à vous arrêter avant le bord. La route se termine à l'eau et le risque d'y tomber est réel."
       },
       "AR": {
-        "question": "Ù…Ø§Ø°Ø§ ÙŠØ¬Ø¨ Ø£Ù† ØªÙØ¹Ù„ Ø¹Ù†Ø¯Ù…Ø§ ØªØ±Ù‰ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ",
+        "question": "ماذا ينبغي عليك فعله عند رؤية هذه العلامة المرورية؟",
         "choices": [
-          { "text": "ØªÙ‚Ù„ÙŠÙ„ Ø§Ù„Ø³Ø±Ø¹Ø© Ø¨Ø´ÙƒÙ„ ÙƒØ¨ÙŠØ± ÙˆØ§Ù„Ø§Ø³ØªØ¹Ø¯Ø§Ø¯ Ù„Ù„ØªÙˆÙ‚Ù Ø§Ù„ØªØ§Ù… Ù‚Ø¨Ù„ Ø­Ø§ÙØ© Ø§Ù„Ø±ØµÙŠÙ Ø£Ùˆ Ø§Ù„Ø¶ÙØ©", "is_correct": true },
-          { "text": "Ø§Ù„Ø§Ø³ØªÙ…Ø±Ø§Ø± Ø¨Ø§Ù„Ø³Ø±Ø¹Ø© Ø§Ù„Ø§Ø¹ØªÙŠØ§Ø¯ÙŠØ© ÙˆØªÙ‚ÙŠÙŠÙ… Ø§Ù„ÙˆØ¶Ø¹ ÙÙŠ Ø§Ù„Ù…ÙˆÙ‚Ø¹", "is_correct": false },
-          { "text": "Ø²ÙŠØ§Ø¯Ø© Ø§Ù„Ø³Ø±Ø¹Ø© Ù„ØªØ¬Ø§ÙˆØ² Ù…Ù†Ø·Ù‚Ø© Ø§Ù„Ø±ØµÙŠÙ Ø¨Ø³Ø±Ø¹Ø©", "is_correct": false }
+          {
+            "text": "خفف السرعة واستعد للتوقف قبل الحافة",
+            "is_correct": true
+          },
+          {
+            "text": "الاستمرار بالسرعة الاعتيادية وتقييم الوضع في الموقع",
+            "is_correct": false
+          },
+          {
+            "text": "زيادة السرعة لتجاوز منطقة الرصيف بسرعة",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ø­ÙŠØ« ÙŠÙ†ØªÙ‡ÙŠ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø¹Ù†Ø¯ Ø±ØµÙŠÙ Ø£Ùˆ Ø¶ÙØ© ÙŠØ¬Ø¨ ØªÙ‚Ù„ÙŠÙ„ Ø§Ù„Ø³Ø±Ø¹Ø© Ø¨Ø´ÙƒÙ„ ÙƒØ¨ÙŠØ±. Ø§Ù„Ø·Ø±ÙŠÙ‚ ÙŠÙ†ØªÙ‡ÙŠ Ø¹Ù†Ø¯ Ø§Ù„Ù…Ø§Ø¡ ÙˆØ®Ø·Ø± Ø§Ù„Ø³Ù‚ÙˆØ· ÙÙŠÙ‡ Ø­Ù‚ÙŠÙ‚ÙŠ."
+        "explanation": "عند رؤية هذه العلامة ينبغي تخفيف السرعة والاستعداد للتوقف قبل الحافة."
       }
     }
   },
@@ -189,38 +258,71 @@
       "NL": {
         "question": "U rijdt op een natte weg aan 90 km/u en ziet dit bord vlak voor een kaai. Wat doet u?",
         "choices": [
-          { "text": "Onmiddellijk en geleidelijk remmen, snelheid sterk verminderen en bereid zijn te stoppen aan de rand van de kaai", "is_correct": true },
-          { "text": "Normaal doorrijden want u heeft goede banden", "is_correct": false },
-          { "text": "Hard remmen om zo snel mogelijk te stoppen", "is_correct": false }
+          {
+            "text": "Vroeg snelheid verminderen, soepel remmen en bereid zijn te stoppen aan de rand van de kaai of oever",
+            "is_correct": true
+          },
+          {
+            "text": "Normaal doorrijden want u heeft goede banden",
+            "is_correct": false
+          },
+          {
+            "text": "Hard remmen om zo snel mogelijk te stoppen",
+            "is_correct": false
+          }
         ],
-        "explanation": "Op een natte weg bij 90 km/u is de remafstand veel langer. U moet vroeg en geleidelijk remmen om veilig te stoppen voor de kaai. Hard remmen kan leiden tot slippen."
+        "explanation": "Op een natte weg bij 90 km/u is de remafstand veel langer. U doet er goed aan vroeg snelheid te verminderen en soepel te remmen om veilig te stoppen voor de kaai of oever. Hard remmen kan leiden tot slippen."
       },
       "EN": {
-        "question": "You are driving on a wet road at 90 km/h and see this sign close to a quay. What do you do?",
+        "question": "You are driving on a wet road at 90 km/h and see this sign close to a quay or riverbank. What do you do?",
         "choices": [
-          { "text": "Brake immediately and gradually, greatly reduce speed and be prepared to stop at the quay edge", "is_correct": true },
-          { "text": "Continue normally since you have good tyres", "is_correct": false },
-          { "text": "Brake hard to stop as quickly as possible", "is_correct": false }
+          {
+            "text": "Reduce speed early and brake smoothly, and be prepared to stop before the quay or riverbank edge",
+            "is_correct": true
+          },
+          {
+            "text": "Continue normally since you have good tyres",
+            "is_correct": false
+          },
+          {
+            "text": "Brake hard to stop as quickly as possible",
+            "is_correct": false
+          }
         ],
-        "explanation": "On a wet road at 90 km/h braking distance is much longer. You must brake early and gradually to stop safely before the quay. Hard braking can cause skidding."
+        "explanation": "On a wet road at 90 km/h braking distance is much longer. You should reduce speed early and brake smoothly to stop safely before the quay or riverbank. Hard braking can cause skidding."
       },
       "FR": {
-        "question": "Vous roulez sur une route mouillÃ©e Ã  90 km/h et voyez ce panneau prÃ¨s d'un quai. Que faites-vous ?",
+        "question": "Vous roulez sur une route mouillée à 90 km/h et voyez ce panneau près d'un quai. Que faites-vous ?",
         "choices": [
-          { "text": "Freiner immÃ©diatement et progressivement, rÃ©duire fortement la vitesse et Ãªtre prÃªt Ã  s'arrÃªter au bord du quai", "is_correct": true },
-          { "text": "Continuer normalement car vous avez de bons pneus", "is_correct": false },
-          { "text": "Freiner fort pour s'arrÃªter le plus vite possible", "is_correct": false }
+          {
+            "text": "Réduire la vitesse tôt, freiner en douceur et être prêt à vous arrêter au bord du quai ou de la berge",
+            "is_correct": true
+          },
+          {
+            "text": "Continuer normalement car vous avez de bons pneus",
+            "is_correct": false
+          },
+          {
+            "text": "Freiner fort pour s'arrêter le plus vite possible",
+            "is_correct": false
+          }
         ],
-        "explanation": "Sur route mouillÃ©e Ã  90 km/h, la distance de freinage est beaucoup plus longue. Freinez tÃ´t et progressivement pour vous arrÃªter en sÃ©curitÃ©. Un freinage brusque peut provoquer un dÃ©rapage."
+        "explanation": "Sur route mouillée à 90 km/h, la distance de freinage est beaucoup plus longue. Vous devriez réduire la vitesse tôt et freiner en douceur pour vous arrêter en sécurité avant le quai ou la berge. Un freinage brusque peut provoquer un dérapage."
       },
       "AR": {
-        "question": "Ø£Ù†Øª ØªÙ‚ÙˆØ¯ Ø¹Ù„Ù‰ Ø·Ø±ÙŠÙ‚ Ù…Ø¨Ù„Ù„ Ø¨Ø³Ø±Ø¹Ø© 90 ÙƒÙ…/Ø³Ø§Ø¹Ø© ÙˆØªØ±Ù‰ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ© Ø¨Ø§Ù„Ù‚Ø±Ø¨ Ù…Ù† Ø±ØµÙŠÙ. Ù…Ø§Ø°Ø§ ØªÙØ¹Ù„ØŸ",
+        "question": "أنت تقود على طريق مبلل بسرعة 90 كم/ساعة وترى هذه العلامة المرورية بالقرب من رصيف أو ضفة. ماذا تفعل؟",
         "choices": [
-          { "text": "Ø§Ù„ÙØ±Ù…Ù„Ø© ÙÙˆØ±Ø§Ù‹ ÙˆØ¨Ø´ÙƒÙ„ ØªØ¯Ø±ÙŠØ¬ÙŠ ÙˆØªÙ‚Ù„ÙŠÙ„ Ø§Ù„Ø³Ø±Ø¹Ø© Ø¨Ø´ÙƒÙ„ ÙƒØ¨ÙŠØ± ÙˆØ§Ù„Ø§Ø³ØªØ¹Ø¯Ø§Ø¯ Ù„Ù„ØªÙˆÙ‚Ù Ø¹Ù†Ø¯ Ø­Ø§ÙØ© Ø§Ù„Ø±ØµÙŠÙ", "is_correct": true },
-          { "text": "Ø§Ù„Ø§Ø³ØªÙ…Ø±Ø§Ø± Ø¨Ø´ÙƒÙ„ Ø·Ø¨ÙŠØ¹ÙŠ Ù„Ø£Ù† Ù„Ø¯ÙŠÙƒ Ø¥Ø·Ø§Ø±Ø§Øª Ø¬ÙŠØ¯Ø©", "is_correct": false },
-          { "text": "Ø§Ù„ÙØ±Ù…Ù„Ø© Ø¨Ù‚ÙˆØ© Ù„Ù„ØªÙˆÙ‚Ù Ø¨Ø£Ø³Ø±Ø¹ ÙˆÙ‚Øª Ù…Ù…ÙƒÙ†", "is_correct": false }
+          {
+            "text": "خفف السرعة مبكرًا واكبح بسلاسة واستعد للتوقف قبل الحافة",
+            "is_correct": true
+          },
+          {
+            "text": "الاستمرار بشكل طبيعي لأن لديك إطارات جيدة",
+            "is_correct": false
+          },
+          { "text": "الفرملة بقوة للتوقف بأسرع وقت ممكن", "is_correct": false }
         ],
-        "explanation": "Ø¹Ù„Ù‰ Ø·Ø±ÙŠÙ‚ Ù…Ø¨Ù„Ù„ Ø¨Ø³Ø±Ø¹Ø© 90 ÙƒÙ…/Ø³Ø§Ø¹Ø© ØªÙƒÙˆÙ† Ù…Ø³Ø§ÙØ© Ø§Ù„ÙØ±Ù…Ù„Ø© Ø£Ø·ÙˆÙ„ Ø¨ÙƒØ«ÙŠØ±. ÙŠØ¬Ø¨ Ø§Ù„ÙØ±Ù…Ù„Ø© Ù…Ø¨ÙƒØ±Ø§Ù‹ ÙˆØ¨Ø´ÙƒÙ„ ØªØ¯Ø±ÙŠØ¬ÙŠ Ù„Ù„ØªÙˆÙ‚Ù Ø¨Ø£Ù…Ø§Ù† Ù‚Ø¨Ù„ Ø§Ù„Ø±ØµÙŠÙ. Ø§Ù„ÙØ±Ù…Ù„Ø© Ø§Ù„Ù…ÙØ§Ø¬Ø¦Ø© Ù‚Ø¯ ØªØ³Ø¨Ø¨ Ø§Ù„Ø§Ù†Ø²Ù„Ø§Ù‚."
+        "explanation": "على طريق مبلل بسرعة 90 كم/ساعة تكون مسافة الفرملة أطول بكثير، لذلك ينبغي تخفيف السرعة مبكرًا والكبح بسلاسة للتوقف بأمان قبل الحافة. الفرملة المفاجئة قد تسبب الانزلاق."
       }
     }
   },
@@ -238,34 +340,37 @@
           { "text": "Precies op de gevaarlijke plek", "is_correct": false },
           { "text": "Op 500 meter voor het gevaar", "is_correct": false }
         ],
-        "explanation": "Buiten de bebouwde kom worden gevaarsborden op Â±150 meter voor het gevaar geplaatst. Binnen de bebouwde kom is dit Â±50 meter."
+        "explanation": "Buiten de bebouwde kom worden gevaarsborden op ±150 meter voor het gevaar geplaatst. Binnen de bebouwde kom is dit ±50 meter."
       },
       "EN": {
-        "question": "At what distance is this danger sign placed outside built-up areas?",
+        "question": "At what distance is this warning sign placed outside built-up areas?",
         "choices": [
-          { "text": "Approximately 150 metres before the hazard", "is_correct": true },
+          {
+            "text": "Approximately 150 metres before the hazard",
+            "is_correct": true
+          },
           { "text": "Exactly at the hazard location", "is_correct": false },
           { "text": "500 metres before the hazard", "is_correct": false }
         ],
-        "explanation": "Outside built-up areas, danger signs are placed Â±150 metres before the hazard. Inside built-up areas it is Â±50 metres."
+        "explanation": "Outside built-up areas, warning signs are placed ±150 metres before the hazard. Inside built-up areas it is ±50 metres."
       },
       "FR": {
-        "question": "Ã€ quelle distance ce panneau de danger est-il placÃ© hors agglomÃ©ration ?",
+        "question": "À quelle distance ce panneau de danger est-il placé hors agglomération ?",
         "choices": [
-          { "text": "Environ 150 mÃ¨tres avant le danger", "is_correct": true },
-          { "text": "Exactement Ã  l'endroit du danger", "is_correct": false },
-          { "text": "500 mÃ¨tres avant le danger", "is_correct": false }
+          { "text": "Environ 150 mètres avant le danger", "is_correct": true },
+          { "text": "Exactement à l'endroit du danger", "is_correct": false },
+          { "text": "500 mètres avant le danger", "is_correct": false }
         ],
-        "explanation": "Hors agglomÃ©ration, les panneaux de danger sont placÃ©s Ã  Â±150 mÃ¨tres avant le danger. En agglomÃ©ration, c'est Â±50 mÃ¨tres."
+        "explanation": "Hors agglomération, les panneaux de danger sont placés à ±150 mètres avant le danger. En agglomération, c'est ±50 mètres."
       },
       "AR": {
-        "question": "Ø¹Ù„Ù‰ Ø£ÙŠ Ù…Ø³Ø§ÙØ© ØªÙˆØ¶Ø¹ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ© Ø§Ù„ØªØ­Ø°ÙŠØ±ÙŠØ© Ø®Ø§Ø±Ø¬ Ø§Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ù…Ø¨Ù†ÙŠØ©ØŸ",
+        "question": "على أي مسافة توضع هذه العلامة المرورية التحذيرية خارج المنطقة السكنية؟",
         "choices": [
-          { "text": "Ø­ÙˆØ§Ù„ÙŠ 150 Ù…ØªØ± Ù‚Ø¨Ù„ Ø§Ù„Ø®Ø·Ø±", "is_correct": true },
-          { "text": "Ù…Ø¨Ø§Ø´Ø±Ø© Ø¹Ù†Ø¯ Ù…ÙˆÙ‚Ø¹ Ø§Ù„Ø®Ø·Ø±", "is_correct": false },
-          { "text": "500 Ù…ØªØ± Ù‚Ø¨Ù„ Ø§Ù„Ø®Ø·Ø±", "is_correct": false }
+          { "text": "حوالي 150 متر قبل الخطر", "is_correct": true },
+          { "text": "مباشرة عند موقع الخطر", "is_correct": false },
+          { "text": "500 متر قبل الخطر", "is_correct": false }
         ],
-        "explanation": "Ø®Ø§Ø±Ø¬ Ø§Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ù…Ø¨Ù†ÙŠØ© ØªÙˆØ¶Ø¹ Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± Ø¹Ù„Ù‰ Ù…Ø³Ø§ÙØ© Â±150 Ù…ØªØ± Ù‚Ø¨Ù„ Ø§Ù„Ø®Ø·Ø±. Ø¯Ø§Ø®Ù„ Ø§Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ù…Ø¨Ù†ÙŠØ© ØªÙƒÙˆÙ† Ø§Ù„Ù…Ø³Ø§ÙØ© Â±50 Ù…ØªØ±."
+        "explanation": "خارج المنطقة السكنية توضع علامات الخطر على مسافة ±150 متر قبل الخطر. داخل المنطقة السكنية تكون المسافة ±50 متر."
       }
     }
   },
@@ -277,36 +382,36 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Mag u stoppen of parkeren vlak bij de rand van een kaai of oever die dit bord aankondigt?",
+        "question": "Is het aan te raden om vlak bij de rand van een kaai of oever te stoppen of te parkeren?",
         "choices": [
           { "text": "Nee", "is_correct": true },
           { "text": "Ja", "is_correct": false }
         ],
-        "explanation": "Stoppen of parkeren vlak bij een kaai of oever is verboden vanwege het risico om in het water te rijden."
+        "explanation": "Nee, dat is niet raadzaam vlak bij de rand van een kaai of oever vanwege het risico om in het water te rijden."
       },
       "EN": {
-        "question": "Is it allowed to stop or park close to the edge of the quay or embankment announced by this sign?",
+        "question": "Is it advisable to stop or park near the edge of a quay or riverbank?",
         "choices": [
           { "text": "No", "is_correct": true },
           { "text": "Yes", "is_correct": false }
         ],
-        "explanation": "Stopping or parking close to a quay or embankment edge is prohibited due to the risk of driving into the water."
+        "explanation": "No, it is not advisable to stop or park near the edge of a quay or riverbank because of the risk of driving into the water."
       },
       "FR": {
-        "question": "ÃŠtes-vous autorisÃ© Ã  vous arrÃªter ou Ã  vous garer prÃ¨s du bord du quai ou de la berge annoncÃ© par ce panneau ?",
+        "question": "Est-il conseillé de s'arrêter ou de se garer près du bord d'un quai ou d'une berge ?",
         "choices": [
           { "text": "Non", "is_correct": true },
           { "text": "Oui", "is_correct": false }
         ],
-        "explanation": "S'arrÃªter ou se garer prÃ¨s du bord d'un quai ou d'une berge est interdit en raison du risque de tomber dans l'eau."
+        "explanation": "Non, ce n'est pas conseillé de s'arrêter ou de se garer près du bord d'un quai ou d'une berge en raison du risque de tomber dans l'eau."
       },
       "AR": {
-        "question": "Ù‡Ù„ ÙŠÙØ³Ù…Ø­ Ø¨Ø§Ù„ØªÙˆÙ‚Ù Ø£Ùˆ Ø§Ù„Ø§Ù†ØªØ¸Ø§Ø± Ø¨Ø§Ù„Ù‚Ø±Ø¨ Ù…Ù† Ø­Ø§ÙØ© Ø§Ù„Ø±ØµÙŠÙ Ø£Ùˆ Ø§Ù„Ø¶ÙØ© Ø§Ù„ØªÙŠ ØªØ¹Ù„Ù†Ù‡Ø§ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ",
+        "question": "هل يُنصح بالتوقف أو الوقوف بالقرب من حافة رصيف أو ضفة؟",
         "choices": [
-          { "text": "Ù„Ø§", "is_correct": true },
-          { "text": "Ù†Ø¹Ù…", "is_correct": false }
+          { "text": "لا", "is_correct": true },
+          { "text": "نعم", "is_correct": false }
         ],
-        "explanation": "ÙŠÙØ­Ø¸Ø± Ø§Ù„ØªÙˆÙ‚Ù Ø£Ùˆ Ø§Ù„Ø§Ù†ØªØ¸Ø§Ø± Ø¨Ø§Ù„Ù‚Ø±Ø¨ Ù…Ù† Ø­Ø§ÙØ© Ø§Ù„Ø±ØµÙŠÙ Ø£Ùˆ Ø§Ù„Ø¶ÙØ© Ø¨Ø³Ø¨Ø¨ Ø®Ø·Ø± Ø§Ù„Ø³Ù‚ÙˆØ· ÙÙŠ Ø§Ù„Ù…Ø§Ø¡."
+        "explanation": "لا، لا يُنصح بالتوقف أو الوقوف بالقرب من حافة رصيف أو ضفة بسبب خطر السقوط في الماء."
       }
     }
   },
@@ -318,36 +423,36 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Bent u verplicht uw snelheid aanzienlijk te verminderen wanneer de weg uitgeeft op een kaai of oever?",
+        "question": "Doet u er goed aan uw snelheid aan te passen wanneer u een kaai of oever nadert?",
         "choices": [
           { "text": "Ja", "is_correct": true },
           { "text": "Nee", "is_correct": false }
         ],
-        "explanation": "Bij een uitweg op een kaai of oever is het risico op rijden in het water reÃ«el. U moet uw snelheid drastisch verminderen en bereid zijn volledig te stoppen."
+        "explanation": "Bij een uitweg op een kaai of oever is het risico op rijden in het water reëel. U doet er goed aan uw snelheid aan te passen en bereid te zijn volledig te stoppen."
       },
       "EN": {
-        "question": "Are you required to significantly reduce your speed when the road exits onto a quay or embankment?",
+        "question": "Should you adapt your speed when approaching a quay or riverbank?",
         "choices": [
           { "text": "Yes", "is_correct": true },
           { "text": "No", "is_correct": false }
         ],
-        "explanation": "Where a road exits onto a quay or embankment, the risk of driving into the water is real. You must drastically reduce speed and be prepared to stop completely."
+        "explanation": "Where a road leads to a quay or riverbank, the risk of driving into the water is real. You should adapt your speed and be prepared to stop completely."
       },
       "FR": {
-        "question": "ÃŠtes-vous obligÃ© de rÃ©duire considÃ©rablement votre vitesse lorsque la route dÃ©bouche sur un quai ou une berge ?",
+        "question": "Devrait-on adapter sa vitesse à l'approche d'un quai ou d'une berge ?",
         "choices": [
           { "text": "Oui", "is_correct": true },
           { "text": "Non", "is_correct": false }
         ],
-        "explanation": "LÃ  oÃ¹ une route dÃ©bouche sur un quai ou une berge, le risque de tomber dans l'eau est rÃ©el. RÃ©duisez drastiquement la vitesse et soyez prÃªt Ã  vous arrÃªter complÃ¨tement."
+        "explanation": "À l'approche d'un quai ou d'une berge, le risque de tomber dans l'eau est réel. Vous devriez adapter votre vitesse et être prêt à vous arrêter complètement."
       },
       "AR": {
-        "question": "Ù‡Ù„ Ø£Ù†Øª Ù…Ù„Ø²Ù… Ø¨ØªÙ‚Ù„ÙŠÙ„ Ø³Ø±Ø¹ØªÙƒ Ø¨Ø´ÙƒÙ„ Ù…Ù„Ø­ÙˆØ¸ Ø¹Ù†Ø¯Ù…Ø§ ÙŠÙ†ØªÙ‡ÙŠ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø¹Ù†Ø¯ Ø±ØµÙŠÙ Ø£Ùˆ Ø¶ÙØ©ØŸ",
+        "question": "هل ينبغي تعديل سرعتك عند الاقتراب من رصيف أو ضفة؟",
         "choices": [
-          { "text": "Ù†Ø¹Ù…", "is_correct": true },
-          { "text": "Ù„Ø§", "is_correct": false }
+          { "text": "نعم", "is_correct": true },
+          { "text": "لا", "is_correct": false }
         ],
-        "explanation": "Ø­ÙŠØ« ÙŠÙ†ØªÙ‡ÙŠ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø¹Ù†Ø¯ Ø±ØµÙŠÙ Ø£Ùˆ Ø¶ÙØ©ØŒ ÙŠÙƒÙˆÙ† Ø®Ø·Ø± Ø§Ù„Ø³Ù‚ÙˆØ· ÙÙŠ Ø§Ù„Ù…Ø§Ø¡ Ø­Ù‚ÙŠÙ‚ÙŠØ§Ù‹. ÙŠØ¬Ø¨ ØªÙ‚Ù„ÙŠÙ„ Ø§Ù„Ø³Ø±Ø¹Ø© Ø¨Ø´ÙƒÙ„ ÙƒØ¨ÙŠØ± ÙˆØ§Ù„Ø§Ø³ØªØ¹Ø¯Ø§Ø¯ Ù„Ù„ØªÙˆÙ‚Ù Ø§Ù„ØªØ§Ù…."
+        "explanation": "عند الاقتراب من رصيف أو ضفة، يكون خطر السقوط في الماء حقيقيًا. ينبغي تعديل السرعة والاستعداد للتوقف التام."
       }
     }
   }

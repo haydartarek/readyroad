@@ -1,2 +1,2 @@
--- Remove D13 sign (image file deleted, sign no longer displayable).
-DELETE FROM traffic_signs WHERE sign_code = 'D13';
+-- D13 is part of the current mandatory-sign catalog and remains displayable.
+SELECT 1;

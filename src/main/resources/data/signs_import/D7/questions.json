@@ -1,4 +1,4 @@
-﻿[
+[
   {
     "question_id": "D7_Q01",
     "type": "WHAT_DOES_IT_MEAN",
@@ -10,94 +10,91 @@
         "question": "Wat betekent dit verkeersbord?",
         "choices": [
           { "text": "Verplicht fietspad", "is_correct": true },
-          { "text": "Verplichte weg voor voetgangers", "is_correct": false },
+          { "text": "Pad voor voetgangers", "is_correct": false },
           {
-            "text": "Deel van de weg voorbehouden voor voetgangers en fietsers",
+            "text": "Gedeeld pad voor fietsers en voetgangers",
             "is_correct": false
           }
         ],
-        "explanation": "D7 duidt een verplicht fietspad aan. Uitsluitend fietsers zijn toegelaten op dit pad."
+        "explanation": "Dit bord geeft aan dat fietsers verplicht zijn het fietspad te gebruiken."
       },
       "EN": {
         "question": "What does this traffic sign mean?",
         "choices": [
           { "text": "Mandatory cycle path", "is_correct": true },
-          { "text": "Mandatory path for pedestrians", "is_correct": false },
+          { "text": "Path for pedestrians", "is_correct": false },
           {
-            "text": "Part of the road reserved for pedestrians and cyclists",
+            "text": "Shared path for cyclists and pedestrians",
             "is_correct": false
           }
         ],
-        "explanation": "D7 marks a mandatory cycle path. Only cyclists are permitted to use this path."
+        "explanation": "This sign indicates that cyclists are required to use the cycle path."
       },
       "FR": {
         "question": "Que signifie ce panneau de signalisation ?",
         "choices": [
           { "text": "Piste cyclable obligatoire", "is_correct": true },
+          { "text": "Chemin pour piétons", "is_correct": false },
           {
-            "text": "Chemin obligatoire pour les pietons",
-            "is_correct": false
-          },
-          {
-            "text": "Partie de la voie reservee aux pietons et aux cyclistes",
+            "text": "Chemin partagé pour cyclistes et piétons",
             "is_correct": false
           }
         ],
-        "explanation": "D7 designe une piste cyclable obligatoire. Seuls les cyclistes sont autorises a utiliser cette piste."
+        "explanation": "Ce panneau indique que les cyclistes doivent utiliser la piste cyclable."
       },
       "AR": {
-        "question": "Ù…Ø§Ø°Ø§ ØªØ¹Ù†ÙŠ Ù„Ø§ÙØªØ© Ø§Ù„Ù…Ø±ÙˆØ± Ù‡Ø°Ù‡ØŸ",
+        "question": "ما معنى هذه العلامة المرورية؟",
         "choices": [
-          { "text": "Ù…Ø³Ø§Ø± Ø¯Ø±Ø§Ø¬Ø§Øª Ø¥Ù„Ø²Ø§Ù…ÙŠ", "is_correct": true },
-          { "text": "Ù…Ø³Ø§Ø± Ø¥Ø¬Ø¨Ø§Ø±ÙŠ Ù…Ø®ØµØµ Ù„Ù„Ù…Ø´Ø§Ø©", "is_correct": false },
-          { "text": "Ø¬Ø²Ø¡ Ù…Ù† Ø§Ù„Ø·Ø±ÙŠÙ‚ Ù…Ø®ØµØµ Ù„Ù„Ù…Ø´Ø§Ø© ÙˆØ§Ù„Ø¯Ø±Ø§Ø¬ÙŠÙ†", "is_correct": false }
+          { "text": "مسار دراجات إلزامي", "is_correct": true },
+          { "text": "مسار مخصص للمشاة", "is_correct": false },
+          { "text": "مسار مشترك بين المشاة والدراجين", "is_correct": false }
         ],
-        "explanation": "ØªÙØ­Ø¯Ù‘Ø¯ D7 Ù…Ø³Ø§Ø±Ø§Ù‹ Ø¥Ù„Ø²Ø§Ù…ÙŠØ§Ù‹ Ù„Ù„Ø¯Ø±Ø§Ø¬Ø§Øª. ÙŠÙØ³Ù…Ø­ ÙÙ‚Ø· Ù„Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø¨Ø§Ø³ØªØ®Ø¯Ø§Ù… Ù‡Ø°Ø§ Ø§Ù„Ù…Ø³Ø§Ø±."
+        "explanation": "تشير هذه العلامة إلى أن راكبي الدراجات ملزمون باستخدام مسار الدراجات."
       }
     }
   },
   {
     "question_id": "D7_Q02",
-    "type": "WHICH_SIGN",
+    "type": "HAZARD_IDENTIFICATION",
     "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Tot welke categorie verkeersborden behoort dit bord?",
+        "question": "Op wie is dit bord van toepassing?",
         "choices": [
-          { "text": "Gebodsborden (D-reeks)", "is_correct": true },
-          { "text": "Verbodsborden (C-reeks)", "is_correct": false },
-          { "text": "Parkeerborden (E-reeks)", "is_correct": false }
+          { "text": "Fietsers", "is_correct": true },
+          { "text": "Voetgangers", "is_correct": false },
+          { "text": "Alle weggebruikers", "is_correct": false }
         ],
-        "explanation": "D-reeksborden zijn gebodstekens. D7 verplicht fietsers het aangeduide fietspad te gebruiken."
+        "explanation": "Dit bord is bedoeld voor fietsers."
       },
       "EN": {
-        "question": "To which category of traffic signs does this sign belong?",
+        "question": "To whom does this sign apply?",
         "choices": [
-          { "text": "Mandatory signs (D-series)", "is_correct": true },
-          { "text": "Prohibition signs (C-series)", "is_correct": false },
-          { "text": "Parking signs (E-series)", "is_correct": false }
+          { "text": "Cyclists", "is_correct": true },
+          { "text": "Pedestrians", "is_correct": false },
+          { "text": "All road users", "is_correct": false }
         ],
-        "explanation": "D-series signs are mandatory signs. D7 requires cyclists to use the indicated cycle path."
+        "explanation": "This sign is intended for cyclists."
       },
       "FR": {
-        "question": "A quelle categorie de panneaux de signalisation appartient ce panneau ?",
+        "question": "À qui s'applique ce panneau ?",
         "choices": [
-          { "text": "Panneaux d'obligation (serie D)", "is_correct": true },
-          { "text": "Panneaux d'interdiction (serie C)", "is_correct": false },
-          { "text": "Panneaux de stationnement (serie E)", "is_correct": false }
+          { "text": "Aux cyclistes", "is_correct": true },
+          { "text": "Aux piétons", "is_correct": false },
+          { "text": "À tous les usagers", "is_correct": false }
         ],
-        "explanation": "Les panneaux de la serie D sont des panneaux d'obligation. D7 oblige les cyclistes a utiliser la piste cyclable indiquee."
+        "explanation": "Ce panneau concerne les cyclistes."
       },
       "AR": {
-        "question": "Ø¥Ù„Ù‰ Ø£ÙŠ ÙØ¦Ø© Ù…Ù† Ù„Ø§ÙØªØ§Øª Ø§Ù„Ù…Ø±ÙˆØ± ØªÙ†ØªÙ…ÙŠ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ",
+        "question": "على من تنطبق هذه العلامة؟",
         "choices": [
-          { "text": "Ù„Ø§ÙØªØ§Øª Ø¥Ù„Ø²Ø§Ù…ÙŠØ© (Ø§Ù„Ø³Ù„Ø³Ù„Ø© D)", "is_correct": true },
-          { "text": "Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø­Ø¸Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© C)", "is_correct": false },
-          { "text": "Ù„Ø§ÙØªØ§Øª Ø§Ù„ÙˆÙ‚ÙˆÙ (Ø§Ù„Ø³Ù„Ø³Ù„Ø© E)", "is_correct": false }
+          { "text": "راكبو الدراجات", "is_correct": true },
+          { "text": "المشاة", "is_correct": false },
+          { "text": "جميع مستخدمي الطريق", "is_correct": false }
         ],
-        "explanation": "Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø³Ù„Ø³Ù„Ø© D Ù‡ÙŠ Ù„Ø§ÙØªØ§Øª Ø¥Ù„Ø²Ø§Ù…ÙŠØ©. ØªÙÙ„Ø²Ù… D7 Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø¨Ø§Ø³ØªØ®Ø¯Ø§Ù… Ù…Ø³Ø§Ø± Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ù„Ù…Ø´Ø§Ø± Ø¥Ù„ÙŠÙ‡."
+        "explanation": "هذه العلامة مخصصة لراكبي الدراجات."
       }
     }
   },
@@ -109,52 +106,40 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wie is er toegelaten op het pad aangeduid door bord D7?",
+        "question": "Wat geeft dit bord aan?",
         "choices": [
-          { "text": "Uitsluitend fietsers", "is_correct": true },
-          { "text": "Fietsers en voetgangers", "is_correct": false },
-          {
-            "text": "Fietsers, voetgangers en bromfietsers klasse A",
-            "is_correct": false
-          }
+          { "text": "Een verplicht fietspad", "is_correct": true },
+          { "text": "Een optioneel fietspad", "is_correct": false },
+          { "text": "Een gedeeld pad", "is_correct": false }
         ],
-        "explanation": "D7 reserveert het pad voor fietsers alleen. Voetgangers en motorvoertuigen zijn niet toegelaten op een D7-fietspad."
+        "explanation": "Het bord duidt een verplicht fietspad aan."
       },
       "EN": {
-        "question": "Who is permitted to use the path indicated by sign D7?",
+        "question": "What does this sign indicate?",
         "choices": [
-          { "text": "Cyclists only", "is_correct": true },
-          { "text": "Cyclists and pedestrians", "is_correct": false },
-          {
-            "text": "Cyclists, pedestrians, and class A mopeds",
-            "is_correct": false
-          }
+          { "text": "A mandatory cycle path", "is_correct": true },
+          { "text": "An optional cycle path", "is_correct": false },
+          { "text": "A shared path", "is_correct": false }
         ],
-        "explanation": "D7 reserves the path for cyclists only. Pedestrians and motor vehicles are not permitted on a D7 cycle path."
+        "explanation": "The sign indicates a mandatory cycle path."
       },
       "FR": {
-        "question": "Qui est autorise a utiliser le chemin indique par le panneau D7 ?",
+        "question": "Que signale ce panneau ?",
         "choices": [
-          { "text": "Uniquement les cyclistes", "is_correct": true },
-          { "text": "Cyclistes et pietons", "is_correct": false },
-          {
-            "text": "Cyclistes, pietons et cyclomoteurs de classe A",
-            "is_correct": false
-          }
+          { "text": "Une piste cyclable obligatoire", "is_correct": true },
+          { "text": "Une piste cyclable facultative", "is_correct": false },
+          { "text": "Un chemin partagé", "is_correct": false }
         ],
-        "explanation": "D7 reserve le chemin aux seuls cyclistes. Les pietons et les vehicules a moteur ne sont pas autorises sur une piste cyclable D7."
+        "explanation": "Ce panneau indique une piste cyclable obligatoire."
       },
       "AR": {
-        "question": "Ù…Ù† ÙŠÙØ³Ù…Ø­ Ù„Ù‡ Ø¨Ø§Ø³ØªØ®Ø¯Ø§Ù… Ø§Ù„Ù…Ø³Ø§Ø± Ø§Ù„Ù…Ø´Ø§Ø± Ø¥Ù„ÙŠÙ‡ Ø¨Ù„Ø§ÙØªØ© D7ØŸ",
+        "question": "ماذا تشير هذه العلامة؟",
         "choices": [
-          { "text": "Ø±Ø§ÙƒØ¨Ùˆ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª ÙÙ‚Ø·", "is_correct": true },
-          { "text": "Ø±Ø§ÙƒØ¨Ùˆ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª ÙˆØ§Ù„Ù…Ø´Ø§Ø©", "is_correct": false },
-          {
-            "text": "Ø±Ø§ÙƒØ¨Ùˆ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª ÙˆØ§Ù„Ù…Ø´Ø§Ø© ÙˆØ§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ù„Ù†Ø§Ø±ÙŠØ© Ø§Ù„Ø®ÙÙŠÙØ© Ù…Ù† Ø§Ù„ÙØ¦Ø© Ø£",
-            "is_correct": false
-          }
+          { "text": "مسار دراجات إلزامي", "is_correct": true },
+          { "text": "مسار اختياري", "is_correct": false },
+          { "text": "مسار مشترك", "is_correct": false }
         ],
-        "explanation": "ØªØ­Ø¬Ø² D7 Ø§Ù„Ù…Ø³Ø§Ø± Ù„Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª ÙÙ‚Ø·. Ø§Ù„Ù…Ø´Ø§Ø© ÙˆØ§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ø¢Ù„ÙŠØ© ØºÙŠØ± Ù…Ø³Ù…ÙˆØ­ Ù„Ù‡Ù… Ø¹Ù„Ù‰ Ù…Ø³Ø§Ø± Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª D7."
+        "explanation": "تشير هذه العلامة إلى مسار دراجات إلزامي."
       }
     }
   },
@@ -166,76 +151,40 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Bord D7 is aangebracht op een pad naast de weg. U bent een fietser. Wat moet u doen?",
+        "question": "U bent fietser en ziet dit bord. Wat moet u doen?",
         "choices": [
-          {
-            "text": "Het fietspad gebruiken, want het is verplicht voor fietsers",
-            "is_correct": true
-          },
-          {
-            "text": "U mag kiezen tussen het fietspad en de rijbaan naargelang uw voorkeur",
-            "is_correct": false
-          },
-          {
-            "text": "Het fietspad gebruiken enkel als de rijbaan druk is",
-            "is_correct": false
-          }
+          { "text": "Het fietspad gebruiken", "is_correct": true },
+          { "text": "De rijbaan gebruiken", "is_correct": false },
+          { "text": "Zelf kiezen", "is_correct": false }
         ],
-        "explanation": "D7 maakt het fietspad verplicht voor fietsers. Fietsers mogen de rijbaan niet gebruiken als een D7-fietspad beschikbaar is."
+        "explanation": "Fietsers moeten het fietspad volgen dat door dit bord wordt aangeduid."
       },
       "EN": {
-        "question": "Sign D7 is posted on a path alongside the road. You are a cyclist. What must you do?",
+        "question": "You are a cyclist and see this sign. What should you do?",
         "choices": [
-          {
-            "text": "Use the cycle path, as it is mandatory for cyclists",
-            "is_correct": true
-          },
-          {
-            "text": "You may choose between the cycle path and the road according to your preference",
-            "is_correct": false
-          },
-          {
-            "text": "Use the cycle path only when the road is busy",
-            "is_correct": false
-          }
+          { "text": "Use the cycle path", "is_correct": true },
+          { "text": "Use the road", "is_correct": false },
+          { "text": "Choose freely", "is_correct": false }
         ],
-        "explanation": "D7 makes the cycle path compulsory for cyclists. Cyclists may not use the road when a D7 cycle path is available."
+        "explanation": "Cyclists should follow the cycle path indicated by this sign."
       },
       "FR": {
-        "question": "Le panneau D7 est place sur un chemin longeant la route. Vous etes cycliste. Que devez-vous faire ?",
+        "question": "Vous êtes cycliste et voyez ce panneau. Que devez-vous faire ?",
         "choices": [
-          {
-            "text": "Utiliser la piste cyclable, car elle est obligatoire pour les cyclistes",
-            "is_correct": true
-          },
-          {
-            "text": "Vous pouvez choisir entre la piste cyclable et la route selon votre preference",
-            "is_correct": false
-          },
-          {
-            "text": "Utiliser la piste cyclable uniquement lorsque la route est tres frequentee",
-            "is_correct": false
-          }
+          { "text": "Utiliser la piste cyclable", "is_correct": true },
+          { "text": "Utiliser la route", "is_correct": false },
+          { "text": "Choisir librement", "is_correct": false }
         ],
-        "explanation": "D7 rend la piste cyclable obligatoire pour les cyclistes. Les cyclistes ne peuvent pas utiliser la route lorsqu'une piste cyclable D7 est disponible."
+        "explanation": "Les cyclistes doivent suivre la piste cyclable indiquée."
       },
       "AR": {
-        "question": "Ù„Ø§ÙØªØ© D7 Ù…ÙˆØ¶ÙˆØ¹Ø© Ø¹Ù„Ù‰ Ù…Ø³Ø§Ø± Ø¨Ø¬Ø§Ù†Ø¨ Ø§Ù„Ø·Ø±ÙŠÙ‚. Ø£Ù†Øª Ø±Ø§ÙƒØ¨ Ø¯Ø±Ø§Ø¬Ø©. Ù…Ø§Ø°Ø§ ÙŠØ¬Ø¨ Ø¹Ù„ÙŠÙƒ ÙØ¹Ù„Ù‡ØŸ",
+        "question": "أنت راكب دراجة وترى هذه العلامة. ماذا يجب أن تفعل؟",
         "choices": [
-          {
-            "text": "Ø§Ø³ØªØ®Ø¯Ø§Ù… Ù…Ø³Ø§Ø± Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§ØªØŒ Ù„Ø£Ù†Ù‡ Ø¥Ù„Ø²Ø§Ù…ÙŠ Ù„Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª",
-            "is_correct": true
-          },
-          {
-            "text": "ÙŠÙ…ÙƒÙ†Ùƒ Ø§Ù„Ø§Ø®ØªÙŠØ§Ø± Ø¨ÙŠÙ† Ù…Ø³Ø§Ø± Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª ÙˆØ§Ù„Ø·Ø±ÙŠÙ‚ ÙˆÙÙ‚ ØªÙØ¶ÙŠÙ„Ùƒ",
-            "is_correct": false
-          },
-          {
-            "text": "Ø§Ø³ØªØ®Ø¯Ø§Ù… Ù…Ø³Ø§Ø± Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª ÙÙ‚Ø· Ø¹Ù†Ø¯Ù…Ø§ ÙŠÙƒÙˆÙ† Ø§Ù„Ø·Ø±ÙŠÙ‚ Ù…Ø²Ø¯Ø­Ù…Ø§Ù‹",
-            "is_correct": false
-          }
+          { "text": "استخدام مسار الدراجات", "is_correct": true },
+          { "text": "استخدام الطريق", "is_correct": false },
+          { "text": "الاختيار بحرية", "is_correct": false }
         ],
-        "explanation": "ØªØ¬Ø¹Ù„ D7 Ù…Ø³Ø§Ø± Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø¥Ù„Ø²Ø§Ù…ÙŠØ§Ù‹ Ù„Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª. Ù„Ø§ ÙŠØ¬ÙˆØ² Ù„Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ø³ØªØ®Ø¯Ø§Ù… Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø¹Ù†Ø¯ ØªÙˆÙØ± Ù…Ø³Ø§Ø± D7."
+        "explanation": "يجب على راكبي الدراجات اتباع مسار الدراجات المشار إليه."
       }
     }
   },
@@ -247,157 +196,88 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Een D7-fietspad loopt naast de rijbaan die u bestuurt als automobilist. Wat betekent dit voor u?",
+        "question": "Wat betekent dit bord voor fietsers op deze weg?",
         "choices": [
-          {
-            "text": "Fietsers moeten het fietspad gebruiken en zijn niet toegelaten op uw rijbaan",
-            "is_correct": true
-          },
-          {
-            "text": "Motorvoertuigen mogen het fietspad gebruiken als de rijbaan verstopt is",
-            "is_correct": false
-          },
-          {
-            "text": "Het fietspad is facultatief; fietsers mogen nog steeds de rijbaan gebruiken",
-            "is_correct": false
-          }
+          { "text": "Ze moeten het fietspad gebruiken", "is_correct": true },
+          { "text": "Ze mogen de rijbaan gebruiken", "is_correct": false },
+          { "text": "Ze mogen beide gebruiken", "is_correct": false }
         ],
-        "explanation": "D7 reserveert het pad voor fietsers en verbiedt motorvoertuigen toegang. Fietsers zijn verplicht dit pad te gebruiken en mogen de rijbaan niet berijden."
+        "explanation": "Fietsers zijn verplicht het fietspad te gebruiken."
       },
       "EN": {
-        "question": "A D7 cycle path runs alongside the road you are driving on as a car driver. What does this mean for you?",
+        "question": "What does this sign mean for cyclists on this road?",
         "choices": [
-          {
-            "text": "Cyclists must use the cycle path and are not permitted on your lane",
-            "is_correct": true
-          },
-          {
-            "text": "Motor vehicles may use the cycle path if the road is congested",
-            "is_correct": false
-          },
-          {
-            "text": "The cycle path is optional; cyclists may still use the road",
-            "is_correct": false
-          }
+          { "text": "They should use the cycle path", "is_correct": true },
+          { "text": "They may use the road", "is_correct": false },
+          { "text": "They may use both", "is_correct": false }
         ],
-        "explanation": "D7 reserves the path for cyclists and prohibits access by motor vehicles. Cyclists are required to use this path and may not ride on the road."
+        "explanation": "Cyclists are required to use the cycle path."
       },
       "FR": {
-        "question": "Une piste cyclable D7 longe la route sur laquelle vous roulez en voiture. Qu'est-ce que cela signifie pour vous ?",
+        "question": "Que signifie ce panneau pour les cyclistes ?",
         "choices": [
           {
-            "text": "Les cyclistes doivent utiliser la piste cyclable et ne sont pas autorises sur votre voie",
+            "text": "Ils doivent utiliser la piste cyclable",
             "is_correct": true
           },
-          {
-            "text": "Les vehicules a moteur peuvent utiliser la piste cyclable si la route est encombree",
-            "is_correct": false
-          },
-          {
-            "text": "La piste cyclable est facultative; les cyclistes peuvent encore utiliser la route",
-            "is_correct": false
-          }
+          { "text": "Ils peuvent utiliser la route", "is_correct": false },
+          { "text": "Ils peuvent utiliser les deux", "is_correct": false }
         ],
-        "explanation": "D7 reserve le chemin aux cyclistes et interdit l'acces aux vehicules a moteur. Les cyclistes sont tenus d'utiliser ce chemin et ne peuvent pas rouler sur la route."
+        "explanation": "Les cyclistes doivent utiliser la piste cyclable."
       },
       "AR": {
-        "question": "Ù…Ø³Ø§Ø± Ø¯Ø±Ø§Ø¬Ø§Øª D7 ÙŠØ³ÙŠØ± Ø¨Ø¬Ø§Ù†Ø¨ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø°ÙŠ ØªÙ‚ÙˆØ¯Ùƒ ÙÙŠÙ‡ ÙƒØ³Ø§Ø¦Ù‚ Ø³ÙŠØ§Ø±Ø©. Ù…Ø§Ø°Ø§ ÙŠØ¹Ù†ÙŠ Ø°Ù„Ùƒ Ø¨Ø§Ù„Ù†Ø³Ø¨Ø© Ù„ÙƒØŸ",
+        "question": "ماذا تعني هذه العلامة لراكبي الدراجات؟",
         "choices": [
-          {
-            "text": "ÙŠØ¬Ø¨ Ø¹Ù„Ù‰ Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ø³ØªØ®Ø¯Ø§Ù… Ù…Ø³Ø§Ø± Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª ÙˆØºÙŠØ± Ù…Ø³Ù…ÙˆØ­ Ù„Ù‡Ù… Ø¨Ø§Ù„Ø·Ø±ÙŠÙ‚",
-            "is_correct": true
-          },
-          {
-            "text": "Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ø¢Ù„ÙŠØ© ÙŠÙ…ÙƒÙ†Ù‡Ø§ Ø§Ø³ØªØ®Ø¯Ø§Ù… Ù…Ø³Ø§Ø± Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø¹Ù†Ø¯ Ø§Ø®ØªÙ†Ø§Ù‚ Ø§Ù„Ø·Ø±ÙŠÙ‚",
-            "is_correct": false
-          },
-          {
-            "text": "Ù…Ø³Ø§Ø± Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ø®ØªÙŠØ§Ø±ÙŠØ› ÙŠÙ…ÙƒÙ† Ù„Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ù„Ø§Ø³ØªÙ…Ø±Ø§Ø± ÙÙŠ Ø§Ø³ØªØ®Ø¯Ø§Ù… Ø§Ù„Ø·Ø±ÙŠÙ‚",
-            "is_correct": false
-          }
+          { "text": "يجب عليهم استخدام مسار الدراجات", "is_correct": true },
+          { "text": "يمكنهم استخدام الطريق", "is_correct": false },
+          { "text": "يمكنهم استخدام الاثنين", "is_correct": false }
         ],
-        "explanation": "ØªØ­Ø¬Ø² D7 Ø§Ù„Ù…Ø³Ø§Ø± Ù„Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª ÙˆØªØ­Ø¸Ø± ÙˆØµÙˆÙ„ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ø¢Ù„ÙŠØ©. ÙŠÙÙ„Ø²Ù… Ø±Ø§ÙƒØ¨Ùˆ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø¨Ø§Ø³ØªØ®Ø¯Ø§Ù… Ù‡Ø°Ø§ Ø§Ù„Ù…Ø³Ø§Ø± ÙˆÙ„Ø§ ÙŠØ¬ÙˆØ² Ù„Ù‡Ù… Ø§Ù„Ù‚ÙŠØ§Ø¯Ø© Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±ÙŠÙ‚."
+        "explanation": "يجب على راكبي الدراجات استخدام مسار الدراجات."
       }
     }
   },
   {
     "question_id": "D7_Q06",
-    "type": "WHAT_MUST_YOU_DO",
+    "type": "IS_IT_ALLOWED",
     "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U bent een fietser. Het D7-fietspad is nat en glad. Mag u de rijbaan gebruiken in plaats van het fietspad?",
+        "question": "Mag een voetganger dit pad gebruiken?",
         "choices": [
-          {
-            "text": "Neen, bord D7 maakt het fietspad verplicht; de weersomstandigheden veranderen deze verplichting niet",
-            "is_correct": true
-          },
-          {
-            "text": "Ja, bij gevaarlijke omstandigheden mag u de rijbaan gebruiken",
-            "is_correct": false
-          },
-          {
-            "text": "Ja, maar enkel als u andere weggebruikers waarschuwt",
-            "is_correct": false
-          }
+          { "text": "Nee", "is_correct": true },
+          { "text": "Ja", "is_correct": false },
+          { "text": "Alleen soms", "is_correct": false }
         ],
-        "explanation": "De verplichting van D7 geldt ongeacht de staat van het fietspad. Slechte weersomstandigheden zijn geen uitzondering op deze verplichting."
+        "explanation": "Het pad is bedoeld voor fietsers."
       },
       "EN": {
-        "question": "You are a cyclist. The D7 cycle path is wet and slippery. May you use the road instead?",
+        "question": "May a pedestrian use this path?",
         "choices": [
-          {
-            "text": "No, sign D7 makes the cycle path compulsory; adverse conditions do not change this obligation",
-            "is_correct": true
-          },
-          {
-            "text": "Yes, in hazardous conditions you may use the road",
-            "is_correct": false
-          },
-          {
-            "text": "Yes, but only if you warn other road users",
-            "is_correct": false
-          }
+          { "text": "No", "is_correct": true },
+          { "text": "Yes", "is_correct": false },
+          { "text": "Only sometimes", "is_correct": false }
         ],
-        "explanation": "The obligation under D7 applies regardless of the state of the cycle path. Poor weather conditions are not an exception to this obligation."
+        "explanation": "The path is intended for cyclists."
       },
       "FR": {
-        "question": "Vous etes cycliste. La piste cyclable D7 est mouilee et glissante. Pouvez-vous utiliser la route a sa place ?",
+        "question": "Un piéton peut-il utiliser ce chemin ?",
         "choices": [
-          {
-            "text": "Non, le panneau D7 rend la piste cyclable obligatoire; les conditions meteorologiques ne modifient pas cette obligation",
-            "is_correct": true
-          },
-          {
-            "text": "Oui, dans des conditions dangereuses vous pouvez utiliser la route",
-            "is_correct": false
-          },
-          {
-            "text": "Oui, mais uniquement si vous signalez votre intention aux autres usagers",
-            "is_correct": false
-          }
+          { "text": "Non", "is_correct": true },
+          { "text": "Oui", "is_correct": false },
+          { "text": "Parfois", "is_correct": false }
         ],
-        "explanation": "L'obligation imposee par D7 s'applique quelle que soit l'etat de la piste. Les mauvaises conditions meteorologiques ne constituent pas une exception."
+        "explanation": "Ce chemin est destiné aux cyclistes."
       },
       "AR": {
-        "question": "Ø£Ù†Øª Ø±Ø§ÙƒØ¨ Ø¯Ø±Ø§Ø¬Ø©. Ù…Ø³Ø§Ø± Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª D7 Ù…Ø¨Ù„ÙˆÙ„ ÙˆØ²Ù„Ù‚. Ù‡Ù„ ÙŠÙ…ÙƒÙ†Ùƒ Ø§Ø³ØªØ®Ø¯Ø§Ù… Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø¨Ø¯Ù„Ø§Ù‹ Ù…Ù†Ù‡ØŸ",
+        "question": "هل يمكن للمشاة استخدام هذا المسار؟",
         "choices": [
-          {
-            "text": "Ù„Ø§ØŒ ØªØ¬Ø¹Ù„ Ù„Ø§ÙØªØ© D7 Ù…Ø³Ø§Ø± Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø¥Ù„Ø²Ø§Ù…ÙŠØ§Ù‹Ø› Ø§Ù„Ø¸Ø±ÙˆÙ Ø§Ù„Ø³ÙŠØ¦Ø© Ù„Ø§ ØªÙØºÙŠÙ‘Ø± Ù‡Ø°Ø§ Ø§Ù„Ø§Ù„ØªØ²Ø§Ù…",
-            "is_correct": true
-          },
-          {
-            "text": "Ù†Ø¹Ù…ØŒ ÙÙŠ Ø§Ù„Ø¸Ø±ÙˆÙ Ø§Ù„Ø®Ø·Ø±Ø© ÙŠÙ…ÙƒÙ†Ùƒ Ø§Ø³ØªØ®Ø¯Ø§Ù… Ø§Ù„Ø·Ø±ÙŠÙ‚",
-            "is_correct": false
-          },
-          {
-            "text": "Ù†Ø¹Ù…ØŒ ÙˆÙ„ÙƒÙ† ÙÙ‚Ø· Ø¥Ø°Ø§ Ø£Ø®Ø¨Ø±Øª Ù…Ø³ØªØ®Ø¯Ù…ÙŠ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø¢Ø®Ø±ÙŠÙ†",
-            "is_correct": false
-          }
+          { "text": "لا", "is_correct": true },
+          { "text": "نعم", "is_correct": false },
+          { "text": "أحياناً", "is_correct": false }
         ],
-        "explanation": "ÙŠÙ†Ø·Ø¨Ù‚ Ø§Ù„Ø§Ù„ØªØ²Ø§Ù… Ø¨Ù…ÙˆØ¬Ø¨ D7 Ø¨ØºØ¶ Ø§Ù„Ù†Ø¸Ø± Ø¹Ù† Ø­Ø§Ù„Ø© Ù…Ø³Ø§Ø± Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª. Ø§Ù„Ø¸Ø±ÙˆÙ Ø§Ù„Ø¬ÙˆÙŠØ© Ø§Ù„Ø³ÙŠØ¦Ø© Ù„ÙŠØ³Øª Ø§Ø³ØªØ«Ù†Ø§Ø¡Ù‹ Ù…Ù† Ù‡Ø°Ø§ Ø§Ù„Ø§Ù„ØªØ²Ø§Ù…."
+        "explanation": "هذا المسار مخصص لراكبي الدراجات."
       }
     }
   },
@@ -409,60 +289,36 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Een voetganger wil wandelen op een pad aangeduid met bord D7. Is dat toegestaan?",
+        "question": "Mag u als fietser de rijbaan gebruiken als het fietspad leeg is?",
         "choices": [
-          {
-            "text": "Neen, het D7-fietspad is uitsluitend bestemd voor fietsers",
-            "is_correct": true
-          },
-          {
-            "text": "Ja, het pad is gedeeld als er voldoende ruimte is",
-            "is_correct": false
-          }
+          { "text": "Nee", "is_correct": true },
+          { "text": "Ja", "is_correct": false }
         ],
-        "explanation": "D7 reserveert het pad exclusief voor fietsers. Voetgangers zijn niet toegelaten op een D7-fietspad."
+        "explanation": "Het fietspad blijft verplicht voor fietsers."
       },
       "EN": {
-        "question": "A pedestrian wants to walk on a path marked with sign D7. Is this allowed?",
+        "question": "May you as a cyclist use the road if the cycle path is empty?",
         "choices": [
-          {
-            "text": "No, the D7 path is exclusively for cyclists",
-            "is_correct": true
-          },
-          {
-            "text": "Yes, the path is shared if there is enough space",
-            "is_correct": false
-          }
+          { "text": "No", "is_correct": true },
+          { "text": "Yes", "is_correct": false }
         ],
-        "explanation": "D7 reserves the path exclusively for cyclists. Pedestrians are not permitted on a D7 cycle path."
+        "explanation": "The cycle path remains mandatory."
       },
       "FR": {
-        "question": "Un pieton veut marcher sur un chemin marque avec le panneau D7. Est-ce autorise ?",
+        "question": "Pouvez-vous utiliser la route si la piste est vide ?",
         "choices": [
-          {
-            "text": "Non, le chemin D7 est exclusivement reserve aux cyclistes",
-            "is_correct": true
-          },
-          {
-            "text": "Oui, le chemin est partage s'il y a suffisamment de place",
-            "is_correct": false
-          }
+          { "text": "Non", "is_correct": true },
+          { "text": "Oui", "is_correct": false }
         ],
-        "explanation": "D7 reserve le chemin exclusivement aux cyclistes. Les pietons ne sont pas autorises sur une piste cyclable D7."
+        "explanation": "La piste reste obligatoire."
       },
       "AR": {
-        "question": "ÙŠØ±ÙŠØ¯ Ø£Ø­Ø¯ Ø§Ù„Ù…Ø´Ø§Ø© Ø§Ù„Ù…Ø´ÙŠ Ø¹Ù„Ù‰ Ù…Ø³Ø§Ø± Ù…Ø¤Ø´Ø± Ø¨Ù„Ø§ÙØªØ© D7. Ù‡Ù„ Ù‡Ø°Ø§ Ù…Ø³Ù…ÙˆØ­ Ø¨Ù‡ØŸ",
+        "question": "هل يمكنك استخدام الطريق إذا كان مسار الدراجات فارغاً؟",
         "choices": [
-          {
-            "text": "Ù„Ø§ØŒ Ù…Ø³Ø§Ø± D7 Ù…Ø®ØµØµ Ø­ØµØ±Ø§Ù‹ Ù„Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª",
-            "is_correct": true
-          },
-          {
-            "text": "Ù†Ø¹Ù…ØŒ Ø§Ù„Ù…Ø³Ø§Ø± Ù…Ø´ØªØ±Ùƒ Ø¥Ø°Ø§ ÙƒØ§Ù†Øª Ù‡Ù†Ø§Ùƒ Ù…Ø³Ø§Ø­Ø© ÙƒØ§ÙÙŠØ©",
-            "is_correct": false
-          }
+          { "text": "لا", "is_correct": true },
+          { "text": "نعم", "is_correct": false }
         ],
-        "explanation": "ØªØ­Ø¬Ø² D7 Ø§Ù„Ù…Ø³Ø§Ø± Ø­ØµØ±Ø§Ù‹ Ù„Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª. Ø§Ù„Ù…Ø´Ø§Ø© ØºÙŠØ± Ù…Ø³Ù…ÙˆØ­ Ù„Ù‡Ù… Ø¹Ù„Ù‰ Ù…Ø³Ø§Ø± Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª D7."
+        "explanation": "يبقى مسار الدراجات إلزامياً."
       }
     }
   },
@@ -474,60 +330,36 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U fietst op een D7-pad en het is erg druk. Mag u de rijbaan ernaast gebruiken?",
+        "question": "Mag een bromfietser dit pad gebruiken?",
         "choices": [
-          {
-            "text": "Neen, het D7-fietspad is verplicht voor fietsers ongeacht de drukte",
-            "is_correct": true
-          },
-          {
-            "text": "Ja, als het fietspad te druk is, mag u tijdelijk de rijbaan gebruiken",
-            "is_correct": false
-          }
+          { "text": "Nee", "is_correct": true },
+          { "text": "Ja", "is_correct": false }
         ],
-        "explanation": "Drukte op het D7-fietspad vormt geen uitzondering op de verplichting. Fietsers moeten het fietspad blijven gebruiken."
+        "explanation": "Het pad is voor fietsers."
       },
       "EN": {
-        "question": "You are cycling on a D7 path and it is very crowded. May you use the road alongside instead?",
+        "question": "May a moped rider use this path?",
         "choices": [
-          {
-            "text": "No, the D7 cycle path is mandatory for cyclists regardless of congestion",
-            "is_correct": true
-          },
-          {
-            "text": "Yes, if the cycle path is too crowded you may temporarily use the road",
-            "is_correct": false
-          }
+          { "text": "No", "is_correct": true },
+          { "text": "Yes", "is_correct": false }
         ],
-        "explanation": "Congestion on the D7 cycle path does not create an exception to the obligation. Cyclists must continue to use the cycle path."
+        "explanation": "The path is for cyclists."
       },
       "FR": {
-        "question": "Vous cyclez sur une piste D7 et elle est tres encommbree. Pouvez-vous utiliser la route a cote ?",
+        "question": "Un cyclomoteur peut-il utiliser ce chemin ?",
         "choices": [
-          {
-            "text": "Non, la piste cyclable D7 est obligatoire pour les cyclistes quelle que soit la frequentation",
-            "is_correct": true
-          },
-          {
-            "text": "Oui, si la piste est trop encombree vous pouvez utiliser temporairement la route",
-            "is_correct": false
-          }
+          { "text": "Non", "is_correct": true },
+          { "text": "Oui", "is_correct": false }
         ],
-        "explanation": "L'affluence sur la piste D7 ne constitue pas une exception a l'obligation. Les cyclistes doivent continuer a utiliser la piste cyclable."
+        "explanation": "Ce chemin est pour les cyclistes."
       },
       "AR": {
-        "question": "Ø£Ù†Øª ØªØ±ÙƒØ¨ Ø¯Ø±Ø§Ø¬ØªÙƒ Ø¹Ù„Ù‰ Ù…Ø³Ø§Ø± D7 ÙˆÙ‡Ùˆ Ù…Ø²Ø¯Ø­Ù… Ø¬Ø¯Ø§Ù‹. Ù‡Ù„ ÙŠÙ…ÙƒÙ†Ùƒ Ø§Ø³ØªØ®Ø¯Ø§Ù… Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ù…Ø¬Ø§ÙˆØ± Ø¨Ø¯Ù„Ø§Ù‹ Ù…Ù†Ù‡ØŸ",
+        "question": "هل يمكن لدراجة نارية خفيفة استخدام هذا المسار؟",
         "choices": [
-          {
-            "text": "Ù„Ø§ØŒ Ù…Ø³Ø§Ø± Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª D7 Ø¥Ù„Ø²Ø§Ù…ÙŠ Ù„Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø¨ØºØ¶ Ø§Ù„Ù†Ø¸Ø± Ø¹Ù† Ø§Ù„Ø§Ø²Ø¯Ø­Ø§Ù…",
-            "is_correct": true
-          },
-          {
-            "text": "Ù†Ø¹Ù…ØŒ Ø¥Ø°Ø§ ÙƒØ§Ù† Ø§Ù„Ù…Ø³Ø§Ø± Ù…Ø²Ø¯Ø­Ù…Ø§Ù‹ Ø¬Ø¯Ø§Ù‹ ÙŠÙ…ÙƒÙ†Ùƒ Ø§Ø³ØªØ®Ø¯Ø§Ù… Ø§Ù„Ø·Ø±ÙŠÙ‚ Ù…Ø¤Ù‚ØªØ§Ù‹",
-            "is_correct": false
-          }
+          { "text": "لا", "is_correct": true },
+          { "text": "نعم", "is_correct": false }
         ],
-        "explanation": "Ø§Ù„Ø§Ø²Ø¯Ø­Ø§Ù… Ø¹Ù„Ù‰ Ù…Ø³Ø§Ø± D7 Ù„Ø§ ÙŠÙØ´ÙƒÙ‘Ù„ Ø§Ø³ØªØ«Ù†Ø§Ø¡Ù‹ Ù…Ù† Ø§Ù„Ø§Ù„ØªØ²Ø§Ù…. ÙŠØ¬Ø¨ Ø¹Ù„Ù‰ Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ù„Ø§Ø³ØªÙ…Ø±Ø§Ø± ÙÙŠ Ø§Ø³ØªØ®Ø¯Ø§Ù… Ù…Ø³Ø§Ø± Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª."
+        "explanation": "هذا المسار مخصص لراكبي الدراجات."
       }
     }
   }

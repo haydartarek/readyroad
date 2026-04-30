@@ -50,6 +50,8 @@ jwt:
 # Disable data import in tests
 # ========================================
 readyroad:
+  admin:
+    default-password: test-admin-password
   data-import:
     enabled: false
 

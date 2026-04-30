@@ -32,7 +32,7 @@ SET name_nl    = 'Voorrangsweg',
     name_en    = 'Priority road',
     name_fr    = 'Route prioritaire',
     name_ar    = 'طريق الأولوية',
-    image_url  = 'images/signs/priority_signs/B9 Voorrang van rechts.png',
+    image_url  = 'images/signs/priority_signs/B9 Voorrangsweg.png',
     updated_at = NOW()
 WHERE sign_code = 'B9';
 
@@ -42,7 +42,7 @@ SET name_nl    = 'Einde voorrangsweg',
     name_en    = 'End of priority road',
     name_fr    = 'Fin de route prioritaire',
     name_ar    = 'انتهاء طريق الأولوية',
-    image_url  = 'images/signs/priority_signs/B11 Voorrang op tegenliggers.png',
+    image_url  = 'images/signs/priority_signs/B11 Einde van voorrangsweg.png',
     updated_at = NOW()
 WHERE sign_code = 'B11';
 
@@ -52,29 +52,29 @@ SET name_nl    = 'Voorrang op de kruisende zijwegen',
     name_en    = 'Priority over intersecting side roads',
     name_fr    = 'Priorité sur les routes latérales de croisement',
     name_ar    = 'أولوية على الطرق الجانبية المتقاطعة',
-    image_url  = 'images/signs/priority_signs/B15A Variant schuine links.png',
+    image_url  = 'images/signs/priority_signs/B15a Voorrang op het eerstvolgende kruispunt - variant schuine zijweg links.png',
     updated_at = NOW()
 WHERE sign_code = 'B15a';
 
--- ---- B15A-v1: Voorrang op de kruisende zijwegen (variant 1) – fix wrong image prefix ----
+-- ---- B15b: Voorrang op de kruisende zijwegen (variant 1) – fix wrong image prefix ----
 UPDATE traffic_signs
 SET name_nl    = 'Voorrang op de kruisende zijwegen',
     name_en    = 'Priority over intersecting side roads',
     name_fr    = 'Priorité sur les routes latérales de croisement',
     name_ar    = 'أولوية على الطرق الجانبية المتقاطعة',
-    image_url  = 'images/signs/priority_signs/B15A Variant schuine rechts.png',
+    image_url  = 'images/signs/priority_signs/B15b Voorrang op het eerstvolgende kruispunt - variant schuine zijweg rechts.png',
     updated_at = NOW()
-WHERE sign_code = 'B15A-v1';
+WHERE sign_code = 'B15b';
 
--- ---- B15A-v2: Voorrang op kruisende zijwegen (variant 2) – fix wrong image prefix ----
+-- ---- B15c: Voorrang op kruisende zijwegen (variant 2) – fix wrong image prefix ----
 UPDATE traffic_signs
 SET name_nl    = 'Voorrang op kruisende zijwegen',
     name_en    = 'Priority over crossing side roads',
     name_fr    = 'Priorité sur les routes latérales',
     name_ar    = 'الأولوية على الطرق الجانبية المتقاطعة',
-    image_url  = 'images/signs/priority_signs/B15A Versmalling van rechts.png',
+    image_url  = 'images/signs/priority_signs/B15c Voorrang op het eerstvolgende kruispunt.png',
     updated_at = NOW()
-WHERE sign_code = 'B15A-v2';
+WHERE sign_code = 'B15c';
 
 -- ---- B15b: Voorrang op kruisende zijweg (links van boven) ----
 UPDATE traffic_signs
@@ -82,7 +82,7 @@ SET name_nl    = 'Voorrang op kruisende zijweg',
     name_en    = 'Priority over intersecting side road',
     name_fr    = 'Priorité sur la route latérale de croisement',
     name_ar    = 'الأولوية على الطريق الجانبي الأيسر (أعلى)',
-    image_url  = 'images/signs/priority_signs/B15B Versmalling van links.png',
+    image_url  = 'images/signs/priority_signs/B15d Voorrang op het eerstvolgende kruispunt - variant zijweg links.png',
     updated_at = NOW()
 WHERE sign_code = 'B15b';
 
@@ -92,7 +92,7 @@ SET name_nl    = 'Voorrang op kruisende zijweg',
     name_en    = 'Priority over intersecting side road',
     name_fr    = 'Priorité sur la route latérale de croisement',
     name_ar    = 'الأولوية على الطريق الجانبي الأيسر (أسفل)',
-    image_url  = 'images/signs/priority_signs/B15C Versmalling beide zijden.png',
+    image_url  = 'images/signs/priority_signs/B15e Voorrang op het eerstvolgende kruispunt - variant T-kruispunt.png',
     updated_at = NOW()
 WHERE sign_code = 'B15c';
 
@@ -102,7 +102,7 @@ SET name_nl    = 'Voorrang op kruisende zijweg',
     name_en    = 'Priority over intersecting side road',
     name_fr    = 'Priorité sur la route latérale de croisement',
     name_ar    = 'الأولوية على الطريق الجانبي الأيمن (أعلى)',
-    image_url  = 'images/signs/priority_signs/B15D Voorrang van rechts bij versmalling.png',
+    image_url  = 'images/signs/priority_signs/B15f Voorrang op het eerstvolgende kruispunt - variant Y-kruispunt.png',
     updated_at = NOW()
 WHERE sign_code = 'B15d';
 
@@ -112,7 +112,7 @@ SET name_nl    = 'Voorrang op kruisende zijweg',
     name_en    = 'Priority over crossing side road',
     name_fr    = 'Priorité sur la route latérale de croisement',
     name_ar    = 'الأولوية على الطريق الجانبي الأيمن (أسفل)',
-    image_url  = 'images/signs/priority_signs/B15E Voorrang van links bij versmalling.png',
+    image_url  = 'images/signs/priority_signs/B15g Voorrang op kruisende zijweg.png',
     updated_at = NOW()
 WHERE sign_code = 'B15e';
 
@@ -122,7 +122,7 @@ SET name_nl    = 'Voorrang op kruisende zijweg',
     name_en    = 'Priority over intersecting side road',
     name_fr    = 'Priorité sur la route latérale de croisement',
     name_ar    = 'الأولوية على الطريق الجانبي (يمين ويسار أعلى)',
-    image_url  = 'images/signs/priority_signs/B15F Voorrang voor tegenliggers.png',
+    image_url  = 'images/signs/priority_signs/B21 Smalle doorgang. Voorrang ten opzichte van de bestuurders die uit de tegenovergestelde richting komen.png',
     updated_at = NOW()
 WHERE sign_code = 'B15f';
 
@@ -132,7 +132,7 @@ SET name_nl    = 'Voorrang op kruisende zijweg',
     name_en    = 'Priority over intersecting side road',
     name_fr    = 'Priorité sur la route latérale de croisement',
     name_ar    = 'الأولوية على الطريق الجانبي (يمين ويسار أسفل)',
-    image_url  = 'images/signs/priority_signs/B15G Tegenliggers hebben voorrang.png',
+    image_url  = 'images/signs/priority_signs/B15g Voorrang op kruisende zijweg.png',
     updated_at = NOW()
 WHERE sign_code = 'B15g';
 
@@ -142,7 +142,7 @@ SET name_nl    = 'Kruispunt waar de voorrang van rechts geldt',
     name_en    = 'Crossroads where priority from the right applies',
     name_fr    = 'Carrefour où la priorité de droite s''applique',
     name_ar    = 'تقاطع تُطبَّق فيه قاعدة الأولوية من اليمين',
-    image_url  = 'images/signs/priority_signs/B17 Voorrangskruispunt.png',
+    image_url  = 'images/signs/priority_signs/B17 Kruispunt waar de voorrang van rechts geldt.png',
     updated_at = NOW()
 WHERE sign_code = 'B17';
 
@@ -152,7 +152,7 @@ SET name_nl    = 'Smalle doorgang: voorrang verlenen aan de bestuurders die uit 
     name_en    = 'Narrow passage: give way to drivers coming from the opposite direction',
     name_fr    = 'Passage étroit: céder le passage aux conducteurs venant en sens inverse',
     name_ar    = 'ممر ضيق: إعطاء الأولوية للسائقين القادمين من الاتجاه المعاكس',
-    image_url  = 'images/signs/priority_signs/B19 Verbod voor voertuigen elkaar niet te kruisen.png',
+    image_url  = 'images/signs/priority_signs/B19 Smalle doorgang. Voorrang verlenen aan de bestuurders die uit de tegenovergestelde richting komen.png',
     updated_at = NOW()
 WHERE sign_code = 'B19';
 
@@ -172,7 +172,7 @@ SET name_nl    = 'Fietsers en speed pedelecs mogen rechtsaf slaan en de verkeers
     name_en    = 'Cyclists and speed pedelecs may turn right and pass traffic lights',
     name_fr    = 'Cyclistes et speed pedelecs peuvent tourner à droite et passer les feux',
     name_ar    = 'يجوز لراكبي الدراجات وسبيد بيدليك الانعطاف يميناً والمضي أمام إشارات المرور',
-    image_url  = 'images/signs/priority_signs/B22 Fietsers en speedpedelecs rechtdoor bij rood.png',
+    image_url  = 'images/signs/priority_signs/B22 Fietsers en speed pedelecs mogen rechts afslaan en de verkeerslichten voorbijrijden.png',
     updated_at = NOW()
 WHERE sign_code = 'B22';
 
@@ -188,6 +188,7 @@ WHERE sign_code = 'B23';
 
 -- ============================================================================
 -- Also update sign.json image_path entries that used the wrong 'assets/' prefix
--- This fixes B15A-v1 and B15A-v2 which referenced assets/signs/voorrangsborden/
+-- This fixes B15b and B15c which referenced assets/signs/voorrangsborden/
 -- (the DB image_url is already corrected above via UPDATE statements)
 -- ============================================================================
+

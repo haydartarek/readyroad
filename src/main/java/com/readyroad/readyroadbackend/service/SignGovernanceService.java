@@ -9,10 +9,14 @@ import com.readyroad.readyroadbackend.dto.SignGovernanceReport.AuditResult;
 import com.readyroad.readyroadbackend.dto.SignGovernanceReport.SignAuditItem;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -32,13 +36,18 @@ public class SignGovernanceService {
 
     private final RoadSignRepository roadSignRepository;
     private final ObjectMapper objectMapper;
+    private final ResourceLoader resourceLoader;
 
     @Value("${readyroad.signs.canonical-path:data/signs.json}")
     private String canonicalPath;
 
-    public SignGovernanceService(RoadSignRepository roadSignRepository, ObjectMapper objectMapper) {
+    public SignGovernanceService(
+            RoadSignRepository roadSignRepository,
+            ObjectMapper objectMapper,
+            ResourceLoader resourceLoader) {
         this.roadSignRepository = roadSignRepository;
         this.objectMapper = objectMapper;
+        this.resourceLoader = resourceLoader;
     }
 
     /**
@@ -139,17 +148,8 @@ public class SignGovernanceService {
      * Load the canonical signs.json file and index entries by code.
      */
     private Map<String, JsonNode> loadCanonicalSigns() {
-        try {
-            File file = new File(canonicalPath);
-            if (!file.isAbsolute()) {
-                // Resolve relative to working directory
-                file = new File(System.getProperty("user.dir"), canonicalPath);
-            }
-            if (!file.exists()) {
-                log.warn("Canonical signs.json not found at: {}", file.getAbsolutePath());
-                return Map.of();
-            }
-            List<JsonNode> signs = objectMapper.readValue(file, new TypeReference<List<JsonNode>>() {
+        try (InputStream input = openCanonicalInputStream()) {
+            List<JsonNode> signs = objectMapper.readValue(input, new TypeReference<List<JsonNode>>() {
             });
             Map<String, JsonNode> byCode = new LinkedHashMap<>();
             for (JsonNode sign : signs) {
@@ -164,6 +164,23 @@ public class SignGovernanceService {
             log.error("Failed to read canonical signs.json: {}", e.getMessage());
             return Map.of();
         }
+    }
+
+    private InputStream openCanonicalInputStream() throws IOException {
+        Resource classpathResource = resourceLoader.getResource("classpath:" + canonicalPath);
+        if (classpathResource.exists()) {
+            return classpathResource.getInputStream();
+        }
+
+        File file = new File(canonicalPath);
+        if (!file.isAbsolute()) {
+            file = new File(System.getProperty("user.dir"), canonicalPath);
+        }
+        if (!file.exists()) {
+            log.warn("Canonical signs.json not found at: {}", file.getAbsolutePath());
+            throw new IOException("Canonical signs.json not found");
+        }
+        return new FileInputStream(file);
     }
 
     private static String textOrNull(JsonNode node, String field) {

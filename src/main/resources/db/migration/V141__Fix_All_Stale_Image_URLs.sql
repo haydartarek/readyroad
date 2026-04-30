@@ -13,15 +13,15 @@
 
 -- ── A. traffic_signs: individual path fixes ──────────────────────────────────
 
--- C43: generic speed sign → use the 30 km canonical image
+-- C43: current local reference for the prohibition sign
 UPDATE traffic_signs
-SET image_url = 'images/signs/prohibition_signs/C43 - Verbod te rijden met een grotere snelheid dan is aangeduid 30 km.png'
+SET image_url = 'images/signs/prohibition_signs/C43 Verbod te rijden met een grotere snelheid dan 50 km.png'
 WHERE sign_code = 'C43';
 
 -- D1b: was titled "rechts afslaan"; actual sign and file is "links afslaan"
 UPDATE traffic_signs
 SET image_url = 'images/signs/mandatory_signs/D1b Verplichting links afslaan.png'
-WHERE sign_code = 'D1b';
+WHERE sign_code = 'D1b-links';
 
 -- F45b: long descriptive name → canonical short name
 UPDATE traffic_signs
@@ -102,7 +102,7 @@ WHERE sign_code = 'ZC35T';
 
 -- C43: same as traffic_signs fix
 UPDATE road_signs
-SET image_path = 'images/signs/prohibition_signs/C43 - Verbod te rijden met een grotere snelheid dan is aangeduid 30 km.png'
+SET image_path = 'images/signs/prohibition_signs/C43 Verbod te rijden met een grotere snelheid dan 50 km.png'
 WHERE sign_code = 'C43';
 
 -- F45b: long descriptive name → short canonical

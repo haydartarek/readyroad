@@ -5,7 +5,6 @@
     "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE: Replace wrong answers with actual sign names from the same category.",
     "i18n": {
       "NL": {
         "question": "Wat betekent dit verkeersbord?",
@@ -23,7 +22,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "Waarschuwingsbord: Opgelet verzinkbare paal Let op en pas uw snelheid aan."
+        "explanation": "Dit bord waarschuwt voor een verzinkbare paal in de rijbaan."
       },
       "EN": {
         "question": "What does this traffic sign mean?",
@@ -41,7 +40,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "Warning sign: danger ahead. Pay attention and adjust your speed."
+        "explanation": "This sign warns of a retractable bollard in the roadway."
       },
       "FR": {
         "question": "Que signifie ce panneau de signalisation ?",
@@ -51,7 +50,7 @@
             "is_correct": true
           },
           {
-            "text": "Interdiction de dÃ©passer",
+            "text": "Interdiction de dépasser",
             "is_correct": false
           },
           {
@@ -59,189 +58,151 @@
             "is_correct": false
           }
         ],
-        "explanation": "Panneau d'avertissement : danger. Soyez attentif et adaptez votre vitesse."
+        "explanation": "Ce panneau avertit d'une borne escamotable dans la chaussée."
       },
       "AR": {
-        "question": "Ù…Ø§Ø°Ø§ ØªØ¹Ù†ÙŠ Ù„Ø§ÙØªØ© Ø§Ù„Ù…Ø±ÙˆØ± Ù‡Ø°Ù‡ØŸ",
+        "question": "ما معنى هذه العلامة المرورية؟",
         "choices": [
           {
-            "text": "Ø§Ù†ØªØ¨Ø§Ù‡ Ø¹Ù…ÙˆØ¯ Ù‚Ø§Ø¨Ù„ Ù„Ù„Ø³Ø­Ø¨",
+            "text": "انتباه عمود قابل للسحب",
             "is_correct": true
           },
           {
-            "text": "Ø­Ø¸Ø± Ø§Ù„ØªØ¬Ø§ÙˆØ²",
+            "text": "حظر التجاوز",
             "is_correct": false
           },
           {
-            "text": "Ø§Ù„Ø³Ø±Ø¹Ø© Ø§Ù„Ù‚ØµÙˆÙ‰ 50 ÙƒÙ…/Ø³",
+            "text": "السرعة القصوى 50 كم/س",
             "is_correct": false
           }
         ],
-        "explanation": "Ø¹Ù„Ø§Ù…Ø© ØªØ­Ø°ÙŠØ±: Ø®Ø·Ø± Ø£Ù…Ø§Ù…Ùƒ. Ø§Ù†ØªØ¨Ù‡ ÙˆØ§Ø¶Ø¨Ø· Ø³Ø±Ø¹ØªÙƒ."
+        "explanation": "تحذر هذه العلامة من وجود عمود قابل للسحب في الطريق."
       }
     }
-  },
+  },
   {
     "question_id": "A53_Q02",
     "type": "WHICH_SIGN",
     "difficulty": "EASY",
     "is_critical": false,
-    "show_sign": true,
-    "_note": "TEMPLATE: Ready to use â€” category identification question.",
+    "show_sign": false,
     "i18n": {
       "NL": {
-        "question": "Tot welke categorie verkeerstekens behoort dit bord?",
+        "question": "Welk bord waarschuwt voor een verzinkbare paal?",
         "choices": [
-          {
-            "text": "Gevaarsborden (A-reeks)",
-            "is_correct": true
-          },
-          {
-            "text": "Voorrangsborden (B-reeks)",
-            "is_correct": false
-          },
-          {
-            "text": "Verbodsborden (C-reeks)",
-            "is_correct": false
-          }
+          { "text": "Het bord dat waarschuwt voor een paal die automatisch omhoog komt en voertuigen kan beschadigen", "is_correct": true },
+          { "text": "Het bord dat waarschuwt voor filevorming of langzaam rijdend verkeer", "is_correct": false },
+          { "text": "Het bord dat waarschuwt voor een niet nader aangeduid gevaar", "is_correct": false }
         ],
-        "explanation": "Dit bord behoort tot de categorie 'Gevaarsborden (A-reeks)'. Elk type bord heeft een specifieke vorm en kleurschema."
+        "explanation": "Het gevaarsbord A53 waarschuwt specifiek voor een verzinkbare paal die onverwacht omhoog kan komen. Het bord voor filevorming (A50) geldt voor verkeersfiles. Het bord voor overige gevaren (A51) geldt voor gevaren zonder specifiek symbool."
       },
       "EN": {
-        "question": "To which category of traffic signs does this sign belong?",
+        "question": "Which sign warns of a retractable bollard?",
         "choices": [
-          {
-            "text": "Danger signs (A-series)",
-            "is_correct": true
-          },
-          {
-            "text": "Priority signs (B-series)",
-            "is_correct": false
-          },
-          {
-            "text": "Prohibition signs (C-series)",
-            "is_correct": false
-          }
+          { "text": "The sign that warns of a bollard that may automatically rise and damage vehicles", "is_correct": true },
+          { "text": "The sign that warns of a traffic jam or slow-moving traffic", "is_correct": false },
+          { "text": "The sign that warns of an unspecified hazard", "is_correct": false }
         ],
-        "explanation": "This sign belongs to the 'Danger signs (A-series)' category. Each type of sign has a specific shape and color scheme."
+        "explanation": "Danger sign A53 specifically warns of a retractable bollard that may unexpectedly rise. The traffic jam sign (A50) applies to queuing traffic. The general hazard sign (A51) applies to hazards without a specific symbol."
       },
       "FR": {
-        "question": "Ã€ quelle catÃ©gorie de panneaux de signalisation ce panneau appartient-il ?",
+        "question": "Quel panneau signale un bollard rétractable ?",
         "choices": [
-          {
-            "text": "Panneaux de danger (sÃ©rie A)",
-            "is_correct": true
-          },
-          {
-            "text": "Panneaux de prioritÃ© (sÃ©rie B)",
-            "is_correct": false
-          },
-          {
-            "text": "Panneaux d'interdiction (sÃ©rie C)",
-            "is_correct": false
-          }
+          { "text": "Le panneau qui avertit d’un bollard pouvant se relèver automatiquement et endommager les véhicules", "is_correct": true },
+          { "text": "Le panneau qui avertit d’un embouteillage ou d’une circulation lente", "is_correct": false },
+          { "text": "Le panneau qui avertit d’un danger non précisé", "is_correct": false }
         ],
-        "explanation": "Ce panneau appartient Ã  la catÃ©gorie 'Panneaux de danger (sÃ©rie A)'. Chaque type de panneau a une forme et un schÃ©ma de couleurs spÃ©cifiques."
+        "explanation": "Le panneau de danger A53 signale spécifiquement un bollard rétractable pouvant se relèver de manière inattendue. Le panneau embouteillage (A50) concerne les files de véhicules. Le panneau danger général (A51) concerne des dangers sans symbole spécifique."
       },
       "AR": {
-        "question": "Ø¥Ù„Ù‰ Ø£ÙŠ ÙØ¦Ø© Ù…Ù† Ù„Ø§ÙØªØ§Øª Ø§Ù„Ù…Ø±ÙˆØ± ØªÙ†ØªÙ…ÙŠ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ",
+        "question": "أي علامة مرورية تُحذّر من وجود عمود ساقط أوتوماتيكي؟",
         "choices": [
-          {
-            "text": "Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± (Ø³Ù„Ø³Ù„Ø© A)",
-            "is_correct": true
-          },
-          {
-            "text": "Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© (Ø³Ù„Ø³Ù„Ø© B)",
-            "is_correct": false
-          },
-          {
-            "text": "Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø­Ø¸Ø± (Ø³Ù„Ø³Ù„Ø© C)",
-            "is_correct": false
-          }
+          { "text": "العلامة التي تُحذّر من عمود قد يرتفع تلقائيًا ويتلف المركبة", "is_correct": true },
+          { "text": "العلامة التي تُحذّر من أزمة مرورية أو حركة بطيئة", "is_correct": false },
+          { "text": "العلامة التي تُحذّر من خطر غير محدد", "is_correct": false }
         ],
-        "explanation": "Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ© ØªÙ†ØªÙ…ÙŠ Ø¥Ù„Ù‰ ÙØ¦Ø© 'Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± (Ø³Ù„Ø³Ù„Ø© A)'. ÙƒÙ„ Ù†ÙˆØ¹ Ù…Ù† Ø§Ù„Ù„Ø§ÙØªØ§Øª Ù„Ù‡ Ø´ÙƒÙ„ ÙˆÙ†Ø¸Ø§Ù… Ø£Ù„ÙˆØ§Ù† Ù…Ø­Ø¯Ø¯."
+        "explanation": "علامة الخطر A53 تُحذّر تحديدًا من عمود ساقط قد يرتفع فجأة. علامة الأزمة (A50) تختص بأزمة السيارات. علامة الخطر العام (A51) تختص بخطر دون رمز محدد."
       }
     }
   },
   {
     "question_id": "A53_Q03",
-    "type": "WHAT_MUST_YOU_DO",
+    "type": "HAZARD_IDENTIFICATION",
     "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE (MEDIUM): Replace with sign-specific question for production.",
     "i18n": {
       "NL": {
-        "question": "Wat moet u doen wanneer u dit gevaarsbord ziet?",
+        "question": "Wat is het belangrijkste risico wanneer u dit bord nadert?",
         "choices": [
           {
-            "text": "Snelheid verminderen en extra opletten",
+            "text": "De verzinkbare paal kan plots omhoogkomen en de weg blokkeren",
             "is_correct": true
           },
           {
-            "text": "Stoppen en uitstappen",
+            "text": "De weg wordt vanaf hier eenrichtingsverkeer",
             "is_correct": false
           },
           {
-            "text": "De rijstrook wisselen",
+            "text": "Er verschijnen verderop verkeerslichten",
             "is_correct": false
           }
         ],
-        "explanation": "Gevaarsborden waarschuwen voor gevaarlijke situaties. U moet uw snelheid aanpassen en extra voorzichtig zijn."
+        "explanation": "Het grootste risico is dat de verzinkbare paal onverwacht uit het wegdek omhoogkomt en de doorgang plots blokkeert."
       },
       "EN": {
-        "question": "What should you do when you see this danger sign?",
+        "question": "What is the main risk when approaching this sign?",
         "choices": [
           {
-            "text": "Reduce speed and pay extra attention",
+            "text": "The retractable bollard may rise suddenly and block the road",
             "is_correct": true
           },
           {
-            "text": "Stop and get out of the vehicle",
+            "text": "The road becomes one-way from this point",
             "is_correct": false
           },
           {
-            "text": "Change lane immediately",
+            "text": "Traffic lights will appear ahead",
             "is_correct": false
           }
         ],
-        "explanation": "Danger signs warn of hazardous situations on the road. You must adjust your speed and be extra careful."
+        "explanation": "The main risk is that the retractable bollard may rise unexpectedly from the road surface and suddenly block the way."
       },
       "FR": {
-        "question": "Que devez-vous faire lorsque vous voyez ce panneau de danger ?",
+        "question": "Quel est le principal risque lorsque vous approchez de ce panneau ?",
         "choices": [
           {
-            "text": "RÃ©duire la vitesse et faire particuliÃ¨rement attention",
+            "text": "La borne escamotable peut se relever soudainement et bloquer la route",
             "is_correct": true
           },
           {
-            "text": "ArrÃªter et descendre du vÃ©hicule",
+            "text": "La route devient à sens unique à partir d'ici",
             "is_correct": false
           },
           {
-            "text": "Changer de voie immÃ©diatement",
+            "text": "Des feux de circulation apparaîtront plus loin",
             "is_correct": false
           }
         ],
-        "explanation": "Les panneaux de danger avertissent des situations dangereuses. Vous devez adapter votre vitesse et Ãªtre particuliÃ¨rement prudent."
+        "explanation": "Le principal risque est que la borne escamotable se relève soudainement depuis la chaussée et bloque brutalement le passage."
       },
       "AR": {
-        "question": "Ù…Ø§Ø°Ø§ ÙŠØ¬Ø¨ Ø£Ù† ØªÙØ¹Ù„ Ø¹Ù†Ø¯Ù…Ø§ ØªØ±Ù‰ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ© Ø§Ù„ØªØ­Ø°ÙŠØ±ÙŠØ©ØŸ",
+        "question": "ما الخطر الرئيسي عند الاقتراب من هذه العلامة المرورية؟",
         "choices": [
           {
-            "text": "ØªÙ‚Ù„ÙŠÙ„ Ø§Ù„Ø³Ø±Ø¹Ø© ÙˆØ§Ù„Ø§Ù†ØªØ¨Ø§Ù‡ Ø¨Ø´ÙƒÙ„ Ø¥Ø¶Ø§ÙÙŠ",
+            "text": "قد يرتفع العمود القابل للسحب فجأة ويغلق الطريق",
             "is_correct": true
           },
           {
-            "text": "Ø§Ù„ØªÙˆÙ‚Ù ÙˆØ§Ù„Ù†Ø²ÙˆÙ„ Ù…Ù† Ø§Ù„Ù…Ø±ÙƒØ¨Ø©",
+            "text": "يصبح الطريق من هنا باتجاه واحد",
             "is_correct": false
           },
           {
-            "text": "ØªØºÙŠÙŠØ± Ø§Ù„Ù…Ø³Ø§Ø± ÙÙˆØ±Ø§Ù‹",
+            "text": "ستظهر إشارات مرور لاحقاً",
             "is_correct": false
           }
         ],
-        "explanation": "ØªØ­Ø°Ø± Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± Ù…Ù† Ø§Ù„Ù…ÙˆØ§Ù‚Ù Ø§Ù„Ø®Ø·Ø±Ø© Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±ÙŠÙ‚. ÙŠØ¬Ø¨ Ø¹Ù„ÙŠÙƒ ØªØ¹Ø¯ÙŠÙ„ Ø³Ø±Ø¹ØªÙƒ ÙˆØ£Ù† ØªÙƒÙˆÙ† Ø£ÙƒØ«Ø± Ø­Ø°Ø±Ø§Ù‹."
+        "explanation": "الخطر الرئيسي هو أن العمود القابل للسحب قد يرتفع بشكل غير متوقع من سطح الطريق ويغلق المرور فجأة."
       }
     }
   },
@@ -251,79 +212,78 @@
     "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE (MEDIUM): Replace with sign-specific question for production.",
     "i18n": {
       "NL": {
-        "question": "Op welke afstand van het gevaar wordt een gevaarsbord buiten de bebouwde kom geplaatst?",
+        "question": "Waarom doet u er goed aan uw snelheid te verminderen bij dit bord?",
         "choices": [
           {
-            "text": "Ongeveer 150 meter voor het gevaar",
+            "text": "Omdat de paal onverwacht kan activeren en de doorgang blokkeren",
             "is_correct": true
           },
           {
-            "text": "Precies op de plek van het gevaar",
+            "text": "Omdat inhalen hier altijd verboden is",
             "is_correct": false
           },
           {
-            "text": "Op 500 meter voor het gevaar",
+            "text": "Omdat hier altijd voetgangers oversteken",
             "is_correct": false
           }
         ],
-        "explanation": "Buiten de bebouwde kom worden gevaarsborden op Â±150 m geplaatst. In de bebouwde kom is dit Â±50 m."
+        "explanation": "U verlaagt hier best uw snelheid omdat de verzinkbare paal onverwacht kan activeren en u veilig moet kunnen stoppen."
       },
       "EN": {
-        "question": "At what distance from the hazard is a danger sign placed outside built-up areas?",
+        "question": "Why should you reduce your speed near this sign?",
         "choices": [
           {
-            "text": "Approximately 150 meters before the hazard",
+            "text": "Because the bollard may activate unexpectedly and block access",
             "is_correct": true
           },
           {
-            "text": "Exactly at the hazard location",
+            "text": "Because overtaking is always prohibited here",
             "is_correct": false
           },
           {
-            "text": "500 meters before the hazard",
+            "text": "Because pedestrians always cross here",
             "is_correct": false
           }
         ],
-        "explanation": "Outside built-up areas, danger signs are placed Â±150 m before the hazard. Inside built-up areas it is Â±50 m."
+        "explanation": "You should reduce speed here because the retractable bollard may activate unexpectedly and you need enough time to stop safely."
       },
       "FR": {
-        "question": "Ã€ quelle distance du danger un panneau de danger est-il placÃ© hors agglomÃ©ration ?",
+        "question": "Pourquoi devriez-vous réduire votre vitesse près de ce panneau ?",
         "choices": [
           {
-            "text": "Environ 150 mÃ¨tres avant le danger",
+            "text": "Parce que la borne peut s'activer de manière inattendue et bloquer l'accès",
             "is_correct": true
           },
           {
-            "text": "Exactement Ã  l'endroit du danger",
+            "text": "Parce que dépasser est toujours interdit ici",
             "is_correct": false
           },
           {
-            "text": "500 mÃ¨tres avant le danger",
+            "text": "Parce que des piétons traversent toujours ici",
             "is_correct": false
           }
         ],
-        "explanation": "Hors agglomÃ©ration, les panneaux de danger sont placÃ©s Ã  Â±150 m. En agglomÃ©ration, c'est Â±50 m."
+        "explanation": "Vous devriez réduire votre vitesse ici car la borne escamotable peut s'activer de manière inattendue, ce qui vous laisse le temps de vous arrêter en sécurité."
       },
       "AR": {
-        "question": "Ø¹Ù„Ù‰ Ø£ÙŠ Ù…Ø³Ø§ÙØ© Ù…Ù† Ø§Ù„Ø®Ø·Ø± ØªÙˆØ¶Ø¹ Ù„Ø§ÙØªØ© Ø§Ù„Ø®Ø·Ø± Ø®Ø§Ø±Ø¬ Ø§Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ù…Ø¨Ù†ÙŠØ©ØŸ",
+        "question": "لماذا ينبغي أن تخفف سرعتك قرب هذه العلامة المرورية؟",
         "choices": [
           {
-            "text": "Ø­ÙˆØ§Ù„ÙŠ 150 Ù…ØªØ± Ù‚Ø¨Ù„ Ø§Ù„Ø®Ø·Ø±",
+            "text": "لأن العمود قد يعمل بشكل مفاجئ ويغلق المرور",
             "is_correct": true
           },
           {
-            "text": "Ù…Ø¨Ø§Ø´Ø±Ø© Ø¹Ù†Ø¯ Ù…ÙˆÙ‚Ø¹ Ø§Ù„Ø®Ø·Ø±",
+            "text": "لأن التجاوز هنا محظور دائماً",
             "is_correct": false
           },
           {
-            "text": "500 Ù…ØªØ± Ù‚Ø¨Ù„ Ø§Ù„Ø®Ø·Ø±",
+            "text": "لأن المشاة يعبرون هنا دائماً",
             "is_correct": false
           }
         ],
-        "explanation": "Ø®Ø§Ø±Ø¬ Ø§Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ù…Ø¨Ù†ÙŠØ© ØªÙˆØ¶Ø¹ Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± Ø¹Ù„Ù‰ Ù…Ø³Ø§ÙØ© Â±150 Ù…ØªØ±. Ø¯Ø§Ø®Ù„ Ø§Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ù…Ø¨Ù†ÙŠØ© ØªÙƒÙˆÙ† Ø§Ù„Ù…Ø³Ø§ÙØ© Â±50 Ù…ØªØ±."
+        "explanation": "ينبغي أن تخفف سرعتك هنا لأن العمود القابل للسحب قد يعمل فجأة، مما يمنحك وقتًا كافيًا للتوقف بأمان."
       }
     }
   },
@@ -333,63 +293,62 @@
     "difficulty": "HARD",
     "is_critical": true,
     "show_sign": true,
-    "_note": "TEMPLATE (HARD): Replace with sign-specific question for production.",
     "i18n": {
       "NL": {
-        "question": "Bent u verplicht uw rijgedrag aan te passen wanneer u dit gevaarsbord ziet?",
+        "question": "Mag u aannemen dat de weg altijd open is als u geen paal ziet?",
         "choices": [
           {
-            "text": "Ja, gevaarsborden verplichten u uw snelheid aan te passen en extra voorzichtig te zijn",
+            "text": "Nee, de paal kan op elk moment omhoogkomen",
             "is_correct": true
           },
           {
-            "text": "Nee, gevaarsborden zijn louter informatief en vereisen geen aanpassing van uw rijgedrag",
+            "text": "Ja, als er geen paal zichtbaar is, blijft de doorgang open",
             "is_correct": false
           }
         ],
-        "explanation": "Gevaarsborden waarschuwen voor gevaarlijke situaties en verplichten u uw rijgedrag aan te passen. U moet uw snelheid verminderen en extra voorzichtig zijn."
+        "explanation": "Nee. Ook wanneer de paal niet zichtbaar is, kan hij plots activeren. U blijft dus voorzichtig naderen en klaar om te stoppen."
       },
       "EN": {
-        "question": "Are you required to adapt your driving behaviour when you see this danger sign?",
+        "question": "Can you assume the road is always open when no bollard is visible?",
         "choices": [
           {
-            "text": "Yes, danger signs require you to adjust your speed and be extra cautious",
+            "text": "No, the bollard may rise at any moment",
             "is_correct": true
           },
           {
-            "text": "No, danger signs are purely informational and do not require any change in driving behaviour",
+            "text": "Yes, if no bollard is visible the access stays open",
             "is_correct": false
           }
         ],
-        "explanation": "Danger signs warn of hazardous situations and require you to adapt your driving behaviour. You must reduce your speed and be extra careful."
+        "explanation": "No. Even when no bollard is visible, it may activate suddenly. You should therefore continue to approach with caution and be ready to stop."
       },
       "FR": {
-        "question": "ÃŠtes-vous obligÃ© d'adapter votre comportement de conduite lorsque vous voyez ce panneau de danger ?",
+        "question": "Pouvez-vous supposer que la route est toujours ouverte lorsqu'aucune borne n'est visible ?",
         "choices": [
           {
-            "text": "Oui, les panneaux de danger vous obligent Ã  adapter votre vitesse et Ã  Ãªtre particuliÃ¨rement prudent",
+            "text": "Non, la borne peut se relever à tout moment",
             "is_correct": true
           },
           {
-            "text": "Non, les panneaux de danger sont purement informatifs et ne nÃ©cessitent pas d'adaptation de la conduite",
+            "text": "Oui, si aucune borne n'est visible, l'accès reste ouvert",
             "is_correct": false
           }
         ],
-        "explanation": "Les panneaux de danger avertissent des situations dangereuses et vous obligent Ã  adapter votre conduite. Vous devez rÃ©duire votre vitesse et Ãªtre particuliÃ¨rement prudent."
+        "explanation": "Non. Même lorsqu'aucune borne n'est visible, elle peut s'activer soudainement. Vous devriez donc continuer à approcher avec prudence et être prêt à vous arrêter."
       },
       "AR": {
-        "question": "Ù‡Ù„ Ø£Ù†Øª Ù…Ù„Ø²Ù… Ø¨ØªØ¹Ø¯ÙŠÙ„ Ø³Ù„ÙˆÙƒ Ù‚ÙŠØ§Ø¯ØªÙƒ Ø¹Ù†Ø¯Ù…Ø§ ØªØ±Ù‰ Ù„Ø§ÙØªØ© Ø§Ù„Ø®Ø·Ø± Ù‡Ø°Ù‡ØŸ",
+        "question": "هل يمكنك أن تفترض أن الطريق مفتوح دائماً إذا لم يكن العمود ظاهراً؟",
         "choices": [
           {
-            "text": "Ù†Ø¹Ù…ØŒ Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± ØªÙ„Ø²Ù…Ùƒ Ø¨ØªØ¹Ø¯ÙŠÙ„ Ø³Ø±Ø¹ØªÙƒ ÙˆØ£Ù† ØªÙƒÙˆÙ† Ø£ÙƒØ«Ø± Ø­Ø°Ø±Ø§Ù‹",
+            "text": "لا، فقد يرتفع العمود في أي لحظة",
             "is_correct": true
           },
           {
-            "text": "Ù„Ø§ØŒ Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± Ù…Ø¹Ù„ÙˆÙ…Ø§ØªÙŠØ© Ø¨Ø­ØªØ© ÙˆÙ„Ø§ ØªØªØ·Ù„Ø¨ Ø£ÙŠ ØªØºÙŠÙŠØ± ÙÙŠ Ø³Ù„ÙˆÙƒ Ø§Ù„Ù‚ÙŠØ§Ø¯Ø©",
+            "text": "نعم، إذا لم يكن العمود ظاهراً فالممر سيبقى مفتوحاً",
             "is_correct": false
           }
         ],
-        "explanation": "ØªØ­Ø°Ø± Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± Ù…Ù† Ø§Ù„Ù…ÙˆØ§Ù‚Ù Ø§Ù„Ø®Ø·Ø±Ø© ÙˆØªÙ„Ø²Ù…Ùƒ Ø¨ØªØ¹Ø¯ÙŠÙ„ Ø³Ù„ÙˆÙƒ Ù‚ÙŠØ§Ø¯ØªÙƒ. ÙŠØ¬Ø¨ Ø¹Ù„ÙŠÙƒ ØªÙ‚Ù„ÙŠÙ„ Ø³Ø±Ø¹ØªÙƒ ÙˆØ£Ù† ØªÙƒÙˆÙ† Ø£ÙƒØ«Ø± Ø­Ø°Ø±Ø§Ù‹."
+        "explanation": "لا. حتى عندما لا يكون العمود ظاهراً، فقد يعمل فجأة. لذلك ينبغي أن تواصل الاقتراب بحذر وأن تكون مستعداً للتوقف."
       }
     }
   },
@@ -437,25 +396,25 @@
         "explanation": "This sign warns of a retractable bollard. Slow down and be ready to stop when access is closed."
       },
       "FR": {
-        "question": "Comment devez-vous reagir lorsque vous approchez de ce panneau ?",
+        "question": "Comment devriez-vous réagir lorsque vous approchez de ce panneau ?",
         "choices": [
           {
-            "text": "Reduire la vitesse et etre pret a s arreter pour une borne escamotable",
+            "text": "Réduire la vitesse et être prêt à s'arrêter pour une borne escamotable",
             "is_correct": true
           },
           {
-            "text": "Accelerer pour passer le plus vite possible",
+            "text": "Accélérer pour passer le plus vite possible",
             "is_correct": false
           },
           {
-            "text": "Attendre au milieu de la chaussee",
+            "text": "Attendre au milieu de la chaussée",
             "is_correct": false
           }
         ],
-        "explanation": "Ce panneau avertit d une borne escamotable. Ralentissez et soyez pret a vous arreter si le passage est ferme."
+        "explanation": "Ce panneau avertit d'une borne escamotable. Vous devriez ralentir et être prêt à vous arrêter si le passage se ferme."
       },
       "AR": {
-        "question": "كيف يجب أن تتصرف عندما تقترب من هذه اللافتة؟",
+        "question": "كيف ينبغي أن تتصرف عندما تقترب من هذه العلامة المرورية؟",
         "choices": [
           {
             "text": "تخفيف السرعة والاستعداد للتوقف أمام عمود قابل للارتفاع",
@@ -470,7 +429,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "تحذر هذه اللافتة من عمود قابل للارتفاع من سطح الطريق. خفف السرعة وكن مستعداً للتوقف عند إغلاق الممر."
+        "explanation": "تحذر هذه العلامة من عمود قابل للارتفاع من سطح الطريق. ينبغي تخفيف السرعة والاستعداد للتوقف عند إغلاق الممر."
       }
     }
   },
@@ -518,25 +477,25 @@
         "explanation": "This sign warns of a retractable bollard that may suddenly block traffic."
       },
       "FR": {
-        "question": "De quoi ce panneau avertit-il precisement ?",
+        "question": "De quoi ce panneau avertit-il précisément ?",
         "choices": [
           {
-            "text": "D une borne escamotable dans la chaussee",
+            "text": "D'une borne escamotable dans la chaussée",
             "is_correct": true
           },
           {
-            "text": "D un virage serre a gauche",
+            "text": "D'un virage serré à gauche",
             "is_correct": false
           },
           {
-            "text": "D un pont ouvert",
+            "text": "D'un pont ouvert",
             "is_correct": false
           }
         ],
-        "explanation": "Ce panneau avertit d une borne escamotable qui peut soudainement bloquer la circulation."
+        "explanation": "Ce panneau avertit d'une borne escamotable qui peut soudainement bloquer la circulation."
       },
       "AR": {
-        "question": "ممّ تحذر هذه اللافتة بشكل محدد؟",
+        "question": "ما الذي تحذر منه هذه العلامة المرورية تحديداً؟",
         "choices": [
           {
             "text": "من عمود قابل للارتفاع داخل الطريق",
@@ -551,7 +510,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "تحذر هذه اللافتة من عمود قابل للارتفاع قد يوقف حركة المرور بشكل مفاجئ."
+        "explanation": "تحذر هذه العلامة من عمود قابل للارتفاع قد يوقف حركة المرور بشكل مفاجئ."
       }
     }
   },
@@ -572,13 +531,9 @@
           {
             "text": "Omdat u hier altijd verplicht moet keren",
             "is_correct": false
-          },
-          {
-            "text": "Omdat alle andere bestuurders verplicht stilstaan",
-            "is_correct": false
           }
         ],
-        "explanation": "Een verzinkbare paal kan plots omhoogkomen om de doorgang te blokkeren. Daarom moet u langzaam naderen en klaar zijn om te stoppen."
+        "explanation": "Een verzinkbare paal kan plots omhoogkomen om de doorgang te blokkeren. Daarom nadert u best langzaam en klaar om te stoppen."
       },
       "EN": {
         "question": "Why is extra caution necessary when you see this sign?",
@@ -590,34 +545,26 @@
           {
             "text": "Because you must always make a U-turn here",
             "is_correct": false
-          },
-          {
-            "text": "Because all other drivers must stop for you",
-            "is_correct": false
           }
         ],
-        "explanation": "A retractable bollard can suddenly rise to block the way. Approach slowly and be ready to stop."
+        "explanation": "A retractable bollard can suddenly rise to block the way. You should therefore approach slowly and be ready to stop."
       },
       "FR": {
-        "question": "Pourquoi une prudence particuliere est-elle necessaire avec ce panneau ?",
+        "question": "Pourquoi une prudence particulière est-elle nécessaire avec ce panneau ?",
         "choices": [
           {
-            "text": "Parce que la borne peut remonter soudainement du revetement",
+            "text": "Parce que la borne peut remonter soudainement du revêtement",
             "is_correct": true
           },
           {
             "text": "Parce que vous devez toujours faire demi-tour ici",
             "is_correct": false
-          },
-          {
-            "text": "Parce que tous les autres conducteurs doivent s arreter pour vous",
-            "is_correct": false
           }
         ],
-        "explanation": "Une borne escamotable peut se relever soudainement pour fermer le passage. Approchez lentement et soyez pret a vous arreter."
+        "explanation": "Une borne escamotable peut se relever soudainement pour fermer le passage. Vous devriez donc approcher lentement et être prêt à vous arrêter."
       },
       "AR": {
-        "question": "لماذا يلزم الحذر الشديد عند رؤية هذه اللافتة؟",
+        "question": "لماذا يلزم الحذر الشديد عند رؤية هذه العلامة المرورية؟",
         "choices": [
           {
             "text": "لأن العمود قد يرتفع فجأة من سطح الطريق",
@@ -626,13 +573,9 @@
           {
             "text": "لأن عليك دائماً القيام بدوران كامل هنا",
             "is_correct": false
-          },
-          {
-            "text": "لأن جميع السائقين الآخرين يجب أن يتوقفوا لك",
-            "is_correct": false
           }
         ],
-        "explanation": "يمكن أن يرتفع العمود القابل للسحب فجأة ليغلق الطريق، لذلك اقترب ببطء وكن مستعداً للتوقف."
+        "explanation": "يمكن أن يرتفع العمود القابل للسحب فجأة ليغلق الطريق، لذلك ينبغي أن تقترب ببطء وأن تكون مستعداً للتوقف."
       }
     }
   }

@@ -108,16 +108,15 @@ public class StudyReminderScheduler {
      */
     private boolean shouldSendReminder(Long userId, LocalDate inactivityThreshold, Instant cooldownCutoff) {
         // Check last activity
-        String lastDateStr = historyRepository.findMostRecentAnsweredDateByUserId(userId);
+        LocalDate lastDate = historyRepository.findMostRecentAnsweredDateByUserId(userId);
 
-        if (lastDateStr != null && !lastDateStr.isEmpty()) {
-            LocalDate lastDate = LocalDate.parse(lastDateStr);
+        if (lastDate != null) {
             if (!lastDate.isBefore(inactivityThreshold)) {
                 // User was active recently — no reminder needed
                 return false;
             }
         }
-        // If lastDateStr is null: user has NEVER practiced → always eligible for
+        // If lastDate is null: user has NEVER practiced → always eligible for
         // reminder
 
         // Check cooldown — don't spam

@@ -1,4 +1,4 @@
-﻿[
+[
   {
     "question_id": "A3_Q01",
     "type": "WHAT_DOES_IT_MEAN",
@@ -7,40 +7,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat betekent dit verkeersbord?",
+        "question": "Wat betekent dit bord?",
         "choices": [
-          { "text": "Gevaarlijke daling", "is_correct": true },
-          { "text": "Gevaarlijke helling", "is_correct": false },
-          { "text": "Gevaarlijke bocht naar links", "is_correct": false }
+          {
+            "text": "Gevaarlijke daling",
+            "is_correct": true
+          },
+          {
+            "text": "Gevaarlijke helling",
+            "is_correct": false
+          },
+          {
+            "text": "Gevaarlijke bocht naar links",
+            "is_correct": false
+          }
         ],
-        "explanation": "Dit bord waarschuwt voor een gevaarlijke daling vooruit. Gebruik de motorrem en rijd gecontroleerd naar beneden."
+        "explanation": "Dit bord waarschuwt voor een gevaarlijke steile daling."
       },
       "EN": {
-        "question": "What does this traffic sign mean?",
+        "question": "What does this sign mean?",
         "choices": [
-          { "text": "Dangerous descent", "is_correct": true },
-          { "text": "Dangerous incline", "is_correct": false },
-          { "text": "Dangerous curve to the left", "is_correct": false }
+          {
+            "text": "Steep descent",
+            "is_correct": true
+          },
+          {
+            "text": "Dangerous incline",
+            "is_correct": false
+          },
+          {
+            "text": "Dangerous bend to the left",
+            "is_correct": false
+          }
         ],
-        "explanation": "This sign warns of a dangerous descent ahead. Use engine braking and descend in a controlled manner."
+        "explanation": "This sign warns of a steep dangerous descent ahead."
       },
       "FR": {
-        "question": "Que signifie ce panneau de signalisation ?",
+        "question": "Que signifie ce panneau ?",
         "choices": [
-          { "text": "Descente dangereuse", "is_correct": true },
-          { "text": "Pente dangereuse", "is_correct": false },
-          { "text": "Virage dangereux Ã  gauche", "is_correct": false }
+          {
+            "text": "Descente dangereuse",
+            "is_correct": true
+          },
+          {
+            "text": "Pente dangereuse",
+            "is_correct": false
+          },
+          {
+            "text": "Virage dangereux à gauche",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ce panneau avertit d'une descente dangereuse en avant. Utilisez le frein moteur et descendez de maniÃ¨re contrÃ´lÃ©e."
+        "explanation": "Ce panneau indique une descente dangereuse."
       },
       "AR": {
-        "question": "Ù…Ø§ Ù…Ø¹Ù†Ù‰ Ù„Ø§ÙØªØ© Ø§Ù„Ù…Ø±ÙˆØ± Ù‡Ø°Ù‡ØŸ",
+        "question": "ما معنى هذه العلامة؟",
         "choices": [
-          { "text": "Ø§Ù†Ø­Ø¯Ø§Ø± Ø®Ø·ÙŠØ±", "is_correct": true },
-          { "text": "ØµØ¹ÙˆØ¯ Ø®Ø·ÙŠØ±", "is_correct": false },
-          { "text": "Ù…Ù†Ø­Ù†Ù‰ Ø®Ø·ÙŠØ± Ø¥Ù„Ù‰ Ø§Ù„ÙŠØ³Ø§Ø±", "is_correct": false }
+          {
+            "text": "منحدر خطير",
+            "is_correct": true
+          },
+          {
+            "text": "صعود خطير",
+            "is_correct": false
+          },
+          {
+            "text": "منعطف خطير إلى اليسار",
+            "is_correct": false
+          }
         ],
-        "explanation": "ØªØ­Ø°Ø± Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ© Ù…Ù† Ø§Ù†Ø­Ø¯Ø§Ø± Ø®Ø·ÙŠØ± Ø£Ù…Ø§Ù…Ùƒ. Ø§Ø³ØªØ®Ø¯Ù… Ø§Ù„ÙƒØ¨Ø­ Ø¨Ø§Ù„Ù…Ø­Ø±Ùƒ ÙˆØ§Ù†Ø²Ù„ Ø¨Ø´ÙƒÙ„ Ù…Ù†Ø¶Ø¨Ø·."
+        "explanation": "تشير هذه العلامة إلى وجود انحدار شديد خطير أمامك."
       }
     }
   },
@@ -54,38 +90,74 @@
       "NL": {
         "question": "Tot welke categorie verkeerstekens behoort dit bord?",
         "choices": [
-          { "text": "Gevaarsborden (A-reeks)", "is_correct": true },
-          { "text": "Voorrangsborden (B-reeks)", "is_correct": false },
-          { "text": "Verbodsborden (C-reeks)", "is_correct": false }
+          {
+            "text": "Gevaarsborden",
+            "is_correct": true
+          },
+          {
+            "text": "Voorrangsborden",
+            "is_correct": false
+          },
+          {
+            "text": "Verbodsborden",
+            "is_correct": false
+          }
         ],
-        "explanation": "Dit bord behoort tot de gevaarsborden (A-reeks). Alle gevaarsborden zijn driehoekig met een rode rand op een witte achtergrond."
+        "explanation": "Dit bord behoort tot de gevaarsborden. Alle gevaarsborden zijn driehoekig met een rode rand op een witte achtergrond."
       },
       "EN": {
         "question": "To which category of traffic signs does this sign belong?",
         "choices": [
-          { "text": "Danger signs (A-series)", "is_correct": true },
-          { "text": "Priority signs (B-series)", "is_correct": false },
-          { "text": "Prohibition signs (C-series)", "is_correct": false }
+          {
+            "text": "Warning signs",
+            "is_correct": true
+          },
+          {
+            "text": "Priority signs",
+            "is_correct": false
+          },
+          {
+            "text": "Prohibition signs",
+            "is_correct": false
+          }
         ],
-        "explanation": "This sign belongs to the danger signs (A-series). All danger signs are triangular with a red border on a white background."
+        "explanation": "This sign belongs to the warning signs. All warning signs are triangular with a red border on a white background."
       },
       "FR": {
-        "question": "Ã€ quelle catÃ©gorie de panneaux de signalisation ce panneau appartient-il ?",
+        "question": "À quelle catégorie de panneaux de signalisation ce panneau appartient-il ?",
         "choices": [
-          { "text": "Panneaux de danger (sÃ©rie A)", "is_correct": true },
-          { "text": "Panneaux de prioritÃ© (sÃ©rie B)", "is_correct": false },
-          { "text": "Panneaux d'interdiction (sÃ©rie C)", "is_correct": false }
+          {
+            "text": "Panneaux de danger",
+            "is_correct": true
+          },
+          {
+            "text": "Panneaux de priorité",
+            "is_correct": false
+          },
+          {
+            "text": "Panneaux d'interdiction",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ce panneau appartient aux panneaux de danger (sÃ©rie A). Tous les panneaux de danger sont triangulaires avec une bordure rouge sur fond blanc."
+        "explanation": "Ce panneau appartient aux panneaux de danger. Tous les panneaux de danger sont triangulaires avec une bordure rouge sur fond blanc."
       },
       "AR": {
-        "question": "Ø¥Ù„Ù‰ Ø£ÙŠ ÙØ¦Ø© Ù…Ù† Ù„Ø§ÙØªØ§Øª Ø§Ù„Ù…Ø±ÙˆØ± ØªÙ†ØªÙ…ÙŠ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ",
+        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
         "choices": [
-          { "text": "Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± (Ø³Ù„Ø³Ù„Ø© A)", "is_correct": true },
-          { "text": "Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© (Ø³Ù„Ø³Ù„Ø© B)", "is_correct": false },
-          { "text": "Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø­Ø¸Ø± (Ø³Ù„Ø³Ù„Ø© C)", "is_correct": false }
+          {
+            "text": "علامات الخطر",
+            "is_correct": true
+          },
+          {
+            "text": "علامات الأولوية",
+            "is_correct": false
+          },
+          {
+            "text": "علامات الحظر",
+            "is_correct": false
+          }
         ],
-        "explanation": "ØªÙ†ØªÙ…ÙŠ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ© Ø¥Ù„Ù‰ Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± (Ø³Ù„Ø³Ù„Ø© A). Ø¬Ù…ÙŠØ¹ Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± Ù…Ø«Ù„Ø«Ø© Ø¨Ø­Ø§ÙØ© Ø­Ù…Ø±Ø§Ø¡ Ø¹Ù„Ù‰ Ø®Ù„ÙÙŠØ© Ø¨ÙŠØ¶Ø§Ø¡."
+        "explanation": "تنتمي هذه العلامة المرورية إلى علامات الخطر. جميع علامات الخطر مثلثة بحافة حمراء على خلفية بيضاء."
       }
     }
   },
@@ -99,38 +171,74 @@
       "NL": {
         "question": "Welk gevaar kondigt dit bord aan?",
         "choices": [
-          { "text": "Een steile daling waarbij de remmen oververhit kunnen raken en remkracht verloren gaat", "is_correct": true },
-          { "text": "Een steile helling waarbij het voertuig kan slippen door gebrek aan vermogen", "is_correct": false },
-          { "text": "Een rijbaanversmalling na een neerwaartse helling", "is_correct": false }
+          {
+            "text": "Een gevaarlijke steile daling waarbij de remmen oververhit kunnen raken en remkracht verloren gaat",
+            "is_correct": true
+          },
+          {
+            "text": "Een steile helling waarbij het voertuig kan slippen door gebrek aan vermogen",
+            "is_correct": false
+          },
+          {
+            "text": "Een rijbaanversmalling na een neerwaartse helling",
+            "is_correct": false
+          }
         ],
-        "explanation": "Bij een gevaarlijke daling kunnen remmen oververhit raken bij overmatig gebruik, waardoor remkracht verloren gaat. Gebruik de motorrem om snelheid te beheersen."
+        "explanation": "Bij een gevaarlijke steile daling kunnen remmen oververhit raken bij overmatig gebruik, waardoor remkracht verloren gaat. Gebruik de motorrem om snelheid te beheersen."
       },
       "EN": {
-        "question": "What hazard does this sign announce?",
+        "question": "What hazard does this sign indicate?",
         "choices": [
-          { "text": "A steep descent where brakes can overheat and braking power is lost", "is_correct": true },
-          { "text": "A steep incline where the vehicle may stall from lack of power", "is_correct": false },
-          { "text": "A road narrowing after a downward slope", "is_correct": false }
+          {
+            "text": "A steep dangerous descent where brakes may overheat and braking power may be lost",
+            "is_correct": true
+          },
+          {
+            "text": "A steep incline where the vehicle may stall from lack of power",
+            "is_correct": false
+          },
+          {
+            "text": "A road narrowing after a downward slope",
+            "is_correct": false
+          }
         ],
-        "explanation": "On a dangerous descent, brakes can overheat from overuse, resulting in loss of braking power. Use engine braking to control speed."
+        "explanation": "On a steep dangerous descent, brakes may overheat from overuse, causing loss of braking power. Use engine braking to control speed."
       },
       "FR": {
-        "question": "Quel danger ce panneau annonce-t-il ?",
+        "question": "Quel danger indique ce panneau ?",
         "choices": [
-          { "text": "Une descente raide oÃ¹ les freins peuvent surchauffer et perdre leur efficacitÃ©", "is_correct": true },
-          { "text": "Une cÃ´te raide oÃ¹ le vÃ©hicule peut caler par manque de puissance", "is_correct": false },
-          { "text": "Un rÃ©trÃ©cissement de la chaussÃ©e aprÃ¨s une pente descendante", "is_correct": false }
+          {
+            "text": "Une descente dangereuse où les freins peuvent surchauffer et perdre leur efficacité",
+            "is_correct": true
+          },
+          {
+            "text": "Une côte raide où le véhicule peut caler par manque de puissance",
+            "is_correct": false
+          },
+          {
+            "text": "Un rétrécissement de la chaussée après une pente descendante",
+            "is_correct": false
+          }
         ],
-        "explanation": "Dans une descente dangereuse, les freins peuvent surchauffer par utilisation excessive, entraÃ®nant une perte d'efficacitÃ©. Utilisez le frein moteur pour contrÃ´ler la vitesse."
+        "explanation": "Dans une descente dangereuse, les freins peuvent surchauffer par utilisation excessive, entraînant une perte d'efficacité. Utilisez le frein moteur pour contrôler la vitesse."
       },
       "AR": {
-        "question": "Ù…Ø§ Ø§Ù„Ø®Ø·Ø± Ø§Ù„Ø°ÙŠ ØªØ¹Ù„Ù†Ù‡ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ",
+        "question": "ما هو الخطر الذي تشير إليه هذه العلامة المرورية؟",
         "choices": [
-          { "text": "Ù…Ù†Ø­Ø¯Ø± Ø´Ø¯ÙŠØ¯ Ù‚Ø¯ ØªØ³Ø®Ù† ÙÙŠÙ‡ Ø§Ù„ÙØ±Ø§Ù…Ù„ Ø¨Ø´ÙƒÙ„ Ù…ÙØ±Ø· ÙˆØªÙÙ‚Ø¯ Ù‚Ø¯Ø±ØªÙ‡Ø§ Ø¹Ù„Ù‰ Ø§Ù„ÙƒØ¨Ø­", "is_correct": true },
-          { "text": "ØµØ¹ÙˆØ¯ Ø´Ø¯ÙŠØ¯ Ù‚Ø¯ ØªØªÙˆÙ‚Ù ÙÙŠÙ‡ Ø§Ù„Ù…Ø±ÙƒØ¨Ø© Ø¨Ø³Ø¨Ø¨ Ù†Ù‚Øµ Ø§Ù„Ù‚ÙˆØ©", "is_correct": false },
-          { "text": "ØªØ¶ÙŠÙ‚ ÙÙŠ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø¨Ø¹Ø¯ Ù…Ù†Ø­Ø¯Ø± Ù†Ø§Ø²Ù„", "is_correct": false }
+          {
+            "text": "انحدار شديد خطير قد تسخن فيه الفرامل بشكل مفرط وتفقد قدرتها على الكبح",
+            "is_correct": true
+          },
+          {
+            "text": "صعود شديد قد تتوقف فيه المركبة بسبب نقص القوة",
+            "is_correct": false
+          },
+          {
+            "text": "تضيق في الطريق بعد منحدر نازل",
+            "is_correct": false
+          }
         ],
-        "explanation": "ÙÙŠ Ø§Ù„Ø§Ù†Ø­Ø¯Ø§Ø± Ø§Ù„Ø®Ø·ÙŠØ± Ù‚Ø¯ ØªØ³Ø®Ù† Ø§Ù„ÙØ±Ø§Ù…Ù„ Ù…Ù† Ø§Ù„Ø§Ø³ØªØ®Ø¯Ø§Ù… Ø§Ù„Ù…ÙØ±Ø· Ù…Ù…Ø§ ÙŠØ¤Ø¯ÙŠ Ø¥Ù„Ù‰ ÙÙ‚Ø¯Ø§Ù† Ù‚ÙˆØ© Ø§Ù„ÙƒØ¨Ø­. Ø§Ø³ØªØ®Ø¯Ù… Ø§Ù„ÙƒØ¨Ø­ Ø¨Ø§Ù„Ù…Ø­Ø±Ùƒ Ù„Ù„ØªØ­ÙƒÙ… ÙÙŠ Ø§Ù„Ø³Ø±Ø¹Ø©."
+        "explanation": "في الانحدار الشديد الخطير قد تسخن الفرامل من الاستخدام المفرط مما يؤدي إلى فقدان قوة الكبح. استخدم فرملة المحرك للتحكم في السرعة."
       }
     }
   },
@@ -142,40 +250,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat moet u doen wanneer u dit bord voor een gevaarlijke daling ziet?",
+        "question": "Wat doet u best wanneer u dit bord voor een gevaarlijke steile daling ziet?",
         "choices": [
-          { "text": "Een lage versnelling inschakelen en de motorrem gebruiken om snelheid te beheersen", "is_correct": true },
-          { "text": "De versnelling op vrijloop zetten om brandstof te sparen tijdens de daling", "is_correct": false },
-          { "text": "De handrem licht aantrekken om de snelheid te controleren", "is_correct": false }
+          {
+            "text": "Een lage versnelling inschakelen en de motorrem gebruiken om snelheid te beheersen",
+            "is_correct": true
+          },
+          {
+            "text": "De versnelling op vrijloop zetten om brandstof te sparen tijdens de daling",
+            "is_correct": false
+          },
+          {
+            "text": "De handrem licht aantrekken om de snelheid te controleren",
+            "is_correct": false
+          }
         ],
-        "explanation": "Bij een gevaarlijke daling moet u een lage versnelling inschakelen en de motorrem gebruiken. Vrijlopen is verboden en de handrem is niet geschikt voor snelheidsregeling tijdens het rijden."
+        "explanation": "Bij een gevaarlijke steile daling doet u er goed aan een lage versnelling in te schakelen en de motorrem te gebruiken. Vrijlopen is verboden en de handrem is niet geschikt voor snelheidsregeling tijdens het rijden."
       },
       "EN": {
-        "question": "What must you do when you see this sign for a dangerous descent?",
+        "question": "What should you do when you see this sign for a steep dangerous descent?",
         "choices": [
-          { "text": "Engage a low gear and use engine braking to control speed", "is_correct": true },
-          { "text": "Put the gear in neutral to save fuel during the descent", "is_correct": false },
-          { "text": "Lightly apply the handbrake to control speed", "is_correct": false }
+          {
+            "text": "Engage a low gear and rely on engine braking to control speed",
+            "is_correct": true
+          },
+          {
+            "text": "Put the gear in neutral to save fuel during the descent",
+            "is_correct": false
+          },
+          {
+            "text": "Lightly apply the handbrake to control speed",
+            "is_correct": false
+          }
         ],
-        "explanation": "On a dangerous descent you must engage a low gear and use engine braking. Neutral driving is prohibited and the handbrake is not suitable for speed control while moving."
+        "explanation": "On a steep dangerous descent you should engage a low gear and rely on engine braking. Neutral driving is dangerous and the handbrake is not suitable for speed control while moving."
       },
       "FR": {
-        "question": "Que devez-vous faire lorsque vous voyez ce panneau de descente dangereuse ?",
+        "question": "Que devriez-vous faire lorsque vous voyez ce panneau de descente dangereuse ?",
         "choices": [
-          { "text": "Passer en vitesse rÃ©duite et utiliser le frein moteur pour contrÃ´ler la vitesse", "is_correct": true },
-          { "text": "Mettre au point mort pour Ã©conomiser du carburant pendant la descente", "is_correct": false },
-          { "text": "Serrer lÃ©gÃ¨rement le frein Ã  main pour contrÃ´ler la vitesse", "is_correct": false }
+          {
+            "text": "Passer en vitesse réduite et utiliser le frein moteur pour contrôler la vitesse",
+            "is_correct": true
+          },
+          {
+            "text": "Mettre au point mort pour économiser du carburant pendant la descente",
+            "is_correct": false
+          },
+          {
+            "text": "Serrer légèrement le frein à main pour contrôler la vitesse",
+            "is_correct": false
+          }
         ],
-        "explanation": "Dans une descente dangereuse, passez en vitesse rÃ©duite et utilisez le frein moteur. Rouler au point mort est interdit et le frein Ã  main n'est pas adaptÃ© au contrÃ´le de la vitesse en marche."
+        "explanation": "Dans une descente dangereuse, vous devriez passer en vitesse réduite et utiliser le frein moteur. Rouler au point mort est interdit et le frein à main n'est pas adapté au contrôle de la vitesse en marche."
       },
       "AR": {
-        "question": "Ù…Ø§Ø°Ø§ ÙŠØ¬Ø¨ Ø£Ù† ØªÙØ¹Ù„ Ø¹Ù†Ø¯ Ø±Ø¤ÙŠØ© Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ© Ù„Ù„Ø§Ù†Ø­Ø¯Ø§Ø± Ø§Ù„Ø®Ø·ÙŠØ±ØŸ",
+        "question": "ماذا ينبغي أن تفعل عند رؤية هذه العلامة المرورية الخاصة بانحدار شديد خطير؟",
         "choices": [
-          { "text": "ØªØ´ØºÙŠÙ„ ØªØ±ÙˆØ³ Ù…Ù†Ø®ÙØ¶Ø© ÙˆØ§Ø³ØªØ®Ø¯Ø§Ù… Ø§Ù„ÙƒØ¨Ø­ Ø¨Ø§Ù„Ù…Ø­Ø±Ùƒ Ù„Ù„ØªØ­ÙƒÙ… ÙÙŠ Ø§Ù„Ø³Ø±Ø¹Ø©", "is_correct": true },
-          { "text": "ÙˆØ¶Ø¹ Ù†Ø§Ù‚Ù„ Ø§Ù„Ø­Ø±ÙƒØ© Ø¹Ù„Ù‰ Ø§Ù„ÙˆØ¶Ø¹ Ø§Ù„Ù…Ø­Ø§ÙŠØ¯ Ù„ØªÙˆÙÙŠØ± Ø§Ù„ÙˆÙ‚ÙˆØ¯ Ø£Ø«Ù†Ø§Ø¡ Ø§Ù„Ø§Ù†Ø­Ø¯Ø§Ø±", "is_correct": false },
-          { "text": "Ø³Ø­Ø¨ ÙØ±Ø§Ù…Ù„ Ø§Ù„ÙŠØ¯ Ø¨Ø®ÙØ© Ù„Ù„ØªØ­ÙƒÙ… ÙÙŠ Ø§Ù„Ø³Ø±Ø¹Ø©", "is_correct": false }
+          {
+            "text": "استخدام الغيار المنخفض والاعتماد على فرملة المحرك للتحكم في السرعة",
+            "is_correct": true
+          },
+          {
+            "text": "وضع ناقل الحركة على الوضع المحايد لتوفير الوقود أثناء الانحدار",
+            "is_correct": false
+          },
+          {
+            "text": "سحب فرامل اليد بخفة للتحكم في السرعة",
+            "is_correct": false
+          }
         ],
-        "explanation": "ÙÙŠ Ø§Ù„Ø§Ù†Ø­Ø¯Ø§Ø± Ø§Ù„Ø®Ø·ÙŠØ± ÙŠØ¬Ø¨ ØªØ´ØºÙŠÙ„ ØªØ±ÙˆØ³ Ù…Ù†Ø®ÙØ¶Ø© ÙˆØ§Ø³ØªØ®Ø¯Ø§Ù… Ø§Ù„ÙƒØ¨Ø­ Ø¨Ø§Ù„Ù…Ø­Ø±Ùƒ. Ø§Ù„Ù‚ÙŠØ§Ø¯Ø© Ø¨ÙˆØ¶Ø¹ Ù…Ø­Ø§ÙŠØ¯ Ù…Ø­Ø¸ÙˆØ±Ø© ÙˆÙØ±Ø§Ù…Ù„ Ø§Ù„ÙŠØ¯ ØºÙŠØ± Ù…Ù†Ø§Ø³Ø¨Ø© Ù„Ù„ØªØ­ÙƒÙ… ÙÙŠ Ø§Ù„Ø³Ø±Ø¹Ø© Ø£Ø«Ù†Ø§Ø¡ Ø§Ù„Ø³ÙŠØ±."
+        "explanation": "في الانحدار الشديد الخطير ينبغي استخدام غيار منخفض والاعتماد على فرملة المحرك. القيادة بوضع محايد محظورة وفرامل اليد غير مناسبة للتحكم في السرعة أثناء السير."
       }
     }
   },
@@ -189,38 +333,74 @@
       "NL": {
         "question": "U nadert een gevaarlijke steile daling op een natte weg. Wat doet u als eerste?",
         "choices": [
-          { "text": "VÃ³Ã³r de daling een lagere versnelling inschakelen en gecontroleerd afdalen met de motorrem", "is_correct": true },
-          { "text": "Onderaan de daling hard remmen om vaart te minderen", "is_correct": false },
-          { "text": "De versnellingspook in vrijloop zetten om de daling soepel af te leggen", "is_correct": false }
+          {
+            "text": "Vóór de daling een lagere versnelling inschakelen en gecontroleerd afdalen met de motorrem",
+            "is_correct": true
+          },
+          {
+            "text": "Onderaan de daling hard remmen om vaart te minderen",
+            "is_correct": false
+          },
+          {
+            "text": "De versnellingspook in vrijloop zetten om de daling soepel af te leggen",
+            "is_correct": false
+          }
         ],
-        "explanation": "Op een natte weg bij een gevaarlijke daling moet u vÃ³Ã³r het begin een lagere versnelling kiezen. Onderaan remmen is te laat en vrijlopen vergroot het risico op controleverlies."
+        "explanation": "Op een natte weg bij een gevaarlijke steile daling moet u vóór het begin een lagere versnelling kiezen. Onderaan remmen is te laat en vrijlopen vergroot het risico op controleverlies."
       },
       "EN": {
         "question": "You are approaching a steep dangerous descent on a wet road. What do you do first?",
         "choices": [
-          { "text": "Engage a lower gear before the descent and descend in a controlled manner using engine braking", "is_correct": true },
-          { "text": "Brake hard at the bottom of the descent to reduce speed", "is_correct": false },
-          { "text": "Put the gearstick in neutral to descend smoothly", "is_correct": false }
+          {
+            "text": "Engage a lower gear before the descent and maintain controlled descent using engine braking",
+            "is_correct": true
+          },
+          {
+            "text": "Brake hard at the bottom of the descent to reduce speed",
+            "is_correct": false
+          },
+          {
+            "text": "Put the gearstick in neutral to descend smoothly",
+            "is_correct": false
+          }
         ],
-        "explanation": "On a wet road near a dangerous descent, engage a lower gear before the start. Braking at the bottom is too late and neutral driving increases the risk of losing control."
+        "explanation": "On a wet road near a steep dangerous descent, engage a lower gear before the start. Braking at the bottom is too late and neutral driving increases the risk of losing control."
       },
       "FR": {
-        "question": "Vous approchez d'une descente dangereuse sur une route mouillÃ©e. Que faites-vous en premier ?",
+        "question": "Vous approchez d'une descente dangereuse sur une route mouillée. Que faites-vous en premier ?",
         "choices": [
-          { "text": "Passer en vitesse infÃ©rieure avant la descente et descendre de faÃ§on contrÃ´lÃ©e avec le frein moteur", "is_correct": true },
-          { "text": "Freiner fort en bas de la descente pour rÃ©duire la vitesse", "is_correct": false },
-          { "text": "Mettre le levier de vitesse au point mort pour descendre en douceur", "is_correct": false }
+          {
+            "text": "Passer en vitesse inférieure avant la descente et descendre de façon contrôlée avec le frein moteur",
+            "is_correct": true
+          },
+          {
+            "text": "Freiner fort en bas de la descente pour réduire la vitesse",
+            "is_correct": false
+          },
+          {
+            "text": "Mettre le levier de vitesse au point mort pour descendre en douceur",
+            "is_correct": false
+          }
         ],
-        "explanation": "Sur route mouillÃ©e face Ã  une descente dangereuse, passez en vitesse infÃ©rieure avant le dÃ©but. Freiner en bas est trop tard et rouler au point mort augmente le risque de perte de contrÃ´le."
+        "explanation": "Sur route mouillée face à une descente dangereuse, passez en vitesse inférieure avant le début. Freiner en bas est trop tard et rouler au point mort augmente le risque de perte de contrôle."
       },
       "AR": {
-        "question": "Ø£Ù†Øª ØªÙ‚ØªØ±Ø¨ Ù…Ù† Ø§Ù†Ø­Ø¯Ø§Ø± Ø®Ø·ÙŠØ± Ø´Ø¯ÙŠØ¯ Ø¹Ù„Ù‰ Ø·Ø±ÙŠÙ‚ Ø±Ø·Ø¨. Ù…Ø§Ø°Ø§ ØªÙØ¹Ù„ Ø£ÙˆÙ„Ø§Ù‹ØŸ",
+        "question": "أنت تقترب من انحدار شديد خطير على طريق مبلل. ماذا تفعل أولاً؟",
         "choices": [
-          { "text": "ØªØ´ØºÙŠÙ„ ØªØ±ÙˆØ³ Ø£Ø¯Ù†Ù‰ Ù‚Ø¨Ù„ Ø§Ù„Ø§Ù†Ø­Ø¯Ø§Ø± ÙˆØ§Ù„Ù†Ø²ÙˆÙ„ Ø¨Ø´ÙƒÙ„ Ù…Ù†Ø¶Ø¨Ø· Ù…Ø¹ Ø§Ù„ÙƒØ¨Ø­ Ø¨Ø§Ù„Ù…Ø­Ø±Ùƒ", "is_correct": true },
-          { "text": "Ø§Ù„ÙƒØ¨Ø­ Ø¨Ù‚ÙˆØ© ÙÙŠ Ø£Ø³ÙÙ„ Ø§Ù„Ø§Ù†Ø­Ø¯Ø§Ø± Ù„ØªÙ‚Ù„ÙŠÙ„ Ø§Ù„Ø³Ø±Ø¹Ø©", "is_correct": false },
-          { "text": "ÙˆØ¶Ø¹ Ø¹ØµØ§ Ø§Ù„ØªØ±ÙˆØ³ ÙÙŠ Ø§Ù„ÙˆØ¶Ø¹ Ø§Ù„Ù…Ø­Ø§ÙŠØ¯ Ù„Ù„Ù†Ø²ÙˆÙ„ Ø¨Ø³Ù„Ø§Ø³Ø©", "is_correct": false }
+          {
+            "text": "اختيار غيار منخفض قبل النزول والحفاظ على نزول متحكم فيه بواسطة فرملة المحرك",
+            "is_correct": true
+          },
+          {
+            "text": "الكبح بقوة في أسفل الانحدار لتقليل السرعة",
+            "is_correct": false
+          },
+          {
+            "text": "وضع ناقل الحركة على الوضع المحايد للنزول بسلاسة",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ø¹Ù„Ù‰ Ø·Ø±ÙŠÙ‚ Ø±Ø·Ø¨ Ø£Ù…Ø§Ù… Ø§Ù†Ø­Ø¯Ø§Ø± Ø®Ø·ÙŠØ±ØŒ Ø´ØºÙ‘Ù„ ØªØ±ÙˆØ³Ø§Ù‹ Ø£Ø¯Ù†Ù‰ Ù‚Ø¨Ù„ Ø§Ù„Ø¨Ø¯Ø§ÙŠØ©. Ø§Ù„ÙƒØ¨Ø­ ÙÙŠ Ø§Ù„Ø£Ø³ÙÙ„ Ù…ØªØ£Ø®Ø± Ø¬Ø¯Ø§Ù‹ ÙˆØ§Ù„Ù‚ÙŠØ§Ø¯Ø© Ø¨ÙˆØ¶Ø¹ Ù…Ø­Ø§ÙŠØ¯ ØªØ²ÙŠØ¯ Ù…Ù† Ø®Ø·Ø± ÙÙ‚Ø¯Ø§Ù† Ø§Ù„Ø³ÙŠØ·Ø±Ø©."
+        "explanation": "على طريق مبلل أمام انحدار شديد خطير، اختر غيارًا منخفضًا قبل البداية. الكبح في الأسفل متأخر جدًا والقيادة بوضع محايد تزيد من خطر فقدان السيطرة."
       }
     }
   },
@@ -234,38 +414,74 @@
       "NL": {
         "question": "Op welke afstand wordt dit gevaarsbord buiten de bebouwde kom geplaatst?",
         "choices": [
-          { "text": "Ongeveer 150 meter voor het gevaar", "is_correct": true },
-          { "text": "Precies op de gevaarlijke plek", "is_correct": false },
-          { "text": "Op 500 meter voor het gevaar", "is_correct": false }
+          {
+            "text": "Ongeveer 150 meter voor het gevaar",
+            "is_correct": true
+          },
+          {
+            "text": "Precies op de gevaarlijke plek",
+            "is_correct": false
+          },
+          {
+            "text": "Op 500 meter voor het gevaar",
+            "is_correct": false
+          }
         ],
-        "explanation": "Buiten de bebouwde kom worden gevaarsborden op Â±150 meter voor het gevaar geplaatst. Binnen de bebouwde kom is dit Â±50 meter."
+        "explanation": "Buiten de bebouwde kom worden gevaarsborden op ±150 meter voor het gevaar geplaatst. Binnen de bebouwde kom is dit ±50 meter."
       },
       "EN": {
         "question": "At what distance is this danger sign placed outside built-up areas?",
         "choices": [
-          { "text": "Approximately 150 metres before the hazard", "is_correct": true },
-          { "text": "Exactly at the hazard location", "is_correct": false },
-          { "text": "500 metres before the hazard", "is_correct": false }
+          {
+            "text": "Approximately 150 metres before the hazard",
+            "is_correct": true
+          },
+          {
+            "text": "Exactly at the hazard location",
+            "is_correct": false
+          },
+          {
+            "text": "500 metres before the hazard",
+            "is_correct": false
+          }
         ],
-        "explanation": "Outside built-up areas, danger signs are placed Â±150 metres before the hazard. Inside built-up areas it is Â±50 metres."
+        "explanation": "Outside built-up areas, danger signs are placed ±150 metres before the hazard. Inside built-up areas it is ±50 metres."
       },
       "FR": {
-        "question": "Ã€ quelle distance ce panneau de danger est-il placÃ© hors agglomÃ©ration ?",
+        "question": "À quelle distance ce panneau de danger est-il placé hors agglomération ?",
         "choices": [
-          { "text": "Environ 150 mÃ¨tres avant le danger", "is_correct": true },
-          { "text": "Exactement Ã  l'endroit du danger", "is_correct": false },
-          { "text": "500 mÃ¨tres avant le danger", "is_correct": false }
+          {
+            "text": "Environ 150 mètres avant le danger",
+            "is_correct": true
+          },
+          {
+            "text": "Exactement à l'endroit du danger",
+            "is_correct": false
+          },
+          {
+            "text": "500 mètres avant le danger",
+            "is_correct": false
+          }
         ],
-        "explanation": "Hors agglomÃ©ration, les panneaux de danger sont placÃ©s Ã  Â±150 mÃ¨tres avant le danger. En agglomÃ©ration, c'est Â±50 mÃ¨tres."
+        "explanation": "Hors agglomération, les panneaux de danger sont placés à ±150 mètres avant le danger. En agglomération, c'est ±50 mètres."
       },
       "AR": {
-        "question": "Ø¹Ù„Ù‰ Ø£ÙŠ Ù…Ø³Ø§ÙØ© ØªÙˆØ¶Ø¹ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ© Ø§Ù„ØªØ­Ø°ÙŠØ±ÙŠØ© Ø®Ø§Ø±Ø¬ Ø§Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ù…Ø¨Ù†ÙŠØ©ØŸ",
+        "question": "ما هي المسافة التي توضع عندها هذه العلامة التحذيرية خارج المنطقة السكنية؟",
         "choices": [
-          { "text": "Ø­ÙˆØ§Ù„ÙŠ 150 Ù…ØªØ± Ù‚Ø¨Ù„ Ø§Ù„Ø®Ø·Ø±", "is_correct": true },
-          { "text": "Ù…Ø¨Ø§Ø´Ø±Ø© Ø¹Ù†Ø¯ Ù…ÙˆÙ‚Ø¹ Ø§Ù„Ø®Ø·Ø±", "is_correct": false },
-          { "text": "500 Ù…ØªØ± Ù‚Ø¨Ù„ Ø§Ù„Ø®Ø·Ø±", "is_correct": false }
+          {
+            "text": "حوالي 150 متر قبل الخطر",
+            "is_correct": true
+          },
+          {
+            "text": "مباشرة عند موقع الخطر",
+            "is_correct": false
+          },
+          {
+            "text": "500 متر قبل الخطر",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ø®Ø§Ø±Ø¬ Ø§Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ù…Ø¨Ù†ÙŠØ© ØªÙˆØ¶Ø¹ Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± Ø¹Ù„Ù‰ Ù…Ø³Ø§ÙØ© Â±150 Ù…ØªØ± Ù‚Ø¨Ù„ Ø§Ù„Ø®Ø·Ø±. Ø¯Ø§Ø®Ù„ Ø§Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ù…Ø¨Ù†ÙŠØ© ØªÙƒÙˆÙ† Ø§Ù„Ù…Ø³Ø§ÙØ© Â±50 Ù…ØªØ±."
+        "explanation": "خارج المنطقة السكنية توضع علامات الخطر على مسافة ±150 متر قبل الخطر. داخل المنطقة السكنية تكون المسافة ±50 متر."
       }
     }
   },
@@ -277,36 +493,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Mag u een gevaarlijke daling afdalen met de versnelling in vrijloop (vrijstaand)?",
+        "question": "Mag u een gevaarlijke steile daling afdalen met de versnelling in vrijloop (vrijstaand)?",
         "choices": [
-          { "text": "Nee", "is_correct": true },
-          { "text": "Ja", "is_correct": false }
+          {
+            "text": "Nee",
+            "is_correct": true
+          },
+          {
+            "text": "Ja",
+            "is_correct": false
+          }
         ],
-        "explanation": "Op een vrijstaande versnelling rijden bij een gevaarlijke daling is verboden. U verliest de motorrem en kunt niet meer voldoende vertragen."
+        "explanation": "Rijden in vrijloop bij een gevaarlijke steile daling is gevaarlijk. U verliest de motorrem en kunt niet meer voldoende vertragen."
       },
       "EN": {
-        "question": "Is it allowed to descend a steep dangerous descent with the gear in neutral?",
+        "question": "Is it allowed to drive down a steep dangerous descent with the gear in neutral?",
         "choices": [
-          { "text": "No", "is_correct": true },
-          { "text": "Yes", "is_correct": false }
+          {
+            "text": "No",
+            "is_correct": true
+          },
+          {
+            "text": "Yes",
+            "is_correct": false
+          }
         ],
-        "explanation": "Descending in neutral gear is prohibited on a steep descent. You lose engine braking and cannot slow down sufficiently."
+        "explanation": "Driving in neutral is dangerous because you lose engine braking and vehicle control."
       },
       "FR": {
-        "question": "ÃŠtes-vous autorisÃ© Ã  descendre une pente dangereuse avec le levier de vitesse au point mort ?",
+        "question": "Êtes-vous autorisé à descendre une pente dangereuse avec le levier de vitesse au point mort ?",
         "choices": [
-          { "text": "Non", "is_correct": true },
-          { "text": "Oui", "is_correct": false }
+          {
+            "text": "Non",
+            "is_correct": true
+          },
+          {
+            "text": "Oui",
+            "is_correct": false
+          }
         ],
-        "explanation": "Descendre au point mort est interdit dans une pente dangereuse. Vous perdez le frein moteur et ne pouvez plus ralentir suffisamment."
+        "explanation": "Descendre au point mort est dangereux dans une pente dangereuse. Vous perdez le frein moteur et ne pouvez plus ralentir suffisamment."
       },
       "AR": {
-        "question": "Ù‡Ù„ ÙŠÙØ³Ù…Ø­ Ø¨Ø§Ù„Ù†Ø²ÙˆÙ„ ÙÙŠ Ù…Ù†Ø­Ø¯Ø± Ø®Ø·ÙŠØ± Ø´Ø¯ÙŠØ¯ Ø¨ÙˆØ¶Ø¹ Ù†Ø§Ù‚Ù„ Ø§Ù„Ø­Ø±ÙƒØ© Ø¹Ù„Ù‰ Ø§Ù„ÙˆØ¶Ø¹ Ø§Ù„Ù…Ø­Ø§ÙŠØ¯ØŸ",
+        "question": "هل يُسمح باستخدام ناقل الحركة على الوضع المحايد أثناء النزول في انحدار شديد خطير؟",
         "choices": [
-          { "text": "Ù„Ø§", "is_correct": true },
-          { "text": "Ù†Ø¹Ù…", "is_correct": false }
+          {
+            "text": "لا",
+            "is_correct": true
+          },
+          {
+            "text": "نعم",
+            "is_correct": false
+          }
         ],
-        "explanation": "ÙŠÙØ­Ø¸Ø± Ø§Ù„Ù†Ø²ÙˆÙ„ Ø¨Ù†Ø§Ù‚Ù„ Ø­Ø±ÙƒØ© Ù…Ø­Ø§ÙŠØ¯ ÙÙŠ Ø§Ù„Ù…Ù†Ø­Ø¯Ø± Ø§Ù„Ø®Ø·ÙŠØ±. ØªÙÙ‚Ø¯ Ø§Ù„ÙƒØ¨Ø­ Ø¨Ø§Ù„Ù…Ø­Ø±Ùƒ ÙˆÙ„Ø§ ØªØ³ØªØ·ÙŠØ¹ Ø§Ù„ØªØ¨Ø§Ø·Ø¤ Ø¨Ø´ÙƒÙ„ ÙƒØ§ÙÙ."
+        "explanation": "القيادة على الوضع المحايد خطيرة لأنها تؤدي إلى فقدان فرملة المحرك والسيطرة على المركبة."
       }
     }
   },
@@ -318,36 +558,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Mag u inhalen op een gevaarlijke steile daling?",
+        "question": "Is het aan te raden om in te halen op een gevaarlijke steile daling?",
         "choices": [
-          { "text": "Nee", "is_correct": true },
-          { "text": "Ja", "is_correct": false }
+          {
+            "text": "Nee",
+            "is_correct": true
+          },
+          {
+            "text": "Ja",
+            "is_correct": false
+          }
         ],
-        "explanation": "Inhalen op een gevaarlijke daling is verboden. De remafstand is veel groter en de kans op verlies van controle is hoog."
+        "explanation": "Nee, dat is niet raadzaam. De remafstand is veel groter en de kans op verlies van controle is hoog."
       },
       "EN": {
-        "question": "Is it allowed to overtake on a steep dangerous descent?",
+        "question": "Is it advisable to overtake on a steep dangerous descent?",
         "choices": [
-          { "text": "No", "is_correct": true },
-          { "text": "Yes", "is_correct": false }
+          {
+            "text": "No",
+            "is_correct": true
+          },
+          {
+            "text": "Yes",
+            "is_correct": false
+          }
         ],
-        "explanation": "Overtaking on a steep dangerous descent is prohibited. Braking distance is much greater and the risk of losing control is high."
+        "explanation": "Overtaking on a steep dangerous descent is not advisable due to increased stopping distance and loss of control."
       },
       "FR": {
-        "question": "ÃŠtes-vous autorisÃ© Ã  dÃ©passer sur une descente dangereuse ?",
+        "question": "Est-il conseillé de dépasser dans une descente dangereuse ?",
         "choices": [
-          { "text": "Non", "is_correct": true },
-          { "text": "Oui", "is_correct": false }
+          {
+            "text": "Non",
+            "is_correct": true
+          },
+          {
+            "text": "Oui",
+            "is_correct": false
+          }
         ],
-        "explanation": "DÃ©passer dans une descente dangereuse est interdit. La distance de freinage est bien plus grande et le risque de perte de contrÃ´le est Ã©levÃ©."
+        "explanation": "Dépasser dans une descente dangereuse n'est pas conseillé. La distance de freinage est bien plus grande et le risque de perte de contrôle est élevé."
       },
       "AR": {
-        "question": "Ù‡Ù„ ÙŠÙØ³Ù…Ø­ Ø¨Ø§Ù„ØªØ¬Ø§ÙˆØ² ÙÙŠ Ù…Ù†Ø­Ø¯Ø± Ø®Ø·ÙŠØ± Ø´Ø¯ÙŠØ¯ Ø§Ù„Ø§Ù†Ø­Ø¯Ø§Ø±ØŸ",
+        "question": "هل يُنصح بالتجاوز في منحدر شديد؟",
         "choices": [
-          { "text": "Ù„Ø§", "is_correct": true },
-          { "text": "Ù†Ø¹Ù…", "is_correct": false }
+          {
+            "text": "لا",
+            "is_correct": true
+          },
+          {
+            "text": "نعم",
+            "is_correct": false
+          }
         ],
-        "explanation": "ÙŠÙØ­Ø¸Ø± Ø§Ù„ØªØ¬Ø§ÙˆØ² ÙÙŠ Ù…Ù†Ø­Ø¯Ø± Ø®Ø·ÙŠØ± Ø´Ø¯ÙŠØ¯ Ø§Ù„Ø§Ù†Ø­Ø¯Ø§Ø±. Ù…Ø³Ø§ÙØ© Ø§Ù„ÙƒØ¨Ø­ Ø£Ø·ÙˆÙ„ Ø¨ÙƒØ«ÙŠØ± ÙˆØ®Ø·Ø± ÙÙ‚Ø¯Ø§Ù† Ø§Ù„Ø³ÙŠØ·Ø±Ø© Ù…Ø±ØªÙØ¹."
+        "explanation": "لا يُنصح بالتجاوز في منحدر شديد بسبب زيادة مسافة التوقف وخطر فقدان السيطرة."
       }
     }
   }

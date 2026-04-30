@@ -41,23 +41,32 @@ public class LessonProgressService {
      * @param userId     authenticated user ID
      * @param lessonId   lesson being read
      * @param totalPages total number of pages in the lesson (passed by caller)
+     * @param pageNumber optional current page number (1-based) when the frontend
+     *                   knows which page the learner actually reached
      * @return current progress snapshot
      */
     @Transactional
-    public Map<String, Object> markPageRead(Long userId, Long lessonId, int totalPages) {
+    public Map<String, Object> markPageRead(Long userId, Long lessonId, int totalPages, Integer pageNumber) {
         UserLessonProgress prog = progressRepository
                 .findByUserIdAndLessonId(userId, lessonId)
                 .orElse(new UserLessonProgress(userId, lessonId));
 
+        int normalizedTotalPages = Math.max(totalPages, 1);
+        int targetPage = pageNumber != null && pageNumber > 0
+                ? Math.min(pageNumber, normalizedTotalPages)
+                : Math.min(Math.max(prog.getPagesRead() + 1, 1), normalizedTotalPages);
+
         prog.setLastSeenAt(Instant.now());
 
         if (!"COMPLETED".equals(prog.getStatus())) {
-            int newCount = Math.min(prog.getPagesRead() + 1, totalPages);
+            int newCount = Math.max(prog.getPagesRead(), targetPage);
             prog.setPagesRead(newCount);
 
-            if (newCount >= totalPages) {
+            if (newCount >= normalizedTotalPages) {
                 prog.setStatus("COMPLETED");
-                prog.setCompletedAt(Instant.now());
+                if (prog.getCompletedAt() == null) {
+                    prog.setCompletedAt(Instant.now());
+                }
                 progressRepository.save(prog);
                 recordLessonCompletion(userId, lessonId);
             } else {
@@ -71,7 +80,8 @@ public class LessonProgressService {
         return Map.of(
                 "lessonId", lessonId,
                 "pagesRead", prog.getPagesRead(),
-                "totalPages", totalPages,
+                "totalPages", normalizedTotalPages,
+                "currentPage", targetPage,
                 "status", prog.getStatus(),
                 "completed", "COMPLETED".equals(prog.getStatus()));
     }
@@ -89,6 +99,8 @@ public class LessonProgressService {
                     m.put("pagesRead", prog.getPagesRead());
                     m.put("status", prog.getStatus());
                     m.put("completed", "COMPLETED".equals(prog.getStatus()));
+                    m.put("completedAt", prog.getCompletedAt());
+                    m.put("lastSeenAt", prog.getLastSeenAt());
                     return m;
                 })
                 .orElseGet(() -> {
@@ -97,6 +109,8 @@ public class LessonProgressService {
                     m.put("pagesRead", 0);
                     m.put("status", "NOT_STARTED");
                     m.put("completed", false);
+                    m.put("completedAt", null);
+                    m.put("lastSeenAt", null);
                     return m;
                 });
     }

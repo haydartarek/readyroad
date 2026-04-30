@@ -1,4 +1,4 @@
-﻿[
+[
   {
     "question_id": "A45_Q01",
     "type": "WHAT_DOES_IT_MEAN",
@@ -9,83 +9,119 @@
       "NL": {
         "question": "Wat betekent dit verkeersbord?",
         "choices": [
-          {"text": "Waarschuwingskruis voor een spoorwegovergang met een enkel spoor.", "is_correct": true},
-          {"text": "Verbod om de spoorwegovergang te gebruiken.", "is_correct": false},
-          {"text": "Het einde van de spoorwegovergangszone.", "is_correct": false}
+          {
+            "text": "Overweg met één spoor",
+            "is_correct": true
+          },
+          {
+            "text": "Verbod om de spoorwegovergang te gebruiken.",
+            "is_correct": false
+          },
+          {
+            "text": "Het einde van de spoorwegovergangszone.",
+            "is_correct": false
+          }
         ],
-        "explanation": "Het Sint-Andrieskruis (A45) staat bij een spoorwegovergang met Ã©Ã©n spoor. Het bevestigt de aanwezigheid van een overweg en waarschuwt voor naderende treinen."
+        "explanation": "Dit bord geeft een spoorwegovergang met één spoor aan die zich op deze exacte plaats bevindt."
       },
       "EN": {
         "question": "What does this traffic sign mean?",
         "choices": [
-          {"text": "Warning cross for a single-track railway crossing.", "is_correct": true},
-          {"text": "Prohibition to use the railway crossing.", "is_correct": false},
-          {"text": "End of the railway crossing zone.", "is_correct": false}
+          {
+            "text": "Single-track level crossing (Saint Andrew's cross)",
+            "is_correct": true
+          },
+          {
+            "text": "Prohibition to use the level crossing.",
+            "is_correct": false
+          },
+          {
+            "text": "End of the level crossing zone.",
+            "is_correct": false
+          }
         ],
-        "explanation": "The Saint Andrew's cross (A45) is placed at a single-track railway crossing. It confirms the presence of a crossing and warns of approaching trains."
+        "explanation": "This sign indicates a single-track level crossing located at this exact position."
       },
       "FR": {
-        "question": "Que signifie ce panneau de signalisation?",
+        "question": "Que signifie ce panneau de signalisation ?",
         "choices": [
-          {"text": "Croix d'avertissement pour un passage Ã  niveau Ã  voie unique.", "is_correct": true},
-          {"text": "Interdiction d'utiliser le passage Ã  niveau.", "is_correct": false},
-          {"text": "Fin de la zone de passage Ã  niveau.", "is_correct": false}
+          {
+            "text": "Passage à niveau à une voie",
+            "is_correct": true
+          },
+          {
+            "text": "Interdiction d'utiliser le passage à niveau.",
+            "is_correct": false
+          },
+          {
+            "text": "Fin de la zone de passage à niveau.",
+            "is_correct": false
+          }
         ],
-        "explanation": "La croix de Saint-AndrÃ© (A45) est placÃ©e Ã  un passage Ã  niveau Ã  voie unique. Elle confirme la prÃ©sence d'un passage et avertit des trains qui approchent."
+        "explanation": "Ce panneau indique un passage à niveau à une voie situé à cette position exacte."
       },
       "AR": {
-        "question": "Ù…Ø§Ø°Ø§ ØªØ¹Ù†ÙŠ Ù‡Ø°Ù‡ Ø§Ù„Ø¹Ù„Ø§Ù…Ø© Ø§Ù„Ù…Ø±ÙˆØ±ÙŠØ©ØŸ",
+        "question": "ما معنى هذه العلامة المرورية؟",
         "choices": [
-          {"text": "ØµÙ„ÙŠØ¨ ØªØ­Ø°ÙŠØ± Ù„Ù…Ø¹Ø¨Ø± Ø³ÙƒØ© Ø­Ø¯ÙŠØ¯ Ø°Ùˆ Ø®Ø· ÙˆØ§Ø­Ø¯.", "is_correct": true},
-          {"text": "Ø­Ø¸Ø± Ø§Ø³ØªØ®Ø¯Ø§Ù… Ù…Ø¹Ø¨Ø± Ø§Ù„Ø³ÙƒØ© Ø§Ù„Ø­Ø¯ÙŠØ¯ÙŠØ©.", "is_correct": false},
-          {"text": "Ù†Ù‡Ø§ÙŠØ© Ù…Ù†Ø·Ù‚Ø© Ù…Ø¹Ø¨Ø± Ø§Ù„Ø³ÙƒØ© Ø§Ù„Ø­Ø¯ÙŠØ¯ÙŠØ©.", "is_correct": false}
+          {
+            "text": "معبر سكة حديد بمسار واحد",
+            "is_correct": true
+          },
+          {
+            "text": "حظر استخدام معبر سكة حديد.",
+            "is_correct": false
+          },
+          {
+            "text": "نهاية منطقة معبر سكة حديد.",
+            "is_correct": false
+          }
         ],
-        "explanation": "ØµÙ„ÙŠØ¨ Ø§Ù„Ù‚Ø¯ÙŠØ³ Ø£Ù†Ø¯Ø±Ùˆ (A45) ÙŠÙˆØ¶Ø¹ Ø¹Ù†Ø¯ Ù…Ø¹Ø¨Ø± Ø³ÙƒØ© Ø­Ø¯ÙŠØ¯ Ø°Ùˆ Ø®Ø· ÙˆØ§Ø­Ø¯. ÙŠØ¤ÙƒØ¯ ÙˆØ¬ÙˆØ¯ Ø§Ù„Ù…Ø¹Ø¨Ø± ÙˆÙŠØ­Ø°Ø± Ù…Ù† Ø§Ù„Ù‚Ø·Ø§Ø±Ø§Øª Ø§Ù„Ù‚Ø§Ø¯Ù…Ø©."
+        "explanation": "تشير هذه العلامة إلى معبر سكة حديد بمسار واحد يقع في هذا الموضع تحديداً."
       }
     }
-  },
+  },
   {
     "question_id": "A45_Q02",
     "type": "WHICH_SIGN",
     "difficulty": "EASY",
     "is_critical": false,
-    "show_sign": true,
+    "show_sign": false,
     "i18n": {
       "NL": {
-        "question": "Tot welke categorie verkeerstekens behoort dit bord?",
+        "question": "Welk bord waarschuwt voor een overweg met één spoor?",
         "choices": [
-          {"text": "Gevaarsborden (A-reeks)", "is_correct": true},
-          {"text": "Voorrangsborden (B-reeks)", "is_correct": false},
-          {"text": "Verbodsborden (C-reeks)", "is_correct": false}
+          { "text": "Het bord dat waarschuwt voor een overweg met één spoor waar treinen kunnen passeren", "is_correct": true },
+          { "text": "Het bord dat waarschuwt voor een overweg met meerdere sporen", "is_correct": false },
+          { "text": "Het bord dat waarschuwt voor een overweg zonder slagbomen", "is_correct": false }
         ],
-        "explanation": "Dit is een gevaarsbord (driehoekig, rode rand). Het behoort tot de A-reeks en waarschuwt voor gevaarlijke situaties."
+        "explanation": "Het gevaarsbord A45 waarschuwt specifiek voor een overweg met één spoor. Het bord voor meerdere sporen (A47) geldt voor twee of meer sporen. Het bord zonder slagbomen (A43) geldt voor een overweg zonder barrières."
       },
       "EN": {
-        "question": "To which category of traffic signs does this sign belong?",
+        "question": "Which sign warns of a level crossing with one track?",
         "choices": [
-          {"text": "Danger signs (A-series)", "is_correct": true},
-          {"text": "Priority signs (B-series)", "is_correct": false},
-          {"text": "Prohibition signs (C-series)", "is_correct": false}
+          { "text": "The sign that warns of a level crossing with one track where trains may pass", "is_correct": true },
+          { "text": "The sign that warns of a level crossing with multiple tracks", "is_correct": false },
+          { "text": "The sign that warns of a level crossing without barriers", "is_correct": false }
         ],
-        "explanation": "This is a danger sign (triangular, red border). It belongs to the A-series and warns of hazardous situations."
+        "explanation": "Danger sign A45 specifically warns of a level crossing with one track. The multiple tracks sign (A47) applies to two or more tracks. The sign without barriers (A43) applies to a crossing without barriers."
       },
       "FR": {
-        "question": "Ã€ quelle catÃ©gorie de panneaux de signalisation appartient ce panneau?",
+        "question": "Quel panneau signale un passage à niveau à une seule voie ?",
         "choices": [
-          {"text": "Panneaux de danger (sÃ©rie A)", "is_correct": true},
-          {"text": "Panneaux de prioritÃ© (sÃ©rie B)", "is_correct": false},
-          {"text": "Panneaux d'interdiction (sÃ©rie C)", "is_correct": false}
+          { "text": "Le panneau qui avertit d’un passage à niveau à une voie où des trains peuvent passer", "is_correct": true },
+          { "text": "Le panneau qui avertit d’un passage à niveau à plusieurs voies", "is_correct": false },
+          { "text": "Le panneau qui avertit d’un passage à niveau sans barrières", "is_correct": false }
         ],
-        "explanation": "C'est un panneau de danger (triangulaire, bordure rouge). Il appartient Ã  la sÃ©rie A et avertit de situations dangereuses."
+        "explanation": "Le panneau de danger A45 signale spécifiquement un passage à niveau à une seule voie. Le panneau plusieurs voies (A47) concerne deux voies ou plus. Le panneau sans barrières (A43) concerne un passage sans barrières."
       },
       "AR": {
-        "question": "Ø¥Ù„Ù‰ Ø£ÙŠ ÙØ¦Ø© Ù…Ù† Ø¹Ù„Ø§Ù…Ø§Øª Ø§Ù„Ù…Ø±ÙˆØ± ØªÙ†ØªÙ…ÙŠ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ",
+        "question": "أي علامة مرورية تُحذّر من تقاطع سككة حديدية بخط واحد؟",
         "choices": [
-          {"text": "Ø¹Ù„Ø§Ù…Ø§Øª Ø§Ù„Ø®Ø·Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© Ø£)", "is_correct": true},
-          {"text": "Ø¹Ù„Ø§Ù…Ø§Øª Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© (Ø§Ù„Ø³Ù„Ø³Ù„Ø© Ø¨)", "is_correct": false},
-          {"text": "Ø¹Ù„Ø§Ù…Ø§Øª Ø§Ù„Ø­Ø¸Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© Ø¬)", "is_correct": false}
+          { "text": "العلامة التي تُحذّر من تقاطع سككة حديدية بخط واحد تمر عليه قطارات", "is_correct": true },
+          { "text": "العلامة التي تُحذّر من تقاطع سككة حديدية بخطوط متعددة", "is_correct": false },
+          { "text": "العلامة التي تُحذّر من تقاطع سككة حديدية بدون حواجز", "is_correct": false }
         ],
-        "explanation": "Ù‡Ø°Ù‡ Ø¹Ù„Ø§Ù…Ø© Ø®Ø·Ø± (Ù…Ø«Ù„Ø«Ø©ØŒ Ø­Ø¯ÙˆØ¯ Ø­Ù…Ø±Ø§Ø¡). ØªÙ†ØªÙ…ÙŠ Ø¥Ù„Ù‰ Ø§Ù„Ø³Ù„Ø³Ù„Ø© Ø£ ÙˆØªØ­Ø°Ø± Ù…Ù† Ø§Ù„Ù…ÙˆØ§Ù‚Ù Ø§Ù„Ø®Ø·Ø±Ø©."
+        "explanation": "علامة الخطر A45 تُحذّر تحديدًا من تقاطع سككة حديدية بخط واحد. علامة خطوط متعددة (A47) تختص بخطين أو أكثر. علامة بدون حواجز (A43) تختص بتقاطع بدون حواجز."
       }
     }
   },
@@ -99,38 +135,74 @@
       "NL": {
         "question": "Voor welk gevaar waarschuwt dit bord?",
         "choices": [
-          {"text": "Een spoorwegovergang met Ã©Ã©n spoor waar treinen kunnen kruisen.", "is_correct": true},
-          {"text": "Een kruispunt met voorrangsweg.", "is_correct": false},
-          {"text": "Een oversteekplaats voor fietsers.", "is_correct": false}
+          {
+            "text": "Een spoorwegovergang met enkel spoor waar treinen kunnen passeren.",
+            "is_correct": true
+          },
+          {
+            "text": "Een kruispunt met voorrangsweg.",
+            "is_correct": false
+          },
+          {
+            "text": "Een oversteekplaats voor fietsers.",
+            "is_correct": false
+          }
         ],
-        "explanation": "Het Sint-Andrieskruis A45 staat direct bij een spoorwegovergang met een enkel spoor en waarschuwt voor treinen die de overweg kunnen oversteken."
+        "explanation": "Het gevaar is dat u een spoorwegovergang met enkel spoor bereikt waar een trein uit een van beide richtingen kan komen. Controleer het spoor zorgvuldig voordat u oversteekt."
       },
       "EN": {
         "question": "What hazard does this sign warn about?",
         "choices": [
-          {"text": "A single-track railway crossing where trains may cross.", "is_correct": true},
-          {"text": "An intersection with a priority road.", "is_correct": false},
-          {"text": "A cyclist crossing.", "is_correct": false}
+          {
+            "text": "A single-track level crossing where trains may pass.",
+            "is_correct": true
+          },
+          {
+            "text": "An intersection with a priority road.",
+            "is_correct": false
+          },
+          {
+            "text": "A cyclist crossing.",
+            "is_correct": false
+          }
         ],
-        "explanation": "The Saint Andrew's cross A45 is placed directly at a single-track railway crossing and warns of trains that may cross."
+        "explanation": "The hazard is that you are at a single-track level crossing where a train may come from either direction. Check the track carefully before you cross."
       },
       "FR": {
-        "question": "Contre quel danger ce panneau avertit-il?",
+        "question": "Contre quel danger ce panneau avertit-il ?",
         "choices": [
-          {"text": "Un passage Ã  niveau Ã  voie unique oÃ¹ des trains peuvent traverser.", "is_correct": true},
-          {"text": "Un carrefour avec une route prioritaire.", "is_correct": false},
-          {"text": "Un passage pour cyclistes.", "is_correct": false}
+          {
+            "text": "Un passage à niveau à voie unique où des trains peuvent passer.",
+            "is_correct": true
+          },
+          {
+            "text": "Un carrefour avec une route prioritaire.",
+            "is_correct": false
+          },
+          {
+            "text": "Un passage pour cyclistes.",
+            "is_correct": false
+          }
         ],
-        "explanation": "La croix de Saint-AndrÃ© A45 est placÃ©e directement Ã  un passage Ã  niveau Ã  voie unique et avertit des trains pouvant traverser."
+        "explanation": "Le danger est que vous êtes à un passage à niveau à voie unique où un train peut venir de l'un ou l'autre sens. Vérifiez la voie avec soin avant de traverser."
       },
       "AR": {
-        "question": "Ø¹Ù† Ø£ÙŠ Ø®Ø·Ø± ØªØ­Ø°Ø± Ù‡Ø°Ù‡ Ø§Ù„Ø¹Ù„Ø§Ù…Ø©ØŸ",
+        "question": "عن أي خطر تحذر هذه العلامة؟",
         "choices": [
-          {"text": "Ù…Ø¹Ø¨Ø± Ø³ÙƒØ© Ø­Ø¯ÙŠØ¯ Ø°Ùˆ Ø®Ø· ÙˆØ§Ø­Ø¯ Ø­ÙŠØ« Ù‚Ø¯ ØªØ¹Ø¨Ø± Ø§Ù„Ù‚Ø·Ø§Ø±Ø§Øª.", "is_correct": true},
-          {"text": "ØªÙ‚Ø§Ø·Ø¹ Ù…Ø¹ Ø·Ø±ÙŠÙ‚ Ø°ÙŠ Ø£ÙˆÙ„ÙˆÙŠØ©.", "is_correct": false},
-          {"text": "Ù…Ù…Ø± Ø¹Ø¨ÙˆØ± Ù„Ù„Ø¯Ø±Ø§Ø¬ÙŠÙ†.", "is_correct": false}
+          {
+            "text": "معبر سكة حديد ذو خط واحد قد تمر عبره القطارات.",
+            "is_correct": true
+          },
+          {
+            "text": "تقاطع مع طريق ذي أولوية.",
+            "is_correct": false
+          },
+          {
+            "text": "ممر عبور للدراجين.",
+            "is_correct": false
+          }
         ],
-        "explanation": "ØµÙ„ÙŠØ¨ Ø§Ù„Ù‚Ø¯ÙŠØ³ Ø£Ù†Ø¯Ø±Ùˆ A45 ÙŠÙˆØ¶Ø¹ Ù…Ø¨Ø§Ø´Ø±Ø© Ø¹Ù†Ø¯ Ù…Ø¹Ø¨Ø± Ø³ÙƒØ© Ø­Ø¯ÙŠØ¯ Ø°Ùˆ Ø®Ø· ÙˆØ§Ø­Ø¯ ÙˆÙŠØ­Ø°Ø± Ù…Ù† Ø§Ù„Ù‚Ø·Ø§Ø±Ø§Øª Ø§Ù„ØªÙŠ Ù‚Ø¯ ØªØ¹Ø¨Ø±."
+        "explanation": "الخطر هو أنك عند معبر سكة حديد ذي خط واحد قد يأتي منه قطار من أي من الاتجاهين. تحقق من السكة بعناية قبل العبور."
       }
     }
   },
@@ -142,40 +214,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat moet u doen wanneer u dit bord ziet?",
+        "question": "Wat doet u best wanneer u dit bord ziet?",
         "choices": [
-          {"text": "Stoppen voor de overweg, links en rechts kijken en pas rijden als er zeker geen trein nadert.", "is_correct": true},
-          {"text": "Langzamer rijden maar de overweg zonder te stoppen oversteken.", "is_correct": false},
-          {"text": "De overweg zo snel mogelijk oversteken om het gevaar te vermijden.", "is_correct": false}
+          {
+            "text": "Zo nodig stoppen voor de overweg, links en rechts kijken en pas verder rijden wanneer u volledig zeker bent dat geen trein nadert.",
+            "is_correct": true
+          },
+          {
+            "text": "Langzamer rijden maar de overweg zonder extra controle oversteken.",
+            "is_correct": false
+          },
+          {
+            "text": "De overweg zo snel mogelijk oversteken om het gevaar te vermijden.",
+            "is_correct": false
+          }
         ],
-        "explanation": "Het Sint-Andrieskruis bevindt zich op de overweg zelf. U moet stoppen, in beide richtingen kijken en pas rijden als er geen trein zichtbaar of hoorbaar is."
+        "explanation": "Bij een Sint-Andrieskruis doet u er goed aan zelf te beoordelen of het veilig is om over te steken. Kijk in beide richtingen en rijd pas verder wanneer u volledig zeker bent dat het spoor vrij is."
       },
       "EN": {
-        "question": "What must you do when you see this sign?",
+        "question": "What should you do when you see this sign?",
         "choices": [
-          {"text": "Stop before the crossing, look left and right, and only proceed when no train is approaching.", "is_correct": true},
-          {"text": "Slow down but cross without stopping.", "is_correct": false},
-          {"text": "Cross as quickly as possible to avoid the danger.", "is_correct": false}
+          {
+            "text": "Stop if necessary before the level crossing, look left and right, and only proceed when you are completely sure no train is approaching.",
+            "is_correct": true
+          },
+          {
+            "text": "Slow down but cross without any extra check.",
+            "is_correct": false
+          },
+          {
+            "text": "Cross as quickly as possible to avoid the danger.",
+            "is_correct": false
+          }
         ],
-        "explanation": "The Saint Andrew's cross is placed on the crossing itself. You must stop, look in both directions, and only proceed when no train is visible or audible."
+        "explanation": "At a Saint Andrew's cross, you should judge carefully for yourself whether it is safe to cross. Look both ways and only proceed when you are completely sure the track is clear."
       },
       "FR": {
-        "question": "Que devez-vous faire lorsque vous voyez ce panneau?",
+        "question": "Que devriez-vous faire lorsque vous voyez ce panneau ?",
         "choices": [
-          {"text": "S'arrÃªter avant le passage, regarder Ã  gauche et Ã  droite, et ne s'engager que si aucun train n'approche.", "is_correct": true},
-          {"text": "Ralentir mais traverser sans s'arrÃªter.", "is_correct": false},
-          {"text": "Traverser le plus vite possible pour Ã©viter le danger.", "is_correct": false}
+          {
+            "text": "Vous arrêter si nécessaire avant le passage à niveau, regarder à gauche et à droite et ne poursuivre que lorsque vous êtes totalement certain qu'aucun train n'approche.",
+            "is_correct": true
+          },
+          {
+            "text": "Ralentir mais traverser sans contrôle supplémentaire.",
+            "is_correct": false
+          },
+          {
+            "text": "Traverser le plus vite possible pour éviter le danger.",
+            "is_correct": false
+          }
         ],
-        "explanation": "La croix de Saint-AndrÃ© est placÃ©e sur le passage lui-mÃªme. Vous devez vous arrÃªter, regarder dans les deux sens et ne vous engager que si aucun train n'est visible ou audible."
+        "explanation": "À une croix de Saint-André, il vaut mieux apprécier vous-même si la traversée est sûre. Regardez dans les deux sens et ne poursuivez que lorsque vous êtes totalement certain que la voie est libre."
       },
       "AR": {
-        "question": "Ù…Ø§Ø°Ø§ ÙŠØ¬Ø¨ Ø£Ù† ØªÙØ¹Ù„ Ø¹Ù†Ø¯Ù…Ø§ ØªØ±Ù‰ Ù‡Ø°Ù‡ Ø§Ù„Ø¹Ù„Ø§Ù…Ø©ØŸ",
+        "question": "ماذا ينبغي أن تفعل عندما ترى هذه العلامة؟",
         "choices": [
-          {"text": "ØªÙˆÙ‚Ù Ù‚Ø¨Ù„ Ø§Ù„Ù…Ø¹Ø¨Ø±ØŒ Ø§Ù†Ø¸Ø± ÙŠØ³Ø§Ø±Ø§Ù‹ ÙˆÙŠÙ…ÙŠÙ†Ø§Ù‹ØŒ ÙˆØªØ§Ø¨Ø¹ ÙÙ‚Ø· Ø¹Ù†Ø¯Ù…Ø§ Ù„Ø§ ÙŠÙƒÙˆÙ† Ù‡Ù†Ø§Ùƒ Ù‚Ø·Ø§Ø± Ù‚Ø§Ø¯Ù….", "is_correct": true},
-          {"text": "ØªØ¨Ø§Ø·Ø£ ÙˆÙ„ÙƒÙ† Ø§Ø¹Ø¨Ø± Ø¯ÙˆÙ† ØªÙˆÙ‚Ù.", "is_correct": false},
-          {"text": "Ø§Ø¹Ø¨Ø± Ø¨Ø£Ø³Ø±Ø¹ Ù…Ø§ ÙŠÙ…ÙƒÙ† Ù„ØªØ¬Ù†Ø¨ Ø§Ù„Ø®Ø·Ø±.", "is_correct": false}
+          {
+            "text": "توقف إذا لزم الأمر قبل المعبر، وانظر يساراً ويميناً، وتابع السير فقط عندما تتأكد تماماً من عدم اقتراب أي قطار.",
+            "is_correct": true
+          },
+          {
+            "text": "خفف السرعة ولكن اعبر دون أي تحقق إضافي.",
+            "is_correct": false
+          },
+          {
+            "text": "اعبر بأسرع ما يمكن لتجنب الخطر.",
+            "is_correct": false
+          }
         ],
-        "explanation": "ØµÙ„ÙŠØ¨ Ø§Ù„Ù‚Ø¯ÙŠØ³ Ø£Ù†Ø¯Ø±Ùˆ ÙŠÙˆØ¶Ø¹ Ø¹Ù„Ù‰ Ø§Ù„Ù…Ø¹Ø¨Ø± Ù†ÙØ³Ù‡. ÙŠØ¬Ø¨ Ø£Ù† ØªØªÙˆÙ‚ÙØŒ ØªÙ†Ø¸Ø± ÙÙŠ ÙƒÙ„Ø§ Ø§Ù„Ø§ØªØ¬Ø§Ù‡ÙŠÙ†ØŒ ÙˆØªØªØ§Ø¨Ø¹ ÙÙ‚Ø· Ø¹Ù†Ø¯Ù…Ø§ Ù„Ø§ ÙŠÙƒÙˆÙ† Ù‡Ù†Ø§Ùƒ Ù‚Ø·Ø§Ø± Ù…Ø±Ø¦ÙŠ Ø£Ùˆ Ù…Ø³Ù…ÙˆØ¹."
+        "explanation": "عند صليب القديس أندرو ينبغي أن تقيّم بنفسك ما إذا كان العبور آمناً. انظر في الاتجاهين ولا تتابع السير إلا عندما تتأكد تماماً من خلو السكة."
       }
     }
   },
@@ -189,38 +297,74 @@
       "NL": {
         "question": "Welk rijgedrag is correct bij het naderen van een Sint-Andrieskruis voor een enkel spoor?",
         "choices": [
-          {"text": "Motor uitzetten, ramen openen om te luisteren en beide kanten controleren voor het oversteken.", "is_correct": true},
-          {"text": "Snel rijden zodat u minder tijd op de rails staat.", "is_correct": false},
-          {"text": "Alleen kijken in de richting waaruit de meeste treinen komen.", "is_correct": false}
+          {
+            "text": "Snelheid verminderen, afleiding beperken, goed luisteren en beide richtingen controleren voor het oversteken.",
+            "is_correct": true
+          },
+          {
+            "text": "Snel rijden zodat u minder tijd op de rails staat.",
+            "is_correct": false
+          },
+          {
+            "text": "Alleen kijken in de richting waaruit de meeste treinen komen.",
+            "is_correct": false
+          }
         ],
-        "explanation": "Bij een enkel spoor moet u beide richtingen controleren. Het uitzetten van de motor en openen van ramen helpt bij het horen van naderende treinen."
+        "explanation": "Bij een enkel spoor moet u niet haasten maar juist zorgvuldig observeren en luisteren. Controleer altijd beide richtingen voordat u oversteekt."
       },
       "EN": {
         "question": "What driving behaviour is correct when approaching a Saint Andrew's cross for a single track?",
         "choices": [
-          {"text": "Turn off the engine, open windows to listen, and check both sides before crossing.", "is_correct": true},
-          {"text": "Drive quickly to spend less time on the tracks.", "is_correct": false},
-          {"text": "Only look in the direction most trains come from.", "is_correct": false}
+          {
+            "text": "Reduce speed, minimise distractions, listen carefully, and check both directions before crossing.",
+            "is_correct": true
+          },
+          {
+            "text": "Drive quickly to spend less time on the tracks.",
+            "is_correct": false
+          },
+          {
+            "text": "Only look in the direction most trains come from.",
+            "is_correct": false
+          }
         ],
-        "explanation": "At a single track you must check both directions. Turning off the engine and opening windows helps you hear approaching trains."
+        "explanation": "At a single-track level crossing, do not rush. Observe carefully, listen well, and always check both directions before you cross."
       },
       "FR": {
-        "question": "Quel comportement de conduite est correct en approchant d'une croix de Saint-AndrÃ© pour une voie unique?",
+        "question": "Quel comportement de conduite est correct en approchant d'une croix de Saint-André pour une voie unique ?",
         "choices": [
-          {"text": "Couper le moteur, ouvrir les fenÃªtres pour Ã©couter et vÃ©rifier les deux cÃ´tÃ©s avant de traverser.", "is_correct": true},
-          {"text": "Rouler vite pour passer moins de temps sur les rails.", "is_correct": false},
-          {"text": "Ne regarder que dans la direction d'oÃ¹ viennent la plupart des trains.", "is_correct": false}
+          {
+            "text": "Réduire la vitesse, limiter les distractions, écouter attentivement et vérifier les deux directions avant de traverser.",
+            "is_correct": true
+          },
+          {
+            "text": "Rouler vite pour passer moins de temps sur les rails.",
+            "is_correct": false
+          },
+          {
+            "text": "Ne regarder que dans la direction d'où viennent la plupart des trains.",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ã€ une voie unique, vous devez vÃ©rifier les deux directions. Couper le moteur et ouvrir les fenÃªtres aide Ã  entendre les trains qui approchent."
+        "explanation": "À un passage à voie unique, il ne faut pas se précipiter. Observez attentivement, écoutez bien et vérifiez toujours les deux directions avant de traverser."
       },
       "AR": {
-        "question": "Ù…Ø§ Ù‡Ùˆ Ø³Ù„ÙˆÙƒ Ø§Ù„Ù‚ÙŠØ§Ø¯Ø© Ø§Ù„ØµØ­ÙŠØ­ Ø¹Ù†Ø¯ Ø§Ù„Ø§Ù‚ØªØ±Ø§Ø¨ Ù…Ù† ØµÙ„ÙŠØ¨ Ø§Ù„Ù‚Ø¯ÙŠØ³ Ø£Ù†Ø¯Ø±Ùˆ Ù„Ø®Ø· ÙˆØ§Ø­Ø¯ØŸ",
+        "question": "ما هو سلوك القيادة الصحيح عند الاقتراب من صليب القديس أندرو لخط واحد؟",
         "choices": [
-          {"text": "Ø£ÙˆÙ‚Ù Ø§Ù„Ù…Ø­Ø±ÙƒØŒ Ø§ÙØªØ­ Ø§Ù„Ù†ÙˆØ§ÙØ° Ù„Ù„Ø§Ø³ØªÙ…Ø§Ø¹ØŒ ÙˆØªØ­Ù‚Ù‚ Ù…Ù† Ø§Ù„Ø¬Ø§Ù†Ø¨ÙŠÙ† Ù‚Ø¨Ù„ Ø§Ù„Ø¹Ø¨ÙˆØ±.", "is_correct": true},
-          {"text": "Ø§Ù‚ÙØ¯ Ø¨Ø³Ø±Ø¹Ø© Ù„Ù‚Ø¶Ø§Ø¡ ÙˆÙ‚Øª Ø£Ù‚Ù„ Ø¹Ù„Ù‰ Ø§Ù„Ù‚Ø¶Ø¨Ø§Ù†.", "is_correct": false},
-          {"text": "Ø§Ù†Ø¸Ø± ÙÙ‚Ø· ÙÙŠ Ø§Ù„Ø§ØªØ¬Ø§Ù‡ Ø§Ù„Ø°ÙŠ ØªØ£ØªÙŠ Ù…Ù†Ù‡ Ù…Ø¹Ø¸Ù… Ø§Ù„Ù‚Ø·Ø§Ø±Ø§Øª.", "is_correct": false}
+          {
+            "text": "خفف السرعة، وقلل المشتتات، واستمع جيداً، وتحقق من الاتجاهين قبل العبور.",
+            "is_correct": true
+          },
+          {
+            "text": "قد بسرعة لتقليل الوقت على السكة.",
+            "is_correct": false
+          },
+          {
+            "text": "انظر فقط في الاتجاه الذي تأتي منه معظم القطارات.",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ø¹Ù†Ø¯ Ø®Ø· ÙˆØ§Ø­Ø¯ ÙŠØ¬Ø¨ Ø§Ù„ØªØ­Ù‚Ù‚ Ù…Ù† ÙƒÙ„Ø§ Ø§Ù„Ø§ØªØ¬Ø§Ù‡ÙŠÙ†. Ø¥ÙŠÙ‚Ø§Ù Ø§Ù„Ù…Ø­Ø±Ùƒ ÙˆÙØªØ­ Ø§Ù„Ù†ÙˆØ§ÙØ° ÙŠØ³Ø§Ø¹Ø¯ ÙÙŠ Ø³Ù…Ø§Ø¹ Ø§Ù„Ù‚Ø·Ø§Ø±Ø§Øª Ø§Ù„Ù‚Ø§Ø¯Ù…Ø©."
+        "explanation": "عند معبر سكة حديد ذي خط واحد لا تتعجل. راقب بعناية، واستمع جيداً، وتحقق دائماً من الاتجاهين قبل العبور."
       }
     }
   },
@@ -232,40 +376,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Op welke afstand wordt dit gevaarsbord buiten de bebouwde kom geplaatst?",
+        "question": "Op welke afstand van het gevaar wordt dit bord geplaatst?",
         "choices": [
-          {"text": "Â±150 meter voor het gevaar", "is_correct": true},
-          {"text": "Ter hoogte van het gevaar zelf", "is_correct": false},
-          {"text": "500 meter voor het gevaar", "is_correct": false}
+          {
+            "text": "Op de plaats van het gevaar zelf, bij de spoorwegovergang.",
+            "is_correct": true
+          },
+          {
+            "text": "Ongeveer 150 meter voor het gevaar.",
+            "is_correct": false
+          },
+          {
+            "text": "Ongeveer 500 meter voor het gevaar.",
+            "is_correct": false
+          }
         ],
-        "explanation": "Buiten de bebouwde kom wordt een gevaarsbord op Â±150 meter voor het gevaar geplaatst. Binnen de bebouwde kom is dat Â±50 meter."
+        "explanation": "Het Sint-Andrieskruis is geen vooraankondiging op afstand. Het staat op de spoorwegovergang zelf en geeft precies de plaats van het gevaar aan."
       },
       "EN": {
-        "question": "At what distance is this danger sign placed outside built-up areas?",
+        "question": "At what distance from the hazard is this sign placed?",
         "choices": [
-          {"text": "Â±150 meters before the hazard", "is_correct": true},
-          {"text": "At the location of the hazard itself", "is_correct": false},
-          {"text": "500 meters before the hazard", "is_correct": false}
+          {
+            "text": "At the hazard itself, at the level crossing.",
+            "is_correct": true
+          },
+          {
+            "text": "About 150 meters before the hazard.",
+            "is_correct": false
+          },
+          {
+            "text": "About 500 meters before the hazard.",
+            "is_correct": false
+          }
         ],
-        "explanation": "Outside built-up areas, a danger sign is placed Â±150 meters before the hazard. Inside built-up areas it is Â±50 meters."
+        "explanation": "The Saint Andrew's cross is not an advance warning sign placed at a distance. It stands at the level crossing itself and marks the exact place of the hazard."
       },
       "FR": {
-        "question": "Ã€ quelle distance ce panneau de danger est-il placÃ© hors agglomÃ©ration?",
+        "question": "À quelle distance du danger ce panneau est-il placé ?",
         "choices": [
-          {"text": "Â±150 mÃ¨tres avant le danger", "is_correct": true},
-          {"text": "Ã€ l'endroit mÃªme du danger", "is_correct": false},
-          {"text": "500 mÃ¨tres avant le danger", "is_correct": false}
+          {
+            "text": "À l'endroit même du danger, au passage à niveau.",
+            "is_correct": true
+          },
+          {
+            "text": "À environ 150 mètres avant le danger.",
+            "is_correct": false
+          },
+          {
+            "text": "À environ 500 mètres avant le danger.",
+            "is_correct": false
+          }
         ],
-        "explanation": "Hors agglomÃ©ration, un panneau de danger est placÃ© Ã  Â±150 mÃ¨tres avant le danger. En agglomÃ©ration, c'est Â±50 mÃ¨tres."
+        "explanation": "La croix de Saint-André n'est pas un panneau d'annonce placé à distance. Elle se trouve au passage à niveau lui-même et indique l'endroit exact du danger."
       },
       "AR": {
-        "question": "Ø¹Ù„Ù‰ Ø£ÙŠ Ù…Ø³Ø§ÙØ© ÙŠÙÙˆØ¶Ø¹ Ù‡Ø°Ø§ Ø§Ù„Ù„Ø§ÙØªØ© Ø§Ù„ØªØ­Ø°ÙŠØ±ÙŠØ© Ø®Ø§Ø±Ø¬ Ø§Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ù…Ø¨Ù†ÙŠØ©ØŸ",
+        "question": "على أي مسافة من الخطر تُوضع هذه العلامة المرورية؟",
         "choices": [
-          {"text": "Â±150 Ù…ØªØ± Ù‚Ø¨Ù„ Ø§Ù„Ø®Ø·Ø±", "is_correct": true},
-          {"text": "Ø¹Ù†Ø¯ Ù…ÙˆÙ‚Ø¹ Ø§Ù„Ø®Ø·Ø± Ù†ÙØ³Ù‡", "is_correct": false},
-          {"text": "500 Ù…ØªØ± Ù‚Ø¨Ù„ Ø§Ù„Ø®Ø·Ø±", "is_correct": false}
+          {
+            "text": "عند موقع الخطر نفسه، أي عند معبر سكة حديد.",
+            "is_correct": true
+          },
+          {
+            "text": "على بعد نحو 150 متراً قبل الخطر.",
+            "is_correct": false
+          },
+          {
+            "text": "على بعد نحو 500 متر قبل الخطر.",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ø®Ø§Ø±Ø¬ Ø§Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ù…Ø¨Ù†ÙŠØ©ØŒ ØªÙÙˆØ¶Ø¹ Ø¹Ù„Ø§Ù…Ø© Ø§Ù„Ø®Ø·Ø± Ø¹Ù„Ù‰ Ù…Ø³Ø§ÙØ© Â±150 Ù…ØªØ± Ù‚Ø¨Ù„ Ø§Ù„Ø®Ø·Ø±. Ø¯Ø§Ø®Ù„ Ø§Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ù…Ø¨Ù†ÙŠØ© ØªÙƒÙˆÙ† Ø§Ù„Ù…Ø³Ø§ÙØ© Â±50 Ù…ØªØ±."
+        "explanation": "صليب القديس أندرو ليس علامة تحذير مسبق توضع على مسافة. بل يوضع عند معبر سكة حديد نفسه ويدل على مكان الخطر بدقة."
       }
     }
   },
@@ -279,34 +459,58 @@
       "NL": {
         "question": "Mag u een spoorwegovergang oprijden als de knipperlichten actief zijn?",
         "choices": [
-          {"text": "Nee", "is_correct": true},
-          {"text": "Ja", "is_correct": false}
+          {
+            "text": "Nee",
+            "is_correct": true
+          },
+          {
+            "text": "Ja",
+            "is_correct": false
+          }
         ],
-        "explanation": "Knipperlichten bij een spoorwegovergang betekenen dat een trein nadert. Het is absoluut verboden om de overweg op te rijden."
+        "explanation": "Knipperlichten bij een spoorwegovergang betekenen dat een trein nadert of dat u moet wachten. Het is absoluut verboden om de overweg op te rijden zolang deze signalen actief zijn."
       },
       "EN": {
         "question": "Is it allowed to drive onto a level crossing when the warning lights are flashing?",
         "choices": [
-          {"text": "No", "is_correct": true},
-          {"text": "Yes", "is_correct": false}
+          {
+            "text": "No",
+            "is_correct": true
+          },
+          {
+            "text": "Yes",
+            "is_correct": false
+          }
         ],
-        "explanation": "Flashing warning lights at a level crossing mean a train is approaching. It is absolutely prohibited to drive onto the crossing."
+        "explanation": "Flashing warning lights at a level crossing mean that a train is approaching or that you must wait. It is absolutely prohibited to enter the crossing while these signals are active."
       },
       "FR": {
-        "question": "Est-il permis de s'engager sur un passage Ã  niveau lorsque les feux clignotants sont actifs?",
+        "question": "Est-il permis de s'engager sur un passage à niveau lorsque les feux clignotants sont actifs ?",
         "choices": [
-          {"text": "Non", "is_correct": true},
-          {"text": "Oui", "is_correct": false}
+          {
+            "text": "Non",
+            "is_correct": true
+          },
+          {
+            "text": "Oui",
+            "is_correct": false
+          }
         ],
-        "explanation": "Les feux clignotants Ã  un passage Ã  niveau signifient qu'un train approche. Il est absolument interdit de s'engager sur le passage."
+        "explanation": "Les feux clignotants à un passage à niveau signifient qu'un train approche ou que vous devez attendre. Il est absolument interdit de s'engager tant que ces signaux sont actifs."
       },
       "AR": {
-        "question": "Ù‡Ù„ ÙŠÙØ³Ù…Ø­ Ø¨Ø§Ù„Ø¯Ø®ÙˆÙ„ Ø¥Ù„Ù‰ Ù…Ø¹Ø¨Ø± Ø§Ù„Ø³ÙƒØ© Ø§Ù„Ø­Ø¯ÙŠØ¯ÙŠØ© Ø¹Ù†Ø¯Ù…Ø§ ØªÙƒÙˆÙ† Ø£Ø¶ÙˆØ§Ø¡ Ø§Ù„ØªØ­Ø°ÙŠØ± ØªÙˆÙ…Ø¶ØŸ",
+        "question": "هل يُسمح بالدخول إلى معبر سكة حديد عندما تكون أضواء التحذير تومض؟",
         "choices": [
-          {"text": "Ù„Ø§", "is_correct": true},
-          {"text": "Ù†Ø¹Ù…", "is_correct": false}
+          {
+            "text": "لا",
+            "is_correct": true
+          },
+          {
+            "text": "نعم",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ø£Ø¶ÙˆØ§Ø¡ Ø§Ù„ØªØ­Ø°ÙŠØ± Ø§Ù„ÙˆØ§Ù…Ø¶Ø© Ø¹Ù†Ø¯ Ù…Ø¹Ø¨Ø± Ø§Ù„Ø³ÙƒØ© Ø§Ù„Ø­Ø¯ÙŠØ¯ÙŠØ© ØªØ¹Ù†ÙŠ Ø§Ù‚ØªØ±Ø§Ø¨ Ù‚Ø·Ø§Ø±. ÙŠÙØ­Ø¸Ø± ØªÙ…Ø§Ù…Ø§Ù‹ Ø§Ù„Ø¯Ø®ÙˆÙ„ Ø¥Ù„Ù‰ Ø§Ù„Ù…Ø¹Ø¨Ø±."
+        "explanation": "أضواء التحذير الوامضة عند معبر سكة حديد تعني أن قطاراً يقترب أو أنه يجب عليك الانتظار. يُحظر تماماً دخول المعبر ما دامت هذه الإشارات نشطة."
       }
     }
   },
@@ -318,36 +522,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Mag u de slagbomen van een spoorwegovergang omrijden als de weg leeg lijkt?",
+        "question": "Mag u de spoorwegovergang oprijden als uw zicht beperkt is en u niet zeker weet of het spoor vrij is?",
         "choices": [
-          {"text": "Nee", "is_correct": true},
-          {"text": "Ja", "is_correct": false}
+          {
+            "text": "Nee",
+            "is_correct": true
+          },
+          {
+            "text": "Ja",
+            "is_correct": false
+          }
         ],
-        "explanation": "Slagbomen omrijden is altijd verboden en levensgevaarlijk. Een trein kan onzichtbaar snel naderen. De boete is zwaar en uw leven staat op het spel."
+        "explanation": "U mag een spoorwegovergang alleen oprijden wanneer u zeker weet dat het spoor vrij is. Bij beperkte zichtbaarheid moet u wachten tot u dit veilig kunt beoordelen."
       },
       "EN": {
-        "question": "Is it allowed to drive around the barriers of a level crossing if the road looks empty?",
+        "question": "Is it allowed to enter the level crossing if your view is limited and you are not sure the track is clear?",
         "choices": [
-          {"text": "No", "is_correct": true},
-          {"text": "Yes", "is_correct": false}
+          {
+            "text": "No",
+            "is_correct": true
+          },
+          {
+            "text": "Yes",
+            "is_correct": false
+          }
         ],
-        "explanation": "Driving around barriers is always prohibited and life-threatening. A train can approach invisibly fast. The fine is heavy and your life is at stake."
+        "explanation": "You may only enter a level crossing when you are sure the track is clear. If visibility is limited, you must wait until you can judge the situation safely."
       },
       "FR": {
-        "question": "Est-il permis de contourner les barriÃ¨res d'un passage Ã  niveau si la route semble vide?",
+        "question": "Est-il permis de s'engager sur le passage à niveau si votre visibilité est limitée et que vous n'êtes pas certain que la voie soit libre ?",
         "choices": [
-          {"text": "Non", "is_correct": true},
-          {"text": "Oui", "is_correct": false}
+          {
+            "text": "Non",
+            "is_correct": true
+          },
+          {
+            "text": "Oui",
+            "is_correct": false
+          }
         ],
-        "explanation": "Contourner les barriÃ¨res est toujours interdit et mortel. Un train peut approcher Ã  grande vitesse sans Ãªtre visible. L'amende est lourde et votre vie est en jeu."
+        "explanation": "Vous ne pouvez vous engager sur un passage à niveau que lorsque vous êtes certain que la voie est libre. Si la visibilité est limitée, vous devez attendre de pouvoir juger la situation en toute sécurité."
       },
       "AR": {
-        "question": "Ù‡Ù„ ÙŠÙØ³Ù…Ø­ Ø¨Ø§Ù„ØªØ­Ø§ÙŠÙ„ Ø¹Ù„Ù‰ Ø­ÙˆØ§Ø¬Ø² Ù…Ø¹Ø¨Ø± Ø§Ù„Ø³ÙƒØ© Ø§Ù„Ø­Ø¯ÙŠØ¯ÙŠØ© Ø¥Ø°Ø§ Ø¨Ø¯Ø§ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø®Ø§Ù„ÙŠØ§Ù‹ØŸ",
+        "question": "هل يُسمح بدخول معبر سكة حديد إذا كانت الرؤية محدودة ولم تكن متأكداً تماماً من خلو السكة؟",
         "choices": [
-          {"text": "Ù„Ø§", "is_correct": true},
-          {"text": "Ù†Ø¹Ù…", "is_correct": false}
+          {
+            "text": "لا",
+            "is_correct": true
+          },
+          {
+            "text": "نعم",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ø§Ù„ØªØ­Ø§ÙŠÙ„ Ø¹Ù„Ù‰ Ø§Ù„Ø­ÙˆØ§Ø¬Ø² Ù…Ø­Ø¸ÙˆØ± Ø¯Ø§Ø¦Ù…Ø§Ù‹ ÙˆÙ…Ù…ÙŠØª. ÙŠÙ…ÙƒÙ† Ø£Ù† ÙŠÙ‚ØªØ±Ø¨ Ø§Ù„Ù‚Ø·Ø§Ø± Ø¨Ø³Ø±Ø¹Ø© ØºÙŠØ± Ù…Ø±Ø¦ÙŠØ©. Ø§Ù„ØºØ±Ø§Ù…Ø© Ø«Ù‚ÙŠÙ„Ø© ÙˆØ­ÙŠØ§ØªÙƒ Ø¹Ù„Ù‰ Ø§Ù„Ù…Ø­Ùƒ."
+        "explanation": "لا يجوز لك دخول معبر سكة حديد إلا عندما تتأكد تماماً من خلو السكة. إذا كانت الرؤية محدودة، فيجب أن تنتظر حتى تستطيع تقييم الوضع بأمان."
       }
     }
   }

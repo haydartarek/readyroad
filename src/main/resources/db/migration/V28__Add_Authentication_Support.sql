@@ -5,8 +5,6 @@
 -- Description: Add username, role, and lock fields for JWT authentication
 -- ========================================
 
-USE readyroad_prod;
-
 -- Add username column (for authentication)
 ALTER TABLE users
 ADD COLUMN username VARCHAR(50) UNIQUE AFTER id;
@@ -36,13 +34,9 @@ SET username  = SUBSTRING_INDEX(email, '@', 1),
     is_locked = FALSE
 WHERE username IS NULL OR username = '';
 
--- Insert default admin user (safe - ignores duplicates)
-INSERT IGNORE INTO users (email, username, full_name, password_hash, role, is_active, is_locked, created_at)
-VALUES (
-    'admin@readyroad.be', 'admin', 'ReadyRoad Admin',
-    '$2a$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
-    'ADMIN', TRUE, FALSE, NOW()
-);
+-- Default admin creation is handled by DefaultAdminInitializer using
+-- ADMIN_DEFAULT_PASSWORD / readyroad.admin.default-password.
+-- Do not seed production credentials from Flyway.
 
 -- Roles reference table
 CREATE TABLE IF NOT EXISTS user_roles (

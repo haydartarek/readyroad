@@ -7,6 +7,8 @@ import com.readyroad.readyroadbackend.domain.entity.QuizQuestion;
 import com.readyroad.readyroadbackend.dto.exam.ExamOptionDTO;
 import com.readyroad.readyroadbackend.dto.exam.ExamQuestionDTO;
 import com.readyroad.readyroadbackend.dto.exam.ExamStartResponse;
+import com.readyroad.readyroadbackend.service.RoadSignReferenceTextResolver;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -18,7 +20,10 @@ import java.util.stream.Collectors;
  * Mapper for Exam Simulation DTOs - Phase 5
  */
 @Component
+@RequiredArgsConstructor
 public class ExamMapper {
+
+    private final RoadSignReferenceTextResolver roadSignReferenceTextResolver;
 
     public ExamStartResponse toStartResponse(ExamSimulation exam, List<ExamSimulationQuestion> examQuestions) {
         return ExamStartResponse.builder()
@@ -40,13 +45,13 @@ public class ExamMapper {
         return ExamQuestionDTO.builder()
                 .questionId(question.getId())
                 .questionOrder(esq.getQuestionOrder())
-                .questionTextEn(question.getQuestionEn())
-                .questionTextAr(question.getQuestionAr())
-                .questionTextNl(question.getQuestionNl())
-                .questionTextFr(question.getQuestionFr())
+                .questionTextEn(roadSignReferenceTextResolver.resolveEn(question.getQuestionEn()))
+                .questionTextAr(roadSignReferenceTextResolver.resolveAr(question.getQuestionAr()))
+                .questionTextNl(roadSignReferenceTextResolver.resolveNl(question.getQuestionNl()))
+                .questionTextFr(roadSignReferenceTextResolver.resolveFr(question.getQuestionFr()))
                 .difficultyLevel(question.getDifficultyLevel().name())
                 .categoryName(question.getCategory() != null ? question.getCategory().getNameEn() : null)
-                .options(question.getOptions() != null ? shuffled(question.getOptions().stream()
+                .options(question.getOptions() != null ? shuffled(question.getDeliverableOptions().stream()
                         .map(this::toOptionDTO)
                         .collect(Collectors.toCollection(ArrayList::new))) : new ArrayList<>())
                 .build();
@@ -61,10 +66,10 @@ public class ExamMapper {
     private ExamOptionDTO toOptionDTO(QuizAnswerOption option) {
         return ExamOptionDTO.builder()
                 .optionId(option.getId())
-                .optionTextEn(option.getOptionTextEn())
-                .optionTextAr(option.getOptionTextAr())
-                .optionTextNl(option.getOptionTextNl())
-                .optionTextFr(option.getOptionTextFr())
+                .optionTextEn(roadSignReferenceTextResolver.resolveEn(option.getOptionTextEn()))
+                .optionTextAr(roadSignReferenceTextResolver.resolveAr(option.getOptionTextAr()))
+                .optionTextNl(roadSignReferenceTextResolver.resolveNl(option.getOptionTextNl()))
+                .optionTextFr(roadSignReferenceTextResolver.resolveFr(option.getOptionTextFr()))
                 // Security: Do NOT expose isCorrect
                 .build();
     }

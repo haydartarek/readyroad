@@ -1,4 +1,4 @@
-﻿[
+[
   {
     "question_id": "C9_Q01",
     "type": "WHAT_DOES_IT_MEAN",
@@ -9,83 +9,155 @@
       "NL": {
         "question": "Wat betekent dit verkeersbord?",
         "choices": [
-          { "text": "Verboden toegang voor bestuurders van bromfietsen: bromfietsen mogen deze weg niet oprijden", "is_correct": true },
-          { "text": "Verboden richting voor alle bestuurders: geen enkel voertuig mag deze weg oprijden (dat is C1)", "is_correct": false },
-          { "text": "Verboden toegang voor motorrijders: motorfietsen mogen deze weg niet oprijden (dat is C13)", "is_correct": false }
+          {
+            "text": "Verboden toegang voor bestuurders van bromfietsen",
+            "is_correct": true
+          },
+          {
+            "text": "Verboden toegang voor bestuurders van motorfietsen",
+            "is_correct": false
+          },
+          {
+            "text": "Verboden toegang voor alle bestuurders",
+            "is_correct": false
+          }
         ],
-        "explanation": "C9 geldt uitsluitend voor bromfietsen (klasse A en B). C1 verbiedt alle bestuurders; C13 verbiedt motorfietsen. Andere weggebruikers worden door C9 niet getroffen."
+        "explanation": "Dit bord geeft aan dat bestuurders van bromfietsen deze doorgang niet mogen gebruiken."
       },
       "EN": {
         "question": "What does this traffic sign mean?",
         "choices": [
-          { "text": "No entry for moped riders: mopeds are not allowed on this road", "is_correct": true },
-          { "text": "No entry for all vehicles: no vehicle may use this road (that is C1)", "is_correct": false },
-          { "text": "No entry for motorcycle riders: motorcycles may not enter this road (that is C13)", "is_correct": false }
+          {
+            "text": "No entry for riders of mopeds",
+            "is_correct": true
+          },
+          {
+            "text": "No entry for riders of motorcycles",
+            "is_correct": false
+          },
+          {
+            "text": "No entry for all drivers",
+            "is_correct": false
+          }
         ],
-        "explanation": "C9 applies exclusively to mopeds (class A and B). C1 prohibits all drivers; C13 prohibits motorcycles. Other road users are not affected by C9."
+        "explanation": "This sign indicates that riders of mopeds may not use this access."
       },
       "FR": {
         "question": "Que signifie ce panneau de signalisation ?",
         "choices": [
-          { "text": "Acces interdit aux conducteurs de cyclomoteurs: les cyclomoteurs ne peuvent pas emprunter cette route", "is_correct": true },
-          { "text": "Sens interdit pour tous les conducteurs: aucun vehicule ne peut emprunter cette route (c'est C1)", "is_correct": false },
-          { "text": "Acces interdit aux motocyclistes: les motos ne peuvent pas entrer sur cette route (c'est C13)", "is_correct": false }
+          {
+            "text": "Accès interdit aux conducteurs de cyclomoteurs",
+            "is_correct": true
+          },
+          {
+            "text": "Accès interdit aux conducteurs de motocycles",
+            "is_correct": false
+          },
+          {
+            "text": "Accès interdit à tous les conducteurs",
+            "is_correct": false
+          }
         ],
-        "explanation": "C9 s'applique exclusivement aux cyclomoteurs (classe A et B). C1 interdit tous les conducteurs; C13 interdit les motocycles. Les autres usagers de la route ne sont pas concernes par C9."
+        "explanation": "Ce panneau indique que les conducteurs de cyclomoteurs ne peuvent pas utiliser cet accès."
       },
       "AR": {
-        "question": "Ù…Ø§ Ù…Ø¹Ù†Ù‰ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ",
+        "question": "ما معنى هذه العلامة المرورية؟",
         "choices": [
-          { "text": "Ù…Ù…Ù†ÙˆØ¹ Ø¯Ø®ÙˆÙ„ Ø³Ø§Ø¦Ù‚ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ù„Ø¨Ø®Ø§Ø±ÙŠØ© Ø§Ù„ØµØºÙŠØ±Ø©: Ù„Ø§ ÙŠØ³Ù…Ø­ Ù„Ù‡Ø§ Ø¨Ø§Ù„Ø¯Ø®ÙˆÙ„ Ø¥Ù„Ù‰ Ù‡Ø°Ø§ Ø§Ù„Ø·Ø±ÙŠÙ‚", "is_correct": true },
-          { "text": "Ù…Ù…Ù†ÙˆØ¹ Ø§Ù„Ø¯Ø®ÙˆÙ„ Ù„Ø¬Ù…ÙŠØ¹ Ø§Ù„Ø³Ø§Ø¦Ù‚ÙŠÙ†: Ù„Ø§ ÙŠØ­Ù‚ Ù„Ø£ÙŠ Ù…Ø±ÙƒØ¨Ø© Ø¯Ø®ÙˆÙ„ Ù‡Ø°Ø§ Ø§Ù„Ø·Ø±ÙŠÙ‚ (ØªÙ„Ùƒ Ù‡ÙŠ C1)", "is_correct": false },
-          { "text": "Ù…Ù…Ù†ÙˆØ¹ Ø¯Ø®ÙˆÙ„ Ø³Ø§Ø¦Ù‚ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ù„Ù†Ø§Ø±ÙŠØ©: Ø§Ù„Ù…ÙˆØªÙˆØ³ÙŠÙƒÙ„Ø§Øª Ù…Ù…Ù†ÙˆØ¹Ø© Ù…Ù† Ø§Ù„Ø¯Ø®ÙˆÙ„ (ØªÙ„Ùƒ Ù‡ÙŠ C13)", "is_correct": false }
+          {
+            "text": "ممنوع دخول سائقي الدراجات النارية الصغيرة",
+            "is_correct": true
+          },
+          {
+            "text": "ممنوع دخول سائقي الدراجات النارية",
+            "is_correct": false
+          },
+          {
+            "text": "ممنوع الدخول لجميع السائقين",
+            "is_correct": false
+          }
         ],
-        "explanation": "ØªÙ†Ø·Ø¨Ù‚ C9 Ø­ØµØ±Ø§Ù‹ Ø¹Ù„Ù‰ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ù„Ø¨Ø®Ø§Ø±ÙŠØ© Ø§Ù„ØµØºÙŠØ±Ø© (ÙØ¦Ø© A ÙˆB). C1 ØªØ­Ø¸Ø± Ø¬Ù…ÙŠØ¹ Ø§Ù„Ø³Ø§Ø¦Ù‚ÙŠÙ†Ø› C13 ØªØ­Ø¸Ø± Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ù„Ù†Ø§Ø±ÙŠØ©. Ù„Ø§ ØªØªØ£Ø«Ø± Ø¨Ù€C9 ÙØ¦Ø§Øª Ø§Ù„Ù…Ø³ØªØ®Ø¯Ù…ÙŠÙ† Ø§Ù„Ø£Ø®Ø±Ù‰."
+        "explanation": "تعني هذه العلامة أن سائقي الدراجات النارية الصغيرة لا يجوز لهم استخدام هذا المدخل."
       }
     }
   },
   {
     "question_id": "C9_Q02",
-    "type": "WHICH_SIGN",
+    "type": "HAZARD_IDENTIFICATION",
     "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Tot welke categorie verkeerstekens behoort dit bord?",
+        "question": "Op wie is dit verbod van toepassing?",
         "choices": [
-          { "text": "Verbodsborden (C-reeks): ronde borden met rode rand op witte achtergrond", "is_correct": true },
-          { "text": "Gevaarsborden (A-reeks): driehoekige borden met rode rand", "is_correct": false },
-          { "text": "Aanwijzingsborden (D-reeks): borden met blauwe achtergrond", "is_correct": false }
+          {
+            "text": "Op bestuurders van bromfietsen",
+            "is_correct": true
+          },
+          {
+            "text": "Op bestuurders van motorfietsen",
+            "is_correct": false
+          },
+          {
+            "text": "Op alle motorvoertuigen",
+            "is_correct": false
+          }
         ],
-        "explanation": "C9 behoort tot de verbodsborden (C-reeks). Ze zijn rond met een rode rand op witte achtergrond. Gevaarsborden (A) zijn driehoekig; aanwijzingsborden (D) zijn blauw."
+        "explanation": "Het verbod is specifiek gericht op bestuurders van bromfietsen."
       },
       "EN": {
-        "question": "To which category of traffic signs does this sign belong?",
+        "question": "To whom does this prohibition apply?",
         "choices": [
-          { "text": "Prohibition signs (C-series): round signs with a red border on a white background", "is_correct": true },
-          { "text": "Danger signs (A-series): triangular signs with a red border", "is_correct": false },
-          { "text": "Compulsory signs (D-series): signs with a blue background", "is_correct": false }
+          {
+            "text": "To riders of mopeds",
+            "is_correct": true
+          },
+          {
+            "text": "To riders of motorcycles",
+            "is_correct": false
+          },
+          {
+            "text": "To all motor vehicles",
+            "is_correct": false
+          }
         ],
-        "explanation": "C9 belongs to the prohibition signs (C-series). They are round with a red border on a white background. Danger signs (A) are triangular; compulsory signs (D) are blue."
+        "explanation": "The prohibition specifically applies to riders of mopeds."
       },
       "FR": {
-        "question": "A quelle categorie de panneaux de signalisation ce panneau appartient-il ?",
+        "question": "À qui s’applique cette interdiction ?",
         "choices": [
-          { "text": "Panneaux d'interdiction (serie C): panneaux ronds a bordure rouge sur fond blanc", "is_correct": true },
-          { "text": "Panneaux de danger (serie A): panneaux triangulaires a bordure rouge", "is_correct": false },
-          { "text": "Panneaux d'obligation (serie D): panneaux a fond bleu", "is_correct": false }
+          {
+            "text": "Aux conducteurs de cyclomoteurs",
+            "is_correct": true
+          },
+          {
+            "text": "Aux conducteurs de motocycles",
+            "is_correct": false
+          },
+          {
+            "text": "À tous les véhicules à moteur",
+            "is_correct": false
+          }
         ],
-        "explanation": "C9 appartient aux panneaux d'interdiction (serie C). Ils sont ronds avec une bordure rouge sur fond blanc. Les panneaux de danger (A) sont triangulaires; les panneaux d'obligation (D) sont bleus."
+        "explanation": "L’interdiction vise spécifiquement les conducteurs de cyclomoteurs."
       },
       "AR": {
-        "question": "Ø¥Ù„Ù‰ Ø£ÙŠ ÙØ¦Ø© Ù…Ù† Ù„Ø§ÙØªØ§Øª Ø§Ù„Ù…Ø±ÙˆØ± ØªÙ†ØªÙ…ÙŠ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ",
+        "question": "على من ينطبق هذا الحظر؟",
         "choices": [
-          { "text": "Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø­Ø¸Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© C): Ù„Ø§ÙØªØ§Øª Ø¯Ø§Ø¦Ø±ÙŠØ© Ø¨Ø­Ø§ÙØ© Ø­Ù…Ø±Ø§Ø¡ Ø¹Ù„Ù‰ Ø®Ù„ÙÙŠØ© Ø¨ÙŠØ¶Ø§Ø¡", "is_correct": true },
-          { "text": "Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© A): Ù„Ø§ÙØªØ§Øª Ù…Ø«Ù„Ø«Ø© Ø¨Ø­Ø§ÙØ© Ø­Ù…Ø±Ø§Ø¡", "is_correct": false },
-          { "text": "Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø¥Ù„Ø²Ø§Ù… (Ø§Ù„Ø³Ù„Ø³Ù„Ø© D): Ù„Ø§ÙØªØ§Øª Ø¨Ø®Ù„ÙÙŠØ© Ø²Ø±Ù‚Ø§Ø¡", "is_correct": false }
+          {
+            "text": "على سائقي الدراجات النارية الصغيرة",
+            "is_correct": true
+          },
+          {
+            "text": "على سائقي الدراجات النارية",
+            "is_correct": false
+          },
+          {
+            "text": "على جميع المركبات ذات المحرك",
+            "is_correct": false
+          }
         ],
-        "explanation": "ØªÙ†ØªÙ…ÙŠ C9 Ø¥Ù„Ù‰ Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø­Ø¸Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© C). ÙˆÙ‡ÙŠ Ø¯Ø§Ø¦Ø±ÙŠØ© Ø¨Ø­Ø§ÙØ© Ø­Ù…Ø±Ø§Ø¡ Ø¹Ù„Ù‰ Ø®Ù„ÙÙŠØ© Ø¨ÙŠØ¶Ø§Ø¡. Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± (A) Ù…Ø«Ù„Ø«Ø©Ø› Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø¥Ù„Ø²Ø§Ù… (D) Ø²Ø±Ù‚Ø§Ø¡."
+        "explanation": "ينطبق هذا الحظر تحديداً على سائقي الدراجات النارية الصغيرة."
       }
     }
   },
@@ -97,40 +169,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Op welke weggebruikers is de beperking van dit bord van toepassing?",
+        "question": "Wat verbiedt dit bord precies?",
         "choices": [
-          { "text": "Uitsluitend op bestuurders van bromfietsen (klasse A en B)", "is_correct": true },
-          { "text": "Op alle tweewielers, inclusief fietsers op gewone trapfietsen", "is_correct": false },
-          { "text": "Op alle motorvoertuigen, inclusief personenwagens", "is_correct": false }
+          {
+            "text": "De toegang voor bromfietsen",
+            "is_correct": true
+          },
+          {
+            "text": "De toegang voor motorfietsen",
+            "is_correct": false
+          },
+          {
+            "text": "De toegang voor alle tweewielers",
+            "is_correct": false
+          }
         ],
-        "explanation": "C9 verbiedt enkel bromfietsen (klasse A: max 45 km/u, en klasse B: speed pedelecs). Gewone fietsers en autobestuurders worden niet getroffen. Wil men ook andere voertuigen weren, dan zijn aanvullende borden nodig."
+        "explanation": "Dit bord verbiedt specifiek de toegang voor bromfietsen."
       },
       "EN": {
-        "question": "To which road users does the restriction of this sign apply?",
+        "question": "What exactly does this sign prohibit?",
         "choices": [
-          { "text": "Exclusively to moped riders (class A and B mopeds)", "is_correct": true },
-          { "text": "To all two-wheelers, including cyclists on regular pedal bicycles", "is_correct": false },
-          { "text": "To all motor vehicles, including passenger cars", "is_correct": false }
+          {
+            "text": "Entry for mopeds",
+            "is_correct": true
+          },
+          {
+            "text": "Entry for motorcycles",
+            "is_correct": false
+          },
+          {
+            "text": "Entry for all two-wheelers",
+            "is_correct": false
+          }
         ],
-        "explanation": "C9 only prohibits mopeds (class A: max 45 km/h, and class B: speed pedelecs). Regular cyclists and car drivers are not affected. To exclude other vehicles, additional signs are required."
+        "explanation": "This sign specifically prohibits entry for mopeds."
       },
       "FR": {
-        "question": "A quels usagers de la route la restriction de ce panneau s'applique-t-elle ?",
+        "question": "Que interdit exactement ce panneau ?",
         "choices": [
-          { "text": "Exclusivement aux conducteurs de cyclomoteurs (classe A et B)", "is_correct": true },
-          { "text": "A tous les deux-roues, y compris les cyclistes sur des velos ordinaires a pedales", "is_correct": false },
-          { "text": "A tous les vehicules a moteur, y compris les voitures particulieres", "is_correct": false }
+          {
+            "text": "L’accès aux cyclomoteurs",
+            "is_correct": true
+          },
+          {
+            "text": "L’accès aux motocycles",
+            "is_correct": false
+          },
+          {
+            "text": "L’accès à tous les deux-roues",
+            "is_correct": false
+          }
         ],
-        "explanation": "C9 interdit uniquement les cyclomoteurs (classe A: max 45 km/h, et classe B: speed pedelecs). Les cyclistes ordinaires et les automobilistes ne sont pas concernes. Pour exclure d'autres vehicules, des panneaux supplementaires sont necessaires."
+        "explanation": "Ce panneau interdit spécifiquement l’accès aux cyclomoteurs."
       },
       "AR": {
-        "question": "Ø¹Ù„Ù‰ Ø£ÙŠ Ù…Ø³ØªØ®Ø¯Ù…ÙŠ Ø§Ù„Ø·Ø±ÙŠÙ‚ ÙŠÙ†Ø·Ø¨Ù‚ Ø§Ù„Ø­Ø¸Ø± Ø§Ù„Ù…ÙØ±ÙˆØ¶ Ø¨Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ",
+        "question": "ما الذي تحظره هذه العلامة المرورية بالضبط؟",
         "choices": [
-          { "text": "Ø­ØµØ±Ø§Ù‹ Ø¹Ù„Ù‰ Ø³Ø§Ø¦Ù‚ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ù„Ø¨Ø®Ø§Ø±ÙŠØ© Ø§Ù„ØµØºÙŠØ±Ø© (ÙØ¦Ø© A ÙˆB)", "is_correct": true },
-          { "text": "Ø¹Ù„Ù‰ Ø¬Ù…ÙŠØ¹ Ø°ÙˆÙŠ Ø§Ù„Ø¹Ø¬Ù„ØªÙŠÙ† Ø¨Ù…Ø§ ÙÙŠÙ‡Ù… Ø±Ø§ÙƒØ¨Ùˆ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ù„Ø¹Ø§Ø¯ÙŠØ©", "is_correct": false },
-          { "text": "Ø¹Ù„Ù‰ Ø¬Ù…ÙŠØ¹ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø°Ø§Øª Ø§Ù„Ù…Ø­Ø±Ùƒ Ø¨Ù…Ø§ ÙÙŠÙ‡Ø§ Ø§Ù„Ø³ÙŠØ§Ø±Ø§Øª Ø§Ù„Ø®Ø§ØµØ©", "is_correct": false }
+          {
+            "text": "دخول الدراجات النارية الصغيرة",
+            "is_correct": true
+          },
+          {
+            "text": "دخول الدراجات النارية",
+            "is_correct": false
+          },
+          {
+            "text": "دخول جميع المركبات ذات العجلتين",
+            "is_correct": false
+          }
         ],
-        "explanation": "ØªØ­Ø¸Ø± C9 Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ù„Ø¨Ø®Ø§Ø±ÙŠØ© Ø§Ù„ØµØºÙŠØ±Ø© ÙÙ‚Ø· (ÙØ¦Ø© A: Ø£Ù‚ØµÙ‰ 45 ÙƒÙ…/Ø³Ø§Ø¹Ø©ØŒ ÙˆÙØ¦Ø© B: Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ù„ÙƒÙ‡Ø±Ø¨Ø§Ø¦ÙŠØ© Ø§Ù„Ø³Ø±ÙŠØ¹Ø©). Ø§Ù„Ø¯Ø±Ø§Ø¬ÙˆÙ† Ø§Ù„Ø¹Ø§Ø¯ÙŠÙˆÙ† ÙˆØ³Ø§Ø¦Ù‚Ùˆ Ø§Ù„Ø³ÙŠØ§Ø±Ø§Øª Ù„Ø§ ÙŠØªØ£Ø«Ø±ÙˆÙ†. Ù„Ø§Ø³ØªØ¨Ø¹Ø§Ø¯ Ù…Ø±ÙƒØ¨Ø§Øª Ø£Ø®Ø±Ù‰ ØªÙ†ØµØ¨ Ù„Ø§ÙØªØ§Øª Ø¥Ø¶Ø§ÙÙŠØ©."
+        "explanation": "تحظر هذه العلامة تحديدًا دخول الدراجات النارية الصغيرة."
       }
     }
   },
@@ -142,40 +250,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U rijdt op uw bromfiets en ziet bord C9. Wat doet u?",
+        "question": "U rijdt op een bromfiets en ziet dit bord. Wat doet u?",
         "choices": [
-          { "text": "Omdraaien en een alternatieve route nemen; de weg is verboden voor bromfietsen", "is_correct": true },
-          { "text": "Afstappen en de bromfiets te voet meenemen; dat maakt het verbod ongeldig", "is_correct": false },
-          { "text": "Langzaam doorrijden want het verbod geldt alleen tijdens drukke uren", "is_correct": false }
+          {
+            "text": "Niet inrijden en een andere route nemen",
+            "is_correct": true
+          },
+          {
+            "text": "Toch inrijden als de weg vrij lijkt",
+            "is_correct": false
+          },
+          {
+            "text": "Langzaam doorrijden",
+            "is_correct": false
+          }
         ],
-        "explanation": "C9 verbiedt bromfietsen toegang tot de weg, ongeacht het tijdstip en ongeacht of u rijdt of te voet loopt. Een bromfiets te voet meenemen heft het verbod niet op. U moet een andere route kiezen."
+        "explanation": "Omdat bromfietsen onder dit verbod vallen, kiest u een andere route."
       },
       "EN": {
-        "question": "You are riding your moped and see sign C9. What do you do?",
+        "question": "You are riding a moped and see this sign. What should you do?",
         "choices": [
-          { "text": "Turn around and take an alternative route; the road is prohibited for mopeds", "is_correct": true },
-          { "text": "Dismount and walk with your moped; that makes the prohibition invalid", "is_correct": false },
-          { "text": "Continue slowly because the prohibition only applies during busy hours", "is_correct": false }
+          {
+            "text": "Do not enter and take another route",
+            "is_correct": true
+          },
+          {
+            "text": "Enter if the road looks clear",
+            "is_correct": false
+          },
+          {
+            "text": "Continue slowly",
+            "is_correct": false
+          }
         ],
-        "explanation": "C9 prohibits mopeds from accessing the road regardless of the time and regardless of whether you are riding or walking. Walking a moped does not lift the prohibition. You must choose another route."
+        "explanation": "Because mopeds fall under this prohibition, you should choose another route."
       },
       "FR": {
-        "question": "Vous roulez en cyclomoteur et vous voyez le panneau C9. Que faites-vous ?",
+        "question": "Vous circulez en cyclomoteur et voyez ce panneau. Que devez-vous faire ?",
         "choices": [
-          { "text": "Faire demi-tour et prendre un itineraire alternatif; la route est interdite aux cyclomoteurs", "is_correct": true },
-          { "text": "Descendre et pousser le cyclomoteur a pied; cela rend l'interdiction invalide", "is_correct": false },
-          { "text": "Continuer lentement car l'interdiction ne s'applique que pendant les heures chargees", "is_correct": false }
+          {
+            "text": "Ne pas entrer et prendre un autre itinéraire",
+            "is_correct": true
+          },
+          {
+            "text": "Entrer si la route semble libre",
+            "is_correct": false
+          },
+          {
+            "text": "Continuer lentement",
+            "is_correct": false
+          }
         ],
-        "explanation": "C9 interdit aux cyclomoteurs l'acces a la route, quel que soit le moment et que vous rouliez ou marchiez. Pousser un cyclomoteur a pied ne leve pas l'interdiction. Vous devez choisir un autre itineraire."
+        "explanation": "Comme les cyclomoteurs sont visés par cette interdiction, il faut choisir un autre itinéraire."
       },
       "AR": {
-        "question": "Ø£Ù†Øª ØªÙ‚ÙˆØ¯ Ø¯Ø±Ø§Ø¬ØªÙƒ Ø§Ù„Ø¨Ø®Ø§Ø±ÙŠØ© Ø§Ù„ØµØºÙŠØ±Ø© ÙˆØªØ±Ù‰ Ø§Ù„Ù„Ø§ÙØªØ© C9. Ù…Ø§Ø°Ø§ ØªÙØ¹Ù„ØŸ",
+        "question": "أنت تقود دراجة نارية صغيرة وترى هذه العلامة. ماذا ينبغي أن تفعل؟",
         "choices": [
-          { "text": "Ø§Ù„Ø§Ù†Ø¹Ø·Ø§Ù ÙˆØ§Ù„Ø¹ÙˆØ¯Ø© ÙˆØ§Ø®ØªÙŠØ§Ø± Ù…Ø³Ø§Ø± Ø¨Ø¯ÙŠÙ„Ø› Ø§Ù„Ø·Ø±ÙŠÙ‚ Ù…Ø­Ø¸ÙˆØ± Ø¹Ù„Ù‰ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ù„Ø¨Ø®Ø§Ø±ÙŠØ© Ø§Ù„ØµØºÙŠØ±Ø©", "is_correct": true },
-          { "text": "Ø§Ù„Ù†Ø²ÙˆÙ„ Ù…Ù† Ø§Ù„Ø¯Ø±Ø§Ø¬Ø© ÙˆØ³Ø­Ø¨Ù‡Ø§ Ø³ÙŠØ±Ø§Ù‹ Ø¹Ù„Ù‰ Ø§Ù„Ø£Ù‚Ø¯Ø§Ù… Ù„Ø£Ù† Ø°Ù„Ùƒ ÙŠÙ„ØºÙŠ Ø§Ù„Ø­Ø¸Ø±", "is_correct": false },
-          { "text": "Ø§Ù„Ø§Ø³ØªÙ…Ø±Ø§Ø± Ø¨Ø¨Ø·Ø¡ Ù„Ø£Ù† Ø§Ù„Ø­Ø¸Ø± ÙŠÙ†Ø·Ø¨Ù‚ ÙÙ‚Ø· ÙÙŠ Ø£ÙˆÙ‚Ø§Øª Ø§Ù„Ø§Ø²Ø¯Ø­Ø§Ù…", "is_correct": false }
+          {
+            "text": "لا تدخل واختر طريقًا آخر",
+            "is_correct": true
+          },
+          {
+            "text": "ادخل إذا بدا الطريق خاليًا",
+            "is_correct": false
+          },
+          {
+            "text": "تابع السير ببطء",
+            "is_correct": false
+          }
         ],
-        "explanation": "ØªØ­Ø¸Ø± C9 Ø¹Ù„Ù‰ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ù„Ø¨Ø®Ø§Ø±ÙŠØ© Ø§Ù„ØµØºÙŠØ±Ø© Ø§Ù„ÙˆØµÙˆÙ„ Ø¥Ù„Ù‰ Ù‡Ø°Ø§ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø¨ØµØ±Ù Ø§Ù„Ù†Ø¸Ø± Ø¹Ù† Ø§Ù„ÙˆÙ‚Øª ÙˆØ¨ØµØ±Ù Ø§Ù„Ù†Ø¸Ø± Ø¹Ù† ÙƒÙˆÙ†Ùƒ ØªÙ‚ÙˆØ¯ Ø£Ùˆ ØªØ³ÙŠØ±. Ø¯ÙØ¹ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø© Ø³ÙŠØ±Ø§Ù‹ Ù„Ø§ ÙŠØ±ÙØ¹ Ø§Ù„Ø­Ø¸Ø±. ÙŠØ¬Ø¨ Ø§Ø®ØªÙŠØ§Ø± Ù…Ø³Ø§Ø± Ø¢Ø®Ø±."
+        "explanation": "بما أن الدراجات النارية الصغيرة مشمولة بهذا الحظر، فينبغي اختيار طريق آخر."
       }
     }
   },
@@ -187,85 +331,141 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U bent per vergissing op uw bromfiets een door C9 verboden weg opgereden. Wat doet u?",
+        "question": "Uw bestemming ligt vlak achter dit bord. Wat doet u met uw bromfiets?",
         "choices": [
-          { "text": "Zo snel en veilig mogelijk omdraaien en de weg op de juiste manier verlaten", "is_correct": true },
-          { "text": "Doorrijden tot de volgende kruising en van daar een andere weg nemen", "is_correct": false },
-          { "text": "Stoppen en ter plaatse wachten op aanwijzingen van de politie", "is_correct": false }
+          {
+            "text": "Een alternatieve route zoeken",
+            "is_correct": true
+          },
+          {
+            "text": "Toch doorrijden omdat het dichtbij is",
+            "is_correct": false
+          },
+          {
+            "text": "Alleen snel passeren",
+            "is_correct": false
+          }
         ],
-        "explanation": "U moet de verboden weg zo snel mogelijk verlaten op de veiligste manier. Doorrijden vergroot de begane overtreding. Stoppen midden op de rijbaan vormt een gevaar voor het overige verkeer."
+        "explanation": "Ook als uw bestemming dichtbij ligt, blijft de toegangsbeperking voor bromfietsen gelden."
       },
       "EN": {
-        "question": "You have mistakenly ridden your moped onto a road prohibited by C9. What do you do?",
+        "question": "Your destination is just beyond this sign. What do you do with your moped?",
         "choices": [
-          { "text": "Turn around as quickly and safely as possible and leave the road the correct way", "is_correct": true },
-          { "text": "Continue to the next junction and then take a different road from there", "is_correct": false },
-          { "text": "Stop and wait on the spot for instructions from the police", "is_correct": false }
+          {
+            "text": "Find an alternative route",
+            "is_correct": true
+          },
+          {
+            "text": "Continue because it is nearby",
+            "is_correct": false
+          },
+          {
+            "text": "Just pass through quickly",
+            "is_correct": false
+          }
         ],
-        "explanation": "You must leave the prohibited road as quickly as possible in the safest way. Continuing increases the offence already committed. Stopping in the middle of the road creates a danger for other traffic."
+        "explanation": "Even if your destination is nearby, the access restriction for mopeds still applies."
       },
       "FR": {
-        "question": "Vous avez emprunte par erreur en cyclomoteur une route interdite par C9. Que faites-vous ?",
+        "question": "Votre destination se trouve juste après ce panneau. Que faites-vous avec votre cyclomoteur ?",
         "choices": [
-          { "text": "Faire demi-tour aussi vite et aussi surement que possible et quitter la route correctement", "is_correct": true },
-          { "text": "Continuer jusqu'au prochain carrefour et prendre ensuite une autre route", "is_correct": false },
-          { "text": "S'arreter sur place et attendre les instructions de la police", "is_correct": false }
+          {
+            "text": "Chercher un autre itinéraire",
+            "is_correct": true
+          },
+          {
+            "text": "Continuer parce que c’est tout près",
+            "is_correct": false
+          },
+          {
+            "text": "Passer rapidement",
+            "is_correct": false
+          }
         ],
-        "explanation": "Vous devez quitter la route interdite le plus vite et le plus surement possible. Continuer aggrave l'infraction deja commise. S'arreter au milieu de la chaussee constitue un danger pour les autres usagers."
+        "explanation": "Même si la destination est proche, la restriction d’accès pour les cyclomoteurs reste valable."
       },
       "AR": {
-        "question": "Ø¯Ø®Ù„Øª Ø¨Ø¯Ø±Ø§Ø¬ØªÙƒ Ø§Ù„Ø¨Ø®Ø§Ø±ÙŠØ© Ø§Ù„ØµØºÙŠØ±Ø© Ø¹Ù† Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø®Ø·Ø£ Ø·Ø±ÙŠÙ‚Ø§Ù‹ Ù…Ø­Ø¸ÙˆØ±Ø§Ù‹ Ø¨Ù…ÙˆØ¬Ø¨ C9. Ù…Ø§Ø°Ø§ ØªÙØ¹Ù„ØŸ",
+        "question": "تقع وجهتك مباشرة بعد هذه العلامة. ماذا تفعل بدراجتك النارية الصغيرة؟",
         "choices": [
-          { "text": "Ø§Ù„Ø§Ù†Ø¹Ø·Ø§Ù Ø¨Ø£Ø³Ø±Ø¹ ÙˆØ£Ø£Ù…Ù† Ù…Ø§ ÙŠÙ…ÙƒÙ† ÙˆÙ…ØºØ§Ø¯Ø±Ø© Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø¨Ø§Ù„Ø·Ø±ÙŠÙ‚Ø© Ø§Ù„ØµØ­ÙŠØ­Ø©", "is_correct": true },
-          { "text": "Ø§Ù„Ø§Ø³ØªÙ…Ø±Ø§Ø± Ø­ØªÙ‰ Ø§Ù„ØªÙ‚Ø§Ø·Ø¹ Ø§Ù„ØªØ§Ù„ÙŠ Ø«Ù… Ø§Ø®ØªÙŠØ§Ø± Ø·Ø±ÙŠÙ‚ Ø¢Ø®Ø± Ù…Ù† Ù‡Ù†Ø§Ùƒ", "is_correct": false },
-          { "text": "Ø§Ù„ØªÙˆÙ‚Ù ÙÙŠ Ù…ÙƒØ§Ù†Ùƒ ÙˆØ§Ù†ØªØ¸Ø§Ø± ØªØ¹Ù„ÙŠÙ…Ø§Øª Ø§Ù„Ø´Ø±Ø·Ø©", "is_correct": false }
+          {
+            "text": "ابحث عن طريق بديل",
+            "is_correct": true
+          },
+          {
+            "text": "واصل السير لأنها قريبة",
+            "is_correct": false
+          },
+          {
+            "text": "اعبر بسرعة فقط",
+            "is_correct": false
+          }
         ],
-        "explanation": "ÙŠØ¬Ø¨ Ù…ØºØ§Ø¯Ø±Ø© Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ù…Ø­Ø¸ÙˆØ± Ø¨Ø£Ø³Ø±Ø¹ ÙˆÙ‚Øª Ù…Ù…ÙƒÙ† ÙˆØ¨Ø£Ø£Ù…Ù† Ø·Ø±ÙŠÙ‚Ø©. Ø§Ù„Ø§Ø³ØªÙ…Ø±Ø§Ø± ÙŠÙØ§Ù‚Ù… Ø§Ù„Ù…Ø®Ø§Ù„ÙØ© Ø§Ù„Ù…Ø±ØªÙƒØ¨Ø©. Ø§Ù„ØªÙˆÙ‚Ù ÙÙŠ Ù…Ù†ØªØµÙ Ø§Ù„Ø·Ø±ÙŠÙ‚ ÙŠØ´ÙƒÙ‘Ù„ Ø®Ø·Ø±Ø§Ù‹ Ø¹Ù„Ù‰ Ø¨Ù‚ÙŠØ© Ø­Ø±ÙƒØ© Ø§Ù„Ù…Ø±ÙˆØ±."
+        "explanation": "حتى لو كانت وجهتك قريبة، يبقى المنع قائمًا على الدراجات النارية الصغيرة."
       }
     }
   },
   {
     "question_id": "C9_Q06",
-    "type": "WHAT_MUST_YOU_DO",
+    "type": "IS_IT_ALLOWED",
     "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U rijdt op een speed pedelec (klasse B bromfiets). Geldt bord C9 ook voor u?",
+        "question": "Mag een gewone fietser deze weg gebruiken ondanks dit bord?",
         "choices": [
-          { "text": "Ja, een speed pedelec is wettelijk een bromfiets klasse B en valt volledig onder de werking van C9", "is_correct": true },
-          { "text": "Neen, een speed pedelec is een elektrisch trapvoertuig en wordt behandeld als een gewone fiets", "is_correct": false },
-          { "text": "Alleen als er een aanvullend pictogram van een speed pedelec aan het bord is bevestigd", "is_correct": false }
+          {
+            "text": "Ja, het bord richt zich op bromfietsen",
+            "is_correct": true
+          },
+          {
+            "text": "Nee, het bord verbiedt ook gewone fietsen",
+            "is_correct": false
+          }
         ],
-        "explanation": "In Belgie wordt een speed pedelec (elektrische fiets die sneller gaat dan 25 km/u) geclassificeerd als bromfiets klasse B. C9 is dus van toepassing, ook zonder extra pictogram aan het bord."
+        "explanation": "Dit bord is gericht op bromfietsen. Een gewone fiets valt daar niet automatisch onder."
       },
       "EN": {
-        "question": "You are riding a speed pedelec (class B moped). Does sign C9 also apply to you?",
+        "question": "May an ordinary cyclist use this road despite this sign?",
         "choices": [
-          { "text": "Yes, a speed pedelec is legally a class B moped and falls fully under C9", "is_correct": true },
-          { "text": "No, a speed pedelec is an electric pedal vehicle and is treated as a regular bicycle", "is_correct": false },
-          { "text": "Only if an additional speed pedelec pictogram is attached to the sign", "is_correct": false }
+          {
+            "text": "Yes, the sign targets mopeds",
+            "is_correct": true
+          },
+          {
+            "text": "No, the sign also bans ordinary bicycles",
+            "is_correct": false
+          }
         ],
-        "explanation": "In Belgium a speed pedelec (electric bicycle that exceeds 25 km/h) is classified as a class B moped. C9 therefore applies, even without an extra pictogram on the sign."
+        "explanation": "This sign is aimed at mopeds. An ordinary bicycle is not automatically included."
       },
       "FR": {
-        "question": "Vous roulez en speed pedelec (cyclomoteur de classe B). Le panneau C9 s'applique-t-il aussi a vous ?",
+        "question": "Un cycliste ordinaire peut-il utiliser cette route malgré ce panneau ?",
         "choices": [
-          { "text": "Oui, un speed pedelec est legalement un cyclomoteur de classe B et releve entierement de C9", "is_correct": true },
-          { "text": "Non, un speed pedelec est un vehicule electrique a pedales et est traite comme un velo ordinaire", "is_correct": false },
-          { "text": "Seulement si un pictogramme de speed pedelec supplementaire est fixe au panneau", "is_correct": false }
+          {
+            "text": "Oui, le panneau vise les cyclomoteurs",
+            "is_correct": true
+          },
+          {
+            "text": "Non, le panneau interdit aussi les vélos ordinaires",
+            "is_correct": false
+          }
         ],
-        "explanation": "En Belgique, un speed pedelec (velo electrique depassant 25 km/h) est classifie comme cyclomoteur de classe B. C9 s'applique donc, meme sans pictogramme supplementaire sur le panneau."
+        "explanation": "Ce panneau vise les cyclomoteurs. Un vélo ordinaire n’est pas automatiquement compris."
       },
       "AR": {
-        "question": "Ø£Ù†Øª ØªÙ‚ÙˆØ¯ Ø¯Ø±Ø§Ø¬Ø© ÙƒÙ‡Ø±Ø¨Ø§Ø¦ÙŠØ© Ø³Ø±ÙŠØ¹Ø© (speed pedelec - ÙØ¦Ø© B Ù…Ù† Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ù„Ø¨Ø®Ø§Ø±ÙŠØ© Ø§Ù„ØµØºÙŠØ±Ø©). Ù‡Ù„ ØªÙ†Ø·Ø¨Ù‚ Ø§Ù„Ù„Ø§ÙØªØ© C9 Ø¹Ù„ÙŠÙƒ Ø£ÙŠØ¶Ø§Ù‹ØŸ",
+        "question": "هل يجوز لراكب دراجة عادية استعمال هذا الطريق رغم هذه العلامة؟",
         "choices": [
-          { "text": "Ù†Ø¹Ù…ØŒ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø© Ø§Ù„ÙƒÙ‡Ø±Ø¨Ø§Ø¦ÙŠØ© Ø§Ù„Ø³Ø±ÙŠØ¹Ø© ØªØ¹Ø¯Ù‘ Ù‚Ø§Ù†ÙˆÙ†ÙŠØ§Ù‹ Ø¯Ø±Ø§Ø¬Ø© Ø¨Ø®Ø§Ø±ÙŠØ© ØµØºÙŠØ±Ø© ÙØ¦Ø© B ÙˆØªØ®Ø¶Ø¹ ÙƒÙ„ÙŠØ§Ù‹ Ù„Ù€C9", "is_correct": true },
-          { "text": "Ù„Ø§ØŒ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø© Ø§Ù„ÙƒÙ‡Ø±Ø¨Ø§Ø¦ÙŠØ© Ø§Ù„Ø³Ø±ÙŠØ¹Ø© ÙˆØ³ÙŠÙ„Ø© ÙƒÙ‡Ø±Ø¨Ø§Ø¦ÙŠØ© Ø¨Ø¯ÙˆØ§Ø³Ø§Øª ÙˆØªØ¹Ø§Ù…Ù„ ÙƒØ¯Ø±Ø§Ø¬Ø© Ø¹Ø§Ø¯ÙŠØ©", "is_correct": false },
-          { "text": "ÙÙ‚Ø· Ø¥Ø°Ø§ ÙƒØ§Ù†Øª Ù‡Ù†Ø§Ùƒ ØµÙˆØ±Ø© Ø±Ù…Ø²ÙŠØ© Ø¥Ø¶Ø§ÙÙŠØ© Ù„Ø¯Ø±Ø§Ø¬Ø© ÙƒÙ‡Ø±Ø¨Ø§Ø¦ÙŠØ© Ø³Ø±ÙŠØ¹Ø© Ù…Ù„ØµÙ‚Ø© Ø¹Ù„Ù‰ Ø§Ù„Ù„Ø§ÙØªØ©", "is_correct": false }
+          {
+            "text": "نعم، العلامة تستهدف الدراجات النارية الصغيرة",
+            "is_correct": true
+          },
+          {
+            "text": "لا، العلامة تحظر أيضًا الدراجات العادية",
+            "is_correct": false
+          }
         ],
-        "explanation": "ÙÙŠ Ø¨Ù„Ø¬ÙŠÙƒØ§ ØªØµÙ†Ù‘Ù Ø§Ù„Ø¯Ø±Ø§Ø¬Ø© Ø§Ù„ÙƒÙ‡Ø±Ø¨Ø§Ø¦ÙŠØ© Ø§Ù„Ø³Ø±ÙŠØ¹Ø© (Ø§Ù„ØªÙŠ ØªØªØ¬Ø§ÙˆØ² Ø³Ø±Ø¹ØªÙ‡Ø§ 25 ÙƒÙ…/Ø³Ø§Ø¹Ø©) ÙƒØ¯Ø±Ø§Ø¬Ø© Ø¨Ø®Ø§Ø±ÙŠØ© ØµØºÙŠØ±Ø© ÙØ¦Ø© B. ÙˆØ¨Ø§Ù„ØªØ§Ù„ÙŠ ØªÙ†Ø·Ø¨Ù‚ C9 Ø­ØªÙ‰ Ø¨Ø¯ÙˆÙ† ØµÙˆØ±Ø© Ø±Ù…Ø²ÙŠØ© Ø¥Ø¶Ø§ÙÙŠØ© Ø¹Ù„Ù‰ Ø§Ù„Ù„Ø§ÙØªØ©."
+        "explanation": "تستهدف هذه العلامة الدراجات النارية الصغيرة. أما الدراجة العادية فلا تندرج تلقائيًا ضمن هذا المنع."
       }
     }
   },
@@ -277,36 +477,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "De weg met bord C9 ziet er volledig verlaten uit. Mag u er als bromfietser toch oprijden?",
+        "question": "De weg lijkt volledig leeg. Mag u er met een bromfiets toch inrijden?",
         "choices": [
-          { "text": "Neen, het oprijden van een C9-verboden weg is altijd verboden voor bromfietsen ongeacht de verkeerssituatie; dit is een ernstige verkeersovertreding", "is_correct": true },
-          { "text": "Ja, als er geen andere weggebruikers zijn vormt u geen gevaar en mag u doorrijden", "is_correct": false }
+          {
+            "text": "Nee, het bord blijft gelden ook als de weg leeg lijkt",
+            "is_correct": true
+          },
+          {
+            "text": "Ja, als er niemand is mag het",
+            "is_correct": false
+          }
         ],
-        "explanation": "C9 is een absoluut verbod. De aanwezigheid of afwezigheid van andere weggebruikers heeft geen invloed op de geldigheid. Overtreden van C9 levert een ernstige verkeersovertreding op."
+        "explanation": "De zichtbare verkeerssituatie verandert de betekenis van het bord niet. Voor bromfietsen blijft deze toegang verboden."
       },
       "EN": {
-        "question": "The road marked with C9 appears completely deserted. Is it allowed to ride your moped on it anyway?",
+        "question": "The road looks completely empty. May you still enter on a moped?",
         "choices": [
-          { "text": "No, entering a road prohibited by C9 is always forbidden for mopeds regardless of the traffic situation; this is a serious traffic offence", "is_correct": true },
-          { "text": "Yes, if there are no other road users you pose no danger and may ride through", "is_correct": false }
+          {
+            "text": "No, the sign still applies even if the road looks empty",
+            "is_correct": true
+          },
+          {
+            "text": "Yes, if no one is there it is allowed",
+            "is_correct": false
+          }
         ],
-        "explanation": "C9 is an absolute prohibition. The presence or absence of other road users has no effect on its validity. Violating C9 constitutes a serious traffic offence."
+        "explanation": "The visible traffic situation does not change the meaning of the sign. For mopeds, this access remains prohibited."
       },
       "FR": {
-        "question": "La route avec le panneau C9 semble completement deserte. Est-il quand meme permis d'y rouler en cyclomoteur ?",
+        "question": "La route semble complètement vide. Pouvez-vous quand même y entrer en cyclomoteur ?",
         "choices": [
-          { "text": "Non, s'engager sur une route interdite par C9 est toujours interdit aux cyclomoteurs quelle que soit la situation du trafic; c'est une infraction grave au code de la route", "is_correct": true },
-          { "text": "Oui, s'il n'y a pas d'autres usagers vous ne representez aucun danger et vous pouvez passer", "is_correct": false }
+          {
+            "text": "Non, le panneau reste valable même si la route semble vide",
+            "is_correct": true
+          },
+          {
+            "text": "Oui, s’il n’y a personne c’est permis",
+            "is_correct": false
+          }
         ],
-        "explanation": "C9 est une interdiction absolue. La presence ou l'absence d'autres usagers n'a aucun effet sur sa validite. Violer C9 constitue une infraction grave au code de la route."
+        "explanation": "La situation visible sur la route ne change pas la signification du panneau. Pour les cyclomoteurs, cet accès reste interdit."
       },
       "AR": {
-        "question": "Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ù…Ø´Ø§Ø± Ø¥Ù„ÙŠÙ‡ Ø¨Ù€C9 ÙŠØ¨Ø¯Ùˆ Ù…Ù‡Ø¬ÙˆØ±Ø§Ù‹ ØªÙ…Ø§Ù…Ø§Ù‹. Ù‡Ù„ ÙŠØ³Ù…Ø­ Ù„Ùƒ Ø¨Ù‚ÙŠØ§Ø¯Ø© Ø¯Ø±Ø§Ø¬ØªÙƒ Ø§Ù„Ø¨Ø®Ø§Ø±ÙŠØ© Ø§Ù„ØµØºÙŠØ±Ø© Ø¹Ù„ÙŠÙ‡ Ø±ØºÙ… Ø°Ù„ÙƒØŸ",
+        "question": "يبدو الطريق خاليًا تمامًا. هل يجوز لك رغم ذلك الدخول بدراجة نارية صغيرة؟",
         "choices": [
-          { "text": "Ù„Ø§ØŒ Ø¯Ø®ÙˆÙ„ Ø·Ø±ÙŠÙ‚ Ù…Ø­Ø¸ÙˆØ± Ø¨Ù€C9 Ø¹Ù„Ù‰ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø© Ø§Ù„Ø¨Ø®Ø§Ø±ÙŠØ© Ø§Ù„ØµØºÙŠØ±Ø© Ù…Ø­Ø¸ÙˆØ± Ø¯Ø§Ø¦Ù…Ø§Ù‹ Ø¨ØµØ±Ù Ø§Ù„Ù†Ø¸Ø± Ø¹Ù† Ø­Ø§Ù„Ø© Ø§Ù„Ù…Ø±ÙˆØ±Ø› ÙˆÙ‡Ø°Ø§ ÙŠØ´ÙƒÙ‘Ù„ Ù…Ø®Ø§Ù„ÙØ© Ù…Ø±ÙˆØ±ÙŠØ© Ø®Ø·ÙŠØ±Ø©", "is_correct": true },
-          { "text": "Ù†Ø¹Ù…ØŒ Ø¥Ø°Ø§ Ù„Ù… ÙŠÙƒÙ† Ù‡Ù†Ø§Ùƒ Ù…Ø³ØªØ®Ø¯Ù…ÙˆÙ† Ø¢Ø®Ø±ÙˆÙ† ÙØ£Ù†Øª Ù„Ø§ ØªØ´ÙƒÙ‘Ù„ Ø®Ø·Ø±Ø§Ù‹ ÙˆÙŠÙ…ÙƒÙ†Ùƒ Ø§Ù„Ù…Ø±ÙˆØ±", "is_correct": false }
+          {
+            "text": "لا، تبقى العلامة سارية حتى لو بدا الطريق خاليًا",
+            "is_correct": true
+          },
+          {
+            "text": "نعم، إذا لم يكن هناك أحد فهذا مسموح",
+            "is_correct": false
+          }
         ],
-        "explanation": "C9 Ø­Ø¸Ø± Ù…Ø·Ù„Ù‚. ÙˆØ¬ÙˆØ¯ Ø£Ùˆ ØºÙŠØ§Ø¨ Ù…Ø³ØªØ®Ø¯Ù…ÙŠÙ† Ø¢Ø®Ø±ÙŠÙ† Ù„Ù„Ø·Ø±ÙŠÙ‚ Ù„Ø§ ÙŠØ¤Ø«Ø± Ø¹Ù„Ù‰ ØµØ­ØªÙ‡. Ø§Ù†ØªÙ‡Ø§Ùƒ C9 ÙŠØ´ÙƒÙ‘Ù„ Ù…Ø®Ø§Ù„ÙØ© Ù…Ø±ÙˆØ±ÙŠØ© Ø®Ø·ÙŠØ±Ø©."
+        "explanation": "الوضع الظاهر على الطريق لا يغيّر معنى العلامة. وبالنسبة للدراجات النارية الصغيرة يبقى هذا المدخل محظورًا."
       }
     }
   },
@@ -318,36 +542,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Een fietser op een gewone trapfiets wil een weg met bord C9 oprijden. Is dat toegestaan?",
+        "question": "Geldt dit bord ook voor een elektrische bromfiets?",
         "choices": [
-          { "text": "Ja, C9 verbiedt uitsluitend bromfietsen; gewone fietsen zijn niet door dit bord verboden", "is_correct": true },
-          { "text": "Neen, C9 verbiedt alle tweewielers inclusief gewone trapfietsen", "is_correct": false }
+          {
+            "text": "Ja, ook een elektrische bromfiets valt onder bromfietsen",
+            "is_correct": true
+          },
+          {
+            "text": "Nee, alleen bromfietsen met verbrandingsmotor vallen eronder",
+            "is_correct": false
+          }
         ],
-        "explanation": "C9 geldt specifiek voor bromfietsen (klasse A en B). Een gewone fiets (trapfiets zonder motor) valt hier niet onder. Wil men ook fietsers weren, dan moet daarvoor een apart bord worden aangebracht."
+        "explanation": "Voor de betekenis van dit bord is het relevant dat het voertuig een bromfiets is. Het type aandrijving verandert die betekenis niet."
       },
       "EN": {
-        "question": "A cyclist on a regular pedal bicycle wants to enter a road with sign C9. Is that allowed?",
+        "question": "Does this sign also apply to an electric moped?",
         "choices": [
-          { "text": "Yes, C9 exclusively prohibits mopeds; regular pedal bicycles are not prohibited by this sign", "is_correct": true },
-          { "text": "No, C9 prohibits all two-wheelers including regular pedal bicycles", "is_correct": false }
+          {
+            "text": "Yes, an electric moped also falls under mopeds",
+            "is_correct": true
+          },
+          {
+            "text": "No, only mopeds with combustion engines are covered",
+            "is_correct": false
+          }
         ],
-        "explanation": "C9 specifically applies to mopeds (class A and B). A regular bicycle (pedal bike without a motor) is not covered. To also prohibit cyclists, a separate sign must be placed."
+        "explanation": "For the meaning of this sign, what matters is that the vehicle is a moped. The type of propulsion does not change that meaning."
       },
       "FR": {
-        "question": "Un cycliste sur un velo ordinaire a pedales veut s'engager sur une route avec le panneau C9. Est-ce autorise ?",
+        "question": "Ce panneau s’applique-t-il aussi à un cyclomoteur électrique ?",
         "choices": [
-          { "text": "Oui, C9 interdit exclusivement les cyclomoteurs; les velos ordinaires a pedales ne sont pas interdits par ce panneau", "is_correct": true },
-          { "text": "Non, C9 interdit tous les deux-roues y compris les velos ordinaires a pedales", "is_correct": false }
+          {
+            "text": "Oui, un cyclomoteur électrique relève aussi des cyclomoteurs",
+            "is_correct": true
+          },
+          {
+            "text": "Non, seuls les cyclomoteurs à moteur thermique sont visés",
+            "is_correct": false
+          }
         ],
-        "explanation": "C9 s'applique specifiquement aux cyclomoteurs (classe A et B). Un velo ordinaire (a pedales sans moteur) n'en est pas concerne. Pour interdire egalement les cyclistes, un panneau separe doit etre appose."
+        "explanation": "Pour la signification de ce panneau, l’élément important est que le véhicule soit un cyclomoteur. Le mode de propulsion ne change pas cette signification."
       },
       "AR": {
-        "question": "Ø¯Ø±Ø§Ø¬ Ø¹Ù„Ù‰ Ø¯Ø±Ø§Ø¬Ø© Ø¹Ø§Ø¯ÙŠØ© Ø°Ø§Øª Ø¯ÙˆØ§Ø³Ø§Øª ÙŠØ±ÙŠØ¯ Ø¯Ø®ÙˆÙ„ Ø·Ø±ÙŠÙ‚ Ø¹Ù„ÙŠÙ‡ Ø§Ù„Ù„Ø§ÙØªØ© C9. Ù‡Ù„ ÙŠØ³Ù…Ø­ Ø¨Ø°Ù„ÙƒØŸ",
+        "question": "هل تنطبق هذه العلامة أيضًا على دراجة نارية صغيرة كهربائية؟",
         "choices": [
-          { "text": "Ù†Ø¹Ù…ØŒ C9 ØªØ­Ø¸Ø± Ø­ØµØ±Ø§Ù‹ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ù„Ø¨Ø®Ø§Ø±ÙŠØ© Ø§Ù„ØµØºÙŠØ±Ø©Ø› Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ù„Ø¹Ø§Ø¯ÙŠØ© Ø°Ø§Øª Ø§Ù„Ø¯ÙˆØ§Ø³Ø§Øª Ù„Ø§ ÙŠØ­Ø¸Ø±Ù‡Ø§ Ù‡Ø°Ø§ Ø§Ù„Ø¯Ø§Ø±", "is_correct": true },
-          { "text": "Ù„Ø§ØŒ C9 ØªØ­Ø¸Ø± Ø¬Ù…ÙŠØ¹ Ø°ÙˆÙŠ Ø§Ù„Ø¹Ø¬Ù„ØªÙŠÙ† Ø¨Ù…Ø§ ÙÙŠÙ‡Ù… Ø±Ø§ÙƒØ¨Ùˆ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ù„Ø¹Ø§Ø¯ÙŠØ©", "is_correct": false }
+          {
+            "text": "نعم، الدراجة النارية الصغيرة الكهربائية تندرج أيضًا ضمن الدراجات النارية الصغيرة",
+            "is_correct": true
+          },
+          {
+            "text": "لا، المقصود فقط الدراجات ذات محرك الاحتراق",
+            "is_correct": false
+          }
         ],
-        "explanation": "ØªÙ†Ø·Ø¨Ù‚ C9 ØªØ­Ø¯ÙŠØ¯Ø§Ù‹ Ø¹Ù„Ù‰ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ù„Ø¨Ø®Ø§Ø±ÙŠØ© Ø§Ù„ØµØºÙŠØ±Ø© (ÙØ¦Ø© A ÙˆB). Ø§Ù„Ø¯Ø±Ø§Ø¬Ø© Ø§Ù„Ø¹Ø§Ø¯ÙŠØ© (Ø°Ø§Øª Ø§Ù„Ø¯ÙˆØ§Ø³Ø§Øª Ø¨Ù„Ø§ Ù…Ø­Ø±Ùƒ) Ù„Ø§ ØªÙ†Ø¯Ø±Ø¬ Ø¶Ù…Ù†Ù‡Ø§. Ù„Ø­Ø¸Ø± Ø§Ù„Ø¯Ø±Ø§Ø¬ÙŠÙ† Ø£ÙŠØ¶Ø§Ù‹ ÙŠØ¬Ø¨ Ù†ØµØ¨ Ù„Ø§ÙØªØ© Ù…Ù†ÙØµÙ„Ø©."
+        "explanation": "المهم في معنى هذه العلامة هو أن المركبة دراجة نارية صغيرة. ونوع نظام الدفع لا يغيّر هذا المعنى."
       }
     }
   }

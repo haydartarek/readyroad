@@ -3,8 +3,6 @@
 -- Fixed: FKs, safe ALTERs, DECIMAL(4,2), USE statement, question_ref_id mapping
 -- Generated: 2026-02-27 (Fixed version)
 
-USE readyroad_prod;
-
 -- ========================================
 -- Users Table
 -- ========================================
@@ -177,12 +175,11 @@ DEALLOCATE PREPARE stmt;
 CREATE INDEX idx_traffic_rules_category ON traffic_rules(category_id);
 
 -- ========================================
--- Insert default admin user (safe)
+-- Default admin user
 -- ========================================
-INSERT IGNORE INTO users (email, full_name, password_hash, is_active)
-VALUES 
-    ('admin@readyroad.be', 'ReadyRoad Admin', '$2a$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', TRUE)
-ON DUPLICATE KEY UPDATE updated_at = CURRENT_TIMESTAMP;
+-- Default admin creation is handled by DefaultAdminInitializer using
+-- ADMIN_DEFAULT_PASSWORD / readyroad.admin.default-password.
+-- Do not seed production credentials from Flyway.
 
 -- ========================================
 -- Views for analytics dashboard

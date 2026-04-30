@@ -19,7 +19,7 @@ public record SignExamQuestionsDto(
         String       nameAr,
         int          examNumber,
         int          passingScore,
-        /** Number of questions actually linked (may be < 15 until all 30 questions are written). */
+        /** Number of questions actually linked (normally 8 for the current sign-exam template). */
         int          totalLinked,
         int          easyCount,
         int          mediumCount,

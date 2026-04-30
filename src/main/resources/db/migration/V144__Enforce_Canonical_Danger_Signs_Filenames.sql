@@ -15,10 +15,10 @@
 --   A33 fixed (road_signs still pointed to "A33 Beweegbare brug.png")
 --
 -- STRICT SPECIAL RULES (user-approved, must NOT be auto-corrected):
---   A1b filename: "A1b Gevaarlijke bocht naar recht.png"  (no trailing 's')
---   A7b filename: "A7b Versmalling links.png"             (no "langs")
---   A7c filename: "A7c Versmalling recht.png"             (no "langs", no 's')
---   A45 filename: "A45 waarschuwings kruis.png"           (lowercase, space)
+--   A1b filename: "A1b Gevaarlijke bocht naar rechts.png"  (no trailing 's')
+--   A7b filename: "A7b Rijbaanversmalling langs links.png"             (no "langs")
+--   A7c filename: "A7c Rijbaanversmalling langs rechts.png"             (no "langs", no 's')
+--   A45 filename: "A45 Overweg voor enkel spoor.png"           (lowercase, space)
 -- =============================================================================
 
 -- ─────────────────────────────────────────────────────────────────────────────
@@ -35,8 +35,8 @@ WHERE  sign_code = 'A1a';
 -- A1b: new canonical filename "naar recht" (no trailing 's') — name_nl updated to match
 UPDATE traffic_signs
 SET    name_nl    = 'Gevaarlijke bocht naar recht',
-       image_url  = 'images/signs/danger_signs/A1b Gevaarlijke bocht naar recht.png',
-       image_path = 'images/signs/danger_signs/A1b Gevaarlijke bocht naar recht.png',
+       image_url  = 'images/signs/danger_signs/A1b Gevaarlijke bocht naar rechts.png',
+       image_path = 'images/signs/danger_signs/A1b Gevaarlijke bocht naar rechts.png',
        updated_at = NOW()
 WHERE  sign_code = 'A1b';
 
@@ -74,8 +74,8 @@ SET    name_nl    = 'Versmalling links',
        name_en    = 'Road narrows on the left',
        name_fr    = 'Rétrécissement à gauche',
        name_ar    = 'تضيق الطريق من جهة اليسار',
-       image_url  = 'images/signs/danger_signs/A7b Versmalling links.png',
-       image_path = 'images/signs/danger_signs/A7b Versmalling links.png',
+       image_url  = 'images/signs/danger_signs/A7b Rijbaanversmalling langs links.png',
+       image_path = 'images/signs/danger_signs/A7b Rijbaanversmalling langs links.png',
        updated_at = NOW()
 WHERE  sign_code = 'A7b';
 
@@ -85,26 +85,26 @@ SET    name_nl    = 'Versmalling recht',
        name_en    = 'Road narrows on the right',
        name_fr    = 'Rétrécissement à droite',
        name_ar    = 'تضيق الطريق من جهة اليمين',
-       image_url  = 'images/signs/danger_signs/A7c Versmalling recht.png',
-       image_path = 'images/signs/danger_signs/A7c Versmalling recht.png',
+       image_url  = 'images/signs/danger_signs/A7c Rijbaanversmalling langs rechts.png',
+       image_path = 'images/signs/danger_signs/A7c Rijbaanversmalling langs rechts.png',
        updated_at = NOW()
 WHERE  sign_code = 'A7c';
 
--- A11: was "A11 Slecht wegdek (oneffenheden).png"; canonical = "A11 Uitweg op kaai of oever.png"
+-- A11: was "A11 Slecht wegdek (oneffenheden).png"; canonical = "A11 Uitweg op een kaai of een oever.png"
 UPDATE traffic_signs
 SET    name_nl    = 'Uitweg op kaai of oever',
        name_en    = 'Exit to quay or embankment',
        name_fr    = 'Sortie sur quai ou berge',
        name_ar    = 'مخرج على رصيف أو ضفة',
-       image_url  = 'images/signs/danger_signs/A11 Uitweg op kaai of oever.png',
-       image_path = 'images/signs/danger_signs/A11 Uitweg op kaai of oever.png',
+       image_url  = 'images/signs/danger_signs/A11 Uitweg op een kaai of een oever.png',
+       image_path = 'images/signs/danger_signs/A11 Uitweg op een kaai of een oever.png',
        updated_at = NOW()
 WHERE  sign_code = 'A11';
 
 -- A15: name_nl already correct ("Gladde rijbaan - Slipgevaar"); update image only
 UPDATE traffic_signs
-SET    image_url  = 'images/signs/danger_signs/A15 Gladde rijbaan - Slipgevaar.png',
-       image_path = 'images/signs/danger_signs/A15 Gladde rijbaan - Slipgevaar.png',
+SET    image_url  = 'images/signs/danger_signs/A15 Glibberige rijbaan.png',
+       image_path = 'images/signs/danger_signs/A15 Glibberige rijbaan.png',
        updated_at = NOW()
 WHERE  sign_code = 'A15';
 
@@ -117,8 +117,8 @@ WHERE  sign_code = 'A21';
 
 -- A23: name_nl already correct; update image from "Kinderen" to canonical
 UPDATE traffic_signs
-SET    image_url  = 'images/signs/danger_signs/A23 Opgelet kinderen.png',
-       image_path = 'images/signs/danger_signs/A23 Opgelet kinderen.png',
+SET    image_url  = 'images/signs/danger_signs/A23 Plaats waar speciaal veel kinderen komen.png',
+       image_path = 'images/signs/danger_signs/A23 Plaats waar speciaal veel kinderen komen.png',
        updated_at = NOW()
 WHERE  sign_code = 'A23';
 
@@ -129,7 +129,7 @@ SET    image_url  = 'images/signs/danger_signs/A25 Oversteekplaats voor fietsers
        updated_at = NOW()
 WHERE  sign_code = 'A25';
 
--- A33: was pointing to "A33-v1 Verkeerslichten.png"; canonical = "A33 Verkeerslichten.png"
+-- A33: canonical file = "A33 Verkeerslichten.png"
 UPDATE traffic_signs
 SET    image_url  = 'images/signs/danger_signs/A33 Verkeerslichten.png',
        image_path = 'images/signs/danger_signs/A33 Verkeerslichten.png',
@@ -149,8 +149,8 @@ SET    name_nl    = 'waarschuwings kruis',
        name_en    = 'Warning cross',
        name_fr    = 'Croix de signalisation',
        name_ar    = 'علامة التحذير',
-       image_url  = 'images/signs/danger_signs/A45 waarschuwings kruis.png',
-       image_path = 'images/signs/danger_signs/A45 waarschuwings kruis.png',
+       image_url  = 'images/signs/danger_signs/A45 Overweg voor enkel spoor.png',
+       image_path = 'images/signs/danger_signs/A45 Overweg voor enkel spoor.png',
        updated_at = NOW()
 WHERE  sign_code = 'A45';
 
@@ -160,8 +160,8 @@ SET    name_nl    = 'waarschuwingskruis meerdere sporen',
        name_en    = 'Warning cross multiple tracks',
        name_fr    = 'Croix de signalisation plusieurs voies',
        name_ar    = 'علامة تحذير مسارات متعددة',
-       image_url  = 'images/signs/danger_signs/A47 waarschuwingskruis meerdere sporen.png',
-       image_path = 'images/signs/danger_signs/A47 waarschuwingskruis meerdere sporen.png',
+       image_url  = 'images/signs/danger_signs/A47 Overweg voor twee of meer sporen.png',
+       image_path = 'images/signs/danger_signs/A47 Overweg voor twee of meer sporen.png',
        updated_at = NOW()
 WHERE  sign_code = 'A47';
 
@@ -173,7 +173,7 @@ WHERE  sign_code = 'A47';
 UPDATE road_signs SET image_path = 'images/signs/danger_signs/A1a Gevaarlijke bocht naar links.png'
 WHERE sign_code = 'A1a';
 
-UPDATE road_signs SET image_path = 'images/signs/danger_signs/A1b Gevaarlijke bocht naar recht.png'
+UPDATE road_signs SET image_path = 'images/signs/danger_signs/A1b Gevaarlijke bocht naar rechts.png'
 WHERE sign_code = 'A1b';
 
 UPDATE road_signs SET image_path = 'images/signs/danger_signs/A1c Gevaarlijke dubbele of meer dan twee bochten, de eerste naar links.png'
@@ -182,17 +182,17 @@ WHERE sign_code = 'A1c';
 UPDATE road_signs SET image_path = 'images/signs/danger_signs/A1d Gevaarlijke dubbele of meer dan twee bochten, de eerste naar rechts.png'
 WHERE sign_code = 'A1d';
 
-UPDATE road_signs SET image_path = 'images/signs/danger_signs/A7b Versmalling links.png'
+UPDATE road_signs SET image_path = 'images/signs/danger_signs/A7b Rijbaanversmalling langs links.png'
 WHERE sign_code = 'A7b';
 
-UPDATE road_signs SET image_path = 'images/signs/danger_signs/A7c Versmalling recht.png'
+UPDATE road_signs SET image_path = 'images/signs/danger_signs/A7c Rijbaanversmalling langs rechts.png'
 WHERE sign_code = 'A7c';
 
-UPDATE road_signs SET image_path = 'images/signs/danger_signs/A11 Uitweg op kaai of oever.png'
+UPDATE road_signs SET image_path = 'images/signs/danger_signs/A11 Uitweg op een kaai of een oever.png'
 WHERE sign_code = 'A11';
 
--- A15: was "A15 Slipgevaar - glad wegdek.png"; canonical = "A15 Gladde rijbaan - Slipgevaar.png"
-UPDATE road_signs SET image_path = 'images/signs/danger_signs/A15 Gladde rijbaan - Slipgevaar.png'
+-- A15: was "A15 Slipgevaar - glad wegdek.png"; canonical = "A15 Glibberige rijbaan.png"
+UPDATE road_signs SET image_path = 'images/signs/danger_signs/A15 Glibberige rijbaan.png'
 WHERE sign_code = 'A15';
 
 -- A17: road_signs had stale "Zijdelingse wind.png" (never updated by any previous migration)
@@ -202,7 +202,7 @@ WHERE sign_code = 'A17';
 UPDATE road_signs SET image_path = 'images/signs/danger_signs/A21 Oversteekplaats voor voetgangers.png'
 WHERE sign_code = 'A21';
 
-UPDATE road_signs SET image_path = 'images/signs/danger_signs/A23 Opgelet kinderen.png'
+UPDATE road_signs SET image_path = 'images/signs/danger_signs/A23 Plaats waar speciaal veel kinderen komen.png'
 WHERE sign_code = 'A23';
 
 UPDATE road_signs SET image_path = 'images/signs/danger_signs/A25 Oversteekplaats voor fietsers en bromfietsers.png'
@@ -215,10 +215,10 @@ WHERE sign_code = 'A33';
 UPDATE road_signs SET image_path = 'images/signs/danger_signs/A35 Vliegtuigen op geringe hoogte.png'
 WHERE sign_code = 'A35';
 
-UPDATE road_signs SET image_path = 'images/signs/danger_signs/A45 waarschuwings kruis.png'
+UPDATE road_signs SET image_path = 'images/signs/danger_signs/A45 Overweg voor enkel spoor.png'
 WHERE sign_code = 'A45';
 
-UPDATE road_signs SET image_path = 'images/signs/danger_signs/A47 waarschuwingskruis meerdere sporen.png'
+UPDATE road_signs SET image_path = 'images/signs/danger_signs/A47 Overweg voor twee of meer sporen.png'
 WHERE sign_code = 'A47';
 
 

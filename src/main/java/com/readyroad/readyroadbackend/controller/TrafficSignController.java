@@ -2,10 +2,13 @@ package com.readyroad.readyroadbackend.controller;
 
 import com.readyroad.readyroadbackend.dto.response.TrafficSignResponse;
 import com.readyroad.readyroadbackend.service.TrafficSignService;
+import com.readyroad.readyroadbackend.util.RouteCodeNormalizer;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.net.URI;
 import java.util.List;
 
 @RestController
@@ -31,6 +34,11 @@ public class TrafficSignController {
 
     @GetMapping("/{signCode}")
     public ResponseEntity<TrafficSignResponse> getSignByCode(@PathVariable String signCode) {
+        if (RouteCodeNormalizer.isLegacyCodeWithoutDirectReplacement(signCode)) {
+            return ResponseEntity.status(HttpStatus.PERMANENT_REDIRECT)
+                    .location(URI.create("/api/traffic-signs"))
+                    .build();
+        }
         return ResponseEntity.ok(trafficSignService.getSignByCode(signCode));
     }
 

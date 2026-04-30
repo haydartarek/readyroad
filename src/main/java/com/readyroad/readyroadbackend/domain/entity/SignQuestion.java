@@ -6,14 +6,15 @@ import com.readyroad.readyroadbackend.util.TextNormalizer;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 /**
  * A question linked to a specific {@link RoadSign}.
  *
- * Choice-count invariant (enforced by the Importer, not at DB level):
- *   IS_IT_ALLOWED  → exactly 2 choices
- *   all other types → exactly 3 choices
+ * Choice-count invariant (enforced by the importer and delivery layer):
+ *   HARD questions  → exactly 2 choices
+ *   EASY/MEDIUM     → up to 3 choices
  */
 @Entity
 @Table(name = "sign_questions")
@@ -83,6 +84,24 @@ public class SignQuestion extends BaseEntity {
     public void clearChoices() {
         choices.forEach(c -> c.setQuestion(null));
         choices.clear();
+    }
+
+    @Transient
+    public int getExpectedChoiceCount() {
+        return difficulty == SignDifficulty.HARD ? 2 : 3;
+    }
+
+    @Transient
+    public List<SignChoice> getDeliverableChoices() {
+        if (choices == null || choices.isEmpty()) {
+            return List.of();
+        }
+        return choices.stream()
+                .sorted(Comparator.comparing(
+                        SignChoice::getDisplayOrder,
+                        Comparator.nullsLast(Integer::compareTo)))
+                .limit(getExpectedChoiceCount())
+                .toList();
     }
 
     // ── Text normalisation ────────────────────────────────────────────────────

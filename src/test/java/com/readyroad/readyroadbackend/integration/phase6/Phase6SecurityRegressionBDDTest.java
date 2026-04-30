@@ -60,9 +60,9 @@ public class Phase6SecurityRegressionBDDTest {
     @BeforeEach
     void setUp() throws Exception {
         mockMvc = MockMvcBuilders
-            .webAppContextSetup(context)
-            .apply(springSecurity())
-            .build();
+                .webAppContextSetup(context)
+                .apply(springSecurity())
+                .build();
 
         // Create normal user
         normalUser = new User();
@@ -112,13 +112,13 @@ public class Phase6SecurityRegressionBDDTest {
         // When: Unauthenticated client calls GET /api/users/me/progress/overall
         mockMvc.perform(get("/api/users/me/progress/overall")
                 .contentType(MediaType.APPLICATION_JSON))
-            .andExpect(status().isUnauthorized()); // 401
+                .andExpect(status().isUnauthorized()); // 401
 
         // When: Unauthenticated client calls POST /api/exams/simulations/start
         mockMvc.perform(post("/api/exams/simulations/start")
                 .param("userId", "1")
                 .contentType(MediaType.APPLICATION_JSON))
-            .andExpect(status().isUnauthorized()); // 401
+                .andExpect(status().isUnauthorized()); // 401
     }
 
     // ==========================================
@@ -126,28 +126,44 @@ public class Phase6SecurityRegressionBDDTest {
     // ==========================================
 
     @Test
-    @DisplayName("Normal user blocked from admin endpoints (404 - not implemented yet)")
+    @DisplayName("Normal user blocked from admin endpoints (403)")
     void normalUserBlockedFromAdminEndpoints() throws Exception {
-        // NOTE: Admin endpoints not implemented yet - expecting 404
-        // When implemented, these should return 403 for normal users
+        // Security should block non-admin users before controller resolution.
+        // Even if an endpoint is unmapped, /api/admin/** must still return 403
+        // for authenticated non-admin users.
 
         // When: Normal user calls GET /api/admin/questions
         mockMvc.perform(get("/api/admin/questions")
                 .header("Authorization", "Bearer " + normalUserJwt)
                 .contentType(MediaType.APPLICATION_JSON))
-            .andExpect(status().isNotFound()); // 404 (endpoint doesn't exist)
+                .andExpect(status().isForbidden()); // 403
 
         // When: Normal user calls POST /api/admin/questions/700/publish
         mockMvc.perform(post("/api/admin/questions/700/publish")
                 .header("Authorization", "Bearer " + normalUserJwt)
                 .contentType(MediaType.APPLICATION_JSON))
-            .andExpect(status().isNotFound()); // 404 (endpoint doesn't exist)
+                .andExpect(status().isForbidden()); // 403
 
         // When: Normal user calls POST /api/admin/questions/700/deactivate
         mockMvc.perform(post("/api/admin/questions/700/deactivate")
                 .header("Authorization", "Bearer " + normalUserJwt)
                 .contentType(MediaType.APPLICATION_JSON))
-            .andExpect(status().isNotFound()); // 404 (endpoint doesn't exist)
+                .andExpect(status().isForbidden()); // 403
+    }
+
+    @Test
+    @DisplayName("Normal user blocked from implemented admin import endpoints")
+    void normalUserBlockedFromImplementedAdminImportEndpoints() throws Exception {
+        // When: Normal user calls implemented admin import/history endpoints
+        mockMvc.perform(get("/api/admin/import/history")
+                .header("Authorization", "Bearer " + normalUserJwt)
+                .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isForbidden());
+
+        mockMvc.perform(post("/api/admin/sign-quiz/import")
+                .header("Authorization", "Bearer " + normalUserJwt)
+                .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isForbidden());
     }
 
     // ==========================================
@@ -161,10 +177,11 @@ public class Phase6SecurityRegressionBDDTest {
         mockMvc.perform(get("/api/users/me/progress/overall")
                 .header("Authorization", "Bearer " + normalUserJwt)
                 .contentType(MediaType.APPLICATION_JSON))
-            .andExpect(status().isOk()); // Should return normalUser's data only
+                .andExpect(status().isOk()); // Should return normalUser's data only
 
         // The /me/ pattern ensures the authenticated user's data is returned
-        // No way to request userB's data via URL manipulation - IDOR protection by design
+        // No way to request userB's data via URL manipulation - IDOR protection by
+        // design
     }
 
     @Test
@@ -177,7 +194,33 @@ public class Phase6SecurityRegressionBDDTest {
         mockMvc.perform(get("/api/admin/questions")
                 .header("Authorization", "Bearer " + adminUserJwt)
                 .contentType(MediaType.APPLICATION_JSON))
-            .andExpect(status().isNotFound()); // 404 (endpoint doesn't exist yet)
+                .andExpect(status().isNotFound()); // 404 (endpoint doesn't exist yet)
+    }
+
+    @Test
+    @DisplayName("Admin can access implemented admin import endpoints")
+    void adminCanAccessImplementedAdminImportEndpoints() throws Exception {
+        mockMvc.perform(get("/api/admin/import/history")
+                .header("Authorization", "Bearer " + adminUserJwt)
+                .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk());
+
+        mockMvc.perform(get("/api/admin/sign-quiz/stats")
+                .header("Authorization", "Bearer " + adminUserJwt)
+                .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk());
+    }
+
+    @Test
+    @DisplayName("Health endpoints remain public under deny-all fallback")
+    void healthEndpointsRemainPublic() throws Exception {
+        mockMvc.perform(get("/api/health")
+                .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk());
+
+        mockMvc.perform(get("/api/auth/health")
+                .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk());
     }
 
     // ==========================================
@@ -190,8 +233,8 @@ public class Phase6SecurityRegressionBDDTest {
         MvcResult result = mockMvc.perform(post("/api/auth/login")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(loginJson))
-            .andExpect(status().isOk())
-            .andReturn();
+                .andExpect(status().isOk())
+                .andReturn();
 
         String responseBody = result.getResponse().getContentAsString();
         var jsonNode = objectMapper.readTree(responseBody);

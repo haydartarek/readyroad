@@ -166,6 +166,96 @@ public class NotificationService {
     }
 
     /**
+     * Create an EXAM_PASSED notification for the mixed traffic-sign exam shown in
+     * /practice/random.
+     */
+    @Transactional
+    public void createRandomSignExamPassedNotification(Long userId, Long sessionId, int score, int total) {
+        int pct = (int) Math.round((score * 100.0) / total);
+        save(Notification.builder()
+                .userId(userId)
+                .type(NotificationType.EXAM_PASSED)
+                .title("🎉 Mixed Sign Exam Passed!")
+                .message(String.format(
+                        "You passed the mixed traffic-sign exam with %d/%d (%d%%).",
+                        score, total, pct))
+                .messageKey("notif.msg.sign_random_exam_passed")
+                .messageParams(String.format("{\"score\":%d,\"total\":%d,\"pct\":%d}", score, total, pct))
+                .link("/dashboard?section=exam-results&randomSignExamId=" + sessionId)
+                .build());
+    }
+
+    /**
+     * Create an EXAM_FAILED notification for the mixed traffic-sign exam shown in
+     * /practice/random.
+     */
+    @Transactional
+    public void createRandomSignExamFailedNotification(
+            Long userId,
+            Long sessionId,
+            int score,
+            int total,
+            int pointsShort) {
+        int pct = (int) Math.round((score * 100.0) / total);
+        save(Notification.builder()
+                .userId(userId)
+                .type(NotificationType.EXAM_FAILED)
+                .title("📚 Mixed Sign Exam Result")
+                .message(String.format(
+                        "You scored %d/%d (%d%%). You needed %d more correct answers to pass the mixed traffic-sign exam.",
+                        score, total, pct, pointsShort))
+                .messageKey("notif.msg.sign_random_exam_failed")
+                .messageParams(String.format("{\"score\":%d,\"total\":%d,\"pct\":%d,\"needed\":%d}", score, total, pct,
+                        pointsShort))
+                .link("/dashboard?section=exam-results&randomSignExamId=" + sessionId)
+                .build());
+    }
+
+    /**
+     * Create an EXAM_PASSED notification for one sign-specific exam result.
+     */
+    @Transactional
+    public void createSignExamPassedNotification(Long userId, Long resultId, int score, int total) {
+        int pct = (int) Math.round((score * 100.0) / total);
+        save(Notification.builder()
+                .userId(userId)
+                .type(NotificationType.EXAM_PASSED)
+                .title("🎉 Sign Exam Passed!")
+                .message(String.format(
+                        "You passed a traffic-sign exam with %d/%d (%d%%).",
+                        score, total, pct))
+                .messageKey("notif.msg.sign_exam_passed")
+                .messageParams(String.format("{\"score\":%d,\"total\":%d,\"pct\":%d}", score, total, pct))
+                .link("/dashboard?section=exam-results&signExamResultId=" + resultId)
+                .build());
+    }
+
+    /**
+     * Create an EXAM_FAILED notification for one sign-specific exam result.
+     */
+    @Transactional
+    public void createSignExamFailedNotification(
+            Long userId,
+            Long resultId,
+            int score,
+            int total,
+            int pointsShort) {
+        int pct = (int) Math.round((score * 100.0) / total);
+        save(Notification.builder()
+                .userId(userId)
+                .type(NotificationType.EXAM_FAILED)
+                .title("📚 Sign Exam Result")
+                .message(String.format(
+                        "You scored %d/%d (%d%%). You needed %d more correct answers to pass this traffic-sign exam.",
+                        score, total, pct, pointsShort))
+                .messageKey("notif.msg.sign_exam_failed")
+                .messageParams(String.format("{\"score\":%d,\"total\":%d,\"pct\":%d,\"needed\":%d}", score, total, pct,
+                        pointsShort))
+                .link("/dashboard?section=exam-results&signExamResultId=" + resultId)
+                .build());
+    }
+
+    /**
      * Create a WEAK_AREA notification when a category stays below 60% accuracy.
      *
      * @param userId       recipient user ID
@@ -183,7 +273,7 @@ public class NotificationService {
                 .messageKey("notif.msg.weak_area")
                 .messageParams(String.format("{\"category\":\"%s\"}",
                         categoryName.replace("\\", "\\\\").replace("\"", "\\\"")))
-                .link("/analytics/weak-areas")
+                .link("/dashboard?section=weak-areas")
                 .build());
     }
 

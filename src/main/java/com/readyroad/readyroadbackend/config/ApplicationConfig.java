@@ -45,17 +45,17 @@ public class ApplicationConfig {
     /**
      * UserDetailsService bean for Spring Security authentication.
      * 
-     * Loads user details from database by username.
+     * Loads user details from database by username or email.
      * Throws UsernameNotFoundException if user not found.
      *
      * @return UserDetailsService implementation using UserRepository
      */
     @Bean
     public UserDetailsService userDetailsService() {
-        return username -> {
-            log.debug("Loading user details for username: {}", username);
-            return userRepository.findByUsername(username)
-                    .orElseThrow(() -> new UsernameNotFoundException("User not found: " + username));
+        return identifier -> {
+            log.debug("Loading user details for identifier: {}", identifier);
+            return userRepository.findByUsernameOrEmailIgnoreCase(identifier)
+                    .orElseThrow(() -> new UsernameNotFoundException("User not found: " + identifier));
         };
     }
 

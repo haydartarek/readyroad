@@ -1,5 +1,11 @@
 package com.readyroad.readyroadbackend.exception;
 
+import com.readyroad.readyroadbackend.service.BackendMessageService;
+import jakarta.validation.ConstraintViolationException;
+import java.time.LocalDateTime;
+import java.util.HashMap;
+import java.util.Map;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.AuthenticationException;
@@ -10,12 +16,6 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.resource.NoResourceFoundException;
 import org.springframework.web.server.ResponseStatusException;
-
-import java.time.LocalDateTime;
-import java.util.HashMap;
-import java.util.Map;
-import jakarta.validation.ConstraintViolationException;
-
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -25,7 +25,10 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 @ControllerAdvice
+@RequiredArgsConstructor
 public class GlobalExceptionHandler {
+
+    private final BackendMessageService messages;
 
     /**
      * Handle all Spring Security AuthenticationExceptions:
@@ -41,7 +44,7 @@ public class GlobalExceptionHandler {
     public ResponseEntity<Map<String, Object>> handleAuthenticationException(AuthenticationException ex) {
         log.warn("Authentication failed: {}", ex.getClass().getSimpleName());
         Map<String, Object> error = new HashMap<>();
-        error.put("message", "Invalid username or password.");
+        error.put("message", messages.get("error.authentication.invalid_credentials"));
         error.put("timestamp", LocalDateTime.now());
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(error);
     }
@@ -59,8 +62,7 @@ public class GlobalExceptionHandler {
         error.put("activeExamId", ex.getActiveExamId());
         error.put("userId", ex.getUserId());
         error.put("code", "ACTIVE_EXAM_EXISTS");
-        error.put("resolution",
-                "Cancel the active exam using DELETE /api/exams/simulations/active before starting a new one");
+        error.put("resolution", messages.get("error.active_exam_exists.resolution"));
         error.put("timestamp", LocalDateTime.now());
 
         return ResponseEntity.status(HttpStatus.CONFLICT).body(error);
@@ -77,7 +79,7 @@ public class GlobalExceptionHandler {
         error.put("error", "ExamExpiredException");
         error.put("message", ex.getMessage() != null && !ex.getMessage().isEmpty()
                 ? ex.getMessage()
-                : "Exam has expired");
+                : messages.get("error.exam.expired"));
         error.put("examId", ex.getExamId());
         error.put("timestamp", LocalDateTime.now());
 
@@ -95,7 +97,7 @@ public class GlobalExceptionHandler {
         error.put("error", "ExamNotActiveException");
         error.put("message", ex.getMessage() != null && !ex.getMessage().isEmpty()
                 ? ex.getMessage()
-                : "Exam is not active");
+                : messages.get("error.exam.not_active"));
         error.put("timestamp", LocalDateTime.now());
 
         return ResponseEntity.status(HttpStatus.CONFLICT).body(error);
@@ -112,7 +114,7 @@ public class GlobalExceptionHandler {
         error.put("error", "ExamNotCompletedException");
         error.put("message", ex.getMessage() != null && !ex.getMessage().isEmpty()
                 ? ex.getMessage()
-                : "Exam is not completed yet");
+                : messages.get("error.exam.not_completed"));
         error.put("timestamp", LocalDateTime.now());
 
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);
@@ -129,7 +131,7 @@ public class GlobalExceptionHandler {
         error.put("error", "ExamNotFoundException");
         error.put("message", ex.getMessage() != null && !ex.getMessage().isEmpty()
                 ? ex.getMessage()
-                : "Exam not found");
+                : messages.get("error.exam.not_found"));
         error.put("timestamp", LocalDateTime.now());
 
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
@@ -146,7 +148,7 @@ public class GlobalExceptionHandler {
         error.put("error", "QuestionNotFoundException");
         error.put("message", ex.getMessage() != null && !ex.getMessage().isEmpty()
                 ? ex.getMessage()
-                : "Question not found");
+                : messages.get("error.question.not_found"));
         error.put("timestamp", LocalDateTime.now());
 
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
@@ -163,7 +165,7 @@ public class GlobalExceptionHandler {
         error.put("error", "InvalidAnswerException");
         error.put("message", ex.getMessage() != null && !ex.getMessage().isEmpty()
                 ? ex.getMessage()
-                : "Invalid answer");
+                : messages.get("error.answer.invalid"));
         error.put("timestamp", LocalDateTime.now());
 
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);
@@ -180,7 +182,7 @@ public class GlobalExceptionHandler {
         error.put("error", "UnauthorizedException");
         error.put("message", ex.getMessage() != null && !ex.getMessage().isEmpty()
                 ? ex.getMessage()
-                : "Access denied");
+                : messages.get("error.access_denied"));
         error.put("timestamp", LocalDateTime.now());
 
         return ResponseEntity.status(HttpStatus.FORBIDDEN).body(error);
@@ -199,7 +201,7 @@ public class GlobalExceptionHandler {
             fieldErrors.put(fe.getField(), fe.getDefaultMessage());
         }
         Map<String, Object> body = new HashMap<>();
-        body.put("error", "Validation failed");
+        body.put("error", messages.get("error.validation_failed"));
         body.put("fields", fieldErrors);
         body.put("timestamp", LocalDateTime.now());
         return ResponseEntity.badRequest().body(body);
@@ -245,6 +247,16 @@ public class GlobalExceptionHandler {
         return ResponseEntity.badRequest().body(Map.of("error", ex.getMessage()));
     }
 
+    @ExceptionHandler(SocialAuthException.class)
+    @ResponseBody
+    public ResponseEntity<Map<String, Object>> handleSocialAuthException(SocialAuthException ex) {
+        Map<String, Object> body = new HashMap<>();
+        body.put("error", ex.getCode());
+        body.put("message", ex.getMessage());
+        body.put("timestamp", LocalDateTime.now());
+        return ResponseEntity.status(ex.getStatus()).body(body);
+    }
+
     /**
      * Preserve explicit HTTP status codes raised from services/controllers.
      * Prevents business-rule errors (404/409/422...) from being downgraded to a
@@ -269,7 +281,7 @@ public class GlobalExceptionHandler {
     @ResponseBody
     public ResponseEntity<Map<String, Object>> handleNoResourceFound(NoResourceFoundException ex) {
         Map<String, Object> error = new HashMap<>();
-        error.put("error", "Resource not found");
+        error.put("error", messages.get("error.resource_not_found"));
         error.put("path", ex.getResourcePath());
         error.put("timestamp", LocalDateTime.now());
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
@@ -285,7 +297,7 @@ public class GlobalExceptionHandler {
     public ResponseEntity<Map<String, Object>> handleGenericException(Exception ex) {
         log.error("Unhandled exception: {}", ex.getMessage(), ex);
         Map<String, Object> body = new HashMap<>();
-        body.put("error", "An unexpected error occurred");
+        body.put("error", messages.get("error.unexpected"));
         body.put("timestamp", LocalDateTime.now());
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(body);
     }

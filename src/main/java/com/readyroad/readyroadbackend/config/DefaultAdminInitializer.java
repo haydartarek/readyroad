@@ -6,6 +6,7 @@ import com.readyroad.readyroadbackend.domain.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -34,15 +35,18 @@ public class DefaultAdminInitializer {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
 
+    @Value("${readyroad.admin.default-password:${ADMIN_DEFAULT_PASSWORD:}}")
+    private String defaultAdminPassword;
+
     @Bean
     public CommandLineRunner createDefaultAdmin() {
         return args -> {
             String adminUsername = "admin";
 
-            String defaultPassword = System.getenv("ADMIN_DEFAULT_PASSWORD");
-            if (defaultPassword == null || defaultPassword.isEmpty()) {
-                log.error("❌ CRITICAL: ADMIN_DEFAULT_PASSWORD environment variable not set!");
-                log.error("❌ Set ADMIN_DEFAULT_PASSWORD environment variable and restart");
+            String defaultPassword = defaultAdminPassword != null ? defaultAdminPassword.trim() : "";
+            if (defaultPassword.isEmpty()) {
+                log.error("❌ CRITICAL: readyroad.admin.default-password / ADMIN_DEFAULT_PASSWORD is not set!");
+                log.error("❌ Set the configured admin password and restart");
                 return;
             }
 
@@ -56,7 +60,7 @@ public class DefaultAdminInitializer {
                     existingAdmin.setIsActive(true);
                     existingAdmin.setIsLocked(false);
                     userRepository.save(existingAdmin);
-                    log.info("✅ Admin password and role synced from ADMIN_DEFAULT_PASSWORD env variable");
+                    log.info("✅ Admin password and role synced from configured admin password");
                 });
                 return;
             }
@@ -80,7 +84,7 @@ public class DefaultAdminInitializer {
             log.info("   Email: admin@readyroad.com");
             log.info("   Role: ADMIN");
             log.info("");
-            log.warn("⚠️  CRITICAL: Password set from ADMIN_DEFAULT_PASSWORD env variable");
+            log.warn("⚠️  CRITICAL: Password set from configured admin password");
             log.warn("⚠️  Change this password immediately after first login!");
             log.info("");
 

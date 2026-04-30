@@ -1,4 +1,4 @@
-﻿[
+[
   {
     "question_id": "D5_Q01",
     "type": "WHAT_DOES_IT_MEAN",
@@ -9,95 +9,155 @@
       "NL": {
         "question": "Wat betekent dit verkeersbord?",
         "choices": [
-          { "text": "Verplicht rondgaand verkeer", "is_correct": true },
-          { "text": "Verplichting rechtdoor", "is_correct": false },
           {
-            "text": "Verplicht een van de pijlen te volgen (rechtdoor of linksaf)",
+            "text": "Verplicht rondgaand verkeer",
+            "is_correct": true
+          },
+          {
+            "text": "Verplichting rechtdoor",
+            "is_correct": false
+          },
+          {
+            "text": "Verplicht links afslaan",
             "is_correct": false
           }
         ],
-        "explanation": "D5 verplicht bestuurders de rotonde te volgen in de aangegeven richting van het rondgaand verkeer."
+        "explanation": "Dit bord geeft aan dat bestuurders de rotonde in de aangeduide richting moeten volgen."
       },
       "EN": {
         "question": "What does this traffic sign mean?",
         "choices": [
-          { "text": "Mandatory roundabout", "is_correct": true },
-          { "text": "Mandatory straight ahead", "is_correct": false },
           {
-            "text": "Mandatory to follow one of the arrows (straight or left)",
+            "text": "Mandatory roundabout",
+            "is_correct": true
+          },
+          {
+            "text": "Mandatory straight ahead",
+            "is_correct": false
+          },
+          {
+            "text": "Mandatory left turn",
             "is_correct": false
           }
         ],
-        "explanation": "D5 requires drivers to follow the roundabout in the indicated direction of circulation."
+        "explanation": "This sign indicates that drivers must follow the roundabout in the indicated direction."
       },
       "FR": {
         "question": "Que signifie ce panneau de signalisation ?",
         "choices": [
-          { "text": "Circulation giratoire obligatoire", "is_correct": true },
-          { "text": "Obligation d'aller tout droit", "is_correct": false },
           {
-            "text": "Obligation de suivre une des fleches (tout droit ou a gauche)",
+            "text": "Circulation giratoire obligatoire",
+            "is_correct": true
+          },
+          {
+            "text": "Obligation d'aller tout droit",
+            "is_correct": false
+          },
+          {
+            "text": "Obligation de tourner à gauche",
             "is_correct": false
           }
         ],
-        "explanation": "D5 oblige les conducteurs a suivre le giratoire dans le sens de circulation indique."
+        "explanation": "Ce panneau indique que les conducteurs doivent suivre le giratoire dans le sens indiqué."
       },
       "AR": {
-        "question": "Ù…Ø§Ø°Ø§ ØªØ¹Ù†ÙŠ Ù„Ø§ÙØªØ© Ø§Ù„Ù…Ø±ÙˆØ± Ù‡Ø°Ù‡ØŸ",
+        "question": "ما معنى هذه العلامة المرورية؟",
         "choices": [
-          { "text": "Ø¯ÙˆØ±Ø§Ù† Ø¥Ù„Ø²Ø§Ù…ÙŠ", "is_correct": true },
-          { "text": "Ø·Ø±ÙŠÙ‚ Ø¥Ø¬Ø¨Ø§Ø±ÙŠ Ø¥Ù„Ù‰ Ø§Ù„Ø£Ù…Ø§Ù…", "is_correct": false },
           {
-            "text": "Ø¥Ø¬Ø¨Ø§Ø±ÙŠØ© Ø§ØªØ¨Ø§Ø¹ Ø£Ø­Ø¯ Ø§Ù„Ø§ØªØ¬Ø§Ù‡ÙŠÙ† (Ù„Ù„Ø£Ù…Ø§Ù… Ø£Ùˆ Ø§Ù„ÙŠØ³Ø§Ø±)",
+            "text": "دوران إلزامي",
+            "is_correct": true
+          },
+          {
+            "text": "إلزامية السير إلى الأمام",
+            "is_correct": false
+          },
+          {
+            "text": "إلزامية الانعطاف إلى اليسار",
             "is_correct": false
           }
         ],
-        "explanation": "ØªÙÙ„Ø²Ù… D5 Ø§Ù„Ø³Ø§Ø¦Ù‚ÙŠÙ† Ø¨Ø§ØªØ¨Ø§Ø¹ Ø§Ù„Ø¯ÙˆØ§Ø± ÙÙŠ Ø§ØªØ¬Ø§Ù‡ Ø§Ù„Ø¯ÙˆØ±Ø§Ù† Ø§Ù„Ù…Ø´Ø§Ø± Ø¥Ù„ÙŠÙ‡."
+        "explanation": "تدل هذه العلامة على أن السائقين يجب عليهم اتباع الدوار في الاتجاه المشار إليه."
       }
     }
   },
   {
     "question_id": "D5_Q02",
-    "type": "WHICH_SIGN",
+    "type": "HAZARD_IDENTIFICATION",
     "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Tot welke categorie verkeersborden behoort dit bord?",
+        "question": "Wat geeft dit bord aan?",
         "choices": [
-          { "text": "Gebodsborden (D-reeks)", "is_correct": true },
-          { "text": "Verbodsborden (C-reeks)", "is_correct": false },
-          { "text": "Parkeerborden (E-reeks)", "is_correct": false }
+          {
+            "text": "Dat het verkeer rond de rotonde moet verlopen",
+            "is_correct": true
+          },
+          {
+            "text": "Dat bestuurders door het midden mogen rijden",
+            "is_correct": false
+          },
+          {
+            "text": "Dat bestuurders vrij een richting mogen kiezen",
+            "is_correct": false
+          }
         ],
-        "explanation": "D-reeksborden zijn gebodstekens. D5 verplicht bestuurders rondgaand verkeer te volgen."
+        "explanation": "Dit bord duidt een rotonde aan waar het verkeer rondgaand moet verlopen."
       },
       "EN": {
-        "question": "To which category of traffic signs does this sign belong?",
+        "question": "What does this sign indicate?",
         "choices": [
-          { "text": "Mandatory signs (D-series)", "is_correct": true },
-          { "text": "Prohibition signs (C-series)", "is_correct": false },
-          { "text": "Parking signs (E-series)", "is_correct": false }
+          {
+            "text": "That traffic must move around the roundabout",
+            "is_correct": true
+          },
+          {
+            "text": "That drivers may pass through the centre",
+            "is_correct": false
+          },
+          {
+            "text": "That drivers may choose any direction freely",
+            "is_correct": false
+          }
         ],
-        "explanation": "D-series signs are mandatory signs. D5 requires drivers to follow the roundabout circulation."
+        "explanation": "This sign indicates a roundabout where traffic must circulate around it."
       },
       "FR": {
-        "question": "A quelle categorie de panneaux de signalisation appartient ce panneau ?",
+        "question": "Qu'indique ce panneau ?",
         "choices": [
-          { "text": "Panneaux d'obligation (serie D)", "is_correct": true },
-          { "text": "Panneaux d'interdiction (serie C)", "is_correct": false },
-          { "text": "Panneaux de stationnement (serie E)", "is_correct": false }
+          {
+            "text": "Que la circulation doit se faire autour du giratoire",
+            "is_correct": true
+          },
+          {
+            "text": "Que les conducteurs peuvent passer par le centre",
+            "is_correct": false
+          },
+          {
+            "text": "Que les conducteurs peuvent choisir librement leur direction",
+            "is_correct": false
+          }
         ],
-        "explanation": "Les panneaux de la serie D sont des panneaux d'obligation. D5 oblige les conducteurs a suivre la circulation giratoire."
+        "explanation": "Ce panneau indique un giratoire où la circulation doit se faire autour."
       },
       "AR": {
-        "question": "Ø¥Ù„Ù‰ Ø£ÙŠ ÙØ¦Ø© Ù…Ù† Ù„Ø§ÙØªØ§Øª Ø§Ù„Ù…Ø±ÙˆØ± ØªÙ†ØªÙ…ÙŠ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ",
+        "question": "ماذا تشير هذه العلامة؟",
         "choices": [
-          { "text": "Ù„Ø§ÙØªØ§Øª Ø¥Ù„Ø²Ø§Ù…ÙŠØ© (Ø§Ù„Ø³Ù„Ø³Ù„Ø© D)", "is_correct": true },
-          { "text": "Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø­Ø¸Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© C)", "is_correct": false },
-          { "text": "Ù„Ø§ÙØªØ§Øª Ø§Ù„ÙˆÙ‚ÙˆÙ (Ø§Ù„Ø³Ù„Ø³Ù„Ø© E)", "is_correct": false }
+          {
+            "text": "إلى أن حركة المرور يجب أن تدور حول الدوار",
+            "is_correct": true
+          },
+          {
+            "text": "إلى أنه يُسمح للسائقين بالمرور عبر المركز",
+            "is_correct": false
+          },
+          {
+            "text": "إلى أن السائقين يمكنهم اختيار أي اتجاه بحرية",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø³Ù„Ø³Ù„Ø© D Ù‡ÙŠ Ù„Ø§ÙØªØ§Øª Ø¥Ù„Ø²Ø§Ù…ÙŠØ©. ØªÙÙ„Ø²Ù… D5 Ø§Ù„Ø³Ø§Ø¦Ù‚ÙŠÙ† Ø¨Ø§ØªØ¨Ø§Ø¹ Ø­Ø±ÙƒØ© Ø§Ù„Ø¯ÙˆØ±Ø§Ù†."
+        "explanation": "تشير هذه العلامة إلى دوار يجب أن تسير فيه حركة المرور بشكل دائري حوله."
       }
     }
   },
@@ -109,76 +169,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat geeft bord D5 aan bij een kruispunt?",
+        "question": "Wie heeft volgens dit bord voorrang in de rotonde?",
         "choices": [
           {
-            "text": "Het verkeer moet de rotonde volgen in de aangegeven rondgaande richting",
+            "text": "Bestuurders die al in de rotonde rijden",
             "is_correct": true
           },
           {
-            "text": "Inrijdend verkeer heeft voorrang op het rondgaand verkeer",
+            "text": "Bestuurders die de rotonde willen oprijden",
             "is_correct": false
           },
           {
-            "text": "Bestuurders moeten stoppen en wachten voor zij de rotonde inrijden",
+            "text": "Voetgangers in alle richtingen zonder uitzondering",
             "is_correct": false
           }
         ],
-        "explanation": "D5 verplicht een rondgaand verkeerspatroon. Bestuurders moeten de aangegeven richting aanhouden en mogen de rotonde niet rechtstreeks doorkruisen."
+        "explanation": "Bij dit bord hebben bestuurders die zich al in de rotonde bevinden voorrang."
       },
       "EN": {
-        "question": "What does sign D5 indicate at a junction?",
+        "question": "Who has priority according to this sign in the roundabout?",
         "choices": [
           {
-            "text": "Traffic must circulate around the roundabout in the indicated direction",
+            "text": "Drivers already in the roundabout",
             "is_correct": true
           },
           {
-            "text": "Vehicles entering have priority over vehicles already in the roundabout",
+            "text": "Drivers who want to enter the roundabout",
             "is_correct": false
           },
           {
-            "text": "Drivers must stop and wait before entering the roundabout",
+            "text": "Pedestrians in all directions without exception",
             "is_correct": false
           }
         ],
-        "explanation": "D5 mandates a circular traffic pattern. Drivers must follow the indicated direction and may not cut straight through the roundabout."
+        "explanation": "With this sign, drivers already in the roundabout have priority."
       },
       "FR": {
-        "question": "Qu'indique le panneau D5 a un carrefour ?",
+        "question": "Qui a la priorité selon ce panneau dans le giratoire ?",
         "choices": [
           {
-            "text": "La circulation doit tourner dans le sens giratoire indique",
+            "text": "Les conducteurs déjà dans le giratoire",
             "is_correct": true
           },
           {
-            "text": "Les vehicules entrant ont la priorite sur les vehicules deja dans le giratoire",
+            "text": "Les conducteurs qui veulent entrer dans le giratoire",
             "is_correct": false
           },
           {
-            "text": "Les conducteurs doivent s'arreter et attendre avant d'entrer dans le giratoire",
+            "text": "Les piétons dans toutes les directions sans exception",
             "is_correct": false
           }
         ],
-        "explanation": "D5 impose un mouvement giratoire. Les conducteurs doivent suivre le sens indique et ne peuvent pas traverser directement le centre du giratoire."
+        "explanation": "Avec ce panneau, les conducteurs déjà dans le giratoire ont la priorité."
       },
       "AR": {
-        "question": "Ù…Ø§Ø°Ø§ ØªØ´ÙŠØ± Ù„Ø§ÙØªØ© D5 Ø¹Ù†Ø¯ ØªÙ‚Ø§Ø·Ø¹ØŸ",
+        "question": "من له الأولوية وفقًا لهذه العلامة داخل الدوار؟",
         "choices": [
           {
-            "text": "ÙŠØ¬Ø¨ Ø¹Ù„Ù‰ Ø­Ø±ÙƒØ© Ø§Ù„Ù…Ø±ÙˆØ± Ø§Ù„Ø¯ÙˆØ±Ø§Ù† Ø­ÙˆÙ„ Ø§Ù„Ø¯ÙˆØ§Ø± ÙÙŠ Ø§Ù„Ø§ØªØ¬Ø§Ù‡ Ø§Ù„Ù…Ø´Ø§Ø± Ø¥Ù„ÙŠÙ‡",
+            "text": "السائقون الموجودون داخل الدوار بالفعل",
             "is_correct": true
           },
           {
-            "text": "Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ø¯Ø§Ø®Ù„Ø© Ù„Ù‡Ø§ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© Ø¹Ù„Ù‰ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ù…ÙˆØ¬ÙˆØ¯Ø© Ø¯Ø§Ø®Ù„ Ø§Ù„Ø¯ÙˆØ§Ø±",
+            "text": "السائقون الذين يريدون دخول الدوار",
             "is_correct": false
           },
           {
-            "text": "ÙŠØ¬Ø¨ Ø¹Ù„Ù‰ Ø§Ù„Ø³Ø§Ø¦Ù‚ÙŠÙ† Ø§Ù„ØªÙˆÙ‚Ù ÙˆØ§Ù„Ø§Ù†ØªØ¸Ø§Ø± Ù‚Ø¨Ù„ Ø§Ù„Ø¯Ø®ÙˆÙ„ Ø¥Ù„Ù‰ Ø§Ù„Ø¯ÙˆØ§Ø±",
+            "text": "المشاة في جميع الاتجاهات دون استثناء",
             "is_correct": false
           }
         ],
-        "explanation": "ØªÙØ±Ø¶ D5 Ù†Ù…Ø· Ø¯ÙˆØ±Ø§Ù† Ù„Ù„Ù…Ø±ÙˆØ±. ÙŠØ¬Ø¨ Ø¹Ù„Ù‰ Ø§Ù„Ø³Ø§Ø¦Ù‚ÙŠÙ† Ø§ØªØ¨Ø§Ø¹ Ø§Ù„Ø§ØªØ¬Ø§Ù‡ Ø§Ù„Ù…Ø´Ø§Ø± Ø¥Ù„ÙŠÙ‡ ÙˆÙ„Ø§ ÙŠÙ…ÙƒÙ†Ù‡Ù… Ø¹Ø¨ÙˆØ± Ù…Ø±ÙƒØ² Ø§Ù„Ø¯ÙˆØ§Ø± Ù…Ø¨Ø§Ø´Ø±Ø©Ù‹."
+        "explanation": "مع هذه العلامة، يتمتع السائقون الموجودون داخل الدوار بالفعل بالأولوية."
       }
     }
   },
@@ -190,76 +250,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U rijdt een rotonde met bord D5 op. Wat moet u doen?",
+        "question": "U nadert een rotonde met dit bord. Wat moet u doen?",
         "choices": [
           {
-            "text": "De rondgaande rijstroom in de aangegeven richting volgen",
+            "text": "De rotonde in de aangeduide richting volgen",
             "is_correct": true
           },
           {
-            "text": "Rechtstreeks door het midden rijden als uw uitrit tegenover de inrit ligt",
+            "text": "Rechtdoor over het midden rijden",
             "is_correct": false
           },
           {
-            "text": "Stoppen en alle andere voertuigen laten passeren voor u invoegt",
+            "text": "Zelf een andere rijrichting kiezen",
             "is_correct": false
           }
         ],
-        "explanation": "D5 verplicht u de circulaire rijstroom te volgen. Rechtdoor door het midden rijden of onnodig stoppen is niet toegestaan."
+        "explanation": "U moet de rotonde volgen in de richting die door het bord wordt aangeduid."
       },
       "EN": {
-        "question": "You are entering a roundabout with sign D5. What must you do?",
+        "question": "You are approaching a roundabout with this sign. What must you do?",
         "choices": [
           {
-            "text": "Follow the circular traffic flow in the indicated direction",
+            "text": "Follow the roundabout in the indicated direction",
             "is_correct": true
           },
           {
-            "text": "Drive straight through the centre if your exit is directly opposite",
+            "text": "Drive straight across the centre",
             "is_correct": false
           },
           {
-            "text": "Stop and let all other vehicles pass before merging",
+            "text": "Choose another direction yourself",
             "is_correct": false
           }
         ],
-        "explanation": "D5 requires you to follow the circular flow. Cutting through the middle or making unnecessary stops is not permitted."
+        "explanation": "You must follow the roundabout in the direction indicated by the sign."
       },
       "FR": {
-        "question": "Vous entrez dans un rond-point avec le panneau D5. Que devez-vous faire ?",
+        "question": "Vous approchez d'un giratoire avec ce panneau. Que devez-vous faire ?",
         "choices": [
           {
-            "text": "Suivre le flux de circulation giratoire dans le sens indique",
+            "text": "Suivre le giratoire dans le sens indiqué",
             "is_correct": true
           },
           {
-            "text": "Rouler directement par le centre si votre sortie est en face de l'entree",
+            "text": "Aller tout droit en traversant le centre",
             "is_correct": false
           },
           {
-            "text": "Vous arreter et laisser passer tous les autres vehicules avant de vous inserer",
+            "text": "Choisir vous-même une autre direction",
             "is_correct": false
           }
         ],
-        "explanation": "D5 vous oblige a suivre le flux circulaire. Couper par le centre ou s'arreter inutilement n'est pas permis."
+        "explanation": "Vous devez suivre le giratoire dans le sens indiqué par le panneau."
       },
       "AR": {
-        "question": "Ø£Ù†Øª ØªØ¯Ø®Ù„ Ø¯ÙˆØ§Ø±Ø§Ù‹ Ø¹Ù„ÙŠÙ‡ Ù„Ø§ÙØªØ© D5. Ù…Ø§Ø°Ø§ ÙŠØ¬Ø¨ Ø¹Ù„ÙŠÙƒ ÙØ¹Ù„Ù‡ØŸ",
+        "question": "أنت تقترب من دوار توجد فيه هذه العلامة. ماذا يجب أن تفعل؟",
         "choices": [
           {
-            "text": "Ø§ØªØ¨Ø§Ø¹ ØªØ¯ÙÙ‚ Ø§Ù„Ù…Ø±ÙˆØ± Ø§Ù„Ø¯Ø§Ø¦Ø±ÙŠ ÙÙŠ Ø§Ù„Ø§ØªØ¬Ø§Ù‡ Ø§Ù„Ù…Ø´Ø§Ø± Ø¥Ù„ÙŠÙ‡",
+            "text": "اتباع الدوار في الاتجاه المشار إليه",
             "is_correct": true
           },
           {
-            "text": "Ø§Ù„Ø³ÙŠØ± Ù…Ø¨Ø§Ø´Ø±Ø© Ø¹Ø¨Ø± Ø§Ù„Ù…Ø±ÙƒØ² Ø¥Ø°Ø§ ÙƒØ§Ù†Øª Ù…Ø®Ø±Ø¬Ùƒ Ù…Ù‚Ø§Ø¨Ù„ Ø§Ù„Ù…Ø¯Ø®Ù„",
+            "text": "متابعة السير مباشرة عبر المركز",
             "is_correct": false
           },
           {
-            "text": "Ø§Ù„ØªÙˆÙ‚Ù ÙˆØ§Ù„Ø³Ù…Ø§Ø­ Ù„Ø¬Ù…ÙŠØ¹ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø¨Ø§Ù„Ù…Ø±ÙˆØ± Ù‚Ø¨Ù„ Ø§Ù„Ø§Ù†Ø¶Ù…Ø§Ù…",
+            "text": "اختيار اتجاه آخر بنفسك",
             "is_correct": false
           }
         ],
-        "explanation": "ØªÙÙ„Ø²Ù…Ùƒ D5 Ø¨Ø§ØªØ¨Ø§Ø¹ Ø§Ù„ØªØ¯ÙÙ‚ Ø§Ù„Ø¯Ø§Ø¦Ø±ÙŠ. Ø§Ù„Ù‚Ø·Ø¹ Ø¹Ø¨Ø± Ø§Ù„Ù…Ù†ØªØµÙ Ø£Ùˆ Ø§Ù„ØªÙˆÙ‚Ù ØºÙŠØ± Ø§Ù„Ø¶Ø±ÙˆØ±ÙŠ ØºÙŠØ± Ù…Ø³Ù…ÙˆØ­ Ø¨Ù‡."
+        "explanation": "يجب عليك اتباع الدوار في الاتجاه الذي تشير إليه العلامة."
       }
     }
   },
@@ -271,76 +331,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U rijdt in een D5-rotonde en wilt uw uitrit nemen. Wat moet u doen?",
+        "question": "U rijdt al in de rotonde en een voertuig wil invoegen. Wie heeft voorrang?",
         "choices": [
           {
-            "text": "Rechts uitrijden en tijdig richtingaanwijzer geven zodat anderen uw intentie kennen",
+            "text": "U hebt voorrang omdat u al in de rotonde rijdt",
             "is_correct": true
           },
           {
-            "text": "Links richtingaanwijzer geven en stoppen voor voetgangers voor u de rotonde verlaat",
+            "text": "Het invoegende voertuig heeft voorrang",
             "is_correct": false
           },
           {
-            "text": "Voorrang verlenen aan inrijdend verkeer en binnen de rotonde wachten tot zij gepasseerd zijn",
+            "text": "Beide voertuigen moeten altijd stoppen",
             "is_correct": false
           }
         ],
-        "explanation": "Bij een rotonde verlaat u rechts met tijdige richtingaanwijzer. Inrijdend verkeer heeft geen voorrang op het rondgaand verkeer."
+        "explanation": "Bestuurders die al in de rotonde rijden hebben hier voorrang."
       },
       "EN": {
-        "question": "You are inside a D5 roundabout and want to take your exit. What must you do?",
+        "question": "You are already driving in the roundabout and another vehicle wants to enter. Who has priority?",
         "choices": [
           {
-            "text": "Signal right in good time and exit when safe, completing another circuit if the exit is missed",
+            "text": "You have priority because you are already in the roundabout",
             "is_correct": true
           },
           {
-            "text": "Signal left and stop for pedestrians before exiting",
+            "text": "The entering vehicle has priority",
             "is_correct": false
           },
           {
-            "text": "Give priority to entering vehicles and wait inside the roundabout until they pass",
+            "text": "Both vehicles must always stop",
             "is_correct": false
           }
         ],
-        "explanation": "At a roundabout you exit right with a timely signal. Entering vehicles do not have priority over circulating traffic."
+        "explanation": "Drivers already in the roundabout have priority here."
       },
       "FR": {
-        "question": "Vous etes dans un rond-point D5 et souhaitez prendre votre sortie. Que devez-vous faire ?",
+        "question": "Vous circulez déjà dans le giratoire et un autre véhicule veut entrer. Qui a la priorité ?",
         "choices": [
           {
-            "text": "Signaler a droite en temps utile et sortir prudemment, en faisant un tour supplementaire si vous avez rate la sortie",
+            "text": "Vous avez la priorité parce que vous êtes déjà dans le giratoire",
             "is_correct": true
           },
           {
-            "text": "Signaler a gauche et vous arreter pour les pietons avant de sortir",
+            "text": "Le véhicule entrant a la priorité",
             "is_correct": false
           },
           {
-            "text": "Ceder la priorite aux vehicules entrant et attendre a l'interieur du giratoire jusqu'a ce qu'ils soient passes",
+            "text": "Les deux véhicules doivent toujours s'arrêter",
             "is_correct": false
           }
         ],
-        "explanation": "Au giratoire, vous sortez a droite avec un signal en temps utile. Les vehicules entrant n'ont pas la priorite sur la circulation giratoire."
+        "explanation": "Les conducteurs déjà dans le giratoire ont ici la priorité."
       },
       "AR": {
-        "question": "Ø£Ù†Øª Ø¯Ø§Ø®Ù„ Ø¯ÙˆØ§Ø± D5 ÙˆØªØ±ÙŠØ¯ Ø£Ø®Ø° Ù…Ø®Ø±Ø¬Ùƒ. Ù…Ø§Ø°Ø§ ÙŠØ¬Ø¨ Ø¹Ù„ÙŠÙƒ ÙØ¹Ù„Ù‡ØŸ",
+        "question": "أنت تسير بالفعل داخل الدوار ومركبة أخرى تريد الدخول. من له الأولوية؟",
         "choices": [
           {
-            "text": "Ø¥Ø´Ø§Ø±Ø© ÙŠÙ…ÙŠÙ† ÙÙŠ Ø§Ù„ÙˆÙ‚Øª Ø§Ù„Ù…Ù†Ø§Ø³Ø¨ ÙˆØ§Ù„Ø®Ø±ÙˆØ¬ Ø¨Ø£Ù…Ø§Ù†ØŒ Ù…Ø¹ Ø¥ÙƒÙ…Ø§Ù„ Ø¯ÙˆØ±Ø© Ø¥Ø¶Ø§ÙÙŠØ© Ø¥Ø°Ø§ ÙØ§ØªÙƒ Ø§Ù„Ù…Ø®Ø±Ø¬",
+            "text": "أنت لك الأولوية لأنك داخل الدوار بالفعل",
             "is_correct": true
           },
           {
-            "text": "Ø¥Ø´Ø§Ø±Ø© ÙŠØ³Ø§Ø± ÙˆØ§Ù„ØªÙˆÙ‚Ù Ù„Ù„Ù…Ø´Ø§Ø© Ù‚Ø¨Ù„ Ø§Ù„Ø®Ø±ÙˆØ¬",
+            "text": "المركبة الداخلة لها الأولوية",
             "is_correct": false
           },
           {
-            "text": "Ø¥Ø¹Ø·Ø§Ø¡ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© Ù„Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ø¯Ø§Ø®Ù„Ø© ÙˆØ§Ù„Ø§Ù†ØªØ¸Ø§Ø± Ø¯Ø§Ø®Ù„ Ø§Ù„Ø¯ÙˆØ§Ø± Ø­ØªÙ‰ ØªÙ…Ø±",
+            "text": "يجب على المركبتين التوقف دائمًا",
             "is_correct": false
           }
         ],
-        "explanation": "ÙÙŠ Ø§Ù„Ø¯ÙˆØ§Ø±ØŒ ØªØ®Ø±Ø¬ ÙŠÙ…ÙŠÙ†Ø§Ù‹ Ù…Ø¹ Ø¥Ø´Ø§Ø±Ø© Ù…Ø¨ÙƒØ±Ø©. Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ø¯Ø§Ø®Ù„Ø© Ù„Ø§ ØªØªÙ…ØªØ¹ Ø¨Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© Ø¹Ù„Ù‰ Ø§Ù„Ù…Ø±ÙˆØ± Ø§Ù„Ø¯Ø§Ø¦Ø±ÙŠ."
+        "explanation": "السائقون الموجودون بالفعل داخل الدوار لهم الأولوية هنا."
       }
     }
   },
@@ -352,76 +412,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Een voertuig rijdt de rotonde in vanuit een zijweg op het moment dat u al rondrijdt. Wie heeft voorrang?",
+        "question": "Uw uitrit ligt recht tegenover u. Wat moet u doen?",
         "choices": [
           {
-            "text": "U hebt voorrang omdat u al in de rotonde rijdt, tenzij andere borden dit wijzigen",
+            "text": "Toch de rotonde volgen tot aan uw uitrit",
             "is_correct": true
           },
           {
-            "text": "Het inrijdende voertuig heeft voorrang omdat het bord D5 bij zijn inrit staat",
+            "text": "Rechtstreeks door het midden rijden",
             "is_correct": false
           },
           {
-            "text": "Geen van beiden heeft voorrang; beiden moeten stoppen en voorrang verlenen",
+            "text": "Links afslaan vóór de rotonde",
             "is_correct": false
           }
         ],
-        "explanation": "In een D5-rotonde heeft het rondgaand verkeer voorrang op inrijdend verkeer, tenzij andere borden of wegmarkering dit anders bepalen."
+        "explanation": "Ook als uw uitrit tegenover u ligt, moet u de rotonde volgen."
       },
       "EN": {
-        "question": "A vehicle enters the roundabout from a side road at the same time you are already circulating. Who has priority?",
+        "question": "Your exit is directly opposite you. What must you do?",
         "choices": [
           {
-            "text": "You have priority because you are already inside the roundabout, unless other signs indicate otherwise",
+            "text": "Still follow the roundabout until your exit",
             "is_correct": true
           },
           {
-            "text": "The entering vehicle has priority because sign D5 is at its entrance",
+            "text": "Drive straight through the centre",
             "is_correct": false
           },
           {
-            "text": "Neither has priority; both must stop and give way to each other",
+            "text": "Turn left before the roundabout",
             "is_correct": false
           }
         ],
-        "explanation": "In a D5 roundabout, circulating traffic has priority over entering vehicles, unless other signs or road markings specify otherwise."
+        "explanation": "Even if your exit is directly opposite, you must still follow the roundabout."
       },
       "FR": {
-        "question": "Un vehicule entre dans le rond-point par une voie laterale alors que vous y circulez deja. Qui a la priorite ?",
+        "question": "Votre sortie se trouve juste en face. Que devez-vous faire ?",
         "choices": [
           {
-            "text": "Vous avez la priorite car vous etes deja dans le giratoire, sauf si d'autres panneaux l'indiquent autrement",
+            "text": "Suivre quand même le giratoire jusqu'à votre sortie",
             "is_correct": true
           },
           {
-            "text": "Le vehicule entrant a la priorite car le panneau D5 se trouve a son entree",
+            "text": "Traverser directement le centre",
             "is_correct": false
           },
           {
-            "text": "Aucun des deux n'a la priorite; les deux doivent s'arreter et se ceder la voie mutuellement",
+            "text": "Tourner à gauche avant le giratoire",
             "is_correct": false
           }
         ],
-        "explanation": "Dans un giratoire D5, la circulation giratoire a la priorite sur les vehicules entrant, sauf indication contraire d'autres panneaux ou marques routieres."
+        "explanation": "Même si votre sortie est en face, vous devez quand même suivre le giratoire."
       },
       "AR": {
-        "question": "Ù…Ø±ÙƒØ¨Ø© ØªØ¯Ø®Ù„ Ø§Ù„Ø¯ÙˆØ§Ø± Ù…Ù† Ø·Ø±ÙŠÙ‚ Ø¬Ø§Ù†Ø¨ÙŠ ÙÙŠ Ø§Ù„ÙˆÙ‚Øª Ø§Ù„Ø°ÙŠ ØªØ³ÙŠØ± ÙÙŠÙ‡ Ø£Ù†Øª Ø¨Ø§Ù„ÙØ¹Ù„ Ø¯Ø§Ø®Ù„Ù‡. Ù…Ù† Ù„Ù‡ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ©ØŸ",
+        "question": "مخرجك يقع مباشرة أمامك. ماذا يجب أن تفعل؟",
         "choices": [
           {
-            "text": "Ø£Ù†Øª ØªØªÙ…ØªØ¹ Ø¨Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© Ù„Ø£Ù†Ùƒ Ø¯Ø§Ø®Ù„ Ø§Ù„Ø¯ÙˆØ§Ø± Ø¨Ø§Ù„ÙØ¹Ù„ØŒ Ù…Ø§ Ù„Ù… ØªØ´Ø± Ù„Ø§ÙØªØ§Øª Ø£Ø®Ø±Ù‰ Ø¥Ù„Ù‰ Ø®Ù„Ø§Ù Ø°Ù„Ùƒ",
+            "text": "مع ذلك تتبع الدوار حتى تصل إلى مخرجك",
             "is_correct": true
           },
           {
-            "text": "Ø§Ù„Ù…Ø±ÙƒØ¨Ø© Ø§Ù„Ø¯Ø§Ø®Ù„Ø© Ù„Ù‡Ø§ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© Ù„Ø£Ù† Ù„Ø§ÙØªØ© D5 Ù…ÙˆØ¬ÙˆØ¯Ø© Ø¹Ù†Ø¯ Ù…Ø¯Ø®Ù„Ù‡Ø§",
+            "text": "تمر مباشرة عبر المركز",
             "is_correct": false
           },
           {
-            "text": "Ù„Ø§ Ø£Ø­Ø¯ Ù…Ù†ÙƒÙ…Ø§ Ù„Ù‡ Ø£ÙˆÙ„ÙˆÙŠØ©Ø› ÙƒÙ„Ø§ÙƒÙ…Ø§ ÙŠØ¬Ø¨ Ø£Ù† ÙŠØªÙˆÙ‚Ù ÙˆÙŠÙÙØ³Ø­ Ø§Ù„Ù…Ø¬Ø§Ù„",
+            "text": "تنعطف يسارًا قبل الدوار",
             "is_correct": false
           }
         ],
-        "explanation": "ÙÙŠ Ø¯ÙˆØ§Ø± D5ØŒ ÙŠØªÙ…ØªØ¹ Ø§Ù„Ù…Ø±ÙˆØ± Ø§Ù„Ø¯Ø§Ø¦Ø±ÙŠ Ø¨Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© Ø¹Ù„Ù‰ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ø¯Ø§Ø®Ù„Ø©ØŒ Ù…Ø§ Ù„Ù… ØªØ­Ø¯Ø¯ Ù„Ø§ÙØªØ§Øª Ø£Ùˆ Ø¹Ù„Ø§Ù…Ø§Øª Ø·Ø±ÙŠÙ‚ Ø£Ø®Ø±Ù‰ Ø®Ù„Ø§Ù Ø°Ù„Ùƒ."
+        "explanation": "حتى إذا كان مخرجك أمامك مباشرة، يجب عليك مع ذلك اتباع الدوار."
       }
     }
   },
@@ -433,60 +493,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U rijdt een D5-rotonde in en een voertuig rijdt van rechts in vanuit een zijstraat. Moet u dit voertuig voorrang verlenen?",
+        "question": "De rotonde is leeg. Mag u dan rechtdoor door het midden rijden?",
         "choices": [
           {
-            "text": "Neen, in een D5-rotonde heeft het rondgaand verkeer voorrang op inrijdend verkeer, tenzij andere borden dit wijzigen",
+            "text": "Nee, u moet nog steeds de rotonde volgen",
             "is_correct": true
           },
           {
-            "text": "Ja, voertuigen van rechts hebben altijd voorrang",
+            "text": "Ja, als u niemand hindert",
             "is_correct": false
           }
         ],
-        "explanation": "De D5-rotonde heft de gewone voorrangsregel van rechts op. Rondgaand verkeer heeft voorrang op inrijdend verkeer."
+        "explanation": "Ook als de rotonde leeg is, blijft u verplicht de rotonde te volgen."
       },
       "EN": {
-        "question": "You are circulating in a D5 roundabout and a vehicle enters from the right on a side road. Must you yield to it?",
+        "question": "The roundabout is empty. May you then drive straight through the centre?",
         "choices": [
           {
-            "text": "No, in a D5 roundabout circulating traffic has priority over entering vehicles, unless other signs indicate otherwise",
+            "text": "No, you must still follow the roundabout",
             "is_correct": true
           },
           {
-            "text": "Yes, vehicles on the right always have priority",
+            "text": "Yes, if you do not hinder anyone",
             "is_correct": false
           }
         ],
-        "explanation": "The D5 roundabout overrides the normal priority-from-the-right rule. Circulating traffic has priority over entering traffic."
+        "explanation": "Even if the roundabout is empty, you are still required to follow it."
       },
       "FR": {
-        "question": "Vous circulez dans un giratoire D5 et un vehicule entre par la droite depuis une rue laterale. Devez-vous lui ceder la priorite ?",
+        "question": "Le giratoire est vide. Pouvez-vous alors traverser directement le centre ?",
         "choices": [
           {
-            "text": "Non, dans un giratoire D5 la circulation a la priorite sur les vehicules entrant, sauf indication contraire d'autres panneaux",
+            "text": "Non, vous devez quand même suivre le giratoire",
             "is_correct": true
           },
           {
-            "text": "Oui, les vehicules venant de droite ont toujours la priorite",
+            "text": "Oui, si vous ne gênez personne",
             "is_correct": false
           }
         ],
-        "explanation": "Le giratoire D5 annule la regle habituelle de priorite a droite. La circulation giratoire a la priorite sur les vehicules entrant."
+        "explanation": "Même si le giratoire est vide, vous restez obligé de le suivre."
       },
       "AR": {
-        "question": "Ø£Ù†Øª ØªØ³ÙŠØ± ÙÙŠ Ø¯ÙˆØ§Ø± D5 ÙˆÙ…Ø±ÙƒØ¨Ø© ØªØ¯Ø®Ù„ Ù…Ù† Ø§Ù„ÙŠÙ…ÙŠÙ† Ù‚Ø§Ø¯Ù…Ø© Ù…Ù† Ø´Ø§Ø±Ø¹ Ø¬Ø§Ù†Ø¨ÙŠ. Ù‡Ù„ ÙŠØ¬Ø¨ Ø¹Ù„ÙŠÙƒ Ø¥Ø¹Ø·Ø§Ø¤Ù‡Ø§ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ©ØŸ",
+        "question": "الدوار فارغ. هل يجوز لك عندها المرور مباشرة عبر المركز؟",
         "choices": [
           {
-            "text": "Ù„Ø§ØŒ ÙÙŠ Ø¯ÙˆØ§Ø± D5 ÙŠØªÙ…ØªØ¹ Ø§Ù„Ù…Ø±ÙˆØ± Ø§Ù„Ø¯Ø§Ø¦Ø±ÙŠ Ø¨Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© Ø¹Ù„Ù‰ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ø¯Ø§Ø®Ù„Ø©ØŒ Ù…Ø§ Ù„Ù… ØªØ´Ø± Ù„Ø§ÙØªØ§Øª Ø£Ø®Ø±Ù‰ Ø¥Ù„Ù‰ Ø®Ù„Ø§Ù Ø°Ù„Ùƒ",
+            "text": "لا، يجب عليك مع ذلك اتباع الدوار",
             "is_correct": true
           },
           {
-            "text": "Ù†Ø¹Ù…ØŒ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø¹Ù„Ù‰ Ø§Ù„ÙŠÙ…ÙŠÙ† Ù„Ù‡Ø§ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© Ø¯Ø§Ø¦Ù…Ø§Ù‹",
+            "text": "نعم، إذا لم تعرقل أحدًا",
             "is_correct": false
           }
         ],
-        "explanation": "ÙŠÙÙ„ØºÙŠ Ø¯ÙˆØ§Ø± D5 Ù‚Ø§Ø¹Ø¯Ø© Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© Ù…Ù† Ø§Ù„ÙŠÙ…ÙŠÙ† Ø§Ù„Ù…Ø¹ØªØ§Ø¯Ø©. ÙŠØªÙ…ØªØ¹ Ø§Ù„Ù…Ø±ÙˆØ± Ø§Ù„Ø¯Ø§Ø¦Ø±ÙŠ Ø¨Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© Ø¹Ù„Ù‰ Ø§Ù„Ù…Ø±ÙˆØ± Ø§Ù„Ø¯Ø§Ø®Ù„."
+        "explanation": "حتى إذا كان الدوار فارغًا، تبقى ملزمًا باتباعه."
       }
     }
   },
@@ -498,60 +558,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Uw bestemming ligt recht tegenover de inrit van een D5-rotonde. Mag u rechtdoor door het midden van de rotonde rijden om sneller te zijn?",
+        "question": "U wilt de rotonde oprijden terwijl er verkeer in de rotonde rijdt. Mag u gewoon doorrijden?",
         "choices": [
           {
-            "text": "Neen, u moet de rondgaande rijstroom volgen zoals aangegeven door bord D5",
+            "text": "Nee, bestuurders in de rotonde hebben voorrang",
             "is_correct": true
           },
           {
-            "text": "Ja, als er op dat moment geen rondgaand verkeer aanwezig is",
+            "text": "Ja, inrijdend verkeer mag eerst rijden",
             "is_correct": false
           }
         ],
-        "explanation": "D5 verplicht alle bestuurders de circulaire rijstroom te volgen. Rechtdoor door het midden rijden is altijd verboden, ook als de rotonde leeg lijkt."
+        "explanation": "Bij dit bord hebben bestuurders die al in de rotonde rijden voorrang."
       },
       "EN": {
-        "question": "Your destination is directly opposite the entrance of a D5 roundabout. May you drive straight through the centre to reach it faster?",
+        "question": "You want to enter the roundabout while traffic is already circulating. May you simply continue?",
         "choices": [
           {
-            "text": "No, you must follow the circular flow as indicated by sign D5",
+            "text": "No, drivers in the roundabout have priority",
             "is_correct": true
           },
           {
-            "text": "Yes, if no circulating traffic is present at that moment",
+            "text": "Yes, entering traffic may go first",
             "is_correct": false
           }
         ],
-        "explanation": "D5 requires all drivers to follow the circular flow. Cutting straight through the centre is always prohibited, even when the roundabout appears empty."
+        "explanation": "With this sign, drivers already in the roundabout have priority."
       },
       "FR": {
-        "question": "Votre destination se trouve directement en face de l'entree d'un rond-point D5. Pouvez-vous traverser directement le centre pour arriver plus vite ?",
+        "question": "Vous voulez entrer dans le giratoire alors que des véhicules y circulent déjà. Pouvez-vous simplement continuer ?",
         "choices": [
           {
-            "text": "Non, vous devez suivre le flux giratoire tel qu'indique par le panneau D5",
+            "text": "Non, les conducteurs dans le giratoire ont la priorité",
             "is_correct": true
           },
           {
-            "text": "Oui, si aucun vehicule ne circule dans le giratoire a ce moment-la",
+            "text": "Oui, les véhicules entrants peuvent passer en premier",
             "is_correct": false
           }
         ],
-        "explanation": "D5 oblige tous les conducteurs a suivre le flux circulaire. Traverser directement le centre est toujours interdit, meme lorsque le giratoire semble vide."
+        "explanation": "Avec ce panneau, les conducteurs déjà dans le giratoire ont la priorité."
       },
       "AR": {
-        "question": "ÙˆØ¬Ù‡ØªÙƒ ØªÙ‚Ø¹ Ù…Ø¨Ø§Ø´Ø±Ø© Ù…Ù‚Ø§Ø¨Ù„ Ù…Ø¯Ø®Ù„ Ø¯ÙˆØ§Ø± D5. Ù‡Ù„ ÙŠÙ…ÙƒÙ†Ùƒ Ø§Ù„Ø³ÙŠØ± Ù…Ø¨Ø§Ø´Ø±Ø© Ø¹Ø¨Ø± Ø§Ù„Ù…Ø±ÙƒØ² Ù„Ù„ÙˆØµÙˆÙ„ Ø¨Ø´ÙƒÙ„ Ø£Ø³Ø±Ø¹ØŸ",
+        "question": "تريد دخول الدوار بينما توجد حركة مرور داخله بالفعل. هل يجوز لك المتابعة مباشرة؟",
         "choices": [
           {
-            "text": "Ù„Ø§ØŒ ÙŠØ¬Ø¨ Ø¹Ù„ÙŠÙƒ Ø§ØªØ¨Ø§Ø¹ Ø§Ù„ØªØ¯ÙÙ‚ Ø§Ù„Ø¯Ø§Ø¦Ø±ÙŠ ÙƒÙ…Ø§ ØªØ´ÙŠØ± Ù„Ø§ÙØªØ© D5",
+            "text": "لا، السائقون الموجودون داخل الدوار لهم الأولوية",
             "is_correct": true
           },
           {
-            "text": "Ù†Ø¹Ù…ØŒ Ø¥Ø°Ø§ Ù„Ù… ÙŠÙƒÙ† Ù‡Ù†Ø§Ùƒ Ù…Ø±ÙˆØ± Ø¯Ø§Ø¦Ø±ÙŠ ÙÙŠ ØªÙ„Ùƒ Ø§Ù„Ù„Ø­Ø¸Ø©",
+            "text": "نعم، يحق للمركبات الداخلة المرور أولًا",
             "is_correct": false
           }
         ],
-        "explanation": "ØªÙÙ„Ø²Ù… D5 Ø¬Ù…ÙŠØ¹ Ø§Ù„Ø³Ø§Ø¦Ù‚ÙŠÙ† Ø¨Ø§ØªØ¨Ø§Ø¹ Ø§Ù„ØªØ¯ÙÙ‚ Ø§Ù„Ø¯Ø§Ø¦Ø±ÙŠ. Ø§Ù„Ø¹Ø¨ÙˆØ± Ù…Ø¨Ø§Ø´Ø±Ø©Ù‹ Ø¹Ø¨Ø± Ø§Ù„Ù…Ø±ÙƒØ² Ù…Ø­Ø¸ÙˆØ± Ø¯Ø§Ø¦Ù…Ø§Ù‹ØŒ Ø­ØªÙ‰ Ø¹Ù†Ø¯Ù…Ø§ ÙŠØ¨Ø¯Ùˆ Ø§Ù„Ø¯ÙˆØ§Ø± ÙØ§Ø±ØºØ§Ù‹."
+        "explanation": "مع هذه العلامة، يتمتع السائقون الموجودون داخل الدوار بالفعل بالأولوية."
       }
     }
   }

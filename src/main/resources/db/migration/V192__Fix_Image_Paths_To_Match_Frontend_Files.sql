@@ -4,7 +4,7 @@
 
 -- Prohibition signs
 UPDATE road_signs SET image_path = 'images/signs/prohibition_signs/C22 Verboden toegang voor bestuurders van autocars.png'
-WHERE sign_code = 'C22a';
+WHERE sign_code = 'C22';
 
 UPDATE road_signs SET image_path = 'images/signs/prohibition_signs/C39 Verbod voertuigen met toegelaten massa groter dan 3500 kg in te halen.png'
 WHERE sign_code = 'C39';
@@ -12,17 +12,8 @@ WHERE sign_code = 'C39';
 UPDATE road_signs SET image_path = 'images/signs/prohibition_signs/C41 Einde van het verbod opgelegd door het verkeersbord C39.png'
 WHERE sign_code = 'C41';
 
-UPDATE road_signs SET image_path = 'images/signs/prohibition_signs/C43 Verbod te rijden met een grotere snelheid dan 30 km.png'
-WHERE sign_code = 'C43';
-
 UPDATE road_signs SET image_path = 'images/signs/prohibition_signs/C43 Verbod te rijden met een grotere snelheid dan 50 km.png'
-WHERE sign_code = 'C43_50';
-
-UPDATE road_signs SET image_path = 'images/signs/prohibition_signs/C43 Verbod te rijden met een grotere snelheid dan 70 km.png'
-WHERE sign_code = 'C43_70';
-
-UPDATE road_signs SET image_path = 'images/signs/prohibition_signs/C43 Verbod te rijden met een grotere snelheid dan 70 km.png'
-WHERE sign_code = 'C43_90';
+WHERE sign_code = 'C43';
 
 -- Parking signs
 UPDATE road_signs SET image_path = 'images/signs/parking_signs/E9b Parkeren uitsluitend voor autos.png'

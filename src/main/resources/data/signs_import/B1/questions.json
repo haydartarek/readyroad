@@ -1,4 +1,4 @@
-﻿[
+[
   {
     "question_id": "B1_Q01",
     "type": "WHAT_DOES_IT_MEAN",
@@ -9,38 +9,65 @@
       "NL": {
         "question": "Wat betekent dit verkeersbord?",
         "choices": [
-          {"text": "Voorrang verlenen aan bestuurders op de kruisende weg", "is_correct": true},
-          {"text": "Volledig stoppen en vervolgens voorrang verlenen", "is_correct": false},
-          {"text": "U bevindt zich op een voorrangsweg en heeft voorrang", "is_correct": false}
+          {
+            "text": "Voorrang verlenen aan bestuurders op de kruisende weg",
+            "is_correct": true
+          },
+          {
+            "text": "Volledig stoppen en vervolgens voorrang verlenen",
+            "is_correct": false
+          },
+          {
+            "text": "U bevindt zich op een voorrangsweg en heeft voorrang",
+            "is_correct": false
+          }
         ],
-        "explanation": "Bord B1 verplicht u voorrang te verlenen aan alle bestuurders op de kruisende weg zonder volledig te stoppen."
+        "explanation": "Dit bord geeft aan dat bestuurders op de kruisende weg voorrang hebben."
       },
       "EN": {
         "question": "What does this traffic sign mean?",
         "choices": [
-          {"text": "Give way to drivers on the crossing road", "is_correct": true},
-          {"text": "Stop completely and then give way", "is_correct": false},
-          {"text": "You are on a priority road and have right of way", "is_correct": false}
+          {
+            "text": "Give way to drivers on the crossing road",
+            "is_correct": true
+          },
+          { "text": "Stop completely and then give way", "is_correct": false },
+          {
+            "text": "You are on a priority road and have right of way",
+            "is_correct": false
+          }
         ],
-        "explanation": "Sign B1 requires you to give way to all drivers on the crossing road without coming to a complete stop."
+        "explanation": "This sign indicates that traffic on the crossing road has priority."
       },
       "FR": {
         "question": "Que signifie ce panneau de signalisation ?",
         "choices": [
-          {"text": "CÃ©der le passage aux conducteurs sur la route transversale", "is_correct": true},
-          {"text": "S'arrÃªter complÃ¨tement puis cÃ©der le passage", "is_correct": false},
-          {"text": "Vous Ãªtes sur une route prioritaire et avez la prioritÃ©", "is_correct": false}
+          {
+            "text": "Céder le passage aux conducteurs sur la route transversale",
+            "is_correct": true
+          },
+          {
+            "text": "S'arrêter complètement puis céder le passage",
+            "is_correct": false
+          },
+          {
+            "text": "Vous êtes sur une route prioritaire et avez la priorité",
+            "is_correct": false
+          }
         ],
-        "explanation": "Le panneau B1 vous oblige Ã  cÃ©der le passage Ã  tous les conducteurs sur la route transversale sans arrÃªt complet."
+        "explanation": "Ce panneau indique que les usagers de la route transversale ont la priorité."
       },
       "AR": {
-        "question": "Ù…Ø§Ø°Ø§ ØªØ¹Ù†ÙŠ Ù„Ø§ÙØªØ© Ø§Ù„Ù…Ø±ÙˆØ± Ù‡Ø°Ù‡ØŸ",
+        "question": "ما معنى هذه العلامة المرورية؟",
         "choices": [
-          {"text": "Ø¥Ø¹Ø·Ø§Ø¡ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© Ù„Ù„Ø³Ø§Ø¦Ù‚ÙŠÙ† Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ù…ØªÙ‚Ø§Ø·Ø¹", "is_correct": true},
-          {"text": "Ø§Ù„ØªÙˆÙ‚Ù Ø§Ù„ÙƒØ§Ù…Ù„ Ø«Ù… Ø¥Ø¹Ø·Ø§Ø¡ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ©", "is_correct": false},
-          {"text": "Ø£Ù†Øª Ø¹Ù„Ù‰ Ø·Ø±ÙŠÙ‚ Ø£ÙˆÙ„ÙˆÙŠØ© ÙˆÙ„Ø¯ÙŠÙƒ Ø­Ù‚ Ø§Ù„Ù…Ø±ÙˆØ±", "is_correct": false}
+          {
+            "text": "إعطاء الأولوية للسائقين على الطريق المتقاطع",
+            "is_correct": true
+          },
+          { "text": "التوقف الكامل ثم إعطاء الأولوية", "is_correct": false },
+          { "text": "أنت على طريق أولوية ولديك حق المرور", "is_correct": false }
         ],
-        "explanation": "ØªÙÙ„Ø²Ù…Ùƒ Ù„Ø§ÙØªØ© B1 Ø¨Ø¥Ø¹Ø·Ø§Ø¡ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© Ù„Ø¬Ù…ÙŠØ¹ Ø§Ù„Ø³Ø§Ø¦Ù‚ÙŠÙ† Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ù…ØªÙ‚Ø§Ø·Ø¹ Ø¯ÙˆÙ† Ø§Ù„ØªÙˆÙ‚Ù Ø§Ù„ÙƒØ§Ù…Ù„."
+        "explanation": "تدل هذه العلامة على أن الأولوية لحركة المرور على الطريق المتقاطع."
       }
     }
   },
@@ -54,38 +81,38 @@
       "NL": {
         "question": "Welk bord verplicht u voorrang te verlenen aan bestuurders op de kruisende weg zonder dat u volledig moet stoppen?",
         "choices": [
-          {"text": "B1 â€“ Voorrang verlenen", "is_correct": true},
-          {"text": "B5 â€“ Stoppen en voorrang verlenen", "is_correct": false},
-          {"text": "B9 â€“ Voorrangsweg", "is_correct": false}
+          { "text": "B1 – Voorrang verlenen", "is_correct": true },
+          { "text": "B5 – Stoppen en voorrang verlenen", "is_correct": false },
+          { "text": "B9 – Voorrangsweg", "is_correct": false }
         ],
         "explanation": "B1 verplicht enkel tot het verlenen van voorrang. B5 vereist ook een volledige stilstand. B9 geeft aan dat u zelf voorrang heeft."
       },
       "EN": {
         "question": "Which sign requires you to give way to drivers on the crossing road without coming to a complete stop?",
         "choices": [
-          {"text": "B1 â€“ Give way", "is_correct": true},
-          {"text": "B5 â€“ Stop and give way", "is_correct": false},
-          {"text": "B9 â€“ Priority road", "is_correct": false}
+          { "text": "B1 – Give way", "is_correct": true },
+          { "text": "B5 – Stop and give way", "is_correct": false },
+          { "text": "B9 – Priority road", "is_correct": false }
         ],
         "explanation": "B1 only requires giving way. B5 requires a complete stop. B9 means you have priority."
       },
       "FR": {
-        "question": "Quel panneau vous oblige Ã  cÃ©der le passage aux conducteurs sur la route transversale sans s'arrÃªter complÃ¨tement ?",
+        "question": "Quel panneau vous oblige à céder le passage aux conducteurs sur la route transversale sans s'arrêter complètement ?",
         "choices": [
-          {"text": "B1 â€“ CÃ©dez le passage", "is_correct": true},
-          {"text": "B5 â€“ Stop et cÃ©dez le passage", "is_correct": false},
-          {"text": "B9 â€“ Route prioritaire", "is_correct": false}
+          { "text": "B1 – Cédez le passage", "is_correct": true },
+          { "text": "B5 – Stop et cédez le passage", "is_correct": false },
+          { "text": "B9 – Route prioritaire", "is_correct": false }
         ],
-        "explanation": "B1 impose uniquement de cÃ©der le passage. B5 exige un arrÃªt complet. B9 signifie que vous avez la prioritÃ©."
+        "explanation": "B1 impose uniquement de céder le passage. B5 exige un arrêt complet. B9 signifie que vous avez la priorité."
       },
       "AR": {
-        "question": "Ø£ÙŠ Ù„Ø§ÙØªØ© ØªÙÙ„Ø²Ù…Ùƒ Ø¨Ø¥Ø¹Ø·Ø§Ø¡ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© Ù„Ù„Ø³Ø§Ø¦Ù‚ÙŠÙ† Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ù…ØªÙ‚Ø§Ø·Ø¹ Ø¯ÙˆÙ† Ø§Ø´ØªØ±Ø§Ø· Ø§Ù„ØªÙˆÙ‚Ù Ø§Ù„ÙƒØ§Ù…Ù„ØŸ",
+        "question": "أي علامة تُلزمك بإعطاء الأولوية دون التوقف الكامل؟",
         "choices": [
-          {"text": "B1 â€“ Ø¥Ø¹Ø·Ø§Ø¡ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ©", "is_correct": true},
-          {"text": "B5 â€“ ØªÙˆÙ‚Ù ÙˆØ£Ø¹Ø· Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ©", "is_correct": false},
-          {"text": "B9 â€“ Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ©", "is_correct": false}
+          { "text": "B1 – إعطاء الأولوية", "is_correct": true },
+          { "text": "B5 – توقف وأعط الأولوية", "is_correct": false },
+          { "text": "B9 – طريق ذو أولوية", "is_correct": false }
         ],
-        "explanation": "B1 ÙŠÙÙ„Ø²Ù… ÙÙ‚Ø· Ø¨Ø¥Ø¹Ø·Ø§Ø¡ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ©. B5 ÙŠØ´ØªØ±Ø· Ø§Ù„ØªÙˆÙ‚Ù Ø§Ù„ÙƒØ§Ù…Ù„. B9 ÙŠØ¹Ù†ÙŠ Ø£Ù† Ù„Ø¯ÙŠÙƒ Ø­Ù‚ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ©."
+        "explanation": "B1 يُلزم فقط بإعطاء الأولوية. B5 يشترط التوقف الكامل. B9 يعني أن لديك حق الأولوية."
       }
     }
   },
@@ -99,38 +126,65 @@
       "NL": {
         "question": "Op welk gevaar attendeert dit verkeersbord?",
         "choices": [
-          {"text": "Kruisend verkeer op de dwarsweg dat voorrang heeft", "is_correct": true},
-          {"text": "Een rijbaanversmalling door wegwerkzaamheden", "is_correct": false},
-          {"text": "Een gevaarlijke bocht met verminderd zicht", "is_correct": false}
+          {
+            "text": "Kruisend verkeer op de dwarsweg dat voorrang heeft",
+            "is_correct": true
+          },
+          {
+            "text": "Een rijbaanversmalling door wegwerkzaamheden",
+            "is_correct": false
+          },
+          {
+            "text": "Een gevaarlijke bocht met verminderd zicht",
+            "is_correct": false
+          }
         ],
-        "explanation": "Dit bord attendeert u op de aanwezigheid van kruisend verkeer dat voorrang heeft. U bent verplicht dit verkeer voor te laten gaan."
+        "explanation": "Dit bord attendeert u op de aanwezigheid van kruisend verkeer dat voorrang heeft op het kruispunt."
       },
       "EN": {
         "question": "What hazard does this traffic sign alert you to?",
         "choices": [
-          {"text": "Crossing traffic on the side road that has right of way", "is_correct": true},
-          {"text": "A road narrowing due to roadworks", "is_correct": false},
-          {"text": "A dangerous bend with reduced visibility", "is_correct": false}
+          {
+            "text": "Crossing traffic on the side road that has right of way",
+            "is_correct": true
+          },
+          { "text": "A road narrowing due to roadworks", "is_correct": false },
+          {
+            "text": "A dangerous bend with reduced visibility",
+            "is_correct": false
+          }
         ],
-        "explanation": "This sign alerts you to crossing traffic that has right of way. You are required to let that traffic go first."
+        "explanation": "This sign warns you of crossing traffic that has priority at the junction."
       },
       "FR": {
-        "question": "Ã€ quel danger ce panneau vous avertit-il ?",
+        "question": "À quel danger ce panneau vous avertit-il ?",
         "choices": [
-          {"text": "Le trafic croisÃ© sur la route transversale qui a la prioritÃ©", "is_correct": true},
-          {"text": "Un rÃ©trÃ©cissement de la chaussÃ©e dÃ» Ã  des travaux", "is_correct": false},
-          {"text": "Un virage dangereux avec visibilitÃ© rÃ©duite", "is_correct": false}
+          {
+            "text": "Le trafic croisé sur la route transversale qui a la priorité",
+            "is_correct": true
+          },
+          {
+            "text": "Un rétrécissement de la chaussée dû à des travaux",
+            "is_correct": false
+          },
+          {
+            "text": "Un virage dangereux avec visibilité réduite",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ce panneau vous avertit de la prÃ©sence de trafic croisÃ© qui a la prioritÃ©. Vous devez le laisser passer en premier."
+        "explanation": "Ce panneau vous avertit de la présence de trafic croisé qui a la priorité au carrefour."
       },
       "AR": {
-        "question": "Ù…Ø§ Ø§Ù„Ø®Ø·Ø± Ø§Ù„Ø°ÙŠ ØªÙ†Ø¨Ù‘Ù‡Ùƒ Ø¥Ù„ÙŠÙ‡ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ",
+        "question": "ما هو الخطر الذي تشير إليه هذه العلامة المرورية؟",
         "choices": [
-          {"text": "Ø­Ø±ÙƒØ© Ù…Ø±ÙˆØ± Ù…ØªÙ‚Ø§Ø·Ø¹Ø© Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„ÙØ±Ø¹ÙŠ Ù„Ù‡Ø§ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ©", "is_correct": true},
-          {"text": "ØªØ¶ÙŠÙŠÙ‚ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø¨Ø³Ø¨Ø¨ Ø£Ø¹Ù…Ø§Ù„ Ø§Ù„Ø¨Ù†Ø§Ø¡", "is_correct": false},
-          {"text": "Ù…Ù†Ø¹Ø·Ù Ø®Ø·ÙŠØ± Ø¨Ù…Ø±Ø¦ÙŠØ© Ù…Ø­Ø¯ÙˆØ¯Ø©", "is_correct": false}
+          {
+            "text": "حركة مرور متقاطعة على الطريق الفرعي لها الأولوية",
+            "is_correct": true
+          },
+          { "text": "تضييق الطريق بسبب أعمال البناء", "is_correct": false },
+          { "text": "منعطف خطير بمرئية محدودة", "is_correct": false }
         ],
-        "explanation": "ØªÙ†Ø¨Ù‘Ù‡Ùƒ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ© Ø¥Ù„Ù‰ ÙˆØ¬ÙˆØ¯ Ø­Ø±ÙƒØ© Ù…Ø±ÙˆØ± Ù…ØªÙ‚Ø§Ø·Ø¹Ø© Ù„Ù‡Ø§ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ©. Ø£Ù†Øª Ù…Ù„Ø²Ù… Ø¨Ø¥ÙØ³Ø§Ø­ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ù„Ù‡Ø§ Ø£ÙˆÙ„Ø§Ù‹."
+        "explanation": "تنبّهك هذه العلامة إلى وجود حركة مرور متقاطعة لها الأولوية عند التقاطع."
       }
     }
   },
@@ -144,38 +198,74 @@
       "NL": {
         "question": "Wat moet u doen als u dit verkeersbord ziet?",
         "choices": [
-          {"text": "Vaart minderen en voorrang verlenen aan alle bestuurders op de kruisende weg", "is_correct": true},
-          {"text": "Volledig stoppen voor de stopstreep en wachten tot de weg vrij is", "is_correct": false},
-          {"text": "Met voorrang doorrijden want u rijdt op de hoofdweg", "is_correct": false}
+          {
+            "text": "Vaart minderen en voorrang verlenen aan alle bestuurders op de kruisende weg",
+            "is_correct": true
+          },
+          {
+            "text": "Volledig stoppen voor de stopstreep en wachten tot de weg vrij is",
+            "is_correct": false
+          },
+          {
+            "text": "Met voorrang doorrijden want u rijdt op de hoofdweg",
+            "is_correct": false
+          }
         ],
-        "explanation": "Bij bord B1 moet u uw snelheid aanpassen en voorrang verlenen. Volledig stoppen is niet verplicht, maar u moet klaarstaan om te cederen."
+        "explanation": "Bij bord B1 dient u uw snelheid aan te passen en klaarstaan om voorrang te verlenen. Volledig stoppen is niet verplicht."
       },
       "EN": {
         "question": "What must you do when you see this traffic sign?",
         "choices": [
-          {"text": "Reduce speed and give way to all drivers on the crossing road", "is_correct": true},
-          {"text": "Stop completely before the stop line and wait until the road is clear", "is_correct": false},
-          {"text": "Continue with priority because you are on the main road", "is_correct": false}
+          {
+            "text": "Reduce speed and give way to all drivers on the crossing road",
+            "is_correct": true
+          },
+          {
+            "text": "Stop completely before the stop line and wait until the road is clear",
+            "is_correct": false
+          },
+          {
+            "text": "Continue with priority because you are on the main road",
+            "is_correct": false
+          }
         ],
-        "explanation": "At sign B1 you must adjust your speed and give way. A complete stop is not mandatory, but you must be ready to yield."
+        "explanation": "At sign B1 you should slow down if needed and be ready to give way. A complete stop is not required."
       },
       "FR": {
         "question": "Que devez-vous faire lorsque vous voyez ce panneau ?",
         "choices": [
-          {"text": "RÃ©duire la vitesse et cÃ©der le passage Ã  tous les conducteurs sur la route transversale", "is_correct": true},
-          {"text": "S'arrÃªter complÃ¨tement avant la ligne d'arrÃªt et attendre que la voie soit libre", "is_correct": false},
-          {"text": "Continuer en prioritÃ© car vous Ãªtes sur la route principale", "is_correct": false}
+          {
+            "text": "Réduire la vitesse et céder le passage à tous les conducteurs sur la route transversale",
+            "is_correct": true
+          },
+          {
+            "text": "S'arrêter complètement avant la ligne d'arrêt et attendre que la voie soit libre",
+            "is_correct": false
+          },
+          {
+            "text": "Continuer en priorité car vous êtes sur la route principale",
+            "is_correct": false
+          }
         ],
-        "explanation": "Au panneau B1, vous devez adapter votre vitesse et cÃ©der le passage. Un arrÃªt complet n'est pas obligatoire, mais vous devez Ãªtre prÃªt Ã  laisser passer."
+        "explanation": "Au panneau B1, adaptez votre vitesse si nécessaire et soyez prêt à céder le passage. Un arrêt complet n'est pas obligatoire."
       },
       "AR": {
-        "question": "Ù…Ø§Ø°Ø§ ÙŠØ¬Ø¨ Ø¹Ù„ÙŠÙƒ Ø£Ù† ØªÙØ¹Ù„ Ø¹Ù†Ø¯ Ø±Ø¤ÙŠØ© Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ",
+        "question": "ماذا يجب عليك أن تفعل عند رؤية هذه العلامة المرورية؟",
         "choices": [
-          {"text": "ØªØ®ÙÙŠÙ Ø§Ù„Ø³Ø±Ø¹Ø© ÙˆØ¥Ø¹Ø·Ø§Ø¡ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© Ù„Ø¬Ù…ÙŠØ¹ Ø§Ù„Ø³Ø§Ø¦Ù‚ÙŠÙ† Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ù…ØªÙ‚Ø§Ø·Ø¹", "is_correct": true},
-          {"text": "Ø§Ù„ØªÙˆÙ‚Ù Ø§Ù„ÙƒØ§Ù…Ù„ Ù‚Ø¨Ù„ Ø®Ø· Ø§Ù„Ø¥ÙŠÙ‚Ø§Ù ÙˆØ§Ù„Ø§Ù†ØªØ¸Ø§Ø± Ø­ØªÙ‰ ÙŠØ®Ù„Ùˆ Ø§Ù„Ø·Ø±ÙŠÙ‚", "is_correct": false},
-          {"text": "Ø§Ù„Ø§Ø³ØªÙ…Ø±Ø§Ø± Ø¨Ø§Ù„Ø³ÙŠØ± Ø¨Ø£ÙˆÙ„ÙˆÙŠØ© Ù„Ø£Ù†Ùƒ Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø±Ø¦ÙŠØ³ÙŠ", "is_correct": false}
+          {
+            "text": "تخفيف السرعة وإعطاء الأولوية لجميع السائقين على الطريق المتقاطع",
+            "is_correct": true
+          },
+          {
+            "text": "التوقف الكامل قبل خط الإيقاف والانتظار حتى يخلو الطريق",
+            "is_correct": false
+          },
+          {
+            "text": "الاستمرار بالسير بأولوية لأنك على الطريق الرئيسي",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ø¹Ù†Ø¯ Ù„Ø§ÙØªØ© B1 ÙŠØ¬Ø¨ ØªØ®ÙÙŠÙ Ø§Ù„Ø³Ø±Ø¹Ø© ÙˆØ¥Ø¹Ø·Ø§Ø¡ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ©. Ø§Ù„ØªÙˆÙ‚Ù Ø§Ù„ÙƒØ§Ù…Ù„ Ù„ÙŠØ³ Ø¥Ù„Ø²Ø§Ù…ÙŠØ§Ù‹ Ù„ÙƒÙ† ÙŠØ¬Ø¨ Ø§Ù„Ø§Ø³ØªØ¹Ø¯Ø§Ø¯ Ù„Ù„ØªÙ†Ø§Ø²Ù„ Ø¹Ù† Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ©."
+        "explanation": "عند علامة B1 يجب تخفيف السرعة إن لزم والاستعداد لإفساح المجال. التوقف الكامل ليس إلزامياً."
       }
     }
   },
@@ -189,38 +279,74 @@
       "NL": {
         "question": "U nadert een kruispunt met bord B1. Een voertuig rijdt van rechts op de kruisende weg. Wat doet u?",
         "choices": [
-          {"text": "U verleent voorrang aan het voertuig van rechts en laat het passeren", "is_correct": true},
-          {"text": "U rijdt door want het voertuig komt van rechts en bij bord B1 heeft u altijd voorrang", "is_correct": false},
-          {"text": "U stopt volledig totdat de bestuurder u een teken geeft om door te rijden", "is_correct": false}
+          {
+            "text": "U verleent voorrang aan het voertuig van rechts en laat het passeren",
+            "is_correct": true
+          },
+          {
+            "text": "U rijdt door want het voertuig komt van rechts en bij bord B1 heeft u altijd voorrang",
+            "is_correct": false
+          },
+          {
+            "text": "U stopt volledig totdat de bestuurder u een teken geeft om door te rijden",
+            "is_correct": false
+          }
         ],
         "explanation": "Bij bord B1 moet u altijd voorrang verlenen aan bestuurders op de kruisende weg, ongeacht de zijde van nadering."
       },
       "EN": {
         "question": "You are approaching a junction with sign B1. A vehicle from the right is on the crossing road. What do you do?",
         "choices": [
-          {"text": "You give way to the vehicle from the right and let it pass", "is_correct": true},
-          {"text": "You continue because the vehicle comes from the right and at sign B1 you always have priority", "is_correct": false},
-          {"text": "You stop completely until the driver gives you a signal to proceed", "is_correct": false}
+          {
+            "text": "You give way to the vehicle from the right and let it pass",
+            "is_correct": true
+          },
+          {
+            "text": "You continue because the vehicle comes from the right and at sign B1 you always have priority",
+            "is_correct": false
+          },
+          {
+            "text": "You stop completely until the driver gives you a signal to proceed",
+            "is_correct": false
+          }
         ],
         "explanation": "At sign B1 you must always give way to drivers on the crossing road, regardless of which side they approach from."
       },
       "FR": {
-        "question": "Vous approchez d'un carrefour avec le panneau B1. Un vÃ©hicule venant de droite est sur la route transversale. Que faites-vous ?",
+        "question": "Vous approchez d'un carrefour avec le panneau B1. Un véhicule venant de droite est sur la route transversale. Que faites-vous ?",
         "choices": [
-          {"text": "Vous cÃ©dez le passage au vÃ©hicule venant de droite et le laissez passer", "is_correct": true},
-          {"text": "Vous continuez car le vÃ©hicule vient de droite et au panneau B1 vous avez toujours la prioritÃ©", "is_correct": false},
-          {"text": "Vous vous arrÃªtez complÃ¨tement jusqu'Ã  ce que le conducteur vous fasse signe de passer", "is_correct": false}
+          {
+            "text": "Vous cédez le passage au véhicule venant de droite et le laissez passer",
+            "is_correct": true
+          },
+          {
+            "text": "Vous continuez car le véhicule vient de droite et au panneau B1 vous avez toujours la priorité",
+            "is_correct": false
+          },
+          {
+            "text": "Vous vous arrêtez complètement jusqu'à ce que le conducteur vous fasse signe de passer",
+            "is_correct": false
+          }
         ],
-        "explanation": "Au panneau B1, vous devez toujours cÃ©der le passage aux conducteurs sur la route transversale, quelle que soit la direction d'approche."
+        "explanation": "Au panneau B1, vous devez toujours céder le passage aux conducteurs sur la route transversale, quelle que soit la direction d'approche."
       },
       "AR": {
-        "question": "Ø£Ù†Øª ØªÙ‚ØªØ±Ø¨ Ù…Ù† ØªÙ‚Ø§Ø·Ø¹ Ø¨Ù‡ Ù„Ø§ÙØªØ© B1. ØªÙ‚ØªØ±Ø¨ Ø³ÙŠØ§Ø±Ø© Ù…Ù† Ø§Ù„ÙŠÙ…ÙŠÙ† Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ù…ØªÙ‚Ø§Ø·Ø¹. Ù…Ø§Ø°Ø§ ØªÙØ¹Ù„ØŸ",
+        "question": "أنت تقترب من تقاطع به علامة مرورية B1. تقترب سيارة من اليمين على الطريق المتقاطع. ماذا تفعل؟",
         "choices": [
-          {"text": "ØªØ¹Ø·ÙŠ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© Ù„Ù„Ù…Ø±ÙƒØ¨Ø© Ø§Ù„Ù‚Ø§Ø¯Ù…Ø© Ù…Ù† Ø§Ù„ÙŠÙ…ÙŠÙ† ÙˆØªØ¯Ø¹Ù‡Ø§ ØªÙ…Ø±", "is_correct": true},
-          {"text": "ØªØ³ØªÙ…Ø± ÙÙŠ Ø§Ù„Ø³ÙŠØ± Ù„Ø£Ù† Ø§Ù„Ù…Ø±ÙƒØ¨Ø© Ù‚Ø§Ø¯Ù…Ø© Ù…Ù† Ø§Ù„ÙŠÙ…ÙŠÙ† ÙˆØ¹Ù†Ø¯ Ù„Ø§ÙØªØ© B1 Ù„Ø¯ÙŠÙƒ Ø¯Ø§Ø¦Ù…Ø§Ù‹ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ©", "is_correct": false},
-          {"text": "ØªØªÙˆÙ‚Ù ØªÙ…Ø§Ù…Ø§Ù‹ Ø­ØªÙ‰ ÙŠØ´ÙŠØ± Ø¥Ù„ÙŠÙƒ Ø§Ù„Ø³Ø§Ø¦Ù‚ Ø¨Ø§Ù„Ù…Ø¶ÙŠ", "is_correct": false}
+          {
+            "text": "تعطي الأولوية للمركبة القادمة من اليمين وتدعها تمر",
+            "is_correct": true
+          },
+          {
+            "text": "تستمر في السير لأن المركبة قادمة من اليمين وعند علامة مرورية B1 لديك دائماً الأولوية",
+            "is_correct": false
+          },
+          {
+            "text": "تتوقف تماماً حتى يشير إليك السائق بالمضي",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ø¹Ù†Ø¯ Ù„Ø§ÙØªØ© B1 ÙŠØ¬Ø¨ Ø¯Ø§Ø¦Ù…Ø§Ù‹ Ø¥Ø¹Ø·Ø§Ø¡ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© Ù„Ù„Ø³Ø§Ø¦Ù‚ÙŠÙ† Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ù…ØªÙ‚Ø§Ø·Ø¹ Ø¨ØºØ¶ Ø§Ù„Ù†Ø¸Ø± Ø¹Ù† Ø¬Ø§Ù†Ø¨ Ø§Ù‚ØªØ±Ø§Ø¨Ù‡Ù…."
+        "explanation": "عند علامة مرورية B1 يجب دائماً إعطاء الأولوية للسائقين على الطريق المتقاطع بغض النظر عن جانب اقترابهم."
       }
     }
   },
@@ -234,38 +360,74 @@
       "NL": {
         "question": "Wat is het verschil in gedragsregel dat bord B1 vereist ten opzichte van bord B5?",
         "choices": [
-          {"text": "Bij B1 volstaat het verlenen van voorrang; bij B5 moet u ook volledig tot stilstand komen", "is_correct": true},
-          {"text": "B1 en B5 hebben identiek dezelfde gedragsregel voor de bestuurder", "is_correct": false},
-          {"text": "B5 verplicht enkel tot voorrang verlenen; B1 vereist ook een volledige stilstand", "is_correct": false}
+          {
+            "text": "Bij B1 volstaat het verlenen van voorrang; bij B5 moet u ook volledig tot stilstand komen",
+            "is_correct": true
+          },
+          {
+            "text": "B1 en B5 hebben identiek dezelfde gedragsregel voor de bestuurder",
+            "is_correct": false
+          },
+          {
+            "text": "B5 verplicht enkel tot voorrang verlenen; B1 vereist ook een volledige stilstand",
+            "is_correct": false
+          }
         ],
         "explanation": "Hoofdverschil: bij B1 volstaat voorrang verlenen zonder stop; bij B5 bent u verplicht eerst volledig te stoppen en daarna voorrang te verlenen."
       },
       "EN": {
         "question": "What is the difference in required behaviour between sign B1 and sign B5?",
         "choices": [
-          {"text": "At B1 giving way is sufficient; at B5 you must also come to a complete stop", "is_correct": true},
-          {"text": "B1 and B5 require exactly the same behaviour from the driver", "is_correct": false},
-          {"text": "B5 only requires giving way; B1 also requires a complete stop", "is_correct": false}
+          {
+            "text": "At B1 giving way is sufficient; at B5 you must also come to a complete stop",
+            "is_correct": true
+          },
+          {
+            "text": "B1 and B5 require exactly the same behaviour from the driver",
+            "is_correct": false
+          },
+          {
+            "text": "B5 only requires giving way; B1 also requires a complete stop",
+            "is_correct": false
+          }
         ],
         "explanation": "Key difference: at B1 giving way without stopping is sufficient; at B5 you are required to stop completely first and then give way."
       },
       "FR": {
-        "question": "Quelle est la diffÃ©rence de comportement requis entre le panneau B1 et le panneau B5 ?",
+        "question": "Quelle est la différence de comportement requis entre le panneau B1 et le panneau B5 ?",
         "choices": [
-          {"text": "Avec B1, cÃ©der le passage suffit ; avec B5, vous devez aussi vous arrÃªter complÃ¨tement", "is_correct": true},
-          {"text": "B1 et B5 exigent exactement le mÃªme comportement du conducteur", "is_correct": false},
-          {"text": "B5 exige uniquement de cÃ©der le passage ; B1 exige aussi un arrÃªt complet", "is_correct": false}
+          {
+            "text": "Avec B1, céder le passage suffit ; avec B5, vous devez aussi vous arrêter complètement",
+            "is_correct": true
+          },
+          {
+            "text": "B1 et B5 exigent exactement le même comportement du conducteur",
+            "is_correct": false
+          },
+          {
+            "text": "B5 exige uniquement de céder le passage ; B1 exige aussi un arrêt complet",
+            "is_correct": false
+          }
         ],
-        "explanation": "DiffÃ©rence clÃ© : avec B1, cÃ©der le passage sans s'arrÃªter suffit ; avec B5, vous Ãªtes obligÃ© de vous arrÃªter complÃ¨tement d'abord, puis de cÃ©der le passage."
+        "explanation": "Différence clé : avec B1, céder le passage sans s'arrêter suffit ; avec B5, vous êtes obligé de vous arrêter complètement d'abord, puis de céder le passage."
       },
       "AR": {
-        "question": "Ù…Ø§ Ø§Ù„ÙØ±Ù‚ ÙÙŠ Ø§Ù„Ø³Ù„ÙˆÙƒ Ø§Ù„Ù…Ø·Ù„ÙˆØ¨ Ø¨ÙŠÙ† Ø§Ù„Ù„Ø§ÙØªØ© B1 ÙˆØ§Ù„Ù„Ø§ÙØªØ© B5ØŸ",
+        "question": "ما الفرق في السلوك المطلوب بين العلامة المرورية B1 والعلامة المرورية B5؟",
         "choices": [
-          {"text": "Ø¹Ù†Ø¯ B1 ÙŠÙƒÙÙŠ Ø¥Ø¹Ø·Ø§Ø¡ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ©Ø› Ø¹Ù†Ø¯ B5 ÙŠØ¬Ø¨ Ø£ÙŠØ¶Ø§Ù‹ Ø§Ù„ØªÙˆÙ‚Ù Ø§Ù„ÙƒØ§Ù…Ù„", "is_correct": true},
-          {"text": "B1 ÙˆB5 ÙŠØªØ·Ù„Ø¨Ø§Ù† Ø¨Ø§Ù„Ø¶Ø¨Ø· Ù†ÙØ³ Ø§Ù„Ø³Ù„ÙˆÙƒ Ù…Ù† Ø§Ù„Ø³Ø§Ø¦Ù‚", "is_correct": false},
-          {"text": "B5 ÙŠÙÙ„Ø²Ù… ÙÙ‚Ø· Ø¨Ø¥Ø¹Ø·Ø§Ø¡ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ©Ø› B1 ÙŠÙÙ„Ø²Ù… Ø£ÙŠØ¶Ø§Ù‹ Ø¨Ø§Ù„ØªÙˆÙ‚Ù Ø§Ù„ÙƒØ§Ù…Ù„", "is_correct": false}
+          {
+            "text": "عند B1 يكفي إعطاء الأولوية؛ عند B5 يجب أيضاً التوقف الكامل",
+            "is_correct": true
+          },
+          {
+            "text": "B1 وB5 يتطلبان بالضبط نفس السلوك من السائق",
+            "is_correct": false
+          },
+          {
+            "text": "B5 يُلزم فقط بإعطاء الأولوية؛ B1 يُلزم أيضاً بالتوقف الكامل",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ø§Ù„ÙØ±Ù‚ Ø§Ù„Ø±Ø¦ÙŠØ³ÙŠ: Ø¹Ù†Ø¯ B1 ÙŠÙƒÙÙŠ Ø¥Ø¹Ø·Ø§Ø¡ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© Ø¯ÙˆÙ† Ø§Ù„ØªÙˆÙ‚ÙØ› Ø¹Ù†Ø¯ B5 ÙŠÙÙ„Ø²Ù… Ø¨Ø§Ù„ØªÙˆÙ‚Ù Ø§Ù„ÙƒØ§Ù…Ù„ Ø£ÙˆÙ„Ø§Ù‹ Ø«Ù… Ø¥Ø¹Ø·Ø§Ø¡ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ©."
+        "explanation": "الفرق الرئيسي: عند B1 يكفي إعطاء الأولوية دون التوقف؛ عند B5 يُلزم بالتوقف الكامل أولاً ثم إعطاء الأولوية."
       }
     }
   },
@@ -279,34 +441,58 @@
       "NL": {
         "question": "U nadert een kruispunt met bord B1 en er is geen enkel voertuig zichtbaar. Mag u doorrijden zonder uw snelheid te verminderen?",
         "choices": [
-          {"text": "Nee, u moet altijd vaart minderen en klaarstaan om voorrang te verlenen, ook bij geen zichtbaar verkeer", "is_correct": true},
-          {"text": "Ja, als er geen verkeer zichtbaar is, mag u doorrijden op normale snelheid", "is_correct": false}
+          {
+            "text": "Nee, u moet klaarstaan om voorrang te verlenen en de kruising gecontroleerd naderen, ook als er geen verkeer zichtbaar is",
+            "is_correct": true
+          },
+          {
+            "text": "Ja, als er geen verkeer zichtbaar is, mag u doorrijden op normale snelheid",
+            "is_correct": false
+          }
         ],
-        "explanation": "Bord B1 verplicht u steeds vaart te minderen. U kunt niet uitsluiten dat er verkeer nadert dat momenteel nog niet zichtbaar is."
+        "explanation": "Bij bord B1 moet u steeds klaarstaan om voorrang te verlenen. U kunt niet uitsluiten dat er verkeer nadert dat momenteel nog niet zichtbaar is."
       },
       "EN": {
         "question": "You are approaching a junction with sign B1 and no vehicle is visible. May you continue without reducing your speed?",
         "choices": [
-          {"text": "No, you must always reduce speed and be ready to give way, even if no traffic is visible", "is_correct": true},
-          {"text": "Yes, if no traffic is visible you may continue at normal speed", "is_correct": false}
+          {
+            "text": "No, you should approach in a controlled way and be ready to give way if necessary, even if no traffic is visible",
+            "is_correct": true
+          },
+          {
+            "text": "Yes, if no traffic is visible you may continue at normal speed",
+            "is_correct": false
+          }
         ],
-        "explanation": "Sign B1 always requires you to reduce speed. You cannot rule out that traffic is approaching and not yet visible."
+        "explanation": "At sign B1 you should always be prepared to give way. You cannot rule out that traffic is approaching and not yet visible."
       },
       "FR": {
-        "question": "Vous approchez d'un carrefour avec le panneau B1 et aucun vÃ©hicule n'est visible. Pouvez-vous continuer sans rÃ©duire votre vitesse ?",
+        "question": "Vous approchez d'un carrefour avec le panneau B1 et aucun véhicule n'est visible. Pouvez-vous continuer sans réduire votre vitesse ?",
         "choices": [
-          {"text": "Non, vous devez toujours rÃ©duire la vitesse et Ãªtre prÃªt Ã  cÃ©der le passage, mÃªme si aucun trafic n'est visible", "is_correct": true},
-          {"text": "Oui, si aucun trafic n'est visible, vous pouvez continuer Ã  vitesse normale", "is_correct": false}
+          {
+            "text": "Non, vous devez approcher de manière contrôlée et être prêt à céder le passage si nécessaire, même si aucun trafic n'est visible",
+            "is_correct": true
+          },
+          {
+            "text": "Oui, si aucun trafic n'est visible, vous pouvez continuer à vitesse normale",
+            "is_correct": false
+          }
         ],
-        "explanation": "Le panneau B1 vous oblige toujours Ã  rÃ©duire la vitesse. Vous ne pouvez pas exclure que du trafic approche sans Ãªtre encore visible."
+        "explanation": "Avec le panneau B1, vous devez toujours être prêt à céder le passage. Vous ne pouvez pas exclure que du trafic approche sans être encore visible."
       },
       "AR": {
-        "question": "Ø£Ù†Øª ØªÙ‚ØªØ±Ø¨ Ù…Ù† ØªÙ‚Ø§Ø·Ø¹ Ø¨Ù‡ Ù„Ø§ÙØªØ© B1 ÙˆÙ„Ø§ ØªÙØ±Ù‰ Ø£ÙŠ Ù…Ø±ÙƒØ¨Ø©. Ù‡Ù„ ÙŠØ¬ÙˆØ² Ù„Ùƒ Ø§Ù„Ø§Ø³ØªÙ…Ø±Ø§Ø± Ø¯ÙˆÙ† ØªØ®ÙÙŠÙ Ø³Ø±Ø¹ØªÙƒØŸ",
+        "question": "أنت تقترب من تقاطع به علامة مرورية B1 ولا تُرى أي مركبة. هل يجوز لك الاستمرار دون تخفيف سرعتك؟",
         "choices": [
-          {"text": "Ù„Ø§ØŒ ÙŠØ¬Ø¨ Ø¯Ø§Ø¦Ù…Ø§Ù‹ ØªØ®ÙÙŠÙ Ø§Ù„Ø³Ø±Ø¹Ø© ÙˆØ§Ù„Ø§Ø³ØªØ¹Ø¯Ø§Ø¯ Ù„Ø¥Ø¹Ø·Ø§Ø¡ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© Ø­ØªÙ‰ Ù„Ùˆ Ù„Ù… ÙŠÙƒÙ† Ù‡Ù†Ø§Ùƒ Ø­Ø±ÙƒØ© Ù…Ø±ÙˆØ± Ù…Ø±Ø¦ÙŠØ©", "is_correct": true},
-          {"text": "Ù†Ø¹Ù…ØŒ Ø¥Ø°Ø§ Ù„Ù… ØªÙƒÙ† Ù‡Ù†Ø§Ùƒ Ø­Ø±ÙƒØ© Ù…Ø±ÙˆØ± Ù…Ø±Ø¦ÙŠØ© ÙŠØ¬ÙˆØ² Ù„Ùƒ Ø§Ù„Ø§Ø³ØªÙ…Ø±Ø§Ø± Ø¨Ø§Ù„Ø³Ø±Ø¹Ø© Ø§Ù„Ø¹Ø§Ø¯ÙŠØ©", "is_correct": false}
+          {
+            "text": "لا، يجب الاقتراب بطريقة منضبطة والاستعداد لإفساح المجال إن لزم، حتى لو لم يكن هناك حركة مرور مرئية",
+            "is_correct": true
+          },
+          {
+            "text": "نعم، إذا لم تكن هناك حركة مرور مرئية يجوز لك الاستمرار بالسرعة العادية",
+            "is_correct": false
+          }
         ],
-        "explanation": "ØªÙÙ„Ø²Ù…Ùƒ Ù„Ø§ÙØªØ© B1 Ø¯Ø§Ø¦Ù…Ø§Ù‹ Ø¨ØªØ®ÙÙŠÙ Ø§Ù„Ø³Ø±Ø¹Ø©. Ù„Ø§ ÙŠÙ…ÙƒÙ†Ùƒ Ø§Ø³ØªØ¨Ø¹Ø§Ø¯ ÙˆØ¬ÙˆØ¯ Ø­Ø±ÙƒØ© Ù…Ø±ÙˆØ± Ù‚Ø§Ø¯Ù…Ø© ØºÙŠØ± Ù…Ø±Ø¦ÙŠØ© Ø¨Ø¹Ø¯."
+        "explanation": "عند علامة B1 يجب دائماً أن تكون مستعداً لإفساح المجال. لا يمكنك استبعاد وجود حركة مرور قادمة غير مرئية بعد."
       }
     }
   },
@@ -320,34 +506,58 @@
       "NL": {
         "question": "U staat voor een kruispunt met bord B1 en een fietser steekt over via de dwarsweg. Bent u verplicht de fietser voor te laten gaan?",
         "choices": [
-          {"text": "Ja, bij bord B1 moet u voorrang verlenen aan alle bestuurders op de kruisende weg, inclusief fietsers", "is_correct": true},
-          {"text": "Nee, bord B1 geldt enkel voor gemotoriseerd verkeer, niet voor fietsers", "is_correct": false}
+          {
+            "text": "Ja, bij bord B1 moet u voorrang verlenen aan alle bestuurders op de kruisende weg, inclusief fietsers",
+            "is_correct": true
+          },
+          {
+            "text": "Nee, bord B1 geldt enkel voor gemotoriseerd verkeer, niet voor fietsers",
+            "is_correct": false
+          }
         ],
         "explanation": "Bord B1 geldt voor alle bestuurders op de kruisende weg, inclusief fietsers en andere zwakke weggebruikers."
       },
       "EN": {
         "question": "You are at a junction with sign B1 and a cyclist is crossing via the side road. Must you give way to the cyclist?",
         "choices": [
-          {"text": "Yes, at sign B1 you must give way to all drivers on the crossing road, including cyclists", "is_correct": true},
-          {"text": "No, sign B1 only applies to motorised traffic, not to cyclists", "is_correct": false}
+          {
+            "text": "Yes, at sign B1 you must give way to all road users on the crossing road, including cyclists",
+            "is_correct": true
+          },
+          {
+            "text": "No, sign B1 only applies to motorised traffic, not to cyclists",
+            "is_correct": false
+          }
         ],
-        "explanation": "Sign B1 applies to all drivers on the crossing road, including cyclists and other vulnerable road users."
+        "explanation": "Sign B1 applies to all road users on the crossing road, including cyclists and other vulnerable users."
       },
       "FR": {
-        "question": "Vous Ãªtes Ã  un carrefour avec le panneau B1 et un cycliste traverse via la route transversale. ÃŠtes-vous obligÃ© de lui cÃ©der le passage ?",
+        "question": "Vous êtes à un carrefour avec le panneau B1 et un cycliste traverse via la route transversale. Êtes-vous obligé de lui céder le passage ?",
         "choices": [
-          {"text": "Oui, au panneau B1 vous devez cÃ©der le passage Ã  tous les conducteurs sur la route transversale, y compris les cyclistes", "is_correct": true},
-          {"text": "Non, le panneau B1 s'applique uniquement au trafic motorisÃ©, pas aux cyclistes", "is_correct": false}
+          {
+            "text": "Oui, au panneau B1 vous devez céder le passage à tous les conducteurs sur la route transversale, y compris les cyclistes",
+            "is_correct": true
+          },
+          {
+            "text": "Non, le panneau B1 s'applique uniquement au trafic motorisé, pas aux cyclistes",
+            "is_correct": false
+          }
         ],
-        "explanation": "Le panneau B1 s'applique Ã  tous les conducteurs sur la route transversale, y compris les cyclistes et les autres usagers vulnÃ©rables."
+        "explanation": "Le panneau B1 s'applique à tous les conducteurs sur la route transversale, y compris les cyclistes et les autres usagers vulnérables."
       },
       "AR": {
-        "question": "Ø£Ù†Øª Ø¹Ù†Ø¯ ØªÙ‚Ø§Ø·Ø¹ Ø¨Ù‡ Ù„Ø§ÙØªØ© B1 ÙˆÙŠØ¹Ø¨Ø± Ø¯Ø±Ø§Ø¬ÙŒ Ø¹Ø¨Ø± Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø¬Ø§Ù†Ø¨ÙŠ. Ù‡Ù„ Ø£Ù†Øª Ù…Ù„Ø²Ù… Ø¨Ø¥Ø¹Ø·Ø§Ø¦Ù‡ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ©ØŸ",
+        "question": "أنت عند تقاطع به علامة مرورية B1 ويعبر دراجٌ عبر الطريق الجانبي. هل أنت ملزم بإعطائه الأولوية؟",
         "choices": [
-          {"text": "Ù†Ø¹Ù…ØŒ Ø¹Ù†Ø¯ Ù„Ø§ÙØªØ© B1 ÙŠØ¬Ø¨ Ø¥Ø¹Ø·Ø§Ø¡ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© Ù„Ø¬Ù…ÙŠØ¹ Ø§Ù„Ø³Ø§Ø¦Ù‚ÙŠÙ† Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ù…ØªÙ‚Ø§Ø·Ø¹ Ø¨Ù…Ø§ ÙÙŠÙ‡Ù… Ø±Ø§ÙƒØ¨Ùˆ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª", "is_correct": true},
-          {"text": "Ù„Ø§ØŒ Ù„Ø§ÙØªØ© B1 ØªÙ†Ø·Ø¨Ù‚ ÙÙ‚Ø· Ø¹Ù„Ù‰ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø°Ø§Øª Ø§Ù„Ù…Ø­Ø±Ùƒ ÙˆÙ„ÙŠØ³ Ø¹Ù„Ù‰ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª", "is_correct": false}
+          {
+            "text": "نعم، عند علامة B1 يجب إفساح المجال لجميع مستخدمي الطريق المتقاطع بما فيهم راكبو الدراجات",
+            "is_correct": true
+          },
+          {
+            "text": "لا، علامة مرورية B1 تنطبق فقط على المركبات ذات المحرك وليس على الدراجات",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ù„Ø§ÙØªØ© B1 ØªÙ†Ø·Ø¨Ù‚ Ø¹Ù„Ù‰ Ø¬Ù…ÙŠØ¹ Ø§Ù„Ø³Ø§Ø¦Ù‚ÙŠÙ† Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ù…ØªÙ‚Ø§Ø·Ø¹ Ø¨Ù…Ø§ ÙÙŠÙ‡Ù… Ø±Ø§ÙƒØ¨Ùˆ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª ÙˆÙ…Ø³ØªØ®Ø¯Ù…Ùˆ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø¶Ø¹ÙØ§Ø¡."
+        "explanation": "علامة B1 تنطبق على جميع مستخدمي الطريق المتقاطع بما فيهم راكبو الدراجات ومستخدمو الطريق الضعفاء."
       }
     }
   }

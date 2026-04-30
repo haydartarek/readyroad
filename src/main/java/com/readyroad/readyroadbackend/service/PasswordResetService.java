@@ -37,6 +37,7 @@ public class PasswordResetService {
     private final PasswordResetTokenRepository  tokenRepository;
     private final EmailService                  emailService;
     private final PasswordEncoder               passwordEncoder;
+    private final BackendMessageService         messages;
 
     /**
      * Step 1 — Request a password reset.
@@ -73,13 +74,13 @@ public class PasswordResetService {
     @Transactional
     public void resetPassword(String token, String newPassword) {
         PasswordResetToken prt = tokenRepository.findByToken(token)
-                .orElseThrow(() -> new IllegalArgumentException("Invalid or expired reset link."));
+                .orElseThrow(() -> new IllegalArgumentException(messages.get("auth.reset_password.invalid_link")));
 
         if (prt.getUsed()) {
-            throw new IllegalArgumentException("This reset link has already been used.");
+            throw new IllegalArgumentException(messages.get("auth.reset_password.already_used"));
         }
         if (prt.isExpired()) {
-            throw new IllegalArgumentException("This reset link has expired. Please request a new one.");
+            throw new IllegalArgumentException(messages.get("auth.reset_password.expired"));
         }
 
         // Update password

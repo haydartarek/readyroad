@@ -6,8 +6,8 @@
 -- in the frontend's public/images/signs folder, causing 404 errors:
 --
 --   DANGER SIGNS (images now added to frontend public folder):
---     A11 Uitweg op kaai of oever.png              (file was missing from frontend)
---     A15 Gladde rijbaan - Slipgevaar.png          (file was missing from frontend)
+--     A11 Uitweg op een kaai of een oever.png              (file was missing from frontend)
+--     A15 Glibberige rijbaan.png          (file was missing from frontend)
 --     A21 Oversteekplaats voor voetgangers.png     (file was missing from frontend)
 --     A25 Oversteekplaats voor fietsers en bromfietsers.png  (file was missing from frontend)
 --

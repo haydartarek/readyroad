@@ -1,4 +1,4 @@
-﻿[
+[
   {
     "question_id": "F5_Q01",
     "type": "WHAT_DOES_IT_MEAN",
@@ -6,10 +6,78 @@
     "is_critical": false,
     "show_sign": true,
     "i18n": {
-      "NL": { "question": "Wat betekent bord F5 'Autosnelweg'?", "choices": [{ "text": "U rijdt een autosnelweg op; de specifieke autosnelwegregels zijn van toepassing (maximumsnelheid 120 km/u, minimumsnelheid 70 km/u, geen langzame voertuigen)", "is_correct": true }, { "text": "U rijdt een autoweg op waar u 90 km/u mag rijden", "is_correct": false }, { "text": "U rijdt een weg op die alleen voor vrachtwagens is bestemd", "is_correct": false }], "explanation": "F5 markeert het begin van een autosnelweg. Hier gelden de autosnelwegregels: max. 120 km/u, min. 70 km/u en een verbod op voertuigen die niet de minimumsnelheid kunnen halen." },
-      "EN": { "question": "What does sign F5 'Motorway start' mean?", "choices": [{ "text": "You are entering a motorway; motorway rules apply (maximum 120 km/h, minimum 70 km/h, no slow vehicles)", "is_correct": true }, { "text": "You are entering an expressway where you may drive at 90 km/h", "is_correct": false }, { "text": "You are entering a road reserved exclusively for lorries", "is_correct": false }], "explanation": "F5 marks the start of a motorway. Motorway rules apply: max. 120 km/h, min. 70 km/h, and a prohibition on vehicles incapable of reaching the minimum speed." },
-      "FR": { "question": "Que signifie le panneau F5 'Autoroute debut' ?", "choices": [{ "text": "Vous entrez sur une autoroute; les regles d autoroute s appliquent (max. 120 km/h, min. 70 km/h, pas de vehicules lents)", "is_correct": true }, { "text": "Vous entrez sur une route expresse ou vous pouvez rouler a 90 km/h", "is_correct": false }, { "text": "Vous entrez sur une route reservee exclusivement aux camions", "is_correct": false }], "explanation": "F5 marque le debut d une autoroute. Les regles autoroute s appliquent: max. 120 km/h, min. 70 km/h et interdiction aux vehicules incapables d atteindre la vitesse minimale." },
-      "AR": { "question": "Ù…Ø§ Ù…Ø¹Ù†Ù‰ Ø§Ù„Ù„Ø§ÙØªØ© F5 'Ø¨Ø¯Ø§ÙŠØ© Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø³Ø±ÙŠØ¹'ØŸ", "choices": [{ "text": "Ø£Ù†Øª ØªØ¯Ø®Ù„ Ø·Ø±ÙŠÙ‚Ø§Ù‹ Ø³Ø±ÙŠØ¹Ø§Ù‹Ø› ØªØ³Ø±ÙŠ Ù‚ÙˆØ§Ø¹Ø¯ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø³Ø±ÙŠØ¹ (Ø£Ù‚ØµÙ‰ 120 ÙƒÙ…/Ø³ØŒ ÙˆØ£Ø¯Ù†Ù‰ 70 ÙƒÙ…/Ø³ØŒ ÙˆÙ„Ø§ Ù…Ø±ÙƒØ¨Ø§Øª Ø¨Ø·ÙŠØ¦Ø©)", "is_correct": true }, { "text": "Ø£Ù†Øª ØªØ¯Ø®Ù„ Ø·Ø±ÙŠÙ‚Ø§Ù‹ Ø³Ø±ÙŠØ¹Ø§Ù‹ Ø­ÙŠØ« ÙŠÙ…ÙƒÙ†Ùƒ Ø§Ù„Ù‚ÙŠØ§Ø¯Ø© Ø¨Ø³Ø±Ø¹Ø© 90 ÙƒÙ…/Ø³", "is_correct": false }, { "text": "Ø£Ù†Øª ØªØ¯Ø®Ù„ Ø·Ø±ÙŠÙ‚Ø§Ù‹ Ù…Ø®ØµØµØ§Ù‹ Ø­ØµØ±Ø§Ù‹ Ù„Ù„Ø´Ø§Ø­Ù†Ø§Øª", "is_correct": false }], "explanation": "ØªØ­Ø¯Ø¯ F5 Ø¨Ø¯Ø§ÙŠØ© Ø·Ø±ÙŠÙ‚ Ø³Ø±ÙŠØ¹. ØªØ³Ø±ÙŠ Ù‚ÙˆØ§Ø¹Ø¯ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø³Ø±ÙŠØ¹: Ø£Ù‚ØµÙ‰ 120 ÙƒÙ…/Ø³ ÙˆØ£Ø¯Ù†Ù‰ 70 ÙƒÙ…/Ø³ ÙˆØ­Ø¸Ø± Ø¹Ù„Ù‰ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª ØºÙŠØ± Ø§Ù„Ù‚Ø§Ø¯Ø±Ø© Ø¹Ù„Ù‰ Ø¨Ù„ÙˆØº Ø§Ù„Ø­Ø¯ Ø§Ù„Ø£Ø¯Ù†Ù‰ Ù„Ù„Ø³Ø±Ø¹Ø©." }
+      "NL": {
+        "question": "Wat betekent bord F5 'Autosnelweg'?",
+        "choices": [
+          {
+            "text": "U rijdt een autosnelweg op; de specifieke autosnelwegregels zijn van toepassing (maximumsnelheid 120 km/u, minimumsnelheid 70 km/u, geen langzame voertuigen)",
+            "is_correct": true
+          },
+          {
+            "text": "U rijdt een autoweg op waar u 90 km/u mag rijden",
+            "is_correct": false
+          },
+          {
+            "text": "U rijdt een weg op die alleen voor vrachtwagens is bestemd",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F5 markeert het begin van een autosnelweg. Hier gelden de autosnelwegregels: max. 120 km/u, min. 70 km/u en een verbod op voertuigen die niet de minimumsnelheid kunnen halen."
+      },
+      "EN": {
+        "question": "What does sign F5 'Motorway start' mean?",
+        "choices": [
+          {
+            "text": "You are entering a motorway; motorway rules apply (maximum 120 km/h, minimum 70 km/h, no slow vehicles)",
+            "is_correct": true
+          },
+          {
+            "text": "You are entering an expressway where you may drive at 90 km/h",
+            "is_correct": false
+          },
+          {
+            "text": "You are entering a road reserved exclusively for lorries",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F5 marks the start of a motorway. Motorway rules apply: max. 120 km/h, min. 70 km/h, and a prohibition on vehicles incapable of reaching the minimum speed."
+      },
+      "FR": {
+        "question": "Que signifie le panneau F5 'Autoroute debut' ?",
+        "choices": [
+          {
+            "text": "Vous entrez sur une autoroute; les regles d autoroute s appliquent (max. 120 km/h, min. 70 km/h, pas de vehicules lents)",
+            "is_correct": true
+          },
+          {
+            "text": "Vous entrez sur une route expresse ou vous pouvez rouler a 90 km/h",
+            "is_correct": false
+          },
+          {
+            "text": "Vous entrez sur une route reservee exclusivement aux camions",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F5 marque le debut d une autoroute. Les regles autoroute s appliquent: max. 120 km/h, min. 70 km/h et interdiction aux vehicules incapables d atteindre la vitesse minimale."
+      },
+      "AR": {
+        "question": "ما معنى هذه العلامة المرورية؟",
+        "choices": [
+          {
+            "text": "أنت تدخل طريقاً سريعاً؛ تسري قواعد الطريق السريع (أقصى 120 كم/س، وأدنى 70 كم/س، ولا مركبات بطيئة)",
+            "is_correct": true
+          },
+          {
+            "text": "أنت تدخل طريقاً سريعاً حيث يمكنك القيادة بسرعة 90 كم/س",
+            "is_correct": false
+          },
+          {
+            "text": "أنت تدخل طريقاً مخصصاً حصراً للشاحنات",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تحدد F5 بداية طريق سريع. تسري قواعد الطريق السريع: أقصى 120 كم/س وأدنى 70 كم/س وحظر على المركبات غير القادرة على بلوغ الحد الأدنى للسرعة."
+      }
     }
   },
   {
@@ -19,10 +87,51 @@
     "is_critical": false,
     "show_sign": true,
     "i18n": {
-      "NL": { "question": "Welk bord markeert het einde van de autosnelweg die begint met bord F5?", "choices": [{ "text": "Bord F7 'Einde autosnelweg'", "is_correct": true }, { "text": "Bord F11 'Einde autoweg'", "is_correct": false }, { "text": "Bord F3b 'Einde bebouwde kom'", "is_correct": false }], "explanation": "F7 markeert het einde van de autosnelweg die bij F5 begon. F11 markeert het einde van een autoweg (F9)." },
-      "EN": { "question": "Which sign marks the end of the motorway that begins with sign F5?", "choices": [{ "text": "Sign F7 'End of motorway'", "is_correct": true }, { "text": "Sign F11 'End of expressway'", "is_correct": false }, { "text": "Sign F3b 'End of built-up area'", "is_correct": false }], "explanation": "F7 marks the end of the motorway that started at F5. F11 marks the end of an expressway (F9)." },
-      "FR": { "question": "Quel panneau marque la fin de l autoroute qui commence avec le panneau F5 ?", "choices": [{ "text": "Panneau F7 'Fin autoroute'", "is_correct": true }, { "text": "Panneau F11 'Fin route express'", "is_correct": false }, { "text": "Panneau F3b 'Fin d agglomeration'", "is_correct": false }], "explanation": "F7 marque la fin de l autoroute qui a commence a F5. F11 marque la fin d une route expresse (F9)." },
-      "AR": { "question": "Ø£ÙŠ Ù„Ø§ÙØªØ© ØªØ­Ø¯Ø¯ Ù†Ù‡Ø§ÙŠØ© Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø³Ø±ÙŠØ¹ Ø§Ù„Ø°ÙŠ ÙŠØ¨Ø¯Ø£ Ø¨Ù„Ø§ÙØªØ© F5ØŸ", "choices": [{ "text": "Ø§Ù„Ù„Ø§ÙØªØ© F7 'Ù†Ù‡Ø§ÙŠØ© Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø³Ø±ÙŠØ¹'", "is_correct": true }, { "text": "Ø§Ù„Ù„Ø§ÙØªØ© F11 'Ù†Ù‡Ø§ÙŠØ© Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ù…Ø®ØµØµ Ù„Ù„Ù…Ø±ÙƒØ¨Ø§Øª'", "is_correct": false }, { "text": "Ø§Ù„Ù„Ø§ÙØªØ© F3b 'Ù†Ù‡Ø§ÙŠØ© Ø§Ù„Ù…Ù†Ø·Ù‚Ø© Ø§Ù„Ù…Ø¨Ù†ÙŠØ©'", "is_correct": false }], "explanation": "ØªØ­Ø¯Ø¯ F7 Ù†Ù‡Ø§ÙŠØ© Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø³Ø±ÙŠØ¹ Ø§Ù„Ø°ÙŠ Ø¨Ø¯Ø£ Ø¹Ù†Ø¯ F5. ØªØ­Ø¯Ø¯ F11 Ù†Ù‡Ø§ÙŠØ© Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ù…Ø®ØµØµ Ù„Ù„Ù…Ø±ÙƒØ¨Ø§Øª (F9)." }
+      "NL": {
+        "question": "Welk bord markeert het einde van de autosnelweg die begint met bord F5?",
+        "choices": [
+          { "text": "Bord F7 'Einde autosnelweg'", "is_correct": true },
+          { "text": "Bord F11 'Einde autoweg'", "is_correct": false },
+          { "text": "Bord F3b 'Einde bebouwde kom'", "is_correct": false }
+        ],
+        "explanation": "F7 markeert het einde van de autosnelweg die bij F5 begon. F11 markeert het einde van een autoweg (F9)."
+      },
+      "EN": {
+        "question": "Which sign marks the end of the motorway that begins with sign F5?",
+        "choices": [
+          { "text": "Sign F7 'End of motorway'", "is_correct": true },
+          { "text": "Sign F11 'End of expressway'", "is_correct": false },
+          { "text": "Sign F3b 'End of built-up area'", "is_correct": false }
+        ],
+        "explanation": "F7 marks the end of the motorway that started at F5. F11 marks the end of an expressway (F9)."
+      },
+      "FR": {
+        "question": "Quel panneau marque la fin de l autoroute qui commence avec le panneau F5 ?",
+        "choices": [
+          { "text": "Panneau F7 'Fin autoroute'", "is_correct": true },
+          { "text": "Panneau F11 'Fin route express'", "is_correct": false },
+          { "text": "Panneau F3b 'Fin d agglomeration'", "is_correct": false }
+        ],
+        "explanation": "F7 marque la fin de l autoroute qui a commence a F5. F11 marque la fin d une route expresse (F9)."
+      },
+      "AR": {
+        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
+        "choices": [
+          {
+            "text": "العلامة المرورية F7 'نهاية الطريق السريع'",
+            "is_correct": true
+          },
+          {
+            "text": "العلامة المرورية F11 'نهاية الطريق المخصص للمركبات'",
+            "is_correct": false
+          },
+          {
+            "text": "العلامة المرورية F3b 'نهاية المنطقة المبنية'",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تحدد F7 نهاية الطريق السريع الذي بدأ عند F5. تحدد F11 نهاية الطريق المخصص للمركبات (F9)."
+      }
     }
   },
   {
@@ -32,10 +141,78 @@
     "is_critical": false,
     "show_sign": true,
     "i18n": {
-      "NL": { "question": "Welke weggebruikers zijn NIET toegestaan op een autosnelweg (bord F5)?", "choices": [{ "text": "Voetgangers, fietsers, bromfietsen en voertuigen die de minimumsnelheid van 70 km/u niet kunnen halen", "is_correct": true }, { "text": "Vrachtwagens; die mogen alleen op regionale wegen rijden", "is_correct": false }, { "text": "Personenwagens met meer dan vijf inzittenden", "is_correct": false }], "explanation": "Op een autosnelweg zijn voetgangers, fietsers, bromfietsen (klasse A en B) en voertuigen die trager dan 70 km/u rijden verboden." },
-      "EN": { "question": "Which road users are NOT allowed on a motorway (sign F5)?", "choices": [{ "text": "Pedestrians, cyclists, mopeds and vehicles unable to reach the 70 km/h minimum speed", "is_correct": true }, { "text": "Lorries; they are only allowed on regional roads", "is_correct": false }, { "text": "Passenger cars carrying more than five occupants", "is_correct": false }], "explanation": "On a motorway pedestrians, cyclists, mopeds (class A and B) and vehicles slower than 70 km/h are prohibited." },
-      "FR": { "question": "Quels usagers de la route ne sont PAS autorises sur une autoroute (panneau F5) ?", "choices": [{ "text": "Pietons, cyclistes, cyclomoteurs et vehicules incapables d atteindre la vitesse minimale de 70 km/h", "is_correct": true }, { "text": "Les camions; ils ne sont autorises que sur les routes regionales", "is_correct": false }, { "text": "Les voitures transportant plus de cinq occupants", "is_correct": false }], "explanation": "Sur une autoroute les pietons, cyclistes, cyclomoteurs (classe A et B) et les vehicules roulant a moins de 70 km/h sont interdits." },
-      "AR": { "question": "Ù…Ù† Ù…Ø³ØªØ®Ø¯Ù…ÙŠ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø°ÙŠÙ† Ù„Ø§ ÙŠÙØ³Ù…Ø­ Ù„Ù‡Ù… Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø³Ø±ÙŠØ¹ (Ù„Ø§ÙØªØ© F5)ØŸ", "choices": [{ "text": "Ø§Ù„Ù…Ø´Ø§Ø© ÙˆØ§Ù„Ø¯Ø±Ø§Ø¬ÙˆÙ† ÙˆØ§Ù„Ù…ÙˆØ¨ÙŠØ¯Ø§Øª ÙˆØ§Ù„Ù…Ø±ÙƒØ¨Ø§Øª ØºÙŠØ± Ø§Ù„Ù‚Ø§Ø¯Ø±Ø© Ø¹Ù„Ù‰ Ø¨Ù„ÙˆØº Ø§Ù„Ø­Ø¯ Ø§Ù„Ø£Ø¯Ù†Ù‰ Ù„Ù„Ø³Ø±Ø¹Ø© 70 ÙƒÙ…/Ø³", "is_correct": true }, { "text": "Ø§Ù„Ø´Ø§Ø­Ù†Ø§ØªØ› ÙŠÙØ³Ù…Ø­ Ù„Ù‡Ø§ ÙÙ‚Ø· Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±Ù‚ Ø§Ù„Ø¥Ù‚Ù„ÙŠÙ…ÙŠØ©", "is_correct": false }, { "text": "Ø§Ù„Ø³ÙŠØ§Ø±Ø§Øª Ø§Ù„ØªÙŠ ØªØ­Ù…Ù„ Ø£ÙƒØ«Ø± Ù…Ù† Ø®Ù…Ø³Ø© Ø±ÙƒØ§Ø¨", "is_correct": false }], "explanation": "Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø³Ø±ÙŠØ¹ ÙŠÙØ­Ø¸Ø± ÙˆØ¬ÙˆØ¯ Ø§Ù„Ù…Ø´Ø§Ø© ÙˆØ§Ù„Ø¯Ø±Ø§Ø¬ÙŠÙ† ÙˆØ§Ù„Ù…ÙˆØ¨ÙŠØ¯Ø§Øª (Ø§Ù„ÙØ¦ØªØ§Ù† A ÙˆB) ÙˆØ§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„ØªÙŠ ØªØ³ÙŠØ± Ø¨Ø£Ø¨Ø·Ø£ Ù…Ù† 70 ÙƒÙ…/Ø³." }
+      "NL": {
+        "question": "Welke weggebruikers zijn NIET toegestaan op een autosnelweg (bord F5)?",
+        "choices": [
+          {
+            "text": "Voetgangers, fietsers, bromfietsen en voertuigen die de minimumsnelheid van 70 km/u niet kunnen halen",
+            "is_correct": true
+          },
+          {
+            "text": "Vrachtwagens; die mogen alleen op regionale wegen rijden",
+            "is_correct": false
+          },
+          {
+            "text": "Personenwagens met meer dan vijf inzittenden",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Op een autosnelweg zijn voetgangers, fietsers, bromfietsen en voertuigen die trager dan 70 km/u rijden verboden."
+      },
+      "EN": {
+        "question": "Which road users are NOT allowed on a motorway (sign F5)?",
+        "choices": [
+          {
+            "text": "Pedestrians, cyclists, mopeds and vehicles unable to reach the 70 km/h minimum speed",
+            "is_correct": true
+          },
+          {
+            "text": "Lorries; they are only allowed on regional roads",
+            "is_correct": false
+          },
+          {
+            "text": "Passenger cars carrying more than five occupants",
+            "is_correct": false
+          }
+        ],
+        "explanation": "On a motorway pedestrians, cyclists, mopeds and vehicles slower than 70 km/h are prohibited."
+      },
+      "FR": {
+        "question": "Quels usagers de la route ne sont PAS autorises sur une autoroute (panneau F5) ?",
+        "choices": [
+          {
+            "text": "Pietons, cyclistes, cyclomoteurs et vehicules incapables d atteindre la vitesse minimale de 70 km/h",
+            "is_correct": true
+          },
+          {
+            "text": "Les camions; ils ne sont autorises que sur les routes regionales",
+            "is_correct": false
+          },
+          {
+            "text": "Les voitures transportant plus de cinq occupants",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Sur une autoroute les pietons, cyclistes, cyclomoteurs et les vehicules roulant a moins de 70 km/h sont interdits."
+      },
+      "AR": {
+        "question": "من مستخدمي الطريق الذين لا يُسمح لهم على الطريق السريع (علامة مرورية F5)؟",
+        "choices": [
+          {
+            "text": "المشاة والدراجون والموبيدات والمركبات غير القادرة على بلوغ الحد الأدنى للسرعة 70 كم/س",
+            "is_correct": true
+          },
+          {
+            "text": "الشاحنات؛ يُسمح لها فقط على الطرق الإقليمية",
+            "is_correct": false
+          },
+          {
+            "text": "السيارات التي تحمل أكثر من خمسة ركاب",
+            "is_correct": false
+          }
+        ],
+        "explanation": "على الطريق السريع يُحظر وجود المشاة والدراجين والموبيدات والمركبات التي تسير بأبطأ من 70 كم/س."
+      }
     }
   },
   {
@@ -45,10 +222,72 @@
     "is_critical": false,
     "show_sign": true,
     "i18n": {
-      "NL": { "question": "U rijdt op een autosnelweg (F5) en uw voertuig panne heeft. Wat moet u doen?", "choices": [{ "text": "Rechtstreeks naar de vluchtstrook rijden, de gevarendriehoek plaatsen op 50-100 m en het noodsignaal activeren", "is_correct": true }, { "text": "In het midden van de rijbaan blijven staan en andere bestuurders vragen om hulp", "is_correct": false }, { "text": "Terug achteruit rijden naar de dichtstbijzijnde afrit", "is_correct": false }], "explanation": "Bij pech op de snelweg rijdt u naar de vluchtstrook, plaatst u de gevarendriehoek en belt u de hulpdiensten. Met uw passagiers verlaat u het voertuig via de vangrailkant." },
-      "EN": { "question": "You are on a motorway (F5) and your vehicle breaks down. What must you do?", "choices": [{ "text": "Drive to the hard shoulder immediately, place the warning triangle 50-100 m behind and activate hazard lights", "is_correct": true }, { "text": "Remain in the middle of the roadway and ask other drivers for help", "is_correct": false }, { "text": "Reverse back to the nearest exit", "is_correct": false }], "explanation": "If your vehicle breaks down on the motorway, move to the hard shoulder, place the warning triangle and call the emergency services. Passengers must exit on the barrier side." },
-      "FR": { "question": "Vous etes sur une autoroute (F5) et votre vehicule tombe en panne. Que devez-vous faire ?", "choices": [{ "text": "Se diriger immediatement vers la bande d arret d urgence, placer le triangle de signalisation a 50-100 m et activer les feux de detresse", "is_correct": true }, { "text": "Rester au milieu de la chaussee et demander de l aide aux autres conducteurs", "is_correct": false }, { "text": "Faire marche arriere jusqu a la sortie la plus proche", "is_correct": false }], "explanation": "En cas de panne sur l autoroute dirigez-vous vers la bande d arret d urgence, placez le triangle et appelez les secours. Les passagers doivent sortir du cote de la glissiere." },
-      "AR": { "question": "Ø£Ù†Øª Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø³Ø±ÙŠØ¹ (F5) ÙˆØªØ¹Ø·Ù‘Ù„Øª Ù…Ø±ÙƒØ¨ØªÙƒ. Ù…Ø§Ø°Ø§ ÙŠØ¬Ø¨ Ø£Ù† ØªÙØ¹Ù„ØŸ", "choices": [{ "text": "Ø§Ù„ØªÙˆØ¬Ù‡ ÙÙˆØ±Ø§Ù‹ Ø¥Ù„Ù‰ Ø­Ø§Ø±Ø© Ø§Ù„Ø·ÙˆØ§Ø±Ø¦ ÙˆÙˆØ¶Ø¹ Ù…Ø«Ù„Ø« Ø§Ù„ØªØ­Ø°ÙŠØ± Ø¹Ù„Ù‰ Ø¨Ø¹Ø¯ 50-100 Ù… ÙˆØªØ´ØºÙŠÙ„ Ø£Ø¶ÙˆØ§Ø¡ Ø§Ù„Ø®Ø·Ø±", "is_correct": true }, { "text": "Ø§Ù„Ø¨Ù‚Ø§Ø¡ ÙÙŠ ÙˆØ³Ø· Ø§Ù„Ø·Ø±ÙŠÙ‚ ÙˆØ·Ù„Ø¨ Ø§Ù„Ù…Ø³Ø§Ø¹Ø¯Ø© Ù…Ù† Ø§Ù„Ø³Ø§Ø¦Ù‚ÙŠÙ† Ø§Ù„Ø¢Ø®Ø±ÙŠÙ†", "is_correct": false }, { "text": "Ø§Ù„ØªØ±Ø§Ø¬Ø¹ Ù„Ù„Ø®Ù„Ù Ø­ØªÙ‰ Ø£Ù‚Ø±Ø¨ Ù…Ø®Ø±Ø¬", "is_correct": false }], "explanation": "Ø¹Ù†Ø¯ ØªØ¹Ø·Ù„ Ù…Ø±ÙƒØ¨ØªÙƒ Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø³Ø±ÙŠØ¹ ØªÙˆØ¬Ù‡ Ø¥Ù„Ù‰ Ø­Ø§Ø±Ø© Ø§Ù„Ø·ÙˆØ§Ø±Ø¦ ÙˆØ¶Ø¹ Ø§Ù„Ù…Ø«Ù„Ø« ÙˆØ§ØªØµÙ„ Ø¨Ø®Ø¯Ù…Ø§Øª Ø§Ù„Ø·ÙˆØ§Ø±Ø¦. ÙŠØ¬Ø¨ Ø¹Ù„Ù‰ Ø§Ù„Ø±ÙƒØ§Ø¨ Ø§Ù„Ø®Ø±ÙˆØ¬ Ù…Ù† Ø¬Ø§Ù†Ø¨ Ø§Ù„Ø­Ø§Ø¬Ø²." }
+      "NL": {
+        "question": "U rijdt op een autosnelweg (F5) en uw voertuig panne heeft. Wat moet u doen?",
+        "choices": [
+          {
+            "text": "Rechtstreeks naar de vluchtstrook rijden, de gevarendriehoek plaatsen op 50-100 m en het noodsignaal activeren",
+            "is_correct": true
+          },
+          {
+            "text": "In het midden van de rijbaan blijven staan en andere bestuurders vragen om hulp",
+            "is_correct": false
+          },
+          {
+            "text": "Terug achteruit rijden naar de dichtstbijzijnde afrit",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Bij pech op de snelweg rijdt u naar de vluchtstrook, plaatst u de gevarendriehoek en belt u de hulpdiensten. Met uw passagiers verlaat u het voertuig via de vangrailkant."
+      },
+      "EN": {
+        "question": "You are on a motorway (F5) and your vehicle breaks down. What must you do?",
+        "choices": [
+          {
+            "text": "Drive to the hard shoulder immediately, place the warning triangle 50-100 m behind and activate hazard lights",
+            "is_correct": true
+          },
+          {
+            "text": "Remain in the middle of the roadway and ask other drivers for help",
+            "is_correct": false
+          },
+          { "text": "Reverse back to the nearest exit", "is_correct": false }
+        ],
+        "explanation": "If your vehicle breaks down on the motorway, move to the hard shoulder, place the warning triangle and call the emergency services. Passengers must exit on the barrier side."
+      },
+      "FR": {
+        "question": "Vous etes sur une autoroute (F5) et votre vehicule tombe en panne. Que devez-vous faire ?",
+        "choices": [
+          {
+            "text": "Se diriger immediatement vers la bande d arret d urgence, placer le triangle de signalisation a 50-100 m et activer les feux de detresse",
+            "is_correct": true
+          },
+          {
+            "text": "Rester au milieu de la chaussee et demander de l aide aux autres conducteurs",
+            "is_correct": false
+          },
+          {
+            "text": "Faire marche arriere jusqu a la sortie la plus proche",
+            "is_correct": false
+          }
+        ],
+        "explanation": "En cas de panne sur l autoroute dirigez-vous vers la bande d arret d urgence, placez le triangle et appelez les secours. Les passagers doivent sortir du cote de la glissiere."
+      },
+      "AR": {
+        "question": "أنت على الطريق السريع (F5) وتعطّلت مركبتك. ماذا يجب أن تفعل؟",
+        "choices": [
+          {
+            "text": "التوجه فوراً إلى حارة الطوارئ ووضع مثلث التحذير على بعد 50-100 م وتشغيل أضواء الخطر",
+            "is_correct": true
+          },
+          {
+            "text": "البقاء في وسط الطريق وطلب المساعدة من السائقين الآخرين",
+            "is_correct": false
+          },
+          { "text": "التراجع للخلف حتى أقرب مخرج", "is_correct": false }
+        ],
+        "explanation": "عند تعطل مركبتك على الطريق السريع توجه إلى حارة الطوارئ وضع المثلث واتصل بخدمات الطوارئ. يجب على الركاب الخروج من جانب الحاجز."
+      }
     }
   },
   {
@@ -58,10 +297,78 @@
     "is_critical": false,
     "show_sign": true,
     "i18n": {
-      "NL": { "question": "Op de autosnelweg (bord F5): welke rijstrook gebruikt u normaal voor rijden?", "choices": [{ "text": "De rechter rijstrook; u rijdt alleen op een andere rijstrook om in te halen en weegt daarna direct naar rechts terug", "is_correct": true }, { "text": "De middelste rijstrook; die is het veiligst op de autosnelweg", "is_correct": false }, { "text": "De linkse rijstrook; die is gereserveerd voor snelheidsrijders", "is_correct": false }], "explanation": "Op de autosnelweg houdt u zoveel mogelijk de rechter rijstrook aan. De andere stroken zijn alleen voor inhalen." },
-      "EN": { "question": "On the motorway (sign F5): which lane do you normally use for driving?", "choices": [{ "text": "The right-hand lane; you only use another lane to overtake and then return to the right immediately", "is_correct": true }, { "text": "The middle lane; it is the safest on a motorway", "is_correct": false }, { "text": "The left lane; it is reserved for fast drivers", "is_correct": false }], "explanation": "On a motorway you keep to the right-hand lane as much as possible. Other lanes are for overtaking only." },
-      "FR": { "question": "Sur l autoroute (panneau F5) : quelle voie utilisez-vous normalement pour rouler ?", "choices": [{ "text": "La voie de droite; vous n utilisez une autre voie que pour depasser et revenez immediatement a droite ensuite", "is_correct": true }, { "text": "La voie du milieu; c est la plus sure sur l autoroute", "is_correct": false }, { "text": "La voie de gauche; elle est reservee aux conducteurs rapides", "is_correct": false }], "explanation": "Sur l autoroute vous tenez la voie de droite autant que possible. Les autres voies sont uniquement pour depasser." },
-      "AR": { "question": "Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø³Ø±ÙŠØ¹ (Ù„Ø§ÙØªØ© F5): Ø£ÙŠ Ø­Ø§Ø±Ø© ØªØ³ØªØ®Ø¯Ù… Ø¹Ø§Ø¯Ø©Ù‹ Ù„Ù„Ù‚ÙŠØ§Ø¯Ø©ØŸ", "choices": [{ "text": "Ø§Ù„Ø­Ø§Ø±Ø© Ø§Ù„ÙŠÙ…Ù†Ù‰Ø› ØªØ³ØªØ®Ø¯Ù… Ø­Ø§Ø±Ø© Ø£Ø®Ø±Ù‰ ÙÙ‚Ø· Ù„Ù„ØªØ¬Ø§ÙˆØ² Ø«Ù… ØªØ¹ÙˆØ¯ ÙÙˆØ±Ø§Ù‹ Ø¥Ù„Ù‰ Ø§Ù„ÙŠÙ…ÙŠÙ†", "is_correct": true }, { "text": "Ø§Ù„Ø­Ø§Ø±Ø© Ø§Ù„ÙˆØ³Ø·Ù‰Ø› Ù‡ÙŠ Ø§Ù„Ø£ÙƒØ«Ø± Ø£Ù…Ø§Ù†Ø§Ù‹ Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø³Ø±ÙŠØ¹", "is_correct": false }, { "text": "Ø§Ù„Ø­Ø§Ø±Ø© Ø§Ù„ÙŠØ³Ø±Ù‰Ø› Ù…Ø®ØµØµØ© Ù„Ù„Ø³Ø§Ø¦Ù‚ÙŠÙ† Ø§Ù„Ø³Ø±ÙŠØ¹ÙŠÙ†", "is_correct": false }], "explanation": "Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø³Ø±ÙŠØ¹ ØªÙ„ØªØ²Ù… Ø¨Ø§Ù„Ø­Ø§Ø±Ø© Ø§Ù„ÙŠÙ…Ù†Ù‰ Ù‚Ø¯Ø± Ø§Ù„Ø¥Ù…ÙƒØ§Ù†. Ø§Ù„Ø­Ø§Ø±Ø§Øª Ø§Ù„Ø£Ø®Ø±Ù‰ Ù…Ø®ØµØµØ© Ù„Ù„ØªØ¬Ø§ÙˆØ² ÙÙ‚Ø·." }
+      "NL": {
+        "question": "Op de autosnelweg (bord F5): welke rijstrook gebruikt u normaal voor rijden?",
+        "choices": [
+          {
+            "text": "De rechter rijstrook; u rijdt alleen op een andere rijstrook om in te halen en weegt daarna direct naar rechts terug",
+            "is_correct": true
+          },
+          {
+            "text": "De middelste rijstrook; die is het veiligst op de autosnelweg",
+            "is_correct": false
+          },
+          {
+            "text": "De linkse rijstrook; die is gereserveerd voor snelheidsrijders",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Op de autosnelweg houdt u zoveel mogelijk de rechter rijstrook aan. De andere stroken zijn alleen voor inhalen."
+      },
+      "EN": {
+        "question": "On the motorway (sign F5): which lane do you normally use for driving?",
+        "choices": [
+          {
+            "text": "The right-hand lane; you only use another lane to overtake and then return to the right immediately",
+            "is_correct": true
+          },
+          {
+            "text": "The middle lane; it is the safest on a motorway",
+            "is_correct": false
+          },
+          {
+            "text": "The left lane; it is reserved for fast drivers",
+            "is_correct": false
+          }
+        ],
+        "explanation": "On a motorway you keep to the right-hand lane as much as possible. Other lanes are for overtaking only."
+      },
+      "FR": {
+        "question": "Sur l autoroute (panneau F5) : quelle voie utilisez-vous normalement pour rouler ?",
+        "choices": [
+          {
+            "text": "La voie de droite; vous n utilisez une autre voie que pour depasser et revenez immediatement a droite ensuite",
+            "is_correct": true
+          },
+          {
+            "text": "La voie du milieu; c est la plus sure sur l autoroute",
+            "is_correct": false
+          },
+          {
+            "text": "La voie de gauche; elle est reservee aux conducteurs rapides",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Sur l autoroute vous tenez la voie de droite autant que possible. Les autres voies sont uniquement pour depasser."
+      },
+      "AR": {
+        "question": "على الطريق السريع (علامة مرورية F5): أي حارة تستخدم عادةً للقيادة؟",
+        "choices": [
+          {
+            "text": "الحارة اليمنى؛ تستخدم حارة أخرى فقط للتجاوز ثم تعود فوراً إلى اليمين",
+            "is_correct": true
+          },
+          {
+            "text": "الحارة الوسطى؛ هي الأكثر أماناً على الطريق السريع",
+            "is_correct": false
+          },
+          {
+            "text": "الحارة اليسرى؛ مخصصة للسائقين السريعين",
+            "is_correct": false
+          }
+        ],
+        "explanation": "على الطريق السريع تلتزم بالحارة اليمنى قدر الإمكان. الحارات الأخرى مخصصة للتجاوز فقط."
+      }
     }
   },
   {
@@ -71,10 +378,78 @@
     "is_critical": false,
     "show_sign": true,
     "i18n": {
-      "NL": { "question": "U nadert een oprit van de autosnelweg (bord F5). U rijdt al op de snelweg. Hoe gedraagt u zich tegenover voertuigen die invoegen?", "choices": [{ "text": "U maakt zo mogelijk ruimte door naar de volgende rijstrook te gaan; invoegende voertuigen moeten de doorgaande rijstroom voor laten gaan", "is_correct": true }, { "text": "U heeft altijd voorrang want u rijdt al op de snelweg; invoegend verkeer moet u volledig laten passeren", "is_correct": false }, { "text": "U remt altijd volledig af om invoegend verkeer veilig de snelweg op te laten", "is_correct": false }], "explanation": "Invoegend verkeer moet de doorgaande snelwegrijders laten passeren, maar als het veilig en mogelijk is kunt u als snelwegrijder opschuiven om het invoegen te vergemakkelijken." },
-      "EN": { "question": "You are approaching a motorway on-ramp (sign F5) and already on the motorway. How do you behave towards merging vehicles?", "choices": [{ "text": "You make space where possible by moving to the next lane; merging vehicles must give way to through traffic", "is_correct": true }, { "text": "You always have priority because you are already on the motorway; merging traffic must fully yield to you", "is_correct": false }, { "text": "You always brake fully to let merging vehicles safely join the motorway", "is_correct": false }], "explanation": "Merging traffic must give way to through motorway traffic, but if safe and possible you as a motorway driver can shift over to ease merging." },
-      "FR": { "question": "Vous approchez d une bretelle d entree d autoroute (panneau F5) et vous etes deja sur l autoroute. Comment vous comportez-vous vis-a-vis des vehicules qui s insÃ¨rent ?", "choices": [{ "text": "Vous faites de la place si possible en vous deplacant sur la voie suivante; les vehicules qui s insÃ¨rent doivent ceder le passage au trafic normal", "is_correct": true }, { "text": "Vous avez toujours la priorite car vous etes deja sur l autoroute; le trafic qui s insÃ¨re doit entierement vous laisser passer", "is_correct": false }, { "text": "Vous freinez toujours completement pour laisser les vehicules rejoindre l autoroute en toute securite", "is_correct": false }], "explanation": "Les vehicules qui s insÃ¨rent doivent ceder le passage au trafic normal de l autoroute mais si c est sur et possible vous pouvez vous decaler pour faciliter l insertion." },
-      "AR": { "question": "Ø£Ù†Øª ØªÙ‚ØªØ±Ø¨ Ù…Ù† Ù…Ù†Ø­Ø¯Ø± Ø¯Ø®ÙˆÙ„ Ù„Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø³Ø±ÙŠØ¹ (Ù„Ø§ÙØªØ© F5) ÙˆØ£Ù†Øª Ø¨Ø§Ù„ÙØ¹Ù„ Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø³Ø±ÙŠØ¹. ÙƒÙŠÙ ØªØªØµØ±Ù Ù…Ø¹ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ù…Ù†Ø¯Ù…Ø¬Ø©ØŸ", "choices": [{ "text": "ØªÙØ³Ø­ Ø§Ù„Ù…Ø¬Ø§Ù„ Ø­ÙŠØ«Ù…Ø§ Ø£Ù…ÙƒÙ† Ø¨Ø§Ù„ØªØ­Ø±Ùƒ Ø¥Ù„Ù‰ Ø§Ù„Ø­Ø§Ø±Ø© Ø§Ù„ØªØ§Ù„ÙŠØ©Ø› ÙŠØ¬Ø¨ Ø¹Ù„Ù‰ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ù…Ù†Ø¯Ù…Ø¬Ø© Ø¥Ø¹Ø·Ø§Ø¡ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© Ù„Ø­Ø±ÙƒØ© Ø§Ù„Ù…Ø±ÙˆØ± Ø§Ù„Ø¹Ø§Ø¨Ø±Ø©", "is_correct": true }, { "text": "Ù„Ø¯ÙŠÙƒ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© Ø¯Ø§Ø¦Ù…Ø§Ù‹ Ù„Ø£Ù†Ùƒ Ø¨Ø§Ù„ÙØ¹Ù„ Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø³Ø±ÙŠØ¹Ø› ÙŠØ¬Ø¨ Ø¹Ù„Ù‰ Ø­Ø±ÙƒØ© Ø§Ù„Ø§Ù†Ø¯Ù…Ø§Ø¬ Ø¥Ø¹Ø·Ø§Ø¦Ùƒ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© Ø§Ù„ÙƒØ§Ù…Ù„Ø©", "is_correct": false }, { "text": "ØªÙØ±Ù…Ù„ Ø¯Ø§Ø¦Ù…Ø§Ù‹ Ø¨Ø´ÙƒÙ„ ÙƒØ§Ù…Ù„ Ù„Ù„Ø³Ù…Ø§Ø­ Ù„Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø¨Ø§Ù„Ø§Ù†Ø¶Ù…Ø§Ù… Ø¥Ù„Ù‰ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø³Ø±ÙŠØ¹ Ø¨Ø£Ù…Ø§Ù†", "is_correct": false }], "explanation": "ÙŠØ¬Ø¨ Ø¹Ù„Ù‰ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ù…Ù†Ø¯Ù…Ø¬Ø© Ø¥Ø¹Ø·Ø§Ø¡ Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© Ù„Ø­Ø±ÙƒØ© Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø³Ø±ÙŠØ¹ Ø§Ù„Ø¹Ø§Ø¨Ø±Ø© Ù„ÙƒÙ† Ø¥Ø°Ø§ ÙƒØ§Ù† Ø¢Ù…Ù†Ø§Ù‹ ÙˆÙ…Ù…ÙƒÙ†Ø§Ù‹ ÙŠÙ…ÙƒÙ†Ùƒ Ø§Ù„Ø§Ù†ØªÙ‚Ø§Ù„ Ø¥Ù„Ù‰ Ø§Ù„Ø¬Ø§Ù†Ø¨ Ù„ØªØ³Ù‡ÙŠÙ„ Ø§Ù„Ø§Ù†Ø¯Ù…Ø§Ø¬." }
+      "NL": {
+        "question": "U nadert een oprit van de autosnelweg (bord F5). U rijdt al op de snelweg. Hoe gedraagt u zich tegenover voertuigen die invoegen?",
+        "choices": [
+          {
+            "text": "U maakt zo mogelijk ruimte door naar de volgende rijstrook te gaan; invoegende voertuigen moeten de doorgaande rijstroom voor laten gaan",
+            "is_correct": true
+          },
+          {
+            "text": "U heeft altijd voorrang want u rijdt al op de snelweg; invoegend verkeer moet u volledig laten passeren",
+            "is_correct": false
+          },
+          {
+            "text": "U remt altijd volledig af om invoegend verkeer veilig de snelweg op te laten",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Invoegend verkeer moet de doorgaande snelwegrijders laten passeren, maar als het veilig en mogelijk is kunt u als snelwegrijder opschuiven om het invoegen te vergemakkelijken."
+      },
+      "EN": {
+        "question": "You are approaching a motorway on-ramp (sign F5) and already on the motorway. How do you behave towards merging vehicles?",
+        "choices": [
+          {
+            "text": "You make space where possible by moving to the next lane; merging vehicles must give way to through traffic",
+            "is_correct": true
+          },
+          {
+            "text": "You always have priority because you are already on the motorway; merging traffic must fully yield to you",
+            "is_correct": false
+          },
+          {
+            "text": "You always brake fully to let merging vehicles safely join the motorway",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Merging traffic must give way to through motorway traffic, but if safe and possible you as a motorway driver can shift over to ease merging."
+      },
+      "FR": {
+        "question": "Vous approchez d une bretelle d entree d autoroute (panneau F5) et vous etes deja sur l autoroute. Comment vous comportez-vous vis-a-vis des vehicules qui s insèrent ?",
+        "choices": [
+          {
+            "text": "Vous faites de la place si possible en vous deplacant sur la voie suivante; les vehicules qui s insèrent doivent ceder le passage au trafic normal",
+            "is_correct": true
+          },
+          {
+            "text": "Vous avez toujours la priorite car vous etes deja sur l autoroute; le trafic qui s insère doit entierement vous laisser passer",
+            "is_correct": false
+          },
+          {
+            "text": "Vous freinez toujours completement pour laisser les vehicules rejoindre l autoroute en toute securite",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Les vehicules qui s insèrent doivent ceder le passage au trafic normal de l autoroute mais si c est sur et possible vous pouvez vous decaler pour faciliter l insertion."
+      },
+      "AR": {
+        "question": "أنت تقترب من منحدر دخول للطريق السريع (علامة مرورية F5) وأنت بالفعل على الطريق السريع. كيف تتصرف مع المركبات المندمجة؟",
+        "choices": [
+          {
+            "text": "تفسح المجال حيثما أمكن بالتحرك إلى الحارة التالية؛ يجب على المركبات المندمجة إعطاء الأولوية لحركة المرور العابرة",
+            "is_correct": true
+          },
+          {
+            "text": "لديك الأولوية دائماً لأنك بالفعل على الطريق السريع؛ يجب على حركة الاندماج إعطائك الأولوية الكاملة",
+            "is_correct": false
+          },
+          {
+            "text": "تفرمل دائماً بشكل كامل للسماح للمركبات بالانضمام إلى الطريق السريع بأمان",
+            "is_correct": false
+          }
+        ],
+        "explanation": "يجب على المركبات المندمجة إعطاء الأولوية لحركة الطريق السريع العابرة لكن إذا كان آمناً وممكناً يمكنك الانتقال إلى الجانب لتسهيل الاندماج."
+      }
     }
   },
   {
@@ -84,10 +459,62 @@
     "is_critical": true,
     "show_sign": true,
     "i18n": {
-      "NL": { "question": "Op de autosnelweg (bord F5): is het toegestaan om te stoppen op de rijbaan om te bellen?", "choices": [{ "text": "Nee, stoppen op de rijbaan van de autosnelweg is verboden behalve bij nood; gebruik de vluchtstrook of een parkeerplaats", "is_correct": true }, { "text": "Ja, u mag op de rechtste rijstrook kort stoppen als u andere bestuurders niet hindert", "is_correct": false }], "explanation": "Op de rijbaan van een autosnelweg is stoppen verboden. U mag alleen op de vluchtstrook stoppen bij pech of nood." },
-      "EN": { "question": "On the motorway (sign F5): is it allowed to stop on the carriageway to make a phone call?", "choices": [{ "text": "No, stopping on the motorway carriageway is forbidden except in emergency; use the hard shoulder or a rest area", "is_correct": true }, { "text": "Yes, you may briefly stop in the right-hand lane if you do not obstruct other drivers", "is_correct": false }], "explanation": "Stopping on the carriageway of a motorway is forbidden. You may only stop on the hard shoulder in case of breakdown or emergency." },
-      "FR": { "question": "Sur l autoroute (panneau F5) : est-il permis de s arreter sur la chaussee pour telephoner ?", "choices": [{ "text": "Non, s arreter sur la chaussee de l autoroute est interdit sauf urgence; utilisez la bande d arret d urgence ou une aire de repos", "is_correct": true }, { "text": "Oui, vous pouvez vous arreter brievement sur la voie de droite si vous ne genez pas les autres conducteurs", "is_correct": false }], "explanation": "S arreter sur la chaussee d une autoroute est interdit. Vous ne pouvez vous arreter que sur la bande d arret d urgence en cas de panne ou d urgence." },
-      "AR": { "question": "Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø³Ø±ÙŠØ¹ (Ù„Ø§ÙØªØ© F5): Ù‡Ù„ ÙŠÙØ³Ù…Ø­ Ø¨Ø§Ù„ØªÙˆÙ‚Ù Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ù„Ù„ØªØ­Ø¯Ø« Ø¨Ø§Ù„Ù‡Ø§ØªÙØŸ", "choices": [{ "text": "Ù„Ø§ ÙŠÙØ­Ø¸Ø± Ø§Ù„ØªÙˆÙ‚Ù Ø¹Ù„Ù‰ Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø³ÙŠØ§Ø±Ø§Øª Ø§Ù„Ø³Ø±ÙŠØ¹ Ø¥Ù„Ø§ ÙÙŠ Ø­Ø§Ù„Ø§Øª Ø§Ù„Ø·ÙˆØ§Ø±Ø¦Ø› Ø§Ø³ØªØ®Ø¯Ù… Ø­Ø§Ø±Ø© Ø§Ù„Ø·ÙˆØ§Ø±Ø¦ Ø£Ùˆ Ù…Ù†Ø·Ù‚Ø© Ø§Ù„Ø§Ø³ØªØ±Ø§Ø­Ø©", "is_correct": true }, { "text": "Ù†Ø¹Ù… ÙŠÙ…ÙƒÙ†Ùƒ Ø§Ù„ØªÙˆÙ‚Ù Ù„ÙØªØ±Ø© Ù‚ØµÙŠØ±Ø© ÙÙŠ Ø§Ù„Ø­Ø§Ø±Ø© Ø§Ù„ÙŠÙ…Ù†Ù‰ Ø¥Ø°Ø§ Ù„Ù… ØªØ¹ÙŠÙ‚ Ø§Ù„Ø³Ø§Ø¦Ù‚ÙŠÙ† Ø§Ù„Ø¢Ø®Ø±ÙŠÙ†", "is_correct": false }], "explanation": "ÙŠÙØ­Ø¸Ø± Ø§Ù„ØªÙˆÙ‚Ù Ø¹Ù„Ù‰ Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø³ÙŠØ§Ø±Ø§Øª Ø§Ù„Ø³Ø±ÙŠØ¹. ÙŠÙ…ÙƒÙ†Ùƒ ÙÙ‚Ø· Ø§Ù„ØªÙˆÙ‚Ù Ø¹Ù„Ù‰ Ø­Ø§Ø±Ø© Ø§Ù„Ø·ÙˆØ§Ø±Ø¦ ÙÙŠ Ø­Ø§Ù„Ø© Ø§Ù„Ø£Ø¹Ø·Ø§Ù„ Ø£Ùˆ Ø§Ù„Ø·ÙˆØ§Ø±Ø¦." }
+      "NL": {
+        "question": "Op de autosnelweg (bord F5): is het toegestaan om te stoppen op de rijbaan om te bellen?",
+        "choices": [
+          {
+            "text": "Nee, stoppen op de rijbaan van de autosnelweg is verboden behalve bij nood; gebruik de vluchtstrook of een parkeerplaats",
+            "is_correct": true
+          },
+          {
+            "text": "Ja, u mag op de rechtste rijstrook kort stoppen als u andere bestuurders niet hindert",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Op de rijbaan van een autosnelweg is stoppen verboden. U mag alleen op de vluchtstrook stoppen bij pech of nood."
+      },
+      "EN": {
+        "question": "On the motorway (sign F5): is it allowed to stop on the carriageway to make a phone call?",
+        "choices": [
+          {
+            "text": "No, stopping on the motorway carriageway is forbidden except in emergency; use the hard shoulder or a rest area",
+            "is_correct": true
+          },
+          {
+            "text": "Yes, you may briefly stop in the right-hand lane if you do not obstruct other drivers",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Stopping on the carriageway of a motorway is forbidden. You may only stop on the hard shoulder in case of breakdown or emergency."
+      },
+      "FR": {
+        "question": "Sur l autoroute (panneau F5) : est-il permis de s arreter sur la chaussee pour telephoner ?",
+        "choices": [
+          {
+            "text": "Non, s arreter sur la chaussee de l autoroute est interdit sauf urgence; utilisez la bande d arret d urgence ou une aire de repos",
+            "is_correct": true
+          },
+          {
+            "text": "Oui, vous pouvez vous arreter brievement sur la voie de droite si vous ne genez pas les autres conducteurs",
+            "is_correct": false
+          }
+        ],
+        "explanation": "S arreter sur la chaussee d une autoroute est interdit. Vous ne pouvez vous arreter que sur la bande d arret d urgence en cas de panne ou d urgence."
+      },
+      "AR": {
+        "question": "على الطريق السريع (علامة مرورية F5): هل يُسمح بالتوقف على الطريق للتحدث بالهاتف؟",
+        "choices": [
+          {
+            "text": "لا يُحظر التوقف على طريق السيارات السريع إلا في حالات الطوارئ؛ استخدم حارة الطوارئ أو منطقة الاستراحة",
+            "is_correct": true
+          },
+          {
+            "text": "نعم يمكنك التوقف لفترة قصيرة في الحارة اليمنى إذا لم تعيق السائقين الآخرين",
+            "is_correct": false
+          }
+        ],
+        "explanation": "يُحظر التوقف على طريق السيارات السريع. يمكنك فقط التوقف على حارة الطوارئ في حالة الأعطال أو الطوارئ."
+      }
     }
   },
   {
@@ -97,10 +524,62 @@
     "is_critical": true,
     "show_sign": true,
     "i18n": {
-      "NL": { "question": "Op de autosnelweg (bord F5): is rechts inhalen (rechts voorbijrijden) toegestaan?", "choices": [{ "text": "Nee, rechts inhalen is op de autosnelweg algemeen verboden; u haalt altijd links in", "is_correct": true }, { "text": "Ja, rechts inhalen is toegestaan als de rechter rijstrook vrij is en u het vlottere rijden niet verstoort", "is_correct": false }], "explanation": "Op de autosnelweg is rechts inhalen verboden. U haalt altijd in via de linker rijstrook en keert daarna terug naar rechts." },
-      "EN": { "question": "On the motorway (sign F5): is overtaking on the right permitted?", "choices": [{ "text": "No, passing on the right is generally forbidden on the motorway; you always overtake on the left", "is_correct": true }, { "text": "Yes, passing on the right is allowed if the right lane is free and you do not disrupt the flow", "is_correct": false }], "explanation": "Overtaking on the right is forbidden on motorways. You always overtake using the left lane and then return to the right." },
-      "FR": { "question": "Sur l autoroute (panneau F5) : est-il permis de depasser par la droite ?", "choices": [{ "text": "Non, depasser par la droite est generalement interdit sur l autoroute; on depasse toujours par la gauche", "is_correct": true }, { "text": "Oui, depasser par la droite est autorise si la voie de droite est libre et que vous ne perturbez pas la fluidite", "is_correct": false }], "explanation": "Depasser par la droite est interdit sur les autoroutes. On depasse toujours par la voie de gauche puis on revient a droite." },
-      "AR": { "question": "Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø³Ø±ÙŠØ¹ (Ù„Ø§ÙØªØ© F5): Ù‡Ù„ ÙŠÙØ³Ù…Ø­ Ø¨Ø§Ù„ØªØ¬Ø§ÙˆØ² Ù…Ù† Ø§Ù„ÙŠÙ…ÙŠÙ†ØŸ", "choices": [{ "text": "Ù„Ø§ ÙŠÙØ­Ø¸Ø± Ø¹Ù…ÙˆÙ…Ø§Ù‹ Ø§Ù„ØªØ¬Ø§ÙˆØ² Ù…Ù† Ø§Ù„ÙŠÙ…ÙŠÙ† Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø³Ø±ÙŠØ¹Ø› ØªØªØ¬Ø§ÙˆØ² Ø¯Ø§Ø¦Ù…Ø§Ù‹ Ù…Ù† Ø§Ù„ÙŠØ³Ø§Ø±", "is_correct": true }, { "text": "Ù†Ø¹Ù… ÙŠÙØ³Ù…Ø­ Ø¨Ø§Ù„ØªØ¬Ø§ÙˆØ² Ù…Ù† Ø§Ù„ÙŠÙ…ÙŠÙ† Ø¥Ø°Ø§ ÙƒØ§Ù†Øª Ø§Ù„Ø­Ø§Ø±Ø© Ø§Ù„ÙŠÙ…Ù†Ù‰ Ø®Ø§Ù„ÙŠØ© ÙˆÙ„Ù… ØªØ¹Ø·Ù„ Ø³ÙŠØ± Ø§Ù„Ù…Ø±ÙˆØ±", "is_correct": false }], "explanation": "ÙŠÙØ­Ø¸Ø± Ø§Ù„ØªØ¬Ø§ÙˆØ² Ù…Ù† Ø§Ù„ÙŠÙ…ÙŠÙ† Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±Ù‚ Ø§Ù„Ø³Ø±ÙŠØ¹Ø©. ØªØªØ¬Ø§ÙˆØ² Ø¯Ø§Ø¦Ù…Ø§Ù‹ Ù…Ù† Ø§Ù„Ø­Ø§Ø±Ø© Ø§Ù„ÙŠØ³Ø±Ù‰ Ø«Ù… ØªØ¹ÙˆØ¯ Ø¥Ù„Ù‰ Ø§Ù„ÙŠÙ…ÙŠÙ†." }
+      "NL": {
+        "question": "Op de autosnelweg (bord F5): is rechts inhalen (rechts voorbijrijden) toegestaan?",
+        "choices": [
+          {
+            "text": "Nee, rechts inhalen is op de autosnelweg algemeen verboden; u haalt altijd links in",
+            "is_correct": true
+          },
+          {
+            "text": "Ja, rechts inhalen is toegestaan als de rechter rijstrook vrij is en u het vlottere rijden niet verstoort",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Op de autosnelweg is rechts inhalen verboden. U haalt altijd in via de linker rijstrook en keert daarna terug naar rechts."
+      },
+      "EN": {
+        "question": "On the motorway (sign F5): is overtaking on the right permitted?",
+        "choices": [
+          {
+            "text": "No, passing on the right is generally forbidden on the motorway; you always overtake on the left",
+            "is_correct": true
+          },
+          {
+            "text": "Yes, passing on the right is allowed if the right lane is free and you do not disrupt the flow",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Overtaking on the right is forbidden on motorways. You always overtake using the left lane and then return to the right."
+      },
+      "FR": {
+        "question": "Sur l autoroute (panneau F5) : est-il permis de depasser par la droite ?",
+        "choices": [
+          {
+            "text": "Non, depasser par la droite est generalement interdit sur l autoroute; on depasse toujours par la gauche",
+            "is_correct": true
+          },
+          {
+            "text": "Oui, depasser par la droite est autorise si la voie de droite est libre et que vous ne perturbez pas la fluidite",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Depasser par la droite est interdit sur les autoroutes. On depasse toujours par la voie de gauche puis on revient a droite."
+      },
+      "AR": {
+        "question": "على الطريق السريع (علامة مرورية F5): هل يُسمح بالتجاوز من اليمين؟",
+        "choices": [
+          {
+            "text": "لا يُحظر عموماً التجاوز من اليمين على الطريق السريع؛ تتجاوز دائماً من اليسار",
+            "is_correct": true
+          },
+          {
+            "text": "نعم يُسمح بالتجاوز من اليمين إذا كانت الحارة اليمنى خالية ولم تعطل سير المرور",
+            "is_correct": false
+          }
+        ],
+        "explanation": "يُحظر التجاوز من اليمين على الطرق السريعة. تتجاوز دائماً من الحارة اليسرى ثم تعود إلى اليمين."
+      }
     }
   }
 ]

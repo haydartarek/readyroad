@@ -1,0 +1,602 @@
+[
+  {
+    "question_id": "C5_Q01",
+    "type": "WHAT_DOES_IT_MEAN",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat betekent dit verkeersbord?",
+        "choices": [
+          {
+            "text": "Verboden toegang voor bestuurders van motorvoertuigen met meer dan twee wielen",
+            "is_correct": true
+          },
+          {
+            "text": "Verboden toegang voor alle motorvoertuigen",
+            "is_correct": false
+          },
+          {
+            "text": "Verboden toegang voor motorfietsen",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dit bord geeft aan dat bestuurders van motorvoertuigen met meer dan twee wielen deze doorgang niet mogen gebruiken."
+      },
+      "EN": {
+        "question": "What does this traffic sign mean?",
+        "choices": [
+          {
+            "text": "No entry for drivers of motor vehicles with more than two wheels",
+            "is_correct": true
+          },
+          {
+            "text": "No entry for all motor vehicles",
+            "is_correct": false
+          },
+          {
+            "text": "No entry for motorcycles",
+            "is_correct": false
+          }
+        ],
+        "explanation": "This sign indicates that drivers of motor vehicles with more than two wheels may not use this access."
+      },
+      "FR": {
+        "question": "Que signifie ce panneau ?",
+        "choices": [
+          {
+            "text": "Accès interdit aux conducteurs de véhicules à moteur de plus de deux roues",
+            "is_correct": true
+          },
+          {
+            "text": "Accès interdit à tous les véhicules à moteur",
+            "is_correct": false
+          },
+          {
+            "text": "Accès interdit aux motocycles",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ce panneau indique que les conducteurs de véhicules à moteur de plus de deux roues ne peuvent pas utiliser cet accès."
+      },
+      "AR": {
+        "question": "ما معنى هذه العلامة؟",
+        "choices": [
+          {
+            "text": "ممنوع دخول سائقي المركبات ذات المحرك التي لها أكثر من عجلتين",
+            "is_correct": true
+          },
+          {
+            "text": "ممنوع دخول جميع المركبات ذات المحرك",
+            "is_correct": false
+          },
+          {
+            "text": "ممنوع دخول الدراجات النارية",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تعني هذه العلامة أن سائقي المركبات ذات المحرك التي لها أكثر من عجلتين لا يسمح لهم بالدخول."
+      }
+    }
+  },
+  {
+    "question_id": "C5_Q02",
+    "type": "HAZARD_IDENTIFICATION",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Welke voertuigen worden door dit bord geweerd?",
+        "choices": [
+          {
+            "text": "Motorvoertuigen met meer dan twee wielen",
+            "is_correct": true
+          },
+          {
+            "text": "Alle tweewielers",
+            "is_correct": false
+          },
+          {
+            "text": "Alle voertuigen",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Het verbod geldt voor motorvoertuigen met meer dan twee wielen. Het is geen algemeen verbod voor alle voertuigen."
+      },
+      "EN": {
+        "question": "Which vehicles are restricted by this sign?",
+        "choices": [
+          {
+            "text": "Motor vehicles with more than two wheels",
+            "is_correct": true
+          },
+          {
+            "text": "All two-wheelers",
+            "is_correct": false
+          },
+          {
+            "text": "All vehicles",
+            "is_correct": false
+          }
+        ],
+        "explanation": "The restriction applies to motor vehicles with more than two wheels. It is not a general ban on all vehicles."
+      },
+      "FR": {
+        "question": "Quels véhicules sont visés par ce panneau ?",
+        "choices": [
+          {
+            "text": "Les véhicules à moteur de plus de deux roues",
+            "is_correct": true
+          },
+          {
+            "text": "Tous les deux-roues",
+            "is_correct": false
+          },
+          {
+            "text": "Tous les véhicules",
+            "is_correct": false
+          }
+        ],
+        "explanation": "L’interdiction vise les véhicules à moteur de plus de deux roues. Il ne s’agit pas d’une interdiction générale pour tous les véhicules."
+      },
+      "AR": {
+        "question": "ما هي المركبات التي يستهدفها هذا المنع؟",
+        "choices": [
+          {
+            "text": "المركبات ذات المحرك التي لها أكثر من عجلتين",
+            "is_correct": true
+          },
+          {
+            "text": "جميع المركبات ذات العجلتين",
+            "is_correct": false
+          },
+          {
+            "text": "جميع المركبات",
+            "is_correct": false
+          }
+        ],
+        "explanation": "ينطبق هذا المنع على المركبات ذات المحرك التي لها أكثر من عجلتين، وليس على جميع المركبات بشكل عام."
+      }
+    }
+  },
+  {
+    "question_id": "C5_Q03",
+    "type": "HAZARD_IDENTIFICATION",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat verbiedt dit bord precies?",
+        "choices": [
+          {
+            "text": "De toegang voor motorvoertuigen met meer dan twee wielen",
+            "is_correct": true
+          },
+          {
+            "text": "De toegang voor alle motorvoertuigen",
+            "is_correct": false
+          },
+          {
+            "text": "De toegang voor alle bestuurders",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dit bord verbiedt specifiek de toegang voor motorvoertuigen met meer dan twee wielen."
+      },
+      "EN": {
+        "question": "What exactly does this sign prohibit?",
+        "choices": [
+          {
+            "text": "Entry for motor vehicles with more than two wheels",
+            "is_correct": true
+          },
+          {
+            "text": "Entry for all motor vehicles",
+            "is_correct": false
+          },
+          {
+            "text": "Entry for all drivers",
+            "is_correct": false
+          }
+        ],
+        "explanation": "This sign specifically prohibits entry for motor vehicles with more than two wheels."
+      },
+      "FR": {
+        "question": "Que interdit exactement ce panneau ?",
+        "choices": [
+          {
+            "text": "L’accès aux véhicules à moteur de plus de deux roues",
+            "is_correct": true
+          },
+          {
+            "text": "L’accès à tous les véhicules à moteur",
+            "is_correct": false
+          },
+          {
+            "text": "L’accès à tous les conducteurs",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ce panneau interdit spécifiquement l’accès aux véhicules à moteur de plus de deux roues."
+      },
+      "AR": {
+        "question": "ما الذي تحظره هذه العلامة بالضبط؟",
+        "choices": [
+          {
+            "text": "دخول المركبات ذات المحرك التي لها أكثر من عجلتين",
+            "is_correct": true
+          },
+          {
+            "text": "دخول جميع المركبات ذات المحرك",
+            "is_correct": false
+          },
+          {
+            "text": "دخول جميع السائقين",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تحظر هذه العلامة تحديدًا دخول المركبات ذات المحرك التي لها أكثر من عجلتين."
+      }
+    }
+  },
+  {
+    "question_id": "C5_Q04",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U bestuurt een auto en ziet dit bord. Wat doet u?",
+        "choices": [
+          {
+            "text": "Niet inrijden en een andere route nemen",
+            "is_correct": true
+          },
+          {
+            "text": "Toch inrijden als de weg vrij lijkt",
+            "is_correct": false
+          },
+          {
+            "text": "Langzaam doorrijden",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Omdat een auto een motorvoertuig met meer dan twee wielen is, moet u een andere route kiezen."
+      },
+      "EN": {
+        "question": "You are driving a car and see this sign. What should you do?",
+        "choices": [
+          {
+            "text": "Do not enter and take another route",
+            "is_correct": true
+          },
+          {
+            "text": "Enter if the road looks clear",
+            "is_correct": false
+          },
+          {
+            "text": "Continue slowly",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Because a car is a motor vehicle with more than two wheels, you should choose another route."
+      },
+      "FR": {
+        "question": "Vous conduisez une voiture et voyez ce panneau. Que devez-vous faire ?",
+        "choices": [
+          {
+            "text": "Ne pas entrer et prendre un autre itinéraire",
+            "is_correct": true
+          },
+          {
+            "text": "Entrer si la route semble libre",
+            "is_correct": false
+          },
+          {
+            "text": "Continuer lentement",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Comme une voiture est un véhicule à moteur de plus de deux roues, il faut choisir un autre itinéraire."
+      },
+      "AR": {
+        "question": "أنت تقود سيارة وترى هذه العلامة. ماذا ينبغي أن تفعل؟",
+        "choices": [
+          {
+            "text": "لا تدخل واختر طريقًا آخر",
+            "is_correct": true
+          },
+          {
+            "text": "ادخل إذا بدا الطريق خاليًا",
+            "is_correct": false
+          },
+          {
+            "text": "تابع السير ببطء",
+            "is_correct": false
+          }
+        ],
+        "explanation": "بما أن السيارة مركبة ذات محرك لها أكثر من عجلتين، فينبغي اختيار طريق آخر."
+      }
+    }
+  },
+  {
+    "question_id": "C5_Q05",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Uw bestemming ligt vlak achter dit bord. Wat doet u met uw auto?",
+        "choices": [
+          {
+            "text": "Een alternatieve route zoeken",
+            "is_correct": true
+          },
+          {
+            "text": "Toch doorrijden omdat het dichtbij is",
+            "is_correct": false
+          },
+          {
+            "text": "Alleen snel passeren",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ook als uw bestemming dichtbij ligt, blijft de toegangsbeperking voor motorvoertuigen met meer dan twee wielen gelden."
+      },
+      "EN": {
+        "question": "Your destination is just beyond this sign. What do you do with your car?",
+        "choices": [
+          {
+            "text": "Find an alternative route",
+            "is_correct": true
+          },
+          {
+            "text": "Continue because it is nearby",
+            "is_correct": false
+          },
+          {
+            "text": "Just pass through quickly",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Even if your destination is nearby, the access restriction for motor vehicles with more than two wheels still applies."
+      },
+      "FR": {
+        "question": "Votre destination se trouve juste après ce panneau. Que faites-vous avec votre voiture ?",
+        "choices": [
+          {
+            "text": "Chercher un autre itinéraire",
+            "is_correct": true
+          },
+          {
+            "text": "Continuer parce que c’est tout près",
+            "is_correct": false
+          },
+          {
+            "text": "Passer rapidement",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Même si la destination est proche, la restriction d’accès pour les véhicules à moteur de plus de deux roues reste valable."
+      },
+      "AR": {
+        "question": "تقع وجهتك مباشرة بعد هذه العلامة. ماذا تفعل بسيارتك؟",
+        "choices": [
+          {
+            "text": "ابحث عن طريق بديل",
+            "is_correct": true
+          },
+          {
+            "text": "واصل السير لأنها قريبة",
+            "is_correct": false
+          },
+          {
+            "text": "اعبر بسرعة فقط",
+            "is_correct": false
+          }
+        ],
+        "explanation": "حتى لو كانت وجهتك قريبة، يبقى المنع قائمًا على المركبات ذات المحرك التي لها أكثر من عجلتين."
+      }
+    }
+  },
+  {
+    "question_id": "C5_Q06",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Mag een bestuurder van een tweewielige motorfiets deze weg gebruiken ondanks dit bord?",
+        "choices": [
+          {
+            "text": "Ja, het bord richt zich op motorvoertuigen met meer dan twee wielen",
+            "is_correct": true
+          },
+          {
+            "text": "Nee, het bord verbiedt ook alle motorfietsen",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dit bord is gericht op motorvoertuigen met meer dan twee wielen. Een gewone tweewielige motorfiets valt daar niet automatisch onder."
+      },
+      "EN": {
+        "question": "May the rider of a two-wheeled motorcycle use this road despite this sign?",
+        "choices": [
+          {
+            "text": "Yes, the sign targets motor vehicles with more than two wheels",
+            "is_correct": true
+          },
+          {
+            "text": "No, the sign also bans all motorcycles",
+            "is_correct": false
+          }
+        ],
+        "explanation": "This sign is aimed at motor vehicles with more than two wheels. An ordinary two-wheeled motorcycle is not automatically included."
+      },
+      "FR": {
+        "question": "Le conducteur d’une moto à deux roues peut-il utiliser cette route malgré ce panneau ?",
+        "choices": [
+          {
+            "text": "Oui, le panneau vise les véhicules à moteur de plus de deux roues",
+            "is_correct": true
+          },
+          {
+            "text": "Non, le panneau interdit aussi toutes les motos",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ce panneau vise les véhicules à moteur de plus de deux roues. Une moto ordinaire à deux roues n’est pas automatiquement comprise."
+      },
+      "AR": {
+        "question": "هل يجوز لسائق دراجة نارية ذات عجلتين استعمال هذا الطريق رغم هذه العلامة؟",
+        "choices": [
+          {
+            "text": "نعم، العلامة تستهدف المركبات ذات المحرك التي لها أكثر من عجلتين",
+            "is_correct": true
+          },
+          {
+            "text": "لا، العلامة تحظر أيضًا جميع الدراجات النارية",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تستهدف هذه العلامة المركبات ذات المحرك التي لها أكثر من عجلتين. أما الدراجة النارية العادية ذات العجلتين فلا تندرج تلقائيًا ضمنها."
+      }
+    }
+  },
+  {
+    "question_id": "C5_Q07",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "De weg lijkt volledig leeg. Mag u er met een auto toch inrijden?",
+        "choices": [
+          {
+            "text": "Nee, het bord blijft gelden ook als de weg leeg lijkt",
+            "is_correct": true
+          },
+          {
+            "text": "Ja, als er niemand is mag het",
+            "is_correct": false
+          }
+        ],
+        "explanation": "De zichtbare verkeerssituatie verandert de betekenis van het bord niet. Voor motorvoertuigen met meer dan twee wielen blijft deze toegang verboden."
+      },
+      "EN": {
+        "question": "The road looks completely empty. May you still enter with a car?",
+        "choices": [
+          {
+            "text": "No, the sign still applies even if the road looks empty",
+            "is_correct": true
+          },
+          {
+            "text": "Yes, if no one is there it is allowed",
+            "is_correct": false
+          }
+        ],
+        "explanation": "The visible traffic situation does not change the meaning of the sign. For motor vehicles with more than two wheels, this access remains prohibited."
+      },
+      "FR": {
+        "question": "La route semble complètement vide. Pouvez-vous quand même y entrer avec une voiture ?",
+        "choices": [
+          {
+            "text": "Non, le panneau reste valable même si la route semble vide",
+            "is_correct": true
+          },
+          {
+            "text": "Oui, s’il n’y a personne c’est permis",
+            "is_correct": false
+          }
+        ],
+        "explanation": "La situation visible sur la route ne change pas la signification du panneau. Pour les véhicules à moteur de plus de deux roues, cet accès reste interdit."
+      },
+      "AR": {
+        "question": "يبدو الطريق خاليًا تمامًا. هل يجوز لك رغم ذلك الدخول بسيارة؟",
+        "choices": [
+          {
+            "text": "لا، تبقى العلامة سارية حتى لو بدا الطريق خاليًا",
+            "is_correct": true
+          },
+          {
+            "text": "نعم، إذا لم يكن هناك أحد فهذا مسموح",
+            "is_correct": false
+          }
+        ],
+        "explanation": "الوضع الظاهر على الطريق لا يغيّر معنى العلامة. وبالنسبة للمركبات ذات المحرك التي لها أكثر من عجلتين يبقى هذا المدخل محظورًا."
+      }
+    }
+  },
+  {
+    "question_id": "C5_Q08",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Geldt dit bord ook voor een elektrische auto?",
+        "choices": [
+          {
+            "text": "Ja, ook een elektrische auto valt onder motorvoertuigen met meer dan twee wielen",
+            "is_correct": true
+          },
+          {
+            "text": "Nee, alleen voertuigen met verbrandingsmotor vallen eronder",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Voor de betekenis van dit bord is het relevant dat het voertuig een motorvoertuig met meer dan twee wielen is. Het type aandrijving verandert die betekenis niet."
+      },
+      "EN": {
+        "question": "Does this sign also apply to an electric car?",
+        "choices": [
+          {
+            "text": "Yes, an electric car also falls under motor vehicles with more than two wheels",
+            "is_correct": true
+          },
+          {
+            "text": "No, only vehicles with combustion engines are covered",
+            "is_correct": false
+          }
+        ],
+        "explanation": "For the meaning of this sign, what matters is that the vehicle is a motor vehicle with more than two wheels. The type of propulsion does not change that meaning."
+      },
+      "FR": {
+        "question": "Ce panneau s’applique-t-il aussi à une voiture électrique ?",
+        "choices": [
+          {
+            "text": "Oui, une voiture électrique relève aussi des véhicules à moteur de plus de deux roues",
+            "is_correct": true
+          },
+          {
+            "text": "Non, seuls les véhicules à moteur thermique sont visés",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Pour la signification de ce panneau, l’élément important est que le véhicule soit un véhicule à moteur de plus de deux roues. Le mode de propulsion ne change pas cette signification."
+      },
+      "AR": {
+        "question": "هل تنطبق هذه العلامة أيضًا على سيارة كهربائية؟",
+        "choices": [
+          {
+            "text": "نعم، السيارة الكهربائية تندرج أيضًا ضمن المركبات ذات المحرك التي لها أكثر من عجلتين",
+            "is_correct": true
+          },
+          {
+            "text": "لا، المقصود فقط المركبات ذات محرك الاحتراق",
+            "is_correct": false
+          }
+        ],
+        "explanation": "المهم في معنى هذه العلامة هو أن المركبة ذات محرك ولها أكثر من عجلتين. ونوع نظام الدفع لا يغيّر هذا المعنى."
+      }
+    }
+  }
+]

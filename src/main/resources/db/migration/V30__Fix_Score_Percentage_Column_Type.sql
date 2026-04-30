@@ -6,8 +6,6 @@
 -- Issue: Hibernate expects FLOAT(53) but DB has DECIMAL
 -- ========================================
 
-USE readyroad_prod;
-
 -- Fix score_percentage column type (safe migration)
 ALTER TABLE quiz_attempts
 MODIFY COLUMN score_percentage DOUBLE NULL;

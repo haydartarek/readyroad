@@ -1,6 +1,4 @@
 -- V29__Add_Missing_updated_at_to_quiz_attempts.sql (Fixed)
-USE readyroad_prod;
-
 -- Add missing updated_at column (safe migration)
 ALTER TABLE quiz_attempts 
 ADD COLUMN updated_at TIMESTAMP NULL 

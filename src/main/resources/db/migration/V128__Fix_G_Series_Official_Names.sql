@@ -11,7 +11,7 @@ UPDATE traffic_signs SET
   name_nl    = 'Aanvulling van de verkeersborden voor parkeren',
   name_en    = 'Supplement to traffic signs for parking',
   name_fr    = 'Complément des panneaux de stationnement',
-  name_ar    = 'ملحق لافتات الوقوف',
+  name_ar    = 'ملحق علامات الوقوف',
   updated_at = NOW()
 WHERE sign_code = 'GVIIa';
 
@@ -20,7 +20,7 @@ UPDATE traffic_signs SET
   name_nl    = 'Aanvulling van de verkeersborden voor parkeren',
   name_en    = 'Supplement to traffic signs for parking',
   name_fr    = 'Complément des panneaux de stationnement',
-  name_ar    = 'ملحق لافتات الوقوف',
+  name_ar    = 'ملحق علامات الوقوف',
   updated_at = NOW()
 WHERE sign_code = 'GVIIb';
 
@@ -30,7 +30,7 @@ UPDATE traffic_signs SET
   name_nl    = 'Aanvulling van de verkeersborden voor parkeren',
   name_en    = 'Supplement to traffic signs for parking',
   name_fr    = 'Complément des panneaux de stationnement',
-  name_ar    = 'ملحق لافتات الوقوف',
+  name_ar    = 'ملحق علامات الوقوف',
   updated_at = NOW()
 WHERE sign_code = 'GVIId';
 

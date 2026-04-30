@@ -1,10 +1,602 @@
-﻿[
-  {"question_id":"C24c_Q01","type":"WHAT_DOES_IT_MEAN","difficulty":"EASY","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Wat betekent dit verkeersbord?","choices":[{"text":"Verboden toegang voor voertuigen met verontreinigende stoffen","is_correct":true},{"text":"Verboden toegang voor voertuigen met ontvlambare stoffen","is_correct":false},{"text":"Verboden toegang voor alle voertuigen met gevaarlijke goederen","is_correct":false}],"explanation":"C24c verbiedt specifiek voertuigen die stoffen vervoeren die het milieu kunnen verontreinigen. C24b verbiedt ontvlambare/ontplofbare en C24a alle gevaarlijke goederen."},"EN":{"question":"What does this traffic sign mean?","choices":[{"text":"No entry for vehicles carrying polluting substances","is_correct":true},{"text":"No entry for vehicles carrying flammable substances","is_correct":false},{"text":"No entry for all vehicles carrying dangerous goods","is_correct":false}],"explanation":"C24c specifically prohibits vehicles carrying substances that can pollute the environment. C24b prohibits flammable/explosive and C24a all dangerous goods."},"FR":{"question":"Que signifie ce panneau ?","choices":[{"text":"Acces interdit aux vehicules transportant des substances polluantes","is_correct":true},{"text":"Acces interdit aux vehicules transportant des substances inflammables","is_correct":false},{"text":"Acces interdit a tous les vehicules transportant des marchandises dangereuses","is_correct":false}],"explanation":"C24c interdit specifiquement les vehicules transportant des substances pouvant polluer l environnement. C24b interdit les inflammables/explosifs et C24a toutes les marchandises dangereuses."},"AR":{"question":"Ù…Ø§Ø°Ø§ ØªØ¹Ù†ÙŠ Ù„Ø§ÙØªØ© Ø§Ù„Ù…Ø±ÙˆØ± Ù‡Ø°Ù‡ØŸ","choices":[{"text":"Ù…Ù…Ù†ÙˆØ¹ Ø¯Ø®ÙˆÙ„ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„ØªÙŠ ØªÙ†Ù‚Ù„ Ù…ÙˆØ§Ø¯ Ù…Ù„ÙˆØ«Ø©","is_correct":true},{"text":"Ù…Ù…Ù†ÙˆØ¹ Ø¯Ø®ÙˆÙ„ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„ØªÙŠ ØªÙ†Ù‚Ù„ Ù…ÙˆØ§Ø¯ Ù‚Ø§Ø¨Ù„Ø© Ù„Ù„Ø§Ø´ØªØ¹Ø§Ù„","is_correct":false},{"text":"Ù…Ù…Ù†ÙˆØ¹ Ø¯Ø®ÙˆÙ„ Ø¬Ù…ÙŠØ¹ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„ØªÙŠ ØªÙ†Ù‚Ù„ Ø¨Ø¶Ø§Ø¦Ø¹ Ø®Ø·Ø±Ø©","is_correct":false}],"explanation":"ØªØ­Ø¸Ø± C24c ØªØ­Ø¯ÙŠØ¯Ø§ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„ØªÙŠ ØªÙ†Ù‚Ù„ Ù…ÙˆØ§Ø¯ ÙŠÙ…ÙƒÙ†Ù‡Ø§ ØªÙ„ÙˆÙŠØ« Ø§Ù„Ø¨ÙŠØ¦Ø©. C24b ØªØ­Ø¸Ø± Ø§Ù„Ù‚Ø§Ø¨Ù„Ø© Ù„Ù„Ø§Ø´ØªØ¹Ø§Ù„/Ø§Ù„Ø§Ù†ÙØ¬Ø§Ø± ÙˆC24a Ø¬Ù…ÙŠØ¹ Ø§Ù„Ø¨Ø¶Ø§Ø¦Ø¹ Ø§Ù„Ø®Ø·Ø±Ø©."}}},
-  {"question_id":"C24c_Q02","type":"WHICH_SIGN","difficulty":"EASY","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Tot welke categorie behoort dit bord?","choices":[{"text":"Verbodsborden (C-reeks)","is_correct":true},{"text":"Gevaarsborden (A-reeks)","is_correct":false},{"text":"Gebodsborden (D-reeks)","is_correct":false}],"explanation":"Verbodsborden (C-reeks) zijn rond met rode rand."},"EN":{"question":"To which category does this sign belong?","choices":[{"text":"Prohibition signs (C-series)","is_correct":true},{"text":"Danger signs (A-series)","is_correct":false},{"text":"Mandatory signs (D-series)","is_correct":false}],"explanation":"Prohibition signs (C-series) are round with a red border."},"FR":{"question":"A quelle categorie appartient ce panneau ?","choices":[{"text":"Panneaux d interdiction (serie C)","is_correct":true},{"text":"Panneaux de danger (serie A)","is_correct":false},{"text":"Panneaux d obligation (serie D)","is_correct":false}],"explanation":"Les panneaux d interdiction (serie C) sont ronds avec un bord rouge."},"AR":{"question":"Ø§Ù„Ù‰ Ø§ÙŠ ÙØ¦Ø© ØªÙ†ØªÙ…ÙŠ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ","choices":[{"text":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø­Ø¸Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© C)","is_correct":true},{"text":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© A)","is_correct":false},{"text":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø§Ù„Ø²Ø§Ù… (Ø§Ù„Ø³Ù„Ø³Ù„Ø© D)","is_correct":false}],"explanation":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø­Ø¸Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© C) Ù…Ø³ØªØ¯ÙŠØ±Ø© Ø°Ø§Øª Ø­Ø¯ Ø§Ø­Ù…Ø±."}}},
-  {"question_id":"C24c_Q03","type":"HAZARD_IDENTIFICATION","difficulty":"EASY","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Welk type goederen verbiedt bord C24c specifiek?","choices":[{"text":"Stoffen die bij lekkage bodem, water of lucht kunnen verontreinigen (milieugevaarlijke stoffen)","is_correct":true},{"text":"Alle chemische stoffen zonder uitzondering","is_correct":false},{"text":"Enkel giftige gassen en vloeistoffen","is_correct":false}],"explanation":"C24c verbiedt het transport van milieugevaarlijke stoffen: producten die bij vrijkomen schade kunnen toebrengen aan de natuur, het grondwater of de atmosfeer. Dit is typisch op locaties nabij waterwinningsgebieden of ecologisch gevoelige zones."},"EN":{"question":"What type of goods does sign C24c specifically prohibit?","choices":[{"text":"Substances that can pollute soil, water or air if they leak (environmentally hazardous substances)","is_correct":true},{"text":"All chemical substances without exception","is_correct":false},{"text":"Only toxic gases and liquids","is_correct":false}],"explanation":"C24c prohibits the transport of environmentally hazardous substances: products that if released can cause damage to nature, groundwater or the atmosphere. This is typically used near water extraction areas or ecologically sensitive zones."},"FR":{"question":"Quel type de marchandises le panneau C24c interdit-il specifiquement ?","choices":[{"text":"Substances pouvant polluer le sol l eau ou l air en cas de fuite (substances dangereuses pour l environnement)","is_correct":true},{"text":"Toutes les substances chimiques sans exception","is_correct":false},{"text":"Uniquement les gaz et liquides toxiques","is_correct":false}],"explanation":"C24c interdit le transport de substances dangereuses pour l environnement: des produits qui si liberes peuvent causer des dommages a la nature aux eaux souterraines ou a l atmosphere. Ceci est typiquement utilise pres des zones de captage d eau ou des zones ecologiquement sensibles."},"AR":{"question":"Ù…Ø§ Ù†ÙˆØ¹ Ø§Ù„Ø¨Ø¶Ø§Ø¦Ø¹ Ø§Ù„ØªÙŠ ØªØ­Ø¸Ø±Ù‡Ø§ Ù„Ø§ÙØªØ© C24c ØªØ­Ø¯ÙŠØ¯Ø§ØŸ","choices":[{"text":"Ø§Ù„Ù…ÙˆØ§Ø¯ Ø§Ù„ØªÙŠ ÙŠÙ…ÙƒÙ†Ù‡Ø§ ØªÙ„ÙˆÙŠØ« Ø§Ù„ØªØ±Ø¨Ø© Ø§Ùˆ Ø§Ù„Ù…Ø§Ø¡ Ø§Ùˆ Ø§Ù„Ù‡ÙˆØ§Ø¡ Ø¹Ù†Ø¯ Ø§Ù„ØªØ³Ø±Ø¨ (Ù…ÙˆØ§Ø¯ Ø®Ø·Ø±Ø© Ø¨ÙŠØ¦ÙŠØ§)","is_correct":true},{"text":"Ø¬Ù…ÙŠØ¹ Ø§Ù„Ù…ÙˆØ§Ø¯ Ø§Ù„ÙƒÙŠÙ…ÙŠØ§Ø¦ÙŠØ© Ø¯ÙˆÙ† Ø§Ø³ØªØ«Ù†Ø§Ø¡","is_correct":false},{"text":"Ø§Ù„ØºØ§Ø²Ø§Øª ÙˆØ§Ù„Ø³ÙˆØ§Ø¦Ù„ Ø§Ù„Ø³Ø§Ù…Ø© ÙÙ‚Ø·","is_correct":false}],"explanation":"ØªØ­Ø¸Ø± C24c Ù†Ù‚Ù„ Ø§Ù„Ù…ÙˆØ§Ø¯ Ø§Ù„Ø®Ø·Ø±Ø© Ø¨ÙŠØ¦ÙŠØ§: Ù…Ù†ØªØ¬Ø§Øª ÙŠÙ…ÙƒÙ†Ù‡Ø§ Ø¹Ù†Ø¯ Ø¥ÙØ±Ø§Ø¬Ù‡Ø§ Ø§Ù„Ø§Ø¶Ø±Ø§Ø± Ø¨Ø§Ù„Ø·Ø¨ÙŠØ¹Ø© ÙˆØ§Ù„Ù…ÙŠØ§Ù‡ Ø§Ù„Ø¬ÙˆÙÙŠØ© Ø§Ùˆ Ø§Ù„ØºÙ„Ø§Ù Ø§Ù„Ø¬ÙˆÙŠ. ÙŠÙØ³ØªØ®Ø¯Ù… Ù‡Ø°Ø§ Ø¹Ø§Ø¯Ø© Ø¨Ø§Ù„Ù‚Ø±Ø¨ Ù…Ù† Ù…Ù†Ø§Ø·Ù‚ Ø§Ø³ØªØ®Ø±Ø§Ø¬ Ø§Ù„Ù…ÙŠØ§Ù‡ Ø§Ùˆ Ø§Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ø­Ø³Ø§Ø³Ø© Ø¨ÙŠØ¦ÙŠØ§."}}},
-  {"question_id":"C24c_Q04","type":"WHAT_MUST_YOU_DO","difficulty":"MEDIUM","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"U rijdt een tankwagen met chemisch afvalwater nabij een waterwingebied en ziet bord C24c. Wat doet u?","choices":[{"text":"Stoppen en een alternatieve route nemen","is_correct":true},{"text":"Doorrijden want chemisch afvalwater is geen gevaarlijk goed","is_correct":false},{"text":"Doorrijden als de tankwagen dubbele wanden heeft","is_correct":false}],"explanation":"C24c verbiedt het transport van verontreinigende stoffen, inclusief chemisch afvalwater. Technische veiligheidsmaatregelen van het voertuig zijn geen reden om het verbod te negeren."},"EN":{"question":"You are driving a tanker with chemical waste water near a water extraction area and see sign C24c. What do you do?","choices":[{"text":"Stop and take an alternative route","is_correct":true},{"text":"Continue because chemical waste water is not a dangerous good","is_correct":false},{"text":"Continue if the tanker has double walls","is_correct":false}],"explanation":"C24c prohibits the transport of polluting substances including chemical waste water. Technical safety features of the vehicle are not a reason to ignore the prohibition."},"FR":{"question":"Vous conduisez un camion-citerne avec des eaux usees chimiques pres d une zone de captage et voyez le panneau C24c. Que faites-vous ?","choices":[{"text":"S arreter et prendre un itineraire alternatif","is_correct":true},{"text":"Continuer car les eaux usees chimiques ne sont pas des marchandises dangereuses","is_correct":false},{"text":"Continuer si le camion-citerne a une double paroi","is_correct":false}],"explanation":"C24c interdit le transport de substances polluantes y compris les eaux usees chimiques. Les caracteristiques techniques de securite du vehicule ne sont pas une raison d ignorer l interdiction."},"AR":{"question":"Ø§Ù†Øª ØªÙ‚ÙˆØ¯ Ù†Ø§Ù‚Ù„Ø© Ø¨Ù…ÙŠØ§Ù‡ Ù†ÙØ§ÙŠØ§Øª ÙƒÙŠÙ…ÙŠØ§Ø¦ÙŠØ© Ù‚Ø±Ø¨ Ù…Ù†Ø·Ù‚Ø© Ø§Ø³ØªØ®Ø±Ø§Ø¬ Ù…ÙŠØ§Ù‡ ÙˆØªØ±Ù‰ Ù„Ø§ÙØªØ© C24c. Ù…Ø§Ø°Ø§ ØªÙØ¹Ù„ØŸ","choices":[{"text":"ØªÙˆÙ‚Ù ÙˆØ®Ø° Ø·Ø±ÙŠÙ‚Ø§ Ø¨Ø¯ÙŠÙ„Ø§","is_correct":true},{"text":"ØªØ§Ø¨Ø¹ Ù„Ø§Ù† Ù…ÙŠØ§Ù‡ Ø§Ù„Ù†ÙØ§ÙŠØ§Øª Ø§Ù„ÙƒÙŠÙ…ÙŠØ§Ø¦ÙŠØ© Ù„ÙŠØ³Øª Ø¨Ø¶Ø§Ø¦Ø¹ Ø®Ø·Ø±Ø©","is_correct":false},{"text":"ØªØ§Ø¨Ø¹ Ø§Ø°Ø§ ÙƒØ§Ù†Øª Ø§Ù„Ù†Ø§Ù‚Ù„Ø© Ø°Ø§Øª Ø¬Ø¯Ø±Ø§Ù† Ù…Ø²Ø¯ÙˆØ¬Ø©","is_correct":false}],"explanation":"ØªØ­Ø¸Ø± C24c Ù†Ù‚Ù„ Ø§Ù„Ù…ÙˆØ§Ø¯ Ø§Ù„Ù…Ù„ÙˆØ«Ø© Ø¨Ù…Ø§ ÙÙŠÙ‡Ø§ Ù…ÙŠØ§Ù‡ Ø§Ù„Ù†ÙØ§ÙŠØ§Øª Ø§Ù„ÙƒÙŠÙ…ÙŠØ§Ø¦ÙŠØ©. Ø§Ù„Ù…ÙŠØ²Ø§Øª Ø§Ù„ØªÙ‚Ù†ÙŠØ© Ø§Ù„Ø§Ù…Ù†ÙŠØ© Ù„Ù„Ù…Ø±ÙƒØ¨Ø© Ù„ÙŠØ³Øª Ø³Ø¨Ø¨Ø§ Ù„ØªØ¬Ø§Ù‡Ù„ Ø§Ù„Ø­Ø¸Ø±."}}},
-  {"question_id":"C24c_Q05","type":"WHAT_MUST_YOU_DO","difficulty":"MEDIUM","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Een landbouwvoertuig met meststoffen rijdt voorbij bord C24c naar een aangrenzend veld. Is dat verboden?","choices":[{"text":"Ja, meststoffen kunnen verontreinigende stoffen zijn en C24c zou van toepassing kunnen zijn tenzij er een lokale ontheffing is","is_correct":true},{"text":"Nee, landbouwgebruik was nooit bedoeld als doelgroep van C24c","is_correct":false},{"text":"Alleen als de meststof van chemische (kunstmatige) oorsprong is","is_correct":false}],"explanation":"C24c verbiedt het vervoer van verontreinigende stoffen. Bepaalde kunstmeststoffen en vloeibare dierlijke mest kunnen als verontreinigend worden beschouwd. Of landbouwvoertuigen zijn vrijgesteld, hangt af van de specifieke ontheffingen of besluiten van de wegbeheerder."},"EN":{"question":"An agricultural vehicle with fertilisers passes sign C24c heading to an adjacent field. Is that prohibited?","choices":[{"text":"Yes, fertilisers can be polluting substances and C24c could apply unless there is a local exemption","is_correct":true},{"text":"No, agricultural use was never the target group of C24c","is_correct":false},{"text":"Only if the fertiliser is of chemical (artificial) origin","is_correct":false}],"explanation":"C24c prohibits the transport of polluting substances. Certain artificial fertilisers and liquid animal manure can be considered polluting. Whether agricultural vehicles are exempt depends on specific exemptions or decisions by the road authority."},"FR":{"question":"Un vehicule agricole avec des engrais passe devant le panneau C24c pour se rendre dans un champ adjacent. Est-ce interdit ?","choices":[{"text":"Oui, les engrais peuvent etre des substances polluantes et C24c pourrait s appliquer sauf s il y a une derogation locale","is_correct":true},{"text":"Non, l usage agricole n a jamais ete le groupe cible de C24c","is_correct":false},{"text":"Seulement si l engrais est d origine chimique (artificielle)","is_correct":false}],"explanation":"C24c interdit le transport de substances polluantes. Certains engrais artificiels et fumiers liquides peuvent etre consideres comme polluants. L exemption des vehicules agricoles depend des derogations specifiques ou des decisions du gestionnaire de la voirie."},"AR":{"question":"Ù…Ø±ÙƒØ¨Ø© Ø²Ø±Ø§Ø¹ÙŠØ© Ø¨Ù‡Ø§ Ø§Ø³Ù…Ø¯Ø© ØªÙ…Ø± Ø§Ù…Ø§Ù… Ù„Ø§ÙØªØ© C24c Ù…ØªØ¬Ù‡Ø© Ø§Ù„Ù‰ Ø­Ù‚Ù„ Ù…Ø¬Ø§ÙˆØ±. Ù‡Ù„ Ø°Ù„Ùƒ Ù…Ø­Ø¸ÙˆØ±ØŸ","choices":[{"text":"Ù†Ø¹Ù…ØŒ Ø§Ù„Ø§Ø³Ù…Ø¯Ø© ÙŠÙ…ÙƒÙ† Ø§Ù† ØªÙƒÙˆÙ† Ù…ÙˆØ§Ø¯ Ù…Ù„ÙˆØ«Ø© ÙˆÙ‚Ø¯ ØªÙ†Ø·Ø¨Ù‚ C24c Ù…Ø§ Ù„Ù… ÙŠÙƒÙ† Ù‡Ù†Ø§Ùƒ Ø§Ø³ØªØ«Ù†Ø§Ø¡ Ù…Ø­Ù„ÙŠ","is_correct":true},{"text":"Ù„Ø§ØŒ Ø§Ù„Ø§Ø³ØªØ®Ø¯Ø§Ù… Ø§Ù„Ø²Ø±Ø§Ø¹ÙŠ Ù„Ù… ÙŠÙƒÙ† ÙŠÙˆÙ…Ø§ Ø§Ù„ÙØ¦Ø© Ø§Ù„Ù…Ø³ØªÙ‡Ø¯ÙØ© Ù„Ù€C24c","is_correct":false},{"text":"ÙÙ‚Ø· Ø§Ø°Ø§ ÙƒØ§Ù† Ø§Ù„Ø³Ù…Ø§Ø¯ Ø°Ø§ Ø§ØµÙ„ ÙƒÙŠÙ…ÙŠØ§Ø¦ÙŠ (Ø§ØµØ·Ù†Ø§Ø¹ÙŠ)","is_correct":false}],"explanation":"ØªØ­Ø¸Ø± C24c Ù†Ù‚Ù„ Ø§Ù„Ù…ÙˆØ§Ø¯ Ø§Ù„Ù…Ù„ÙˆØ«Ø©. Ø¨Ø¹Ø¶ Ø§Ù„Ø§Ø³Ù…Ø¯Ø© Ø§Ù„Ø§ØµØ·Ù†Ø§Ø¹ÙŠØ© ÙˆØ§Ù„Ø³Ù…Ø§Ø¯ Ø§Ù„Ø­ÙŠÙˆØ§Ù†ÙŠ Ø§Ù„Ø³Ø§Ø¦Ù„ ÙŠÙ…ÙƒÙ† Ø§Ø¹ØªØ¨Ø§Ø±Ù‡ Ù…Ù„ÙˆØ«Ø§. Ù…Ø§ Ø§Ø°Ø§ ÙƒØ§Ù†Øª Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ø²Ø±Ø§Ø¹ÙŠØ© Ù…Ø¹ÙØ§Ø© ÙŠØ¹ØªÙ…Ø¯ Ø¹Ù„Ù‰ Ø§Ø³ØªØ«Ù†Ø§Ø¡Ø§Øª Ù…Ø­Ø¯Ø¯Ø© Ø§Ùˆ Ù‚Ø±Ø§Ø±Ø§Øª Ø³Ù„Ø·Ø© Ø§Ù„Ø·Ø±ÙŠÙ‚."}}},
-  {"question_id":"C24c_Q06","type":"WHAT_MUST_YOU_DO","difficulty":"MEDIUM","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Waar wordt bord C24c typisch geplaatst?","choices":[{"text":"Nabij waterwingebieden, grondwaterbeschermingszones en ecologisch gevoelige gebieden","is_correct":true},{"text":"Op alle autowegen en snelwegen door het land","is_correct":false},{"text":"Enkel in stadscentra met veel voetgangersverkeer","is_correct":false}],"explanation":"C24c wordt doelgericht ingezet om gevoelige omgevingen te beschermen waar een lek van verontreinigende stoffen ernstige ecologische of drinkwatergevolgen zou hebben."},"EN":{"question":"Where is sign C24c typically placed?","choices":[{"text":"Near water extraction areas, groundwater protection zones and ecologically sensitive areas","is_correct":true},{"text":"On all motorways and highways across the country","is_correct":false},{"text":"Only in city centres with high pedestrian traffic","is_correct":false}],"explanation":"C24c is purposefully used to protect sensitive environments where a leak of polluting substances would have serious ecological or drinking water consequences."},"FR":{"question":"Ou le panneau C24c est-il typiquement place ?","choices":[{"text":"Pres des zones de captage d eau des zones de protection des eaux souterraines et des zones ecologiquement sensibles","is_correct":true},{"text":"Sur toutes les autoroutes et routes nationales du pays","is_correct":false},{"text":"Uniquement dans les centres-villes avec beaucoup de trafic pietonne","is_correct":false}],"explanation":"C24c est utilise de facon ciblee pour proteger les environnements sensibles ou une fuite de substances polluantes aurait de graves consequences ecologiques ou sur l eau potable."},"AR":{"question":"Ø§ÙŠÙ† ÙŠÙÙˆØ¶Ø¹ Ø¨ÙŠØ§Ù† C24c Ø¹Ø§Ø¯Ø©ØŸ","choices":[{"text":"Ø¨Ø§Ù„Ù‚Ø±Ø¨ Ù…Ù† Ù…Ù†Ø§Ø·Ù‚ Ø§Ø³ØªØ®Ø±Ø§Ø¬ Ø§Ù„Ù…ÙŠØ§Ù‡ ÙˆØ§Ù…Ù†Ø§Ø·Ù‚ Ø­Ù…Ø§ÙŠØ© Ø§Ù„Ù…ÙŠØ§Ù‡ Ø§Ù„Ø¬ÙˆÙÙŠØ© ÙˆØ§Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ø­Ø³Ø§Ø³Ø© Ø¨ÙŠØ¦ÙŠØ§","is_correct":true},{"text":"Ø¹Ù„Ù‰ Ø¬Ù…ÙŠØ¹ Ø§Ù„Ø·Ø±Ù‚ Ø§Ù„Ø³Ø±ÙŠØ¹Ø© ÙˆØ§Ù„ÙˆØ·Ù†ÙŠØ© ÙÙŠ Ø§Ù„Ø¨Ù„Ø§Ø¯","is_correct":false},{"text":"ÙÙŠ Ù…Ø±Ø§ÙƒØ² Ø§Ù„Ù…Ø¯Ù† Ø°Ø§Øª Ø­Ø±ÙƒØ© Ø§Ù„Ù…Ø´Ø§Ø© Ø§Ù„ÙƒØ«ÙŠÙØ© ÙÙ‚Ø·","is_correct":false}],"explanation":"ÙŠÙØ³ØªØ®Ø¯Ù… C24c Ø¨Ø´ÙƒÙ„ Ù‡Ø§Ø¯Ù Ù„Ø­Ù…Ø§ÙŠØ© Ø§Ù„Ø¨ÙŠØ¦Ø§Øª Ø§Ù„Ø­Ø³Ø§Ø³Ø© Ø§Ù„ØªÙŠ Ù‚Ø¯ ÙŠØªØ±ØªØ¨ Ø¹Ù„Ù‰ ØªØ³Ø±Ø¨ Ø§Ù„Ù…ÙˆØ§Ø¯ Ø§Ù„Ù…Ù„ÙˆØ«Ø© ÙÙŠÙ‡Ø§ Ø¹ÙˆØ§Ù‚Ø¨ Ø¨ÙŠØ¦ÙŠØ© Ø®Ø·ÙŠØ±Ø© Ø§Ùˆ Ø¹Ù„Ù‰ Ù…ÙŠØ§Ù‡ Ø§Ù„Ø´Ø±Ø¨."}}},
-  {"question_id":"C24c_Q07","type":"IS_IT_ALLOWED","difficulty":"HARD","is_critical":true,"show_sign":true,"i18n":{"NL":{"question":"Mag een reinigingsbedrijf met een zuigwagen gevuld met rioolwater langs een waterwingebied rijden als bord C24c aanwezig is?","choices":[{"text":"Nee, rioolwater is een verontreinigende stof en valt onder C24c","is_correct":true},{"text":"Ja, reinigingsbedrijven zijn altijd vrijgesteld van C24c","is_correct":false}],"explanation":"Rioolwater bevat verontreinigende stoffen en valt onder C24c. Reinigingsbedrijven hebben geen automatisch recht op een uitzondering. Zonder specifieke ontheffing geldt het verbod. Dit is een ernstige verkeersovertreding."},"EN":{"question":"May a cleaning company with a vacuum tanker filled with sewage water travel past a water extraction area when sign C24c is present?","choices":[{"text":"No, sewage water is a polluting substance and falls under C24c","is_correct":true},{"text":"Yes, cleaning companies are always exempt from C24c","is_correct":false}],"explanation":"Sewage water contains polluting substances and falls under C24c. Cleaning companies do not have an automatic right to an exemption. Without a specific exemption the prohibition applies. This is a serious traffic offence."},"FR":{"question":"Une entreprise de nettoyage avec un camion de pompage rempli d eaux usees peut-elle circuler pres d une zone de captage d eau quand le panneau C24c est present ?","choices":[{"text":"Non, les eaux usees sont une substance polluante et relevent du C24c","is_correct":true},{"text":"Oui, les entreprises de nettoyage sont toujours exemptees du C24c","is_correct":false}],"explanation":"Les eaux usees contiennent des substances polluantes et relevent du C24c. Les entreprises de nettoyage n ont pas de droit automatique a une derogation. Sans derogation specifique l interdiction s applique. Il s agit d une infraction grave au code de la route."},"AR":{"question":"Ù‡Ù„ ÙŠØ¬ÙˆØ² Ù„Ø´Ø±ÙƒØ© ØªÙ†Ø¸ÙŠÙ Ø¨ØµÙ‡Ø±ÙŠØ¬ Ø´ÙØ· Ù…Ù„ÙŠØ¡ Ø¨Ù…ÙŠØ§Ù‡ Ø§Ù„ØµØ±Ù Ø§Ù„ØµØ­ÙŠ Ø§Ù„Ù…Ø±ÙˆØ± Ø¨Ø§Ù„Ù‚Ø±Ø¨ Ù…Ù† Ù…Ù†Ø·Ù‚Ø© Ø§Ø³ØªØ®Ø±Ø§Ø¬ Ù…ÙŠØ§Ù‡ Ø¹Ù†Ø¯ ÙˆØ¬ÙˆØ¯ Ù„Ø§ÙØªØ© C24cØŸ","choices":[{"text":"Ù„Ø§ØŒ Ù…ÙŠØ§Ù‡ Ø§Ù„ØµØ±Ù Ø§Ù„ØµØ­ÙŠ Ù…Ø§Ø¯Ø© Ù…Ù„ÙˆØ«Ø© ÙˆØªÙ†Ø¯Ø±Ø¬ ØªØ­Øª C24c","is_correct":true},{"text":"Ù†Ø¹Ù…ØŒ Ø´Ø±ÙƒØ§Øª Ø§Ù„ØªÙ†Ø¸ÙŠÙ Ù…Ø¹ÙØ§Ø© Ø¯Ø§Ø¦Ù…Ø§ Ù…Ù† C24c","is_correct":false}],"explanation":"ØªØ­ØªÙˆÙŠ Ù…ÙŠØ§Ù‡ Ø§Ù„ØµØ±Ù Ø§Ù„ØµØ­ÙŠ Ø¹Ù„Ù‰ Ù…ÙˆØ§Ø¯ Ù…Ù„ÙˆØ«Ø© ÙˆØªÙ†Ø¯Ø±Ø¬ ØªØ­Øª C24c. Ù„Ø§ ØªÙ…ØªÙ„Ùƒ Ø´Ø±ÙƒØ§Øª Ø§Ù„ØªÙ†Ø¸ÙŠÙ Ø­Ù‚Ø§ ØªÙ„Ù‚Ø§Ø¦ÙŠØ§ ÙÙŠ Ø§Ù„Ø§Ø¹ÙØ§Ø¡. Ø¨Ø¯ÙˆÙ† Ø§Ø³ØªØ«Ù†Ø§Ø¡ Ù…Ø­Ø¯Ø¯ ÙŠØ³Ø±ÙŠ Ø§Ù„Ø­Ø¸Ø±. Ù‡Ø°Ù‡ Ù…Ø®Ø§Ù„ÙØ© Ù…Ø±ÙˆØ±ÙŠØ© Ø®Ø·ÙŠØ±Ø©."}}},
-  {"question_id":"C24c_Q08","type":"IS_IT_ALLOWED","difficulty":"HARD","is_critical":true,"show_sign":true,"i18n":{"NL":{"question":"Mag een voertuig met onschadelijke mineraalwater tankers de weg oprijden met bord C24c?","choices":[{"text":"Ja, mineraalwater is geen verontreinigende stof en valt niet onder C24c","is_correct":true},{"text":"Nee, alle vloeistoffen in bulktransport zijn verboden door C24c","is_correct":false}],"explanation":"C24c verbiedt verontreinigende stoffen. Mineraalwater is een veilige, niet-verontreinigende vloeistof. Voertuigen die dergelijke producten vervoeren vallen niet onder C24c. Rijden met echte verontreinigende stoffen voorbij C24c is echter een ernstige verkeersovertreding."},"EN":{"question":"May a vehicle with harmless mineral water tankers use the road bearing sign C24c?","choices":[{"text":"Yes, mineral water is not a polluting substance and does not fall under C24c","is_correct":true},{"text":"No, all liquids in bulk transport are prohibited by C24c","is_correct":false}],"explanation":"C24c prohibits polluting substances. Mineral water is a safe non-polluting liquid. Vehicles carrying such products do not fall under C24c. Driving with actual polluting substances past C24c is however a serious traffic offence."},"FR":{"question":"Un vehicule avec des citernes d eau minerale inoffensive peut-il emprunter la route avec le panneau C24c ?","choices":[{"text":"Oui, l eau minerale n est pas une substance polluante et ne releve pas du C24c","is_correct":true},{"text":"Non, tous les liquides en transport en vrac sont interdits par C24c","is_correct":false}],"explanation":"C24c interdit les substances polluantes. L eau minerale est un liquide sur non polluant. Les vehicules transportant de tels produits ne relevent pas du C24c. Conduire avec de vraies substances polluantes devant C24c est cependant une infraction grave au code de la route."},"AR":{"question":"Ù‡Ù„ ÙŠØ¬ÙˆØ² Ù„Ù…Ø±ÙƒØ¨Ø© Ø¨Ø®Ø²Ø§Ù†Ø§Øª Ù…ÙŠØ§Ù‡ Ù…Ø¹Ø¯Ù†ÙŠØ© ØºÙŠØ± Ø¶Ø§Ø±Ø© Ø§Ø³ØªØ®Ø¯Ø§Ù… Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø¨Ù‡ Ù„Ø§ÙØªØ© C24cØŸ","choices":[{"text":"Ù†Ø¹Ù…ØŒ Ø§Ù„Ù…Ø§Ø¡ Ø§Ù„Ù…Ø¹Ø¯Ù†ÙŠ Ù„ÙŠØ³ Ù…Ø§Ø¯Ø© Ù…Ù„ÙˆØ«Ø© ÙˆÙ„Ø§ ÙŠÙ†Ø¯Ø±Ø¬ ØªØ­Øª C24c","is_correct":true},{"text":"Ù„Ø§ØŒ Ø¬Ù…ÙŠØ¹ Ø§Ù„Ø³ÙˆØ§Ø¦Ù„ ÙÙŠ Ù†Ù‚Ù„ Ø§Ù„Ø¬Ù…Ù„Ø© Ù…Ø­Ø¸ÙˆØ±Ø© Ø¨Ù€C24c","is_correct":false}],"explanation":"ØªØ­Ø¸Ø± C24c Ø§Ù„Ù…ÙˆØ§Ø¯ Ø§Ù„Ù…Ù„ÙˆØ«Ø©. Ø§Ù„Ù…Ø§Ø¡ Ø§Ù„Ù…Ø¹Ø¯Ù†ÙŠ Ø³Ø§Ø¦Ù„ Ø¢Ù…Ù† ØºÙŠØ± Ù…Ù„ÙˆØ«. Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„ØªÙŠ ØªÙ†Ù‚Ù„ Ù…Ø«Ù„ Ù‡Ø°Ù‡ Ø§Ù„Ù…Ù†ØªØ¬Ø§Øª Ù„Ø§ ØªÙ†Ø¯Ø±Ø¬ ØªØ­Øª C24c. Ø§Ù„Ù‚ÙŠØ§Ø¯Ø© Ø¨Ù…ÙˆØ§Ø¯ Ù…Ù„ÙˆØ«Ø© Ø­Ù‚ÙŠÙ‚ÙŠØ© ØªØ¬Ø§ÙˆØ²Ø§ Ù„Ù€C24c Ù‡ÙŠ Ù…Ø®Ø§Ù„ÙØ© Ù…Ø±ÙˆØ±ÙŠØ© Ø®Ø·ÙŠØ±Ø©."}}}
+[
+  {
+    "question_id": "C24c_Q01",
+    "type": "WHAT_DOES_IT_MEAN",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat betekent dit verkeersbord?",
+        "choices": [
+          {
+            "text": "Verboden toegang voor voertuigen die gevaarlijke verontreinigende stoffen vervoeren",
+            "is_correct": true
+          },
+          {
+            "text": "Verboden toegang voor voertuigen met gewone lading",
+            "is_correct": false
+          },
+          {
+            "text": "Verboden toegang voor lege vrachtwagens",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dit bord geeft aan dat bestuurders van voertuigen die gevaarlijke verontreinigende stoffen vervoeren hier niet mogen inrijden."
+      },
+      "EN": {
+        "question": "What does this traffic sign mean?",
+        "choices": [
+          {
+            "text": "No entry for vehicles carrying dangerous polluting substances",
+            "is_correct": true
+          },
+          {
+            "text": "No entry for vehicles carrying ordinary loads",
+            "is_correct": false
+          },
+          {
+            "text": "No entry for empty trucks",
+            "is_correct": false
+          }
+        ],
+        "explanation": "This sign indicates that drivers of vehicles carrying dangerous polluting substances may not enter here."
+      },
+      "FR": {
+        "question": "Que signifie ce panneau ?",
+        "choices": [
+          {
+            "text": "Accès interdit aux véhicules transportant des substances dangereuses polluantes",
+            "is_correct": true
+          },
+          {
+            "text": "Accès interdit aux véhicules transportant un chargement ordinaire",
+            "is_correct": false
+          },
+          {
+            "text": "Accès interdit aux camions vides",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ce panneau indique que les conducteurs de véhicules transportant des substances dangereuses polluantes ne peuvent pas entrer ici."
+      },
+      "AR": {
+        "question": "ما معنى هذه العلامة المرورية؟",
+        "choices": [
+          {
+            "text": "ممنوع دخول المركبات التي تنقل مواد خطرة ملوثة",
+            "is_correct": true
+          },
+          {
+            "text": "ممنوع دخول المركبات التي تنقل حمولة عادية",
+            "is_correct": false
+          },
+          {
+            "text": "ممنوع دخول الشاحنات الفارغة",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تدل هذه العلامة على أن سائقي المركبات التي تنقل مواد خطرة ملوثة لا يجوز لهم الدخول من هنا."
+      }
+    }
+  },
+  {
+    "question_id": "C24c_Q02",
+    "type": "HAZARD_IDENTIFICATION",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Op wie is dit verbod van toepassing?",
+        "choices": [
+          {
+            "text": "Op bestuurders van voertuigen die gevaarlijke verontreinigende stoffen vervoeren",
+            "is_correct": true
+          },
+          {
+            "text": "Op alle bestuurders zonder uitzondering",
+            "is_correct": false
+          },
+          {
+            "text": "Alleen op bestuurders van bussen",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Het verbod geldt voor bestuurders van voertuigen die gevaarlijke verontreinigende stoffen vervoeren."
+      },
+      "EN": {
+        "question": "To whom does this prohibition apply?",
+        "choices": [
+          {
+            "text": "To drivers of vehicles carrying dangerous polluting substances",
+            "is_correct": true
+          },
+          {
+            "text": "To all drivers without exception",
+            "is_correct": false
+          },
+          {
+            "text": "Only to bus drivers",
+            "is_correct": false
+          }
+        ],
+        "explanation": "The prohibition applies to drivers of vehicles carrying dangerous polluting substances."
+      },
+      "FR": {
+        "question": "À qui s’applique cette interdiction ?",
+        "choices": [
+          {
+            "text": "Aux conducteurs de véhicules transportant des substances dangereuses polluantes",
+            "is_correct": true
+          },
+          {
+            "text": "À tous les conducteurs sans exception",
+            "is_correct": false
+          },
+          {
+            "text": "Seulement aux conducteurs d’autobus",
+            "is_correct": false
+          }
+        ],
+        "explanation": "L’interdiction s’applique aux conducteurs de véhicules transportant des substances dangereuses polluantes."
+      },
+      "AR": {
+        "question": "على من ينطبق هذا الحظر؟",
+        "choices": [
+          {
+            "text": "على سائقي المركبات التي تنقل مواد خطرة ملوثة",
+            "is_correct": true
+          },
+          {
+            "text": "على جميع السائقين دون استثناء",
+            "is_correct": false
+          },
+          {
+            "text": "فقط على سائقي الحافلات",
+            "is_correct": false
+          }
+        ],
+        "explanation": "ينطبق هذا الحظر على سائقي المركبات التي تنقل مواد خطرة ملوثة."
+      }
+    }
+  },
+  {
+    "question_id": "C24c_Q03",
+    "type": "HAZARD_IDENTIFICATION",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat verbiedt dit bord precies?",
+        "choices": [
+          {
+            "text": "De toegang voor voertuigen die gevaarlijke verontreinigende stoffen vervoeren",
+            "is_correct": true
+          },
+          {
+            "text": "De toegang voor alle voertuigen met goederen",
+            "is_correct": false
+          },
+          {
+            "text": "De toegang voor alle zware voertuigen",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dit bord verbiedt specifiek de toegang voor voertuigen die gevaarlijke verontreinigende stoffen vervoeren."
+      },
+      "EN": {
+        "question": "What exactly does this sign prohibit?",
+        "choices": [
+          {
+            "text": "Access for vehicles carrying dangerous polluting substances",
+            "is_correct": true
+          },
+          {
+            "text": "Access for all vehicles carrying goods",
+            "is_correct": false
+          },
+          {
+            "text": "Access for all heavy vehicles",
+            "is_correct": false
+          }
+        ],
+        "explanation": "This sign specifically prohibits access for vehicles carrying dangerous polluting substances."
+      },
+      "FR": {
+        "question": "Qu’interdit précisément ce panneau ?",
+        "choices": [
+          {
+            "text": "L’accès des véhicules transportant des substances dangereuses polluantes",
+            "is_correct": true
+          },
+          {
+            "text": "L’accès de tous les véhicules transportant des marchandises",
+            "is_correct": false
+          },
+          {
+            "text": "L’accès de tous les véhicules lourds",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ce panneau interdit précisément l’accès aux véhicules transportant des substances dangereuses polluantes."
+      },
+      "AR": {
+        "question": "ما الذي تمنعه هذه العلامة تحديدًا؟",
+        "choices": [
+          {
+            "text": "دخول المركبات التي تنقل مواد خطرة ملوثة",
+            "is_correct": true
+          },
+          {
+            "text": "دخول جميع المركبات التي تنقل بضائع",
+            "is_correct": false
+          },
+          {
+            "text": "دخول جميع المركبات الثقيلة",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تمنع هذه العلامة تحديدًا دخول المركبات التي تنقل مواد خطرة ملوثة."
+      }
+    }
+  },
+  {
+    "question_id": "C24c_Q04",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U bestuurt een voertuig met gevaarlijke verontreinigende stoffen en u ziet dit bord. Wat moet u doen?",
+        "choices": [
+          {
+            "text": "Niet inrijden en een andere route nemen",
+            "is_correct": true
+          },
+          {
+            "text": "Toch doorrijden als de weg vrij is",
+            "is_correct": false
+          },
+          {
+            "text": "Langzaam verder rijden",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Als u gevaarlijke verontreinigende stoffen vervoert, mag u hier niet inrijden en moet u een andere route nemen."
+      },
+      "EN": {
+        "question": "You are driving a vehicle carrying dangerous polluting substances and you see this sign. What must you do?",
+        "choices": [
+          {
+            "text": "Do not enter and take another route",
+            "is_correct": true
+          },
+          {
+            "text": "Continue if the road is clear",
+            "is_correct": false
+          },
+          {
+            "text": "Proceed slowly",
+            "is_correct": false
+          }
+        ],
+        "explanation": "If you are carrying dangerous polluting substances, you may not enter here and must take another route."
+      },
+      "FR": {
+        "question": "Vous conduisez un véhicule transportant des substances dangereuses polluantes et vous voyez ce panneau. Que devez-vous faire ?",
+        "choices": [
+          {
+            "text": "Ne pas entrer et prendre un autre itinéraire",
+            "is_correct": true
+          },
+          {
+            "text": "Continuer si la route est libre",
+            "is_correct": false
+          },
+          {
+            "text": "Avancer lentement",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Si vous transportez des substances dangereuses polluantes, vous ne pouvez pas entrer ici et devez prendre un autre itinéraire."
+      },
+      "AR": {
+        "question": "أنت تقود مركبة تنقل مواد خطرة ملوثة وترى هذه العلامة. ماذا يجب أن تفعل؟",
+        "choices": [
+          {
+            "text": "لا تدخل واسلك طريقًا آخر",
+            "is_correct": true
+          },
+          {
+            "text": "تابع إذا كان الطريق خاليًا",
+            "is_correct": false
+          },
+          {
+            "text": "واصل السير ببطء",
+            "is_correct": false
+          }
+        ],
+        "explanation": "إذا كنت تنقل مواد خطرة ملوثة فلا يجوز لك الدخول من هنا ويجب أن تسلك طريقًا آخر."
+      }
+    }
+  },
+  {
+    "question_id": "C24c_Q05",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Uw bestemming ligt achter dit bord en u vervoert gevaarlijke verontreinigende stoffen. Wat doet u?",
+        "choices": [
+          {
+            "text": "U rijdt hier niet in en kiest een andere toegelaten route",
+            "is_correct": true
+          },
+          {
+            "text": "U rijdt toch door omdat uw bestemming daar ligt",
+            "is_correct": false
+          },
+          {
+            "text": "U wacht en rijdt daarna toch door",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ook als uw bestemming verderop ligt, blijft de toegang verboden voor voertuigen die gevaarlijke verontreinigende stoffen vervoeren."
+      },
+      "EN": {
+        "question": "Your destination is beyond this sign and you are carrying dangerous polluting substances. What do you do?",
+        "choices": [
+          {
+            "text": "Do not enter here and choose another permitted route",
+            "is_correct": true
+          },
+          {
+            "text": "Continue because your destination is there",
+            "is_correct": false
+          },
+          {
+            "text": "Wait and then continue anyway",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Even if your destination is beyond the sign, access remains prohibited for vehicles carrying dangerous polluting substances."
+      },
+      "FR": {
+        "question": "Votre destination se trouve après ce panneau et vous transportez des substances dangereuses polluantes. Que faites-vous ?",
+        "choices": [
+          {
+            "text": "Vous n’entrez pas ici et choisissez un autre itinéraire autorisé",
+            "is_correct": true
+          },
+          {
+            "text": "Vous continuez parce que votre destination est là",
+            "is_correct": false
+          },
+          {
+            "text": "Vous attendez puis vous passez quand même",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Même si votre destination se trouve après le panneau, l’accès reste interdit aux véhicules transportant des substances dangereuses polluantes."
+      },
+      "AR": {
+        "question": "وجهتك تقع بعد هذه العلامة وأنت تنقل مواد خطرة ملوثة. ماذا تفعل؟",
+        "choices": [
+          {
+            "text": "لا تدخل من هنا واختر طريقًا آخر مسموحًا",
+            "is_correct": true
+          },
+          {
+            "text": "تابع لأن وجهتك هناك",
+            "is_correct": false
+          },
+          {
+            "text": "انتظر ثم اعبر رغم ذلك",
+            "is_correct": false
+          }
+        ],
+        "explanation": "حتى إذا كانت وجهتك بعد العلامة، يبقى الدخول ممنوعًا على المركبات التي تنقل مواد خطرة ملوثة."
+      }
+    }
+  },
+  {
+    "question_id": "C24c_Q06",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Mag een personenauto zonder gevaarlijke verontreinigende stoffen hier verder rijden?",
+        "choices": [
+          {
+            "text": "Ja, dit verbod is niet op die auto van toepassing",
+            "is_correct": true
+          },
+          {
+            "text": "Nee, geen enkel voertuig mag hier verder rijden",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dit verbod geldt voor voertuigen die gevaarlijke verontreinigende stoffen vervoeren, niet voor een personenauto zonder die stoffen."
+      },
+      "EN": {
+        "question": "May a passenger car without dangerous polluting substances continue here?",
+        "choices": [
+          {
+            "text": "Yes, this prohibition does not apply to that car",
+            "is_correct": true
+          },
+          {
+            "text": "No, no vehicle may continue here",
+            "is_correct": false
+          }
+        ],
+        "explanation": "This prohibition applies to vehicles carrying dangerous polluting substances, not to a passenger car without them."
+      },
+      "FR": {
+        "question": "Une voiture particulière sans substances dangereuses polluantes peut-elle continuer ici ?",
+        "choices": [
+          {
+            "text": "Oui, cette interdiction ne s’applique pas à cette voiture",
+            "is_correct": true
+          },
+          {
+            "text": "Non, aucun véhicule ne peut continuer ici",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Cette interdiction s’applique aux véhicules transportant des substances dangereuses polluantes, pas à une voiture particulière qui n’en transporte pas."
+      },
+      "AR": {
+        "question": "هل يجوز لسيارة ركاب لا تنقل مواد خطرة ملوثة أن تتابع السير هنا؟",
+        "choices": [
+          {
+            "text": "نعم، هذا الحظر لا ينطبق على تلك السيارة",
+            "is_correct": true
+          },
+          {
+            "text": "لا، لا يجوز لأي مركبة المتابعة هنا",
+            "is_correct": false
+          }
+        ],
+        "explanation": "ينطبق هذا الحظر على المركبات التي تنقل مواد خطرة ملوثة، وليس على سيارة ركاب لا تنقل هذه المواد."
+      }
+    }
+  },
+  {
+    "question_id": "C24c_Q07",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "De weg is volledig vrij. Mag een voertuig met gevaarlijke verontreinigende stoffen toch inrijden?",
+        "choices": [
+          {
+            "text": "Nee, het verbod blijft gelden",
+            "is_correct": true
+          },
+          {
+            "text": "Ja, als er geen ander verkeer is",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ook als de weg vrij is, blijft het verbod gelden voor voertuigen die gevaarlijke verontreinigende stoffen vervoeren."
+      },
+      "EN": {
+        "question": "The road is completely empty. May a vehicle carrying dangerous polluting substances still enter?",
+        "choices": [
+          {
+            "text": "No, the prohibition remains in force",
+            "is_correct": true
+          },
+          {
+            "text": "Yes, if there is no other traffic",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Even if the road is empty, the prohibition remains in force for vehicles carrying dangerous polluting substances."
+      },
+      "FR": {
+        "question": "La route est complètement vide. Un véhicule transportant des substances dangereuses polluantes peut-il quand même entrer ?",
+        "choices": [
+          {
+            "text": "Non, l’interdiction reste en vigueur",
+            "is_correct": true
+          },
+          {
+            "text": "Oui, s’il n’y a pas d’autre circulation",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Même si la route est vide, l’interdiction reste en vigueur pour les véhicules transportant des substances dangereuses polluantes."
+      },
+      "AR": {
+        "question": "الطريق خالٍ تمامًا. هل يجوز لمركبة تنقل مواد خطرة ملوثة أن تدخل رغم ذلك؟",
+        "choices": [
+          {
+            "text": "لا، يبقى الحظر ساريًا",
+            "is_correct": true
+          },
+          {
+            "text": "نعم، إذا لم تكن هناك حركة مرور أخرى",
+            "is_correct": false
+          }
+        ],
+        "explanation": "حتى إذا كان الطريق خاليًا، يبقى الحظر ساريًا على المركبات التي تنقل مواد خطرة ملوثة."
+      }
+    }
+  },
+  {
+    "question_id": "C24c_Q08",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Mag een voertuig met gevaarlijke verontreinigende stoffen deze weg kort gebruiken om snel door te rijden?",
+        "choices": [
+          {
+            "text": "Nee, het verbod blijft gelden",
+            "is_correct": true
+          },
+          {
+            "text": "Ja, als het maar voor een kort stuk is",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ook voor een korte doorgang blijft de toegang verboden voor voertuigen die gevaarlijke verontreinigende stoffen vervoeren."
+      },
+      "EN": {
+        "question": "May a vehicle carrying dangerous polluting substances use this road briefly just to pass through quickly?",
+        "choices": [
+          {
+            "text": "No, the prohibition remains in force",
+            "is_correct": true
+          },
+          {
+            "text": "Yes, if it is only for a short distance",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Even for a short passage, access remains prohibited for vehicles carrying dangerous polluting substances."
+      },
+      "FR": {
+        "question": "Un véhicule transportant des substances dangereuses polluantes peut-il utiliser brièvement cette route juste pour passer rapidement ?",
+        "choices": [
+          {
+            "text": "Non, l’interdiction reste en vigueur",
+            "is_correct": true
+          },
+          {
+            "text": "Oui, si ce n’est que pour une courte distance",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Même pour un passage bref, l’accès reste interdit aux véhicules transportant des substances dangereuses polluantes."
+      },
+      "AR": {
+        "question": "هل يجوز لمركبة تنقل مواد خطرة ملوثة استخدام هذا الطريق لمسافة قصيرة فقط من أجل المرور السريع؟",
+        "choices": [
+          {
+            "text": "لا، يبقى الحظر ساريًا",
+            "is_correct": true
+          },
+          {
+            "text": "نعم، إذا كان ذلك لمسافة قصيرة فقط",
+            "is_correct": false
+          }
+        ],
+        "explanation": "حتى في حالة المرور القصير، يبقى الدخول ممنوعًا على المركبات التي تنقل مواد خطرة ملوثة."
+      }
+    }
+  }
 ]

@@ -18,7 +18,6 @@ public record AdminQuizQuestionResponse(
                 String questionFr,
                 String contentImageUrl,
                 Boolean isActive,
-                String status,
                 int optionsCount,
                 List<OptionResponse> options,
                 Boolean isReferenced,

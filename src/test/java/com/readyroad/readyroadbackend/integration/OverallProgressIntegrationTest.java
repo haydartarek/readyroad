@@ -5,7 +5,6 @@ import com.readyroad.readyroadbackend.domain.entity.Category;
 import com.readyroad.readyroadbackend.domain.entity.QuizQuestion;
 import com.readyroad.readyroadbackend.domain.entity.User;
 import com.readyroad.readyroadbackend.domain.repository.CategoryRepository;
-import com.readyroad.readyroadbackend.domain.repository.QuizQuestionRepository;
 import com.readyroad.readyroadbackend.domain.repository.UserCategoryProgressRepository;
 import com.readyroad.readyroadbackend.domain.repository.UserRepository;
 import com.readyroad.readyroadbackend.domain.entity.UserCategoryProgress;
@@ -48,9 +47,6 @@ class OverallProgressIntegrationTest {
     @Autowired
     private UserCategoryProgressRepository progressRepository;
 
-    @Autowired
-    private QuizQuestionRepository questionRepository;
-
     private User testUser;
     private Category category1;
     private Category category2;
@@ -69,7 +65,7 @@ class OverallProgressIntegrationTest {
         // ✅ Use seeded categories instead of creating duplicates
         var categories = categoryRepository.findAll();
         assertThat(categories).hasSizeGreaterThanOrEqualTo(3)
-            .as("TestDataSeederConfig should have seeded at least 3 categories");
+                .as("TestDataSeederConfig should have seeded at least 3 categories");
 
         category1 = categories.get(0);
         category2 = categories.get(1);
@@ -175,7 +171,8 @@ class OverallProgressIntegrationTest {
         // When
         OverallProgressResponse response = progressService.getOverallProgress(testUser.getId());
 
-        // Then: questions remaining is calculated (may be negative if DB has few questions)
+        // Then: questions remaining is calculated (may be negative if DB has few
+        // questions)
         assertThat(response.getQuestionsRemaining()).isNotNull();
         // Note: In test environment with limited questions, this may be negative
     }

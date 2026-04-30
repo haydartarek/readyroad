@@ -3,12 +3,14 @@ package com.readyroad.readyroadbackend.controller;
 import com.readyroad.readyroadbackend.domain.entity.ImportHistory;
 import com.readyroad.readyroadbackend.domain.repository.ImportHistoryRepository;
 import com.readyroad.readyroadbackend.dto.ImportReport;
+import com.readyroad.readyroadbackend.service.BackendMessageService;
 import com.readyroad.readyroadbackend.service.DataImportService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -22,6 +24,7 @@ import java.util.Set;
 @RestController
 @RequestMapping("/api/admin/import")
 @RequiredArgsConstructor
+@PreAuthorize("hasRole('ADMIN')")
 @Tag(name = "Data Import", description = "Upload-based data import with preview and execute")
 public class DataImportController {
 
@@ -30,6 +33,7 @@ public class DataImportController {
 
     private final DataImportService dataImportService;
     private final ImportHistoryRepository importHistoryRepository;
+    private final BackendMessageService messages;
 
     // ── Preview (dry run) ────────────────────────────────────────
 
@@ -48,7 +52,7 @@ public class DataImportController {
         try {
             content = file.getBytes();
         } catch (Exception e) {
-            return badRequest("Cannot read uploaded file");
+            return badRequest(messages.get("admin.import.read_uploaded_failed"));
         }
 
         ImportReport report = dispatch(type, content, true);
@@ -74,7 +78,7 @@ public class DataImportController {
         try {
             content = file.getBytes();
         } catch (Exception e) {
-            return badRequest("Cannot read uploaded file");
+            return badRequest(messages.get("admin.import.read_uploaded_failed"));
         }
 
         ImportReport report = dispatch(type, content, false);
@@ -107,23 +111,23 @@ public class DataImportController {
             case "categories" -> dataImportService.importCategoriesFromUpload(content, dryRun);
             case "quiz_questions" -> dataImportService.importQuizQuestionsFromUpload(content, dryRun);
             default -> new ImportReport(type, dryRun ? "PREVIEW" : "IMPORT", dryRun, 0, 0, 0, 0, List.of(),
-                    List.of("Unknown type: " + type));
+                    List.of(messages.get("admin.import.unknown_type", type)));
         };
     }
 
     private ResponseEntity<?> validateRequest(String type, MultipartFile file) {
         if (!ALLOWED_TYPES.contains(type)) {
-            return badRequest("Invalid import type. Allowed: " + ALLOWED_TYPES);
+            return badRequest(messages.get("admin.import.invalid_type", String.join(", ", ALLOWED_TYPES)));
         }
         if (file == null || file.isEmpty()) {
-            return badRequest("File is required");
+            return badRequest(messages.get("admin.import.file_required"));
         }
         if (file.getSize() > MAX_FILE_SIZE) {
-            return badRequest("File exceeds maximum size of 10 MB");
+            return badRequest(messages.get("admin.import.file_too_large"));
         }
         String originalName = file.getOriginalFilename();
         if (originalName != null && !originalName.toLowerCase().endsWith(".json")) {
-            return badRequest("Only JSON files are allowed");
+            return badRequest(messages.get("admin.import.file_json_only"));
         }
         return null; // valid
     }

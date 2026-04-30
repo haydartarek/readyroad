@@ -3,7 +3,7 @@
 -- This migration corrects paths from Dutch folder names with full names to English folder names with codes only
 
 -- The correct format is: assets/traffic_signs/{english_folder_name}/{sign_code}.png
--- Example: assets/traffic_signs/priority_signs/B1.png (NOT voorrangsborden/B1 Voorrang verlenen.png)
+-- Example: images/signs/priority_signs/B1 Voorrang verlenen.png (NOT voorrangsborden/B1 Voorrang verlenen.png)
 
 -- Update danger_signs (Category A) - was gevaarsborden
 UPDATE traffic_signs

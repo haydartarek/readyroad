@@ -11,6 +11,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
@@ -21,16 +22,19 @@ import java.util.Map;
  * Admin REST endpoints for the Sign Quiz System.
  *
  * <ul>
- *   <li>{@code POST  /api/admin/sign-quiz/import}        — run the full importer</li>
- *   <li>{@code GET   /api/admin/sign-quiz/import/last}   — last import run record</li>
- *   <li>{@code GET   /api/admin/sign-quiz/signs}         — list all active signs</li>
- *   <li>{@code GET   /api/admin/sign-quiz/signs/{code}}  — full sign detail with questions</li>
+ * <li>{@code POST  /api/admin/sign-quiz/import} — run the full importer</li>
+ * <li>{@code GET   /api/admin/sign-quiz/import/last} — last import run
+ * record</li>
+ * <li>{@code GET   /api/admin/sign-quiz/signs} — list all active signs</li>
+ * <li>{@code GET   /api/admin/sign-quiz/signs/{code}} — full sign detail with
+ * questions</li>
  * </ul>
  */
 @Slf4j
 @RestController
 @RequestMapping("/api/admin/sign-quiz")
 @RequiredArgsConstructor
+@PreAuthorize("hasRole('ADMIN')")
 @Tag(name = "Sign Quiz Admin", description = "Sign Quiz System — import management and data inspection")
 public class SignQuizImportController {
 
@@ -44,20 +48,18 @@ public class SignQuizImportController {
      * block the rest. Returns a summary report that is also persisted to the DB.
      */
     @PostMapping("/import")
-    @Operation(
-        summary     = "Run Sign Quiz import",
-        description = "Reads every sign directory under signs_import/, validates JSON files "
-                    + "(9-step validation), and upserts road_signs, sign_questions, sign_choices, "
-                    + "sign_exams, and sign_exam_questions. Returns the import report."
-    )
+    @Operation(summary = "Run Sign Quiz import", description = "Reads every sign directory under signs_import/, validates JSON files "
+            + "(9-step validation), and upserts road_signs, sign_questions, sign_choices, "
+            + "sign_exams, and sign_exam_questions. Returns the import report.")
     public ResponseEntity<SignImportResultDto> runImport(Principal principal) {
         String performer = (principal != null) ? principal.getName() : "ADMIN";
         log.info("Sign Quiz import triggered by [{}]", performer);
 
-        SignImportRun run    = importService.runImport(performer);
+        SignImportRun run = importService.runImport(performer);
         SignImportResultDto result = SignImportResultDto.from(run);
 
-        // Use 200 OK for SUCCESS/PARTIAL, 207 Multi-Status when there are errors but some succeeded,
+        // Use 200 OK for SUCCESS/PARTIAL, 207 Multi-Status when there are errors but
+        // some succeeded,
         // 500 Internal Server Error when everything failed.
         if ("FAILED".equals(result.status())) {
             return ResponseEntity.internalServerError().body(result);
@@ -68,13 +70,11 @@ public class SignQuizImportController {
     // ── GET /api/admin/sign-quiz/import/last ────────────────────────────────
 
     /**
-     * Returns the most recent {@code sign_import_runs} record, or 404 if none exists.
+     * Returns the most recent {@code sign_import_runs} record, or 404 if none
+     * exists.
      */
     @GetMapping("/import/last")
-    @Operation(
-        summary     = "Last import run",
-        description = "Fetches the most recent sign_import_runs record from the database."
-    )
+    @Operation(summary = "Last import run", description = "Fetches the most recent sign_import_runs record from the database.")
     public ResponseEntity<SignImportResultDto> getLastImport() {
         return importService.getLastImportRun()
                 .map(ResponseEntity::ok)
@@ -88,11 +88,8 @@ public class SignQuizImportController {
      * ordered by sign code ascending.
      */
     @GetMapping("/signs")
-    @Operation(
-        summary     = "List all active signs",
-        description = "Returns RoadSignSummaryDto for every active road sign (id, code, "
-                    + "category, imagePath, seriousViolation, multilingual name)."
-    )
+    @Operation(summary = "List all active signs", description = "Returns RoadSignSummaryDto for every active road sign (id, code, "
+            + "category, imagePath, seriousViolation, multilingual name).")
     public ResponseEntity<List<RoadSignSummaryDto>> listSigns() {
         List<RoadSignSummaryDto> signs = importService.getAllActiveSigns();
         return ResponseEntity.ok(signs);
@@ -107,14 +104,10 @@ public class SignQuizImportController {
      * @param code the sign code, e.g. {@code A1}, {@code B19}, {@code C3}
      */
     @GetMapping("/signs/{code}")
-    @Operation(
-        summary     = "Get sign detail",
-        description = "Returns the complete RoadSignDetailDto for the given sign code, "
-                    + "including all questions and their answer choices."
-    )
+    @Operation(summary = "Get sign detail", description = "Returns the complete RoadSignDetailDto for the given sign code, "
+            + "including all questions and their answer choices.")
     public ResponseEntity<RoadSignDetailDto> getSign(
-            @Parameter(description = "Sign code, e.g. A1, B19, C3", example = "A1")
-            @PathVariable String code) {
+            @Parameter(description = "Sign code, e.g. A1, B19, C3", example = "A1") @PathVariable String code) {
 
         return importService.getSignDetailByCode(code.toUpperCase())
                 .map(ResponseEntity::ok)
@@ -131,16 +124,12 @@ public class SignQuizImportController {
      * Useful for dashboard overview without a dedicated analytics table.
      */
     @GetMapping("/stats")
-    @Operation(
-        summary     = "Sign Quiz statistics",
-        description = "Returns a simple count of imported active signs."
-    )
+    @Operation(summary = "Sign Quiz statistics", description = "Returns a simple count of imported active signs.")
     public ResponseEntity<Map<String, Object>> stats() {
         List<RoadSignSummaryDto> signs = importService.getAllActiveSigns();
         Map<String, Object> body = Map.of(
-                "totalSigns",       signs.size(),
-                "byCategory",       buildCategoryBreakdown(signs)
-        );
+                "totalSigns", signs.size(),
+                "byCategory", buildCategoryBreakdown(signs));
         return ResponseEntity.ok(body);
     }
 
@@ -149,13 +138,13 @@ public class SignQuizImportController {
     private Map<String, Long> buildCategoryBreakdown(List<RoadSignSummaryDto> signs) {
         java.util.LinkedHashMap<String, Long> map = new java.util.LinkedHashMap<>();
         signs.stream()
-             .collect(java.util.stream.Collectors.groupingBy(
-                     s -> s.category().name(),
-                     java.util.stream.Collectors.counting()))
-             .entrySet()
-             .stream()
-             .sorted(Map.Entry.<String, Long>comparingByValue().reversed())
-             .forEach(e -> map.put(e.getKey(), e.getValue()));
+                .collect(java.util.stream.Collectors.groupingBy(
+                        s -> s.category().name(),
+                        java.util.stream.Collectors.counting()))
+                .entrySet()
+                .stream()
+                .sorted(Map.Entry.<String, Long>comparingByValue().reversed())
+                .forEach(e -> map.put(e.getKey(), e.getValue()));
         return map;
     }
 }

@@ -11,8 +11,8 @@
 -- Below: the 18 remaining A-signs not covered by V122/V130/V118
 -- =====================
 UPDATE traffic_signs SET image_url = 'images/signs/danger_signs/A3 Gevaarlijke daling.png', updated_at = NOW() WHERE sign_code = 'A3';
-UPDATE traffic_signs SET image_url = 'images/signs/danger_signs/A5 Gevaarlijke helling.png', updated_at = NOW() WHERE sign_code = 'A5';
-UPDATE traffic_signs SET image_url = 'images/signs/danger_signs/A7a Versmalling langs beide zijden.png', updated_at = NOW() WHERE sign_code = 'A7a';
+UPDATE traffic_signs SET image_url = 'images/signs/danger_signs/A5 Steile helling.png', updated_at = NOW() WHERE sign_code = 'A5';
+UPDATE traffic_signs SET image_url = 'images/signs/danger_signs/A7a Rijbaanversmalling.png', updated_at = NOW() WHERE sign_code = 'A7a';
 UPDATE traffic_signs SET image_url = 'images/signs/danger_signs/A9 Beweegbare brug.png', updated_at = NOW() WHERE sign_code = 'A9';
 UPDATE traffic_signs SET image_url = 'images/signs/danger_signs/A13 Dwarse uitholling of ezelsrug.png', updated_at = NOW() WHERE sign_code = 'A13';
 UPDATE traffic_signs SET image_url = 'images/signs/danger_signs/A14 Verhoogde inrichting.png', updated_at = NOW() WHERE sign_code = 'A14';
@@ -25,14 +25,14 @@ UPDATE traffic_signs SET image_url = 'images/signs/danger_signs/A37 Zijwind.png'
 UPDATE traffic_signs SET image_url = 'images/signs/danger_signs/A39 Twee richtingsverkeer toegelaten na een stuk éénrichtingsverkeer.png', updated_at = NOW() WHERE sign_code = 'A39';
 UPDATE traffic_signs SET image_url = 'images/signs/danger_signs/A41 Overweg met slagbomen.png', updated_at = NOW() WHERE sign_code = 'A41';
 UPDATE traffic_signs SET image_url = 'images/signs/danger_signs/A43 Overweg zonder slagbomen.png', updated_at = NOW() WHERE sign_code = 'A43';
-UPDATE traffic_signs SET image_url = 'images/signs/danger_signs/A49 Openbare weg kruist met een of meer in de rijbaan aangelegde sporen.png', updated_at = NOW() WHERE sign_code = 'A49';
+UPDATE traffic_signs SET image_url = 'images/signs/danger_signs/A49 Kruising van een openbare weg door een of meer in de rijbaan aangelegde sporen.png', updated_at = NOW() WHERE sign_code = 'A49';
 UPDATE traffic_signs SET image_url = 'images/signs/danger_signs/A50 Opgelet file.png', updated_at = NOW() WHERE sign_code = 'A50';
 UPDATE traffic_signs SET image_url = 'images/signs/danger_signs/A51 Gevaar dat niet door een speciaal symbool wordt bepaald.png', updated_at = NOW() WHERE sign_code = 'A51';
 
 -- =====================
 -- C-series — prohibition_signs/
--- (V118 fixed: C35, C43_50, C43_70, C43_90, C6)
--- (V124 fixed: C11, C28a, C43)
+-- (V118 fixed: C35 and C6)
+-- (V124 fixed: C11 and C43)
 -- Below: all remaining C-signs with old assets/ paths
 -- =====================
 
@@ -50,7 +50,7 @@ WHERE sign_code = 'C3';
 
 -- C5: Verboden toegang motorvoertuigen — no disk image, normalise URL format
 UPDATE traffic_signs
-SET image_url  = 'images/signs/prohibition_signs/C5 Verboden toegang voor bestuurders van motorvoertuigen.png',
+SET image_url  = 'images/signs/prohibition_signs/C5 Verboden toegang voor bestuurders van motorvoertuigen met meer dan twee wielen..png',
     updated_at = NOW()
 WHERE sign_code = 'C5';
 
@@ -96,10 +96,9 @@ SET image_url  = 'images/signs/prohibition_signs/C21 Verboden toegang voor voert
     updated_at = NOW()
 WHERE sign_code = 'C21';
 
--- C22: Verboden toegang autocars
--- NOTE: disk file is named C22a (not C22) — intentional mapping to C22a image
+-- C22: Verboden toegang voor bestuurders van autocars
 UPDATE traffic_signs
-SET image_url       = 'images/signs/prohibition_signs/C22a Verboden toegang voor bestuurders van autobussen.png',
+SET image_url       = 'images/signs/prohibition_signs/C22 Verboden toegang voor bestuurders van autocars.png',
     name_nl         = 'Verboden toegang voor bestuurders van autocars',
     name_en         = 'No entry for coaches',
     name_fr         = 'Accès interdit aux conducteurs d''autocars',
@@ -175,7 +174,7 @@ WHERE sign_code = 'C37';
 
 -- C39: Verbod inhalen vrachtwagens
 UPDATE traffic_signs
-SET image_url  = 'images/signs/prohibition_signs/C39 Verbod voertuigen met toegelaten massa  3500 kg in te halen.png',
+SET image_url  = 'images/signs/prohibition_signs/C39 Verbod voertuigen met toegelaten massa groter dan 3500 kg in te halen.png',
     updated_at = NOW()
 WHERE sign_code = 'C39';
 
@@ -205,7 +204,7 @@ WHERE sign_code = 'C47';
 
 -- =====================
 -- D-series — mandatory_signs/
--- (V118 fixed: D1f, D3a, D3b, D4, D4-links, D4-rechts, D11, D1a-links, D1a-rechts)
+-- (V118 fixed: D1f, D3a, D3b, D4-rechtdoor, D4-links, D4-rechts, D11, D1c, D1d)
 -- Below: remaining D-signs with old assets/ paths
 -- =====================
 
@@ -219,7 +218,7 @@ WHERE sign_code = 'D1a';
 UPDATE traffic_signs
 SET image_url  = 'images/signs/mandatory_signs/D1b Verplichting rechts afslaan.png',
     updated_at = NOW()
-WHERE sign_code = 'D1b';
+WHERE sign_code = 'D1b-links';
 
 -- D1d: Verplichting rechts aanhouden
 UPDATE traffic_signs
@@ -229,7 +228,7 @@ WHERE sign_code = 'D1d';
 
 -- D1e: Verplicht linksaf volgen
 UPDATE traffic_signs
-SET image_url  = 'images/signs/mandatory_signs/D1e Verplicht de aangeduide richting te volgen (linksaf).png',
+SET image_url  = 'images/signs/mandatory_signs/D1e Verplicht links afslaan.png',
     updated_at = NOW()
 WHERE sign_code = 'D1e';
 
@@ -239,11 +238,7 @@ SET image_url  = 'images/signs/mandatory_signs/D9a Verplicht fietspad.png',
     updated_at = NOW()
 WHERE sign_code = 'D9a';
 
--- D9b: Verplicht voetpad/rijwielpad — no disk image
-UPDATE traffic_signs
-SET image_url  = 'images/signs/mandatory_signs/D9b Verplicht rijwielpad.png',
-    updated_at = NOW()
-WHERE sign_code = 'D9b';
+
 
 -- D10: Voetgangers en fietsers
 UPDATE traffic_signs
@@ -253,7 +248,7 @@ WHERE sign_code = 'D10';
 
 -- D13: Geen disk image
 UPDATE traffic_signs
-SET image_url  = 'images/signs/mandatory_signs/D13 Verplicht voetgangers en fietsers op aparte rijbaan.png',
+SET image_url  = 'images/signs/mandatory_signs/D13 Verplichte weg voor ruiters.png',
     updated_at = NOW()
 WHERE sign_code = 'D13';
 

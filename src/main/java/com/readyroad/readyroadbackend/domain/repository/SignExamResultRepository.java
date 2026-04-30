@@ -7,6 +7,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface SignExamResultRepository extends JpaRepository<SignExamResult, Long> {
@@ -38,4 +39,13 @@ public interface SignExamResultRepository extends JpaRepository<SignExamResult, 
 
         /** Total sign exam submissions for a user. */
         long countByUserId(Long userId);
+
+        /** Total passed sign exam results across all users. */
+        long countByPassedTrue();
+
+        /** Complete sign exam history for one user, newest first. */
+        List<SignExamResult> findByUserIdOrderByCompletedAtDesc(Long userId);
+
+        /** One stored sign-exam result owned by the given user. */
+        Optional<SignExamResult> findByIdAndUserId(Long id, Long userId);
 }

@@ -2,15 +2,15 @@
 SET NAMES utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 UPDATE traffic_signs SET name_ar = 'مخرج على رصيف أو ضفة نهر' WHERE sign_code = 'A11';
-UPDATE traffic_signs SET name_ar = 'مطب أو تعرج' WHERE sign_code = 'A13';
+UPDATE traffic_signs SET name_ar = 'ظهر الجمل' WHERE sign_code = 'A13';
 UPDATE traffic_signs SET name_ar = 'مطب مرتفع' WHERE sign_code = 'A14';
 UPDATE traffic_signs SET name_ar = 'خطر الانزلاق' WHERE sign_code = 'A15';
 UPDATE traffic_signs SET name_ar = 'حصى متناثر' WHERE sign_code = 'A17';
 UPDATE traffic_signs SET name_ar = 'سقوط أحجار' WHERE sign_code = 'A19';
-UPDATE traffic_signs SET name_ar = 'منحنى خطير إلى اليسار' WHERE sign_code = 'A1a';
-UPDATE traffic_signs SET name_ar = 'منحنى خطير إلى اليمين' WHERE sign_code = 'A1b';
-UPDATE traffic_signs SET name_ar = 'منحنى مزدوج خطير (يسار-يمين)' WHERE sign_code = 'A1c';
-UPDATE traffic_signs SET name_ar = 'منحنى مزدوج خطير (يمين-يسار)' WHERE sign_code = 'A1d';
+UPDATE traffic_signs SET name_ar = 'منعطف خطير إلى اليسار' WHERE sign_code = 'A1a';
+UPDATE traffic_signs SET name_ar = 'منعطف خطير إلى اليمين' WHERE sign_code = 'A1b';
+UPDATE traffic_signs SET name_ar = 'منعطف مزدوج خطير (يسار-يمين)' WHERE sign_code = 'A1c';
+UPDATE traffic_signs SET name_ar = 'منعطف مزدوج خطير (يمين-يسار)' WHERE sign_code = 'A1d';
 UPDATE traffic_signs SET name_ar = 'عبور مشاة' WHERE sign_code = 'A21';
 UPDATE traffic_signs SET name_ar = 'تحذير وجود أطفال' WHERE sign_code = 'A23';
 UPDATE traffic_signs SET name_ar = 'عبور دراجات' WHERE sign_code = 'A25';

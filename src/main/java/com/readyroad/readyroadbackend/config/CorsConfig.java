@@ -11,10 +11,9 @@ package com.readyroad.readyroadbackend.config;
  *
  * CORS is now configured via corsConfigurationSource() in:
  * - SecurityConfig.java (active security config)
- * - SecurityConfigTest.java (test profile)
  *
  * DO NOT RE-ENABLE THIS CLASS. If CORS settings need to change,
- * update the corsConfigurationSource() method in the relevant SecurityConfig.
+ * update the corsConfigurationSource() method in SecurityConfig.
  *
  * @author ReadyRoad Team
  * @since 2026-01-18

@@ -1,0 +1,576 @@
+[
+  {
+    "question_id": "B17_Q01",
+    "type": "WHAT_DOES_IT_MEAN",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat betekent dit verkeersbord?",
+        "choices": [
+          {
+            "text": "Op dit kruispunt geldt de voorrang van rechts: bestuurders van rechts hebben voorrang",
+            "is_correct": true
+          },
+          {
+            "text": "Op dit kruispunt heeft u altijd voorrang over alle andere bestuurders",
+            "is_correct": false
+          },
+          {
+            "text": "Op dit kruispunt is het verkeer geregeld door verkeerslichten",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Bord B17 geeft aan dat op het kruispunt de algemene regel 'voorrang van rechts' van toepassing is. Niemand heeft een bijzondere voorrang; wie van rechts komt, gaat voor."
+      },
+      "EN": {
+        "question": "What does this traffic sign mean?",
+        "choices": [
+          {
+            "text": "At this intersection the priority-from-the-right rule applies: drivers from the right have priority",
+            "is_correct": true
+          },
+          {
+            "text": "At this intersection you always have priority over all other drivers",
+            "is_correct": false
+          },
+          {
+            "text": "At this intersection traffic is controlled by traffic lights",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Sign B17 indicates that the general rule of priority from the right applies at this intersection. No one has a special priority; whoever comes from the right goes first."
+      },
+      "FR": {
+        "question": "Que signifie ce panneau de signalisation ?",
+        "choices": [
+          {
+            "text": "À ce carrefour, la règle de priorité à droite s'applique : les conducteurs venant de droite ont la priorité",
+            "is_correct": true
+          },
+          {
+            "text": "À ce carrefour, vous avez toujours la priorité sur tous les autres conducteurs",
+            "is_correct": false
+          },
+          {
+            "text": "À ce carrefour, la circulation est réglée par des feux tricolores",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Le panneau B17 indique que la règle générale de priorité à droite s'applique à ce carrefour. Personne n'a de priorité particulière ; celui qui vient de droite passe en premier."
+      },
+      "AR": {
+        "question": "ما معنى هذه العلامة المرورية؟",
+        "choices": [
+          {
+            "text": "في هذا التقاطع تُطبَّق قاعدة الأولوية من اليمين: السائقون القادمون من اليمين لهم الأولوية",
+            "is_correct": true
+          },
+          {
+            "text": "في هذا التقاطع لديك الأولوية دائماً على جميع السائقين الآخرين",
+            "is_correct": false
+          },
+          {
+            "text": "في هذا التقاطع يُنظَّم المرور بإشارات ضوئية",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تُشير علامة B17 إلى أن القاعدة العامة للأولوية من اليمين تُطبَّق في هذا التقاطع. لا أحد يملك أولوية خاصة؛ من يأتي من اليمين يمر أولاً."
+      }
+    }
+  },
+  {
+    "question_id": "B17_Q02",
+    "type": "WHICH_SIGN",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": false,
+    "i18n": {
+      "NL": {
+        "question": "Welk bord geeft aan dat op een kruispunt de voorrang van rechts geldt?",
+        "choices": [
+          { "text": "B17", "is_correct": true },
+          { "text": "B1 – Voorrang verlenen", "is_correct": false },
+          { "text": "B5 – Voorrangsweg", "is_correct": false }
+        ],
+        "explanation": "Bord B17 is specifiek bedoeld om bestuurders te waarschuwen dat op het naderende kruispunt de voorrang van rechts geldt, in tegenstelling tot een voorrangsweg (B5) of stopbord (B3)."
+      },
+      "EN": {
+        "question": "Which sign indicates that the priority-from-the-right rule applies at an intersection?",
+        "choices": [
+          { "text": "B17", "is_correct": true },
+          { "text": "B1 – Give way", "is_correct": false },
+          { "text": "B5 – Priority road", "is_correct": false }
+        ],
+        "explanation": "Sign B17 is specifically intended to warn drivers that the priority-from-the-right rule applies at the approaching intersection, unlike a priority road (B5) or stop sign (B3)."
+      },
+      "FR": {
+        "question": "Quel panneau indique que la règle de priorité à droite s'applique à un carrefour ?",
+        "choices": [
+          { "text": "B17", "is_correct": true },
+          { "text": "B1 – Cédez le passage", "is_correct": false },
+          { "text": "B5 – Route à priorité", "is_correct": false }
+        ],
+        "explanation": "Le panneau B17 est spécifiquement destiné à avertir les conducteurs que la règle de priorité à droite s'applique au carrefour qui approche, contrairement à une route à priorité (B5) ou un panneau stop (B3)."
+      },
+      "AR": {
+        "question": "أي علامة مرورية تُشير إلى أن قاعدة الأولوية من اليمين تُطبَّق في التقاطع القادم؟",
+        "choices": [
+          { "text": "B17", "is_correct": true },
+          { "text": "B1 – إعطاء الأولوية", "is_correct": false },
+          { "text": "B5 – طريق ذو أولوية", "is_correct": false }
+        ],
+        "explanation": "علامة B17 مخصصة لتحذير السائقين من أن قاعدة الأولوية من اليمين تُطبَّق في التقاطع القادم، خلافاً لطريق ذي أولوية (B5) أو علامة التوقف (B3)."
+      }
+    }
+  },
+  {
+    "question_id": "B17_Q03",
+    "type": "HAZARD_IDENTIFICATION",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Op welk gevaar attendeert bord B17 u voor het kruispunt?",
+        "choices": [
+          {
+            "text": "Bestuurders van rechts kunnen zonder voorrang te hoeven verlenen het kruispunt oprijden",
+            "is_correct": true
+          },
+          {
+            "text": "Er is een gevaarlijke helling direct na het kruispunt",
+            "is_correct": false
+          },
+          {
+            "text": "Voetgangers steken vaak onverwacht over op dit kruispunt",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Bord B17 wijst u erop dat u op dit kruispunt de voorrang van rechts moet toepassen. Bestuurders van rechts hebben voorrang op u, waardoor conflicten kunnen ontstaan als u dat negeert."
+      },
+      "EN": {
+        "question": "What hazard does sign B17 alert you to before the intersection?",
+        "choices": [
+          {
+            "text": "Drivers from the right may proceed onto the intersection without giving way",
+            "is_correct": true
+          },
+          {
+            "text": "There is a dangerous slope immediately after the intersection",
+            "is_correct": false
+          },
+          {
+            "text": "Pedestrians often cross unexpectedly at this intersection",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Sign B17 alerts you that you must apply the priority-from-the-right rule at this intersection. Drivers from the right have priority over you, which can cause conflicts if you ignore it."
+      },
+      "FR": {
+        "question": "À quel danger le panneau B17 vous avertit-il avant le carrefour ?",
+        "choices": [
+          {
+            "text": "Les conducteurs venant de droite peuvent s'engager dans le carrefour sans avoir à céder le passage",
+            "is_correct": true
+          },
+          {
+            "text": "Il y a une côte dangereuse juste après le carrefour",
+            "is_correct": false
+          },
+          {
+            "text": "Les piétons traversent souvent de manière inattendue à ce carrefour",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Le panneau B17 vous avertit que vous devez appliquer la règle de priorité à droite à ce carrefour. Les conducteurs venant de droite ont la priorité sur vous, ce qui peut entraîner des conflits si vous l'ignorez."
+      },
+      "AR": {
+        "question": "بماذا تحذرك علامة B17 قبل التقاطع؟",
+        "choices": [
+          {
+            "text": "السائقون القادمون من اليمين يمكنهم الدخول إلى التقاطع دون إعطاء الأولوية",
+            "is_correct": true
+          },
+          { "text": "هناك منحدر خطير مباشرة بعد التقاطع", "is_correct": false },
+          {
+            "text": "المشاة يعبرون في أغلب الأحيان بشكل مفاجئ في هذا التقاطع",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تنبّهك علامة B17 إلى وجوب تطبيق قاعدة الأولوية من اليمين في هذا التقاطع. للسائقين القادمين من اليمين الأولوية عليك، مما قد يُسبّب تعارضات إذا تجاهلت ذلك."
+      }
+    }
+  },
+  {
+    "question_id": "B17_Q04",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U nadert het kruispunt met bord B17. Een bestuurder nadert van rechts. Wat doet u?",
+        "choices": [
+          {
+            "text": "U verleent hem voorrang en wacht tot hij het kruispunt overgestoken is",
+            "is_correct": true
+          },
+          {
+            "text": "U rijdt door want u bent op de hoofdrijbaan",
+            "is_correct": false
+          },
+          {
+            "text": "U geeft een signaal en rijdt gelijktijdig met hem door het kruispunt",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Bij bord B17 geldt de voorrang van rechts. U moet de bestuurder van rechts laten voorgaan, ook als u de indruk heeft dat u op een hoofdweg rijdt."
+      },
+      "EN": {
+        "question": "You approach the intersection marked with sign B17. A driver is approaching from the right. What do you do?",
+        "choices": [
+          {
+            "text": "You give way and wait until he has crossed the intersection",
+            "is_correct": true
+          },
+          {
+            "text": "You drive on because you are on the main road",
+            "is_correct": false
+          },
+          {
+            "text": "You signal and cross the intersection simultaneously with him",
+            "is_correct": false
+          }
+        ],
+        "explanation": "With sign B17 the priority-from-the-right rule applies. You must let the driver from the right go first, even if you have the impression you are on a main road."
+      },
+      "FR": {
+        "question": "Vous approchez du carrefour marqué par le panneau B17. Un conducteur approche par la droite. Que faites-vous ?",
+        "choices": [
+          {
+            "text": "Vous lui cédez le passage et attendez qu'il ait traversé le carrefour",
+            "is_correct": true
+          },
+          {
+            "text": "Vous continuez car vous êtes sur la route principale",
+            "is_correct": false
+          },
+          {
+            "text": "Vous signalez et traversez le carrefour en même temps que lui",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Avec le panneau B17, la règle de priorité à droite s'applique. Vous devez laisser passer le conducteur venant de droite, même si vous avez l'impression d'être sur une route principale."
+      },
+      "AR": {
+        "question": "تقترب من التقاطع المُعلَّم بعلامة B17. سائق يقترب من اليمين. ماذا تفعل؟",
+        "choices": [
+          {
+            "text": "تُعطيه الأولوية وتنتظر حتى يعبر التقاطع",
+            "is_correct": true
+          },
+          {
+            "text": "تُكمل المسير لأنك على الطريق الرئيسي",
+            "is_correct": false
+          },
+          {
+            "text": "تُعطي إشارة وتعبر التقاطع في نفس الوقت معه",
+            "is_correct": false
+          }
+        ],
+        "explanation": "مع علامة B17 تُطبَّق قاعدة الأولوية من اليمين. يجب أن تدع السائق القادم من اليمين يمر أولاً حتى لو اعتقدت أنك على طريق رئيسي."
+      }
+    }
+  },
+  {
+    "question_id": "B17_Q05",
+    "type": "DRIVER_ACTION",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U staat stil voor het kruispunt met bord B17. Er is verkeer van links en van rechts. Wie laat u eerst voorgaan?",
+        "choices": [
+          {
+            "text": "De bestuurder van rechts gaat altijd eerst; daarna kunt u de bestuurder van links laten voorgaan",
+            "is_correct": true
+          },
+          {
+            "text": "De bestuurder van links want u moet links-voor-rechts volgen",
+            "is_correct": false
+          },
+          {
+            "text": "De bestuurder die het dichtst bij het kruispunt staat",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Bij de voorrang van rechts heeft de bestuurder van rechts altijd voorrang. Zodra van rechts de weg vrij is, kunt u rijden of de bestuurder van links laten voorgaan."
+      },
+      "EN": {
+        "question": "You are stopped at the intersection marked with sign B17. There is traffic from the left and from the right. Who do you let go first?",
+        "choices": [
+          {
+            "text": "The driver from the right always goes first; then you can let the driver from the left proceed",
+            "is_correct": true
+          },
+          {
+            "text": "The driver from the left because you must follow left-before-right",
+            "is_correct": false
+          },
+          {
+            "text": "The driver who is closest to the intersection",
+            "is_correct": false
+          }
+        ],
+        "explanation": "With priority from the right, the driver from the right always has priority. Once the road from the right is clear, you can drive or let the driver from the left proceed."
+      },
+      "FR": {
+        "question": "Vous êtes arrêté au carrefour marqué par le panneau B17. Il y a du trafic à gauche et à droite. Qui laissez-vous passer en premier ?",
+        "choices": [
+          {
+            "text": "Le conducteur venant de droite passe toujours en premier ; vous pouvez ensuite laisser passer le conducteur venant de gauche",
+            "is_correct": true
+          },
+          {
+            "text": "Le conducteur venant de gauche car vous devez suivre la règle gauche-avant-droite",
+            "is_correct": false
+          },
+          {
+            "text": "Le conducteur le plus proche du carrefour",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Avec la priorité à droite, le conducteur venant de droite a toujours la priorité. Une fois la voie libre à droite, vous pouvez conduire ou laisser passer le conducteur venant de gauche."
+      },
+      "AR": {
+        "question": "أنت متوقف عند التقاطع المُعلَّم بعلامة B17. هناك مرور من اليسار ومن اليمين. من تدع يمر أولاً؟",
+        "choices": [
+          {
+            "text": "السائق من اليمين يمر دائماً أولاً؛ ثم يمكنك أن تدع السائق من اليسار يمر",
+            "is_correct": true
+          },
+          {
+            "text": "السائق من اليسار لأنك يجب أن تتبع قاعدة اليسار قبل اليمين",
+            "is_correct": false
+          },
+          { "text": "السائق الأقرب إلى التقاطع", "is_correct": false }
+        ],
+        "explanation": "مع قاعدة الأولوية من اليمين للسائق القادم من اليمين الأولوية دائماً. بمجرد خلو الطريق من اليمين يمكنك السير أو ترك السائق من اليسار يمر."
+      }
+    }
+  },
+  {
+    "question_id": "B17_Q06",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat is de invloed van bord B17 op een kruispunt dat normaal een voorrangsweg heeft?",
+        "choices": [
+          {
+            "text": "Op dat specifieke kruispunt vervalt de bijzondere voorrang van de voorrangsweg; de voorrang van rechts is van toepassing",
+            "is_correct": true
+          },
+          {
+            "text": "Bord B17 versterkt de voorrang van de voorrangsweg zodat u nog meer voorrang heeft",
+            "is_correct": false
+          },
+          {
+            "text": "Bord B17 heeft geen invloed op de regels van een voorrangsweg",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Bord B17 heft de bijzondere voorrangsregels op die anders gelden (zoals een voorrangsweg). Op dit kruispunt moet iedereen de voorrang van rechts toepassen."
+      },
+      "EN": {
+        "question": "What is the effect of sign B17 at an intersection that normally has a priority road?",
+        "choices": [
+          {
+            "text": "At that specific intersection the special priority of the priority road is cancelled; priority from the right applies",
+            "is_correct": true
+          },
+          {
+            "text": "Sign B17 reinforces the priority road so you have even more priority",
+            "is_correct": false
+          },
+          {
+            "text": "Sign B17 has no effect on the rules of a priority road",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Sign B17 cancels the special priority rules that would otherwise apply (such as a priority road). At this intersection everyone must apply priority from the right."
+      },
+      "FR": {
+        "question": "Quel est l'effet du panneau B17 à un carrefour qui est normalement une route à priorité ?",
+        "choices": [
+          {
+            "text": "À ce carrefour spécifique, la priorité spéciale de la route à priorité est annulée ; la priorité à droite s'applique",
+            "is_correct": true
+          },
+          {
+            "text": "Le panneau B17 renforce la route à priorité de sorte que vous avez encore plus la priorité",
+            "is_correct": false
+          },
+          {
+            "text": "Le panneau B17 n'a aucun effet sur les règles d'une route à priorité",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Le panneau B17 annule les règles de priorité spéciales qui s'appliqueraient autrement (comme une route à priorité). À ce carrefour, tout le monde doit appliquer la priorité à droite."
+      },
+      "AR": {
+        "question": "ما تأثير علامة B17 عند تقاطع يكون فيه طريق ذو أولوية عادةً؟",
+        "choices": [
+          {
+            "text": "في ذلك التقاطع تحديداً تُلغى الأولوية الخاصة لطريق الأولوية وتُطبَّق قاعدة الأولوية من اليمين",
+            "is_correct": true
+          },
+          {
+            "text": "علامة B17 تُعزز أولوية الطريق الرئيسي فتصبح لديك أولوية أكبر",
+            "is_correct": false
+          },
+          {
+            "text": "علامة B17 لا تؤثر على قواعد طريق الأولوية",
+            "is_correct": false
+          }
+        ],
+        "explanation": "علامة B17 تُلغي قواعد الأولوية الخاصة التي كانت ستُطبَّق (كطريق الأولوية). في هذا التقاطع يجب على الجميع تطبيق قاعدة الأولوية من اليمين."
+      }
+    }
+  },
+  {
+    "question_id": "B17_Q07",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U rijdt op een voorrangsweg en ziet bord B17 voor het kruispunt. Mag u gewoon doorrijden want u bent op een voorrangsweg?",
+        "choices": [
+          {
+            "text": "Nee, bord B17 geeft aan dat de voorrang van rechts geldt op dit kruispunt; u moet bestuurders van rechts laten voorgaan",
+            "is_correct": true
+          },
+          {
+            "text": "Ja, op een voorrangsweg heeft u altijd voorrang, ook als bord B17 er staat",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Bord B17 heft de voorrang van de voorrangsweg op voor dat specifieke kruispunt. U bent verplicht de voorrang van rechts toe te passen, ongeacht dat u normaal op een voorrangsweg rijdt."
+      },
+      "EN": {
+        "question": "You are driving on a priority road and see sign B17 before the intersection. May you simply drive on because you are on a priority road?",
+        "choices": [
+          {
+            "text": "No, sign B17 indicates that priority from the right applies at this intersection; you must give way to drivers from the right",
+            "is_correct": true
+          },
+          {
+            "text": "Yes, on a priority road you always have priority even if sign B17 is present",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Sign B17 cancels the priority of the priority road for that specific intersection. You are obliged to apply priority from the right regardless of normally driving on a priority road."
+      },
+      "FR": {
+        "question": "Vous roulez sur une route à priorité et voyez le panneau B17 avant le carrefour. Pouvez-vous simplement continuer car vous êtes sur une route à priorité ?",
+        "choices": [
+          {
+            "text": "Non, le panneau B17 indique que la priorité à droite s'applique à ce carrefour ; vous devez céder le passage aux conducteurs venant de droite",
+            "is_correct": true
+          },
+          {
+            "text": "Oui, sur une route à priorité, vous avez toujours la priorité, même si le panneau B17 est présent",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Le panneau B17 annule la priorité de la route à priorité pour ce carrefour spécifique. Vous êtes obligé d'appliquer la priorité à droite, même si vous roulez normalement sur une route à priorité."
+      },
+      "AR": {
+        "question": "أنت على طريق ذي أولوية وترى علامة B17 قبل التقاطع. هل يجوز الاستمرار لأنك على طريق أولوية؟",
+        "choices": [
+          {
+            "text": "لا، علامة B17 تُشير إلى أن قاعدة الأولوية من اليمين تُطبَّق في هذا التقاطع؛ يجب إعطاء الأولوية للسائقين من اليمين",
+            "is_correct": true
+          },
+          {
+            "text": "نعم، على طريق الأولوية لديك الأولوية دائماً حتى لو كانت علامة B17 موجودة",
+            "is_correct": false
+          }
+        ],
+        "explanation": "علامة B17 تُلغي أولوية طريق الأولوية لهذا التقاطع تحديداً. أنت ملزم بتطبيق قاعدة الأولوية من اليمين بغض النظر عن كونك على طريق أولوية."
+      }
+    }
+  },
+  {
+    "question_id": "B17_Q08",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U rijdt rechtsaf op een kruispunt met bord B17. Een bestuurder van links wil rechtdoor. Heeft hij voorrang op u?",
+        "choices": [
+          {
+            "text": "Nee, hij komt van links; u heeft voorrang op hem want de voorrang van rechts geldt",
+            "is_correct": true
+          },
+          {
+            "text": "Ja, hij rijdt rechtdoor en heeft altijd voorrang op afslaand verkeer",
+            "is_correct": false
+          }
+        ],
+        "explanation": "De voorrang van rechts bepaalt dat bestuurders van rechts voorrang hebben. Een bestuurder van links heeft geen voorrang op u; u heeft voorrang op hem."
+      },
+      "EN": {
+        "question": "You are turning right at an intersection with sign B17. A driver from the left wants to go straight. Does he have priority over you?",
+        "choices": [
+          {
+            "text": "No, he is coming from the left; you have priority over him because priority from the right applies",
+            "is_correct": true
+          },
+          {
+            "text": "Yes, he is going straight and always has priority over turning traffic",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Priority from the right means drivers from the right have priority. A driver from the left does not have priority over you; you have priority over him."
+      },
+      "FR": {
+        "question": "Vous tournez à droite à un carrefour avec panneau B17. Un conducteur venant de gauche veut aller tout droit. A-t-il la priorité sur vous ?",
+        "choices": [
+          {
+            "text": "Non, il vient de gauche ; vous avez la priorité sur lui car la priorité à droite s'applique",
+            "is_correct": true
+          },
+          {
+            "text": "Oui, il va tout droit et a toujours la priorité sur le trafic qui tourne",
+            "is_correct": false
+          }
+        ],
+        "explanation": "La priorité à droite signifie que les conducteurs venant de droite ont la priorité. Un conducteur venant de gauche n'a pas la priorité sur vous ; vous avez la priorité sur lui."
+      },
+      "AR": {
+        "question": "أنت تنعطف يميناً في تقاطع مع علامة B17. سائق قادم من اليسار يريد السير مباشرة. هل له الأولوية عليك؟",
+        "choices": [
+          {
+            "text": "لا، إنه قادم من اليسار؛ لديك الأولوية عليه لأن قاعدة الأولوية من اليمين مُطبَّقة",
+            "is_correct": true
+          },
+          {
+            "text": "نعم، يسير مباشرة وله الأولوية دائماً على المرور المنعطف",
+            "is_correct": false
+          }
+        ],
+        "explanation": "الأولوية من اليمين تعني أن السائقين القادمين من اليمين لديهم الأولوية. السائق القادم من اليسار ليس له الأولوية عليك؛ أنت لديك الأولوية عليه."
+      }
+    }
+  }
+]

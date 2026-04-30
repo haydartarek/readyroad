@@ -4,35 +4,33 @@
 -- =====================
 -- Danger Signs (A series) - gevaarsborden
 -- =====================
-UPDATE traffic_signs SET image_url = 'images/signs/danger_signs/A33-v1 Verkeerslichten.png' WHERE sign_code = 'A33-v1';
+UPDATE traffic_signs SET image_url = 'images/signs/danger_signs/A33 Verkeerslichten.png' WHERE sign_code = 'A33';
 
 -- =====================
 -- Priority Signs (B series) - voorrangsborden
 -- =====================
-UPDATE traffic_signs SET image_url = 'images/signs/priority_signs/B15A Variant schuine rechts.png' WHERE sign_code = 'B15A-v1';
-UPDATE traffic_signs SET image_url = 'images/signs/priority_signs/B15A Versmalling van rechts.png' WHERE sign_code = 'B15A-v2';
+UPDATE traffic_signs SET image_url = 'images/signs/priority_signs/B15b Voorrang op het eerstvolgende kruispunt - variant schuine zijweg rechts.png' WHERE sign_code = 'B15b';
+UPDATE traffic_signs SET image_url = 'images/signs/priority_signs/B15c Voorrang op het eerstvolgende kruispunt.png' WHERE sign_code = 'B15c';
 UPDATE traffic_signs SET image_url = 'images/signs/priority_signs/B23 Fietsers en speed pedelecs mogen rechtdoor rijden en de verkeerslichten voorbijrijden.png' WHERE sign_code = 'B23';
 
 -- =====================
 -- Prohibition Signs (C series) - verbodsborden
 -- =====================
 UPDATE traffic_signs SET image_url = 'images/signs/prohibition_signs/C35 Verbod een voertuig links in te halen.png' WHERE sign_code = 'C35';
-UPDATE traffic_signs SET image_url = 'images/signs/prohibition_signs/C43 - Verbod te rijden met een grotere snelheid dan is aangeduid 50 km.png' WHERE sign_code = 'C43_50';
-UPDATE traffic_signs SET image_url = 'images/signs/prohibition_signs/C43 - Verbod te rijden met een grotere snelheid dan is aangeduid 70 km.png' WHERE sign_code = 'C43_70';
 UPDATE traffic_signs SET image_url = 'images/signs/prohibition_signs/C6 Verboden toegang voor bestuurders van quads.png' WHERE sign_code = 'C6';
 
 -- =====================
 -- Mandatory Signs (D series) - gebodsborden
 -- =====================
 UPDATE traffic_signs SET image_url = 'images/signs/mandatory_signs/D11 Verplichte weg voor voetgangers.png' WHERE sign_code = 'D11';
-UPDATE traffic_signs SET image_url = 'images/signs/mandatory_signs/D1c Verplichting links aanhouden.png' WHERE sign_code = 'D1a-links';
-UPDATE traffic_signs SET image_url = 'images/signs/mandatory_signs/D1d Verplichting rechts aanhouden.png' WHERE sign_code = 'D1a-rechts';
-UPDATE traffic_signs SET image_url = 'images/signs/mandatory_signs/D1f Verplicht de aangeduide richting te volgen (rechtsaf).png' WHERE sign_code = 'D1f';
+UPDATE traffic_signs SET image_url = 'images/signs/mandatory_signs/D1c Verplichting links aanhouden.png' WHERE sign_code = 'D1c';
+UPDATE traffic_signs SET image_url = 'images/signs/mandatory_signs/D1d Verplichting rechts aanhouden.png' WHERE sign_code = 'D1d';
+UPDATE traffic_signs SET image_url = 'images/signs/mandatory_signs/D1f Verplicht rechts afslaan.png' WHERE sign_code = 'D1f';
 UPDATE traffic_signs SET image_url = 'images/signs/mandatory_signs/D3a Verplicht één van de pijlen te volgen.png' WHERE sign_code = 'D3a';
 UPDATE traffic_signs SET image_url = 'images/signs/mandatory_signs/D3b Verplicht één van de pijlen te volgen.png' WHERE sign_code = 'D3b';
-UPDATE traffic_signs SET image_url = 'images/signs/mandatory_signs/D4 Verplicht rechtdoor voor voertuigen die gevaarlijke goederen vervoeren.png' WHERE sign_code = 'D4';
-UPDATE traffic_signs SET image_url = 'images/signs/mandatory_signs/D4 Verplicht linksaf voor voertuigen die gevaarlijke goederen vervoeren.png' WHERE sign_code = 'D4-links';
-UPDATE traffic_signs SET image_url = 'images/signs/mandatory_signs/D4 Verplicht rechts voor voertuigen die gevaarlijke goederen vervoeren.png' WHERE sign_code = 'D4-rechts';
+UPDATE traffic_signs SET image_url = 'images/signs/mandatory_signs/D4 Verplicht rechtdoor gevaarlijke goederen.png' WHERE sign_code = 'D4-rechtdoor';
+UPDATE traffic_signs SET image_url = 'images/signs/mandatory_signs/D4 Verplicht links afslaan gevaarlijke goederen.png' WHERE sign_code = 'D4-links';
+UPDATE traffic_signs SET image_url = 'images/signs/mandatory_signs/D4 Verplicht rechts afslaan gevaarlijke goederen.png' WHERE sign_code = 'D4-rechts';
 
 -- =====================
 -- Parking Signs (E series) - parkeren
@@ -154,3 +152,4 @@ UPDATE traffic_signs SET image_url = 'images/signs/zone_signs/ZE9a Zone parkeren
 UPDATE traffic_signs SET image_url = 'images/signs/zone_signs/ZE9aT Zone parkeren uitsluitend voor auto''s.png' WHERE sign_code = 'ZE9aT-v1';
 UPDATE traffic_signs SET image_url = 'images/signs/zone_signs/ZE9T Zone parkeren voor voertuigen met 3.5t uitzondering.png' WHERE sign_code = 'ZE9T-v1';
 UPDATE traffic_signs SET image_url = 'images/signs/zone_signs/ZONE F113 Einde ZONE Fietsstraat.png' WHERE sign_code = 'ZONE';
+

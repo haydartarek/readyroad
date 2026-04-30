@@ -3,18 +3,27 @@ package com.readyroad.readyroadbackend.service;
 import com.readyroad.readyroadbackend.domain.entity.Category;
 import com.readyroad.readyroadbackend.domain.entity.ExamSimulation;
 import com.readyroad.readyroadbackend.domain.entity.QuizQuestion;
-import com.readyroad.readyroadbackend.domain.entity.UserCategoryProgress;
+import com.readyroad.readyroadbackend.domain.entity.RoadSign;
 import com.readyroad.readyroadbackend.domain.entity.SignPracticeSession;
+import com.readyroad.readyroadbackend.domain.entity.SignRandomPracticeSession;
+import com.readyroad.readyroadbackend.domain.entity.UserCategoryProgress;
+import com.readyroad.readyroadbackend.domain.entity.UserLessonProgress;
+import com.readyroad.readyroadbackend.domain.entity.UserWeakArea;
 import com.readyroad.readyroadbackend.domain.repository.CategoryRepository;
 import com.readyroad.readyroadbackend.domain.repository.ExamSimulationRepository;
 import com.readyroad.readyroadbackend.domain.repository.QuizQuestionRepository;
+import com.readyroad.readyroadbackend.domain.repository.RoadSignRepository;
 import com.readyroad.readyroadbackend.domain.repository.SignExamResultRepository;
 import com.readyroad.readyroadbackend.domain.repository.SignPracticeSessionRepository;
+import com.readyroad.readyroadbackend.domain.repository.SignRandomPracticeSessionRepository;
 import com.readyroad.readyroadbackend.domain.repository.UserCategoryProgressRepository;
+import com.readyroad.readyroadbackend.domain.repository.UserLessonProgressRepository;
 import com.readyroad.readyroadbackend.domain.repository.UserQuestionHistoryRepository;
+import com.readyroad.readyroadbackend.domain.repository.UserWeakAreaRepository;
 import com.readyroad.readyroadbackend.dto.CategoryProgressResponse;
 import com.readyroad.readyroadbackend.dto.OverallProgressResponse;
 import com.readyroad.readyroadbackend.dto.OverallProgressResponse.CategoryProgressSummary;
+import com.readyroad.readyroadbackend.dto.OverallProgressResponse.SignWeaknessSummary;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -22,11 +31,18 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.time.Instant;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
+import java.util.Optional;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
@@ -42,15 +58,22 @@ public class ProgressService {
     private final CategoryRepository categoryRepository;
     private final QuizQuestionRepository questionRepository;
     private final UserQuestionHistoryRepository historyRepository;
+    private final UserLessonProgressRepository lessonProgressRepository;
+    private final UserWeakAreaRepository weakAreaRepository;
+    private final RoadSignRepository roadSignRepository;
     private final ExamSimulationRepository examSimulationRepository;
     private final SignPracticeSessionRepository signPracticeSessionRepository;
     private final SignExamResultRepository signExamResultRepository;
+    private final SignRandomPracticeSessionRepository signRandomPracticeSessionRepository;
 
     private static final int TOTAL_QUESTIONS_GOAL = 500;
     private static final int MIN_ATTEMPTS_FOR_CATEGORIZATION = 5;
     private static final BigDecimal WEAK_THRESHOLD = BigDecimal.valueOf(70.00);
     private static final BigDecimal STRONG_THRESHOLD = BigDecimal.valueOf(85.00);
     private static final int MIN_ATTEMPTS_FOR_DIFFICULTY = 10;
+    private static final int MIN_ATTEMPTS_FOR_WEAK_SIGN = 2;
+    private static final BigDecimal WEAK_SIGN_THRESHOLD = BigDecimal.valueOf(80.00);
+    private static final int MAX_WEAK_SIGNS = 5;
     private static final double EXAM_PASS_THRESHOLD = 82.0;
 
     /**
@@ -65,11 +88,7 @@ public class ProgressService {
 
         // Get all progress records for the user
         List<UserCategoryProgress> progressRecords = progressRepository.findByUserId(userId);
-
-        if (progressRecords.isEmpty()) {
-            log.info("User {} has no progress yet, returning zero progress", userId);
-            return buildZeroProgressResponse();
-        }
+        List<UserLessonProgress> lessonProgressRecords = lessonProgressRepository.findAllByUserId(userId);
 
         // Calculate aggregated statistics
         int totalAttempted = progressRecords.stream()
@@ -97,11 +116,26 @@ public class ProgressService {
         // Calculate remaining questions toward the 500-question goal
         int questionsRemaining = Math.max(0, TOTAL_QUESTIONS_GOAL - totalAttempted);
 
-        // Real consecutive-day study streak using answered_at history
-        int studyStreak = calculateStudyStreak(userId);
+        int lessonsStartedCount = (int) lessonProgressRecords.stream()
+                .filter(progress -> progress.getPagesRead() > 0 || !"NOT_STARTED".equals(progress.getStatus()))
+                .count();
+        int lessonsCompletedCount = (int) lessonProgressRecords.stream()
+                .filter(progress -> "COMPLETED".equals(progress.getStatus()))
+                .count();
 
-        // Date of last practice activity
-        String lastActivityDate = historyRepository.findMostRecentAnsweredDateByUserId(userId);
+        int activeTheoryExamCount = (int) examSimulationRepository.countByUserIdAndStatus(
+                userId, ExamSimulation.ExamStatus.IN_PROGRESS);
+        int incompleteSignPracticeCount = (int) signPracticeSessionRepository
+                .countByUserIdAndStatus(userId, SignPracticeSession.SessionStatus.IN_PROGRESS);
+        int activeRandomSignExamCount = (int) signRandomPracticeSessionRepository.countByUser_IdAndStatus(
+                userId, SignRandomPracticeSession.SessionStatus.IN_PROGRESS);
+        int incompleteActivitiesCount = activeTheoryExamCount + incompleteSignPracticeCount + activeRandomSignExamCount;
+
+        // Real consecutive-day study streak using all tracked learning activity
+        int studyStreak = calculateStudyStreak(userId, progressRecords, lessonProgressRecords);
+
+        // Date of the most recent tracked learning activity
+        String lastActivityDate = findLastActivityDate(userId, progressRecords, lessonProgressRecords);
 
         // Recommend difficulty
         QuizQuestion.DifficultyLevel recommendedDifficulty = recommendDifficulty(totalAttempted, overallAccuracy);
@@ -122,11 +156,15 @@ public class ProgressService {
                 .countByUserIdAndStatus(userId, SignPracticeSession.SessionStatus.COMPLETED);
         int signExamCount = (int) signExamResultRepository.countByUserId(userId);
         int signPassedCount = (int) signExamResultRepository.countDistinctSignsWithPassedExam(userId);
+        int signRandomExamCount = (int) signRandomPracticeSessionRepository.countByUser_IdAndStatus(
+                userId, SignRandomPracticeSession.SessionStatus.COMPLETED);
+        int signRandomExamPassedCount = (int) signRandomPracticeSessionRepository.countByUserIdAndPassedTrue(userId);
+        List<SignWeaknessSummary> weakSigns = identifyWeakSigns(userId);
 
         log.info(
-                "User {} progress: attempted={}, correct={}, accuracy={}%, streak={}, lastActivity={}, exams={}, passed={}, signPractice={}, signExams={}",
+                "User {} progress: attempted={}, correct={}, accuracy={}%, streak={}, lastActivity={}, exams={}, passed={}, signPractice={}, signExams={}, randomSignExams={}",
                 userId, totalAttempted, totalCorrect, overallAccuracy, studyStreak, lastActivityDate, totalExamsTaken,
-                passedExams, signPracticeCount, signExamCount);
+                passedExams, signPracticeCount, signExamCount, signRandomExamCount);
 
         return OverallProgressResponse.builder()
                 .totalAttempted(totalAttempted)
@@ -146,32 +184,81 @@ public class ProgressService {
                 .signPracticeCount(signPracticeCount)
                 .signExamCount(signExamCount)
                 .signPassedCount(signPassedCount)
+                .signRandomExamCount(signRandomExamCount)
+                .signRandomExamPassedCount(signRandomExamPassedCount)
+                .lessonsStartedCount(lessonsStartedCount)
+                .lessonsCompletedCount(lessonsCompletedCount)
+                .incompleteActivitiesCount(incompleteActivitiesCount)
+                .activeTheoryExamCount(activeTheoryExamCount)
+                .incompleteSignPracticeCount(incompleteSignPracticeCount)
+                .activeRandomSignExamCount(activeRandomSignExamCount)
+                .weakSigns(weakSigns)
                 .build();
     }
 
     /**
-     * Build zero progress response for new users
+     * Identify weakest sign-level entries from user_weak_areas.
+     *
+     * Rules:
+     * - sign row only (trafficSignCode is present)
+     * - at least 2 answered questions for signal quality
+     * - below 80% accuracy
+     * - sorted by lowest accuracy then highest attempts
      */
-    private OverallProgressResponse buildZeroProgressResponse() {
-        return OverallProgressResponse.builder()
-                .totalAttempted(0)
-                .totalCorrect(0)
-                .overallAccuracy(BigDecimal.ZERO.setScale(2, RoundingMode.HALF_UP))
-                .weakCategories(new ArrayList<>())
-                .strongCategories(new ArrayList<>())
-                .mostStudiedCategories(new ArrayList<>())
-                .questionsRemaining(TOTAL_QUESTIONS_GOAL)
-                .studyStreak(0)
-                .lastActivityDate(null)
-                .recommendedDifficulty(QuizQuestion.DifficultyLevel.EASY)
-                .totalExamsTaken(0)
-                .passedExams(0)
-                .failedExams(0)
-                .passRate(BigDecimal.ZERO.setScale(2, RoundingMode.HALF_UP))
-                .signPracticeCount(0)
-                .signExamCount(0)
-                .signPassedCount(0)
+    private List<SignWeaknessSummary> identifyWeakSigns(Long userId) {
+        return weakAreaRepository.findAllByUserId(userId).stream()
+                .filter(area -> area.getTrafficSignCode() != null && !area.getTrafficSignCode().isBlank())
+                .filter(area -> (area.getTotalQuestions() != null ? area.getTotalQuestions()
+                        : 0) >= MIN_ATTEMPTS_FOR_WEAK_SIGN)
+                .filter(area -> {
+                    BigDecimal accuracy = BigDecimal.valueOf(
+                            area.getAccuracyPercentage() != null ? area.getAccuracyPercentage() : 0.0);
+                    return accuracy.compareTo(WEAK_SIGN_THRESHOLD) < 0;
+                })
+                .sorted(Comparator
+                        .comparing((UserWeakArea area) -> area.getAccuracyPercentage() != null
+                                ? area.getAccuracyPercentage()
+                                : 0.0)
+                        .thenComparing(area -> area.getTotalQuestions() != null ? area.getTotalQuestions() : 0,
+                                Comparator.reverseOrder()))
+                .limit(MAX_WEAK_SIGNS)
+                .map(this::toSignWeaknessSummary)
+                .collect(Collectors.toList());
+    }
+
+    private SignWeaknessSummary toSignWeaknessSummary(UserWeakArea area) {
+        String signCode = area.getTrafficSignCode();
+        RoadSign sign = resolveSignByCode(signCode).orElse(null);
+        double rawAccuracy = area.getAccuracyPercentage() != null ? area.getAccuracyPercentage() : 0.0;
+
+        return SignWeaknessSummary.builder()
+                .signCode(signCode)
+                .signNameEn(sign != null ? sign.getNameEn() : signCode)
+                .signNameNl(sign != null ? sign.getNameNl() : null)
+                .signNameFr(sign != null ? sign.getNameFr() : null)
+                .signNameAr(sign != null ? sign.getNameAr() : null)
+                .accuracy(BigDecimal.valueOf(rawAccuracy).setScale(2, RoundingMode.HALF_UP))
+                .attempted(area.getTotalQuestions() != null ? area.getTotalQuestions() : 0)
+                .wrongAnswers(area.getWrongAnswers() != null ? area.getWrongAnswers() : 0)
                 .build();
+    }
+
+    private Optional<RoadSign> resolveSignByCode(String signCode) {
+        if (signCode == null || signCode.isBlank()) {
+            return Optional.empty();
+        }
+
+        Optional<RoadSign> exact = roadSignRepository.findFirstBySignCodeOrderByIdAsc(signCode);
+        if (exact.isPresent()) {
+            return exact;
+        }
+
+        String upper = signCode.toUpperCase(Locale.ROOT);
+        if (!upper.equals(signCode)) {
+            return roadSignRepository.findFirstBySignCodeOrderByIdAsc(upper);
+        }
+
+        return Optional.empty();
     }
 
     /**
@@ -274,17 +361,10 @@ public class ProgressService {
      * @return Number of consecutive study days (0 if user never practiced or streak
      *         broken)
      */
-    private int calculateStudyStreak(Long userId) {
-        List<String> rawDates = historyRepository.findDistinctAnswerDatesByUserId(userId);
-
-        if (rawDates == null || rawDates.isEmpty()) {
-            return 0;
-        }
-
-        // Parse and sort descending (most-recent first)
-        List<LocalDate> dates = rawDates.stream()
-                .filter(s -> s != null && !s.isEmpty())
-                .map(LocalDate::parse)
+    private int calculateStudyStreak(Long userId,
+            List<UserCategoryProgress> categoryProgressRecords,
+            List<UserLessonProgress> lessonProgressRecords) {
+        List<LocalDate> dates = collectActivityDates(userId, categoryProgressRecords, lessonProgressRecords).stream()
                 .sorted(Comparator.reverseOrder())
                 .collect(Collectors.toList());
 
@@ -315,6 +395,67 @@ public class ProgressService {
 
         log.debug("Study streak for user {}: {} day(s)", userId, streak);
         return streak;
+    }
+
+    private String findLastActivityDate(Long userId,
+            List<UserCategoryProgress> categoryProgressRecords,
+            List<UserLessonProgress> lessonProgressRecords) {
+        return collectActivityDates(userId, categoryProgressRecords, lessonProgressRecords).stream()
+                .max(LocalDate::compareTo)
+                .map(LocalDate::toString)
+                .orElse(null);
+    }
+
+    private Set<LocalDate> collectActivityDates(Long userId,
+            List<UserCategoryProgress> categoryProgressRecords,
+            List<UserLessonProgress> lessonProgressRecords) {
+        Set<LocalDate> dates = new HashSet<>();
+
+        List<LocalDate> answeredDates = historyRepository.findDistinctAnswerDatesByUserId(userId);
+        if (answeredDates != null) {
+            answeredDates.stream()
+                    .filter(date -> date != null)
+                    .forEach(dates::add);
+        }
+
+        categoryProgressRecords.forEach(progress -> addDate(dates, progress.getLastPracticed()));
+
+        signPracticeSessionRepository.findAllByUserIdOrderByStartedAtDesc(userId)
+                .forEach(session -> {
+                    addDate(dates, session.getStartedAt());
+                    addDate(dates, session.getCompletedAt());
+                });
+
+        signRandomPracticeSessionRepository.findAllByUserIdOrderByStartedAtDesc(userId)
+                .forEach(session -> {
+                    addDate(dates, session.getStartedAt());
+                    addDate(dates, session.getCompletedAt());
+                });
+
+        examSimulationRepository.findByUserIdOrderByStartedAtDesc(userId)
+                .forEach(exam -> {
+                    addDate(dates, exam.getStartedAt());
+                    addDate(dates, exam.getCompletedAt());
+                });
+
+        lessonProgressRecords.forEach(progress -> {
+            addDate(dates, progress.getLastSeenAt());
+            addDate(dates, progress.getCompletedAt());
+        });
+
+        return dates;
+    }
+
+    private void addDate(Set<LocalDate> dates, LocalDateTime dateTime) {
+        if (dateTime != null) {
+            dates.add(dateTime.toLocalDate());
+        }
+    }
+
+    private void addDate(Set<LocalDate> dates, Instant instant) {
+        if (instant != null) {
+            dates.add(instant.atZone(ZoneId.systemDefault()).toLocalDate());
+        }
     }
 
     /**

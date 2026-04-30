@@ -9,6 +9,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -147,17 +148,13 @@ public interface UserQuestionHistoryRepository extends JpaRepository<UserQuestio
         *         "2026-02-25"])
         */
        /**
-        * MySQL DISTINCT + ORDER BY constraint: ORDER BY column must appear in SELECT
-        * list.
-        * We wrap the DISTINCT in a subquery and order the outer result by the alias.
+        * Uses CAST(... AS DATE) for cross-database compatibility (MySQL + H2 tests).
         */
-       @Query(value = "SELECT practice_date FROM (" +
-                     "  SELECT DISTINCT DATE_FORMAT(answered_at, '%Y-%m-%d') AS practice_date" +
-                     "  FROM user_question_history" +
-                     "  WHERE user_id = :userId AND answered_at IS NOT NULL" +
-                     ") dates " +
+       @Query(value = "SELECT DISTINCT CAST(answered_at AS DATE) AS practice_date " +
+                     "FROM user_question_history " +
+                     "WHERE user_id = :userId AND answered_at IS NOT NULL " +
                      "ORDER BY practice_date DESC", nativeQuery = true)
-       List<String> findDistinctAnswerDatesByUserId(@Param("userId") Long userId);
+       List<LocalDate> findDistinctAnswerDatesByUserId(@Param("userId") Long userId);
 
        /**
         * Find the most recent answered date (YYYY-MM-DD) for a user.
@@ -166,10 +163,10 @@ public interface UserQuestionHistoryRepository extends JpaRepository<UserQuestio
         * @param userId User ID
         * @return ISO date string (yyyy-MM-dd) or null
         */
-       @Query(value = "SELECT DATE_FORMAT(MAX(answered_at), '%Y-%m-%d') " +
+       @Query(value = "SELECT CAST(MAX(answered_at) AS DATE) " +
                      "FROM user_question_history " +
                      "WHERE user_id = :userId AND answered_at IS NOT NULL", nativeQuery = true)
-       String findMostRecentAnsweredDateByUserId(@Param("userId") Long userId);
+       LocalDate findMostRecentAnsweredDateByUserId(@Param("userId") Long userId);
 
        /**
         * Upsert a question-shown event.

@@ -2,8 +2,6 @@
 -- Phase 0: Foundation Seed Data
 -- ====================================================================
 
-USE readyroad_prod;
-
 -- ====================
 -- STEP 1: Pre-check
 -- ====================
@@ -83,30 +81,11 @@ INSERT INTO traffic_signs (
     image_url, is_active, created_at, updated_at
 ) VALUES
 
--- Category A: Warning Signs
-((SELECT id FROM categories WHERE code = 'A'), 'A1',
- 'منعطف خطير لليمين', 'Dangerous bend to the right', 'Gevaarlijke bocht naar rechts', 'Virage dangereux à droite',
- 'يحذر من وجود منعطف خطير لليمين', 'Warns of a dangerous right bend',
- 'Waarschuwt voor een gevaarlijke bocht naar rechts', 'Avertit d''un virage dangereux à droite',
- NULL, TRUE, NOW(), NOW()),
-
-((SELECT id FROM categories WHERE code = 'A'), 'A2',
- 'منعطف خطير لليسار', 'Dangerous bend to the left', 'Gevaarlijke bocht naar links', 'Virage dangereux à gauche',
- 'يحذر من وجود منعطف خطير لليسار', 'Warns of a dangerous left bend',
- 'Waarschuwt voor een gevaarlijke bocht naar links', 'Avertit d''un virage dangereux à gauche',
- NULL, TRUE, NOW(), NOW()),
-
 -- Category B: Priority Signs
 ((SELECT id FROM categories WHERE code = 'B'), 'B1',
  'طريق ذو أولوية', 'Priority road', 'Voorrangsweg', 'Route prioritaire',
  'يشير إلى أن الطريق له أولوية المرور', 'Indicates priority road',
  'Geeft aan dat de weg voorrang heeft', 'Indique une route prioritaire',
- NULL, TRUE, NOW(), NOW()),
-
-((SELECT id FROM categories WHERE code = 'B'), 'B2',
- 'أعط الأولوية', 'Give way', 'Voorrang verlenen', 'Céder le passage',
- 'يجب إعطاء الأولوية للمركبات الأخرى', 'Must give way to other vehicles',
- 'Moet voorrang verlenen aan ander verkeer', 'Doit céder le passage aux autres véhicules',
  NULL, TRUE, NOW(), NOW()),
 
 -- Category C: Prohibition Signs

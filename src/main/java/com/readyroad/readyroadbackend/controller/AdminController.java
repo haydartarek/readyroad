@@ -7,17 +7,26 @@ import com.readyroad.readyroadbackend.domain.repository.UserCategoryProgressRepo
 import com.readyroad.readyroadbackend.domain.entity.ExamSimulation;
 import com.readyroad.readyroadbackend.domain.repository.ExamSimulationRepository;
 import com.readyroad.readyroadbackend.domain.repository.QuizQuestionRepository;
+import com.readyroad.readyroadbackend.domain.repository.SignExamResultRepository;
+import com.readyroad.readyroadbackend.domain.repository.SignPracticeSessionRepository;
+import com.readyroad.readyroadbackend.domain.repository.SignQuestionRepository;
+import com.readyroad.readyroadbackend.domain.repository.SignRandomPracticeSessionRepository;
 import com.readyroad.readyroadbackend.domain.enums.Role;
 import com.readyroad.readyroadbackend.domain.entity.User;
+import com.readyroad.readyroadbackend.domain.entity.SignRandomPracticeSession;
+import com.readyroad.readyroadbackend.dto.AdminSystemSettingsUpdateRequest;
 import com.readyroad.readyroadbackend.dto.AdminQuizQuestionRequest;
 import com.readyroad.readyroadbackend.dto.CreateTrafficSignRequest;
 import com.readyroad.readyroadbackend.dto.SignGovernanceReport;
 import com.readyroad.readyroadbackend.dto.SignImportEntry;
 import com.readyroad.readyroadbackend.dto.response.AdminQuizQuestionResponse;
+import com.readyroad.readyroadbackend.dto.response.AdminSystemSettingsResponse;
 import com.readyroad.readyroadbackend.dto.response.AdminTrafficSignResponse;
 import com.readyroad.readyroadbackend.dto.response.PageResponse;
 import com.readyroad.readyroadbackend.dto.response.TrafficSignResponse;
 import com.readyroad.readyroadbackend.service.AdminQuizService;
+import com.readyroad.readyroadbackend.service.AdminSystemSettingsService;
+import com.readyroad.readyroadbackend.service.BackendMessageService;
 import com.readyroad.readyroadbackend.service.TrafficSignService;
 import com.readyroad.readyroadbackend.service.SignImportService;
 import com.readyroad.readyroadbackend.service.SignGovernanceService;
@@ -26,7 +35,10 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -65,6 +77,10 @@ public class AdminController {
     private final UserRepository userRepository;
     private final ExamSimulationRepository examSimulationRepository;
     private final QuizQuestionRepository quizQuestionRepository;
+    private final SignQuestionRepository signQuestionRepository;
+    private final SignPracticeSessionRepository signPracticeSessionRepository;
+    private final SignExamResultRepository signExamResultRepository;
+    private final SignRandomPracticeSessionRepository signRandomPracticeSessionRepository;
     private final UserCategoryProgressRepository categoryProgressRepository;
     private final TrafficSignService trafficSignService;
     private final AdminQuizService adminQuizService;
@@ -72,6 +88,8 @@ public class AdminController {
     private final SignImportService signImportService;
     private final SignGovernanceService signGovernanceService;
     private final NotificationService notificationService;
+    private final AdminSystemSettingsService adminSystemSettingsService;
+    private final BackendMessageService messages;
 
     /**
      * Scenario: Admin dashboard returns aggregated stats
@@ -86,6 +104,14 @@ public class AdminController {
         stats.put("totalUsers", userRepository.count());
         stats.put("totalQuizAttempts", examSimulationRepository.count());
         stats.put("totalQuizQuestions", quizQuestionRepository.count());
+        stats.put("totalSignQuestions", signQuestionRepository.count());
+        stats.put("totalSignPracticeSessions", signPracticeSessionRepository.count());
+        stats.put("totalSignExamAttempts", signExamResultRepository.count());
+        stats.put("totalPassedSignExamResults", signExamResultRepository.countByPassedTrue());
+        stats.put("totalRandomSignExamAttempts",
+                signRandomPracticeSessionRepository.countByStatus(
+                        SignRandomPracticeSession.SessionStatus.COMPLETED));
+        stats.put("totalPassedRandomSignExamResults", signRandomPracticeSessionRepository.countByPassedTrue());
         stats.put("activeUsers", userRepository.countByIsActiveTrue());
         stats.put("adminUsers", userRepository.countByRole(Role.ADMIN));
         stats.put("moderatorUsers", userRepository.countByRole(Role.MODERATOR));
@@ -118,7 +144,7 @@ public class AdminController {
         } catch (Exception e) {
             log.error("❌ Upload failed", e);
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body(Map.of("error", "Upload failed: " + e.getMessage()));
+                    .body(Map.of("error", messages.get("admin.upload.failed")));
         }
     }
 
@@ -168,7 +194,7 @@ public class AdminController {
             trafficSignService.deleteSign(id);
             log.info("✅ Sign deleted successfully with id: {}", id);
             return ResponseEntity.ok(Map.of(
-                    "message", "Sign deleted successfully",
+                    "message", messages.get("admin.sign.deleted"),
                     "id", id));
         } catch (IllegalArgumentException e) {
             log.warn("⚠️ Sign not found with id: {}", id);
@@ -177,8 +203,7 @@ public class AdminController {
         } catch (DataIntegrityViolationException e) {
             log.warn("⚠️ Cannot delete sign id={} — referenced by other records", id);
             return ResponseEntity.status(HttpStatus.CONFLICT)
-                    .body(Map.of("error",
-                            "Cannot delete sign — it is referenced by quiz questions or other records. Remove those references first."));
+                    .body(Map.of("error", messages.get("admin.sign.delete_referenced")));
         }
     }
 
@@ -358,7 +383,7 @@ public class AdminController {
             adminQuizService.deleteQuestion(id);
             log.info("✅ Quiz question deleted id={}", id);
             return ResponseEntity.ok(Map.of(
-                    "message", "Quiz question deleted successfully",
+                    "message", messages.get("admin.quiz.deleted"),
                     "id", id));
         } catch (IllegalArgumentException e) {
             log.warn("⚠️ Quiz question not found id={}", id);
@@ -371,25 +396,46 @@ public class AdminController {
         } catch (DataIntegrityViolationException e) {
             log.warn("⚠️ Cannot delete quiz question id={} — DB constraint violation", id);
             return ResponseEntity.status(HttpStatus.CONFLICT)
-                    .body(Map.of("error",
-                            "Cannot delete question — it is referenced by quiz attempts or user answers. Remove those references first."));
+                    .body(Map.of("error", messages.get("admin.quiz.delete_referenced")));
         }
+    }
+
+    @GetMapping("/settings")
+    public ResponseEntity<AdminSystemSettingsResponse> getAdminSettings() {
+        return ResponseEntity.ok(adminSystemSettingsService.getSettings());
+    }
+
+    @PutMapping("/settings")
+    public ResponseEntity<AdminSystemSettingsResponse> updateAdminSettings(
+            @Valid @RequestBody AdminSystemSettingsUpdateRequest request) {
+        return ResponseEntity.ok(adminSystemSettingsService.updateSettings(request));
     }
 
     /**
      * Get all users (admin only)
-     * GET /api/admin/users?page=0&size=20
+     * GET /api/admin/users?page=0&size=20&q=haydar&sortField=createdAt&sortDir=desc
      */
     @GetMapping("/users")
     public ResponseEntity<?> getAllUsers(
             @RequestParam(defaultValue = "0") int page,
-            @RequestParam(defaultValue = "20") int size) {
+            @RequestParam(defaultValue = "20") int size,
+            @RequestParam(required = false) String q,
+            @RequestParam(defaultValue = "createdAt") String sortField,
+            @RequestParam(defaultValue = "desc") String sortDir) {
 
         try {
-            log.info("👥 Fetching all users (page: {}, size: {})", page, size);
+            log.info("👥 Fetching admin users (page: {}, size: {}, q: {}, sortField: {}, sortDir: {})",
+                    page, size, q, sortField, sortDir);
 
-            List<User> users = userRepository.findAll();
-            List<Map<String, Object>> userDTOs = users.stream()
+            Sort.Direction direction = "asc".equalsIgnoreCase(sortDir) ? Sort.Direction.ASC : Sort.Direction.DESC;
+            String safeSortField = switch (sortField) {
+                case "id", "username", "email", "fullName", "role", "createdAt" -> sortField;
+                default -> "createdAt";
+            };
+            Pageable pageable = PageRequest.of(page, size, Sort.by(direction, safeSortField));
+            Page<User> usersPage = userRepository.findAdminUsers(q == null ? "" : q.trim(), pageable);
+
+            List<Map<String, Object>> userDTOs = usersPage.getContent().stream()
                     .map(this::convertToUserDTO)
                     .toList();
 
@@ -397,16 +443,18 @@ public class AdminController {
 
             return ResponseEntity.ok(Map.of(
                     "users", userDTOs,
-                    "total", userDTOs.size(),
-                    "page", page,
-                    "size", size));
+                    "total", usersPage.getTotalElements(),
+                    "page", usersPage.getNumber(),
+                    "size", usersPage.getSize(),
+                    "totalPages", usersPage.getTotalPages(),
+                    "query", q == null ? "" : q.trim(),
+                    "sortField", safeSortField,
+                    "sortDir", direction.name().toLowerCase()));
 
         } catch (Exception e) {
             log.error("❌ Error fetching users", e);
             return ResponseEntity.internalServerError()
-                    .body(Map.of(
-                            "error", "Internal Server Error",
-                            "message", e.getMessage()));
+                    .body(Map.of("error", messages.get("admin.internal_server_error")));
         }
     }
 
@@ -432,9 +480,7 @@ public class AdminController {
         } catch (Exception e) {
             log.error("❌ Error fetching user with id: {}", id, e);
             return ResponseEntity.internalServerError()
-                    .body(Map.of(
-                            "error", "Internal Server Error",
-                            "message", e.getMessage()));
+                    .body(Map.of("error", messages.get("admin.internal_server_error")));
         }
     }
 
@@ -452,7 +498,7 @@ public class AdminController {
         String roleStr = request.get("role");
         if (roleStr == null || roleStr.trim().isEmpty()) {
             return ResponseEntity.badRequest()
-                    .body(Map.of("error", "Role is required"));
+                    .body(Map.of("error", messages.get("admin.user.role_required")));
         }
 
         Role newRole;
@@ -461,7 +507,7 @@ public class AdminController {
         } catch (IllegalArgumentException e) {
             log.warn("⚠️ Invalid role provided: {}", roleStr);
             return ResponseEntity.badRequest()
-                    .body(Map.of("error", "Invalid role. Must be USER, MODERATOR, or ADMIN"));
+                    .body(Map.of("error", messages.get("admin.user.invalid_role")));
         }
 
         var userOpt = userRepository.findById(id);
@@ -484,7 +530,7 @@ public class AdminController {
                 "role", user.getRole().name());
 
         return ResponseEntity.ok(Map.of(
-                "message", "Role updated successfully",
+                "message", messages.get("admin.user.role_updated"),
                 "user", userDto));
     }
 
@@ -502,7 +548,7 @@ public class AdminController {
         Boolean isLocked = request.get("isLocked");
         if (isLocked == null) {
             return ResponseEntity.badRequest()
-                    .body(Map.of("error", "isLocked field is required"));
+                    .body(Map.of("error", messages.get("admin.user.lock_required")));
         }
 
         var userOpt = userRepository.findById(id);
@@ -519,7 +565,7 @@ public class AdminController {
         log.info("✅ User {} successfully {}", user.getUsername(), action);
 
         return ResponseEntity.ok(Map.of(
-                "message", String.format("User %s successfully", action),
+                "message", messages.get(isLocked ? "admin.user.locked" : "admin.user.unlocked"),
                 "username", user.getUsername(),
                 "isLocked", isLocked));
     }
@@ -788,7 +834,7 @@ public class AdminController {
 
         if (title == null || title.isBlank() || message == null || message.isBlank()) {
             return ResponseEntity.badRequest()
-                    .body(Map.of("error", "title and message are required"));
+                    .body(Map.of("error", messages.get("admin.notification.title_message_required")));
         }
 
         log.info("Admin broadcast notification: title={}", title);

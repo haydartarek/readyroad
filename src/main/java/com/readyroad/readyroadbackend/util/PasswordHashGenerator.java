@@ -4,10 +4,10 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 /**
  * BCrypt Password Hash Generator
- * 
- * Utility to generate BCrypt password hashes for manual user creation.
- * Run this class to generate a hash for any password.
- * 
+ *
+ * Small maintenance utility for development-only user creation.
+ * Run this class when you need a one-off BCrypt hash for SQL or fixtures.
+ *
  * Usage:
  * 1. Update the PASSWORD constant with your desired password
  * 2. Run this class: mvn exec:java
@@ -54,7 +54,7 @@ public class PasswordHashGenerator {
         System.out.println("    'testuser@readyroad.be',");
         System.out.println("    '" + hash + "',");
         System.out.println("    'Test User',");
-        System.out.println("    'STUDENT',");
+        System.out.println("    'USER',");
         System.out.println("    1,");
         System.out.println("    0,");
         System.out.println("    NOW(),");

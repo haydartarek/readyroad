@@ -1,10 +1,602 @@
-﻿[
-  {"question_id":"C43_Q01","type":"WHAT_DOES_IT_MEAN","difficulty":"EASY","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Wat betekent dit verkeersbord?","choices":[{"text":"Verboden te rijden met een snelheid hoger dan de aangegeven waarde","is_correct":true},{"text":"Aanbevolen rijsnelheid op deze weg","is_correct":false},{"text":"Minimumsnelheid die moet worden aangehouden","is_correct":false}],"explanation":"C43 stelt een maximumsnelheid in. Rijden met een hogere snelheid dan aangegeven is verboden."},"EN":{"question":"What does this traffic sign mean?","choices":[{"text":"No driving at a speed exceeding the indicated value","is_correct":true},{"text":"Recommended driving speed on this road","is_correct":false},{"text":"Minimum speed that must be maintained","is_correct":false}],"explanation":"C43 sets a maximum speed. Driving faster than indicated is prohibited."},"FR":{"question":"Que signifie ce panneau ?","choices":[{"text":"Interdiction de circuler a une vitesse superieure a la valeur indiquee","is_correct":true},{"text":"Vitesse recommandee sur cette route","is_correct":false},{"text":"Vitesse minimale a maintenir","is_correct":false}],"explanation":"C43 fixe une vitesse maximale. Conduire a une vitesse superieure a celle indiquee est interdit."},"AR":{"question":"Ù…Ø§Ø°Ø§ ØªØ¹Ù†ÙŠ Ù„Ø§ÙØªØ© Ø§Ù„Ù…Ø±ÙˆØ± Ù‡Ø°Ù‡ØŸ","choices":[{"text":"Ù…Ù…Ù†ÙˆØ¹ Ø§Ù„Ø³ÙŠØ± Ø¨Ø³Ø±Ø¹Ø© ØªØªØ¬Ø§ÙˆØ² Ø§Ù„Ù‚ÙŠÙ…Ø© Ø§Ù„Ù…Ø´Ø§Ø± Ø§Ù„ÙŠÙ‡Ø§","is_correct":true},{"text":"Ø§Ù„Ø³Ø±Ø¹Ø© Ø§Ù„Ù…ÙˆØµÙ‰ Ø¨Ù‡Ø§ Ø¹Ù„Ù‰ Ù‡Ø°Ø§ Ø§Ù„Ø·Ø±ÙŠÙ‚","is_correct":false},{"text":"Ø§Ù„Ø­Ø¯ Ø§Ù„Ø§Ø¯Ù†Ù‰ Ù„Ù„Ø³Ø±Ø¹Ø© Ø§Ù„ÙˆØ§Ø¬Ø¨ Ø§Ù„Ø­ÙØ§Ø¸ Ø¹Ù„ÙŠÙ‡","is_correct":false}],"explanation":"ØªØ­Ø¯Ø¯ C43 Ø­Ø¯Ø§ Ø§Ù‚ØµÙ‰ Ù„Ù„Ø³Ø±Ø¹Ø©. Ù‚ÙŠØ§Ø¯Ø© Ù…Ø±ÙƒØ¨Ø© Ø¨Ø³Ø±Ø¹Ø© Ø§Ø¹Ù„Ù‰ Ù…Ù† Ø§Ù„Ù…Ø´Ø§Ø± Ø§Ù„ÙŠÙ‡Ø§ Ù…Ø­Ø¸ÙˆØ±Ø©."}}},
-  {"question_id":"C43_Q02","type":"WHICH_SIGN","difficulty":"EASY","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Tot welke categorie behoort dit bord?","choices":[{"text":"Verbodsborden (C-reeks)","is_correct":true},{"text":"Gevaarsborden (A-reeks)","is_correct":false},{"text":"Gebodsborden (D-reeks)","is_correct":false}],"explanation":"Verbodsborden (C-reeks) zijn rond met rode rand. C43 legt een snelheidsbeperking op."},"EN":{"question":"To which category does this sign belong?","choices":[{"text":"Prohibition signs (C-series)","is_correct":true},{"text":"Danger signs (A-series)","is_correct":false},{"text":"Mandatory signs (D-series)","is_correct":false}],"explanation":"Prohibition signs (C-series) are round with a red border. C43 imposes a speed limit."},"FR":{"question":"A quelle categorie appartient ce panneau ?","choices":[{"text":"Panneaux d interdiction (serie C)","is_correct":true},{"text":"Panneaux de danger (serie A)","is_correct":false},{"text":"Panneaux d obligation (serie D)","is_correct":false}],"explanation":"Les panneaux d interdiction (serie C) sont ronds avec un bord rouge. C43 impose une limitation de vitesse."},"AR":{"question":"Ø§Ù„Ù‰ Ø§ÙŠ ÙØ¦Ø© ØªÙ†ØªÙ…ÙŠ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ","choices":[{"text":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø­Ø¸Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© C)","is_correct":true},{"text":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© A)","is_correct":false},{"text":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø§Ù„Ø²Ø§Ù… (Ø§Ù„Ø³Ù„Ø³Ù„Ø© D)","is_correct":false}],"explanation":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø­Ø¸Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© C) Ù…Ø³ØªØ¯ÙŠØ±Ø© Ø°Ø§Øª Ø­Ø¯ Ø§Ø­Ù…Ø±. ØªÙØ±Ø¶ C43 Ø­Ø¯Ø§ Ø§Ù‚ØµÙ‰ Ù„Ù„Ø³Ø±Ø¹Ø©."}}},
-  {"question_id":"C43_Q03","type":"HAZARD_IDENTIFICATION","difficulty":"EASY","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Tot wanneer geldt een snelheidsbeperking aangegeven door bord C43?","choices":[{"text":"Tot bord C45 (einde snelheidsbeperking), een kruispunt of de einde bebouwde kom","is_correct":true},{"text":"Tot de volgende verkeerslichten","is_correct":false},{"text":"Tot het bord niet meer zichtbaar is","is_correct":false}],"explanation":"C43 geldt van de plaatsing tot de aangeduide opheffing via C45, een kruispunt of de wettelijke gebiedsgrens."},"EN":{"question":"Until when does a speed limit indicated by sign C43 apply?","choices":[{"text":"Until sign C45 (end of speed limit), an intersection or the end of the built-up area","is_correct":true},{"text":"Until the next traffic lights","is_correct":false},{"text":"Until the sign is no longer visible","is_correct":false}],"explanation":"C43 applies from placement until the indicated lifting via C45, an intersection or the legal area boundary."},"FR":{"question":"Jusqu a quand une limitation de vitesse indiquee par le panneau C43 s applique-t-elle ?","choices":[{"text":"Jusqu au panneau C45 (fin de limitation de vitesse), un carrefour ou la fin de l agglomeration","is_correct":true},{"text":"Jusqu aux prochains feux de signalisation","is_correct":false},{"text":"Jusqu a ce que le panneau ne soit plus visible","is_correct":false}],"explanation":"C43 s applique de la mise en place jusqu a la levee indiquee via C45, un carrefour ou la limite legale de zone."},"AR":{"question":"Ø­ØªÙ‰ Ù…ØªÙ‰ ÙŠØ³Ø±ÙŠ Ø­Ø¯ Ø§Ù„Ø³Ø±Ø¹Ø© Ø§Ù„Ù…Ø´Ø§Ø± Ø§Ù„ÙŠÙ‡ Ø¨Ù„Ø§ÙØªØ© C43ØŸ","choices":[{"text":"Ø­ØªÙ‰ Ù„Ø§ÙØªØ© C45 (Ù†Ù‡Ø§ÙŠØ© Ø­Ø¯ Ø§Ù„Ø³Ø±Ø¹Ø©)ØŒ ØªÙ‚Ø§Ø·Ø¹ØŒ Ø§Ùˆ Ù†Ù‡Ø§ÙŠØ© Ø§Ù„Ù…Ù†Ø·Ù‚Ø© Ø§Ù„Ø¹Ù…Ø±Ø§Ù†ÙŠØ©","is_correct":true},{"text":"Ø­ØªÙ‰ Ø§Ø´Ø§Ø±Ø§Øª Ø§Ù„Ù…Ø±ÙˆØ± Ø§Ù„ØªØ§Ù„ÙŠØ©","is_correct":false},{"text":"Ø­ØªÙ‰ Ù„Ø§ ØªØ¹ÙˆØ¯ Ø§Ù„Ù„Ø§ÙØªØ© Ù…Ø±Ø¦ÙŠØ©","is_correct":false}],"explanation":"ØªØ³Ø±ÙŠ C43 Ù…Ù† Ù„Ø­Ø¸Ø© Ø§Ù„ÙˆØ¶Ø¹ Ø­ØªÙ‰ Ø§Ù„Ø±ÙØ¹ Ø§Ù„Ù…Ø´Ø§Ø± Ø§Ù„ÙŠÙ‡ Ø¹Ø¨Ø± C45 Ø§Ùˆ ØªÙ‚Ø§Ø·Ø¹ Ø§Ùˆ Ø­Ø¯ Ø§Ù„Ù…Ù†Ø·Ù‚Ø© Ø§Ù„Ù‚Ø§Ù†ÙˆÙ†ÙŠ."}}},
-  {"question_id":"C43_Q04","type":"WHAT_MUST_YOU_DO","difficulty":"MEDIUM","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Geldt de snelheidsbeperking van C43 ook voor fietsers?","choices":[{"text":"Nee, C43 geldt uitsluitend voor motorvoertuigen","is_correct":true},{"text":"Ja, C43 geldt voor alle weggebruikers inclusief fietsers","is_correct":false},{"text":"Alleen voor fietsers op de rijbaan","is_correct":false}],"explanation":"C43 is van toepassing op motorvoertuigen. Fietsers en andere niet-gemotoriseerde voertuigen vallen er niet onder."},"EN":{"question":"Does the speed limit of C43 also apply to cyclists?","choices":[{"text":"No, C43 applies exclusively to motor vehicles","is_correct":true},{"text":"Yes, C43 applies to all road users including cyclists","is_correct":false},{"text":"Only for cyclists on the carriageway","is_correct":false}],"explanation":"C43 applies to motor vehicles. Cyclists and other non-motorised vehicles are not covered."},"FR":{"question":"La limitation de vitesse de C43 s applique-t-elle aussi aux cyclistes ?","choices":[{"text":"Non, C43 s applique exclusivement aux vehicules a moteur","is_correct":true},{"text":"Oui, C43 s applique a tous les usagers de la route y compris les cyclistes","is_correct":false},{"text":"Seulement aux cyclistes sur la chaussee","is_correct":false}],"explanation":"C43 s applique aux vehicules a moteur. Les cyclistes et les autres vehicules non motorises ne sont pas couverts."},"AR":{"question":"Ù‡Ù„ ÙŠØ³Ø±ÙŠ Ø­Ø¯ Ø§Ù„Ø³Ø±Ø¹Ø© Ø§Ù„Ù…ÙØ±ÙˆØ¶ Ø¨Ù€C43 Ø§ÙŠØ¶Ø§ Ø¹Ù„Ù‰ Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§ØªØŸ","choices":[{"text":"Ù„Ø§ØŒ ØªØ³Ø±ÙŠ C43 Ø­ØµØ±Ø§ Ø¹Ù„Ù‰ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ø¢Ù„ÙŠØ©","is_correct":true},{"text":"Ù†Ø¹Ù…ØŒ ØªØ³Ø±ÙŠ C43 Ø¹Ù„Ù‰ Ø¬Ù…ÙŠØ¹ Ù…Ø³ØªØ®Ø¯Ù…ÙŠ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø¨Ù…Ø§ ÙÙŠÙ‡Ù… Ø±Ø§ÙƒØ¨Ùˆ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª","is_correct":false},{"text":"ÙÙ‚Ø· Ø¹Ù„Ù‰ Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø¹Ù„Ù‰ Ù…Ø³Ø§Ø± Ø§Ù„Ø³ÙŠØ§Ø±Ø§Øª","is_correct":false}],"explanation":"ØªØ³Ø±ÙŠ C43 Ø¹Ù„Ù‰ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ø¢Ù„ÙŠØ©. Ø±Ø§ÙƒØ¨Ùˆ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª ÙˆØ§Ù„Ù…Ø±ÙƒØ¨Ø§Øª ØºÙŠØ± Ø§Ù„Ø¢Ù„ÙŠØ© Ø§Ù„Ø§Ø®Ø±Ù‰ ØºÙŠØ± Ù…Ø´Ù…ÙˆÙ„ÙŠÙ†."}}},
-  {"question_id":"C43_Q05","type":"WHAT_MUST_YOU_DO","difficulty":"MEDIUM","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Is de snelheid op de tachometer bepalend of de werkelijke snelheid van het voertuig bij C43?","choices":[{"text":"De werkelijke snelheid is bepalend; de tachometer kan afwijken maar de bestuurder is verantwoordelijk","is_correct":true},{"text":"De tachometersnelheid is bepalend; afwijkingen zijn de verantwoordelijkheid van de fabrikant","is_correct":false},{"text":"De maximale wettelijke afwijking van 10 km/h geldt altijd als vrijstelling","is_correct":false}],"explanation":"De werkelijke rijsnelheid is het criterium bij C43. Tachometerafwijkingen ontslaan de bestuurder niet van aansprakelijkheid. Er is geen wettelijke tolerantiemarge voor bestuurders."},"EN":{"question":"Is the speed on the speedometer or the actual speed of the vehicle decisive for C43?","choices":[{"text":"The actual speed is decisive; the speedometer may deviate but the driver is responsible","is_correct":true},{"text":"The speedometer speed is decisive; deviations are the manufacturer s responsibility","is_correct":false},{"text":"The legal maximum deviation of 10 km/h always applies as an exemption","is_correct":false}],"explanation":"The actual driving speed is the criterion for C43. Speedometer deviations do not relieve the driver of liability. There is no legal tolerance margin for drivers."},"FR":{"question":"Est-ce la vitesse au compteur de vitesse ou la vitesse reelle du vehicule qui est determinante pour C43 ?","choices":[{"text":"La vitesse reelle est determinante; le compteur peut s ecarter mais le conducteur est responsable","is_correct":true},{"text":"La vitesse du compteur est determinante; les ecarts sont la responsabilite du fabricant","is_correct":false},{"text":"L ecart maximal legal de 10 km/h s applique toujours comme exemption","is_correct":false}],"explanation":"La vitesse de conduite reelle est le critere pour C43. Les ecarts du compteur ne dispensent pas le conducteur de responsabilite. Il n y a pas de marge legale de tolerance pour les conducteurs."},"AR":{"question":"Ù‡Ù„ Ø§Ù„Ø³Ø±Ø¹Ø© Ø¹Ù„Ù‰ Ø¹Ø¯Ø§Ø¯ Ø§Ù„Ø³Ø±Ø¹Ø© Ø§Ù… Ø§Ù„Ø³Ø±Ø¹Ø© Ø§Ù„ÙØ¹Ù„ÙŠØ© Ù„Ù„Ù…Ø±ÙƒØ¨Ø© Ù…Ø­Ø¯Ø¯Ø© Ù„Ù€C43ØŸ","choices":[{"text":"Ø§Ù„Ø³Ø±Ø¹Ø© Ø§Ù„ÙØ¹Ù„ÙŠØ© Ù‡ÙŠ Ø§Ù„Ù…Ø­Ø¯Ø¯Ø©Ø› Ù‚Ø¯ ÙŠÙ†Ø­Ø±Ù Ø§Ù„Ø¹Ø¯Ø§Ø¯ Ù„ÙƒÙ† Ø§Ù„Ø³Ø§Ø¦Ù‚ Ù…Ø³Ø¤ÙˆÙ„","is_correct":true},{"text":"Ø³Ø±Ø¹Ø© Ø§Ù„Ø¹Ø¯Ø§Ø¯ Ù‡ÙŠ Ø§Ù„Ù…Ø­Ø¯Ø¯Ø©Ø› Ø§Ù„Ø§Ù†Ø­Ø±Ø§ÙØ§Øª Ù…Ø³Ø¤ÙˆÙ„ÙŠØ© Ø§Ù„Ø´Ø±ÙƒØ© Ø§Ù„Ù…ØµÙ†Ø¹Ø©","is_correct":false},{"text":"Ø§Ù„Ø§Ù†Ø­Ø±Ø§Ù Ø§Ù„Ø§Ù‚ØµÙ‰ Ø§Ù„Ù‚Ø§Ù†ÙˆÙ†ÙŠ Ø§Ù„Ø¨Ø§Ù„Øº 10 ÙƒÙ…/Ø³ ÙŠØ³Ø±ÙŠ Ø¯Ø§Ø¦Ù…Ø§ ÙƒØ¥Ø¹ÙØ§Ø¡","is_correct":false}],"explanation":"Ø§Ù„Ø³Ø±Ø¹Ø© Ø§Ù„ÙØ¹Ù„ÙŠØ© Ù„Ù„Ù‚ÙŠØ§Ø¯Ø© Ù‡ÙŠ Ø§Ù„Ù…Ø¹ÙŠØ§Ø± ÙÙŠ C43. Ø§Ù†Ø­Ø±Ø§ÙØ§Øª Ø§Ù„Ø¹Ø¯Ø§Ø¯ Ù„Ø§ ØªØ¹ÙÙŠ Ø§Ù„Ø³Ø§Ø¦Ù‚ Ù…Ù† Ø§Ù„Ù…Ø³Ø¤ÙˆÙ„ÙŠØ©. Ù„Ø§ Ù‡Ø§Ù…Ø´ ØªØ³Ø§Ù…Ø­ Ù‚Ø§Ù†ÙˆÙ†ÙŠ Ù„Ù„Ø³Ø§Ø¦Ù‚ÙŠÙ†."}}},
-  {"question_id":"C43_Q06","type":"WHAT_MUST_YOU_DO","difficulty":"MEDIUM","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Geldt de snelheidsbeperking van C43 ook als u achter een file staat en bijna stilstaat?","choices":[{"text":"Ja maar in de praktijk is er geen overtreding als u onder de limiet rijdt; de limiet is een maximum","is_correct":true},{"text":"Nee, bij file gelden geen snelheidsbeperkingen","is_correct":false},{"text":"Nee, u mag harder rijden om de file sneller op te lossen","is_correct":false}],"explanation":"C43 stelt een maximumsnelheid in. Bij file rijdt u vanzelf langzamer dan de limiet. De limiet verbiedt uitsluitend overschrijding."},"EN":{"question":"Does the speed limit of C43 also apply when you are behind a traffic jam and almost stationary?","choices":[{"text":"Yes but in practice there is no violation if you are driving below the limit; the limit is a maximum","is_correct":true},{"text":"No, no speed limits apply in a traffic jam","is_correct":false},{"text":"No, you may drive faster to resolve the traffic jam more quickly","is_correct":false}],"explanation":"C43 sets a maximum speed. In a traffic jam you are naturally driving slower than the limit. The limit exclusively prohibits exceeding it."},"FR":{"question":"La limitation de vitesse de C43 s applique-t-elle aussi lorsque vous etes en queue d un embouteillage et presque a l arret ?","choices":[{"text":"Oui mais en pratique il n y a pas d infraction si vous roulez en dessous de la limite; la limite est un maximum","is_correct":true},{"text":"Non, aucune limitation de vitesse ne s applique en cas d embouteillage","is_correct":false},{"text":"Non, vous pouvez rouler plus vite pour resoudre l embouteillage plus rapidement","is_correct":false}],"explanation":"C43 fixe une vitesse maximale. En cas d embouteillage vous roulez naturellement moins vite que la limite. La limite interdit exclusivement de la depasser."},"AR":{"question":"Ù‡Ù„ ÙŠØ³Ø±ÙŠ Ø­Ø¯ Ø§Ù„Ø³Ø±Ø¹Ø© Ø§Ù„Ù…ÙØ±ÙˆØ¶ Ø¨Ù€C43 Ø§ÙŠØ¶Ø§ Ø­ÙŠÙ† ØªÙƒÙˆÙ† Ø®Ù„Ù Ø§Ø²Ù…Ø© Ù…Ø±ÙˆØ±ÙŠØ© ÙˆØªÙƒØ§Ø¯ ØªØªÙˆÙ‚ÙØŸ","choices":[{"text":"Ù†Ø¹Ù… Ù„ÙƒÙ† Ø¹Ù…Ù„ÙŠØ§ Ù„Ø§ Ù…Ø®Ø§Ù„ÙØ© Ø§Ø°Ø§ ÙƒÙ†Øª ØªØ³ÙŠØ± Ø¯ÙˆÙ† Ø§Ù„Ø­Ø¯Ø› Ø§Ù„Ø­Ø¯ Ù‡Ùˆ Ø­Ø¯ Ø§Ù‚ØµÙ‰","is_correct":true},{"text":"Ù„Ø§ØŒ Ù„Ø§ ØªØ³Ø±ÙŠ Ù‚ÙŠÙˆØ¯ Ø§Ù„Ø³Ø±Ø¹Ø© ÙÙŠ Ø§Ù„Ø§Ø²Ù…Ø§Øª Ø§Ù„Ù…Ø±ÙˆØ±ÙŠØ©","is_correct":false},{"text":"Ù„Ø§ØŒ ÙŠØ¬ÙˆØ² Ù„Ùƒ Ø§Ù„Ø³ÙŠØ± Ø¨Ø³Ø±Ø¹Ø© Ø§Ø¹Ù„Ù‰ Ù„Ø­Ù„ Ø§Ù„Ø§Ø²Ù…Ø© Ø¨Ø³Ø±Ø¹Ø© Ø§ÙƒØ¨Ø±","is_correct":false}],"explanation":"ØªØ­Ø¯Ø¯ C43 Ø­Ø¯Ø§ Ø§Ù‚ØµÙ‰ Ù„Ù„Ø³Ø±Ø¹Ø©. ÙÙŠ Ø§Ù„Ø§Ø²Ù…Ø§Øª Ø§Ù„Ù…Ø±ÙˆØ±ÙŠØ© ØªØ³ÙŠØ± Ø¨Ø·Ø¨ÙŠØ¹Ø© Ø§Ù„Ø­Ø§Ù„ Ø¨Ø³Ø±Ø¹Ø© Ø§Ù‚Ù„ Ù…Ù† Ø§Ù„Ø­Ø¯. ÙŠØ­Ø¸Ø± Ø§Ù„Ø­Ø¯ Ø­ØµØ±Ø§ ØªØ¬Ø§ÙˆØ²Ù‡."}}},
-  {"question_id":"C43_Q07","type":"IS_IT_ALLOWED","difficulty":"HARD","is_critical":true,"show_sign":true,"i18n":{"NL":{"question":"Mag u 1 km/h harder rijden dan de aangegeven snelheid bij C43?","choices":[{"text":"Nee, elk overschrijding hoe klein ook is een overtreding van C43","is_correct":true},{"text":"Ja, 1 km/h overschrijding valt ruimschoots binnen de meetonzekerheid","is_correct":false}],"explanation":"C43 stelt een absoluut maximum. Juridisch gezien is elke overschrijding een overtreding. Dit is een ernstige verkeersovertreding."},"EN":{"question":"May you drive 1 km/h faster than the indicated speed at C43?","choices":[{"text":"No, any excess however small is a violation of C43","is_correct":true},{"text":"Yes, a 1 km/h excess falls well within the measurement uncertainty","is_correct":false}],"explanation":"C43 sets an absolute maximum. Legally speaking any excess is a violation. This is a serious traffic offence."},"FR":{"question":"Pouvez-vous rouler a 1 km/h de plus que la vitesse indiquee au panneau C43 ?","choices":[{"text":"Non, tout depassement si petit soit-il constitue une infraction a C43","is_correct":true},{"text":"Oui, un depassement de 1 km/h entre largement dans l incertitude de mesure","is_correct":false}],"explanation":"C43 fixe un maximum absolu. Juridiquement tout depassement constitue une infraction. Il s agit d une infraction grave au code de la route."},"AR":{"question":"Ù‡Ù„ ÙŠØ¬ÙˆØ² Ù„Ùƒ Ø§Ù„Ø³ÙŠØ± Ø¨Ø³Ø±Ø¹Ø© 1 ÙƒÙ…/Ø³ Ø§Ø¹Ù„Ù‰ Ù…Ù† Ø§Ù„Ø³Ø±Ø¹Ø© Ø§Ù„Ù…Ø´Ø§Ø± Ø§Ù„ÙŠÙ‡Ø§ Ø¹Ù†Ø¯ C43ØŸ","choices":[{"text":"Ù„Ø§ØŒ Ø§ÙŠ ØªØ¬Ø§ÙˆØ² Ù…Ù‡Ù…Ø§ ØµØºØ± ÙŠÙØ¹Ø¯Ù‘ Ù…Ø®Ø§Ù„ÙØ© C43","is_correct":true},{"text":"Ù†Ø¹Ù…ØŒ ØªØ¬Ø§ÙˆØ² 1 ÙƒÙ…/Ø³ ÙŠÙ‚Ø¹ Ø¨ÙƒÙ„ Ø±Ø§Ø­Ø© Ø¶Ù…Ù† Ø¹Ø¯Ù… Ø§Ù„ÙŠÙ‚ÙŠÙ† ÙÙŠ Ø§Ù„Ù‚ÙŠØ§Ø³","is_correct":false}],"explanation":"ØªØ­Ø¯Ø¯ C43 Ø­Ø¯Ø§ Ø§Ù‚ØµÙ‰ Ù…Ø·Ù„Ù‚Ø§. Ù…Ù† Ø§Ù„Ù†Ø§Ø­ÙŠØ© Ø§Ù„Ù‚Ø§Ù†ÙˆÙ†ÙŠØ© Ø§ÙŠ ØªØ¬Ø§ÙˆØ² ÙŠÙØ¹Ø¯Ù‘ Ù…Ø®Ø§Ù„ÙØ©. Ù‡Ø°Ù‡ Ù…Ø®Ø§Ù„ÙØ© Ù…Ø±ÙˆØ±ÙŠØ© Ø®Ø·ÙŠØ±Ø©."}}},
-  {"question_id":"C43_Q08","type":"IS_IT_ALLOWED","difficulty":"HARD","is_critical":true,"show_sign":true,"i18n":{"NL":{"question":"Mag u harder rijden dan de aangegeven snelheid bij C43 als u een spoedeisende persoon naar het ziekenhuis brengt?","choices":[{"text":"Nee, een particuliere burger heeft geen prioritaire status die het overschrijden van C43 rechtvaardigt","is_correct":true},{"text":"Ja, medische noodgevallen rechtvaardigen het overschrijden van elke snelheidslimiet","is_correct":false}],"explanation":"Alleen prioritaire voertuigen (ambulance, ziekenwagen) hebben toestemming om snelheidsbeperkingen in nood te overschrijden. Particulieren mogen dit niet. Dit is een ernstige verkeersovertreding."},"EN":{"question":"May you drive faster than the indicated speed at C43 if you are taking an urgent person to hospital?","choices":[{"text":"No, a private citizen does not have priority status that justifies exceeding C43","is_correct":true},{"text":"Yes, medical emergencies justify exceeding any speed limit","is_correct":false}],"explanation":"Only priority vehicles (ambulance, emergency vehicle) have permission to exceed speed limits in an emergency. Private individuals may not do this. This is a serious traffic offence."},"FR":{"question":"Pouvez-vous rouler plus vite que la vitesse indiquee au panneau C43 si vous emmenez une personne d urgence a l hopital ?","choices":[{"text":"Non, un citoyen prive n a pas le statut prioritaire qui justifie de depasser C43","is_correct":true},{"text":"Oui, les urgences medicales justifient de depasser toute limitation de vitesse","is_correct":false}],"explanation":"Seuls les vehicules prioritaires (ambulance, vehicule de secours) ont l autorisation de depasser les limitations de vitesse en cas d urgence. Les particuliers ne peuvent pas le faire. Il s agit d une infraction grave au code de la route."},"AR":{"question":"Ù‡Ù„ ÙŠØ¬ÙˆØ² Ù„Ùƒ Ø§Ù„Ø³ÙŠØ± Ø¨Ø³Ø±Ø¹Ø© Ø§Ø¹Ù„Ù‰ Ù…Ù† Ø§Ù„Ù…Ø´Ø§Ø± Ø§Ù„ÙŠÙ‡Ø§ Ø¹Ù†Ø¯ C43 Ø§Ø°Ø§ ÙƒÙ†Øª ØªÙ†Ù‚Ù„ Ø´Ø®ØµØ§ Ø·Ø§Ø±Ø¦Ø§ Ø§Ù„Ù‰ Ø§Ù„Ù…Ø³ØªØ´ÙÙ‰ØŸ","choices":[{"text":"Ù„Ø§ØŒ Ø§Ù„Ù…ÙˆØ§Ø·Ù† Ø§Ù„Ø¹Ø§Ø¯ÙŠ Ù„ÙŠØ³ Ù„Ø¯ÙŠÙ‡ ØµÙØ© Ø§Ù„Ø§ÙˆÙ„ÙˆÙŠØ© Ø§Ù„ØªÙŠ ØªØ¨Ø±Ø± ØªØ¬Ø§ÙˆØ² C43","is_correct":true},{"text":"Ù†Ø¹Ù…ØŒ Ø­Ø§Ù„Ø§Øª Ø§Ù„Ø·ÙˆØ§Ø±Ø¦ Ø§Ù„Ø·Ø¨ÙŠØ© ØªØ¨Ø±Ø± ØªØ¬Ø§ÙˆØ² Ø§ÙŠ Ø­Ø¯ Ù„Ù„Ø³Ø±Ø¹Ø©","is_correct":false}],"explanation":"ÙÙ‚Ø· Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø°Ø§Øª Ø§Ù„Ø§ÙˆÙ„ÙˆÙŠØ© (Ø§Ù„Ø§Ø³Ø¹Ø§ÙØŒ Ù…Ø±ÙƒØ¨Ø© Ø§Ù„Ø·ÙˆØ§Ø±Ø¦) Ù„Ø¯ÙŠÙ‡Ø§ Ø¥Ø°Ù† Ø¨ØªØ¬Ø§ÙˆØ² Ø­Ø¯ÙˆØ¯ Ø§Ù„Ø³Ø±Ø¹Ø© ÙÙŠ Ø­Ø§Ù„Ø§Øª Ø§Ù„Ø·ÙˆØ§Ø±Ø¦. Ø§Ù„Ø§ÙØ±Ø§Ø¯ Ø§Ù„Ø¹Ø§Ø¯ÙŠÙˆÙ† Ù„Ø§ ÙŠØ¬ÙˆØ² Ù„Ù‡Ù… Ø°Ù„Ùƒ. Ù‡Ø°Ù‡ Ù…Ø®Ø§Ù„ÙØ© Ù…Ø±ÙˆØ±ÙŠØ© Ø®Ø·ÙŠØ±Ø©."}}}
+[
+  {
+    "question_id": "C43_Q01",
+    "type": "WHAT_DOES_IT_MEAN",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat betekent dit verkeersbord met 50?",
+        "choices": [
+          {
+            "text": "U mag niet sneller rijden dan 50 km/u",
+            "is_correct": true
+          },
+          {
+            "text": "U moet exact 50 km/u rijden",
+            "is_correct": false
+          },
+          {
+            "text": "U mag minimaal 50 km/u rijden",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dit bord verbiedt te rijden met een grotere snelheid dan 50 km/u."
+      },
+      "EN": {
+        "question": "What does this traffic sign with 50 mean?",
+        "choices": [
+          {
+            "text": "You may not drive faster than 50 km/h",
+            "is_correct": true
+          },
+          {
+            "text": "You must drive exactly 50 km/h",
+            "is_correct": false
+          },
+          {
+            "text": "You must drive at least 50 km/h",
+            "is_correct": false
+          }
+        ],
+        "explanation": "This sign prohibits driving at a speed higher than 50 km/h."
+      },
+      "FR": {
+        "question": "Que signifie ce panneau avec 50 ?",
+        "choices": [
+          {
+            "text": "Vous ne pouvez pas rouler à plus de 50 km/h",
+            "is_correct": true
+          },
+          {
+            "text": "Vous devez rouler exactement à 50 km/h",
+            "is_correct": false
+          },
+          {
+            "text": "Vous devez rouler à au moins 50 km/h",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ce panneau interdit de circuler à une vitesse supérieure à 50 km/h."
+      },
+      "AR": {
+        "question": "ما معنى هذه العلامة المرورية التي تحمل 50؟",
+        "choices": [
+          {
+            "text": "لا يجوز لك السير بسرعة تزيد على 50 كم/س",
+            "is_correct": true
+          },
+          {
+            "text": "يجب أن تسير بسرعة 50 كم/س بالضبط",
+            "is_correct": false
+          },
+          {
+            "text": "يجب أن تسير بسرعة لا تقل عن 50 كم/س",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تمنع هذه العلامة السير بسرعة تزيد على 50 كم/س."
+      }
+    }
+  },
+  {
+    "question_id": "C43_Q02",
+    "type": "HAZARD_IDENTIFICATION",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Welke maximumsnelheid geldt hier?",
+        "choices": [
+          {
+            "text": "50 km/u",
+            "is_correct": true
+          },
+          {
+            "text": "30 km/u",
+            "is_correct": false
+          },
+          {
+            "text": "70 km/u",
+            "is_correct": false
+          }
+        ],
+        "explanation": "De aangeduide maximumsnelheid op dit bord is 50 km/u."
+      },
+      "EN": {
+        "question": "What maximum speed applies here?",
+        "choices": [
+          {
+            "text": "50 km/h",
+            "is_correct": true
+          },
+          {
+            "text": "30 km/h",
+            "is_correct": false
+          },
+          {
+            "text": "70 km/h",
+            "is_correct": false
+          }
+        ],
+        "explanation": "The maximum speed indicated on this sign is 50 km/h."
+      },
+      "FR": {
+        "question": "Quelle vitesse maximale s’applique ici ?",
+        "choices": [
+          {
+            "text": "50 km/h",
+            "is_correct": true
+          },
+          {
+            "text": "30 km/h",
+            "is_correct": false
+          },
+          {
+            "text": "70 km/h",
+            "is_correct": false
+          }
+        ],
+        "explanation": "La vitesse maximale indiquée sur ce panneau est de 50 km/h."
+      },
+      "AR": {
+        "question": "ما السرعة القصوى المطبقة هنا؟",
+        "choices": [
+          {
+            "text": "50 كم/س",
+            "is_correct": true
+          },
+          {
+            "text": "30 كم/س",
+            "is_correct": false
+          },
+          {
+            "text": "70 كم/س",
+            "is_correct": false
+          }
+        ],
+        "explanation": "السرعة القصوى المبينة على هذه العلامة هي 50 كم/س."
+      }
+    }
+  },
+  {
+    "question_id": "C43_Q03",
+    "type": "HAZARD_IDENTIFICATION",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Tot waar geldt dit bord in elk geval?",
+        "choices": [
+          {
+            "text": "Tot en met het volgend kruispunt",
+            "is_correct": true
+          },
+          {
+            "text": "Alleen ter hoogte van het bord",
+            "is_correct": false
+          },
+          {
+            "text": "Altijd tot het einde van de straat",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dit bord geldt in elk geval vanaf het verkeersbord tot en met het volgend kruispunt."
+      },
+      "EN": {
+        "question": "Until where does this sign apply in any case?",
+        "choices": [
+          {
+            "text": "Up to and including the next intersection",
+            "is_correct": true
+          },
+          {
+            "text": "Only at the exact place of the sign",
+            "is_correct": false
+          },
+          {
+            "text": "Always until the end of the street",
+            "is_correct": false
+          }
+        ],
+        "explanation": "This sign applies in any case from the sign up to and including the next intersection."
+      },
+      "FR": {
+        "question": "Jusqu’où ce panneau s’applique-t-il dans tous les cas ?",
+        "choices": [
+          {
+            "text": "Jusqu’au prochain carrefour inclus",
+            "is_correct": true
+          },
+          {
+            "text": "Seulement à l’endroit exact du panneau",
+            "is_correct": false
+          },
+          {
+            "text": "Toujours jusqu’à la fin de la rue",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ce panneau s’applique dans tous les cas à partir du signal jusqu’au prochain carrefour inclus."
+      },
+      "AR": {
+        "question": "حتى أين تسري هذه العلامة على الأقل؟",
+        "choices": [
+          {
+            "text": "حتى التقاطع التالي شاملًا",
+            "is_correct": true
+          },
+          {
+            "text": "فقط عند موضع العلامة بالضبط",
+            "is_correct": false
+          },
+          {
+            "text": "دائمًا حتى نهاية الشارع",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تسري هذه العلامة على الأقل من موضعها وحتى التقاطع التالي شاملًا."
+      }
+    }
+  },
+  {
+    "question_id": "C43_Q04",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U ziet dit bord met 50. Wat moet u doen?",
+        "choices": [
+          {
+            "text": "Uw snelheid aanpassen zodat u niet sneller dan 50 km/u rijdt",
+            "is_correct": true
+          },
+          {
+            "text": "Voortaan exact 50 km/u blijven rijden",
+            "is_correct": false
+          },
+          {
+            "text": "Pas remmen aan het volgend kruispunt",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Bij dit bord moet u uw snelheid aanpassen zodat u niet sneller rijdt dan 50 km/u."
+      },
+      "EN": {
+        "question": "You see this sign with 50. What must you do?",
+        "choices": [
+          {
+            "text": "Adjust your speed so that you do not drive faster than 50 km/h",
+            "is_correct": true
+          },
+          {
+            "text": "From now on always keep exactly 50 km/h",
+            "is_correct": false
+          },
+          {
+            "text": "Only brake at the next intersection",
+            "is_correct": false
+          }
+        ],
+        "explanation": "At this sign you must adjust your speed so that you do not drive faster than 50 km/h."
+      },
+      "FR": {
+        "question": "Vous voyez ce panneau avec 50. Que devez-vous faire ?",
+        "choices": [
+          {
+            "text": "Adapter votre vitesse afin de ne pas rouler à plus de 50 km/h",
+            "is_correct": true
+          },
+          {
+            "text": "Désormais rouler toujours exactement à 50 km/h",
+            "is_correct": false
+          },
+          {
+            "text": "Freiner seulement au prochain carrefour",
+            "is_correct": false
+          }
+        ],
+        "explanation": "À ce panneau, vous devez adapter votre vitesse afin de ne pas rouler à plus de 50 km/h."
+      },
+      "AR": {
+        "question": "أنت ترى هذه العلامة التي تحمل 50. ماذا يجب أن تفعل؟",
+        "choices": [
+          {
+            "text": "تضبط سرعتك بحيث لا تسير بأكثر من 50 كم/س",
+            "is_correct": true
+          },
+          {
+            "text": "يجب أن تحافظ دائمًا على 50 كم/س بالضبط",
+            "is_correct": false
+          },
+          {
+            "text": "تبدأ بالفرملة فقط عند التقاطع التالي",
+            "is_correct": false
+          }
+        ],
+        "explanation": "عند هذه العلامة يجب أن تضبط سرعتك بحيث لا تسير بأكثر من 50 كم/س."
+      }
+    }
+  },
+  {
+    "question_id": "C43_Q05",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U rijdt 62 km/u en passeert dit bord. Wat moet u doen?",
+        "choices": [
+          {
+            "text": "Vertragen tot maximaal 50 km/u",
+            "is_correct": true
+          },
+          {
+            "text": "Uw snelheid behouden tot het volgend kruispunt",
+            "is_correct": false
+          },
+          {
+            "text": "Versnellen om sneller uit de zone te raken",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Na dit bord mag u niet sneller rijden dan 50 km/u."
+      },
+      "EN": {
+        "question": "You are driving at 62 km/h and pass this sign. What must you do?",
+        "choices": [
+          {
+            "text": "Slow down to a maximum of 50 km/h",
+            "is_correct": true
+          },
+          {
+            "text": "Keep your speed until the next intersection",
+            "is_correct": false
+          },
+          {
+            "text": "Accelerate to leave the zone faster",
+            "is_correct": false
+          }
+        ],
+        "explanation": "After this sign you may not drive faster than 50 km/h."
+      },
+      "FR": {
+        "question": "Vous roulez à 62 km/h et vous passez ce panneau. Que devez-vous faire ?",
+        "choices": [
+          {
+            "text": "Ralentir jusqu’à un maximum de 50 km/h",
+            "is_correct": true
+          },
+          {
+            "text": "Garder votre vitesse jusqu’au prochain carrefour",
+            "is_correct": false
+          },
+          {
+            "text": "Accélérer pour sortir plus vite de la zone",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Après ce panneau, vous ne pouvez pas rouler à plus de 50 km/h."
+      },
+      "AR": {
+        "question": "أنت تسير بسرعة 62 كم/س وتجاوزت هذه العلامة. ماذا يجب أن تفعل؟",
+        "choices": [
+          {
+            "text": "تخفف سرعتك إلى حد أقصى 50 كم/س",
+            "is_correct": true
+          },
+          {
+            "text": "تحافظ على سرعتك حتى التقاطع التالي",
+            "is_correct": false
+          },
+          {
+            "text": "تزيد سرعتك للخروج من النطاق بسرعة أكبر",
+            "is_correct": false
+          }
+        ],
+        "explanation": "بعد هذه العلامة لا يجوز لك السير بسرعة تزيد على 50 كم/س."
+      }
+    }
+  },
+  {
+    "question_id": "C43_Q06",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Mag u in deze zone 50 km/u rijden?",
+        "choices": [
+          {
+            "text": "Ja, 50 km/u is toegestaan",
+            "is_correct": true
+          },
+          {
+            "text": "Nee, u moet altijd trager dan 50 km/u rijden",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dit bord verbiedt alleen een snelheid hoger dan 50 km/u."
+      },
+      "EN": {
+        "question": "May you drive at 50 km/h in this zone?",
+        "choices": [
+          {
+            "text": "Yes, 50 km/h is permitted",
+            "is_correct": true
+          },
+          {
+            "text": "No, you must always drive slower than 50 km/h",
+            "is_correct": false
+          }
+        ],
+        "explanation": "This sign only prohibits a speed higher than 50 km/h."
+      },
+      "FR": {
+        "question": "Pouvez-vous rouler à 50 km/h dans cette zone ?",
+        "choices": [
+          {
+            "text": "Oui, 50 km/h est autorisé",
+            "is_correct": true
+          },
+          {
+            "text": "Non, vous devez toujours rouler à moins de 50 km/h",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ce panneau interdit seulement une vitesse supérieure à 50 km/h."
+      },
+      "AR": {
+        "question": "هل يجوز لك السير بسرعة 50 كم/س داخل هذا النطاق؟",
+        "choices": [
+          {
+            "text": "نعم، 50 كم/س مسموح بها",
+            "is_correct": true
+          },
+          {
+            "text": "لا، يجب دائمًا أن تسير بأقل من 50 كم/س",
+            "is_correct": false
+          }
+        ],
+        "explanation": "هذه العلامة تمنع فقط السرعة الأعلى من 50 كم/س."
+      }
+    }
+  },
+  {
+    "question_id": "C43_Q07",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Mag u na dit bord 51 km/u rijden?",
+        "choices": [
+          {
+            "text": "Nee, dat is sneller dan de aangeduide 50 km/u",
+            "is_correct": true
+          },
+          {
+            "text": "Ja, omdat 1 km/u geen verschil maakt",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dit bord verbiedt elke snelheid hoger dan 50 km/u."
+      },
+      "EN": {
+        "question": "May you drive at 51 km/h after this sign?",
+        "choices": [
+          {
+            "text": "No, that is faster than the indicated 50 km/h",
+            "is_correct": true
+          },
+          {
+            "text": "Yes, because 1 km/h makes no difference",
+            "is_correct": false
+          }
+        ],
+        "explanation": "This sign prohibits any speed higher than 50 km/h."
+      },
+      "FR": {
+        "question": "Pouvez-vous rouler à 51 km/h après ce panneau ?",
+        "choices": [
+          {
+            "text": "Non, c’est plus rapide que les 50 km/h indiqués",
+            "is_correct": true
+          },
+          {
+            "text": "Oui, parce que 1 km/h ne fait pas de différence",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ce panneau interdit toute vitesse supérieure à 50 km/h."
+      },
+      "AR": {
+        "question": "هل يجوز لك السير بسرعة 51 كم/س بعد هذه العلامة؟",
+        "choices": [
+          {
+            "text": "لا، فهذه سرعة أعلى من 50 كم/س المبينة",
+            "is_correct": true
+          },
+          {
+            "text": "نعم، لأن 1 كم/س لا يصنع فرقًا",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تمنع هذه العلامة كل سرعة تزيد على 50 كم/س."
+      }
+    }
+  },
+  {
+    "question_id": "C43_Q08",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U bent het volgend kruispunt nog niet voorbij. Mag u al sneller dan 50 km/u rijden?",
+        "choices": [
+          {
+            "text": "Nee, het verbod blijft gelden zolang het nog van toepassing is",
+            "is_correct": true
+          },
+          {
+            "text": "Ja, zodra u het bord niet meer ziet",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Het verbod van 50 km/u blijft gelden binnen de geldigheidszone van het bord."
+      },
+      "EN": {
+        "question": "You have not yet passed the next intersection. May you already drive faster than 50 km/h?",
+        "choices": [
+          {
+            "text": "No, the prohibition remains in force as long as it still applies",
+            "is_correct": true
+          },
+          {
+            "text": "Yes, as soon as you can no longer see the sign",
+            "is_correct": false
+          }
+        ],
+        "explanation": "The 50 km/h prohibition remains in force within the validity zone of the sign."
+      },
+      "FR": {
+        "question": "Vous n’avez pas encore dépassé le prochain carrefour. Pouvez-vous déjà rouler à plus de 50 km/h ?",
+        "choices": [
+          {
+            "text": "Non, l’interdiction reste en vigueur tant qu’elle s’applique encore",
+            "is_correct": true
+          },
+          {
+            "text": "Oui, dès que vous ne voyez plus le panneau",
+            "is_correct": false
+          }
+        ],
+        "explanation": "L’interdiction de 50 km/h reste en vigueur dans la zone de validité du panneau."
+      },
+      "AR": {
+        "question": "أنت لم تتجاوز التقاطع التالي بعد. هل يجوز لك أن تسير أسرع من 50 كم/س؟",
+        "choices": [
+          {
+            "text": "لا، يبقى الحظر ساريًا ما دام لا يزال مطبقًا",
+            "is_correct": true
+          },
+          {
+            "text": "نعم، بمجرد أن لا تعود ترى العلامة",
+            "is_correct": false
+          }
+        ],
+        "explanation": "يبقى حظر 50 كم/س ساريًا داخل نطاق سريان العلامة."
+      }
+    }
+  }
 ]

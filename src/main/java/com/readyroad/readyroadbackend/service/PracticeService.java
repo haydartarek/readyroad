@@ -37,6 +37,7 @@ public class PracticeService {
         private final UserQuestionHistoryRepository historyRepository;
         private final UserCategoryProgressRepository progressRepository;
         private final StreakService streakService; // Story N3: Study streak notifications
+        private final RoadSignReferenceTextResolver roadSignReferenceTextResolver;
 
         /**
          * Submit practice answer and get immediate feedback
@@ -179,7 +180,7 @@ public class PracticeService {
          * @throws IllegalStateException if question has no correct answer
          */
         private QuizAnswerOption getCorrectOption(QuizQuestion question) {
-                return question.getOptions().stream()
+                return question.getDeliverableOptions().stream()
                                 .filter(QuizAnswerOption::getIsCorrect)
                                 .findFirst()
                                 .orElseThrow(() -> new IllegalStateException(
@@ -267,23 +268,23 @@ public class PracticeService {
 
                                 // Selected option (multi-language)
                                 .selectedOptionId(selectedOption.getId())
-                                .selectedOptionTextEn(selectedOption.getOptionTextEn())
-                                .selectedOptionTextAr(selectedOption.getOptionTextAr())
-                                .selectedOptionTextNl(selectedOption.getOptionTextNl())
-                                .selectedOptionTextFr(selectedOption.getOptionTextFr())
+                                .selectedOptionTextEn(roadSignReferenceTextResolver.resolveEn(selectedOption.getOptionTextEn()))
+                                .selectedOptionTextAr(roadSignReferenceTextResolver.resolveAr(selectedOption.getOptionTextAr()))
+                                .selectedOptionTextNl(roadSignReferenceTextResolver.resolveNl(selectedOption.getOptionTextNl()))
+                                .selectedOptionTextFr(roadSignReferenceTextResolver.resolveFr(selectedOption.getOptionTextFr()))
 
                                 // Correct option (multi-language)
                                 .correctOptionId(correctOption.getId())
-                                .correctOptionTextEn(correctOption.getOptionTextEn())
-                                .correctOptionTextAr(correctOption.getOptionTextAr())
-                                .correctOptionTextNl(correctOption.getOptionTextNl())
-                                .correctOptionTextFr(correctOption.getOptionTextFr())
+                                .correctOptionTextEn(roadSignReferenceTextResolver.resolveEn(correctOption.getOptionTextEn()))
+                                .correctOptionTextAr(roadSignReferenceTextResolver.resolveAr(correctOption.getOptionTextAr()))
+                                .correctOptionTextNl(roadSignReferenceTextResolver.resolveNl(correctOption.getOptionTextNl()))
+                                .correctOptionTextFr(roadSignReferenceTextResolver.resolveFr(correctOption.getOptionTextFr()))
 
                                 // Explanation (multi-language)
-                                .explanationEn(question.getExplanationEn())
-                                .explanationAr(question.getExplanationAr())
-                                .explanationNl(question.getExplanationNl())
-                                .explanationFr(question.getExplanationFr())
+                                .explanationEn(roadSignReferenceTextResolver.resolveEn(question.getExplanationEn()))
+                                .explanationAr(roadSignReferenceTextResolver.resolveAr(question.getExplanationAr()))
+                                .explanationNl(roadSignReferenceTextResolver.resolveNl(question.getExplanationNl()))
+                                .explanationFr(roadSignReferenceTextResolver.resolveFr(question.getExplanationFr()))
 
                                 // Category info (multi-language)
                                 .categoryId(question.getCategory().getId())

@@ -7,8 +7,8 @@ import java.util.List;
 
 /**
  * One of the two exam templates associated with a {@link RoadSign}.
- * Each exam contains 15 questions: 6 EASY + 6 MEDIUM + 3 HARD.
- * Passing score: 12 / 15.
+ * Each exam contains 8 questions: 3 EASY + 3 MEDIUM + 2 HARD.
+ * Passing score: 6 / 8.
  */
 @Entity
 @Table(name = "sign_exams")
@@ -23,19 +23,19 @@ public class SignExam extends BaseEntity {
     private Integer examNumber;
 
     @Column(name = "passing_score", nullable = false)
-    private Integer passingScore = 12;
+    private Integer passingScore = 6;
 
     @Column(name = "total_questions", nullable = false)
-    private Integer totalQuestions = 15;
+    private Integer totalQuestions = 8;
 
     @Column(name = "easy_count", nullable = false)
-    private Integer easyCount = 6;
+    private Integer easyCount = 3;
 
     @Column(name = "medium_count", nullable = false)
-    private Integer mediumCount = 6;
+    private Integer mediumCount = 3;
 
     @Column(name = "hard_count", nullable = false)
-    private Integer hardCount = 3;
+    private Integer hardCount = 2;
 
     @Column(name = "is_active", nullable = false)
     private Boolean isActive = true;

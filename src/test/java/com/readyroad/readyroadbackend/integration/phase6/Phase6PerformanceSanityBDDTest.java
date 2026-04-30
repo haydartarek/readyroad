@@ -60,9 +60,6 @@ public class Phase6PerformanceSanityBDDTest {
     @Autowired
     private QuizQuestionRepository quizQuestionRepository;
 
-    @Autowired
-    private QuizAnswerOptionRepository optionRepository;
-
     private Long testUserId;
     private static final long PERFORMANCE_THRESHOLD_MS = 1000L;
 

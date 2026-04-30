@@ -1,10 +1,602 @@
-﻿[
-  {"question_id":"C31a_Q01","type":"WHAT_DOES_IT_MEAN","difficulty":"EASY","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Wat betekent dit verkeersbord?","choices":[{"text":"Verboden linksaf te slaan","is_correct":true},{"text":"Verboden rechtsaf te slaan","is_correct":false},{"text":"Verboden een U-bocht te maken","is_correct":false}],"explanation":"C31a verbiedt het linksaf slaan op het punt waar het bord is geplaatst."},"EN":{"question":"What does this traffic sign mean?","choices":[{"text":"No left turn","is_correct":true},{"text":"No right turn","is_correct":false},{"text":"No U-turn","is_correct":false}],"explanation":"C31a prohibits turning left at the point where the sign is placed."},"FR":{"question":"Que signifie ce panneau ?","choices":[{"text":"Interdiction de tourner a gauche","is_correct":true},{"text":"Interdiction de tourner a droite","is_correct":false},{"text":"Interdiction de faire demi-tour","is_correct":false}],"explanation":"C31a interdit de tourner a gauche au point ou le panneau est place."},"AR":{"question":"Ù…Ø§Ø°Ø§ ØªØ¹Ù†ÙŠ Ù„Ø§ÙØªØ© Ø§Ù„Ù…Ø±ÙˆØ± Ù‡Ø°Ù‡ØŸ","choices":[{"text":"Ù…Ù…Ù†ÙˆØ¹ Ø§Ù„Ø§Ù†Ø¹Ø·Ø§Ù ÙŠØ³Ø§Ø±Ø§","is_correct":true},{"text":"Ù…Ù…Ù†ÙˆØ¹ Ø§Ù„Ø§Ù†Ø¹Ø·Ø§Ù ÙŠÙ…ÙŠÙ†Ø§","is_correct":false},{"text":"Ù…Ù…Ù†ÙˆØ¹ Ø§Ù„Ø§Ø³ØªØ¯Ø§Ø±Ø©","is_correct":false}],"explanation":"ØªØ­Ø¸Ø± C31a Ø§Ù„Ø§Ù†Ø¹Ø·Ø§Ù ÙŠØ³Ø§Ø±Ø§ Ø¹Ù†Ø¯ Ø§Ù„Ù†Ù‚Ø·Ø© Ø§Ù„ØªÙŠ ØªÙˆØ¶Ø¹ ÙÙŠÙ‡Ø§ Ø§Ù„Ù„Ø§ÙØªØ©."}}},
-  {"question_id":"C31a_Q02","type":"WHICH_SIGN","difficulty":"EASY","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Tot welke categorie behoort dit bord?","choices":[{"text":"Verbodsborden (C-reeks)","is_correct":true},{"text":"Gevaarsborden (A-reeks)","is_correct":false},{"text":"Gebodsborden (D-reeks)","is_correct":false}],"explanation":"Verbodsborden (C-reeks) zijn rond met rode rand en regelen verboden rijbewegingen."},"EN":{"question":"To which category does this sign belong?","choices":[{"text":"Prohibition signs (C-series)","is_correct":true},{"text":"Danger signs (A-series)","is_correct":false},{"text":"Mandatory signs (D-series)","is_correct":false}],"explanation":"Prohibition signs (C-series) are round with a red border and regulate prohibited driving movements."},"FR":{"question":"A quelle categorie appartient ce panneau ?","choices":[{"text":"Panneaux d interdiction (serie C)","is_correct":true},{"text":"Panneaux de danger (serie A)","is_correct":false},{"text":"Panneaux d obligation (serie D)","is_correct":false}],"explanation":"Les panneaux d interdiction (serie C) sont ronds avec un bord rouge et reglementent les mouvements de conduite interdits."},"AR":{"question":"Ø§Ù„Ù‰ Ø§ÙŠ ÙØ¦Ø© ØªÙ†ØªÙ…ÙŠ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ","choices":[{"text":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø­Ø¸Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© C)","is_correct":true},{"text":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© A)","is_correct":false},{"text":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø§Ù„Ø²Ø§Ù… (Ø§Ù„Ø³Ù„Ø³Ù„Ø© D)","is_correct":false}],"explanation":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø­Ø¸Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© C) Ù…Ø³ØªØ¯ÙŠØ±Ø© Ø°Ø§Øª Ø­Ø¯ Ø§Ø­Ù…Ø± ÙˆØªÙ†Ø¸Ù… Ø­Ø±ÙƒØ§Øª Ø§Ù„Ù‚ÙŠØ§Ø¯Ø© Ø§Ù„Ù…Ø­Ø¸ÙˆØ±Ø©."}}},
-  {"question_id":"C31a_Q03","type":"HAZARD_IDENTIFICATION","difficulty":"EASY","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Voor welke voertuigen geldt bord C31a?","choices":[{"text":"Voor alle bestuurders van gemotoriseerde en niet-gemotoriseerde voertuigen","is_correct":true},{"text":"Alleen voor vrachtwagens en bussen","is_correct":false},{"text":"Alleen voor personenwagens","is_correct":false}],"explanation":"C31a geldt voor alle voertuigen tenzij een specifieke uitzondering op een onderbord is vermeld."},"EN":{"question":"For which vehicles does sign C31a apply?","choices":[{"text":"For all drivers of motorised and non-motorised vehicles","is_correct":true},{"text":"Only for lorries and buses","is_correct":false},{"text":"Only for private cars","is_correct":false}],"explanation":"C31a applies to all vehicles unless a specific exemption is stated on a sub-sign."},"FR":{"question":"Pour quels vehicules le panneau C31a s applique-t-il ?","choices":[{"text":"Pour tous les conducteurs de vehicules motorises et non motorises","is_correct":true},{"text":"Uniquement pour les camions et les bus","is_correct":false},{"text":"Uniquement pour les voitures particulieres","is_correct":false}],"explanation":"C31a s applique a tous les vehicules sauf si une exemption specifique est indiquee sur un panneau complementaire."},"AR":{"question":"Ø¹Ù„Ù‰ Ø§ÙŠ Ù…Ø±ÙƒØ¨Ø§Øª ØªØ³Ø±ÙŠ Ù„Ø§ÙØªØ© C31aØŸ","choices":[{"text":"Ø¹Ù„Ù‰ Ø¬Ù…ÙŠØ¹ Ø³Ø§Ø¦Ù‚ÙŠ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ø¢Ù„ÙŠØ© ÙˆØºÙŠØ± Ø§Ù„Ø¢Ù„ÙŠØ©","is_correct":true},{"text":"ÙÙ‚Ø· Ø§Ù„Ø´Ø§Ø­Ù†Ø§Øª ÙˆØ§Ù„Ø­Ø§ÙÙ„Ø§Øª","is_correct":false},{"text":"ÙÙ‚Ø· Ø§Ù„Ø³ÙŠØ§Ø±Ø§Øª Ø§Ù„Ø®Ø§ØµØ©","is_correct":false}],"explanation":"ØªØ³Ø±ÙŠ C31a Ø¹Ù„Ù‰ Ø¬Ù…ÙŠØ¹ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ù…Ø§ Ù„Ù… ÙŠÙØ°ÙƒØ± Ø§Ø³ØªØ«Ù†Ø§Ø¡ Ù…Ø­Ø¯Ø¯ Ø¹Ù„Ù‰ Ù„Ø§ÙØªØ© ÙØ±Ø¹ÙŠØ©."}}},
-  {"question_id":"C31a_Q04","type":"WHAT_MUST_YOU_DO","difficulty":"MEDIUM","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"U nadert een kruispunt met bord C31a maar uw bestemming ligt linksaf. Wat doet u?","choices":[{"text":"U rijdt rechtdoor of rechtsaf en zoekt een alternatieve route naar uw bestemming","is_correct":true},{"text":"U slaat linksaf omdat uw bestemming daar is","is_correct":false},{"text":"U slaat linksaf als er geen tegenliggers zijn","is_correct":false}],"explanation":"C31a verbiedt linksaf slaan ongeacht de reden. U moet een andere route kiezen."},"EN":{"question":"You approach an intersection with sign C31a but your destination is to the left. What do you do?","choices":[{"text":"You continue straight or turn right and find an alternative route to your destination","is_correct":true},{"text":"You turn left because your destination is there","is_correct":false},{"text":"You turn left if there are no oncoming vehicles","is_correct":false}],"explanation":"C31a prohibits turning left regardless of the reason. You must choose another route."},"FR":{"question":"Vous approchez d un carrefour avec le panneau C31a mais votre destination est a gauche. Que faites-vous ?","choices":[{"text":"Vous continuez tout droit ou tournez a droite et cherchez un itineraire alternatif pour votre destination","is_correct":true},{"text":"Vous tournez a gauche car votre destination est la","is_correct":false},{"text":"Vous tournez a gauche s il n y a pas de vehicules en sens inverse","is_correct":false}],"explanation":"C31a interdit de tourner a gauche quelle que soit la raison. Vous devez choisir un autre itineraire."},"AR":{"question":"ØªÙ‚ØªØ±Ø¨ Ù…Ù† ØªÙ‚Ø§Ø·Ø¹ Ø¨Ù‡ Ù„Ø§ÙØªØ© C31a Ù„ÙƒÙ† ÙˆØ¬Ù‡ØªÙƒ Ø¹Ù„Ù‰ Ø§Ù„ÙŠØ³Ø§Ø±. Ù…Ø§Ø°Ø§ ØªÙØ¹Ù„ØŸ","choices":[{"text":"ØªØ³ÙŠØ± Ù…Ø³ØªÙ‚ÙŠÙ…Ø§ Ø§Ùˆ ØªÙ†Ø¹Ø·Ù ÙŠÙ…ÙŠÙ†Ø§ ÙˆØªØ¬Ø¯ Ù…Ø³Ø§Ø±Ø§ Ø¨Ø¯ÙŠÙ„Ø§ Ø§Ù„Ù‰ ÙˆØ¬Ù‡ØªÙƒ","is_correct":true},{"text":"ØªÙ†Ø¹Ø·Ù ÙŠØ³Ø§Ø±Ø§ Ù„Ø§Ù† ÙˆØ¬Ù‡ØªÙƒ Ù‡Ù†Ø§Ùƒ","is_correct":false},{"text":"ØªÙ†Ø¹Ø·Ù ÙŠØ³Ø§Ø±Ø§ Ø§Ø°Ø§ Ù„Ù… ØªÙƒÙ† Ù‡Ù†Ø§Ùƒ Ù…Ø±ÙƒØ¨Ø§Øª Ù‚Ø§Ø¯Ù…Ø©","is_correct":false}],"explanation":"ØªØ­Ø¸Ø± C31a Ø§Ù„Ø§Ù†Ø¹Ø·Ø§Ù ÙŠØ³Ø§Ø±Ø§ Ø¨ØºØ¶ Ø§Ù„Ù†Ø¸Ø± Ø¹Ù† Ø§Ù„Ø³Ø¨Ø¨. ÙŠØ¬Ø¨ Ø§Ø®ØªÙŠØ§Ø± Ù…Ø³Ø§Ø± Ø¢Ø®Ø±."}}},
-  {"question_id":"C31a_Q05","type":"WHAT_MUST_YOU_DO","difficulty":"MEDIUM","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Geldt bord C31a van tijdelijk bord tijdens wegwerkzaamheden ook voor fietsers?","choices":[{"text":"Ja, tenzij een onderbord fietsers uitdrukkelijk uitzondert","is_correct":true},{"text":"Nee, tijdelijke verbodsborden gelden nooit voor fietsers","is_correct":false},{"text":"Ja, maar fietsers mogen linksaf als de weg vrij is","is_correct":false}],"explanation":"C31a als tijdelijk bord heeft dezelfde kracht als een permanent bord en geldt voor alle weggebruikers tenzij een uitzondering duidelijk is aangegeven."},"EN":{"question":"Does sign C31a as a temporary sign during roadworks also apply to cyclists?","choices":[{"text":"Yes, unless a sub-sign explicitly exempts cyclists","is_correct":true},{"text":"No, temporary prohibition signs never apply to cyclists","is_correct":false},{"text":"Yes, but cyclists may turn left if the road is clear","is_correct":false}],"explanation":"C31a as a temporary sign has the same force as a permanent sign and applies to all road users unless an exemption is clearly indicated."},"FR":{"question":"Le panneau C31a comme panneau temporaire lors de chantiers s applique-t-il aussi aux cyclistes ?","choices":[{"text":"Oui, sauf si un panneau complementaire exempte explicitement les cyclistes","is_correct":true},{"text":"Non, les panneaux d interdiction temporaires ne s appliquent jamais aux cyclistes","is_correct":false},{"text":"Oui, mais les cyclistes peuvent tourner a gauche si la route est libre","is_correct":false}],"explanation":"C31a comme panneau temporaire a la meme force qu un panneau permanent et s applique a tous les usagers de la route sauf si une exception est clairement indiquee."},"AR":{"question":"Ù‡Ù„ ØªØ³Ø±ÙŠ Ù„Ø§ÙØªØ© C31a ÙƒÙ„Ø§ÙØªØ© Ù…Ø¤Ù‚ØªØ© Ø§Ø«Ù†Ø§Ø¡ Ø§Ø¹Ù…Ø§Ù„ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§ÙŠØ¶Ø§ Ø¹Ù„Ù‰ Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§ØªØŸ","choices":[{"text":"Ù†Ø¹Ù…ØŒ Ù…Ø§ Ù„Ù… ØªØ¹ÙÙŽ Ù„Ø§ÙØªØ© ÙØ±Ø¹ÙŠØ© ØµØ±Ø§Ø­Ø© Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª","is_correct":true},{"text":"Ù„Ø§ØŒ Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø­Ø¸Ø± Ø§Ù„Ù…Ø¤Ù‚ØªØ© Ù„Ø§ ØªØ³Ø±ÙŠ Ø§Ø¨Ø¯Ø§ Ø¹Ù„Ù‰ Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª","is_correct":false},{"text":"Ù†Ø¹Ù…ØŒ Ù„ÙƒÙ† ÙŠØ¬ÙˆØ² Ù„Ø±Ø§ÙƒØ¨ÙŠ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ù„Ø§Ù†Ø¹Ø·Ø§Ù ÙŠØ³Ø§Ø±Ø§ Ø§Ø°Ø§ ÙƒØ§Ù† Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø®Ø§Ù„ÙŠØ§","is_correct":false}],"explanation":"C31a ÙƒÙ„Ø§ÙØªØ© Ù…Ø¤Ù‚ØªØ© Ù„Ù‡Ø§ Ù†ÙØ³ Ù‚ÙˆØ© Ø§Ù„Ù„Ø§ÙØªØ© Ø§Ù„Ø¯Ø§Ø¦Ù…Ø© ÙˆØªØ³Ø±ÙŠ Ø¹Ù„Ù‰ Ø¬Ù…ÙŠØ¹ Ù…Ø³ØªØ®Ø¯Ù…ÙŠ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ù…Ø§ Ù„Ù… ÙŠÙØ´ÙŽØ± ØµØ±Ø§Ø­Ø© Ø§Ù„Ù‰ Ø§Ø³ØªØ«Ù†Ø§Ø¡."}}},
-  {"question_id":"C31a_Q06","type":"WHAT_MUST_YOU_DO","difficulty":"MEDIUM","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Geldt bord C31a op een kruispunt ook voor de richting die de zijstraat verlaat?","choices":[{"text":"Nee, C31a verbiedt uitsluitend het linksaf slaan vanuit de rijrichting waar het bord is geplaatst","is_correct":true},{"text":"Ja, het geldt voor alle richtingen op het kruispunt","is_correct":false},{"text":"Ja, ook voor voertuigen die de zijstraat verlaten","is_correct":false}],"explanation":"C31a is van toepassing op de rijrichting waarvoor het bord is opgesteld. Voertuigen uit andere richtingen op hetzelfde kruispunt zijn alleen gebonden als daar ook een C31a bord voor hen geldt."},"EN":{"question":"Does sign C31a at an intersection also apply to the direction leaving the side street?","choices":[{"text":"No, C31a exclusively prohibits turning left from the driving direction where the sign is placed","is_correct":true},{"text":"Yes, it applies to all directions at the intersection","is_correct":false},{"text":"Yes, also for vehicles leaving the side street","is_correct":false}],"explanation":"C31a applies to the driving direction for which the sign is erected. Vehicles from other directions at the same intersection are only bound if a C31a sign also applies to them."},"FR":{"question":"Le panneau C31a a un carrefour s applique-t-il aussi a la direction quittant la rue laterale ?","choices":[{"text":"Non, C31a interdit exclusivement de tourner a gauche depuis la direction de circulation ou le panneau est place","is_correct":true},{"text":"Oui, il s applique a toutes les directions du carrefour","is_correct":false},{"text":"Oui, aussi pour les vehicules quittant la rue laterale","is_correct":false}],"explanation":"C31a s applique a la direction de circulation pour laquelle le panneau est erige. Les vehicules des autres directions au meme carrefour ne sont lies que si un panneau C31a leur est aussi applicable."},"AR":{"question":"Ù‡Ù„ ØªØ³Ø±ÙŠ Ù„Ø§ÙØªØ© C31a Ø¹Ù†Ø¯ Ø§Ù„ØªÙ‚Ø§Ø·Ø¹ Ø§ÙŠØ¶Ø§ Ø¹Ù„Ù‰ Ø§Ù„Ø§ØªØ¬Ø§Ù‡ Ø§Ù„Ù…ØºØ§Ø¯Ø± Ù…Ù† Ø§Ù„Ø´Ø§Ø±Ø¹ Ø§Ù„Ø¬Ø§Ù†Ø¨ÙŠØŸ","choices":[{"text":"Ù„Ø§ØŒ ØªØ­Ø¸Ø± C31a ÙÙ‚Ø· Ø§Ù„Ø§Ù†Ø¹Ø·Ø§Ù ÙŠØ³Ø§Ø±Ø§ Ù…Ù† Ø§ØªØ¬Ø§Ù‡ Ø§Ù„Ø³ÙŠØ± Ø§Ù„Ø°ÙŠ ØªÙˆØ¶Ø¹ ÙÙŠÙ‡ Ø§Ù„Ù„Ø§ÙØªØ©","is_correct":true},{"text":"Ù†Ø¹Ù…ØŒ ØªØ³Ø±ÙŠ Ø¹Ù„Ù‰ Ø¬Ù…ÙŠØ¹ Ø§Ù„Ø§ØªØ¬Ø§Ù‡Ø§Øª ÙÙŠ Ø§Ù„ØªÙ‚Ø§Ø·Ø¹","is_correct":false},{"text":"Ù†Ø¹Ù…ØŒ Ø§ÙŠØ¶Ø§ Ø¹Ù„Ù‰ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ù…ØºØ§Ø¯Ø±Ø© Ù…Ù† Ø§Ù„Ø´Ø§Ø±Ø¹ Ø§Ù„Ø¬Ø§Ù†Ø¨ÙŠ","is_correct":false}],"explanation":"ØªØ³Ø±ÙŠ C31a Ø¹Ù„Ù‰ Ø§ØªØ¬Ø§Ù‡ Ø§Ù„Ø³ÙŠØ± Ø§Ù„Ø°ÙŠ Ù†ÙØµØ¨Øª Ø§Ù„Ù„Ø§ÙØªØ© Ù„Ù‡. Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ù…Ù† Ø§ØªØ¬Ø§Ù‡Ø§Øª Ø§Ø®Ø±Ù‰ ÙÙŠ Ù†ÙØ³ Ø§Ù„ØªÙ‚Ø§Ø·Ø¹ Ù…Ù‚ÙŠØ¯Ø© ÙÙ‚Ø· Ø§Ø°Ø§ ÙƒØ§Ù†Øª Ù„Ø§ÙØªØ© C31a ØªØ³Ø±ÙŠ Ø¹Ù„ÙŠÙ‡Ø§ Ø§ÙŠØ¶Ø§."}}},
-  {"question_id":"C31a_Q07","type":"IS_IT_ALLOWED","difficulty":"HARD","is_critical":true,"show_sign":true,"i18n":{"NL":{"question":"Mag u linksaf slaan bij bord C31a als de weg volkomen vrij is en er geen gevaar is?","choices":[{"text":"Nee, C31a is een absoluut verbod ongeacht de verkeerssituatie","is_correct":true},{"text":"Ja, als de weg vrij is mag u de slimste route kiezen","is_correct":false}],"explanation":"C31a is een absoluut verbod dat niet afhankelijk is van de verkeersomstandigheden. Overtredingen zijn verboden zelfs bij een volledig vrije weg. Dit is een ernstige verkeersovertreding."},"EN":{"question":"May you turn left at sign C31a if the road is completely clear and there is no danger?","choices":[{"text":"No, C31a is an absolute prohibition regardless of the traffic situation","is_correct":true},{"text":"Yes, if the road is clear you may choose the smartest route","is_correct":false}],"explanation":"C31a is an absolute prohibition that does not depend on traffic conditions. Violations are prohibited even on a completely clear road. This is a serious traffic offence."},"FR":{"question":"Pouvez-vous tourner a gauche au panneau C31a si la route est completement degagee et qu il n y a pas de danger ?","choices":[{"text":"Non, C31a est une interdiction absolue quelle que soit la situation de circulation","is_correct":true},{"text":"Oui, si la route est libre vous pouvez choisir le chemin le plus judicieux","is_correct":false}],"explanation":"C31a est une interdiction absolue qui ne depend pas des conditions de circulation. Les infractions sont interdites meme sur une route completement degagee. Il s agit d une infraction grave au code de la route."},"AR":{"question":"Ù‡Ù„ ÙŠØ¬ÙˆØ² Ù„Ùƒ Ø§Ù„Ø§Ù†Ø¹Ø·Ø§Ù ÙŠØ³Ø§Ø±Ø§ Ø¹Ù†Ø¯ Ù„Ø§ÙØªØ© C31a Ø§Ø°Ø§ ÙƒØ§Ù† Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø®Ø§Ù„ÙŠØ§ ØªÙ…Ø§Ù…Ø§ ÙˆÙ„Ø§ Ø®Ø·Ø±ØŸ","choices":[{"text":"Ù„Ø§ØŒ C31a Ø­Ø¸Ø± Ù…Ø·Ù„Ù‚ Ø¨ØºØ¶ Ø§Ù„Ù†Ø¸Ø± Ø¹Ù† Ø­Ø§Ù„Ø© Ø§Ù„Ù…Ø±ÙˆØ±","is_correct":true},{"text":"Ù†Ø¹Ù…ØŒ Ø§Ø°Ø§ ÙƒØ§Ù† Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø®Ø§Ù„ÙŠØ§ ÙŠØ¬ÙˆØ² Ø§Ø®ØªÙŠØ§Ø± Ø§Ù„Ù…Ø³Ø§Ø± Ø§Ù„Ø§Ø°ÙƒÙ‰","is_correct":false}],"explanation":"C31a Ø­Ø¸Ø± Ù…Ø·Ù„Ù‚ Ù„Ø§ ÙŠØ¹ØªÙ…Ø¯ Ø¹Ù„Ù‰ Ø¸Ø±ÙˆÙ Ø§Ù„Ù…Ø±ÙˆØ±. Ø§Ù„Ù…Ø®Ø§Ù„ÙØ§Øª Ù…Ø­Ø¸ÙˆØ±Ø© Ø­ØªÙ‰ Ø¹Ù„Ù‰ Ø·Ø±ÙŠÙ‚ Ø®Ø§Ù„Ù ØªÙ…Ø§Ù…Ø§. Ù‡Ø°Ù‡ Ù…Ø®Ø§Ù„ÙØ© Ù…Ø±ÙˆØ±ÙŠØ© Ø®Ø·ÙŠØ±Ø©."}}},
-  {"question_id":"C31a_Q08","type":"IS_IT_ALLOWED","difficulty":"HARD","is_critical":true,"show_sign":true,"i18n":{"NL":{"question":"Mag u bij bord C31a een U-bocht maken in plaats van linksaf te slaan om toch in de gewenste richting te komen?","choices":[{"text":"Nee, een U-bocht op dat punt kan ook verboden zijn door bord C33 en is sowieso gevaarlijk; u moet een alternatieve route zoeken","is_correct":true},{"text":"Ja, een U-bocht is geen linksaf slaan en is dus toegestaan","is_correct":false}],"explanation":"C31a verbiedt linksaf slaan. Een U-bocht ter plaatse omzeilt het bord niet legitiem en kan extra verboden zijn door C33. Het is ook verkeersgepaarlijk. Dit is een ernstige verkeersovertreding."},"EN":{"question":"May you make a U-turn at sign C31a instead of turning left to still get in the desired direction?","choices":[{"text":"No, a U-turn at that point may also be prohibited by sign C33 and is in any case dangerous; you must find an alternative route","is_correct":true},{"text":"Yes, a U-turn is not turning left and is therefore permitted","is_correct":false}],"explanation":"C31a prohibits turning left. A U-turn on the spot does not legitimately bypass the sign and may be additionally prohibited by C33. It is also traffic-dangerous. This is a serious traffic offence."},"FR":{"question":"Pouvez-vous faire un demi-tour au panneau C31a au lieu de tourner a gauche pour aller quand meme dans la direction souhaitee ?","choices":[{"text":"Non, un demi-tour a cet endroit peut aussi etre interdit par le panneau C33 et est en tout cas dangereux; vous devez trouver un itineraire alternatif","is_correct":true},{"text":"Oui, un demi-tour ne consiste pas a tourner a gauche et est donc autorise","is_correct":false}],"explanation":"C31a interdit de tourner a gauche. Un demi-tour sur place ne contourne pas le panneau de maniere legitime et peut etre en plus interdit par C33. C est aussi dangereux pour la circulation. Il s agit d une infraction grave au code de la route."},"AR":{"question":"Ù‡Ù„ ÙŠØ¬ÙˆØ² Ù„Ùƒ Ø§Ù„Ø§Ø³ØªØ¯Ø§Ø±Ø© Ø¹Ù†Ø¯ Ù„Ø§ÙØªØ© C31a Ø¨Ø¯Ù„Ø§ Ù…Ù† Ø§Ù„Ø§Ù†Ø¹Ø·Ø§Ù ÙŠØ³Ø§Ø±Ø§ Ù„Ù„ÙˆØµÙˆÙ„ Ø§Ù„Ù‰ Ø§Ù„Ø§ØªØ¬Ø§Ù‡ Ø§Ù„Ù…Ø·Ù„ÙˆØ¨ØŸ","choices":[{"text":"Ù„Ø§ØŒ Ø§Ù„Ø§Ø³ØªØ¯Ø§Ø±Ø© ÙÙŠ Ø°Ù„Ùƒ Ø§Ù„Ù…ÙƒØ§Ù† Ù‚Ø¯ ØªÙƒÙˆÙ† Ù…Ø­Ø¸ÙˆØ±Ø© Ø§ÙŠØ¶Ø§ Ø¨Ù„Ø§ÙØªØ© C33 ÙˆÙ‡ÙŠ Ø®Ø·ÙŠØ±Ø© Ø¹Ù„Ù‰ Ø§ÙŠ Ø­Ø§Ù„Ø› ÙŠØ¬Ø¨ Ø§ÙŠØ¬Ø§Ø¯ Ù…Ø³Ø§Ø± Ø¨Ø¯ÙŠÙ„","is_correct":true},{"text":"Ù†Ø¹Ù…ØŒ Ø§Ù„Ø§Ø³ØªØ¯Ø§Ø±Ø© Ù„ÙŠØ³Øª Ø§Ù†Ø¹Ø·Ø§ÙØ§ ÙŠØ³Ø§Ø±Ø§ ÙˆØ¨Ø§Ù„ØªØ§Ù„ÙŠ Ù…Ø³Ù…ÙˆØ­ Ø¨Ù‡Ø§","is_correct":false}],"explanation":"ØªØ­Ø¸Ø± C31a Ø§Ù„Ø§Ù†Ø¹Ø·Ø§Ù ÙŠØ³Ø§Ø±Ø§. Ø§Ù„Ø§Ø³ØªØ¯Ø§Ø±Ø© ÙÙŠ Ø§Ù„Ù…ÙƒØ§Ù† Ù„Ø§ ØªØªØ­Ø§ÙŠÙ„ Ø¹Ù„Ù‰ Ø§Ù„Ù„Ø§ÙØªØ© Ø¨Ø´ÙƒÙ„ Ù…Ø´Ø±ÙˆØ¹ ÙˆÙ‚Ø¯ ØªÙƒÙˆÙ† Ù…Ø­Ø¸ÙˆØ±Ø© Ø§Ø¶Ø§ÙÙŠØ§ Ø¨Ù€C33. ÙˆÙ‡ÙŠ Ø®Ø·ÙŠØ±Ø© Ø¹Ù„Ù‰ Ø§Ù„Ù…Ø±ÙˆØ± Ø§ÙŠØ¶Ø§. Ù‡Ø°Ù‡ Ù…Ø®Ø§Ù„ÙØ© Ù…Ø±ÙˆØ±ÙŠØ© Ø®Ø·ÙŠØ±Ø©."}}}
+[
+  {
+    "question_id": "C31a_Q01",
+    "type": "WHAT_DOES_IT_MEAN",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat betekent dit verkeersbord?",
+        "choices": [
+          {
+            "text": "Verbod om aan het volgend kruispunt links af te slaan",
+            "is_correct": true
+          },
+          {
+            "text": "Verbod om aan het volgend kruispunt rechts af te slaan",
+            "is_correct": false
+          },
+          {
+            "text": "Verbod om een U-bocht te maken",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dit bord geeft aan dat u aan het volgend kruispunt niet mag afslaan in de richting die door de pijl wordt aangegeven."
+      },
+      "EN": {
+        "question": "What does this traffic sign mean?",
+        "choices": [
+          {
+            "text": "No left turn at the next intersection",
+            "is_correct": true
+          },
+          {
+            "text": "No right turn at the next intersection",
+            "is_correct": false
+          },
+          {
+            "text": "No U-turn",
+            "is_correct": false
+          }
+        ],
+        "explanation": "This sign indicates that you may not turn in the direction shown by the arrow at the next intersection."
+      },
+      "FR": {
+        "question": "Que signifie ce panneau ?",
+        "choices": [
+          {
+            "text": "Interdiction de tourner à gauche au prochain carrefour",
+            "is_correct": true
+          },
+          {
+            "text": "Interdiction de tourner à droite au prochain carrefour",
+            "is_correct": false
+          },
+          {
+            "text": "Interdiction de faire demi-tour",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ce panneau indique qu’au prochain carrefour vous ne pouvez pas tourner dans la direction indiquée par la flèche."
+      },
+      "AR": {
+        "question": "ما معنى هذه العلامة المرورية؟",
+        "choices": [
+          {
+            "text": "ممنوع الانعطاف يسارًا عند التقاطع التالي",
+            "is_correct": true
+          },
+          {
+            "text": "ممنوع الانعطاف يمينًا عند التقاطع التالي",
+            "is_correct": false
+          },
+          {
+            "text": "ممنوع الاستدارة",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تدل هذه العلامة على أنه لا يجوز لك عند التقاطع التالي الانعطاف في الاتجاه الذي يشير إليه السهم."
+      }
+    }
+  },
+  {
+    "question_id": "C31a_Q02",
+    "type": "HAZARD_IDENTIFICATION",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Waar geldt dit verbod?",
+        "choices": [
+          {
+            "text": "Aan het volgend kruispunt",
+            "is_correct": true
+          },
+          {
+            "text": "Onmiddellijk vanaf het bord over de hele weg",
+            "is_correct": false
+          },
+          {
+            "text": "Alleen op de volgende rotonde",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dit verbod geldt aan het volgend kruispunt, niet over de hele weg vanaf de plaats van het bord."
+      },
+      "EN": {
+        "question": "Where does this prohibition apply?",
+        "choices": [
+          {
+            "text": "At the next intersection",
+            "is_correct": true
+          },
+          {
+            "text": "Immediately from the sign along the whole road",
+            "is_correct": false
+          },
+          {
+            "text": "Only at the next roundabout",
+            "is_correct": false
+          }
+        ],
+        "explanation": "This prohibition applies at the next intersection, not along the whole road from the point where the sign stands."
+      },
+      "FR": {
+        "question": "Où cette interdiction s’applique-t-elle ?",
+        "choices": [
+          {
+            "text": "Au prochain carrefour",
+            "is_correct": true
+          },
+          {
+            "text": "Immédiatement depuis le panneau sur toute la route",
+            "is_correct": false
+          },
+          {
+            "text": "Seulement au prochain rond-point",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Cette interdiction s’applique au prochain carrefour, et non sur toute la route à partir de l’endroit où se trouve le panneau."
+      },
+      "AR": {
+        "question": "أين يطبق هذا الحظر؟",
+        "choices": [
+          {
+            "text": "عند التقاطع التالي",
+            "is_correct": true
+          },
+          {
+            "text": "فورًا من عند العلامة وعلى كامل الطريق",
+            "is_correct": false
+          },
+          {
+            "text": "فقط عند الدوار التالي",
+            "is_correct": false
+          }
+        ],
+        "explanation": "يطبق هذا الحظر عند التقاطع التالي، وليس على كامل الطريق ابتداءً من موضع العلامة."
+      }
+    }
+  },
+  {
+    "question_id": "C31a_Q03",
+    "type": "HAZARD_IDENTIFICATION",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Welke manoeuvre is verboden door dit bord?",
+        "choices": [
+          {
+            "text": "Links afslaan aan het volgend kruispunt",
+            "is_correct": true
+          },
+          {
+            "text": "Rechtdoor rijden",
+            "is_correct": false
+          },
+          {
+            "text": "Rechts afslaan",
+            "is_correct": false
+          }
+        ],
+        "explanation": "De pijl duidt de verboden afslagrichting aan aan het volgend kruispunt."
+      },
+      "EN": {
+        "question": "Which manoeuvre is prohibited by this sign?",
+        "choices": [
+          {
+            "text": "Turning left at the next intersection",
+            "is_correct": true
+          },
+          {
+            "text": "Driving straight ahead",
+            "is_correct": false
+          },
+          {
+            "text": "Turning right",
+            "is_correct": false
+          }
+        ],
+        "explanation": "The arrow indicates the prohibited turning direction at the next intersection."
+      },
+      "FR": {
+        "question": "Quelle manœuvre est interdite par ce panneau ?",
+        "choices": [
+          {
+            "text": "Tourner à gauche au prochain carrefour",
+            "is_correct": true
+          },
+          {
+            "text": "Continuer tout droit",
+            "is_correct": false
+          },
+          {
+            "text": "Tourner à droite",
+            "is_correct": false
+          }
+        ],
+        "explanation": "La flèche indique la direction de bifurcation interdite au prochain carrefour."
+      },
+      "AR": {
+        "question": "ما المناورة التي تمنعها هذه العلامة؟",
+        "choices": [
+          {
+            "text": "الانعطاف يسارًا عند التقاطع التالي",
+            "is_correct": true
+          },
+          {
+            "text": "متابعة السير مستقيمًا",
+            "is_correct": false
+          },
+          {
+            "text": "الانعطاف يمينًا",
+            "is_correct": false
+          }
+        ],
+        "explanation": "يشير السهم إلى اتجاه الانعطاف الممنوع عند التقاطع التالي."
+      }
+    }
+  },
+  {
+    "question_id": "C31a_Q04",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U nadert een kruispunt met dit bord, maar uw bestemming ligt links. Wat moet u doen?",
+        "choices": [
+          {
+            "text": "Niet links afslaan en een andere route nemen",
+            "is_correct": true
+          },
+          {
+            "text": "Toch links afslaan als er geen verkeer is",
+            "is_correct": false
+          },
+          {
+            "text": "Even stoppen en daarna links afslaan",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ook als uw bestemming links ligt, mag u aan het volgend kruispunt niet afslaan in de verboden richting."
+      },
+      "EN": {
+        "question": "You approach an intersection with this sign, but your destination is to the left. What must you do?",
+        "choices": [
+          {
+            "text": "Do not turn left and take another route",
+            "is_correct": true
+          },
+          {
+            "text": "Turn left anyway if there is no traffic",
+            "is_correct": false
+          },
+          {
+            "text": "Stop briefly and then turn left",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Even if your destination is to the left, you may not turn in the prohibited direction at the next intersection."
+      },
+      "FR": {
+        "question": "Vous approchez d’un carrefour avec ce panneau, mais votre destination est à gauche. Que devez-vous faire ?",
+        "choices": [
+          {
+            "text": "Ne pas tourner à gauche et prendre un autre itinéraire",
+            "is_correct": true
+          },
+          {
+            "text": "Tourner quand même à gauche s’il n’y a pas de circulation",
+            "is_correct": false
+          },
+          {
+            "text": "S’arrêter un instant puis tourner à gauche",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Même si votre destination est à gauche, vous ne pouvez pas tourner dans la direction interdite au prochain carrefour."
+      },
+      "AR": {
+        "question": "أنت تقترب من تقاطع توجد فيه هذه العلامة، لكن وجهتك تقع يسارًا. ماذا يجب أن تفعل؟",
+        "choices": [
+          {
+            "text": "لا تنعطف يسارًا واسلك طريقًا آخر",
+            "is_correct": true
+          },
+          {
+            "text": "انعطف يسارًا إذا لم تكن هناك حركة مرور",
+            "is_correct": false
+          },
+          {
+            "text": "توقف قليلًا ثم انعطف يسارًا",
+            "is_correct": false
+          }
+        ],
+        "explanation": "حتى إذا كانت وجهتك إلى اليسار، فلا يجوز لك عند التقاطع التالي الانعطاف في الاتجاه الممنوع."
+      }
+    }
+  },
+  {
+    "question_id": "C31a_Q05",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat mag u aan het volgend kruispunt wel doen als dit bord links afslaan verbiedt?",
+        "choices": [
+          {
+            "text": "Rechtdoor rijden of een andere toegelaten richting kiezen",
+            "is_correct": true
+          },
+          {
+            "text": "Alleen links afslaan als u snel bent",
+            "is_correct": false
+          },
+          {
+            "text": "Links afslaan als de weg breed genoeg is",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Het bord verbiedt alleen de richting die door de pijl is aangeduid. Andere toegelaten richtingen blijven mogelijk."
+      },
+      "EN": {
+        "question": "What may you still do at the next intersection if this sign prohibits a left turn?",
+        "choices": [
+          {
+            "text": "Drive straight on or choose another permitted direction",
+            "is_correct": true
+          },
+          {
+            "text": "Turn left only if you are quick",
+            "is_correct": false
+          },
+          {
+            "text": "Turn left if the road is wide enough",
+            "is_correct": false
+          }
+        ],
+        "explanation": "The sign only prohibits the direction indicated by the arrow. Other permitted directions remain possible."
+      },
+      "FR": {
+        "question": "Que pouvez-vous encore faire au prochain carrefour si ce panneau interdit de tourner à gauche ?",
+        "choices": [
+          {
+            "text": "Continuer tout droit ou choisir une autre direction autorisée",
+            "is_correct": true
+          },
+          {
+            "text": "Tourner à gauche seulement si vous êtes rapide",
+            "is_correct": false
+          },
+          {
+            "text": "Tourner à gauche si la route est assez large",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Le panneau interdit seulement la direction indiquée par la flèche. Les autres directions autorisées restent possibles."
+      },
+      "AR": {
+        "question": "ماذا يجوز لك أن تفعل عند التقاطع التالي إذا كانت هذه العلامة تمنع الانعطاف يسارًا؟",
+        "choices": [
+          {
+            "text": "تتابع مستقيمًا أو تختار اتجاهًا آخر مسموحًا",
+            "is_correct": true
+          },
+          {
+            "text": "تنعطف يسارًا فقط إذا كنت سريعًا",
+            "is_correct": false
+          },
+          {
+            "text": "تنعطف يسارًا إذا كان الطريق عريضًا بما يكفي",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تمنع العلامة فقط الاتجاه الذي يشير إليه السهم، وتبقى الاتجاهات الأخرى المسموح بها ممكنة."
+      }
+    }
+  },
+  {
+    "question_id": "C31a_Q06",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Mag u rechtdoor rijden aan het volgend kruispunt als dit bord links afslaan verbiedt?",
+        "choices": [
+          {
+            "text": "Ja, rechtdoor rijden blijft toegelaten als het verder niet verboden is",
+            "is_correct": true
+          },
+          {
+            "text": "Nee, u moet altijd rechts afslaan",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dit bord verbiedt alleen de afslag in de aangeduide richting aan het volgend kruispunt."
+      },
+      "EN": {
+        "question": "May you continue straight at the next intersection if this sign prohibits a left turn?",
+        "choices": [
+          {
+            "text": "Yes, going straight remains permitted if it is not otherwise prohibited",
+            "is_correct": true
+          },
+          {
+            "text": "No, you must always turn right",
+            "is_correct": false
+          }
+        ],
+        "explanation": "This sign only prohibits the turn in the indicated direction at the next intersection."
+      },
+      "FR": {
+        "question": "Pouvez-vous continuer tout droit au prochain carrefour si ce panneau interdit de tourner à gauche ?",
+        "choices": [
+          {
+            "text": "Oui, continuer tout droit reste autorisé si ce n’est pas interdit par ailleurs",
+            "is_correct": true
+          },
+          {
+            "text": "Non, vous devez toujours tourner à droite",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ce panneau interdit seulement le changement de direction indiqué au prochain carrefour."
+      },
+      "AR": {
+        "question": "هل يجوز لك متابعة السير مستقيمًا عند التقاطع التالي إذا كانت هذه العلامة تمنع الانعطاف يسارًا؟",
+        "choices": [
+          {
+            "text": "نعم، يبقى السير مستقيمًا مسموحًا إذا لم يكن ممنوعًا لسبب آخر",
+            "is_correct": true
+          },
+          {
+            "text": "لا، يجب عليك دائمًا الانعطاف يمينًا",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تمنع هذه العلامة فقط الانعطاف في الاتجاه المشار إليه عند التقاطع التالي."
+      }
+    }
+  },
+  {
+    "question_id": "C31a_Q07",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Het kruispunt is volledig vrij. Mag u toch links afslaan?",
+        "choices": [
+          {
+            "text": "Nee, het verbod blijft gelden",
+            "is_correct": true
+          },
+          {
+            "text": "Ja, als u niemand hindert",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ook als het kruispunt vrij is, blijft het verboden aan het volgend kruispunt af te slaan in de aangeduide richting."
+      },
+      "EN": {
+        "question": "The intersection is completely clear. May you still turn left?",
+        "choices": [
+          {
+            "text": "No, the prohibition remains in force",
+            "is_correct": true
+          },
+          {
+            "text": "Yes, if you do not hinder anyone",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Even if the intersection is clear, it remains prohibited to turn in the indicated direction at the next intersection."
+      },
+      "FR": {
+        "question": "Le carrefour est complètement dégagé. Pouvez-vous quand même tourner à gauche ?",
+        "choices": [
+          {
+            "text": "Non, l’interdiction reste en vigueur",
+            "is_correct": true
+          },
+          {
+            "text": "Oui, si vous ne gênez personne",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Même si le carrefour est dégagé, il reste interdit de tourner dans la direction indiquée au prochain carrefour."
+      },
+      "AR": {
+        "question": "التقاطع خالٍ تمامًا. هل يجوز لك رغم ذلك الانعطاف يسارًا؟",
+        "choices": [
+          {
+            "text": "لا، يبقى الحظر ساريًا",
+            "is_correct": true
+          },
+          {
+            "text": "نعم، إذا لم تعق أحدًا",
+            "is_correct": false
+          }
+        ],
+        "explanation": "حتى إذا كان التقاطع خاليًا، يبقى ممنوعًا عند التقاطع التالي الانعطاف في الاتجاه المشار إليه."
+      }
+    }
+  },
+  {
+    "question_id": "C31a_Q08",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Mag u aan het volgend kruispunt kort toch links afslaan om sneller op uw route te komen?",
+        "choices": [
+          {
+            "text": "Nee, het verbod blijft gelden",
+            "is_correct": true
+          },
+          {
+            "text": "Ja, als het maar voor een korte manoeuvre is",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ook voor een korte of handige manoeuvre blijft de verboden afslag aan het volgend kruispunt niet toegelaten."
+      },
+      "EN": {
+        "question": "May you still turn left briefly at the next intersection just to get onto your route faster?",
+        "choices": [
+          {
+            "text": "No, the prohibition remains in force",
+            "is_correct": true
+          },
+          {
+            "text": "Yes, if it is only a short manoeuvre",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Even for a short or convenient manoeuvre, the prohibited turn at the next intersection remains not allowed."
+      },
+      "FR": {
+        "question": "Pouvez-vous quand même tourner brièvement à gauche au prochain carrefour juste pour rejoindre votre itinéraire plus vite ?",
+        "choices": [
+          {
+            "text": "Non, l’interdiction reste en vigueur",
+            "is_correct": true
+          },
+          {
+            "text": "Oui, si ce n’est qu’une courte manœuvre",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Même pour une manœuvre courte ou pratique, la bifurcation interdite au prochain carrefour n’est pas autorisée."
+      },
+      "AR": {
+        "question": "هل يجوز لك رغم ذلك أن تنعطف يسارًا عند التقاطع التالي لفترة قصيرة فقط لتصل إلى مسارك بسرعة أكبر؟",
+        "choices": [
+          {
+            "text": "لا، يبقى الحظر ساريًا",
+            "is_correct": true
+          },
+          {
+            "text": "نعم، إذا كانت مجرد مناورة قصيرة",
+            "is_correct": false
+          }
+        ],
+        "explanation": "حتى لو كانت المناورة قصيرة أو أكثر ملاءمة، يبقى الانعطاف الممنوع عند التقاطع التالي غير مسموح."
+      }
+    }
+  }
 ]

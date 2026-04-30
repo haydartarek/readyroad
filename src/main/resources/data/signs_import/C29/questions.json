@@ -1,10 +1,602 @@
-﻿[
-  {"question_id":"C29_Q01","type":"WHAT_DOES_IT_MEAN","difficulty":"EASY","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Wat betekent dit verkeersbord?","choices":[{"text":"Verboden toegang voor voertuigen hoger dan de aangegeven afmeting","is_correct":true},{"text":"Verboden toegang voor voertuigen breder dan de aangegeven afmeting","is_correct":false},{"text":"Verboden toegang voor voertuigen langer dan de aangegeven afmeting","is_correct":false}],"explanation":"C29 stelt een maximumhoogte in. Voertuigen die deze overschrijden zijn verboden. Breedte wordt geregeld door C27 en lengte door C25."},"EN":{"question":"What does this traffic sign mean?","choices":[{"text":"No entry for vehicles taller than the indicated dimension","is_correct":true},{"text":"No entry for vehicles wider than the indicated dimension","is_correct":false},{"text":"No entry for vehicles longer than the indicated dimension","is_correct":false}],"explanation":"C29 sets a maximum height. Vehicles exceeding it are prohibited. Width is regulated by C27 and length by C25."},"FR":{"question":"Que signifie ce panneau ?","choices":[{"text":"Acces interdit aux vehicules plus hauts que la dimension indiquee","is_correct":true},{"text":"Acces interdit aux vehicules plus larges que la dimension indiquee","is_correct":false},{"text":"Acces interdit aux vehicules plus longs que la dimension indiquee","is_correct":false}],"explanation":"C29 fixe une hauteur maximale. Les vehicules la depassant sont interdits. La largeur est reglementee par C27 et la longueur par C25."},"AR":{"question":"Ù…Ø§Ø°Ø§ ØªØ¹Ù†ÙŠ Ù„Ø§ÙØªØ© Ø§Ù„Ù…Ø±ÙˆØ± Ù‡Ø°Ù‡ØŸ","choices":[{"text":"Ù…Ù…Ù†ÙˆØ¹ Ø¯Ø®ÙˆÙ„ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„ØªÙŠ ØªØªØ¬Ø§ÙˆØ² Ø§Ø±ØªÙØ§Ø¹Ù‡Ø§ Ø§Ù„Ù‚ÙŠÙ…Ø© Ø§Ù„Ù…Ø´Ø§Ø± Ø§Ù„ÙŠÙ‡Ø§","is_correct":true},{"text":"Ù…Ù…Ù†ÙˆØ¹ Ø¯Ø®ÙˆÙ„ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„ØªÙŠ ØªØªØ¬Ø§ÙˆØ² Ø¹Ø±Ø¶Ù‡Ø§ Ø§Ù„Ù‚ÙŠÙ…Ø© Ø§Ù„Ù…Ø´Ø§Ø± Ø§Ù„ÙŠÙ‡Ø§","is_correct":false},{"text":"Ù…Ù…Ù†ÙˆØ¹ Ø¯Ø®ÙˆÙ„ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„ØªÙŠ ØªØªØ¬Ø§ÙˆØ² Ø·ÙˆÙ„Ù‡Ø§ Ø§Ù„Ù‚ÙŠÙ…Ø© Ø§Ù„Ù…Ø´Ø§Ø± Ø§Ù„ÙŠÙ‡Ø§","is_correct":false}],"explanation":"ØªØ­Ø¯Ø¯ C29 Ø§Ù„Ø§Ø±ØªÙØ§Ø¹ Ø§Ù„Ø§Ù‚ØµÙ‰. Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„ØªÙŠ ØªØªØ¬Ø§ÙˆØ²Ù‡ Ù…Ø­Ø¸ÙˆØ±Ø©. Ø§Ù„Ø¹Ø±Ø¶ Ù…Ù†Ø¸Ù… Ø¨Ù€C27 ÙˆØ§Ù„Ø·ÙˆÙ„ Ø¨Ù€C25."}}},
-  {"question_id":"C29_Q02","type":"WHICH_SIGN","difficulty":"EASY","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Tot welke categorie behoort dit bord?","choices":[{"text":"Verbodsborden (C-reeks)","is_correct":true},{"text":"Gevaarsborden (A-reeks)","is_correct":false},{"text":"Gebodsborden (D-reeks)","is_correct":false}],"explanation":"Verbodsborden (C-reeks) zijn rond met rode rand en stellen maximumafmetingen in."},"EN":{"question":"To which category does this sign belong?","choices":[{"text":"Prohibition signs (C-series)","is_correct":true},{"text":"Danger signs (A-series)","is_correct":false},{"text":"Mandatory signs (D-series)","is_correct":false}],"explanation":"Prohibition signs (C-series) are round with a red border and set maximum dimensions."},"FR":{"question":"A quelle categorie appartient ce panneau ?","choices":[{"text":"Panneaux d interdiction (serie C)","is_correct":true},{"text":"Panneaux de danger (serie A)","is_correct":false},{"text":"Panneaux d obligation (serie D)","is_correct":false}],"explanation":"Les panneaux d interdiction (serie C) sont ronds avec un bord rouge et fixent les dimensions maximales."},"AR":{"question":"Ø§Ù„Ù‰ Ø§ÙŠ ÙØ¦Ø© ØªÙ†ØªÙ…ÙŠ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ","choices":[{"text":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø­Ø¸Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© C)","is_correct":true},{"text":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© A)","is_correct":false},{"text":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø§Ù„Ø²Ø§Ù… (Ø§Ù„Ø³Ù„Ø³Ù„Ø© D)","is_correct":false}],"explanation":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø­Ø¸Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© C) Ù…Ø³ØªØ¯ÙŠØ±Ø© Ø°Ø§Øª Ø­Ø¯ Ø§Ø­Ù…Ø± ÙˆØªØ­Ø¯Ø¯ Ø§Ø¨Ø¹Ø§Ø¯Ø§ Ù‚ØµÙˆÙ‰."}}},
-  {"question_id":"C29_Q03","type":"HAZARD_IDENTIFICATION","difficulty":"EASY","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Op welk punt wordt de hoogte van een voertuig gemeten bij bord C29?","choices":[{"text":"Op het hoogste punt van het voertuig inclusief de lading","is_correct":true},{"text":"Op de hoogte van het dak van de cabine","is_correct":false},{"text":"Op de hoogte van de laadbak zonder lading","is_correct":false}],"explanation":"C29 beoordeelt de totale hoogte op het hoogste punt. Uitstekende lading die boven het voertuig uitkomt vergroot de effectieve hoogte."},"EN":{"question":"At which point is the height of a vehicle measured for sign C29?","choices":[{"text":"At the highest point of the vehicle including the load","is_correct":true},{"text":"At the height of the cab roof","is_correct":false},{"text":"At the height of the cargo bed without load","is_correct":false}],"explanation":"C29 assesses the total height at the highest point. Protruding load that rises above the vehicle increases the effective height."},"FR":{"question":"A quel point la hauteur d un vehicule est-elle mesuree pour le panneau C29 ?","choices":[{"text":"Au point le plus haut du vehicule y compris le chargement","is_correct":true},{"text":"A la hauteur du toit de la cabine","is_correct":false},{"text":"A la hauteur du plateau de chargement sans charge","is_correct":false}],"explanation":"C29 evalue la hauteur totale au point le plus haut. Le chargement saillant qui depasse le vehicule augmente la hauteur effective."},"AR":{"question":"Ø¹Ù†Ø¯ Ø§ÙŠ Ù†Ù‚Ø·Ø© ÙŠÙÙ‚Ø§Ø³ Ø§Ø±ØªÙØ§Ø¹ Ø§Ù„Ù…Ø±ÙƒØ¨Ø© Ù„Ù„Ø§ÙØªØ© C29ØŸ","choices":[{"text":"Ø¹Ù†Ø¯ Ø§Ø¹Ù„Ù‰ Ù†Ù‚Ø·Ø© ÙÙŠ Ø§Ù„Ù…Ø±ÙƒØ¨Ø© Ø¨Ù…Ø§ ÙÙŠÙ‡Ø§ Ø§Ù„Ø­Ù…ÙˆÙ„Ø©","is_correct":true},{"text":"Ø¹Ù†Ø¯ Ø§Ø±ØªÙØ§Ø¹ Ø³Ù‚Ù Ø§Ù„Ù…Ù‚ØµÙˆØ±Ø©","is_correct":false},{"text":"Ø¹Ù†Ø¯ Ø§Ø±ØªÙØ§Ø¹ ØµÙ†Ø¯ÙˆÙ‚ Ø§Ù„Ø´Ø­Ù† Ø¨Ø¯ÙˆÙ† Ø­Ù…ÙˆÙ„Ø©","is_correct":false}],"explanation":"ØªÙ‚ÙŠÙ‘Ù… C29 Ø§Ù„Ø§Ø±ØªÙØ§Ø¹ Ø§Ù„Ø§Ø¬Ù…Ø§Ù„ÙŠ Ø¹Ù†Ø¯ Ø§Ø¹Ù„Ù‰ Ù†Ù‚Ø·Ø©. Ø§Ù„Ø­Ù…ÙˆÙ„Ø© Ø§Ù„Ø¨Ø§Ø±Ø²Ø© Ø§Ù„ØªÙŠ ØªØ±ØªÙØ¹ ÙÙˆÙ‚ Ø§Ù„Ù…Ø±ÙƒØ¨Ø© ØªØ²ÙŠØ¯ Ø§Ù„Ø§Ø±ØªÙØ§Ø¹ Ø§Ù„ÙØ¹Ù„ÙŠ."}}},
-  {"question_id":"C29_Q04","type":"WHAT_MUST_YOU_DO","difficulty":"MEDIUM","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Uw vrachtwagen met lading is 3,80 m hoog en bord C29 toont 3,75 m. Wat doet u?","choices":[{"text":"U rijdt niet verder en zoekt een alternatieve route of lager laadpunt","is_correct":true},{"text":"U rijdt langzaam om schokken te vermijden die de hoogte tijdelijk verhogen","is_correct":false},{"text":"U laat wat lucht uit de banden om de hoogte te verlagen","is_correct":false}],"explanation":"C29 is absoluut. De aangegeven hoogte mag niet worden overschreden. Lucht uit de banden laten is gevaarlijk en geen erkende oplossing."},"EN":{"question":"Your lorry with load is 3.80 m high and sign C29 shows 3.75 m. What do you do?","choices":[{"text":"You do not proceed and find an alternative route or lower loading point","is_correct":true},{"text":"You drive slowly to avoid bumps that temporarily increase the height","is_correct":false},{"text":"You let some air out of the tyres to lower the height","is_correct":false}],"explanation":"C29 is absolute. The indicated height must not be exceeded. Letting air out of tyres is dangerous and not a recognised solution."},"FR":{"question":"Votre camion avec chargement est haut de 3,80 m et le panneau C29 indique 3,75 m. Que faites-vous ?","choices":[{"text":"Vous ne continuez pas et cherchez un itineraire alternatif ou un point de chargement plus bas","is_correct":true},{"text":"Vous roulez lentement pour eviter les bosses qui augmentent temporairement la hauteur","is_correct":false},{"text":"Vous degonflez un peu les pneus pour abaisser la hauteur","is_correct":false}],"explanation":"C29 est absolu. La hauteur indiquee ne doit pas etre depassee. Degonfler les pneus est dangereux et n est pas une solution reconnue."},"AR":{"question":"Ø´Ø§Ø­Ù†ØªÙƒ Ù…Ø¹ Ø§Ù„Ø­Ù…ÙˆÙ„Ø© Ø§Ø±ØªÙØ§Ø¹Ù‡Ø§ 3.80 Ù… ÙˆÙ„Ø§ÙØªØ© C29 ØªØ¸Ù‡Ø± 3.75 Ù…. Ù…Ø§Ø°Ø§ ØªÙØ¹Ù„ØŸ","choices":[{"text":"Ù„Ø§ ØªØªØ§Ø¨Ø¹ ÙˆØªØ¬Ø¯ Ù…Ø³Ø§Ø±Ø§ Ø¨Ø¯ÙŠÙ„Ø§ Ø§Ùˆ Ù†Ù‚Ø·Ø© ØªØ­Ù…ÙŠÙ„ Ø§Ø®ÙØ¶","is_correct":true},{"text":"ØªØ³ÙŠØ± Ø¨Ø¨Ø·Ø¡ Ù„ØªØ¬Ù†Ø¨ Ø§Ù„Ù…Ø·Ø¨Ø§Øª Ø§Ù„ØªÙŠ ØªØ±ÙØ¹ Ø§Ù„Ø§Ø±ØªÙØ§Ø¹ Ù…Ø¤Ù‚ØªØ§","is_correct":false},{"text":"ØªÙØ±Øº Ø¨Ø¹Ø¶ Ø§Ù„Ù‡ÙˆØ§Ø¡ Ù…Ù† Ø§Ù„Ø§Ø·Ø§Ø±Ø§Øª Ù„Ø®ÙØ¶ Ø§Ù„Ø§Ø±ØªÙØ§Ø¹","is_correct":false}],"explanation":"C29 Ù…Ø·Ù„Ù‚Ø©. Ù„Ø§ ÙŠØ¬ÙˆØ² ØªØ¬Ø§ÙˆØ² Ø§Ù„Ø§Ø±ØªÙØ§Ø¹ Ø§Ù„Ù…Ø´Ø§Ø± Ø§Ù„ÙŠÙ‡. ØªÙØ±ÙŠØº Ø§Ù„Ù‡ÙˆØ§Ø¡ Ù…Ù† Ø§Ù„Ø§Ø·Ø§Ø±Ø§Øª Ø§Ù…Ø± Ø®Ø·ÙŠØ± ÙˆÙ„ÙŠØ³ Ø­Ù„Ø§ Ù…Ø¹ØªØ±ÙØ§ Ø¨Ù‡."}}},
-  {"question_id":"C29_Q05","type":"WHAT_MUST_YOU_DO","difficulty":"MEDIUM","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Een opblaasbare lading bovenop een vrachtwagen kan tijdens het rijden uitzetten. Hoe beoordeelt C29 de hoogte?","choices":[{"text":"De hoogte wordt beoordeeld op de maximale hoogte die de lading kan bereiken","is_correct":true},{"text":"De hoogte wordt gemeten voor het vertrek in stilstaande toestand","is_correct":false},{"text":"De hoogte is enkel relevant bij tunnels en niet bij bord C29 langs de weg","is_correct":false}],"explanation":"C29 beoordeelt de maximale hoogte die bereikt kan worden. Als een lading kan uitzetten moet met die maximale hoogte rekening worden gehouden."},"EN":{"question":"An inflatable load on top of a lorry can expand during driving. How does C29 assess the height?","choices":[{"text":"The height is assessed at the maximum height the load can reach","is_correct":true},{"text":"The height is measured before departure in stationary condition","is_correct":false},{"text":"Height is only relevant at tunnels and not for sign C29 by the road","is_correct":false}],"explanation":"C29 assesses the maximum height that can be reached. If a load can expand that maximum height must be taken into account."},"FR":{"question":"Un chargement gonflable sur un camion peut se dilater pendant la conduite. Comment C29 evalue-t-il la hauteur ?","choices":[{"text":"La hauteur est evaluee a la hauteur maximale que le chargement peut atteindre","is_correct":true},{"text":"La hauteur est mesuree avant le depart en mode stationnaire","is_correct":false},{"text":"La hauteur n est pertinente qu aux tunnels et non pour le panneau C29 au bord de la route","is_correct":false}],"explanation":"C29 evalue la hauteur maximale pouvant etre atteinte. Si un chargement peut se dilater cette hauteur maximale doit etre prise en compte."},"AR":{"question":"Ø­Ù…ÙˆÙ„Ø© Ù‚Ø§Ø¨Ù„Ø© Ù„Ù„Ù†ÙØ® ÙÙˆÙ‚ Ø´Ø§Ø­Ù†Ø© ÙŠÙ…ÙƒÙ† Ø§Ù† ØªØªÙ…Ø¯Ø¯ Ø§Ø«Ù†Ø§Ø¡ Ø§Ù„Ù‚ÙŠØ§Ø¯Ø©. ÙƒÙŠÙ ØªÙ‚ÙŠÙ‘Ù… C29 Ø§Ù„Ø§Ø±ØªÙØ§Ø¹ØŸ","choices":[{"text":"ÙŠÙÙ‚ÙŠÙŽÙ‘Ù… Ø§Ù„Ø§Ø±ØªÙØ§Ø¹ Ø¹Ù†Ø¯ Ø§Ù„Ø§Ø±ØªÙØ§Ø¹ Ø§Ù„Ø§Ù‚ØµÙ‰ Ø§Ù„Ø°ÙŠ ÙŠÙ…ÙƒÙ† Ø§Ù† ØªØµÙ„ Ø§Ù„ÙŠÙ‡ Ø§Ù„Ø­Ù…ÙˆÙ„Ø©","is_correct":true},{"text":"ÙŠÙÙ‚Ø§Ø³ Ø§Ù„Ø§Ø±ØªÙØ§Ø¹ Ù‚Ø¨Ù„ Ø§Ù„Ø§Ù†Ø·Ù„Ø§Ù‚ ÙÙŠ ÙˆØ¶Ø¹ Ø§Ù„Ø³ÙƒÙˆÙ†","is_correct":false},{"text":"Ø§Ù„Ø§Ø±ØªÙØ§Ø¹ Ø°Ùˆ ØµÙ„Ø© ÙÙ‚Ø· ÙÙŠ Ø§Ù„Ø§Ù†ÙØ§Ù‚ ÙˆÙ„ÙŠØ³ Ù„Ù„Ø§ÙØªØ© C29 Ø¹Ù„Ù‰ Ø¬Ø§Ù†Ø¨ Ø§Ù„Ø·Ø±ÙŠÙ‚","is_correct":false}],"explanation":"ØªÙ‚ÙŠÙ‘Ù… C29 Ø§Ù„Ø§Ø±ØªÙØ§Ø¹ Ø§Ù„Ø§Ù‚ØµÙ‰ Ø§Ù„Ø°ÙŠ ÙŠÙ…ÙƒÙ† Ø¨Ù„ÙˆØºÙ‡. Ø§Ø°Ø§ ÙŠÙ…ÙƒÙ† Ù„Ù„Ø­Ù…ÙˆÙ„Ø© Ø§Ù† ØªØªÙ…Ø¯Ø¯ ÙŠØ¬Ø¨ Ù…Ø±Ø§Ø¹Ø§Ø© Ù‡Ø°Ø§ Ø§Ù„Ø§Ø±ØªÙØ§Ø¹ Ø§Ù„Ø§Ù‚ØµÙ‰."}}},
-  {"question_id":"C29_Q06","type":"WHAT_MUST_YOU_DO","difficulty":"MEDIUM","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Geldt bord C29 alleen bij tunnels of ook op open wegen?","choices":[{"text":"C29 geldt overal waar het bord is geplaatst, inclusief op open wegen met viaducten of leidingen","is_correct":true},{"text":"C29 geldt alleen bij tunnels en onderdoorgangen","is_correct":false},{"text":"C29 geldt alleen op snelwegen","is_correct":false}],"explanation":"C29 kan worden geplaatst voor elke infrastructuur met een beperkte vrije hoogte: tunnels, viaducten, bruggen, leidingen of andere obstructies."},"EN":{"question":"Does sign C29 apply only at tunnels or also on open roads?","choices":[{"text":"C29 applies wherever the sign is placed, including on open roads with viaducts or pipes","is_correct":true},{"text":"C29 applies only at tunnels and underpasses","is_correct":false},{"text":"C29 applies only on motorways","is_correct":false}],"explanation":"C29 can be placed before any infrastructure with a limited clearance height: tunnels, viaducts, bridges, pipes or other obstructions."},"FR":{"question":"Le panneau C29 s applique-t-il uniquement aux tunnels ou aussi sur les routes ouvertes ?","choices":[{"text":"C29 s applique partout ou le panneau est place, y compris sur les routes ouvertes avec viaducs ou conduites","is_correct":true},{"text":"C29 ne s applique qu aux tunnels et passages souterrains","is_correct":false},{"text":"C29 ne s applique qu aux autoroutes","is_correct":false}],"explanation":"C29 peut etre place devant toute infrastructure avec une hauteur libre limitee: tunnels, viaducs, ponts, conduites ou autres obstructions."},"AR":{"question":"Ù‡Ù„ ØªØ³Ø±ÙŠ Ù„Ø§ÙØªØ© C29 ÙÙ‚Ø· Ø¹Ù†Ø¯ Ø§Ù„Ø§Ù†ÙØ§Ù‚ Ø§Ù… Ø§ÙŠØ¶Ø§ Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±Ù‚ Ø§Ù„Ù…ÙØªÙˆØ­Ø©ØŸ","choices":[{"text":"ØªØ³Ø±ÙŠ C29 ÙÙŠ ÙƒÙ„ Ù…ÙƒØ§Ù† ØªÙˆØ¶Ø¹ ÙÙŠÙ‡ Ø§Ù„Ù„Ø§ÙØªØ© Ø¨Ù…Ø§ ÙÙŠÙ‡Ø§ Ø§Ù„Ø·Ø±Ù‚ Ø§Ù„Ù…ÙØªÙˆØ­Ø© Ø°Ø§Øª Ø§Ù„Ø¬Ø³ÙˆØ± Ø§Ù„Ø¹Ù„ÙˆÙŠØ© Ø§Ùˆ Ø§Ù„Ø§Ù†Ø§Ø¨ÙŠØ¨","is_correct":true},{"text":"ØªØ³Ø±ÙŠ C29 ÙÙ‚Ø· Ø¹Ù†Ø¯ Ø§Ù„Ø§Ù†ÙØ§Ù‚ ÙˆØ§Ù„Ù…Ù…Ø±Ø§Øª Ø§Ù„Ø³ÙÙ„ÙŠØ©","is_correct":false},{"text":"ØªØ³Ø±ÙŠ C29 ÙÙ‚Ø· Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±Ù‚ Ø§Ù„Ø³Ø±ÙŠØ¹Ø©","is_correct":false}],"explanation":"ÙŠÙ…ÙƒÙ† ÙˆØ¶Ø¹ C29 Ø§Ù…Ø§Ù… Ø§ÙŠ Ø¨Ù†ÙŠØ© ØªØ­ØªÙŠØ© Ø°Ø§Øª Ø§Ø±ØªÙØ§Ø¹ Ø®Ù„ÙˆØµ Ù…Ø­Ø¯ÙˆØ¯: Ø§Ù†ÙØ§Ù‚ ÙˆØ¬Ø³ÙˆØ± Ø¹Ù„ÙˆÙŠØ© ÙˆØ¬Ø³ÙˆØ± ÙˆØ§Ù†Ø§Ø¨ÙŠØ¨ ÙˆØ¹ÙˆØ§Ø¦Ù‚ Ø§Ø®Ø±Ù‰."}}},
-  {"question_id":"C29_Q07","type":"IS_IT_ALLOWED","difficulty":"HARD","is_critical":true,"show_sign":true,"i18n":{"NL":{"question":"Mag u een weg ingaan waar bord C29 staat dat 4,00 m aangeeft als uw lading inklapbaar is en u de hoogte tijdelijk verlaagt tot 3,90 m?","choices":[{"text":"Ja, mits de hoogte feitelijk is verlaagd tot onder de aangegeven limiet voor de passage","is_correct":true},{"text":"Nee, C29 verbiedt het voertuig volledig ongeacht de feitelijke hoogte","is_correct":false}],"explanation":"Als de hoogte van het voertuig inclusief lading feitelijk is verlaagd tot de toegestane hoogte is het verbod niet van toepassing. De beoordeling is op de feitelijke hoogte op het moment van passage. Dit is een ernstige verkeersovertreding bij ongeoorloofde overschrijding."},"EN":{"question":"May you enter a road where sign C29 shows 4.00 m if your load is foldable and you temporarily reduce the height to 3.90 m?","choices":[{"text":"Yes, provided the height has actually been reduced below the indicated limit for the passage","is_correct":true},{"text":"No, C29 prohibits the vehicle entirely regardless of actual height","is_correct":false}],"explanation":"If the height of the vehicle including load has actually been reduced to within the permitted height the prohibition does not apply. Assessment is on actual height at the moment of passage. This is a serious traffic offence for unauthorised excess."},"FR":{"question":"Pouvez-vous emprunter une route ou le panneau C29 indique 4,00 m si votre chargement est repliable et vous reduisez temporairement la hauteur a 3,90 m ?","choices":[{"text":"Oui, a condition que la hauteur ait effectivement ete abaissee sous la limite indiquee pour le passage","is_correct":true},{"text":"Non, C29 interdit totalement le vehicule quelle que soit la hauteur reelle","is_correct":false}],"explanation":"Si la hauteur du vehicule y compris le chargement a effectivement ete reduite dans la hauteur autorisee l interdiction ne s applique pas. L evaluation porte sur la hauteur reelle au moment du passage. Il s agit d une infraction grave au code de la route en cas de depassement non autorise."},"AR":{"question":"Ù‡Ù„ ÙŠØ¬ÙˆØ² Ù„Ùƒ Ø¯Ø®ÙˆÙ„ Ø·Ø±ÙŠÙ‚ Ø­ÙŠØ« ØªØ¸Ù‡Ø± Ù„Ø§ÙØªØ© C29 Ù‚ÙŠÙ…Ø© 4.00 Ù… Ø§Ø°Ø§ ÙƒØ§Ù†Øª Ø­Ù…ÙˆÙ„ØªÙƒ Ù‚Ø§Ø¨Ù„Ø© Ù„Ù„Ø·ÙŠ ÙˆØ®ÙØ¶Øª Ø§Ù„Ø§Ø±ØªÙØ§Ø¹ Ù…Ø¤Ù‚ØªØ§ Ø§Ù„Ù‰ 3.90 Ù…ØŸ","choices":[{"text":"Ù†Ø¹Ù…ØŒ Ø¨Ø´Ø±Ø· Ø§Ù† ÙŠÙƒÙˆÙ† Ø§Ù„Ø§Ø±ØªÙØ§Ø¹ Ù‚Ø¯ Ø®ÙÙÙÙ‘Ø¶ ÙØ¹Ù„ÙŠØ§ Ø¯ÙˆÙ† Ø§Ù„Ø­Ø¯ Ø§Ù„Ù…Ø´Ø§Ø± Ø§Ù„ÙŠÙ‡ Ù„Ù„Ø¹Ø¨ÙˆØ±","is_correct":true},{"text":"Ù„Ø§ØŒ ØªØ­Ø¸Ø± C29 Ø§Ù„Ù…Ø±ÙƒØ¨Ø© ÙƒÙ„ÙŠØ§ Ø¨ØºØ¶ Ø§Ù„Ù†Ø¸Ø± Ø¹Ù† Ø§Ù„Ø§Ø±ØªÙØ§Ø¹ Ø§Ù„ÙØ¹Ù„ÙŠ","is_correct":false}],"explanation":"Ø§Ø°Ø§ ÙƒØ§Ù† Ø§Ø±ØªÙØ§Ø¹ Ø§Ù„Ù…Ø±ÙƒØ¨Ø© Ø¨Ù…Ø§ ÙÙŠÙ‡Ø§ Ø§Ù„Ø­Ù…ÙˆÙ„Ø© Ù‚Ø¯ Ø®ÙÙÙÙ‘Ø¶ ÙØ¹Ù„ÙŠØ§ Ø¶Ù…Ù† Ø§Ù„Ø§Ø±ØªÙØ§Ø¹ Ø§Ù„Ù…Ø³Ù…ÙˆØ­ Ø¨Ù‡ ÙØ§Ù„Ø­Ø¸Ø± Ù„Ø§ ÙŠÙ†Ø·Ø¨Ù‚. Ø§Ù„ØªÙ‚ÙŠÙŠÙ… ÙŠØ³ØªÙ†Ø¯ Ø§Ù„Ù‰ Ø§Ù„Ø§Ø±ØªÙØ§Ø¹ Ø§Ù„ÙØ¹Ù„ÙŠ Ù„Ø­Ø¸Ø© Ø§Ù„Ø¹Ø¨ÙˆØ±. Ù‡Ø°Ù‡ Ù…Ø®Ø§Ù„ÙØ© Ù…Ø±ÙˆØ±ÙŠØ© Ø®Ø·ÙŠØ±Ø© Ø¹Ù†Ø¯ Ø§Ù„ØªØ¬Ø§ÙˆØ² ØºÙŠØ± Ø§Ù„Ù…ØµØ±Ø­ Ø¨Ù‡."}}},
-  {"question_id":"C29_Q08","type":"IS_IT_ALLOWED","difficulty":"HARD","is_critical":true,"show_sign":true,"i18n":{"NL":{"question":"Mag u een weg met bord C29 (3,50 m) nemen als uw leeg voertuig 3,40 m hoog is maar u plant onderweg lading op te pikken die het tot 3,60 m brengt?","choices":[{"text":"Nee, de totale hoogte op het moment van passage moet onder de limiet blijven; als belading de hoogte overschrijdt mag u die weg niet nemen","is_correct":true},{"text":"Ja, uw voertuig is nu 3,40 m en valt dus binnen de limiet","is_correct":false}],"explanation":"De chauffeur moet de route plannen rekening houdend met de maximale hoogte op elk punt van de rit. Als lading elders de hoogte boven de limiet brengt mag de verboden weg niet worden gebruikt. Dit is een ernstige verkeersovertreding."},"EN":{"question":"May you take a road with sign C29 (3.50 m) if your empty vehicle is 3.40 m high but you plan to pick up cargo en route that will bring it to 3.60 m?","choices":[{"text":"No, the total height at the moment of passage must stay below the limit; if loading raises the height above this you may not take that road","is_correct":true},{"text":"Yes, your vehicle is now 3.40 m and therefore within the limit","is_correct":false}],"explanation":"The driver must plan the route accounting for the maximum height at each point of the journey. If cargo elsewhere raises the height above the limit the prohibited road may not be used. This is a serious traffic offence."},"FR":{"question":"Pouvez-vous emprunter une route avec le panneau C29 (3,50 m) si votre vehicule vide est haut de 3,40 m mais vous prevoyez de charger en route ce qui l amenerait a 3,60 m ?","choices":[{"text":"Non, la hauteur totale au moment du passage doit rester sous la limite; si le chargement fait depasser la hauteur vous ne pouvez pas emprunter cette route","is_correct":true},{"text":"Oui, votre vehicule fait 3,40 m maintenant et est donc dans la limite","is_correct":false}],"explanation":"Le conducteur doit planifier l itineraire en tenant compte de la hauteur maximale a chaque point du trajet. Si le chargement ailleurs fait depasser la hauteur la route interdite ne peut pas etre utilisee. Il s agit d une infraction grave au code de la route."},"AR":{"question":"Ù‡Ù„ ÙŠØ¬ÙˆØ² Ù„Ùƒ Ø³Ù„ÙˆÙƒ Ø·Ø±ÙŠÙ‚ Ø¨Ù‡ Ù„Ø§ÙØªØ© C29 (3.50 Ù…) Ø§Ø°Ø§ ÙƒØ§Ù†Øª Ù…Ø±ÙƒØ¨ØªÙƒ Ø§Ù„ÙØ§Ø±ØºØ© Ø§Ø±ØªÙØ§Ø¹Ù‡Ø§ 3.40 Ù… Ù„ÙƒÙ†Ùƒ ØªØ®Ø·Ø· Ù„Ø§Ø³ØªÙ„Ø§Ù… Ø­Ù…ÙˆÙ„Ø© ÙÙŠ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø³ØªØ¬Ø¹Ù„Ù‡ 3.60 Ù…ØŸ","choices":[{"text":"Ù„Ø§ØŒ ÙŠØ¬Ø¨ Ø§Ù† ÙŠØ¨Ù‚Ù‰ Ø§Ù„Ø§Ø±ØªÙØ§Ø¹ Ø§Ù„Ø§Ø¬Ù…Ø§Ù„ÙŠ Ù„Ø­Ø¸Ø© Ø§Ù„Ø¹Ø¨ÙˆØ± Ø¯ÙˆÙ† Ø§Ù„Ø­Ø¯Ø› Ø§Ø°Ø§ Ø±ÙØ¹Øª Ø§Ù„Ø­Ù…ÙˆÙ„Ø© Ø§Ù„Ø§Ø±ØªÙØ§Ø¹ ÙÙˆÙ‚ Ù‡Ø°Ø§ Ø§Ù„Ø­Ø¯ Ù„Ø§ ÙŠØ¬ÙˆØ² Ù„Ùƒ Ø³Ù„ÙˆÙƒ Ù‡Ø°Ø§ Ø§Ù„Ø·Ø±ÙŠÙ‚","is_correct":true},{"text":"Ù†Ø¹Ù…ØŒ Ù…Ø±ÙƒØ¨ØªÙƒ Ø§Ù„Ø¢Ù† 3.40 Ù… ÙˆØ¨Ø§Ù„ØªØ§Ù„ÙŠ Ø¶Ù…Ù† Ø§Ù„Ø­Ø¯","is_correct":false}],"explanation":"Ø¹Ù„Ù‰ Ø§Ù„Ø³Ø§Ø¦Ù‚ ØªØ®Ø·ÙŠØ· Ø§Ù„Ù…Ø³Ø§Ø± Ù…Ø¹ Ù…Ø±Ø§Ø¹Ø§Ø© Ø§Ù„Ø§Ø±ØªÙØ§Ø¹ Ø§Ù„Ø§Ù‚ØµÙ‰ ÙÙŠ ÙƒÙ„ Ù†Ù‚Ø·Ø© Ù…Ù† Ø§Ù„Ø±Ø­Ù„Ø©. Ø§Ø°Ø§ Ø±ÙØ¹Øª Ø§Ù„Ø­Ù…ÙˆÙ„Ø© ÙÙŠ Ù…ÙƒØ§Ù† Ø¢Ø®Ø± Ø§Ù„Ø§Ø±ØªÙØ§Ø¹ ÙÙˆÙ‚ Ø§Ù„Ø­Ø¯ Ù„Ø§ ÙŠØ¬ÙˆØ² Ø§Ø³ØªØ®Ø¯Ø§Ù… Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ù…Ø­Ø¸ÙˆØ±. Ù‡Ø°Ù‡ Ù…Ø®Ø§Ù„ÙØ© Ù…Ø±ÙˆØ±ÙŠØ© Ø®Ø·ÙŠØ±Ø©."}}}
+[
+  {
+    "question_id": "C29_Q01",
+    "type": "WHAT_DOES_IT_MEAN",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat betekent dit verkeersbord?",
+        "choices": [
+          {
+            "text": "Verboden toegang voor voertuigen die hoger zijn dan de aangeduide hoogte",
+            "is_correct": true
+          },
+          {
+            "text": "Verboden toegang voor voertuigen die breder zijn dan de aangeduide breedte",
+            "is_correct": false
+          },
+          {
+            "text": "Verboden toegang voor voertuigen die langer zijn dan de aangeduide lengte",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dit bord geeft aan dat bestuurders van voertuigen waarvan de hoogte, lading inbegrepen, groter is dan de aangeduide, hier niet mogen inrijden."
+      },
+      "EN": {
+        "question": "What does this traffic sign mean?",
+        "choices": [
+          {
+            "text": "No entry for vehicles higher than the indicated height",
+            "is_correct": true
+          },
+          {
+            "text": "No entry for vehicles wider than the indicated width",
+            "is_correct": false
+          },
+          {
+            "text": "No entry for vehicles longer than the indicated length",
+            "is_correct": false
+          }
+        ],
+        "explanation": "This sign indicates that drivers of vehicles whose height, including load, exceeds the indicated limit may not enter here."
+      },
+      "FR": {
+        "question": "Que signifie ce panneau ?",
+        "choices": [
+          {
+            "text": "Accès interdit aux véhicules plus hauts que la hauteur indiquée",
+            "is_correct": true
+          },
+          {
+            "text": "Accès interdit aux véhicules plus larges que la largeur indiquée",
+            "is_correct": false
+          },
+          {
+            "text": "Accès interdit aux véhicules plus longs que la longueur indiquée",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ce panneau indique que les conducteurs de véhicules dont la hauteur, chargement compris, dépasse la limite indiquée ne peuvent pas entrer ici."
+      },
+      "AR": {
+        "question": "ما معنى هذه العلامة المرورية؟",
+        "choices": [
+          {
+            "text": "ممنوع دخول المركبات التي يتجاوز ارتفاعها الحد المشار إليه",
+            "is_correct": true
+          },
+          {
+            "text": "ممنوع دخول المركبات التي يتجاوز عرضها الحد المشار إليه",
+            "is_correct": false
+          },
+          {
+            "text": "ممنوع دخول المركبات التي يتجاوز طولها الحد المشار إليه",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تدل هذه العلامة على أن سائقي المركبات التي يزيد ارتفاعها، بما في ذلك الحمولة، على الحد المشار إليه لا يجوز لهم الدخول من هنا."
+      }
+    }
+  },
+  {
+    "question_id": "C29_Q02",
+    "type": "HAZARD_IDENTIFICATION",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Op wie is dit verbod van toepassing?",
+        "choices": [
+          {
+            "text": "Op bestuurders van voertuigen die hoger zijn dan de aangeduide hoogte",
+            "is_correct": true
+          },
+          {
+            "text": "Op alle bestuurders zonder uitzondering",
+            "is_correct": false
+          },
+          {
+            "text": "Alleen op bestuurders van bussen",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Het verbod geldt voor bestuurders van voertuigen waarvan de hoogte, lading inbegrepen, groter is dan de aangeduide."
+      },
+      "EN": {
+        "question": "To whom does this prohibition apply?",
+        "choices": [
+          {
+            "text": "To drivers of vehicles higher than the indicated height",
+            "is_correct": true
+          },
+          {
+            "text": "To all drivers without exception",
+            "is_correct": false
+          },
+          {
+            "text": "Only to bus drivers",
+            "is_correct": false
+          }
+        ],
+        "explanation": "The prohibition applies to drivers of vehicles whose height, including load, exceeds the indicated limit."
+      },
+      "FR": {
+        "question": "À qui s’applique cette interdiction ?",
+        "choices": [
+          {
+            "text": "Aux conducteurs de véhicules plus hauts que la limite indiquée",
+            "is_correct": true
+          },
+          {
+            "text": "À tous les conducteurs sans exception",
+            "is_correct": false
+          },
+          {
+            "text": "Seulement aux conducteurs d’autobus",
+            "is_correct": false
+          }
+        ],
+        "explanation": "L’interdiction s’applique aux conducteurs de véhicules dont la hauteur, chargement compris, dépasse la limite indiquée."
+      },
+      "AR": {
+        "question": "على من ينطبق هذا الحظر؟",
+        "choices": [
+          {
+            "text": "على سائقي المركبات التي يتجاوز ارتفاعها الحد المشار إليه",
+            "is_correct": true
+          },
+          {
+            "text": "على جميع السائقين دون استثناء",
+            "is_correct": false
+          },
+          {
+            "text": "فقط على سائقي الحافلات",
+            "is_correct": false
+          }
+        ],
+        "explanation": "ينطبق هذا الحظر على سائقي المركبات التي يزيد ارتفاعها، بما في ذلك الحمولة، على الحد المشار إليه."
+      }
+    }
+  },
+  {
+    "question_id": "C29_Q03",
+    "type": "HAZARD_IDENTIFICATION",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Welke afmeting wordt door dit bord beperkt?",
+        "choices": [
+          {
+            "text": "De hoogte, lading inbegrepen",
+            "is_correct": true
+          },
+          {
+            "text": "De breedte",
+            "is_correct": false
+          },
+          {
+            "text": "De lengte",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dit bord beperkt de hoogte van het voertuig, waarbij ook de lading meetelt."
+      },
+      "EN": {
+        "question": "Which dimension is restricted by this sign?",
+        "choices": [
+          {
+            "text": "The height, including load",
+            "is_correct": true
+          },
+          {
+            "text": "The width",
+            "is_correct": false
+          },
+          {
+            "text": "The length",
+            "is_correct": false
+          }
+        ],
+        "explanation": "This sign restricts the height of the vehicle, with the load included in the measurement."
+      },
+      "FR": {
+        "question": "Quelle dimension est limitée par ce panneau ?",
+        "choices": [
+          {
+            "text": "La hauteur, chargement compris",
+            "is_correct": true
+          },
+          {
+            "text": "La largeur",
+            "is_correct": false
+          },
+          {
+            "text": "La longueur",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ce panneau limite la hauteur du véhicule, en tenant aussi compte du chargement."
+      },
+      "AR": {
+        "question": "ما البُعد الذي تقيده هذه العلامة؟",
+        "choices": [
+          {
+            "text": "الارتفاع، بما في ذلك الحمولة",
+            "is_correct": true
+          },
+          {
+            "text": "العرض",
+            "is_correct": false
+          },
+          {
+            "text": "الطول",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تُقيد هذه العلامة ارتفاع المركبة، مع احتساب الحمولة ضمن القياس."
+      }
+    }
+  },
+  {
+    "question_id": "C29_Q04",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Uw voertuig is hoger dan de hoogte op het bord. Wat moet u doen?",
+        "choices": [
+          {
+            "text": "Niet inrijden en een andere route nemen",
+            "is_correct": true
+          },
+          {
+            "text": "Toch doorrijden als de weg vrij is",
+            "is_correct": false
+          },
+          {
+            "text": "Langzaam verder rijden",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Als uw voertuig hoger is dan de aangeduide hoogte, mag u hier niet inrijden en moet u een andere route nemen."
+      },
+      "EN": {
+        "question": "Your vehicle is higher than the height shown on the sign. What must you do?",
+        "choices": [
+          {
+            "text": "Do not enter and take another route",
+            "is_correct": true
+          },
+          {
+            "text": "Continue if the road is clear",
+            "is_correct": false
+          },
+          {
+            "text": "Proceed slowly",
+            "is_correct": false
+          }
+        ],
+        "explanation": "If your vehicle is higher than the indicated height, you may not enter here and must take another route."
+      },
+      "FR": {
+        "question": "Votre véhicule est plus haut que la hauteur indiquée sur le panneau. Que devez-vous faire ?",
+        "choices": [
+          {
+            "text": "Ne pas entrer et prendre un autre itinéraire",
+            "is_correct": true
+          },
+          {
+            "text": "Continuer si la route est libre",
+            "is_correct": false
+          },
+          {
+            "text": "Avancer lentement",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Si votre véhicule est plus haut que la hauteur indiquée, vous ne pouvez pas entrer ici et devez prendre un autre itinéraire."
+      },
+      "AR": {
+        "question": "مركبتك أعلى من الارتفاع المبين على العلامة. ماذا يجب أن تفعل؟",
+        "choices": [
+          {
+            "text": "لا تدخل واسلك طريقًا آخر",
+            "is_correct": true
+          },
+          {
+            "text": "تابع إذا كان الطريق خاليًا",
+            "is_correct": false
+          },
+          {
+            "text": "واصل السير ببطء",
+            "is_correct": false
+          }
+        ],
+        "explanation": "إذا كانت مركبتك أعلى من الارتفاع المشار إليه، فلا يجوز لك الدخول من هنا ويجب أن تسلك طريقًا آخر."
+      }
+    }
+  },
+  {
+    "question_id": "C29_Q05",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Uw bestemming ligt achter dit bord en uw voertuig is hoger dan de aangeduide hoogte. Wat doet u?",
+        "choices": [
+          {
+            "text": "U rijdt hier niet in en kiest een andere toegelaten route",
+            "is_correct": true
+          },
+          {
+            "text": "U rijdt toch door omdat uw bestemming daar ligt",
+            "is_correct": false
+          },
+          {
+            "text": "U wacht en rijdt daarna toch door",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ook als uw bestemming verderop ligt, blijft de toegang verboden voor voertuigen die hoger zijn dan de aangeduide hoogte."
+      },
+      "EN": {
+        "question": "Your destination is beyond this sign and your vehicle is higher than the indicated height. What do you do?",
+        "choices": [
+          {
+            "text": "Do not enter here and choose another permitted route",
+            "is_correct": true
+          },
+          {
+            "text": "Continue because your destination is there",
+            "is_correct": false
+          },
+          {
+            "text": "Wait and then continue anyway",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Even if your destination is beyond the sign, access remains prohibited for vehicles higher than the indicated height."
+      },
+      "FR": {
+        "question": "Votre destination se trouve après ce panneau et votre véhicule est plus haut que la hauteur indiquée. Que faites-vous ?",
+        "choices": [
+          {
+            "text": "Vous n’entrez pas ici et choisissez un autre itinéraire autorisé",
+            "is_correct": true
+          },
+          {
+            "text": "Vous continuez parce que votre destination est là",
+            "is_correct": false
+          },
+          {
+            "text": "Vous attendez puis vous passez quand même",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Même si votre destination se trouve après le panneau, l’accès reste interdit aux véhicules plus hauts que la hauteur indiquée."
+      },
+      "AR": {
+        "question": "وجهتك تقع بعد هذه العلامة ومركبتك أعلى من الارتفاع المشار إليه. ماذا تفعل؟",
+        "choices": [
+          {
+            "text": "لا تدخل من هنا واختر طريقًا آخر مسموحًا",
+            "is_correct": true
+          },
+          {
+            "text": "تابع لأن وجهتك هناك",
+            "is_correct": false
+          },
+          {
+            "text": "انتظر ثم اعبر رغم ذلك",
+            "is_correct": false
+          }
+        ],
+        "explanation": "حتى إذا كانت وجهتك بعد العلامة، يبقى الدخول ممنوعًا على المركبات التي يزيد ارتفاعها على الحد المشار إليه."
+      }
+    }
+  },
+  {
+    "question_id": "C29_Q06",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Mag een voertuig waarvan de hoogte niet groter is dan de aangeduide waarde hier verder rijden?",
+        "choices": [
+          {
+            "text": "Ja, dit verbod geldt niet voor voertuigen binnen de aangeduide hoogte",
+            "is_correct": true
+          },
+          {
+            "text": "Nee, elk voertuig is hier verboden",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dit verbod geldt voor voertuigen waarvan de hoogte groter is dan de aangeduide waarde, niet voor voertuigen die daarbinnen blijven."
+      },
+      "EN": {
+        "question": "May a vehicle whose height is not greater than the indicated value continue here?",
+        "choices": [
+          {
+            "text": "Yes, this prohibition does not apply to vehicles within the indicated height",
+            "is_correct": true
+          },
+          {
+            "text": "No, every vehicle is prohibited here",
+            "is_correct": false
+          }
+        ],
+        "explanation": "This prohibition applies to vehicles whose height exceeds the indicated value, not to vehicles that remain within it."
+      },
+      "FR": {
+        "question": "Un véhicule dont la hauteur n’est pas supérieure à la valeur indiquée peut-il continuer ici ?",
+        "choices": [
+          {
+            "text": "Oui, cette interdiction ne s’applique pas aux véhicules qui restent dans la hauteur indiquée",
+            "is_correct": true
+          },
+          {
+            "text": "Non, chaque véhicule est interdit ici",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Cette interdiction s’applique aux véhicules dont la hauteur dépasse la valeur indiquée, pas à ceux qui restent dans cette limite."
+      },
+      "AR": {
+        "question": "هل يجوز لمركبة لا يزيد ارتفاعها على القيمة المشار إليها أن تتابع السير هنا؟",
+        "choices": [
+          {
+            "text": "نعم، هذا الحظر لا ينطبق على المركبات التي تبقى ضمن الارتفاع المشار إليه",
+            "is_correct": true
+          },
+          {
+            "text": "لا، كل المركبات ممنوعة هنا",
+            "is_correct": false
+          }
+        ],
+        "explanation": "ينطبق هذا الحظر على المركبات التي يزيد ارتفاعها على القيمة المشار إليها، وليس على المركبات التي تبقى ضمن هذا الحد."
+      }
+    }
+  },
+  {
+    "question_id": "C29_Q07",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "De weg is volledig vrij. Mag een te hoog voertuig toch inrijden?",
+        "choices": [
+          {
+            "text": "Nee, het verbod blijft gelden",
+            "is_correct": true
+          },
+          {
+            "text": "Ja, als er geen ander verkeer is",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ook als de weg vrij is, blijft het verbod gelden voor voertuigen die hoger zijn dan de aangeduide hoogte."
+      },
+      "EN": {
+        "question": "The road is completely empty. May an overheight vehicle still enter?",
+        "choices": [
+          {
+            "text": "No, the prohibition remains in force",
+            "is_correct": true
+          },
+          {
+            "text": "Yes, if there is no other traffic",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Even if the road is empty, the prohibition remains in force for vehicles higher than the indicated height."
+      },
+      "FR": {
+        "question": "La route est complètement vide. Un véhicule trop haut peut-il quand même entrer ?",
+        "choices": [
+          {
+            "text": "Non, l’interdiction reste en vigueur",
+            "is_correct": true
+          },
+          {
+            "text": "Oui, s’il n’y a pas d’autre circulation",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Même si la route est vide, l’interdiction reste en vigueur pour les véhicules plus hauts que la hauteur indiquée."
+      },
+      "AR": {
+        "question": "الطريق خالٍ تمامًا. هل يجوز لمركبة أعلى من الحد أن تدخل رغم ذلك؟",
+        "choices": [
+          {
+            "text": "لا، يبقى الحظر ساريًا",
+            "is_correct": true
+          },
+          {
+            "text": "نعم، إذا لم تكن هناك حركة مرور أخرى",
+            "is_correct": false
+          }
+        ],
+        "explanation": "حتى إذا كان الطريق خاليًا، يبقى الحظر ساريًا على المركبات التي يزيد ارتفاعها على الحد المشار إليه."
+      }
+    }
+  },
+  {
+    "question_id": "C29_Q08",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Mag een te hoog voertuig deze weg kort gebruiken om snel door te rijden?",
+        "choices": [
+          {
+            "text": "Nee, het verbod blijft gelden",
+            "is_correct": true
+          },
+          {
+            "text": "Ja, als het maar voor een kort stuk is",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ook voor een korte doorgang blijft de toegang verboden voor voertuigen die hoger zijn dan de aangeduide hoogte."
+      },
+      "EN": {
+        "question": "May an overheight vehicle use this road briefly just to pass through quickly?",
+        "choices": [
+          {
+            "text": "No, the prohibition remains in force",
+            "is_correct": true
+          },
+          {
+            "text": "Yes, if it is only for a short distance",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Even for a short passage, access remains prohibited for vehicles higher than the indicated height."
+      },
+      "FR": {
+        "question": "Un véhicule trop haut peut-il utiliser brièvement cette route juste pour passer rapidement ?",
+        "choices": [
+          {
+            "text": "Non, l’interdiction reste en vigueur",
+            "is_correct": true
+          },
+          {
+            "text": "Oui, si ce n’est que pour une courte distance",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Même pour un passage bref, l’accès reste interdit aux véhicules plus hauts que la hauteur indiquée."
+      },
+      "AR": {
+        "question": "هل يجوز لمركبة أعلى من الحد استخدام هذا الطريق لمسافة قصيرة فقط من أجل المرور السريع؟",
+        "choices": [
+          {
+            "text": "لا، يبقى الحظر ساريًا",
+            "is_correct": true
+          },
+          {
+            "text": "نعم، إذا كان ذلك لمسافة قصيرة فقط",
+            "is_correct": false
+          }
+        ],
+        "explanation": "حتى في حالة المرور القصير، يبقى الدخول ممنوعًا على المركبات التي يزيد ارتفاعها على الحد المشار إليه."
+      }
+    }
+  }
 ]

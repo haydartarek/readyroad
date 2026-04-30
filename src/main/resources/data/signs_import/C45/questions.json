@@ -1,10 +1,602 @@
-﻿[
-  {"question_id":"C45_Q01","type":"WHAT_DOES_IT_MEAN","difficulty":"EASY","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Wat betekent dit verkeersbord?","choices":[{"text":"Einde van de door bord C43 oplegde snelheidsbeperking","is_correct":true},{"text":"Begin van de snelheidsbeperking van 90 km/h","is_correct":false},{"text":"Aanbevolen snelheid voor het volgende wegvak","is_correct":false}],"explanation":"C45 heft de snelheidsbeperking op die door het voorgaande bord C43 werd ingevoerd."},"EN":{"question":"What does this traffic sign mean?","choices":[{"text":"End of the speed limit imposed by sign C43","is_correct":true},{"text":"Start of the 90 km/h speed limit","is_correct":false},{"text":"Recommended speed for the next road section","is_correct":false}],"explanation":"C45 cancels the speed limit that was imposed by the preceding sign C43."},"FR":{"question":"Que signifie ce panneau ?","choices":[{"text":"Fin de la limitation de vitesse imposee par le panneau C43","is_correct":true},{"text":"Debut de la limitation de vitesse de 90 km/h","is_correct":false},{"text":"Vitesse recommandee pour le prochain troncon","is_correct":false}],"explanation":"C45 leve la limitation de vitesse qui avait ete imposee par le panneau C43 precedent."},"AR":{"question":"Ù…Ø§Ø°Ø§ ØªØ¹Ù†ÙŠ Ù„Ø§ÙØªØ© Ø§Ù„Ù…Ø±ÙˆØ± Ù‡Ø°Ù‡ØŸ","choices":[{"text":"Ù†Ù‡Ø§ÙŠØ© Ø­Ø¯ Ø§Ù„Ø³Ø±Ø¹Ø© Ø§Ù„Ù…ÙØ±ÙˆØ¶ Ø¨Ø§Ù„Ù„Ø§ÙØªØ© C43","is_correct":true},{"text":"Ø¨Ø¯Ø§ÙŠØ© Ø­Ø¯ Ø§Ù„Ø³Ø±Ø¹Ø© 90 ÙƒÙ…/Ø³","is_correct":false},{"text":"Ø§Ù„Ø³Ø±Ø¹Ø© Ø§Ù„Ù…ÙˆØµÙ‰ Ø¨Ù‡Ø§ Ù„Ù„Ù…Ù‚Ø·Ø¹ Ø§Ù„ØªØ§Ù„ÙŠ Ù…Ù† Ø§Ù„Ø·Ø±ÙŠÙ‚","is_correct":false}],"explanation":"ØªÙ„ØºÙŠ C45 Ø­Ø¯ Ø§Ù„Ø³Ø±Ø¹Ø© Ø§Ù„Ø°ÙŠ ÙØ±Ø¶ØªÙ‡ Ø§Ù„Ù„Ø§ÙØªØ© C43 Ø§Ù„Ø³Ø§Ø¨Ù‚Ø©."}}},
-  {"question_id":"C45_Q02","type":"WHICH_SIGN","difficulty":"EASY","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Tot welke categorie behoort dit bord?","choices":[{"text":"Verbodsborden (C-reeks)","is_correct":true},{"text":"Gevaarsborden (A-reeks)","is_correct":false},{"text":"Gebodsborden (D-reeks)","is_correct":false}],"explanation":"Verbodsborden (C-reeks) zijn rond met rode rand. C45 is een eindbord binnen de C-reeks dat een eerdere beperking opheft."},"EN":{"question":"To which category does this sign belong?","choices":[{"text":"Prohibition signs (C-series)","is_correct":true},{"text":"Danger signs (A-series)","is_correct":false},{"text":"Mandatory signs (D-series)","is_correct":false}],"explanation":"Prohibition signs (C-series) are round with a red border. C45 is an end-sign within the C-series that cancels a previous restriction."},"FR":{"question":"A quelle categorie appartient ce panneau ?","choices":[{"text":"Panneaux d interdiction (serie C)","is_correct":true},{"text":"Panneaux de danger (serie A)","is_correct":false},{"text":"Panneaux d obligation (serie D)","is_correct":false}],"explanation":"Les panneaux d interdiction (serie C) sont ronds avec un bord rouge. C45 est un panneau de fin dans la serie C qui leve une restriction precedente."},"AR":{"question":"Ø§Ù„Ù‰ Ø§ÙŠ ÙØ¦Ø© ØªÙ†ØªÙ…ÙŠ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ","choices":[{"text":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø­Ø¸Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© C)","is_correct":true},{"text":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© A)","is_correct":false},{"text":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø§Ù„Ø²Ø§Ù… (Ø§Ù„Ø³Ù„Ø³Ù„Ø© D)","is_correct":false}],"explanation":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø­Ø¸Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© C) Ù…Ø³ØªØ¯ÙŠØ±Ø© Ø°Ø§Øª Ø­Ø¯ Ø§Ø­Ù…Ø±. C45 Ù„Ø§ÙØªØ© Ù†Ù‡Ø§ÙŠØ© Ø¶Ù…Ù† Ø§Ù„Ø³Ù„Ø³Ù„Ø© C ØªÙ„ØºÙŠ Ù‚ÙŠØ¯Ø§ Ø³Ø§Ø¨Ù‚Ø§."}}},
-  {"question_id":"C45_Q03","type":"HAZARD_IDENTIFICATION","difficulty":"EASY","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Welke snelheidslimiet geldt na bord C45 buiten de bebouwde kom?","choices":[{"text":"De wettelijke limiet voor het type weg: 90 km/h buiten de bebouwde kom","is_correct":true},{"text":"De snelheidslimiet van het voorgaande C43-bord","is_correct":false},{"text":"Er is geen limiet meer; u kunt rijden zo snel u wilt","is_correct":false}],"explanation":"Na C45 herleeft de wettelijke standaardlimiet voor dat wegtype. Buiten de bebouwde kom is dat 90 km/h."},"EN":{"question":"Which speed limit applies after sign C45 outside the built-up area?","choices":[{"text":"The legal limit for the road type: 90 km/h outside the built-up area","is_correct":true},{"text":"The speed limit of the preceding C43 sign","is_correct":false},{"text":"There is no limit anymore; you can drive as fast as you like","is_correct":false}],"explanation":"After C45 the legal default limit for that road type revives. Outside the built-up area that is 90 km/h."},"FR":{"question":"Quelle limitation de vitesse s applique apres le panneau C45 hors agglomeration ?","choices":[{"text":"La limite legale pour le type de route: 90 km/h hors agglomeration","is_correct":true},{"text":"La limitation de vitesse du panneau C43 precedent","is_correct":false},{"text":"Il n y a plus de limite; vous pouvez rouler aussi vite que vous voulez","is_correct":false}],"explanation":"Apres C45 la limite legale par defaut pour ce type de route reprend. Hors agglomeration c est 90 km/h."},"AR":{"question":"Ø§ÙŠ Ø­Ø¯ Ù„Ù„Ø³Ø±Ø¹Ø© ÙŠØ³Ø±ÙŠ Ø¨Ø¹Ø¯ Ù„Ø§ÙØªØ© C45 Ø®Ø§Ø±Ø¬ Ø§Ù„Ù…Ù†Ø·Ù‚Ø© Ø§Ù„Ø¹Ù…Ø±Ø§Ù†ÙŠØ©ØŸ","choices":[{"text":"Ø§Ù„Ø­Ø¯ Ø§Ù„Ù‚Ø§Ù†ÙˆÙ†ÙŠ Ù„Ù†ÙˆØ¹ Ø§Ù„Ø·Ø±ÙŠÙ‚: 90 ÙƒÙ…/Ø³ Ø®Ø§Ø±Ø¬ Ø§Ù„Ù…Ù†Ø·Ù‚Ø© Ø§Ù„Ø¹Ù…Ø±Ø§Ù†ÙŠØ©","is_correct":true},{"text":"Ø­Ø¯ Ø§Ù„Ø³Ø±Ø¹Ø© Ø§Ù„Ù…Ø­Ø¯Ø¯ ÙÙŠ Ù„Ø§ÙØªØ© C43 Ø§Ù„Ø³Ø§Ø¨Ù‚Ø©","is_correct":false},{"text":"Ù„Ø§ Ø­Ø¯ Ø¨Ø¹Ø¯ Ø§Ù„Ø¢Ù†Ø› ÙŠÙ…ÙƒÙ†Ùƒ Ø§Ù„Ø³ÙŠØ± Ø¨Ø§Ù„Ø³Ø±Ø¹Ø© Ø§Ù„ØªÙŠ ØªØ±ÙŠØ¯","is_correct":false}],"explanation":"Ø¨Ø¹Ø¯ C45 ÙŠØ¹ÙˆØ¯ Ø§Ù„Ø­Ø¯ Ø§Ù„Ù‚Ø§Ù†ÙˆÙ†ÙŠ Ø§Ù„Ø§ÙØªØ±Ø§Ø¶ÙŠ Ù„Ù†ÙˆØ¹ Ø§Ù„Ø·Ø±ÙŠÙ‚. Ø®Ø§Ø±Ø¬ Ø§Ù„Ù…Ù†Ø·Ù‚Ø© Ø§Ù„Ø¹Ù…Ø±Ø§Ù†ÙŠØ© ÙŠØ¨Ù„Øº 90 ÙƒÙ…/Ø³."}}},
-  {"question_id":"C45_Q04","type":"WHAT_MUST_YOU_DO","difficulty":"MEDIUM","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Wat is de eerste dingen die u moet controleren nadat u bord C45 passeert?","choices":[{"text":"Welke standaard snelheidslimiet nu van toepassing is op basis van het wegtype","is_correct":true},{"text":"Of er een nieuw C43-bord staat binnen 100 m","is_correct":false},{"text":"Of u uw snelheid met 10 km/h mag verhogen","is_correct":false}],"explanation":"Na C45 geldt de standaard wettelijke limiet voor het wegtype. U moet weten welke dat is om de juiste snelheid aan te houden."},"EN":{"question":"What is the first thing you must verify after passing sign C45?","choices":[{"text":"Which standard speed limit now applies based on the road type","is_correct":true},{"text":"Whether there is a new C43 sign within 100 m","is_correct":false},{"text":"Whether you may increase your speed by 10 km/h","is_correct":false}],"explanation":"After C45 the standard legal limit for the road type applies. You must know which that is to maintain the correct speed."},"FR":{"question":"Quelle est la premiere chose que vous devez verifier apres avoir depasse le panneau C45 ?","choices":[{"text":"Quelle limite de vitesse standard s applique maintenant en fonction du type de route","is_correct":true},{"text":"S il y a un nouveau panneau C43 dans les 100 m","is_correct":false},{"text":"Si vous pouvez augmenter votre vitesse de 10 km/h","is_correct":false}],"explanation":"Apres C45 la limite legale standard pour le type de route s applique. Vous devez savoir laquelle c est pour maintenir la vitesse correcte."},"AR":{"question":"Ù…Ø§ Ø§ÙˆÙ„ Ø´ÙŠØ¡ ÙŠØ¬Ø¨ Ø§Ù„ØªØ­Ù‚Ù‚ Ù…Ù†Ù‡ Ø¨Ø¹Ø¯ ØªØ¬Ø§ÙˆØ² Ù„Ø§ÙØªØ© C45ØŸ","choices":[{"text":"Ø§ÙŠ Ø­Ø¯ Ø³Ø±Ø¹Ø© Ù‚ÙŠØ§Ø³ÙŠ ÙŠØ³Ø±ÙŠ Ø§Ù„Ø¢Ù† Ø¨Ù†Ø§Ø¡Ù‹ Ø¹Ù„Ù‰ Ù†ÙˆØ¹ Ø§Ù„Ø·Ø±ÙŠÙ‚","is_correct":true},{"text":"Ù‡Ù„ ØªÙˆØ¬Ø¯ Ù„Ø§ÙØªØ© C43 Ø¬Ø¯ÙŠØ¯Ø© Ø®Ù„Ø§Ù„ 100 Ù…","is_correct":false},{"text":"Ù‡Ù„ ÙŠØ¬ÙˆØ² Ù„Ùƒ Ø²ÙŠØ§Ø¯Ø© Ø³Ø±Ø¹ØªÙƒ Ø¨Ù€10 ÙƒÙ…/Ø³","is_correct":false}],"explanation":"Ø¨Ø¹Ø¯ C45 ÙŠØ³Ø±ÙŠ Ø§Ù„Ø­Ø¯ Ø§Ù„Ù‚Ø§Ù†ÙˆÙ†ÙŠ Ø§Ù„Ø§ÙØªØ±Ø§Ø¶ÙŠ Ù„Ù†ÙˆØ¹ Ø§Ù„Ø·Ø±ÙŠÙ‚. ÙŠØ¬Ø¨ Ø§Ù† ØªØ¹Ø±Ù Ø§ÙŠÙ‡Ø§ Ù„ØªØ­Ø§ÙØ¸ Ø¹Ù„Ù‰ Ø§Ù„Ø³Ø±Ø¹Ø© Ø§Ù„ØµØ­ÙŠØ­Ø©."}}},
-  {"question_id":"C45_Q05","type":"WHAT_MUST_YOU_DO","difficulty":"MEDIUM","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Heft bord C45 ook andere verboden zoals een inhaalverbod op?","choices":[{"text":"Nee, C45 heft uitsluitend de snelheidsbeperking op; andere verboden blijven van kracht","is_correct":true},{"text":"Ja, C45 heft alle lokale verboden op","is_correct":false},{"text":"Ja, C45 heft ook het inhaalverbod op als dat op hetzelfde bord staat","is_correct":false}],"explanation":"C45 is specifiek voor snelheidsbeperkingen. Andere borden zoals C35 of C41 moeten apart worden opgeheven."},"EN":{"question":"Does sign C45 also cancel other prohibitions such as a no overtaking restriction?","choices":[{"text":"No, C45 cancels only the speed restriction; other prohibitions remain in force","is_correct":true},{"text":"Yes, C45 cancels all local prohibitions","is_correct":false},{"text":"Yes, C45 also cancels the overtaking prohibition if it is on the same sign","is_correct":false}],"explanation":"C45 is specific to speed restrictions. Other signs such as C35 or C41 must be separately cancelled."},"FR":{"question":"Le panneau C45 leve-t-il aussi d autres interdictions comme une interdiction de depassement ?","choices":[{"text":"Non, C45 leve uniquement la restriction de vitesse; les autres interdictions restent en vigueur","is_correct":true},{"text":"Oui, C45 leve toutes les interdictions locales","is_correct":false},{"text":"Oui, C45 leve aussi l interdiction de depassement si elle est sur le meme panneau","is_correct":false}],"explanation":"C45 est specifique aux restrictions de vitesse. Les autres panneaux comme C35 ou C41 doivent etre leves separement."},"AR":{"question":"Ù‡Ù„ ØªÙ„ØºÙŠ Ù„Ø§ÙØªØ© C45 Ø§ÙŠØ¶Ø§ Ø­Ø¸Ø±Ø§Øª Ø§Ø®Ø±Ù‰ Ù…Ø«Ù„ Ø­Ø¸Ø± Ø§Ù„ØªØ®Ø·ÙŠØŸ","choices":[{"text":"Ù„Ø§ØŒ ØªÙ„ØºÙŠ C45 ÙÙ‚Ø· Ù‚ÙŠØ¯ Ø§Ù„Ø³Ø±Ø¹Ø©Ø› Ø§Ù„Ø­Ø¸Ø±Ø§Øª Ø§Ù„Ø§Ø®Ø±Ù‰ ØªØ¨Ù‚Ù‰ Ø³Ø§Ø±ÙŠØ©","is_correct":true},{"text":"Ù†Ø¹Ù…ØŒ ØªÙ„ØºÙŠ C45 Ø¬Ù…ÙŠØ¹ Ø§Ù„Ø­Ø¸Ø± Ø§Ù„Ù…Ø­Ù„ÙŠ","is_correct":false},{"text":"Ù†Ø¹Ù…ØŒ ØªÙ„ØºÙŠ C45 Ø§ÙŠØ¶Ø§ Ø­Ø¸Ø± Ø§Ù„ØªØ®Ø·ÙŠ Ø§Ø°Ø§ ÙƒØ§Ù†Øª Ø¹Ù„Ù‰ Ù†ÙØ³ Ø§Ù„Ù„Ø§ÙØªØ©","is_correct":false}],"explanation":"C45 Ø®Ø§ØµØ© Ø¨Ù‚ÙŠÙˆØ¯ Ø§Ù„Ø³Ø±Ø¹Ø©. Ø§Ù„Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø§Ø®Ø±Ù‰ Ù…Ø«Ù„ C35 Ø§Ùˆ C41 ÙŠØ¬Ø¨ Ø§Ù„ØºØ§Ø¤Ù‡Ø§ Ø¨Ø´ÙƒÙ„ Ù…Ù†ÙØµÙ„."}}},
-  {"question_id":"C45_Q06","type":"WHAT_MUST_YOU_DO","difficulty":"MEDIUM","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Welk bord ging vooraf aan C45 en legde de snelheidsbeperking op die C45 nu opheft?","choices":[{"text":"Bord C43 (snelheidsbeperking)","is_correct":true},{"text":"Bord C35 (verbod tot inhalen)","is_correct":false},{"text":"Bord C1 (verboden toegang voor alle voertuigen)","is_correct":false}],"explanation":"C45 is het specifieke eindbord bij C43. C43 legt de beperking op en C45 heft hem op."},"EN":{"question":"Which sign preceded C45 and imposed the speed restriction that C45 now cancels?","choices":[{"text":"Sign C43 (speed limit)","is_correct":true},{"text":"Sign C35 (no overtaking)","is_correct":false},{"text":"Sign C1 (no entry for all vehicles)","is_correct":false}],"explanation":"C45 is the specific end-sign for C43. C43 imposes the restriction and C45 cancels it."},"FR":{"question":"Quel panneau precedait C45 et imposait la restriction de vitesse que C45 leve maintenant ?","choices":[{"text":"Panneau C43 (limitation de vitesse)","is_correct":true},{"text":"Panneau C35 (interdiction de depassement)","is_correct":false},{"text":"Panneau C1 (acces interdit a tous les vehicules)","is_correct":false}],"explanation":"C45 est le panneau de fin specifique pour C43. C43 impose la restriction et C45 la leve."},"AR":{"question":"Ø§ÙŠ Ù„Ø§ÙØªØ© Ø³Ø¨Ù‚Øª C45 ÙˆÙØ±Ø¶Øª Ù‚ÙŠØ¯ Ø§Ù„Ø³Ø±Ø¹Ø© Ø§Ù„Ø°ÙŠ ØªÙ„ØºÙŠÙ‡ C45 Ø§Ù„Ø¢Ù†ØŸ","choices":[{"text":"Ø§Ù„Ù„Ø§ÙØªØ© C43 (Ø­Ø¯ Ø§Ù„Ø³Ø±Ø¹Ø©)","is_correct":true},{"text":"Ø§Ù„Ù„Ø§ÙØªØ© C35 (Ø­Ø¸Ø± Ø§Ù„ØªØ®Ø·ÙŠ)","is_correct":false},{"text":"Ø§Ù„Ù„Ø§ÙØªØ© C1 (Ù…Ù…Ù†ÙˆØ¹ Ø§Ù„Ø¯Ø®ÙˆÙ„ Ù„Ø¬Ù…ÙŠØ¹ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª)","is_correct":false}],"explanation":"C45 Ù‡ÙŠ Ù„Ø§ÙØªØ© Ø§Ù„Ù†Ù‡Ø§ÙŠØ© Ø§Ù„Ù…Ø­Ø¯Ø¯Ø© Ù„Ù€C43. ØªÙØ±Ø¶ C43 Ø§Ù„Ù‚ÙŠØ¯ ÙˆØªÙ„ØºÙŠÙ‡ C45."}}},
-  {"question_id":"C45_Q07","type":"IS_IT_ALLOWED","difficulty":"HARD","is_critical":true,"show_sign":true,"i18n":{"NL":{"question":"Mag u na bord C45 onmiddellijk rijden met de maximumsnelheid voor het wegtype zonder acht te slaan op de verkeerssituatie?","choices":[{"text":"Nee, u mag de wettelijke maximum aanhouden maar moet altijd rijden naar omstandigheden","is_correct":true},{"text":"Ja, C45 maakt automatisch de volle wettelijke snelheid veilig","is_correct":false}],"explanation":"De wettelijke maximum is een plafond. De bestuurder blijft verplicht de snelheid aan te passen aan de situatie. Dit is een ernstige verkeersovertreding als u dit negeert."},"EN":{"question":"May you immediately drive at the maximum speed for the road type after sign C45 without regard to the traffic situation?","choices":[{"text":"No, you may maintain the legal maximum but must always drive according to circumstances","is_correct":true},{"text":"Yes, C45 automatically makes the full legal speed safe","is_correct":false}],"explanation":"The legal maximum is a ceiling. The driver remains obliged to adapt speed to the situation. This is a serious traffic offence if you ignore this."},"FR":{"question":"Pouvez-vous immediatement rouler a la vitesse maximale pour le type de route apres le panneau C45 sans tenir compte de la situation de circulation ?","choices":[{"text":"Non, vous pouvez maintenir le maximum legal mais devez toujours conduire selon les circonstances","is_correct":true},{"text":"Oui, C45 rend automatiquement la pleine vitesse legale securitaire","is_correct":false}],"explanation":"Le maximum legal est un plafond. Le conducteur reste oblige d adapter sa vitesse a la situation. Il s agit d une infraction grave au code de la route si vous ignorez cela."},"AR":{"question":"Ù‡Ù„ ÙŠØ¬ÙˆØ² Ù„Ùƒ Ø§Ù„Ø³ÙŠØ± ÙÙˆØ±Ø§ Ø¨Ø§Ù„Ø³Ø±Ø¹Ø© Ø§Ù„Ù‚ØµÙˆÙ‰ Ù„Ù†ÙˆØ¹ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø¨Ø¹Ø¯ Ù„Ø§ÙØªØ© C45 Ø¯ÙˆÙ† Ù…Ø±Ø§Ø¹Ø§Ø© ÙˆØ¶Ø¹ Ø§Ù„Ù…Ø±ÙˆØ±ØŸ","choices":[{"text":"Ù„Ø§ØŒ ÙŠØ¬ÙˆØ² Ù„Ùƒ Ø§Ù„Ø­ÙØ§Ø¸ Ø¹Ù„Ù‰ Ø§Ù„Ø­Ø¯ Ø§Ù„Ù‚Ø§Ù†ÙˆÙ†ÙŠ Ù„ÙƒÙ† ÙŠØ¬Ø¨ Ø¯Ø§Ø¦Ù…Ø§ Ø§Ù„Ø³ÙŠØ± Ø­Ø³Ø¨ Ø§Ù„Ø¸Ø±ÙˆÙ","is_correct":true},{"text":"Ù†Ø¹Ù…ØŒ ØªØ¬Ø¹Ù„ C45 ØªÙ„Ù‚Ø§Ø¦ÙŠØ§ Ø§Ù„Ø³Ø±Ø¹Ø© Ø§Ù„Ù‚Ø§Ù†ÙˆÙ†ÙŠØ© Ø§Ù„ÙƒØ§Ù…Ù„Ø© Ø¢Ù…Ù†Ø©","is_correct":false}],"explanation":"Ø§Ù„Ø­Ø¯ Ø§Ù„Ù‚Ø§Ù†ÙˆÙ†ÙŠ Ù‡Ùˆ Ø³Ù‚Ù. ÙŠØ¨Ù‚Ù‰ Ø§Ù„Ø³Ø§Ø¦Ù‚ Ù…Ù„Ø²Ù…Ø§ Ø¨Ø¶Ø¨Ø· Ø§Ù„Ø³Ø±Ø¹Ø© Ø­Ø³Ø¨ Ø§Ù„ÙˆØ¶Ø¹. Ù‡Ø°Ù‡ Ù…Ø®Ø§Ù„ÙØ© Ù…Ø±ÙˆØ±ÙŠØ© Ø®Ø·ÙŠØ±Ø© Ø§Ø°Ø§ ØªØ¬Ø§Ù‡Ù„Øª Ø°Ù„Ùƒ."}}},
-  {"question_id":"C45_Q08","type":"IS_IT_ALLOWED","difficulty":"HARD","is_critical":true,"show_sign":true,"i18n":{"NL":{"question":"Mag u voor bord C45 al versnellen naar de hogere standaardlimiet in anticipatie?","choices":[{"text":"Nee, de beperking van C43 geldt tot aan het bord C45; u mag pas versnellen na het passeren","is_correct":true},{"text":"Ja, u mag anticiperen en al versnellen als C45 in zicht is","is_correct":false}],"explanation":"C43 is van kracht tot het moment van het passeren van C45. Anticiperend versnellen valt onder de beperking van C43. Dit is een ernstige verkeersovertreding."},"EN":{"question":"May you already accelerate to the higher standard limit before sign C45 in anticipation?","choices":[{"text":"No, the C43 restriction applies up to sign C45; you may only accelerate after passing it","is_correct":true},{"text":"Yes, you may anticipate and accelerate when C45 is in sight","is_correct":false}],"explanation":"C43 is in force until the moment of passing C45. Anticipatory acceleration falls under the C43 restriction. This is a serious traffic offence."},"FR":{"question":"Pouvez-vous deja accelerer a la limite standard plus elevee avant le panneau C45 par anticipation ?","choices":[{"text":"Non, la restriction de C43 s applique jusqu au panneau C45; vous ne pouvez accelerer qu apres l avoir depasse","is_correct":true},{"text":"Oui, vous pouvez anticiper et accelerer quand C45 est en vue","is_correct":false}],"explanation":"C43 est en vigueur jusqu au moment du passage de C45. L acceleration anticipee entre dans la restriction de C43. Il s agit d une infraction grave au code de la route."},"AR":{"question":"Ù‡Ù„ ÙŠØ¬ÙˆØ² Ù„Ùƒ Ø§Ù„ØªØ³Ø§Ø±Ø¹ Ù…Ø³Ø¨Ù‚Ø§ Ù„Ù„Ø­Ø¯ Ø§Ù„Ø§ÙØªØ±Ø§Ø¶ÙŠ Ø§Ù„Ø§Ø¹Ù„Ù‰ Ù‚Ø¨Ù„ Ù„Ø§ÙØªØ© C45 Ø§Ø³ØªØ¨Ø§Ù‚Ø§ØŸ","choices":[{"text":"Ù„Ø§ØŒ ÙŠØ³Ø±ÙŠ Ù‚ÙŠØ¯ C43 Ø­ØªÙ‰ Ù„Ø§ÙØªØ© C45Ø› Ù„Ø§ ÙŠØ¬ÙˆØ² Ø§Ù„ØªØ³Ø§Ø±Ø¹ Ø§Ù„Ø§ Ø¨Ø¹Ø¯ ØªØ¬Ø§ÙˆØ²Ù‡Ø§","is_correct":true},{"text":"Ù†Ø¹Ù…ØŒ ÙŠØ¬ÙˆØ² Ù„Ùƒ Ø§Ù„Ø§Ø³ØªØ¨Ø§Ù‚ ÙˆØ§Ù„ØªØ³Ø§Ø±Ø¹ Ø­ÙŠÙ† ØªÙƒÙˆÙ† C45 ÙÙŠ Ø§Ù„Ø§ÙÙ‚","is_correct":false}],"explanation":"C43 Ø³Ø§Ø±ÙŠØ© Ø­ØªÙ‰ Ù„Ø­Ø¸Ø© ØªØ¬Ø§ÙˆØ² C45. Ø§Ù„ØªØ³Ø§Ø±Ø¹ Ø§Ù„Ø§Ø³ØªØ¨Ø§Ù‚ÙŠ ÙŠÙ‚Ø¹ Ø¶Ù…Ù† Ù‚ÙŠØ¯ C43. Ù‡Ø°Ù‡ Ù…Ø®Ø§Ù„ÙØ© Ù…Ø±ÙˆØ±ÙŠØ© Ø®Ø·ÙŠØ±Ø©."}}}
+[
+  {
+    "question_id": "C45_Q01",
+    "type": "WHAT_DOES_IT_MEAN",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat betekent dit verkeersbord met 50?",
+        "choices": [
+          {
+            "text": "Einde van de snelheidsbeperking van 50 km/u opgelegd door bord C43",
+            "is_correct": true
+          },
+          {
+            "text": "Begin van een snelheidsbeperking van 50 km/u",
+            "is_correct": false
+          },
+          {
+            "text": "U moet exact 50 km/u blijven rijden",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dit bord geeft aan dat de snelheidsbeperking van 50 km/u opgelegd door bord C43 eindigt."
+      },
+      "EN": {
+        "question": "What does this traffic sign with 50 mean?",
+        "choices": [
+          {
+            "text": "End of the 50 km/h speed limit imposed by sign C43",
+            "is_correct": true
+          },
+          {
+            "text": "Start of a 50 km/h speed limit",
+            "is_correct": false
+          },
+          {
+            "text": "You must continue driving exactly 50 km/h",
+            "is_correct": false
+          }
+        ],
+        "explanation": "This sign indicates that the 50 km/h speed limit imposed by sign C43 ends."
+      },
+      "FR": {
+        "question": "Que signifie ce panneau avec 50 ?",
+        "choices": [
+          {
+            "text": "Fin de la limitation de vitesse de 50 km/h imposée par le panneau C43",
+            "is_correct": true
+          },
+          {
+            "text": "Début d’une limitation de vitesse de 50 km/h",
+            "is_correct": false
+          },
+          {
+            "text": "Vous devez continuer à rouler exactement à 50 km/h",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ce panneau indique que la limitation de vitesse de 50 km/h imposée par le panneau C43 prend fin."
+      },
+      "AR": {
+        "question": "ما معنى هذه العلامة المرورية التي تحمل 50؟",
+        "choices": [
+          {
+            "text": "نهاية تحديد السرعة 50 كم/س الذي تفرضه العلامة C43",
+            "is_correct": true
+          },
+          {
+            "text": "بداية تحديد سرعة 50 كم/س",
+            "is_correct": false
+          },
+          {
+            "text": "يجب أن تواصل السير بسرعة 50 كم/س بالضبط",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تدل هذه العلامة على أن تحديد السرعة 50 كم/س الذي تفرضه العلامة C43 ينتهي."
+      }
+    }
+  },
+  {
+    "question_id": "C45_Q02",
+    "type": "HAZARD_IDENTIFICATION",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Welke snelheidsbeperking eindigt hier?",
+        "choices": [
+          {
+            "text": "De snelheidsbeperking van 50 km/u",
+            "is_correct": true
+          },
+          {
+            "text": "De snelheidsbeperking van 30 km/u",
+            "is_correct": false
+          },
+          {
+            "text": "De snelheidsbeperking van 70 km/u",
+            "is_correct": false
+          }
+        ],
+        "explanation": "De snelheidsbeperking die hier eindigt, is 50 km/u."
+      },
+      "EN": {
+        "question": "Which speed limit ends here?",
+        "choices": [
+          {
+            "text": "The 50 km/h speed limit",
+            "is_correct": true
+          },
+          {
+            "text": "The 30 km/h speed limit",
+            "is_correct": false
+          },
+          {
+            "text": "The 70 km/h speed limit",
+            "is_correct": false
+          }
+        ],
+        "explanation": "The speed limit that ends here is 50 km/h."
+      },
+      "FR": {
+        "question": "Quelle limitation de vitesse prend fin ici ?",
+        "choices": [
+          {
+            "text": "La limitation de vitesse de 50 km/h",
+            "is_correct": true
+          },
+          {
+            "text": "La limitation de vitesse de 30 km/h",
+            "is_correct": false
+          },
+          {
+            "text": "La limitation de vitesse de 70 km/h",
+            "is_correct": false
+          }
+        ],
+        "explanation": "La limitation de vitesse qui prend fin ici est de 50 km/h."
+      },
+      "AR": {
+        "question": "أي تحديد سرعة ينتهي هنا؟",
+        "choices": [
+          {
+            "text": "تحديد السرعة 50 كم/س",
+            "is_correct": true
+          },
+          {
+            "text": "تحديد السرعة 30 كم/س",
+            "is_correct": false
+          },
+          {
+            "text": "تحديد السرعة 70 كم/س",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تحديد السرعة الذي ينتهي هنا هو 50 كم/س."
+      }
+    }
+  },
+  {
+    "question_id": "C45_Q03",
+    "type": "HAZARD_IDENTIFICATION",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat verandert er vanaf dit bord?",
+        "choices": [
+          {
+            "text": "De opgelegde beperking van 50 km/u geldt vanaf hier niet meer",
+            "is_correct": true
+          },
+          {
+            "text": "De beperking van 50 km/u begint vanaf hier",
+            "is_correct": false
+          },
+          {
+            "text": "Vanaf hier geldt verplicht exact 50 km/u",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Vanaf dit bord eindigt de eerder opgelegde beperking van 50 km/u."
+      },
+      "EN": {
+        "question": "What changes from this sign onward?",
+        "choices": [
+          {
+            "text": "The imposed 50 km/h limit no longer applies from here",
+            "is_correct": true
+          },
+          {
+            "text": "The 50 km/h limit starts from here",
+            "is_correct": false
+          },
+          {
+            "text": "From here exactly 50 km/h becomes mandatory",
+            "is_correct": false
+          }
+        ],
+        "explanation": "From this sign onward, the previously imposed 50 km/h limit ends."
+      },
+      "FR": {
+        "question": "Qu’est-ce qui change à partir de ce panneau ?",
+        "choices": [
+          {
+            "text": "La limitation imposée de 50 km/h ne s’applique plus à partir d’ici",
+            "is_correct": true
+          },
+          {
+            "text": "La limitation de 50 km/h commence à partir d’ici",
+            "is_correct": false
+          },
+          {
+            "text": "À partir d’ici 50 km/h exact devient obligatoire",
+            "is_correct": false
+          }
+        ],
+        "explanation": "À partir de ce panneau, la limitation de 50 km/h imposée auparavant prend fin."
+      },
+      "AR": {
+        "question": "ما الذي يتغير ابتداءً من هذه العلامة؟",
+        "choices": [
+          {
+            "text": "لم يعد تحديد 50 كم/س المفروض ساريًا ابتداءً من هنا",
+            "is_correct": true
+          },
+          {
+            "text": "يبدأ تحديد 50 كم/س ابتداءً من هنا",
+            "is_correct": false
+          },
+          {
+            "text": "يصبح من الواجب السير بسرعة 50 كم/س بالضبط من هنا",
+            "is_correct": false
+          }
+        ],
+        "explanation": "ابتداءً من هذه العلامة ينتهي تحديد السرعة 50 كم/س المفروض سابقًا."
+      }
+    }
+  },
+  {
+    "question_id": "C45_Q04",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U reed voordien in een zone met maximum 50 km/u en passeert nu dit bord. Wat betekent dit voor uw rijgedrag?",
+        "choices": [
+          {
+            "text": "De beperking van 50 km/u eindigt en u beoordeelt opnieuw de geldende situatie",
+            "is_correct": true
+          },
+          {
+            "text": "U moet voortaan altijd exact 50 km/u blijven rijden",
+            "is_correct": false
+          },
+          {
+            "text": "U moet onmiddellijk versnellen boven 50 km/u",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Na dit bord geldt de beperking van 50 km/u opgelegd door C43 niet meer."
+      },
+      "EN": {
+        "question": "You were previously in a 50 km/h zone and now pass this sign. What does this mean for your driving?",
+        "choices": [
+          {
+            "text": "The 50 km/h limit ends and you assess the applicable situation again",
+            "is_correct": true
+          },
+          {
+            "text": "You must continue driving exactly 50 km/h from now on",
+            "is_correct": false
+          },
+          {
+            "text": "You must immediately accelerate above 50 km/h",
+            "is_correct": false
+          }
+        ],
+        "explanation": "After this sign, the 50 km/h limit imposed by C43 no longer applies."
+      },
+      "FR": {
+        "question": "Vous rouliez auparavant dans une zone à 50 km/h et vous passez maintenant ce panneau. Qu’est-ce que cela signifie pour votre conduite ?",
+        "choices": [
+          {
+            "text": "La limitation de 50 km/h prend fin et vous réévaluez la situation applicable",
+            "is_correct": true
+          },
+          {
+            "text": "Vous devez désormais continuer à rouler exactement à 50 km/h",
+            "is_correct": false
+          },
+          {
+            "text": "Vous devez immédiatement accélérer au-dessus de 50 km/h",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Après ce panneau, la limitation de 50 km/h imposée par C43 ne s’applique plus."
+      },
+      "AR": {
+        "question": "كنت سابقًا داخل نطاق سرعة قصوى 50 كم/س والآن تجاوزت هذه العلامة. ماذا يعني ذلك لقيادتك؟",
+        "choices": [
+          {
+            "text": "ينتهي تحديد 50 كم/س وتعيد تقييم الوضع المطبق من جديد",
+            "is_correct": true
+          },
+          {
+            "text": "يجب أن تواصل من الآن السير بسرعة 50 كم/س بالضبط",
+            "is_correct": false
+          },
+          {
+            "text": "يجب أن تزيد سرعتك فورًا إلى أكثر من 50 كم/س",
+            "is_correct": false
+          }
+        ],
+        "explanation": "بعد هذه العلامة لا يعود تحديد 50 كم/س الذي فرضته C43 ساريًا."
+      }
+    }
+  },
+  {
+    "question_id": "C45_Q05",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U rijdt 45 km/u en passeert dit bord. Wat is juist?",
+        "choices": [
+          {
+            "text": "De beperking van 50 km/u eindigt vanaf dit punt",
+            "is_correct": true
+          },
+          {
+            "text": "U blijft verplicht onder 50 km/u door dit bord",
+            "is_correct": false
+          },
+          {
+            "text": "U moet onmiddellijk 50 km/u gaan rijden",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dit bord geeft het einde aan van de eerder opgelegde beperking van 50 km/u."
+      },
+      "EN": {
+        "question": "You are driving at 45 km/h and pass this sign. What is correct?",
+        "choices": [
+          {
+            "text": "The 50 km/h limit ends from this point",
+            "is_correct": true
+          },
+          {
+            "text": "You remain obliged by this sign to stay under 50 km/h",
+            "is_correct": false
+          },
+          {
+            "text": "You must immediately drive at 50 km/h",
+            "is_correct": false
+          }
+        ],
+        "explanation": "This sign marks the end of the previously imposed 50 km/h limit."
+      },
+      "FR": {
+        "question": "Vous roulez à 45 km/h et vous passez ce panneau. Quelle affirmation est correcte ?",
+        "choices": [
+          {
+            "text": "La limitation de 50 km/h prend fin à partir de ce point",
+            "is_correct": true
+          },
+          {
+            "text": "Vous restez obligé par ce panneau de rester sous 50 km/h",
+            "is_correct": false
+          },
+          {
+            "text": "Vous devez immédiatement rouler à 50 km/h",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ce panneau indique la fin de la limitation de 50 km/h imposée auparavant."
+      },
+      "AR": {
+        "question": "أنت تسير بسرعة 45 كم/س وتجاوزت هذه العلامة. ما العبارة الصحيحة؟",
+        "choices": [
+          {
+            "text": "ينتهي تحديد 50 كم/س ابتداءً من هذه النقطة",
+            "is_correct": true
+          },
+          {
+            "text": "تبقى ملزمًا بسبب هذه العلامة بالبقاء تحت 50 كم/س",
+            "is_correct": false
+          },
+          {
+            "text": "يجب أن تسير فورًا بسرعة 50 كم/س",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تدل هذه العلامة على نهاية تحديد 50 كم/س المفروض سابقًا."
+      }
+    }
+  },
+  {
+    "question_id": "C45_Q06",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Betekent dit bord dat de beperking van 50 km/u nog blijft gelden?",
+        "choices": [
+          {
+            "text": "Nee, dit bord duidt juist het einde van die beperking aan",
+            "is_correct": true
+          },
+          {
+            "text": "Ja, de beperking van 50 km/u blijft verder gelden",
+            "is_correct": false
+          }
+        ],
+        "explanation": "C45 duidt het einde aan van de snelheidsbeperking opgelegd door C43."
+      },
+      "EN": {
+        "question": "Does this sign mean that the 50 km/h limit continues to apply?",
+        "choices": [
+          {
+            "text": "No, this sign specifically marks the end of that limit",
+            "is_correct": true
+          },
+          {
+            "text": "Yes, the 50 km/h limit continues to apply",
+            "is_correct": false
+          }
+        ],
+        "explanation": "C45 indicates the end of the speed limit imposed by C43."
+      },
+      "FR": {
+        "question": "Ce panneau signifie-t-il que la limitation de 50 km/h continue à s’appliquer ?",
+        "choices": [
+          {
+            "text": "Non, ce panneau indique précisément la fin de cette limitation",
+            "is_correct": true
+          },
+          {
+            "text": "Oui, la limitation de 50 km/h continue à s’appliquer",
+            "is_correct": false
+          }
+        ],
+        "explanation": "C45 indique la fin de la limitation de vitesse imposée par C43."
+      },
+      "AR": {
+        "question": "هل تعني هذه العلامة أن تحديد 50 كم/س ما زال مستمرًا؟",
+        "choices": [
+          {
+            "text": "لا، فهذه العلامة تدل تحديدًا على نهاية هذا التحديد",
+            "is_correct": true
+          },
+          {
+            "text": "نعم، يبقى تحديد 50 كم/س ساريًا",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تدل C45 على نهاية تحديد السرعة الذي تفرضه C43."
+      }
+    }
+  },
+  {
+    "question_id": "C45_Q07",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Betekent dit bord dat u vanaf hier nog altijd verplicht bent maximaal 50 km/u te rijden?",
+        "choices": [
+          {
+            "text": "Nee, alleen de beperking van 50 km/u eindigt hier",
+            "is_correct": true
+          },
+          {
+            "text": "Ja, 50 km/u blijft verplicht zolang u geen ander bord ziet",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dit bord beëindigt de snelheidsbeperking van 50 km/u die door C43 was opgelegd."
+      },
+      "EN": {
+        "question": "Does this sign mean that from here on you are still obliged to drive at no more than 50 km/h?",
+        "choices": [
+          {
+            "text": "No, the 50 km/h limit ends here",
+            "is_correct": true
+          },
+          {
+            "text": "Yes, 50 km/h remains mandatory as long as you see no other sign",
+            "is_correct": false
+          }
+        ],
+        "explanation": "This sign ends the 50 km/h speed limit that was imposed by C43."
+      },
+      "FR": {
+        "question": "Ce panneau signifie-t-il qu’à partir d’ici vous êtes encore obligé de rouler à maximum 50 km/h ?",
+        "choices": [
+          {
+            "text": "Non, la limitation de 50 km/h prend fin ici",
+            "is_correct": true
+          },
+          {
+            "text": "Oui, 50 km/h reste obligatoire tant que vous ne voyez pas un autre panneau",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ce panneau met fin à la limitation de vitesse de 50 km/h imposée par C43."
+      },
+      "AR": {
+        "question": "هل تعني هذه العلامة أنك ما زلت ملزمًا من هنا بالسير بحد أقصى 50 كم/س؟",
+        "choices": [
+          {
+            "text": "لا، ينتهي هنا تحديد 50 كم/س",
+            "is_correct": true
+          },
+          {
+            "text": "نعم، يبقى 50 كم/س إلزاميًا ما دمت لا ترى علامة أخرى",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تنهي هذه العلامة تحديد السرعة 50 كم/س الذي كانت قد فرضته C43."
+      }
+    }
+  },
+  {
+    "question_id": "C45_Q08",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Heeft de vermelding \"km\" invloed op het einde van de beperking op dit bord?",
+        "choices": [
+          {
+            "text": "Nee, de vermelding \"km\" is facultatief",
+            "is_correct": true
+          },
+          {
+            "text": "Ja, zonder \"km\" geldt het bord niet",
+            "is_correct": false
+          }
+        ],
+        "explanation": "De vermelding \"km\" op verkeersbord C45 is facultatief."
+      },
+      "EN": {
+        "question": "Does the indication \"km\" affect the end of the restriction on this sign?",
+        "choices": [
+          {
+            "text": "No, the indication \"km\" is optional",
+            "is_correct": true
+          },
+          {
+            "text": "Yes, without \"km\" the sign does not apply",
+            "is_correct": false
+          }
+        ],
+        "explanation": "The indication \"km\" on sign C45 is optional."
+      },
+      "FR": {
+        "question": "La mention « km » influence-t-elle la fin de la limitation sur ce panneau ?",
+        "choices": [
+          {
+            "text": "Non, la mention « km » est facultative",
+            "is_correct": true
+          },
+          {
+            "text": "Oui, sans « km » le panneau ne s’applique pas",
+            "is_correct": false
+          }
+        ],
+        "explanation": "La mention « km » sur le panneau C45 est facultative."
+      },
+      "AR": {
+        "question": "هل يؤثر ذكر «km» على انتهاء التحديد في هذه العلامة؟",
+        "choices": [
+          {
+            "text": "لا، فذكر «km» اختياري",
+            "is_correct": true
+          },
+          {
+            "text": "نعم، بدون «km» لا تكون العلامة سارية",
+            "is_correct": false
+          }
+        ],
+        "explanation": "ذكر «km» على العلامة C45 اختياري."
+      }
+    }
+  }
 ]

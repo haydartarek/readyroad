@@ -1,27 +1,23 @@
 package com.readyroad.readyroadbackend.service;
 
 import com.readyroad.readyroadbackend.BaseIntegrationTest; // ✅ Add this import
-import com.readyroad.readyroadbackend.domain.entity.Category;
 import com.readyroad.readyroadbackend.domain.entity.ExamSimulation;
 import com.readyroad.readyroadbackend.domain.entity.ExamSimulationQuestion;
-import com.readyroad.readyroadbackend.domain.entity.QuizAnswerOption;
 import com.readyroad.readyroadbackend.domain.entity.QuizQuestion;
-import com.readyroad.readyroadbackend.domain.repository.CategoryRepository;
 import com.readyroad.readyroadbackend.domain.repository.ExamSimulationQuestionRepository;
 import com.readyroad.readyroadbackend.domain.repository.ExamSimulationRepository;
 import com.readyroad.readyroadbackend.domain.repository.QuizQuestionRepository;
-import com.readyroad.readyroadbackend.dto.exam.ExamStartResponse;
+import com.readyroad.readyroadbackend.exception.ActiveExamAlreadyExistsException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.context.annotation.Import;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
+import java.time.Instant;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.*;
@@ -47,11 +43,7 @@ class ExamServiceIntegrationTest extends BaseIntegrationTest { // ✅ Changed fr
     @Autowired
     private QuizQuestionRepository quizQuestionRepository;
 
-    @Autowired
-    private CategoryRepository categoryRepository;
-
     private Long testUserId;
-    private Category testCategory;
 
     @BeforeEach
     void setUp() {
@@ -60,7 +52,7 @@ class ExamServiceIntegrationTest extends BaseIntegrationTest { // ✅ Changed fr
         // ✅ BaseIntegrationTest already seeded 200 PUBLISHED questions
         long questionCount = quizQuestionRepository.count();
         assertThat(questionCount).isGreaterThanOrEqualTo(50)
-            .as("BaseIntegrationTest should have seeded at least 50 questions");
+                .as("BaseIntegrationTest should have seeded at least 50 questions");
     }
 
     @Test
@@ -98,8 +90,8 @@ class ExamServiceIntegrationTest extends BaseIntegrationTest { // ✅ Changed fr
 
         // When/Then - Try to start second exam
         assertThatThrownBy(() -> examService.startExamSimulation(testUserId))
-            .isInstanceOf(IllegalStateException.class)
-            .hasMessageContaining("already has an active exam");
+                .isInstanceOf(ActiveExamAlreadyExistsException.class)
+                .hasMessageContaining("already has an active exam");
     }
 
     @Test
@@ -112,8 +104,9 @@ class ExamServiceIntegrationTest extends BaseIntegrationTest { // ✅ Changed fr
 
         // When/Then
         assertThatThrownBy(() -> examService.startExamSimulation(testUserId))
-            .isInstanceOf(IllegalStateException.class)
-            .hasMessageContaining("Insufficient valid questions");
+                .isInstanceOf(IllegalStateException.class)
+                .hasMessageContaining("Insufficient")
+                .hasMessageContaining("questions");
     }
 
     @Test
@@ -136,6 +129,19 @@ class ExamServiceIntegrationTest extends BaseIntegrationTest { // ✅ Changed fr
     }
 
     @Test
+    @DisplayName("Story A1: canStartExam auto-expires stale in-progress exam")
+    void testCanStartExamAutoExpiresStaleExam() {
+        ExamSimulation exam = examService.startExamSimulation(testUserId);
+        exam.setExpiresAt(Instant.now().minusSeconds(60));
+        examRepository.saveAndFlush(exam);
+
+        assertThat(examService.canStartExam(testUserId)).isTrue();
+
+        ExamSimulation refreshed = examRepository.findById(exam.getId()).orElseThrow();
+        assertThat(refreshed.getStatus()).isEqualTo(ExamSimulation.ExamStatus.EXPIRED);
+    }
+
+    @Test
     @DisplayName("Story A1: Get active exam returns correct exam")
     void testGetActiveExam() {
         // Initially no active exam
@@ -147,5 +153,18 @@ class ExamServiceIntegrationTest extends BaseIntegrationTest { // ✅ Changed fr
 
         assertThat(activeExam).isNotNull();
         assertThat(activeExam.getId()).isEqualTo(exam.getId());
+    }
+
+    @Test
+    @DisplayName("Story A1: getActiveExam returns null and expires stale exam")
+    void testGetActiveExamAutoExpiresStaleExam() {
+        ExamSimulation exam = examService.startExamSimulation(testUserId);
+        exam.setExpiresAt(Instant.now().minusSeconds(60));
+        examRepository.saveAndFlush(exam);
+
+        assertThat(examService.getActiveExam(testUserId)).isNull();
+
+        ExamSimulation refreshed = examRepository.findById(exam.getId()).orElseThrow();
+        assertThat(refreshed.getStatus()).isEqualTo(ExamSimulation.ExamStatus.EXPIRED);
     }
 }

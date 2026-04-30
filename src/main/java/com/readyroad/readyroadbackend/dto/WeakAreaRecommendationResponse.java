@@ -1,6 +1,5 @@
 package com.readyroad.readyroadbackend.dto;
 
-import com.readyroad.readyroadbackend.domain.entity.QuizQuestion.DifficultyLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

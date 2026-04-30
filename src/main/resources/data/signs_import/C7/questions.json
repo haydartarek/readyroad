@@ -1,0 +1,602 @@
+[
+  {
+    "question_id": "C7_Q01",
+    "type": "WHAT_DOES_IT_MEAN",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat betekent dit verkeersbord?",
+        "choices": [
+          {
+            "text": "Verboden toegang voor bestuurders van motorfietsen",
+            "is_correct": true
+          },
+          {
+            "text": "Verboden toegang voor bromfietsers",
+            "is_correct": false
+          },
+          {
+            "text": "Verboden toegang voor alle bestuurders",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dit bord geeft aan dat bestuurders van motorfietsen deze doorgang niet mogen gebruiken."
+      },
+      "EN": {
+        "question": "What does this traffic sign mean?",
+        "choices": [
+          {
+            "text": "No entry for motorcycle riders",
+            "is_correct": true
+          },
+          {
+            "text": "No entry for moped riders",
+            "is_correct": false
+          },
+          {
+            "text": "No entry for all drivers",
+            "is_correct": false
+          }
+        ],
+        "explanation": "This sign indicates that motorcycle riders may not use this access."
+      },
+      "FR": {
+        "question": "Que signifie ce panneau de signalisation ?",
+        "choices": [
+          {
+            "text": "Accès interdit aux conducteurs de motocycles",
+            "is_correct": true
+          },
+          {
+            "text": "Accès interdit aux conducteurs de cyclomoteurs",
+            "is_correct": false
+          },
+          {
+            "text": "Accès interdit à tous les conducteurs",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ce panneau indique que les conducteurs de motocycles ne peuvent pas utiliser cet accès."
+      },
+      "AR": {
+        "question": "ما معنى هذه العلامة المرورية؟",
+        "choices": [
+          {
+            "text": "ممنوع دخول سائقي الدراجات النارية",
+            "is_correct": true
+          },
+          {
+            "text": "ممنوع دخول سائقي الدراجات النارية الصغيرة",
+            "is_correct": false
+          },
+          {
+            "text": "ممنوع الدخول لجميع السائقين",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تعني هذه العلامة أن سائقي الدراجات النارية لا يجوز لهم استخدام هذا المدخل."
+      }
+    }
+  },
+  {
+    "question_id": "C7_Q02",
+    "type": "HAZARD_IDENTIFICATION",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Op wie is dit verbod van toepassing?",
+        "choices": [
+          {
+            "text": "Op bestuurders van motorfietsen",
+            "is_correct": true
+          },
+          {
+            "text": "Op bestuurders van bromfietsen",
+            "is_correct": false
+          },
+          {
+            "text": "Op alle motorvoertuigen",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Het verbod is specifiek gericht op bestuurders van motorfietsen. Het geldt niet automatisch voor andere voertuigcategorieën."
+      },
+      "EN": {
+        "question": "To whom does this prohibition apply?",
+        "choices": [
+          {
+            "text": "To motorcycle riders",
+            "is_correct": true
+          },
+          {
+            "text": "To moped riders",
+            "is_correct": false
+          },
+          {
+            "text": "To all motor vehicles",
+            "is_correct": false
+          }
+        ],
+        "explanation": "The prohibition specifically applies to motorcycle riders. It does not automatically apply to other vehicle categories."
+      },
+      "FR": {
+        "question": "À qui s’applique cette interdiction ?",
+        "choices": [
+          {
+            "text": "Aux conducteurs de motocycles",
+            "is_correct": true
+          },
+          {
+            "text": "Aux conducteurs de cyclomoteurs",
+            "is_correct": false
+          },
+          {
+            "text": "À tous les véhicules à moteur",
+            "is_correct": false
+          }
+        ],
+        "explanation": "L’interdiction vise spécifiquement les conducteurs de motocycles. Elle ne s’applique pas automatiquement aux autres catégories de véhicules."
+      },
+      "AR": {
+        "question": "على من ينطبق هذا الحظر؟",
+        "choices": [
+          {
+            "text": "على سائقي الدراجات النارية",
+            "is_correct": true
+          },
+          {
+            "text": "على سائقي الدراجات النارية الصغيرة",
+            "is_correct": false
+          },
+          {
+            "text": "على جميع المركبات ذات المحرك",
+            "is_correct": false
+          }
+        ],
+        "explanation": "ينطبق هذا الحظر تحديداً على سائقي الدراجات النارية، ولا يمتد تلقائياً إلى بقية فئات المركبات."
+      }
+    }
+  },
+  {
+    "question_id": "C7_Q03",
+    "type": "HAZARD_IDENTIFICATION",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat verbiedt dit bord precies?",
+        "choices": [
+          {
+            "text": "De toegang voor motorfietsen",
+            "is_correct": true
+          },
+          {
+            "text": "De toegang voor bromfietsen",
+            "is_correct": false
+          },
+          {
+            "text": "De toegang voor alle tweewielers",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dit bord verbiedt de toegang voor motorfietsen. Het verbod wordt niet automatisch uitgebreid naar alle tweewielers."
+      },
+      "EN": {
+        "question": "What exactly does this sign prohibit?",
+        "choices": [
+          {
+            "text": "Entry for motorcycles",
+            "is_correct": true
+          },
+          {
+            "text": "Entry for mopeds",
+            "is_correct": false
+          },
+          {
+            "text": "Entry for all two-wheelers",
+            "is_correct": false
+          }
+        ],
+        "explanation": "This sign prohibits entry for motorcycles. The ban is not automatically extended to all two-wheelers."
+      },
+      "FR": {
+        "question": "Que interdit exactement ce panneau ?",
+        "choices": [
+          {
+            "text": "L’accès aux motocycles",
+            "is_correct": true
+          },
+          {
+            "text": "L’accès aux cyclomoteurs",
+            "is_correct": false
+          },
+          {
+            "text": "L’accès à tous les deux-roues",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ce panneau interdit l’accès aux motocycles. L’interdiction ne s’étend pas automatiquement à tous les deux-roues."
+      },
+      "AR": {
+        "question": "ما الذي تحظره هذه العلامة المرورية بالضبط؟",
+        "choices": [
+          {
+            "text": "دخول الدراجات النارية",
+            "is_correct": true
+          },
+          {
+            "text": "دخول الدراجات النارية الصغيرة",
+            "is_correct": false
+          },
+          {
+            "text": "دخول جميع المركبات ذات العجلتين",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تحظر هذه العلامة دخول الدراجات النارية تحديداً، ولا توسع الحظر تلقائياً إلى جميع المركبات ذات العجلتين."
+      }
+    }
+  },
+  {
+    "question_id": "C7_Q04",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U rijdt met een motorfiets en ziet dit bord. Wat doet u?",
+        "choices": [
+          {
+            "text": "Niet inrijden en een andere route nemen",
+            "is_correct": true
+          },
+          {
+            "text": "Toch inrijden als de weg vrij lijkt",
+            "is_correct": false
+          },
+          {
+            "text": "Langzaam doorrijden",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Omdat bestuurders van motorfietsen onder dit verbod vallen, kiest u een andere route."
+      },
+      "EN": {
+        "question": "You are riding a motorcycle and see this sign. What should you do?",
+        "choices": [
+          {
+            "text": "Do not enter and take another route",
+            "is_correct": true
+          },
+          {
+            "text": "Enter if the road looks clear",
+            "is_correct": false
+          },
+          {
+            "text": "Continue slowly",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Because motorcycle riders are included in this prohibition, you should choose another route."
+      },
+      "FR": {
+        "question": "Vous circulez à moto et voyez ce panneau. Que devez-vous faire ?",
+        "choices": [
+          {
+            "text": "Ne pas entrer et prendre un autre itinéraire",
+            "is_correct": true
+          },
+          {
+            "text": "Entrer si la route semble libre",
+            "is_correct": false
+          },
+          {
+            "text": "Continuer lentement",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Comme les conducteurs de motocycles sont visés par cette interdiction, il faut choisir un autre itinéraire."
+      },
+      "AR": {
+        "question": "أنت تقود دراجة نارية وترى هذه العلامة. ماذا ينبغي أن تفعل؟",
+        "choices": [
+          {
+            "text": "لا تدخل واختر طريقاً آخر",
+            "is_correct": true
+          },
+          {
+            "text": "ادخل إذا بدا الطريق خالياً",
+            "is_correct": false
+          },
+          {
+            "text": "تابع السير ببطء",
+            "is_correct": false
+          }
+        ],
+        "explanation": "بما أن سائقي الدراجات النارية مشمولون بهذا الحظر، فينبغي اختيار طريق آخر."
+      }
+    }
+  },
+  {
+    "question_id": "C7_Q05",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Uw bestemming ligt vlak achter dit bord. Wat doet u als bestuurder van een motorfiets?",
+        "choices": [
+          {
+            "text": "Een alternatieve route zoeken",
+            "is_correct": true
+          },
+          {
+            "text": "Toch doorrijden omdat het dichtbij is",
+            "is_correct": false
+          },
+          {
+            "text": "Alleen snel passeren",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ook als uw bestemming dichtbij ligt, blijft de toegangsbeperking voor motorfietsen gelden."
+      },
+      "EN": {
+        "question": "Your destination is just beyond this sign. What do you do as a motorcycle rider?",
+        "choices": [
+          {
+            "text": "Find an alternative route",
+            "is_correct": true
+          },
+          {
+            "text": "Continue because it is nearby",
+            "is_correct": false
+          },
+          {
+            "text": "Just pass through quickly",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Even if your destination is nearby, the access restriction for motorcycles still applies."
+      },
+      "FR": {
+        "question": "Votre destination se trouve juste après ce panneau. Que faites-vous en tant que conducteur de motocycle ?",
+        "choices": [
+          {
+            "text": "Chercher un autre itinéraire",
+            "is_correct": true
+          },
+          {
+            "text": "Continuer parce que c’est tout près",
+            "is_correct": false
+          },
+          {
+            "text": "Passer rapidement",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Même si la destination est proche, la restriction d’accès pour les motocycles reste valable."
+      },
+      "AR": {
+        "question": "تقع وجهتك مباشرة بعد هذه العلامة. ماذا تفعل بصفتك سائق دراجة نارية؟",
+        "choices": [
+          {
+            "text": "ابحث عن طريق بديل",
+            "is_correct": true
+          },
+          {
+            "text": "واصل السير لأنها قريبة",
+            "is_correct": false
+          },
+          {
+            "text": "اعبر بسرعة فقط",
+            "is_correct": false
+          }
+        ],
+        "explanation": "حتى لو كانت وجهتك قريبة، يبقى تقييد الدخول على الدراجات النارية قائماً."
+      }
+    }
+  },
+  {
+    "question_id": "C7_Q06",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Mag een bromfietser deze weg gebruiken ondanks dit bord?",
+        "choices": [
+          {
+            "text": "Ja, het bord richt zich op motorfietsen",
+            "is_correct": true
+          },
+          {
+            "text": "Nee, het bord verbiedt ook bromfietsen",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dit bord is gericht op motorfietsen. Een bromfiets valt daar niet automatisch onder."
+      },
+      "EN": {
+        "question": "May a moped rider use this road despite this sign?",
+        "choices": [
+          {
+            "text": "Yes, the sign targets motorcycles",
+            "is_correct": true
+          },
+          {
+            "text": "No, the sign also bans mopeds",
+            "is_correct": false
+          }
+        ],
+        "explanation": "This sign is aimed at motorcycles. A moped is not automatically included in that category."
+      },
+      "FR": {
+        "question": "Un conducteur de cyclomoteur peut-il utiliser cette route malgré ce panneau ?",
+        "choices": [
+          {
+            "text": "Oui, le panneau vise les motocycles",
+            "is_correct": true
+          },
+          {
+            "text": "Non, le panneau interdit aussi les cyclomoteurs",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ce panneau vise les motocycles. Un cyclomoteur n’est pas automatiquement compris dans cette catégorie."
+      },
+      "AR": {
+        "question": "هل يجوز لسائق دراجة نارية صغيرة استعمال هذا الطريق رغم هذه العلامة؟",
+        "choices": [
+          {
+            "text": "نعم، العلامة تستهدف الدراجات النارية",
+            "is_correct": true
+          },
+          {
+            "text": "لا، العلامة تحظر أيضاً الدراجات النارية الصغيرة",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تستهدف هذه العلامة الدراجات النارية، أما الدراجة النارية الصغيرة فلا تندرج تلقائياً ضمن هذه الفئة."
+      }
+    }
+  },
+  {
+    "question_id": "C7_Q07",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "De weg lijkt volledig leeg. Mag u er met een motorfiets toch inrijden?",
+        "choices": [
+          {
+            "text": "Nee, het bord blijft gelden ook als de weg leeg lijkt",
+            "is_correct": true
+          },
+          {
+            "text": "Ja, als er niemand is mag het",
+            "is_correct": false
+          }
+        ],
+        "explanation": "De zichtbare verkeerssituatie verandert de betekenis van het bord niet. Voor bestuurders van motorfietsen blijft deze toegang verboden."
+      },
+      "EN": {
+        "question": "The road looks completely empty. May you still enter on a motorcycle?",
+        "choices": [
+          {
+            "text": "No, the sign still applies even if the road looks empty",
+            "is_correct": true
+          },
+          {
+            "text": "Yes, if no one is there it is allowed",
+            "is_correct": false
+          }
+        ],
+        "explanation": "The visible traffic situation does not change the meaning of the sign. For motorcycle riders, this access remains prohibited."
+      },
+      "FR": {
+        "question": "La route semble complètement vide. Pouvez-vous quand même y entrer en motocycle ?",
+        "choices": [
+          {
+            "text": "Non, le panneau reste valable même si la route semble vide",
+            "is_correct": true
+          },
+          {
+            "text": "Oui, s’il n’y a personne c’est permis",
+            "is_correct": false
+          }
+        ],
+        "explanation": "La situation visible sur la route ne change pas la signification du panneau. Pour les conducteurs de motocycles, cet accès reste interdit."
+      },
+      "AR": {
+        "question": "يبدو الطريق خالياً تماماً. هل يجوز لك رغم ذلك الدخول بدراجة نارية؟",
+        "choices": [
+          {
+            "text": "لا، تبقى العلامة سارية حتى لو بدا الطريق خالياً",
+            "is_correct": true
+          },
+          {
+            "text": "نعم، إذا لم يكن هناك أحد فهذا مسموح",
+            "is_correct": false
+          }
+        ],
+        "explanation": "الوضع الظاهر على الطريق لا يغيّر معنى العلامة. فبالنسبة لسائقي الدراجات النارية يبقى هذا المدخل محظوراً."
+      }
+    }
+  },
+  {
+    "question_id": "C7_Q08",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Geldt dit bord ook voor een elektrische motorfiets?",
+        "choices": [
+          {
+            "text": "Ja, ook een elektrische motorfiets valt onder motorfietsen",
+            "is_correct": true
+          },
+          {
+            "text": "Nee, alleen motorfietsen met verbrandingsmotor vallen eronder",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Voor de betekenis van dit bord is het relevant dat het voertuig een motorfiets is. Het type aandrijving verandert die betekenis niet."
+      },
+      "EN": {
+        "question": "Does this sign also apply to an electric motorcycle?",
+        "choices": [
+          {
+            "text": "Yes, an electric motorcycle also falls under motorcycles",
+            "is_correct": true
+          },
+          {
+            "text": "No, only motorcycles with combustion engines are covered",
+            "is_correct": false
+          }
+        ],
+        "explanation": "For the meaning of this sign, what matters is that the vehicle is a motorcycle. The type of propulsion does not change that meaning."
+      },
+      "FR": {
+        "question": "Ce panneau s’applique-t-il aussi à une moto électrique ?",
+        "choices": [
+          {
+            "text": "Oui, une moto électrique relève aussi des motocycles",
+            "is_correct": true
+          },
+          {
+            "text": "Non, seules les motos à moteur thermique sont visées",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Pour la signification de ce panneau, l’élément important est que le véhicule soit un motocycle. Le mode de propulsion ne change pas cette signification."
+      },
+      "AR": {
+        "question": "هل تنطبق هذه العلامة أيضاً على دراجة نارية كهربائية؟",
+        "choices": [
+          {
+            "text": "نعم، الدراجة النارية الكهربائية تندرج أيضاً ضمن الدراجات النارية",
+            "is_correct": true
+          },
+          {
+            "text": "لا، المقصود فقط الدراجات ذات محرك الاحتراق",
+            "is_correct": false
+          }
+        ],
+        "explanation": "المهم في معنى هذه العلامة هو أن المركبة دراجة نارية. ونوع نظام الدفع لا يغيّر هذا المعنى."
+      }
+    }
+  }
+]

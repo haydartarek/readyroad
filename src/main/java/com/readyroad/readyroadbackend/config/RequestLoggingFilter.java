@@ -2,28 +2,26 @@ package com.readyroad.readyroadbackend.config;
 
 import jakarta.servlet.*;
 import jakarta.servlet.http.HttpServletRequest;
+import java.io.IOException;
+import java.util.Enumeration;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
-import java.io.IOException;
-import java.util.Enumeration;
-
 /**
- * Request Logging Filter
+ * Optional request logging filter for deep troubleshooting.
  *
- * Logs all incoming HTTP requests with details:
- * - Method and URI
- * - Headers
- * - Query parameters
- *
- * This filter runs BEFORE Spring Security filters to catch all requests.
+ * Disabled by default to avoid noisy logs in normal development and production.
+ * Enable it only when actively debugging request flow with:
+ * readyroad.request-logging.enabled=true
  *
  * @author ReadyRoad Team
  * @since 2026-01-23
  */
 @Slf4j
 @Component
+@ConditionalOnProperty(name = "readyroad.request-logging.enabled", havingValue = "true")
 @Order(1)  // Execute first
 public class RequestLoggingFilter implements Filter {
 
@@ -37,9 +35,9 @@ public class RequestLoggingFilter implements Filter {
         String uri = httpRequest.getRequestURI();
         String queryString = httpRequest.getQueryString();
 
-        log.info("════════════════════════════════════════");
-        log.info("🌐 INCOMING REQUEST");
-        log.info("════════════════════════════════════════");
+        log.info("========================================");
+        log.info("INCOMING REQUEST");
+        log.info("========================================");
         log.info("Method: {}", method);
         log.info("URI: {}", uri);
         if (queryString != null) {
@@ -49,7 +47,7 @@ public class RequestLoggingFilter implements Filter {
 
         // Log headers
         log.info("----------------------------------------");
-        log.info("📋 Request Headers:");
+        log.info("Request Headers:");
         Enumeration<String> headerNames = httpRequest.getHeaderNames();
         while (headerNames.hasMoreElements()) {
             String headerName = headerNames.nextElement();
@@ -62,7 +60,7 @@ public class RequestLoggingFilter implements Filter {
                 log.info("  {}: {}", headerName, headerValue);
             }
         }
-        log.info("════════════════════════════════════════");
+        log.info("========================================");
 
         // Continue the filter chain
         chain.doFilter(request, response);

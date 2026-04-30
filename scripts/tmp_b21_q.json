@@ -1,0 +1,615 @@
+[
+  {
+    "question_id": "B21_Q01",
+    "type": "WHAT_DOES_IT_MEAN",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat betekent dit verkeersbord?",
+        "choices": [
+          {
+            "text": "Smalle doorgang: u heeft voorrang op bestuurders die uit de tegenovergestelde richting komen",
+            "is_correct": true
+          },
+          {
+            "text": "Smalle doorgang: u moet voorrang verlenen aan bestuurders die uit de tegenovergestelde richting komen",
+            "is_correct": false
+          },
+          {
+            "text": "U moet wachten tot de doorgang vrij is voor alle verkeer",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dit bord geeft aan dat u voorrang heeft bij een smalle doorgang. Het tegemoetkomend verkeer moet wachten en u voorrang verlenen."
+      },
+      "EN": {
+        "question": "What does this traffic sign mean?",
+        "choices": [
+          {
+            "text": "Narrow passage: you have priority over drivers coming from the opposite direction",
+            "is_correct": true
+          },
+          {
+            "text": "Narrow passage: you must give way to drivers coming from the opposite direction",
+            "is_correct": false
+          },
+          {
+            "text": "You must wait until the passage is clear for all traffic",
+            "is_correct": false
+          }
+        ],
+        "explanation": "This sign indicates that you have priority at a narrow passage. Oncoming traffic must wait and give way to you."
+      },
+      "FR": {
+        "question": "Que signifie ce panneau de signalisation ?",
+        "choices": [
+          {
+            "text": "Passage étroit : vous avez la priorité sur les conducteurs venant en sens inverse",
+            "is_correct": true
+          },
+          {
+            "text": "Passage étroit : vous devez céder le passage aux conducteurs venant en sens inverse",
+            "is_correct": false
+          },
+          {
+            "text": "Vous devez attendre que le passage soit libre pour tout le trafic",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ce panneau indique que vous avez la priorité dans un passage étroit. Le trafic venant en sens inverse doit attendre et vous céder le passage."
+      },
+      "AR": {
+        "question": "ما معنى هذه العلامة المرورية؟",
+        "choices": [
+          {
+            "text": "ممر ضيق: لديك الأولوية على السائقين القادمين من الاتجاه المعاكس",
+            "is_correct": true
+          },
+          {
+            "text": "ممر ضيق: يجب عليك إعطاء الأولوية للسائقين القادمين من الاتجاه المعاكس",
+            "is_correct": false
+          },
+          {
+            "text": "يجب عليك الانتظار حتى يخلو الممر لجميع المركبات",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تشير هذه العلامة إلى أن لديك الأولوية عند ممر ضيق. يجب على حركة المرور المقابلة الانتظار وإعطاؤك الأولوية."
+      }
+    }
+  },
+  {
+    "question_id": "B21_Q02",
+    "type": "WHICH_SIGN",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": false,
+    "i18n": {
+      "NL": {
+        "question": "Welk bord geeft aan dat u bij een smalle doorgang voorrang heeft op het tegemoetkomend verkeer?",
+        "choices": [
+          {
+            "text": "Het bord dat aangeeft dat u bij een smalle doorgang voorrang heeft op het tegemoetkomend verkeer",
+            "is_correct": true
+          },
+          {
+            "text": "Het bord dat aangeeft dat u bij een smalle doorgang voorrang moet verlenen aan het tegemoetkomend verkeer",
+            "is_correct": false
+          },
+          {
+            "text": "Het bord dat aangeeft dat een hele weg een voorrangsweg is",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Het juiste bord geeft u voorrang bij een smalle doorgang. Het andere smalle-doorgangsbord verplicht u juist te wachten. Het bord voor een voorrangsweg geldt voor een hele weg, niet voor een enkele doorgang."
+      },
+      "EN": {
+        "question": "Which sign indicates that at a narrow passage you have priority over oncoming traffic?",
+        "choices": [
+          {
+            "text": "The sign that tells you that you have priority over oncoming traffic at a narrow passage",
+            "is_correct": true
+          },
+          {
+            "text": "The sign that tells you to give way to oncoming traffic at a narrow passage",
+            "is_correct": false
+          },
+          {
+            "text": "The sign that indicates an entire road is a priority road",
+            "is_correct": false
+          }
+        ],
+        "explanation": "The correct sign gives you priority at a narrow passage. The other narrow-passage sign requires you to wait instead. The priority-road sign applies to an entire road, not a single passage."
+      },
+      "FR": {
+        "question": "Quel panneau indique qu'au passage étroit vous avez la priorité sur le trafic venant en sens inverse ?",
+        "choices": [
+          {
+            "text": "Le panneau qui indique que vous avez la priorité sur le trafic venant en sens inverse dans un passage étroit",
+            "is_correct": true
+          },
+          {
+            "text": "Le panneau qui indique que vous devez céder le passage au trafic venant en sens inverse dans un passage étroit",
+            "is_correct": false
+          },
+          {
+            "text": "Le panneau qui indique qu'une route entière est prioritaire",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Le bon panneau vous donne la priorité dans un passage étroit. L'autre panneau de passage étroit vous oblige au contraire à attendre. Le panneau de route prioritaire s'applique à une route entière, pas à un seul passage."
+      },
+      "AR": {
+        "question": "أي علامة مرورية تدل على أن لك الأولوية على حركة المرور المقابلة عند ممر ضيق؟",
+        "choices": [
+          {
+            "text": "العلامة التي تدل على أن لك الأولوية على حركة المرور المقابلة عند ممر ضيق",
+            "is_correct": true
+          },
+          {
+            "text": "العلامة التي تدل على وجوب إعطاء الأولوية لحركة المرور المقابلة عند ممر ضيق",
+            "is_correct": false
+          },
+          {
+            "text": "العلامة التي تدل على أن طريقاً كاملاً هو طريق ذو أولوية",
+            "is_correct": false
+          }
+        ],
+        "explanation": "العلامة الصحيحة تمنحك الأولوية عند ممر ضيق. أما العلامة الأخرى الخاصة بالممر الضيق فتلزمك بالانتظار. وعلامة الطريق ذي الأولوية تنطبق على طريق كامل لا على ممر واحد."
+      }
+    }
+  },
+  {
+    "question_id": "B21_Q03",
+    "type": "HAZARD_IDENTIFICATION",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Welk gevaar blijft aanwezig ondanks de voorrang die dit bord u geeft?",
+        "choices": [
+          {
+            "text": "Een tegenligger die uw voorrang niet respecteert en toch de doorgang inrijdt",
+            "is_correct": true
+          },
+          {
+            "text": "Gevaar van rijbaan die smaller wordt dan aangegeven",
+            "is_correct": false
+          },
+          {
+            "text": "Geen enkel gevaar want u heeft het voorrangsrecht",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ook met dit bord moet u alert blijven. Een tegenligger kan uw voorrang negeren of de situatie verkeerd inschatten en de doorgang toch inrijden."
+      },
+      "EN": {
+        "question": "What hazard remains present despite the priority given by this sign?",
+        "choices": [
+          {
+            "text": "An oncoming driver who does not respect your priority and enters the passage anyway",
+            "is_correct": true
+          },
+          {
+            "text": "Risk of the road becoming narrower than indicated",
+            "is_correct": false
+          },
+          {
+            "text": "No hazard at all because you have the right of way",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Even with this sign you must remain alert. An oncoming driver may ignore your priority or misjudge the situation and enter the passage anyway."
+      },
+      "FR": {
+        "question": "Quel danger subsiste malgré la priorité que ce panneau vous donne ?",
+        "choices": [
+          {
+            "text": "Un conducteur venant en sens inverse qui ne respecte pas votre priorité et s'engage quand même dans le passage",
+            "is_correct": true
+          },
+          {
+            "text": "Risque que la route devienne plus étroite qu'indiqué",
+            "is_correct": false
+          },
+          {
+            "text": "Aucun danger car vous avez le droit de priorité",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Même avec ce panneau, vous devez rester vigilant. Un conducteur venant en sens inverse peut ignorer votre priorité ou mal évaluer la situation et s'engager quand même dans le passage."
+      },
+      "AR": {
+        "question": "ما الخطر الذي يبقى قائماً رغم الأولوية التي تمنحها لك هذه العلامة؟",
+        "choices": [
+          {
+            "text": "سائق مقابل لا يحترم أولويتك ويدخل الممر على أي حال",
+            "is_correct": true
+          },
+          {
+            "text": "خطر أن يصبح الطريق أضيق مما هو مشار إليه",
+            "is_correct": false
+          },
+          {
+            "text": "لا خطر على الإطلاق لأنك صاحب حق الأولوية",
+            "is_correct": false
+          }
+        ],
+        "explanation": "حتى مع هذه العلامة يجب أن تبقى يقظاً. قد يتجاهل سائق مقابل أولويتك أو يسيء تقدير الموقف ويدخل الممر على أي حال."
+      }
+    }
+  },
+  {
+    "question_id": "B21_Q04",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U nadert een smalle doorgang met dit bord en wilt die doorgang inrijden. Wat doet u?",
+        "choices": [
+          {
+            "text": "U rijdt de doorgang in; tegenliggers moeten wachten en u voorrang verlenen",
+            "is_correct": true
+          },
+          {
+            "text": "U wacht tot u zeker bent dat er geen tegenligger meer kan naderen",
+            "is_correct": false
+          },
+          {
+            "text": "U rijdt de doorgang in maar stopt als u een tegenligger ziet",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Met dit bord heeft u voorrang. U mag de doorgang inrijden; tegenliggers zijn verplicht te wachten. Wees wel alert voor bestuurders die uw voorrang niet respecteren."
+      },
+      "EN": {
+        "question": "You are approaching a narrow passage with this sign and want to enter it. What do you do?",
+        "choices": [
+          {
+            "text": "You enter the passage; oncoming drivers must wait and give way to you",
+            "is_correct": true
+          },
+          {
+            "text": "You wait until you are certain no oncoming driver can approach anymore",
+            "is_correct": false
+          },
+          {
+            "text": "You enter the passage but stop if you see an oncoming driver",
+            "is_correct": false
+          }
+        ],
+        "explanation": "With this sign you have priority. You may enter the passage; oncoming drivers are required to wait. However, stay alert for drivers who do not respect your priority."
+      },
+      "FR": {
+        "question": "Vous approchez d'un passage étroit avec ce panneau et voulez vous y engager. Que faites-vous ?",
+        "choices": [
+          {
+            "text": "Vous vous engagez dans le passage ; les conducteurs venant en sens inverse doivent attendre et vous céder le passage",
+            "is_correct": true
+          },
+          {
+            "text": "Vous attendez d'être certain qu'aucun conducteur ne peut plus approcher",
+            "is_correct": false
+          },
+          {
+            "text": "Vous entrez dans le passage mais vous arrêtez si vous voyez un véhicule venant en sens inverse",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Avec ce panneau, vous avez la priorité. Vous pouvez vous engager dans le passage ; les conducteurs venant en sens inverse sont obligés d'attendre. Restez toutefois vigilant face aux conducteurs qui ne respectent pas votre priorité."
+      },
+      "AR": {
+        "question": "أنت تقترب من ممر ضيق توجد عنده هذه العلامة وتريد الدخول فيه. ماذا تفعل؟",
+        "choices": [
+          {
+            "text": "تدخل الممر؛ يجب على السائقين المقابلين الانتظار وإعطاؤك الأولوية",
+            "is_correct": true
+          },
+          {
+            "text": "تنتظر حتى تتأكد من عدم اقتراب أي مركبة مقابلة",
+            "is_correct": false
+          },
+          {
+            "text": "تدخل الممر لكن تتوقف إذا رأيت مركبة مقابلة",
+            "is_correct": false
+          }
+        ],
+        "explanation": "مع هذه العلامة لديك الأولوية. يمكنك دخول الممر؛ السائقون المقابلون ملزمون بالانتظار. ابقَ يقظاً للسائقين الذين لا يحترمون أولويتك."
+      }
+    }
+  },
+  {
+    "question_id": "B21_Q05",
+    "type": "DRIVER_ACTION",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U rijdt in de smalle doorgang waarvoor dit bord u voorrang geeft. Halverwege ziet u een tegenligger die ook de doorgang is ingereden. Wat doet u?",
+        "choices": [
+          {
+            "text": "U geeft een signaal en stopt; de tegenligger heeft uw voorrang geschonden en moet achteruitzetten",
+            "is_correct": true
+          },
+          {
+            "text": "U rijdt door want u heeft voorrang en de tegenligger moet maar uitwijken",
+            "is_correct": false
+          },
+          {
+            "text": "U zet zelf achteruit want het is efficienter en veiliger",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ook al heeft u voorrang, u moet een botsing vermijden. U stopt, geeft een signaal aan de tegenligger die uw voorrang heeft geschonden en wacht tot hij achteruitgezet heeft."
+      },
+      "EN": {
+        "question": "You are in the narrow passage where this sign gives you priority. Halfway through you see an oncoming vehicle that also entered the passage. What do you do?",
+        "choices": [
+          {
+            "text": "You give a signal and stop; the oncoming driver violated your right of way and must reverse",
+            "is_correct": true
+          },
+          {
+            "text": "You continue because you have priority and the oncoming driver must swerve",
+            "is_correct": false
+          },
+          {
+            "text": "You reverse yourself because it is more efficient and safer",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Even though you have priority, you must avoid a collision. You stop, signal the oncoming driver who violated your right of way and wait until they reverse."
+      },
+      "FR": {
+        "question": "Vous êtes dans le passage étroit où ce panneau vous donne la priorité. À mi-chemin, vous voyez un véhicule venant en sens inverse qui s'est également engagé dans le passage. Que faites-vous ?",
+        "choices": [
+          {
+            "text": "Vous signalez et vous vous arrêtez ; le conducteur venant en sens inverse a violé votre droit de priorité et doit faire marche arrière",
+            "is_correct": true
+          },
+          {
+            "text": "Vous continuez car vous avez la priorité et le conducteur venant en sens inverse doit s'écarter",
+            "is_correct": false
+          },
+          {
+            "text": "Vous faites vous-même marche arrière car c'est plus efficace et plus sûr",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Même si vous avez la priorité, vous devez éviter une collision. Vous vous arrêtez, signalez au conducteur venant en sens inverse qu'il a violé votre droit de priorité et attendez qu'il fasse marche arrière."
+      },
+      "AR": {
+        "question": "أنت داخل الممر الضيق الذي تمنحك فيه هذه العلامة الأولوية. في المنتصف ترى مركبة مقابلة دخلت الممر أيضاً. ماذا تفعل؟",
+        "choices": [
+          {
+            "text": "ترسل إشارة وتتوقف؛ السائق المقابل انتهك حق أولويتك ويجب أن يتراجع",
+            "is_correct": true
+          },
+          {
+            "text": "تستمر لأنك صاحب الأولوية والسائق المقابل يجب أن يتجنب",
+            "is_correct": false
+          },
+          { "text": "تتراجع أنت لأنه أكثر كفاءة وأماناً", "is_correct": false }
+        ],
+        "explanation": "حتى لو كنت صاحب الأولوية يجب تجنب الاصطدام. تتوقف وترسل إشارة للسائق المقابل الذي انتهك حق أولويتك وتنتظر حتى يتراجع."
+      }
+    }
+  },
+  {
+    "question_id": "B21_Q06",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Dit bord staat aan uw kant van de smalle doorgang. Wat moet het tegemoetkomend verkeer aan de andere kant van de doorgang doen?",
+        "choices": [
+          {
+            "text": "Buiten de doorgang wachten tot u volledig gepasseerd bent, omdat het bord aan hun kant hen verplicht voorrang te verlenen",
+            "is_correct": true
+          },
+          {
+            "text": "Langzaam de doorgang inrijden en u laten beslissen wie uitwijkt",
+            "is_correct": false
+          },
+          {
+            "text": "Tegelijk met u de doorgang inrijden en rechts houden",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Aan het andere uiteinde van de smalle doorgang staat het andere smalle-doorgangsbord, het bord dat bestuurders verplicht te wachten en voorrang te verlenen. Die bestuurders moeten buiten de doorgang wachten tot u volledig gepasseerd bent."
+      },
+      "EN": {
+        "question": "This sign is on your side of the narrow passage. What must oncoming traffic on the other side of the passage do?",
+        "choices": [
+          {
+            "text": "Wait outside the passage until you have fully passed, because the sign on their side requires them to give way",
+            "is_correct": true
+          },
+          {
+            "text": "Slowly enter the passage and let you decide who should swerve",
+            "is_correct": false
+          },
+          {
+            "text": "Enter the passage at the same time as you and stay on the right side",
+            "is_correct": false
+          }
+        ],
+        "explanation": "At the other end of the narrow passage stands the other narrow-passage sign, the one that requires drivers to wait and give way. Those drivers must wait outside the passage until you have fully passed through."
+      },
+      "FR": {
+        "question": "Ce panneau se trouve de votre côté du passage étroit. Que doit faire le trafic venant en sens inverse de l'autre côté du passage ?",
+        "choices": [
+          {
+            "text": "Attendre hors du passage jusqu'à ce que vous soyez complètement passé, car le panneau de leur côté leur impose de céder le passage",
+            "is_correct": true
+          },
+          {
+            "text": "S'engager lentement dans le passage et vous laisser décider qui doit s'écarter",
+            "is_correct": false
+          },
+          {
+            "text": "S'engager dans le passage en même temps que vous et rester du côté droit",
+            "is_correct": false
+          }
+        ],
+        "explanation": "À l'autre extrémité du passage étroit se trouve l'autre panneau de passage étroit, celui qui oblige les conducteurs à attendre et à céder le passage. Ces conducteurs doivent attendre hors du passage jusqu'à ce que vous soyez complètement passé."
+      },
+      "AR": {
+        "question": "توجد هذه العلامة على جانبك من الممر الضيق. ماذا يجب على حركة المرور المقابلة عند الجانب الآخر من الممر فعله؟",
+        "choices": [
+          {
+            "text": "الانتظار خارج الممر حتى تمر بالكامل لأن العلامة الموجودة على جانبهم تلزمهم بإعطاء الأولوية",
+            "is_correct": true
+          },
+          {
+            "text": "الدخول ببطء إلى الممر وتركك تقرر من يجب عليه الانحراف",
+            "is_correct": false
+          },
+          {
+            "text": "دخول الممر في نفس الوقت الذي تدخل فيه مع البقاء على الجانب الأيمن",
+            "is_correct": false
+          }
+        ],
+        "explanation": "عند الطرف الآخر للممر الضيق توجد العلامة الأخرى الخاصة بالممر الضيق، وهي التي تلزم السائقين بالانتظار وإعطاء الأولوية. يجب على أولئك السائقين الانتظار خارج الممر حتى تمر بالكامل."
+      }
+    }
+  },
+  {
+    "question_id": "B21_Q07",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U nadert de smalle doorgang met dit bord. Er staat een voetganger op het trottoir naast de doorgang. Mag u de doorgang inrijden zonder te wachten?",
+        "choices": [
+          {
+            "text": "Ja, dit bord geeft u voorrang op tegenliggers in de rijbaan; een voetganger op het trottoir belemmert de doorgang niet",
+            "is_correct": true
+          },
+          {
+            "text": "Nee, u moet wachten totdat alle weggebruikers inclusief voetgangers volledig weg zijn",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dit bord regelt de voorrang op gemotoriseerde tegenliggers in de rijbaan. Een voetganger die op het trottoir wacht, belemmert de doorgang niet en vereist geen wachtbeurt."
+      },
+      "EN": {
+        "question": "You are approaching the narrow passage with this sign. A pedestrian is standing on the pavement next to the passage. May you enter the passage without waiting?",
+        "choices": [
+          {
+            "text": "Yes, this sign gives you priority over oncoming vehicles in the roadway; a pedestrian on the pavement does not obstruct the passage",
+            "is_correct": true
+          },
+          {
+            "text": "No, you must wait until all road users including pedestrians are completely clear",
+            "is_correct": false
+          }
+        ],
+        "explanation": "This sign governs priority over motorised oncoming traffic in the roadway. A pedestrian waiting on the pavement does not obstruct the passage and does not require a waiting turn."
+      },
+      "FR": {
+        "question": "Vous approchez du passage étroit avec ce panneau. Un piéton se tient sur le trottoir à côté du passage. Pouvez-vous entrer dans le passage sans attendre ?",
+        "choices": [
+          {
+            "text": "Oui, ce panneau vous donne la priorité sur les véhicules venant en sens inverse dans la chaussée ; un piéton sur le trottoir n'obstrue pas le passage",
+            "is_correct": true
+          },
+          {
+            "text": "Non, vous devez attendre que tous les usagers de la route y compris les piétons soient complètement dégagés",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ce panneau régit la priorité sur les véhicules motorisés venant en sens inverse dans la chaussée. Un piéton qui attend sur le trottoir n'obstrue pas le passage et ne nécessite pas d'attente."
+      },
+      "AR": {
+        "question": "أنت تقترب من الممر الضيق مع هذه العلامة. يقف أحد المشاة على الرصيف بجانب الممر. هل يجوز لك دخول الممر دون انتظار؟",
+        "choices": [
+          {
+            "text": "نعم، هذه العلامة تمنحك الأولوية على المركبات المقابلة في الطريق؛ وجود أحد المشاة على الرصيف لا يعيق الممر",
+            "is_correct": true
+          },
+          {
+            "text": "لا، يجب الانتظار حتى يخلو جميع مستخدمي الطريق بما فيهم المشاة",
+            "is_correct": false
+          }
+        ],
+        "explanation": "هذه العلامة تنظم الأولوية على المركبات ذات المحرك المقابلة في الطريق. وجود أحد المشاة على الرصيف لا يعيق الممر ولا يستوجب الانتظار."
+      }
+    }
+  },
+  {
+    "question_id": "B21_Q08",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Dit bord geeft u voorrang en u rijdt de smalle doorgang in. De tegenligger rijdt echter ook de doorgang in en weigert te stoppen. Mag u doorrijden en hem forceren te stoppen?",
+        "choices": [
+          {
+            "text": "Nee, ook al heeft u het recht aan uw zijde, u moet een botsing koste wat het kost vermijden en zelf stoppen indien nodig",
+            "is_correct": true
+          },
+          {
+            "text": "Ja, u heeft het wettelijk recht uw weg te vervolgen en de tegenligger draagt alle verantwoordelijkheid",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Het recht hebben en een botsing riskeren zijn twee verschillende dingen. U moet altijd een aanrijding vermijden, zelfs als dat betekent dat u stopt terwijl u in uw recht staat."
+      },
+      "EN": {
+        "question": "This sign gives you priority and you enter the narrow passage. However, the oncoming driver also enters the passage and refuses to stop. May you continue and force them to stop?",
+        "choices": [
+          {
+            "text": "No, even though you are in the right, you must avoid a collision at all costs and stop yourself if necessary",
+            "is_correct": true
+          },
+          {
+            "text": "Yes, you have the legal right to continue and the oncoming driver bears all responsibility",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Being in the right and risking a collision are two different things. You must always avoid a collision, even if that means stopping while you are legally correct."
+      },
+      "FR": {
+        "question": "Ce panneau vous donne la priorité et vous vous engagez dans le passage étroit. Cependant, le conducteur venant en sens inverse s'engage aussi dans le passage et refuse de s'arrêter. Pouvez-vous continuer et le forcer à s'arrêter ?",
+        "choices": [
+          {
+            "text": "Non, même si vous êtes dans votre droit, vous devez éviter une collision à tout prix et vous arrêter vous-même si nécessaire",
+            "is_correct": true
+          },
+          {
+            "text": "Oui, vous avez le droit légal de continuer et le conducteur venant en sens inverse porte toute la responsabilité",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Avoir le droit et risquer une collision sont deux choses différentes. Vous devez toujours éviter une collision, même si cela signifie vous arrêter alors que vous êtes dans votre droit."
+      },
+      "AR": {
+        "question": "تعطيك هذه العلامة الأولوية وتدخل الممر الضيق. لكن السائق المقابل يدخل الممر أيضاً ويرفض التوقف. هل يجوز لك الاستمرار وإجباره على التوقف؟",
+        "choices": [
+          {
+            "text": "لا، حتى لو كنت على حق يجب تجنب الاصطدام بأي ثمن والتوقف بنفسك إذا لزم",
+            "is_correct": true
+          },
+          {
+            "text": "نعم، لديك الحق القانوني في الاستمرار والسائق المقابل يتحمل كل المسؤولية",
+            "is_correct": false
+          }
+        ],
+        "explanation": "امتلاك الحق وتعريض نفسك لخطر الاصطدام أمران مختلفان. يجب دائماً تجنب الاصطدام حتى لو كان ذلك يعني التوقف بينما أنت على حق قانونياً."
+      }
+    }
+  }
+]

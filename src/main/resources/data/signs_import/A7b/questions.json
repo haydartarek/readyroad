@@ -1,4 +1,4 @@
-﻿[
+[
   {
     "question_id": "A7b_Q01",
     "type": "WHAT_DOES_IT_MEAN",
@@ -9,38 +9,74 @@
       "NL": {
         "question": "Wat betekent dit verkeersbord?",
         "choices": [
-          { "text": "Versmalling links", "is_correct": true },
-          { "text": "Rijbaanversmalling (beide zijden)", "is_correct": false },
-          { "text": "Versmalling rechts", "is_correct": false }
+          {
+            "text": "Rijbaanversmalling langs links",
+            "is_correct": true
+          },
+          {
+            "text": "Rijbaanversmalling (beide zijden)",
+            "is_correct": false
+          },
+          {
+            "text": "Versmalling rechts",
+            "is_correct": false
+          }
         ],
         "explanation": "Dit bord waarschuwt voor een versmalling van de rijbaan aan de linkerkant. De linkerrijstrook wordt smaller, wat invloed heeft op tegemoetkomend verkeer."
       },
       "EN": {
         "question": "What does this traffic sign mean?",
         "choices": [
-          { "text": "Road narrows on the left", "is_correct": true },
-          { "text": "Road narrows (both sides)", "is_correct": false },
-          { "text": "Road narrows on the right", "is_correct": false }
+          {
+            "text": "Road narrows on the left",
+            "is_correct": true
+          },
+          {
+            "text": "Road narrows (both sides)",
+            "is_correct": false
+          },
+          {
+            "text": "Road narrows on the right",
+            "is_correct": false
+          }
         ],
-        "explanation": "This sign warns of a road narrowing on the left side. The left lane narrows, affecting oncoming traffic."
+        "explanation": "This sign warns that the road narrows on the left. Oncoming traffic may encroach into your lane because of the narrowing."
       },
       "FR": {
         "question": "Que signifie ce panneau de signalisation ?",
         "choices": [
-          { "text": "RÃ©trÃ©cissement Ã  gauche", "is_correct": true },
-          { "text": "RÃ©trÃ©cissement des deux cÃ´tÃ©s", "is_correct": false },
-          { "text": "RÃ©trÃ©cissement Ã  droite", "is_correct": false }
+          {
+            "text": "Chaussée rétrécie à gauche",
+            "is_correct": true
+          },
+          {
+            "text": "Rétrécissement des deux côtés",
+            "is_correct": false
+          },
+          {
+            "text": "Rétrécissement à droite",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ce panneau avertit d'un rÃ©trÃ©cissement de la chaussÃ©e cÃ´tÃ© gauche. La voie de gauche rÃ©trÃ©cit, ce qui affecte la circulation venant en sens inverse."
+        "explanation": "Ce panneau avertit d'un rétrécissement de la chaussée côté gauche. La voie de gauche rétrécit, ce qui affecte la circulation venant en sens inverse."
       },
       "AR": {
-        "question": "Ù…Ø§ Ù…Ø¹Ù†Ù‰ Ù„Ø§ÙØªØ© Ø§Ù„Ù…Ø±ÙˆØ± Ù‡Ø°Ù‡ØŸ",
+        "question": "ما معنى هذه العلامة؟",
         "choices": [
-          { "text": "ØªØ¶ÙŠÙ‚ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ù…Ù† Ø§Ù„ÙŠØ³Ø§Ø±", "is_correct": true },
-          { "text": "ØªØ¶ÙŠÙ‚ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ù…Ù† ÙƒÙ„Ø§ Ø§Ù„Ø¬Ø§Ù†Ø¨ÙŠÙ†", "is_correct": false },
-          { "text": "ØªØ¶ÙŠÙ‚ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ù…Ù† Ø§Ù„ÙŠÙ…ÙŠÙ†", "is_correct": false }
+          {
+            "text": "تضييق الطريق من اليسار",
+            "is_correct": true
+          },
+          {
+            "text": "تضييق الطريق من كلا الجانبين",
+            "is_correct": false
+          },
+          {
+            "text": "تضييق الطريق من اليمين",
+            "is_correct": false
+          }
         ],
-        "explanation": "ØªØ­Ø°Ø± Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ© Ù…Ù† ØªØ¶ÙŠÙ‚ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ù…Ù† Ø§Ù„Ø¬Ø§Ù†Ø¨ Ø§Ù„Ø£ÙŠØ³Ø±. ÙŠØ¶ÙŠÙ‚ Ø§Ù„Ù…Ø³Ø§Ø± Ø§Ù„Ø£ÙŠØ³Ø± Ù…Ù…Ø§ ÙŠØ¤Ø«Ø± Ø¹Ù„Ù‰ Ø§Ù„Ù…Ø±ÙˆØ± Ø§Ù„Ù‚Ø§Ø¯Ù…."
+        "explanation": "تشير هذه العلامة إلى تضييق الطريق من الجهة اليسرى. قد يقترب المرور القادم من مسارك بسبب هذا التضييق."
       }
     }
   },
@@ -54,38 +90,74 @@
       "NL": {
         "question": "Tot welke categorie verkeerstekens behoort dit bord?",
         "choices": [
-          { "text": "Gevaarsborden (A-reeks)", "is_correct": true },
-          { "text": "Voorrangsborden (B-reeks)", "is_correct": false },
-          { "text": "Verbodsborden (C-reeks)", "is_correct": false }
+          {
+            "text": "Gevaarsborden",
+            "is_correct": true
+          },
+          {
+            "text": "Voorrangsborden",
+            "is_correct": false
+          },
+          {
+            "text": "Verbodsborden",
+            "is_correct": false
+          }
         ],
-        "explanation": "Dit bord behoort tot de gevaarsborden (A-reeks). Alle gevaarsborden zijn driehoekig met een rode rand op een witte achtergrond."
+        "explanation": "Dit bord behoort tot de gevaarsborden. Alle gevaarsborden zijn driehoekig met een rode rand op een witte achtergrond."
       },
       "EN": {
         "question": "To which category of traffic signs does this sign belong?",
         "choices": [
-          { "text": "Danger signs (A-series)", "is_correct": true },
-          { "text": "Priority signs (B-series)", "is_correct": false },
-          { "text": "Prohibition signs (C-series)", "is_correct": false }
+          {
+            "text": "Warning signs",
+            "is_correct": true
+          },
+          {
+            "text": "Priority signs",
+            "is_correct": false
+          },
+          {
+            "text": "Prohibition signs",
+            "is_correct": false
+          }
         ],
-        "explanation": "This sign belongs to the danger signs (A-series). All danger signs are triangular with a red border on a white background."
+        "explanation": "This sign belongs to the warning signs. All warning signs are triangular with a red border on a white background."
       },
       "FR": {
-        "question": "Ã€ quelle catÃ©gorie de panneaux de signalisation ce panneau appartient-il ?",
+        "question": "À quelle catégorie de panneaux de signalisation ce panneau appartient-il ?",
         "choices": [
-          { "text": "Panneaux de danger (sÃ©rie A)", "is_correct": true },
-          { "text": "Panneaux de prioritÃ© (sÃ©rie B)", "is_correct": false },
-          { "text": "Panneaux d'interdiction (sÃ©rie C)", "is_correct": false }
+          {
+            "text": "Panneaux de danger",
+            "is_correct": true
+          },
+          {
+            "text": "Panneaux de priorité",
+            "is_correct": false
+          },
+          {
+            "text": "Panneaux d'interdiction",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ce panneau appartient aux panneaux de danger (sÃ©rie A). Tous les panneaux de danger sont triangulaires avec une bordure rouge sur fond blanc."
+        "explanation": "Ce panneau appartient aux panneaux de danger. Tous les panneaux de danger sont triangulaires avec une bordure rouge sur fond blanc."
       },
       "AR": {
-        "question": "Ø¥Ù„Ù‰ Ø£ÙŠ ÙØ¦Ø© Ù…Ù† Ù„Ø§ÙØªØ§Øª Ø§Ù„Ù…Ø±ÙˆØ± ØªÙ†ØªÙ…ÙŠ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ",
+        "question": "إلى أي فئة تُصنَّف هذه العلامة؟",
         "choices": [
-          { "text": "Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± (Ø³Ù„Ø³Ù„Ø© A)", "is_correct": true },
-          { "text": "Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© (Ø³Ù„Ø³Ù„Ø© B)", "is_correct": false },
-          { "text": "Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø­Ø¸Ø± (Ø³Ù„Ø³Ù„Ø© C)", "is_correct": false }
+          {
+            "text": "علامات الخطر",
+            "is_correct": true
+          },
+          {
+            "text": "علامات الأولوية",
+            "is_correct": false
+          },
+          {
+            "text": "علامات الحظر",
+            "is_correct": false
+          }
         ],
-        "explanation": "ØªÙ†ØªÙ…ÙŠ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ© Ø¥Ù„Ù‰ Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± (Ø³Ù„Ø³Ù„Ø© A). Ø¬Ù…ÙŠØ¹ Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± Ù…Ø«Ù„Ø«Ø© Ø¨Ø­Ø§ÙØ© Ø­Ù…Ø±Ø§Ø¡ Ø¹Ù„Ù‰ Ø®Ù„ÙÙŠØ© Ø¨ÙŠØ¶Ø§Ø¡."
+        "explanation": "تنتمي هذه العلامة إلى علامات الخطر. جميع علامات الخطر مثلثة بحافة حمراء على خلفية بيضاء."
       }
     }
   },
@@ -99,38 +171,74 @@
       "NL": {
         "question": "Welk gevaar kondigt dit bord aan?",
         "choices": [
-          { "text": "Tegemoetkomend verkeer wordt door de versmalling links naar uw rijbaan gedrongen", "is_correct": true },
-          { "text": "Uw rijbaan versmalt aan de rechterkant en u moet invoegen", "is_correct": false },
-          { "text": "Een gevaarlijke kruising met beperkt zicht aan de linkerkant", "is_correct": false }
+          {
+            "text": "Tegemoetkomend verkeer wordt door de versmalling links naar uw rijbaan gedrongen",
+            "is_correct": true
+          },
+          {
+            "text": "Uw rijbaan versmalt aan de rechterkant en u moet invoegen",
+            "is_correct": false
+          },
+          {
+            "text": "Een gevaarlijke kruising met beperkt zicht aan de linkerkant",
+            "is_correct": false
+          }
         ],
-        "explanation": "Bij een versmalling aan de linkerkant wordt tegemoetkomend verkeer (dat aan de linker kant zit vanuit uw richting) mogelijk naar uw rijbaan gedrongen."
+        "explanation": "Bij een versmalling aan de linkerkant wordt tegemoetkomend verkeer mogelijk naar uw rijbaan gedrongen."
       },
       "EN": {
-        "question": "What hazard does this sign announce?",
+        "question": "What hazard does this sign indicate?",
         "choices": [
-          { "text": "Oncoming traffic is pushed into your lane by the left-side narrowing", "is_correct": true },
-          { "text": "Your lane narrows on the right and you must merge", "is_correct": false },
-          { "text": "A dangerous intersection with limited visibility on the left", "is_correct": false }
+          {
+            "text": "Oncoming traffic may encroach into your lane because of the left-side narrowing",
+            "is_correct": true
+          },
+          {
+            "text": "Your lane narrows on the right and you must merge",
+            "is_correct": false
+          },
+          {
+            "text": "A dangerous intersection with limited visibility on the left",
+            "is_correct": false
+          }
         ],
-        "explanation": "With a narrowing on the left side, oncoming traffic (coming from the left from your perspective) may be pushed into your lane."
+        "explanation": "With a left-side narrowing, oncoming traffic may encroach into your lane."
       },
       "FR": {
         "question": "Quel danger ce panneau annonce-t-il ?",
         "choices": [
-          { "text": "Le trafic venant en sens inverse est poussÃ© dans votre voie par le rÃ©trÃ©cissement Ã  gauche", "is_correct": true },
-          { "text": "Votre voie rÃ©trÃ©cit Ã  droite et vous devez vous rabattre", "is_correct": false },
-          { "text": "Un carrefour dangereux avec visibilitÃ© limitÃ©e Ã  gauche", "is_correct": false }
+          {
+            "text": "Le trafic venant en sens inverse est poussé dans votre voie par le rétrécissement à gauche",
+            "is_correct": true
+          },
+          {
+            "text": "Votre voie rétrécit à droite et vous devez vous rabattre",
+            "is_correct": false
+          },
+          {
+            "text": "Un carrefour dangereux avec visibilité limitée à gauche",
+            "is_correct": false
+          }
         ],
-        "explanation": "Avec un rÃ©trÃ©cissement cÃ´tÃ© gauche, les vÃ©hicules venant en sens inverse peuvent Ãªtre poussÃ©s dans votre voie."
+        "explanation": "Avec un rétrécissement côté gauche, les véhicules venant en sens inverse peuvent être poussés dans votre voie."
       },
       "AR": {
-        "question": "Ù…Ø§ Ø§Ù„Ø®Ø·Ø± Ø§Ù„Ø°ÙŠ ØªØ¹Ù„Ù†Ù‡ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ",
+        "question": "ما الخطر الذي تشير إليه هذه العلامة؟",
         "choices": [
-          { "text": "ÙŠÙØ¬Ø¨Ø± Ø§Ù„Ù…Ø±ÙˆØ± Ø§Ù„Ù‚Ø§Ø¯Ù… Ø¹Ù„Ù‰ Ø§Ù„Ø¯Ø®ÙˆÙ„ ÙÙŠ Ù…Ø³Ø§Ø±Ùƒ Ø¨Ø³Ø¨Ø¨ Ø§Ù„ØªØ¶ÙŠÙ‚ Ù…Ù† Ø§Ù„ÙŠØ³Ø§Ø±", "is_correct": true },
-          { "text": "ÙŠØ¶ÙŠÙ‚ Ù…Ø³Ø§Ø±Ùƒ Ù…Ù† Ø§Ù„ÙŠÙ…ÙŠÙ† ÙˆÙŠØ¬Ø¨ Ø¹Ù„ÙŠÙƒ Ø§Ù„Ø§Ù†Ø¯Ù…Ø§Ø¬", "is_correct": false },
-          { "text": "ØªÙ‚Ø§Ø·Ø¹ Ø®Ø·ÙŠØ± Ù…Ø¹ Ø±Ø¤ÙŠØ© Ù…Ø­Ø¯ÙˆØ¯Ø© Ù…Ù† Ø§Ù„ÙŠØ³Ø§Ø±", "is_correct": false }
+          {
+            "text": "يُجبر المرور القادم على الاقتراب من مسارك بسبب تضييق الطريق من اليسار",
+            "is_correct": true
+          },
+          {
+            "text": "يضيق مسارك من اليمين ويجب عليك الاندماج",
+            "is_correct": false
+          },
+          {
+            "text": "تقاطع خطير مع رؤية محدودة من اليسار",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ù…Ø¹ Ø§Ù„ØªØ¶ÙŠÙ‚ Ù…Ù† Ø§Ù„Ø¬Ø§Ù†Ø¨ Ø§Ù„Ø£ÙŠØ³Ø±ØŒ Ù‚Ø¯ ÙŠÙØ¬Ø¨Ø± Ø§Ù„Ù…Ø±ÙˆØ± Ø§Ù„Ù‚Ø§Ø¯Ù… Ø¹Ù„Ù‰ Ø§Ù„Ø¯Ø®ÙˆÙ„ ÙÙŠ Ù…Ø³Ø§Ø±Ùƒ."
+        "explanation": "مع تضييق الطريق من الجهة اليسرى، قد يُجبر المرور القادم على الاقتراب من مسارك."
       }
     }
   },
@@ -142,40 +250,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat moet u doen wanneer u dit bord voor een versmalling links ziet?",
+        "question": "Wat doet u best wanneer u dit bord voor een versmalling links ziet?",
         "choices": [
-          { "text": "Snelheid verminderen en rekening houden met tegemoetkomend verkeer dat naar uw rijbaan kan oversteken", "is_correct": true },
-          { "text": "Naar links gaan zodat u meer ruimte heeft naast de versmalling", "is_correct": false },
-          { "text": "Vaart houden en het verkeer laten invoegen", "is_correct": false }
+          {
+            "text": "Snelheid verminderen en rekening houden met tegemoetkomend verkeer dat naar uw rijbaan kan oversteken",
+            "is_correct": true
+          },
+          {
+            "text": "Naar links gaan zodat u meer ruimte heeft naast de versmalling",
+            "is_correct": false
+          },
+          {
+            "text": "Vaart houden en het verkeer laten invoegen",
+            "is_correct": false
+          }
         ],
-        "explanation": "Bij een versmalling links wordt tegemoetkomend verkeer naar uw rijbaan gedrongen. U moet vertragen en anticiperen op dit gevaar."
+        "explanation": "Bij een versmalling links wordt tegemoetkomend verkeer naar uw rijbaan gedrongen. U doet er goed aan te vertragen en op dit gevaar te anticiperen."
       },
       "EN": {
-        "question": "What must you do when you see this left narrowing sign?",
+        "question": "What should you do when you see this sign that the road narrows on the left?",
         "choices": [
-          { "text": "Reduce speed and be aware that oncoming traffic may move into your lane", "is_correct": true },
-          { "text": "Move to the left so you have more space beside the narrowing", "is_correct": false },
-          { "text": "Maintain speed and let traffic merge", "is_correct": false }
+          {
+            "text": "Reduce speed and be aware that oncoming traffic may encroach into your lane",
+            "is_correct": true
+          },
+          {
+            "text": "Move to the left so you have more space beside the narrowing",
+            "is_correct": false
+          },
+          {
+            "text": "Maintain speed and let traffic merge",
+            "is_correct": false
+          }
         ],
-        "explanation": "With a left-side narrowing, oncoming traffic is pushed towards your lane. You must slow down and anticipate this hazard."
+        "explanation": "When the road narrows on the left, oncoming traffic may encroach into your lane. You should slow down and anticipate this hazard."
       },
       "FR": {
-        "question": "Que devez-vous faire lorsque vous voyez ce panneau de rÃ©trÃ©cissement Ã  gauche ?",
+        "question": "Que devriez-vous faire lorsque vous voyez ce panneau de rétrécissement à gauche ?",
         "choices": [
-          { "text": "RÃ©duire la vitesse et tenir compte du trafic venant en sens inverse qui peut empiÃ©ter sur votre voie", "is_correct": true },
-          { "text": "Se dÃ©placer Ã  gauche pour avoir plus d'espace Ã  cÃ´tÃ© du rÃ©trÃ©cissement", "is_correct": false },
-          { "text": "Maintenir la vitesse et laisser le trafic se rabattre", "is_correct": false }
+          {
+            "text": "Réduire la vitesse et tenir compte du trafic venant en sens inverse qui peut empiéter sur votre voie",
+            "is_correct": true
+          },
+          {
+            "text": "Se déplacer à gauche pour avoir plus d'espace à côté du rétrécissement",
+            "is_correct": false
+          },
+          {
+            "text": "Maintenir la vitesse et laisser le trafic se rabattre",
+            "is_correct": false
+          }
         ],
-        "explanation": "Avec un rÃ©trÃ©cissement Ã  gauche, les vÃ©hicules venant en sens inverse sont poussÃ©s vers votre voie. Ralentissez et anticipez ce danger."
+        "explanation": "Avec un rétrécissement à gauche, les véhicules venant en sens inverse sont poussés vers votre voie. Vous devriez ralentir et anticiper ce danger."
       },
       "AR": {
-        "question": "Ù…Ø§Ø°Ø§ ÙŠØ¬Ø¨ Ø£Ù† ØªÙØ¹Ù„ Ø¹Ù†Ø¯ Ø±Ø¤ÙŠØ© Ù„Ø§ÙØªØ© Ø§Ù„ØªØ¶ÙŠÙ‚ Ù…Ù† Ø§Ù„ÙŠØ³Ø§Ø± Ù‡Ø°Ù‡ØŸ",
+        "question": "ماذا ينبغي عليك أن تفعل عند رؤية هذه العلامة التي تشير إلى تضييق الطريق من اليسار؟",
         "choices": [
-          { "text": "ØªÙ‚Ù„ÙŠÙ„ Ø§Ù„Ø³Ø±Ø¹Ø© ÙˆØ§Ù„Ø§Ù†ØªØ¨Ø§Ù‡ Ù„Ø£Ù† Ø§Ù„Ù…Ø±ÙˆØ± Ø§Ù„Ù‚Ø§Ø¯Ù… Ù‚Ø¯ ÙŠØªØ­Ø±Ùƒ Ù†Ø­Ùˆ Ù…Ø³Ø§Ø±Ùƒ", "is_correct": true },
-          { "text": "Ø§Ù„ØªØ­Ø±Ùƒ Ø¥Ù„Ù‰ Ø§Ù„ÙŠØ³Ø§Ø± Ù„Ù„Ø­ØµÙˆÙ„ Ø¹Ù„Ù‰ Ù…Ø²ÙŠØ¯ Ù…Ù† Ø§Ù„Ù…Ø³Ø§Ø­Ø© Ø¨Ø¬Ø§Ù†Ø¨ Ø§Ù„ØªØ¶ÙŠÙ‚", "is_correct": false },
-          { "text": "Ø§Ù„Ø­ÙØ§Ø¸ Ø¹Ù„Ù‰ Ø§Ù„Ø³Ø±Ø¹Ø© ÙˆØ§Ù„Ø³Ù…Ø§Ø­ Ù„Ù„Ù…Ø±ÙˆØ± Ø¨Ø§Ù„Ø§Ù†Ø¯Ù…Ø§Ø¬", "is_correct": false }
+          {
+            "text": "تقليل السرعة والانتباه لأن المرور القادم قد يقترب من مسارك",
+            "is_correct": true
+          },
+          {
+            "text": "التحرك إلى اليسار للحصول على مزيد من المساحة بجانب التضييق",
+            "is_correct": false
+          },
+          {
+            "text": "الحفاظ على السرعة والسماح للمرور بالاندماج",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ù…Ø¹ Ø§Ù„ØªØ¶ÙŠÙ‚ Ù…Ù† Ø§Ù„ÙŠØ³Ø§Ø±ØŒ ÙŠÙØ¯ÙØ¹ Ø§Ù„Ù…Ø±ÙˆØ± Ø§Ù„Ù‚Ø§Ø¯Ù… Ù†Ø­Ùˆ Ù…Ø³Ø§Ø±Ùƒ. ÙŠØ¬Ø¨ Ø§Ù„ØªØ¨Ø§Ø·Ø¤ ÙˆØ§Ø³ØªØ¨Ø§Ù‚ Ù‡Ø°Ø§ Ø§Ù„Ø®Ø·Ø±."
+        "explanation": "عند تضييق الطريق من اليسار، قد يقترب المرور القادم من مسارك. ينبغي التباطؤ واستباق هذا الخطر."
       }
     }
   },
@@ -189,38 +333,74 @@
       "NL": {
         "question": "U rijdt 90 km/u op een natte weg en ziet dit bord voor een versmalling links. Tegemoetkomend verkeer rijdt dicht bij uw rijbaan. Wat doet u als eerste?",
         "choices": [
-          { "text": "Sterk vertragen en zo ver mogelijk rechts houden", "is_correct": true },
-          { "text": "Op uw rijbaan blijven en het tegemoetkomend verkeer laten uitwijken", "is_correct": false },
-          { "text": "Inhalen om de versmalling te vermijden voor het tegemoetkomende voertuig erbij is", "is_correct": false }
+          {
+            "text": "Sterk vertragen en zo ver mogelijk rechts houden",
+            "is_correct": true
+          },
+          {
+            "text": "Op uw rijbaan blijven en het tegemoetkomend verkeer laten uitwijken",
+            "is_correct": false
+          },
+          {
+            "text": "Inhalen om de versmalling te vermijden voor het tegemoetkomende voertuig erbij is",
+            "is_correct": false
+          }
         ],
-        "explanation": "Op een natte weg met een versmalling links moet u sterk vertragen en rechts houden. De remafstand is groter op nat wegdek en het risico op botsingen is reÃ«el."
+        "explanation": "Op een natte weg met een versmalling links doet u er goed aan sterk te vertragen en rechts te houden. De remafstand is groter op nat wegdek en het risico op botsingen is reëel."
       },
       "EN": {
         "question": "You are driving at 90 km/h on a wet road and see this sign for a left-side narrowing. Oncoming traffic is driving close to your lane. What do you do first?",
         "choices": [
-          { "text": "Slow down significantly and keep as far right as possible", "is_correct": true },
-          { "text": "Stay in your lane and let oncoming traffic swerve", "is_correct": false },
-          { "text": "Overtake to avoid the narrowing before the oncoming vehicle reaches it", "is_correct": false }
+          {
+            "text": "Reduce speed and keep as far right as possible",
+            "is_correct": true
+          },
+          {
+            "text": "Stay in your lane and let oncoming traffic swerve",
+            "is_correct": false
+          },
+          {
+            "text": "Overtake to avoid the narrowing before the oncoming vehicle reaches it",
+            "is_correct": false
+          }
         ],
-        "explanation": "On a wet road with a left-side narrowing, slow down significantly and keep right. Braking distance is longer on wet road and the collision risk is real."
+        "explanation": "On a wet road where the road narrows on the left, reduce speed and keep right. Braking distance is longer on a wet road and the collision risk is real."
       },
       "FR": {
-        "question": "Vous roulez Ã  90 km/h sur route mouillÃ©e et voyez ce panneau de rÃ©trÃ©cissement Ã  gauche. Le trafic en sens inverse circule prÃ¨s de votre voie. Que faites-vous en premier ?",
+        "question": "Vous roulez à 90 km/h sur route mouillée et voyez ce panneau de rétrécissement à gauche. Le trafic en sens inverse circule près de votre voie. Que faites-vous en premier ?",
         "choices": [
-          { "text": "Ralentir fortement et se tenir le plus Ã  droite possible", "is_correct": true },
-          { "text": "Rester dans votre voie et laisser le trafic en sens inverse se dÃ©porter", "is_correct": false },
-          { "text": "DÃ©passer pour Ã©viter le rÃ©trÃ©cissement avant que le vÃ©hicule en sens inverse ne l'atteigne", "is_correct": false }
+          {
+            "text": "Ralentir fortement et se tenir le plus à droite possible",
+            "is_correct": true
+          },
+          {
+            "text": "Rester dans votre voie et laisser le trafic en sens inverse se déporter",
+            "is_correct": false
+          },
+          {
+            "text": "Dépasser pour éviter le rétrécissement avant que le véhicule en sens inverse ne l'atteigne",
+            "is_correct": false
+          }
         ],
-        "explanation": "Sur route mouillÃ©e avec rÃ©trÃ©cissement Ã  gauche, ralentissez fortement et tenez-vous Ã  droite. La distance de freinage est plus longue sur route mouillÃ©e et le risque de collision est rÃ©el."
+        "explanation": "Sur route mouillée avec rétrécissement à gauche, vous devriez ralentir fortement et vous tenir à droite. La distance de freinage est plus longue sur route mouillée et le risque de collision est réel."
       },
       "AR": {
-        "question": "Ø£Ù†Øª ØªØ³ÙŠØ± Ø¨Ø³Ø±Ø¹Ø© 90 ÙƒÙ…/Ø³Ø§Ø¹Ø© Ø¹Ù„Ù‰ Ø·Ø±ÙŠÙ‚ Ø±Ø·Ø¨ ÙˆØªØ±Ù‰ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ© Ù„Ù„ØªØ¶ÙŠÙ‚ Ù…Ù† Ø§Ù„ÙŠØ³Ø§Ø±. Ø§Ù„Ù…Ø±ÙˆØ± Ø§Ù„Ù‚Ø§Ø¯Ù… ÙŠØ³ÙŠØ± Ù‚Ø±ÙŠØ¨Ø§Ù‹ Ù…Ù† Ù…Ø³Ø§Ø±Ùƒ. Ù…Ø§Ø°Ø§ ØªÙØ¹Ù„ Ø£ÙˆÙ„Ø§Ù‹ØŸ",
+        "question": "أنت تقود بسرعة 90 كم/ساعة على طريق مبلل وترى علامة تشير إلى تضييق الطريق من اليسار. ماذا تفعل أولًا؟",
         "choices": [
-          { "text": "Ø§Ù„ØªØ¨Ø§Ø·Ø¤ Ø¨Ø´ÙƒÙ„ Ù…Ù„Ø­ÙˆØ¸ ÙˆØ§Ù„Ø¨Ù‚Ø§Ø¡ ÙÙŠ Ø£Ù‚ØµÙ‰ Ø§Ù„ÙŠÙ…ÙŠÙ† Ù‚Ø¯Ø± Ø§Ù„Ø¥Ù…ÙƒØ§Ù†", "is_correct": true },
-          { "text": "Ø§Ù„Ø¨Ù‚Ø§Ø¡ ÙÙŠ Ù…Ø³Ø§Ø±Ùƒ ÙˆØ§Ù„Ø³Ù…Ø§Ø­ Ù„Ù„Ù…Ø±ÙˆØ± Ø§Ù„Ù‚Ø§Ø¯Ù… Ø¨Ø§Ù„Ø§Ù†Ø­Ø±Ø§Ù", "is_correct": false },
-          { "text": "Ø§Ù„ØªØ¬Ø§ÙˆØ² Ù„ØªØ¬Ù†Ø¨ Ø§Ù„ØªØ¶ÙŠÙ‚ Ù‚Ø¨Ù„ Ø£Ù† ØªØµÙ„ Ø¥Ù„ÙŠÙ‡ Ø§Ù„Ù…Ø±ÙƒØ¨Ø© Ø§Ù„Ù‚Ø§Ø¯Ù…Ø©", "is_correct": false }
+          {
+            "text": "تقليل السرعة والبقاء في أقصى اليمين قدر الإمكان",
+            "is_correct": true
+          },
+          {
+            "text": "البقاء في مسارك والسماح للمرور القادم بالانحراف",
+            "is_correct": false
+          },
+          {
+            "text": "التجاوز لتجنب التضييق قبل أن تصل إليه المركبة القادمة",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ø¹Ù„Ù‰ Ø·Ø±ÙŠÙ‚ Ø±Ø·Ø¨ Ù…Ø¹ ØªØ¶ÙŠÙ‚ Ù…Ù† Ø§Ù„ÙŠØ³Ø§Ø±ØŒ ØªØ¨Ø§Ø·Ø£ Ø¨Ø´ÙƒÙ„ Ù…Ù„Ø­ÙˆØ¸ ÙˆØ£Ø¨Ù‚ Ø¹Ù„Ù‰ Ø§Ù„ÙŠÙ…ÙŠÙ†. Ù…Ø³Ø§ÙØ© Ø§Ù„ÙƒØ¨Ø­ Ø£Ø·ÙˆÙ„ Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø±Ø·Ø¨ ÙˆØ®Ø·Ø± Ø§Ù„ØªØµØ§Ø¯Ù… Ø­Ù‚ÙŠÙ‚ÙŠ."
+        "explanation": "على طريق مبلل ومع تضييق من اليسار، ينبغي تقليل السرعة والبقاء في أقصى اليمين. تزداد مسافة الكبح ويزداد خطر التصادم."
       }
     }
   },
@@ -234,38 +414,74 @@
       "NL": {
         "question": "Op welke afstand wordt dit gevaarsbord buiten de bebouwde kom geplaatst?",
         "choices": [
-          { "text": "Ongeveer 150 meter voor het gevaar", "is_correct": true },
-          { "text": "Precies op de gevaarlijke plek", "is_correct": false },
-          { "text": "Op 500 meter voor het gevaar", "is_correct": false }
+          {
+            "text": "Ongeveer 150 meter voor het gevaar",
+            "is_correct": true
+          },
+          {
+            "text": "Precies op de gevaarlijke plek",
+            "is_correct": false
+          },
+          {
+            "text": "Op 500 meter voor het gevaar",
+            "is_correct": false
+          }
         ],
-        "explanation": "Buiten de bebouwde kom worden gevaarsborden op Â±150 meter voor het gevaar geplaatst. Binnen de bebouwde kom is dit Â±50 meter."
+        "explanation": "Buiten de bebouwde kom worden gevaarsborden op ±150 meter voor het gevaar geplaatst. Binnen de bebouwde kom is dit ±50 meter."
       },
       "EN": {
-        "question": "At what distance is this danger sign placed outside built-up areas?",
+        "question": "At what distance is this warning sign placed outside built-up areas?",
         "choices": [
-          { "text": "Approximately 150 metres before the hazard", "is_correct": true },
-          { "text": "Exactly at the hazard location", "is_correct": false },
-          { "text": "500 metres before the hazard", "is_correct": false }
+          {
+            "text": "Approximately 150 metres before the hazard",
+            "is_correct": true
+          },
+          {
+            "text": "Exactly at the hazard location",
+            "is_correct": false
+          },
+          {
+            "text": "500 metres before the hazard",
+            "is_correct": false
+          }
         ],
-        "explanation": "Outside built-up areas, danger signs are placed Â±150 metres before the hazard. Inside built-up areas it is Â±50 metres."
+        "explanation": "Outside built-up areas, warning signs are placed ±150 metres before the hazard. Inside built-up areas it is ±50 metres."
       },
       "FR": {
-        "question": "Ã€ quelle distance ce panneau de danger est-il placÃ© hors agglomÃ©ration ?",
+        "question": "À quelle distance ce panneau de danger est-il placé hors agglomération ?",
         "choices": [
-          { "text": "Environ 150 mÃ¨tres avant le danger", "is_correct": true },
-          { "text": "Exactement Ã  l'endroit du danger", "is_correct": false },
-          { "text": "500 mÃ¨tres avant le danger", "is_correct": false }
+          {
+            "text": "Environ 150 mètres avant le danger",
+            "is_correct": true
+          },
+          {
+            "text": "Exactement à l'endroit du danger",
+            "is_correct": false
+          },
+          {
+            "text": "500 mètres avant le danger",
+            "is_correct": false
+          }
         ],
-        "explanation": "Hors agglomÃ©ration, les panneaux de danger sont placÃ©s Ã  Â±150 mÃ¨tres avant le danger. En agglomÃ©ration, c'est Â±50 mÃ¨tres."
+        "explanation": "Hors agglomération, les panneaux de danger sont placés à ±150 mètres avant le danger. En agglomération, c'est ±50 mètres."
       },
       "AR": {
-        "question": "Ø¹Ù„Ù‰ Ø£ÙŠ Ù…Ø³Ø§ÙØ© ØªÙˆØ¶Ø¹ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ© Ø§Ù„ØªØ­Ø°ÙŠØ±ÙŠØ© Ø®Ø§Ø±Ø¬ Ø§Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ù…Ø¨Ù†ÙŠØ©ØŸ",
+        "question": "على أي مسافة توضع هذه العلامة التحذيرية خارج المنطقة السكنية؟",
         "choices": [
-          { "text": "Ø­ÙˆØ§Ù„ÙŠ 150 Ù…ØªØ± Ù‚Ø¨Ù„ Ø§Ù„Ø®Ø·Ø±", "is_correct": true },
-          { "text": "Ù…Ø¨Ø§Ø´Ø±Ø© Ø¹Ù†Ø¯ Ù…ÙˆÙ‚Ø¹ Ø§Ù„Ø®Ø·Ø±", "is_correct": false },
-          { "text": "500 Ù…ØªØ± Ù‚Ø¨Ù„ Ø§Ù„Ø®Ø·Ø±", "is_correct": false }
+          {
+            "text": "حوالي 150 متر قبل الخطر",
+            "is_correct": true
+          },
+          {
+            "text": "مباشرة عند موقع الخطر",
+            "is_correct": false
+          },
+          {
+            "text": "500 متر قبل الخطر",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ø®Ø§Ø±Ø¬ Ø§Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ù…Ø¨Ù†ÙŠØ© ØªÙˆØ¶Ø¹ Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± Ø¹Ù„Ù‰ Ù…Ø³Ø§ÙØ© Â±150 Ù…ØªØ± Ù‚Ø¨Ù„ Ø§Ù„Ø®Ø·Ø±. Ø¯Ø§Ø®Ù„ Ø§Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ù…Ø¨Ù†ÙŠØ© ØªÙƒÙˆÙ† Ø§Ù„Ù…Ø³Ø§ÙØ© Â±50 Ù…ØªØ±."
+        "explanation": "خارج المنطقة السكنية توضع علامات الخطر على بعد نحو 150 مترًا قبل الخطر. داخل المنطقة السكنية تكون المسافة نحو 50 مترًا."
       }
     }
   },
@@ -277,36 +493,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Mag u inhalen wanneer de linkerkant van de rijbaan versmalt en tegemoetkomend verkeer naar uw rijstrook wordt gedrongen?",
+        "question": "Is het aan te raden om in te halen wanneer de linkerkant van de rijbaan versmalt en tegemoetkomend verkeer naar uw rijstrook wordt gedrongen?",
         "choices": [
-          { "text": "Nee", "is_correct": true },
-          { "text": "Ja", "is_correct": false }
+          {
+            "text": "Nee",
+            "is_correct": true
+          },
+          {
+            "text": "Ja",
+            "is_correct": false
+          }
         ],
-        "explanation": "Inhalen is verboden wanneer tegemoetkomend verkeer door de versmalling in uw rijbaan terecht kan komen."
+        "explanation": "Nee, dat is meestal niet raadzaam wanneer tegemoetkomend verkeer door de versmalling in uw rijbaan terecht kan komen."
       },
       "EN": {
-        "question": "Is it allowed to overtake when the left side of the road narrows and oncoming traffic is pushed into your lane?",
+        "question": "Is overtaking advisable when the road narrows on the left and oncoming traffic may encroach into your lane?",
         "choices": [
-          { "text": "No", "is_correct": true },
-          { "text": "Yes", "is_correct": false }
+          {
+            "text": "No",
+            "is_correct": true
+          },
+          {
+            "text": "Yes",
+            "is_correct": false
+          }
         ],
-        "explanation": "Overtaking is prohibited when oncoming traffic may be pushed into your lane by the narrowing."
+        "explanation": "No, it is generally not advisable when the road narrows on the left and oncoming traffic may encroach into your lane."
       },
       "FR": {
-        "question": "ÃŠtes-vous autorisÃ© Ã  dÃ©passer lorsque le cÃ´tÃ© gauche de la chaussÃ©e se rÃ©trÃ©cit et que le trafic venant en sens inverse est poussÃ© dans votre voie ?",
+        "question": "Est-il conseillé de dépasser lorsque la chaussée se rétrécit à gauche et que le trafic venant en sens inverse peut empiéter sur votre voie ?",
         "choices": [
-          { "text": "Non", "is_correct": true },
-          { "text": "Oui", "is_correct": false }
+          {
+            "text": "Non",
+            "is_correct": true
+          },
+          {
+            "text": "Oui",
+            "is_correct": false
+          }
         ],
-        "explanation": "DÃ©passer est interdit lorsque le trafic venant en sens inverse peut Ãªtre poussÃ© dans votre voie par le rÃ©trÃ©cissement."
+        "explanation": "Non, ce n'est généralement pas conseillé lorsque le trafic venant en sens inverse peut empiéter sur votre voie à cause du rétrécissement."
       },
       "AR": {
-        "question": "Ù‡Ù„ ÙŠÙØ³Ù…Ø­ Ø¨Ø§Ù„ØªØ¬Ø§ÙˆØ² Ø¹Ù†Ø¯Ù…Ø§ ÙŠØªØ¶ÙŠÙ‚ Ø§Ù„Ø¬Ø§Ù†Ø¨ Ø§Ù„Ø£ÙŠØ³Ø± Ù…Ù† Ø§Ù„Ø·Ø±ÙŠÙ‚ ÙˆÙŠÙØ¬Ø¨Ø± Ø§Ù„Ù…Ø±ÙˆØ± Ø§Ù„Ù‚Ø§Ø¯Ù… Ø¹Ù„Ù‰ Ø§Ù„Ø¯Ø®ÙˆÙ„ ÙÙŠ Ù…Ø³Ø§Ø±ÙƒØŸ",
+        "question": "هل يُنصح بالتجاوز عندما يضيق الطريق من اليسار وقد يقترب المرور القادم من مسارك؟",
         "choices": [
-          { "text": "Ù„Ø§", "is_correct": true },
-          { "text": "Ù†Ø¹Ù…", "is_correct": false }
+          {
+            "text": "لا",
+            "is_correct": true
+          },
+          {
+            "text": "نعم",
+            "is_correct": false
+          }
         ],
-        "explanation": "ÙŠÙØ­Ø¸Ø± Ø§Ù„ØªØ¬Ø§ÙˆØ² Ø¹Ù†Ø¯Ù…Ø§ Ù‚Ø¯ ÙŠÙØ¬Ø¨Ø± Ø§Ù„Ù…Ø±ÙˆØ± Ø§Ù„Ù‚Ø§Ø¯Ù… Ø¹Ù„Ù‰ Ø§Ù„Ø¯Ø®ÙˆÙ„ ÙÙŠ Ù…Ø³Ø§Ø±Ùƒ Ø¨Ø³Ø¨Ø¨ Ø§Ù„ØªØ¶ÙŠÙ‚."
+        "explanation": "لا، لا يُنصح بذلك عندما يضيق الطريق من اليسار وقد يقترب المرور القادم من مسارك."
       }
     }
   },
@@ -318,36 +558,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Moet u rekening houden met tegemoetkomend verkeer dat door de versmalling links naar uw rijstrook wordt gedrongen?",
+        "question": "Doet u er goed aan rekening te houden met tegemoetkomend verkeer dat door de versmalling links naar uw rijstrook wordt gedrongen?",
         "choices": [
-          { "text": "Ja", "is_correct": true },
-          { "text": "Nee", "is_correct": false }
+          {
+            "text": "Ja",
+            "is_correct": true
+          },
+          {
+            "text": "Nee",
+            "is_correct": false
+          }
         ],
-        "explanation": "Bij een versmalling aan de linkerkant wordt tegemoetkomend verkeer mogelijk naar uw rijbaan gedrongen. U moet dit anticiperen en snelheid verminderen."
+        "explanation": "Bij een versmalling aan de linkerkant wordt tegemoetkomend verkeer mogelijk naar uw rijbaan gedrongen. U doet er goed aan hierop te anticiperen en snelheid te verminderen."
       },
       "EN": {
-        "question": "Must you be prepared for oncoming traffic displaced into your lane by the left-side narrowing?",
+        "question": "Should you be prepared for oncoming traffic entering your lane due to the narrowing?",
         "choices": [
-          { "text": "Yes", "is_correct": true },
-          { "text": "No", "is_correct": false }
+          {
+            "text": "Yes",
+            "is_correct": true
+          },
+          {
+            "text": "No",
+            "is_correct": false
+          }
         ],
-        "explanation": "When the left side narrows, oncoming traffic may be displaced into your lane. You must anticipate this and reduce speed."
+        "explanation": "When the road narrows on the left, oncoming traffic may enter your lane. You should anticipate this and reduce speed."
       },
       "FR": {
-        "question": "Devez-vous vous prÃ©parer Ã  un trafic venant en sens inverse dÃ©placÃ© dans votre voie par le rÃ©trÃ©cissement Ã  gauche ?",
+        "question": "Devrait-on se préparer à un trafic venant en sens inverse déplacé dans votre voie par le rétrécissement à gauche ?",
         "choices": [
-          { "text": "Oui", "is_correct": true },
-          { "text": "Non", "is_correct": false }
+          {
+            "text": "Oui",
+            "is_correct": true
+          },
+          {
+            "text": "Non",
+            "is_correct": false
+          }
         ],
-        "explanation": "Lorsque le cÃ´tÃ© gauche se rÃ©trÃ©cit, le trafic venant en sens inverse peut Ãªtre dÃ©placÃ© dans votre voie. Anticipez et rÃ©duisez la vitesse."
+        "explanation": "Lorsque le côté gauche se rétrécit, le trafic venant en sens inverse peut être déplacé dans votre voie. Vous devriez anticiper cela et réduire la vitesse."
       },
       "AR": {
-        "question": "Ù‡Ù„ ÙŠØ¬Ø¨ Ø£Ù† ØªÙƒÙˆÙ† Ù…Ø³ØªØ¹Ø¯Ø§Ù‹ Ù„Ù„Ù…Ø±ÙˆØ± Ø§Ù„Ù‚Ø§Ø¯Ù… Ø§Ù„Ø°ÙŠ Ù‚Ø¯ ÙŠÙØ¬Ø¨Ø± Ø¹Ù„Ù‰ Ø§Ù„Ø¯Ø®ÙˆÙ„ ÙÙŠ Ù…Ø³Ø§Ø±Ùƒ Ø¨Ø³Ø¨Ø¨ Ø§Ù„ØªØ¶ÙŠÙ‚ Ù…Ù† Ø§Ù„ÙŠØ³Ø§Ø±ØŸ",
+        "question": "هل ينبغي أن تكون مستعدًا لاحتمال دخول المرور القادم إلى مسارك بسبب التضييق؟",
         "choices": [
-          { "text": "Ù†Ø¹Ù…", "is_correct": true },
-          { "text": "Ù„Ø§", "is_correct": false }
+          {
+            "text": "نعم",
+            "is_correct": true
+          },
+          {
+            "text": "لا",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ø¹Ù†Ø¯ ØªØ¶ÙŠÙ‚ Ø§Ù„Ø¬Ø§Ù†Ø¨ Ø§Ù„Ø£ÙŠØ³Ø±ØŒ Ù‚Ø¯ ÙŠÙØ¬Ø¨Ø± Ø§Ù„Ù…Ø±ÙˆØ± Ø§Ù„Ù‚Ø§Ø¯Ù… Ø¹Ù„Ù‰ Ø§Ù„Ø¯Ø®ÙˆÙ„ ÙÙŠ Ù…Ø³Ø§Ø±Ùƒ. ÙŠØ¬Ø¨ Ø§Ø³ØªØ¨Ø§Ù‚ Ø°Ù„Ùƒ ÙˆØªÙ‚Ù„ÙŠÙ„ Ø§Ù„Ø³Ø±Ø¹Ø©."
+        "explanation": "عند تضييق الطريق من اليسار، قد يدخل المرور القادم إلى مسارك. ينبغي استباق ذلك وتقليل السرعة."
       }
     }
   }

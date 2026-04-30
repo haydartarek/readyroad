@@ -1,4 +1,4 @@
-﻿[
+[
   {
     "question_id": "A15_Q01",
     "type": "WHAT_DOES_IT_MEAN",
@@ -9,38 +9,41 @@
       "NL": {
         "question": "Wat betekent dit verkeersbord?",
         "choices": [
-          { "text": "Gladde rijbaan - Slipgevaar", "is_correct": true },
+          { "text": "Glibberige rijbaan", "is_correct": true },
           { "text": "Kiezelprojectie", "is_correct": false },
-          { "text": "Dwarse uitholling of ezelsrug", "is_correct": false }
+          { "text": "Oneffen weg", "is_correct": false }
         ],
-        "explanation": "Dit bord waarschuwt voor een gladde rijbaan met slipgevaar, bijvoorbeeld door regen, ijs, sneeuw of olie op het wegdek."
+        "explanation": "Dit bord waarschuwt voor een gladde rijbaan met verminderde grip, bijvoorbeeld door regen, ijs, sneeuw of olie op het wegdek."
       },
       "EN": {
         "question": "What does this traffic sign mean?",
         "choices": [
-          { "text": "Slippery road - skid hazard", "is_correct": true },
+          { "text": "Slippery road", "is_correct": true },
           { "text": "Gravel projection", "is_correct": false },
-          { "text": "Speed bump or uneven road", "is_correct": false }
+          { "text": "Uneven road", "is_correct": false }
         ],
-        "explanation": "This sign warns of a slippery road with skid hazard, for example due to rain, ice, snow or oil on the road surface."
+        "explanation": "This sign warns of a slippery road with reduced grip, for example due to rain, ice, snow or oil on the road surface."
       },
       "FR": {
         "question": "Que signifie ce panneau de signalisation ?",
         "choices": [
-          { "text": "ChaussÃ©e glissante - Risque de dÃ©rapage", "is_correct": true },
+          {
+            "text": "Chaussée glissante",
+            "is_correct": true
+          },
           { "text": "Projection de gravillons", "is_correct": false },
-          { "text": "Dos d'Ã¢ne ou cassis", "is_correct": false }
+          { "text": "Chaussée déformée", "is_correct": false }
         ],
-        "explanation": "Ce panneau avertit d'une chaussÃ©e glissante avec risque de dÃ©rapage, par exemple due Ã  la pluie, la glace, la neige ou l'huile sur la chaussÃ©e."
+        "explanation": "Ce panneau avertit d'une chaussée glissante avec adhérence réduite, par exemple en raison de la pluie, de la glace, de la neige ou de l'huile sur la chaussée."
       },
       "AR": {
-        "question": "Ù…Ø§Ø°Ø§ ØªØ¹Ù†ÙŠ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ",
+        "question": "ما معنى هذه العلامة المرورية؟",
         "choices": [
-          { "text": "Ø·Ø±ÙŠÙ‚ Ø²Ù„Ù‚ - Ø®Ø·Ø± Ø§Ù„Ø§Ù†Ø²Ù„Ø§Ù‚", "is_correct": true },
-          { "text": "Ø§Ù†Ø¨Ø¹Ø§Ø« Ø§Ù„Ø­ØµÙ‰", "is_correct": false },
-          { "text": "Ù…Ø·Ø¨ Ø£Ùˆ Ø­ÙØ±Ø© Ø¹Ø±Ø¶ÙŠØ©", "is_correct": false }
+          { "text": "طريق زلق", "is_correct": true },
+          { "text": "تطاير الحصى", "is_correct": false },
+          { "text": "طريق غير مستوٍ", "is_correct": false }
         ],
-        "explanation": "ØªØ­Ø°Ø± Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ© Ù…Ù† Ø·Ø±ÙŠÙ‚ Ø²Ù„Ù‚ Ù…Ø¹ Ø®Ø·Ø± Ø§Ù„Ø§Ù†Ø²Ù„Ø§Ù‚ØŒ Ù…Ø«Ù„Ø§Ù‹ Ø¨Ø³Ø¨Ø¨ Ø§Ù„Ù…Ø·Ø± Ø£Ùˆ Ø§Ù„Ø¬Ù„ÙŠØ¯ Ø£Ùˆ Ø§Ù„Ø«Ù„Ø¬ Ø£Ùˆ Ø§Ù„Ø²ÙŠØª Ø¹Ù„Ù‰ Ø³Ø·Ø­ Ø§Ù„Ø·Ø±ÙŠÙ‚."
+        "explanation": "تحذر هذه العلامة المرورية من طريق زلق مع انخفاض التماسك، مثلًا بسبب المطر أو الجليد أو الثلج أو وجود زيت على سطح الطريق."
       }
     }
   },
@@ -54,38 +57,38 @@
       "NL": {
         "question": "Tot welke categorie verkeerstekens behoort dit bord?",
         "choices": [
-          { "text": "Gevaarsborden (A-reeks)", "is_correct": true },
-          { "text": "Voorrangsborden (B-reeks)", "is_correct": false },
-          { "text": "Verbodsborden (C-reeks)", "is_correct": false }
+          { "text": "Gevaarsborden", "is_correct": true },
+          { "text": "Voorrangsborden", "is_correct": false },
+          { "text": "Verbodsborden", "is_correct": false }
         ],
-        "explanation": "Dit bord behoort tot de gevaarsborden (A-reeks). Alle gevaarsborden zijn driehoekig met een rode rand op een witte achtergrond."
+        "explanation": "Dit bord behoort tot de gevaarsborden. Alle gevaarsborden zijn driehoekig met een rode rand op een witte achtergrond."
       },
       "EN": {
         "question": "To which category of traffic signs does this sign belong?",
         "choices": [
-          { "text": "Danger signs (A-series)", "is_correct": true },
-          { "text": "Priority signs (B-series)", "is_correct": false },
-          { "text": "Prohibition signs (C-series)", "is_correct": false }
+          { "text": "Warning signs", "is_correct": true },
+          { "text": "Priority signs", "is_correct": false },
+          { "text": "Prohibition signs", "is_correct": false }
         ],
-        "explanation": "This sign belongs to the danger signs (A-series). All danger signs are triangular with a red border on a white background."
+        "explanation": "This sign belongs to the warning signs. All warning signs are triangular with a red border on a white background."
       },
       "FR": {
-        "question": "Ã€ quelle catÃ©gorie de panneaux de signalisation ce panneau appartient-il ?",
+        "question": "À quelle catégorie de panneaux de signalisation ce panneau appartient-il ?",
         "choices": [
-          { "text": "Panneaux de danger (sÃ©rie A)", "is_correct": true },
-          { "text": "Panneaux de prioritÃ© (sÃ©rie B)", "is_correct": false },
-          { "text": "Panneaux d'interdiction (sÃ©rie C)", "is_correct": false }
+          { "text": "Panneaux de danger", "is_correct": true },
+          { "text": "Panneaux de priorité", "is_correct": false },
+          { "text": "Panneaux d'interdiction", "is_correct": false }
         ],
-        "explanation": "Ce panneau appartient aux panneaux de danger (sÃ©rie A). Tous les panneaux de danger sont triangulaires avec une bordure rouge sur fond blanc."
+        "explanation": "Ce panneau appartient aux panneaux de danger. Tous les panneaux de danger sont triangulaires avec une bordure rouge sur fond blanc."
       },
       "AR": {
-        "question": "Ø¥Ù„Ù‰ Ø£ÙŠ ÙØ¦Ø© Ù…Ù† Ù„Ø§ÙØªØ§Øª Ø§Ù„Ù…Ø±ÙˆØ± ØªÙ†ØªÙ…ÙŠ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ",
+        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
         "choices": [
-          { "text": "Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± (Ø³Ù„Ø³Ù„Ø© A)", "is_correct": true },
-          { "text": "Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© (Ø³Ù„Ø³Ù„Ø© B)", "is_correct": false },
-          { "text": "Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø­Ø¸Ø± (Ø³Ù„Ø³Ù„Ø© C)", "is_correct": false }
+          { "text": "علامات الخطر", "is_correct": true },
+          { "text": "علامات الأولوية", "is_correct": false },
+          { "text": "علامات الحظر", "is_correct": false }
         ],
-        "explanation": "ØªÙ†ØªÙ…ÙŠ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ© Ø¥Ù„Ù‰ Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± (Ø³Ù„Ø³Ù„Ø© A). Ø¬Ù…ÙŠØ¹ Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± Ù…Ø«Ù„Ø«Ø© Ø¨Ø­Ø§ÙØ© Ø­Ù…Ø±Ø§Ø¡ Ø¹Ù„Ù‰ Ø®Ù„ÙÙŠØ© Ø¨ÙŠØ¶Ø§Ø¡."
+        "explanation": "تنتمي هذه العلامة المرورية إلى علامات الخطر. جميع علامات الخطر مثلثة بحافة حمراء على خلفية بيضاء."
       }
     }
   },
@@ -99,38 +102,74 @@
       "NL": {
         "question": "Welk gevaar kondigt dit bord aan?",
         "choices": [
-          { "text": "Een rijbaan met verminderde grip waardoor het voertuig kan slippen", "is_correct": true },
-          { "text": "Een rijbaan met losliggend grind dat de voorruit kan beschadigen", "is_correct": false },
-          { "text": "Een rijbaan met verzakkingen die het onderstel kunnen beschadigen", "is_correct": false }
+          {
+            "text": "Een wegdek met verminderde grip waardoor het voertuig kan slippen",
+            "is_correct": true
+          },
+          {
+            "text": "Een rijbaan met losliggend grind dat de voorruit kan beschadigen",
+            "is_correct": false
+          },
+          {
+            "text": "Een rijbaan met verzakkingen die het onderstel kunnen beschadigen",
+            "is_correct": false
+          }
         ],
-        "explanation": "Dit bord kondigt aan dat de rijbaan gladder is dan normaal, waardoor het risico op slippen en controleverlies sterk toeneemt."
+        "explanation": "Dit bord kondigt een wegdek met verminderde grip aan, waardoor het risico op slippen en controleverlies sterk toeneemt."
       },
       "EN": {
-        "question": "What hazard does this sign announce?",
+        "question": "What hazard does this sign indicate?",
         "choices": [
-          { "text": "A road surface with reduced grip that may cause the vehicle to skid", "is_correct": true },
-          { "text": "A road with loose gravel that can damage the windscreen", "is_correct": false },
-          { "text": "A road with subsidence that can damage the undercarriage", "is_correct": false }
+          {
+            "text": "A road surface with reduced grip that may cause the vehicle to skid",
+            "is_correct": true
+          },
+          {
+            "text": "A road with loose gravel that can damage the windscreen",
+            "is_correct": false
+          },
+          {
+            "text": "A road with subsidence that can damage the undercarriage",
+            "is_correct": false
+          }
         ],
-        "explanation": "This sign announces that the road surface is more slippery than normal, greatly increasing the risk of skidding and loss of control."
+        "explanation": "This sign indicates a road surface with reduced grip, greatly increasing the risk of skidding and loss of control."
       },
       "FR": {
         "question": "Quel danger ce panneau annonce-t-il ?",
         "choices": [
-          { "text": "Une surface de route avec grip rÃ©duit pouvant provoquer un dÃ©rapage", "is_correct": true },
-          { "text": "Une route avec des graviers pouvant endommager le pare-brise", "is_correct": false },
-          { "text": "Une route avec des affaissements pouvant endommager le train roulant", "is_correct": false }
+          {
+            "text": "Une chaussée avec une adhérence réduite pouvant provoquer un dérapage",
+            "is_correct": true
+          },
+          {
+            "text": "Une route avec des graviers pouvant endommager le pare-brise",
+            "is_correct": false
+          },
+          {
+            "text": "Une route avec des affaissements pouvant endommager le train roulant",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ce panneau annonce que la chaussÃ©e est plus glissante que la normale, augmentant fortement le risque de dÃ©rapage et de perte de contrÃ´le."
+        "explanation": "Ce panneau annonce une chaussée à adhérence réduite, augmentant fortement le risque de dérapage et de perte de contrôle."
       },
       "AR": {
-        "question": "Ù…Ø§ Ø§Ù„Ø®Ø·Ø± Ø§Ù„Ø°ÙŠ ØªØ¹Ù„Ù†Ù‡ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ",
+        "question": "ما هو الخطر الذي تشير إليه هذه العلامة المرورية؟",
         "choices": [
-          { "text": "Ø³Ø·Ø­ Ø·Ø±ÙŠÙ‚ Ø¨ØªÙ…Ø³Ùƒ Ù…Ù†Ø®ÙØ¶ Ù‚Ø¯ ÙŠØªØ³Ø¨Ø¨ ÙÙŠ Ø§Ù†Ø²Ù„Ø§Ù‚ Ø§Ù„Ù…Ø±ÙƒØ¨Ø©", "is_correct": true },
-          { "text": "Ø·Ø±ÙŠÙ‚ Ø¨Ø­ØµÙ‰ ÙØ¶ÙØ§Ø¶ Ù‚Ø¯ ÙŠØªÙ„Ù Ø§Ù„Ø²Ø¬Ø§Ø¬ Ø§Ù„Ø£Ù…Ø§Ù…ÙŠ", "is_correct": false },
-          { "text": "Ø·Ø±ÙŠÙ‚ Ø¨Ù‡ ØªØ´Ù‚Ù‚ Ù‚Ø¯ ÙŠØªÙ„Ù Ù‡ÙŠÙƒÙ„ Ø§Ù„Ù…Ø±ÙƒØ¨Ø© Ø§Ù„Ø³ÙÙ„ÙŠ", "is_correct": false }
+          {
+            "text": "سطح طريق ذو تماسك منخفض قد يتسبب في انزلاق المركبة",
+            "is_correct": true
+          },
+          {
+            "text": "طريق بحصى فضفاض قد يتلف الزجاج الأمامي",
+            "is_correct": false
+          },
+          {
+            "text": "طريق به تشقق قد يتلف هيكل المركبة السفلي",
+            "is_correct": false
+          }
         ],
-        "explanation": "ØªØ¹Ù„Ù† Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ© Ø£Ù† Ø³Ø·Ø­ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø£ÙƒØ«Ø± Ø²Ù„Ø§Ù‚Ø© Ù…Ù† Ø§Ù„Ù…Ø¹ØªØ§Ø¯ Ù…Ù…Ø§ ÙŠØ²ÙŠØ¯ Ø¨Ø´ÙƒÙ„ ÙƒØ¨ÙŠØ± Ù…Ù† Ø®Ø·Ø± Ø§Ù„Ø§Ù†Ø²Ù„Ø§Ù‚ ÙˆÙÙ‚Ø¯Ø§Ù† Ø§Ù„Ø³ÙŠØ·Ø±Ø©."
+        "explanation": "تشير هذه العلامة المرورية إلى سطح طريق ذو تماسك منخفض، مما يزيد بشكل كبير من خطر الانزلاق وفقدان السيطرة."
       }
     }
   },
@@ -142,40 +181,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat moet u doen wanneer u dit bord ziet?",
+        "question": "Wat doet u best wanneer u dit bord ziet?",
         "choices": [
-          { "text": "Uw snelheid verminderen, vloeiend sturen en abrupte manoeuvres vermijden", "is_correct": true },
-          { "text": "Uw snelheid behouden maar harder op het stuur drukken", "is_correct": false },
-          { "text": "Uw veiligheidsafstand verminderen zodat u de remreactie van de auto voor u kunt volgen", "is_correct": false }
+          {
+            "text": "Snelheid verminderen, soepel sturen en plotselinge manoeuvres vermijden",
+            "is_correct": true
+          },
+          {
+            "text": "Uw snelheid behouden maar harder op het stuur drukken",
+            "is_correct": false
+          },
+          {
+            "text": "Uw veiligheidsafstand verminderen zodat u de remreactie van de auto voor u kunt volgen",
+            "is_correct": false
+          }
         ],
-        "explanation": "Op een gladde rijbaan moet u uw snelheid verminderen, grotere afstanden houden en alle manoeuvres vloeiend uitvoeren om slippen te voorkomen."
+        "explanation": "Op een gladde rijbaan doet u er goed aan uw snelheid te verminderen, grotere afstanden te houden en alle manoeuvres vloeiend uit te voeren om slippen te voorkomen."
       },
       "EN": {
-        "question": "What must you do when you see this sign?",
+        "question": "What should you do when you see this sign?",
         "choices": [
-          { "text": "Reduce speed, steer smoothly and avoid abrupt manoeuvres", "is_correct": true },
-          { "text": "Keep your speed but grip the steering wheel harder", "is_correct": false },
-          { "text": "Reduce following distance to monitor the braking of the car ahead", "is_correct": false }
+          {
+            "text": "Reduce speed, steer smoothly and avoid sudden manoeuvres",
+            "is_correct": true
+          },
+          {
+            "text": "Keep your speed but grip the steering wheel harder",
+            "is_correct": false
+          },
+          {
+            "text": "Reduce following distance to monitor the braking of the car ahead",
+            "is_correct": false
+          }
         ],
-        "explanation": "On a slippery road you must reduce speed, maintain greater distances and perform all manoeuvres smoothly to prevent skidding."
+        "explanation": "On a slippery road you should reduce speed, maintain greater distances and perform all manoeuvres smoothly to prevent skidding."
       },
       "FR": {
-        "question": "Que devez-vous faire lorsque vous voyez ce panneau ?",
+        "question": "Que devriez-vous faire lorsque vous voyez ce panneau ?",
         "choices": [
-          { "text": "RÃ©duire la vitesse, braquer en douceur et Ã©viter les manÅ“uvres brusques", "is_correct": true },
-          { "text": "Maintenir la vitesse mais serrer plus fort le volant", "is_correct": false },
-          { "text": "RÃ©duire la distance de sÃ©curitÃ© pour surveiller le freinage du vÃ©hicule devant vous", "is_correct": false }
+          {
+            "text": "Réduire la vitesse, diriger en douceur et éviter les manœuvres brusques",
+            "is_correct": true
+          },
+          {
+            "text": "Maintenir la vitesse mais serrer plus fort le volant",
+            "is_correct": false
+          },
+          {
+            "text": "Réduire la distance de sécurité pour surveiller le freinage du véhicule devant vous",
+            "is_correct": false
+          }
         ],
-        "explanation": "Sur une chaussÃ©e glissante, rÃ©duisez la vitesse, maintenez des distances plus grandes et effectuez toutes les manÅ“uvres en douceur pour Ã©viter de dÃ©raper."
+        "explanation": "Sur une chaussée glissante, il vaut mieux réduire la vitesse, garder des distances plus grandes et effectuer toutes les manœuvres en douceur pour éviter de déraper."
       },
       "AR": {
-        "question": "Ù…Ø§Ø°Ø§ ÙŠØ¬Ø¨ Ø£Ù† ØªÙØ¹Ù„ Ø¹Ù†Ø¯Ù…Ø§ ØªØ±Ù‰ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ",
+        "question": "ماذا ينبغي عليك فعله عند رؤية هذه العلامة المرورية؟",
         "choices": [
-          { "text": "ØªÙ‚Ù„ÙŠÙ„ Ø§Ù„Ø³Ø±Ø¹Ø© ÙˆØ§Ù„ØªÙˆØ¬ÙŠÙ‡ Ø¨Ø³Ù„Ø§Ø³Ø© ÙˆØªØ¬Ù†Ø¨ Ø§Ù„Ù…Ù†Ø§ÙˆØ±Ø§Øª Ø§Ù„Ù…ÙØ§Ø¬Ø¦Ø©", "is_correct": true },
-          { "text": "Ø§Ù„Ø­ÙØ§Ø¸ Ø¹Ù„Ù‰ Ø³Ø±Ø¹ØªÙƒ Ù„ÙƒÙ† Ø§Ù„Ø¥Ù…Ø³Ø§Ùƒ Ø¨Ø¹Ø¬Ù„Ø© Ø§Ù„Ù‚ÙŠØ§Ø¯Ø© Ø¨Ù‚ÙˆØ© Ø£ÙƒØ¨Ø±", "is_correct": false },
-          { "text": "ØªÙ‚Ù„ÙŠÙ„ Ù…Ø³Ø§ÙØ© Ø§Ù„Ø£Ù…Ø§Ù† Ù„Ù…ØªØ§Ø¨Ø¹Ø© ÙƒØ¨Ø­ Ø§Ù„Ù…Ø±ÙƒØ¨Ø© Ø£Ù…Ø§Ù…Ùƒ", "is_correct": false }
+          {
+            "text": "تقليل السرعة، التوجيه بسلاسة وتجنب المناورات المفاجئة",
+            "is_correct": true
+          },
+          {
+            "text": "الحفاظ على سرعتك لكن الإمساك بعجلة القيادة بقوة أكبر",
+            "is_correct": false
+          },
+          {
+            "text": "تقليل مسافة الأمان لمتابعة كبح المركبة أمامك",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ø¹Ù„Ù‰ Ø·Ø±ÙŠÙ‚ Ø²Ù„Ù‚ ÙŠØ¬Ø¨ ØªÙ‚Ù„ÙŠÙ„ Ø§Ù„Ø³Ø±Ø¹Ø© ÙˆØ§Ù„Ø­ÙØ§Ø¸ Ø¹Ù„Ù‰ Ù…Ø³Ø§ÙØ§Øª Ø£ÙƒØ¨Ø± ÙˆØ£Ø¯Ø§Ø¡ Ø¬Ù…ÙŠØ¹ Ø§Ù„Ù…Ù†Ø§ÙˆØ±Ø§Øª Ø¨Ø³Ù„Ø§Ø³Ø© Ù„Ù…Ù†Ø¹ Ø§Ù„Ø§Ù†Ø²Ù„Ø§Ù‚."
+        "explanation": "على طريق زلق ينبغي تقليل السرعة والحفاظ على مسافات أكبر وأداء جميع المناورات بسلاسة لمنع الانزلاق."
       }
     }
   },
@@ -189,38 +264,74 @@
       "NL": {
         "question": "U rijdt 's nachts aan 90 km/u op een natte weg en ziet dit bord. Wat doet u?",
         "choices": [
-          { "text": "Geleidelijk remmen, snelheid flink verminderen, grotere volgafstand houden en vloeiend rijden", "is_correct": true },
-          { "text": "Uw snelheid houden maar meer aandacht besteden aan de weg", "is_correct": false },
-          { "text": "Krachtig remmen om zo snel mogelijk tot een veilige snelheid te komen", "is_correct": false }
+          {
+            "text": "Geleidelijk remmen, snelheid sterk verminderen, grotere volgafstand houden en soepel rijden",
+            "is_correct": true
+          },
+          {
+            "text": "Uw snelheid houden maar meer aandacht besteden aan de weg",
+            "is_correct": false
+          },
+          {
+            "text": "Krachtig remmen om zo snel mogelijk tot een veilige snelheid te komen",
+            "is_correct": false
+          }
         ],
         "explanation": "'s Nachts op een natte weg bij 90 km/u is het sliprisico bijzonder hoog. Geleidelijk remmen, snelheid sterk verminderen en grotere rijafstanden zijn essentieel."
       },
       "EN": {
         "question": "You are driving at night at 90 km/h on a wet road and see this sign. What do you do?",
         "choices": [
-          { "text": "Brake gradually, significantly reduce speed, maintain a larger following distance and drive smoothly", "is_correct": true },
-          { "text": "Keep your speed but pay more attention to the road", "is_correct": false },
-          { "text": "Brake hard to reach a safe speed as quickly as possible", "is_correct": false }
+          {
+            "text": "Brake gradually, significantly reduce speed, maintain a larger following distance and drive smoothly",
+            "is_correct": true
+          },
+          {
+            "text": "Keep your speed but pay more attention to the road",
+            "is_correct": false
+          },
+          {
+            "text": "Brake hard to reach a safe speed as quickly as possible",
+            "is_correct": false
+          }
         ],
         "explanation": "At night on a wet road at 90 km/h the skid risk is particularly high. Gradual braking, significantly reducing speed and larger following distances are essential."
       },
       "FR": {
-        "question": "Vous roulez de nuit Ã  90 km/h sur une route mouillÃ©e et voyez ce panneau. Que faites-vous ?",
+        "question": "Vous roulez de nuit à 90 km/h sur une route mouillée et voyez ce panneau. Que faites-vous ?",
         "choices": [
-          { "text": "Freiner progressivement, rÃ©duire sensiblement la vitesse, maintenir une plus grande distance et rouler en douceur", "is_correct": true },
-          { "text": "Maintenir la vitesse mais Ãªtre plus attentif Ã  la route", "is_correct": false },
-          { "text": "Freiner fort pour atteindre une vitesse sÃ»re le plus vite possible", "is_correct": false }
+          {
+            "text": "Freiner progressivement, réduire fortement la vitesse, maintenir une plus grande distance et conduire en douceur",
+            "is_correct": true
+          },
+          {
+            "text": "Maintenir la vitesse mais être plus attentif à la route",
+            "is_correct": false
+          },
+          {
+            "text": "Freiner fort pour atteindre une vitesse sûre le plus vite possible",
+            "is_correct": false
+          }
         ],
-        "explanation": "De nuit sur route mouillÃ©e Ã  90 km/h, le risque de dÃ©rapage est particuliÃ¨rement Ã©levÃ©. Un freinage progressif, une rÃ©duction sensible de la vitesse et des distances plus grandes sont essentiels."
+        "explanation": "De nuit sur route mouillée à 90 km/h, le risque de dérapage est particulièrement élevé. Un freinage progressif, une réduction sensible de la vitesse et des distances plus grandes sont essentiels."
       },
       "AR": {
-        "question": "Ø£Ù†Øª ØªÙ‚ÙˆØ¯ Ù„ÙŠÙ„Ø§Ù‹ Ø¨Ø³Ø±Ø¹Ø© 90 ÙƒÙ…/Ø³Ø§Ø¹Ø© Ø¹Ù„Ù‰ Ø·Ø±ÙŠÙ‚ Ù…Ø¨Ù„Ù„ ÙˆØªØ±Ù‰ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©. Ù…Ø§Ø°Ø§ ØªÙØ¹Ù„ØŸ",
+        "question": "أنت تقود ليلًا بسرعة 90 كم/ساعة على طريق مبلل وترى هذه العلامة المرورية. ماذا تفعل؟",
         "choices": [
-          { "text": "Ø§Ù„ÙØ±Ù…Ù„Ø© ØªØ¯Ø±ÙŠØ¬ÙŠØ§Ù‹ ÙˆØªÙ‚Ù„ÙŠÙ„ Ø§Ù„Ø³Ø±Ø¹Ø© Ø¨Ø´ÙƒÙ„ Ù…Ù„Ø­ÙˆØ¸ ÙˆØ§Ù„Ø­ÙØ§Ø¸ Ø¹Ù„Ù‰ Ù…Ø³Ø§ÙØ© Ø£Ù…Ø§Ù† Ø£ÙƒØ¨Ø± ÙˆØ§Ù„Ø³ÙŠØ± Ø¨Ø³Ù„Ø§Ø³Ø©", "is_correct": true },
-          { "text": "Ø§Ù„Ø­ÙØ§Ø¸ Ø¹Ù„Ù‰ Ø³Ø±Ø¹ØªÙƒ Ù„ÙƒÙ† Ø§Ù„Ø§Ù†ØªØ¨Ø§Ù‡ Ø£ÙƒØ«Ø± Ù„Ù„Ø·Ø±ÙŠÙ‚", "is_correct": false },
-          { "text": "Ø§Ù„ÙØ±Ù…Ù„Ø© Ø¨Ù‚ÙˆØ© Ù„Ù„ÙˆØµÙˆÙ„ Ø¥Ù„Ù‰ Ø³Ø±Ø¹Ø© Ø¢Ù…Ù†Ø© Ø¨Ø£Ø³Ø±Ø¹ ÙˆÙ‚Øª Ù…Ù…ÙƒÙ†", "is_correct": false }
+          {
+            "text": "الفرملة تدريجيًا، تقليل السرعة بشكل ملحوظ، الحفاظ على مسافة أمان أكبر والقيادة بسلاسة",
+            "is_correct": true
+          },
+          {
+            "text": "الحفاظ على سرعتك لكن الانتباه أكثر للطريق",
+            "is_correct": false
+          },
+          {
+            "text": "الفرملة بقوة للوصول إلى سرعة آمنة بأسرع وقت ممكن",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ù„ÙŠÙ„Ø§Ù‹ Ø¹Ù„Ù‰ Ø·Ø±ÙŠÙ‚ Ù…Ø¨Ù„Ù„ Ø¨Ø³Ø±Ø¹Ø© 90 ÙƒÙ…/Ø³Ø§Ø¹Ø© ÙŠÙƒÙˆÙ† Ø®Ø·Ø± Ø§Ù„Ø§Ù†Ø²Ù„Ø§Ù‚ Ù…Ø±ØªÙØ¹Ø§Ù‹ Ø¨Ø´ÙƒÙ„ Ø®Ø§Øµ. Ø§Ù„ÙØ±Ù…Ù„Ø© Ø§Ù„ØªØ¯Ø±ÙŠØ¬ÙŠØ© ÙˆØªÙ‚Ù„ÙŠÙ„ Ø§Ù„Ø³Ø±Ø¹Ø© Ø¨Ø´ÙƒÙ„ Ù…Ù„Ø­ÙˆØ¸ ÙˆØ§Ù„Ù…Ø³Ø§ÙØ§Øª Ø§Ù„Ø£ÙƒØ¨Ø± Ø¶Ø±ÙˆØ±ÙŠØ©."
+        "explanation": "ليلًا على طريق مبلل بسرعة 90 كم/ساعة يكون خطر الانزلاق مرتفعًا بشكل خاص. الفرملة التدريجية وتقليل السرعة بشكل ملحوظ والمسافات الأكبر ضرورية."
       }
     }
   },
@@ -238,34 +349,37 @@
           { "text": "Precies op de gevaarlijke plek", "is_correct": false },
           { "text": "Op 500 meter voor het gevaar", "is_correct": false }
         ],
-        "explanation": "Buiten de bebouwde kom worden gevaarsborden op Â±150 meter voor het gevaar geplaatst. Binnen de bebouwde kom is dit Â±50 meter."
+        "explanation": "Buiten de bebouwde kom worden gevaarsborden op ±150 meter voor het gevaar geplaatst. Binnen de bebouwde kom is dit ±50 meter."
       },
       "EN": {
-        "question": "At what distance is this danger sign placed outside built-up areas?",
+        "question": "At what distance is this warning sign placed outside built-up areas?",
         "choices": [
-          { "text": "Approximately 150 metres before the hazard", "is_correct": true },
+          {
+            "text": "Approximately 150 metres before the hazard",
+            "is_correct": true
+          },
           { "text": "Exactly at the hazard location", "is_correct": false },
           { "text": "500 metres before the hazard", "is_correct": false }
         ],
-        "explanation": "Outside built-up areas, danger signs are placed Â±150 metres before the hazard. Inside built-up areas it is Â±50 metres."
+        "explanation": "Outside built-up areas, warning signs are placed ±150 metres before the hazard. Inside built-up areas it is ±50 metres."
       },
       "FR": {
-        "question": "Ã€ quelle distance ce panneau de danger est-il placÃ© hors agglomÃ©ration ?",
+        "question": "À quelle distance ce panneau de danger est-il placé hors agglomération ?",
         "choices": [
-          { "text": "Environ 150 mÃ¨tres avant le danger", "is_correct": true },
-          { "text": "Exactement Ã  l'endroit du danger", "is_correct": false },
-          { "text": "500 mÃ¨tres avant le danger", "is_correct": false }
+          { "text": "Environ 150 mètres avant le danger", "is_correct": true },
+          { "text": "Exactement à l'endroit du danger", "is_correct": false },
+          { "text": "500 mètres avant le danger", "is_correct": false }
         ],
-        "explanation": "Hors agglomÃ©ration, les panneaux de danger sont placÃ©s Ã  Â±150 mÃ¨tres avant le danger. En agglomÃ©ration, c'est Â±50 mÃ¨tres."
+        "explanation": "Hors agglomération, les panneaux de danger sont placés à ±150 mètres avant le danger. En agglomération, c'est ±50 mètres."
       },
       "AR": {
-        "question": "Ø¹Ù„Ù‰ Ø£ÙŠ Ù…Ø³Ø§ÙØ© ØªÙˆØ¶Ø¹ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ© Ø§Ù„ØªØ­Ø°ÙŠØ±ÙŠØ© Ø®Ø§Ø±Ø¬ Ø§Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ù…Ø¨Ù†ÙŠØ©ØŸ",
+        "question": "ما هي المسافة التي توضع عندها هذه العلامة التحذيرية خارج المنطقة السكنية؟",
         "choices": [
-          { "text": "Ø­ÙˆØ§Ù„ÙŠ 150 Ù…ØªØ± Ù‚Ø¨Ù„ Ø§Ù„Ø®Ø·Ø±", "is_correct": true },
-          { "text": "Ù…Ø¨Ø§Ø´Ø±Ø© Ø¹Ù†Ø¯ Ù…ÙˆÙ‚Ø¹ Ø§Ù„Ø®Ø·Ø±", "is_correct": false },
-          { "text": "500 Ù…ØªØ± Ù‚Ø¨Ù„ Ø§Ù„Ø®Ø·Ø±", "is_correct": false }
+          { "text": "حوالي 150 متر قبل الخطر", "is_correct": true },
+          { "text": "مباشرة عند موقع الخطر", "is_correct": false },
+          { "text": "500 متر قبل الخطر", "is_correct": false }
         ],
-        "explanation": "Ø®Ø§Ø±Ø¬ Ø§Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ù…Ø¨Ù†ÙŠØ© ØªÙˆØ¶Ø¹ Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± Ø¹Ù„Ù‰ Ù…Ø³Ø§ÙØ© Â±150 Ù…ØªØ± Ù‚Ø¨Ù„ Ø§Ù„Ø®Ø·Ø±. Ø¯Ø§Ø®Ù„ Ø§Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ù…Ø¨Ù†ÙŠØ© ØªÙƒÙˆÙ† Ø§Ù„Ù…Ø³Ø§ÙØ© Â±50 Ù…ØªØ±."
+        "explanation": "خارج المنطقة السكنية توضع علامات الخطر على مسافة ±150 متر قبل الخطر. داخل المنطقة السكنية تكون المسافة ±50 متر."
       }
     }
   },
@@ -277,36 +391,36 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Mag u plotseling remmen op een gladde rijbaan die dit bord aankondigt?",
+        "question": "Is het aan te raden om plotseling te remmen op een gladde rijbaan?",
         "choices": [
           { "text": "Nee", "is_correct": true },
           { "text": "Ja", "is_correct": false }
         ],
-        "explanation": "Plotseling remmen op een gladde rijbaan is verboden en gevaarlijk. Het voertuig kan gaan slippen en de controle verloren gaan."
+        "explanation": "Nee, dat is niet raadzaam. Plotseling remmen op een gladde rijbaan kan tot slippen en controleverlies leiden."
       },
       "EN": {
-        "question": "Is it allowed to brake suddenly on the slippery road announced by this sign?",
+        "question": "Is it advisable to brake suddenly on a slippery road?",
         "choices": [
           { "text": "No", "is_correct": true },
           { "text": "Yes", "is_correct": false }
         ],
-        "explanation": "Braking suddenly on a slippery road is prohibited and dangerous. The vehicle may skid and control can be lost."
+        "explanation": "No, it is not advisable. Sudden braking on a slippery road may cause the vehicle to skid and lead to loss of control."
       },
       "FR": {
-        "question": "ÃŠtes-vous autorisÃ© Ã  freiner brusquement sur la chaussÃ©e glissante annoncÃ©e par ce panneau ?",
+        "question": "Est-il conseillé de freiner brusquement sur une chaussée glissante ?",
         "choices": [
           { "text": "Non", "is_correct": true },
           { "text": "Oui", "is_correct": false }
         ],
-        "explanation": "Freiner brusquement sur une chaussÃ©e glissante est interdit et dangereux. Le vÃ©hicule peut dÃ©raper et le contrÃ´le peut Ãªtre perdu."
+        "explanation": "Non, ce n'est pas conseillé. Freiner brusquement sur une chaussée glissante peut provoquer un dérapage et une perte de contrôle."
       },
       "AR": {
-        "question": "Ù‡Ù„ ÙŠÙØ³Ù…Ø­ Ø¨Ø§Ù„ÙƒØ¨Ø­ ÙØ¬Ø£Ø© Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø²Ù„Ù‚ Ø§Ù„Ø°ÙŠ ØªØ¹Ù„Ù†Ù‡ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ",
+        "question": "هل يُنصح بالفرملة المفاجئة على طريق زلق؟",
         "choices": [
-          { "text": "Ù„Ø§", "is_correct": true },
-          { "text": "Ù†Ø¹Ù…", "is_correct": false }
+          { "text": "لا", "is_correct": true },
+          { "text": "نعم", "is_correct": false }
         ],
-        "explanation": "ÙŠÙØ­Ø¸Ø± Ø§Ù„ÙƒØ¨Ø­ ÙØ¬Ø£Ø© Ø¹Ù„Ù‰ Ø·Ø±ÙŠÙ‚ Ø²Ù„Ù‚ ÙˆÙ‡Ùˆ Ø£Ù…Ø± Ø®Ø·ÙŠØ±. Ù‚Ø¯ ØªÙ†Ø²Ù„Ù‚ Ø§Ù„Ù…Ø±ÙƒØ¨Ø© ÙˆØªÙÙ‚Ø¯ Ø§Ù„Ø³ÙŠØ·Ø±Ø© Ø¹Ù„ÙŠÙ‡Ø§."
+        "explanation": "لا، لا يُنصح بذلك. قد تؤدي الفرملة المفاجئة على طريق زلق إلى انزلاق المركبة وفقدان السيطرة عليها."
       }
     }
   },
@@ -318,7 +432,7 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Bent u wettelijk verplicht uw snelheid aan te passen aan de glibberige rijomstandigheden die dit bord aankondigt?",
+        "question": "Bent u wettelijk verplicht uw snelheid aan te passen aan een gladde rijbaan?",
         "choices": [
           { "text": "Ja", "is_correct": true },
           { "text": "Nee", "is_correct": false }
@@ -326,7 +440,7 @@
         "explanation": "Op een gladde rijbaan verplicht de wet u uw snelheid en rijgedrag aan te passen om een veilige beheersing van het voertuig te garanderen."
       },
       "EN": {
-        "question": "Are you legally required to adapt your speed to the slippery road conditions announced by this sign?",
+        "question": "Are you legally required to adapt your speed to slippery road conditions?",
         "choices": [
           { "text": "Yes", "is_correct": true },
           { "text": "No", "is_correct": false }
@@ -334,20 +448,20 @@
         "explanation": "On a slippery road, the law requires you to adapt your speed and driving to ensure safe vehicle control."
       },
       "FR": {
-        "question": "ÃŠtes-vous lÃ©galement obligÃ© d'adapter votre vitesse aux conditions glissantes annoncÃ©es par ce panneau ?",
+        "question": "Êtes-vous légalement obligé d'adapter votre vitesse aux conditions de chaussée glissante ?",
         "choices": [
           { "text": "Oui", "is_correct": true },
           { "text": "Non", "is_correct": false }
         ],
-        "explanation": "Sur une chaussÃ©e glissante, la loi vous oblige Ã  adapter votre vitesse et votre conduite pour garantir une maÃ®trise sÃ»re du vÃ©hicule."
+        "explanation": "Sur une chaussée glissante, la loi vous oblige à adapter votre vitesse et votre conduite pour garantir une maîtrise sûre du véhicule."
       },
       "AR": {
-        "question": "Ù‡Ù„ Ø£Ù†Øª Ù…Ù„Ø²Ù… Ù‚Ø§Ù†ÙˆÙ†ÙŠØ§Ù‹ Ø¨ØªÙƒÙŠÙŠÙ Ø³Ø±Ø¹ØªÙƒ Ù…Ø¹ Ø£Ø­ÙˆØ§Ù„ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø²Ù„Ù‚ Ø§Ù„ØªÙŠ ØªØ¹Ù„Ù†Ù‡Ø§ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ",
+        "question": "هل أنت ملزم قانونيًا بتكييف سرعتك مع حالة الطريق الزلق؟",
         "choices": [
-          { "text": "Ù†Ø¹Ù…", "is_correct": true },
-          { "text": "Ù„Ø§", "is_correct": false }
+          { "text": "نعم", "is_correct": true },
+          { "text": "لا", "is_correct": false }
         ],
-        "explanation": "Ø¹Ù„Ù‰ Ø·Ø±ÙŠÙ‚ Ø²Ù„Ù‚ØŒ ÙŠÙ„Ø²Ù…Ùƒ Ø§Ù„Ù‚Ø§Ù†ÙˆÙ† Ø¨ØªÙƒÙŠÙŠÙ Ø³Ø±Ø¹ØªÙƒ ÙˆØ³Ù„ÙˆÙƒ Ù‚ÙŠØ§Ø¯ØªÙƒ Ù„Ø¶Ù…Ø§Ù† Ø§Ù„ØªØ­ÙƒÙ… Ø§Ù„Ø¢Ù…Ù† Ø¨Ø§Ù„Ù…Ø±ÙƒØ¨Ø©."
+        "explanation": "على طريق زلق، يلزمك القانون بتكييف سرعتك وسلوك قيادتك لضمان التحكم الآمن بالمركبة."
       }
     }
   }

@@ -1,10 +1,602 @@
-﻿[
-  {"question_id":"C17_Q01","type":"WHAT_DOES_IT_MEAN","difficulty":"EASY","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Wat betekent dit verkeersbord?","choices":[{"text":"Verboden toegang voor bestuurders van handkarren","is_correct":true},{"text":"Verboden toegang voor bestuurders van gespannen","is_correct":false},{"text":"Verboden toegang voor voetgangers","is_correct":false}],"explanation":"C17 verbiedt handkarren (door mensen getrokken of geduwd voertuigen). Gespannen vallen onder C13 en voetgangers onder C19."},"EN":{"question":"What does this traffic sign mean?","choices":[{"text":"No entry for drivers of handcarts","is_correct":true},{"text":"No entry for drivers of horse-drawn vehicles","is_correct":false},{"text":"No entry for pedestrians","is_correct":false}],"explanation":"C17 prohibits handcarts (human-pulled or pushed vehicles). Horse-drawn vehicles fall under C13 and pedestrians under C19."},"FR":{"question":"Que signifie ce panneau ?","choices":[{"text":"Acces interdit aux conducteurs de charrettes a bras","is_correct":true},{"text":"Acces interdit aux conducteurs d attelages","is_correct":false},{"text":"Acces interdit aux pietons","is_correct":false}],"explanation":"C17 interdit les charrettes a bras (vehicules tires ou pousses par des personnes). Les attelages relevent du C13 et les pietons du C19."},"AR":{"question":"Ù…Ø§Ø°Ø§ ØªØ¹Ù†ÙŠ Ù„Ø§ÙØªØ© Ø§Ù„Ù…Ø±ÙˆØ± Ù‡Ø°Ù‡ØŸ","choices":[{"text":"Ù…Ù…Ù†ÙˆØ¹ Ø¯Ø®ÙˆÙ„ Ù…Ø³ØªØ®Ø¯Ù…ÙŠ Ø§Ù„Ø¹Ø±Ø¨Ø§Øª Ø§Ù„ÙŠØ¯ÙˆÙŠØ©","is_correct":true},{"text":"Ù…Ù…Ù†ÙˆØ¹ Ø¯Ø®ÙˆÙ„ Ø³Ø§Ø¦Ù‚ÙŠ Ø§Ù„Ø¹Ø±Ø¨Ø§Øª Ø§Ù„Ø­ÙŠÙˆØ§Ù†ÙŠØ©","is_correct":false},{"text":"Ù…Ù…Ù†ÙˆØ¹ Ø¯Ø®ÙˆÙ„ Ø§Ù„Ù…Ø´Ø§Ø©","is_correct":false}],"explanation":"ØªØ­Ø¸Ø± C17 Ø§Ù„Ø¹Ø±Ø¨Ø§Øª Ø§Ù„ÙŠØ¯ÙˆÙŠØ© (Ø§Ù„ØªÙŠ ÙŠØ¬Ø±Ù‡Ø§ Ø§Ùˆ ÙŠØ¯ÙØ¹Ù‡Ø§ Ø§Ù„Ø§Ø´Ø®Ø§Øµ). Ø§Ù„Ø¹Ø±Ø¨Ø§Øª Ø§Ù„Ø­ÙŠÙˆØ§Ù†ÙŠØ© ØªÙ†Ø¯Ø±Ø¬ ØªØ­Øª C13 ÙˆØ§Ù„Ù…Ø´Ø§Ø© ØªØ­Øª C19."}}},
-  {"question_id":"C17_Q02","type":"WHICH_SIGN","difficulty":"EASY","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Tot welke categorie behoort dit bord?","choices":[{"text":"Verbodsborden (C-reeks)","is_correct":true},{"text":"Gevaarsborden (A-reeks)","is_correct":false},{"text":"Gebodsborden (D-reeks)","is_correct":false}],"explanation":"Verbodsborden (C-reeks) zijn rond met rode rand en verbieden bepaalde weggebruikers."},"EN":{"question":"To which category does this sign belong?","choices":[{"text":"Prohibition signs (C-series)","is_correct":true},{"text":"Danger signs (A-series)","is_correct":false},{"text":"Mandatory signs (D-series)","is_correct":false}],"explanation":"Prohibition signs (C-series) are round with a red border and prohibit certain road users."},"FR":{"question":"A quelle categorie appartient ce panneau ?","choices":[{"text":"Panneaux d interdiction (serie C)","is_correct":true},{"text":"Panneaux de danger (serie A)","is_correct":false},{"text":"Panneaux d obligation (serie D)","is_correct":false}],"explanation":"Les panneaux d interdiction (serie C) sont ronds avec un bord rouge et interdisent certains usagers de la route."},"AR":{"question":"Ø§Ù„Ù‰ Ø§ÙŠ ÙØ¦Ø© ØªÙ†ØªÙ…ÙŠ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ","choices":[{"text":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø­Ø¸Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© C)","is_correct":true},{"text":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© A)","is_correct":false},{"text":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø§Ù„Ø²Ø§Ù… (Ø§Ù„Ø³Ù„Ø³Ù„Ø© D)","is_correct":false}],"explanation":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø­Ø¸Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© C) Ù…Ø³ØªØ¯ÙŠØ±Ø© Ø°Ø§Øª Ø­Ø¯ Ø§Ø­Ù…Ø± ÙˆØªØ­Ø¸Ø± Ù…Ø³ØªØ®Ø¯Ù…ÙŠ Ø·Ø±ÙŠÙ‚ Ù…Ø¹ÙŠÙ†ÙŠÙ†."}}},
-  {"question_id":"C17_Q03","type":"HAZARD_IDENTIFICATION","difficulty":"EASY","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Welk type voertuig wordt door C17 verboden?","choices":[{"text":"Handkarren (voertuigen zonder motor, door mensen voortbewogen)","is_correct":true},{"text":"Alle door mensen bediende voertuigen inclusief fietsen","is_correct":false},{"text":"Kleine bromfietsen en elektrische steps","is_correct":false}],"explanation":"C17 verbiedt handkarren: voertuigen die door menselijke kracht worden getrokken of geduwd en geen eigen motor hebben, zoals bakkarren en steekwagens."},"EN":{"question":"What type of vehicle is prohibited by C17?","choices":[{"text":"Handcarts (motorless vehicles propelled by human power)","is_correct":true},{"text":"All human-operated vehicles including bicycles","is_correct":false},{"text":"Small mopeds and electric scooters","is_correct":false}],"explanation":"C17 prohibits handcarts: vehicles pulled or pushed by human power without an engine, such as trolleys and sack trucks."},"FR":{"question":"Quel type de vehicule est interdit par C17 ?","choices":[{"text":"Charrettes a bras (vehicules sans moteur propulses par la force humaine)","is_correct":true},{"text":"Tous les vehicules actionnes par des personnes y compris les velos","is_correct":false},{"text":"Petits cyclomoteurs et trottinettes electriques","is_correct":false}],"explanation":"C17 interdit les charrettes a bras: vehicules tires ou pousses par la force humaine sans moteur propre comme les chariots et diables."},"AR":{"question":"Ù…Ø§ Ù†ÙˆØ¹ Ø§Ù„Ù…Ø±ÙƒØ¨Ø© Ø§Ù„ØªÙŠ ØªØ­Ø¸Ø±Ù‡Ø§ C17ØŸ","choices":[{"text":"Ø§Ù„Ø¹Ø±Ø¨Ø§Øª Ø§Ù„ÙŠØ¯ÙˆÙŠØ© (Ù…Ø±ÙƒØ¨Ø§Øª Ø¨Ù„Ø§ Ù…Ø­Ø±Ùƒ ØªØ´ØºÙ„Ù‡Ø§ Ø§Ù„Ù‚ÙˆØ© Ø§Ù„Ø¨Ø´Ø±ÙŠØ©)","is_correct":true},{"text":"Ø¬Ù…ÙŠØ¹ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„ØªÙŠ ÙŠØ´ØºÙ„Ù‡Ø§ Ø§Ù„Ø¨Ø´Ø± Ø¨Ù…Ø§ ÙÙŠÙ‡Ø§ Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª","is_correct":false},{"text":"Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª Ø§Ù„Ù†Ø§Ø±ÙŠØ© Ø§Ù„ØµØºÙŠØ±Ø© ÙˆØ§Ù„Ø³ÙƒÙˆØªØ±Ø§Øª Ø§Ù„ÙƒÙ‡Ø±Ø¨Ø§Ø¦ÙŠØ©","is_correct":false}],"explanation":"ØªØ­Ø¸Ø± C17 Ø§Ù„Ø¹Ø±Ø¨Ø§Øª Ø§Ù„ÙŠØ¯ÙˆÙŠØ©: Ù…Ø±ÙƒØ¨Ø§Øª ØªÙØ´Ø¯ Ø§Ùˆ ØªÙØ¯ÙØ¹ Ø¨Ø§Ù„Ù‚ÙˆØ© Ø§Ù„Ø¨Ø´Ø±ÙŠØ© Ø¨Ù„Ø§ Ù…Ø­Ø±Ùƒ Ø°Ø§ØªÙŠ ÙƒØ§Ù„Ø¹Ø±Ø¨Ø§Øª ÙˆØ¹Ø±Ø¨Ø§Øª Ø§Ù„Ù†Ù‚Ù„."}}},
-  {"question_id":"C17_Q04","type":"WHAT_MUST_YOU_DO","difficulty":"MEDIUM","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"U duwt een grote verhuiswagen (handkar) en ziet bord C17. Wat doet u?","choices":[{"text":"Stoppen en een alternatieve route zoeken","is_correct":true},{"text":"Doorrijden want handkarren zijn geen voertuigen","is_correct":false},{"text":"Doorrijden langs het voetpad","is_correct":false}],"explanation":"C17 verbiedt handkarren inclusief grote verhuiswagens. U dient een andere route te zoeken."},"EN":{"question":"You are pushing a large moving trolley (handcart) and see sign C17. What do you do?","choices":[{"text":"Stop and find an alternative route","is_correct":true},{"text":"Continue because handcarts are not vehicles","is_correct":false},{"text":"Continue along the pavement","is_correct":false}],"explanation":"C17 prohibits handcarts including large moving trolleys. You must find an alternative route."},"FR":{"question":"Vous poussez un grand chariot de demenagement (charrette a bras) et voyez le panneau C17. Que faites-vous ?","choices":[{"text":"S arreter et chercher un itineraire alternatif","is_correct":true},{"text":"Continuer car les charrettes a bras ne sont pas des vehicules","is_correct":false},{"text":"Continuer sur le trottoir","is_correct":false}],"explanation":"C17 interdit les charrettes a bras y compris les grands chariots de demenagement. Vous devez chercher un autre itineraire."},"AR":{"question":"Ø§Ù†Øª ØªØ¯ÙØ¹ Ø¹Ø±Ø¨Ø© Ù†Ù‚Ù„ ÙƒØ¨ÙŠØ±Ø© (Ø¹Ø±Ø¨Ø© ÙŠØ¯ÙˆÙŠØ©) ÙˆØªØ±Ù‰ Ù„Ø§ÙØªØ© C17. Ù…Ø§Ø°Ø§ ØªÙØ¹Ù„ØŸ","choices":[{"text":"ØªÙˆÙ‚Ù ÙˆØ§Ø¨Ø­Ø« Ø¹Ù† Ø·Ø±ÙŠÙ‚ Ø¨Ø¯ÙŠÙ„","is_correct":true},{"text":"ØªØ§Ø¨Ø¹ Ù„Ø§Ù† Ø§Ù„Ø¹Ø±Ø¨Ø§Øª Ø§Ù„ÙŠØ¯ÙˆÙŠØ© Ù„ÙŠØ³Øª Ù…Ø±ÙƒØ¨Ø§Øª","is_correct":false},{"text":"ØªØ§Ø¨Ø¹ Ø¹Ù„Ù‰ Ø§Ù„Ø±ØµÙŠÙ","is_correct":false}],"explanation":"ØªØ­Ø¸Ø± C17 Ø§Ù„Ø¹Ø±Ø¨Ø§Øª Ø§Ù„ÙŠØ¯ÙˆÙŠØ© Ø¨Ù…Ø§ ÙÙŠÙ‡Ø§ Ø¹Ø±Ø¨Ø§Øª Ø§Ù„Ù†Ù‚Ù„ Ø§Ù„ÙƒØ¨ÙŠØ±Ø©. ÙŠØ¬Ø¨ Ø¹Ù„ÙŠÙƒ Ø§ÙŠØ¬Ø§Ø¯ Ø·Ø±ÙŠÙ‚ Ø¢Ø®Ø±."}}},
-  {"question_id":"C17_Q05","type":"WHAT_MUST_YOU_DO","difficulty":"MEDIUM","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Mag een marktkoopman met zijn kraam op wielen een weg berijden met bord C17?","choices":[{"text":"Nee, een tentenkraam of kraam op wielen is een handkar en valt onder C17","is_correct":true},{"text":"Ja, marktkramen zijn vrijgesteld van C17","is_correct":false},{"text":"Alleen als de kraam kleiner is dan 1 meter breed","is_correct":false}],"explanation":"Een kraam op wielen die door mensen wordt duwt of getrokken is een handkar. Dit type voertuig valt onder C17 en mag de verboden weg niet oprijden."},"EN":{"question":"May a market trader with a wheeled stall use a road with sign C17?","choices":[{"text":"No, a wheeled market stall is a handcart and falls under C17","is_correct":true},{"text":"Yes, market stalls are exempt from C17","is_correct":false},{"text":"Only if the stall is less than 1 metre wide","is_correct":false}],"explanation":"A wheeled stall pushed or pulled by people is a handcart. This type of vehicle falls under C17 and may not use the prohibited road."},"FR":{"question":"Un commercant ambulant avec son etal sur roues peut-il emprunter une route avec le panneau C17 ?","choices":[{"text":"Non, un etal sur roues est une charrette a bras et releve du C17","is_correct":true},{"text":"Oui, les etals de marche sont exemptes du C17","is_correct":false},{"text":"Seulement si l etal fait moins de 1 metre de largeur","is_correct":false}],"explanation":"Un etal sur roues pousse ou tire par des personnes est une charrette a bras. Ce type de vehicule releve du C17 et ne peut pas emprunter la route interdite."},"AR":{"question":"Ù‡Ù„ ÙŠØ¬ÙˆØ² Ù„Ø¨Ø§Ø¦Ø¹ Ù…ØªØ¬ÙˆÙ„ Ø¨Ø¨Ø³Ø·Ø© Ø¹Ù„Ù‰ Ø¹Ø¬Ù„Ø§Øª Ø§Ø³ØªØ®Ø¯Ø§Ù… Ø·Ø±ÙŠÙ‚ Ø¨Ù‡ Ù„Ø§ÙØªØ© C17ØŸ","choices":[{"text":"Ù„Ø§ØŒ Ø§Ù„Ø¨Ø³Ø·Ø© Ø¹Ù„Ù‰ Ø¹Ø¬Ù„Ø§Øª Ù‡ÙŠ Ø¹Ø±Ø¨Ø© ÙŠØ¯ÙˆÙŠØ© ÙˆØªÙ†Ø¯Ø±Ø¬ ØªØ­Øª C17","is_correct":true},{"text":"Ù†Ø¹Ù…ØŒ Ø¨Ø³Ø·Ø§Øª Ø§Ù„Ø³ÙˆÙ‚ Ù…Ø¹ÙØ§Ø© Ù…Ù† C17","is_correct":false},{"text":"ÙÙ‚Ø· Ø§Ø°Ø§ ÙƒØ§Ù†Øª Ø§Ù„Ø¨Ø³Ø·Ø© Ø§Ù‚Ù„ Ù…Ù† Ù…ØªØ± Ø¹Ø±Ø¶Ø§","is_correct":false}],"explanation":"Ø§Ù„Ø¨Ø³Ø·Ø© Ø¹Ù„Ù‰ Ø¹Ø¬Ù„Ø§Øª Ø§Ù„ØªÙŠ ÙŠØ¯ÙØ¹Ù‡Ø§ Ø§Ùˆ ÙŠØ¬Ø±Ù‡Ø§ Ø§Ù„Ø§Ø´Ø®Ø§Øµ Ù‡ÙŠ Ø¹Ø±Ø¨Ø© ÙŠØ¯ÙˆÙŠØ©. Ù‡Ø°Ø§ Ø§Ù„Ù†ÙˆØ¹ Ù…Ù† Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª ÙŠÙ†Ø¯Ø±Ø¬ ØªØ­Øª C17 ÙˆÙ„Ø§ ÙŠØ¬ÙˆØ² Ø§Ø³ØªØ®Ø¯Ø§Ù… Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ù…Ø­Ø¸ÙˆØ±."}}},
-  {"question_id":"C17_Q06","type":"WHAT_MUST_YOU_DO","difficulty":"MEDIUM","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Geldt bord C17 ook voor een winkelkar van de supermarkt die men buiten het parkeerterrein rijdt?","choices":[{"text":"Ja, een winkelkar is een door mensen voortbewogen voertuig en valt onder C17","is_correct":true},{"text":"Nee, winkelkarren zijn geen officieel wegvoertuig en zijn altijd toegestaan","is_correct":false},{"text":"Alleen als de winkelkar op de rijbaan rijdt in plaats van op het voetpad","is_correct":false}],"explanation":"C17 dekt alle door mensen voortbewogen karren of wagentjes op de openbare weg. Een supermarktwinkelkar valt ook onder dit verbod als hij buiten het parkeerterrein op de openbare weg wordt gebruikt."},"EN":{"question":"Does sign C17 also apply to a supermarket shopping trolley taken outside the car park?","choices":[{"text":"Yes, a shopping trolley is a human-propelled vehicle and falls under C17","is_correct":true},{"text":"No, shopping trolleys are not official road vehicles and are always allowed","is_correct":false},{"text":"Only if the trolley is used on the carriageway instead of the pavement","is_correct":false}],"explanation":"C17 covers all human-propelled carts or trolleys on the public road. A supermarket shopping trolley also falls under this prohibition when used outside the car park on the public road."},"FR":{"question":"Le panneau C17 s applique-t-il aussi a un caddie de supermarche sorti du parking ?","choices":[{"text":"Oui, un caddie est un vehicule propulse par des personnes et releve du C17","is_correct":true},{"text":"Non, les caddies ne sont pas des vehicules routiers officiels et sont toujours autorises","is_correct":false},{"text":"Seulement si le caddie roule sur la chaussee plutot que sur le trottoir","is_correct":false}],"explanation":"C17 couvre tous les chariots ou voiturettes propulses par des personnes sur la voie publique. Un caddie de supermarche releve aussi de cette interdiction lorsqu il est utilise hors du parking sur la voie publique."},"AR":{"question":"Ù‡Ù„ ØªÙ†Ø·Ø¨Ù‚ Ù„Ø§ÙØªØ© C17 Ø§ÙŠØ¶Ø§ Ø¹Ù„Ù‰ Ø¹Ø±Ø¨Ø© Ø§Ù„ØªØ³ÙˆÙ‚ Ù…Ù† Ø§Ù„Ø³ÙˆØ¨Ø±Ù…Ø§Ø±ÙƒØª Ø¹Ù†Ø¯ Ø§Ø®Ø±Ø§Ø¬Ù‡Ø§ Ø®Ø§Ø±Ø¬ Ù…ÙˆÙ‚Ù Ø§Ù„Ø³ÙŠØ§Ø±Ø§ØªØŸ","choices":[{"text":"Ù†Ø¹Ù…ØŒ Ø¹Ø±Ø¨Ø© Ø§Ù„ØªØ³ÙˆÙ‚ Ù…Ø±ÙƒØ¨Ø© ÙŠØ´ØºÙ„Ù‡Ø§ Ø§Ù„Ø§Ù†Ø³Ø§Ù† ÙˆØªÙ†Ø¯Ø±Ø¬ ØªØ­Øª C17","is_correct":true},{"text":"Ù„Ø§ØŒ Ø¹Ø±Ø¨Ø§Øª Ø§Ù„ØªØ³ÙˆÙ‚ Ù„ÙŠØ³Øª Ù…Ø±ÙƒØ¨Ø§Øª Ø·Ø±Ù‚ Ø±Ø³Ù…ÙŠØ© ÙˆÙ…Ø³Ù…ÙˆØ­ Ø¨Ù‡Ø§ Ø¯Ø§Ø¦Ù…Ø§","is_correct":false},{"text":"ÙÙ‚Ø· Ø§Ø°Ø§ Ø§Ø³ØªÙØ®Ø¯Ù…Øª ÙÙŠ Ù…Ø³Ø§Ø± Ø§Ù„Ø³ÙŠØ§Ø±Ø§Øª Ù„Ø§ Ø¹Ù„Ù‰ Ø§Ù„Ø±ØµÙŠÙ","is_correct":false}],"explanation":"ØªØºØ·ÙŠ C17 Ø¬Ù…ÙŠØ¹ Ø§Ù„Ø¹Ø±Ø¨Ø§Øª Ø§Ù„ØªÙŠ ÙŠØ¯ÙØ¹Ù‡Ø§ Ø§Ù„Ø§Ù†Ø³Ø§Ù† ÙÙŠ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø¹Ø§Ù…. Ø¹Ø±Ø¨Ø© Ø§Ù„ØªØ³ÙˆÙ‚ Ù…Ù† Ø§Ù„Ø³ÙˆØ¨Ø±Ù…Ø§Ø±ÙƒØª ØªÙ†Ø¯Ø±Ø¬ Ø§ÙŠØ¶Ø§ ØªØ­Øª Ù‡Ø°Ø§ Ø§Ù„Ø­Ø¸Ø± Ø¹Ù†Ø¯ Ø§Ø³ØªØ®Ø¯Ø§Ù…Ù‡Ø§ Ø®Ø§Ø±Ø¬ Ù…ÙˆÙ‚Ù Ø§Ù„Ø³ÙŠØ§Ø±Ø§Øª ÙÙŠ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø¹Ø§Ù…."}}},
-  {"question_id":"C17_Q07","type":"IS_IT_ALLOWED","difficulty":"HARD","is_critical":true,"show_sign":true,"i18n":{"NL":{"question":"Mag u een handkar de verboden weg oprijden als u hem duwt op een aangrenzend voetpad?","choices":[{"text":"Nee, een handkar bevindt zich op de openbare weg en het verbod geldt ook op het voetpad tenzij vermeld","is_correct":true},{"text":"Ja, op een voetpad is C17 niet van toepassing","is_correct":false}],"explanation":"C17 verbiedt het gebruik van de weg als geheel; het rijden op een aangrenzend voetpad zijn ook onderdeel van de weg. Als er geen voetpaduitzondering is vermeld, geldt het verbod. Dit is een ernstige verkeersovertreding."},"EN":{"question":"May you take a handcart onto the prohibited road if you push it on an adjacent pavement?","choices":[{"text":"No, a handcart is on the public road and the prohibition also applies on the pavement unless stated otherwise","is_correct":true},{"text":"Yes, on a pavement C17 does not apply","is_correct":false}],"explanation":"C17 prohibits use of the road as a whole; travelling on an adjacent pavement is also part of the road. If there is no pavement exception stated, the prohibition applies. This is a serious traffic offence."},"FR":{"question":"Pouvez-vous emmener une charrette a bras sur la route interdite si vous la poussez sur un trottoir adjacent ?","choices":[{"text":"Non, une charrette a bras est sur la voie publique et l interdiction s applique aussi sur le trottoir sauf mention contraire","is_correct":true},{"text":"Oui, sur un trottoir C17 ne s applique pas","is_correct":false}],"explanation":"C17 interdit l utilisation de la route dans son ensemble; circuler sur un trottoir adjacent fait partie de la route. Si aucune exception de trottoir n est mentionnee l interdiction s applique. Il s agit d une infraction grave au code de la route."},"AR":{"question":"Ù‡Ù„ ÙŠØ¬ÙˆØ² Ø¬Ø± Ø¹Ø±Ø¨Ø© ÙŠØ¯ÙˆÙŠØ© Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ù…Ø­Ø¸ÙˆØ± Ø§Ø°Ø§ ÙƒÙ†Øª ØªØ¯ÙØ¹Ù‡Ø§ Ø¹Ù„Ù‰ Ø§Ù„Ø±ØµÙŠÙ Ø§Ù„Ù…Ø¬Ø§ÙˆØ±ØŸ","choices":[{"text":"Ù„Ø§ØŒ Ø§Ù„Ø¹Ø±Ø¨Ø© Ø§Ù„ÙŠØ¯ÙˆÙŠØ© ÙÙŠ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø¹Ø§Ù… ÙˆØ§Ù„Ø­Ø¸Ø± ÙŠØ³Ø±ÙŠ Ø§ÙŠØ¶Ø§ Ø¹Ù„Ù‰ Ø§Ù„Ø±ØµÙŠÙ Ù…Ø§ Ù„Ù… ÙŠÙÙ†Øµ Ø¹Ù„Ù‰ Ø®Ù„Ø§ÙÙ‡","is_correct":true},{"text":"Ù†Ø¹Ù…ØŒ Ø¹Ù„Ù‰ Ø§Ù„Ø±ØµÙŠÙ Ù„Ø§ ØªØ³Ø±ÙŠ C17","is_correct":false}],"explanation":"ØªØ­Ø¸Ø± C17 Ø§Ø³ØªØ®Ø¯Ø§Ù… Ø§Ù„Ø·Ø±ÙŠÙ‚ ÙƒÙƒÙ„Ø› Ø§Ù„Ø³ÙŠØ± Ø¹Ù„Ù‰ Ø§Ù„Ø±ØµÙŠÙ Ø§Ù„Ù…Ø¬Ø§ÙˆØ± Ù‡Ùˆ Ø§ÙŠØ¶Ø§ Ø¬Ø²Ø¡ Ù…Ù† Ø§Ù„Ø·Ø±ÙŠÙ‚. Ø§Ø°Ø§ Ù„Ù… ÙŠÙØ°ÙƒØ± Ø§Ø³ØªØ«Ù†Ø§Ø¡ Ø§Ù„Ø±ØµÙŠÙ ÙØ§Ù„Ø­Ø¸Ø± Ø³Ø§Ø±Ù. Ù‡Ø°Ù‡ Ù…Ø®Ø§Ù„ÙØ© Ù…Ø±ÙˆØ±ÙŠØ© Ø®Ø·ÙŠØ±Ø©."}}},
-  {"question_id":"C17_Q08","type":"IS_IT_ALLOWED","difficulty":"HARD","is_critical":true,"show_sign":true,"i18n":{"NL":{"question":"Mag een hulpverlener een EHBO-handkar de verboden weg oprijden om een gewonde te helpen?","choices":[{"text":"Nee, voor een hulpverlener zonder officiÃ«le ontheffing geldt het verbod ook in noodsituaties","is_correct":true},{"text":"Ja, medische noodsituaties overschrijven altijd verbodsborden","is_correct":false}],"explanation":"In principe geldt het verbod tenzij de bevoegde autoriteiten een ontheffing hebben verleend. Bij een echte noodsituatie kan het sterkere rechtsprinciple van overmacht gelden maar dit rechtvaardigt de overtreding niet automatisch. Dit is een ernstige verkeersovertreding."},"EN":{"question":"May a first-aider bring a first-aid handcart onto the prohibited road to help an injured person?","choices":[{"text":"No, the prohibition also applies to a first-aider without an official exemption even in emergencies","is_correct":true},{"text":"Yes, medical emergencies always override prohibition signs","is_correct":false}],"explanation":"In principle the prohibition applies unless the competent authorities have granted an exemption. In a genuine emergency the stronger legal principle of force majeure may apply but this does not automatically justify the violation. This is a serious traffic offence."},"FR":{"question":"Un secouriste peut-il amener une charrette de premiers secours sur la route interdite pour aider un blesse ?","choices":[{"text":"Non, l interdiction s applique aussi a un secouriste sans derogation officielle meme en cas d urgence","is_correct":true},{"text":"Oui, les urgences medicales annulent toujours les panneaux d interdiction","is_correct":false}],"explanation":"En principe l interdiction s applique sauf si les autorites competentes ont accorde une derogation. En cas de veritable urgence le principe juridique superieur de force majeure peut s appliquer mais cela ne justifie pas automatiquement la violation. Il s agit d une infraction grave au code de la route."},"AR":{"question":"Ù‡Ù„ ÙŠØ¬ÙˆØ² Ù„Ù…Ø³Ø¹Ù Ø§Ø­Ø¶Ø§Ø± Ø¹Ø±Ø¨Ø© Ø§Ø³Ø¹Ø§Ù ÙŠØ¯ÙˆÙŠØ© Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ù…Ø­Ø¸ÙˆØ± Ù„Ù…Ø³Ø§Ø¹Ø¯Ø© Ù…ØµØ§Ø¨ØŸ","choices":[{"text":"Ù„Ø§ØŒ Ø§Ù„Ø­Ø¸Ø± ÙŠØ³Ø±ÙŠ Ø§ÙŠØ¶Ø§ Ø¹Ù„Ù‰ Ø§Ù„Ù…Ø³Ø¹Ù Ø¨Ø¯ÙˆÙ† Ø§Ø³ØªØ«Ù†Ø§Ø¡ Ø±Ø³Ù…ÙŠ Ø­ØªÙ‰ ÙÙŠ Ø­Ø§Ù„Ø§Øª Ø§Ù„Ø·ÙˆØ§Ø±Ø¦","is_correct":true},{"text":"Ù†Ø¹Ù…ØŒ Ø­Ø§Ù„Ø§Øª Ø§Ù„Ø·ÙˆØ§Ø±Ø¦ Ø§Ù„Ø·Ø¨ÙŠØ© Ø¯Ø§Ø¦Ù…Ø§ ØªØªØºÙ„Ø¨ Ø¹Ù„Ù‰ Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø­Ø¸Ø±","is_correct":false}],"explanation":"Ù…Ù† Ø­ÙŠØ« Ø§Ù„Ù…Ø¨Ø¯Ø§ Ø§Ù„Ø­Ø¸Ø± Ø³Ø§Ø±Ù Ù…Ø§ Ù„Ù… ØªÙ…Ù†Ø­ Ø§Ù„Ø³Ù„Ø·Ø§Øª Ø§Ù„Ù…Ø®ØªØµØ© Ø§Ø³ØªØ«Ù†Ø§Ø¡. ÙÙŠ Ø­Ø§Ù„Ø© Ø·ÙˆØ§Ø±Ø¦ Ø­Ù‚ÙŠÙ‚ÙŠØ© Ù‚Ø¯ ÙŠØ³Ø±ÙŠ Ù…Ø¨Ø¯Ø§ Ø§Ù„Ù‚ÙˆØ© Ø§Ù„Ù‚Ø§Ù‡Ø±Ø© Ø§Ù„Ø§Ù‚ÙˆÙ‰ Ù‚Ø§Ù†ÙˆÙ†ÙŠØ§ Ù„ÙƒÙ† Ù‡Ø°Ø§ Ù„Ø§ ÙŠØ¨Ø±Ø± Ø§Ù„Ù…Ø®Ø§Ù„ÙØ© ØªÙ„Ù‚Ø§Ø¦ÙŠØ§. Ù‡Ø°Ù‡ Ù…Ø®Ø§Ù„ÙØ© Ù…Ø±ÙˆØ±ÙŠØ© Ø®Ø·ÙŠØ±Ø©."}}}
+[
+  {
+    "question_id": "C17_Q01",
+    "type": "WHAT_DOES_IT_MEAN",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat betekent dit verkeersbord?",
+        "choices": [
+          {
+            "text": "Verboden toegang voor bestuurders van handkarren",
+            "is_correct": true
+          },
+          {
+            "text": "Verboden toegang voor bestuurders van gespannen",
+            "is_correct": false
+          },
+          {
+            "text": "Verboden toegang voor voetgangers",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dit bord geeft aan dat bestuurders van handkarren deze doorgang niet mogen gebruiken."
+      },
+      "EN": {
+        "question": "What does this traffic sign mean?",
+        "choices": [
+          {
+            "text": "No entry for drivers of handcarts",
+            "is_correct": true
+          },
+          {
+            "text": "No entry for drivers of animal-drawn vehicles",
+            "is_correct": false
+          },
+          {
+            "text": "No entry for pedestrians",
+            "is_correct": false
+          }
+        ],
+        "explanation": "This sign indicates that drivers of handcarts may not use this access."
+      },
+      "FR": {
+        "question": "Que signifie ce panneau ?",
+        "choices": [
+          {
+            "text": "Accès interdit aux conducteurs de charrettes à bras",
+            "is_correct": true
+          },
+          {
+            "text": "Accès interdit aux conducteurs d’attelages",
+            "is_correct": false
+          },
+          {
+            "text": "Accès interdit aux piétons",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ce panneau indique que les conducteurs de charrettes à bras ne peuvent pas utiliser cet accès."
+      },
+      "AR": {
+        "question": "ما معنى هذه العلامة المرورية؟",
+        "choices": [
+          {
+            "text": "ممنوع دخول سائقي العربات اليدوية",
+            "is_correct": true
+          },
+          {
+            "text": "ممنوع دخول سائقي العربات التي تجرها الحيوانات",
+            "is_correct": false
+          },
+          {
+            "text": "ممنوع دخول المشاة",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تعني هذه العلامة أن سائقي العربات اليدوية لا يجوز لهم استخدام هذا المدخل."
+      }
+    }
+  },
+  {
+    "question_id": "C17_Q02",
+    "type": "HAZARD_IDENTIFICATION",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Op wie is dit verbod van toepassing?",
+        "choices": [
+          {
+            "text": "Op bestuurders van handkarren",
+            "is_correct": true
+          },
+          {
+            "text": "Op voetgangers",
+            "is_correct": false
+          },
+          {
+            "text": "Op alle gebruikers zonder motor",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Het verbod is specifiek gericht op bestuurders van handkarren."
+      },
+      "EN": {
+        "question": "To whom does this prohibition apply?",
+        "choices": [
+          {
+            "text": "To drivers of handcarts",
+            "is_correct": true
+          },
+          {
+            "text": "To pedestrians",
+            "is_correct": false
+          },
+          {
+            "text": "To all users without engines",
+            "is_correct": false
+          }
+        ],
+        "explanation": "The prohibition specifically applies to drivers of handcarts."
+      },
+      "FR": {
+        "question": "À qui s’applique cette interdiction ?",
+        "choices": [
+          {
+            "text": "Aux conducteurs de charrettes à bras",
+            "is_correct": true
+          },
+          {
+            "text": "Aux piétons",
+            "is_correct": false
+          },
+          {
+            "text": "À tous les usagers sans moteur",
+            "is_correct": false
+          }
+        ],
+        "explanation": "L’interdiction vise spécifiquement les conducteurs de charrettes à bras."
+      },
+      "AR": {
+        "question": "على من ينطبق هذا الحظر؟",
+        "choices": [
+          {
+            "text": "على سائقي العربات اليدوية",
+            "is_correct": true
+          },
+          {
+            "text": "على المشاة",
+            "is_correct": false
+          },
+          {
+            "text": "على جميع المستخدمين من دون محرك",
+            "is_correct": false
+          }
+        ],
+        "explanation": "ينطبق هذا الحظر تحديدًا على سائقي العربات اليدوية."
+      }
+    }
+  },
+  {
+    "question_id": "C17_Q03",
+    "type": "HAZARD_IDENTIFICATION",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Welk type voertuig wordt door dit bord verboden?",
+        "choices": [
+          {
+            "text": "Handkarren",
+            "is_correct": true
+          },
+          {
+            "text": "Alle door mensen gebruikte voertuigen",
+            "is_correct": false
+          },
+          {
+            "text": "Kleine gemotoriseerde voertuigen",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dit bord verbiedt specifiek handkarren."
+      },
+      "EN": {
+        "question": "Which type of vehicle is prohibited by this sign?",
+        "choices": [
+          {
+            "text": "Handcarts",
+            "is_correct": true
+          },
+          {
+            "text": "All vehicles used by people",
+            "is_correct": false
+          },
+          {
+            "text": "Small motorized vehicles",
+            "is_correct": false
+          }
+        ],
+        "explanation": "This sign specifically prohibits handcarts."
+      },
+      "FR": {
+        "question": "Quel type de véhicule est interdit par ce panneau ?",
+        "choices": [
+          {
+            "text": "Les charrettes à bras",
+            "is_correct": true
+          },
+          {
+            "text": "Tous les véhicules utilisés par des personnes",
+            "is_correct": false
+          },
+          {
+            "text": "Les petits véhicules motorisés",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ce panneau interdit spécifiquement les charrettes à bras."
+      },
+      "AR": {
+        "question": "ما نوع المركبة التي تحظرها هذه العلامة؟",
+        "choices": [
+          {
+            "text": "العربات اليدوية",
+            "is_correct": true
+          },
+          {
+            "text": "جميع المركبات التي يستخدمها الناس",
+            "is_correct": false
+          },
+          {
+            "text": "المركبات الصغيرة ذات المحرك",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تحظر هذه العلامة تحديدًا العربات اليدوية."
+      }
+    }
+  },
+  {
+    "question_id": "C17_Q04",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U duwt een handkar en ziet dit bord. Wat doet u?",
+        "choices": [
+          {
+            "text": "Stoppen en een alternatieve route zoeken",
+            "is_correct": true
+          },
+          {
+            "text": "Doorrijden omdat een handkar geen motor heeft",
+            "is_correct": false
+          },
+          {
+            "text": "Doorrijden langs de rand van de weg",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Omdat handkarren onder dit verbod vallen, moet u een andere route zoeken."
+      },
+      "EN": {
+        "question": "You are pushing a handcart and see this sign. What should you do?",
+        "choices": [
+          {
+            "text": "Stop and find an alternative route",
+            "is_correct": true
+          },
+          {
+            "text": "Continue because a handcart has no engine",
+            "is_correct": false
+          },
+          {
+            "text": "Continue along the edge of the road",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Because handcarts are included in this prohibition, you should find another route."
+      },
+      "FR": {
+        "question": "Vous poussez une charrette à bras et voyez ce panneau. Que devez-vous faire ?",
+        "choices": [
+          {
+            "text": "S’arrêter et chercher un autre itinéraire",
+            "is_correct": true
+          },
+          {
+            "text": "Continuer parce qu’une charrette à bras n’a pas de moteur",
+            "is_correct": false
+          },
+          {
+            "text": "Continuer le long du bord de la route",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Comme les charrettes à bras sont visées par cette interdiction, il faut chercher un autre itinéraire."
+      },
+      "AR": {
+        "question": "أنت تدفع عربة يدوية وترى هذه العلامة. ماذا ينبغي أن تفعل؟",
+        "choices": [
+          {
+            "text": "توقف وابحث عن طريق بديل",
+            "is_correct": true
+          },
+          {
+            "text": "تابع لأن العربة اليدوية لا تحتوي على محرك",
+            "is_correct": false
+          },
+          {
+            "text": "تابع على طرف الطريق",
+            "is_correct": false
+          }
+        ],
+        "explanation": "بما أن العربات اليدوية مشمولة بهذا الحظر، ينبغي البحث عن طريق آخر."
+      }
+    }
+  },
+  {
+    "question_id": "C17_Q05",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Uw bestemming ligt vlak achter dit bord. Wat doet u met uw handkar?",
+        "choices": [
+          {
+            "text": "Een alternatieve route zoeken",
+            "is_correct": true
+          },
+          {
+            "text": "Toch doorgaan omdat het dichtbij is",
+            "is_correct": false
+          },
+          {
+            "text": "Alleen kort doorgaan",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ook als uw bestemming dichtbij ligt, blijft de toegangsbeperking voor handkarren gelden."
+      },
+      "EN": {
+        "question": "Your destination is just beyond this sign. What do you do with your handcart?",
+        "choices": [
+          {
+            "text": "Find an alternative route",
+            "is_correct": true
+          },
+          {
+            "text": "Continue because it is nearby",
+            "is_correct": false
+          },
+          {
+            "text": "Only continue for a short distance",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Even if your destination is nearby, the access restriction for handcarts still applies."
+      },
+      "FR": {
+        "question": "Votre destination se trouve juste après ce panneau. Que faites-vous avec votre charrette à bras ?",
+        "choices": [
+          {
+            "text": "Chercher un autre itinéraire",
+            "is_correct": true
+          },
+          {
+            "text": "Continuer parce que c’est tout près",
+            "is_correct": false
+          },
+          {
+            "text": "Continuer seulement sur une courte distance",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Même si la destination est proche, la restriction d’accès pour les charrettes à bras reste valable."
+      },
+      "AR": {
+        "question": "تقع وجهتك مباشرة بعد هذه العلامة. ماذا تفعل بعربتك اليدوية؟",
+        "choices": [
+          {
+            "text": "ابحث عن طريق بديل",
+            "is_correct": true
+          },
+          {
+            "text": "واصل السير لأنها قريبة",
+            "is_correct": false
+          },
+          {
+            "text": "تابع لمسافة قصيرة فقط",
+            "is_correct": false
+          }
+        ],
+        "explanation": "حتى لو كانت وجهتك قريبة، يبقى المنع قائمًا على العربات اليدوية."
+      }
+    }
+  },
+  {
+    "question_id": "C17_Q06",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Mag een voetganger zonder handkar deze weg gebruiken ondanks dit bord?",
+        "choices": [
+          {
+            "text": "Ja, het bord richt zich op handkarren",
+            "is_correct": true
+          },
+          {
+            "text": "Nee, het bord verbiedt ook voetgangers",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dit bord is gericht op handkarren. Een voetganger zonder handkar valt daar niet automatisch onder."
+      },
+      "EN": {
+        "question": "May a pedestrian without a handcart use this road despite this sign?",
+        "choices": [
+          {
+            "text": "Yes, the sign targets handcarts",
+            "is_correct": true
+          },
+          {
+            "text": "No, the sign also bans pedestrians",
+            "is_correct": false
+          }
+        ],
+        "explanation": "This sign is aimed at handcarts. A pedestrian without a handcart is not automatically included."
+      },
+      "FR": {
+        "question": "Un piéton sans charrette à bras peut-il utiliser cette route malgré ce panneau ?",
+        "choices": [
+          {
+            "text": "Oui, le panneau vise les charrettes à bras",
+            "is_correct": true
+          },
+          {
+            "text": "Non, le panneau interdit aussi les piétons",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ce panneau vise les charrettes à bras. Un piéton sans charrette à bras n’est pas automatiquement compris."
+      },
+      "AR": {
+        "question": "هل يجوز لمشاة من دون عربة يدوية استعمال هذا الطريق رغم هذه العلامة؟",
+        "choices": [
+          {
+            "text": "نعم، العلامة تستهدف العربات اليدوية",
+            "is_correct": true
+          },
+          {
+            "text": "لا، العلامة تحظر أيضًا المشاة",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تستهدف هذه العلامة العربات اليدوية. أما المشاة من دون عربة يدوية فلا يندرجون تلقائيًا ضمنها."
+      }
+    }
+  },
+  {
+    "question_id": "C17_Q07",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "De weg lijkt volledig leeg. Mag u met een handkar toch doorgaan?",
+        "choices": [
+          {
+            "text": "Nee, het bord blijft gelden ook als de weg leeg lijkt",
+            "is_correct": true
+          },
+          {
+            "text": "Ja, als er niemand is mag het",
+            "is_correct": false
+          }
+        ],
+        "explanation": "De zichtbare verkeerssituatie verandert de betekenis van het bord niet. Voor handkarren blijft deze toegang verboden."
+      },
+      "EN": {
+        "question": "The road looks completely empty. May you still proceed with a handcart?",
+        "choices": [
+          {
+            "text": "No, the sign still applies even if the road looks empty",
+            "is_correct": true
+          },
+          {
+            "text": "Yes, if no one is there it is allowed",
+            "is_correct": false
+          }
+        ],
+        "explanation": "The visible traffic situation does not change the meaning of the sign. For handcarts, this access remains prohibited."
+      },
+      "FR": {
+        "question": "La route semble complètement vide. Pouvez-vous quand même continuer avec une charrette à bras ?",
+        "choices": [
+          {
+            "text": "Non, le panneau reste valable même si la route semble vide",
+            "is_correct": true
+          },
+          {
+            "text": "Oui, s’il n’y a personne c’est permis",
+            "is_correct": false
+          }
+        ],
+        "explanation": "La situation visible sur la route ne change pas la signification du panneau. Pour les charrettes à bras, cet accès reste interdit."
+      },
+      "AR": {
+        "question": "يبدو الطريق خاليًا تمامًا. هل يجوز لك رغم ذلك المتابعة بعربة يدوية؟",
+        "choices": [
+          {
+            "text": "لا، تبقى العلامة سارية حتى لو بدا الطريق خاليًا",
+            "is_correct": true
+          },
+          {
+            "text": "نعم، إذا لم يكن هناك أحد فهذا مسموح",
+            "is_correct": false
+          }
+        ],
+        "explanation": "الوضع الظاهر على الطريق لا يغيّر معنى العلامة. وبالنسبة للعربات اليدوية يبقى هذا المدخل محظورًا."
+      }
+    }
+  },
+  {
+    "question_id": "C17_Q08",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Mag u met een handkar deze weg gebruiken als u alleen een korte doorgang nodig hebt?",
+        "choices": [
+          {
+            "text": "Nee, het bord blijft gelden ook voor een korte doorgang",
+            "is_correct": true
+          },
+          {
+            "text": "Ja, een korte doorgang is toegestaan",
+            "is_correct": false
+          }
+        ],
+        "explanation": "De duur van de doorgang verandert de betekenis van het bord niet. Voor handkarren blijft deze toegang verboden."
+      },
+      "EN": {
+        "question": "May you use this road with a handcart if only a short passage is needed?",
+        "choices": [
+          {
+            "text": "No, the sign still applies even for a short passage",
+            "is_correct": true
+          },
+          {
+            "text": "Yes, a short passage is allowed",
+            "is_correct": false
+          }
+        ],
+        "explanation": "The length of the passage does not change the meaning of the sign. For handcarts, this access remains prohibited."
+      },
+      "FR": {
+        "question": "Pouvez-vous utiliser cette route avec une charrette à bras si vous n’avez besoin que d’un court passage ?",
+        "choices": [
+          {
+            "text": "Non, le panneau reste valable même pour un court passage",
+            "is_correct": true
+          },
+          {
+            "text": "Oui, un court passage est autorisé",
+            "is_correct": false
+          }
+        ],
+        "explanation": "La durée du passage ne change pas la signification du panneau. Pour les charrettes à bras, cet accès reste interdit."
+      },
+      "AR": {
+        "question": "هل يجوز لك استخدام هذا الطريق بعربة يدوية إذا كنت تحتاج فقط إلى مرور قصير؟",
+        "choices": [
+          {
+            "text": "لا، تبقى العلامة سارية حتى في حالة المرور القصير",
+            "is_correct": true
+          },
+          {
+            "text": "نعم، المرور القصير مسموح",
+            "is_correct": false
+          }
+        ],
+        "explanation": "مدة المرور لا تغيّر معنى العلامة. وبالنسبة للعربات اليدوية يبقى هذا المدخل محظورًا."
+      }
+    }
+  }
 ]

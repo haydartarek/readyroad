@@ -1,10 +1,602 @@
-﻿[
-  {"question_id":"C27_Q01","type":"WHAT_DOES_IT_MEAN","difficulty":"EASY","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Wat betekent dit verkeersbord?","choices":[{"text":"Verboden toegang voor voertuigen breder dan de aangegeven afmeting","is_correct":true},{"text":"Verboden toegang voor voertuigen langer dan de aangegeven afmeting","is_correct":false},{"text":"Verboden toegang voor voertuigen hoger dan de aangegeven afmeting","is_correct":false}],"explanation":"C27 stelt een maximumbreedte in. Voertuigen die deze overschrijden zijn verboden. Lengte wordt geregeld door C25 en hoogte door C29."},"EN":{"question":"What does this traffic sign mean?","choices":[{"text":"No entry for vehicles wider than the indicated dimension","is_correct":true},{"text":"No entry for vehicles longer than the indicated dimension","is_correct":false},{"text":"No entry for vehicles taller than the indicated dimension","is_correct":false}],"explanation":"C27 sets a maximum width. Vehicles exceeding it are prohibited. Length is regulated by C25 and height by C29."},"FR":{"question":"Que signifie ce panneau ?","choices":[{"text":"Acces interdit aux vehicules plus larges que la dimension indiquee","is_correct":true},{"text":"Acces interdit aux vehicules plus longs que la dimension indiquee","is_correct":false},{"text":"Acces interdit aux vehicules plus hauts que la dimension indiquee","is_correct":false}],"explanation":"C27 fixe une largeur maximale. Les vehicules la depassant sont interdits. La longueur est reglementee par C25 et la hauteur par C29."},"AR":{"question":"Ù…Ø§Ø°Ø§ ØªØ¹Ù†ÙŠ Ù„Ø§ÙØªØ© Ø§Ù„Ù…Ø±ÙˆØ± Ù‡Ø°Ù‡ØŸ","choices":[{"text":"Ù…Ù…Ù†ÙˆØ¹ Ø¯Ø®ÙˆÙ„ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„ØªÙŠ ØªØªØ¬Ø§ÙˆØ² Ø¹Ø±Ø¶Ù‡Ø§ Ø§Ù„Ù‚ÙŠÙ…Ø© Ø§Ù„Ù…Ø´Ø§Ø± Ø§Ù„ÙŠÙ‡Ø§","is_correct":true},{"text":"Ù…Ù…Ù†ÙˆØ¹ Ø¯Ø®ÙˆÙ„ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„ØªÙŠ ØªØªØ¬Ø§ÙˆØ² Ø·ÙˆÙ„Ù‡Ø§ Ø§Ù„Ù‚ÙŠÙ…Ø© Ø§Ù„Ù…Ø´Ø§Ø± Ø§Ù„ÙŠÙ‡Ø§","is_correct":false},{"text":"Ù…Ù…Ù†ÙˆØ¹ Ø¯Ø®ÙˆÙ„ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„ØªÙŠ ØªØªØ¬Ø§ÙˆØ² Ø§Ø±ØªÙØ§Ø¹Ù‡Ø§ Ø§Ù„Ù‚ÙŠÙ…Ø© Ø§Ù„Ù…Ø´Ø§Ø± Ø§Ù„ÙŠÙ‡Ø§","is_correct":false}],"explanation":"ØªØ­Ø¯Ø¯ C27 Ø§Ù„Ø¹Ø±Ø¶ Ø§Ù„Ø§Ù‚ØµÙ‰. Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„ØªÙŠ ØªØªØ¬Ø§ÙˆØ²Ù‡ Ù…Ø­Ø¸ÙˆØ±Ø©. Ø§Ù„Ø·ÙˆÙ„ Ù…Ù†Ø¸Ù… Ø¨Ù€C25 ÙˆØ§Ù„Ø§Ø±ØªÙØ§Ø¹ Ø¨Ù€C29."}}},
-  {"question_id":"C27_Q02","type":"WHICH_SIGN","difficulty":"EASY","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Tot welke categorie behoort dit bord?","choices":[{"text":"Verbodsborden (C-reeks)","is_correct":true},{"text":"Gevaarsborden (A-reeks)","is_correct":false},{"text":"Gebodsborden (D-reeks)","is_correct":false}],"explanation":"Verbodsborden (C-reeks) zijn rond met rode rand en stellen maximumafmetingen in."},"EN":{"question":"To which category does this sign belong?","choices":[{"text":"Prohibition signs (C-series)","is_correct":true},{"text":"Danger signs (A-series)","is_correct":false},{"text":"Mandatory signs (D-series)","is_correct":false}],"explanation":"Prohibition signs (C-series) are round with a red border and set maximum dimensions."},"FR":{"question":"A quelle categorie appartient ce panneau ?","choices":[{"text":"Panneaux d interdiction (serie C)","is_correct":true},{"text":"Panneaux de danger (serie A)","is_correct":false},{"text":"Panneaux d obligation (serie D)","is_correct":false}],"explanation":"Les panneaux d interdiction (serie C) sont ronds avec un bord rouge et fixent les dimensions maximales."},"AR":{"question":"Ø§Ù„Ù‰ Ø§ÙŠ ÙØ¦Ø© ØªÙ†ØªÙ…ÙŠ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ","choices":[{"text":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø­Ø¸Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© C)","is_correct":true},{"text":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© A)","is_correct":false},{"text":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø§Ù„Ø²Ø§Ù… (Ø§Ù„Ø³Ù„Ø³Ù„Ø© D)","is_correct":false}],"explanation":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø­Ø¸Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© C) Ù…Ø³ØªØ¯ÙŠØ±Ø© Ø°Ø§Øª Ø­Ø¯ Ø§Ø­Ù…Ø± ÙˆØªØ­Ø¯Ø¯ Ø§Ø¨Ø¹Ø§Ø¯Ø§ Ù‚ØµÙˆÙ‰."}}},
-  {"question_id":"C27_Q03","type":"HAZARD_IDENTIFICATION","difficulty":"EASY","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Worden de buitenspiegels meegerekend bij het bepalen van de breedte bij C27?","choices":[{"text":"Ja, de buitenspiegels worden meegerekend in de totale breedte","is_correct":true},{"text":"Nee, alleen de carrosserie wordt gemeten","is_correct":false},{"text":"Alleen als de spiegels uitsteken voorbij de wielen","is_correct":false}],"explanation":"Bij C27 geldt de maximale breedte inclusief uitstekende onderdelen zoals buitenspiegels. Uitklapbare spiegels worden in ingevouwen stand gemeten."},"EN":{"question":"Are the wing mirrors included when determining the width for C27?","choices":[{"text":"Yes, wing mirrors are included in the total width","is_correct":true},{"text":"No, only the body is measured","is_correct":false},{"text":"Only if the mirrors protrude beyond the wheels","is_correct":false}],"explanation":"For C27 the maximum width applies including protruding parts such as wing mirrors. Foldable mirrors are measured in the folded position."},"FR":{"question":"Les retroviseurs exterieurs sont-ils inclus dans la determination de la largeur pour C27 ?","choices":[{"text":"Oui, les retroviseurs sont inclus dans la largeur totale","is_correct":true},{"text":"Non, seule la carrosserie est mesuree","is_correct":false},{"text":"Seulement si les retroviseurs depassent les roues","is_correct":false}],"explanation":"Pour C27 la largeur maximale s applique y compris les parties saillantes comme les retroviseurs. Les retroviseurs repliables sont mesures en position repliee."},"AR":{"question":"Ù‡Ù„ ØªÙØ­ØªØ³Ø¨ Ù…Ø±Ø§ÙŠØ§ Ø§Ù„Ø¬Ù†Ø§Ø­ Ø¹Ù†Ø¯ ØªØ­Ø¯ÙŠØ¯ Ø§Ù„Ø¹Ø±Ø¶ Ù„Ù„Ø§ÙØªØ© C27ØŸ","choices":[{"text":"Ù†Ø¹Ù…ØŒ ØªÙØ­ØªØ³Ø¨ Ù…Ø±Ø§ÙŠØ§ Ø§Ù„Ø¬Ù†Ø§Ø­ ÙÙŠ Ø§Ù„Ø¹Ø±Ø¶ Ø§Ù„Ø§Ø¬Ù…Ø§Ù„ÙŠ","is_correct":true},{"text":"Ù„Ø§ØŒ ÙŠÙÙ‚Ø§Ø³ Ø§Ù„Ù‡ÙŠÙƒÙ„ ÙÙ‚Ø·","is_correct":false},{"text":"ÙÙ‚Ø· Ø§Ø°Ø§ Ø¨Ø±Ø²Øª Ø§Ù„Ù…Ø±Ø§ÙŠØ§ Ø¹Ù† Ø§Ù„Ø¹Ø¬Ù„Ø§Øª","is_correct":false}],"explanation":"ÙÙŠ C27 ÙŠØ³Ø±ÙŠ Ø§Ù„Ø¹Ø±Ø¶ Ø§Ù„Ø§Ù‚ØµÙ‰ Ø¨Ù…Ø§ ÙÙŠÙ‡ Ø§Ù„Ø£Ø¬Ø²Ø§Ø¡ Ø§Ù„Ø¨Ø§Ø±Ø²Ø© ÙƒÙ…Ø±Ø§ÙŠØ§ Ø§Ù„Ø¬Ù†Ø§Ø­. Ø§Ù„Ù…Ø±Ø§ÙŠØ§ Ø§Ù„Ù‚Ø§Ø¨Ù„Ø© Ù„Ù„Ø·ÙŠ ØªÙÙ‚Ø§Ø³ ÙÙŠ ÙˆØ¶Ø¹ Ø§Ù„Ø·ÙŠ."}}},
-  {"question_id":"C27_Q04","type":"WHAT_MUST_YOU_DO","difficulty":"MEDIUM","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Uw vrachtauto is 2,45 m breed en het bord C27 toont 2,40 m. Wat doet u?","choices":[{"text":"U rijdt niet verder op deze weg en zoekt een alternatieve route","is_correct":true},{"text":"U rijdt langzaam met de buitenspiegels ingeklapt","is_correct":false},{"text":"U rijdt in het midden van de rijbaan om marge te hebben","is_correct":false}],"explanation":"C27 is absoluut. Zelfs met ingeklapte spiegels en midden op de weg rijden is een overtreding als het voertuiglichaam de aangegeven breedte overschrijdt."},"EN":{"question":"Your lorry is 2.45 m wide and sign C27 shows 2.40 m. What do you do?","choices":[{"text":"You do not proceed on this road and find an alternative route","is_correct":true},{"text":"You drive slowly with the wing mirrors folded in","is_correct":false},{"text":"You drive in the centre of the lane to have margin","is_correct":false}],"explanation":"C27 is absolute. Even with folded mirrors and driving in the centre is a violation if the vehicle body exceeds the indicated width."},"FR":{"question":"Votre camion fait 2,45 m de large et le panneau C27 indique 2,40 m. Que faites-vous ?","choices":[{"text":"Vous ne continuez pas sur cette route et cherchez un itineraire alternatif","is_correct":true},{"text":"Vous roulez lentement avec les retroviseurs replies","is_correct":false},{"text":"Vous roulez au milieu de la voie pour avoir de la marge","is_correct":false}],"explanation":"C27 est absolu. Meme avec les retroviseurs replies et en roulant au milieu constitue une infraction si le corps du vehicule depasse la largeur indiquee."},"AR":{"question":"Ø´Ø§Ø­Ù†ØªÙƒ Ø¹Ø±Ø¶Ù‡Ø§ 2.45 Ù… ÙˆÙ„Ø§ÙØªØ© C27 ØªØ¸Ù‡Ø± 2.40 Ù…. Ù…Ø§Ø°Ø§ ØªÙØ¹Ù„ØŸ","choices":[{"text":"Ù„Ø§ ØªØªØ§Ø¨Ø¹ Ø¹Ù„Ù‰ Ù‡Ø°Ø§ Ø§Ù„Ø·Ø±ÙŠÙ‚ ÙˆØªØ¬Ø¯ Ù…Ø³Ø§Ø±Ø§ Ø¨Ø¯ÙŠÙ„Ø§","is_correct":true},{"text":"ØªØ³ÙŠØ± Ø¨Ø¨Ø·Ø¡ Ù…Ø¹ Ø·ÙŠ Ù…Ø±Ø§ÙŠØ§ Ø§Ù„Ø¬Ù†Ø§Ø­","is_correct":false},{"text":"ØªØ³ÙŠØ± ÙÙŠ ÙˆØ³Ø· Ø§Ù„Ù…Ø³Ø§Ø± Ù„Ù„Ø­ØµÙˆÙ„ Ø¹Ù„Ù‰ Ù‡Ø§Ù…Ø´","is_correct":false}],"explanation":"C27 Ù…Ø·Ù„Ù‚Ø©. Ø­ØªÙ‰ Ù…Ø¹ Ø·ÙŠ Ø§Ù„Ù…Ø±Ø§ÙŠØ§ ÙˆØ§Ù„Ø³ÙŠØ± ÙÙŠ Ø§Ù„ÙˆØ³Ø· ÙŠØ¹Ø¯Ù‘ Ù…Ø®Ø§Ù„ÙØ© Ø§Ø°Ø§ ØªØ¬Ø§ÙˆØ² Ù‡ÙŠÙƒÙ„ Ø§Ù„Ù…Ø±ÙƒØ¨Ø© Ø§Ù„Ø¹Ø±Ø¶ Ø§Ù„Ù…Ø´Ø§Ø± Ø§Ù„ÙŠÙ‡."}}},
-  {"question_id":"C27_Q05","type":"WHAT_MUST_YOU_DO","difficulty":"MEDIUM","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Geldt bord C27 ook voor buitengewoon brede landbouwmachines?","choices":[{"text":"Ja, C27 geldt voor alle voertuigen tenzij een specifieke uitzondering is gemeld","is_correct":true},{"text":"Nee, landbouwvoertuigen zijn altijd vrijgesteld van breedtebeperkingen","is_correct":false},{"text":"Alleen tijdens de oogstperiode mogen ze passeren","is_correct":false}],"explanation":"C27 geldt voor alle voertuigen. Uitzonderlijk brede landbouwmachines hebben een uitzonderingstransportvergunning nodig om de verboden weg te gebruiken."},"EN":{"question":"Does sign C27 also apply to exceptionally wide agricultural machines?","choices":[{"text":"Yes, C27 applies to all vehicles unless a specific exemption is posted","is_correct":true},{"text":"No, agricultural vehicles are always exempt from width restrictions","is_correct":false},{"text":"Only during harvest season may they pass","is_correct":false}],"explanation":"C27 applies to all vehicles. Exceptionally wide agricultural machines need an exceptional transport permit to use the prohibited road."},"FR":{"question":"Le panneau C27 s applique-t-il aussi aux machines agricoles exceptionnellement larges ?","choices":[{"text":"Oui, C27 s applique a tous les vehicules sauf indication contraire d une exemption specifique","is_correct":true},{"text":"Non, les engins agricoles sont toujours exempts des restrictions de largeur","is_correct":false},{"text":"Seulement en periode de recolte ils peuvent passer","is_correct":false}],"explanation":"C27 s applique a tous les vehicules. Les machines agricoles exceptionnellement larges ont besoin d un permis de transport exceptionnel pour utiliser la route interdite."},"AR":{"question":"Ù‡Ù„ ØªØ³Ø±ÙŠ Ù„Ø§ÙØªØ© C27 Ø§ÙŠØ¶Ø§ Ø¹Ù„Ù‰ Ø§Ù„Ø¢Ù„Ø§Øª Ø§Ù„Ø²Ø±Ø§Ø¹ÙŠØ© Ø§Ù„Ø¹Ø±ÙŠØ¶Ø© Ø¨Ø´ÙƒÙ„ Ø§Ø³ØªØ«Ù†Ø§Ø¦ÙŠØŸ","choices":[{"text":"Ù†Ø¹Ù…ØŒ ØªØ³Ø±ÙŠ C27 Ø¹Ù„Ù‰ Ø¬Ù…ÙŠØ¹ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ù…Ø§ Ù„Ù… ÙŠÙÙˆØ¶Ø­ Ø§Ø³ØªØ«Ù†Ø§Ø¡ Ù…Ø­Ø¯Ø¯","is_correct":true},{"text":"Ù„Ø§ØŒ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ø²Ø±Ø§Ø¹ÙŠØ© Ø¯Ø§Ø¦Ù…Ø§ Ù…Ø¹ÙØ§Ø© Ù…Ù† Ù‚ÙŠÙˆØ¯ Ø§Ù„Ø¹Ø±Ø¶","is_correct":false},{"text":"ÙÙ‚Ø· Ø®Ù„Ø§Ù„ Ù…ÙˆØ³Ù… Ø§Ù„Ø­ØµØ§Ø¯ ÙŠØ¬ÙˆØ² Ù„Ù‡Ø§ Ø§Ù„Ø¹Ø¨ÙˆØ±","is_correct":false}],"explanation":"ØªØ³Ø±ÙŠ C27 Ø¹Ù„Ù‰ Ø¬Ù…ÙŠØ¹ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª. Ø§Ù„Ø¢Ù„Ø§Øª Ø§Ù„Ø²Ø±Ø§Ø¹ÙŠØ© Ø§Ù„Ø¹Ø±ÙŠØ¶Ø© Ø¨Ø´ÙƒÙ„ Ø§Ø³ØªØ«Ù†Ø§Ø¦ÙŠ ØªØ­ØªØ§Ø¬ ØªØµØ±ÙŠØ­ Ù†Ù‚Ù„ Ø§Ø³ØªØ«Ù†Ø§Ø¦ÙŠ Ù„Ø§Ø³ØªØ®Ø¯Ø§Ù… Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ù…Ø­Ø¸ÙˆØ±."}}},
-  {"question_id":"C27_Q06","type":"WHAT_MUST_YOU_DO","difficulty":"MEDIUM","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Verschilt bord C27 van bord C28a bij het bepalen van de breedte?","choices":[{"text":"Ja, C27 geldt voor elk voertuig afzonderlijk terwijl C28a ook aanhangwagens en opleggers specifiek betreft","is_correct":true},{"text":"Nee, beide borden zijn identiek van toepassing","is_correct":false},{"text":"C27 geldt alleen voor personenwagens en C28a voor vrachtwagens","is_correct":false}],"explanation":"C27 beperkt de breedte van elk voertuig afzonderlijk. C28a verduidelijkt dat de breedtebeperking ook uitdrukkelijk op aanhangwagens en opleggers van toepassing is."},"EN":{"question":"Does sign C27 differ from sign C28a when determining width?","choices":[{"text":"Yes, C27 applies to each individual vehicle while C28a also explicitly covers trailers and semi-trailers","is_correct":true},{"text":"No, both signs apply identically","is_correct":false},{"text":"C27 applies only to cars and C28a to lorries","is_correct":false}],"explanation":"C27 restricts the width of each individual vehicle. C28a clarifies that the width restriction also explicitly applies to trailers and semi-trailers."},"FR":{"question":"Le panneau C27 differe-t-il du panneau C28a pour la determination de la largeur ?","choices":[{"text":"Oui, C27 s applique a chaque vehicule individuellement tandis que C28a couvre aussi explicitement les remorques et semi-remorques","is_correct":true},{"text":"Non, les deux panneaux s appliquent de maniere identique","is_correct":false},{"text":"C27 ne s applique qu aux voitures et C28a aux camions","is_correct":false}],"explanation":"C27 limite la largeur de chaque vehicule individuellement. C28a precise que la restriction de largeur s applique aussi explicitement aux remorques et semi-remorques."},"AR":{"question":"Ù‡Ù„ ØªØ®ØªÙ„Ù Ù„Ø§ÙØªØ© C27 Ø¹Ù† Ù„Ø§ÙØªØ© C28a Ø¹Ù†Ø¯ ØªØ­Ø¯ÙŠØ¯ Ø§Ù„Ø¹Ø±Ø¶ØŸ","choices":[{"text":"Ù†Ø¹Ù…ØŒ ØªØ³Ø±ÙŠ C27 Ø¹Ù„Ù‰ ÙƒÙ„ Ù…Ø±ÙƒØ¨Ø© Ù…Ù†ÙØ±Ø¯Ø© Ø¨ÙŠÙ†Ù…Ø§ ØªØ´Ù…Ù„ C28a ØµØ±Ø§Ø­Ø© Ø§Ù„Ù…Ù‚Ø·ÙˆØ±Ø§Øª ÙˆØ§Ù„Ù†ØµÙ Ù…Ù‚Ø·ÙˆØ±Ø§Øª","is_correct":true},{"text":"Ù„Ø§ØŒ ÙƒÙ„Ø§ Ø§Ù„Ù„Ø§ÙØªØªÙŠÙ† ØªØ³Ø±ÙŠØ§Ù† Ø¨Ø´ÙƒÙ„ Ù…ØªØ·Ø§Ø¨Ù‚","is_correct":false},{"text":"C27 ØªØ³Ø±ÙŠ ÙÙ‚Ø· Ø¹Ù„Ù‰ Ø§Ù„Ø³ÙŠØ§Ø±Ø§Øª ÙˆC28a Ø¹Ù„Ù‰ Ø§Ù„Ø´Ø§Ø­Ù†Ø§Øª","is_correct":false}],"explanation":"ØªÙ‚ÙŠÙ‘Ø¯ C27 Ø¹Ø±Ø¶ ÙƒÙ„ Ù…Ø±ÙƒØ¨Ø© Ù…Ù†ÙØ±Ø¯Ø©. ØªÙˆØ¶Ø­ C28a Ø§Ù† Ù‚ÙŠØ¯ Ø§Ù„Ø¹Ø±Ø¶ ÙŠÙ†Ø·Ø¨Ù‚ ØµØ±Ø§Ø­Ø© Ø§ÙŠØ¶Ø§ Ø¹Ù„Ù‰ Ø§Ù„Ù…Ù‚Ø·ÙˆØ±Ø§Øª ÙˆØ§Ù„Ù†ØµÙ Ù…Ù‚Ø·ÙˆØ±Ø§Øª."}}},
-  {"question_id":"C27_Q07","type":"IS_IT_ALLOWED","difficulty":"HARD","is_critical":true,"show_sign":true,"i18n":{"NL":{"question":"Mag u uw buitenspiegels inklappen en vervolgens de weg oprijden waarop C27 staat die uw voertuigbreedte net overschrijdt?","choices":[{"text":"Nee, de breedte van het rijdende voertuig wordt bepaald door de carrosserie en uitstekende onderdelen; spiegels inklappen maakt de doorgang niet legaal als de carrosserie te breed is","is_correct":true},{"text":"Ja, ingeklapte spiegels verminderen de effectieve breedte tot de carrosseriebreedte","is_correct":false}],"explanation":"C27 geldt voor de maximale breedte van het voertuig. Als de carrosserie al te breed is, helpt het inklappen van spiegels niet. Dit is een ernstige verkeersovertreding."},"EN":{"question":"May you fold your wing mirrors and then enter the road where C27 is posted that just exceeds your vehicle width?","choices":[{"text":"No, the width of the moving vehicle is determined by the body and protruding parts; folding mirrors does not make the passage legal if the body is too wide","is_correct":true},{"text":"Yes, folded mirrors reduce the effective width to the body width","is_correct":false}],"explanation":"C27 applies to the maximum width of the vehicle. If the body is already too wide, folding mirrors does not help. This is a serious traffic offence."},"FR":{"question":"Pouvez-vous replier vos retroviseurs et acceder ensuite a la route avec C27 dont la largeur depasse juste celle de votre vehicule ?","choices":[{"text":"Non, la largeur du vehicule en marche est determinee par la carrosserie et les parties saillantes; replier les retroviseurs ne rend pas le passage legal si la carrosserie est trop large","is_correct":true},{"text":"Oui, les retroviseurs replies reduisent la largeur effective a celle de la carrosserie","is_correct":false}],"explanation":"C27 s applique a la largeur maximale du vehicule. Si la carrosserie est deja trop large replier les retroviseurs ne change rien. Il s agit d une infraction grave au code de la route."},"AR":{"question":"Ù‡Ù„ ÙŠØ¬ÙˆØ² Ù„Ùƒ Ø·ÙŠ Ù…Ø±Ø§ÙŠØ§ Ø§Ù„Ø¬Ù†Ø§Ø­ Ø«Ù… Ø¯Ø®ÙˆÙ„ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ø°ÙŠ Ø¨Ù‡ C27 Ø§Ù„Ø°ÙŠ ÙŠØªØ¬Ø§ÙˆØ² Ø¹Ø±Ø¶ Ù…Ø±ÙƒØ¨ØªÙƒ Ø¨Ø§Ù„ÙƒØ§Ø¯ØŸ","choices":[{"text":"Ù„Ø§ØŒ Ø¹Ø±Ø¶ Ø§Ù„Ù…Ø±ÙƒØ¨Ø© Ø§Ù„Ù…ØªØ­Ø±ÙƒØ© ÙŠØ­Ø¯Ø¯Ù‡ Ø§Ù„Ù‡ÙŠÙƒÙ„ ÙˆØ§Ù„Ø£Ø¬Ø²Ø§Ø¡ Ø§Ù„Ø¨Ø§Ø±Ø²Ø©Ø› Ø·ÙŠ Ø§Ù„Ù…Ø±Ø§ÙŠØ§ Ù„Ø§ ÙŠØ¬Ø¹Ù„ Ø§Ù„Ù…Ø±ÙˆØ± Ù‚Ø§Ù†ÙˆÙ†ÙŠØ§ Ø§Ø°Ø§ ÙƒØ§Ù† Ø§Ù„Ù‡ÙŠÙƒÙ„ Ø¹Ø±ÙŠØ¶Ø§ Ø¬Ø¯Ø§","is_correct":true},{"text":"Ù†Ø¹Ù…ØŒ Ø§Ù„Ù…Ø±Ø§ÙŠØ§ Ø§Ù„Ù…Ø·ÙˆÙŠØ© ØªÙ‚Ù„Ù„ Ø§Ù„Ø¹Ø±Ø¶ Ø§Ù„ÙØ¹Ù„ÙŠ Ø§Ù„Ù‰ Ø¹Ø±Ø¶ Ø§Ù„Ù‡ÙŠÙƒÙ„","is_correct":false}],"explanation":"ØªØ³Ø±ÙŠ C27 Ø¹Ù„Ù‰ Ø§Ù„Ø¹Ø±Ø¶ Ø§Ù„Ø§Ù‚ØµÙ‰ Ù„Ù„Ù…Ø±ÙƒØ¨Ø©. Ø§Ø°Ø§ ÙƒØ§Ù† Ø§Ù„Ù‡ÙŠÙƒÙ„ Ø¹Ø±ÙŠØ¶Ø§ Ø¨Ø§Ù„ÙØ¹Ù„ ÙØ·ÙŠ Ø§Ù„Ù…Ø±Ø§ÙŠØ§ Ù„Ø§ ÙŠÙÙŠØ¯. Ù‡Ø°Ù‡ Ù…Ø®Ø§Ù„ÙØ© Ù…Ø±ÙˆØ±ÙŠØ© Ø®Ø·ÙŠØ±Ø©."}}},
-  {"question_id":"C27_Q08","type":"IS_IT_ALLOWED","difficulty":"HARD","is_critical":true,"show_sign":true,"i18n":{"NL":{"question":"Mag u een weg met bord C27 (2,20 m) berijden in een personenwagen van 1,90 m breed met geopende ramen waarbij de ellebogen buiten steken?","choices":[{"text":"Nee, uitstekende lichaamsdelen van inzittenden vergroten de effectieve voertuigbreedte en zijn verboden","is_correct":true},{"text":"Ja, de carrosserie van 1,90 m valt binnen de limiet","is_correct":false}],"explanation":"Uitstekende lichaamsdelen worden meegerekend bij de voertuigbreedte. De totale breedte inclusief lichaamsdelen mag de aangegeven waarde niet overschrijden. Dit is een ernstige verkeersovertreding."},"EN":{"question":"May you drive a road with sign C27 (2.20 m) in a car of 1.90 m wide with open windows where elbows stick out?","choices":[{"text":"No, protruding body parts of occupants increase the effective vehicle width and are prohibited","is_correct":true},{"text":"Yes, the 1.90 m body falls within the limit","is_correct":false}],"explanation":"Protruding body parts are counted towards the vehicle width. The total width including body parts must not exceed the indicated value. This is a serious traffic offence."},"FR":{"question":"Pouvez-vous circuler sur une route avec le panneau C27 (2,20 m) dans une voiture de 1,90 m de large avec des fenetres ouvertes ou les coudes depassent ?","choices":[{"text":"Non, les parties du corps des occupants qui depassent augmentent la largeur effective du vehicule et sont interdites","is_correct":true},{"text":"Oui, la carrosserie de 1,90 m est dans la limite","is_correct":false}],"explanation":"Les parties du corps saillantes sont comptabilisees dans la largeur du vehicule. La largeur totale y compris les parties du corps ne doit pas depasser la valeur indiquee. Il s agit d une infraction grave au code de la route."},"AR":{"question":"Ù‡Ù„ ÙŠØ¬ÙˆØ² Ù„Ùƒ Ù‚ÙŠØ§Ø¯Ø© Ù…Ø±ÙƒØ¨Ø© Ø¨Ø¹Ø±Ø¶ 1.90 Ù… Ø¹Ù„Ù‰ Ø·Ø±ÙŠÙ‚ Ø¨Ù‡ Ù„Ø§ÙØªØ© C27 (2.20 Ù…) Ù…Ø¹ Ù†ÙˆØ§ÙØ° Ù…ÙØªÙˆØ­Ø© Ø­ÙŠØ« ØªØ¨Ø±Ø² Ø§Ù„Ù…Ø±Ø§ÙÙ‚ØŸ","choices":[{"text":"Ù„Ø§ØŒ Ø£Ø¬Ø²Ø§Ø¡ Ø§Ù„Ø¬Ø³Ù… Ø§Ù„Ø¨Ø§Ø±Ø²Ø© Ù„Ù„Ø±ÙƒØ§Ø¨ ØªØ²ÙŠØ¯ Ø§Ù„Ø¹Ø±Ø¶ Ø§Ù„ÙØ¹Ù„ÙŠ Ù„Ù„Ù…Ø±ÙƒØ¨Ø© ÙˆÙ‡ÙŠ Ù…Ø­Ø¸ÙˆØ±Ø©","is_correct":true},{"text":"Ù†Ø¹Ù…ØŒ Ù‡ÙŠÙƒÙ„ 1.90 Ù… Ø¶Ù…Ù† Ø§Ù„Ø­Ø¯ Ø§Ù„Ù…Ø³Ù…ÙˆØ­ Ø¨Ù‡","is_correct":false}],"explanation":"Ø£Ø¬Ø²Ø§Ø¡ Ø§Ù„Ø¬Ø³Ù… Ø§Ù„Ø¨Ø§Ø±Ø²Ø© ØªÙØ­ØªØ³Ø¨ ÙÙŠ Ø¹Ø±Ø¶ Ø§Ù„Ù…Ø±ÙƒØ¨Ø©. ÙŠØ¬Ø¨ Ø£Ù„Ø§ ÙŠØªØ¬Ø§ÙˆØ² Ø§Ù„Ø¹Ø±Ø¶ Ø§Ù„Ø§Ø¬Ù…Ø§Ù„ÙŠ Ø¨Ù…Ø§ ÙÙŠÙ‡ Ø£Ø¬Ø²Ø§Ø¡ Ø§Ù„Ø¬Ø³Ù… Ø§Ù„Ù‚ÙŠÙ…Ø© Ø§Ù„Ù…Ø´Ø§Ø± Ø§Ù„ÙŠÙ‡Ø§. Ù‡Ø°Ù‡ Ù…Ø®Ø§Ù„ÙØ© Ù…Ø±ÙˆØ±ÙŠØ© Ø®Ø·ÙŠØ±Ø©."}}}
+[
+  {
+    "question_id": "C27_Q01",
+    "type": "WHAT_DOES_IT_MEAN",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat betekent dit verkeersbord?",
+        "choices": [
+          {
+            "text": "Verboden toegang voor voertuigen die breder zijn dan de aangeduide breedte",
+            "is_correct": true
+          },
+          {
+            "text": "Verboden toegang voor voertuigen die langer zijn dan de aangeduide lengte",
+            "is_correct": false
+          },
+          {
+            "text": "Verboden toegang voor voertuigen die hoger zijn dan de aangeduide hoogte",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dit bord geeft aan dat bestuurders van voertuigen waarvan de breedte, lading inbegrepen, groter is dan de aangeduide, hier niet mogen inrijden."
+      },
+      "EN": {
+        "question": "What does this traffic sign mean?",
+        "choices": [
+          {
+            "text": "No entry for vehicles wider than the indicated width",
+            "is_correct": true
+          },
+          {
+            "text": "No entry for vehicles longer than the indicated length",
+            "is_correct": false
+          },
+          {
+            "text": "No entry for vehicles higher than the indicated height",
+            "is_correct": false
+          }
+        ],
+        "explanation": "This sign indicates that drivers of vehicles whose width, including load, exceeds the indicated limit may not enter here."
+      },
+      "FR": {
+        "question": "Que signifie ce panneau ?",
+        "choices": [
+          {
+            "text": "Accès interdit aux véhicules plus larges que la largeur indiquée",
+            "is_correct": true
+          },
+          {
+            "text": "Accès interdit aux véhicules plus longs que la longueur indiquée",
+            "is_correct": false
+          },
+          {
+            "text": "Accès interdit aux véhicules plus hauts que la hauteur indiquée",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ce panneau indique que les conducteurs de véhicules dont la largeur, chargement compris, dépasse la limite indiquée ne peuvent pas entrer ici."
+      },
+      "AR": {
+        "question": "ما معنى هذه العلامة المرورية؟",
+        "choices": [
+          {
+            "text": "ممنوع دخول المركبات التي يتجاوز عرضها الحد المشار إليه",
+            "is_correct": true
+          },
+          {
+            "text": "ممنوع دخول المركبات التي يتجاوز طولها الحد المشار إليه",
+            "is_correct": false
+          },
+          {
+            "text": "ممنوع دخول المركبات التي يتجاوز ارتفاعها الحد المشار إليه",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تدل هذه العلامة على أن سائقي المركبات التي يزيد عرضها، بما في ذلك الحمولة، على الحد المشار إليه لا يجوز لهم الدخول من هنا."
+      }
+    }
+  },
+  {
+    "question_id": "C27_Q02",
+    "type": "HAZARD_IDENTIFICATION",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Op wie is dit verbod van toepassing?",
+        "choices": [
+          {
+            "text": "Op bestuurders van voertuigen die breder zijn dan de aangeduide breedte",
+            "is_correct": true
+          },
+          {
+            "text": "Op alle bestuurders zonder uitzondering",
+            "is_correct": false
+          },
+          {
+            "text": "Alleen op bestuurders van bussen",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Het verbod geldt voor bestuurders van voertuigen waarvan de breedte, lading inbegrepen, groter is dan de aangeduide."
+      },
+      "EN": {
+        "question": "To whom does this prohibition apply?",
+        "choices": [
+          {
+            "text": "To drivers of vehicles wider than the indicated width",
+            "is_correct": true
+          },
+          {
+            "text": "To all drivers without exception",
+            "is_correct": false
+          },
+          {
+            "text": "Only to bus drivers",
+            "is_correct": false
+          }
+        ],
+        "explanation": "The prohibition applies to drivers of vehicles whose width, including load, exceeds the indicated limit."
+      },
+      "FR": {
+        "question": "À qui s’applique cette interdiction ?",
+        "choices": [
+          {
+            "text": "Aux conducteurs de véhicules plus larges que la limite indiquée",
+            "is_correct": true
+          },
+          {
+            "text": "À tous les conducteurs sans exception",
+            "is_correct": false
+          },
+          {
+            "text": "Seulement aux conducteurs d’autobus",
+            "is_correct": false
+          }
+        ],
+        "explanation": "L’interdiction s’applique aux conducteurs de véhicules dont la largeur, chargement compris, dépasse la limite indiquée."
+      },
+      "AR": {
+        "question": "على من ينطبق هذا الحظر؟",
+        "choices": [
+          {
+            "text": "على سائقي المركبات التي يتجاوز عرضها الحد المشار إليه",
+            "is_correct": true
+          },
+          {
+            "text": "على جميع السائقين دون استثناء",
+            "is_correct": false
+          },
+          {
+            "text": "فقط على سائقي الحافلات",
+            "is_correct": false
+          }
+        ],
+        "explanation": "ينطبق هذا الحظر على سائقي المركبات التي يزيد عرضها، بما في ذلك الحمولة، على الحد المشار إليه."
+      }
+    }
+  },
+  {
+    "question_id": "C27_Q03",
+    "type": "HAZARD_IDENTIFICATION",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Welke afmeting wordt door dit bord beperkt?",
+        "choices": [
+          {
+            "text": "De breedte, lading inbegrepen",
+            "is_correct": true
+          },
+          {
+            "text": "De lengte",
+            "is_correct": false
+          },
+          {
+            "text": "De hoogte",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dit bord beperkt de breedte van het voertuig, waarbij ook de lading meetelt."
+      },
+      "EN": {
+        "question": "Which dimension is restricted by this sign?",
+        "choices": [
+          {
+            "text": "The width, including load",
+            "is_correct": true
+          },
+          {
+            "text": "The length",
+            "is_correct": false
+          },
+          {
+            "text": "The height",
+            "is_correct": false
+          }
+        ],
+        "explanation": "This sign restricts the width of the vehicle, with the load included in the measurement."
+      },
+      "FR": {
+        "question": "Quelle dimension est limitée par ce panneau ?",
+        "choices": [
+          {
+            "text": "La largeur, chargement compris",
+            "is_correct": true
+          },
+          {
+            "text": "La longueur",
+            "is_correct": false
+          },
+          {
+            "text": "La hauteur",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ce panneau limite la largeur du véhicule, en tenant aussi compte du chargement."
+      },
+      "AR": {
+        "question": "ما البُعد الذي تقيده هذه العلامة؟",
+        "choices": [
+          {
+            "text": "العرض، بما في ذلك الحمولة",
+            "is_correct": true
+          },
+          {
+            "text": "الطول",
+            "is_correct": false
+          },
+          {
+            "text": "الارتفاع",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تُقيد هذه العلامة عرض المركبة، مع احتساب الحمولة ضمن القياس."
+      }
+    }
+  },
+  {
+    "question_id": "C27_Q04",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Uw voertuig is breder dan de breedte op het bord. Wat moet u doen?",
+        "choices": [
+          {
+            "text": "Niet inrijden en een andere route nemen",
+            "is_correct": true
+          },
+          {
+            "text": "Toch doorrijden als de weg vrij is",
+            "is_correct": false
+          },
+          {
+            "text": "Langzaam verder rijden",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Als uw voertuig breder is dan de aangeduide breedte, mag u hier niet inrijden en moet u een andere route nemen."
+      },
+      "EN": {
+        "question": "Your vehicle is wider than the width shown on the sign. What must you do?",
+        "choices": [
+          {
+            "text": "Do not enter and take another route",
+            "is_correct": true
+          },
+          {
+            "text": "Continue if the road is clear",
+            "is_correct": false
+          },
+          {
+            "text": "Proceed slowly",
+            "is_correct": false
+          }
+        ],
+        "explanation": "If your vehicle is wider than the indicated width, you may not enter here and must take another route."
+      },
+      "FR": {
+        "question": "Votre véhicule est plus large que la largeur indiquée sur le panneau. Que devez-vous faire ?",
+        "choices": [
+          {
+            "text": "Ne pas entrer et prendre un autre itinéraire",
+            "is_correct": true
+          },
+          {
+            "text": "Continuer si la route est libre",
+            "is_correct": false
+          },
+          {
+            "text": "Avancer lentement",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Si votre véhicule est plus large que la largeur indiquée, vous ne pouvez pas entrer ici et devez prendre un autre itinéraire."
+      },
+      "AR": {
+        "question": "مركبتك أعرض من العرض المبين على العلامة. ماذا يجب أن تفعل؟",
+        "choices": [
+          {
+            "text": "لا تدخل واسلك طريقًا آخر",
+            "is_correct": true
+          },
+          {
+            "text": "تابع إذا كان الطريق خاليًا",
+            "is_correct": false
+          },
+          {
+            "text": "واصل السير ببطء",
+            "is_correct": false
+          }
+        ],
+        "explanation": "إذا كانت مركبتك أعرض من العرض المشار إليه، فلا يجوز لك الدخول من هنا ويجب أن تسلك طريقًا آخر."
+      }
+    }
+  },
+  {
+    "question_id": "C27_Q05",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Uw bestemming ligt achter dit bord en uw voertuig is breder dan de aangeduide breedte. Wat doet u?",
+        "choices": [
+          {
+            "text": "U rijdt hier niet in en kiest een andere toegelaten route",
+            "is_correct": true
+          },
+          {
+            "text": "U rijdt toch door omdat uw bestemming daar ligt",
+            "is_correct": false
+          },
+          {
+            "text": "U wacht en rijdt daarna toch door",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ook als uw bestemming verderop ligt, blijft de toegang verboden voor voertuigen die breder zijn dan de aangeduide breedte."
+      },
+      "EN": {
+        "question": "Your destination is beyond this sign and your vehicle is wider than the indicated width. What do you do?",
+        "choices": [
+          {
+            "text": "Do not enter here and choose another permitted route",
+            "is_correct": true
+          },
+          {
+            "text": "Continue because your destination is there",
+            "is_correct": false
+          },
+          {
+            "text": "Wait and then continue anyway",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Even if your destination is beyond the sign, access remains prohibited for vehicles wider than the indicated width."
+      },
+      "FR": {
+        "question": "Votre destination se trouve après ce panneau et votre véhicule est plus large que la largeur indiquée. Que faites-vous ?",
+        "choices": [
+          {
+            "text": "Vous n’entrez pas ici et choisissez un autre itinéraire autorisé",
+            "is_correct": true
+          },
+          {
+            "text": "Vous continuez parce que votre destination est là",
+            "is_correct": false
+          },
+          {
+            "text": "Vous attendez puis vous passez quand même",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Même si votre destination se trouve après le panneau, l’accès reste interdit aux véhicules plus larges que la largeur indiquée."
+      },
+      "AR": {
+        "question": "وجهتك تقع بعد هذه العلامة ومركبتك أعرض من العرض المشار إليه. ماذا تفعل؟",
+        "choices": [
+          {
+            "text": "لا تدخل من هنا واختر طريقًا آخر مسموحًا",
+            "is_correct": true
+          },
+          {
+            "text": "تابع لأن وجهتك هناك",
+            "is_correct": false
+          },
+          {
+            "text": "انتظر ثم اعبر رغم ذلك",
+            "is_correct": false
+          }
+        ],
+        "explanation": "حتى إذا كانت وجهتك بعد العلامة، يبقى الدخول ممنوعًا على المركبات التي يزيد عرضها على الحد المشار إليه."
+      }
+    }
+  },
+  {
+    "question_id": "C27_Q06",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Mag een voertuig waarvan de breedte niet groter is dan de aangeduide waarde hier verder rijden?",
+        "choices": [
+          {
+            "text": "Ja, dit verbod geldt niet voor voertuigen binnen de aangeduide breedte",
+            "is_correct": true
+          },
+          {
+            "text": "Nee, elk voertuig is hier verboden",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dit verbod geldt voor voertuigen waarvan de breedte groter is dan de aangeduide waarde, niet voor voertuigen die daarbinnen blijven."
+      },
+      "EN": {
+        "question": "May a vehicle whose width is not greater than the indicated value continue here?",
+        "choices": [
+          {
+            "text": "Yes, this prohibition does not apply to vehicles within the indicated width",
+            "is_correct": true
+          },
+          {
+            "text": "No, every vehicle is prohibited here",
+            "is_correct": false
+          }
+        ],
+        "explanation": "This prohibition applies to vehicles whose width exceeds the indicated value, not to vehicles that remain within it."
+      },
+      "FR": {
+        "question": "Un véhicule dont la largeur n’est pas supérieure à la valeur indiquée peut-il continuer ici ?",
+        "choices": [
+          {
+            "text": "Oui, cette interdiction ne s’applique pas aux véhicules qui restent dans la largeur indiquée",
+            "is_correct": true
+          },
+          {
+            "text": "Non, chaque véhicule est interdit ici",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Cette interdiction s’applique aux véhicules dont la largeur dépasse la valeur indiquée, pas à ceux qui restent dans cette limite."
+      },
+      "AR": {
+        "question": "هل يجوز لمركبة لا يزيد عرضها على القيمة المشار إليها أن تتابع السير هنا؟",
+        "choices": [
+          {
+            "text": "نعم، هذا الحظر لا ينطبق على المركبات التي تبقى ضمن العرض المشار إليه",
+            "is_correct": true
+          },
+          {
+            "text": "لا، كل المركبات ممنوعة هنا",
+            "is_correct": false
+          }
+        ],
+        "explanation": "ينطبق هذا الحظر على المركبات التي يزيد عرضها على القيمة المشار إليها، وليس على المركبات التي تبقى ضمن هذا الحد."
+      }
+    }
+  },
+  {
+    "question_id": "C27_Q07",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "De weg is volledig vrij. Mag een te breed voertuig toch inrijden?",
+        "choices": [
+          {
+            "text": "Nee, het verbod blijft gelden",
+            "is_correct": true
+          },
+          {
+            "text": "Ja, als er geen ander verkeer is",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ook als de weg vrij is, blijft het verbod gelden voor voertuigen die breder zijn dan de aangeduide breedte."
+      },
+      "EN": {
+        "question": "The road is completely empty. May an overwidth vehicle still enter?",
+        "choices": [
+          {
+            "text": "No, the prohibition remains in force",
+            "is_correct": true
+          },
+          {
+            "text": "Yes, if there is no other traffic",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Even if the road is empty, the prohibition remains in force for vehicles wider than the indicated width."
+      },
+      "FR": {
+        "question": "La route est complètement vide. Un véhicule trop large peut-il quand même entrer ?",
+        "choices": [
+          {
+            "text": "Non, l’interdiction reste en vigueur",
+            "is_correct": true
+          },
+          {
+            "text": "Oui, s’il n’y a pas d’autre circulation",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Même si la route est vide, l’interdiction reste en vigueur pour les véhicules plus larges que la largeur indiquée."
+      },
+      "AR": {
+        "question": "الطريق خالٍ تمامًا. هل يجوز لمركبة أعرض من الحد أن تدخل رغم ذلك؟",
+        "choices": [
+          {
+            "text": "لا، يبقى الحظر ساريًا",
+            "is_correct": true
+          },
+          {
+            "text": "نعم، إذا لم تكن هناك حركة مرور أخرى",
+            "is_correct": false
+          }
+        ],
+        "explanation": "حتى إذا كان الطريق خاليًا، يبقى الحظر ساريًا على المركبات التي يزيد عرضها على الحد المشار إليه."
+      }
+    }
+  },
+  {
+    "question_id": "C27_Q08",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Mag een te breed voertuig deze weg kort gebruiken om snel door te rijden?",
+        "choices": [
+          {
+            "text": "Nee, het verbod blijft gelden",
+            "is_correct": true
+          },
+          {
+            "text": "Ja, als het maar voor een kort stuk is",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ook voor een korte doorgang blijft de toegang verboden voor voertuigen die breder zijn dan de aangeduide breedte."
+      },
+      "EN": {
+        "question": "May an overwidth vehicle use this road briefly just to pass through quickly?",
+        "choices": [
+          {
+            "text": "No, the prohibition remains in force",
+            "is_correct": true
+          },
+          {
+            "text": "Yes, if it is only for a short distance",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Even for a short passage, access remains prohibited for vehicles wider than the indicated width."
+      },
+      "FR": {
+        "question": "Un véhicule trop large peut-il utiliser brièvement cette route juste pour passer rapidement ?",
+        "choices": [
+          {
+            "text": "Non, l’interdiction reste en vigueur",
+            "is_correct": true
+          },
+          {
+            "text": "Oui, si ce n’est que pour une courte distance",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Même pour un passage bref, l’accès reste interdit aux véhicules plus larges que la largeur indiquée."
+      },
+      "AR": {
+        "question": "هل يجوز لمركبة أعرض من الحد استخدام هذا الطريق لمسافة قصيرة فقط من أجل المرور السريع؟",
+        "choices": [
+          {
+            "text": "لا، يبقى الحظر ساريًا",
+            "is_correct": true
+          },
+          {
+            "text": "نعم، إذا كان ذلك لمسافة قصيرة فقط",
+            "is_correct": false
+          }
+        ],
+        "explanation": "حتى في حالة المرور القصير، يبقى الدخول ممنوعًا على المركبات التي يزيد عرضها على الحد المشار إليه."
+      }
+    }
+  }
 ]

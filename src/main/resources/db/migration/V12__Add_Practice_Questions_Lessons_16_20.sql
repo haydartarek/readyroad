@@ -2,8 +2,6 @@
 -- Practice Questions for Lessons 16-20
 -- All questions have exactly 4 options (required by schema)
 
-USE readyroad_prod;
-
 INSERT INTO practice_questions (
     lesson_id,
     question_ar, question_en, question_nl, question_fr,

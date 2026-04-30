@@ -1,10 +1,602 @@
-﻿[
-  {"question_id":"C13_Q01","type":"WHAT_DOES_IT_MEAN","difficulty":"EASY","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Wat betekent dit verkeersbord?","choices":[{"text":"Verboden toegang voor bestuurders van gespannen","is_correct":true},{"text":"Verboden toegang voor ruiters","is_correct":false},{"text":"Verboden toegang voor bestuurders van handkarren","is_correct":false}],"explanation":"C13 verbiedt gespannen (door dieren getrokken voertuigen). Ruiters vallen onder C15 en handkarren onder C17."},"EN":{"question":"What does this traffic sign mean?","choices":[{"text":"No entry for drivers of horse-drawn vehicles","is_correct":true},{"text":"No entry for horse riders","is_correct":false},{"text":"No entry for drivers of handcarts","is_correct":false}],"explanation":"C13 prohibits horse-drawn vehicles. Horse riders fall under C15 and handcart users under C17."},"FR":{"question":"Que signifie ce panneau de signalisation ?","choices":[{"text":"Acces interdit aux conducteurs d attelages","is_correct":true},{"text":"Acces interdit aux cavaliers","is_correct":false},{"text":"Acces interdit aux conducteurs de charrettes a bras","is_correct":false}],"explanation":"C13 interdit les attelages (vehicules tires par des animaux). Les cavaliers relevent du C15 et les charrettes a bras du C17."},"AR":{"question":"Ù…Ø§Ø°Ø§ ØªØ¹Ù†ÙŠ Ù„Ø§ÙØªØ© Ø§Ù„Ù…Ø±ÙˆØ± Ù‡Ø°Ù‡ØŸ","choices":[{"text":"Ù…Ù…Ù†ÙˆØ¹ Ø¯Ø®ÙˆÙ„ Ù…Ø±ØªØ§Ø¯ÙŠ Ø§Ù„Ø¹Ø±Ø¨Ø§Øª Ø§Ù„ØªÙŠ ØªØ¬Ø±Ù‡Ø§ Ø§Ù„Ø®ÙŠÙˆÙ„","is_correct":true},{"text":"Ù…Ù…Ù†ÙˆØ¹ Ø¯Ø®ÙˆÙ„ Ø§Ù„ÙØ±Ø³Ø§Ù†","is_correct":false},{"text":"Ù…Ù…Ù†ÙˆØ¹ Ø¯Ø®ÙˆÙ„ Ù…Ø³ØªØ®Ø¯Ù…ÙŠ Ø§Ù„Ø¹Ø±Ø¨Ø§Øª Ø§Ù„ÙŠØ¯ÙˆÙŠØ©","is_correct":false}],"explanation":"ØªØ­Ø¸Ø± C13 Ø§Ù„Ø¹Ø±Ø¨Ø§Øª Ø§Ù„ØªÙŠ ØªØ¬Ø±Ù‡Ø§ Ø§Ù„Ø­ÙŠÙˆØ§Ù†Ø§Øª. Ø§Ù„ÙØ±Ø³Ø§Ù† ÙŠÙ†Ø¯Ø±Ø¬ÙˆÙ† ØªØ­Øª C15 ÙˆÙ…Ø³ØªØ®Ø¯Ù…Ùˆ Ø§Ù„Ø¹Ø±Ø¨Ø§Øª Ø§Ù„ÙŠØ¯ÙˆÙŠØ© ØªØ­Øª C17."}}},
-  {"question_id":"C13_Q02","type":"WHICH_SIGN","difficulty":"EASY","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Tot welke categorie verkeersborden behoort dit bord?","choices":[{"text":"Verbodsborden (C-reeks)","is_correct":true},{"text":"Gevaarsborden (A-reeks)","is_correct":false},{"text":"Gebodsborden (D-reeks)","is_correct":false}],"explanation":"Verbodsborden (C-reeks) zijn rond met rode rand en verbieden een bepaalde weggebruiker of rijbeweging."},"EN":{"question":"To which category of traffic signs does this sign belong?","choices":[{"text":"Prohibition signs (C-series)","is_correct":true},{"text":"Danger signs (A-series)","is_correct":false},{"text":"Mandatory signs (D-series)","is_correct":false}],"explanation":"Prohibition signs (C-series) are round with a red border and prohibit a specific road user or movement."},"FR":{"question":"A quelle categorie de panneaux appartient ce panneau ?","choices":[{"text":"Panneaux d interdiction (serie C)","is_correct":true},{"text":"Panneaux de danger (serie A)","is_correct":false},{"text":"Panneaux d obligation (serie D)","is_correct":false}],"explanation":"Les panneaux d interdiction (serie C) sont ronds avec un bord rouge et interdisent un usager ou mouvement specifique."},"AR":{"question":"Ø§Ù„Ù‰ Ø§ÙŠ ÙØ¦Ø© ØªÙ†ØªÙ…ÙŠ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ","choices":[{"text":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø­Ø¸Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© C)","is_correct":true},{"text":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© A)","is_correct":false},{"text":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø§Ù„Ø²Ø§Ù… (Ø§Ù„Ø³Ù„Ø³Ù„Ø© D)","is_correct":false}],"explanation":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø­Ø¸Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© C) Ù…Ø³ØªØ¯ÙŠØ±Ø© Ø°Ø§Øª Ø­Ø¯ Ø§Ø­Ù…Ø± ÙˆØªØ­Ø¸Ø± Ù…Ø³ØªØ®Ø¯Ù… Ø·Ø±ÙŠÙ‚ Ø§Ùˆ Ø­Ø±ÙƒØ© Ù…Ø­Ø¯Ø¯Ø©."}}},
-  {"question_id":"C13_Q03","type":"HAZARD_IDENTIFICATION","difficulty":"EASY","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Welk voertuig of welke weggebruiker wordt door dit bord verboden?","choices":[{"text":"Door dieren getrokken voertuigen (gespannen)","is_correct":true},{"text":"Enkel trekpaarden zonder voertuig","is_correct":false},{"text":"Alle voertuigen met dierlijke tractie of te voet geleide dieren","is_correct":false}],"explanation":"C13 verbiedt uitsluitend de weg voor voertuigen die door dieren worden getrokken. Losse dieren of ruiters vallen niet onder dit specifieke bord."},"EN":{"question":"Which vehicle or road user is prohibited by this sign?","choices":[{"text":"Animal-drawn vehicles (horse-drawn carriages)","is_correct":true},{"text":"Only draught horses without a vehicle","is_correct":false},{"text":"All vehicles with animal traction or animals led on foot","is_correct":false}],"explanation":"C13 exclusively prohibits vehicles drawn by animals. Loose animals or horse riders do not fall under this specific sign."},"FR":{"question":"Quel vehicule ou usager est interdit par ce panneau ?","choices":[{"text":"Vehicules tires par des animaux (attelages)","is_correct":true},{"text":"Uniquement les chevaux de trait sans vehicule","is_correct":false},{"text":"Tous les vehicules a traction animale ou les animaux menes a pied","is_correct":false}],"explanation":"C13 interdit exclusivement les vehicules tires par des animaux. Les animaux separes ou les cavaliers ne relevent pas de ce panneau specifique."},"AR":{"question":"Ø§ÙŠ Ù…Ø±ÙƒØ¨Ø© Ø§Ùˆ Ù…Ø³ØªØ®Ø¯Ù… Ø·Ø±ÙŠÙ‚ ÙŠØ­Ø¸Ø±Ù‡ Ù‡Ø°Ø§ Ø§Ù„Ø¨ÙŠØ§Ù†ØŸ","choices":[{"text":"Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„ØªÙŠ ØªØ¬Ø±Ù‡Ø§ Ø§Ù„Ø­ÙŠÙˆØ§Ù†Ø§Øª (Ø§Ù„Ø¹Ø±Ø¨Ø§Øª)","is_correct":true},{"text":"Ø®ÙŠÙˆÙ„ Ø§Ù„Ø¬Ø± ÙÙ‚Ø· Ø¨Ø¯ÙˆÙ† Ù…Ø±ÙƒØ¨Ø©","is_correct":false},{"text":"Ø¬Ù…ÙŠØ¹ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø°Ø§Øª Ø§Ù„Ø¬Ø± Ø§Ù„Ø­ÙŠÙˆØ§Ù†ÙŠ Ø§Ùˆ Ø§Ù„Ø­ÙŠÙˆØ§Ù†Ø§Øª Ø§Ù„ØªÙŠ ÙŠÙ‚ÙˆØ¯Ù‡Ø§ Ø§Ø´Ø®Ø§Øµ Ø³ÙŠØ±Ø§","is_correct":false}],"explanation":"ØªØ­Ø¸Ø± C13 Ø­ØµØ±Ø§ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„ØªÙŠ ØªØ¬Ø±Ù‡Ø§ Ø§Ù„Ø­ÙŠÙˆØ§Ù†Ø§Øª. Ø§Ù„Ø­ÙŠÙˆØ§Ù†Ø§Øª Ø§Ù„Ù…Ù†ÙØ±Ø¯Ø© Ø§Ùˆ Ø§Ù„ÙØ±Ø³Ø§Ù† Ù„Ø§ ÙŠÙ†Ø¯Ø±Ø¬ÙˆÙ† ØªØ­Øª Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©."}}},
-  {"question_id":"C13_Q04","type":"WHAT_MUST_YOU_DO","difficulty":"MEDIUM","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"U rijdt met paard en wagen en ziet bord C13. Wat doet u?","choices":[{"text":"Stoppen en een alternatieve route nemen","is_correct":true},{"text":"Doorrijden als de weg breed genoeg is","is_correct":false},{"text":"Doorrijden als er weinig verkeer is","is_correct":false}],"explanation":"C13 verbiedt u als bestuurder van een gespannen toegang to deze weg. Breedte of drukte heeft geen invloed op het verbod."},"EN":{"question":"You are driving a horse-drawn vehicle and see sign C13. What do you do?","choices":[{"text":"Stop and take an alternative route","is_correct":true},{"text":"Continue if the road is wide enough","is_correct":false},{"text":"Continue if there is little traffic","is_correct":false}],"explanation":"C13 prohibits you as a driver of a horse-drawn vehicle from entering this road. Width or traffic density has no influence on the prohibition."},"FR":{"question":"Vous conduisez un attelage et voyez le panneau C13. Que faites-vous ?","choices":[{"text":"S arreter et prendre un itineraire alternatif","is_correct":true},{"text":"Continuer si la route est assez large","is_correct":false},{"text":"Continuer s il y a peu de trafic","is_correct":false}],"explanation":"C13 vous interdit l acces a cette route en tant que conducteur d un attelage. La largeur ou la densite du trafic n a aucune influence sur l interdiction."},"AR":{"question":"Ø§Ù†Øª ØªÙ‚ÙˆØ¯ Ø¹Ø±Ø¨Ø© ØªØ¬Ø±Ù‡Ø§ Ø®ÙŠÙˆÙ„ ÙˆØªØ±Ù‰ Ù„Ø§ÙØªØ© C13. Ù…Ø§Ø°Ø§ ØªÙØ¹Ù„ØŸ","choices":[{"text":"ØªÙˆÙ‚Ù ÙˆØ®Ø° Ø·Ø±ÙŠÙ‚Ø§ Ø¨Ø¯ÙŠÙ„Ø§","is_correct":true},{"text":"ØªØ§Ø¨Ø¹ Ø§Ø°Ø§ ÙƒØ§Ù† Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø¹Ø±ÙŠØ¶Ø§ Ø¨Ù…Ø§ ÙŠÙƒÙÙŠ","is_correct":false},{"text":"ØªØ§Ø¨Ø¹ Ø§Ø°Ø§ ÙƒØ§Ù†Øª Ø­Ø±ÙƒØ© Ø§Ù„Ù…Ø±ÙˆØ± Ø®ÙÙŠÙØ©","is_correct":false}],"explanation":"ØªØ­Ø¸Ø± C13 Ø¹Ù„ÙŠÙƒ ÙƒØ³Ø§Ø¦Ù‚ Ø¹Ø±Ø¨Ø© ØªØ¬Ø±Ù‡Ø§ Ø§Ù„Ø®ÙŠÙˆÙ„ Ø¯Ø®ÙˆÙ„ Ù‡Ø°Ø§ Ø§Ù„Ø·Ø±ÙŠÙ‚. Ø§Ù„Ø¹Ø±Ø¶ Ø§Ùˆ ÙƒØ«Ø§ÙØ© Ø§Ù„Ù…Ø±ÙˆØ± Ù„Ø§ ØªØ£Ø«ÙŠØ± Ù„Ù‡ Ø¹Ù„Ù‰ Ø§Ù„Ø­Ø¸Ø±."}}},
-  {"question_id":"C13_Q05","type":"WHAT_MUST_YOU_DO","difficulty":"MEDIUM","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Mag een ruiter te paard de weg oprijden die verboden is door C13?","choices":[{"text":"Ja, C13 geldt enkel voor gespannen, niet voor ruiters","is_correct":true},{"text":"Nee, C13 verbiedt alle verkeersdeelnemers met dieren","is_correct":false},{"text":"Alleen als de ruiter op een voetpad rijdt","is_correct":false}],"explanation":"C13 verbiedt enkel voertuigen die door dieren worden getrokken. Ruiters (personen te paard) vallen onder bord C15, niet C13."},"EN":{"question":"May a horse rider use the road prohibited by sign C13?","choices":[{"text":"Yes, C13 only applies to horse-drawn vehicles, not to riders","is_correct":true},{"text":"No, C13 prohibits all road users with animals","is_correct":false},{"text":"Only if the rider uses a footpath","is_correct":false}],"explanation":"C13 only prohibits vehicles drawn by animals. Horse riders fall under sign C15, not C13."},"FR":{"question":"Un cavalier a cheval peut-il emprunter une route interdite par C13 ?","choices":[{"text":"Oui, C13 ne s applique qu aux attelages, pas aux cavaliers","is_correct":true},{"text":"Non, C13 interdit tous les usagers avec des animaux","is_correct":false},{"text":"Seulement si le cavalier emprunte un trottoir","is_correct":false}],"explanation":"C13 interdit uniquement les vehicules tires par des animaux. Les cavaliers (personnes a cheval) relevent du panneau C15, pas du C13."},"AR":{"question":"Ù‡Ù„ ÙŠØ¬ÙˆØ² Ù„ÙØ§Ø±Ø³ Ø±ÙƒÙˆØ¨ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ù…Ø­Ø¸ÙˆØ± Ø¨Ù„Ø§ÙØªØ© C13ØŸ","choices":[{"text":"Ù†Ø¹Ù…ØŒ C13 ØªÙ†Ø·Ø¨Ù‚ ÙÙ‚Ø· Ø¹Ù„Ù‰ Ø§Ù„Ø¹Ø±Ø¨Ø§Øª Ø§Ù„ØªÙŠ ØªØ¬Ø±Ù‡Ø§ Ø§Ù„Ø­ÙŠÙˆØ§Ù†Ø§Øª Ù„Ø§ Ø¹Ù„Ù‰ Ø§Ù„ÙØ±Ø³Ø§Ù†","is_correct":true},{"text":"Ù„Ø§ØŒ C13 ØªØ­Ø¸Ø± Ø¬Ù…ÙŠØ¹ Ù…Ø³ØªØ®Ø¯Ù…ÙŠ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ù…Ø¹ Ø§Ù„Ø­ÙŠÙˆØ§Ù†Ø§Øª","is_correct":false},{"text":"ÙÙ‚Ø· Ø§Ø°Ø§ Ø§Ø³ØªØ®Ø¯Ù… Ø§Ù„ÙØ§Ø±Ø³ Ø±ØµÙŠÙ Ø§Ù„Ù…Ø´Ø§Ø©","is_correct":false}],"explanation":"ØªØ­Ø¸Ø± C13 ÙÙ‚Ø· Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„ØªÙŠ ØªØ¬Ø±Ù‡Ø§ Ø§Ù„Ø­ÙŠÙˆØ§Ù†Ø§Øª. Ø§Ù„ÙØ±Ø³Ø§Ù† ÙŠÙ†Ø¯Ø±Ø¬ÙˆÙ† ØªØ­Øª Ù„Ø§ÙØªØ© C15 Ù„Ø§ C13."}}},
-  {"question_id":"C13_Q06","type":"WHAT_MUST_YOU_DO","difficulty":"MEDIUM","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Geldt het verbod van C13 ook voor een paard dat een slee trekt in de winter?","choices":[{"text":"Ja, een door een dier getrokken slee is ook een gespannen en valt onder C13","is_correct":true},{"text":"Nee, slees zijn geen voertuigen en zijn nooit verboden door C13","is_correct":false},{"text":"Alleen als de slee op de rijbaan rijdt in plaats van op een fietspad","is_correct":false}],"explanation":"Een gespannen omvat elk door een dier getrokken voertuig of voertuigachtige constructie, inclusief slees. C13 geldt dus ook in de winter."},"EN":{"question":"Does the prohibition of C13 also apply to a horse pulling a sleigh in winter?","choices":[{"text":"Yes, a sleigh drawn by an animal is also a horse-drawn vehicle and falls under C13","is_correct":true},{"text":"No, sleighs are not vehicles and are never prohibited by C13","is_correct":false},{"text":"Only if the sleigh travels on the carriageway instead of a cycle path","is_correct":false}],"explanation":"A horse-drawn vehicle covers any vehicle or vehicle-like construction drawn by an animal, including sleighs. C13 therefore also applies in winter."},"FR":{"question":"L interdiction de C13 s applique-t-elle aussi a un cheval qui tire un traineau en hiver ?","choices":[{"text":"Oui, un traineau tire par un animal est aussi un attelage et releve du C13","is_correct":true},{"text":"Non, les traineaux ne sont pas des vehicules et ne sont jamais interdits par C13","is_correct":false},{"text":"Seulement si le traineau circule sur la chaussee plutot que sur une piste cyclable","is_correct":false}],"explanation":"Un attelage couvre tout vehicule ou construction analogue tire par un animal, y compris les traineaux. C13 s applique donc aussi en hiver."},"AR":{"question":"Ù‡Ù„ ÙŠØ³Ø±ÙŠ Ø­Ø¸Ø± C13 Ø§ÙŠØ¶Ø§ Ø¹Ù„Ù‰ Ø­ØµØ§Ù† ÙŠØ¬Ø± Ù…Ø²Ù„Ø¬Ø© ÙÙŠ Ø§Ù„Ø´ØªØ§Ø¡ØŸ","choices":[{"text":"Ù†Ø¹Ù…ØŒ Ø§Ù„Ù…Ø²Ù„Ø¬Ø© Ø§Ù„ØªÙŠ ÙŠØ¬Ø±Ù‡Ø§ Ø­ÙŠÙˆØ§Ù† Ù‡ÙŠ Ø§ÙŠØ¶Ø§ Ø¹Ø±Ø¨Ø© Ø­ÙŠÙˆØ§Ù†ÙŠØ© ÙˆØªÙ†Ø¯Ø±Ø¬ ØªØ­Øª C13","is_correct":true},{"text":"Ù„Ø§ØŒ Ø§Ù„Ù…Ø²Ù„Ø¬Ø§Øª Ù„ÙŠØ³Øª Ù…Ø±ÙƒØ¨Ø§Øª ÙˆÙ„Ø§ ØªØ­Ø¸Ø±Ù‡Ø§ C13 Ø§Ø¨Ø¯Ø§","is_correct":false},{"text":"ÙÙ‚Ø· Ø§Ø°Ø§ ÙƒØ§Ù†Øª Ø§Ù„Ù…Ø²Ù„Ø¬Ø© ØªØ³ÙŠØ± ÙÙŠ Ù…Ø³Ø§Ø± Ø§Ù„Ø³ÙŠØ§Ø±Ø§Øª Ù„Ø§ Ø¹Ù„Ù‰ Ù…Ø³Ø§Ø± Ø§Ù„Ø¯Ø±Ø§Ø¬Ø§Øª","is_correct":false}],"explanation":"ØªØ´Ù…Ù„ Ø§Ù„Ø¹Ø±Ø¨Ø© Ø§Ù„Ø­ÙŠÙˆØ§Ù†ÙŠØ© Ø§ÙŠ Ù…Ø±ÙƒØ¨Ø© Ø§Ùˆ Ù‡ÙŠÙƒÙ„ Ù…Ø´Ø§Ø¨Ù‡ ØªØ¬Ø±Ù‡ Ø§Ù„Ø­ÙŠÙˆØ§Ù†Ø§Øª Ø¨Ù…Ø§ ÙÙŠÙ‡Ø§ Ø§Ù„Ù…Ø²Ù„Ø¬Ø§Øª. Ø§Ø° ØªØ³Ø±ÙŠ C13 Ø§ÙŠØ¶Ø§ ÙÙŠ Ø§Ù„Ø´ØªØ§Ø¡."}}},
-  {"question_id":"C13_Q07","type":"IS_IT_ALLOWED","difficulty":"HARD","is_critical":true,"show_sign":true,"i18n":{"NL":{"question":"Mag u als koetsier de verboden weg oprijden als u een geldig ceremonieel vergunning heeft?","choices":[{"text":"Nee, een verbodsbord geldt tenzij een expliciete officiÃ«le uitzondering is toegekend door de wegbeheerder","is_correct":true},{"text":"Ja, een ceremoniÃ«le vergunning overschrijft automatisch het verbodsbord","is_correct":false}],"explanation":"Verbodsborden gelden voor alle weggebruikers tenzij de wegbeheerder een specifieke ontheffing heeft verleend. Een algemene ceremoniÃ«le vergunning is geen automatische ontheffing. Dit is een ernstige verkeersovertreding."},"EN":{"question":"As a coachman, may you enter the prohibited road if you hold a valid ceremonial permit?","choices":[{"text":"No, a prohibition sign applies unless an explicit official exemption has been granted by the road authority","is_correct":true},{"text":"Yes, a ceremonial permit automatically overrides the prohibition sign","is_correct":false}],"explanation":"Prohibition signs apply to all road users unless the road authority has granted a specific exemption. A general ceremonial permit is not an automatic exemption. This is a serious traffic offence."},"FR":{"question":"En tant que cocher, pouvez-vous emprunter la route interdite si vous disposez d un permis ceremoniel valide ?","choices":[{"text":"Non, un panneau d interdiction s applique sauf si une derogation officielle explicite a ete accordee par le gestionnaire de la voirie","is_correct":true},{"text":"Oui, un permis ceremoniel annule automatiquement le panneau d interdiction","is_correct":false}],"explanation":"Les panneaux d interdiction s appliquent a tous les usagers sauf si le gestionnaire de la voirie a accorde une derogation specifique. Un permis ceremoniel general n est pas une derogation automatique. Il s agit d une infraction grave au code de la route."},"AR":{"question":"Ø¨ÙˆØµÙÙƒ Ø³Ø§Ø¦Ù‚ Ø¹Ø±Ø¨Ø© Ù‡Ù„ ÙŠØ¬ÙˆØ² Ù„Ùƒ Ø¯Ø®ÙˆÙ„ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ù„Ù…Ø­Ø¸ÙˆØ± Ø§Ø°Ø§ ÙƒØ§Ù† Ù…Ø¹Ùƒ ØªØµØ±ÙŠØ­ Ø§Ø­ØªÙØ§Ù„ÙŠ Ø³Ø§Ø±ØŸ","choices":[{"text":"Ù„Ø§ØŒ Ù„Ø§ÙØªØ© Ø§Ù„Ø­Ø¸Ø± Ø³Ø§Ø±ÙŠØ© Ø§Ù„Ù…ÙØ¹ÙˆÙ„ Ù…Ø§ Ù„Ù… ØªÙ…Ù†Ø­ Ø³Ù„Ø·Ø© Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ø³ØªØ«Ù†Ø§Ø¡ Ø±Ø³Ù…ÙŠØ§ ØµØ±ÙŠØ­Ø§","is_correct":true},{"text":"Ù†Ø¹Ù…ØŒ Ø§Ù„ØªØµØ±ÙŠØ­ Ø§Ù„Ø§Ø­ØªÙØ§Ù„ÙŠ ÙŠÙ„ØºÙŠ Ù„Ø§ÙØªØ© Ø§Ù„Ø­Ø¸Ø± ØªÙ„Ù‚Ø§Ø¦ÙŠØ§","is_correct":false}],"explanation":"ØªØ³Ø±ÙŠ Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø­Ø¸Ø± Ø¹Ù„Ù‰ Ø¬Ù…ÙŠØ¹ Ù…Ø³ØªØ®Ø¯Ù…ÙŠ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ù…Ø§ Ù„Ù… ØªÙ…Ù†Ø­ Ø³Ù„Ø·Ø© Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ø³ØªØ«Ù†Ø§Ø¡ Ù…Ø­Ø¯Ø¯Ø§. Ø§Ù„ØªØµØ±ÙŠØ­ Ø§Ù„Ø§Ø­ØªÙØ§Ù„ÙŠ Ø§Ù„Ø¹Ø§Ù… Ù„ÙŠØ³ Ø§Ø³ØªØ«Ù†Ø§Ø¡ ØªÙ„Ù‚Ø§Ø¦ÙŠØ§. Ù‡Ø°Ù‡ Ù…Ø®Ø§Ù„ÙØ© Ù…Ø±ÙˆØ±ÙŠØ© Ø®Ø·ÙŠØ±Ø©."}}},
-  {"question_id":"C13_Q08","type":"IS_IT_ALLOWED","difficulty":"HARD","is_critical":true,"show_sign":true,"i18n":{"NL":{"question":"Mag een melkboer met zijn paard en melkkar de weg berijden als zijn leveringsroute door de verboden straat loopt?","choices":[{"text":"Nee, economische noodzaak of leveringsroute vrijstelt niemand van het verbod","is_correct":true},{"text":"Ja, leveranciers hebben altijd toegang tot verboden wegen voor hun beroepsactiviteit","is_correct":false}],"explanation":"Beroepsmatige noodzaak vrijstelt niet van een verbod tenzij er een specifieke ontheffing is verleend. Iedereen dient een alternatieve route te zoeken. Dit is een ernstige verkeersovertreding."},"EN":{"question":"May a milkman with his horse and milk cart use the road if his delivery route passes through the prohibited street?","choices":[{"text":"No, economic necessity or delivery route does not exempt anyone from the prohibition","is_correct":true},{"text":"Yes, suppliers always have access to prohibited roads for their professional activity","is_correct":false}],"explanation":"Professional necessity does not exempt anyone from a prohibition unless a specific exemption has been granted. Everyone must find an alternative route. This is a serious traffic offence."},"FR":{"question":"Un laitier avec son cheval et sa charrette a lait peut-il emprunter la route si son itineraire de livraison passe par la rue interdite ?","choices":[{"text":"Non, la necessite economique ou l itineraire de livraison n exempte personne de l interdiction","is_correct":true},{"text":"Oui, les fournisseurs ont toujours acces aux routes interdites pour leur activite professionnelle","is_correct":false}],"explanation":"La necessite professionnelle n exempte pas de l interdiction sauf si une derogation specifique a ete accordee. Tout le monde doit trouver un itineraire alternatif. Il s agit d une infraction grave au code de la route."},"AR":{"question":"Ù‡Ù„ ÙŠØ¬ÙˆØ² Ù„Ø¨Ø§Ø¦Ø¹ Ø§Ù„Ø­Ù„ÙŠØ¨ Ø¨Ø­ØµØ§Ù†Ù‡ ÙˆØ¹Ø±Ø¨ØªÙ‡ Ø§Ø³ØªØ®Ø¯Ø§Ù… Ø§Ù„Ø·Ø±ÙŠÙ‚ Ø§Ø°Ø§ ÙƒØ§Ù† Ù…Ø³Ø§Ø± ØªÙˆØµÙŠÙ„Ù‡ ÙŠÙ…Ø± Ø¨Ø§Ù„Ø´Ø§Ø±Ø¹ Ø§Ù„Ù…Ø­Ø¸ÙˆØ±ØŸ","choices":[{"text":"Ù„Ø§ØŒ Ø§Ù„Ø¶Ø±ÙˆØ±Ø© Ø§Ù„Ø§Ù‚ØªØµØ§Ø¯ÙŠØ© Ø§Ùˆ Ù…Ø³Ø§Ø± Ø§Ù„ØªÙˆØµÙŠÙ„ Ù„Ø§ ÙŠØ¹ÙÙŠ Ø§Ø­Ø¯Ø§ Ù…Ù† Ø§Ù„Ø­Ø¸Ø±","is_correct":true},{"text":"Ù†Ø¹Ù…ØŒ Ø§Ù„Ù…ÙˆØ±Ø¯ÙˆÙ† ÙŠØ³ØªØ·ÙŠØ¹ÙˆÙ† Ø¯Ø§Ø¦Ù…Ø§ Ø§Ù„Ø¯Ø®ÙˆÙ„ Ø§Ù„Ù‰ Ø§Ù„Ø·Ø±Ù‚ Ø§Ù„Ù…Ø­Ø¸ÙˆØ±Ø© Ù„Ù†Ø´Ø§Ø·Ù‡Ù… Ø§Ù„Ù…Ù‡Ù†ÙŠ","is_correct":false}],"explanation":"Ø§Ù„Ø¶Ø±ÙˆØ±Ø© Ø§Ù„Ù…Ù‡Ù†ÙŠØ© Ù„Ø§ ØªØ¹ÙÙŠ Ù…Ù† Ø§Ù„Ø­Ø¸Ø± Ù…Ø§ Ù„Ù… ÙŠÙÙ…Ù†Ø­ Ø§Ø³ØªØ«Ù†Ø§Ø¡ Ù…Ø­Ø¯Ø¯. ÙŠØ¬Ø¨ Ø¹Ù„Ù‰ Ø§Ù„Ø¬Ù…ÙŠØ¹ Ø§ÙŠØ¬Ø§Ø¯ Ù…Ø³Ø§Ø± Ø¨Ø¯ÙŠÙ„. Ù‡Ø°Ù‡ Ù…Ø®Ø§Ù„ÙØ© Ù…Ø±ÙˆØ±ÙŠØ© Ø®Ø·ÙŠØ±Ø©."}}}
+[
+  {
+    "question_id": "C13_Q01",
+    "type": "WHAT_DOES_IT_MEAN",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat betekent dit verkeersbord?",
+        "choices": [
+          {
+            "text": "Verboden toegang voor bestuurders van gespannen",
+            "is_correct": true
+          },
+          {
+            "text": "Verboden toegang voor ruiters",
+            "is_correct": false
+          },
+          {
+            "text": "Verboden toegang voor bestuurders van handkarren",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dit bord geeft aan dat bestuurders van gespannen deze doorgang niet mogen gebruiken."
+      },
+      "EN": {
+        "question": "What does this traffic sign mean?",
+        "choices": [
+          {
+            "text": "No entry for drivers of animal-drawn vehicles",
+            "is_correct": true
+          },
+          {
+            "text": "No entry for horse riders",
+            "is_correct": false
+          },
+          {
+            "text": "No entry for drivers of handcarts",
+            "is_correct": false
+          }
+        ],
+        "explanation": "This sign indicates that drivers of animal-drawn vehicles may not use this access."
+      },
+      "FR": {
+        "question": "Que signifie ce panneau de signalisation ?",
+        "choices": [
+          {
+            "text": "Accès interdit aux conducteurs d’attelages",
+            "is_correct": true
+          },
+          {
+            "text": "Accès interdit aux cavaliers",
+            "is_correct": false
+          },
+          {
+            "text": "Accès interdit aux conducteurs de charrettes à bras",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ce panneau indique que les conducteurs d’attelages ne peuvent pas utiliser cet accès."
+      },
+      "AR": {
+        "question": "ما معنى هذه العلامة المرورية؟",
+        "choices": [
+          {
+            "text": "ممنوع دخول سائقي العربات التي تجرها الحيوانات",
+            "is_correct": true
+          },
+          {
+            "text": "ممنوع دخول الفرسان",
+            "is_correct": false
+          },
+          {
+            "text": "ممنوع دخول مستخدمي العربات اليدوية",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تعني هذه العلامة أن سائقي العربات التي تجرها الحيوانات لا يجوز لهم استخدام هذا المدخل."
+      }
+    }
+  },
+  {
+    "question_id": "C13_Q02",
+    "type": "HAZARD_IDENTIFICATION",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Op wie is dit verbod van toepassing?",
+        "choices": [
+          {
+            "text": "Op bestuurders van gespannen",
+            "is_correct": true
+          },
+          {
+            "text": "Op ruiters",
+            "is_correct": false
+          },
+          {
+            "text": "Op alle weggebruikers met dieren",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Het verbod is specifiek gericht op bestuurders van gespannen."
+      },
+      "EN": {
+        "question": "To whom does this prohibition apply?",
+        "choices": [
+          {
+            "text": "To drivers of animal-drawn vehicles",
+            "is_correct": true
+          },
+          {
+            "text": "To horse riders",
+            "is_correct": false
+          },
+          {
+            "text": "To all road users with animals",
+            "is_correct": false
+          }
+        ],
+        "explanation": "The prohibition specifically applies to drivers of animal-drawn vehicles."
+      },
+      "FR": {
+        "question": "À qui s’applique cette interdiction ?",
+        "choices": [
+          {
+            "text": "Aux conducteurs d’attelages",
+            "is_correct": true
+          },
+          {
+            "text": "Aux cavaliers",
+            "is_correct": false
+          },
+          {
+            "text": "À tous les usagers avec des animaux",
+            "is_correct": false
+          }
+        ],
+        "explanation": "L’interdiction vise spécifiquement les conducteurs d’attelages."
+      },
+      "AR": {
+        "question": "على من ينطبق هذا الحظر؟",
+        "choices": [
+          {
+            "text": "على سائقي العربات التي تجرها الحيوانات",
+            "is_correct": true
+          },
+          {
+            "text": "على الفرسان",
+            "is_correct": false
+          },
+          {
+            "text": "على جميع مستخدمي الطريق مع الحيوانات",
+            "is_correct": false
+          }
+        ],
+        "explanation": "ينطبق هذا الحظر تحديدًا على سائقي العربات التي تجرها الحيوانات."
+      }
+    }
+  },
+  {
+    "question_id": "C13_Q03",
+    "type": "HAZARD_IDENTIFICATION",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat verbiedt dit bord precies?",
+        "choices": [
+          {
+            "text": "De toegang voor gespannen",
+            "is_correct": true
+          },
+          {
+            "text": "De toegang voor ruiters",
+            "is_correct": false
+          },
+          {
+            "text": "De toegang voor alle voertuigen met dieren",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dit bord verbiedt specifiek de toegang voor gespannen."
+      },
+      "EN": {
+        "question": "What exactly does this sign prohibit?",
+        "choices": [
+          {
+            "text": "Entry for animal-drawn vehicles",
+            "is_correct": true
+          },
+          {
+            "text": "Entry for horse riders",
+            "is_correct": false
+          },
+          {
+            "text": "Entry for all vehicles with animals",
+            "is_correct": false
+          }
+        ],
+        "explanation": "This sign specifically prohibits entry for animal-drawn vehicles."
+      },
+      "FR": {
+        "question": "Que interdit exactement ce panneau ?",
+        "choices": [
+          {
+            "text": "L’accès aux attelages",
+            "is_correct": true
+          },
+          {
+            "text": "L’accès aux cavaliers",
+            "is_correct": false
+          },
+          {
+            "text": "L’accès à tous les véhicules avec des animaux",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ce panneau interdit spécifiquement l’accès aux attelages."
+      },
+      "AR": {
+        "question": "ما الذي تحظره هذه العلامة المرورية بالضبط؟",
+        "choices": [
+          {
+            "text": "دخول العربات التي تجرها الحيوانات",
+            "is_correct": true
+          },
+          {
+            "text": "دخول الفرسان",
+            "is_correct": false
+          },
+          {
+            "text": "دخول جميع المركبات المرتبطة بالحيوانات",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تحظر هذه العلامة تحديدًا دخول العربات التي تجرها الحيوانات."
+      }
+    }
+  },
+  {
+    "question_id": "C13_Q04",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U rijdt met een gespannen en ziet dit bord. Wat doet u?",
+        "choices": [
+          {
+            "text": "Niet inrijden en een andere route nemen",
+            "is_correct": true
+          },
+          {
+            "text": "Doorrijden als de weg breed genoeg is",
+            "is_correct": false
+          },
+          {
+            "text": "Doorrijden als er weinig verkeer is",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Omdat bestuurders van gespannen onder dit verbod vallen, moet u een andere route kiezen."
+      },
+      "EN": {
+        "question": "You are driving an animal-drawn vehicle and see this sign. What should you do?",
+        "choices": [
+          {
+            "text": "Do not enter and take another route",
+            "is_correct": true
+          },
+          {
+            "text": "Continue if the road is wide enough",
+            "is_correct": false
+          },
+          {
+            "text": "Continue if there is little traffic",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Because drivers of animal-drawn vehicles are included in this prohibition, you should choose another route."
+      },
+      "FR": {
+        "question": "Vous conduisez un attelage et voyez ce panneau. Que devez-vous faire ?",
+        "choices": [
+          {
+            "text": "Ne pas entrer et prendre un autre itinéraire",
+            "is_correct": true
+          },
+          {
+            "text": "Continuer si la route est assez large",
+            "is_correct": false
+          },
+          {
+            "text": "Continuer s’il y a peu de circulation",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Comme les conducteurs d’attelages sont visés par cette interdiction, il faut choisir un autre itinéraire."
+      },
+      "AR": {
+        "question": "أنت تقود عربة تجرها الحيوانات وترى هذه العلامة. ماذا ينبغي أن تفعل؟",
+        "choices": [
+          {
+            "text": "لا تدخل واختر طريقًا آخر",
+            "is_correct": true
+          },
+          {
+            "text": "تابع إذا كان الطريق عريضًا بما يكفي",
+            "is_correct": false
+          },
+          {
+            "text": "تابع إذا كانت حركة المرور خفيفة",
+            "is_correct": false
+          }
+        ],
+        "explanation": "بما أن سائقي العربات التي تجرها الحيوانات مشمولون بهذا الحظر، ينبغي اختيار طريق آخر."
+      }
+    }
+  },
+  {
+    "question_id": "C13_Q05",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Uw bestemming ligt vlak achter dit bord. Wat doet u met uw gespannen?",
+        "choices": [
+          {
+            "text": "Een alternatieve route zoeken",
+            "is_correct": true
+          },
+          {
+            "text": "Toch doorrijden omdat het dichtbij is",
+            "is_correct": false
+          },
+          {
+            "text": "Alleen kort doorrijden",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ook als uw bestemming dichtbij ligt, blijft de toegangsbeperking voor gespannen gelden."
+      },
+      "EN": {
+        "question": "Your destination is just beyond this sign. What do you do with your animal-drawn vehicle?",
+        "choices": [
+          {
+            "text": "Find an alternative route",
+            "is_correct": true
+          },
+          {
+            "text": "Continue because it is nearby",
+            "is_correct": false
+          },
+          {
+            "text": "Only continue for a short distance",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Even if your destination is nearby, the access restriction for animal-drawn vehicles still applies."
+      },
+      "FR": {
+        "question": "Votre destination se trouve juste après ce panneau. Que faites-vous avec votre attelage ?",
+        "choices": [
+          {
+            "text": "Chercher un autre itinéraire",
+            "is_correct": true
+          },
+          {
+            "text": "Continuer parce que c’est tout près",
+            "is_correct": false
+          },
+          {
+            "text": "Continuer seulement sur une courte distance",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Même si la destination est proche, la restriction d’accès pour les attelages reste valable."
+      },
+      "AR": {
+        "question": "تقع وجهتك مباشرة بعد هذه العلامة. ماذا تفعل بعربتك التي تجرها الحيوانات؟",
+        "choices": [
+          {
+            "text": "ابحث عن طريق بديل",
+            "is_correct": true
+          },
+          {
+            "text": "واصل السير لأنها قريبة",
+            "is_correct": false
+          },
+          {
+            "text": "تابع لمسافة قصيرة فقط",
+            "is_correct": false
+          }
+        ],
+        "explanation": "حتى لو كانت وجهتك قريبة، يبقى المنع قائمًا على العربات التي تجرها الحيوانات."
+      }
+    }
+  },
+  {
+    "question_id": "C13_Q06",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Mag een ruiter deze weg gebruiken ondanks dit bord?",
+        "choices": [
+          {
+            "text": "Ja, het bord richt zich op gespannen",
+            "is_correct": true
+          },
+          {
+            "text": "Nee, het bord verbiedt ook ruiters",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dit bord is gericht op gespannen. Een ruiter valt daar niet automatisch onder."
+      },
+      "EN": {
+        "question": "May a horse rider use this road despite this sign?",
+        "choices": [
+          {
+            "text": "Yes, the sign targets animal-drawn vehicles",
+            "is_correct": true
+          },
+          {
+            "text": "No, the sign also bans horse riders",
+            "is_correct": false
+          }
+        ],
+        "explanation": "This sign is aimed at animal-drawn vehicles. A horse rider is not automatically included."
+      },
+      "FR": {
+        "question": "Un cavalier peut-il utiliser cette route malgré ce panneau ?",
+        "choices": [
+          {
+            "text": "Oui, le panneau vise les attelages",
+            "is_correct": true
+          },
+          {
+            "text": "Non, le panneau interdit aussi les cavaliers",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ce panneau vise les attelages. Un cavalier n’est pas automatiquement compris."
+      },
+      "AR": {
+        "question": "هل يجوز لفارس استعمال هذا الطريق رغم هذه العلامة؟",
+        "choices": [
+          {
+            "text": "نعم، العلامة تستهدف العربات التي تجرها الحيوانات",
+            "is_correct": true
+          },
+          {
+            "text": "لا، العلامة تحظر أيضًا الفرسان",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تستهدف هذه العلامة العربات التي تجرها الحيوانات. أما الفارس فلا يندرج تلقائيًا ضمنها."
+      }
+    }
+  },
+  {
+    "question_id": "C13_Q07",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "De weg lijkt volledig leeg. Mag een bestuurder van een gespannen toch inrijden?",
+        "choices": [
+          {
+            "text": "Nee, het bord blijft gelden ook als de weg leeg lijkt",
+            "is_correct": true
+          },
+          {
+            "text": "Ja, als er niemand is mag het",
+            "is_correct": false
+          }
+        ],
+        "explanation": "De zichtbare verkeerssituatie verandert de betekenis van het bord niet. Voor bestuurders van gespannen blijft deze toegang verboden."
+      },
+      "EN": {
+        "question": "The road looks completely empty. May the driver of an animal-drawn vehicle still enter?",
+        "choices": [
+          {
+            "text": "No, the sign still applies even if the road looks empty",
+            "is_correct": true
+          },
+          {
+            "text": "Yes, if no one is there it is allowed",
+            "is_correct": false
+          }
+        ],
+        "explanation": "The visible traffic situation does not change the meaning of the sign. For drivers of animal-drawn vehicles, this access remains prohibited."
+      },
+      "FR": {
+        "question": "La route semble complètement vide. Un conducteur d’attelage peut-il quand même y entrer ?",
+        "choices": [
+          {
+            "text": "Non, le panneau reste valable même si la route semble vide",
+            "is_correct": true
+          },
+          {
+            "text": "Oui, s’il n’y a personne c’est permis",
+            "is_correct": false
+          }
+        ],
+        "explanation": "La situation visible sur la route ne change pas la signification du panneau. Pour les conducteurs d’attelages, cet accès reste interdit."
+      },
+      "AR": {
+        "question": "يبدو الطريق خاليًا تمامًا. هل يجوز لسائق عربة تجرها الحيوانات رغم ذلك الدخول؟",
+        "choices": [
+          {
+            "text": "لا، تبقى العلامة سارية حتى لو بدا الطريق خاليًا",
+            "is_correct": true
+          },
+          {
+            "text": "نعم، إذا لم يكن هناك أحد فهذا مسموح",
+            "is_correct": false
+          }
+        ],
+        "explanation": "الوضع الظاهر على الطريق لا يغيّر معنى العلامة. وبالنسبة لسائقي العربات التي تجرها الحيوانات يبقى هذا المدخل محظورًا."
+      }
+    }
+  },
+  {
+    "question_id": "C13_Q08",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Mag een bestuurder van een gespannen deze weg gebruiken als hij alleen een korte doorgang nodig heeft?",
+        "choices": [
+          {
+            "text": "Nee, het bord blijft gelden ook voor een korte doorgang",
+            "is_correct": true
+          },
+          {
+            "text": "Ja, een korte doorgang is toegestaan",
+            "is_correct": false
+          }
+        ],
+        "explanation": "De duur van de doorgang verandert de betekenis van het bord niet. Voor gespannen blijft deze toegang verboden."
+      },
+      "EN": {
+        "question": "May the driver of an animal-drawn vehicle use this road if only a short passage is needed?",
+        "choices": [
+          {
+            "text": "No, the sign still applies even for a short passage",
+            "is_correct": true
+          },
+          {
+            "text": "Yes, a short passage is allowed",
+            "is_correct": false
+          }
+        ],
+        "explanation": "The length of the passage does not change the meaning of the sign. For animal-drawn vehicles, this access remains prohibited."
+      },
+      "FR": {
+        "question": "Un conducteur d’attelage peut-il utiliser cette route s’il n’a besoin que d’un court passage ?",
+        "choices": [
+          {
+            "text": "Non, le panneau reste valable même pour un court passage",
+            "is_correct": true
+          },
+          {
+            "text": "Oui, un court passage est autorisé",
+            "is_correct": false
+          }
+        ],
+        "explanation": "La durée du passage ne change pas la signification du panneau. Pour les attelages, cet accès reste interdit."
+      },
+      "AR": {
+        "question": "هل يجوز لسائق عربة تجرها الحيوانات استعمال هذا الطريق إذا كان يحتاج فقط إلى مرور قصير؟",
+        "choices": [
+          {
+            "text": "لا، تبقى العلامة سارية حتى في حالة المرور القصير",
+            "is_correct": true
+          },
+          {
+            "text": "نعم، المرور القصير مسموح",
+            "is_correct": false
+          }
+        ],
+        "explanation": "مدة المرور لا تغيّر معنى العلامة. وبالنسبة للعربات التي تجرها الحيوانات يبقى هذا المدخل محظورًا."
+      }
+    }
+  }
 ]

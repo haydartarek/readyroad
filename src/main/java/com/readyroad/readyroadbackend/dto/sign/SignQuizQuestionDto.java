@@ -3,6 +3,8 @@ package com.readyroad.readyroadbackend.dto.sign;
 import com.readyroad.readyroadbackend.domain.entity.SignQuestion;
 import com.readyroad.readyroadbackend.domain.enums.SignDifficulty;
 import com.readyroad.readyroadbackend.domain.enums.SignQuestionType;
+import com.readyroad.readyroadbackend.service.RoadSignReferenceTextResolver;
+import com.readyroad.readyroadbackend.util.SignQuestionTextSanitizer;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -33,11 +35,15 @@ public record SignQuizQuestionDto(
 
         List<SignChoiceDto> choices) {
     public static SignQuizQuestionDto from(SignQuestion q) {
+        return from(q, null);
+    }
+
+    public static SignQuizQuestionDto from(SignQuestion q, RoadSignReferenceTextResolver resolver) {
         SignQuestionType questionType = q.getQuestionType();
         // Shuffle choices so the correct answer is not always in position 1.
         // Validation uses stable choice IDs (FK), never visual position.
-        List<SignChoiceDto> choices = q.getChoices().stream()
-                .map(choice -> SignChoiceDto.from(choice, questionType))
+        List<SignChoiceDto> choices = q.getDeliverableChoices().stream()
+                .map(choice -> SignChoiceDto.from(choice, questionType, resolver))
                 .collect(Collectors.toCollection(ArrayList::new));
         Collections.shuffle(choices);
         return new SignQuizQuestionDto(
@@ -47,12 +53,31 @@ public record SignQuizQuestionDto(
                 q.getDifficulty(),
                 Boolean.TRUE.equals(q.getIsCritical()),
                 Boolean.TRUE.equals(q.getShowSign()),
-                q.getQuestionNl(),
-                q.getQuestionEn(),
-                q.getQuestionFr(),
-                q.getQuestionAr(),
+                resolveQuestion(resolver, "NL", questionType, q.getQuestionNl()),
+                resolveQuestion(resolver, "EN", questionType, q.getQuestionEn()),
+                resolveQuestion(resolver, "FR", questionType, q.getQuestionFr()),
+                resolveQuestion(resolver, "AR", questionType, q.getQuestionAr()),
                 q.getSign() != null ? q.getSign().getSignCode() : null,
                 q.getSign() != null ? q.getSign().getImagePath() : null,
                 choices);
+    }
+
+    private static String resolveQuestion(
+            RoadSignReferenceTextResolver resolver,
+            String languageCode,
+            SignQuestionType questionType,
+            String value) {
+        String sanitized = SignQuestionTextSanitizer.sanitizeQuestion(questionType, languageCode, value);
+        if (resolver == null) {
+            return sanitized;
+        }
+
+        return switch (languageCode) {
+            case "NL" -> resolver.resolveNl(sanitized);
+            case "EN" -> resolver.resolveEn(sanitized);
+            case "FR" -> resolver.resolveFr(sanitized);
+            case "AR" -> resolver.resolveAr(sanitized);
+            default -> sanitized;
+        };
     }
 }

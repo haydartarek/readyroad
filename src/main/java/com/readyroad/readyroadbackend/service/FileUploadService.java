@@ -35,6 +35,12 @@ public class FileUploadService {
     @Value("${readyroad.upload.directory:public/images/quiz}")
     private String uploadDirectory;
 
+    private final BackendMessageService messages;
+
+    public FileUploadService(BackendMessageService messages) {
+        this.messages = messages;
+    }
+
     private Path uploadPath;
 
     @PostConstruct
@@ -45,7 +51,7 @@ public class FileUploadService {
             log.info("📁 Upload directory ready: {}", uploadPath);
         } catch (IOException e) {
             log.error("❌ Could not create upload directory: {}", uploadPath, e);
-            throw new RuntimeException("Could not create upload directory", e);
+            throw new RuntimeException(messages.get("upload.directory_create_failed"), e);
         }
     }
 
@@ -59,14 +65,14 @@ public class FileUploadService {
     public String uploadImage(MultipartFile file) {
         // Validate not empty
         if (file.isEmpty()) {
-            throw new IllegalArgumentException("File is empty");
+            throw new IllegalArgumentException(messages.get("upload.file_empty"));
         }
 
         // Validate content type
         String contentType = file.getContentType();
         if (contentType == null || !ALLOWED_CONTENT_TYPES.contains(contentType.toLowerCase())) {
             throw new IllegalArgumentException(
-                    "Invalid file type: " + contentType + ". Allowed types: JPG, JPEG, PNG, WEBP");
+                    messages.get("upload.invalid_type", contentType));
         }
 
         // Validate extension
@@ -74,14 +80,14 @@ public class FileUploadService {
         String extension = getExtension(originalFilename);
         if (!ALLOWED_EXTENSIONS.contains(extension.toLowerCase())) {
             throw new IllegalArgumentException(
-                    "Invalid file extension: ." + extension + ". Allowed: .jpg, .jpeg, .png, .webp");
+                    messages.get("upload.invalid_extension", extension));
         }
 
         // Validate file size
         long maxBytes = (long) maxFileSizeMb * 1024 * 1024;
         if (file.getSize() > maxBytes) {
             throw new IllegalArgumentException(
-                    "File size " + (file.getSize() / 1024 / 1024) + "MB exceeds maximum of " + maxFileSizeMb + "MB");
+                    messages.get("upload.file_too_large", file.getSize() / 1024 / 1024, maxFileSizeMb));
         }
 
         // Generate unique filename to prevent collisions and path traversal
@@ -90,7 +96,7 @@ public class FileUploadService {
 
         // Security: ensure target is still within upload directory
         if (!targetPath.startsWith(uploadPath)) {
-            throw new SecurityException("Invalid file path detected");
+            throw new SecurityException(messages.get("upload.invalid_path"));
         }
 
         try {
@@ -98,7 +104,7 @@ public class FileUploadService {
             log.info("✅ Image uploaded: {} ({} bytes)", uniqueName, file.getSize());
         } catch (IOException e) {
             log.error("❌ Failed to store file: {}", uniqueName, e);
-            throw new RuntimeException("Failed to store uploaded file", e);
+            throw new RuntimeException(messages.get("upload.store_failed"), e);
         }
 
         // Return the URL path that matches the /images/** resource handler

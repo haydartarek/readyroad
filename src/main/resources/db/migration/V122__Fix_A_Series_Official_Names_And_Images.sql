@@ -23,7 +23,7 @@ UPDATE traffic_signs
 SET name_nl        = 'Gevaarlijke dubbele of meer dan twee bochten, de eerste naar links',
     name_en        = 'Dangerous double or multiple curves, first to the left',
     name_fr        = 'Double virage dangereux ou plusieurs virages, le premier à gauche',
-    name_ar        = 'منعطفات مزدوجة خطيرة أو أكثر، الأول إلى اليسار',
+    name_ar        = 'منعطف مزدوج خطير أو أكثر، الأول إلى اليسار',
     image_url      = 'images/signs/danger_signs/A1c Gevaarlijke dubbele bocht (links-rechts).png',
     updated_at     = NOW()
 WHERE sign_code = 'A1c';
@@ -33,7 +33,7 @@ UPDATE traffic_signs
 SET name_nl        = 'Gevaarlijke dubbele of meer dan twee bochten, de eerste naar rechts',
     name_en        = 'Dangerous double or multiple curves, first to the right',
     name_fr        = 'Double virage dangereux ou plusieurs virages, le premier à droite',
-    name_ar        = 'منعطفات مزدوجة خطيرة أو أكثر، الأول إلى اليمين',
+    name_ar        = 'منعطف مزدوج خطير أو أكثر، الأول إلى اليمين',
     image_url      = 'images/signs/danger_signs/A1d Gevaarlijke dubbele bocht (rechts-links).png',
     updated_at     = NOW()
 WHERE sign_code = 'A1d';

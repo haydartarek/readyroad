@@ -13,7 +13,9 @@ import java.util.Optional;
 @Repository
 public interface UserWeakAreaRepository extends JpaRepository<UserWeakArea, Long> {
 
-    Optional<UserWeakArea> findByUserIdAndCategoryId(Long userId, Long categoryId);
+    Optional<UserWeakArea> findByUserIdAndCategory(Long userId, String category);
+
+    Optional<UserWeakArea> findByUserIdAndTrafficSignCode(Long userId, String trafficSignCode);
 
     @Query("SELECT w FROM UserWeakArea w " +
             "WHERE w.user.id = :userId " +
@@ -31,11 +33,7 @@ public interface UserWeakAreaRepository extends JpaRepository<UserWeakArea, Long
     List<UserWeakArea> findAllByUserId(Long userId);
 
     /**
-     * Upsert a sign-specific weak-area record using the raw traffic_sign_code
-     * column.
-     * We bypass the JPA entity because UserWeakArea maps
-     * category_id/traffic_sign_id FKs,
-     * but the actual DB column (from V11) is traffic_sign_code VARCHAR.
+     * Upsert a sign-specific weak-area record keyed by {@code traffic_sign_code}.
      */
     @Modifying
     @Query(nativeQuery = true, value = """
@@ -60,11 +58,8 @@ public interface UserWeakAreaRepository extends JpaRepository<UserWeakArea, Long
             @Param("wrong") int wrong);
 
     /**
-     * Upsert a category-based weak-area record using the raw `category` varchar
-     * column.
-     * Uses native SQL to bypass the JPA entity's mismatched category_id FK mapping.
-     * Triggered by ExamService.completeExam() for every category below the
-     * weak-area threshold.
+     * Upsert a category-based weak-area record keyed by the raw {@code category}
+     * varchar column.
      */
     @Modifying
     @Query(nativeQuery = true, value = """

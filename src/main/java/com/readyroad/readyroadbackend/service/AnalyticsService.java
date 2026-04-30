@@ -39,6 +39,8 @@ public class AnalyticsService {
     private final UserCategoryProgressRepository progressRepository;
     private final CategoryRepository categoryRepository;
     private final UserErrorPatternRepository errorPatternRepository;
+    private final RoadSignReferenceTextResolver roadSignReferenceTextResolver;
+    private final BackendMessageService messages;
 
     // Supported error pattern types (6 types as per requirements)
     private static final List<TypicalErrorType> SUPPORTED_PATTERNS = Arrays.asList(
@@ -239,11 +241,13 @@ public class AnalyticsService {
     private ExampleQuestionDTO buildExampleQuestion(QuizQuestion question, int timesWrong) {
         return ExampleQuestionDTO.builder()
                 .questionId(question.getId())
-                .questionTextEn(question.getQuestionEn())
-                .questionTextAr(question.getQuestionAr())
-                .questionTextNl(question.getQuestionNl())
-                .questionTextFr(question.getQuestionFr())
-                .categoryName(question.getCategory() != null ? question.getCategory().getNameEn() : "Unknown")
+                .questionTextEn(roadSignReferenceTextResolver.resolveEn(question.getQuestionEn()))
+                .questionTextAr(roadSignReferenceTextResolver.resolveAr(question.getQuestionAr()))
+                .questionTextNl(roadSignReferenceTextResolver.resolveNl(question.getQuestionNl()))
+                .questionTextFr(roadSignReferenceTextResolver.resolveFr(question.getQuestionFr()))
+                .categoryName(question.getCategory() != null
+                        ? question.getCategory().getNameEn()
+                        : messages.get("analytics.category.unknown"))
                 .contentImageUrl(question.getContentImageUrl())
                 .timesWrong(timesWrong)
                 .build();
@@ -255,19 +259,19 @@ public class AnalyticsService {
     private String getPatternDescription(TypicalErrorType pattern) {
         switch (pattern) {
             case SIGN_CONFUSION:
-                return "Confusion between similar traffic signs";
+                return messages.get("analytics.pattern.sign_confusion");
             case SUPPLEMENTARY_IGNORED:
-                return "Ignoring supplementary panels below main signs";
+                return messages.get("analytics.pattern.supplementary_ignored");
             case PRIORITY_MISUNDERSTANDING:
-                return "Misunderstanding right-of-way rules";
+                return messages.get("analytics.pattern.priority_misunderstanding");
             case SPEED_LIMIT_ERROR:
-                return "Incorrect interpretation of speed limit rules";
+                return messages.get("analytics.pattern.speed_limit_error");
             case ZONE_CONFUSION:
-                return "Confusion between different zone types (parking, residential, etc.)";
+                return messages.get("analytics.pattern.zone_confusion");
             case RULE_OVERGENERALIZATION:
-                return "Applying a rule incorrectly in the wrong context";
+                return messages.get("analytics.pattern.rule_overgeneralization");
             default:
-                return "Other type of error";
+                return messages.get("analytics.pattern.other");
         }
     }
 

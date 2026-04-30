@@ -56,12 +56,6 @@ class OverallUserProgressIntegrationTest {
     @Autowired
     private ExamSimulationRepository examSimulationRepository;
 
-    @Autowired
-    private QuizQuestionRepository quizQuestionRepository;
-
-    @Autowired
-    private QuizAnswerOptionRepository quizAnswerOptionRepository;
-
     private User testUser;
     private User otherUser;
     private Category speedLimitsCategory;
@@ -95,7 +89,7 @@ class OverallUserProgressIntegrationTest {
         // ✅ Use seeded categories instead of creating duplicates
         var categories = categoryRepository.findAll();
         assertThat(categories).hasSizeGreaterThanOrEqualTo(3)
-            .as("TestDataSeederConfig should have seeded at least 3 categories");
+                .as("TestDataSeederConfig should have seeded at least 3 categories");
 
         speedLimitsCategory = categories.get(0);
         priorityRulesCategory = categories.get(1);
@@ -123,11 +117,11 @@ class OverallUserProgressIntegrationTest {
 
         // And: accuracyRate should be 0
         assertThat(response.getOverallAccuracy())
-            .isEqualByComparingTo(BigDecimal.ZERO);
+                .isEqualByComparingTo(BigDecimal.ZERO);
 
         // And: masteryLevel should be BEGINNER (through recommended difficulty)
         assertThat(response.getRecommendedDifficulty())
-            .isEqualTo(QuizQuestion.DifficultyLevel.EASY);
+                .isEqualTo(QuizQuestion.DifficultyLevel.EASY);
 
         // And: no weakestCategory should be returned
         assertThat(response.getWeakCategories()).isEmpty();
@@ -144,12 +138,11 @@ class OverallUserProgressIntegrationTest {
         // And: 15 answers were correct
         // And: 5 answers were incorrect
         createUserCategoryProgress(
-            testUser.getId(),
-            trafficSignsCategory.getId(),
-            20,  // questionsAttempted
-            15,  // correctAnswers
-            UserCategoryProgress.MasteryLevel.INTERMEDIATE
-        );
+                testUser.getId(),
+                trafficSignsCategory.getId(),
+                20, // questionsAttempted
+                15, // correctAnswers
+                UserCategoryProgress.MasteryLevel.INTERMEDIATE);
 
         // When: the user requests overall progress
         OverallProgressResponse response = progressService.getOverallProgress(testUser.getId());
@@ -162,11 +155,12 @@ class OverallUserProgressIntegrationTest {
 
         // And: accuracyRate should be 75 percent
         assertThat(response.getOverallAccuracy())
-            .isEqualByComparingTo(BigDecimal.valueOf(75.00));
+                .isEqualByComparingTo(BigDecimal.valueOf(75.00));
 
-        // And: masteryLevel should be INTERMEDIATE (75% accuracy with 20 attempts -> MEDIUM difficulty)
+        // And: masteryLevel should be INTERMEDIATE (75% accuracy with 20 attempts ->
+        // MEDIUM difficulty)
         assertThat(response.getRecommendedDifficulty())
-            .isEqualTo(QuizQuestion.DifficultyLevel.MEDIUM);
+                .isEqualTo(QuizQuestion.DifficultyLevel.MEDIUM);
     }
 
     // ----------------------------------------
@@ -178,21 +172,19 @@ class OverallUserProgressIntegrationTest {
         // Given: the user has practiced questions in multiple categories
         // And: category "Speed Limits" accuracy is 40 percent
         createUserCategoryProgress(
-            testUser.getId(),
-            speedLimitsCategory.getId(),
-            10,  // questionsAttempted
-            4,   // correctAnswers (40%)
-            UserCategoryProgress.MasteryLevel.BEGINNER
-        );
+                testUser.getId(),
+                speedLimitsCategory.getId(),
+                10, // questionsAttempted
+                4, // correctAnswers (40%)
+                UserCategoryProgress.MasteryLevel.BEGINNER);
 
         // And: category "Priority Rules" accuracy is 80 percent
         createUserCategoryProgress(
-            testUser.getId(),
-            priorityRulesCategory.getId(),
-            10,  // questionsAttempted
-            8,   // correctAnswers (80%)
-            UserCategoryProgress.MasteryLevel.INTERMEDIATE
-        );
+                testUser.getId(),
+                priorityRulesCategory.getId(),
+                10, // questionsAttempted
+                8, // correctAnswers (80%)
+                UserCategoryProgress.MasteryLevel.INTERMEDIATE);
 
         // When: the user requests overall progress
         OverallProgressResponse response = progressService.getOverallProgress(testUser.getId());
@@ -200,9 +192,9 @@ class OverallUserProgressIntegrationTest {
         // Then: weakestCategory should be the first category (lowest accuracy)
         assertThat(response.getWeakCategories()).hasSize(1);
         assertThat(response.getWeakCategories().get(0).getCategoryName())
-            .isEqualTo(speedLimitsCategory.getNameEn()); // Use actual seeded category name
+                .isEqualTo(speedLimitsCategory.getNameEn()); // Use actual seeded category name
         assertThat(response.getWeakCategories().get(0).getAccuracy())
-            .isEqualByComparingTo(BigDecimal.valueOf(40.00));
+                .isEqualByComparingTo(BigDecimal.valueOf(40.00));
 
         // And: strongestCategory should be "Priority Rules"
         // Note: 80% is not >85%, so it won't appear in strong categories
@@ -210,7 +202,7 @@ class OverallUserProgressIntegrationTest {
         assertThat(response.getTotalAttempted()).isEqualTo(20);
         assertThat(response.getTotalCorrect()).isEqualTo(12); // 4 + 8
         assertThat(response.getOverallAccuracy())
-            .isEqualByComparingTo(BigDecimal.valueOf(60.00)); // 12/20 * 100
+                .isEqualByComparingTo(BigDecimal.valueOf(60.00)); // 12/20 * 100
     }
 
     // ----------------------------------------
@@ -221,12 +213,11 @@ class OverallUserProgressIntegrationTest {
     void testOverallProgressAfterCompletingExam() {
         // Given: the user has practice history showing high performance
         createUserCategoryProgress(
-            testUser.getId(),
-            trafficSignsCategory.getId(),
-            50,  // questionsAttempted
-            45,  // correctAnswers (90%)
-            UserCategoryProgress.MasteryLevel.ADVANCED
-        );
+                testUser.getId(),
+                trafficSignsCategory.getId(),
+                50, // questionsAttempted
+                45, // correctAnswers (90%)
+                UserCategoryProgress.MasteryLevel.ADVANCED);
 
         // And: the user has completed an exam with score 82 percent
         ExamSimulation exam = new ExamSimulation();
@@ -249,11 +240,11 @@ class OverallUserProgressIntegrationTest {
         assertThat(response.getTotalAttempted()).isEqualTo(50);
         assertThat(response.getTotalCorrect()).isEqualTo(45);
         assertThat(response.getOverallAccuracy())
-            .isEqualByComparingTo(BigDecimal.valueOf(90.00));
+                .isEqualByComparingTo(BigDecimal.valueOf(90.00));
 
         // And: masteryLevel should be ADVANCED (90% accuracy -> HARD difficulty)
         assertThat(response.getRecommendedDifficulty())
-            .isEqualTo(QuizQuestion.DifficultyLevel.HARD);
+                .isEqualTo(QuizQuestion.DifficultyLevel.HARD);
     }
 
     // ----------------------------------------
@@ -265,12 +256,11 @@ class OverallUserProgressIntegrationTest {
         // Given: another user with id exists (created in setUp)
         // And: that user has some progress
         createUserCategoryProgress(
-            otherUser.getId(),
-            trafficSignsCategory.getId(),
-            10,
-            8,
-            UserCategoryProgress.MasteryLevel.INTERMEDIATE
-        );
+                otherUser.getId(),
+                trafficSignsCategory.getId(),
+                10,
+                8,
+                UserCategoryProgress.MasteryLevel.INTERMEDIATE);
 
         // When: user 888 requests overall progress of user 999
         // Then: an UnauthorizedException should be thrown
@@ -284,7 +274,8 @@ class OverallUserProgressIntegrationTest {
         assertThat(testUserResponse.getTotalAttempted()).isEqualTo(0);
         assertThat(otherUserResponse.getTotalAttempted()).isEqualTo(10);
 
-        // Authorization enforcement is at controller layer with @AuthenticationPrincipal
+        // Authorization enforcement is at controller layer with
+        // @AuthenticationPrincipal
         // This test documents the expected security behavior
     }
 
@@ -316,7 +307,6 @@ class OverallUserProgressIntegrationTest {
     // Helper Methods
     // ========================================
 
-
     /**
      * Create user category progress record
      */
@@ -325,8 +315,7 @@ class OverallUserProgressIntegrationTest {
             Long categoryId,
             int questionsAttempted,
             int correctAnswers,
-            UserCategoryProgress.MasteryLevel masteryLevel
-    ) {
+            UserCategoryProgress.MasteryLevel masteryLevel) {
         UserCategoryProgress progress = new UserCategoryProgress();
         progress.setUserId(userId);
         progress.setCategoryId(categoryId);

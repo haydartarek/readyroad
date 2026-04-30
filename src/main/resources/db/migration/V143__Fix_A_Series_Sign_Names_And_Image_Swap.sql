@@ -23,7 +23,7 @@
 --     disk "A1a...naar rechts.png"  → shows a RIGHT-bend arrow
 --     disk "A1b...naar links.png"   → shows a LEFT-bend arrow
 --   We cross-assign so each sign_code gets the file with matching CONTENT:
---     A1a (= links) → points to "A1b Gevaarlijke bocht naar links.png"
+--     A1a (= links) → points to "A1b Gevaarlijke bocht naar rechts.png"
 --     A1b (= rechts) → points to "A1a Gevaarlijke bocht naar rechts.png"
 --     (same logic for A1c/A1d and A7b/A7c pairs)
 --
@@ -44,7 +44,7 @@
 
 -- ── A1a: Belgian KB = dangerous curve to the LEFT ────────────────────────────
 UPDATE traffic_signs
-SET    name_ar         = 'منحنى خطير إلى اليسار',
+SET    name_ar         = 'منعطف خطير إلى اليسار',
        name_nl         = 'Gevaarlijke bocht naar links',
        name_en         = 'Dangerous curve to the left',
        name_fr         = 'Virage dangereux à gauche',
@@ -52,14 +52,14 @@ SET    name_ar         = 'منحنى خطير إلى اليسار',
        description_nl  = 'Waarschuwing voor een gevaarlijke bocht naar links.',
        description_en  = 'Dangerous bend to the left.',
        description_fr  = 'Virage dangereux à gauche.',
-       image_url       = 'images/signs/danger_signs/A1b Gevaarlijke bocht naar links.png',
-       image_path      = 'images/signs/danger_signs/A1b Gevaarlijke bocht naar links.png',
+       image_url       = 'images/signs/danger_signs/A1b Gevaarlijke bocht naar rechts.png',
+       image_path      = 'images/signs/danger_signs/A1b Gevaarlijke bocht naar rechts.png',
        updated_at      = NOW()
 WHERE  sign_code = 'A1a';
 
 -- ── A1b: Belgian KB = dangerous curve to the RIGHT ───────────────────────────
 UPDATE traffic_signs
-SET    name_ar         = 'منحنى خطير إلى اليمين',
+SET    name_ar         = 'منعطف خطير إلى اليمين',
        name_nl         = 'Gevaarlijke bocht naar rechts',
        name_en         = 'Dangerous curve to the right',
        name_fr         = 'Virage dangereux à droite',
@@ -74,7 +74,7 @@ WHERE  sign_code = 'A1b';
 
 -- ── A1c: Belgian KB = double curve, first bend to the LEFT (links-rechts) ────
 UPDATE traffic_signs
-SET    name_ar         = 'منحنى مزدوج خطير (يسار-يمين)',
+SET    name_ar         = 'منعطف مزدوج خطير (يسار-يمين)',
        name_nl         = 'Gevaarlijke dubbele bocht (links-rechts)',
        name_en         = 'Dangerous double curve (left-right)',
        name_fr         = 'Double virage dangereux (gauche-droite)',
@@ -82,14 +82,14 @@ SET    name_ar         = 'منحنى مزدوج خطير (يسار-يمين)',
        description_nl  = 'Gevaarlijke dubbele bochten, de eerste naar links.',
        description_en  = 'Dangerous bend. First bend to the left.',
        description_fr  = 'Virages dangereux, le premier à gauche.',
-       image_url       = 'images/signs/danger_signs/A1d Gevaarlijke dubbele bocht (links-rechts).png',
-       image_path      = 'images/signs/danger_signs/A1d Gevaarlijke dubbele bocht (links-rechts).png',
+       image_url       = 'images/signs/danger_signs/A1d Gevaarlijke dubbele of meer dan twee bochten, de eerste naar rechts.png',
+       image_path      = 'images/signs/danger_signs/A1d Gevaarlijke dubbele of meer dan twee bochten, de eerste naar rechts.png',
        updated_at      = NOW()
 WHERE  sign_code = 'A1c';
 
 -- ── A1d: Belgian KB = double curve, first bend to the RIGHT (rechts-links) ───
 UPDATE traffic_signs
-SET    name_ar         = 'منحنى مزدوج خطير (يمين-يسار)',
+SET    name_ar         = 'منعطف مزدوج خطير (يمين-يسار)',
        name_nl         = 'Gevaarlijke dubbele bocht (rechts-links)',
        name_en         = 'Dangerous double curve (right-left)',
        name_fr         = 'Double virage dangereux (droite-gauche)',
@@ -112,8 +112,8 @@ SET    name_ar         = 'تضيق الطريق من جهة اليسار',
        description_nl  = 'Rijbaanversmalling langs links.',
        description_en  = 'Road narrowing on the left.',
        description_fr  = 'Rétrécissement de la chaussée à gauche.',
-       image_url       = 'images/signs/danger_signs/A7c Versmalling langs links.png',
-       image_path      = 'images/signs/danger_signs/A7c Versmalling langs links.png',
+       image_url       = 'images/signs/danger_signs/A7c Rijbaanversmalling langs rechts.png',
+       image_path      = 'images/signs/danger_signs/A7c Rijbaanversmalling langs rechts.png',
        updated_at      = NOW()
 WHERE  sign_code = 'A7b';
 
@@ -138,7 +138,7 @@ WHERE  sign_code = 'A7c';
 -- ─────────────────────────────────────────────────────────────────────────────
 
 UPDATE road_signs
-SET    image_path = 'images/signs/danger_signs/A1b Gevaarlijke bocht naar links.png'
+SET    image_path = 'images/signs/danger_signs/A1b Gevaarlijke bocht naar rechts.png'
 WHERE  sign_code  = 'A1a';
 
 UPDATE road_signs
@@ -146,7 +146,7 @@ SET    image_path = 'images/signs/danger_signs/A1a Gevaarlijke bocht naar rechts
 WHERE  sign_code  = 'A1b';
 
 UPDATE road_signs
-SET    image_path = 'images/signs/danger_signs/A1d Gevaarlijke dubbele bocht (links-rechts).png'
+SET    image_path = 'images/signs/danger_signs/A1d Gevaarlijke dubbele of meer dan twee bochten, de eerste naar rechts.png'
 WHERE  sign_code  = 'A1c';
 
 UPDATE road_signs
@@ -154,7 +154,7 @@ SET    image_path = 'images/signs/danger_signs/A1c Gevaarlijke dubbele bocht (re
 WHERE  sign_code  = 'A1d';
 
 UPDATE road_signs
-SET    image_path = 'images/signs/danger_signs/A7c Versmalling langs links.png'
+SET    image_path = 'images/signs/danger_signs/A7c Rijbaanversmalling langs rechts.png'
 WHERE  sign_code  = 'A7b';
 
 UPDATE road_signs

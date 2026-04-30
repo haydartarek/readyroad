@@ -8,6 +8,7 @@ import com.readyroad.readyroadbackend.dto.exam.ExamStartResponse;
 import com.readyroad.readyroadbackend.dto.exam.SubmitExamAnswerRequest;
 import com.readyroad.readyroadbackend.dto.exam.SubmitExamAnswerResponse;
 import com.readyroad.readyroadbackend.mapper.ExamMapper;
+import com.readyroad.readyroadbackend.service.BackendMessageService;
 import com.readyroad.readyroadbackend.service.ExamService;
 import com.readyroad.readyroadbackend.util.AuthenticationUtil;
 import io.swagger.v3.oas.annotations.Operation;
@@ -35,13 +36,13 @@ import java.util.Map;
 @RequiredArgsConstructor
 @Slf4j
 @Tag(name = "Exam Simulation", description = "Belgian driving license exam simulation (50 questions, 30 minutes)")
-@CrossOrigin(origins = "*")
 public class ExamController {
 
     private final ExamService examService;
     private final ExamSimulationQuestionRepository examQuestionRepository;
     private final ExamMapper examMapper;
     private final AuthenticationUtil authenticationUtil;
+    private final BackendMessageService messages;
 
     /**
      * Story A1: Start exam simulation
@@ -49,17 +50,15 @@ public class ExamController {
      * POST /api/exams/simulations/start
      */
     @PostMapping("/start")
-    @Operation(
-        summary = "Start exam simulation",
-        description = "Start a new 50-question exam simulation with 30-minute time limit. " +
-                     "Respects 24h cooldown (Law #1) and adaptive difficulty (Law #2)."
-    )
+    @Operation(summary = "Start exam simulation", description = "Start a new 50-question exam simulation with 30-minute time limit. "
+            +
+            "Respects 24h cooldown (Law #1) and adaptive difficulty (Law #2).")
     @ApiResponses({
-        @ApiResponse(responseCode = "201", description = "Exam started successfully"),
-        @ApiResponse(responseCode = "400", description = "User already has active exam"),
-        @ApiResponse(responseCode = "409", description = "Insufficient questions available")
+            @ApiResponse(responseCode = "201", description = "Exam started successfully"),
+            @ApiResponse(responseCode = "400", description = "User already has active exam"),
+            @ApiResponse(responseCode = "409", description = "Insufficient questions available")
     })
-    public ResponseEntity<ExamStartResponse> startExam() {
+    public ResponseEntity<?> startExam() {
         // ✅ SECURITY FIX: Get userId from JWT instead of request param
         Long userId = authenticationUtil.getCurrentUserId();
 
@@ -71,13 +70,13 @@ public class ExamController {
 
             // Get questions for DTO mapping
             List<ExamSimulationQuestion> questions = examQuestionRepository
-                .findByExamIdOrderByQuestionOrder(exam.getId());
+                    .findByExamIdOrderByQuestionOrder(exam.getId());
 
             // Map entity to DTO (presentation logic)
             ExamStartResponse response = examMapper.toStartResponse(exam, questions);
 
             log.info("✅ Exam started: examId={}, userId={}, questions={}",
-                exam.getId(), userId, questions.size());
+                    exam.getId(), userId, questions.size());
 
             return ResponseEntity.status(HttpStatus.CREATED).body(response);
 
@@ -87,7 +86,7 @@ public class ExamController {
             Map<String, String> error = new HashMap<>();
             error.put("error", e.getMessage());
 
-            return ResponseEntity.status(HttpStatus.CONFLICT).body(null);
+            return ResponseEntity.status(HttpStatus.CONFLICT).body(error);
         }
     }
 
@@ -97,10 +96,7 @@ public class ExamController {
      * GET /api/exams/simulations/can-start?userId={userId}
      */
     @GetMapping("/can-start")
-    @Operation(
-        summary = "Check if user can start exam",
-        description = "Checks if user has an active exam in progress"
-    )
+    @Operation(summary = "Check if user can start exam", description = "Checks if user has an active exam in progress")
     public ResponseEntity<Map<String, Object>> canStartExam() {
         // ✅ SECURITY FIX: Get userId from JWT
         Long userId = authenticationUtil.getCurrentUserId();
@@ -126,15 +122,14 @@ public class ExamController {
      * GET /api/exams/simulations/{examId}
      */
     @GetMapping("/{examId}")
-    @Operation(
-        summary = "Get exam by ID",
-        description = "Retrieve exam simulation details"
-    )
+    @Operation(summary = "Get exam by ID", description = "Retrieve exam simulation details")
     public ResponseEntity<Map<String, Object>> getExam(
-        @Parameter(description = "Exam ID", required = true)
-        @PathVariable Long examId
-    ) {
+            @Parameter(description = "Exam ID", required = true) @PathVariable Long examId) {
+        Long userId = authenticationUtil.getCurrentUserId();
         ExamSimulation exam = examService.getExamById(examId);
+        if (!exam.getUserId().equals(userId)) {
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
+        }
 
         Map<String, Object> response = new HashMap<>();
         response.put("examId", exam.getId());
@@ -160,40 +155,34 @@ public class ExamController {
      * POST /api/exams/simulations/{examId}/questions/{questionId}/answer
      */
     @PostMapping("/{examId}/questions/{questionId}/answer")
-    @Operation(
-        summary = "Submit exam answer",
-        description = "Submit answer for a specific question in an exam. " +
-                     "Does NOT reveal if answer is correct (security). " +
-                     "Allows updating answer if question already answered."
-    )
+    @Operation(summary = "Submit exam answer", description = "Submit answer for a specific question in an exam. " +
+            "Does NOT reveal if answer is correct (security). " +
+            "Allows updating answer if question already answered.")
     @ApiResponses({
-        @ApiResponse(responseCode = "200", description = "Answer submitted successfully"),
-        @ApiResponse(responseCode = "400", description = "Invalid answer data"),
-        @ApiResponse(responseCode = "404", description = "Exam or question not found"),
-        @ApiResponse(responseCode = "409", description = "Exam not active")
+            @ApiResponse(responseCode = "200", description = "Answer submitted successfully"),
+            @ApiResponse(responseCode = "400", description = "Invalid answer data"),
+            @ApiResponse(responseCode = "404", description = "Exam or question not found"),
+            @ApiResponse(responseCode = "409", description = "Exam not active")
     })
     public ResponseEntity<SubmitExamAnswerResponse> submitAnswer(
-        @Parameter(description = "Exam ID", required = true)
-        @PathVariable Long examId,
+            @Parameter(description = "Exam ID", required = true) @PathVariable Long examId,
 
-        @Parameter(description = "Question ID", required = true)
-        @PathVariable Long questionId,
+            @Parameter(description = "Question ID", required = true) @PathVariable Long questionId,
 
-        @Parameter(description = "Answer submission data", required = true)
-        @Valid @RequestBody SubmitExamAnswerRequest request
-    ) {
-        log.info("📝 Submitting answer for exam {} question {}", examId, questionId);
+            @Parameter(description = "Answer submission data", required = true) @Valid @RequestBody SubmitExamAnswerRequest request) {
+        Long userId = authenticationUtil.getCurrentUserId();
+        log.info("📝 Submitting answer for exam {} question {} — user {}", examId, questionId, userId);
 
         SubmitExamAnswerResponse response = examService.submitAnswer(
-            examId,
-            questionId,
-            request
-        );
+                examId,
+                questionId,
+                request,
+                userId);
 
         log.info("✅ Answer submitted: answerId={}, progress={}/{}",
-            response.getAnswerId(),
-            response.getTotalAnswered(),
-            response.getTotalQuestions());
+                response.getAnswerId(),
+                response.getTotalAnswered(),
+                response.getTotalQuestions());
 
         return ResponseEntity.ok(response);
     }
@@ -208,21 +197,17 @@ public class ExamController {
      * Idempotent — safe to call if already completed.
      */
     @PostMapping("/{examId}/submit")
-    @Operation(
-        summary = "Submit and complete exam",
-        description = "Marks the exam as COMPLETED and persists the final score. " +
-                      "Must be called when user clicks Submit. Idempotent if already completed."
-    )
+    @Operation(summary = "Submit and complete exam", description = "Marks the exam as COMPLETED and persists the final score. "
+            +
+            "Must be called when user clicks Submit. Idempotent if already completed.")
     @ApiResponses({
-        @ApiResponse(responseCode = "200", description = "Exam completed successfully"),
-        @ApiResponse(responseCode = "400", description = "Exam not in progress"),
-        @ApiResponse(responseCode = "403", description = "Exam belongs to another user"),
-        @ApiResponse(responseCode = "404", description = "Exam not found")
+            @ApiResponse(responseCode = "200", description = "Exam completed successfully"),
+            @ApiResponse(responseCode = "400", description = "Exam not in progress"),
+            @ApiResponse(responseCode = "403", description = "Exam belongs to another user"),
+            @ApiResponse(responseCode = "404", description = "Exam not found")
     })
     public ResponseEntity<Map<String, Object>> submitExam(
-        @Parameter(description = "Exam ID", required = true)
-        @PathVariable Long examId
-    ) {
+            @Parameter(description = "Exam ID", required = true) @PathVariable Long examId) {
         Long userId = authenticationUtil.getCurrentUserId();
         log.info("📋 Submitting exam: examId={}, userId={}", examId, userId);
 
@@ -231,7 +216,7 @@ public class ExamController {
         Map<String, Object> response = new HashMap<>();
         response.put("examId", examId);
         response.put("status", "COMPLETED");
-        response.put("message", "Exam submitted successfully");
+        response.put("message", messages.get("exam.submit.completed"));
 
         log.info("✅ Exam submitted: examId={}", examId);
         return ResponseEntity.ok(response);
@@ -243,21 +228,17 @@ public class ExamController {
      * GET /api/exams/simulations/{examId}/results
      */
     @GetMapping("/{examId}/results")
-    @Operation(
-        summary = "Get exam results",
-        description = "Get comprehensive exam results including category breakdown and incorrect questions. " +
-                      "Only accessible after exam is completed. User can only view their own exams."
-    )
+    @Operation(summary = "Get exam results", description = "Get comprehensive exam results including category breakdown and incorrect questions. "
+            +
+            "Only accessible after exam is completed. User can only view their own exams.")
     @ApiResponses({
-        @ApiResponse(responseCode = "200", description = "Results retrieved successfully"),
-        @ApiResponse(responseCode = "403", description = "Exam belongs to another user"),
-        @ApiResponse(responseCode = "404", description = "Exam not found"),
-        @ApiResponse(responseCode = "400", description = "Exam not completed yet")
+            @ApiResponse(responseCode = "200", description = "Results retrieved successfully"),
+            @ApiResponse(responseCode = "403", description = "Exam belongs to another user"),
+            @ApiResponse(responseCode = "404", description = "Exam not found"),
+            @ApiResponse(responseCode = "400", description = "Exam not completed yet")
     })
     public ResponseEntity<ExamResultsDTO> getExamResults(
-        @Parameter(description = "Exam ID", required = true)
-        @PathVariable Long examId
-    ) {
+            @Parameter(description = "Exam ID", required = true) @PathVariable Long examId) {
         // ✅ SECURITY FIX: Get userId from JWT
         Long userId = authenticationUtil.getCurrentUserId();
         log.info("📊 Fetching exam results: examId={}, userId={}", examId, userId);
@@ -265,7 +246,7 @@ public class ExamController {
         ExamResultsDTO results = examService.getExamResults(examId, userId);
 
         log.info("✅ Results retrieved: examId={}, score={}/{}, passed={}",
-            examId, results.getCorrectAnswers(), results.getTotalQuestions(), results.getPassed());
+                examId, results.getCorrectAnswers(), results.getTotalQuestions(), results.getPassed());
 
         return ResponseEntity.ok(results);
     }
@@ -276,13 +257,10 @@ public class ExamController {
      * GET /api/exams/simulations/active?userId={userId}
      */
     @GetMapping("/active")
-    @Operation(
-        summary = "Get active exam",
-        description = "Get the currently active exam for the user, if any"
-    )
+    @Operation(summary = "Get active exam", description = "Get the currently active exam for the user, if any")
     @ApiResponses({
-        @ApiResponse(responseCode = "200", description = "Active exam retrieved or null if none"),
-        @ApiResponse(responseCode = "404", description = "No active exam found")
+            @ApiResponse(responseCode = "200", description = "Active exam retrieved or null if none"),
+            @ApiResponse(responseCode = "404", description = "No active exam found")
     })
     public ResponseEntity<Map<String, Object>> getActiveExam() {
         // ✅ SECURITY FIX: Get userId from JWT
@@ -301,7 +279,7 @@ public class ExamController {
 
         // Get questions for the active exam
         List<ExamSimulationQuestion> questions = examQuestionRepository
-            .findByExamIdOrderByQuestionOrder(activeExam.getId());
+                .findByExamIdOrderByQuestionOrder(activeExam.getId());
 
         // Map to response DTO
         ExamStartResponse examResponse = examMapper.toStartResponse(activeExam, questions);
@@ -320,12 +298,9 @@ public class ExamController {
      * GET /api/exams/simulations/history?userId={userId}
      */
     @GetMapping("/history")
-    @Operation(
-        summary = "Get exam history",
-        description = "Get all completed exams for the user with their results"
-    )
+    @Operation(summary = "Get exam history", description = "Get all completed exams for the user with their results")
     @ApiResponses({
-        @ApiResponse(responseCode = "200", description = "Exam history retrieved successfully")
+            @ApiResponse(responseCode = "200", description = "Exam history retrieved successfully")
     })
     public ResponseEntity<Map<String, Object>> getExamHistory() {
         // ✅ SECURITY FIX: Get userId from JWT
@@ -335,19 +310,19 @@ public class ExamController {
         List<ExamSimulation> completedExams = examService.getCompletedExams(userId);
 
         List<Map<String, Object>> examHistory = completedExams.stream()
-            .map(exam -> {
-                Map<String, Object> examData = new HashMap<>();
-                examData.put("examId", exam.getId());
-                examData.put("startedAt", exam.getStartedAt());
-                examData.put("completedAt", exam.getCompletedAt());
-                examData.put("status", exam.getStatus());
-                examData.put("scorePercentage", exam.getScorePercentage());
-                examData.put("totalQuestions", exam.getTotalQuestions());
-                examData.put("correctAnswers", exam.getCorrectAnswers());
-                examData.put("passed", exam.isPassed());
-                return examData;
-            })
-            .toList();
+                .map(exam -> {
+                    Map<String, Object> examData = new HashMap<>();
+                    examData.put("examId", exam.getId());
+                    examData.put("startedAt", exam.getStartedAt());
+                    examData.put("completedAt", exam.getCompletedAt());
+                    examData.put("status", exam.getStatus());
+                    examData.put("scorePercentage", exam.getScorePercentage());
+                    examData.put("totalQuestions", exam.getTotalQuestions());
+                    examData.put("correctAnswers", exam.getCorrectAnswers());
+                    examData.put("passed", exam.isPassed());
+                    return examData;
+                })
+                .toList();
 
         Map<String, Object> response = new HashMap<>();
         response.put("totalExams", examHistory.size());

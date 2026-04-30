@@ -1,4 +1,4 @@
-﻿[
+[
   {
     "question_id": "A13_Q01",
     "type": "WHAT_DOES_IT_MEAN",
@@ -9,7 +9,7 @@
       "NL": {
         "question": "Wat betekent dit verkeersbord?",
         "choices": [
-          { "text": "Dwarse uitholling of ezelsrug", "is_correct": true },
+          { "text": "Uitholling of ezelsrug", "is_correct": true },
           { "text": "Verhoogde inrichting", "is_correct": false },
           { "text": "Gladde rijbaan", "is_correct": false }
         ],
@@ -18,8 +18,11 @@
       "EN": {
         "question": "What does this traffic sign mean?",
         "choices": [
-          { "text": "Speed bump or uneven road", "is_correct": true },
-          { "text": "Speed bump (raised installation)", "is_correct": false },
+          { "text": "Transverse dip or hump", "is_correct": true },
+          {
+            "text": "Raised traffic calming installation",
+            "is_correct": false
+          },
           { "text": "Slippery road", "is_correct": false }
         ],
         "explanation": "This sign warns of a transverse dip or hump in the road that can cause vehicle damage and loss of control."
@@ -27,20 +30,20 @@
       "FR": {
         "question": "Que signifie ce panneau de signalisation ?",
         "choices": [
-          { "text": "Dos d'Ã¢ne ou cassis", "is_correct": true },
+          { "text": "Chaussée déformée / dos-d'âne", "is_correct": true },
           { "text": "Ralentisseur", "is_correct": false },
-          { "text": "ChaussÃ©e glissante", "is_correct": false }
+          { "text": "Chaussée glissante", "is_correct": false }
         ],
-        "explanation": "Ce panneau avertit d'un cassis (creux) ou d'un dos d'Ã¢ne (bosse) dans la chaussÃ©e pouvant causer des dommages au vÃ©hicule et une perte de contrÃ´le."
+        "explanation": "Ce panneau avertit d'un cassis (creux) ou d'un dos d'âne (bosse) dans la chaussée pouvant causer des dommages au véhicule et une perte de contrôle."
       },
       "AR": {
-        "question": "Ù…Ø§Ø°Ø§ ØªØ¹Ù†ÙŠ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ",
+        "question": "ما معنى هذه العلامة المرورية؟",
         "choices": [
-          { "text": "Ù…Ø·Ø¨ Ø£Ùˆ Ø­ÙØ±Ø© Ø¹Ø±Ø¶ÙŠØ©", "is_correct": true },
-          { "text": "Ù…Ø·Ø¨ ØµÙ†Ø§Ø¹ÙŠ", "is_correct": false },
-          { "text": "Ø·Ø±ÙŠÙ‚ Ø²Ù„Ù‚", "is_correct": false }
+          { "text": "انخفاض أو مطب عرضي", "is_correct": true },
+          { "text": "مطب صناعي", "is_correct": false },
+          { "text": "طريق زلق", "is_correct": false }
         ],
-        "explanation": "ØªØ­Ø°Ø± Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ© Ù…Ù† ÙˆØ¬ÙˆØ¯ Ø­ÙØ±Ø© Ø¹Ø±Ø¶ÙŠØ© Ø£Ùˆ Ù…Ø·Ø¨ ÙÙŠ Ø§Ù„Ø·Ø±ÙŠÙ‚ ÙŠÙ…ÙƒÙ† Ø£Ù† ÙŠØªØ³Ø¨Ø¨ ÙÙŠ ØªÙ„Ù Ø§Ù„Ù…Ø±ÙƒØ¨Ø© ÙˆÙÙ‚Ø¯Ø§Ù† Ø§Ù„Ø³ÙŠØ·Ø±Ø©."
+        "explanation": "تحذر هذه العلامة من وجود انخفاض أو مطب عرضي في الطريق قد يؤدي إلى اهتزاز المركبة وفقدان السيطرة."
       }
     }
   },
@@ -54,38 +57,38 @@
       "NL": {
         "question": "Tot welke categorie verkeerstekens behoort dit bord?",
         "choices": [
-          { "text": "Gevaarsborden (A-reeks)", "is_correct": true },
-          { "text": "Voorrangsborden (B-reeks)", "is_correct": false },
-          { "text": "Verbodsborden (C-reeks)", "is_correct": false }
+          { "text": "Gevaarsborden", "is_correct": true },
+          { "text": "Voorrangsborden", "is_correct": false },
+          { "text": "Verbodsborden", "is_correct": false }
         ],
-        "explanation": "Dit bord behoort tot de gevaarsborden (A-reeks). Alle gevaarsborden zijn driehoekig met een rode rand op een witte achtergrond."
+        "explanation": "Dit bord behoort tot de gevaarsborden. Alle gevaarsborden zijn driehoekig met een rode rand op een witte achtergrond."
       },
       "EN": {
         "question": "To which category of traffic signs does this sign belong?",
         "choices": [
-          { "text": "Danger signs (A-series)", "is_correct": true },
-          { "text": "Priority signs (B-series)", "is_correct": false },
-          { "text": "Prohibition signs (C-series)", "is_correct": false }
+          { "text": "Warning signs", "is_correct": true },
+          { "text": "Priority signs", "is_correct": false },
+          { "text": "Prohibition signs", "is_correct": false }
         ],
-        "explanation": "This sign belongs to the danger signs (A-series). All danger signs are triangular with a red border on a white background."
+        "explanation": "This sign belongs to the warning signs. All warning signs are triangular with a red border on a white background."
       },
       "FR": {
-        "question": "Ã€ quelle catÃ©gorie de panneaux de signalisation ce panneau appartient-il ?",
+        "question": "À quelle catégorie de panneaux de signalisation ce panneau appartient-il ?",
         "choices": [
-          { "text": "Panneaux de danger (sÃ©rie A)", "is_correct": true },
-          { "text": "Panneaux de prioritÃ© (sÃ©rie B)", "is_correct": false },
-          { "text": "Panneaux d'interdiction (sÃ©rie C)", "is_correct": false }
+          { "text": "Panneaux de danger", "is_correct": true },
+          { "text": "Panneaux de priorité", "is_correct": false },
+          { "text": "Panneaux d'interdiction", "is_correct": false }
         ],
-        "explanation": "Ce panneau appartient aux panneaux de danger (sÃ©rie A). Tous les panneaux de danger sont triangulaires avec une bordure rouge sur fond blanc."
+        "explanation": "Ce panneau appartient aux panneaux de danger. Tous les panneaux de danger sont triangulaires avec une bordure rouge sur fond blanc."
       },
       "AR": {
-        "question": "Ø¥Ù„Ù‰ Ø£ÙŠ ÙØ¦Ø© Ù…Ù† Ù„Ø§ÙØªØ§Øª Ø§Ù„Ù…Ø±ÙˆØ± ØªÙ†ØªÙ…ÙŠ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ",
+        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
         "choices": [
-          { "text": "Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± (Ø³Ù„Ø³Ù„Ø© A)", "is_correct": true },
-          { "text": "Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© (Ø³Ù„Ø³Ù„Ø© B)", "is_correct": false },
-          { "text": "Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø­Ø¸Ø± (Ø³Ù„Ø³Ù„Ø© C)", "is_correct": false }
+          { "text": "علامات الخطر", "is_correct": true },
+          { "text": "علامات الأولوية", "is_correct": false },
+          { "text": "علامات الحظر", "is_correct": false }
         ],
-        "explanation": "ØªÙ†ØªÙ…ÙŠ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ© Ø¥Ù„Ù‰ Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± (Ø³Ù„Ø³Ù„Ø© A). Ø¬Ù…ÙŠØ¹ Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± Ù…Ø«Ù„Ø«Ø© Ø¨Ø­Ø§ÙØ© Ø­Ù…Ø±Ø§Ø¡ Ø¹Ù„Ù‰ Ø®Ù„ÙÙŠØ© Ø¨ÙŠØ¶Ø§Ø¡."
+        "explanation": "تنتمي هذه العلامة المرورية إلى علامات الخطر. جميع علامات الخطر مثلثة بحافة حمراء على خلفية بيضاء."
       }
     }
   },
@@ -99,38 +102,65 @@
       "NL": {
         "question": "Welk gevaar kondigt dit bord aan?",
         "choices": [
-          { "text": "Een oneffenheid in de rijbaan (uitholling of rug) die het voertuig kan destabiliseren", "is_correct": true },
+          {
+            "text": "Een oneffenheid in de rijbaan (uitholling of rug) die het voertuig kan destabiliseren",
+            "is_correct": true
+          },
           { "text": "Een gladde rijbaan door ijsvorming", "is_correct": false },
-          { "text": "Een verhoging in de rijbaan als gevolg van wegwerkzaamheden", "is_correct": false }
+          {
+            "text": "Een verhoging in de rijbaan als gevolg van wegwerkzaamheden",
+            "is_correct": false
+          }
         ],
         "explanation": "Dit bord kondigt een dwarse oneffenheid aan (een verzakking of rug) die voertuigen kan doen schommelen en de controle in gevaar kan brengen."
       },
       "EN": {
-        "question": "What hazard does this sign announce?",
+        "question": "What hazard does this sign indicate?",
         "choices": [
-          { "text": "An unevenness in the road (dip or hump) that can destabilise the vehicle", "is_correct": true },
-          { "text": "A slippery road surface due to ice formation", "is_correct": false },
-          { "text": "A raised section in the road as a result of roadworks", "is_correct": false }
+          {
+            "text": "A transverse dip or hump in the road that can destabilise the vehicle",
+            "is_correct": true
+          },
+          {
+            "text": "A slippery road surface due to ice formation",
+            "is_correct": false
+          },
+          {
+            "text": "A raised section in the road as a result of roadworks",
+            "is_correct": false
+          }
         ],
-        "explanation": "This sign announces a transverse irregularity (a dip or hump) that can cause vehicles to bounce and jeopardise control."
+        "explanation": "This sign indicates a transverse dip or hump that can cause vehicles to bounce and jeopardise control."
       },
       "FR": {
         "question": "Quel danger ce panneau annonce-t-il ?",
         "choices": [
-          { "text": "Une irrÃ©gularitÃ© transversale (creux ou bosse) pouvant dÃ©stabiliser le vÃ©hicule", "is_correct": true },
-          { "text": "Une chaussÃ©e glissante due au verglas", "is_correct": false },
-          { "text": "Une surÃ©lÃ©vation de la chaussÃ©e due Ã  des travaux", "is_correct": false }
+          {
+            "text": "Une irrégularité transversale (creux ou bosse) pouvant déstabiliser le véhicule",
+            "is_correct": true
+          },
+          {
+            "text": "Une chaussée glissante due au verglas",
+            "is_correct": false
+          },
+          {
+            "text": "Une surélévation de la chaussée due à des travaux",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ce panneau annonce une irrÃ©gularitÃ© transversale (creux ou bosse) pouvant faire rebondir les vÃ©hicules et compromettre le contrÃ´le."
+        "explanation": "Ce panneau annonce une irrégularité transversale (creux ou bosse) pouvant faire rebondir les véhicules et compromettre le contrôle."
       },
       "AR": {
-        "question": "Ù…Ø§ Ø§Ù„Ø®Ø·Ø± Ø§Ù„Ø°ÙŠ ØªØ¹Ù„Ù†Ù‡ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ",
+        "question": "ما هو الخطر الذي تشير إليه هذه العلامة المرورية؟",
         "choices": [
-          { "text": "Ø¹Ø¯Ù… Ø§Ø³ØªÙˆØ§Ø¡ ÙÙŠ Ø§Ù„Ø·Ø±ÙŠÙ‚ (Ø­ÙØ±Ø© Ø£Ùˆ Ù…Ø·Ø¨) ÙŠÙ…ÙƒÙ† Ø£Ù† ÙŠØ²Ø¹Ø²Ø¹ Ø§Ø³ØªÙ‚Ø±Ø§Ø± Ø§Ù„Ù…Ø±ÙƒØ¨Ø©", "is_correct": true },
-          { "text": "Ø·Ø±ÙŠÙ‚ Ø²Ù„Ù‚ Ø¨Ø³Ø¨Ø¨ ØªÙƒÙˆÙ† Ø§Ù„Ø¬Ù„ÙŠØ¯", "is_correct": false },
-          { "text": "Ø§Ø±ØªÙØ§Ø¹ ÙÙŠ Ø§Ù„Ø·Ø±ÙŠÙ‚ Ù†ØªÙŠØ¬Ø© Ø£Ø¹Ù…Ø§Ù„ Ø§Ù„Ø¨Ù†Ø§Ø¡", "is_correct": false }
+          {
+            "text": "انخفاض أو مطب عرضي في الطريق قد يسبب فقدان استقرار المركبة",
+            "is_correct": true
+          },
+          { "text": "طريق زلق بسبب تكون الجليد", "is_correct": false },
+          { "text": "ارتفاع في الطريق نتيجة أعمال البناء", "is_correct": false }
         ],
-        "explanation": "ØªØ¹Ù„Ù† Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ© Ø¹Ù† Ø¹Ø¯Ù… Ø§Ø³ØªÙˆØ§Ø¡ Ø¹Ø±Ø¶ÙŠ (Ø­ÙØ±Ø© Ø£Ùˆ Ù…Ø·Ø¨) ÙŠÙ…ÙƒÙ† Ø£Ù† ÙŠØ¬Ø¹Ù„ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª ØªØ±ØªØ¯ ÙˆÙŠØ¹Ø±Ø¶ Ø§Ù„Ø³ÙŠØ·Ø±Ø© Ù„Ù„Ø®Ø·Ø±."
+        "explanation": "تشير هذه العلامة إلى وجود انخفاض أو مطب عرضي يمكن أن يؤدي إلى اهتزاز المركبة وفقدان السيطرة."
       }
     }
   },
@@ -142,40 +172,73 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat moet u doen wanneer u dit bord ziet?",
+        "question": "Wat doet u best wanneer u dit bord ziet?",
         "choices": [
-          { "text": "Uw snelheid verminderen voor u de oneffenheid bereikt", "is_correct": true },
-          { "text": "Uw snelheid behouden want kleine oneffenheden zijn altijd veilig", "is_correct": false },
-          { "text": "Uw stuurwiel loslaten om de schok te absorberen", "is_correct": false }
+          {
+            "text": "Uw snelheid verminderen voor u de oneffenheid bereikt",
+            "is_correct": true
+          },
+          {
+            "text": "Uw snelheid behouden want kleine oneffenheden zijn altijd veilig",
+            "is_correct": false
+          },
+          {
+            "text": "Uw stuurwiel loslaten om de schok te absorberen",
+            "is_correct": false
+          }
         ],
-        "explanation": "Bij een dwarse uitholling of ezelsrug moet u vaart minderen voor u de oneffenheid bereikt om schade en verlies van controle te vermijden."
+        "explanation": "Bij een dwarse uitholling of ezelsrug doet u er goed aan uw snelheid te verminderen voor u de oneffenheid bereikt om schade en verlies van controle te vermijden."
       },
       "EN": {
-        "question": "What must you do when you see this sign?",
+        "question": "What should you do when you see this sign?",
         "choices": [
-          { "text": "Reduce your speed before reaching the unevenness", "is_correct": true },
-          { "text": "Keep your speed since small irregularities are always safe", "is_correct": false },
-          { "text": "Release the steering wheel to absorb the impact", "is_correct": false }
+          {
+            "text": "Reduce your speed before reaching the transverse dip or hump",
+            "is_correct": true
+          },
+          {
+            "text": "Keep your speed since small irregularities are always safe",
+            "is_correct": false
+          },
+          {
+            "text": "Release the steering wheel to absorb the impact",
+            "is_correct": false
+          }
         ],
-        "explanation": "At a transverse dip or hump you must reduce speed before reaching it to avoid damage and loss of control."
+        "explanation": "At a transverse dip or hump, you should reduce speed before reaching it to avoid damage and loss of control."
       },
       "FR": {
-        "question": "Que devez-vous faire lorsque vous voyez ce panneau ?",
+        "question": "Que devriez-vous faire lorsque vous voyez ce panneau ?",
         "choices": [
-          { "text": "RÃ©duire votre vitesse avant d'atteindre l'irrÃ©gularitÃ©", "is_correct": true },
-          { "text": "Maintenir votre vitesse car les petites irrÃ©gularitÃ©s sont toujours sans danger", "is_correct": false },
-          { "text": "LÃ¢cher le volant pour absorber le choc", "is_correct": false }
+          {
+            "text": "Réduire votre vitesse avant d'atteindre l'irrégularité",
+            "is_correct": true
+          },
+          {
+            "text": "Maintenir votre vitesse car les petites irrégularités sont toujours sans danger",
+            "is_correct": false
+          },
+          {
+            "text": "Lâcher le volant pour absorber le choc",
+            "is_correct": false
+          }
         ],
-        "explanation": "Face Ã  un cassis ou dos d'Ã¢ne, vous devez rÃ©duire la vitesse avant de l'atteindre pour Ã©viter tout dommage et perte de contrÃ´le."
+        "explanation": "Face à un cassis ou dos d'âne, vous devriez réduire la vitesse avant de l'atteindre pour éviter tout dommage et perte de contrôle."
       },
       "AR": {
-        "question": "Ù…Ø§Ø°Ø§ ÙŠØ¬Ø¨ Ø£Ù† ØªÙØ¹Ù„ Ø¹Ù†Ø¯Ù…Ø§ ØªØ±Ù‰ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ",
+        "question": "ماذا ينبغي عليك فعله عند رؤية هذه العلامة المرورية؟",
         "choices": [
-          { "text": "ØªÙ‚Ù„ÙŠÙ„ Ø³Ø±Ø¹ØªÙƒ Ù‚Ø¨Ù„ Ø§Ù„ÙˆØµÙˆÙ„ Ø¥Ù„Ù‰ Ø¹Ø¯Ù… Ø§Ù„Ø§Ø³ØªÙˆØ§Ø¡", "is_correct": true },
-          { "text": "Ø§Ù„Ø­ÙØ§Ø¸ Ø¹Ù„Ù‰ Ø³Ø±Ø¹ØªÙƒ Ù„Ø£Ù† Ø§Ù„Ø§Ø³ØªÙˆØ§Ø¡Ø§Øª Ø§Ù„ØµØºÙŠØ±Ø© Ø¯Ø§Ø¦Ù…Ø§Ù‹ Ø¢Ù…Ù†Ø©", "is_correct": false },
-          { "text": "Ø¥ÙÙ„Ø§Øª Ø¹Ø¬Ù„Ø© Ø§Ù„Ù‚ÙŠØ§Ø¯Ø© Ù„Ø§Ù…ØªØµØ§Øµ Ø§Ù„ØµØ¯Ù…Ø©", "is_correct": false }
+          {
+            "text": "تقليل السرعة قبل الوصول إلى الانخفاض أو المطب العرضي",
+            "is_correct": true
+          },
+          {
+            "text": "الحفاظ على سرعتك لأن الاستواءات الصغيرة دائماً آمنة",
+            "is_correct": false
+          },
+          { "text": "إفلات عجلة القيادة لامتصاص الصدمة", "is_correct": false }
         ],
-        "explanation": "Ø¹Ù†Ø¯ Ù…Ø·Ø¨ Ø£Ùˆ Ø­ÙØ±Ø© Ø¹Ø±Ø¶ÙŠØ© ÙŠØ¬Ø¨ ØªÙ‚Ù„ÙŠÙ„ Ø§Ù„Ø³Ø±Ø¹Ø© Ù‚Ø¨Ù„ Ø§Ù„ÙˆØµÙˆÙ„ Ø¥Ù„ÙŠÙ‡Ø§ Ù„ØªØ¬Ù†Ø¨ Ø§Ù„Ø¶Ø±Ø± ÙˆÙÙ‚Ø¯Ø§Ù† Ø§Ù„Ø³ÙŠØ·Ø±Ø©."
+        "explanation": "عند انخفاض أو مطب عرضي ينبغي تقليل السرعة قبل الوصول إليه لتجنب الضرر وفقدان السيطرة."
       }
     }
   },
@@ -189,38 +252,74 @@
       "NL": {
         "question": "U rijdt op een natte weg aan 70 km/u en ziet dit bord vlak voor een ezelsrug. Wat is de juiste actie?",
         "choices": [
-          { "text": "Geleidelijk remmen voor de ezelsrug en er langzaam overheen rijden", "is_correct": true },
-          { "text": "Gas geven zodat het voertuig de rug soepel passeert", "is_correct": false },
-          { "text": "Sturen om de ezelsrug te ontwijken en op de tegenrijstrook te rijden", "is_correct": false }
+          {
+            "text": "Geleidelijk remmen voor de ezelsrug en er langzaam overheen rijden",
+            "is_correct": true
+          },
+          {
+            "text": "Gas geven zodat het voertuig de rug soepel passeert",
+            "is_correct": false
+          },
+          {
+            "text": "Sturen om de ezelsrug te ontwijken en op de tegenrijstrook te rijden",
+            "is_correct": false
+          }
         ],
         "explanation": "Op een natte weg bij 70 km/u vergroot de oneffenheid het risico op slippen en instabiliteit. Geleidelijk remmen voor de rug is de veiligste aanpak."
       },
       "EN": {
-        "question": "You are driving on a wet road at 70 km/h and see this sign just before a hump. What is the correct action?",
+        "question": "You are driving on a wet road at 70 km/h and see this sign just before a transverse dip or hump. What is the correct action?",
         "choices": [
-          { "text": "Brake gradually before the hump and cross it slowly", "is_correct": true },
-          { "text": "Accelerate so the vehicle crosses the hump smoothly", "is_correct": false },
-          { "text": "Steer to avoid the hump by driving on the oncoming lane", "is_correct": false }
+          {
+            "text": "Reduce speed early and cross the transverse dip or hump slowly",
+            "is_correct": true
+          },
+          {
+            "text": "Accelerate so the vehicle crosses the hump smoothly",
+            "is_correct": false
+          },
+          {
+            "text": "Steer to avoid the hump by driving on the oncoming lane",
+            "is_correct": false
+          }
         ],
-        "explanation": "On a wet road at 70 km/h the unevenness increases the risk of skidding and instability. Braking gradually before the hump is the safest approach."
+        "explanation": "On a wet road at 70 km/h the transverse dip or hump increases the risk of skidding and instability. Reducing speed early and crossing it slowly is the safest approach."
       },
       "FR": {
-        "question": "Vous roulez sur une route mouillÃ©e Ã  70 km/h et voyez ce panneau juste avant un dos d'Ã¢ne. Quelle est la bonne action ?",
+        "question": "Vous roulez sur une route mouillée à 70 km/h et voyez ce panneau juste avant un dos d'âne. Quelle est la bonne action ?",
         "choices": [
-          { "text": "Freiner progressivement avant le dos d'Ã¢ne et le franchir lentement", "is_correct": true },
-          { "text": "AccÃ©lÃ©rer pour que le vÃ©hicule passe le dos d'Ã¢ne en douceur", "is_correct": false },
-          { "text": "Braquer pour Ã©viter le dos d'Ã¢ne en roulant sur la voie opposÃ©e", "is_correct": false }
+          {
+            "text": "Freiner progressivement avant le dos d'âne et le franchir lentement",
+            "is_correct": true
+          },
+          {
+            "text": "Accélérer pour que le véhicule passe le dos d'âne en douceur",
+            "is_correct": false
+          },
+          {
+            "text": "Braquer pour éviter le dos d'âne en roulant sur la voie opposée",
+            "is_correct": false
+          }
         ],
-        "explanation": "Sur route mouillÃ©e Ã  70 km/h, l'irrÃ©gularitÃ© augmente le risque de dÃ©rapage et d'instabilitÃ©. Freiner progressivement avant la bosse est l'approche la plus sÃ»re."
+        "explanation": "Sur route mouillée à 70 km/h, l'irrégularité augmente le risque de dérapage et d'instabilité. Freiner progressivement avant la bosse est l'approche la plus sûre."
       },
       "AR": {
-        "question": "Ø£Ù†Øª ØªÙ‚ÙˆØ¯ Ø¹Ù„Ù‰ Ø·Ø±ÙŠÙ‚ Ù…Ø¨Ù„Ù„ Ø¨Ø³Ø±Ø¹Ø© 70 ÙƒÙ…/Ø³Ø§Ø¹Ø© ÙˆØªØ±Ù‰ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ© Ù‚Ø¨ÙŠÙ„ Ù…Ø·Ø¨. Ù…Ø§ Ø§Ù„Ø¥Ø¬Ø±Ø§Ø¡ Ø§Ù„ØµØ­ÙŠØ­ØŸ",
+        "question": "أنت تقود على طريق مبلل بسرعة 70 كم/ساعة وترى هذه العلامة المرورية قبيل انخفاض أو مطب عرضي. ما الإجراء الصحيح؟",
         "choices": [
-          { "text": "Ø§Ù„ÙØ±Ù…Ù„Ø© ØªØ¯Ø±ÙŠØ¬ÙŠØ§Ù‹ Ù‚Ø¨Ù„ Ø§Ù„Ù…Ø·Ø¨ ÙˆØ§Ù„Ù…Ø±ÙˆØ± ÙÙˆÙ‚Ù‡ Ø¨Ø¨Ø·Ø¡", "is_correct": true },
-          { "text": "Ø§Ù„ØªØ³Ø§Ø±Ø¹ Ø­ØªÙ‰ ØªØ¹Ø¨Ø± Ø§Ù„Ù…Ø±ÙƒØ¨Ø© Ø§Ù„Ù…Ø·Ø¨ Ø¨Ø³Ù„Ø§Ø³Ø©", "is_correct": false },
-          { "text": "Ø§Ù„ØªÙˆØ¬ÙŠÙ‡ Ù„ØªØ¬Ù†Ø¨ Ø§Ù„Ù…Ø·Ø¨ Ø¨Ø§Ù„Ø³ÙŠØ± ÙÙŠ Ù…Ø³Ø§Ø± Ø§Ù„Ø§ØªØ¬Ø§Ù‡ Ø§Ù„Ù…Ø¹Ø§ÙƒØ³", "is_correct": false }
+          {
+            "text": "تقليل السرعة مبكرًا وعبور الانخفاض أو المطب العرضي ببطء",
+            "is_correct": true
+          },
+          {
+            "text": "التسارع حتى تعبر المركبة المطب بسلاسة",
+            "is_correct": false
+          },
+          {
+            "text": "التوجيه لتجنب المطب بالسير في مسار الاتجاه المعاكس",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ø¹Ù„Ù‰ Ø·Ø±ÙŠÙ‚ Ù…Ø¨Ù„Ù„ Ø¨Ø³Ø±Ø¹Ø© 70 ÙƒÙ…/Ø³Ø§Ø¹Ø© ÙŠØ²ÙŠØ¯ Ø¹Ø¯Ù… Ø§Ù„Ø§Ø³ØªÙˆØ§Ø¡ Ù…Ù† Ø®Ø·Ø± Ø§Ù„Ø§Ù†Ø²Ù„Ø§Ù‚ ÙˆØ¹Ø¯Ù… Ø§Ù„Ø§Ø³ØªÙ‚Ø±Ø§Ø±. Ø§Ù„ÙØ±Ù…Ù„Ø© Ø§Ù„ØªØ¯Ø±ÙŠØ¬ÙŠØ© Ù‚Ø¨Ù„ Ø§Ù„Ù…Ø·Ø¨ Ù‡ÙŠ Ø§Ù„Ù†Ù‡Ø¬ Ø§Ù„Ø£ÙƒØ«Ø± Ø£Ù…Ø§Ù†Ø§Ù‹."
+        "explanation": "على طريق مبلل بسرعة 70 كم/ساعة يزيد هذا الخطر من احتمال الانزلاق. ينبغي تقليل السرعة مبكرًا وعبور الانخفاض أو المطب العرضي ببطء لتفادي فقدان السيطرة."
       }
     }
   },
@@ -238,34 +337,37 @@
           { "text": "Precies op de gevaarlijke plek", "is_correct": false },
           { "text": "Op 500 meter voor het gevaar", "is_correct": false }
         ],
-        "explanation": "Buiten de bebouwde kom worden gevaarsborden op Â±150 meter voor het gevaar geplaatst. Binnen de bebouwde kom is dit Â±50 meter."
+        "explanation": "Buiten de bebouwde kom worden gevaarsborden op ±150 meter voor het gevaar geplaatst. Binnen de bebouwde kom is dit ±50 meter."
       },
       "EN": {
-        "question": "At what distance is this danger sign placed outside built-up areas?",
+        "question": "At what distance is this warning sign placed outside built-up areas?",
         "choices": [
-          { "text": "Approximately 150 metres before the hazard", "is_correct": true },
+          {
+            "text": "Approximately 150 metres before the hazard",
+            "is_correct": true
+          },
           { "text": "Exactly at the hazard location", "is_correct": false },
           { "text": "500 metres before the hazard", "is_correct": false }
         ],
-        "explanation": "Outside built-up areas, danger signs are placed Â±150 metres before the hazard. Inside built-up areas it is Â±50 metres."
+        "explanation": "Outside built-up areas, warning signs are placed ±150 metres before the hazard. Inside built-up areas it is ±50 metres."
       },
       "FR": {
-        "question": "Ã€ quelle distance ce panneau de danger est-il placÃ© hors agglomÃ©ration ?",
+        "question": "À quelle distance ce panneau de danger est-il placé hors agglomération ?",
         "choices": [
-          { "text": "Environ 150 mÃ¨tres avant le danger", "is_correct": true },
-          { "text": "Exactement Ã  l'endroit du danger", "is_correct": false },
-          { "text": "500 mÃ¨tres avant le danger", "is_correct": false }
+          { "text": "Environ 150 mètres avant le danger", "is_correct": true },
+          { "text": "Exactement à l'endroit du danger", "is_correct": false },
+          { "text": "500 mètres avant le danger", "is_correct": false }
         ],
-        "explanation": "Hors agglomÃ©ration, les panneaux de danger sont placÃ©s Ã  Â±150 mÃ¨tres avant le danger. En agglomÃ©ration, c'est Â±50 mÃ¨tres."
+        "explanation": "Hors agglomération, les panneaux de danger sont placés à ±150 mètres avant le danger. En agglomération, c'est ±50 mètres."
       },
       "AR": {
-        "question": "Ø¹Ù„Ù‰ Ø£ÙŠ Ù…Ø³Ø§ÙØ© ØªÙˆØ¶Ø¹ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ© Ø§Ù„ØªØ­Ø°ÙŠØ±ÙŠØ© Ø®Ø§Ø±Ø¬ Ø§Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ù…Ø¨Ù†ÙŠØ©ØŸ",
+        "question": "على أي مسافة توضع هذه العلامة المرورية التحذيرية خارج المنطقة السكنية؟",
         "choices": [
-          { "text": "Ø­ÙˆØ§Ù„ÙŠ 150 Ù…ØªØ± Ù‚Ø¨Ù„ Ø§Ù„Ø®Ø·Ø±", "is_correct": true },
-          { "text": "Ù…Ø¨Ø§Ø´Ø±Ø© Ø¹Ù†Ø¯ Ù…ÙˆÙ‚Ø¹ Ø§Ù„Ø®Ø·Ø±", "is_correct": false },
-          { "text": "500 Ù…ØªØ± Ù‚Ø¨Ù„ Ø§Ù„Ø®Ø·Ø±", "is_correct": false }
+          { "text": "حوالي 150 متر قبل الخطر", "is_correct": true },
+          { "text": "مباشرة عند موقع الخطر", "is_correct": false },
+          { "text": "500 متر قبل الخطر", "is_correct": false }
         ],
-        "explanation": "Ø®Ø§Ø±Ø¬ Ø§Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ù…Ø¨Ù†ÙŠØ© ØªÙˆØ¶Ø¹ Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± Ø¹Ù„Ù‰ Ù…Ø³Ø§ÙØ© Â±150 Ù…ØªØ± Ù‚Ø¨Ù„ Ø§Ù„Ø®Ø·Ø±. Ø¯Ø§Ø®Ù„ Ø§Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ù…Ø¨Ù†ÙŠØ© ØªÙƒÙˆÙ† Ø§Ù„Ù…Ø³Ø§ÙØ© Â±50 Ù…ØªØ±."
+        "explanation": "خارج المنطقة السكنية توضع علامات الخطر على مسافة ±150 متر قبل الخطر. داخل المنطقة السكنية تكون المسافة ±50 متر."
       }
     }
   },
@@ -277,36 +379,36 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Mag u aan hoge snelheid rijden over een dwarse uitholling of ezelsrug die dit bord aankondigt?",
+        "question": "Is het aan te raden om met hoge snelheid over een dwarse uitholling of ezelsrug te rijden die dit bord aankondigt?",
         "choices": [
           { "text": "Nee", "is_correct": true },
           { "text": "Ja", "is_correct": false }
         ],
-        "explanation": "Een dwarse uitholling of ezelsrug op hoge snelheid nemen kan de controle over het voertuig doen verliezen en voertuigschade veroorzaken."
+        "explanation": "Nee, dat is niet raadzaam. Een dwarse uitholling of ezelsrug op hoge snelheid nemen kan de controle over het voertuig doen verliezen en voertuigschade veroorzaken."
       },
       "EN": {
-        "question": "Is it allowed to drive at high speed over a transverse dip or hump announced by this sign?",
+        "question": "Is it advisable to drive at high speed over a transverse dip or hump?",
         "choices": [
           { "text": "No", "is_correct": true },
           { "text": "Yes", "is_correct": false }
         ],
-        "explanation": "Taking a transverse dip or hump at high speed can cause loss of vehicle control and damage to the vehicle."
+        "explanation": "No, it is not advisable. Taking a transverse dip or hump at high speed can cause loss of vehicle control and damage to the vehicle."
       },
       "FR": {
-        "question": "ÃŠtes-vous autorisÃ© Ã  rouler Ã  grande vitesse sur le cassis ou dos d'Ã¢ne annoncÃ© par ce panneau ?",
+        "question": "Est-il conseillé de rouler à grande vitesse sur un cassis ou un dos d'âne annoncé par ce panneau ?",
         "choices": [
           { "text": "Non", "is_correct": true },
           { "text": "Oui", "is_correct": false }
         ],
-        "explanation": "Aborder un cassis ou dos d'Ã¢ne Ã  grande vitesse peut entraÃ®ner une perte de contrÃ´le du vÃ©hicule et des dommages."
+        "explanation": "Non, ce n'est pas conseillé. Aborder un cassis ou dos d'âne à grande vitesse peut entraîner une perte de contrôle du véhicule et des dommages."
       },
       "AR": {
-        "question": "Ù‡Ù„ ÙŠÙØ³Ù…Ø­ Ø¨Ø§Ù„Ø³ÙŠØ± Ø¨Ø³Ø±Ø¹Ø© Ø¹Ø§Ù„ÙŠØ© ÙÙˆÙ‚ Ø§Ù„Ù…Ø·Ø¨ Ø£Ùˆ Ø§Ù„Ø­ÙØ±Ø© Ø§Ù„Ø¹Ø±Ø¶ÙŠØ© Ø§Ù„ØªÙŠ ØªØ¹Ù„Ù†Ù‡Ø§ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ",
+        "question": "هل يُنصح بالسير بسرعة عالية فوق انخفاض أو مطب عرضي؟",
         "choices": [
-          { "text": "Ù„Ø§", "is_correct": true },
-          { "text": "Ù†Ø¹Ù…", "is_correct": false }
+          { "text": "لا", "is_correct": true },
+          { "text": "نعم", "is_correct": false }
         ],
-        "explanation": "Ø§Ø¬ØªÙŠØ§Ø² Ø§Ù„Ù…Ø·Ø¨ Ø£Ùˆ Ø§Ù„Ø­ÙØ±Ø© Ø§Ù„Ø¹Ø±Ø¶ÙŠØ© Ø¨Ø³Ø±Ø¹Ø© Ø¹Ø§Ù„ÙŠØ© ÙŠÙ…ÙƒÙ† Ø£Ù† ÙŠØªØ³Ø¨Ø¨ ÙÙŠ ÙÙ‚Ø¯Ø§Ù† Ø§Ù„Ø³ÙŠØ·Ø±Ø© Ø¹Ù„Ù‰ Ø§Ù„Ù…Ø±ÙƒØ¨Ø© ÙˆØ¥Ù„Ø­Ø§Ù‚ Ø§Ù„Ø¶Ø±Ø± Ø¨Ù‡Ø§."
+        "explanation": "لا، لا يُنصح بذلك. اجتياز انخفاض أو مطب عرضي بسرعة عالية قد يؤدي إلى فقدان السيطرة على المركبة وإلحاق الضرر بها."
       }
     }
   },
@@ -318,36 +420,36 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Bent u verplicht uw snelheid te verminderen om uw voertuig en passagiers te beschermen bij het passeren van een dwarse uitholling of ezelsrug?",
+        "question": "Wordt van u verwacht uw snelheid aan te passen bij het passeren van een dwarse uitholling of ezelsrug?",
         "choices": [
           { "text": "Ja", "is_correct": true },
           { "text": "Nee", "is_correct": false }
         ],
-        "explanation": "U moet uw snelheid aanpassen om schade aan het voertuig te voorkomen en de stabiliteit te bewaren bij een dwarse oneffenheid."
+        "explanation": "Ja. Van u wordt verwacht dat u uw snelheid aanpast om schade aan het voertuig te voorkomen en de stabiliteit te bewaren bij een dwarse oneffenheid."
       },
       "EN": {
-        "question": "Are you required to reduce your speed to protect your vehicle and passengers when passing a transverse dip or hump?",
+        "question": "Are you expected to adapt your speed when crossing a transverse dip or hump?",
         "choices": [
           { "text": "Yes", "is_correct": true },
           { "text": "No", "is_correct": false }
         ],
-        "explanation": "You must adapt your speed to prevent vehicle damage and maintain stability when crossing a transverse irregularity."
+        "explanation": "Yes. You are expected to adapt your speed to prevent vehicle damage and maintain stability when crossing a transverse dip or hump."
       },
       "FR": {
-        "question": "ÃŠtes-vous obligÃ© de rÃ©duire votre vitesse pour protÃ©ger votre vÃ©hicule et vos passagers lors du passage d'un cassis ou d'un dos d'Ã¢ne ?",
+        "question": "Êtes-vous censé adapter votre vitesse lors du passage d'un cassis ou d'un dos d'âne ?",
         "choices": [
           { "text": "Oui", "is_correct": true },
           { "text": "Non", "is_correct": false }
         ],
-        "explanation": "Vous devez adapter votre vitesse pour Ã©viter des dommages au vÃ©hicule et maintenir la stabilitÃ© lors du passage d'une irrÃ©gularitÃ© transversale."
+        "explanation": "Oui. Vous êtes censé adapter votre vitesse pour éviter des dommages au véhicule et maintenir la stabilité lors du passage d'une irrégularité transversale."
       },
       "AR": {
-        "question": "Ù‡Ù„ Ø£Ù†Øª Ù…Ù„Ø²Ù… Ø¨ØªÙ‚Ù„ÙŠÙ„ Ø³Ø±Ø¹ØªÙƒ Ù„Ø­Ù…Ø§ÙŠØ© Ù…Ø±ÙƒØ¨ØªÙƒ ÙˆØ±ÙƒØ§Ø¨Ù‡Ø§ Ø¹Ù†Ø¯ Ø§Ù„Ù…Ø±ÙˆØ± ÙÙˆÙ‚ Ù…Ø·Ø¨ Ø£Ùˆ Ø­ÙØ±Ø© Ø¹Ø±Ø¶ÙŠØ©ØŸ",
+        "question": "هل يُتوقع منك تعديل سرعتك عند عبور انخفاض أو مطب عرضي؟",
         "choices": [
-          { "text": "Ù†Ø¹Ù…", "is_correct": true },
-          { "text": "Ù„Ø§", "is_correct": false }
+          { "text": "نعم", "is_correct": true },
+          { "text": "لا", "is_correct": false }
         ],
-        "explanation": "ÙŠØ¬Ø¨ Ø¶Ø¨Ø· Ø³Ø±Ø¹ØªÙƒ Ù„ØªØ¬Ù†Ø¨ ØªÙ„Ù Ø§Ù„Ù…Ø±ÙƒØ¨Ø© ÙˆØ§Ù„Ø­ÙØ§Ø¸ Ø¹Ù„Ù‰ Ø§Ù„Ø§Ø³ØªÙ‚Ø±Ø§Ø± Ø¹Ù†Ø¯ Ø¹Ø¨ÙˆØ± Ø§Ù„Ø§Ø³ØªÙˆØ§Ø¡ Ø§Ù„Ø¹Ø±Ø¶ÙŠ."
+        "explanation": "نعم. يُتوقع منك تعديل سرعتك لتجنب تلف المركبة والحفاظ على الاستقرار عند عبور انخفاض أو مطب عرضي."
       }
     }
   }

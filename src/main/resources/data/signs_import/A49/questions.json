@@ -5,243 +5,204 @@
     "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE: Replace wrong answers with actual sign names from the same category.",
     "i18n": {
       "NL": {
         "question": "Wat betekent dit verkeersbord?",
         "choices": [
           {
-            "text": "Kruising met sporen",
+            "text": "Kruising met tramsporen",
             "is_correct": true
           },
           {
-            "text": "Verbod om in te halen",
+            "text": "Overweg voor één spoor.",
             "is_correct": false
           },
           {
-            "text": "Maximumsnelheid 50 km/u",
+            "text": "Overweg voor twee of meer sporen.",
             "is_correct": false
           }
         ],
-        "explanation": "Kruising van een openbare weg door een of meer in de rijbaan aangelegde sporen."
+        "explanation": "A49 waarschuwt dat tram- of spoorrails rechtstreeks in de rijbaan zijn aangelegd."
       },
       "EN": {
         "question": "What does this traffic sign mean?",
         "choices": [
           {
-            "text": "Crossing with tram or train tracks",
+            "text": "Tramway crossing",
             "is_correct": true
           },
           {
-            "text": "Prohibition to overtake",
+            "text": "Level crossing with one track.",
             "is_correct": false
           },
           {
-            "text": "Maximum speed 50 km/h",
+            "text": "Level crossing with two or more tracks.",
             "is_correct": false
           }
         ],
-        "explanation": "Crossing with tram or train tracks in the road."
+        "explanation": "This sign warns that tram or rail tracks are laid directly in the roadway."
       },
       "FR": {
         "question": "Que signifie ce panneau de signalisation ?",
         "choices": [
           {
-            "text": "Croisement avec voies de tram ou train",
+            "text": "Croisement avec voie de tramway",
             "is_correct": true
           },
           {
-            "text": "Interdiction de dÃ©passer",
+            "text": "Passage à niveau à une seule voie.",
             "is_correct": false
           },
           {
-            "text": "Vitesse maximale 50 km/h",
+            "text": "Passage à niveau à deux voies ou plus.",
             "is_correct": false
           }
         ],
-        "explanation": "Croisement avec des voies de tram ou de train dans la chaussÃ©e."
+        "explanation": "A49 avertit que des rails de tram ou de chemin de fer sont installés directement dans la chaussée."
       },
       "AR": {
-        "question": "Ù…Ø§Ø°Ø§ ØªØ¹Ù†ÙŠ Ù„Ø§ÙØªØ© Ø§Ù„Ù…Ø±ÙˆØ± Ù‡Ø°Ù‡ØŸ",
+        "question": "ما معنى هذه العلامة المرورية؟",
         "choices": [
           {
-            "text": "ØªÙ‚Ø§Ø·Ø¹ Ø·Ø±Ù‚ Ù…Ø¹ Ø³ÙƒØ© ØªØ±Ø§Ù… Ø£Ùˆ Ù‚Ø·Ø§Ø±",
+            "text": "تقاطع مع سكة ترام",
             "is_correct": true
           },
           {
-            "text": "Ø­Ø¸Ø± Ø§Ù„ØªØ¬Ø§ÙˆØ²",
+            "text": "معبر سكة حديد ذو مسار واحد.",
             "is_correct": false
           },
           {
-            "text": "Ø§Ù„Ø³Ø±Ø¹Ø© Ø§Ù„Ù‚ØµÙˆÙ‰ 50 ÙƒÙ…/Ø³",
+            "text": "معبر سكة حديد بمسارين أو أكثر.",
             "is_correct": false
           }
         ],
-        "explanation": "Ø§Ù„Ø¹Ø¨ÙˆØ± Ù…Ø¹ Ø®Ø·ÙˆØ· Ø§Ù„ØªØ±Ø§Ù… Ø£Ùˆ Ø§Ù„Ù‚Ø·Ø§Ø± ÙÙŠ Ø§Ù„Ø·Ø±ÙŠÙ‚."
+        "explanation": "تحذّر A49 من وجود قضبان ترام أو سكة حديد مزروعة مباشرة داخل الطريق نفسه."
       }
     }
-  },
+  },
   {
     "question_id": "A49_Q02",
     "type": "WHICH_SIGN",
     "difficulty": "EASY",
     "is_critical": false,
-    "show_sign": true,
-    "_note": "TEMPLATE: Ready to use â€” category identification question.",
+    "show_sign": false,
     "i18n": {
       "NL": {
-        "question": "Tot welke categorie verkeerstekens behoort dit bord?",
+        "question": "Welk bord waarschuwt voor een kruising met tramsporen?",
         "choices": [
-          {
-            "text": "Gevaarsborden (A-reeks)",
-            "is_correct": true
-          },
-          {
-            "text": "Voorrangsborden (B-reeks)",
-            "is_correct": false
-          },
-          {
-            "text": "Verbodsborden (C-reeks)",
-            "is_correct": false
-          }
+          { "text": "Het bord dat waarschuwt voor tram- of treinsporen die de rijbaan kruisen", "is_correct": true },
+          { "text": "Het bord dat waarschuwt voor een overweg met slagbomen", "is_correct": false },
+          { "text": "Het bord dat waarschuwt voor een overweg met meerdere sporen", "is_correct": false }
         ],
-        "explanation": "Dit bord behoort tot de categorie 'Gevaarsborden (A-reeks)'. Elk type bord heeft een specifieke vorm en kleurschema."
+        "explanation": "Het gevaarsbord A49 waarschuwt specifiek voor tramsporen in de rijbaan. Het bord voor overweg met slagbomen (A41) geldt voor een afzonderlijk kruispunt met barrières. Het bord meerdere sporen (A47) geldt voor een overweg met twee of meer sporen."
       },
       "EN": {
-        "question": "To which category of traffic signs does this sign belong?",
+        "question": "Which sign warns of a junction with tram tracks?",
         "choices": [
-          {
-            "text": "Danger signs (A-series)",
-            "is_correct": true
-          },
-          {
-            "text": "Priority signs (B-series)",
-            "is_correct": false
-          },
-          {
-            "text": "Prohibition signs (C-series)",
-            "is_correct": false
-          }
+          { "text": "The sign that warns of tram or train tracks crossing the carriageway", "is_correct": true },
+          { "text": "The sign that warns of a level crossing with barriers", "is_correct": false },
+          { "text": "The sign that warns of a level crossing with multiple tracks", "is_correct": false }
         ],
-        "explanation": "This sign belongs to the 'Danger signs (A-series)' category. Each type of sign has a specific shape and color scheme."
+        "explanation": "Danger sign A49 specifically warns of tram tracks in the carriageway. The level crossing with barriers sign (A41) applies to a separate crossing with barriers. The multiple tracks sign (A47) applies to a crossing with two or more tracks."
       },
       "FR": {
-        "question": "Ã€ quelle catÃ©gorie de panneaux de signalisation ce panneau appartient-il ?",
+        "question": "Quel panneau signale un croisement avec des rails de tramway ?",
         "choices": [
-          {
-            "text": "Panneaux de danger (sÃ©rie A)",
-            "is_correct": true
-          },
-          {
-            "text": "Panneaux de prioritÃ© (sÃ©rie B)",
-            "is_correct": false
-          },
-          {
-            "text": "Panneaux d'interdiction (sÃ©rie C)",
-            "is_correct": false
-          }
+          { "text": "Le panneau qui avertit de rails de tram ou de train croisant la chaussée", "is_correct": true },
+          { "text": "Le panneau qui avertit d’un passage à niveau avec barrières", "is_correct": false },
+          { "text": "Le panneau qui avertit d’un passage à niveau à plusieurs voies", "is_correct": false }
         ],
-        "explanation": "Ce panneau appartient Ã  la catÃ©gorie 'Panneaux de danger (sÃ©rie A)'. Chaque type de panneau a une forme et un schÃ©ma de couleurs spÃ©cifiques."
+        "explanation": "Le panneau de danger A49 signale spécifiquement des rails de tramway dans la chaussée. Le panneau passage à niveau avec barrières (A41) concerne un passage séparé avec barrières. Le panneau plusieurs voies (A47) concerne un passage avec deux voies ou plus."
       },
       "AR": {
-        "question": "Ø¥Ù„Ù‰ Ø£ÙŠ ÙØ¦Ø© Ù…Ù† Ù„Ø§ÙØªØ§Øª Ø§Ù„Ù…Ø±ÙˆØ± ØªÙ†ØªÙ…ÙŠ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ",
+        "question": "أي علامة مرورية تُحذّر من تقاطع مع قضبان الترام؟",
         "choices": [
-          {
-            "text": "Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± (Ø³Ù„Ø³Ù„Ø© A)",
-            "is_correct": true
-          },
-          {
-            "text": "Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø£ÙˆÙ„ÙˆÙŠØ© (Ø³Ù„Ø³Ù„Ø© B)",
-            "is_correct": false
-          },
-          {
-            "text": "Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø­Ø¸Ø± (Ø³Ù„Ø³Ù„Ø© C)",
-            "is_correct": false
-          }
+          { "text": "العلامة التي تُحذّر من قضبان الترام أو القطار التي تقطع الطريق", "is_correct": true },
+          { "text": "العلامة التي تُحذّر من تقاطع سككة حديدية بحواجز", "is_correct": false },
+          { "text": "العلامة التي تُحذّر من تقاطع سككة حديدية بخطوط متعددة", "is_correct": false }
         ],
-        "explanation": "Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ© ØªÙ†ØªÙ…ÙŠ Ø¥Ù„Ù‰ ÙØ¦Ø© 'Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± (Ø³Ù„Ø³Ù„Ø© A)'. ÙƒÙ„ Ù†ÙˆØ¹ Ù…Ù† Ø§Ù„Ù„Ø§ÙØªØ§Øª Ù„Ù‡ Ø´ÙƒÙ„ ÙˆÙ†Ø¸Ø§Ù… Ø£Ù„ÙˆØ§Ù† Ù…Ø­Ø¯Ø¯."
+        "explanation": "علامة الخطر A49 تُحذّر تحديدًا من قضبان الترام في الطريق. علامة تقاطع بحواجز (A41) تختص بتقاطع منفصل مع حواجز. علامة خطوط متعددة (A47) تختص بخطين أو أكثر."
       }
     }
   },
   {
     "question_id": "A49_Q03",
-    "type": "WHAT_MUST_YOU_DO",
+    "type": "HAZARD_IDENTIFICATION",
     "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE (MEDIUM): Replace with sign-specific question for production.",
     "i18n": {
       "NL": {
-        "question": "Wat moet u doen wanneer u dit gevaarsbord ziet?",
+        "question": "Welk gevaar hoort bij dit bord?",
         "choices": [
           {
-            "text": "Snelheid verminderen en extra opletten",
+            "text": "Sporen in de rijbaan waar een tram of trein kan kruisen.",
             "is_correct": true
           },
           {
-            "text": "Stoppen en uitstappen",
+            "text": "Een volledig afgesloten overweg met slagbomen.",
             "is_correct": false
           },
           {
-            "text": "De rijstrook wisselen",
+            "text": "Een busstrook zonder kruisend spoorverkeer.",
             "is_correct": false
           }
         ],
-        "explanation": "Gevaarsborden waarschuwen voor gevaarlijke situaties. U moet uw snelheid aanpassen en extra voorzichtig zijn."
+        "explanation": "Het gevaar is dat een tram of trein de rijbaan kan kruisen via sporen die in de rijbaan liggen. Blijf opletten en onderschat het gevaar niet omdat de rails in de weg zelf liggen."
       },
       "EN": {
-        "question": "What should you do when you see this danger sign?",
+        "question": "What hazard is associated with this sign?",
         "choices": [
           {
-            "text": "Reduce speed and pay extra attention",
+            "text": "Tracks in the roadway where a tram or train may cross.",
             "is_correct": true
           },
           {
-            "text": "Stop and get out of the vehicle",
+            "text": "A fully closed level crossing with barriers.",
             "is_correct": false
           },
           {
-            "text": "Change lane immediately",
+            "text": "A bus lane with no crossing rail traffic.",
             "is_correct": false
           }
         ],
-        "explanation": "Danger signs warn of hazardous situations on the road. You must adjust your speed and be extra careful."
+        "explanation": "The hazard is that a tram or train may cross the roadway on tracks laid in the roadway. Stay alert and do not underestimate the risk just because the rails are embedded in the road surface."
       },
       "FR": {
-        "question": "Que devez-vous faire lorsque vous voyez ce panneau de danger ?",
+        "question": "Quel danger est associé à ce panneau ?",
         "choices": [
           {
-            "text": "RÃ©duire la vitesse et faire particuliÃ¨rement attention",
+            "text": "Des rails dans la chaussée où un tram ou un train peut passer.",
             "is_correct": true
           },
           {
-            "text": "ArrÃªter et descendre du vÃ©hicule",
+            "text": "Un passage à niveau entièrement fermé par des barrières.",
             "is_correct": false
           },
           {
-            "text": "Changer de voie immÃ©diatement",
+            "text": "Une voie de bus sans circulation ferroviaire croisée.",
             "is_correct": false
           }
         ],
-        "explanation": "Les panneaux de danger avertissent des situations dangereuses. Vous devez adapter votre vitesse et Ãªtre particuliÃ¨rement prudent."
+        "explanation": "Le danger est qu'un tram ou un train peut traverser la chaussée sur des rails installés dans celle-ci. Restez vigilant et ne sous-estimez pas le risque sous prétexte que les rails sont intégrés à la route."
       },
       "AR": {
-        "question": "Ù…Ø§Ø°Ø§ ÙŠØ¬Ø¨ Ø£Ù† ØªÙØ¹Ù„ Ø¹Ù†Ø¯Ù…Ø§ ØªØ±Ù‰ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ© Ø§Ù„ØªØ­Ø°ÙŠØ±ÙŠØ©ØŸ",
+        "question": "ما الخطر المرتبط بهذه العلامة المرورية؟",
         "choices": [
           {
-            "text": "ØªÙ‚Ù„ÙŠÙ„ Ø§Ù„Ø³Ø±Ø¹Ø© ÙˆØ§Ù„Ø§Ù†ØªØ¨Ø§Ù‡ Ø¨Ø´ÙƒÙ„ Ø¥Ø¶Ø§ÙÙŠ",
+            "text": "وجود سكة حديد داخل الطريق قد يعبرها ترام أو قطار.",
             "is_correct": true
           },
           {
-            "text": "Ø§Ù„ØªÙˆÙ‚Ù ÙˆØ§Ù„Ù†Ø²ÙˆÙ„ Ù…Ù† Ø§Ù„Ù…Ø±ÙƒØ¨Ø©",
+            "text": "معبر سكة حديد مغلق بالكامل بحواجز.",
             "is_correct": false
           },
           {
-            "text": "ØªØºÙŠÙŠØ± Ø§Ù„Ù…Ø³Ø§Ø± ÙÙˆØ±Ø§Ù‹",
+            "text": "مسار حافلات من دون أي عبور لترام أو قطار.",
             "is_correct": false
           }
         ],
-        "explanation": "ØªØ­Ø°Ø± Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± Ù…Ù† Ø§Ù„Ù…ÙˆØ§Ù‚Ù Ø§Ù„Ø®Ø·Ø±Ø© Ø¹Ù„Ù‰ Ø§Ù„Ø·Ø±ÙŠÙ‚. ÙŠØ¬Ø¨ Ø¹Ù„ÙŠÙƒ ØªØ¹Ø¯ÙŠÙ„ Ø³Ø±Ø¹ØªÙƒ ÙˆØ£Ù† ØªÙƒÙˆÙ† Ø£ÙƒØ«Ø± Ø­Ø°Ø±Ø§Ù‹."
+        "explanation": "الخطر هو أن تراماً أو قطاراً قد يعبر الطريق عبر قضبان مزروعة في داخله. ابقَ منتبهاً ولا تستهِن بالخطر لمجرد أن القضبان مدمجة في سطح الطريق."
       }
     }
   },
@@ -251,79 +212,78 @@
     "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE (MEDIUM): Replace with sign-specific question for production.",
     "i18n": {
       "NL": {
-        "question": "Op welke afstand van het gevaar wordt een gevaarsbord buiten de bebouwde kom geplaatst?",
+        "question": "Hoe reageert u best bij dit bord?",
         "choices": [
           {
-            "text": "Ongeveer 150 meter voor het gevaar",
+            "text": "Snelheid verminderen en opletten voor een tram of trein die kan kruisen.",
             "is_correct": true
           },
           {
-            "text": "Precies op de plek van het gevaar",
+            "text": "In dezelfde snelheid doorrijden omdat de sporen in de rijbaan liggen.",
             "is_correct": false
           },
           {
-            "text": "Op 500 meter voor het gevaar",
+            "text": "Op de sporen stoppen om eerst te controleren.",
             "is_correct": false
           }
         ],
-        "explanation": "Buiten de bebouwde kom worden gevaarsborden op Â±150 m geplaatst. In de bebouwde kom is dit Â±50 m."
+        "explanation": "Bij A49 doet u er goed aan uw snelheid te verminderen en vooruit te denken. Wees klaar om te reageren als een tram of trein de rijbaan kruist."
       },
       "EN": {
-        "question": "At what distance from the hazard is a danger sign placed outside built-up areas?",
+        "question": "How should you react when approaching this sign?",
         "choices": [
           {
-            "text": "Approximately 150 meters before the hazard",
+            "text": "Reduce speed and be alert for a tram or train crossing.",
             "is_correct": true
           },
           {
-            "text": "Exactly at the hazard location",
+            "text": "Continue at the same speed because the tracks are laid in the roadway.",
             "is_correct": false
           },
           {
-            "text": "500 meters before the hazard",
+            "text": "Stop on the tracks to check first.",
             "is_correct": false
           }
         ],
-        "explanation": "Outside built-up areas, danger signs are placed Â±150 m before the hazard. Inside built-up areas it is Â±50 m."
+        "explanation": "With A49, you should reduce speed and think ahead. Be ready to react if a tram or train crosses the roadway."
       },
       "FR": {
-        "question": "Ã€ quelle distance du danger un panneau de danger est-il placÃ© hors agglomÃ©ration ?",
+        "question": "Comment devriez-vous réagir en approchant ce panneau ?",
         "choices": [
           {
-            "text": "Environ 150 mÃ¨tres avant le danger",
+            "text": "Réduire la vitesse et être attentif à un tram ou un train qui peut traverser.",
             "is_correct": true
           },
           {
-            "text": "Exactement Ã  l'endroit du danger",
+            "text": "Continuer à la même vitesse parce que les rails sont installés dans la chaussée.",
             "is_correct": false
           },
           {
-            "text": "500 mÃ¨tres avant le danger",
+            "text": "S'arrêter sur les rails pour vérifier d'abord.",
             "is_correct": false
           }
         ],
-        "explanation": "Hors agglomÃ©ration, les panneaux de danger sont placÃ©s Ã  Â±150 m. En agglomÃ©ration, c'est Â±50 m."
+        "explanation": "Avec A49, vous devriez réduire votre vitesse et anticiper. Soyez prêt à réagir si un tram ou un train traverse la chaussée."
       },
       "AR": {
-        "question": "Ø¹Ù„Ù‰ Ø£ÙŠ Ù…Ø³Ø§ÙØ© Ù…Ù† Ø§Ù„Ø®Ø·Ø± ØªÙˆØ¶Ø¹ Ù„Ø§ÙØªØ© Ø§Ù„Ø®Ø·Ø± Ø®Ø§Ø±Ø¬ Ø§Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ù…Ø¨Ù†ÙŠØ©ØŸ",
+        "question": "كيف ينبغي أن تتصرف عند الاقتراب من هذه العلامة؟",
         "choices": [
           {
-            "text": "Ø­ÙˆØ§Ù„ÙŠ 150 Ù…ØªØ± Ù‚Ø¨Ù„ Ø§Ù„Ø®Ø·Ø±",
+            "text": "تخفيف السرعة والانتباه لعبور ترام أو قطار.",
             "is_correct": true
           },
           {
-            "text": "Ù…Ø¨Ø§Ø´Ø±Ø© Ø¹Ù†Ø¯ Ù…ÙˆÙ‚Ø¹ Ø§Ù„Ø®Ø·Ø±",
+            "text": "متابعة السير بالسرعة نفسها لأن القضبان مزروعة داخل الطريق.",
             "is_correct": false
           },
           {
-            "text": "500 Ù…ØªØ± Ù‚Ø¨Ù„ Ø§Ù„Ø®Ø·Ø±",
+            "text": "التوقف فوق القضبان للتحقق أولاً.",
             "is_correct": false
           }
         ],
-        "explanation": "Ø®Ø§Ø±Ø¬ Ø§Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ù…Ø¨Ù†ÙŠØ© ØªÙˆØ¶Ø¹ Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± Ø¹Ù„Ù‰ Ù…Ø³Ø§ÙØ© Â±150 Ù…ØªØ±. Ø¯Ø§Ø®Ù„ Ø§Ù„Ù…Ù†Ø§Ø·Ù‚ Ø§Ù„Ù…Ø¨Ù†ÙŠØ© ØªÙƒÙˆÙ† Ø§Ù„Ù…Ø³Ø§ÙØ© Â±50 Ù…ØªØ±."
+        "explanation": "مع A49 ينبغي أن تخفف السرعة وأن تفكر مسبقاً. كن مستعداً للتصرف إذا عبر ترام أو قطار الطريق."
       }
     }
   },
@@ -333,144 +293,143 @@
     "difficulty": "HARD",
     "is_critical": true,
     "show_sign": true,
-    "_note": "TEMPLATE (HARD): Replace with sign-specific question for production.",
     "i18n": {
       "NL": {
-        "question": "Bent u verplicht uw rijgedrag aan te passen wanneer u dit gevaarsbord ziet?",
+        "question": "Doet u er goed aan uw snelheid aan te passen bij dit bord?",
         "choices": [
           {
-            "text": "Ja, gevaarsborden verplichten u uw snelheid aan te passen en extra voorzichtig te zijn",
+            "text": "Ja, door sporen in de rijbaan.",
             "is_correct": true
           },
           {
-            "text": "Nee, gevaarsborden zijn louter informatief en vereisen geen aanpassing van uw rijgedrag",
+            "text": "Nee, zolang u geen tram of trein ziet.",
             "is_correct": false
           }
         ],
-        "explanation": "Gevaarsborden waarschuwen voor gevaarlijke situaties en verplichten u uw rijgedrag aan te passen. U moet uw snelheid verminderen en extra voorzichtig zijn."
+        "explanation": "Ja. Ook als u nog geen tram of trein ziet, doet u er goed aan uw snelheid aan te passen omdat er rails in de rijbaan liggen en kruisend verkeer onverwacht kan verschijnen."
       },
       "EN": {
-        "question": "Are you required to adapt your driving behaviour when you see this danger sign?",
+        "question": "Should you adjust your speed when you see this sign?",
         "choices": [
           {
-            "text": "Yes, danger signs require you to adjust your speed and be extra cautious",
+            "text": "Yes, due to tracks in the roadway.",
             "is_correct": true
           },
           {
-            "text": "No, danger signs are purely informational and do not require any change in driving behaviour",
+            "text": "No, as long as you do not see a tram or train.",
             "is_correct": false
           }
         ],
-        "explanation": "Danger signs warn of hazardous situations and require you to adapt your driving behaviour. You must reduce your speed and be extra careful."
+        "explanation": "Yes. Even if you do not yet see a tram or train, you should adapt your speed because tracks are laid in the roadway and crossing rail traffic can appear unexpectedly."
       },
       "FR": {
-        "question": "ÃŠtes-vous obligÃ© d'adapter votre comportement de conduite lorsque vous voyez ce panneau de danger ?",
+        "question": "Devrait-on adapter sa vitesse avec ce panneau ?",
         "choices": [
           {
-            "text": "Oui, les panneaux de danger vous obligent Ã  adapter votre vitesse et Ã  Ãªtre particuliÃ¨rement prudent",
+            "text": "Oui, à cause des rails dans la chaussée.",
             "is_correct": true
           },
           {
-            "text": "Non, les panneaux de danger sont purement informatifs et ne nÃ©cessitent pas d'adaptation de la conduite",
+            "text": "Non, tant que vous ne voyez pas de tram ou de train.",
             "is_correct": false
           }
         ],
-        "explanation": "Les panneaux de danger avertissent des situations dangereuses et vous obligent Ã  adapter votre conduite. Vous devez rÃ©duire votre vitesse et Ãªtre particuliÃ¨rement prudent."
+        "explanation": "Oui. Même si vous ne voyez pas encore de tram ou de train, vous devriez adapter votre vitesse car des rails sont installés dans la chaussée et un croisement ferroviaire peut survenir soudainement."
       },
       "AR": {
-        "question": "Ù‡Ù„ Ø£Ù†Øª Ù…Ù„Ø²Ù… Ø¨ØªØ¹Ø¯ÙŠÙ„ Ø³Ù„ÙˆÙƒ Ù‚ÙŠØ§Ø¯ØªÙƒ Ø¹Ù†Ø¯Ù…Ø§ ØªØ±Ù‰ Ù„Ø§ÙØªØ© Ø§Ù„Ø®Ø·Ø± Ù‡Ø°Ù‡ØŸ",
+        "question": "هل ينبغي عليك تعديل سرعتك عند رؤية هذه العلامة؟",
         "choices": [
           {
-            "text": "Ù†Ø¹Ù…ØŒ Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± ØªÙ„Ø²Ù…Ùƒ Ø¨ØªØ¹Ø¯ÙŠÙ„ Ø³Ø±Ø¹ØªÙƒ ÙˆØ£Ù† ØªÙƒÙˆÙ† Ø£ÙƒØ«Ø± Ø­Ø°Ø±Ø§Ù‹",
+            "text": "نعم، بسبب وجود سكة حديد داخل الطريق.",
             "is_correct": true
           },
           {
-            "text": "Ù„Ø§ØŒ Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± Ù…Ø¹Ù„ÙˆÙ…Ø§ØªÙŠØ© Ø¨Ø­ØªØ© ÙˆÙ„Ø§ ØªØªØ·Ù„Ø¨ Ø£ÙŠ ØªØºÙŠÙŠØ± ÙÙŠ Ø³Ù„ÙˆÙƒ Ø§Ù„Ù‚ÙŠØ§Ø¯Ø©",
+            "text": "لا، ما دمت لا ترى تراماً أو قطاراً.",
             "is_correct": false
           }
         ],
-        "explanation": "ØªØ­Ø°Ø± Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± Ù…Ù† Ø§Ù„Ù…ÙˆØ§Ù‚Ù Ø§Ù„Ø®Ø·Ø±Ø© ÙˆØªÙ„Ø²Ù…Ùƒ Ø¨ØªØ¹Ø¯ÙŠÙ„ Ø³Ù„ÙˆÙƒ Ù‚ÙŠØ§Ø¯ØªÙƒ. ÙŠØ¬Ø¨ Ø¹Ù„ÙŠÙƒ ØªÙ‚Ù„ÙŠÙ„ Ø³Ø±Ø¹ØªÙƒ ÙˆØ£Ù† ØªÙƒÙˆÙ† Ø£ÙƒØ«Ø± Ø­Ø°Ø±Ø§Ù‹."
+        "explanation": "نعم. حتى إذا لم ترَ بعد تراماً أو قطاراً، ينبغي أن تعدل سرعتك لأن القضبان مزروعة داخل الطريق وقد يظهر عبور سككي بشكل مفاجئ."
       }
     }
   },
   {
     "question_id": "A49_Q06",
-    "type": "WHAT_MUST_YOU_DO",
+    "type": "SIGN_PLACEMENT_DISTANCE",
     "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Hoe moet u reageren wanneer u dit bord ziet en u een kruising met sporen nadert?",
+        "question": "Op welke afstand wordt dit gevaarsbord buiten de bebouwde kom geplaatst?",
         "choices": [
           {
-            "text": "Snelheid verminderen en rekening houden met een tram of trein die de rijbaan kruist",
+            "text": "Ongeveer 150 meter voor het gevaar.",
             "is_correct": true
           },
           {
-            "text": "Alleen claxonneren en in dezelfde snelheid doorrijden",
+            "text": "Precies op de plek van het gevaar.",
             "is_correct": false
           },
           {
-            "text": "Onmiddellijk stoppen op de sporen",
+            "text": "Ongeveer 500 meter voor het gevaar.",
             "is_correct": false
           }
         ],
-        "explanation": "Dit bord waarschuwt voor sporen die in de rijbaan liggen. Verminder uw snelheid en wees voorbereid op een tram of trein die de weg kruist."
+        "explanation": "Buiten de bebouwde kom wordt deze waarschuwing gewoonlijk ongeveer 150 meter voor het gevaar geplaatst. Binnen de bebouwde kom is dat meestal ongeveer 50 meter."
       },
       "EN": {
-        "question": "How should you react when you see this sign and approach a crossing with tracks in the roadway?",
+        "question": "At what distance is this danger sign placed outside built-up areas?",
         "choices": [
           {
-            "text": "Reduce speed and take into account that a tram or train may cross the roadway",
+            "text": "Approximately 150 meters before the hazard.",
             "is_correct": true
           },
           {
-            "text": "Only use your horn and continue at the same speed",
+            "text": "Exactly at the hazard location.",
             "is_correct": false
           },
           {
-            "text": "Stop immediately on the tracks",
+            "text": "About 500 meters before the hazard.",
             "is_correct": false
           }
         ],
-        "explanation": "This sign warns of tracks laid in the roadway. Reduce speed and be prepared for a tram or train crossing your path."
+        "explanation": "Outside built-up areas, this warning sign is usually placed about 150 meters before the hazard. Inside built-up areas, it is usually about 50 meters."
       },
       "FR": {
-        "question": "Comment devez-vous reagir lorsque vous voyez ce panneau et approchez d un croisement avec des rails dans la chaussee ?",
+        "question": "À quelle distance ce panneau de danger est-il placé hors agglomération ?",
         "choices": [
           {
-            "text": "Reduire la vitesse et tenir compte du fait qu un tram ou train peut croiser la chaussee",
+            "text": "Environ 150 mètres avant le danger.",
             "is_correct": true
           },
           {
-            "text": "Seulement klaxonner et continuer a la meme vitesse",
+            "text": "Exactement à l'endroit du danger.",
             "is_correct": false
           },
           {
-            "text": "S arreter immediatement sur les rails",
+            "text": "Environ 500 mètres avant le danger.",
             "is_correct": false
           }
         ],
-        "explanation": "Ce panneau avertit de rails installes dans la chaussee. Reduisez votre vitesse et soyez pret a laisser passer un tram ou un train."
+        "explanation": "Hors agglomération, ce panneau d'avertissement est généralement placé à environ 150 mètres du danger. En agglomération, c'est généralement environ 50 mètres."
       },
       "AR": {
-        "question": "كيف يجب أن تتصرف عندما ترى هذه اللافتة وتقترب من تقاطع مع سكة داخل الطريق؟",
+        "question": "على أي مسافة توضع هذه العلامة المرورية التحذيرية خارج المنطقة السكنية؟",
         "choices": [
           {
-            "text": "تخفيف السرعة والانتباه إلى أن تراماً أو قطاراً قد يعبر الطريق",
+            "text": "حوالي 150 متر قبل الخطر.",
             "is_correct": true
           },
           {
-            "text": "فقط استعمال المنبه ومتابعة السير بنفس السرعة",
+            "text": "تماماً عند موقع الخطر.",
             "is_correct": false
           },
           {
-            "text": "التوقف فوراً فوق السكة",
+            "text": "حوالي 500 متر قبل الخطر.",
             "is_correct": false
           }
         ],
-        "explanation": "تحذر هذه اللافتة من وجود سكة مزروعة في الطريق. خفف السرعة وكن مستعداً لعبور ترام أو قطار."
+        "explanation": "خارج المنطقة السكنية توضع هذه العلامة التحذيرية عادةً على بعد نحو 150 متراً قبل الخطر. داخل المنطقة السكنية تكون المسافة عادةً نحو 50 متراً."
       }
     }
   },
@@ -485,154 +444,138 @@
         "question": "Waar bevinden de sporen zich volgens dit waarschuwingsbord?",
         "choices": [
           {
-            "text": "In de rijbaan",
+            "text": "In de rijbaan zelf.",
             "is_correct": true
           },
           {
-            "text": "Naast een perron",
+            "text": "Naast een perron.",
             "is_correct": false
           },
           {
-            "text": "Op een afgesloten overweg",
+            "text": "Aan een afgesloten overweg met slagbomen.",
             "is_correct": false
           }
         ],
-        "explanation": "Dit bord kondigt sporen aan die in de rijbaan zelf zijn aangelegd."
+        "explanation": "Dit bord maakt duidelijk dat de sporen niet naast de weg liggen, maar direct in de rijbaan zelf zijn aangelegd."
       },
       "EN": {
         "question": "According to this warning sign, where are the tracks located?",
         "choices": [
           {
-            "text": "In the roadway itself",
+            "text": "In the roadway itself.",
             "is_correct": true
           },
           {
-            "text": "Next to a platform",
+            "text": "Next to a platform.",
             "is_correct": false
           },
           {
-            "text": "At a closed level crossing",
+            "text": "At a closed level crossing with barriers.",
             "is_correct": false
           }
         ],
-        "explanation": "This sign announces tracks that are laid directly in the roadway."
+        "explanation": "This sign makes clear that the tracks are not beside the road but laid directly in the roadway itself."
       },
       "FR": {
-        "question": "Selon ce panneau d avertissement, ou se trouvent les rails ?",
+        "question": "Selon ce panneau d'avertissement, où se trouvent les rails ?",
         "choices": [
           {
-            "text": "Dans la chaussee elle-meme",
+            "text": "Dans la chaussée elle-même.",
             "is_correct": true
           },
           {
-            "text": "A cote d un quai",
+            "text": "À côté d'un quai.",
             "is_correct": false
           },
           {
-            "text": "A un passage a niveau ferme",
+            "text": "À un passage à niveau fermé par des barrières.",
             "is_correct": false
           }
         ],
-        "explanation": "Ce panneau annonce des rails installes directement dans la chaussee."
+        "explanation": "Ce panneau montre clairement que les rails ne sont pas à côté de la route mais installés directement dans la chaussée elle-même."
       },
       "AR": {
-        "question": "بحسب هذه اللافتة التحذيرية، أين توجد السكة؟",
+        "question": "أين توجد القضبان وفقاً لهذه العلامة المرورية؟",
         "choices": [
           {
-            "text": "داخل الطريق نفسه",
+            "text": "داخل الطريق نفسه.",
             "is_correct": true
           },
           {
-            "text": "بجانب رصيف محطة",
+            "text": "بجانب رصيف محطة.",
             "is_correct": false
           },
           {
-            "text": "عند معبر مغلق",
+            "text": "عند معبر سكة حديد مغلق بحواجز.",
             "is_correct": false
           }
         ],
-        "explanation": "تعلن هذه اللافتة عن وجود سكة مزروعة مباشرة في الطريق."
+        "explanation": "توضح هذه العلامة أن القضبان ليست بجانب الطريق، بل مزروعة مباشرة داخل الطريق نفسه."
       }
     }
   },
   {
     "question_id": "A49_Q08",
-    "type": "WHAT_MUST_YOU_DO",
+    "type": "IS_IT_ALLOWED",
     "difficulty": "HARD",
-    "is_critical": false,
+    "is_critical": true,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat is het grootste extra risico bij dit bord?",
+        "question": "Mag u op de sporen stoppen als het verkeer voor u vertraagt?",
         "choices": [
           {
-            "text": "Een tram of trein kan plotseling de rijbaan kruisen",
+            "text": "Nee.",
             "is_correct": true
           },
           {
-            "text": "Alle voertuigen moeten verplicht keren",
-            "is_correct": false
-          },
-          {
-            "text": "De weg verandert automatisch in eenrichtingsverkeer",
+            "text": "Ja.",
             "is_correct": false
           }
         ],
-        "explanation": "Het gevaar zit in een tram of trein die de rijbaan kruist. Daarom moet u alert zijn en uw snelheid aanpassen."
+        "explanation": "Nee. U mag de sporen alleen oprijden wanneer u ze zonder stil te vallen kunt vrijmaken. Een tram of trein kan onverwacht de rijbaan kruisen."
       },
       "EN": {
-        "question": "What is the main additional danger indicated by this sign?",
+        "question": "Is it allowed to stop on the tracks if traffic ahead slows down?",
         "choices": [
           {
-            "text": "A tram or train may suddenly cross the roadway",
+            "text": "No.",
             "is_correct": true
           },
           {
-            "text": "All vehicles must make a U-turn",
-            "is_correct": false
-          },
-          {
-            "text": "The road automatically becomes one-way",
+            "text": "Yes.",
             "is_correct": false
           }
         ],
-        "explanation": "The hazard is that a tram or train can cross the roadway. Stay alert and adapt your speed."
+        "explanation": "No. You may only drive onto the tracks when you can clear them without stopping. A tram or train may cross the roadway unexpectedly."
       },
       "FR": {
-        "question": "Quel est le principal danger supplementaire indique par ce panneau ?",
+        "question": "Est-il permis de s'arrêter sur les rails si la circulation devant vous ralentit ?",
         "choices": [
           {
-            "text": "Un tram ou train peut soudainement traverser la chaussee",
+            "text": "Non.",
             "is_correct": true
           },
           {
-            "text": "Tous les vehicules doivent faire demi-tour",
-            "is_correct": false
-          },
-          {
-            "text": "La route devient automatiquement a sens unique",
+            "text": "Oui.",
             "is_correct": false
           }
         ],
-        "explanation": "Le danger est qu un tram ou un train peut traverser la chaussee. Restez attentif et adaptez votre vitesse."
+        "explanation": "Non. Vous ne pouvez vous engager sur les rails que si vous pouvez les dégager sans vous arrêter. Un tram ou un train peut traverser la chaussée de façon inattendue."
       },
       "AR": {
-        "question": "ما الخطر الإضافي الأساسي الذي تشير إليه هذه اللافتة؟",
+        "question": "هل يُسمح بالتوقف على القضبان إذا تباطأت حركة المرور أمامك؟",
         "choices": [
           {
-            "text": "قد يعبر ترام أو قطار الطريق بشكل مفاجئ",
+            "text": "لا.",
             "is_correct": true
           },
           {
-            "text": "يجب على جميع المركبات القيام بدوران كامل",
-            "is_correct": false
-          },
-          {
-            "text": "يتحول الطريق تلقائياً إلى اتجاه واحد",
+            "text": "نعم.",
             "is_correct": false
           }
         ],
-        "explanation": "الخطر هنا أن تراماً أو قطاراً قد يعبر الطريق. كن منتبهاً وعدّل سرعتك."
+        "explanation": "لا. لا يجوز لك دخول القضبان إلا إذا كنت تستطيع إخلاءها من دون توقف. فقد يعبر ترام أو قطار الطريق بشكل مفاجئ."
       }
     }
   }

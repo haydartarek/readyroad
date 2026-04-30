@@ -1,41 +1,20 @@
--- V176: Standardise sign codes — remove duplicate variants, rename and insert canonical codes
--- Deletes: B15A-v1, B15A-v2, C43_50, C43_70, D1a-links, D1a-rechts,
---          D1b-left, D1b-rechts, D1b-right, D4-left, D4-right, D4-straight
--- Updates: C22a -> C22, F50bis-pedestrians -> F50bis
--- Inserts: C41, D1b, D4, F97, F117, F118
+-- V176: Standardise sign codes — remove duplicate variants and insert canonical codes
+-- Deletes: D rows not present in the signs_import disk allowlist
+-- Updates: F50bis-pedestrians -> F50bis
+-- Inserts: C41, D1b-links, D4-rechtdoor, F97, F117, F118
 
 -- ============================================================
 -- 1. DELETE redundant variant signs (no quiz/detail dependencies)
 -- ============================================================
 DELETE FROM traffic_signs
-WHERE sign_code IN (
-    'B15A-v1',
-    'B15A-v2',
-    'C43_50',
-    'C43_70',
-    'D1a-links',
-    'D1a-rechts',
-    'D1b-left',
-    'D1b-rechts',
-    'D1b-right',
-    'D4-left',
-    'D4-right',
-    'D4-straight'
-);
+WHERE sign_code LIKE 'D%'
+  AND sign_code NOT IN (
+      'D10','D11','D13','D1a','D1b-links','D1b-rechts','D1c','D1d','D1e','D1f',
+      'D3a','D3b','D4-links','D4-rechtdoor','D4-rechts','D5','D7','D9a'
+  );
 
 -- ============================================================
--- 2. RENAME C22a -> C22 (autocars, not autobussen)
--- ============================================================
-UPDATE traffic_signs
-SET sign_code             = 'C22',
-    normalized_sign_code  = 'c22',
-    name_nl               = 'Verboden toegang voor bestuurders van autocars',
-    name_en               = 'No entry for coaches',
-    updated_at            = NOW()
-WHERE sign_code = 'C22a';
-
--- ============================================================
--- 3. RENAME F50bis-pedestrians -> F50bis (keep existing image_url)
+-- 2. RENAME F50bis-pedestrians -> F50bis (keep existing image_url)
 -- ============================================================
 UPDATE traffic_signs
 SET sign_code             = 'F50bis',
@@ -44,7 +23,7 @@ SET sign_code             = 'F50bis',
 WHERE sign_code = 'F50bis-pedestrians';
 
 -- ============================================================
--- 4. INSERT new signs
+-- 3. INSERT new signs
 -- ============================================================
 
 -- C41: End of prohibition imposed by sign C39
@@ -74,7 +53,7 @@ VALUES (
     'تشير هذه العلامة إلى نهاية حظر التجاوز للمركبات التي تتجاوز كتلتها 3500 كجم والمفروض بموجب العلامة C39. من هذه النقطة يُسمح للمركبات الثقيلة بالتجاوز مجدداً شريطة أن تسمح حالة المرور بذلك بأمان.'
 );
 
--- D1b: Mandatory turn (left or right, indicated by arrow)
+-- D1b-links: Mandatory left turn
 INSERT IGNORE INTO traffic_signs
     (category_id, sign_code, normalized_sign_code,
      name_nl, name_en, name_fr, name_ar,
@@ -83,7 +62,7 @@ INSERT IGNORE INTO traffic_signs
      long_description_nl, long_description_en, long_description_fr, long_description_ar)
 VALUES (
     (SELECT id FROM categories WHERE code = 'D'),
-    'D1b', 'd1b',
+    'D1b-links', 'd1b-links',
     'Verplichting links afslaan',
     'Mandatory left turn',
     'Obligation de tourner a gauche',
@@ -101,7 +80,7 @@ VALUES (
     'تلزم هذه العلامة المرورية السائقين باتباع الاتجاه المشار إليه بالسهم. العلامة ملزمة لجميع السائقين الذين يمرون بها.'
 );
 
--- D4: Mandatory direction for vehicles carrying dangerous goods
+-- D4-rechtdoor: Mandatory straight direction for vehicles carrying dangerous goods
 INSERT IGNORE INTO traffic_signs
     (category_id, sign_code, normalized_sign_code,
      name_nl, name_en, name_fr, name_ar,
@@ -110,17 +89,17 @@ INSERT IGNORE INTO traffic_signs
      long_description_nl, long_description_en, long_description_fr, long_description_ar)
 VALUES (
     (SELECT id FROM categories WHERE code = 'D'),
-    'D4', 'd4',
-    'Verplicht rechts voor voertuigen die gevaarlijke goederen vervoeren',
-    'Mandatory right turn for vehicles carrying dangerous goods',
-    'Obligation de tourner a droite pour les vehicules transportant des marchandises dangereuses',
-    'إلزامية الانعطاف يميناً للمركبات الناقلة للبضائع الخطرة',
-    'Verplicht rechts voor voertuigen die gevaarlijke goederen vervoeren.',
-    'Mandatory right turn for vehicles carrying dangerous goods.',
-    'Obligation de tourner a droite pour les vehicules transportant des marchandises dangereuses.',
-    'إلزامية الانعطاف يميناً للمركبات الناقلة للبضائع الخطرة.',
-    'images/signs/mandatory_signs/D4 Verplicht rechts voor voertuigen die gevaarlijke goederen vervoeren.png',
-    'images/signs/mandatory_signs/D4 Verplicht rechts voor voertuigen die gevaarlijke goederen vervoeren.png',
+    'D4-rechtdoor', 'd4-rechtdoor',
+    'Verplicht rechtdoor voor voertuigen die gevaarlijke goederen vervoeren',
+    'Mandatory straight ahead for vehicles carrying dangerous goods',
+    'Obligation d''aller tout droit pour les vehicules transportant des marchandises dangereuses',
+    'إلزامية الاستمرار للأمام للمركبات الناقلة للبضائع الخطرة',
+    'Verplicht rechtdoor voor voertuigen die gevaarlijke goederen vervoeren.',
+    'Mandatory straight ahead for vehicles carrying dangerous goods.',
+    'Obligation d''aller tout droit pour les vehicules transportant des marchandises dangereuses.',
+    'إلزامية الاستمرار للأمام للمركبات الناقلة للبضائع الخطرة.',
+    'images/signs/mandatory_signs/D4 Verplicht rechtdoor gevaarlijke goederen.png',
+    'images/signs/mandatory_signs/D4 Verplicht rechtdoor gevaarlijke goederen.png',
     1, NOW(), NOW(),
     'Dit verkeersbord verplicht voertuigen die gevaarlijke goederen vervoeren om de aangeduide richting te volgen. Het wordt gebruikt om voertuigen met gevaarlijke lading weg te leiden van tunnels, bewoonde gebieden of andere gevoelige locaties.',
     'This traffic sign requires vehicles carrying dangerous goods to follow the indicated direction. It is used to route vehicles with hazardous cargo away from tunnels, populated areas or other sensitive locations.',

@@ -75,6 +75,8 @@ public class ExamService {
     private final UserQuestionHistoryRepository historyRepository; // Streak & lastActivityDate tracking
     private final StreakService streakService; // Story N3: Study streak update on exam completion
     private final UserWeakAreaRepository weakAreaRepository; // Story N2: Persist weak areas on exam completion
+    private final RoadSignReferenceTextResolver roadSignReferenceTextResolver;
+    private final BackendMessageService messages;
 
     private static final int EXAM_QUESTION_COUNT = 50;
     private static final int EXAM_TIME_LIMIT_MINUTES = 30;
@@ -150,23 +152,26 @@ public class ExamService {
         if (easyPool.size() < EASY_QUESTION_COUNT) {
             log.error("Insufficient EASY questions. Required: {}, Available: {}",
                     EASY_QUESTION_COUNT, easyPool.size());
-            throw new IllegalStateException(String.format(
-                    "Insufficient EASY questions. Required: %d, Available: %d",
-                    EASY_QUESTION_COUNT, easyPool.size()));
+            throw new IllegalStateException(messages.get(
+                    "exam.pool.insufficient_easy",
+                    EASY_QUESTION_COUNT,
+                    easyPool.size()));
         }
         if (mediumPool.size() < MEDIUM_QUESTION_COUNT) {
             log.error("Insufficient MEDIUM questions. Required: {}, Available: {}",
                     MEDIUM_QUESTION_COUNT, mediumPool.size());
-            throw new IllegalStateException(String.format(
-                    "Insufficient MEDIUM questions. Required: %d, Available: %d",
-                    MEDIUM_QUESTION_COUNT, mediumPool.size()));
+            throw new IllegalStateException(messages.get(
+                    "exam.pool.insufficient_medium",
+                    MEDIUM_QUESTION_COUNT,
+                    mediumPool.size()));
         }
         if (hardPool.size() < HARD_QUESTION_COUNT) {
             log.error("Insufficient HARD questions. Required: {}, Available: {}",
                     HARD_QUESTION_COUNT, hardPool.size());
-            throw new IllegalStateException(String.format(
-                    "Insufficient HARD questions. Required: %d, Available: %d",
-                    HARD_QUESTION_COUNT, hardPool.size()));
+            throw new IllegalStateException(messages.get(
+                    "exam.pool.insufficient_hard",
+                    HARD_QUESTION_COUNT,
+                    hardPool.size()));
         }
 
         // Build the 50-question set with correct distribution, then shuffle order
@@ -232,7 +237,7 @@ public class ExamService {
     @Transactional(readOnly = true)
     public ExamSimulation getExamById(Long examId) {
         return examRepository.findById(examId)
-                .orElseThrow(() -> new IllegalArgumentException("Exam not found: " + examId));
+                .orElseThrow(() -> new IllegalArgumentException(messages.get("exam.not_found", examId)));
     }
 
     /**
@@ -263,9 +268,24 @@ public class ExamService {
      * @param userId User ID
      * @return true if user can start exam
      */
-    @Transactional(readOnly = true)
+    @Transactional
     public boolean canStartExam(Long userId) {
-        return !examRepository.existsByUserIdAndStatus(userId, ExamSimulation.ExamStatus.IN_PROGRESS);
+        ExamSimulation exam = examRepository.findByUserIdAndStatus(userId, ExamSimulation.ExamStatus.IN_PROGRESS)
+                .orElse(null);
+
+        if (exam == null) {
+            return true;
+        }
+
+        if (Instant.now().isAfter(exam.getExpiresAt())) {
+            exam.setStatus(ExamSimulation.ExamStatus.EXPIRED);
+            examRepository.save(exam);
+            log.info("Auto-expired stale IN_PROGRESS exam {} during canStartExam for user {}",
+                    exam.getId(), userId);
+            return true;
+        }
+
+        return false;
     }
 
     /**
@@ -277,7 +297,7 @@ public class ExamService {
         if (question.getOptions() == null) {
             return false;
         }
-        long validCount = question.getOptions().stream()
+        long validCount = question.getDeliverableOptions().stream()
                 .filter(option -> !PlaceholderDetector.hasPlaceholder(
                         option.getOptionTextEn(), option.getOptionTextNl(),
                         option.getOptionTextFr(), option.getOptionTextAr()))
@@ -297,12 +317,20 @@ public class ExamService {
      * @param userId User ID
      * @return Active exam or null
      */
-    @Transactional(readOnly = true)
+    @Transactional
     public ExamSimulation getActiveExam(Long userId) {
         ExamSimulation exam = examRepository.findByUserIdAndStatus(userId, ExamSimulation.ExamStatus.IN_PROGRESS)
                 .orElse(null);
 
         if (exam != null) {
+            if (Instant.now().isAfter(exam.getExpiresAt())) {
+                exam.setStatus(ExamSimulation.ExamStatus.EXPIRED);
+                examRepository.save(exam);
+                log.info("Auto-expired stale IN_PROGRESS exam {} during getActiveExam for user {}",
+                        exam.getId(), userId);
+                return null;
+            }
+
             // ✅ Force load exam questions and their options inside transaction
             List<ExamSimulationQuestion> questions = examQuestionRepository
                     .findByExamIdOrderByQuestionOrder(exam.getId());
@@ -351,7 +379,7 @@ public class ExamService {
 
         ExamSimulation exam = examRepository.findById(examId)
                 .orElseThrow(() -> new ExamNotFoundException(
-                        String.format("Exam %d not found", examId)));
+                        messages.get("exam.not_found", examId)));
 
         if (!exam.getUserId().equals(userId)) {
             throw new UnauthorizedException(userId, examId);
@@ -366,7 +394,7 @@ public class ExamService {
 
         if (exam.getStatus() != ExamSimulation.ExamStatus.IN_PROGRESS) {
             throw new ExamNotActiveException(
-                    "Cannot complete exam with status: " + exam.getStatus());
+                    messages.get("exam.complete.invalid_status", exam.getStatus()));
         }
 
         // Calculate final score from all submitted answers
@@ -534,12 +562,12 @@ public class ExamService {
         log.info("Cancelling exam: {}", examId);
 
         ExamSimulation exam = examRepository.findById(examId)
-                .orElseThrow(() -> new ExamNotFoundException("Exam not found: " + examId));
+                .orElseThrow(() -> new ExamNotFoundException(messages.get("exam.not_found", examId)));
 
         if (exam.getStatus() != ExamSimulation.ExamStatus.IN_PROGRESS) {
             log.warn("Cannot cancel exam that is not in progress: examId={}, status={}",
                     examId, exam.getStatus());
-            throw new ExamNotActiveException("Exam is not active");
+            throw new ExamNotActiveException(messages.get("exam.cancel.not_active"));
         }
 
         // Mark as cancelled by setting status to COMPLETED with 0 score
@@ -586,18 +614,22 @@ public class ExamService {
     public SubmitExamAnswerResponse submitAnswer(
             Long examId,
             Long questionId,
-            SubmitExamAnswerRequest request) {
+            SubmitExamAnswerRequest request,
+            Long userId) {
 
-        log.info("Submitting answer for exam {} question {}", examId, questionId);
+        log.info("Submitting answer for exam {} question {} — user {}", examId, questionId, userId);
 
         // Story A4: Check time limit first (UTC-aware)
         Instant now = Instant.now();
 
-        // 1. Validate exam exists and is IN_PROGRESS
+        // 1. Validate exam exists and ownership
         ExamSimulation exam = getExamById(examId);
+        if (!exam.getUserId().equals(userId)) {
+            throw new UnauthorizedException(userId, examId);
+        }
         if (exam.getStatus() != ExamSimulation.ExamStatus.IN_PROGRESS) {
             throw new ExamNotActiveException(
-                    String.format("Cannot submit answer. Exam status: %s", exam.getStatus()));
+                    messages.get("exam.submit.invalid_status", exam.getStatus()));
         }
 
         // Story A4: Check time limit
@@ -607,7 +639,7 @@ public class ExamService {
             examRepository.save(exam);
             log.warn("Exam {} expired at {}. Current time: {}", examId, exam.getExpiresAt(), now);
             throw new ExamExpiredException(
-                    String.format("Exam has expired. Time limit: %d minutes", EXAM_TIME_LIMIT_MINUTES),
+                    messages.get("exam.submit.expired", EXAM_TIME_LIMIT_MINUTES),
                     examId);
         }
 
@@ -615,22 +647,24 @@ public class ExamService {
         examQuestionRepository
                 .findByExamIdAndQuestionId(examId, questionId)
                 .orElseThrow(() -> new QuestionNotFoundException(
-                        String.format("Question %d not found in exam %d", questionId, examId)));
+                        messages.get("exam.submit.question_not_found_in_exam", questionId, examId)));
 
         // Load the actual question entity
         QuizQuestion question = questionRepository.findById(questionId)
                 .orElseThrow(() -> new QuestionNotFoundException(
-                        String.format("Question %d not found", questionId)));
+                        messages.get("exam.submit.question_not_found", questionId)));
 
         // 3. Validate selected option exists and belongs to question
         QuizAnswerOption selectedOption = optionRepository
                 .findById(request.getSelectedOptionId())
                 .orElseThrow(() -> new InvalidAnswerException(
-                        String.format("Invalid option ID: %d", request.getSelectedOptionId())));
+                        messages.get("exam.submit.invalid_option", request.getSelectedOptionId())));
 
-        if (!selectedOption.getQuestion().getId().equals(questionId)) {
+        boolean deliverableOption = question.getDeliverableOptions().stream()
+                .anyMatch(option -> option.getId().equals(selectedOption.getId()));
+        if (!selectedOption.getQuestion().getId().equals(questionId) || !deliverableOption) {
             throw new InvalidAnswerException(
-                    "Selected option does not belong to this question");
+                    messages.get("exam.submit.option_mismatch"));
         }
 
         // 4. Check if answer already exists (update if exists, create if not)
@@ -670,7 +704,7 @@ public class ExamService {
                 .questionId(questionId)
                 .selectedOptionId(request.getSelectedOptionId())
                 .submittedAt(answer.getAnsweredAt())
-                .message("Answer submitted successfully")
+                .message(messages.get("exam.submit.success"))
                 .totalAnswered((int) totalAnswered)
                 .totalQuestions(EXAM_QUESTION_COUNT)
                 .build();
@@ -698,7 +732,7 @@ public class ExamService {
         // 1. Load exam and verify ownership
         ExamSimulation exam = examRepository.findById(examId)
                 .orElseThrow(() -> new ExamNotFoundException(
-                        String.format("Exam %d not found", examId)));
+                        messages.get("exam.not_found", examId)));
 
         if (!exam.getUserId().equals(userId)) {
             throw new UnauthorizedException(userId, examId);
@@ -883,7 +917,7 @@ public class ExamService {
                     }
 
                     // Get correct option
-                    QuizAnswerOption correctOption = question.getOptions().stream()
+                    QuizAnswerOption correctOption = question.getDeliverableOptions().stream()
                             .filter(QuizAnswerOption::getIsCorrect)
                             .findFirst()
                             .orElse(null);
@@ -894,16 +928,18 @@ public class ExamService {
 
                     return IncorrectQuestionDTO.builder()
                             .questionId(question.getId())
-                            .questionTextEn(question.getQuestionEn())
-                            .questionTextAr(question.getQuestionAr())
-                            .questionTextNl(question.getQuestionNl())
-                            .questionTextFr(question.getQuestionFr())
+                            .questionTextEn(roadSignReferenceTextResolver.resolveEn(question.getQuestionEn()))
+                            .questionTextAr(roadSignReferenceTextResolver.resolveAr(question.getQuestionAr()))
+                            .questionTextNl(roadSignReferenceTextResolver.resolveNl(question.getQuestionNl()))
+                            .questionTextFr(roadSignReferenceTextResolver.resolveFr(question.getQuestionFr()))
                             .selectedOptionId(selectedOption.getId())
-                            .selectedOptionText(selectedOption.getOptionTextEn())
+                            .selectedOptionText(
+                                    roadSignReferenceTextResolver.resolveEn(selectedOption.getOptionTextEn()))
                             .correctOptionId(correctOption.getId())
-                            .correctOptionText(correctOption.getOptionTextEn())
-                            .categoryName(
-                                    question.getCategory() != null ? question.getCategory().getNameEn() : "Unknown")
+                            .correctOptionText(roadSignReferenceTextResolver.resolveEn(correctOption.getOptionTextEn()))
+                            .categoryName(question.getCategory() != null
+                                    ? question.getCategory().getNameEn()
+                                    : messages.get("analytics.category.unknown"))
                             // Production enhancements (v2.0)
                             .categoryCode(question.getCategory() != null ? question.getCategory().getCode() : null)
                             .contentImageUrl(question.getContentImageUrl()) // Traffic sign image
@@ -931,7 +967,7 @@ public class ExamService {
                         return null;
                     }
 
-                    QuizAnswerOption correctOption = question.getOptions().stream()
+                    QuizAnswerOption correctOption = question.getDeliverableOptions().stream()
                             .filter(QuizAnswerOption::getIsCorrect)
                             .findFirst()
                             .orElse(null);
@@ -942,16 +978,18 @@ public class ExamService {
 
                     return AllAnsweredQuestionDTO.builder()
                             .questionId(question.getId())
-                            .questionTextEn(question.getQuestionEn())
-                            .questionTextAr(question.getQuestionAr())
-                            .questionTextNl(question.getQuestionNl())
-                            .questionTextFr(question.getQuestionFr())
+                            .questionTextEn(roadSignReferenceTextResolver.resolveEn(question.getQuestionEn()))
+                            .questionTextAr(roadSignReferenceTextResolver.resolveAr(question.getQuestionAr()))
+                            .questionTextNl(roadSignReferenceTextResolver.resolveNl(question.getQuestionNl()))
+                            .questionTextFr(roadSignReferenceTextResolver.resolveFr(question.getQuestionFr()))
                             .selectedOptionId(selectedOption.getId())
-                            .selectedOptionText(selectedOption.getOptionTextEn())
+                            .selectedOptionText(
+                                    roadSignReferenceTextResolver.resolveEn(selectedOption.getOptionTextEn()))
                             .correctOptionId(correctOption.getId())
-                            .correctOptionText(correctOption.getOptionTextEn())
-                            .categoryName(
-                                    question.getCategory() != null ? question.getCategory().getNameEn() : "Unknown")
+                            .correctOptionText(roadSignReferenceTextResolver.resolveEn(correctOption.getOptionTextEn()))
+                            .categoryName(question.getCategory() != null
+                                    ? question.getCategory().getNameEn()
+                                    : messages.get("analytics.category.unknown"))
                             .categoryCode(question.getCategory() != null ? question.getCategory().getCode() : null)
                             .contentImageUrl(question.getContentImageUrl())
                             .isCorrect(answer.getIsCorrect())
@@ -993,23 +1031,21 @@ public class ExamService {
         if (passed) {
             // User passed the exam
             if (weakCategories.isEmpty() && scorePercentage >= 96.0) {
-                return "Outstanding! You're more than ready 🎉";
+                return messages.get("exam.results.outstanding");
             } else if (weakCategories.isEmpty()) {
-                return "Excellent! You're fully prepared 🚀";
+                return messages.get("exam.results.excellent");
             } else {
-                return "You passed! Consider reviewing: " + String.join(", ", weakCategories);
+                return messages.get("exam.results.passed_review", String.join(", ", weakCategories));
             }
         } else {
             // User failed the exam
             if (weakCategories.isEmpty()) {
-                return String.format(
-                        "Keep practicing! You need %d more correct answer%s. Focus on understanding each question type.",
-                        pointsToPass, pointsToPass == 1 ? "" : "s");
+                return messages.get("exam.results.keep_practicing", pointsToPass);
             } else {
-                return String.format("Focus on: %s. You need %d more correct answer%s. Then retake the exam.",
+                return messages.get(
+                        "exam.results.focus_on",
                         String.join(", ", weakCategories),
-                        pointsToPass,
-                        pointsToPass == 1 ? "" : "s");
+                        pointsToPass);
             }
         }
     }

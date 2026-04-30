@@ -1,10 +1,602 @@
-﻿[
-  {"question_id":"C39_Q01","type":"WHAT_DOES_IT_MEAN","difficulty":"EASY","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Wat betekent dit verkeersbord?","choices":[{"text":"Verboden in te halen voor vrachtwagens en soortgelijke zware voertuigen","is_correct":true},{"text":"Verboden in te halen voor alle motorvoertuigen","is_correct":false},{"text":"Verboden in te halen voor personenwagens","is_correct":false}],"explanation":"C39 verbiedt uitsluitend vrachtwagens en gelijkaardige zware motorvoertuigen om in te halen. Personenwagens mogen wel inhalen."},"EN":{"question":"What does this traffic sign mean?","choices":[{"text":"No overtaking for lorries and similar heavy vehicles","is_correct":true},{"text":"No overtaking for all motor vehicles","is_correct":false},{"text":"No overtaking for private cars","is_correct":false}],"explanation":"C39 exclusively prohibits lorries and similar heavy motor vehicles from overtaking. Private cars may still overtake."},"FR":{"question":"Que signifie ce panneau ?","choices":[{"text":"Interdiction de depasser pour les camions et les vehicules lourds similaires","is_correct":true},{"text":"Interdiction de depasser pour tous les vehicules a moteur","is_correct":false},{"text":"Interdiction de depasser pour les voitures particulieres","is_correct":false}],"explanation":"C39 interdit exclusivement aux camions et aux vehicules a moteur lourds similaires de depasser. Les voitures particulieres peuvent encore depasser."},"AR":{"question":"Ù…Ø§Ø°Ø§ ØªØ¹Ù†ÙŠ Ù„Ø§ÙØªØ© Ø§Ù„Ù…Ø±ÙˆØ± Ù‡Ø°Ù‡ØŸ","choices":[{"text":"Ù…Ù…Ù†ÙˆØ¹ Ø§Ù„ØªØ¬Ø§ÙˆØ² Ù„Ù„Ø´Ø§Ø­Ù†Ø§Øª ÙˆØ§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ø«Ù‚ÙŠÙ„Ø© Ø§Ù„Ù…Ù…Ø§Ø«Ù„Ø©","is_correct":true},{"text":"Ù…Ù…Ù†ÙˆØ¹ Ø§Ù„ØªØ¬Ø§ÙˆØ² Ù„Ø¬Ù…ÙŠØ¹ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ø¢Ù„ÙŠØ©","is_correct":false},{"text":"Ù…Ù…Ù†ÙˆØ¹ Ø§Ù„ØªØ¬Ø§ÙˆØ² Ù„Ù„Ø³ÙŠØ§Ø±Ø§Øª Ø§Ù„Ø®Ø§ØµØ©","is_correct":false}],"explanation":"ØªØ­Ø¸Ø± C39 Ø­ØµØ±Ø§ Ø§Ù„Ø´Ø§Ø­Ù†Ø§Øª ÙˆØ§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ø¢Ù„ÙŠØ© Ø§Ù„Ø«Ù‚ÙŠÙ„Ø© Ø§Ù„Ù…Ù…Ø§Ø«Ù„Ø© Ù…Ù† Ø§Ù„ØªØ¬Ø§ÙˆØ². ÙŠØ¬ÙˆØ² Ù„Ù„Ø³ÙŠØ§Ø±Ø§Øª Ø§Ù„Ø®Ø§ØµØ© Ø§Ù„ØªØ¬Ø§ÙˆØ²."}}},
-  {"question_id":"C39_Q02","type":"WHICH_SIGN","difficulty":"EASY","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Tot welke categorie behoort dit bord?","choices":[{"text":"Verbodsborden (C-reeks)","is_correct":true},{"text":"Gevaarsborden (A-reeks)","is_correct":false},{"text":"Gebodsborden (D-reeks)","is_correct":false}],"explanation":"Verbodsborden (C-reeks) zijn rond met rode rand en verbieden specifieke rijbewegingen voor specifieke voertuigcategorieen."},"EN":{"question":"To which category does this sign belong?","choices":[{"text":"Prohibition signs (C-series)","is_correct":true},{"text":"Danger signs (A-series)","is_correct":false},{"text":"Mandatory signs (D-series)","is_correct":false}],"explanation":"Prohibition signs (C-series) are round with a red border and prohibit specific driving movements for specific vehicle categories."},"FR":{"question":"A quelle categorie appartient ce panneau ?","choices":[{"text":"Panneaux d interdiction (serie C)","is_correct":true},{"text":"Panneaux de danger (serie A)","is_correct":false},{"text":"Panneaux d obligation (serie D)","is_correct":false}],"explanation":"Les panneaux d interdiction (serie C) sont ronds avec un bord rouge et interdisent des mouvements de conduite specifiques a des categories de vehicules specifiques."},"AR":{"question":"Ø§Ù„Ù‰ Ø§ÙŠ ÙØ¦Ø© ØªÙ†ØªÙ…ÙŠ Ù‡Ø°Ù‡ Ø§Ù„Ù„Ø§ÙØªØ©ØŸ","choices":[{"text":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø­Ø¸Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© C)","is_correct":true},{"text":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø®Ø·Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© A)","is_correct":false},{"text":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø§Ù„Ø²Ø§Ù… (Ø§Ù„Ø³Ù„Ø³Ù„Ø© D)","is_correct":false}],"explanation":"Ù„Ø§ÙØªØ§Øª Ø§Ù„Ø­Ø¸Ø± (Ø§Ù„Ø³Ù„Ø³Ù„Ø© C) Ù…Ø³ØªØ¯ÙŠØ±Ø© Ø°Ø§Øª Ø­Ø¯ Ø§Ø­Ù…Ø± ÙˆØªØ­Ø¸Ø± Ø­Ø±ÙƒØ§Øª Ù‚ÙŠØ§Ø¯Ø© Ù…Ø­Ø¯Ø¯Ø© Ù„ÙØ¦Ø§Øª Ù…Ø­Ø¯Ø¯Ø© Ù…Ù† Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª."}}},
-  {"question_id":"C39_Q03","type":"HAZARD_IDENTIFICATION","difficulty":"EASY","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Mag een personenwagen een andere personenwagen inhalen op een weg met bord C39?","choices":[{"text":"Ja, C39 geldt uitsluitend voor vrachtwagens en gelijkaardige zware voertuigen","is_correct":true},{"text":"Nee, C39 verbiedt alle voertuigen om in te halen","is_correct":false},{"text":"Alleen als de borden uitdrukkelijk personenwagens vrijstellen","is_correct":false}],"explanation":"C39 richt zich op vrachtwagens en gelijkgestelde zware voertuigen. Personenwagens vallen niet onder het inhaalbod van C39."},"EN":{"question":"May a private car overtake another private car on a road with sign C39?","choices":[{"text":"Yes, C39 applies exclusively to lorries and similar heavy vehicles","is_correct":true},{"text":"No, C39 prohibits all vehicles from overtaking","is_correct":false},{"text":"Only if the signs explicitly exempt private cars","is_correct":false}],"explanation":"C39 targets lorries and equivalent heavy vehicles. Private cars do not fall under the overtaking prohibition of C39."},"FR":{"question":"Une voiture particuliere peut-elle en depasser une autre sur une route avec le panneau C39 ?","choices":[{"text":"Oui, C39 s applique exclusivement aux camions et aux vehicules lourds similaires","is_correct":true},{"text":"Non, C39 interdit a tous les vehicules de depasser","is_correct":false},{"text":"Seulement si les panneaux exemptent expressement les voitures particulieres","is_correct":false}],"explanation":"C39 cible les camions et les vehicules lourds equivalents. Les voitures particulieres ne tombent pas sous l interdiction de depassement de C39."},"AR":{"question":"Ù‡Ù„ ÙŠØ¬ÙˆØ² Ù„Ø³ÙŠØ§Ø±Ø© Ø®Ø§ØµØ© ØªØ¬Ø§ÙˆØ² Ø³ÙŠØ§Ø±Ø© Ø®Ø§ØµØ© Ø§Ø®Ø±Ù‰ Ø¹Ù„Ù‰ Ø·Ø±ÙŠÙ‚ Ø¨Ù‡ Ù„Ø§ÙØªØ© C39ØŸ","choices":[{"text":"Ù†Ø¹Ù…ØŒ ØªØ³Ø±ÙŠ C39 Ø­ØµØ±Ø§ Ø¹Ù„Ù‰ Ø§Ù„Ø´Ø§Ø­Ù†Ø§Øª ÙˆØ§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ø«Ù‚ÙŠÙ„Ø© Ø§Ù„Ù…Ù…Ø§Ø«Ù„Ø©","is_correct":true},{"text":"Ù„Ø§ØŒ ØªØ­Ø¸Ø± C39 Ø¬Ù…ÙŠØ¹ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ù…Ù† Ø§Ù„ØªØ¬Ø§ÙˆØ²","is_correct":false},{"text":"ÙÙ‚Ø· Ø§Ø°Ø§ Ø£Ø¹ÙØª Ø§Ù„Ù„Ø§ÙØªØ§Øª ØµØ±Ø§Ø­Ø© Ø§Ù„Ø³ÙŠØ§Ø±Ø§Øª Ø§Ù„Ø®Ø§ØµØ©","is_correct":false}],"explanation":"ØªØ³ØªÙ‡Ø¯Ù C39 Ø§Ù„Ø´Ø§Ø­Ù†Ø§Øª ÙˆØ§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ø«Ù‚ÙŠÙ„Ø© Ø§Ù„Ù…Ø¹Ø§Ø¯Ù„Ø©. Ø§Ù„Ø³ÙŠØ§Ø±Ø§Øª Ø§Ù„Ø®Ø§ØµØ© Ù„Ø§ ØªÙ‚Ø¹ ØªØ­Øª Ø­Ø¸Ø± Ø§Ù„ØªØ¬Ø§ÙˆØ² Ø§Ù„Ù…ÙØ±ÙˆØ¶ Ø¨Ù€C39."}}},
-  {"question_id":"C39_Q04","type":"WHAT_MUST_YOU_DO","difficulty":"MEDIUM","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"U rijdt een vrachtwagen van 8 ton op een weg met bord C39. Wat doet u?","choices":[{"text":"U rijdt achter het voertuig voor u en haalt nooit in zolang C39 geldt","is_correct":true},{"text":"U haalt in als het veilig lijkt want vrachtwagens mogen altijd inhalen","is_correct":false},{"text":"U haalt alleen lichte voertuigen in maar geen andere vrachtwagens","is_correct":false}],"explanation":"C39 verbiedt vrachtwagens om te halen van welk voertuig dan ook in de geldigheidszone. U moet achter het voortse voertuig blijven totdat het verbod is opgeheven."},"EN":{"question":"You are driving a lorry of 8 tonnes on a road with sign C39. What do you do?","choices":[{"text":"You drive behind the vehicle in front and never overtake while C39 is in force","is_correct":true},{"text":"You overtake when it seems safe because lorries may always overtake","is_correct":false},{"text":"You only overtake light vehicles but not other lorries","is_correct":false}],"explanation":"C39 prohibits lorries from overtaking any vehicle in the validity zone. You must stay behind the vehicle ahead until the prohibition is lifted."},"FR":{"question":"Vous conduisez un camion de 8 tonnes sur une route avec le panneau C39. Que faites-vous ?","choices":[{"text":"Vous roulez derriere le vehicule devant vous et ne depassez jamais tant que C39 est en vigueur","is_correct":true},{"text":"Vous depassez quand cela semble sur car les camions peuvent toujours depasser","is_correct":false},{"text":"Vous ne depassez que les vehicules legers mais pas les autres camions","is_correct":false}],"explanation":"C39 interdit aux camions de depasser tout vehicule dans la zone de validite. Vous devez rester derriere le vehicule de devant jusqu a ce que l interdiction soit levee."},"AR":{"question":"ØªÙ‚ÙˆØ¯ Ø´Ø§Ø­Ù†Ø© Ø¨ÙˆØ²Ù† 8 Ø·Ù† Ø¹Ù„Ù‰ Ø·Ø±ÙŠÙ‚ Ø¨Ù‡ Ù„Ø§ÙØªØ© C39. Ù…Ø§Ø°Ø§ ØªÙØ¹Ù„ØŸ","choices":[{"text":"ØªØ³ÙŠØ± Ø®Ù„Ù Ø§Ù„Ù…Ø±ÙƒØ¨Ø© Ø§Ù…Ø§Ù…Ùƒ ÙˆÙ„Ø§ ØªØªØ¬Ø§ÙˆØ² Ø§Ø¨Ø¯Ø§ Ø·Ø§Ù„Ù…Ø§ C39 Ø³Ø§Ø±ÙŠØ©","is_correct":true},{"text":"ØªØªØ¬Ø§ÙˆØ² Ø­ÙŠÙ† ÙŠØ¨Ø¯Ùˆ Ø¢Ù…Ù†Ø§ Ù„Ø£Ù† Ø§Ù„Ø´Ø§Ø­Ù†Ø§Øª ÙŠØ¬ÙˆØ² Ù„Ù‡Ø§ Ø§Ù„ØªØ¬Ø§ÙˆØ² Ø¯Ø§Ø¦Ù…Ø§","is_correct":false},{"text":"ØªØªØ¬Ø§ÙˆØ² ÙÙ‚Ø· Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ø®ÙÙŠÙØ© Ù„ÙƒÙ† Ù„ÙŠØ³ Ø§Ù„Ø´Ø§Ø­Ù†Ø§Øª Ø§Ù„Ø§Ø®Ø±Ù‰","is_correct":false}],"explanation":"ØªØ­Ø¸Ø± C39 Ø¹Ù„Ù‰ Ø§Ù„Ø´Ø§Ø­Ù†Ø§Øª ØªØ¬Ø§ÙˆØ² Ø§ÙŠ Ù…Ø±ÙƒØ¨Ø© ÙÙŠ Ù…Ù†Ø·Ù‚Ø© Ø§Ù„ØµÙ„Ø§Ø­ÙŠØ©. ÙŠØ¬Ø¨ Ø§Ù„Ø¨Ù‚Ø§Ø¡ Ø®Ù„Ù Ø§Ù„Ù…Ø±ÙƒØ¨Ø© Ø§Ù„Ø§Ù…Ø§Ù…ÙŠØ© Ø­ØªÙ‰ ÙŠÙØ±ÙØ¹ Ø§Ù„Ø­Ø¸Ø±."}}},
-  {"question_id":"C39_Q05","type":"WHAT_MUST_YOU_DO","difficulty":"MEDIUM","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Welke voertuigcategorie valt onder het inhaalbod van C39?","choices":[{"text":"Motorvoertuigen voor goederenvervoer met een maximale toegelaten massa van meer dan 3,5 ton","is_correct":true},{"text":"Alle voertuigen zwaarder dan 1000 kg","is_correct":false},{"text":"Uitsluitend koelwagens en tankwagens","is_correct":false}],"explanation":"C39 richt zich op zware motorvoertuigen voor goederenvervoer met een MTM boven 3,5 ton. Personenwagens, bestelwagens en lichte voertuigen vallen er niet onder."},"EN":{"question":"Which vehicle category falls under the overtaking prohibition of C39?","choices":[{"text":"Motor vehicles for goods transport with a maximum authorised mass of more than 3.5 tonnes","is_correct":true},{"text":"All vehicles heavier than 1000 kg","is_correct":false},{"text":"Only refrigerated lorries and tankers","is_correct":false}],"explanation":"C39 targets heavy motor vehicles for goods transport with an MAM above 3.5 tonnes. Private cars, vans and light vehicles are not covered."},"FR":{"question":"Quelle categorie de vehicules tombe sous l interdiction de depassement de C39 ?","choices":[{"text":"Les vehicules a moteur pour le transport de marchandises avec une masse maximale autorisee superieure a 3,5 tonnes","is_correct":true},{"text":"Tous les vehicules de plus de 1000 kg","is_correct":false},{"text":"Uniquement les camions frigorifiques et les camions-citernes","is_correct":false}],"explanation":"C39 cible les vehicules a moteur lourds pour le transport de marchandises avec un PMA superieur a 3,5 tonnes. Les voitures particulieres, les camionnettes et les vehicules legers ne sont pas couverts."},"AR":{"question":"Ù…Ø§ ÙØ¦Ø© Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„ØªÙŠ ØªÙ‚Ø¹ ØªØ­Øª Ø­Ø¸Ø± Ø§Ù„ØªØ¬Ø§ÙˆØ² Ø§Ù„Ù…ÙØ±ÙˆØ¶ Ø¨Ù€C39ØŸ","choices":[{"text":"Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ø¢Ù„ÙŠØ© Ù„Ù†Ù‚Ù„ Ø§Ù„Ø¨Ø¶Ø§Ø¦Ø¹ Ø°Ø§Øª Ø§Ù„ÙƒØªÙ„Ø© Ø§Ù„Ù…Ø±Ø®ØµØ© Ø§Ù„Ù‚ØµÙˆÙ‰ Ø§ÙƒØ«Ø± Ù…Ù† 3.5 Ø·Ù†","is_correct":true},{"text":"Ø¬Ù…ÙŠØ¹ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ø§Ø«Ù‚Ù„ Ù…Ù† 1000 ÙƒØº","is_correct":false},{"text":"ÙÙ‚Ø· Ø´Ø§Ø­Ù†Ø§Øª Ø§Ù„ØªØ¨Ø±ÙŠØ¯ ÙˆØµÙ‡Ø§Ø±ÙŠØ¬ Ø§Ù„ÙˆÙ‚ÙˆØ¯","is_correct":false}],"explanation":"ØªØ³ØªÙ‡Ø¯Ù C39 Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ø¢Ù„ÙŠØ© Ø§Ù„Ø«Ù‚ÙŠÙ„Ø© Ù„Ù†Ù‚Ù„ Ø§Ù„Ø¨Ø¶Ø§Ø¦Ø¹ Ø°Ø§Øª Ø§Ù„ÙƒØªÙ„Ø© Ø§Ù„Ù…Ø­ÙˆØ±ÙŠØ© Ø§Ù„Ø§Ù‚ØµÙ‰ Ø§ÙƒØ«Ø± Ù…Ù† 3.5 Ø·Ù†. Ø§Ù„Ø³ÙŠØ§Ø±Ø§Øª Ø§Ù„Ø®Ø§ØµØ© ÙˆØ§Ù„Ø´Ø§Ø­Ù†Ø§Øª Ø§Ù„Ø®ÙÙŠÙØ© ÙˆØ§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ø®ÙÙŠÙØ© ØºÙŠØ± Ù…Ø´Ù…ÙˆÙ„Ø©."}}},
-  {"question_id":"C39_Q06","type":"WHAT_MUST_YOU_DO","difficulty":"MEDIUM","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Mag een vrachtwagen bij C39 een tractor inhalen die gevaarlijk langzaam rijdt?","choices":[{"text":"Nee, C39 is absoluut voor vrachtwagens; het haalbod geldt ook voor trage voertuigen","is_correct":true},{"text":"Ja, gevaarlijk langzame voertuigen mogen altijd worden ingehaald","is_correct":false},{"text":"Ja, als de tractor niet meer dan 20 km/h rijdt","is_correct":false}],"explanation":"C39 verbiedt vrachtwagens om te halen ongeacht de snelheid van het voertuig dat wordt genaderd. Er is geen uitzondering voor trage voertuigen."},"EN":{"question":"May a lorry at C39 overtake a tractor driving dangerously slowly?","choices":[{"text":"No, C39 is absolute for lorries; the overtaking prohibition also applies to slow vehicles","is_correct":true},{"text":"Yes, dangerously slow vehicles may always be overtaken","is_correct":false},{"text":"Yes, if the tractor drives at no more than 20 km/h","is_correct":false}],"explanation":"C39 prohibits lorries from overtaking regardless of the speed of the vehicle being approached. There is no exception for slow vehicles."},"FR":{"question":"Un camion peut-il au panneau C39 depasser un tracteur roulant dangereusement lentement ?","choices":[{"text":"Non, C39 est absolu pour les camions; l interdiction de depassement s applique aussi aux vehicules lents","is_correct":true},{"text":"Oui, les vehicules dangereusement lents peuvent toujours etre depasses","is_correct":false},{"text":"Oui, si le tracteur ne roule pas a plus de 20 km/h","is_correct":false}],"explanation":"C39 interdit aux camions de depasser quelle que soit la vitesse du vehicule aborde. Il n y a pas d exception pour les vehicules lents."},"AR":{"question":"Ù‡Ù„ ÙŠØ¬ÙˆØ² Ù„Ø´Ø§Ø­Ù†Ø© Ø¹Ù†Ø¯ C39 ØªØ¬Ø§ÙˆØ² Ø¬Ø±Ø§Ø± ÙŠØ³ÙŠØ± Ø¨Ø¨Ø·Ø¡ Ø®Ø·ÙŠØ±ØŸ","choices":[{"text":"Ù„Ø§ØŒ C39 Ù…Ø·Ù„Ù‚Ø© Ù„Ù„Ø´Ø§Ø­Ù†Ø§ØªØ› Ø­Ø¸Ø± Ø§Ù„ØªØ¬Ø§ÙˆØ² ÙŠØ³Ø±ÙŠ Ø§ÙŠØ¶Ø§ Ø¹Ù„Ù‰ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ø¨Ø·ÙŠØ¦Ø©","is_correct":true},{"text":"Ù†Ø¹Ù…ØŒ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ø¨Ø·ÙŠØ¦Ø© Ø¨Ø´ÙƒÙ„ Ø®Ø·ÙŠØ± ÙŠÙ…ÙƒÙ† ØªØ¬Ø§ÙˆØ²Ù‡Ø§ Ø¯Ø§Ø¦Ù…Ø§","is_correct":false},{"text":"Ù†Ø¹Ù…ØŒ Ø§Ø°Ø§ ÙƒØ§Ù† Ø§Ù„Ø¬Ø±Ø§Ø± Ù„Ø§ ÙŠØ³ÙŠØ± Ø§ÙƒØ«Ø± Ù…Ù† 20 ÙƒÙ…/Ø³","is_correct":false}],"explanation":"ØªØ­Ø¸Ø± C39 Ø¹Ù„Ù‰ Ø§Ù„Ø´Ø§Ø­Ù†Ø§Øª Ø§Ù„ØªØ¬Ø§ÙˆØ² Ø¨ØºØ¶ Ø§Ù„Ù†Ø¸Ø± Ø¹Ù† Ø³Ø±Ø¹Ø© Ø§Ù„Ù…Ø±ÙƒØ¨Ø© Ø§Ù„Ù…Ù‚ØªØ±Ø¨Ø© Ù…Ù†Ù‡Ø§. Ù„Ø§ Ø§Ø³ØªØ«Ù†Ø§Ø¡ Ù„Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ø¨Ø·ÙŠØ¦Ø©."}}},
-  {"question_id":"C39_Q07","type":"IS_IT_ALLOWED","difficulty":"HARD","is_critical":true,"show_sign":true,"i18n":{"NL":{"question":"Mag een vrachtwagen bij bord C39 een personenwagen inhalen die zeer langzaam rijdt?","choices":[{"text":"Nee, C39 verbiedt vrachtwagens om welk voertuig dan ook in te halen in de geldigheidszone","is_correct":true},{"text":"Ja, C39 verbiedt alleen het inhalen van andere vrachtwagens","is_correct":false}],"explanation":"C39 verbiedt vrachtwagens om te halen van alle voertuigen, niet alleen zware voertuigen. Er is geen uitzondering voor personenwagens. Dit is een ernstige verkeersovertreding."},"EN":{"question":"May a lorry at sign C39 overtake a private car driving very slowly?","choices":[{"text":"No, C39 prohibits lorries from overtaking any vehicle in the validity zone","is_correct":true},{"text":"Yes, C39 only prohibits overtaking other lorries","is_correct":false}],"explanation":"C39 prohibits lorries from overtaking all vehicles, not just heavy vehicles. There is no exception for private cars. This is a serious traffic offence."},"FR":{"question":"Un camion peut-il au panneau C39 depasser une voiture particuliere roulant tres lentement ?","choices":[{"text":"Non, C39 interdit aux camions de depasser tout vehicule dans la zone de validite","is_correct":true},{"text":"Oui, C39 interdit uniquement de depasser d autres camions","is_correct":false}],"explanation":"C39 interdit aux camions de depasser tous les vehicules pas seulement les vehicules lourds. Il n y a pas d exception pour les voitures particulieres. Il s agit d une infraction grave au code de la route."},"AR":{"question":"Ù‡Ù„ ÙŠØ¬ÙˆØ² Ù„Ø´Ø§Ø­Ù†Ø© Ø¹Ù†Ø¯ Ù„Ø§ÙØªØ© C39 ØªØ¬Ø§ÙˆØ² Ø³ÙŠØ§Ø±Ø© Ø®Ø§ØµØ© ØªØ³ÙŠØ± Ø¨Ø¨Ø·Ø¡ Ø´Ø¯ÙŠØ¯ØŸ","choices":[{"text":"Ù„Ø§ØŒ ØªØ­Ø¸Ø± C39 Ø¹Ù„Ù‰ Ø§Ù„Ø´Ø§Ø­Ù†Ø§Øª ØªØ¬Ø§ÙˆØ² Ø§ÙŠ Ù…Ø±ÙƒØ¨Ø© ÙÙŠ Ù…Ù†Ø·Ù‚Ø© Ø§Ù„ØµÙ„Ø§Ø­ÙŠØ©","is_correct":true},{"text":"Ù†Ø¹Ù…ØŒ ØªØ­Ø¸Ø± C39 ÙÙ‚Ø· ØªØ¬Ø§ÙˆØ² Ø´Ø§Ø­Ù†Ø§Øª Ø§Ø®Ø±Ù‰","is_correct":false}],"explanation":"ØªØ­Ø¸Ø± C39 Ø¹Ù„Ù‰ Ø§Ù„Ø´Ø§Ø­Ù†Ø§Øª ØªØ¬Ø§ÙˆØ² Ø¬Ù…ÙŠØ¹ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª ÙˆÙ„ÙŠØ³ ÙÙ‚Ø· Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ø«Ù‚ÙŠÙ„Ø©. Ù„Ø§ Ø§Ø³ØªØ«Ù†Ø§Ø¡ Ù„Ù„Ø³ÙŠØ§Ø±Ø§Øª Ø§Ù„Ø®Ø§ØµØ©. Ù‡Ø°Ù‡ Ù…Ø®Ø§Ù„ÙØ© Ù…Ø±ÙˆØ±ÙŠØ© Ø®Ø·ÙŠØ±Ø©."}}},
-  {"question_id":"C39_Q08","type":"IS_IT_ALLOWED","difficulty":"HARD","is_critical":true,"show_sign":true,"i18n":{"NL":{"question":"Mag een bestelwagen van 2 ton bij bord C39 inhalen?","choices":[{"text":"Ja, C39 geldt voor zware voertuigen boven 3,5 ton; een bestelwagen van 2 ton valt niet onder het inhaalbod","is_correct":true},{"text":"Nee, alle bedrijfsvoertuigen zijn verboden om in te halen bij C39","is_correct":false}],"explanation":"C39 richt zich op motorvoertuigen voor goederenvervoer boven 3,5 ton MTM. Een bestelwagen van 2 ton valt onder die grens en is niet onderworpen aan het inhaalbod. Dit is een ernstige verkeersovertreding voor vrachtwagens boven 3,5 ton die het bord negeren."},"EN":{"question":"May a van of 2 tonnes at sign C39 overtake?","choices":[{"text":"Yes, C39 applies to heavy vehicles above 3.5 tonnes; a 2-tonne van does not fall under the overtaking prohibition","is_correct":true},{"text":"No, all commercial vehicles are prohibited from overtaking at C39","is_correct":false}],"explanation":"C39 targets motor vehicles for goods transport above 3.5 tonnes MAM. A 2-tonne van falls below that threshold and is not subject to the overtaking prohibition. This is a serious traffic offence for lorries above 3.5 tonnes who ignore the sign."},"FR":{"question":"Un camionnette de 2 tonnes peut-elle au panneau C39 depasser ?","choices":[{"text":"Oui, C39 s applique aux vehicules lourds de plus de 3,5 tonnes; un camionnette de 2 tonnes ne tombe pas sous l interdiction de depassement","is_correct":true},{"text":"Non, tous les vehicules commerciaux sont interdits de depasser au panneau C39","is_correct":false}],"explanation":"C39 cible les vehicules a moteur pour le transport de marchandises de plus de 3,5 tonnes PMA. Un camionnette de 2 tonnes est en dessous de ce seuil et n est pas soumis a l interdiction de depassement. Il s agit d une infraction grave au code de la route pour les camions de plus de 3,5 tonnes qui ignorent le panneau."},"AR":{"question":"Ù‡Ù„ ÙŠØ¬ÙˆØ² Ù„Ø´Ø§Ø­Ù†Ø© Ø®ÙÙŠÙØ© Ø¨ÙˆØ²Ù† 2 Ø·Ù† Ø¹Ù†Ø¯ Ù„Ø§ÙØªØ© C39 Ø§Ù„ØªØ¬Ø§ÙˆØ²ØŸ","choices":[{"text":"Ù†Ø¹Ù…ØŒ ØªØ³Ø±ÙŠ C39 Ø¹Ù„Ù‰ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ø«Ù‚ÙŠÙ„Ø© ÙÙˆÙ‚ 3.5 Ø·Ù†Ø› Ø§Ù„Ø´Ø§Ø­Ù†Ø© Ø§Ù„Ø®ÙÙŠÙØ© Ø¨ÙˆØ²Ù† 2 Ø·Ù† Ù„Ø§ ØªÙ‚Ø¹ ØªØ­Øª Ø­Ø¸Ø± Ø§Ù„ØªØ¬Ø§ÙˆØ²","is_correct":true},{"text":"Ù„Ø§ØŒ Ø¬Ù…ÙŠØ¹ Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„ØªØ¬Ø§Ø±ÙŠØ© Ù…Ø­Ø¸ÙˆØ±Ø© Ù…Ù† Ø§Ù„ØªØ¬Ø§ÙˆØ² Ø¹Ù†Ø¯ C39","is_correct":false}],"explanation":"ØªØ³ØªÙ‡Ø¯Ù C39 Ø§Ù„Ù…Ø±ÙƒØ¨Ø§Øª Ø§Ù„Ø¢Ù„ÙŠØ© Ù„Ù†Ù‚Ù„ Ø§Ù„Ø¨Ø¶Ø§Ø¦Ø¹ ÙÙˆÙ‚ 3.5 Ø·Ù† ÙƒØªÙ„Ø©. Ø§Ù„Ø´Ø§Ø­Ù†Ø© Ø§Ù„Ø®ÙÙŠÙØ© Ø¨ÙˆØ²Ù† 2 Ø·Ù† Ø¯ÙˆÙ† Ù‡Ø°Ø§ Ø§Ù„Ø­Ø¯ ÙˆØºÙŠØ± Ø®Ø§Ø¶Ø¹Ø© Ù„Ø­Ø¸Ø± Ø§Ù„ØªØ¬Ø§ÙˆØ². Ù‡Ø°Ù‡ Ù…Ø®Ø§Ù„ÙØ© Ù…Ø±ÙˆØ±ÙŠØ© Ø®Ø·ÙŠØ±Ø© Ù„Ù„Ø´Ø§Ø­Ù†Ø§Øª ÙÙˆÙ‚ 3.5 Ø·Ù† Ø§Ù„ØªÙŠ ØªØªØ¬Ø§Ù‡Ù„ Ø§Ù„Ù„Ø§ÙØªØ©."}}}
+[
+  {
+    "question_id": "C39_Q01",
+    "type": "WHAT_DOES_IT_MEAN",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat betekent dit verkeersbord?",
+        "choices": [
+          {
+            "text": "Bestuurders van voertuigen voor goederenvervoer boven 3.500 kg mogen vanaf hier tot het volgende kruispunt niet links inhalen",
+            "is_correct": true
+          },
+          {
+            "text": "Alle bestuurders mogen vanaf hier niet meer inhalen",
+            "is_correct": false
+          },
+          {
+            "text": "Alleen personenwagens mogen vanaf hier niet meer inhalen",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dit bord verbiedt bestuurders van voertuigen of slepen gebruikt voor het vervoer van zaken, met een maximale toegelaten massa van meer dan 3.500 kg, om vanaf hier tot het volgende kruispunt links in te halen."
+      },
+      "EN": {
+        "question": "What does this traffic sign mean?",
+        "choices": [
+          {
+            "text": "Drivers of goods vehicles over 3,500 kg may not overtake on the left from here until the next intersection",
+            "is_correct": true
+          },
+          {
+            "text": "All drivers may no longer overtake from here",
+            "is_correct": false
+          },
+          {
+            "text": "Only private cars may no longer overtake from here",
+            "is_correct": false
+          }
+        ],
+        "explanation": "This sign prohibits drivers of vehicles or combinations used for the transport of goods with a maximum authorised mass over 3,500 kg from overtaking on the left from here until the next intersection."
+      },
+      "FR": {
+        "question": "Que signifie ce panneau ?",
+        "choices": [
+          {
+            "text": "Les conducteurs de véhicules de transport de marchandises de plus de 3 500 kg ne peuvent pas dépasser par la gauche à partir d’ici jusqu’au prochain carrefour",
+            "is_correct": true
+          },
+          {
+            "text": "Tous les conducteurs ne peuvent plus dépasser à partir d’ici",
+            "is_correct": false
+          },
+          {
+            "text": "Seules les voitures particulières ne peuvent plus dépasser à partir d’ici",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ce panneau interdit aux conducteurs de véhicules ou trains de véhicules utilisés pour le transport de marchandises dont la masse maximale autorisée dépasse 3 500 kg de dépasser par la gauche à partir d’ici jusqu’au prochain carrefour."
+      },
+      "AR": {
+        "question": "ما معنى هذه العلامة المرورية؟",
+        "choices": [
+          {
+            "text": "يُمنع على مركبات نقل البضائع التي تتجاوز 3500 كغ التجاوز من اليسار من هنا حتى التقاطع التالي",
+            "is_correct": true
+          },
+          {
+            "text": "يُمنع على جميع السائقين التجاوز من هنا",
+            "is_correct": false
+          },
+          {
+            "text": "يُمنع فقط على سيارات الركاب التجاوز من هنا",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تعني هذه العلامة أنه من هنا حتى التقاطع التالي يُمنع على سائقي مركبات أو مقطورات نقل البضائع التي تتجاوز كتلتها القصوى 3500 كغ التجاوز من الجهة اليسرى."
+      }
+    }
+  },
+  {
+    "question_id": "C39_Q02",
+    "type": "HAZARD_IDENTIFICATION",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Op welke bestuurders is dit verbod van toepassing?",
+        "choices": [
+          {
+            "text": "Op bestuurders van voertuigen of slepen voor goederenvervoer van meer dan 3.500 kg",
+            "is_correct": true
+          },
+          {
+            "text": "Op alle bestuurders van zware voertuigen",
+            "is_correct": false
+          },
+          {
+            "text": "Op alle bestuurders van voertuigen met meer dan twee wielen",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Het verbod geldt specifiek voor bestuurders van voertuigen of slepen gebruikt voor het vervoer van zaken waarvan de maximale toegelaten massa meer dan 3.500 kg bedraagt."
+      },
+      "EN": {
+        "question": "To which drivers does this prohibition apply?",
+        "choices": [
+          {
+            "text": "To drivers of vehicles or combinations used for goods transport over 3,500 kg",
+            "is_correct": true
+          },
+          {
+            "text": "To all drivers of heavy vehicles",
+            "is_correct": false
+          },
+          {
+            "text": "To all drivers of vehicles with more than two wheels",
+            "is_correct": false
+          }
+        ],
+        "explanation": "The prohibition specifically applies to drivers of vehicles or combinations used for the transport of goods whose maximum authorised mass exceeds 3,500 kg."
+      },
+      "FR": {
+        "question": "À quels conducteurs cette interdiction s’applique-t-elle ?",
+        "choices": [
+          {
+            "text": "Aux conducteurs de véhicules ou trains de véhicules de transport de marchandises de plus de 3 500 kg",
+            "is_correct": true
+          },
+          {
+            "text": "À tous les conducteurs de véhicules lourds",
+            "is_correct": false
+          },
+          {
+            "text": "À tous les conducteurs de véhicules à plus de deux roues",
+            "is_correct": false
+          }
+        ],
+        "explanation": "L’interdiction s’applique spécifiquement aux conducteurs de véhicules ou trains de véhicules utilisés pour le transport de marchandises dont la masse maximale autorisée dépasse 3 500 kg."
+      },
+      "AR": {
+        "question": "على أي سائقين ينطبق هذا الحظر؟",
+        "choices": [
+          {
+            "text": "على سائقي مركبات أو مقطورات نقل البضائع التي تتجاوز 3500 كغ",
+            "is_correct": true
+          },
+          {
+            "text": "على جميع سائقي المركبات الثقيلة",
+            "is_correct": false
+          },
+          {
+            "text": "على جميع سائقي المركبات التي لها أكثر من عجلتين",
+            "is_correct": false
+          }
+        ],
+        "explanation": "ينطبق هذا الحظر تحديدًا على سائقي المركبات أو المقطورات المستخدمة لنقل البضائع والتي تتجاوز كتلتها القصوى المسموح بها 3500 كغ."
+      }
+    }
+  },
+  {
+    "question_id": "C39_Q03",
+    "type": "HAZARD_IDENTIFICATION",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat wordt door dit bord verboden?",
+        "choices": [
+          {
+            "text": "Links inhalen door bepaalde voertuigen voor goederenvervoer",
+            "is_correct": true
+          },
+          {
+            "text": "Elk gebruik van de weg door goederenvoertuigen",
+            "is_correct": false
+          },
+          {
+            "text": "Links inhalen door alle bestuurders",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dit bord verbiedt niet de toegang, maar wel het links inhalen door een welbepaalde categorie voertuigen."
+      },
+      "EN": {
+        "question": "What is prohibited by this sign?",
+        "choices": [
+          {
+            "text": "Overtaking on the left by certain goods vehicles",
+            "is_correct": true
+          },
+          {
+            "text": "Any use of the road by goods vehicles",
+            "is_correct": false
+          },
+          {
+            "text": "Overtaking on the left by all drivers",
+            "is_correct": false
+          }
+        ],
+        "explanation": "This sign does not prohibit access, but overtaking on the left by a specific category of vehicles."
+      },
+      "FR": {
+        "question": "Que prohibe ce panneau ?",
+        "choices": [
+          {
+            "text": "Le dépassement par la gauche par certains véhicules de transport de marchandises",
+            "is_correct": true
+          },
+          {
+            "text": "Toute utilisation de la route par les véhicules de marchandises",
+            "is_correct": false
+          },
+          {
+            "text": "Le dépassement par la gauche par tous les conducteurs",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ce panneau n’interdit pas l’accès, mais le dépassement par la gauche par une catégorie bien déterminée de véhicules."
+      },
+      "AR": {
+        "question": "ما الذي تحظره هذه العلامة؟",
+        "choices": [
+          {
+            "text": "التجاوز من اليسار من قبل فئة معينة من مركبات نقل البضائع",
+            "is_correct": true
+          },
+          {
+            "text": "استخدام الطريق بالكامل من قبل مركبات نقل البضائع",
+            "is_correct": false
+          },
+          {
+            "text": "التجاوز من اليسار من قبل جميع السائقين",
+            "is_correct": false
+          }
+        ],
+        "explanation": "هذه العلامة لا تمنع الدخول إلى الطريق، بل تمنع التجاوز من الجهة اليسرى لفئة محددة من المركبات."
+      }
+    }
+  },
+  {
+    "question_id": "C39_Q04",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U bestuurt een voertuig voor goederenvervoer van meer dan 3.500 kg en ziet dit bord. Wat doet u?",
+        "choices": [
+          {
+            "text": "Niet links inhalen tot aan het volgende kruispunt",
+            "is_correct": true
+          },
+          {
+            "text": "Alleen personenwagens links inhalen",
+            "is_correct": false
+          },
+          {
+            "text": "Links inhalen als de weg vrij lijkt",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Voor deze categorie voertuigen geldt vanaf het bord tot aan het volgende kruispunt een verbod om links in te halen."
+      },
+      "EN": {
+        "question": "You are driving a goods vehicle of more than 3,500 kg and see this sign. What should you do?",
+        "choices": [
+          {
+            "text": "Do not overtake on the left until the next intersection",
+            "is_correct": true
+          },
+          {
+            "text": "Only overtake private cars on the left",
+            "is_correct": false
+          },
+          {
+            "text": "Overtake on the left if the road seems clear",
+            "is_correct": false
+          }
+        ],
+        "explanation": "For this category of vehicles, overtaking on the left is prohibited from the sign until the next intersection."
+      },
+      "FR": {
+        "question": "Vous conduisez un véhicule de transport de marchandises de plus de 3 500 kg et voyez ce panneau. Que devez-vous faire ?",
+        "choices": [
+          {
+            "text": "Ne pas dépasser par la gauche jusqu’au prochain carrefour",
+            "is_correct": true
+          },
+          {
+            "text": "Dépasser seulement les voitures particulières par la gauche",
+            "is_correct": false
+          },
+          {
+            "text": "Dépasser par la gauche si la route semble libre",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Pour cette catégorie de véhicules, le dépassement par la gauche est interdit depuis le panneau jusqu’au prochain carrefour."
+      },
+      "AR": {
+        "question": "أنت تقود مركبة لنقل البضائع تزيد عن 3500 كغ وترى هذه العلامة. ماذا ينبغي أن تفعل؟",
+        "choices": [
+          {
+            "text": "لا تتجاوز من اليسار حتى التقاطع التالي",
+            "is_correct": true
+          },
+          {
+            "text": "تجاوز فقط سيارات الركاب من اليسار",
+            "is_correct": false
+          },
+          {
+            "text": "تجاوز من اليسار إذا بدا الطريق خالياً",
+            "is_correct": false
+          }
+        ],
+        "explanation": "بالنسبة لهذه الفئة من المركبات، يُمنع التجاوز من الجهة اليسرى من العلامة حتى التقاطع التالي."
+      }
+    }
+  },
+  {
+    "question_id": "C39_Q05",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Tot waar blijft dit verbod gelden?",
+        "choices": [
+          {
+            "text": "Tot en met het volgende kruispunt",
+            "is_correct": true
+          },
+          {
+            "text": "Alleen over de eerstvolgende 100 meter",
+            "is_correct": false
+          },
+          {
+            "text": "Tot het einde van de hele weg",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Volgens de betekenis van C39 blijft het verbod gelden vanaf het bord tot en met het volgende kruispunt."
+      },
+      "EN": {
+        "question": "How far does this prohibition remain in force?",
+        "choices": [
+          {
+            "text": "Until and including the next intersection",
+            "is_correct": true
+          },
+          {
+            "text": "Only for the next 100 metres",
+            "is_correct": false
+          },
+          {
+            "text": "Until the end of the whole road",
+            "is_correct": false
+          }
+        ],
+        "explanation": "According to the meaning of C39, the prohibition applies from the sign until and including the next intersection."
+      },
+      "FR": {
+        "question": "Jusqu’où cette interdiction reste-t-elle valable ?",
+        "choices": [
+          {
+            "text": "Jusqu’au prochain carrefour inclus",
+            "is_correct": true
+          },
+          {
+            "text": "Seulement sur les 100 prochains mètres",
+            "is_correct": false
+          },
+          {
+            "text": "Jusqu’à la fin de toute la route",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Selon la signification du C39, l’interdiction vaut à partir du panneau jusqu’au prochain carrefour inclus."
+      },
+      "AR": {
+        "question": "حتى أين يبقى هذا الحظر سارياً؟",
+        "choices": [
+          {
+            "text": "حتى التقاطع التالي بما فيه",
+            "is_correct": true
+          },
+          {
+            "text": "فقط خلال المئة متر التالية",
+            "is_correct": false
+          },
+          {
+            "text": "حتى نهاية الطريق بالكامل",
+            "is_correct": false
+          }
+        ],
+        "explanation": "وفق معنى C39 يبقى الحظر سارياً من العلامة حتى التقاطع التالي بما فيه."
+      }
+    }
+  },
+  {
+    "question_id": "C39_Q06",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Mag een gewone personenwagen links inhalen op een weg met dit bord?",
+        "choices": [
+          {
+            "text": "Ja, dit bord richt zich op een specifieke categorie goederenvoertuigen",
+            "is_correct": true
+          },
+          {
+            "text": "Nee, dit bord verbiedt links inhalen voor iedereen",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dit verbod is niet algemeen. Het richt zich op een welbepaalde categorie voertuigen voor goederenvervoer."
+      },
+      "EN": {
+        "question": "May an ordinary passenger car overtake on the left on a road with this sign?",
+        "choices": [
+          {
+            "text": "Yes, this sign targets a specific category of goods vehicles",
+            "is_correct": true
+          },
+          {
+            "text": "No, this sign prohibits overtaking on the left for everyone",
+            "is_correct": false
+          }
+        ],
+        "explanation": "This is not a general prohibition. It targets a specific category of goods vehicles."
+      },
+      "FR": {
+        "question": "Une voiture particulière peut-elle dépasser par la gauche sur une route avec ce panneau ?",
+        "choices": [
+          {
+            "text": "Oui, ce panneau vise une catégorie précise de véhicules de transport de marchandises",
+            "is_correct": true
+          },
+          {
+            "text": "Non, ce panneau interdit le dépassement par la gauche à tout le monde",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Il ne s’agit pas d’une interdiction générale. Ce panneau vise une catégorie bien déterminée de véhicules de transport de marchandises."
+      },
+      "AR": {
+        "question": "هل يجوز لسيارة ركاب عادية التجاوز من اليسار على طريق يحمل هذه العلامة؟",
+        "choices": [
+          {
+            "text": "نعم، هذه العلامة تستهدف فئة محددة من مركبات نقل البضائع",
+            "is_correct": true
+          },
+          {
+            "text": "لا، هذه العلامة تمنع التجاوز من اليسار على الجميع",
+            "is_correct": false
+          }
+        ],
+        "explanation": "هذا الحظر ليس عامًا، بل يستهدف فئة محددة من مركبات نقل البضائع."
+      }
+    }
+  },
+  {
+    "question_id": "C39_Q07",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "De weg lijkt leeg. Mag een bestuurder van een goederenvoertuig van meer dan 3.500 kg toch links inhalen?",
+        "choices": [
+          {
+            "text": "Nee, het verbod blijft gelden ook als de weg leeg lijkt",
+            "is_correct": true
+          },
+          {
+            "text": "Ja, als er geen verkeer is mag het",
+            "is_correct": false
+          }
+        ],
+        "explanation": "De zichtbare verkeerssituatie verandert de betekenis van het bord niet. Voor deze voertuigcategorie blijft het links inhalen verboden."
+      },
+      "EN": {
+        "question": "The road looks empty. May a driver of a goods vehicle over 3,500 kg still overtake on the left?",
+        "choices": [
+          {
+            "text": "No, the prohibition still applies even if the road looks empty",
+            "is_correct": true
+          },
+          {
+            "text": "Yes, if there is no traffic it is allowed",
+            "is_correct": false
+          }
+        ],
+        "explanation": "The visible traffic situation does not change the meaning of the sign. For this vehicle category, overtaking on the left remains prohibited."
+      },
+      "FR": {
+        "question": "La route semble vide. Un conducteur de véhicule de marchandises de plus de 3 500 kg peut-il quand même dépasser par la gauche ?",
+        "choices": [
+          {
+            "text": "Non, l’interdiction reste valable même si la route semble vide",
+            "is_correct": true
+          },
+          {
+            "text": "Oui, s’il n’y a pas de circulation c’est permis",
+            "is_correct": false
+          }
+        ],
+        "explanation": "La situation visible sur la route ne change pas la signification du panneau. Pour cette catégorie de véhicules, le dépassement par la gauche reste interdit."
+      },
+      "AR": {
+        "question": "يبدو الطريق خالياً. هل يجوز لسائق مركبة نقل بضائع تزيد عن 3500 كغ رغم ذلك أن يتجاوز من اليسار؟",
+        "choices": [
+          {
+            "text": "لا، يبقى الحظر سارياً حتى لو بدا الطريق خالياً",
+            "is_correct": true
+          },
+          {
+            "text": "نعم، إذا لم تكن هناك حركة مرور فهذا مسموح",
+            "is_correct": false
+          }
+        ],
+        "explanation": "الوضع الظاهر على الطريق لا يغيّر معنى العلامة. وبالنسبة لهذه الفئة من المركبات يبقى التجاوز من اليسار ممنوعًا."
+      }
+    }
+  },
+  {
+    "question_id": "C39_Q08",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Mag een bestuurder van een goederenvoertuig van meer dan 3.500 kg nog links inhalen na het volgende kruispunt, als geen nieuw verbodsbord volgt?",
+        "choices": [
+          {
+            "text": "Ja, zonder nieuw verbod eindigt de geldigheid na het volgende kruispunt",
+            "is_correct": true
+          },
+          {
+            "text": "Nee, het verbod blijft automatisch gelden op de hele verdere weg",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Volgens de betekenis van C39 geldt het verbod tot en met het volgende kruispunt. Zonder nieuw verbodsbord loopt het daarna niet automatisch verder."
+      },
+      "EN": {
+        "question": "May a driver of a goods vehicle over 3,500 kg overtake on the left after the next intersection if no new prohibition sign follows?",
+        "choices": [
+          {
+            "text": "Yes, without a new sign the prohibition ends after the next intersection",
+            "is_correct": true
+          },
+          {
+            "text": "No, the prohibition automatically continues on the whole road",
+            "is_correct": false
+          }
+        ],
+        "explanation": "According to the meaning of C39, the prohibition applies until and including the next intersection. Without a new sign, it does not continue automatically beyond that point."
+      },
+      "FR": {
+        "question": "Un conducteur de véhicule de marchandises de plus de 3 500 kg peut-il encore dépasser par la gauche après le prochain carrefour s’il n’y a pas de nouveau panneau d’interdiction ?",
+        "choices": [
+          {
+            "text": "Oui, sans nouveau panneau l’interdiction prend fin après le prochain carrefour",
+            "is_correct": true
+          },
+          {
+            "text": "Non, l’interdiction continue automatiquement sur toute la route",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Selon la signification du C39, l’interdiction vaut jusqu’au prochain carrefour inclus. Sans nouveau panneau, elle ne continue pas automatiquement au-delà."
+      },
+      "AR": {
+        "question": "هل يجوز لسائق مركبة نقل بضائع تزيد عن 3500 كغ أن يتجاوز من اليسار بعد التقاطع التالي إذا لم توجد علامة حظر جديدة؟",
+        "choices": [
+          {
+            "text": "نعم، من دون علامة جديدة ينتهي الحظر بعد التقاطع التالي",
+            "is_correct": true
+          },
+          {
+            "text": "لا، يستمر الحظر تلقائيًا على كامل الطريق بعد ذلك",
+            "is_correct": false
+          }
+        ],
+        "explanation": "وفق معنى C39 يبقى الحظر سارياً حتى التقاطع التالي بما فيه. وإذا لم توجد علامة جديدة فلا يستمر بعده تلقائيًا."
+      }
+    }
+  }
 ]

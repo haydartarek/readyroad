@@ -2,7 +2,6 @@
 package com.readyroad.readyroadbackend.controller;
 
 import com.readyroad.readyroadbackend.dto.response.HomeStatsResponse;
-import com.readyroad.readyroadbackend.service.CategoryService;
 import com.readyroad.readyroadbackend.service.LessonService;
 import com.readyroad.readyroadbackend.service.TrafficSignService;
 import lombok.RequiredArgsConstructor;
@@ -19,7 +18,6 @@ public class HomeController {
 
     private final TrafficSignService trafficSignService;
     private final LessonService lessonService;
-    private final CategoryService categoryService;
 
     @GetMapping("/")
     public String home() {
@@ -32,7 +30,7 @@ public class HomeController {
                 EXAM_QUESTION_COUNT,
                 trafficSignService.countActiveSigns(),
                 lessonService.countActiveLessons(),
-                categoryService.getAllPublicTrafficSignCategories().size(),
+                trafficSignService.countActiveDisplayGroups(),
                 SUPPORTED_LANGUAGES_COUNT));
     }
 }

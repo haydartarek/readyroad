@@ -1,9 +1,14 @@
 package com.readyroad.readyroadbackend.controller;
 
 import com.readyroad.readyroadbackend.domain.entity.User;
+import com.readyroad.readyroadbackend.domain.enums.AuthProvider;
+import com.readyroad.readyroadbackend.domain.repository.AuthIdentityRepository;
 import com.readyroad.readyroadbackend.domain.repository.UserRepository;
+import com.readyroad.readyroadbackend.dto.GoogleAuthExchangeRequest;
 import com.readyroad.readyroadbackend.dto.UpdateUserProfileRequest;
 import com.readyroad.readyroadbackend.dto.UserProfileResponse;
+import com.readyroad.readyroadbackend.service.BackendMessageService;
+import com.readyroad.readyroadbackend.service.SocialAuthService;
 import com.readyroad.readyroadbackend.util.AuthenticationUtil;
 import jakarta.validation.Valid;
 import io.swagger.v3.oas.annotations.Operation;
@@ -20,6 +25,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -40,7 +46,10 @@ import java.util.Map;
 public class UserController {
 
     private final UserRepository userRepository;
+    private final AuthIdentityRepository authIdentityRepository;
     private final AuthenticationUtil authenticationUtil;
+    private final SocialAuthService socialAuthService;
+    private final BackendMessageService messages;
 
     @GetMapping("/me")
     @Operation(
@@ -75,10 +84,22 @@ public class UserController {
         User user = userRepository.findById(userId)
             .orElseThrow(() -> {
                 log.error("User not found: {}", userId);
-                return new RuntimeException("User not found");
+                return new RuntimeException(messages.get("auth.user_not_found"));
             });
 
         log.info("User profile retrieved: {} ({})", user.getUsername(), user.getRole());
+        return ResponseEntity.ok(toUserProfileResponse(user));
+    }
+
+    @PostMapping("/me/auth-identities/google/link")
+    public ResponseEntity<UserProfileResponse> linkGoogleIdentity(
+        Authentication authentication,
+        @Valid @RequestBody GoogleAuthExchangeRequest request
+    ) {
+        Long userId = authenticationUtil.extractUserId(authentication);
+        log.info("POST /api/users/me/auth-identities/google/link - userId: {}", userId);
+
+        User user = socialAuthService.linkGoogleToCurrentUser(userId, request);
         return ResponseEntity.ok(toUserProfileResponse(user));
     }
 
@@ -112,17 +133,17 @@ public class UserController {
         User user = userRepository.findById(userId)
             .orElseThrow(() -> {
                 log.error("User not found: {}", userId);
-                return new RuntimeException("User not found");
+                return new RuntimeException(messages.get("auth.user_not_found"));
             });
 
         String normalizedFullName = request.fullName().trim().replaceAll("\\s+", " ");
         String normalizedEmail = request.email().trim().toLowerCase(Locale.ROOT);
 
         boolean emailChanged = !user.getEmail().equalsIgnoreCase(normalizedEmail);
-        if (emailChanged && userRepository.existsByEmail(normalizedEmail)) {
+        if (emailChanged && userRepository.existsByEmailIgnoreCase(normalizedEmail)) {
             log.warn("Profile update rejected: email already in use for userId={}, email={}", userId, normalizedEmail);
             return ResponseEntity.status(HttpStatus.CONFLICT)
-                .body(Map.of("message", "Email is already in use"));
+                .body(Map.of("message", messages.get("user.email_in_use")));
         }
 
         user.setFullName(normalizedFullName);
@@ -161,6 +182,11 @@ public class UserController {
     }
 
     private UserProfileResponse toUserProfileResponse(User user) {
+        var linkedProviders = authIdentityRepository.findByUserId(user.getId()).stream()
+            .map(identity -> identity.getProvider().name())
+            .sorted()
+            .toList();
+
         return UserProfileResponse.builder()
             .id(user.getId())
             .username(user.getUsername())
@@ -169,6 +195,8 @@ public class UserController {
             .role(user.getRole().name())
             .isActive(user.getIsActive())
             .createdAt(user.getCreatedAt())
+            .linkedProviders(linkedProviders)
+            .googleLinked(linkedProviders.contains(AuthProvider.GOOGLE.name()))
             .build();
     }
 }

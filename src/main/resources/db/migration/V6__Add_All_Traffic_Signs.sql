@@ -1,10 +1,8 @@
-﻿-- V6__Add_All_Traffic_Signs.sql
+-- V6__Add_All_Traffic_Signs.sql
 -- إضافة جميع العلامات المرورية البلجيكية
 -- Belgian Traffic Signs - Complete Database
 -- Generated: 2026-01-14 15:02:22
 -- Total Signs: 202
-
-USE readyroad_prod;
 
 -- ========================================
 -- إدراج فئات العلامات المرورية
@@ -81,7 +79,7 @@ INSERT INTO traffic_signs (sign_code, category_id, name_ar, name_en, name_nl, na
   'Road leads to quay or waterside',
   'Uitweg op kaai of oever.',
   'Route menant au quai ou à la rive',
-  'assets/traffic_signs/danger_signs/A11.png',
+  'images/signs/danger_signs/A11 Uitweg op een kaai of een oever.png',
   TRUE,
   NOW(),
   NOW()
@@ -98,7 +96,7 @@ INSERT INTO traffic_signs (sign_code, category_id, name_ar, name_en, name_nl, na
   'Transverse depression or hump',
   'Dwarse uitholling of ezelsrug.',
   'Dépression transversale ou dos d''''âne',
-  'assets/traffic_signs/danger_signs/A13.png',
+  'images/signs/danger_signs/A13 Dwarse uitholling of ezelsrug.png',
   TRUE,
   NOW(),
   NOW()
@@ -115,7 +113,7 @@ INSERT INTO traffic_signs (sign_code, category_id, name_ar, name_en, name_nl, na
   'Verhoogde inrichting.',
   'Verhoogde inrichting.',
   'Verhoogde inrichting.',
-  'assets/traffic_signs/danger_signs/A14.png',
+  'images/signs/danger_signs/A14 Verhoogde inrichting.png',
   TRUE,
   NOW(),
   NOW()
@@ -132,7 +130,7 @@ INSERT INTO traffic_signs (sign_code, category_id, name_ar, name_en, name_nl, na
   'Gladde rijbaan - Slipgevaar.',
   'Gladde rijbaan - Slipgevaar.',
   'Gladde rijbaan - Slipgevaar.',
-  'assets/traffic_signs/danger_signs/A15.png',
+  'images/signs/danger_signs/A15 Glibberige rijbaan.png',
   TRUE,
   NOW(),
   NOW()
@@ -149,7 +147,7 @@ INSERT INTO traffic_signs (sign_code, category_id, name_ar, name_en, name_nl, na
   'Kiezelprojectie',
   'Kiezelprojectie',
   'Kiezelprojectie',
-  'assets/traffic_signs/danger_signs/A17.png',
+  'images/signs/danger_signs/A17 Kiezelprojectie.png',
   TRUE,
   NOW(),
   NOW()
@@ -166,7 +164,7 @@ INSERT INTO traffic_signs (sign_code, category_id, name_ar, name_en, name_nl, na
   'Vallende stenen.',
   'Vallende stenen.',
   'Vallende stenen.',
-  'assets/traffic_signs/danger_signs/A19.png',
+  'images/signs/danger_signs/A19 Vallende stenen.png',
   TRUE,
   NOW(),
   NOW()
@@ -183,7 +181,7 @@ INSERT INTO traffic_signs (sign_code, category_id, name_ar, name_en, name_nl, na
   'Dangerous bend to the left',
   'Gevaarlijke bocht naar links.',
   'Virage dangereux à gauche',
-  'assets/traffic_signs/danger_signs/A1a.png',
+  'images/signs/danger_signs/A1a Gevaarlijke bocht naar links.png',
   TRUE,
   NOW(),
   NOW()
@@ -200,7 +198,7 @@ INSERT INTO traffic_signs (sign_code, category_id, name_ar, name_en, name_nl, na
   'Dangerous bend to the right',
   'Gevaarlijke bocht naar rechts.',
   'Virage dangereux à droite',
-  'assets/traffic_signs/danger_signs/A1b.png',
+  'images/signs/danger_signs/A1b Gevaarlijke bocht naar rechts.png',
   TRUE,
   NOW(),
   NOW()
@@ -217,7 +215,7 @@ INSERT INTO traffic_signs (sign_code, category_id, name_ar, name_en, name_nl, na
   'Dangerous double or multiple bends, first to the left',
   'Gevaarlijke dubbele of meer dan twee bochten, de eerste naar links.',
   'Virages dangereux, le premier à gauche',
-  'assets/traffic_signs/danger_signs/A1c.png',
+  'images/signs/danger_signs/A1c Gevaarlijke dubbele of meer dan twee bochten, de eerste naar links.png',
   TRUE,
   NOW(),
   NOW()
@@ -234,7 +232,7 @@ INSERT INTO traffic_signs (sign_code, category_id, name_ar, name_en, name_nl, na
   'Dangerous double or multiple bends, first to the right',
   'Gevaarlijke dubbele of meer dan twee bochten, de eerste naar rechts.',
   'Virages dangereux, le premier à droite',
-  'assets/traffic_signs/danger_signs/A1d.png',
+  'images/signs/danger_signs/A1d Gevaarlijke dubbele of meer dan twee bochten, de eerste naar rechts.png',
   TRUE,
   NOW(),
   NOW()
@@ -251,7 +249,7 @@ INSERT INTO traffic_signs (sign_code, category_id, name_ar, name_en, name_nl, na
   'Pedestrian crossing',
   'Oversteekplaats voor voetgangers.',
   'Passage pour piétons',
-  'assets/traffic_signs/danger_signs/A21.png',
+  'images/signs/danger_signs/A21 Oversteekplaats voor voetgangers.png',
   TRUE,
   NOW(),
   NOW()
@@ -268,7 +266,7 @@ INSERT INTO traffic_signs (sign_code, category_id, name_ar, name_en, name_nl, na
   'Children',
   'Opgelet kinderen.',
   'Enfants',
-  'assets/traffic_signs/danger_signs/A23.png',
+  'images/signs/danger_signs/A23 Plaats waar speciaal veel kinderen komen.png',
   TRUE,
   NOW(),
   NOW()
@@ -285,7 +283,7 @@ INSERT INTO traffic_signs (sign_code, category_id, name_ar, name_en, name_nl, na
   'Cyclists and moped riders',
   'Oversteekplaats voor fietsers en bromfietsers.',
   'Cyclistes et cyclomotoristes',
-  'assets/traffic_signs/danger_signs/A25.png',
+  'images/signs/danger_signs/A25 Oversteekplaats voor fietsers en bromfietsers.png',
   TRUE,
   NOW(),
   NOW()
@@ -302,7 +300,7 @@ INSERT INTO traffic_signs (sign_code, category_id, name_ar, name_en, name_nl, na
   'Overstekend groot wild.',
   'Overstekend groot wild.',
   'Overstekend groot wild.',
-  'assets/traffic_signs/danger_signs/A27.png',
+  'images/signs/danger_signs/A27 Overstekend groot wild.png',
   TRUE,
   NOW(),
   NOW()
@@ -319,7 +317,7 @@ INSERT INTO traffic_signs (sign_code, category_id, name_ar, name_en, name_nl, na
   'Overstekend vee.',
   'Overstekend vee.',
   'Overstekend vee.',
-  'assets/traffic_signs/danger_signs/A29.png',
+  'images/signs/danger_signs/A29 Overstekend vee.png',
   TRUE,
   NOW(),
   NOW()
@@ -336,7 +334,7 @@ INSERT INTO traffic_signs (sign_code, category_id, name_ar, name_en, name_nl, na
   'Dangerous descent',
   'Gevaarlijke daling.',
   'Descente dangereuse',
-  'assets/traffic_signs/danger_signs/A3.png',
+  'images/signs/danger_signs/A3 Gevaarlijke daling.png',
   TRUE,
   NOW(),
   NOW()
@@ -353,7 +351,7 @@ INSERT INTO traffic_signs (sign_code, category_id, name_ar, name_en, name_nl, na
   'Werken.',
   'Werken.',
   'Werken.',
-  'assets/traffic_signs/danger_signs/A31.png',
+  'images/signs/danger_signs/A31 Werken.png',
   TRUE,
   NOW(),
   NOW()
@@ -370,7 +368,7 @@ INSERT INTO traffic_signs (sign_code, category_id, name_ar, name_en, name_nl, na
   'Verkeerslichten.',
   'Verkeerslichten.',
   'Verkeerslichten.',
-  'assets/traffic_signs/danger_signs/A33.png',
+  'images/signs/danger_signs/A33 Verkeerslichten.png',
   TRUE,
   NOW(),
   NOW()
@@ -387,7 +385,7 @@ INSERT INTO traffic_signs (sign_code, category_id, name_ar, name_en, name_nl, na
   'Vliegtuigen op geringe hoogte.',
   'Vliegtuigen op geringe hoogte.',
   'Vliegtuigen op geringe hoogte.',
-  'assets/traffic_signs/danger_signs/A35.png',
+  'images/signs/danger_signs/A35 Vliegtuigen op geringe hoogte.png',
   TRUE,
   NOW(),
   NOW()
@@ -404,7 +402,7 @@ INSERT INTO traffic_signs (sign_code, category_id, name_ar, name_en, name_nl, na
   'Zijwind.',
   'Zijwind.',
   'Zijwind.',
-  'assets/traffic_signs/danger_signs/A37.png',
+  'images/signs/danger_signs/A37 Zijwind.png',
   TRUE,
   NOW(),
   NOW()
@@ -421,7 +419,7 @@ INSERT INTO traffic_signs (sign_code, category_id, name_ar, name_en, name_nl, na
   'Twee richtingsverkeer toegelaten na een stuk éénrichtingsverkeer.',
   'Twee richtingsverkeer toegelaten na een stuk éénrichtingsverkeer.',
   'Twee richtingsverkeer toegelaten na een stuk éénrichtingsverkeer.',
-  'assets/traffic_signs/danger_signs/A39.png',
+  'images/signs/danger_signs/A39 Twee richtingsverkeer toegelaten na een stuk éénrichtingsverkeer.png',
   TRUE,
   NOW(),
   NOW()
@@ -438,7 +436,7 @@ INSERT INTO traffic_signs (sign_code, category_id, name_ar, name_en, name_nl, na
   'Overweg met slagbomen.',
   'Overweg met slagbomen.',
   'Overweg met slagbomen.',
-  'assets/traffic_signs/danger_signs/A41.png',
+  'images/signs/danger_signs/A41 Overweg met slagbomen.png',
   TRUE,
   NOW(),
   NOW()
@@ -455,7 +453,7 @@ INSERT INTO traffic_signs (sign_code, category_id, name_ar, name_en, name_nl, na
   'Overweg zonder slagbomen.',
   'Overweg zonder slagbomen.',
   'Overweg zonder slagbomen.',
-  'assets/traffic_signs/danger_signs/A43.png',
+  'images/signs/danger_signs/A43 Overweg zonder slagbomen.png',
   TRUE,
   NOW(),
   NOW()
@@ -472,7 +470,7 @@ INSERT INTO traffic_signs (sign_code, category_id, name_ar, name_en, name_nl, na
   'Openbare weg kruist met een of meer in de rijbaan aangelegde sporen.',
   'Openbare weg kruist met een of meer in de rijbaan aangelegde sporen.',
   'Openbare weg kruist met een of meer in de rijbaan aangelegde sporen.',
-  'assets/traffic_signs/danger_signs/A49.png',
+  'images/signs/danger_signs/A49 Kruising van een openbare weg door een of meer in de rijbaan aangelegde sporen.png',
   TRUE,
   NOW(),
   NOW()
@@ -489,7 +487,7 @@ INSERT INTO traffic_signs (sign_code, category_id, name_ar, name_en, name_nl, na
   'Dangerous ascent',
   'Gevaarlijke helling.',
   'Montée dangereuse',
-  'assets/traffic_signs/danger_signs/A5.png',
+  'images/signs/danger_signs/A5 Steile helling.png',
   TRUE,
   NOW(),
   NOW()
@@ -506,7 +504,7 @@ INSERT INTO traffic_signs (sign_code, category_id, name_ar, name_en, name_nl, na
   'Opgelet file',
   'Opgelet file',
   'Opgelet file',
-  'assets/traffic_signs/danger_signs/A50.png',
+  'images/signs/danger_signs/A50 Opgelet file.png',
   TRUE,
   NOW(),
   NOW()
@@ -523,7 +521,7 @@ INSERT INTO traffic_signs (sign_code, category_id, name_ar, name_en, name_nl, na
   'Gevaar dat niet door een speciaal symbool wordt bepaald.',
   'Gevaar dat niet door een speciaal symbool wordt bepaald.',
   'Gevaar dat niet door een speciaal symbool wordt bepaald.',
-  'assets/traffic_signs/danger_signs/A51.png',
+  'images/signs/danger_signs/A51 Gevaar dat niet door een speciaal symbool wordt bepaald.png',
   TRUE,
   NOW(),
   NOW()
@@ -540,7 +538,7 @@ INSERT INTO traffic_signs (sign_code, category_id, name_ar, name_en, name_nl, na
   'Road narrowing',
   'Rijbaanversmalling',
   'Rétrécissement de chaussée',
-  'assets/traffic_signs/danger_signs/A7a.png',
+  'images/signs/danger_signs/A7a Rijbaanversmalling.png',
   TRUE,
   NOW(),
   NOW()
@@ -557,7 +555,7 @@ INSERT INTO traffic_signs (sign_code, category_id, name_ar, name_en, name_nl, na
   'Road narrowing',
   'Rijbaanversmalling links',
   'Rétrécissement de chaussée',
-  'assets/traffic_signs/danger_signs/A7b.png',
+  'images/signs/danger_signs/A7b Rijbaanversmalling langs links.png',
   TRUE,
   NOW(),
   NOW()
@@ -574,7 +572,7 @@ INSERT INTO traffic_signs (sign_code, category_id, name_ar, name_en, name_nl, na
   'Road narrowing',
   'Rijbaanversmalling rechts',
   'Rétrécissement de chaussée',
-  'assets/traffic_signs/danger_signs/A7c.png',
+  'images/signs/danger_signs/A7c Rijbaanversmalling langs rechts.png',
   TRUE,
   NOW(),
   NOW()
@@ -591,7 +589,7 @@ INSERT INTO traffic_signs (sign_code, category_id, name_ar, name_en, name_nl, na
   'Movable bridge',
   'Beweegbare brug.',
   'Pont mobile',
-  'assets/traffic_signs/danger_signs/A9.png',
+  'images/signs/danger_signs/A9 Beweegbare brug.png',
   TRUE,
   NOW(),
   NOW()
@@ -611,7 +609,7 @@ INSERT INTO traffic_signs (sign_code, category_id, name_ar, name_en, name_nl, na
   'Give way',
   'Voorrang verlenen',
   'Cédez le passage',
-  'assets/traffic_signs/priority_signs/B1.png',
+  'images/signs/priority_signs/B1 Voorrang verlenen.png',
   TRUE,
   NOW(),
   NOW()
@@ -628,7 +626,7 @@ INSERT INTO traffic_signs (sign_code, category_id, name_ar, name_en, name_nl, na
   'End of priority road',
   'Einde voorrangsweg',
   'Fin de route prioritaire',
-  'assets/traffic_signs/priority_signs/B11.png',
+  'images/signs/priority_signs/B11 Einde van voorrangsweg.png',
   TRUE,
   NOW(),
   NOW()
@@ -645,7 +643,7 @@ INSERT INTO traffic_signs (sign_code, category_id, name_ar, name_en, name_nl, na
   'Voorrang op de kruisende zijwegen',
   'Voorrang op de kruisende zijwegen',
   'Voorrang op de kruisende zijwegen',
-  'assets/traffic_signs/priority_signs/B15a.png',
+  'images/signs/priority_signs/B15a Voorrang op het eerstvolgende kruispunt - variant schuine zijweg links.png',
   TRUE,
   NOW(),
   NOW()
@@ -662,7 +660,7 @@ INSERT INTO traffic_signs (sign_code, category_id, name_ar, name_en, name_nl, na
   'Voorrang op kruisende zijweg',
   'Voorrang op kruisende zijweg',
   'Voorrang op kruisende zijweg',
-  'assets/traffic_signs/priority_signs/B15b.png',
+  'images/signs/priority_signs/B15b Voorrang op het eerstvolgende kruispunt - variant schuine zijweg rechts.png',
   TRUE,
   NOW(),
   NOW()
@@ -679,7 +677,7 @@ INSERT INTO traffic_signs (sign_code, category_id, name_ar, name_en, name_nl, na
   'Voorrang op kruisende zijweg',
   'Voorrang op kruisende zijweg',
   'Voorrang op kruisende zijweg',
-  'assets/traffic_signs/priority_signs/B15c.png',
+  'images/signs/priority_signs/B15c Voorrang op het eerstvolgende kruispunt.png',
   TRUE,
   NOW(),
   NOW()
@@ -696,7 +694,7 @@ INSERT INTO traffic_signs (sign_code, category_id, name_ar, name_en, name_nl, na
   'Voorrang op kruisende zijweg',
   'Voorrang op kruisende zijweg',
   'Voorrang op kruisende zijweg',
-  'assets/traffic_signs/priority_signs/B15d.png',
+  'images/signs/priority_signs/B15d Voorrang op het eerstvolgende kruispunt - variant zijweg links.png',
   TRUE,
   NOW(),
   NOW()
@@ -713,7 +711,7 @@ INSERT INTO traffic_signs (sign_code, category_id, name_ar, name_en, name_nl, na
   'Voorrang op kruisende zijweg',
   'Voorrang op kruisende zijweg',
   'Voorrang op kruisende zijweg',
-  'assets/traffic_signs/priority_signs/B15e.png',
+  'images/signs/priority_signs/B15e Voorrang op het eerstvolgende kruispunt - variant T-kruispunt.png',
   TRUE,
   NOW(),
   NOW()
@@ -730,7 +728,7 @@ INSERT INTO traffic_signs (sign_code, category_id, name_ar, name_en, name_nl, na
   'Voorrang op kruisende zijweg',
   'Voorrang op kruisende zijweg',
   'Voorrang op kruisende zijweg',
-  'assets/traffic_signs/priority_signs/B15f.png',
+  'images/signs/priority_signs/B15f Voorrang op het eerstvolgende kruispunt - variant Y-kruispunt.png',
   TRUE,
   NOW(),
   NOW()
@@ -747,7 +745,7 @@ INSERT INTO traffic_signs (sign_code, category_id, name_ar, name_en, name_nl, na
   'Voorrang op kruisende zijweg',
   'Voorrang op kruisende zijweg',
   'Voorrang op kruisende zijweg',
-  'assets/traffic_signs/priority_signs/B15g.png',
+  'images/signs/priority_signs/B15g Voorrang op kruisende zijweg.png',
   TRUE,
   NOW(),
   NOW()
@@ -764,7 +762,7 @@ INSERT INTO traffic_signs (sign_code, category_id, name_ar, name_en, name_nl, na
   'Kruispunt waar de voorrang van rechts geldt',
   'Kruispunt waar de voorrang van rechts geldt',
   'Kruispunt waar de voorrang van rechts geldt',
-  'assets/traffic_signs/priority_signs/B17.png',
+  'images/signs/priority_signs/B17 Kruispunt waar de voorrang van rechts geldt.png',
   TRUE,
   NOW(),
   NOW()
@@ -781,7 +779,7 @@ INSERT INTO traffic_signs (sign_code, category_id, name_ar, name_en, name_nl, na
   'Give way',
   'Smalle doorgang voorrang verlenen aan de bestuurders die uit de tegenovergestelde richting komen',
   'Cédez le passage',
-  'assets/traffic_signs/priority_signs/B19.png',
+  'images/signs/priority_signs/B19 Smalle doorgang. Voorrang verlenen aan de bestuurders die uit de tegenovergestelde richting komen.png',
   TRUE,
   NOW(),
   NOW()
@@ -798,7 +796,7 @@ INSERT INTO traffic_signs (sign_code, category_id, name_ar, name_en, name_nl, na
   'Smalle doorgang voorrang ten opzichte van de bestuurders die uit de tegenovergestelde richting komen',
   'Smalle doorgang voorrang ten opzichte van de bestuurders die uit de tegenovergestelde richting komen',
   'Smalle doorgang voorrang ten opzichte van de bestuurders die uit de tegenovergestelde richting komen',
-  'assets/traffic_signs/priority_signs/B21.png',
+  'images/signs/priority_signs/B21 Smalle doorgang. Voorrang ten opzichte van de bestuurders die uit de tegenovergestelde richting komen.png',
   TRUE,
   NOW(),
   NOW()
@@ -815,7 +813,7 @@ INSERT INTO traffic_signs (sign_code, category_id, name_ar, name_en, name_nl, na
   'Fietsers en speed pedelecs mogen rechtsaf slaan en de verkeerslichten voorbijrijden',
   'Fietsers en speed pedelecs mogen rechtsaf slaan en de verkeerslichten voorbijrijden',
   'Fietsers en speed pedelecs mogen rechtsaf slaan en de verkeerslichten voorbijrijden',
-  'assets/traffic_signs/priority_signs/B22.png',
+  'images/signs/priority_signs/B22 Fietsers en speed pedelecs mogen rechts afslaan en de verkeerslichten voorbijrijden.png',
   TRUE,
   NOW(),
   NOW()
@@ -832,7 +830,7 @@ INSERT INTO traffic_signs (sign_code, category_id, name_ar, name_en, name_nl, na
   'Fietsers en speed pedelecs mogen rechtdoor rijden en de verkeerslichten voorbijrijden',
   'Fietsers en speed pedelecs mogen rechtdoor rijden en de verkeerslichten voorbijrijden',
   'Fietsers en speed pedelecs mogen rechtdoor rijden en de verkeerslichten voorbijrijden',
-  'assets/traffic_signs/priority_signs/B23.png',
+  'images/signs/priority_signs/B23 Fietsers en speed pedelecs mogen rechtdoor rijden en de verkeerslichten voorbijrijden.png',
   TRUE,
   NOW(),
   NOW()
@@ -849,7 +847,7 @@ INSERT INTO traffic_signs (sign_code, category_id, name_ar, name_en, name_nl, na
   'Stop',
   'Stoppen en voorrang verlenen',
   'Stop',
-  'assets/traffic_signs/priority_signs/B5.png',
+  'images/signs/priority_signs/B5 Stop en voorrang verlenen.png',
   TRUE,
   NOW(),
   NOW()
@@ -866,7 +864,7 @@ INSERT INTO traffic_signs (sign_code, category_id, name_ar, name_en, name_nl, na
   'Priority road',
   'Voorrangsweg',
   'Route prioritaire',
-  'assets/traffic_signs/priority_signs/B9.png',
+  'images/signs/priority_signs/B9 Voorrangsweg.png',
   TRUE,
   NOW(),
   NOW()
@@ -1457,7 +1455,7 @@ INSERT INTO traffic_signs (sign_code, category_id, name_ar, name_en, name_nl, na
 );
 
 INSERT INTO traffic_signs (sign_code, category_id, name_ar, name_en, name_nl, name_fr, description_ar, description_en, description_nl, description_fr, image_url, is_active, created_at, updated_at) VALUES (
-  'D1b', 
+  'D1b-links', 
   (SELECT id FROM categories WHERE code = 'D'),
   'علامة D1b',
   'Verplichting rechts afslaan.',
@@ -1576,7 +1574,7 @@ INSERT INTO traffic_signs (sign_code, category_id, name_ar, name_en, name_nl, na
 );
 
 INSERT INTO traffic_signs (sign_code, category_id, name_ar, name_en, name_nl, name_fr, description_ar, description_en, description_nl, description_fr, image_url, is_active, created_at, updated_at) VALUES (
-  'D4', 
+  'D4-rechtdoor', 
   (SELECT id FROM categories WHERE code = 'D'),
   'علامة D4',
   'Verplicht rechts voor voertuigen die gevaarlijke goederen vervoeren.',
@@ -1609,22 +1607,7 @@ INSERT INTO traffic_signs (sign_code, category_id, name_ar, name_en, name_nl, na
   NOW()
 );
 
-INSERT INTO traffic_signs (sign_code, category_id, name_ar, name_en, name_nl, name_fr, description_ar, description_en, description_nl, description_fr, image_url, is_active, created_at, updated_at) VALUES (
-  'D9b', 
-  (SELECT id FROM categories WHERE code = 'D'),
-  'علامة D9b',
-  'Deel van de weg voorbehouden voor voetgangers en fietsers.',
-  'Deel van de weg voorbehouden voor voetgangers en fietsers.',
-  'Deel van de weg voorbehouden voor voetgangers en fietsers.',
-  'علامة D9b',
-  'Deel van de weg voorbehouden voor voetgangers en fietsers.',
-  'Deel van de weg voorbehouden voor voetgangers en fietsers.',
-  'Deel van de weg voorbehouden voor voetgangers en fietsers.',
-  'assets/traffic_signs/mandatory_signs/D9b.png',
-  TRUE,
-  NOW(),
-  NOW()
-);
+
 
 
 -- Category E: علامات الوقوف والانتظار

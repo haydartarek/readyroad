@@ -87,7 +87,7 @@ INSERT INTO traffic_signs (
   'Dit verkeersbord geeft aan dat de parkeerplaats is bedoeld voor wisselend gebruik door fietsers en auto''s.',
   'This traffic sign indicates that the parking space is intended for alternating use by cyclists and cars.',
   'Ce panneau indique que la place de stationnement est destinée à un usage alterné par les cyclistes et les voitures.',
-  'تشير هذه الإشارة المرورية إلى أن مكان وقوف السيارات مخصص للاستخدام المتناوب من قبل الدراجات والسيارات.',
+  'تشير هذه العلامة المرورية إلى أن مكان وقوف السيارات مخصص للاستخدام المتناوب من قبل الدراجات والسيارات.',
   'images/signs/parking_signs/E9j wisselend parkeren Parkeerplaats voorzien voor wisselend parkeren fietsers en auto''s.png',
   'images/signs/parking_signs/E9j wisselend parkeren Parkeerplaats voorzien voor wisselend parkeren fietsers en auto''s.png',
   1, NOW(), NOW()
