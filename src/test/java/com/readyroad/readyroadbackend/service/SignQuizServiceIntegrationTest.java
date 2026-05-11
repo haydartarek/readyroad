@@ -422,7 +422,7 @@ class SignQuizServiceIntegrationTest {
                 sign.setSignCode("A11EMPTYTEST");
                 sign.setNormalizedSignCode("a11emptytest");
                 sign.setCategory(SignCategory.DANGER);
-                sign.setImagePath("/images/signs/test/a11-empty.png");
+                sign.setImagePath("/images/signs/danger_signs/A11 Uitweg op een kaai of een oever.png");
                 sign.setSeriousViolation(false);
                 sign.setNameNl("Testbord");
                 sign.setNameEn("Test Sign");

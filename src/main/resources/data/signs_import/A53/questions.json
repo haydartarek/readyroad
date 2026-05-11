@@ -79,7 +79,8 @@
         "explanation": "تحذر هذه العلامة من وجود عمود قابل للسحب في الطريق."
       }
     }
-  },
+  },
+
   {
     "question_id": "A53_Q02",
     "type": "WHICH_SIGN",
@@ -90,35 +91,68 @@
       "NL": {
         "question": "Welk bord waarschuwt voor een verzinkbare paal?",
         "choices": [
-          { "text": "Het bord dat waarschuwt voor een paal die automatisch omhoog komt en voertuigen kan beschadigen", "is_correct": true },
-          { "text": "Het bord dat waarschuwt voor filevorming of langzaam rijdend verkeer", "is_correct": false },
-          { "text": "Het bord dat waarschuwt voor een niet nader aangeduid gevaar", "is_correct": false }
+          {
+            "text": "Het bord dat waarschuwt voor een paal die automatisch omhoog komt en voertuigen kan beschadigen",
+            "is_correct": true
+          },
+          {
+            "text": "Het bord dat waarschuwt voor filevorming of langzaam rijdend verkeer",
+            "is_correct": false
+          },
+          {
+            "text": "Het bord dat waarschuwt voor een niet nader aangeduid gevaar",
+            "is_correct": false
+          }
         ],
         "explanation": "Het gevaarsbord A53 waarschuwt specifiek voor een verzinkbare paal die onverwacht omhoog kan komen. Het bord voor filevorming (A50) geldt voor verkeersfiles. Het bord voor overige gevaren (A51) geldt voor gevaren zonder specifiek symbool."
       },
       "EN": {
         "question": "Which sign warns of a retractable bollard?",
         "choices": [
-          { "text": "The sign that warns of a bollard that may automatically rise and damage vehicles", "is_correct": true },
-          { "text": "The sign that warns of a traffic jam or slow-moving traffic", "is_correct": false },
-          { "text": "The sign that warns of an unspecified hazard", "is_correct": false }
+          {
+            "text": "The sign that warns of a bollard that may automatically rise and damage vehicles",
+            "is_correct": true
+          },
+          {
+            "text": "The sign that warns of a traffic jam or slow-moving traffic",
+            "is_correct": false
+          },
+          {
+            "text": "The sign that warns of an unspecified hazard",
+            "is_correct": false
+          }
         ],
         "explanation": "Danger sign A53 specifically warns of a retractable bollard that may unexpectedly rise. The traffic jam sign (A50) applies to queuing traffic. The general hazard sign (A51) applies to hazards without a specific symbol."
       },
       "FR": {
         "question": "Quel panneau signale un bollard rétractable ?",
         "choices": [
-          { "text": "Le panneau qui avertit d’un bollard pouvant se relèver automatiquement et endommager les véhicules", "is_correct": true },
-          { "text": "Le panneau qui avertit d’un embouteillage ou d’une circulation lente", "is_correct": false },
-          { "text": "Le panneau qui avertit d’un danger non précisé", "is_correct": false }
+          {
+            "text": "Le panneau qui avertit d’un bollard pouvant se relèver automatiquement et endommager les véhicules",
+            "is_correct": true
+          },
+          {
+            "text": "Le panneau qui avertit d’un embouteillage ou d’une circulation lente",
+            "is_correct": false
+          },
+          {
+            "text": "Le panneau qui avertit d’un danger non précisé",
+            "is_correct": false
+          }
         ],
         "explanation": "Le panneau de danger A53 signale spécifiquement un bollard rétractable pouvant se relèver de manière inattendue. Le panneau embouteillage (A50) concerne les files de véhicules. Le panneau danger général (A51) concerne des dangers sans symbole spécifique."
       },
       "AR": {
         "question": "أي علامة مرورية تُحذّر من وجود عمود ساقط أوتوماتيكي؟",
         "choices": [
-          { "text": "العلامة التي تُحذّر من عمود قد يرتفع تلقائيًا ويتلف المركبة", "is_correct": true },
-          { "text": "العلامة التي تُحذّر من أزمة مرورية أو حركة بطيئة", "is_correct": false },
+          {
+            "text": "العلامة التي تُحذّر من عمود قد يرتفع تلقائيًا ويتلف المركبة",
+            "is_correct": true
+          },
+          {
+            "text": "العلامة التي تُحذّر من أزمة مرورية أو حركة بطيئة",
+            "is_correct": false
+          },
           { "text": "العلامة التي تُحذّر من خطر غير محدد", "is_correct": false }
         ],
         "explanation": "علامة الخطر A53 تُحذّر تحديدًا من عمود ساقط قد يرتفع فجأة. علامة الأزمة (A50) تختص بأزمة السيارات. علامة الخطر العام (A51) تختص بخطر دون رمز محدد."

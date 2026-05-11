@@ -1,9 +1,11 @@
 package com.readyroad.readyroadbackend.integration;
 
 import com.readyroad.readyroadbackend.domain.entity.RoadSign;
+import com.readyroad.readyroadbackend.domain.entity.SignImportRun;
 import com.readyroad.readyroadbackend.domain.enums.SignCategory;
 import com.readyroad.readyroadbackend.domain.repository.RoadSignRepository;
 import com.readyroad.readyroadbackend.dto.response.TrafficSignResponse;
+import com.readyroad.readyroadbackend.service.SignQuizImportService;
 import com.readyroad.readyroadbackend.service.TrafficSignService;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -61,6 +63,9 @@ class TrafficSignA1aRegressionTest {
     @Autowired
     private RoadSignRepository RoadSignRepository;
 
+    @Autowired
+    private SignQuizImportService signQuizImportService;
+
     private RoadSign a1a;
 
     @BeforeEach
@@ -83,7 +88,7 @@ class TrafficSignA1aRegressionTest {
         a1a.setDescriptionAr(DESC_AR);
         a1a.setDescriptionNl(DESC_NL);
         a1a.setDescriptionFr(DESC_FR);
-        a1a.setImagePath("images/signs/danger_signs/A1a.png");
+        a1a.setImagePath("/images/signs/danger_signs/A1a Gevaarlijke bocht naar links.png");
         a1a.setIsActive(true);
         a1a = RoadSignRepository.saveAndFlush(a1a);
     }
@@ -218,6 +223,49 @@ class TrafficSignA1aRegressionTest {
         }
     }
 
+    @Nested
+    @DisplayName("Scenario: signs_import translations override legacy catalog pollution")
+    class SignsImportTranslationGuard {
+
+        @Test
+        @DisplayName("Given A1b row has legacy English fallbacks, Then FR and AR come from signs_import")
+        void a1b_uses_signs_import_translations_over_legacy_fallbacks() {
+            RoadSignRepository.findBySignCode("A1b")
+                    .ifPresent(RoadSignRepository::delete);
+
+            RoadSign pollutedA1b = new RoadSign();
+            pollutedA1b.setSignCode("A1b");
+            pollutedA1b.setNormalizedSignCode("a1b");
+            pollutedA1b.setCategory(SignCategory.DANGER);
+            pollutedA1b.setNameEn("Dangerous bend to the right");
+            pollutedA1b.setNameNl("Gevaarlijke bocht naar rechts");
+            pollutedA1b.setNameFr("Dangerous bend to the right");
+            pollutedA1b.setNameAr("Dangerous bend to the right");
+            pollutedA1b.setDescriptionEn(
+                    "Warns of a dangerous bend to the right where vehicles may lose control or drift toward the centre of the road, especially at higher speeds.");
+            pollutedA1b.setDescriptionNl(
+                    "Waarschuwt voor een gevaarlijke bocht naar rechts waar voertuigen de controle kunnen verliezen of naar het midden van de rijbaan kunnen driften, vooral bij hogere snelheid.");
+            pollutedA1b.setDescriptionFr("");
+            pollutedA1b.setDescriptionAr("");
+            pollutedA1b.setImagePath("/images/signs/danger_signs/A1b Gevaarlijke bocht naar rechts.png");
+            pollutedA1b.setIsActive(true);
+            RoadSignRepository.saveAndFlush(pollutedA1b);
+
+            TrafficSignResponse response = trafficSignService.getSignByCode("A1b");
+
+            assertThat(response.nameFr()).isEqualTo("Virage dangereux à droite");
+            assertThat(response.nameAr()).isEqualTo("منعطف خطير إلى اليمين");
+            assertThat(response.descriptionFr())
+                    .contains("virage dangereux à droite")
+                    .doesNotContain("�")
+                    .isNotEqualTo(response.descriptionEn());
+            assertThat(response.descriptionAr())
+                    .contains("منعطف خطير إلى اليمين")
+                    .doesNotContain("????")
+                    .isNotEqualTo(response.descriptionEn());
+        }
+    }
+
     // ── Scenario: A1a is not confused with siblings ────
 
     @Nested
@@ -251,6 +299,22 @@ class TrafficSignA1aRegressionTest {
             assertThat(response.nameAr()).isNotEqualTo("مطب");
             assertThat(response.nameNl()).isNotEqualToIgnoringCase("Verkeersdrempel");
             assertThat(response.nameFr()).isNotEqualToIgnoringCase("Ralentisseur");
+        }
+    }
+
+    // ── Scenario: Sign quiz import remains idempotent ───
+
+    @Nested
+    @DisplayName("Scenario: Sign quiz import idempotency")
+    class SignQuizImportGuard {
+
+        @Test
+        @DisplayName("Given sign quiz data already exists, When import runs again, Then it completes without duplicate choice-order errors")
+        void sign_quiz_import_is_idempotent() {
+            SignImportRun run = signQuizImportService.runImport("TEST_IDEMPOTENT");
+
+            assertThat(run.getStatus()).isEqualTo("SUCCESS");
+            assertThat(run.getErrorsCount()).isZero();
         }
     }
 

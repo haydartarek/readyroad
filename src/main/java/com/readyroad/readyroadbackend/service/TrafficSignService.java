@@ -30,6 +30,7 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 import java.util.regex.Pattern;
 
 @Service
@@ -88,6 +89,28 @@ public class TrafficSignService {
                 .stream()
                 .filter(canonicalSignCatalogService::isPubliclyAllowed)
                 .map(this::toPublicResponse)
+                .collect(Collectors.toList());
+    }
+
+    public List<TrafficSignResponse> getFilteredPublicSigns(Long categoryId, String query) {
+        boolean hasCategoryFilter = categoryId != null;
+        boolean hasQueryFilter = query != null && !query.trim().isEmpty();
+
+        if (!hasCategoryFilter && !hasQueryFilter) {
+            return getAllActiveSigns();
+        }
+
+        if (hasCategoryFilter && !hasQueryFilter) {
+            return getSignsByCategory(categoryId);
+        }
+
+        if (!hasCategoryFilter) {
+            return searchTrafficSigns(query);
+        }
+
+        String normalizedQuery = query.trim().toLowerCase(Locale.ROOT);
+        return getSignsByCategory(categoryId).stream()
+                .filter(sign -> matchesSearchQuery(sign, normalizedQuery))
                 .collect(Collectors.toList());
     }
 
@@ -210,7 +233,7 @@ public class TrafficSignService {
 
         RoadSign sign = new RoadSign();
         sign.setSignCode(request.getSignCode());
-        sign.setNormalizedSignCode(request.getSignCode().toLowerCase().replaceAll("[^a-z0-9]", "_"));
+        sign.setNormalizedSignCode(normalizeStoredSignCode(request.getSignCode()));
         sign.setCategory(signCategory);
         sign.setNameEn(request.getNameEn());
         sign.setNameAr(request.getNameAr() != null ? request.getNameAr() : "");
@@ -244,7 +267,7 @@ public class TrafficSignService {
                 throw new IllegalArgumentException(messages.get("admin.sign.code_exists", request.getSignCode()));
             }
             sign.setSignCode(request.getSignCode());
-            sign.setNormalizedSignCode(request.getSignCode().toLowerCase().replaceAll("[^a-z0-9]", "_"));
+            sign.setNormalizedSignCode(normalizeStoredSignCode(request.getSignCode()));
         }
 
         // Update category if changed
@@ -412,5 +435,30 @@ public class TrafficSignService {
 
     private static String normalizeRouteKey(String value) {
         return RouteCodeNormalizer.normalize(value);
+    }
+
+    private static String normalizeStoredSignCode(String signCode) {
+        return signCode.toLowerCase(Locale.ROOT).replaceAll("[^a-z0-9]", "_");
+    }
+
+    private boolean matchesSearchQuery(TrafficSignResponse sign, String normalizedQuery) {
+        return searchableFields(sign)
+                .filter(field -> field != null && !field.isBlank())
+                .map(field -> field.toLowerCase(Locale.ROOT))
+                .anyMatch(field -> field.contains(normalizedQuery));
+    }
+
+    private Stream<String> searchableFields(TrafficSignResponse sign) {
+        return Stream.of(
+                sign.signCode(),
+                sign.routeCode(),
+                sign.nameAr(),
+                sign.nameEn(),
+                sign.nameNl(),
+                sign.nameFr(),
+                sign.descriptionAr(),
+                sign.descriptionEn(),
+                sign.descriptionNl(),
+                sign.descriptionFr());
     }
 }

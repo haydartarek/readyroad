@@ -12,6 +12,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
+import org.springframework.core.io.FileSystemResource;
+import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
+import org.springframework.core.io.support.ResourcePatternResolver;
 import org.springframework.stereotype.Service;
 
 import jakarta.annotation.PostConstruct;
@@ -19,7 +22,10 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -27,6 +33,7 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
+import java.util.stream.Stream;
 
 @Service
 public class CanonicalSignCatalogService {
@@ -50,9 +57,13 @@ public class CanonicalSignCatalogService {
 
     private final ObjectMapper objectMapper;
     private final ResourceLoader resourceLoader;
+    private final ResourcePatternResolver resourcePatternResolver;
 
     @Value("${readyroad.signs.canonical-path:data/signs.json}")
     private String canonicalSignsPath;
+
+    @Value("${readyroad.signs-import.path:src/main/resources/data/signs_import}")
+    private String signsImportPath;
 
     @Value("${readyroad.signs.images-manifest-path:data/canonical_sign_images.json}")
     private String canonicalImagesPath;
@@ -67,6 +78,7 @@ public class CanonicalSignCatalogService {
     public CanonicalSignCatalogService(ObjectMapper objectMapper, ResourceLoader resourceLoader) {
         this.objectMapper = objectMapper;
         this.resourceLoader = resourceLoader;
+        this.resourcePatternResolver = new PathMatchingResourcePatternResolver(resourceLoader);
     }
 
     @PostConstruct
@@ -151,29 +163,48 @@ public class CanonicalSignCatalogService {
         String imagePath = firstUsable(seed != null ? seed.imagePath() : null, sign.getImagePath());
         String normalizedImagePath = normalizeImagePath(imagePath);
         boolean allowed = !normalizedImagePath.isBlank() && allowedImagePaths.contains(normalizedImagePath);
+        String nameEn = firstUsable(seed != null ? seed.nameEn() : null, sign.getNameEn(), sign.getSignCode());
+        String nameAr = firstUsable(seed != null ? seed.nameAr() : null, sign.getNameAr(), nameEn, sign.getSignCode());
+        String nameNl = firstUsable(seed != null ? seed.nameNl() : null, sign.getNameNl(), nameEn, sign.getSignCode());
+        String nameFr = firstUsable(seed != null ? seed.nameFr() : null, sign.getNameFr(), nameEn, sign.getSignCode());
+
+        String descriptionEn = DrivingTextSanitizer.sanitize("EN",
+                firstUsable(seed != null ? seed.shortDescriptionEn() : null, sign.getDescriptionEn()));
+        String descriptionAr = DrivingTextSanitizer.sanitize("AR",
+                firstUsable(seed != null ? seed.shortDescriptionAr() : null, sign.getDescriptionAr()));
+        String descriptionNl = DrivingTextSanitizer.sanitize("NL",
+                firstUsable(seed != null ? seed.shortDescriptionNl() : null, sign.getDescriptionNl()));
+        String descriptionFr = DrivingTextSanitizer.sanitize("FR",
+                firstUsable(seed != null ? seed.shortDescriptionFr() : null, sign.getDescriptionFr()));
+
+        String longDescriptionEn = DrivingTextSanitizer.sanitize("EN",
+                firstUsable(seed != null ? seed.longDescriptionEn() : null, descriptionEn));
+        String longDescriptionNl = DrivingTextSanitizer.sanitize("NL",
+                firstUsable(seed != null ? seed.longDescriptionNl() : null, descriptionNl));
+        String longDescriptionFr = DrivingTextSanitizer.sanitize("FR",
+                firstUsable(seed != null ? seed.longDescriptionFr() : null, descriptionFr));
+        String longDescriptionAr = DrivingTextSanitizer.sanitize("AR",
+                firstUsable(seed != null ? seed.longDescriptionAr() : null, descriptionAr));
 
         return new ResolvedSignData(
                 firstUsable(seed != null ? seed.signCode() : null, sign.getSignCode()),
                 routeCodeFor(sign),
-                firstUsable(seed != null ? seed.nameEn() : null, sign.getNameEn(), sign.getSignCode()),
-                firstUsable(seed != null ? seed.nameAr() : null, sign.getNameAr(), sign.getNameEn(),
-                        sign.getSignCode()),
-                firstUsable(seed != null ? seed.nameNl() : null, sign.getNameNl(), sign.getNameEn(),
-                        sign.getSignCode()),
-                firstUsable(seed != null ? seed.nameFr() : null, sign.getNameFr(), sign.getNameEn(),
-                        sign.getSignCode()),
-                DrivingTextSanitizer.sanitize("EN", firstUsable(seed != null ? seed.shortDescriptionEn() : null, sign.getDescriptionEn())),
-                DrivingTextSanitizer.sanitize("AR", firstUsable(seed != null ? seed.shortDescriptionAr() : null, sign.getDescriptionAr())),
-                DrivingTextSanitizer.sanitize("NL", firstUsable(seed != null ? seed.shortDescriptionNl() : null, sign.getDescriptionNl())),
-                DrivingTextSanitizer.sanitize("FR", firstUsable(seed != null ? seed.shortDescriptionFr() : null, sign.getDescriptionFr())),
-                DrivingTextSanitizer.sanitize("EN", firstUsable(seed != null ? seed.longDescriptionEn() : null, sign.getDescriptionEn())),
-                DrivingTextSanitizer.sanitize("NL", firstUsable(seed != null ? seed.longDescriptionNl() : null, sign.getDescriptionNl())),
-                DrivingTextSanitizer.sanitize("FR", firstUsable(seed != null ? seed.longDescriptionFr() : null, sign.getDescriptionFr())),
-                DrivingTextSanitizer.sanitize("AR", firstUsable(seed != null ? seed.longDescriptionAr() : null, sign.getDescriptionAr())),
-                !isBlank(seed != null ? seed.longDescriptionEn() : null)
-                        || !isBlank(seed != null ? seed.longDescriptionNl() : null)
-                        || !isBlank(seed != null ? seed.longDescriptionFr() : null)
-                        || !isBlank(seed != null ? seed.longDescriptionAr() : null),
+                nameEn,
+                nameAr,
+                nameNl,
+                nameFr,
+                descriptionEn,
+                descriptionAr,
+                descriptionNl,
+                descriptionFr,
+                longDescriptionEn,
+                longDescriptionNl,
+                longDescriptionFr,
+                longDescriptionAr,
+                !isBlank(longDescriptionEn)
+                        || !isBlank(longDescriptionNl)
+                        || !isBlank(longDescriptionFr)
+                        || !isBlank(longDescriptionAr),
                 normalizedImagePath,
                 allowed);
     }
@@ -201,7 +232,7 @@ public class CanonicalSignCatalogService {
         sign.setDescriptionNl(DrivingTextSanitizer.sanitize("NL", seed.shortDescriptionNl()));
         sign.setDescriptionFr(DrivingTextSanitizer.sanitize("FR", seed.shortDescriptionFr()));
         if (!seed.imagePath().isBlank()) {
-            sign.setImagePath(stripLeadingSlash(seed.imagePath()));
+            sign.setImagePath(seed.imagePath());
         }
     }
 
@@ -235,10 +266,19 @@ public class CanonicalSignCatalogService {
     }
 
     private List<CanonicalSignSeed> loadCanonicalSeeds() {
+        Map<String, CanonicalSignSeed> legacySeeds = loadLegacyCanonicalSeedsByRoute();
+        List<CanonicalSignSeed> importedSeeds = loadImportSignSeeds(legacySeeds);
+        if (!importedSeeds.isEmpty()) {
+            return importedSeeds;
+        }
+        return new ArrayList<>(legacySeeds.values());
+    }
+
+    private Map<String, CanonicalSignSeed> loadLegacyCanonicalSeedsByRoute() {
         try (InputStream input = openInputStream(canonicalSignsPath)) {
             List<JsonNode> entries = objectMapper.readValue(input, new TypeReference<List<JsonNode>>() {
             });
-            List<CanonicalSignSeed> loaded = new ArrayList<>();
+            Map<String, CanonicalSignSeed> loaded = new LinkedHashMap<>();
 
             for (JsonNode node : entries) {
                 String routeCode = firstUsable(text(node, "id"), text(node, "code"));
@@ -252,7 +292,7 @@ public class CanonicalSignCatalogService {
                     continue;
                 }
 
-                loaded.add(new CanonicalSignSeed(
+                loaded.put(routeKey, new CanonicalSignSeed(
                         routeCode,
                         routeKey,
                         signCode,
@@ -278,8 +318,105 @@ public class CanonicalSignCatalogService {
             return loaded;
         } catch (IOException ex) {
             log.error("Failed to load canonical signs catalog from {}: {}", canonicalSignsPath, ex.getMessage(), ex);
+            return Map.of();
+        }
+    }
+
+    private List<CanonicalSignSeed> loadImportSignSeeds(Map<String, CanonicalSignSeed> legacySeedsByRoute) {
+        try {
+            List<Resource> signResources = resolveImportSignResources();
+            Map<String, CanonicalSignSeed> loaded = new LinkedHashMap<>();
+
+            for (Resource resource : signResources) {
+                try (InputStream input = resource.getInputStream()) {
+                    JsonNode node = objectMapper.readTree(input);
+                    CanonicalSignSeed seed = importSeed(node, legacySeedsByRoute);
+                    if (seed != null) {
+                        loaded.put(seed.routeKey(), seed);
+                    }
+                }
+            }
+
+            if (!loaded.isEmpty()) {
+                log.info("Loaded {} canonical road signs from signs_import", loaded.size());
+            }
+            return new ArrayList<>(loaded.values());
+        } catch (IOException ex) {
+            log.error("Failed to load canonical signs from signs_import {}: {}", signsImportPath, ex.getMessage(), ex);
             return List.of();
         }
+    }
+
+    private List<Resource> resolveImportSignResources() throws IOException {
+        Map<String, Resource> resourcesByDescription = new LinkedHashMap<>();
+        File importDirectory = new File(signsImportPath);
+        if (!importDirectory.isAbsolute()) {
+            importDirectory = new File(System.getProperty("user.dir"), signsImportPath);
+        }
+        if (importDirectory.exists() && importDirectory.isDirectory()) {
+            try (Stream<Path> paths = Files.walk(importDirectory.toPath(), 2)) {
+                paths.filter(path -> "sign.json".equals(path.getFileName().toString()))
+                        .sorted(Comparator.comparing(Path::toString))
+                        .forEach(path -> resourcesByDescription.put(
+                                path.toAbsolutePath().normalize().toString(),
+                                new FileSystemResource(path)));
+            }
+        }
+
+        for (Resource resource : resourcePatternResolver.getResources("classpath*:data/signs_import/*/sign.json")) {
+            if (resource.exists()) {
+                resourcesByDescription.putIfAbsent(resource.getDescription(), resource);
+            }
+        }
+
+        List<Resource> resources = new ArrayList<>(resourcesByDescription.values());
+        resources.sort(Comparator.comparing(Resource::getDescription));
+        return resources;
+    }
+
+    private CanonicalSignSeed importSeed(JsonNode node, Map<String, CanonicalSignSeed> legacySeedsByRoute) {
+        String routeCode = firstUsable(text(node, "route_code"), text(node, "id"), text(node, "code"));
+        String signCode = firstUsable(text(node, "code"), routeCode);
+        String routeKey = normalizeRouteKey(routeCode);
+        String normalizedCode = normalizeCode(signCode);
+        SignCategory category = mapCategory(text(node, "category"));
+        String imagePath = normalizeImagePath(firstUsable(text(node, "image_path"), text(node, "imagePath"),
+                text(node, "image")));
+
+        if (routeKey.isBlank() || normalizedCode.isBlank() || category == null || imagePath.isBlank()) {
+            return null;
+        }
+
+        CanonicalSignSeed legacy = legacySeedsByRoute.get(routeKey);
+        JsonNode i18n = node.path("i18n");
+        String descriptionEn = firstUsable(importText(i18n, "EN", "description"),
+                legacy != null ? legacy.shortDescriptionEn() : null);
+        String descriptionAr = firstUsable(importText(i18n, "AR", "description"),
+                legacy != null ? legacy.shortDescriptionAr() : null);
+        String descriptionNl = firstUsable(importText(i18n, "NL", "description"),
+                legacy != null ? legacy.shortDescriptionNl() : null);
+        String descriptionFr = firstUsable(importText(i18n, "FR", "description"),
+                legacy != null ? legacy.shortDescriptionFr() : null);
+
+        return new CanonicalSignSeed(
+                routeCode,
+                routeKey,
+                signCode,
+                normalizedCode,
+                category,
+                firstUsable(importText(i18n, "EN", "name"), legacy != null ? legacy.nameEn() : null),
+                firstUsable(importText(i18n, "AR", "name"), legacy != null ? legacy.nameAr() : null),
+                firstUsable(importText(i18n, "NL", "name"), legacy != null ? legacy.nameNl() : null),
+                firstUsable(importText(i18n, "FR", "name"), legacy != null ? legacy.nameFr() : null),
+                descriptionEn,
+                descriptionAr,
+                descriptionNl,
+                descriptionFr,
+                firstUsable(legacy != null ? legacy.longDescriptionEn() : null, descriptionEn),
+                firstUsable(legacy != null ? legacy.longDescriptionAr() : null, descriptionAr),
+                firstUsable(legacy != null ? legacy.longDescriptionNl() : null, descriptionNl),
+                firstUsable(legacy != null ? legacy.longDescriptionFr() : null, descriptionFr),
+                imagePath);
     }
 
     private Set<String> loadAllowedImagePaths() {
@@ -318,7 +455,15 @@ public class CanonicalSignCatalogService {
         if (isBlank(value)) {
             return null;
         }
-        return CATEGORY_NAME_TO_ENUM.get(value.trim().toLowerCase(Locale.ROOT));
+        SignCategory mapped = CATEGORY_NAME_TO_ENUM.get(value.trim().toLowerCase(Locale.ROOT));
+        if (mapped != null) {
+            return mapped;
+        }
+        try {
+            return SignCategory.valueOf(value.trim().toUpperCase(Locale.ROOT).replace('-', '_').replace(' ', '_'));
+        } catch (IllegalArgumentException ex) {
+            return null;
+        }
     }
 
     private static String normalizeCode(String value) {
@@ -349,16 +494,19 @@ public class CanonicalSignCatalogService {
         return normalized;
     }
 
-    private static String stripLeadingSlash(String value) {
-        return value != null && value.startsWith("/") ? value.substring(1) : value;
-    }
-
     private static String text(JsonNode node, String field) {
         if (node == null || !node.has(field) || node.get(field).isNull()) {
             return null;
         }
         String value = node.get(field).asText();
         return value == null ? null : value.trim();
+    }
+
+    private static String importText(JsonNode i18n, String lang, String field) {
+        if (i18n == null || !i18n.has(lang)) {
+            return null;
+        }
+        return text(i18n.path(lang), field);
     }
 
     private static String firstUsable(String... candidates) {

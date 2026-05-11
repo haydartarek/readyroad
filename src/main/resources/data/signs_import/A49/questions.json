@@ -79,7 +79,8 @@
         "explanation": "تحذّر A49 من وجود قضبان ترام أو سكة حديد مزروعة مباشرة داخل الطريق نفسه."
       }
     }
-  },
+  },
+
   {
     "question_id": "A49_Q02",
     "type": "WHICH_SIGN",
@@ -90,36 +91,72 @@
       "NL": {
         "question": "Welk bord waarschuwt voor een kruising met tramsporen?",
         "choices": [
-          { "text": "Het bord dat waarschuwt voor tram- of treinsporen die de rijbaan kruisen", "is_correct": true },
-          { "text": "Het bord dat waarschuwt voor een overweg met slagbomen", "is_correct": false },
-          { "text": "Het bord dat waarschuwt voor een overweg met meerdere sporen", "is_correct": false }
+          {
+            "text": "Het bord dat waarschuwt voor tram- of treinsporen die de rijbaan kruisen",
+            "is_correct": true
+          },
+          {
+            "text": "Het bord dat waarschuwt voor een overweg met slagbomen",
+            "is_correct": false
+          },
+          {
+            "text": "Het bord dat waarschuwt voor een overweg met meerdere sporen",
+            "is_correct": false
+          }
         ],
         "explanation": "Het gevaarsbord A49 waarschuwt specifiek voor tramsporen in de rijbaan. Het bord voor overweg met slagbomen (A41) geldt voor een afzonderlijk kruispunt met barrières. Het bord meerdere sporen (A47) geldt voor een overweg met twee of meer sporen."
       },
       "EN": {
         "question": "Which sign warns of a junction with tram tracks?",
         "choices": [
-          { "text": "The sign that warns of tram or train tracks crossing the carriageway", "is_correct": true },
-          { "text": "The sign that warns of a level crossing with barriers", "is_correct": false },
-          { "text": "The sign that warns of a level crossing with multiple tracks", "is_correct": false }
+          {
+            "text": "The sign that warns of tram or train tracks crossing the carriageway",
+            "is_correct": true
+          },
+          {
+            "text": "The sign that warns of a level crossing with barriers",
+            "is_correct": false
+          },
+          {
+            "text": "The sign that warns of a level crossing with multiple tracks",
+            "is_correct": false
+          }
         ],
         "explanation": "Danger sign A49 specifically warns of tram tracks in the carriageway. The level crossing with barriers sign (A41) applies to a separate crossing with barriers. The multiple tracks sign (A47) applies to a crossing with two or more tracks."
       },
       "FR": {
         "question": "Quel panneau signale un croisement avec des rails de tramway ?",
         "choices": [
-          { "text": "Le panneau qui avertit de rails de tram ou de train croisant la chaussée", "is_correct": true },
-          { "text": "Le panneau qui avertit d’un passage à niveau avec barrières", "is_correct": false },
-          { "text": "Le panneau qui avertit d’un passage à niveau à plusieurs voies", "is_correct": false }
+          {
+            "text": "Le panneau qui avertit de rails de tram ou de train croisant la chaussée",
+            "is_correct": true
+          },
+          {
+            "text": "Le panneau qui avertit d’un passage à niveau avec barrières",
+            "is_correct": false
+          },
+          {
+            "text": "Le panneau qui avertit d’un passage à niveau à plusieurs voies",
+            "is_correct": false
+          }
         ],
         "explanation": "Le panneau de danger A49 signale spécifiquement des rails de tramway dans la chaussée. Le panneau passage à niveau avec barrières (A41) concerne un passage séparé avec barrières. Le panneau plusieurs voies (A47) concerne un passage avec deux voies ou plus."
       },
       "AR": {
         "question": "أي علامة مرورية تُحذّر من تقاطع مع قضبان الترام؟",
         "choices": [
-          { "text": "العلامة التي تُحذّر من قضبان الترام أو القطار التي تقطع الطريق", "is_correct": true },
-          { "text": "العلامة التي تُحذّر من تقاطع سككة حديدية بحواجز", "is_correct": false },
-          { "text": "العلامة التي تُحذّر من تقاطع سككة حديدية بخطوط متعددة", "is_correct": false }
+          {
+            "text": "العلامة التي تُحذّر من قضبان الترام أو القطار التي تقطع الطريق",
+            "is_correct": true
+          },
+          {
+            "text": "العلامة التي تُحذّر من تقاطع سككة حديدية بحواجز",
+            "is_correct": false
+          },
+          {
+            "text": "العلامة التي تُحذّر من تقاطع سككة حديدية بخطوط متعددة",
+            "is_correct": false
+          }
         ],
         "explanation": "علامة الخطر A49 تُحذّر تحديدًا من قضبان الترام في الطريق. علامة تقاطع بحواجز (A41) تختص بتقاطع منفصل مع حواجز. علامة خطوط متعددة (A47) تختص بخطين أو أكثر."
       }

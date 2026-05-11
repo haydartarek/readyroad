@@ -1,1 +1,618 @@
-[{"question_id":"E9j_Q01","type":"WHAT_DOES_IT_MEAN","difficulty":"EASY","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Wat betekent dit verkeersbord?","choices":[{"text":"Wisselend parkeren voor fietsers en auto's","is_correct":true},{"text":"Parkeerplaats uitsluitend voor fietsers","is_correct":false},{"text":"Parkeerplaats uitsluitend voor personenwagens","is_correct":false}],"explanation":"E9j duidt een parkeerplaats aan die afwisselend gebruikt wordt door fietsers en personenwagens."},"EN":{"question":"What does this traffic sign mean?","choices":[{"text":"Alternating parking for cyclists and cars","is_correct":true},{"text":"Parking for cyclists only","is_correct":false},{"text":"Parking for cars only","is_correct":false}],"explanation":"E9j marks a parking space that is used alternately by cyclists and passenger cars."},"FR":{"question":"Que signifie ce panneau de signalisation ?","choices":[{"text":"Stationnement alternant pour cyclistes et voitures","is_correct":true},{"text":"Stationnement réservé aux cyclistes uniquement","is_correct":false},{"text":"Stationnement réservé aux voitures uniquement","is_correct":false}],"explanation":"E9j désigne une place de stationnement utilisée alternativement par les cyclistes et les voitures."},"AR":{"question":"ما معنى هذه العلامة المرورية؟","choices":[{"text":"ركن متناوب للدراجات والسيارات","is_correct":true},{"text":"موقف مخصص للدراجات فقط","is_correct":false},{"text":"موقف مخصص للسيارات فقط","is_correct":false}],"explanation":"تُشير E9j إلى موقف سيارات يُستخدم بالتناوب من قِبل راكبي الدراجات والسيارات الخاصة."}}},{"question_id":"E9j_Q02","type":"WHICH_SIGN","difficulty":"EASY","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Tot welke categorie verkeersborden behoort dit bord?","choices":[{"text":"Parkeerregelborden","is_correct":true},{"text":"Verbodsborden","is_correct":false},{"text":"Gevaarsborden","is_correct":false}],"explanation":"deze categorieborden regelen het parkeren en stilstaan. E9j regelt een gedeelde wisselende parkeerplaats voor fietsers en auto's."},"EN":{"question":"To which category of traffic signs does this sign belong?","choices":[{"text":"Parking signs","is_correct":true},{"text":"Prohibition signs","is_correct":false},{"text":"Danger signs","is_correct":false}],"explanation":"Parking and stopping signs regulate parking and stopping. E9j regulates a shared alternating parking space for cyclists and cars."},"FR":{"question":"À quelle catégorie de panneaux de signalisation appartient ce panneau ?","choices":[{"text":"Panneaux de stationnement","is_correct":true},{"text":"Panneaux d'interdiction","is_correct":false},{"text":"Panneaux de danger","is_correct":false}],"explanation":"Les panneaux dans cette catégorie réglementent le stationnement et l'arrêt. E9j réglemente une place partagée à utilisation alternante pour cyclistes et voitures."},"AR":{"question":"إلى أي فئة تُصنَّف هذه العلامة المرورية؟","choices":[{"text":"علامات الوقوف","is_correct":true},{"text":"علامات الحظر","is_correct":false},{"text":"علامات الخطر","is_correct":false}],"explanation":"تنظّم علامات هذه الفئة ركن السيارات والتوقف. تنظّم E9j موقفاً مشتركاً متناوباً بين راكبي الدراجات والسيارات."}}},{"question_id":"E9j_Q03","type":"HAZARD_IDENTIFICATION","difficulty":"EASY","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Wat geeft bord E9j aan over het gebruik van deze parkeerplaats?","choices":[{"text":"De parkeerplaats wisselt afwisselend tussen fietsers en auto's","is_correct":true},{"text":"Fietsers en auto's mogen hier gelijktijdig parkeren","is_correct":false},{"text":"De parkeerplaats is uitsluitend voorbehouden voor fietsers","is_correct":false}],"explanation":"E9j voert een wisselend systeem in: de parkeerplaats is op bepaalde tijden bestemd voor fietsers en op andere tijden voor auto's."},"EN":{"question":"What does sign E9j indicate about the use of this parking space?","choices":[{"text":"The space alternates between cyclists and cars","is_correct":true},{"text":"Cyclists and cars may park here simultaneously at all times","is_correct":false},{"text":"The space is reserved exclusively for cyclists","is_correct":false}],"explanation":"E9j introduces an alternating system: the parking space is designated for cyclists at certain times and for cars at other times."},"FR":{"question":"Qu'indique le panneau E9j sur l'utilisation de cette place de stationnement ?","choices":[{"text":"La place alterne entre cyclistes et voitures","is_correct":true},{"text":"Cyclistes et voitures peuvent stationner ici simultanément à tout moment","is_correct":false},{"text":"La place est réservée exclusivement aux cyclistes","is_correct":false}],"explanation":"E9j instaure un système alternant : la place est destinée aux cyclistes à certains moments et aux voitures à d'autres moments."},"AR":{"question":"ماذا تشير علامة مرورية E9j بشأن استخدام هذا الموقف؟","choices":[{"text":"الموقف يتناوب بين راكبي الدراجات والسيارات","is_correct":true},{"text":"يمكن لراكبي الدراجات والسيارات الركن هنا في آنٍ واحد في أي وقت","is_correct":false},{"text":"الموقف مخصص حصراً لراكبي الدراجات","is_correct":false}],"explanation":"تُرسي E9j نظاماً متناوباً: الموقف مخصص لراكبي الدراجات في أوقات معينة وللسيارات في أوقات أخرى."}}},{"question_id":"E9j_Q04","type":"WHAT_MUST_YOU_DO","difficulty":"MEDIUM","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Wat moet u doen wanneer u bord E9j ziet?","choices":[{"text":"De wisselende beurt respecteren en alleen parkeren als het uw voertuigtype beurt is","is_correct":true},{"text":"U en fietsers mogen hier altijd gelijktijdig parkeren","is_correct":false},{"text":"Alleen fietsers mogen deze parkeerplaats gebruiken","is_correct":false}],"explanation":"E9j voert een wisselend systeem in. U mag alleen parkeren tijdens de beurt die is toegewezen aan uw voertuigtype."},"EN":{"question":"What must you do when you see sign E9j?","choices":[{"text":"Respect the alternating turn and park only when it is your vehicle type's turn","is_correct":true},{"text":"You and cyclists may always park here simultaneously","is_correct":false},{"text":"Only cyclists may use this parking space","is_correct":false}],"explanation":"E9j introduces an alternating system. You may only park during the turn assigned to your vehicle type."},"FR":{"question":"Que devez-vous faire lorsque vous voyez le panneau E9j ?","choices":[{"text":"Respecter le tour alternant et stationner uniquement lorsque c'est le tour de votre type de véhicule","is_correct":true},{"text":"Vous et les cyclistes pouvez toujours stationner ici simultanément","is_correct":false},{"text":"Seuls les cyclistes peuvent utiliser cette place de stationnement","is_correct":false}],"explanation":"E9j instaure un système alternant. Vous ne pouvez stationner que pendant le tour attribué à votre type de véhicule."},"AR":{"question":"ماذا يجب أن تفعل عندما ترى علامة مرورية E9j؟","choices":[{"text":"احترام التناوب والركن فقط عندما يكون دور نوع مركبتك","is_correct":true},{"text":"يمكنك أنت وراكبو الدراجات الركن هنا في آنٍ واحد دائماً","is_correct":false},{"text":"راكبو الدراجات وحدهم يمكنهم استخدام هذا الموقف","is_correct":false}],"explanation":"تُرسي E9j نظاماً متناوباً. لا يجوز لك الركن إلا خلال الدور المخصص لنوع مركبتك."}}},{"question_id":"E9j_Q05","type":"WHAT_MUST_YOU_DO","difficulty":"MEDIUM","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Het is momenteel de beurt van fietsers op deze E9j-parkeerplaats. Mag u hier uw auto parkeren?","choices":[{"text":"Nee, u moet wachten tot het de beurt is voor auto's","is_correct":true},{"text":"Ja, als er momenteel geen fiets geparkeerd staat","is_correct":false},{"text":"Ja, zolang u voldoende ruimte laat voor een fiets","is_correct":false}],"explanation":"Het wisselend systeem van E9j is gebaseerd op de beurt, niet op de fysieke aanwezigheid van een fiets. Tijdens de fietsbeurt is parkeren van auto's niet toegelaten."},"EN":{"question":"It is currently the cyclists' turn on this E9j parking space. May you park your car here?","choices":[{"text":"No, you must wait for the car turn","is_correct":true},{"text":"Yes, if no bicycle is currently using the space","is_correct":false},{"text":"Yes, as long as you leave enough space for a bicycle","is_correct":false}],"explanation":"The E9j alternating system is based on the turn schedule, not on the physical presence of a bicycle. During the cyclists' turn, car parking is not permitted."},"FR":{"question":"C'est actuellement le tour des cyclistes sur cette place E9j. Pouvez-vous garer votre voiture ici ?","choices":[{"text":"Non, vous devez attendre le tour des voitures","is_correct":true},{"text":"Oui, si aucun vélo n'utilise actuellement la place","is_correct":false},{"text":"Oui, à condition de laisser suffisamment de place pour un vélo","is_correct":false}],"explanation":"Le système alternant de E9j repose sur le tour prévu, pas sur la présence physique d'un vélo. Pendant le tour des cyclistes, le stationnement des voitures n'est pas autorisé."},"AR":{"question":"إنه دور راكبي الدراجات حالياً في موقف E9j هذا. هل يجوز لك ركن سيارتك هنا؟","choices":[{"text":"لا، يجب أن تنتظر دور السيارات","is_correct":true},{"text":"نعم، إذا لم تكن هناك دراجة تستخدم الموقف حالياً","is_correct":false},{"text":"نعم، طالما تترك مساحة كافية لدراجة","is_correct":false}],"explanation":"يعتمد نظام التناوب في E9j على جدول الدور لا على الوجود المادي لدراجة. خلال دور راكبي الدراجات لا يُسمح بركن السيارات."}}},{"question_id":"E9j_Q06","type":"WHAT_MUST_YOU_DO","difficulty":"MEDIUM","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Mag een vrachtwagen parkeren op een E9j-parkeerplaats tijdens de beurt voor auto's?","choices":[{"text":"Nee, tijdens de beurt voor auto's mogen alleen personenwagens parkeren — niet vrachtwagens of motoren","is_correct":true},{"text":"Ja, elk motorvoertuig mag parkeren tijdens de beurt voor auto's","is_correct":false},{"text":"Ja, motoren mogen altijd parkeren ongeacht de beurt","is_correct":false}],"explanation":"E9j verdeelt de parkeerplaats tussen fietsers en personenwagens. Vrachtwagens en motoren vallen buiten het systeem van E9j."},"EN":{"question":"May a truck park on an E9j space during the car turn?","choices":[{"text":"No, during the car turn only passenger cars may park — not trucks or motorcycles","is_correct":true},{"text":"Yes, any motor vehicle may park during the car turn","is_correct":false},{"text":"Yes, motorcycles may always use the space regardless of the turn","is_correct":false}],"explanation":"E9j divides the space between cyclists and passenger cars. Trucks and motorcycles fall outside the E9j system."},"FR":{"question":"Un camion peut-il stationner sur une place E9j pendant le tour des voitures ?","choices":[{"text":"Non, pendant le tour des voitures seules les voitures particulières peuvent stationner — pas les camions ni les motos","is_correct":true},{"text":"Oui, tout véhicule à moteur peut stationner pendant le tour des voitures","is_correct":false},{"text":"Oui, les motos peuvent toujours utiliser la place quel que soit le tour","is_correct":false}],"explanation":"E9j partage la place entre cyclistes et voitures particulières. Les camions et les motos n'entrent pas dans le système E9j."},"AR":{"question":"هل يجوز لشاحنة الركن في موقف E9j خلال دور السيارات؟","choices":[{"text":"لا، خلال دور السيارات يُسمح فقط للسيارات الخاصة بالركن — لا الشاحنات ولا الدراجات النارية","is_correct":true},{"text":"نعم، يمكن لأي مركبة آلية الركن خلال دور السيارات","is_correct":false},{"text":"نعم، يمكن للدراجات النارية دائماً استخدام الموقف بصرف النظر عن الدور","is_correct":false}],"explanation":"تقسم E9j الموقف بين راكبي الدراجات والسيارات الخاصة. الشاحنات والدراجات النارية لا تندرج ضمن نظام E9j."}}},{"question_id":"E9j_Q07","type":"IS_IT_ALLOWED","difficulty":"HARD","is_critical":true,"show_sign":true,"i18n":{"NL":{"question":"Mogen een auto en een fiets tegelijkertijd parkeren op een E9j-parkeerplaats?","choices":[{"text":"Nee, de parkeerplaats is op elk moment voor slechts één voertuigtype tegelijk","is_correct":true},{"text":"Ja, E9j is ontworpen om gelijktijdig te worden gedeeld door fietsers en auto's","is_correct":false}],"explanation":"E9j voert een wisselend systeem in, niet een gelijktijdig gedeeld systeem. Auto en fiets kunnen nooit tegelijkertijd op dezelfde E9j-plek parkeren."},"EN":{"question":"May a car and a bicycle park on an E9j space at the same time?","choices":[{"text":"No, the space is for one vehicle type at a time only","is_correct":true},{"text":"Yes, E9j is designed to be shared simultaneously by cyclists and cars","is_correct":false}],"explanation":"E9j introduces an alternating system, not a simultaneous sharing system. A car and a bicycle can never park on the same E9j space at the same time."},"FR":{"question":"Une voiture et un vélo peuvent-ils stationner simultanément sur une place E9j ?","choices":[{"text":"Non, la place est réservée à un seul type de véhicule à la fois","is_correct":true},{"text":"Oui, E9j est conçu pour être partagé simultanément par cyclistes et voitures","is_correct":false}],"explanation":"E9j instaure un système alternant, pas un partage simultané. Une voiture et un vélo ne peuvent jamais stationner en même temps sur la même place E9j."},"AR":{"question":"هل يجوز لسيارة ودراجة الركن في موقف E9j في آنٍ واحد؟","choices":[{"text":"لا، الموقف لنوع واحد فقط من المركبات في كل مرة","is_correct":true},{"text":"نعم، E9j مصمم للمشاركة المتزامنة بين راكبي الدراجات والسيارات","is_correct":false}],"explanation":"تُرسي E9j نظاماً متناوباً لا نظام مشاركة متزامنة. لا يمكن لسيارة ودراجة الركن في نفس موقف E9j في آنٍ واحد."}}},{"question_id":"E9j_Q08","type":"IS_IT_ALLOWED","difficulty":"HARD","is_critical":true,"show_sign":true,"i18n":{"NL":{"question":"Mag een auto parkeren op een E9j-parkeerplaats tijdens de fietsbeurt als er geen fiets aanwezig is?","choices":[{"text":"Nee, de beurt geldt ongeacht de fysieke aanwezigheid van een fiets","is_correct":true},{"text":"Ja, als er geen fiets aanwezig is, mag de ruimte door elke weggebruiker worden gebruikt","is_correct":false}],"explanation":"Het E9j-systeem is gebaseerd op de toegewezen beurt, niet op of er een fiets geparkeerd staat. Parkeren met een auto tijdens de fietsbeurt is niet toegelaten, ook als de plek leeg is."},"EN":{"question":"May a car park on an E9j space during the cyclists' turn if no bicycle is present?","choices":[{"text":"No, the turn applies regardless of whether a bicycle is physically present","is_correct":true},{"text":"Yes, if no bicycle is present the space is available to any road user","is_correct":false}],"explanation":"The E9j system is based on the assigned turn, not on whether a bicycle is parked there. Parking a car during the cyclists' turn is not permitted even if the space is empty."},"FR":{"question":"Une voiture peut-elle stationner sur une place E9j pendant le tour des cyclistes si aucun vélo n'est présent ?","choices":[{"text":"Non, le tour s'applique indépendamment de la présence physique d'un vélo","is_correct":true},{"text":"Oui, si aucun vélo n'est présent la place est disponible pour tout usager","is_correct":false}],"explanation":"Le système E9j repose sur le tour attribué, pas sur la présence d'un vélo stationné. Stationner une voiture pendant le tour des cyclistes n'est pas autorisé, même si la place est libre."},"AR":{"question":"هل يجوز لسيارة الركن في موقف E9j خلال دور راكبي الدراجات إذا لم تكن هناك دراجة حاضرة؟","choices":[{"text":"لا، الدور يسري بصرف النظر عن الوجود المادي لدراجة","is_correct":true},{"text":"نعم، إذا لم تكن هناك دراجة فالموقف متاح لأي مستخدم للطريق","is_correct":false}],"explanation":"يعتمد نظام E9j على الدور المخصص لا على وجود دراجة مركونة. ركن السيارة خلال دور راكبي الدراجات غير مسموح به حتى لو كان الموقف فارغاً."}}}]
+[
+  {
+    "question_id": "E9j_Q01",
+    "type": "WHAT_DOES_IT_MEAN",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat betekent dit verkeersbord?",
+        "choices": [
+          {
+            "text": "De parkeerplaats is beurtelings voorbehouden voor fietsers en voor autobestuurders volgens de tijden op het onderbord",
+            "is_correct": true
+          },
+          {
+            "text": "Fietsers en autobestuurders mogen hier altijd tegelijk parkeren",
+            "is_correct": false
+          },
+          {
+            "text": "De parkeerplaats is uitsluitend voor fietsers; auto's zijn hier nooit toegelaten",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Bord E9j duidt een wisselende parkeerplaats aan: de beschikbare ruimte wordt beurtelings gebruikt door fietsers en door autobestuurders. Een onderbord geeft aan welke categorie op welk moment voorrang heeft."
+      },
+      "EN": {
+        "question": "What does this road sign mean?",
+        "choices": [
+          {
+            "text": "The parking space is alternately reserved for cyclists and for car drivers according to the times on the supplementary sign",
+            "is_correct": true
+          },
+          {
+            "text": "Cyclists and car drivers may always park here at the same time",
+            "is_correct": false
+          },
+          {
+            "text": "The parking space is exclusively for cyclists; cars are never permitted here",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Sign E9j indicates an alternating parking space: the available area is used alternately by cyclists and by car drivers. A supplementary sign indicates which category has priority at which time."
+      },
+      "FR": {
+        "question": "Que signifie ce panneau de signalisation ?",
+        "choices": [
+          {
+            "text": "La place de stationnement est alternativement réservée aux cyclistes et aux automobilistes selon les horaires du panneau complémentaire",
+            "is_correct": true
+          },
+          {
+            "text": "Les cyclistes et les automobilistes peuvent toujours se garer ici en même temps",
+            "is_correct": false
+          },
+          {
+            "text": "La place de stationnement est exclusivement pour les cyclistes ; les voitures ne sont jamais autorisées ici",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Le panneau E9j indique une place de stationnement alternée : l'espace disponible est utilisé alternativement par les cyclistes et par les automobilistes. Un panneau complémentaire indique quelle catégorie a la priorité à quel moment."
+      },
+      "AR": {
+        "question": "ماذا تعني هذه العلامة المرورية؟",
+        "choices": [
+          {
+            "text": "الموقف مخصص بالتناوب للدراجين وسائقي السيارات وفقاً للأوقات على العلامة التكميلية",
+            "is_correct": true
+          },
+          {
+            "text": "يجوز للدراجين وسائقي السيارات دائماً الوقوف هنا في نفس الوقت",
+            "is_correct": false
+          },
+          {
+            "text": "الموقف حصراً للدراجين؛ لا يُسمح للسيارات هنا أبداً",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تُشير علامة E9j إلى موقف متناوب: المساحة المتاحة تُستخدم بالتناوب من قِبَل الدراجين وسائقي السيارات. تُحدد علامة تكميلية أي فئة لها الأولوية في أي وقت."
+      }
+    }
+  },
+  {
+    "question_id": "E9j_Q02",
+    "type": "WHICH_SIGN",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat is het doel van bord E9j?",
+        "choices": [
+          {
+            "text": "Een efficiënt gedeeld gebruik van dezelfde parkeerruimte door twee verschillende voertuigcategorieën op verschillende tijdstippen",
+            "is_correct": true
+          },
+          {
+            "text": "Fietsers en auto's voor altijd scheiden door aparte parkeerstroken aan te duiden",
+            "is_correct": false
+          },
+          {
+            "text": "Parkeren verbieden voor alle gemotoriseerde voertuigen en de ruimte enkel voor fietsers voorbehouden",
+            "is_correct": false
+          }
+        ],
+        "explanation": "E9j is ontworpen om de beschikbare parkeerruimte optimaal te benutten door dezelfde plek op verschillende momenten ter beschikking te stellen aan fietsers en aan autobestuurders. Zo wordt de parkeerdruk gespreid over twee doelgroepen."
+      },
+      "EN": {
+        "question": "What is the purpose of sign E9j?",
+        "choices": [
+          {
+            "text": "Efficient shared use of the same parking space by two different vehicle categories at different times",
+            "is_correct": true
+          },
+          {
+            "text": "Permanently separating cyclists and cars by indicating separate parking lanes",
+            "is_correct": false
+          },
+          {
+            "text": "Prohibiting parking for all motorised vehicles and reserving the space only for cyclists",
+            "is_correct": false
+          }
+        ],
+        "explanation": "E9j is designed to make optimal use of the available parking space by making the same spot available to cyclists and to car drivers at different times. This spreads the parking pressure across two target groups."
+      },
+      "FR": {
+        "question": "Quel est le but du panneau E9j ?",
+        "choices": [
+          {
+            "text": "Une utilisation partagée efficace du même espace de stationnement par deux catégories différentes de véhicules à des moments différents",
+            "is_correct": true
+          },
+          {
+            "text": "Séparer définitivement les cyclistes et les voitures en indiquant des bandes de stationnement séparées",
+            "is_correct": false
+          },
+          {
+            "text": "Interdire le stationnement pour tous les véhicules motorisés et réserver l'espace uniquement aux cyclistes",
+            "is_correct": false
+          }
+        ],
+        "explanation": "E9j est conçu pour utiliser de manière optimale l'espace de stationnement disponible en mettant le même emplacement à la disposition des cyclistes et des automobilistes à des moments différents. Cela répartit la pression de stationnement entre deux groupes cibles."
+      },
+      "AR": {
+        "question": "ما هدف علامة E9j؟",
+        "choices": [
+          {
+            "text": "الاستخدام المشترك الفعّال لنفس مساحة الوقوف من قِبَل فئتين مختلفتين من المركبات في أوقات مختلفة",
+            "is_correct": true
+          },
+          {
+            "text": "الفصل الدائم بين الدراجين والسيارات بتحديد مسارات وقوف منفصلة",
+            "is_correct": false
+          },
+          {
+            "text": "حظر الوقوف لجميع المركبات ذات المحرك وحجز المساحة للدراجين فقط",
+            "is_correct": false
+          }
+        ],
+        "explanation": "صُمّمت E9j لتحقيق الاستخدام الأمثل لمساحة الوقوف المتاحة بجعل نفس المكان متاحاً للدراجين وسائقي السيارات في أوقات مختلفة. وهذا يوزع ضغط الوقوف بين مجموعتين مستهدفتين."
+      }
+    }
+  },
+  {
+    "question_id": "E9j_Q03",
+    "type": "HAZARD_IDENTIFICATION",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U negeert het onderbord bij E9j en parkeert uw auto tijdens de uren dat de plek voor fietsers bestemd is. Wat is het gevaar?",
+        "choices": [
+          {
+            "text": "U bezet de ruimte die fietsers nodig hebben om hun fietsen te stallen, waardoor fietsers hun voertuig op gevaarlijke plaatsen moeten achterlaten",
+            "is_correct": true
+          },
+          {
+            "text": "Uw auto kan bekrast worden door fietsers die proberen langs uw voertuig te komen",
+            "is_correct": false
+          },
+          {
+            "text": "U riskeert dat de parkeerplaats permanent gesloten wordt voor alle voertuigen",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Als auto's de fietsparkeerplek bezetten tijdens de voor fietsers voorziene uren, worden fietsers gedwongen hun fiets elders te plaatsen, vaak op de rijbaan, het trottoir of andere onveilige locaties. Dit verhoogt het risico op diefstal en verkeersonveiligheid."
+      },
+      "EN": {
+        "question": "You ignore the supplementary sign under E9j and park your car during the hours when the space is intended for cyclists. What is the hazard?",
+        "choices": [
+          {
+            "text": "You occupy the space cyclists need to park their bicycles, forcing cyclists to leave their vehicle in dangerous places",
+            "is_correct": true
+          },
+          {
+            "text": "Your car may be scratched by cyclists trying to pass your vehicle",
+            "is_correct": false
+          },
+          {
+            "text": "You risk the parking space being permanently closed to all vehicles",
+            "is_correct": false
+          }
+        ],
+        "explanation": "When cars occupy the cycling parking space during the hours designated for cyclists, cyclists are forced to place their bicycle elsewhere, often on the carriageway, pavement or other unsafe locations. This increases the risk of theft and traffic unsafety."
+      },
+      "FR": {
+        "question": "Vous ignorez le panneau complémentaire sous E9j et vous garez votre voiture pendant les heures où la place est destinée aux cyclistes. Quel est le danger ?",
+        "choices": [
+          {
+            "text": "Vous occupez l'espace dont les cyclistes ont besoin pour garer leurs vélos, obligeant les cyclistes à laisser leur véhicule dans des endroits dangereux",
+            "is_correct": true
+          },
+          {
+            "text": "Votre voiture peut être rayée par des cyclistes essayant de passer devant votre véhicule",
+            "is_correct": false
+          },
+          {
+            "text": "Vous risquez que la place de stationnement soit définitivement fermée à tous les véhicules",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Lorsque des voitures occupent la place de stationnement vélos pendant les heures désignées aux cyclistes, ces derniers sont contraints de placer leur vélo ailleurs, souvent sur la chaussée, le trottoir ou d'autres endroits non sécurisés. Cela augmente le risque de vol et d'insécurité routière."
+      },
+      "AR": {
+        "question": "تتجاهل العلامة التكميلية عند E9j وتقف بسيارتك خلال الساعات التي يكون فيها الموقف مخصصاً للدراجين. ما الخطر في ذلك؟",
+        "choices": [
+          {
+            "text": "تحتل المساحة التي يحتاجها الدراجون لركن دراجاتهم مما يُجبرهم على ترك مركباتهم في أماكن خطرة",
+            "is_correct": true
+          },
+          {
+            "text": "قد تُخدش سيارتك من قِبَل دراجين يحاولون المرور بجانب مركبتك",
+            "is_correct": false
+          },
+          {
+            "text": "تخاطر بإغلاق الموقف بشكل دائم لجميع المركبات",
+            "is_correct": false
+          }
+        ],
+        "explanation": "عندما تحتل السيارات موقف الدراجات خلال الساعات المخصصة للدراجين يُجبَر الدراجون على وضع دراجاتهم في مكان آخر غالباً على مسار السير أو الرصيف أو مواقع غير آمنة أخرى. هذا يزيد من خطر السرقة وعدم أمان المرور."
+      }
+    }
+  },
+  {
+    "question_id": "E9j_Q04",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U ziet bord E9j met een onderbord 'fietsers: 7u–9u / auto's: 9u–18u'. Het is 10u30. Wie mag er parkeren?",
+        "choices": [
+          {
+            "text": "Alleen autobestuurders, want het is 10u30 en de uren voor auto's (9u–18u) zijn van kracht",
+            "is_correct": true
+          },
+          {
+            "text": "Alleen fietsers, want fietsers hebben altijd voorrang bij bord E9j",
+            "is_correct": false
+          },
+          {
+            "text": "Zowel fietsers als autobestuurders mogen tegelijk parkeren",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Het onderbord bepaalt wie op welk moment mag parkeren. Om 10u30 geldt het tijdvak voor auto's (9u–18u). Fietsers mogen pas opnieuw parkeren na 18u of vanaf 7u de volgende dag, afhankelijk van het onderbord."
+      },
+      "EN": {
+        "question": "You see sign E9j with a supplementary sign 'cyclists: 07:00–09:00 / cars: 09:00–18:00'. It is 10:30. Who may park?",
+        "choices": [
+          {
+            "text": "Only car drivers, because it is 10:30 and the hours for cars (09:00–18:00) are in force",
+            "is_correct": true
+          },
+          {
+            "text": "Only cyclists, because cyclists always have priority under sign E9j",
+            "is_correct": false
+          },
+          {
+            "text": "Both cyclists and car drivers may park at the same time",
+            "is_correct": false
+          }
+        ],
+        "explanation": "The supplementary sign determines who may park at which time. At 10:30 the time slot for cars (09:00–18:00) is in force. Cyclists may only park again after 18:00 or from 07:00 the following day depending on the supplementary sign."
+      },
+      "FR": {
+        "question": "Vous voyez le panneau E9j avec un panneau complémentaire 'cyclistes : 7h–9h / voitures : 9h–18h'. Il est 10h30. Qui peut se garer ?",
+        "choices": [
+          {
+            "text": "Uniquement les automobilistes car il est 10h30 et les heures pour les voitures (9h–18h) sont en vigueur",
+            "is_correct": true
+          },
+          {
+            "text": "Uniquement les cyclistes car les cyclistes ont toujours la priorité avec le panneau E9j",
+            "is_correct": false
+          },
+          {
+            "text": "Les cyclistes et les automobilistes peuvent se garer en même temps",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Le panneau complémentaire détermine qui peut se garer à quel moment. À 10h30 le créneau horaire pour les voitures (9h–18h) est en vigueur. Les cyclistes ne peuvent se garer à nouveau qu'après 18h ou à partir de 7h le lendemain selon le panneau complémentaire."
+      },
+      "AR": {
+        "question": "ترى علامة E9j مع علامة تكميلية 'دراجون: 7:00–9:00 / سيارات: 9:00–18:00'. الساعة الآن 10:30. من يُسمح له بالوقوف؟",
+        "choices": [
+          {
+            "text": "سائقو السيارات فقط لأن الساعة 10:30 وساعات السيارات (9:00–18:00) سارية",
+            "is_correct": true
+          },
+          {
+            "text": "الدراجون فقط لأن الدراجين لهم الأولوية دائماً عند علامة E9j",
+            "is_correct": false
+          },
+          {
+            "text": "يجوز للدراجين وسائقي السيارات الوقوف في نفس الوقت",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تُحدد العلامة التكميلية من يُسمح له بالوقوف في أي وقت. في الساعة 10:30 الفترة الزمنية للسيارات (9:00–18:00) سارية. لا يُسمح للدراجين بالوقوف مجدداً إلا بعد 18:00 أو من 7:00 في اليوم التالي حسب العلامة التكميلية."
+      }
+    }
+  },
+  {
+    "question_id": "E9j_Q05",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U heeft uw auto geparkeerd bij E9j tijdens de autouren. De autouren lopen om 18u af en fietsuren beginnen om 18u. Wat moet u doen?",
+        "choices": [
+          {
+            "text": "Uw voertuig verplaatsen vóór 18u zodat fietsers de plek kunnen gebruiken; na 18u is de plek voor fietsers bestemd",
+            "is_correct": true
+          },
+          {
+            "text": "U mag uw auto laten staan want de parkeertijd werd begonnen tijdens de toegelaten uren",
+            "is_correct": false
+          },
+          {
+            "text": "U mag tot middernacht blijven staan omdat het onderbord geen boetebord is",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Bij wisselend parkeren eindigt uw recht om te parkeren op het moment dat de tijdsperiode van uw categorie afloopt. Vanaf 18u is de plek bestemd voor fietsers en mag uw auto er niet meer staan. U moet uw voertuig tijdig verplaatsen."
+      },
+      "EN": {
+        "question": "You parked your car under E9j during the car hours. The car hours end at 18:00 and cyclist hours begin at 18:00. What must you do?",
+        "choices": [
+          {
+            "text": "Move your vehicle before 18:00 so that cyclists can use the space; after 18:00 the space is intended for cyclists",
+            "is_correct": true
+          },
+          {
+            "text": "You may leave your car as the parking time was started during the permitted hours",
+            "is_correct": false
+          },
+          {
+            "text": "You may stay until midnight because the supplementary sign is not a penalty sign",
+            "is_correct": false
+          }
+        ],
+        "explanation": "With alternating parking your right to park ends when the time period of your category expires. From 18:00 the space is intended for cyclists and your car may no longer be there. You must move your vehicle in time."
+      },
+      "FR": {
+        "question": "Vous avez garé votre voiture sous E9j pendant les heures voiture. Les heures voiture se terminent à 18h et les heures cyclistes commencent à 18h. Que devez-vous faire ?",
+        "choices": [
+          {
+            "text": "Déplacer votre véhicule avant 18h pour que les cyclistes puissent utiliser la place ; après 18h la place est destinée aux cyclistes",
+            "is_correct": true
+          },
+          {
+            "text": "Vous pouvez laisser votre voiture car le temps de stationnement a été commencé pendant les heures autorisées",
+            "is_correct": false
+          },
+          {
+            "text": "Vous pouvez rester jusqu'à minuit car le panneau complémentaire n'est pas un panneau de pénalité",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Avec le stationnement alternatif votre droit de stationner se termine quand la période de temps de votre catégorie expire. À partir de 18h la place est destinée aux cyclistes et votre voiture ne peut plus y être. Vous devez déplacer votre véhicule à temps."
+      },
+      "AR": {
+        "question": "وقّفت سيارتك عند E9j خلال ساعات السيارات. تنتهي ساعات السيارات عند 18:00 وتبدأ ساعات الدراجات عند 18:00. ماذا يجب أن تفعل؟",
+        "choices": [
+          {
+            "text": "نقل مركبتك قبل 18:00 لكي يتمكن الدراجون من استخدام المكان؛ بعد 18:00 المكان مخصص للدراجين",
+            "is_correct": true
+          },
+          {
+            "text": "يمكنك ترك سيارتك لأن وقت الوقوف بدأ خلال الساعات المسموح بها",
+            "is_correct": false
+          },
+          {
+            "text": "يمكنك البقاء حتى منتصف الليل لأن العلامة التكميلية ليست علامة غرامة",
+            "is_correct": false
+          }
+        ],
+        "explanation": "عند الوقوف المتناوب ينتهي حقك في الوقوف عند انتهاء الفترة الزمنية لفئتك. من 18:00 المكان مخصص للدراجين ولا يجوز أن تكون سيارتك هناك بعد ذلك. يجب عليك نقل مركبتك في الوقت المناسب."
+      }
+    }
+  },
+  {
+    "question_id": "E9j_Q06",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Er is geen onderbord bij bord E9j. Hoe weet u wie er mag parkeren?",
+        "choices": [
+          {
+            "text": "Zonder onderbord is de parkeerplek niet bruikbaar voor wisselend parkeren; u moet een andere plek zoeken of informatie bij de gemeente opvragen",
+            "is_correct": true
+          },
+          {
+            "text": "Zonder onderbord mogen fietsers en auto's altijd tegelijk gebruik maken van de plek",
+            "is_correct": false
+          },
+          {
+            "text": "Zonder onderbord heeft de autobestuurder automatisch voorrang boven de fietser",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Bord E9j werkt enkel in combinatie met een onderbord dat de tijdsverdeling aangeeft. Zonder onderbord kan de bestuurder de geldende regels niet kennen. In de praktijk moet een onderbord aanwezig zijn; ontbreekt het, dan is de situatie onduidelijk en moet men prudent handelen."
+      },
+      "EN": {
+        "question": "There is no supplementary sign under sign E9j. How do you know who may park?",
+        "choices": [
+          {
+            "text": "Without a supplementary sign the parking space cannot be used for alternating parking; you must find another space or request information from the municipality",
+            "is_correct": true
+          },
+          {
+            "text": "Without a supplementary sign cyclists and cars may always use the space at the same time",
+            "is_correct": false
+          },
+          {
+            "text": "Without a supplementary sign the car driver automatically has priority over the cyclist",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Sign E9j only works in combination with a supplementary sign indicating the time distribution. Without a supplementary sign the driver cannot know the applicable rules. In practice a supplementary sign must be present; if it is missing the situation is unclear and one must act prudently."
+      },
+      "FR": {
+        "question": "Il n'y a pas de panneau complémentaire sous le panneau E9j. Comment savoir qui peut se garer ?",
+        "choices": [
+          {
+            "text": "Sans panneau complémentaire la place de stationnement ne peut pas être utilisée pour le stationnement alternatif ; vous devez trouver une autre place ou demander des informations à la commune",
+            "is_correct": true
+          },
+          {
+            "text": "Sans panneau complémentaire les cyclistes et les voitures peuvent toujours utiliser la place en même temps",
+            "is_correct": false
+          },
+          {
+            "text": "Sans panneau complémentaire l'automobiliste a automatiquement la priorité sur le cycliste",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Le panneau E9j ne fonctionne qu'en combinaison avec un panneau complémentaire indiquant la répartition horaire. Sans panneau complémentaire le conducteur ne peut pas connaître les règles applicables. En pratique un panneau complémentaire doit être présent ; s'il est absent la situation est peu claire et il faut agir avec prudence."
+      },
+      "AR": {
+        "question": "لا توجد علامة تكميلية عند علامة E9j. كيف تعرف من يُسمح له بالوقوف؟",
+        "choices": [
+          {
+            "text": "بدون علامة تكميلية لا يمكن استخدام الموقف للوقوف المتناوب؛ يجب إيجاد موقف آخر أو الاستفسار من البلدية",
+            "is_correct": true
+          },
+          {
+            "text": "بدون علامة تكميلية يجوز للدراجين وسائقي السيارات دائماً استخدام المكان في نفس الوقت",
+            "is_correct": false
+          },
+          {
+            "text": "بدون علامة تكميلية يكون لسائق السيارة أولوية تلقائية على الدراج",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تعمل علامة E9j فقط بالاشتراك مع علامة تكميلية تُحدد توزيع الأوقات. بدون علامة تكميلية لا يستطيع السائق معرفة القواعد المعمول بها. من الناحية العملية يجب أن تكون العلامة التكميلية موجودة؛ إذا غابت فإن الوضع غير واضح ويجب التصرف بحذر."
+      }
+    }
+  },
+  {
+    "question_id": "E9j_Q07",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Het onderbord bij E9j vermeldt 'fietsers: ma–vr / auto's: za–zo'. Het is zaterdag. Een fietser wil zijn fiets parkeren op deze plek. Mag dat?",
+        "choices": [
+          {
+            "text": "Neen: op zaterdag is de plek voorbehouden voor auto's; fietsers moeten op zaterdag een andere stalling zoeken",
+            "is_correct": true
+          },
+          {
+            "text": "Ja: fietsers mogen altijd parkeren bij bord E9j ongeacht de dag",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Het onderbord bepaalt de tijdsverdeling zonder uitzondering. Op zaterdag geldt het tijdvak voor auto's. Een fietser die op zaterdag op deze plek parkeert overtreedt de parkeerregeling, ook al gaat het om een fiets en niet om een auto."
+      },
+      "EN": {
+        "question": "The supplementary sign under E9j states 'cyclists: Mon–Fri / cars: Sat–Sun'. It is Saturday. A cyclist wants to park his bicycle at this space. Is this permitted?",
+        "choices": [
+          {
+            "text": "No: on Saturday the space is reserved for cars; cyclists must find another parking facility on Saturday",
+            "is_correct": true
+          },
+          {
+            "text": "Yes: cyclists may always park under sign E9j regardless of the day",
+            "is_correct": false
+          }
+        ],
+        "explanation": "The supplementary sign determines the time distribution without exception. On Saturday the time slot for cars is in force. A cyclist who parks at this space on Saturday violates the parking arrangement, even though it involves a bicycle and not a car."
+      },
+      "FR": {
+        "question": "Le panneau complémentaire sous E9j indique 'cyclistes : lun–ven / voitures : sam–dim'. C'est samedi. Un cycliste veut garer son vélo sur cette place. Est-ce autorisé ?",
+        "choices": [
+          {
+            "text": "Non : le samedi la place est réservée aux voitures ; les cyclistes doivent trouver un autre stationnement le samedi",
+            "is_correct": true
+          },
+          {
+            "text": "Oui : les cyclistes peuvent toujours se garer sous le panneau E9j quel que soit le jour",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Le panneau complémentaire détermine la répartition temporelle sans exception. Le samedi le créneau pour les voitures est en vigueur. Un cycliste qui se gare sur cette place le samedi enfreint la réglementation de stationnement, même s'il s'agit d'un vélo et non d'une voiture."
+      },
+      "AR": {
+        "question": "تُشير العلامة التكميلية عند E9j إلى 'دراجون: الاثنين–الجمعة / سيارات: السبت–الأحد'. اليوم السبت. يريد دراج ركن دراجته في هذا الموقف. هل هذا مسموح؟",
+        "choices": [
+          {
+            "text": "لا: يوم السبت الموقف مخصص للسيارات؛ يجب على الدراجين إيجاد مكان آخر يوم السبت",
+            "is_correct": true
+          },
+          {
+            "text": "نعم: يجوز للدراجين دائماً الوقوف عند علامة E9j بصرف النظر عن اليوم",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تُحدد العلامة التكميلية توزيع الأوقات بدون استثناء. يوم السبت الفترة الزمنية للسيارات سارية. دراج يقف في هذا الموقف يوم السبت يخالف نظام الوقوف حتى لو كان الأمر يتعلق بدراجة وليس سيارة."
+      }
+    }
+  },
+  {
+    "question_id": "E9j_Q08",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Bord E9j staat er met onderbord 'auto's: 8u–18u ma–vr'. Het is zaterdag 14u. U wil uw auto parkeren. Mag dat?",
+        "choices": [
+          {
+            "text": "Ja: het onderbord beperkt de autouren tot ma–vr 8u–18u; op zaterdag zijn de autouren niet van kracht en mag u er parkeren als er geen andere beperking geldt",
+            "is_correct": true
+          },
+          {
+            "text": "Neen: op zaterdag is de plek uitsluitend voor fietsers en auto's zijn nooit welkom buiten ma–vr",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Het onderbord beperkt het voorbehoud voor auto's tot weekdagen van 8u tot 18u. Op zaterdag 14u valt het moment buiten de autouren van het onderbord. Er is op dat moment geen specifieke beperking via E9j van toepassing, zodat parkeren is toegelaten conform de algemene wegcode — tenzij een ander bord het verbiedt."
+      },
+      "EN": {
+        "question": "Sign E9j is present with supplementary sign 'cars: 08:00–18:00 Mon–Fri'. It is Saturday 14:00. You want to park your car. Is this permitted?",
+        "choices": [
+          {
+            "text": "Yes: the supplementary sign limits the car hours to Mon–Fri 08:00–18:00; on Saturday the car hours are not in force and you may park there if no other restriction applies",
+            "is_correct": true
+          },
+          {
+            "text": "No: on Saturday the space is exclusively for cyclists and cars are never welcome outside Mon–Fri",
+            "is_correct": false
+          }
+        ],
+        "explanation": "The supplementary sign limits the reservation for cars to weekdays from 08:00 to 18:00. On Saturday at 14:00 the moment falls outside the car hours of the supplementary sign. At that time no specific restriction via E9j applies, so parking is permitted in accordance with the general highway code — unless another sign prohibits it."
+      },
+      "FR": {
+        "question": "Le panneau E9j est présent avec le panneau complémentaire 'voitures : 8h–18h lun–ven'. C'est samedi 14h. Vous souhaitez garer votre voiture. Est-ce autorisé ?",
+        "choices": [
+          {
+            "text": "Oui : le panneau complémentaire limite les heures voiture au lun–ven 8h–18h ; le samedi les heures voiture ne sont pas en vigueur et vous pouvez vous y garer si aucune autre restriction ne s'applique",
+            "is_correct": true
+          },
+          {
+            "text": "Non : le samedi la place est exclusivement pour les cyclistes et les voitures ne sont jamais les bienvenues en dehors de lun–ven",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Le panneau complémentaire limite la réservation pour les voitures aux jours ouvrables de 8h à 18h. Le samedi à 14h le moment se situe en dehors des heures voiture du panneau complémentaire. À ce moment-là aucune restriction spécifique via E9j ne s'applique, donc le stationnement est autorisé conformément au code de la route général — sauf si un autre panneau l'interdit."
+      },
+      "AR": {
+        "question": "علامة E9j موجودة مع علامة تكميلية 'سيارات: 8:00–18:00 الاثنين–الجمعة'. يوم السبت الساعة 14:00. تريد إيقاف سيارتك. هل هذا مسموح؟",
+        "choices": [
+          {
+            "text": "نعم: العلامة التكميلية تُقيّد ساعات السيارات بأيام الاثنين–الجمعة 8:00–18:00؛ يوم السبت ساعات السيارات غير سارية ويمكنك الوقوف هناك إذا لم تكن ثمة قيود أخرى",
+            "is_correct": true
+          },
+          {
+            "text": "لا: يوم السبت المكان حصراً للدراجين والسيارات غير مرحب بها خارج الاثنين–الجمعة أبداً",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تُقيّد العلامة التكميلية الحجز للسيارات بأيام العمل من 8:00 حتى 18:00. يوم السبت في الساعة 14:00 اللحظة تقع خارج ساعات السيارات في العلامة التكميلية. في تلك اللحظة لا تسري أي قيود محددة عبر E9j لذلك يُسمح بالوقوف وفق قانون المرور العام — ما لم تحظره علامة أخرى."
+      }
+    }
+  }
+]

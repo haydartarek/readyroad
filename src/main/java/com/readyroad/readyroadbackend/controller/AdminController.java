@@ -44,6 +44,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.server.ResponseStatusException;
 import com.readyroad.readyroadbackend.service.FileUploadService;
 import com.readyroad.readyroadbackend.service.NotificationService;
 
@@ -497,8 +498,7 @@ public class AdminController {
 
         String roleStr = request.get("role");
         if (roleStr == null || roleStr.trim().isEmpty()) {
-            return ResponseEntity.badRequest()
-                    .body(Map.of("error", messages.get("admin.user.role_required")));
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, messages.get("admin.user.role_required"));
         }
 
         Role newRole;
@@ -506,14 +506,13 @@ public class AdminController {
             newRole = Role.valueOf(roleStr.toUpperCase());
         } catch (IllegalArgumentException e) {
             log.warn("⚠️ Invalid role provided: {}", roleStr);
-            return ResponseEntity.badRequest()
-                    .body(Map.of("error", messages.get("admin.user.invalid_role")));
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, messages.get("admin.user.invalid_role"));
         }
 
         var userOpt = userRepository.findById(id);
         if (userOpt.isEmpty()) {
             log.warn("⚠️ User not found with id: {}", id);
-            return ResponseEntity.notFound().build();
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, messages.get("auth.user_not_found"));
         }
 
         var user = userOpt.get();
@@ -547,14 +546,13 @@ public class AdminController {
 
         Boolean isLocked = request.get("isLocked");
         if (isLocked == null) {
-            return ResponseEntity.badRequest()
-                    .body(Map.of("error", messages.get("admin.user.lock_required")));
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, messages.get("admin.user.lock_required"));
         }
 
         var userOpt = userRepository.findById(id);
         if (userOpt.isEmpty()) {
             log.warn("⚠️ User not found with id: {}", id);
-            return ResponseEntity.notFound().build();
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, messages.get("auth.user_not_found"));
         }
 
         var user = userOpt.get();

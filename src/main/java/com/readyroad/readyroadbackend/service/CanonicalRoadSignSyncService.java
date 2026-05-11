@@ -95,7 +95,7 @@ public class CanonicalRoadSignSyncService {
         }
 
         for (RoadSign sign : existingSigns) {
-            if (canonicalSignCatalogService.findSeedFor(sign).isEmpty()) {
+            if (sign.getId() != null && !claimedIds.contains(sign.getId())) {
                 toDelete.add(sign);
                 deleted++;
             }
@@ -163,7 +163,7 @@ public class CanonicalRoadSignSyncService {
         changed |= setIfDifferent(sign.getSignCode(), seed.routeCode(), sign::setSignCode);
         changed |= setIfDifferent(sign.getNormalizedSignCode(), seed.routeKey(), sign::setNormalizedSignCode);
         changed |= setIfDifferent(sign.getCategory(), seed.category(), sign::setCategory);
-        changed |= setIfDifferent(sign.getImagePath(), stripLeadingSlash(seed.imagePath()), sign::setImagePath);
+        changed |= setIfDifferent(sign.getImagePath(), seed.imagePath(), sign::setImagePath);
         changed |= setIfDifferent(sign.getNameEn(), seed.nameEn(), sign::setNameEn);
         changed |= setIfDifferent(sign.getNameAr(), seed.nameAr(), sign::setNameAr);
         changed |= setIfDifferent(sign.getNameNl(), seed.nameNl(), sign::setNameNl);
@@ -191,10 +191,6 @@ public class CanonicalRoadSignSyncService {
 
     private static boolean isAlreadyClaimed(RoadSign sign, Set<Long> claimedIds) {
         return sign != null && sign.getId() != null && claimedIds.contains(sign.getId());
-    }
-
-    private static String stripLeadingSlash(String value) {
-        return value != null && value.startsWith("/") ? value.substring(1) : value;
     }
 
     private static <T> boolean setIfDifferent(T current, T next, java.util.function.Consumer<T> setter) {

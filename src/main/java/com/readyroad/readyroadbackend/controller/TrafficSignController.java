@@ -23,13 +23,15 @@ public class TrafficSignController {
     }
 
     @GetMapping
-    public ResponseEntity<List<TrafficSignResponse>> getAllSigns() {
-        return ResponseEntity.ok(trafficSignService.getAllActiveSigns());
+    public ResponseEntity<List<TrafficSignResponse>> getAllSigns(
+            @RequestParam(value = "categoryId", required = false) Long categoryId,
+            @RequestParam(value = "q", required = false) String query) {
+        return ResponseEntity.ok(trafficSignService.getFilteredPublicSigns(categoryId, query));
     }
 
     @GetMapping("/category/{categoryId}")
     public ResponseEntity<List<TrafficSignResponse>> getSignsByCategory(@PathVariable Long categoryId) {
-        return ResponseEntity.ok(trafficSignService.getSignsByCategory(categoryId));
+        return ResponseEntity.ok(trafficSignService.getFilteredPublicSigns(categoryId, null));
     }
 
     @GetMapping("/{signCode}")
@@ -44,6 +46,6 @@ public class TrafficSignController {
 
     @GetMapping("/search")
     public ResponseEntity<List<TrafficSignResponse>> searchTrafficSigns(@RequestParam("q") String query) {
-        return ResponseEntity.ok(trafficSignService.searchTrafficSigns(query));
+        return ResponseEntity.ok(trafficSignService.getFilteredPublicSigns(null, query));
     }
 }

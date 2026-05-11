@@ -56,6 +56,9 @@ spring:
         debug: false
 
 app:
+  cors:
+    allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:3000,http://localhost:3001,http://localhost:8890}
+    max-age: ${CORS_MAX_AGE:3600}
   mail:
     from: ${MAIL_FROM:noreply@readyroad.be}
   frontend:
@@ -75,7 +78,7 @@ server:
       charset: UTF-8
       enabled: true
       force: true
-  # ✅ Fixed: Use new Spring Boot 3.x properties
+  # Spring Boot 3.x error response properties
   error:
     include-message: on_param
     include-binding-errors: never

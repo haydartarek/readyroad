@@ -1034,14 +1034,10 @@ public class SignQuizService {
                                         "Not enough fresh sign questions are available right now. Try again later.");
                 }
 
-                Collections.shuffle(easyPool);
-                Collections.shuffle(mediumPool);
-                Collections.shuffle(hardPool);
-
                 List<SignQuestion> selected = new ArrayList<>(RANDOM_PRACTICE_TOTAL);
-                selected.addAll(easyPool.subList(0, RANDOM_PRACTICE_EASY));
-                selected.addAll(mediumPool.subList(0, RANDOM_PRACTICE_MEDIUM));
-                selected.addAll(hardPool.subList(0, RANDOM_PRACTICE_HARD));
+                selected.addAll(pickBalancedRandomPracticeQuestionsBySign(easyPool, RANDOM_PRACTICE_EASY));
+                selected.addAll(pickBalancedRandomPracticeQuestionsBySign(mediumPool, RANDOM_PRACTICE_MEDIUM));
+                selected.addAll(pickBalancedRandomPracticeQuestionsBySign(hardPool, RANDOM_PRACTICE_HARD));
                 Collections.shuffle(selected);
 
                 SignRandomPracticeSession session = new SignRandomPracticeSession();
@@ -1318,6 +1314,59 @@ public class SignQuizService {
                                 .filter(question -> !excludedQuestionIds.contains(question.getId()))
                                 .filter(this::hasValidRandomPracticeChoices)
                                 .toList());
+        }
+
+        /**
+         * Picks questions with better sign diversity inside one difficulty bucket.
+         *
+         * <p>
+         * Strategy: group by sign, then pick at most one question per sign per round
+         * until the target is reached. This prevents one sign with many questions from
+         * dominating the whole bucket while still keeping randomness.
+         * </p>
+         */
+        private List<SignQuestion> pickBalancedRandomPracticeQuestionsBySign(
+                        List<SignQuestion> pool,
+                        int targetCount) {
+                Map<Long, List<SignQuestion>> bySignId = new HashMap<>();
+                for (SignQuestion question : pool) {
+                        Long signId = question.getSign().getId();
+                        bySignId.computeIfAbsent(signId, ignored -> new ArrayList<>()).add(question);
+                }
+
+                List<List<SignQuestion>> buckets = new ArrayList<>(bySignId.values());
+                for (List<SignQuestion> bucket : buckets) {
+                        Collections.shuffle(bucket);
+                }
+
+                List<SignQuestion> picked = new ArrayList<>(targetCount);
+                while (picked.size() < targetCount) {
+                        boolean pickedInRound = false;
+                        Collections.shuffle(buckets);
+
+                        for (List<SignQuestion> bucket : buckets) {
+                                if (picked.size() >= targetCount) {
+                                        break;
+                                }
+                                if (bucket.isEmpty()) {
+                                        continue;
+                                }
+                                picked.add(bucket.remove(bucket.size() - 1));
+                                pickedInRound = true;
+                        }
+
+                        if (!pickedInRound) {
+                                break;
+                        }
+                }
+
+                if (picked.size() < targetCount) {
+                        throw new ResponseStatusException(
+                                        HttpStatus.CONFLICT,
+                                        "Not enough fresh sign questions are available right now. Try again later.");
+                }
+
+                return picked;
         }
 
         private boolean hasValidRandomPracticeChoices(SignQuestion question) {

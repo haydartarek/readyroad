@@ -43,10 +43,8 @@ public class GlobalExceptionHandler {
     @ResponseBody
     public ResponseEntity<Map<String, Object>> handleAuthenticationException(AuthenticationException ex) {
         log.warn("Authentication failed: {}", ex.getClass().getSimpleName());
-        Map<String, Object> error = new HashMap<>();
-        error.put("message", messages.get("error.authentication.invalid_credentials"));
-        error.put("timestamp", LocalDateTime.now());
-        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(error);
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                .body(errorBody(messages.get("error.authentication.invalid_credentials")));
     }
 
     /**
@@ -200,10 +198,8 @@ public class GlobalExceptionHandler {
         for (FieldError fe : ex.getBindingResult().getFieldErrors()) {
             fieldErrors.put(fe.getField(), fe.getDefaultMessage());
         }
-        Map<String, Object> body = new HashMap<>();
-        body.put("error", messages.get("error.validation_failed"));
+        Map<String, Object> body = errorBody(messages.get("error.validation_failed"));
         body.put("fields", fieldErrors);
-        body.put("timestamp", LocalDateTime.now());
         return ResponseEntity.badRequest().body(body);
     }
 
@@ -230,10 +226,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(TrafficSignNotFoundException.class)
     @ResponseBody
     public ResponseEntity<Map<String, Object>> handleTrafficSignNotFound(TrafficSignNotFoundException ex) {
-        Map<String, Object> error = new HashMap<>();
-        error.put("error", "TrafficSignNotFoundException");
-        error.put("message", ex.getMessage());
-        error.put("timestamp", LocalDateTime.now());
+        Map<String, Object> error = errorBody("TrafficSignNotFoundException", ex.getMessage());
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
     }
 
@@ -243,8 +236,8 @@ public class GlobalExceptionHandler {
      */
     @ExceptionHandler(IllegalArgumentException.class)
     @ResponseBody
-    public ResponseEntity<Map<String, String>> handleIllegalArgument(IllegalArgumentException ex) {
-        return ResponseEntity.badRequest().body(Map.of("error", ex.getMessage()));
+    public ResponseEntity<Map<String, Object>> handleIllegalArgument(IllegalArgumentException ex) {
+        return ResponseEntity.badRequest().body(errorBody(ex.getMessage()));
     }
 
     @ExceptionHandler(SocialAuthException.class)
@@ -280,10 +273,8 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(NoResourceFoundException.class)
     @ResponseBody
     public ResponseEntity<Map<String, Object>> handleNoResourceFound(NoResourceFoundException ex) {
-        Map<String, Object> error = new HashMap<>();
-        error.put("error", messages.get("error.resource_not_found"));
+        Map<String, Object> error = errorBody(messages.get("error.resource_not_found"));
         error.put("path", ex.getResourcePath());
-        error.put("timestamp", LocalDateTime.now());
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
     }
 
@@ -296,9 +287,19 @@ public class GlobalExceptionHandler {
     @ResponseBody
     public ResponseEntity<Map<String, Object>> handleGenericException(Exception ex) {
         log.error("Unhandled exception: {}", ex.getMessage(), ex);
-        Map<String, Object> body = new HashMap<>();
-        body.put("error", messages.get("error.unexpected"));
-        body.put("timestamp", LocalDateTime.now());
+        Map<String, Object> body = errorBody(messages.get("error.unexpected"));
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(body);
+    }
+
+    private Map<String, Object> errorBody(String message) {
+        return errorBody(message, message);
+    }
+
+    private Map<String, Object> errorBody(String error, String message) {
+        Map<String, Object> body = new HashMap<>();
+        body.put("error", error);
+        body.put("message", message);
+        body.put("timestamp", LocalDateTime.now());
+        return body;
     }
 }

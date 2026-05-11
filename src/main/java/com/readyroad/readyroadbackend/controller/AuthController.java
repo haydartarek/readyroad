@@ -20,6 +20,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
@@ -61,17 +62,13 @@ public class AuthController {
     @PostMapping("/register")
     public ResponseEntity<?> register(@Valid @RequestBody RegisterRequest request) {
         if (!adminSystemSettingsService.areRegistrationsAllowed()) {
-            Map<String, String> error = new HashMap<>();
-            error.put("error", messages.get("auth.register.disabled"));
-            return ResponseEntity.status(HttpStatus.FORBIDDEN).body(error);
+            return errorResponse(HttpStatus.FORBIDDEN, messages.get("auth.register.disabled"));
         }
         try {
             AuthResponse response = authService.register(request);
             return ResponseEntity.status(HttpStatus.CREATED).body(response);
         } catch (IllegalArgumentException e) {
-            Map<String, String> error = new HashMap<>();
-            error.put("error", e.getMessage());
-            return ResponseEntity.badRequest().body(error);
+            return errorResponse(HttpStatus.BAD_REQUEST, e.getMessage());
         }
     }
 
@@ -86,11 +83,9 @@ public class AuthController {
         try {
             AuthResponse response = authService.login(request);
             return ResponseEntity.ok(response);
-        } catch (Exception e) {
+        } catch (AuthenticationException e) {
             log.warn("Login failed for identifier={}: {}", request.getUsername(), e.getMessage());
-            Map<String, String> error = new HashMap<>();
-            error.put("error", messages.get("auth.login.invalid_credentials"));
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(error);
+            return errorResponse(HttpStatus.UNAUTHORIZED, messages.get("auth.login.invalid_credentials"));
         }
     }
 
@@ -112,9 +107,7 @@ public class AuthController {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
         if (authentication == null || !authentication.isAuthenticated()) {
-            Map<String, String> error = new HashMap<>();
-            error.put("error", messages.get("auth.not_authenticated"));
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(error);
+            return errorResponse(HttpStatus.UNAUTHORIZED, messages.get("auth.not_authenticated"));
         }
 
         // Principal can be User (from JWT filter) or String (username)
@@ -129,14 +122,10 @@ public class AuthController {
             user = userRepository.findByUsernameOrEmailIgnoreCase(username)
                     .orElse(null);
             if (user == null) {
-                Map<String, String> error = new HashMap<>();
-                error.put("error", messages.get("auth.user_not_found"));
-                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
+                return errorResponse(HttpStatus.NOT_FOUND, messages.get("auth.user_not_found"));
             }
         } else {
-            Map<String, String> error = new HashMap<>();
-            error.put("error", messages.get("auth.not_authenticated"));
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(error);
+            return errorResponse(HttpStatus.UNAUTHORIZED, messages.get("auth.not_authenticated"));
         }
 
         Map<String, Object> userInfo = new HashMap<>();
@@ -153,7 +142,8 @@ public class AuthController {
                         .map(identity -> identity.getProvider().name())
                         .sorted()
                         .toList());
-        userInfo.put("googleLinked", authIdentityRepository.existsByUserIdAndProvider(user.getId(), AuthProvider.GOOGLE));
+        userInfo.put("googleLinked",
+                authIdentityRepository.existsByUserIdAndProvider(user.getId(), AuthProvider.GOOGLE));
 
         return ResponseEntity.ok(userInfo);
     }
@@ -199,7 +189,18 @@ public class AuthController {
             passwordResetService.resetPassword(request.getToken(), request.getNewPassword());
             return ResponseEntity.ok(Map.of("message", messages.get("auth.reset_password.updated")));
         } catch (IllegalArgumentException ex) {
-            return ResponseEntity.badRequest().body(Map.of("error", ex.getMessage()));
+            return errorResponse(HttpStatus.BAD_REQUEST, ex.getMessage());
         }
+    }
+
+    private ResponseEntity<Map<String, String>> errorResponse(HttpStatus status, String message) {
+        return ResponseEntity.status(status).body(errorBody(message));
+    }
+
+    private Map<String, String> errorBody(String message) {
+        Map<String, String> error = new HashMap<>();
+        error.put("error", message);
+        error.put("message", message);
+        return error;
     }
 }

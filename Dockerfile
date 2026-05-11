@@ -30,11 +30,14 @@ RUN addgroup -g 1001 readyroad && \
 # Copy jar from build stage
 COPY --from=build /app/target/*.jar app.jar
 
+# Copy official traffic sign images into the backend image.
+COPY public/images/signs ./public/images/signs
+
 # Install su-exec for privilege drop in entrypoint
 RUN apk add --no-cache su-exec
 
 # Create required directories and set ownership
-RUN mkdir -p /app/logs /app/public/images/quiz && \
+RUN mkdir -p /app/logs /app/public/images/signs /app/public/images/quiz && \
     chown -R readyroad:readyroad /app
 
 # Entrypoint: fix volume mount ownership at startup, then run the app

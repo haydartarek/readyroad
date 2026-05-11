@@ -114,6 +114,7 @@ services:
     volumes:
       - backend_logs:/app/logs
       - ./src/main/resources/data/signs_import:/app/data/signs_import:ro
+      - ./public/images/signs:/app/public/images/signs:ro
       - sign_uploads:/app/public/images/quiz
 
     networks:
@@ -131,8 +132,8 @@ services:
         ]
       interval: 30s
       timeout: 10s
-      retries: 3
-      start_period: 60s
+      retries: 5
+      start_period: 240s
 
   # Frontend Application (Next.js)
   frontend:
@@ -141,6 +142,7 @@ services:
       dockerfile: Dockerfile
       args:
         BACKEND_URL: http://backend:8890/api
+        NEXT_PUBLIC_API_BASE_URL: http://localhost:8890
     container_name: readyroad-frontend
     restart: unless-stopped
 
@@ -151,6 +153,7 @@ services:
     environment:
       # Runtime env — used by the BFF proxy (server-side only)
       BACKEND_URL: http://backend:8890/api
+      NEXT_PUBLIC_API_BASE_URL: http://localhost:8890
       FRONTEND_URL: ${FRONTEND_URL:-http://localhost:3000}
       GOOGLE_OAUTH_CLIENT_ID: ${GOOGLE_OAUTH_CLIENT_ID:-}
       NODE_ENV: production
@@ -158,9 +161,6 @@ services:
 
     ports:
       - "3000:3000"
-
-    volumes:
-      - ../readyroad_front_end/web_app/public/images/signs:/app/public/images/signs:ro
 
     networks:
       - readyroad-network

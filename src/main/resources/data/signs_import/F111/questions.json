@@ -1,1 +1,508 @@
-[{"question_id":"F111_Q01","type":"WHAT_DOES_IT_MEAN","difficulty":"EASY","is_critical":false,"show_sign":true,"_note":"TEMPLATE: Replace wrong answers with actual sign names from the same category.","i18n":{"NL":{"question":"Wat betekent dit verkeersbord?","choices":[{"text":"Fietsstraat","is_correct":true},{"text":"Rijden verboden in beide richtingen","is_correct":false},{"text":"Gevaarsbord voor wegwerkzaamheden","is_correct":false}],"explanation":"Begin / Einde fietsstraat."},"EN":{"question":"What does this traffic sign mean?","choices":[{"text":"Bicycle street","is_correct":true},{"text":"Driving prohibited in both directions","is_correct":false},{"text":"Danger sign for roadworks","is_correct":false}],"explanation":"Start / End of bicycle street."},"FR":{"question":"Que signifie ce panneau de signalisation ?","choices":[{"text":"Rue cyclable","is_correct":true},{"text":"Circulation interdite dans les deux sens","is_correct":false},{"text":"Panneau de danger pour travaux","is_correct":false}],"explanation":"Début / Fin de rue cyclable."},"AR":{"question":"ما معنى هذه العلامة المرورية؟","choices":[{"text":"شارع الدراجات الهوائية","is_correct":true},{"text":"القيادة محظورة في كلا الاتجاهين","is_correct":false},{"text":"علامة خطر لأعمال الطريق","is_correct":false}],"explanation":"بداية / نهاية شارع الدراجات."}}},{"question_id":"F111_Q02","type":"WHICH_SIGN","difficulty":"EASY","is_critical":false,"show_sign":true,"_note":"TEMPLATE: Ready to use â€” category identification question.","i18n":{"NL":{"question":"Tot welke categorie verkeerstekens behoort dit bord?","choices":[{"text":"Aanwijzingsborden","is_correct":true},{"text":"Gebodsborden","is_correct":false},{"text":"Parkeerregelementsborden","is_correct":false}],"explanation":"Dit bord behoort tot de categorie 'Aanwijzingsborden'. Elk type bord heeft een specifieke vorm en kleurschema."},"EN":{"question":"To which category of traffic signs does this sign belong?","choices":[{"text":"Information signs","is_correct":true},{"text":"Mandatory signs","is_correct":false},{"text":"Parking regulation signs","is_correct":false}],"explanation":"This sign belongs to the 'Information signs' category. Each type of sign has a specific shape and color scheme."},"FR":{"question":"À quelle catégorie de panneaux de signalisation ce panneau appartient-il ?","choices":[{"text":"Panneaux d'indication","is_correct":true},{"text":"Panneaux d'obligation","is_correct":false},{"text":"Panneaux de stationnement","is_correct":false}],"explanation":"Ce panneau appartient à la catégorie 'Panneaux d'indication'. Chaque type de panneau a une forme et un schéma de couleurs spécifiques."},"AR":{"question":"إلى أي فئة تُصنَّف هذه العلامة المرورية؟","choices":[{"text":"العلامات الإرشادية","is_correct":true},{"text":"العلامات الإلزامية","is_correct":false},{"text":"علامات الوقوف","is_correct":false}],"explanation":"هذه العلامة المرورية تنتمي إلى فئة 'علامات المعلومات'. كل نوع من العلامات له شكل ونظام ألوان محدد."}}},{"question_id":"F111_Q03","type":"WHAT_MUST_YOU_DO","difficulty":"MEDIUM","is_critical":false,"show_sign":true,"_note":"TEMPLATE (MEDIUM): Replace with sign-specific question for production.","i18n":{"NL":{"question":"Welke informatie of aanwijzing geeft dit bord aan weggebruikers?","choices":[{"text":"Het bord geeft nuttige informatie of aanwijzingen over de wegsituatie of faciliteiten","is_correct":true},{"text":"Het bord verbiedt een specifieke rijbeweging","is_correct":false},{"text":"Het bord verplicht tot stoppen voor controle","is_correct":false}],"explanation":"Aanwijzingsborden geven weggebruikers nuttige informatie over de wegsituatie, faciliteiten of speciale rijstroken."},"EN":{"question":"What information or guidance does this sign provide to road users?","choices":[{"text":"The sign provides useful information or guidance about the road situation or facilities","is_correct":true},{"text":"The sign prohibits a specific driving maneuver","is_correct":false},{"text":"The sign requires stopping for inspection","is_correct":false}],"explanation":"Information signs provide road users with useful info about road situation, facilities, or special lanes."},"FR":{"question":"Quelles informations ce panneau fournit-il aux usagers de la route ?","choices":[{"text":"Le panneau fournit des informations utiles sur la situation routière ou les équipements","is_correct":true},{"text":"Le panneau interdit une manœuvre de conduite spécifique","is_correct":false},{"text":"Le panneau oblige à s'arrêter pour contrôle","is_correct":false}],"explanation":"Les panneaux d'indication informent les usagers sur la situation routière, les équipements ou voies spéciales."},"AR":{"question":"ما المعلومات أو التوجيهات التي توفرها هذه العلامة المرورية لمستخدمي الطريق؟","choices":[{"text":"توفر العلامة المرورية معلومات مفيدة أو توجيهات حول حالة الطريق أو المرافق","is_correct":true},{"text":"العلامة المرورية تحظر مناورة قيادة محددة","is_correct":false},{"text":"العلامة المرورية تفرض التوقف للفحص","is_correct":false}],"explanation":"علامات المعلومات توفر لمستخدمي الطريق معلومات مفيدة حول حالة الطريق والمرافق."}}},{"question_id":"F111_Q04","type":"WHAT_MUST_YOU_DO","difficulty":"MEDIUM","is_critical":false,"show_sign":true,"_note":"TEMPLATE (MEDIUM): Replace with sign-specific question for production.","i18n":{"NL":{"question":"Wat is het kleurenschema van aanwijzingsborden in België?","choices":[{"text":"Blauw of groen achtergrond met witte symbolen en tekst","is_correct":true},{"text":"Rode achtergrond met witte tekst","is_correct":false},{"text":"Gele achtergrond met zwarte tekst","is_correct":false}],"explanation":"Aanwijzingsborden hebben doorgaans een blauwe achtergrond (stedelijk) of groene achtergrond (autosnelweg)."},"EN":{"question":"What is the color scheme of information signs in Belgium?","choices":[{"text":"Blue or green background with white symbols and text","is_correct":true},{"text":"Red background with white text","is_correct":false},{"text":"Yellow background with black text","is_correct":false}],"explanation":"Information signs typically have a blue (urban) or green (motorway) background."},"FR":{"question":"Quel est le schéma de couleurs des panneaux d'indication en Belgique ?","choices":[{"text":"Fond bleu ou vert avec des symboles et du texte blancs","is_correct":true},{"text":"Fond rouge avec texte blanc","is_correct":false},{"text":"Fond jaune avec texte noir","is_correct":false}],"explanation":"Les panneaux d'indication ont généralement un fond bleu (urbain) ou vert (autoroute)."},"AR":{"question":"ما هو نظام الألوان لعلامات المعلومات في بلجيكا؟","choices":[{"text":"خلفية زرقاء أو خضراء مع رموز ونص أبيض","is_correct":true},{"text":"خلفية حمراء مع نص أبيض","is_correct":false},{"text":"خلفية صفراء مع نص أسود","is_correct":false}],"explanation":"علامات المعلومات عادةً لها خلفية زرقاء (حضري) أو خضراء (طريق سريع)."}}},{"question_id":"F111_Q05","type":"IS_IT_ALLOWED","difficulty":"EASY","is_critical":false,"show_sign":true,"_note":"TEMPLATE (HARD): Replace with sign-specific question for production.","i18n":{"NL":{"question":"Mag u als weggebruiker aanwijzingsborden negeren?","choices":[{"text":"Nee, aanwijzingsborden moeten worden opgevolgd want ze geven wettelijk bindende aanwijzingen","is_correct":true},{"text":"Ja, aanwijzingsborden zijn vrijblijvend en kunnen naar eigen inzicht worden genegeerd","is_correct":false}],"explanation":"Aanwijzingsborden geven wettelijk bindende aanwijzingen aan weggebruikers. Ze mogen niet worden genegeerd en dienen te worden nageleefd."},"EN":{"question":"Are you as a road user allowed to ignore information signs?","choices":[{"text":"No, information signs must be followed as they provide legally binding directions","is_correct":true},{"text":"Yes, information signs are optional and can be ignored at your own discretion","is_correct":false}],"explanation":"Information signs provide legally binding guidance to road users. They must not be ignored and should be followed."},"FR":{"question":"En tant qu'usager de la route, êtes-vous autorisé à ignorer les panneaux d'indication ?","choices":[{"text":"Non, les panneaux d'indication doivent être respectés car ils fournissent des indications juridiquement contraignantes","is_correct":true},{"text":"Oui, les panneaux d'indication sont facultatifs et peuvent être ignorés à votre discrétion","is_correct":false}],"explanation":"Les panneaux d'indication fournissent des directives juridiquement contraignantes aux usagers. Ils ne peuvent pas être ignorés."},"AR":{"question":"هل يُسمح لك كمستخدم للطريق بتجاهل علامات المعلومات؟","choices":[{"text":"لا، يجب اتباع علامات المعلومات لأنها توفر توجيهات ملزمة قانونياً","is_correct":true},{"text":"نعم، علامات المعلومات اختيارية ويمكن تجاهلها وفق تقديرك الخاص","is_correct":false}],"explanation":"علامات المعلومات توفر توجيهات ملزمة قانونياً لمستخدمي الطريق. لا يجوز تجاهلها ويجب الالتزام بها."}}},{"question_id":"F111_Q06","type":"WHAT_MUST_YOU_DO","difficulty":"MEDIUM","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Wat is de maximumsnelheid voor motorvoertuigen in een fietsstraat (F111)?","choices":[{"text":"30 km/u; motorvoertuigen mogen niet sneller rijden dan 30 km/u in een fietsstraat","is_correct":true},{"text":"50 km/u; de normale bebouwde-kom-snelheid","is_correct":false},{"text":"20 km/u gelijk aan een woonerf","is_correct":false}],"explanation":"In een fietsstraat bedraagt de maximumsnelheid 30 km/u voor motorvoertuigen om de fietsers te beschermen die de volledige rijbaan mogen gebruiken."},"EN":{"question":"What is the maximum speed for motor vehicles in a bicycle street (F111)?","choices":[{"text":"30 km/h; motor vehicles may not drive faster than 30 km/h in a bicycle street","is_correct":true},{"text":"50 km/h; the normal built-up area speed","is_correct":false},{"text":"20 km/h equal to a residential area","is_correct":false}],"explanation":"In a bicycle street the maximum speed is 30 km/h for motor vehicles to protect cyclists who may use the full carriageway."},"FR":{"question":"Quelle est la vitesse maximale pour les vehicules a moteur dans une rue cyclable (F111) ?","choices":[{"text":"30 km/h; les vehicules a moteur ne peuvent pas rouler plus vite que 30 km/h","is_correct":true},{"text":"50 km/h; la vitesse normale en agglomeration","is_correct":false},{"text":"20 km/h comme une zone residentielle","is_correct":false}],"explanation":"Dans une rue cyclable la vitesse maximale est 30 km/h pour les vehicules a moteur afin de proteger les cyclistes qui peuvent utiliser toute la chaussee."},"AR":{"question":"ما الحد الأقصى للسرعة للمركبات الآلية في شارع الدراجات (F111)؟","choices":[{"text":"30 كم/ساعة؛ لا يجوز للمركبات الآلية السير أسرع من 30 كم/ساعة","is_correct":true},{"text":"50 كم/ساعة؛ السرعة العادية في المناطق المبنية","is_correct":false},{"text":"20 كم/ساعة مثل الحي السكني","is_correct":false}],"explanation":"في شارع الدراجات الحد الأقصى 30 كم/ساعة للمركبات الآلية لحماية الدراجين الذين يجوز لهم استخدام كامل الطريق."}}},{"question_id":"F111_Q07","type":"IS_IT_ALLOWED","difficulty":"HARD","is_critical":true,"show_sign":true,"i18n":{"NL":{"question":"Mag een automobilist een fietser inhalen in een fietsstraat (F111)?","choices":[{"text":"Nee motorvoertuigen mogen fietsers niet inhalen; fietsers hebben het recht de volledige rijbaan te gebruiken","is_correct":true},{"text":"Ja inhalen is altijd toegestaan als er voldoende ruimte is","is_correct":false}],"explanation":"In een fietsstraat hebben fietsers absolute voorrang en mogen de volledige rijbaan gebruiken. Motorvoertuigen mogen fietsers NIET inhalen."},"EN":{"question":"May a motorist overtake a cyclist in a bicycle street (F111)?","choices":[{"text":"No motor vehicles may not overtake cyclists; cyclists have the right to use the full carriageway","is_correct":true},{"text":"Yes overtaking is always permitted if there is enough space","is_correct":false}],"explanation":"In a bicycle street cyclists have absolute priority and may use the full carriageway. Motor vehicles may NOT overtake cyclists."},"FR":{"question":"Un automobiliste peut-il depasser un cycliste dans une rue cyclable (F111) ?","choices":[{"text":"Non les vehicules a moteur ne peuvent pas depasser les cyclistes; ils ont le droit d utiliser toute la chaussee","is_correct":true},{"text":"Oui le depassement est toujours permis avec suffisamment d espace","is_correct":false}],"explanation":"Dans une rue cyclable les cyclistes ont une priorite absolue et peuvent utiliser toute la chaussee. Les vehicules a moteur ne peuvent PAS depasser les cyclistes."},"AR":{"question":"هل يجوز للسائق تجاوز دراج في شارع الدراجات (F111)؟","choices":[{"text":"لا لا يجوز للمركبات الآلية تجاوز الدراجين؛ للدراجين الحق في استخدام كامل الطريق","is_correct":true},{"text":"نعم التجاوز مسموح به دائماً إذا كانت المساحة كافية","is_correct":false}],"explanation":"في شارع الدراجات يتمتع الدراجون بالأولوية المطلقة ويجوز لهم استخدام كامل الطريق. لا يجوز للمركبات الآلية تجاوز الدراجين."}}},{"question_id":"F111_Q08","type":"IS_IT_ALLOWED","difficulty":"HARD","is_critical":true,"show_sign":true,"i18n":{"NL":{"question":"Mogen fietsers naast elkaar rijden in een fietsstraat (F111)?","choices":[{"text":"Ja in een fietsstraat mogen fietsers twee aan twee naast elkaar rijden","is_correct":true},{"text":"Nee fietsers moeten altijd achter elkaar rijden in een fietsstraat","is_correct":false}],"explanation":"In een fietsstraat mag je als fietser naast een andere fietser rijden (twee aan twee). Fietsers mogen de volledige rijbaan gebruiken ook om naast elkaar te rijden."},"EN":{"question":"May cyclists ride side by side in a bicycle street (F111)?","choices":[{"text":"Yes in a bicycle street cyclists may ride two abreast","is_correct":true},{"text":"No cyclists must always ride in single file in a bicycle street","is_correct":false}],"explanation":"In a bicycle street you may ride next to another cyclist (two abreast). Cyclists may use the full carriageway including to ride side by side."},"FR":{"question":"Les cyclistes peuvent-ils rouler cote a cote dans une rue cyclable (F111) ?","choices":[{"text":"Oui dans une rue cyclable les cyclistes peuvent rouler deux de front","is_correct":true},{"text":"Non les cyclistes doivent toujours rouler en file indienne","is_correct":false}],"explanation":"Dans une rue cyclable vous pouvez rouler a cote d un autre cycliste (deux de front). Les cyclistes peuvent utiliser toute la chaussee y compris pour rouler cote a cote."},"AR":{"question":"هل يجوز للدراجين السير جنباً إلى جنب في شارع الدراجات (F111)؟","choices":[{"text":"نعم يجوز للدراجين السير اثنين جنباً إلى جنب في شارع الدراجات","is_correct":true},{"text":"لا يجب على الدراجين دائماً السير في صف واحد","is_correct":false}],"explanation":"في شارع الدراجات يمكنك السير بجانب دراج آخر (اثنين جنباً إلى جنب). يجوز للدراجين استخدام كامل الطريق بما في ذلك السير جنباً إلى جنب."}}}]
+[
+  {
+    "question_id": "F111_Q01",
+    "type": "WHAT_DOES_IT_MEAN",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "_note": "TEMPLATE: Replace wrong answers with actual sign names from the same category.",
+    "i18n": {
+      "NL": {
+        "question": "Wat betekent dit verkeersbord?",
+        "choices": [
+          { "text": "Fietsstraat", "is_correct": true },
+          {
+            "text": "Rijden verboden in beide richtingen",
+            "is_correct": false
+          },
+          { "text": "Gevaarsbord voor wegwerkzaamheden", "is_correct": false }
+        ],
+        "explanation": "Begin / Einde fietsstraat."
+      },
+      "EN": {
+        "question": "What does this traffic sign mean?",
+        "choices": [
+          { "text": "Bicycle street", "is_correct": true },
+          {
+            "text": "Driving prohibited in both directions",
+            "is_correct": false
+          },
+          { "text": "Danger sign for roadworks", "is_correct": false }
+        ],
+        "explanation": "Start / End of bicycle street."
+      },
+      "FR": {
+        "question": "Que signifie ce panneau de signalisation ?",
+        "choices": [
+          { "text": "Rue cyclable", "is_correct": true },
+          {
+            "text": "Circulation interdite dans les deux sens",
+            "is_correct": false
+          },
+          { "text": "Panneau de danger pour travaux", "is_correct": false }
+        ],
+        "explanation": "D�but / Fin de rue cyclable."
+      },
+      "AR": {
+        "question": "?? ???? ??? ??????? ?????????",
+        "choices": [
+          { "text": "???? ???????? ????????", "is_correct": true },
+          { "text": "??????? ?????? ?? ??? ?????????", "is_correct": false },
+          { "text": "????? ??? ?????? ??????", "is_correct": false }
+        ],
+        "explanation": "????? / ????? ???? ????????."
+      }
+    }
+  },
+  {
+    "question_id": "F111_Q02",
+    "type": "WHICH_SIGN",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "_note": "TEMPLATE: Ready to use — category identification question.",
+    "i18n": {
+      "NL": {
+        "question": "Tot welke categorie verkeerstekens behoort dit bord?",
+        "choices": [
+          { "text": "Aanwijzingsborden", "is_correct": true },
+          { "text": "Gebodsborden", "is_correct": false },
+          { "text": "Parkeerregelementsborden", "is_correct": false }
+        ],
+        "explanation": "Dit bord behoort tot de categorie 'Aanwijzingsborden'. Elk type bord heeft een specifieke vorm en kleurschema."
+      },
+      "EN": {
+        "question": "To which category of traffic signs does this sign belong?",
+        "choices": [
+          { "text": "Information signs", "is_correct": true },
+          { "text": "Mandatory signs", "is_correct": false },
+          { "text": "Parking regulation signs", "is_correct": false }
+        ],
+        "explanation": "This sign belongs to the 'Information signs' category. Each type of sign has a specific shape and color scheme."
+      },
+      "FR": {
+        "question": "� quelle cat�gorie de panneaux de signalisation ce panneau appartient-il ?",
+        "choices": [
+          { "text": "Panneaux d'indication", "is_correct": true },
+          { "text": "Panneaux d'obligation", "is_correct": false },
+          { "text": "Panneaux de stationnement", "is_correct": false }
+        ],
+        "explanation": "Ce panneau appartient � la cat�gorie 'Panneaux d'indication'. Chaque type de panneau a une forme et un sch�ma de couleurs sp�cifiques."
+      },
+      "AR": {
+        "question": "??? ?? ??? ??????? ??? ??????? ?????????",
+        "choices": [
+          { "text": "???????? ?????????", "is_correct": true },
+          { "text": "???????? ?????????", "is_correct": false },
+          { "text": "?????? ??????", "is_correct": false }
+        ],
+        "explanation": "??? ??????? ???????? ????? ??? ??? '?????? ?????????'. ?? ??? ?? ???????? ?? ??? ????? ????? ????."
+      }
+    }
+  },
+  {
+    "question_id": "F111_Q03",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "_note": "TEMPLATE (MEDIUM): Replace with sign-specific question for production.",
+    "i18n": {
+      "NL": {
+        "question": "Welke informatie of aanwijzing geeft dit bord aan weggebruikers?",
+        "choices": [
+          {
+            "text": "Het bord geeft nuttige informatie of aanwijzingen over de wegsituatie of faciliteiten",
+            "is_correct": true
+          },
+          {
+            "text": "Het bord verbiedt een specifieke rijbeweging",
+            "is_correct": false
+          },
+          {
+            "text": "Het bord verplicht tot stoppen voor controle",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Aanwijzingsborden geven weggebruikers nuttige informatie over de wegsituatie, faciliteiten of speciale rijstroken."
+      },
+      "EN": {
+        "question": "What information or guidance does this sign provide to road users?",
+        "choices": [
+          {
+            "text": "The sign provides useful information or guidance about the road situation or facilities",
+            "is_correct": true
+          },
+          {
+            "text": "The sign prohibits a specific driving maneuver",
+            "is_correct": false
+          },
+          {
+            "text": "The sign requires stopping for inspection",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Information signs provide road users with useful info about road situation, facilities, or special lanes."
+      },
+      "FR": {
+        "question": "Quelles informations ce panneau fournit-il aux usagers de la route ?",
+        "choices": [
+          {
+            "text": "Le panneau fournit des informations utiles sur la situation routi�re ou les �quipements",
+            "is_correct": true
+          },
+          {
+            "text": "Le panneau interdit une man�uvre de conduite sp�cifique",
+            "is_correct": false
+          },
+          {
+            "text": "Le panneau oblige � s'arr�ter pour contr�le",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Les panneaux d'indication informent les usagers sur la situation routi�re, les �quipements ou voies sp�ciales."
+      },
+      "AR": {
+        "question": "?? ????????? ?? ????????? ???? ?????? ??? ??????? ???????? ???????? ???????",
+        "choices": [
+          {
+            "text": "???? ??????? ???????? ??????? ????? ?? ??????? ??? ???? ?????? ?? ???????",
+            "is_correct": true
+          },
+          {
+            "text": "??????? ???????? ???? ?????? ????? ?????",
+            "is_correct": false
+          },
+          { "text": "??????? ???????? ???? ?????? ?????", "is_correct": false }
+        ],
+        "explanation": "?????? ????????? ???? ???????? ?????? ??????? ????? ??? ???? ?????? ????????."
+      }
+    }
+  },
+  {
+    "question_id": "F111_Q04",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "_note": "TEMPLATE (MEDIUM): Replace with sign-specific question for production.",
+    "i18n": {
+      "NL": {
+        "question": "Wat is het kleurenschema van aanwijzingsborden in Belgi�?",
+        "choices": [
+          {
+            "text": "Blauw of groen achtergrond met witte symbolen en tekst",
+            "is_correct": true
+          },
+          { "text": "Rode achtergrond met witte tekst", "is_correct": false },
+          { "text": "Gele achtergrond met zwarte tekst", "is_correct": false }
+        ],
+        "explanation": "Aanwijzingsborden hebben doorgaans een blauwe achtergrond (stedelijk) of groene achtergrond (autosnelweg)."
+      },
+      "EN": {
+        "question": "What is the color scheme of information signs in Belgium?",
+        "choices": [
+          {
+            "text": "Blue or green background with white symbols and text",
+            "is_correct": true
+          },
+          { "text": "Red background with white text", "is_correct": false },
+          { "text": "Yellow background with black text", "is_correct": false }
+        ],
+        "explanation": "Information signs typically have a blue (urban) or green (motorway) background."
+      },
+      "FR": {
+        "question": "Quel est le sch�ma de couleurs des panneaux d'indication en Belgique ?",
+        "choices": [
+          {
+            "text": "Fond bleu ou vert avec des symboles et du texte blancs",
+            "is_correct": true
+          },
+          { "text": "Fond rouge avec texte blanc", "is_correct": false },
+          { "text": "Fond jaune avec texte noir", "is_correct": false }
+        ],
+        "explanation": "Les panneaux d'indication ont g�n�ralement un fond bleu (urbain) ou vert (autoroute)."
+      },
+      "AR": {
+        "question": "?? ?? ???? ??????? ??????? ????????? ?? ???????",
+        "choices": [
+          {
+            "text": "????? ????? ?? ????? ?? ???? ??? ????",
+            "is_correct": true
+          },
+          { "text": "????? ????? ?? ?? ????", "is_correct": false },
+          { "text": "????? ????? ?? ?? ????", "is_correct": false }
+        ],
+        "explanation": "?????? ????????? ????? ??? ????? ????? (????) ?? ????? (???? ????)."
+      }
+    }
+  },
+  {
+    "question_id": "F111_Q05",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "_note": "TEMPLATE (HARD): Replace with sign-specific question for production.",
+    "i18n": {
+      "NL": {
+        "question": "Mag u als weggebruiker aanwijzingsborden negeren?",
+        "choices": [
+          {
+            "text": "Nee, aanwijzingsborden moeten worden opgevolgd want ze geven wettelijk bindende aanwijzingen",
+            "is_correct": true
+          },
+          {
+            "text": "Ja, aanwijzingsborden zijn vrijblijvend en kunnen naar eigen inzicht worden genegeerd",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Aanwijzingsborden geven wettelijk bindende aanwijzingen aan weggebruikers. Ze mogen niet worden genegeerd en dienen te worden nageleefd."
+      },
+      "EN": {
+        "question": "Are you as a road user allowed to ignore information signs?",
+        "choices": [
+          {
+            "text": "No, information signs must be followed as they provide legally binding directions",
+            "is_correct": true
+          },
+          {
+            "text": "Yes, information signs are optional and can be ignored at your own discretion",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Information signs provide legally binding guidance to road users. They must not be ignored and should be followed."
+      },
+      "FR": {
+        "question": "En tant qu'usager de la route, �tes-vous autoris� � ignorer les panneaux d'indication ?",
+        "choices": [
+          {
+            "text": "Non, les panneaux d'indication doivent �tre respect�s car ils fournissent des indications juridiquement contraignantes",
+            "is_correct": true
+          },
+          {
+            "text": "Oui, les panneaux d'indication sont facultatifs et peuvent �tre ignor�s � votre discr�tion",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Les panneaux d'indication fournissent des directives juridiquement contraignantes aux usagers. Ils ne peuvent pas �tre ignor�s."
+      },
+      "AR": {
+        "question": "?? ????? ?? ??????? ?????? ?????? ?????? ??????????",
+        "choices": [
+          {
+            "text": "??? ??? ????? ?????? ????????? ????? ???? ??????? ????? ????????",
+            "is_correct": true
+          },
+          {
+            "text": "???? ?????? ????????? ???????? ????? ??????? ??? ?????? ?????",
+            "is_correct": false
+          }
+        ],
+        "explanation": "?????? ????????? ???? ??????? ????? ???????? ???????? ??????. ?? ???? ??????? ???? ???????? ???."
+      }
+    }
+  },
+  {
+    "question_id": "F111_Q06",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat is de maximumsnelheid voor motorvoertuigen in een fietsstraat (F111)?",
+        "choices": [
+          {
+            "text": "30 km/u; motorvoertuigen mogen niet sneller rijden dan 30 km/u in een fietsstraat",
+            "is_correct": true
+          },
+          {
+            "text": "50 km/u; de normale bebouwde-kom-snelheid",
+            "is_correct": false
+          },
+          { "text": "20 km/u gelijk aan een woonerf", "is_correct": false }
+        ],
+        "explanation": "In een fietsstraat bedraagt de maximumsnelheid 30 km/u voor motorvoertuigen om de fietsers te beschermen die de volledige rijbaan mogen gebruiken."
+      },
+      "EN": {
+        "question": "What is the maximum speed for motor vehicles in a bicycle street (F111)?",
+        "choices": [
+          {
+            "text": "30 km/h; motor vehicles may not drive faster than 30 km/h in a bicycle street",
+            "is_correct": true
+          },
+          {
+            "text": "50 km/h; the normal built-up area speed",
+            "is_correct": false
+          },
+          { "text": "20 km/h equal to a residential area", "is_correct": false }
+        ],
+        "explanation": "In a bicycle street the maximum speed is 30 km/h for motor vehicles to protect cyclists who may use the full carriageway."
+      },
+      "FR": {
+        "question": "Quelle est la vitesse maximale pour les vehicules a moteur dans une rue cyclable (F111) ?",
+        "choices": [
+          {
+            "text": "30 km/h; les vehicules a moteur ne peuvent pas rouler plus vite que 30 km/h",
+            "is_correct": true
+          },
+          {
+            "text": "50 km/h; la vitesse normale en agglomeration",
+            "is_correct": false
+          },
+          {
+            "text": "20 km/h comme une zone residentielle",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dans une rue cyclable la vitesse maximale est 30 km/h pour les vehicules a moteur afin de proteger les cyclistes qui peuvent utiliser toute la chaussee."
+      },
+      "AR": {
+        "question": "?? ???? ?????? ?????? ???????? ?????? ?? ???? ???????? (F111)?",
+        "choices": [
+          {
+            "text": "30 ??/????? ?? ???? ???????? ?????? ????? ???? ?? 30 ??/????",
+            "is_correct": true
+          },
+          {
+            "text": "50 ??/????? ?????? ??????? ?? ??????? ???????",
+            "is_correct": false
+          },
+          { "text": "20 ??/???? ??? ???? ??????", "is_correct": false }
+        ],
+        "explanation": "?? ???? ???????? ???? ?????? 30 ??/???? ???????? ?????? ?????? ???????? ????? ???? ??? ??????? ???? ??????."
+      }
+    }
+  },
+  {
+    "question_id": "F111_Q07",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Mag een automobilist een fietser inhalen in een fietsstraat (F111)?",
+        "choices": [
+          {
+            "text": "Nee motorvoertuigen mogen fietsers niet inhalen; fietsers hebben het recht de volledige rijbaan te gebruiken",
+            "is_correct": true
+          },
+          {
+            "text": "Ja inhalen is altijd toegestaan als er voldoende ruimte is",
+            "is_correct": false
+          }
+        ],
+        "explanation": "In een fietsstraat hebben fietsers absolute voorrang en mogen de volledige rijbaan gebruiken. Motorvoertuigen mogen fietsers NIET inhalen."
+      },
+      "EN": {
+        "question": "May a motorist overtake a cyclist in a bicycle street (F111)?",
+        "choices": [
+          {
+            "text": "No motor vehicles may not overtake cyclists; cyclists have the right to use the full carriageway",
+            "is_correct": true
+          },
+          {
+            "text": "Yes overtaking is always permitted if there is enough space",
+            "is_correct": false
+          }
+        ],
+        "explanation": "In a bicycle street cyclists have absolute priority and may use the full carriageway. Motor vehicles may NOT overtake cyclists."
+      },
+      "FR": {
+        "question": "Un automobiliste peut-il depasser un cycliste dans une rue cyclable (F111) ?",
+        "choices": [
+          {
+            "text": "Non les vehicules a moteur ne peuvent pas depasser les cyclistes; ils ont le droit d utiliser toute la chaussee",
+            "is_correct": true
+          },
+          {
+            "text": "Oui le depassement est toujours permis avec suffisamment d espace",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dans une rue cyclable les cyclistes ont une priorite absolue et peuvent utiliser toute la chaussee. Les vehicules a moteur ne peuvent PAS depasser les cyclistes."
+      },
+      "AR": {
+        "question": "?? ???? ?????? ????? ???? ?? ???? ???????? (F111)?",
+        "choices": [
+          {
+            "text": "?? ?? ???? ???????? ?????? ????? ????????? ???????? ???? ?? ??????? ???? ??????",
+            "is_correct": true
+          },
+          {
+            "text": "??? ??????? ????? ?? ?????? ??? ???? ??????? ?????",
+            "is_correct": false
+          }
+        ],
+        "explanation": "?? ???? ???????? ????? ???????? ????????? ??????? ????? ??? ??????? ???? ??????. ?? ???? ???????? ?????? ????? ????????."
+      }
+    }
+  },
+  {
+    "question_id": "F111_Q08",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Mogen fietsers naast elkaar rijden in een fietsstraat (F111)?",
+        "choices": [
+          {
+            "text": "Ja in een fietsstraat mogen fietsers twee aan twee naast elkaar rijden",
+            "is_correct": true
+          },
+          {
+            "text": "Nee fietsers moeten altijd achter elkaar rijden in een fietsstraat",
+            "is_correct": false
+          }
+        ],
+        "explanation": "In een fietsstraat mag je als fietser naast een andere fietser rijden (twee aan twee). Fietsers mogen de volledige rijbaan gebruiken ook om naast elkaar te rijden."
+      },
+      "EN": {
+        "question": "May cyclists ride side by side in a bicycle street (F111)?",
+        "choices": [
+          {
+            "text": "Yes in a bicycle street cyclists may ride two abreast",
+            "is_correct": true
+          },
+          {
+            "text": "No cyclists must always ride in single file in a bicycle street",
+            "is_correct": false
+          }
+        ],
+        "explanation": "In a bicycle street you may ride next to another cyclist (two abreast). Cyclists may use the full carriageway including to ride side by side."
+      },
+      "FR": {
+        "question": "Les cyclistes peuvent-ils rouler cote a cote dans une rue cyclable (F111) ?",
+        "choices": [
+          {
+            "text": "Oui dans une rue cyclable les cyclistes peuvent rouler deux de front",
+            "is_correct": true
+          },
+          {
+            "text": "Non les cyclistes doivent toujours rouler en file indienne",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dans une rue cyclable vous pouvez rouler a cote d un autre cycliste (deux de front). Les cyclistes peuvent utiliser toute la chaussee y compris pour rouler cote a cote."
+      },
+      "AR": {
+        "question": "?? ???? ???????? ????? ????? ??? ??? ?? ???? ???????? (F111)?",
+        "choices": [
+          {
+            "text": "??? ???? ???????? ????? ????? ????? ??? ??? ?? ???? ????????",
+            "is_correct": true
+          },
+          {
+            "text": "?? ??? ??? ???????? ?????? ????? ?? ?? ????",
+            "is_correct": false
+          }
+        ],
+        "explanation": "?? ???? ???????? ????? ????? ????? ???? ??? (????? ????? ??? ???). ???? ???????? ??????? ???? ?????? ??? ?? ??? ????? ????? ??? ???."
+      }
+    }
+  }
+]

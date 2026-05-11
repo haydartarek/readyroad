@@ -79,7 +79,8 @@
         "explanation": "تحذّر A35 من طائرات تحلق على ارتفاع منخفض فوق الطريق، عادةً قرب مطار. قد يشتّت الصوت المفاجئ ومنظر الطائرات انتباه السائقين أو يفاجئهم."
       }
     }
-  },
+  },
+
   {
     "question_id": "A35_Q02",
     "type": "WHICH_SIGN",
@@ -90,36 +91,72 @@
       "NL": {
         "question": "Welk bord waarschuwt voor laagvliegende vliegtuigen?",
         "choices": [
-          { "text": "Het bord dat waarschuwt voor vliegtuigen die op lage hoogte over de weg vliegen", "is_correct": true },
-          { "text": "Het bord dat waarschuwt voor sterke zijwind die voertuigen kan verplaatsen", "is_correct": false },
-          { "text": "Het bord dat waarschuwt voor verkeer in twee richtingen", "is_correct": false }
+          {
+            "text": "Het bord dat waarschuwt voor vliegtuigen die op lage hoogte over de weg vliegen",
+            "is_correct": true
+          },
+          {
+            "text": "Het bord dat waarschuwt voor sterke zijwind die voertuigen kan verplaatsen",
+            "is_correct": false
+          },
+          {
+            "text": "Het bord dat waarschuwt voor verkeer in twee richtingen",
+            "is_correct": false
+          }
         ],
         "explanation": "Het gevaarsbord A35 waarschuwt specifiek voor laagvliegende vliegtuigen nabij een vliegveld. Het bord voor zijwind (A37) geldt voor stormachtige windvlagen. Het bord voor twee richtingen (A39) geldt voor tweerichtingsverkeer."
       },
       "EN": {
         "question": "Which sign warns of low-flying aircraft?",
         "choices": [
-          { "text": "The sign that warns of aircraft flying at low altitude over the road", "is_correct": true },
-          { "text": "The sign that warns of strong crosswind that may displace vehicles", "is_correct": false },
-          { "text": "The sign that warns of two-way traffic", "is_correct": false }
+          {
+            "text": "The sign that warns of aircraft flying at low altitude over the road",
+            "is_correct": true
+          },
+          {
+            "text": "The sign that warns of strong crosswind that may displace vehicles",
+            "is_correct": false
+          },
+          {
+            "text": "The sign that warns of two-way traffic",
+            "is_correct": false
+          }
         ],
         "explanation": "Danger sign A35 specifically warns of low-flying aircraft near an airfield. The crosswind sign (A37) applies to stormy wind gusts. The two-way traffic sign (A39) applies to two-directional traffic."
       },
       "FR": {
         "question": "Quel panneau signale des aéronefs volant à basse altitude ?",
         "choices": [
-          { "text": "Le panneau qui avertit d’aéronefs volant à basse altitude au-dessus de la route", "is_correct": true },
-          { "text": "Le panneau qui avertit d’un vent latéral fort pouvant déplacer les véhicules", "is_correct": false },
-          { "text": "Le panneau qui avertit d’une circulation à double sens", "is_correct": false }
+          {
+            "text": "Le panneau qui avertit d’aéronefs volant à basse altitude au-dessus de la route",
+            "is_correct": true
+          },
+          {
+            "text": "Le panneau qui avertit d’un vent latéral fort pouvant déplacer les véhicules",
+            "is_correct": false
+          },
+          {
+            "text": "Le panneau qui avertit d’une circulation à double sens",
+            "is_correct": false
+          }
         ],
         "explanation": "Le panneau de danger A35 signale spécifiquement des aéronefs à basse altitude près d’un aérodrome. Le panneau vent latéral (A37) concerne les rafales de vent. Le panneau double sens (A39) concerne la circulation dans les deux sens."
       },
       "AR": {
         "question": "أي علامة مرورية تُحذّر من طائرات تحلّق على انخفاض شديد؟",
         "choices": [
-          { "text": "العلامة التي تُحذّر من طائرات تطير على ارتفاع منخفض فوق الطريق", "is_correct": true },
-          { "text": "العلامة التي تُحذّر من رياح جانبية قوية قد تدفع المركبة جانبًا", "is_correct": false },
-          { "text": "العلامة التي تُحذّر من حركة مرور ثنائية الاتجاه", "is_correct": false }
+          {
+            "text": "العلامة التي تُحذّر من طائرات تطير على ارتفاع منخفض فوق الطريق",
+            "is_correct": true
+          },
+          {
+            "text": "العلامة التي تُحذّر من رياح جانبية قوية قد تدفع المركبة جانبًا",
+            "is_correct": false
+          },
+          {
+            "text": "العلامة التي تُحذّر من حركة مرور ثنائية الاتجاه",
+            "is_correct": false
+          }
         ],
         "explanation": "علامة الخطر A35 تُحذّر تحديدًا من طائرات منخفضة قرب مطار. علامة الرياح الجانبية (A37) تختص بالعواصف. علامة الاتجاهين (A39) تختص بحركة مرور ثنائية."
       }

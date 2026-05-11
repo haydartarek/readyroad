@@ -79,7 +79,8 @@
         "explanation": "تشير هذه العلامة إلى معبر سكة حديد بمسار واحد يقع في هذا الموضع تحديداً."
       }
     }
-  },
+  },
+
   {
     "question_id": "A45_Q02",
     "type": "WHICH_SIGN",
@@ -90,36 +91,72 @@
       "NL": {
         "question": "Welk bord waarschuwt voor een overweg met één spoor?",
         "choices": [
-          { "text": "Het bord dat waarschuwt voor een overweg met één spoor waar treinen kunnen passeren", "is_correct": true },
-          { "text": "Het bord dat waarschuwt voor een overweg met meerdere sporen", "is_correct": false },
-          { "text": "Het bord dat waarschuwt voor een overweg zonder slagbomen", "is_correct": false }
+          {
+            "text": "Het bord dat waarschuwt voor een overweg met één spoor waar treinen kunnen passeren",
+            "is_correct": true
+          },
+          {
+            "text": "Het bord dat waarschuwt voor een overweg met meerdere sporen",
+            "is_correct": false
+          },
+          {
+            "text": "Het bord dat waarschuwt voor een overweg zonder slagbomen",
+            "is_correct": false
+          }
         ],
         "explanation": "Het gevaarsbord A45 waarschuwt specifiek voor een overweg met één spoor. Het bord voor meerdere sporen (A47) geldt voor twee of meer sporen. Het bord zonder slagbomen (A43) geldt voor een overweg zonder barrières."
       },
       "EN": {
         "question": "Which sign warns of a level crossing with one track?",
         "choices": [
-          { "text": "The sign that warns of a level crossing with one track where trains may pass", "is_correct": true },
-          { "text": "The sign that warns of a level crossing with multiple tracks", "is_correct": false },
-          { "text": "The sign that warns of a level crossing without barriers", "is_correct": false }
+          {
+            "text": "The sign that warns of a level crossing with one track where trains may pass",
+            "is_correct": true
+          },
+          {
+            "text": "The sign that warns of a level crossing with multiple tracks",
+            "is_correct": false
+          },
+          {
+            "text": "The sign that warns of a level crossing without barriers",
+            "is_correct": false
+          }
         ],
         "explanation": "Danger sign A45 specifically warns of a level crossing with one track. The multiple tracks sign (A47) applies to two or more tracks. The sign without barriers (A43) applies to a crossing without barriers."
       },
       "FR": {
         "question": "Quel panneau signale un passage à niveau à une seule voie ?",
         "choices": [
-          { "text": "Le panneau qui avertit d’un passage à niveau à une voie où des trains peuvent passer", "is_correct": true },
-          { "text": "Le panneau qui avertit d’un passage à niveau à plusieurs voies", "is_correct": false },
-          { "text": "Le panneau qui avertit d’un passage à niveau sans barrières", "is_correct": false }
+          {
+            "text": "Le panneau qui avertit d’un passage à niveau à une voie où des trains peuvent passer",
+            "is_correct": true
+          },
+          {
+            "text": "Le panneau qui avertit d’un passage à niveau à plusieurs voies",
+            "is_correct": false
+          },
+          {
+            "text": "Le panneau qui avertit d’un passage à niveau sans barrières",
+            "is_correct": false
+          }
         ],
         "explanation": "Le panneau de danger A45 signale spécifiquement un passage à niveau à une seule voie. Le panneau plusieurs voies (A47) concerne deux voies ou plus. Le panneau sans barrières (A43) concerne un passage sans barrières."
       },
       "AR": {
         "question": "أي علامة مرورية تُحذّر من تقاطع سككة حديدية بخط واحد؟",
         "choices": [
-          { "text": "العلامة التي تُحذّر من تقاطع سككة حديدية بخط واحد تمر عليه قطارات", "is_correct": true },
-          { "text": "العلامة التي تُحذّر من تقاطع سككة حديدية بخطوط متعددة", "is_correct": false },
-          { "text": "العلامة التي تُحذّر من تقاطع سككة حديدية بدون حواجز", "is_correct": false }
+          {
+            "text": "العلامة التي تُحذّر من تقاطع سككة حديدية بخط واحد تمر عليه قطارات",
+            "is_correct": true
+          },
+          {
+            "text": "العلامة التي تُحذّر من تقاطع سككة حديدية بخطوط متعددة",
+            "is_correct": false
+          },
+          {
+            "text": "العلامة التي تُحذّر من تقاطع سككة حديدية بدون حواجز",
+            "is_correct": false
+          }
         ],
         "explanation": "علامة الخطر A45 تُحذّر تحديدًا من تقاطع سككة حديدية بخط واحد. علامة خطوط متعددة (A47) تختص بخطين أو أكثر. علامة بدون حواجز (A43) تختص بتقاطع بدون حواجز."
       }

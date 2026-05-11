@@ -79,7 +79,8 @@
         "explanation": "تحذّر A41 من معبر سكة حديد مزوّد بحواجز حيث قد تعبر القطارات الطريق."
       }
     }
-  },
+  },
+
   {
     "question_id": "A41_Q02",
     "type": "WHICH_SIGN",
@@ -90,36 +91,72 @@
       "NL": {
         "question": "Welk bord waarschuwt voor een overweg met slagbomen?",
         "choices": [
-          { "text": "Het bord dat waarschuwt voor een overweg met slagbomen die kunnen dalen", "is_correct": true },
-          { "text": "Het bord dat waarschuwt voor een overweg zonder slagbomen", "is_correct": false },
-          { "text": "Het bord dat waarschuwt voor een kruising met tramsporen", "is_correct": false }
+          {
+            "text": "Het bord dat waarschuwt voor een overweg met slagbomen die kunnen dalen",
+            "is_correct": true
+          },
+          {
+            "text": "Het bord dat waarschuwt voor een overweg zonder slagbomen",
+            "is_correct": false
+          },
+          {
+            "text": "Het bord dat waarschuwt voor een kruising met tramsporen",
+            "is_correct": false
+          }
         ],
         "explanation": "Het gevaarsbord A41 waarschuwt specifiek voor een overweg met slagbomen. Het bord voor overweg zonder slagbomen (A43) lijkt er op maar heeft geen barrières. Het bord voor tramsporen (A49) geldt voor tram- of treinsporen in de rijbaan."
       },
       "EN": {
         "question": "Which sign warns of a level crossing with barriers?",
         "choices": [
-          { "text": "The sign that warns of a level crossing with barriers that may lower", "is_correct": true },
-          { "text": "The sign that warns of a level crossing without barriers", "is_correct": false },
-          { "text": "The sign that warns of a junction with tram tracks", "is_correct": false }
+          {
+            "text": "The sign that warns of a level crossing with barriers that may lower",
+            "is_correct": true
+          },
+          {
+            "text": "The sign that warns of a level crossing without barriers",
+            "is_correct": false
+          },
+          {
+            "text": "The sign that warns of a junction with tram tracks",
+            "is_correct": false
+          }
         ],
         "explanation": "Danger sign A41 specifically warns of a level crossing with barriers. The level crossing without barriers sign (A43) looks similar but has no barriers. The tram tracks sign (A49) applies to tram or train tracks in the carriageway."
       },
       "FR": {
         "question": "Quel panneau signale un passage à niveau avec barrières ?",
         "choices": [
-          { "text": "Le panneau qui avertit d’un passage à niveau avec barrières pouvant s’abaisser", "is_correct": true },
-          { "text": "Le panneau qui avertit d’un passage à niveau sans barrières", "is_correct": false },
-          { "text": "Le panneau qui avertit d’un croisement avec des rails de tram", "is_correct": false }
+          {
+            "text": "Le panneau qui avertit d’un passage à niveau avec barrières pouvant s’abaisser",
+            "is_correct": true
+          },
+          {
+            "text": "Le panneau qui avertit d’un passage à niveau sans barrières",
+            "is_correct": false
+          },
+          {
+            "text": "Le panneau qui avertit d’un croisement avec des rails de tram",
+            "is_correct": false
+          }
         ],
         "explanation": "Le panneau de danger A41 signale spécifiquement un passage à niveau avec barrières. Le panneau sans barrières (A43) lui ressemble mais sans barrières. Le panneau tramway (A49) concerne des rails de tram dans la chaussée."
       },
       "AR": {
         "question": "أي علامة مرورية تُحذّر من تقاطع سككة حديدية بحواجز؟",
         "choices": [
-          { "text": "العلامة التي تُحذّر من تقاطع سككة حديدية بحواجز قد تنخفض", "is_correct": true },
-          { "text": "العلامة التي تُحذّر من تقاطع سككة حديدية بدون حواجز", "is_correct": false },
-          { "text": "العلامة التي تُحذّر من تقاطع مع قضبان الترام", "is_correct": false }
+          {
+            "text": "العلامة التي تُحذّر من تقاطع سككة حديدية بحواجز قد تنخفض",
+            "is_correct": true
+          },
+          {
+            "text": "العلامة التي تُحذّر من تقاطع سككة حديدية بدون حواجز",
+            "is_correct": false
+          },
+          {
+            "text": "العلامة التي تُحذّر من تقاطع مع قضبان الترام",
+            "is_correct": false
+          }
         ],
         "explanation": "علامة الخطر A41 تُحذّر تحديدًا من تقاطع سككة حديدية بحواجز. علامة بدون حواجز (A43) تشبهها لكن بدون حواجز. علامة الترام (A49) تختص بقضبان في الطريق."
       }

@@ -1,1 +1,600 @@
-[{"type":"WHAT_DOES_IT_MEAN","difficulty":"EASY","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Wat betekent bord F8 'Tunnel'?","choices":[{"text":"U nadert een tunnel; verlichting is verplicht en stoppen is verboden behalve bij nood","is_correct":true},{"text":"U rijdt een ondergrondse parkeergarage in","is_correct":false},{"text":"Er geldt een verminderde snelheid maar lichten zijn niet verplicht","is_correct":false}],"explanation":"F8 kondigt het begin van een tunnel aan. In een tunnel zijn dimlichten verplicht, stoppen verboden en is u-rijden niet toegestaan."},"EN":{"question":"What does sign F8 'Start of tunnel' mean?","choices":[{"text":"You are approaching a tunnel; lighting is compulsory and stopping is forbidden except in emergency","is_correct":true},{"text":"You are entering an underground car park","is_correct":false},{"text":"A reduced speed applies but lights are not required","is_correct":false}],"explanation":"F8 announces the start of a tunnel. In a tunnel dipped headlights are compulsory, stopping is forbidden and U-turns are not permitted."},"FR":{"question":"Que signifie le panneau F8 'Debut tunnel' ?","choices":[{"text":"Vous approchez d un tunnel; l eclairage est obligatoire et l arret est interdit sauf urgence","is_correct":true},{"text":"Vous entrez dans un parking souterrain","is_correct":false},{"text":"Une vitesse reduite s applique mais les feux ne sont pas obligatoires","is_correct":false}],"explanation":"F8 annonce le debut d un tunnel. Dans un tunnel les feux de croisement sont obligatoires l arret est interdit et les demi-tours ne sont pas autorises."},"AR":{"question":"ما معنى هذه العلامة المرورية؟","choices":[{"text":"أنت تقترب من نفق؛ الإضاءة إلزامية والتوقف محظور إلا في حالات الطوارئ","is_correct":true},{"text":"أنت تدخل موقف سيارات تحت الأرض","is_correct":false},{"text":"تنطبق سرعة مخفضة لكن الأضواء غير مطلوبة","is_correct":false}],"explanation":"تعلن F8 عن بداية نفق. في النفق الأضواء الخافتة إلزامية والتوقف محظور ولا يُسمح بالانعطاف."}},"question_id":"F8_Q01"},{"type":"WHICH_SIGN","difficulty":"EASY","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Tot welke categorie behoort bord F8 'Tunnel'?","choices":[{"text":"Informatief bord: informeert bestuurders over de wegsituatie","is_correct":true},{"text":"Gevaarsbord: waarschuwt voor gevaarlijke situaties","is_correct":false},{"text":"Verbodsbord: verbiedt bepaalde handelingen","is_correct":false}],"explanation":"F8 behoort tot deze categorie informatieve borden. Het informeert over de aanwezigheid van een tunnel zodat bestuurders zich kunnen voorbereiden."},"EN":{"question":"Which category does sign F8 'Start of tunnel' belong to?","choices":[{"text":"Information sign: informs drivers about the road situation","is_correct":true},{"text":"Hazard sign: warns of dangerous situations","is_correct":false},{"text":"Prohibition sign: prohibits certain actions","is_correct":false}],"explanation":"F8 belongs to this category of information signs. It informs drivers of the presence of a tunnel so they can prepare."},"FR":{"question":"A quelle categorie appartient le panneau F8 'Debut tunnel' ?","choices":[{"text":"Panneau d information: informe les conducteurs sur la situation routiere","is_correct":true},{"text":"Panneau de danger: avertit des situations dangereuses","is_correct":false},{"text":"Panneau d interdiction: interdit certaines actions","is_correct":false}],"explanation":"F8 appartient à cette catégorie des panneaux d information. Il informe les conducteurs de la presence d un tunnel afin qu ils puissent se preparer."},"AR":{"question":"إلى أي فئة تُصنَّف هذه العلامة المرورية؟","choices":[{"text":"العلامات الإرشادية","is_correct":true},{"text":"علامات الخطر","is_correct":false},{"text":"علامات الحظر","is_correct":false}],"explanation":"تنتمي F8 إلى هذه الفئة من العلامات الإعلامية. تُعلم السائقين بوجود نفق حتى يتمكنوا من الاستعداد."}},"question_id":"F8_Q02"},{"type":"HAZARD_IDENTIFICATION","difficulty":"EASY","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"Welke gevaren zijn specifiek aanwezig in een tunnel (bord F8)?","choices":[{"text":"Beperkt zicht door rook of verlichting, geen vluchtmogelijkheid bij brand en risico op koolstofmonoxidevergiftiging","is_correct":true},{"text":"Geen gevaren; tunnels zijn juist veiliger dan open wegen","is_correct":false},{"text":"Gevaar van vorst op de rijbaan want tunnels zijn altijd koud","is_correct":false}],"explanation":"Tunnels brengen specifieke gevaren mee: bij brand is vluchten moeilijk, rookontwikkeling beperkt het zicht en uitlaatgassen stapelen zich op. Discipline en alertheid zijn essentieel."},"EN":{"question":"What specific hazards are present in a tunnel (sign F8)?","choices":[{"text":"Limited visibility from smoke or lighting, no escape route in a fire and risk of carbon monoxide poisoning","is_correct":true},{"text":"No hazards; tunnels are actually safer than open roads","is_correct":false},{"text":"Risk of ice on the road because tunnels are always cold","is_correct":false}],"explanation":"Tunnels carry specific hazards: in a fire escape is difficult, smoke limits visibility and exhaust fumes accumulate. Discipline and alertness are essential."},"FR":{"question":"Quels dangers specifiques sont presents dans un tunnel (panneau F8) ?","choices":[{"text":"Visibilite limitee par la fumee ou l eclairage, pas de voie de fuite en cas d incendie et risque d intoxication au monoxyde de carbone","is_correct":true},{"text":"Pas de dangers; les tunnels sont en fait plus surs que les routes ouvertes","is_correct":false},{"text":"Risque de verglas sur la chaussee car les tunnels sont toujours froids","is_correct":false}],"explanation":"Les tunnels comportent des dangers specifiques: en cas d incendie la fuite est difficile la fumee limite la visibilite et les gaz d echappement s accumulent. La discipline et la vigilance sont essentielles."},"AR":{"question":"ما المخاطر المحددة الموجودة في النفق (علامة مرورية F8)؟","choices":[{"text":"رؤية محدودة بسبب الدخان أو الإضاءة وعدم وجود مسار هروب في حالة الحريق وخطر التسمم بأول أكسيد الكربون","is_correct":true},{"text":"لا توجد مخاطر؛ الأنفاق في الواقع أكثر أماناً من الطرق المكشوفة","is_correct":false},{"text":"خطر الجليد على الطريق لأن الأنفاق دائماً باردة","is_correct":false}],"explanation":"تحمل الأنفاق مخاطر محددة: في حالة الحريق يصعب الهروب والدخان يحد من الرؤية وتتراكم عوادم السيارات. الانضباط واليقظة أمران أساسيان."}},"question_id":"F8_Q03"},{"type":"WHAT_MUST_YOU_DO","difficulty":"MEDIUM","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"U rijdt een tunnel in (bord F8). Wat moet u doen met uw verlichting?","choices":[{"text":"Dimlichten inschakelen; in een tunnel zijn rijlichten altijd verplicht ongeacht het tijdstip","is_correct":true},{"text":"Niets; in een verlichte tunnel zijn geen rijlichten vereist","is_correct":false},{"text":"Grootlichten aanzetten voor maximaal zicht in de tunnel","is_correct":false}],"explanation":"In een tunnel zijn dimlichten altijd verplicht. Grootlichten zijn verboden in verlichte tunnels omdat ze andere bestuurders verblinden."},"EN":{"question":"You are entering a tunnel (sign F8). What must you do with your lighting?","choices":[{"text":"Switch on dipped headlights; in a tunnel driving lights are always compulsory regardless of time of day","is_correct":true},{"text":"Nothing; in a lit tunnel no driving lights are required","is_correct":false},{"text":"Switch on full headlights for maximum visibility in the tunnel","is_correct":false}],"explanation":"In a tunnel dipped headlights are always compulsory. Full headlights are forbidden in lit tunnels because they dazzle other drivers."},"FR":{"question":"Vous entrez dans un tunnel (panneau F8). Que devez-vous faire avec votre eclairage ?","choices":[{"text":"Allumer les feux de croisement; dans un tunnel les feux de route sont toujours obligatoires quelle que soit l heure","is_correct":true},{"text":"Rien; dans un tunnel eclaire aucune lumiere n est requise","is_correct":false},{"text":"Allumer les feux de route pour une visibilite maximale dans le tunnel","is_correct":false}],"explanation":"Dans un tunnel les feux de croisement sont toujours obligatoires. Les feux de route sont interdits dans les tunnels eclaires car ils eblouissent les autres conducteurs."},"AR":{"question":"أنت تدخل نفقاً (علامة مرورية F8). ماذا يجب أن تفعل بالإضاءة؟","choices":[{"text":"تشغيل الأضواء الخافتة؛ في النفق أضواء القيادة إلزامية دائماً بغض النظر عن الوقت","is_correct":true},{"text":"لا شيء؛ في نفق مضاء لا تلزم أضواء القيادة","is_correct":false},{"text":"تشغيل الأضواء الكاملة لأقصى رؤية في النفق","is_correct":false}],"explanation":"في النفق الأضواء الخافتة إلزامية دائماً. الأضواء الكاملة محظورة في الأنفاق المضاءة لأنها تبهر السائقين الآخرين."}},"question_id":"F8_Q04"},{"type":"WHAT_MUST_YOU_DO","difficulty":"MEDIUM","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"In een tunnel (bord F8) ziet u plotseling file. Wat doet u?","choices":[{"text":"Rustig remmen, gevarendriehoek (of gevaarlichten) activeren en voldoende afstand houden tot de voorligger","is_correct":true},{"text":"Omkeren en de tunnel verlaten via de ingang","is_correct":false},{"text":"Op de vluchtstrook rijden en wachten tot de file afneemt","is_correct":false}],"explanation":"Bij file in een tunnel activeert u uw gevaarlichten als waarschuwing, houdt voldoende afstand en volgt de instructies via de panelen. U mag nooit omkeren in een tunnel."},"EN":{"question":"In a tunnel (sign F8) you suddenly see a traffic jam. What do you do?","choices":[{"text":"Brake gently, activate hazard lights and keep sufficient distance from the vehicle ahead","is_correct":true},{"text":"Turn around and exit the tunnel via the entrance","is_correct":false},{"text":"Drive to the emergency lane and wait until the jam clears","is_correct":false}],"explanation":"When there is a jam in a tunnel activate your hazard lights as a warning, maintain sufficient distance and follow instructions on the panels. Never make a U-turn in a tunnel."},"FR":{"question":"Dans un tunnel (panneau F8) vous voyez soudainement un embouteillage. Que faites-vous ?","choices":[{"text":"Freiner doucement activer les feux de detresse et garder une distance suffisante avec le vehicule precedent","is_correct":true},{"text":"Faire demi-tour et quitter le tunnel par l entree","is_correct":false},{"text":"Rouler sur la voie d urgence et attendre que l embouteillage se dissipe","is_correct":false}],"explanation":"En cas de bouchon dans un tunnel activez vos feux de detresse comme avertissement maintenez une distance suffisante et suivez les instructions sur les panneaux. Ne faites jamais demi-tour dans un tunnel."},"AR":{"question":"في نفق (علامة مرورية F8) ترى فجأة ازدحاماً مرورياً. ماذا تفعل؟","choices":[{"text":"فرمل بهدوء وشغّل أضواء الخطر وحافظ على مسافة كافية من المركبة الأمامية","is_correct":true},{"text":"استدر واخرج من النفق عبر المدخل","is_correct":false},{"text":"سر إلى حارة الطوارئ وانتظر حتى يزول الازدحام","is_correct":false}],"explanation":"عند وجود ازدحام في النفق شغّل أضواء الخطر كتحذير وحافظ على مسافة كافية واتبع التعليمات على اللوحات. لا تستدر أبداً داخل النفق."}},"question_id":"F8_Q05"},{"type":"WHAT_MUST_YOU_DO","difficulty":"MEDIUM","is_critical":false,"show_sign":true,"i18n":{"NL":{"question":"In een tunnel (bord F8) breekt brand uit in een voertuig. Wat is de correcte handelwijze?","choices":[{"text":"Rijstrook verlaten, motor afzetten, tunnel te voet verlaten via de nooduitgang en 112 bellen","is_correct":true},{"text":"In het voertuig blijven en de brandweer bellen terwijl u wacht","is_correct":false},{"text":"Achteruit rijden naar de ingang van de tunnel","is_correct":false}],"explanation":"Bij brand in een tunnel: stop veilig, zet de motor af, verlaat het voertuig en de tunnel via de nooduitgang en bel 112. Nooit achteruitrijden in een tunnel."},"EN":{"question":"In a tunnel (sign F8) fire breaks out in a vehicle. What is the correct procedure?","choices":[{"text":"Leave the carriageway, switch off the engine, exit the tunnel on foot via the emergency exit and call 112","is_correct":true},{"text":"Stay in the vehicle and call the fire brigade while waiting","is_correct":false},{"text":"Reverse back to the entrance of the tunnel","is_correct":false}],"explanation":"In a tunnel fire: stop safely, switch off the engine, leave the vehicle and tunnel via the emergency exit and call 112. Never reverse in a tunnel."},"FR":{"question":"Dans un tunnel (panneau F8) un incendie se declare dans un vehicule. Quelle est la procedure correcte ?","choices":[{"text":"Quitter la chaussee eteindre le moteur sortir du tunnel a pied par la sortie de secours et appeler le 112","is_correct":true},{"text":"Rester dans le vehicule et appeler les pompiers en attendant","is_correct":false},{"text":"Faire marche arriere jusqu a l entree du tunnel","is_correct":false}],"explanation":"En cas d incendie dans un tunnel: arretez-vous en securite eteignez le moteur quittez le vehicule et le tunnel par la sortie de secours et appelez le 112. Ne reculez jamais dans un tunnel."},"AR":{"question":"في نفق (علامة مرورية F8) نشبت نيران في مركبة. ما الإجراء الصحيح؟","choices":[{"text":"غادر الطريق وأوقف المحرك واخرج من النفق سيراً على الأقدام عبر مخرج الطوارئ واتصل بـ 112","is_correct":true},{"text":"ابق داخل المركبة واتصل بالإطفاء بينما تنتظر","is_correct":false},{"text":"اتراجع للخلف حتى مدخل النفق","is_correct":false}],"explanation":"في حالة حريق بالنفق: توقف بأمان وأوقف المحرك وغادر المركبة والنفق عبر مخرج الطوارئ واتصل بـ 112. لا تتراجع أبداً داخل النفق."}},"question_id":"F8_Q06"},{"type":"IS_IT_ALLOWED","difficulty":"HARD","is_critical":true,"show_sign":true,"i18n":{"NL":{"question":"In een tunnel (bord F8): is het toegestaan om te stoppen voor een rustpauze?","choices":[{"text":"Nee, stoppen in een tunnel is verboden behalve bij pech of noodgeval","is_correct":true},{"text":"Ja, u mag stoppen in de tunnel als u de rijstrook niet blokkeert","is_correct":false}],"explanation":"In een tunnel is stoppen verboden tenzij u pech heeft of een noodgeval. In alle andere gevallen moet u de tunnel doorrijden."},"EN":{"question":"In a tunnel (sign F8): is it allowed to stop for a rest break?","choices":[{"text":"No, stopping in a tunnel is forbidden except in case of breakdown or emergency","is_correct":true},{"text":"Yes, you may stop in the tunnel as long as you do not block the lane","is_correct":false}],"explanation":"Stopping in a tunnel is forbidden unless you have a breakdown or emergency. In all other cases you must drive through the tunnel."},"FR":{"question":"Dans un tunnel (panneau F8) : est-il permis de s arreter pour une pause ?","choices":[{"text":"Non s arreter dans un tunnel est interdit sauf en cas de panne ou d urgence","is_correct":true},{"text":"Oui vous pouvez vous arreter dans le tunnel tant que vous ne bloquez pas la voie","is_correct":false}],"explanation":"S arreter dans un tunnel est interdit sauf en cas de panne ou d urgence. Dans tous les autres cas vous devez traverser le tunnel."},"AR":{"question":"في نفق (علامة مرورية F8): هل يُسمح بالتوقف لأخذ استراحة؟","choices":[{"text":"لا يُحظر التوقف في النفق إلا في حالة الأعطال أو الطوارئ","is_correct":true},{"text":"نعم يمكنك التوقف في النفق طالما لا تسد الحارة","is_correct":false}],"explanation":"يُحظر التوقف في النفق إلا في حالة الأعطال أو الطوارئ. في جميع الحالات الأخرى يجب عليك قطع النفق."}},"question_id":"F8_Q07"},{"type":"IS_IT_ALLOWED","difficulty":"HARD","is_critical":true,"show_sign":true,"i18n":{"NL":{"question":"In een tunnel (bord F8): is omdraaien (U-bocht) toegestaan wanneer er file staat?","choices":[{"text":"Nee, omdraaien is in een tunnel altijd verboden, ook bij file of andere obstakels","is_correct":true},{"text":"Ja, bij vastgelopen verkeer mag u omdraaien en de tunnel verlaten via de ingang","is_correct":false}],"explanation":"Een U-bocht in een tunnel is verboden. Bij file of incident volgt u de instructies van de dienstdoende hulpdiensten en de tunnelbeheersystemen."},"EN":{"question":"In a tunnel (sign F8): is making a U-turn allowed when there is a traffic jam?","choices":[{"text":"No, making a U-turn in a tunnel is always forbidden even in a traffic jam or other obstruction","is_correct":true},{"text":"Yes, when traffic is blocked you may turn around and exit the tunnel via the entrance","is_correct":false}],"explanation":"A U-turn in a tunnel is forbidden. In case of a jam or incident follow the instructions of emergency services and tunnel management systems."},"FR":{"question":"Dans un tunnel (panneau F8) : est-il permis de faire demi-tour en cas d embouteillage ?","choices":[{"text":"Non faire demi-tour dans un tunnel est toujours interdit meme en cas d embouteillage ou d autre obstacle","is_correct":true},{"text":"Oui en cas de trafic bloque vous pouvez faire demi-tour et quitter le tunnel par l entree","is_correct":false}],"explanation":"Un demi-tour dans un tunnel est interdit. En cas de bouchon ou d incident suivez les instructions des services d urgence et des systemes de gestion du tunnel."},"AR":{"question":"في نفق (علامة مرورية F8): هل يُسمح بالانعطاف (دوران U) عند وجود ازدحام مروري؟","choices":[{"text":"لا يُحظر دائماً الدوران في النفق حتى في حالة الازدحام أو العوائق الأخرى","is_correct":true},{"text":"نعم عند انقطاع حركة المرور يمكنك الاستدارة والخروج من النفق عبر المدخل","is_correct":false}],"explanation":"يُحظر الدوران في النفق. في حالة الازدحام أو الحوادث اتبع تعليمات خدمات الطوارئ وأنظمة إدارة النفق."}},"question_id":"F8_Q08"}]
+[
+  {
+    "type": "WHAT_DOES_IT_MEAN",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat betekent bord F8 'Tunnel'?",
+        "choices": [
+          {
+            "text": "U nadert een tunnel; verlichting is verplicht en stoppen is verboden behalve bij nood",
+            "is_correct": true
+          },
+          {
+            "text": "U rijdt een ondergrondse parkeergarage in",
+            "is_correct": false
+          },
+          {
+            "text": "Er geldt een verminderde snelheid maar lichten zijn niet verplicht",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F8 kondigt het begin van een tunnel aan. In een tunnel zijn dimlichten verplicht, stoppen verboden en is u-rijden niet toegestaan."
+      },
+      "EN": {
+        "question": "What does sign F8 'Start of tunnel' mean?",
+        "choices": [
+          {
+            "text": "You are approaching a tunnel; lighting is compulsory and stopping is forbidden except in emergency",
+            "is_correct": true
+          },
+          {
+            "text": "You are entering an underground car park",
+            "is_correct": false
+          },
+          {
+            "text": "A reduced speed applies but lights are not required",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F8 announces the start of a tunnel. In a tunnel dipped headlights are compulsory, stopping is forbidden and U-turns are not permitted."
+      },
+      "FR": {
+        "question": "Que signifie le panneau F8 'Debut tunnel' ?",
+        "choices": [
+          {
+            "text": "Vous approchez d un tunnel; l eclairage est obligatoire et l arret est interdit sauf urgence",
+            "is_correct": true
+          },
+          {
+            "text": "Vous entrez dans un parking souterrain",
+            "is_correct": false
+          },
+          {
+            "text": "Une vitesse reduite s applique mais les feux ne sont pas obligatoires",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F8 annonce le debut d un tunnel. Dans un tunnel les feux de croisement sont obligatoires l arret est interdit et les demi-tours ne sont pas autorises."
+      },
+      "AR": {
+        "question": "ما معنى هذه العلامة المرورية؟",
+        "choices": [
+          {
+            "text": "أنت تقترب من نفق؛ الإضاءة إلزامية والتوقف محظور إلا في حالات الطوارئ",
+            "is_correct": true
+          },
+          { "text": "أنت تدخل موقف سيارات تحت الأرض", "is_correct": false },
+          {
+            "text": "تنطبق سرعة مخفضة لكن الأضواء غير مطلوبة",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تعلن F8 عن بداية نفق. في النفق الأضواء الخافتة إلزامية والتوقف محظور ولا يُسمح بالانعطاف."
+      }
+    },
+    "question_id": "F8_Q01"
+  },
+  {
+    "type": "WHICH_SIGN",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Tot welke categorie behoort bord F8 'Tunnel'?",
+        "choices": [
+          {
+            "text": "Informatief bord: informeert bestuurders over de wegsituatie",
+            "is_correct": true
+          },
+          {
+            "text": "Gevaarsbord: waarschuwt voor gevaarlijke situaties",
+            "is_correct": false
+          },
+          {
+            "text": "Verbodsbord: verbiedt bepaalde handelingen",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F8 behoort tot deze categorie informatieve borden. Het informeert over de aanwezigheid van een tunnel zodat bestuurders zich kunnen voorbereiden."
+      },
+      "EN": {
+        "question": "Which category does sign F8 'Start of tunnel' belong to?",
+        "choices": [
+          {
+            "text": "Information sign: informs drivers about the road situation",
+            "is_correct": true
+          },
+          {
+            "text": "Hazard sign: warns of dangerous situations",
+            "is_correct": false
+          },
+          {
+            "text": "Prohibition sign: prohibits certain actions",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F8 belongs to this category of information signs. It informs drivers of the presence of a tunnel so they can prepare."
+      },
+      "FR": {
+        "question": "A quelle categorie appartient le panneau F8 'Debut tunnel' ?",
+        "choices": [
+          {
+            "text": "Panneau d information: informe les conducteurs sur la situation routiere",
+            "is_correct": true
+          },
+          {
+            "text": "Panneau de danger: avertit des situations dangereuses",
+            "is_correct": false
+          },
+          {
+            "text": "Panneau d interdiction: interdit certaines actions",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F8 appartient à cette catégorie des panneaux d information. Il informe les conducteurs de la presence d un tunnel afin qu ils puissent se preparer."
+      },
+      "AR": {
+        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
+        "choices": [
+          { "text": "العلامات الإرشادية", "is_correct": true },
+          { "text": "علامات الخطر", "is_correct": false },
+          { "text": "علامات الحظر", "is_correct": false }
+        ],
+        "explanation": "تنتمي F8 إلى هذه الفئة من العلامات الإعلامية. تُعلم السائقين بوجود نفق حتى يتمكنوا من الاستعداد."
+      }
+    },
+    "question_id": "F8_Q02"
+  },
+  {
+    "type": "HAZARD_IDENTIFICATION",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Welke gevaren zijn specifiek aanwezig in een tunnel (bord F8)?",
+        "choices": [
+          {
+            "text": "Beperkt zicht door rook of verlichting, geen vluchtmogelijkheid bij brand en risico op koolstofmonoxidevergiftiging",
+            "is_correct": true
+          },
+          {
+            "text": "Geen gevaren; tunnels zijn juist veiliger dan open wegen",
+            "is_correct": false
+          },
+          {
+            "text": "Gevaar van vorst op de rijbaan want tunnels zijn altijd koud",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Tunnels brengen specifieke gevaren mee: bij brand is vluchten moeilijk, rookontwikkeling beperkt het zicht en uitlaatgassen stapelen zich op. Discipline en alertheid zijn essentieel."
+      },
+      "EN": {
+        "question": "What specific hazards are present in a tunnel (sign F8)?",
+        "choices": [
+          {
+            "text": "Limited visibility from smoke or lighting, no escape route in a fire and risk of carbon monoxide poisoning",
+            "is_correct": true
+          },
+          {
+            "text": "No hazards; tunnels are actually safer than open roads",
+            "is_correct": false
+          },
+          {
+            "text": "Risk of ice on the road because tunnels are always cold",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Tunnels carry specific hazards: in a fire escape is difficult, smoke limits visibility and exhaust fumes accumulate. Discipline and alertness are essential."
+      },
+      "FR": {
+        "question": "Quels dangers specifiques sont presents dans un tunnel (panneau F8) ?",
+        "choices": [
+          {
+            "text": "Visibilite limitee par la fumee ou l eclairage, pas de voie de fuite en cas d incendie et risque d intoxication au monoxyde de carbone",
+            "is_correct": true
+          },
+          {
+            "text": "Pas de dangers; les tunnels sont en fait plus surs que les routes ouvertes",
+            "is_correct": false
+          },
+          {
+            "text": "Risque de verglas sur la chaussee car les tunnels sont toujours froids",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Les tunnels comportent des dangers specifiques: en cas d incendie la fuite est difficile la fumee limite la visibilite et les gaz d echappement s accumulent. La discipline et la vigilance sont essentielles."
+      },
+      "AR": {
+        "question": "ما المخاطر المحددة الموجودة في النفق (علامة مرورية F8)؟",
+        "choices": [
+          {
+            "text": "رؤية محدودة بسبب الدخان أو الإضاءة وعدم وجود مسار هروب في حالة الحريق وخطر التسمم بأول أكسيد الكربون",
+            "is_correct": true
+          },
+          {
+            "text": "لا توجد مخاطر؛ الأنفاق في الواقع أكثر أماناً من الطرق المكشوفة",
+            "is_correct": false
+          },
+          {
+            "text": "خطر الجليد على الطريق لأن الأنفاق دائماً باردة",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تحمل الأنفاق مخاطر محددة: في حالة الحريق يصعب الهروب والدخان يحد من الرؤية وتتراكم عوادم السيارات. الانضباط واليقظة أمران أساسيان."
+      }
+    },
+    "question_id": "F8_Q03"
+  },
+  {
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U rijdt een tunnel in (bord F8). Wat moet u doen met uw verlichting?",
+        "choices": [
+          {
+            "text": "Dimlichten inschakelen; in een tunnel zijn rijlichten altijd verplicht ongeacht het tijdstip",
+            "is_correct": true
+          },
+          {
+            "text": "Niets; in een verlichte tunnel zijn geen rijlichten vereist",
+            "is_correct": false
+          },
+          {
+            "text": "Grootlichten aanzetten voor maximaal zicht in de tunnel",
+            "is_correct": false
+          }
+        ],
+        "explanation": "In een tunnel zijn dimlichten altijd verplicht. Grootlichten zijn verboden in verlichte tunnels omdat ze andere bestuurders verblinden."
+      },
+      "EN": {
+        "question": "You are entering a tunnel (sign F8). What must you do with your lighting?",
+        "choices": [
+          {
+            "text": "Switch on dipped headlights; in a tunnel driving lights are always compulsory regardless of time of day",
+            "is_correct": true
+          },
+          {
+            "text": "Nothing; in a lit tunnel no driving lights are required",
+            "is_correct": false
+          },
+          {
+            "text": "Switch on full headlights for maximum visibility in the tunnel",
+            "is_correct": false
+          }
+        ],
+        "explanation": "In a tunnel dipped headlights are always compulsory. Full headlights are forbidden in lit tunnels because they dazzle other drivers."
+      },
+      "FR": {
+        "question": "Vous entrez dans un tunnel (panneau F8). Que devez-vous faire avec votre eclairage ?",
+        "choices": [
+          {
+            "text": "Allumer les feux de croisement; dans un tunnel les feux de route sont toujours obligatoires quelle que soit l heure",
+            "is_correct": true
+          },
+          {
+            "text": "Rien; dans un tunnel eclaire aucune lumiere n est requise",
+            "is_correct": false
+          },
+          {
+            "text": "Allumer les feux de route pour une visibilite maximale dans le tunnel",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dans un tunnel les feux de croisement sont toujours obligatoires. Les feux de route sont interdits dans les tunnels eclaires car ils eblouissent les autres conducteurs."
+      },
+      "AR": {
+        "question": "أنت تدخل نفقاً (علامة مرورية F8). ماذا يجب أن تفعل بالإضاءة؟",
+        "choices": [
+          {
+            "text": "تشغيل الأضواء الخافتة؛ في النفق أضواء القيادة إلزامية دائماً بغض النظر عن الوقت",
+            "is_correct": true
+          },
+          {
+            "text": "لا شيء؛ في نفق مضاء لا تلزم أضواء القيادة",
+            "is_correct": false
+          },
+          {
+            "text": "تشغيل الأضواء الكاملة لأقصى رؤية في النفق",
+            "is_correct": false
+          }
+        ],
+        "explanation": "في النفق الأضواء الخافتة إلزامية دائماً. الأضواء الكاملة محظورة في الأنفاق المضاءة لأنها تبهر السائقين الآخرين."
+      }
+    },
+    "question_id": "F8_Q04"
+  },
+  {
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "In een tunnel (bord F8) ziet u plotseling file. Wat doet u?",
+        "choices": [
+          {
+            "text": "Rustig remmen, gevarendriehoek (of gevaarlichten) activeren en voldoende afstand houden tot de voorligger",
+            "is_correct": true
+          },
+          {
+            "text": "Omkeren en de tunnel verlaten via de ingang",
+            "is_correct": false
+          },
+          {
+            "text": "Op de vluchtstrook rijden en wachten tot de file afneemt",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Bij file in een tunnel activeert u uw gevaarlichten als waarschuwing, houdt voldoende afstand en volgt de instructies via de panelen. U mag nooit omkeren in een tunnel."
+      },
+      "EN": {
+        "question": "In a tunnel (sign F8) you suddenly see a traffic jam. What do you do?",
+        "choices": [
+          {
+            "text": "Brake gently, activate hazard lights and keep sufficient distance from the vehicle ahead",
+            "is_correct": true
+          },
+          {
+            "text": "Turn around and exit the tunnel via the entrance",
+            "is_correct": false
+          },
+          {
+            "text": "Drive to the emergency lane and wait until the jam clears",
+            "is_correct": false
+          }
+        ],
+        "explanation": "When there is a jam in a tunnel activate your hazard lights as a warning, maintain sufficient distance and follow instructions on the panels. Never make a U-turn in a tunnel."
+      },
+      "FR": {
+        "question": "Dans un tunnel (panneau F8) vous voyez soudainement un embouteillage. Que faites-vous ?",
+        "choices": [
+          {
+            "text": "Freiner doucement activer les feux de detresse et garder une distance suffisante avec le vehicule precedent",
+            "is_correct": true
+          },
+          {
+            "text": "Faire demi-tour et quitter le tunnel par l entree",
+            "is_correct": false
+          },
+          {
+            "text": "Rouler sur la voie d urgence et attendre que l embouteillage se dissipe",
+            "is_correct": false
+          }
+        ],
+        "explanation": "En cas de bouchon dans un tunnel activez vos feux de detresse comme avertissement maintenez une distance suffisante et suivez les instructions sur les panneaux. Ne faites jamais demi-tour dans un tunnel."
+      },
+      "AR": {
+        "question": "في نفق (علامة مرورية F8) ترى فجأة ازدحاماً مرورياً. ماذا تفعل؟",
+        "choices": [
+          {
+            "text": "فرمل بهدوء وشغّل أضواء الخطر وحافظ على مسافة كافية من المركبة الأمامية",
+            "is_correct": true
+          },
+          { "text": "استدر واخرج من النفق عبر المدخل", "is_correct": false },
+          {
+            "text": "سر إلى حارة الطوارئ وانتظر حتى يزول الازدحام",
+            "is_correct": false
+          }
+        ],
+        "explanation": "عند وجود ازدحام في النفق شغّل أضواء الخطر كتحذير وحافظ على مسافة كافية واتبع التعليمات على اللوحات. لا تستدر أبداً داخل النفق."
+      }
+    },
+    "question_id": "F8_Q05"
+  },
+  {
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "In een tunnel (bord F8) breekt brand uit in een voertuig. Wat is de correcte handelwijze?",
+        "choices": [
+          {
+            "text": "Rijstrook verlaten, motor afzetten, tunnel te voet verlaten via de nooduitgang en 112 bellen",
+            "is_correct": true
+          },
+          {
+            "text": "In het voertuig blijven en de brandweer bellen terwijl u wacht",
+            "is_correct": false
+          },
+          {
+            "text": "Achteruit rijden naar de ingang van de tunnel",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Bij brand in een tunnel: stop veilig, zet de motor af, verlaat het voertuig en de tunnel via de nooduitgang en bel 112. Nooit achteruitrijden in een tunnel."
+      },
+      "EN": {
+        "question": "In a tunnel (sign F8) fire breaks out in a vehicle. What is the correct procedure?",
+        "choices": [
+          {
+            "text": "Leave the carriageway, switch off the engine, exit the tunnel on foot via the emergency exit and call 112",
+            "is_correct": true
+          },
+          {
+            "text": "Stay in the vehicle and call the fire brigade while waiting",
+            "is_correct": false
+          },
+          {
+            "text": "Reverse back to the entrance of the tunnel",
+            "is_correct": false
+          }
+        ],
+        "explanation": "In a tunnel fire: stop safely, switch off the engine, leave the vehicle and tunnel via the emergency exit and call 112. Never reverse in a tunnel."
+      },
+      "FR": {
+        "question": "Dans un tunnel (panneau F8) un incendie se declare dans un vehicule. Quelle est la procedure correcte ?",
+        "choices": [
+          {
+            "text": "Quitter la chaussee eteindre le moteur sortir du tunnel a pied par la sortie de secours et appeler le 112",
+            "is_correct": true
+          },
+          {
+            "text": "Rester dans le vehicule et appeler les pompiers en attendant",
+            "is_correct": false
+          },
+          {
+            "text": "Faire marche arriere jusqu a l entree du tunnel",
+            "is_correct": false
+          }
+        ],
+        "explanation": "En cas d incendie dans un tunnel: arretez-vous en securite eteignez le moteur quittez le vehicule et le tunnel par la sortie de secours et appelez le 112. Ne reculez jamais dans un tunnel."
+      },
+      "AR": {
+        "question": "في نفق (علامة مرورية F8) نشبت نيران في مركبة. ما الإجراء الصحيح؟",
+        "choices": [
+          {
+            "text": "غادر الطريق وأوقف المحرك واخرج من النفق سيراً على الأقدام عبر مخرج الطوارئ واتصل بـ 112",
+            "is_correct": true
+          },
+          {
+            "text": "ابق داخل المركبة واتصل بالإطفاء بينما تنتظر",
+            "is_correct": false
+          },
+          { "text": "اتراجع للخلف حتى مدخل النفق", "is_correct": false }
+        ],
+        "explanation": "في حالة حريق بالنفق: توقف بأمان وأوقف المحرك وغادر المركبة والنفق عبر مخرج الطوارئ واتصل بـ 112. لا تتراجع أبداً داخل النفق."
+      }
+    },
+    "question_id": "F8_Q06"
+  },
+  {
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "In een tunnel (bord F8): is het toegestaan om te stoppen voor een rustpauze?",
+        "choices": [
+          {
+            "text": "Nee, stoppen in een tunnel is verboden behalve bij pech of noodgeval",
+            "is_correct": true
+          },
+          {
+            "text": "Ja, u mag stoppen in de tunnel als u de rijstrook niet blokkeert",
+            "is_correct": false
+          }
+        ],
+        "explanation": "In een tunnel is stoppen verboden tenzij u pech heeft of een noodgeval. In alle andere gevallen moet u de tunnel doorrijden."
+      },
+      "EN": {
+        "question": "In a tunnel (sign F8): is it allowed to stop for a rest break?",
+        "choices": [
+          {
+            "text": "No, stopping in a tunnel is forbidden except in case of breakdown or emergency",
+            "is_correct": true
+          },
+          {
+            "text": "Yes, you may stop in the tunnel as long as you do not block the lane",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Stopping in a tunnel is forbidden unless you have a breakdown or emergency. In all other cases you must drive through the tunnel."
+      },
+      "FR": {
+        "question": "Dans un tunnel (panneau F8) : est-il permis de s arreter pour une pause ?",
+        "choices": [
+          {
+            "text": "Non s arreter dans un tunnel est interdit sauf en cas de panne ou d urgence",
+            "is_correct": true
+          },
+          {
+            "text": "Oui vous pouvez vous arreter dans le tunnel tant que vous ne bloquez pas la voie",
+            "is_correct": false
+          }
+        ],
+        "explanation": "S arreter dans un tunnel est interdit sauf en cas de panne ou d urgence. Dans tous les autres cas vous devez traverser le tunnel."
+      },
+      "AR": {
+        "question": "في نفق (علامة مرورية F8): هل يُسمح بالتوقف لأخذ استراحة؟",
+        "choices": [
+          {
+            "text": "لا يُحظر التوقف في النفق إلا في حالة الأعطال أو الطوارئ",
+            "is_correct": true
+          },
+          {
+            "text": "نعم يمكنك التوقف في النفق طالما لا تسد الحارة",
+            "is_correct": false
+          }
+        ],
+        "explanation": "يُحظر التوقف في النفق إلا في حالة الأعطال أو الطوارئ. في جميع الحالات الأخرى يجب عليك قطع النفق."
+      }
+    },
+    "question_id": "F8_Q07"
+  },
+  {
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "In een tunnel (bord F8): is omdraaien (U-bocht) toegestaan wanneer er file staat?",
+        "choices": [
+          {
+            "text": "Nee, omdraaien is in een tunnel altijd verboden, ook bij file of andere obstakels",
+            "is_correct": true
+          },
+          {
+            "text": "Ja, bij vastgelopen verkeer mag u omdraaien en de tunnel verlaten via de ingang",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Een U-bocht in een tunnel is verboden. Bij file of incident volgt u de instructies van de dienstdoende hulpdiensten en de tunnelbeheersystemen."
+      },
+      "EN": {
+        "question": "In a tunnel (sign F8): is making a U-turn allowed when there is a traffic jam?",
+        "choices": [
+          {
+            "text": "No, making a U-turn in a tunnel is always forbidden even in a traffic jam or other obstruction",
+            "is_correct": true
+          },
+          {
+            "text": "Yes, when traffic is blocked you may turn around and exit the tunnel via the entrance",
+            "is_correct": false
+          }
+        ],
+        "explanation": "A U-turn in a tunnel is forbidden. In case of a jam or incident follow the instructions of emergency services and tunnel management systems."
+      },
+      "FR": {
+        "question": "Dans un tunnel (panneau F8) : est-il permis de faire demi-tour en cas d embouteillage ?",
+        "choices": [
+          {
+            "text": "Non faire demi-tour dans un tunnel est toujours interdit meme en cas d embouteillage ou d autre obstacle",
+            "is_correct": true
+          },
+          {
+            "text": "Oui en cas de trafic bloque vous pouvez faire demi-tour et quitter le tunnel par l entree",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Un demi-tour dans un tunnel est interdit. En cas de bouchon ou d incident suivez les instructions des services d urgence et des systemes de gestion du tunnel."
+      },
+      "AR": {
+        "question": "في نفق (علامة مرورية F8): هل يُسمح بالانعطاف (دوران U) عند وجود ازدحام مروري؟",
+        "choices": [
+          {
+            "text": "لا يُحظر دائماً الدوران في النفق حتى في حالة الازدحام أو العوائق الأخرى",
+            "is_correct": true
+          },
+          {
+            "text": "نعم عند انقطاع حركة المرور يمكنك الاستدارة والخروج من النفق عبر المدخل",
+            "is_correct": false
+          }
+        ],
+        "explanation": "يُحظر الدوران في النفق. في حالة الازدحام أو الحوادث اتبع تعليمات خدمات الطوارئ وأنظمة إدارة النفق."
+      }
+    },
+    "question_id": "F8_Q08"
+  }
+]

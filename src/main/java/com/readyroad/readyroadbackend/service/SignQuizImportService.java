@@ -24,6 +24,8 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.support.TransactionTemplate;
 
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import java.io.File;
 import java.util.*;
 
@@ -60,7 +62,8 @@ public class SignQuizImportService {
     private static final int REQUIRED_MEDIUM = 3;
     private static final int REQUIRED_HARD = 2;
 
-    private static final Set<String> VALID_LANGS = Set.of("NL", "EN", "FR", "AR");
+    private static final List<String> VALID_LANGS = List.of("NL", "EN", "FR", "AR");
+    private static final List<String> FALLBACK_LANGS = List.of("EN", "NL", "FR", "AR");
 
     private final RoadSignRepository roadSignRepo;
     private final SignQuestionRepository questionRepo;
@@ -69,6 +72,10 @@ public class SignQuizImportService {
     private final ObjectMapper mapper;
     private final CanonicalSignCatalogService canonicalSignCatalogService;
     private final RoadSignReferenceTextResolver roadSignReferenceTextResolver;
+
+    @PersistenceContext
+    private EntityManager entityManager;
+
     /**
      * Used for per-sign transaction isolation.
      * Each sign is committed independently so a DB error in one sign
@@ -310,10 +317,10 @@ public class SignQuizImportService {
 
             JsonNode langNode = i18n.path(lang);
             validateImportedText(
-                    langNode.path("name").asText("").trim(),
+                    text(i18n, lang, "name"),
                     "sign.json i18n[" + lang + "].name");
             validateImportedText(
-                    langNode.path("description").asText("").trim(),
+                    text(i18n, lang, "description"),
                     "sign.json i18n[" + lang + "].description");
         }
     }
@@ -364,10 +371,10 @@ public class SignQuizImportService {
                 }
 
                 validateImportedText(
-                        langNode.path("question").asText("").trim(),
+                        SignQuestionTextSanitizer.sanitizeQuestion(qType, lang, text(i18n, lang, "question")),
                         "[" + qid + "][" + lang + "] question");
                 validateImportedText(
-                        langNode.path("explanation").asText("").trim(),
+                        SignQuestionTextSanitizer.sanitizeExplanation(qType, lang, text(i18n, lang, "explanation")),
                         "[" + qid + "][" + lang + "] explanation");
 
                 JsonNode choices = langNode.path("choices");
@@ -389,7 +396,7 @@ public class SignQuizImportService {
                 int choiceIndex = 0;
                 for (JsonNode c : choices) {
                     validateImportedText(
-                            c.path("text").asText("").trim(),
+                            choiceText(i18n, lang, choiceIndex, qType),
                             "[" + qid + "][" + lang + "] choice[" + choiceIndex + "]");
                     if (c.path("is_correct").asBoolean(false))
                         correctCount++;
@@ -718,21 +725,78 @@ public class SignQuizImportService {
     // ─────────────────────────────────────────────────────────────────────────
 
     private String text(JsonNode i18n, String lang, String field) {
-        JsonNode n = i18n.path(lang).path(field);
-        if (n.isMissingNode() || n.isNull())
-            return null;
-        String v = ImportedTextSanitizer.sanitize(n.asText(""));
-        return v.isEmpty() ? null : v;
+        String preferred = cleanImportedText(i18n.path(lang).path(field));
+        if (preferred != null) {
+            return preferred;
+        }
+
+        for (String fallbackLang : FALLBACK_LANGS) {
+            if (fallbackLang.equals(lang)) {
+                continue;
+            }
+            String fallback = cleanImportedText(i18n.path(fallbackLang).path(field));
+            if (fallback != null) {
+                return fallback;
+            }
+        }
+
+        return null;
     }
 
     private String choiceText(JsonNode i18n, String lang, int idx, SignQuestionType questionType) {
+        String preferred = cleanChoiceText(i18n, lang, idx, questionType);
+        if (preferred != null) {
+            return preferred;
+        }
+
+        for (String fallbackLang : FALLBACK_LANGS) {
+            if (fallbackLang.equals(lang)) {
+                continue;
+            }
+            String fallback = cleanChoiceText(i18n, fallbackLang, idx, questionType);
+            if (fallback != null) {
+                return fallback;
+            }
+        }
+
+        return null;
+    }
+
+    private String cleanChoiceText(JsonNode i18n, String lang, int idx, SignQuestionType questionType) {
         JsonNode choices = i18n.path(lang).path("choices");
-        if (!choices.isArray() || idx >= choices.size())
+        if (!choices.isArray() || idx >= choices.size()) {
             return null;
-        return SignQuestionTextSanitizer.sanitizeChoice(
-                questionType,
-                lang,
-                ImportedTextSanitizer.sanitize(choices.get(idx).path("text").asText(null)));
+        }
+
+        String cleanText = cleanImportedText(choices.get(idx).path("text"));
+        if (cleanText == null) {
+            return null;
+        }
+
+        return cleanImportedText(SignQuestionTextSanitizer.sanitizeChoice(questionType, lang, cleanText));
+    }
+
+    private String cleanImportedText(JsonNode node) {
+        if (node == null || node.isMissingNode() || node.isNull()) {
+            return null;
+        }
+        return cleanImportedText(node.asText(null));
+    }
+
+    private String cleanImportedText(String value) {
+        if (value == null || value.isBlank()) {
+            return null;
+        }
+
+        String sanitized = ImportedTextSanitizer.sanitize(value);
+        if (sanitized == null || sanitized.isBlank()) {
+            return null;
+        }
+        if (hasInvalidImportedText(sanitized)) {
+            return null;
+        }
+
+        return sanitized.trim();
     }
 
     private void syncChoices(SignQuestion question, JsonNode i18n, boolean isNewQuestion,
@@ -758,6 +822,7 @@ public class SignQuizImportService {
         List<SignChoice> existingChoices = new ArrayList<>(question.getChoices());
         existingChoices.sort(Comparator.comparing(
                 choice -> Optional.ofNullable(choice.getDisplayOrder()).orElse(Integer.MAX_VALUE)));
+        moveExistingChoicesToTemporaryDisplayOrders(existingChoices);
 
         Map<String, Deque<SignChoice>> choicesByFingerprint = new HashMap<>();
         for (SignChoice existingChoice : existingChoices) {
@@ -793,6 +858,14 @@ public class SignQuizImportService {
             legacyChoice.setDisplayOrder(hiddenOrder++);
             legacyChoice.setIsCorrect(false);
         }
+    }
+
+    private void moveExistingChoicesToTemporaryDisplayOrders(List<SignChoice> existingChoices) {
+        int temporaryOrder = 1_000;
+        for (SignChoice existingChoice : existingChoices) {
+            existingChoice.setDisplayOrder(temporaryOrder++);
+        }
+        entityManager.flush();
     }
 
     private List<ImportedChoiceData> buildImportedChoices(JsonNode i18n, SignQuestionType questionType) {
@@ -1156,12 +1229,16 @@ public class SignQuizImportService {
             throw new ImportValidationException(context + " must not be blank");
         }
 
-        if (PlaceholderDetector.hasPlaceholderNonBlank(value)
-                || value.indexOf('\uFFFD') >= 0
-                || value.contains("�")
-                || ImportedTextSanitizer.requiresRepair(value)) {
+        if (hasInvalidImportedText(value)) {
             throw new ImportValidationException(context + " contains placeholder or corrupted text");
         }
+    }
+
+    private boolean hasInvalidImportedText(String value) {
+        return PlaceholderDetector.hasPlaceholderNonBlank(value)
+                || value.indexOf('\uFFFD') >= 0
+                || value.contains("�")
+                || ImportedTextSanitizer.requiresRepair(value);
     }
 
     private SignImportRun failRun(String performedBy, long startMs, String reason) {

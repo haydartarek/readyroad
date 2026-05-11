@@ -1,6 +1,7 @@
 package com.readyroad.readyroadbackend.config;
 
 import jakarta.servlet.http.HttpServletResponse;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -48,6 +49,12 @@ public class SecurityConfig {
         private final JwtAuthenticationFilter jwtAuthFilter;
         private final MaintenanceModeFilter maintenanceModeFilter;
 
+        @Value("${CORS_ALLOWED_ORIGINS:${app.cors.allowed-origins:}}")
+        private String allowedOriginsProperty;
+
+        @Value("${app.cors.max-age:3600}")
+        private Long corsMaxAge;
+
         /**
          * Role Hierarchy Configuration
          * 
@@ -63,7 +70,7 @@ public class SecurityConfig {
          */
         @Bean
         public RoleHierarchy roleHierarchy() {
-                log.info("🎭 Configuring Role Hierarchy:");
+                log.info("Configuring Role Hierarchy:");
                 log.info("   ROLE_ADMIN > ROLE_MODERATOR > ROLE_USER");
 
                 // Use static factory method instead of constructor (Spring Security 6.3+)
@@ -71,7 +78,7 @@ public class SecurityConfig {
                                 "ROLE_ADMIN > ROLE_MODERATOR\n" +
                                                 "ROLE_MODERATOR > ROLE_USER");
 
-                log.info("✅ Role Hierarchy configured successfully");
+                log.info("Role Hierarchy configured successfully");
                 log.info("   - ADMIN users can access USER and MODERATOR protected endpoints");
                 log.info("   - MODERATOR users can access USER protected endpoints");
 
@@ -90,12 +97,12 @@ public class SecurityConfig {
         @Bean
         @SuppressWarnings("deprecation")
         public MethodSecurityExpressionHandler methodSecurityExpressionHandler(RoleHierarchy roleHierarchy) {
-                log.info("🔐 Configuring Method Security with Role Hierarchy");
+                log.info("Configuring Method Security with Role Hierarchy");
 
                 DefaultMethodSecurityExpressionHandler handler = new DefaultMethodSecurityExpressionHandler();
                 handler.setRoleHierarchy(roleHierarchy);
 
-                log.info("✅ Method Security Expression Handler configured");
+                log.info("Method Security Expression Handler configured");
                 log.info("   - @PreAuthorize annotations now respect role hierarchy");
 
                 return handler;
@@ -103,14 +110,11 @@ public class SecurityConfig {
 
         @Bean
         public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-                log.info("╔═══════════════════════════════════════════════════════════════╗");
-                log.info("║   🔒 Security Configuration: Production-Ready Mode            ║");
-                log.info("║                                                               ║");
-                log.info("║   ✅ Public Reads:  Traffic Signs (no auth)                   ║");
-                log.info("║   🔐 Protected:     Exams, Practice, Profile (JWT required)   ║");
-                log.info("║   🛡️  Admin:        All admin operations (JWT + role check)   ║");
-                log.info("║   🎭 Hierarchy:     ADMIN > MODERATOR > USER                  ║");
-                log.info("╚═══════════════════════════════════════════════════════════════╝");
+                log.info("Security Configuration: Production-Ready Mode");
+                log.info("   Public reads: Traffic Signs (no auth)");
+                log.info("   Protected: Exams, Practice, Profile (JWT required)");
+                log.info("   Admin: All admin operations (JWT + role check)");
+                log.info("   Hierarchy: ADMIN > MODERATOR > USER");
 
                 http
                                 .csrf(AbstractHttpConfigurer::disable)
@@ -126,6 +130,10 @@ public class SecurityConfig {
 
                                                 // API Documentation (admin-only)
                                                 .requestMatchers("/swagger-ui/**", "/v3/api-docs/**").hasRole("ADMIN")
+
+                                                // Public static traffic sign images served by the backend
+                                                .requestMatchers(HttpMethod.GET, "/images/signs/**").permitAll()
+                                                .requestMatchers(HttpMethod.HEAD, "/images/signs/**").permitAll()
 
                                                 // Authentication
                                                 .requestMatchers(
@@ -205,7 +213,7 @@ public class SecurityConfig {
                                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)
                                 .addFilterAfter(maintenanceModeFilter, JwtAuthenticationFilter.class);
 
-                log.info("✅ Security configured successfully");
+                log.info("Security configured successfully");
                 log.info("   - Public endpoints: /api/traffic-signs/** (GET)");
                 log.info("   - Protected endpoints: /api/exams/**, /api/users/**, etc.");
                 log.info("   - Admin endpoints: /api/admin/** (ADMIN role required)");
@@ -216,15 +224,18 @@ public class SecurityConfig {
 
         @Bean
         public CorsConfigurationSource corsConfigurationSource() {
-                log.info("🌍 Configuring CORS for cross-origin requests");
+                log.info("Configuring CORS for cross-origin requests");
 
                 CorsConfiguration configuration = new CorsConfiguration();
 
                 // Allowed origins
-                String allowedOrigins = System.getenv("CORS_ALLOWED_ORIGINS");
-                if (allowedOrigins != null && !allowedOrigins.isEmpty()) {
-                        configuration.setAllowedOrigins(Arrays.asList(allowedOrigins.split(",")));
-                        log.info("   Using custom CORS origins from environment: {}", allowedOrigins);
+                if (allowedOriginsProperty != null && !allowedOriginsProperty.isBlank()) {
+                        List<String> origins = Arrays.stream(allowedOriginsProperty.split(","))
+                                        .map(String::trim)
+                                        .filter(origin -> !origin.isEmpty())
+                                        .toList();
+                        configuration.setAllowedOrigins(origins);
+                        log.info("   Using configured CORS origins: {}", origins);
                 } else {
                         configuration.setAllowedOrigins(Arrays.asList(
                                         "http://localhost:3000",
@@ -256,12 +267,12 @@ public class SecurityConfig {
                                 "X-Total-Count"));
 
                 configuration.setAllowCredentials(true);
-                configuration.setMaxAge(3600L);
+                configuration.setMaxAge(corsMaxAge);
 
                 UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
                 source.registerCorsConfiguration("/**", configuration);
 
-                log.info("✅ CORS configured successfully");
+                log.info("CORS configured successfully");
                 return source;
         }
 }

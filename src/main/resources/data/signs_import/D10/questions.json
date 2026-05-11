@@ -13,8 +13,14 @@
             "text": "Een gedeeld pad voor voetgangers en fietsers",
             "is_correct": true
           },
-          { "text": "Een pad enkel voor voetgangers", "is_correct": false },
-          { "text": "Een pad enkel voor fietsers", "is_correct": false }
+          {
+            "text": "Een pad enkel voor voetgangers",
+            "is_correct": false
+          },
+          {
+            "text": "Een pad enkel voor fietsers",
+            "is_correct": false
+          }
         ],
         "explanation": "Dit bord geeft aan dat het pad bestemd is voor zowel voetgangers als fietsers."
       },
@@ -25,8 +31,14 @@
             "text": "A shared path for pedestrians and cyclists",
             "is_correct": true
           },
-          { "text": "A path for pedestrians only", "is_correct": false },
-          { "text": "A path for cyclists only", "is_correct": false }
+          {
+            "text": "A path for pedestrians only",
+            "is_correct": false
+          },
+          {
+            "text": "A path for cyclists only",
+            "is_correct": false
+          }
         ],
         "explanation": "This sign indicates that the path is intended for both pedestrians and cyclists."
       },
@@ -37,23 +49,37 @@
             "text": "Un chemin partagé pour piétons et cyclistes",
             "is_correct": true
           },
-          { "text": "Un chemin pour piétons uniquement", "is_correct": false },
-          { "text": "Un chemin pour cyclistes uniquement", "is_correct": false }
+          {
+            "text": "Un chemin pour piétons uniquement",
+            "is_correct": false
+          },
+          {
+            "text": "Un chemin pour cyclistes uniquement",
+            "is_correct": false
+          }
         ],
         "explanation": "Ce panneau indique que le chemin est destiné aux piétons et aux cyclistes."
       },
       "AR": {
         "question": "ما معنى هذه العلامة؟",
         "choices": [
-          { "text": "مسار مشترك للمشاة وراكبي الدراجات", "is_correct": true },
-          { "text": "مسار للمشاة فقط", "is_correct": false },
-          { "text": "مسار للدراجات فقط", "is_correct": false }
+          {
+            "text": "مسار مشترك للمشاة وراكبي الدراجات",
+            "is_correct": true
+          },
+          {
+            "text": "مسار للمشاة فقط",
+            "is_correct": false
+          },
+          {
+            "text": "مسار للدراجات فقط",
+            "is_correct": false
+          }
         ],
         "explanation": "تشير هذه العلامة إلى أن المسار مخصص للمشاة وراكبي الدراجات معاً."
       }
     }
   },
-
   {
     "question_id": "D10_Q02",
     "type": "HAZARD_IDENTIFICATION",
@@ -64,42 +90,77 @@
       "NL": {
         "question": "Voor wie is dit pad bedoeld?",
         "choices": [
-          { "text": "Voetgangers en fietsers", "is_correct": true },
-          { "text": "Auto's", "is_correct": false },
-          { "text": "Alle voertuigen", "is_correct": false }
+          {
+            "text": "Voetgangers en fietsers",
+            "is_correct": true
+          },
+          {
+            "text": "Auto's",
+            "is_correct": false
+          },
+          {
+            "text": "Alle voertuigen",
+            "is_correct": false
+          }
         ],
         "explanation": "Het pad is voor voetgangers en fietsers."
       },
       "EN": {
         "question": "Who is this path intended for?",
         "choices": [
-          { "text": "Pedestrians and cyclists", "is_correct": true },
-          { "text": "Cars", "is_correct": false },
-          { "text": "All vehicles", "is_correct": false }
+          {
+            "text": "Pedestrians and cyclists",
+            "is_correct": true
+          },
+          {
+            "text": "Cars",
+            "is_correct": false
+          },
+          {
+            "text": "All vehicles",
+            "is_correct": false
+          }
         ],
         "explanation": "The path is intended for pedestrians and cyclists."
       },
       "FR": {
         "question": "À qui ce chemin est-il destiné ?",
         "choices": [
-          { "text": "Aux piétons et cyclistes", "is_correct": true },
-          { "text": "Aux voitures", "is_correct": false },
-          { "text": "À tous les véhicules", "is_correct": false }
+          {
+            "text": "Aux piétons et cyclistes",
+            "is_correct": true
+          },
+          {
+            "text": "Aux voitures",
+            "is_correct": false
+          },
+          {
+            "text": "À tous les véhicules",
+            "is_correct": false
+          }
         ],
         "explanation": "Ce chemin est destiné aux piétons et aux cyclistes."
       },
       "AR": {
         "question": "لمن هذا المسار مخصص؟",
         "choices": [
-          { "text": "للمشاة وراكبي الدراجات", "is_correct": true },
-          { "text": "للسيارات", "is_correct": false },
-          { "text": "لجميع المركبات", "is_correct": false }
+          {
+            "text": "للمشاة وراكبي الدراجات",
+            "is_correct": true
+          },
+          {
+            "text": "للسيارات",
+            "is_correct": false
+          },
+          {
+            "text": "لجميع المركبات",
+            "is_correct": false
+          }
         ],
         "explanation": "المسار مخصص للمشاة وراكبي الدراجات."
       }
     }
   },
-
   {
     "question_id": "D10_Q03",
     "type": "HAZARD_IDENTIFICATION",
@@ -110,26 +171,50 @@
       "NL": {
         "question": "Hoe gebruiken voetgangers en fietsers dit pad?",
         "choices": [
-          { "text": "Ze delen dezelfde ruimte", "is_correct": true },
-          { "text": "Ze hebben aparte delen", "is_correct": false },
-          { "text": "Alleen fietsers mogen erop", "is_correct": false }
+          {
+            "text": "Ze delen dezelfde ruimte",
+            "is_correct": true
+          },
+          {
+            "text": "Ze hebben aparte delen",
+            "is_correct": false
+          },
+          {
+            "text": "Alleen fietsers mogen erop",
+            "is_correct": false
+          }
         ],
         "explanation": "Het pad is gedeeld door beide gebruikers."
       },
       "EN": {
         "question": "How do pedestrians and cyclists use this path?",
         "choices": [
-          { "text": "They share the same space", "is_correct": true },
-          { "text": "They have separate sections", "is_correct": false },
-          { "text": "Only cyclists may use it", "is_correct": false }
+          {
+            "text": "They share the same space",
+            "is_correct": true
+          },
+          {
+            "text": "They have separate sections",
+            "is_correct": false
+          },
+          {
+            "text": "Only cyclists may use it",
+            "is_correct": false
+          }
         ],
         "explanation": "The path is shared between both users."
       },
       "FR": {
         "question": "Comment les piétons et cyclistes utilisent-ils ce chemin ?",
         "choices": [
-          { "text": "Ils partagent le même espace", "is_correct": true },
-          { "text": "Ils ont des parties séparées", "is_correct": false },
+          {
+            "text": "Ils partagent le même espace",
+            "is_correct": true
+          },
+          {
+            "text": "Ils ont des parties séparées",
+            "is_correct": false
+          },
           {
             "text": "Seuls les cyclistes peuvent l'utiliser",
             "is_correct": false
@@ -140,15 +225,23 @@
       "AR": {
         "question": "كيف يستخدم المشاة وراكبو الدراجات هذا المسار؟",
         "choices": [
-          { "text": "يتشاركون نفس المساحة", "is_correct": true },
-          { "text": "لديهم أجزاء منفصلة", "is_correct": false },
-          { "text": "للدراجات فقط", "is_correct": false }
+          {
+            "text": "يتشاركون نفس المساحة",
+            "is_correct": true
+          },
+          {
+            "text": "لديهم أجزاء منفصلة",
+            "is_correct": false
+          },
+          {
+            "text": "للدراجات فقط",
+            "is_correct": false
+          }
         ],
         "explanation": "المسار مشترك بين المستخدمين."
       }
     }
   },
-
   {
     "question_id": "D10_Q04",
     "type": "WHAT_MUST_YOU_DO",
@@ -159,42 +252,77 @@
       "NL": {
         "question": "U bent fietser en ziet dit bord. Wat doet u?",
         "choices": [
-          { "text": "Het pad gebruiken", "is_correct": true },
-          { "text": "Alleen de rijbaan gebruiken", "is_correct": false },
-          { "text": "Het bord negeren", "is_correct": false }
+          {
+            "text": "Het pad gebruiken",
+            "is_correct": true
+          },
+          {
+            "text": "Alleen de rijbaan gebruiken",
+            "is_correct": false
+          },
+          {
+            "text": "Het bord negeren",
+            "is_correct": false
+          }
         ],
         "explanation": "Het pad is bedoeld voor fietsers."
       },
       "EN": {
         "question": "You are a cyclist and see this sign. What should you do?",
         "choices": [
-          { "text": "Use the path", "is_correct": true },
-          { "text": "Use only the road", "is_correct": false },
-          { "text": "Ignore the sign", "is_correct": false }
+          {
+            "text": "Use the path",
+            "is_correct": true
+          },
+          {
+            "text": "Use only the road",
+            "is_correct": false
+          },
+          {
+            "text": "Ignore the sign",
+            "is_correct": false
+          }
         ],
         "explanation": "The path is intended for cyclists."
       },
       "FR": {
         "question": "Vous êtes cycliste et voyez ce panneau. Que devez-vous faire ?",
         "choices": [
-          { "text": "Utiliser le chemin", "is_correct": true },
-          { "text": "Utiliser uniquement la route", "is_correct": false },
-          { "text": "Ignorer le panneau", "is_correct": false }
+          {
+            "text": "Utiliser le chemin",
+            "is_correct": true
+          },
+          {
+            "text": "Utiliser uniquement la route",
+            "is_correct": false
+          },
+          {
+            "text": "Ignorer le panneau",
+            "is_correct": false
+          }
         ],
         "explanation": "Le chemin est destiné aux cyclistes."
       },
       "AR": {
         "question": "أنت راكب دراجة وترى هذه العلامة. ماذا يجب أن تفعل؟",
         "choices": [
-          { "text": "استخدام المسار", "is_correct": true },
-          { "text": "استخدام الطريق فقط", "is_correct": false },
-          { "text": "تجاهل العلامة", "is_correct": false }
+          {
+            "text": "استخدام المسار",
+            "is_correct": true
+          },
+          {
+            "text": "استخدام الطريق فقط",
+            "is_correct": false
+          },
+          {
+            "text": "تجاهل العلامة",
+            "is_correct": false
+          }
         ],
         "explanation": "المسار مخصص لراكبي الدراجات."
       }
     }
   },
-
   {
     "question_id": "D10_Q05",
     "type": "WHAT_MUST_YOU_DO",
@@ -205,42 +333,77 @@
       "NL": {
         "question": "U bent voetganger en ziet dit bord. Wat doet u?",
         "choices": [
-          { "text": "Het pad gebruiken", "is_correct": true },
-          { "text": "De rijbaan gebruiken", "is_correct": false },
-          { "text": "Het pad vermijden", "is_correct": false }
+          {
+            "text": "Het pad gebruiken",
+            "is_correct": true
+          },
+          {
+            "text": "De rijbaan gebruiken",
+            "is_correct": false
+          },
+          {
+            "text": "Het pad vermijden",
+            "is_correct": false
+          }
         ],
         "explanation": "Het pad is bedoeld voor voetgangers."
       },
       "EN": {
         "question": "You are a pedestrian and see this sign. What should you do?",
         "choices": [
-          { "text": "Use the path", "is_correct": true },
-          { "text": "Use the road", "is_correct": false },
-          { "text": "Avoid the path", "is_correct": false }
+          {
+            "text": "Use the path",
+            "is_correct": true
+          },
+          {
+            "text": "Use the road",
+            "is_correct": false
+          },
+          {
+            "text": "Avoid the path",
+            "is_correct": false
+          }
         ],
         "explanation": "The path is intended for pedestrians."
       },
       "FR": {
         "question": "Vous êtes piéton et voyez ce panneau. Que devez-vous faire ?",
         "choices": [
-          { "text": "Utiliser le chemin", "is_correct": true },
-          { "text": "Utiliser la route", "is_correct": false },
-          { "text": "Éviter le chemin", "is_correct": false }
+          {
+            "text": "Utiliser le chemin",
+            "is_correct": true
+          },
+          {
+            "text": "Utiliser la route",
+            "is_correct": false
+          },
+          {
+            "text": "Éviter le chemin",
+            "is_correct": false
+          }
         ],
         "explanation": "Le chemin est destiné aux piétons."
       },
       "AR": {
         "question": "أنت مشاة وترى هذه العلامة. ماذا يجب أن تفعل؟",
         "choices": [
-          { "text": "استخدام المسار", "is_correct": true },
-          { "text": "استخدام الطريق", "is_correct": false },
-          { "text": "تجنب المسار", "is_correct": false }
+          {
+            "text": "استخدام المسار",
+            "is_correct": true
+          },
+          {
+            "text": "استخدام الطريق",
+            "is_correct": false
+          },
+          {
+            "text": "تجنب المسار",
+            "is_correct": false
+          }
         ],
         "explanation": "المسار مخصص للمشاة."
       }
     }
   },
-
   {
     "question_id": "D10_Q06",
     "type": "IS_IT_ALLOWED",
@@ -251,42 +414,61 @@
       "NL": {
         "question": "Mag een auto dit pad gebruiken?",
         "choices": [
-          { "text": "Nee", "is_correct": true },
-          { "text": "Ja", "is_correct": false },
-          { "text": "Alleen soms", "is_correct": false }
+          {
+            "text": "Nee",
+            "is_correct": true
+          },
+          {
+            "text": "Ja",
+            "is_correct": false
+          }
         ],
         "explanation": "Het pad is voor voetgangers en fietsers."
       },
       "EN": {
         "question": "May a car use this path?",
         "choices": [
-          { "text": "No", "is_correct": true },
-          { "text": "Yes", "is_correct": false },
-          { "text": "Sometimes", "is_correct": false }
+          {
+            "text": "No",
+            "is_correct": true
+          },
+          {
+            "text": "Yes",
+            "is_correct": false
+          }
         ],
         "explanation": "The path is for pedestrians and cyclists."
       },
       "FR": {
         "question": "Une voiture peut-elle utiliser ce chemin ?",
         "choices": [
-          { "text": "Non", "is_correct": true },
-          { "text": "Oui", "is_correct": false },
-          { "text": "Parfois", "is_correct": false }
+          {
+            "text": "Non",
+            "is_correct": true
+          },
+          {
+            "text": "Oui",
+            "is_correct": false
+          }
         ],
         "explanation": "Le chemin est pour piétons et cyclistes."
       },
       "AR": {
         "question": "هل يمكن لسيارة استخدام هذا المسار؟",
         "choices": [
-          { "text": "لا", "is_correct": true },
-          { "text": "نعم", "is_correct": false },
-          { "text": "أحياناً", "is_correct": false }
+          {
+            "text": "لا",
+            "is_correct": true
+          },
+          {
+            "text": "نعم",
+            "is_correct": false
+          }
         ],
         "explanation": "المسار مخصص للمشاة وراكبي الدراجات."
       }
     }
   },
-
   {
     "question_id": "D10_Q07",
     "type": "IS_IT_ALLOWED",
@@ -297,38 +479,61 @@
       "NL": {
         "question": "Mag een bromfiets dit pad gebruiken?",
         "choices": [
-          { "text": "Nee", "is_correct": true },
-          { "text": "Ja", "is_correct": false }
+          {
+            "text": "Nee",
+            "is_correct": true
+          },
+          {
+            "text": "Ja",
+            "is_correct": false
+          }
         ],
         "explanation": "Het pad is bedoeld voor voetgangers en fietsers."
       },
       "EN": {
         "question": "May a moped use this path?",
         "choices": [
-          { "text": "No", "is_correct": true },
-          { "text": "Yes", "is_correct": false }
+          {
+            "text": "No",
+            "is_correct": true
+          },
+          {
+            "text": "Yes",
+            "is_correct": false
+          }
         ],
         "explanation": "The path is intended for pedestrians and cyclists."
       },
       "FR": {
         "question": "Un cyclomoteur peut-il utiliser ce chemin ?",
         "choices": [
-          { "text": "Non", "is_correct": true },
-          { "text": "Oui", "is_correct": false }
+          {
+            "text": "Non",
+            "is_correct": true
+          },
+          {
+            "text": "Oui",
+            "is_correct": false
+          }
         ],
         "explanation": "Le chemin est destiné aux piétons et aux cyclistes."
       },
       "AR": {
         "question": "هل يمكن لدراجة نارية خفيفة استخدام هذا المسار؟",
         "choices": [
-          { "text": "لا", "is_correct": true },
-          { "text": "نعم", "is_correct": false }
+          {
+            "text": "لا",
+            "is_correct": true
+          },
+          {
+            "text": "نعم",
+            "is_correct": false
+          }
         ],
         "explanation": "المسار مخصص للمشاة وراكبي الدراجات."
       }
     }
   },
-
   {
     "question_id": "D10_Q08",
     "type": "IS_IT_ALLOWED",
@@ -339,32 +544,56 @@
       "NL": {
         "question": "Mag een fietser dit pad gebruiken als er geen voetgangers zijn?",
         "choices": [
-          { "text": "Ja", "is_correct": true },
-          { "text": "Nee", "is_correct": false }
+          {
+            "text": "Ja",
+            "is_correct": true
+          },
+          {
+            "text": "Nee",
+            "is_correct": false
+          }
         ],
         "explanation": "Het pad blijft bedoeld voor fietsers en voetgangers."
       },
       "EN": {
         "question": "May a cyclist use this path if there are no pedestrians?",
         "choices": [
-          { "text": "Yes", "is_correct": true },
-          { "text": "No", "is_correct": false }
+          {
+            "text": "Yes",
+            "is_correct": true
+          },
+          {
+            "text": "No",
+            "is_correct": false
+          }
         ],
         "explanation": "The path remains intended for cyclists and pedestrians."
       },
       "FR": {
         "question": "Un cycliste peut-il utiliser ce chemin s'il n'y a pas de piétons ?",
         "choices": [
-          { "text": "Oui", "is_correct": true },
-          { "text": "Non", "is_correct": false }
+          {
+            "text": "Oui",
+            "is_correct": true
+          },
+          {
+            "text": "Non",
+            "is_correct": false
+          }
         ],
         "explanation": "Le chemin reste destiné aux cyclistes et aux piétons."
       },
       "AR": {
         "question": "هل يمكن لراكب دراجة استخدام هذا المسار إذا لم يكن هناك مشاة؟",
         "choices": [
-          { "text": "نعم", "is_correct": true },
-          { "text": "لا", "is_correct": false }
+          {
+            "text": "نعم",
+            "is_correct": true
+          },
+          {
+            "text": "لا",
+            "is_correct": false
+          }
         ],
         "explanation": "يبقى المسار مخصصًا للمشاة وراكبي الدراجات."
       }

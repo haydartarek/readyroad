@@ -79,7 +79,8 @@
         "explanation": "تحذّر A50 من وجود ازدحام مروري أو حركة بطيئة أمامك."
       }
     }
-  },
+  },
+
   {
     "question_id": "A50_Q02",
     "type": "WHICH_SIGN",
@@ -90,35 +91,68 @@
       "NL": {
         "question": "Welk bord waarschuwt voor filevorming?",
         "choices": [
-          { "text": "Het bord dat waarschuwt voor file of langzaam rijdend verkeer verderop", "is_correct": true },
-          { "text": "Het bord dat waarschuwt voor wegwerkzaamheden op of langs de rijbaan", "is_correct": false },
-          { "text": "Het bord dat waarschuwt voor een niet nader aangeduid gevaar", "is_correct": false }
+          {
+            "text": "Het bord dat waarschuwt voor file of langzaam rijdend verkeer verderop",
+            "is_correct": true
+          },
+          {
+            "text": "Het bord dat waarschuwt voor wegwerkzaamheden op of langs de rijbaan",
+            "is_correct": false
+          },
+          {
+            "text": "Het bord dat waarschuwt voor een niet nader aangeduid gevaar",
+            "is_correct": false
+          }
         ],
         "explanation": "Het gevaarsbord A50 waarschuwt specifiek voor filevorming. Het bord voor wegwerkzaamheden (A31) geldt voor werken op de weg. Het bord voor overige gevaren (A51) geldt voor gevaren zonder specifiek symbool."
       },
       "EN": {
         "question": "Which sign warns of traffic jams?",
         "choices": [
-          { "text": "The sign that warns of a traffic jam or slow-moving traffic ahead", "is_correct": true },
-          { "text": "The sign that warns of roadworks on or alongside the carriageway", "is_correct": false },
-          { "text": "The sign that warns of an unspecified hazard", "is_correct": false }
+          {
+            "text": "The sign that warns of a traffic jam or slow-moving traffic ahead",
+            "is_correct": true
+          },
+          {
+            "text": "The sign that warns of roadworks on or alongside the carriageway",
+            "is_correct": false
+          },
+          {
+            "text": "The sign that warns of an unspecified hazard",
+            "is_correct": false
+          }
         ],
         "explanation": "Danger sign A50 specifically warns of traffic jams. The roadworks sign (A31) applies to works on the road. The general hazard sign (A51) applies to hazards without a specific symbol."
       },
       "FR": {
         "question": "Quel panneau signale un risque d’embouteillage ?",
         "choices": [
-          { "text": "Le panneau qui avertit d’un embouteillage ou d’une circulation lente", "is_correct": true },
-          { "text": "Le panneau qui avertit de travaux sur la chaussée ou à ses abords", "is_correct": false },
-          { "text": "Le panneau qui avertit d’un danger non précisé", "is_correct": false }
+          {
+            "text": "Le panneau qui avertit d’un embouteillage ou d’une circulation lente",
+            "is_correct": true
+          },
+          {
+            "text": "Le panneau qui avertit de travaux sur la chaussée ou à ses abords",
+            "is_correct": false
+          },
+          {
+            "text": "Le panneau qui avertit d’un danger non précisé",
+            "is_correct": false
+          }
         ],
         "explanation": "Le panneau de danger A50 signale spécifiquement un risque d’embouteillage. Le panneau travaux (A31) concerne les travaux sur la route. Le panneau danger général (A51) concerne des dangers sans symbole spécifique."
       },
       "AR": {
         "question": "أي علامة مرورية تُحذّر من تشكل أزمة مرورية؟",
         "choices": [
-          { "text": "العلامة التي تُحذّر من أزمة مرورية أو حركة بطيئة أمامك", "is_correct": true },
-          { "text": "العلامة التي تُحذّر من أشغال على الطريق أو على جانبه", "is_correct": false },
+          {
+            "text": "العلامة التي تُحذّر من أزمة مرورية أو حركة بطيئة أمامك",
+            "is_correct": true
+          },
+          {
+            "text": "العلامة التي تُحذّر من أشغال على الطريق أو على جانبه",
+            "is_correct": false
+          },
           { "text": "العلامة التي تُحذّر من خطر غير محدد", "is_correct": false }
         ],
         "explanation": "علامة الخطر A50 تُحذّر تحديدًا من تشكل الأزمة المرورية. علامة الأشغال (A31) تختص بأعمال على الطريق. علامة الخطر العام (A51) تختص بخطر دون رمز محدد."

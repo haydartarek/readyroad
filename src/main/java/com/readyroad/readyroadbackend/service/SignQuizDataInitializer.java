@@ -21,8 +21,11 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class SignQuizDataInitializer {
 
+    private static final int QUESTIONS_PER_SIGN = 8;
+
     private final RoadSignRepository roadSignRepository;
     private final SignQuizImportService signQuizImportService;
+    private final CanonicalSignCatalogService canonicalSignCatalogService;
     private final JdbcTemplate jdbcTemplate;
 
     @EventListener(ApplicationReadyEvent.class)
@@ -31,13 +34,22 @@ public class SignQuizDataInitializer {
             long signCount = roadSignRepository.countByIsActiveTrue();
             long questionCount = jdbcTemplate.queryForObject(
                     "SELECT COUNT(*) FROM sign_questions", Long.class);
+            long examCount = jdbcTemplate.queryForObject(
+                    "SELECT COUNT(*) FROM sign_exams", Long.class);
+            long expectedSignCount = canonicalSignCatalogService.getCanonicalSeeds().size();
+            long expectedQuestionCount = expectedSignCount * QUESTIONS_PER_SIGN;
+            long expectedExamCount = expectedSignCount;
 
-            boolean needsImport = (signCount == 0) || (questionCount == 0);
+            boolean needsImport = signCount < expectedSignCount
+                    || questionCount < expectedQuestionCount
+                    || examCount < expectedExamCount;
 
             if (needsImport) {
                 log.info("╔══════════════════════════════════════════════════════════════╗");
-                log.info("║  Sign quiz data incomplete (signs={}, questions={}) — import ║",
-                        signCount, questionCount);
+                log.info("║  Sign quiz data incomplete (signs={}/{}, questions={}/{}, exams={}/{}) — import ║",
+                        signCount, expectedSignCount,
+                        questionCount, expectedQuestionCount,
+                        examCount, expectedExamCount);
                 log.info("╚══════════════════════════════════════════════════════════════╝");
 
                 if (signCount > 0 && questionCount == 0) {
@@ -51,8 +63,8 @@ public class SignQuizDataInitializer {
                         run.getStatus(), run.getSignsCreated(),
                         run.getQuestionsCreated(), run.getErrorsCount());
             } else {
-                log.info("Sign quiz data already present ({} active signs, {} questions) — nothing to do",
-                        signCount, questionCount);
+                log.info("Sign quiz data already present ({} active signs, {} questions, {} exams) — nothing to do",
+                        signCount, questionCount, examCount);
             }
 
         } catch (Exception e) {

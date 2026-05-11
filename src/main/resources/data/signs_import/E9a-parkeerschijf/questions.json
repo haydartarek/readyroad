@@ -1,0 +1,597 @@
+[
+  {
+    "question_id": "E9a-parkeerschijf_Q01",
+    "type": "WHAT_DOES_IT_MEAN",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat betekent dit verkeersbord?",
+        "choices": [
+          {
+            "text": "Parkeren toegestaan maar beperkt in tijd; u bent verplicht een parkeerschijf zichtbaar op het dashboard te leggen met de aankomsttijd ingesteld",
+            "is_correct": true
+          },
+          {
+            "text": "Parkeren verboden behalve met een gemeentelijk abonnement",
+            "is_correct": false
+          },
+          {
+            "text": "Fietsen mogen hier geparkeerd worden met een fietsslot",
+            "is_correct": false
+          }
+        ],
+        "explanation": "E9a-parkeerschijf staat parkeren toe maar beperkt de duur. U stelt de aankomsttijd in op de parkeerschijf en mag parkeren voor de maximale duur die op het onderbord staat. Zonder parkeerschijf is parkeren hier verboden."
+      },
+      "EN": {
+        "question": "What does this road sign mean?",
+        "choices": [
+          {
+            "text": "Parking permitted but limited in time; you are required to place a parking disc visibly on the dashboard with the arrival time set",
+            "is_correct": true
+          },
+          {
+            "text": "Parking forbidden except with a municipal subscription",
+            "is_correct": false
+          },
+          {
+            "text": "Bicycles may be parked here with a lock",
+            "is_correct": false
+          }
+        ],
+        "explanation": "E9a-parkeerschijf permits parking but limits the duration. You set the arrival time on the parking disc and may park for the maximum duration shown on the supplementary sign. Parking without a disc is forbidden here."
+      },
+      "FR": {
+        "question": "Que signifie ce panneau de signalisation ?",
+        "choices": [
+          {
+            "text": "Stationnement autorisé mais limité dans le temps ; vous êtes obligé de placer un disque de stationnement visiblement sur le tableau de bord avec l'heure d'arrivée réglée",
+            "is_correct": true
+          },
+          {
+            "text": "Stationnement interdit sauf abonnement communal",
+            "is_correct": false
+          },
+          {
+            "text": "Les vélos peuvent être stationnés ici avec un cadenas",
+            "is_correct": false
+          }
+        ],
+        "explanation": "E9a-parkeerschijf autorise le stationnement mais en limite la durée. Vous réglez l'heure d'arrivée sur le disque de stationnement et pouvez stationner pour la durée maximale indiquée sur le panneau complémentaire. Stationner sans disque est interdit ici."
+      },
+      "AR": {
+        "question": "ماذا تعني هذه العلامة المرورية؟",
+        "choices": [
+          {
+            "text": "الوقوف مسموح لكنه محدود بالوقت؛ يجب عليك وضع قرص الوقوف بشكل مرئي على لوحة القيادة مع ضبط وقت الوصول",
+            "is_correct": true
+          },
+          { "text": "الوقوف محظور إلا بالاشتراك البلدي", "is_correct": false },
+          { "text": "يمكن ركن الدراجات هنا بقفل", "is_correct": false }
+        ],
+        "explanation": "تُتيح E9a-parkeerschijf الوقوف لكنها تُقيّد مدته. تضبط وقت الوصول على قرص الوقوف ويمكنك الوقوف للمدة القصوى المعروضة على العلامة التكميلية. الوقوف بدون قرص محظور هنا."
+      }
+    }
+  },
+  {
+    "question_id": "E9a-parkeerschijf_Q02",
+    "type": "WHICH_SIGN",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat is het doel van de parkeerschijf bij E9a-parkeerschijf?",
+        "choices": [
+          {
+            "text": "De aankomsttijd vastleggen zodat handhavers kunnen controleren of de maximale parkeertijd overschreden is",
+            "is_correct": true
+          },
+          {
+            "text": "De identiteit van de bestuurder registreren",
+            "is_correct": false
+          },
+          {
+            "text": "Het maximumgewicht van het voertuig noteren",
+            "is_correct": false
+          }
+        ],
+        "explanation": "De parkeerschijf is een mechanisch toestel waarop u de aankomsttijd instelt. Handhavers lezen die af om te controleren of de toegestane parkeerduur al voorbij is. Zonder schijf kunnen zij de aankomsttijd niet vaststellen."
+      },
+      "EN": {
+        "question": "What is the purpose of the parking disc under E9a-parkeerschijf?",
+        "choices": [
+          {
+            "text": "To record the arrival time so enforcement officers can check whether the maximum parking time has been exceeded",
+            "is_correct": true
+          },
+          {
+            "text": "To register the identity of the driver",
+            "is_correct": false
+          },
+          {
+            "text": "To note the maximum weight of the vehicle",
+            "is_correct": false
+          }
+        ],
+        "explanation": "The parking disc is a mechanical device on which you set the arrival time. Enforcement officers read it to check whether the permitted parking duration has already passed. Without a disc they cannot determine the arrival time."
+      },
+      "FR": {
+        "question": "Quel est le but du disque de stationnement avec E9a-parkeerschijf ?",
+        "choices": [
+          {
+            "text": "Enregistrer l'heure d'arrivée afin que les agents verbalisateurs puissent vérifier si la durée maximale de stationnement est dépassée",
+            "is_correct": true
+          },
+          {
+            "text": "Enregistrer l'identité du conducteur",
+            "is_correct": false
+          },
+          { "text": "Noter le poids maximum du véhicule", "is_correct": false }
+        ],
+        "explanation": "Le disque de stationnement est un dispositif mécanique sur lequel vous réglez l'heure d'arrivée. Les agents verbalisateurs le lisent pour vérifier si la durée de stationnement autorisée est déjà écoulée. Sans disque ils ne peuvent pas déterminer l'heure d'arrivée."
+      },
+      "AR": {
+        "question": "ما هو الغرض من قرص الوقوف مع E9a-parkeerschijf؟",
+        "choices": [
+          {
+            "text": "تسجيل وقت الوصول حتى يتمكن ضباط الرقابة من التحقق من تجاوز الوقت الأقصى للوقوف",
+            "is_correct": true
+          },
+          { "text": "تسجيل هوية السائق", "is_correct": false },
+          { "text": "تدوين الحمولة القصوى للمركبة", "is_correct": false }
+        ],
+        "explanation": "قرص الوقوف جهاز ميكانيكي تضبط عليه وقت الوصول. يقرأه ضباط الرقابة للتحقق مما إذا كانت مدة الوقوف المسموح بها قد انقضت. بدون قرص لا يمكنهم تحديد وقت الوصول."
+      }
+    }
+  },
+  {
+    "question_id": "E9a-parkeerschijf_Q03",
+    "type": "HAZARD_IDENTIFICATION",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat kan er gebeuren als bestuurders onbeperkt parkeren in een winkelstraat zonder tijdsregeling?",
+        "choices": [
+          {
+            "text": "Dezelfde auto's bezetten de parkeerplaatsen de hele dag, waardoor klanten geen parkeerplaats meer vinden",
+            "is_correct": true
+          },
+          {
+            "text": "Er ontstaan gevaarlijke situaties door te snel rijdende voertuigen",
+            "is_correct": false
+          },
+          {
+            "text": "Sluipverkeer neemt toe in aangrenzende woonwijken",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Zonder tijdslimiet kunnen pendelaars of werknemers hun auto de hele dag parkeren. Klanten van winkels vinden dan geen parkeerplaats meer. E9a-parkeerschijf laat plaatsen rouleren zodat iedereen kans heeft te parkeren."
+      },
+      "EN": {
+        "question": "What can happen if drivers park without a time limit in a shopping street without a time regulation?",
+        "choices": [
+          {
+            "text": "The same cars occupy the parking spaces all day, preventing customers from finding a parking space",
+            "is_correct": true
+          },
+          {
+            "text": "Dangerous situations arise due to speeding vehicles",
+            "is_correct": false
+          },
+          {
+            "text": "Rat-running increases in adjacent residential areas",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Without a time limit commuters or employees can park all day. Shop customers then find no parking space. E9a-parkeerschijf causes spaces to turn over so everyone has a chance to park."
+      },
+      "FR": {
+        "question": "Que peut-il se passer si les conducteurs se garent sans limite de temps dans une rue commerçante sans réglementation ?",
+        "choices": [
+          {
+            "text": "Les mêmes voitures occupent les places de stationnement toute la journée, empêchant les clients de trouver une place",
+            "is_correct": true
+          },
+          {
+            "text": "Des situations dangereuses apparaissent en raison de véhicules roulant trop vite",
+            "is_correct": false
+          },
+          {
+            "text": "Le transit augmente dans les quartiers résidentiels adjacents",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Sans limite de temps des navetteurs ou des employés peuvent se garer toute la journée. Les clients des commerces ne trouvent alors plus de place. E9a-parkeerschijf fait tourner les places pour que chacun ait la chance de se garer."
+      },
+      "AR": {
+        "question": "ماذا يمكن أن يحدث إذا وقف السائقون بدون حد زمني في شارع تجاري بدون تنظيم زمني؟",
+        "choices": [
+          {
+            "text": "تحتل نفس السيارات مواقف الوقوف طوال اليوم مما يمنع العملاء من إيجاد مكان",
+            "is_correct": true
+          },
+          {
+            "text": "تنشأ مواقف خطيرة بسبب المركبات المسرعة",
+            "is_correct": false
+          },
+          {
+            "text": "تزداد حركة المرور المارة في الأحياء السكنية المجاورة",
+            "is_correct": false
+          }
+        ],
+        "explanation": "بدون حد زمني يمكن للمتنقلين أو الموظفين الوقوف طوال اليوم. لا يجد عملاء المحلات حينئذٍ مكاناً للوقوف. تُتيح E9a-parkeerschijf دوران المواقف حتى يتاح الفرصة للجميع."
+      }
+    }
+  },
+  {
+    "question_id": "E9a-parkeerschijf_Q04",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U parkeert bij E9a-parkeerschijf om 10:22. Welke tijd stelt u in op de parkeerschijf?",
+        "choices": [
+          {
+            "text": "10:30 — de eerstvolgende halve uur na aankomst, want parkeerschijven werken in stappen van 30 minuten",
+            "is_correct": true
+          },
+          {
+            "text": "10:22 exact, want u moet de werkelijke aankomsttijd instellen",
+            "is_correct": false
+          },
+          {
+            "text": "De verwachte vertrektijd zodat handhavers weten wanneer u weggaat",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Parkeerschijven zijn ingedeeld in stappen van 30 minuten. U rondt de aankomsttijd af naar het eerstvolgende halve uur. Aankomsttijd 10:22 → instellen op 10:30. Zo heeft u tot 10:30 plus de maximumduur de tijd."
+      },
+      "EN": {
+        "question": "You park under E9a-parkeerschijf at 10:22. What time do you set on the parking disc?",
+        "choices": [
+          {
+            "text": "10:30 — the next half-hour after arrival, because parking discs work in 30-minute steps",
+            "is_correct": true
+          },
+          {
+            "text": "10:22 exactly, because you must set the actual arrival time",
+            "is_correct": false
+          },
+          {
+            "text": "The expected departure time so enforcers know when you are leaving",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Parking discs are divided into 30-minute steps. You round the arrival time up to the next half-hour. Arrival time 10:22 → set to 10:30. This gives you until 10:30 plus the maximum duration."
+      },
+      "FR": {
+        "question": "Vous vous garez sous E9a-parkeerschijf à 10h22. Quelle heure réglez-vous sur le disque de stationnement ?",
+        "choices": [
+          {
+            "text": "10h30 — la prochaine demi-heure après l'arrivée, car les disques de stationnement fonctionnent par tranches de 30 minutes",
+            "is_correct": true
+          },
+          {
+            "text": "10h22 exactement, car vous devez régler l'heure d'arrivée réelle",
+            "is_correct": false
+          },
+          {
+            "text": "L'heure de départ prévue pour que les agents sachent quand vous partez",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Les disques de stationnement sont divisés en tranches de 30 minutes. Vous arrondissez l'heure d'arrivée à la prochaine demi-heure. Heure d'arrivée 10h22 → régler sur 10h30. Cela vous donne jusqu'à 10h30 plus la durée maximale."
+      },
+      "AR": {
+        "question": "تقف تحت E9a-parkeerschijf الساعة 10:22. ما الوقت الذي تضبطه على قرص الوقوف؟",
+        "choices": [
+          {
+            "text": "10:30 — نصف الساعة التالي بعد الوصول، لأن أقراص الوقوف تعمل بفترات 30 دقيقة",
+            "is_correct": true
+          },
+          {
+            "text": "10:22 بالضبط لأنك يجب أن تضبط وقت الوصول الفعلي",
+            "is_correct": false
+          },
+          {
+            "text": "وقت المغادرة المتوقع حتى يعلم ضباط الرقابة متى ستغادر",
+            "is_correct": false
+          }
+        ],
+        "explanation": "أقراص الوقوف مقسّمة إلى فترات 30 دقيقة. تقرّب وقت الوصول إلى نصف الساعة التالي. وقت الوصول 10:22 → تضبط على 10:30. يمنحك ذلك حتى 10:30 زائد المدة القصوى."
+      }
+    }
+  },
+  {
+    "question_id": "E9a-parkeerschijf_Q05",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U bent te laat teruggekeerd en de maximale parkeertijd bij E9a-parkeerschijf is overschreden. Wat riskeert u?",
+        "choices": [
+          {
+            "text": "Een parkeerretributie (gemeentelijke parkeerboete) voor het overschrijden van de maximale parkeerduur",
+            "is_correct": true
+          },
+          {
+            "text": "Onmiddellijke wegsleepkosten zonder voorafgaande waarschuwing",
+            "is_correct": false
+          },
+          {
+            "text": "Intrekking van het rijbewijs door de politie",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Bij overschrijding van de toegestane parkeerduur bij E9a-parkeerschijf riskeert u een gemeentelijke parkeerretributie. Wegslepen is voorbehouden voor gevaarlijker of ernstigere overtredingen. Rijbewijsintrekking is hier niet van toepassing."
+      },
+      "EN": {
+        "question": "You returned too late and the maximum parking time under E9a-parkeerschijf has been exceeded. What do you risk?",
+        "choices": [
+          {
+            "text": "A parking fine (municipal parking penalty) for exceeding the maximum parking duration",
+            "is_correct": true
+          },
+          {
+            "text": "Immediate towing costs without prior warning",
+            "is_correct": false
+          },
+          {
+            "text": "Driving licence withdrawal by the police",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Exceeding the permitted parking duration under E9a-parkeerschijf risks a municipal parking fine. Towing is reserved for more dangerous or serious violations. Driving licence withdrawal does not apply here."
+      },
+      "FR": {
+        "question": "Vous êtes rentré trop tard et la durée maximale de stationnement sous E9a-parkeerschijf est dépassée. Qu'est-ce que vous risquez ?",
+        "choices": [
+          {
+            "text": "Une rétribution de stationnement (amende de stationnement communale) pour dépassement de la durée maximale de stationnement",
+            "is_correct": true
+          },
+          {
+            "text": "Des frais de remorquage immédiats sans avertissement préalable",
+            "is_correct": false
+          },
+          {
+            "text": "Le retrait du permis de conduire par la police",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dépasser la durée de stationnement autorisée sous E9a-parkeerschijf vous expose à une rétribution de stationnement communale. Le remorquage est réservé aux infractions plus dangereuses ou graves. Le retrait du permis de conduire ne s'applique pas ici."
+      },
+      "AR": {
+        "question": "عدت متأخراً وتجاوزت المدة القصوى للوقوف في E9a-parkeerschijf. بماذا تخاطر؟",
+        "choices": [
+          {
+            "text": "غرامة وقوف بلدية لتجاوز المدة القصوى للوقوف",
+            "is_correct": true
+          },
+          { "text": "تكاليف سحب فورية بدون إنذار مسبق", "is_correct": false },
+          { "text": "سحب رخصة القيادة من قِبَل الشرطة", "is_correct": false }
+        ],
+        "explanation": "تجاوز مدة الوقوف المسموح بها تحت E9a-parkeerschijf يُعرّضك لغرامة وقوف بلدية. السحب مُخصَّص للمخالفات الأكثر خطورة أو جسامة. سحب رخصة القيادة لا ينطبق هنا."
+      }
+    }
+  },
+  {
+    "question_id": "E9a-parkeerschijf_Q06",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Geldt de parkeerschijfverplichting bij E9a-parkeerschijf ook 's nachts en in het weekend?",
+        "choices": [
+          {
+            "text": "Alleen tijdens de uren die op het onderbord staan; buiten die uren is de schijf doorgaans niet verplicht",
+            "is_correct": true
+          },
+          {
+            "text": "Altijd: 24 uur per dag, 7 dagen per week, ook op feestdagen",
+            "is_correct": false
+          },
+          {
+            "text": "Nooit in het weekend, want dan gelden de verkeersregels niet",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Het onderbord bij E9a-parkeerschijf geeft de geldingstijden aan, bijvoorbeeld ma–za 9:00–18:00. Buiten die uren is de schijf niet verplicht. Is er geen onderbord, dan geldt de verplichting 24 uur per dag."
+      },
+      "EN": {
+        "question": "Does the disc requirement under E9a-parkeerschijf apply at night and at weekends too?",
+        "choices": [
+          {
+            "text": "Only during the hours shown on the supplementary sign; outside those hours the disc is generally not required",
+            "is_correct": true
+          },
+          {
+            "text": "Always: 24 hours a day 7 days a week including public holidays",
+            "is_correct": false
+          },
+          {
+            "text": "Never at weekends because traffic rules do not apply then",
+            "is_correct": false
+          }
+        ],
+        "explanation": "The supplementary sign next to E9a-parkeerschijf shows the applicable times, for example Mon–Sat 09:00–18:00. Outside those hours the disc is not required. If there is no supplementary sign the requirement applies 24 hours a day."
+      },
+      "FR": {
+        "question": "L'obligation du disque sous E9a-parkeerschijf s'applique-t-elle aussi la nuit et le week-end ?",
+        "choices": [
+          {
+            "text": "Seulement pendant les heures indiquées sur le panneau complémentaire ; en dehors de ces heures le disque n'est généralement pas obligatoire",
+            "is_correct": true
+          },
+          {
+            "text": "Toujours : 24 heures sur 24 7 jours sur 7 y compris les jours fériés",
+            "is_correct": false
+          },
+          {
+            "text": "Jamais le week-end car les règles de circulation ne s'appliquent pas alors",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Le panneau complémentaire indique les heures applicables, par exemple lun–sam 9h00–18h00. En dehors de ces heures le disque n'est pas obligatoire. En l'absence de panneau complémentaire l'obligation s'applique 24 heures sur 24."
+      },
+      "AR": {
+        "question": "هل تنطبق متطلبات القرص في E9a-parkeerschijf ليلاً وفي عطلة نهاية الأسبوع أيضاً؟",
+        "choices": [
+          {
+            "text": "فقط خلال الساعات المعروضة على العلامة التكميلية؛ خارج تلك الساعات لا يُشترط القرص عادةً",
+            "is_correct": true
+          },
+          {
+            "text": "دائماً: 24 ساعة يومياً 7 أيام أسبوعياً بما فيها الأعياد الرسمية",
+            "is_correct": false
+          },
+          {
+            "text": "أبداً في عطلة نهاية الأسبوع لأن قواعد المرور لا تنطبق حينئذٍ",
+            "is_correct": false
+          }
+        ],
+        "explanation": "العلامة التكميلية بجوار E9a-parkeerschijf تُظهر أوقات السريان، مثلاً الاثنين–السبت 9:00–18:00. خارج تلك الساعات لا يُشترط القرص. في غياب علامة تكميلية تسري الإلزامية 24 ساعة يومياً."
+      }
+    }
+  },
+  {
+    "question_id": "E9a-parkeerschijf_Q07",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U parkeert bij E9a-parkeerschijf maar heeft uw parkeerschijf vergeten. De parkeerplaats is volledig leeg. Mag u toch parkeren?",
+        "choices": [
+          {
+            "text": "Neen: de schijfverplichting geldt zodra u parkeert, ongeacht of andere plaatsen bezet zijn",
+            "is_correct": true
+          },
+          {
+            "text": "Ja: als de parkeerplaats leeg is, is er geen reden voor controle en riskeert u niets",
+            "is_correct": false
+          }
+        ],
+        "explanation": "De schijfverplichting staat volledig los van de bezettingsgraad. Handhavers kunnen altijd langskomen en een retributie uitschrijven. U bent altijd verplicht de parkeerschijf te plaatsen, ook als u de enige auto bent."
+      },
+      "EN": {
+        "question": "You park under E9a-parkeerschijf but have forgotten your parking disc. The car park is completely empty. May you park anyway?",
+        "choices": [
+          {
+            "text": "No: the disc requirement applies as soon as you park regardless of whether other spaces are occupied",
+            "is_correct": true
+          },
+          {
+            "text": "Yes: if the car park is empty there is no reason for enforcement and you risk nothing",
+            "is_correct": false
+          }
+        ],
+        "explanation": "The disc requirement is completely independent of the occupancy rate. Enforcement officers can always come by and issue a fine. You are always required to place the parking disc even if you are the only car."
+      },
+      "FR": {
+        "question": "Vous vous garez sous E9a-parkeerschijf mais vous avez oublié votre disque de stationnement. Le parking est complètement vide. Pouvez-vous quand même vous garer ?",
+        "choices": [
+          {
+            "text": "Non : l'obligation du disque s'applique dès que vous vous garez quel que soit le taux d'occupation",
+            "is_correct": true
+          },
+          {
+            "text": "Oui : si le parking est vide il n'y a aucune raison de contrôle et vous ne risquez rien",
+            "is_correct": false
+          }
+        ],
+        "explanation": "L'obligation du disque est totalement indépendante du taux d'occupation. Les agents verbalisateurs peuvent toujours passer et établir une rétribution. Vous êtes toujours obligé de placer le disque de stationnement même si vous êtes le seul véhicule."
+      },
+      "AR": {
+        "question": "تقف تحت E9a-parkeerschijf لكنك نسيت قرص الوقوف. موقف السيارات خالٍ تماماً. هل يجوز لك الوقوف على أي حال؟",
+        "choices": [
+          {
+            "text": "لا: شرط القرص ينطبق بمجرد الوقوف بصرف النظر عن إشغال الأماكن الأخرى",
+            "is_correct": true
+          },
+          {
+            "text": "نعم: إذا كان الموقف خالياً لا يوجد سبب للتفتيش ولا تخاطر بشيء",
+            "is_correct": false
+          }
+        ],
+        "explanation": "شرط القرص مستقل تماماً عن معدل الإشغال. يمكن لضباط الرقابة المرور في أي وقت وإصدار غرامة. يجب دائماً وضع قرص الوقوف حتى لو كنت المركبة الوحيدة."
+      }
+    }
+  },
+  {
+    "question_id": "E9a-parkeerschijf_Q08",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U heeft uw parkeerschijf ingesteld en geparkeerd. Een uur later komt u terug en stelt de schijf opnieuw in op het huidige tijdstip. Is dit toegestaan?",
+        "choices": [
+          {
+            "text": "Neen: de schijf mag uitsluitend bij aankomst worden ingesteld; opnieuw instellen nadien is fraude en verboden",
+            "is_correct": true
+          },
+          {
+            "text": "Ja: u mag de schijf bijstellen zolang u de maximumtijd nog niet heeft overschreden",
+            "is_correct": false
+          }
+        ],
+        "explanation": "De parkeerschijf mag enkel bij aankomst worden ingesteld. Wie de schijf later bijstelt om de parkeertijd te verlengen pleegt fraude. Dit is een overtreding die apart wordt beboet naast de eventuele overschrijding van de parkeertijd."
+      },
+      "EN": {
+        "question": "You set your parking disc and parked. An hour later you come back and reset the disc to the current time. Is this permitted?",
+        "choices": [
+          {
+            "text": "No: the disc may only be set upon arrival; resetting it afterwards is fraud and forbidden",
+            "is_correct": true
+          },
+          {
+            "text": "Yes: you may adjust the disc as long as you have not yet exceeded the maximum time",
+            "is_correct": false
+          }
+        ],
+        "explanation": "The parking disc may only be set upon arrival. Anyone who readjusts the disc later to extend the parking time commits fraud. This is a separate offence that is fined in addition to any possible exceeding of the parking time."
+      },
+      "FR": {
+        "question": "Vous avez réglé votre disque de stationnement et vous vous êtes garé. Une heure plus tard vous revenez et réglez à nouveau le disque à l'heure actuelle. Est-ce permis ?",
+        "choices": [
+          {
+            "text": "Non : le disque ne peut être réglé qu'à l'arrivée ; le réajuster ensuite est une fraude et est interdit",
+            "is_correct": true
+          },
+          {
+            "text": "Oui : vous pouvez ajuster le disque tant que vous n'avez pas encore dépassé le temps maximum",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Le disque de stationnement ne peut être réglé qu'à l'arrivée. Quiconque réajuste le disque ensuite pour prolonger la durée de stationnement commet une fraude. Il s'agit d'une infraction séparée qui est sanctionnée en plus d'un éventuel dépassement de la durée de stationnement."
+      },
+      "AR": {
+        "question": "ضبطت قرص الوقوف ووقفت. بعد ساعة عدت وأعدت ضبط القرص على الوقت الحالي. هل هذا مسموح؟",
+        "choices": [
+          {
+            "text": "لا: لا يجوز ضبط القرص إلا عند الوصول؛ إعادة ضبطه لاحقاً تُعدّ احتيالاً وهي محظورة",
+            "is_correct": true
+          },
+          {
+            "text": "نعم: يمكن تعديل القرص طالما لم تتجاوز الوقت الأقصى بعد",
+            "is_correct": false
+          }
+        ],
+        "explanation": "لا يجوز ضبط قرص الوقوف إلا عند الوصول. من يُعيد ضبط القرص لاحقاً لتمديد مدة الوقوف يرتكب احتيالاً. هذه مخالفة مستقلة يُعاقب عليها بالإضافة إلى أي تجاوز محتمل لمدة الوقوف."
+      }
+    }
+  }
+]

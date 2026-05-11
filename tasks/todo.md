@@ -11,7 +11,6 @@
 ### Keep
 
 - `src/main/resources/data/signs_import/B15d/questions.json` and the rest of the B15 family source folders.
-- `src/main/resources/data/signs_import/D1e`, `D1f`, `B23`, `B19`, `B21`, and `E11` source content.
 - `src/main/resources/db/migration/V227__Deep_Polish_B15_Priority_Configuration_Family.sql`
 - `src/main/resources/db/migration/V228__Deep_Polish_B15fg_Priority_Configuration.sql`
 - `src/main/resources/db/migration/V229__Fix_B15b_Q03_Residual_Artifact.sql`
@@ -19,7 +18,6 @@
 - `src/main/resources/db/migration/V231__Deep_Polish_B23_Cyclists_Go_Straight_At_Red.sql`
 - `src/main/resources/db/migration/V232__Deep_Polish_B19_Narrow_Passage_Give_Way.sql`
 - `src/main/resources/db/migration/V233__Deep_Polish_B21_Narrow_Passage_Priority.sql`
-- `src/main/resources/db/migration/V234__Deep_Polish_E11_Half_Monthly_Parking.sql`
 - `src/main/java/com/readyroad/readyroadbackend/service/RoadSignReferenceTextResolver.java` as a generic compatibility layer. No audited family-specific repair is currently required there.
 - Frontend image-manifest references for the audited sign codes. No learner-text mapping repair was found there.
 

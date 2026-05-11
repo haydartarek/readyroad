@@ -11,6 +11,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
@@ -94,7 +95,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         // Extract Authorization header
         final String authHeader = request.getHeader("Authorization");
         final String jwt;
-        final String username;
+        String username = null;
 
         // Check if Authorization header is present and starts with "Bearer "
         if (authHeader == null || !authHeader.startsWith("Bearer ")) {
@@ -139,10 +140,13 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                     log.warn("⚠️ Invalid JWT token for user: {}", username);
                 }
             }
+        } catch (UsernameNotFoundException e) {
+            SecurityContextHolder.clearContext();
+            log.warn("⚠️ Ignoring stale JWT for missing user '{}' on {} {}", username, method, requestURI);
         } catch (Exception e) {
-            // Log error and continue without authentication
-            log.error("❌ Cannot set user authentication: {}", e.getMessage());
-            log.error("Exception details:", e);
+            SecurityContextHolder.clearContext();
+            log.error("❌ Cannot set user authentication for {} {}: {}", method, requestURI, e.getMessage());
+            log.debug("JWT authentication failure details", e);
         }
 
         // Continue filter chain

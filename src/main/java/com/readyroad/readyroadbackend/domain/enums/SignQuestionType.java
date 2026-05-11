@@ -27,6 +27,12 @@ public enum SignQuestionType {
     /** Q05 variant — What action must the driver take? */
     DRIVER_ACTION,
 
+    /** Where / on which side does this sign apply? */
+    WHERE_DOES_IT_APPLY,
+
+    /** What happens if the driver ignores this sign? */
+    WHAT_HAPPENS_IF,
+
     /**
      * Q06 variant — Where/how far from X is the sign placed? (MEDIUM, 3 choices)
      */

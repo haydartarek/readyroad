@@ -50,7 +50,7 @@ WHERE sign_code = 'C3';
 
 -- C5: Verboden toegang motorvoertuigen — no disk image, normalise URL format
 UPDATE traffic_signs
-SET image_url  = 'images/signs/prohibition_signs/C5 Verboden toegang voor bestuurders van motorvoertuigen met meer dan twee wielen..png',
+SET image_url  = 'images/signs/prohibition_signs/C5 Verboden toegang voor bestuurders van motorvoertuigen met meer dan twee wielen.png',
     updated_at = NOW()
 WHERE sign_code = 'C5';
 
@@ -68,7 +68,7 @@ WHERE sign_code = 'C9';
 
 -- C13: Verboden toegang gespannen
 UPDATE traffic_signs
-SET image_url  = 'images/signs/prohibition_signs/C13 Verboden toegang voor bestuurders van gespannen..png',
+SET image_url  = 'images/signs/prohibition_signs/C13 Verboden toegang voor bestuurders van gespannen.png',
     updated_at = NOW()
 WHERE sign_code = 'C13';
 
