@@ -9,6 +9,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
@@ -40,6 +41,9 @@ public interface RoadSignRepository extends JpaRepository<RoadSign, Long> {
         boolean existsBySignCodeAndIdNot(String signCode, Long id);
 
         List<RoadSign> findAllByIsActiveTrue();
+
+        /** Batch fetch signs by a set of sign codes — replaces per-sign N+1 lookups. */
+        List<RoadSign> findBySignCodeIn(Collection<String> signCodes);
 
         List<RoadSign> findAllByIsActiveTrueOrderBySignCodeAsc();
 

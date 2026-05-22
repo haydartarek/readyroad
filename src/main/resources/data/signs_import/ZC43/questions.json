@@ -9,8 +9,14 @@
       "NL": {
         "question": "Wat betekent dit verkeersbord?",
         "choices": [
-          { "text": "Zone met een snelheidsbeperking", "is_correct": true },
-          { "text": "Zone verboden inhalen", "is_correct": false },
+          {
+            "text": "Zone met een snelheidsbeperking",
+            "is_correct": true
+          },
+          {
+            "text": "Zone verboden inhalen",
+            "is_correct": false
+          },
           {
             "text": "Zone verboden toegang voor voertuigen waarvan de massa hoger is dan 3500 kg",
             "is_correct": false
@@ -21,8 +27,14 @@
       "EN": {
         "question": "What does this traffic sign mean?",
         "choices": [
-          { "text": "Zone with a speed limit", "is_correct": true },
-          { "text": "Zone no overtaking", "is_correct": false },
+          {
+            "text": "Zone with a speed limit",
+            "is_correct": true
+          },
+          {
+            "text": "Zone no overtaking",
+            "is_correct": false
+          },
           {
             "text": "Zone no entry for vehicles over 3500 kg",
             "is_correct": false
@@ -33,8 +45,14 @@
       "FR": {
         "question": "Que signifie ce panneau de signalisation?",
         "choices": [
-          { "text": "Zone avec limitation de vitesse", "is_correct": true },
-          { "text": "Zone interdiction de dépasser", "is_correct": false },
+          {
+            "text": "Zone avec limitation de vitesse",
+            "is_correct": true
+          },
+          {
+            "text": "Zone interdiction de dépasser",
+            "is_correct": false
+          },
           {
             "text": "Zone accès interdit aux véhicules dont la masse dépasse 3500 kg",
             "is_correct": false
@@ -45,14 +63,20 @@
       "AR": {
         "question": "ما معنى هذه العلامة المرورية؟",
         "choices": [
-          { "text": "منطقة تحديد السرعة", "is_correct": true },
-          { "text": "منطقة ممنوع التجاوز", "is_correct": false },
+          {
+            "text": "منطقة تحديد السرعة",
+            "is_correct": true
+          },
+          {
+            "text": "منطقة ممنوع التجاوز",
+            "is_correct": false
+          },
           {
             "text": "منطقة ممنوع دخول المركبات التي تزيد كتلتها عن 3500 كغ",
             "is_correct": false
           }
         ],
-        "explanation": "ZC43 هي علامة مرورية بداية منطقة تحديد السرعة. تسري السرعة القصوى المحددة على جميع طرق المنطقة."
+        "explanation": "ZC43 هي علامة بداية منطقة تحديد السرعة. تسري السرعة القصوى المحددة على جميع طرق المنطقة."
       }
     }
   },
@@ -66,38 +90,74 @@
       "NL": {
         "question": "Tot welke categorie verkeersborden behoort dit bord?",
         "choices": [
-          { "text": "Zoneborden", "is_correct": true },
-          { "text": "Verbodsborden", "is_correct": false },
-          { "text": "Parkeerborden", "is_correct": false }
+          {
+            "text": "Zoneborden",
+            "is_correct": true
+          },
+          {
+            "text": "Verbodsborden",
+            "is_correct": false
+          },
+          {
+            "text": "Parkeerborden",
+            "is_correct": false
+          }
         ],
-        "explanation": "ZC43 behoort tot deze categorie. Het verschil met C43 is dat de snelheidsbeperking van ZC43 geldt in de gehele zone, terwijl C43 alleen op het specifieke weggedeelte van toepassing is."
+        "explanation": "ZC43 behoort tot de zoneborden. Het verschil met C43 is dat de snelheidsbeperking van ZC43 geldt in de gehele zone, terwijl C43 alleen op het specifieke weggedeelte van toepassing is."
       },
       "EN": {
         "question": "To which category of traffic signs does this sign belong?",
         "choices": [
-          { "text": "Zone signs", "is_correct": true },
-          { "text": "Prohibition signs", "is_correct": false },
-          { "text": "Parking signs", "is_correct": false }
+          {
+            "text": "Zone signs",
+            "is_correct": true
+          },
+          {
+            "text": "Prohibition signs",
+            "is_correct": false
+          },
+          {
+            "text": "Parking signs",
+            "is_correct": false
+          }
         ],
         "explanation": "ZC43 belongs to the zone-sign category. The difference from C43 is that ZC43's speed limit applies throughout the entire zone, whereas C43 only applies to the specific road section."
       },
       "FR": {
         "question": "À quelle catégorie de panneaux appartient ce panneau?",
         "choices": [
-          { "text": "Panneaux de zone", "is_correct": true },
-          { "text": "Panneaux d'interdiction", "is_correct": false },
-          { "text": "Panneaux de stationnement", "is_correct": false }
+          {
+            "text": "Panneaux de zone",
+            "is_correct": true
+          },
+          {
+            "text": "Panneaux d'interdiction",
+            "is_correct": false
+          },
+          {
+            "text": "Panneaux de stationnement",
+            "is_correct": false
+          }
         ],
         "explanation": "ZC43 appartient à la catégorie des panneaux de zone. La différence avec C43 est que la limitation de vitesse de ZC43 s'applique dans toute la zone, tandis que C43 ne s'applique qu'à la section de route concernée."
       },
       "AR": {
-        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
+        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
         "choices": [
-          { "text": "علامات المنطقة", "is_correct": true },
-          { "text": "علامات الحظر", "is_correct": false },
-          { "text": "علامات الوقوف", "is_correct": false }
+          {
+            "text": "علامات المنطقة",
+            "is_correct": true
+          },
+          {
+            "text": "علامات الحظر",
+            "is_correct": false
+          },
+          {
+            "text": "علامات الوقوف",
+            "is_correct": false
+          }
         ],
-        "explanation": "ZC43 تنتمي إلى سلسلة المنطقة. تسري سرعتها على جميع طرق المنطقة."
+        "explanation": "ZC43 تنتمي إلى فئة علامات المنطقة. تسري حدود سرعتها على جميع طرق المنطقة."
       }
     }
   },
@@ -111,7 +171,10 @@
       "NL": {
         "question": "Op welke wegen in de zone geldt de snelheidsbeperking van ZC43?",
         "choices": [
-          { "text": "Op alle wegen in de volledige zone", "is_correct": true },
+          {
+            "text": "Op alle wegen in de volledige zone",
+            "is_correct": true
+          },
           {
             "text": "Alleen op de hoofdstraat van de zone",
             "is_correct": false
@@ -130,7 +193,10 @@
             "text": "On all roads throughout the entire zone",
             "is_correct": true
           },
-          { "text": "Only on the main road of the zone", "is_correct": false },
+          {
+            "text": "Only on the main road of the zone",
+            "is_correct": false
+          },
           {
             "text": "Only on the road where the sign is placed",
             "is_correct": false
@@ -159,14 +225,20 @@
       "AR": {
         "question": "على أي طرق داخل المنطقة تسري تحديد السرعة من ZC43؟",
         "choices": [
-          { "text": "على جميع طرق المنطقة بالكامل", "is_correct": true },
-          { "text": "فقط على الشارع الرئيسي للمنطقة", "is_correct": false },
           {
-            "text": "فقط على الطريق الذي تقع عليه العلامة المرورية",
+            "text": "على جميع طرق المنطقة بالكامل",
+            "is_correct": true
+          },
+          {
+            "text": "فقط على الشارع الرئيسي للمنطقة",
+            "is_correct": false
+          },
+          {
+            "text": "فقط على الطريق الذي تقع عليه العلامة",
             "is_correct": false
           }
         ],
-        "explanation": "قوة علامة مرورية المنطقة تكمن تحديدًا في سريان القيد على جميع طرق المنطقة، حتى بعد المنحنيات والتقاطعات."
+        "explanation": "قوة علامة المنطقة تكمن تحديداً في سريان القيد على جميع طرق المنطقة، حتى بعد المنحنيات والتقاطعات."
       }
     }
   },
@@ -232,7 +304,7 @@
         "explanation": "La restriction de vitesse dans une zone ZC43 est absolue. Une route vide et une bonne visibilité ne constituent pas des exceptions à la limite légale."
       },
       "AR": {
-        "question": "أنت تسير في منطقة ZC43 بحد 30 كم/ساعة. الطريق خالم. هل يجوز السير بسرعة 50 كم/ساعة؟",
+        "question": "أنت تسير في منطقة ZC43 بحد 30 كم/ساعة. الطريق خالٍ. هل يجوز السير بسرعة 50 كم/ساعة؟",
         "choices": [
           {
             "text": "لا، حد 30 كم/ساعة يسري على الجميع في كامل المنطقة",
@@ -247,7 +319,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "قيد السرعة في منطقة ZC43 مطلق. الطريق الخالي وجودة الرؤية ليستا استثناءًا من الحد القانوني."
+        "explanation": "قيد السرعة في منطقة ZC43 مطلق. الطريق الخالي وجودة الرؤية ليستا استثناءً من الحد القانوني."
       }
     }
   },
@@ -274,7 +346,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "Een ZC43-zone is van toepassing op alle wegen en zijstraten totdat ZC45 het einde aanduidt. Geen afzonderlijk bord per straat vereist."
+        "explanation": "Een ZC43-zone is van toepassing op alle wegen en zijstraten totdat ZC43- het einde aanduidt. Geen afzonderlijk bord per straat vereist."
       },
       "EN": {
         "question": "You enter a ZC43 zone (30 km/h) and turn into a side street. What speed applies on that side street?",
@@ -292,7 +364,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "A ZC43 zone applies to all roads and side streets until ZC45 marks the end. No separate sign per street is required."
+        "explanation": "A ZC43 zone applies to all roads and side streets until ZC43- marks the end. No separate sign per street is required."
       },
       "FR": {
         "question": "Vous entrez dans une zone ZC43 (30 km/h) et tournez dans une rue latérale. Quelle vitesse s'applique dans cette rue latérale?",
@@ -310,7 +382,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "Une zone ZC43 s'applique à toutes les routes et rues latérales jusqu'à ce que ZC45 indique la fin. Aucun panneau séparé par rue n'est requis."
+        "explanation": "Une zone ZC43 s'applique à toutes les routes et rues latérales jusqu'à ce que ZC43- indique la fin. Aucun panneau séparé par rue n'est requis."
       },
       "AR": {
         "question": "دخلت منطقة ZC43 (حد 30 كم/ساعة) ثم انعطفت في شارع جانبي. ما السرعة المسموحة فيه؟",
@@ -324,11 +396,11 @@
             "is_correct": false
           },
           {
-            "text": "السرعة المبينة على علامة مرورية منفصلة في الشارع",
+            "text": "السرعة المبيَّنة على علامة منفصلة في ذلك الشارع",
             "is_correct": false
           }
         ],
-        "explanation": "منطقة ZC43 تسري على جميع الطرق والشوارع الجانبية حتى تحدد ZC45 النهاية. لا يلزم وجود علامة مرورية منفصلة لكل شارع."
+        "explanation": "منطقة ZC43 تسري على جميع الطرق والشوارع الجانبية حتى تحدد ZC43- النهاية. لا يلزم وجود علامة منفصلة لكل شارع."
       }
     }
   },
@@ -397,7 +469,7 @@
         "question": "ما ميزة ZC43 على C43 في تطبيق حد سرعة على حي سكني؟",
         "choices": [
           {
-            "text": "ZC43 تغطي جميع شوارع الحي بعلامة مرورية واحدة عند المدخل؛ C43 تتطلب علامة مرورية لكل شارع",
+            "text": "ZC43 تغطي جميع شوارع الحي بعلامة واحدة عند المدخل؛ C43 تتطلب علامة لكل شارع",
             "is_correct": true
           },
           {
@@ -405,11 +477,11 @@
             "is_correct": false
           },
           {
-            "text": "ZC43 و C43 متكافئتان تمامًا ولهما نفس الأثر",
+            "text": "ZC43 و C43 متكافئتان تماماً ولهما نفس الأثر",
             "is_correct": false
           }
         ],
-        "explanation": "علامة مرورية المنطقة ZC43 فعالة: علامة مرورية واحدة عند المدخل تغطي كامل المنطقة. C43 تتطلب علامة مرورية منفصلة لكل شارع."
+        "explanation": "علامة المنطقة ZC43 فعالة: علامة واحدة عند المدخل تغطي كامل المنطقة. C43 تتطلب علامة منفصلة لكل شارع."
       }
     }
   },
@@ -463,14 +535,14 @@
         "explanation": "La restriction de vitesse imposée par ZC43 est une limite légale absolue. Les routes vides et les conditions sûres ne justifient pas de dépasser la limite."
       },
       "AR": {
-        "question": "أنت داخل منطقة ZC43 بحد 30 كم/ساعة. الطريق خالي تمامًا، إذ يمكنك السير بأمان بسرعة 50 كم/ساعة. هل يجوز ذلك؟",
+        "question": "أنت داخل منطقة ZC43 بحد 30 كم/ساعة. الطريق خالٍ تماماً ويمكنك السير بأمان بسرعة 50 كم/ساعة. هل يجوز ذلك؟",
         "choices": [
           {
-            "text": "لا، حد السرعة 30 كم/ساعة مطلق ويسري دائمًا داخل المنطقة",
+            "text": "لا، حد السرعة 30 كم/ساعة مطلق ويسري دائماً داخل المنطقة",
             "is_correct": true
           },
           {
-            "text": "نعم، على طريق خالٍ حد السرعة ليس ساريًا",
+            "text": "نعم، على طريق خالٍ لا يسري حد السرعة",
             "is_correct": false
           }
         ],
@@ -486,7 +558,7 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U bent een leerling-bestuurder met een persoonlijke maximumsnelheid van 90 km/u. Geldt ook voor u de snelheidslimiet van een ZC43-28 zone?",
+        "question": "U bent een leerling-bestuurder met een persoonlijke maximumsnelheid van 90 km/u. Geldt ook voor u de snelheidslimiet van een ZC43-zone?",
         "choices": [
           {
             "text": "Ja, de zonelimiet geldt voor alle bestuurders ongeacht hun persoonlijke maximumsnelheid",
@@ -500,7 +572,7 @@
         "explanation": "De wettelijke snelheidslimiet van de zone is een bovenlimiet voor iedereen. Uw persoonlijke rijbewijsbeperking is een extra beperking, maar vervangt de zonelimiet niet."
       },
       "EN": {
-        "question": "You are a learner driver with a personal maximum speed of 90 km/h. Does the speed limit of a ZC43-zone also apply to you?",
+        "question": "You are a learner driver with a personal maximum speed of 90 km/h. Does the speed limit of a ZC43 zone also apply to you?",
         "choices": [
           {
             "text": "Yes, the zone limit applies to all drivers regardless of their personal maximum speed",
@@ -528,7 +600,7 @@
         "explanation": "La limite de vitesse légale de la zone est une limite supérieure pour tout le monde. Votre restriction de permis personnelle est une restriction supplémentaire mais ne remplace pas la limite de zone."
       },
       "AR": {
-        "question": "أنت سائق متدرب بحد سرعة شخصي أقصى 90 كم/ساعة. هل يسري عليك حد سرعة منطقة ZC43 أيضًا؟",
+        "question": "أنت سائق متدرب بحد سرعة شخصي أقصى 90 كم/ساعة. هل يسري عليك حد سرعة منطقة ZC43 أيضاً؟",
         "choices": [
           {
             "text": "نعم، حد سرعة المنطقة يسري على جميع السائقين بغض النظر عن حدهم الشخصي",

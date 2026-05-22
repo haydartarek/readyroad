@@ -20,8 +20,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
  * 
  * Default Credentials:
  * - Username: admin
- * - Password: Admin123!
- * - Email: admin@readyroad.com
+ * - Password: loaded from ADMIN_DEFAULT_PASSWORD environment variable
+ * - Email: admin@readyroad.be
  * - Role: ADMIN
  * 
  * @author ReadyRoad Team
@@ -81,7 +81,7 @@ public class DefaultAdminInitializer {
             log.info("║        ✅ DEFAULT ADMIN USER CREATED                      ║");
             log.info("╚════════════════════════════════════════════════════════════╝");
             log.info("   Username: {}", adminUsername);
-            log.info("   Email: admin@readyroad.com");
+            log.info("   Email: admin@readyroad.be");
             log.info("   Role: ADMIN");
             log.info("");
             log.warn("⚠️  CRITICAL: Password set from configured admin password");
@@ -89,9 +89,15 @@ public class DefaultAdminInitializer {
             log.info("");
 
             // Verify the admin user was created successfully
-            assert userRepository.existsByUsername(adminUsername) : "Admin user creation failed!";
-            assert userRepository.findByUsername(adminUsername).get().getRole() == Role.ADMIN
-                    : "Admin role not set correctly!";
+            if (!userRepository.existsByUsername(adminUsername)) {
+                log.error("❌ Admin user creation failed — user not found after save!");
+                throw new IllegalStateException("Admin user creation failed!");
+            }
+            userRepository.findByUsername(adminUsername).ifPresent(created -> {
+                if (created.getRole() != Role.ADMIN) {
+                    throw new IllegalStateException("Admin role not set correctly after creation!");
+                }
+            });
             log.info("✅ Admin user verification passed");
         };
     }

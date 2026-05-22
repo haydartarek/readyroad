@@ -139,7 +139,7 @@ class TimeLimitEnforcementIntegrationTest extends BaseIntegrationTest {
                 // Then
                 assertThat(response).isNotNull();
                 assertThat(response.getAnswerId()).isNotNull();
-                assertThat(response.getMessage()).isEqualTo("Answer submitted successfully");
+                assertThat(response.getMessage()).isEqualTo("Answer submitted successfully.");
 
                 // Exam should still be IN_PROGRESS
                 ExamSimulation updatedExam = examRepository.findById(exam.getId()).orElseThrow();
@@ -171,7 +171,7 @@ class TimeLimitEnforcementIntegrationTest extends BaseIntegrationTest {
                                 firstQuestionId,
                                 request, testUserId))
                                 .isInstanceOf(ExamExpiredException.class)
-                                .hasMessageContaining("Exam has expired")
+                                .hasMessageContaining("The exam has expired")
                                 .hasMessageContaining("30 minutes");
         }
 
@@ -278,7 +278,7 @@ class TimeLimitEnforcementIntegrationTest extends BaseIntegrationTest {
                                 firstQuestionId,
                                 request, testUserId))
                                 .isInstanceOf(com.readyroad.readyroadbackend.exception.ExamNotActiveException.class)
-                                .hasMessageContaining("Exam status: EXPIRED");
+                                .hasMessageContaining("exam status is EXPIRED");
         }
 
         @Test
@@ -321,6 +321,6 @@ class TimeLimitEnforcementIntegrationTest extends BaseIntegrationTest {
                 request.setSelectedOptionId(secondOptionId);
 
                 assertThatThrownBy(() -> examService.submitAnswer(exam.getId(), secondQuestionId, request, testUserId))
-                                .hasMessageContaining("Exam status: EXPIRED");
+                                .hasMessageContaining("exam status is EXPIRED");
         }
 }

@@ -17,7 +17,10 @@
             "text": "Zone verboden toegang voor motorvoertuigen met meer dan 2 wielen",
             "is_correct": false
           },
-          { "text": "Zone verboden inhalen", "is_correct": false }
+          {
+            "text": "Zone verboden inhalen",
+            "is_correct": false
+          }
         ],
         "explanation": "ZC21 is het beginbord van een zone waar voertuigen met een massa van meer dan 3500 kg niet mogen inrijden of doorrijden. Voertuigen die exact 3500 kg wegen, vallen NIET onder dit verbod."
       },
@@ -32,7 +35,10 @@
             "text": "Zone no entry for motor vehicles with more than 2 wheels",
             "is_correct": false
           },
-          { "text": "Zone no overtaking", "is_correct": false }
+          {
+            "text": "Zone no overtaking",
+            "is_correct": false
+          }
         ],
         "explanation": "ZC21 is the entry sign of a zone where vehicles with a mass exceeding 3500 kg may not enter or drive through. Vehicles weighing exactly 3500 kg are NOT covered by this prohibition."
       },
@@ -47,7 +53,10 @@
             "text": "Zone accès interdit aux véhicules à moteur de plus de 2 roues",
             "is_correct": false
           },
-          { "text": "Zone interdiction de dépasser", "is_correct": false }
+          {
+            "text": "Zone interdiction de dépasser",
+            "is_correct": false
+          }
         ],
         "explanation": "ZC21 est le panneau de début d'une zone interdisant l'accès aux véhicules dont la masse dépasse 3500 kg. Les véhicules pesant exactement 3500 kg ne sont PAS visés."
       },
@@ -62,9 +71,12 @@
             "text": "منطقة ممنوع دخول المركبات ذات المحرك بأكثر من عجلتين",
             "is_correct": false
           },
-          { "text": "منطقة ممنوع التجاوز", "is_correct": false }
+          {
+            "text": "منطقة ممنوع التجاوز",
+            "is_correct": false
+          }
         ],
-        "explanation": "ZC21 هي علامة مرورية بداية منطقة لا يجوز فيها للمركبات التي تزيد كتلتها عن 3500 كغ الدخول. المركبات ذات الكتلة بالضبط 3500 كغ لا تشملها المنطقة."
+        "explanation": "ZC21 هي علامة بداية منطقة لا يجوز فيها للمركبات التي تزيد كتلتها عن 3500 كغ الدخول أو المرور. المركبات ذات الكتلة بالضبط 3500 كغ لا يشملها هذا الحظر."
       }
     }
   },
@@ -78,38 +90,74 @@
       "NL": {
         "question": "Tot welke categorie verkeersborden behoort dit bord?",
         "choices": [
-          { "text": "Zoneborden", "is_correct": true },
-          { "text": "Verbodsborden", "is_correct": false },
-          { "text": "Parkeerborden", "is_correct": false }
+          {
+            "text": "Zoneborden",
+            "is_correct": true
+          },
+          {
+            "text": "Verbodsborden",
+            "is_correct": false
+          },
+          {
+            "text": "Parkeerborden",
+            "is_correct": false
+          }
         ],
         "explanation": "ZC21 is een zonebord. De massabeperking geldt in de gehele zone, niet alleen op de weg waar ZC21 staat."
       },
       "EN": {
         "question": "To which category of traffic signs does this sign belong?",
         "choices": [
-          { "text": "Zone signs", "is_correct": true },
-          { "text": "Prohibition signs", "is_correct": false },
-          { "text": "Parking signs", "is_correct": false }
+          {
+            "text": "Zone signs",
+            "is_correct": true
+          },
+          {
+            "text": "Prohibition signs",
+            "is_correct": false
+          },
+          {
+            "text": "Parking signs",
+            "is_correct": false
+          }
         ],
         "explanation": "ZC21 is a zone sign. The mass restriction applies throughout the entire zone, not only on the road where ZC21 is placed."
       },
       "FR": {
         "question": "À quelle catégorie de panneaux appartient ce panneau?",
         "choices": [
-          { "text": "Panneaux de zone", "is_correct": true },
-          { "text": "Panneaux d'interdiction", "is_correct": false },
-          { "text": "Panneaux de stationnement", "is_correct": false }
+          {
+            "text": "Panneaux de zone",
+            "is_correct": true
+          },
+          {
+            "text": "Panneaux d'interdiction",
+            "is_correct": false
+          },
+          {
+            "text": "Panneaux de stationnement",
+            "is_correct": false
+          }
         ],
         "explanation": "ZC21 est un panneau de zone. La restriction de masse s'applique dans toute la zone, pas seulement sur la route où se trouve ZC21."
       },
       "AR": {
-        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
+        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
         "choices": [
-          { "text": "علامات المنطقة", "is_correct": true },
-          { "text": "علامات الحظر", "is_correct": false },
-          { "text": "علامات الوقوف", "is_correct": false }
+          {
+            "text": "علامات المنطقة",
+            "is_correct": true
+          },
+          {
+            "text": "علامات الحظر",
+            "is_correct": false
+          },
+          {
+            "text": "علامات الوقوف",
+            "is_correct": false
+          }
         ],
-        "explanation": "ZC21 علامة مرورية منطقة. تسري قيود الكتلة في كامل المنطقة، وليس فقط على الطريق الذي تقع فيه ZC21."
+        "explanation": "ZC21 علامة منطقة. تسري قيود الكتلة في كامل المنطقة، وليس فقط على الطريق الذي تقع فيه ZC21."
       }
     }
   },
@@ -149,7 +197,10 @@
             "text": "All vehicles weighing 3500 kg or more",
             "is_correct": false
           },
-          { "text": "Only trucks with more than 2 axles", "is_correct": false }
+          {
+            "text": "Only trucks with more than 2 axles",
+            "is_correct": false
+          }
         ],
         "explanation": "ZC21 prohibits only vehicles with a mass strictly above 3500 kg. Vehicles weighing exactly 3500 kg are permitted."
       },
@@ -182,7 +233,10 @@
             "text": "جميع المركبات ذات الكتلة 3500 كغ أو أكثر",
             "is_correct": false
           },
-          { "text": "الشاحنات ذات أكثر من محورين فقط", "is_correct": false }
+          {
+            "text": "الشاحنات ذات أكثر من محورين فقط",
+            "is_correct": false
+          }
         ],
         "explanation": "ZC21 تحظر فقط المركبات ذات الكتلة التي تتجاوز 3500 كغ بصرامة. المركبات ذات الكتلة بالضبط 3500 كغ مسموح لها بالدخول."
       }
@@ -256,13 +310,16 @@
             "text": "لا يجوز لك دخول المنطقة لأن وزن شاحنتك أكثر من 3500 كغ",
             "is_correct": true
           },
-          { "text": "يجوز لك الدخول إذا سرت ببطء", "is_correct": false },
+          {
+            "text": "يجوز لك الدخول إذا سرت ببطء",
+            "is_correct": false
+          },
           {
             "text": "يجوز لك الدخول إذا ذهبت مباشرة إلى وجهتك",
             "is_correct": false
           }
         ],
-        "explanation": "4200 كغ تتجاوز حد 3500 كغ. ZC21 تحظر بشكل مطلق على شاحنتك دخول المنطقة."
+        "explanation": "4200 كغ تتجاوز حد 3500 كغ. ZC21 تحظر بشكل مطلق على شاحنتك دخول المنطقة بغض النظر عن السرعة أو الوجهة."
       }
     }
   },
@@ -325,7 +382,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "ZC21 ne s'applique qu'aux véhicules dont la masse dépasse 3500 kg. Une camionnette de 3200 kg n'est pas concernée."
+        "explanation": "ZC21 ne s'applique qu'aux véhicules dont la masse dépasse 3500 kg. Une camionnette de 3200 kg n'est pas concernée par cette interdiction."
       },
       "AR": {
         "question": "تقود شاحنة صغيرة بوزن 3200 كغ داخل منطقة ZC21. هل يجوز لك السير في أي شارع بالمنطقة؟",
@@ -343,7 +400,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "ZC21 تسري فقط على المركبات ذات الكتلة التي تتجاوز 3500 كغ. الشاحنة بوزن 3200 كغ خارج هذا الحظر."
+        "explanation": "ZC21 تسري فقط على المركبات ذات الكتلة التي تتجاوز 3500 كغ. الشاحنة الصغيرة بوزن 3200 كغ خارج نطاق هذا الحظر."
       }
     }
   },
@@ -409,22 +466,22 @@
         "explanation": "La force d'un panneau de zone comme ZC21 est qu'il s'applique à toutes les routes de la zone, pas seulement à celle où il est placé."
       },
       "AR": {
-        "question": "أنت تسير في منطقة ZC21. هل تسري قيود الكتلة على الطريق الرئيسي فقط أم أيضًا على الشوارع الجانبية؟",
+        "question": "أنت تسير في منطقة ZC21. هل تسري قيود الكتلة على الطريق الرئيسي فقط أم أيضاً على الشوارع الجانبية؟",
         "choices": [
           {
             "text": "على جميع شوارع المنطقة بما فيها الجانبية، لأن ZC21 تسري في كامل المنطقة",
             "is_correct": true
           },
           {
-            "text": "فقط على الطريق الرئيسي حيث تقع علامة مرورية ZC21",
+            "text": "فقط على الطريق الرئيسي حيث تقع علامة ZC21",
             "is_correct": false
           },
           {
-            "text": "فقط على الشوارع المحددة بعلامة مرورية إضافية",
+            "text": "فقط على الشوارع المحددة بعلامة إضافية",
             "is_correct": false
           }
         ],
-        "explanation": "قوة علامة مرورية المنطقة مثل ZC21 أنها تسري على كل طريق داخل المنطقة، وليس فقط على الطريق الذي تقع فيه العلامة المرورية."
+        "explanation": "قوة علامة المنطقة مثل ZC21 أنها تسري على كل طريق داخل المنطقة، وليس فقط على الطريق الذي تقع فيه العلامة."
       }
     }
   },
@@ -481,7 +538,7 @@
         "question": "مركبة تزن بالضبط 3500 كغ. هل يسري عليها حظر ZC21؟",
         "choices": [
           {
-            "text": "لا، ZC21 تحظر المركبات ذات الكتلة التي تتجاوز 3500 كغ بصرامة؛ الكتلة بالضبط 3500 كغ مسموحة",
+            "text": "لا، ZC21 تحظر المركبات ذات الكتلة التي تتجاوز 3500 كغ بصرامة؛ الكتلة بالضبط 3500 كغ مسموح بها",
             "is_correct": true
           },
           {
@@ -532,7 +589,7 @@
         "question": "Vous êtes entré dans la zone ZC21 avant de remarquer le panneau de début. Cela constitue-t-il quand même une infraction?",
         "choices": [
           {
-            "text": "Oui, la règle de zone s'applique dans toute la zone et circuler dans la zone est interdit quel que soit le moment où vous avez remarquà le panneau",
+            "text": "Oui, la règle de zone s'applique dans toute la zone et circuler dans la zone est interdit quel que soit le moment où vous avez remarqué le panneau",
             "is_correct": true
           },
           {
@@ -543,18 +600,18 @@
         "explanation": "Le fait de ne pas avoir vu le panneau à temps ne vous libère pas de l'obligation légale. La zone est juridiquement en vigueur dès que vous en franchissez la limite."
       },
       "AR": {
-        "question": "دخلت منطقة ZC21 قبل أن تلاحظ علامة مرورية البداية. هل يعد هذا مخالفة؟",
+        "question": "دخلت منطقة ZC21 قبل أن تلاحظ علامة البداية. هل يُعدّ هذا مخالفة؟",
         "choices": [
           {
-            "text": "نعم، تسري قاعدة المنطقة في كاملها والسير في المنطقة محظور بغض النظر عن وقت ملاحظة العلامة المرورية",
+            "text": "نعم، تسري قاعدة المنطقة في كاملها والسير فيها محظور بغض النظر عن وقت ملاحظة العلامة",
             "is_correct": true
           },
           {
-            "text": "لا، لأنك كنت بالفعل داخل المنطقة قبل رؤية العلامة المرورية فلا يمكن يتوقع منك تجنب المخالفة",
+            "text": "لا، لأنك كنت بالفعل داخل المنطقة قبل رؤية العلامة فلا يُتوقع منك تجنب المخالفة",
             "is_correct": false
           }
         ],
-        "explanation": "عدم رؤيتك لعلامة مرورية في الوقت المناسب لا يعفيك من الالتزام القانوني. المنطقة سارية قانونيًا فور تجاوزك حدودها."
+        "explanation": "عدم رؤيتك للعلامة في الوقت المناسب لا يعفيك من الالتزام القانوني. المنطقة سارية قانونياً فور تجاوزك حدودها."
       }
     }
   }

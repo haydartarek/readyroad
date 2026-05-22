@@ -22,12 +22,15 @@
             "is_correct": false
           }
         ],
-        "explanation": "ZE9a duidt een zone aan waar enkel personenauto's mogen parkeren. Andere voertuigen zoals motorfietsen en bestelwagens zijn er uitgesloten van parkeren."
+        "explanation": "ZE9a duidt een zone aan waar enkel motorfietsen, personenauto's, auto's voor dubbelgebruik en minibussen mogen parkeren. Alle andere voertuigen zijn uitgesloten van parkeren."
       },
       "EN": {
         "question": "What does this traffic sign mean?",
         "choices": [
-          { "text": "Zone parking for cars only", "is_correct": true },
+          {
+            "text": "Zone parking for cars only",
+            "is_correct": true
+          },
           {
             "text": "Zone no parking (no vehicle at all)",
             "is_correct": false
@@ -37,7 +40,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "ZE9a designates a zone where only passenger cars may park. Other vehicles such as motorcycles and vans are excluded from parking there."
+        "explanation": "ZE9a designates a zone where only motorcycles, passenger cars, dual-purpose vehicles and minibuses may park. All other vehicles are excluded from parking there."
       },
       "FR": {
         "question": "Que signifie ce panneau de signalisation?",
@@ -55,19 +58,25 @@
             "is_correct": false
           }
         ],
-        "explanation": "ZE9a désigne une zone où seules les voitures de tourisme peuvent stationner. Les autres véhicules tels que les motos et les camionnettes en sont exclus."
+        "explanation": "ZE9a désigne une zone où seuls les motocycles, les voitures de tourisme, les véhicules à double usage et les minibus peuvent stationner. Tous les autres véhicules en sont exclus."
       },
       "AR": {
         "question": "ما معنى هذه العلامة المرورية؟",
         "choices": [
-          { "text": "منطقة للركن المخصص للسيارات فقط", "is_correct": true },
-          { "text": "منطقة ممنوع الوقوف (لا سيارات)", "is_correct": false },
+          {
+            "text": "منطقة للركن المخصص للسيارات فقط",
+            "is_correct": true
+          },
+          {
+            "text": "منطقة ممنوع الوقوف (لا سيارات)",
+            "is_correct": false
+          },
           {
             "text": "منطقة للركن المخصص للسيارات فقط مع تحديد وقت",
             "is_correct": false
           }
         ],
-        "explanation": "ZE9a تحدد منطقة لا يجوز فيها الركن إلا للسيارات السياحية. المركبات الأخرى كالدراجات النارية والشاحنات ممنوعة من الركن."
+        "explanation": "ZE9a تحدد منطقة لا يجوز فيها الركن إلا للدراجات النارية والسيارات السياحية وسيارات الاستخدام المزدوج والميني باص. جميع المركبات الأخرى ممنوعة من الركن."
       }
     }
   },
@@ -81,38 +90,74 @@
       "NL": {
         "question": "Tot welke categorie verkeersborden behoort dit bord?",
         "choices": [
-          { "text": "Zoneborden", "is_correct": true },
-          { "text": "Verbodsborden", "is_correct": false },
-          { "text": "Parkeerborden", "is_correct": false }
+          {
+            "text": "Zoneborden",
+            "is_correct": true
+          },
+          {
+            "text": "Verbodsborden",
+            "is_correct": false
+          },
+          {
+            "text": "Parkeerborden",
+            "is_correct": false
+          }
         ],
         "explanation": "ZE9a is een zonebord dat tot deze categorie behoort."
       },
       "EN": {
         "question": "To which category of traffic signs does this sign belong?",
         "choices": [
-          { "text": "Zone signs", "is_correct": true },
-          { "text": "Prohibition signs", "is_correct": false },
-          { "text": "Parking signs", "is_correct": false }
+          {
+            "text": "Zone signs",
+            "is_correct": true
+          },
+          {
+            "text": "Prohibition signs",
+            "is_correct": false
+          },
+          {
+            "text": "Parking signs",
+            "is_correct": false
+          }
         ],
         "explanation": "ZE9a is a zone sign belonging to this category."
       },
       "FR": {
         "question": "À quelle catégorie de panneaux appartient ce panneau?",
         "choices": [
-          { "text": "Panneaux de zone", "is_correct": true },
-          { "text": "Panneaux d'interdiction", "is_correct": false },
-          { "text": "Panneaux de stationnement", "is_correct": false }
+          {
+            "text": "Panneaux de zone",
+            "is_correct": true
+          },
+          {
+            "text": "Panneaux d'interdiction",
+            "is_correct": false
+          },
+          {
+            "text": "Panneaux de stationnement",
+            "is_correct": false
+          }
         ],
         "explanation": "ZE9a est un panneau de zone appartenant à cette catégorie."
       },
       "AR": {
-        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
+        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
         "choices": [
-          { "text": "علامات المنطقة", "is_correct": true },
-          { "text": "علامات الحظر", "is_correct": false },
-          { "text": "علامات الوقوف", "is_correct": false }
+          {
+            "text": "علامات المنطقة",
+            "is_correct": true
+          },
+          {
+            "text": "علامات الحظر",
+            "is_correct": false
+          },
+          {
+            "text": "علامات الوقوف",
+            "is_correct": false
+          }
         ],
-        "explanation": "ZE9a علامة مرورية منطقة تنتمي إلى هذه الفئة."
+        "explanation": "ZE9a علامة منطقة تنتمي إلى هذه الفئة."
       }
     }
   },
@@ -127,52 +172,73 @@
         "question": "Welke voertuigen mogen NIET parkeren in een ZE9a-zone?",
         "choices": [
           {
-            "text": "Alle voertuigen behalve personenauto's, zoals motorfietsen en bestelwagens",
+            "text": "Alle voertuigen behalve motorfietsen, personenauto's, auto's voor dubbelgebruik en minibussen",
             "is_correct": true
           },
           {
             "text": "Alle voertuigen zonder uitzondering",
             "is_correct": false
           },
-          { "text": "Uitsluitend vrachtwagens en bussen", "is_correct": false }
+          {
+            "text": "Uitsluitend vrachtwagens en bussen",
+            "is_correct": false
+          }
         ],
-        "explanation": "ZE9a staat uitsluitend parkeren toe voor personenauto's. Motorfietsen, bestelwagens, vrachtwagens en andere voertuigen mogen er niet parkeren."
+        "explanation": "ZE9a staat uitsluitend parkeren toe voor motorfietsen, personenauto's, auto's voor dubbelgebruik en minibussen. Bestelwagens, vrachtwagens en andere voertuigen mogen er niet parkeren."
       },
       "EN": {
         "question": "Which vehicles may NOT park in a ZE9a zone?",
         "choices": [
           {
-            "text": "All vehicles except passenger cars, such as motorcycles and vans",
+            "text": "All vehicles except motorcycles, passenger cars, dual-purpose vehicles and minibuses",
             "is_correct": true
           },
-          { "text": "All vehicles without exception", "is_correct": false },
-          { "text": "Only lorries and buses", "is_correct": false }
+          {
+            "text": "All vehicles without exception",
+            "is_correct": false
+          },
+          {
+            "text": "Only lorries and buses",
+            "is_correct": false
+          }
         ],
-        "explanation": "ZE9a only allows parking for passenger cars. Motorcycles, vans, lorries and other vehicles may not park there."
+        "explanation": "ZE9a only allows parking for motorcycles, passenger cars, dual-purpose vehicles and minibuses. Vans, lorries and other vehicles may not park there."
       },
       "FR": {
         "question": "Quels véhicules ne peuvent PAS stationner dans une zone ZE9a?",
         "choices": [
           {
-            "text": "Tous les véhicules sauf les voitures de tourisme comme les motos et les camionnettes",
+            "text": "Tous les véhicules sauf les motocycles, voitures de tourisme, véhicules à double usage et minibus",
             "is_correct": true
           },
-          { "text": "Tous les véhicules sans exception", "is_correct": false },
-          { "text": "Uniquement les camions et les bus", "is_correct": false }
+          {
+            "text": "Tous les véhicules sans exception",
+            "is_correct": false
+          },
+          {
+            "text": "Uniquement les camions et les bus",
+            "is_correct": false
+          }
         ],
-        "explanation": "ZE9a n'autorise le stationnement qu'aux voitures de tourisme. Les motos camionnettes camions et autres véhicules ne peuvent pas y stationner."
+        "explanation": "ZE9a n'autorise le stationnement qu'aux motocycles, voitures de tourisme, véhicules à double usage et minibus. Les camionnettes, camions et autres véhicules ne peuvent pas y stationner."
       },
       "AR": {
         "question": "أي المركبات لا يجوز لها الركن في منطقة ZE9a؟",
         "choices": [
           {
-            "text": "جميع المركبات عدا السيارات السياحية، كالدراجات النارية والشاحنات",
+            "text": "جميع المركبات عدا الدراجات النارية والسيارات السياحية وسيارات الاستخدام المزدوج والميني باص",
             "is_correct": true
           },
-          { "text": "جميع المركبات دون استثناء", "is_correct": false },
-          { "text": "الشاحنات الكبيرة والحافلات فقط", "is_correct": false }
+          {
+            "text": "جميع المركبات دون استثناء",
+            "is_correct": false
+          },
+          {
+            "text": "الشاحنات الكبيرة والحافلات فقط",
+            "is_correct": false
+          }
         ],
-        "explanation": "ZE9a تسمح بالركن للسيارات السياحية فقط. الدراجات النارية والشاحنات وغيرها ممنوعة من الركن."
+        "explanation": "ZE9a تسمح بالركن فقط للدراجات النارية والسيارات السياحية وسيارات الاستخدام المزدوج والميني باص. الشاحنات الصغيرة والكبيرة وغيرها ممنوعة من الركن."
       }
     }
   },
@@ -238,14 +304,14 @@
         "explanation": "Une zone ZE9a couvre l'ensemble de la zone. La restriction s'applique donc à toutes les rues de la zone y compris les rues latérales."
       },
       "AR": {
-        "question": "تدخل منطقة ZE9a وتقترب من شارع جانبي. هل ينطبق قيد 'للسيارات فقط' على ذلك الشارع الجانبي أيضًا؟",
+        "question": "تدخل منطقة ZE9a وتقترب من شارع جانبي. هل ينطبق قيد 'للسيارات فقط' على ذلك الشارع الجانبي أيضاً؟",
         "choices": [
           {
             "text": "نعم، ينطبق قيد ZE9a على جميع شوارع المنطقة بأكملها",
             "is_correct": true
           },
           {
-            "text": "لا، فقط على الشارع الذي توجد فيه العلامة المرورية",
+            "text": "لا، فقط على الشارع الذي توجد فيه العلامة",
             "is_correct": false
           },
           {
@@ -280,7 +346,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "ZE9a verbiedt parkeren voor niet-personenauto's, maar kort stilstaan voor laden/lossen blijft toegelaten. De zone verbiedt rijden niet."
+        "explanation": "ZE9a verbiedt parkeren voor niet-toegestane voertuigen, maar kort stilstaan voor laden/lossen blijft toegelaten. De zone verbiedt rijden niet."
       },
       "EN": {
         "question": "You enter a ZE9a zone with a van for a delivery. Where may you stop?",
@@ -298,7 +364,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "ZE9a prohibits parking for non-passenger cars but brief stopping to load/unload is still permitted. The zone does not prohibit driving."
+        "explanation": "ZE9a prohibits parking for non-permitted vehicles but brief stopping to load/unload is still permitted. The zone does not prohibit driving."
       },
       "FR": {
         "question": "Vous entrez dans une zone ZE9a avec une camionnette pour une livraison. Où pouvez-vous vous arrêter?",
@@ -316,13 +382,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "ZE9a interdit le stationnement aux véhicules autres que les voitures de tourisme mais l'arrêt bref pour charger/décharger reste autorisé. La zone n'interdit pas la circulation."
+        "explanation": "ZE9a interdit le stationnement aux véhicules non autorisés mais l'arrêt bref pour charger/décharger reste autorisé. La zone n'interdit pas la circulation."
       },
       "AR": {
         "question": "تدخل منطقة ZE9a بشاحنة صغيرة لتوصيل بضاعة. أين يمكنك التوقف؟",
         "choices": [
           {
-            "text": "يمكنك التوقف بريفًا للشحن/التفريغ، لكن لا يجوز الركن",
+            "text": "يمكنك التوقف مؤقتاً للشحن/التفريغ، لكن لا يجوز الركن",
             "is_correct": true
           },
           {
@@ -330,11 +396,11 @@
             "is_correct": false
           },
           {
-            "text": "لا يمكنك الدخول إلى المنطقة نهائيًا بشاحنة",
+            "text": "لا يمكنك الدخول إلى المنطقة نهائياً بشاحنة",
             "is_correct": false
           }
         ],
-        "explanation": "ZE9a تحظر الركن للمركبات غير السياحية، لكن التوقف القصير للشحن/التفريغ لا يزال مسموحًا."
+        "explanation": "ZE9a تحظر الركن للمركبات غير المسموح بها، لكن التوقف المؤقت للشحن/التفريغ لا يزال مسموحاً."
       }
     }
   },
@@ -357,7 +423,7 @@
             "is_correct": false
           },
           {
-            "text": "E9a is strenger dan ZE9a omdat het een deze categoriebord is",
+            "text": "E9a is strenger dan ZE9a omdat het een verbodsbord is",
             "is_correct": false
           }
         ],
@@ -393,21 +459,27 @@
             "is_correct": false
           },
           {
-            "text": "E9a est plus strict que ZE9a parce que c'est un panneau dans cette catégorie",
+            "text": "E9a est plus strict que ZE9a parce que c'est un panneau d'interdiction",
             "is_correct": false
           }
         ],
         "explanation": "La différence réside dans la zone de validité: ZE9a impose la restriction à tout le réseau de la zone; E9a uniquement localement à la voie ou à l'emplacement de stationnement indiqué."
       },
       "AR": {
-        "question": "ما الفرق بين ZE9a (منطقة) وعلامة مرورية E9a العادية؟",
+        "question": "ما الفرق بين ZE9a (منطقة) وعلامة E9a العادية؟",
         "choices": [
           {
-            "text": "ZE9a تغطي الحي بأكمله، بينما E9a تسري فقط بجانب العلامة المرورية",
+            "text": "ZE9a تغطي الحي بأكمله، بينما E9a تسري فقط بجانب العلامة",
             "is_correct": true
           },
-          { "text": "ZE9a و E9a لهما نفس نطاق السريان", "is_correct": false },
-          { "text": "E9a أصرم من ZE9a لأنها من هذه الفئة", "is_correct": false }
+          {
+            "text": "ZE9a و E9a لهما نفس نطاق السريان",
+            "is_correct": false
+          },
+          {
+            "text": "E9a أصرم من ZE9a لأنها علامة حظر",
+            "is_correct": false
+          }
         ],
         "explanation": "الفرق هو نطاق السريان: ZE9a تفرض القيد على شبكة المنطقة بأكملها، E9a فقط على المستوى المحلي."
       }
@@ -424,57 +496,57 @@
         "question": "U rijdt op een motorfiets door een ZE9a-zone. Mag u er parkeren?",
         "choices": [
           {
-            "text": "Neen, ZE9a staat uitsluitend parkeren toe voor personenauto's; motorfietsen zijn uitgesloten",
+            "text": "Ja, motorfietsen zijn uitdrukkelijk toegelaten om te parkeren in een ZE9a-zone",
             "is_correct": true
           },
           {
-            "text": "Ja, motorfietsen zijn kleine voertuigen en vallen dus ook onder 'auto's'",
+            "text": "Neen, enkel personenauto's mogen parkeren in een ZE9a-zone",
             "is_correct": false
           }
         ],
-        "explanation": "ZE9a is uitsluitend voor personenauto's. Een motorfiets is geen personenauto en mag er dus niet parkeren."
+        "explanation": "ZE9a staat parkeren uitdrukkelijk toe voor motorfietsen, naast personenauto's, auto's voor dubbelgebruik en minibussen. Een motorfiets mag er dus parkeren."
       },
       "EN": {
         "question": "You are riding a motorcycle through a ZE9a zone. May you park there?",
         "choices": [
           {
-            "text": "No, ZE9a only allows parking for passenger cars; motorcycles are excluded",
+            "text": "Yes, motorcycles are explicitly permitted to park in a ZE9a zone",
             "is_correct": true
           },
           {
-            "text": "Yes, motorcycles are small vehicles so they also fall under 'cars'",
+            "text": "No, only passenger cars may park in a ZE9a zone",
             "is_correct": false
           }
         ],
-        "explanation": "ZE9a is exclusively for passenger cars. A motorcycle is not a passenger car and therefore may not park there."
+        "explanation": "ZE9a explicitly permits parking for motorcycles, alongside passenger cars, dual-purpose vehicles and minibuses. A motorcycle may therefore park there."
       },
       "FR": {
         "question": "Vous circulez à moto dans une zone ZE9a. Pouvez-vous y stationner?",
         "choices": [
           {
-            "text": "Non, ZE9a n'autorise le stationnement qu'aux voitures de tourisme; les motos en sont exclues",
+            "text": "Oui, les motocycles sont explicitement autorisés à stationner dans une zone ZE9a",
             "is_correct": true
           },
           {
-            "text": "Oui, les motos sont de petits véhicules et entrent donc aussi dans la catégorie 'voitures'",
+            "text": "Non, seules les voitures de tourisme peuvent stationner dans une zone ZE9a",
             "is_correct": false
           }
         ],
-        "explanation": "ZE9a est exclusivement pour les voitures de tourisme. Une moto n'est pas une voiture de tourisme et ne peut donc pas y stationner."
+        "explanation": "ZE9a autorise explicitement le stationnement des motocycles, aux côtés des voitures de tourisme, des véhicules à double usage et des minibus. Une moto peut donc y stationner."
       },
       "AR": {
         "question": "تسير على دراجة نارية عبر منطقة ZE9a. هل يمكنك الركن هناك؟",
         "choices": [
           {
-            "text": "لا، ZE9a تسمح بالركن للسيارات السياحية فقط؛ الدراجات النارية مستثناة",
+            "text": "نعم، الدراجات النارية مسموح لها صراحةً بالركن في منطقة ZE9a",
             "is_correct": true
           },
           {
-            "text": "نعم، الدراجات النارية مركبات صغيرة فتدخل تحت تصنيف 'سيارات'",
+            "text": "لا، السيارات السياحية فقط يجوز لها الركن في منطقة ZE9a",
             "is_correct": false
           }
         ],
-        "explanation": "ZE9a خاصة بالسيارات السياحية حصرًا. الدراجة النارية ليست سيارة سياحية، لذا لا يجوز لها الركن هناك."
+        "explanation": "ZE9a تسمح صراحةً بالركن للدراجات النارية إلى جانب السيارات السياحية وسيارات الاستخدام المزدوج والميني باص. وبالتالي يجوز للدراجة النارية الركن هناك."
       }
     }
   },
@@ -489,7 +561,7 @@
         "question": "U rijdt met een bestelwagen een ZE9a-zone in om goederen te leveren. Mag u er parkeren voor de levering?",
         "choices": [
           {
-            "text": "Neen, parkeren met een bestelwagen is verboden in een ZE9a-zone; enkel personenauto's zijn toegelaten",
+            "text": "Neen, parkeren met een bestelwagen is verboden in een ZE9a-zone; enkel de toegelaten voertuigen zijn toegelaten",
             "is_correct": true
           },
           {
@@ -497,13 +569,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "ZE9a beperkt het parkeren uitsluitend tot personenauto's. Een bestelwagen mag er niet parkeren, ook niet voor een levering, maar mag wel kort stilstaan voor laden/lossen."
+        "explanation": "ZE9a beperkt het parkeren uitsluitend tot motorfietsen, personenauto's, auto's voor dubbelgebruik en minibussen. Een bestelwagen mag er niet parkeren, ook niet voor een levering, maar mag wel kort stilstaan voor laden/lossen."
       },
       "EN": {
         "question": "You enter a ZE9a zone with a delivery van to make a delivery. May you park there for the delivery?",
         "choices": [
           {
-            "text": "No, parking a van is prohibited in a ZE9a zone; only passenger cars are permitted",
+            "text": "No, parking a van is prohibited in a ZE9a zone; only the permitted vehicle types are allowed",
             "is_correct": true
           },
           {
@@ -511,13 +583,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "ZE9a limits parking exclusively to passenger cars. A van may not park there, even for a delivery, but may stop briefly to load/unload."
+        "explanation": "ZE9a limits parking exclusively to motorcycles, passenger cars, dual-purpose vehicles and minibuses. A van may not park there, even for a delivery, but may stop briefly to load/unload."
       },
       "FR": {
         "question": "Vous entrez dans une zone ZE9a avec une camionnette de livraison. Pouvez-vous vous garer pour effectuer la livraison?",
         "choices": [
           {
-            "text": "Non, le stationnement d'une camionnette est interdit dans une zone ZE9a; seules les voitures sont autorisées",
+            "text": "Non, le stationnement d'une camionnette est interdit dans une zone ZE9a; seuls les types de véhicules autorisés sont admis",
             "is_correct": true
           },
           {
@@ -525,13 +597,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "ZE9a limite le stationnement exclusivement aux voitures de tourisme. Une camionnette ne peut pas se garer même pour une livraison mais peut s'arrêter brièvement pour charger/décharger."
+        "explanation": "ZE9a limite le stationnement exclusivement aux motocycles, voitures de tourisme, véhicules à double usage et minibus. Une camionnette ne peut pas se garer même pour une livraison mais peut s'arrêter brièvement pour charger/décharger."
       },
       "AR": {
         "question": "تدخل منطقة ZE9a بشاحنة توصيل بضاعة. هل يجوز الركن للتسليم؟",
         "choices": [
           {
-            "text": "لا، ركن الشاحنة محظور في منطقة ZE9a؛ السيارات السياحية فقط مسموحة",
+            "text": "لا، ركن الشاحنة محظور في منطقة ZE9a؛ فقط المركبات المسموح بها مقبولة",
             "is_correct": true
           },
           {
@@ -539,7 +611,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "ZE9a تقصر الركن على السيارات السياحية حصرًا. لا يجوز للشاحنة الركن هناك حتى للتسليم، لكن يجوز التوقف القصير للشحن/التفريغ."
+        "explanation": "ZE9a تقصر الركن على الدراجات النارية والسيارات السياحية وسيارات الاستخدام المزدوج والميني باص حصراً. لا يجوز للشاحنة الركن هناك حتى للتسليم، لكن يجوز التوقف المؤقت للشحن/التفريغ."
       }
     }
   }

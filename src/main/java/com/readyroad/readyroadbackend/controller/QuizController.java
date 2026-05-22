@@ -17,7 +17,6 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
-import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -170,7 +169,7 @@ public class QuizController {
             - Mastery Levels: BEGINNER (<50%), INTERMEDIATE (50-79%), ADVANCED (≥80%)
             - 24-hour cooldown enforced via last_shown_at timestamp
             - Category progress updated after each submission
-            """, security = @SecurityRequirement(name = "none"))
+            """)
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Answer submitted successfully with feedback", content = @Content(mediaType = "application/json", schema = @Schema(implementation = SubmitPracticeAnswerResponse.class))),
             @ApiResponse(responseCode = "400", description = "Invalid request - invalid questionId or selectedOptionId", content = @Content),

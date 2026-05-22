@@ -5,18 +5,20 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.security.authentication.AuthenticationCredentialsNotFoundException;
 import org.springframework.security.core.Authentication;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.TestPropertySource;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 /**
  * Security Verification Test for Feature B - PRODUCTION MODE
  *
- * This test proves that AuthenticationUtil returns null (triggering 401)
+ * This test proves that AuthenticationUtil rejects missing authentication
  * when spring.security.mode is set to "secure" (production mode)
  * and no valid authentication is provided.
  *
@@ -28,7 +30,7 @@ import static org.mockito.Mockito.when;
 @SpringBootTest
 @ActiveProfiles("test")
 @TestPropertySource(properties = {
-    "spring.security.mode=secure"  // Override to production mode
+        "spring.security.mode=secure" // Override to production mode
 })
 @DisplayName("Feature B Security Verification - Production Mode")
 public class FeatureBProductionSecurityTest {
@@ -41,41 +43,35 @@ public class FeatureBProductionSecurityTest {
     // =========================================================================
 
     @Test
-    @DisplayName("PROOF: AuthenticationUtil returns null in secure mode without authentication")
-    void testAuthenticationUtil_SecureMode_ReturnsNull_NoAuth() {
+    @DisplayName("PROOF: AuthenticationUtil rejects missing authentication in secure mode")
+    void testAuthenticationUtil_SecureMode_RejectsNoAuth() {
         // Given: spring.security.mode=secure (set via @TestPropertySource)
         // And: No authentication provided
 
-        // When: Extract user ID with null authentication
-        Long userId = authenticationUtil.extractUserId(null);
-
-        // Then: Should return null (which triggers 401 in controllers)
-        assertThat(userId)
-            .as("Production mode should return null without authentication, triggering 401")
-            .isNull();
+        // When & Then: Missing authentication is rejected immediately
+        assertThatThrownBy(() -> authenticationUtil.extractUserId(null))
+                .isInstanceOf(AuthenticationCredentialsNotFoundException.class)
+                .hasMessage("Authentication required. Please login.");
 
         // Verify secure mode is active
         assertThat(authenticationUtil.isDevMode())
-            .as("Should not be in dev mode")
-            .isFalse();
+                .as("Should not be in dev mode")
+                .isFalse();
     }
 
     @Test
-    @DisplayName("PROOF: AuthenticationUtil returns null in secure mode with anonymous user")
-    void testAuthenticationUtil_SecureMode_ReturnsNull_AnonymousUser() {
+    @DisplayName("PROOF: AuthenticationUtil rejects anonymous user in secure mode")
+    void testAuthenticationUtil_SecureMode_RejectsAnonymousUser() {
         // Given: spring.security.mode=secure
         // And: Anonymous authentication
         Authentication mockAuth = mock(Authentication.class);
         when(mockAuth.getPrincipal()).thenReturn("anonymousUser");
         when(mockAuth.isAuthenticated()).thenReturn(false);
 
-        // When: Extract user ID with anonymous authentication
-        Long userId = authenticationUtil.extractUserId(mockAuth);
-
-        // Then: Should return null (triggering 401)
-        assertThat(userId)
-            .as("Production mode should return null for anonymous user, triggering 401")
-            .isNull();
+        // When & Then: Anonymous authentication is rejected immediately
+        assertThatThrownBy(() -> authenticationUtil.extractUserId(mockAuth))
+                .isInstanceOf(AuthenticationCredentialsNotFoundException.class)
+                .hasMessage("Authentication required. Anonymous access not permitted.");
     }
 
     @Test
@@ -88,8 +84,8 @@ public class FeatureBProductionSecurityTest {
 
         // Then: Should return true
         assertThat(required)
-            .as("Production mode should require authentication")
-            .isTrue();
+                .as("Production mode should require authentication")
+                .isTrue();
     }
 
     @Test
@@ -102,7 +98,7 @@ public class FeatureBProductionSecurityTest {
 
         // Then: Should be false (not in dev mode)
         assertThat(isDevMode)
-            .as("Security mode should be 'secure', not 'dev'")
-            .isFalse();
+                .as("Security mode should be 'secure', not 'dev'")
+                .isFalse();
     }
 }

@@ -215,10 +215,10 @@ public class FeatureAExamSimulationBDDTest {
                         quizQuestionRepository.deleteAll();
 
                         // When & Then: User requests to start a new exam
-                        // The request should be rejected with IllegalStateException
+                        // The request should be rejected with a conflict response exception
                         assertThatThrownBy(() -> examService.startExamSimulation(testUserId))
-                                        .isInstanceOf(IllegalStateException.class)
-                                        .hasMessageContaining("Insufficient valid questions");
+                                        .isInstanceOf(org.springframework.web.server.ResponseStatusException.class)
+                                        .hasMessageContaining("Not enough easy questions");
 
                         // Note: Response status code 409 is handled by controller exception handler
                 }
@@ -438,7 +438,7 @@ public class FeatureAExamSimulationBDDTest {
                                         firstQuestion.getQuestionId(),
                                         request, testUserId))
                                         .isInstanceOf(ExamNotActiveException.class)
-                                        .hasMessageContaining("Cannot submit answer");
+                                        .hasMessageContaining("exam status is COMPLETED");
 
                         // Note: Response status 409 is handled by controller exception handler
                 }
@@ -615,8 +615,8 @@ public class FeatureAExamSimulationBDDTest {
                                         .findByExamIdOrderByQuestionOrder(exam1.getId());
 
                         // Answer 41 correctly, 9 incorrectly
-                        answerQuestionsCorrectly(exam1, questions1, 41);
-                        answerQuestionsIncorrectly(exam1, questions1, 41, 50);
+                        answerQuestionsCorrectly(exam1, questions1, 41, testUserId);
+                        answerQuestionsIncorrectly(exam1, questions1, 41, 50, testUserId);
 
                         // When: Exam result is computed
                         exam1.setStatus(ExamSimulation.ExamStatus.COMPLETED);
@@ -643,8 +643,8 @@ public class FeatureAExamSimulationBDDTest {
                                         .findByExamIdOrderByQuestionOrder(exam.getId());
 
                         // Answer 40 correctly, 10 incorrectly
-                        answerQuestionsCorrectly(exam, questions, 40);
-                        answerQuestionsIncorrectly(exam, questions, 40, 50);
+                        answerQuestionsCorrectly(exam, questions, 40, testUserId);
+                        answerQuestionsIncorrectly(exam, questions, 40, 50, testUserId);
 
                         // When: Exam result is computed
                         exam.setStatus(ExamSimulation.ExamStatus.COMPLETED);
@@ -768,10 +768,10 @@ public class FeatureAExamSimulationBDDTest {
                                 .findByExamIdOrderByQuestionOrder(exam.getId());
 
                 // Answer questions correctly
-                answerQuestionsCorrectly(exam, questions, correctAnswers);
+                answerQuestionsCorrectly(exam, questions, correctAnswers, userId);
 
                 // Answer remaining questions incorrectly
-                answerQuestionsIncorrectly(exam, questions, correctAnswers, 50);
+                answerQuestionsIncorrectly(exam, questions, correctAnswers, 50, userId);
 
                 // Mark as completed
                 exam.setStatus(ExamSimulation.ExamStatus.COMPLETED);
@@ -783,7 +783,11 @@ public class FeatureAExamSimulationBDDTest {
                 return exam;
         }
 
-        private void answerQuestionsCorrectly(ExamSimulation exam, List<ExamSimulationQuestion> questions, int count) {
+        private void answerQuestionsCorrectly(
+                        ExamSimulation exam,
+                        List<ExamSimulationQuestion> questions,
+                        int count,
+                        Long userId) {
                 for (int i = 0; i < count; i++) {
                         ExamSimulationQuestion esq = questions.get(i);
                         QuizQuestion question = quizQuestionRepository.findById(esq.getQuestionId())
@@ -797,13 +801,14 @@ public class FeatureAExamSimulationBDDTest {
                                         .selectedOptionId(correctOption.getId())
                                         .build();
 
-                        examService.submitAnswer(exam.getId(), esq.getQuestionId(), request, testUserId);
+                        examService.submitAnswer(exam.getId(), esq.getQuestionId(), request, userId);
                 }
         }
 
         private void answerQuestionsIncorrectly(ExamSimulation exam, List<ExamSimulationQuestion> questions,
                         int startIndex,
-                        int endIndex) {
+                        int endIndex,
+                        Long userId) {
                 for (int i = startIndex; i < endIndex; i++) {
                         ExamSimulationQuestion esq = questions.get(i);
                         QuizQuestion question = quizQuestionRepository.findById(esq.getQuestionId())
@@ -817,7 +822,7 @@ public class FeatureAExamSimulationBDDTest {
                                         .selectedOptionId(wrongOption.getId())
                                         .build();
 
-                        examService.submitAnswer(exam.getId(), esq.getQuestionId(), request, testUserId);
+                        examService.submitAnswer(exam.getId(), esq.getQuestionId(), request, userId);
                 }
         }
 }

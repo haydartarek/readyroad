@@ -1,6 +1,6 @@
 [
   {
-    "question_id": "ZONEF113_Q01",
+    "question_id": "Zone-F111-Einde_Q01",
     "type": "WHAT_DOES_IT_MEAN",
     "difficulty": "EASY",
     "is_critical": false,
@@ -22,7 +22,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "ZONE-F113 duidt het einde aan van een fietsstraat-zone. Voorbij dit bord gelden de speciale regels niet meer: auto's hoeven zich niet langer aan te passen aan fietsers en fietsers zijn geen primaire weggebruikers meer."
+        "explanation": "Zone-F111-Einde duidt het einde aan van een fietsstraat-zone. Voorbij dit bord gelden de speciale regels niet meer: auto's hoeven zich niet langer aan te passen aan fietsers en fietsers zijn geen primaire weggebruikers meer."
       },
       "EN": {
         "question": "What does this traffic sign mean?",
@@ -40,7 +40,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "ZONE-F113 marks the end of a cycling street zone. Beyond this sign the special rules no longer apply: cars no longer need to adapt to cyclists and cyclists are no longer primary road users."
+        "explanation": "Zone-F111-Einde marks the end of a cycling street zone. Beyond this sign the special rules no longer apply: cars no longer need to adapt to cyclists and cyclists are no longer primary road users."
       },
       "FR": {
         "question": "Que signifie ce panneau de signalisation?",
@@ -58,79 +58,118 @@
             "is_correct": false
           }
         ],
-        "explanation": "ZONE-F113 marque la fin d'une zone rue cyclable. Au-delà de ce panneau les règles spéciales ne s'appliquent plus: les voitures n'ont plus à s'adapter aux cyclistes et les cyclistes ne sont plus les usagers principaux."
+        "explanation": "Zone-F111-Einde marque la fin d'une zone rue cyclable. Au-delà de ce panneau les règles spéciales ne s'appliquent plus: les voitures n'ont plus à s'adapter aux cyclistes et les cyclistes ne sont plus les usagers principaux."
       },
       "AR": {
         "question": "ما معنى هذه العلامة المرورية؟",
         "choices": [
           {
-            "text": "نهاية منطقة شارع الدراجات: القواعد الخاصة لم تعد سارية",
+            "text": "نهاية منطقة شارع الدراجات: القواعد الخاصة بالدراجين كمستخدمين أساسيين لم تعد سارية",
             "is_correct": true
           },
           {
             "text": "نهاية منطقة حظر التجاوز لجميع المركبات",
             "is_correct": false
           },
-          { "text": "نهاية منطقة قيد سرعة", "is_correct": false }
+          {
+            "text": "نهاية منطقة قيد سرعة",
+            "is_correct": false
+          }
         ],
-        "explanation": "ZONE-F113 تحدد نهاية منطقة شارع الدراجات. بعد هذه العلامة المرورية لا تسري القواعد الخاصة. السيارات لم تعد بحاجة لتكييف نفسها للدراجيين."
+        "explanation": "Zone-F111-Einde تحدد نهاية منطقة شارع الدراجات. بعد هذه العلامة لا تسري القواعد الخاصة: السيارات لم تعد بحاجة لتكييف نفسها مع الدراجين والدراجون لم يعودوا مستخدمين أساسيين."
       }
     }
   },
   {
-    "question_id": "ZONEF113_Q02",
+    "question_id": "Zone-F111-Einde_Q02",
     "type": "WHICH_SIGN",
     "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Tot welke categorie verkeersborden behoort dit bord?",
+        "question": "Tot welke categorie verkeersborden behoort bord Zone-F111-Einde?",
         "choices": [
-          { "text": "Zoneborden", "is_correct": true },
-          { "text": "Verbodsborden", "is_correct": false },
-          { "text": "Parkeerborden", "is_correct": false }
+          {
+            "text": "Zoneborden",
+            "is_correct": true
+          },
+          {
+            "text": "Verbodsborden",
+            "is_correct": false
+          },
+          {
+            "text": "Parkeerborden",
+            "is_correct": false
+          }
         ],
-        "explanation": "ZONE-F113 is een zonebord dat behoort tot deze categorie."
+        "explanation": "Zone-F111-Einde is een zonebord dat het einde van een fietsstraatzone markeert. Zoneborden regelen de in- en uitgang van een volledig afgebakend gebied met eigen verkeersregels."
       },
       "EN": {
-        "question": "To which category of traffic signs does this sign belong?",
+        "question": "To which category of traffic signs does sign Zone-F111-Einde belong?",
         "choices": [
-          { "text": "Zone signs", "is_correct": true },
-          { "text": "Prohibition signs", "is_correct": false },
-          { "text": "Parking signs", "is_correct": false }
+          {
+            "text": "Zone signs",
+            "is_correct": true
+          },
+          {
+            "text": "Prohibition signs",
+            "is_correct": false
+          },
+          {
+            "text": "Parking signs",
+            "is_correct": false
+          }
         ],
-        "explanation": "ZONE-F113 is a zone sign belonging to this category."
+        "explanation": "Zone-F111-Einde is a zone sign that marks the end of a bicycle street zone. Zone signs regulate the entry and exit of a fully defined area with its own traffic rules."
       },
       "FR": {
-        "question": "À quelle catégorie de panneaux appartient ce panneau?",
+        "question": "À quelle catégorie de panneaux appartient le panneau Zone-F111-Einde?",
         "choices": [
-          { "text": "Panneaux de zone", "is_correct": true },
-          { "text": "Panneaux d'interdiction", "is_correct": false },
-          { "text": "Panneaux de stationnement", "is_correct": false }
+          {
+            "text": "Panneaux de zone",
+            "is_correct": true
+          },
+          {
+            "text": "Panneaux d'interdiction",
+            "is_correct": false
+          },
+          {
+            "text": "Panneaux de stationnement",
+            "is_correct": false
+          }
         ],
-        "explanation": "ZONE-F113 est un panneau de zone appartenant à cette catégorie."
+        "explanation": "Zone-F111-Einde est un panneau de zone qui marque la fin d'une zone rue cyclable. Les panneaux de zone régulent l'entrée et la sortie d'une zone entièrement délimitée avec ses propres règles de circulation."
       },
       "AR": {
-        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
+        "question": "إلى أي فئة تنتمي علامة Zone-F111-Einde؟",
         "choices": [
-          { "text": "علامات المنطقة", "is_correct": true },
-          { "text": "علامات الحظر", "is_correct": false },
-          { "text": "علامات الوقوف", "is_correct": false }
+          {
+            "text": "علامات المنطقة",
+            "is_correct": true
+          },
+          {
+            "text": "علامات الحظر",
+            "is_correct": false
+          },
+          {
+            "text": "علامات الوقوف",
+            "is_correct": false
+          }
         ],
-        "explanation": "ZONE-F113 علامة مرورية منطقة تنتمي إلى هذه الفئة."
+        "explanation": "Zone-F111-Einde علامة منطقة تحدد نهاية منطقة شارع الدراجات. تُنظِّم علامات المنطقة دخول وخروج منطقة محددة بأكملها ذات قواعد مرور خاصة."
       }
     }
   },
   {
-    "question_id": "ZONEF113_Q03",
+    "question_id": "Zone-F111-Einde_Q03",
     "type": "HAZARD_IDENTIFICATION",
     "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat verandert er op het moment dat u het bord ZONE-F113 passeert?",
+        "question": "Wat verandert er op het moment dat u het bord Zone-F111-Einde passeert?",
         "choices": [
           {
             "text": "De fietsstraat-zone eindigt: normale verkeersregels hervatten en fietsers zijn niet langer primaire weggebruikers",
@@ -145,10 +184,10 @@
             "is_correct": false
           }
         ],
-        "explanation": "ZONE-F113 beëindigt de fietsstraat-zone onmiddellijk. Na dit bord hervatten de normale verkeersregels volledig."
+        "explanation": "Zone-F111-Einde beëindigt de fietsstraat-zone onmiddellijk. Na dit bord hervatten de normale verkeersregels volledig en mogen motorvoertuigen fietsers opnieuw inhalen."
       },
       "EN": {
-        "question": "What changes at the moment you pass the ZONE-F113 sign?",
+        "question": "What changes at the moment you pass sign Zone-F111-Einde?",
         "choices": [
           {
             "text": "The cycling street zone ends: normal traffic rules resume and cyclists are no longer primary road users",
@@ -163,10 +202,10 @@
             "is_correct": false
           }
         ],
-        "explanation": "ZONE-F113 ends the cycling street zone immediately. After this sign normal traffic rules resume fully."
+        "explanation": "Zone-F111-Einde ends the cycling street zone immediately. After this sign normal traffic rules resume fully and motor vehicles may overtake cyclists again."
       },
       "FR": {
-        "question": "Qu'est-ce qui change au moment où vous passez le panneau ZONE-F113?",
+        "question": "Qu'est-ce qui change au moment où vous passez le panneau Zone-F111-Einde?",
         "choices": [
           {
             "text": "La zone rue cyclable se termine: les règles normales reprennent et les cyclistes ne sont plus les usagers principaux",
@@ -181,395 +220,398 @@
             "is_correct": false
           }
         ],
-        "explanation": "ZONE-F113 met fin immédiatement à la zone rue cyclable. Après ce panneau les règles normales reprennent entièrement."
+        "explanation": "Zone-F111-Einde met fin immédiatement à la zone rue cyclable. Après ce panneau les règles normales reprennent entièrement et les véhicules motorisés peuvent à nouveau dépasser les cyclistes."
       },
       "AR": {
-        "question": "ماذا يتغير لحظة مرورك بعلامة مرورية ZONE-F113؟",
+        "question": "ماذا يتغير لحظة مرورك بعلامة Zone-F111-Einde؟",
         "choices": [
           {
             "text": "تنتهي منطقة شارع الدراجات: تعود القواعد العادية والدراجون لم يعودوا مستخدمين أساسيين",
             "is_correct": true
           },
           {
-            "text": "تدخل منطقة جديدة حيث للدراجيين أولوية مطلقة",
+            "text": "تدخل منطقة جديدة حيث للدراجيين أولوية مطلقة على جميع المركبات",
             "is_correct": false
           },
           {
-            "text": "يجب مراعاة الدراجيين كمستخدمين أساسيين لمسافة 50 مترًا بعدها",
+            "text": "يجب مراعاة الدراجيين كمستخدمين أساسيين لمسافة 50 متراً بعد العلامة",
             "is_correct": false
           }
         ],
-        "explanation": "ZONE-F113 تنهي منطقة شارع الدراجات فورًا. بعد هذه العلامة المرورية تعود القواعد العادية بشكل كامل."
+        "explanation": "Zone-F111-Einde تنهي منطقة شارع الدراجات فوراً. بعد هذه العلامة تعود القواعد العادية بشكل كامل ويجوز للمركبات ذات المحرك تجاوز الدراجين مجدداً."
       }
     }
   },
   {
-    "question_id": "ZONEF113_Q04",
+    "question_id": "Zone-F111-Einde_Q04",
     "type": "WHAT_MUST_YOU_DO",
     "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U passeert ZONE-F113 en rijdt verder. Welke regels gelden nu voor u als autobestuurder ten opzichte van fietsers?",
+        "question": "U passeert Zone-F111-Einde en rijdt verder. Welke regels gelden nu voor u als autobestuurder ten opzichte van fietsers?",
         "choices": [
           {
-            "text": "De normale verkeersregels gelden: u bent niet meer verplicht de snelheid van fietsers te volgen",
+            "text": "De normale verkeersregels; u mag fietsers inhalen mits u voldoende zijdelingse afstand houdt",
             "is_correct": true
           },
           {
-            "text": "U moet nog steeds achter fietsers blijven en hun tempo aanhouden",
+            "text": "U moet nog steeds uw snelheid aanpassen aan de fietsers tot u een ander bord ziet",
             "is_correct": false
           },
           {
-            "text": "U moet fietsers waarschuwen met uw claxon voor u hen inhaalt",
+            "text": "U mag fietsers altijd inhalen ongeacht de afstand, want de fietsstraat is voorbij",
             "is_correct": false
           }
         ],
-        "explanation": "Na ZONE-F113 gelden de normale verkeersregels. De verplichting om de snelheid aan te passen aan fietsers en hen niet in te halen vervalt."
+        "explanation": "Na Zone-F111-Einde gelden de gewone verkeersregels. U mag fietsers inhalen maar moet hierbij altijd de vereiste zijdelingse veiligheidsafstand respecteren zoals op elke andere weg."
       },
       "EN": {
-        "question": "You pass ZONE-F113 and drive on. Which rules now apply to you as a car driver regarding cyclists?",
+        "question": "You pass Zone-F111-Einde and drive on. Which rules now apply to you as a car driver regarding cyclists?",
         "choices": [
           {
-            "text": "Normal traffic rules apply: you are no longer required to follow the speed of cyclists",
+            "text": "Normal traffic rules; you may overtake cyclists provided you maintain sufficient lateral distance",
             "is_correct": true
           },
           {
-            "text": "You must still stay behind cyclists and maintain their pace",
+            "text": "You must still adapt your speed to the cyclists until you see another sign",
             "is_correct": false
           },
           {
-            "text": "You must warn cyclists with your horn before overtaking them",
+            "text": "You may always overtake cyclists regardless of distance because the bicycle street is over",
             "is_correct": false
           }
         ],
-        "explanation": "After ZONE-F113 normal traffic rules apply. The obligation to adapt speed to cyclists and not to overtake them lapses."
+        "explanation": "After Zone-F111-Einde normal traffic rules apply. You may overtake cyclists but must always respect the required lateral safety distance as on any other road."
       },
       "FR": {
-        "question": "Vous passez ZONE-F113 et continuez. Quelles règles s'appliquent maintenant à vous en tant que conducteur de voiture vis-à-vis des cyclistes?",
+        "question": "Vous passez Zone-F111-Einde et continuez. Quelles règles s'appliquent maintenant à vous en tant qu'automobiliste vis-à-vis des cyclistes?",
         "choices": [
           {
-            "text": "Les règles normales s'appliquent: vous n'êtes plus obligé de suivre la vitesse des cyclistes",
+            "text": "Les règles normales; vous pouvez dépasser les cyclistes à condition de maintenir une distance latérale suffisante",
             "is_correct": true
           },
           {
-            "text": "Vous devez encore rester derrière les cyclistes et maintenir leur rythme",
+            "text": "Vous devez encore adapter votre vitesse aux cyclistes jusqu'à ce que vous voyiez un autre panneau",
             "is_correct": false
           },
           {
-            "text": "Vous devez avertir les cyclistes avec votre klaxon avant de les dépasser",
+            "text": "Vous pouvez toujours dépasser les cyclistes quelle que soit la distance car la rue cyclable est terminée",
             "is_correct": false
           }
         ],
-        "explanation": "Après ZONE-F113 les règles normales s'appliquent. L'obligation d'adapter la vitesse aux cyclistes et de ne pas les dépasser disparaît."
+        "explanation": "Après Zone-F111-Einde les règles normales de circulation s'appliquent. Vous pouvez dépasser les cyclistes mais devez toujours respecter la distance de sécurité latérale requise comme sur toute autre route."
       },
       "AR": {
-        "question": "تجاوزت ZONE-F113 واستمررت. ما القواعد التي تسري الآن تجاه الدراجيين؟",
+        "question": "تجاوزت Zone-F111-Einde واستمررت في السير. ما القواعد التي تسري عليك الآن كسائق تجاه الدراجين؟",
         "choices": [
           {
-            "text": "تسري القواعد العادية: لم تعد ملزمًا باتباع سرعة الدراجيين",
+            "text": "قواعد المرور العادية؛ يجوز تجاوز الدراجين شريطة الحفاظ على مسافة جانبية كافية",
             "is_correct": true
           },
           {
-            "text": "يجب البقاء خلف الدراجيين واتباع وتيرتهم",
+            "text": "لا يزال يجب عليك تكييف سرعتك مع الدراجين حتى ترى علامة أخرى",
             "is_correct": false
           },
-          { "text": "يجب تنبيه الدراجيين قبل تجاوزهم", "is_correct": false }
+          {
+            "text": "يجوز تجاوز الدراجين دائماً بصرف النظر عن المسافة لأن شارع الدراجات انتهى",
+            "is_correct": false
+          }
         ],
-        "explanation": "بعد ZONE-F113 تسري القواعد العادية. التزام تكييف السرعة للدراجيين وعدم تجاوزهم ينتهي."
+        "explanation": "بعد Zone-F111-Einde تسري قواعد المرور العادية. يجوز تجاوز الدراجين لكن يجب دائماً احترام مسافة الأمان الجانبية المطلوبة كما في أي طريق آخر."
       }
     }
   },
   {
-    "question_id": "ZONEF113_Q05",
-    "type": "WHAT_MUST_YOU_DO",
+    "question_id": "Zone-F111-Einde_Q05",
+    "type": "DRIVER_ACTION",
     "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Welk effect heeft ZONE-F113 op fietsers die net de zone verlaten?",
+        "question": "U rijdt vlak achter een fietser in een fietsstraat. U ziet Zone-F111-Einde. Wat doet u?",
         "choices": [
           {
-            "text": "Fietsers zijn na ZONE-F113 gewone weggebruikers; zij kunnen de rijbaan niet meer volledig bezetten zonder rekening te houden met auto's",
+            "text": "U haalt de fietser pas in nadat u het bord volledig gepasseerd bent en mits voldoende ruimte",
             "is_correct": true
           },
           {
-            "text": "Fietsers behoudenspeciale rijbaanprioriteit ook na de zone",
+            "text": "U begint al met inhalen vlak voor het bord want de fietsstraat eindigt toch",
             "is_correct": false
           },
           {
-            "text": "Fietsers moeten na ZONE-F113 onmiddellijk naar het fietspad rijden",
+            "text": "U moet wachten tot de fietser zelf van de weg gaat vooraleer u mag inhalen",
             "is_correct": false
           }
         ],
-        "explanation": "Na ZONE-F113 gelden normale verkeersregels. Fietsers zijn gewone weggebruikers en moeten de rijbaan delen conform de normale regelgeving."
+        "explanation": "Het inhaalbod geldt tot en met het bord Zone-F111-Einde. Pas nadat u het bord volledig gepasseerd bent en u zich buiten de fietsstraatzone bevindt, mag u inhalen mits voldoende ruimte."
       },
       "EN": {
-        "question": "What effect does ZONE-F113 have on cyclists who just left the zone?",
+        "question": "You are driving just behind a cyclist in a bicycle street. You see Zone-F111-Einde. What do you do?",
         "choices": [
           {
-            "text": "After ZONE-F113 cyclists are ordinary road users; they can no longer occupy the full lane without regard for cars",
+            "text": "You overtake the cyclist only after fully passing the sign and provided there is enough room",
             "is_correct": true
           },
           {
-            "text": "Cyclists retain special lane priority even after leaving the zone",
+            "text": "You start overtaking just before the sign because the bicycle street is ending anyway",
             "is_correct": false
           },
           {
-            "text": "Cyclists must immediately move to the cycle path after ZONE-F113",
+            "text": "You must wait until the cyclist moves off the road themselves before you may overtake",
             "is_correct": false
           }
         ],
-        "explanation": "After ZONE-F113 normal traffic rules apply. Cyclists are ordinary road users and must share the lane in accordance with normal regulations."
+        "explanation": "The overtaking ban applies up to and including the Zone-F111-Einde sign. Only after you have fully passed the sign and are outside the bicycle street zone may you overtake provided there is enough room."
       },
       "FR": {
-        "question": "Quel effet a ZONE-F113 sur les cyclistes qui viennent de quitter la zone?",
+        "question": "Vous roulez juste derrière un cycliste dans une rue cyclable. Vous voyez Zone-F111-Einde. Que faites-vous?",
         "choices": [
           {
-            "text": "Après ZONE-F113 les cyclistes sont des usagers ordinaires; ils ne peuvent plus occuper toute la voie sans tenir compte des voitures",
+            "text": "Vous dépassez le cycliste seulement après avoir entièrement dépassé le panneau et s'il y a suffisamment de place",
             "is_correct": true
           },
           {
-            "text": "Les cyclistes conservent une priorité spéciale sur la voie même après la zone",
+            "text": "Vous commencez à dépasser juste avant le panneau car la rue cyclable se termine de toute façon",
             "is_correct": false
           },
           {
-            "text": "Les cyclistes doivent immédiatement se rendre sur la piste cyclable après ZONE-F113",
+            "text": "Vous devez attendre que le cycliste quitte lui-même la route avant de pouvoir dépasser",
             "is_correct": false
           }
         ],
-        "explanation": "Après ZONE-F113 les règles normales s'appliquent. Les cyclistes sont des usagers ordinaires et doivent partager la voie conformément à la réglementation normale."
+        "explanation": "L'interdiction de dépassement s'applique jusqu'au panneau Zone-F111-Einde inclus. Ce n'est qu'après avoir entièrement dépassé le panneau et être sorti de la zone rue cyclable que vous pouvez dépasser s'il y a suffisamment de place."
       },
       "AR": {
-        "question": "ما تأثير ZONE-F113 على الدراجيين بعد مغادرتهم المنطقة؟",
+        "question": "تسير مباشرة خلف دراج في شارع الدراجات. ترى Zone-F111-Einde. ماذا تفعل؟",
         "choices": [
           {
-            "text": "بعد ZONE-F113 الدراجون مستخدمون عاديون ولا يمكنهم الاستئثار بالمسار بأكمله",
+            "text": "تتجاوز الدراج فقط بعد تجاوز العلامة بالكامل وإذا كان هناك مساحة كافية",
             "is_correct": true
           },
           {
-            "text": "يحتفظ الدراجون بأولوية خاصة حتى بعد المنطقة",
+            "text": "تبدأ بالتجاوز قبيل العلامة لأن شارع الدراجات ينتهي على أي حال",
             "is_correct": false
           },
           {
-            "text": "يجب على الدراجيين التوجه فورًا إلى مسار الدراجات",
+            "text": "يجب أن تنتظر حتى يغادر الدراج الطريق بنفسه قبل أن تتجاوز",
             "is_correct": false
           }
         ],
-        "explanation": "بعد ZONE-F113 تسري القواعد العادية. الدراجون مستخدمون عاديون ويجب مشاركة الطريق وفق اللوائح العادية."
+        "explanation": "حظر التجاوز ساري حتى علامة Zone-F111-Einde شاملةً. فقط بعد تجاوز العلامة بالكامل وخروجك من منطقة شارع الدراجات يجوز لك التجاوز إذا كان هناك مساحة كافية."
       }
     }
   },
   {
-    "question_id": "ZONEF113_Q06",
-    "type": "WHAT_MUST_YOU_DO",
+    "question_id": "Zone-F111-Einde_Q06",
+    "type": "SIGN_PLACEMENT_DISTANCE",
     "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat is het verband tussen ZONE-F111 en ZONE-F113?",
+        "question": "Waar wordt bord Zone-F111-Einde geplaatst bij een fietsstraat met meerdere uitgangen?",
         "choices": [
           {
-            "text": "ZONE-F111 start de fietsstraat-zone en ZONE-F113 beëindigt ze; samen begrenzen zij het geldingsgebied",
+            "text": "Aan elke uitgang van de fietsstraatzone zodat iedere bestuurder die de zone verlaat het bord ziet",
             "is_correct": true
           },
           {
-            "text": "ZONE-F113 is een tussentijds bord dat alleen de snelheid van de zone aanpast",
+            "text": "Enkel aan de hoofduitgang; bestuurders moeten zelf weten wanneer de zone eindigt via de andere uitgangen",
             "is_correct": false
           },
           {
-            "text": "ZONE-F111 en ZONE-F113 zijn afzonderlijke regels die onafhankelijk van elkaar werken",
+            "text": "Het bord wordt 50 meter voor de grens van de zone geplaatst als waarschuwing",
             "is_correct": false
           }
         ],
-        "explanation": "ZONE-F111 en ZONE-F113 vormen samen de afbakening van de fietsstraat-zone. ZONE-F111 markeert de ingang en ZONE-F113 de uitgang. De speciale regels gelden enkel binnen dit gebied."
+        "explanation": "Zoals bij alle zoneborden wordt Zone-F111-Einde aan elke uitgang van de fietsstraatzone geplaatst. Zo weet elke bestuurder die de zone verlaat dat de speciale fietsstraatregels niet meer gelden."
       },
       "EN": {
-        "question": "What is the relationship between ZONE-F111 and ZONE-F113?",
+        "question": "Where is sign Zone-F111-Einde placed at a bicycle street with multiple exits?",
         "choices": [
           {
-            "text": "ZONE-F111 starts the cycling street zone and ZONE-F113 ends it; together they delimit the area of application",
+            "text": "At every exit of the bicycle street zone so that every driver leaving the zone sees the sign",
             "is_correct": true
           },
           {
-            "text": "ZONE-F113 is an intermediate sign that only adjusts the speed of the zone",
+            "text": "Only at the main exit; drivers must know for themselves when the zone ends via other exits",
             "is_correct": false
           },
           {
-            "text": "ZONE-F111 and ZONE-F113 are separate rules that work independently of each other",
+            "text": "The sign is placed 50 metres before the zone boundary as a warning",
             "is_correct": false
           }
         ],
-        "explanation": "ZONE-F111 and ZONE-F113 together define the boundaries of the cycling street zone. ZONE-F111 marks the entrance and ZONE-F113 the exit. The special rules apply only within this area."
+        "explanation": "As with all zone signs Zone-F111-Einde is placed at every exit of the bicycle street zone. This way every driver leaving the zone knows that the special bicycle street rules no longer apply."
       },
       "FR": {
-        "question": "Quel est le rapport entre ZONE-F111 et ZONE-F113?",
+        "question": "Où le panneau Zone-F111-Einde est-il placé dans une rue cyclable avec plusieurs sorties?",
         "choices": [
           {
-            "text": "ZONE-F111 commence la zone rue cyclable et ZONE-F113 la termine; ensemble ils délimitent la zone d'application",
+            "text": "À chaque sortie de la zone rue cyclable afin que chaque conducteur quittant la zone voie le panneau",
             "is_correct": true
           },
           {
-            "text": "ZONE-F113 est un panneau intermédiaire qui ajuste seulement la vitesse de la zone",
+            "text": "Uniquement à la sortie principale; les conducteurs doivent savoir eux-mêmes quand la zone se termine via les autres sorties",
             "is_correct": false
           },
           {
-            "text": "ZONE-F111 et ZONE-F113 sont des règles séparées qui fonctionnent indépendamment",
+            "text": "Le panneau est placé 50 mètres avant la limite de zone comme avertissement",
             "is_correct": false
           }
         ],
-        "explanation": "ZONE-F111 et ZONE-F113 définissent ensemble les limites de la zone rue cyclable. ZONE-F111 marque l'entrée et ZONE-F113 la sortie. Les règles spéciales ne s'appliquent qu'à l'intérieur de cette zone."
+        "explanation": "Comme pour tous les panneaux de zone Zone-F111-Einde est placé à chaque sortie de la zone rue cyclable. Ainsi chaque conducteur quittant la zone sait que les règles spéciales de la rue cyclable ne s'appliquent plus."
       },
       "AR": {
-        "question": "ما العلاقة بين ZONE-F111 وZONE-F113؟",
+        "question": "أين تُوضع علامة Zone-F111-Einde في شارع دراجات ذي مخارج متعددة؟",
         "choices": [
           {
-            "text": "ZONE-F111 تبدأ منطقة شارع الدراجات وZONE-F113 تنهيها؛ معًا يحددان نطاق التطبيق",
+            "text": "عند كل مخرج من منطقة شارع الدراجات حتى يرى كل سائق مغادر للمنطقة العلامة",
             "is_correct": true
           },
           {
-            "text": "ZONE-F113 علامة مرورية وسيطة تعدل السرعة فقط",
+            "text": "فقط عند المخرج الرئيسي؛ على السائقين معرفة متى تنتهي المنطقة عبر المخارج الأخرى بأنفسهم",
             "is_correct": false
           },
           {
-            "text": "ZONE-F111 وZONE-F113 قواعد منفصلة تعمل بشكل مستقل",
+            "text": "تُوضع العلامة على بُعد 50 متراً قبل حدود المنطقة كتحذير",
             "is_correct": false
           }
         ],
-        "explanation": "ZONE-F111 وZONE-F113 معًا يحددان حدود منطقة شارع الدراجات. القواعد الخاصة تسري فقط داخل هذه المنطقة."
+        "explanation": "كما هو الحال مع جميع علامات المنطقة تُوضع Zone-F111-Einde عند كل مخرج من منطقة شارع الدراجات. هكذا يعلم كل سائق مغادر للمنطقة أن القواعد الخاصة بشارع الدراجات لم تعد سارية."
       }
     }
   },
   {
-    "question_id": "ZONEF113_Q07",
+    "question_id": "Zone-F111-Einde_Q07",
     "type": "IS_IT_ALLOWED",
     "difficulty": "HARD",
     "is_critical": true,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U passeert ZONE-F113 en ziet een fietser voor u rijden. Moet u nog steeds zijn snelheid volgen en hem niet inhalen?",
+        "question": "Na Zone-F111-Einde rijdt een fietser nog op de rijbaan voor u. Mag u hem onmiddellijk inhalen zonder enige beperking?",
         "choices": [
           {
-            "text": "Neen, na ZONE-F113 gelden de normale inhaalsregels; u bent niet meer verplicht het tempo van de fietser aan te houden",
+            "text": "Neen, u mag de fietser inhalen maar moet de wettelijk vereiste zijdelingse veiligheidsafstand respecteren",
             "is_correct": true
           },
           {
-            "text": "Ja, de aanpassingsplicht blijft gelden voor de eerste 100 meter na het bord",
+            "text": "Ja, buiten de fietsstraat gelden geen bijzondere regels meer voor fietsers dus inhalen mag zonder beperking",
             "is_correct": false
           }
         ],
-        "explanation": "ZONE-F113 beëindigt de fietsstraat-zone onmiddellijk. De verplichting om het tempo van fietsers aan te houden en hen niet in te halen geldt niet meer na dit bord."
+        "explanation": "Buiten de fietsstraat gelden de normale verkeersregels. U mag de fietser inhalen maar de wettelijke verplichting om een voldoende zijdelingse afstand te houden bij het inhalen van een fietser geldt altijd op de openbare weg."
       },
       "EN": {
-        "question": "You pass ZONE-F113 and see a cyclist ahead. Must you still follow their speed and not overtake them?",
+        "question": "After Zone-F111-Einde a cyclist is still riding on the road in front of you. May you immediately overtake them without any restriction?",
         "choices": [
           {
-            "text": "No, after ZONE-F113 normal overtaking rules apply; you are no longer required to maintain the cyclist's pace",
+            "text": "No, you may overtake the cyclist but must respect the legally required lateral safety distance",
             "is_correct": true
           },
           {
-            "text": "Yes, the obligation to adapt remains for the first 100 metres after the sign",
+            "text": "Yes, outside the bicycle street no special rules apply to cyclists anymore so overtaking is unrestricted",
             "is_correct": false
           }
         ],
-        "explanation": "ZONE-F113 ends the cycling street zone immediately. The obligation to maintain the pace of cyclists and not overtake them no longer applies after this sign."
+        "explanation": "Outside the bicycle street normal traffic rules apply. You may overtake the cyclist but the legal obligation to maintain a sufficient lateral distance when overtaking a cyclist always applies on the public road."
       },
       "FR": {
-        "question": "Vous passez ZONE-F113 et voyez un cycliste devant vous. Devez-vous encore suivre sa vitesse et ne pas le dépasser?",
+        "question": "Après Zone-F111-Einde un cycliste circule encore sur la route devant vous. Pouvez-vous le dépasser immédiatement sans aucune restriction?",
         "choices": [
           {
-            "text": "Non, après ZONE-F113 les règles normales de dépassement s'appliquent; vous n'êtes plus tenu de suivre le rythme du cycliste",
+            "text": "Non, vous pouvez dépasser le cycliste mais devez respecter la distance de sécurité latérale légalement requise",
             "is_correct": true
           },
           {
-            "text": "Oui, l'obligation d'adaptation reste valable pour les 100 premiers mètres après le panneau",
+            "text": "Oui, en dehors de la rue cyclable aucune règle spéciale ne s'applique plus aux cyclistes donc le dépassement est sans restriction",
             "is_correct": false
           }
         ],
-        "explanation": "ZONE-F113 met fin immédiatement à la zone rue cyclable. L'obligation de maintenir le rythme des cyclistes et de ne pas les dépasser ne s'applique plus après ce panneau."
+        "explanation": "En dehors de la rue cyclable les règles normales s'appliquent. Vous pouvez dépasser le cycliste mais l'obligation légale de maintenir une distance latérale suffisante lors du dépassement d'un cycliste s'applique toujours sur la voie publique."
       },
       "AR": {
-        "question": "تجاوزت ZONE-F113 وترى دراجيًا أمامك. هل يجب لا تزال اتباع سرعته وعدم تجاوزه؟",
+        "question": "بعد Zone-F111-Einde لا يزال دراج يسير على الطريق أمامك. هل يجوز تجاوزه فوراً دون أي قيد؟",
         "choices": [
           {
-            "text": "لا، بعد ZONE-F113 تسري قواعد التجاوز العادية ولم تعد ملزمًا باتباع وتيرته",
+            "text": "لا، يجوز تجاوز الدراج لكن يجب احترام مسافة الأمان الجانبية المطلوبة قانوناً",
             "is_correct": true
           },
           {
-            "text": "نعم، التزام التكييف يبقى 100 متر بعد العلامة المرورية",
+            "text": "نعم، خارج شارع الدراجات لا تسري أي قواعد خاصة على الدراجين إذاً التجاوز غير مقيد",
             "is_correct": false
           }
         ],
-        "explanation": "ZONE-F113 تنهي منطقة شارع الدراجات فورًا. التزام اتباع وتيرة الدراجيين وعدم تجاوزهم لا يسري بعد هذه العلامة المرورية."
+        "explanation": "خارج شارع الدراجات تسري قواعد المرور العادية. يجوز تجاوز الدراج لكن الالتزام القانوني بالحفاظ على مسافة جانبية كافية عند تجاوز الدراج يسري دائماً على الطريق العام."
       }
     }
   },
   {
-    "question_id": "ZONEF113_Q08",
+    "question_id": "Zone-F111-Einde_Q08",
     "type": "IS_IT_ALLOWED",
     "difficulty": "HARD",
     "is_critical": true,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Een fietser rijdt na ZONE-F113 nog steeds in het midden van de rijbaan. Moet u als autobestuurder hem voor laten gaan als primaire weggebruiker?",
+        "question": "Een bestuurder rijdt nog in de fietsstraat-zone maar ziet Zone-F111-Einde op 10 meter. Mag hij alvast beginnen met inhalen?",
         "choices": [
           {
-            "text": "Neen, na ZONE-F113 zijn de normale verkeersregels van kracht; de fietser heeft geen bijzondere voorrang meer",
+            "text": "Neen, het inhaalbod geldt tot u het bord volledig gepasseerd bent; inhalen binnen de zone blijft verboden",
             "is_correct": true
           },
           {
-            "text": "Ja, fietsers behouden als kwetsbare weggebruikers altijd bijzondere voorrang op elk type weg",
+            "text": "Ja, als het bord in zicht is mag u anticiperen en beginnen met inhalen",
             "is_correct": false
           }
         ],
-        "explanation": "Na ZONE-F113 gelden de normale verkeersregels. De fietser heeft geen bijzondere voorrang meer als primaire weggebruiker. Normale verkeersregels bepalen wie voorrang heeft."
+        "explanation": "Het inhaalbod van de fietsstraat is strikt gebonden aan de grens van de zone. Zolang u zich binnen de zone bevindt, ook vlak bij het eindbord, is inhalen verboden. U mag pas inhalen nadat u Zone-F111-Einde volledig gepasseerd bent."
       },
       "EN": {
-        "question": "A cyclist is still riding in the middle of the lane after ZONE-F113. Must you as a car driver give way to them as a primary road user?",
+        "question": "A driver is still in the bicycle street zone but sees Zone-F111-Einde 10 metres ahead. May they start overtaking already?",
         "choices": [
           {
-            "text": "No, after ZONE-F113 normal traffic rules are in force; the cyclist no longer has special priority",
+            "text": "No, the overtaking ban applies until you have fully passed the sign; overtaking within the zone remains prohibited",
             "is_correct": true
           },
           {
-            "text": "Yes, cyclists as vulnerable road users always retain special priority on every type of road",
+            "text": "Yes, once the sign is in sight you may anticipate and start overtaking",
             "is_correct": false
           }
         ],
-        "explanation": "After ZONE-F113 normal traffic rules apply. The cyclist no longer has special priority as a primary road user. Normal traffic rules determine who has right of way."
+        "explanation": "The overtaking ban of the bicycle street is strictly bound to the zone boundary. As long as you are within the zone even close to the end sign overtaking is prohibited. You may only overtake after fully passing Zone-F111-Einde."
       },
       "FR": {
-        "question": "Un cycliste roule toujours au milieu de la chaussée après ZONE-F113. Devez-vous en tant que conducteur lui céder la priorité comme usager principal?",
+        "question": "Un conducteur est encore dans la zone rue cyclable mais voit Zone-F111-Einde à 10 mètres. Peut-il déjà commencer à dépasser?",
         "choices": [
           {
-            "text": "Non, après ZONE-F113 les règles normales sont en vigueur; le cycliste n'a plus de priorité spéciale",
+            "text": "Non, l'interdiction de dépassement s'applique jusqu'à ce que vous ayez entièrement dépassé le panneau; dépasser dans la zone reste interdit",
             "is_correct": true
           },
           {
-            "text": "Oui, les cyclistes en tant qu'usagers vulnérables conservent toujours une priorité spéciale sur tout type de route",
+            "text": "Oui, une fois le panneau en vue vous pouvez anticiper et commencer à dépasser",
             "is_correct": false
           }
         ],
-        "explanation": "Après ZONE-F113 les règles normales s'appliquent. Le cycliste n'a plus de priorité spéciale comme usager principal. Les règles normales déterminent qui a la priorité."
+        "explanation": "L'interdiction de dépassement de la rue cyclable est strictement liée à la limite de la zone. Tant que vous êtes dans la zone même près du panneau de fin dépasser est interdit. Vous ne pouvez dépasser qu'après avoir entièrement dépassé Zone-F111-Einde."
       },
       "AR": {
-        "question": "راكب دراجة لا يزال يسير في وسط المسار بعد ZONE-F113. هل يجب إعطاؤه أولوية؟",
+        "question": "سائق لا يزال في منطقة شارع الدراجات لكنه يرى Zone-F111-Einde على بُعد 10 أمتار. هل يجوز له البدء بالتجاوز؟",
         "choices": [
           {
-            "text": "لا، بعد ZONE-F113 تسري القواعد العادية؛ لم تعد للدراجي أولوية خاصة",
+            "text": "لا، حظر التجاوز ساري حتى تجاوز العلامة بالكامل؛ التجاوز داخل المنطقة لا يزال محظوراً",
             "is_correct": true
           },
           {
-            "text": "نعم، الدراجون كمستخدمين معرضين للخطر لديهم دائمًا أولوية خاصة",
+            "text": "نعم، حين تكون العلامة مرئية يجوز الاستباق والبدء بالتجاوز",
             "is_correct": false
           }
         ],
-        "explanation": "بعد ZONE-F113 تسري القواعد العادية. لم تعد للدراجي أولوية خاصة كمستخدم أساسي. قواعد المرور العادية تحدد الأولوية."
+        "explanation": "حظر التجاوز في شارع الدراجات مرتبط بشكل صارم بحدود المنطقة. طالما أنك داخل المنطقة حتى قرب علامة النهاية يظل التجاوز محظوراً. يجوز التجاوز فقط بعد تجاوز Zone-F111-Einde بالكامل."
       }
     }
   }

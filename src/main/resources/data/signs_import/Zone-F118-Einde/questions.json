@@ -1,560 +1,617 @@
 [
   {
-    "question_id": "F118_Q01",
+    "question_id": "Zone-F118-Einde_Q01",
     "type": "WHAT_DOES_IT_MEAN",
     "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat betekent bord F118 'Einde van lage emissiezone'?",
+        "question": "Wat betekent bord Zone-F118-Einde 'Einde van lage emissiezone'?",
         "choices": [
           {
-            "text": "De lage-emissiezone eindigt; de emissiebeperkingen gelden niet meer en de normale verkeersregels zijn van kracht",
+            "text": "De lage-emissiezone eindigt hier: de speciale emissieregels gelden niet meer en de normale verkeersregels hervatten",
             "is_correct": true
           },
           {
-            "text": "Je rijdt een nieuwe lage-emissiezone in",
+            "text": "U betreedt een nieuwe zone met strengere emissienormen",
             "is_correct": false
           },
-          { "text": "Het einde van een autoweg", "is_correct": false }
+          {
+            "text": "Voertuigen moeten hun motor uitzetten vanaf dit punt",
+            "is_correct": false
+          }
         ],
-        "explanation": "F118 geeft aan dat u de lage-emissiezone verlaat. Voorbij dit bord gelden de gewone verkeersregels en zijn er geen emissiebeperkingen meer van kracht."
+        "explanation": "Zone-F118-Einde markeert het einde van de lage-emissiezone. Vanaf dit bord gelden de emissieregels niet meer. Voertuigen die niet aan de normen voldeden maar de zone vermeden hadden, mogen weer normaal rijden."
       },
       "EN": {
-        "question": "What does sign F118 'End of low emission zone' mean?",
+        "question": "What does sign Zone-F118-Einde 'End of low emission zone' mean?",
         "choices": [
           {
-            "text": "The low emission zone ends; emission restrictions no longer apply and normal traffic rules are in force",
+            "text": "The low emission zone ends here: the special emission rules no longer apply and normal traffic rules resume",
             "is_correct": true
           },
           {
-            "text": "You are entering a new low emission zone",
+            "text": "You are entering a new zone with stricter emission standards",
             "is_correct": false
           },
-          { "text": "The end of an expressway", "is_correct": false }
+          {
+            "text": "Vehicles must switch off their engines from this point",
+            "is_correct": false
+          }
         ],
-        "explanation": "F118 indicates that you are leaving the low emission zone. Beyond this sign normal traffic rules apply and there are no more emission restrictions in force."
+        "explanation": "Zone-F118-Einde marks the end of the low emission zone. From this sign the emission rules no longer apply. Vehicles that did not meet the standards but had avoided the zone may now drive normally again."
       },
       "FR": {
-        "question": "Que signifie le panneau F118 'Fin de zone a basses emissions' ?",
+        "question": "Que signifie le panneau Zone-F118-Einde 'Fin de zone à faibles émissions'?",
         "choices": [
           {
-            "text": "La zone a basses emissions se termine; les restrictions d emission ne s appliquent plus et les regles normales sont en vigueur",
+            "text": "La zone à basses émissions se termine ici: les règles spéciales d'émission ne s'appliquent plus et les règles normales reprennent",
             "is_correct": true
           },
           {
-            "text": "Vous entrez dans une nouvelle zone a basses emissions",
+            "text": "Vous entrez dans une nouvelle zone avec des normes d'émission plus strictes",
             "is_correct": false
           },
-          { "text": "La fin d une route express", "is_correct": false }
+          {
+            "text": "Les véhicules doivent éteindre leur moteur à partir de ce point",
+            "is_correct": false
+          }
         ],
-        "explanation": "F118 indique que vous quittez la zone a basses emissions. Au-dela de ce panneau les regles normales de circulation s appliquent et il n y a plus de restrictions d emission en vigueur."
+        "explanation": "Zone-F118-Einde marque la fin de la zone à basses émissions. À partir de ce panneau les règles d'émission ne s'appliquent plus. Les véhicules qui ne respectaient pas les normes mais avaient évité la zone peuvent désormais circuler normalement."
       },
       "AR": {
-        "question": "ما معنى هذه العلامة المرورية؟",
+        "question": "ما معنى علامة Zone-F118-Einde 'نهاية منطقة الانبعاثات المنخفضة'؟",
         "choices": [
           {
-            "text": "تنتهي منطقة الانبعاثات المنخفضة؛ قيود الانبعاثات لم تعد سارية وتسري قواعد المرور العادية",
+            "text": "تنتهي منطقة الانبعاثات المنخفضة هنا: القواعد الخاصة بالانبعاثات لم تعد سارية وتعود قواعد المرور العادية",
             "is_correct": true
           },
           {
-            "text": "أنت تدخل منطقة انبعاثات منخفضة جديدة",
+            "text": "أنت تدخل منطقة جديدة بمعايير انبعاثات أكثر صرامة",
             "is_correct": false
           },
-          { "text": "نهاية طريق سريع", "is_correct": false }
+          {
+            "text": "يجب على المركبات إيقاف محركاتها ابتداءً من هذه النقطة",
+            "is_correct": false
+          }
         ],
-        "explanation": "تشير F118 إلى أنك تغادر منطقة الانبعاثات المنخفضة. بعد هذه العلامة المرورية تسري قواعد المرور العادية ولا توجد قيود انبعاثات سارية."
+        "explanation": "Zone-F118-Einde تحدد نهاية منطقة الانبعاثات المنخفضة. من هذه العلامة لم تعد قواعد الانبعاثات سارية. المركبات التي لم تستوف المعايير وكانت قد تجنبت المنطقة يمكنها السير بشكل طبيعي مجدداً."
       }
     }
   },
   {
-    "question_id": "F118_Q02",
+    "question_id": "Zone-F118-Einde_Q02",
     "type": "WHICH_SIGN",
     "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Welk bord geeft het einde van een lage-emissiezone aan?",
-        "choices": [
-          { "text": "F118 einde van lage emissiezone", "is_correct": true },
-          { "text": "F117 begin van lage emissiezone", "is_correct": false },
-          { "text": "F105 einde voetgangerszone", "is_correct": false }
-        ],
-        "explanation": "F118 is het specifieke eindbord voor de lage-emissiezone. Het bijbehorende beginbord is F117."
-      },
-      "EN": {
-        "question": "Which sign indicates the end of a low emission zone?",
-        "choices": [
-          { "text": "F118 end of low emission zone", "is_correct": true },
-          { "text": "F117 start of low emission zone", "is_correct": false },
-          { "text": "F105 end of pedestrian zone", "is_correct": false }
-        ],
-        "explanation": "F118 is the specific end sign for the low emission zone. The corresponding start sign is F117."
-      },
-      "FR": {
-        "question": "Quel panneau indique la fin d une zone a basses emissions ?",
-        "choices": [
-          { "text": "F118 fin de zone a basses emissions", "is_correct": true },
-          {
-            "text": "F117 debut de zone a basses emissions",
-            "is_correct": false
-          },
-          { "text": "F105 fin zone pietonne", "is_correct": false }
-        ],
-        "explanation": "F118 est le panneau de fin specifique pour la zone a basses emissions. Le panneau de debut correspondant est F117."
-      },
-      "AR": {
-        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
+        "question": "Welk bord vormt het eindpunt van de lage-emissiezone die begon bij Zone-F117?",
         "choices": [
           {
-            "text": "F118 نهاية منطقة الانبعاثات المنخفضة",
+            "text": "Zone-F118-Einde einde van lage emissiezone",
             "is_correct": true
           },
           {
-            "text": "F117 بداية منطقة الانبعاثات المنخفضة",
+            "text": "Zone-F117 begin van lage emissiezone",
             "is_correct": false
           },
-          { "text": "F105 نهاية منطقة المشاة", "is_correct": false }
+          {
+            "text": "Zone-F111 begin van fietsstraatzone",
+            "is_correct": false
+          }
         ],
-        "explanation": "F118 هي علامة مرورية النهاية المحددة لمنطقة الانبعاثات المنخفضة. علامة مرورية البداية المقابلة هي F117."
+        "explanation": "Zone-F117 en Zone-F118-Einde vormen een paar: F117 markeert het begin en F118 markeert het einde van dezelfde lage-emissiezone. Samen begrenzen ze de volledige zone."
+      },
+      "EN": {
+        "question": "Which sign forms the end point of the low emission zone that started at Zone-F117?",
+        "choices": [
+          {
+            "text": "Zone-F118-Einde end of low emission zone",
+            "is_correct": true
+          },
+          {
+            "text": "Zone-F117 start of low emission zone",
+            "is_correct": false
+          },
+          {
+            "text": "Zone-F111 start of bicycle street zone",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Zone-F117 and Zone-F118-Einde form a pair: F117 marks the start and F118 marks the end of the same low emission zone. Together they define the full extent of the zone."
+      },
+      "FR": {
+        "question": "Quel panneau constitue le point final de la zone à basses émissions qui a commencé au Zone-F117?",
+        "choices": [
+          {
+            "text": "Zone-F118-Einde fin de zone à faibles émissions",
+            "is_correct": true
+          },
+          {
+            "text": "Zone-F117 début de zone à faibles émissions",
+            "is_correct": false
+          },
+          {
+            "text": "Zone-F111 début de zone rue cyclable",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Zone-F117 et Zone-F118-Einde forment une paire: F117 marque le début et F118 marque la fin de la même zone à basses émissions. Ensemble ils délimitent l'étendue complète de la zone."
+      },
+      "AR": {
+        "question": "أي علامة تشكل نقطة نهاية منطقة الانبعاثات المنخفضة التي بدأت عند Zone-F117؟",
+        "choices": [
+          {
+            "text": "Zone-F118-Einde نهاية منطقة الانبعاثات المنخفضة",
+            "is_correct": true
+          },
+          {
+            "text": "Zone-F117 بداية منطقة الانبعاثات المنخفضة",
+            "is_correct": false
+          },
+          {
+            "text": "Zone-F111 بداية منطقة شارع الدراجات",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Zone-F117 وZone-F118-Einde يشكلان زوجاً: F117 تحدد البداية وF118 تحدد النهاية لنفس منطقة الانبعاثات المنخفضة. معاً يُحددان الامتداد الكامل للمنطقة."
       }
     }
   },
   {
-    "question_id": "F118_Q03",
+    "question_id": "Zone-F118-Einde_Q03",
     "type": "HAZARD_IDENTIFICATION",
     "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat verandert er voor verkeer na het passeren van bord F118?",
+        "question": "Wat verandert er voor een bestuurder op het moment dat hij Zone-F118-Einde passeert?",
         "choices": [
           {
-            "text": "Er zijn geen emissiebeperkingen meer; voertuigen die niet aan de LEZ-norm voldeden mogen nu rijden",
+            "text": "De emissieregels gelden niet meer: alle voertuigen mogen verder rijden ongeacht hun Euro-norm",
             "is_correct": true
           },
           {
-            "text": "Voertuigen met lage Euro-norm blijven verboden ook na F118",
+            "text": "Voertuigen met een lage Euro-norm moeten nog 200 meter wachten voor ze normaal mogen rijden",
             "is_correct": false
           },
           {
-            "text": "Na F118 geldt een aangepaste snelheidslimiet",
+            "text": "Er begint een nieuwe zone met andere milieuregels die van toepassing zijn",
             "is_correct": false
           }
         ],
-        "explanation": "Na F118 zijn de emissiebeperkingen opgeheven. Voertuigen die niet waren toegelaten in de LEZ mogen na dit bord weer normaal rijden. De normale verkeersregels voor die weg zijn van toepassing."
+        "explanation": "Zodra een bestuurder Zone-F118-Einde passeert eindigen de emissieregels onmiddellijk. Voertuigen die niet voldeden aan de normen en de zone vermeden, kunnen nu opnieuw normaal rijden zonder beperkingen."
       },
       "EN": {
-        "question": "What changes for traffic after passing sign F118?",
+        "question": "What changes for a driver at the moment they pass Zone-F118-Einde?",
         "choices": [
           {
-            "text": "There are no more emission restrictions; vehicles that did not meet the LEZ standard may now drive",
+            "text": "The emission rules no longer apply: all vehicles may continue driving regardless of their Euro standard",
             "is_correct": true
           },
           {
-            "text": "Vehicles with low Euro standard remain prohibited even after F118",
+            "text": "Vehicles with a low Euro standard must wait another 200 metres before they may drive normally",
             "is_correct": false
           },
           {
-            "text": "A modified speed limit applies after F118",
+            "text": "A new zone with different environmental rules begins that are applicable",
             "is_correct": false
           }
         ],
-        "explanation": "After F118 the emission restrictions are lifted. Vehicles that were not admitted to the LEZ may drive normally again after this sign. The normal traffic rules for that road apply."
+        "explanation": "Once a driver passes Zone-F118-Einde the emission rules end immediately. Vehicles that did not meet the standards and had avoided the zone can now drive normally again without restrictions."
       },
       "FR": {
-        "question": "Qu est-ce qui change pour la circulation apres avoir passe le panneau F118 ?",
+        "question": "Qu'est-ce qui change pour un conducteur au moment où il passe Zone-F118-Einde?",
         "choices": [
           {
-            "text": "Il n y a plus de restrictions d emission; les vehicules qui ne respectaient pas la norme ZBE peuvent maintenant circuler",
+            "text": "Les règles d'émission ne s'appliquent plus: tous les véhicules peuvent continuer à circuler quelle que soit leur norme Euro",
             "is_correct": true
           },
           {
-            "text": "Les vehicules avec une faible norme Euro restent interdits meme apres F118",
+            "text": "Les véhicules avec une faible norme Euro doivent encore attendre 200 mètres avant de pouvoir circuler normalement",
             "is_correct": false
           },
           {
-            "text": "Une limite de vitesse modifiee s applique apres F118",
+            "text": "Une nouvelle zone avec d'autres règles environnementales commence et est applicable",
             "is_correct": false
           }
         ],
-        "explanation": "Apres F118 les restrictions d emission sont levees. Les vehicules qui n etaient pas admis dans la ZBE peuvent de nouveau circuler normalement apres ce panneau. Les regles normales de circulation pour cette route s appliquent."
+        "explanation": "Dès qu'un conducteur passe Zone-F118-Einde les règles d'émission se terminent immédiatement. Les véhicules qui ne respectaient pas les normes et avaient évité la zone peuvent désormais circuler normalement sans restrictions."
       },
       "AR": {
-        "question": "ما الذي يتغير للمرور بعد تجاوز علامة مرورية F118؟",
+        "question": "ماذا يتغير للسائق لحظة مروره بـ Zone-F118-Einde؟",
         "choices": [
           {
-            "text": "لا توجد قيود انبعاثات بعد الآن؛ يمكن للمركبات التي لم تستوف معيار LEZ السير الآن",
+            "text": "لم تعد قواعد الانبعاثات سارية: جميع المركبات يمكنها الاستمرار بالسير بصرف النظر عن معيار يورو الخاص بها",
             "is_correct": true
           },
           {
-            "text": "تبقى المركبات ذات معيار يورو المنخفض محظورة حتى بعد F118",
+            "text": "المركبات ذات معيار يورو المنخفض يجب أن تنتظر 200 متر إضافية قبل السير بشكل طبيعي",
             "is_correct": false
           },
-          { "text": "يسري حد سرعة معدَّل بعد F118", "is_correct": false }
+          {
+            "text": "تبدأ منطقة جديدة بقواعد بيئية مختلفة تسري على الجميع",
+            "is_correct": false
+          }
         ],
-        "explanation": "بعد F118 تُرفع قيود الانبعاثات. يمكن للمركبات التي لم تُقبل في منطقة LEZ السير بشكل طبيعي مجدداً بعد هذه العلامة المرورية. تسري قواعد المرور العادية للطريق."
+        "explanation": "بمجرد مرور السائق بـ Zone-F118-Einde تنتهي قواعد الانبعاثات فوراً. المركبات التي لم تستوف المعايير وكانت قد تجنبت المنطقة يمكنها الآن السير بشكل طبيعي بدون قيود."
       }
     }
   },
   {
-    "question_id": "F118_Q04",
+    "question_id": "Zone-F118-Einde_Q04",
     "type": "WHAT_MUST_YOU_DO",
     "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Waar wordt bord F118 geplaatst in verhouding tot de lage-emissiezone?",
+        "question": "U reed een alternatieve route om een lage-emissiezone heen. U ziet nu Zone-F118-Einde. Wat betekent dit voor uw verdere traject?",
         "choices": [
           {
-            "text": "Aan elke uitgang van de lage-emissiezone zodat vertrekkend verkeer weet dat de zone eindigt",
+            "text": "De zone is voorbij: u kunt normaal verder rijden en hoeft geen alternatieve route meer te volgen",
             "is_correct": true
           },
           {
-            "text": "Enkel aan de hoofduitgang van de zone",
+            "text": "U moet nog 1 km de alternatieve route volgen voor alle zekerheid",
             "is_correct": false
           },
           {
-            "text": "Aan het begin van de zone naast F117",
+            "text": "U moet uw voertuig laten controleren voor u verder rijdt",
             "is_correct": false
           }
         ],
-        "explanation": "Zoals bij alle zones wordt het eindbord (F118) aan elke uitgang geplaatst. Dit geldt voor alle straten en wegen die de zone verlaten. Zo weet iedereen die de zone verlaat dat de LEZ-regels niet meer van toepassing zijn."
+        "explanation": "Zone-F118-Einde bevestigt het einde van de lage-emissiezone. Voertuigen die de zone vermeden hadden, mogen na dit bord normaal rijden. Er zijn geen verdere verplichtingen na het passeren van Zone-F118-Einde."
       },
       "EN": {
-        "question": "Where is sign F118 placed in relation to the low emission zone?",
+        "question": "You drove an alternative route around a low emission zone. You now see Zone-F118-Einde. What does this mean for the rest of your journey?",
         "choices": [
           {
-            "text": "At every exit of the low emission zone so departing traffic knows the zone ends",
+            "text": "The zone is over: you can continue driving normally and no longer need to follow an alternative route",
             "is_correct": true
           },
-          { "text": "Only at the main exit of the zone", "is_correct": false },
           {
-            "text": "At the start of the zone next to F117",
+            "text": "You must still follow the alternative route for 1 km to be safe",
+            "is_correct": false
+          },
+          {
+            "text": "You must have your vehicle inspected before continuing to drive",
             "is_correct": false
           }
         ],
-        "explanation": "As with all zones the end sign (F118) is placed at every exit. This applies to all streets and roads leaving the zone. This way everyone leaving the zone knows the LEZ rules no longer apply."
+        "explanation": "Zone-F118-Einde confirms the end of the low emission zone. Vehicles that had avoided the zone may drive normally after this sign. There are no further obligations after passing Zone-F118-Einde."
       },
       "FR": {
-        "question": "Ou est place le panneau F118 par rapport a la zone a basses emissions ?",
+        "question": "Vous avez emprunté un itinéraire alternatif pour contourner une zone à basses émissions. Vous voyez maintenant Zone-F118-Einde. Qu'est-ce que cela signifie pour la suite de votre trajet?",
         "choices": [
           {
-            "text": "A chaque sortie de la zone a basses emissions pour que le trafic sortant sache que la zone se termine",
+            "text": "La zone est terminée: vous pouvez continuer à conduire normalement et n'avez plus besoin de suivre un itinéraire alternatif",
             "is_correct": true
           },
           {
-            "text": "Uniquement a la sortie principale de la zone",
+            "text": "Vous devez encore suivre l'itinéraire alternatif pendant 1 km pour être sûr",
             "is_correct": false
           },
-          { "text": "Au debut de la zone a cote de F117", "is_correct": false }
+          {
+            "text": "Vous devez faire inspecter votre véhicule avant de continuer à conduire",
+            "is_correct": false
+          }
         ],
-        "explanation": "Comme pour toutes les zones le panneau de fin (F118) est place a chaque sortie. Cela s applique a toutes les rues et routes quittant la zone. Ainsi tous ceux qui quittent la zone savent que les regles ZBE ne s appliquent plus."
+        "explanation": "Zone-F118-Einde confirme la fin de la zone à basses émissions. Les véhicules qui avaient évité la zone peuvent circuler normalement après ce panneau. Il n'y a pas d'autres obligations après avoir passé Zone-F118-Einde."
       },
       "AR": {
-        "question": "أين تُوضع علامة مرورية F118 بالنسبة لمنطقة الانبعاثات المنخفضة؟",
+        "question": "سلكت طريقاً بديلاً للالتفاف حول منطقة الانبعاثات المنخفضة. الآن ترى Zone-F118-Einde. ماذا يعني هذا لبقية رحلتك؟",
         "choices": [
           {
-            "text": "عند كل مخرج من منطقة الانبعاثات المنخفضة حتى يعرف المرور المغادر أن المنطقة تنتهي",
+            "text": "المنطقة انتهت: يمكنك الاستمرار في السير بشكل طبيعي ولا داعي لاتباع طريق بديل بعد الآن",
             "is_correct": true
           },
-          { "text": "فقط عند المخرج الرئيسي للمنطقة", "is_correct": false },
-          { "text": "عند بداية المنطقة بجانب F117", "is_correct": false }
+          {
+            "text": "يجب عليك اتباع الطريق البديل لمسافة 1 كم إضافية للتأكد",
+            "is_correct": false
+          },
+          {
+            "text": "يجب فحص مركبتك قبل الاستمرار في القيادة",
+            "is_correct": false
+          }
         ],
-        "explanation": "كما هو الحال مع جميع المناطق يُوضع علامة مرورية النهاية (F118) عند كل مخرج. ينطبق ذلك على جميع الشوارع والطرق التي تغادر المنطقة. بهذه الطريقة يعرف الجميع المغادرون المنطقة أن قواعد LEZ لم تعد سارية."
+        "explanation": "Zone-F118-Einde تؤكد نهاية منطقة الانبعاثات المنخفضة. المركبات التي كانت قد تجنبت المنطقة يمكنها السير بشكل طبيعي بعد هذه العلامة. لا توجد التزامات أخرى بعد تجاوز Zone-F118-Einde."
       }
     }
   },
   {
-    "question_id": "F118_Q05",
-    "type": "WHAT_MUST_YOU_DO",
+    "question_id": "Zone-F118-Einde_Q05",
+    "type": "DRIVER_ACTION",
     "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Gelden de ANPR-camera's (nummerplaatherkenning) nog na het passeren van F118?",
+        "question": "U rijdt in een lage-emissiezone en ziet Zone-F118-Einde op 20 meter. Uw GPS geeft aan dat u linksaf moet. Wat doet u?",
         "choices": [
           {
-            "text": "Nee de handhavingscamera's van de LEZ registreren enkel voertuigen binnen de zone; na F118 bent u buiten de zone",
+            "text": "Sla linksaf zoals de GPS aangeeft; de emissieregels gelden pas niet meer nadat u Zone-F118-Einde volledig gepasseerd bent",
             "is_correct": true
           },
           {
-            "text": "Ja de camera's blijven actief tot 500 meter na F118",
+            "text": "Sla linksaf en verlaat de zone; de emissieregels gelden al niet meer omdat u het bord bijna bereikt hebt",
             "is_correct": false
           },
           {
-            "text": "Ja u bent pas buiten het controlgebied na het betreden van een andere gemeente",
+            "text": "Stop voor Zone-F118-Einde en wacht tot de zone officieel eindigt",
             "is_correct": false
           }
         ],
-        "explanation": "De ANPR-camera's die de LEZ handhaven zijn gepositioneerd aan de grenzen van de zone. Zodra u F118 passeert bevindt u zich buiten de zone en worden uw gegevens niet meer geregistreerd voor LEZ-handhaving."
+        "explanation": "De emissieregels gelden tot en met het bord Zone-F118-Einde. Als u linksaf slaat voor het bord blijft u in de zone en gelden de regels nog. Pas na het volledig passeren van Zone-F118-Einde eindigen de emissieregels. In dit geval slaat u links af terwijl u nog in de zone bent, dus de regels zijn nog van kracht."
       },
       "EN": {
-        "question": "Do the ANPR cameras (number plate recognition) still apply after passing F118?",
+        "question": "You are driving in a low emission zone and see Zone-F118-Einde 20 metres ahead. Your GPS indicates you must turn left. What do you do?",
         "choices": [
           {
-            "text": "No the LEZ enforcement cameras only register vehicles within the zone; after F118 you are outside the zone",
+            "text": "Turn left as the GPS indicates; the emission rules only stop applying after you have fully passed Zone-F118-Einde",
             "is_correct": true
           },
           {
-            "text": "Yes the cameras remain active up to 500 metres after F118",
+            "text": "Turn left and leave the zone; the emission rules no longer apply because you have almost reached the sign",
             "is_correct": false
           },
           {
-            "text": "Yes you are only outside the control area after entering another municipality",
+            "text": "Stop in front of Zone-F118-Einde and wait until the zone officially ends",
             "is_correct": false
           }
         ],
-        "explanation": "The ANPR cameras that enforce the LEZ are positioned at the zone boundaries. Once you pass F118 you are outside the zone and your data is no longer recorded for LEZ enforcement."
+        "explanation": "The emission rules apply up to and including the Zone-F118-Einde sign. If you turn left before the sign you remain in the zone and the rules still apply. Only after fully passing Zone-F118-Einde do the emission rules end. In this case you turn left while still in the zone so the rules are still in force."
       },
       "FR": {
-        "question": "Les cameras ANPR (reconnaissance des plaques) s appliquent-elles encore apres avoir passe F118 ?",
+        "question": "Vous conduisez dans une zone à basses émissions et voyez Zone-F118-Einde à 20 mètres. Votre GPS indique que vous devez tourner à gauche. Que faites-vous?",
         "choices": [
           {
-            "text": "Non les cameras de contrôle de la ZBE n enregistrent que les vehicules dans la zone; apres F118 vous etes hors zone",
+            "text": "Tournez à gauche comme le GPS l'indique; les règles d'émission ne cessent de s'appliquer qu'après avoir entièrement dépassé Zone-F118-Einde",
             "is_correct": true
           },
           {
-            "text": "Oui les cameras restent actives jusqu a 500 metres apres F118",
+            "text": "Tournez à gauche et quittez la zone; les règles d'émission ne s'appliquent plus car vous avez presque atteint le panneau",
             "is_correct": false
           },
           {
-            "text": "Oui vous n etes hors de la zone de contrôle qu apres entree dans une autre commune",
+            "text": "Arrêtez-vous devant Zone-F118-Einde et attendez que la zone se termine officiellement",
             "is_correct": false
           }
         ],
-        "explanation": "Les cameras ANPR qui font respecter la ZBE sont positionnees aux limites de la zone. Une fois que vous passez F118 vous etes hors de la zone et vos donnees ne sont plus enregistrees pour le contrôle ZBE."
+        "explanation": "Les règles d'émission s'appliquent jusqu'au panneau Zone-F118-Einde inclus. Si vous tournez à gauche avant le panneau vous restez dans la zone et les règles s'appliquent encore. Ce n'est qu'après avoir entièrement dépassé Zone-F118-Einde que les règles d'émission se terminent. Dans ce cas vous tournez à gauche en étant encore dans la zone donc les règles sont toujours en vigueur."
       },
       "AR": {
-        "question": "هل تسري كاميرات ANPR (التعرف على لوحات الأرقام) بعد تجاوز F118؟",
+        "question": "تقود داخل منطقة الانبعاثات المنخفضة وترى Zone-F118-Einde على بُعد 20 متراً. نظام GPS يشير إلى الانعطاف يساراً. ماذا تفعل؟",
         "choices": [
           {
-            "text": "لا كاميرات تطبيق LEZ تسجل فقط المركبات داخل المنطقة؛ بعد F118 أنت خارج المنطقة",
+            "text": "انعطف يساراً كما يشير GPS؛ قواعد الانبعاثات تتوقف فقط بعد تجاوز Zone-F118-Einde بالكامل",
             "is_correct": true
           },
           {
-            "text": "نعم تبقى الكاميرات نشطة حتى 500 متر بعد F118",
+            "text": "انعطف يساراً واخرج من المنطقة؛ قواعد الانبعاثات لم تعد سارية لأنك كدت تصل للعلامة",
             "is_correct": false
           },
           {
-            "text": "نعم أنت خارج منطقة التحكم فقط بعد الدخول إلى بلدية أخرى",
+            "text": "توقف أمام Zone-F118-Einde وانتظر حتى تنتهي المنطقة رسمياً",
             "is_correct": false
           }
         ],
-        "explanation": "كاميرات ANPR التي تُطبِّق LEZ موضوعة عند حدود المنطقة. بمجرد تجاوز F118 تكون خارج المنطقة ولا تُسجَّل بياناتك لتطبيق LEZ."
+        "explanation": "قواعد الانبعاثات سارية حتى علامة Zone-F118-Einde شاملةً. إذا انعطفت يساراً قبل العلامة تبقى في المنطقة والقواعد لا تزال سارية. فقط بعد تجاوز Zone-F118-Einde بالكامل تنتهي قواعد الانبعاثات. في هذه الحالة تنعطف يساراً وأنت لا تزال في المنطقة إذاً القواعد لا تزال نافذة."
       }
     }
   },
   {
-    "question_id": "F118_Q06",
-    "type": "WHAT_MUST_YOU_DO",
+    "question_id": "Zone-F118-Einde_Q06",
+    "type": "WHERE_DOES_IT_APPLY",
     "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Stelt bord F118 u in staat om de LEZ te betreden vanuit de tegenovergestelde richting?",
+        "question": "Zone-F118-Einde staat op een zijstraat van een lage-emissiezone. Geldt het einde van de zone ook voor bestuurders die via een andere uitgang vertrekken?",
         "choices": [
           {
-            "text": "Nee F118 markeert uitsluitend het verlaten van de zone; u betreedt een LEZ altijd via een F117-bord",
+            "text": "Ja, Zone-F118-Einde wordt aan elke uitgang van de zone geplaatst zodat elke bestuurder die de zone verlaat het bord ziet",
             "is_correct": true
           },
           {
-            "text": "Ja door rechtsomkeer te maken bij F118 kunt u de zone betreden",
+            "text": "Neen, enkel bestuurders die via deze specifieke uitgang vertrekken verlaten de zone",
             "is_correct": false
           },
           {
-            "text": "Ja F118 geldt als zowel begin als einde van de zone",
+            "text": "De zone eindigt enkel voor bestuurders die het bord passeren; anderen blijven onder de emissieregels",
             "is_correct": false
           }
         ],
-        "explanation": "F118 is enkel een uitrijbord. U kunt de LEZ enkel betreden via een F117-ingangsbord. Proberen om via de F118-uitgang de zone in te rijden zou in de tegengestelde rijrichting zijn wat verkeer van onrecht is."
+        "explanation": "Zoals bij alle zoneborden wordt Zone-F118-Einde aan elke uitgang van de lage-emissiezone geplaatst. Elke bestuurder die de zone verlaat passeert een Zone-F118-Einde bord. De zone eindigt dus voor iedereen die een uitgang gebruikt."
       },
       "EN": {
-        "question": "Does sign F118 allow you to enter the LEZ from the opposite direction?",
+        "question": "Zone-F118-Einde is placed on a side street of a low emission zone. Does the end of the zone also apply to drivers leaving via another exit?",
         "choices": [
           {
-            "text": "No F118 exclusively marks leaving the zone; you always enter a LEZ via an F117 sign",
+            "text": "Yes, Zone-F118-Einde is placed at every exit of the zone so that every driver leaving the zone sees the sign",
             "is_correct": true
           },
           {
-            "text": "Yes by making a U-turn at F118 you can enter the zone",
+            "text": "No, only drivers leaving via this specific exit leave the zone",
             "is_correct": false
           },
           {
-            "text": "Yes F118 serves as both start and end of the zone",
+            "text": "The zone only ends for drivers who pass this sign; others remain under the emission rules",
             "is_correct": false
           }
         ],
-        "explanation": "F118 is an exit sign only. You can only enter the LEZ via an F117 entry sign. Trying to enter the zone via the F118 exit would be driving in the wrong direction which is against traffic law."
+        "explanation": "As with all zone signs Zone-F118-Einde is placed at every exit of the low emission zone. Every driver leaving the zone passes a Zone-F118-Einde sign. The zone therefore ends for everyone who uses an exit."
       },
       "FR": {
-        "question": "Le panneau F118 vous permet-il d entrer dans la ZBE depuis la direction opposee ?",
+        "question": "Zone-F118-Einde est placé sur une rue latérale d'une zone à basses émissions. La fin de la zone s'applique-t-elle aussi aux conducteurs qui quittent par une autre sortie?",
         "choices": [
           {
-            "text": "Non F118 marque exclusivement la sortie de la zone; vous entrez toujours dans une ZBE par un panneau F117",
+            "text": "Oui, Zone-F118-Einde est placé à chaque sortie de la zone afin que chaque conducteur quittant la zone voie le panneau",
             "is_correct": true
           },
           {
-            "text": "Oui en faisant demi-tour a F118 vous pouvez entrer dans la zone",
+            "text": "Non, seuls les conducteurs quittant par cette sortie spécifique quittent la zone",
             "is_correct": false
           },
           {
-            "text": "Oui F118 sert a la fois de debut et de fin de la zone",
+            "text": "La zone ne se termine que pour les conducteurs qui passent ce panneau; les autres restent soumis aux règles d'émission",
             "is_correct": false
           }
         ],
-        "explanation": "F118 est uniquement un panneau de sortie. Vous ne pouvez entrer dans la ZBE que par un panneau d entree F117. Essayer d entrer dans la zone par la sortie F118 serait conduire en sens interdit ce qui est illegal."
+        "explanation": "Comme pour tous les panneaux de zone Zone-F118-Einde est placé à chaque sortie de la zone à basses émissions. Chaque conducteur quittant la zone passe un panneau Zone-F118-Einde. La zone se termine donc pour tous ceux qui utilisent une sortie."
       },
       "AR": {
-        "question": "هل تسمح لك علامة مرورية F118 بالدخول إلى منطقة LEZ من الاتجاه المعاكس؟",
+        "question": "Zone-F118-Einde موضوعة على شارع جانبي لمنطقة الانبعاثات المنخفضة. هل تسري نهاية المنطقة أيضاً على السائقين الخارجين من مخرج آخر؟",
         "choices": [
           {
-            "text": "لا F118 تُعلِّم فقط مغادرة المنطقة؛ تدخل منطقة LEZ دائماً عبر علامة مرورية F117",
+            "text": "نعم، Zone-F118-Einde تُوضع عند كل مخرج من المنطقة حتى يرى كل سائق مغادر العلامة",
             "is_correct": true
           },
           {
-            "text": "نعم بالعمل بدوران عند F118 يمكنك الدخول إلى المنطقة",
+            "text": "لا، فقط السائقون الخارجون من هذا المخرج المحدد يغادرون المنطقة",
             "is_correct": false
           },
-          { "text": "نعم F118 تعمل كبداية ونهاية للمنطقة", "is_correct": false }
+          {
+            "text": "المنطقة تنتهي فقط للسائقين الذين يمرون بهذه العلامة؛ الآخرون يبقون تحت قواعد الانبعاثات",
+            "is_correct": false
+          }
         ],
-        "explanation": "F118 هي علامة مرورية خروج فقط. يمكنك الدخول إلى منطقة LEZ فقط عبر علامة مرورية دخول F117. محاولة الدخول إلى المنطقة عبر مخرج F118 ستعني القيادة في الاتجاه الخاطئ وهو مخالف للقانون."
+        "explanation": "كما هو الحال مع جميع علامات المنطقة تُوضع Zone-F118-Einde عند كل مخرج من منطقة الانبعاثات المنخفضة. كل سائق مغادر للمنطقة يمر بعلامة Zone-F118-Einde. المنطقة تنتهي إذاً لكل من يستخدم مخرجاً."
       }
     }
   },
   {
-    "question_id": "F118_Q07",
+    "question_id": "Zone-F118-Einde_Q07",
     "type": "IS_IT_ALLOWED",
     "difficulty": "HARD",
     "is_critical": true,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Mag een voertuig dat niet aan de LEZ-norm voldoet direct na F118 doorrijden als er een nieuwe F117 staat?",
+        "question": "Een voertuig dat niet voldoet aan de emissienormen passeert Zone-F118-Einde en reed daarvoor ook door de lage-emissiezone. Kan de bestuurder nog beboet worden?",
         "choices": [
           {
-            "text": "Nee als direct na F118 een nieuwe F117 volgt betreedt u meteen een nieuwe LEZ en gelden de emissiebeperkingen opnieuw",
+            "text": "Ja, de ANPR-camera's registreerden de overtreding bij het binnenrijden via Zone-F117 en de boete volgt achteraf",
             "is_correct": true
           },
           {
-            "text": "Ja het voertuig mag altijd even pauzeren tussen twee LEZ-zones",
+            "text": "Neen, eens Zone-F118-Einde gepasseerd vervalt elke mogelijke boete automatisch",
             "is_correct": false
           }
         ],
-        "explanation": "Twee opeenvolgende LEZ-zones zijn elk afzonderlijk aangeduid met F117 en F118. Als u F118 passeert en onmiddellijk daarna F117 ziet bent u een nieuwe zone binnengekomen en gelden de beperkingen opnieuw."
+        "explanation": "Het passeren van Zone-F118-Einde beëindigt enkel de emissieregels voor de toekomst. De ANPR-camera's registreerden de nummerplaat al bij het binnenrijden via Zone-F117. De boete voor de overtreding wordt achteraf verstuurd naar het geregistreerde adres en wordt niet geannuleerd door het verlaten van de zone."
       },
       "EN": {
-        "question": "May a vehicle that does not meet the LEZ standard continue driving immediately after F118 if a new F117 sign is present?",
+        "question": "A vehicle that does not meet emission standards passes Zone-F118-Einde and had also driven through the low emission zone before it. Can the driver still be fined?",
         "choices": [
           {
-            "text": "No if a new F117 follows immediately after F118 you are immediately entering a new LEZ and emission restrictions apply again",
+            "text": "Yes, the ANPR cameras registered the violation when entering via Zone-F117 and the fine follows afterwards",
             "is_correct": true
           },
           {
-            "text": "Yes the vehicle may always take a short break between two LEZ zones",
+            "text": "No, once Zone-F118-Einde is passed any possible fine is automatically cancelled",
             "is_correct": false
           }
         ],
-        "explanation": "Two consecutive LEZ zones are each separately indicated with F117 and F118. If you pass F118 and immediately see F117 you have entered a new zone and the restrictions apply again."
+        "explanation": "Passing Zone-F118-Einde only ends the emission rules going forward. The ANPR cameras already registered the number plate when entering via Zone-F117. The fine for the violation is sent afterwards to the registered address and is not cancelled by leaving the zone."
       },
       "FR": {
-        "question": "Un vehicule qui ne respecte pas la norme ZBE peut-il continuer a circuler juste apres F118 si un nouveau F117 est present ?",
+        "question": "Un véhicule qui ne respecte pas les normes d'émission passe Zone-F118-Einde et avait aussi traversé la zone à basses émissions avant. Le conducteur peut-il encore être sanctionné?",
         "choices": [
           {
-            "text": "Non si un nouveau F117 suit immediatement apres F118 vous entrez immediatement dans une nouvelle ZBE et les restrictions d emission s appliquent a nouveau",
+            "text": "Oui, les caméras ANPR ont enregistré la violation lors de l'entrée via Zone-F117 et l'amende suit ultérieurement",
             "is_correct": true
           },
           {
-            "text": "Oui le vehicule peut toujours faire une courte pause entre deux zones ZBE",
+            "text": "Non, une fois Zone-F118-Einde passé toute amende possible est automatiquement annulée",
             "is_correct": false
           }
         ],
-        "explanation": "Deux zones ZBE consecutives sont chacune indiquees separement avec F117 et F118. Si vous passez F118 et voyez immediatement F117 vous etes entre dans une nouvelle zone et les restrictions s appliquent a nouveau."
+        "explanation": "Passer Zone-F118-Einde ne met fin aux règles d'émission que pour l'avenir. Les caméras ANPR ont déjà enregistré la plaque d'immatriculation lors de l'entrée via Zone-F117. L'amende pour la violation est envoyée ultérieurement à l'adresse enregistrée et n'est pas annulée par le fait de quitter la zone."
       },
       "AR": {
-        "question": "هل يجوز للمركبة التي لا تستوفي معيار LEZ الاستمرار في السير مباشرة بعد F118 إذا كانت علامة مرورية F117 جديدة موجودة؟",
+        "question": "مركبة لا تستوفي معايير الانبعاثات تجاوزت Zone-F118-Einde وكانت قد سارت في منطقة الانبعاثات المنخفضة من قبل. هل يمكن مازلت تغريم السائق؟",
         "choices": [
           {
-            "text": "لا إذا كانت F117 جديدة تتبع مباشرة بعد F118 فأنت تدخل منطقة LEZ جديدة فوراً وتسري قيود الانبعاثات مجدداً",
+            "text": "نعم، كاميرات ANPR سجلت المخالفة عند الدخول عبر Zone-F117 والغرامة تصدر لاحقاً",
             "is_correct": true
           },
           {
-            "text": "نعم يمكن للمركبة دائماً التوقف مؤقتاً بين منطقتي LEZ",
+            "text": "لا، بمجرد تجاوز Zone-F118-Einde تُلغى أي غرامة محتملة تلقائياً",
             "is_correct": false
           }
         ],
-        "explanation": "منطقتا LEZ المتتاليتان تُشار إليهما كل منها على حدة بـF117 وF118. إذا تجاوزت F118 ورأيت F117 مباشرة فأنت دخلت منطقة جديدة وتسري القيود مجدداً."
+        "explanation": "تجاوز Zone-F118-Einde ينهي قواعد الانبعاثات فقط للمستقبل. كاميرات ANPR سجلت بالفعل لوحة الأرقام عند الدخول عبر Zone-F117. الغرامة عن المخالفة تُرسَل لاحقاً إلى العنوان المسجل ولا تُلغى بمغادرة المنطقة."
       }
     }
   },
   {
-    "question_id": "F118_Q08",
+    "question_id": "Zone-F118-Einde_Q08",
     "type": "IS_IT_ALLOWED",
     "difficulty": "HARD",
     "is_critical": true,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Vervallen eventueel aangevraagde ontheffingen automatisch na het verlaten van de LEZ bij F118?",
+        "question": "Een bestuurder met een niet-conform voertuig ziet Zone-F118-Einde en denkt: 'Ik ben bijna buiten, dus ik rijd snel door de zone.' Is dit gedrag toegelaten?",
         "choices": [
           {
-            "text": "Nee ontheffingen zijn gekoppeld aan de specifieke LEZ-zone waarvoor ze zijn aangevraagd; ze gelden nog steeds als u die zone opnieuw binnenrijdt",
+            "text": "Neen, de emissieregels gelden voor de volledige zone en het rijden door de zone is een overtreding ongeacht de afgelegde afstand",
             "is_correct": true
           },
           {
-            "text": "Ja u moet bij elke intrede een nieuwe ontheffing aanvragen",
+            "text": "Ja, als de bestuurder snel rijdt registreren de camera's de nummerplaat niet correct",
             "is_correct": false
           }
         ],
-        "explanation": "Een ontheffing is geldig voor de duur waarvoor ze is afgegeven voor de specifieke LEZ. Ze vervalt niet door de zone te verlaten. Zodra u de zone opnieuw binnenrijdt (via F117) is de ontheffing nog steeds geldig zolang de geldigheidsduur niet verstreken is."
+        "explanation": "De emissieregels gelden voor de volledige lage-emissiezone van Zone-F117 tot Zone-F118-Einde. Het maakt geen verschil of een bestuurder een korte of lange afstand in de zone rijdt. ANPR-camera's registreren nummerplaten accuraat ongeacht de rijsnelheid en de boete volgt automatisch."
       },
       "EN": {
-        "question": "Do exemptions that were applied for automatically expire after leaving the LEZ at F118?",
+        "question": "A driver with a non-compliant vehicle sees Zone-F118-Einde and thinks: 'I am almost outside, so I will drive quickly through the zone.' Is this behaviour allowed?",
         "choices": [
           {
-            "text": "No exemptions are linked to the specific LEZ zone for which they were applied; they still apply when you re-enter that zone",
+            "text": "No, the emission rules apply for the entire zone and driving through the zone is a violation regardless of the distance covered",
             "is_correct": true
           },
           {
-            "text": "Yes you must apply for a new exemption with each entry",
+            "text": "Yes, if the driver drives fast the cameras do not register the number plate correctly",
             "is_correct": false
           }
         ],
-        "explanation": "An exemption is valid for the duration for which it was issued for the specific LEZ. It does not expire by leaving the zone. Once you re-enter the zone (via F117) the exemption is still valid as long as its validity period has not expired."
+        "explanation": "The emission rules apply for the entire low emission zone from Zone-F117 to Zone-F118-Einde. It makes no difference whether a driver covers a short or long distance in the zone. ANPR cameras register number plates accurately regardless of driving speed and the fine follows automatically."
       },
       "FR": {
-        "question": "Les derogations eventuellement demandees expirent-elles automatiquement apres avoir quitte la ZBE a F118 ?",
+        "question": "Un conducteur avec un véhicule non conforme voit Zone-F118-Einde et pense: 'Je suis presque dehors, donc je vais traverser rapidement la zone.' Ce comportement est-il autorisé?",
         "choices": [
           {
-            "text": "Non les derogations sont liees a la zone ZBE specifique pour laquelle elles ont ete demandees; elles s appliquent toujours lors de la rentree dans cette zone",
+            "text": "Non, les règles d'émission s'appliquent pour toute la zone et traverser la zone est une infraction quelle que soit la distance parcourue",
             "is_correct": true
           },
           {
-            "text": "Oui vous devez demander une nouvelle derogation a chaque entree",
+            "text": "Oui, si le conducteur roule vite les caméras n'enregistrent pas correctement la plaque d'immatriculation",
             "is_correct": false
           }
         ],
-        "explanation": "Une derogation est valable pour la duree pour laquelle elle a ete delivree pour la ZBE specifique. Elle n expire pas en quittant la zone. Une fois que vous rentrez dans la zone (via F117) la derogation est toujours valable tant que sa periode de validite n est pas expiree."
+        "explanation": "Les règles d'émission s'appliquent pour toute la zone à basses émissions de Zone-F117 à Zone-F118-Einde. Peu importe si un conducteur parcourt une courte ou longue distance dans la zone. Les caméras ANPR enregistrent les plaques d'immatriculation avec précision quelle que soit la vitesse de conduite et l'amende suit automatiquement."
       },
       "AR": {
-        "question": "هل تنتهي الإعفاءات المطلوبة تلقائياً بعد مغادرة منطقة LEZ عند F118؟",
+        "question": "سائق بمركبة غير ممتثلة يرى Zone-F118-Einde ويفكر: 'أنا على وشك الخروج، سأمر بسرعة عبر المنطقة.' هل هذا التصرف مسموح؟",
         "choices": [
           {
-            "text": "لا الإعفاءات مرتبطة بمنطقة LEZ المحددة التي طُلبت من أجلها؛ وتسري عند إعادة الدخول إلى تلك المنطقة",
+            "text": "لا، قواعد الانبعاثات تسري على المنطقة بأكملها والسير في المنطقة مخالفة بصرف النظر عن المسافة المقطوعة",
             "is_correct": true
           },
           {
-            "text": "نعم يجب التقدم بطلب إعفاء جديد عند كل دخول",
+            "text": "نعم، إذا سار السائق بسرعة فإن الكاميرات لا تسجل لوحة الأرقام بشكل صحيح",
             "is_correct": false
           }
         ],
-        "explanation": "الإعفاء صالح للمدة التي صدر من أجلها لمنطقة LEZ المحددة. لا ينتهي بمغادرة المنطقة. بمجرد إعادة الدخول إلى المنطقة (عبر F117) يبقى الإعفاء صالحاً طالما لم تنتهِ مدة صلاحيته."
+        "explanation": "قواعد الانبعاثات تسري على منطقة الانبعاثات المنخفضة بأكملها من Zone-F117 إلى Zone-F118-Einde. لا فرق بين قطع مسافة قصيرة أو طويلة في المنطقة. كاميرات ANPR تسجل لوحات الأرقام بدقة بصرف النظر عن سرعة القيادة والغرامة تصدر تلقائياً."
       }
     }
   }

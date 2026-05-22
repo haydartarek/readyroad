@@ -9,7 +9,10 @@
       "NL": {
         "question": "Wat betekent dit verkeersbord?",
         "choices": [
-          { "text": "Zone parkeerverbod", "is_correct": true },
+          {
+            "text": "Zone parkeerverbod",
+            "is_correct": true
+          },
           {
             "text": "Zone parkeren uitsluitend voor auto's",
             "is_correct": false
@@ -24,8 +27,14 @@
       "EN": {
         "question": "What does this traffic sign mean?",
         "choices": [
-          { "text": "Zone no parking", "is_correct": true },
-          { "text": "Zone parking for cars only", "is_correct": false },
+          {
+            "text": "Zone no parking",
+            "is_correct": true
+          },
+          {
+            "text": "Zone parking for cars only",
+            "is_correct": false
+          },
           {
             "text": "Zone parking for cars only with time restriction",
             "is_correct": false
@@ -36,7 +45,10 @@
       "FR": {
         "question": "Que signifie ce panneau de signalisation?",
         "choices": [
-          { "text": "Zone interdiction de stationnement", "is_correct": true },
+          {
+            "text": "Zone interdiction de stationnement",
+            "is_correct": true
+          },
           {
             "text": "Zone stationnement uniquement pour voitures",
             "is_correct": false
@@ -51,14 +63,20 @@
       "AR": {
         "question": "ما معنى هذه العلامة المرورية؟",
         "choices": [
-          { "text": "منطقة ممنوع الوقوف", "is_correct": true },
-          { "text": "منطقة للركن المخصص للسيارات فقط", "is_correct": false },
+          {
+            "text": "منطقة ممنوع الوقوف",
+            "is_correct": true
+          },
+          {
+            "text": "منطقة للركن المخصص للسيارات فقط",
+            "is_correct": false
+          },
           {
             "text": "منطقة للركن المخصص للسيارات فقط مع تحديد وقت",
             "is_correct": false
           }
         ],
-        "explanation": "ZE1 هي علامة مرورية بداية منطقة يُحظر فيها الوقوف. التوقف المؤقت للتحميل أو التنزيل مسموح مبدئيًا."
+        "explanation": "ZE1 هي علامة بداية منطقة يُحظر فيها الوقوف. التوقف المؤقت للتحميل أو التنزيل مسموح مبدئياً."
       }
     }
   },
@@ -72,38 +90,74 @@
       "NL": {
         "question": "Tot welke categorie verkeersborden behoort dit bord?",
         "choices": [
-          { "text": "Zoneborden", "is_correct": true },
-          { "text": "Verbodsborden", "is_correct": false },
-          { "text": "Parkeerborden", "is_correct": false }
+          {
+            "text": "Zoneborden",
+            "is_correct": true
+          },
+          {
+            "text": "Verbodsborden",
+            "is_correct": false
+          },
+          {
+            "text": "Parkeerborden",
+            "is_correct": false
+          }
         ],
         "explanation": "ZE1 is een zonebord. Het parkeerverbod geldt in de gehele zone en niet enkel op de weg bij het bord."
       },
       "EN": {
         "question": "To which category of traffic signs does this sign belong?",
         "choices": [
-          { "text": "Zone signs", "is_correct": true },
-          { "text": "Prohibition signs", "is_correct": false },
-          { "text": "Parking signs", "is_correct": false }
+          {
+            "text": "Zone signs",
+            "is_correct": true
+          },
+          {
+            "text": "Prohibition signs",
+            "is_correct": false
+          },
+          {
+            "text": "Parking signs",
+            "is_correct": false
+          }
         ],
         "explanation": "ZE1 is a zone sign. The no-parking prohibition applies throughout the entire zone and not only on the road at the sign."
       },
       "FR": {
         "question": "À quelle catégorie de panneaux appartient ce panneau?",
         "choices": [
-          { "text": "Panneaux de zone", "is_correct": true },
-          { "text": "Panneaux d'interdiction", "is_correct": false },
-          { "text": "Panneaux de stationnement", "is_correct": false }
+          {
+            "text": "Panneaux de zone",
+            "is_correct": true
+          },
+          {
+            "text": "Panneaux d'interdiction",
+            "is_correct": false
+          },
+          {
+            "text": "Panneaux de stationnement",
+            "is_correct": false
+          }
         ],
         "explanation": "ZE1 est un panneau de zone. L'interdiction de stationnement s'applique dans toute la zone et pas seulement sur la route au panneau."
       },
       "AR": {
-        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
+        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
         "choices": [
-          { "text": "علامات المنطقة", "is_correct": true },
-          { "text": "علامات الحظر", "is_correct": false },
-          { "text": "علامات الوقوف", "is_correct": false }
+          {
+            "text": "علامات المنطقة",
+            "is_correct": true
+          },
+          {
+            "text": "علامات الحظر",
+            "is_correct": false
+          },
+          {
+            "text": "علامات الوقوف",
+            "is_correct": false
+          }
         ],
-        "explanation": "ZE1 علامة مرورية منطقة. حظر الوقوف يسري في كامل المنطقة."
+        "explanation": "ZE1 علامة منطقة. حظر الوقوف يسري في كامل المنطقة."
       }
     }
   },
@@ -130,7 +184,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "ZE1 is een parkeerverbod, geen stopverbod. Stilstaan om in- of  uit te stappen of om te laden/lossen is niet door dit bord verboden. ZE3 zou dat verbieden."
+        "explanation": "ZE1 is een parkeerverbod, geen stopverbod. Stilstaan om in- of uit te stappen of om te laden/lossen is niet door dit bord verboden. ZE3 zou dat verbieden."
       },
       "EN": {
         "question": "Does ZE1 also prohibit briefly stopping to let someone get in or out?",
@@ -143,7 +197,10 @@
             "text": "Yes, even stopping briefly is prohibited in a ZE1 zone",
             "is_correct": false
           },
-          { "text": "Yes, but only during peak hours", "is_correct": false }
+          {
+            "text": "Yes, but only during peak hours",
+            "is_correct": false
+          }
         ],
         "explanation": "ZE1 is a no-parking sign, not a no-stopping sign. Stopping to let passengers in or out or to load/unload is not prohibited by this sign. ZE3 would prohibit that."
       },
@@ -166,19 +223,22 @@
         "explanation": "ZE1 est un panneau d'interdiction de stationnement, pas d'arrêt. S'arrêter pour laisser monter ou descendre des passagers ou pour charger/décharger n'est pas interdit par ce panneau. ZE3 l'interdirait."
       },
       "AR": {
-        "question": "هل تحظر ZE1 أيضًا التوقف المؤقت لإنزال ركاب،؟",
+        "question": "هل تحظر ZE1 أيضاً التوقف المؤقت لإنزال ركاب؟",
         "choices": [
           {
-            "text": "لا، ZE1 تحظر الوقوف فقط؛ التوقف المؤقت ليس محظورًا",
+            "text": "لا، ZE1 تحظر الوقوف فقط؛ التوقف المؤقت ليس محظوراً",
             "is_correct": true
           },
           {
             "text": "نعم، حتى التوقف المؤقت محظور في منطقة ZE1",
             "is_correct": false
           },
-          { "text": "نعم، لكن فقط خلال أوقات الذروة", "is_correct": false }
+          {
+            "text": "نعم، لكن فقط خلال أوقات الذروة",
+            "is_correct": false
+          }
         ],
-        "explanation": "ZE1 هي علامة حظر وقوف، ليس حظر توقف. التوقف لإنزال ركاب أو للتحميل/التنزيل ليس محظورًا بهذه العلامة. ZE3 ستحظر ذلك."
+        "explanation": "ZE1 هي علامة حظر وقوف، ليس حظر توقف. التوقف لإنزال ركاب أو للتحميل/التنزيل ليس محظوراً بهذه العلامة. ZE3 ستحظر ذلك."
       }
     }
   },
@@ -200,19 +260,28 @@
             "text": "Op snelheid rijden die lager is dan de minimumsnelheid",
             "is_correct": false
           },
-          { "text": "Inhalen van andere voertuigen", "is_correct": false }
+          {
+            "text": "Inhalen van andere voertuigen",
+            "is_correct": false
+          }
         ],
         "explanation": "ZE1 verbiedt uitsluitend parkeren in de gehele zone. Andere handelingen zoals rijsnelheid of inhalen worden niet door dit bord geregeld."
       },
       "EN": {
         "question": "You enter a ZE1 zone. What are you not allowed to do in this zone?",
         "choices": [
-          { "text": "Park on any road in the zone", "is_correct": true },
+          {
+            "text": "Park on any road in the zone",
+            "is_correct": true
+          },
           {
             "text": "Drive at a speed lower than the minimum speed",
             "is_correct": false
           },
-          { "text": "Overtake other vehicles", "is_correct": false }
+          {
+            "text": "Overtake other vehicles",
+            "is_correct": false
+          }
         ],
         "explanation": "ZE1 only prohibits parking throughout the entire zone. Other actions such as driving speed or overtaking are not regulated by this sign."
       },
@@ -227,16 +296,28 @@
             "text": "Conduire à une vitesse inférieure à la vitesse minimale",
             "is_correct": false
           },
-          { "text": "Dépasser d'autres véhicules", "is_correct": false }
+          {
+            "text": "Dépasser d'autres véhicules",
+            "is_correct": false
+          }
         ],
         "explanation": "ZE1 n'interdit que le stationnement dans toute la zone. D'autres actions comme la vitesse ou le dépassement ne sont pas réglementées par ce panneau."
       },
       "AR": {
         "question": "دخلت منطقة ZE1. ما الذي لا يجوز لك فعله في هذه المنطقة؟",
         "choices": [
-          { "text": "الوقوف على أي طريق داخل المنطقة", "is_correct": true },
-          { "text": "السير بسرعة أقل من الحد الأدنى", "is_correct": false },
-          { "text": "تجاوز المركبات الأخرى", "is_correct": false }
+          {
+            "text": "الوقوف على أي طريق داخل المنطقة",
+            "is_correct": true
+          },
+          {
+            "text": "السير بسرعة أقل من الحد الأدنى",
+            "is_correct": false
+          },
+          {
+            "text": "تجاوز المركبات الأخرى",
+            "is_correct": false
+          }
         ],
         "explanation": "ZE1 تحظر الوقوف فقط في كامل المنطقة. لا تنظم هذه العلامة أفعالاً أخرى."
       }
@@ -253,7 +334,7 @@
         "question": "U rijdt in een ZE1-zone en slaat een hoek om. U ziet geen parkeerverbodsbord. Mag u nu parkeren?",
         "choices": [
           {
-            "text": "Neen, het verbod geldt op alle wegen in de zone tot aan ZE1-",
+            "text": "Neen, het verbod geldt op alle wegen in de zone tot aan ZE1-Einde",
             "is_correct": true
           },
           {
@@ -271,7 +352,7 @@
         "question": "You are driving in a ZE1 zone and turn a corner. You see no parking prohibition sign. May you park?",
         "choices": [
           {
-            "text": "No, the prohibition applies on all roads in the zone until ZE1-",
+            "text": "No, the prohibition applies on all roads in the zone until ZE1-Einde",
             "is_correct": true
           },
           {
@@ -289,7 +370,7 @@
         "question": "Vous roulez dans une zone ZE1 et tournez au coin d'une rue. Vous ne voyez aucun panneau d'interdiction de stationnement. Pouvez-vous vous garer?",
         "choices": [
           {
-            "text": "Non, l'interdiction s'applique sur toutes les routes de la zone jusqu'à ZE1-",
+            "text": "Non, l'interdiction s'applique sur toutes les routes de la zone jusqu'à ZE1-Einde",
             "is_correct": true
           },
           {
@@ -301,25 +382,25 @@
             "is_correct": false
           }
         ],
-        "explanation": "Un panneau de zone s'applique à toutes les routes de la zone. Une fois que vous avez pénétré dans la zone des panneaux de répétition ne sont pas nécessaires pour maintenir l'interdiction en vigueur."
+        "explanation": "Un panneau de zone s'applique à toutes les routes de la zone. Une fois que vous avez pénétré dans la zone, des panneaux de répétition ne sont pas nécessaires pour maintenir l'interdiction en vigueur."
       },
       "AR": {
-        "question": "أنت تسير في منطقة ZE1 والتفيت عند زاوية. لا ترى علامة مرورية حظر وقوف. هل يجوز الوقوف؟",
+        "question": "أنت تسير في منطقة ZE1 والتفيت عند زاوية. لا ترى علامة حظر وقوف. هل يجوز الوقوف؟",
         "choices": [
           {
-            "text": "لا، الحظر يسري على جميع طرق المنطقة حتى ZE1-",
+            "text": "لا، الحظر يسري على جميع طرق المنطقة حتى ZE1-Einde",
             "is_correct": true
           },
           {
-            "text": "نعم، بدون علامة مرورية مرئية لا يسري الحظر في هذا الشارع بالتحديد",
+            "text": "نعم، بدون علامة مرئية لا يسري الحظر في هذا الشارع بالتحديد",
             "is_correct": false
           },
           {
-            "text": "نعم، لأن العلامة المرورية كانت فقط عند بداية المنطقة",
+            "text": "نعم، لأن العلامة كانت فقط عند بداية المنطقة",
             "is_correct": false
           }
         ],
-        "explanation": "علامة مرورية المنطقة تسري على جميع طرق المنطقة. بعد دخولك المنطقة لا تلزم علامات تكرار لإبقاء الحظر ساريًا."
+        "explanation": "علامة المنطقة تسري على جميع طرقها. بعد دخولك المنطقة لا تلزم علامات تكرار لإبقاء الحظر سارياً."
       }
     }
   },
@@ -388,16 +469,19 @@
         "question": "ما الفرق بين ZE1 و E1؟",
         "choices": [
           {
-            "text": "ZE1 تحظر الوقوف على جميع طرق المنطقة؛ E1 تحظر الوقوف فقط بجانب العلامة المرورية",
+            "text": "ZE1 تحظر الوقوف على جميع طرق المنطقة؛ E1 تحظر الوقوف فقط بجانب العلامة",
             "is_correct": true
           },
           {
             "text": "ZE1 و E1 متطابقتان: كلتاهما تحظران الوقوف على كامل الطريق",
             "is_correct": false
           },
-          { "text": "E1 أصرم لأنها تحظر التوقف أيضًا", "is_correct": false }
+          {
+            "text": "E1 أصرم لأنها تحظر التوقف أيضاً",
+            "is_correct": false
+          }
         ],
-        "explanation": "ZE1 تعمل كمنطقة: علامة مرورية واحدة عند المدخل تحظر الوقوف في كامل الحي. E1 تسري فقط على قسم الطريق بجانب العلامة المرورية."
+        "explanation": "ZE1 تعمل كمنطقة: علامة واحدة عند المدخل تحظر الوقوف في كامل الحي. E1 تسري فقط على قسم الطريق بجانب العلامة."
       }
     }
   },
@@ -451,18 +535,18 @@
         "explanation": "Une fois que vous avez pénétré dans une zone le panneau de zone s'applique sur toutes les routes de la zone. L'absence de panneau de répétition ne modifie pas l'interdiction."
       },
       "AR": {
-        "question": "دخلت منطقة ZE1، التفيت عند زاوية ولم ترّ أي علامة مرورية. هل يجوز الوقوف؟",
+        "question": "دخلت منطقة ZE1، التفيت عند زاوية ولم تر أي علامة. هل يجوز الوقوف؟",
         "choices": [
           {
-            "text": "لا، ZE1 تسري في كامل المنطقة بغض النظر عن رؤيتك لعلامة مرورية",
+            "text": "لا، ZE1 تسري في كامل المنطقة بغض النظر عن رؤيتك لعلامة",
             "is_correct": true
           },
           {
-            "text": "نعم، بدون علامة مرورية مرئية لا يوجد حظر عند هذه الزاوية",
+            "text": "نعم، بدون علامة مرئية لا يوجد حظر عند هذه الزاوية",
             "is_correct": false
           }
         ],
-        "explanation": "بمجرد دخولك المنطقة تسري علامة مرورية المنطقة على جميع طرقها. غياب علامة مرورية تكرار لا يغير الحظر."
+        "explanation": "بمجرد دخولك المنطقة تسري علامة المنطقة على جميع طرقها. غياب علامة تكرار لا يغير الحظر."
       }
     }
   },
@@ -502,7 +586,7 @@
         "explanation": "ZE1 is a no-parking sign. Briefly stopping to load or unload is not parking and therefore not prohibited by ZE1. Only ZE3 (no stopping) would prohibit this."
       },
       "FR": {
-        "question": "Vous vous trouvez dans une zone ZE1 et devez vous arrêter brièvement pour décharger des marchandises de votre véhicule. Est-ce autorisé ?",
+        "question": "Vous vous trouvez dans une zone ZE1 et devez vous arrêter brièvement pour décharger des marchandises de votre véhicule. Est-ce autorisé?",
         "choices": [
           {
             "text": "Oui, ZE1 interdit le stationnement mais pas l'arrêt bref pour charger et décharger",
@@ -522,9 +606,12 @@
             "text": "نعم، ZE1 تحظر الوقوف وليس التوقف المؤقت للتحميل والتنزيل",
             "is_correct": true
           },
-          { "text": "لا، أي توقف محظور في منطقة ZE1", "is_correct": false }
+          {
+            "text": "لا، أي توقف محظور في منطقة ZE1",
+            "is_correct": false
+          }
         ],
-        "explanation": "ZE1 هي علامة حظر وقوف. التوقف المؤقت للتحميل أو التنزيل ليس وقوفًا وبالتالي ليس محظورًا بموجب ZE1. فقط ZE3 (حظر التوقف) سيحظر ذلك."
+        "explanation": "ZE1 هي علامة حظر وقوف. التوقف المؤقت للتحميل أو التنزيل ليس وقوفاً وبالتالي ليس محظوراً بموجب ZE1. فقط ZE3 (حظر التوقف) سيحظر ذلك."
       }
     }
   }

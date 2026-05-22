@@ -75,6 +75,7 @@ public class Phase6BelgianInvariantsRuntimeBDDTest {
         private User testUser;
         private Category testCategory;
         private RoadSign testSign;
+        private String testUserJwt;
 
         @BeforeEach
         void setUp() {
@@ -93,6 +94,7 @@ public class Phase6BelgianInvariantsRuntimeBDDTest {
                 testUser.setIsActive(true);
                 testUser.setIsLocked(false);
                 testUser = userRepository.save(testUser);
+                testUserJwt = loginAndGetJwt(testUser.getUsername(), "password123");
 
                 // Create test category
                 testCategory = new Category();
@@ -134,7 +136,7 @@ public class Phase6BelgianInvariantsRuntimeBDDTest {
         void examGenerationReturnsBelgianCompliantQuestions() throws Exception {
                 // When: User starts exam simulation via API
                 MvcResult result = mockMvc.perform(post("/api/exams/simulations/start")
-                                .param("userId", testUser.getId().toString())
+                                .header("Authorization", "Bearer " + testUserJwt)
                                 .contentType(MediaType.APPLICATION_JSON))
                                 .andExpect(status().isCreated())
                                 .andReturn();
@@ -216,7 +218,7 @@ public class Phase6BelgianInvariantsRuntimeBDDTest {
 
                 // When: User starts exam simulation via API
                 MvcResult result = mockMvc.perform(post("/api/exams/simulations/start")
-                                .param("userId", testUser.getId().toString())
+                                .header("Authorization", "Bearer " + testUserJwt)
                                 .contentType(MediaType.APPLICATION_JSON))
                                 .andExpect(status().isCreated())
                                 .andReturn();
@@ -256,7 +258,7 @@ public class Phase6BelgianInvariantsRuntimeBDDTest {
                         question.setQuestionNl("Belgische vraag " + i);
                         question.setQuestionFr("Question belge " + i);
                         question.setQuestionType(QuizQuestion.QuestionType.MULTIPLE_CHOICE);
-                        question.setDifficultyLevel(QuizQuestion.DifficultyLevel.MEDIUM);
+                        question.setDifficultyLevel(difficultyForIndex(i));
                         question.setCategory(testCategory);
                         question.setRoadSign(testSign);
                         question.setIsActive(true);
@@ -321,5 +323,33 @@ public class Phase6BelgianInvariantsRuntimeBDDTest {
                 option.setIsCorrect(correct);
                 option.setDisplayOrder(question.getOptions().size() + 1);
                 question.addOption(option);
+        }
+
+        private QuizQuestion.DifficultyLevel difficultyForIndex(int index) {
+                if (index < 20) {
+                        return QuizQuestion.DifficultyLevel.EASY;
+                }
+                if (index < 50) {
+                        return QuizQuestion.DifficultyLevel.MEDIUM;
+                }
+                return QuizQuestion.DifficultyLevel.HARD;
+        }
+
+        private String loginAndGetJwt(String username, String password) {
+                try {
+                        String loginJson = String.format("{\"username\":\"%s\",\"password\":\"%s\"}", username,
+                                        password);
+
+                        MvcResult result = mockMvc.perform(post("/api/auth/login")
+                                        .contentType(MediaType.APPLICATION_JSON)
+                                        .content(loginJson))
+                                        .andExpect(status().isOk())
+                                        .andReturn();
+
+                        JsonNode jsonNode = objectMapper.readTree(result.getResponse().getContentAsString());
+                        return jsonNode.get("token").asText();
+                } catch (Exception exception) {
+                        throw new IllegalStateException("Failed to authenticate test user", exception);
+                }
         }
 }

@@ -243,5 +243,5 @@ SELECT 'A9', 'A9', 'DANGER',
 FROM   traffic_signs ts
 WHERE  ts.sign_code = 'A9'
 ON DUPLICATE KEY UPDATE
-  image_path = VALUES(image_path),
+  image_path = 'images/signs/danger_signs/A9 Beweegbare brug.png',
   updated_at = NOW();

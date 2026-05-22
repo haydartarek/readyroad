@@ -1,6 +1,6 @@
 [
   {
-    "question_id": "ZE1M_Q01",
+    "question_id": "ZE1-Einde_Q01",
     "type": "WHAT_DOES_IT_MEAN",
     "difficulty": "EASY",
     "is_critical": false,
@@ -9,7 +9,10 @@
       "NL": {
         "question": "Wat betekent dit verkeersbord?",
         "choices": [
-          { "text": "Einde zone parkeerverbod", "is_correct": true },
+          {
+            "text": "Einde zone parkeerverbod",
+            "is_correct": true
+          },
           {
             "text": "Einde zone parkeren uitsluitend voor auto's",
             "is_correct": false
@@ -19,19 +22,25 @@
             "is_correct": false
           }
         ],
-        "explanation": "ZE1- is het eindbord van de zone parkeerverbod. Voorbij dit bord eindigt de zone en gelden de gewone parkeernormen opnieuw."
+        "explanation": "ZE1-Einde is het eindbord van de zone parkeerverbod. Voorbij dit bord eindigt de zone en gelden de gewone parkeernormen opnieuw."
       },
       "EN": {
         "question": "What does this traffic sign mean?",
         "choices": [
-          { "text": "End zone no parking", "is_correct": true },
-          { "text": "End zone parking for cars only", "is_correct": false },
+          {
+            "text": "End zone no parking",
+            "is_correct": true
+          },
+          {
+            "text": "End zone parking for cars only",
+            "is_correct": false
+          },
           {
             "text": "End zone parking for cars only with time restriction",
             "is_correct": false
           }
         ],
-        "explanation": "ZE1- is the end sign of the no-parking zone. Beyond this sign the zone ends and normal parking rules apply again."
+        "explanation": "ZE1-Einde is the end sign of the no-parking zone. Beyond this sign the zone ends and normal parking rules apply again."
       },
       "FR": {
         "question": "Que signifie ce panneau de signalisation?",
@@ -49,12 +58,15 @@
             "is_correct": false
           }
         ],
-        "explanation": "ZE1- est le panneau de fin de la zone d'interdiction de stationnement. Après ce panneau la zone se termine et les règles normales de stationnement s'appliquent à nouveau."
+        "explanation": "ZE1-Einde est le panneau de fin de la zone d'interdiction de stationnement. Après ce panneau la zone se termine et les règles normales de stationnement s'appliquent à nouveau."
       },
       "AR": {
         "question": "ما معنى هذه العلامة المرورية؟",
         "choices": [
-          { "text": "نهاية منطقة ممنوع الوقوف", "is_correct": true },
+          {
+            "text": "نهاية منطقة ممنوع الوقوف",
+            "is_correct": true
+          },
           {
             "text": "نهاية منطقة الركن المخصص للسيارات فقط",
             "is_correct": false
@@ -64,12 +76,12 @@
             "is_correct": false
           }
         ],
-        "explanation": "ZE1- هي علامة مرورية نهاية منطقة ممنوع الوقوف. بعد هذه العلامة المرورية تنتهي المنطقة وتسري قواعد الوقوف العادية من جديد."
+        "explanation": "ZE1-Einde هي علامة نهاية منطقة ممنوع الوقوف. بعد هذه العلامة تنتهي المنطقة وتسري قواعد الوقوف العادية من جديد."
       }
     }
   },
   {
-    "question_id": "ZE1M_Q02",
+    "question_id": "ZE1-Einde_Q02",
     "type": "WHICH_SIGN",
     "difficulty": "EASY",
     "is_critical": false,
@@ -78,57 +90,93 @@
       "NL": {
         "question": "Tot welke categorie verkeersborden behoort dit bord?",
         "choices": [
-          { "text": "Zoneborden", "is_correct": true },
-          { "text": "Verbodsborden", "is_correct": false },
-          { "text": "Parkeerborden", "is_correct": false }
+          {
+            "text": "Zoneborden",
+            "is_correct": true
+          },
+          {
+            "text": "Verbodsborden",
+            "is_correct": false
+          },
+          {
+            "text": "Parkeerborden",
+            "is_correct": false
+          }
         ],
-        "explanation": "ZE1- is een zonebord dat het einde van de zone parkeerverbod aangeeft."
+        "explanation": "ZE1-Einde is een zonebord dat het einde van de zone parkeerverbod aangeeft."
       },
       "EN": {
         "question": "To which category of traffic signs does this sign belong?",
         "choices": [
-          { "text": "Zone signs", "is_correct": true },
-          { "text": "Prohibition signs", "is_correct": false },
-          { "text": "Parking signs", "is_correct": false }
+          {
+            "text": "Zone signs",
+            "is_correct": true
+          },
+          {
+            "text": "Prohibition signs",
+            "is_correct": false
+          },
+          {
+            "text": "Parking signs",
+            "is_correct": false
+          }
         ],
-        "explanation": "ZE1- is a zone sign indicating the end of the no-parking zone."
+        "explanation": "ZE1-Einde is a zone sign indicating the end of the no-parking zone."
       },
       "FR": {
         "question": "À quelle catégorie de panneaux appartient ce panneau?",
         "choices": [
-          { "text": "Panneaux de zone", "is_correct": true },
-          { "text": "Panneaux d'interdiction", "is_correct": false },
-          { "text": "Panneaux de stationnement", "is_correct": false }
+          {
+            "text": "Panneaux de zone",
+            "is_correct": true
+          },
+          {
+            "text": "Panneaux d'interdiction",
+            "is_correct": false
+          },
+          {
+            "text": "Panneaux de stationnement",
+            "is_correct": false
+          }
         ],
-        "explanation": "ZE1- est un panneau de zone indiquant la fin de la zone d'interdiction de stationnement."
+        "explanation": "ZE1-Einde est un panneau de zone indiquant la fin de la zone d'interdiction de stationnement."
       },
       "AR": {
-        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
+        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
         "choices": [
-          { "text": "علامات المنطقة", "is_correct": true },
-          { "text": "علامات الحظر", "is_correct": false },
-          { "text": "علامات الوقوف", "is_correct": false }
+          {
+            "text": "علامات المنطقة",
+            "is_correct": true
+          },
+          {
+            "text": "علامات الحظر",
+            "is_correct": false
+          },
+          {
+            "text": "علامات الوقوف",
+            "is_correct": false
+          }
         ],
-        "explanation": "ZE1- علامة مرورية منطقة تشير إلى نهاية منطقة ممنوع الوقوف."
+        "explanation": "ZE1-Einde علامة منطقة تشير إلى نهاية منطقة ممنوع الوقوف."
       }
     }
   },
   {
-    "question_id": "ZE1M_Q03",
+    "question_id": "ZE1-Einde_Q03",
     "type": "HAZARD_IDENTIFICATION",
     "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat verandert er voor parkeren na ZE1-?",
+        "question": "Wat verandert er voor parkeren na ZE1-Einde?",
         "choices": [
           {
             "text": "Het parkeerverbod is opgeheven; u kunt opnieuw parkeren op basis van de normale regels",
             "is_correct": true
           },
           {
-            "text": "U moet een parkeerschijf gebruiken na ZE1-",
+            "text": "U moet een parkeerschijf gebruiken na ZE1-Einde",
             "is_correct": false
           },
           {
@@ -136,17 +184,17 @@
             "is_correct": false
           }
         ],
-        "explanation": "ZE1- beëindigt de zone. Na dit bord gelden de normale parkeermogelijkheden opnieuw, tenzij andere borden dat beperken."
+        "explanation": "ZE1-Einde beëindigt de zone. Na dit bord gelden de normale parkeermogelijkheden opnieuw, tenzij andere borden dat beperken."
       },
       "EN": {
-        "question": "What changes for parking after ZE1-?",
+        "question": "What changes for parking after ZE1-Einde?",
         "choices": [
           {
             "text": "The no-parking prohibition is lifted; you can park again based on normal rules",
             "is_correct": true
           },
           {
-            "text": "You must use a parking disc after ZE1-",
+            "text": "You must use a parking disc after ZE1-Einde",
             "is_correct": false
           },
           {
@@ -154,17 +202,17 @@
             "is_correct": false
           }
         ],
-        "explanation": "ZE1- ends the zone. After this sign normal parking possibilities apply again, unless other signs restrict them."
+        "explanation": "ZE1-Einde ends the zone. After this sign normal parking possibilities apply again, unless other signs restrict them."
       },
       "FR": {
-        "question": "Que change ZE1- pour le stationnement?",
+        "question": "Que change ZE1-Einde pour le stationnement?",
         "choices": [
           {
             "text": "L'interdiction de stationnement est levée; vous pouvez à nouveau stationner selon les règles normales",
             "is_correct": true
           },
           {
-            "text": "Vous devez utiliser un disque de stationnement après ZE1-",
+            "text": "Vous devez utiliser un disque de stationnement après ZE1-Einde",
             "is_correct": false
           },
           {
@@ -172,31 +220,37 @@
             "is_correct": false
           }
         ],
-        "explanation": "ZE1- met fin à la zone. Après ce panneau les possibilités normales de stationnement s'appliquent à nouveau sauf si d'autres panneaux les limitent."
+        "explanation": "ZE1-Einde met fin à la zone. Après ce panneau les possibilités normales de stationnement s'appliquent à nouveau sauf si d'autres panneaux les limitent."
       },
       "AR": {
-        "question": "ماذا يتغير بعد ZE1- بالنسبة للوقوف؟",
+        "question": "ماذا يتغير بعد ZE1-Einde بالنسبة للوقوف؟",
         "choices": [
           {
             "text": "يرتفع حظر الوقوف؛ يمكنك الوقوف من جديد وفق القواعد العادية",
             "is_correct": true
           },
-          { "text": "يجب استخدام قرص الوقوف بعد ZE1-", "is_correct": false },
-          { "text": "يجب السير 200 متر إضافية قبل الوقوف", "is_correct": false }
+          {
+            "text": "يجب استخدام قرص الوقوف بعد ZE1-Einde",
+            "is_correct": false
+          },
+          {
+            "text": "يجب السير 200 متر إضافية قبل الوقوف",
+            "is_correct": false
+          }
         ],
-        "explanation": "ZE1- تنهي المنطقة. بعد هذه العلامة المرورية تسري إمكانيات الوقوف العادية من جديد، ما لم تحدد علامات أخرى ذلك."
+        "explanation": "ZE1-Einde تنهي المنطقة. بعد هذه العلامة تسري إمكانيات الوقوف العادية من جديد، ما لم تحدد علامات أخرى ذلك."
       }
     }
   },
   {
-    "question_id": "ZE1M_Q04",
+    "question_id": "ZE1-Einde_Q04",
     "type": "WHAT_MUST_YOU_DO",
     "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U verlaat een ZE1-zone via ZE1-. Wat kunt u nu doen als u een geschikte parkeerplaats tegenkomt?",
+        "question": "U verlaat een ZE1-zone via ZE1-Einde. Wat kunt u nu doen als u een geschikte parkeerplaats tegenkomt?",
         "choices": [
           {
             "text": "U kunt parkeren overeenkomstig de normale parkeerregels",
@@ -211,10 +265,10 @@
             "is_correct": false
           }
         ],
-        "explanation": "Er is geen verplichte wachttijd na ZE1-. De normale parkeerregels gelden onmiddellijk."
+        "explanation": "Er is geen verplichte wachttijd na ZE1-Einde. De normale parkeerregels gelden onmiddellijk."
       },
       "EN": {
-        "question": "You are leaving a ZE1 zone via ZE1-. What can you do when you encounter a suitable parking space?",
+        "question": "You are leaving a ZE1 zone via ZE1-Einde. What can you do when you encounter a suitable parking space?",
         "choices": [
           {
             "text": "You can park in accordance with normal parking rules",
@@ -229,10 +283,10 @@
             "is_correct": false
           }
         ],
-        "explanation": "There is no mandatory waiting period after ZE1-. Normal parking rules apply immediately."
+        "explanation": "There is no mandatory waiting period after ZE1-Einde. Normal parking rules apply immediately."
       },
       "FR": {
-        "question": "Vous quittez une zone ZE1 via ZE1-. Que pouvez-vous faire si vous trouvez une place de stationnement adaptée?",
+        "question": "Vous quittez une zone ZE1 via ZE1-Einde. Que pouvez-vous faire si vous trouvez une place de stationnement adaptée?",
         "choices": [
           {
             "text": "Vous pouvez vous garer conformément aux règles normales de stationnement",
@@ -247,10 +301,10 @@
             "is_correct": false
           }
         ],
-        "explanation": "Il n'y a pas de délai d'attente obligatoire après ZE1-. Les règles normales de stationnement s'appliquent immédiatement."
+        "explanation": "Il n'y a pas de délai d'attente obligatoire après ZE1-Einde. Les règles normales de stationnement s'appliquent immédiatement."
       },
       "AR": {
-        "question": "تغادر منطقة ZE1 عبر ZE1-. ماذا يمكنك فعله إذا وجدت مكان وقوف مناسبًا؟",
+        "question": "تغادر منطقة ZE1 عبر ZE1-Einde. ماذا يمكنك فعله إذا وجدت مكان وقوف مناسباً؟",
         "choices": [
           {
             "text": "يمكنك الوقوف وفق قواعد الوقوف العادية",
@@ -265,19 +319,19 @@
             "is_correct": false
           }
         ],
-        "explanation": "لا توجد فترة انتظار إلزامية بعد ZE1-. تسري قواعد الوقوف العادية فورًا."
+        "explanation": "لا توجد فترة انتظار إلزامية بعد ZE1-Einde. تسري قواعد الوقوف العادية فوراً."
       }
     }
   },
   {
-    "question_id": "ZE1M_Q05",
+    "question_id": "ZE1-Einde_Q05",
     "type": "WHAT_MUST_YOU_DO",
     "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Na ZE1- zijn er geen nieuwe borden. Welke parkeernormen gelden op de weg die volgt?",
+        "question": "Na ZE1-Einde zijn er geen nieuwe borden. Welke parkeernormen gelden op de weg die volgt?",
         "choices": [
           {
             "text": "De normale wettelijke parkeernormen zonder speciale beperking",
@@ -292,10 +346,10 @@
             "is_correct": false
           }
         ],
-        "explanation": "Na ZE1- vervalt de zonerestrict. De gewone parkeerregels gelden opnieuw zonder bijzonder bord."
+        "explanation": "Na ZE1-Einde vervalt de zonerestrictie. De gewone parkeerregels gelden opnieuw zonder bijzonder bord."
       },
       "EN": {
-        "question": "After ZE1- there are no new signs. What parking rules apply on the road that follows?",
+        "question": "After ZE1-Einde there are no new signs. What parking rules apply on the road that follows?",
         "choices": [
           {
             "text": "Normal legal parking rules without special restriction",
@@ -310,10 +364,10 @@
             "is_correct": false
           }
         ],
-        "explanation": "After ZE1- the zone restriction lapses. Normal parking rules apply again without any special sign."
+        "explanation": "After ZE1-Einde the zone restriction lapses. Normal parking rules apply again without any special sign."
       },
       "FR": {
-        "question": "Après ZE1- il n'y a pas de nouveaux panneaux. Quelles règles de stationnement s'appliquent sur la route qui suit?",
+        "question": "Après ZE1-Einde il n'y a pas de nouveaux panneaux. Quelles règles de stationnement s'appliquent sur la route qui suit?",
         "choices": [
           {
             "text": "Les règles normales de stationnement sans restriction spéciale",
@@ -328,10 +382,10 @@
             "is_correct": false
           }
         ],
-        "explanation": "Après ZE1- la restriction de zone prend fin. Les règles normales de stationnement s'appliquent à nouveau sans panneau spécial."
+        "explanation": "Après ZE1-Einde la restriction de zone prend fin. Les règles normales de stationnement s'appliquent à nouveau sans panneau spécial."
       },
       "AR": {
-        "question": "بعد ZE1- لا توجد علامات جديدة. ما قواعد الوقوف على الطريق التالي؟",
+        "question": "بعد ZE1-Einde لا توجد علامات جديدة. ما قواعد الوقوف على الطريق التالي؟",
         "choices": [
           {
             "text": "قواعد الوقوف القانونية العادية دون قيود خاصة",
@@ -342,104 +396,107 @@
             "is_correct": false
           },
           {
-            "text": "الوقوف محظور حتى تسمح به علامة مرورية جديدة",
+            "text": "الوقوف محظور حتى تسمح به علامة جديدة",
             "is_correct": false
           }
         ],
-        "explanation": "بعد ZE1- ينتهي قيد المنطقة. تسري قواعد الوقوف العادية من جديد دون علامة مرورية خاصة."
+        "explanation": "بعد ZE1-Einde ينتهي قيد المنطقة. تسري قواعد الوقوف العادية من جديد دون علامة خاصة."
       }
     }
   },
   {
-    "question_id": "ZE1M_Q06",
+    "question_id": "ZE1-Einde_Q06",
     "type": "WHAT_MUST_YOU_DO",
     "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Moet u na ZE1- een parkeerschijf gebruiken om te parkeren?",
+        "question": "Moet u na ZE1-Einde een parkeerschijf gebruiken om te parkeren?",
         "choices": [
           {
             "text": "Neen, tenzij een afzonderlijk bord een blauwe zone aanduidt",
             "is_correct": true
           },
           {
-            "text": "Ja, ZE1- impliceert automatisch een blauwe parkeerzone",
+            "text": "Ja, ZE1-Einde impliceert automatisch een blauwe parkeerzone",
             "is_correct": false
           },
           {
-            "text": "Ja, omdat u uit een parkeerrijkzone komt",
+            "text": "Ja, omdat u uit een parkeerverbodszone komt",
             "is_correct": false
           }
         ],
-        "explanation": "ZE1- is puur een eindbord van de parkeerverbodszone. Het impliceert geen blauwe zone of parkeerschijfverplichting."
+        "explanation": "ZE1-Einde is puur een eindbord van de parkeerverbodszone. Het impliceert geen blauwe zone of parkeerschijfverplichting."
       },
       "EN": {
-        "question": "Must you use a parking disc to park after ZE1-?",
+        "question": "Must you use a parking disc to park after ZE1-Einde?",
         "choices": [
           {
             "text": "No, unless a separate sign indicates a blue zone",
             "is_correct": true
           },
           {
-            "text": "Yes, ZE1- automatically implies a blue parking zone",
+            "text": "Yes, ZE1-Einde automatically implies a blue parking zone",
             "is_correct": false
           },
           {
-            "text": "Yes, because you have come from a restricted parking zone",
+            "text": "Yes, because you have come from a no-parking zone",
             "is_correct": false
           }
         ],
-        "explanation": "ZE1- is purely an end sign for the no-parking zone. It does not imply a blue zone or parking disc requirement."
+        "explanation": "ZE1-Einde is purely an end sign for the no-parking zone. It does not imply a blue zone or parking disc requirement."
       },
       "FR": {
-        "question": "Devez-vous utiliser un disque de stationnement pour vous garer après ZE1-?",
+        "question": "Devez-vous utiliser un disque de stationnement pour vous garer après ZE1-Einde?",
         "choices": [
           {
             "text": "Non, sauf si un panneau séparé indique une zone bleue",
             "is_correct": true
           },
           {
-            "text": "Oui, ZE1- implique automatiquement une zone de stationnement bleue",
+            "text": "Oui, ZE1-Einde implique automatiquement une zone de stationnement bleue",
             "is_correct": false
           },
           {
-            "text": "Oui, parce que vous venez d'une zone de stationnement réglementé",
+            "text": "Oui, parce que vous venez d'une zone d'interdiction de stationnement",
             "is_correct": false
           }
         ],
-        "explanation": "ZE1- est purement un panneau de fin de zone d'interdiction de stationnement. Il n'implique pas de zone bleue ni d'obligation de disque de stationnement."
+        "explanation": "ZE1-Einde est purement un panneau de fin de zone d'interdiction de stationnement. Il n'implique pas de zone bleue ni d'obligation de disque de stationnement."
       },
       "AR": {
-        "question": "هل يجب استخدام قرص وقوف للوقوف بعد ZE1-؟",
+        "question": "هل يجب استخدام قرص وقوف للوقوف بعد ZE1-Einde؟",
         "choices": [
           {
-            "text": "لا، ما لم تشر علامة مرورية منفصلة إلى منطقة زرقاء",
+            "text": "لا، ما لم تشر علامة منفصلة إلى منطقة زرقاء",
             "is_correct": true
           },
           {
-            "text": "نعم، ZE1- تستلزم تلقائيًا منطقة وقوف زرقاء",
+            "text": "نعم، ZE1-Einde تستلزم تلقائياً منطقة وقوف زرقاء",
             "is_correct": false
           },
-          { "text": "نعم، لأنك قادم من منطقة وقوف مقيدة", "is_correct": false }
+          {
+            "text": "نعم، لأنك قادم من منطقة حظر وقوف",
+            "is_correct": false
+          }
         ],
-        "explanation": "ZE1- هي فقط علامة مرورية نهاية منطقة حظر الوقوف. لا تعني منطقة زرقاء أو وجوب قرص وقوف."
+        "explanation": "ZE1-Einde هي فقط علامة نهاية منطقة حظر الوقوف. لا تعني منطقة زرقاء أو وجوب قرص وقوف."
       }
     }
   },
   {
-    "question_id": "ZE1M_Q07",
+    "question_id": "ZE1-Einde_Q07",
     "type": "IS_IT_ALLOWED",
     "difficulty": "HARD",
     "is_critical": true,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U passeert ZE1-. Zijn de normale parkeerregels nu onmiddellijk van toepassing?",
+        "question": "U passeert ZE1-Einde. Zijn de normale parkeerregels nu onmiddellijk van toepassing?",
         "choices": [
           {
-            "text": "Ja, ZE1- beëindigt onmiddellijk het parkeerverbod van de zone",
+            "text": "Ja, ZE1-Einde beëindigt onmiddellijk het parkeerverbod van de zone",
             "is_correct": true
           },
           {
@@ -447,13 +504,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "Er is geen overgangsafstand na een zonebord. ZE1- heft het verbod onmiddellijk op."
+        "explanation": "Er is geen overgangsafstand na een zonebord. ZE1-Einde heft het verbod onmiddellijk op."
       },
       "EN": {
-        "question": "You pass ZE1-. Do normal parking rules apply immediately?",
+        "question": "You pass ZE1-Einde. Do normal parking rules apply immediately?",
         "choices": [
           {
-            "text": "Yes, ZE1- immediately ends the no-parking prohibition of the zone",
+            "text": "Yes, ZE1-Einde immediately ends the no-parking prohibition of the zone",
             "is_correct": true
           },
           {
@@ -461,13 +518,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "There is no transition distance after a zone sign. ZE1- lifts the prohibition immediately."
+        "explanation": "There is no transition distance after a zone sign. ZE1-Einde lifts the prohibition immediately."
       },
       "FR": {
-        "question": "Vous passez ZE1-. Les règles normales de stationnement s'appliquent-elles immédiatement?",
+        "question": "Vous passez ZE1-Einde. Les règles normales de stationnement s'appliquent-elles immédiatement?",
         "choices": [
           {
-            "text": "Oui, ZE1- met immédiatement fin à l'interdiction de stationnement de la zone",
+            "text": "Oui, ZE1-Einde met immédiatement fin à l'interdiction de stationnement de la zone",
             "is_correct": true
           },
           {
@@ -475,13 +532,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "Il n'y a pas de distance de transition après un panneau de zone. ZE1- lève immédiatement l'interdiction."
+        "explanation": "Il n'y a pas de distance de transition après un panneau de zone. ZE1-Einde lève immédiatement l'interdiction."
       },
       "AR": {
-        "question": "تمر بعلامة مرورية ZE1-. هل تسري قواعد الوقوف العادية فورًا؟",
+        "question": "تمر بعلامة ZE1-Einde. هل تسري قواعد الوقوف العادية فوراً؟",
         "choices": [
           {
-            "text": "نعم، ZE1- تنهي حظر وقوف المنطقة فورًا",
+            "text": "نعم، ZE1-Einde تنهي حظر وقوف المنطقة فوراً",
             "is_correct": true
           },
           {
@@ -489,72 +546,72 @@
             "is_correct": false
           }
         ],
-        "explanation": "لا توجد مسافة انتقال بعد علامة مرورية المنطقة. ZE1- ترفع الحظر فورًا."
+        "explanation": "لا توجد مسافة انتقال بعد علامة المنطقة. ZE1-Einde ترفع الحظر فوراً."
       }
     }
   },
   {
-    "question_id": "ZE1M_Q08",
+    "question_id": "ZE1-Einde_Q08",
     "type": "IS_IT_ALLOWED",
     "difficulty": "HARD",
     "is_critical": true,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Na ZE1- staat er geen nieuw bord. Betekent ZE1- dat er nu een parkeerzone met schijfverplichting van kracht is?",
+        "question": "Na ZE1-Einde staat er geen nieuw bord. Betekent ZE1-Einde dat er nu een parkeerzone met schijfverplichting van kracht is?",
         "choices": [
           {
-            "text": "Neen, ZE1- duidt uitsluitend het einde van de parkeerverbodszone aan; geen blauwe zone of schijf vereist",
+            "text": "Neen, ZE1-Einde duidt uitsluitend het einde van de parkeerverbodszone aan; geen blauwe zone of schijf vereist",
             "is_correct": true
           },
           {
-            "text": "Ja, na ZE1- geldt altijd een blauwe zone met schijfverplichting",
+            "text": "Ja, na ZE1-Einde geldt altijd een blauwe zone met schijfverplichting",
             "is_correct": false
           }
         ],
-        "explanation": "ZE1- beëindigt de parkeerverbodszone. Er worden geen nieuwe beperkingen opgelegd tenzij specifieke parkeerborden dat aangeven."
+        "explanation": "ZE1-Einde beëindigt de parkeerverbodszone. Er worden geen nieuwe beperkingen opgelegd tenzij specifieke parkeerborden dat aangeven."
       },
       "EN": {
-        "question": "After ZE1- there is no new sign. Does ZE1- mean a parking zone with disc requirement is now in force?",
+        "question": "After ZE1-Einde there is no new sign. Does ZE1-Einde mean a parking zone with disc requirement is now in force?",
         "choices": [
           {
-            "text": "No, ZE1- only indicates the end of the no-parking zone; no blue zone or disc required",
+            "text": "No, ZE1-Einde only indicates the end of the no-parking zone; no blue zone or disc required",
             "is_correct": true
           },
           {
-            "text": "Yes, a blue zone with disc requirement always applies after ZE1-",
+            "text": "Yes, a blue zone with disc requirement always applies after ZE1-Einde",
             "is_correct": false
           }
         ],
-        "explanation": "ZE1- ends the no-parking zone. No new restrictions are imposed unless specific parking signs indicate so."
+        "explanation": "ZE1-Einde ends the no-parking zone. No new restrictions are imposed unless specific parking signs indicate so."
       },
       "FR": {
-        "question": "Après ZE1- il n'y a pas de nouveau panneau. ZE1- signifie-t-il qu'une zone de stationnement avec obligation de disque est en vigueur?",
+        "question": "Après ZE1-Einde il n'y a pas de nouveau panneau. ZE1-Einde signifie-t-il qu'une zone de stationnement avec obligation de disque est en vigueur?",
         "choices": [
           {
-            "text": "Non, ZE1- indique uniquement la fin de la zone d'interdiction de stationnement; aucune zone bleue ou disque requis",
+            "text": "Non, ZE1-Einde indique uniquement la fin de la zone d'interdiction de stationnement; aucune zone bleue ou disque requis",
             "is_correct": true
           },
           {
-            "text": "Oui, une zone bleue avec obligation de disque s'applique toujours après ZE1-",
+            "text": "Oui, une zone bleue avec obligation de disque s'applique toujours après ZE1-Einde",
             "is_correct": false
           }
         ],
-        "explanation": "ZE1- met fin à la zone d'interdiction de stationnement. Aucune nouvelle restriction n'est imposée à moins que des panneaux de stationnement spécifiques ne l'indiquent."
+        "explanation": "ZE1-Einde met fin à la zone d'interdiction de stationnement. Aucune nouvelle restriction n'est imposée à moins que des panneaux de stationnement spécifiques ne l'indiquent."
       },
       "AR": {
-        "question": "بعد ZE1- لا توجد علامة مرورية جديدة. هل تعني ZE1- سريان منطقة وقوف مع وجوب قرص الوقوف؟",
+        "question": "بعد ZE1-Einde لا توجد علامة جديدة. هل تعني ZE1-Einde سريان منطقة وقوف مع وجوب قرص الوقوف؟",
         "choices": [
           {
-            "text": "لا، ZE1- تشير فقط إلى نهاية منطقة حظر الوقوف؛ لا توجد منطقة زرقاء أو قرص مطلوب",
+            "text": "لا، ZE1-Einde تشير فقط إلى نهاية منطقة حظر الوقوف؛ لا توجد منطقة زرقاء أو قرص مطلوب",
             "is_correct": true
           },
           {
-            "text": "نعم، تسري دائمًا منطقة زرقاء بعد ZE1-",
+            "text": "نعم، تسري دائماً منطقة زرقاء بعد ZE1-Einde",
             "is_correct": false
           }
         ],
-        "explanation": "ZE1- تنهي منطقة حظر الوقوف. لا تفرض قيودًا جديدة ما لم تشر علامات وقوف محددة إلى ذلك."
+        "explanation": "ZE1-Einde تنهي منطقة حظر الوقوف. لا تفرض قيوداً جديدة ما لم تشر علامات وقوف محددة إلى ذلك."
       }
     }
   }

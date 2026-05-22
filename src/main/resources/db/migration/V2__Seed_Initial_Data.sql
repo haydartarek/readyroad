@@ -60,11 +60,11 @@ INSERT INTO categories (
 ('M', 'علامات الطريق',        'Road Markings',     'Wegmarkeringen',      'Marquages routiers',
  'علامات الطريق الأرضية',     'Road surface markings',
  'Wegmarkeringen op het wegdek',         'Marquages au sol',
- 9, TRUE, NOW(), NOW())
+ 9, TRUE, NOW(), NOW()) AS new_values
 
 -- ✅ Idempotent: skip if code already exists
 ON DUPLICATE KEY UPDATE
-    display_order = VALUES(display_order),
+    display_order = new_values.display_order,
     updated_at    = NOW();
 
 SELECT '✅ Step 2: Categories inserted/updated' AS status;
@@ -177,12 +177,12 @@ INSERT INTO traffic_signs (
  'خط أبيض منقطع', 'Broken white line', 'Onderbroken witte streep', 'Ligne blanche discontinue',
  'خط أبيض منقطع يجوز عبوره بحذر', 'Broken white line that can be crossed carefully',
  'Onderbroken witte streep die voorzichtig overschreden mag worden', 'Ligne blanche discontinue qui peut être franchie prudemment',
- NULL, TRUE, NOW(), NOW())
+ NULL, TRUE, NOW(), NOW()) AS new_values
 
 -- ✅ Idempotent: update if sign_code already exists
 ON DUPLICATE KEY UPDATE
-    name_ar      = VALUES(name_ar),
-    name_en      = VALUES(name_en),
+    name_ar      = new_values.name_ar,
+    name_en      = new_values.name_en,
     updated_at   = NOW();
 
 SELECT '✅ Step 3: Traffic signs inserted/updated' AS status;

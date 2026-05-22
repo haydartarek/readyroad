@@ -78,7 +78,7 @@ WHERE code = 'M';
 INSERT INTO categories (code, name_ar, name_en, name_nl, name_fr, description_ar, description_en, description_nl, description_fr, display_order, is_active, created_at, updated_at)
 VALUES ('H', 'علامات المعلومات والإجراءات المرورية المؤقتة', 'Information and Temporary Traffic Signs', 'Informatieborden en tijdelijke verkeersmaatregelen', 'Panneaux d''information et mesures de circulation temporaires',
         'علامات المعلومات والإجراءات المرورية المؤقتة', 'Information and temporary traffic measure signs', 'Informatieborden en tijdelijke verkeersmaatregelen', 'Panneaux d''information et mesures de circulation temporaires',
-        10, TRUE, NOW(), NOW())
+        10, TRUE, NOW(), NOW()) AS new_values
 ON DUPLICATE KEY UPDATE
-    name_ar = VALUES(name_ar), name_en = VALUES(name_en), name_nl = VALUES(name_nl), name_fr = VALUES(name_fr),
-    description_ar = VALUES(description_ar), description_en = VALUES(description_en), description_nl = VALUES(description_nl), description_fr = VALUES(description_fr);
+    name_ar = new_values.name_ar, name_en = new_values.name_en, name_nl = new_values.name_nl, name_fr = new_values.name_fr,
+    description_ar = new_values.description_ar, description_en = new_values.description_en, description_nl = new_values.description_nl, description_fr = new_values.description_fr;

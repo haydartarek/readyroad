@@ -68,7 +68,8 @@ public class StoryC1ErrorPatternsIntegrationTest {
     @Test
     @DisplayName("@C1 returns exactly 6 supported error pattern types")
     void returnsExactlySixSupportedErrorPatternTypes() {
-        // Given: User has at least 10 recorded wrong attempts across multiple categories
+        // Given: User has at least 10 recorded wrong attempts across multiple
+        // categories
         createWrongAttempts(testUserId, 10);
 
         // When: I request error patterns
@@ -88,20 +89,20 @@ public class StoryC1ErrorPatternsIntegrationTest {
 
         // And: All 6 supported pattern types should be present
         assertThat(patterns.stream().map(ErrorPatternResponse::getPatternType))
-            .containsExactlyInAnyOrder(
-                TypicalErrorType.SIGN_CONFUSION,
-                TypicalErrorType.SUPPLEMENTARY_IGNORED,
-                TypicalErrorType.PRIORITY_MISUNDERSTANDING,
-                TypicalErrorType.SPEED_LIMIT_ERROR,
-                TypicalErrorType.ZONE_CONFUSION,
-                TypicalErrorType.RULE_OVERGENERALIZATION
-            );
+                .containsExactlyInAnyOrder(
+                        TypicalErrorType.SIGN_CONFUSION,
+                        TypicalErrorType.SUPPLEMENTARY_IGNORED,
+                        TypicalErrorType.PRIORITY_MISUNDERSTANDING,
+                        TypicalErrorType.SPEED_LIMIT_ERROR,
+                        TypicalErrorType.ZONE_CONFUSION,
+                        TypicalErrorType.RULE_OVERGENERALIZATION);
     }
 
     @Test
     @DisplayName("@C1 patterns are sorted by frequency descending")
     void patternsAreSortedByFrequencyDescending() {
-        // Given: User has wrong attempts where SIGN_CONFUSION count is higher than SPEED_LIMIT_ERROR
+        // Given: User has wrong attempts where SIGN_CONFUSION count is higher than
+        // SPEED_LIMIT_ERROR
         // Create 6 SIGN_CONFUSION errors
         for (int i = 0; i < 6; i++) {
             createWrongAttemptWithPattern(testUserId, TypicalErrorType.SIGN_CONFUSION);
@@ -124,7 +125,7 @@ public class StoryC1ErrorPatternsIntegrationTest {
         // And: First item count should be greater than or equal to second item count
         for (int i = 0; i < patterns.size() - 1; i++) {
             assertThat(patterns.get(i).getCount())
-                .isGreaterThanOrEqualTo(patterns.get(i + 1).getCount());
+                    .isGreaterThanOrEqualTo(patterns.get(i + 1).getCount());
         }
 
         // And: Specifically, SIGN_CONFUSION should be first (6 errors)
@@ -158,9 +159,9 @@ public class StoryC1ErrorPatternsIntegrationTest {
 
         // Then: SIGN_CONFUSION item percentage should be 40.0 (4 out of 10)
         ErrorPatternResponse signConfusion = patterns.stream()
-            .filter(p -> p.getPatternType() == TypicalErrorType.SIGN_CONFUSION)
-            .findFirst()
-            .orElseThrow();
+                .filter(p -> p.getPatternType() == TypicalErrorType.SIGN_CONFUSION)
+                .findFirst()
+                .orElseThrow();
 
         assertThat(signConfusion.getPercentage()).isEqualTo(40.0);
         assertThat(signConfusion.getCount()).isEqualTo(4);
@@ -171,13 +172,12 @@ public class StoryC1ErrorPatternsIntegrationTest {
     void includesExamplesForEachPattern() {
         // Given: User has at least 2 wrong attempts mapped to each pattern type
         for (TypicalErrorType type : List.of(
-            TypicalErrorType.SIGN_CONFUSION,
-            TypicalErrorType.SUPPLEMENTARY_IGNORED,
-            TypicalErrorType.PRIORITY_MISUNDERSTANDING,
-            TypicalErrorType.SPEED_LIMIT_ERROR,
-            TypicalErrorType.ZONE_CONFUSION,
-            TypicalErrorType.RULE_OVERGENERALIZATION
-        )) {
+                TypicalErrorType.SIGN_CONFUSION,
+                TypicalErrorType.SUPPLEMENTARY_IGNORED,
+                TypicalErrorType.PRIORITY_MISUNDERSTANDING,
+                TypicalErrorType.SPEED_LIMIT_ERROR,
+                TypicalErrorType.ZONE_CONFUSION,
+                TypicalErrorType.RULE_OVERGENERALIZATION)) {
             createWrongAttemptWithPattern(testUserId, type);
             createWrongAttemptWithPattern(testUserId, type);
         }
@@ -189,8 +189,8 @@ public class StoryC1ErrorPatternsIntegrationTest {
         // And: exampleQuestions should not be empty
         for (ErrorPatternResponse pattern : patterns) {
             assertThat(pattern.getExampleQuestions())
-                .as("Pattern %s should have examples", pattern.getPatternType())
-                .isNotEmpty();
+                    .as("Pattern %s should have examples", pattern.getPatternType())
+                    .isNotEmpty();
 
             // And: Each example should have required fields
             for (ErrorPatternResponse.ExampleQuestionDTO example : pattern.getExampleQuestions()) {
@@ -222,16 +222,16 @@ public class StoryC1ErrorPatternsIntegrationTest {
 
         // Then: Analytics must reflect only user 888 history
         ErrorPatternResponse signConfusion = patterns.stream()
-            .filter(p -> p.getPatternType() == TypicalErrorType.SIGN_CONFUSION)
-            .findFirst()
-            .orElseThrow();
+                .filter(p -> p.getPatternType() == TypicalErrorType.SIGN_CONFUSION)
+                .findFirst()
+                .orElseThrow();
 
         assertThat(signConfusion.getCount()).isEqualTo(5);
 
         ErrorPatternResponse speedLimit = patterns.stream()
-            .filter(p -> p.getPatternType() == TypicalErrorType.SPEED_LIMIT_ERROR)
-            .findFirst()
-            .orElseThrow();
+                .filter(p -> p.getPatternType() == TypicalErrorType.SPEED_LIMIT_ERROR)
+                .findFirst()
+                .orElseThrow();
 
         // User 888 should have 0 SPEED_LIMIT_ERROR attempts
         assertThat(speedLimit.getCount()).isEqualTo(0);
@@ -304,12 +304,13 @@ public class StoryC1ErrorPatternsIntegrationTest {
 
         // Record wrong attempt in history
         UserQuestionHistory history = UserQuestionHistory.builder()
-            .userId(userId)
-            .questionId(question.getId())
-            .answeredAt(LocalDateTime.now())
-            .isCorrect(false)
-            .timeTakenSeconds(30)
-            .build();
+                .userId(userId)
+                .questionId(question.getId())
+                .answeredAt(LocalDateTime.now())
+                .isCorrect(false)
+                .timesIncorrect(1)
+                .timeTakenSeconds(30)
+                .build();
 
         historyRepository.save(history);
     }

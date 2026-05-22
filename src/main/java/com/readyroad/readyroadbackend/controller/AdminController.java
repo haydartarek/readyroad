@@ -1,6 +1,5 @@
 package com.readyroad.readyroadbackend.controller;
 
-import com.readyroad.readyroadbackend.domain.entity.UserCategoryProgress;
 import com.readyroad.readyroadbackend.domain.repository.RoadSignRepository;
 import com.readyroad.readyroadbackend.domain.repository.UserRepository;
 import com.readyroad.readyroadbackend.domain.repository.UserCategoryProgressRepository;
@@ -50,6 +49,7 @@ import com.readyroad.readyroadbackend.service.NotificationService;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
@@ -103,7 +103,7 @@ public class AdminController {
         Map<String, Object> stats = new HashMap<>();
         stats.put("totalSigns", signRepository.countByIsActiveTrue());
         stats.put("totalUsers", userRepository.count());
-        stats.put("totalQuizAttempts", examSimulationRepository.count());
+        stats.put("totalQuizAttempts", examSimulationRepository.countByStatus(ExamSimulation.ExamStatus.COMPLETED));
         stats.put("totalQuizQuestions", quizQuestionRepository.count());
         stats.put("totalSignQuestions", signQuestionRepository.count());
         stats.put("totalSignPracticeSessions", signPracticeSessionRepository.count());
@@ -140,12 +140,10 @@ public class AdminController {
                     "size", file.getSize()));
         } catch (IllegalArgumentException e) {
             log.warn("⚠️ Upload validation failed: {}", e.getMessage());
-            return ResponseEntity.badRequest()
-                    .body(Map.of("error", e.getMessage()));
+            return errorResponse(HttpStatus.BAD_REQUEST, e.getMessage());
         } catch (Exception e) {
             log.error("❌ Upload failed", e);
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body(Map.of("error", messages.get("admin.upload.failed")));
+            return errorResponse(HttpStatus.INTERNAL_SERVER_ERROR, messages.get("admin.upload.failed"));
         }
     }
 
@@ -179,7 +177,7 @@ public class AdminController {
             AdminTrafficSignResponse sign = trafficSignService.getAdminSignById(id);
             return ResponseEntity.ok(sign);
         } catch (IllegalArgumentException e) {
-            return ResponseEntity.notFound().build();
+            return errorResponse(HttpStatus.NOT_FOUND, e.getMessage());
         }
     }
 
@@ -199,12 +197,10 @@ public class AdminController {
                     "id", id));
         } catch (IllegalArgumentException e) {
             log.warn("⚠️ Sign not found with id: {}", id);
-            return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                    .body(Map.of("error", e.getMessage()));
+            return errorResponse(HttpStatus.NOT_FOUND, e.getMessage());
         } catch (DataIntegrityViolationException e) {
             log.warn("⚠️ Cannot delete sign id={} — referenced by other records", id);
-            return ResponseEntity.status(HttpStatus.CONFLICT)
-                    .body(Map.of("error", messages.get("admin.sign.delete_referenced")));
+            return errorResponse(HttpStatus.CONFLICT, messages.get("admin.sign.delete_referenced"));
         }
     }
 
@@ -221,7 +217,7 @@ public class AdminController {
             return ResponseEntity.status(HttpStatus.CREATED).body(created);
         } catch (IllegalArgumentException e) {
             log.warn("⚠️ Failed to create sign: {}", e.getMessage());
-            return ResponseEntity.badRequest().body(Map.of("error", e.getMessage()));
+            return errorResponse(HttpStatus.BAD_REQUEST, e.getMessage());
         }
     }
 
@@ -238,7 +234,7 @@ public class AdminController {
             return ResponseEntity.ok(updated);
         } catch (IllegalArgumentException e) {
             log.warn("⚠️ Failed to update sign: {}", e.getMessage());
-            return ResponseEntity.badRequest().body(Map.of("error", e.getMessage()));
+            return errorResponse(HttpStatus.BAD_REQUEST, e.getMessage());
         }
     }
 
@@ -324,7 +320,7 @@ public class AdminController {
             AdminQuizQuestionResponse question = adminQuizService.getQuestionById(id);
             return ResponseEntity.ok(question);
         } catch (IllegalArgumentException e) {
-            return ResponseEntity.notFound().build();
+            return errorResponse(HttpStatus.NOT_FOUND, e.getMessage());
         }
     }
 
@@ -341,10 +337,10 @@ public class AdminController {
             return ResponseEntity.status(HttpStatus.CREATED).body(created);
         } catch (IllegalArgumentException e) {
             log.warn("⚠️ Failed to create quiz question: {}", e.getMessage());
-            return ResponseEntity.badRequest().body(Map.of("error", e.getMessage()));
+            return errorResponse(HttpStatus.BAD_REQUEST, e.getMessage());
         } catch (ConstraintViolationException e) {
             log.warn("⚠️ Validation failed creating quiz question: {}", e.getMessage());
-            return ResponseEntity.badRequest().body(Map.of("error", e.getMessage()));
+            return errorResponse(HttpStatus.BAD_REQUEST, e.getMessage());
         }
     }
 
@@ -362,14 +358,13 @@ public class AdminController {
             return ResponseEntity.ok(updated);
         } catch (IllegalArgumentException e) {
             log.warn("⚠️ Failed to update quiz question: {}", e.getMessage());
-            return ResponseEntity.badRequest().body(Map.of("error", e.getMessage()));
+            return errorResponse(HttpStatus.BAD_REQUEST, e.getMessage());
         } catch (IllegalStateException e) {
             log.warn("⚠️ Edit blocked for quiz question id={} — {}", id, e.getMessage());
-            return ResponseEntity.status(HttpStatus.CONFLICT)
-                    .body(Map.of("error", e.getMessage()));
+            return errorResponse(HttpStatus.CONFLICT, e.getMessage());
         } catch (ConstraintViolationException e) {
             log.warn("⚠️ Validation failed updating quiz question: {}", e.getMessage());
-            return ResponseEntity.badRequest().body(Map.of("error", e.getMessage()));
+            return errorResponse(HttpStatus.BAD_REQUEST, e.getMessage());
         }
     }
 
@@ -388,16 +383,13 @@ public class AdminController {
                     "id", id));
         } catch (IllegalArgumentException e) {
             log.warn("⚠️ Quiz question not found id={}", id);
-            return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                    .body(Map.of("error", e.getMessage()));
+            return errorResponse(HttpStatus.NOT_FOUND, e.getMessage());
         } catch (IllegalStateException e) {
             log.warn("⚠️ Cannot delete quiz question id={} — {}", id, e.getMessage());
-            return ResponseEntity.status(HttpStatus.CONFLICT)
-                    .body(Map.of("error", e.getMessage()));
+            return errorResponse(HttpStatus.CONFLICT, e.getMessage());
         } catch (DataIntegrityViolationException e) {
             log.warn("⚠️ Cannot delete quiz question id={} — DB constraint violation", id);
-            return ResponseEntity.status(HttpStatus.CONFLICT)
-                    .body(Map.of("error", messages.get("admin.quiz.delete_referenced")));
+            return errorResponse(HttpStatus.CONFLICT, messages.get("admin.quiz.delete_referenced"));
         }
     }
 
@@ -454,8 +446,7 @@ public class AdminController {
 
         } catch (Exception e) {
             log.error("❌ Error fetching users", e);
-            return ResponseEntity.internalServerError()
-                    .body(Map.of("error", messages.get("admin.internal_server_error")));
+            return errorResponse(HttpStatus.INTERNAL_SERVER_ERROR, messages.get("admin.internal_server_error"));
         }
     }
 
@@ -475,13 +466,12 @@ public class AdminController {
                     })
                     .orElseGet(() -> {
                         log.warn("⚠️ User not found with id: {}", id);
-                        return ResponseEntity.notFound().build();
+                        return errorResponse(HttpStatus.NOT_FOUND, messages.get("auth.user_not_found"));
                     });
 
         } catch (Exception e) {
             log.error("❌ Error fetching user with id: {}", id, e);
-            return ResponseEntity.internalServerError()
-                    .body(Map.of("error", messages.get("admin.internal_server_error")));
+            return errorResponse(HttpStatus.INTERNAL_SERVER_ERROR, messages.get("admin.internal_server_error"));
         }
     }
 
@@ -619,51 +609,21 @@ public class AdminController {
     public ResponseEntity<?> getCategoryStats() {
         log.info("📊 Admin category stats requested");
 
-        List<UserCategoryProgress> allProgress = categoryProgressRepository.findAllWithCategory();
+        List<Object[]> rows = categoryProgressRepository.findCategoryStatsAggregated();
 
-        // Group by categoryId and aggregate
-        Map<Long, Map<String, Object>> grouped = new HashMap<>();
-        for (UserCategoryProgress p : allProgress) {
-            Long catId = p.getCategoryId();
-            Map<String, Object> entry = grouped.computeIfAbsent(catId, k -> {
-                Map<String, Object> m = new HashMap<>();
-                m.put("categoryId", catId);
-                m.put("categoryCode", p.getCategory() != null ? p.getCategory().getCode() : "");
-                m.put("categoryName", p.getCategory() != null ? p.getCategory().getNameEn() : "");
-                m.put("totalAttempted", 0);
-                m.put("totalCorrect", 0);
-                m.put("userCount", 0);
-                m.put("accuracySum", BigDecimal.ZERO);
-                return m;
-            });
-            entry.put("totalAttempted", (int) entry.get("totalAttempted")
-                    + (p.getQuestionsAttempted() != null ? p.getQuestionsAttempted() : 0));
-            entry.put("totalCorrect",
-                    (int) entry.get("totalCorrect") + (p.getCorrectAnswers() != null ? p.getCorrectAnswers() : 0));
-            entry.put("userCount", (int) entry.get("userCount") + 1);
-            BigDecimal acc = p.getAccuracyRate() != null ? p.getAccuracyRate() : BigDecimal.ZERO;
-            entry.put("accuracySum", ((BigDecimal) entry.get("accuracySum")).add(acc));
-        }
-
-        List<Map<String, Object>> result = grouped.values().stream()
-                .map(entry -> {
-                    int userCount = (int) entry.get("userCount");
-                    BigDecimal accuracySum = (BigDecimal) entry.get("accuracySum");
-                    double avgAccuracy = userCount > 0
-                            ? accuracySum.divide(BigDecimal.valueOf(userCount), 2, RoundingMode.HALF_UP).doubleValue()
-                            : 0.0;
-                    Map<String, Object> out = new HashMap<>();
-                    out.put("categoryId", entry.get("categoryId"));
-                    out.put("categoryCode", entry.get("categoryCode"));
-                    out.put("categoryName", entry.get("categoryName"));
-                    out.put("totalAttempted", entry.get("totalAttempted"));
-                    out.put("totalCorrect", entry.get("totalCorrect"));
-                    out.put("avgAccuracy", avgAccuracy);
-                    out.put("userCount", userCount);
-                    return out;
-                })
-                .sorted((a, b) -> Double.compare((double) a.get("avgAccuracy"), (double) b.get("avgAccuracy")))
-                .collect(Collectors.toList());
+        List<Map<String, Object>> result = rows.stream().map(row -> {
+            Map<String, Object> out = new HashMap<>();
+            out.put("categoryId", ((Number) row[0]).longValue());
+            out.put("categoryCode", row[1] != null ? row[1].toString() : "");
+            out.put("categoryName", row[2] != null ? row[2].toString() : "");
+            out.put("totalAttempted", ((Number) row[3]).longValue());
+            out.put("totalCorrect", ((Number) row[4]).longValue());
+            out.put("userCount", ((Number) row[5]).longValue());
+            out.put("avgAccuracy", row[6] != null
+                    ? BigDecimal.valueOf(((Number) row[6]).doubleValue()).setScale(2, RoundingMode.HALF_UP).doubleValue()
+                    : 0.0);
+            return out;
+        }).collect(Collectors.toList());
 
         return ResponseEntity.ok(result);
     }
@@ -684,6 +644,12 @@ public class AdminController {
                         ExamSimulation.ExamStatus.COMPLETED,
                         PageRequest.of(0, limit));
 
+        // Batch-fetch all users in one query to avoid N+1
+        List<Long> userIds = recentExams.stream().map(ExamSimulation::getUserId).distinct()
+                .collect(Collectors.toList());
+        Map<Long, User> userById = userRepository.findAllById(userIds).stream()
+                .collect(Collectors.toMap(User::getId, u -> u));
+
         List<Map<String, Object>> exams = recentExams.stream()
                 .map(es -> {
                     Map<String, Object> exam = new HashMap<>();
@@ -695,12 +661,12 @@ public class AdminController {
                     exam.put("startedAt", es.getStartedAt() != null ? es.getStartedAt().toString() : null);
                     exam.put("completedAt", es.getCompletedAt() != null ? es.getCompletedAt().toString() : null);
                     exam.put("timeTakenSeconds", es.getTimeTakenSeconds());
-                    // Resolve user info from userId
                     exam.put("userId", es.getUserId());
-                    userRepository.findById(es.getUserId()).ifPresent(u -> {
+                    User u = userById.get(es.getUserId());
+                    if (u != null) {
                         exam.put("username", u.getUsername());
                         exam.put("fullName", u.getFullName());
-                    });
+                    }
                     return exam;
                 })
                 .collect(Collectors.toList());
@@ -756,55 +722,20 @@ public class AdminController {
     public ResponseEntity<?> getQuizIntegrityReport() {
         log.info("🔬 Admin quiz integrity diagnostics requested");
 
-        List<com.readyroad.readyroadbackend.domain.entity.QuizQuestion> allQuestions = quizQuestionRepository.findAll();
+        long totalQuestions = quizQuestionRepository.count();
+        long tooFewOptions = quizQuestionRepository.countQuestionsWithFewerThanTwoOptions();
+        long tooManyOptions = quizQuestionRepository.countQuestionsWithMoreThanThreeOptions();
+        long zeroCorrect = quizQuestionRepository.countQuestionsWithZeroCorrectOptions();
+        long multipleCorrect = quizQuestionRepository.countQuestionsWithMultipleCorrectOptions();
+        long noEnglishText = quizQuestionRepository.countQuestionsWithOptionsMissingEnglishText();
+        long inactivePublished = quizQuestionRepository.countInactivePublishedQuestions();
+        long draftActive = quizQuestionRepository.countActiveDraftQuestions();
 
-        int totalQuestions = allQuestions.size();
-        int tooFewOptions = 0; // < 2 options
-        int tooManyOptions = 0; // > 3 options
-        int zeroCorrect = 0;
-        int multipleCorrect = 0;
-        int noEnglishText = 0; // options missing English text
-        int inactivePublished = 0; // inactive but PUBLISHED (anomaly)
-        int draftActive = 0; // DRAFT but active
-
-        for (var q : allQuestions) {
-            var opts = q.getOptions();
-            int optCount = opts != null ? opts.size() : 0;
-
-            if (optCount < 2)
-                tooFewOptions++;
-            if (optCount > 3)
-                tooManyOptions++;
-
-            if (opts != null) {
-                long correct = opts.stream()
-                        .filter(o -> Boolean.TRUE.equals(o.getIsCorrect()))
-                        .count();
-                if (correct == 0)
-                    zeroCorrect++;
-                if (correct > 1)
-                    multipleCorrect++;
-
-                boolean missingText = opts.stream()
-                        .anyMatch(o -> o.getOptionTextEn() == null || o.getOptionTextEn().isBlank());
-                if (missingText)
-                    noEnglishText++;
-            }
-
-            boolean isActive = Boolean.TRUE.equals(q.getIsActive());
-            boolean isPublished = q
-                    .getStatus() == com.readyroad.readyroadbackend.domain.entity.QuizQuestion.QuestionStatus.PUBLISHED;
-            if (!isActive && isPublished)
-                inactivePublished++;
-            if (isActive && !isPublished)
-                draftActive++;
-        }
-
-        int compliant = totalQuestions - tooFewOptions - tooManyOptions - zeroCorrect - multipleCorrect;
+        long compliant = totalQuestions - tooFewOptions - tooManyOptions - zeroCorrect - multipleCorrect;
 
         Map<String, Object> report = new HashMap<>();
         report.put("totalQuestions", totalQuestions);
-        report.put("compliant", Math.max(0, compliant));
+        report.put("compliant", Math.max(0L, compliant));
         report.put("violations", Map.of(
                 "tooFewOptions", tooFewOptions,
                 "tooManyOptions", tooManyOptions,
@@ -831,13 +762,24 @@ public class AdminController {
         String link = body.getOrDefault("link", "/");
 
         if (title == null || title.isBlank() || message == null || message.isBlank()) {
-            return ResponseEntity.badRequest()
-                    .body(Map.of("error", messages.get("admin.notification.title_message_required")));
+            return errorResponse(HttpStatus.BAD_REQUEST, messages.get("admin.notification.title_message_required"));
         }
 
         log.info("Admin broadcast notification: title={}", title);
         notificationService.broadcastPlatformAlert(title, message, link);
 
         return ResponseEntity.ok(Map.of("status", "sent", "title", title));
+    }
+
+    private ResponseEntity<Map<String, Object>> errorResponse(HttpStatus status, String message) {
+        return ResponseEntity.status(status).body(errorBody(message));
+    }
+
+    private Map<String, Object> errorBody(String message) {
+        Map<String, Object> body = new HashMap<>();
+        body.put("error", message);
+        body.put("message", message);
+        body.put("timestamp", LocalDateTime.now());
+        return body;
     }
 }

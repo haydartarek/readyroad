@@ -276,25 +276,18 @@ class SignQuizServiceIntegrationTest {
                                 "Carrefour où la priorité de droite s'applique",
                                 "Kruispunt waar voorrang van rechts geldt");
 
-                RoadSign sign = new RoadSign();
-                sign.setSignCode("ZZREFTEST");
-                sign.setNormalizedSignCode("zzreftest");
-                sign.setCategory(SignCategory.INFORMATION);
-                sign.setImagePath("/images/signs/test/zz-ref.png");
-                sign.setSeriousViolation(false);
-                sign.setNameNl("Referentiebord");
-                sign.setNameEn("Reference Sign");
-                sign.setNameFr("Panneau de référence");
-                sign.setNameAr("إشارة مرجعية");
-                sign.setDescriptionNl("Beschrijving");
-                sign.setDescriptionEn("Description");
-                sign.setDescriptionFr("Description");
-                sign.setDescriptionAr("وصف");
-                sign.setIsActive(true);
+                CanonicalSignCatalogService.CanonicalSignSeed hostSeed = canonicalSignCatalogService.getCanonicalSeeds()
+                                .stream()
+                                .filter(seed -> !seed.routeCode().equals("B11"))
+                                .filter(seed -> !seed.routeCode().equals("B17"))
+                                .findFirst()
+                                .orElseThrow();
+                RoadSign sign = roadSignRepository.findByNormalizedSignCode(hostSeed.routeKey())
+                                .orElseGet(() -> createCanonicalSign(hostSeed));
 
                 SignQuestion question = new SignQuestion();
                 question.setSign(sign);
-                question.setQuestionRef("ZZREFTEST_Q01");
+                question.setQuestionRef(sign.getSignCode() + "_Q01");
                 question.setQuestionType(SignQuestionType.WHAT_MUST_YOU_DO);
                 question.setDifficulty(SignDifficulty.EASY);
                 question.setIsCritical(false);
@@ -341,7 +334,7 @@ class SignQuizServiceIntegrationTest {
 
                 SignExam exam = new SignExam();
                 exam.setSign(sign);
-                exam.setExamNumber(1);
+                exam.setExamNumber(999);
                 exam.setPassingScore(1);
                 exam.setTotalQuestions(1);
                 exam.setEasyCount(1);
@@ -359,10 +352,10 @@ class SignQuizServiceIntegrationTest {
 
                 SignPracticeSessionDto practiceSession = signQuizService.startPracticeSession(user.getId(),
                                 savedSign.getSignCode());
-                assertThat(practiceSession.questions()).singleElement()
-                                .satisfies(this::assertReferencedSignNamesAreResolved);
+                assertThat(practiceSession.questions())
+                                .anySatisfy(this::assertReferencedSignNamesAreResolved);
 
-                SignExamQuestionsDto examQuestions = signQuizService.getExamQuestions(savedSign.getSignCode(), 1);
+                SignExamQuestionsDto examQuestions = signQuizService.getExamQuestions(savedSign.getSignCode(), 999);
                 assertThat(examQuestions.questions()).singleElement()
                                 .satisfies(this::assertReferencedSignNamesAreResolved);
         }

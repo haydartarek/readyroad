@@ -1,6 +1,6 @@
 [
   {
-    "question_id": "ZC35M_Q01",
+    "question_id": "ZC35-Einde_Q01",
     "type": "WHAT_DOES_IT_MEAN",
     "difficulty": "EASY",
     "is_critical": false,
@@ -9,7 +9,10 @@
       "NL": {
         "question": "Wat betekent dit verkeersbord?",
         "choices": [
-          { "text": "Einde zone verboden inhalen", "is_correct": true },
+          {
+            "text": "Einde zone verboden inhalen",
+            "is_correct": true
+          },
           {
             "text": "Einde zone met een snelheidsbeperking",
             "is_correct": false
@@ -24,8 +27,14 @@
       "EN": {
         "question": "What does this traffic sign mean?",
         "choices": [
-          { "text": "End zone no overtaking", "is_correct": true },
-          { "text": "End zone with speed limit", "is_correct": false },
+          {
+            "text": "End zone no overtaking",
+            "is_correct": true
+          },
+          {
+            "text": "End zone with speed limit",
+            "is_correct": false
+          },
           {
             "text": "End zone no entry for vehicles over 3500 kg",
             "is_correct": false
@@ -36,7 +45,10 @@
       "FR": {
         "question": "Que signifie ce panneau de signalisation?",
         "choices": [
-          { "text": "Fin zone interdiction de dépasser", "is_correct": true },
+          {
+            "text": "Fin zone interdiction de dépasser",
+            "is_correct": true
+          },
           {
             "text": "Fin zone avec limitation de vitesse",
             "is_correct": false
@@ -51,19 +63,25 @@
       "AR": {
         "question": "ما معنى هذه العلامة المرورية؟",
         "choices": [
-          { "text": "نهاية منطقة ممنوع التجاوز", "is_correct": true },
-          { "text": "نهاية منطقة تحديد السرعة", "is_correct": false },
+          {
+            "text": "نهاية منطقة ممنوع التجاوز",
+            "is_correct": true
+          },
+          {
+            "text": "نهاية منطقة تحديد السرعة",
+            "is_correct": false
+          },
           {
             "text": "نهاية منطقة ممنوع دخول المركبات التي تزيد كتلتها عن 3500 كغ",
             "is_correct": false
           }
         ],
-        "explanation": "ZC35- هي علامة مرورية نهاية منطقة ممنوع التجاوز. بعد هذه العلامة المرورية تنتهي المنطقة ولا يسري حظر التجاوز بعد ذلك."
+        "explanation": "ZC35- هي علامة نهاية منطقة ممنوع التجاوز. بعد هذه العلامة تنتهي المنطقة ولا يسري حظر التجاوز بعد ذلك."
       }
     }
   },
   {
-    "question_id": "ZC35M_Q02",
+    "question_id": "ZC35-Einde_Q02",
     "type": "WHICH_SIGN",
     "difficulty": "EASY",
     "is_critical": false,
@@ -72,43 +90,79 @@
       "NL": {
         "question": "Tot welke categorie verkeersborden behoort dit bord?",
         "choices": [
-          { "text": "Zoneborden", "is_correct": true },
-          { "text": "Verbodsborden", "is_correct": false },
-          { "text": "Parkeerborden", "is_correct": false }
+          {
+            "text": "Zoneborden",
+            "is_correct": true
+          },
+          {
+            "text": "Verbodsborden",
+            "is_correct": false
+          },
+          {
+            "text": "Parkeerborden",
+            "is_correct": false
+          }
         ],
         "explanation": "ZC35- is een zonebord dat het einde van de zone verboden inhalen aangeeft."
       },
       "EN": {
         "question": "To which category of traffic signs does this sign belong?",
         "choices": [
-          { "text": "Zone signs", "is_correct": true },
-          { "text": "Prohibition signs", "is_correct": false },
-          { "text": "Parking signs", "is_correct": false }
+          {
+            "text": "Zone signs",
+            "is_correct": true
+          },
+          {
+            "text": "Prohibition signs",
+            "is_correct": false
+          },
+          {
+            "text": "Parking signs",
+            "is_correct": false
+          }
         ],
         "explanation": "ZC35- is a zone sign indicating the end of the no-overtaking zone."
       },
       "FR": {
         "question": "À quelle catégorie de panneaux appartient ce panneau?",
         "choices": [
-          { "text": "Panneaux de zone", "is_correct": true },
-          { "text": "Panneaux d'interdiction", "is_correct": false },
-          { "text": "Panneaux de stationnement", "is_correct": false }
+          {
+            "text": "Panneaux de zone",
+            "is_correct": true
+          },
+          {
+            "text": "Panneaux d'interdiction",
+            "is_correct": false
+          },
+          {
+            "text": "Panneaux de stationnement",
+            "is_correct": false
+          }
         ],
         "explanation": "ZC35- est un panneau de zone indiquant la fin de la zone d'interdiction de dépasser."
       },
       "AR": {
-        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
+        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
         "choices": [
-          { "text": "علامات المنطقة", "is_correct": true },
-          { "text": "علامات الحظر", "is_correct": false },
-          { "text": "علامات الوقوف", "is_correct": false }
+          {
+            "text": "علامات المنطقة",
+            "is_correct": true
+          },
+          {
+            "text": "علامات الحظر",
+            "is_correct": false
+          },
+          {
+            "text": "علامات الوقوف",
+            "is_correct": false
+          }
         ],
-        "explanation": "ZC35- علامة مرورية منطقة تشير إلى نهاية منطقة ممنوع التجاوز."
+        "explanation": "ZC35- علامة منطقة تشير إلى نهاية منطقة ممنوع التجاوز."
       }
     }
   },
   {
-    "question_id": "ZC35M_Q03",
+    "question_id": "ZC35-Einde_Q03",
     "type": "HAZARD_IDENTIFICATION",
     "difficulty": "EASY",
     "is_critical": false,
@@ -171,16 +225,25 @@
       "AR": {
         "question": "ماذا تعني ZC35- بالنسبة لحظر التجاوز؟",
         "choices": [
-          { "text": "رفع الحظر؛ التجاوز مسموح من جديد", "is_correct": true },
-          { "text": "ينتقل الحظر إلى منطقة أشد تقييدًا", "is_correct": false },
-          { "text": "يجب الانتظار 100 متر قبل التجاوز", "is_correct": false }
+          {
+            "text": "رُفع الحظر؛ التجاوز مسموح من جديد",
+            "is_correct": true
+          },
+          {
+            "text": "ينتقل الحظر إلى منطقة أشد تقييداً",
+            "is_correct": false
+          },
+          {
+            "text": "يجب الانتظار 100 متر قبل التجاوز",
+            "is_correct": false
+          }
         ],
-        "explanation": "ZC35- تنهي المنطقة. بعد هذه العلامة المرورية تسري قواعد التجاوز العادية من جديد."
+        "explanation": "ZC35- تنهي المنطقة. بعد هذه العلامة تسري قواعد التجاوز العادية من جديد."
       }
     }
   },
   {
-    "question_id": "ZC35M_Q04",
+    "question_id": "ZC35-Einde_Q04",
     "type": "WHAT_MUST_YOU_DO",
     "difficulty": "MEDIUM",
     "is_critical": false,
@@ -202,7 +265,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "ZC35- heft de zonerestrict onmiddellijk op. Er is geen wachttijd en geen apart toestemmingsbord nodig."
+        "explanation": "ZC35- heft de zonerestrictie onmiddellijk op. Er is geen wachttijd en geen apart toestemmingsbord nodig."
       },
       "EN": {
         "question": "You are leaving a ZC35 zone via ZC35-. What changes for you?",
@@ -247,18 +310,21 @@
             "text": "يمكنك التجاوز من جديد بشرط أن تسمح قواعد السير العادية بذلك",
             "is_correct": true
           },
-          { "text": "يجب الانتظار 500 متر قبل التجاوز", "is_correct": false },
           {
-            "text": "يظل حظر التجاوز ساريًا حتى تجد علامة مرورية تصريح صريحة",
+            "text": "يجب الانتظار 500 متر قبل التجاوز",
+            "is_correct": false
+          },
+          {
+            "text": "يظل حظر التجاوز سارياً حتى تجد علامة تصريح صريحة",
             "is_correct": false
           }
         ],
-        "explanation": "ZC35- ترفع قيود المنطقة فورًا. لا توجد فترة انتظار ولا علامة مرورية تصريح منفصلة مطلوبة."
+        "explanation": "ZC35- ترفع قيود المنطقة فوراً. لا توجد فترة انتظار ولا علامة تصريح منفصلة مطلوبة."
       }
     }
   },
   {
-    "question_id": "ZC35M_Q05",
+    "question_id": "ZC35-Einde_Q05",
     "type": "WHAT_MUST_YOU_DO",
     "difficulty": "MEDIUM",
     "is_critical": false,
@@ -301,7 +367,7 @@
         "explanation": "ZC35- lifts the prohibition immediately. If the situation is safe and normal traffic rules allow it, you may overtake."
       },
       "FR": {
-        "question": "Vous venez de passer un panneau ZC35- et un camion lent vous précède sur une route droite sans véhicule venant en sens inverse. Pouvez-vous dépasser?",
+        "question": "Vous venez de passer un panneau ZC35- et un camion lent vous précède sur une route droite sans véhicule en sens inverse. Pouvez-vous dépasser?",
         "choices": [
           {
             "text": "Oui, ZC35- a levé l'interdiction; vous pouvez dépasser si la situation le permet sans risque",
@@ -319,10 +385,10 @@
         "explanation": "ZC35- lève l'interdiction immédiatement. Si la situation est sûre et que les règles normales de circulation le permettent, vous pouvez dépasser."
       },
       "AR": {
-        "question": "مررت للتو بعلامة مرورية ZC35- وشاحنة بطيئة أمامك على طريق مستقيم دون مرور مقابل. هل يجوز التجاوز؟",
+        "question": "مررت للتو بعلامة ZC35- وشاحنة بطيئة أمامك على طريق مستقيم دون مرور مقابل. هل يجوز التجاوز؟",
         "choices": [
           {
-            "text": "نعم، ZC35- رفعت الحظر؛ يجوز التجاوز إذا كانت الحالة آمنة",
+            "text": "نعم، ZC35- رفعت الحظر؛ يجوز التجاوز إذا كانت الحال آمنة",
             "is_correct": true
           },
           {
@@ -330,16 +396,16 @@
             "is_correct": false
           },
           {
-            "text": "لا، لا يجوز تجاوز الشاحنات أبدًا بعد علامة مرورية منطقة",
+            "text": "لا، لا يجوز تجاوز الشاحنات أبداً بعد علامة منطقة",
             "is_correct": false
           }
         ],
-        "explanation": "ZC35- ترفع الحظر فورًا. إذا كانت الحالة آمنة وقواعد السير العادية تسمح بذلك، يجوز التجاوز."
+        "explanation": "ZC35- ترفع الحظر فوراً. إذا كانت الحال آمنة وقواعد السير العادية تسمح بذلك، يجوز التجاوز."
       }
     }
   },
   {
-    "question_id": "ZC35M_Q06",
+    "question_id": "ZC35-Einde_Q06",
     "type": "WHAT_MUST_YOU_DO",
     "difficulty": "MEDIUM",
     "is_critical": false,
@@ -357,7 +423,7 @@
             "is_correct": false
           },
           {
-            "text": "Ja, u moet wachten totdat zichtbaarheid minstens 500 meter is",
+            "text": "Ja, u moet wachten totdat het zicht minstens 500 meter is",
             "is_correct": false
           }
         ],
@@ -400,10 +466,10 @@
         "explanation": "ZC35- est un panneau de fin sans conditions supplémentaires. Dès que vous passez le panneau les règles normales de dépassement s'appliquent immédiatement."
       },
       "AR": {
-        "question": "تقع ZC35- عند بداية طريق مستقيم. هل يجب الانتظار حتى يصبح الطريق مستقيمًا بلا قيد؟",
+        "question": "تقع ZC35- عند بداية طريق مستقيم. هل يجب الانتظار حتى يصبح الطريق مستقيماً بلا قيد قبل التجاوز؟",
         "choices": [
           {
-            "text": "لا، ZC35- ترفع الحظر فورًا؛ تتبع فقط قواعد السير العادية",
+            "text": "لا، ZC35- ترفع الحظر فوراً؛ تتبع فقط قواعد السير العادية",
             "is_correct": true
           },
           {
@@ -415,14 +481,14 @@
             "is_correct": false
           }
         ],
-        "explanation": "ZC35- علامة مرورية نهاية بلا شروط إضافية. بمجرد اجتيازك العلامة المرورية تسري قواعد التجاوز العادية فورًا."
+        "explanation": "ZC35- علامة نهاية بلا شروط إضافية. بمجرد اجتيازك العلامة تسري قواعد التجاوز العادية فوراً."
       }
     }
   },
   {
-    "question_id": "ZC35M_Q07",
-    "type": "IS_IT_ALLOWED",
+    "question_id": "ZC35-Einde_Q07",
     "difficulty": "HARD",
+    "type": "IS_IT_ALLOWED",
     "is_critical": true,
     "show_sign": true,
     "i18n": {
@@ -469,27 +535,30 @@
         "explanation": "ZC35- lève immédiatement la restriction de zone. Il n'y a pas de période de transition. Vous suivez ensuite les règles normales de circulation."
       },
       "AR": {
-        "question": "تمر بعلامة مرورية ZC35-. تقع هذه العلامة المرورية عند بداية طريق مستقيم. هل يجوز التجاوز فورًا بعد العلامة المرورية؟",
+        "question": "تمر بعلامة ZC35-. تقع عند بداية طريق مستقيم. هل يجوز التجاوز فوراً بعد العلامة؟",
         "choices": [
-          { "text": "نعم، ترفع ZC35- الحظر فورًا", "is_correct": true },
+          {
+            "text": "نعم، ترفع ZC35- الحظر فوراً",
+            "is_correct": true
+          },
           {
             "text": "لا، يجب الاستمرار في السير حتى تكون الرؤية كافية",
             "is_correct": false
           }
         ],
-        "explanation": "ZC35- ترفع قيود المنطقة فورًا. لا توجد فترة انتقال. تتبع بعد ذلك قواعد السير العادية."
+        "explanation": "ZC35- ترفع قيود المنطقة فوراً. لا توجد فترة انتقال. تتبع بعد ذلك قواعد السير العادية."
       }
     }
   },
   {
-    "question_id": "ZC35M_Q08",
-    "type": "IS_IT_ALLOWED",
+    "question_id": "ZC35-Einde_Q08",
     "difficulty": "HARD",
+    "type": "IS_IT_ALLOWED",
     "is_critical": true,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Na ZC35- zijn er geen nieuwe ZC35-borden geplaatst in de volgende wijk. Rijdt er dan een nieuwe ZC35-zone?",
+        "question": "Na ZC35- zijn er geen nieuwe ZC35-borden geplaatst in de volgende wijk. Geldt er dan een nieuwe ZC35-zone?",
         "choices": [
           {
             "text": "Neen, zonder nieuw ZC35-beginbord geldt er geen zone verboden inhalen",
@@ -503,7 +572,7 @@
         "explanation": "Een zone verboden inhalen vereist een duidelijk beginbord ZC35. Zonder dat bord bestaat de zone niet."
       },
       "EN": {
-        "question": "After ZC35- there are no new ZC35 signs placed in the next neighbourhood. Is there a new ZC35 zone in effect?",
+        "question": "After ZC35- there are no new ZC35 signs in the next neighbourhood. Is there a new ZC35 zone in effect?",
         "choices": [
           {
             "text": "No, without a new ZC35 entry sign there is no no-overtaking zone",
@@ -534,15 +603,15 @@
         "question": "بعد ZC35- لم تُنصب علامات ZC35 جديدة في الحي التالي. هل توجد منطقة ZC35 جديدة سارية؟",
         "choices": [
           {
-            "text": "لا، دون علامة مرورية بداية ZC35 جديدة، لا توجد منطقة ممنوع تجاوز",
+            "text": "لا، دون علامة بداية ZC35 جديدة لا توجد منطقة ممنوع تجاوز",
             "is_correct": true
           },
           {
-            "text": "نعم، تتجدد المنطقة تلقائيًا بعد كل ZC35-",
+            "text": "نعم، تتجدد المنطقة تلقائياً بعد كل ZC35-",
             "is_correct": false
           }
         ],
-        "explanation": "منطقة ممنوع التجاوز تتطلب علامة مرورية بداية واضحة ZC35. بدون تلك العلامة المرورية، لا توجد منطقة."
+        "explanation": "منطقة ممنوع التجاوز تتطلب علامة بداية واضحة ZC35. بدون تلك العلامة لا توجد منطقة."
       }
     }
   }

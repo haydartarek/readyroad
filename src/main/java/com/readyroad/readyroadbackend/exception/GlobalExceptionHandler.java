@@ -1,6 +1,7 @@
 package com.readyroad.readyroadbackend.exception;
 
 import com.readyroad.readyroadbackend.service.BackendMessageService;
+import org.springframework.orm.ObjectOptimisticLockingFailureException;
 import jakarta.validation.ConstraintViolationException;
 import java.time.LocalDateTime;
 import java.util.HashMap;
@@ -210,13 +211,15 @@ public class GlobalExceptionHandler {
      */
     @ExceptionHandler(ConstraintViolationException.class)
     @ResponseBody
-    public ResponseEntity<Map<String, String>> handleConstraintViolation(ConstraintViolationException ex) {
+    public ResponseEntity<Map<String, Object>> handleConstraintViolation(ConstraintViolationException ex) {
         Map<String, String> errors = new HashMap<>();
         ex.getConstraintViolations().forEach(violation -> {
             String field = violation.getPropertyPath().toString();
             errors.put(field, violation.getMessage());
         });
-        return ResponseEntity.badRequest().body(errors);
+        Map<String, Object> body = errorBody(messages.get("error.validation_failed"));
+        body.put("fields", errors);
+        return ResponseEntity.badRequest().body(body);
     }
 
     /**
@@ -248,6 +251,20 @@ public class GlobalExceptionHandler {
         body.put("message", ex.getMessage());
         body.put("timestamp", LocalDateTime.now());
         return ResponseEntity.status(ex.getStatus()).body(body);
+    }
+
+    /**
+     * Handle concurrent modification — two requests raced to modify the same
+     * entity.
+     * The losing request receives 409 so the client can retry.
+     * HTTP 409 CONFLICT
+     */
+    @ExceptionHandler(ObjectOptimisticLockingFailureException.class)
+    @ResponseBody
+    public ResponseEntity<Map<String, Object>> handleOptimisticLock(ObjectOptimisticLockingFailureException ex) {
+        log.warn("Optimistic locking conflict on {}: {}", ex.getPersistentClassName(), ex.getMessage());
+        return ResponseEntity.status(HttpStatus.CONFLICT)
+                .body(errorBody(messages.get("error.concurrent_modification")));
     }
 
     /**

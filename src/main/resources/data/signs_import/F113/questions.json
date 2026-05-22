@@ -10,47 +10,74 @@
       "NL": {
         "question": "Wat betekent dit verkeersbord?",
         "choices": [
-          { "text": "Einde fietsstraat", "is_correct": true },
+          {
+            "text": "Einde fietsstraat",
+            "is_correct": true
+          },
           {
             "text": "Rijden verboden in beide richtingen",
             "is_correct": false
           },
-          { "text": "Gevaarsbord voor wegwerkzaamheden", "is_correct": false }
+          {
+            "text": "Gevaarsbord voor wegwerkzaamheden",
+            "is_correct": false
+          }
         ],
         "explanation": "Fietsstraat."
       },
       "EN": {
         "question": "What does this traffic sign mean?",
         "choices": [
-          { "text": "End of bicycle street", "is_correct": true },
+          {
+            "text": "End of bicycle street",
+            "is_correct": true
+          },
           {
             "text": "Driving prohibited in both directions",
             "is_correct": false
           },
-          { "text": "Danger sign for roadworks", "is_correct": false }
+          {
+            "text": "Danger sign for roadworks",
+            "is_correct": false
+          }
         ],
         "explanation": "This sign indicates the end of a bicycle street. From this point, normal traffic rules apply again and cyclists no longer have special priority. The rules for regular roads apply."
       },
       "FR": {
         "question": "Que signifie ce panneau de signalisation ?",
         "choices": [
-          { "text": "Fin de rue cyclable", "is_correct": true },
+          {
+            "text": "Fin de rue cyclable",
+            "is_correct": true
+          },
           {
             "text": "Circulation interdite dans les deux sens",
             "is_correct": false
           },
-          { "text": "Panneau de danger pour travaux", "is_correct": false }
+          {
+            "text": "Panneau de danger pour travaux",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ce panneau indique la fin d'une rue cyclable. � partir de ce point, les r�gles de circulation normales s'appliquent � nouveau et les cyclistes n'ont plus de priorit� sp�ciale. Les r�gles des routes ordinaires s'appliquent."
+        "explanation": "Ce panneau indique la fin d'une rue cyclable. À partir de ce point, les règles de circulation normales s'appliquent à nouveau et les cyclistes n'ont plus de priorité spéciale."
       },
       "AR": {
-        "question": "?? ???? ??? ??????? ?????????",
+        "question": "ما معنى هذه العلامة المرورية؟",
         "choices": [
-          { "text": "????? ???? ???????? ????????", "is_correct": true },
-          { "text": "??????? ?????? ?? ??? ?????????", "is_correct": false },
-          { "text": "????? ??? ?????? ??????", "is_correct": false }
+          {
+            "text": "نهاية شارع الدراجات الهوائية",
+            "is_correct": true
+          },
+          {
+            "text": "منع السير في كلا الاتجاهين",
+            "is_correct": false
+          },
+          {
+            "text": "علامة خطر بسبب أعمال الطريق",
+            "is_correct": false
+          }
         ],
-        "explanation": "???? ??? ??????? ??? ????? ???? ????????. ?? ??? ??????? ??? ????? ????? ?????? ??????? ??? ???? ??? ??? ?????? ???????? ?????? ????. ????? ????? ????? ???????."
+        "explanation": "تشير هذه العلامة إلى نهاية شارع الدراجات. من هذه النقطة تطبق قواعد المرور العادية مرة أخرى ولا تعود لراكبي الدراجات أولوية خاصة."
       }
     }
   },
@@ -65,38 +92,74 @@
       "NL": {
         "question": "Tot welke categorie verkeerstekens behoort dit bord?",
         "choices": [
-          { "text": "Aanwijzingsborden", "is_correct": true },
-          { "text": "Gebodsborden", "is_correct": false },
-          { "text": "Parkeerregelementsborden", "is_correct": false }
+          {
+            "text": "Aanwijzingsborden",
+            "is_correct": true
+          },
+          {
+            "text": "Gebodsborden",
+            "is_correct": false
+          },
+          {
+            "text": "Parkeerregelementsborden",
+            "is_correct": false
+          }
         ],
         "explanation": "Dit bord behoort tot de categorie 'Aanwijzingsborden'. Elk type bord heeft een specifieke vorm en kleurschema."
       },
       "EN": {
         "question": "To which category of traffic signs does this sign belong?",
         "choices": [
-          { "text": "Information signs", "is_correct": true },
-          { "text": "Mandatory signs", "is_correct": false },
-          { "text": "Parking regulation signs", "is_correct": false }
+          {
+            "text": "Information signs",
+            "is_correct": true
+          },
+          {
+            "text": "Mandatory signs",
+            "is_correct": false
+          },
+          {
+            "text": "Parking regulation signs",
+            "is_correct": false
+          }
         ],
         "explanation": "This sign belongs to the 'Information signs' category. Each type of sign has a specific shape and color scheme."
       },
       "FR": {
-        "question": "� quelle cat�gorie de panneaux de signalisation ce panneau appartient-il ?",
+        "question": "À quelle catégorie de panneaux de signalisation ce panneau appartient-il ?",
         "choices": [
-          { "text": "Panneaux d'indication", "is_correct": true },
-          { "text": "Panneaux d'obligation", "is_correct": false },
-          { "text": "Panneaux de stationnement", "is_correct": false }
+          {
+            "text": "Panneaux d'indication",
+            "is_correct": true
+          },
+          {
+            "text": "Panneaux d'obligation",
+            "is_correct": false
+          },
+          {
+            "text": "Panneaux de stationnement",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ce panneau appartient � la cat�gorie 'Panneaux d'indication'. Chaque type de panneau a une forme et un sch�ma de couleurs sp�cifiques."
+        "explanation": "Ce panneau appartient à la catégorie des panneaux d'indication. Chaque type de panneau a une forme et un schéma de couleurs spécifiques."
       },
       "AR": {
-        "question": "??? ?? ??? ??????? ??? ??????? ?????????",
+        "question": "إلى أي فئة من العلامات المرورية تنتمي هذه العلامة؟",
         "choices": [
-          { "text": "???????? ?????????", "is_correct": true },
-          { "text": "???????? ?????????", "is_correct": false },
-          { "text": "?????? ??????", "is_correct": false }
+          {
+            "text": "علامات الإرشاد",
+            "is_correct": true
+          },
+          {
+            "text": "علامات الإلزام",
+            "is_correct": false
+          },
+          {
+            "text": "علامات الوقوف",
+            "is_correct": false
+          }
         ],
-        "explanation": "??? ??????? ???????? ????? ??? ??? '?????? ?????????'. ?? ??? ?? ???????? ?? ??? ????? ????? ????."
+        "explanation": "تنتمي هذه العلامة إلى فئة علامات الإرشاد. لكل نوع من العلامات شكل ونظام ألوان محدد."
       }
     }
   },
@@ -145,37 +208,40 @@
         "explanation": "Information signs provide road users with useful info about road situation, facilities, or special lanes."
       },
       "FR": {
-        "question": "Quelles informations ce panneau fournit-il aux usagers de la route ?",
+        "question": "Quelles informations ou indications ce panneau donne-t-il aux usagers de la route ?",
         "choices": [
           {
-            "text": "Le panneau fournit des informations utiles sur la situation routi�re ou les �quipements",
+            "text": "Le panneau donne des informations ou indications utiles sur la situation routière ou les équipements",
             "is_correct": true
           },
           {
-            "text": "Le panneau interdit une man�uvre de conduite sp�cifique",
+            "text": "Le panneau interdit une manoeuvre de conduite spécifique",
             "is_correct": false
           },
           {
-            "text": "Le panneau oblige � s'arr�ter pour contr�le",
+            "text": "Le panneau impose un arrêt pour contrôle",
             "is_correct": false
           }
         ],
-        "explanation": "Les panneaux d'indication informent les usagers sur la situation routi�re, les �quipements ou voies sp�ciales."
+        "explanation": "Les panneaux d'indication informent les usagers sur la situation routière, les équipements ou les voies spéciales."
       },
       "AR": {
-        "question": "?? ????????? ?? ????????? ???? ?????? ??? ??????? ???????? ???????? ???????",
+        "question": "ما المعلومات أو الإرشادات التي تقدمها هذه العلامة لمستخدمي الطريق؟",
         "choices": [
           {
-            "text": "???? ??????? ???????? ??????? ????? ?? ??????? ??? ???? ?????? ?? ???????",
+            "text": "توفر العلامة معلومات أو إرشادات مفيدة حول وضع الطريق أو التجهيزات",
             "is_correct": true
           },
           {
-            "text": "??????? ???????? ???? ?????? ????? ?????",
+            "text": "تحظر العلامة مناورة قيادة محددة",
             "is_correct": false
           },
-          { "text": "??????? ???????? ???? ?????? ?????", "is_correct": false }
+          {
+            "text": "تفرض العلامة التوقف للتفتيش",
+            "is_correct": false
+          }
         ],
-        "explanation": "?????? ????????? ???? ???????? ?????? ??????? ????? ??? ???? ?????? ????????."
+        "explanation": "تعطي علامات الإرشاد معلومات لمستخدمي الطريق حول وضع الطريق أو التجهيزات أو المسارات الخاصة."
       }
     }
   },
@@ -188,16 +254,22 @@
     "_note": "TEMPLATE (MEDIUM): Replace with sign-specific question for production.",
     "i18n": {
       "NL": {
-        "question": "Wat is het kleurenschema van aanwijzingsborden in Belgi�?",
+        "question": "Wat is het kleurenschema van aanwijzingsborden in België?",
         "choices": [
           {
             "text": "Blauw of groen achtergrond met witte symbolen en tekst",
             "is_correct": true
           },
-          { "text": "Rode achtergrond met witte tekst", "is_correct": false },
-          { "text": "Gele achtergrond met zwarte tekst", "is_correct": false }
+          {
+            "text": "Rode achtergrond met witte tekst",
+            "is_correct": false
+          },
+          {
+            "text": "Gele achtergrond met zwarte tekst",
+            "is_correct": false
+          }
         ],
-        "explanation": "Aanwijzingsborden hebben doorgaans een blauwe achtergrond (stedelijk) of groene achtergrond (autosnelweg)."
+        "explanation": "Aanwijzingsborden hebben doorgaans een blauwe achtergrond voor gewone wegen of een groene achtergrond voor autosnelwegen."
       },
       "EN": {
         "question": "What is the color scheme of information signs in Belgium?",
@@ -206,34 +278,52 @@
             "text": "Blue or green background with white symbols and text",
             "is_correct": true
           },
-          { "text": "Red background with white text", "is_correct": false },
-          { "text": "Yellow background with black text", "is_correct": false }
+          {
+            "text": "Red background with white text",
+            "is_correct": false
+          },
+          {
+            "text": "Yellow background with black text",
+            "is_correct": false
+          }
         ],
         "explanation": "Information signs typically have a blue (urban) or green (motorway) background."
       },
       "FR": {
-        "question": "Quel est le sch�ma de couleurs des panneaux d'indication en Belgique ?",
+        "question": "Quel est le schéma de couleurs des panneaux d'indication en Belgique ?",
         "choices": [
           {
             "text": "Fond bleu ou vert avec des symboles et du texte blancs",
             "is_correct": true
           },
-          { "text": "Fond rouge avec texte blanc", "is_correct": false },
-          { "text": "Fond jaune avec texte noir", "is_correct": false }
+          {
+            "text": "Fond rouge avec texte blanc",
+            "is_correct": false
+          },
+          {
+            "text": "Fond jaune avec texte noir",
+            "is_correct": false
+          }
         ],
-        "explanation": "Les panneaux d'indication ont g�n�ralement un fond bleu (urbain) ou vert (autoroute)."
+        "explanation": "Les panneaux d'indication ont généralement un fond bleu pour les routes ordinaires ou un fond vert pour les autoroutes."
       },
       "AR": {
-        "question": "?? ?? ???? ??????? ??????? ????????? ?? ???????",
+        "question": "ما نظام ألوان علامات الإرشاد في بلجيكا؟",
         "choices": [
           {
-            "text": "????? ????? ?? ????? ?? ???? ??? ????",
+            "text": "خلفية زرقاء أو خضراء مع رموز ونصوص بيضاء",
             "is_correct": true
           },
-          { "text": "????? ????? ?? ?? ????", "is_correct": false },
-          { "text": "????? ????? ?? ?? ????", "is_correct": false }
+          {
+            "text": "خلفية حمراء مع نص أبيض",
+            "is_correct": false
+          },
+          {
+            "text": "خلفية صفراء مع نص أسود",
+            "is_correct": false
+          }
         ],
-        "explanation": "?????? ????????? ????? ??? ????? ????? (????) ?? ????? (???? ????)."
+        "explanation": "عادة تكون علامات الإرشاد بخلفية زرقاء للطرق العادية أو بخلفية خضراء للطرق السيارة."
       }
     }
   },
@@ -274,32 +364,32 @@
         "explanation": "Information signs provide legally binding guidance to road users. They must not be ignored and should be followed."
       },
       "FR": {
-        "question": "En tant qu'usager de la route, �tes-vous autoris� � ignorer les panneaux d'indication ?",
+        "question": "En tant qu'usager de la route, êtes-vous autorisé à ignorer les panneaux d'indication ?",
         "choices": [
           {
-            "text": "Non, les panneaux d'indication doivent �tre respect�s car ils fournissent des indications juridiquement contraignantes",
+            "text": "Non, les panneaux d'indication doivent être respectés car ils donnent des indications juridiquement contraignantes",
             "is_correct": true
           },
           {
-            "text": "Oui, les panneaux d'indication sont facultatifs et peuvent �tre ignor�s � votre discr�tion",
+            "text": "Oui, les panneaux d'indication sont facultatifs et peuvent être ignorés à votre discrétion",
             "is_correct": false
           }
         ],
-        "explanation": "Les panneaux d'indication fournissent des directives juridiquement contraignantes aux usagers. Ils ne peuvent pas �tre ignor�s."
+        "explanation": "Les panneaux d'indication donnent des directives juridiquement contraignantes aux usagers. Ils ne doivent pas être ignorés."
       },
       "AR": {
-        "question": "?? ????? ?? ??????? ?????? ?????? ?????? ??????????",
+        "question": "هل يجوز لك كمستخدم للطريق تجاهل علامات الإرشاد؟",
         "choices": [
           {
-            "text": "??? ??? ????? ?????? ????????? ????? ???? ??????? ????? ????????",
+            "text": "لا، يجب احترام علامات الإرشاد لأنها تقدم توجيهات ملزمة قانونياً",
             "is_correct": true
           },
           {
-            "text": "???? ?????? ????????? ???????? ????? ??????? ??? ?????? ?????",
+            "text": "نعم، علامات الإرشاد اختيارية ويمكن تجاهلها حسب تقديرك",
             "is_correct": false
           }
         ],
-        "explanation": "?????? ????????? ???? ??????? ????? ???????? ???????? ??????. ?? ???? ??????? ???? ???????? ???."
+        "explanation": "تقدم علامات الإرشاد توجيهات ملزمة قانونياً لمستخدمي الطريق، لذلك لا يجوز تجاهلها."
       }
     }
   },
@@ -321,7 +411,10 @@
             "text": "Nee het inhalverbod voor fietsers blijft 200 meter voorbij F113 van kracht",
             "is_correct": false
           },
-          { "text": "Inhalen mag pas na 50 meter na F113", "is_correct": false }
+          {
+            "text": "Inhalen mag pas na 50 meter na F113",
+            "is_correct": false
+          }
         ],
         "explanation": "F113 markeert het einde van de fietsstraat. Voorbij dit bord is het inhalverbod voor fietsers niet meer van toepassing. Inhalen is weer toegestaan mits veilig."
       },
@@ -362,19 +455,22 @@
         "explanation": "F113 marque la fin de la rue cyclable. Au-dela les regles speciales ne s appliquent plus. Il est a nouveau permis de depasser les cyclistes si c est securise."
       },
       "AR": {
-        "question": "?? ???? ?????? ????? ???? ??? ????? ?????? F113?",
+        "question": "هل يجوز لسائق مركبة آلية تجاوز راكب دراجة بعد علامة F113؟",
         "choices": [
           {
-            "text": "??? ??? F113 ???? ????? ?????? ??????? ?????? ?????? ???????? ??? ??????",
+            "text": "نعم، بعد F113 تطبق قواعد المرور العادية ويجوز تجاوز راكبي الدراجات عندما يكون ذلك آمناً",
             "is_correct": true
           },
           {
-            "text": "?? ???? ??? ??????? ?????? 200 ??? ??? F113",
+            "text": "لا، يبقى منع التجاوز سارياً لمسافة 200 متر بعد F113",
             "is_correct": false
           },
-          { "text": "????? ???????? ??? ??? 50 ?????", "is_correct": false }
+          {
+            "text": "لا يسمح بالتجاوز إلا بعد 50 متراً",
+            "is_correct": false
+          }
         ],
-        "explanation": "??? F113 ????? ??? ????? ???? ????????. ??? ??? ??????? ???????? ?? ???? ??? ??? ???????. ????? ?????? ?????? ???????? ??? ??? ?????."
+        "explanation": "تحدد F113 نهاية شارع الدراجات. بعد هذه العلامة لا تعود قاعدة منع تجاوز راكبي الدراجات سارية، ويجوز التجاوز إذا كان آمناً."
       }
     }
   },
@@ -428,18 +524,18 @@
         "explanation": "La limite de 30 km/h est specifique a la rue cyclable. Une fois que vous passez F113 la limite normale de la route s applique."
       },
       "AR": {
-        "question": "?? ???? ?? 30 ??/???? ????? ???????? ??? F113?",
+        "question": "هل يبقى حد 30 كم/ساعة الخاص بشارع الدراجات سارياً بعد المرور بعلامة F113؟",
         "choices": [
           {
-            "text": "?? ????? ?? 30 ??/???? ??? F113? ???? ?? ?????? ?????? ??????",
+            "text": "لا، ينتهي حد 30 كم/ساعة بعد F113 وتطبق السرعة العادية للطريق",
             "is_correct": true
           },
           {
-            "text": "??? ????? ?? 30 ??/???? ??? ???? ????? ?????? ???? ????? ??? ?????",
+            "text": "نعم، يستمر حد 30 كم/ساعة حتى تظهر علامة سرعة جديدة",
             "is_correct": false
           }
         ],
-        "explanation": "?? ?????? 30 ??/???? ??? ????? ????????. ????? ????? F113 ???? ?? ?????? ?????? ??????."
+        "explanation": "حد 30 كم/ساعة خاص بشارع الدراجات. بعد المرور بعلامة F113 تطبق السرعة العادية لذلك الطريق."
       }
     }
   },
@@ -454,15 +550,15 @@
         "question": "Moet F113 aan elke uitgang van een fietsstraat geplaatst worden?",
         "choices": [
           {
-            "text": "Ja F113 staat aan elke uitgang zodat bestuurders weten waar de fietsstraatregels eindigen",
+            "text": "Ja, F113 staat aan elke uitgang zodat bestuurders weten waar de fietsstraatregels eindigen",
             "is_correct": true
           },
           {
-            "text": "Nee ��n F113-bord aan de hoofduitgang volstaat",
+            "text": "Nee, één F113-bord aan de hoofduitgang volstaat",
             "is_correct": false
           }
         ],
-        "explanation": "Het eindbord (F113) wordt aan elke uitgang van de fietsstraat geplaatst zodat bestuurders die de zone via een zijstraat verlaten ook weten dat de fietsstraatregels niet meer gelden."
+        "explanation": "Het eindbord F113 wordt aan elke uitgang van de fietsstraat geplaatst, zodat bestuurders die via een zijstraat vertrekken ook weten dat de fietsstraatregels niet meer gelden."
       },
       "EN": {
         "question": "Must F113 be placed at every exit of a bicycle street?",
@@ -493,18 +589,18 @@
         "explanation": "Le panneau de fin (F113) est place a chaque sortie de la rue cyclable pour que les conducteurs quittant par une rue laterale sachent aussi que les regles ne s appliquent plus."
       },
       "AR": {
-        "question": "?? ??? ??? F113 ??? ?? ???? ?? ???? ?????????",
+        "question": "هل يجب وضع F113 عند كل مخرج من شارع الدراجات؟",
         "choices": [
           {
-            "text": "??? ????? F113 ??? ?? ???? ??? ???? ???????? ??? ????? ????? ???? ????????",
+            "text": "نعم، توضع F113 عند كل مخرج حتى يعرف السائقون أين تنتهي قواعد شارع الدراجات",
             "is_correct": true
           },
           {
-            "text": "?? ????? ?????? F113 ????? ??? ?????? ??????? ?????",
+            "text": "لا، تكفي علامة F113 واحدة عند المخرج الرئيسي",
             "is_correct": false
           }
         ],
-        "explanation": "????? ????? ?????? ??????? (F113) ??? ?? ???? ?? ???? ???????? ????? ????? ???????? ????????? ??? ???? ????? ??????? ???????."
+        "explanation": "توضع علامة نهاية شارع الدراجات F113 عند كل مخرج حتى يعرف السائقون الذين يغادرون عبر شارع جانبي أن قواعد شارع الدراجات لم تعد سارية."
       }
     }
   }

@@ -1,13 +1,13 @@
 [
   {
-    "question_id": "F4b_Q01",
+    "question_id": "Zone-F4b-Einde_Q01",
     "type": "WHAT_DOES_IT_MEAN",
     "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat betekent bord F4b 'Einde zone 30'?",
+        "question": "Wat betekent dit verkeersbord?",
         "choices": [
           {
             "text": "De zone 30 is voorbij; de standaard maximumsnelheid van de omringende weg is weer van toepassing",
@@ -22,10 +22,10 @@
             "is_correct": false
           }
         ],
-        "explanation": "F4b markeert het einde van een zone 30. Voorbij dit bord geldt de normaal geldende snelheid voor het type weg, doorgaans 50 km/u in de bebouwde kom."
+        "explanation": "Zone-F4b-Einde markeert het einde van een zone 30. Voorbij dit bord geldt de normaal geldende snelheid voor het type weg, doorgaans 50 km/u in de bebouwde kom."
       },
       "EN": {
-        "question": "What does sign F4b 'End of 30 km/h zone' mean?",
+        "question": "What does this traffic sign mean?",
         "choices": [
           {
             "text": "The zone 30 has ended; the standard speed limit of the surrounding road applies again",
@@ -40,25 +40,25 @@
             "is_correct": false
           }
         ],
-        "explanation": "F4b marks the end of a zone 30. Beyond this sign the normal speed for the road type applies, typically 50 km/h in a built-up area."
+        "explanation": "Zone-F4b-Einde marks the end of a zone 30. Beyond this sign the normal speed for the road type applies, typically 50 km/h in a built-up area."
       },
       "FR": {
-        "question": "Que signifie le panneau F4b 'Fin zone 30' ?",
+        "question": "Que signifie ce panneau de signalisation?",
         "choices": [
           {
-            "text": "La zone 30 est terminee; la vitesse maximale normale de la route environnante s applique a nouveau",
+            "text": "La zone 30 est terminée; la vitesse maximale normale de la route environnante s'applique à nouveau",
             "is_correct": true
           },
           {
-            "text": "Une nouvelle zone 30 commence immediatement apres ce panneau",
+            "text": "Une nouvelle zone 30 commence immédiatement après ce panneau",
             "is_correct": false
           },
           {
-            "text": "Vous pouvez maintenant rouler a la vitesse que vous voulez car toutes les limites sont levees",
+            "text": "Vous pouvez maintenant rouler à la vitesse que vous voulez car toutes les limites sont levées",
             "is_correct": false
           }
         ],
-        "explanation": "F4b marque la fin d une zone 30. Au-dela de ce panneau la vitesse normale pour le type de route s applique en general 50 km/h en agglomeration."
+        "explanation": "Zone-F4b-Einde marque la fin d'une zone 30. Au-delà de ce panneau la vitesse normale pour le type de route s'applique, généralement 50 km/h en agglomération."
       },
       "AR": {
         "question": "ما معنى هذه العلامة المرورية؟",
@@ -68,7 +68,7 @@
             "is_correct": true
           },
           {
-            "text": "تبدأ منطقة 30 جديدة فوراً بعد هذه العلامة المرورية",
+            "text": "تبدأ منطقة 30 جديدة فوراً بعد هذه العلامة",
             "is_correct": false
           },
           {
@@ -76,98 +76,107 @@
             "is_correct": false
           }
         ],
-        "explanation": "تحدد F4b نهاية منطقة 30. بعد هذه العلامة المرورية تعود السرعة العادية لنوع الطريق عادةً 50 كم/س داخل المنطقة المبنية."
+        "explanation": "Zone-F4b-Einde تحدد نهاية منطقة 30. بعد هذه العلامة تعود السرعة العادية لنوع الطريق، عادةً 50 كم/س داخل المنطقة المبنية."
       }
     }
   },
   {
-    "question_id": "F4b_Q02",
+    "question_id": "Zone-F4b-Einde_Q02",
     "type": "WHICH_SIGN",
     "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Tot welke categorie behoort bord F4b en wat is het kenmerk van deze categorie?",
+        "question": "Tot welke categorie behoort bord Zone-F4b-Einde?",
         "choices": [
           {
-            "text": "deze categorie (informatieve borden): geven informatie over de wegsituatie en geldende regels",
+            "text": "Zoneborden",
             "is_correct": true
           },
           {
-            "text": "deze categorie (voorrangsborden): regelen de voorrang op kruispunten",
+            "text": "Verbodsborden",
             "is_correct": false
           },
           {
-            "text": "deze categorie (parkeer- en stilstandsborden): regelen het parkeren",
+            "text": "Voorrangsborden",
             "is_correct": false
           }
         ],
-        "explanation": "Bord F4b behoort tot deze categorie van informatieve borden die weggebruikers informeren over de geldende verkeersregels en wegsituatie."
+        "explanation": "Zone-F4b-Einde is een zonebord dat het einde van een zone 30 aanduidt. Het werkt altijd als tegenhanger van beginbord Zone-F4a."
       },
       "EN": {
-        "question": "Which category does sign F4b belong to and what is its characteristic?",
+        "question": "To which category does sign Zone-F4b-Einde belong?",
         "choices": [
           {
-            "text": "Information signs: provide information about the road situation and applicable rules",
+            "text": "Zone signs",
             "is_correct": true
           },
           {
-            "text": "Priority signs: regulate priority at intersections",
+            "text": "Prohibition signs",
             "is_correct": false
           },
           {
-            "text": "Parking and stopping signs: regulate parking",
+            "text": "Priority signs",
             "is_correct": false
           }
         ],
-        "explanation": "Sign F4b belongs to this category of information signs that inform road users about applicable traffic rules and road situations."
+        "explanation": "Zone-F4b-Einde is a zone sign marking the end of a zone 30. It always acts as the counterpart to start sign Zone-F4a."
       },
       "FR": {
-        "question": "À quelle catégorie appartient le panneau F4b et quelle est sa caracteristique ?",
+        "question": "À quelle catégorie appartient le panneau Zone-F4b-Einde?",
         "choices": [
           {
-            "text": "Panneaux d'information : fournissent des informations sur la situation routiere et les regles applicables",
+            "text": "Panneaux de zone",
             "is_correct": true
           },
           {
-            "text": "Panneaux de priorité : reglementent la priorite aux carrefours",
+            "text": "Panneaux d'interdiction",
             "is_correct": false
           },
           {
-            "text": "Panneaux de stationnement et d'arrêt : reglementent le stationnement",
+            "text": "Panneaux de priorité",
             "is_correct": false
           }
         ],
-        "explanation": "Le panneau F4b appartient à cette catégorie des panneaux d information qui informent les usagers de la route sur les regles de circulation applicables."
+        "explanation": "Zone-F4b-Einde est un panneau de zone indiquant la fin d'une zone 30. Il fonctionne toujours en complément du panneau de début Zone-F4a."
       },
       "AR": {
-        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
+        "question": "إلى أي فئة تنتمي علامة Zone-F4b-Einde؟",
         "choices": [
-          { "text": "العلامات الإرشادية", "is_correct": true },
-          { "text": "علامات الأولوية", "is_correct": false },
-          { "text": "علامات الوقوف", "is_correct": false }
+          {
+            "text": "علامات المنطقة",
+            "is_correct": true
+          },
+          {
+            "text": "علامات الحظر",
+            "is_correct": false
+          },
+          {
+            "text": "علامات الأولوية",
+            "is_correct": false
+          }
         ],
-        "explanation": "تنتمي العلامة المرورية F4b إلى هذه الفئة من العلامات الإعلامية التي تُعلم مستخدمي الطريق بقواعد المرور المطبقة."
+        "explanation": "Zone-F4b-Einde علامة منطقة تُشير إلى نهاية منطقة 30. تعمل دائماً كنظير لعلامة البداية Zone-F4a."
       }
     }
   },
   {
-    "question_id": "F4b_Q03",
+    "question_id": "Zone-F4b-Einde_Q03",
     "type": "HAZARD_IDENTIFICATION",
     "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Waarom moet u na bord F4b alert blijven ook als u de 30-zone verlaat?",
+        "question": "Waarom moet u na bord Zone-F4b-Einde alert blijven ook als u de zone 30 verlaat?",
         "choices": [
           {
-            "text": "Zone 30-gebieden grenzen vaak aan scholen of speelplaatsen; er kunnen nog kinderen op of vlak bij de weg zijn",
+            "text": "Zone 30-gebieden grenzen vaak aan scholen of speelplaatsen; er kunnen nog kwetsbare weggebruikers vlak bij de weg zijn",
             "is_correct": true
           },
           {
-            "text": "Na F4b zijn er geen gevaren meer want u verlaat de beschermde zone",
+            "text": "Na Zone-F4b-Einde zijn er geen gevaren meer want u verlaat de beschermde zone",
             "is_correct": false
           },
           {
@@ -175,17 +184,17 @@
             "is_correct": false
           }
         ],
-        "explanation": "Zone 30-zones grenzen vaak aan scholen of woonwijken. Zelfs voorbij F4b kunnen er nog kwetsbare weggebruikers in de buurt zijn."
+        "explanation": "Zone 30-zones grenzen vaak aan scholen of woonwijken. Zelfs voorbij Zone-F4b-Einde kunnen er nog kwetsbare weggebruikers zoals kinderen en fietsers in de buurt zijn."
       },
       "EN": {
-        "question": "Why must you remain alert after sign F4b even as you leave the zone 30?",
+        "question": "Why must you remain alert after sign Zone-F4b-Einde even as you leave the zone 30?",
         "choices": [
           {
-            "text": "Zone 30 areas often border schools or playgrounds; children may still be on or near the road",
+            "text": "Zone 30 areas often border schools or playgrounds; vulnerable road users may still be near the road",
             "is_correct": true
           },
           {
-            "text": "After F4b there are no more hazards because you are leaving the protected zone",
+            "text": "After Zone-F4b-Einde there are no more hazards because you are leaving the protected zone",
             "is_correct": false
           },
           {
@@ -193,35 +202,35 @@
             "is_correct": false
           }
         ],
-        "explanation": "Zone 30 areas often border schools or residential areas. Even beyond F4b there may still be vulnerable road users nearby."
+        "explanation": "Zone 30 areas often border schools or residential areas. Even beyond Zone-F4b-Einde there may still be vulnerable road users such as children and cyclists nearby."
       },
       "FR": {
-        "question": "Pourquoi devez-vous rester vigilant apres le panneau F4b meme en quittant la zone 30 ?",
+        "question": "Pourquoi devez-vous rester vigilant après le panneau Zone-F4b-Einde même en quittant la zone 30?",
         "choices": [
           {
-            "text": "Les zones 30 sont souvent adjacentes aux ecoles ou terrains de jeux; des enfants peuvent encore etre sur ou pres de la route",
+            "text": "Les zones 30 sont souvent adjacentes aux écoles ou terrains de jeux; des usagers vulnérables peuvent encore être près de la route",
             "is_correct": true
           },
           {
-            "text": "Apres F4b il n y a plus de dangers car vous quittez la zone protegee",
+            "text": "Après Zone-F4b-Einde il n'y a plus de dangers car vous quittez la zone protégée",
             "is_correct": false
           },
           {
-            "text": "Vous devez vous exercer a un arret d urgence juste apres avoir quitte une zone 30",
+            "text": "Vous devez vous exercer à un arrêt d'urgence juste après avoir quitté une zone 30",
             "is_correct": false
           }
         ],
-        "explanation": "Les zones 30 sont souvent adjacentes aux ecoles ou aux zones residentielles. Meme apres F4b il peut encore y avoir des usagers vulnerables a proximite."
+        "explanation": "Les zones 30 sont souvent adjacentes aux écoles ou aux zones résidentielles. Même après Zone-F4b-Einde il peut encore y avoir des usagers vulnérables à proximité."
       },
       "AR": {
-        "question": "لماذا يجب أن تبقى يقظاً بعد علامة مرورية F4b حتى عند مغادرة منطقة 30؟",
+        "question": "لماذا يجب أن تبقى يقظاً بعد علامة Zone-F4b-Einde حتى عند مغادرة منطقة 30؟",
         "choices": [
           {
-            "text": "غالباً ما تحاذي مناطق 30 المدارس أو الملاعب؛ قد لا يزال الأطفال على الطريق أو بالقربه",
+            "text": "غالباً ما تحاذي مناطق 30 المدارس أو الملاعب؛ قد لا يزال مستخدمو الطريق الضعفاء قريبين من الطريق",
             "is_correct": true
           },
           {
-            "text": "بعد F4b لا توجد مخاطر أخرى لأنك تغادر المنطقة المحمية",
+            "text": "بعد Zone-F4b-Einde لا توجد مخاطر أخرى لأنك تغادر المنطقة المحمية",
             "is_correct": false
           },
           {
@@ -229,22 +238,22 @@
             "is_correct": false
           }
         ],
-        "explanation": "غالباً ما تحاذي مناطق 30 المدارس أو المناطق السكنية. حتى بعد F4b قد لا يزال هناك مستخدمون ضعفاء للطريق قريبون."
+        "explanation": "غالباً ما تحاذي مناطق 30 المدارس أو المناطق السكنية. حتى بعد Zone-F4b-Einde قد لا يزال هناك مستخدمون ضعفاء للطريق كالأطفال والدراجين قريبون."
       }
     }
   },
   {
-    "question_id": "F4b_Q04",
+    "question_id": "Zone-F4b-Einde_Q04",
     "type": "WHAT_MUST_YOU_DO",
     "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U passeert bord F4b binnen de bebouwde kom en er staat geen ander snelheidsbord. Welke snelheid geldt er?",
+        "question": "U passeert bord Zone-F4b-Einde binnen de bebouwde kom en er staat geen ander snelheidsbord. Welke snelheid geldt er?",
         "choices": [
           {
-            "text": "50 km/u, want dat is de standaard maximumsnelheid binnen de bebouwde kom in Belgie",
+            "text": "50 km/u, want dat is de standaard maximumsnelheid binnen de bebouwde kom in België",
             "is_correct": true
           },
           {
@@ -256,10 +265,10 @@
             "is_correct": false
           }
         ],
-        "explanation": "Binnen de bebouwde kom geldt na het einde van een zone 30 automatisch de standaard 50 km/u tenzij anders aangegeven."
+        "explanation": "Binnen de bebouwde kom geldt na het einde van een zone 30 automatisch de standaard 50 km/u tenzij anders aangegeven door een ander bord."
       },
       "EN": {
-        "question": "You pass sign F4b within a built-up area and there is no other speed sign. What speed applies?",
+        "question": "You pass sign Zone-F4b-Einde within a built-up area and there is no other speed sign. What speed applies?",
         "choices": [
           {
             "text": "50 km/h, because that is the standard maximum speed within a built-up area in Belgium",
@@ -274,35 +283,35 @@
             "is_correct": false
           }
         ],
-        "explanation": "Within a built-up area after the end of a zone 30 the standard 50 km/h applies automatically unless otherwise indicated."
+        "explanation": "Within a built-up area after the end of a zone 30 the standard 50 km/h applies automatically unless otherwise indicated by another sign."
       },
       "FR": {
-        "question": "Vous depassez le panneau F4b en agglomeration et il n y a pas d autre panneau de vitesse. Quelle vitesse s applique ?",
+        "question": "Vous dépassez le panneau Zone-F4b-Einde en agglomération et il n'y a pas d'autre panneau de vitesse. Quelle vitesse s'applique?",
         "choices": [
           {
-            "text": "50 km/h, car c est la vitesse maximale standard en agglomeration en Belgique",
+            "text": "50 km/h, car c'est la vitesse maximale standard en agglomération en Belgique",
             "is_correct": true
           },
           {
-            "text": "30 km/h, car les regles de la zone 30 restent en vigueur jusqu a un panneau de vitesse explicite",
+            "text": "30 km/h, car les règles de la zone 30 restent en vigueur jusqu'à un panneau de vitesse explicite",
             "is_correct": false
           },
           {
-            "text": "70 km/h, car apres une zone 30 une limite de vitesse intermediaire s applique",
+            "text": "70 km/h, car après une zone 30 une limite de vitesse intermédiaire s'applique",
             "is_correct": false
           }
         ],
-        "explanation": "En agglomeration apres la fin d une zone 30 les 50 km/h standard s appliquent automatiquement sauf indication contraire."
+        "explanation": "En agglomération après la fin d'une zone 30 les 50 km/h standard s'appliquent automatiquement sauf indication contraire d'un autre panneau."
       },
       "AR": {
-        "question": "تجاوزت علامة مرورية F4b داخل المنطقة المبنية ولا توجد علامة مرورية سرعة أخرى. ما السرعة المطبقة؟",
+        "question": "تجاوزت علامة Zone-F4b-Einde داخل المنطقة المبنية ولا توجد علامة سرعة أخرى. ما السرعة المطبقة؟",
         "choices": [
           {
             "text": "50 كم/س لأن هذا هو الحد الأقصى القياسي داخل المنطقة المبنية في بلجيكا",
             "is_correct": true
           },
           {
-            "text": "30 كم/س لأن قواعد منطقة 30 تبقى سارية حتى ظهور علامة مرورية سرعة صريحة",
+            "text": "30 كم/س لأن قواعد منطقة 30 تبقى سارية حتى ظهور علامة سرعة صريحة",
             "is_correct": false
           },
           {
@@ -310,26 +319,26 @@
             "is_correct": false
           }
         ],
-        "explanation": "داخل المنطقة المبنية بعد نهاية منطقة 30 يسري تلقائياً الحد القياسي البالغ 50 كم/س ما لم يُشر إلى خلاف ذلك."
+        "explanation": "داخل المنطقة المبنية بعد نهاية منطقة 30 يسري تلقائياً الحد القياسي البالغ 50 كم/س ما لم يُشر إلى خلاف ذلك بعلامة أخرى."
       }
     }
   },
   {
-    "question_id": "F4b_Q05",
+    "question_id": "Zone-F4b-Einde_Q05",
     "type": "WHAT_MUST_YOU_DO",
     "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U rijdt door een zone 30 en het bord F4b ontbreekt of is beschadigd. Welke snelheid houdt u aan?",
+        "question": "U rijdt door een zone 30 en het bord Zone-F4b-Einde ontbreekt of is beschadigd. Welke snelheid houdt u aan?",
         "choices": [
           {
-            "text": "30 km/u; zonder duidelijk einde-bord blijft u de zone 30-limiet respecteren",
+            "text": "30 km/u; zonder duidelijk eindbord blijft de zone 30-limiet van kracht",
             "is_correct": true
           },
           {
-            "text": "50 km/u; bij ontbrekend bord geldt automatisch de standaard stedelijke snelheid",
+            "text": "50 km/u; bij een ontbrekend bord geldt automatisch de standaard stedelijke snelheid",
             "is_correct": false
           },
           {
@@ -337,13 +346,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "Zonder zichtbaar einde-teken van een zone 30 blijven de zone 30-regels van kracht. Rijden met 30 km/u is de veiligste en wettelijke keuze."
+        "explanation": "Zonder zichtbaar eindbord van een zone 30 blijven de zone 30-regels van kracht. Rijden met 30 km/u is de veiligste en wettelijke keuze."
       },
       "EN": {
-        "question": "You are driving through a zone 30 and the F4b sign is missing or damaged. What speed do you maintain?",
+        "question": "You are driving through a zone 30 and the Zone-F4b-Einde sign is missing or damaged. What speed do you maintain?",
         "choices": [
           {
-            "text": "30 km/h; without a clear end sign you continue to respect the zone 30 limit",
+            "text": "30 km/h; without a clear end sign the zone 30 limit remains in force",
             "is_correct": true
           },
           {
@@ -358,32 +367,32 @@
         "explanation": "Without a visible end sign for a zone 30 the zone 30 rules remain in force. Driving at 30 km/h is the safest and lawful choice."
       },
       "FR": {
-        "question": "Vous roulez dans une zone 30 et le panneau F4b est absent ou endommage. Quelle vitesse maintenez-vous ?",
+        "question": "Vous roulez dans une zone 30 et le panneau Zone-F4b-Einde est absent ou endommagé. Quelle vitesse maintenez-vous?",
         "choices": [
           {
-            "text": "30 km/h; sans panneau de fin visible vous continuez a respecter la limite de la zone 30",
+            "text": "30 km/h; sans panneau de fin visible la limite de la zone 30 reste en vigueur",
             "is_correct": true
           },
           {
-            "text": "50 km/h; en l absence de panneau la vitesse urbaine standard s applique automatiquement",
+            "text": "50 km/h; en l'absence de panneau la vitesse urbaine standard s'applique automatiquement",
             "is_correct": false
           },
           {
-            "text": "Vous pouvez juger vous-meme quelle vitesse est appropriee",
+            "text": "Vous pouvez juger vous-même quelle vitesse est appropriée",
             "is_correct": false
           }
         ],
-        "explanation": "Sans panneau de fin visible pour une zone 30 les regles de la zone 30 restent en vigueur. Rouler a 30 km/h est le choix le plus sur et legal."
+        "explanation": "Sans panneau de fin visible pour une zone 30 les règles de la zone 30 restent en vigueur. Rouler à 30 km/h est le choix le plus sûr et légal."
       },
       "AR": {
-        "question": "تقود عبر منطقة 30 وعلامة مرورية F4b مفقودة أو تالفة. ما السرعة التي تحافظ عليها؟",
+        "question": "تقود عبر منطقة 30 وعلامة Zone-F4b-Einde مفقودة أو تالفة. ما السرعة التي تحافظ عليها؟",
         "choices": [
           {
-            "text": "30 كم/س؛ بدون علامة مرورية نهاية واضحة تستمر في احترام حد منطقة 30",
+            "text": "30 كم/س؛ بدون علامة نهاية واضحة يبقى حد منطقة 30 سارياً",
             "is_correct": true
           },
           {
-            "text": "50 كم/س؛ عند غياب العلامة المرورية تسري السرعة الحضرية القياسية تلقائياً",
+            "text": "50 كم/س؛ عند غياب العلامة تسري السرعة الحضرية القياسية تلقائياً",
             "is_correct": false
           },
           {
@@ -391,19 +400,19 @@
             "is_correct": false
           }
         ],
-        "explanation": "بدون علامة مرورية نهاية مرئية لمنطقة 30 تبقى قواعد المنطقة سارية. القيادة بسرعة 30 كم/س هي الخيار الأكثر أماناً وقانونية."
+        "explanation": "بدون علامة نهاية مرئية لمنطقة 30 تبقى قواعد المنطقة سارية. القيادة بسرعة 30 كم/س هي الخيار الأكثر أماناً وقانونية."
       }
     }
   },
   {
-    "question_id": "F4b_Q06",
+    "question_id": "Zone-F4b-Einde_Q06",
     "type": "WHAT_MUST_YOU_DO",
     "difficulty": "MEDIUM",
-    "is_critical": false,
+    "is_critical": true,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Vlak voor bord F4b ziet u schoolkinderen naast de weg staan. Wat doet u?",
+        "question": "Vlak voor bord Zone-F4b-Einde ziet u schoolkinderen naast de weg staan. Wat doet u?",
         "choices": [
           {
             "text": "Vaart minderen en klaar zijn om te stoppen; kinderen kunnen plotseling de rijbaan oplopen",
@@ -421,7 +430,7 @@
         "explanation": "Kinderen zijn onvoorspelbaar. Ook aan het einde van een zone 30 moet u uw snelheid aanpassen en bereid zijn te stoppen."
       },
       "EN": {
-        "question": "Just before sign F4b you see school children standing beside the road. What do you do?",
+        "question": "Just before sign Zone-F4b-Einde you see school children standing beside the road. What do you do?",
         "choices": [
           {
             "text": "Reduce speed and be ready to stop; children can suddenly step onto the road",
@@ -439,25 +448,25 @@
         "explanation": "Children are unpredictable. Even at the end of a zone 30 you must adjust your speed and be prepared to stop."
       },
       "FR": {
-        "question": "Juste avant le panneau F4b vous voyez des ecoliers debout pres de la route. Que faites-vous ?",
+        "question": "Juste avant le panneau Zone-F4b-Einde vous voyez des écoliers debout près de la route. Que faites-vous?",
         "choices": [
           {
-            "text": "Reduire la vitesse et etre pret a s arreter; les enfants peuvent soudainement s elancer sur la chaussee",
+            "text": "Réduire la vitesse et être prêt à s'arrêter; les enfants peuvent soudainement s'élancer sur la chaussée",
             "is_correct": true
           },
           {
-            "text": "Continuer a 30 km/h car c est deja assez lent pour les ecoliers",
+            "text": "Continuer à 30 km/h car c'est déjà assez lent pour les écoliers",
             "is_correct": false
           },
           {
-            "text": "Klaxonner pour qu ils sachent que vous arrivez et continuer calmement",
+            "text": "Klaxonner pour qu'ils sachent que vous arrivez et continuer calmement",
             "is_correct": false
           }
         ],
-        "explanation": "Les enfants sont imprevisibles. Meme en fin de zone 30 vous devez adapter votre vitesse et etre pret a vous arreter."
+        "explanation": "Les enfants sont imprévisibles. Même en fin de zone 30 vous devez adapter votre vitesse et être prêt à vous arrêter."
       },
       "AR": {
-        "question": "قبيل علامة مرورية F4b ترى تلاميذ مدرسة واقفين بجانب الطريق. ماذا تفعل؟",
+        "question": "قبيل علامة Zone-F4b-Einde ترى تلاميذ مدرسة واقفين بجانب الطريق. ماذا تفعل؟",
         "choices": [
           {
             "text": "قلل السرعة وكن مستعداً للتوقف؛ قد يقفز الأطفال فجأة على الطريق",
@@ -477,31 +486,31 @@
     }
   },
   {
-    "question_id": "F4b_Q07",
+    "question_id": "Zone-F4b-Einde_Q07",
     "type": "IS_IT_ALLOWED",
     "difficulty": "HARD",
     "is_critical": true,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Na bord F4b in een bebouwde kom zonder ander bord: is rijden met 50 km/u toegestaan?",
+        "question": "Na bord Zone-F4b-Einde in een bebouwde kom zonder ander bord: is rijden met 50 km/u toegestaan?",
         "choices": [
           {
-            "text": "Ja, 50 km/u is de standaard maximumsnelheid in de bebouwde kom en geldt opnieuw na F4b",
+            "text": "Ja, 50 km/u is de standaard maximumsnelheid in de bebouwde kom en geldt opnieuw na Zone-F4b-Einde",
             "is_correct": true
           },
           {
-            "text": "Nee, u moet een expliciet bord zien dat 50 km/u toestaat alvorens u die snelheid mag rijden",
+            "text": "Neen, u moet een expliciet bord zien dat 50 km/u toestaat alvorens u die snelheid mag rijden",
             "is_correct": false
           }
         ],
-        "explanation": "Na het einde van een zone 30 keert de standaard bebouwde-kom-snelheid van 50 km/u automatisch terug zonder extra bord."
+        "explanation": "Na het einde van een zone 30 keert de standaard bebouwde-kom-snelheid van 50 km/u automatisch terug zonder dat daarvoor een extra bord nodig is."
       },
       "EN": {
-        "question": "After sign F4b in a built-up area with no other sign: is driving at 50 km/h allowed?",
+        "question": "After sign Zone-F4b-Einde in a built-up area with no other sign: is driving at 50 km/h allowed?",
         "choices": [
           {
-            "text": "Yes, 50 km/h is the standard maximum speed in a built-up area and applies again after F4b",
+            "text": "Yes, 50 km/h is the standard maximum speed in a built-up area and applies again after Zone-F4b-Einde",
             "is_correct": true
           },
           {
@@ -509,50 +518,50 @@
             "is_correct": false
           }
         ],
-        "explanation": "After the end of a zone 30 the standard built-up area speed of 50 km/h automatically returns without any additional sign."
+        "explanation": "After the end of a zone 30 the standard built-up area speed of 50 km/h automatically returns without any additional sign being required."
       },
       "FR": {
-        "question": "Apres le panneau F4b en agglomeration sans autre panneau : est-il permis de rouler a 50 km/h ?",
+        "question": "Après le panneau Zone-F4b-Einde en agglomération sans autre panneau: est-il permis de rouler à 50 km/h?",
         "choices": [
           {
-            "text": "Oui, 50 km/h est la vitesse maximale standard en agglomeration et s applique a nouveau apres F4b",
+            "text": "Oui, 50 km/h est la vitesse maximale standard en agglomération et s'applique à nouveau après Zone-F4b-Einde",
             "is_correct": true
           },
           {
-            "text": "Non, vous devez voir un panneau explicite autorisant 50 km/h avant de pouvoir rouler a cette vitesse",
+            "text": "Non, vous devez voir un panneau explicite autorisant 50 km/h avant de pouvoir rouler à cette vitesse",
             "is_correct": false
           }
         ],
-        "explanation": "Apres la fin d une zone 30 la vitesse standard d agglomeration de 50 km/h revient automatiquement sans panneau supplementaire."
+        "explanation": "Après la fin d'une zone 30 la vitesse standard d'agglomération de 50 km/h revient automatiquement sans qu'aucun panneau supplémentaire ne soit nécessaire."
       },
       "AR": {
-        "question": "بعد علامة مرورية F4b داخل المنطقة المبنية بدون علامة مرورية أخرى: هل القيادة بسرعة 50 كم/س مباحة؟",
+        "question": "بعد علامة Zone-F4b-Einde داخل المنطقة المبنية بدون علامة أخرى: هل القيادة بسرعة 50 كم/س مباحة؟",
         "choices": [
           {
-            "text": "نعم 50 كم/س هو الحد الأقصى القياسي داخل المنطقة المبنية ويعود سريانه بعد F4b",
+            "text": "نعم، 50 كم/س هو الحد الأقصى القياسي داخل المنطقة المبنية ويعود سريانه بعد Zone-F4b-Einde",
             "is_correct": true
           },
           {
-            "text": "لا يجب رؤية علامة مرورية صريحة تسمح بـ 50 كم/س قبل القيادة بهذه السرعة",
+            "text": "لا، يجب رؤية علامة صريحة تسمح بـ 50 كم/س قبل القيادة بهذه السرعة",
             "is_correct": false
           }
         ],
-        "explanation": "بعد نهاية منطقة 30 يعود تلقائياً الحد القياسي البالغ 50 كم/س داخل المنطقة المبنية دون الحاجة إلى علامة مرورية إضافية."
+        "explanation": "بعد نهاية منطقة 30 يعود تلقائياً الحد القياسي البالغ 50 كم/س داخل المنطقة المبنية دون الحاجة إلى علامة إضافية."
       }
     }
   },
   {
-    "question_id": "F4b_Q08",
+    "question_id": "Zone-F4b-Einde_Q08",
     "type": "IS_IT_ALLOWED",
     "difficulty": "HARD",
     "is_critical": true,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U staat nog in een zone 30 (F4b is nog niet bereikt): is het toegestaan om 40 km/u te rijden?",
+        "question": "U bevindt zich nog in de zone 30 (Zone-F4b-Einde is nog niet bereikt) en rijdt 40 km/u. Is dat toegestaan?",
         "choices": [
           {
-            "text": "Nee, de maximumsnelheid in een zone 30 is 30 km/u en elke overschrijding is een overtreding",
+            "text": "Neen, de maximumsnelheid in een zone 30 is 30 km/u en elke overschrijding is een overtreding",
             "is_correct": true
           },
           {
@@ -560,10 +569,10 @@
             "is_correct": false
           }
         ],
-        "explanation": "Zolang u zich in een zone 30 bevindt geldt de limiet van 30 km/u. 40 km/u is een overtreding en kan worden beboet."
+        "explanation": "Zolang u zich in een zone 30 bevindt geldt de limiet van 30 km/u. 40 km/u is een overtreding en kan worden beboet, ongeacht hoe dicht het bij de limiet ligt."
       },
       "EN": {
-        "question": "You are still in a zone 30 (F4b has not been reached yet): is it allowed to drive at 40 km/h?",
+        "question": "You are still in the zone 30 (Zone-F4b-Einde has not been reached yet) and driving at 40 km/h. Is that permitted?",
         "choices": [
           {
             "text": "No, the maximum speed in a zone 30 is 30 km/h and any excess is an offence",
@@ -574,35 +583,35 @@
             "is_correct": false
           }
         ],
-        "explanation": "As long as you are in a zone 30 the 30 km/h limit applies. Driving at 40 km/h is an offence and can result in a fine."
+        "explanation": "As long as you are in a zone 30 the 30 km/h limit applies. Driving at 40 km/h is an offence and can result in a fine, regardless of how close it is to the limit."
       },
       "FR": {
-        "question": "Vous etes encore dans une zone 30 (F4b n a pas encore ete atteint) : est-il permis de rouler a 40 km/h ?",
+        "question": "Vous êtes encore dans la zone 30 (Zone-F4b-Einde n'a pas encore été atteint) et roulez à 40 km/h. Est-ce autorisé?",
         "choices": [
           {
-            "text": "Non, la vitesse maximale dans une zone 30 est de 30 km/h et tout depassement est une infraction",
+            "text": "Non, la vitesse maximale dans une zone 30 est de 30 km/h et tout dépassement est une infraction",
             "is_correct": true
           },
           {
-            "text": "Oui, 40 km/h est suffisamment proche de 30 km/h et la police tolere toujours cela",
+            "text": "Oui, 40 km/h est suffisamment proche de 30 km/h et la police tolère toujours cela",
             "is_correct": false
           }
         ],
-        "explanation": "Tant que vous etes dans une zone 30 la limite de 30 km/h s applique. Rouler a 40 km/h est une infraction et peut etre sanctionne."
+        "explanation": "Tant que vous êtes dans une zone 30 la limite de 30 km/h s'applique. Rouler à 40 km/h est une infraction et peut être sanctionné quelle que soit la proximité avec la limite."
       },
       "AR": {
-        "question": "أنت لا تزال في منطقة 30 (لم تصل إلى F4b بعد): هل القيادة بسرعة 40 كم/س مباحة؟",
+        "question": "أنت لا تزال في منطقة 30 (لم تصل إلى Zone-F4b-Einde بعد) وتسير بسرعة 40 كم/س. هل هذا مسموح؟",
         "choices": [
           {
-            "text": "لا الحد الأقصى في منطقة 30 هو 30 كم/س وأي تجاوز يعد مخالفة",
+            "text": "لا، الحد الأقصى في منطقة 30 هو 30 كم/س وأي تجاوز يُعدّ مخالفة",
             "is_correct": true
           },
           {
-            "text": "نعم 40 كم/س قريب بما يكفي من 30 كم/س والشرطة تتسامح دائماً مع ذلك",
+            "text": "نعم، 40 كم/س قريب بما يكفي من 30 كم/س والشرطة تتسامح دائماً مع ذلك",
             "is_correct": false
           }
         ],
-        "explanation": "طالما أنتمفي منطقة 30 يسري الحد البالغ 30 كم/س. القيادة بسرعة 40 كم/س مخالفة ويمكن أن تعرضك للغرامة."
+        "explanation": "طالما أنت في منطقة 30 يسري الحد البالغ 30 كم/س. القيادة بسرعة 40 كم/س مخالفة ويمكن أن تعرضك للغرامة بغض النظر عن قِرب الرقم من الحد."
       }
     }
   }

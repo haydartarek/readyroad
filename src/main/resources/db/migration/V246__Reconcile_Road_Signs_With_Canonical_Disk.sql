@@ -89,10 +89,10 @@ DELETE alias FROM road_signs alias JOIN road_signs canonical ON canonical.sign_c
 INSERT INTO road_signs (sign_code, normalized_sign_code, category, image_path, serious_violation, is_active) VALUES
 ('A39', 'a39', 'DANGER', '/images/signs/danger_signs/A39 Twee richtingsverkeer toegelaten na een stuk éénrichtingsverkeer.png', 0, 1),
 ('D3a', 'd3a', 'MANDATORY', '/images/signs/mandatory_signs/D3a Verplicht één van de pijlen te volgen.png', 0, 1),
-('D3b', 'd3b', 'MANDATORY', '/images/signs/mandatory_signs/D3b Verplicht één van de pijlen te volgen.png', 0, 1)
+('D3b', 'd3b', 'MANDATORY', '/images/signs/mandatory_signs/D3b Verplicht één van de pijlen te volgen.png', 0, 1) AS new_values
 ON DUPLICATE KEY UPDATE
-    normalized_sign_code = VALUES(normalized_sign_code),
-    category = VALUES(category),
-    image_path = VALUES(image_path),
-    serious_violation = VALUES(serious_violation),
-    is_active = VALUES(is_active);
+    normalized_sign_code = new_values.normalized_sign_code,
+    category = new_values.category,
+    image_path = new_values.image_path,
+    serious_violation = new_values.serious_violation,
+    is_active = new_values.is_active;

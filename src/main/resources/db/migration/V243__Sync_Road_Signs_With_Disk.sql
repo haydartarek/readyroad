@@ -22,13 +22,13 @@ INSERT INTO road_signs (sign_code, normalized_sign_code, category, image_path, s
 ('C5',    'c5',    'PROHIBITION', '/images/signs/prohibition_signs/C5 Verboden toegang voor bestuurders van motorvoertuigen met meer dan twee wielen.png', 0, 1),
 ('C5-C7', 'c5_c7', 'PROHIBITION', '/images/signs/prohibition_signs/C5-C7 Verboden toegang voor motorvoertuigen en motorfietsen.png', 0, 1),
 ('C7',    'c7',    'PROHIBITION', '/images/signs/prohibition_signs/C7 Verboden toegang voor bestuurders van motorfietsen.png', 0, 1),
-('C9-C11','c9_c11','PROHIBITION', '/images/signs/prohibition_signs/C9-C11 Verboden toegang voor bestuurders van bromfietsen en fietsen.png', 0, 1)
+('C9-C11','c9_c11','PROHIBITION', '/images/signs/prohibition_signs/C9-C11 Verboden toegang voor bestuurders van bromfietsen en fietsen.png', 0, 1) AS new_values
 ON DUPLICATE KEY UPDATE
-    normalized_sign_code = VALUES(normalized_sign_code),
-    category = VALUES(category),
-    image_path = VALUES(image_path),
-    serious_violation = VALUES(serious_violation),
-    is_active = VALUES(is_active);
+    normalized_sign_code = new_values.normalized_sign_code,
+    category = new_values.category,
+    image_path = new_values.image_path,
+    serious_violation = new_values.serious_violation,
+    is_active = new_values.is_active;
 
 -- 3. D SIGNS.
 DELETE FROM road_signs WHERE sign_code = 'D9b';
@@ -37,26 +37,26 @@ DELETE FROM road_signs WHERE sign_code = 'D9b';
 DELETE FROM road_signs WHERE sign_code IN ('E11', 'E9i');
 
 INSERT INTO road_signs (sign_code, normalized_sign_code, category, image_path, serious_violation, is_active) VALUES
-('E9b', 'e9b', 'PARKING', '/images/signs/parking_signs/E9b Parkeren uitsluitend voor autos.png', 0, 1)
+('E9b', 'e9b', 'PARKING', '/images/signs/parking_signs/E9b Parkeren uitsluitend voor autos.png', 0, 1) AS new_values
 ON DUPLICATE KEY UPDATE
-    normalized_sign_code = VALUES(normalized_sign_code),
-    category = VALUES(category),
-    image_path = VALUES(image_path),
-    serious_violation = VALUES(serious_violation),
-    is_active = VALUES(is_active);
+    normalized_sign_code = new_values.normalized_sign_code,
+    category = new_values.category,
+    image_path = new_values.image_path,
+    serious_violation = new_values.serious_violation,
+    is_active = new_values.is_active;
 
 -- 5. F SIGNS.
 DELETE FROM road_signs
 WHERE sign_code IN ('F103','F105','F117','F118','F45b','F4a','F4b','F87','ZONE-F111','ZONE-F113');
 
 INSERT INTO road_signs (sign_code, normalized_sign_code, category, image_path, serious_violation, is_active) VALUES
-('F50bis-fietsers', 'f50bis_fietsers', 'INFORMATION', '/images/signs/information_signs/F50bis Opgepast als je van richting veranderd, fietsers.png', 0, 1)
+('F50bis-fietsers', 'f50bis_fietsers', 'INFORMATION', '/images/signs/information_signs/F50bis Opgepast als je van richting veranderd, fietsers.png', 0, 1) AS new_values
 ON DUPLICATE KEY UPDATE
-    normalized_sign_code = VALUES(normalized_sign_code),
-    category = VALUES(category),
-    image_path = VALUES(image_path),
-    serious_violation = VALUES(serious_violation),
-    is_active = VALUES(is_active);
+    normalized_sign_code = new_values.normalized_sign_code,
+    category = new_values.category,
+    image_path = new_values.image_path,
+    serious_violation = new_values.serious_violation,
+    is_active = new_values.is_active;
 
 -- 6. Z SIGNS.
 UPDATE road_signs SET image_path = '/images/signs/zone_signs/ZE9a Zone parkeren uitsluitend voor auto''s.png' WHERE sign_code = 'ZE9a';
@@ -80,12 +80,12 @@ INSERT INTO road_signs (sign_code, normalized_sign_code, category, image_path, s
 ('Zone-F117',       'zone_f117',       'ZONE', '/images/signs/zone_signs/Zone-F117 Begin van lage emissiezone.png', 0, 1),
 ('Zone-F118-Einde', 'zone_f118_einde', 'ZONE', '/images/signs/zone_signs/Zone-F118-Einde van lage emissiezone.png', 0, 1),
 ('Zone-F4a',        'zone_f4a',        'ZONE', '/images/signs/zone_signs/Zone-F4a Zone 30 km.png', 0, 1),
-('Zone-F4b-Einde',  'zone_f4b_einde',  'ZONE', '/images/signs/zone_signs/Zone-F4b-Einde zone 30 km.png', 0, 1)
+('Zone-F4b-Einde',  'zone_f4b_einde',  'ZONE', '/images/signs/zone_signs/Zone-F4b-Einde zone 30 km.png', 0, 1) AS new_values
 ON DUPLICATE KEY UPDATE
-    normalized_sign_code = VALUES(normalized_sign_code),
-    category = VALUES(category),
-    image_path = VALUES(image_path),
-    serious_violation = VALUES(serious_violation),
-    is_active = VALUES(is_active);
+    normalized_sign_code = new_values.normalized_sign_code,
+    category = new_values.category,
+    image_path = new_values.image_path,
+    serious_violation = new_values.serious_violation,
+    is_active = new_values.is_active;
 
 -- Result: 186 road signs, all matching disk files

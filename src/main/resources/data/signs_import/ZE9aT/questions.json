@@ -10,67 +10,73 @@
         "question": "Wat betekent dit verkeersbord?",
         "choices": [
           {
-            "text": "Zone parkeren uitsluitend voor auto's met tijdsaanduiding",
+            "text": "Begin van een zone waar parkeren uitsluitend voor bepaalde autotypes geldt, met tijdslimiet",
             "is_correct": true
-          },
-          {
-            "text": "Zone parkeren uitsluitend voor auto's (zonder tijdsbeperking)",
-            "is_correct": false
           },
           {
             "text": "Zone parkeerverbod (geen enkel voertuig)",
             "is_correct": false
+          },
+          {
+            "text": "Zone parkeren uitsluitend voor auto's met tijdslimiet met tijdsbeperking",
+            "is_correct": false
           }
         ],
-        "explanation": "ZE9aT is een zone waar enkel personenauto's mogen parkeren EN waarbij ook een tijdsbeperking van kracht is die op het bord is aangegeven."
+        "explanation": "ZE9aT duidt een zone aan waar enkel motorfietsen, personenauto's, auto's voor dubbelgebruik en minibussen mogen parkeren. Alle andere voertuigen zijn uitgesloten van parkeren. De aangeduide tijdsbeperking moet ook worden gerespecteerd."
       },
       "EN": {
         "question": "What does this traffic sign mean?",
         "choices": [
           {
-            "text": "Zone parking for cars only with time indication",
+            "text": "Start of a zone where parking is reserved for permitted car types, with a time limit",
             "is_correct": true
           },
           {
-            "text": "Zone parking for cars only (without time restriction)",
+            "text": "Zone no parking (no vehicle at all)",
             "is_correct": false
           },
-          { "text": "Zone no parking (no vehicle at all)", "is_correct": false }
+          {
+            "text": "Zone parking for cars only with a time limit with time restriction",
+            "is_correct": false
+          }
         ],
-        "explanation": "ZE9aT is a zone where only passenger cars may park AND where a time restriction indicated on the sign is also in force."
+        "explanation": "ZE9aT designates a zone where only motorcycles, passenger cars, dual-purpose vehicles and minibuses may park. All other vehicles are excluded from parking there. The indicated time limit must also be respected."
       },
       "FR": {
         "question": "Que signifie ce panneau de signalisation?",
         "choices": [
           {
-            "text": "Zone stationnement voitures uniquement avec indication de temps",
+            "text": "Début d’une zone où le stationnement est réservé aux types de voitures autorisés, avec limite de temps",
             "is_correct": true
-          },
-          {
-            "text": "Zone stationnement voitures uniquement (sans restriction de temps)",
-            "is_correct": false
           },
           {
             "text": "Zone interdiction de stationnement (aucun véhicule)",
             "is_correct": false
+          },
+          {
+            "text": "Zone stationnement voitures uniquement avec limite de temps avec restriction de temps",
+            "is_correct": false
           }
         ],
-        "explanation": "ZE9aT est une zone où seules les voitures de tourisme peuvent stationner ET où une limite de temps indiquée sur le panneau est également en vigueur."
+        "explanation": "ZE9aT désigne une zone où seuls les motocycles, les voitures de tourisme, les véhicules à double usage et les minibus peuvent stationner. Tous les autres véhicules en sont exclus. La limite de temps indiquée doit également être respectée."
       },
       "AR": {
         "question": "ما معنى هذه العلامة المرورية؟",
         "choices": [
           {
-            "text": "منطقة للركن المخصص للسيارات فقط مع إشارة وقت",
+            "text": "بداية منطقة يكون الركن فيها مخصصاً لأنواع سيارات مسموح بها، مع حد زمني",
             "is_correct": true
           },
           {
-            "text": "منطقة للركن المخصص للسيارات فقط (بدون تحديد وقت)",
+            "text": "منطقة ممنوع الوقوف (لا سيارات)",
             "is_correct": false
           },
-          { "text": "منطقة ممنوع الوقوف", "is_correct": false }
+          {
+            "text": "منطقة للركن المخصص للسيارات فقط مع حد زمني مع تحديد وقت",
+            "is_correct": false
+          }
         ],
-        "explanation": "ZE9aT منطقة لا يجوز فيها الركن إلا للسيارات السياحية مع سريان تحديد زمني مدون على العلامة المرورية."
+        "explanation": "ZE9aT تحدد منطقة لا يجوز فيها الركن إلا للدراجات النارية والسيارات السياحية وسيارات الاستخدام المزدوج والميني باص. جميع المركبات الأخرى ممنوعة من الركن. ويجب أيضاً احترام الحد الزمني المحدد."
       }
     }
   },
@@ -84,38 +90,74 @@
       "NL": {
         "question": "Tot welke categorie verkeersborden behoort dit bord?",
         "choices": [
-          { "text": "Zoneborden", "is_correct": true },
-          { "text": "Verbodsborden", "is_correct": false },
-          { "text": "Parkeerborden", "is_correct": false }
+          {
+            "text": "Zoneborden",
+            "is_correct": true
+          },
+          {
+            "text": "Verbodsborden",
+            "is_correct": false
+          },
+          {
+            "text": "Parkeerborden",
+            "is_correct": false
+          }
         ],
-        "explanation": "ZE9aT is een zonebord behorend tot de zonecategorie."
+        "explanation": "ZE9aT is een zonebord dat tot deze categorie behoort. De aangeduide tijdsbeperking moet ook worden gerespecteerd."
       },
       "EN": {
         "question": "To which category of traffic signs does this sign belong?",
         "choices": [
-          { "text": "Zone signs", "is_correct": true },
-          { "text": "Prohibition signs", "is_correct": false },
-          { "text": "Parking signs", "is_correct": false }
+          {
+            "text": "Zone signs",
+            "is_correct": true
+          },
+          {
+            "text": "Prohibition signs",
+            "is_correct": false
+          },
+          {
+            "text": "Parking signs",
+            "is_correct": false
+          }
         ],
-        "explanation": "ZE9aT is a zone sign belonging to this category."
+        "explanation": "ZE9aT is a zone sign belonging to this category. The indicated time limit must also be respected."
       },
       "FR": {
         "question": "À quelle catégorie de panneaux appartient ce panneau?",
         "choices": [
-          { "text": "Panneaux de zone", "is_correct": true },
-          { "text": "Panneaux d'interdiction", "is_correct": false },
-          { "text": "Panneaux de stationnement", "is_correct": false }
+          {
+            "text": "Panneaux de zone",
+            "is_correct": true
+          },
+          {
+            "text": "Panneaux d'interdiction",
+            "is_correct": false
+          },
+          {
+            "text": "Panneaux de stationnement",
+            "is_correct": false
+          }
         ],
-        "explanation": "ZE9aT est un panneau de zone appartenant à cette catégorie."
+        "explanation": "ZE9aT est un panneau de zone appartenant à cette catégorie. La limite de temps indiquée doit également être respectée."
       },
       "AR": {
-        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
+        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
         "choices": [
-          { "text": "علامات المنطقة", "is_correct": true },
-          { "text": "علامات الحظر", "is_correct": false },
-          { "text": "علامات الوقوف", "is_correct": false }
+          {
+            "text": "علامات المنطقة",
+            "is_correct": true
+          },
+          {
+            "text": "علامات الحظر",
+            "is_correct": false
+          },
+          {
+            "text": "علامات الوقوف",
+            "is_correct": false
+          }
         ],
-        "explanation": "ZE9aT علامة مرورية منطقة تنتمي إلى هذه الفئة."
+        "explanation": "ZE9aT علامة منطقة تنتمي إلى هذه الفئة. ويجب أيضاً احترام الحد الزمني المحدد."
       }
     }
   },
@@ -127,70 +169,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Welke twee beperkingen gelden tegelijk in een ZE9aT-zone?",
+        "question": "Welke voertuigen mogen NIET parkeren in een ZE9aT-zone?",
         "choices": [
           {
-            "text": "Parkeren uitsluitend voor personenauto's EN een maximale parkeerduur",
+            "text": "Alle voertuigen behalve motorfietsen, personenauto's, auto's voor dubbelgebruik en minibussen",
             "is_correct": true
           },
           {
-            "text": "Enkel een voertuigbeperking voor personenauto's, geen tijdsbeperking",
+            "text": "Alle voertuigen zonder uitzondering",
             "is_correct": false
           },
           {
-            "text": "Een tijdsbeperking voor alle voertuigen, inclusief motorfietsen",
+            "text": "Uitsluitend vrachtwagens en bussen",
             "is_correct": false
           }
         ],
-        "explanation": "ZE9aT combineert twee regels: alleen personenauto's mogen parkeren én er is een tijdsbeperking aangegeven op het bord."
+        "explanation": "ZE9aT staat uitsluitend parkeren toe voor motorfietsen, personenauto's, auto's voor dubbelgebruik en minibussen. Bestelwagens, vrachtwagens en andere voertuigen mogen er niet parkeren. De aangeduide tijdsbeperking moet ook worden gerespecteerd."
       },
       "EN": {
-        "question": "Which two restrictions apply simultaneously in a ZE9aT zone?",
+        "question": "Which vehicles may NOT park in a ZE9aT zone?",
         "choices": [
           {
-            "text": "Parking for passenger cars only AND a maximum parking duration",
+            "text": "All vehicles except motorcycles, passenger cars, dual-purpose vehicles and minibuses",
             "is_correct": true
           },
           {
-            "text": "Only a vehicle restriction for passenger cars, no time restriction",
+            "text": "All vehicles without exception",
             "is_correct": false
           },
           {
-            "text": "A time restriction for all vehicles including motorcycles",
+            "text": "Only lorries and buses",
             "is_correct": false
           }
         ],
-        "explanation": "ZE9aT combines two rules: only passenger cars may park and there is a time restriction indicated on the sign."
+        "explanation": "ZE9aT only allows parking for motorcycles, passenger cars, dual-purpose vehicles and minibuses. Vans, lorries and other vehicles may not park there. The indicated time limit must also be respected."
       },
       "FR": {
-        "question": "Quelles deux restrictions s'appliquent simultanément dans une zone ZE9aT?",
+        "question": "Quels véhicules ne peuvent PAS stationner dans une zone ZE9aT?",
         "choices": [
           {
-            "text": "Stationnement réservé aux voitures ET une durée maximale de stationnement",
+            "text": "Tous les véhicules sauf les motocycles, voitures de tourisme, véhicules à double usage et minibus",
             "is_correct": true
           },
           {
-            "text": "Uniquement une restriction de véhicule pour les voitures sans restriction de temps",
+            "text": "Tous les véhicules sans exception",
             "is_correct": false
           },
           {
-            "text": "Une restriction de temps pour tous les véhicules y compris les motos",
+            "text": "Uniquement les camions et les bus",
             "is_correct": false
           }
         ],
-        "explanation": "ZE9aT combine deux règles: seules les voitures de tourisme peuvent stationner et une limite de temps est indiquée sur le panneau."
+        "explanation": "ZE9aT n'autorise le stationnement qu'aux motocycles, voitures de tourisme, véhicules à double usage et minibus. Les camionnettes, camions et autres véhicules ne peuvent pas y stationner. La limite de temps indiquée doit également être respectée."
       },
       "AR": {
-        "question": "ما القيدان اللذان يسريان في منطقة ZE9aT في آن واحد؟",
+        "question": "أي المركبات لا يجوز لها الركن في منطقة ZE9aT؟",
         "choices": [
-          { "text": "الوقوف للسيارات فقط ومدة وقوف قصوى", "is_correct": true },
-          { "text": "فقط قيد السيارات دون تحديد وقت", "is_correct": false },
           {
-            "text": "تحديد وقت لجميع المركبات بما فيها الدراجات النارية",
+            "text": "جميع المركبات عدا الدراجات النارية والسيارات السياحية وسيارات الاستخدام المزدوج والميني باص",
+            "is_correct": true
+          },
+          {
+            "text": "جميع المركبات دون استثناء",
+            "is_correct": false
+          },
+          {
+            "text": "الشاحنات الكبيرة والحافلات فقط",
             "is_correct": false
           }
         ],
-        "explanation": "ZE9aT تجمع بين قاعدتين: السيارات فقط وتحديد زمني مدون على العلامة المرورية."
+        "explanation": "ZE9aT تسمح بالركن فقط للدراجات النارية والسيارات السياحية وسيارات الاستخدام المزدوج والميني باص. الشاحنات الصغيرة والكبيرة وغيرها ممنوعة من الركن. ويجب أيضاً احترام الحد الزمني المحدد."
       }
     }
   },
@@ -202,76 +250,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U parkeert uw auto in een ZE9aT-zone met een maximale duur van 1 uur. Wat moet u doen?",
+        "question": "U rijdt een ZE9aT-zone in en nadert een zijstraat. Geldt de beperking 'uitsluitend voor auto's met tijdslimiet' ook op die zijstraat?",
         "choices": [
           {
-            "text": "Een parkeerschijf zichtbaar plaatsen zodat de aankomsttijd leesbaar is",
+            "text": "Ja, de ZE9aT-beperking geldt voor alle straten binnen de gehele zone",
             "is_correct": true
           },
           {
-            "text": "Niets; een tijdsaanduiding op een zonebord is enkel informatief",
+            "text": "Neen, enkel op de straat waar het bord staat",
             "is_correct": false
           },
           {
-            "text": "Een SMS sturen naar de gemeentedienst om uw aankomsttijd te melden",
+            "text": "Neen, zijstraten vallen onder de normale parkeerregels",
             "is_correct": false
           }
         ],
-        "explanation": "In een ZE9aT-zone dient u de parkeerregels na te leven, waaronder het tonen van de aankomsttijd via een parkeerschijf of vergelijkbaar middel."
+        "explanation": "Een ZE9aT-zone dekt de gehele zone. De beperking geldt dus op alle straten binnen de zone, inclusief zijstraten. De aangeduide tijdsbeperking moet ook worden gerespecteerd."
       },
       "EN": {
-        "question": "You park your car in a ZE9aT zone with a maximum duration of 1 hour. What must you do?",
+        "question": "You enter a ZE9aT zone and approach a side street. Does the 'cars only' restriction also apply on that side street?",
         "choices": [
           {
-            "text": "Place a parking disc visibly so that the arrival time is readable",
+            "text": "Yes, the ZE9aT restriction applies to all streets within the entire zone",
             "is_correct": true
           },
           {
-            "text": "Nothing; a time indication on a zone sign is only informative",
+            "text": "No, only on the street with the sign",
             "is_correct": false
           },
           {
-            "text": "Send an SMS to the municipal service to report your arrival time",
+            "text": "No, side streets fall under normal parking rules",
             "is_correct": false
           }
         ],
-        "explanation": "In a ZE9aT zone you must comply with the parking rules including showing the arrival time via a parking disc or similar means."
+        "explanation": "A ZE9aT zone covers the entire zone. The restriction therefore applies on all streets within the zone including side streets. The indicated time limit must also be respected."
       },
       "FR": {
-        "question": "Vous garez votre voiture dans une zone ZE9aT avec une durée maximale de 1 heure. Que devez-vous faire?",
+        "question": "Vous pénétrez dans une zone ZE9aT et approchez une rue latérale. La restriction 'voitures uniquement avec limite de temps' s'applique-t-elle aussi à cette rue latérale?",
         "choices": [
           {
-            "text": "Placer un disque de stationnement visible de sorte que l'heure d'arrivée soit lisible",
+            "text": "Oui, la restriction ZE9aT s'applique à toutes les rues de l'ensemble de la zone",
             "is_correct": true
           },
           {
-            "text": "Rien; une indication de temps sur un panneau de zone est seulement informative",
+            "text": "Non, uniquement dans la rue où se trouve le panneau",
             "is_correct": false
           },
           {
-            "text": "Envoyer un SMS au service municipal pour signaler votre heure d'arrivée",
+            "text": "Non, les rues latérales relèvent des règles normales de stationnement",
             "is_correct": false
           }
         ],
-        "explanation": "Dans une zone ZE9aT vous devez respecter les règles de stationnement y compris indiquer l'heure d'arrivée via un disque de stationnement ou un moyen similaire."
+        "explanation": "Une zone ZE9aT couvre l'ensemble de la zone. La restriction s'applique donc à toutes les rues de la zone y compris les rues latérales. La limite de temps indiquée doit également être respectée."
       },
       "AR": {
-        "question": "تركن سيارتك في منطقة ZE9aT بحد أقصى ساعة واحدة. ماذا يجب عليك؟",
+        "question": "تدخل منطقة ZE9aT وتقترب من شارع جانبي. هل ينطبق قيد 'للسيارات فقط مع حد زمني' على ذلك الشارع الجانبي أيضاً؟",
         "choices": [
           {
-            "text": "وضع قرص الوقوف بشكل ظاهر بحيث يمكن رؤية وقت الوصول",
+            "text": "نعم، ينطبق قيد ZE9aT على جميع شوارع المنطقة بأكملها",
             "is_correct": true
           },
           {
-            "text": "لا شيء؛ إشارة الوقت على علامة مرورية المنطقة إعلامية فقط",
+            "text": "لا، فقط على الشارع الذي توجد فيه العلامة",
             "is_correct": false
           },
           {
-            "text": "إرسال رسالة نصية إلى البلدية لإبلاغها بوقت وصولك",
+            "text": "لا، الشوارع الجانبية تخضع لقواعد الوقوف العادية",
             "is_correct": false
           }
         ],
-        "explanation": "في منطقة ZE9aT يجب التقيد بقواعد الوقوف بما فيها إظهار وقت الوصول عبر قرص الوقوف."
+        "explanation": "منطقة ZE9aT تغطي المنطقة بأكملها. وبالتالي ينطبق القيد على جميع الشوارع داخل المنطقة بما فيها الشوارع الجانبية. ويجب أيضاً احترام الحد الزمني المحدد."
       }
     }
   },
@@ -283,76 +331,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Geldt de tijdsbeperking van ZE9aT ook op alle zijstraten binnen de zone?",
+        "question": "U rijdt met een bestelwagen een ZE9aT-zone in voor een levering. Waar mag u stoppen?",
         "choices": [
           {
-            "text": "Ja, beide beperkingen (voertuig en tijd) gelden op alle straten binnen de gehele ZE9aT-zone",
+            "text": "U mag kort stilstaan om te laden/lossen, maar u mag er NIET parkeren",
             "is_correct": true
           },
           {
-            "text": "Neen, de tijdsbeperking geldt enkel op de straat waar het bord staat",
+            "text": "U mag gewoon parkeren zoals elke andere bestuurder",
             "is_correct": false
           },
           {
-            "text": "Neen, zijstraten vallen buiten de zone-invloedssfeer",
+            "text": "U mag de zone helemaal niet inrijden met een bestelwagen",
             "is_correct": false
           }
         ],
-        "explanation": "Een ZE9aT-zone dekt het volledige zone-netwerk. Beide regels (uitsluitend voor auto's én maximale parkeerduur) gelden op elke straat binnen de zone."
+        "explanation": "ZE9aT verbiedt parkeren voor niet-toegestane voertuigen, maar kort stilstaan voor laden/lossen blijft toegelaten. De zone verbiedt rijden niet. De aangeduide tijdsbeperking moet ook worden gerespecteerd."
       },
       "EN": {
-        "question": "Does the time restriction of ZE9aT also apply on all side streets within the zone?",
+        "question": "You enter a ZE9aT zone with a van for a delivery. Where may you stop?",
         "choices": [
           {
-            "text": "Yes, both restrictions (vehicle and time) apply on all streets within the entire ZE9aT zone",
+            "text": "You may stop briefly to load/unload but you may NOT park there",
             "is_correct": true
           },
           {
-            "text": "No, the time restriction only applies on the street where the sign is",
+            "text": "You may park normally like any other driver",
             "is_correct": false
           },
           {
-            "text": "No, side streets fall outside the zone's sphere of influence",
+            "text": "You may not enter the zone at all with a van",
             "is_correct": false
           }
         ],
-        "explanation": "A ZE9aT zone covers the full zone network. Both rules (cars only and maximum parking duration) apply on every street within the zone."
+        "explanation": "ZE9aT prohibits parking for non-permitted vehicles but brief stopping to load/unload is still permitted. The zone does not prohibit driving. The indicated time limit must also be respected."
       },
       "FR": {
-        "question": "La restriction de temps de ZE9aT s'applique-t-elle aussi à toutes les rues latérales de la zone?",
+        "question": "Vous entrez dans une zone ZE9aT avec une camionnette pour une livraison. Où pouvez-vous vous arrêter?",
         "choices": [
           {
-            "text": "Oui, les deux restrictions (véhicule et temps) s'appliquent à toutes les rues de l'ensemble de la zone ZE9aT",
+            "text": "Vous pouvez vous arrêter brièvement pour charger/décharger mais vous ne pouvez PAS vous garer",
             "is_correct": true
           },
           {
-            "text": "Non, la restriction de temps ne s'applique qu'à la rue où se trouve le panneau",
+            "text": "Vous pouvez vous garer normalement comme tout autre conducteur",
             "is_correct": false
           },
           {
-            "text": "Non, les rues latérales se trouvent hors de la sphère d'influence de la zone",
+            "text": "Vous ne pouvez pas du tout entrer dans la zone avec une camionnette",
             "is_correct": false
           }
         ],
-        "explanation": "Une zone ZE9aT couvre l'intégralité du réseau de la zone. Les deux règles (voitures uniquement et durée maximale de stationnement) s'appliquent à chaque rue de la zone."
+        "explanation": "ZE9aT interdit le stationnement aux véhicules non autorisés mais l'arrêt bref pour charger/décharger reste autorisé. La zone n'interdit pas la circulation. La limite de temps indiquée doit également être respectée."
       },
       "AR": {
-        "question": "هل يسري تحديد الوقت في ZE9aT أيضًا على جميع الشوارع الجانبية داخل المنطقة؟",
+        "question": "تدخل منطقة ZE9aT بشاحنة صغيرة لتوصيل بضاعة. أين يمكنك التوقف؟",
         "choices": [
           {
-            "text": "نعم، يسري كلا القيدين (السيارات والوقت) على جميع شوارع المنطقة",
+            "text": "يمكنك التوقف مؤقتاً للشحن/التفريغ، لكن لا يجوز الركن",
             "is_correct": true
           },
           {
-            "text": "لا، تحديد الوقت يسري فقط على الشارع الذي توجد فيه العلامة المرورية",
+            "text": "يمكنك الركن بشكل اعتيادي كأي سائق آخر",
             "is_correct": false
           },
           {
-            "text": "لا، الشوارع الجانبية خارج نطاق المنطقة",
+            "text": "لا يمكنك الدخول إلى المنطقة نهائياً بشاحنة",
             "is_correct": false
           }
         ],
-        "explanation": "منطقة ZE9aT تغطي شبكة المنطقة بأكملها. يسري كلا القيدين على كل شارع داخل المنطقة."
+        "explanation": "ZE9aT تحظر الركن للمركبات غير المسموح بها، لكن التوقف المؤقت للشحن/التفريغ لا يزال مسموحاً. ويجب أيضاً احترام الحد الزمني المحدد."
       }
     }
   },
@@ -364,76 +412,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U rijdt met een motorfiets een ZE9aT-zone in. Welke van de twee beperkingen gelden voor u?",
+        "question": "Wat is het verschil tussen ZE9a en ZE9aT?",
         "choices": [
           {
-            "text": "Beide: u mag er niet parkeren (geen personenauto) en de tijdsbeperking is ook irrelevant voor anderen",
+            "text": "ZE9aT behoudt de regel parkeren uitsluitend voor bepaalde autotypes, maar voegt een tijdsbeperking toe",
             "is_correct": true
           },
           {
-            "text": "Alleen de tijdsbeperking geldt voor u als motorrijder",
+            "text": "ZE9aT is het eindbord van ZE9a en heft alle parkeerregels op",
             "is_correct": false
           },
           {
-            "text": "Geen van beide; motorfietsen zijn vrijgesteld van zone-beperkingen",
+            "text": "ZE9aT geldt alleen voor vrachtwagens en niet voor personenauto’s",
             "is_correct": false
           }
         ],
-        "explanation": "ZE9aT verbiedt parkeren voor alle niet-personenauto's. De tijdsbeperking verlengt de beperking slechts niet; de fundamentele regel is dat alleen personenauto's er mogen parkeren."
+        "explanation": "ZE9a bepaalt wie mag parkeren. ZE9aT gebruikt dezelfde basisregel maar met een extra tijdsvoorwaarde voor de volledige zone."
       },
       "EN": {
-        "question": "You enter a ZE9aT zone on a motorcycle. Which of the two restrictions apply to you?",
+        "question": "What is the difference between ZE9a and ZE9aT?",
         "choices": [
           {
-            "text": "Both: you may not park there (not a passenger car) and the time restriction is also irrelevant for others",
+            "text": "ZE9aT keeps the parking-for-certain-car-types rule but adds a time restriction",
             "is_correct": true
           },
           {
-            "text": "Only the time restriction applies to you as a motorcyclist",
+            "text": "ZE9aT is the end sign of ZE9a and cancels all parking rules",
             "is_correct": false
           },
           {
-            "text": "Neither; motorcycles are exempt from zone restrictions",
+            "text": "ZE9aT applies only to trucks and not to passenger cars",
             "is_correct": false
           }
         ],
-        "explanation": "ZE9aT prohibits parking for all non-passenger-cars. The time restriction merely does not extend the restriction further; the fundamental rule is that only passenger cars may park there."
+        "explanation": "ZE9a defines who may park. ZE9aT uses the same base rule but adds a time condition for the whole zone."
       },
       "FR": {
-        "question": "Vous entrez dans une zone ZE9aT à moto. Laquelle des deux restrictions s'applique à vous?",
+        "question": "Quelle est la différence entre ZE9a et ZE9aT?",
         "choices": [
           {
-            "text": "Les deux: vous ne pouvez pas stationner (pas une voiture) et la restriction de temps est aussi sans objet pour les autres",
+            "text": "ZE9aT conserve la règle du stationnement réservé à certains types de voitures, mais ajoute une restriction de temps",
             "is_correct": true
           },
           {
-            "text": "Seule la restriction de temps s'applique à vous en tant que motocycliste",
+            "text": "ZE9aT est le panneau de fin de ZE9a et annule toutes les règles de stationnement",
             "is_correct": false
           },
           {
-            "text": "Aucune des deux; les motos sont exemptées des restrictions de zone",
+            "text": "ZE9aT s’applique uniquement aux camions et pas aux voitures de tourisme",
             "is_correct": false
           }
         ],
-        "explanation": "ZE9aT interdit le stationnement à tous les véhicules autres que les voitures. La restriction de temps ne fait que ne pas prolonger davantage la restriction; la règle fondamentale est que seules les voitures peuvent y stationner."
+        "explanation": "ZE9a définit qui peut stationner. ZE9aT reprend la même règle de base mais ajoute une condition de temps pour toute la zone."
       },
       "AR": {
-        "question": "تدخل منطقة ZE9aT على دراجة نارية. أي القيدين ينطبقان عليك؟",
+        "question": "ما الفرق بين ZE9a و ZE9aT؟",
         "choices": [
           {
-            "text": "كلاهما: لا يجوز لك الركن (لست سيارة) وتحديد الوقت ليس ذا صلة بالأمر",
+            "text": "ZE9aT تبقي قاعدة الركن لفئات معينة من السيارات فقط، لكنها تضيف قيداً زمنياً",
             "is_correct": true
           },
           {
-            "text": "فقط تحديد الوقت ينطبق عليك كراكب دراجة",
+            "text": "ZE9aT هي علامة نهاية ZE9a وتلغي كل قواعد الركن",
             "is_correct": false
           },
           {
-            "text": "لا شيءمنهما؛ الدراجات النارية معفاة من قيود المنطقة",
+            "text": "ZE9aT تسري فقط على الشاحنات وليس على السيارات السياحية",
             "is_correct": false
           }
         ],
-        "explanation": "ZE9aT تحظر الركن لجميع غير السيارات. القاعدة الأساسية أن السيارات فقط يجوز لها الركن."
+        "explanation": "ZE9a تحدد من يجوز له الركن. ZE9aT تستخدم القاعدة الأساسية نفسها لكنها تضيف شرطاً زمنياً على كامل المنطقة."
       }
     }
   },
@@ -445,60 +493,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U parkeert uw auto in een ZE9aT-zone met 1 uur maximum maar vergeet uw parkeerschijf te plaatsen. Is dat toegestaan?",
+        "question": "U parkeert een personenauto in een ZE9aT-zone maar blijft langer staan dan de aangegeven tijdslimiet. Is dat toegestaan?",
         "choices": [
           {
-            "text": "Neen, het plaatsen van een parkeerschijf of het aangeven van de aankomsttijd is verplicht in een ZE9aT-zone",
+            "text": "Neen, ook een toegelaten voertuig moet de aangegeven tijdslimiet respecteren",
             "is_correct": true
           },
           {
-            "text": "Ja, de zone-aanduiding vervangt de verplichting om een schijf te plaatsen",
+            "text": "Ja, de tijdslimiet geldt niet voor personenauto’s",
             "is_correct": false
           }
         ],
-        "explanation": "In een ZE9aT-zone moet de aankomsttijd worden aangeduid. Zonder parkeerschijf overtreedt u de tijdsbeperking."
+        "explanation": "De voertuigcategorie is maar één voorwaarde. In een ZE9aT-zone is de tijdsbeperking een tweede bindende voorwaarde; langer blijven staan is dus niet toegestaan."
       },
       "EN": {
-        "question": "You park your car in a ZE9aT zone with a 1-hour maximum but forget to place your parking disc. Is that permitted?",
+        "question": "You park a passenger car in a ZE9aT zone but stay longer than the indicated time limit. Is that allowed?",
         "choices": [
           {
-            "text": "No, placing a parking disc or indicating the arrival time is mandatory in a ZE9aT zone",
+            "text": "No, even a permitted vehicle must respect the indicated time limit",
             "is_correct": true
           },
           {
-            "text": "Yes, the zone sign replaces the obligation to place a disc",
+            "text": "Yes, the time limit does not apply to passenger cars",
             "is_correct": false
           }
         ],
-        "explanation": "In a ZE9aT zone the arrival time must be indicated. Without a parking disc you are violating the time restriction."
+        "explanation": "The vehicle category is only one condition. In a ZE9aT zone the time restriction is a second binding condition; overstaying is therefore not allowed."
       },
       "FR": {
-        "question": "Vous vous garez dans une zone ZE9aT avec un maximum de 1 heure mais oubliez de placer votre disque de stationnement. Est-ce autorisé?",
+        "question": "Vous stationnez une voiture de tourisme dans une zone ZE9aT mais restez plus longtemps que la limite indiquée. Est-ce autorisé?",
         "choices": [
           {
-            "text": "Non, l'indication de l'heure d'arrivée est obligatoire dans une zone ZE9aT",
+            "text": "Non, même un véhicule autorisé doit respecter la limite de temps indiquée",
             "is_correct": true
           },
           {
-            "text": "Oui, le panneau de zone remplace l'obligation de placer un disque",
+            "text": "Oui, la limite de temps ne s’applique pas aux voitures de tourisme",
             "is_correct": false
           }
         ],
-        "explanation": "Dans une zone ZE9aT l'heure d'arrivée doit être indiquée. Sans disque de stationnement vous enfreignez la restriction de temps."
+        "explanation": "La catégorie du véhicule n’est qu’une condition. Dans une zone ZE9aT, la restriction de temps est une seconde condition obligatoire; dépasser la durée n’est donc pas autorisé."
       },
       "AR": {
-        "question": "تركن سيارتك في منطقة ZE9aT بحد ساعة واحدة لكنك تنسى وضع قرص الوقوف. هل هذا مسموح؟",
+        "question": "تركن سيارة سياحية في منطقة ZE9aT لكنك تبقى أكثر من الحد الزمني المحدد. هل هذا مسموح؟",
         "choices": [
           {
-            "text": "لا، وضع قرص الوقوف أو إظهار وقت الوصول إلزامي في منطقة ZE9aT",
+            "text": "لا، حتى المركبة المسموح لها يجب أن تحترم الحد الزمني المحدد",
             "is_correct": true
           },
           {
-            "text": "نعم، علامة مرورية المنطقة تحل محل التزام وضع القرص",
+            "text": "نعم، الحد الزمني لا يسري على السيارات السياحية",
             "is_correct": false
           }
         ],
-        "explanation": "في منطقة ZE9aT يجب الإشارة إلى وقت الوصول. بدون قرص وقوف تخرق تحديد الوقت."
+        "explanation": "فئة المركبة شرط واحد فقط. في منطقة ZE9aT يكون القيد الزمني شرطاً ملزماً ثانياً؛ لذلك تجاوز المدة غير مسموح."
       }
     }
   },
@@ -510,60 +558,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U parkeert uw auto gedurende precies 60 minuten in een ZE9aT-zone met een maximale duur van 1 uur. Bent u binnen de tijdslimiet?",
+        "question": "U rijdt met een bestelwagen een ZE9aT-zone in om goederen te leveren. Mag u er parkeren voor de levering?",
         "choices": [
           {
-            "text": "Ja, precies 60 minuten is gelijk aan de maximale duur van 1 uur en dus toegestaan",
+            "text": "Neen, parkeren met een bestelwagen is verboden in een ZE9aT-zone; enkel de toegelaten voertuigen zijn toegelaten",
             "is_correct": true
           },
           {
-            "text": "Neen, u moet altijd ruim onder het maximum blijven",
+            "text": "Ja, met een bestelwagen mag u leveringen doen en parkeren",
             "is_correct": false
           }
         ],
-        "explanation": "De tijdslimiet staat parkeren toe tot en met de aangegeven maximale duur. Precies 60 minuten in een 1-uur-zone is toegestaan."
+        "explanation": "ZE9aT beperkt het parkeren uitsluitend tot motorfietsen, personenauto's, auto's voor dubbelgebruik en minibussen. Een bestelwagen mag er niet parkeren, ook niet voor een levering, maar mag wel kort stilstaan voor laden/lossen. De aangeduide tijdsbeperking moet ook worden gerespecteerd."
       },
       "EN": {
-        "question": "You park your car for exactly 60 minutes in a ZE9aT zone with a maximum duration of 1 hour. Are you within the time limit?",
+        "question": "You enter a ZE9aT zone with a delivery van to make a delivery. May you park there for the delivery?",
         "choices": [
           {
-            "text": "Yes, exactly 60 minutes equals the maximum duration of 1 hour and is therefore permitted",
+            "text": "No, parking a van is prohibited in a ZE9aT zone; only the permitted vehicle types are allowed",
             "is_correct": true
           },
           {
-            "text": "No, you must always stay well below the maximum",
+            "text": "Yes, with a van you may make deliveries and park",
             "is_correct": false
           }
         ],
-        "explanation": "The time limit allows parking up to and including the indicated maximum duration. Exactly 60 minutes in a 1-hour zone is permitted."
+        "explanation": "ZE9aT limits parking exclusively to motorcycles, passenger cars, dual-purpose vehicles and minibuses. A van may not park there, even for a delivery, but may stop briefly to load/unload. The indicated time limit must also be respected."
       },
       "FR": {
-        "question": "Vous stationnez votre voiture pendant exactement 60 minutes dans une zone ZE9aT avec une durée maximale de 1 heure. Êtes-vous dans les limites de temps?",
+        "question": "Vous entrez dans une zone ZE9aT avec une camionnette de livraison. Pouvez-vous vous garer pour effectuer la livraison?",
         "choices": [
           {
-            "text": "Oui, exactement 60 minutes égale la durée maximale de 1 heure et est donc autorisé",
+            "text": "Non, le stationnement d'une camionnette est interdit dans une zone ZE9aT; seuls les types de véhicules autorisés sont admis",
             "is_correct": true
           },
           {
-            "text": "Non, vous devez toujours rester bien en dessous du maximum",
+            "text": "Oui, avec une camionnette vous pouvez faire des livraisons et vous garer",
             "is_correct": false
           }
         ],
-        "explanation": "La limite de temps autorise le stationnement jusqu'à la durée maximale indiquée incluse. Exactement 60 minutes dans une zone de 1 heure est autorisé."
+        "explanation": "ZE9aT limite le stationnement exclusivement aux motocycles, voitures de tourisme, véhicules à double usage et minibus. Une camionnette ne peut pas se garer même pour une livraison mais peut s'arrêter brièvement pour charger/décharger. La limite de temps indiquée doit également être respectée."
       },
       "AR": {
-        "question": "تركن سيارتك لمدة 60 دقيقة بالضبط في منطقة ZE9aT بحد أقصى ساعة. هل أنت ضمن الحد الزمني؟",
+        "question": "تدخل منطقة ZE9aT بشاحنة توصيل بضاعة. هل يجوز الركن للتسليم؟",
         "choices": [
           {
-            "text": "نعم، 60 دقيقة تساوي الحد الأقصى وهي مسموحة",
+            "text": "لا، ركن الشاحنة محظور في منطقة ZE9aT؛ فقط المركبات المسموح بها مقبولة",
             "is_correct": true
           },
           {
-            "text": "لا، يجب دائمًا البقاء دون الحد الأقصى بفارق كبير",
+            "text": "نعم، يجوز للشاحنة الركن أثناء عملية التسليم",
             "is_correct": false
           }
         ],
-        "explanation": "الحد الزمني يسمح بالوقوف حتى المدة القصوى المحددة شاملة. 60 دقيقة بالضبط في منطقة ساعة واحدة مسموحة."
+        "explanation": "ZE9aT تقصر الركن على الدراجات النارية والسيارات السياحية وسيارات الاستخدام المزدوج والميني باص حصراً. لا يجوز للشاحنة الركن هناك حتى للتسليم، لكن يجوز التوقف المؤقت للشحن/التفريغ. ويجب أيضاً احترام الحد الزمني المحدد."
       }
     }
   }

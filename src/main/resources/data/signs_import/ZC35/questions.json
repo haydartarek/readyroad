@@ -9,8 +9,14 @@
       "NL": {
         "question": "Wat betekent dit verkeersbord?",
         "choices": [
-          { "text": "Zone verboden inhalen", "is_correct": true },
-          { "text": "Zone met een snelheidsbeperking", "is_correct": false },
+          {
+            "text": "Zone verboden inhalen",
+            "is_correct": true
+          },
+          {
+            "text": "Zone met een snelheidsbeperking",
+            "is_correct": false
+          },
           {
             "text": "Zone verboden toegang voor voertuigen waarvan de massa hoger is dan 3500 kg",
             "is_correct": false
@@ -21,8 +27,14 @@
       "EN": {
         "question": "What does this traffic sign mean?",
         "choices": [
-          { "text": "Zone no overtaking", "is_correct": true },
-          { "text": "Zone with speed limit", "is_correct": false },
+          {
+            "text": "Zone no overtaking",
+            "is_correct": true
+          },
+          {
+            "text": "Zone with speed limit",
+            "is_correct": false
+          },
           {
             "text": "Zone no entry for vehicles over 3500 kg",
             "is_correct": false
@@ -33,8 +45,14 @@
       "FR": {
         "question": "Que signifie ce panneau de signalisation?",
         "choices": [
-          { "text": "Zone interdiction de dépasser", "is_correct": true },
-          { "text": "Zone avec limitation de vitesse", "is_correct": false },
+          {
+            "text": "Zone interdiction de dépasser",
+            "is_correct": true
+          },
+          {
+            "text": "Zone avec limitation de vitesse",
+            "is_correct": false
+          },
           {
             "text": "Zone accès interdit aux véhicules dont la masse dépasse 3500 kg",
             "is_correct": false
@@ -45,14 +63,20 @@
       "AR": {
         "question": "ما معنى هذه العلامة المرورية؟",
         "choices": [
-          { "text": "منطقة ممنوع التجاوز", "is_correct": true },
-          { "text": "منطقة تحديد السرعة", "is_correct": false },
+          {
+            "text": "منطقة ممنوع التجاوز",
+            "is_correct": true
+          },
+          {
+            "text": "منطقة تحديد السرعة",
+            "is_correct": false
+          },
           {
             "text": "منطقة ممنوع دخول المركبات التي تزيد كتلتها عن 3500 كغ",
             "is_correct": false
           }
         ],
-        "explanation": "ZC35 هي علامة مرورية بداية منطقة يُحظر فيها التجاوز. يسري هذا الحظر على جميع طرق المنطقة."
+        "explanation": "ZC35 هي علامة بداية منطقة يُحظر فيها التجاوز. يسري هذا الحظر على جميع طرق المنطقة، وليس فقط عند موضع العلامة."
       }
     }
   },
@@ -66,38 +90,74 @@
       "NL": {
         "question": "Tot welke categorie verkeersborden behoort dit bord?",
         "choices": [
-          { "text": "Zoneborden", "is_correct": true },
-          { "text": "Verbodsborden", "is_correct": false },
-          { "text": "Parkeerborden", "is_correct": false }
+          {
+            "text": "Zoneborden",
+            "is_correct": true
+          },
+          {
+            "text": "Verbodsborden",
+            "is_correct": false
+          },
+          {
+            "text": "Parkeerborden",
+            "is_correct": false
+          }
         ],
         "explanation": "ZC35 is een zonebord. Het inhalerverbod geldt in de volledige zone, niet enkel op de weg waar het bord is opgesteld."
       },
       "EN": {
         "question": "To which category of traffic signs does this sign belong?",
         "choices": [
-          { "text": "Zone signs", "is_correct": true },
-          { "text": "Prohibition signs", "is_correct": false },
-          { "text": "Parking signs", "is_correct": false }
+          {
+            "text": "Zone signs",
+            "is_correct": true
+          },
+          {
+            "text": "Prohibition signs",
+            "is_correct": false
+          },
+          {
+            "text": "Parking signs",
+            "is_correct": false
+          }
         ],
         "explanation": "ZC35 is a zone sign. The overtaking prohibition applies throughout the entire zone, not only on the road where the sign is placed."
       },
       "FR": {
         "question": "À quelle catégorie de panneaux appartient ce panneau?",
         "choices": [
-          { "text": "Panneaux de zone", "is_correct": true },
-          { "text": "Panneaux d'interdiction", "is_correct": false },
-          { "text": "Panneaux de stationnement", "is_correct": false }
+          {
+            "text": "Panneaux de zone",
+            "is_correct": true
+          },
+          {
+            "text": "Panneaux d'interdiction",
+            "is_correct": false
+          },
+          {
+            "text": "Panneaux de stationnement",
+            "is_correct": false
+          }
         ],
         "explanation": "ZC35 est un panneau de zone. L'interdiction de dépasser s'applique dans toute la zone, pas seulement sur la route où le panneau est installé."
       },
       "AR": {
-        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
+        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
         "choices": [
-          { "text": "علامات المنطقة", "is_correct": true },
-          { "text": "علامات الحظر", "is_correct": false },
-          { "text": "علامات الوقوف", "is_correct": false }
+          {
+            "text": "علامات المنطقة",
+            "is_correct": true
+          },
+          {
+            "text": "علامات الحظر",
+            "is_correct": false
+          },
+          {
+            "text": "علامات الوقوف",
+            "is_correct": false
+          }
         ],
-        "explanation": "ZC35 علامة مرورية منطقة. يسري حظر التجاوز في كامل المنطقة، وليس فقط على الطريق الذي تقع فيه العلامة المرورية."
+        "explanation": "ZC35 علامة منطقة. يسري حظر التجاوز في كامل المنطقة، وليس فقط على الطريق الذي تقع فيه العلامة."
       }
     }
   },
@@ -111,38 +171,74 @@
       "NL": {
         "question": "Welke handeling is verboden in de gehele zone aangeduid door ZC35?",
         "choices": [
-          { "text": "Inhalen", "is_correct": true },
-          { "text": "Claxonneren", "is_correct": false },
-          { "text": "Achteruit rijden", "is_correct": false }
+          {
+            "text": "Inhalen",
+            "is_correct": true
+          },
+          {
+            "text": "Claxonneren",
+            "is_correct": false
+          },
+          {
+            "text": "Achteruit rijden",
+            "is_correct": false
+          }
         ],
         "explanation": "ZC35 verbiedt uitsluitend inhalen in de zone. Andere handelingen zoals claxonneren of achteruit rijden worden door dit bord niet verboden (tenzij andere borden dat doen)."
       },
       "EN": {
         "question": "Which action is prohibited throughout the entire zone indicated by ZC35?",
         "choices": [
-          { "text": "Overtaking", "is_correct": true },
-          { "text": "Using the horn", "is_correct": false },
-          { "text": "Reversing", "is_correct": false }
+          {
+            "text": "Overtaking",
+            "is_correct": true
+          },
+          {
+            "text": "Using the horn",
+            "is_correct": false
+          },
+          {
+            "text": "Reversing",
+            "is_correct": false
+          }
         ],
         "explanation": "ZC35 only prohibits overtaking in the zone. Other actions such as using the horn or reversing are not prohibited by this sign (unless other signs do so)."
       },
       "FR": {
         "question": "Quelle action est interdite dans toute la zone indiquée par ZC35?",
         "choices": [
-          { "text": "Dépasser", "is_correct": true },
-          { "text": "Klaxonner", "is_correct": false },
-          { "text": "Faire marche arrière", "is_correct": false }
+          {
+            "text": "Dépasser",
+            "is_correct": true
+          },
+          {
+            "text": "Klaxonner",
+            "is_correct": false
+          },
+          {
+            "text": "Faire marche arrière",
+            "is_correct": false
+          }
         ],
         "explanation": "ZC35 interdit uniquement de dépasser dans la zone. D'autres actions comme klaxonner ou faire marche arrière ne sont pas interdites par ce panneau."
       },
       "AR": {
         "question": "أي فعل محظور في كامل المنطقة التي تحددها ZC35؟",
         "choices": [
-          { "text": "التجاوز", "is_correct": true },
-          { "text": "استخدام البوق", "is_correct": false },
-          { "text": "السير للخلف", "is_correct": false }
+          {
+            "text": "التجاوز",
+            "is_correct": true
+          },
+          {
+            "text": "استخدام البوق",
+            "is_correct": false
+          },
+          {
+            "text": "السير للخلف",
+            "is_correct": false
+          }
         ],
-        "explanation": "ZC35 تحظر التجاوز فقط داخل المنطقة. أفعال أخرى كاستخدام البوق أو السير للخلف ليست محظورة بهذه العلامة المرورية."
+        "explanation": "ZC35 تحظر التجاوز فقط داخل المنطقة. أفعال أخرى كاستخدام البوق أو السير للخلف ليست محظورة بهذه العلامة."
       }
     }
   },
@@ -223,7 +319,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "في منطقة ZC35 التجاوز محظور كليًا بغض النظر عن الوضع. لا توجد استثناءات."
+        "explanation": "في منطقة ZC35 التجاوز محظور كلياً بغض النظر عن الوضع. لا توجد استثناءات بناءً على الإشارة أو حركة المرور المقابلة."
       }
     }
   },
@@ -299,9 +395,12 @@
             "text": "نعم، لأن ZC35 تسري فقط على تجاوز السيارات",
             "is_correct": false
           },
-          { "text": "نعم، لأن الدراجة ليست مركبة آلية", "is_correct": false }
+          {
+            "text": "نعم، لأن الدراجة ليست مركبة آلية",
+            "is_correct": false
+          }
         ],
-        "explanation": "ZC35 تحظر التجاوز بشكل عام. فئة المركبة المتجاوزة ليست مهمة؛ تجاوز الدراجة محظور أيضًا."
+        "explanation": "ZC35 تحظر التجاوز بشكل عام. فئة المركبة المتجاوزة ليست مهمة؛ تجاوز الدراجة محظور أيضاً."
       }
     }
   },
@@ -382,7 +481,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "علامة مرورية المنطقة أوسع أثرًا: ZC35 تحظر التجاوز على جميع طرق المنطقة. C35 تسري فقط على الطريق عند العلامة المرورية."
+        "explanation": "علامة المنطقة أوسع أثراً: ZC35 تحظر التجاوز على جميع طرق المنطقة. C35 تسري فقط على الطريق عند موضع العلامة."
       }
     }
   },
@@ -394,7 +493,7 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U rijdt in een ZC35-zone en het overvalverbod geldt op 3 opeenvolgende straten zonder ZC35-. Geldt het verbod ook op de derde straat?",
+        "question": "U rijdt in een ZC35-zone en het inhalerverbod geldt op 3 opeenvolgende straten zonder ZC35-. Geldt het verbod ook op de derde straat?",
         "choices": [
           {
             "text": "Ja, ZC35 geldt in de gehele zone totdat ZC35- wordt bereikt, ongeacht het aantal straten",
@@ -439,12 +538,15 @@
         "question": "أنت في منطقة ZC35 ويسري حظر التجاوز على 3 شوارع متتالية دون ZC35-. هل يسري الحظر في الشارع الثالث؟",
         "choices": [
           {
-            "text": "نعم، ZC35 ساري في كامل المنطقة حتى الوصول إلى ZC35-، بغض النظر عن عدد الشوارع",
+            "text": "نعم، ZC35 سارٍ في كامل المنطقة حتى الوصول إلى ZC35-، بغض النظر عن عدد الشوارع",
             "is_correct": true
           },
-          { "text": "لا، بعد شارعين يرتفع الحظر تلقائيًا", "is_correct": false }
+          {
+            "text": "لا، بعد شارعين يرتفع الحظر تلقائياً",
+            "is_correct": false
+          }
         ],
-        "explanation": "ZC35 تسري على جميع طرق المنطقة حتى تحدد ZC35- النهاية. عدد الشوارع التي تمر بها ليس مهمًا."
+        "explanation": "ZC35 تسري على جميع طرق المنطقة حتى تحدد ZC35- النهاية. عدد الشوارع التي تمر بها ليس ذا أهمية."
       }
     }
   },
@@ -498,18 +600,18 @@
         "explanation": "L'obligation légale ne dépend pas du fait que vous ayez vu le panneau. La zone est juridiquement en vigueur dès que vous en franchissez la limite."
       },
       "AR": {
-        "question": "دخلت منطقة ZC35 لكنك لم ترّعلامة مرورية البداية. هل يسري الحظر رغم ذلك؟",
+        "question": "دخلت منطقة ZC35 لكنك لم تر علامة البداية. هل يسري الحظر رغم ذلك؟",
         "choices": [
           {
-            "text": "نعم، تسري قاعدة المنطقة في كاملها بغض النظر عن رؤيتك لعلامة مرورية",
+            "text": "نعم، تسري قاعدة المنطقة في كاملها بغض النظر عن رؤيتك للعلامة",
             "is_correct": true
           },
           {
-            "text": "لا، أنت ملزم فقط إذا لاحظت علامة مرورية البداية شخصيًا",
+            "text": "لا، أنت ملزم فقط إذا لاحظت علامة البداية شخصياً",
             "is_correct": false
           }
         ],
-        "explanation": "الالتزام القانوني لا يعتمد على رؤيتك لعلامة مرورية. المنطقة سارية قانونيًا فور تجاوزك حدودها."
+        "explanation": "الالتزام القانوني لا يعتمد على رؤيتك للعلامة. المنطقة سارية قانونياً فور تجاوزك حدودها."
       }
     }
   }

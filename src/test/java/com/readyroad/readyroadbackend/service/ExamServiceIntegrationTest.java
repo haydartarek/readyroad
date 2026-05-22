@@ -104,9 +104,9 @@ class ExamServiceIntegrationTest extends BaseIntegrationTest { // ✅ Changed fr
 
         // When/Then
         assertThatThrownBy(() -> examService.startExamSimulation(testUserId))
-                .isInstanceOf(IllegalStateException.class)
-                .hasMessageContaining("Insufficient")
-                .hasMessageContaining("questions");
+                .isInstanceOf(org.springframework.web.server.ResponseStatusException.class)
+                .hasMessageContaining("Not enough")
+                .hasMessageContaining("questions to build the exam");
     }
 
     @Test

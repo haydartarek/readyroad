@@ -13,7 +13,8 @@ import java.util.List;
 
 /**
  * Exam Simulation Entity - Phase 5
- * Represents a 50-question exam simulation for Belgian driving license preparation.
+ * Represents a 50-question exam simulation for Belgian driving license
+ * preparation.
  *
  * Compliance:
  * - 50 questions per exam
@@ -30,6 +31,10 @@ public class ExamSimulation extends BaseEntity {
 
     @Column(name = "user_id", nullable = false)
     private Long userId;
+
+    @Version
+    @Column(name = "version", nullable = false)
+    private Integer version = 0;
 
     @Column(name = "started_at", nullable = false)
     private Instant startedAt;

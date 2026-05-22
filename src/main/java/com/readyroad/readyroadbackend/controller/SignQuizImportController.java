@@ -4,6 +4,7 @@ import com.readyroad.readyroadbackend.dto.RoadSignDetailDto;
 import com.readyroad.readyroadbackend.dto.RoadSignSummaryDto;
 import com.readyroad.readyroadbackend.dto.SignImportResultDto;
 import com.readyroad.readyroadbackend.domain.entity.SignImportRun;
+import com.readyroad.readyroadbackend.service.BackendMessageService;
 import com.readyroad.readyroadbackend.service.SignQuizImportService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -15,6 +16,8 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
+import java.time.LocalDateTime;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -39,6 +42,7 @@ import java.util.Map;
 public class SignQuizImportController {
 
     private final SignQuizImportService importService;
+    private final BackendMessageService messages;
 
     // ── POST /api/admin/sign-quiz/import ────────────────────────────────────
 
@@ -75,10 +79,10 @@ public class SignQuizImportController {
      */
     @GetMapping("/import/last")
     @Operation(summary = "Last import run", description = "Fetches the most recent sign_import_runs record from the database.")
-    public ResponseEntity<SignImportResultDto> getLastImport() {
+    public ResponseEntity<?> getLastImport() {
         return importService.getLastImportRun()
-                .map(ResponseEntity::ok)
-                .orElseGet(() -> ResponseEntity.notFound().build());
+                .<ResponseEntity<?>>map(ResponseEntity::ok)
+                .orElseGet(() -> errorResponse(messages.get("error.resource_not_found")));
     }
 
     // ── GET /api/admin/sign-quiz/signs ──────────────────────────────────────
@@ -106,14 +110,14 @@ public class SignQuizImportController {
     @GetMapping("/signs/{code}")
     @Operation(summary = "Get sign detail", description = "Returns the complete RoadSignDetailDto for the given sign code, "
             + "including all questions and their answer choices.")
-    public ResponseEntity<RoadSignDetailDto> getSign(
+    public ResponseEntity<?> getSign(
             @Parameter(description = "Sign code, e.g. A1, B19, C3", example = "A1") @PathVariable String code) {
 
         return importService.getSignDetailByCode(code.toUpperCase())
-                .map(ResponseEntity::ok)
+                .<ResponseEntity<?>>map(ResponseEntity::ok)
                 .orElseGet(() -> {
                     log.warn("Sign not found: {}", code);
-                    return ResponseEntity.notFound().build();
+                    return errorResponse(messages.get("error.resource_not_found"));
                 });
     }
 
@@ -146,5 +150,13 @@ public class SignQuizImportController {
                 .sorted(Map.Entry.<String, Long>comparingByValue().reversed())
                 .forEach(e -> map.put(e.getKey(), e.getValue()));
         return map;
+    }
+
+    private ResponseEntity<Map<String, Object>> errorResponse(String message) {
+        Map<String, Object> body = new HashMap<>();
+        body.put("error", message);
+        body.put("message", message);
+        body.put("timestamp", LocalDateTime.now());
+        return ResponseEntity.status(404).body(body);
     }
 }

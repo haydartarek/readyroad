@@ -151,4 +151,20 @@ class AdminControllerTest {
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
         assertThat(user.getRole()).isEqualTo(Role.MODERATOR);
     }
+
+    @Test
+    void getUserByIdReturnsUnifiedNotFoundPayloadWhenUserIsMissing() {
+        when(messages.get("auth.user_not_found")).thenReturn("User not found");
+        when(userRepository.findById(15L)).thenReturn(Optional.empty());
+
+        var response = adminController.getUserById(15L);
+        @SuppressWarnings("unchecked")
+        var body = (Map<String, Object>) response.getBody();
+
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.NOT_FOUND);
+        assertThat(body).isEqualTo(Map.of(
+                "error", "User not found",
+                "message", "User not found",
+                "timestamp", body.get("timestamp")));
+    }
 }

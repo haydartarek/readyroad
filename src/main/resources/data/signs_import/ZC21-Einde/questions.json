@@ -1,6 +1,6 @@
 [
   {
-    "question_id": "ZC21M_Q01",
+    "question_id": "ZC21-Einde_Q01",
     "type": "WHAT_DOES_IT_MEAN",
     "difficulty": "EASY",
     "is_critical": false,
@@ -17,7 +17,10 @@
             "text": "Einde zone verboden toegang voor motorvoertuigen met meer dan 2 wielen",
             "is_correct": false
           },
-          { "text": "Einde zone verboden inhalen", "is_correct": false }
+          {
+            "text": "Einde zone verboden inhalen",
+            "is_correct": false
+          }
         ],
         "explanation": "ZC21- is het eindbord van de zone die werd ingeleid door ZC21. Voorbij dit bord mogen voertuigen zwaarder dan 3500 kg weer vrij rijden, tenzij nieuwe borden anders aangeven."
       },
@@ -32,7 +35,10 @@
             "text": "End zone no entry for motor vehicles with more than 2 wheels",
             "is_correct": false
           },
-          { "text": "End zone no overtaking", "is_correct": false }
+          {
+            "text": "End zone no overtaking",
+            "is_correct": false
+          }
         ],
         "explanation": "ZC21- is the end sign of the zone introduced by ZC21. Beyond this sign, vehicles over 3500 kg may travel freely again, unless new signs indicate otherwise."
       },
@@ -47,7 +53,10 @@
             "text": "Fin zone accès interdit aux véhicules à moteur de plus de 2 roues",
             "is_correct": false
           },
-          { "text": "Fin zone interdiction de dépasser", "is_correct": false }
+          {
+            "text": "Fin zone interdiction de dépasser",
+            "is_correct": false
+          }
         ],
         "explanation": "ZC21- est le panneau de fin de la zone introduite par ZC21. Au-delà de ce panneau, les véhicules de plus de 3500 kg peuvent à nouveau circuler librement."
       },
@@ -62,14 +71,17 @@
             "text": "نهاية منطقة ممنوع دخول المركبات ذات المحرك بأكثر من عجلتين",
             "is_correct": false
           },
-          { "text": "نهاية منطقة ممنوع التجاوز", "is_correct": false }
+          {
+            "text": "نهاية منطقة ممنوع التجاوز",
+            "is_correct": false
+          }
         ],
-        "explanation": "ZC21- هي علامة مرورية نهاية المنطقة التي بدأت بـ ZC21. بعد هذه العلامة المرورية يجوز للمركبات التي تتجاوز 3500 كغ السير بحرية."
+        "explanation": "ZC21- هي علامة نهاية المنطقة التي بدأت بـ ZC21. بعد هذه العلامة يجوز للمركبات التي تتجاوز 3500 كغ السير بحرية مرة أخرى."
       }
     }
   },
   {
-    "question_id": "ZC21M_Q02",
+    "question_id": "ZC21-Einde_Q02",
     "type": "WHICH_SIGN",
     "difficulty": "EASY",
     "is_critical": false,
@@ -78,43 +90,79 @@
       "NL": {
         "question": "Tot welke categorie verkeersborden behoort dit bord?",
         "choices": [
-          { "text": "Zoneborden", "is_correct": true },
-          { "text": "Verbodsborden", "is_correct": false },
-          { "text": "Parkeerborden", "is_correct": false }
+          {
+            "text": "Zoneborden",
+            "is_correct": true
+          },
+          {
+            "text": "Verbodsborden",
+            "is_correct": false
+          },
+          {
+            "text": "Parkeerborden",
+            "is_correct": false
+          }
         ],
         "explanation": "ZC21- is een zonebord. Het vormt het einde van de zone aangeduid door ZC21 en heft de massabeperking voor de gehele zone op."
       },
       "EN": {
         "question": "To which category of traffic signs does this sign belong?",
         "choices": [
-          { "text": "Zone signs", "is_correct": true },
-          { "text": "Prohibition signs", "is_correct": false },
-          { "text": "Parking signs", "is_correct": false }
+          {
+            "text": "Zone signs",
+            "is_correct": true
+          },
+          {
+            "text": "Prohibition signs",
+            "is_correct": false
+          },
+          {
+            "text": "Parking signs",
+            "is_correct": false
+          }
         ],
         "explanation": "ZC21- is a zone sign. It marks the end of the zone indicated by ZC21 and cancels the mass restriction for the entire zone."
       },
       "FR": {
         "question": "À quelle catégorie de panneaux appartient ce panneau?",
         "choices": [
-          { "text": "Panneaux de zone", "is_correct": true },
-          { "text": "Panneaux d'interdiction", "is_correct": false },
-          { "text": "Panneaux de stationnement", "is_correct": false }
+          {
+            "text": "Panneaux de zone",
+            "is_correct": true
+          },
+          {
+            "text": "Panneaux d'interdiction",
+            "is_correct": false
+          },
+          {
+            "text": "Panneaux de stationnement",
+            "is_correct": false
+          }
         ],
         "explanation": "ZC21- est un panneau de zone. Il marque la fin de la zone indiquée par ZC21 et annule la restriction de masse pour toute la zone."
       },
       "AR": {
-        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
+        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
         "choices": [
-          { "text": "علامات المنطقة", "is_correct": true },
-          { "text": "علامات الحظر", "is_correct": false },
-          { "text": "علامات الوقوف", "is_correct": false }
+          {
+            "text": "علامات المنطقة",
+            "is_correct": true
+          },
+          {
+            "text": "علامات الحظر",
+            "is_correct": false
+          },
+          {
+            "text": "علامات الوقوف",
+            "is_correct": false
+          }
         ],
-        "explanation": "ZC21- علامة مرورية منطقة. تحدد نهاية المنطقة وتلغي قيود الكتلة لكامل المنطقة."
+        "explanation": "ZC21- علامة منطقة. تحدد نهاية المنطقة التي أنشأها ZC21 وتلغي قيود الكتلة لكامل المنطقة."
       }
     }
   },
   {
-    "question_id": "ZC21M_Q03",
+    "question_id": "ZC21-Einde_Q03",
     "type": "HAZARD_IDENTIFICATION",
     "difficulty": "EASY",
     "is_critical": false,
@@ -178,21 +226,24 @@
         "question": "ماذا تشير ZC21- بشأن قيد الكتلة على الطريق التالي؟",
         "choices": [
           {
-            "text": "يرتفع قيد الكتلة للمركبات أكثر من 3500 كغ كليًا هنا",
+            "text": "يرتفع قيد الكتلة للمركبات التي تتجاوز 3500 كغ كلياً هنا",
             "is_correct": true
           },
-          { "text": "يبدأ هنا قيد كتلة جديد بآ 7500 كغ", "is_correct": false },
           {
-            "text": "يسري قيد الكتلة من الآن فقط على المركبات أكثر من 6000 كغ",
+            "text": "يبدأ هنا قيد كتلة جديد بـ 7500 كغ",
+            "is_correct": false
+          },
+          {
+            "text": "يسري قيد الكتلة من الآن فقط على المركبات التي تتجاوز 6000 كغ",
             "is_correct": false
           }
         ],
-        "explanation": "ZC21- تنهي قيد الكتلة. تسري قواعد المرور العادية بشأن كتلة المركبات مرة أخرى بعد ZC21-."
+        "explanation": "ZC21- تنهي قيد الكتلة. تسري قواعد المرور العادية بشأن كتلة المركبات مرة أخرى بعد ZC21- ما لم تشر علامات جديدة إلى غير ذلك."
       }
     }
   },
   {
-    "question_id": "ZC21M_Q04",
+    "question_id": "ZC21-Einde_Q04",
     "type": "WHAT_MUST_YOU_DO",
     "difficulty": "MEDIUM",
     "is_critical": false,
@@ -250,7 +301,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "ZC21- levèe entièrement la restriction de masse. Aucune obligation supplémentaire n'est associée au passage de ce panneau."
+        "explanation": "ZC21- lève entièrement la restriction de masse. Aucune obligation supplémentaire n'est associée au passage de ce panneau."
       },
       "AR": {
         "question": "تجتاز ZC21- بشاحنة 5000 كغ. ماذا يتغيّر لمركبتك؟",
@@ -260,7 +311,7 @@
             "is_correct": true
           },
           {
-            "text": "يجب على شاحنتك السير فورًا في شارع جانبي بعد ZC21-",
+            "text": "يجب على شاحنتك السير فوراً في شارع جانبي بعد ZC21-",
             "is_correct": false
           },
           {
@@ -268,12 +319,12 @@
             "is_correct": false
           }
         ],
-        "explanation": "ZC21- ترفع قيد الكتلة كليًا. لا توجد التزامات إضافية مرتبطة باجتياز هذه العلامة المرورية."
+        "explanation": "ZC21- ترفع قيد الكتلة كلياً. لا توجد التزامات إضافية مرتبطة باجتياز هذه العلامة."
       }
     }
   },
   {
-    "question_id": "ZC21M_Q05",
+    "question_id": "ZC21-Einde_Q05",
     "type": "WHAT_MUST_YOU_DO",
     "difficulty": "MEDIUM",
     "is_critical": false,
@@ -341,20 +392,20 @@
             "is_correct": true
           },
           {
-            "text": "يسري قيد كتلة 7500 كغ تلقائيًا على الطريق التالي",
+            "text": "يسري قيد كتلة 7500 كغ تلقائياً على الطريق التالي",
             "is_correct": false
           },
           {
-            "text": "يجب اعتبار قيد ZC21 إرشاديًا حتى 200 متر للأمام",
+            "text": "يجب اعتبار قيد ZC21 إرشادياً حتى 200 متر للأمام",
             "is_correct": false
           }
         ],
-        "explanation": "ZC21- تنهي المنطقة كليًا. تسري القواعد العامة لقانون المرور على الطريق بعد ذلك، دون قيد كتلة خاص."
+        "explanation": "ZC21- تنهي المنطقة كلياً. تسري القواعد العامة لقانون المرور على الطريق بعد ذلك دون قيد كتلة خاص."
       }
     }
   },
   {
-    "question_id": "ZC21M_Q06",
+    "question_id": "ZC21-Einde_Q06",
     "type": "WHAT_MUST_YOU_DO",
     "difficulty": "MEDIUM",
     "is_critical": false,
@@ -415,14 +466,14 @@
         "explanation": "ZC21- met fin immédiatement et complètement à la zone. Il n'y a pas d'effet résidu; la restriction cesse directement au-delà du panneau."
       },
       "AR": {
-        "question": "تجتاز ZC21-. هل يسري قيد الكتلة لمدة 500 متر بعد العلامة المرورية؟",
+        "question": "تجتاز ZC21-. هل يسري قيد الكتلة لمدة 500 متر بعد العلامة؟",
         "choices": [
           {
-            "text": "لا، ZC21- تنهي قيد الكتلة كليًا؛ لا يسري القيد بعد اجتياز ZC21-",
+            "text": "لا، ZC21- تنهي قيد الكتلة كلياً؛ لا يسري القيد بعد اجتياز ZC21-",
             "is_correct": true
           },
           {
-            "text": "نعم، يسري قيد الكتلة لمدة 500 متر بعد العلامة المرورية",
+            "text": "نعم، يسري قيد الكتلة لمدة 500 متر بعد العلامة",
             "is_correct": false
           },
           {
@@ -430,12 +481,12 @@
             "is_correct": false
           }
         ],
-        "explanation": "ZC21- تنهي المنطقة فورًا وكليًا. لا يوجد أثر لاحق؛ ينتهي القيد مباشرة بعد العلامة المرورية."
+        "explanation": "ZC21- تنهي المنطقة فوراً وكلياً. لا يوجد أثر لاحق؛ ينتهي القيد مباشرة بعد العلامة."
       }
     }
   },
   {
-    "question_id": "ZC21M_Q07",
+    "question_id": "ZC21-Einde_Q07",
     "type": "IS_IT_ALLOWED",
     "difficulty": "HARD",
     "is_critical": true,
@@ -484,30 +535,30 @@
         "explanation": "ZC21- met définitivement fin à la zone. Aucun panneau d'autorisation distinct n'est requis; la restriction cesse de plein droit."
       },
       "AR": {
-        "question": "هل ينتهي فعلًا قيد ZC21 بعد ZC21- على الطريق التالي؟",
+        "question": "هل ينتهي فعلاً قيد ZC21 بعد ZC21- على الطريق التالي؟",
         "choices": [
           {
-            "text": "نعم، يرتفع قيد الكتلة كليًا؛ يجوز للمركبات التي تتجاوز 3500 كغ السير بحرية مرة أخرى",
+            "text": "نعم، يرتفع قيد الكتلة كلياً؛ يجوز للمركبات التي تتجاوز 3500 كغ السير بحرية مرة أخرى",
             "is_correct": true
           },
           {
-            "text": "لا، يظل القيد ساريًا حتى تُوضع علامة مرورية تصريح جديدة",
+            "text": "لا، يظل القيد سارياً حتى تُوضع علامة تصريح جديدة",
             "is_correct": false
           }
         ],
-        "explanation": "ZC21- تنهي المنطقة نهائيًا. لا توجد حاجة لعلامة مرورية تصريح منفصلة؛ ينتهي القيد تلقائيًا بموجب القانون."
+        "explanation": "ZC21- تنهي المنطقة نهائياً. لا توجد حاجة لعلامة تصريح منفصلة؛ ينتهي القيد تلقائياً بموجب القانون."
       }
     }
   },
   {
-    "question_id": "ZC21M_Q08",
+    "question_id": "ZC21-Einde_Q08",
     "type": "IS_IT_ALLOWED",
     "difficulty": "HARD",
     "is_critical": true,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U reed een ZC21-zone door en verliet ze via ZC21-. Er staan voor u 500 meter na ZC21- opnieuw geen borden. Geldt er een nieuwe ZC21-zone?",
+        "question": "U reed een ZC21-zone door en verliet ze via ZC21-. Er staan 500 meter na ZC21- geen nieuwe borden. Geldt er een nieuwe ZC21-zone?",
         "choices": [
           {
             "text": "Neen, zonder een nieuw ZC21-beginbord verderop is er geen nieuwe ZC21-massabeperking",
@@ -549,18 +600,18 @@
         "explanation": "Une nouvelle zone ne commence qu'avec un nouveau panneau de début. Après ZC21- la situation normale s'applique jusqu'à ce qu'un nouveau panneau établisse une nouvelle restriction."
       },
       "AR": {
-        "question": "مررت بمنطقة ZC21 وغادرتها عبر ZC21-. لا توجد علامات جديدة بعد 500 متر. هل ثمة منطقة ZC21 جديدة؟",
+        "question": "مررت بمنطقة ZC21 وغادرتها عبر ZC21-. لا توجد علامات جديدة بعد 500 متر. هل ثمة منطقة ZC21 جديدة سارية؟",
         "choices": [
           {
-            "text": "لا، بدون علامة مرورية بداية ZC21 جديدة لا يسري أي قيد كتلة ZC21",
+            "text": "لا، بدون علامة بداية ZC21 جديدة لا يسري أي قيد كتلة ZC21",
             "is_correct": true
           },
           {
-            "text": "نعم، كل حدود منطقة تُستأنف ضمنيًا بعد 500 متر",
+            "text": "نعم، كل حدود منطقة تُستأنف ضمنياً بعد 500 متر",
             "is_correct": false
           }
         ],
-        "explanation": "منطقة جديدة تبدأ فقط بعلامة مرورية بداية جديدة. بعد ZC21- تسري الحالة العادية حتى تضع علامة مرورية جديدة قيدًا جديدًا."
+        "explanation": "منطقة جديدة تبدأ فقط بعلامة بداية جديدة. بعد ZC21- تسري الحالة العادية حتى تضع علامة جديدة قيداً جديداً."
       }
     }
   }

@@ -17,7 +17,7 @@ SET @column_exists_lac = (
 
 SET @sql_lac = IF(
   @column_exists_lac = 0,
-  'ALTER TABLE user_question_history ADD COLUMN last_answer_correct TINYINT(1) NULL COMMENT ''Whether the last answer was correct''',
+  'ALTER TABLE user_question_history ADD COLUMN last_answer_correct TINYINT NULL COMMENT ''Whether the last answer was correct''',
   'SELECT ''✅ Column last_answer_correct already exists'' AS status'
 );
 

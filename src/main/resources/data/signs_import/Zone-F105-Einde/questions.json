@@ -1,513 +1,617 @@
 [
   {
-    "question_id": "F105_Q01",
+    "question_id": "Zone-F105-Einde_Q01",
     "type": "WHAT_DOES_IT_MEAN",
     "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE: Replace wrong answers with actual sign names from the same category.",
     "i18n": {
       "NL": {
         "question": "Wat betekent dit verkeersbord?",
         "choices": [
-          { "text": "Einde van een voetgangerszone", "is_correct": true },
           {
-            "text": "Rijden verboden in beide richtingen",
+            "text": "Het einde van een voetgangerszone; vanaf hier gelden de speciale regels niet meer",
+            "is_correct": true
+          },
+          {
+            "text": "Het begin van een nieuwe voetgangerszone",
             "is_correct": false
           },
-          { "text": "Gevaarsbord voor wegwerkzaamheden", "is_correct": false }
+          {
+            "text": "Een verbod op rijden in beide richtingen",
+            "is_correct": false
+          }
         ],
-        "explanation": "Begin/einde schoolomgeving."
+        "explanation": "Zone-F105-Einde markeert het einde van een voetgangerszone. Alle bijzondere regels die binnen de zone golden, inclusief de uitzonderingen voor laden en lossen en voor fietsers, vervallen vanaf dit bord."
       },
       "EN": {
         "question": "What does this traffic sign mean?",
         "choices": [
-          { "text": "End of pedestrian zone", "is_correct": true },
           {
-            "text": "Driving prohibited in both directions",
-            "is_correct": false
-          },
-          { "text": "Danger sign for roadworks", "is_correct": false }
-        ],
-        "explanation": "This sign indicates the end of the pedestrian zone where vehicle restrictions applied with exception for loading during specific hours. After this sign, normal traffic rules apply again."
-      },
-      "FR": {
-        "question": "Que signifie ce panneau de signalisation ?",
-        "choices": [
-          { "text": "Fin de zone pi�tonne", "is_correct": true },
-          {
-            "text": "Circulation interdite dans les deux sens",
-            "is_correct": false
-          },
-          { "text": "Panneau de danger pour travaux", "is_correct": false }
-        ],
-        "explanation": "Ce panneau indique la fin de la zone pi�tonne o� des restrictions s'appliquaient aux v�hicules avec exception pour le chargement pendant des heures sp�cifiques. Apr�s ce panneau, les r�gles de circulation normales s'appliquent � nouveau."
-      },
-      "AR": {
-        "question": "?? ???? ??? ??????? ?????????",
-        "choices": [
-          {
-            "text": "????? ????? ???? ???????? ??????? ?? 6 ??? 12",
+            "text": "The end of a pedestrian zone; the special rules no longer apply from here",
             "is_correct": true
           },
-          { "text": "??????? ?????? ?? ??? ?????????", "is_correct": false },
-          { "text": "????? ??? ?????? ??????", "is_correct": false }
+          {
+            "text": "The beginning of a new pedestrian zone",
+            "is_correct": false
+          },
+          {
+            "text": "A prohibition on driving in both directions",
+            "is_correct": false
+          }
         ],
-        "explanation": "???? ??? ??????? ??? ????? ????? ?????? ???? ???? ????? ???? ???????? ???????? ??????? ???? ????? ?????. ??? ??? ???????? ??? ????? ????? ?????? ??????? ??? ????."
+        "explanation": "Zone-F105-Einde marks the end of a pedestrian zone. All special rules that applied within the zone, including the exceptions for loading and unloading and for cyclists, cease from this sign."
+      },
+      "FR": {
+        "question": "Que signifie ce panneau de signalisation?",
+        "choices": [
+          {
+            "text": "La fin d'une zone piétonne; les règles spéciales ne s'appliquent plus à partir d'ici",
+            "is_correct": true
+          },
+          {
+            "text": "Le début d'une nouvelle zone piétonne",
+            "is_correct": false
+          },
+          {
+            "text": "Une interdiction de circuler dans les deux sens",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Zone-F105-Einde marque la fin d'une zone piétonne. Toutes les règles spéciales qui s'appliquaient dans la zone, y compris les exceptions pour le chargement et le déchargement et pour les cyclistes, cessent à partir de ce panneau."
+      },
+      "AR": {
+        "question": "ما معنى هذه العلامة المرورية؟",
+        "choices": [
+          {
+            "text": "نهاية منطقة المشاة؛ القواعد الخاصة لا تسري بعد الآن من هذه النقطة",
+            "is_correct": true
+          },
+          {
+            "text": "بداية منطقة مشاة جديدة",
+            "is_correct": false
+          },
+          {
+            "text": "حظر السير في كلا الاتجاهين",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Zone-F105-Einde تحدد نهاية منطقة المشاة. تنتهي جميع القواعد الخاصة التي كانت سارية داخل المنطقة بما فيها استثناءات التحميل والتفريغ ومرور الدراجات عند هذه العلامة."
       }
     }
   },
   {
-    "question_id": "F105_Q02",
+    "question_id": "Zone-F105-Einde_Q02",
     "type": "WHICH_SIGN",
     "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE: Ready to use — category identification question.",
     "i18n": {
       "NL": {
-        "question": "Tot welke categorie verkeerstekens behoort dit bord?",
+        "question": "Tot welke categorie behoort bord Zone-F105-Einde?",
         "choices": [
-          { "text": "Aanwijzingsborden", "is_correct": true },
-          { "text": "Gebodsborden", "is_correct": false },
-          { "text": "Parkeerregelementsborden", "is_correct": false }
+          {
+            "text": "Zoneborden",
+            "is_correct": true
+          },
+          {
+            "text": "Verbodsborden",
+            "is_correct": false
+          },
+          {
+            "text": "Gebodsborden",
+            "is_correct": false
+          }
         ],
-        "explanation": "Dit bord behoort tot de categorie 'Aanwijzingsborden'. Elk type bord heeft een specifieke vorm en kleurschema."
+        "explanation": "Zone-F105-Einde is een zonebord. Zoneborden regelen de in- en uitgang van een volledig afgebakend gebied met eigen verkeersregels. Zone-F105-Einde werkt altijd als tegenhanger van Zone-F103."
       },
       "EN": {
-        "question": "To which category of traffic signs does this sign belong?",
+        "question": "To which category does sign Zone-F105-Einde belong?",
         "choices": [
-          { "text": "Information signs", "is_correct": true },
-          { "text": "Mandatory signs", "is_correct": false },
-          { "text": "Parking regulation signs", "is_correct": false }
+          {
+            "text": "Zone signs",
+            "is_correct": true
+          },
+          {
+            "text": "Prohibition signs",
+            "is_correct": false
+          },
+          {
+            "text": "Mandatory signs",
+            "is_correct": false
+          }
         ],
-        "explanation": "This sign belongs to the 'Information signs' category. Each type of sign has a specific shape and color scheme."
+        "explanation": "Zone-F105-Einde is a zone sign. Zone signs regulate the entry and exit of a fully defined area with its own traffic rules. Zone-F105-Einde always acts as the counterpart to Zone-F103."
       },
       "FR": {
-        "question": "� quelle cat�gorie de panneaux de signalisation ce panneau appartient-il ?",
+        "question": "À quelle catégorie appartient le panneau Zone-F105-Einde?",
         "choices": [
-          { "text": "Panneaux d'indication", "is_correct": true },
-          { "text": "Panneaux d'obligation", "is_correct": false },
-          { "text": "Panneaux de stationnement", "is_correct": false }
+          {
+            "text": "Panneaux de zone",
+            "is_correct": true
+          },
+          {
+            "text": "Panneaux d'interdiction",
+            "is_correct": false
+          },
+          {
+            "text": "Panneaux d'obligation",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ce panneau appartient � la cat�gorie 'Panneaux d'indication'. Chaque type de panneau a une forme et un sch�ma de couleurs sp�cifiques."
+        "explanation": "Zone-F105-Einde est un panneau de zone. Les panneaux de zone régulent l'entrée et la sortie d'une zone entièrement délimitée avec ses propres règles de circulation. Zone-F105-Einde fonctionne toujours en complément de Zone-F103."
       },
       "AR": {
-        "question": "??? ?? ??? ??????? ??? ??????? ?????????",
+        "question": "إلى أي فئة تنتمي علامة Zone-F105-Einde؟",
         "choices": [
-          { "text": "???????? ?????????", "is_correct": true },
-          { "text": "???????? ?????????", "is_correct": false },
-          { "text": "?????? ??????", "is_correct": false }
+          {
+            "text": "علامات المنطقة",
+            "is_correct": true
+          },
+          {
+            "text": "علامات الحظر",
+            "is_correct": false
+          },
+          {
+            "text": "علامات الإلزام",
+            "is_correct": false
+          }
         ],
-        "explanation": "??? ??????? ???????? ????? ??? ??? '?????? ?????????'. ?? ??? ?? ???????? ?? ??? ????? ????? ????."
+        "explanation": "Zone-F105-Einde علامة منطقة. تُنظِّم علامات المنطقة دخول وخروج منطقة محددة بأكملها ذات قواعد مرور خاصة. تعمل Zone-F105-Einde دائماً كنظير لعلامة Zone-F103."
       }
     }
   },
   {
-    "question_id": "F105_Q03",
-    "type": "WHAT_MUST_YOU_DO",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "_note": "TEMPLATE (MEDIUM): Replace with sign-specific question for production.",
-    "i18n": {
-      "NL": {
-        "question": "Welke informatie of aanwijzing geeft dit bord aan weggebruikers?",
-        "choices": [
-          {
-            "text": "Het bord geeft nuttige informatie of aanwijzingen over de wegsituatie of faciliteiten",
-            "is_correct": true
-          },
-          {
-            "text": "Het bord verbiedt een specifieke rijbeweging",
-            "is_correct": false
-          },
-          {
-            "text": "Het bord verplicht tot stoppen voor controle",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Aanwijzingsborden geven weggebruikers nuttige informatie over de wegsituatie, faciliteiten of speciale rijstroken."
-      },
-      "EN": {
-        "question": "What information or guidance does this sign provide to road users?",
-        "choices": [
-          {
-            "text": "The sign provides useful information or guidance about the road situation or facilities",
-            "is_correct": true
-          },
-          {
-            "text": "The sign prohibits a specific driving maneuver",
-            "is_correct": false
-          },
-          {
-            "text": "The sign requires stopping for inspection",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Information signs provide road users with useful info about road situation, facilities, or special lanes."
-      },
-      "FR": {
-        "question": "Quelles informations ce panneau fournit-il aux usagers de la route ?",
-        "choices": [
-          {
-            "text": "Le panneau fournit des informations utiles sur la situation routi�re ou les �quipements",
-            "is_correct": true
-          },
-          {
-            "text": "Le panneau interdit une man�uvre de conduite sp�cifique",
-            "is_correct": false
-          },
-          {
-            "text": "Le panneau oblige � s'arr�ter pour contr�le",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Les panneaux d'indication informent les usagers sur la situation routi�re, les �quipements ou voies sp�ciales."
-      },
-      "AR": {
-        "question": "?? ????????? ?? ????????? ???? ?????? ??? ??????? ???????? ???????? ???????",
-        "choices": [
-          {
-            "text": "???? ??????? ???????? ??????? ????? ?? ??????? ??? ???? ?????? ?? ???????",
-            "is_correct": true
-          },
-          {
-            "text": "??????? ???????? ???? ?????? ????? ?????",
-            "is_correct": false
-          },
-          { "text": "??????? ???????? ???? ?????? ?????", "is_correct": false }
-        ],
-        "explanation": "?????? ????????? ???? ???????? ?????? ??????? ????? ??? ???? ?????? ????????."
-      }
-    }
-  },
-  {
-    "question_id": "F105_Q04",
-    "type": "WHAT_MUST_YOU_DO",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "_note": "TEMPLATE (MEDIUM): Replace with sign-specific question for production.",
-    "i18n": {
-      "NL": {
-        "question": "Wat is het kleurenschema van aanwijzingsborden in Belgi�?",
-        "choices": [
-          {
-            "text": "Blauw of groen achtergrond met witte symbolen en tekst",
-            "is_correct": true
-          },
-          { "text": "Rode achtergrond met witte tekst", "is_correct": false },
-          { "text": "Gele achtergrond met zwarte tekst", "is_correct": false }
-        ],
-        "explanation": "Aanwijzingsborden hebben doorgaans een blauwe achtergrond (stedelijk) of groene achtergrond (autosnelweg)."
-      },
-      "EN": {
-        "question": "What is the color scheme of information signs in Belgium?",
-        "choices": [
-          {
-            "text": "Blue or green background with white symbols and text",
-            "is_correct": true
-          },
-          { "text": "Red background with white text", "is_correct": false },
-          { "text": "Yellow background with black text", "is_correct": false }
-        ],
-        "explanation": "Information signs typically have a blue (urban) or green (motorway) background."
-      },
-      "FR": {
-        "question": "Quel est le sch�ma de couleurs des panneaux d'indication en Belgique ?",
-        "choices": [
-          {
-            "text": "Fond bleu ou vert avec des symboles et du texte blancs",
-            "is_correct": true
-          },
-          { "text": "Fond rouge avec texte blanc", "is_correct": false },
-          { "text": "Fond jaune avec texte noir", "is_correct": false }
-        ],
-        "explanation": "Les panneaux d'indication ont g�n�ralement un fond bleu (urbain) ou vert (autoroute)."
-      },
-      "AR": {
-        "question": "?? ?? ???? ??????? ??????? ????????? ?? ???????",
-        "choices": [
-          {
-            "text": "????? ????? ?? ????? ?? ???? ??? ????",
-            "is_correct": true
-          },
-          { "text": "????? ????? ?? ?? ????", "is_correct": false },
-          { "text": "????? ????? ?? ?? ????", "is_correct": false }
-        ],
-        "explanation": "?????? ????????? ????? ??? ????? ????? (????) ?? ????? (???? ????)."
-      }
-    }
-  },
-  {
-    "question_id": "F105_Q05",
-    "type": "IS_IT_ALLOWED",
+    "question_id": "Zone-F105-Einde_Q03",
+    "type": "HAZARD_IDENTIFICATION",
     "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE (HARD): Replace with sign-specific question for production.",
     "i18n": {
       "NL": {
-        "question": "Mag u als weggebruiker aanwijzingsborden negeren?",
+        "question": "Waarom moet u ook na Zone-F105-Einde waakzaam blijven, ook al verlaat u de voetgangerszone?",
         "choices": [
           {
-            "text": "Nee, aanwijzingsborden moeten worden opgevolgd want ze geven wettelijk bindende aanwijzingen",
+            "text": "Voetgangers en fietsers uit de zone kunnen plotseling de rijbaan opsteken vlak na het bord",
             "is_correct": true
           },
           {
-            "text": "Ja, aanwijzingsborden zijn vrijblijvend en kunnen naar eigen inzicht worden genegeerd",
+            "text": "Na Zone-F105-Einde zijn er geen voetgangers meer want u verlaat de beschermde zone",
+            "is_correct": false
+          },
+          {
+            "text": "U moet onmiddellijk versnellen tot de geldende snelheidslimiet om het verkeer niet te hinderen",
             "is_correct": false
           }
         ],
-        "explanation": "Aanwijzingsborden geven wettelijk bindende aanwijzingen aan weggebruikers. Ze mogen niet worden genegeerd en dienen te worden nageleefd."
+        "explanation": "Vlak buiten een voetgangerszone kunnen voetgangers en fietsers de straat oversteken op onverwachte plaatsen. Geleidelijk optrekken en oplettend blijven is de juiste gedragswijze."
       },
       "EN": {
-        "question": "Are you as a road user allowed to ignore information signs?",
+        "question": "Why must you remain vigilant after Zone-F105-Einde even though you are leaving the pedestrian zone?",
         "choices": [
           {
-            "text": "No, information signs must be followed as they provide legally binding directions",
+            "text": "Pedestrians and cyclists from the zone may suddenly cross the road just after the sign",
             "is_correct": true
           },
           {
-            "text": "Yes, information signs are optional and can be ignored at your own discretion",
+            "text": "After Zone-F105-Einde there are no more pedestrians because you are leaving the protected zone",
+            "is_correct": false
+          },
+          {
+            "text": "You must immediately accelerate to the applicable speed limit to avoid obstructing traffic",
             "is_correct": false
           }
         ],
-        "explanation": "Information signs provide legally binding guidance to road users. They must not be ignored and should be followed."
+        "explanation": "Just outside a pedestrian zone, pedestrians and cyclists may cross the street at unexpected places. Accelerating gradually and staying alert is the correct behaviour."
       },
       "FR": {
-        "question": "En tant qu'usager de la route, �tes-vous autoris� � ignorer les panneaux d'indication ?",
+        "question": "Pourquoi devez-vous rester vigilant après Zone-F105-Einde même en quittant la zone piétonne?",
         "choices": [
           {
-            "text": "Non, les panneaux d'indication doivent �tre respect�s car ils fournissent des indications juridiquement contraignantes",
+            "text": "Les piétons et cyclistes de la zone peuvent soudainement traverser la chaussée juste après le panneau",
             "is_correct": true
           },
           {
-            "text": "Oui, les panneaux d'indication sont facultatifs et peuvent �tre ignor�s � votre discr�tion",
+            "text": "Après Zone-F105-Einde il n'y a plus de piétons car vous quittez la zone protégée",
+            "is_correct": false
+          },
+          {
+            "text": "Vous devez immédiatement accélérer jusqu'à la limite de vitesse applicable pour ne pas gêner la circulation",
             "is_correct": false
           }
         ],
-        "explanation": "Les panneaux d'indication fournissent des directives juridiquement contraignantes aux usagers. Ils ne peuvent pas �tre ignor�s."
+        "explanation": "Juste à l'extérieur d'une zone piétonne, les piétons et cyclistes peuvent traverser la rue à des endroits inattendus. Accélérer progressivement et rester vigilant est le comportement correct."
       },
       "AR": {
-        "question": "?? ????? ?? ??????? ?????? ?????? ?????? ??????????",
+        "question": "لماذا يجب أن تبقى يقظاً بعد Zone-F105-Einde حتى وأنت تغادر منطقة المشاة؟",
         "choices": [
           {
-            "text": "??? ??? ????? ?????? ????????? ????? ???? ??????? ????? ????????",
+            "text": "قد يعبر المشاة والدراجون من المنطقة الطريقَ فجأة مباشرة بعد العلامة",
             "is_correct": true
           },
           {
-            "text": "???? ?????? ????????? ???????? ????? ??????? ??? ?????? ?????",
+            "text": "بعد Zone-F105-Einde لا يوجد مشاة لأنك تغادر المنطقة المحمية",
+            "is_correct": false
+          },
+          {
+            "text": "يجب أن تتسارع فوراً إلى حد السرعة المطبق لتجنب عرقلة المرور",
             "is_correct": false
           }
         ],
-        "explanation": "?????? ????????? ???? ??????? ????? ???????? ???????? ??????. ?? ???? ??????? ???? ???????? ???."
+        "explanation": "خارج منطقة المشاة مباشرة قد يعبر المشاة والدراجون الشارع في أماكن غير متوقعة. التسارع التدريجي والبقاء يقظاً هو السلوك الصحيح."
       }
     }
   },
   {
-    "question_id": "F105_Q06",
+    "question_id": "Zone-F105-Einde_Q04",
     "type": "WHAT_MUST_YOU_DO",
     "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Welke regels gelden na het passeren van bord F105?",
+        "question": "U passeert Zone-F105-Einde binnen de bebouwde kom en er staat geen ander snelheidsbord. Welke snelheid geldt?",
         "choices": [
           {
-            "text": "De normale verkeersregels; de beperkingen van de voetgangerszone vervallen",
+            "text": "50 km/u, want dat is de standaard maximumsnelheid binnen de bebouwde kom in België",
             "is_correct": true
           },
           {
-            "text": "De voetgangerszoneregels blijven nog 100 meter geldig",
+            "text": "30 km/u, want de voetgangerszone-regels blijven gelden tot een expliciet snelheidsbord",
             "is_correct": false
           },
           {
-            "text": "Na F105 geldt een limiet van 20 km/u",
+            "text": "70 km/u, want na een voetgangerszone geldt een tussenliggende snelheidsgrens",
             "is_correct": false
           }
         ],
-        "explanation": "F105 markeert het einde van de voetgangerszone. Vanaf dat punt gelden de gewone verkeersregels voor die weg."
+        "explanation": "Na het verlaten van een voetgangerszone binnen de bebouwde kom herneemt automatisch de standaard maximumsnelheid van 50 km/u, tenzij een ander bord anders aangeeft."
       },
       "EN": {
-        "question": "Which rules apply after passing sign F105?",
+        "question": "You pass Zone-F105-Einde within a built-up area and there is no other speed sign. What speed applies?",
         "choices": [
           {
-            "text": "Normal traffic rules; the pedestrian zone restrictions cease",
+            "text": "50 km/h, because that is the standard maximum speed within a built-up area in Belgium",
             "is_correct": true
           },
           {
-            "text": "Pedestrian zone rules remain valid for another 100 metres",
-            "is_correct": false
-          },
-          { "text": "A 20 km/h limit applies after F105", "is_correct": false }
-        ],
-        "explanation": "F105 marks the end of the pedestrian zone. From that point normal traffic rules apply for that road."
-      },
-      "FR": {
-        "question": "Quelles regles s appliquent apres avoir passe le panneau F105 ?",
-        "choices": [
-          {
-            "text": "Les regles normales; les restrictions de zone pietonne cessent",
-            "is_correct": true
-          },
-          {
-            "text": "Les regles pietonnes restent valables 100 metres encore",
+            "text": "30 km/h, because the pedestrian zone rules remain in force until an explicit speed sign",
             "is_correct": false
           },
           {
-            "text": "Une limite 20 km/h s applique apres F105",
+            "text": "70 km/h, because after a pedestrian zone an intermediate speed limit applies",
             "is_correct": false
           }
         ],
-        "explanation": "F105 marque la fin de la zone pietonne. A partir de ce point les regles normales de circulation s appliquent."
+        "explanation": "After leaving a pedestrian zone within a built-up area the standard maximum speed of 50 km/h automatically resumes, unless another sign indicates otherwise."
       },
-      "AR": {
-        "question": "?? ??????? ??????? ??? ????? ????? ?????? F105?",
+      "FR": {
+        "question": "Vous dépassez Zone-F105-Einde en agglomération et il n'y a pas d'autre panneau de vitesse. Quelle vitesse s'applique?",
         "choices": [
           {
-            "text": "????? ?????? ???????? ????? ???? ????? ??????",
+            "text": "50 km/h, car c'est la vitesse maximale standard en agglomération en Belgique",
             "is_correct": true
           },
           {
-            "text": "????? ????? ????? ?????? 100 ??? ????",
+            "text": "30 km/h, car les règles de la zone piétonne restent en vigueur jusqu'à un panneau de vitesse explicite",
             "is_correct": false
           },
-          { "text": "???? ?? 20 ??/???? ??? F105", "is_correct": false }
+          {
+            "text": "70 km/h, car après une zone piétonne une limite de vitesse intermédiaire s'applique",
+            "is_correct": false
+          }
         ],
-        "explanation": "??? F105 ????? ??? ????? ????? ??????. ?? ??? ?????? ???? ????? ?????? ??????? ??????."
+        "explanation": "Après avoir quitté une zone piétonne en agglomération la vitesse maximale standard de 50 km/h reprend automatiquement, sauf indication contraire d'un autre panneau."
+      },
+      "AR": {
+        "question": "تجاوزت Zone-F105-Einde داخل المنطقة المبنية ولا توجد علامة سرعة أخرى. ما السرعة المطبقة؟",
+        "choices": [
+          {
+            "text": "50 كم/س لأن هذا هو الحد الأقصى القياسي داخل المنطقة المبنية في بلجيكا",
+            "is_correct": true
+          },
+          {
+            "text": "30 كم/س لأن قواعد منطقة المشاة تبقى سارية حتى ظهور علامة سرعة صريحة",
+            "is_correct": false
+          },
+          {
+            "text": "70 كم/س لأنه بعد منطقة المشاة ينطبق حد سرعة وسيط",
+            "is_correct": false
+          }
+        ],
+        "explanation": "بعد مغادرة منطقة المشاة داخل المنطقة المبنية يعود تلقائياً الحد الأقصى القياسي البالغ 50 كم/س ما لم تشر علامة أخرى إلى خلاف ذلك."
       }
     }
   },
   {
-    "question_id": "F105_Q07",
+    "question_id": "Zone-F105-Einde_Q05",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Welke regels gelden onmiddellijk na het passeren van bord Zone-F105-Einde?",
+        "choices": [
+          {
+            "text": "De normale verkeersregels; alle beperkingen en uitzonderingen van de voetgangerszone vervallen",
+            "is_correct": true
+          },
+          {
+            "text": "De voetgangerszoneregels blijven nog 100 meter geldig na het bord",
+            "is_correct": false
+          },
+          {
+            "text": "Na Zone-F105-Einde geldt een limiet van 20 km/u",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Zone-F105-Einde beëindigt de voetgangerszone onmiddellijk en volledig. Vanaf dit bord gelden de gewone verkeersregels voor dat type weg."
+      },
+      "EN": {
+        "question": "Which rules apply immediately after passing sign Zone-F105-Einde?",
+        "choices": [
+          {
+            "text": "Normal traffic rules; all pedestrian zone restrictions and exceptions cease",
+            "is_correct": true
+          },
+          {
+            "text": "Pedestrian zone rules remain valid for another 100 metres after the sign",
+            "is_correct": false
+          },
+          {
+            "text": "A 20 km/h limit applies after Zone-F105-Einde",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Zone-F105-Einde ends the pedestrian zone immediately and completely. From this sign the normal traffic rules for that type of road apply."
+      },
+      "FR": {
+        "question": "Quelles règles s'appliquent immédiatement après avoir passé le panneau Zone-F105-Einde?",
+        "choices": [
+          {
+            "text": "Les règles normales; toutes les restrictions et exceptions de la zone piétonne cessent",
+            "is_correct": true
+          },
+          {
+            "text": "Les règles de la zone piétonne restent valables encore 100 mètres après le panneau",
+            "is_correct": false
+          },
+          {
+            "text": "Une limite de 20 km/h s'applique après Zone-F105-Einde",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Zone-F105-Einde met fin à la zone piétonne immédiatement et complètement. À partir de ce panneau les règles normales de circulation pour ce type de route s'appliquent."
+      },
+      "AR": {
+        "question": "ما القواعد التي تسري فوراً بعد تجاوز علامة Zone-F105-Einde؟",
+        "choices": [
+          {
+            "text": "قواعد المرور العادية؛ تنتهي جميع قيود واستثناءات منطقة المشاة",
+            "is_correct": true
+          },
+          {
+            "text": "قواعد منطقة المشاة تبقى سارية 100 متر إضافية بعد العلامة",
+            "is_correct": false
+          },
+          {
+            "text": "يسري حد سرعة 20 كم/س بعد Zone-F105-Einde",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Zone-F105-Einde تنهي منطقة المشاة فوراً وبشكل كامل. من هذه العلامة تسري قواعد المرور العادية لذلك النوع من الطريق."
+      }
+    }
+  },
+  {
+    "question_id": "Zone-F105-Einde_Q06",
+    "type": "SIGN_PLACEMENT_DISTANCE",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Waar wordt bord Zone-F105-Einde geplaatst bij een voetgangerszone met meerdere uitgangen?",
+        "choices": [
+          {
+            "text": "Aan elke uitgang van de zone, zodat iedere weggebruiker die de zone verlaat het bord ziet",
+            "is_correct": true
+          },
+          {
+            "text": "Enkel aan de hoofduitgang; andere uitgangen hebben geen bord nodig",
+            "is_correct": false
+          },
+          {
+            "text": "Alleen aan de ingang, met een pijl die de uitgang aanduidt",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Net als bij andere zones wordt het eindbord aan elke uitgang geplaatst. Zo weet elke bestuurder die de zone verlaat dat de speciale regels niet meer van toepassing zijn."
+      },
+      "EN": {
+        "question": "Where is sign Zone-F105-Einde placed at a pedestrian zone with multiple exits?",
+        "choices": [
+          {
+            "text": "At every exit of the zone, so that every road user leaving the zone sees the sign",
+            "is_correct": true
+          },
+          {
+            "text": "Only at the main exit; other exits do not need a sign",
+            "is_correct": false
+          },
+          {
+            "text": "Only at the entrance, with an arrow indicating the exit",
+            "is_correct": false
+          }
+        ],
+        "explanation": "As with other zones the end sign is placed at every exit. This way every driver leaving the zone knows that the special rules no longer apply."
+      },
+      "FR": {
+        "question": "Où le panneau Zone-F105-Einde est-il placé dans une zone piétonne avec plusieurs sorties?",
+        "choices": [
+          {
+            "text": "À chaque sortie de la zone, afin que chaque usager quittant la zone voie le panneau",
+            "is_correct": true
+          },
+          {
+            "text": "Uniquement à la sortie principale; les autres sorties n'ont pas besoin de panneau",
+            "is_correct": false
+          },
+          {
+            "text": "Uniquement à l'entrée avec une flèche indiquant la sortie",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Comme pour les autres zones le panneau de fin est placé à chaque sortie. Ainsi chaque conducteur quittant la zone sait que les règles spéciales ne s'appliquent plus."
+      },
+      "AR": {
+        "question": "أين تُوضع علامة Zone-F105-Einde في منطقة مشاة ذات مخارج متعددة؟",
+        "choices": [
+          {
+            "text": "عند كل مخرج من المنطقة حتى يرى كل مستخدم طريق مغادر للمنطقة العلامة",
+            "is_correct": true
+          },
+          {
+            "text": "فقط عند المخرج الرئيسي؛ المخارج الأخرى لا تحتاج إلى علامة",
+            "is_correct": false
+          },
+          {
+            "text": "فقط عند المدخل مع سهم يشير إلى المخرج",
+            "is_correct": false
+          }
+        ],
+        "explanation": "كما هو الحال مع المناطق الأخرى تُوضع علامة النهاية عند كل مخرج. هكذا يعلم كل سائق مغادر للمنطقة أن القواعد الخاصة لم تعد سارية."
+      }
+    }
+  },
+  {
+    "question_id": "Zone-F105-Einde_Q07",
     "type": "IS_IT_ALLOWED",
     "difficulty": "HARD",
     "is_critical": true,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Mogen alle voertuigen zonder beperking rijden na het passeren van F105?",
+        "question": "Na Zone-F105-Einde: mag een leverancier nog laden en lossen in de zone die hij net verlaten heeft?",
         "choices": [
           {
-            "text": "Ja de beperkingen van de voetgangerszone gelden niet meer; normale verkeersregels zijn van toepassing",
+            "text": "Neen, Zone-F105-Einde beëindigt de zone volledig; laden en lossen buiten de zone is niet meer gekoppeld aan de voetgangerszoneregels",
             "is_correct": true
           },
           {
-            "text": "Nee motorvoertuigen blijven beperkt tot laad- en losverkeer ook na F105",
+            "text": "Ja, de uitzondering voor laden en lossen geldt ook buiten de zone",
             "is_correct": false
           }
         ],
-        "explanation": "F105 be�indigt uitdrukkelijk de voetgangerszone. Daarna gelden gewone verkeersregels voor alle voertuigen."
+        "explanation": "Alle regels en uitzonderingen van de voetgangerszone eindigen bij Zone-F105-Einde. Buiten de zone gelden gewone parkeer- en verkeersregels voor laden en lossen."
       },
       "EN": {
-        "question": "May all vehicles drive without restriction after passing F105?",
+        "question": "After Zone-F105-Einde: may a supplier still load and unload in the zone they just left?",
         "choices": [
           {
-            "text": "Yes the pedestrian zone restrictions no longer apply; normal traffic rules are in force",
+            "text": "No, Zone-F105-Einde ends the zone completely; loading and unloading outside the zone is no longer linked to the pedestrian zone rules",
             "is_correct": true
           },
           {
-            "text": "No motor vehicles remain restricted to loading and unloading even after F105",
+            "text": "Yes, the exception for loading and unloading also applies outside the zone",
             "is_correct": false
           }
         ],
-        "explanation": "F105 explicitly ends the pedestrian zone. After that normal traffic rules apply for all vehicles."
+        "explanation": "All rules and exceptions of the pedestrian zone end at Zone-F105-Einde. Outside the zone normal parking and traffic rules apply for loading and unloading."
       },
       "FR": {
-        "question": "Tous les vehicules peuvent-ils circuler sans restriction apres F105 ?",
+        "question": "Après Zone-F105-Einde: un fournisseur peut-il encore charger et décharger dans la zone qu'il vient de quitter?",
         "choices": [
           {
-            "text": "Oui les restrictions de zone pietonne ne s appliquent plus; les regles normales sont en vigueur",
+            "text": "Non, Zone-F105-Einde termine la zone complètement; le chargement et le déchargement hors zone n'est plus lié aux règles de la zone piétonne",
             "is_correct": true
           },
           {
-            "text": "Non les vehicules restent limites au chargement apres F105",
+            "text": "Oui, l'exception pour le chargement et le déchargement s'applique aussi hors de la zone",
             "is_correct": false
           }
         ],
-        "explanation": "F105 termine explicitement la zone pietonne. Apres cela les regles normales s appliquent."
+        "explanation": "Toutes les règles et exceptions de la zone piétonne prennent fin à Zone-F105-Einde. En dehors de la zone les règles normales de stationnement et de circulation s'appliquent pour le chargement et le déchargement."
       },
       "AR": {
-        "question": "?? ?????? ???? ???????? ????? ???? ???? ??? F105?",
+        "question": "بعد Zone-F105-Einde: هل يمكن للمورد الاستمرار في التحميل والتفريغ في المنطقة التي غادرها للتو؟",
         "choices": [
           {
-            "text": "??? ?? ??? ???? ????? ?????? ?????? ????? ????? ?????? ???????",
+            "text": "لا، Zone-F105-Einde تنهي المنطقة بالكامل؛ التحميل والتفريغ خارج المنطقة لم يعد مرتبطاً بقواعد منطقة المشاة",
             "is_correct": true
           },
           {
-            "text": "?? ???? ???????? ????? ???????? ??? ??? F105",
+            "text": "نعم، استثناء التحميل والتفريغ ينطبق أيضاً خارج المنطقة",
             "is_correct": false
           }
         ],
-        "explanation": "???? F105 ?????? ????? ??????. ??? ??? ???? ????? ?????? ??????? ????? ????????."
+        "explanation": "تنتهي جميع قواعد واستثناءات منطقة المشاة عند Zone-F105-Einde. خارج المنطقة تسري قواعد الوقوف والمرور العادية للتحميل والتفريغ."
       }
     }
   },
   {
-    "question_id": "F105_Q08",
+    "question_id": "Zone-F105-Einde_Q08",
     "type": "IS_IT_ALLOWED",
     "difficulty": "HARD",
     "is_critical": true,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Is het noodzakelijk om F105 aan elke uitgang van een voetgangerszone te plaatsen?",
+        "question": "Een fietser verlaat de voetgangerszone via Zone-F105-Einde en rijdt door op de weg. Is dat toegestaan?",
         "choices": [
           {
-            "text": "Ja F105 wordt aan elke uitgang geplaatst zodat weggebruikers weten dat de voetgangerszone eindigt",
+            "text": "Ja, buiten de zone gelden gewone verkeersregels; de fietser mag de openbare weg gebruiken zoals iedereen",
             "is_correct": true
           },
           {
-            "text": "Nee ��n bord bij de hoofdingang volstaat voor de volledige zone",
+            "text": "Neen, fietsers mogen na Zone-F105-Einde niet meer op de openbare weg rijden",
             "is_correct": false
           }
         ],
-        "explanation": "Net zoals bij andere zones wordt het eindbord (F105) aan elke uitgang geplaatst. Zo weet elke bestuurder die de zone verlaat dat de aparte regels niet meer gelden."
+        "explanation": "De bijzondere toestemming voor fietsers gold enkel binnen de voetgangerszone. Buiten de zone rijdt een fietser gewoon op de openbare weg volgens de normale verkeersregels."
       },
       "EN": {
-        "question": "Is it necessary to place F105 at every exit of a pedestrian zone?",
+        "question": "A cyclist leaves the pedestrian zone via Zone-F105-Einde and continues on the road. Is that permitted?",
         "choices": [
           {
-            "text": "Yes F105 is placed at every exit so road users know the pedestrian zone ends",
+            "text": "Yes, outside the zone normal traffic rules apply; the cyclist may use the public road like everyone else",
             "is_correct": true
           },
           {
-            "text": "No one sign at the main entrance is sufficient for the entire zone",
+            "text": "No, cyclists may no longer ride on the public road after Zone-F105-Einde",
             "is_correct": false
           }
         ],
-        "explanation": "As with other zones the end sign (F105) is placed at every exit. This way every driver leaving the zone knows the special rules no longer apply."
+        "explanation": "The special permission for cyclists only applied within the pedestrian zone. Outside the zone a cyclist simply rides on the public road according to normal traffic rules."
       },
       "FR": {
-        "question": "Est-il necessaire de placer F105 a chaque sortie d une zone pietonne ?",
+        "question": "Un cycliste quitte la zone piétonne via Zone-F105-Einde et continue sur la route. Est-ce autorisé?",
         "choices": [
           {
-            "text": "Oui F105 est place a chaque sortie pour que les usagers sachent que la zone se termine",
+            "text": "Oui, en dehors de la zone les règles normales s'appliquent; le cycliste peut utiliser la voie publique comme tout le monde",
             "is_correct": true
           },
           {
-            "text": "Non un seul panneau a l entree principale suffit",
+            "text": "Non, les cyclistes ne peuvent plus circuler sur la voie publique après Zone-F105-Einde",
             "is_correct": false
           }
         ],
-        "explanation": "Comme pour les autres zones le panneau de fin (F105) est place a chaque sortie. Ainsi chaque conducteur quittant la zone sait que les regles speciales ne s appliquent plus."
+        "explanation": "L'autorisation spéciale pour les cyclistes ne s'appliquait qu'à l'intérieur de la zone piétonne. En dehors de la zone un cycliste circule simplement sur la voie publique selon les règles normales."
       },
       "AR": {
-        "question": "?? ?? ??????? ??? F105 ??? ?? ???? ?? ????? ???????",
+        "question": "يغادر راكب دراجة منطقة المشاة عبر Zone-F105-Einde ويستمر في السير على الطريق. هل هذا مسموح؟",
         "choices": [
           {
-            "text": "??? ????? F105 ??? ?? ???? ??? ???? ??????? ?????? ?? ??????? ?????",
+            "text": "نعم، خارج المنطقة تسري قواعد المرور العادية؛ يمكن لراكب الدراجة استخدام الطريق العام كأي شخص آخر",
             "is_correct": true
           },
           {
-            "text": "?? ????? ?????? ????? ??? ?????? ??????? ?????",
+            "text": "لا، لا يمكن لراكبي الدراجات السير على الطريق العام بعد Zone-F105-Einde",
             "is_correct": false
           }
         ],
-        "explanation": "??? ?? ????? ?? ??????? ?????? ????? ????? ?????? ??????? (F105) ??? ?? ????. ???? ?? ???? ????? ??????? ?? ??????? ?????? ?? ??? ?????."
+        "explanation": "الإذن الخاص لراكبي الدراجات كان سارياً فقط داخل منطقة المشاة. خارج المنطقة يسير راكب الدراجة ببساطة على الطريق العام وفق قواعد المرور العادية."
       }
     }
   }

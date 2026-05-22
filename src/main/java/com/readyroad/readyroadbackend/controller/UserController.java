@@ -32,6 +32,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
+import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.transaction.annotation.Transactional;
+
 import java.util.Locale;
 import java.util.Map;
 
@@ -84,6 +87,7 @@ public class UserController {
         return ResponseEntity.ok(toUserProfileResponse(user));
     }
 
+    @Transactional
     @PutMapping("/me")
     @Operation(summary = "Update current user profile", description = "Updates the authenticated user's editable profile fields", security = @SecurityRequirement(name = "bearer-jwt"))
     @ApiResponses(value = {
@@ -117,7 +121,13 @@ public class UserController {
         user.setFullName(normalizedFullName);
         user.setEmail(normalizedEmail);
 
-        User savedUser = userRepository.save(user);
+        User savedUser;
+        try {
+            savedUser = userRepository.save(user);
+        } catch (DataIntegrityViolationException e) {
+            log.warn("Profile update conflict (concurrent email claim): userId={}, email={}", userId, normalizedEmail);
+            throw new ResponseStatusException(HttpStatus.CONFLICT, messages.get("user.email_in_use"));
+        }
         log.info("User profile updated successfully: userId={}, username={}", userId, savedUser.getUsername());
 
         return ResponseEntity.ok(toUserProfileResponse(savedUser));

@@ -99,8 +99,8 @@ class BelgianComplianceIntegrationTest {
     }
 
     @Test
-    @DisplayName("Story D1: isCompliantQuestion returns false for 4 options")
-    void testIsCompliantReturnsFalseFor4Options() {
+    @DisplayName("Story D1: isCompliantQuestion uses deliverable options for medium questions")
+    void testIsCompliantUsesDeliverableOptionsForMediumQuestion() {
         // Given
         QuizQuestion question = createQuestion(4);
 
@@ -108,7 +108,7 @@ class BelgianComplianceIntegrationTest {
         boolean isCompliant = quizService.isCompliantQuestion(question);
 
         // Then
-        assertThat(isCompliant).isFalse();
+        assertThat(isCompliant).isTrue();
     }
 
     @Test

@@ -1,5 +1,7 @@
 package com.readyroad.readyroadbackend.integration.phase6;
 
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.readyroad.readyroadbackend.domain.entity.*;
 import com.readyroad.readyroadbackend.domain.enums.SignCategory;
 import com.readyroad.readyroadbackend.domain.repository.*;
@@ -8,9 +10,11 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.context.WebApplicationContext;
@@ -49,6 +53,9 @@ public class Phase6PerformanceSanityBDDTest {
     @Autowired
     private WebApplicationContext context;
 
+    @Autowired
+    private ObjectMapper objectMapper;
+
     private MockMvc mockMvc;
 
     @Autowired
@@ -60,7 +67,14 @@ public class Phase6PerformanceSanityBDDTest {
     @Autowired
     private QuizQuestionRepository quizQuestionRepository;
 
+    @Autowired
+    private UserRepository userRepository;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
     private Long testUserId;
+    private String testUserJwt;
     private static final long PERFORMANCE_THRESHOLD_MS = 1000L;
 
     @BeforeEach
@@ -71,6 +85,18 @@ public class Phase6PerformanceSanityBDDTest {
                 .build();
 
         testUserId = 700L;
+
+        User testUser = new User();
+        testUser.setUsername("perfuser");
+        testUser.setEmail("perfuser@test.com");
+        testUser.setPasswordHash(passwordEncoder.encode("password123"));
+        testUser.setFullName("Performance Test User");
+        testUser.setRole(com.readyroad.readyroadbackend.domain.enums.Role.USER);
+        testUser.setIsActive(true);
+        testUser.setIsLocked(false);
+        testUser = userRepository.save(testUser);
+        testUserId = testUser.getId();
+        testUserJwt = loginAndGetJwt(testUser.getUsername(), "password123");
 
         // Create category
         Category testCategory = new Category();
@@ -101,7 +127,7 @@ public class Phase6PerformanceSanityBDDTest {
             question.setQuestionAr("سؤال اختبار الأداء " + i);
             question.setQuestionNl("Prestatie testvraag " + i);
             question.setQuestionFr("Question de test de performance " + i);
-            question.setDifficultyLevel(QuizQuestion.DifficultyLevel.MEDIUM);
+            question.setDifficultyLevel(difficultyForIndex(i));
             question.setQuestionType(QuizQuestion.QuestionType.MULTIPLE_CHOICE);
             question.setCategory(testCategory);
             question.setRoadSign(testSign);
@@ -146,6 +172,7 @@ public class Phase6PerformanceSanityBDDTest {
         long startTime = System.currentTimeMillis();
 
         mockMvc.perform(post("/api/exams/simulations/start")
+                .header("Authorization", "Bearer " + testUserJwt)
                 .param("userId", testUserId.toString()))
                 .andExpect(status().isCreated()); // 201 Created (REST best practice for resource creation)
 
@@ -173,5 +200,32 @@ public class Phase6PerformanceSanityBDDTest {
         // And: no service or DTO imports are required
 
         assertThat(true).isTrue(); // Placeholder assertion
+    }
+
+    private QuizQuestion.DifficultyLevel difficultyForIndex(int index) {
+        if (index <= 20) {
+            return QuizQuestion.DifficultyLevel.EASY;
+        }
+        if (index <= 40) {
+            return QuizQuestion.DifficultyLevel.MEDIUM;
+        }
+        return QuizQuestion.DifficultyLevel.HARD;
+    }
+
+    private String loginAndGetJwt(String username, String password) {
+        try {
+            String loginJson = String.format("{\"username\":\"%s\",\"password\":\"%s\"}", username, password);
+
+            MvcResult result = mockMvc.perform(post("/api/auth/login")
+                    .contentType(org.springframework.http.MediaType.APPLICATION_JSON)
+                    .content(loginJson))
+                    .andExpect(status().isOk())
+                    .andReturn();
+
+            JsonNode jsonNode = objectMapper.readTree(result.getResponse().getContentAsString());
+            return jsonNode.get("token").asText();
+        } catch (Exception exception) {
+            throw new IllegalStateException("Failed to authenticate performance test user", exception);
+        }
     }
 }

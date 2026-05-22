@@ -1,510 +1,601 @@
 [
   {
-    "question_id": "F103_Q01",
+    "question_id": "Zone-F103_Q01",
     "type": "WHAT_DOES_IT_MEAN",
     "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE: Replace wrong answers with actual sign names from the same category.",
     "i18n": {
       "NL": {
         "question": "Wat betekent dit verkeersbord?",
         "choices": [
-          { "text": "Begin van een voetgangerszone", "is_correct": true },
           {
-            "text": "Rijden verboden in beide richtingen",
+            "text": "Het begin van een voetgangerszone waar voertuigen in principe verboden zijn",
+            "is_correct": true
+          },
+          {
+            "text": "Het begin van een zone 30 waar voetgangers voorrang hebben",
             "is_correct": false
           },
-          { "text": "Gevaarsbord voor wegwerkzaamheden", "is_correct": false }
+          {
+            "text": "Een voorbehouden parkeerzone uitsluitend voor bewoners",
+            "is_correct": false
+          }
         ],
-        "explanation": "Begin/einde voetgangerszone."
+        "explanation": "Zone-F103 markeert het begin van een voetgangerszone. Motorvoertuigen zijn er verboden, met twee uitzonderingen: laden en lossen tussen 6 en 12 uur, en fietsers."
       },
       "EN": {
         "question": "What does this traffic sign mean?",
         "choices": [
-          { "text": "Start of pedestrian zone", "is_correct": true },
           {
-            "text": "Driving prohibited in both directions",
-            "is_correct": false
-          },
-          { "text": "Danger sign for roadworks", "is_correct": false }
-        ],
-        "explanation": "This sign indicates that you are entering a pedestrian zone where vehicles are prohibited all day, except during specific hours from 6 AM to 12 PM for loading and unloading only. Delivery vehicles and small trucks are also allowed during these hours."
-      },
-      "FR": {
-        "question": "Que signifie ce panneau de signalisation ?",
-        "choices": [
-          { "text": "D�but de zone pi�tonne", "is_correct": true },
-          {
-            "text": "Circulation interdite dans les deux sens",
-            "is_correct": false
-          },
-          { "text": "Panneau de danger pour travaux", "is_correct": false }
-        ],
-        "explanation": "Ce panneau indique que vous entrez dans une zone pi�tonne o� les v�hicules sont interdits toute la journ�e, sauf pendant des heures sp�cifiques de 6h � 12h pour le chargement et le d�chargement uniquement. Les v�hicules de livraison et les petits camions sont �galement autoris�s pendant ces heures."
-      },
-      "AR": {
-        "question": "?? ???? ??? ??????? ?????????",
-        "choices": [
-          {
-            "text": "????? ???? ???????? ??????? ?? 6 ??? 12",
+            "text": "The beginning of a pedestrian zone where vehicles are generally prohibited",
             "is_correct": true
           },
-          { "text": "??????? ?????? ?? ??? ?????????", "is_correct": false },
-          { "text": "????? ??? ?????? ??????", "is_correct": false }
+          {
+            "text": "The beginning of a zone 30 where pedestrians have priority",
+            "is_correct": false
+          },
+          {
+            "text": "A reserved parking zone exclusively for residents",
+            "is_correct": false
+          }
         ],
-        "explanation": "???? ??? ??????? ??? ??? ???? ????? ?????? ????? ???? ??????? ???????? ???? ?????? ???????? ????? ????? ?? ?????? 6 ?????? ??? ?????? 12 ????? ??????? ???????? ???. ????? ????? ??????? ??????? ????????? ??????? ???? ??? ???????."
+        "explanation": "Zone-F103 marks the start of a pedestrian zone. Motor vehicles are prohibited, with two exceptions: loading and unloading between 6 a.m. and 12 p.m., and cyclists."
+      },
+      "FR": {
+        "question": "Que signifie ce panneau de signalisation?",
+        "choices": [
+          {
+            "text": "Le début d'une zone piétonne où les véhicules sont en principe interdits",
+            "is_correct": true
+          },
+          {
+            "text": "Le début d'une zone 30 où les piétons ont la priorité",
+            "is_correct": false
+          },
+          {
+            "text": "Une zone de stationnement réservée exclusivement aux résidents",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Zone-F103 marque le début d'une zone piétonne. Les véhicules à moteur y sont interdits, avec deux exceptions: le chargement et déchargement entre 6 h et 12 h, et les cyclistes."
+      },
+      "AR": {
+        "question": "ما معنى هذه العلامة المرورية؟",
+        "choices": [
+          {
+            "text": "بداية منطقة مشاة حيث يُمنع مرور المركبات بشكل عام",
+            "is_correct": true
+          },
+          {
+            "text": "بداية منطقة سرعة 30 حيث يتمتع المشاة بالأولوية",
+            "is_correct": false
+          },
+          {
+            "text": "منطقة وقوف محجوزة حصرياً للسكان",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Zone-F103 تحدد بداية منطقة المشاة. تُمنع فيها المركبات ذات المحرك مع استثناءين: التحميل والتفريغ بين 6 صباحاً و12 ظهراً، والدراجات الهوائية."
       }
     }
   },
   {
-    "question_id": "F103_Q02",
+    "question_id": "Zone-F103_Q02",
     "type": "WHICH_SIGN",
     "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE: Ready to use — category identification question.",
     "i18n": {
       "NL": {
-        "question": "Tot welke categorie verkeerstekens behoort dit bord?",
+        "question": "Tot welke categorie behoort bord Zone-F103?",
         "choices": [
-          { "text": "Aanwijzingsborden", "is_correct": true },
-          { "text": "Gebodsborden", "is_correct": false },
-          { "text": "Parkeerregelementsborden", "is_correct": false }
+          {
+            "text": "Zoneborden",
+            "is_correct": true
+          },
+          {
+            "text": "Verbodsborden",
+            "is_correct": false
+          },
+          {
+            "text": "Informatieborden",
+            "is_correct": false
+          }
         ],
-        "explanation": "Dit bord behoort tot de categorie 'Aanwijzingsborden'. Elk type bord heeft een specifieke vorm en kleurschema."
+        "explanation": "Zone-F103 is een zonebord dat het begin van een voetgangerszone aanduidt. Zoneborden regelen het gebruik van een volledig afgebakend gebied, in tegenstelling tot verbodsborden die gelden op een specifiek punt."
       },
       "EN": {
-        "question": "To which category of traffic signs does this sign belong?",
+        "question": "To which category does sign Zone-F103 belong?",
         "choices": [
-          { "text": "Information signs", "is_correct": true },
-          { "text": "Mandatory signs", "is_correct": false },
-          { "text": "Parking regulation signs", "is_correct": false }
+          {
+            "text": "Zone signs",
+            "is_correct": true
+          },
+          {
+            "text": "Prohibition signs",
+            "is_correct": false
+          },
+          {
+            "text": "Information signs",
+            "is_correct": false
+          }
         ],
-        "explanation": "This sign belongs to the 'Information signs' category. Each type of sign has a specific shape and color scheme."
+        "explanation": "Zone-F103 is a zone sign marking the beginning of a pedestrian zone. Zone signs regulate the use of an entire defined area, as opposed to prohibition signs which apply at a specific point."
       },
       "FR": {
-        "question": "� quelle cat�gorie de panneaux de signalisation ce panneau appartient-il ?",
+        "question": "À quelle catégorie appartient le panneau Zone-F103?",
         "choices": [
-          { "text": "Panneaux d'indication", "is_correct": true },
-          { "text": "Panneaux d'obligation", "is_correct": false },
-          { "text": "Panneaux de stationnement", "is_correct": false }
+          {
+            "text": "Panneaux de zone",
+            "is_correct": true
+          },
+          {
+            "text": "Panneaux d'interdiction",
+            "is_correct": false
+          },
+          {
+            "text": "Panneaux d'information",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ce panneau appartient � la cat�gorie 'Panneaux d'indication'. Chaque type de panneau a une forme et un sch�ma de couleurs sp�cifiques."
+        "explanation": "Zone-F103 est un panneau de zone indiquant le début d'une zone piétonne. Les panneaux de zone réglementent l'usage d'une zone entière délimitée, contrairement aux panneaux d'interdiction qui s'appliquent en un point précis."
       },
       "AR": {
-        "question": "??? ?? ??? ??????? ??? ??????? ?????????",
+        "question": "إلى أي فئة تنتمي علامة Zone-F103؟",
         "choices": [
-          { "text": "???????? ?????????", "is_correct": true },
-          { "text": "???????? ?????????", "is_correct": false },
-          { "text": "?????? ??????", "is_correct": false }
+          {
+            "text": "علامات المنطقة",
+            "is_correct": true
+          },
+          {
+            "text": "علامات الحظر",
+            "is_correct": false
+          },
+          {
+            "text": "العلامات الإرشادية",
+            "is_correct": false
+          }
         ],
-        "explanation": "??? ??????? ???????? ????? ??? ??? '?????? ?????????'. ?? ??? ?? ???????? ?? ??? ????? ????? ????."
+        "explanation": "Zone-F103 علامة منطقة تُشير إلى بداية منطقة المشاة. تُنظِّم علامات المنطقة استخدام منطقة محددة بأكملها، على خلاف علامات الحظر التي تسري عند نقطة محددة."
       }
     }
   },
   {
-    "question_id": "F103_Q03",
-    "type": "WHAT_MUST_YOU_DO",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "_note": "TEMPLATE (MEDIUM): Replace with sign-specific question for production.",
-    "i18n": {
-      "NL": {
-        "question": "Welke informatie of aanwijzing geeft dit bord aan weggebruikers?",
-        "choices": [
-          {
-            "text": "Het bord geeft nuttige informatie of aanwijzingen over de wegsituatie of faciliteiten",
-            "is_correct": true
-          },
-          {
-            "text": "Het bord verbiedt een specifieke rijbeweging",
-            "is_correct": false
-          },
-          {
-            "text": "Het bord verplicht tot stoppen voor controle",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Aanwijzingsborden geven weggebruikers nuttige informatie over de wegsituatie, faciliteiten of speciale rijstroken."
-      },
-      "EN": {
-        "question": "What information or guidance does this sign provide to road users?",
-        "choices": [
-          {
-            "text": "The sign provides useful information or guidance about the road situation or facilities",
-            "is_correct": true
-          },
-          {
-            "text": "The sign prohibits a specific driving maneuver",
-            "is_correct": false
-          },
-          {
-            "text": "The sign requires stopping for inspection",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Information signs provide road users with useful info about road situation, facilities, or special lanes."
-      },
-      "FR": {
-        "question": "Quelles informations ce panneau fournit-il aux usagers de la route ?",
-        "choices": [
-          {
-            "text": "Le panneau fournit des informations utiles sur la situation routi�re ou les �quipements",
-            "is_correct": true
-          },
-          {
-            "text": "Le panneau interdit une man�uvre de conduite sp�cifique",
-            "is_correct": false
-          },
-          {
-            "text": "Le panneau oblige � s'arr�ter pour contr�le",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Les panneaux d'indication informent les usagers sur la situation routi�re, les �quipements ou voies sp�ciales."
-      },
-      "AR": {
-        "question": "?? ????????? ?? ????????? ???? ?????? ??? ??????? ???????? ???????? ???????",
-        "choices": [
-          {
-            "text": "???? ??????? ???????? ??????? ????? ?? ??????? ??? ???? ?????? ?? ???????",
-            "is_correct": true
-          },
-          {
-            "text": "??????? ???????? ???? ?????? ????? ?????",
-            "is_correct": false
-          },
-          { "text": "??????? ???????? ???? ?????? ?????", "is_correct": false }
-        ],
-        "explanation": "?????? ????????? ???? ???????? ?????? ??????? ????? ??? ???? ?????? ????????."
-      }
-    }
-  },
-  {
-    "question_id": "F103_Q04",
-    "type": "WHAT_MUST_YOU_DO",
-    "difficulty": "MEDIUM",
-    "is_critical": false,
-    "show_sign": true,
-    "_note": "TEMPLATE (MEDIUM): Replace with sign-specific question for production.",
-    "i18n": {
-      "NL": {
-        "question": "Wat is het kleurenschema van aanwijzingsborden in Belgi�?",
-        "choices": [
-          {
-            "text": "Blauw of groen achtergrond met witte symbolen en tekst",
-            "is_correct": true
-          },
-          { "text": "Rode achtergrond met witte tekst", "is_correct": false },
-          { "text": "Gele achtergrond met zwarte tekst", "is_correct": false }
-        ],
-        "explanation": "Aanwijzingsborden hebben doorgaans een blauwe achtergrond (stedelijk) of groene achtergrond (autosnelweg)."
-      },
-      "EN": {
-        "question": "What is the color scheme of information signs in Belgium?",
-        "choices": [
-          {
-            "text": "Blue or green background with white symbols and text",
-            "is_correct": true
-          },
-          { "text": "Red background with white text", "is_correct": false },
-          { "text": "Yellow background with black text", "is_correct": false }
-        ],
-        "explanation": "Information signs typically have a blue (urban) or green (motorway) background."
-      },
-      "FR": {
-        "question": "Quel est le sch�ma de couleurs des panneaux d'indication en Belgique ?",
-        "choices": [
-          {
-            "text": "Fond bleu ou vert avec des symboles et du texte blancs",
-            "is_correct": true
-          },
-          { "text": "Fond rouge avec texte blanc", "is_correct": false },
-          { "text": "Fond jaune avec texte noir", "is_correct": false }
-        ],
-        "explanation": "Les panneaux d'indication ont g�n�ralement un fond bleu (urbain) ou vert (autoroute)."
-      },
-      "AR": {
-        "question": "?? ?? ???? ??????? ??????? ????????? ?? ???????",
-        "choices": [
-          {
-            "text": "????? ????? ?? ????? ?? ???? ??? ????",
-            "is_correct": true
-          },
-          { "text": "????? ????? ?? ?? ????", "is_correct": false },
-          { "text": "????? ????? ?? ?? ????", "is_correct": false }
-        ],
-        "explanation": "?????? ????????? ????? ??? ????? ????? (????) ?? ????? (???? ????)."
-      }
-    }
-  },
-  {
-    "question_id": "F103_Q05",
-    "type": "IS_IT_ALLOWED",
+    "question_id": "Zone-F103_Q03",
+    "type": "HAZARD_IDENTIFICATION",
     "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE (HARD): Replace with sign-specific question for production.",
     "i18n": {
       "NL": {
-        "question": "Mag u als weggebruiker aanwijzingsborden negeren?",
+        "question": "Welk specifiek gevaar loopt een bestuurder in een voetgangerszone?",
         "choices": [
           {
-            "text": "Nee, aanwijzingsborden moeten worden opgevolgd want ze geven wettelijk bindende aanwijzingen",
+            "text": "Voetgangers bewegen vrij en onverwacht in alle richtingen, ook over de rijbaan",
             "is_correct": true
           },
           {
-            "text": "Ja, aanwijzingsborden zijn vrijblijvend en kunnen naar eigen inzicht worden genegeerd",
+            "text": "Er is gevaar voor tegenliggers die met hoge snelheid rijden",
+            "is_correct": false
+          },
+          {
+            "text": "De rijstroken zijn te smal voor een personenwagen",
             "is_correct": false
           }
         ],
-        "explanation": "Aanwijzingsborden geven wettelijk bindende aanwijzingen aan weggebruikers. Ze mogen niet worden genegeerd en dienen te worden nageleefd."
+        "explanation": "In een voetgangerszone lopen voetgangers vrij rond zonder rekening te houden met rijrichtingen. Toegelaten voertuigen moeten stapvoets rijden en op elk moment bereid zijn te stoppen."
       },
       "EN": {
-        "question": "Are you as a road user allowed to ignore information signs?",
+        "question": "What specific hazard does a driver face in a pedestrian zone?",
         "choices": [
           {
-            "text": "No, information signs must be followed as they provide legally binding directions",
+            "text": "Pedestrians move freely and unexpectedly in all directions, including across the roadway",
             "is_correct": true
           },
           {
-            "text": "Yes, information signs are optional and can be ignored at your own discretion",
+            "text": "There is a risk from oncoming vehicles driving at high speed",
+            "is_correct": false
+          },
+          {
+            "text": "The lanes are too narrow for a passenger car",
             "is_correct": false
           }
         ],
-        "explanation": "Information signs provide legally binding guidance to road users. They must not be ignored and should be followed."
+        "explanation": "In a pedestrian zone, pedestrians walk freely without following traffic directions. Permitted vehicles must travel at walking pace and be ready to stop at any moment."
       },
       "FR": {
-        "question": "En tant qu'usager de la route, �tes-vous autoris� � ignorer les panneaux d'indication ?",
+        "question": "Quel danger spécifique court un conducteur dans une zone piétonne?",
         "choices": [
           {
-            "text": "Non, les panneaux d'indication doivent �tre respect�s car ils fournissent des indications juridiquement contraignantes",
+            "text": "Les piétons se déplacent librement et de façon imprévisible dans toutes les directions, y compris sur la chaussée",
             "is_correct": true
           },
           {
-            "text": "Oui, les panneaux d'indication sont facultatifs et peuvent �tre ignor�s � votre discr�tion",
+            "text": "Il y a un risque lié aux véhicules venant en sens inverse à grande vitesse",
+            "is_correct": false
+          },
+          {
+            "text": "Les voies sont trop étroites pour une voiture de tourisme",
             "is_correct": false
           }
         ],
-        "explanation": "Les panneaux d'indication fournissent des directives juridiquement contraignantes aux usagers. Ils ne peuvent pas �tre ignor�s."
+        "explanation": "Dans une zone piétonne, les piétons circulent librement sans suivre les directions de circulation. Les véhicules autorisés doivent rouler au pas et être prêts à s'arrêter à tout moment."
       },
       "AR": {
-        "question": "?? ????? ?? ??????? ?????? ?????? ?????? ??????????",
+        "question": "ما الخطر المحدد الذي يواجهه السائق في منطقة المشاة؟",
         "choices": [
           {
-            "text": "??? ??? ????? ?????? ????????? ????? ???? ??????? ????? ????????",
+            "text": "يتحرك المشاة بحرية وبشكل غير متوقع في جميع الاتجاهات بما فيها الطريق",
             "is_correct": true
           },
           {
-            "text": "???? ?????? ????????? ???????? ????? ??????? ??? ?????? ?????",
+            "text": "يوجد خطر من مركبات قادمة في الاتجاه المعاكس بسرعة عالية",
+            "is_correct": false
+          },
+          {
+            "text": "المسارات ضيقة جداً للسيارات",
             "is_correct": false
           }
         ],
-        "explanation": "?????? ????????? ???? ??????? ????? ???????? ???????? ??????. ?? ???? ??????? ???? ???????? ???."
+        "explanation": "في منطقة المشاة يتجول المشاة بحرية دون اتباع اتجاهات المرور. يجب على المركبات المسموح بها السير بسرعة المشي والاستعداد للتوقف في أي لحظة."
       }
     }
   },
   {
-    "question_id": "F103_Q06",
+    "question_id": "Zone-F103_Q04",
     "type": "WHAT_MUST_YOU_DO",
     "difficulty": "MEDIUM",
-    "is_critical": false,
+    "is_critical": true,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Tijdens welke uren mogen voertuigen een F103-voetgangerszone betreden voor laden en lossen?",
+        "question": "U bent een leverancier en wilt goederen lossen in de voetgangerszone. Het is 10 uur. Wat moet u doen?",
         "choices": [
           {
-            "text": "Van 6 uur tot 12 uur mogen bestelwagens en kleine vrachtwagens laden en lossen",
+            "text": "U mag de zone inrijden voor laden en lossen, want 10 uur valt binnen de toegestane tijden van 6 tot 12 uur",
             "is_correct": true
           },
           {
-            "text": "Voertuigen mogen de zone nooit betreden",
+            "text": "U mag de zone niet inrijden want leveranciers zijn altijd verboden in een voetgangerszone",
             "is_correct": false
           },
           {
-            "text": "Voertuigen mogen 24 uur laden en lossen",
+            "text": "U mag de zone inrijden op elk tijdstip want laden en lossen is altijd toegestaan",
             "is_correct": false
           }
         ],
-        "explanation": "De voetgangerszone aangeduid door F103 staat het betreden voor laden en lossen uitsluitend toe tussen 6:00 en 12:00. Buiten die uren is de zone ontoegankelijk voor motorvoertuigen."
+        "explanation": "Laden en lossen is toegestaan in deze voetgangerszone, maar uitsluitend tussen 6 uur en 12 uur. Om 10 uur valt dit binnen de toegestane periode."
       },
       "EN": {
-        "question": "During which hours may vehicles enter an F103 pedestrian zone for loading and unloading?",
+        "question": "You are a supplier and want to unload goods in the pedestrian zone. It is 10 a.m. What must you do?",
         "choices": [
           {
-            "text": "From 6 to 12 o'clock vans and small trucks may load and unload",
+            "text": "You may enter the zone for loading and unloading, because 10 a.m. is within the permitted times of 6 a.m. to 12 p.m.",
             "is_correct": true
           },
-          { "text": "Vehicles may never enter the zone", "is_correct": false },
           {
-            "text": "Vehicles may load and unload 24 hours a day",
+            "text": "You may not enter the zone because suppliers are always prohibited in a pedestrian zone",
+            "is_correct": false
+          },
+          {
+            "text": "You may enter the zone at any time because loading and unloading is always permitted",
             "is_correct": false
           }
         ],
-        "explanation": "The pedestrian zone indicated by F103 allows entry for loading and unloading exclusively between 6:00 and 12:00. Outside those hours the zone is inaccessible to motor vehicles."
+        "explanation": "Loading and unloading is permitted in this pedestrian zone, but only between 6 a.m. and 12 p.m. At 10 a.m. this falls within the permitted period."
       },
       "FR": {
-        "question": "Pendant quelles heures les vehicules peuvent-ils entrer dans une zone pietonne F103 pour le chargement ?",
+        "question": "Vous êtes un fournisseur et voulez décharger des marchandises dans la zone piétonne. Il est 10 h. Que devez-vous faire?",
         "choices": [
           {
-            "text": "De 6h a 12h les camionnettes et petits camions peuvent charger et decharger",
+            "text": "Vous pouvez entrer dans la zone pour le chargement et le déchargement, car 10 h est dans les horaires autorisés de 6 h à 12 h",
             "is_correct": true
           },
           {
-            "text": "Les vehicules ne peuvent jamais entrer",
+            "text": "Vous ne pouvez pas entrer dans la zone car les fournisseurs sont toujours interdits dans une zone piétonne",
             "is_correct": false
           },
-          { "text": "Les vehicules peuvent entrer 24h/24", "is_correct": false }
+          {
+            "text": "Vous pouvez entrer dans la zone à n'importe quelle heure car le chargement et le déchargement sont toujours autorisés",
+            "is_correct": false
+          }
         ],
-        "explanation": "La zone pietonne indiquee par F103 permet l acces pour le chargement et dechargement exclusivement entre 6h00 et 12h00. En dehors de ces heures la zone est inaccessible."
+        "explanation": "Le chargement et le déchargement sont autorisés dans cette zone piétonne, mais uniquement entre 6 h et 12 h. À 10 h, cela tombe dans la période autorisée."
       },
       "AR": {
-        "question": "???? ?? ????? ???? ???????? ???? ????? ???? F103 ??????? ?????????",
+        "question": "أنت مورِّد وتريد تفريغ بضائع في منطقة المشاة. الساعة الآن 10 صباحاً. ماذا يجب أن تفعل؟",
         "choices": [
           {
-            "text": "?? 6 ??? 12 ???? ??????? ????????? ??????? ??????? ????????",
+            "text": "يمكنك دخول المنطقة للتحميل والتفريغ لأن الساعة 10 تقع ضمن الأوقات المسموحة من 6 إلى 12",
             "is_correct": true
           },
           {
-            "text": "?? ???? ???????? ????? ???? ???????",
+            "text": "لا يمكنك دخول المنطقة لأن الموردين ممنوعون دائماً في منطقة المشاة",
             "is_correct": false
           },
-          { "text": "???? ???????? ??????? 24 ????", "is_correct": false }
+          {
+            "text": "يمكنك دخول المنطقة في أي وقت لأن التحميل والتفريغ مسموح دائماً",
+            "is_correct": false
+          }
         ],
-        "explanation": "???? ????? ?????? ?????? ????? ??F103 ??????? ??????? ???????? ????? ??? 6:00 ?12:00. ???? ??? ??????? ????? ??????? ???? ????????."
+        "explanation": "التحميل والتفريغ مسموح به في هذه المنطقة لكن فقط بين الساعة 6 صباحاً و12 ظهراً. الساعة 10 صباحاً تقع ضمن الفترة المسموح بها."
       }
     }
   },
   {
-    "question_id": "F103_Q07",
+    "question_id": "Zone-F103_Q05",
+    "type": "DRIVER_ACTION",
+    "difficulty": "MEDIUM",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U rijdt als toegelaten bestuurder door de voetgangerszone en ziet een groep voetgangers voor u. Wat doet u?",
+        "choices": [
+          {
+            "text": "Stapvoets rijden, de voetgangers de doorgang laten en enkel verder rijden als de weg vrij is",
+            "is_correct": true
+          },
+          {
+            "text": "Toeter en doorrijden want u heeft een geldige reden om in de zone te zijn",
+            "is_correct": false
+          },
+          {
+            "text": "Inhalen via het voetpad om de groep te omzeilen",
+            "is_correct": false
+          }
+        ],
+        "explanation": "In een voetgangerszone hebben voetgangers altijd voorrang. Toegelaten voertuigen rijden stapvoets en wijken voor voetgangers, ongeacht het tijdstip of de reden van aanwezigheid."
+      },
+      "EN": {
+        "question": "You are an authorised driver travelling through the pedestrian zone and see a group of pedestrians ahead. What do you do?",
+        "choices": [
+          {
+            "text": "Drive at walking pace, give way to the pedestrians and only continue when the path is clear",
+            "is_correct": true
+          },
+          {
+            "text": "Sound your horn and drive on because you have a valid reason to be in the zone",
+            "is_correct": false
+          },
+          {
+            "text": "Overtake via the footpath to avoid the group",
+            "is_correct": false
+          }
+        ],
+        "explanation": "In a pedestrian zone, pedestrians always have priority. Permitted vehicles travel at walking pace and yield to pedestrians, regardless of the time or reason for being there."
+      },
+      "FR": {
+        "question": "Vous êtes un conducteur autorisé qui traverse la zone piétonne et vous voyez un groupe de piétons devant vous. Que faites-vous?",
+        "choices": [
+          {
+            "text": "Rouler au pas, laisser le passage aux piétons et ne continuer que lorsque la voie est libre",
+            "is_correct": true
+          },
+          {
+            "text": "Klaxonner et continuer car vous avez une raison valable d'être dans la zone",
+            "is_correct": false
+          },
+          {
+            "text": "Doubler par le trottoir pour contourner le groupe",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dans une zone piétonne, les piétons ont toujours la priorité. Les véhicules autorisés roulent au pas et cèdent le passage aux piétons, quelle que soit l'heure ou la raison de leur présence."
+      },
+      "AR": {
+        "question": "أنت سائق مرخَّص تسير في منطقة المشاة وترى مجموعة من المشاة أمامك. ماذا تفعل؟",
+        "choices": [
+          {
+            "text": "سِر بسرعة المشي وأعطِ المشاة حق المرور واستمر فقط عندما يصبح الطريق خالياً",
+            "is_correct": true
+          },
+          {
+            "text": "استخدم البوق واستمر لأن لديك سبباً مشروعاً للتواجد في المنطقة",
+            "is_correct": false
+          },
+          {
+            "text": "تجاوزهم عبر الرصيف لتتفادى المجموعة",
+            "is_correct": false
+          }
+        ],
+        "explanation": "في منطقة المشاة يتمتع المشاة دائماً بالأولوية. يجب على المركبات المرخصة السير بسرعة المشي والتنازل للمشاة بغض النظر عن الوقت أو سبب التواجد."
+      }
+    }
+  },
+  {
+    "question_id": "Zone-F103_Q06",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "MEDIUM",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Een fietser wil de voetgangerszone via Zone-F103 betreden. Is dat toegestaan?",
+        "choices": [
+          {
+            "text": "Ja, fietsers mogen de zone gebruiken volgens de aangeduide uitzondering op het bord",
+            "is_correct": true
+          },
+          {
+            "text": "Neen, de voetgangerszone is strikt voorbehouden voor voetgangers en niemand anders",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Op bord Zone-F103 staat een fietspictogram dat aangeeft dat fietsers toegelaten zijn in de voetgangerszone. Er is geen tijdsbeperking vermeld voor fietsers, in tegenstelling tot laden en lossen."
+      },
+      "EN": {
+        "question": "A cyclist wants to enter the pedestrian zone via Zone-F103. Is that permitted?",
+        "choices": [
+          {
+            "text": "Yes, cyclists are allowed to use the zone according to the indicated exception on the sign",
+            "is_correct": true
+          },
+          {
+            "text": "No, the pedestrian zone is strictly reserved for pedestrians and no one else",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Sign Zone-F103 shows a bicycle pictogram indicating that cyclists are permitted in the pedestrian zone. No time restriction is mentioned for cyclists, unlike loading and unloading."
+      },
+      "FR": {
+        "question": "Un cycliste veut entrer dans la zone piétonne via Zone-F103. Est-ce autorisé?",
+        "choices": [
+          {
+            "text": "Oui, les cyclistes sont autorisés à utiliser la zone selon l'exception indiquée sur le panneau",
+            "is_correct": true
+          },
+          {
+            "text": "Non, la zone piétonne est strictement réservée aux piétons et à personne d'autre",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Le panneau Zone-F103 affiche un pictogramme de vélo indiquant que les cyclistes sont autorisés dans la zone piétonne. Aucune restriction horaire n'est mentionnée pour les cyclistes, contrairement au chargement et déchargement."
+      },
+      "AR": {
+        "question": "يريد راكب دراجة دخول منطقة المشاة عبر Zone-F103. هل هذا مسموح؟",
+        "choices": [
+          {
+            "text": "نعم، يُسمح لراكبي الدراجات باستخدام المنطقة وفق الاستثناء الموضح على العلامة",
+            "is_correct": true
+          },
+          {
+            "text": "لا، منطقة المشاة محجوزة حصرياً للمشاة فقط",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تُظهر علامة Zone-F103 رمز دراجة يشير إلى أن راكبي الدراجات مسموح لهم في منطقة المشاة. لم يُذكر أي قيد زمني لراكبي الدراجات على عكس التحميل والتفريغ."
+      }
+    }
+  },
+  {
+    "question_id": "Zone-F103_Q07",
     "type": "IS_IT_ALLOWED",
     "difficulty": "HARD",
     "is_critical": true,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Mag een leveringswagen een F103-voetgangerszone betreden om 14 uur?",
+        "question": "Een leverancier wil goederen lossen in de voetgangerszone. Het is 13 uur. Is dat toegestaan?",
         "choices": [
           {
-            "text": "Nee leveringen zijn alleen toegestaan tussen 6 en 12 uur; om 14 uur is het betreden verboden",
+            "text": "Neen, laden en lossen is enkel toegestaan tussen 6 uur en 12 uur, en 13 uur valt buiten die periode",
             "is_correct": true
           },
           {
-            "text": "Ja leveringswagens mogen de zone altijd betreden",
+            "text": "Ja, laden en lossen voor leveranciers is altijd toegestaan ongeacht het tijdstip",
             "is_correct": false
           }
         ],
-        "explanation": "De voetgangerszone is na 12 uur gesloten voor alle voertuigen inclusief leveringswagens. Een wagen die om 14 uur de zone betreedt overtreedt de verkeersregels."
+        "explanation": "De uitzondering voor laden en lossen geldt strikt tussen 6 uur en 12 uur. Om 13 uur is de zone gesloten voor alle voertuigen, ook leveranciers."
       },
       "EN": {
-        "question": "May a delivery van enter an F103 pedestrian zone at 14:00?",
+        "question": "A supplier wants to unload goods in the pedestrian zone. It is 1 p.m. Is that permitted?",
         "choices": [
           {
-            "text": "No deliveries are only permitted between 6 and 12; entering at 14:00 is prohibited",
+            "text": "No, loading and unloading is only permitted between 6 a.m. and 12 p.m., and 1 p.m. falls outside that period",
             "is_correct": true
           },
           {
-            "text": "Yes delivery vans may always enter the zone",
+            "text": "Yes, loading and unloading for suppliers is always permitted regardless of the time",
             "is_correct": false
           }
         ],
-        "explanation": "The pedestrian zone is closed after 12:00 to all vehicles including delivery vans. A vehicle entering at 14:00 violates traffic law."
+        "explanation": "The exception for loading and unloading applies strictly between 6 a.m. and 12 p.m. At 1 p.m. the zone is closed to all vehicles, including suppliers."
       },
       "FR": {
-        "question": "Un camion de livraison peut-il entrer dans une zone pietonne F103 a 14h ?",
+        "question": "Un fournisseur veut décharger des marchandises dans la zone piétonne. Il est 13 h. Est-ce autorisé?",
         "choices": [
           {
-            "text": "Non les livraisons ne sont autorisees qu entre 6h et 12h; entrer a 14h est interdit",
+            "text": "Non, le chargement et le déchargement ne sont autorisés qu'entre 6 h et 12 h, et 13 h est en dehors de cette période",
             "is_correct": true
           },
           {
-            "text": "Oui les camions peuvent toujours entrer",
+            "text": "Oui, le chargement et le déchargement pour les fournisseurs est toujours autorisé quelle que soit l'heure",
             "is_correct": false
           }
         ],
-        "explanation": "La zone pietonne est fermee apres 12h a tous les vehicules. Un vehicule entrant a 14h enfreint le code de la route."
+        "explanation": "L'exception pour le chargement et le déchargement s'applique strictement entre 6 h et 12 h. À 13 h la zone est fermée à tous les véhicules, y compris les fournisseurs."
       },
       "AR": {
-        "question": "?? ???? ?????? ????? ???? ????? ???? F103 ?????? 14:00?",
+        "question": "يريد مورِّد تفريغ بضائع في منطقة المشاة. الساعة الآن 1 ظهراً (13:00). هل هذا مسموح؟",
         "choices": [
           {
-            "text": "?? ????? ???????? ??? ??? 6 ?12? ?????? ?????? 14:00 ?????",
+            "text": "لا، التحميل والتفريغ مسموح فقط بين الساعة 6 صباحاً و12 ظهراً، والساعة 1 ظهراً تقع خارج هذه الفترة",
             "is_correct": true
           },
           {
-            "text": "??? ???? ??????? ??????? ?????? ??????",
+            "text": "نعم، التحميل والتفريغ للموردين مسموح دائماً بغض النظر عن الوقت",
             "is_correct": false
           }
         ],
-        "explanation": "????? ?????? ????? ??? 12:00 ????? ????????. ??????? ???? ???? ?????? 14:00 ????? ????? ??????."
+        "explanation": "يسري الاستثناء الخاص بالتحميل والتفريغ بشكل صارم بين 6 صباحاً و12 ظهراً. في الساعة 1 ظهراً تكون المنطقة مغلقة لجميع المركبات بما فيها الموردون."
       }
     }
   },
   {
-    "question_id": "F103_Q08",
+    "question_id": "Zone-F103_Q08",
     "type": "IS_IT_ALLOWED",
     "difficulty": "HARD",
     "is_critical": true,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Is fietsen toegestaan in een F103-voetgangerszone?",
+        "question": "Een personenwagen wil om 9 uur door de voetgangerszone rijden om een kortere route te nemen. Is dat toegestaan?",
         "choices": [
           {
-            "text": "Alleen als een onderbord dit uitdrukkelijk toestaat; anders is de zone enkel voor voetgangers",
+            "text": "Neen, doorgaand verkeer is niet toegestaan in een voetgangerszone, ook niet tijdens de uren voor laden en lossen",
             "is_correct": true
           },
           {
-            "text": "Ja fietsen is altijd toegestaan in iedere voetgangerszone",
+            "text": "Ja, want het is 9 uur en dat valt binnen de toegestane uren van 6 tot 12 uur",
             "is_correct": false
           }
         ],
-        "explanation": "Een voetgangerszone (F103) is in principe voorbehouden voor voetgangers. Fietsen is alleen toegestaan indien een onderbord dit expliciet aangeeft."
+        "explanation": "De uitzondering tussen 6 en 12 uur geldt uitsluitend voor laden en lossen. Doorgaand verkeer en andere ritten zijn te allen tijde verboden in een voetgangerszone."
       },
       "EN": {
-        "question": "Is cycling permitted in an F103 pedestrian zone?",
+        "question": "A private car wants to drive through the pedestrian zone at 9 a.m. to take a shorter route. Is that permitted?",
         "choices": [
           {
-            "text": "Only if a sub-sign explicitly permits it; otherwise the zone is for pedestrians only",
+            "text": "No, through traffic is not permitted in a pedestrian zone, even during the loading and unloading hours",
             "is_correct": true
           },
           {
-            "text": "Yes cycling is always permitted in every pedestrian zone",
+            "text": "Yes, because it is 9 a.m. and that falls within the permitted hours of 6 a.m. to 12 p.m.",
             "is_correct": false
           }
         ],
-        "explanation": "A pedestrian zone (F103) is in principle reserved for pedestrians. Cycling is only permitted if a sub-sign explicitly states this."
+        "explanation": "The exception between 6 a.m. and 12 p.m. applies exclusively to loading and unloading. Through traffic and other trips are prohibited at all times in a pedestrian zone."
       },
       "FR": {
-        "question": "Le cyclisme est-il autorise dans une zone pietonne F103 ?",
+        "question": "Une voiture particulière veut traverser la zone piétonne à 9 h pour prendre un raccourci. Est-ce autorisé?",
         "choices": [
           {
-            "text": "Seulement si un sous-panneau l autorise explicitement; sinon la zone est pour les pietons",
+            "text": "Non, la circulation de transit n'est pas autorisée dans une zone piétonne, même pendant les heures de chargement et de déchargement",
             "is_correct": true
           },
           {
-            "text": "Oui le cyclisme est toujours autorise dans chaque zone pietonne",
+            "text": "Oui, car il est 9 h et cela tombe dans les heures autorisées de 6 h à 12 h",
             "is_correct": false
           }
         ],
-        "explanation": "Une zone pietonne (F103) est en principe reservee aux pietons. Le cyclisme n est autorise que si un sous-panneau l indique explicitement."
+        "explanation": "L'exception entre 6 h et 12 h s'applique exclusivement au chargement et au déchargement. La circulation de transit et autres trajets sont interdits à tout moment dans une zone piétonne."
       },
       "AR": {
-        "question": "?? ????? ????? ??????? ?? ????? ???? F103?",
+        "question": "تريد سيارة خاصة العبور عبر منطقة المشاة الساعة 9 صباحاً لأخذ طريق أقصر. هل هذا مسموح؟",
         "choices": [
           {
-            "text": "??? ??? ??? ???? ????? ?????? ????? ??????? ???? ???????? ?????? ???",
+            "text": "لا، حركة المرور العابر غير مسموح بها في منطقة المشاة حتى خلال ساعات التحميل والتفريغ",
             "is_correct": true
           },
           {
-            "text": "??? ???? ??????? ????? ?? ?????? ?? ?? ????? ????",
+            "text": "نعم، لأن الساعة 9 صباحاً تقع ضمن الأوقات المسموحة من 6 إلى 12",
             "is_correct": false
           }
         ],
-        "explanation": "????? ?????? (F103) ????? ??????? ??????. ????? ????? ??????? ??? ??? ??? ????? ?????? ????? ??? ??? ??????."
+        "explanation": "يسري الاستثناء بين 6 صباحاً و12 ظهراً حصرياً على التحميل والتفريغ. حركة المرور العابر ورحلات أخرى محظورة في جميع الأوقات في منطقة المشاة."
       }
     }
   }

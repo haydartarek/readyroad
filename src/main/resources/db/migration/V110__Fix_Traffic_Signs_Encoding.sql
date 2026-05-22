@@ -12,47 +12,47 @@ SET NAMES utf8mb4;
 
 -- Fix remaining 1 corrupted Arabic row in name_ar
 UPDATE traffic_signs
-SET name_ar = CONVERT(BINARY(CONVERT(name_ar USING latin1)) USING utf8mb4)
+SET name_ar = CONVERT(CAST(CONVERT(name_ar USING latin1) AS BINARY) USING utf8mb4)
 WHERE HEX(name_ar) LIKE '%C383%' OR HEX(name_ar) LIKE '%C382%';
 
 -- Fix corrupted French rows in name_fr
 UPDATE traffic_signs
-SET name_fr = CONVERT(BINARY(CONVERT(name_fr USING latin1)) USING utf8mb4)
+SET name_fr = CONVERT(CAST(CONVERT(name_fr USING latin1) AS BINARY) USING utf8mb4)
 WHERE HEX(name_fr) LIKE '%C383%' OR HEX(name_fr) LIKE '%C382%';
 
 -- Fix corrupted Dutch rows in name_nl
 UPDATE traffic_signs
-SET name_nl = CONVERT(BINARY(CONVERT(name_nl USING latin1)) USING utf8mb4)
+SET name_nl = CONVERT(CAST(CONVERT(name_nl USING latin1) AS BINARY) USING utf8mb4)
 WHERE HEX(name_nl) LIKE '%C383%' OR HEX(name_nl) LIKE '%C382%';
 
 -- Fix corrupted Arabic rows in description_ar
 UPDATE traffic_signs
-SET description_ar = CONVERT(BINARY(CONVERT(description_ar USING latin1)) USING utf8mb4)
+SET description_ar = CONVERT(CAST(CONVERT(description_ar USING latin1) AS BINARY) USING utf8mb4)
 WHERE description_ar IS NOT NULL AND (HEX(description_ar) LIKE '%C383%' OR HEX(description_ar) LIKE '%C382%');
 
 -- Fix corrupted French rows in description_fr
 UPDATE traffic_signs
-SET description_fr = CONVERT(BINARY(CONVERT(description_fr USING latin1)) USING utf8mb4)
+SET description_fr = CONVERT(CAST(CONVERT(description_fr USING latin1) AS BINARY) USING utf8mb4)
 WHERE description_fr IS NOT NULL AND (HEX(description_fr) LIKE '%C383%' OR HEX(description_fr) LIKE '%C382%');
 
 -- Fix corrupted Dutch rows in description_nl
 UPDATE traffic_signs
-SET description_nl = CONVERT(BINARY(CONVERT(description_nl USING latin1)) USING utf8mb4)
+SET description_nl = CONVERT(CAST(CONVERT(description_nl USING latin1) AS BINARY) USING utf8mb4)
 WHERE description_nl IS NOT NULL AND (HEX(description_nl) LIKE '%C383%' OR HEX(description_nl) LIKE '%C382%');
 
 -- Fix corrupted Arabic rows in long_description_ar
 UPDATE traffic_signs
-SET long_description_ar = CONVERT(BINARY(CONVERT(long_description_ar USING latin1)) USING utf8mb4)
+SET long_description_ar = CONVERT(CAST(CONVERT(long_description_ar USING latin1) AS BINARY) USING utf8mb4)
 WHERE long_description_ar IS NOT NULL AND (HEX(long_description_ar) LIKE '%C383%' OR HEX(long_description_ar) LIKE '%C382%');
 
 -- Fix corrupted French rows in long_description_fr
 UPDATE traffic_signs
-SET long_description_fr = CONVERT(BINARY(CONVERT(long_description_fr USING latin1)) USING utf8mb4)
+SET long_description_fr = CONVERT(CAST(CONVERT(long_description_fr USING latin1) AS BINARY) USING utf8mb4)
 WHERE long_description_fr IS NOT NULL AND (HEX(long_description_fr) LIKE '%C383%' OR HEX(long_description_fr) LIKE '%C382%');
 
 -- Fix corrupted Dutch rows in long_description_nl
 UPDATE traffic_signs
-SET long_description_nl = CONVERT(BINARY(CONVERT(long_description_nl USING latin1)) USING utf8mb4)
+SET long_description_nl = CONVERT(CAST(CONVERT(long_description_nl USING latin1) AS BINARY) USING utf8mb4)
 WHERE long_description_nl IS NOT NULL AND (HEX(long_description_nl) LIKE '%C383%' OR HEX(long_description_nl) LIKE '%C382%');
 
 -- ============================================================

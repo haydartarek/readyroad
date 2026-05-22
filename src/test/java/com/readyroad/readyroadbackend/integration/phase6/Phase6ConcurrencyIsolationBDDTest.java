@@ -85,6 +85,8 @@ public class Phase6ConcurrencyIsolationBDDTest {
         private User userB;
         private Category testCategory;
         private RoadSign testSign;
+        private String userAJwt;
+        private String userBJwt;
 
         @BeforeEach
         void setUp() {
@@ -105,6 +107,8 @@ public class Phase6ConcurrencyIsolationBDDTest {
                 // Create users
                 userA = createUser("usera", "usera@test.com");
                 userB = createUser("userb", "userb@test.com");
+                userAJwt = loginAndGetJwt(userA.getUsername(), "password123");
+                userBJwt = loginAndGetJwt(userB.getUsername(), "password123");
 
                 // ✅ Use existing seeded category or create with unique code
                 var existingCategories = categoryRepository.findAll();
@@ -153,7 +157,7 @@ public class Phase6ConcurrencyIsolationBDDTest {
                 CompletableFuture<MvcResult> futureA = CompletableFuture.supplyAsync(() -> {
                         try {
                                 return mockMvc.perform(post("/api/exams/simulations/start")
-                                                .param("userId", userA.getId().toString())
+                                                .header("Authorization", "Bearer " + userAJwt)
                                                 .contentType(MediaType.APPLICATION_JSON))
                                                 .andExpect(status().isCreated())
                                                 .andReturn();
@@ -165,7 +169,7 @@ public class Phase6ConcurrencyIsolationBDDTest {
                 CompletableFuture<MvcResult> futureB = CompletableFuture.supplyAsync(() -> {
                         try {
                                 return mockMvc.perform(post("/api/exams/simulations/start")
-                                                .param("userId", userB.getId().toString())
+                                                .header("Authorization", "Bearer " + userBJwt)
                                                 .contentType(MediaType.APPLICATION_JSON))
                                                 .andExpect(status().isCreated())
                                                 .andReturn();
@@ -210,13 +214,13 @@ public class Phase6ConcurrencyIsolationBDDTest {
         void userCannotAccessOtherUsersExamResults() throws Exception {
                 // Given: User A and B have started exams
                 MvcResult resultA = mockMvc.perform(post("/api/exams/simulations/start")
-                                .param("userId", userA.getId().toString())
+                                .header("Authorization", "Bearer " + userAJwt)
                                 .contentType(MediaType.APPLICATION_JSON))
                                 .andExpect(status().isCreated())
                                 .andReturn();
 
                 MvcResult resultB = mockMvc.perform(post("/api/exams/simulations/start")
-                                .param("userId", userB.getId().toString())
+                                .header("Authorization", "Bearer " + userBJwt)
                                 .contentType(MediaType.APPLICATION_JSON))
                                 .andExpect(status().isCreated())
                                 .andReturn();
@@ -232,13 +236,13 @@ public class Phase6ConcurrencyIsolationBDDTest {
                 // Note: In dev mode, userId is fallback to 1, so we simulate by checking DB
                 // isolation
                 mockMvc.perform(get("/api/exams/simulations/" + examIdB + "/results")
-                                .param("userId", userA.getId().toString())
+                                .header("Authorization", "Bearer " + userAJwt)
                                 .contentType(MediaType.APPLICATION_JSON))
                                 .andExpect(status().is4xxClientError()); // Should be 403 or 404
 
                 // When: User B tries to access User A's exam results
                 mockMvc.perform(get("/api/exams/simulations/" + examIdA + "/results")
-                                .param("userId", userB.getId().toString())
+                                .header("Authorization", "Bearer " + userBJwt)
                                 .contentType(MediaType.APPLICATION_JSON))
                                 .andExpect(status().is4xxClientError()); // Should be 403 or 404
         }
@@ -252,13 +256,13 @@ public class Phase6ConcurrencyIsolationBDDTest {
         void answersUpdateOnlyCorrectExamInstance() throws Exception {
                 // Given: User A and B have started exams
                 MvcResult resultA = mockMvc.perform(post("/api/exams/simulations/start")
-                                .param("userId", userA.getId().toString())
+                                .header("Authorization", "Bearer " + userAJwt)
                                 .contentType(MediaType.APPLICATION_JSON))
                                 .andExpect(status().isCreated())
                                 .andReturn();
 
                 MvcResult resultB = mockMvc.perform(post("/api/exams/simulations/start")
-                                .param("userId", userB.getId().toString())
+                                .header("Authorization", "Bearer " + userBJwt)
                                 .contentType(MediaType.APPLICATION_JSON))
                                 .andExpect(status().isCreated())
                                 .andReturn();
@@ -277,6 +281,7 @@ public class Phase6ConcurrencyIsolationBDDTest {
 
                 // When: User A submits 1 answer for their exam
                 mockMvc.perform(post("/api/exams/simulations/" + examIdA + "/questions/" + questionIdA + "/answer")
+                                .header("Authorization", "Bearer " + userAJwt)
                                 .contentType(MediaType.APPLICATION_JSON)
                                 .content(String.format("{\"selectedOptionId\":%d}", optionIdA)))
                                 .andExpect(status().isOk());
@@ -314,5 +319,23 @@ public class Phase6ConcurrencyIsolationBDDTest {
                 user.setIsActive(true);
                 user.setIsLocked(false);
                 return userRepository.save(user);
+        }
+
+        private String loginAndGetJwt(String username, String password) {
+                try {
+                        String loginJson = String.format("{\"username\":\"%s\",\"password\":\"%s\"}", username,
+                                        password);
+
+                        MvcResult result = mockMvc.perform(post("/api/auth/login")
+                                        .contentType(MediaType.APPLICATION_JSON)
+                                        .content(loginJson))
+                                        .andExpect(status().isOk())
+                                        .andReturn();
+
+                        JsonNode jsonNode = objectMapper.readTree(result.getResponse().getContentAsString());
+                        return jsonNode.get("token").asText();
+                } catch (Exception exception) {
+                        throw new IllegalStateException("Failed to authenticate phase 6 test user", exception);
+                }
         }
 }

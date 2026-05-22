@@ -24,14 +24,20 @@ public interface ExamSimulationRepository extends JpaRepository<ExamSimulation, 
      * Find all completed exams for user
      */
     List<ExamSimulation> findByUserIdAndStatusOrderByCompletedAtDesc(
-        Long userId,
-        ExamSimulation.ExamStatus status
-    );
+            Long userId,
+            ExamSimulation.ExamStatus status);
 
     /**
      * Find all exams for user (for history)
      */
     List<ExamSimulation> findByUserIdOrderByStartedAtDesc(Long userId);
+
+    /**
+     * Find all non-active exams for user (history view — excludes IN_PROGRESS)
+     */
+    List<ExamSimulation> findByUserIdAndStatusNotOrderByStartedAtDesc(
+            Long userId,
+            ExamSimulation.ExamStatus status);
 
     /**
      * Check if user has active exam
@@ -47,18 +53,16 @@ public interface ExamSimulationRepository extends JpaRepository<ExamSimulation, 
      * Count completed exams where user achieved a passing score (≥ passThreshold)
      */
     long countByUserIdAndStatusAndScorePercentageGreaterThanEqual(
-        Long userId,
-        ExamSimulation.ExamStatus status,
-        double passThreshold
-    );
+            Long userId,
+            ExamSimulation.ExamStatus status,
+            double passThreshold);
 
     /**
      * Find all exams with given status ordered by completion date (admin use)
      */
     List<ExamSimulation> findByStatusOrderByCompletedAtDesc(
-        ExamSimulation.ExamStatus status,
-        Pageable pageable
-    );
+            ExamSimulation.ExamStatus status,
+            Pageable pageable);
 
     /**
      * Count all exams with given status (admin use)

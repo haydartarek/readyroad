@@ -3,6 +3,7 @@ package com.readyroad.readyroadbackend.controller;
 import com.readyroad.readyroadbackend.domain.entity.ImportHistory;
 import com.readyroad.readyroadbackend.domain.repository.ImportHistoryRepository;
 import com.readyroad.readyroadbackend.dto.ImportReport;
+import com.readyroad.readyroadbackend.dto.response.ImportHistoryResponse;
 import com.readyroad.readyroadbackend.service.BackendMessageService;
 import com.readyroad.readyroadbackend.service.DataImportService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -16,6 +17,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.security.Principal;
 import java.time.LocalDateTime;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -91,16 +93,19 @@ public class DataImportController {
 
     @GetMapping("/history")
     @Operation(summary = "List recent import history")
-    public ResponseEntity<List<ImportHistory>> getHistory() {
-        return ResponseEntity.ok(importHistoryRepository.findTop20ByOrderByPerformedAtDesc());
+    public ResponseEntity<List<ImportHistoryResponse>> getHistory() {
+        return ResponseEntity.ok(importHistoryRepository.findTop20ByOrderByPerformedAtDesc().stream()
+                .map(this::toResponse)
+                .toList());
     }
 
     @GetMapping("/history/{id}")
     @Operation(summary = "Get single import history record")
     public ResponseEntity<?> getHistoryDetail(@PathVariable Long id) {
         return importHistoryRepository.findById(id)
-                .map(ResponseEntity::ok)
-                .orElse(ResponseEntity.notFound().build());
+                .<ResponseEntity<?>>map(history -> ResponseEntity.ok(toResponse(history)))
+                .orElse(errorResponse(org.springframework.http.HttpStatus.NOT_FOUND,
+                        messages.get("error.resource_not_found")));
     }
 
     // ── Internal helpers ─────────────────────────────────────────
@@ -154,7 +159,32 @@ public class DataImportController {
         }
     }
 
-    private ResponseEntity<Map<String, String>> badRequest(String message) {
-        return ResponseEntity.badRequest().body(Map.of("error", message));
+    private ImportHistoryResponse toResponse(ImportHistory history) {
+        return new ImportHistoryResponse(
+                history.getId(),
+                history.getPerformedBy(),
+                history.getPerformedAt(),
+                history.getImportType(),
+                history.getFileName(),
+                history.getDryRun(),
+                history.getCreatedCount(),
+                history.getUpdatedCount(),
+                history.getSkippedCount(),
+                history.getStatus(),
+                history.getErrorSummary(),
+                history.getWarningSummary());
+    }
+
+    private ResponseEntity<Map<String, Object>> badRequest(String message) {
+        return errorResponse(org.springframework.http.HttpStatus.BAD_REQUEST, message);
+    }
+
+    private ResponseEntity<Map<String, Object>> errorResponse(org.springframework.http.HttpStatus status,
+            String message) {
+        Map<String, Object> body = new HashMap<>();
+        body.put("error", message);
+        body.put("message", message);
+        body.put("timestamp", LocalDateTime.now());
+        return ResponseEntity.status(status).body(body);
     }
 }

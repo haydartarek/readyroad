@@ -45,8 +45,20 @@ public interface UserCategoryProgressRepository extends JpaRepository<UserCatego
     List<UserCategoryProgress> findStrongCategoriesByUserId(Long userId);
 
     /**
-     * Global category stats aggregated across all users
+     * Global category performance stats aggregated across all users — single SQL
+     * query
+     * replaces the previous full table scan + in-memory GROUP BY.
+     * Returns rows: [category_id, code, name_en, total_attempted, total_correct,
+     * user_count, avg_accuracy]
      */
-    @Query("SELECT p FROM UserCategoryProgress p LEFT JOIN FETCH p.category ORDER BY p.categoryId")
-    List<UserCategoryProgress> findAllWithCategory();
+    @Query(value = "SELECT p.category_id, c.code, c.name_en, " +
+            "       SUM(p.questions_attempted) AS total_attempted, " +
+            "       SUM(p.correct_answers) AS total_correct, " +
+            "       COUNT(p.id) AS user_count, " +
+            "       AVG(p.accuracy_rate) AS avg_accuracy " +
+            "FROM user_category_progress p " +
+            "JOIN categories c ON c.id = p.category_id " +
+            "GROUP BY p.category_id, c.code, c.name_en " +
+            "ORDER BY avg_accuracy ASC", nativeQuery = true)
+    List<Object[]> findCategoryStatsAggregated();
 }

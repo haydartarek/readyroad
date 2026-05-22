@@ -11,14 +11,18 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import jakarta.annotation.PostConstruct;
 
 /**
  * Authentication Service
@@ -40,6 +44,15 @@ public class AuthService {
     private final AuthenticationManager authenticationManager;
     private final NotificationService notificationService;
     private final BackendMessageService messages;
+
+    // Computed once at startup; used to run BCrypt when a login identifier is not
+    // found, keeping response time indistinguishable from a real wrong-password attempt.
+    private String dummyHash;
+
+    @PostConstruct
+    private void init() {
+        dummyHash = passwordEncoder.encode("readyroad-dummy-for-timing-protection");
+    }
 
     /**
      * Register a new user
@@ -79,7 +92,15 @@ public class AuthService {
         user.setIsLocked(false);
 
         // Save user to database
-        user = userRepository.save(user);
+        try {
+            user = userRepository.save(user);
+        } catch (DataIntegrityViolationException ex) {
+            log.warn("Registration save conflict for username={} email={}: {}",
+                    normalizedUsername,
+                    normalizedEmail,
+                    ex.getMessage());
+            throw registrationConflict(normalizedUsername, normalizedEmail, ex);
+        }
         log.info("✅ User registered successfully: {}", user.getUsername());
 
         // Notify all admins about the new registration
@@ -98,6 +119,21 @@ public class AuthService {
         return buildAuthResponse(user, jwtToken);
     }
 
+    private IllegalArgumentException registrationConflict(
+            String normalizedUsername,
+            String normalizedEmail,
+            DataIntegrityViolationException ex) {
+        if (userRepository.existsByUsernameIgnoreCase(normalizedUsername)) {
+            return new IllegalArgumentException(messages.get("auth.username_exists"), ex);
+        }
+
+        if (userRepository.existsByEmailIgnoreCase(normalizedEmail)) {
+            return new IllegalArgumentException(messages.get("auth.email_exists"), ex);
+        }
+
+        return new IllegalArgumentException(messages.get("error.unexpected"), ex);
+    }
+
     /**
      * Authenticate user and generate JWT token
      *
@@ -111,10 +147,16 @@ public class AuthService {
         String identifier = request.getUsername().trim();
         log.info("Login attempt for identifier={}", identifier);
 
-        try {
-            userRepository.findByUsernameOrEmailIgnoreCase(identifier)
-                    .orElseThrow(() -> new BadCredentialsException(messages.get("auth.login.invalid_credentials")));
+        Optional<User> userOpt = userRepository.findByUsernameOrEmailIgnoreCase(identifier);
+        if (userOpt.isEmpty()) {
+            // Run BCrypt against a dummy hash so response time is the same whether the
+            // identifier exists or not, preventing user-enumeration via timing.
+            passwordEncoder.matches(request.getPassword(), dummyHash);
+            throw new BadCredentialsException(messages.get("auth.login.invalid_credentials"));
+        }
+        User user = userOpt.get();
 
+        try {
             authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(
                             identifier,
@@ -123,9 +165,6 @@ public class AuthService {
             log.warn("Authentication failed for identifier={}: {}", identifier, e.getMessage());
             throw e;
         }
-
-        User user = userRepository.findByUsernameOrEmailIgnoreCase(identifier)
-                .orElseThrow(() -> new IllegalArgumentException(messages.get("auth.user_not_found")));
 
         Map<String, Object> claims = new HashMap<>();
         claims.put("role", user.getRole().name());

@@ -108,7 +108,7 @@ public class NotificationService {
     @Transactional
     public int markAllAsRead(String username) {
         Long userId = resolveUserId(username);
-        int updated = notificationRepository.markAllReadByUserId(userId);
+        int updated = notificationRepository.markAllReadByUserId(userId, Instant.now());
         log.info("Marked {} notifications as read for user {}", updated, username);
         return updated;
     }
@@ -162,6 +162,27 @@ public class NotificationService {
                 .messageParams(String.format("{\"score\":%d,\"total\":%d,\"pct\":%d,\"needed\":%d}", score, total, pct,
                         pointsShort))
                 .link("/exam/results/" + examId)
+                .build());
+    }
+
+    /**
+     * Create an EXAM_RESULT notification when a user abandons (cancels) an exam.
+     * Uses the neutral EXAM_RESULT type — not EXAM_FAILED, since abandonment is
+     * a deliberate user action rather than a performance failure.
+     *
+     * @param userId recipient user ID
+     * @param examId the exam that was abandoned
+     */
+    @Transactional
+    public void createExamAbandonedNotification(Long userId, Long examId) {
+        save(Notification.builder()
+                .userId(userId)
+                .type(NotificationType.EXAM_RESULT)
+                .title("Exam Cancelled")
+                .message("Your exam session was cancelled. You can start a new exam whenever you're ready.")
+                .messageKey("notif.msg.exam_abandoned")
+                .messageParams("{}")
+                .link("/exam")
                 .build());
     }
 

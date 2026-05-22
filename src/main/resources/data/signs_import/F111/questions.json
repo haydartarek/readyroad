@@ -10,47 +10,74 @@
       "NL": {
         "question": "Wat betekent dit verkeersbord?",
         "choices": [
-          { "text": "Fietsstraat", "is_correct": true },
+          {
+            "text": "Fietsstraat",
+            "is_correct": true
+          },
           {
             "text": "Rijden verboden in beide richtingen",
             "is_correct": false
           },
-          { "text": "Gevaarsbord voor wegwerkzaamheden", "is_correct": false }
+          {
+            "text": "Gevaarsbord voor wegwerkzaamheden",
+            "is_correct": false
+          }
         ],
         "explanation": "Begin / Einde fietsstraat."
       },
       "EN": {
         "question": "What does this traffic sign mean?",
         "choices": [
-          { "text": "Bicycle street", "is_correct": true },
+          {
+            "text": "Bicycle street",
+            "is_correct": true
+          },
           {
             "text": "Driving prohibited in both directions",
             "is_correct": false
           },
-          { "text": "Danger sign for roadworks", "is_correct": false }
+          {
+            "text": "Danger sign for roadworks",
+            "is_correct": false
+          }
         ],
         "explanation": "Start / End of bicycle street."
       },
       "FR": {
         "question": "Que signifie ce panneau de signalisation ?",
         "choices": [
-          { "text": "Rue cyclable", "is_correct": true },
+          {
+            "text": "Rue cyclable",
+            "is_correct": true
+          },
           {
             "text": "Circulation interdite dans les deux sens",
             "is_correct": false
           },
-          { "text": "Panneau de danger pour travaux", "is_correct": false }
+          {
+            "text": "Panneau de danger pour travaux",
+            "is_correct": false
+          }
         ],
-        "explanation": "D�but / Fin de rue cyclable."
+        "explanation": "Ce panneau indique le début ou la présence d’une rue cyclable."
       },
       "AR": {
-        "question": "?? ???? ??? ??????? ?????????",
+        "question": "ما معنى هذه العلامة المرورية؟",
         "choices": [
-          { "text": "???? ???????? ????????", "is_correct": true },
-          { "text": "??????? ?????? ?? ??? ?????????", "is_correct": false },
-          { "text": "????? ??? ?????? ??????", "is_correct": false }
+          {
+            "text": "شارع للدراجات الهوائية",
+            "is_correct": true
+          },
+          {
+            "text": "منع السير في كلا الاتجاهين",
+            "is_correct": false
+          },
+          {
+            "text": "علامة خطر بسبب أعمال الطريق",
+            "is_correct": false
+          }
         ],
-        "explanation": "????? / ????? ???? ????????."
+        "explanation": "تشير هذه العلامة إلى بداية شارع مخصص للدراجات أو وجوده."
       }
     }
   },
@@ -65,38 +92,74 @@
       "NL": {
         "question": "Tot welke categorie verkeerstekens behoort dit bord?",
         "choices": [
-          { "text": "Aanwijzingsborden", "is_correct": true },
-          { "text": "Gebodsborden", "is_correct": false },
-          { "text": "Parkeerregelementsborden", "is_correct": false }
+          {
+            "text": "Aanwijzingsborden",
+            "is_correct": true
+          },
+          {
+            "text": "Gebodsborden",
+            "is_correct": false
+          },
+          {
+            "text": "Parkeerregelementsborden",
+            "is_correct": false
+          }
         ],
         "explanation": "Dit bord behoort tot de categorie 'Aanwijzingsborden'. Elk type bord heeft een specifieke vorm en kleurschema."
       },
       "EN": {
         "question": "To which category of traffic signs does this sign belong?",
         "choices": [
-          { "text": "Information signs", "is_correct": true },
-          { "text": "Mandatory signs", "is_correct": false },
-          { "text": "Parking regulation signs", "is_correct": false }
+          {
+            "text": "Information signs",
+            "is_correct": true
+          },
+          {
+            "text": "Mandatory signs",
+            "is_correct": false
+          },
+          {
+            "text": "Parking regulation signs",
+            "is_correct": false
+          }
         ],
         "explanation": "This sign belongs to the 'Information signs' category. Each type of sign has a specific shape and color scheme."
       },
       "FR": {
-        "question": "� quelle cat�gorie de panneaux de signalisation ce panneau appartient-il ?",
+        "question": "À quelle catégorie de panneaux de signalisation ce panneau appartient-il ?",
         "choices": [
-          { "text": "Panneaux d'indication", "is_correct": true },
-          { "text": "Panneaux d'obligation", "is_correct": false },
-          { "text": "Panneaux de stationnement", "is_correct": false }
+          {
+            "text": "Panneaux d'indication",
+            "is_correct": true
+          },
+          {
+            "text": "Panneaux d'obligation",
+            "is_correct": false
+          },
+          {
+            "text": "Panneaux de stationnement",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ce panneau appartient � la cat�gorie 'Panneaux d'indication'. Chaque type de panneau a une forme et un sch�ma de couleurs sp�cifiques."
+        "explanation": "Ce panneau appartient à la catégorie des panneaux d'indication. Chaque type de panneau a une forme et un schéma de couleurs spécifiques."
       },
       "AR": {
-        "question": "??? ?? ??? ??????? ??? ??????? ?????????",
+        "question": "إلى أي فئة من العلامات المرورية تنتمي هذه العلامة؟",
         "choices": [
-          { "text": "???????? ?????????", "is_correct": true },
-          { "text": "???????? ?????????", "is_correct": false },
-          { "text": "?????? ??????", "is_correct": false }
+          {
+            "text": "علامات الإرشاد",
+            "is_correct": true
+          },
+          {
+            "text": "علامات الإلزام",
+            "is_correct": false
+          },
+          {
+            "text": "علامات الوقوف",
+            "is_correct": false
+          }
         ],
-        "explanation": "??? ??????? ???????? ????? ??? ??? '?????? ?????????'. ?? ??? ?? ???????? ?? ??? ????? ????? ????."
+        "explanation": "تنتمي هذه العلامة إلى فئة علامات الإرشاد. لكل نوع من العلامات شكل ونظام ألوان محدد."
       }
     }
   },
@@ -145,37 +208,40 @@
         "explanation": "Information signs provide road users with useful info about road situation, facilities, or special lanes."
       },
       "FR": {
-        "question": "Quelles informations ce panneau fournit-il aux usagers de la route ?",
+        "question": "Quelles informations ou indications ce panneau donne-t-il aux usagers de la route ?",
         "choices": [
           {
-            "text": "Le panneau fournit des informations utiles sur la situation routi�re ou les �quipements",
+            "text": "Le panneau donne des informations ou indications utiles sur la situation routière ou les équipements",
             "is_correct": true
           },
           {
-            "text": "Le panneau interdit une man�uvre de conduite sp�cifique",
+            "text": "Le panneau interdit une manoeuvre de conduite spécifique",
             "is_correct": false
           },
           {
-            "text": "Le panneau oblige � s'arr�ter pour contr�le",
+            "text": "Le panneau impose un arrêt pour contrôle",
             "is_correct": false
           }
         ],
-        "explanation": "Les panneaux d'indication informent les usagers sur la situation routi�re, les �quipements ou voies sp�ciales."
+        "explanation": "Les panneaux d'indication informent les usagers sur la situation routière, les équipements ou les voies spéciales."
       },
       "AR": {
-        "question": "?? ????????? ?? ????????? ???? ?????? ??? ??????? ???????? ???????? ???????",
+        "question": "ما المعلومات أو الإرشادات التي تقدمها هذه العلامة لمستخدمي الطريق؟",
         "choices": [
           {
-            "text": "???? ??????? ???????? ??????? ????? ?? ??????? ??? ???? ?????? ?? ???????",
+            "text": "توفر العلامة معلومات أو إرشادات مفيدة حول وضع الطريق أو التجهيزات",
             "is_correct": true
           },
           {
-            "text": "??????? ???????? ???? ?????? ????? ?????",
+            "text": "تحظر العلامة مناورة قيادة محددة",
             "is_correct": false
           },
-          { "text": "??????? ???????? ???? ?????? ?????", "is_correct": false }
+          {
+            "text": "تفرض العلامة التوقف للتفتيش",
+            "is_correct": false
+          }
         ],
-        "explanation": "?????? ????????? ???? ???????? ?????? ??????? ????? ??? ???? ?????? ????????."
+        "explanation": "تعطي علامات الإرشاد معلومات لمستخدمي الطريق حول وضع الطريق أو التجهيزات أو المسارات الخاصة."
       }
     }
   },
@@ -188,16 +254,22 @@
     "_note": "TEMPLATE (MEDIUM): Replace with sign-specific question for production.",
     "i18n": {
       "NL": {
-        "question": "Wat is het kleurenschema van aanwijzingsborden in Belgi�?",
+        "question": "Wat is het kleurenschema van aanwijzingsborden in België?",
         "choices": [
           {
             "text": "Blauw of groen achtergrond met witte symbolen en tekst",
             "is_correct": true
           },
-          { "text": "Rode achtergrond met witte tekst", "is_correct": false },
-          { "text": "Gele achtergrond met zwarte tekst", "is_correct": false }
+          {
+            "text": "Rode achtergrond met witte tekst",
+            "is_correct": false
+          },
+          {
+            "text": "Gele achtergrond met zwarte tekst",
+            "is_correct": false
+          }
         ],
-        "explanation": "Aanwijzingsborden hebben doorgaans een blauwe achtergrond (stedelijk) of groene achtergrond (autosnelweg)."
+        "explanation": "Aanwijzingsborden hebben doorgaans een blauwe achtergrond voor gewone wegen of een groene achtergrond voor autosnelwegen."
       },
       "EN": {
         "question": "What is the color scheme of information signs in Belgium?",
@@ -206,34 +278,52 @@
             "text": "Blue or green background with white symbols and text",
             "is_correct": true
           },
-          { "text": "Red background with white text", "is_correct": false },
-          { "text": "Yellow background with black text", "is_correct": false }
+          {
+            "text": "Red background with white text",
+            "is_correct": false
+          },
+          {
+            "text": "Yellow background with black text",
+            "is_correct": false
+          }
         ],
         "explanation": "Information signs typically have a blue (urban) or green (motorway) background."
       },
       "FR": {
-        "question": "Quel est le sch�ma de couleurs des panneaux d'indication en Belgique ?",
+        "question": "Quel est le schéma de couleurs des panneaux d'indication en Belgique ?",
         "choices": [
           {
             "text": "Fond bleu ou vert avec des symboles et du texte blancs",
             "is_correct": true
           },
-          { "text": "Fond rouge avec texte blanc", "is_correct": false },
-          { "text": "Fond jaune avec texte noir", "is_correct": false }
+          {
+            "text": "Fond rouge avec texte blanc",
+            "is_correct": false
+          },
+          {
+            "text": "Fond jaune avec texte noir",
+            "is_correct": false
+          }
         ],
-        "explanation": "Les panneaux d'indication ont g�n�ralement un fond bleu (urbain) ou vert (autoroute)."
+        "explanation": "Les panneaux d'indication ont généralement un fond bleu pour les routes ordinaires ou un fond vert pour les autoroutes."
       },
       "AR": {
-        "question": "?? ?? ???? ??????? ??????? ????????? ?? ???????",
+        "question": "ما نظام ألوان علامات الإرشاد في بلجيكا؟",
         "choices": [
           {
-            "text": "????? ????? ?? ????? ?? ???? ??? ????",
+            "text": "خلفية زرقاء أو خضراء مع رموز ونصوص بيضاء",
             "is_correct": true
           },
-          { "text": "????? ????? ?? ?? ????", "is_correct": false },
-          { "text": "????? ????? ?? ?? ????", "is_correct": false }
+          {
+            "text": "خلفية حمراء مع نص أبيض",
+            "is_correct": false
+          },
+          {
+            "text": "خلفية صفراء مع نص أسود",
+            "is_correct": false
+          }
         ],
-        "explanation": "?????? ????????? ????? ??? ????? ????? (????) ?? ????? (???? ????)."
+        "explanation": "عادة تكون علامات الإرشاد بخلفية زرقاء للطرق العادية أو بخلفية خضراء للطرق السيارة."
       }
     }
   },
@@ -274,32 +364,32 @@
         "explanation": "Information signs provide legally binding guidance to road users. They must not be ignored and should be followed."
       },
       "FR": {
-        "question": "En tant qu'usager de la route, �tes-vous autoris� � ignorer les panneaux d'indication ?",
+        "question": "En tant qu'usager de la route, êtes-vous autorisé à ignorer les panneaux d'indication ?",
         "choices": [
           {
-            "text": "Non, les panneaux d'indication doivent �tre respect�s car ils fournissent des indications juridiquement contraignantes",
+            "text": "Non, les panneaux d'indication doivent être respectés car ils donnent des indications juridiquement contraignantes",
             "is_correct": true
           },
           {
-            "text": "Oui, les panneaux d'indication sont facultatifs et peuvent �tre ignor�s � votre discr�tion",
+            "text": "Oui, les panneaux d'indication sont facultatifs et peuvent être ignorés à votre discrétion",
             "is_correct": false
           }
         ],
-        "explanation": "Les panneaux d'indication fournissent des directives juridiquement contraignantes aux usagers. Ils ne peuvent pas �tre ignor�s."
+        "explanation": "Les panneaux d'indication donnent des directives juridiquement contraignantes aux usagers. Ils ne doivent pas être ignorés."
       },
       "AR": {
-        "question": "?? ????? ?? ??????? ?????? ?????? ?????? ??????????",
+        "question": "هل يجوز لك كمستخدم للطريق تجاهل علامات الإرشاد؟",
         "choices": [
           {
-            "text": "??? ??? ????? ?????? ????????? ????? ???? ??????? ????? ????????",
+            "text": "لا، يجب احترام علامات الإرشاد لأنها تقدم توجيهات ملزمة قانونياً",
             "is_correct": true
           },
           {
-            "text": "???? ?????? ????????? ???????? ????? ??????? ??? ?????? ?????",
+            "text": "نعم، علامات الإرشاد اختيارية ويمكن تجاهلها حسب تقديرك",
             "is_correct": false
           }
         ],
-        "explanation": "?????? ????????? ???? ??????? ????? ???????? ???????? ??????. ?? ???? ??????? ???? ???????? ???."
+        "explanation": "تقدم علامات الإرشاد توجيهات ملزمة قانونياً لمستخدمي الطريق، لذلك لا يجوز تجاهلها."
       }
     }
   },
@@ -321,7 +411,10 @@
             "text": "50 km/u; de normale bebouwde-kom-snelheid",
             "is_correct": false
           },
-          { "text": "20 km/u gelijk aan een woonerf", "is_correct": false }
+          {
+            "text": "20 km/u gelijk aan een woonerf",
+            "is_correct": false
+          }
         ],
         "explanation": "In een fietsstraat bedraagt de maximumsnelheid 30 km/u voor motorvoertuigen om de fietsers te beschermen die de volledige rijbaan mogen gebruiken."
       },
@@ -336,7 +429,10 @@
             "text": "50 km/h; the normal built-up area speed",
             "is_correct": false
           },
-          { "text": "20 km/h equal to a residential area", "is_correct": false }
+          {
+            "text": "20 km/h equal to a residential area",
+            "is_correct": false
+          }
         ],
         "explanation": "In a bicycle street the maximum speed is 30 km/h for motor vehicles to protect cyclists who may use the full carriageway."
       },
@@ -359,19 +455,22 @@
         "explanation": "Dans une rue cyclable la vitesse maximale est 30 km/h pour les vehicules a moteur afin de proteger les cyclistes qui peuvent utiliser toute la chaussee."
       },
       "AR": {
-        "question": "?? ???? ?????? ?????? ???????? ?????? ?? ???? ???????? (F111)?",
+        "question": "ما السرعة القصوى للمركبات الآلية في شارع الدراجات (F111)؟",
         "choices": [
           {
-            "text": "30 ??/????? ?? ???? ???????? ?????? ????? ???? ?? 30 ??/????",
+            "text": "30 كم/ساعة؛ لا يجوز للمركبات الآلية تجاوز 30 كم/ساعة في شارع الدراجات",
             "is_correct": true
           },
           {
-            "text": "50 ??/????? ?????? ??????? ?? ??????? ???????",
+            "text": "50 كم/ساعة؛ السرعة العادية داخل المناطق السكنية",
             "is_correct": false
           },
-          { "text": "20 ??/???? ??? ???? ??????", "is_correct": false }
+          {
+            "text": "20 كم/ساعة مثل منطقة السكن",
+            "is_correct": false
+          }
         ],
-        "explanation": "?? ???? ???????? ???? ?????? 30 ??/???? ???????? ?????? ?????? ???????? ????? ???? ??? ??????? ???? ??????."
+        "explanation": "في شارع الدراجات تكون السرعة القصوى 30 كم/ساعة للمركبات الآلية لحماية راكبي الدراجات الذين يمكنهم استعمال كامل الطريق."
       }
     }
   },
@@ -425,18 +524,18 @@
         "explanation": "Dans une rue cyclable les cyclistes ont une priorite absolue et peuvent utiliser toute la chaussee. Les vehicules a moteur ne peuvent PAS depasser les cyclistes."
       },
       "AR": {
-        "question": "?? ???? ?????? ????? ???? ?? ???? ???????? (F111)?",
+        "question": "هل يجوز لسائق مركبة آلية تجاوز راكب دراجة في شارع الدراجات (F111)؟",
         "choices": [
           {
-            "text": "?? ?? ???? ???????? ?????? ????? ????????? ???????? ???? ?? ??????? ???? ??????",
+            "text": "لا، لا يجوز للمركبات الآلية تجاوز راكبي الدراجات، ولراكبي الدراجات حق استعمال كامل الطريق",
             "is_correct": true
           },
           {
-            "text": "??? ??????? ????? ?? ?????? ??? ???? ??????? ?????",
+            "text": "نعم، التجاوز مسموح دائماً إذا توفرت مساحة كافية",
             "is_correct": false
           }
         ],
-        "explanation": "?? ???? ???????? ????? ???????? ????????? ??????? ????? ??? ??????? ???? ??????. ?? ???? ???????? ?????? ????? ????????."
+        "explanation": "في شارع الدراجات تكون الأولوية لراكبي الدراجات ويمكنهم استعمال كامل الطريق. لا يجوز للمركبات الآلية تجاوزهم."
       }
     }
   },
@@ -490,18 +589,18 @@
         "explanation": "Dans une rue cyclable vous pouvez rouler a cote d un autre cycliste (deux de front). Les cyclistes peuvent utiliser toute la chaussee y compris pour rouler cote a cote."
       },
       "AR": {
-        "question": "?? ???? ???????? ????? ????? ??? ??? ?? ???? ???????? (F111)?",
+        "question": "هل يجوز لراكبي الدراجات السير جنباً إلى جنب في شارع الدراجات (F111)؟",
         "choices": [
           {
-            "text": "??? ???? ???????? ????? ????? ????? ??? ??? ?? ???? ????????",
+            "text": "نعم، في شارع الدراجات يجوز لراكبي الدراجات السير اثنين جنباً إلى جنب",
             "is_correct": true
           },
           {
-            "text": "?? ??? ??? ???????? ?????? ????? ?? ?? ????",
+            "text": "لا، يجب على راكبي الدراجات السير دائماً في صف واحد في شارع الدراجات",
             "is_correct": false
           }
         ],
-        "explanation": "?? ???? ???????? ????? ????? ????? ???? ??? (????? ????? ??? ???). ???? ???????? ??????? ???? ?????? ??? ?? ??? ????? ????? ??? ???."
+        "explanation": "في شارع الدراجات يجوز السير بجانب راكب دراجة آخر. يمكن لراكبي الدراجات استعمال كامل الطريق بما في ذلك السير جنباً إلى جنب."
       }
     }
   }

@@ -1,0 +1,602 @@
+[
+  {
+    "question_id": "Zone-F111_Q01",
+    "type": "WHAT_DOES_IT_MEAN",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Wat betekent dit verkeersbord?",
+        "choices": [
+          {
+            "text": "Begin van een fietsstraatzone: fietsers zijn de primaire weggebruikers en auto's moeten hun snelheid aanpassen aan die van de fietsers",
+            "is_correct": true
+          },
+          {
+            "text": "Begin van een verplicht fietspad; motorvoertuigen zijn volledig verboden",
+            "is_correct": false
+          },
+          {
+            "text": "Begin van een zone 30 waar fietsers voorrang krijgen op kruispunten",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Zone-F111 duidt het begin aan van een fietsstraat. Fietsers zijn er de primaire weggebruikers en mogen de volledige rijbaanbreedte gebruiken. Motorvoertuigen mogen er rijden maar mogen fietsers niet inhalen en moeten hun snelheid aanpassen aan de fietsers."
+      },
+      "EN": {
+        "question": "What does this traffic sign mean?",
+        "choices": [
+          {
+            "text": "Start of a bicycle street zone: cyclists are the primary road users and cars must adapt their speed to that of the cyclists",
+            "is_correct": true
+          },
+          {
+            "text": "Start of a mandatory cycle path; motor vehicles are completely prohibited",
+            "is_correct": false
+          },
+          {
+            "text": "Start of a zone 30 where cyclists have priority at intersections",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Zone-F111 marks the start of a bicycle street. Cyclists are the primary road users and may use the full width of the lane. Motor vehicles may drive there but may not overtake cyclists and must adapt their speed to the cyclists."
+      },
+      "FR": {
+        "question": "Que signifie ce panneau de signalisation?",
+        "choices": [
+          {
+            "text": "Début d'une zone rue cyclable: les cyclistes sont les usagers principaux et les voitures doivent adapter leur vitesse à celle des cyclistes",
+            "is_correct": true
+          },
+          {
+            "text": "Début d'une piste cyclable obligatoire; véhicules motorisés entièrement interdits",
+            "is_correct": false
+          },
+          {
+            "text": "Début d'une zone 30 où les cyclistes ont la priorité aux carrefours",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Zone-F111 marque le début d'une rue cyclable. Les cyclistes sont les usagers principaux et peuvent utiliser toute la largeur de la voie. Les véhicules motorisés peuvent y circuler mais ne peuvent pas dépasser les cyclistes et doivent adapter leur vitesse."
+      },
+      "AR": {
+        "question": "ما معنى هذه العلامة المرورية؟",
+        "choices": [
+          {
+            "text": "بداية منطقة شارع الدراجات: الدراجون هم مستخدمو الطريق الأساسيون ويجب على السيارات تكييف سرعتها مع سرعة الدراجين",
+            "is_correct": true
+          },
+          {
+            "text": "بداية مسار دراجات إلزامي؛ المركبات ذات المحرك محظورة كلياً",
+            "is_correct": false
+          },
+          {
+            "text": "بداية منطقة سرعة 30 حيث يحصل الدراجون على الأولوية في التقاطعات",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Zone-F111 تحدد بداية شارع الدراجات. الدراجون هم مستخدمو الطريق الأساسيون ولهم حق استخدام كامل عرض المسار. يجوز للمركبات ذات المحرك السير هناك لكن لا يجوز تجاوز الدراجين ويجب تكييف السرعة معهم."
+      }
+    }
+  },
+  {
+    "question_id": "Zone-F111_Q02",
+    "type": "WHICH_SIGN",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Tot welke categorie verkeersborden behoort bord Zone-F111?",
+        "choices": [
+          {
+            "text": "Zoneborden",
+            "is_correct": true
+          },
+          {
+            "text": "Verbodsborden",
+            "is_correct": false
+          },
+          {
+            "text": "Gebodsborden",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Zone-F111 is een zonebord. Zoneborden regelen het gebruik van een volledig afgebakend gebied met eigen verkeersregels. Dit bord markeert het begin van een fietsstraatzone."
+      },
+      "EN": {
+        "question": "To which category of traffic signs does sign Zone-F111 belong?",
+        "choices": [
+          {
+            "text": "Zone signs",
+            "is_correct": true
+          },
+          {
+            "text": "Prohibition signs",
+            "is_correct": false
+          },
+          {
+            "text": "Mandatory signs",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Zone-F111 is a zone sign. Zone signs regulate the use of a fully defined area with its own traffic rules. This sign marks the start of a bicycle street zone."
+      },
+      "FR": {
+        "question": "À quelle catégorie de panneaux appartient le panneau Zone-F111?",
+        "choices": [
+          {
+            "text": "Panneaux de zone",
+            "is_correct": true
+          },
+          {
+            "text": "Panneaux d'interdiction",
+            "is_correct": false
+          },
+          {
+            "text": "Panneaux d'obligation",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Zone-F111 est un panneau de zone. Les panneaux de zone régulent l'usage d'une zone entièrement délimitée avec ses propres règles de circulation. Ce panneau marque le début d'une zone rue cyclable."
+      },
+      "AR": {
+        "question": "إلى أي فئة تنتمي علامة Zone-F111؟",
+        "choices": [
+          {
+            "text": "علامات المنطقة",
+            "is_correct": true
+          },
+          {
+            "text": "علامات الحظر",
+            "is_correct": false
+          },
+          {
+            "text": "علامات الإلزام",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Zone-F111 علامة منطقة. تُنظِّم علامات المنطقة استخدام منطقة محددة بأكملها ذات قواعد مرور خاصة. هذه العلامة تحدد بداية منطقة شارع الدراجات."
+      }
+    }
+  },
+  {
+    "question_id": "Zone-F111_Q03",
+    "type": "HAZARD_IDENTIFICATION",
+    "difficulty": "EASY",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Welk specifiek gevaar moet een autobestuurder verwachten in een fietsstraat (Zone-F111)?",
+        "choices": [
+          {
+            "text": "Fietsers rijden over de volledige breedte van de rijbaan en auto's mogen hen niet inhalen",
+            "is_correct": true
+          },
+          {
+            "text": "Fietsers rijden altijd op een afgebakend fietspad naast de rijbaan",
+            "is_correct": false
+          },
+          {
+            "text": "De rijbaan is te smal voor auto's; enkel fietsers kunnen er doorrijden",
+            "is_correct": false
+          }
+        ],
+        "explanation": "In een fietsstraat mogen fietsers de volledige rijbaanbreedte gebruiken. Een autobestuurder moet er rekening mee houden dat hij fietsers niet kan inhalen en zijn snelheid moet aanpassen aan de langzamere fietsers."
+      },
+      "EN": {
+        "question": "What specific hazard should a car driver expect in a bicycle street (Zone-F111)?",
+        "choices": [
+          {
+            "text": "Cyclists ride across the full width of the lane and cars may not overtake them",
+            "is_correct": true
+          },
+          {
+            "text": "Cyclists always ride on a demarcated cycle path next to the roadway",
+            "is_correct": false
+          },
+          {
+            "text": "The lane is too narrow for cars; only cyclists can pass through",
+            "is_correct": false
+          }
+        ],
+        "explanation": "In a bicycle street cyclists may use the full width of the lane. A car driver must take into account that they cannot overtake cyclists and must adapt their speed to the slower cyclists."
+      },
+      "FR": {
+        "question": "Quel danger spécifique un automobiliste doit-il anticiper dans une rue cyclable (Zone-F111)?",
+        "choices": [
+          {
+            "text": "Les cyclistes circulent sur toute la largeur de la voie et les voitures ne peuvent pas les dépasser",
+            "is_correct": true
+          },
+          {
+            "text": "Les cyclistes roulent toujours sur une piste cyclable délimitée à côté de la chaussée",
+            "is_correct": false
+          },
+          {
+            "text": "La voie est trop étroite pour les voitures; seuls les cyclistes peuvent y passer",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dans une rue cyclable les cyclistes peuvent utiliser toute la largeur de la voie. Un automobiliste doit tenir compte du fait qu'il ne peut pas dépasser les cyclistes et doit adapter sa vitesse aux cyclistes plus lents."
+      },
+      "AR": {
+        "question": "ما الخطر المحدد الذي يجب على سائق السيارة توقعه في شارع الدراجات (Zone-F111)؟",
+        "choices": [
+          {
+            "text": "يسير الدراجون عبر كامل عرض المسار ولا يجوز للسيارات تجاوزهم",
+            "is_correct": true
+          },
+          {
+            "text": "يسير الدراجون دائماً على مسار دراجات مخصص بجانب الطريق",
+            "is_correct": false
+          },
+          {
+            "text": "المسار ضيق جداً للسيارات ولا يمكن المرور إلا للدراجات",
+            "is_correct": false
+          }
+        ],
+        "explanation": "في شارع الدراجات يجوز للدراجين استخدام كامل عرض المسار. يجب على سائق السيارة أن يأخذ بعين الاعتبار أنه لا يستطيع تجاوز الدراجين ويجب أن يكيّف سرعته مع سرعتهم الأبطأ."
+      }
+    }
+  },
+  {
+    "question_id": "Zone-F111_Q04",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Een fietser rijdt traag in het midden van de rijbaan in een Zone-F111. Wat doet u als autobestuurder?",
+        "choices": [
+          {
+            "text": "U rijdt achter de fietser aan en past uw snelheid aan; inhalen is niet toegestaan",
+            "is_correct": true
+          },
+          {
+            "text": "U claxonneert om de fietser naar de zijkant te laten rijden en rijdt daarna voorbij",
+            "is_correct": false
+          },
+          {
+            "text": "U mag de fietser inhalen als u genoeg zijdelingse afstand houdt",
+            "is_correct": false
+          }
+        ],
+        "explanation": "In een fietsstraat mogen motorvoertuigen fietsers niet inhalen, ongeacht de situatie. U rijdt achter de fietser aan en past uw snelheid aan zijn rijgedrag aan."
+      },
+      "EN": {
+        "question": "A cyclist is riding slowly in the middle of the lane in a Zone-F111. What do you do as a car driver?",
+        "choices": [
+          {
+            "text": "You drive behind the cyclist and adapt your speed; overtaking is not permitted",
+            "is_correct": true
+          },
+          {
+            "text": "You honk to make the cyclist move to the side and then pass",
+            "is_correct": false
+          },
+          {
+            "text": "You may overtake the cyclist if you maintain sufficient lateral distance",
+            "is_correct": false
+          }
+        ],
+        "explanation": "In a bicycle street motor vehicles may not overtake cyclists under any circumstances. You drive behind the cyclist and adapt your speed to their riding behaviour."
+      },
+      "FR": {
+        "question": "Un cycliste roule lentement au milieu de la voie dans une Zone-F111. Que faites-vous en tant qu'automobiliste?",
+        "choices": [
+          {
+            "text": "Vous roulez derrière le cycliste et adaptez votre vitesse; le dépassement n'est pas autorisé",
+            "is_correct": true
+          },
+          {
+            "text": "Vous klaxonnez pour que le cycliste se range sur le côté puis vous le dépassez",
+            "is_correct": false
+          },
+          {
+            "text": "Vous pouvez dépasser le cycliste si vous maintenez une distance latérale suffisante",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dans une rue cyclable les véhicules motorisés ne peuvent en aucun cas dépasser les cyclistes. Vous roulez derrière le cycliste et adaptez votre vitesse à son comportement de conduite."
+      },
+      "AR": {
+        "question": "يسير دراج ببطء في وسط المسار في Zone-F111. ماذا تفعل كسائق سيارة؟",
+        "choices": [
+          {
+            "text": "تسير خلف الدراج وتكيّف سرعتك؛ التجاوز غير مسموح",
+            "is_correct": true
+          },
+          {
+            "text": "تنبّه بالبوق لدفع الدراج نحو الجانب ثم تتجاوزه",
+            "is_correct": false
+          },
+          {
+            "text": "يمكنك تجاوز الدراج إذا حافظت على مسافة جانبية كافية",
+            "is_correct": false
+          }
+        ],
+        "explanation": "في شارع الدراجات لا يجوز للمركبات ذات المحرك تجاوز الدراجين تحت أي ظرف. تسير خلف الدراج وتكيّف سرعتك مع سلوكه في القيادة."
+      }
+    }
+  },
+  {
+    "question_id": "Zone-F111_Q05",
+    "type": "DRIVER_ACTION",
+    "difficulty": "MEDIUM",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U rijdt 30 km/u in een fietsstraat (Zone-F111). De fietsers voor u rijden 15 km/u. Wat doet u?",
+        "choices": [
+          {
+            "text": "U vertraagt tot 15 km/u en rijdt achter de fietsers aan; hun snelheid is de referentie",
+            "is_correct": true
+          },
+          {
+            "text": "U mag 30 km/u blijven rijden en wacht tot de fietsers opzij gaan",
+            "is_correct": false
+          },
+          {
+            "text": "U rijdt op de stoep om de fietsers te omzeilen",
+            "is_correct": false
+          }
+        ],
+        "explanation": "In een fietsstraat moeten motorvoertuigen hun snelheid aanpassen aan die van de fietsers. Als de fietsers 15 km/u rijden, rijdt u ook 15 km/u; u mag hen in geen geval inhalen."
+      },
+      "EN": {
+        "question": "You are driving at 30 km/h in a bicycle street (Zone-F111). The cyclists ahead are riding at 15 km/h. What do you do?",
+        "choices": [
+          {
+            "text": "You slow down to 15 km/h and drive behind the cyclists; their speed is the reference",
+            "is_correct": true
+          },
+          {
+            "text": "You may keep driving at 30 km/h and wait for the cyclists to move aside",
+            "is_correct": false
+          },
+          {
+            "text": "You drive on the pavement to go around the cyclists",
+            "is_correct": false
+          }
+        ],
+        "explanation": "In a bicycle street motor vehicles must adapt their speed to that of the cyclists. If the cyclists are riding at 15 km/h you also drive at 15 km/h; you may not overtake them under any circumstances."
+      },
+      "FR": {
+        "question": "Vous roulez à 30 km/h dans une rue cyclable (Zone-F111). Les cyclistes devant vous roulent à 15 km/h. Que faites-vous?",
+        "choices": [
+          {
+            "text": "Vous ralentissez à 15 km/h et roulez derrière les cyclistes; leur vitesse est la référence",
+            "is_correct": true
+          },
+          {
+            "text": "Vous pouvez maintenir 30 km/h et attendre que les cyclistes s'écartent",
+            "is_correct": false
+          },
+          {
+            "text": "Vous roulez sur le trottoir pour contourner les cyclistes",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dans une rue cyclable les véhicules motorisés doivent adapter leur vitesse à celle des cyclistes. Si les cyclistes roulent à 15 km/h vous roulez aussi à 15 km/h; vous ne pouvez en aucun cas les dépasser."
+      },
+      "AR": {
+        "question": "تسير بسرعة 30 كم/س في شارع الدراجات (Zone-F111). الدراجون أمامك يسيرون بسرعة 15 كم/س. ماذا تفعل؟",
+        "choices": [
+          {
+            "text": "تبطئ إلى 15 كم/س وتسير خلف الدراجين؛ سرعتهم هي المرجع",
+            "is_correct": true
+          },
+          {
+            "text": "يمكنك الاستمرار بسرعة 30 كم/س وانتظار أن يتنحى الدراجون جانباً",
+            "is_correct": false
+          },
+          {
+            "text": "تسير على الرصيف لتتجاوز الدراجين",
+            "is_correct": false
+          }
+        ],
+        "explanation": "في شارع الدراجات يجب على المركبات ذات المحرك تكييف سرعتها مع سرعة الدراجين. إذا كان الدراجون يسيرون بسرعة 15 كم/س فأنت أيضاً تسير بـ 15 كم/س؛ لا يجوز تجاوزهم تحت أي ظرف."
+      }
+    }
+  },
+  {
+    "question_id": "Zone-F111_Q06",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "MEDIUM",
+    "is_critical": false,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "Mag een fietser in een Zone-F111 de volledige breedte van de rijbaan gebruiken, ook als een auto achter hem rijdt?",
+        "choices": [
+          {
+            "text": "Ja, de fietser heeft het recht om de volledige rijbaanbreedte te gebruiken; de auto moet zijn snelheid aanpassen",
+            "is_correct": true
+          },
+          {
+            "text": "Neen, de fietser moet zijdelings rijden om de auto te laten passeren",
+            "is_correct": false
+          }
+        ],
+        "explanation": "In een fietsstraat is de fietser de primaire weggebruiker en heeft het recht de volledige rijbaanbreedte te gebruiken. De autobestuurder heeft geen voorrang en mag de fietser niet inhalen."
+      },
+      "EN": {
+        "question": "May a cyclist in a Zone-F111 use the full width of the lane even if a car is driving behind them?",
+        "choices": [
+          {
+            "text": "Yes, the cyclist has the right to use the full lane width; the car must adapt its speed",
+            "is_correct": true
+          },
+          {
+            "text": "No, the cyclist must ride to the side to let the car pass",
+            "is_correct": false
+          }
+        ],
+        "explanation": "In a bicycle street the cyclist is the primary road user and has the right to use the full lane width. The car driver has no priority and may not overtake the cyclist."
+      },
+      "FR": {
+        "question": "Un cycliste dans une Zone-F111 peut-il utiliser toute la largeur de la voie même si une voiture le suit?",
+        "choices": [
+          {
+            "text": "Oui, le cycliste a le droit d'utiliser toute la largeur de la voie; la voiture doit adapter sa vitesse",
+            "is_correct": true
+          },
+          {
+            "text": "Non, le cycliste doit se ranger sur le côté pour laisser passer la voiture",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Dans une rue cyclable le cycliste est l'usager principal et a le droit d'utiliser toute la largeur de la voie. L'automobiliste n'a pas la priorité et ne peut pas dépasser le cycliste."
+      },
+      "AR": {
+        "question": "هل يجوز لراكب الدراجة في Zone-F111 استخدام كامل عرض المسار حتى لو كانت سيارة تسير خلفه؟",
+        "choices": [
+          {
+            "text": "نعم، للدراج الحق في استخدام كامل عرض المسار؛ يجب على السيارة تكييف سرعتها",
+            "is_correct": true
+          },
+          {
+            "text": "لا، يجب على الدراج السير جانباً للسماح للسيارة بالمرور",
+            "is_correct": false
+          }
+        ],
+        "explanation": "في شارع الدراجات الدراج هو مستخدم الطريق الأساسي وله الحق في استخدام كامل عرض المسار. سائق السيارة لا يتمتع بالأولوية ولا يجوز له تجاوز الدراج."
+      }
+    }
+  },
+  {
+    "question_id": "Zone-F111_Q07",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "U rijdt in een fietsstraat (Zone-F111) en er is geen fietser zichtbaar. Mag u de normale rijbaanbreedte voor uzelf nemen en sneller rijden?",
+        "choices": [
+          {
+            "text": "Neen, de regels van de fietsstraat gelden altijd; u moet voorzichtig blijven want er kan elk moment een fietser opduiken",
+            "is_correct": true
+          },
+          {
+            "text": "Ja, als er geen fietser aanwezig is gelden de normale verkeersregels tijdelijk",
+            "is_correct": false
+          }
+        ],
+        "explanation": "De regels van de fietsstraat gelden voor de volledige zone, ongeacht of er op dat moment fietsers aanwezig zijn. Een fietser kan altijd plotseling opduiken vanuit een oprit of zijstraat."
+      },
+      "EN": {
+        "question": "You are driving in a bicycle street (Zone-F111) and no cyclist is visible. May you take up the full lane width and drive faster?",
+        "choices": [
+          {
+            "text": "No, the bicycle street rules always apply; you must stay cautious because a cyclist may appear at any moment",
+            "is_correct": true
+          },
+          {
+            "text": "Yes, if no cyclist is present normal traffic rules temporarily apply",
+            "is_correct": false
+          }
+        ],
+        "explanation": "The rules of the bicycle street apply throughout the entire zone regardless of whether cyclists are present at that moment. A cyclist can always suddenly appear from a driveway or side street."
+      },
+      "FR": {
+        "question": "Vous roulez dans une rue cyclable (Zone-F111) et aucun cycliste n'est visible. Pouvez-vous occuper toute la largeur et rouler plus vite?",
+        "choices": [
+          {
+            "text": "Non, les règles de la rue cyclable s'appliquent toujours; vous devez rester prudent car un cycliste peut surgir à tout moment",
+            "is_correct": true
+          },
+          {
+            "text": "Oui, si aucun cycliste n'est présent les règles normales s'appliquent temporairement",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Les règles de la rue cyclable s'appliquent à toute la zone quelle que soit la présence de cyclistes à ce moment. Un cycliste peut toujours surgir soudainement d'une allée ou d'une rue latérale."
+      },
+      "AR": {
+        "question": "تسير في شارع الدراجات (Zone-F111) ولا يوجد دراج مرئي. هل يجوز لك استغلال كامل عرض المسار والسير بسرعة أكبر؟",
+        "choices": [
+          {
+            "text": "لا، قواعد شارع الدراجات سارية دائماً؛ يجب أن تبقى حذراً لأن دراجاً قد يظهر في أي لحظة",
+            "is_correct": true
+          },
+          {
+            "text": "نعم، إذا لم يكن هناك دراج تسري قواعد المرور العادية مؤقتاً",
+            "is_correct": false
+          }
+        ],
+        "explanation": "قواعد شارع الدراجات تسري في المنطقة بأكملها بصرف النظر عن وجود دراجين في تلك اللحظة. يمكن لدراج أن يظهر فجأة في أي وقت من ممر دخول أو شارع جانبي."
+      }
+    }
+  },
+  {
+    "question_id": "Zone-F111_Q08",
+    "type": "IS_IT_ALLOWED",
+    "difficulty": "HARD",
+    "is_critical": true,
+    "show_sign": true,
+    "i18n": {
+      "NL": {
+        "question": "In een fietsstraat (Zone-F111) rijden twee fietsers naast elkaar. Mag u als autobestuurder een van hen voorbijgaan?",
+        "choices": [
+          {
+            "text": "Neen, inhalen is verboden in een fietsstraat ongeacht hoe de fietsers rijden",
+            "is_correct": true
+          },
+          {
+            "text": "Ja, als er genoeg ruimte is mag u tussen de fietsers en de stoep door rijden",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Het inhaalbod in een fietsstraat is absoluut: motorvoertuigen mogen fietsers niet inhalen, niet naast elkaar rijdende fietsers, niet een enkele fietser, onder geen enkele omstandigheid."
+      },
+      "EN": {
+        "question": "In a bicycle street (Zone-F111) two cyclists are riding side by side. May you as a car driver pass one of them?",
+        "choices": [
+          {
+            "text": "No, overtaking is prohibited in a bicycle street regardless of how the cyclists are riding",
+            "is_correct": true
+          },
+          {
+            "text": "Yes, if there is enough space you may drive between the cyclists and the pavement",
+            "is_correct": false
+          }
+        ],
+        "explanation": "The overtaking ban in a bicycle street is absolute: motor vehicles may not overtake cyclists, not side-by-side cyclists, not a single cyclist, under no circumstances whatsoever."
+      },
+      "FR": {
+        "question": "Dans une rue cyclable (Zone-F111) deux cyclistes roulent côte à côte. Pouvez-vous en tant qu'automobiliste en dépasser un?",
+        "choices": [
+          {
+            "text": "Non, le dépassement est interdit dans une rue cyclable quelle que soit la façon dont les cyclistes roulent",
+            "is_correct": true
+          },
+          {
+            "text": "Oui, s'il y a suffisamment de place vous pouvez rouler entre les cyclistes et le trottoir",
+            "is_correct": false
+          }
+        ],
+        "explanation": "L'interdiction de dépassement dans une rue cyclable est absolue: les véhicules motorisés ne peuvent pas dépasser les cyclistes, ni les cyclistes côte à côte, ni un seul cycliste, en aucune circonstance."
+      },
+      "AR": {
+        "question": "في شارع الدراجات (Zone-F111) يسير دراجان جنباً إلى جنب. هل يجوز لك كسائق سيارة تجاوز أحدهما؟",
+        "choices": [
+          {
+            "text": "لا، التجاوز محظور في شارع الدراجات بصرف النظر عن كيفية سير الدراجين",
+            "is_correct": true
+          },
+          {
+            "text": "نعم، إذا كان هناك مساحة كافية يمكنك السير بين الدراجين والرصيف",
+            "is_correct": false
+          }
+        ],
+        "explanation": "حظر التجاوز في شارع الدراجات مطلق: لا يجوز للمركبات ذات المحرك تجاوز الدراجين، لا الدراجين السائرين جنباً إلى جنب، لا الدراج المنفرد، تحت أي ظرف من الظروف."
+      }
+    }
+  }
+]

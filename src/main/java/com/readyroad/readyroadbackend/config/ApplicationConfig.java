@@ -6,12 +6,13 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.readyroad.readyroadbackend.domain.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.cache.CacheManager;
+import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.cache.concurrent.ConcurrentMapCacheManager;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.AuthenticationProvider;
-import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -22,8 +23,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
  * Application Configuration
  *
  * Central configuration for application-wide beans:
- * - Security components (UserDetailsService, PasswordEncoder, AuthenticationProvider)
- * - JSON serialization (ObjectMapper with Java 8 Date/Time and Hibernate support)
+ * - Security components (UserDetailsService, PasswordEncoder)
+ * - JSON serialization (ObjectMapper with Java 8 Date/Time and Hibernate
+ * support)
  *
  * Best Practices Applied:
  * - Constructor injection via @RequiredArgsConstructor
@@ -37,6 +39,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
  */
 @Slf4j
 @Configuration
+@EnableCaching
 @RequiredArgsConstructor
 public class ApplicationConfig {
 
@@ -73,25 +76,11 @@ public class ApplicationConfig {
     }
 
     /**
-     * Authentication provider using DAO-based authentication.
-     * 
-     * Combines UserDetailsService and PasswordEncoder for authentication flow.
-     * Used by Spring Security's AuthenticationManager.
-     *
-     * @return Configured DaoAuthenticationProvider
-     */
-    @Bean
-    public AuthenticationProvider authenticationProvider() {
-        DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider(userDetailsService());
-        authProvider.setPasswordEncoder(passwordEncoder());
-        return authProvider;
-    }
-
-    /**
      * Authentication manager for processing authentication requests.
      * 
      * Central entry point for Spring Security authentication.
-     * Delegates to configured AuthenticationProvider.
+     * Delegates to Spring Security's DaoAuthenticationProvider, auto-configured
+     * from the UserDetailsService and PasswordEncoder beans above.
      *
      * @param config Spring's authentication configuration
      * @return AuthenticationManager instance
@@ -106,10 +95,12 @@ public class ApplicationConfig {
      * Custom ObjectMapper with Java 8 Date/Time support.
      *
      * Configured modules:
-     * - JavaTimeModule: Handles Java 8 Date/Time types (LocalDateTime, LocalDate, Instant, etc.)
+     * - JavaTimeModule: Handles Java 8 Date/Time types (LocalDateTime, LocalDate,
+     * Instant, etc.)
      *
      * Serialization features:
-     * - ISO-8601 date format (e.g., "2026-02-05T10:54:00") instead of Unix timestamps
+     * - ISO-8601 date format (e.g., "2026-02-05T10:54:00") instead of Unix
+     * timestamps
      * - Empty beans allowed to prevent serialization errors on simple entities
      *
      * Note: Lazy loading is handled by @EntityGraph and @JsonIgnore annotations,
@@ -137,5 +128,15 @@ public class ApplicationConfig {
 
         log.info("✅ ObjectMapper configured successfully");
         return mapper;
+    }
+
+    /**
+     * In-memory cache manager for mostly-static reference data (e.g. categories).
+     * Uses Spring's built-in ConcurrentMapCacheManager — no external dependency
+     * needed.
+     */
+    @Bean
+    public CacheManager cacheManager() {
+        return new ConcurrentMapCacheManager("categories");
     }
 }

@@ -12,52 +12,52 @@
 -- Update existing categories or insert if not exists
 INSERT INTO categories (code, name_ar, name_en, name_nl, name_fr, description_ar, description_en, description_nl, description_fr, display_order, is_active, created_at, updated_at)
 VALUES ('A', 'علامات الخطر', 'Danger Signs', 'Gevaar', 'Danger', 
-        'علامات تحذيرية للإشارة إلى المخاطر على الطريق', 'Warning signs indicating road hazards', 'Waarschuwingsborden voor gevaren op de weg', 'Panneaux d''avertissement des dangers sur la route', 1, TRUE, NOW(), NOW())
+        'علامات تحذيرية للإشارة إلى المخاطر على الطريق', 'Warning signs indicating road hazards', 'Waarschuwingsborden voor gevaren op de weg', 'Panneaux d''avertissement des dangers sur la route', 1, TRUE, NOW(), NOW()) AS new_values
 ON DUPLICATE KEY UPDATE 
-    name_ar = VALUES(name_ar), name_en = VALUES(name_en), name_nl = VALUES(name_nl), name_fr = VALUES(name_fr),
-    description_ar = VALUES(description_ar), description_en = VALUES(description_en), description_nl = VALUES(description_nl), description_fr = VALUES(description_fr);
+    name_ar = new_values.name_ar, name_en = new_values.name_en, name_nl = new_values.name_nl, name_fr = new_values.name_fr,
+    description_ar = new_values.description_ar, description_en = new_values.description_en, description_nl = new_values.description_nl, description_fr = new_values.description_fr;
 
 INSERT INTO categories (code, name_ar, name_en, name_nl, name_fr, description_ar, description_en, description_nl, description_fr, display_order, is_active, created_at, updated_at)
 VALUES ('B', 'علامات الأولوية', 'Priority Signs', 'Voorrang', 'Priorité', 
-        'علامات تحدد حق الأولوية على الطريق', 'Signs determining priority on the road', 'Borden die voorrang op de weg bepalen', 'Panneaux déterminant la priorité sur la route', 2, TRUE, NOW(), NOW())
+        'علامات تحدد حق الأولوية على الطريق', 'Signs determining priority on the road', 'Borden die voorrang op de weg bepalen', 'Panneaux déterminant la priorité sur la route', 2, TRUE, NOW(), NOW()) AS new_values
 ON DUPLICATE KEY UPDATE 
-    name_ar = VALUES(name_ar), name_en = VALUES(name_en), name_nl = VALUES(name_nl), name_fr = VALUES(name_fr),
-    description_ar = VALUES(description_ar), description_en = VALUES(description_en), description_nl = VALUES(description_nl), description_fr = VALUES(description_fr);
+    name_ar = new_values.name_ar, name_en = new_values.name_en, name_nl = new_values.name_nl, name_fr = new_values.name_fr,
+    description_ar = new_values.description_ar, description_en = new_values.description_en, description_nl = new_values.description_nl, description_fr = new_values.description_fr;
 
 INSERT INTO categories (code, name_ar, name_en, name_nl, name_fr, description_ar, description_en, description_nl, description_fr, display_order, is_active, created_at, updated_at)
 VALUES ('C', 'علامات المنع', 'Prohibition Signs', 'Verbod', 'Interdiction', 
-        'علامات تمنع أو تحظر إجراءات معينة', 'Signs prohibiting certain actions', 'Borden die bepaalde handelingen verbieden', 'Panneaux interdisant certaines actions', 3, TRUE, NOW(), NOW())
+        'علامات تمنع أو تحظر إجراءات معينة', 'Signs prohibiting certain actions', 'Borden die bepaalde handelingen verbieden', 'Panneaux interdisant certaines actions', 3, TRUE, NOW(), NOW()) AS new_values
 ON DUPLICATE KEY UPDATE 
-    name_ar = VALUES(name_ar), name_en = VALUES(name_en), name_nl = VALUES(name_nl), name_fr = VALUES(name_fr),
-    description_ar = VALUES(description_ar), description_en = VALUES(description_en), description_nl = VALUES(description_nl), description_fr = VALUES(description_fr);
+    name_ar = new_values.name_ar, name_en = new_values.name_en, name_nl = new_values.name_nl, name_fr = new_values.name_fr,
+    description_ar = new_values.description_ar, description_en = new_values.description_en, description_nl = new_values.description_nl, description_fr = new_values.description_fr;
 
 INSERT INTO categories (code, name_ar, name_en, name_nl, name_fr, description_ar, description_en, description_nl, description_fr, display_order, is_active, created_at, updated_at)
 VALUES ('D', 'علامات الإلزام', 'Mandatory Signs', 'Gebod', 'Obligation', 
-        'علامات تفرض سلوكاً معيناً', 'Signs imposing specific behavior', 'Borden die specifiek gedrag opleggen', 'Panneaux imposant un comportement spécifique', 4, TRUE, NOW(), NOW())
+        'علامات تفرض سلوكاً معيناً', 'Signs imposing specific behavior', 'Borden die specifiek gedrag opleggen', 'Panneaux imposant un comportement spécifique', 4, TRUE, NOW(), NOW()) AS new_values
 ON DUPLICATE KEY UPDATE 
-    name_ar = VALUES(name_ar), name_en = VALUES(name_en), name_nl = VALUES(name_nl), name_fr = VALUES(name_fr),
-    description_ar = VALUES(description_ar), description_en = VALUES(description_en), description_nl = VALUES(description_nl), description_fr = VALUES(description_fr);
+    name_ar = new_values.name_ar, name_en = new_values.name_en, name_nl = new_values.name_nl, name_fr = new_values.name_fr,
+    description_ar = new_values.description_ar, description_en = new_values.description_en, description_nl = new_values.description_nl, description_fr = new_values.description_fr;
 
 INSERT INTO categories (code, name_ar, name_en, name_nl, name_fr, description_ar, description_en, description_nl, description_fr, display_order, is_active, created_at, updated_at)
 VALUES ('E', 'علامات الوقوف والانتظار', 'Parking Signs', 'Stilstaan en parkeren', 'Stationnement', 
-        'علامات تنظم الوقوف والانتظار', 'Signs regulating stopping and parking', 'Borden die stilstaan en parkeren regelen', 'Panneaux réglementant l''arrêt et le stationnement', 5, TRUE, NOW(), NOW())
+        'علامات تنظم الوقوف والانتظار', 'Signs regulating stopping and parking', 'Borden die stilstaan en parkeren regelen', 'Panneaux réglementant l''arrêt et le stationnement', 5, TRUE, NOW(), NOW()) AS new_values
 ON DUPLICATE KEY UPDATE 
-    name_ar = VALUES(name_ar), name_en = VALUES(name_en), name_nl = VALUES(name_nl), name_fr = VALUES(name_fr),
-    description_ar = VALUES(description_ar), description_en = VALUES(description_en), description_nl = VALUES(description_nl), description_fr = VALUES(description_fr);
+    name_ar = new_values.name_ar, name_en = new_values.name_en, name_nl = new_values.name_nl, name_fr = new_values.name_fr,
+    description_ar = new_values.description_ar, description_en = new_values.description_en, description_nl = new_values.description_nl, description_fr = new_values.description_fr;
 
 INSERT INTO categories (code, name_ar, name_en, name_nl, name_fr, description_ar, description_en, description_nl, description_fr, display_order, is_active, created_at, updated_at)
 VALUES ('F', 'علامات إرشادية', 'Information Signs', 'Aanwijzing', 'Indication', 
-        'علامات توفر معلومات ودلالات', 'Signs providing information and directions', 'Borden die informatie en aanwijzingen geven', 'Panneaux fournissant des informations et des indications', 6, TRUE, NOW(), NOW())
+        'علامات توفر معلومات ودلالات', 'Signs providing information and directions', 'Borden die informatie en aanwijzingen geven', 'Panneaux fournissant des informations et des indications', 6, TRUE, NOW(), NOW()) AS new_values
 ON DUPLICATE KEY UPDATE 
-    name_ar = VALUES(name_ar), name_en = VALUES(name_en), name_nl = VALUES(name_nl), name_fr = VALUES(name_fr),
-    description_ar = VALUES(description_ar), description_en = VALUES(description_en), description_nl = VALUES(description_nl), description_fr = VALUES(description_fr);
+    name_ar = new_values.name_ar, name_en = new_values.name_en, name_nl = new_values.name_nl, name_fr = new_values.name_fr,
+    description_ar = new_values.description_ar, description_en = new_values.description_en, description_nl = new_values.description_nl, description_fr = new_values.description_fr;
 
 INSERT INTO categories (code, name_ar, name_en, name_nl, name_fr, description_ar, description_en, description_nl, description_fr, display_order, is_active, created_at, updated_at)
 VALUES ('M', 'لوحات إضافية للدراجات', 'Supplementary Bicycle Signs', 'Onderborden betreffende fietsen', 'Panneaux additionnels vélos', 
-        'لوحات خاصة بالدراجات والدراجات النارية', 'Supplementary signs specific to bicycles and mopeds', 'Borden specifiek voor fietsen en bromfietsen', 'Panneaux additionnels spécifiques aux vélos et cyclomoteurs', 7, TRUE, NOW(), NOW())
+        'لوحات خاصة بالدراجات والدراجات النارية', 'Supplementary signs specific to bicycles and mopeds', 'Borden specifiek voor fietsen en bromfietsen', 'Panneaux additionnels spécifiques aux vélos et cyclomoteurs', 7, TRUE, NOW(), NOW()) AS new_values
 ON DUPLICATE KEY UPDATE 
-    name_ar = VALUES(name_ar), name_en = VALUES(name_en), name_nl = VALUES(name_nl), name_fr = VALUES(name_fr),
-    description_ar = VALUES(description_ar), description_en = VALUES(description_en), description_nl = VALUES(description_nl), description_fr = VALUES(description_fr);
+    name_ar = new_values.name_ar, name_en = new_values.name_en, name_nl = new_values.name_nl, name_fr = new_values.name_fr,
+    description_ar = new_values.description_ar, description_en = new_values.description_en, description_nl = new_values.description_nl, description_fr = new_values.description_fr;
 
 
 -- ========================================

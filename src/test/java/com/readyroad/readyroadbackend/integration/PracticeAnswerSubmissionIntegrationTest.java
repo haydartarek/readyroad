@@ -91,18 +91,18 @@ class PracticeAnswerSubmissionIntegrationTest {
 
         // Get or create test category
         testCategory = categoryRepository.findAll().stream()
-            .findFirst()
-            .orElseGet(() -> {
-                Category cat = new Category();
-                cat.setCode("TEST");
-                cat.setNameEn("Test Category");
-                cat.setNameAr("فئة الاختبار");
-                cat.setNameNl("Testcategorie");
-                cat.setNameFr("Catégorie de test");
-                cat.setDisplayOrder(1);
-                cat.setIsActive(true);
-                return categoryRepository.save(cat);
-            });
+                .findFirst()
+                .orElseGet(() -> {
+                    Category cat = new Category();
+                    cat.setCode("TEST");
+                    cat.setNameEn("Test Category");
+                    cat.setNameAr("فئة الاختبار");
+                    cat.setNameNl("Testcategorie");
+                    cat.setNameFr("Catégorie de test");
+                    cat.setDisplayOrder(1);
+                    cat.setIsActive(true);
+                    return categoryRepository.save(cat);
+                });
     }
 
     @Test
@@ -111,21 +111,20 @@ class PracticeAnswerSubmissionIntegrationTest {
         // Given: Question with correct option
         QuizQuestion question = createTestQuestion();
         QuizAnswerOption correctOption = question.getOptions().stream()
-            .filter(QuizAnswerOption::getIsCorrect)
-            .findFirst()
-            .orElseThrow();
+                .filter(QuizAnswerOption::getIsCorrect)
+                .findFirst()
+                .orElseThrow();
 
         SubmitPracticeAnswerRequest request = SubmitPracticeAnswerRequest.builder()
-            .selectedOptionId(correctOption.getId())
-            .timeTakenSeconds(15)
-            .build();
+                .selectedOptionId(correctOption.getId())
+                .timeTakenSeconds(15)
+                .build();
 
         // When: User submits correct answer
         SubmitPracticeAnswerResponse response = practiceService.submitPracticeAnswer(
-            testUserId,
-            question.getId(),
-            request
-        );
+                testUserId,
+                question.getId(),
+                request);
 
         // Then: Response shows correctness
         assertNotNull(response);
@@ -148,25 +147,24 @@ class PracticeAnswerSubmissionIntegrationTest {
         // Given: Question with wrong option selected
         QuizQuestion question = createTestQuestion();
         QuizAnswerOption wrongOption = question.getOptions().stream()
-            .filter(opt -> !opt.getIsCorrect())
-            .findFirst()
-            .orElseThrow();
+                .filter(opt -> !opt.getIsCorrect())
+                .findFirst()
+                .orElseThrow();
         QuizAnswerOption correctOption = question.getOptions().stream()
-            .filter(QuizAnswerOption::getIsCorrect)
-            .findFirst()
-            .orElseThrow();
+                .filter(QuizAnswerOption::getIsCorrect)
+                .findFirst()
+                .orElseThrow();
 
         SubmitPracticeAnswerRequest request = SubmitPracticeAnswerRequest.builder()
-            .selectedOptionId(wrongOption.getId())
-            .timeTakenSeconds(20)
-            .build();
+                .selectedOptionId(wrongOption.getId())
+                .timeTakenSeconds(20)
+                .build();
 
         // When: User submits wrong answer
         SubmitPracticeAnswerResponse response = practiceService.submitPracticeAnswer(
-            testUserId,
-            question.getId(),
-            request
-        );
+                testUserId,
+                question.getId(),
+                request);
 
         // Then: Response shows incorrectness and provides correct answer
         assertNotNull(response);
@@ -192,16 +190,16 @@ class PracticeAnswerSubmissionIntegrationTest {
         QuizAnswerOption option = question.getOptions().get(0);
 
         SubmitPracticeAnswerRequest request = SubmitPracticeAnswerRequest.builder()
-            .selectedOptionId(option.getId())
-            .timeTakenSeconds(15)
-            .build();
+                .selectedOptionId(option.getId())
+                .timeTakenSeconds(15)
+                .build();
 
         // When: User submits answer
         practiceService.submitPracticeAnswer(testUserId, question.getId(), request);
 
         // Then: History record created
         List<UserQuestionHistory> history = historyRepository
-            .findByUserIdAndAnsweredAtAfter(testUserId, LocalDateTime.now().minusMinutes(1));
+                .findByUserIdAndAnsweredAtAfter(testUserId, LocalDateTime.now().minusMinutes(1));
 
         assertEquals(1, history.size());
         UserQuestionHistory record = history.get(0);
@@ -227,8 +225,8 @@ class PracticeAnswerSubmissionIntegrationTest {
 
         // Then: Progress reflects 2/3 correct (66.67%)
         UserCategoryProgress progress = progressRepository
-            .findByUserIdAndCategoryId(testUserId, testCategory.getId())
-            .orElseThrow();
+                .findByUserIdAndCategoryId(testUserId, testCategory.getId())
+                .orElseThrow();
 
         assertEquals(3, progress.getQuestionsAttempted());
         assertEquals(2, progress.getCorrectAnswers());
@@ -247,8 +245,8 @@ class PracticeAnswerSubmissionIntegrationTest {
             submitAnswer(q, true);
         }
         UserCategoryProgress progress = progressRepository
-            .findByUserIdAndCategoryId(testUserId, testCategory.getId())
-            .orElseThrow();
+                .findByUserIdAndCategoryId(testUserId, testCategory.getId())
+                .orElseThrow();
         assertEquals(UserCategoryProgress.MasteryLevel.ADVANCED, progress.getMasteryLevel()); // 100% = ADVANCED
 
         // Scenario 2: Add more to get 10 attempts with 70% accuracy = INTERMEDIATE
@@ -259,8 +257,8 @@ class PracticeAnswerSubmissionIntegrationTest {
             submitAnswer(createTestQuestion(), false); // Total: 3 wrong = 7/10 = 70%
         }
         progress = progressRepository
-            .findByUserIdAndCategoryId(testUserId, testCategory.getId())
-            .orElseThrow();
+                .findByUserIdAndCategoryId(testUserId, testCategory.getId())
+                .orElseThrow();
         assertEquals(10, progress.getQuestionsAttempted());
         assertEquals(UserCategoryProgress.MasteryLevel.INTERMEDIATE, progress.getMasteryLevel());
     }
@@ -271,9 +269,9 @@ class PracticeAnswerSubmissionIntegrationTest {
         // Given: Non-existent question ID
         Long invalidQuestionId = 99999L;
         SubmitPracticeAnswerRequest request = SubmitPracticeAnswerRequest.builder()
-            .selectedOptionId(1L)
-            .timeTakenSeconds(15)
-            .build();
+                .selectedOptionId(1L)
+                .timeTakenSeconds(15)
+                .build();
 
         // When & Then: Throws QuestionNotFoundException
         assertThrows(QuestionNotFoundException.class, () -> {
@@ -289,9 +287,9 @@ class PracticeAnswerSubmissionIntegrationTest {
         Long invalidOptionId = 99999L;
 
         SubmitPracticeAnswerRequest request = SubmitPracticeAnswerRequest.builder()
-            .selectedOptionId(invalidOptionId)
-            .timeTakenSeconds(15)
-            .build();
+                .selectedOptionId(invalidOptionId)
+                .timeTakenSeconds(15)
+                .build();
 
         // When & Then: Throws InvalidAnswerException
         assertThrows(InvalidAnswerException.class, () -> {
@@ -308,9 +306,9 @@ class PracticeAnswerSubmissionIntegrationTest {
         QuizAnswerOption q2Option = q2.getOptions().get(0);
 
         SubmitPracticeAnswerRequest request = SubmitPracticeAnswerRequest.builder()
-            .selectedOptionId(q2Option.getId()) // Option from Q2
-            .timeTakenSeconds(15)
-            .build();
+                .selectedOptionId(q2Option.getId()) // Option from Q2
+                .timeTakenSeconds(15)
+                .build();
 
         // When & Then: Throws InvalidAnswerException (trying to use Q2's option for Q1)
         assertThrows(InvalidAnswerException.class, () -> {
@@ -339,6 +337,7 @@ class PracticeAnswerSubmissionIntegrationTest {
         question.setDifficultyLevel(QuizQuestion.DifficultyLevel.MEDIUM);
         question.setQuestionType(QuizQuestion.QuestionType.MULTIPLE_CHOICE);
         question.setIsActive(true);
+        question.setStatus(QuizQuestion.QuestionStatus.PUBLISHED);
         question.setOptions(new ArrayList<>());
 
         // Create 2 options (Belgian standard) - add to list BEFORE saving question
@@ -360,7 +359,8 @@ class PracticeAnswerSubmissionIntegrationTest {
         wrongOption.setIsCorrect(false);
         wrongOption.setDisplayOrder(2);
 
-        // Add options to question BEFORE saving (Belgian validation requires 2-3 options)
+        // Add options to question BEFORE saving (Belgian validation requires 2-3
+        // options)
         question.getOptions().add(correctOption);
         question.getOptions().add(wrongOption);
 
@@ -375,14 +375,14 @@ class PracticeAnswerSubmissionIntegrationTest {
      */
     private void submitAnswer(QuizQuestion question, boolean submitCorrectAnswer) {
         QuizAnswerOption option = question.getOptions().stream()
-            .filter(opt -> opt.getIsCorrect() == submitCorrectAnswer)
-            .findFirst()
-            .orElseThrow();
+                .filter(opt -> opt.getIsCorrect() == submitCorrectAnswer)
+                .findFirst()
+                .orElseThrow();
 
         SubmitPracticeAnswerRequest request = SubmitPracticeAnswerRequest.builder()
-            .selectedOptionId(option.getId())
-            .timeTakenSeconds(15)
-            .build();
+                .selectedOptionId(option.getId())
+                .timeTakenSeconds(15)
+                .build();
 
         practiceService.submitPracticeAnswer(testUserId, question.getId(), request);
     }

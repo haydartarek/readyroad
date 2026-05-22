@@ -241,6 +241,55 @@ public interface QuizQuestionRepository extends JpaRepository<QuizQuestion, Long
         @Query("SELECT qq FROM QuizQuestion qq WHERE qq.id = :id")
         Optional<QuizQuestion> findByIdWithOptions(@Param("id") Long id);
 
+        // ========== Integrity Diagnostic Counts (Admin diagnostics endpoint)
+        // ==========
+
+        /** Questions with fewer than 2 options (Belgian minimum). */
+        @Query(value = "SELECT COUNT(*) FROM (" +
+                        "  SELECT q.id FROM quiz_questions q" +
+                        "  LEFT JOIN quiz_answer_options o ON o.question_id = q.id" +
+                        "  GROUP BY q.id HAVING COUNT(o.id) < 2" +
+                        ") subq", nativeQuery = true)
+        long countQuestionsWithFewerThanTwoOptions();
+
+        /** Questions with more than 3 options (Belgian maximum). */
+        @Query(value = "SELECT COUNT(*) FROM (" +
+                        "  SELECT q.id FROM quiz_questions q" +
+                        "  LEFT JOIN quiz_answer_options o ON o.question_id = q.id" +
+                        "  GROUP BY q.id HAVING COUNT(o.id) > 3" +
+                        ") subq", nativeQuery = true)
+        long countQuestionsWithMoreThanThreeOptions();
+
+        /** Questions that have no correct answer option. */
+        @Query(value = "SELECT COUNT(*) FROM (" +
+                        "  SELECT q.id FROM quiz_questions q" +
+                        "  LEFT JOIN quiz_answer_options o ON o.question_id = q.id AND o.is_correct = true" +
+                        "  GROUP BY q.id HAVING COUNT(o.id) = 0" +
+                        ") subq", nativeQuery = true)
+        long countQuestionsWithZeroCorrectOptions();
+
+        /** Questions that have more than one correct answer option. */
+        @Query(value = "SELECT COUNT(*) FROM (" +
+                        "  SELECT q.id FROM quiz_questions q" +
+                        "  JOIN quiz_answer_options o ON o.question_id = q.id AND o.is_correct = true" +
+                        "  GROUP BY q.id HAVING COUNT(o.id) > 1" +
+                        ") subq", nativeQuery = true)
+        long countQuestionsWithMultipleCorrectOptions();
+
+        /** Questions that have at least one option with blank/null English text. */
+        @Query(value = "SELECT COUNT(DISTINCT q.id) FROM quiz_questions q" +
+                        " JOIN quiz_answer_options o ON o.question_id = q.id" +
+                        " WHERE o.option_text_en IS NULL OR TRIM(o.option_text_en) = ''", nativeQuery = true)
+        long countQuestionsWithOptionsMissingEnglishText();
+
+        /** Questions that are inactive but still have PUBLISHED status (anomaly). */
+        @Query(value = "SELECT COUNT(*) FROM quiz_questions WHERE is_active = false AND status = 'PUBLISHED'", nativeQuery = true)
+        long countInactivePublishedQuestions();
+
+        /** Questions that are active but still in DRAFT status (anomaly). */
+        @Query(value = "SELECT COUNT(*) FROM quiz_questions WHERE is_active = true AND status = 'DRAFT'", nativeQuery = true)
+        long countActiveDraftQuestions();
+
         // ========== Compliant Question Counts (Stats Accuracy) ==========
 
         /**
@@ -271,4 +320,18 @@ public interface QuizQuestionRepository extends JpaRepository<QuizQuestion, Long
                         "  AND SUM(CASE WHEN o.is_correct = true THEN 1 ELSE 0 END) = 1" +
                         ") compliant", nativeQuery = true)
         long countCompliantQuestionsByCategory(@Param("categoryId") Long categoryId);
+
+        /**
+         * Batch compliant counts per category — replaces N+1 per-category calls in getCategoryProgress().
+         * Returns [category_id, count] rows for all categories that have at least one compliant question.
+         */
+        @Query(value = "SELECT q.category_id, COUNT(*) AS cnt FROM (" +
+                        "  SELECT q.id, q.category_id FROM quiz_questions q" +
+                        "  JOIN quiz_answer_options o ON o.question_id = q.id" +
+                        "  WHERE q.is_active = true AND q.status = 'PUBLISHED'" +
+                        "  GROUP BY q.id, q.category_id" +
+                        "  HAVING COUNT(o.id) BETWEEN 2 AND 3" +
+                        "  AND SUM(CASE WHEN o.is_correct = true THEN 1 ELSE 0 END) = 1" +
+                        ") compliant GROUP BY category_id", nativeQuery = true)
+        List<Object[]> countCompliantQuestionsByCategoryIds();
 }

@@ -1,6 +1,6 @@
 [
   {
-    "question_id": "ZC5M_Q01",
+    "question_id": "ZC5-Einde_Q01",
     "type": "WHAT_DOES_IT_MEAN",
     "difficulty": "EASY",
     "is_critical": false,
@@ -13,7 +13,10 @@
             "text": "Einde zone verboden toegang voor motorvoertuigen met meer dan 2 wielen",
             "is_correct": true
           },
-          { "text": "Einde zone verboden inhalen", "is_correct": false },
+          {
+            "text": "Einde zone verboden inhalen",
+            "is_correct": false
+          },
           {
             "text": "Einde zone verboden toegang voor voertuigen waarvan de massa hoger is dan 3500 kg",
             "is_correct": false
@@ -28,7 +31,10 @@
             "text": "End zone no entry for motor vehicles with more than 2 wheels",
             "is_correct": true
           },
-          { "text": "End zone no overtaking", "is_correct": false },
+          {
+            "text": "End zone no overtaking",
+            "is_correct": false
+          },
           {
             "text": "End zone no entry for vehicles over 3500 kg",
             "is_correct": false
@@ -43,7 +49,10 @@
             "text": "Fin zone accès interdit aux véhicules à moteur de plus de 2 roues",
             "is_correct": true
           },
-          { "text": "Fin zone interdiction de dépasser", "is_correct": false },
+          {
+            "text": "Fin zone interdiction de dépasser",
+            "is_correct": false
+          },
           {
             "text": "Fin zone accès interdit aux véhicules dont la masse dépasse 3500 kg",
             "is_correct": false
@@ -58,18 +67,21 @@
             "text": "نهاية منطقة ممنوع دخول المركبات ذات المحرك بأكثر من عجلتين",
             "is_correct": true
           },
-          { "text": "نهاية منطقة ممنوع التجاوز", "is_correct": false },
+          {
+            "text": "نهاية منطقة ممنوع التجاوز",
+            "is_correct": false
+          },
           {
             "text": "نهاية منطقة ممنوع دخول المركبات التي تزيد كتلتها عن 3500 كغ",
             "is_correct": false
           }
         ],
-        "explanation": "ZC5- هي علامة مرورية نهاية المنطقة التي بدأت بـ ZC5. بعد هذه العلامة المرورية يجوز للمركبات ذات المحرك بأكثر من عجلتين السير بحرية ما لم تشر علامات أخرى إلى غير ذلك."
+        "explanation": "ZC5- هي علامة نهاية المنطقة التي بدأت بـ ZC5. بعد هذه العلامة يجوز للمركبات ذات المحرك بأكثر من عجلتين السير بحرية ما لم تشر علامات أخرى إلى غير ذلك."
       }
     }
   },
   {
-    "question_id": "ZC5M_Q02",
+    "question_id": "ZC5-Einde_Q02",
     "type": "WHICH_SIGN",
     "difficulty": "EASY",
     "is_critical": false,
@@ -78,43 +90,79 @@
       "NL": {
         "question": "Tot welke categorie verkeersborden behoort dit bord?",
         "choices": [
-          { "text": "Zoneborden", "is_correct": true },
-          { "text": "Verbodsborden", "is_correct": false },
-          { "text": "Parkeerborden", "is_correct": false }
+          {
+            "text": "Zoneborden",
+            "is_correct": true
+          },
+          {
+            "text": "Verbodsborden",
+            "is_correct": false
+          },
+          {
+            "text": "Parkeerborden",
+            "is_correct": false
+          }
         ],
         "explanation": "ZC5- is een zonebord. Het duidt het einde aan van de zone die door ZC5 werd gemarkeerd. Voorbij dit bord eindigt het verbod voor de gehele zone."
       },
       "EN": {
         "question": "To which category of traffic signs does this sign belong?",
         "choices": [
-          { "text": "Zone signs", "is_correct": true },
-          { "text": "Prohibition signs", "is_correct": false },
-          { "text": "Parking signs", "is_correct": false }
+          {
+            "text": "Zone signs",
+            "is_correct": true
+          },
+          {
+            "text": "Prohibition signs",
+            "is_correct": false
+          },
+          {
+            "text": "Parking signs",
+            "is_correct": false
+          }
         ],
         "explanation": "ZC5- is a zone sign. It marks the end of the zone introduced by ZC5. Beyond this sign the prohibition for the entire zone ends."
       },
       "FR": {
         "question": "À quelle catégorie de panneaux appartient ce panneau?",
         "choices": [
-          { "text": "Panneaux de zone", "is_correct": true },
-          { "text": "Panneaux d'interdiction", "is_correct": false },
-          { "text": "Panneaux de stationnement", "is_correct": false }
+          {
+            "text": "Panneaux de zone",
+            "is_correct": true
+          },
+          {
+            "text": "Panneaux d'interdiction",
+            "is_correct": false
+          },
+          {
+            "text": "Panneaux de stationnement",
+            "is_correct": false
+          }
         ],
         "explanation": "ZC5- est un panneau de zone. Il indique la fin de la zone introduite par ZC5. Au-delà de ce panneau, l'interdiction pour l'ensemble de la zone prend fin."
       },
       "AR": {
-        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
+        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
         "choices": [
-          { "text": "علامات المنطقة", "is_correct": true },
-          { "text": "علامات الحظر", "is_correct": false },
-          { "text": "علامات الوقوف", "is_correct": false }
+          {
+            "text": "علامات المنطقة",
+            "is_correct": true
+          },
+          {
+            "text": "علامات الحظر",
+            "is_correct": false
+          },
+          {
+            "text": "علامات الوقوف",
+            "is_correct": false
+          }
         ],
-        "explanation": "ZC5- علامة مرورية منطقة. تحدد نهاية المنطقة التي بدأت بـ ZC5. بعد هذه العلامة المرورية ينتهي الحظر في كامل المنطقة."
+        "explanation": "ZC5- علامة منطقة. تحدد نهاية المنطقة التي بدأت بـ ZC5. بعد هذه العلامة ينتهي الحظر في كامل المنطقة."
       }
     }
   },
   {
-    "question_id": "ZC5M_Q03",
+    "question_id": "ZC5-Einde_Q03",
     "type": "HAZARD_IDENTIFICATION",
     "difficulty": "EASY",
     "is_critical": false,
@@ -175,7 +223,7 @@
         "explanation": "ZC5- confirme que la zone introduite par ZC5 se termine ici. L'interdiction pour toute la zone est levée au-delà de ce panneau."
       },
       "AR": {
-        "question": "ماذا تدل هذه العلامة المرورية بشأن الحظر على الطريق الذي يليها؟",
+        "question": "ماذا تدل هذه العلامة بشأن الحظر على الطريق الذي يليها؟",
         "choices": [
           {
             "text": "انتهى حظر المركبات ذات المحرك بأكثر من عجلتين في هذا الموضع",
@@ -186,16 +234,16 @@
             "is_correct": false
           },
           {
-            "text": "يسري الحظر فقط على الشوارع الجانبية بعد هذه العلامة المرورية",
+            "text": "يسري الحظر فقط على الشوارع الجانبية بعد هذه العلامة",
             "is_correct": false
           }
         ],
-        "explanation": "ZC5- تؤكد أن المنطقة التي بدأت بـ ZC5 تنتهي هنا. يرتفع الحظر عن كامل المنطقة بعد هذه العلامة المرورية."
+        "explanation": "ZC5- تؤكد أن المنطقة التي بدأت بـ ZC5 تنتهي هنا. يرتفع الحظر عن كامل المنطقة بعد هذه العلامة."
       }
     }
   },
   {
-    "question_id": "ZC5M_Q04",
+    "question_id": "ZC5-Einde_Q04",
     "type": "WHAT_MUST_YOU_DO",
     "difficulty": "MEDIUM",
     "is_critical": false,
@@ -263,7 +311,7 @@
             "is_correct": true
           },
           {
-            "text": "يجب أن تتوقف فورًا بعد ZC5- وتنتظر إذنًا",
+            "text": "يجب أن تتوقف فوراً بعد ZC5- وتنتظر إذناً",
             "is_correct": false
           },
           {
@@ -271,12 +319,12 @@
             "is_correct": false
           }
         ],
-        "explanation": "ZC5- ترفع الحظر الذي أنشأته ZC5. بعد هذه العلامة المرورية لم يعد حظر السير ساريًا."
+        "explanation": "ZC5- ترفع الحظر الذي أنشأته ZC5. بعد هذه العلامة لم يعد حظر السير سارياً."
       }
     }
   },
   {
-    "question_id": "ZC5M_Q05",
+    "question_id": "ZC5-Einde_Q05",
     "type": "WHAT_MUST_YOU_DO",
     "difficulty": "MEDIUM",
     "is_critical": false,
@@ -348,16 +396,16 @@
             "is_correct": false
           },
           {
-            "text": "يجب أن تتوقف مرة أخرى 50 مترًا بعد العلامة المرورية لمراقبة الحركة",
+            "text": "يجب أن تتوقف مرة أخرى 50 متراً بعد العلامة لمراقبة الحركة",
             "is_correct": false
           }
         ],
-        "explanation": "بعد ZC5- تنتهي قاعدة المنطقة كليًا. لا توجد التزامات إضافية مرتبطة باجتياز هذه العلامة المرورية."
+        "explanation": "بعد ZC5- تنتهي قاعدة المنطقة كلياً. لا توجد التزامات إضافية مرتبطة باجتياز هذه العلامة."
       }
     }
   },
   {
-    "question_id": "ZC5M_Q06",
+    "question_id": "ZC5-Einde_Q06",
     "type": "WHAT_MUST_YOU_DO",
     "difficulty": "MEDIUM",
     "is_critical": false,
@@ -421,7 +469,7 @@
         "question": "تجتاز ZC5- ولا توجد علامات جديدة على الطريق أمامك. هل يسري حظر جديد على مركبتك؟",
         "choices": [
           {
-            "text": "لا، بعد ZC5- ينتهي الحظر كليًا على الطريق التالي، ما لم تشر علامة مرورية جديدة إلى غير ذلك",
+            "text": "لا، بعد ZC5- ينتهي الحظر كلياً على الطريق التالي، ما لم تشر علامة جديدة إلى غير ذلك",
             "is_correct": true
           },
           {
@@ -429,16 +477,16 @@
             "is_correct": false
           },
           {
-            "text": "نعم، يسري الحظر لمدة 200 متر بعد العلامة المرورية",
+            "text": "نعم، يسري الحظر لمدة 200 متر بعد العلامة",
             "is_correct": false
           }
         ],
-        "explanation": "ZC5- تنهي المنطقة كليًا. تسري قواعد المرور العادية على الطريق بعد ZC5-، ما لم تفرض علامة مرورية جديدة قيدًا جديدًا."
+        "explanation": "ZC5- تنهي المنطقة كلياً. تسري قواعد المرور العادية على الطريق بعد ZC5-، ما لم تفرض علامة جديدة قيداً جديداً."
       }
     }
   },
   {
-    "question_id": "ZC5M_Q07",
+    "question_id": "ZC5-Einde_Q07",
     "type": "IS_IT_ALLOWED",
     "difficulty": "HARD",
     "is_critical": true,
@@ -490,80 +538,80 @@
         "question": "تجتاز ZC5-. هل يجوز للمركبات ذات المحرك بأكثر من عجلتين السير بحرية على الطريق التالي؟",
         "choices": [
           {
-            "text": "نعم، ZC5- ترفع الحظر كليًا ويجوز للمركبات ذات المحرك بأكثر من عجلتين السير بصورة طبيعية مرة أخرى",
+            "text": "نعم، ZC5- ترفع الحظر كلياً ويجوز للمركبات ذات المحرك بأكثر من عجلتين السير بصورة طبيعية مرة أخرى",
             "is_correct": true
           },
           {
-            "text": "لا، يظل الحظر ساريًا حتى يُوضع علامة مرورية تصريح صريحة",
+            "text": "لا، يظل الحظر سارياً حتى يُوضع لافتة تصريح صريحة",
             "is_correct": false
           }
         ],
-        "explanation": "ZC5- تنهي المنطقة نهائيًا. لا توجد حاجة لعلامة مرورية تصريح منفصلة؛ ينتهي الحظر تلقائيًا بموجب القانون بعد علامة مرورية النهاية."
+        "explanation": "ZC5- تنهي المنطقة نهائياً. لا حاجة لعلامة تصريح منفصلة؛ ينتهي الحظر تلقائياً بموجب القانون بعد علامة النهاية."
       }
     }
   },
   {
-    "question_id": "ZC5M_Q08",
+    "question_id": "ZC5-Einde_Q08",
     "type": "IS_IT_ALLOWED",
     "difficulty": "HARD",
     "is_critical": true,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Na ZC5- staan er geen nieuwe ZC5-borden. Betekent dit dat er voorver een nieuwe ZC5-zone kan zijn?",
+        "question": "Na ZC5- staan er geen nieuwe ZC5-borden. Betekent dit dat er verderop geen nieuwe ZC5-zone van kracht kan zijn?",
         "choices": [
           {
-            "text": "Neen, zonder een nieuw ZC5-beginbord verderop geldt er geen nieuwe ZC5-zone",
+            "text": "Ja, zonder een nieuw ZC5-beginbord verderop geldt er geen nieuwe ZC5-zone",
             "is_correct": true
           },
           {
-            "text": "Ja, een ZC5-zone kan stilzwijgend opnieuw ingaan na het passeren van ZC5-",
+            "text": "Neen, een ZC5-zone kan stilzwijgend opnieuw ingaan na het passeren van ZC5-",
             "is_correct": false
           }
         ],
         "explanation": "Een nieuwe zone begint alleen bij een nieuw beginbord. Zonder ZC5 verderop is er geen nieuwe ZC5-zone van kracht."
       },
       "EN": {
-        "question": "After ZC5- there are no new ZC5 signs. Does this mean a new ZC5 zone could be in force further ahead?",
+        "question": "After ZC5- there are no new ZC5 signs. Does this mean no new ZC5 zone can be in force further ahead?",
         "choices": [
           {
-            "text": "No, without a new ZC5 entry sign further ahead there is no new ZC5 zone",
+            "text": "Yes, without a new ZC5 entry sign further ahead there is no new ZC5 zone in force",
             "is_correct": true
           },
           {
-            "text": "Yes, a ZC5 zone can silently re-enter after passing ZC5-",
+            "text": "No, a ZC5 zone can silently re-enter after passing ZC5-",
             "is_correct": false
           }
         ],
         "explanation": "A new zone only begins at a new entry sign. Without a ZC5 further ahead no new ZC5 zone is in force."
       },
       "FR": {
-        "question": "Après ZC5- il n'y a pas de nouveaux panneaux ZC5. Cela signifie-t-il qu'une nouvelle zone ZC5 pourrait être en vigueur plus loin?",
+        "question": "Après ZC5- il n'y a pas de nouveaux panneaux ZC5. Cela signifie-t-il qu'aucune nouvelle zone ZC5 ne peut être en vigueur plus loin?",
         "choices": [
           {
-            "text": "Non, sans nouveau panneau de début ZC5 plus loin, il n'y a pas de nouvelle zone ZC5",
+            "text": "Oui, sans nouveau panneau de début ZC5 plus loin, aucune nouvelle zone ZC5 n'est en vigueur",
             "is_correct": true
           },
           {
-            "text": "Oui, une zone ZC5 peut silencieusement recommencer après avoir dépassé ZC5-",
+            "text": "Non, une zone ZC5 peut silencieusement recommencer après avoir dépassé ZC5-",
             "is_correct": false
           }
         ],
         "explanation": "Une nouvelle zone ne commence qu'à un nouveau panneau de début. Sans ZC5 plus loin, aucune nouvelle zone ZC5 n'est en vigueur."
       },
       "AR": {
-        "question": "بعد ZC5- لا توجد علامات ZC5 جديدة. هل هذا يعني أن منطقة ZC5 جديدة قد تكون سارية أمامك؟",
+        "question": "بعد ZC5- لا توجد علامات ZC5 جديدة. هل هذا يعني أنه لا يمكن أن تكون منطقة ZC5 جديدة سارية أمامك؟",
         "choices": [
           {
-            "text": "لا، بدون علامة مرورية بداية ZC5 جديدة لا توجد منطقة ZC5 جديدة",
+            "text": "نعم، بدون علامة بداية ZC5 جديدة لا توجد منطقة ZC5 جديدة سارية",
             "is_correct": true
           },
           {
-            "text": "نعم، يمكن أن تبدأ منطقة ZC5 ضمنيًا بعد ZC5-",
+            "text": "لا، يمكن أن تبدأ منطقة ZC5 ضمنياً بعد ZC5-",
             "is_correct": false
           }
         ],
-        "explanation": "منطقة جديدة تبدأ فقط عند علامة مرورية بداية جديدة. بدون ZC5 أمامك لا توجد منطقة ZC5 جديدة سارية."
+        "explanation": "منطقة جديدة تبدأ فقط عند علامة بداية جديدة. بدون ZC5 أمامك لا توجد منطقة ZC5 جديدة سارية."
       }
     }
   }

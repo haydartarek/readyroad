@@ -1,6 +1,10 @@
 package com.readyroad.readyroadbackend.exception;
 
 import com.readyroad.readyroadbackend.service.BackendMessageService;
+import jakarta.validation.ConstraintViolation;
+import jakarta.validation.ConstraintViolationException;
+import jakarta.validation.Path;
+import java.util.Set;
 import java.util.Map;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -12,6 +16,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.BadCredentialsException;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
@@ -47,5 +52,29 @@ class GlobalExceptionHandlerTest {
                 .containsEntry("error", "Invalid category id")
                 .containsEntry("message", "Invalid category id")
                 .containsKey("timestamp");
+    }
+
+    @Test
+    void constraintViolationReturnsUnifiedEnvelopeWithFields() {
+        ConstraintViolation<?> violation = mock(ConstraintViolation.class);
+        Path path = mock(Path.class);
+        when(messages.get("error.validation_failed")).thenReturn("Validation failed.");
+        when(violation.getPropertyPath()).thenReturn(path);
+        when(path.toString()).thenReturn("createSign.request.signCode");
+        when(violation.getMessage()).thenReturn("must not be blank");
+
+        ResponseEntity<Map<String, Object>> response = globalExceptionHandler
+                .handleConstraintViolation(new ConstraintViolationException(Set.of(violation)));
+
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.BAD_REQUEST);
+        assertThat(response.getBody())
+                .containsEntry("error", "Validation failed.")
+                .containsEntry("message", "Validation failed.")
+                .containsKey("fields")
+                .containsKey("timestamp");
+        @SuppressWarnings("unchecked")
+        Map<String, String> fields = (Map<String, String>) response.getBody().get("fields");
+        assertThat(fields)
+                .containsEntry("createSign.request.signCode", "must not be blank");
     }
 }

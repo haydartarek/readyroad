@@ -64,7 +64,7 @@ SET @col = (SELECT COUNT(*) FROM INFORMATION_SCHEMA.COLUMNS
   WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'user_question_history'
   AND COLUMN_NAME = 'is_correct');
 SET @sql = IF(@col = 0,
-  'ALTER TABLE user_question_history ADD COLUMN is_correct TINYINT(1) NULL COMMENT ''Correctness of the answer (null = not answered yet)''',
+  'ALTER TABLE user_question_history ADD COLUMN is_correct TINYINT NULL COMMENT ''Correctness of the answer (null = not answered yet)''',
   'SELECT 1');
 PREPARE s FROM @sql; EXECUTE s; DEALLOCATE PREPARE s;
 

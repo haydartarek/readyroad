@@ -64,7 +64,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "ZC5 هي علامة مرورية بداية منطقة لا يجوز فيها للمركبات ذات المحرك بأكثر من عجلتين الدخول أو السير. تسري القيود في كامل المنطقة."
+        "explanation": "ZC5 هي علامة بداية منطقة لا يجوز فيها للمركبات ذات المحرك بأكثر من عجلتين الدخول أو السير. تسري القيود في كامل المنطقة."
       }
     }
   },
@@ -103,13 +103,13 @@
         "explanation": "ZC5 est un panneau de zone. Contrairement aux panneaux C, un panneau de zone ne s'applique pas seulement au point où il est placé, mais dans toute la zone définie."
       },
       "AR": {
-        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
+        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
         "choices": [
           { "text": "علامات المنطقة", "is_correct": true },
           { "text": "علامات الحظر", "is_correct": false },
           { "text": "علامات الوقوف", "is_correct": false }
         ],
-        "explanation": "ZC5 علامة مرورية منطقة. خلافًا لعلامات C، تسري علامة مرورية المنطقة في كامل المنطقة المحددة، وليس فقط عند نقطة وضعها."
+        "explanation": "ZC5 علامة منطقة. خلافاً لعلامات C، تسري علامة المنطقة في كامل المنطقة المحددة، وليس فقط عند نقطة وضعها."
       }
     }
   },
@@ -328,7 +328,7 @@
         "explanation": "Une voiture a 4 roues et entre dans la catégorie des véhicules à moteur de plus de 2 roues. ZC5 lui interdit d'entrer dans la zone."
       },
       "AR": {
-        "question": "أنت تقود سيارة. ترى ZC5 عند مدخل المنطقة. هل يجوز لك الدخول؟",
+        "question": "أنت تقود سيارة. ترى ZC5 عند مدخل منطقة. هل يجوز لك الدخول؟",
         "choices": [
           {
             "text": "لا، السيارة مركبة ذات محرك بأكثر من عجلتين ولا يجوز لها دخول المنطقة",
@@ -409,7 +409,7 @@
         "question": "ما الفرق بين ZC5 و C5؟",
         "choices": [
           {
-            "text": "ZC5 تسري في كامل المنطقة حتى علامة مرورية النهاية ZC5-؛ C5 تسري فقط عند النقطة التي وُضعت فيها",
+            "text": "ZC5 تسري في كامل المنطقة حتى علامة النهاية ZC5-؛ C5 تسري فقط عند النقطة التي وُضعت فيها",
             "is_correct": true
           },
           {
@@ -418,7 +418,7 @@
           },
           { "text": "C5 لها نطاق تطبيق أوسع من ZC5", "is_correct": false }
         ],
-        "explanation": "علامة مرورية المنطقة (ZC5) سارية في كامل المنطقة. علامة مرورية الحظر العادية (C5) تسري فقط عند موضع العلامة المرورية أو القسم المحدد من الطريق."
+        "explanation": "علامة المنطقة (ZC5) سارية في كامل المنطقة. علامة الحظر العادية (C5) تسري فقط عند موضع العلامة أو القسم المحدد من الطريق."
       }
     }
   },
@@ -472,18 +472,18 @@
         "explanation": "La règle de zone est en vigueur dans toute la zone. Le fait d'avoir vu ou non le panneau de début ne modifie pas l'obligation légale."
       },
       "AR": {
-        "question": "دخلت منطقة ZC5 لكنك لم ترّعلامة مرورية البداية. هل تسري القيود على مركبتك؟",
+        "question": "دخلت منطقة ZC5 لكنك لم تر علامة البداية. هل تسري القيود على مركبتك؟",
         "choices": [
           {
-            "text": "نعم، قاعدة المنطقة سارية في كامل المنطقة بصرف النظر عما إذا رأيت علامة مرورية البداية أم لا",
+            "text": "نعم، قاعدة المنطقة سارية في كامل المنطقة بصرف النظر عما إذا رأيت علامة البداية أم لا",
             "is_correct": true
           },
           {
-            "text": "لا، أنت ملزم فقط إذا رأيت علامة مرورية البداية شخصيًا",
+            "text": "لا، أنت ملزم فقط إذا رأيت علامة البداية شخصياً",
             "is_correct": false
           }
         ],
-        "explanation": "قاعدة المنطقة سارية في كامل المنطقة. رؤيتك أو عدم رؤيتك لعلامة مرورية البداية لا تغيّر الالتزام القانوني."
+        "explanation": "قاعدة المنطقة سارية في كامل المنطقة. رؤيتك أو عدم رؤيتك لعلامة البداية لا تغيّر الالتزام القانوني."
       }
     }
   },
@@ -506,7 +506,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "ZC5 verbiedt de aangeduide voertuigcategorie absoluut de zone in te rijden, ongeacht de bestemming. Er bestaat geen uitzondering voor bestemmingen inside de zone."
+        "explanation": "ZC5 verbiedt de aangeduide voertuigcategorie absoluut de zone in te rijden, ongeacht de bestemming. Er bestaat geen uitzondering voor bestemmingen in de zone."
       },
       "EN": {
         "question": "You are driving a car inside a ZC5 zone and your destination is within that zone. Are you allowed to continue?",

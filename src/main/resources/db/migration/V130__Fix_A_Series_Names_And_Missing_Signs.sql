@@ -171,13 +171,13 @@ VALUES (
     TRUE,
     NOW(),
     NOW()
-)
+) AS new_values
 ON DUPLICATE KEY UPDATE
-    name_nl        = VALUES(name_nl),
-    name_en        = VALUES(name_en),
-    name_fr        = VALUES(name_fr),
-    name_ar        = VALUES(name_ar),
-    description_nl = VALUES(description_nl),
-    description_en = VALUES(description_en),
-    image_url      = VALUES(image_url),
+    name_nl        = new_values.name_nl,
+    name_en        = new_values.name_en,
+    name_fr        = new_values.name_fr,
+    name_ar        = new_values.name_ar,
+    description_nl = new_values.description_nl,
+    description_en = new_values.description_en,
+    image_url      = new_values.image_url,
     updated_at     = NOW();

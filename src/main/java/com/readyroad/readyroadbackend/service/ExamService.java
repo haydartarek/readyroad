@@ -21,6 +21,7 @@ import com.readyroad.readyroadbackend.util.PlaceholderDetector;
 import com.readyroad.readyroadbackend.dto.exam.SubmitExamAnswerRequest;
 import com.readyroad.readyroadbackend.dto.exam.SubmitExamAnswerResponse;
 import com.readyroad.readyroadbackend.dto.exam.ExamResultsDTO;
+import com.readyroad.readyroadbackend.dto.exam.ExamStartResponse;
 import com.readyroad.readyroadbackend.dto.exam.CategoryBreakdownDTO;
 import com.readyroad.readyroadbackend.dto.exam.IncorrectQuestionDTO;
 import com.readyroad.readyroadbackend.dto.exam.AllAnsweredQuestionDTO;
@@ -32,10 +33,13 @@ import com.readyroad.readyroadbackend.exception.ExamExpiredException;
 import com.readyroad.readyroadbackend.exception.InvalidAnswerException;
 import com.readyroad.readyroadbackend.exception.QuestionNotFoundException;
 import com.readyroad.readyroadbackend.exception.UnauthorizedException;
+import com.readyroad.readyroadbackend.mapper.ExamMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.time.Duration;
 import java.time.Instant;
@@ -76,6 +80,7 @@ public class ExamService {
     private final StreakService streakService; // Story N3: Study streak update on exam completion
     private final UserWeakAreaRepository weakAreaRepository; // Story N2: Persist weak areas on exam completion
     private final RoadSignReferenceTextResolver roadSignReferenceTextResolver;
+    private final ExamMapper examMapper;
     private final BackendMessageService messages;
 
     private static final int EXAM_QUESTION_COUNT = 50;
@@ -152,26 +157,32 @@ public class ExamService {
         if (easyPool.size() < EASY_QUESTION_COUNT) {
             log.error("Insufficient EASY questions. Required: {}, Available: {}",
                     EASY_QUESTION_COUNT, easyPool.size());
-            throw new IllegalStateException(messages.get(
-                    "exam.pool.insufficient_easy",
-                    EASY_QUESTION_COUNT,
-                    easyPool.size()));
+            throw new ResponseStatusException(
+                    HttpStatus.CONFLICT,
+                    messages.get(
+                            "exam.pool.insufficient_easy",
+                            EASY_QUESTION_COUNT,
+                            easyPool.size()));
         }
         if (mediumPool.size() < MEDIUM_QUESTION_COUNT) {
             log.error("Insufficient MEDIUM questions. Required: {}, Available: {}",
                     MEDIUM_QUESTION_COUNT, mediumPool.size());
-            throw new IllegalStateException(messages.get(
-                    "exam.pool.insufficient_medium",
-                    MEDIUM_QUESTION_COUNT,
-                    mediumPool.size()));
+            throw new ResponseStatusException(
+                    HttpStatus.CONFLICT,
+                    messages.get(
+                            "exam.pool.insufficient_medium",
+                            MEDIUM_QUESTION_COUNT,
+                            mediumPool.size()));
         }
         if (hardPool.size() < HARD_QUESTION_COUNT) {
             log.error("Insufficient HARD questions. Required: {}, Available: {}",
                     HARD_QUESTION_COUNT, hardPool.size());
-            throw new IllegalStateException(messages.get(
-                    "exam.pool.insufficient_hard",
-                    HARD_QUESTION_COUNT,
-                    hardPool.size()));
+            throw new ResponseStatusException(
+                    HttpStatus.CONFLICT,
+                    messages.get(
+                            "exam.pool.insufficient_hard",
+                            HARD_QUESTION_COUNT,
+                            hardPool.size()));
         }
 
         // Build the 50-question set with correct distribution, then shuffle order
@@ -225,6 +236,12 @@ public class ExamService {
                 exam.getId(), userId, EXAM_QUESTION_COUNT);
 
         return exam; // Return entity, controller will map to DTO
+    }
+
+    @Transactional
+    public ExamStartResponse startExamResponse(Long userId) {
+        ExamSimulation exam = startExamSimulation(userId);
+        return examMapper.toStartResponse(exam, getExamQuestions(exam.getId()));
     }
 
     /**
@@ -345,6 +362,16 @@ public class ExamService {
         return exam;
     }
 
+    @Transactional
+    public ExamStartResponse getActiveExamResponse(Long userId) {
+        ExamSimulation activeExam = getActiveExam(userId);
+        if (activeExam == null) {
+            return null;
+        }
+
+        return examMapper.toStartResponse(activeExam, getExamQuestions(activeExam.getId()));
+    }
+
     /**
      * Get exam history for user — includes COMPLETED, EXPIRED, and ABANDONED exams.
      * IN_PROGRESS exams are excluded (they haven't produced results yet).
@@ -355,10 +382,8 @@ public class ExamService {
     @Transactional(readOnly = true)
     public List<ExamSimulation> getCompletedExams(Long userId) {
         log.info("Fetching exam history for user: {}", userId);
-        return examRepository.findByUserIdOrderByStartedAtDesc(userId)
-                .stream()
-                .filter(e -> e.getStatus() != ExamSimulation.ExamStatus.IN_PROGRESS)
-                .collect(java.util.stream.Collectors.toList());
+        return examRepository.findByUserIdAndStatusNotOrderByStartedAtDesc(
+                userId, ExamSimulation.ExamStatus.IN_PROGRESS);
     }
 
     /**
@@ -387,7 +412,8 @@ public class ExamService {
 
         // Idempotent — already in a terminal state, nothing to do
         if (exam.getStatus() == ExamSimulation.ExamStatus.COMPLETED ||
-                exam.getStatus() == ExamSimulation.ExamStatus.EXPIRED) {
+                exam.getStatus() == ExamSimulation.ExamStatus.EXPIRED ||
+                exam.getStatus() == ExamSimulation.ExamStatus.ABANDONED) {
             log.info("Exam {} already in terminal state: {}", examId, exam.getStatus());
             return;
         }
@@ -435,8 +461,7 @@ public class ExamService {
         // ── Story N2: Persist WEAK_AREA rows + fire notification (deduped per 24h)
         // ──────────
         try {
-            List<ExamSimulationAnswer> allAnswers = answerRepository.findByExamId(examId);
-            Map<Long, CategoryBreakdownDTO> categoryMap = calculateCategoryBreakdown(allAnswers);
+            Map<Long, CategoryBreakdownDTO> categoryMap = calculateCategoryBreakdown(answers);
             Instant weakAreaCutoff = Instant.now().minusSeconds(24 * 3600);
             boolean notifSent = false;
             for (CategoryBreakdownDTO cat : categoryMap.values()) {
@@ -570,18 +595,17 @@ public class ExamService {
             throw new ExamNotActiveException(messages.get("exam.cancel.not_active"));
         }
 
-        // Mark as cancelled by setting status to COMPLETED with 0 score
-        exam.setStatus(ExamSimulation.ExamStatus.COMPLETED);
+        // Mark as abandoned — distinct from a completed (submitted) exam
+        exam.setStatus(ExamSimulation.ExamStatus.ABANDONED);
         exam.setCompletedAt(Instant.now());
         exam.setCorrectAnswers(0);
         exam.setScorePercentage(0.0);
 
         examRepository.save(exam);
 
-        // Fire exam-failed notification so the user sees a result in the dashboard
+        // Fire a neutral cancelled notification — not exam-failed, which implies a performance result
         try {
-            notificationService.createExamFailedNotification(
-                    exam.getUserId(), examId, 0, EXAM_QUESTION_COUNT, PASSING_SCORE);
+            notificationService.createExamAbandonedNotification(exam.getUserId(), examId);
         } catch (Exception ex) {
             log.warn("Failed to create notification for cancelled examId={}: {}", examId, ex.getMessage());
         }
