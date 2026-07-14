@@ -138,19 +138,19 @@ public class Phase6PerformanceSanityBDDTest {
             // ✅ Add 2 options BEFORE saving (Belgian validation requires 2-3 options)
             QuizAnswerOption option1 = new QuizAnswerOption();
             option1.setQuestion(question);
-            option1.setOptionTextEn("Option A");
-            option1.setOptionTextAr("الخيار أ");
-            option1.setOptionTextNl("Optie A");
-            option1.setOptionTextFr("Option A");
+            option1.setOptionTextEn("Continue only when the road is clear");
+            option1.setOptionTextAr("تابع فقط عندما يكون الطريق خاليًا");
+            option1.setOptionTextNl("Rijd alleen verder wanneer de weg vrij is");
+            option1.setOptionTextFr("Continuez uniquement lorsque la route est libre");
             option1.setIsCorrect(true);
             option1.setDisplayOrder(1);
 
             QuizAnswerOption option2 = new QuizAnswerOption();
             option2.setQuestion(question);
-            option2.setOptionTextEn("Option B");
-            option2.setOptionTextAr("الخيار ب");
-            option2.setOptionTextNl("Optie B");
-            option2.setOptionTextFr("Option B");
+            option2.setOptionTextEn("Proceed without checking other road users");
+            option2.setOptionTextAr("تابع دون التحقق من مستخدمي الطريق الآخرين");
+            option2.setOptionTextNl("Rijd verder zonder andere weggebruikers te controleren");
+            option2.setOptionTextFr("Avancez sans verifier les autres usagers de la route");
             option2.setIsCorrect(false);
             option2.setDisplayOrder(2);
 
@@ -161,6 +161,8 @@ public class Phase6PerformanceSanityBDDTest {
             // Now save question with options (validation will pass)
             question = quizQuestionRepository.save(question);
         }
+
+        quizQuestionRepository.flush();
     }
 
     @Test
