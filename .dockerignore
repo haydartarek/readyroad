@@ -17,6 +17,7 @@ target/
 
 # Git
 .git/
+.github/
 .gitignore
 .gitattributes
 
@@ -31,8 +32,7 @@ logs/
 
 # Environment
 .env
-.env.local
-.env.*.local
+.env.*
 
 # Documentation
 *.md
@@ -40,6 +40,12 @@ docs/
 
 # Test files
 src/test/
+coverage/
+
+# Files used by local tooling and Compose, not by the image build
+scripts/
+init-db.sql/
+public/images/quiz/
 
 # OS
 .DS_Store

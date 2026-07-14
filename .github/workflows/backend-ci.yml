@@ -1,0 +1,72 @@
+name: Backend CI
+
+on:
+  push:
+    branches:
+      - "**"
+    paths:
+      - "src/**"
+      - "data/**"
+      - "public/images/signs/**"
+      - "pom.xml"
+      - "Dockerfile"
+      - ".dockerignore"
+      - "docker-compose*.yml"
+      - ".github/workflows/backend-ci.yml"
+  pull_request:
+    paths:
+      - "src/**"
+      - "data/**"
+      - "public/images/signs/**"
+      - "pom.xml"
+      - "Dockerfile"
+      - ".dockerignore"
+      - "docker-compose*.yml"
+      - ".github/workflows/backend-ci.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: backend-ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    name: Test and verify Backend
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v7
+
+      - name: Setup Java
+        uses: actions/setup-java@v5
+        with:
+          distribution: "temurin"
+          java-version: "21"
+          cache: "maven"
+
+      - name: Run tests
+        run: mvn --batch-mode --no-transfer-progress clean test
+
+      - name: Run Maven verification
+        run: mvn --batch-mode --no-transfer-progress verify
+
+      - name: Package application
+        run: mvn --batch-mode --no-transfer-progress package -DskipTests
+
+  docker-build:
+    name: Build Backend Docker image
+    needs: verify
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v7
+
+      - name: Build image
+        run: docker build --file Dockerfile --tag readyroad-backend:ci .
