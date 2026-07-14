@@ -17,8 +17,8 @@ import java.util.ArrayList;
 
 /**
  * Base class for all integration tests.
- * Seeds H2 database ONCE with 200 published questions at first test execution.
- * Questions persist across tests - only exams are cleaned up.
+ * Ensures the H2 database contains the published-question fixture required by
+ * exam integration tests.
  */
 @SpringBootTest
 @ActiveProfiles("test")
@@ -96,7 +96,7 @@ public abstract class BaseIntegrationTest {
     /**
      * Get existing category or create new one (prevents duplicate key violations)
      */
-    private Category getOrCreateCategory(String code, String name) {
+    protected Category getOrCreateCategory(String code, String name) {
         return categoryRepository.findByCode(code)
                 .orElseGet(() -> {
                     log.debug("Creating category: {}", code);
@@ -108,7 +108,7 @@ public abstract class BaseIntegrationTest {
                     cat.setNameAr(name + " AR");
                     cat.setIsActive(true);
                     cat.setDisplayOrder(1);
-                    return categoryRepository.save(cat);
+                    return categoryRepository.saveAndFlush(cat);
                 });
     }
 

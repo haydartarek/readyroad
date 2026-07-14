@@ -11,6 +11,8 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.mockito.Mockito.when;
@@ -40,6 +42,9 @@ class TrafficSignMapperImagePathTest {
         TrafficSignResponse response = mapper.toResponse(sign);
 
         assertEquals(officialImagePath, response.imageUrl());
+        assertEquals("Summary EN", response.summaryEn());
+        assertEquals("Guidance EN", response.driverGuidanceEn());
+        assertEquals(List.of(), response.exceptionsEn());
         assertFalse(response.imageUrl().contains("/information_signs/Zone-F"));
     }
 
@@ -79,11 +84,18 @@ class TrafficSignMapperImagePathTest {
                 "Description AR",
                 "Description NL",
                 "Description FR",
-                "Long EN",
-                "Long NL",
-                "Long FR",
-                "Long AR",
-                true,
+                "Summary EN",
+                "Summary AR",
+                "Summary NL",
+                "Summary FR",
+                "Guidance EN",
+                "Guidance AR",
+                "Guidance NL",
+                "Guidance FR",
+                List.of(),
+                List.of(),
+                List.of(),
+                List.of(),
                 imagePath,
                 true);
     }

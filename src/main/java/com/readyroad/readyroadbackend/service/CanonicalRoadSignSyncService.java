@@ -50,7 +50,6 @@ public class CanonicalRoadSignSyncService {
 
         List<RoadSign> toSave = new ArrayList<>();
         List<RoadSign> toDelete = new ArrayList<>();
-        Set<String> canonicalRoutes = new LinkedHashSet<>();
         Set<Long> claimedIds = new LinkedHashSet<>();
         int created = 0;
         int updated = 0;
@@ -58,8 +57,6 @@ public class CanonicalRoadSignSyncService {
         int deleted = 0;
 
         for (CanonicalSignCatalogService.CanonicalSignSeed seed : canonicalSignCatalogService.getCanonicalSeeds()) {
-            canonicalRoutes.add(seed.routeKey());
-
             RoadSign sign = findMatchingSign(seed, byRoute, bySignCode, claimedIds);
 
             boolean isNew = false;
@@ -68,6 +65,7 @@ public class CanonicalRoadSignSyncService {
                 isNew = true;
             }
 
+            boolean wasInactive = !Boolean.TRUE.equals(sign.getIsActive());
             boolean changed = applySeed(sign, seed);
             if (isNew) {
                 created++;
@@ -82,7 +80,7 @@ public class CanonicalRoadSignSyncService {
             }
 
             if (changed) {
-                if (!Boolean.TRUE.equals(sign.getIsActive())) {
+                if (wasInactive) {
                     reactivated++;
                 } else {
                     updated++;
@@ -168,10 +166,27 @@ public class CanonicalRoadSignSyncService {
         changed |= setIfDifferent(sign.getNameAr(), seed.nameAr(), sign::setNameAr);
         changed |= setIfDifferent(sign.getNameNl(), seed.nameNl(), sign::setNameNl);
         changed |= setIfDifferent(sign.getNameFr(), seed.nameFr(), sign::setNameFr);
-        changed |= setIfDifferent(sign.getDescriptionEn(), seed.shortDescriptionEn(), sign::setDescriptionEn);
-        changed |= setIfDifferent(sign.getDescriptionAr(), seed.shortDescriptionAr(), sign::setDescriptionAr);
-        changed |= setIfDifferent(sign.getDescriptionNl(), seed.shortDescriptionNl(), sign::setDescriptionNl);
-        changed |= setIfDifferent(sign.getDescriptionFr(), seed.shortDescriptionFr(), sign::setDescriptionFr);
+        changed |= setIfDifferent(sign.getDescriptionEn(), seed.descriptionEn(), sign::setDescriptionEn);
+        changed |= setIfDifferent(sign.getDescriptionAr(), seed.descriptionAr(), sign::setDescriptionAr);
+        changed |= setIfDifferent(sign.getDescriptionNl(), seed.descriptionNl(), sign::setDescriptionNl);
+        changed |= setIfDifferent(sign.getDescriptionFr(), seed.descriptionFr(), sign::setDescriptionFr);
+        changed |= setIfDifferent(sign.getSummaryEn(), seed.summaryEn(), sign::setSummaryEn);
+        changed |= setIfDifferent(sign.getSummaryAr(), seed.summaryAr(), sign::setSummaryAr);
+        changed |= setIfDifferent(sign.getSummaryNl(), seed.summaryNl(), sign::setSummaryNl);
+        changed |= setIfDifferent(sign.getSummaryFr(), seed.summaryFr(), sign::setSummaryFr);
+        changed |= setIfDifferent(
+                sign.getDriverGuidanceEn(), seed.driverGuidanceEn(), sign::setDriverGuidanceEn);
+        changed |= setIfDifferent(
+                sign.getDriverGuidanceAr(), seed.driverGuidanceAr(), sign::setDriverGuidanceAr);
+        changed |= setIfDifferent(
+                sign.getDriverGuidanceNl(), seed.driverGuidanceNl(), sign::setDriverGuidanceNl);
+        changed |= setIfDifferent(
+                sign.getDriverGuidanceFr(), seed.driverGuidanceFr(), sign::setDriverGuidanceFr);
+        changed |= setIfDifferent(sign.getExceptionsEn(), seed.exceptionsEn(), sign::setExceptionsEn);
+        changed |= setIfDifferent(sign.getExceptionsAr(), seed.exceptionsAr(), sign::setExceptionsAr);
+        changed |= setIfDifferent(sign.getExceptionsNl(), seed.exceptionsNl(), sign::setExceptionsNl);
+        changed |= setIfDifferent(sign.getExceptionsFr(), seed.exceptionsFr(), sign::setExceptionsFr);
+        changed |= setIfDifferent(sign.getSeriousViolation(), seed.seriousViolation(), sign::setSeriousViolation);
 
         if (!Boolean.TRUE.equals(sign.getIsActive())) {
             sign.setIsActive(true);

@@ -65,9 +65,9 @@ class TimeLimitEnforcementIntegrationTest extends BaseIntegrationTest {
         void setUp() {
                 testUserId = 100L;
 
-                // ✅ Use category and questions seeded by BaseIntegrationTest (no duplication)
-                var categories = categoryRepository.findAll();
-                testCategory = categories.isEmpty() ? null : categories.get(0);
+                // Resolve the parent fixture from the database, never from the cached
+                // findAll() result or an assumed numeric ID.
+                testCategory = getOrCreateCategory("SIGNS", "Traffic Signs");
 
                 // ✅ BaseIntegrationTest already seeded 200 PUBLISHED questions
                 testQuestions = questionRepository.findAll();
@@ -82,7 +82,7 @@ class TimeLimitEnforcementIntegrationTest extends BaseIntegrationTest {
                 progress.setCorrectAnswers(7);
                 progress.setAccuracyRate(BigDecimal.valueOf(70.0));
                 progress.setMasteryLevel(UserCategoryProgress.MasteryLevel.INTERMEDIATE);
-                progressRepository.save(progress);
+                progressRepository.saveAndFlush(progress);
         }
 
         @Test

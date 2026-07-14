@@ -5,21 +5,32 @@
   "serious_violation": false,
   "i18n": {
     "NL": {
-      "name": "Fietsstraat",
-      "description": "Begin / Einde fietsstraat."
+      "name": "Begin van een fietszone",
+      "summary": "F111 markeert het begin van een fietszone.",
+      "description": "Duidt het begin van een fietszone aan. Motorvoertuigen zijn toegelaten, maar mogen fietsers niet inhalen en de snelheid mag nooit hoger zijn dan 30 km/u.",
+      "driver_guidance": "Motorvoertuigen hebben toegang, maar het inhalen van fietsers is verboden en de snelheid is maximaal 30 km/u.",
+      "exceptions": []
     },
     "EN": {
-      "name": "Bicycle street",
-      "description": "Start / End of bicycle street."
+      "name": "Start of a cycle zone",
+      "summary": "F111 marks the start of a cycle zone.",
+      "description": "Indicates the start of a cycle zone. Motor vehicles are allowed, but may not overtake cyclists and the speed may never exceed 30 km/h.",
+      "driver_guidance": "Motor vehicles have access, but may not overtake cyclists and must not exceed 30 km/h.",
+      "exceptions": []
     },
     "FR": {
-      "name": "Rue cyclable",
-      "description": "Début / Fin de rue cyclable."
+      "name": "Début d'une zone cyclable",
+      "summary": "F111 marque le début d'une zone cyclable.",
+      "description": "Indique le début d'une zone cyclable. Les véhicules à moteur y sont admis, mais ne peuvent pas dépasser les cyclistes et la vitesse ne peut jamais dépasser 30 km/h.",
+      "driver_guidance": "Les véhicules à moteur y ont accès, mais le dépassement des cyclistes est interdit et la vitesse est limitée à 30 km/h.",
+      "exceptions": []
     },
     "AR": {
-      "name": "شارع الدراجات الهوائية",
-      "description": "بداية / نهاية شارع الدراجات."
+      "name": "بداية منطقة الدراجات",
+      "summary": "تحدد F111 بداية منطقة الدراجات.",
+      "description": "تشير إلى بداية منطقة للدراجات. يسمح للمركبات الآلية بالدخول، لكن لا يجوز لها تجاوز راكبي الدراجات ولا يجوز أن تتجاوز السرعة 30 كم/ساعة.",
+      "driver_guidance": "يسمح للمركبات الآلية بالدخول، لكن لا يجوز لها تجاوز راكبي الدراجات أو تخطي 30 كم/ساعة.",
+      "exceptions": []
     }
   }
 }
-

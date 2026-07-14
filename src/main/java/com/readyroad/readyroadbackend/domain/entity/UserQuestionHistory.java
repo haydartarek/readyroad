@@ -1,6 +1,5 @@
-package com.readyroad.readyroadbackend.domain.model;
+package com.readyroad.readyroadbackend.domain.entity;
 
-import com.readyroad.readyroadbackend.domain.entity.QuizQuestion;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -154,10 +153,7 @@ public class UserQuestionHistory {
         if (this.updatedAt == null) {
             this.updatedAt = now;
         }
-        // ❌ DON'T auto-set answeredAt - only set when user actually answers
-        // if (this.answeredAt == null) {
-        // this.answeredAt = now;
-        // }
+        // answeredAt is set only when the user submits an answer.
 
         // ✅ Set lastShownAt if not set (for display tracking)
         if (this.lastShownAt == null) {

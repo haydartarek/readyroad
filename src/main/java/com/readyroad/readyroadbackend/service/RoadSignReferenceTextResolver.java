@@ -1,7 +1,6 @@
 package com.readyroad.readyroadbackend.service;
 
 import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.readyroad.readyroadbackend.domain.entity.RoadSign;
 import com.readyroad.readyroadbackend.domain.repository.RoadSignRepository;
@@ -32,8 +31,8 @@ import java.util.stream.Collectors;
 
 /**
  * Replaces raw road-sign codes in user-facing text with localized sign names or
- * human-readable aliases. This covers canonical signs, legacy aliases from
- * sign_index.json, and a small curated alias list for non-canonical references
+ * human-readable aliases. Canonical names come from the database rows derived
+ * from signs_import; a small curated alias list covers non-canonical references
  * such as M1/M2/M3 or family references like B15.
  */
 @Component
@@ -47,9 +46,6 @@ public class RoadSignReferenceTextResolver {
     private final RoadSignRepository roadSignRepository;
     private final ObjectMapper objectMapper;
     private final ResourceLoader resourceLoader;
-
-    @Value("${readyroad.signs.index-path:data/sign_index.json}")
-    private String signIndexPath = "data/sign_index.json";
 
     @Value("${readyroad.signs.reference-aliases-path:data/sign_reference_aliases.json}")
     private String referenceAliasesPath = "data/sign_reference_aliases.json";
@@ -128,8 +124,6 @@ public class RoadSignReferenceTextResolver {
         signs.sort(Comparator.comparingInt((RoadSign sign) -> safe(sign.getSignCode()).length()).reversed());
 
         Map<String, SignNames> namesByCode = new LinkedHashMap<>();
-        Map<String, SignNames> canonicalByImage = new LinkedHashMap<>();
-
         for (RoadSign sign : signs) {
             String codeKey = normalizeCodeKey(sign.getSignCode());
             if (codeKey.isBlank()) {
@@ -138,14 +132,8 @@ public class RoadSignReferenceTextResolver {
 
             SignNames names = SignNames.fromSign(sign, codeKey);
             namesByCode.putIfAbsent(codeKey, names);
-
-            String normalizedImagePath = normalizeImagePath(sign.getImagePath());
-            if (!normalizedImagePath.isBlank()) {
-                canonicalByImage.putIfAbsent(normalizedImagePath, names);
-            }
         }
 
-        mergeAliasesFromSignIndex(namesByCode, canonicalByImage);
         mergeCustomAliases(namesByCode);
 
         Pattern pattern = null;
@@ -161,25 +149,6 @@ public class RoadSignReferenceTextResolver {
         }
 
         return new CachedCatalog(pattern, Map.copyOf(namesByCode), loadedAtMillis);
-    }
-
-    private void mergeAliasesFromSignIndex(Map<String, SignNames> namesByCode, Map<String, SignNames> canonicalByImage) {
-        for (JsonNode node : loadJsonList(signIndexPath)) {
-            String aliasKey = normalizeCodeKey(text(node, "signCode"));
-            if (aliasKey.isBlank() || namesByCode.containsKey(aliasKey)) {
-                continue;
-            }
-
-            String normalizedImagePath = normalizeImagePath(text(node, "imagePath"));
-            if (normalizedImagePath.isBlank()) {
-                continue;
-            }
-
-            SignNames canonicalNames = canonicalByImage.get(normalizedImagePath);
-            if (canonicalNames != null) {
-                namesByCode.put(aliasKey, canonicalNames);
-            }
-        }
     }
 
     private void mergeCustomAliases(Map<String, SignNames> namesByCode) {
@@ -199,16 +168,6 @@ public class RoadSignReferenceTextResolver {
             if (explicitNames != null) {
                 namesByCode.put(aliasKey, explicitNames);
             }
-        }
-    }
-
-    private List<JsonNode> loadJsonList(String configuredPath) {
-        try (InputStream input = openInputStream(configuredPath)) {
-            return objectMapper.readValue(input, new TypeReference<List<JsonNode>>() {
-            });
-        } catch (IOException ex) {
-            log.warn("Unable to load sign reference list from {}: {}", configuredPath, ex.getMessage());
-            return List.of();
         }
     }
 
@@ -247,14 +206,6 @@ public class RoadSignReferenceTextResolver {
         throw new IOException("Resource not found: " + configuredPath);
     }
 
-    private static String text(JsonNode node, String field) {
-        JsonNode value = node.path(field);
-        if (value.isMissingNode() || value.isNull()) {
-            return "";
-        }
-        return safe(value.asText(""));
-    }
-
     private static String fallbackName(String... values) {
         for (String value : values) {
             String sanitized = safe(value);
@@ -285,14 +236,6 @@ public class RoadSignReferenceTextResolver {
                 .replace("_LINKS", "_LEFT")
                 .replace("_REEKS", "_SERIES")
                 .replace("_SERIE", "_SERIES");
-    }
-
-    private static String normalizeImagePath(String value) {
-        String sanitized = safe(value).replace('\\', '/');
-        if (sanitized.isBlank()) {
-            return "";
-        }
-        return sanitized.startsWith("/") ? sanitized : "/" + sanitized;
     }
 
     private static String safe(String value) {

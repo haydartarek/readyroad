@@ -1,5 +1,7 @@
 package com.readyroad.readyroadbackend.dto.response;
 
+import java.util.List;
+
 public record TrafficSignResponse(
                 Long id,
                 String signCode,
@@ -11,22 +13,21 @@ public record TrafficSignResponse(
                 String nameEn,
                 String nameNl,
                 String nameFr,
+                String summaryAr,
+                String summaryEn,
+                String summaryNl,
+                String summaryFr,
                 String descriptionAr,
                 String descriptionEn,
                 String descriptionNl,
                 String descriptionFr,
-                String meaningAr,
-                String meaningEn,
-                String meaningNl,
-                String meaningFr,
-                String longDescriptionEn,
-                String longDescriptionNl,
-                String longDescriptionFr,
-                String longDescriptionAr,
-                String guidanceAr,
-                String guidanceEn,
-                String guidanceNl,
-                String guidanceFr,
-                boolean isLongDescriptionComplete,
+                String driverGuidanceAr,
+                String driverGuidanceEn,
+                String driverGuidanceNl,
+                String driverGuidanceFr,
+                List<String> exceptionsAr,
+                List<String> exceptionsEn,
+                List<String> exceptionsNl,
+                List<String> exceptionsFr,
                 String imageUrl) {
 }

@@ -9,36 +9,72 @@
       "NL": {
         "question": "Wat betekent dit verkeersbord?",
         "choices": [
-          { "text": "Beweegbare brug", "is_correct": true },
-          { "text": "Gevaarlijke daling", "is_correct": false },
-          { "text": "Rijbaanversmalling", "is_correct": false }
+          {
+            "text": "Beweegbare brug",
+            "is_correct": true
+          },
+          {
+            "text": "Gevaarlijke daling",
+            "is_correct": false
+          },
+          {
+            "text": "Rijbaanversmalling",
+            "is_correct": false
+          }
         ],
         "explanation": "Dit bord waarschuwt voor een beweegbare brug."
       },
       "EN": {
         "question": "What does this traffic sign mean?",
         "choices": [
-          { "text": "Movable bridge", "is_correct": true },
-          { "text": "Dangerous descent", "is_correct": false },
-          { "text": "Road narrows", "is_correct": false }
+          {
+            "text": "Movable bridge",
+            "is_correct": true
+          },
+          {
+            "text": "Dangerous descent",
+            "is_correct": false
+          },
+          {
+            "text": "Road narrows",
+            "is_correct": false
+          }
         ],
         "explanation": "This sign warns of a movable bridge ahead."
       },
       "FR": {
         "question": "Que signifie ce panneau de signalisation ?",
         "choices": [
-          { "text": "Pont mobile", "is_correct": true },
-          { "text": "Descente dangereuse", "is_correct": false },
-          { "text": "Rétrécissement de la chaussée", "is_correct": false }
+          {
+            "text": "Pont mobile",
+            "is_correct": true
+          },
+          {
+            "text": "Descente dangereuse",
+            "is_correct": false
+          },
+          {
+            "text": "Rétrécissement de la chaussée",
+            "is_correct": false
+          }
         ],
         "explanation": "Ce panneau signale un pont mobile."
       },
       "AR": {
         "question": "ما معنى هذه العلامة المرورية؟",
         "choices": [
-          { "text": "جسر متحرك", "is_correct": true },
-          { "text": "انحدار خطير", "is_correct": false },
-          { "text": "تضييق الطريق", "is_correct": false }
+          {
+            "text": "جسر متحرك",
+            "is_correct": true
+          },
+          {
+            "text": "انحدار خطير",
+            "is_correct": false
+          },
+          {
+            "text": "تضييق الطريق",
+            "is_correct": false
+          }
         ],
         "explanation": "تشير هذه العلامة المرورية إلى وجود جسر متحرك أمامك."
       }
@@ -54,36 +90,72 @@
       "NL": {
         "question": "Tot welke categorie verkeerstekens behoort dit bord?",
         "choices": [
-          { "text": "Gevaarsborden", "is_correct": true },
-          { "text": "Voorrangsborden", "is_correct": false },
-          { "text": "Verbodsborden", "is_correct": false }
+          {
+            "text": "Gevaarsborden",
+            "is_correct": true
+          },
+          {
+            "text": "Voorrangsborden",
+            "is_correct": false
+          },
+          {
+            "text": "Verbodsborden",
+            "is_correct": false
+          }
         ],
         "explanation": "Dit bord behoort tot de gevaarsborden. Alle gevaarsborden zijn driehoekig met een rode rand op een witte achtergrond."
       },
       "EN": {
         "question": "To which category of traffic signs does this sign belong?",
         "choices": [
-          { "text": "Warning signs", "is_correct": true },
-          { "text": "Priority signs", "is_correct": false },
-          { "text": "Prohibition signs", "is_correct": false }
+          {
+            "text": "Warning signs",
+            "is_correct": true
+          },
+          {
+            "text": "Priority signs",
+            "is_correct": false
+          },
+          {
+            "text": "Prohibition signs",
+            "is_correct": false
+          }
         ],
         "explanation": "This sign belongs to the warning signs. All warning signs are triangular with a red border on a white background."
       },
       "FR": {
         "question": "À quelle catégorie de panneaux de signalisation ce panneau appartient-il ?",
         "choices": [
-          { "text": "Panneaux de danger", "is_correct": true },
-          { "text": "Panneaux de priorité", "is_correct": false },
-          { "text": "Panneaux d'interdiction", "is_correct": false }
+          {
+            "text": "Panneaux de danger",
+            "is_correct": true
+          },
+          {
+            "text": "Panneaux de priorité",
+            "is_correct": false
+          },
+          {
+            "text": "Panneaux d'interdiction",
+            "is_correct": false
+          }
         ],
         "explanation": "Ce panneau appartient aux panneaux de danger. Tous les panneaux de danger sont triangulaires avec une bordure rouge sur fond blanc."
       },
       "AR": {
         "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
         "choices": [
-          { "text": "علامات الخطر", "is_correct": true },
-          { "text": "علامات الأولوية", "is_correct": false },
-          { "text": "علامات الحظر", "is_correct": false }
+          {
+            "text": "علامات الخطر",
+            "is_correct": true
+          },
+          {
+            "text": "علامات الأولوية",
+            "is_correct": false
+          },
+          {
+            "text": "علامات الحظر",
+            "is_correct": false
+          }
         ],
         "explanation": "تنتمي هذه العلامة المرورية إلى علامات الخطر. جميع علامات الخطر مثلثة بحافة حمراء على خلفية بيضاء."
       }
@@ -125,7 +197,10 @@
             "text": "A steep slope at the end of the road",
             "is_correct": false
           },
-          { "text": "A road narrowing due to roadworks", "is_correct": false }
+          {
+            "text": "A road narrowing due to roadworks",
+            "is_correct": false
+          }
         ],
         "explanation": "This sign indicates a movable bridge that may open for waterway traffic."
       },
@@ -136,7 +211,10 @@
             "text": "Un pont pouvant s'ouvrir pour la navigation",
             "is_correct": true
           },
-          { "text": "Une pente raide en fin de route", "is_correct": false },
+          {
+            "text": "Une pente raide en fin de route",
+            "is_correct": false
+          },
           {
             "text": "Un rétrécissement dû à des travaux routiers",
             "is_correct": false
@@ -147,9 +225,18 @@
       "AR": {
         "question": "ما هو الخطر الذي تشير إليه هذه العلامة المرورية؟",
         "choices": [
-          { "text": "جسر قد يُفتح لحركة الملاحة المائية", "is_correct": true },
-          { "text": "منحدر حاد في نهاية الطريق", "is_correct": false },
-          { "text": "تضييق في الطريق بسبب أعمال البناء", "is_correct": false }
+          {
+            "text": "جسر قد يُفتح لحركة الملاحة المائية",
+            "is_correct": true
+          },
+          {
+            "text": "منحدر حاد في نهاية الطريق",
+            "is_correct": false
+          },
+          {
+            "text": "تضييق في الطريق بسبب أعمال البناء",
+            "is_correct": false
+          }
         ],
         "explanation": "تشير هذه العلامة إلى جسر متحرك قد يُفتح لحركة الملاحة المائية."
       }
@@ -325,43 +412,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Op welke afstand wordt dit gevaarsbord buiten de bebouwde kom geplaatst?",
+        "question": "Op welke afstand van het gevaar wordt dit gevaarsbord in het Brussels Hoofdstedelijk en Vlaams Gewest normaal geplaatst?",
         "choices": [
-          { "text": "Ongeveer 150 meter voor het gevaar", "is_correct": true },
-          { "text": "Precies op de gevaarlijke plek", "is_correct": false },
-          { "text": "Op 500 meter voor het gevaar", "is_correct": false }
+          {
+            "text": "Ongeveer 150 meter voor het gevaar",
+            "is_correct": true
+          },
+          {
+            "text": "Precies op de gevaarlijke plek",
+            "is_correct": false
+          },
+          {
+            "text": "Op 500 meter voor het gevaar",
+            "is_correct": false
+          }
         ],
-        "explanation": "Buiten de bebouwde kom worden gevaarsborden op ±150 meter voor het gevaar geplaatst. Binnen de bebouwde kom is dit ±50 meter."
+        "explanation": "Volgens de huidige plaatsingsregel voor het Brussels Hoofdstedelijk en Vlaams Gewest staat een gevaarsbord normaal op ongeveer 150 meter van de gevaarlijke plaats. Staat het dichter of verder, dan vermeldt een onderbord de afstand bij benadering."
       },
       "EN": {
-        "question": "At what distance is this warning sign placed outside built-up areas?",
+        "question": "At what distance from the hazard is this warning sign normally placed in the Brussels-Capital and Flemish Regions?",
         "choices": [
           {
             "text": "Approximately 150 metres before the hazard",
             "is_correct": true
           },
-          { "text": "Exactly at the hazard location", "is_correct": false },
-          { "text": "500 metres before the hazard", "is_correct": false }
+          {
+            "text": "Exactly at the hazard location",
+            "is_correct": false
+          },
+          {
+            "text": "500 metres before the hazard",
+            "is_correct": false
+          }
         ],
-        "explanation": "Outside built-up areas, warning signs are placed ±150 metres before the hazard. Inside built-up areas it is ±50 metres."
+        "explanation": "Under the current placement rule for the Brussels-Capital and Flemish Regions, a warning sign is normally placed about 150 metres from the hazard. If it is closer or farther away, a supplementary plate indicates the approximate distance."
       },
       "FR": {
-        "question": "À quelle distance ce panneau de danger est-il placé hors agglomération ?",
+        "question": "À quelle distance du danger ce panneau est-il normalement placé dans les Régions de Bruxelles-Capitale et flamande ?",
         "choices": [
-          { "text": "Environ 150 mètres avant le danger", "is_correct": true },
-          { "text": "Exactement à l'endroit du danger", "is_correct": false },
-          { "text": "500 mètres avant le danger", "is_correct": false }
+          {
+            "text": "Environ 150 mètres avant le danger",
+            "is_correct": true
+          },
+          {
+            "text": "Exactement à l'endroit du danger",
+            "is_correct": false
+          },
+          {
+            "text": "500 mètres avant le danger",
+            "is_correct": false
+          }
         ],
-        "explanation": "Hors agglomération, les panneaux de danger sont placés à ±150 mètres avant le danger. En agglomération, c'est ±50 mètres."
+        "explanation": "Selon la règle de placement actuelle pour les Régions de Bruxelles-Capitale et flamande, un panneau de danger est normalement placé à environ 150 mètres du danger. S’il est plus proche ou plus éloigné, un panneau additionnel indique la distance approximative."
       },
       "AR": {
-        "question": "على أي مسافة توضع هذه العلامة المرورية التحذيرية خارج المنطقة السكنية؟",
+        "question": "على أي مسافة من الخطر توضع هذه العلامة التحذيرية عادةً في إقليمي بروكسل العاصمة وفلاندرز؟",
         "choices": [
-          { "text": "حوالي 150 متر قبل الخطر", "is_correct": true },
-          { "text": "مباشرة عند موقع الخطر", "is_correct": false },
-          { "text": "500 متر قبل الخطر", "is_correct": false }
+          {
+            "text": "حوالي 150 متر قبل الخطر",
+            "is_correct": true
+          },
+          {
+            "text": "مباشرة عند موقع الخطر",
+            "is_correct": false
+          },
+          {
+            "text": "500 متر قبل الخطر",
+            "is_correct": false
+          }
         ],
-        "explanation": "خارج المنطقة السكنية توضع علامات الخطر على مسافة ±150 متر قبل الخطر. داخل المنطقة السكنية تكون المسافة ±50 متر."
+        "explanation": "وفق قاعدة الوضع الحالية في إقليمي بروكسل العاصمة وفلاندرز، توضع علامة الخطر عادةً على بُعد نحو 150 متراً من موضع الخطر. وإذا وُضعت أقرب أو أبعد فتبيّن لوحة تكميلية المسافة التقريبية."
       }
     }
   },
@@ -375,32 +495,56 @@
       "NL": {
         "question": "Is het aan te raden om vlak voor een beweegbare brug in te halen?",
         "choices": [
-          { "text": "Nee", "is_correct": true },
-          { "text": "Ja", "is_correct": false }
+          {
+            "text": "Nee",
+            "is_correct": true
+          },
+          {
+            "text": "Ja",
+            "is_correct": false
+          }
         ],
         "explanation": "Nee, dat is meestal niet raadzaam vlak voor een beweegbare brug. U doet er goed aan altijd bereid te zijn te stoppen en het zicht kan beperkt zijn."
       },
       "EN": {
         "question": "Is overtaking advisable just before a movable bridge?",
         "choices": [
-          { "text": "No", "is_correct": true },
-          { "text": "Yes", "is_correct": false }
+          {
+            "text": "No",
+            "is_correct": true
+          },
+          {
+            "text": "Yes",
+            "is_correct": false
+          }
         ],
         "explanation": "No, it is generally not advisable just before a movable bridge. You should always be prepared to stop and visibility can be limited."
       },
       "FR": {
         "question": "Est-il conseillé de dépasser juste avant un pont mobile ?",
         "choices": [
-          { "text": "Non", "is_correct": true },
-          { "text": "Oui", "is_correct": false }
+          {
+            "text": "Non",
+            "is_correct": true
+          },
+          {
+            "text": "Oui",
+            "is_correct": false
+          }
         ],
         "explanation": "Non, ce n'est généralement pas conseillé juste avant un pont mobile. Vous devriez toujours être prêt à vous arrêter et la visibilité peut être réduite."
       },
       "AR": {
         "question": "هل يُنصح بالتجاوز قبل جسر متحرك؟",
         "choices": [
-          { "text": "لا", "is_correct": true },
-          { "text": "نعم", "is_correct": false }
+          {
+            "text": "لا",
+            "is_correct": true
+          },
+          {
+            "text": "نعم",
+            "is_correct": false
+          }
         ],
         "explanation": "لا، لا يُنصح بذلك قبل جسر متحرك. ينبغي الاستعداد دائمًا للتوقف وقد تكون الرؤية محدودة."
       }
@@ -416,32 +560,56 @@
       "NL": {
         "question": "Mag u stoppen of parkeren op een beweegbare brug?",
         "choices": [
-          { "text": "Nee", "is_correct": true },
-          { "text": "Ja", "is_correct": false }
+          {
+            "text": "Nee",
+            "is_correct": true
+          },
+          {
+            "text": "Ja",
+            "is_correct": false
+          }
         ],
         "explanation": "Stoppen of parkeren op een beweegbare brug is verboden. De brug kan in beweging komen en een stilstaand voertuig vormt een ernstig gevaar."
       },
       "EN": {
         "question": "Is it allowed to stop or park on a movable bridge?",
         "choices": [
-          { "text": "No", "is_correct": true },
-          { "text": "Yes", "is_correct": false }
+          {
+            "text": "No",
+            "is_correct": true
+          },
+          {
+            "text": "Yes",
+            "is_correct": false
+          }
         ],
         "explanation": "Stopping or parking on a movable bridge is prohibited. The bridge can start moving and a stationary vehicle poses a serious danger."
       },
       "FR": {
         "question": "Êtes-vous autorisé à vous arrêter ou à vous garer sur un pont mobile ?",
         "choices": [
-          { "text": "Non", "is_correct": true },
-          { "text": "Oui", "is_correct": false }
+          {
+            "text": "Non",
+            "is_correct": true
+          },
+          {
+            "text": "Oui",
+            "is_correct": false
+          }
         ],
         "explanation": "S'arrêter ou se garer sur un pont mobile est interdit. Le pont peut se mettre en mouvement et un véhicule immobilisé représente un danger sérieux."
       },
       "AR": {
         "question": "هل يُسمح بالتوقف أو الوقوف على جسر متحرك؟",
         "choices": [
-          { "text": "لا", "is_correct": true },
-          { "text": "نعم", "is_correct": false }
+          {
+            "text": "لا",
+            "is_correct": true
+          },
+          {
+            "text": "نعم",
+            "is_correct": false
+          }
         ],
         "explanation": "يُمنع التوقف أو الوقوف على جسر متحرك. يمكن أن يبدأ الجسر بالحركة والمركبة الثابتة تمثل خطراً بالغاً."
       }

@@ -7,343 +7,400 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat betekent bord F23b?",
+        "question": "U ziet dit bord met een nummer langs de autosnelweg. Wat betekent het?",
         "choices": [
           {
-            "text": "Het toont het nummer van de autosnelweg waarop u rijdt",
+            "text": "Het geeft het nummer aan van de autosnelweg waarop u rijdt of die u zal inrijden",
             "is_correct": true
           },
           {
-            "text": "Het geeft aan dat de autosnelweg gesloten is",
+            "text": "Het geeft het toegelaten aantal rijstroken op deze autosnelweg aan",
             "is_correct": false
           },
           {
-            "text": "Het geeft een betalingszone aan op de snelweg",
+            "text": "Het duidt de afstand tot de volgende afrit in kilometer aan",
             "is_correct": false
           }
         ],
-        "explanation": "F23b is het snelwegnummerbord met blauwe achtergrond. Het toont het nummer van de autosnelweg zodat bestuurders weten op welke snelweg zij rijden."
+        "explanation": "Dit bord toont enkel het nummer van de autosnelweg, wat de bestuurder helpt om zijn traject te identificeren en te volgen."
       },
       "EN": {
-        "question": "What does sign F23b mean?",
+        "question": "You see this sign with a number along the motorway. What does it mean?",
         "choices": [
           {
-            "text": "It shows the number of the motorway you are driving on",
+            "text": "It indicates the number of the motorway you are on or about to enter",
             "is_correct": true
           },
           {
-            "text": "It indicates the motorway is closed",
+            "text": "It indicates the number of lanes allowed on this motorway",
             "is_correct": false
           },
           {
-            "text": "It indicates a payment zone on the motorway",
+            "text": "It shows the distance to the next exit in kilometres",
             "is_correct": false
           }
         ],
-        "explanation": "F23b is the motorway number sign with a blue background. It shows the motorway number so drivers know which motorway they are on."
+        "explanation": "This sign only shows the number of the motorway, helping the driver identify and follow their route."
       },
       "FR": {
-        "question": "Que signifie le panneau F23b ?",
+        "question": "Vous apercevez ce panneau portant un numéro le long de l'autoroute. Que signifie-t-il ?",
         "choices": [
           {
-            "text": "Il indique le numero de l autoroute sur laquelle vous roulez",
+            "text": "Il indique le numéro de l'autoroute sur laquelle vous circulez ou que vous allez emprunter",
             "is_correct": true
           },
           {
-            "text": "Il indique que l autoroute est fermee",
+            "text": "Il indique le nombre de voies autorisées sur cette autoroute",
             "is_correct": false
           },
           {
-            "text": "Il indique une zone de peage sur l autoroute",
+            "text": "Il indique la distance jusqu'à la prochaine sortie en kilomètres",
             "is_correct": false
           }
         ],
-        "explanation": "F23b est le panneau de numerotation d autoroute a fond bleu. Il indique le numero de l autoroute afin que les conducteurs sachent sur quelle autoroute ils roulent."
+        "explanation": "Ce panneau indique uniquement le numéro de l'autoroute, ce qui aide le conducteur à identifier et à suivre son itinéraire."
       },
       "AR": {
-        "question": "ما معنى هذه العلامة المرورية؟",
+        "question": "لاحظت هذه العلامة التي تحمل رقمًا على جانب الطريق السريع، فماذا تعني؟",
         "choices": [
           {
-            "text": "تُظهر رقم الطريق السريع الذي تسير فيه",
+            "text": "تشير إلى رقم الطريق السريع الذي تسير عليه أو ستدخله",
             "is_correct": true
           },
-          { "text": "تشير إلى أن الطريق السريع مغلق", "is_correct": false },
           {
-            "text": "تشير إلى منطقة دفع رسوم في الطريق السريع",
+            "text": "تشير إلى عدد المسارات المسموح بها على هذا الطريق السريع",
+            "is_correct": false
+          },
+          {
+            "text": "تشير إلى المسافة المتبقية حتى المخرج التالي بالكيلومتر",
             "is_correct": false
           }
         ],
-        "explanation": "F23b علامة مرورية رقم الطريق السريع ذات الخلفية الزرقاء. تُظهر رقم الطريق السريع حتى يعرف السائقون في أي طريق سريع يسيرون."
+        "explanation": "تُظهر هذه العلامة فقط رقم الطريق السريع، مما يساعد السائق على تحديد مساره ومتابعته."
       }
     }
   },
   {
     "question_id": "F23b_Q02",
-    "type": "WHICH_SIGN",
+    "type": "DRIVER_ACTION",
     "difficulty": "EASY",
     "is_critical": false,
-    "show_sign": true,
+    "show_sign": false,
     "i18n": {
       "NL": {
-        "question": "Wat onderscheidt F23b visueel van F23a?",
+        "question": "U volgt een route die verwijst naar een bepaald autosnelwegnummer en ziet dit bord. Wat doet u?",
         "choices": [
           {
-            "text": "F23b heeft een blauwe achtergrond terwijl F23a wit of rood is",
+            "text": "U vergelijkt het nummer op het bord met het nummer uit uw route om te bevestigen dat u op de juiste autosnelweg bent",
             "is_correct": true
           },
-          { "text": "F23b is kleiner dan F23a", "is_correct": false },
           {
-            "text": "F23b staat altijd op een grotere paal",
+            "text": "U negeert het bord, want het heeft geen enkel praktisch nut voor de bestuurder",
+            "is_correct": false
+          },
+          {
+            "text": "U verandert onmiddellijk van rijstrook omdat het bord dit vereist",
             "is_correct": false
           }
         ],
-        "explanation": "Snelwegnummerborden (F23b) zijn blauw. Gewone wegnummers (F23a) zijn wit of rood. Dit visuele verschil helpt bestuurders onmiddellijk het type weg herkennen."
+        "explanation": "Het nummer op dit bord dient om de bestuurder te helpen bevestigen dat hij zich op de juiste autosnelweg bevindt volgens zijn navigatie of route."
       },
       "EN": {
-        "question": "What visually distinguishes F23b from F23a?",
+        "question": "You are following a route that refers to a certain motorway number and you see this sign. What do you do?",
         "choices": [
           {
-            "text": "F23b has a blue background while F23a is white or red",
+            "text": "You compare the number on the sign with the number from your route to confirm you are on the correct motorway",
             "is_correct": true
           },
-          { "text": "F23b is smaller than F23a", "is_correct": false },
-          { "text": "F23b is always on a taller post", "is_correct": false }
-        ],
-        "explanation": "Motorway number signs (F23b) are blue. Regular road numbers (F23a) are white or red. This visual difference helps drivers immediately recognise the type of road."
-      },
-      "FR": {
-        "question": "Qu est-ce qui distingue visuellement F23b de F23a ?",
-        "choices": [
           {
-            "text": "F23b a un fond bleu tandis que F23a est blanc ou rouge",
-            "is_correct": true
+            "text": "You ignore the sign, since it has no practical use for the driver",
+            "is_correct": false
           },
-          { "text": "F23b est plus petit que F23a", "is_correct": false },
           {
-            "text": "F23b est toujours sur un poteau plus grand",
+            "text": "You immediately change lanes because the sign requires it",
             "is_correct": false
           }
         ],
-        "explanation": "Les panneaux de numerotation d autoroute (F23b) sont bleus. Les numeros de routes ordinaires (F23a) sont blancs ou rouges. Cette difference visuelle aide les conducteurs a identifier immediatement le type de route."
+        "explanation": "The number on this sign helps the driver confirm they are on the correct motorway according to their navigation or route."
       },
-      "AR": {
-        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
+      "FR": {
+        "question": "Vous suivez un itinéraire qui mentionne un certain numéro d'autoroute et vous apercevez ce panneau. Que faites-vous ?",
         "choices": [
           {
-            "text": "F23b لها خلفية زرقاء بينما F23a بيضاء أو حمراء",
+            "text": "Vous comparez le numéro sur le panneau avec celui de votre itinéraire pour confirmer que vous êtes sur la bonne autoroute",
             "is_correct": true
           },
-          { "text": "F23b أصغر من F23a", "is_correct": false },
-          { "text": "F23b دائماً على عمود أطول", "is_correct": false }
+          {
+            "text": "Vous ignorez le panneau, car il n'a aucune utilité pratique pour le conducteur",
+            "is_correct": false
+          },
+          {
+            "text": "Vous changez immédiatement de voie car le panneau l'exige",
+            "is_correct": false
+          }
         ],
-        "explanation": "علامات رقم الطريق السريع (F23b) زرقاء. أرقام الطرق العادية (F23a) بيضاء أو حمراء. يساعد هذا الاختلاف البصري السائقين على التعرف فوراً على نوع الطريق."
+        "explanation": "Le numéro sur ce panneau aide le conducteur à confirmer qu'il se trouve sur la bonne autoroute selon sa navigation ou son itinéraire."
+      },
+      "AR": {
+        "question": "تتبع مسارًا يشير إلى رقم طريق سريع معين، ولاحظت هذه العلامة، فماذا تفعل؟",
+        "choices": [
+          {
+            "text": "تقارن الرقم الموجود على العلامة برقم المسار الذي تتبعه للتأكد من أنك على الطريق السريع الصحيح",
+            "is_correct": true
+          },
+          {
+            "text": "تتجاهل العلامة لأنها لا تحمل أي فائدة عملية للسائق",
+            "is_correct": false
+          },
+          {
+            "text": "تغيّر مسارك فورًا لأن العلامة تتطلب ذلك",
+            "is_correct": false
+          }
+        ],
+        "explanation": "يساعد الرقم على هذه العلامة السائق على التأكد من أنه يسير على الطريق السريع الصحيح وفق نظام التنقل أو المسار الذي يتبعه."
       }
     }
   },
   {
     "question_id": "F23b_Q03",
-    "type": "HAZARD_IDENTIFICATION",
+    "type": "WHAT_HAPPENS_IF",
     "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat kan er misgaan als u het F23b-nummerbord verwart met een andere weg en de verkeerde afrit neemt?",
+        "question": "Wat gebeurt er op vlak van verkeersregels als u dit bord passeert?",
         "choices": [
           {
-            "text": "U verlaat de snelweg op de verkeerde plek en kunt in gevaarlijk verkeer terechtkomen of lang omrijden",
+            "text": "Er verandert niets aan de algemene verkeersregels; het bord dient enkel ter identificatie van de autosnelweg",
             "is_correct": true
           },
-          { "text": "Uw auto verbruikt meer brandstof", "is_correct": false },
           {
-            "text": "De navigatie van uw auto werkt niet meer",
+            "text": "Alle snelheidsbeperkingen op deze autosnelweg worden automatisch opgeheven",
+            "is_correct": false
+          },
+          {
+            "text": "U moet verplicht de autosnelweg verlaten zodra u dit bord ziet",
             "is_correct": false
           }
         ],
-        "explanation": "Het verwisselen van snelwegnummers kan leiden tot een verkeerde afrit en gevaarlijke situaties in onbekend gebied."
+        "explanation": "Dit bord legt zelf geen extra verkeersregels of beperkingen op; het dient enkel om de autosnelweg te identificeren aan de hand van zijn nummer."
       },
       "EN": {
-        "question": "What can go wrong if you confuse the F23b number sign with another road and take the wrong exit?",
+        "question": "What happens regarding traffic rules when you pass this sign?",
         "choices": [
           {
-            "text": "You leave the motorway at the wrong place and may end up in dangerous traffic or face a long detour",
+            "text": "Nothing changes in the general traffic rules; the sign only serves to identify the motorway",
             "is_correct": true
           },
-          { "text": "Your car uses more fuel", "is_correct": false },
-          { "text": "Your car navigation stops working", "is_correct": false }
+          {
+            "text": "All speed restrictions on this motorway are automatically lifted",
+            "is_correct": false
+          },
+          {
+            "text": "You must leave the motorway as soon as you see this sign",
+            "is_correct": false
+          }
         ],
-        "explanation": "Confusing motorway numbers can lead to taking the wrong exit and dangerous situations in an unfamiliar area."
+        "explanation": "This sign does not impose any additional traffic rules or restrictions itself; it only serves to identify the motorway by its number."
       },
       "FR": {
-        "question": "Que peut-il se passer si vous confondez le panneau de numero F23b avec une autre route et prenez la mauvaise sortie ?",
+        "question": "Que se passe-t-il concernant les règles de circulation lorsque vous dépassez ce panneau ?",
         "choices": [
           {
-            "text": "Vous quittez l autoroute au mauvais endroit et pouvez vous retrouver dans un trafic dangereux ou faire un long detour",
+            "text": "Rien ne change dans les règles générales de circulation; le panneau ne sert qu'à identifier l'autoroute",
             "is_correct": true
           },
           {
-            "text": "Votre voiture consomme plus de carburant",
+            "text": "Toutes les limitations de vitesse sur cette autoroute sont automatiquement levées",
             "is_correct": false
           },
           {
-            "text": "La navigation de votre voiture cesse de fonctionner",
+            "text": "Vous devez obligatoirement quitter l'autoroute dès que vous voyez ce panneau",
             "is_correct": false
           }
         ],
-        "explanation": "Confondre les numeros d autoroute peut conduire a prendre la mauvaise sortie et a des situations dangereuses en terrain inconnu."
+        "explanation": "Ce panneau n'impose lui-même aucune règle ou restriction de circulation supplémentaire; il sert uniquement à identifier l'autoroute par son numéro."
       },
       "AR": {
-        "question": "ما الذي يمكن أن يحدث إذا خلطت بين علامة مرورية رقم F23b وطريق آخر وأخذت المخرج الخطأ؟",
+        "question": "ما الذي يحدث من ناحية قواعد المرور عندما تتجاوز هذه العلامة؟",
         "choices": [
           {
-            "text": "تغادر الطريق السريع في المكان الخطأ وقد تجد نفسك في حركة مرور خطيرة أو تقوم بانحراف طويل",
+            "text": "لا يتغير شيء في قواعد المرور العامة؛ العلامة تُستخدم فقط للتعرف على الطريق السريع",
             "is_correct": true
           },
-          { "text": "تستهلك سيارتك المزيد من الوقود", "is_correct": false },
           {
-            "text": "يتوقف نظام الملاحة في سيارتك عن العمل",
+            "text": "تُلغى تلقائيًا جميع قيود السرعة على هذا الطريق السريع",
+            "is_correct": false
+          },
+          {
+            "text": "يجب عليك مغادرة الطريق السريع بمجرد رؤية هذه العلامة",
             "is_correct": false
           }
         ],
-        "explanation": "الخلط بين أرقام الطرق السريعة قد يؤدي إلى أخذ المخرج الخطأ ومواقف خطيرة في منطقة غير مألوفة."
+        "explanation": "لا تفرض هذه العلامة بحد ذاتها أي قواعد أو قيود مرورية إضافية؛ فهي تُستخدم فقط للتعرف على الطريق السريع من خلال رقمه."
       }
     }
   },
   {
     "question_id": "F23b_Q04",
-    "type": "WHAT_MUST_YOU_DO",
+    "type": "WHICH_SIGN",
     "difficulty": "MEDIUM",
     "is_critical": false,
-    "show_sign": true,
+    "show_sign": false,
     "i18n": {
       "NL": {
-        "question": "U rijdt op de E40 maar bord F23b toont A3. Klopt dit?",
+        "question": "Welk kenmerk helpt u om een bord voor een autosnelweg te onderscheiden van een bord voor een gewone weg?",
         "choices": [
           {
-            "text": "Ja E-nummers en A-nummers voor dezelfde weg zijn mogelijk; controleer uw routeplanner",
+            "text": "Het bord voor een autosnelweg heeft een ander kleurkenmerk dan het bord voor een gewone weg",
             "is_correct": true
           },
           {
-            "text": "Nee dit is een fout op het bord en u moet de politie bellen",
+            "text": "Beide borden hebben exact dezelfde vorm, kleur en betekenis",
             "is_correct": false
           },
           {
-            "text": "Nee u rijdt zeker op de verkeerde snelweg",
+            "text": "Enkel borden voor gewone wegen tonen een nummer, autosnelwegen nooit",
             "is_correct": false
           }
         ],
-        "explanation": "In Belgie hebben vele autosnelwegen zowel een A-nummer (nationaal) als een E-nummer (Europees). De E40 en A3 zijn dezelfde snelweg."
+        "explanation": "Een bord voor een autosnelweg heeft een eigen kleurkenmerk dat het onderscheidt van de signalisatie die voor gewone wegen wordt gebruikt."
       },
       "EN": {
-        "question": "You are driving on the E40 but sign F23b shows A3. Is this correct?",
+        "question": "What feature helps you distinguish a sign for a motorway from a sign for a regular road?",
         "choices": [
           {
-            "text": "Yes E-numbers and A-numbers for the same road are possible; check your route planner",
+            "text": "The sign for a motorway has a different colour characteristic than the sign for a regular road",
             "is_correct": true
           },
           {
-            "text": "No this is an error on the sign and you must call the police",
+            "text": "Both signs have exactly the same shape, colour and meaning",
             "is_correct": false
           },
           {
-            "text": "No you are certainly on the wrong motorway",
+            "text": "Only regular road signs show a number, motorways never do",
             "is_correct": false
           }
         ],
-        "explanation": "In Belgium many motorways have both an A-number (national) and an E-number (European). The E40 and A3 are the same motorway."
+        "explanation": "A sign for a motorway has its own colour characteristic that distinguishes it from the signage used for regular roads."
       },
       "FR": {
-        "question": "Vous roulez sur l E40 mais le panneau F23b indique A3. Est-ce correct ?",
+        "question": "Quelle caractéristique vous aide à distinguer un panneau pour une autoroute d'un panneau pour une route ordinaire ?",
         "choices": [
           {
-            "text": "Oui les numeros E et les numeros A pour la meme route sont possibles; verifiez votre planificateur d itineraire",
+            "text": "Le panneau pour une autoroute a une caractéristique de couleur différente de celle du panneau pour une route ordinaire",
             "is_correct": true
           },
           {
-            "text": "Non c est une erreur sur le panneau et vous devez appeler la police",
+            "text": "Les deux panneaux ont exactement la même forme, couleur et signification",
             "is_correct": false
           },
           {
-            "text": "Non vous etes certainement sur la mauvaise autoroute",
+            "text": "Seuls les panneaux de routes ordinaires affichent un numéro, jamais les autoroutes",
             "is_correct": false
           }
         ],
-        "explanation": "En Belgique de nombreuses autoroutes ont a la fois un numero A (national) et un numero E (europeen). L E40 et l A3 sont la meme autoroute."
+        "explanation": "Un panneau pour une autoroute possède sa propre caractéristique de couleur qui le distingue de la signalisation utilisée pour les routes ordinaires."
       },
       "AR": {
-        "question": "تسير على E40 لكن العلامة المرورية F23b تُظهر A3. هل هذا صحيح؟",
+        "question": "ما الخاصية التي تساعدك على تمييز علامة طريق سريع عن علامة طريق عادي؟",
         "choices": [
           {
-            "text": "نعم من الممكن وجود أرقام E وأرقام A لنفس الطريق؛ تحقق من مخطط المسار",
+            "text": "علامة الطريق السريع تحمل خاصية لون مختلفة عن علامة الطريق العادي",
             "is_correct": true
           },
           {
-            "text": "لا هذا خطأ في العلامة المرورية ويجب الاتصال بالشرطة",
+            "text": "تحمل العلامتان نفس الشكل واللون والمعنى تمامًا",
             "is_correct": false
           },
           {
-            "text": "لا أنت بالتأكيد على الطريق السريع الخطأ",
+            "text": "فقط علامات الطرق العادية تحمل رقمًا، ولا تحمله الطرق السريعة أبدًا",
             "is_correct": false
           }
         ],
-        "explanation": "في بلجيكا تمتلك كثير من الطرق السريعة رقم A (وطني) ورقم E (أوروبي). E40 وA3 هما نفس الطريق السريع."
+        "explanation": "تتميز علامة الطريق السريع بخاصية لون خاصة بها تُميزها عن الإشارات المستخدمة للطرق العادية."
       }
     }
   },
   {
     "question_id": "F23b_Q05",
-    "type": "WHAT_MUST_YOU_DO",
+    "type": "WHERE_DOES_IT_APPLY",
     "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat is de algemene maximumsnelheid op een Belgische autosnelweg aangeduid met F23b?",
+        "question": "Waar wordt dit soort nummerbord doorgaans aangebracht?",
         "choices": [
           {
-            "text": "120 km/h tenzij een ander bord een lagere limiet aangeeft",
+            "text": "Langs of boven de autosnelweg, vaak bij de start van het traject of nabij kruisingen en afritten",
             "is_correct": true
           },
-          { "text": "130 km/h altijd", "is_correct": false },
-          { "text": "100 km/h altijd", "is_correct": false }
+          {
+            "text": "Enkel binnen woonwijken met eenrichtingsverkeer",
+            "is_correct": false
+          },
+          {
+            "text": "Enkel op fietspaden die parallel lopen aan een autosnelweg",
+            "is_correct": false
+          }
         ],
-        "explanation": "Op Belgische autosnelwegen is de algemene snelheidslimiet 120 km/h. Plaatselijk kan die lager zijn als een bord dat aangeeft."
+        "explanation": "Dit bord wordt geplaatst langs of boven de autosnelweg om de bestuurder te helpen zijn traject te volgen, vooral nabij kruisingen en afritten."
       },
       "EN": {
-        "question": "What is the general maximum speed on a Belgian motorway indicated by F23b?",
+        "question": "Where is this kind of number sign typically placed?",
         "choices": [
           {
-            "text": "120 km/h unless another sign indicates a lower limit",
+            "text": "Along or above the motorway, often at the start of the route or near junctions and exits",
             "is_correct": true
           },
-          { "text": "130 km/h always", "is_correct": false },
-          { "text": "100 km/h always", "is_correct": false }
+          {
+            "text": "Only within residential areas with one-way traffic",
+            "is_correct": false
+          },
+          {
+            "text": "Only on cycle paths running parallel to a motorway",
+            "is_correct": false
+          }
         ],
-        "explanation": "On Belgian motorways the general speed limit is 120 km/h. Locally it may be lower if a sign indicates so."
+        "explanation": "This sign is placed along or above the motorway to help the driver follow their route, especially near junctions and exits."
       },
       "FR": {
-        "question": "Quelle est la vitesse maximale generale sur une autoroute belge indiquee par F23b ?",
+        "question": "Où ce type de panneau numéroté est-il généralement placé ?",
         "choices": [
           {
-            "text": "120 km/h sauf si un autre panneau indique une limite inferieure",
+            "text": "Le long ou au-dessus de l'autoroute, souvent au début du trajet ou près des échangeurs et sorties",
             "is_correct": true
           },
-          { "text": "130 km/h toujours", "is_correct": false },
-          { "text": "100 km/h toujours", "is_correct": false }
+          {
+            "text": "Uniquement dans les zones résidentielles à sens unique",
+            "is_correct": false
+          },
+          {
+            "text": "Uniquement sur les pistes cyclables parallèles à une autoroute",
+            "is_correct": false
+          }
         ],
-        "explanation": "Sur les autoroutes belges la limite de vitesse generale est de 120 km/h. Localement elle peut etre inferieure si un panneau l indique."
+        "explanation": "Ce panneau est placé le long ou au-dessus de l'autoroute pour aider le conducteur à suivre son trajet, surtout près des échangeurs et sorties."
       },
       "AR": {
-        "question": "ما الحد الأقصى العام للسرعة على طريق سريع بلجيكي مشار إليه بـ F23b؟",
+        "question": "أين تُوضع عادةً هذه العلامة التي تحمل رقمًا؟",
         "choices": [
           {
-            "text": "120 كم/ساعة ما لم تشر علامة مرورية أخرى إلى حد أدنى",
+            "text": "على جانب أو فوق الطريق السريع، غالبًا عند بداية المسار أو قرب التقاطعات والمخارج",
             "is_correct": true
           },
-          { "text": "130 كم/ساعة دائماً", "is_correct": false },
-          { "text": "100 كم/ساعة دائماً", "is_correct": false }
+          {
+            "text": "فقط داخل المناطق السكنية ذات الاتجاه الواحد",
+            "is_correct": false
+          },
+          {
+            "text": "فقط على مسارات الدراجات الموازية للطريق السريع",
+            "is_correct": false
+          }
         ],
-        "explanation": "على الطرق السريعة البلجيكية الحد الأقصى العام للسرعة هو 120 كم/ساعة. محلياً قد يكون أقل إذا أشارت علامة مرورية إلى ذلك."
+        "explanation": "تُوضع هذه العلامة على جانب أو فوق الطريق السريع لمساعدة السائق على متابعة مساره، خصوصًا قرب التقاطعات والمخارج."
       }
     }
   },
@@ -352,79 +409,79 @@
     "type": "WHAT_MUST_YOU_DO",
     "difficulty": "MEDIUM",
     "is_critical": false,
-    "show_sign": true,
+    "show_sign": false,
     "i18n": {
       "NL": {
-        "question": "F23b geeft aan dat u op snelweg A1 rijdt. U moet naar A12. Hoe handelt u?",
+        "question": "U twijfelt of u op de juiste autosnelweg rijdt en ziet een bord met een autosnelwegnummer zoals dit. Wat is de beste aanpak?",
         "choices": [
           {
-            "text": "De bewegwijzering en richtingborden volgen voor de aansluiting naar A12",
+            "text": "Het nummer op het bord controleren en vergelijken met uw geplande route om zeker te zijn dat u juist rijdt",
             "is_correct": true
           },
           {
-            "text": "Keren op de snelweg om de A12 te vinden",
+            "text": "Onmiddellijk op de vluchtstrook stoppen om het bord rustig te bekijken",
             "is_correct": false
           },
           {
-            "text": "Stoppen op de snelweg en de routeplanner raadplegen",
+            "text": "Het bord volledig negeren, want het heeft geen invloed op uw navigatie",
             "is_correct": false
           }
         ],
-        "explanation": "U volgt de bewegwijzering die de overgang naar A12 aangeeft. Stoppen op de snelweg is verboden."
+        "explanation": "Het controleren van het autosnelwegnummer op het bord is de veilige en correcte manier om te bevestigen dat u de juiste weg volgt, zonder onnodig te stoppen."
       },
       "EN": {
-        "question": "F23b indicates you are on motorway A1. You need to get to A12. How do you act?",
+        "question": "You are unsure whether you are on the correct motorway and see a sign with a motorway number like this one. What is the best approach?",
         "choices": [
           {
-            "text": "Follow the signposting and direction signs for the junction towards A12",
+            "text": "Check the number on the sign and compare it with your planned route to make sure you are driving correctly",
             "is_correct": true
           },
           {
-            "text": "Turn around on the motorway to find A12",
+            "text": "Immediately stop on the emergency lane to calmly look at the sign",
             "is_correct": false
           },
           {
-            "text": "Stop on the motorway and consult the route planner",
+            "text": "Completely ignore the sign, since it has no influence on your navigation",
             "is_correct": false
           }
         ],
-        "explanation": "You follow the signposting indicating the transition to A12. Stopping on the motorway is forbidden."
+        "explanation": "Checking the motorway number on the sign is the safe and correct way to confirm you are on the right road, without stopping unnecessarily."
       },
       "FR": {
-        "question": "F23b indique que vous etes sur l autoroute A1. Vous devez aller a A12. Comment agissez-vous ?",
+        "question": "Vous n'êtes pas sûr d'être sur la bonne autoroute et voyez un panneau portant un numéro d'autoroute comme celui-ci. Quelle est la meilleure approche ?",
         "choices": [
           {
-            "text": "Suivre la signalisation et les panneaux de direction pour la jonction vers A12",
+            "text": "Vérifier le numéro sur le panneau et le comparer avec votre itinéraire prévu pour vous assurer que vous roulez correctement",
             "is_correct": true
           },
           {
-            "text": "Faire demi-tour sur l autoroute pour trouver l A12",
+            "text": "Vous arrêter immédiatement sur la bande d'arrêt d'urgence pour observer calmement le panneau",
             "is_correct": false
           },
           {
-            "text": "S arreter sur l autoroute et consulter le planificateur d itineraire",
+            "text": "Ignorer complètement le panneau, car il n'a aucune influence sur votre navigation",
             "is_correct": false
           }
         ],
-        "explanation": "Vous suivez la signalisation indiquant la transition vers A12. S arreter sur l autoroute est interdit."
+        "explanation": "Vérifier le numéro d'autoroute sur le panneau est la manière sûre et correcte de confirmer que vous suivez la bonne route, sans vous arrêter inutilement."
       },
       "AR": {
-        "question": "تشير F23b إلى أنك على الطريق السريع A1. تحتاج إلى الوصول إلى A12. كيف تتصرف؟",
+        "question": "أنت غير متأكد من أنك على الطريق السريع الصحيح ولاحظت علامة تحمل رقم طريق سريع مثل هذه، فما أفضل تصرف؟",
         "choices": [
           {
-            "text": "اتبع العلامات وعلامات الاتجاه للوصول إلى التقاطع نحو A12",
+            "text": "تفقّد الرقم الموجود على العلامة ومقارنته بمسارك المخطط للتأكد من أنك تسير بشكل صحيح",
             "is_correct": true
           },
           {
-            "text": "استدر على الطريق السريع للعثور على A12",
+            "text": "التوقف فورًا على الحارة الطارئة لتفحص العلامة بهدوء",
             "is_correct": false
           },
           {
-            "text": "توقف على الطريق السريع واستشر مخطط المسار",
+            "text": "تجاهل العلامة تمامًا لأنها لا تؤثر على تنقلك",
             "is_correct": false
           }
         ],
-        "explanation": "تتبع العلامات التي تشير إلى الانتقال نحو A12. التوقف على الطريق السريع محظور."
+        "explanation": "تفقّد رقم الطريق السريع على العلامة هو الطريقة الآمنة والصحيحة للتأكد من أنك تسير على الطريق الصحيح، دون التوقف دون ضرورة."
       }
     }
   },
@@ -433,63 +490,63 @@
     "type": "IS_IT_ALLOWED",
     "difficulty": "HARD",
     "is_critical": true,
-    "show_sign": true,
+    "show_sign": false,
     "i18n": {
       "NL": {
-        "question": "Mag u een autosnelweg verlaten via de vluchtstrook als u de afrit gemist hebt?",
+        "question": "Mag u ervan uitgaan dat een specifieke maximumsnelheid geldt enkel op basis van een bord met een autosnelwegnummer?",
         "choices": [
           {
-            "text": "Nee de vluchtstrook is niet bedoeld als rijstrook en u mag die niet gebruiken om de gemiste afrit te bereiken",
+            "text": "Nee, dit bord alleen legt geen specifieke maximumsnelheid op; daarvoor moet u een apart snelheidsbord raadplegen",
             "is_correct": true
           },
           {
-            "text": "Ja als u de afrit net gemist hebt mag u via de vluchtstrook toch een uitrit vinden",
+            "text": "Ja, elk autosnelwegnummerbord bepaalt automatisch een vaste maximumsnelheid voor die weg",
             "is_correct": false
           }
         ],
-        "explanation": "De vluchtstrook is uitsluitend voor noodgevallen. Als u een afrit mist rijdt u door naar de volgende afrit. Via de vluchtstrook rijden is gevaarlijk en verboden."
+        "explanation": "Een bord met een autosnelwegnummer identificeert enkel de weg en legt op zichzelf geen maximumsnelheid vast; dit vereist een apart verkeersbord."
       },
       "EN": {
-        "question": "May you leave a motorway via the hard shoulder if you have missed the exit?",
+        "question": "May you assume that a specific speed limit applies based solely on a sign with a motorway number?",
         "choices": [
           {
-            "text": "No the hard shoulder is not intended as a driving lane and you may not use it to reach a missed exit",
+            "text": "No, this sign alone does not impose any specific speed limit; you must consult a separate speed sign for that",
             "is_correct": true
           },
           {
-            "text": "Yes if you have just missed the exit you may find an exit via the hard shoulder",
+            "text": "Yes, every motorway number sign automatically sets a fixed speed limit for that road",
             "is_correct": false
           }
         ],
-        "explanation": "The hard shoulder is exclusively for emergencies. If you miss an exit you drive on to the next one. Using the hard shoulder as a lane is dangerous and forbidden."
+        "explanation": "A sign with a motorway number only identifies the road and does not by itself set a speed limit; that requires a separate traffic sign."
       },
       "FR": {
-        "question": "Pouvez-vous quitter une autoroute par la bande d arret d urgence si vous avez rate la sortie ?",
+        "question": "Pouvez-vous supposer qu'une limite de vitesse spécifique s'applique uniquement sur la base d'un panneau portant un numéro d'autoroute ?",
         "choices": [
           {
-            "text": "Non la bande d arret d urgence n est pas destinee a etre une voie de circulation et vous ne pouvez pas l utiliser pour atteindre une sortie manquee",
+            "text": "Non, ce panneau seul n'impose aucune limite de vitesse spécifique; vous devez consulter un panneau de vitesse distinct pour cela",
             "is_correct": true
           },
           {
-            "text": "Oui si vous venez de rater la sortie vous pouvez trouver une sortie via la bande d arret d urgence",
+            "text": "Oui, chaque panneau de numéro d'autoroute fixe automatiquement une vitesse limite pour cette route",
             "is_correct": false
           }
         ],
-        "explanation": "La bande d arret d urgence est exclusivement pour les urgences. Si vous ratez une sortie continuez jusqu a la prochaine. Utiliser la bande d arret d urgence comme voie est dangereux et interdit."
+        "explanation": "Un panneau portant un numéro d'autoroute identifie uniquement la route et ne fixe pas de limite de vitesse par lui-même; cela nécessite un panneau de circulation distinct."
       },
       "AR": {
-        "question": "هل يمكنك مغادرة الطريق السريع عبر الكتف إذا فاتك المخرج؟",
+        "question": "هل يمكنك أن تفترض وجود حد سرعة معين بناءً فقط على علامة تحمل رقم طريق سريع؟",
         "choices": [
           {
-            "text": "لا الكتف ليس مخصصاً كحارة قيادة ولا يمكنك استخدامه للوصول إلى مخرج فائت",
+            "text": "لا، هذه العلامة وحدها لا تفرض أي حد سرعة معين؛ يجب الرجوع إلى علامة سرعة مستقلة لذلك",
             "is_correct": true
           },
           {
-            "text": "نعم إذا فاتك المخرج للتو يمكنك العثور على مخرج عبر الكتف",
+            "text": "نعم، كل علامة رقم طريق سريع تحدد تلقائيًا سرعة قصوى ثابتة لذلك الطريق",
             "is_correct": false
           }
         ],
-        "explanation": "الكتف مخصص حصرياً لحالات الطوارئ. إذا فاتك مخرج تمضي قدماً حتى المخرج التالي. استخدام الكتف كحارة خطير ومحظور."
+        "explanation": "تُستخدم العلامة التي تحمل رقم الطريق السريع فقط للتعرف على الطريق ولا تحدد بحد ذاتها أي سرعة قصوى؛ يتطلب ذلك علامة مرورية مستقلة."
       }
     }
   },
@@ -501,60 +558,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Is het toegestaan om langzamer dan 70 km/h te rijden op een snelweg aangeduid met F23b?",
+        "question": "Mag u aannemen dat elk voertuigtype toegelaten is op een weg enkel op basis van dit nummerbord?",
         "choices": [
           {
-            "text": "Nee de minimumsnelheid op een Belgische autosnelweg is 70 km/h en rijden onder die snelheid is verboden tenzij het verkeer stilstaat",
+            "text": "Nee, de toegang van bepaalde voertuigtypes tot een autosnelweg wordt bepaald door de algemene regels en signalisatie voor autosnelwegen, niet door het nummerbord zelf",
             "is_correct": true
           },
           {
-            "text": "Ja u mag altijd zo langzaam rijden als u wil op een snelweg",
+            "text": "Ja, het nummerbord bepaalt zelf welke voertuigtypes wel of niet toegelaten zijn",
             "is_correct": false
           }
         ],
-        "explanation": "Op Belgische autosnelwegen geldt een minimumsnelheid van 70 km/h. Langzamer rijden (zonder verkeershinder) is verboden en brengt gevaar met zich mee."
+        "explanation": "Het nummerbord identificeert enkel de autosnelweg; de toegangsregels voor bepaalde voertuigtypes worden vastgelegd door andere borden en de algemene wetgeving over autosnelwegen."
       },
       "EN": {
-        "question": "Is it allowed to drive slower than 70 km/h on a motorway indicated by F23b?",
+        "question": "May you assume that every vehicle type is allowed on a road based solely on this number sign?",
         "choices": [
           {
-            "text": "No the minimum speed on a Belgian motorway is 70 km/h and driving below that speed is forbidden unless traffic is at a standstill",
+            "text": "No, access for certain vehicle types to a motorway is determined by the general rules and signage for motorways, not by the number sign itself",
             "is_correct": true
           },
           {
-            "text": "Yes you may always drive as slowly as you wish on a motorway",
+            "text": "Yes, the number sign itself determines which vehicle types are or are not allowed",
             "is_correct": false
           }
         ],
-        "explanation": "Belgian motorways have a minimum speed of 70 km/h. Driving slower (without traffic obstruction) is forbidden and dangerous."
+        "explanation": "The number sign only identifies the motorway; access rules for certain vehicle types are set by other signs and the general legislation on motorways."
       },
       "FR": {
-        "question": "Est-il permis de rouler a moins de 70 km/h sur une autoroute indiquee par F23b ?",
+        "question": "Pouvez-vous supposer que tout type de véhicule est autorisé sur une route uniquement sur la base de ce panneau numéroté ?",
         "choices": [
           {
-            "text": "Non la vitesse minimale sur une autoroute belge est de 70 km/h et rouler en dessous de cette vitesse est interdit sauf si la circulation est a l arret",
+            "text": "Non, l'accès de certains types de véhicules à une autoroute est déterminé par les règles générales et la signalisation propres aux autoroutes, pas par le panneau numéroté lui-même",
             "is_correct": true
           },
           {
-            "text": "Oui vous pouvez toujours rouler aussi lentement que vous le souhaitez sur une autoroute",
+            "text": "Oui, le panneau numéroté détermine lui-même quels types de véhicules sont autorisés ou non",
             "is_correct": false
           }
         ],
-        "explanation": "Les autoroutes belges ont une vitesse minimale de 70 km/h. Rouler plus lentement (sans obstruction du trafic) est interdit et dangereux."
+        "explanation": "Le panneau numéroté identifie uniquement l'autoroute; les règles d'accès pour certains types de véhicules sont fixées par d'autres panneaux et la législation générale sur les autoroutes."
       },
       "AR": {
-        "question": "هل يُسمح بالسير بأقل من 70 كم/ساعة على طريق سريع مشار إليه بـ F23b؟",
+        "question": "هل يمكنك أن تفترض أن جميع أنواع المركبات مسموح بها على طريق ما بناءً فقط على هذه علامة الرقم؟",
         "choices": [
           {
-            "text": "لا الحد الأدنى للسرعة على طريق سريع بلجيكي هو 70 كم/ساعة والسير دون ذلك محظور ما لم يتوقف المرور",
+            "text": "لا، يُحدَّد سماح بعض أنواع المركبات بالدخول إلى الطريق السريع من خلال القواعد العامة والإشارات الخاصة بالطرق السريعة، وليس من خلال علامة الرقم نفسها",
             "is_correct": true
           },
           {
-            "text": "نعم يمكنك دائماً السير ببطء كما تشاء على الطريق السريع",
+            "text": "نعم، علامة الرقم نفسها تحدد أنواع المركبات المسموح بها أو غير المسموح بها",
             "is_correct": false
           }
         ],
-        "explanation": "تمتلك الطرق السريعة البلجيكية حداً أدنى للسرعة 70 كم/ساعة. السير بأبطأ (دون عائق مروري) محظور وخطير."
+        "explanation": "تُستخدم علامة الرقم فقط للتعرف على الطريق السريع؛ تُحدَّد قواعد الدخول لأنواع معينة من المركبات من خلال علامات أخرى والتشريعات العامة المتعلقة بالطرق السريعة."
       }
     }
   }

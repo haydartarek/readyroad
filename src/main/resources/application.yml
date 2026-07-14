@@ -125,11 +125,7 @@ management:
     env:
       enabled: false # Prevent env vars (including secrets) from appearing in /actuator/info
 
-# ReadyRoad Data Import Configuration
 readyroad:
-  data-import:
-    enabled: false
-    path: data
   upload:
     max-file-size-mb: 5
     directory: public/images/quiz

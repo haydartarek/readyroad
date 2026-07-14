@@ -148,7 +148,10 @@
             "text": "E5: تحظر الوقوف على الجانب الآخر من اليوم 1 حتى 15 من الشهر",
             "is_correct": true
           },
-          { "text": "E3: تحظر التوقف والوقوف معاً", "is_correct": false },
+          {
+            "text": "E3: تحظر التوقف والوقوف معاً",
+            "is_correct": false
+          },
           {
             "text": "E9a-parkeerschijf: وقوف مسموح بحد زمني باستخدام قرص الوقوف",
             "is_correct": false
@@ -222,7 +225,10 @@
       "AR": {
         "question": "ماذا يمكن أن يحدث إذا وقفت على جانب E7 في اليوم العشرين من الشهر؟",
         "choices": [
-          { "text": "قد تُسحب سيارتك وتخاطر بغرامة مالية", "is_correct": true },
+          {
+            "text": "قد تُسحب سيارتك وتخاطر بغرامة مالية",
+            "is_correct": true
+          },
           {
             "text": "لا شيء، اليوم العشرون يوم زوجي والأيام الزوجية حرة",
             "is_correct": false
@@ -250,7 +256,10 @@
             "text": "Neen, de 16e is de eerste dag van de verbodperiode van E7; parkeren aan deze kant is vandaag verboden",
             "is_correct": true
           },
-          { "text": "Ja, het verbod begint pas de 17e", "is_correct": false },
+          {
+            "text": "Ja, het verbod begint pas de 17e",
+            "is_correct": false
+          },
           {
             "text": "Ja, de 16e is een overgangsdag waarbij beide kanten nog vrij zijn",
             "is_correct": false
@@ -382,7 +391,10 @@
             "text": "نعم، الخامس يقع في فترة E5 (1-15)؛ E7 غير نشطة الآن؛ الوقوف على هذا الجانب مسموح",
             "is_correct": true
           },
-          { "text": "لا، E7 تحظر الوقوف طوال الشهر", "is_correct": false },
+          {
+            "text": "لا، E7 تحظر الوقوف طوال الشهر",
+            "is_correct": false
+          },
           {
             "text": "لا، E5 وE7 نشطتان في آنٍ واحد وتحظران الوقوف على كلا الجانبين",
             "is_correct": false
@@ -400,76 +412,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Hoe bepaalt u aan welke kant van de straat u mag parkeren op een willekeurige dag?",
+        "question": "Hoe bepaalt u bij de combinatie E5/E7 welke kant op een bepaalde datum verboden is?",
         "choices": [
           {
-            "text": "Kijk naar de datum: dag 1-15 verbod aan E5-kant, dag 16-einde verbod aan E7-kant; de andere kant is steeds vrij",
+            "text": "Lees het bord en de datum: E5 geldt van 1 tot en met 15, E7 van 16 tot het einde van de maand",
             "is_correct": true
           },
           {
-            "text": "Kijk naar de kleur van het bord: blauw is toegestaan, rood is verboden",
+            "text": "Kies altijd de kant met de meeste vrije plaatsen",
             "is_correct": false
           },
           {
-            "text": "Parkeren is op dezelfde dag altijd verboden aan beide kanten",
+            "text": "E5 geldt op oneven dagen en E7 op even dagen",
             "is_correct": false
           }
         ],
-        "explanation": "Het afwisselend parkeersysteem is puur datumgebonden. E5 en E7 staan altijd aan tegenovergestelde kanten van de straat, zodat er elke dag altijd één kant vrij is."
+        "explanation": "De regeling volgt twee maandhelften, niet even en oneven dagen. Houd ook rekening met de kantwissel op de laatste dag van de periode tussen 19.30 en 20.00 uur."
       },
       "EN": {
-        "question": "How do you determine on which side of the street you may park on any given day?",
+        "question": "With an E5/E7 combination, how do you determine which side is prohibited on a given date?",
         "choices": [
           {
-            "text": "Check the date: days 1-15 ban on E5 side, days 16-end ban on E7 side; the other side is always free",
+            "text": "Read the sign and date: E5 applies from the 1st through the 15th, E7 from the 16th through month-end",
             "is_correct": true
           },
           {
-            "text": "Check the colour of the sign: blue means allowed, red means forbidden",
+            "text": "Always choose the side with the most empty spaces",
             "is_correct": false
           },
           {
-            "text": "Parking is always forbidden on both sides of the street on the same day",
+            "text": "E5 applies on odd dates and E7 on even dates",
             "is_correct": false
           }
         ],
-        "explanation": "The alternating parking system is purely date-based. E5 and E7 are always placed on opposite sides of the street, so there is always one free side every day."
+        "explanation": "The rule follows the two halves of the month, not odd and even dates. Also account for the side change on the final day between 19:30 and 20:00."
       },
       "FR": {
-        "question": "Comment déterminez-vous de quel côté de la rue vous pouvez vous garer un jour donné ?",
+        "question": "Avec la combinaison E5/E7, comment déterminer le côté interdit à une date donnée ?",
         "choices": [
           {
-            "text": "Regardez la date : jours 1-15 interdiction côté E5, jours 16-fin interdiction côté E7 ; l'autre côté est toujours libre",
+            "text": "Lisez le panneau et la date : E5 s’applique du 1er au 15, E7 du 16 à la fin du mois",
             "is_correct": true
           },
           {
-            "text": "Regardez la couleur du panneau : bleu = autorisé, rouge = interdit",
+            "text": "Choisissez toujours le côté offrant le plus de places libres",
             "is_correct": false
           },
           {
-            "text": "Le stationnement est toujours interdit des deux côtés de la rue le même jour",
+            "text": "E5 s’applique les jours impairs et E7 les jours pairs",
             "is_correct": false
           }
         ],
-        "explanation": "Le système de stationnement alternatif est purement basé sur la date. E5 et E7 sont toujours placés des côtés opposés de la rue, de sorte qu'il y a toujours un côté libre chaque jour."
+        "explanation": "La règle suit les deux moitiés du mois, et non les jours pairs et impairs. Tenez aussi compte du changement de côté le dernier jour entre 19 h 30 et 20 h."
       },
       "AR": {
-        "question": "كيف تحدد على أي جانب من الشارع يمكنك الوقوف في أي يوم؟",
+        "question": "مع علامتي E5 وE7 كيف تحدد الجانب المحظور في تاريخ معين؟",
         "choices": [
           {
-            "text": "انظر إلى التاريخ: أيام 1-15 الحظر على جانب E5، أيام 16-النهاية الحظر على جانب E7؛ الجانب الآخر دائماً حر",
+            "text": "اقرأ العلامة والتاريخ: تسري E5 من 1 حتى 15 وE7 من 16 حتى نهاية الشهر",
             "is_correct": true
           },
           {
-            "text": "انظر إلى لون العلامة: أزرق = مسموح، أحمر = ممنوع",
+            "text": "اختر دائماً الجانب الذي توجد فيه أماكن فارغة أكثر",
             "is_correct": false
           },
           {
-            "text": "الوقوف ممنوع دائماً على كلا الجانبين في نفس اليوم",
+            "text": "تسري E5 في الأيام الفردية وE7 في الأيام الزوجية",
             "is_correct": false
           }
         ],
-        "explanation": "نظام الوقوف المتناوب مبني بالكامل على التاريخ. E5 وE7 دائماً توضعان على جانبين متقابلين من الشارع، مما يعني أن هناك دائماً جانباً حراً في كل يوم."
+        "explanation": "تتبع القاعدة نصفي الشهر لا الأيام الفردية والزوجية. ويجب مراعاة تغيير الجانب في اليوم الأخير بين الساعة 19:30 و20:00."
       }
     }
   },
@@ -546,60 +558,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U parkeert op de 15e bij E5 en wilt de auto laten staan tot de 17e. Wat moet u doen?",
+        "question": "Uw auto staat op de E7-kant op de 15e en u wilt hem tot de 17e laten staan. Wat moet u doen?",
         "choices": [
           {
-            "text": "U moet de auto verplaatsen naar de E7-kant vóór de 16e begint, want vanaf de 16e is de E7-kant verboden",
+            "text": "Verplaats hem op de 15e tussen 19.30 en 20.00 uur naar de E5-kant",
             "is_correct": true
           },
           {
-            "text": "Niets, u staat aan de E5-kant die vrij is en u hoeft de auto niet te verplaatsen",
+            "text": "Laat hem op de E7-kant staan tot de 17e",
             "is_correct": false
           }
         ],
-        "explanation": "Op de 15e staat de auto aan de E5-kant, die op de 15e nog actief is (verbod 1-15). Vanaf de 16e wordt de E7-kant verboden. Als u de auto wilt laten staan tot de 17e, moet u hem voor middernacht van de 15e op de 16e verplaatsen naar de E7-kant, die dan vrij is."
+        "explanation": "Vanaf de 16e is parkeren aan de E7-kant verboden. De kantwissel moet op de 15e tussen 19.30 en 20.00 uur gebeuren."
       },
       "EN": {
-        "question": "You park on the 15th on the E5 side and want to leave the car until the 17th. What must you do?",
+        "question": "Your car is on the E7 side on the 15th and you want to leave it until the 17th. What must you do?",
         "choices": [
           {
-            "text": "You must move the car to the E7 side before the 16th begins, because from the 16th the E7 side is forbidden",
+            "text": "Move it to the E5 side on the 15th between 19:30 and 20:00",
             "is_correct": true
           },
           {
-            "text": "Nothing, you are on the E5 side which is free and you do not need to move the car",
+            "text": "Leave it on the E7 side until the 17th",
             "is_correct": false
           }
         ],
-        "explanation": "On the 15th the car is on the E5 side, which is still active on the 15th (ban 1-15). From the 16th the E7 side becomes forbidden. If you want to leave the car until the 17th, you must move it before midnight from the 15th to the 16th to the E7 side, which is then free."
+        "explanation": "Parking on the E7 side is prohibited from the 16th. The side change must take place on the 15th between 19:30 and 20:00."
       },
       "FR": {
-        "question": "Vous vous garez le 15 du côté E5 et voulez laisser la voiture jusqu'au 17. Que devez-vous faire ?",
+        "question": "Votre voiture est du côté E7 le 15 et vous voulez la laisser jusqu’au 17. Que devez-vous faire ?",
         "choices": [
           {
-            "text": "Vous devez déplacer la voiture du côté E7 avant le début du 16, car à partir du 16 le côté E7 est interdit",
+            "text": "La déplacer du côté E5 le 15 entre 19 h 30 et 20 h",
             "is_correct": true
           },
           {
-            "text": "Rien, vous êtes du côté E5 qui est libre et vous n'avez pas besoin de déplacer la voiture",
+            "text": "La laisser du côté E7 jusqu’au 17",
             "is_correct": false
           }
         ],
-        "explanation": "Le 15, la voiture est du côté E5, encore actif le 15 (interdiction 1-15). À partir du 16, le côté E7 devient interdit. Si vous voulez laisser la voiture jusqu'au 17, vous devez la déplacer avant minuit du 15 au 16 du côté E7, qui sera alors libre."
+        "explanation": "Le stationnement du côté E7 est interdit à partir du 16. Le changement de côté doit avoir lieu le 15 entre 19 h 30 et 20 h."
       },
       "AR": {
-        "question": "أوقفت سيارتك يوم 15 على جانب E5 وتريد إبقاءها حتى يوم 17. ماذا يجب عليك فعله؟",
+        "question": "مركبتك على جانب E7 يوم 15 وتريد تركها حتى يوم 17. ماذا تفعل؟",
         "choices": [
           {
-            "text": "يجب نقل السيارة إلى جانب E7 قبل أن يبدأ يوم 16، لأنه من يوم 16 يكون جانب E7 ممنوعاً",
+            "text": "انقلها إلى جانب E5 يوم 15 بين الساعة 19:30 و20:00",
             "is_correct": true
           },
           {
-            "text": "لا شيء، أنت على جانب E5 الحر ولا تحتاج إلى نقل السيارة",
+            "text": "اتركها على جانب E7 حتى يوم 17",
             "is_correct": false
           }
         ],
-        "explanation": "في يوم 15 تكون السيارة على جانب E5 الذي لا يزال نشطاً في يوم 15 (حظر 1-15). من يوم 16 يصبح جانب E7 ممنوعاً. إذا أردت إبقاء السيارة حتى يوم 17، يجب نقلها قبل منتصف ليلة 15 على 16 إلى جانب E7 الذي سيكون حراً آنذاك."
+        "explanation": "يُحظر الوقوف على جانب E7 ابتداءً من يوم 16، ويجب تغيير الجانب يوم 15 بين الساعة 19:30 و20:00."
       }
     }
   }

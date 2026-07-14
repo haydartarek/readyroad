@@ -10,7 +10,7 @@
         "question": "Wat betekent dit verkeersbord?",
         "choices": [
           {
-            "text": "Parkeren uitsluitend toegelaten voor autocars en bussen",
+            "text": "Parkeren uitsluitend toegelaten voor autocars",
             "is_correct": true
           },
           {
@@ -22,13 +22,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "Bord E9d reserveert de parkeerplaats uitsluitend voor autocars en bussen. Vrachtwagens, personenwagens, motorfietsen en alle andere voertuigen die niet als autocar of bus zijn ingeschreven, zijn hier niet toegelaten."
+        "explanation": "Bord E9d duidt een parkeerplaats aan die uitsluitend voor autocars is bestemd. Andere voertuigen, waaronder autobussen, minibussen, vrachtwagens, personenwagens en motorfietsen, vallen niet onder deze categorie."
       },
       "EN": {
         "question": "What does this road sign mean?",
         "choices": [
           {
-            "text": "Parking permitted exclusively for coaches and buses",
+            "text": "Parking permitted exclusively for coaches",
             "is_correct": true
           },
           {
@@ -40,13 +40,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "Sign E9d reserves the parking space exclusively for coaches and buses. Lorries, passenger cars, motorcycles and all other vehicles not registered as a coach or bus are not permitted here."
+        "explanation": "Sign E9d indicates a parking space reserved exclusively for coaches. Other vehicles, including public-service buses, minibuses, lorries, passenger cars and motorcycles, do not fall within this category."
       },
       "FR": {
         "question": "Que signifie ce panneau de signalisation ?",
         "choices": [
           {
-            "text": "Stationnement autorisé exclusivement pour les autocars et les bus",
+            "text": "Stationnement autorisé exclusivement pour les autocars",
             "is_correct": true
           },
           {
@@ -58,13 +58,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "Le panneau E9d réserve la place de stationnement exclusivement aux autocars et aux bus. Les camions, voitures particulières, motocyclettes et tous les autres véhicules non immatriculés comme autocar ou bus ne sont pas autorisés ici."
+        "explanation": "Le panneau E9d indique une place de stationnement exclusivement réservée aux autocars. Les autres véhicules, notamment les autobus de service public, minibus, camions, voitures et motocyclettes, ne relèvent pas de cette catégorie."
       },
       "AR": {
         "question": "ماذا تعني هذه العلامة المرورية؟",
         "choices": [
           {
-            "text": "الوقوف مسموح حصراً للحافلات الكبيرة والباصات",
+            "text": "الوقوف مسموح حصراً لحافلات الرحلات من فئة autocar",
             "is_correct": true
           },
           {
@@ -76,7 +76,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "تحجز علامة E9d الموقف حصراً للحافلات الكبيرة والباصات. الشاحنات والسيارات الخاصة والدراجات النارية وجميع المركبات الأخرى غير المُسجَّلة كحافلة كبيرة أو باص غير مسموح لها هنا."
+        "explanation": "تحدد علامة E9d موقفاً مخصصاً حصراً لحافلات الرحلات من فئة autocar. ولا تندرج المركبات الأخرى، ومنها حافلات النقل العام والحافلات الصغيرة والشاحنات والسيارات والدراجات النارية، ضمن هذه الفئة."
       }
     }
   },
@@ -91,58 +91,58 @@
         "question": "Welke voertuigen zijn NIET toegelaten op een E9d-parkeerplaats?",
         "choices": [
           {
-            "text": "Personenwagens, vrachtwagens, lichte vrachtwagens en motorfietsen",
+            "text": "Personenwagens, vrachtwagens, motorfietsen en autobussen",
             "is_correct": true
           },
-          { "text": "Autocars en bussen", "is_correct": false },
+          { "text": "Autocars", "is_correct": false },
           {
             "text": "Enkel voertuigen zwaarder dan 7,5 ton",
             "is_correct": false
           }
         ],
-        "explanation": "E9d laat uitsluitend autocars en bussen toe. Personenwagens, vrachtwagens, lichte vrachtwagens en motorfietsen vallen buiten deze categorieën en zijn verboden op deze parkeerplaats."
+        "explanation": "E9d is uitsluitend voor autocars bestemd. Personenwagens, vrachtwagens, motorfietsen en autobussen vallen niet onder die categorie en mogen er niet parkeren."
       },
       "EN": {
         "question": "Which vehicles are NOT permitted in an E9d parking space?",
         "choices": [
           {
-            "text": "Passenger cars, lorries, light lorries and motorcycles",
+            "text": "Passenger cars, lorries, motorcycles and public-service buses",
             "is_correct": true
           },
-          { "text": "Coaches and buses", "is_correct": false },
+          { "text": "Coaches", "is_correct": false },
           {
             "text": "Only vehicles heavier than 7.5 tonnes",
             "is_correct": false
           }
         ],
-        "explanation": "E9d only permits coaches and buses. Passenger cars, lorries, light lorries and motorcycles fall outside these categories and are forbidden in this parking space."
+        "explanation": "E9d is reserved exclusively for coaches. Passenger cars, lorries, motorcycles and public-service buses do not fall within that category and may not park there."
       },
       "FR": {
         "question": "Quels véhicules ne sont PAS autorisés sur une place de stationnement E9d ?",
         "choices": [
           {
-            "text": "Voitures particulières, camions, camionnettes et motocyclettes",
+            "text": "Voitures particulières, camions, motocyclettes et autobus de service public",
             "is_correct": true
           },
-          { "text": "Autocars et bus", "is_correct": false },
+          { "text": "Autocars", "is_correct": false },
           {
             "text": "Uniquement les véhicules de plus de 7,5 tonnes",
             "is_correct": false
           }
         ],
-        "explanation": "E9d n'autorise que les autocars et les bus. Les voitures particulières, camions, camionnettes et motocyclettes n'entrent pas dans ces catégories et sont interdits sur cette place de stationnement."
+        "explanation": "E9d est exclusivement réservé aux autocars. Les voitures, camions, motocyclettes et autobus de service public ne relèvent pas de cette catégorie et ne peuvent pas s'y garer."
       },
       "AR": {
         "question": "أي المركبات غير مسموح لها في موقف E9d؟",
         "choices": [
           {
-            "text": "السيارات الخاصة والشاحنات والشاحنات الخفيفة والدراجات النارية",
+            "text": "السيارات الخاصة والشاحنات والدراجات النارية وحافلات النقل العام",
             "is_correct": true
           },
-          { "text": "الحافلات الكبيرة والباصات", "is_correct": false },
+          { "text": "حافلات الرحلات من فئة autocar", "is_correct": false },
           { "text": "فقط المركبات التي تزيد عن 7.5 طن", "is_correct": false }
         ],
-        "explanation": "لا تسمح E9d إلا بالحافلات الكبيرة والباصات. السيارات الخاصة والشاحنات والشاحنات الخفيفة والدراجات النارية خارج هذه الفئات وهي محظورة في هذا الموقف."
+        "explanation": "تُخصص E9d حصراً لحافلات الرحلات من فئة autocar. ولا تندرج السيارات والشاحنات والدراجات النارية وحافلات النقل العام ضمن هذه الفئة، لذلك لا يجوز لها الوقوف هناك."
       }
     }
   },
@@ -250,7 +250,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "E9d reserveert de parkeerplaats voor autocars én bussen. Een autocar met 55 zitplaatsen is precies de doelgroep van dit bord en mag hier onbeperkt parkeren, tenzij een onderbord de tijden beperkt."
+        "explanation": "E9d duidt een parkeerplaats aan die uitsluitend voor autocars is bestemd. Omdat het voertuig in de vraag een autocar is, mag het er parkeren, voor zover het eventuele voorwaarden op een onderbord naleeft."
       },
       "EN": {
         "question": "You are driving a coach with 55 seats. May you park in an E9d space?",
@@ -268,7 +268,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "E9d reserves the parking space for coaches and buses. A coach with 55 seats is exactly the target group of this sign and may park here without restriction unless a supplementary sign limits the times."
+        "explanation": "E9d indicates a parking space reserved exclusively for coaches. Because the vehicle in the question is a coach, it may park there provided it complies with any conditions on a supplementary sign."
       },
       "FR": {
         "question": "Vous conduisez un autocar de 55 places. Pouvez-vous vous garer sur une place E9d ?",
@@ -286,7 +286,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "E9d réserve la place de stationnement aux autocars et aux bus. Un autocar de 55 places est exactement le groupe cible de ce panneau et peut se garer ici sans restriction sauf si un panneau complémentaire limite les heures."
+        "explanation": "E9d indique une place de stationnement exclusivement réservée aux autocars. Le véhicule de la question étant un autocar, il peut s'y garer à condition de respecter les éventuelles indications d'un panneau complémentaire."
       },
       "AR": {
         "question": "تقود حافلة كبيرة (autocar) بـ55 مقعداً. هل يجوز لك الوقوف في موقف E9d؟",
@@ -304,7 +304,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "تحجز E9d الموقف للحافلات الكبيرة والباصات. الحافلة الكبيرة بـ55 مقعداً هي بالضبط الفئة المستهدفة من هذه العلامة ويجوز لها الوقوف هنا دون قيود ما لم تُحدد علامة تكميلية أوقاتاً مغايرة."
+        "explanation": "تحدد E9d موقفاً مخصصاً حصراً لحافلات الرحلات من فئة autocar. وبما أن المركبة في السؤال مصنفة ضمن هذه الفئة، فيجوز لها الوقوف مع الالتزام بأي شروط تبينها لوحة تكميلية."
       }
     }
   },
@@ -319,7 +319,7 @@
         "question": "U rijdt een vrachtwagen met oplegger. Staat er een E9d-bord bij de enige vrije plek. Mag u parkeren?",
         "choices": [
           {
-            "text": "Neen: vrachtwagens zijn geen autocars of bussen en zijn niet toegelaten op een E9d-parkeerplaats",
+            "text": "Neen: een vrachtwagen is geen autocar en is niet toegelaten op een E9d-parkeerplaats",
             "is_correct": true
           },
           {
@@ -331,13 +331,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "E9d is uitsluitend bestemd voor autocars en bussen. Een vrachtwagen met oplegger is een goederenvoertuig en valt niet onder deze categorieën, ongeacht zijn afmetingen of gewicht. Grootte alleen geeft geen recht op parkeren bij E9d."
+        "explanation": "E9d is uitsluitend voor autocars bestemd. Een vrachtwagen met oplegger is geen autocar, ongeacht zijn afmetingen of gewicht. Grootte alleen geeft geen recht op parkeren bij E9d."
       },
       "EN": {
         "question": "You are driving a lorry with a trailer. An E9d sign marks the only free space. May you park?",
         "choices": [
           {
-            "text": "No: lorries are not coaches or buses and are not permitted in an E9d parking space",
+            "text": "No: a lorry is not a coach and is not permitted in an E9d parking space",
             "is_correct": true
           },
           {
@@ -349,13 +349,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "E9d is exclusively intended for coaches and buses. A lorry with a trailer is a goods vehicle and does not fall under these categories regardless of its dimensions or weight. Size alone does not give the right to park under E9d."
+        "explanation": "E9d is reserved exclusively for coaches. A lorry with a trailer is not a coach, regardless of its dimensions or weight. Size alone does not create a right to park under E9d."
       },
       "FR": {
         "question": "Vous conduisez un camion avec remorque. Un panneau E9d indique la seule place libre. Pouvez-vous vous garer ?",
         "choices": [
           {
-            "text": "Non : les camions ne sont pas des autocars ou des bus et ne sont pas autorisés sur une place E9d",
+            "text": "Non : un camion n'est pas un autocar et n'est pas autorisé sur une place E9d",
             "is_correct": true
           },
           {
@@ -367,13 +367,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "E9d est exclusivement destiné aux autocars et aux bus. Un camion avec remorque est un véhicule de transport de marchandises et n'entre pas dans ces catégories quelle que soit sa taille ou son poids. La taille seule ne donne pas le droit de se garer sous E9d."
+        "explanation": "E9d est exclusivement réservé aux autocars. Un camion avec remorque n'est pas un autocar, quelles que soient sa taille ou sa masse. La taille seule ne donne aucun droit de stationner sous E9d."
       },
       "AR": {
         "question": "تقود شاحنة مع مقطورة. تُشير علامة E9d إلى المكان الوحيد الفارغ. هل يجوز لك الوقوف؟",
         "choices": [
           {
-            "text": "لا: الشاحنات ليست حافلات كبيرة أو باصات وهي غير مسموح بها في موقف E9d",
+            "text": "لا: الشاحنة ليست حافلة رحلات من فئة autocar ولا يُسمح لها في موقف E9d",
             "is_correct": true
           },
           {
@@ -385,7 +385,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "E9d مخصصة حصراً للحافلات الكبيرة والباصات. الشاحنة مع المقطورة مركبة لنقل البضائع ولا تندرج ضمن هذه الفئات بصرف النظر عن أبعادها أو وزنها. الحجم وحده لا يُعطي حق الوقوف في مواقف E9d."
+        "explanation": "تُخصص E9d حصراً لحافلات الرحلات من فئة autocar. والشاحنة مع المقطورة ليست من هذه الفئة مهما كان حجمها أو وزنها؛ فالحجم وحده لا يمنح حق الوقوف في موقف E9d."
       }
     }
   },
@@ -400,7 +400,7 @@
         "question": "Geldt de E9d-reservering ook 's nachts als er een onderbord staat met '8u–20u'?",
         "choices": [
           {
-            "text": "Neen: buiten de aangegeven uren (dus 's nachts) geldt de reservering niet en mag iedereen op die plek parkeren",
+            "text": "Neen: buiten de aangegeven uren geldt de E9d-reservering niet; parkeren blijft wel afhankelijk van alle andere geldende regels en borden",
             "is_correct": true
           },
           {
@@ -412,13 +412,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "Een onderbord met tijdsaanduiding beperkt de geldingstijden. Is er een onderbord '8u–20u', dan geldt E9d enkel tussen 8u en 20u. Buiten die uren is de plek vrij voor alle voertuigen, ook personenwagens."
+        "explanation": "Een onderbord met '8u–20u' beperkt de E9d-reservering tot die uren. Buiten dat tijdvak geldt de reservering voor autocars niet, maar bestuurders moeten nog steeds andere parkeerregels, borden en plaatselijke beperkingen naleven."
       },
       "EN": {
         "question": "Does the E9d reservation also apply at night when a supplementary sign reads '08:00–20:00'?",
         "choices": [
           {
-            "text": "No: outside the indicated hours (i.e. at night) the reservation does not apply and anyone may park in that space",
+            "text": "No: outside the indicated hours the E9d reservation does not apply, but parking remains subject to all other applicable rules and signs",
             "is_correct": true
           },
           {
@@ -430,13 +430,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "A supplementary sign with a time indication restricts the applicable times. If there is a supplementary sign '08:00–20:00', E9d only applies between 08:00 and 20:00. Outside those hours the space is free for all vehicles, including passenger cars."
+        "explanation": "A supplementary sign reading '08:00–20:00' limits the E9d reservation to those hours. Outside that period the coach reservation does not apply, but drivers must still comply with other parking rules, signs and local restrictions."
       },
       "FR": {
         "question": "La réservation E9d s'applique-t-elle aussi la nuit quand un panneau complémentaire indique '8h–20h' ?",
         "choices": [
           {
-            "text": "Non : en dehors des heures indiquées (c'est-à-dire la nuit) la réservation ne s'applique pas et n'importe qui peut se garer sur cette place",
+            "text": "Non : hors des heures indiquées, la réservation E9d ne s'applique pas, mais le stationnement reste soumis aux autres règles et panneaux en vigueur",
             "is_correct": true
           },
           {
@@ -448,13 +448,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "Un panneau complémentaire avec indication de temps restreint les heures d'application. S'il y a un panneau complémentaire '8h–20h', E9d ne s'applique qu'entre 8h et 20h. En dehors de ces heures la place est libre pour tous les véhicules, y compris les voitures particulières."
+        "explanation": "Un panneau complémentaire '8h–20h' limite la réservation E9d à cette plage horaire. En dehors de celle-ci, la réservation aux autocars ne s'applique plus, mais les autres règles, panneaux et restrictions locales restent à respecter."
       },
       "AR": {
         "question": "هل يسري حجز E9d ليلاً أيضاً عندما تُشير علامة تكميلية إلى '8:00–20:00'؟",
         "choices": [
           {
-            "text": "لا: خارج الساعات المُحددة (أي ليلاً) لا يسري الحجز ويجوز لأي مركبة الوقوف في ذلك المكان",
+            "text": "لا: خارج الساعات المحددة لا يسري حجز E9d، لكن الوقوف يبقى خاضعاً لبقية القواعد والعلامات المطبقة",
             "is_correct": true
           },
           {
@@ -466,7 +466,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "تُقيّد العلامة التكميلية ذات التوقيت أوقات السريان. إذا كانت تُشير إلى '8:00–20:00' فإن E9d تسري فقط بين 8:00 و20:00. خارج تلك الساعات المكان متاح لجميع المركبات بما فيها السيارات الخاصة."
+        "explanation": "تحصر اللوحة التكميلية '8:00–20:00' حجز E9d في هذه الساعات. وخارجها لا يسري الحجز المخصص لحافلات الرحلات، لكن يجب الاستمرار في احترام قواعد الوقوف والعلامات والقيود المحلية الأخرى."
       }
     }
   },
@@ -478,60 +478,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U rijdt een minibus met 18 zitplaatsen. De enige vrije plek draagt bord E9d. Mag u parkeren?",
+        "question": "Uw voertuig is in de documenten als minibus en niet als autocar ingedeeld. De enige vrije plek draagt bord E9d. Mag u parkeren?",
         "choices": [
           {
-            "text": "Neen: een minibus is geen autocar of bus in de zin van E9d en mag hier niet parkeren",
+            "text": "Neen: E9d is voor autocars; de vermelde voertuigindeling geeft geen recht op deze parkeerplaats",
             "is_correct": true
           },
           {
-            "text": "Ja: een minibus is een kleine bus en valt dus onder de categorie 'bussen' van E9d",
+            "text": "Ja: het aantal zitplaatsen volstaat om elk personenvervoervoertuig als autocar voor E9d te behandelen",
             "is_correct": false
           }
         ],
-        "explanation": "E9d is bestemd voor autocars en bussen (grote voertuigen voor massaal personenvervoer). Een minibus is een aparte voertuigcategorie (E9b) en valt niet onder E9d. De inschrijvingsklasse van het voertuig is bepalend, niet enkel de grootte."
+        "explanation": "E9d is uitsluitend voor autocars bestemd. In dit scenario vermelden de voertuigdocumenten uitdrukkelijk dat het voertuig geen autocar is. Het aantal zitplaatsen of de afmetingen alleen veranderen die indeling niet."
       },
       "EN": {
-        "question": "You are driving a minibus with 18 seats. The only free space has sign E9d. May you park?",
+        "question": "Your vehicle documents classify it as a minibus, not a coach. The only free space has sign E9d. May you park?",
         "choices": [
           {
-            "text": "No: a minibus is not a coach or bus within the meaning of E9d and may not park here",
+            "text": "No: E9d is for coaches, and the stated vehicle classification gives no right to use this space",
             "is_correct": true
           },
           {
-            "text": "Yes: a minibus is a small bus and therefore falls under the 'buses' category of E9d",
+            "text": "Yes: the number of seats is enough to treat every passenger vehicle as a coach for E9d",
             "is_correct": false
           }
         ],
-        "explanation": "E9d is intended for coaches and buses (large vehicles for mass passenger transport). A minibus is a separate vehicle category (E9b) and does not fall under E9d. The registration class of the vehicle is decisive, not just the size."
+        "explanation": "E9d is reserved exclusively for coaches. In this scenario the vehicle documents expressly state that the vehicle is not a coach. The number of seats or dimensions alone do not change that classification."
       },
       "FR": {
-        "question": "Vous conduisez un minibus de 18 places. La seule place libre porte le panneau E9d. Pouvez-vous vous garer ?",
+        "question": "Les documents de votre véhicule le classent comme minibus et non comme autocar. La seule place libre porte le panneau E9d. Pouvez-vous vous garer ?",
         "choices": [
           {
-            "text": "Non : un minibus n'est pas un autocar ou un bus au sens d'E9d et ne peut pas se garer ici",
+            "text": "Non : E9d est réservé aux autocars et la classification indiquée ne donne aucun droit à cette place",
             "is_correct": true
           },
           {
-            "text": "Oui : un minibus est un petit bus et entre donc dans la catégorie 'bus' d'E9d",
+            "text": "Oui : le nombre de places suffit pour assimiler tout véhicule de transport de personnes à un autocar pour E9d",
             "is_correct": false
           }
         ],
-        "explanation": "E9d est destiné aux autocars et aux bus (grands véhicules pour le transport en commun de masse). Un minibus est une catégorie de véhicule distincte (E9b) et n'entre pas dans E9d. La classe d'immatriculation du véhicule est déterminante, pas seulement la taille."
+        "explanation": "E9d est exclusivement réservé aux autocars. Dans ce scénario, les documents du véhicule précisent qu'il ne s'agit pas d'un autocar. Le nombre de places ou les dimensions ne modifient pas à eux seuls cette classification."
       },
       "AR": {
-        "question": "تقود حافلة صغيرة (minibus) بـ18 مقعداً. المكان الوحيد الفارغ يحمل علامة E9d. هل يجوز لك الوقوف؟",
+        "question": "تصنف وثائق مركبتك إياها كحافلة صغيرة وليست حافلة رحلات من فئة autocar. يحمل المكان الوحيد الفارغ علامة E9d. هل يجوز لك الوقوف؟",
         "choices": [
           {
-            "text": "لا: الحافلة الصغيرة ليست حافلة كبيرة أو باص بمفهوم E9d ولا يجوز لها الوقوف هنا",
+            "text": "لا: E9d مخصصة لحافلات الرحلات من فئة autocar، وتصنيف المركبة المذكور لا يمنح حق استخدام الموقف",
             "is_correct": true
           },
           {
-            "text": "نعم: الحافلة الصغيرة هي باص صغير وتندرج إذاً ضمن فئة 'الباصات' في E9d",
+            "text": "نعم: يكفي عدد المقاعد لاعتبار كل مركبة لنقل الركاب حافلة رحلات لأغراض E9d",
             "is_correct": false
           }
         ],
-        "explanation": "E9d مخصصة للحافلات الكبيرة والباصات (المركبات الكبيرة لنقل الركاب بالجملة). الحافلة الصغيرة فئة مركبة منفصلة (E9b) ولا تندرج ضمن E9d. فئة تسجيل المركبة هي المعيار الفاصل وليس الحجم فقط."
+        "explanation": "تُخصص E9d حصراً لحافلات الرحلات من فئة autocar. وفي هذا السيناريو تنص وثائق المركبة صراحةً على أنها ليست من هذه الفئة، ولا يغير عدد المقاعد أو الحجم وحده هذا التصنيف."
       }
     }
   },
@@ -546,57 +546,57 @@
         "question": "U rijdt een stadsbus van de openbare vervoersmaatschappij. Staat er een E9d-bord bij de enige beschikbare plek. Mag u parkeren?",
         "choices": [
           {
-            "text": "Ja: stadsbussen zijn bussen en vallen uitdrukkelijk onder de toegelaten categorie van E9d",
+            "text": "Neen: E9d is uitsluitend voor autocars en omvat geen autobus van het openbaar vervoer",
             "is_correct": true
           },
           {
-            "text": "Neen: E9d is enkel voor toeristische autocars en niet voor stadsbussen van de openbare vervoersmaatschappij",
+            "text": "Ja: elke autobus valt automatisch onder de categorie autocar van E9d",
             "is_correct": false
           }
         ],
-        "explanation": "E9d laat zowel autocars als bussen toe. Een stadsbus is een bus en behoort dus uitdrukkelijk tot de categorieën die E9d toelaat. Er wordt geen onderscheid gemaakt tussen toeristische autocars en stadsbussen: beide zijn welkom."
+        "explanation": "De wettelijke omschrijving van E9d reserveert de parkeerplaats voor autocars. Een autobus van het openbaar vervoer is niet automatisch een autocar en mag op basis van E9d alleen dus niet op deze plaats parkeren."
       },
       "EN": {
         "question": "You are driving a city bus belonging to the public transport company. An E9d sign marks the only available space. May you park?",
         "choices": [
           {
-            "text": "Yes: city buses are buses and explicitly fall under the permitted category of E9d",
+            "text": "No: E9d is reserved exclusively for coaches and does not include a public-service bus",
             "is_correct": true
           },
           {
-            "text": "No: E9d is only for tourist coaches and not for city buses belonging to the public transport company",
+            "text": "Yes: every bus automatically falls within the coach category indicated by E9d",
             "is_correct": false
           }
         ],
-        "explanation": "E9d permits both coaches and buses. A city bus is a bus and therefore explicitly belongs to the categories that E9d permits. No distinction is made between tourist coaches and city buses: both are welcome."
+        "explanation": "The legal description of E9d reserves the parking space for coaches. A public-service bus is not automatically a coach and therefore may not use the space on the basis of E9d alone."
       },
       "FR": {
         "question": "Vous conduisez un bus de ville appartenant à la société de transport en commun. Un panneau E9d indique la seule place disponible. Pouvez-vous vous garer ?",
         "choices": [
           {
-            "text": "Oui : les bus de ville sont des bus et entrent explicitement dans la catégorie autorisée par E9d",
+            "text": "Non : E9d est exclusivement réservé aux autocars et n'inclut pas un autobus de service public",
             "is_correct": true
           },
           {
-            "text": "Non : E9d est uniquement pour les autocars touristiques et non pour les bus de ville de la société de transport en commun",
+            "text": "Oui : tout autobus relève automatiquement de la catégorie autocar indiquée par E9d",
             "is_correct": false
           }
         ],
-        "explanation": "E9d autorise à la fois les autocars et les bus. Un bus de ville est un bus et appartient donc explicitement aux catégories qu'E9d autorise. Aucune distinction n'est faite entre les autocars touristiques et les bus de ville : les deux sont les bienvenus."
+        "explanation": "La description légale d'E9d réserve la place aux autocars. Un autobus de service public n'est pas automatiquement un autocar et ne peut donc pas utiliser cette place sur la seule base d'E9d."
       },
       "AR": {
         "question": "تقود حافلة مدينة تابعة لشركة النقل العام. تُشير علامة E9d إلى المكان الوحيد المتاح. هل يجوز لك الوقوف؟",
         "choices": [
           {
-            "text": "نعم: حافلات المدينة هي باصات وتندرج صراحةً ضمن الفئة المسموح بها في E9d",
+            "text": "لا: E9d مخصصة حصراً لحافلات الرحلات من فئة autocar ولا تشمل حافلة النقل العام",
             "is_correct": true
           },
           {
-            "text": "لا: E9d مخصصة فقط للحافلات السياحية الكبيرة وليس لحافلات المدينة التابعة لشركة النقل العام",
+            "text": "نعم: تندرج كل حافلة تلقائياً ضمن فئة autocar التي تحددها E9d",
             "is_correct": false
           }
         ],
-        "explanation": "تُجيز E9d الحافلات الكبيرة والباصات على حدٍّ سواء. حافلة المدينة هي باص وتنتمي إذاً صراحةً إلى الفئات التي تُجيزها E9d. لا يوجد أي تمييز بين الحافلات السياحية الكبيرة وحافلات المدينة: كلاهما مرحب به."
+        "explanation": "تخصص الصياغة القانونية لعلامة E9d الموقف لحافلات الرحلات من فئة autocar. ولا تُعد حافلة النقل العام تلقائياً من هذه الفئة، لذلك لا يجوز لها استخدام الموقف استناداً إلى E9d وحدها."
       }
     }
   }

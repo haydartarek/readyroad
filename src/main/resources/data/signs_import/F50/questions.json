@@ -10,61 +10,73 @@
         "question": "Wat betekent bord F50?",
         "choices": [
           {
-            "text": "Er is een oversteekplaats voor fietsers en bromfietsers en bestuurders moeten voorrang verlenen",
+            "text": "Het duidt een oversteekplaats voor fietsers en bestuurders van tweewielige bromfietsen aan",
             "is_correct": true
           },
           {
-            "text": "Fietsers mogen hier niet oversteken",
+            "text": "Het geeft fietsers automatisch voorrang vóór ze oversteken",
             "is_correct": false
           },
           {
-            "text": "Er is een fietspad dat begint aan de linkerkant",
+            "text": "Het duidt een voetgangerszone aan",
             "is_correct": false
           }
         ],
-        "explanation": "F50 kondigt een oversteekplaats voor fietsers (en soms bromfietsers) aan. Automobilisten moeten stoppen als een fietser de rijbaan wil oversteken."
+        "explanation": "F50 wijst de plaats aan waar fietsers en bestuurders van tweewielige bromfietsen de rijbaan oversteken."
       },
       "EN": {
         "question": "What does sign F50 mean?",
         "choices": [
           {
-            "text": "There is a crossing for cyclists and mopeds and drivers must give way",
+            "text": "It indicates a crossing for cyclists and riders of two-wheeled mopeds",
             "is_correct": true
           },
-          { "text": "Cyclists may not cross here", "is_correct": false },
-          { "text": "A cycle path starting on the left", "is_correct": false }
+          {
+            "text": "It automatically gives cyclists priority before they cross",
+            "is_correct": false
+          },
+          {
+            "text": "It indicates a pedestrian zone",
+            "is_correct": false
+          }
         ],
-        "explanation": "F50 announces a crossing for cyclists (and sometimes mopeds). Car drivers must stop when a cyclist wants to cross the road."
+        "explanation": "F50 identifies the place where cyclists and riders of two-wheeled mopeds cross the road."
       },
       "FR": {
         "question": "Que signifie le panneau F50 ?",
         "choices": [
           {
-            "text": "Il y a un passage pour cyclistes et cyclomoteurs et les conducteurs doivent ceder la priorite",
+            "text": "Il indique un passage pour cyclistes et conducteurs de cyclomoteurs à deux roues",
             "is_correct": true
           },
           {
-            "text": "Les cyclistes ne peuvent pas traverser ici",
+            "text": "Il donne automatiquement la priorité aux cyclistes avant leur traversée",
             "is_correct": false
           },
           {
-            "text": "Une piste cyclable commencant sur la gauche",
+            "text": "Il indique une zone piétonne",
             "is_correct": false
           }
         ],
-        "explanation": "F50 annonce un passage pour cyclistes (et parfois cyclomoteurs). Les automobilistes doivent s arreter lorsqu un cycliste veut traverser la chaussee."
+        "explanation": "F50 désigne l'endroit où les cyclistes et conducteurs de cyclomoteurs à deux roues traversent la chaussée."
       },
       "AR": {
-        "question": "ما معنى هذه العلامة المرورية؟",
+        "question": "ما معنى العلامة F50؟",
         "choices": [
           {
-            "text": "يوجد ممر للدراجين والدراجات الآلية ويجب على السائقين إعطاء الأولوية",
+            "text": "تشير إلى ممر لعبور راكبي الدراجات والدراجات النارية الخفيفة ذات العجلتين",
             "is_correct": true
           },
-          { "text": "لا يُسمح للدراجين بالعبور هنا", "is_correct": false },
-          { "text": "مسار دراجات يبدأ على الجانب الأيسر", "is_correct": false }
+          {
+            "text": "تمنح راكبي الدراجات أولوية تلقائية قبل بدء العبور",
+            "is_correct": false
+          },
+          {
+            "text": "تشير إلى منطقة للمشاة",
+            "is_correct": false
+          }
         ],
-        "explanation": "تُعلن F50 عن ممر للدراجين (وأحياناً الدراجات الآلية). يجب على سائقي السيارات التوقف عندما يريد دراج عبور الطريق."
+        "explanation": "تحدد F50 المكان الذي يعبر فيه راكبو الدراجات والدراجات النارية الخفيفة ذات العجلتين الطريق."
       }
     }
   },
@@ -76,121 +88,157 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Welk bord geeft een oversteekplaats voor fietsers aan?",
+        "question": "Welk bord duidt deze fietsoversteekplaats aan?",
         "choices": [
-          { "text": "F50", "is_correct": true },
-          { "text": "F49", "is_correct": false },
-          { "text": "F99a", "is_correct": false }
+          {
+            "text": "F50",
+            "is_correct": true
+          },
+          {
+            "text": "F49",
+            "is_correct": false
+          },
+          {
+            "text": "F111",
+            "is_correct": false
+          }
         ],
-        "explanation": "F50 is specifiek voor fietsers en is anders dan F49 dat voor voetgangers is. Beide borden verplichten voertuigen te stoppen voor gebruikers die oversteken."
+        "explanation": "F50 betreft fietsers en bestuurders van tweewielige bromfietsen; F49 betreft voetgangers."
       },
       "EN": {
-        "question": "Which sign indicates a crossing for cyclists?",
+        "question": "Which sign indicates this cycle crossing?",
         "choices": [
-          { "text": "F50", "is_correct": true },
-          { "text": "F49", "is_correct": false },
-          { "text": "F99a", "is_correct": false }
+          {
+            "text": "F50",
+            "is_correct": true
+          },
+          {
+            "text": "F49",
+            "is_correct": false
+          },
+          {
+            "text": "F111",
+            "is_correct": false
+          }
         ],
-        "explanation": "F50 is specifically for cyclists and is different from F49 which is for pedestrians. Both signs require vehicles to stop for crossing users."
+        "explanation": "F50 concerns cyclists and riders of two-wheeled mopeds; F49 concerns pedestrians."
       },
       "FR": {
-        "question": "Quel panneau indique un passage pour cyclistes ?",
+        "question": "Quel panneau indique ce passage cyclable ?",
         "choices": [
-          { "text": "F50", "is_correct": true },
-          { "text": "F49", "is_correct": false },
-          { "text": "F99a", "is_correct": false }
+          {
+            "text": "F50",
+            "is_correct": true
+          },
+          {
+            "text": "F49",
+            "is_correct": false
+          },
+          {
+            "text": "F111",
+            "is_correct": false
+          }
         ],
-        "explanation": "F50 est specifiquement pour les cyclistes et est different de F49 qui est pour les pietons. Les deux panneaux obligent les vehicules a s arreter pour les usagers qui traversent."
+        "explanation": "F50 concerne les cyclistes et conducteurs de cyclomoteurs à deux roues; F49 concerne les piétons."
       },
       "AR": {
-        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
+        "question": "أي علامة تشير إلى ممر الدراجات هذا؟",
         "choices": [
-          { "text": "F50", "is_correct": true },
-          { "text": "F49", "is_correct": false },
-          { "text": "F99a", "is_correct": false }
+          {
+            "text": "F50",
+            "is_correct": true
+          },
+          {
+            "text": "F49",
+            "is_correct": false
+          },
+          {
+            "text": "F111",
+            "is_correct": false
+          }
         ],
-        "explanation": "F50 مخصصة تحديداً للدراجين وتختلف عن F49 المخصصة للمشاة. كلا العلامتين المروريتين تلزمان المركبات بالتوقف للمستخدمين العابرين."
+        "explanation": "تخص F50 راكبي الدراجات والدراجات النارية الخفيفة ذات العجلتين، بينما تخص F49 المشاة."
       }
     }
   },
   {
     "question_id": "F50_Q03",
-    "type": "HAZARD_IDENTIFICATION",
+    "type": "DRIVER_ACTION",
     "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Welk gevaar verwacht u bij bord F50?",
+        "question": "Hoe moet een fietser die het fietspad volgt deze oversteekplaats gebruiken?",
         "choices": [
           {
-            "text": "Een fietser kan snel de rijbaan oversteken en u moet vroeg genoeg remmen",
+            "text": "Hij gebruikt ze en begeeft zich er voorzichtig op, rekening houdend met naderende voertuigen",
             "is_correct": true
           },
           {
-            "text": "Het wegdek is altijd glad bij zo een oversteekplaats",
+            "text": "Hij rijdt zonder te kijken door omdat F50 hem altijd voorrang geeft",
             "is_correct": false
           },
           {
-            "text": "Er kunnen files ontstaan door het bord",
+            "text": "Hij moet altijd afstappen en te voet oversteken",
             "is_correct": false
           }
         ],
-        "explanation": "Bij F50 is het gevaar een fietser die snel de weg oversteekt. Fietsers rijden soms snel naderbij. Vertraag tijdig."
+        "explanation": "Wie zich op het fietspad bevindt, gebruikt de fietsoversteekplaats en mag ze slechts voorzichtig oprijden met aandacht voor naderend verkeer."
       },
       "EN": {
-        "question": "What hazard do you expect at sign F50?",
+        "question": "How must a cyclist following the cycle path use this crossing?",
         "choices": [
           {
-            "text": "A cyclist can quickly cross the road and you must brake early enough",
+            "text": "Use it and enter cautiously, taking approaching vehicles into account",
             "is_correct": true
           },
           {
-            "text": "The road surface is always slippery at such a crossing",
+            "text": "Ride straight through without looking because F50 always gives priority",
             "is_correct": false
           },
           {
-            "text": "Traffic jams can form because of the sign",
+            "text": "Always dismount and cross on foot",
             "is_correct": false
           }
         ],
-        "explanation": "At F50 the hazard is a cyclist who quickly crosses the road. Cyclists can approach fast. Slow down in time."
+        "explanation": "A cyclist on the cycle path uses the cycle crossing and may enter it only cautiously while considering approaching traffic."
       },
       "FR": {
-        "question": "Quel danger attendez-vous au panneau F50 ?",
+        "question": "Comment un cycliste qui suit la piste cyclable doit-il utiliser ce passage ?",
         "choices": [
           {
-            "text": "Un cycliste peut traverser rapidement la chaussee et vous devez freiner suffisamment tot",
+            "text": "Il l'utilise et s'y engage prudemment en tenant compte des véhicules qui approchent",
             "is_correct": true
           },
           {
-            "text": "Le revetement de la route est toujours glissant a un tel passage",
+            "text": "Il traverse sans regarder car F50 lui donne toujours la priorité",
             "is_correct": false
           },
           {
-            "text": "Des embouteillages peuvent se former a cause du panneau",
+            "text": "Il doit toujours descendre et traverser à pied",
             "is_correct": false
           }
         ],
-        "explanation": "Avec F50 le danger est un cycliste qui traverse rapidement la route. Les cyclistes peuvent approcher rapidement. Ralentissez a temps."
+        "explanation": "Le cycliste qui suit la piste utilise le passage cyclable et ne peut s'y engager que prudemment en tenant compte du trafic approchant."
       },
       "AR": {
-        "question": "ما هو الخطر الذي تشير إليه هذه العلامة المرورية؟",
+        "question": "كيف يستخدم راكب الدراجة القادم على مسار الدراجات هذا الممر؟",
         "choices": [
           {
-            "text": "دراج يمكنه عبور الطريق بسرعة ويجب الكبح مبكراً بما يكفي",
+            "text": "يستخدمه ويدخله بحذر مع مراعاة المركبات القادمة",
             "is_correct": true
           },
           {
-            "text": "سطح الطريق دائماً زلق عند مثل هذا الممر",
+            "text": "يعبر من دون النظر لأن F50 تمنحه الأولوية دائماً",
             "is_correct": false
           },
           {
-            "text": "يمكن أن تتشكل ازدحامات بسبب العلامة المرورية",
+            "text": "يجب عليه دائماً النزول والعبور سيراً",
             "is_correct": false
           }
         ],
-        "explanation": "عند F50 الخطر هو دراج يعبر الطريق بسرعة. يمكن للدراجين الاقتراب بسرعة. تباطأ في الوقت المناسب."
+        "explanation": "يستخدم راكب الدراجة الموجود على المسار ممر الدراجات، ولا يدخله إلا بحذر مع الانتباه لحركة المرور القادمة."
       }
     }
   },
@@ -202,64 +250,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Een fietser staat aan de kant van de weg vlak bij een F50-oversteekplaats. Wat doet u?",
+        "question": "Een fietser wacht vóór de F50-oversteekplaats en is nog niet begonnen over te steken. Wie moet rekening houden met wie?",
         "choices": [
           {
-            "text": "Vaart minderen en stoppen als de fietser aangeeft te willen oversteken",
+            "text": "De fietser houdt rekening met naderende voertuigen; zijn voornemen alleen geeft geen voorrang",
             "is_correct": true
           },
           {
-            "text": "Doorgaan want de fietser staat nog niet op de oversteekplaats",
+            "text": "Alle naderende voertuigen moeten altijd stoppen zodra een fietser wacht",
             "is_correct": false
           },
           {
-            "text": "Claxonneren om de fietser te waarschuwen",
+            "text": "Alleen zware voertuigen hebben voorrang op de fietser",
             "is_correct": false
           }
         ],
-        "explanation": "Net als bij het zebrapad voor voetgangers heeft een fietser bij F50 voorrang wanneer hij wil oversteken. Vertraag en stop indien nodig."
+        "explanation": "Een fietser die op het punt staat de oversteekplaats op te rijden heeft daar niet automatisch voorrang en moet voorzichtig handelen."
       },
       "EN": {
-        "question": "A cyclist is standing at the side of the road near an F50 crossing. What do you do?",
+        "question": "A cyclist is waiting before the F50 crossing and has not begun to cross. Who must take whom into account?",
         "choices": [
           {
-            "text": "Reduce speed and stop if the cyclist signals they want to cross",
+            "text": "The cyclist must take approaching vehicles into account; intention alone gives no priority",
             "is_correct": true
           },
           {
-            "text": "Continue because the cyclist is not yet on the crossing",
+            "text": "All approaching vehicles must always stop as soon as a cyclist waits",
             "is_correct": false
           },
-          { "text": "Sound the horn to warn the cyclist", "is_correct": false }
+          {
+            "text": "Only heavy vehicles have priority over the cyclist",
+            "is_correct": false
+          }
         ],
-        "explanation": "Just like the zebra crossing for pedestrians a cyclist at F50 has priority when they want to cross. Slow down and stop if needed."
+        "explanation": "A cyclist about to enter the crossing does not automatically have priority and must proceed cautiously."
       },
       "FR": {
-        "question": "Un cycliste se tient sur le cote de la route pres d un passage F50. Que faites-vous ?",
+        "question": "Un cycliste attend avant le passage F50 et n'a pas commencé à traverser. Qui doit tenir compte de qui ?",
         "choices": [
           {
-            "text": "Reduire la vitesse et s arreter si le cycliste signale qu il veut traverser",
+            "text": "Le cycliste tient compte des véhicules qui approchent; sa seule intention ne lui donne pas la priorité",
             "is_correct": true
           },
           {
-            "text": "Continuer car le cycliste n est pas encore sur le passage",
+            "text": "Tous les véhicules doivent toujours s'arrêter dès qu'un cycliste attend",
             "is_correct": false
           },
-          { "text": "Klaxonner pour avertir le cycliste", "is_correct": false }
+          {
+            "text": "Seuls les véhicules lourds ont priorité sur le cycliste",
+            "is_correct": false
+          }
         ],
-        "explanation": "Tout comme le passage pour pietons un cycliste a F50 a la priorite lorsqu il veut traverser. Ralentissez et arretez-vous si necessaire."
+        "explanation": "Le cycliste qui s'apprête à s'engager n'a pas automatiquement la priorité et doit agir prudemment."
       },
       "AR": {
-        "question": "دراج يقف على جانب الطريق قريباً من ممر F50. ماذا تفعل؟",
+        "question": "ينتظر راكب دراجة قبل ممر F50 ولم يبدأ العبور، فمن يجب أن يراعي الآخر؟",
         "choices": [
           {
-            "text": "خفف السرعة وتوقف إذا أشار الدراج إلى رغبته في العبور",
+            "text": "على راكب الدراجة مراعاة المركبات القادمة، ولا تمنحه نية العبور وحدها الأولوية",
             "is_correct": true
           },
-          { "text": "استمر لأن الدراج ليس على الممر بعد", "is_correct": false },
-          { "text": "انفخ البوق لتحذير الدراج", "is_correct": false }
+          {
+            "text": "يجب على جميع المركبات التوقف دائماً بمجرد انتظار راكب دراجة",
+            "is_correct": false
+          },
+          {
+            "text": "للمركبات الثقيلة وحدها الأولوية عليه",
+            "is_correct": false
+          }
         ],
-        "explanation": "تماماً مثل ممر المشاة الدراج عند F50 له أولوية عندما يريد العبور. تباطأ وتوقف إذا لزم الأمر."
+        "explanation": "لا يملك راكب الدراجة الذي يوشك على دخول الممر أولوية تلقائية، وعليه التصرف بحذر."
       }
     }
   },
@@ -271,73 +331,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Een fietser heeft de helft van de F50-oversteekplaats gepasseerd. Mag u rijden?",
+        "question": "Een fietser bevindt zich al op de F50-oversteekplaats. Wat doet de naderende bestuurder?",
         "choices": [
           {
-            "text": "Nee u wacht totdat de fietser volledig de oversteekplaats heeft verlaten",
+            "text": "Hij nadert met matige snelheid, hindert de fietser niet en stopt zo nodig",
             "is_correct": true
           },
           {
-            "text": "Ja want hij is al voorbij uw rijstrook",
+            "text": "Hij behoudt zijn snelheid omdat de fietser nooit beschermd is",
             "is_correct": false
           },
           {
-            "text": "Ja want de regel geldt alleen als de fietser begint te steken",
+            "text": "Hij claxonneert zodat de fietser terugkeert",
             "is_correct": false
           }
         ],
-        "explanation": "Zolang de fietser zich nog op de oversteekplaats bevindt moet u wachten. U mag pas rijden als hij de oversteekplaats volledig heeft vrijgemaakt."
+        "explanation": "Een bestuurder laat een fietser die al oversteekt met normale snelheid verder rijden zonder hem in gevaar te brengen of te hinderen."
       },
       "EN": {
-        "question": "A cyclist has passed halfway across the F50 crossing. May you drive?",
+        "question": "A cyclist is already on the F50 crossing. What does the approaching driver do?",
         "choices": [
           {
-            "text": "No you wait until the cyclist has completely left the crossing",
+            "text": "Approach at moderate speed, do not hinder the cyclist and stop if necessary",
             "is_correct": true
           },
           {
-            "text": "Yes because he is already past your lane",
+            "text": "Maintain speed because a cyclist is never protected there",
             "is_correct": false
           },
           {
-            "text": "Yes because the rule only applies when the cyclist starts crossing",
+            "text": "Sound the horn so the cyclist turns back",
             "is_correct": false
           }
         ],
-        "explanation": "As long as the cyclist is still on the crossing you must wait. You may only drive when they have completely cleared the crossing."
+        "explanation": "A driver allows a cyclist already crossing to continue at a normal pace without danger or obstruction."
       },
       "FR": {
-        "question": "Un cycliste a passe la moitie du passage F50. Pouvez-vous rouler ?",
+        "question": "Un cycliste se trouve déjà sur le passage F50. Que fait le conducteur qui approche ?",
         "choices": [
           {
-            "text": "Non vous attendez que le cycliste ait completement quitte le passage",
+            "text": "Il approche à vitesse modérée, ne gêne pas le cycliste et s'arrête si nécessaire",
             "is_correct": true
           },
           {
-            "text": "Oui car il est deja passe de votre cote",
+            "text": "Il maintient sa vitesse car le cycliste n'y est jamais protégé",
             "is_correct": false
           },
           {
-            "text": "Oui car la regle ne s applique que lorsque le cycliste commence a traverser",
+            "text": "Il klaxonne pour que le cycliste fasse demi-tour",
             "is_correct": false
           }
         ],
-        "explanation": "Tant que le cycliste est encore sur le passage vous devez attendre. Vous ne pouvez rouler que lorsqu il a completement libere le passage."
+        "explanation": "Le conducteur laisse le cycliste déjà engagé terminer normalement sans le mettre en danger ni le gêner."
       },
       "AR": {
-        "question": "دراج تجاوز منتصف ممر F50. هل يمكنك القيادة؟",
+        "question": "يوجد راكب دراجة بالفعل على ممر F50، فماذا يفعل السائق القادم؟",
         "choices": [
           {
-            "text": "لا تنتظر حتى يغادر الدراج الممر بالكامل",
+            "text": "يقترب بسرعة معتدلة ولا يعيق الراكب ويتوقف عند الضرورة",
             "is_correct": true
           },
-          { "text": "نعم لأنه تجاوز مسارك بالفعل", "is_correct": false },
           {
-            "text": "نعم لأن القاعدة تنطبق فقط عندما يبدأ الدراج بالعبور",
+            "text": "يحافظ على سرعته لأن راكب الدراجة غير محمي هناك أبداً",
+            "is_correct": false
+          },
+          {
+            "text": "يستخدم البوق كي يرجع الراكب",
             "is_correct": false
           }
         ],
-        "explanation": "طالما أن الدراج لا يزال على الممر يجب الانتظار. يمكنك القيادة فقط عندما يخلي الممر بالكامل."
+        "explanation": "يجب تمكين راكب الدراجة الذي بدأ العبور من إكماله بوتيرة طبيعية من دون تعريضه للخطر أو إعاقته."
       }
     }
   },
@@ -349,76 +412,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Mag een voetganger een F50-fietsoversteekplaats ook gebruiken?",
+        "question": "Het verkeer staat vast voorbij de fietsoversteekplaats. Mag u erop rijden?",
         "choices": [
           {
-            "text": "Ja voetgangers mogen altijd gebruik maken van zowel zebrapaden als fietsoversteekplaatsen",
+            "text": "Nee, niet als u waarschijnlijk op de oversteekplaats moet stoppen",
             "is_correct": true
           },
           {
-            "text": "Nee F50 is exclusief voor fietsers en voetgangers mogen er niet",
+            "text": "Ja, zolang er op dat moment geen fietser oversteekt",
             "is_correct": false
           },
           {
-            "text": "Alleen als er geen voetgangersoversteekplaats in de buurt is",
+            "text": "Ja, als u uw waarschuwingslichten inschakelt",
             "is_correct": false
           }
         ],
-        "explanation": "Voetgangers mogen fietspaden en fietsoversteekplaatsen ook gebruiken zolang ze voor fietsers opletten. Er is geen verbod voor voetgangers."
+        "explanation": "Een bestuurder mag de oversteekplaats niet oprijden wanneer hij er door verkeershinder waarschijnlijk zal moeten stoppen."
       },
       "EN": {
-        "question": "May a pedestrian also use an F50 cyclist crossing?",
+        "question": "Traffic is blocked beyond the cycle crossing. May you drive onto it?",
         "choices": [
           {
-            "text": "Yes pedestrians may always use both zebra crossings and cyclist crossings",
+            "text": "No, not if you are likely to have to stop on the crossing",
             "is_correct": true
           },
           {
-            "text": "No F50 is exclusively for cyclists and pedestrians are not allowed",
+            "text": "Yes, while no cyclist is crossing at that moment",
             "is_correct": false
           },
           {
-            "text": "Only if there is no pedestrian crossing nearby",
+            "text": "Yes, if you switch on the hazard lights",
             "is_correct": false
           }
         ],
-        "explanation": "Pedestrians may also use cycle paths and cyclist crossings as long as they watch out for cyclists. There is no prohibition for pedestrians."
+        "explanation": "A driver may not enter the crossing when congestion is likely to make the vehicle stop on it."
       },
       "FR": {
-        "question": "Un pieton peut-il aussi utiliser un passage de cyclistes F50 ?",
+        "question": "La circulation est bloquée après le passage cyclable. Pouvez-vous vous y engager ?",
         "choices": [
           {
-            "text": "Oui les pietons peuvent toujours utiliser les passages pour pietons et les passages pour cyclistes",
+            "text": "Non, pas si vous risquez de devoir vous arrêter sur le passage",
             "is_correct": true
           },
           {
-            "text": "Non F50 est exclusivement pour les cyclistes et les pietons ne sont pas autorises",
+            "text": "Oui, tant qu'aucun cycliste ne traverse à ce moment",
             "is_correct": false
           },
           {
-            "text": "Uniquement s il n y a pas de passage pour pietons a proximite",
+            "text": "Oui, si vous allumez les feux de détresse",
             "is_correct": false
           }
         ],
-        "explanation": "Les pietons peuvent egalement utiliser les pistes cyclables et les passages pour cyclistes tant qu ils font attention aux cyclistes. Il n y a pas d interdiction pour les pietons."
+        "explanation": "Le conducteur ne peut s'engager sur le passage si l'encombrement risque d'y immobiliser son véhicule."
       },
       "AR": {
-        "question": "هل يستطيع مشاة أيضاً استخدام ممر الدراجين F50؟",
+        "question": "حركة المرور متوقفة بعد ممر الدراجات، فهل يجوز لك دخوله؟",
         "choices": [
           {
-            "text": "نعم يستطيع المشاة دائماً استخدام ممرات المشاة وممرات الدراجين",
+            "text": "لا، إذا كان من المحتمل أن تضطر إلى التوقف فوقه",
             "is_correct": true
           },
           {
-            "text": "لا F50 حصرياً للدراجين ولا يُسمح للمشاة",
+            "text": "نعم، ما دام لا يوجد راكب دراجة يعبر في تلك اللحظة",
             "is_correct": false
           },
           {
-            "text": "فقط إذا لم يكن هناك ممر مشاة في المنطقة القريبة",
+            "text": "نعم، إذا شغلت أضواء التحذير",
             "is_correct": false
           }
         ],
-        "explanation": "يستطيع المشاة أيضاً استخدام مسارات الدراجين وممرات الدراجين طالما أنهم ينتبهون للدراجين. لا يوجد حظر للمشاة."
+        "explanation": "لا يجوز دخول الممر إذا كان الازدحام سيجبر المركبة على التوقف فوقه."
       }
     }
   },
@@ -430,60 +493,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Mag u langs een rij wachtende voertuigen voor een F50-oversteekplaats rijden?",
+        "question": "Mag een fietser de F50-oversteekplaats oprijden in de veronderstelling dat naderende voertuigen altijd stoppen?",
         "choices": [
           {
-            "text": "Nee u moet in de rij wachten want inhalen voor een oversteekplaats is gevaarlijk en verboden",
+            "text": "Nee, hij moet voorzichtig oversteken en rekening houden met naderende voertuigen",
             "is_correct": true
           },
           {
-            "text": "Ja als u langzaam rijdt mag u langs de file",
+            "text": "Ja, F50 geeft hem vóór het oversteken altijd absolute voorrang",
             "is_correct": false
           }
         ],
-        "explanation": "Voor een oversteekplaats (F49 of F50) verbiedt het Belgische verkeerswetboek het inhalen van stilstaande of sterk verminderde snelheid voertuigen. U moet wachten in de rij."
+        "explanation": "Het voornemen om een fietsoversteekplaats te gebruiken geeft geen automatische voorrang."
       },
       "EN": {
-        "question": "May you drive past a queue of waiting vehicles at an F50 crossing?",
+        "question": "May a cyclist enter the F50 crossing assuming that approaching vehicles will always stop?",
         "choices": [
           {
-            "text": "No you must wait in the queue because overtaking before a crossing is dangerous and prohibited",
+            "text": "No, the cyclist must cross cautiously and take approaching vehicles into account",
             "is_correct": true
           },
           {
-            "text": "Yes if you drive slowly you may pass the queue",
+            "text": "Yes, F50 always gives absolute priority before crossing",
             "is_correct": false
           }
         ],
-        "explanation": "Before a crossing (F49 or F50) Belgian highway code prohibits overtaking stationary or greatly slowed vehicles. You must wait in the queue."
+        "explanation": "Intending to use a cycle crossing does not give automatic priority."
       },
       "FR": {
-        "question": "Pouvez-vous depasser une file de vehicules en attente devant un passage F50 ?",
+        "question": "Un cycliste peut-il s'engager sur le passage F50 en supposant que les véhicules s'arrêteront toujours ?",
         "choices": [
           {
-            "text": "Non vous devez attendre dans la file car doubler avant un passage est dangereux et interdit",
+            "text": "Non, il doit traverser prudemment et tenir compte des véhicules qui approchent",
             "is_correct": true
           },
           {
-            "text": "Oui si vous roulez lentement vous pouvez depasser la file",
+            "text": "Oui, F50 lui donne toujours une priorité absolue avant la traversée",
             "is_correct": false
           }
         ],
-        "explanation": "Avant un passage (F49 ou F50) le code de la route belge interdit de doubler les vehicules arretes ou a vitesse fortement reduite. Vous devez attendre dans la file."
+        "explanation": "L'intention d'utiliser un passage cyclable ne donne pas automatiquement la priorité."
       },
       "AR": {
-        "question": "هل يمكنك المرور بجانب رتل المركبات المنتظرة عند ممر F50؟",
+        "question": "هل يجوز لراكب الدراجة دخول ممر F50 على افتراض أن المركبات القادمة ستتوقف دائماً؟",
         "choices": [
           {
-            "text": "لا يجب الانتظار في الرتل لأن التجاوز قبل الممر خطير ومحظور",
+            "text": "لا، يجب أن يعبر بحذر ويراعي المركبات القادمة",
             "is_correct": true
           },
           {
-            "text": "نعم إذا سرت ببطء يمكنك المرور بجانب الرتل",
+            "text": "نعم، تمنحه F50 أولوية مطلقة دائماً قبل العبور",
             "is_correct": false
           }
         ],
-        "explanation": "قبل الممر (F49 أو F50) يحظر قانون المرور البلجيكي تجاوز المركبات الواقفة أو البطيئة جداً. يجب الانتظار في الرتل."
+        "explanation": "مجرد نية استخدام ممر الدراجات لا تمنح أولوية تلقائية."
       }
     }
   },
@@ -495,60 +558,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Heeft een fietser die een F50-oversteekplaats wil gebruiken echt voorrang op een vrachtwagen?",
+        "question": "Mag een bestuurder doorrijden langs een fietser die al op de oversteekplaats rijdt, als er nog ruimte lijkt?",
         "choices": [
           {
-            "text": "Ja de voorrangsregels bij F50 gelden voor alle voertuigen inclusief zware vrachtwagens",
+            "text": "Nee, hij mag de fietser niet hinderen of in gevaar brengen en moet zo nodig stoppen",
             "is_correct": true
           },
           {
-            "text": "Nee voor zwaar verkeer gelden andere regels",
+            "text": "Ja, zolang zijn voertuig de fietser niet raakt",
             "is_correct": false
           }
         ],
-        "explanation": "De voorrangsregels bij een F50-oversteekplaats gelden ongeacht het soort voertuig. Een fietser heeft zekerheid van doorgang ongeacht of er een kleine auto of een zware vrachtwagen komt."
+        "explanation": "Wie al oversteekt moet het oversteken met normale snelheid kunnen beëindigen zonder hinder of gevaar."
       },
       "EN": {
-        "question": "Does a cyclist who wants to use an F50 crossing really have priority over a lorry?",
+        "question": "May a driver pass a cyclist already riding on the crossing if there appears to be room?",
         "choices": [
           {
-            "text": "Yes the priority rules at F50 apply to all vehicles including heavy lorries",
+            "text": "No, the driver must not hinder or endanger the cyclist and must stop if necessary",
             "is_correct": true
           },
           {
-            "text": "No different rules apply for heavy traffic",
+            "text": "Yes, as long as the vehicle does not touch the cyclist",
             "is_correct": false
           }
         ],
-        "explanation": "The priority rules at an F50 crossing apply regardless of the type of vehicle. A cyclist has guaranteed passage regardless of whether a small car or a heavy lorry is coming."
+        "explanation": "Anyone already crossing must be able to finish at a normal pace without obstruction or danger."
       },
       "FR": {
-        "question": "Un cycliste qui veut utiliser un passage F50 a-t-il vraiment la priorite sur un camion ?",
+        "question": "Un conducteur peut-il passer à côté d'un cycliste déjà engagé si l'espace semble suffisant ?",
         "choices": [
           {
-            "text": "Oui les regles de priorite a F50 s appliquent a tous les vehicules y compris les camions lourds",
+            "text": "Non, il ne peut ni le gêner ni le mettre en danger et doit s'arrêter si nécessaire",
             "is_correct": true
           },
           {
-            "text": "Non pour le trafic lourd d autres regles s appliquent",
+            "text": "Oui, tant que son véhicule ne touche pas le cycliste",
             "is_correct": false
           }
         ],
-        "explanation": "Les regles de priorite a un passage F50 s appliquent quel que soit le type de vehicule. Un cycliste a la garantie de passer quel que soit le vehicule qui arrive."
+        "explanation": "L'usager déjà engagé doit pouvoir terminer normalement sa traversée sans gêne ni danger."
       },
       "AR": {
-        "question": "هل للدراج الذي يريد استخدام ممر F50 أولوية فعلية على شاحنة؟",
+        "question": "هل يجوز للسائق المرور بجانب راكب دراجة يعبر بالفعل إذا بدت المساحة كافية؟",
         "choices": [
           {
-            "text": "نعم قواعد الأولوية في F50 تنطبق على جميع المركبات بما فيها الشاحنات الثقيلة",
+            "text": "لا، يجب ألا يعيقه أو يعرضه للخطر وعليه التوقف عند الضرورة",
             "is_correct": true
           },
           {
-            "text": "لا قواعد مختلفة تنطبق على المرور الثقيل",
+            "text": "نعم، ما دامت المركبة لا تلمسه",
             "is_correct": false
           }
         ],
-        "explanation": "قواعد الأولوية عند ممر F50 تنطبق بغض النظر عن نوع المركبة. الدراج لديه ضمان المرور بغض النظر عن كون شاحنة صغيرة أو ثقيلة قادمة."
+        "explanation": "يجب تمكين من بدأ العبور من إكماله بوتيرة طبيعية من دون إعاقة أو خطر."
       }
     }
   }

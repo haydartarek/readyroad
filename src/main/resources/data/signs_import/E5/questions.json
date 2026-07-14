@@ -71,7 +71,10 @@
             "text": "ممنوع الوقوف طوال الشهر على كلا جانبي الطريق",
             "is_correct": false
           },
-          { "text": "الوقوف إلزامي من اليوم 1 حتى 15", "is_correct": false }
+          {
+            "text": "الوقوف إلزامي من اليوم 1 حتى 15",
+            "is_correct": false
+          }
         ],
         "explanation": "هذه العلامة تعني أنك لا تستطيع وقوف سيارتك على هذا الجانب من اليوم الأول حتى الخامس عشر من الشهر. في النصف الثاني من الشهر يمكنك الوقوف هنا بحرية."
       }
@@ -91,7 +94,10 @@
             "text": "E7 verbiedt parkeren aan de overkant van de 16e tot het einde van de maand",
             "is_correct": true
           },
-          { "text": "Er is geen bord aan de overkant", "is_correct": false },
+          {
+            "text": "Er is geen bord aan de overkant",
+            "is_correct": false
+          },
           {
             "text": "E5 geldt ook aan de overkant in de tweede helft",
             "is_correct": false
@@ -142,7 +148,10 @@
             "text": "E7 تحظر الوقوف على الجانب الآخر من اليوم 16 حتى نهاية الشهر",
             "is_correct": true
           },
-          { "text": "لا توجد علامة على الجانب الآخر", "is_correct": false },
+          {
+            "text": "لا توجد علامة على الجانب الآخر",
+            "is_correct": false
+          },
           {
             "text": "E5 تنطبق أيضاً على الجانب الآخر في النصف الثاني",
             "is_correct": false
@@ -160,76 +169,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Waarom bestaat het systeem van afwisselend parkeren met E5 en E7?",
+        "question": "Hoe werkt E5 samen met E7 bij halfmaandelijks beurtelings parkeren?",
         "choices": [
           {
-            "text": "Om de gemeente toe te laten de straat om de twee weken aan beide kanten te reinigen",
+            "text": "E5 verbiedt parkeren van de 1e tot en met de 15e; E7 verbiedt parkeren van de 16e tot het einde van de maand",
             "is_correct": true
           },
           {
-            "text": "Om meer parkeerplaatsen te creëren voor bewoners",
+            "text": "Beide borden verbieden parkeren gedurende de hele maand",
             "is_correct": false
           },
           {
-            "text": "Om het verkeer te vertragen in woonwijken",
+            "text": "E5 geldt alleen overdag en E7 alleen ’s nachts",
             "is_correct": false
           }
         ],
-        "explanation": "Het afwisselend parkeersysteem met E5 en E7 zorgt ervoor dat reinigingsdiensten elke twee weken één kant van de straat volledig vrij hebben om te reinigen en te onderhouden."
+        "explanation": "E5 en E7 verdelen de maand in twee wettelijke perioden. De kantwissel gebeurt op de laatste dag van elke periode tussen 19.30 en 20.00 uur."
       },
       "EN": {
-        "question": "Why does the alternating parking system with E5 and E7 exist?",
+        "question": "How do E5 and E7 work together under half-monthly alternating parking?",
         "choices": [
           {
-            "text": "To allow the municipality to clean the street on both sides every two weeks",
+            "text": "E5 prohibits parking from the 1st through the 15th; E7 prohibits parking from the 16th through the end of the month",
             "is_correct": true
           },
           {
-            "text": "To create more parking spaces for residents",
+            "text": "Both signs prohibit parking throughout the entire month",
             "is_correct": false
           },
           {
-            "text": "To slow traffic in residential areas",
+            "text": "E5 applies only by day and E7 only at night",
             "is_correct": false
           }
         ],
-        "explanation": "The alternating parking system with E5 and E7 ensures that cleaning services have one side of the street completely free every two weeks to clean and maintain it."
+        "explanation": "E5 and E7 divide the month into two statutory periods. Vehicles change sides on the last day of each period between 19:30 and 20:00."
       },
       "FR": {
-        "question": "Pourquoi le système de stationnement alternatif avec E5 et E7 existe-t-il ?",
+        "question": "Comment E5 et E7 fonctionnent-ils ensemble dans le stationnement alterné semi-mensuel ?",
         "choices": [
           {
-            "text": "Pour permettre à la commune de nettoyer la rue des deux côtés toutes les deux semaines",
+            "text": "E5 interdit le stationnement du 1er au 15 inclus ; E7 l’interdit du 16 à la fin du mois",
             "is_correct": true
           },
           {
-            "text": "Pour créer davantage de places de stationnement pour les résidents",
+            "text": "Les deux panneaux interdisent le stationnement pendant tout le mois",
             "is_correct": false
           },
           {
-            "text": "Pour ralentir la circulation dans les zones résidentielles",
+            "text": "E5 s’applique seulement le jour et E7 seulement la nuit",
             "is_correct": false
           }
         ],
-        "explanation": "Le système de stationnement alternatif avec E5 et E7 garantit que les services de nettoyage disposent d'un côté de la rue complètement libre toutes les deux semaines pour le nettoyer et l'entretenir."
+        "explanation": "E5 et E7 divisent le mois en deux périodes légales. Le changement de côté s’effectue le dernier jour de chaque période entre 19 h 30 et 20 h."
       },
       "AR": {
-        "question": "لماذا يوجد نظام الوقوف المتناوب بين E5 وE7؟",
+        "question": "كيف تعمل علامتا E5 وE7 معاً في نظام الوقوف المتناوب نصف الشهري؟",
         "choices": [
           {
-            "text": "للسماح للبلدية بتنظيف الشارع على كلا الجانبين كل أسبوعين",
+            "text": "تحظر E5 الوقوف من اليوم 1 حتى 15، وتحظر E7 الوقوف من اليوم 16 حتى نهاية الشهر",
             "is_correct": true
           },
           {
-            "text": "لزيادة عدد أماكن الوقوف المتاحة للمقيمين",
+            "text": "تحظر العلامتان الوقوف طوال الشهر",
             "is_correct": false
           },
           {
-            "text": "لإبطاء حركة المرور في الأحياء السكنية",
+            "text": "تسري E5 نهاراً فقط وE7 ليلاً فقط",
             "is_correct": false
           }
         ],
-        "explanation": "نظام الوقوف المتناوب بين E5 وE7 يضمن أن تتوفر لخدمات النظافة جانب كامل من الشارع خالٍ كل أسبوعين لتنظيفه وصيانته."
+        "explanation": "تقسم E5 وE7 الشهر إلى فترتين قانونيتين. ويتم تغيير الجانب في اليوم الأخير من كل فترة بين الساعة 19:30 و20:00."
       }
     }
   },
@@ -251,7 +260,10 @@
             "text": "Ja, de 10e is een even dag en even dagen zijn altijd vrij",
             "is_correct": false
           },
-          { "text": "Ja, het verbod begint pas op de 15e", "is_correct": false }
+          {
+            "text": "Ja, het verbod begint pas op de 15e",
+            "is_correct": false
+          }
         ],
         "explanation": "Dit bord verbiedt parkeren van de 1e tot en met de 15e. De 10e valt midden in die periode, dus u kunt hier vandaag niet parkeren. U moet uitwijken naar de andere kant of een andere straat."
       },
@@ -302,7 +314,10 @@
             "text": "نعم، اليوم العاشر يوم زوجي والأيام الزوجية حرة دائماً",
             "is_correct": false
           },
-          { "text": "نعم، الحظر لا يبدأ إلا في اليوم 15", "is_correct": false }
+          {
+            "text": "نعم، الحظر لا يبدأ إلا في اليوم 15",
+            "is_correct": false
+          }
         ],
         "explanation": "هذه العلامة تحظر الوقوف من اليوم 1 حتى 15. اليوم العاشر يقع في منتصف تلك الفترة تماماً، لذا لا يمكنك الوقوف هنا اليوم. عليك البحث عن مكان على الجانب الآخر أو في شارع آخر."
       }
@@ -397,73 +412,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U parkeert uw auto op de 14e bij dit bord en wilt hem laten staan tot de 16e. Wat moet u doen?",
+        "question": "Uw auto staat op de E7-kant op de 15e en u wilt hem tot de 16e laten staan. Wat moet u doen?",
         "choices": [
           {
-            "text": "U moet de auto verplaatsen voor de 15e begint, want vanaf de 15e is parkeren aan deze kant verboden",
+            "text": "Verplaats hem op de 15e tussen 19.30 en 20.00 uur naar de E5-kant",
             "is_correct": true
           },
           {
-            "text": "Niets, afwisselend parkeren geeft altijd een overgangsperiode van twee dagen",
+            "text": "Verplaats hem om middernacht naar de E5-kant",
             "is_correct": false
           },
           {
-            "text": "U moet de auto verplaatsen op de 14e zelf",
+            "text": "Laat hem staan; op de 16e verandert niets",
             "is_correct": false
           }
         ],
-        "explanation": "Op de 14e mag u hier nog parkeren. Maar zodra de 15e begint, staat uw auto al in de verbodzone. U moet de auto dus uiterlijk in de nacht van 14 op 15 verplaatsen naar de andere kant, waar E7 dan al actief is."
+        "explanation": "Op de 16e begint het parkeerverbod aan de E7-kant. De wettelijke kantwissel vindt op de 15e plaats tussen 19.30 en 20.00 uur."
       },
       "EN": {
-        "question": "You park your car on the 14th next to this sign and want to leave it until the 16th. What must you do?",
+        "question": "Your car is parked on the E7 side on the 15th and you want to leave it until the 16th. What must you do?",
         "choices": [
           {
-            "text": "You must move the car before the 15th begins, because from the 15th parking on this side is forbidden",
+            "text": "Move it to the E5 side on the 15th between 19:30 and 20:00",
             "is_correct": true
           },
           {
-            "text": "Nothing, alternating parking always gives a two-day transition period",
+            "text": "Move it to the E5 side at midnight",
             "is_correct": false
           },
           {
-            "text": "You must move the car on the 14th itself",
+            "text": "Leave it there; nothing changes on the 16th",
             "is_correct": false
           }
         ],
-        "explanation": "On the 14th you may still park here. But as soon as the 15th begins, your car is already in the restricted zone. You must therefore move the car at the latest during the night from the 14th to the 15th, to the other side where E7 will then be active."
+        "explanation": "The E7-side parking prohibition starts on the 16th. The statutory side change takes place on the 15th between 19:30 and 20:00."
       },
       "FR": {
-        "question": "Vous garez votre voiture le 14 à côté de ce panneau et voulez la laisser jusqu'au 16. Que devez-vous faire ?",
+        "question": "Votre voiture est stationnée du côté E7 le 15 et vous voulez la laisser jusqu’au 16. Que devez-vous faire ?",
         "choices": [
           {
-            "text": "Vous devez déplacer la voiture avant le début du 15, car à partir du 15 le stationnement de ce côté est interdit",
+            "text": "La déplacer du côté E5 le 15 entre 19 h 30 et 20 h",
             "is_correct": true
           },
           {
-            "text": "Rien, le stationnement alternatif donne toujours une période de transition de deux jours",
+            "text": "La déplacer du côté E5 à minuit",
             "is_correct": false
           },
           {
-            "text": "Vous devez déplacer la voiture le 14 lui-même",
+            "text": "La laisser sur place ; rien ne change le 16",
             "is_correct": false
           }
         ],
-        "explanation": "Le 14, vous pouvez encore vous garer ici. Mais dès que le 15 commence, votre voiture se trouve déjà dans la zone d'interdiction. Vous devez donc déplacer la voiture au plus tard dans la nuit du 14 au 15, de l'autre côté où E7 sera alors actif."
+        "explanation": "L’interdiction du côté E7 commence le 16. Le changement de côté légal a lieu le 15 entre 19 h 30 et 20 h."
       },
       "AR": {
-        "question": "أوقفت سيارتك يوم 14 بجوار هذه العلامة وتريد إبقاءها حتى يوم 16. ماذا يجب عليك فعله؟",
+        "question": "مركبتك متوقفة على جانب E7 يوم 15 وتريد تركها حتى يوم 16. ماذا تفعل؟",
         "choices": [
           {
-            "text": "يجب نقل السيارة قبل أن يبدأ يوم 15، لأنه من يوم 15 يكون الوقوف على هذا الجانب ممنوعاً",
+            "text": "انقلها إلى جانب E5 يوم 15 بين الساعة 19:30 و20:00",
             "is_correct": true
           },
           {
-            "text": "لا شيء، الوقوف المتناوب يمنح دائماً فترة انتقالية يومين",
+            "text": "انقلها إلى جانب E5 عند منتصف الليل",
             "is_correct": false
           },
-          { "text": "يجب نقل السيارة في يوم 14 نفسه", "is_correct": false }
+          {
+            "text": "اتركها مكانها؛ لا يتغير شيء يوم 16",
+            "is_correct": false
+          }
         ],
-        "explanation": "في يوم 14 لا يزال بإمكانك الوقوف هنا. لكن بمجرد بداية يوم 15 تكون سيارتك في منطقة الحظر. لذا يجب عليك نقل سيارتك في أقصى تقدير في ليلة 14 على 15، إلى الجانب الآخر حيث ستكون E7 نشطة آنذاك."
+        "explanation": "يبدأ حظر الوقوف على جانب E7 يوم 16. ويتم تغيير الجانب قانوناً يوم 15 بين الساعة 19:30 و20:00."
       }
     }
   },
@@ -540,60 +558,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Mag u hier de hele nacht van de 14e op de 15e parkeren?",
+        "question": "Het is de 15e om 19.45 uur. Mag u uw auto naar de E5-kant verplaatsen?",
         "choices": [
           {
-            "text": "Neen, zodra de 15e begint is parkeren hier verboden; u moet de auto voor middernacht verplaatsen",
+            "text": "Ja, dit valt binnen het wettelijke tijdvak voor de kantwissel",
             "is_correct": true
           },
           {
-            "text": "Ja, er is wettelijk een overgangsperiode van 24 uur bij afwisselend parkeren",
+            "text": "Neen, de E5-kant blijft tot middernacht verboden",
             "is_correct": false
           }
         ],
-        "explanation": "Het verbod van dit bord begint op de 1e en eindigt na de 15e. Op de nacht van 14 op 15 staat uw auto dus al in de verbodzone zodra de klok middernacht slaat. Er is geen wettelijke overgangsperiode. U moet de auto verplaatsen voor de 15e begint."
+        "explanation": "De kantwissel gebeurt op de laatste dag van de periode tussen 19.30 en 20.00 uur. Om 19.45 uur mag en moet de wissel dus worden uitgevoerd."
       },
       "EN": {
-        "question": "May you park here overnight from the 14th to the 15th?",
+        "question": "It is 19:45 on the 15th. May you move your car to the E5 side?",
         "choices": [
           {
-            "text": "No, as soon as the 15th begins parking here is forbidden; you must move the car before midnight",
+            "text": "Yes, this is within the statutory side-change period",
             "is_correct": true
           },
           {
-            "text": "Yes, there is legally a 24-hour transition period for alternating parking",
+            "text": "No, the E5 side remains prohibited until midnight",
             "is_correct": false
           }
         ],
-        "explanation": "The restriction of this sign starts on the 1st and ends after the 15th. On the night from the 14th to the 15th your car is already in the restricted zone the moment the clock strikes midnight. There is no legal transition period. You must move the car before the 15th begins."
+        "explanation": "Vehicles change sides on the last day of the period between 19:30 and 20:00. The move may and should therefore be made at 19:45."
       },
       "FR": {
-        "question": "Pouvez-vous vous garer ici toute la nuit du 14 au 15 ?",
+        "question": "Il est 19 h 45 le 15. Pouvez-vous déplacer votre voiture du côté E5 ?",
         "choices": [
           {
-            "text": "Non, dès que le 15 commence le stationnement ici est interdit ; vous devez déplacer la voiture avant minuit",
+            "text": "Oui, ce moment se situe dans la période légale de changement de côté",
             "is_correct": true
           },
           {
-            "text": "Oui, il existe légalement une période de transition de 24 heures pour le stationnement alternatif",
+            "text": "Non, le côté E5 reste interdit jusqu’à minuit",
             "is_correct": false
           }
         ],
-        "explanation": "La restriction de ce panneau commence le 1er et se termine après le 15. Dans la nuit du 14 au 15, votre voiture se trouve déjà dans la zone d'interdiction dès que l'horloge sonne minuit. Il n'y a pas de période de transition légale. Vous devez déplacer la voiture avant le début du 15."
+        "explanation": "Le changement de côté s’effectue le dernier jour de la période entre 19 h 30 et 20 h. Il peut et doit donc être effectué à 19 h 45."
       },
       "AR": {
-        "question": "هل يجوز لك الوقوف هنا طوال الليل من يوم 14 إلى يوم 15؟",
+        "question": "الساعة 19:45 من يوم 15. هل يجوز نقل المركبة إلى جانب E5؟",
         "choices": [
           {
-            "text": "لا، بمجرد بداية يوم 15 يكون الوقوف هنا ممنوعاً؛ يجب نقل السيارة قبل منتصف الليل",
+            "text": "نعم، فهذا الوقت يقع ضمن فترة تغيير الجانب القانونية",
             "is_correct": true
           },
           {
-            "text": "نعم، يُنص قانوناً على فترة انتقالية مدتها 24 ساعة للوقوف المتناوب",
+            "text": "لا، يبقى جانب E5 محظوراً حتى منتصف الليل",
             "is_correct": false
           }
         ],
-        "explanation": "يبدأ حظر هذه العلامة في اليوم الأول وينتهي بعد اليوم الخامس عشر. في ليلة 14 على 15 تكون سيارتك في منطقة الحظر فور دقات منتصف الليل. لا توجد فترة انتقالية قانونية. يجب نقل السيارة قبل بداية يوم 15."
+        "explanation": "يتم تغيير الجانب في اليوم الأخير من الفترة بين الساعة 19:30 و20:00، ولذلك يجوز وينبغي إجراء النقل عند الساعة 19:45."
       }
     }
   }

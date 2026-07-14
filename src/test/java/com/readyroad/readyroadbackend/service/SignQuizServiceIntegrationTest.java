@@ -478,10 +478,10 @@ class SignQuizServiceIntegrationTest {
                 sign.setNameEn(seed.nameEn());
                 sign.setNameFr(seed.nameFr());
                 sign.setNameAr(seed.nameAr());
-                sign.setDescriptionNl(seed.shortDescriptionNl());
-                sign.setDescriptionEn(seed.shortDescriptionEn());
-                sign.setDescriptionFr(seed.shortDescriptionFr());
-                sign.setDescriptionAr(seed.shortDescriptionAr());
+                sign.setDescriptionNl(seed.descriptionNl());
+                sign.setDescriptionEn(seed.descriptionEn());
+                sign.setDescriptionFr(seed.descriptionFr());
+                sign.setDescriptionAr(seed.descriptionAr());
                 sign.setIsActive(true);
                 return roadSignRepository.saveAndFlush(sign);
         }

@@ -28,17 +28,17 @@ spring:
     defer-datasource-initialization: true
 
   flyway:
-    enabled: false               # skip Flyway — H2 schema comes from Hibernate
+    enabled: false               # skip Flyway - H2 schema comes from Hibernate
 
 server:
   port: 0                         # random port for parallel test safety
 
 # ========================================
-# JWT (minimal config so JwtService boots)
+# JWT (fixed test-only key; never use in production)
 # ========================================
 jwt:
   enabled: true
-  secret-key: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970337336763979244226452948404D6351
+  secret-key: cmVhZHlyb2FkLXRlc3Qtb25seS1qd3Qtc2VjcmV0LW5vdC1mb3ItcHJvZHVjdGlvbi0yMDI2
   expiration: 3600000
   refresh-token:
     expiration: 604800000
@@ -46,17 +46,12 @@ jwt:
   header: Authorization
   prefix: Bearer
 
-# ========================================
-# Disable data import in tests
-# ========================================
 readyroad:
   admin:
     default-password: test-admin-password
-  data-import:
-    enabled: false
 
 # ========================================
-# Logging — keep it quiet
+# Logging - keep it quiet
 # ========================================
 logging:
   level:

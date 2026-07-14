@@ -67,14 +67,13 @@ class SignQuizStartupImportIntegrationTest {
                 "--spring.jpa.properties.hibernate.format_sql=false",
                 "--spring.jpa.defer-datasource-initialization=true",
                 "--spring.flyway.enabled=false",
-                "--jwt.secret-key=404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970337336763979244226452948404D6351",
+                "--jwt.secret-key=cmVhZHlyb2FkLXRlc3Qtb25seS1qd3Qtc2VjcmV0LW5vdC1mb3ItcHJvZHVjdGlvbi0yMDI2",
                 "--jwt.expiration=3600000",
                 "--jwt.refresh-token.expiration=604800000",
                 "--jwt.issuer=readyroad-test",
                 "--jwt.header=Authorization",
                 "--jwt.prefix=Bearer",
                 "--readyroad.admin.default-password=test-admin-password",
-                "--readyroad.data-import.enabled=false",
                 "--spring.jmx.enabled=false",
                 "--server.port=0"));
 

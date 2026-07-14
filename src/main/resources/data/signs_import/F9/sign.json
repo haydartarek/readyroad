@@ -6,17 +6,31 @@
   "i18n": {
     "NL": {
       "name": "Autoweg",
-      "description": "Geeft aan dat de weg doodloopt."
+      "summary": "F9 markeert het begin van een autoweg. Alleen de wettelijk toegelaten motorvoertuigen en hun aanhangwagens mogen er rijden. F9 legt op zichzelf geen algemene minimumsnelheid van 70 km/u of vaste maximumsnelheid van 120 km/u op.",
+      "description": "Dit bord markeert het begin van een autoweg. Vanaf de plaats waar dit bord staat gelden de specifieke verkeersregels voor autowegen. Het bord staat meestal rechts van de weg en wordt soms herhaald aan de linkerkant voor meer duidelijkheid.",
+      "driver_guidance": "F9 duidt een autoweg aan maar bepaalt niet zelfstandig één vaste maximumsnelheid. U moet de regionale regels, de inrichting van de weg en elk snelheidsbord volgen.",
+      "exceptions": []
     },
-    "EN": { "name": "Expressway", "description": "Start of expressway." },
+    "EN": {
+      "name": "Expressway",
+      "summary": "F9 marks the start of an expressway. Only legally permitted motor vehicles and their trailers may use it. F9 by itself does not impose a general 70 km/h minimum or a fixed 120 km/h maximum.",
+      "description": "This sign marks the start of an expressway. From the point where this sign is placed, the specific traffic rules for expressways apply. The sign is usually placed on the right side of the road and may be repeated on the left for extra visibility.",
+      "driver_guidance": "F9 identifies an expressway but does not independently set one fixed maximum speed. You must follow regional rules, the road design and every posted speed sign.",
+      "exceptions": []
+    },
     "FR": {
       "name": "Route pour automobiles",
-      "description": "Début de route pour automobiles."
+      "summary": "F9 marque le début d'une route pour automobiles. Seuls les véhicules à moteur et remorques légalement autorisés peuvent l'emprunter. F9 n'impose pas à lui seul un minimum général de 70 km/h ni un maximum fixe de 120 km/h.",
+      "description": "Ce panneau marque le début d'une route pour automobiles. À partir de l'endroit où ce panneau est placé, les règles de circulation spécifiques aux routes pour automobiles s'appliquent. Le panneau est généralement placé à droite de la route et peut être répété à gauche pour plus de visibilité.",
+      "driver_guidance": "F9 désigne une route pour automobiles mais ne fixe pas à lui seul une vitesse maximale unique. Respectez les règles régionales, l'aménagement de la route et chaque panneau de vitesse.",
+      "exceptions": []
     },
     "AR": {
       "name": "طريق مخصص للمركبات",
-      "description": "بداية طريق السيارات."
+      "summary": "تحدد F9 بداية طريق مخصص للمركبات. ولا يجوز استخدامه إلا للمركبات الآلية ومقطوراتها المسموح بها قانونًا. ولا تفرض F9 وحدها حدًا أدنى عامًا قدره 70 كم/س أو حدًا أقصى ثابتًا قدره 120 كم/س.",
+      "description": "تُطبق قواعد السير الخاصة بالطريق المخصص للسيارات ابتداءً من المكان الذي توضع فيه هذه العلامة المرورية. تُثبت العلامة عادةً على الجانب الأيمن من الطريق، وقد تُكرر أيضًا على الجانب الأيسر لزيادة وضوحها للسائقين.",
+      "driver_guidance": "تحدد F9 طريقًا مخصصًا للمركبات لكنها لا تضع بمفردها سرعة قصوى ثابتة واحدة. يجب اتباع القواعد الإقليمية وتصميم الطريق وكل لوحة سرعة موجودة.",
+      "exceptions": []
     }
   }
 }
-

@@ -3,7 +3,7 @@ package com.readyroad.readyroadbackend.dto;
 import java.util.List;
 
 /**
- * DTOs for the canonical source governance audit (signs.json ↔ DB consistency).
+ * DTOs for the canonical source governance audit (signs_import ↔ DB consistency).
  */
 public final class SignGovernanceReport {
 

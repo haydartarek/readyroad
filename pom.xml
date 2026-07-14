@@ -82,12 +82,6 @@
             <optional>true</optional>
         </dependency>
         <dependency>
-            <groupId>org.jsoup</groupId>
-            <artifactId>jsoup</artifactId>
-            <version>1.17.2</version>
-        </dependency>
-
-        <dependency>
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
             <version>2.7.0</version>
@@ -122,25 +116,6 @@
         </dependency>
 
         <dependency>
-            <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-java</artifactId>
-            <version>7.15.0</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-spring</artifactId>
-            <version>7.15.0</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-junit-platform-engine</artifactId>
-            <version>7.15.0</version>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
@@ -157,23 +132,17 @@
             <resource>
                 <directory>src/main/resources</directory>
                 <excludes>
-                    <exclude>data/canonical_sign_images.json</exclude>
                     <exclude>data/category_descriptions.json</exclude>
                     <exclude>data/lessons_content.json</exclude>
                     <exclude>data/multilingual_traffic_terms.json</exclude>
-                    <exclude>data/sign_index.json</exclude>
-                    <exclude>data/signs.json</exclude>
                 </excludes>
             </resource>
             <resource>
                 <directory>data</directory>
                 <includes>
-                    <include>canonical_sign_images.json</include>
                     <include>category_descriptions.json</include>
                     <include>lessons_content.json</include>
                     <include>multilingual_traffic_terms.json</include>
-                    <include>sign_index.json</include>
-                    <include>signs.json</include>
                 </includes>
                 <targetPath>data</targetPath>
             </resource>

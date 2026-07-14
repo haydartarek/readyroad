@@ -10,7 +10,7 @@
         "question": "Wat betekent bord F5 'Autosnelweg'?",
         "choices": [
           {
-            "text": "U rijdt een autosnelweg op; de specifieke autosnelwegregels zijn van toepassing (maximumsnelheid 120 km/u, minimumsnelheid 70 km/u, geen langzame voertuigen)",
+            "text": "U rijdt een autosnelweg op; de autosnelwegregels gelden en de toegang is beperkt tot motorvoertuigen en slepen die op een horizontale weg minstens 70 km/u kunnen halen",
             "is_correct": true
           },
           {
@@ -22,13 +22,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "F5 markeert het begin van een autosnelweg. Hier gelden de autosnelwegregels: max. 120 km/u, min. 70 km/u en een verbod op voertuigen die niet de minimumsnelheid kunnen halen."
+        "explanation": "F5 markeert het begin van een autosnelweg. De algemene maximumsnelheid is 120 km/u, tenzij een lagere limiet of de omstandigheden een lagere snelheid vereisen. De eis dat een motorvoertuig of sleep op een horizontale weg minstens 70 km/u moet kunnen halen, is een toelatingscriterium en geen algemene minimumrijsnelheid."
       },
       "EN": {
         "question": "What does sign F5 'Motorway start' mean?",
         "choices": [
           {
-            "text": "You are entering a motorway; motorway rules apply (maximum 120 km/h, minimum 70 km/h, no slow vehicles)",
+            "text": "You are entering a motorway; motorway rules apply and access is limited to motor vehicles and combinations capable of reaching at least 70 km/h on a level road",
             "is_correct": true
           },
           {
@@ -40,31 +40,31 @@
             "is_correct": false
           }
         ],
-        "explanation": "F5 marks the start of a motorway. Motorway rules apply: max. 120 km/h, min. 70 km/h, and a prohibition on vehicles incapable of reaching the minimum speed."
+        "explanation": "F5 marks the start of a motorway. The general maximum speed is 120 km/h unless a lower limit or the conditions require a lower speed. The requirement that a motor vehicle or combination be capable of reaching at least 70 km/h on a level road is an access criterion, not a general minimum driving speed."
       },
       "FR": {
-        "question": "Que signifie le panneau F5 'Autoroute debut' ?",
+        "question": "Que signifie le panneau F5 'Autoroute début' ?",
         "choices": [
           {
-            "text": "Vous entrez sur une autoroute; les regles d autoroute s appliquent (max. 120 km/h, min. 70 km/h, pas de vehicules lents)",
+            "text": "Vous entrez sur une autoroute; les règles propres à l'autoroute s'appliquent et l'accès est limité aux véhicules à moteur et trains de véhicules capables d'atteindre au moins 70 km/h en palier",
             "is_correct": true
           },
           {
-            "text": "Vous entrez sur une route expresse ou vous pouvez rouler a 90 km/h",
+            "text": "Vous entrez sur une route expresse où vous pouvez rouler à 90 km/h",
             "is_correct": false
           },
           {
-            "text": "Vous entrez sur une route reservee exclusivement aux camions",
+            "text": "Vous entrez sur une route réservée exclusivement aux camions",
             "is_correct": false
           }
         ],
-        "explanation": "F5 marque le debut d une autoroute. Les regles autoroute s appliquent: max. 120 km/h, min. 70 km/h et interdiction aux vehicules incapables d atteindre la vitesse minimale."
+        "explanation": "F5 marque le début d'une autoroute. La vitesse maximale générale est de 120 km/h, sauf limitation inférieure ou circonstances imposant de ralentir. L'exigence qu'un véhicule à moteur ou train de véhicules puisse atteindre au moins 70 km/h en palier est un critère d'accès, pas une vitesse minimale générale de circulation."
       },
       "AR": {
         "question": "ما معنى هذه العلامة المرورية؟",
         "choices": [
           {
-            "text": "أنت تدخل طريقاً سريعاً؛ تسري قواعد الطريق السريع (أقصى 120 كم/س، وأدنى 70 كم/س، ولا مركبات بطيئة)",
+            "text": "أنت تدخل طريقاً سياراً؛ تسري قواعده ويقتصر الدخول على المركبات الآلية ومجموعات المركبات القادرة على بلوغ 70 كم/س على طريق مستوٍ",
             "is_correct": true
           },
           {
@@ -76,7 +76,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "تحدد F5 بداية طريق سريع. تسري قواعد الطريق السريع: أقصى 120 كم/س وأدنى 70 كم/س وحظر على المركبات غير القادرة على بلوغ الحد الأدنى للسرعة."
+        "explanation": "تحدد F5 بداية طريق سيار. الحد الأقصى العام للسرعة هو 120 كم/س ما لم تُفرض سرعة أقل أو تستوجب الظروف تخفيفها. اشتراط قدرة المركبة الآلية أو مجموعة المركبات على بلوغ 70 كم/س على طريق مستوٍ هو شرط للدخول، وليس حداً أدنى عاماً لسرعة السير."
       }
     }
   },
@@ -106,16 +106,16 @@
         "explanation": "F7 marks the end of the motorway that started at F5. F11 marks the end of an expressway (F9)."
       },
       "FR": {
-        "question": "Quel panneau marque la fin de l autoroute qui commence avec le panneau F5 ?",
+        "question": "Quel panneau marque la fin de l'autoroute qui commence avec le panneau F5 ?",
         "choices": [
           { "text": "Panneau F7 'Fin autoroute'", "is_correct": true },
           { "text": "Panneau F11 'Fin route express'", "is_correct": false },
-          { "text": "Panneau F3b 'Fin d agglomeration'", "is_correct": false }
+          { "text": "Panneau F3b 'Fin d'agglomération'", "is_correct": false }
         ],
-        "explanation": "F7 marque la fin de l autoroute qui a commence a F5. F11 marque la fin d une route expresse (F9)."
+        "explanation": "F7 marque la fin de l'autoroute qui a commencé à F5. F11 marque la fin d'une route expresse (F9)."
       },
       "AR": {
-        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
+        "question": "أي علامة تحدد نهاية الطريق السريع الذي بدأ بعلامة F5؟",
         "choices": [
           {
             "text": "العلامة المرورية F7 'نهاية الطريق السريع'",
@@ -126,7 +126,7 @@
             "is_correct": false
           },
           {
-            "text": "العلامة المرورية F3b 'نهاية المنطقة المبنية'",
+            "text": "العلامة المرورية F3b 'نهاية المنطقة السكنية'",
             "is_correct": false
           }
         ],
@@ -145,7 +145,7 @@
         "question": "Welke weggebruikers zijn NIET toegestaan op een autosnelweg (bord F5)?",
         "choices": [
           {
-            "text": "Voetgangers, fietsers, bromfietsen en voertuigen die de minimumsnelheid van 70 km/u niet kunnen halen",
+            "text": "Voetgangers, fietsers, bromfietsen en motorvoertuigen of slepen die op een horizontale weg geen 70 km/u kunnen halen",
             "is_correct": true
           },
           {
@@ -157,13 +157,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "Op een autosnelweg zijn voetgangers, fietsers, bromfietsen en voertuigen die trager dan 70 km/u rijden verboden."
+        "explanation": "Voetgangers, fietsers en bromfietsen mogen de autosnelweg niet gebruiken. Ook motorvoertuigen en slepen die op een horizontale weg geen 70 km/u kunnen halen, zijn niet toegelaten. Dit gaat om de technische geschiktheid voor toegang, niet om een verplichting om altijd minstens 70 km/u te rijden."
       },
       "EN": {
         "question": "Which road users are NOT allowed on a motorway (sign F5)?",
         "choices": [
           {
-            "text": "Pedestrians, cyclists, mopeds and vehicles unable to reach the 70 km/h minimum speed",
+            "text": "Pedestrians, cyclists, mopeds, and motor vehicles or combinations unable to reach 70 km/h on a level road",
             "is_correct": true
           },
           {
@@ -175,17 +175,17 @@
             "is_correct": false
           }
         ],
-        "explanation": "On a motorway pedestrians, cyclists, mopeds and vehicles slower than 70 km/h are prohibited."
+        "explanation": "Pedestrians, cyclists and mopeds may not use a motorway. Motor vehicles and combinations unable to reach 70 km/h on a level road are also excluded. This concerns technical eligibility for access, not a duty to drive at least 70 km/h at all times."
       },
       "FR": {
-        "question": "Quels usagers de la route ne sont PAS autorises sur une autoroute (panneau F5) ?",
+        "question": "Quels usagers de la route ne sont PAS autorisés sur une autoroute (panneau F5) ?",
         "choices": [
           {
-            "text": "Pietons, cyclistes, cyclomoteurs et vehicules incapables d atteindre la vitesse minimale de 70 km/h",
+            "text": "Piétons, cyclistes, cyclomoteurs et véhicules à moteur ou trains de véhicules incapables d'atteindre 70 km/h en palier",
             "is_correct": true
           },
           {
-            "text": "Les camions; ils ne sont autorises que sur les routes regionales",
+            "text": "Les camions; ils ne sont autorisés que sur les routes régionales",
             "is_correct": false
           },
           {
@@ -193,13 +193,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "Sur une autoroute les pietons, cyclistes, cyclomoteurs et les vehicules roulant a moins de 70 km/h sont interdits."
+        "explanation": "Les piétons, cyclistes et cyclomoteurs ne peuvent pas utiliser l'autoroute. Les véhicules à moteur et trains de véhicules incapables d'atteindre 70 km/h en palier en sont également exclus. Il s'agit de l'aptitude technique à y accéder, et non d'une obligation de rouler toujours à au moins 70 km/h."
       },
       "AR": {
         "question": "من مستخدمي الطريق الذين لا يُسمح لهم على الطريق السريع (علامة مرورية F5)؟",
         "choices": [
           {
-            "text": "المشاة والدراجون والموبيدات والمركبات غير القادرة على بلوغ الحد الأدنى للسرعة 70 كم/س",
+            "text": "المشاة وراكبو الدراجات والدراجات النارية الصغيرة والمركبات الآلية أو مجموعات المركبات غير القادرة على بلوغ 70 كم/س على طريق مستوٍ",
             "is_correct": true
           },
           {
@@ -211,7 +211,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "على الطريق السريع يُحظر وجود المشاة والدراجين والموبيدات والمركبات التي تسير بأبطأ من 70 كم/س."
+        "explanation": "لا يجوز للمشاة وراكبي الدراجات والدراجات النارية الصغيرة استخدام الطريق السيار. كما تُمنع المركبات الآلية ومجموعات المركبات غير القادرة على بلوغ 70 كم/س على طريق مستوٍ. يتعلق ذلك بالأهلية التقنية للدخول، لا بوجوب السير بسرعة 70 كم/س على الأقل طوال الوقت."
       }
     }
   },
@@ -223,10 +223,10 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U rijdt op een autosnelweg (F5) en uw voertuig panne heeft. Wat moet u doen?",
+        "question": "U rijdt op een autosnelweg (F5) en uw voertuig heeft panne. Wat moet u doen?",
         "choices": [
           {
-            "text": "Rechtstreeks naar de vluchtstrook rijden, de gevarendriehoek plaatsen op 50-100 m en het noodsignaal activeren",
+            "text": "Ga zo veilig mogelijk naar de pechstrook, zet de alarmlichten aan en plaats de gevarendriehoek minstens 100 m achter het voertuig",
             "is_correct": true
           },
           {
@@ -238,13 +238,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "Bij pech op de snelweg rijdt u naar de vluchtstrook, plaatst u de gevarendriehoek en belt u de hulpdiensten. Met uw passagiers verlaat u het voertuig via de vangrailkant."
+        "explanation": "Breng het voertuig zo veilig mogelijk op de pechstrook, zet de alarmlichten aan en draag een veiligheidsvest wanneer u uitstapt. Plaats de gevarendriehoek op een autosnelweg minstens 100 m achter het voertuig als dit veilig kan en wacht met de passagiers achter de vangrail op hulp."
       },
       "EN": {
         "question": "You are on a motorway (F5) and your vehicle breaks down. What must you do?",
         "choices": [
           {
-            "text": "Drive to the hard shoulder immediately, place the warning triangle 50-100 m behind and activate hazard lights",
+            "text": "Move as safely as possible to the hard shoulder, activate the hazard lights and place the warning triangle at least 100 m behind the vehicle",
             "is_correct": true
           },
           {
@@ -253,31 +253,31 @@
           },
           { "text": "Reverse back to the nearest exit", "is_correct": false }
         ],
-        "explanation": "If your vehicle breaks down on the motorway, move to the hard shoulder, place the warning triangle and call the emergency services. Passengers must exit on the barrier side."
+        "explanation": "Move the vehicle as safely as possible to the hard shoulder, activate the hazard lights and wear a reflective vest when leaving it. If safe, place the warning triangle at least 100 m behind on a motorway and wait with passengers behind the barrier for assistance."
       },
       "FR": {
-        "question": "Vous etes sur une autoroute (F5) et votre vehicule tombe en panne. Que devez-vous faire ?",
+        "question": "Vous êtes sur une autoroute (F5) et votre véhicule tombe en panne. Que devez-vous faire ?",
         "choices": [
           {
-            "text": "Se diriger immediatement vers la bande d arret d urgence, placer le triangle de signalisation a 50-100 m et activer les feux de detresse",
+            "text": "Rejoindre la bande d'arrêt d'urgence aussi sûrement que possible, allumer les feux de détresse et placer le triangle à au moins 100 m derrière le véhicule",
             "is_correct": true
           },
           {
-            "text": "Rester au milieu de la chaussee et demander de l aide aux autres conducteurs",
+            "text": "Rester au milieu de la chaussée et demander de l'aide aux autres conducteurs",
             "is_correct": false
           },
           {
-            "text": "Faire marche arriere jusqu a la sortie la plus proche",
+            "text": "Faire marche arrière jusqu'à la sortie la plus proche",
             "is_correct": false
           }
         ],
-        "explanation": "En cas de panne sur l autoroute dirigez-vous vers la bande d arret d urgence, placez le triangle et appelez les secours. Les passagers doivent sortir du cote de la glissiere."
+        "explanation": "Placez le véhicule aussi sûrement que possible sur la bande d'arrêt d'urgence, allumez les feux de détresse et portez un gilet réfléchissant en sortant. Si cela peut se faire sans danger, placez le triangle à au moins 100 m derrière le véhicule et attendez l'assistance avec les passagers derrière la glissière."
       },
       "AR": {
         "question": "أنت على الطريق السريع (F5) وتعطّلت مركبتك. ماذا يجب أن تفعل؟",
         "choices": [
           {
-            "text": "التوجه فوراً إلى حارة الطوارئ ووضع مثلث التحذير على بعد 50-100 م وتشغيل أضواء الخطر",
+            "text": "انتقل بأمان قدر الإمكان إلى حارة الطوارئ وشغّل أضواء الخطر وضع مثلث التحذير على بعد 100 متر على الأقل خلف المركبة",
             "is_correct": true
           },
           {
@@ -286,7 +286,7 @@
           },
           { "text": "التراجع للخلف حتى أقرب مخرج", "is_correct": false }
         ],
-        "explanation": "عند تعطل مركبتك على الطريق السريع توجه إلى حارة الطوارئ وضع المثلث واتصل بخدمات الطوارئ. يجب على الركاب الخروج من جانب الحاجز."
+        "explanation": "انقل المركبة بأمان قدر الإمكان إلى حارة الطوارئ، وشغّل أضواء الخطر، وارتدِ سترة عاكسة عند الخروج. إذا كان ذلك آمنًا، ضع المثلث على بعد 100 متر على الأقل خلف المركبة وانتظر المساعدة مع الركاب خلف الحاجز."
       }
     }
   },
@@ -334,22 +334,22 @@
         "explanation": "On a motorway you keep to the right-hand lane as much as possible. Other lanes are for overtaking only."
       },
       "FR": {
-        "question": "Sur l autoroute (panneau F5) : quelle voie utilisez-vous normalement pour rouler ?",
+        "question": "Sur l'autoroute (panneau F5) : quelle voie utilisez-vous normalement pour rouler ?",
         "choices": [
           {
-            "text": "La voie de droite; vous n utilisez une autre voie que pour depasser et revenez immediatement a droite ensuite",
+            "text": "La voie de droite; vous n'utilisez une autre voie que pour dépasser et revenez immédiatement à droite ensuite",
             "is_correct": true
           },
           {
-            "text": "La voie du milieu; c est la plus sure sur l autoroute",
+            "text": "La voie du milieu; c'est la plus sûre sur l'autoroute",
             "is_correct": false
           },
           {
-            "text": "La voie de gauche; elle est reservee aux conducteurs rapides",
+            "text": "La voie de gauche; elle est réservée aux conducteurs rapides",
             "is_correct": false
           }
         ],
-        "explanation": "Sur l autoroute vous tenez la voie de droite autant que possible. Les autres voies sont uniquement pour depasser."
+        "explanation": "Sur l'autoroute vous tenez la voie de droite autant que possible. Les autres voies sont uniquement pour dépasser."
       },
       "AR": {
         "question": "على الطريق السريع (علامة مرورية F5): أي حارة تستخدم عادةً للقيادة؟",
@@ -415,22 +415,22 @@
         "explanation": "Merging traffic must give way to through motorway traffic, but if safe and possible you as a motorway driver can shift over to ease merging."
       },
       "FR": {
-        "question": "Vous approchez d une bretelle d entree d autoroute (panneau F5) et vous etes deja sur l autoroute. Comment vous comportez-vous vis-a-vis des vehicules qui s insèrent ?",
+        "question": "Vous approchez d'une bretelle d'entrée d'autoroute (panneau F5) et vous êtes déjà sur l'autoroute. Comment vous comportez-vous vis-à-vis des véhicules qui s'insèrent ?",
         "choices": [
           {
-            "text": "Vous faites de la place si possible en vous deplacant sur la voie suivante; les vehicules qui s insèrent doivent ceder le passage au trafic normal",
+            "text": "Vous faites de la place si possible en vous déplaçant sur la voie suivante; les véhicules qui s'insèrent doivent céder le passage au trafic normal",
             "is_correct": true
           },
           {
-            "text": "Vous avez toujours la priorite car vous etes deja sur l autoroute; le trafic qui s insère doit entierement vous laisser passer",
+            "text": "Vous avez toujours la priorité car vous êtes déjà sur l'autoroute; le trafic qui s'insère doit entièrement vous laisser passer",
             "is_correct": false
           },
           {
-            "text": "Vous freinez toujours completement pour laisser les vehicules rejoindre l autoroute en toute securite",
+            "text": "Vous freinez toujours complètement pour laisser les véhicules rejoindre l'autoroute en toute sécurité",
             "is_correct": false
           }
         ],
-        "explanation": "Les vehicules qui s insèrent doivent ceder le passage au trafic normal de l autoroute mais si c est sur et possible vous pouvez vous decaler pour faciliter l insertion."
+        "explanation": "Les véhicules qui s'insèrent doivent céder le passage au trafic normal de l'autoroute mais si c'est sûr et possible vous pouvez vous décaler pour faciliter l'insertion."
       },
       "AR": {
         "question": "أنت تقترب من منحدر دخول للطريق السريع (علامة مرورية F5) وأنت بالفعل على الطريق السريع. كيف تتصرف مع المركبات المندمجة؟",
@@ -463,7 +463,7 @@
         "question": "Op de autosnelweg (bord F5): is het toegestaan om te stoppen op de rijbaan om te bellen?",
         "choices": [
           {
-            "text": "Nee, stoppen op de rijbaan van de autosnelweg is verboden behalve bij nood; gebruik de vluchtstrook of een parkeerplaats",
+            "text": "Nee, rijd door tot een parkeer- of rustplaats; de pechstrook is alleen voor pech of een echte noodsituatie",
             "is_correct": true
           },
           {
@@ -471,13 +471,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "Op de rijbaan van een autosnelweg is stoppen verboden. U mag alleen op de vluchtstrook stoppen bij pech of nood."
+        "explanation": "Stop niet op de rijbaan of pechstrook voor een gewone telefoonoproep. Rijd door tot een parkeer- of rustplaats; de pechstrook mag alleen worden gebruikt wanneer pech of een echte noodsituatie stoppen noodzakelijk maakt."
       },
       "EN": {
         "question": "On the motorway (sign F5): is it allowed to stop on the carriageway to make a phone call?",
         "choices": [
           {
-            "text": "No, stopping on the motorway carriageway is forbidden except in emergency; use the hard shoulder or a rest area",
+            "text": "No, continue to a parking or rest area; the hard shoulder is only for a breakdown or genuine emergency",
             "is_correct": true
           },
           {
@@ -485,27 +485,27 @@
             "is_correct": false
           }
         ],
-        "explanation": "Stopping on the carriageway of a motorway is forbidden. You may only stop on the hard shoulder in case of breakdown or emergency."
+        "explanation": "Do not stop on the carriageway or hard shoulder for an ordinary phone call. Continue to a parking or rest area; the hard shoulder may be used only when a breakdown or genuine emergency makes stopping necessary."
       },
       "FR": {
-        "question": "Sur l autoroute (panneau F5) : est-il permis de s arreter sur la chaussee pour telephoner ?",
+        "question": "Sur l'autoroute (panneau F5) : est-il permis de s'arrêter sur la chaussée pour téléphoner ?",
         "choices": [
           {
-            "text": "Non, s arreter sur la chaussee de l autoroute est interdit sauf urgence; utilisez la bande d arret d urgence ou une aire de repos",
+            "text": "Non, continuez jusqu'à une aire de stationnement ou de repos; la bande d'arrêt d'urgence est réservée à une panne ou une urgence réelle",
             "is_correct": true
           },
           {
-            "text": "Oui, vous pouvez vous arreter brievement sur la voie de droite si vous ne genez pas les autres conducteurs",
+            "text": "Oui, vous pouvez vous arrêter brièvement sur la voie de droite si vous ne gênez pas les autres conducteurs",
             "is_correct": false
           }
         ],
-        "explanation": "S arreter sur la chaussee d une autoroute est interdit. Vous ne pouvez vous arreter que sur la bande d arret d urgence en cas de panne ou d urgence."
+        "explanation": "Ne vous arrêtez ni sur la chaussée ni sur la bande d'arrêt d'urgence pour un appel ordinaire. Continuez jusqu'à une aire de stationnement ou de repos; la bande d'arrêt d'urgence ne sert qu'en cas de panne ou d'urgence réelle."
       },
       "AR": {
         "question": "على الطريق السريع (علامة مرورية F5): هل يُسمح بالتوقف على الطريق للتحدث بالهاتف؟",
         "choices": [
           {
-            "text": "لا يُحظر التوقف على طريق السيارات السريع إلا في حالات الطوارئ؛ استخدم حارة الطوارئ أو منطقة الاستراحة",
+            "text": "لا، واصل السير حتى موقف أو منطقة استراحة؛ حارة الطوارئ مخصصة للعطل أو لحالة طارئة حقيقية",
             "is_correct": true
           },
           {
@@ -513,7 +513,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "يُحظر التوقف على طريق السيارات السريع. يمكنك فقط التوقف على حارة الطوارئ في حالة الأعطال أو الطوارئ."
+        "explanation": "لا تتوقف على مسار السير أو حارة الطوارئ لإجراء مكالمة عادية. واصل السير حتى موقف أو منطقة استراحة؛ ولا تستخدم حارة الطوارئ إلا إذا جعل العطل أو الطارئ الحقيقي التوقف ضروريًا."
       }
     }
   },
@@ -553,24 +553,24 @@
         "explanation": "Overtaking on the right is forbidden on motorways. You always overtake using the left lane and then return to the right."
       },
       "FR": {
-        "question": "Sur l autoroute (panneau F5) : est-il permis de depasser par la droite ?",
+        "question": "Sur l'autoroute (panneau F5) : est-il permis de dépasser par la droite ?",
         "choices": [
           {
-            "text": "Non, depasser par la droite est generalement interdit sur l autoroute; on depasse toujours par la gauche",
+            "text": "Non, dépasser par la droite est généralement interdit sur l'autoroute; on dépasse toujours par la gauche",
             "is_correct": true
           },
           {
-            "text": "Oui, depasser par la droite est autorise si la voie de droite est libre et que vous ne perturbez pas la fluidite",
+            "text": "Oui, dépasser par la droite est autorisé si la voie de droite est libre et que vous ne perturbez pas la fluidité",
             "is_correct": false
           }
         ],
-        "explanation": "Depasser par la droite est interdit sur les autoroutes. On depasse toujours par la voie de gauche puis on revient a droite."
+        "explanation": "Dépasser par la droite est interdit sur les autoroutes. On dépasse toujours par la voie de gauche puis on revient à droite."
       },
       "AR": {
         "question": "على الطريق السريع (علامة مرورية F5): هل يُسمح بالتجاوز من اليمين؟",
         "choices": [
           {
-            "text": "لا يُحظر عموماً التجاوز من اليمين على الطريق السريع؛ تتجاوز دائماً من اليسار",
+            "text": "لا، يُحظر عموماً التجاوز من اليمين على الطريق السريع؛ تتجاوز دائماً من اليسار",
             "is_correct": true
           },
           {

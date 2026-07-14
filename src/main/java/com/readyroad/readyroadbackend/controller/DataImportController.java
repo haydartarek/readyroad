@@ -30,7 +30,7 @@ import java.util.Set;
 @Tag(name = "Data Import", description = "Upload-based data import with preview and execute")
 public class DataImportController {
 
-    private static final Set<String> ALLOWED_TYPES = Set.of("signs", "categories", "quiz_questions");
+    private static final Set<String> ALLOWED_TYPES = Set.of("categories", "quiz_questions");
     private static final long MAX_FILE_SIZE = 10 * 1024 * 1024; // 10 MB
 
     private final DataImportService dataImportService;
@@ -112,7 +112,6 @@ public class DataImportController {
 
     private ImportReport dispatch(String type, byte[] content, boolean dryRun) {
         return switch (type) {
-            case "signs" -> dataImportService.importSignsFromUpload(content, dryRun);
             case "categories" -> dataImportService.importCategoriesFromUpload(content, dryRun);
             case "quiz_questions" -> dataImportService.importQuizQuestionsFromUpload(content, dryRun);
             default -> new ImportReport(type, dryRun ? "PREVIEW" : "IMPORT", dryRun, 0, 0, 0, 0, List.of(),

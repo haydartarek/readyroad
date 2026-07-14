@@ -22,7 +22,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "ZC45-Einde is het eindbord van de zone met snelheidsbeperking. Voorbij dit bord geldt de door ZC43 opgelegde limiet niet meer."
+        "explanation": "Dit is het eindbord van de zone met snelheidsbeperking. Voorbij dit bord geldt de zonelimiet niet meer."
       },
       "EN": {
         "question": "What does this traffic sign mean?",
@@ -40,7 +40,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "ZC45-Einde is the end sign of the speed-limit zone. Beyond this sign the limit imposed by ZC43 no longer applies."
+        "explanation": "This is the end sign of the speed-limit zone. Beyond this sign the zone limit no longer applies."
       },
       "FR": {
         "question": "Que signifie ce panneau de signalisation?",
@@ -58,7 +58,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "ZC45-Einde est le panneau de fin de la zone à vitesse limitée. Après ce panneau la limite imposée par ZC43 ne s'applique plus."
+        "explanation": "C'est le panneau de fin de la zone à vitesse limitée. Après ce panneau, la limite de zone ne s'applique plus."
       },
       "AR": {
         "question": "ما معنى هذه العلامة المرورية؟",
@@ -76,7 +76,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "ZC45-Einde هي علامة نهاية منطقة تحديد السرعة. بعد هذه العلامة لا تسري السرعة المفروضة من ZC43 بعد ذلك."
+        "explanation": "هذه علامة نهاية منطقة تحديد السرعة. بعد هذه العلامة لا يعود حد السرعة الخاص بالمنطقة سارياً."
       }
     }
   },
@@ -103,7 +103,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "ZC45-Einde is een zonebord dat het einde van de zone met snelheidsbeperking aangeeft."
+        "explanation": "Dit is een zonebord dat het einde van de zone met snelheidsbeperking aangeeft."
       },
       "EN": {
         "question": "To which category of traffic signs does this sign belong?",
@@ -121,7 +121,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "ZC45-Einde is a zone sign indicating the end of the speed-limit zone."
+        "explanation": "This is a zone sign indicating the end of the speed-limit zone."
       },
       "FR": {
         "question": "À quelle catégorie de panneaux appartient ce panneau?",
@@ -139,7 +139,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "ZC45-Einde est un panneau de zone indiquant la fin de la zone à vitesse limitée."
+        "explanation": "C'est un panneau de zone indiquant la fin de la zone à vitesse limitée."
       },
       "AR": {
         "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
@@ -157,7 +157,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "ZC45-Einde علامة منطقة تشير إلى نهاية منطقة تحديد السرعة."
+        "explanation": "هذه علامة منطقة تشير إلى نهاية منطقة تحديد السرعة."
       }
     }
   },
@@ -169,10 +169,10 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat betekent ZC45-Einde voor de snelheid die u mag rijden?",
+        "question": "Wat betekent dit eindbord voor de snelheid die u mag rijden?",
         "choices": [
           {
-            "text": "De snelheidsbeperking van de zone is opgeheven; de normale snelheidsregels gelden opnieuw",
+            "text": "De snelheidsbeperking van de zone is opgeheven; de regels van de volgende weg gelden",
             "is_correct": true
           },
           {
@@ -184,13 +184,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "ZC45-Einde beëindigt de snelheidszone. Voorbij dit bord gelden de gewone maximumsnelheden opnieuw."
+        "explanation": "Het eindbord beëindigt de snelheidszone. Voorbij dit bord bepaalt de volgende weg, het gewest en eventuele snelheidsborden welke limiet geldt."
       },
       "EN": {
-        "question": "What does ZC45-Einde mean for the speed you may drive?",
+        "question": "What does this end sign mean for the speed you may drive?",
         "choices": [
           {
-            "text": "The speed restriction of the zone is lifted; normal speed rules apply again",
+            "text": "The speed restriction of the zone is lifted; the rules of the next road apply",
             "is_correct": true
           },
           {
@@ -202,13 +202,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "ZC45-Einde ends the speed zone. Beyond this sign the normal maximum speeds apply again."
+        "explanation": "The end sign ends the speed zone. Beyond this sign, the next road, the region and any speed signs determine the applicable limit."
       },
       "FR": {
-        "question": "Que signifie ZC45-Einde pour la vitesse à laquelle vous pouvez conduire?",
+        "question": "Que signifie ce panneau de fin pour la vitesse à laquelle vous pouvez conduire?",
         "choices": [
           {
-            "text": "La restriction de vitesse de la zone est levée; les règles normales de vitesse s'appliquent à nouveau",
+            "text": "La restriction de vitesse de la zone est levée; les règles de la route suivante s'appliquent",
             "is_correct": true
           },
           {
@@ -220,13 +220,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "ZC45-Einde met fin à la zone de vitesse. Après ce panneau les vitesses maximales normales s'appliquent à nouveau."
+        "explanation": "Le panneau de fin met fin à la zone de vitesse. Après ce panneau, la route suivante, la région et les panneaux de vitesse déterminent la limite applicable."
       },
       "AR": {
-        "question": "ماذا تعني ZC45-Einde بالنسبة للسرعة المسموح بها؟",
+        "question": "ماذا تعني علامة النهاية هذه بالنسبة للسرعة المسموح بها؟",
         "choices": [
           {
-            "text": "رُفع قيد سرعة المنطقة؛ تسري قواعد السرعة العادية من جديد",
+            "text": "رُفع قيد سرعة المنطقة؛ تسري قواعد الطريق التالي",
             "is_correct": true
           },
           {
@@ -238,7 +238,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "ZC45-Einde تنهي منطقة السرعة. بعد هذه العلامة تسري الحدود العادية للسرعة من جديد."
+        "explanation": "تنهي علامة النهاية منطقة السرعة. بعد هذه العلامة يحدد الطريق التالي والإقليم وأي علامات سرعة الحد المطبق."
       }
     }
   },
@@ -250,10 +250,10 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U verlaat een ZC43-zone (30 km/u) via ZC45-Einde. Welke snelheid geldt buiten de zone op een gewone bebouwde kom?",
+        "question": "U verlaat een zone met snelheidsbeperking binnen de bebouwde kom en er staat geen ander snelheidsbord. Welke regel volgt u?",
         "choices": [
           {
-            "text": "50 km/u, want dit is de maximumsnelheid in een bebouwde kom tenzij anders aangegeven",
+            "text": "De gewestelijke snelheidsregel voor de bebouwde kom, tenzij een bord een andere limiet aangeeft",
             "is_correct": true
           },
           {
@@ -265,13 +265,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "Na ZC45-Einde gelden de normale wettelijke snelheden. Op een gewone Belgische bebouwde weg is dat 50 km/u tenzij een ander bord een andere limiet aangeeft."
+        "explanation": "Het einde van een snelheidszone geeft geen uniforme snelheid voor heel België. De juiste limiet hangt af van het gewest en van de aanwezige borden."
       },
       "EN": {
-        "question": "You are leaving a ZC43 zone (30 km/h) via ZC45-Einde. What speed applies outside the zone on a normal built-up road?",
+        "question": "You leave a speed-limit zone within a built-up area and there is no other speed sign. Which rule do you follow?",
         "choices": [
           {
-            "text": "50 km/h, because this is the maximum speed in a built-up area unless otherwise indicated",
+            "text": "The regional built-up-area speed rule, unless a sign indicates another limit",
             "is_correct": true
           },
           {
@@ -283,13 +283,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "After ZC45-Einde normal legal speeds apply. On a normal Belgian built-up road that is 50 km/h unless another sign indicates a different limit."
+        "explanation": "The end of a speed-limit zone does not give one uniform speed for all Belgium. The correct limit depends on the region and the signs present."
       },
       "FR": {
-        "question": "Vous quittez une zone ZC43 (30 km/h) via ZC45-Einde. Quelle vitesse s'applique hors de la zone sur une route bâtie normale?",
+        "question": "Vous quittez une zone à vitesse limitée en agglomération et aucun autre panneau de vitesse n'est présent. Quelle règle suivez-vous?",
         "choices": [
           {
-            "text": "50 km/h, car c'est la vitesse maximale en agglomération sauf indication contraire",
+            "text": "La règle régionale de vitesse en agglomération, sauf si un panneau indique une autre limite",
             "is_correct": true
           },
           {
@@ -301,13 +301,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "Après ZC45-Einde les vitesses légales normales s'appliquent. Sur une route bâtie belge normale c'est 50 km/h sauf si un autre panneau indique une limite différente."
+        "explanation": "La fin d'une zone à vitesse limitée ne fixe pas une vitesse uniforme pour toute la Belgique. La bonne limite dépend de la région et des panneaux présents."
       },
       "AR": {
-        "question": "تغادر منطقة ZC43 (حد 30 كم/ساعة) عبر ZC45-Einde. ما السرعة المسموحة خارج المنطقة على طريق سكني عادي؟",
+        "question": "تغادر منطقة محددة السرعة داخل المنطقة المبنية ولا توجد علامة سرعة أخرى. أي قاعدة تتبع؟",
         "choices": [
           {
-            "text": "50 كم/ساعة، لأن هذا هو الحد الأقصى في المناطق السكنية ما لم يُحدد غير ذلك",
+            "text": "قاعدة السرعة الإقليمية داخل المنطقة المبنية، ما لم تُشر علامة إلى حد آخر",
             "is_correct": true
           },
           {
@@ -319,7 +319,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "بعد ZC45-Einde تسري الحدود القانونية العادية. على طريق سكني بلجيكي عادي ذلك 50 كم/ساعة ما لم تشر علامة أخرى إلى حد مختلف."
+        "explanation": "نهاية منطقة محددة السرعة لا تحدد سرعة موحدة لكل بلجيكا. يعتمد الحد الصحيح على الإقليم والعلامات الموجودة."
       }
     }
   },
@@ -331,10 +331,10 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U rijdt net voorbij ZC45-Einde. Is een apart bord nodig om u te machtigen om de normale snelheid opnieuw aan te houden?",
+        "question": "U rijdt net voorbij het eindbord. Is een apart bord nodig om de zonelimiet op te heffen?",
         "choices": [
           {
-            "text": "Neen, ZC45-Einde heft de zonelimiet onmiddellijk op zonder bijkomend bord",
+            "text": "Neen, het eindbord heft de zonelimiet onmiddellijk op zonder bijkomend bord",
             "is_correct": true
           },
           {
@@ -346,13 +346,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "ZC45-Einde is een eindbord. Het volstaat om de zone te verlaten; er is geen apart toestemmingsbord nodig."
+        "explanation": "Het bord is een eindbord. Het volstaat om de zone te verlaten; er is geen apart toestemmingsbord nodig."
       },
       "EN": {
-        "question": "You have just passed ZC45-Einde. Is a separate sign needed to authorise you to resume normal speed?",
+        "question": "You have just passed the end sign. Is a separate sign needed to lift the zone limit?",
         "choices": [
           {
-            "text": "No, ZC45-Einde lifts the zone limit immediately without any additional sign",
+            "text": "No, the end sign lifts the zone limit immediately without any additional sign",
             "is_correct": true
           },
           {
@@ -364,13 +364,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "ZC45-Einde is an end sign. Leaving the zone is sufficient; no separate permission sign is needed."
+        "explanation": "The sign is an end sign. Leaving the zone is sufficient; no separate permission sign is needed."
       },
       "FR": {
-        "question": "Vous venez de passer ZC45-Einde. Un panneau séparé est-il nécessaire pour vous autoriser à reprendre la vitesse normale?",
+        "question": "Vous venez de passer le panneau de fin. Un panneau séparé est-il nécessaire pour lever la limite de zone?",
         "choices": [
           {
-            "text": "Non, ZC45-Einde lève immédiatement la limite de zone sans panneau supplémentaire",
+            "text": "Non, le panneau de fin lève immédiatement la limite de zone sans panneau supplémentaire",
             "is_correct": true
           },
           {
@@ -382,13 +382,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "ZC45-Einde est un panneau de fin. Quitter la zone suffit; aucun panneau d'autorisation séparé n'est nécessaire."
+        "explanation": "Le panneau est un panneau de fin. Quitter la zone suffit; aucun panneau d'autorisation séparé n'est nécessaire."
       },
       "AR": {
-        "question": "مررت للتو بعلامة ZC45-Einde. هل تحتاج إلى علامة منفصلة للعودة إلى السرعة العادية؟",
+        "question": "مررت للتو بعلامة النهاية. هل تحتاج إلى علامة منفصلة لرفع حد المنطقة؟",
         "choices": [
           {
-            "text": "لا، ZC45-Einde ترفع حد سرعة المنطقة فوراً دون علامة إضافية",
+            "text": "لا، علامة النهاية ترفع حد سرعة المنطقة فوراً دون علامة إضافية",
             "is_correct": true
           },
           {
@@ -400,7 +400,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "ZC45-Einde هي علامة نهاية. مغادرة المنطقة كافية؛ لا حاجة لعلامة تصريح منفصلة."
+        "explanation": "هذه علامة نهاية. مغادرة المنطقة كافية؛ لا حاجة لعلامة تصريح منفصلة."
       }
     }
   },
@@ -412,10 +412,10 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Na ZC45-Einde staat er geen nieuw snelheidsbord. Welke snelheid geldt er op de bebouwde weg die volgt?",
+        "question": "Na het eindbord rijdt u in het Brussels Hoofdstedelijk Gewest en er staat geen nieuw snelheidsbord. Welke snelheid houdt u aan?",
         "choices": [
           {
-            "text": "De wettelijke standaardsnelheid voor bebouwde kom (50 km/u in België)",
+            "text": "30 km/u, tenzij een bord op die weg een andere snelheid aangeeft",
             "is_correct": true
           },
           {
@@ -423,17 +423,17 @@
             "is_correct": false
           },
           {
-            "text": "Er is geen snelheidslimiet totdat een nieuw bord verschijnt",
+            "text": "50 km/u, want dat geldt automatisch na elk eindbord binnen een bebouwde kom",
             "is_correct": false
           }
         ],
-        "explanation": "Na ZC45-Einde hervatten de standaard wettelijke snelheden. In België is dat 50 km/u in bebouwde kom tenzij anders aangegeven."
+        "explanation": "In het Brussels Hoofdstedelijk Gewest is 30 km/u de algemene regel, behalve op assen waar een bord een hogere snelheid aangeeft."
       },
       "EN": {
-        "question": "After ZC45-Einde there is no new speed sign. What speed applies on the built-up road that follows?",
+        "question": "After the end sign you are in the Brussels-Capital Region and there is no new speed sign. What speed do you keep?",
         "choices": [
           {
-            "text": "The legal default speed for a built-up area (50 km/h in Belgium)",
+            "text": "30 km/h, unless a sign on that road indicates another speed",
             "is_correct": true
           },
           {
@@ -441,17 +441,17 @@
             "is_correct": false
           },
           {
-            "text": "There is no speed limit until a new sign appears",
+            "text": "50 km/h, because that automatically applies after every end sign in a built-up area",
             "is_correct": false
           }
         ],
-        "explanation": "After ZC45-Einde the standard legal speeds resume. In Belgium that is 50 km/h in a built-up area unless otherwise indicated."
+        "explanation": "In the Brussels-Capital Region, 30 km/h is the general rule except on roads where a sign indicates a higher speed."
       },
       "FR": {
-        "question": "Après ZC45-Einde il n'y a pas de nouveau panneau de vitesse. Quelle vitesse s'applique sur la route bâtie qui suit?",
+        "question": "Après le panneau de fin, vous êtes en Région de Bruxelles-Capitale et il n'y a pas de nouveau panneau de vitesse. Quelle vitesse maintenez-vous?",
         "choices": [
           {
-            "text": "La vitesse légale par défaut en agglomération (50 km/h en Belgique)",
+            "text": "30 km/h, sauf si un panneau sur cette route indique une autre vitesse",
             "is_correct": true
           },
           {
@@ -459,17 +459,17 @@
             "is_correct": false
           },
           {
-            "text": "Il n'y a pas de limite de vitesse jusqu'à ce qu'un nouveau panneau apparaisse",
+            "text": "50 km/h, car cette vitesse s'applique automatiquement après chaque panneau de fin en agglomération",
             "is_correct": false
           }
         ],
-        "explanation": "Après ZC45-Einde les vitesses légales standard reprennent. En Belgique c'est 50 km/h en agglomération sauf indication contraire."
+        "explanation": "En Région de Bruxelles-Capitale, 30 km/h est la règle générale sauf sur les axes où un panneau indique une vitesse plus élevée."
       },
       "AR": {
-        "question": "بعد ZC45-Einde لا توجد علامة سرعة جديدة. ما السرعة على الطريق السكني التالي؟",
+        "question": "بعد علامة النهاية أنت في إقليم بروكسل العاصمة ولا توجد علامة سرعة جديدة. ما السرعة التي تحافظ عليها؟",
         "choices": [
           {
-            "text": "السرعة القانونية الافتراضية للمناطق السكنية (50 كم/ساعة في بلجيكا)",
+            "text": "30 كم/ساعة، ما لم تُشر علامة على ذلك الطريق إلى سرعة أخرى",
             "is_correct": true
           },
           {
@@ -477,11 +477,11 @@
             "is_correct": false
           },
           {
-            "text": "لا توجد سرعة قصوى حتى ظهور علامة جديدة",
+            "text": "50 كم/ساعة، لأنها تسري تلقائياً بعد كل علامة نهاية داخل المنطقة المبنية",
             "is_correct": false
           }
         ],
-        "explanation": "بعد ZC45-Einde تعود السرعات القانونية المعيارية. في بلجيكا ذلك 50 كم/ساعة في المناطق السكنية ما لم يُحدد غير ذلك."
+        "explanation": "في إقليم بروكسل العاصمة، 30 كم/ساعة هي القاعدة العامة إلا على الطرق التي تُظهر فيها علامة سرعة أعلى."
       }
     }
   },
@@ -493,10 +493,10 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U hebt ZC45-Einde net gepasseerd. Geldt de 30 km/u van de vorige ZC43-zone nog?",
+        "question": "U hebt het eindbord net gepasseerd. Geldt de 30 km/u van de vorige snelheidszone nog?",
         "choices": [
           {
-            "text": "Neen, ZC45-Einde heft de snelheidsbeperking onmiddellijk op",
+            "text": "Neen, het eindbord heft de snelheidsbeperking van de zone onmiddellijk op",
             "is_correct": true
           },
           {
@@ -504,13 +504,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "ZC45-Einde beëindigt de zone. Zodra u het bord passeert, vervalt de snelheidsbeperking van de zone volledig."
+        "explanation": "Het eindbord beëindigt de zone. Zodra u het bord passeert, vervalt de snelheidsbeperking van de zone."
       },
       "EN": {
-        "question": "You have just passed ZC45-Einde. Does the 30 km/h from the previous ZC43 zone still apply?",
+        "question": "You have just passed the end sign. Does the 30 km/h from the previous speed zone still apply?",
         "choices": [
           {
-            "text": "No, ZC45-Einde immediately lifts the speed restriction",
+            "text": "No, the end sign immediately lifts the speed restriction of the zone",
             "is_correct": true
           },
           {
@@ -518,13 +518,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "ZC45-Einde ends the zone. As soon as you pass the sign the speed restriction of the zone completely lapses."
+        "explanation": "The end sign ends the zone. As soon as you pass the sign the speed restriction of the zone lapses."
       },
       "FR": {
-        "question": "Vous venez de passer ZC45-Einde. La limite de 30 km/h de la zone ZC43 précédente s'applique-t-elle encore?",
+        "question": "Vous venez de passer le panneau de fin. La limite de 30 km/h de la zone de vitesse précédente s'applique-t-elle encore?",
         "choices": [
           {
-            "text": "Non, ZC45-Einde lève immédiatement la restriction de vitesse",
+            "text": "Non, le panneau de fin lève immédiatement la restriction de vitesse de la zone",
             "is_correct": true
           },
           {
@@ -532,13 +532,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "ZC45-Einde met fin à la zone. Dès que vous passez le panneau la restriction de vitesse de la zone prend fin complètement."
+        "explanation": "Le panneau de fin met fin à la zone. Dès que vous passez le panneau, la restriction de vitesse de la zone prend fin."
       },
       "AR": {
-        "question": "للتو مررت بعلامة ZC45-Einde. هل لا يزال حد 30 كم/ساعة من منطقة ZC43 السابقة سارياً؟",
+        "question": "مررت للتو بعلامة النهاية. هل لا يزال حد 30 كم/ساعة من منطقة السرعة السابقة سارياً؟",
         "choices": [
           {
-            "text": "لا، ZC45-Einde ترفع قيد السرعة فوراً",
+            "text": "لا، علامة النهاية ترفع قيد سرعة المنطقة فوراً",
             "is_correct": true
           },
           {
@@ -546,7 +546,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "ZC45-Einde تنهي المنطقة. بمجرد اجتيازك العلامة ينتهي قيد سرعة المنطقة بالكامل."
+        "explanation": "علامة النهاية تنهي المنطقة. بمجرد اجتيازك العلامة ينتهي قيد سرعة المنطقة."
       }
     }
   },
@@ -558,7 +558,7 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U rijdt net voorbij ZC45-Einde. Moet u stoppen voordat u mag versnellen?",
+        "question": "U rijdt net voorbij het eindbord. Moet u stoppen voordat u uw snelheid mag aanpassen?",
         "choices": [
           {
             "text": "Neen, er is geen stopverplichting; u past uw snelheid aan zodra de zone eindigt",
@@ -569,10 +569,10 @@
             "is_correct": false
           }
         ],
-        "explanation": "ZC45-Einde legt geen stopverplichting op. U mag uw snelheid aanpassen zodra u de zone verlaat, overeenkomstig de nieuwe geldende regels."
+        "explanation": "Het eindbord legt geen stopverplichting op. U mag uw snelheid aanpassen zodra u de zone verlaat, overeenkomstig de nieuwe geldende regels."
       },
       "EN": {
-        "question": "You have just driven past ZC45-Einde. Must you stop before you may accelerate?",
+        "question": "You have just driven past the end sign. Must you stop before adjusting your speed?",
         "choices": [
           {
             "text": "No, there is no obligation to stop; you adjust your speed as the zone ends",
@@ -583,10 +583,10 @@
             "is_correct": false
           }
         ],
-        "explanation": "ZC45-Einde imposes no obligation to stop. You may adjust your speed as soon as you leave the zone, in accordance with the new applicable rules."
+        "explanation": "The end sign imposes no obligation to stop. You may adjust your speed as soon as you leave the zone, in accordance with the new applicable rules."
       },
       "FR": {
-        "question": "Vous venez de passer ZC45-Einde. Devez-vous vous arrêter avant de pouvoir accélérer?",
+        "question": "Vous venez de passer le panneau de fin. Devez-vous vous arrêter avant d'adapter votre vitesse?",
         "choices": [
           {
             "text": "Non, il n'y a pas d'obligation de s'arrêter; vous adaptez votre vitesse dès que la zone se termine",
@@ -597,10 +597,10 @@
             "is_correct": false
           }
         ],
-        "explanation": "ZC45-Einde n'impose pas d'obligation de s'arrêter. Vous pouvez adapter votre vitesse dès que vous quittez la zone conformément aux nouvelles règles applicables."
+        "explanation": "Le panneau de fin n'impose pas d'obligation de s'arrêter. Vous pouvez adapter votre vitesse dès que vous quittez la zone conformément aux nouvelles règles applicables."
       },
       "AR": {
-        "question": "للتو مررت بعلامة ZC45-Einde. هل يجب التوقف قبل التسارع؟",
+        "question": "مررت للتو بعلامة النهاية. هل يجب التوقف قبل تعديل سرعتك؟",
         "choices": [
           {
             "text": "لا، لا يوجد التزام بالتوقف؛ تضبط سرعتك فور انتهاء المنطقة",
@@ -611,7 +611,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "ZC45-Einde لا تفرض التوقف. يمكنك تعديل سرعتك فور مغادرة المنطقة وفقاً للقواعد الجديدة السارية."
+        "explanation": "علامة النهاية لا تفرض التوقف. يمكنك تعديل سرعتك فور مغادرة المنطقة وفقاً للقواعد الجديدة السارية."
       }
     }
   }

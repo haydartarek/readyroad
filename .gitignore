@@ -1,5 +1,8 @@
-﻿# Environment
+# Environment and local secrets
 .env
+.env.*
+!.env.example
+$null
 
 # Logs
 logs/
@@ -16,23 +19,19 @@ node_modules/
 # IDE
 .idea/
 *.iml
+.vscode/
 
-# Text files
-*.txt
-
-# Windows reserved / junk
-nul
-*.null
-
-# Scripts
-*.ps1
-*.py
-
-# Backup files
+# Backup and temporary files
 *.bak
 *.backup
+*.backup-*
 *.old
+*.orig
 *.tmp
+*.temp
+*.save
+*.rej
+*~
 
 # OS files
 .DS_Store

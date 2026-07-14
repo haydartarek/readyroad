@@ -6,20 +6,39 @@
   "i18n": {
     "NL": {
       "name": "Einde van een bebouwde kom",
-      "description": "Dit bord geeft aan dat je de bebouwde kom verlaat. Vanaf hier gelden de verkeersregels voor buiten de bebouwde kom, zoals een maximumsnelheid van 70 of 90 km/u, afhankelijk van de weg en andere aanwijzingen."
+      "summary": "Dit bord markeert het einde van een bebouwde kom. Vanaf deze grens gelden de regionale snelheidsregels voor de weg die volgt en de aanwezige verkeersborden.",
+      "description": "Dit bord markeert het einde van een bebouwde kom. Vanaf deze grens gelden de snelheidsregels van het gewest en het type weg dat volgt, samen met de aanwezige verkeersborden. Verhoog uw snelheid niet automatisch maar pas ze aan de weg, het verkeer en het zicht aan.",
+      "driver_guidance": "Versnel niet automatisch. Bepaal de geldende limiet aan de hand van het gewest, het wegtype en de aanwezige verkeersborden, en blijf uw snelheid aanpassen aan de weg, het verkeer en het zicht.",
+      "exceptions": [
+        "Dit bord beëindigt de bebouwde kom maar legt zelf geen vaste snelheid buiten de bebouwde kom op; volg de gewestelijke regel, het wegtype en de aanwezige snelheidsborden."
+      ]
     },
     "EN": {
-      "name": "End of built-up area",
-      "description": "This sign indicates that you are leaving the built-up area (residential zone). From this point, rules for outside built-up areas apply, with maximum speeds typically of 70 or 90 km/h, depending on road conditions and other signs."
+      "name": "End of a built-up area",
+      "summary": "This sign marks the end of a built-up area. From this boundary, the regional speed rules for the road ahead and the posted traffic signs apply.",
+      "description": "This sign marks the end of a built-up area. From this boundary, the speed rules for the region and the type of road ahead apply together with posted traffic signs. Do not accelerate automatically; adapt your speed to the road, traffic and visibility.",
+      "driver_guidance": "Do not accelerate automatically. Determine the applicable limit from the region, road type and posted signs, and keep adapting your speed to the road, traffic and visibility.",
+      "exceptions": [
+        "This sign ends the built-up area but does not itself impose one fixed speed beyond it; follow the regional rule, road type and posted speed signs."
+      ]
     },
     "FR": {
       "name": "Fin d'une agglomération",
-      "description": "Ce panneau indique que vous quittez l'agglomération (zone résidentielle). À partir de ce point, les règles hors agglomération s'appliquent, avec des vitesses maximales généralement de 70 ou 90 km/h, selon les conditions et la signalisation."
+      "summary": "Ce panneau marque la fin d'une agglomération. À partir de cette limite, les règles régionales de vitesse pour la route qui suit et les panneaux présents s'appliquent.",
+      "description": "Ce panneau marque la fin d'une agglomération. À partir de cette limite, les règles de vitesse propres à la région et au type de route qui suit s'appliquent avec les panneaux présents. N'accélérez pas automatiquement; adaptez votre vitesse à la route, au trafic et à la visibilité.",
+      "driver_guidance": "N'accélérez pas automatiquement. Déterminez la limite applicable selon la région, le type de route et les panneaux présents, puis continuez à adapter votre vitesse à la route, au trafic et à la visibilité.",
+      "exceptions": [
+        "Ce panneau met fin à l’agglomération mais n’impose pas à lui seul une vitesse fixe au-delà ; respectez la règle régionale, le type de route et les limitations signalées."
+      ]
     },
     "AR": {
-      "name": "علامة انتهاء المدينة",
-      "description": "تشير هذه العلامة إلى خروجك من المنطقة السكنية. ومن هذه النقطة، تُطبق قواعد السير خارج المنطقة السكنية، بسرعات قصوى تبلغ عادةً 70 أو 90 كم/ساعة، وفقًا لظروف الطريق والعلامات الأخرى."
+      "name": "نهاية منطقة مبنية",
+      "summary": "تحدد هذه العلامة نهاية منطقة مبنية. من هذا الحد تسري قواعد السرعة الإقليمية للطريق التالي واللوحات المرورية الموجودة.",
+      "description": "تحدد هذه العلامة نهاية منطقة مبنية. من هذا الحد تسري قواعد السرعة الخاصة بالإقليم ونوع الطريق التالي إلى جانب اللوحات الموجودة. لا ترفع سرعتك تلقائيًا، بل اضبطها وفق الطريق وحركة المرور ومدى الرؤية.",
+      "driver_guidance": "لا ترفع سرعتك تلقائياً. حدّد السرعة المطبقة وفق الإقليم ونوع الطريق والعلامات الموجودة، واستمر في تكييف سرعتك مع الطريق وحركة المرور ومدى الرؤية.",
+      "exceptions": [
+        "تنهي هذه العلامة التجمع السكني لكنها لا تفرض بذاتها سرعة ثابتة بعده؛ اتبع القاعدة الإقليمية ونوع الطريق وعلامات السرعة الموجودة."
+      ]
     }
   }
 }
-

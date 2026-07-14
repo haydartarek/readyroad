@@ -1,6 +1,7 @@
 package com.readyroad.readyroadbackend.controller;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.Mockito.verifyNoInteractions;
 import static org.mockito.Mockito.when;
 
 import com.readyroad.readyroadbackend.domain.entity.ImportHistory;
@@ -17,6 +18,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.http.HttpStatus;
+import org.springframework.mock.web.MockMultipartFile;
 
 @ExtendWith(MockitoExtension.class)
 class DataImportControllerTest {
@@ -39,8 +41,8 @@ class DataImportControllerTest {
         history.setId(3L);
         history.setPerformedBy("admin");
         history.setPerformedAt(LocalDateTime.of(2026, 5, 11, 20, 30));
-        history.setImportType("signs");
-        history.setFileName("signs.json");
+        history.setImportType("categories");
+        history.setFileName("category_descriptions.json");
         history.setFileChecksum("secret-checksum");
         history.setDryRun(true);
         history.setCreatedCount(1);
@@ -58,8 +60,8 @@ class DataImportControllerTest {
                 3L,
                 "admin",
                 LocalDateTime.of(2026, 5, 11, 20, 30),
-                "signs",
-                "signs.json",
+                "categories",
+                "category_descriptions.json",
                 true,
                 1,
                 2,
@@ -83,5 +85,15 @@ class DataImportControllerTest {
                 .containsEntry("error", "Resource not found.")
                 .containsEntry("message", "Resource not found.")
                 .containsKey("timestamp");
+    }
+
+    @Test
+    void legacySignsUploadTypeIsRejected() {
+        MockMultipartFile file = new MockMultipartFile(
+                "file", "legacy.json", "application/json", "[]".getBytes());
+        var response = dataImportController.preview("signs", file, null);
+
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.BAD_REQUEST);
+        verifyNoInteractions(dataImportService);
     }
 }

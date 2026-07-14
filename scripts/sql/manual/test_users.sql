@@ -17,8 +17,8 @@
 --   older legacy learner-role wording.
 --
 -- BCrypt hashes below were generated at cost-factor 10.
--- To regenerate: use PasswordHashGenerator.java or
---   echo -n "Test123!@#" | htpasswd -nbBC 10 "" | tail -c +3
+-- Regenerate them only with a trusted BCrypt implementation and keep
+-- these credentials restricted to disposable development/QA databases.
 -- ====================================================================
 
 USE readyroad_prod;

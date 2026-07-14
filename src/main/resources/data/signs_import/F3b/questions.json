@@ -7,76 +7,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat betekent bord F3b 'Einde van een bebouwde kom'?",
+        "question": "Wat betekent dit bord?",
+        "explanation": "Dit bord markeert het einde van een bebouwde kom. Vanaf deze grens gelden de regionale snelheidsregels voor de weg die volgt en de aanwezige verkeersborden.",
         "choices": [
           {
-            "text": "U verlaat de bebouwde kom; de stedelijke verkeersregels gelden niet meer en de maximumsnelheid wordt 90 km/u op gewone wegen",
+            "text": "Je verlaat de bebouwde kom; de regels voor de volgende weg en het gewest gelden",
             "is_correct": true
           },
           {
-            "text": "U rijdt een nieuwe bebouwde kom in met dezelfde verkeersregels",
+            "text": "Je rijdt een nieuwe bebouwde kom binnen met dezelfde regels",
             "is_correct": false
           },
           {
-            "text": "U moet stoppen en voorrang verlenen aan verkeer van rechts",
+            "text": "Je moet hier stoppen en voorrang geven aan verkeer van rechts",
             "is_correct": false
           }
-        ],
-        "explanation": "F3b markeert het einde van een bebouwde kom. Voorbij dit bord gelden de stedelijke verkeersregels niet meer en geldt op gewone wegen 90 km/u tenzij anders aangegeven."
+        ]
       },
       "EN": {
-        "question": "What does sign F3b 'End of built-up area' mean?",
+        "question": "What does this sign mean?",
+        "explanation": "This sign marks the end of a built-up area. From this boundary, the regional speed rules for the road ahead and the posted traffic signs apply.",
         "choices": [
           {
-            "text": "You are leaving the built-up area; urban traffic rules no longer apply and the speed limit becomes 90 km/h on ordinary roads",
+            "text": "You are leaving the built-up area; the rules for the road ahead and the region apply",
             "is_correct": true
           },
           {
-            "text": "You are entering a new built-up area with the same traffic rules",
+            "text": "You are entering a new built-up area with the same rules",
             "is_correct": false
           },
           {
-            "text": "You must stop and give way to traffic from the right",
+            "text": "You must stop here and give way to traffic from the right",
             "is_correct": false
           }
-        ],
-        "explanation": "F3b marks the end of a built-up area. Beyond this sign urban traffic rules no longer apply and the limit on ordinary roads is 90 km/h unless otherwise indicated."
+        ]
       },
       "FR": {
-        "question": "Que signifie le panneau F3b 'Fin d agglomeration' ?",
+        "question": "Que signifie ce panneau ?",
+        "explanation": "Ce panneau marque la fin d'une agglomération. À partir de cette limite, les règles régionales de vitesse pour la route qui suit et les panneaux présents s'appliquent.",
         "choices": [
           {
-            "text": "Vous quittez l agglomeration; les regles urbaines ne s appliquent plus et la vitesse passe a 90 km/h sur les routes ordinaires",
+            "text": "Vous quittez l'agglomération; les règles de la route qui suit et de la région s'appliquent",
             "is_correct": true
           },
           {
-            "text": "Vous entrez dans une nouvelle agglomeration avec les memes regles",
+            "text": "Vous entrez dans une nouvelle agglomération avec les mêmes règles",
             "is_correct": false
           },
           {
-            "text": "Vous devez vous arreter et ceder le passage au trafic venant de droite",
+            "text": "Vous devez vous arrêter ici et céder le passage à la circulation venant de droite",
             "is_correct": false
           }
-        ],
-        "explanation": "F3b marque la fin d une agglomeration. Au-dela de ce panneau les regles urbaines ne s appliquent plus et la vitesse sur les routes ordinaires est de 90 km/h sauf indication contraire."
+        ]
       },
       "AR": {
-        "question": "ما معنى هذه العلامة المرورية؟",
+        "question": "ما معنى هذه العلامة؟",
+        "explanation": "تحدد هذه العلامة نهاية منطقة مبنية. من هذا الحد تسري قواعد السرعة الإقليمية للطريق التالي واللوحات المرورية الموجودة.",
         "choices": [
           {
-            "text": "أنت مغادر المنطقة المبنية؛ لم تعد القواعد الحضرية سارية ويصبح الحد الأقصى 90 كم/س على الطرق العادية",
+            "text": "أنت تغادر المنطقة المبنية؛ تسري قواعد الطريق التالي والإقليم",
             "is_correct": true
           },
           {
-            "text": "أنت داخل منطقة مبنية جديدة بنفس القواعد",
+            "text": "أنت تدخل منطقة مبنية جديدة بالقواعد نفسها",
             "is_correct": false
           },
           {
-            "text": "يجب أن تتوقف وتتنازل عن الأولوية للمركبات القادمة من اليمين",
+            "text": "يجب أن تتوقف هنا وتعطي الأولوية للمركبات القادمة من اليمين",
             "is_correct": false
           }
-        ],
-        "explanation": "تحدد F3b نهاية المنطقة المبنية. بعد هذه العلامة المرورية لا تسري القواعد الحضرية ويصبح الحد 90 كم/س على الطرق العادية ما لم يُشر إلى خلاف ذلك."
+        ]
       }
     }
   },
@@ -88,70 +88,43 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Tot welke categorie behoort bord F3b?",
+        "question": "Welk bord is het tegenovergestelde van dit bord?",
+        "explanation": "F1b en F3b werken als een koppel: F1b zegt 'je komt binnen', F3b zegt 'je gaat weer buiten'.",
         "choices": [
-          {
-            "text": "Informatief bord: geeft informatie over wegsituaties en geldende regels",
-            "is_correct": true
-          },
-          {
-            "text": "Verbodsbord: verbiedt een bepaalde actie of rijrichting",
-            "is_correct": false
-          },
-          {
-            "text": "Waarschuwingsbord: waarschuwt voor gevaar op de weg",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Borden zijn informatieve borden. Ze geven aan welke regels of infrastructuur van toepassing zijn, zoals grenzen van bebouwde kommen."
+          { "text": "F1b: begin van de bebouwde kom", "is_correct": true },
+          { "text": "F5: autosnelweg", "is_correct": false },
+          { "text": "F45: doodlopende weg", "is_correct": false }
+        ]
       },
       "EN": {
-        "question": "Which category does sign F3b belong to?",
+        "question": "Which sign is the opposite of this sign?",
+        "explanation": "F1b and F3b work as a pair: F1b says 'you're entering', F3b says 'you're leaving again'.",
         "choices": [
-          {
-            "text": "Information sign: provides information about road situations and applicable rules",
-            "is_correct": true
-          },
-          {
-            "text": "Prohibition sign: prohibits a specific action or direction of travel",
-            "is_correct": false
-          },
-          {
-            "text": "Warning sign: warns of a hazard on the road",
-            "is_correct": false
-          }
-        ],
-        "explanation": "information signs are information signs. They indicate which rules or infrastructure apply, such as the boundaries of built-up areas."
+          { "text": "F1b: start of the built-up area", "is_correct": true },
+          { "text": "F5: motorway", "is_correct": false },
+          { "text": "F45: dead-end road", "is_correct": false }
+        ]
       },
       "FR": {
-        "question": "A quelle categorie appartient le panneau F3b ?",
+        "question": "Quel panneau est l'opposé de ce panneau ?",
+        "explanation": "F1b et F3b fonctionnent comme une paire : F1b dit 'vous entrez', F3b dit 'vous ressortez'.",
         "choices": [
           {
-            "text": "Panneau d information: fournit des informations sur les situations routieres et les regles applicables",
+            "text": "F1b : début de l'agglomération",
             "is_correct": true
           },
-          {
-            "text": "Panneau d interdiction: interdit une action ou une direction specifique",
-            "is_correct": false
-          },
-          {
-            "text": "Panneau d avertissement: avertit d un danger sur la route",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Les panneaux sont des panneaux d information. Ils indiquent quelles regles ou infrastructures s appliquent comme les limites d agglomerations."
+          { "text": "F5 : autoroute", "is_correct": false },
+          { "text": "F45 : voie sans issue", "is_correct": false }
+        ]
       },
       "AR": {
-        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
+        "question": "أي علامة هي عكس هذه العلامة؟",
+        "explanation": "تعمل F1b وF3b كزوج: F1b تقول 'أنت تدخل' وF3b تقول 'أنت تخرج مجدداً'.",
         "choices": [
-          { "text": "العلامات الإرشادية", "is_correct": true },
-          { "text": "علامات الحظر", "is_correct": false },
-          {
-            "text": "علامة مرورية تحذير: تحذر من خطر على الطريق",
-            "is_correct": false
-          }
-        ],
-        "explanation": "علامات هذه الفئة هي علامات إعلامية. تشير إلى القواعد أو البنية التحتية المطبقة مثل حدود المناطق المبنية."
+          { "text": "F1b: بداية المنطقة المبنية", "is_correct": true },
+          { "text": "F5: الطريق السريع", "is_correct": false },
+          { "text": "F45: طريق مسدود", "is_correct": false }
+        ]
       }
     }
   },
@@ -163,76 +136,70 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Welk gevaar moet u in acht nemen vlak na bord F3b?",
+        "question": "Waar moet je op letten net na dit bord?",
+        "explanation": "Ook net buiten de bebouwde kom kunnen fietsers of voetgangers nog op de weg zijn. Verhoog uw snelheid daarom niet automatisch en blijf alert.",
         "choices": [
           {
-            "text": "Fietsers en voetgangers kunnen de rijbaan nog kruisen; verhoog uw snelheid geleidelijk en blijf alert",
+            "text": "Fietsers en voetgangers kunnen nog op de weg zijn; pas uw snelheid aan",
             "is_correct": true
           },
           {
-            "text": "Er is geen gevaar; buiten de bebouwde kom rijdt iedereen automatisch veiliger",
+            "text": "Er is geen enkel gevaar meer zodra je dit bord passeert",
             "is_correct": false
           },
           {
-            "text": "U moet direct stoppen om uw spiegels en banden te controleren",
+            "text": "Je moet stoppen om je banden te controleren",
             "is_correct": false
           }
-        ],
-        "explanation": "Ook voorbij het einde van een bebouwde kom kunnen er kwetsbare weggebruikers zijn. Verhoog uw snelheid geleidelijk en blijf alert op fietsers en voetgangers."
+        ]
       },
       "EN": {
-        "question": "What hazard must you consider just after sign F3b?",
+        "question": "What should you watch out for right after this sign?",
+        "explanation": "Even just outside the built-up area, cyclists or pedestrians may still be on the road. Do not accelerate automatically and remain alert.",
         "choices": [
           {
-            "text": "Cyclists and pedestrians may still cross the road; increase your speed gradually and remain alert",
+            "text": "Cyclists and pedestrians may still be on the road; adapt your speed",
             "is_correct": true
           },
           {
-            "text": "There is no hazard; outside built-up areas everyone automatically drives more safely",
+            "text": "There is no more danger at all once you pass this sign",
             "is_correct": false
           },
-          {
-            "text": "You must stop immediately to check your mirrors and tyres",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Even just beyond the end of a built-up area there may be vulnerable road users. Increase speed gradually and stay alert for cyclists and pedestrians."
+          { "text": "You must stop to check your tyres", "is_correct": false }
+        ]
       },
       "FR": {
-        "question": "Quel danger devez-vous prendre en compte juste apres le panneau F3b ?",
+        "question": "À quoi devez-vous faire attention juste après ce panneau ?",
+        "explanation": "Même juste après l'agglomération, des cyclistes ou des piétons peuvent encore se trouver sur la route. N'accélérez pas automatiquement et restez vigilant.",
         "choices": [
           {
-            "text": "Des cyclistes et pietons peuvent encore traverser; augmentez votre vitesse progressivement et restez vigilant",
+            "text": "Des cyclistes et des piétons peuvent encore être sur la route; adaptez votre vitesse",
             "is_correct": true
           },
           {
-            "text": "Il n y a pas de danger; hors agglomeration tout le monde roule automatiquement plus en securite",
+            "text": "Il n'y a plus aucun danger dès que vous passez ce panneau",
             "is_correct": false
           },
           {
-            "text": "Vous devez vous arreter immediatement pour controler vos retroviseurs et pneus",
+            "text": "Vous devez vous arrêter pour vérifier vos pneus",
             "is_correct": false
           }
-        ],
-        "explanation": "Meme juste apres la fin d une agglomeration il peut y avoir des usagers vulnerables. Augmentez la vitesse progressivement et restez attentif aux cyclistes et pietons."
+        ]
       },
       "AR": {
-        "question": "ما هو الخطر الذي تشير إليه هذه العلامة المرورية؟",
+        "question": "على ماذا يجب أن تنتبه فور تجاوز هذه العلامة؟",
+        "explanation": "حتى بعد خروجك بقليل من المنطقة المبنية قد يظل راكبو الدراجات أو المشاة على الطريق. لذلك لا ترفع سرعتك تلقائيًا وابق يقظًا.",
         "choices": [
           {
-            "text": "قد يعبر الدراجون والمشاة الطريق بعد العلامة المرورية؛ ارفع سرعتك تدريجياً وابق يقظاً",
+            "text": "قد يظل راكبو الدراجات والمشاة على الطريق؛ اضبط سرعتك",
             "is_correct": true
           },
           {
-            "text": "لا يوجد خطر؛ خارج المنطقة السكنية يقود الجميع بأمان تلقائياً",
+            "text": "لا يوجد أي خطر بعد الآن بمجرد تجاوز هذه العلامة",
             "is_correct": false
           },
-          {
-            "text": "يجب أن تتوقف فوراً للتحقق من المرايا والإطارات",
-            "is_correct": false
-          }
-        ],
-        "explanation": "حتى بعد نهاية المنطقة المبنية قد يكون هناك مستخدمو طريق ضعفاء. ارفع سرعتك تدريجياً وابق يقظاً للدراجين والمشاة."
+          { "text": "يجب أن تتوقف للتحقق من الإطارات", "is_correct": false }
+        ]
       }
     }
   },
@@ -244,76 +211,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U passeert bord F3b op een gewone weg en er staat geen ander snelheidsbord. Wat is de maximumsnelheid?",
+        "question": "Je passeert dit bord in Vlaanderen op een gewone weg en er staat geen verkeersbord C43. Welke maximumsnelheid geldt?",
+        "explanation": "In Vlaanderen geldt op een gewone weg buiten de bebouwde kom in dit scenario 70 km/u, tenzij een verkeersbord C43 een andere limiet oplegt of toestaat.",
         "choices": [
           {
-            "text": "90 km/u, want dat is de wettelijke standaardsnelheid op gewone wegen buiten de bebouwde kom in Belgie",
+            "text": "70 km/u, de Vlaamse algemene limiet in dit scenario",
             "is_correct": true
           },
           {
-            "text": "50 km/u, want de bebouwde-kom-limiet blijft van kracht tot een expliciet snelheidsbord",
+            "text": "90 km/u, want dat geldt automatisch overal buiten de bebouwde kom",
             "is_correct": false
           },
           {
-            "text": "120 km/u, want buiten de bebouwde kom geldt de snelwegsnelheid",
+            "text": "120 km/u, want buiten de bebouwde kom geldt altijd de snelwegsnelheid",
             "is_correct": false
           }
-        ],
-        "explanation": "Op gewone wegen buiten de bebouwde kom geldt in Belgie een standaard maximumsnelheid van 90 km/u, tenzij een bord anders aangeeft."
+        ]
       },
       "EN": {
-        "question": "You pass sign F3b on an ordinary road and there is no other speed sign. What is the maximum speed?",
+        "question": "You pass this sign in Flanders on an ordinary road and there is no C43 speed sign. What maximum speed applies?",
+        "explanation": "In Flanders, the limit on an ordinary road outside a built-up area in this scenario is 70 km/h unless a C43 sign imposes or permits another limit.",
         "choices": [
           {
-            "text": "90 km/h, because that is the legal default speed on ordinary roads outside built-up areas in Belgium",
+            "text": "70 km/h, the general Flemish limit in this scenario",
             "is_correct": true
           },
           {
-            "text": "50 km/h, because the built-up area limit stays in force until an explicit speed sign",
+            "text": "90 km/h, because that applies automatically everywhere outside a built-up area",
             "is_correct": false
           },
           {
-            "text": "120 km/h, because outside built-up areas the motorway speed applies",
+            "text": "120 km/h, because motorway speed always applies outside a built-up area",
             "is_correct": false
           }
-        ],
-        "explanation": "On ordinary roads outside built-up areas in Belgium the default maximum speed is 90 km/h unless a sign indicates otherwise."
+        ]
       },
       "FR": {
-        "question": "Vous depassez le panneau F3b sur une route ordinaire et il n y a pas d autre panneau de vitesse. Quelle est la vitesse maximale ?",
+        "question": "Vous passez ce panneau en Flandre sur une route ordinaire sans panneau C43. Quelle vitesse maximale s'applique ?",
+        "explanation": "En Flandre, la limite est de 70 km/h sur une route ordinaire hors agglomération dans ce scénario, sauf si un panneau C43 impose ou autorise une autre limite.",
         "choices": [
           {
-            "text": "90 km/h, car c est la vitesse legale par defaut sur les routes ordinaires hors agglomeration en Belgique",
+            "text": "70 km/h, la limite générale flamande dans ce scénario",
             "is_correct": true
           },
           {
-            "text": "50 km/h, car la limite d agglomeration reste en vigueur jusqu a un panneau de vitesse explicite",
+            "text": "90 km/h, car cette vitesse s'applique automatiquement partout hors agglomération",
             "is_correct": false
           },
           {
-            "text": "120 km/h, car hors agglomeration la vitesse autoroute s applique",
+            "text": "120 km/h, car la vitesse autoroutière s'applique toujours hors agglomération",
             "is_correct": false
           }
-        ],
-        "explanation": "Sur les routes ordinaires hors agglomeration en Belgique la vitesse maximale par defaut est de 90 km/h sauf indication contraire d un panneau."
+        ]
       },
       "AR": {
-        "question": "تجاوزت علامة مرورية F3b على طريق عادي ولا توجد علامة مرورية سرعة أخرى. ما الحد الأقصى للسرعة؟",
+        "question": "تجاوزت هذه العلامة في فلاندرز على طريق عادي ولا توجد لوحة C43. ما السرعة القصوى السارية؟",
+        "explanation": "في فلاندرز يكون الحد في هذا السيناريو على طريق عادي خارج المنطقة المبنية 70 كم/س، ما لم تفرض أو تسمح لوحة C43 بحد آخر.",
         "choices": [
           {
-            "text": "90 كم/س لأن هذا هو الحد القانوني الافتراضي على الطرق العادية خارج المنطقة السكنية في بلجيكا",
+            "text": "70 كم/س، وهو الحد العام في فلاندرز في هذا السيناريو",
             "is_correct": true
           },
           {
-            "text": "50 كم/س لأن حد المنطقة المبنية يبقى سارياً حتى ظهور علامة مرورية سرعة صريحة",
+            "text": "90 كم/س، لأنها تسري تلقائيًا في كل مكان خارج المنطقة المبنية",
             "is_correct": false
           },
           {
-            "text": "120 كم/س لأن سرعة الطريق السريع تطبق خارج المنطقة السكنية",
+            "text": "120 كم/س، لأن سرعة الطريق السريع تسري دائمًا خارج المنطقة المبنية",
             "is_correct": false
           }
-        ],
-        "explanation": "على الطرق العادية خارج المنطقة السكنية في بلجيكا الحد الأقصى الافتراضي هو 90 كم/س ما لم تشر علامة مرورية إلى خلاف ذلك."
+        ]
       }
     }
   },
@@ -325,157 +292,136 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Na bord F3b ziet u een fietser op de rijbaan. Hoe haalt u in?",
+        "question": "Na dit bord zie je een fietser op de weg. Hoe haal je hem veilig in?",
+        "explanation": "Buiten de bebouwde kom moet een auto of motorfiets bij het voorbijrijden van een fietser minstens 1,5 meter zijdelingse afstand laten.",
         "choices": [
           {
-            "text": "Voorzichtig inhalen met minstens 1 meter zijdelingse afstand; ook buiten de bebouwde kom hebben fietsers recht op de rijbaan",
+            "text": "Rustig inhalen met minstens 1,5 meter zijdelingse afstand",
             "is_correct": true
           },
           {
-            "text": "Toeter om de fietser naar het fietspad te sturen; fietsers zijn op dit soort wegen niet welkom",
+            "text": "Toeteren zodat de fietser plaats maakt op het fietspad",
             "is_correct": false
           },
           {
-            "text": "Direct met maximumsnelheid passeren want u heeft voorrang buiten de bebouwde kom",
+            "text": "Meteen met volle snelheid passeren, je hebt hier voorrang",
             "is_correct": false
           }
-        ],
-        "explanation": "Fietsers zijn toegestaan op gewone wegen buiten de bebouwde kom. U haalt in met minstens 1 meter zijdelingse afstand en alleen als het veilig is."
+        ]
       },
       "EN": {
-        "question": "After sign F3b you see a cyclist on the road. How do you overtake?",
+        "question": "After this sign you see a cyclist on the road. How do you overtake safely?",
+        "explanation": "Outside a built-up area, a car or motorcycle must leave at least 1.5 metres of lateral distance when passing a cyclist.",
         "choices": [
           {
-            "text": "Overtake carefully with at least 1 metre lateral clearance; cyclists are entitled to use the road outside built-up areas too",
+            "text": "Overtake calmly with at least 1.5 metres of lateral distance",
             "is_correct": true
           },
           {
-            "text": "Sound your horn to direct the cyclist to the cycle path; cyclists are not welcome on these roads",
+            "text": "Sound your horn so the cyclist moves onto the cycle path",
             "is_correct": false
           },
           {
-            "text": "Pass immediately at maximum speed because you have priority outside built-up areas",
+            "text": "Pass immediately at full speed, you have priority here",
             "is_correct": false
           }
-        ],
-        "explanation": "Cyclists are permitted on ordinary roads outside built-up areas. Overtake with at least 1 metre clearance and only when safe to do so."
+        ]
       },
       "FR": {
-        "question": "Apres le panneau F3b vous voyez un cycliste sur la route. Comment le depassez-vous ?",
+        "question": "Après ce panneau, vous voyez un cycliste sur la route. Comment le dépassez-vous en toute sécurité ?",
+        "explanation": "Hors agglomération, une voiture ou une moto doit laisser au moins 1,5 mètre de distance latérale en dépassant un cycliste.",
         "choices": [
           {
-            "text": "Depasser avec prudence et au moins 1 metre de distance laterale; les cyclistes ont le droit d utiliser la route hors agglomeration aussi",
+            "text": "Dépasser calmement avec au moins 1,5 mètre de distance latérale",
             "is_correct": true
           },
           {
-            "text": "Klaxonner pour diriger le cycliste vers la piste cyclable; les cyclistes ne sont pas bienvenus sur ces routes",
+            "text": "Klaxonner pour que le cycliste se déplace sur la piste cyclable",
             "is_correct": false
           },
           {
-            "text": "Passer immediatement a vitesse maximale car vous avez la priorite hors agglomeration",
+            "text": "Passer immédiatement à pleine vitesse, vous avez la priorité ici",
             "is_correct": false
           }
-        ],
-        "explanation": "Les cyclistes sont autorises sur les routes ordinaires hors agglomeration. Depassez avec au moins 1 metre de distance et seulement quand c est possible en toute securite."
+        ]
       },
       "AR": {
-        "question": "بعد علامة مرورية F3b ترى دراجاً على الطريق. كيف تتجاوزه؟",
+        "question": "بعد هذه العلامة ترى راكب دراجة على الطريق. كيف تتجاوزه بأمان؟",
+        "explanation": "خارج المنطقة المبنية يجب على السيارة أو الدراجة النارية ترك مسافة جانبية لا تقل عن 1.5 متر عند تجاوز راكب دراجة.",
         "choices": [
           {
-            "text": "تجاوزه بحذر مع مسافة جانبية لا تقل عن متر واحد؛ يحق لراكبي الدراجات استخدام الطريق خارج المنطقة السكنية أيضاً",
+            "text": "تجاوزه بهدوء مع مسافة جانبية لا تقل عن 1.5 متر",
             "is_correct": true
           },
           {
-            "text": "استخدم البوق لتوجيه الدراج إلى مسار الدراجات؛ لا مكان للدراجين على هذه الطرق",
+            "text": "استخدم البوق ليتحرك الراكب إلى مسار الدراجات",
             "is_correct": false
           },
           {
-            "text": "تجاوزه فوراً بالسرعة القصوى لأن لديك الأولوية خارج المنطقة السكنية",
+            "text": "تجاوزه فوراً بأقصى سرعة، لديك الأولوية هنا",
             "is_correct": false
           }
-        ],
-        "explanation": "يُسمح لراكبي الدراجات بالطرق العادية خارج المنطقة السكنية. تجاوزهم بمسافة لا تقل عن متر واحد وفقط عندما يكون ذلك آمناً."
+        ]
       }
     }
   },
   {
     "question_id": "F3b_Q06",
-    "type": "WHAT_MUST_YOU_DO",
+    "type": "WHERE_DOES_IT_APPLY",
     "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U rijdt buiten de bebouwde kom (voorbij bord F3b) bij invallende duisternis. Wat is verplicht qua verlichting?",
+        "question": "Vanaf waar eindigen de regels van de bebouwde kom en gelden de regels voor de weg erbuiten?",
+        "explanation": "F3b kondigt geen vaste nieuwe snelheid aan. Het markeert de grens: vanaf het bord gelden de regionale regels en de borden voor de weg buiten de bebouwde kom.",
         "choices": [
           {
-            "text": "Dimlichten of grootlichten inschakelen; verlichting bij duisternis is verplicht op alle wegen in Belgie",
+            "text": "Vanaf de plaats waar het bord staat, niet ervoor of erna",
             "is_correct": true
           },
-          {
-            "text": "Niets; buiten de bebouwde kom is verlichting niet verplicht door het lage verkeersvolume",
-            "is_correct": false
-          },
-          {
-            "text": "Alleen achterlichten; grootlichten zijn optioneel op buiten-de-kom-wegen",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Bij duisternis of verminderd zicht zijn dimlichten of grootlichten verplicht op alle Belgische wegen, binnen en buiten de bebouwde kom."
+          { "text": "Pas na de volgende kruising", "is_correct": false },
+          { "text": "Al 200 meter voor het bord", "is_correct": false }
+        ]
       },
       "EN": {
-        "question": "You are driving outside the built-up area (past sign F3b) as darkness falls. What lighting is required?",
+        "question": "From where do the built-up-area rules end and the rules for the road outside it begin?",
+        "explanation": "F3b does not announce a fixed new speed. It marks the boundary: from the sign, regional rules and posted signs for the road outside the built-up area apply.",
         "choices": [
           {
-            "text": "Switch on dipped or full headlights; lighting in darkness is compulsory on all roads in Belgium",
+            "text": "From the exact location of the sign, not before or after",
             "is_correct": true
           },
-          {
-            "text": "Nothing; outside built-up areas lighting is not compulsory due to low traffic volume",
-            "is_correct": false
-          },
-          {
-            "text": "Rear lights only; headlights are optional on outside-built-up-area roads",
-            "is_correct": false
-          }
-        ],
-        "explanation": "In darkness or reduced visibility dipped or full headlights are compulsory on all Belgian roads, inside and outside built-up areas."
+          { "text": "Only after the next intersection", "is_correct": false },
+          { "text": "Already 200 metres before the sign", "is_correct": false }
+        ]
       },
       "FR": {
-        "question": "Vous roulez hors agglomeration (apres le panneau F3b) a l approche de la nuit. Quel eclairage est obligatoire ?",
+        "question": "À partir d'où les règles d'agglomération prennent-elles fin et celles de la route extérieure commencent-elles ?",
+        "explanation": "F3b n'annonce pas une nouvelle vitesse fixe. Il marque la limite: à partir du panneau s'appliquent les règles régionales et les panneaux de la route hors agglomération.",
         "choices": [
           {
-            "text": "Allumer les feux de croisement ou les feux de route; l eclairage est obligatoire dans l obscurite sur toutes les routes de Belgique",
+            "text": "À partir de l'emplacement exact du panneau, pas avant ni après",
             "is_correct": true
           },
           {
-            "text": "Rien; hors agglomeration l eclairage n est pas obligatoire en raison du faible volume de circulation",
+            "text": "Seulement après le prochain carrefour",
             "is_correct": false
           },
-          {
-            "text": "Uniquement les feux arriere; les phares sont optionnels sur les routes hors agglomeration",
-            "is_correct": false
-          }
-        ],
-        "explanation": "Dans l obscurite ou par visibilite reduite les feux de croisement ou de route sont obligatoires sur toutes les routes belges en et hors agglomeration."
+          { "text": "Déjà 200 mètres avant le panneau", "is_correct": false }
+        ]
       },
       "AR": {
-        "question": "تقود خارج المنطقة المبنية (بعد علامة مرورية F3b) مع حلول الظلام. ما الإضاءة المطلوبة؟",
+        "question": "من أين تنتهي قواعد المنطقة المبنية وتبدأ قواعد الطريق خارجها؟",
+        "explanation": "لا تعلن F3b سرعة جديدة ثابتة، بل تحدد الحد الذي تبدأ منه القواعد الإقليمية واللوحات الخاصة بالطريق خارج المنطقة المبنية.",
         "choices": [
           {
-            "text": "تشغيل الأضواء الخافتة أو الكاملة؛ الإضاءة في الظلام إلزامية على جميع طرق بلجيكا",
+            "text": "من موقع العلامة نفسه بالضبط، لا قبله ولا بعده",
             "is_correct": true
           },
-          {
-            "text": "لا شيء؛ خارج المنطقة السكنية الإضاءة غير إلزامية بسبب انخفاض حركة المرور",
-            "is_correct": false
-          },
-          {
-            "text": "الأضواء الخلفية فقط؛ المصابيح الأمامية اختيارية على طرق خارج المنطقة السكنية",
-            "is_correct": false
-          }
-        ],
-        "explanation": "في الظلام أو قلة الرؤية تكون الأضواء الخافتة أو الكاملة إلزامية على جميع طرق بلجيكا داخل وخارج المنطقة السكنية."
+          { "text": "فقط بعد التقاطع التالي", "is_correct": false },
+          { "text": "من مسافة 200 متر قبل العلامة", "is_correct": false }
+        ]
       }
     }
   },
@@ -487,60 +433,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U passeert bord F3b op een gewone weg zonder ander snelheidsbord. Is 90 km/u direct toegestaan?",
+        "question": "Je passeert dit bord maar de weg is smal en druk. Mag je meteen versnellen tot de maximaal toegelaten snelheid?",
+        "explanation": "Nee. Een maximumsnelheid is geen streefsnelheid. Je moet uw snelheid altijd aanpassen aan het zicht, de weg, het verkeer en andere omstandigheden.",
         "choices": [
           {
-            "text": "Ja, 90 km/u is de wettelijke standaardsnelheid op gewone wegen buiten de bebouwde kom in Belgie",
+            "text": "Nee, je moet uw snelheid altijd aanpassen aan de weg- en verkeersomstandigheden",
             "is_correct": true
           },
           {
-            "text": "Nee, u moet wachten op een expliciet snelheidsbord alvorens sneller te rijden dan 50 km/u",
+            "text": "Ja, zodra het bord er staat mag je altijd meteen de volledige snelheid rijden",
             "is_correct": false
           }
-        ],
-        "explanation": "Buiten de bebouwde kom geldt op gewone wegen automatisch 90 km/u als maximumsnelheid zonder extra bord."
+        ]
       },
       "EN": {
-        "question": "You pass sign F3b on an ordinary road with no other speed sign. Is 90 km/h immediately allowed?",
+        "question": "You pass this sign but the road is narrow and busy. May you immediately accelerate to the maximum permitted speed?",
+        "explanation": "No. A maximum speed is not a target speed. You must always adapt your speed to visibility, the road, traffic and other conditions.",
         "choices": [
           {
-            "text": "Yes, 90 km/h is the legal default speed on ordinary roads outside built-up areas in Belgium",
+            "text": "No, you must always adapt your speed to road and traffic conditions",
             "is_correct": true
           },
           {
-            "text": "No, you must wait for an explicit speed sign before driving faster than 50 km/h",
+            "text": "Yes, once the sign appears you may always drive at full speed immediately",
             "is_correct": false
           }
-        ],
-        "explanation": "Outside built-up areas on ordinary roads 90 km/h applies automatically as the maximum speed without any additional sign."
+        ]
       },
       "FR": {
-        "question": "Vous depassez le panneau F3b sur une route ordinaire sans autre panneau de vitesse. 90 km/h est-il immediatement autorise ?",
+        "question": "Vous passez ce panneau mais la route est étroite et fréquentée. Pouvez-vous accélérer immédiatement jusqu'à la vitesse maximale autorisée ?",
+        "explanation": "Non. Une vitesse maximale n'est pas une vitesse cible. Vous devez toujours adapter votre vitesse à la visibilité, à la route, au trafic et aux autres circonstances.",
         "choices": [
           {
-            "text": "Oui, 90 km/h est la vitesse legale par defaut sur les routes ordinaires hors agglomeration en Belgique",
+            "text": "Non, vous devez toujours adapter votre vitesse à la route et au trafic",
             "is_correct": true
           },
           {
-            "text": "Non, vous devez attendre un panneau de vitesse explicite avant de rouler a plus de 50 km/h",
+            "text": "Oui, dès que le panneau apparaît, vous pouvez toujours rouler immédiatement à pleine vitesse",
             "is_correct": false
           }
-        ],
-        "explanation": "Hors agglomeration sur les routes ordinaires 90 km/h s applique automatiquement comme vitesse maximale sans panneau supplementaire."
+        ]
       },
       "AR": {
-        "question": "تجاوزت علامة مرورية F3b على طريق عادي دون علامة مرورية سرعة أخرى. هل 90 كم/س مسموح به فوراً؟",
+        "question": "تجاوزت هذه العلامة لكن الطريق ضيق ومزدحم. هل يجوز التسارع فورًا إلى السرعة القصوى المسموح بها؟",
+        "explanation": "لا. السرعة القصوى ليست سرعة مستهدفة، ويجب دائمًا ضبط السرعة وفق الرؤية والطريق وحركة المرور وبقية الظروف.",
         "choices": [
           {
-            "text": "نعم 90 كم/س هو الحد القانوني الافتراضي على الطرق العادية خارج المنطقة السكنية في بلجيكا",
+            "text": "لا، يجب دائمًا ضبط السرعة وفق ظروف الطريق وحركة المرور",
             "is_correct": true
           },
           {
-            "text": "لا يجب الانتظار حتى ظهور علامة مرورية سرعة صريحة قبل القيادة بأكثر من 50 كم/س",
+            "text": "نعم، بمجرد ظهور العلامة يمكنك دائماً القيادة بالسرعة الكاملة فوراً",
             "is_correct": false
           }
-        ],
-        "explanation": "خارج المنطقة السكنية على الطرق العادية يسري تلقائياً 90 كم/س كحد أقصى دون الحاجة إلى علامة مرورية إضافية."
+        ]
       }
     }
   },
@@ -552,60 +498,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Buiten de bebouwde kom (voorbij bord F3b): is het toegestaan een mobiele telefoon in de hand te houden tijdens het rijden?",
+        "question": "Mag je na dit bord onder de maximumsnelheid blijven wanneer de omstandigheden dat vereisen?",
+        "explanation": "Ja. Je mag en moet trager rijden wanneer dat voor de veiligheid nodig is, zolang je het verkeer niet zonder geldige reden abnormaal hindert.",
         "choices": [
           {
-            "text": "Nee, het verbod op handheld telefoongebruik geldt op alle wegen in Belgie, ook buiten de bebouwde kom",
+            "text": "Ja, wanneer dat veilig is en je het verkeer niet zonder reden abnormaal hindert",
             "is_correct": true
           },
           {
-            "text": "Ja, buiten de bebouwde kom gelden minder regels en is het telefoonverbod niet van kracht",
+            "text": "Nee, je moet onmiddellijk de maximaal toegelaten snelheid bereiken",
             "is_correct": false
           }
-        ],
-        "explanation": "Het verbod op het handheld gebruiken van een mobiele telefoon geldt op alle Belgische wegen, ongeacht of u in of buiten de bebouwde kom rijdt."
+        ]
       },
       "EN": {
-        "question": "Outside the built-up area (past sign F3b): is it allowed to hold a mobile phone while driving?",
+        "question": "May you remain below the maximum speed after this sign when conditions require it?",
+        "explanation": "Yes. You may and must drive more slowly when safety requires it, provided you do not abnormally obstruct traffic without a valid reason.",
         "choices": [
           {
-            "text": "No, the handheld phone ban applies on all roads in Belgium, including outside built-up areas",
+            "text": "Yes, when it is safe and you do not abnormally obstruct traffic without reason",
             "is_correct": true
           },
           {
-            "text": "Yes, outside built-up areas fewer rules apply and the phone ban is not in force",
+            "text": "No, you must immediately reach the maximum permitted speed",
             "is_correct": false
           }
-        ],
-        "explanation": "The ban on using a handheld mobile phone applies on all Belgian roads regardless of whether you are inside or outside a built-up area."
+        ]
       },
       "FR": {
-        "question": "Hors agglomeration (apres le panneau F3b) : est-il permis de tenir un telephone en main en conduisant ?",
+        "question": "Pouvez-vous rester sous la vitesse maximale après ce panneau lorsque les circonstances l'exigent ?",
+        "explanation": "Oui. Vous pouvez et devez ralentir lorsque la sécurité l'exige, à condition de ne pas gêner anormalement la circulation sans raison valable.",
         "choices": [
           {
-            "text": "Non, l interdiction du telephone tenu en main s applique sur toutes les routes de Belgique y compris hors agglomeration",
+            "text": "Oui, si c'est sûr et sans gêner anormalement la circulation sans raison",
             "is_correct": true
           },
           {
-            "text": "Oui, hors agglomeration moins de regles s appliquent et l interdiction du telephone n est pas en vigueur",
+            "text": "Non, vous devez atteindre immédiatement la vitesse maximale autorisée",
             "is_correct": false
           }
-        ],
-        "explanation": "L interdiction d utiliser un telephone tenu en main s applique sur toutes les routes belges qu on soit en agglomeration ou hors agglomeration."
+        ]
       },
       "AR": {
-        "question": "خارج المنطقة المبنية (بعد علامة مرورية F3b): هل يُسمح بالإمساك بالهاتف المحمول أثناء القيادة؟",
+        "question": "هل يجوز البقاء دون السرعة القصوى بعد هذه العلامة عندما تتطلب الظروف ذلك؟",
+        "explanation": "نعم. يجوز ويجب تخفيف السرعة عندما تتطلب السلامة ذلك، بشرط عدم إعاقة حركة المرور بصورة غير طبيعية من دون سبب وجيه.",
         "choices": [
           {
-            "text": "لا يسري حظر استخدام الهاتف باليد على جميع طرق بلجيكا بما فيها خارج المنطقة السكنية",
+            "text": "نعم، عندما يكون ذلك آمنًا ولا يعيق المرور بلا سبب بصورة غير طبيعية",
             "is_correct": true
           },
           {
-            "text": "نعم خارج المنطقة السكنية تسري قواعد أقل وحظر الهاتف غير مفعّل",
+            "text": "لا، يجب الوصول فورًا إلى السرعة القصوى المسموح بها",
             "is_correct": false
           }
-        ],
-        "explanation": "يسري حظر استخدام الهاتف المحمول باليد على جميع طرق بلجيكا بغض النظر عن كونك داخل أو خارج المنطقة المبنية."
+        ]
       }
     }
   }

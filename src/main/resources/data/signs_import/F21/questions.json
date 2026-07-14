@@ -7,121 +7,157 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat betekent bord F21?",
+        "question": "U ziet dit bord bij een verkeerseiland op de weg. Wat betekent het?",
         "choices": [
           {
-            "text": "Inhalen langs beide zijden is toegestaan op dit weggedeelte",
+            "text": "U mag het eiland zowel links als rechts voorbijrijden",
             "is_correct": true
           },
           {
-            "text": "Inhalen is verboden op dit weggedeelte",
+            "text": "U mag het eiland enkel rechts voorbijrijden",
             "is_correct": false
           },
           {
-            "text": "Voorrang van rechts geldt op dit weggedeelte",
+            "text": "U moet stoppen voor het eiland en wachten op een teken",
             "is_correct": false
           }
         ],
-        "explanation": "F21 geeft aan dat u op dit weggedeelte voertuigen zowel links als rechts mag inhalen. Dit wijkt af van de normale regel waarbij u links moet inhalen."
+        "explanation": "Dit bord geeft aan dat de hindernis zowel aan de linker- als aan de rechterzijde voorbijgereden mag worden, naar keuze van de bestuurder."
       },
       "EN": {
-        "question": "What does sign F21 mean?",
+        "question": "You see this sign near a traffic island on the road. What does it mean?",
         "choices": [
           {
-            "text": "Overtaking on both sides is permitted on this road section",
+            "text": "You may pass the island on either the left or the right side",
             "is_correct": true
           },
           {
-            "text": "Overtaking is forbidden on this road section",
+            "text": "You may only pass the island on the right side",
             "is_correct": false
           },
           {
-            "text": "Priority from the right applies on this road section",
+            "text": "You must stop before the island and wait for a signal",
             "is_correct": false
           }
         ],
-        "explanation": "F21 indicates that on this road section you may overtake vehicles on both the left and right. This differs from the normal rule requiring you to overtake on the left."
+        "explanation": "This sign indicates that the obstacle may be passed on either the left or right side, at the driver's choice."
       },
       "FR": {
-        "question": "Que signifie le panneau F21 ?",
+        "question": "Vous apercevez ce panneau près d'un îlot directionnel sur la route. Que signifie-t-il ?",
         "choices": [
           {
-            "text": "Le depassement des deux cotes est autorise sur ce troncon",
+            "text": "Vous pouvez franchir l'îlot aussi bien par la gauche que par la droite",
             "is_correct": true
           },
           {
-            "text": "Le depassement est interdit sur ce troncon",
+            "text": "Vous ne pouvez franchir l'îlot que par la droite",
             "is_correct": false
           },
           {
-            "text": "La priorite de droite s applique sur ce troncon",
+            "text": "Vous devez vous arrêter devant l'îlot et attendre un signal",
             "is_correct": false
           }
         ],
-        "explanation": "F21 indique que sur ce troncon vous pouvez depasser des vehicules aussi bien a gauche qu a droite. Cela differe de la regle normale qui exige de depasser a gauche."
+        "explanation": "Ce panneau indique que l'obstacle peut être franchi aussi bien par la gauche que par la droite, au choix du conducteur."
       },
       "AR": {
-        "question": "ما معنى هذه العلامة المرورية؟",
+        "question": "لاحظت هذه العلامة قرب جزيرة مرورية على الطريق، فماذا تعني؟",
         "choices": [
           {
-            "text": "التجاوز من كلا الجانبين مسموح به في هذا القسم من الطريق",
+            "text": "يمكنك تجاوز الجزيرة من الجهة اليسرى أو اليمنى",
             "is_correct": true
           },
           {
-            "text": "التجاوز محظور في هذا القسم من الطريق",
+            "text": "يمكنك تجاوز الجزيرة من الجهة اليمنى فقط",
             "is_correct": false
           },
           {
-            "text": "أولوية اليمين تسري في هذا القسم من الطريق",
+            "text": "يجب عليك التوقف أمام الجزيرة والانتظار حتى تظهر إشارة",
             "is_correct": false
           }
         ],
-        "explanation": "تشير F21 إلى أنه في هذا القسم من الطريق يمكنك تجاوز المركبات من اليسار واليمين على حد سواء. وهذا يختلف عن القاعدة العادية التي تقتضي التجاوز من اليسار."
+        "explanation": "تشير هذه العلامة إلى أن العائق يمكن تجاوزه من الجهة اليسرى أو اليمنى، وفق اختيار السائق."
       }
     }
   },
   {
     "question_id": "F21_Q02",
-    "type": "WHICH_SIGN",
+    "type": "DRIVER_ACTION",
     "difficulty": "EASY",
     "is_critical": false,
-    "show_sign": true,
+    "show_sign": false,
     "i18n": {
       "NL": {
-        "question": "Tot welke categorie behoort bord F21?",
+        "question": "U nadert een hindernis met dit bord en er komt geen ander voertuig aan. Wat doet u?",
         "choices": [
-          { "text": "informatieve borden", "is_correct": true },
-          { "text": "verbodsborden", "is_correct": false },
-          { "text": "gebodsborden", "is_correct": false }
+          {
+            "text": "U kiest vrij de zijde, links of rechts, die het meest geschikt is voor uw rijrichting",
+            "is_correct": true
+          },
+          {
+            "text": "U wacht altijd tot een ander voertuig u de weg wijst",
+            "is_correct": false
+          },
+          {
+            "text": "U stopt volledig voor de hindernis, ook als er geen verkeer is",
+            "is_correct": false
+          }
         ],
-        "explanation": "F21 is een informatief bord."
+        "explanation": "Omdat beide zijden toegelaten zijn, mag de bestuurder vrij de meest praktische zijde kiezen om de hindernis voorbij te rijden."
       },
       "EN": {
-        "question": "Which category does sign F21 belong to?",
+        "question": "You are approaching an obstacle with this sign and no other vehicle is coming. What do you do?",
         "choices": [
-          { "text": "information signs", "is_correct": true },
-          { "text": "prohibition signs", "is_correct": false },
-          { "text": "mandatory signs", "is_correct": false }
+          {
+            "text": "You freely choose the side, left or right, that is most suitable for your direction of travel",
+            "is_correct": true
+          },
+          {
+            "text": "You always wait for another vehicle to show you the way",
+            "is_correct": false
+          },
+          {
+            "text": "You stop completely before the obstacle, even if there is no traffic",
+            "is_correct": false
+          }
         ],
-        "explanation": "F21 is an information sign in this category."
+        "explanation": "Since both sides are allowed, the driver may freely choose the most practical side to pass the obstacle."
       },
       "FR": {
-        "question": "À quelle catégorie appartient le panneau F21 ?",
+        "question": "Vous approchez d'un obstacle portant ce panneau et aucun autre véhicule n'arrive. Que faites-vous ?",
         "choices": [
-          { "text": "panneaux d information", "is_correct": true },
-          { "text": "panneaux d interdiction", "is_correct": false },
-          { "text": "panneaux d obligation", "is_correct": false }
+          {
+            "text": "Vous choisissez librement le côté, gauche ou droit, le plus adapté à votre direction",
+            "is_correct": true
+          },
+          {
+            "text": "Vous attendez toujours qu'un autre véhicule vous montre la voie",
+            "is_correct": false
+          },
+          {
+            "text": "Vous vous arrêtez complètement devant l'obstacle, même en l'absence de circulation",
+            "is_correct": false
+          }
         ],
-        "explanation": "F21 est un panneau d information."
+        "explanation": "Puisque les deux côtés sont autorisés, le conducteur peut choisir librement le côté le plus pratique pour franchir l'obstacle."
       },
       "AR": {
-        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
+        "question": "أنت تقترب من عائق يحمل هذه العلامة ولا تقترب أي مركبة أخرى، فماذا تفعل؟",
         "choices": [
-          { "text": "العلامات الإرشادية", "is_correct": true },
-          { "text": "علامات الحظر", "is_correct": false },
-          { "text": "العلامات الإلزامية", "is_correct": false }
+          {
+            "text": "تختار بحرية الجهة، يمينًا أو يسارًا، الأكثر ملاءمة لاتجاه سيرك",
+            "is_correct": true
+          },
+          {
+            "text": "تنتظر دائمًا حتى تدلك مركبة أخرى على الطريق",
+            "is_correct": false
+          },
+          {
+            "text": "تتوقف تمامًا أمام العائق حتى في غياب أي حركة مرور",
+            "is_correct": false
+          }
         ],
-        "explanation": "F21 علامة مرورية إعلامية من هذه الفئة."
+        "explanation": "بما أن الجهتين مسموح بهما، يمكن للسائق اختيار الجهة الأكثر عملية بحرية لتجاوز العائق."
       }
     }
   },
@@ -133,76 +169,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Zelfs met F21 welk gevaar blijft bestaan bij rechts inhalen?",
+        "question": "Wat is een mogelijk gevaar bij een hindernis met dit bord?",
         "choices": [
           {
-            "text": "Voertuigen die rechts inhalen kunnen in het dode hoek van andere bestuurders rijden, dus extra oplettendheid is vereist",
+            "text": "Een tegemoetkomende bestuurder kan de andere zijde kiezen, waardoor beide voertuigen elkaar dicht naderen",
             "is_correct": true
           },
           {
-            "text": "Er is geen enkel gevaar want bord F21 maakt alle manoeuvres veilig",
+            "text": "Het bord verplicht alle voertuigen om precies dezelfde zijde te nemen, dus botsingen zijn uitgesloten",
             "is_correct": false
           },
           {
-            "text": "Rechtsinhalende voertuigen veroorzaken altijd harde remacties",
+            "text": "Er is geen enkel gevaar aangezien het bord alle risico's wegneemt",
             "is_correct": false
           }
         ],
-        "explanation": "Ook met F21 moet u opletten bij rechts inhalen: dode hoeken, fietsers rechts van u en voertuigen die onverwacht rechtsaf draaien vormen risicos."
+        "explanation": "Omdat bestuurders vrij mogen kiezen aan welke zijde ze passeren, kunnen tegemoetkomende voertuigen dicht bij elkaar komen als ze verschillende zijden kiezen."
       },
       "EN": {
-        "question": "Even with F21 what hazard remains when overtaking on the right?",
+        "question": "What is a possible danger at an obstacle with this sign?",
         "choices": [
           {
-            "text": "Vehicles overtaking on the right may ride in the blind spot of other drivers so extra vigilance is required",
+            "text": "An oncoming driver may choose the other side, causing both vehicles to pass close to each other",
             "is_correct": true
           },
           {
-            "text": "There is no hazard at all because sign F21 makes all manoeuvres safe",
+            "text": "The sign forces all vehicles to take exactly the same side, so collisions are impossible",
             "is_correct": false
           },
           {
-            "text": "Vehicles overtaking on the right always cause hard braking",
+            "text": "There is no danger at all since the sign removes all risk",
             "is_correct": false
           }
         ],
-        "explanation": "Even with F21 you must be careful when overtaking on the right: blind spots, cyclists to your right and vehicles unexpectedly turning right pose risks."
+        "explanation": "Since drivers may freely choose which side to pass on, oncoming vehicles may come close to each other if they choose different sides."
       },
       "FR": {
-        "question": "Meme avec F21 quel danger subsiste lors d un depassement par la droite ?",
+        "question": "Quel est un danger possible au niveau d'un obstacle portant ce panneau ?",
         "choices": [
           {
-            "text": "Les vehicules qui doublent par la droite peuvent se retrouver dans l angle mort des autres conducteurs donc une vigilance accrue est requise",
+            "text": "Un conducteur venant en face peut choisir l'autre côté, ce qui fait que les deux véhicules se croisent de près",
             "is_correct": true
           },
           {
-            "text": "Il n y a aucun danger car le panneau F21 rend toutes les manoeuvres sures",
+            "text": "Le panneau oblige tous les véhicules à prendre exactement le même côté, rendant les collisions impossibles",
             "is_correct": false
           },
           {
-            "text": "Les vehicules qui doublent par la droite provoquent toujours des freinages brusques",
+            "text": "Il n'y a aucun danger puisque le panneau élimine tout risque",
             "is_correct": false
           }
         ],
-        "explanation": "Meme avec F21 vous devez faire attention lors d un depassement par la droite: les angles morts les cyclistes a votre droite et les vehicules tournant inopinement a droite presentent des risques."
+        "explanation": "Puisque les conducteurs peuvent choisir librement le côté par lequel ils passent, les véhicules venant en face peuvent se croiser de près s'ils choisissent des côtés différents."
       },
       "AR": {
-        "question": "ما هو الخطر الذي تشير إليه هذه العلامة المرورية؟",
+        "question": "ما الخطر المحتمل عند عائق يحمل هذه العلامة؟",
         "choices": [
           {
-            "text": "المركبات التي تتجاوز من اليمين قد تسير في النقطة العمياء للسائقين الآخرين لذا يلزم توخي الحذر الإضافي",
+            "text": "قد يختار سائق قادم من الجهة المعاكسة الجانب الآخر، مما يجعل المركبتين تقتربان من بعضهما بشدة",
             "is_correct": true
           },
           {
-            "text": "لا يوجد أي خطر لأن علامة مرورية F21 تجعل جميع المناورات آمنة",
+            "text": "تُلزم العلامة جميع المركبات باختيار نفس الجهة تمامًا، مما يجعل الاصطدام مستحيلًا",
             "is_correct": false
           },
           {
-            "text": "المركبات التي تتجاوز من اليمين تسبب دائماً فرملة مفاجئة",
+            "text": "لا يوجد أي خطر لأن العلامة تزيل كل المخاطر",
             "is_correct": false
           }
         ],
-        "explanation": "حتى مع F21 يجب توخي الحذر عند التجاوز من اليمين: النقاط العمياء والدراجون على يمينك والمركبات التي تنعطف يميناً بشكل غير متوقع تشكل مخاطر."
+        "explanation": "بما أن السائقين يختارون بحرية الجهة التي يمرون منها، قد تقترب المركبات القادمة من الاتجاه المعاكس من بعضها إذا اختارت جهات مختلفة."
       }
     }
   },
@@ -211,238 +247,235 @@
     "type": "WHAT_MUST_YOU_DO",
     "difficulty": "MEDIUM",
     "is_critical": false,
-    "show_sign": true,
+    "show_sign": false,
     "i18n": {
       "NL": {
-        "question": "U rijdt op een tweebaansweg met F21. Een trage tractor blokkeert uw rechterrijstrook. Mag u hem rechts inhalen?",
+        "question": "U kiest een zijde om de hindernis met dit bord voorbij te rijden en er komt tegemoetkomend verkeer van de andere zijde. Wat moet u doen?",
         "choices": [
           {
-            "text": "Ja op dit weggedeelte mag u rechts inhalen maar doe dit voorzichtig en controleer uw spiegels",
+            "text": "Voorzichtig blijven rijden op uw gekozen zijde en voldoende afstand houden van het tegemoetkomend voertuig",
             "is_correct": true
           },
           {
-            "text": "Nee zelfs met F21 moet u altijd links inhalen",
+            "text": "Onmiddellijk van zijde wisselen om dezelfde kant te nemen als het andere voertuig",
             "is_correct": false
           },
           {
-            "text": "Ja maar alleen als er geen andere voertuigen achter u zijn",
+            "text": "Volledig stoppen midden op de rijbaan tot het andere voertuig voorbij is",
             "is_correct": false
           }
         ],
-        "explanation": "F21 laat rechts inhalen toe op het aangeduide weggedeelte. U controleert spiegels en dode hoeken goed voor u de manoeuvre uitvoert."
+        "explanation": "Elke bestuurder mag zijn gekozen zijde behouden; het is veiliger om op de eigen zijde te blijven en voldoende afstand te bewaren dan plots van zijde te wisselen."
       },
       "EN": {
-        "question": "You are driving on a two-lane road with F21. A slow tractor blocks your right lane. May you overtake it on the right?",
+        "question": "You choose a side to pass an obstacle with this sign, and oncoming traffic is approaching from the other side. What must you do?",
         "choices": [
           {
-            "text": "Yes on this road section you may overtake on the right but do so carefully and check your mirrors",
+            "text": "Keep driving carefully on your chosen side and maintain sufficient distance from the oncoming vehicle",
             "is_correct": true
           },
           {
-            "text": "No even with F21 you must always overtake on the left",
+            "text": "Immediately switch sides to take the same side as the other vehicle",
             "is_correct": false
           },
           {
-            "text": "Yes but only if there are no other vehicles behind you",
+            "text": "Stop completely in the middle of the road until the other vehicle has passed",
             "is_correct": false
           }
         ],
-        "explanation": "F21 allows overtaking on the right on the designated section. Check mirrors and blind spots carefully before performing the manoeuvre."
+        "explanation": "Each driver may keep the side they chose; it is safer to stay on your own side and keep sufficient distance than to suddenly switch sides."
       },
       "FR": {
-        "question": "Vous roulez sur une route a deux voies avec F21. Un tracteur lent bloque votre voie de droite. Pouvez-vous le depasser par la droite ?",
+        "question": "Vous choisissez un côté pour franchir un obstacle portant ce panneau, et un véhicule arrive en face de l'autre côté. Que devez-vous faire ?",
         "choices": [
           {
-            "text": "Oui sur ce troncon vous pouvez depasser par la droite mais faites-le prudemment et verifiez vos retroviseurs",
+            "text": "Continuer à rouler prudemment de votre côté et garder une distance suffisante avec le véhicule venant en face",
             "is_correct": true
           },
           {
-            "text": "Non meme avec F21 vous devez toujours depasser par la gauche",
+            "text": "Changer immédiatement de côté pour prendre le même côté que l'autre véhicule",
             "is_correct": false
           },
           {
-            "text": "Oui mais seulement s il n y a pas d autres vehicules derriere vous",
+            "text": "Vous arrêter complètement au milieu de la chaussée jusqu'à ce que l'autre véhicule soit passé",
             "is_correct": false
           }
         ],
-        "explanation": "F21 autorise le depassement par la droite sur le troncon designe. Verifiez soigneusement les retroviseurs et les angles morts avant d effectuer la manoeuvre."
+        "explanation": "Chaque conducteur peut conserver le côté qu'il a choisi; il est plus sûr de rester de son côté et de garder une distance suffisante que de changer brusquement de côté."
       },
       "AR": {
-        "question": "تسير في طريق ذي حارتين مع F21. جرار بطيء يعيق حارتك اليمنى. هل يمكنك تجاوزه من اليمين؟",
+        "question": "اخترت جهة لتجاوز عائق يحمل هذه العلامة، وتقترب مركبة من الجهة المعاكسة، فماذا يجب عليك؟",
         "choices": [
           {
-            "text": "نعم في هذا القسم من الطريق يمكنك التجاوز من اليمين لكن افعل ذلك بحذر وتحقق من مرآياتك",
+            "text": "الاستمرار بالقيادة بحذر في الجهة التي اخترتها والحفاظ على مسافة كافية عن المركبة القادمة",
             "is_correct": true
           },
           {
-            "text": "لا حتى مع F21 يجب دائماً التجاوز من اليسار",
+            "text": "تغيير الجهة فورًا لأخذ نفس جهة المركبة الأخرى",
             "is_correct": false
           },
           {
-            "text": "نعم لكن فقط إذا لم تكن هناك مركبات أخرى خلفك",
+            "text": "التوقف تمامًا في وسط الطريق حتى تعبر المركبة الأخرى",
             "is_correct": false
           }
         ],
-        "explanation": "تسمح F21 بالتجاوز من اليمين في القسم المحدد. تحقق بعناية من المرايا والنقاط العمياء قبل تنفيذ المناورة."
+        "explanation": "يمكن لكل سائق الحفاظ على الجهة التي اختارها؛ من الأكثر أمانًا البقاء في جهتك والحفاظ على مسافة كافية بدلًا من تغيير الجهة بشكل مفاجئ."
       }
     }
   },
   {
     "question_id": "F21_Q05",
-    "type": "WHAT_MUST_YOU_DO",
+    "type": "WHERE_DOES_IT_APPLY",
     "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Na het bord F21 ziet u een bord dat het inhalen verbiedt. Wat is voortaan van toepassing?",
+        "question": "Op welke plaats in het verkeer wordt dit bord doorgaans aangebracht?",
         "choices": [
           {
-            "text": "Vanaf dat verbodsbord is inhalen verboden en de F21-toestemming eindigt",
+            "text": "Vlak bij of op een hindernis of verkeerseiland op de rijbaan",
             "is_correct": true
           },
           {
-            "text": "F21 blijft van kracht zolang u op die weg rijdt",
+            "text": "Enkel aan het begin van een autosnelweg",
             "is_correct": false
           },
           {
-            "text": "Alleen rechts inhalen is verboden maar links inhalen mag nog",
+            "text": "Enkel op plaatsen waar fietsers moeten oversteken",
             "is_correct": false
           }
         ],
-        "explanation": "F21 geldt enkel op het aangeduide weggedeelte. Zodra een verbodsbord voor inhalen zichtbaar is gelden de beperkingen van dat bord onmiddellijk."
+        "explanation": "Dit bord wordt aangebracht bij een hindernis of verkeerseiland dat zowel links als rechts voorbijgereden mag worden."
       },
       "EN": {
-        "question": "After sign F21 you see a sign prohibiting overtaking. What applies from then on?",
+        "question": "Where in traffic is this sign typically placed?",
         "choices": [
           {
-            "text": "From that prohibition sign overtaking is forbidden and the F21 permission ends",
+            "text": "Right next to or on an obstacle or traffic island on the roadway",
             "is_correct": true
           },
+          { "text": "Only at the start of a motorway", "is_correct": false },
           {
-            "text": "F21 remains in force as long as you are on that road",
-            "is_correct": false
-          },
-          {
-            "text": "Only right-side overtaking is forbidden but left-side overtaking is still allowed",
+            "text": "Only at places where cyclists must cross",
             "is_correct": false
           }
         ],
-        "explanation": "F21 applies only on the designated road section. Once a prohibition sign for overtaking is visible the restrictions of that sign apply immediately."
+        "explanation": "This sign is placed at an obstacle or traffic island that may be passed on either the left or the right side."
       },
       "FR": {
-        "question": "Apres le panneau F21 vous voyez un panneau interdisant le depassement. Qu est-ce qui s applique des lors ?",
+        "question": "À quel endroit de la circulation ce panneau est-il généralement placé ?",
         "choices": [
           {
-            "text": "A partir de ce panneau d interdiction le depassement est interdit et la permission F21 prend fin",
+            "text": "Juste près ou sur un obstacle ou un îlot directionnel sur la chaussée",
             "is_correct": true
           },
           {
-            "text": "F21 reste en vigueur aussi longtemps que vous etes sur cette route",
+            "text": "Uniquement au début d'une autoroute",
             "is_correct": false
           },
           {
-            "text": "Seul le depassement par la droite est interdit mais le depassement par la gauche reste autorise",
+            "text": "Uniquement aux endroits où les cyclistes doivent traverser",
             "is_correct": false
           }
         ],
-        "explanation": "F21 ne s applique que sur le troncon designe. Des qu un panneau d interdiction de depassement est visible les restrictions de ce panneau s appliquent immediatement."
+        "explanation": "Ce panneau est placé à un obstacle ou un îlot directionnel que l'on peut franchir aussi bien par la gauche que par la droite."
       },
       "AR": {
-        "question": "بعد علامة مرورية F21 ترى علامة مرورية تحظر التجاوز. ما الذي ينطبق من الآن؟",
+        "question": "في أي موقع من الطريق تُوضع هذه العلامة عادةً؟",
         "choices": [
           {
-            "text": "من تلك العلامة المرورية التحذيرية يصبح التجاوز محظوراً وتنتهي الإذن الممنوحة بـ F21",
+            "text": "قريبًا من أو على عائق أو جزيرة مرورية على الطريق",
             "is_correct": true
           },
+          { "text": "فقط عند بداية طريق سريع", "is_correct": false },
           {
-            "text": "تبقى F21 سارية طالما أنت على هذا الطريق",
-            "is_correct": false
-          },
-          {
-            "text": "يُحظر فقط التجاوز من اليمين لكن التجاوز من اليسار لا يزال مسموحاً",
+            "text": "فقط في الأماكن التي يجب على الدراجين عبورها",
             "is_correct": false
           }
         ],
-        "explanation": "تنطبق F21 فقط على القسم المحدد من الطريق. بمجرد ظهور علامة مرورية حظر التجاوز تسري قيود تلك العلامة المرورية فوراً."
+        "explanation": "تُوضع هذه العلامة عند عائق أو جزيرة مرورية يمكن تجاوزها من الجهة اليسرى أو اليمنى."
       }
     }
   },
   {
     "question_id": "F21_Q06",
-    "type": "WHAT_MUST_YOU_DO",
+    "type": "WHAT_HAPPENS_IF",
     "difficulty": "MEDIUM",
     "is_critical": false,
-    "show_sign": true,
+    "show_sign": false,
     "i18n": {
       "NL": {
-        "question": "Op een weg met F21 wil u rechts inhalen. Er rijdt een fietser rechts van het voertuig dat u wil inhalen. Wat doet u?",
+        "question": "Wat kan er gebeuren als u plots van zijde wisselt net nadat u de hindernis met dit bord al bent beginnen voorbijrijden?",
         "choices": [
           {
-            "text": "Niet inhalen totdat de fietser veilig vrij is want die heeft voorrang als kwetsbare weggebruiker",
+            "text": "U kunt een gevaarlijke situatie veroorzaken voor voertuigen die al op basis van uw eerste positie hun eigen zijde hebben gekozen",
             "is_correct": true
           },
           {
-            "text": "Inhalen want F21 geeft u absolute voorrang op fietsers bij een inhalmanoeuvre",
+            "text": "Er verandert niets, want alle bestuurders houden toch rekening met elke mogelijke wissel",
             "is_correct": false
           },
           {
-            "text": "Claxonneren om de fietser te waarschuwen en dan inhalen",
+            "text": "U krijgt hierdoor automatisch voorrang op het tegemoetkomend verkeer",
             "is_correct": false
           }
         ],
-        "explanation": "Fietsers zijn kwetsbare weggebruikers. F21 wijzigt de inhaalregels maar heft de zorgplicht tegenover fietsers niet op."
+        "explanation": "Onverwacht wisselen van zijde tijdens het voorbijrijden kan andere bestuurders verrassen die hun keuze al op uw eerste positie hebben gebaseerd, wat het risico op een aanrijding verhoogt."
       },
       "EN": {
-        "question": "On a road with F21 you want to overtake on the right. A cyclist is riding to the right of the vehicle you want to overtake. What do you do?",
+        "question": "What can happen if you suddenly switch sides right after you have already started passing the obstacle marked by this sign?",
         "choices": [
           {
-            "text": "Do not overtake until the cyclist is safely clear because as a vulnerable road user the cyclist has priority",
+            "text": "You may create a dangerous situation for vehicles that already chose their side based on your initial position",
             "is_correct": true
           },
           {
-            "text": "Overtake because F21 gives you absolute priority over cyclists during an overtaking manoeuvre",
+            "text": "Nothing changes, since all drivers account for every possible switch anyway",
             "is_correct": false
           },
           {
-            "text": "Sound your horn to warn the cyclist then overtake",
+            "text": "You automatically gain priority over oncoming traffic as a result",
             "is_correct": false
           }
         ],
-        "explanation": "Cyclists are vulnerable road users. F21 changes the overtaking rules but does not remove the duty of care towards cyclists."
+        "explanation": "Unexpectedly switching sides while passing can surprise other drivers who already based their choice on your initial position, increasing the risk of a collision."
       },
       "FR": {
-        "question": "Sur une route avec F21 vous voulez depasser par la droite. Un cycliste roule a droite du vehicule que vous voulez depasser. Que faites-vous ?",
+        "question": "Que peut-il se passer si vous changez brusquement de côté juste après avoir déjà commencé à franchir l'obstacle portant ce panneau ?",
         "choices": [
           {
-            "text": "Ne pas depasser tant que le cycliste n est pas en securite car en tant qu usager vulnerable de la route il a la priorite",
+            "text": "Vous pouvez créer une situation dangereuse pour des véhicules qui ont déjà choisi leur côté en fonction de votre position initiale",
             "is_correct": true
           },
           {
-            "text": "Depasser car F21 vous donne la priorite absolue sur les cyclistes lors d une manoeuvre de depassement",
+            "text": "Rien ne change, car tous les conducteurs tiennent compte de tout changement possible",
             "is_correct": false
           },
           {
-            "text": "Klaxonner pour avertir le cycliste puis depasser",
+            "text": "Vous obtenez automatiquement la priorité sur la circulation venant en face",
             "is_correct": false
           }
         ],
-        "explanation": "Les cyclistes sont des usagers vulnerables de la route. F21 modifie les regles de depassement mais ne supprime pas le devoir de prudence envers les cyclistes."
+        "explanation": "Changer de côté de manière inattendue en franchissant l'obstacle peut surprendre d'autres conducteurs qui ont déjà basé leur choix sur votre position initiale, augmentant le risque de collision."
       },
       "AR": {
-        "question": "على طريق مع F21 تريد التجاوز من اليمين. دراج يسير على يمين المركبة التي تريد تجاوزها. ماذا تفعل؟",
+        "question": "ماذا يمكن أن يحدث إذا غيّرت جهتك بشكل مفاجئ بعد أن بدأت بالفعل بتجاوز العائق الذي تحدده هذه العلامة؟",
         "choices": [
           {
-            "text": "لا تتجاوز حتى يكون الدراج بأمان لأنه كمستخدم ضعيف للطريق له الأولوية",
+            "text": "قد تخلق وضعًا خطيرًا لمركبات اختارت جهتها بالفعل بناءً على موضعك الأولي",
             "is_correct": true
           },
           {
-            "text": "تجاوز لأن F21 تمنحك الأولوية المطلقة على الدراجين أثناء مناورة التجاوز",
+            "text": "لا يتغير شيء لأن جميع السائقين يأخذون بعين الاعتبار أي تغيير محتمل",
             "is_correct": false
           },
-          { "text": "اضغط البوق لتحذير الدراج ثم تجاوز", "is_correct": false }
+          {
+            "text": "تحصل تلقائيًا على الأولوية على حركة المرور القادمة من الجهة المعاكسة",
+            "is_correct": false
+          }
         ],
-        "explanation": "الدراجون مستخدمون ضعفاء للطريق. تغير F21 قواعد التجاوز لكنها لا تلغي واجب الرعاية تجاه الدراجين."
+        "explanation": "تغيير الجهة بشكل غير متوقع خلال التجاوز قد يُفاجئ سائقين آخرين اختاروا جهتهم بناءً على موضعك الأولي، مما يزيد من خطر الاصطدام."
       }
     }
   },
@@ -451,63 +484,63 @@
     "type": "IS_IT_ALLOWED",
     "difficulty": "HARD",
     "is_critical": true,
-    "show_sign": true,
+    "show_sign": false,
     "i18n": {
       "NL": {
-        "question": "Geldt bord F21 ook voor het rechts inhalen op een autosnelweg?",
+        "question": "Mag u de hindernis met dit bord voorbijrijden aan een zijde zonder rekening te houden met tegemoetkomend verkeer, omdat beide zijden toegelaten zijn?",
         "choices": [
           {
-            "text": "Nee op een autosnelweg is rechts inhalen altijd verboden ook als F21 er niet staat want dit is een absolute regel",
+            "text": "Nee, u mag vrij een zijde kiezen, maar u moet nog steeds rekening houden met tegemoetkomend verkeer en de voorrangsregels respecteren",
             "is_correct": true
           },
           {
-            "text": "Ja als F21 op een autosnelweg staat mag u rechts inhalen",
+            "text": "Ja, zodra u een zijde kiest, hoeft u met niemand anders rekening te houden",
             "is_correct": false
           }
         ],
-        "explanation": "Op autosnelwegen is rechts inhalen altijd verboden. F21 geldt doorgaans niet op autosnelwegen en verandert nooit de absoluut geldende verbodsbepaling."
+        "explanation": "De vrije keuze van zijde ontslaat de bestuurder niet van de gewone voorzichtigheids- en voorrangsregels ten opzichte van ander verkeer."
       },
       "EN": {
-        "question": "Does sign F21 also apply to overtaking on the right on a motorway?",
+        "question": "May you pass the obstacle marked by this sign on one side without taking oncoming traffic into account, since both sides are allowed?",
         "choices": [
           {
-            "text": "No on a motorway overtaking on the right is always forbidden even without F21 because it is an absolute rule",
+            "text": "No, you may freely choose a side, but you must still account for oncoming traffic and respect right-of-way rules",
             "is_correct": true
           },
           {
-            "text": "Yes if F21 is placed on a motorway you may overtake on the right",
+            "text": "Yes, once you choose a side, you do not need to consider anyone else",
             "is_correct": false
           }
         ],
-        "explanation": "On motorways overtaking on the right is always forbidden. F21 generally does not apply on motorways and never changes the absolutely applicable prohibition."
+        "explanation": "The free choice of side does not exempt the driver from the usual caution and right-of-way rules toward other traffic."
       },
       "FR": {
-        "question": "Le panneau F21 s applique-t-il aussi au depassement par la droite sur une autoroute ?",
+        "question": "Pouvez-vous franchir l'obstacle marqué par ce panneau d'un côté sans tenir compte de la circulation venant en face, puisque les deux côtés sont autorisés ?",
         "choices": [
           {
-            "text": "Non sur une autoroute le depassement par la droite est toujours interdit meme sans F21 car c est une regle absolue",
+            "text": "Non, vous pouvez choisir librement un côté, mais vous devez toujours tenir compte de la circulation venant en face et respecter les règles de priorité",
             "is_correct": true
           },
           {
-            "text": "Oui si F21 est place sur une autoroute vous pouvez depasser par la droite",
+            "text": "Oui, une fois que vous choisissez un côté, vous n'avez à tenir compte de personne d'autre",
             "is_correct": false
           }
         ],
-        "explanation": "Sur les autoroutes le depassement par la droite est toujours interdit. F21 ne s applique generalement pas aux autoroutes et ne modifie jamais l interdiction absolument applicable."
+        "explanation": "Le libre choix du côté ne dispense pas le conducteur des règles habituelles de prudence et de priorité envers les autres usagers."
       },
       "AR": {
-        "question": "هل تنطبق علامة مرورية F21 أيضاً على التجاوز من اليمين في الطريق السريع؟",
+        "question": "هل يمكنك تجاوز العائق الذي تحدده هذه العلامة من جهة ما دون مراعاة حركة المرور القادمة من الاتجاه المعاكس، بما أن الجهتين مسموح بهما؟",
         "choices": [
           {
-            "text": "لا في الطريق السريع التجاوز من اليمين محظور دائماً حتى بدون F21 لأنها قاعدة مطلقة",
+            "text": "لا، يمكنك اختيار جهة بحرية، لكن يجب عليك مراعاة حركة المرور القادمة من الاتجاه المعاكس واحترام قواعد الأولوية",
             "is_correct": true
           },
           {
-            "text": "نعم إذا وُضعت F21 في طريق سريع يمكنك التجاوز من اليمين",
+            "text": "نعم، بمجرد اختيار جهة، لا داعي لمراعاة أي سائق آخر",
             "is_correct": false
           }
         ],
-        "explanation": "في الطرق السريعة التجاوز من اليمين محظور دائماً. عادةً لا تنطبق F21 على الطرق السريعة ولا تغير أبداً الحظر المطلق المعمول به."
+        "explanation": "لا يُعفي حرية اختيار الجهة السائق من قواعد الحذر والأولوية المعتادة تجاه بقية حركة المرور."
       }
     }
   },
@@ -519,60 +552,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Mag u op een weg met F21 een voetganger die de rijbaan oversteekt rechts inhalen?",
+        "question": "Mag u een inhaalmanoeuvre uitvoeren op de hindernis zelf, gebruikmakend van de twee toegelaten zijden om een ander voertuig sneller voorbij te steken?",
         "choices": [
           {
-            "text": "Nee u moet voetgangers die de rijbaan oversteken altijd voorrang geven ongeacht F21",
+            "text": "Nee, het bord staat enkel toe om de hindernis links of rechts voorbij te rijden, niet om ze te gebruiken voor een inhaalmanoeuvre op de hindernis zelf",
             "is_correct": true
           },
           {
-            "text": "Ja F21 geeft u het recht om door te rijden ook als er voetgangers oversteken",
+            "text": "Ja, omdat beide zijden toegelaten zijn, mag u de hindernis gebruiken om vlot in te halen",
             "is_correct": false
           }
         ],
-        "explanation": "Voetgangers die de rijbaan oversteken hebben altijd voorrang. F21 verandert niets aan de absolute voorrangsregel voor overstekende voetgangers."
+        "explanation": "Het bord regelt enkel langs welke zijde de hindernis voorbijgereden mag worden en geeft geen extra toelating om op die plaats in te halen."
       },
       "EN": {
-        "question": "May you overtake on the right on a road with F21 when a pedestrian is crossing the carriageway?",
+        "question": "May you perform an overtaking manoeuvre at the obstacle itself, using the two permitted sides to pass another vehicle more quickly?",
         "choices": [
           {
-            "text": "No you must always give way to pedestrians crossing the carriageway regardless of F21",
+            "text": "No, the sign only permits passing the obstacle on the left or right, not using it to overtake another vehicle at that spot",
             "is_correct": true
           },
           {
-            "text": "Yes F21 gives you the right to continue even when pedestrians are crossing",
+            "text": "Yes, since both sides are allowed, you may use the obstacle to overtake smoothly",
             "is_correct": false
           }
         ],
-        "explanation": "Pedestrians crossing the carriageway always have priority. F21 does not change the absolute priority rule for crossing pedestrians."
+        "explanation": "The sign only regulates which side the obstacle may be passed on and does not provide additional permission to overtake at that location."
       },
       "FR": {
-        "question": "Pouvez-vous depasser par la droite sur une route avec F21 quand un pieton traverse la chaussee ?",
+        "question": "Pouvez-vous effectuer une manœuvre de dépassement au niveau de l'obstacle lui-même, en utilisant les deux côtés autorisés pour dépasser plus rapidement un autre véhicule ?",
         "choices": [
           {
-            "text": "Non vous devez toujours ceder le passage aux pietons qui traversent la chaussee independamment de F21",
+            "text": "Non, le panneau autorise seulement à franchir l'obstacle par la gauche ou la droite, pas à l'utiliser pour dépasser un autre véhicule à cet endroit",
             "is_correct": true
           },
           {
-            "text": "Oui F21 vous donne le droit de continuer meme quand des pietons traversent",
+            "text": "Oui, puisque les deux côtés sont autorisés, vous pouvez utiliser l'obstacle pour dépasser aisément",
             "is_correct": false
           }
         ],
-        "explanation": "Les pietons qui traversent la chaussee ont toujours la priorite. F21 ne modifie pas la regle de priorite absolue pour les pietons qui traversent."
+        "explanation": "Le panneau régit uniquement le côté par lequel l'obstacle peut être franchi et ne donne pas d'autorisation supplémentaire pour dépasser à cet endroit."
       },
       "AR": {
-        "question": "هل يمكنك التجاوز من اليمين في طريق مع F21 عندما يعبر راجل الطريق؟",
+        "question": "هل يمكنك تنفيذ مناورة تجاوز عند العائق نفسه، مستخدمًا الجهتين المسموح بهما لتجاوز مركبة أخرى بسرعة أكبر؟",
         "choices": [
           {
-            "text": "لا يجب دائماً إعطاء الأولوية للمشاة العابرين للطريق بغض النظر عن F21",
+            "text": "لا، تسمح العلامة فقط بتجاوز العائق من اليمين أو اليسار، وليس استخدامه لتجاوز مركبة أخرى في ذلك الموقع",
             "is_correct": true
           },
           {
-            "text": "نعم F21 تمنحك حق الاستمرار حتى عند عبور المشاة",
+            "text": "نعم، بما أن الجهتين مسموح بهما، يمكنك استخدام العائق للتجاوز بسهولة",
             "is_correct": false
           }
         ],
-        "explanation": "للمشاة العابرين للطريق دائماً أولوية المرور. لا تغير F21 قاعدة الأولوية المطلقة للمشاة العابرين."
+        "explanation": "تنظم هذه العلامة فقط الجهة التي يمكن تجاوز العائق منها، ولا تمنح تصريحًا إضافيًا للتجاوز في ذلك الموقع."
       }
     }
   }

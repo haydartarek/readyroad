@@ -67,9 +67,9 @@ class ExamAnswerSubmissionIntegrationTest extends BaseIntegrationTest {
                 examRepository.deleteAll();
                 answerRepository.deleteAll();
 
-                // ✅ Use category seeded by BaseIntegrationTest (no duplication)
-                var categories = categoryRepository.findAll();
-                testCategory = categories.isEmpty() ? null : categories.get(0);
+                // Resolve the parent fixture from the database, never from the cached
+                // findAll() result or an assumed numeric ID.
+                testCategory = getOrCreateCategory("SIGNS", "Traffic Signs");
 
                 // ✅ BaseIntegrationTest already seeded 200 PUBLISHED questions
                 long questionCount = questionRepository.count();

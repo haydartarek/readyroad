@@ -7,13 +7,11 @@ import com.readyroad.readyroadbackend.domain.enums.SignCategory;
 import com.readyroad.readyroadbackend.domain.repository.CategoryRepository;
 import com.readyroad.readyroadbackend.domain.repository.RoadSignRepository;
 import com.readyroad.readyroadbackend.domain.repository.SignExamRepository;
-import com.readyroad.readyroadbackend.dto.CreateTrafficSignRequest;
 import com.readyroad.readyroadbackend.dto.response.AdminTrafficSignResponse;
 import com.readyroad.readyroadbackend.dto.response.PageResponse;
 import com.readyroad.readyroadbackend.dto.response.TrafficSignResponse;
 import com.readyroad.readyroadbackend.exception.TrafficSignNotFoundException;
 import com.readyroad.readyroadbackend.mapper.TrafficSignMapper;
-import com.readyroad.readyroadbackend.util.DrivingTextSanitizer;
 import com.readyroad.readyroadbackend.util.RouteCodeNormalizer;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -44,8 +42,7 @@ public class TrafficSignService {
     private final CanonicalSignCatalogService canonicalSignCatalogService;
     private final BackendMessageService messages;
 
-    // Letter code → SignCategory enum (used for admin category filter and
-    // create/update)
+    // Public category code → SignCategory enum, used for category filters.
     private static final Map<String, SignCategory> LETTER_TO_SIGN_CATEGORY;
     static {
         LETTER_TO_SIGN_CATEGORY = new HashMap<>();
@@ -55,6 +52,7 @@ public class TrafficSignService {
         LETTER_TO_SIGN_CATEGORY.put("D", SignCategory.MANDATORY);
         LETTER_TO_SIGN_CATEGORY.put("E", SignCategory.PARKING);
         LETTER_TO_SIGN_CATEGORY.put("F", SignCategory.INFORMATION);
+        LETTER_TO_SIGN_CATEGORY.put("FM", SignCategory.ROAD_MANAGEMENT);
         LETTER_TO_SIGN_CATEGORY.put("G", SignCategory.ADDITIONAL);
         LETTER_TO_SIGN_CATEGORY.put("M", SignCategory.CYCLIST);
         LETTER_TO_SIGN_CATEGORY.put("T", SignCategory.DELINEATION);
@@ -198,7 +196,7 @@ public class TrafficSignService {
         // Map letter code → SignCategory enum (null if no filter)
         SignCategory catFilter = null;
         if (categoryCode != null && !categoryCode.isBlank()) {
-            catFilter = LETTER_TO_SIGN_CATEGORY.get(categoryCode.trim().substring(0, 1).toUpperCase());
+            catFilter = LETTER_TO_SIGN_CATEGORY.get(categoryCode.trim().toUpperCase(Locale.ROOT));
         }
 
         Page<RoadSign> signPage = roadSignRepository.findAdminSigns(catFilter, qFilter, pageable);
@@ -216,95 +214,6 @@ public class TrafficSignService {
         RoadSign sign = roadSignRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException(messages.get("admin.sign.not_found", id)));
         return trafficSignMapper.toAdminResponse(sign);
-    }
-
-    // ─── Admin: Create ─────────────────────────────────
-
-    @Transactional
-    public TrafficSignResponse createSign(CreateTrafficSignRequest request) {
-        if (roadSignRepository.existsBySignCode(request.getSignCode())) {
-            throw new IllegalArgumentException(messages.get("admin.sign.code_exists", request.getSignCode()));
-        }
-
-        SignCategory signCategory = LETTER_TO_SIGN_CATEGORY.get(request.getCategoryCode());
-        if (signCategory == null) {
-            throw new IllegalArgumentException(messages.get("admin.sign.unknown_category", request.getCategoryCode()));
-        }
-
-        RoadSign sign = new RoadSign();
-        sign.setSignCode(request.getSignCode());
-        sign.setNormalizedSignCode(normalizeStoredSignCode(request.getSignCode()));
-        sign.setCategory(signCategory);
-        sign.setNameEn(request.getNameEn());
-        sign.setNameAr(request.getNameAr() != null ? request.getNameAr() : "");
-        sign.setNameNl(request.getNameNl() != null ? request.getNameNl() : "");
-        sign.setNameFr(request.getNameFr() != null ? request.getNameFr() : "");
-        sign.setDescriptionEn(DrivingTextSanitizer.sanitize("EN",
-                request.getDescriptionEn() != null ? request.getDescriptionEn() : ""));
-        sign.setDescriptionAr(DrivingTextSanitizer.sanitize("AR",
-                request.getDescriptionAr() != null ? request.getDescriptionAr() : ""));
-        sign.setDescriptionNl(DrivingTextSanitizer.sanitize("NL",
-                request.getDescriptionNl() != null ? request.getDescriptionNl() : ""));
-        sign.setDescriptionFr(DrivingTextSanitizer.sanitize("FR",
-                request.getDescriptionFr() != null ? request.getDescriptionFr() : ""));
-        sign.setImagePath(request.getImageUrl());
-        sign.setIsActive(true);
-
-        RoadSign saved = roadSignRepository.save(sign);
-        return trafficSignMapper.toResponse(saved);
-    }
-
-    // ─── Admin: Update ─────────────────────────────────
-
-    @Transactional
-    public TrafficSignResponse updateSign(Long id, CreateTrafficSignRequest request) {
-        RoadSign sign = roadSignRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException(messages.get("admin.sign.not_found", id)));
-
-        // If signCode changed, check for conflicts (excluding current sign)
-        if (!sign.getSignCode().equals(request.getSignCode())) {
-            if (roadSignRepository.existsBySignCodeAndIdNot(request.getSignCode(), id)) {
-                throw new IllegalArgumentException(messages.get("admin.sign.code_exists", request.getSignCode()));
-            }
-            sign.setSignCode(request.getSignCode());
-            sign.setNormalizedSignCode(normalizeStoredSignCode(request.getSignCode()));
-        }
-
-        // Update category if changed
-        SignCategory signCategory = LETTER_TO_SIGN_CATEGORY.get(request.getCategoryCode());
-        if (signCategory == null) {
-            throw new IllegalArgumentException(messages.get("admin.sign.unknown_category", request.getCategoryCode()));
-        }
-        sign.setCategory(signCategory);
-
-        // Update all fields
-        sign.setNameEn(request.getNameEn());
-        sign.setNameAr(request.getNameAr() != null ? request.getNameAr() : "");
-        sign.setNameNl(request.getNameNl() != null ? request.getNameNl() : "");
-        sign.setNameFr(request.getNameFr() != null ? request.getNameFr() : "");
-        sign.setDescriptionEn(DrivingTextSanitizer.sanitize("EN",
-                request.getDescriptionEn() != null ? request.getDescriptionEn() : ""));
-        sign.setDescriptionAr(DrivingTextSanitizer.sanitize("AR",
-                request.getDescriptionAr() != null ? request.getDescriptionAr() : ""));
-        sign.setDescriptionNl(DrivingTextSanitizer.sanitize("NL",
-                request.getDescriptionNl() != null ? request.getDescriptionNl() : ""));
-        sign.setDescriptionFr(DrivingTextSanitizer.sanitize("FR",
-                request.getDescriptionFr() != null ? request.getDescriptionFr() : ""));
-        if (request.getImageUrl() != null) {
-            sign.setImagePath(request.getImageUrl());
-        }
-
-        RoadSign saved = roadSignRepository.save(sign);
-        return trafficSignMapper.toResponse(saved);
-    }
-
-    // ─── Admin: Delete ─────────────────────────────────
-
-    @Transactional
-    public void deleteSign(Long id) {
-        RoadSign sign = roadSignRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException(messages.get("admin.sign.not_found", id)));
-        roadSignRepository.delete(sign);
     }
 
     // ─── Private helpers ───────────────────────────────
@@ -374,23 +283,22 @@ public class TrafficSignService {
                 base.nameEn(),
                 base.nameNl(),
                 base.nameFr(),
+                base.summaryAr(),
+                base.summaryEn(),
+                base.summaryNl(),
+                base.summaryFr(),
                 base.descriptionAr(),
                 base.descriptionEn(),
                 base.descriptionNl(),
                 base.descriptionFr(),
-                base.meaningAr(),
-                base.meaningEn(),
-                base.meaningNl(),
-                base.meaningFr(),
-                base.longDescriptionEn(),
-                base.longDescriptionNl(),
-                base.longDescriptionFr(),
-                base.longDescriptionAr(),
-                base.guidanceAr(),
-                base.guidanceEn(),
-                base.guidanceNl(),
-                base.guidanceFr(),
-                base.isLongDescriptionComplete(),
+                base.driverGuidanceAr(),
+                base.driverGuidanceEn(),
+                base.driverGuidanceNl(),
+                base.driverGuidanceFr(),
+                base.exceptionsAr(),
+                base.exceptionsEn(),
+                base.exceptionsNl(),
+                base.exceptionsFr(),
                 base.imageUrl());
     }
 
@@ -435,10 +343,6 @@ public class TrafficSignService {
 
     private static String normalizeRouteKey(String value) {
         return RouteCodeNormalizer.normalize(value);
-    }
-
-    private static String normalizeStoredSignCode(String signCode) {
-        return signCode.toLowerCase(Locale.ROOT).replaceAll("[^a-z0-9]", "_");
     }
 
     private boolean matchesSearchQuery(TrafficSignResponse sign, String normalizedQuery) {

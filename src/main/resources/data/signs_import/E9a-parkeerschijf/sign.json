@@ -6,20 +6,39 @@
   "i18n": {
     "NL": {
       "name": "Parkeren met parkeerschijf verplicht — beperkte duur",
-      "description": "Dit bord duidt een zone aan waar parkeren toegestaan is maar beperkt in tijd. U bent verplicht een parkeerschijf goed zichtbaar op het dashboard te leggen met de aankomsttijd ingesteld op de eerstvolgende halve uur. De schijf mag uitsluitend bij aankomst worden ingesteld en mag naderhand niet worden bijgesteld, want dat is fraude. Een onderbord geeft de geldingstijden en de maximumduur aan. Is er geen onderbord, dan geldt de verplichting 24 uur per dag."
+      "summary": "Parkeren is toegestaan met een correct ingestelde parkeerschijf binnen de aangegeven of wettelijke tijdsvoorwaarden.",
+      "description": "Dit bord laat parkeren toe maar koppelt het aan het gebruik van een parkeerschijf. Stel bij aankomst de pijl in op het eerstvolgende streepje en wijzig de aanduiding niet zolang het voertuig op de plaats blijft. Tenzij de signalisatie bijzondere voorwaarden vermeldt, geldt de schijf op werkdagen van 9 tot 18 uur en bedraagt de maximale parkeerduur twee uur.",
+      "driver_guidance": "Parkeerschijven zijn ingedeeld in stappen van 30 minuten. U rondt de aankomsttijd af naar het eerstvolgende halve uur. Aankomsttijd 10:22 → instellen op 10:30. Zo heeft u tot 10:30 plus de maximumduur de tijd.",
+      "exceptions": [
+        "Bijzondere voorwaarden op de signalisatie vervangen de standaarduren van 9 tot 18 uur op werkdagen en de standaardduur van twee uur."
+      ]
     },
     "EN": {
       "name": "Parking with parking disc required — limited duration",
-      "description": "This sign marks a zone where parking is permitted but limited in time. You are required to place a parking disc visibly on the dashboard with the arrival time set to the next half-hour. The disc may only be set upon arrival and must not be readjusted afterwards, as that constitutes fraud. A supplementary sign shows the applicable times and maximum duration. If there is no supplementary sign the requirement applies 24 hours a day."
+      "summary": "Parking is permitted with a correctly set parking disc during the posted or statutory time conditions.",
+      "description": "This sign permits parking subject to the use of a parking disc. On arrival, set the arrow to the next time mark and do not change it while the vehicle remains parked. Unless the signage states special conditions, the disc is required on working days from 09:00 to 18:00 and the maximum parking time is two hours.",
+      "driver_guidance": "Parking discs are divided into 30-minute steps. You round the arrival time up to the next half-hour. Arrival time 10:22 → set to 10:30. This gives you until 10:30 plus the maximum duration.",
+      "exceptions": [
+        "Special conditions shown on the signage replace the default working-day hours of 09:00–18:00 and the default two-hour limit."
+      ]
     },
     "FR": {
       "name": "Stationnement avec disque obligatoire — durée limitée",
-      "description": "Ce panneau indique une zone où le stationnement est autorisé mais limité dans le temps. Vous êtes obligé de placer un disque de stationnement visiblement sur le tableau de bord avec l'heure d'arrivée réglée à la prochaine demi-heure. Le disque ne peut être réglé qu'à l'arrivée et ne peut pas être réajusté ensuite, car cela constitue une fraude. Un panneau complémentaire indique les heures applicables et la durée maximale. En l'absence de panneau complémentaire l'obligation s'applique 24 heures sur 24."
+      "summary": "Le stationnement est autorisé avec un disque correctement réglé pendant les périodes indiquées ou prévues par la règle.",
+      "description": "Ce panneau autorise le stationnement sous réserve de l’utilisation d’un disque. À l’arrivée, placez la flèche sur le trait suivant l’heure d’arrivée et ne modifiez pas l’indication tant que le véhicule reste stationné. Sauf conditions particulières indiquées par la signalisation, le disque est requis les jours ouvrables de 9 h à 18 h et la durée maximale est de deux heures.",
+      "driver_guidance": "Les disques de stationnement sont divisés en tranches de 30 minutes. Vous arrondissez l'heure d'arrivée à la prochaine demi-heure. Heure d'arrivée 10h22 → régler sur 10h30. Cela vous donne jusqu'à 10h30 plus la durée maximale.",
+      "exceptions": [
+        "Les conditions particulières indiquées par la signalisation remplacent les heures par défaut de 9 h à 18 h les jours ouvrables et la limite de deux heures."
+      ]
     },
     "AR": {
       "name": "وقوف بقرص إلزامي — مدة محدودة",
-      "description": "تُشير هذه العلامة إلى منطقة يُسمح فيها بالوقوف لكنه محدود بالوقت. يجب عليك وضع قرص الوقوف بشكل مرئي على لوحة القيادة مع ضبط وقت الوصول على نصف الساعة التالي. لا يجوز ضبط القرص إلا عند الوصول ولا يمكن إعادة ضبطه لاحقاً لأن ذلك يُعدّ احتيالاً. تُبيّن علامة مرورية تكميلية أوقات السريان والمدة القصوى. في غياب علامة تكميلية تسري الإلزامية 24 ساعة يومياً."
+      "summary": "يُسمح بالوقوف مع ضبط قرص الوقوف بصورة صحيحة ضمن الشروط الزمنية المبينة أو القانونية.",
+      "description": "تسمح هذه العلامة بالوقوف بشرط استخدام قرص الوقوف. عند الوصول اضبط السهم على العلامة الزمنية التالية ولا تغيّر الوقت ما دامت المركبة في مكانها. ما لم تذكر الإشارات شروطاً خاصة، يُطلب القرص في أيام العمل من الساعة 9:00 حتى 18:00 وتكون المدة القصوى ساعتين.",
+      "driver_guidance": "أقراص الوقوف مقسّمة إلى فترات 30 دقيقة. تقرّب وقت الوصول إلى نصف الساعة التالي. وقت الوصول 10:22 → تضبط على 10:30. يمنحك ذلك حتى 10:30 زائد المدة القصوى.",
+      "exceptions": [
+        "تحل الشروط الخاصة المبينة على الإشارات محل الساعات الافتراضية من 9:00 إلى 18:00 في أيام العمل والحد الافتراضي البالغ ساعتين."
+      ]
     }
   }
 }
-

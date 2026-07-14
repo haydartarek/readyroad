@@ -7,202 +7,232 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat betekent bord F12a 'Begin woonerf'?",
+        "question": "U ziet dit bord aan het begin van een straat. Wat houdt dit precies in?",
         "choices": [
           {
-            "text": "U rijdt een woonerf in waar voetgangers de volledige weg mogen gebruiken een maximumsnelheid van 20 km/u geldt en kinderen voorrang hebben",
+            "text": "U rijdt een woonerf in waar voetgangers en kinderen de hele weg mogen gebruiken en een lage maximumsnelheid geldt",
             "is_correct": true
           },
           {
-            "text": "U rijdt een voetgangerszone in waar auto's volledig verboden zijn",
+            "text": "U rijdt een gewone straat in met normale voorrangsregels",
             "is_correct": false
           },
           {
-            "text": "U rijdt een erf in met een maximumsnelheid van 50 km/u",
+            "text": "U verlaat een bebouwde kom en de snelheid mag omhoog",
             "is_correct": false
           }
         ],
-        "explanation": "F12a geeft het begin van een woonerf aan. In een woonerf mogen voetgangers de volledige rijbaan gebruiken gelden speciale voorrangsregels voor spelende kinderen en is de maximumsnelheid 20 km/u (stapvoets)."
+        "explanation": "Dit bord duidt een woonerf aan, een zone met bijzondere regels voor voetgangers en een strikte snelheidsbeperking, ter bescherming van bewoners en spelende kinderen."
       },
       "EN": {
-        "question": "What does sign F12a 'Start of residential area' mean?",
+        "question": "You see this sign at the start of a street. What does it actually mean for you as a driver?",
         "choices": [
           {
-            "text": "You are entering a residential area where pedestrians may use the full road a maximum speed of 20 km/h applies and children have priority",
+            "text": "You are entering a residential area where pedestrians and children may use the whole road and a low speed limit applies",
             "is_correct": true
           },
           {
-            "text": "You are entering a pedestrian zone where cars are completely prohibited",
+            "text": "You are entering an ordinary street with normal priority rules",
             "is_correct": false
           },
           {
-            "text": "You are entering a yard with a maximum speed of 50 km/h",
+            "text": "You are leaving a built-up area and speed may increase",
             "is_correct": false
           }
         ],
-        "explanation": "F12a indicates the start of a residential area (woonerf). In a residential area pedestrians may use the entire roadway special priority rules apply for playing children and the maximum speed is 20 km/h (walking pace)."
+        "explanation": "This sign marks a residential area, a zone with special rules protecting pedestrians and a strict speed limit meant to keep playing children safe."
       },
       "FR": {
-        "question": "Que signifie le panneau F12a 'Debut de zone residentielle' ?",
+        "question": "Vous apercevez ce panneau au début d'une rue. Que signifie-t-il concrètement pour vous ?",
         "choices": [
           {
-            "text": "Vous entrez dans une zone residentielle ou les pietons peuvent utiliser toute la route une vitesse maximale de 20 km/h s applique et les enfants ont la priorite",
+            "text": "Vous entrez dans une zone résidentielle où les piétons et les enfants peuvent utiliser toute la voie et où une vitesse réduite s'applique",
             "is_correct": true
           },
           {
-            "text": "Vous entrez dans une zone pietonne ou les voitures sont completement interdites",
+            "text": "Vous entrez dans une rue ordinaire avec des règles de priorité classiques",
             "is_correct": false
           },
           {
-            "text": "Vous entrez dans une cour avec une vitesse maximale de 50 km/h",
+            "text": "Vous quittez une agglomération et la vitesse peut augmenter",
             "is_correct": false
           }
         ],
-        "explanation": "F12a indique le debut d une zone residentielle (woonerf). Dans une zone residentielle les pietons peuvent utiliser toute la chaussee des regles de priorite speciales s appliquent pour les enfants qui jouent et la vitesse maximale est de 20 km/h (au pas)."
+        "explanation": "Ce panneau annonce une zone résidentielle, où des règles particulières protègent les piétons et où une vitesse strictement limitée s'impose à cause des enfants qui jouent."
       },
       "AR": {
-        "question": "ما معنى هذه العلامة المرورية؟",
+        "question": "لاحظت هذه العلامة عند مدخل شارع، فماذا تعني بالضبط للسائق؟",
         "choices": [
           {
-            "text": "أنت تدخل منطقة سكنية يمكن فيها للمشاة استخدام الطريق بالكامل ويسري حد أقصى للسرعة 20 كم/ساعة وللأطفال الأولوية",
+            "text": "أنك تدخل منطقة سكنية يمكن فيها للمشاة والأطفال استخدام الطريق بالكامل ويسري فيها حد سرعة منخفض",
             "is_correct": true
           },
           {
-            "text": "أنت تدخل منطقة مشاة حيث السيارات محظورة كلياً",
+            "text": "أنك تدخل شارعًا عاديًا تسري فيه قواعد الأولوية المعتادة",
             "is_correct": false
           },
           {
-            "text": "أنت تدخل فناء بحد أقصى للسرعة 50 كم/ساعة",
+            "text": "أنك تخرج من منطقة عمرانية ويمكنك زيادة سرعتك",
             "is_correct": false
           }
         ],
-        "explanation": "تشير F12a إلى بداية المنطقة السكنية. في المنطقة السكنية يمكن للمشاة استخدام الطريق بالكامل وتسري قواعد أولوية خاصة للأطفال اللاعبين والحد الأقصى للسرعة هو 20 كم/ساعة."
+        "explanation": "تشير هذه العلامة إلى منطقة سكنية تحكمها قواعد خاصة لحماية المشاة، مع حد سرعة صارم بسبب احتمال وجود أطفال يلعبون في الطريق."
       }
     }
   },
   {
     "question_id": "F12a_Q02",
-    "type": "WHICH_SIGN",
+    "type": "DRIVER_ACTION",
     "difficulty": "EASY",
     "is_critical": false,
-    "show_sign": true,
+    "show_sign": false,
     "i18n": {
       "NL": {
-        "question": "Welk bord markeert het begin van een woonerf?",
+        "question": "U bent net een woonerf ingereden. Wat wordt van u als bestuurder verwacht?",
         "choices": [
-          { "text": "F12a begin woonerf", "is_correct": true },
-          { "text": "F12b einde woonerf", "is_correct": false },
-          { "text": "F9 begin autoweg", "is_correct": false }
+          {
+            "text": "Rijden met verhoogde aandacht en de snelheid aanpassen aan de leefomgeving en de aanwezigheid van kinderen",
+            "is_correct": true
+          },
+          {
+            "text": "Normaal blijven rijden zoals op elke andere straat",
+            "is_correct": false
+          },
+          {
+            "text": "Enkel opletten voor ander autoverkeer",
+            "is_correct": false
+          }
         ],
-        "explanation": "F12a is het beginbord van een woonerf. Het bijbehorende eindbord is F12b. Het woonerf is een zone met bijzondere rechten voor voetgangers en een lage maximumsnelheid."
+        "explanation": "In een woonerf verwacht de wetgever extra waakzaamheid, omdat voetgangers en kinderen zich vrij over de rijbaan mogen bewegen."
       },
       "EN": {
-        "question": "Which sign marks the start of a residential area?",
+        "question": "You have just entered a residential area. What is expected from you as a driver?",
         "choices": [
-          { "text": "F12a start of residential area", "is_correct": true },
-          { "text": "F12b end of residential area", "is_correct": false },
-          { "text": "F9 start of expressway", "is_correct": false }
+          {
+            "text": "Drive with heightened attention and adjust your speed because of the living environment and possible children nearby",
+            "is_correct": true
+          },
+          {
+            "text": "Keep driving normally as on any other street",
+            "is_correct": false
+          },
+          { "text": "Only watch out for other cars", "is_correct": false }
         ],
-        "explanation": "F12a is the start sign of a residential area. The corresponding end sign is F12b. The residential area is a zone with special rights for pedestrians and a low maximum speed."
+        "explanation": "In a residential area, extra vigilance is required because pedestrians and children may move freely across the entire roadway."
       },
       "FR": {
-        "question": "Quel panneau marque le debut d une zone residentielle ?",
+        "question": "Vous venez d'entrer dans une zone résidentielle. Qu'attend-on de vous en tant que conducteur ?",
         "choices": [
-          { "text": "F12a debut de zone residentielle", "is_correct": true },
-          { "text": "F12b fin de zone residentielle", "is_correct": false },
-          { "text": "F9 debut de route pour automobiles", "is_correct": false }
+          {
+            "text": "Conduire avec une vigilance accrue et adapter votre vitesse en raison du cadre de vie et de la présence possible d'enfants",
+            "is_correct": true
+          },
+          {
+            "text": "Continuer à rouler normalement comme dans n'importe quelle rue",
+            "is_correct": false
+          },
+          {
+            "text": "Ne surveiller que les autres voitures",
+            "is_correct": false
+          }
         ],
-        "explanation": "F12a est le panneau de debut d une zone residentielle. Le panneau de fin correspondant est F12b. La zone residentielle est une zone avec des droits speciaux pour les pietons et une faible vitesse maximale."
+        "explanation": "Dans une zone résidentielle, une vigilance accrue est exigée puisque les piétons et les enfants peuvent circuler librement sur toute la chaussée."
       },
       "AR": {
-        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
+        "question": "دخلت للتو إلى منطقة سكنية، فما المطلوب منك كسائق؟",
         "choices": [
-          { "text": "F12a بداية المنطقة السكنية", "is_correct": true },
-          { "text": "F12b نهاية المنطقة السكنية", "is_correct": false },
-          { "text": "F9 بداية الطريق السريع للسيارات", "is_correct": false }
+          {
+            "text": "القيادة بانتباه أعلى وتعديل سرعتك بسبب طبيعة المنطقة واحتمال وجود أطفال قريبين",
+            "is_correct": true
+          },
+          {
+            "text": "الاستمرار بالقيادة بشكل طبيعي كما في أي شارع آخر",
+            "is_correct": false
+          },
+          { "text": "الانتباه فقط للمركبات الأخرى", "is_correct": false }
         ],
-        "explanation": "F12a هي علامة مرورية البداية للمنطقة السكنية. علامة مرورية النهاية المقابلة هي F12b. المنطقة السكنية هي منطقة بحقوق خاصة للمشاة وحد أقصى منخفض للسرعة."
+        "explanation": "تتطلب المنطقة السكنية انتباهًا إضافيًا من السائق لأن المشاة والأطفال يمكنهم التحرك بحرية عبر الطريق بالكامل."
       }
     }
   },
   {
     "question_id": "F12a_Q03",
-    "type": "HAZARD_IDENTIFICATION",
+    "type": "WHAT_HAPPENS_IF",
     "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat is het grootste gevaar in een woonerf voor automobilisten?",
+        "question": "Wat kan er gebeuren als u de aanwijzingen van dit bord negeert en te snel doorrijdt?",
         "choices": [
           {
-            "text": "Spelende kinderen die plotseling vanachter geparkeerde voertuigen kunnen tevoorschijn komen",
+            "text": "U verhoogt het risico op een ongeval met een kind of voetganger die plots de weg oploopt",
             "is_correct": true
           },
           {
-            "text": "Voetgangers die enkel op stoepen mogen lopen",
+            "text": "Er verandert niets, want de weg blijft even breed",
             "is_correct": false
           },
           {
-            "text": "Fietsers die verplicht een apart fietspad gebruiken",
+            "text": "U krijgt automatisch voorrang op andere weggebruikers",
             "is_correct": false
           }
         ],
-        "explanation": "In een woonerf mogen kinderen en voetgangers de volledige weg gebruiken inclusief de rijbaan. Kinderen die achter geparkeerde auto's spelen zijn moeilijk zichtbaar en kunnen plotseling de rijbaan oplopen. Maximumsnelheid 20 km/u is verplicht voor dit gevaar."
+        "explanation": "Omdat kinderen en voetgangers de volledige rijbaan mogen gebruiken, verhoogt een te hoge snelheid het gevaar op een ernstig ongeval aanzienlijk."
       },
       "EN": {
-        "question": "What is the greatest danger in a residential area for motorists?",
+        "question": "What could happen if you ignore this sign's warning and drive too fast?",
         "choices": [
           {
-            "text": "Playing children who may suddenly appear from behind parked vehicles",
+            "text": "You significantly increase the risk of hitting a child or pedestrian who suddenly steps onto the road",
             "is_correct": true
           },
           {
-            "text": "Pedestrians who are only allowed to walk on pavements",
+            "text": "Nothing changes, the road width stays the same",
             "is_correct": false
           },
           {
-            "text": "Cyclists who are required to use a separate cycle path",
+            "text": "You automatically gain priority over other road users",
             "is_correct": false
           }
         ],
-        "explanation": "In a residential area children and pedestrians may use the entire road including the carriageway. Children playing behind parked cars are difficult to see and may suddenly run onto the carriageway. Maximum speed 20 km/h is mandatory for this hazard."
+        "explanation": "Since children and pedestrians may use the full width of the road, driving too fast greatly increases the danger of a serious collision."
       },
       "FR": {
-        "question": "Quel est le plus grand danger dans une zone residentielle pour les automobilistes ?",
+        "question": "Que risque-t-il de se passer si vous ignorez cet avertissement et roulez trop vite ?",
         "choices": [
           {
-            "text": "Des enfants qui jouent et qui peuvent surgir soudainement de derriere des vehicules gares",
+            "text": "Vous augmentez fortement le risque de heurter un enfant ou un piéton qui surgit soudainement sur la route",
             "is_correct": true
           },
           {
-            "text": "Des pietons qui ne sont autorises a marcher que sur les trottoirs",
+            "text": "Rien ne change, la largeur de la route reste identique",
             "is_correct": false
           },
           {
-            "text": "Des cyclistes qui sont obliges d utiliser une piste cyclable separee",
+            "text": "Vous obtenez automatiquement la priorité sur les autres usagers",
             "is_correct": false
           }
         ],
-        "explanation": "Dans une zone residentielle les enfants et les pietons peuvent utiliser toute la route y compris la chaussee. Les enfants qui jouent derriere des voitures garees sont difficiles a voir et peuvent soudainement courir sur la chaussee. La vitesse maximale de 20 km/h est obligatoire pour ce danger."
+        "explanation": "Puisque les enfants et les piétons peuvent occuper toute la largeur de la route, rouler trop vite augmente fortement le risque d'accident grave."
       },
       "AR": {
-        "question": "ما أكبر خطر في المنطقة السكنية على السائقين؟",
+        "question": "ماذا يمكن أن يحدث إذا تجاهلت تحذير هذه العلامة وقدت بسرعة زائدة؟",
         "choices": [
           {
-            "text": "الأطفال اللاعبون الذين قد يظهرون فجأة من خلف المركبات المتوقفة",
+            "text": "تزيد بشكل كبير من خطر الاصطدام بطفل أو أحد المشاة يظهر فجأة على الطريق",
             "is_correct": true
           },
           {
-            "text": "المشاة المسموح لهم فقط بالسير على الأرصفة",
+            "text": "لا يتغير شيء لأن عرض الطريق يبقى ثابتًا",
             "is_correct": false
           },
           {
-            "text": "الدراجون الملزمون باستخدام مسار دراجات منفصل",
+            "text": "تحصل تلقائيًا على الأولوية على مستخدمي الطريق الآخرين",
             "is_correct": false
           }
         ],
-        "explanation": "في المنطقة السكنية يمكن للأطفال والمشاة استخدام الطريق بالكامل بما فيه طريق السير. الأطفال اللاعبون خلف السيارات المتوقفة يصعب رؤيتهم وقد يركضون فجأة على الطريق. الحد الأقصى 20 كم/ساعة إلزامي لهذا الخطر."
+        "explanation": "بما أن الأطفال والمشاة يمكنهم استخدام الطريق بكامله، فإن السرعة الزائدة تزيد بشدة من احتمالية وقوع حادث خطير."
       }
     }
   },
@@ -211,124 +241,157 @@
     "type": "WHAT_MUST_YOU_DO",
     "difficulty": "MEDIUM",
     "is_critical": false,
-    "show_sign": true,
+    "show_sign": false,
     "i18n": {
       "NL": {
-        "question": "Welke maximumsnelheid geldt in een woonerf?",
+        "question": "U wilt uw wagen parkeren in een straat met dit bord. Hoe gaat u te werk?",
         "choices": [
-          { "text": "20 km/u (stapvoets)", "is_correct": true },
-          { "text": "30 km/u", "is_correct": false },
-          { "text": "10 km/u", "is_correct": false }
+          {
+            "text": "U parkeert enkel op de plaatsen die specifiek als parkeerplaats zijn aangeduid",
+            "is_correct": true
+          },
+          {
+            "text": "U parkeert waar u wilt zolang de weg breed genoeg is",
+            "is_correct": false
+          },
+          {
+            "text": "U parkeert enkel op de stoep om de rijbaan vrij te houden",
+            "is_correct": false
+          }
         ],
-        "explanation": "In een woonerf (aangeduid door F12a) geldt een maximumsnelheid van 20 km/u. Dit is vergelijkbaar met stapvoets rijden. De lage snelheid is noodzakelijk omdat voetgangers en kinderen de volledige weg mogen gebruiken."
+        "explanation": "In een woonerf beperkt willekeurig parkeren de bewegingsvrijheid van voetgangers, daarom is parkeren enkel toegestaan op de daarvoor aangeduide plaatsen."
       },
       "EN": {
-        "question": "What maximum speed applies in a residential area?",
+        "question": "You want to park your car on a street marked with this sign. How should you go about it?",
         "choices": [
-          { "text": "20 km/h (walking pace)", "is_correct": true },
-          { "text": "30 km/h", "is_correct": false },
-          { "text": "10 km/h", "is_correct": false }
+          {
+            "text": "You may only park in spaces specifically designated for parking",
+            "is_correct": true
+          },
+          {
+            "text": "You may park anywhere as long as the road is wide enough",
+            "is_correct": false
+          },
+          {
+            "text": "You should only park on the pavement to keep the road clear",
+            "is_correct": false
+          }
         ],
-        "explanation": "In a residential area (indicated by F12a) a maximum speed of 20 km/h applies. This is comparable to walking pace. The low speed is necessary because pedestrians and children may use the entire road."
+        "explanation": "Random parking in a residential area restricts pedestrians' freedom of movement, so parking is only allowed in specifically designated spots."
       },
       "FR": {
-        "question": "Quelle vitesse maximale s applique dans une zone residentielle ?",
+        "question": "Vous souhaitez garer votre voiture dans une rue portant ce panneau. Comment devez-vous procéder ?",
         "choices": [
-          { "text": "20 km/h (au pas)", "is_correct": true },
-          { "text": "30 km/h", "is_correct": false },
-          { "text": "10 km/h", "is_correct": false }
+          {
+            "text": "Vous ne pouvez stationner qu'aux emplacements spécifiquement prévus à cet effet",
+            "is_correct": true
+          },
+          {
+            "text": "Vous pouvez vous garer où vous voulez si la route est assez large",
+            "is_correct": false
+          },
+          {
+            "text": "Vous devez vous garer uniquement sur le trottoir pour dégager la chaussée",
+            "is_correct": false
+          }
         ],
-        "explanation": "Dans une zone residentielle (indiquee par F12a) une vitesse maximale de 20 km/h s applique. C est comparable a la vitesse du pas. La faible vitesse est necessaire car les pietons et les enfants peuvent utiliser toute la route."
+        "explanation": "Le stationnement aléatoire dans une zone résidentielle limite la liberté de mouvement des piétons, c'est pourquoi il n'est autorisé qu'aux emplacements prévus."
       },
       "AR": {
-        "question": "ما الحد الأقصى للسرعة المطبَّق في المنطقة السكنية؟",
+        "question": "ترغب في وقوف سيارتك في شارع يحمل هذه العلامة، فكيف تتصرف؟",
         "choices": [
-          { "text": "20 كم/ساعة (بخطى المشاة)", "is_correct": true },
-          { "text": "30 كم/ساعة", "is_correct": false },
-          { "text": "10 كم/ساعة", "is_correct": false }
+          {
+            "text": "توقف فقط في الأماكن المخصصة تحديدًا للوقوف",
+            "is_correct": true
+          },
+          {
+            "text": "توقف في أي مكان ما دام الطريق واسعًا بما يكفي",
+            "is_correct": false
+          },
+          {
+            "text": "توقف فقط على الرصيف لإبقاء طريق السير خاليًا",
+            "is_correct": false
+          }
         ],
-        "explanation": "في المنطقة السكنية (المشار إليها بـF12a) يسري حد أقصى للسرعة يبلغ 20 كم/ساعة. هذا مماثل لخطى المشاة. السرعة المنخفضة ضرورية لأن المشاة والأطفال يمكنهم استخدام الطريق بالكامل."
+        "explanation": "الوقوف العشوائي في المنطقة السكنية يقيد حرية تنقل المشاة، لذلك لا يُسمح بالوقوف إلا في الأماكن المخصصة له."
       }
     }
   },
   {
     "question_id": "F12a_Q05",
-    "type": "WHAT_MUST_YOU_DO",
+    "type": "WHERE_DOES_IT_APPLY",
     "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Hoe moet u parkeren in een woonerf?",
+        "question": "Vanaf welk punt gelden de bijzondere regels van een woonerf voor de bestuurder?",
         "choices": [
           {
-            "text": "Enkel parkeren op de plaatsen die specifiek voor parkeren zijn aangeduid; willekeurig parkeren is verboden",
+            "text": "Onmiddellijk vanaf het bord zelf, tot het einde van de zone wordt aangeduid",
             "is_correct": true
           },
           {
-            "text": "U mag overal parkeren zolang u een vrije doorgang laat",
+            "text": "Pas nadat de bestuurder honderd meter heeft gereden",
             "is_correct": false
           },
-          {
-            "text": "Parkeren is volledig verboden in een woonerf",
-            "is_correct": false
-          }
+          { "text": "Enkel op kruispunten binnen de zone", "is_correct": false }
         ],
-        "explanation": "In een woonerf is parkeren alleen toegestaan op aangeduide parkeerplaatsen. Willekeurig parkeren op de rijbaan of op plaatsen die de bewegingsvrijheid van voetgangers beperken is verboden."
+        "explanation": "De regels van een woonerf gaan onmiddellijk in vanaf het bord en blijven van toepassing tot het overeenkomstige eindbord de zone afsluit."
       },
       "EN": {
-        "question": "How must you park in a residential area?",
+        "question": "From which point do the special rules of a residential area apply to the driver?",
         "choices": [
           {
-            "text": "Only park in places specifically designated for parking; random parking is prohibited",
+            "text": "Immediately from the sign itself, until the end of the zone is indicated",
             "is_correct": true
           },
           {
-            "text": "You may park anywhere as long as you leave a free passage",
+            "text": "Only after the driver has travelled a hundred metres",
             "is_correct": false
           },
           {
-            "text": "Parking is completely prohibited in a residential area",
+            "text": "Only at intersections within the zone",
             "is_correct": false
           }
         ],
-        "explanation": "In a residential area parking is only permitted in designated parking spaces. Random parking on the carriageway or in places that restrict the freedom of movement of pedestrians is prohibited."
+        "explanation": "The rules of a residential area take effect immediately at the sign and remain valid until the matching end sign closes the zone."
       },
       "FR": {
-        "question": "Comment devez-vous stationner dans une zone residentielle ?",
+        "question": "À partir de quel point les règles particulières de la zone résidentielle s'appliquent-elles au conducteur ?",
         "choices": [
           {
-            "text": "Stationner uniquement aux endroits specifiquement designes pour le stationnement; le stationnement aleatoire est interdit",
+            "text": "Immédiatement à partir du panneau lui-même, jusqu'à ce que la fin de la zone soit signalée",
             "is_correct": true
           },
           {
-            "text": "Vous pouvez stationner n importe ou tant que vous laissez un passage libre",
+            "text": "Seulement après que le conducteur a parcouru cent mètres",
             "is_correct": false
           },
           {
-            "text": "Le stationnement est completement interdit dans une zone residentielle",
+            "text": "Uniquement aux intersections situées dans la zone",
             "is_correct": false
           }
         ],
-        "explanation": "Dans une zone residentielle le stationnement n est autorise que dans les emplacements de stationnement designes. Le stationnement aleatoire sur la chaussee ou dans des endroits qui limitent la liberte de mouvement des pietons est interdit."
+        "explanation": "Les règles de la zone résidentielle entrent en vigueur immédiatement au niveau du panneau et restent valables jusqu'au panneau de fin correspondant."
       },
       "AR": {
-        "question": "كيف يجب أن تقوم بالوقوف في المنطقة السكنية؟",
+        "question": "من أي نقطة تبدأ القواعد الخاصة بالمنطقة السكنية بالسريان على السائق؟",
         "choices": [
           {
-            "text": "اركن فقط في الأماكن المخصصة للوقوف تحديداً؛ الوقوف العشوائي محظور",
+            "text": "مباشرة من عند العلامة نفسها، وتستمر حتى يُشار إلى نهاية المنطقة",
             "is_correct": true
           },
           {
-            "text": "يمكنك الوقوف في أي مكان طالما تترك ممراً حراً",
+            "text": "فقط بعد أن يقطع السائق مسافة مئة متر",
             "is_correct": false
           },
           {
-            "text": "الوقوف محظور كلياً في المنطقة السكنية",
+            "text": "فقط عند التقاطعات الواقعة داخل المنطقة",
             "is_correct": false
           }
         ],
-        "explanation": "في المنطقة السكنية يُسمح بالوقوف فقط في أماكن الوقوف المخصصة. الوقوف العشوائي على طريق السير أو في أماكن تقيد حرية تنقل المشاة محظور."
+        "explanation": "تبدأ قواعد المنطقة السكنية بالتطبيق فورًا عند العلامة وتستمر سارية حتى تظهر علامة النهاية المقابلة التي تُغلق المنطقة."
       }
     }
   },
@@ -337,79 +400,79 @@
     "type": "WHAT_MUST_YOU_DO",
     "difficulty": "MEDIUM",
     "is_critical": false,
-    "show_sign": true,
+    "show_sign": false,
     "i18n": {
       "NL": {
-        "question": "Wie heeft voorrang in een woonerf als er geen andere regeling is?",
+        "question": "Een kind speelt met een bal dicht bij de rijbaan in een woonerf. Wat is de juiste houding als bestuurder?",
         "choices": [
           {
-            "text": "Voetgangers en spelende kinderen hebben voorrang op motorvoertuigen",
+            "text": "Sterk vertragen, dubbel voorzichtig zijn en zo nodig stoppen zodat het kind niet wordt gehinderd of in gevaar gebracht",
             "is_correct": true
           },
           {
-            "text": "Motorvoertuigen hebben altijd voorrang",
+            "text": "Doorrijden op dezelfde snelheid omdat er geen oversteekplaats is",
             "is_correct": false
           },
           {
-            "text": "Fietsers hebben voorrang op zowel voetgangers als motorvoertuigen",
+            "text": "Toeteren zodat het kind zelf opzij gaat",
             "is_correct": false
           }
         ],
-        "explanation": "In een woonerf heeft voetgangersverkeer (inclusief spelende kinderen) voorrang op motorvoertuigen. Dit is een fundamenteel kenmerk van de woonerf waarbij de leefkwaliteit boven de doorstroming van motorvoertuigen wordt gesteld."
+        "explanation": "In een woonerf mogen voetgangers de volledige breedte van de openbare weg gebruiken en mogen kinderen spelen. Bestuurders mogen hen niet hinderen of in gevaar brengen, moeten zo nodig stoppen en moeten dubbel voorzichtig zijn tegenover kinderen."
       },
       "EN": {
-        "question": "Who has priority in a residential area when there is no other arrangement?",
+        "question": "A child is playing with a ball close to the carriageway in a residential area. What is the correct attitude for a driver?",
         "choices": [
           {
-            "text": "Pedestrians and playing children have priority over motor vehicles",
+            "text": "Slow down substantially, take extra care and stop if necessary so the child is neither hindered nor endangered",
             "is_correct": true
           },
           {
-            "text": "Motor vehicles always have priority",
+            "text": "Keep driving at the same speed since there is no crossing",
             "is_correct": false
           },
           {
-            "text": "Cyclists have priority over both pedestrians and motor vehicles",
+            "text": "Sound the horn so the child moves aside",
             "is_correct": false
           }
         ],
-        "explanation": "In a residential area pedestrian traffic (including playing children) has priority over motor vehicles. This is a fundamental feature of the residential area where quality of life is placed above the flow of motor vehicles."
+        "explanation": "In a residential area pedestrians may use the entire width of the public road and children may play. Drivers must not endanger or hinder them, must stop if necessary and must take extra care around children."
       },
       "FR": {
-        "question": "Qui a la priorite dans une zone residentielle en l absence d autre reglementation ?",
+        "question": "Un enfant joue au ballon près de la chaussée dans une zone résidentielle. Quelle attitude le conducteur doit-il adopter ?",
         "choices": [
           {
-            "text": "Les pietons et les enfants qui jouent ont la priorite sur les vehicules a moteur",
+            "text": "Ralentir fortement, redoubler de prudence et s'arrêter si nécessaire afin de ne ni gêner ni mettre l'enfant en danger",
             "is_correct": true
           },
           {
-            "text": "Les vehicules a moteur ont toujours la priorite",
+            "text": "Continuer à la même vitesse puisqu'il n'y a pas de passage piéton",
             "is_correct": false
           },
           {
-            "text": "Les cyclistes ont la priorite sur les pietons et les vehicules a moteur",
+            "text": "Klaxonner pour que l'enfant s'écarte de lui-même",
             "is_correct": false
           }
         ],
-        "explanation": "Dans une zone residentielle les pietons (y compris les enfants qui jouent) ont la priorite sur les vehicules a moteur. C est une caracteristique fondamentale de la zone residentielle ou la qualite de vie est placee au-dessus du flux des vehicules a moteur."
+        "explanation": "Dans une zone résidentielle, les piétons peuvent utiliser toute la largeur de la voie publique et les enfants peuvent jouer. Les conducteurs ne peuvent ni les mettre en danger ni les gêner, doivent s'arrêter si nécessaire et redoubler de prudence envers les enfants."
       },
       "AR": {
-        "question": "من له الأولوية في المنطقة السكنية عند عدم وجود ترتيب آخر؟",
+        "question": "طفل يلعب بكرة قريبًا من طريق السير داخل منطقة سكنية، فما التصرف الصحيح للسائق؟",
         "choices": [
           {
-            "text": "المشاة والأطفال اللاعبون لهم الأولوية على المركبات ذات المحرك",
+            "text": "خفف السرعة كثيرًا وتوخَّ حذرًا مضاعفًا وتوقف عند الحاجة كي لا تعيق الطفل أو تعرضه للخطر",
             "is_correct": true
           },
           {
-            "text": "المركبات ذات المحرك لها الأولوية دائماً",
+            "text": "الاستمرار بنفس السرعة لأنه لا يوجد ممر عبور",
             "is_correct": false
           },
           {
-            "text": "الدراجون لهم الأولوية على كل من المشاة والمركبات ذات المحرك",
+            "text": "استخدام المنبه ليتنحى الطفل من تلقاء نفسه",
             "is_correct": false
           }
         ],
-        "explanation": "في المنطقة السكنية حركة المشاة (بما فيها الأطفال اللاعبون) لها الأولوية على المركبات ذات المحرك. هذه ميزة أساسية للمنطقة السكنية حيث تُعطى الأولوية لجودة الحياة على تدفق المركبات."
+        "explanation": "في المنطقة السكنية يجوز للمشاة استخدام كامل عرض الطريق العام ويجوز للأطفال اللعب. ولا يجوز للسائقين تعريضهم للخطر أو إعاقتهم، وعليهم التوقف عند الحاجة وتوخي حذر مضاعف تجاه الأطفال."
       }
     }
   },
@@ -418,63 +481,63 @@
     "type": "IS_IT_ALLOWED",
     "difficulty": "HARD",
     "is_critical": true,
-    "show_sign": true,
+    "show_sign": false,
     "i18n": {
       "NL": {
-        "question": "Mag u in een woonerf de 20 km/u overschrijden als er geen voetgangers of kinderen zichtbaar zijn?",
+        "question": "Is het toegelaten om sneller dan de opgelegde limiet te rijden in een woonerf als de straat op dat moment volledig leeg lijkt?",
         "choices": [
           {
-            "text": "Nee 20 km/u is een absolute maximumsnelheid die altijd geldt ongeacht of er voetgangers aanwezig zijn",
+            "text": "Nee, de snelheidsbeperking geldt permanent, ongeacht of er op dat moment iemand zichtbaar is",
             "is_correct": true
           },
           {
-            "text": "Ja als de weg vrij is mag u kortstondig sneller rijden",
+            "text": "Ja, zolang niemand zichtbaar is mag u tijdelijk sneller rijden",
             "is_correct": false
           }
         ],
-        "explanation": "De maximumsnelheid van 20 km/u in een woonerf is een absolute limiet die te allen tijde geldt. Het is irrelevant of er al dan niet voetgangers zichtbaar zijn. Overtredingen worden beboet en kunnen gevaarlijk zijn omdat kinderen plots in beeld kunnen komen."
+        "explanation": "De lage snelheidslimiet in een woonerf is niet afhankelijk van wat de bestuurder op dat moment ziet, omdat kinderen plots onverwacht kunnen opduiken."
       },
       "EN": {
-        "question": "May you exceed 20 km/h in a residential area if no pedestrians or children are visible?",
+        "question": "Is it allowed to drive faster than the imposed limit in a residential area if the street currently looks completely empty?",
         "choices": [
           {
-            "text": "No 20 km/h is an absolute maximum speed that always applies regardless of whether pedestrians are present",
+            "text": "No, the speed limit applies permanently, regardless of whether anyone is visible at that moment",
             "is_correct": true
           },
           {
-            "text": "Yes if the road is clear you may drive faster briefly",
+            "text": "Yes, as long as no one is visible you may temporarily drive faster",
             "is_correct": false
           }
         ],
-        "explanation": "The maximum speed of 20 km/h in a residential area is an absolute limit that applies at all times. It is irrelevant whether or not pedestrians are visible. Violations are fined and can be dangerous because children can suddenly appear."
+        "explanation": "The low speed limit in a residential area does not depend on what the driver can currently see, since children can appear unexpectedly at any moment."
       },
       "FR": {
-        "question": "Peut-on depasser 20 km/h dans une zone residentielle si aucun pieton ou enfant n est visible ?",
+        "question": "Est-il permis de rouler plus vite que la limite imposée dans une zone résidentielle si la rue semble totalement vide à ce moment ?",
         "choices": [
           {
-            "text": "Non 20 km/h est une vitesse maximale absolue qui s applique toujours quelle que soit la presence de pietons",
+            "text": "Non, la limitation de vitesse s'applique en permanence, peu importe si quelqu'un est visible à ce moment",
             "is_correct": true
           },
           {
-            "text": "Oui si la route est libre vous pouvez rouler plus vite brievement",
+            "text": "Oui, tant que personne n'est visible vous pouvez rouler plus vite temporairement",
             "is_correct": false
           }
         ],
-        "explanation": "La vitesse maximale de 20 km/h dans une zone residentielle est une limite absolue qui s applique en tout temps. Il est sans importance que des pietons soient visibles ou non. Les infractions sont sanctionnees et peuvent etre dangereuses car des enfants peuvent soudainement apparaitre."
+        "explanation": "La limite de vitesse réduite dans une zone résidentielle ne dépend pas de ce que le conducteur voit à cet instant, car des enfants peuvent apparaître de manière inattendue."
       },
       "AR": {
-        "question": "هل يمكنك تجاوز 20 كم/ساعة في المنطقة السكنية إذا لم يكن هناك مشاة أو أطفال مرئيون؟",
+        "question": "هل يُسمح بالسير أسرع من الحد المفروض في المنطقة السكنية إذا بدا الشارع خاليًا تمامًا في تلك اللحظة؟",
         "choices": [
           {
-            "text": "لا 20 كم/ساعة هو حد سرعة مطلق يسري دائماً بغض النظر عن وجود المشاة",
+            "text": "لا، يسري حد السرعة بشكل دائم بغض النظر عن ظهور أي شخص في تلك اللحظة",
             "is_correct": true
           },
           {
-            "text": "نعم إذا كان الطريق خالياً يمكنك السير بسرعة أكبر لفترة وجيزة",
+            "text": "نعم، طالما لا يظهر أحد يمكنك السير أسرع لفترة مؤقتة",
             "is_correct": false
           }
         ],
-        "explanation": "الحد الأقصى للسرعة البالغ 20 كم/ساعة في المنطقة السكنية هو حد مطلق يسري في جميع الأوقات. لا يهم ما إذا كان المشاة مرئيين أم لا. المخالفات تُعاقَب عليها وقد تكون خطيرة لأن الأطفال قد يظهرون فجأة."
+        "explanation": "لا يعتمد حد السرعة المنخفض في المنطقة السكنية على ما يراه السائق في تلك اللحظة، لأن الأطفال قد يظهرون بشكل غير متوقع في أي وقت."
       }
     }
   },
@@ -486,60 +549,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Mogen fietsers in twee richtingen rijden in een woonerf ook als de rijbaan eenrichtingsverkeer is?",
+        "question": "Mag een bestuurder in een woonerf een wandelende voetganger dwingen de rijbaan onmiddellijk vrij te maken?",
         "choices": [
           {
-            "text": "Ja tenzij een specifiek verbodsbord dit verhindert mogen fietsers in woonerven in beide richtingen rijden",
+            "text": "Nee, voetgangers mogen de volledige breedte gebruiken; de bestuurder mag hen niet hinderen of in gevaar brengen en moet zo nodig stoppen",
             "is_correct": true
           },
           {
-            "text": "Nee fietsers moeten altijd de rijrichting van het gemotoriseerd verkeer volgen",
+            "text": "Ja, buiten een oversteekplaats moet een voetganger altijd onmiddellijk voor elk voertuig wijken",
             "is_correct": false
           }
         ],
-        "explanation": "In woonerven is tweerichtingsfietsverkeer standaard toegestaan ook op eenrichtingswegen voor gemotoriseerd verkeer. Dit is een veiligheidsregel die fietsers beschermt. Een apart verbodsbord is nodig om dit te beperken."
+        "explanation": "Voetgangers mogen in een woonerf de volledige breedte van de openbare weg gebruiken. De bestuurder mag hen niet hinderen of in gevaar brengen en moet zo nodig stoppen; de voetganger mag het verkeer op zijn beurt niet nodeloos belemmeren."
       },
       "EN": {
-        "question": "May cyclists ride in both directions in a residential area even if the carriageway is one-way traffic?",
+        "question": "In a residential area, may a driver force a walking pedestrian to clear the carriageway immediately?",
         "choices": [
           {
-            "text": "Yes unless a specific prohibition sign prevents this cyclists in residential areas may ride in both directions",
+            "text": "No, pedestrians may use the entire width; the driver must not hinder or endanger them and must stop if necessary",
             "is_correct": true
           },
           {
-            "text": "No cyclists must always follow the direction of motorised traffic",
+            "text": "Yes, away from a marked crossing a pedestrian must always clear the way immediately for every vehicle",
             "is_correct": false
           }
         ],
-        "explanation": "In residential areas two-way cycling is standard allowed even on one-way roads for motorised traffic. This is a safety rule that protects cyclists. A separate prohibition sign is required to restrict this."
+        "explanation": "Pedestrians may use the entire width of the public road in a residential area. Drivers must not hinder or endanger them and must stop if necessary; pedestrians, in turn, must not obstruct traffic unnecessarily."
       },
       "FR": {
-        "question": "Les cyclistes peuvent-ils circuler dans les deux sens dans une zone residentielle meme si la chaussee est en sens unique ?",
+        "question": "Dans une zone résidentielle, un conducteur peut-il forcer un piéton à libérer immédiatement la chaussée ?",
         "choices": [
           {
-            "text": "Oui sauf si un panneau d interdiction specifique l empeche les cyclistes dans les zones residentielles peuvent circuler dans les deux sens",
+            "text": "Non, les piétons peuvent utiliser toute la largeur; le conducteur ne peut ni les gêner ni les mettre en danger et doit s'arrêter si nécessaire",
             "is_correct": true
           },
           {
-            "text": "Non les cyclistes doivent toujours suivre le sens de circulation des vehicules motorises",
+            "text": "Oui, hors d'un passage marqué un piéton doit toujours libérer immédiatement la voie pour tout véhicule",
             "is_correct": false
           }
         ],
-        "explanation": "Dans les zones residentielles la circulation cycliste bidirectionnelle est standard autorisee meme sur les routes a sens unique pour les vehicules motorises. C est une regle de securite qui protege les cyclistes. Un panneau d interdiction separe est necessaire pour le restreindre."
+        "explanation": "Dans une zone résidentielle, les piétons peuvent utiliser toute la largeur de la voie publique. Le conducteur ne peut ni les gêner ni les mettre en danger et doit s'arrêter si nécessaire; le piéton ne peut toutefois pas entraver inutilement la circulation."
       },
       "AR": {
-        "question": "هل يمكن للدراجين السير في الاتجاهين في المنطقة السكنية حتى لو كان طريق السير باتجاه واحد؟",
+        "question": "في المنطقة السكنية، هل يجوز للسائق إجبار أحد المشاة على إخلاء مسار السير فورًا؟",
         "choices": [
           {
-            "text": "نعم ما لم يمنع ذلك علامة مرورية حظر محددة يمكن للدراجين في المناطق السكنية السير في الاتجاهين",
+            "text": "لا، يجوز للمشاة استخدام كامل عرض الطريق، ولا يجوز للسائق إعاقتهم أو تعريضهم للخطر وعليه التوقف عند الحاجة",
             "is_correct": true
           },
           {
-            "text": "لا يجب على الدراجين دائماً اتباع اتجاه سير المركبات المحرَّكة",
+            "text": "نعم، خارج ممر العبور يجب على المشاة دائمًا إخلاء الطريق فورًا لكل مركبة",
             "is_correct": false
           }
         ],
-        "explanation": "في المناطق السكنية يُسمح قياساً بركوب الدراجات في الاتجاهين حتى على الطرق ذات الاتجاه الواحد للمركبات المحرَّكة. هذه قاعدة أمان تحمي الدراجين. علامة مرورية حظر منفصلة ضرورية لتقييد ذلك."
+        "explanation": "يجوز للمشاة في المنطقة السكنية استخدام كامل عرض الطريق العام. ولا يجوز للسائق إعاقتهم أو تعريضهم للخطر وعليه التوقف عند الحاجة، وفي المقابل لا يجوز للمشاة تعطيل حركة المرور بلا داعٍ."
       }
     }
   }

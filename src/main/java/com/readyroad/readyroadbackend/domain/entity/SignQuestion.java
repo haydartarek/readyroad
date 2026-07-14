@@ -88,7 +88,7 @@ public class SignQuestion extends BaseEntity {
 
     @Transient
     public int getExpectedChoiceCount() {
-        return difficulty == SignDifficulty.HARD ? 2 : 3;
+        return difficulty == SignDifficulty.HARD || questionType == SignQuestionType.IS_IT_ALLOWED ? 2 : 3;
     }
 
     @Transient

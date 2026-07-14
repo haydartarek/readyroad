@@ -6,7 +6,7 @@ import com.readyroad.readyroadbackend.domain.entity.QuizQuestion.DifficultyLevel
 import com.readyroad.readyroadbackend.domain.entity.QuizQuestion.TypicalErrorType;
 import com.readyroad.readyroadbackend.domain.entity.UserCategoryProgress;
 import com.readyroad.readyroadbackend.domain.entity.UserErrorPattern;
-import com.readyroad.readyroadbackend.domain.model.UserQuestionHistory;
+import com.readyroad.readyroadbackend.domain.entity.UserQuestionHistory;
 import com.readyroad.readyroadbackend.domain.repository.CategoryRepository;
 import com.readyroad.readyroadbackend.domain.repository.QuizQuestionRepository;
 import com.readyroad.readyroadbackend.domain.repository.UserCategoryProgressRepository;

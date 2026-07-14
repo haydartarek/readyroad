@@ -148,7 +148,10 @@
             "text": "في E9e يجب أن تكون المركبة كلياً على الحافة أو الرصيف؛ في E9f يجوز أن تكون جزئياً على مسار السير",
             "is_correct": true
           },
-          { "text": "E9e للسيارات الخاصة؛ E9f للشاحنات", "is_correct": false },
+          {
+            "text": "E9e للسيارات الخاصة؛ E9f للشاحنات",
+            "is_correct": false
+          },
           {
             "text": "E9e تحظر الوقوف؛ E9f تُجيز الوقوف على مسار السير",
             "is_correct": false
@@ -247,76 +250,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U wil parkeren bij bord E9f. Er is een trottoir aanwezig. Hoe moet u correct parkeren?",
+        "question": "Hoe parkeert u correct bij bord E9f?",
         "choices": [
           {
-            "text": "Met een deel van het voertuig op het trottoir en een deel op de rijbaan, met minstens 1,5 meter vrije doorgang voor voetgangers",
+            "text": "Deels op de berm of het trottoir en deels op de rijbaan, volgens de afgebeelde positie",
             "is_correct": true
           },
           {
-            "text": "Volledig op het trottoir zodat de rijbaan volledig vrij blijft",
+            "text": "Volledig op de berm of het trottoir",
             "is_correct": false
           },
           {
-            "text": "Volledig op de rijbaan zodat het trottoir volledig vrij blijft voor voetgangers",
+            "text": "Volledig op de rijbaan",
             "is_correct": false
           }
         ],
-        "explanation": "E9f verplicht u deels op het trottoir en deels op de rijbaan te parkeren. Volledig op het trottoir of volledig op de rijbaan is bij E9f allebei een overtreding. Bovendien moet er altijd minstens 1,5 meter vrije doorgang voor voetgangers overblijven."
+        "explanation": "E9f legt een gedeeltelijke positie op. Volg de plaatselijke markeringen en parkeer zonder andere weggebruikers te hinderen of in gevaar te brengen."
       },
       "EN": {
-        "question": "You want to park under sign E9f. A pavement is present. How must you park correctly?",
+        "question": "How do you park correctly under sign E9f?",
         "choices": [
           {
-            "text": "With part of the vehicle on the pavement and part on the carriageway, leaving at least 1.5 metres of free passage for pedestrians",
+            "text": "Partly on the verge or pavement and partly on the carriageway, as depicted",
             "is_correct": true
           },
           {
-            "text": "Entirely on the pavement so that the carriageway remains completely clear",
+            "text": "Entirely on the verge or pavement",
             "is_correct": false
           },
           {
-            "text": "Entirely on the carriageway so that the pavement remains completely clear for pedestrians",
+            "text": "Entirely on the carriageway",
             "is_correct": false
           }
         ],
-        "explanation": "E9f obliges you to park partly on the pavement and partly on the carriageway. Parking entirely on the pavement or entirely on the carriageway is both a violation under E9f. In addition at least 1.5 metres of free passage for pedestrians must always remain."
+        "explanation": "E9f imposes a partial position. Follow local markings and park without obstructing or endangering other road users."
       },
       "FR": {
-        "question": "Vous souhaitez vous garer sous le panneau E9f. Un trottoir est présent. Comment devez-vous vous garer correctement ?",
+        "question": "Comment stationner correctement sous le panneau E9f ?",
         "choices": [
           {
-            "text": "Avec une partie du véhicule sur le trottoir et une partie sur la chaussée, en laissant au moins 1,5 mètre de passage libre pour les piétons",
+            "text": "Partiellement sur l’accotement ou le trottoir et partiellement sur la chaussée, comme illustré",
             "is_correct": true
           },
           {
-            "text": "Entièrement sur le trottoir de sorte que la chaussée reste complètement libre",
+            "text": "Entièrement sur l’accotement ou le trottoir",
             "is_correct": false
           },
           {
-            "text": "Entièrement sur la chaussée de sorte que le trottoir reste complètement libre pour les piétons",
+            "text": "Entièrement sur la chaussée",
             "is_correct": false
           }
         ],
-        "explanation": "E9f vous oblige à vous garer partiellement sur le trottoir et partiellement sur la chaussée. Se garer entièrement sur le trottoir ou entièrement sur la chaussée constitue une infraction sous E9f. De plus, il doit toujours rester au moins 1,5 mètre de passage libre pour les piétons."
+        "explanation": "E9f impose une position partielle. Respectez les marquages locaux et stationnez sans gêner ni mettre en danger les autres usagers."
       },
       "AR": {
-        "question": "تريد الوقوف عند علامة E9f. يوجد رصيف. كيف يجب أن تقف بشكل صحيح؟",
+        "question": "كيف يكون الوقوف الصحيح عند علامة E9f؟",
         "choices": [
           {
-            "text": "بجزء من المركبة على الرصيف وجزء على مسار السير مع ترك ممر حر لا يقل عن 1.5 متر للمشاة",
+            "text": "جزئياً على الحافة أو الرصيف وجزئياً على مسار السير كما هو موضح",
             "is_correct": true
           },
           {
-            "text": "كلياً على الرصيف بحيث يبقى مسار السير خالياً تماماً",
+            "text": "بالكامل على الحافة أو الرصيف",
             "is_correct": false
           },
           {
-            "text": "كلياً على مسار السير بحيث يبقى الرصيف خالياً تماماً للمشاة",
+            "text": "بالكامل على مسار السير",
             "is_correct": false
           }
         ],
-        "explanation": "تُلزمك E9f بالوقوف جزئياً على الرصيف وجزئياً على مسار السير. الوقوف كلياً على الرصيف أو كلياً على مسار السير كلاهما مخالفة عند E9f. فضلاً عن ذلك يجب دائماً ترك ممر حر لا يقل عن 1.5 متر للمشاة."
+        "explanation": "تفرض E9f وضعية جزئية. اتبع التخطيطات المحلية واركن دون إعاقة الآخرين أو تعريضهم للخطر."
       }
     }
   },
@@ -328,73 +331,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U parkeert bij E9f deels op het trottoir. Het trottoir is 2,5 meter breed en uw voertuig neemt 1,2 meter in op het trottoir. Hoeveel vrije doorgang blijft er voor voetgangers?",
+        "question": "De berm of het trottoir is te smal om de E9f-positie te volgen zonder voetgangers te hinderen. Wat doet u?",
         "choices": [
           {
-            "text": "1,3 meter — dit is onvoldoende want de wet vereist minstens 1,5 meter vrije doorgang voor voetgangers",
+            "text": "Zoek een andere toegelaten parkeerplaats",
             "is_correct": true
           },
           {
-            "text": "1,3 meter — dit is voldoende voor voetgangers bij E9f",
+            "text": "Parkeer volledig op de rijbaan",
             "is_correct": false
           },
           {
-            "text": "2,5 meter — het trottoir blijft volledig vrij want u staat deels op de rijbaan",
+            "text": "Neem het trottoir volledig in",
             "is_correct": false
           }
         ],
-        "explanation": "2,5 m (trottoir) − 1,2 m (voertuig) = 1,3 m vrije doorgang. De wet vereist minstens 1,5 meter. U mag hier dus niet parkeren, ook niet bij E9f: de vrije doorgang voor voetgangers is onvoldoende."
+        "explanation": "E9f bepaalt de positie maar heft de plicht om geen hinder of gevaar te veroorzaken niet op. De huidige regel koppelt E9f niet aan een vaste vrije breedte van 1,5 meter."
       },
       "EN": {
-        "question": "Under E9f you park partly on the pavement. The pavement is 2.5 metres wide and your vehicle takes up 1.2 metres on the pavement. How much free passage remains for pedestrians?",
+        "question": "The verge or pavement is too narrow to follow the E9f position without obstructing pedestrians. What do you do?",
         "choices": [
           {
-            "text": "1.3 metres — this is insufficient because the law requires at least 1.5 metres of free passage for pedestrians",
+            "text": "Find another permitted parking place",
             "is_correct": true
           },
           {
-            "text": "1.3 metres — this is sufficient for pedestrians under E9f",
+            "text": "Park entirely on the carriageway",
             "is_correct": false
           },
           {
-            "text": "2.5 metres — the pavement remains completely clear because you are partly on the carriageway",
+            "text": "Occupy the entire pavement",
             "is_correct": false
           }
         ],
-        "explanation": "2.5 m (pavement) − 1.2 m (vehicle) = 1.3 m of free passage. The law requires at least 1.5 metres. You may therefore not park here, not even under E9f: the free passage for pedestrians is insufficient."
+        "explanation": "E9f prescribes the position but does not remove the duty not to cause danger or obstruction. The current rule does not attach a fixed 1.5-metre clearance to E9f."
       },
       "FR": {
-        "question": "Sous E9f vous vous garez partiellement sur le trottoir. Le trottoir fait 2,5 mètres de large et votre véhicule occupe 1,2 mètre sur le trottoir. Quel passage libre reste-t-il pour les piétons ?",
+        "question": "L’accotement ou le trottoir est trop étroit pour respecter E9f sans gêner les piétons. Que faites-vous ?",
         "choices": [
           {
-            "text": "1,3 mètre — c'est insuffisant car la loi exige au moins 1,5 mètre de passage libre pour les piétons",
+            "text": "Chercher un autre emplacement autorisé",
             "is_correct": true
           },
           {
-            "text": "1,3 mètre — c'est suffisant pour les piétons sous E9f",
+            "text": "Stationner entièrement sur la chaussée",
             "is_correct": false
           },
           {
-            "text": "2,5 mètres — le trottoir reste entièrement libre car vous êtes partiellement sur la chaussée",
+            "text": "Occuper tout le trottoir",
             "is_correct": false
           }
         ],
-        "explanation": "2,5 m (trottoir) − 1,2 m (véhicule) = 1,3 m de passage libre. La loi exige au moins 1,5 mètre. Vous ne pouvez donc pas vous garer ici, même sous E9f : le passage libre pour les piétons est insuffisant."
+        "explanation": "E9f impose la position mais ne supprime pas l’obligation de ne pas créer de danger ni de gêne. La règle actuelle n’associe pas E9f à un passage fixe de 1,5 mètre."
       },
       "AR": {
-        "question": "تقف عند E9f جزئياً على الرصيف. عرض الرصيف 2.5 متر ومركبتك تشغل 1.2 متر من الرصيف. كم يتبقى من الممر الحر للمشاة؟",
+        "question": "الحافة أو الرصيف ضيق ولا يمكن تطبيق وضعية E9f دون إعاقة المشاة. ماذا تفعل؟",
         "choices": [
           {
-            "text": "1.3 متر — وهو غير كافٍ لأن القانون يشترط على الأقل 1.5 متر من الممر الحر للمشاة",
+            "text": "ابحث عن مكان وقوف آخر مسموح",
             "is_correct": true
           },
-          { "text": "1.3 متر — وهو كافٍ للمشاة عند E9f", "is_correct": false },
           {
-            "text": "2.5 متر — الرصيف يبقى خالياً تماماً لأنك جزئياً على مسار السير",
+            "text": "اركن بالكامل على مسار السير",
+            "is_correct": false
+          },
+          {
+            "text": "اشغل الرصيف بالكامل",
             "is_correct": false
           }
         ],
-        "explanation": "2.5 م (رصيف) − 1.2 م (مركبة) = 1.3 م من الممر الحر. يشترط القانون على الأقل 1.5 متر. لا يجوز لك إذاً الوقوف هنا حتى عند E9f: الممر الحر للمشاة غير كافٍ."
+        "explanation": "تحدد E9f الوضعية لكنها لا تلغي واجب عدم التسبب بخطر أو إعاقة. ولا تربط القاعدة الحالية E9f بعرض ثابت قدره 1.5 متر."
       }
     }
   },
@@ -487,60 +493,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Bij bord E9f parkeert u volledig op de rijbaan omdat het trottoir te smal is. Mag dit?",
+        "question": "U parkeert bij E9f volledig op de rijbaan omdat de berm te smal is. Is dat correct?",
         "choices": [
           {
-            "text": "Neen: E9f verplicht u uitdrukkelijk deels op de berm of trottoir te staan; volledig op de rijbaan parkeren is een overtreding van de parkeerplicht",
+            "text": "Neen, volledig op de rijbaan beantwoordt niet aan de door E9f opgelegde gedeeltelijke positie",
             "is_correct": true
           },
           {
-            "text": "Ja: als het trottoir te smal is mag u volledig op de rijbaan parkeren bij E9f",
+            "text": "Ja, zolang het verkeer nog kan passeren",
             "is_correct": false
           }
         ],
-        "explanation": "E9f verplicht een gedeeltelijke positie op de berm of het trottoir. Als de berm of het trottoir te smal is om correct te voldoen aan de parkeerplicht én de minimale doorgang van 1,5 meter, dan moet u een andere parkeerplaats zoeken. Volledig op de rijbaan parkeren is bij E9f nooit correct."
+        "explanation": "Als de voorgeschreven positie niet veilig en zonder hinder kan worden ingenomen, zoekt u een andere parkeerplaats. U verandert E9f niet zelf in E9g."
       },
       "EN": {
-        "question": "Under sign E9f you park entirely on the carriageway because the pavement is too narrow. Is this permitted?",
+        "question": "Under E9f you park entirely on the carriageway because the verge is too narrow. Is that correct?",
         "choices": [
           {
-            "text": "No: E9f explicitly obliges you to stand partly on the verge or pavement; parking entirely on the carriageway is a violation of the parking obligation",
+            "text": "No, parking entirely on the carriageway does not meet the partial position imposed by E9f",
             "is_correct": true
           },
           {
-            "text": "Yes: if the pavement is too narrow you may park entirely on the carriageway under E9f",
+            "text": "Yes, as long as traffic can still pass",
             "is_correct": false
           }
         ],
-        "explanation": "E9f obliges a partial position on the verge or pavement. If the verge or pavement is too narrow to correctly meet the parking obligation and the minimum passage of 1.5 metres, you must find another parking space. Parking entirely on the carriageway is never correct under E9f."
+        "explanation": "If the prescribed position cannot be used safely and without obstruction, find another parking place. You cannot treat E9f as E9g."
       },
       "FR": {
-        "question": "Sous le panneau E9f vous vous garez entièrement sur la chaussée car le trottoir est trop étroit. Est-ce autorisé ?",
+        "question": "Sous E9f, vous stationnez entièrement sur la chaussée car l’accotement est trop étroit. Est-ce correct ?",
         "choices": [
           {
-            "text": "Non : E9f vous oblige explicitement à vous trouver partiellement sur l'accotement ou le trottoir ; se garer entièrement sur la chaussée est une infraction à l'obligation de stationnement",
+            "text": "Non, stationner entièrement sur la chaussée ne respecte pas la position partielle imposée par E9f",
             "is_correct": true
           },
           {
-            "text": "Oui : si le trottoir est trop étroit vous pouvez vous garer entièrement sur la chaussée sous E9f",
+            "text": "Oui, tant que la circulation peut encore passer",
             "is_correct": false
           }
         ],
-        "explanation": "E9f impose une position partielle sur l'accotement ou le trottoir. Si l'accotement ou le trottoir est trop étroit pour respecter correctement l'obligation de stationnement et le passage minimum de 1,5 mètre, vous devez chercher une autre place de stationnement. Se garer entièrement sur la chaussée n'est jamais correct sous E9f."
+        "explanation": "Si la position prescrite ne peut être prise sans danger ni gêne, cherchez une autre place. Vous ne pouvez pas transformer E9f en E9g."
       },
       "AR": {
-        "question": "عند علامة E9f تقف كلياً على مسار السير لأن الرصيف ضيق جداً. هل هذا مسموح؟",
+        "question": "عند E9f تركن بالكامل على مسار السير لأن الحافة ضيقة. هل هذا صحيح؟",
         "choices": [
           {
-            "text": "لا: تُلزمك E9f صراحةً بالوقوف جزئياً على الحافة أو الرصيف؛ الوقوف كلياً على مسار السير مخالفة لإلزام الوقوف",
+            "text": "لا، فالوقوف بالكامل على مسار السير لا يطابق الوضعية الجزئية التي تفرضها E9f",
             "is_correct": true
           },
           {
-            "text": "نعم: إذا كان الرصيف ضيقاً جداً يجوز لك الوقوف كلياً على مسار السير عند E9f",
+            "text": "نعم، ما دامت المركبات تستطيع المرور",
             "is_correct": false
           }
         ],
-        "explanation": "تُلزم E9f بوضعية جزئية على الحافة أو الرصيف. إذا كانت الحافة أو الرصيف ضيقاً جداً للوفاء بإلزام الوقوف والممر الأدنى البالغ 1.5 متر فيجب عليك إيجاد موقف آخر. الوقوف كلياً على مسار السير ليس صحيحاً أبداً عند E9f."
+        "explanation": "إذا تعذر اتخاذ الوضعية المطلوبة بأمان ودون إعاقة فابحث عن مكان آخر. ولا يجوز التعامل مع E9f كأنها E9g."
       }
     }
   },
@@ -552,60 +558,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U staat bij E9f deels op het trottoir (1 meter) en deels op de rijbaan. Het trottoir is 3 meter breed. Mag u hier parkeren?",
+        "question": "U staat bij E9f deels op het trottoir en deels op de rijbaan volgens de markering, zonder voetgangers te hinderen. Is de positie correct?",
         "choices": [
           {
-            "text": "Ja: 3 m − 1 m = 2 m vrije doorgang voor voetgangers, wat meer is dan de vereiste 1,5 meter; de parkeerpositie bij E9f is correct",
+            "text": "Ja, dit is de parkeerpositie die E9f voorschrijft",
             "is_correct": true
           },
           {
-            "text": "Neen: bij E9f mag u nooit deels op het trottoir staan want dit is gevaarlijk voor voetgangers",
+            "text": "Neen, bij E9f moet het voertuig volledig op de rijbaan staan",
             "is_correct": false
           }
         ],
-        "explanation": "U voldoet aan beide voorwaarden van E9f: u staat deels op het trottoir en deels op de rijbaan (correct parkeerpositie), én er blijft 3 − 1 = 2 meter vrije doorgang over voor voetgangers (meer dan de vereiste 1,5 meter). Parkeren is hier dus correct en toegestaan."
+        "explanation": "E9f vereist de afgebeelde gedeeltelijke positie. De plaatselijke markering en de algemene plicht om geen gevaar of hinder te veroorzaken blijven bepalend."
       },
       "EN": {
-        "question": "Under E9f you stand partly on the pavement (1 metre) and partly on the carriageway. The pavement is 3 metres wide. May you park here?",
+        "question": "Under E9f you stand partly on the pavement and partly on the carriageway as marked, without obstructing pedestrians. Is the position correct?",
         "choices": [
           {
-            "text": "Yes: 3 m − 1 m = 2 m of free passage for pedestrians, which is more than the required 1.5 metres; the parking position under E9f is correct",
+            "text": "Yes, this is the parking position prescribed by E9f",
             "is_correct": true
           },
           {
-            "text": "No: under E9f you may never stand partly on the pavement as this is dangerous for pedestrians",
+            "text": "No, under E9f the vehicle must stand entirely on the carriageway",
             "is_correct": false
           }
         ],
-        "explanation": "You meet both conditions of E9f: you stand partly on the pavement and partly on the carriageway (correct parking position), and 3 − 1 = 2 metres of free passage remains for pedestrians (more than the required 1.5 metres). Parking is therefore correct and permitted here."
+        "explanation": "E9f requires the depicted partial position. Local markings and the general duty not to cause danger or obstruction remain decisive."
       },
       "FR": {
-        "question": "Sous E9f vous vous trouvez partiellement sur le trottoir (1 mètre) et partiellement sur la chaussée. Le trottoir fait 3 mètres de large. Pouvez-vous vous garer ici ?",
+        "question": "Sous E9f, vous êtes partiellement sur le trottoir et partiellement sur la chaussée selon le marquage, sans gêner les piétons. La position est-elle correcte ?",
         "choices": [
           {
-            "text": "Oui : 3 m − 1 m = 2 m de passage libre pour les piétons, ce qui est supérieur aux 1,5 mètre requis ; la position de stationnement sous E9f est correcte",
+            "text": "Oui, c’est la position prescrite par E9f",
             "is_correct": true
           },
           {
-            "text": "Non : sous E9f vous ne pouvez jamais vous trouver partiellement sur le trottoir car c'est dangereux pour les piétons",
+            "text": "Non, sous E9f le véhicule doit être entièrement sur la chaussée",
             "is_correct": false
           }
         ],
-        "explanation": "Vous remplissez les deux conditions d'E9f : vous vous trouvez partiellement sur le trottoir et partiellement sur la chaussée (position de stationnement correcte) et il reste 3 − 1 = 2 mètres de passage libre pour les piétons (plus que les 1,5 mètre requis). Le stationnement est donc correct et autorisé ici."
+        "explanation": "E9f exige la position partielle illustrée. Les marquages locaux et l’obligation générale de ne pas créer de danger ni de gêne restent déterminants."
       },
       "AR": {
-        "question": "عند E9f تقف جزئياً على الرصيف (متر واحد) وجزئياً على مسار السير. عرض الرصيف 3 أمتار. هل يجوز لك الوقوف هنا؟",
+        "question": "عند E9f تقف جزئياً على الرصيف وجزئياً على مسار السير وفق التخطيط ودون إعاقة المشاة. هل الوضعية صحيحة؟",
         "choices": [
           {
-            "text": "نعم: 3 م − 1 م = 2 م من الممر الحر للمشاة وهو أكثر من 1.5 متر المطلوب؛ وضعية الوقوف عند E9f صحيحة",
+            "text": "نعم، هذه هي وضعية الوقوف التي تفرضها E9f",
             "is_correct": true
           },
           {
-            "text": "لا: عند E9f لا يجوز لك أبداً الوقوف جزئياً على الرصيف لأن ذلك خطير على المشاة",
+            "text": "لا، يجب أن تكون المركبة بالكامل على مسار السير عند E9f",
             "is_correct": false
           }
         ],
-        "explanation": "أنت تستوفي الشرطين لـE9f: تقف جزئياً على الرصيف وجزئياً على مسار السير (وضعية وقوف صحيحة)، ويتبقى 3 − 1 = 2 متر من الممر الحر للمشاة (أكثر من 1.5 متر المطلوب). الوقوف هنا إذاً صحيح ومسموح به."
+        "explanation": "تتطلب E9f الوضعية الجزئية الموضحة، وتبقى التخطيطات المحلية وواجب عدم التسبب بخطر أو إعاقة عناصر حاسمة."
       }
     }
   }

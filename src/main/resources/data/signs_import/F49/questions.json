@@ -10,67 +10,73 @@
         "question": "Wat betekent bord F49?",
         "choices": [
           {
-            "text": "Er is een voetgangersoversteekplaats (zebrapad) en bestuurders moeten voorrang verlenen aan overstekende voetgangers",
+            "text": "Het duidt een oversteekplaats voor voetgangers aan",
             "is_correct": true
           },
           {
-            "text": "Voetgangers mogen hier niet oversteken",
+            "text": "Het duidt een oversteekplaats uitsluitend voor fietsers aan",
             "is_correct": false
           },
           {
-            "text": "Voetgangers moeten wachten tot het licht groen is",
+            "text": "Het verbiedt voetgangers de rijbaan over te steken",
             "is_correct": false
           }
         ],
-        "explanation": "F49 kondigt een gemarkeerd zebrapad aan. Bestuurders zijn verplicht voorrang te verlenen aan voetgangers die het zebrapad betreden of reeds oversteken."
+        "explanation": "F49 staat ter hoogte van een oversteekplaats voor voetgangers."
       },
       "EN": {
         "question": "What does sign F49 mean?",
         "choices": [
           {
-            "text": "There is a pedestrian crossing (zebra crossing) and drivers must give way to crossing pedestrians",
+            "text": "It indicates a pedestrian crossing",
             "is_correct": true
           },
-          { "text": "Pedestrians may not cross here", "is_correct": false },
           {
-            "text": "Pedestrians must wait until the light turns green",
+            "text": "It indicates a crossing reserved only for cyclists",
+            "is_correct": false
+          },
+          {
+            "text": "It prohibits pedestrians from crossing the road",
             "is_correct": false
           }
         ],
-        "explanation": "F49 announces a marked zebra crossing. Drivers are obliged to give way to pedestrians who are stepping onto or already crossing the crossing."
+        "explanation": "F49 is placed at a pedestrian crossing."
       },
       "FR": {
         "question": "Que signifie le panneau F49 ?",
         "choices": [
           {
-            "text": "Il y a un passage pour pietons (passage-zebra) et les conducteurs doivent ceder le passage aux pietons qui traversent",
+            "text": "Il indique un passage pour piétons",
             "is_correct": true
           },
           {
-            "text": "Les pietons ne peuvent pas traverser ici",
+            "text": "Il indique un passage réservé uniquement aux cyclistes",
             "is_correct": false
           },
           {
-            "text": "Les pietons doivent attendre que le feu soit vert",
+            "text": "Il interdit aux piétons de traverser la chaussée",
             "is_correct": false
           }
         ],
-        "explanation": "F49 annonce un passage pour pietons marque. Les conducteurs sont obliges de ceder le passage aux pietons qui s engagent sur ou traversent deja le passage."
+        "explanation": "F49 est placé à hauteur d'un passage pour piétons."
       },
       "AR": {
-        "question": "ما معنى هذه العلامة المرورية؟",
+        "question": "ما معنى العلامة F49؟",
         "choices": [
           {
-            "text": "يوجد ممر للمشاة (ممر الحمار الوحشي) ويجب على السائقين إعطاء الأولوية للمشاة المتجاوزين",
+            "text": "تشير إلى ممر لعبور المشاة",
             "is_correct": true
           },
-          { "text": "لا يُسمح للمشاة بالعبور هنا", "is_correct": false },
           {
-            "text": "يجب على المشاة الانتظار حتى يضيء الضوء الأخضر",
+            "text": "تشير إلى ممر مخصص حصراً لراكبي الدراجات",
+            "is_correct": false
+          },
+          {
+            "text": "تمنع المشاة من عبور الطريق",
             "is_correct": false
           }
         ],
-        "explanation": "تُعلن F49 عن ممر مشاة محدد. السائقون ملزمون بإعطاء الأولوية للمشاة الذين يخطون على الممر أو يعبرونه بالفعل."
+        "explanation": "توضع F49 عند ممر لعبور المشاة."
       }
     }
   },
@@ -82,118 +88,157 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Welk bord kondigt een gemarkeerde oversteekplaats voor voetgangers aan?",
+        "question": "Welk bord duidt een oversteekplaats voor voetgangers aan?",
         "choices": [
-          { "text": "F49", "is_correct": true },
-          { "text": "F50", "is_correct": false },
-          { "text": "B9", "is_correct": false }
+          {
+            "text": "F49",
+            "is_correct": true
+          },
+          {
+            "text": "F50",
+            "is_correct": false
+          },
+          {
+            "text": "F113",
+            "is_correct": false
+          }
         ],
-        "explanation": "F49 is het specifieke Belgische bord voor voetgangersoversteekplaatsen. F50 kondig een fietsers-oversteekplaats aan."
+        "explanation": "F49 duidt een voetgangersoversteekplaats aan; F50 betreft fietsers en tweewielige bromfietsen."
       },
       "EN": {
-        "question": "Which sign announces a marked crossing for pedestrians?",
+        "question": "Which sign indicates a pedestrian crossing?",
         "choices": [
-          { "text": "F49", "is_correct": true },
-          { "text": "F50", "is_correct": false },
-          { "text": "B9", "is_correct": false }
+          {
+            "text": "F49",
+            "is_correct": true
+          },
+          {
+            "text": "F50",
+            "is_correct": false
+          },
+          {
+            "text": "F113",
+            "is_correct": false
+          }
         ],
-        "explanation": "F49 is the specific Belgian sign for pedestrian crossings. F50 announces a cyclists crossing."
+        "explanation": "F49 indicates a pedestrian crossing; F50 concerns cyclists and riders of two-wheeled mopeds."
       },
       "FR": {
-        "question": "Quel panneau annonce un passage marque pour les pietons ?",
+        "question": "Quel panneau indique un passage pour piétons ?",
         "choices": [
-          { "text": "F49", "is_correct": true },
-          { "text": "F50", "is_correct": false },
-          { "text": "B9", "is_correct": false }
+          {
+            "text": "F49",
+            "is_correct": true
+          },
+          {
+            "text": "F50",
+            "is_correct": false
+          },
+          {
+            "text": "F113",
+            "is_correct": false
+          }
         ],
-        "explanation": "F49 est le panneau belge specifique pour les passages pour pietons. F50 annonce un passage pour cyclistes."
+        "explanation": "F49 indique un passage pour piétons; F50 concerne les cyclistes et les conducteurs de cyclomoteurs à deux roues."
       },
       "AR": {
-        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
+        "question": "أي علامة تشير إلى ممر لعبور المشاة؟",
         "choices": [
-          { "text": "F49", "is_correct": true },
-          { "text": "F50", "is_correct": false },
-          { "text": "B9", "is_correct": false }
+          {
+            "text": "F49",
+            "is_correct": true
+          },
+          {
+            "text": "F50",
+            "is_correct": false
+          },
+          {
+            "text": "F113",
+            "is_correct": false
+          }
         ],
-        "explanation": "F49 هي العلامة المرورية البلجيكية المحددة لممرات المشاة. F50 تُعلن عن ممر الدراجين."
+        "explanation": "تشير F49 إلى ممر للمشاة، بينما تخص F50 راكبي الدراجات والدراجات النارية الخفيفة ذات العجلتين."
       }
     }
   },
   {
     "question_id": "F49_Q03",
-    "type": "HAZARD_IDENTIFICATION",
+    "type": "DRIVER_ACTION",
     "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Welk gevaar moet u anticiperen bij bord F49?",
+        "question": "Hoe nadert u een niet door lichten of een bevoegd persoon geregelde oversteekplaats?",
         "choices": [
           {
-            "text": "Voetgangers kunnen plotseling de rijbaan oversteken en u moet al voor het zebrapad vertragen",
+            "text": "Met matige snelheid, zodat u zo nodig kunt stoppen",
             "is_correct": true
           },
           {
-            "text": "Het wegdek is nat en gevaarlijk bij het zebrapad",
+            "text": "Met dezelfde snelheid zolang niemand op de rijbaan staat",
             "is_correct": false
           },
           {
-            "text": "Er is een spoorwegovergang vlak na het bord",
+            "text": "Versnellend om de oversteekplaats snel vrij te maken",
             "is_correct": false
           }
         ],
-        "explanation": "Bij F49 is het gevaar dat voetgangers de weg kunnen oversteken. Vertraag voor het zebrapad om tijdig te kunnen stoppen."
+        "explanation": "Een bestuurder mag zo'n voetgangersoversteekplaats slechts met matige snelheid naderen."
       },
       "EN": {
-        "question": "What hazard must you anticipate at sign F49?",
+        "question": "How do you approach a crossing not controlled by signals or an authorised person?",
         "choices": [
           {
-            "text": "Pedestrians can suddenly cross the road and you must slow down before the crossing",
+            "text": "At moderate speed, so that you can stop if necessary",
             "is_correct": true
           },
           {
-            "text": "The road surface is wet and dangerous at the crossing",
+            "text": "At the same speed while nobody is on the road",
             "is_correct": false
           },
           {
-            "text": "There is a railway crossing just after the sign",
+            "text": "By accelerating to clear the crossing quickly",
             "is_correct": false
           }
         ],
-        "explanation": "At F49 the hazard is pedestrians who may cross the road. Slow down before the crossing to be able to stop in time."
+        "explanation": "A driver may approach such a pedestrian crossing only at moderate speed."
       },
       "FR": {
-        "question": "Quel danger devez-vous anticiper au panneau F49 ?",
+        "question": "Comment abordez-vous un passage non réglé par des feux ou un agent qualifié ?",
         "choices": [
           {
-            "text": "Les pietons peuvent soudainement traverser la chaussee et vous devez ralentir avant le passage",
+            "text": "À vitesse modérée, afin de pouvoir vous arrêter si nécessaire",
             "is_correct": true
           },
           {
-            "text": "Le revetement de la route est mouille et dangereux au passage",
+            "text": "À la même vitesse tant que personne n'est sur la chaussée",
             "is_correct": false
           },
           {
-            "text": "Il y a un passage a niveau juste apres le panneau",
+            "text": "En accélérant pour dégager rapidement le passage",
             "is_correct": false
           }
         ],
-        "explanation": "Avec F49 le danger est que les pietons peuvent traverser la route. Ralentissez avant le passage pour pouvoir s arreter a temps."
+        "explanation": "Un conducteur ne peut aborder un tel passage pour piétons qu'à vitesse modérée."
       },
       "AR": {
-        "question": "ما هو الخطر الذي تشير إليه هذه العلامة المرورية؟",
+        "question": "كيف تقترب من ممر لا تنظمه إشارات ضوئية أو شخص مخول؟",
         "choices": [
           {
-            "text": "يمكن للمشاة فجأة عبور الطريق ويجب عليك التباطؤ قبل الممر",
+            "text": "بسرعة معتدلة تسمح لك بالتوقف عند الضرورة",
             "is_correct": true
           },
-          { "text": "سطح الطريق مبلل وخطير عند الممر", "is_correct": false },
           {
-            "text": "يوجد معبر سكة حديدية مباشرة بعد العلامة المرورية",
+            "text": "بالسرعة نفسها ما دام لا أحد على الطريق",
+            "is_correct": false
+          },
+          {
+            "text": "بزيادة السرعة لإخلاء الممر سريعاً",
             "is_correct": false
           }
         ],
-        "explanation": "عند F49 الخطر هو المشاة الذين يمكنهم عبور الطريق. تباطأ قبل الممر لتستطيع التوقف في الوقت المناسب."
+        "explanation": "يجب الاقتراب من هذا النوع من ممرات المشاة بسرعة معتدلة."
       }
     }
   },
@@ -205,73 +250,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Een voetganger staat naast het zebrapad. Wat doet u?",
+        "question": "Een voetganger staat aan de rand en toont duidelijk dat hij wil oversteken. Wat doet u?",
         "choices": [
           {
-            "text": "Vertragen en indien de voetganger duidelijk wil oversteken stoppen en voorrang verlenen",
+            "text": "U verleent voorrang en stopt zo nodig vóór de oversteekplaats",
             "is_correct": true
           },
           {
-            "text": "Doorgaan want de voetganger staat naast het zebrapad niet erop",
+            "text": "U rijdt door zolang de voetganger nog niet op de strepen staat",
             "is_correct": false
           },
           {
-            "text": "Claxonneren zodat de voetganger weet dat u eraan komt",
+            "text": "U claxonneert zodat de voetganger wacht",
             "is_correct": false
           }
         ],
-        "explanation": "Als een voetganger nabij het zebrapad staat en de intentie toont om over te steken moet u vertragen en zo nodig stoppen."
+        "explanation": "Voetgangers die zich op de oversteekplaats bevinden of op het punt staan ze te betreden, hebben voorrang."
       },
       "EN": {
-        "question": "A pedestrian is standing next to the zebra crossing. What do you do?",
+        "question": "A pedestrian is at the edge and clearly intends to cross. What do you do?",
         "choices": [
           {
-            "text": "Slow down and if the pedestrian clearly wants to cross stop and give way",
+            "text": "Give way and, if necessary, stop before the crossing",
             "is_correct": true
           },
           {
-            "text": "Continue because the pedestrian is standing next to the crossing not on it",
+            "text": "Continue while the pedestrian is not yet on the markings",
             "is_correct": false
           },
           {
-            "text": "Sound the horn so the pedestrian knows you are coming",
+            "text": "Sound the horn so the pedestrian waits",
             "is_correct": false
           }
         ],
-        "explanation": "If a pedestrian is near the crossing and shows the intention to cross you must slow down and stop if necessary."
+        "explanation": "Pedestrians on the crossing or about to step onto it have priority."
       },
       "FR": {
-        "question": "Un pieton se tient a cote du passage pieton. Que faites-vous ?",
+        "question": "Un piéton est au bord du passage et manifeste clairement son intention de traverser. Que faites-vous ?",
         "choices": [
           {
-            "text": "Ralentir et si le pieton veut clairement traverser s arreter et ceder le passage",
+            "text": "Vous cédez le passage et vous arrêtez si nécessaire avant le passage",
             "is_correct": true
           },
           {
-            "text": "Continuer car le pieton est a cote du passage pas dessus",
+            "text": "Vous continuez tant que le piéton n'est pas encore sur les bandes",
             "is_correct": false
           },
           {
-            "text": "Klaxonner pour que le pieton sache que vous arrivez",
+            "text": "Vous klaxonnez pour que le piéton attende",
             "is_correct": false
           }
         ],
-        "explanation": "Si un pieton est pres du passage et montre l intention de traverser vous devez ralentir et vous arreter si necessaire."
+        "explanation": "Les piétons qui se trouvent sur le passage ou sont sur le point de s'y engager ont la priorité."
       },
       "AR": {
-        "question": "يقف مشاة بجانب ممر الحمار الوحشي. ماذا تفعل؟",
+        "question": "يقف أحد المشاة عند حافة الممر ويظهر بوضوح أنه يريد العبور، فماذا تفعل؟",
         "choices": [
           {
-            "text": "تباطأ وإذا أراد المشاة بوضوح العبور توقف وأعطِ الأولوية",
+            "text": "تعطيه الأولوية وتتوقف قبل الممر عند الضرورة",
             "is_correct": true
           },
           {
-            "text": "استمر لأن المشاة يقف بجانب الممر وليس عليه",
+            "text": "تستمر ما دام لم يدخل خطوط الممر بعد",
             "is_correct": false
           },
-          { "text": "انفخ البوق حتى يعرف المشاة أنك قادم", "is_correct": false }
+          {
+            "text": "تستخدم البوق كي ينتظر",
+            "is_correct": false
+          }
         ],
-        "explanation": "إذا كان مشاة قريباً من الممر ويُظهر نية العبور يجب عليك التباطؤ والتوقف إذا لزم الأمر."
+        "explanation": "للمشاة الموجودين على الممر أو الذين يوشكون على دخوله الأولوية."
       }
     }
   },
@@ -283,73 +331,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Een voetganger steekt over op het zebrapad maar is al bij de helft van de weg. Mag u vertrekken?",
+        "question": "Het verkeer staat vast voorbij het zebrapad. Mag u de oversteekplaats oprijden?",
         "choices": [
           {
-            "text": "Nee u wacht totdat de voetganger volledig de oversteekplaats heeft verlaten",
+            "text": "Nee, niet als u waarschijnlijk op de oversteekplaats moet stoppen",
             "is_correct": true
           },
           {
-            "text": "Ja als de voetganger voorbij uw rijstrook is mag u doorrijden",
+            "text": "Ja, als u dicht aansluit bij uw voorligger",
             "is_correct": false
           },
           {
-            "text": "Ja want hij heeft de helft al afgelegd",
+            "text": "Ja, F49 regelt alleen voetgangers en niet stilstaand verkeer",
             "is_correct": false
           }
         ],
-        "explanation": "In Belgie moet u wachten totdat de voetganger het zebrapad volledig heeft overgestoken, ook al is hij al voorbij uw rijstrook."
+        "explanation": "U mag een voetgangersoversteekplaats niet oprijden wanneer de verkeersdrukte u er waarschijnlijk doet stilstaan."
       },
       "EN": {
-        "question": "A pedestrian is crossing at the zebra crossing but is already halfway across the road. May you drive on?",
+        "question": "Traffic is blocked beyond the crossing. May you enter it?",
         "choices": [
           {
-            "text": "No you wait until the pedestrian has completely left the crossing",
+            "text": "No, not if you are likely to have to stop on the crossing",
             "is_correct": true
           },
           {
-            "text": "Yes if the pedestrian has passed your lane you may drive on",
+            "text": "Yes, if you follow the vehicle ahead closely",
             "is_correct": false
           },
           {
-            "text": "Yes because he has already covered half the distance",
+            "text": "Yes, F49 concerns only pedestrians, not stationary traffic",
             "is_correct": false
           }
         ],
-        "explanation": "In Belgium you must wait until the pedestrian has completely crossed the zebra crossing even if they are already past your lane."
+        "explanation": "You may not enter a pedestrian crossing when congestion is likely to make you stop on it."
       },
       "FR": {
-        "question": "Un pieton traverse sur le passage mais est deja a mi-chemin. Pouvez-vous partir ?",
+        "question": "La circulation est bloquée après le passage. Pouvez-vous vous y engager ?",
         "choices": [
           {
-            "text": "Non vous attendez que le pieton ait completement quitte le passage",
+            "text": "Non, pas si vous risquez de devoir vous arrêter sur le passage",
             "is_correct": true
           },
           {
-            "text": "Oui si le pieton est passe de votre cote vous pouvez continuer",
+            "text": "Oui, si vous suivez de près le véhicule précédent",
             "is_correct": false
           },
           {
-            "text": "Oui car il a deja parcouru la moitie",
+            "text": "Oui, F49 ne concerne que les piétons et non les files",
             "is_correct": false
           }
         ],
-        "explanation": "En Belgique vous devez attendre que le pieton ait completement traverse le passage pour pietons meme s il est deja passe de votre cote."
+        "explanation": "Il est interdit de s'engager sur un passage pour piétons si l'encombrement risque d'y immobiliser le véhicule."
       },
       "AR": {
-        "question": "مشاة يعبر عند ممر المشاة لكنه وصل بالفعل إلى منتصف الطريق. هل يمكنك المتابعة؟",
+        "question": "حركة المرور متوقفة بعد الممر، فهل يجوز لك دخوله؟",
         "choices": [
           {
-            "text": "لا تنتظر حتى يغادر المشاة الممر بالكامل",
+            "text": "لا، إذا كان من المحتمل أن تضطر إلى التوقف فوقه",
             "is_correct": true
           },
           {
-            "text": "نعم إذا تجاوز المشاة مسارك يمكنك المتابعة",
+            "text": "نعم، إذا اقتربت كثيراً من المركبة أمامك",
             "is_correct": false
           },
-          { "text": "نعم لأنه قطع نصف المسافة بالفعل", "is_correct": false }
+          {
+            "text": "نعم، لأن F49 تخص المشاة فقط ولا تخص الازدحام",
+            "is_correct": false
+          }
         ],
-        "explanation": "في بلجيكا يجب الانتظار حتى يعبر المشاة ممر المشاة بالكامل حتى لو تجاوز مسارك بالفعل."
+        "explanation": "لا يجوز دخول ممر المشاة إذا كان الازدحام سيجبرك على التوقف فوقه."
       }
     }
   },
@@ -361,70 +412,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Hoe ver voor het zebrapad moet u al beginnen te vertragen?",
+        "question": "Een voetganger steekt reglementair over bij verkeerslichten en uw licht wordt groen. Wat doet u?",
         "choices": [
           {
-            "text": "Vroeg genoeg om comfortabel voor het zebrapad te kunnen stoppen als een voetganger oversteekt",
+            "text": "U laat de voetganger het oversteken met normale gang beëindigen",
             "is_correct": true
           },
-          { "text": "Exact 10 meter voor het zebrapad", "is_correct": false },
           {
-            "text": "Vertraging is niet nodig als de weg leeg lijkt",
+            "text": "U rijdt onmiddellijk door omdat groen altijd absolute voorrang geeft",
+            "is_correct": false
+          },
+          {
+            "text": "U nadert tot vlak achter de voetganger om hem te doen versnellen",
             "is_correct": false
           }
         ],
-        "explanation": "De wet schrijft geen exacte afstand voor. U moet tijdig vertragen zodat u voor het zebrapad kunt stoppen indien nodig."
+        "explanation": "Ook bij groen moet een bestuurder een voetganger die zich reglementair op de rijbaan bevindt normaal laten uitlopen."
       },
       "EN": {
-        "question": "How far before the zebra crossing should you start slowing down?",
+        "question": "A pedestrian is lawfully crossing at traffic lights and your light turns green. What do you do?",
         "choices": [
           {
-            "text": "Early enough to be able to stop comfortably before the crossing if a pedestrian crosses",
+            "text": "Allow the pedestrian to finish crossing at a normal pace",
             "is_correct": true
           },
           {
-            "text": "Exactly 10 metres before the crossing",
+            "text": "Drive immediately because green always gives absolute priority",
             "is_correct": false
           },
           {
-            "text": "Slowing down is not necessary if the road looks empty",
+            "text": "Move close behind the pedestrian to make them hurry",
             "is_correct": false
           }
         ],
-        "explanation": "The law does not specify an exact distance. You must slow down in time so you can stop before the crossing if needed."
+        "explanation": "Even on green, a driver must allow a pedestrian lawfully on the road to finish crossing normally."
       },
       "FR": {
-        "question": "A quelle distance avant le passage pieton devez-vous commencer a ralentir ?",
+        "question": "Un piéton traverse régulièrement aux feux et votre feu passe au vert. Que faites-vous ?",
         "choices": [
           {
-            "text": "Suffisamment tot pour pouvoir s arreter confortablement avant le passage si un pieton traverse",
+            "text": "Vous lui permettez de terminer la traversée à une allure normale",
             "is_correct": true
           },
           {
-            "text": "Exactement 10 metres avant le passage",
+            "text": "Vous démarrez immédiatement car le vert donne toujours une priorité absolue",
             "is_correct": false
           },
           {
-            "text": "Ralentir n est pas necessaire si la route semble vide",
+            "text": "Vous vous approchez juste derrière lui pour le faire accélérer",
             "is_correct": false
           }
         ],
-        "explanation": "La loi ne prescrit pas de distance exacte. Vous devez ralentir a temps pour pouvoir vous arreter avant le passage si necessaire."
+        "explanation": "Même au vert, le conducteur doit permettre au piéton régulièrement engagé de terminer normalement sa traversée."
       },
       "AR": {
-        "question": "كم يجب أن تبدأ بالتباطؤ قبل ممر المشاة؟",
+        "question": "يعبر أحد المشاة بصورة قانونية عند الإشارة الضوئية ثم أصبح ضوؤك أخضر، فماذا تفعل؟",
         "choices": [
           {
-            "text": "مبكراً بما يكفي للتوقف بشكل مريح قبل الممر إذا عبر مشاة",
+            "text": "تسمح له بإكمال العبور بوتيرة طبيعية",
             "is_correct": true
           },
-          { "text": "بالضبط 10 أمتار قبل الممر", "is_correct": false },
           {
-            "text": "التباطؤ غير ضروري إذا بدا الطريق فارغاً",
+            "text": "تنطلق فوراً لأن الضوء الأخضر يمنح أولوية مطلقة دائماً",
+            "is_correct": false
+          },
+          {
+            "text": "تقترب منه كثيراً كي يسرع",
             "is_correct": false
           }
         ],
-        "explanation": "القانون لا يحدد مسافة دقيقة. يجب التباطؤ في الوقت المناسب حتى تستطيع التوقف قبل الممر إذا لزم الأمر."
+        "explanation": "حتى مع الضوء الأخضر يجب تمكين المشاة الذين دخلوا الطريق بصورة قانونية من إكمال عبورهم بشكل طبيعي."
       }
     }
   },
@@ -436,60 +493,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Mag u doorrijden als een voetganger op het zebrapad staat en wacht om over te steken?",
+        "question": "Mag u doorrijden wanneer een voetganger duidelijk op het punt staat het zebrapad te betreden?",
         "choices": [
           {
-            "text": "Nee u moet stoppen als de voetganger duidelijk wil oversteken",
+            "text": "Nee, u moet voorrang verlenen en zo nodig stoppen",
             "is_correct": true
           },
           {
-            "text": "Ja als u voldoende ruimte heeft om langs te rijden zonder de voetganger te raken",
+            "text": "Ja, zolang de voetganger nog geen voet op de rijbaan heeft gezet",
             "is_correct": false
           }
         ],
-        "explanation": "Belgisch verkeerswetboek verplicht bestuurders te stoppen voor voetgangers op of bij het zebrapad die de intentie tonen om over te steken."
+        "explanation": "De voorrang geldt ook voor een voetganger die op het punt staat zich op de oversteekplaats te begeven."
       },
       "EN": {
-        "question": "May you drive on if a pedestrian is standing on the zebra crossing waiting to cross?",
+        "question": "May you continue when a pedestrian is clearly about to step onto the crossing?",
         "choices": [
           {
-            "text": "No you must stop if the pedestrian clearly wants to cross",
+            "text": "No, you must give way and stop if necessary",
             "is_correct": true
           },
           {
-            "text": "Yes if you have enough space to pass without touching the pedestrian",
+            "text": "Yes, while the pedestrian has not yet put a foot on the road",
             "is_correct": false
           }
         ],
-        "explanation": "The Belgian highway code obliges drivers to stop for pedestrians on or near the crossing who show the intention to cross."
+        "explanation": "Priority also applies to a pedestrian who is about to step onto the crossing."
       },
       "FR": {
-        "question": "Pouvez-vous continuer si un pieton se tient sur le passage pour pietons en attente de traverser ?",
+        "question": "Pouvez-vous continuer lorsqu'un piéton est clairement sur le point de s'engager sur le passage ?",
         "choices": [
           {
-            "text": "Non vous devez vous arreter si le pieton veut clairement traverser",
+            "text": "Non, vous devez céder le passage et vous arrêter si nécessaire",
             "is_correct": true
           },
           {
-            "text": "Oui si vous avez suffisamment d espace pour passer sans toucher le pieton",
+            "text": "Oui, tant que le piéton n'a pas encore posé le pied sur la chaussée",
             "is_correct": false
           }
         ],
-        "explanation": "Le code de la route belge oblige les conducteurs a s arreter pour les pietons sur ou pres du passage qui montrent l intention de traverser."
+        "explanation": "La priorité vaut aussi pour le piéton qui est sur le point de s'engager sur le passage."
       },
       "AR": {
-        "question": "هل يمكنك الاستمرار إذا كان مشاة واقفاً على ممر المشاة ينتظر العبور؟",
+        "question": "هل يجوز لك الاستمرار عندما يكون أحد المشاة على وشك دخول الممر بوضوح؟",
         "choices": [
           {
-            "text": "لا يجب عليك التوقف إذا أراد المشاة بوضوح العبور",
+            "text": "لا، يجب إعطاؤه الأولوية والتوقف عند الضرورة",
             "is_correct": true
           },
           {
-            "text": "نعم إذا كان لديك مساحة كافية للمرور دون لمس المشاة",
+            "text": "نعم، ما دام لم يضع قدمه على الطريق بعد",
             "is_correct": false
           }
         ],
-        "explanation": "يلزم قانون المرور البلجيكي السائقين بالتوقف للمشاة على الممر أو بالقرب منه الذين يُظهرون نية العبور."
+        "explanation": "تشمل الأولوية أيضاً المشاة الذين يوشكون على دخول الممر."
       }
     }
   },
@@ -501,60 +558,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Mag een fietser een zebrapad (F49) gebruiken om de weg over te steken?",
+        "question": "Mag een fietser rijdend een zebrapad oversteken en daarbij de voetgangersvoorrang opeisen?",
         "choices": [
           {
-            "text": "Nee fietsers moeten afstappen en te voet het zebrapad gebruiken om de voorrangsregel te genieten",
+            "text": "Nee, rijdend heeft de fietser daar niet de voorrang van een voetganger",
             "is_correct": true
           },
           {
-            "text": "Ja fietsers mogen rijdend een zebrapad gebruiken en hebben dezelfde voorrang als voetgangers",
+            "text": "Ja, het zebrapad geeft dezelfde voorrang aan fietsers en voetgangers",
             "is_correct": false
           }
         ],
-        "explanation": "Zebrapadregels gelden voor voetgangers. Een fietser die rijdend een zebrapad gebruikt geniet niet dezelfde bescherming. Hij moet afstappen om als voetganger behandeld te worden."
+        "explanation": "Een fietser mag rijdend oversteken als dat veilig kan, maar geniet dan niet de voetgangersvoorrang. Na afstappen en te voet gaan is hij een voetganger."
       },
       "EN": {
-        "question": "May a cyclist use a pedestrian crossing (F49) to cross the road?",
+        "question": "May a cyclist ride across a zebra crossing and claim pedestrian priority?",
         "choices": [
           {
-            "text": "No cyclists must dismount and use the crossing on foot to enjoy the priority rule",
+            "text": "No, while riding the cyclist does not have pedestrian priority there",
             "is_correct": true
           },
           {
-            "text": "Yes cyclists may use a crossing while riding and have the same priority as pedestrians",
+            "text": "Yes, the crossing gives cyclists and pedestrians the same priority",
             "is_correct": false
           }
         ],
-        "explanation": "Zebra crossing rules apply to pedestrians. A cyclist who uses a crossing while riding does not enjoy the same protection. They must dismount to be treated as a pedestrian."
+        "explanation": "A cyclist may ride across when it is safe, but does not then have pedestrian priority. After dismounting and walking, the person is a pedestrian."
       },
       "FR": {
-        "question": "Un cycliste peut-il utiliser un passage pour pietons (F49) pour traverser la route ?",
+        "question": "Un cycliste peut-il traverser le passage en roulant et revendiquer la priorité des piétons ?",
         "choices": [
           {
-            "text": "Non les cyclistes doivent descendre de velo et utiliser le passage a pied pour beneficier de la regle de priorite",
+            "text": "Non, en roulant il ne bénéficie pas de la priorité accordée aux piétons",
             "is_correct": true
           },
           {
-            "text": "Oui les cyclistes peuvent utiliser un passage en pedalant et ont la meme priorite que les pietons",
+            "text": "Oui, le passage donne la même priorité aux cyclistes et aux piétons",
             "is_correct": false
           }
         ],
-        "explanation": "Les regles du passage pour pietons s appliquent aux pietons. Un cycliste qui utilise un passage en pedalant ne beneficie pas de la meme protection. Il doit descendre pour etre traite en pieton."
+        "explanation": "Un cycliste peut traverser en roulant si cela peut se faire sans danger, mais il n'a alors pas la priorité du piéton. En mettant pied à terre, il devient piéton."
       },
       "AR": {
-        "question": "هل يستطيع الدراج استخدام ممر المشاة (F49) لعبور الطريق؟",
+        "question": "هل يجوز لراكب الدراجة عبور ممر المشاة وهو يقود والمطالبة بأولوية المشاة؟",
         "choices": [
           {
-            "text": "لا يجب على الدراجين النزول وعبور الممر سيراً على الأقدام للاستمتاع بقاعدة الأولوية",
+            "text": "لا، لا يتمتع راكب الدراجة أثناء القيادة بأولوية المشاة هناك",
             "is_correct": true
           },
           {
-            "text": "نعم يمكن للدراجين استخدام الممر وهم يركبون دراجاتهم ولهم نفس أولوية المشاة",
+            "text": "نعم، يمنح الممر الأولوية نفسها لراكبي الدراجات والمشاة",
             "is_correct": false
           }
         ],
-        "explanation": "قواعد ممر المشاة تنطبق على المشاة. الدراج الذي يستخدم الممر وهو يركب دراجته لا يتمتع بنفس الحماية. يجب عليه النزول ليُعامل كمشاة."
+        "explanation": "يجوز العبور بالدراجة عندما يكون آمناً، لكن من دون أولوية المشاة. وعند النزول وقيادة الدراجة سيراً يصبح الشخص من المشاة."
       }
     }
   }

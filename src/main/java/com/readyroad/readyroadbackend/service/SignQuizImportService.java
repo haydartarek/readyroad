@@ -39,8 +39,8 @@ import java.util.*;
  * <li>Directory scan — collect sign folders</li>
  * <li>File existence — sign.json, questions.json, exams.json</li>
  * <li>sign.json validation — code, category, i18n (NL/EN/FR/AR)</li>
- * <li>questions.json validation — hard questions expose 2 choices, easy/medium
- * expose up to 3 choices</li>
+ * <li>questions.json validation — hard and binary allowed/not-allowed questions
+ * expose 2 choices; other easy/medium questions expose 3 choices</li>
  * <li>exams.json validation — 8 questions in exam_1 (3 EASY + 3 MEDIUM + 2
  * HARD)</li>
  * <li>Upsert road_signs</li>
@@ -515,47 +515,21 @@ public class SignQuizImportService {
 
     private RoadSign upsertRoadSign(JsonNode node) {
         String signCode = node.path("code").asText().trim();
-        String imagePath = node.path("image_path").asText(null);
         String routeSource = firstNonBlank(
                 node.path("route_code").asText(""),
                 node.path("id").asText(""),
                 signCode);
-        String routeKey = normalizeRouteKey(routeSource);
-
-        Optional<CanonicalSignCatalogService.CanonicalSignSeed> seedOpt = canonicalSignCatalogService
+        CanonicalSignCatalogService.CanonicalSignSeed seed = canonicalSignCatalogService
                 .findSeedByRouteCode(routeSource)
-                .or(() -> canonicalSignCatalogService.findSeedByImagePath(imagePath));
+                .orElseThrow(() -> new IllegalStateException(
+                        "No canonical sign seed found for signs_import/" + routeSource + "/sign.json"));
 
-        String preferredRouteKey = seedOpt
-                .map(CanonicalSignCatalogService.CanonicalSignSeed::routeKey)
-                .orElse(routeKey);
-        String preferredSignCode = seedOpt
-                .map(CanonicalSignCatalogService.CanonicalSignSeed::routeCode)
-                .orElse(signCode);
-
-        RoadSign sign = roadSignRepo.findByNormalizedSignCode(preferredRouteKey)
-                .or(() -> roadSignRepo.findFirstBySignCodeOrderByIdAsc(preferredSignCode))
-                .or(() -> roadSignRepo.findByNormalizedSignCode(routeKey))
-                .or(() -> roadSignRepo.findFirstBySignCodeOrderByIdAsc(signCode))
+        RoadSign sign = roadSignRepo.findByNormalizedSignCode(seed.routeKey())
+                .or(() -> roadSignRepo.findFirstBySignCodeOrderByIdAsc(seed.routeCode()))
                 .orElse(new RoadSign());
 
-        sign.setSignCode(signCode);
-        sign.setNormalizedSignCode(routeKey);
-        sign.setCategory(SignCategory.valueOf(node.path("category").asText().trim()));
-        sign.setImagePath(imagePath);
-        sign.setSeriousViolation(node.path("serious_violation").asBoolean(false));
         sign.setIsActive(true);
-
-        JsonNode i18n = node.path("i18n");
-        sign.setNameNl(text(i18n, "NL", "name"));
-        sign.setNameEn(text(i18n, "EN", "name"));
-        sign.setNameFr(text(i18n, "FR", "name"));
-        sign.setNameAr(text(i18n, "AR", "name"));
-        sign.setDescriptionNl(DrivingTextSanitizer.sanitize("NL", text(i18n, "NL", "description")));
-        sign.setDescriptionEn(DrivingTextSanitizer.sanitize("EN", text(i18n, "EN", "description")));
-        sign.setDescriptionFr(DrivingTextSanitizer.sanitize("FR", text(i18n, "FR", "description")));
-        sign.setDescriptionAr(DrivingTextSanitizer.sanitize("AR", text(i18n, "AR", "description")));
-        canonicalSignCatalogService.applyCanonicalFields(sign);
+        canonicalSignCatalogService.applyCanonicalFields(sign, seed);
 
         return roadSignRepo.save(sign);
     }

@@ -53,21 +53,6 @@ public class UserErrorPattern {
     @Column(name = "error_type", nullable = false)
     private ErrorType errorType;
 
-    // NOTE: Temporarily disabled - QuizQuestion entity is not active
-    // We use user_error_patterns table from V11 migration instead
-    // @ManyToOne(fetch = FetchType.LAZY)
-    // @JoinColumn(name = "question_id", nullable = false)
-    // private QuizQuestion question;
-
-    // These FK columns don't exist in the actual table; real columns are below.
-    // @ManyToOne(fetch = FetchType.LAZY)
-    // @JoinColumn(name = "traffic_sign_id")
-    // private TrafficSign trafficSign;
-
-    // @ManyToOne(fetch = FetchType.LAZY)
-    // @JoinColumn(name = "category_id")
-    // private Category category;
-
     @Column(name = "question_type")
     private String questionType;
 

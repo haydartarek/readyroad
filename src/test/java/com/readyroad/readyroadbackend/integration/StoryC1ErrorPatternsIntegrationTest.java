@@ -4,7 +4,7 @@ import com.readyroad.readyroadbackend.domain.entity.Category;
 import com.readyroad.readyroadbackend.domain.entity.QuizAnswerOption;
 import com.readyroad.readyroadbackend.domain.entity.QuizQuestion;
 import com.readyroad.readyroadbackend.domain.entity.QuizQuestion.TypicalErrorType;
-import com.readyroad.readyroadbackend.domain.model.UserQuestionHistory;
+import com.readyroad.readyroadbackend.domain.entity.UserQuestionHistory;
 import com.readyroad.readyroadbackend.domain.repository.CategoryRepository;
 import com.readyroad.readyroadbackend.domain.repository.QuizQuestionRepository;
 import com.readyroad.readyroadbackend.domain.repository.UserQuestionHistoryRepository;

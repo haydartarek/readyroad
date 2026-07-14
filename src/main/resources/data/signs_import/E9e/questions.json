@@ -144,12 +144,18 @@
       "AR": {
         "question": "إلى أي فئة تُصنَّف علامة E9e؟",
         "choices": [
-          { "text": "علامات تُحدد طريقة الوقوف الإلزامية", "is_correct": true },
+          {
+            "text": "علامات تُحدد طريقة الوقوف الإلزامية",
+            "is_correct": true
+          },
           {
             "text": "علامات تحجز الوقوف لفئات مركبات محددة",
             "is_correct": false
           },
-          { "text": "علامات تحظر الوقوف كلياً", "is_correct": false }
+          {
+            "text": "علامات تحظر الوقوف كلياً",
+            "is_correct": false
+          }
         ],
         "explanation": "E9e لا تفرض حظراً ولا تحجز المكان لفئة مركبة محددة. لكنها تُحدد كيف يجب عليك الوقوف: كلياً على الحافة الخضراء أو كلياً على الرصيف. تنتمي إلى علامات التي تُلزم بوضعية الوقوف."
       }
@@ -325,76 +331,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U parkeert bij E9e volledig op het trottoir. Hoeveel vrije doorgang moet u minstens laten voor voetgangers?",
+        "question": "Waarop moet u letten wanneer u volgens E9e op de berm of het trottoir parkeert?",
         "choices": [
           {
-            "text": "Minstens 1,5 meter vrije doorgang voor voetgangers",
+            "text": "Volg de aangegeven positie en breng voetgangers of andere weggebruikers niet in gevaar of hinder",
             "is_correct": true
           },
           {
-            "text": "Minstens 1 meter vrije doorgang is voldoende",
+            "text": "U mag het volledige trottoir innemen omdat E9e altijd voorrang heeft",
             "is_correct": false
           },
           {
-            "text": "Er is geen minimummaat: het trottoir mag volledig ingenomen worden als het bord E9e toont",
+            "text": "Laat altijd één wiel op de rijbaan staan",
             "is_correct": false
           }
         ],
-        "explanation": "Zelfs als E9e u verplicht op het trottoir te parkeren, moet u altijd een vrije doorgang van minstens 1,5 meter voor voetgangers vrijlaten. Het trottoir volledig innemen is nooit toegestaan, ook niet bij E9e."
+        "explanation": "E9e bepaalt de parkeerpositie, maar geeft geen toestemming om andere weggebruikers te hinderen of in gevaar te brengen. Volg ook markeringen en onderborden ter plaatse."
       },
       "EN": {
-        "question": "Under E9e you park entirely on the pavement. How much free passage must you leave at minimum for pedestrians?",
+        "question": "What must you consider when parking on the verge or pavement under E9e?",
         "choices": [
           {
-            "text": "At least 1.5 metres of free passage for pedestrians",
+            "text": "Follow the indicated position and do not endanger or obstruct pedestrians or other road users",
             "is_correct": true
           },
           {
-            "text": "At least 1 metre of free passage is sufficient",
+            "text": "You may occupy the entire pavement because E9e always takes priority",
             "is_correct": false
           },
           {
-            "text": "There is no minimum: the pavement may be fully occupied when sign E9e is present",
+            "text": "Always leave one wheel on the carriageway",
             "is_correct": false
           }
         ],
-        "explanation": "Even when E9e obliges you to park on the pavement, you must always leave a free passage of at least 1.5 metres for pedestrians. Completely occupying the pavement is never permitted, not even under E9e."
+        "explanation": "E9e prescribes the parking position but does not authorise danger or obstruction to other road users. Also follow local markings and supplementary plates."
       },
       "FR": {
-        "question": "Sous E9e vous vous garez entièrement sur le trottoir. Quel passage libre devez-vous laisser au minimum pour les piétons ?",
+        "question": "À quoi devez-vous veiller en stationnant sur l’accotement ou le trottoir sous E9e ?",
         "choices": [
           {
-            "text": "Au moins 1,5 mètre de passage libre pour les piétons",
+            "text": "Respecter la position indiquée sans mettre en danger ni gêner les piétons ou les autres usagers",
             "is_correct": true
           },
           {
-            "text": "Au moins 1 mètre de passage libre est suffisant",
+            "text": "Vous pouvez occuper tout le trottoir car E9e a toujours priorité",
             "is_correct": false
           },
           {
-            "text": "Il n'y a pas de minimum : le trottoir peut être entièrement occupé quand le panneau E9e est présent",
+            "text": "Laissez toujours une roue sur la chaussée",
             "is_correct": false
           }
         ],
-        "explanation": "Même lorsque E9e vous oblige à vous garer sur le trottoir, vous devez toujours laisser un passage libre d'au moins 1,5 mètre pour les piétons. Occuper entièrement le trottoir n'est jamais autorisé, même sous E9e."
+        "explanation": "E9e impose la position de stationnement mais n’autorise pas à mettre en danger ou gêner les autres usagers. Respectez aussi les marquages et panneaux additionnels."
       },
       "AR": {
-        "question": "تقف عند E9e كلياً على الرصيف. كم متراً من الممر الحر يجب أن تتركه كحد أدنى للمشاة؟",
+        "question": "ما الذي يجب مراعاته عند الوقوف على الحافة أو الرصيف وفق E9e؟",
         "choices": [
           {
-            "text": "على الأقل 1.5 متر من الممر الحر للمشاة",
+            "text": "اتبع الوضعية المبينة ولا تعرّض المشاة أو غيرهم للخطر أو الإعاقة",
             "is_correct": true
           },
           {
-            "text": "متر واحد على الأقل من الممر الحر يكفي",
+            "text": "يجوز شغل الرصيف كاملاً لأن E9e تتقدم دائماً",
             "is_correct": false
           },
           {
-            "text": "لا يوجد حد أدنى: يمكن احتلال الرصيف بالكامل عند وجود علامة E9e",
+            "text": "اترك دائماً عجلة واحدة على مسار السير",
             "is_correct": false
           }
         ],
-        "explanation": "حتى عندما تُلزمك E9e بالوقوف على الرصيف يجب دائماً ترك ممر حر لا يقل عن 1.5 متر للمشاة. احتلال الرصيف بالكامل لا يُسمح به أبداً حتى عند E9e."
+        "explanation": "تحدد E9e وضعية الوقوف لكنها لا تسمح بتعريض الآخرين للخطر أو إعاقتهم. ويجب اتباع التخطيطات واللوحات التكميلية في الموقع."
       }
     }
   },
@@ -487,60 +493,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U wil parkeren bij E9e maar het trottoir is slechts 2 meter breed. Na het parkeren blijft er nog 1,2 meter over voor voetgangers. Mag u hier parkeren?",
+        "question": "De aangewezen plaats bij E9e is te smal om volgens het bord te parkeren zonder voetgangers te hinderen. Mag u er toch parkeren?",
         "choices": [
           {
-            "text": "Neen: de vrije doorgang voor voetgangers moet minstens 1,5 meter zijn; 1,2 meter is onvoldoende en parkeren is hier dus verboden",
+            "text": "Neen, zoek een andere toegelaten plaats en volg de plaatselijke inrichting",
             "is_correct": true
           },
           {
-            "text": "Ja: elke resterende ruimte groter dan 1 meter is voldoende bij E9e",
+            "text": "Ja, E9e heft elke regel over hinder op",
             "is_correct": false
           }
         ],
-        "explanation": "De Belgische wegcode vereist bij parkeren op het trottoir altijd een vrije doorgang van minstens 1,5 meter voor voetgangers. Blijft er slechts 1,2 meter over, dan voldoet u niet aan deze eis en mag u hier niet parkeren, ook al staat er een E9e-bord."
+        "explanation": "E9e schrijft een parkeerpositie voor, maar heft de algemene plicht om geen gevaar of hinder te veroorzaken niet op. Een vaste voetgangersbreedte van 1,5 meter staat niet in de huidige E9e-regel."
       },
       "EN": {
-        "question": "You want to park under E9e but the pavement is only 2 metres wide. After parking, 1.2 metres remain for pedestrians. May you park here?",
+        "question": "The designated E9e location is too narrow to park as shown without obstructing pedestrians. May you park there anyway?",
         "choices": [
           {
-            "text": "No: the free passage for pedestrians must be at least 1.5 metres; 1.2 metres is insufficient and parking is therefore forbidden here",
+            "text": "No, find another permitted place and follow the local layout",
             "is_correct": true
           },
           {
-            "text": "Yes: any remaining space greater than 1 metre is sufficient under E9e",
+            "text": "Yes, E9e overrides every rule on obstruction",
             "is_correct": false
           }
         ],
-        "explanation": "The Belgian highway code always requires a free passage of at least 1.5 metres for pedestrians when parking on the pavement. If only 1.2 metres remain you do not meet this requirement and may not park here, even if sign E9e is present."
+        "explanation": "E9e prescribes a parking position but does not remove the general duty not to cause danger or obstruction. The current E9e rule does not state a fixed 1.5-metre pedestrian width."
       },
       "FR": {
-        "question": "Vous souhaitez vous garer sous E9e mais le trottoir ne fait que 2 mètres de large. Après le stationnement il reste 1,2 mètre pour les piétons. Pouvez-vous vous garer ici ?",
+        "question": "L’emplacement E9e est trop étroit pour stationner comme indiqué sans gêner les piétons. Pouvez-vous tout de même vous y garer ?",
         "choices": [
           {
-            "text": "Non : le passage libre pour les piétons doit être d'au moins 1,5 mètre ; 1,2 mètre est insuffisant et le stationnement est donc interdit ici",
+            "text": "Non, cherchez un autre emplacement autorisé et respectez l’aménagement local",
             "is_correct": true
           },
           {
-            "text": "Oui : tout espace restant supérieur à 1 mètre est suffisant sous E9e",
+            "text": "Oui, E9e écarte toute règle relative à la gêne",
             "is_correct": false
           }
         ],
-        "explanation": "Le code de la route belge exige toujours un passage libre d'au moins 1,5 mètre pour les piétons lors du stationnement sur le trottoir. S'il ne reste que 1,2 mètre vous ne respectez pas cette exigence et vous ne pouvez pas vous garer ici, même si le panneau E9e est présent."
+        "explanation": "E9e impose une position mais ne supprime pas l’obligation générale de ne pas créer de danger ni de gêne. La règle E9e actuelle ne fixe pas un passage piéton de 1,5 mètre."
       },
       "AR": {
-        "question": "تريد الوقوف عند E9e لكن الرصيف لا يتجاوز 2 متر في العرض. بعد الوقوف يتبقى 1.2 متر للمشاة. هل يجوز لك الوقوف هنا؟",
+        "question": "مكان E9e ضيق ولا يمكن الوقوف كما هو مبين دون إعاقة المشاة. هل يجوز الوقوف رغم ذلك؟",
         "choices": [
           {
-            "text": "لا: الممر الحر للمشاة يجب أن يكون على الأقل 1.5 متر؛ 1.2 متر غير كافٍ والوقوف هنا محظور إذاً",
+            "text": "لا، ابحث عن مكان آخر مسموح واتبع التهيئة المحلية",
             "is_correct": true
           },
           {
-            "text": "نعم: أي مساحة متبقية أكبر من متر واحد كافية عند E9e",
+            "text": "نعم، تلغي E9e كل قاعدة تتعلق بالإعاقة",
             "is_correct": false
           }
         ],
-        "explanation": "يشترط قانون المرور البلجيكي دائماً ممراً حراً لا يقل عن 1.5 متر للمشاة عند الوقوف على الرصيف. إذا تبقى 1.2 متر فقط فأنت لا تستوفي هذا الشرط ولا يجوز لك الوقوف هنا حتى لو كانت علامة E9e موجودة."
+        "explanation": "تحدد E9e وضعية الوقوف لكنها لا تلغي الواجب العام بعدم التسبب بخطر أو إعاقة. ولا تنص قاعدة E9e الحالية على عرض ثابت للمشاة قدره 1.5 متر."
       }
     }
   },

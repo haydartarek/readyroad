@@ -6,11 +6,31 @@
   "i18n": {
     "NL": {
       "name": "Eenrichtingsverkeer",
-      "description": "Openbare weg met eenrichtingsverkeer."
+      "summary": "Dit bord duidt eenrichtingsverkeer aan: enkel de aangegeven rijrichting is toegelaten en inrijden vanuit de andere kant is verboden.",
+      "description": "Dit bord duidt het begin van een straat met eenrichtingsverkeer aan. Bestuurders mogen enkel rijden in de richting die het bord aangeeft en mogen deze straat niet in de tegenovergestelde richting inrijden. De verplichting geldt vanaf het bord tot het einde van de straat of tot een bord dat het einde van de maatregel aangeeft, en bestuurders moeten steeds rekening houden met eventuele bijkomende signalisatie.",
+      "driver_guidance": "Ook bij parkeren moet de rijrichting van het eenrichtingsverkeer gerespecteerd worden; het voertuig moet in die richting staan.",
+      "exceptions": []
     },
-    "EN": { "name": "One-way traffic", "description": "One-way street." },
-    "FR": { "name": "Sens unique", "description": "Rue à sens unique." },
-    "AR": { "name": "طريق باتجاه واحد", "description": "شارع باتجاه واحد." }
+    "EN": {
+      "name": "One-way traffic",
+      "summary": "This sign marks one-way traffic: only the indicated direction is allowed, and entering from the opposite side is forbidden.",
+      "description": "This sign marks the start of a one-way street. Drivers may only travel in the direction shown by the sign and must not enter this street from the opposite direction. The obligation applies from the sign until the end of the street or until a sign indicating the end of the measure, and drivers must always take any additional signage into account.",
+      "driver_guidance": "The one-way direction must also be respected when parking; the vehicle must be positioned facing that direction.",
+      "exceptions": []
+    },
+    "FR": {
+      "name": "Sens unique",
+      "summary": "Ce panneau indique un sens unique : seule la direction indiquée est autorisée, et s'engager depuis le côté opposé est interdit.",
+      "description": "Ce panneau signale le début d'une rue à sens unique. Le conducteur ne peut circuler que dans la direction indiquée par le panneau et ne peut pas s'engager dans cette rue dans le sens opposé. L'obligation s'applique à partir du panneau jusqu'à la fin de la rue ou jusqu'à un panneau signalant la fin de la mesure, et le conducteur doit toujours tenir compte de toute signalisation complémentaire.",
+      "driver_guidance": "Le sens unique doit également être respecté lors du stationnement; le véhicule doit être orienté dans ce sens.",
+      "exceptions": []
+    },
+    "AR": {
+      "name": "طريق باتجاه واحد",
+      "summary": "تشير هذه العلامة إلى طريق باتجاه واحد فقط، ويُمنع الدخول إليه من الاتجاه المعاكس.",
+      "description": "تشير هذه العلامة إلى بداية شارع يُسمح فيه بالسير باتجاه واحد فقط. يجب على السائق التقيد بالاتجاه الذي تحدده العلامة، ويُمنع دخول الشارع من الاتجاه المعاكس. يسري هذا الالتزام من عند العلامة حتى نهاية الشارع أو حتى ظهور علامة تشير إلى انتهاء هذا الإجراء، ويجب على السائق مراعاة أي إشارات إضافية موجودة على الطريق.",
+      "driver_guidance": "يجب احترام اتجاه السير الواحد أيضًا عند الوقوف؛ يجب أن تكون المركبة متجهة في ذلك الاتجاه.",
+      "exceptions": []
+    }
   }
 }
-

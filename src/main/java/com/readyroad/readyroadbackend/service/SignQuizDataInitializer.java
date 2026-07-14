@@ -11,10 +11,9 @@ import org.springframework.stereotype.Component;
 /**
  * Runs once on every application startup.
  *
- * Auto-import: if {@code road_signs} or {@code sign_questions} tables are
- * empty,
- * triggers a full import from {@code src/main/resources/data/signs_import/}.
- * Each sign has exactly one exam with 8 questions.
+ * Reconciles the database with {@code signs_import} on every startup. The
+ * importer performs in-place upserts, so content corrections are applied even
+ * when the row counts already match the expected 184/1472/184 totals.
  */
 @Slf4j
 @Component
@@ -40,11 +39,11 @@ public class SignQuizDataInitializer {
             long expectedQuestionCount = expectedSignCount * QUESTIONS_PER_SIGN;
             long expectedExamCount = expectedSignCount;
 
-            boolean needsImport = signCount < expectedSignCount
+            boolean incomplete = signCount < expectedSignCount
                     || questionCount < expectedQuestionCount
                     || examCount < expectedExamCount;
 
-            if (needsImport) {
+            if (incomplete) {
                 log.info("╔══════════════════════════════════════════════════════════════╗");
                 log.info("║  Sign quiz data incomplete (signs={}/{}, questions={}/{}, exams={}/{}) — import ║",
                         signCount, expectedSignCount,
@@ -52,20 +51,21 @@ public class SignQuizDataInitializer {
                         examCount, expectedExamCount);
                 log.info("╚══════════════════════════════════════════════════════════════╝");
 
-                if (signCount > 0 && questionCount == 0) {
-                    log.info("Clearing {} stale road_signs rows before re-import", signCount);
-                    jdbcTemplate.update("DELETE FROM road_signs");
-                }
-
-                var run = signQuizImportService.runImport("SYSTEM_INIT");
-
-                log.info("Import finished — status={}, signs={}, questions={}, errors={}",
-                        run.getStatus(), run.getSignsCreated(),
-                        run.getQuestionsCreated(), run.getErrorsCount());
             } else {
-                log.info("Sign quiz data already present ({} active signs, {} questions, {} exams) — nothing to do",
+                log.info("Sign quiz data complete ({} active signs, {} questions, {} exams) — reconciling canonical content",
                         signCount, questionCount, examCount);
             }
+
+            if (signCount > 0 && questionCount == 0) {
+                log.info("Clearing {} stale road_signs rows before re-import", signCount);
+                jdbcTemplate.update("DELETE FROM road_signs");
+            }
+
+            var run = signQuizImportService.runImport("SYSTEM_INIT");
+
+            log.info("Import finished — status={}, signs={}, questions={}, errors={}",
+                    run.getStatus(), run.getSignsCreated(),
+                    run.getQuestionsCreated(), run.getErrorsCount());
 
         } catch (Exception e) {
             log.error("SignQuizDataInitializer failed (non-fatal): {}", e.getMessage(), e);

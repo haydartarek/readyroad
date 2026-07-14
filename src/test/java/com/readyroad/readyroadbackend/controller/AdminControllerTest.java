@@ -17,7 +17,6 @@ import com.readyroad.readyroadbackend.service.BackendMessageService;
 import com.readyroad.readyroadbackend.service.FileUploadService;
 import com.readyroad.readyroadbackend.service.NotificationService;
 import com.readyroad.readyroadbackend.service.SignGovernanceService;
-import com.readyroad.readyroadbackend.service.SignImportService;
 import com.readyroad.readyroadbackend.service.TrafficSignService;
 import java.util.Map;
 import java.util.Optional;
@@ -71,9 +70,6 @@ class AdminControllerTest {
 
     @Mock
     private FileUploadService fileUploadService;
-
-    @Mock
-    private SignImportService signImportService;
 
     @Mock
     private SignGovernanceService signGovernanceService;

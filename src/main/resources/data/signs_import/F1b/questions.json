@@ -7,53 +7,62 @@
       "NL": {
         "choices": [
           {
-            "text": "U rijdt een bebouwde kom binnen: maximumsnelheid 50 km/u en stedelijke verkeersregels gelden",
+            "text": "Je rijdt een bebouwde kom binnen; de regionale regels en aangeduide snelheden gelden",
             "is_correct": true
           },
-          { "text": "U verlaat een bebouwde kom", "is_correct": false },
-          { "text": "Parkeren verboden in dit gebied", "is_correct": false }
+          { "text": "Je verlaat de bebouwde kom", "is_correct": false },
+          {
+            "text": "Je rijdt een schoolzone binnen met 30 km/u",
+            "is_correct": false
+          }
         ],
-        "question": "Wat betekent bord F1b?",
-        "explanation": "F1b markeert het begin van een bebouwde kom. Zodra u dit bord passeert, geldt een snelheidslimiet van 50 km/u tenzij een ander bord een lagere limiet aangeeft."
+        "question": "Wat betekent dit bord?",
+        "explanation": "Dit bord markeert het begin van een bebouwde kom. Vanaf deze grens gelden de regionale regels voor de bebouwde kom en de aanwezige verkeersborden."
       },
       "EN": {
         "choices": [
           {
-            "text": "You are entering a built-up area: maximum speed 50 km/h and urban traffic rules apply",
+            "text": "You are entering a built-up area; regional rules and posted speed limits apply",
             "is_correct": true
           },
-          { "text": "You are leaving a built-up area", "is_correct": false },
-          { "text": "Parking forbidden in this area", "is_correct": false }
+          {
+            "text": "You are leaving the built-up area",
+            "is_correct": false
+          },
+          {
+            "text": "You are entering a school zone with 30 km/h",
+            "is_correct": false
+          }
         ],
-        "question": "What does sign F1b mean?",
-        "explanation": "F1b marks the start of a built-up area. Once you pass this sign, a 50 km/h speed limit applies unless another sign shows a lower limit."
+        "question": "What does this sign mean?",
+        "explanation": "This sign marks the start of a built-up area. From this boundary, the regional built-up-area rules and posted traffic signs apply."
       },
       "FR": {
         "choices": [
           {
-            "text": "Vous entrez dans une agglomeration: vitesse maximale 50 km/h et regles de circulation urbaine s'appliquent",
+            "text": "Vous entrez dans une agglomération; les règles régionales et les limitations signalées s'appliquent",
             "is_correct": true
           },
-          { "text": "Vous quittez une agglomeration", "is_correct": false },
+          { "text": "Vous quittez l'agglomération", "is_correct": false },
           {
-            "text": "Stationnement interdit dans cette zone",
+            "text": "Vous entrez dans une zone scolaire à 30 km/h",
             "is_correct": false
           }
         ],
-        "question": "Que signifie le panneau F1b ?",
-        "explanation": "F1b marque le debut d'une agglomeration. Des que vous passez ce panneau, une limite de vitesse de 50 km/h s'applique."
+        "question": "Que signifie ce panneau ?",
+        "explanation": "Ce panneau marque le début d'une agglomération. À partir de cette limite, les règles régionales applicables en agglomération et les panneaux présents entrent en vigueur."
       },
       "AR": {
         "choices": [
           {
-            "text": "انت تدخل منطقة عمرانية: السرعة القصوى 50 كم/س وتسري قواعد المرور الحضري",
+            "text": "أنت تدخل منطقة مبنية؛ تسري القواعد الإقليمية وحدود السرعة المبيّنة",
             "is_correct": true
           },
-          { "text": "انت تغادر منطقة عمرانية", "is_correct": false },
-          { "text": "الوقوف ممنوع في هذه المنطقة", "is_correct": false }
+          { "text": "أنت تغادر المنطقة المبنية", "is_correct": false },
+          { "text": "أنت تدخل منطقة مدرسية بسرعة 30 كم/س", "is_correct": false }
         ],
-        "question": "ما معنى هذه العلامة المرورية؟",
-        "explanation": "F1b تُعلّم بداية المنطقة العمرانية. بمجرد مرورك بهذه العلامة المرورية يسري حد السرعة 50 كم/س ما لم تُشر علامة مرورية اخرى لحد ادنى."
+        "question": "ما معنى هذه العلامة؟",
+        "explanation": "تحدد هذه العلامة بداية منطقة مبنية. من هذا الحد تسري القواعد الإقليمية الخاصة بالمناطق المبنية واللوحات المرورية الموجودة."
       }
     },
     "show_sign": true,
@@ -66,39 +75,39 @@
     "i18n": {
       "NL": {
         "choices": [
-          { "text": "F3b: einde van een bebouwde kom", "is_correct": true },
-          { "text": "F4b: einde zone 30", "is_correct": false },
-          { "text": "F7: einde autosnelweg", "is_correct": false }
+          { "text": "F3b: einde van de bebouwde kom", "is_correct": true },
+          { "text": "F7: einde van de autosnelweg", "is_correct": false },
+          { "text": "F45: doodlopende weg", "is_correct": false }
         ],
-        "question": "Welk bord is het tegengestelde van F1b?",
-        "explanation": "F1b (begin bebouwde kom) en F3b (einde bebouwde kom) vormen een koppel. F3b staat aan de andere kant van de kom."
+        "question": "Welk bord toont dat je de bebouwde kom weer verlaat?",
+        "explanation": "F1b en F3b werken samen als een team: het ene zegt 'je komt binnen', het andere zegt 'je gaat weer buiten'."
       },
       "EN": {
         "choices": [
-          { "text": "F3b: end of built-up area", "is_correct": true },
-          { "text": "F4b: end of zone 30", "is_correct": false },
-          { "text": "F7: end of motorway", "is_correct": false }
+          { "text": "F3b: end of the built-up area", "is_correct": true },
+          { "text": "F7: end of motorway", "is_correct": false },
+          { "text": "F45: dead-end road", "is_correct": false }
         ],
-        "question": "Which sign is the opposite of F1b?",
-        "explanation": "F1b (start built-up area) and F3b (end built-up area) form a pair. F3b is placed at the other side of the village."
+        "question": "Which sign shows that you are leaving the built-up area again?",
+        "explanation": "F1b and F3b work together as a pair: one says 'you're entering', the other says 'you're leaving again'."
       },
       "FR": {
         "choices": [
-          { "text": "F3b: fin d'une agglomeration", "is_correct": true },
-          { "text": "F4b: fin de zone 30", "is_correct": false },
-          { "text": "F7: fin d'autoroute", "is_correct": false }
+          { "text": "F3b : fin de l'agglomération", "is_correct": true },
+          { "text": "F7 : fin d'autoroute", "is_correct": false },
+          { "text": "F45 : voie sans issue", "is_correct": false }
         ],
-        "question": "Quel panneau est l'oppose de F1b ?",
-        "explanation": "F1b (debut agglomeration) et F3b (fin agglomeration) forment un duo. F3b est place de l'autre cote du village."
+        "question": "Quel panneau indique que vous quittez l'agglomération ?",
+        "explanation": "F1b et F3b fonctionnent comme une paire : l'un dit 'vous entrez', l'autre dit 'vous ressortez'."
       },
       "AR": {
         "choices": [
-          { "text": "F3b: نهاية المنطقة العمرانية", "is_correct": true },
-          { "text": "F4b: نهاية منطقة سرعة 30", "is_correct": false },
-          { "text": "F7: نهاية الطريق السريع", "is_correct": false }
+          { "text": "F3b: نهاية المنطقة المبنية", "is_correct": true },
+          { "text": "F7: نهاية الطريق السريع", "is_correct": false },
+          { "text": "F45: طريق مسدود", "is_correct": false }
         ],
-        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
-        "explanation": "F1b (بداية المنطقة العمرانية) وF3b (نهايتها) يعملان معاً كزوج."
+        "question": "أي علامة تشير إلى خروجك من المنطقة المبنية؟",
+        "explanation": "تعمل F1b وF3b معاً كزوج: واحدة تقول 'أنت تدخل' والأخرى تقول 'أنت تخرج'."
       }
     },
     "show_sign": true,
@@ -112,53 +121,50 @@
       "NL": {
         "choices": [
           {
-            "text": "Voetgangers, fietsers en spelende kinderen naast de rijbaan; meer kansen op conflicten bij lagere snelheden",
+            "text": "Voetgangers, fietsers en spelende kinderen dicht bij de weg",
             "is_correct": true
           },
-          { "text": "Gevaar van dieren op de rijbaan", "is_correct": false },
-          { "text": "Gevaar van ijzel op snelwegen", "is_correct": false }
+          { "text": "Vallende rotsblokken op de weg", "is_correct": false },
+          { "text": "Gladheid door ijzel op de weg", "is_correct": false }
         ],
-        "question": "Welk gevaar is specifiek voor bebouwde kommen aangeduid door F1b?",
-        "explanation": "In bebouwde kommen zijn er kwetsbare weggebruikers zoals voetgangers en kinderen die dicht bij de rijbaan kunnen zijn. Lagere snelheid vermindert het risico."
+        "question": "Waar moet je extra op letten in een bebouwde kom?",
+        "explanation": "In een bebouwde kom bevinden voetgangers en fietsers zich vaak dicht bij de rijbaan en kunnen kinderen plots oversteken. Pas daarom uw snelheid aan de geldende limiet en de omstandigheden aan."
       },
       "EN": {
         "choices": [
           {
-            "text": "Pedestrians, cyclists and playing children near the road; higher chance of conflicts at lower speeds",
+            "text": "Pedestrians, cyclists and playing children close to the road",
             "is_correct": true
           },
-          { "text": "Risk of animals on motorways", "is_correct": false },
-          { "text": "Risk of ice on motorways", "is_correct": false }
+          { "text": "Falling rocks on the road", "is_correct": false },
+          { "text": "Ice on the road", "is_correct": false }
         ],
-        "question": "What hazard is specific to built-up areas indicated by F1b?",
-        "explanation": "In built-up areas there are vulnerable road users such as pedestrians and children who may be close to the road."
+        "question": "What should you watch out for extra in a built-up area?",
+        "explanation": "In a built-up area, pedestrians and cyclists are often close to the carriageway and children may cross suddenly. Adapt your speed to the applicable limit and conditions."
       },
       "FR": {
         "choices": [
           {
-            "text": "Pietons, cyclistes et enfants jouant pres de la route; risque eleve de conflits a vitesse reduite",
+            "text": "Piétons, cyclistes et enfants qui jouent près de la route",
             "is_correct": true
           },
-          { "text": "Risque d'animaux sur l'autoroute", "is_correct": false },
-          {
-            "text": "Risque de verglas sur les autoroutes",
-            "is_correct": false
-          }
+          { "text": "Chutes de pierres sur la route", "is_correct": false },
+          { "text": "Verglas sur la route", "is_correct": false }
         ],
-        "question": "Quel danger est propre aux agglomerations signalees par F1b ?",
-        "explanation": "Dans les agglomerations il y a des usagers vulnerables comme des pietons et des enfants proches de la route."
+        "question": "À quoi devez-vous faire particulièrement attention dans une agglomération ?",
+        "explanation": "Dans une agglomération, les piétons et les cyclistes sont souvent proches de la chaussée et des enfants peuvent traverser soudainement. Adaptez votre vitesse à la limite applicable et aux circonstances."
       },
       "AR": {
         "choices": [
           {
-            "text": "المشاة وراكبو الدراجات والاطفال الذين يلعبون بالقرب من الطريق",
+            "text": "المشاة وراكبو الدراجات والأطفال الذين يلعبون قرب الطريق",
             "is_correct": true
           },
-          { "text": "خطر الحيوانات على الطرق السريعة", "is_correct": false },
-          { "text": "خطر الجليد على الطرق السريعة", "is_correct": false }
+          { "text": "سقوط الصخور على الطريق", "is_correct": false },
+          { "text": "الجليد على الطريق", "is_correct": false }
         ],
-        "question": "ما هو الخطر الذي تشير إليه هذه العلامة المرورية؟",
-        "explanation": "في المناطق العمرانية يوجد مستخدمو طريق ضعفاء كالمشاة والاطفال بالقرب من الطريق."
+        "question": "إلى ماذا يجب أن تنتبه بشكل خاص داخل منطقة مبنية؟",
+        "explanation": "داخل المنطقة المبنية يوجد المشاة وراكبو الدراجات غالبًا قرب طريق السير وقد يعبر الأطفال فجأة. اضبط سرعتك وفق الحد الساري والظروف."
       }
     },
     "show_sign": true,
@@ -172,50 +178,50 @@
       "NL": {
         "choices": [
           {
-            "text": "50 km/u tenzij een ander bord een lagere limiet aangeeft",
+            "text": "De regionale limiet voor de bebouwde kom en elke aangeduide limiet volgen",
             "is_correct": true
           },
-          { "text": "70 km/u", "is_correct": false },
-          { "text": "30 km/u", "is_correct": false }
+          { "text": "Altijd 50 km/u in heel België, ongeacht het gewest", "is_correct": false },
+          { "text": "De snelheid van vóór het bord blijven volgen", "is_correct": false }
         ],
-        "question": "U passeert F1b. Welke maximumsnelheid geldt nu onmiddellijk?",
-        "explanation": "De standaard snelheidslimiet binnen een bebouwde kom is 50 km/u. Lokale borden (bv. zone 30) kunnen een lagere limiet opleggen."
+        "question": "Je passeert dit bord. Hoe bepaal je nu de toegelaten snelheid?",
+        "explanation": "F1b markeert de bebouwde kom, maar legt niet overal in België hetzelfde getal op. Volg de regionale standaard en elk verkeersbord dat een andere limiet aangeeft."
       },
       "EN": {
         "choices": [
           {
-            "text": "50 km/h unless another sign indicates a lower limit",
+            "text": "Follow the regional built-up-area limit and every posted limit",
             "is_correct": true
           },
-          { "text": "70 km/h", "is_correct": false },
-          { "text": "30 km/h", "is_correct": false }
+          { "text": "Always 50 km/h throughout Belgium, regardless of region", "is_correct": false },
+          { "text": "Continue using the speed that applied before the sign", "is_correct": false }
         ],
-        "question": "You pass F1b. What maximum speed now applies immediately?",
-        "explanation": "The default speed limit inside a built-up area is 50 km/h. Local signs (e.g. zone 30) may impose a lower limit."
+        "question": "You have passed this sign. How do you determine the permitted speed now?",
+        "explanation": "F1b marks a built-up area but does not impose the same number everywhere in Belgium. Follow the regional default and any traffic sign showing another limit."
       },
       "FR": {
         "choices": [
           {
-            "text": "50 km/h sauf si un autre panneau indique une limite inferieure",
+            "text": "Respecter la limite régionale en agglomération et toute limite signalée",
             "is_correct": true
           },
-          { "text": "70 km/h", "is_correct": false },
-          { "text": "30 km/h", "is_correct": false }
+          { "text": "Toujours 50 km/h partout en Belgique, quelle que soit la région", "is_correct": false },
+          { "text": "Conserver la vitesse applicable avant le panneau", "is_correct": false }
         ],
-        "question": "Vous passez F1b. Quelle vitesse maximale s'applique desormais ?",
-        "explanation": "La limite de vitesse par defaut dans une agglomeration est de 50 km/h. Des panneaux locaux peuvent imposer une limite inferieure."
+        "question": "Vous venez de passer ce panneau. Comment déterminez-vous maintenant la vitesse autorisée ?",
+        "explanation": "F1b marque une agglomération mais n'impose pas le même chiffre partout en Belgique. Respectez la règle régionale et tout panneau indiquant une autre limite."
       },
       "AR": {
         "choices": [
           {
-            "text": "50 كم/س ما لم تُشر علامة مرورية اخرى لحد ادنى",
+            "text": "اتباع الحد الإقليمي للمنطقة المبنية وكل حد سرعة مبيّن بلوحة",
             "is_correct": true
           },
-          { "text": "70 كم/س", "is_correct": false },
-          { "text": "30 كم/س", "is_correct": false }
+          { "text": "دائمًا 50 كم/س في كل بلجيكا بغض النظر عن الإقليم", "is_correct": false },
+          { "text": "الاستمرار بالسرعة التي كانت سارية قبل العلامة", "is_correct": false }
         ],
-        "question": "عبرت علامة مرورية F1b. ما السرعة القصوى التي تسري الان؟",
-        "explanation": "الحد الافتراضي للسرعة داخل المنطقة السكنية هو 50 كم/س. العلامات المحلية كمنطقة 30 قد تفرض حداً ادنى."
+        "question": "لقد تجاوزت هذه العلامة. كيف تحدد الآن السرعة المسموح بها؟",
+        "explanation": "تحدد F1b بداية منطقة مبنية لكنها لا تفرض الرقم نفسه في جميع أقاليم بلجيكا. اتبع القاعدة الإقليمية وأي لوحة تشير إلى حد مختلف."
       }
     },
     "show_sign": true,
@@ -229,59 +235,65 @@
       "NL": {
         "choices": [
           {
-            "text": "Parkeer- en stilstandsregels voor bebouwde kommen, inhaalverboden en lagere snelheidslimieten",
+            "text": "De regels voor bebouwde kommen gelden en je let extra op kwetsbare weggebruikers",
             "is_correct": true
           },
-          { "text": "De regels voor autosnelwegen", "is_correct": false },
           {
-            "text": "Geen nieuwe regels: alleen de snelheidslimiet verandert",
+            "text": "Alleen de regels voor de autosnelweg gelden nu",
+            "is_correct": false
+          },
+          {
+            "text": "Er verandert helemaal niets, alleen de snelheid",
             "is_correct": false
           }
         ],
-        "question": "Welke extra verkeersregels treden in werking na F1b?",
-        "explanation": "Binnen een bebouwde kom gelden specifieke regels: lagere snelheid, bijzondere aandacht voor voetgangers, verbod te parkeren op bepaalde plaatsen enz."
+        "question": "Wat verandert er nog meer als je dit bord voorbijrijdt, naast de snelheid?",
+        "explanation": "Vanaf F1b gelden de regels voor de bebouwde kom. De concrete snelheid en parkeerregeling volgen uit de regionale regels en de aanwezige verkeersborden en markeringen."
       },
       "EN": {
         "choices": [
           {
-            "text": "Parking and stopping rules for built-up areas, overtaking restrictions and lower speed limits",
+            "text": "Built-up-area rules apply and you pay extra attention to vulnerable road users",
             "is_correct": true
           },
-          { "text": "The rules for motorways", "is_correct": false },
+          { "text": "Only motorway rules apply now", "is_correct": false },
           {
-            "text": "No new rules: only the speed limit changes",
+            "text": "Nothing else changes, only the speed",
             "is_correct": false
           }
         ],
-        "question": "Which extra traffic rules come into effect after F1b?",
-        "explanation": "Inside a built-up area specific rules apply: lower speed, extra attention for pedestrians, prohibition to park in certain places, etc."
+        "question": "What else changes when you pass this sign, besides the speed?",
+        "explanation": "From F1b, the built-up-area rules apply. The exact speed and parking rules follow from regional rules and the traffic signs and markings present."
       },
       "FR": {
         "choices": [
           {
-            "text": "Regles de stationnement et d'arret pour les agglomerations, interdictions de depassement et limites de vitesse reduites",
+            "text": "Les règles d'agglomération s'appliquent et vous êtes plus attentif aux usagers vulnérables",
             "is_correct": true
           },
-          { "text": "Les regles des autoroutes", "is_correct": false },
           {
-            "text": "Aucune nouvelle regle: seule la limite de vitesse change",
+            "text": "Seules les règles d'autoroute s'appliquent maintenant",
+            "is_correct": false
+          },
+          {
+            "text": "Rien ne change d'autre, seulement la vitesse",
             "is_correct": false
           }
         ],
-        "question": "Quelles regles de circulation supplementaires entrent en vigueur apres F1b ?",
-        "explanation": "Dans une agglomeration des regles specifiques s'appliquent: vitesse reduite, attention aux pietons, interdiction de stationner a certains endroits."
+        "question": "Qu'est-ce qui change encore lorsque vous passez ce panneau, à part la vitesse ?",
+        "explanation": "À partir de F1b, les règles d'agglomération s'appliquent. La vitesse et le stationnement précis dépendent des règles régionales ainsi que des panneaux et marquages présents."
       },
       "AR": {
         "choices": [
           {
-            "text": "قواعد الوقوف والتوقف للمناطق العمرانية وقيود التجاوز ومحددات السرعة المنخفضة",
+            "text": "تسري قواعد المناطق المبنية ويجب الانتباه أكثر لمستخدمي الطريق الضعفاء",
             "is_correct": true
           },
-          { "text": "قواعد الطرق السريعة", "is_correct": false },
-          { "text": "لا قواعد جديدة: فقط حد السرعة يتغير", "is_correct": false }
+          { "text": "تسري فقط قواعد الطريق السريع الآن", "is_correct": false },
+          { "text": "لا يتغير شيء آخر سوى السرعة", "is_correct": false }
         ],
-        "question": "ما القواعد الاضافية للمرور التي تسري بعد F1b؟",
-        "explanation": "داخل المنطقة السكنية تسري قواعد خاصة: سرعة منخفضة واهتمام اضافي بالمشاة وحظر وقوف في اماكن معينة."
+        "question": "ما الذي يتغير أيضاً عند تجاوزك هذه العلامة، بالإضافة إلى السرعة؟",
+        "explanation": "من علامة F1b تسري قواعد المنطقة المبنية. وتُحدد السرعة والوقوف بالتفصيل وفق القواعد الإقليمية واللوحات والعلامات الأرضية الموجودة."
       }
     },
     "show_sign": true,
@@ -295,69 +307,78 @@
       "NL": {
         "choices": [
           {
-            "text": "U moet uw snelheid aanpassen voordat u het bord passeert zodat u de limiet niet overschrijdt bij binnenkomst",
+            "text": "Tijdig vóór het bord vertragen zodat je aan de grens de geldende limiet respecteert",
             "is_correct": true
           },
-          { "text": "Pas na het passeren van het bord", "is_correct": false },
           {
-            "text": "Zodra u het bord ziet op een afstand van 100 m",
+            "text": "Je moet al 500 meter voor het bord trager rijden",
+            "is_correct": false
+          },
+          {
+            "text": "De snelheid verandert pas na de volgende kruising",
             "is_correct": false
           }
         ],
-        "question": "Moet u snelheid minderen zodra u F1b ziet of pas nadat u het passeert?",
-        "explanation": "U moet uw snelheid aanpassen op het moment dat u de bebouwde kom binnenrijdt. Het bord zelf markeert de grens."
+        "question": "Wanneer moet je je snelheid aanpassen als je dit bord nadert?",
+        "explanation": "Het bord markeert de grens waar de regels van de bebouwde kom beginnen. Vertraag zo nodig vóór het bord, zodat je de toepasselijke limiet respecteert zodra je de grens passeert."
       },
       "EN": {
         "choices": [
           {
-            "text": "You must adjust your speed before passing the sign so you do not exceed the limit on entry",
+            "text": "Slow down in time before the sign so you comply with the applicable limit at the boundary",
             "is_correct": true
           },
-          { "text": "Only after passing the sign", "is_correct": false },
           {
-            "text": "As soon as you see the sign at 100 m distance",
+            "text": "You need to slow down 500 meters before the sign",
+            "is_correct": false
+          },
+          {
+            "text": "The speed only changes after the next intersection",
             "is_correct": false
           }
         ],
-        "question": "Must you reduce speed as soon as you see F1b or only after you pass it?",
-        "explanation": "You must adjust your speed at the point you enter the built-up area. The sign itself marks the boundary."
+        "question": "When must you adapt your speed as you approach this sign?",
+        "explanation": "The sign marks the boundary where built-up-area rules begin. Slow down before it when necessary so that you comply with the applicable limit as soon as you cross the boundary."
       },
       "FR": {
         "choices": [
           {
-            "text": "Vous devez adapter votre vitesse avant de passer le panneau pour ne pas depasser la limite a l'entree",
+            "text": "Ralentir à temps avant le panneau pour respecter la limite applicable dès la limite",
             "is_correct": true
           },
           {
-            "text": "Seulement apres avoir depasse le panneau",
+            "text": "Vous devez déjà ralentir 500 mètres avant le panneau",
             "is_correct": false
           },
           {
-            "text": "Des que vous voyez le panneau a 100 m",
+            "text": "La vitesse ne change qu'après le prochain carrefour",
             "is_correct": false
           }
         ],
-        "question": "Devez-vous reduire votre vitesse des que vous voyez F1b ou seulement apres l'avoir depasse ?",
-        "explanation": "Vous devez adapter votre vitesse au moment ou vous entrez dans l'agglomeration. Le panneau lui-meme marque la limite."
+        "question": "Quand devez-vous adapter votre vitesse à l'approche de ce panneau ?",
+        "explanation": "Le panneau marque la limite où commencent les règles d'agglomération. Ralentissez si nécessaire avant le panneau afin de respecter la limite applicable dès son franchissement."
       },
       "AR": {
         "choices": [
           {
-            "text": "يجب تكييف سرعتك قبل تجاوز العلامة المرورية حتى لا تتجاوز الحد عند الدخول",
+            "text": "تخفيف السرعة في الوقت المناسب قبل العلامة لاحترام الحد الساري عند بدايتها",
             "is_correct": true
           },
-          { "text": "فقط بعد تجاوز العلامة المرورية", "is_correct": false },
           {
-            "text": "بمجرد رؤية العلامة المرورية على بعد 100 م",
+            "text": "يجب التخفيف قبل العلامة بمسافة 500 متر",
+            "is_correct": false
+          },
+          {
+            "text": "لا تتغير السرعة إلا بعد التقاطع التالي",
             "is_correct": false
           }
         ],
-        "question": "هل يجب تخفيض السرعة بمجرد رؤية F1b ام فقط بعد تجاوزها؟",
-        "explanation": "يجب تكييف سرعتك لحظة دخول المنطقة العمرانية. العلامة المرورية نفسها تُحدّد الحد."
+        "question": "متى يجب أن تضبط سرعتك عند الاقتراب من هذه العلامة؟",
+        "explanation": "تحدد العلامة الحد الذي تبدأ عنده قواعد المنطقة المبنية. خفف السرعة عند الحاجة قبلها لكي تحترم الحد الساري فور عبور هذا الحد."
       }
     },
     "show_sign": true,
-    "type": "WHAT_MUST_YOU_DO"
+    "type": "SIGN_PLACEMENT_DISTANCE"
   },
   {
     "question_id": "F1b_Q07",
@@ -367,52 +388,58 @@
       "NL": {
         "choices": [
           {
-            "text": "Neen: de maximumsnelheid van 50 km/u geldt ongeacht de wegbreedte of het verkeersniveau",
+            "text": "Nee, in het Brussels Hoofdstedelijk Gewest geldt hier 30 km/u tenzij een bord anders aangeeft",
             "is_correct": true
           },
           {
-            "text": "Ja: brede wegen hebben een hogere limiet",
+            "text": "Ja, brede wegen met weinig verkeer mogen sneller",
             "is_correct": false
           }
         ],
-        "question": "Mag u 70 km/u rijden net na F1b als de weg breed is en er weinig verkeer is?",
-        "explanation": "De snelheidslimiet van 50 km/u in een bebouwde kom is absoluut. Wegbreedte of verkeersdruk veranderen niets aan de wettelijke limiet."
+        "question": "Je passeert F1b in het Brussels Hoofdstedelijk Gewest. De weg is breed en er staat geen ander snelheidsbord. Mag je sneller dan 30 km/u rijden?",
+        "explanation": "Nee. In het Brussels Hoofdstedelijk Gewest betekent F1 dat de algemene limiet van 30 km/u voor de bebouwde kom geldt, tenzij een verkeersbord een andere snelheid aangeeft."
       },
       "EN": {
         "choices": [
           {
-            "text": "No: the maximum speed of 50 km/h applies regardless of road width or traffic level",
+            "text": "No, in the Brussels-Capital Region the limit here is 30 km/h unless a sign indicates otherwise",
             "is_correct": true
           },
-          { "text": "Yes: wide roads have a higher limit", "is_correct": false }
+          {
+            "text": "Yes, wide roads with little traffic may go faster",
+            "is_correct": false
+          }
         ],
-        "question": "May you drive 70 km/h just after F1b if the road is wide and there is little traffic?",
-        "explanation": "The 50 km/h speed limit in a built-up area is absolute. Road width or traffic pressure do not change the legal limit."
+        "question": "You pass F1b in the Brussels-Capital Region. The road is wide and there is no other speed sign. May you drive faster than 30 km/h?",
+        "explanation": "No. In the Brussels-Capital Region, F1 means that the general built-up-area limit of 30 km/h applies unless a traffic sign indicates another speed."
       },
       "FR": {
         "choices": [
           {
-            "text": "Non: la vitesse maximale de 50 km/h s'applique quelle que soit la largeur de la route ou le niveau de trafic",
+            "text": "Non, en Région de Bruxelles-Capitale la limite est ici de 30 km/h sauf indication contraire",
             "is_correct": true
           },
           {
-            "text": "Oui: les routes larges ont une limite plus elevee",
+            "text": "Oui, les routes larges avec peu de trafic peuvent aller plus vite",
             "is_correct": false
           }
         ],
-        "question": "Pouvez-vous rouler a 70 km/h juste apres F1b si la route est large et qu'il y a peu de trafic ?",
-        "explanation": "La limite de vitesse de 50 km/h dans une agglomeration est absolue. La largeur de la route ou la pression du trafic ne changent pas la limite legale."
+        "question": "Vous passez F1b en Région de Bruxelles-Capitale. La route est large et aucun autre panneau de vitesse n'est présent. Pouvez-vous dépasser 30 km/h ?",
+        "explanation": "Non. En Région de Bruxelles-Capitale, F1 signifie que la limite générale de 30 km/h en agglomération s'applique, sauf si un panneau indique une autre vitesse."
       },
       "AR": {
         "choices": [
           {
-            "text": "لا: حد السرعة 50 كم/س ينطبق بصرف النظر عن عرض الطريق او مستوى الحركة",
+            "text": "لا، الحد هنا في إقليم بروكسل العاصمة هو 30 كم/س ما لم تُبيّن لوحة خلاف ذلك",
             "is_correct": true
           },
-          { "text": "نعم: الطرق العريضة لها حد اعلى", "is_correct": false }
+          {
+            "text": "نعم، الطرق الواسعة قليلة الحركة يمكن السير فيها بسرعة أكبر",
+            "is_correct": false
+          }
         ],
-        "question": "هل يجوز السير بسرعة 70 كم/س بعد F1b إذا كان الطريق واسعاً والحركة خفيفة؟",
-        "explanation": "حد السرعة 50 كم/س في المنطقة العمرانية مطلق. عرض الطريق او كثافة المرور لا يغيّران الحد القانوني."
+        "question": "تجاوزت F1b في إقليم بروكسل العاصمة وكان الطريق واسعًا ولا توجد لوحة سرعة أخرى. هل يجوز تجاوز 30 كم/س؟",
+        "explanation": "لا. في إقليم بروكسل العاصمة تعني F1 أن الحد العام داخل المنطقة المبنية هو 30 كم/س، ما لم تُبيّن لوحة مرورية سرعة أخرى."
       }
     },
     "show_sign": true,
@@ -426,58 +453,58 @@
       "NL": {
         "choices": [
           {
-            "text": "Neen: binnen een bebouwde kom moet u altijd voetgangers laten oversteken op een zebrapad of bord F49",
+            "text": "Nee, je moet voorrang verlenen en zo nodig stoppen",
             "is_correct": true
           },
           {
-            "text": "Ja: voorrang geldt altijd voor gemotoriseerd verkeer",
+            "text": "Ja, voorrang geldt altijd voor auto's",
             "is_correct": false
           }
         ],
-        "question": "Is het toegestaan in een bebouwde kom voetgangers die oversteken te negeren als u voorrang heeft?",
-        "explanation": "Binnen een bebouwde kom hebben voetgangers op een zebrapad of oversteekplaats (F49) absolute voorrang. U bent verplicht te stoppen."
+        "question": "Een voetganger bevindt zich op een niet-geregeld zebrapad of staat op het punt het te betreden. Mag je gewoon doorrijden?",
+        "explanation": "Nee. Nader een niet-geregeld zebrapad met matige snelheid, verleen voorrang aan voetgangers die erop zijn of het willen betreden en stop zo nodig."
       },
       "EN": {
         "choices": [
           {
-            "text": "No: inside a built-up area you must always let pedestrians cross at a zebra crossing or F49 sign",
+            "text": "No, you must give way and stop if necessary",
             "is_correct": true
           },
           {
-            "text": "Yes: right of way always applies to motorised traffic",
+            "text": "Yes, right of way always applies to cars",
             "is_correct": false
           }
         ],
-        "question": "Is it allowed in a built-up area to ignore pedestrians crossing if you have right of way?",
-        "explanation": "Inside a built-up area pedestrians at a zebra crossing or crossing sign (F49) have absolute priority. You are obliged to stop."
+        "question": "A pedestrian is on an uncontrolled zebra crossing or is about to step onto it. May you simply continue driving?",
+        "explanation": "No. Approach an uncontrolled crossing at a moderate speed, give way to pedestrians on it or about to enter it, and stop if necessary."
       },
       "FR": {
         "choices": [
           {
-            "text": "Non: dans une agglomeration vous devez toujours laisser traverser les pietons sur un passage cloute ou panneau F49",
+            "text": "Non, vous devez céder le passage et vous arrêter si nécessaire",
             "is_correct": true
           },
           {
-            "text": "Oui: la priorite s'applique toujours aux vehicules motorises",
+            "text": "Oui, la priorité s'applique toujours aux voitures",
             "is_correct": false
           }
         ],
-        "question": "Est-il permis dans une agglomeration d'ignorer les pietons qui traversent si vous avez la priorite ?",
-        "explanation": "Dans une agglomeration les pietons sur un passage cloute (F49) ont la priorite absolue. Vous etes oblige de vous arreter."
+        "question": "Un piéton se trouve sur un passage non réglé ou est sur le point de s'y engager. Pouvez-vous simplement continuer ?",
+        "explanation": "Non. Approchez le passage non réglé à vitesse modérée, cédez le passage aux piétons qui s'y trouvent ou vont s'y engager et arrêtez-vous si nécessaire."
       },
       "AR": {
         "choices": [
           {
-            "text": "لا: داخل المنطقة السكنية يجب دائماً السماح للمشاة بالعبور عند ممر المشاة او علامة مرورية F49",
+            "text": "لا، يجب منح المشاة الأولوية والتوقف عند الحاجة",
             "is_correct": true
           },
           {
-            "text": "نعم: الاولوية تنطبق دائماً على المركبات الآلية",
+            "text": "نعم، الأولوية تنطبق دائماً على السيارات",
             "is_correct": false
           }
         ],
-        "question": "هل يُسمح داخل المنطقة السكنية بتجاهل المشاة العابرين إذا كانت لديك الاولوية؟",
-        "explanation": "داخل المنطقة السكنية للمشاة عند ممر العبور (F49) اولوية مطلقة. انت ملزم بالتوقف."
+        "question": "يوجد أحد المشاة على ممر غير منظم أو هو على وشك دخوله. هل يجوز لك مواصلة السير؟",
+        "explanation": "لا. اقترب من الممر غير المنظم بسرعة معتدلة، وامنح الأولوية للمشاة الموجودين عليه أو الذين هم على وشك دخوله، وتوقف عند الحاجة."
       }
     },
     "show_sign": true,

@@ -10,7 +10,7 @@
         "question": "Wat betekent bord F9 'Autoweg'?",
         "choices": [
           {
-            "text": "U rijdt een autoweg op; maximumsnelheid 120 km/u, voetgangers en fietsers verboden, geen ongelijkvloerse kruispunten vereist",
+            "text": "U rijdt een autoweg op; alleen toegelaten motorvoertuigen mogen er rijden en de bijzondere regels gelden",
             "is_correct": true
           },
           {
@@ -22,13 +22,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "F9 markeert een autoweg: vergelijkbaar met een autosnelweg maar niet noodzakelijk met gescheiden rijbanen of volledig ongelijkvloerse aansluitingen. Max. 120 km/u, geen voetgangers of fietsers."
+        "explanation": "F9 markeert het begin van een autoweg. Alleen de wettelijk toegelaten motorvoertuigen en hun aanhangwagens mogen er rijden. F9 legt op zichzelf geen algemene minimumsnelheid van 70 km/u of vaste maximumsnelheid van 120 km/u op."
       },
       "EN": {
         "question": "What does sign F9 'Expressway start' mean?",
         "choices": [
           {
-            "text": "You are entering an expressway; maximum 120 km/h, pedestrians and cyclists forbidden, no grade crossings required",
+            "text": "You are entering an expressway; only permitted motor vehicles may use it and the special rules apply",
             "is_correct": true
           },
           {
@@ -40,31 +40,31 @@
             "is_correct": false
           }
         ],
-        "explanation": "F9 marks an expressway: similar to a motorway but not necessarily with separated carriageways or fully grade-separated junctions. Max. 120 km/h, no pedestrians or cyclists."
+        "explanation": "F9 marks the start of an expressway. Only legally permitted motor vehicles and their trailers may use it. F9 by itself does not impose a general 70 km/h minimum or a fixed 120 km/h maximum."
       },
       "FR": {
-        "question": "Que signifie le panneau F9 'Debut route express' ?",
+        "question": "Que signifie le panneau F9 « Route pour automobiles » ?",
         "choices": [
           {
-            "text": "Vous entrez sur une route expresse; maximum 120 km/h pietons et cyclistes interdits pas d intersections a niveau requises",
+            "text": "Vous entrez sur une route pour automobiles; seuls les véhicules à moteur autorisés peuvent l'emprunter et les règles particulières s'appliquent",
             "is_correct": true
           },
           {
-            "text": "Vous entrez sur une autoroute avec toutes les regles associees",
+            "text": "Vous entrez sur une autoroute avec toutes les règles associées",
             "is_correct": false
           },
           {
-            "text": "La route est reservee aux poids lourds",
+            "text": "La route est réservée aux poids lourds",
             "is_correct": false
           }
         ],
-        "explanation": "F9 marque une route expresse: similaire a une autoroute mais pas necessairement avec des chaussees separees ou des intersections completement decliveuses. Max. 120 km/h pas de pietons ni cyclistes."
+        "explanation": "F9 marque le début d'une route pour automobiles. Seuls les véhicules à moteur et remorques légalement autorisés peuvent l'emprunter. F9 n'impose pas à lui seul un minimum général de 70 km/h ni un maximum fixe de 120 km/h."
       },
       "AR": {
         "question": "ما معنى هذه العلامة المرورية؟",
         "choices": [
           {
-            "text": "أنت تدخل طريقاً سريعاً معبراً؛ حد أقصى 120 كم/س والمشاة والدراجون محظورون",
+            "text": "أنت تدخل طريقًا مخصصًا للمركبات؛ لا تستخدمه إلا المركبات الآلية المسموح بها وتسري عليه القواعد الخاصة",
             "is_correct": true
           },
           {
@@ -73,7 +73,7 @@
           },
           { "text": "الطريق مخصص للشاحنات الثقيلة", "is_correct": false }
         ],
-        "explanation": "تحدد F9 طريقاً سريعاً معبراً: مشابهاً للطريق السريع لكن لا يشترط فيه الفصل الكامل. الحد الأقصى 120 كم/س والمشاة والدراجون محظورون."
+        "explanation": "تحدد F9 بداية طريق مخصص للمركبات. ولا يجوز استخدامه إلا للمركبات الآلية ومقطوراتها المسموح بها قانونًا. ولا تفرض F9 وحدها حدًا أدنى عامًا قدره 70 كم/س أو حدًا أقصى ثابتًا قدره 120 كم/س."
       }
     }
   },
@@ -103,13 +103,13 @@
         "explanation": "F9 (start) and F11 (end) form the pair for expressways. F5 and F7 are for motorways."
       },
       "FR": {
-        "question": "Quel panneau marque la fin d une route expresse qui commence avec F9 ?",
+        "question": "Quel panneau marque la fin d'une route pour automobiles qui commence avec F9 ?",
         "choices": [
-          { "text": "Panneau F11 'Fin route express'", "is_correct": true },
-          { "text": "Panneau F7 'Fin autoroute'", "is_correct": false },
-          { "text": "Panneau F4b 'Fin zone 30'", "is_correct": false }
+          { "text": "Panneau F11 « Fin de route pour automobiles »", "is_correct": true },
+          { "text": "Panneau F7 « Fin d'autoroute »", "is_correct": false },
+          { "text": "Panneau F4b « Fin de zone 30 »", "is_correct": false }
         ],
-        "explanation": "F9 (debut) et F11 (fin) forment la paire pour les routes express. F5 et F7 sont pour les autoroutes."
+        "explanation": "F9 (début) et F11 (fin) forment la paire pour les routes pour automobiles. F5 et F7 concernent les autoroutes."
       },
       "AR": {
         "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
@@ -142,7 +142,7 @@
         "question": "Welke gebruikers zijn verboden op een autoweg (bord F9)?",
         "choices": [
           {
-            "text": "Voetgangers, fietsers, bromfietsen en trage voertuigen die de minimumsnelheid niet halen",
+            "text": "Voetgangers, fietsers, bromfietsen en landbouwvoertuigen",
             "is_correct": true
           },
           {
@@ -151,13 +151,13 @@
           },
           { "text": "Voertuigen met een aanhangwagen", "is_correct": false }
         ],
-        "explanation": "Net als op een autosnelweg zijn voetgangers, fietsers en bromfietsen verboden op de autoweg. Trage voertuigen die de minimumsnelheid niet halen zijn ook niet toegestaan."
+        "explanation": "Op een autoweg zijn alleen toegelaten motorvoertuigen en hun aanhangwagens toegestaan. Bromfietsen, landbouwvoertuigen en slepen van kermisvoertuigen zijn uitgesloten; voetgangers en fietsers zijn geen toegelaten motorvoertuigen."
       },
       "EN": {
         "question": "Which users are forbidden on an expressway (sign F9)?",
         "choices": [
           {
-            "text": "Pedestrians, cyclists, mopeds and slow vehicles unable to reach the minimum speed",
+            "text": "Pedestrians, cyclists, mopeds and agricultural vehicles",
             "is_correct": true
           },
           {
@@ -166,31 +166,31 @@
           },
           { "text": "Vehicles towing a trailer", "is_correct": false }
         ],
-        "explanation": "As on a motorway, pedestrians, cyclists and mopeds are forbidden on an expressway. Slow vehicles unable to maintain the minimum speed are also not permitted."
+        "explanation": "Only permitted motor vehicles and their trailers may use an expressway. Mopeds, agricultural vehicles and fairground convoys are excluded; pedestrians and cyclists are not permitted motor vehicles."
       },
       "FR": {
         "question": "Quels usagers sont interdits sur une route expresse (panneau F9) ?",
         "choices": [
           {
-            "text": "Pietons cyclistes cyclomoteurs et vehicules lents incapables d atteindre la vitesse minimale",
+            "text": "Les piétons, les cyclistes, les cyclomoteurs et les véhicules agricoles",
             "is_correct": true
           },
           {
-            "text": "Les camions d une masse totale superieure a 3,5 tonnes",
+            "text": "Les camions d'une masse totale supérieure à 3,5 tonnes",
             "is_correct": false
           },
           {
-            "text": "Les vehicules remorquant une remorque",
+            "text": "Les véhicules remorquant une remorque",
             "is_correct": false
           }
         ],
-        "explanation": "Comme sur une autoroute les pietons cyclistes et cyclomoteurs sont interdits sur la route expresse. Les vehicules lents incapables de maintenir la vitesse minimale ne sont pas non plus autorises."
+        "explanation": "Seuls les véhicules à moteur autorisés et leurs remorques peuvent emprunter une route pour automobiles. Les cyclomoteurs, les véhicules agricoles et les convois forains en sont exclus; les piétons et cyclistes ne sont pas des véhicules à moteur admis."
       },
       "AR": {
         "question": "من مستخدمي الطريق المحظورين على الطريق المعبر (علامة مرورية F9)؟",
         "choices": [
           {
-            "text": "المشاة والدراجون والموبيدات والمركبات البطيئة غير القادرة على بلوغ الحد الأدنى للسرعة",
+            "text": "المشاة وراكبو الدراجات والدراجات النارية الخفيفة والمركبات الزراعية",
             "is_correct": true
           },
           {
@@ -199,7 +199,7 @@
           },
           { "text": "المركبات التي تسحب مقطورة", "is_correct": false }
         ],
-        "explanation": "كما هو الحال على الطريق السريع يُحظر المشاة والدراجون والموبيدات على الطريق المعبر. المركبات البطيئة التي لا تستطيع الحفاظ على الحد الأدنى للسرعة غير مسموح بها أيضاً."
+        "explanation": "لا يجوز استخدام الطريق المخصص للمركبات إلا للمركبات الآلية المسموح بها ومقطوراتها. وتُستثنى الدراجات النارية الخفيفة والمركبات الزراعية وقوافل مركبات الملاهي، كما لا يُسمح للمشاة وراكبي الدراجات."
       }
     }
   },
@@ -211,76 +211,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Op een autoweg (bord F9) rijdt u 85 km/u. Is dat toegestaan?",
+        "question": "Op een autoweg beperkt C43 de snelheid tot 90 km/u. U rijdt veilig 85 km/u zonder het verkeer te hinderen. Wat doet u?",
         "choices": [
           {
-            "text": "Niet op zichzelf maar pas op als u aantoont dat uw voertuig de minimumsnelheid van 70 km/u haalt; de maximumsnelheid is 120 km/u",
+            "text": "U mag 85 km/u blijven rijden en houdt rechts waar dat van toepassing is",
             "is_correct": true
           },
           {
-            "text": "Nee, 85 km/u is te traag en u riskeert een boete voor te traag rijden",
+            "text": "U moet versnellen tot precies 90 km/u omdat F9 een minimum van 70 km/u oplegt",
             "is_correct": false
           },
           {
-            "text": "Ja en u rijdt de linkerrijstrook want u bent de langzaamste",
+            "text": "U moet naar de linkerrijstrook omdat u onder de maximumsnelheid rijdt",
             "is_correct": false
           }
         ],
-        "explanation": "Op de autoweg geldt een min. snelheid van 70 km/u en een max. van 120 km/u. 85 km/u is toegestaan maar u houdt de rechtse rijstrook aan."
+        "explanation": "F9 legt geen algemene minimumsnelheid van 70 km/u op. In dit scenario respecteert 85 km/u de aangeduide limiet van 90 km/u, zolang uw snelheid veilig is en het verkeer niet abnormaal hindert."
       },
       "EN": {
-        "question": "On an expressway (sign F9) you are driving at 85 km/h. Is that permitted?",
+        "question": "On an expressway, a C43 sign limits speed to 90 km/h. You are safely driving at 85 km/h without obstructing traffic. What do you do?",
         "choices": [
           {
-            "text": "Yes provided your vehicle can reach the minimum speed of 70 km/h; the maximum is 120 km/h",
+            "text": "You may continue at 85 km/h and keep right where applicable",
             "is_correct": true
           },
           {
-            "text": "No, 85 km/h is too slow and you risk a fine for driving too slowly",
+            "text": "You must accelerate to exactly 90 km/h because F9 imposes a 70 km/h minimum",
             "is_correct": false
           },
           {
-            "text": "Yes and you drive in the left lane because you are the slowest",
+            "text": "You must move to the left lane because you are below the maximum speed",
             "is_correct": false
           }
         ],
-        "explanation": "On an expressway the minimum speed is 70 km/h and the maximum is 120 km/h. 85 km/h is permitted but you keep to the right lane."
+        "explanation": "F9 does not impose a general 70 km/h minimum. In this scenario, 85 km/h complies with the posted 90 km/h limit as long as your speed is safe and does not abnormally obstruct traffic."
       },
       "FR": {
-        "question": "Sur une route expresse (panneau F9) vous roulez a 85 km/h. Est-ce autorise ?",
+        "question": "Sur une route pour automobiles, C43 limite la vitesse à 90 km/h. Vous roulez prudemment à 85 km/h sans gêner le trafic. Que faites-vous ?",
         "choices": [
           {
-            "text": "Oui a condition que votre vehicule puisse atteindre la vitesse minimale de 70 km/h; le maximum est de 120 km/h",
+            "text": "Vous pouvez continuer à 85 km/h et tenir la droite lorsque cela s'applique",
             "is_correct": true
           },
           {
-            "text": "Non 85 km/h est trop lent et vous risquez une amende pour conduite trop lente",
+            "text": "Vous devez accélérer jusqu'à exactement 90 km/h car F9 impose un minimum de 70 km/h",
             "is_correct": false
           },
           {
-            "text": "Oui et vous roulez sur la voie de gauche car vous etes le plus lent",
+            "text": "Vous devez rejoindre la voie de gauche parce que vous roulez sous la vitesse maximale",
             "is_correct": false
           }
         ],
-        "explanation": "Sur la route expresse la vitesse minimale est de 70 km/h et la maximale de 120 km/h. 85 km/h est autorise mais vous tenez la voie de droite."
+        "explanation": "F9 n'impose pas de minimum général de 70 km/h. Dans ce scénario, 85 km/h respecte la limite signalée de 90 km/h, tant que votre vitesse reste sûre et ne gêne pas anormalement la circulation."
       },
       "AR": {
-        "question": "على طريق معبر (علامة مرورية F9) تقود بسرعة 85 كم/س. هل هذا مسموح؟",
+        "question": "على طريق مخصص للمركبات تحدد C43 السرعة بـ90 كم/س. تقود بأمان بسرعة 85 كم/س من دون إعاقة المرور. ماذا تفعل؟",
         "choices": [
           {
-            "text": "نعم شريطة أن تتمكن مركبتك من بلوغ الحد الأدنى للسرعة 70 كم/س؛ الحد الأقصى 120 كم/س",
+            "text": "يجوز الاستمرار بسرعة 85 كم/س مع الالتزام باليمين حيثما ينطبق ذلك",
             "is_correct": true
           },
           {
-            "text": "لا 85 كم/س بطيء جداً وتخاطر بغرامة بسبب السير البطيء",
+            "text": "يجب التسارع إلى 90 كم/س بالضبط لأن F9 تفرض حدًا أدنى قدره 70 كم/س",
             "is_correct": false
           },
           {
-            "text": "نعم وتسير في الحارة اليسرى لأنك الأبطأ",
+            "text": "يجب الانتقال إلى الحارة اليسرى لأنك تسير دون السرعة القصوى",
             "is_correct": false
           }
         ],
-        "explanation": "على الطريق المعبر الحد الأدنى للسرعة 70 كم/س والحد الأقصى 120 كم/س. 85 كم/س مسموح لكن التزم بالحارة اليمنى."
+        "explanation": "لا تفرض F9 حدًا أدنى عامًا قدره 70 كم/س. في هذا السيناريو تحترم سرعة 85 كم/س الحد المبيّن وهو 90 كم/س، ما دامت آمنة ولا تعيق المرور بصورة غير طبيعية."
       }
     }
   },
@@ -295,7 +295,7 @@
         "question": "U nadert een oprit van de autoweg (F9) vanop de rijbaan. U rijdt al op de autoweg. Hoe handelt u?",
         "choices": [
           {
-            "text": "Houd zoveel mogelijk de rechterrijstrook vrij of verplaats u naar links zodat invoegend verkeer veilig kan invoegen",
+            "text": "Behoud een veilige koers en snelheid; verplaats u alleen naar links als dat veilig kan om het invoegen te vergemakkelijken",
             "is_correct": true
           },
           {
@@ -307,13 +307,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "Verkeer op de autoweg heeft voorrang. U kunt echter vriendelijk opschuiven naar links als dat veilig is om het invoegen te vergemakkelijken."
+        "explanation": "De invoegende bestuurder voert een manoeuvre uit en moet voorrang verlenen. Wie al op de autoweg rijdt, mag het invoegen veilig vergemakkelijken, maar mag daarvoor geen gevaar veroorzaken."
       },
       "EN": {
         "question": "You are approaching an on-ramp of the expressway (F9) while already on the expressway. How do you act?",
         "choices": [
           {
-            "text": "Keep the right lane as clear as possible or move left so merging traffic can join safely",
+            "text": "Maintain a safe course and speed; move left only if it is safe to facilitate merging",
             "is_correct": true
           },
           {
@@ -325,40 +325,40 @@
             "is_correct": false
           }
         ],
-        "explanation": "Traffic on the expressway has priority. However you can courteously move to the left if safe to facilitate merging."
+        "explanation": "The joining driver is performing a manoeuvre and must yield. A driver already on the expressway may safely facilitate merging but must not create danger while doing so."
       },
       "FR": {
-        "question": "Vous approchez d une bretelle d entree de la route expresse (F9) tout en etant deja sur la route expresse. Comment agissez-vous ?",
+        "question": "Vous approchez d'une bretelle d'entrée d'une route pour automobiles (F9) alors que vous y circulez déjà. Comment agissez-vous ?",
         "choices": [
           {
-            "text": "Garder la voie de droite aussi degagee que possible ou se deplacer a gauche pour que le trafic entrant puisse rejoindre en toute securite",
+            "text": "Maintenir une trajectoire et une vitesse sûres; se déporter à gauche uniquement si cela peut se faire sans danger",
             "is_correct": true
           },
           {
-            "text": "Freiner completement car le trafic entrant a toujours la priorite",
+            "text": "Freiner complètement car le trafic entrant a toujours la priorité",
             "is_correct": false
           },
           {
-            "text": "Rouler sur la bande d arret d urgence pour faciliter l insertion",
+            "text": "Rouler sur la bande d'arrêt d'urgence pour faciliter l'insertion",
             "is_correct": false
           }
         ],
-        "explanation": "Le trafic sur la route expresse a la priorite. Vous pouvez cependant vous decaler a gauche si c est sur pour faciliter l insertion."
+        "explanation": "Le conducteur qui s'insère effectue une manœuvre et doit céder le passage. Le conducteur déjà engagé peut faciliter l'insertion si cela reste sans danger."
       },
       "AR": {
-        "question": "أنت تقترب من منحدر دخول للطريق المعبر (F9) بينما أنت بالفعل عليه. كيف تتصرف؟",
+        "question": "تقترب من مدخل طريق مخصص للمركبات (F9) وأنت تسير عليه بالفعل. كيف تتصرف؟",
         "choices": [
           {
-            "text": "احتفظ بالحارة اليمنى خالية قدر الإمكان أو انتقل يساراً حتى تتمكن حركة الاندماج من الانضمام بأمان",
+            "text": "حافظ على مسار وسرعة آمنين، وانتقل يسارًا فقط إذا كان ذلك آمنًا لتسهيل الاندماج",
             "is_correct": true
           },
           {
-            "text": "فرمل بشكل كامل لأن حركة الاندماج لها الأولوية دائماً",
+            "text": "توقف بشدة لأن المركبات المندمجة لها الأولوية دائمًا",
             "is_correct": false
           },
-          { "text": "سر على حارة الطوارئ لتسهيل الاندماج", "is_correct": false }
+          { "text": "قد على حارة الطوارئ لتسهيل الاندماج", "is_correct": false }
         ],
-        "explanation": "للمركبات على الطريق المعبر الأولوية. يمكنك مع ذلك الانتقال يساراً إذا كان آمناً لتسهيل عملية الاندماج."
+        "explanation": "السائق المندمج يجري مناورة وعليه إعطاء الأولوية. ويمكن لمن يسير أصلًا على الطريق تسهيل الاندماج إذا كان ذلك آمنًا ومن دون خلق خطر."
       }
     }
   },
@@ -373,7 +373,7 @@
         "question": "Op de autoweg (F9) ziet u een stilstaand voertuig op de rijbaan. Wat doet u?",
         "choices": [
           {
-            "text": "Voorzichtig uitwijken naar de vrije rijstrook en zo snel mogelijk de hulpdiensten verwittigen",
+            "text": "Vertraag, houd afstand, geef richting aan en wissel alleen veilig van rijstrook; verwittig de hulpdiensten",
             "is_correct": true
           },
           {
@@ -385,13 +385,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "Bij een stilstaand voertuig op de rijbaan wijkt u voorzichtig uit en belt u de hulpdiensten. Stop nooit zomaar op de rijbaan van een autoweg."
+        "explanation": "Verminder tijdig uw snelheid, houd voldoende afstand en wissel pas van rijstrook nadat u hebt gecontroleerd dat dit veilig kan. Gebruik de vluchtstrook niet om het voertuig voorbij te rijden."
       },
       "EN": {
         "question": "On the expressway (F9) you see a stationary vehicle on the carriageway. What do you do?",
         "choices": [
           {
-            "text": "Swerve carefully to the free lane and alert the emergency services as quickly as possible",
+            "text": "Slow down, keep your distance, signal and change lanes only when safe; alert the emergency services",
             "is_correct": true
           },
           {
@@ -400,40 +400,40 @@
           },
           { "text": "Drive on the emergency lane to pass", "is_correct": false }
         ],
-        "explanation": "When encountering a stationary vehicle on the carriageway carefully swerve and call emergency services. Never stop on the carriageway of an expressway."
+        "explanation": "Reduce speed in good time, keep sufficient distance and change lanes only after checking that it is safe. Do not use the emergency lane to pass the vehicle."
       },
       "FR": {
-        "question": "Sur la route expresse (F9) vous voyez un vehicule a l arret sur la chaussee. Que faites-vous ?",
+        "question": "Sur une route pour automobiles (F9), vous voyez un véhicule immobilisé sur la chaussée. Que faites-vous ?",
         "choices": [
           {
-            "text": "Devier prudemment vers la voie libre et alerter les services d urgence le plus vite possible",
+            "text": "Ralentir, garder ses distances, signaler et ne changer de voie que sans danger; alerter les services d'urgence",
             "is_correct": true
           },
           {
-            "text": "S arreter derriere le vehicule a l arret et aider le conducteur",
+            "text": "S'arrêter derrière le véhicule immobilisé et aider le conducteur",
             "is_correct": false
           },
           {
-            "text": "Rouler sur la bande d arret d urgence pour passer",
+            "text": "Rouler sur la bande d'arrêt d'urgence pour le dépasser",
             "is_correct": false
           }
         ],
-        "explanation": "En presence d un vehicule immobilise sur la chaussee deviez prudemment et appelez les secours. Ne vous arretez jamais sur la chaussee d une route expresse."
+        "explanation": "Réduisez votre vitesse à temps, gardez une distance suffisante et ne changez de voie qu'après avoir vérifié que la manœuvre est sûre. N'utilisez pas la bande d'arrêt d'urgence pour dépasser le véhicule."
       },
       "AR": {
-        "question": "على الطريق المعبر (F9) ترى مركبة متوقفة على الطريق. ماذا تفعل؟",
+        "question": "على طريق مخصص للمركبات (F9)، ترى مركبة متوقفة على مسار السير. ماذا تفعل؟",
         "choices": [
           {
-            "text": "انحرف بحذر إلى الحارة الخالية وأبلغ خدمات الطوارئ في أقرب وقت ممكن",
+            "text": "خفف السرعة وحافظ على المسافة وأعطِ إشارة، ثم غيّر الحارة فقط عندما يكون ذلك آمنًا وأبلغ الطوارئ",
             "is_correct": true
           },
           {
             "text": "توقف خلف المركبة المتوقفة وساعد السائق",
             "is_correct": false
           },
-          { "text": "سر على حارة الطوارئ للمرور", "is_correct": false }
+          { "text": "قد على حارة الطوارئ لتجاوز المركبة", "is_correct": false }
         ],
-        "explanation": "عند مواجهة مركبة متوقفة على الطريق انحرف بحذر واتصل بالطوارئ. لا تتوقف أبداً على طريق الطريق المعبر."
+        "explanation": "خفف السرعة مبكرًا، وحافظ على مسافة كافية، ولا تغيّر الحارة إلا بعد التأكد من أمان المناورة. لا تستخدم حارة الطوارئ لتجاوز المركبة."
       }
     }
   },
@@ -445,60 +445,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Op een autoweg (bord F9): is rijden met 130 km/u toegestaan?",
+        "question": "Mag u uit bord F9 alleen afleiden dat u altijd 120 km/u mag rijden?",
         "choices": [
           {
-            "text": "Nee, de maximumsnelheid op een autoweg in Belgie is 120 km/u",
+            "text": "Nee, de limiet volgt uit het gewest, het wegtype en de aanwezige snelheidsborden",
             "is_correct": true
           },
           {
-            "text": "Ja, 130 km/u is de Europese standaard voor autowegen",
+            "text": "Ja, F9 staat op zichzelf altijd 120 km/u toe",
             "is_correct": false
           }
         ],
-        "explanation": "In Belgie is de maximumsnelheid op autowegen en autosnelwegen 120 km/u. 130 km/u is een overschrijding en riskeert een boete."
+        "explanation": "F9 duidt een autoweg aan maar bepaalt niet zelfstandig één vaste maximumsnelheid. U moet de regionale regels, de inrichting van de weg en elk snelheidsbord volgen."
       },
       "EN": {
-        "question": "On an expressway (sign F9): is driving at 130 km/h allowed?",
+        "question": "May you infer from sign F9 alone that you may always drive at 120 km/h?",
         "choices": [
           {
-            "text": "No, the maximum speed on an expressway in Belgium is 120 km/h",
+            "text": "No, the limit follows from the region, road type and posted speed signs",
             "is_correct": true
           },
           {
-            "text": "Yes, 130 km/h is the European standard for expressways",
+            "text": "Yes, F9 by itself always permits 120 km/h",
             "is_correct": false
           }
         ],
-        "explanation": "In Belgium the maximum speed on expressways and motorways is 120 km/h. Driving at 130 km/h is an offence and risks a fine."
+        "explanation": "F9 identifies an expressway but does not independently set one fixed maximum speed. You must follow regional rules, the road design and every posted speed sign."
       },
       "FR": {
-        "question": "Sur une route expresse (panneau F9) : est-il permis de rouler a 130 km/h ?",
+        "question": "Pouvez-vous déduire du seul panneau F9 que vous pouvez toujours rouler à 120 km/h ?",
         "choices": [
           {
-            "text": "Non la vitesse maximale sur une route expresse en Belgique est de 120 km/h",
+            "text": "Non, la limite dépend de la région, du type de route et des panneaux de vitesse",
             "is_correct": true
           },
           {
-            "text": "Oui 130 km/h est la norme europeenne pour les voies rapides",
+            "text": "Oui, F9 autorise toujours à lui seul une vitesse de 120 km/h",
             "is_correct": false
           }
         ],
-        "explanation": "En Belgique la vitesse maximale sur les autoroutes et routes express est de 120 km/h. Rouler a 130 km/h est une infraction et risque une amende."
+        "explanation": "F9 désigne une route pour automobiles mais ne fixe pas à lui seul une vitesse maximale unique. Respectez les règles régionales, l'aménagement de la route et chaque panneau de vitesse."
       },
       "AR": {
-        "question": "على طريق معبر (علامة مرورية F9): هل القيادة بسرعة 130 كم/س مسموحة؟",
+        "question": "هل يجوز الاستنتاج من علامة F9 وحدها أن السرعة المسموحة دائمًا هي 120 كم/س؟",
         "choices": [
           {
-            "text": "لا الحد الأقصى للسرعة على الطريق المعبر في بلجيكا هو 120 كم/س",
+            "text": "لا، يتحدد الحد وفق الإقليم ونوع الطريق ولوحات السرعة الموجودة",
             "is_correct": true
           },
           {
-            "text": "نعم 130 كم/س هو المعيار الأوروبي للطرق المعبرة",
+            "text": "نعم، تسمح F9 وحدها دائمًا بسرعة 120 كم/س",
             "is_correct": false
           }
         ],
-        "explanation": "في بلجيكا الحد الأقصى للسرعة على الطرق المعبرة والطرق السريعة هو 120 كم/س. القيادة بسرعة 130 كم/س مخالفة وتخاطر بغرامة."
+        "explanation": "تحدد F9 طريقًا مخصصًا للمركبات لكنها لا تضع بمفردها سرعة قصوى ثابتة واحدة. يجب اتباع القواعد الإقليمية وتصميم الطريق وكل لوحة سرعة موجودة."
       }
     }
   },
@@ -538,18 +538,18 @@
         "explanation": "Cyclists are forbidden on expressways. This is an explicit legal provision that applies regardless of the availability of a cycle path elsewhere."
       },
       "FR": {
-        "question": "Sur une route expresse (panneau F9) : un cycliste peut-il utiliser la chaussee ?",
+        "question": "Sur une route pour automobiles (panneau F9), un cycliste peut-il utiliser la chaussée ?",
         "choices": [
           {
-            "text": "Non les cyclistes sont interdits sur les routes express comme sur les autoroutes",
+            "text": "Non, les cyclistes sont interdits sur les routes pour automobiles comme sur les autoroutes",
             "is_correct": true
           },
           {
-            "text": "Oui les cyclistes peuvent utiliser la voie de droite s il n y a pas de piste cyclable",
+            "text": "Oui, les cyclistes peuvent utiliser la voie de droite s'il n'y a pas de piste cyclable",
             "is_correct": false
           }
         ],
-        "explanation": "Les cyclistes sont interdits sur les routes express. C est une disposition legale explicite qui s applique independamment de la disponibilite d une piste cyclable ailleurs."
+        "explanation": "Les cyclistes sont interdits sur les routes pour automobiles. Cette règle s'applique indépendamment de la présence éventuelle d'une piste cyclable ailleurs."
       },
       "AR": {
         "question": "على طريق معبر (علامة مرورية F9): هل يجوز للدراج استخدام الطريق؟",

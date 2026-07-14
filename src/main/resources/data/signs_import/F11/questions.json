@@ -7,55 +7,55 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat betekent bord F11 'Einde autoweg'?",
+        "question": "Wat betekent dit verkeersbord?",
         "choices": [
           {
-            "text": "De autoweg eindigt; de bijzondere regels voor autowegen gelden niet meer en de gewone verkeersregels zijn van toepassing",
+            "text": "De autoweg eindigt hier; de bijzondere regels voor autowegen gelden niet meer en de gewone verkeersregels zijn van toepassing",
             "is_correct": true
           },
           { "text": "Het begin van een nieuwe autoweg", "is_correct": false },
           { "text": "Het einde van een snelweg", "is_correct": false }
         ],
-        "explanation": "F11 geeft het einde van de autoweg aan (aangeduid door F9). Voorbij dit bord gelden de gewone verkeersregels: voetgangers en fietsers mogen de weg gebruiken en de normale snelheidslimieten zijn van toepassing."
+        "explanation": "Dit bord geeft het einde van de autoweg aan. Voorbij dit bord gelden de gewone verkeersregels: voetgangers en fietsers mogen de weg gebruiken en de normale snelheidslimieten zijn van toepassing."
       },
       "EN": {
-        "question": "What does sign F11 'End of expressway' mean?",
+        "question": "What does this traffic sign mean?",
         "choices": [
           {
-            "text": "The expressway ends; the special rules for expressways no longer apply and normal traffic rules are in force",
+            "text": "The expressway ends here; the special rules for expressways no longer apply and normal traffic rules are in force",
             "is_correct": true
           },
           { "text": "The start of a new expressway", "is_correct": false },
           { "text": "The end of a motorway", "is_correct": false }
         ],
-        "explanation": "F11 indicates the end of the expressway (indicated by F9). Beyond this sign normal traffic rules apply: pedestrians and cyclists may use the road and normal speed limits are in force."
+        "explanation": "This sign indicates the end of the expressway. Beyond this sign normal traffic rules apply: pedestrians and cyclists may use the road and normal speed limits are in force."
       },
       "FR": {
-        "question": "Que signifie le panneau F11 'Fin de la route pour automobiles' ?",
+        "question": "Que signifie ce panneau ?",
         "choices": [
           {
-            "text": "La route pour automobiles se termine; les regles speciales pour les routes pour automobiles ne s appliquent plus et les regles normales de circulation sont en vigueur",
+            "text": "La route pour automobiles se termine ici; ses règles spéciales ne s'appliquent plus et les règles ordinaires entrent en vigueur",
             "is_correct": true
           },
           {
-            "text": "Le debut d une nouvelle route pour automobiles",
+            "text": "Le début d'une nouvelle route pour automobiles",
             "is_correct": false
           },
-          { "text": "La fin d une autoroute", "is_correct": false }
+          { "text": "La fin d'une autoroute", "is_correct": false }
         ],
-        "explanation": "F11 indique la fin de la route pour automobiles (indiquee par F9). Au-dela de ce panneau les regles normales de circulation s appliquent: les pietons et cyclistes peuvent utiliser la route et les limites de vitesse normales sont en vigueur."
+        "explanation": "Ce panneau indique la fin de la route pour automobiles. Au-delà, les règles ordinaires de circulation s'appliquent."
       },
       "AR": {
         "question": "ما معنى هذه العلامة المرورية؟",
         "choices": [
           {
-            "text": "ينتهي الطريق السريع؛ القواعد الخاصة بالطرق السريعة لم تعد سارية وتسري قواعد المرور العادية",
+            "text": "ينتهي الطريق السريع هنا؛ القواعد الخاصة بالطرق السريعة لم تعد سارية وتسري قواعد المرور العادية",
             "is_correct": true
           },
           { "text": "بداية طريق سريع جديد للسيارات", "is_correct": false },
           { "text": "نهاية طريق الأوتوستراد", "is_correct": false }
         ],
-        "explanation": "تشير F11 إلى نهاية الطريق السريع للسيارات (المشار إليه بـF9). بعد هذه العلامة المرورية تسري قواعد المرور العادية: يمكن للمشاة والدراجين استخدام الطريق وتسري حدود السرعة العادية."
+        "explanation": "تشير هذه العلامة إلى نهاية الطريق السريع للسيارات. بعد هذه العلامة تسري قواعد المرور العادية."
       }
     }
   },
@@ -67,46 +67,40 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Welk bord geeft het einde van een autoweg aan?",
+        "question": "Welk bord is dit?",
         "choices": [
-          { "text": "F11 einde autoweg", "is_correct": true },
-          { "text": "F9 begin autoweg", "is_correct": false },
-          { "text": "F10 einde autosnelweg", "is_correct": false }
+          { "text": "Einde autoweg", "is_correct": true },
+          { "text": "Begin autoweg", "is_correct": false },
+          { "text": "Einde autosnelweg", "is_correct": false }
         ],
-        "explanation": "F11 is het specifieke bord dat het einde van een autoweg aangeeft. Het bijbehorende beginbord is F9. Niet te verwarren met F10 dat het einde van een autosnelweg aangeeft."
+        "explanation": "Dit is het specifieke bord dat het einde van een autoweg aangeeft. Niet te verwarren met het bord dat het einde van een autosnelweg aangeeft."
       },
       "EN": {
-        "question": "Which sign indicates the end of an expressway?",
+        "question": "Which sign is this?",
         "choices": [
-          { "text": "F11 end of expressway", "is_correct": true },
-          { "text": "F9 start of expressway", "is_correct": false },
-          { "text": "F10 end of motorway", "is_correct": false }
+          { "text": "End of expressway", "is_correct": true },
+          { "text": "Start of expressway", "is_correct": false },
+          { "text": "End of motorway", "is_correct": false }
         ],
-        "explanation": "F11 is the specific sign that indicates the end of an expressway. The corresponding start sign is F9. Not to be confused with F10 which indicates the end of a motorway."
+        "explanation": "This is the specific sign that indicates the end of an expressway. Not to be confused with the sign that indicates the end of a motorway."
       },
       "FR": {
-        "question": "Quel panneau indique la fin d une route pour automobiles ?",
+        "question": "Quel est ce panneau ?",
         "choices": [
-          {
-            "text": "F11 fin de la route pour automobiles",
-            "is_correct": true
-          },
-          {
-            "text": "F9 debut de la route pour automobiles",
-            "is_correct": false
-          },
-          { "text": "F10 fin de l autoroute", "is_correct": false }
+          { "text": "Fin de la route pour automobiles", "is_correct": true },
+          { "text": "Début de la route pour automobiles", "is_correct": false },
+          { "text": "Fin de l'autoroute", "is_correct": false }
         ],
-        "explanation": "F11 est le panneau specifique qui indique la fin d une route pour automobiles. Le panneau de debut correspondant est F9. A ne pas confondre avec F10 qui indique la fin d une autoroute."
+        "explanation": "C'est le panneau spécifique qui indique la fin d'une route pour automobiles."
       },
       "AR": {
-        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
+        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
         "choices": [
-          { "text": "F11 نهاية الطريق السريع للسيارات", "is_correct": true },
-          { "text": "F9 بداية الطريق السريع للسيارات", "is_correct": false },
-          { "text": "F10 نهاية الأوتوستراد", "is_correct": false }
+          { "text": "نهاية الطريق السريع للسيارات", "is_correct": true },
+          { "text": "بداية الطريق السريع للسيارات", "is_correct": false },
+          { "text": "نهاية الأوتوستراد", "is_correct": false }
         ],
-        "explanation": "F11 هي العلامة المرورية المحددة التي تشير إلى نهاية الطريق السريع للسيارات. علامة مرورية البداية المقابلة هي F9. لا تُخلط مع F10 التي تشير إلى نهاية الأوتوستراد."
+        "explanation": "هذه هي العلامة المحددة التي تشير إلى نهاية الطريق السريع للسيارات."
       }
     }
   },
@@ -118,10 +112,10 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Welke weggebruikers mogen na bord F11 de weg gebruiken die ze op de autoweg niet mochten?",
+        "question": "Wat verandert er voor de toegelaten weggebruikers na bord F11?",
         "choices": [
           {
-            "text": "Voetgangers en fietsers zijn nu toegestaan omdat de autowegreglementering is opgeheven",
+            "text": "De autowegbeperkingen eindigen; onder meer voetgangers, fietsers, bromfietsen en landbouwvoertuigen mogen verder als de gewone regels en borden dat toelaten",
             "is_correct": true
           },
           {
@@ -129,17 +123,17 @@
             "is_correct": false
           },
           {
-            "text": "Trekkers en landbouwvoertuigen mogen de weg nu betreden",
+            "text": "Iedere weggebruiker is voortaan altijd toegelaten, ook als een volgend bord hem verbiedt",
             "is_correct": false
           }
         ],
-        "explanation": "Op een autoweg zijn voetgangers en fietsers (en andere trage weggebruikers) verboden. Na F11 geldt de autowegreglementering niet meer en mogen alle weggebruikers de weg gebruiken voor zover de weg dit toelaat."
+        "explanation": "F11 beëindigt de bijzondere toegangsbeperkingen van de autoweg. Op de volgende gewone weg kunnen categorieën die daar verboden waren opnieuw toegelaten zijn, maar zij moeten nog steeds alle plaatselijke verkeersborden en algemene regels naleven."
       },
       "EN": {
-        "question": "Which road users may use the road after sign F11 that were not allowed on the expressway?",
+        "question": "What changes for permitted road users after sign F11?",
         "choices": [
           {
-            "text": "Pedestrians and cyclists are now permitted because the expressway regulations are lifted",
+            "text": "The road-for-motor-vehicles restrictions end; pedestrians, cyclists, mopeds and agricultural vehicles may proceed if ordinary rules and signs allow",
             "is_correct": true
           },
           {
@@ -147,35 +141,35 @@
             "is_correct": false
           },
           {
-            "text": "Tractors and agricultural vehicles may now enter the road",
+            "text": "Every road user is now always admitted, even when a following sign prohibits that category",
             "is_correct": false
           }
         ],
-        "explanation": "On an expressway pedestrians and cyclists (and other slow road users) are prohibited. After F11 the expressway regulations no longer apply and all road users may use the road as far as the road allows."
+        "explanation": "F11 ends the special access restrictions of a road for motor vehicles. Categories prohibited there may again be admitted on the following ordinary road, but all local traffic signs and general rules still apply."
       },
       "FR": {
-        "question": "Quels usagers de la route peuvent utiliser la route apres le panneau F11 alors qu ils n etaient pas autorises sur la route pour automobiles ?",
+        "question": "Qu'est-ce qui change pour les usagers admis après le panneau F11 ?",
         "choices": [
           {
-            "text": "Les pietons et cyclistes sont maintenant autorises car la reglementation de la route pour automobiles est levee",
+            "text": "Les restrictions de la route pour automobiles prennent fin; piétons, cyclistes, cyclomoteurs et véhicules agricoles peuvent continuer si les règles et panneaux ordinaires le permettent",
             "is_correct": true
           },
           {
-            "text": "Les poids lourds peuvent maintenant rouler a des vitesses plus elevees",
+            "text": "Les poids lourds peuvent maintenant rouler à des vitesses plus élevées",
             "is_correct": false
           },
           {
-            "text": "Les tracteurs et vehicules agricoles peuvent maintenant emprunter la route",
+            "text": "Tous les usagers sont désormais toujours admis, même si un panneau suivant interdit leur catégorie",
             "is_correct": false
           }
         ],
-        "explanation": "Sur une route pour automobiles les pietons et cyclistes (et autres usagers lents) sont interdits. Apres F11 la reglementation de la route pour automobiles ne s applique plus et tous les usagers peuvent utiliser la route dans la mesure ou la route le permet."
+        "explanation": "F11 met fin aux restrictions d'accès propres à la route pour automobiles. Les catégories qui y étaient interdites peuvent être admises sur la route ordinaire suivante, mais les panneaux locaux et les règles générales restent applicables."
       },
       "AR": {
-        "question": "أي مستخدمي الطريق يُسمح لهم باستخدام الطريق بعد علامة مرورية F11 ولم يكن مسموحاً لهم بذلك على الطريق السريع؟",
+        "question": "ما الذي يتغير بالنسبة لمستخدمي الطريق المسموح لهم بعد العلامة F11؟",
         "choices": [
           {
-            "text": "المشاة والدراجون مسموح لهم الآن لأن لوائح الطريق السريع قد رُفعت",
+            "text": "تنتهي قيود الطريق المخصص للمركبات؛ ويمكن للمشاة والدراجين والدراجات النارية الصغيرة والمركبات الزراعية المتابعة إذا سمحت القواعد والعلامات العادية",
             "is_correct": true
           },
           {
@@ -183,11 +177,11 @@
             "is_correct": false
           },
           {
-            "text": "الجرارات والمركبات الزراعية يمكنها الآن دخول الطريق",
+            "text": "يُسمح الآن دائمًا لكل مستخدمي الطريق حتى إذا منعت علامة لاحقة فئتهم",
             "is_correct": false
           }
         ],
-        "explanation": "على الطريق السريع للسيارات يُحظر على المشاة والدراجين (ومستخدمي الطريق البطيئين الآخرين). بعد F11 لا تسري لوائح الطريق السريع بعد الآن ويمكن لجميع مستخدمي الطريق استخدامه بقدر ما يسمح الطريق."
+        "explanation": "تنهي F11 قيود الدخول الخاصة بالطريق المخصص للمركبات. وقد يُسمح على الطريق العادي التالي بالفئات التي كانت ممنوعة، لكن تبقى جميع العلامات المحلية والقواعد العامة واجبة التطبيق."
       }
     }
   },
@@ -199,76 +193,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Welke snelheidsregel verandert na het passeren van bord F11?",
+        "question": "Wat verandert er inzake wegcategorie na dit bord?",
         "choices": [
           {
-            "text": "De minimumsnelheid van 70 km/u op autowegen vervalt; de normale plaatselijke snelheidslimiet geldt",
+            "text": "De weg is geen autoweg meer; de bijzondere verkeersregels voor autowegen vervallen",
             "is_correct": true
           },
           {
-            "text": "U mag nu sneller rijden dan op de autoweg",
+            "text": "De weg wordt automatisch een autosnelweg met bijhorende regels",
             "is_correct": false
           },
           {
-            "text": "Er is geen minimumsnelheid meer maar ook geen maximumsnelheid",
+            "text": "Er verandert niets aan de wegcategorie, enkel het bord verandert",
             "is_correct": false
           }
         ],
-        "explanation": "Op een autoweg geldt een minimumsnelheid van 70 km/u. Na F11 vervalt deze minimumsnelheid. De snelheidsregel wordt bepaald door de bebording op die specifieke weg (bv. 50 km/u in bebouwde kom)."
+        "explanation": "Dit bord markeert het einde van de autoweg. Vanaf hier gelden de gewone verkeersregels van de weg in kwestie."
       },
       "EN": {
-        "question": "What speed rule changes after passing sign F11?",
+        "question": "What changes regarding road category after this sign?",
         "choices": [
           {
-            "text": "The minimum speed of 70 km/h on expressways no longer applies; the normal local speed limit applies",
+            "text": "The road is no longer an expressway; the special expressway rules no longer apply",
             "is_correct": true
           },
           {
-            "text": "You may now drive faster than on the expressway",
+            "text": "The road automatically becomes a motorway with its own rules",
             "is_correct": false
           },
           {
-            "text": "There is no longer a minimum speed but also no maximum speed",
+            "text": "Nothing changes regarding road category, only the sign changes",
             "is_correct": false
           }
         ],
-        "explanation": "On an expressway a minimum speed of 70 km/h applies. After F11 this minimum speed no longer applies. The speed rule is determined by the signage on that specific road (e.g. 50 km/h in built-up areas)."
+        "explanation": "This sign marks the end of the expressway. From here on the normal traffic rules of that specific road apply."
       },
       "FR": {
-        "question": "Quelle regle de vitesse change apres avoir passe le panneau F11 ?",
+        "question": "Que change la catégorie de la route après ce panneau ?",
         "choices": [
           {
-            "text": "La vitesse minimale de 70 km/h sur les routes pour automobiles ne s applique plus; la limite de vitesse locale normale s applique",
+            "text": "La route n'est plus une route pour automobiles; ses règles spéciales ne s'appliquent plus",
             "is_correct": true
           },
           {
-            "text": "Vous pouvez maintenant rouler plus vite que sur la route pour automobiles",
+            "text": "La route devient automatiquement une autoroute avec ses propres règles",
             "is_correct": false
           },
           {
-            "text": "Il n y a plus de vitesse minimale mais aussi pas de vitesse maximale",
+            "text": "La catégorie de route ne change pas; seul le panneau change",
             "is_correct": false
           }
         ],
-        "explanation": "Sur une route pour automobiles une vitesse minimale de 70 km/h s applique. Apres F11 cette vitesse minimale ne s applique plus. La regle de vitesse est determinee par la signalisation sur cette route specifique (par ex. 50 km/h en agglomeration)."
+        "explanation": "Ce panneau marque la fin de la route pour automobiles. À partir de là, les règles ordinaires de circulation s'appliquent."
       },
       "AR": {
-        "question": "ما قاعدة السرعة التي تتغير بعد تجاوز علامة مرورية F11؟",
+        "question": "ما الذي يتغير في تصنيف الطريق بعد هذه العلامة؟",
         "choices": [
           {
-            "text": "الحد الأدنى للسرعة البالغ 70 كم/ساعة على الطرق السريعة لم يعد سارياً؛ يسري الحد المحلي العادي للسرعة",
+            "text": "الطريق لم يعد طريقاً سريعاً للسيارات؛ القواعد الخاصة لم تعد سارية",
             "is_correct": true
           },
           {
-            "text": "يمكنك الآن السير بسرعة أكبر مما كان عليه الطريق السريع",
+            "text": "يتحول الطريق تلقائياً إلى أوتوستراد بقواعده الخاصة",
             "is_correct": false
           },
           {
-            "text": "لا يوجد حد أدنى للسرعة ولا حد أقصى بعد الآن",
+            "text": "لا يتغير شيء في تصنيف الطريق، فقط العلامة المرورية تتغير",
             "is_correct": false
           }
         ],
-        "explanation": "على الطريق السريع يسري حد أدنى للسرعة يبلغ 70 كم/ساعة. بعد F11 لا يسري هذا الحد الأدنى بعد الآن. تُحدَّد قاعدة السرعة بالإشارات على تلك الطريق المحددة (مثلاً 50 كم/ساعة في المناطق المبنية)."
+        "explanation": "تشير هذه العلامة إلى نهاية الطريق السريع للسيارات. من هنا تسري قواعد المرور العادية."
       }
     }
   },
@@ -280,76 +274,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Mag u na bord F11 normaal inhalen als de weg en bebording dit toestaan?",
+        "question": "Klopt het dat de algemene regel 'links inhalen' na dit bord wegvalt?",
         "choices": [
           {
-            "text": "Ja de bijzondere inhalregels van de autoweg zijn opgeheven; de gewone inhaalregels gelden",
+            "text": "Nee links inhalen blijft de algemene regel op alle wegen; enkel de specifieke autowegbepalingen vervallen",
             "is_correct": true
           },
           {
-            "text": "Nee inhalen blijft verboden nog 500 meter na F11",
+            "text": "Ja u mag nu zowel links als rechts vrij inhalen zonder beperking",
             "is_correct": false
           },
           {
-            "text": "Nee u mag pas inhalen na het passeren van het volgende kruispunt",
+            "text": "Ja inhalen is volledig verboden tot de volgende kruising",
             "is_correct": false
           }
         ],
-        "explanation": "Op een autoweg gelden specifieke inhalregels (o.a. enkel links inhalen). Na F11 gelden de gewone inhalregels van toepassing op de betrokken weg. Als er geen inhalverbod is aangeduid mag u normaal inhalen."
+        "explanation": "Links inhalen is een algemene verkeersregel die op vrijwel alle wegen geldt. Na dit bord vervallen enkel de specifieke autowegbepalingen."
       },
       "EN": {
-        "question": "May you overtake normally after sign F11 if the road and signage permit this?",
+        "question": "Is it true that the general rule of overtaking on the left no longer applies after this sign?",
         "choices": [
           {
-            "text": "Yes the special overtaking rules of the expressway are lifted; the normal overtaking rules apply",
+            "text": "No overtaking on the left remains the general rule on all roads; only the specific expressway provisions are lifted",
             "is_correct": true
           },
           {
-            "text": "No overtaking remains prohibited for 500 metres after F11",
+            "text": "Yes you may now overtake freely on either side without restriction",
             "is_correct": false
           },
           {
-            "text": "No you may only overtake after passing the next intersection",
+            "text": "Yes overtaking is completely prohibited until the next intersection",
             "is_correct": false
           }
         ],
-        "explanation": "On an expressway specific overtaking rules apply (including overtaking only on the left). After F11 the normal overtaking rules apply to the road in question. If no overtaking prohibition is indicated you may overtake normally."
+        "explanation": "Overtaking on the left is a general traffic rule that applies on almost all roads. After this sign only the specific expressway provisions are lifted."
       },
       "FR": {
-        "question": "Peut-on depasser normalement apres le panneau F11 si la route et la signalisation le permettent ?",
+        "question": "Est-il vrai que la règle générale du dépassement par la gauche ne s'applique plus après ce panneau ?",
         "choices": [
           {
-            "text": "Oui les regles speciales de depassement de la route pour automobiles sont levees; les regles normales de depassement s appliquent",
+            "text": "Non, le dépassement par la gauche reste la règle générale; seules les dispositions propres à la route pour automobiles prennent fin",
             "is_correct": true
           },
           {
-            "text": "Non le depassement reste interdit pendant 500 metres apres F11",
+            "text": "Oui, vous pouvez maintenant dépasser librement des deux côtés sans restriction",
             "is_correct": false
           },
           {
-            "text": "Non vous ne pouvez depasser qu apres avoir passe le prochain carrefour",
+            "text": "Oui, le dépassement est totalement interdit jusqu'au prochain carrefour",
             "is_correct": false
           }
         ],
-        "explanation": "Sur une route pour automobiles des regles specifiques de depassement s appliquent (notamment depasser uniquement a gauche). Apres F11 les regles normales de depassement applicables a la route concernee s appliquent. Si aucune interdiction de depassement n est indiquee vous pouvez depasser normalement."
+        "explanation": "Le dépassement par la gauche demeure la règle générale. Après F11, seules les dispositions spécifiques à la route pour automobiles prennent fin."
       },
       "AR": {
-        "question": "هل يمكنك التجاوز بشكل عادي بعد علامة مرورية F11 إذا سمحت الطريق والإشارات بذلك؟",
+        "question": "هل صحيح أن القاعدة العامة للتجاوز من اليسار لم تعد سارية بعد هذه العلامة؟",
         "choices": [
           {
-            "text": "نعم قواعد التجاوز الخاصة بالطريق السريع قد رُفعت؛ تسري قواعد التجاوز العادية",
+            "text": "لا التجاوز من اليسار يبقى القاعدة العامة على جميع الطرق؛ فقط الأحكام الخاصة بالطريق السريع تُرفع",
             "is_correct": true
           },
           {
-            "text": "لا يبقى التجاوز محظوراً لمدة 500 متر بعد F11",
+            "text": "نعم يمكنك الآن التجاوز بحرية من أي جهة دون قيود",
             "is_correct": false
           },
           {
-            "text": "لا يمكنك التجاوز إلا بعد تجاوز التقاطع التالي",
+            "text": "نعم يُمنع التجاوز كلياً حتى التقاطع التالي",
             "is_correct": false
           }
         ],
-        "explanation": "على الطريق السريع تسري قواعد تجاوز محددة (بما فيها التجاوز من اليسار فقط). بعد F11 تسري قواعد التجاوز العادية على الطريق المعنية. إذا لم يُشر إلى حظر تجاوز يمكنك التجاوز بشكل عادي."
+        "explanation": "التجاوز من اليسار قاعدة مرورية عامة تسري على معظم الطرق. بعد هذه العلامة تُرفع فقط الأحكام الخاصة بالطريق السريع."
       }
     }
   },
@@ -361,76 +355,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Is pech stoppen op de rijbaan toegestaan na bord F11?",
+        "question": "Uw voertuig krijgt pech net na bord F11, op de gewone weg. Wat moet u doen?",
         "choices": [
           {
-            "text": "Nee u moet zo snel mogelijk stoppen op de berm en buiten de rijbaan een veiligheidsdriehoek plaatsen",
+            "text": "Plaats het voertuig zo mogelijk zoals een geparkeerd voertuig; kan het niet weg, waarschuw dan het verkeer en zet de gevarendriehoek minstens 30 m ervoor",
             "is_correct": true
           },
           {
-            "text": "Ja na F11 mag u overal stoppen in noodgevallen",
+            "text": "Laat het voertuig midden op de rijbaan staan zonder verdere waarschuwing",
             "is_correct": false
           },
           {
-            "text": "Ja maar enkel als u uw alarmlichten aanzet",
+            "text": "Laat het voertuig op de rijbaan staan; alleen de alarmlichten zijn altijd voldoende",
             "is_correct": false
           }
         ],
-        "explanation": "Zowel op een autoweg als op een gewone weg is pech stoppen midden op de rijbaan gevaarlijk en niet toegestaan. U moet de berm opzoeken. Na F11 kan een berm eventueel ontbreken dus rijd naar de dichtstbijzijnde veilige stopplaats."
+        "explanation": "F11 beëindigt de autoweg, maar de algemene plichten bij pech blijven gelden. Verplaats het voertuig zo mogelijk uit de rijbaan. Kan dat niet, gebruik dan de alarmlichten en plaats de gevarendriehoek op een gewone weg minstens 30 m vóór het voertuig, zichtbaar voor naderend verkeer."
       },
       "EN": {
-        "question": "Is breaking down on the carriageway permitted after sign F11?",
+        "question": "Your vehicle breaks down just after sign F11, on the ordinary road. What must you do?",
         "choices": [
           {
-            "text": "No you must stop on the hard shoulder as quickly as possible and place a warning triangle outside the carriageway",
+            "text": "Position it like a parked vehicle if possible; if it cannot be moved, warn traffic and place the warning triangle at least 30 m before it",
             "is_correct": true
           },
           {
-            "text": "Yes after F11 you may stop anywhere in emergencies",
+            "text": "Leave the vehicle in the middle of the carriageway without any further warning",
             "is_correct": false
           },
           {
-            "text": "Yes but only if you turn on your hazard lights",
+            "text": "Leave it on the carriageway; hazard lights alone are always sufficient",
             "is_correct": false
           }
         ],
-        "explanation": "Both on an expressway and on a normal road breaking down in the middle of the carriageway is dangerous and not permitted. You must find the hard shoulder. After F11 there may not be a hard shoulder so drive to the nearest safe stopping place."
+        "explanation": "F11 ends the road for motor vehicles, but the general breakdown duties remain. Move the vehicle off the carriageway if possible. If it cannot be moved, use the hazard lights and place the warning triangle at least 30 m before it on an ordinary road, visible to approaching traffic."
       },
       "FR": {
-        "question": "Est-il permis de tomber en panne sur la chaussee apres le panneau F11 ?",
+        "question": "Votre véhicule tombe en panne juste après le panneau F11, sur la route ordinaire. Que devez-vous faire ?",
         "choices": [
           {
-            "text": "Non vous devez vous arreter sur la bande d arret aussi vite que possible et placer un triangle de signalisation hors de la chaussee",
+            "text": "Le placer si possible comme un véhicule en stationnement; s'il ne peut être déplacé, avertir le trafic et poser le triangle au moins 30 m avant",
             "is_correct": true
           },
           {
-            "text": "Oui apres F11 vous pouvez vous arreter n importe ou en cas d urgence",
+            "text": "Laisser le véhicule au milieu de la chaussée sans autre avertissement",
             "is_correct": false
           },
           {
-            "text": "Oui mais seulement si vous allumez vos feux de detresse",
+            "text": "Le laisser sur la chaussée; les feux de détresse suffisent toujours",
             "is_correct": false
           }
         ],
-        "explanation": "Aussi bien sur une route pour automobiles que sur une route normale tomber en panne au milieu de la chaussee est dangereux et non autorise. Vous devez trouver la bande d arret. Apres F11 il peut ne pas y avoir de bande d arret donc roulez jusqu au prochain arret securise."
+        "explanation": "F11 met fin à la route pour automobiles, mais les obligations générales en cas de panne restent applicables. Déplacez le véhicule hors de la chaussée si possible. Sinon, allumez les feux de détresse et placez le triangle au moins 30 m avant le véhicule, visible du trafic approchant."
       },
       "AR": {
-        "question": "هل يُسمح بالتوقف بسبب عطل على الطريق بعد علامة مرورية F11؟",
+        "question": "هل يُسمح بالتوقف بسبب عطل على الطريق بعد هذه العلامة؟",
         "choices": [
           {
-            "text": "لا يجب التوقف على الكتف في أقرب وقت ممكن ووضع مثلث تحذيري خارج الطريق",
+            "text": "ضع المركبة مثل مركبة متوقفة إن أمكن؛ وإذا تعذر نقلها فحذّر حركة المرور وضع مثلث الخطر قبلها بمسافة 30 مترًا على الأقل",
             "is_correct": true
           },
           {
-            "text": "نعم بعد F11 يمكنك التوقف في أي مكان في حالات الطوارئ",
+            "text": "اترك المركبة في وسط مسار السير من دون أي تحذير إضافي",
             "is_correct": false
           },
           {
-            "text": "نعم ولكن فقط إذا شغّلت أضواء الطوارئ",
+            "text": "اترك المركبة على مسار السير؛ أضواء الخطر وحدها تكفي دائمًا",
             "is_correct": false
           }
         ],
-        "explanation": "سواء على الطريق السريع أو الطريق العادي فإن التوقف بسبب عطل في وسط الطريق أمر خطير وغير مسموح. يجب إيجاد الكتف. بعد F11 قد لا يكون هناك كتف لذا سِر إلى أقرب مكان توقف آمن."
+        "explanation": "تنهي F11 الطريق المخصص للمركبات، لكن واجبات العطل العامة تبقى سارية. انقل المركبة خارج مسار السير إن أمكن. وإذا تعذر ذلك، شغّل أضواء الخطر وضع المثلث على الطريق العادي قبل المركبة بمسافة 30 مترًا على الأقل بحيث يراه القادمون."
       }
     }
   },
@@ -442,7 +436,7 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Mag een bromfiets rijden op de weg direct na bord F11 als er geen verbodsbord is?",
+        "question": "Mag een bromfiets rijden op de weg direct na dit bord als er geen verbodsbord is?",
         "choices": [
           {
             "text": "Ja op een gewone weg zonder bijzondere verboden mogen bromfietsen rijden; op de autoweg zelf was dat verboden",
@@ -453,10 +447,10 @@
             "is_correct": false
           }
         ],
-        "explanation": "Een autoweg is verboden voor bromfietsen. Na F11 is de autowegreglementering opgeheven. Als er geen afzonderlijk verbodsbord staat voor bromfietsen mogen ze de weg na F11 gebruiken conform de gewone verkeersregels."
+        "explanation": "Een autoweg is verboden voor bromfietsen. Na dit bord is de autowegreglementering opgeheven."
       },
       "EN": {
-        "question": "May a moped ride on the road immediately after sign F11 if there is no prohibition sign?",
+        "question": "May a moped ride on the road immediately after this sign if there is no prohibition sign?",
         "choices": [
           {
             "text": "Yes on a normal road without specific prohibitions mopeds may ride; on the expressway itself that was prohibited",
@@ -467,24 +461,24 @@
             "is_correct": false
           }
         ],
-        "explanation": "An expressway is prohibited for mopeds. After F11 the expressway regulations are lifted. If there is no separate prohibition sign for mopeds they may use the road after F11 in accordance with normal traffic rules."
+        "explanation": "An expressway is prohibited for mopeds. After this sign the expressway regulations are lifted."
       },
       "FR": {
-        "question": "Un cyclomoteur peut-il circuler sur la route juste apres le panneau F11 s il n y a pas de panneau d interdiction ?",
+        "question": "Un cyclomoteur peut-il circuler sur la route juste après ce panneau s'il n'y a aucun panneau d'interdiction ?",
         "choices": [
           {
-            "text": "Oui sur une route normale sans interdictions specifiques les cyclomoteurs peuvent circuler; sur la route pour automobiles elle-meme c etait interdit",
+            "text": "Oui, sur une route ordinaire sans interdiction spécifique, les cyclomoteurs peuvent circuler; ils étaient interdits sur la route pour automobiles",
             "is_correct": true
           },
           {
-            "text": "Non les cyclomoteurs ne peuvent jamais circuler sur des routes ou il y avait precedemment une route pour automobiles",
+            "text": "Non, les cyclomoteurs restent toujours interdits sur une route qui suivait précédemment une route pour automobiles",
             "is_correct": false
           }
         ],
-        "explanation": "Une route pour automobiles est interdite aux cyclomoteurs. Apres F11 la reglementation de la route pour automobiles est levee. S il n y a pas de panneau d interdiction separe pour les cyclomoteurs ils peuvent utiliser la route apres F11 conformement aux regles normales de circulation."
+        "explanation": "Les cyclomoteurs sont interdits sur une route pour automobiles. Après F11, cette restriction prend fin, sous réserve des panneaux de la route suivante."
       },
       "AR": {
-        "question": "هل يُسمح للدراجة البخارية بالسير على الطريق مباشرة بعد علامة مرورية F11 إذا لم يكن هناك علامة مرورية حظر؟",
+        "question": "هل يُسمح للدراجة البخارية بالسير على الطريق مباشرة بعد هذه العلامة إذا لم يكن هناك علامة حظر؟",
         "choices": [
           {
             "text": "نعم على الطريق العادي دون محظورات خاصة يُسمح للدراجات البخارية بالسير؛ على الطريق السريع نفسه كان ذلك محظوراً",
@@ -495,7 +489,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "الطريق السريع محظور على الدراجات البخارية. بعد F11 تُرفع لوائح الطريق السريع. إذا لم يكن هناك علامة مرورية حظر منفصلة للدراجات البخارية يمكنها استخدام الطريق بعد F11 وفقاً لقواعد المرور العادية."
+        "explanation": "الطريق السريع محظور على الدراجات البخارية. بعد هذه العلامة تُرفع لوائح الطريق السريع."
       }
     }
   },
@@ -507,60 +501,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Is een ambulance verplicht de bijzondere regels van de autoweg te volgen als ze op weg gaat na bord F11?",
+        "question": "Mag een ambulance tijdens een dringende opdracht na bord F11 zonder voorwaarden alle verkeersregels negeren?",
         "choices": [
           {
-            "text": "Nee een ambulance die urgentiedienst verricht is vrijgesteld van de gewone verkeersreglementering en mag afwijken van de normale regels",
+            "text": "Nee, afwijkingen gelden alleen onder de wettelijke voorwaarden; bepaalde regels blijven altijd gelden en er mag geen gevaar worden veroorzaakt",
             "is_correct": true
           },
           {
-            "text": "Ja ook ambulances moeten na F11 de gewone verkeersregels strikt volgen",
+            "text": "Ja, tijdens elke rit met een ambulance vervallen automatisch alle verkeersregels",
             "is_correct": false
           }
         ],
-        "explanation": "Prioritaire voertuigen zoals ambulances brandweer en politie die in actieve dienst zijn mogen afwijken van de gewone verkeersregels (inclusief snelheidslimieten en roodlicht) zowel op autowegen als op gewone wegen."
+        "explanation": "Een voertuig voor dringende medische hulpverlening kan tijdens een dringende opdracht onder voorwaarden van regels afwijken, onder meer met gebruik van blauwe knipperlichten en het speciaal geluidstoestel. De wet noemt ook regels waarvan niet mag worden afgeweken en veiligheid blijft verplicht."
       },
       "EN": {
-        "question": "Is an ambulance required to follow the special expressway rules when proceeding after sign F11?",
+        "question": "During an urgent mission after sign F11, may an ambulance ignore every traffic rule without conditions?",
         "choices": [
           {
-            "text": "No an ambulance performing emergency duty is exempt from normal traffic regulations and may deviate from normal rules",
+            "text": "No, exemptions apply only under the legal conditions; some rules always remain binding and no danger may be created",
             "is_correct": true
           },
           {
-            "text": "Yes even ambulances must strictly follow normal traffic rules after F11",
+            "text": "Yes, every journey by an ambulance automatically cancels all traffic rules",
             "is_correct": false
           }
         ],
-        "explanation": "Priority vehicles such as ambulances fire brigade and police on active duty may deviate from normal traffic rules (including speed limits and red lights) both on expressways and on normal roads."
+        "explanation": "A vehicle providing urgent medical assistance may deviate from rules during an urgent mission only under the statutory conditions, including use of blue flashing lights and the special audible warning. The law also lists rules that remain binding, and safety is still required."
       },
       "FR": {
-        "question": "Une ambulance est-elle obligee de suivre les regles speciales de la route pour automobiles lorsqu elle poursuit apres le panneau F11 ?",
+        "question": "Lors d'une mission urgente après le panneau F11, une ambulance peut-elle ignorer toutes les règles sans condition ?",
         "choices": [
           {
-            "text": "Non une ambulance effectuant une mission d urgence est exempte de la reglementation normale de la circulation et peut s ecarter des regles normales",
+            "text": "Non, les dérogations ne valent que sous les conditions légales; certaines règles restent obligatoires et aucun danger ne peut être créé",
             "is_correct": true
           },
           {
-            "text": "Oui meme les ambulances doivent strictement suivre les regles normales de circulation apres F11",
+            "text": "Oui, tout déplacement d'une ambulance supprime automatiquement toutes les règles de circulation",
             "is_correct": false
           }
         ],
-        "explanation": "Les vehicules prioritaires comme les ambulances les pompiers et la police en service actif peuvent s ecarter des regles normales de circulation (y compris les limites de vitesse et les feux rouges) aussi bien sur les routes pour automobiles que sur les routes normales."
+        "explanation": "Un véhicule d'aide médicale urgente peut déroger à des règles pendant une mission urgente uniquement sous les conditions légales, notamment avec les feux bleus et l'avertisseur sonore spécial. Certaines règles restent obligatoires et la sécurité doit être préservée."
       },
       "AR": {
-        "question": "هل يُلزَم سيارة الإسعاف باتباع القواعد الخاصة بالطريق السريع عند المضي قدماً بعد علامة مرورية F11؟",
+        "question": "هل يجوز لسيارة إسعاف في مهمة عاجلة بعد F11 تجاهل جميع قواعد المرور بلا شروط؟",
         "choices": [
           {
-            "text": "لا سيارة الإسعاف التي تؤدي مهمة طوارئ معفاة من لوائح المرور العادية ويمكنها الانحراف عن القواعد العادية",
+            "text": "لا، لا تسري الاستثناءات إلا ضمن الشروط القانونية؛ تبقى بعض القواعد ملزمة ولا يجوز خلق خطر",
             "is_correct": true
           },
           {
-            "text": "نعم حتى سيارات الإسعاف يجب أن تتبع قواعد المرور العادية بصرامة بعد F11",
+            "text": "نعم، كل رحلة لسيارة إسعاف تلغي تلقائيًا جميع قواعد المرور",
             "is_correct": false
           }
         ],
-        "explanation": "المركبات ذات الأولوية كسيارات الإسعاف وسيارات الإطفاء والشرطة في الخدمة الفعلية يمكنها الانحراف عن قواعد المرور العادية (بما فيها حدود السرعة والإشارات الحمراء) سواء على الطرق السريعة أو الطرق العادية."
+        "explanation": "يجوز لمركبة المساعدة الطبية العاجلة مخالفة بعض القواعد أثناء مهمة عاجلة فقط ضمن الشروط القانونية، ومنها استخدام الأضواء الزرقاء والجهاز الصوتي الخاص. وتبقى قواعد محددة ملزمة، كما يجب الحفاظ على السلامة."
       }
     }
   }

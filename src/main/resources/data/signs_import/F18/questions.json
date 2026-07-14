@@ -7,106 +7,157 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat betekent bord F18?",
+        "question": "U ziet dit bord naast een aparte bedding op de weg. Wat betekent dit precies?",
         "choices": [
           {
-            "text": "Het geeft een rijstrook of weg aan die voorbehouden is aan trams en bussen",
+            "text": "Het duidt een speciale bedding aan die uitzonderlijk overreden mag worden onder bepaalde voorwaarden",
             "is_correct": true
           },
-          { "text": "Het geeft een tramhalte aan", "is_correct": false },
           {
-            "text": "Het verbiedt voetgangers de baan over te steken",
+            "text": "Het duidt een gewone rijstrook aan die voor alle voertuigen vrij toegankelijk is",
+            "is_correct": false
+          },
+          {
+            "text": "Het geeft aan dat de weg verderop volledig wordt afgesloten",
             "is_correct": false
           }
         ],
-        "explanation": "F18 duidt een weg of rijstrook aan die gereserveerd is voor trams en bussen. Andere voertuigen mogen er in principe niet rijden."
+        "explanation": "Dit bord kondigt een bijzondere overrijdbare bedding aan, meestal bestemd voor tram of bus, die enkel in bepaalde omstandigheden door ander verkeer gebruikt mag worden."
       },
       "EN": {
-        "question": "What does sign F18 mean?",
+        "question": "You see this sign next to a separate track on the road. What does it actually mean?",
         "choices": [
           {
-            "text": "It indicates a lane or road reserved for trams and buses",
+            "text": "It marks a special track that other traffic may exceptionally cross under certain conditions",
             "is_correct": true
           },
-          { "text": "It indicates a tram stop", "is_correct": false },
           {
-            "text": "It prohibits pedestrians from crossing the track",
+            "text": "It marks an ordinary lane freely accessible to all vehicles",
+            "is_correct": false
+          },
+          {
+            "text": "It indicates that the road ahead is completely closed",
             "is_correct": false
           }
         ],
-        "explanation": "F18 marks a road or lane reserved for trams and buses. Other vehicles may in principle not use it."
+        "explanation": "This sign announces a special traversable track, usually meant for trams or buses, which other traffic may only use under certain circumstances."
       },
       "FR": {
-        "question": "Que signifie le panneau F18 ?",
+        "question": "Vous apercevez ce panneau près d'un site propre séparé sur la route. Que signifie-t-il exactement ?",
         "choices": [
           {
-            "text": "Il indique une voie ou une route reservee aux trams et aux bus",
+            "text": "Il indique un site propre spécial que les autres véhicules peuvent exceptionnellement franchir sous certaines conditions",
             "is_correct": true
           },
-          { "text": "Il indique un arret de tram", "is_correct": false },
           {
-            "text": "Il interdit aux pietons de traverser la voie",
+            "text": "Il indique une voie ordinaire librement accessible à tous les véhicules",
+            "is_correct": false
+          },
+          {
+            "text": "Il indique que la route est complètement fermée plus loin",
             "is_correct": false
           }
         ],
-        "explanation": "F18 marque une route ou voie reservee aux trams et aux bus. Les autres vehicules ne peuvent en principe pas l emprunter."
+        "explanation": "Ce panneau annonce un site propre franchissable, généralement destiné aux trams ou autobus, que les autres véhicules ne peuvent utiliser que dans certaines circonstances."
       },
       "AR": {
-        "question": "ما معنى هذه العلامة المرورية؟",
+        "question": "لاحظت هذه العلامة قرب مسار مستقل على الطريق، فماذا تعني بالضبط؟",
         "choices": [
           {
-            "text": "تشير إلى حارة أو طريق محجوز للترام والحافلات",
+            "text": "تشير إلى مسار خاص يمكن لبقية المركبات عبوره استثنائيًا وفق شروط معينة",
             "is_correct": true
           },
-          { "text": "تشير إلى محطة ترام", "is_correct": false },
-          { "text": "تحظر على المشاة عبور المسار", "is_correct": false }
+          {
+            "text": "تشير إلى مسار عادي مفتوح لجميع المركبات بحرية",
+            "is_correct": false
+          },
+          {
+            "text": "تشير إلى أن الطريق مغلق بالكامل بعد قليل",
+            "is_correct": false
+          }
         ],
-        "explanation": "تحدد F18 طريقاً أو حارة محجوزة للترام والحافلات. لا يجوز للمركبات الأخرى في المبدأ استخدامها."
+        "explanation": "تعلن هذه العلامة عن مسار خاص قابل للعبور، مخصص عادةً للترام أو الحافلات، لا يمكن لبقية المركبات استخدامه إلا في حالات معينة."
       }
     }
   },
   {
     "question_id": "F18_Q02",
-    "type": "WHICH_SIGN",
+    "type": "DRIVER_ACTION",
     "difficulty": "EASY",
     "is_critical": false,
-    "show_sign": true,
+    "show_sign": false,
     "i18n": {
       "NL": {
-        "question": "Tot welke categorie behoort bord F18?",
+        "question": "U rijdt naast een bedding die door dit bord wordt aangeduid. Wat is uw normale gedrag?",
         "choices": [
-          { "text": "informatieve borden", "is_correct": true },
-          { "text": "verbodsborden", "is_correct": false },
-          { "text": "gevaarsborden", "is_correct": false }
+          {
+            "text": "U blijft op de gewone rijbaan en vermijdt de bedding, behalve wanneer dit uitdrukkelijk is toegelaten",
+            "is_correct": true
+          },
+          {
+            "text": "U rijdt vrij op de bedding wanneer die net leeg lijkt",
+            "is_correct": false
+          },
+          {
+            "text": "U gebruikt de bedding steeds als extra rijstrook bij drukte",
+            "is_correct": false
+          }
         ],
-        "explanation": "F18 behoort tot deze categorie informatieve borden."
+        "explanation": "Zolang geen bord of markering dit toelaat, moet een bestuurder de bedding vermijden en op de gewone rijbaan blijven."
       },
       "EN": {
-        "question": "Which category does sign F18 belong to?",
+        "question": "You are driving next to a track marked by this sign. What is your normal behaviour?",
         "choices": [
-          { "text": "information signs", "is_correct": true },
-          { "text": "prohibition signs", "is_correct": false },
-          { "text": "warning signs", "is_correct": false }
+          {
+            "text": "You stay on the regular lane and avoid the track, except when explicitly permitted",
+            "is_correct": true
+          },
+          {
+            "text": "You freely drive on the track whenever it looks empty",
+            "is_correct": false
+          },
+          {
+            "text": "You always use the track as an extra lane during heavy traffic",
+            "is_correct": false
+          }
         ],
-        "explanation": "F18 belongs to this category of information signs."
+        "explanation": "Unless a sign or marking permits it, a driver must avoid the track and remain on the regular lane."
       },
       "FR": {
-        "question": "À quelle catégorie appartient le panneau F18 ?",
+        "question": "Vous roulez à côté d'un site propre indiqué par ce panneau. Quel est votre comportement normal ?",
         "choices": [
-          { "text": "panneaux d information", "is_correct": true },
-          { "text": "panneaux d interdiction", "is_correct": false },
-          { "text": "panneaux de danger", "is_correct": false }
+          {
+            "text": "Vous restez sur la voie normale et évitez le site propre, sauf autorisation explicite",
+            "is_correct": true
+          },
+          {
+            "text": "Vous roulez librement sur le site propre lorsqu'il semble vide",
+            "is_correct": false
+          },
+          {
+            "text": "Vous utilisez toujours le site propre comme voie supplémentaire en cas d'embouteillage",
+            "is_correct": false
+          }
         ],
-        "explanation": "F18 appartient à cette catégorie des panneaux d information."
+        "explanation": "Sauf autorisation explicite par panneau ou marquage, un conducteur doit éviter le site propre et rester sur la voie normale."
       },
       "AR": {
-        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
+        "question": "أنت تقود بجانب مسار تشير إليه هذه العلامة، فما تصرفك الطبيعي؟",
         "choices": [
-          { "text": "العلامات الإرشادية", "is_correct": true },
-          { "text": "علامات الحظر", "is_correct": false },
-          { "text": "هذه الفئة: علامات تحذير", "is_correct": false }
+          {
+            "text": "تبقى على المسار العادي وتتجنب المسار الخاص إلا عند السماح بذلك صريحًا",
+            "is_correct": true
+          },
+          {
+            "text": "تسير بحرية على المسار الخاص عندما يبدو خاليًا",
+            "is_correct": false
+          },
+          {
+            "text": "تستخدم المسار الخاص دائمًا كمسار إضافي عند الازدحام",
+            "is_correct": false
+          }
         ],
-        "explanation": "تنتمي F18 إلى هذه الفئة من العلامات الإعلامية."
+        "explanation": "ما لم تسمح علامة أو خط أرضي بذلك، يجب على السائق تجنب المسار الخاص والبقاء على المسار العادي."
       }
     }
   },
@@ -118,307 +169,303 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Welk gevaar brengt het negeren van bord F18 met zich mee?",
+        "question": "Wat is het gevaar als u zonder toestemming op de bedding rijdt die door dit bord wordt aangeduid?",
         "choices": [
           {
-            "text": "Botsing met een tram die u niet kunt ontwijken omdat trams niet kunnen uitwijken",
+            "text": "U kunt in botsing komen met toegelaten openbaar vervoer op de bedding",
             "is_correct": true
           },
           {
-            "text": "De motor van uw auto valt stil op de tramsporen",
+            "text": "U rijdt automatisch trager dan op de gewone rijbaan",
             "is_correct": false
           },
           {
-            "text": "U krijgt een voertuigkeuring opgelegd",
+            "text": "Het wegdek van de bedding is altijd gladder dan de rest van de weg",
             "is_correct": false
           }
         ],
-        "explanation": "Trams rijden op vaste sporen en kunnen niet uitwijken. Op de tram- en busbaan rijden kan fatale botsingen veroorzaken."
+        "explanation": "Op de bedding kan toegelaten openbaar vervoer rijden. Onbevoegd gebruik brengt u onverwacht in zijn traject en verhoogt het risico op een ernstige botsing."
       },
       "EN": {
-        "question": "What hazard does ignoring sign F18 bring?",
+        "question": "What is the danger if you drive on the track marked by this sign without authorisation?",
         "choices": [
           {
-            "text": "Collision with a tram that you cannot avoid because trams cannot swerve",
+            "text": "You may collide with authorised public transport using the track",
             "is_correct": true
           },
           {
-            "text": "Your car engine stalls on the tram tracks",
+            "text": "You automatically drive slower than on the regular lane",
             "is_correct": false
           },
           {
-            "text": "You must undergo a vehicle inspection",
+            "text": "The road surface of the track is always slipperier than the rest of the road",
             "is_correct": false
           }
         ],
-        "explanation": "Trams run on fixed tracks and cannot swerve. Using the tram and bus lane can cause fatal collisions."
+        "explanation": "Authorised public transport may be using the track. Unauthorised use places you unexpectedly in its path and greatly increases the risk of a serious collision."
       },
       "FR": {
-        "question": "Quel danger comporte l ignorance du panneau F18 ?",
+        "question": "Quel est le danger si vous roulez sans autorisation sur le site propre indiqué par ce panneau ?",
         "choices": [
           {
-            "text": "Collision avec un tram que vous ne pouvez pas eviter car les trams ne peuvent pas devier",
+            "text": "Vous risquez d'entrer en collision avec un transport en commun autorisé sur le site",
             "is_correct": true
           },
           {
-            "text": "Le moteur de votre voiture cale sur les rails du tram",
+            "text": "Vous roulez automatiquement plus lentement que sur la voie normale",
             "is_correct": false
           },
           {
-            "text": "Vous devez subir un controle technique du vehicule",
+            "text": "La chaussée du site propre est toujours plus glissante que le reste de la route",
             "is_correct": false
           }
         ],
-        "explanation": "Les trams circulent sur des rails fixes et ne peuvent pas devier. L utilisation de la voie de tram et de bus peut provoquer des collisions fatales."
+        "explanation": "Un transport en commun autorisé peut circuler sur le site. Une utilisation non autorisée vous place de manière inattendue sur sa trajectoire et augmente fortement le risque de collision grave."
       },
       "AR": {
-        "question": "ما هو الخطر الذي تشير إليه هذه العلامة المرورية؟",
+        "question": "ما الخطر إذا سرت دون تصريح في المسار الذي تشير إليه هذه العلامة؟",
         "choices": [
           {
-            "text": "تصادم مع ترام لا يمكنك تجنبه لأن الترام لا يستطيع الانحراف",
+            "text": "قد تصطدم بمركبة نقل عام مسموح لها باستخدام المسار",
             "is_correct": true
           },
-          { "text": "يتوقف محرك سيارتك على قضبان الترام", "is_correct": false },
-          { "text": "يجب عليك الخضوع لفحص المركبة", "is_correct": false }
+          {
+            "text": "تقود تلقائيًا بسرعة أبطأ من المسار العادي",
+            "is_correct": false
+          },
+          {
+            "text": "سطح المسار الخاص أكثر انزلاقًا دائمًا من بقية الطريق",
+            "is_correct": false
+          }
         ],
-        "explanation": "يسير الترام على قضبان ثابتة ولا يستطيع الانحراف. قد يؤدي استخدام حارة الترام والحافلات إلى تصادمات مميتة."
+        "explanation": "قد تسير على المسار مركبات نقل عام مسموح لها بذلك. استخدامه دون تصريح يضعك بصورة غير متوقعة في طريقها ويزيد بشدة من خطر الاصطدام."
       }
     }
   },
   {
     "question_id": "F18_Q04",
-    "type": "WHAT_MUST_YOU_DO",
+    "type": "IS_IT_ALLOWED",
     "difficulty": "MEDIUM",
     "is_critical": false,
-    "show_sign": true,
+    "show_sign": false,
     "i18n": {
       "NL": {
-        "question": "U rijdt een personenwagen en ziet bord F18. Wat doet u?",
+        "question": "Mag u de bedding gebruiken als er een tijdelijke hindernis op de gewone rijbaan staat, zoals een lossende vrachtwagen?",
         "choices": [
           {
-            "text": "De tram- en busbaan volledig vermijden en een andere rijstrook kiezen",
+            "text": "Ja, in dat geval mag u de bedding uitzonderlijk oversteken of gebruiken om de hindernis veilig voorbij te rijden",
             "is_correct": true
           },
           {
-            "text": "Op de tram- en busbaan rijden als er geen tram of bus zichtbaar is",
-            "is_correct": false
-          },
-          {
-            "text": "Op de tramsporen rijden omdat die apart van de baan liggen",
+            "text": "Nee, u moet altijd wachten tot de hindernis weg is, ongeacht de omstandigheden",
             "is_correct": false
           }
         ],
-        "explanation": "Personenwagens zijn verboden op de tram- en busbaan. U rijdt uitsluitend op de voor uw voertuig bestemde rijstroken."
+        "explanation": "Een tijdelijke hindernis op de gewone rijbaan is een van de gevallen waarin het uitzonderlijk toegelaten is de bedding te gebruiken."
       },
       "EN": {
-        "question": "You are driving a car and see sign F18. What do you do?",
+        "question": "May you use the track if there is a temporary obstruction on the regular lane, such as an unloading truck?",
         "choices": [
           {
-            "text": "Completely avoid the tram and bus lane and choose another lane",
+            "text": "Yes, in that case you may exceptionally cross or use the track to safely pass the obstruction",
             "is_correct": true
           },
           {
-            "text": "Drive on the tram and bus lane if no tram or bus is visible",
-            "is_correct": false
-          },
-          {
-            "text": "Drive on the tram tracks because they are separate from the lane",
+            "text": "No, you must always wait until the obstruction is gone, regardless of the circumstances",
             "is_correct": false
           }
         ],
-        "explanation": "Cars are forbidden on the tram and bus lane. You drive exclusively on the lanes intended for your vehicle."
+        "explanation": "A temporary obstruction on the regular lane is one of the cases where using the track is exceptionally permitted."
       },
       "FR": {
-        "question": "Vous conduisez une voiture et voyez le panneau F18. Que faites-vous ?",
+        "question": "Pouvez-vous utiliser le site propre s'il y a un obstacle temporaire sur la voie normale, comme un camion en déchargement ?",
         "choices": [
           {
-            "text": "Eviter completement la voie de tram et de bus et choisir une autre voie",
+            "text": "Oui, dans ce cas vous pouvez exceptionnellement traverser ou utiliser le site propre pour dépasser l'obstacle en sécurité",
             "is_correct": true
           },
           {
-            "text": "Rouler sur la voie de tram et de bus si aucun tram ou bus n est visible",
-            "is_correct": false
-          },
-          {
-            "text": "Rouler sur les rails du tram car ils sont separes de la voie",
+            "text": "Non, vous devez toujours attendre que l'obstacle disparaisse, quelles que soient les circonstances",
             "is_correct": false
           }
         ],
-        "explanation": "Les voitures sont interdites sur la voie de tram et de bus. Vous roulez exclusivement sur les voies destinees a votre vehicule."
+        "explanation": "Un obstacle temporaire sur la voie normale est l'un des cas où l'utilisation du site propre est exceptionnellement autorisée."
       },
       "AR": {
-        "question": "تقود سيارة وترى علامة مرورية F18. ماذا تفعل؟",
+        "question": "هل يمكنك استخدام المسار الخاص إذا وُجد عائق مؤقت على المسار العادي، مثل شاحنة تفرّغ حمولتها؟",
         "choices": [
           {
-            "text": "تجنب حارة الترام والحافلات تماماً واختر حارة أخرى",
+            "text": "نعم، في هذه الحالة يمكنك عبور أو استخدام المسار الخاص استثنائيًا لتجاوز العائق بأمان",
             "is_correct": true
           },
           {
-            "text": "سر في حارة الترام والحافلات إذا لم يكن هناك ترام أو حافلة مرئية",
-            "is_correct": false
-          },
-          {
-            "text": "سر على قضبان الترام لأنها منفصلة عن الحارة",
+            "text": "لا، يجب عليك الانتظار دائمًا حتى يزول العائق بغض النظر عن الظروف",
             "is_correct": false
           }
         ],
-        "explanation": "السيارات محظورة في حارة الترام والحافلات. تسير حصرياً في الحارات المخصصة لمركبتك."
+        "explanation": "وجود عائق مؤقت على المسار العادي يُعد أحد الحالات التي يُسمح فيها استثنائيًا باستخدام المسار الخاص."
       }
     }
   },
   {
     "question_id": "F18_Q05",
-    "type": "WHAT_MUST_YOU_DO",
+    "type": "DRIVER_ACTION",
     "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Een tram nadert langs de F18-baan. U rijdt er onbedoeld in. Wat is de juiste actie?",
+        "question": "Welke voertuigen mogen normaal op de bedding rijden zonder dat een extra symbool of onderbord nodig is?",
         "choices": [
           {
-            "text": "Zo snel mogelijk de baan verlaten via de veiligste uitweg zonder de tram te hinderen",
+            "text": "Voertuigen van geregelde diensten voor gemeenschappelijk vervoer",
             "is_correct": true
           },
           {
-            "text": "Op de baan blijven en de tram laten stoppen",
+            "text": "Elk motorvoertuig dat de gewone rijbaan wil vermijden",
             "is_correct": false
           },
           {
-            "text": "Stoppen op de baan en uw rijstrook blokkeren",
+            "text": "Alle fietsers, ook wanneer geen fietssymbool is aangebracht",
             "is_correct": false
           }
         ],
-        "explanation": "Verlaat de tram- en busbaan zo snel mogelijk veilig. Trams kunnen niet remmen zoals auto's; blijven staan is levensgevaarlijk."
+        "explanation": "Zonder bijkomende aanduiding is de bedding voorbehouden aan voertuigen van geregelde diensten voor gemeenschappelijk vervoer. Andere categorieën zijn alleen toegelaten wanneer ze worden aangeduid of in de uitdrukkelijk bepaalde uitzonderingen."
       },
       "EN": {
-        "question": "A tram is approaching on the F18 lane. You are unintentionally on it. What is the correct action?",
+        "question": "Which vehicles may normally drive on this track without an additional symbol or supplementary sign?",
         "choices": [
           {
-            "text": "Leave the lane as quickly as possible via the safest exit without obstructing the tram",
+            "text": "Vehicles operating regular public transport services",
             "is_correct": true
           },
           {
-            "text": "Stay on the lane and let the tram stop",
+            "text": "Any motor vehicle wishing to avoid the regular carriageway",
             "is_correct": false
           },
           {
-            "text": "Stop on the lane and block your lane",
+            "text": "All cyclists, even when no bicycle symbol is displayed",
             "is_correct": false
           }
         ],
-        "explanation": "Leave the tram and bus lane as quickly and safely as possible. Trams cannot brake like cars; staying put is life-threatening."
+        "explanation": "Without an additional indication, the track is reserved for vehicles operating regular public transport services. Other categories are permitted only when indicated or in the expressly defined exceptions."
       },
       "FR": {
-        "question": "Un tram approche sur la voie F18. Vous y roulez par inadvertance. Quelle est la bonne action ?",
+        "question": "Quels véhicules peuvent normalement circuler sur ce site sans symbole ni panneau additionnel ?",
         "choices": [
           {
-            "text": "Quitter la voie le plus rapidement possible par la sortie la plus sure sans gener le tram",
+            "text": "Les véhicules des services réguliers de transport en commun",
             "is_correct": true
           },
           {
-            "text": "Rester sur la voie et laisser le tram s arreter",
+            "text": "Tout véhicule à moteur qui souhaite éviter la chaussée ordinaire",
             "is_correct": false
           },
           {
-            "text": "S arreter sur la voie et bloquer votre voie",
+            "text": "Tous les cyclistes, même sans symbole de vélo",
             "is_correct": false
           }
         ],
-        "explanation": "Quittez la voie de tram et de bus le plus vite et le plus surement possible. Les trams ne freinent pas comme les voitures; rester immobile est extremement dangereux."
+        "explanation": "Sans indication supplémentaire, le site est réservé aux véhicules des services réguliers de transport en commun. Les autres catégories ne sont admises que lorsqu'elles sont indiquées ou dans les exceptions expressément prévues."
       },
       "AR": {
-        "question": "ترام يقترب على حارة F18. أنت فيها بشكل غير مقصود. ما الإجراء الصحيح؟",
+        "question": "ما المركبات التي يجوز لها عادةً السير على هذا المسار دون رمز أو لوحة إضافية؟",
         "choices": [
           {
-            "text": "غادر الحارة في أقرب وقت ممكن عبر أقرب مخرج آمن دون إعاقة الترام",
+            "text": "مركبات خدمات النقل العام المنتظمة",
             "is_correct": true
           },
-          { "text": "ابق في الحارة واجعل الترام يتوقف", "is_correct": false },
-          { "text": "توقف في الحارة وأعق حارتك", "is_correct": false }
+          {
+            "text": "أي مركبة آلية تريد تجنب طريق السير العادي",
+            "is_correct": false
+          },
+          {
+            "text": "جميع راكبي الدراجات حتى عند عدم وجود رمز للدراجات",
+            "is_correct": false
+          }
         ],
-        "explanation": "غادر حارة الترام والحافلات في أقرب وقت ممكن وبأمان. لا يستطيع الترام الكبح مثل السيارات؛ البقاء على الحارة بالغ الخطورة."
+        "explanation": "من دون إشارة إضافية يُخصص المسار لمركبات خدمات النقل العام المنتظمة. ولا تُسمح الفئات الأخرى إلا عند الإشارة إليها أو ضمن الاستثناءات المحددة صراحةً."
       }
     }
   },
   {
     "question_id": "F18_Q06",
-    "type": "WHAT_MUST_YOU_DO",
+    "type": "WHAT_HAPPENS_IF",
     "difficulty": "MEDIUM",
     "is_critical": false,
-    "show_sign": true,
+    "show_sign": false,
     "i18n": {
       "NL": {
-        "question": "Verschilt F18 (tram + bus) van F17 (alleen bus) in gebruik?",
+        "question": "Wat kan er gebeuren als u de bedding onnodig gebruikt terwijl er geen hindernis of toestemming is?",
         "choices": [
           {
-            "text": "Ja F18 is stricter omdat ook trams, die vaste sporen hebben en niet kunnen uitwijken, de baan delen",
+            "text": "U riskeert een overtreding en verstoort mogelijk de doorstroming van tram of bus",
             "is_correct": true
           },
           {
-            "text": "Nee beide borden hebben exact hetzelfde gebruik voor alle voertuigen",
+            "text": "Er verandert niets aan uw rechten of plichten als bestuurder",
             "is_correct": false
           },
           {
-            "text": "Nee F18 is soepeler dan F17 omdat meer voertuigen erdoor mogen",
+            "text": "U krijgt automatisch voorrang op tram en bus zolang u er rijdt",
             "is_correct": false
           }
         ],
-        "explanation": "F18 combineert trams en bussen. Trams zijn gevaarlijker om te negeren omdat zij niet kunnen uitwijken. Beide borden verbieden gewoon verkeer maar F18 kent extra risico door tramverkeer."
+        "explanation": "Onbevoegd gebruik van de bedding zonder geldige reden is een overtreding en kan de normale doorstroming van het openbaar vervoer hinderen."
       },
       "EN": {
-        "question": "Does F18 (tram and bus) differ from F17 (bus only) in use?",
+        "question": "What can happen if you unnecessarily use the track when there is no obstruction or permission?",
         "choices": [
           {
-            "text": "Yes F18 is stricter because trams which have fixed tracks and cannot swerve also share the lane",
+            "text": "You risk committing a violation and may disrupt the flow of the tram or bus",
             "is_correct": true
           },
           {
-            "text": "No both signs have exactly the same rules for all vehicles",
+            "text": "Nothing changes regarding your rights or duties as a driver",
             "is_correct": false
           },
           {
-            "text": "No F18 is more lenient than F17 because more vehicles may use it",
+            "text": "You automatically gain priority over the tram or bus while driving there",
             "is_correct": false
           }
         ],
-        "explanation": "F18 combines trams and buses. Trams are more dangerous to ignore because they cannot swerve. Both signs prohibit regular traffic but F18 carries extra risk due to tram traffic."
+        "explanation": "Unauthorised use of the track without valid reason is a violation and can disrupt the normal flow of public transport."
       },
       "FR": {
-        "question": "F18 (tram + bus) differe-t-il de F17 (bus uniquement) dans son utilisation ?",
+        "question": "Que risque-t-il de se passer si vous utilisez inutilement le site propre alors qu'il n'y a ni obstacle ni autorisation ?",
         "choices": [
           {
-            "text": "Oui F18 est plus strict car les trams qui ont des rails fixes et ne peuvent pas devier partagent aussi la voie",
+            "text": "Vous risquez une infraction et pouvez perturber la circulation du tram ou de l'autobus",
             "is_correct": true
           },
           {
-            "text": "Non les deux panneaux ont exactement les memes regles pour tous les vehicules",
+            "text": "Rien ne change concernant vos droits ou obligations en tant que conducteur",
             "is_correct": false
           },
           {
-            "text": "Non F18 est plus souple que F17 car plus de vehicules peuvent l emprunter",
+            "text": "Vous obtenez automatiquement la priorité sur le tram ou l'autobus tant que vous y roulez",
             "is_correct": false
           }
         ],
-        "explanation": "F18 combine trams et bus. Les trams sont plus dangereux a ignorer car ils ne peuvent pas devier. Les deux panneaux interdisent la circulation normale mais F18 comporte un risque supplementaire du au trafic de trams."
+        "explanation": "L'utilisation non autorisée du site propre sans raison valable constitue une infraction et peut perturber la circulation normale des transports en commun."
       },
       "AR": {
-        "question": "هل تختلف F18 (ترام + حافلات) عن F17 (حافلات فقط) في الاستخدام؟",
+        "question": "ماذا يمكن أن يحدث إذا استخدمت المسار الخاص دون سبب حقيقي ودون وجود عائق أو تصريح؟",
         "choices": [
           {
-            "text": "نعم F18 أكثر صرامة لأن الترام الذي له قضبان ثابتة ولا يستطيع الانحراف يتشارك الحارة أيضاً",
+            "text": "تُعرّض نفسك لمخالفة وقد تُعطّل سير الترام أو الحافلة",
             "is_correct": true
           },
           {
-            "text": "لا كلا اللافتتان لهما نفس القواعد الدقيقة لجميع المركبات",
+            "text": "لا يتغير شيء بشأن حقوقك أو واجباتك كسائق",
             "is_correct": false
           },
           {
-            "text": "لا F18 أكثر مرونة من F17 لأن المزيد من المركبات يمكنها استخدامها",
+            "text": "تحصل تلقائيًا على الأولوية على الترام أو الحافلة طالما أنت تسير فيه",
             "is_correct": false
           }
         ],
-        "explanation": "تجمع F18 بين الترام والحافلات. الترام أكثر خطورة عند تجاهله لأنه لا يستطيع الانحراف. كلتا العلامتين المروريتين تحظران المرور العادي لكن F18 تحمل خطراً إضافياً بسبب حركة الترام."
+        "explanation": "استخدام المسار الخاص دون تصريح ودون سبب مشروع يُعد مخالفة وقد يعطّل السير الطبيعي لوسائل النقل العام."
       }
     }
   },
@@ -427,63 +474,63 @@
     "type": "IS_IT_ALLOWED",
     "difficulty": "HARD",
     "is_critical": true,
-    "show_sign": true,
+    "show_sign": false,
     "i18n": {
       "NL": {
-        "question": "Is het toegestaan om over de tramsporen van een F18-baan te rijden om een gebouw aan de rechterzijde te bereiken?",
+        "question": "Mag u de bedding gebruiken enkel omdat het op dat moment rustig is en er geen tram of bus zichtbaar is?",
         "choices": [
           {
-            "text": "Nee het is verboden tenzij er geen andere weg is; zelfs dan moet u verzekerd zijn dat u geen tram hindert",
+            "text": "Nee, afwezigheid van tram of bus op dat moment geeft geen recht om de bedding te gebruiken",
             "is_correct": true
           },
           {
-            "text": "Ja het oversteken van tramsporen voor toegang tot een gebouw is altijd toegestaan",
+            "text": "Ja, als er niets zichtbaar is mag u de bedding vrij gebruiken",
             "is_correct": false
           }
         ],
-        "explanation": "De tram- en busbaan berijden is verboden. Alleen wanneer absoluut noodzakelijk (bv. toegang tot eigendom) en zonder tram te hinderen, is een snelle oversteek mogelijk."
+        "explanation": "Dat er geen tram of bus zichtbaar is, verandert de regels niet. Andere voertuigen mogen de bedding alleen gebruiken in de wettelijk bepaalde gevallen: een toegelaten categorie, een hindernis omzeilen of de bedding dwarsen bij een kruispunt, eigendom of parkeerplaats."
       },
       "EN": {
-        "question": "Is it allowed to drive over the tram tracks of an F18 lane to reach a building on the right?",
+        "question": "May you use the track simply because it looks quiet at that moment and no tram or bus is visible?",
         "choices": [
           {
-            "text": "No it is forbidden unless there is no other way; even then you must ensure you do not obstruct a tram",
+            "text": "No, the absence of a visible tram or bus at that moment does not give you the right to use the track",
             "is_correct": true
           },
           {
-            "text": "Yes crossing tram tracks to access a building is always allowed",
+            "text": "Yes, if nothing is visible you may freely use the track",
             "is_correct": false
           }
         ],
-        "explanation": "Using the tram and bus lane is forbidden. Only when absolutely necessary (e.g. access to property) and without obstructing a tram is a quick crossing possible."
+        "explanation": "The absence of a visible tram or bus does not change the rules. Other vehicles may use the track only in the defined cases: as an indicated permitted category, to pass an obstruction, or to cross at an intersection or for adjoining property or parking."
       },
       "FR": {
-        "question": "Est-il permis de traverser les rails du tram d une voie F18 pour acceder a un batiment a droite ?",
+        "question": "Pouvez-vous utiliser le site propre simplement parce qu'il semble calme à ce moment et qu'aucun tram ou autobus n'est visible ?",
         "choices": [
           {
-            "text": "Non c est interdit sauf s il n y a pas d autre chemin; meme alors vous devez vous assurer de ne pas gener un tram",
+            "text": "Non, l'absence visible d'un tram ou d'un autobus à ce moment ne vous donne pas le droit d'utiliser le site propre",
             "is_correct": true
           },
           {
-            "text": "Oui la traversee des rails de tram pour acceder a un batiment est toujours autorisee",
+            "text": "Oui, si rien n'est visible vous pouvez utiliser librement le site propre",
             "is_correct": false
           }
         ],
-        "explanation": "L utilisation de la voie de tram et de bus est interdite. Seulement quand c est absolument necessaire (p. ex. acces a une propriete) et sans gener un tram un croisement rapide est possible."
+        "explanation": "L'absence visible d'un tram ou d'un autobus ne change pas les règles. Les autres véhicules ne peuvent utiliser le site que dans les cas prévus: catégorie indiquée, contournement d'un obstacle ou traversée à un carrefour, vers une propriété ou un stationnement riverain."
       },
       "AR": {
-        "question": "هل يُسمح بالسير فوق قضبان ترام حارة F18 للوصول إلى مبنى على اليمين؟",
+        "question": "هل يمكنك استخدام المسار الخاص فقط لأنه يبدو هادئًا في تلك اللحظة ولا يوجد ترام أو حافلة ظاهرة؟",
         "choices": [
           {
-            "text": "لا يُحظر ذلك إلا إذا لم يكن هناك طريق آخر؛ حتى في هذه الحالة يجب التأكد من عدم إعاقة الترام",
+            "text": "لا، غياب ترام أو حافلة ظاهرة في تلك اللحظة لا يعطيك الحق في استخدام المسار الخاص",
             "is_correct": true
           },
           {
-            "text": "نعم عبور قضبان الترام للوصول إلى مبنى مسموح به دائماً",
+            "text": "نعم، إذا لم يظهر شيء يمكنك استخدام المسار الخاص بحرية",
             "is_correct": false
           }
         ],
-        "explanation": "استخدام حارة الترام والحافلات محظور. فقط عند الضرورة القصوى (مثل الوصول إلى ملكية) ودون إعاقة الترام يمكن العبور السريع."
+        "explanation": "غياب ترام أو حافلة ظاهرة لا يغيّر القواعد. لا يجوز للمركبات الأخرى استخدام المسار إلا في الحالات المحددة: فئة مسموح بها ومبيّنة، أو تجاوز عائق، أو عبوره عند تقاطع أو إلى ملكية أو موقف محاذٍ."
       }
     }
   },
@@ -495,60 +542,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Is het een fietser verboden om op de F18-baan te fietsen als er geen apart fietspad is?",
+        "question": "Mag u op de bedding stoppen om kort te wachten op een passagier, zolang u de doorgang niet volledig blokkeert?",
         "choices": [
           {
-            "text": "Nee fietsers zijn ook op F18-banen in principe toegelaten als er geen apart fietspad is maar zij moeten trams en bussen voorrang verlenen",
+            "text": "Nee, stoppen op de bedding is niet toegelaten, ook niet kort, omdat dit tram of bus kan hinderen",
             "is_correct": true
           },
           {
-            "text": "Ja fietsers zijn altijd verboden op een F18-baan",
+            "text": "Ja, kort stoppen is toegelaten zolang er voldoende ruimte overblijft",
             "is_correct": false
           }
         ],
-        "explanation": "Fietsers mogen in principe op tram- en busbanen rijden wanneer er geen apart fietspad is. Zij moeten wel trams en bussen voorrang verlenen en extra voorzichtig zijn bij tramsporen."
+        "explanation": "De bedding moet vrij blijven voor tram of bus; zelfs kort stoppen kan hun doorgang hinderen en is daarom niet toegelaten."
       },
       "EN": {
-        "question": "Are cyclists forbidden from cycling on the F18 lane if there is no separate cycle path?",
+        "question": "May you stop on the track to briefly wait for a passenger, as long as you do not fully block it?",
         "choices": [
           {
-            "text": "No cyclists are in principle also permitted on F18 lanes if there is no separate cycle path but they must give way to trams and buses",
+            "text": "No, stopping on the track is not allowed, not even briefly, since it can hinder a tram or bus",
             "is_correct": true
           },
           {
-            "text": "Yes cyclists are always forbidden on an F18 lane",
+            "text": "Yes, briefly stopping is allowed as long as enough space remains",
             "is_correct": false
           }
         ],
-        "explanation": "Cyclists may in principle use tram and bus lanes when there is no separate cycle path. They must give way to trams and buses and be extra careful at tram tracks."
+        "explanation": "The track must remain clear for trams and buses; even a brief stop can hinder their passage and is therefore not permitted."
       },
       "FR": {
-        "question": "Est-il interdit aux cyclistes de circuler sur la voie F18 s il n y a pas de piste cyclable separee ?",
+        "question": "Pouvez-vous vous arrêter sur le site propre pour attendre brièvement un passager, tant que vous ne le bloquez pas complètement ?",
         "choices": [
           {
-            "text": "Non les cyclistes sont en principe aussi autorises sur les voies F18 s il n y a pas de piste cyclable separee mais ils doivent laisser la priorite aux trams et aux bus",
+            "text": "Non, s'arrêter sur le site propre n'est pas autorisé, même brièvement, car cela peut gêner un tram ou un autobus",
             "is_correct": true
           },
           {
-            "text": "Oui les cyclistes sont toujours interdits sur une voie F18",
+            "text": "Oui, un arrêt bref est autorisé tant qu'il reste suffisamment d'espace",
             "is_correct": false
           }
         ],
-        "explanation": "Les cyclistes peuvent en principe utiliser les voies de tram et de bus lorsqu il n y a pas de piste cyclable separee. Ils doivent laisser la priorite aux trams et aux bus et etre particulierement prudents aux rails de tram."
+        "explanation": "Le site propre doit rester libre pour les trams et autobus; même un arrêt bref peut gêner leur passage et n'est donc pas autorisé."
       },
       "AR": {
-        "question": "هل يُحظر على الدراجين السير في حارة F18 إذا لم يكن هناك مسار دراجات منفصل؟",
+        "question": "هل يمكنك التوقف في المسار الخاص لانتظار راكب لفترة قصيرة، طالما أنك لا تسده بالكامل؟",
         "choices": [
           {
-            "text": "لا يُسمح للدراجين مبدئياً في حارات F18 إذا لم يكن هناك مسار دراجات منفصل لكن يجب إعطاء الأولوية للترام والحافلات",
+            "text": "لا، التوقف في المسار الخاص غير مسموح حتى لفترة قصيرة، لأنه قد يعيق الترام أو الحافلة",
             "is_correct": true
           },
           {
-            "text": "نعم يُحظر على الدراجين دائماً في حارة F18",
+            "text": "نعم، التوقف القصير مسموح طالما تبقى مساحة كافية",
             "is_correct": false
           }
         ],
-        "explanation": "يمكن للدراجين مبدئياً استخدام حارات الترام والحافلات عند غياب مسار دراجات منفصل. يجب إعطاء الأولوية للترام والحافلات والحرص الإضافي عند قضبان الترام."
+        "explanation": "يجب أن يبقى المسار الخاص خاليًا للترام والحافلات؛ حتى التوقف القصير قد يعيق مرورها ولذلك غير مسموح به."
       }
     }
   }

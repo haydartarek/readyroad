@@ -213,7 +213,7 @@ public interface QuizQuestionRepository extends JpaRepository<QuizQuestion, Long
 
         /**
          * Admin paginated search with optional filters.
-         * Mirrors TrafficSignRepository.findAdminSigns pattern.
+         * Mirrors the admin sign pagination pattern.
          */
         @EntityGraph(attributePaths = { "options", "category" })
         @Query("SELECT qq FROM QuizQuestion qq JOIN qq.category c WHERE " +
@@ -325,13 +325,13 @@ public interface QuizQuestionRepository extends JpaRepository<QuizQuestion, Long
          * Batch compliant counts per category — replaces N+1 per-category calls in getCategoryProgress().
          * Returns [category_id, count] rows for all categories that have at least one compliant question.
          */
-        @Query(value = "SELECT q.category_id, COUNT(*) AS cnt FROM (" +
+        @Query(value = "SELECT compliant.category_id, COUNT(*) AS cnt FROM (" +
                         "  SELECT q.id, q.category_id FROM quiz_questions q" +
                         "  JOIN quiz_answer_options o ON o.question_id = q.id" +
                         "  WHERE q.is_active = true AND q.status = 'PUBLISHED'" +
                         "  GROUP BY q.id, q.category_id" +
                         "  HAVING COUNT(o.id) BETWEEN 2 AND 3" +
                         "  AND SUM(CASE WHEN o.is_correct = true THEN 1 ELSE 0 END) = 1" +
-                        ") compliant GROUP BY category_id", nativeQuery = true)
+                        ") compliant GROUP BY compliant.category_id", nativeQuery = true)
         List<Object[]> countCompliantQuestionsByCategoryIds();
 }

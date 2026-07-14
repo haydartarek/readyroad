@@ -14,7 +14,7 @@
             "is_correct": true
           },
           {
-            "text": "U mag nu terug fietsen en voetgangers gebruiken de weg",
+            "text": "De weg wordt automatisch een zone die uitsluitend voor voetgangers en fietsers bestemd is",
             "is_correct": false
           },
           {
@@ -32,7 +32,7 @@
             "is_correct": true
           },
           {
-            "text": "You may now cycle and pedestrians may use the road",
+            "text": "The road automatically becomes an area reserved only for pedestrians and cyclists",
             "is_correct": false
           },
           {
@@ -43,22 +43,22 @@
         "explanation": "F7 marks the end of a motorway. Beyond this sign motorway rules no longer apply and you are on an ordinary road with different limits."
       },
       "FR": {
-        "question": "Que signifie le panneau F7 'Fin autoroute' ?",
+        "question": "Que signifie le panneau F7 « Fin d'autoroute » ?",
         "choices": [
           {
-            "text": "L autoroute est terminee; les regles d autoroute ne s appliquent plus et vous etes sur une route ordinaire",
+            "text": "L'autoroute est terminée; ses règles ne s'appliquent plus et vous êtes sur une route ordinaire",
             "is_correct": true
           },
           {
-            "text": "Vous pouvez maintenant faire du velo et les pietons peuvent utiliser la route",
+            "text": "La route devient automatiquement une zone réservée aux piétons et aux cyclistes",
             "is_correct": false
           },
           {
-            "text": "La limite de vitesse descend immediatement a 50 km/h",
+            "text": "La limite de vitesse descend immédiatement à 50 km/h",
             "is_correct": false
           }
         ],
-        "explanation": "F7 marque la fin de l autoroute. Au-dela de ce panneau les regles d autoroute ne s appliquent plus et vous etes sur une route ordinaire."
+        "explanation": "F7 marque la fin de l'autoroute. Au-delà de ce panneau, les règles autoroutières cessent de s'appliquer et vous circulez sur une route ordinaire."
       },
       "AR": {
         "question": "ما معنى هذه العلامة المرورية؟",
@@ -68,7 +68,7 @@
             "is_correct": true
           },
           {
-            "text": "يمكنك الآن ركوب الدراجة والمشاة يمكنهم استخدام الطريق",
+            "text": "يتحول الطريق تلقائيًا إلى منطقة مخصصة حصريًا للمشاة والدراجين",
             "is_correct": false
           },
           { "text": "ينخفض حد السرعة فوراً إلى 50 كم/س", "is_correct": false }
@@ -103,13 +103,13 @@
         "explanation": "F5 and F7 form a pair: F5 marks the start and F7 the end of the motorway."
       },
       "FR": {
-        "question": "Quel panneau marque le debut de l autoroute qui se termine avec le panneau F7 ?",
+        "question": "Quel panneau marque le début de l'autoroute qui se termine avec le panneau F7 ?",
         "choices": [
-          { "text": "Panneau F5 'Autoroute debut'", "is_correct": true },
-          { "text": "Panneau F9 'Debut route express'", "is_correct": false },
-          { "text": "Panneau F13 'Choix de voie'", "is_correct": false }
+          { "text": "Panneau F5 « Début d'autoroute »", "is_correct": true },
+          { "text": "Panneau F9 « Début de route pour automobiles »", "is_correct": false },
+          { "text": "Panneau F13 « Choix de voie »", "is_correct": false }
         ],
-        "explanation": "F5 et F7 forment une paire: F5 marque le debut et F7 la fin de l autoroute."
+        "explanation": "F5 et F7 forment une paire: F5 marque le début et F7 la fin de l'autoroute."
       },
       "AR": {
         "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
@@ -175,22 +175,22 @@
         "explanation": "After the motorway the road may suddenly become narrower and the speed limit lower. Adjust your driving and speed immediately."
       },
       "FR": {
-        "question": "Que devez-vous prendre en compte juste apres le panneau F7 (fin autoroute) ?",
+        "question": "Que devez-vous prendre en compte juste après le panneau F7 (fin d'autoroute) ?",
         "choices": [
           {
-            "text": "Verifier si vous arrivez sur une route avec une limite de vitesse plus basse et adapter votre vitesse en consequence",
+            "text": "Vérifier si la route suivante impose une limite plus basse et adapter sa vitesse en conséquence",
             "is_correct": true
           },
           {
-            "text": "Il n y a pas de dangers apres l autoroute car tous les conducteurs connaissent les regles",
+            "text": "Il n'y a aucun danger après l'autoroute car tous les conducteurs connaissent les règles",
             "is_correct": false
           },
           {
-            "text": "Vous devez vous arreter immediatement pour inspecter votre vehicule apres avoir roule sur l autoroute",
+            "text": "Vous devez vous arrêter immédiatement pour inspecter votre véhicule après avoir roulé sur l'autoroute",
             "is_correct": false
           }
         ],
-        "explanation": "Apres l autoroute la route peut devenir soudainement plus etroite et la limite de vitesse plus basse. Adaptez immediatement votre conduite et votre vitesse."
+        "explanation": "Après l'autoroute, la route peut devenir plus étroite et la limite plus basse. Adaptez votre conduite et votre vitesse avant d'entrer sur cette route."
       },
       "AR": {
         "question": "ما الذي يجب مراعاته مباشرة بعد علامة مرورية F7 (نهاية الطريق السريع)؟",
@@ -220,10 +220,10 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Na bord F7 staat meteen een bord dat de bebouwde kom aangeeft. Welke snelheid geldt?",
+        "question": "Na F7 staat meteen F1b voor het begin van een bebouwde kom. Hoe bepaalt u de geldende snelheid?",
         "choices": [
           {
-            "text": "50 km/u, de standaard maximumsnelheid binnen de bebouwde kom in Belgie",
+            "text": "De regionale limiet voor de bebouwde kom en elk aangeduid snelheidsbord volgen",
             "is_correct": true
           },
           {
@@ -235,13 +235,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "Zodra u een bebouwde kom inrijdt geldt de standaard maximumsnelheid van 50 km/u tenzij een bord een andere limiet aangeeft."
+        "explanation": "F1b activeert de regels voor de bebouwde kom. De concrete limiet is regionaal bepaald en kan door een snelheidsbord worden gewijzigd; de autosnelwegsnelheid eindigt bij F7."
       },
       "EN": {
-        "question": "After sign F7 there is immediately a built-up area sign. What speed applies?",
+        "question": "Immediately after F7 there is an F1b built-up-area sign. How do you determine the applicable speed?",
         "choices": [
           {
-            "text": "50 km/h, the standard maximum speed within a built-up area in Belgium",
+            "text": "Follow the regional built-up-area limit and every posted speed sign",
             "is_correct": true
           },
           {
@@ -253,31 +253,31 @@
             "is_correct": false
           }
         ],
-        "explanation": "As soon as you enter a built-up area the standard maximum speed of 50 km/h applies unless a sign indicates a different limit."
+        "explanation": "F1b activates the built-up-area rules. The exact limit is set regionally and may be changed by a speed sign; motorway speed rules end at F7."
       },
       "FR": {
-        "question": "Apres le panneau F7 il y a immediatement un panneau d agglomeration. Quelle vitesse s applique ?",
+        "question": "Immédiatement après F7 se trouve un panneau F1b de début d'agglomération. Comment déterminer la vitesse applicable ?",
         "choices": [
           {
-            "text": "50 km/h la vitesse maximale standard en agglomeration en Belgique",
+            "text": "Respecter la limite régionale en agglomération et tout panneau de vitesse",
             "is_correct": true
           },
           {
-            "text": "120 km/h car vous quittez l autoroute et avez encore de la vitesse",
+            "text": "120 km/h car vous quittez l'autoroute et avez encore de la vitesse",
             "is_correct": false
           },
           {
-            "text": "90 km/h car vous etes maintenant sur une route provinciale",
+            "text": "90 km/h car vous êtes maintenant sur une route provinciale",
             "is_correct": false
           }
         ],
-        "explanation": "Des que vous entrez dans une agglomeration la vitesse maximale standard de 50 km/h s applique sauf si un panneau indique une limite differente."
+        "explanation": "F1b active les règles d'agglomération. La limite précise est fixée régionalement et peut être modifiée par un panneau; les règles de vitesse autoroutières prennent fin à F7."
       },
       "AR": {
         "question": "بعد علامة مرورية F7 توجد فوراً علامة مرورية منطقة مبنية. ما السرعة المطبقة؟",
         "choices": [
           {
-            "text": "50 كم/س الحد الأقصى القياسي داخل المنطقة المبنية في بلجيكا",
+            "text": "اتباع الحد الإقليمي للمنطقة المبنية وكل لوحة سرعة موجودة",
             "is_correct": true
           },
           {
@@ -286,7 +286,7 @@
           },
           { "text": "90 كم/س لأنك الآن على طريق محلي", "is_correct": false }
         ],
-        "explanation": "بمجرد دخولك منطقة مبنية يطبق حد السرعة القياسي في بلجيكا وهو 50 كم/س ما لم تُحدِّد علامة أخرى سرعة مختلفة."
+        "explanation": "تبدأ قواعد المنطقة المبنية عند F1b. ويُحدد الحد الدقيق إقليميًا وقد تعدله لوحة سرعة، بينما تنتهي قواعد سرعة الطريق السريع عند F7."
       }
     }
   },
@@ -334,22 +334,22 @@
         "explanation": "Start reducing your speed in time so that you safely join the connecting road and comply with the applicable speed limit."
       },
       "FR": {
-        "question": "Vous etes sur l autoroute et voyez le panneau F7 a 500 m. Comment preparez-vous la transition ?",
+        "question": "Vous êtes sur l'autoroute et voyez le panneau F7 à 500 m. Comment préparez-vous la transition ?",
         "choices": [
           {
-            "text": "Reduire progressivement la vitesse au niveau applicable sur la route de raccordement avant de depasser le panneau",
+            "text": "Réduire progressivement la vitesse au niveau applicable sur la route de raccordement avant de dépasser le panneau",
             "is_correct": true
           },
           {
-            "text": "Maintenir la vitesse jusqu exactement au panneau puis freiner brusquement",
+            "text": "Maintenir la vitesse jusqu'au panneau puis freiner brusquement",
             "is_correct": false
           },
           {
-            "text": "Rouler sur la bande d arret d urgence pour freiner calmement",
+            "text": "Rouler sur la bande d'arrêt d'urgence pour freiner calmement",
             "is_correct": false
           }
         ],
-        "explanation": "Commencez a reduire votre vitesse a temps pour rejoindre la route de raccordement en toute securite et respecter la limite de vitesse applicable."
+        "explanation": "Commencez à réduire votre vitesse à temps pour rejoindre la route de raccordement en toute sécurité et respecter la limite applicable."
       },
       "AR": {
         "question": "أنت على الطريق السريع وترى علامة مرورية F7 على بعد 500 متر. كيف تستعد للانتقال؟",
@@ -412,22 +412,22 @@
         "explanation": "After the motorway normal traffic rules apply. A give-way sign must be obeyed regardless of where you have come from."
       },
       "FR": {
-        "question": "Apres le panneau F7 il y a un panneau 'Ceder le passage'. Que faites-vous ?",
+        "question": "Après le panneau F7 se trouve un panneau « Cédez le passage ». Que faites-vous ?",
         "choices": [
           {
-            "text": "Reduire la vitesse et etre pret a s arreter pour le trafic croiseur qui a la priorite",
+            "text": "Réduire la vitesse et être prêt à s'arrêter pour céder le passage au trafic prioritaire",
             "is_correct": true
           },
           {
-            "text": "Continuer car vous venez de l autoroute et avez toujours la priorite",
+            "text": "Continuer car vous venez de l'autoroute et avez toujours la priorité",
             "is_correct": false
           },
           {
-            "text": "Mettre le clignotant gauche car vous etes sur le point de tourner",
+            "text": "Mettre le clignotant gauche car vous êtes sur le point de tourner",
             "is_correct": false
           }
         ],
-        "explanation": "Apres l autoroute les regles normales de circulation s appliquent. Un panneau de cession de priorite doit etre respecte quelle que soit votre provenance."
+        "explanation": "Après l'autoroute, les règles normales s'appliquent. Un panneau « Cédez le passage » doit être respecté quelle que soit votre provenance."
       },
       "AR": {
         "question": "بعد علامة مرورية F7 توجد علامة مرورية 'أعط الأولوية'. ماذا تفعل؟",
@@ -485,18 +485,18 @@
         "explanation": "On the motorway itself cyclists are forbidden. Once F7 closes the motorway cyclists may use the road unless a specific prohibition sign forbids it."
       },
       "FR": {
-        "question": "Apres le panneau F7 (fin autoroute) : les cyclistes peuvent-ils utiliser la route en l absence de panneau d interdiction ?",
+        "question": "Après le panneau F7 (fin d'autoroute), les cyclistes peuvent-ils utiliser la route en l'absence de panneau d'interdiction ?",
         "choices": [
           {
-            "text": "Oui des que l autoroute se termine les regles normales s appliquent et les cyclistes sont de nouveau autorises sur les routes ordinaires",
+            "text": "Oui, dès que l'autoroute se termine, les règles ordinaires s'appliquent et les cyclistes sont admis si aucune interdiction ne l'empêche",
             "is_correct": true
           },
           {
-            "text": "Non les cyclistes restent interdits pendant 1 km apres la fin de l autoroute a titre de mesure de securite",
+            "text": "Non, les cyclistes restent interdits pendant 1 km après la fin de l'autoroute par mesure de sécurité",
             "is_correct": false
           }
         ],
-        "explanation": "Sur l autoroute meme les cyclistes sont interdits. Une fois F7 ferme l autoroute les cyclistes peuvent utiliser la route sauf si un panneau d interdiction specifique le defend."
+        "explanation": "Les cyclistes sont interdits sur l'autoroute. Après F7, ils peuvent utiliser la route ordinaire sauf si une signalisation particulière l'interdit."
       },
       "AR": {
         "question": "بعد علامة مرورية F7 (نهاية الطريق السريع): هل يمكن للدراجين استخدام الطريق إذا لم تكن هناك علامة مرورية حظر؟",
@@ -522,7 +522,7 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U rijdt 130 km/u op de autosnelweg en nadert bord F7 (einde). Mag u met die snelheid het bord passeren?",
+        "question": "U nadert F7 aan de toegelaten autosnelwegsnelheid. Mag u het bord passeren zonder uw snelheid aan de aansluitende weg aan te passen?",
         "choices": [
           {
             "text": "Nee, u moet uw snelheid verminderen voor F7 zodat u bij het passeren aan de limiet van de aansluitende weg voldoet",
@@ -536,7 +536,7 @@
         "explanation": "U moet uw snelheid aanpassen aan de komende weg voordat u bord F7 passeert. Te snel doorrijden voorbij F7 leidt tot een snelheidsovertreding."
       },
       "EN": {
-        "question": "You are driving at 130 km/h on the motorway and approaching sign F7 (end). May you pass the sign at that speed?",
+        "question": "You approach F7 at the permitted motorway speed. May you pass the sign without adapting your speed to the connecting road?",
         "choices": [
           {
             "text": "No, you must reduce your speed before F7 so that you comply with the limit of the connecting road when passing",
@@ -550,24 +550,24 @@
         "explanation": "You must adjust your speed to the upcoming road before passing sign F7. Driving too fast beyond F7 results in a speeding offence."
       },
       "FR": {
-        "question": "Vous roulez a 130 km/h sur l autoroute et approchez du panneau F7 (fin). Pouvez-vous passer le panneau a cette vitesse ?",
+        "question": "Vous approchez de F7 à la vitesse autorisée sur l'autoroute. Pouvez-vous franchir le panneau sans adapter votre vitesse à la route de raccordement ?",
         "choices": [
           {
-            "text": "Non vous devez reduire votre vitesse avant F7 afin de respecter la limite de la route de raccordement lors du passage",
+            "text": "Non, vous devez réduire votre vitesse avant F7 afin de respecter la limite de la route de raccordement lors du passage",
             "is_correct": true
           },
           {
-            "text": "Oui vous ne pouvez freiner qu apres avoir depasse le panneau de fin",
+            "text": "Oui, vous ne pouvez freiner qu'après avoir dépassé le panneau de fin",
             "is_correct": false
           }
         ],
-        "explanation": "Vous devez adapter votre vitesse a la route a venir avant de depasser le panneau F7. Rouler trop vite apres F7 constitue une infraction au code de la route."
+        "explanation": "Vous devez adapter votre vitesse à la route à venir avant de dépasser F7. Rouler trop vite après F7 constitue une infraction."
       },
       "AR": {
-        "question": "تقود بسرعة 130 كم/س على الطريق السريع وتقترب من علامة مرورية F7 (نهاية). هل يمكنك تجاوز العلامة المرورية بهذه السرعة؟",
+        "question": "تقترب من F7 بسرعة مسموح بها على الطريق السريع. هل يجوز عبور العلامة من دون ضبط السرعة وفق الطريق المتصل؟",
         "choices": [
           {
-            "text": "لا يجب تقليل سرعتك قبل F7 حتى تلتزم بحد الطريق المتصل عند التجاوز",
+            "text": "لا، يجب تقليل سرعتك قبل F7 حتى تلتزم بحد الطريق المتصل عند العبور",
             "is_correct": true
           },
           {
@@ -575,7 +575,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "يجب عليك تعديل سرعتك للطريق القادم قبل تجاوز علامة مرورية F7. القيادة بسرعة مفرطة بعد F7 تُشكّل مخالفة للسرعة."
+        "explanation": "يجب ضبط سرعتك وفق الطريق القادم قبل عبور F7. فالقيادة بسرعة أعلى من الحد بعد F7 تُشكّل مخالفة."
       }
     }
   }

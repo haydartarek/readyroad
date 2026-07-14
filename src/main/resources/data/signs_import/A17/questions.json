@@ -9,36 +9,72 @@
       "NL": {
         "question": "Wat betekent dit verkeersbord?",
         "choices": [
-          { "text": "Kiezelprojectie", "is_correct": true },
-          { "text": "Gladde rijbaan", "is_correct": false },
-          { "text": "Werken", "is_correct": false }
+          {
+            "text": "Kiezelprojectie",
+            "is_correct": true
+          },
+          {
+            "text": "Gladde rijbaan",
+            "is_correct": false
+          },
+          {
+            "text": "Werken",
+            "is_correct": false
+          }
         ],
         "explanation": "Dit bord waarschuwt voor losliggend grind of steentjes die door voertuigen kunnen worden weggeslingerd en schade kunnen veroorzaken."
       },
       "EN": {
         "question": "What does this traffic sign mean?",
         "choices": [
-          { "text": "Loose chippings", "is_correct": true },
-          { "text": "Slippery road", "is_correct": false },
-          { "text": "Roadworks", "is_correct": false }
+          {
+            "text": "Loose chippings",
+            "is_correct": true
+          },
+          {
+            "text": "Slippery road",
+            "is_correct": false
+          },
+          {
+            "text": "Roadworks",
+            "is_correct": false
+          }
         ],
         "explanation": "This sign warns of loose gravel or stones that may be projected by vehicles and cause damage."
       },
       "FR": {
         "question": "Que signifie ce panneau de signalisation ?",
         "choices": [
-          { "text": "Projection de gravillons", "is_correct": true },
-          { "text": "Chaussée glissante", "is_correct": false },
-          { "text": "Travaux", "is_correct": false }
+          {
+            "text": "Projection de gravillons",
+            "is_correct": true
+          },
+          {
+            "text": "Chaussée glissante",
+            "is_correct": false
+          },
+          {
+            "text": "Travaux",
+            "is_correct": false
+          }
         ],
         "explanation": "Ce panneau avertit de gravillons ou de pierres pouvant être projetés par les véhicules et causer des dommages."
       },
       "AR": {
         "question": "ما معنى هذه العلامة المرورية؟",
         "choices": [
-          { "text": "تطاير الحصى", "is_correct": true },
-          { "text": "طريق زلق", "is_correct": false },
-          { "text": "أعمال على الطريق", "is_correct": false }
+          {
+            "text": "تطاير الحصى",
+            "is_correct": true
+          },
+          {
+            "text": "طريق زلق",
+            "is_correct": false
+          },
+          {
+            "text": "أعمال على الطريق",
+            "is_correct": false
+          }
         ],
         "explanation": "تحذر هذه العلامة المرورية من وجود حصى أو أحجار فضفاضة يمكن أن تتناثر بفعل المركبات وتسبب أضرارًا."
       }
@@ -54,36 +90,72 @@
       "NL": {
         "question": "Tot welke categorie verkeerstekens behoort dit bord?",
         "choices": [
-          { "text": "Gevaarsborden", "is_correct": true },
-          { "text": "Voorrangsborden", "is_correct": false },
-          { "text": "Verbodsborden", "is_correct": false }
+          {
+            "text": "Gevaarsborden",
+            "is_correct": true
+          },
+          {
+            "text": "Voorrangsborden",
+            "is_correct": false
+          },
+          {
+            "text": "Verbodsborden",
+            "is_correct": false
+          }
         ],
         "explanation": "Dit bord behoort tot de gevaarsborden. Alle gevaarsborden zijn driehoekig met een rode rand op een witte achtergrond."
       },
       "EN": {
         "question": "To which category of traffic signs does this sign belong?",
         "choices": [
-          { "text": "Warning signs", "is_correct": true },
-          { "text": "Priority signs", "is_correct": false },
-          { "text": "Prohibition signs", "is_correct": false }
+          {
+            "text": "Warning signs",
+            "is_correct": true
+          },
+          {
+            "text": "Priority signs",
+            "is_correct": false
+          },
+          {
+            "text": "Prohibition signs",
+            "is_correct": false
+          }
         ],
         "explanation": "This sign belongs to the warning signs. All warning signs are triangular with a red border on a white background."
       },
       "FR": {
         "question": "À quelle catégorie de panneaux de signalisation ce panneau appartient-il ?",
         "choices": [
-          { "text": "Panneaux de danger", "is_correct": true },
-          { "text": "Panneaux de priorité", "is_correct": false },
-          { "text": "Panneaux d'interdiction", "is_correct": false }
+          {
+            "text": "Panneaux de danger",
+            "is_correct": true
+          },
+          {
+            "text": "Panneaux de priorité",
+            "is_correct": false
+          },
+          {
+            "text": "Panneaux d'interdiction",
+            "is_correct": false
+          }
         ],
         "explanation": "Ce panneau appartient aux panneaux de danger. Tous les panneaux de danger sont triangulaires avec une bordure rouge sur fond blanc."
       },
       "AR": {
         "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
         "choices": [
-          { "text": "علامات الخطر", "is_correct": true },
-          { "text": "علامات الأولوية", "is_correct": false },
-          { "text": "علامات الحظر", "is_correct": false }
+          {
+            "text": "علامات الخطر",
+            "is_correct": true
+          },
+          {
+            "text": "علامات الأولوية",
+            "is_correct": false
+          },
+          {
+            "text": "علامات الحظر",
+            "is_correct": false
+          }
         ],
         "explanation": "تنتمي هذه العلامة المرورية إلى علامات الخطر. جميع علامات الخطر مثلثة بحافة حمراء على خلفية بيضاء."
       }
@@ -238,7 +310,10 @@
             "text": "زيادة مسافة الأمان وتقليل السرعة لتفادي أضرار الحصى المتناثر",
             "is_correct": true
           },
-          { "text": "زيادة سرعتك لتجاوز المنطقة بسرعة", "is_correct": false },
+          {
+            "text": "زيادة سرعتك لتجاوز المنطقة بسرعة",
+            "is_correct": false
+          },
           {
             "text": "السير بالقرب خلف السيارة أمامك للحماية",
             "is_correct": false
@@ -337,43 +412,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Op welke afstand wordt dit gevaarsbord buiten de bebouwde kom geplaatst?",
+        "question": "Op welke afstand van het gevaar wordt dit gevaarsbord in het Brussels Hoofdstedelijk en Vlaams Gewest normaal geplaatst?",
         "choices": [
-          { "text": "Ongeveer 150 meter voor het gevaar", "is_correct": true },
-          { "text": "Precies op de gevaarlijke plek", "is_correct": false },
-          { "text": "Op 500 meter voor het gevaar", "is_correct": false }
+          {
+            "text": "Ongeveer 150 meter voor het gevaar",
+            "is_correct": true
+          },
+          {
+            "text": "Precies op de gevaarlijke plek",
+            "is_correct": false
+          },
+          {
+            "text": "Op 500 meter voor het gevaar",
+            "is_correct": false
+          }
         ],
-        "explanation": "Buiten de bebouwde kom worden gevaarsborden op ±150 meter voor het gevaar geplaatst. Binnen de bebouwde kom is dit ±50 meter."
+        "explanation": "Volgens de huidige plaatsingsregel voor het Brussels Hoofdstedelijk en Vlaams Gewest staat een gevaarsbord normaal op ongeveer 150 meter van de gevaarlijke plaats. Staat het dichter of verder, dan vermeldt een onderbord de afstand bij benadering."
       },
       "EN": {
-        "question": "At what distance is this warning sign placed outside built-up areas?",
+        "question": "At what distance from the hazard is this warning sign normally placed in the Brussels-Capital and Flemish Regions?",
         "choices": [
           {
             "text": "Approximately 150 metres before the hazard",
             "is_correct": true
           },
-          { "text": "Exactly at the hazard location", "is_correct": false },
-          { "text": "500 metres before the hazard", "is_correct": false }
+          {
+            "text": "Exactly at the hazard location",
+            "is_correct": false
+          },
+          {
+            "text": "500 metres before the hazard",
+            "is_correct": false
+          }
         ],
-        "explanation": "Outside built-up areas, warning signs are placed ±150 metres before the hazard. Inside built-up areas it is ±50 metres."
+        "explanation": "Under the current placement rule for the Brussels-Capital and Flemish Regions, a warning sign is normally placed about 150 metres from the hazard. If it is closer or farther away, a supplementary plate indicates the approximate distance."
       },
       "FR": {
-        "question": "À quelle distance ce panneau de danger est-il placé hors agglomération ?",
+        "question": "À quelle distance du danger ce panneau est-il normalement placé dans les Régions de Bruxelles-Capitale et flamande ?",
         "choices": [
-          { "text": "Environ 150 mètres avant le danger", "is_correct": true },
-          { "text": "Exactement à l'endroit du danger", "is_correct": false },
-          { "text": "500 mètres avant le danger", "is_correct": false }
+          {
+            "text": "Environ 150 mètres avant le danger",
+            "is_correct": true
+          },
+          {
+            "text": "Exactement à l'endroit du danger",
+            "is_correct": false
+          },
+          {
+            "text": "500 mètres avant le danger",
+            "is_correct": false
+          }
         ],
-        "explanation": "Hors agglomération, les panneaux de danger sont placés à ±150 mètres avant le danger. En agglomération, c'est ±50 mètres."
+        "explanation": "Selon la règle de placement actuelle pour les Régions de Bruxelles-Capitale et flamande, un panneau de danger est normalement placé à environ 150 mètres du danger. S’il est plus proche ou plus éloigné, un panneau additionnel indique la distance approximative."
       },
       "AR": {
-        "question": "على أي مسافة توضع هذه العلامة المرورية التحذيرية خارج المنطقة السكنية؟",
+        "question": "على أي مسافة من الخطر توضع هذه العلامة التحذيرية عادةً في إقليمي بروكسل العاصمة وفلاندرز؟",
         "choices": [
-          { "text": "حوالي 150 متر قبل الخطر", "is_correct": true },
-          { "text": "مباشرة عند موقع الخطر", "is_correct": false },
-          { "text": "500 متر قبل الخطر", "is_correct": false }
+          {
+            "text": "حوالي 150 متر قبل الخطر",
+            "is_correct": true
+          },
+          {
+            "text": "مباشرة عند موقع الخطر",
+            "is_correct": false
+          },
+          {
+            "text": "500 متر قبل الخطر",
+            "is_correct": false
+          }
         ],
-        "explanation": "خارج المنطقة السكنية توضع علامات الخطر على مسافة ±150 متر قبل الخطر. داخل المنطقة السكنية تكون المسافة ±50 متر."
+        "explanation": "وفق قاعدة الوضع الحالية في إقليمي بروكسل العاصمة وفلاندرز، توضع علامة الخطر عادةً على بُعد نحو 150 متراً من موضع الخطر. وإذا وُضعت أقرب أو أبعد فتبيّن لوحة تكميلية المسافة التقريبية."
       }
     }
   },
@@ -387,32 +495,56 @@
       "NL": {
         "question": "Is het aan te raden om zeer dicht achter een voertuig te rijden in een kiezelzone?",
         "choices": [
-          { "text": "Nee", "is_correct": true },
-          { "text": "Ja", "is_correct": false }
+          {
+            "text": "Nee",
+            "is_correct": true
+          },
+          {
+            "text": "Ja",
+            "is_correct": false
+          }
         ],
         "explanation": "Nee, dat is niet raadzaam. Zeer dicht achter een ander voertuig rijden in een kiezelzone vergroot sterk het risico op een beschadigde voorruit door weggeslingerde steentjes."
       },
       "EN": {
         "question": "Is it advisable to follow very closely behind another vehicle in a gravel zone?",
         "choices": [
-          { "text": "No", "is_correct": true },
-          { "text": "Yes", "is_correct": false }
+          {
+            "text": "No",
+            "is_correct": true
+          },
+          {
+            "text": "Yes",
+            "is_correct": false
+          }
         ],
         "explanation": "No, it is not advisable. Following very closely behind another vehicle in a gravel zone greatly increases the risk of a damaged windscreen from projected stones."
       },
       "FR": {
         "question": "Est-il conseillé de suivre de très près un véhicule dans une zone de gravillons ?",
         "choices": [
-          { "text": "Non", "is_correct": true },
-          { "text": "Oui", "is_correct": false }
+          {
+            "text": "Non",
+            "is_correct": true
+          },
+          {
+            "text": "Oui",
+            "is_correct": false
+          }
         ],
         "explanation": "Non, ce n'est pas conseillé. Suivre de très près un autre véhicule dans une zone de gravillons augmente fortement le risque d'un pare-brise endommagé par des pierres projetées."
       },
       "AR": {
         "question": "هل يُنصح بالسير قريبًا جدًا خلف مركبة أخرى في منطقة تطاير الحصى؟",
         "choices": [
-          { "text": "لا", "is_correct": true },
-          { "text": "نعم", "is_correct": false }
+          {
+            "text": "لا",
+            "is_correct": true
+          },
+          {
+            "text": "نعم",
+            "is_correct": false
+          }
         ],
         "explanation": "لا، لا يُنصح بذلك. السير قريبًا جدًا خلف مركبة أخرى في منطقة تطاير الحصى يزيد بشكل كبير من خطر تلف الزجاج الأمامي بسبب الحجارة المتناثرة."
       }
@@ -428,32 +560,56 @@
       "NL": {
         "question": "Wordt van u verwacht uw volgafstand te vergroten in een kiezelzone om schade te beperken?",
         "choices": [
-          { "text": "Ja", "is_correct": true },
-          { "text": "Nee", "is_correct": false }
+          {
+            "text": "Ja",
+            "is_correct": true
+          },
+          {
+            "text": "Nee",
+            "is_correct": false
+          }
         ],
         "explanation": "Ja. Van u wordt verwacht dat u uw volgafstand vergroot in een kiezelzone. Hoe groter de afstand, hoe kleiner de kans op schade door weggeslingerde steentjes."
       },
       "EN": {
         "question": "Are you expected to increase following distance in a gravel zone to reduce the risk of damage?",
         "choices": [
-          { "text": "Yes", "is_correct": true },
-          { "text": "No", "is_correct": false }
+          {
+            "text": "Yes",
+            "is_correct": true
+          },
+          {
+            "text": "No",
+            "is_correct": false
+          }
         ],
         "explanation": "Yes. You are expected to increase following distance in a gravel zone. The greater the distance, the lower the chance of damage from projected stones."
       },
       "FR": {
         "question": "Êtes-vous censé augmenter votre distance de sécurité dans une zone de gravillons pour limiter les dommages ?",
         "choices": [
-          { "text": "Oui", "is_correct": true },
-          { "text": "Non", "is_correct": false }
+          {
+            "text": "Oui",
+            "is_correct": true
+          },
+          {
+            "text": "Non",
+            "is_correct": false
+          }
         ],
         "explanation": "Oui. Vous êtes censé augmenter votre distance de sécurité dans une zone de gravillons. Plus la distance est grande, moins les risques de dommages causés par des pierres projetées sont élevés."
       },
       "AR": {
         "question": "هل يُتوقع منك زيادة مسافة الأمان في منطقة تطاير الحصى لتقليل خطر الضرر؟",
         "choices": [
-          { "text": "نعم", "is_correct": true },
-          { "text": "لا", "is_correct": false }
+          {
+            "text": "نعم",
+            "is_correct": true
+          },
+          {
+            "text": "لا",
+            "is_correct": false
+          }
         ],
         "explanation": "نعم. يُتوقع منك زيادة مسافة الأمان في منطقة تطاير الحصى. كلما زادت المسافة، قلت احتمالية الضرر من الحجارة المتناثرة."
       }

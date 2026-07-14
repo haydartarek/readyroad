@@ -24,6 +24,7 @@ import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.cache.CacheManager;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -75,6 +76,9 @@ public class FeatureCAnalyticsDashboardBDDTest extends BaseIntegrationTest {
         @Autowired
         private ExamSimulationQuestionRepository examQuestionRepository;
 
+        @Autowired
+        private CacheManager cacheManager;
+
         @PersistenceContext
         private EntityManager entityManager;
 
@@ -88,13 +92,15 @@ public class FeatureCAnalyticsDashboardBDDTest extends BaseIntegrationTest {
                 testUserId = 888L;
                 otherUserId = 999L;
 
-                // ✅ Use seeded categories instead of creating duplicates
-                var categories = categoryRepository.findAll();
-                assertThat(categories).hasSizeGreaterThanOrEqualTo(2)
-                                .as("TestDataSeederConfig should have seeded at least 2 categories");
+                // Resolve explicit parent fixtures from the database. CategoryRepository.findAll()
+                // is cached and may contain entities rolled back by an earlier test.
+                testCategory1 = getOrCreateCategory("SIGNS", "Traffic Signs");
+                testCategory2 = getOrCreateCategory("RULES", "Traffic Rules");
 
-                testCategory1 = categories.get(0);
-                testCategory2 = categories.get(1);
+                var categoriesCache = cacheManager.getCache("categories");
+                if (categoriesCache != null) {
+                        categoriesCache.clear();
+                }
 
                 // ✅ TestDataSeederConfig already provides 120 PUBLISHED questions
                 // No need to create 150 questions manually - 120 is enough for 2 consecutive
@@ -272,9 +278,8 @@ public class FeatureCAnalyticsDashboardBDDTest extends BaseIntegrationTest {
                         // Then: Response status should be 200
                         assertThat(dashboard).isNotNull();
 
-                        // And: studyStreak should be 1 (current implementation returns 1 for active
-                        // practice)
-                        // TODO: Implement full consecutive days calculation for multi-day streaks
+                        // And: studyStreak should be 1 (the current aggregate tracks active practice,
+                        // not a multi-day consecutive streak)
                         assertThat(dashboard.getStudyStreak()).isEqualTo(1);
 
                         // And: lastActivityAt should be present
@@ -577,7 +582,7 @@ public class FeatureCAnalyticsDashboardBDDTest extends BaseIntegrationTest {
                 progress.setCorrectAnswers(correctAnswers);
                 progress.setAccuracyRate(BigDecimal.valueOf((correctAnswers * 100.0) / totalAttempts));
                 progress.setLastPracticed(LocalDateTime.now());
-                userCategoryProgressRepository.save(progress);
+                userCategoryProgressRepository.saveAndFlush(progress);
         }
 
         /**
@@ -601,7 +606,7 @@ public class FeatureCAnalyticsDashboardBDDTest extends BaseIntegrationTest {
                 progress.setCorrectAnswers(consecutiveDays);
                 progress.setAccuracyRate(BigDecimal.valueOf(50.0));
                 progress.setLastPracticed(LocalDateTime.now());
-                userCategoryProgressRepository.save(progress);
+                userCategoryProgressRepository.saveAndFlush(progress);
         }
 
         /**

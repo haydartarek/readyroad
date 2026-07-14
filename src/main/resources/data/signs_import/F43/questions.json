@@ -7,73 +7,73 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat betekent bord F43?",
+        "question": "U ziet dit bord met de naam van een gemeente langs de weg. Wat betekent het?",
         "choices": [
           {
-            "text": "U rijdt een nieuwe gemeente binnen en de naam op het bord geeft aan welke gemeente",
+            "text": "U rijdt het grondgebied van die gemeente binnen",
             "is_correct": true
           },
           {
-            "text": "U nadert een gevaarlijke schoolomgeving",
+            "text": "U mag vanaf dit punt niet meer stilstaan of parkeren",
             "is_correct": false
           },
           {
-            "text": "U verlaat een bebouwde kom en mag sneller rijden",
+            "text": "De maximumsnelheid wordt automatisch beperkt tot 50 km/u",
             "is_correct": false
           }
         ],
-        "explanation": "F43 zijn de gemeentenaamborden die de grens van een gemeente markeren. Ze informeren bestuurders dat ze een nieuwe gemeente betreden."
+        "explanation": "Dit bord toont enkel de naam van de gemeente en geeft aan waar haar grondgebied begint, zonder zelf een snelheidsbeperking of andere verkeersregel op te leggen."
       },
       "EN": {
-        "question": "What does sign F43 mean?",
+        "question": "You see this sign showing a municipality name along the road. What does it mean?",
         "choices": [
           {
-            "text": "You are entering a new municipality and the name on the sign indicates which one",
+            "text": "You are entering the territory of that municipality",
             "is_correct": true
           },
           {
-            "text": "You are approaching a dangerous school zone",
+            "text": "You may no longer stop or park from this point onward",
             "is_correct": false
           },
           {
-            "text": "You are leaving a built-up area and may drive faster",
+            "text": "The speed limit is automatically restricted to 50 km/h",
             "is_correct": false
           }
         ],
-        "explanation": "F43 are the municipality name signs that mark the boundary of a municipality. They inform drivers they are entering a new municipality."
+        "explanation": "This sign only shows the municipality's name and marks where its territory begins, without imposing any speed limit or other traffic rule itself."
       },
       "FR": {
-        "question": "Que signifie le panneau F43 ?",
+        "question": "Vous apercevez ce panneau indiquant le nom d'une commune le long de la route. Que signifie-t-il ?",
         "choices": [
           {
-            "text": "Vous entrez dans une nouvelle commune et le nom sur le panneau indique laquelle",
+            "text": "Vous entrez sur le territoire de cette commune",
             "is_correct": true
           },
           {
-            "text": "Vous approchez d une zone scolaire dangereuse",
+            "text": "Vous ne pouvez plus vous arrêter ni stationner à partir de ce point",
             "is_correct": false
           },
           {
-            "text": "Vous quittez une agglomeration et pouvez rouler plus vite",
+            "text": "La vitesse maximale est automatiquement limitée à 50 km/h",
             "is_correct": false
           }
         ],
-        "explanation": "F43 sont les panneaux de nom de commune qui marquent la frontiere d une commune. Ils informent les conducteurs qu ils entrent dans une nouvelle commune."
+        "explanation": "Ce panneau indique uniquement le nom de la commune et marque le début de son territoire, sans imposer lui-même de limite de vitesse ou d'autre règle de circulation."
       },
       "AR": {
-        "question": "ما معنى هذه العلامة المرورية؟",
+        "question": "لاحظت هذه العلامة التي تحمل اسم بلدية على جانب الطريق، فماذا تعني؟",
         "choices": [
+          { "text": "أنك تدخل أراضي تلك البلدية", "is_correct": true },
           {
-            "text": "تدخل بلدية جديدة والاسم على العلامة المرورية يشير إلى أيها",
-            "is_correct": true
+            "text": "أنه لا يجوز لك التوقف أو الوقوف بعد هذه النقطة",
+            "is_correct": false
           },
-          { "text": "تقترب من منطقة مدرسية خطيرة", "is_correct": false },
           {
-            "text": "تغادر منطقة مبنية ويمكنك السير بسرعة أكبر",
+            "text": "أن السرعة القصوى تُقيَّد تلقائيًا بـ 50 كم/س",
             "is_correct": false
           }
         ],
-        "explanation": "F43 علامات اسم البلدية التي تحدد حدود البلدية. تُعلم السائقين بدخولهم بلدية جديدة."
+        "explanation": "تُظهر هذه العلامة فقط اسم البلدية وتشير إلى بداية أراضيها، دون أن تفرض بحد ذاتها أي حد سرعة أو قاعدة مرورية أخرى."
       }
     }
   },
@@ -82,124 +82,154 @@
     "type": "WHICH_SIGN",
     "difficulty": "EASY",
     "is_critical": false,
-    "show_sign": true,
+    "show_sign": false,
     "i18n": {
       "NL": {
-        "question": "Tot welke categorie behoort bord F43?",
+        "question": "Welk bord toont enkel de naam van de gemeente zonder daarbij zelf een snelheidsregel te bepalen?",
         "choices": [
-          { "text": "informatieve borden", "is_correct": true },
-          { "text": "gevaarsborden", "is_correct": false },
-          { "text": "voorrangsborden", "is_correct": false }
+          {
+            "text": "Het bord dat de gemeentegrens aanduidt met de naam van de gemeente",
+            "is_correct": true
+          },
+          {
+            "text": "Het bord dat het begin van de bebouwde kom aanduidt",
+            "is_correct": false
+          },
+          {
+            "text": "Het bord dat een zone met snelheidsbeperking aankondigt",
+            "is_correct": false
+          }
         ],
-        "explanation": "F43 zijn informatieve plaatsnaam- en gemeentegrensaanduidingen."
+        "explanation": "Het gemeentegrensbord dient enkel ter informatie over de plaatsnaam, terwijl andere borden, zoals dat van de bebouwde kom, wel een juridische betekenis hebben op vlak van snelheid."
       },
       "EN": {
-        "question": "Which category does sign F43 belong to?",
+        "question": "Which sign shows only the name of the municipality without itself setting a speed rule?",
         "choices": [
-          { "text": "information signs", "is_correct": true },
-          { "text": "warning signs", "is_correct": false },
-          { "text": "priority signs", "is_correct": false }
+          {
+            "text": "The sign marking the municipal boundary with the municipality's name",
+            "is_correct": true
+          },
+          {
+            "text": "The sign marking the start of a built-up area",
+            "is_correct": false
+          },
+          {
+            "text": "The sign announcing a speed-limited zone",
+            "is_correct": false
+          }
         ],
-        "explanation": "F43 are informational place name and municipal boundary signs in this category."
+        "explanation": "The municipal boundary sign is purely informational about the place name, while other signs, such as the built-up area sign, do have legal significance for speed."
       },
       "FR": {
-        "question": "À quelle catégorie appartient le panneau F43 ?",
+        "question": "Quel panneau indique uniquement le nom de la commune sans fixer lui-même une règle de vitesse ?",
         "choices": [
-          { "text": "panneaux d information", "is_correct": true },
-          { "text": "panneaux de danger", "is_correct": false },
-          { "text": "panneaux de priorite", "is_correct": false }
+          {
+            "text": "Le panneau marquant la limite de commune avec le nom de celle-ci",
+            "is_correct": true
+          },
+          {
+            "text": "Le panneau marquant le début d'une agglomération",
+            "is_correct": false
+          },
+          {
+            "text": "Le panneau annonçant une zone à vitesse limitée",
+            "is_correct": false
+          }
         ],
-        "explanation": "F43 sont des panneaux d information de nom de lieu et de limite communale."
+        "explanation": "Le panneau de limite de commune est purement informatif quant au nom du lieu, alors que d'autres panneaux, comme celui de l'agglomération, ont une portée juridique en matière de vitesse."
       },
       "AR": {
-        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
+        "question": "ما العلامة التي تُظهر فقط اسم البلدية دون أن تحدد بحد ذاتها قاعدة سرعة؟",
         "choices": [
-          { "text": "العلامات الإرشادية", "is_correct": true },
-          { "text": "هذه الفئة: علامات تحذير", "is_correct": false },
-          { "text": "علامات الأولوية", "is_correct": false }
+          {
+            "text": "العلامة التي تشير إلى حدود البلدية مع ذكر اسمها",
+            "is_correct": true
+          },
+          {
+            "text": "العلامة التي تشير إلى بداية المنطقة المبنية",
+            "is_correct": false
+          },
+          {
+            "text": "العلامة التي تُعلن عن منطقة محددة السرعة",
+            "is_correct": false
+          }
         ],
-        "explanation": "F43 علامات إعلامية لاسم المكان وحدود البلدية من هذه الفئة."
+        "explanation": "علامة حدود البلدية معلوماتية بحتة تتعلق باسم المكان، بينما تحمل علامات أخرى، مثل علامة المنطقة المبنية، أثرًا قانونيًا فعليًا على السرعة."
       }
     }
   },
   {
     "question_id": "F43_Q03",
-    "type": "HAZARD_IDENTIFICATION",
+    "type": "WHAT_HAPPENS_IF",
     "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Welke snelheidswijziging kan gepaard gaan met bord F43 bij het binnenrijden van een gemeente?",
+        "question": "Wat gebeurt er op vlak van verkeersregels wanneer u dit bord passeert?",
         "choices": [
           {
-            "text": "Als u een bebouwde kom binnenrijdt geldt 50 km/h tenzij een bord anders aangeeft",
+            "text": "Er verandert niets aan de algemene verkeersregels; het bord dient enkel als informatie over de gemeente",
             "is_correct": true
           },
           {
-            "text": "U moet versnellen naar 90 km/h bij het binnenrijden van een gemeente",
+            "text": "Alle voorrangsregels worden automatisch omgekeerd",
             "is_correct": false
           },
           {
-            "text": "Er verandert niets aan de snelheid want F43 is puur informatief",
+            "text": "U moet verplicht stoppen om uw identiteit te tonen",
             "is_correct": false
           }
         ],
-        "explanation": "F43 markeert de gemeentegrens. Als dit tevens het begin van een bebouwde kom is geldt automatisch 50 km/h. Let op aanvullende snelheidsborden."
+        "explanation": "Dit bord legt zelf geen verkeersregel op; eventuele snelheidsbeperkingen of andere regels hangen af van andere, apart geplaatste borden of van de aard van de weg."
       },
       "EN": {
-        "question": "What speed change can accompany sign F43 when entering a municipality?",
+        "question": "What happens regarding traffic rules when you pass this sign?",
         "choices": [
           {
-            "text": "If you are entering a built-up area 50 km/h applies unless a sign indicates otherwise",
+            "text": "Nothing changes in the general traffic rules; the sign is purely informational about the municipality",
             "is_correct": true
           },
           {
-            "text": "You must accelerate to 90 km/h when entering a municipality",
+            "text": "All right-of-way rules are automatically reversed",
             "is_correct": false
           },
-          {
-            "text": "Nothing changes about speed because F43 is purely informational",
-            "is_correct": false
-          }
+          { "text": "You must stop to show your identity", "is_correct": false }
         ],
-        "explanation": "F43 marks the municipality boundary. If this also marks the start of a built-up area 50 km/h automatically applies. Watch for additional speed signs."
+        "explanation": "This sign does not impose any traffic rule itself; any speed limits or other rules depend on other, separately placed signs or on the nature of the road."
       },
       "FR": {
-        "question": "Quel changement de vitesse peut accompagner le panneau F43 lors de l entree dans une commune ?",
+        "question": "Que se passe-t-il concernant les règles de circulation lorsque vous dépassez ce panneau ?",
         "choices": [
           {
-            "text": "Si vous entrez dans une agglomeration 50 km/h s applique sauf indication contraire d un panneau",
+            "text": "Rien ne change dans les règles générales de circulation; le panneau est purement informatif quant à la commune",
             "is_correct": true
           },
           {
-            "text": "Vous devez accelerer a 90 km/h en entrant dans une commune",
+            "text": "Toutes les règles de priorité sont automatiquement inversées",
             "is_correct": false
           },
           {
-            "text": "Rien ne change en matiere de vitesse car F43 est purement informatif",
+            "text": "Vous devez obligatoirement vous arrêter pour montrer votre identité",
             "is_correct": false
           }
         ],
-        "explanation": "F43 marque la frontiere communale. Si cela marque egalement le debut d une agglomeration 50 km/h s applique automatiquement. Faites attention aux panneaux de limitation de vitesse supplementaires."
+        "explanation": "Ce panneau n'impose lui-même aucune règle de circulation; d'éventuelles limitations de vitesse ou autres règles dépendent d'autres panneaux placés séparément ou de la nature de la route."
       },
       "AR": {
-        "question": "ما تغيير السرعة الذي يمكن أن يرافق علامة مرورية F43 عند دخول بلدية؟",
+        "question": "ما الذي يحدث من ناحية قواعد المرور عندما تتجاوز هذه العلامة؟",
         "choices": [
           {
-            "text": "إذا كنت تدخل منطقة مبنية تنطبق 50 كم/ساعة ما لم تشر علامة مرورية إلى خلاف ذلك",
+            "text": "لا يتغير شيء في قواعد المرور العامة؛ العلامة معلوماتية بحتة عن البلدية",
             "is_correct": true
           },
+          { "text": "تُعكس تلقائيًا جميع قواعد الأولوية", "is_correct": false },
           {
-            "text": "يجب التسارع إلى 90 كم/ساعة عند دخول البلدية",
-            "is_correct": false
-          },
-          {
-            "text": "لا يتغير شيء في السرعة لأن F43 إعلامية بحتة",
+            "text": "يجب عليك التوقف إلزاميًا لإظهار هويتك",
             "is_correct": false
           }
         ],
-        "explanation": "تحدد F43 حدود البلدية. إذا كان هذا يمثل أيضاً بداية منطقة مبنية تنطبق 50 كم/ساعة تلقائياً. انتبه لعلامات سرعة إضافية."
+        "explanation": "لا تفرض هذه العلامة بحد ذاتها أي قاعدة مرورية؛ وتعتمد أي حدود سرعة أو قواعد أخرى على علامات مستقلة أخرى موجودة فعليًا أو على طبيعة الطريق."
       }
     }
   },
@@ -208,238 +238,235 @@
     "type": "WHAT_MUST_YOU_DO",
     "difficulty": "MEDIUM",
     "is_critical": false,
-    "show_sign": true,
+    "show_sign": false,
     "i18n": {
       "NL": {
-        "question": "U rijdt 70 km/h buiten de bebouwde kom. Vlak daarna verschijnt bord F43 met de naam van een gemeente. Wat doet u?",
+        "question": "U rijdt een nieuwe gemeente binnen en ziet enkel dit bord met de gemeentenaam, zonder ander verkeersbord. Wat moet u doen op vlak van snelheid?",
         "choices": [
           {
-            "text": "Uw snelheid aanpassen naar 50 km/h want het gemeentebord markeert doorgaans het begin van de bebouwde kom",
+            "text": "U blijft de snelheidsregels volgen die van toepassing zijn op basis van het wegtype en de eventuele andere aanwezige borden",
             "is_correct": true
           },
           {
-            "text": "Doorgaan aan 70 km/h want F43 wijzigt de snelheid niet",
+            "text": "U mag automatisch sneller rijden zodra u de gemeentegrens oversteekt",
             "is_correct": false
           },
           {
-            "text": "Stoppen voor het bord om te controleren of er snelheidsaanduidingen zijn",
+            "text": "U moet onmiddellijk vertragen tot 30 km/u, want dat geldt overal bij dit bord",
             "is_correct": false
           }
         ],
-        "explanation": "Het gemeentebord (F43) geeft doorgaans ook het begin van de bebouwde kom aan. De snelheid moet worden aangepast naar 50 km/h tenzij een bord een andere limiet aangeeft."
+        "explanation": "Het gemeentegrensbord verandert zelf niets aan de snelheid; die blijft afhankelijk van het type weg en van andere signalisatie die eventueel aanwezig is."
       },
       "EN": {
-        "question": "You are driving at 70 km/h outside the built-up area. Shortly after sign F43 appears with the name of a municipality. What do you do?",
+        "question": "You are entering a new municipality and see only this sign with the municipality's name, with no other traffic sign. What must you do regarding speed?",
         "choices": [
           {
-            "text": "Adjust your speed to 50 km/h because the municipality sign generally marks the start of the built-up area",
+            "text": "You continue to follow the speed rules that apply based on the type of road and any other signs present",
             "is_correct": true
           },
           {
-            "text": "Continue at 70 km/h because F43 does not change the speed",
+            "text": "You may automatically drive faster once you cross the municipal boundary",
             "is_correct": false
           },
           {
-            "text": "Stop before the sign to check for speed indications",
+            "text": "You must immediately slow down to 30 km/h, since that applies everywhere at this sign",
             "is_correct": false
           }
         ],
-        "explanation": "The municipality sign (F43) generally also indicates the start of the built-up area. Speed must be adjusted to 50 km/h unless a sign indicates another limit."
+        "explanation": "The municipal boundary sign itself does not change the speed; that continues to depend on the type of road and any other signage that may be present."
       },
       "FR": {
-        "question": "Vous roulez a 70 km/h hors agglomeration. Peu apres le panneau F43 apparait avec le nom d une commune. Que faites-vous ?",
+        "question": "Vous entrez dans une nouvelle commune et ne voyez que ce panneau indiquant le nom de la commune, sans autre panneau de circulation. Que devez-vous faire concernant la vitesse ?",
         "choices": [
           {
-            "text": "Adapter votre vitesse a 50 km/h car le panneau communal marque generalement le debut de l agglomeration",
+            "text": "Vous continuez à respecter les règles de vitesse applicables selon le type de route et les éventuels autres panneaux présents",
             "is_correct": true
           },
           {
-            "text": "Continuer a 70 km/h car F43 ne modifie pas la vitesse",
+            "text": "Vous pouvez automatiquement rouler plus vite une fois la limite de commune franchie",
             "is_correct": false
           },
           {
-            "text": "S arreter avant le panneau pour verifier les indications de vitesse",
+            "text": "Vous devez immédiatement ralentir à 30 km/h, car cela s'applique partout à ce panneau",
             "is_correct": false
           }
         ],
-        "explanation": "Le panneau communal (F43) indique generalement aussi le debut de l agglomeration. La vitesse doit etre adaptee a 50 km/h sauf si un panneau indique une autre limite."
+        "explanation": "Le panneau de limite de commune ne change rien lui-même à la vitesse; celle-ci dépend toujours du type de route et des éventuels autres panneaux présents."
       },
       "AR": {
-        "question": "تسير بسرعة 70 كم/ساعة خارج المنطقة المبنية. بُعيد ذلك تظهر علامة مرورية F43 باسم بلدية. ماذا تفعل؟",
+        "question": "تدخل بلدية جديدة ولا ترى إلا هذه العلامة التي تحمل اسم البلدية، دون أي علامة مرورية أخرى. فماذا يجب عليك فعله من ناحية السرعة؟",
         "choices": [
           {
-            "text": "اضبط سرعتك إلى 50 كم/ساعة لأن علامة مرورية البلدية عموماً تحدد بداية المنطقة المبنية",
+            "text": "تستمر باتباع قواعد السرعة السارية بناءً على نوع الطريق وأي علامات أخرى موجودة فعليًا",
             "is_correct": true
           },
           {
-            "text": "استمر بسرعة 70 كم/ساعة لأن F43 لا تغير السرعة",
+            "text": "يمكنك القيادة بسرعة أكبر تلقائيًا بعد عبور حدود البلدية",
             "is_correct": false
           },
           {
-            "text": "توقف قبل العلامة المرورية للتحقق من إشارات السرعة",
+            "text": "يجب عليك التخفيف فورًا إلى 30 كم/س لأن ذلك يسري في كل مكان عند هذه العلامة",
             "is_correct": false
           }
         ],
-        "explanation": "تشير علامة مرورية البلدية (F43) عموماً إلى بداية المنطقة المبنية. يجب ضبط السرعة إلى 50 كم/ساعة ما لم تشر علامة مرورية إلى حد آخر."
+        "explanation": "لا تُغيّر علامة حدود البلدية بحد ذاتها من السرعة؛ فهي تبقى معتمدة على نوع الطريق وعلى أي إشارات أخرى قد تكون موجودة فعليًا."
       }
     }
   },
   {
     "question_id": "F43_Q05",
-    "type": "WHAT_MUST_YOU_DO",
+    "type": "WHERE_DOES_IT_APPLY",
     "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U passeert bord F43 van gemeente A naar gemeente B. Welke verkeersregels gelden nu?",
+        "question": "Waar wordt dit soort bord doorgaans aangebracht?",
         "choices": [
           {
-            "text": "De verkeersregels van gemeente B gelden nu inclusief eventuele lokale snelheidslimieten of parkeerregels",
+            "text": "Op de plaats waar het grondgebied van een gemeente begint, langs de openbare weg",
             "is_correct": true
           },
           {
-            "text": "De regels van gemeente A blijven gelden zolang u in de buurt bent",
+            "text": "Enkel binnen de dorpskern, bij het gemeentehuis",
             "is_correct": false
           },
-          {
-            "text": "Er gelden geen lokale regels want het Belgische verkeerswetboek is uniform voor heel het land",
-            "is_correct": false
-          }
+          { "text": "Enkel op autosnelwegparkings", "is_correct": false }
         ],
-        "explanation": "Bij overschrijden van de gemeentegrens gelden de regels van de nieuwe gemeente. Lokale aanvullende regels (snelheid, parkeren) kunnen afwijken."
+        "explanation": "Dit bord wordt geplaatst op de plek waar men het grondgebied van een gemeente binnenrijdt, ongeacht het type weg."
       },
       "EN": {
-        "question": "You pass sign F43 from municipality A to municipality B. Which traffic rules now apply?",
+        "question": "Where is this kind of sign typically placed?",
         "choices": [
           {
-            "text": "The traffic rules of municipality B now apply including any local speed limits or parking rules",
+            "text": "At the point where the territory of a municipality begins, along the public road",
             "is_correct": true
           },
           {
-            "text": "The rules of municipality A continue to apply as long as you are nearby",
+            "text": "Only within the village centre, near the town hall",
             "is_correct": false
           },
-          {
-            "text": "No local rules apply because the Belgian highway code is uniform for the whole country",
-            "is_correct": false
-          }
+          { "text": "Only at motorway rest areas", "is_correct": false }
         ],
-        "explanation": "When crossing the municipal boundary the rules of the new municipality apply. Local supplementary rules (speed, parking) may differ."
+        "explanation": "This sign is placed at the point where one enters the territory of a municipality, regardless of the type of road."
       },
       "FR": {
-        "question": "Vous passez le panneau F43 de la commune A a la commune B. Quelles regles de circulation s appliquent maintenant ?",
+        "question": "Où ce type de panneau est-il généralement placé ?",
         "choices": [
           {
-            "text": "Les regles de circulation de la commune B s appliquent maintenant y compris les limitations de vitesse ou les regles de stationnement locales",
+            "text": "À l'endroit où commence le territoire d'une commune, le long de la voie publique",
             "is_correct": true
           },
           {
-            "text": "Les regles de la commune A continuent de s appliquer tant que vous etes a proximite",
+            "text": "Uniquement dans le centre du village, près de la maison communale",
             "is_correct": false
           },
           {
-            "text": "Aucune regle locale ne s applique car le code de la route belge est uniforme pour tout le pays",
+            "text": "Uniquement sur les aires de repos d'autoroute",
             "is_correct": false
           }
         ],
-        "explanation": "En franchissant la frontiere communale les regles de la nouvelle commune s appliquent. Les regles complementaires locales (vitesse stationnement) peuvent differer."
+        "explanation": "Ce panneau est placé à l'endroit où l'on entre sur le territoire d'une commune, quel que soit le type de route."
       },
       "AR": {
-        "question": "تمر بعلامة مرورية F43 من البلدية A إلى البلدية B. أي قواعد مرور تنطبق الآن؟",
+        "question": "أين تُوضع عادةً هذه العلامة؟",
         "choices": [
           {
-            "text": "تنطبق الآن قواعد مرور البلدية B بما فيها حدود السرعة المحلية أو قواعد الانتظار",
+            "text": "عند النقطة التي تبدأ فيها أراضي بلدية معينة، على جانب الطريق العام",
             "is_correct": true
           },
           {
-            "text": "تستمر قواعد البلدية A في التطبيق طالما أنت في المنطقة المجاورة",
+            "text": "فقط داخل مركز القرية، قرب مبنى البلدية",
             "is_correct": false
           },
           {
-            "text": "لا توجد قواعد محلية لأن قانون المرور البلجيكي موحد لجميع البلاد",
+            "text": "فقط في مناطق الاستراحة على الطرق السريعة",
             "is_correct": false
           }
         ],
-        "explanation": "عند عبور حدود البلدية تنطبق قواعد البلدية الجديدة. القواعد الإضافية المحلية (السرعة والانتظار) قد تختلف."
+        "explanation": "تُوضع هذه العلامة عند النقطة التي يدخل عندها المرء أراضي بلدية معينة، بصرف النظر عن نوع الطريق."
       }
     }
   },
   {
     "question_id": "F43_Q06",
-    "type": "WHAT_MUST_YOU_DO",
+    "type": "DRIVER_ACTION",
     "difficulty": "MEDIUM",
     "is_critical": false,
-    "show_sign": true,
+    "show_sign": false,
     "i18n": {
       "NL": {
-        "question": "Geldt het bord voor alle verkeer of enkel voor motorvoertuigen?",
+        "question": "U bent op zoek naar een adres in een bepaalde gemeente en ziet dit bord met de naam van die gemeente. Wat doet u het best?",
         "choices": [
           {
-            "text": "F43 is informatief voor alle weggebruikers inclusief fietsers en voetgangers",
+            "text": "U gebruikt de naam op het bord als bevestiging dat u het juiste grondgebied binnenrijdt en vervolgt uw route",
             "is_correct": true
           },
           {
-            "text": "Alleen voor motorvoertuigen want voetgangers lezen geen borden",
+            "text": "U keert onmiddellijk om, want het bord betekent dat u de weg verkeerd bent",
             "is_correct": false
           },
           {
-            "text": "Uitsluitend voor internationaal verkeer",
+            "text": "U negeert het bord volledig, want het is enkel decoratief",
             "is_correct": false
           }
         ],
-        "explanation": "Gemeenteborden zijn informatief voor alle weggebruikers. Ze brengen geen specifieke verplichting met zich mee maar informeren over de gemeentegrens."
+        "explanation": "De naam op het bord helpt de bestuurder te bevestigen dat hij de juiste gemeente binnenrijdt, wat nuttig is bij het zoeken van een adres of route."
       },
       "EN": {
-        "question": "Does the sign apply to all traffic or only to motor vehicles?",
+        "question": "You are looking for an address in a particular municipality and see this sign with that municipality's name. What is the best thing to do?",
         "choices": [
           {
-            "text": "F43 is informational for all road users including cyclists and pedestrians",
+            "text": "You use the name on the sign to confirm you are entering the correct territory and continue your route",
             "is_correct": true
           },
           {
-            "text": "Only for motor vehicles because pedestrians do not read signs",
+            "text": "You immediately turn back, since the sign means you have taken the wrong road",
             "is_correct": false
           },
           {
-            "text": "Exclusively for international traffic",
+            "text": "You completely ignore the sign, since it is purely decorative",
             "is_correct": false
           }
         ],
-        "explanation": "Municipality signs are informational for all road users. They do not impose specific obligations but inform about the municipal boundary."
+        "explanation": "The name on the sign helps the driver confirm they are entering the correct municipality, which is useful when looking for an address or route."
       },
       "FR": {
-        "question": "Le panneau s applique-t-il a tous les usagers ou uniquement aux vehicules a moteur ?",
+        "question": "Vous recherchez une adresse dans une commune donnée et voyez ce panneau portant le nom de cette commune. Que faites-vous de mieux ?",
         "choices": [
           {
-            "text": "F43 est informatif pour tous les usagers de la route y compris les cyclistes et les pietons",
+            "text": "Vous utilisez le nom sur le panneau pour confirmer que vous entrez sur le bon territoire et poursuivez votre trajet",
             "is_correct": true
           },
           {
-            "text": "Uniquement pour les vehicules a moteur car les pietons ne lisent pas les panneaux",
+            "text": "Vous faites immédiatement demi-tour, car le panneau signifie que vous vous êtes trompé de route",
             "is_correct": false
           },
           {
-            "text": "Exclusivement pour le trafic international",
+            "text": "Vous ignorez complètement le panneau, car il est purement décoratif",
             "is_correct": false
           }
         ],
-        "explanation": "Les panneaux communaux sont informatifs pour tous les usagers de la route. Ils n imposent pas d obligations specifiques mais informent sur la frontiere communale."
+        "explanation": "Le nom sur le panneau aide le conducteur à confirmer qu'il entre sur le bon territoire, ce qui est utile lors de la recherche d'une adresse ou d'un itinéraire."
       },
       "AR": {
-        "question": "هل تنطبق العلامة المرورية على جميع المرور أم على المركبات الآلية فقط؟",
+        "question": "تبحث عن عنوان في بلدية معينة، ولاحظت هذه العلامة التي تحمل اسم تلك البلدية، فما أفضل تصرف؟",
         "choices": [
           {
-            "text": "F43 إعلامية لجميع مستخدمي الطريق بما فيهم الدراجون والمشاة",
+            "text": "تستخدم الاسم الموجود على العلامة للتأكد من أنك تدخل الأراضي الصحيحة وتستمر في مسارك",
             "is_correct": true
           },
           {
-            "text": "فقط للمركبات الآلية لأن المشاة لا يقرؤون العلامات",
+            "text": "تعود فورًا لأن العلامة تعني أنك سلكت الطريق الخاطئ",
             "is_correct": false
           },
-          { "text": "حصرياً للمرور الدولي", "is_correct": false }
+          {
+            "text": "تتجاهل العلامة تمامًا لأنها زخرفية فقط",
+            "is_correct": false
+          }
         ],
-        "explanation": "علامات البلدية إعلامية لجميع مستخدمي الطريق. لا تفرض التزامات محددة لكنها تُعلم عن حدود البلدية."
+        "explanation": "يساعد الاسم الموجود على العلامة السائق على التأكد من أنه يدخل البلدية الصحيحة، وهو أمر مفيد عند البحث عن عنوان أو مسار معين."
       }
     }
   },
@@ -448,63 +475,63 @@
     "type": "IS_IT_ALLOWED",
     "difficulty": "HARD",
     "is_critical": true,
-    "show_sign": true,
+    "show_sign": false,
     "i18n": {
       "NL": {
-        "question": "Als een gemeente een zone 30 instelt vlak na F43 maar er staat geen snelheidsbord meer mag u dan 50 km/h rijden?",
+        "question": "Mag u ervan uitgaan dat een specifieke maximumsnelheid geldt enkel op basis van een bord met een gemeentenaam zoals dit?",
         "choices": [
           {
-            "text": "Nee als de zone 30 geldig is ingesteld is 50 km/h verboden ook al staat er geen extra bord",
+            "text": "Nee, dit bord alleen legt geen maximumsnelheid op; daarvoor moet u een apart snelheidsbord of het bord van de bebouwde kom raadplegen",
             "is_correct": true
           },
           {
-            "text": "Ja zonder snelheidsbord geldt altijd de standaard bebouwde komlimiet van 50 km/h",
+            "text": "Ja, elk gemeentegrensbord bepaalt automatisch een vaste maximumsnelheid voor die gemeente",
             "is_correct": false
           }
         ],
-        "explanation": "Gemeentes kunnen via signalisatie zone 30 instellen. Als die geldig is aangeduid moet u 30 km/h rijden ongeacht of er een extra minnimum bord staat."
+        "explanation": "Een bord met enkel de gemeentenaam identificeert het grondgebied en legt op zichzelf geen maximumsnelheid vast; dit vereist een apart, specifiek verkeersbord."
       },
       "EN": {
-        "question": "If a municipality establishes a zone 30 right after F43 but there is no additional speed sign may you drive at 50 km/h?",
+        "question": "May you assume that a specific speed limit applies based solely on a sign with a municipality name like this one?",
         "choices": [
           {
-            "text": "No if the zone 30 is validly established 50 km/h is forbidden even without an additional sign",
+            "text": "No, this sign alone does not impose any specific speed limit; you must consult a separate speed sign or the built-up area sign for that",
             "is_correct": true
           },
           {
-            "text": "Yes without a speed sign the standard built-up area limit of 50 km/h always applies",
+            "text": "Yes, every municipal boundary sign automatically sets a fixed speed limit for that municipality",
             "is_correct": false
           }
         ],
-        "explanation": "Municipalities can establish zone 30 via signage. If it is validly indicated you must drive at 30 km/h regardless of whether there is an extra sign."
+        "explanation": "A sign showing only the municipality's name identifies the territory and does not by itself set a speed limit; that requires a separate, specific traffic sign."
       },
       "FR": {
-        "question": "Si une commune etablit une zone 30 juste apres F43 mais qu il n y a plus de panneau de vitesse pouvez-vous rouler a 50 km/h ?",
+        "question": "Pouvez-vous supposer qu'une limite de vitesse spécifique s'applique uniquement sur la base d'un panneau portant le nom d'une commune comme celui-ci ?",
         "choices": [
           {
-            "text": "Non si la zone 30 est valablement etablie 50 km/h est interdit meme sans panneau supplementaire",
+            "text": "Non, ce panneau seul n'impose aucune limite de vitesse spécifique; vous devez consulter un panneau de vitesse distinct ou le panneau d'agglomération pour cela",
             "is_correct": true
           },
           {
-            "text": "Oui sans panneau de vitesse la limite standard de 50 km/h en agglomeration s applique toujours",
+            "text": "Oui, chaque panneau de limite de commune fixe automatiquement une vitesse limite pour cette commune",
             "is_correct": false
           }
         ],
-        "explanation": "Les communes peuvent etablir une zone 30 via la signalisation. Si elle est valablement indiquee vous devez rouler a 30 km/h independamment de la presence d un panneau supplementaire."
+        "explanation": "Un panneau indiquant uniquement le nom de la commune identifie le territoire et ne fixe pas de limite de vitesse par lui-même; cela nécessite un panneau de circulation distinct et spécifique."
       },
       "AR": {
-        "question": "إذا أسست بلدية منطقة 30 مباشرة بعد F43 لكن ليس هناك علامة مرورية سرعة إضافية هل يمكنك السير بسرعة 50 كم/ساعة؟",
+        "question": "هل يمكنك أن تفترض وجود حد سرعة معين بناءً فقط على علامة تحمل اسم بلدية مثل هذه؟",
         "choices": [
           {
-            "text": "لا إذا كانت منطقة 30 محددة بشكل قانوني فإن 50 كم/ساعة محظورة حتى بدون علامة مرورية إضافية",
+            "text": "لا، هذه العلامة وحدها لا تفرض أي حد سرعة معين؛ يجب الرجوع إلى علامة سرعة مستقلة أو علامة المنطقة المبنية لذلك",
             "is_correct": true
           },
           {
-            "text": "نعم بدون علامة مرورية سرعة تنطبق دائماً الحد القياسي 50 كم/ساعة للمنطقة المبنية",
+            "text": "نعم، كل علامة حدود بلدية تحدد تلقائيًا سرعة قصوى ثابتة لتلك البلدية",
             "is_correct": false
           }
         ],
-        "explanation": "يمكن للبلديات إنشاء منطقة 30 عبر العلامات. إذا كانت محددة بشكل قانوني يجب السير بسرعة 30 كم/ساعة بغض النظر عن وجود علامة مرورية إضافية."
+        "explanation": "تُستخدم العلامة التي تحمل فقط اسم البلدية للتعرف على الأراضي ولا تحدد بحد ذاتها أي سرعة قصوى؛ يتطلب ذلك علامة مرورية مستقلة ومحددة."
       }
     }
   },
@@ -516,60 +543,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Verandert bord F43 de voorrangsregels op het kruispunt direct na het bord?",
+        "question": "Mag u dit gemeentegrensbord verwarren met het bord dat het begin van de bebouwde kom aanduidt?",
         "choices": [
           {
-            "text": "Nee F43 wijzigt geen voorrangsregels; die worden bepaald door de specifieke verkeerssituatie en borden op het kruispunt",
+            "text": "Nee, het gaat om twee verschillende borden; het bebouwde-kombord heeft wel een juridische betekenis op vlak van snelheid, in tegenstelling tot het gemeentegrensbord",
             "is_correct": true
           },
           {
-            "text": "Ja na F43 geldt altijd voorrang van rechts op alle kruispunten in de gemeente",
+            "text": "Ja, beide borden hebben exact dezelfde juridische betekenis en mogen probleemloos verward worden",
             "is_correct": false
           }
         ],
-        "explanation": "F43 is een informatief gemeentegrensaanduidingsbord. Het wijzigt geen verkeersregels. Voorrang wordt bepaald door B-borden en de situatie ter plaatse."
+        "explanation": "Het gemeentegrensbord informeert enkel over de plaatsnaam, terwijl het bord van de bebouwde kom een apart bord is met een specifieke juridische betekenis voor de snelheid."
       },
       "EN": {
-        "question": "Does sign F43 change the priority rules at the junction immediately after the sign?",
+        "question": "May you confuse this municipal boundary sign with the sign marking the start of a built-up area?",
         "choices": [
           {
-            "text": "No F43 does not change priority rules; those are determined by the specific traffic situation and signs at the junction",
+            "text": "No, these are two different signs; the built-up area sign does have legal significance for speed, unlike the municipal boundary sign",
             "is_correct": true
           },
           {
-            "text": "Yes after F43 priority from the right always applies at all junctions in the municipality",
+            "text": "Yes, both signs have exactly the same legal meaning and can be confused without any issue",
             "is_correct": false
           }
         ],
-        "explanation": "F43 is an informational municipal boundary sign. It does not change traffic rules. Priority is determined by B-signs and the situation on the ground."
+        "explanation": "The municipal boundary sign only informs about the place name, while the built-up area sign is a separate sign with a specific legal significance for speed."
       },
       "FR": {
-        "question": "Le panneau F43 modifie-t-il les regles de priorite au carrefour directement apres le panneau ?",
+        "question": "Pouvez-vous confondre ce panneau de limite de commune avec le panneau marquant le début d'une agglomération ?",
         "choices": [
           {
-            "text": "Non F43 ne modifie pas les regles de priorite; celles-ci sont determinees par la situation de circulation specifique et les panneaux au carrefour",
+            "text": "Non, il s'agit de deux panneaux différents; le panneau d'agglomération a une portée juridique en matière de vitesse, contrairement au panneau de limite de commune",
             "is_correct": true
           },
           {
-            "text": "Oui apres F43 la priorite de droite s applique toujours a tous les carrefours de la commune",
+            "text": "Oui, les deux panneaux ont exactement la même signification juridique et peuvent être confondus sans problème",
             "is_correct": false
           }
         ],
-        "explanation": "F43 est un panneau informatif de delimitation communale. Il ne modifie pas les regles de circulation. La priorite est determinee par les panneaux B et la situation sur le terrain."
+        "explanation": "Le panneau de limite de commune informe uniquement sur le nom du lieu, alors que le panneau d'agglomération est un panneau distinct avec une portée juridique spécifique en matière de vitesse."
       },
       "AR": {
-        "question": "هل تغير علامة مرورية F43 قواعد الأولوية عند التقاطع مباشرة بعد العلامة المرورية؟",
+        "question": "هل يمكنك الخلط بين علامة حدود البلدية هذه وعلامة بداية المنطقة المبنية؟",
         "choices": [
           {
-            "text": "لا F43 لا تغير قواعد الأولوية؛ يحددها الوضع المروري المحدد والعلامات عند التقاطع",
+            "text": "لا، فهما علامتان مختلفتان؛ علامة المنطقة المبنية لها أثر قانوني على السرعة، بخلاف علامة حدود البلدية",
             "is_correct": true
           },
           {
-            "text": "نعم بعد F43 تنطبق دائماً أولوية اليمين في جميع التقاطعات في البلدية",
+            "text": "نعم، تحمل العلامتان نفس المعنى القانوني تمامًا ويمكن الخلط بينهما دون أي مشكلة",
             "is_correct": false
           }
         ],
-        "explanation": "F43 علامة مرورية إعلامية لحدود البلدية. لا تغير قواعد المرور. تحدد الأولوية علامات B والوضع الميداني."
+        "explanation": "تُخبر علامة حدود البلدية فقط عن اسم المكان، بينما علامة المنطقة المبنية علامة مستقلة لها أثر قانوني محدد على السرعة."
       }
     }
   }

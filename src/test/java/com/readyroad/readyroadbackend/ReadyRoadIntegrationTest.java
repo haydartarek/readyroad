@@ -60,12 +60,6 @@ public class ReadyRoadIntegrationTest {
     }
 
     @Test
-    @DisplayName("Bean Test: TrafficSignRepository should be available")
-    public void testTrafficSignRepositoryBean() {
-        assertThat(applicationContext.containsBean("trafficSignRepository")).isTrue();
-    }
-
-    @Test
     @DisplayName("Bean Test: LessonRepository should be available")
     public void testLessonRepositoryBean() {
         assertThat(applicationContext.containsBean("lessonRepository")).isTrue();

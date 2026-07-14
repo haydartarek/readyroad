@@ -67,8 +67,14 @@
             "text": "الوقوف مسموح لكنه محدود بالوقت؛ يجب عليك وضع قرص الوقوف بشكل مرئي على لوحة القيادة مع ضبط وقت الوصول",
             "is_correct": true
           },
-          { "text": "الوقوف محظور إلا بالاشتراك البلدي", "is_correct": false },
-          { "text": "يمكن ركن الدراجات هنا بقفل", "is_correct": false }
+          {
+            "text": "الوقوف محظور إلا بالاشتراك البلدي",
+            "is_correct": false
+          },
+          {
+            "text": "يمكن ركن الدراجات هنا بقفل",
+            "is_correct": false
+          }
         ],
         "explanation": "تُتيح E9a-parkeerschijf الوقوف لكنها تُقيّد مدته. تضبط وقت الوصول على قرص الوقوف ويمكنك الوقوف للمدة القصوى المعروضة على العلامة التكميلية. الوقوف بدون قرص محظور هنا."
       }
@@ -128,7 +134,10 @@
             "text": "Enregistrer l'identité du conducteur",
             "is_correct": false
           },
-          { "text": "Noter le poids maximum du véhicule", "is_correct": false }
+          {
+            "text": "Noter le poids maximum du véhicule",
+            "is_correct": false
+          }
         ],
         "explanation": "Le disque de stationnement est un dispositif mécanique sur lequel vous réglez l'heure d'arrivée. Les agents verbalisateurs le lisent pour vérifier si la durée de stationnement autorisée est déjà écoulée. Sans disque ils ne peuvent pas déterminer l'heure d'arrivée."
       },
@@ -139,8 +148,14 @@
             "text": "تسجيل وقت الوصول حتى يتمكن ضباط الرقابة من التحقق من تجاوز الوقت الأقصى للوقوف",
             "is_correct": true
           },
-          { "text": "تسجيل هوية السائق", "is_correct": false },
-          { "text": "تدوين الحمولة القصوى للمركبة", "is_correct": false }
+          {
+            "text": "تسجيل هوية السائق",
+            "is_correct": false
+          },
+          {
+            "text": "تدوين الحمولة القصوى للمركبة",
+            "is_correct": false
+          }
         ],
         "explanation": "قرص الوقوف جهاز ميكانيكي تضبط عليه وقت الوصول. يقرأه ضباط الرقابة للتحقق مما إذا كانت مدة الوقوف المسموح بها قد انقضت. بدون قرص لا يمكنهم تحديد وقت الوصول."
       }
@@ -376,8 +391,14 @@
             "text": "غرامة وقوف بلدية لتجاوز المدة القصوى للوقوف",
             "is_correct": true
           },
-          { "text": "تكاليف سحب فورية بدون إنذار مسبق", "is_correct": false },
-          { "text": "سحب رخصة القيادة من قِبَل الشرطة", "is_correct": false }
+          {
+            "text": "تكاليف سحب فورية بدون إنذار مسبق",
+            "is_correct": false
+          },
+          {
+            "text": "سحب رخصة القيادة من قِبَل الشرطة",
+            "is_correct": false
+          }
         ],
         "explanation": "تجاوز مدة الوقوف المسموح بها تحت E9a-parkeerschijf يُعرّضك لغرامة وقوف بلدية. السحب مُخصَّص للمخالفات الأكثر خطورة أو جسامة. سحب رخصة القيادة لا ينطبق هنا."
       }
@@ -391,76 +412,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Geldt de parkeerschijfverplichting bij E9a-parkeerschijf ook 's nachts en in het weekend?",
+        "question": "Wanneer geldt de parkeerschijf als de signalisatie geen bijzondere uren vermeldt?",
         "choices": [
           {
-            "text": "Alleen tijdens de uren die op het onderbord staan; buiten die uren is de schijf doorgaans niet verplicht",
+            "text": "Op werkdagen van 9 tot 18 uur, met een maximale parkeerduur van twee uur",
             "is_correct": true
           },
           {
-            "text": "Altijd: 24 uur per dag, 7 dagen per week, ook op feestdagen",
+            "text": "Dag en nacht, zeven dagen per week",
             "is_correct": false
           },
           {
-            "text": "Nooit in het weekend, want dan gelden de verkeersregels niet",
+            "text": "Alleen op zaterdag en zondag",
             "is_correct": false
           }
         ],
-        "explanation": "Het onderbord bij E9a-parkeerschijf geeft de geldingstijden aan, bijvoorbeeld ma–za 9:00–18:00. Buiten die uren is de schijf niet verplicht. Is er geen onderbord, dan geldt de verplichting 24 uur per dag."
+        "explanation": "Dit zijn de wettelijke standaardvoorwaarden. Uren of duur die uitdrukkelijk op de signalisatie staan, vervangen deze standaard."
       },
       "EN": {
-        "question": "Does the disc requirement under E9a-parkeerschijf apply at night and at weekends too?",
+        "question": "When is the parking disc required if the signage states no special hours?",
         "choices": [
           {
-            "text": "Only during the hours shown on the supplementary sign; outside those hours the disc is generally not required",
+            "text": "On working days from 09:00 to 18:00, with a maximum parking time of two hours",
             "is_correct": true
           },
           {
-            "text": "Always: 24 hours a day 7 days a week including public holidays",
+            "text": "Day and night, seven days a week",
             "is_correct": false
           },
           {
-            "text": "Never at weekends because traffic rules do not apply then",
+            "text": "Only on Saturdays and Sundays",
             "is_correct": false
           }
         ],
-        "explanation": "The supplementary sign next to E9a-parkeerschijf shows the applicable times, for example Mon–Sat 09:00–18:00. Outside those hours the disc is not required. If there is no supplementary sign the requirement applies 24 hours a day."
+        "explanation": "These are the statutory default conditions. Hours or a duration expressly shown on the signage replace the default."
       },
       "FR": {
-        "question": "L'obligation du disque sous E9a-parkeerschijf s'applique-t-elle aussi la nuit et le week-end ?",
+        "question": "Quand le disque est-il requis si la signalisation ne mentionne pas d’horaires particuliers ?",
         "choices": [
           {
-            "text": "Seulement pendant les heures indiquées sur le panneau complémentaire ; en dehors de ces heures le disque n'est généralement pas obligatoire",
+            "text": "Les jours ouvrables de 9 h à 18 h, pour une durée maximale de deux heures",
             "is_correct": true
           },
           {
-            "text": "Toujours : 24 heures sur 24 7 jours sur 7 y compris les jours fériés",
+            "text": "Jour et nuit, sept jours sur sept",
             "is_correct": false
           },
           {
-            "text": "Jamais le week-end car les règles de circulation ne s'appliquent pas alors",
+            "text": "Uniquement le samedi et le dimanche",
             "is_correct": false
           }
         ],
-        "explanation": "Le panneau complémentaire indique les heures applicables, par exemple lun–sam 9h00–18h00. En dehors de ces heures le disque n'est pas obligatoire. En l'absence de panneau complémentaire l'obligation s'applique 24 heures sur 24."
+        "explanation": "Il s’agit des conditions légales par défaut. Les heures ou la durée expressément indiquées par la signalisation les remplacent."
       },
       "AR": {
-        "question": "هل تنطبق متطلبات القرص في E9a-parkeerschijf ليلاً وفي عطلة نهاية الأسبوع أيضاً؟",
+        "question": "متى يُطلب قرص الوقوف إذا لم تذكر الإشارات ساعات خاصة؟",
         "choices": [
           {
-            "text": "فقط خلال الساعات المعروضة على العلامة التكميلية؛ خارج تلك الساعات لا يُشترط القرص عادةً",
+            "text": "في أيام العمل من 9:00 حتى 18:00 ولمدة قصوى قدرها ساعتان",
             "is_correct": true
           },
           {
-            "text": "دائماً: 24 ساعة يومياً 7 أيام أسبوعياً بما فيها الأعياد الرسمية",
+            "text": "ليلاً ونهاراً طوال أيام الأسبوع",
             "is_correct": false
           },
           {
-            "text": "أبداً في عطلة نهاية الأسبوع لأن قواعد المرور لا تنطبق حينئذٍ",
+            "text": "يومي السبت والأحد فقط",
             "is_correct": false
           }
         ],
-        "explanation": "العلامة التكميلية بجوار E9a-parkeerschijf تُظهر أوقات السريان، مثلاً الاثنين–السبت 9:00–18:00. خارج تلك الساعات لا يُشترط القرص. في غياب علامة تكميلية تسري الإلزامية 24 ساعة يومياً."
+        "explanation": "هذه هي الشروط القانونية الافتراضية، وتحل محلها الساعات أو المدة المذكورة صراحةً على الإشارات."
       }
     }
   },
@@ -472,60 +493,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U parkeert bij E9a-parkeerschijf maar heeft uw parkeerschijf vergeten. De parkeerplaats is volledig leeg. Mag u toch parkeren?",
+        "question": "U parkeert tijdens de uren waarin de schijf verplicht is maar hebt geen parkeerschijf. Mag u blijven staan omdat de parking leeg is?",
         "choices": [
           {
-            "text": "Neen: de schijfverplichting geldt zodra u parkeert, ongeacht of andere plaatsen bezet zijn",
+            "text": "Neen, de schijfplicht geldt ongeacht hoeveel plaatsen bezet zijn",
             "is_correct": true
           },
           {
-            "text": "Ja: als de parkeerplaats leeg is, is er geen reden voor controle en riskeert u niets",
+            "text": "Ja, zolang minstens de helft van de plaatsen vrij is",
             "is_correct": false
           }
         ],
-        "explanation": "De schijfverplichting staat volledig los van de bezettingsgraad. Handhavers kunnen altijd langskomen en een retributie uitschrijven. U bent altijd verplicht de parkeerschijf te plaatsen, ook als u de enige auto bent."
+        "explanation": "Tijdens de toepasselijke uren moet de schijf correct zichtbaar zijn. De bezettingsgraad verandert die verplichting niet."
       },
       "EN": {
-        "question": "You park under E9a-parkeerschijf but have forgotten your parking disc. The car park is completely empty. May you park anyway?",
+        "question": "You park during the hours when the disc is required but have no parking disc. May you stay because the car park is empty?",
         "choices": [
           {
-            "text": "No: the disc requirement applies as soon as you park regardless of whether other spaces are occupied",
+            "text": "No, the disc requirement applies regardless of occupancy",
             "is_correct": true
           },
           {
-            "text": "Yes: if the car park is empty there is no reason for enforcement and you risk nothing",
+            "text": "Yes, provided at least half the spaces are empty",
             "is_correct": false
           }
         ],
-        "explanation": "The disc requirement is completely independent of the occupancy rate. Enforcement officers can always come by and issue a fine. You are always required to place the parking disc even if you are the only car."
+        "explanation": "During the applicable hours, the disc must be correctly displayed. Occupancy does not alter that requirement."
       },
       "FR": {
-        "question": "Vous vous garez sous E9a-parkeerschijf mais vous avez oublié votre disque de stationnement. Le parking est complètement vide. Pouvez-vous quand même vous garer ?",
+        "question": "Vous stationnez pendant les heures où le disque est obligatoire mais vous n’en avez pas. Pouvez-vous rester parce que le parking est vide ?",
         "choices": [
           {
-            "text": "Non : l'obligation du disque s'applique dès que vous vous garez quel que soit le taux d'occupation",
+            "text": "Non, l’obligation du disque s’applique quel que soit le taux d’occupation",
             "is_correct": true
           },
           {
-            "text": "Oui : si le parking est vide il n'y a aucune raison de contrôle et vous ne risquez rien",
+            "text": "Oui, si au moins la moitié des places sont libres",
             "is_correct": false
           }
         ],
-        "explanation": "L'obligation du disque est totalement indépendante du taux d'occupation. Les agents verbalisateurs peuvent toujours passer et établir une rétribution. Vous êtes toujours obligé de placer le disque de stationnement même si vous êtes le seul véhicule."
+        "explanation": "Pendant les heures d’application, le disque doit être correctement visible. Le taux d’occupation ne modifie pas cette obligation."
       },
       "AR": {
-        "question": "تقف تحت E9a-parkeerschijf لكنك نسيت قرص الوقوف. موقف السيارات خالٍ تماماً. هل يجوز لك الوقوف على أي حال؟",
+        "question": "توقف أثناء الساعات التي يُطلب فيها القرص لكن لا تملكه. هل يجوز البقاء لأن الموقف فارغ؟",
         "choices": [
           {
-            "text": "لا: شرط القرص ينطبق بمجرد الوقوف بصرف النظر عن إشغال الأماكن الأخرى",
+            "text": "لا، يسري شرط القرص بصرف النظر عن إشغال الموقف",
             "is_correct": true
           },
           {
-            "text": "نعم: إذا كان الموقف خالياً لا يوجد سبب للتفتيش ولا تخاطر بشيء",
+            "text": "نعم، إذا كان نصف الأماكن على الأقل فارغاً",
             "is_correct": false
           }
         ],
-        "explanation": "شرط القرص مستقل تماماً عن معدل الإشغال. يمكن لضباط الرقابة المرور في أي وقت وإصدار غرامة. يجب دائماً وضع قرص الوقوف حتى لو كنت المركبة الوحيدة."
+        "explanation": "يجب إظهار القرص بصورة صحيحة خلال ساعات السريان، ولا يغيّر عدد الأماكن المشغولة هذا الالتزام."
       }
     }
   },
@@ -537,60 +558,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U heeft uw parkeerschijf ingesteld en geparkeerd. Een uur later komt u terug en stelt de schijf opnieuw in op het huidige tijdstip. Is dit toegestaan?",
+        "question": "U hebt de parkeerschijf ingesteld. Een uur later wijzigt u de tijd zonder de parkeerplaats te verlaten. Is dat toegelaten?",
         "choices": [
           {
-            "text": "Neen: de schijf mag uitsluitend bij aankomst worden ingesteld; opnieuw instellen nadien is fraude en verboden",
+            "text": "Neen, de aanduiding mag niet worden gewijzigd voordat het voertuig de parkeerplaats heeft verlaten",
             "is_correct": true
           },
           {
-            "text": "Ja: u mag de schijf bijstellen zolang u de maximumtijd nog niet heeft overschreden",
+            "text": "Ja, u mag de tijd één keer bijstellen",
             "is_correct": false
           }
         ],
-        "explanation": "De parkeerschijf mag enkel bij aankomst worden ingesteld. Wie de schijf later bijstelt om de parkeertijd te verlengen pleegt fraude. Dit is een overtreding die apart wordt beboet naast de eventuele overschrijding van de parkeertijd."
+        "explanation": "De wegcode verbiedt het wijzigen van de aanduiding zolang het voertuig geparkeerd blijft. Verlaat de plaats uiterlijk bij het einde van de toegelaten duur."
       },
       "EN": {
-        "question": "You set your parking disc and parked. An hour later you come back and reset the disc to the current time. Is this permitted?",
+        "question": "You set the parking disc. One hour later you change the time without leaving the space. Is that permitted?",
         "choices": [
           {
-            "text": "No: the disc may only be set upon arrival; resetting it afterwards is fraud and forbidden",
+            "text": "No, the indication may not be changed before the vehicle has left the parking space",
             "is_correct": true
           },
           {
-            "text": "Yes: you may adjust the disc as long as you have not yet exceeded the maximum time",
+            "text": "Yes, the time may be adjusted once",
             "is_correct": false
           }
         ],
-        "explanation": "The parking disc may only be set upon arrival. Anyone who readjusts the disc later to extend the parking time commits fraud. This is a separate offence that is fined in addition to any possible exceeding of the parking time."
+        "explanation": "The traffic rules prohibit changing the indication while the vehicle remains parked. Leave the space no later than the end of the permitted period."
       },
       "FR": {
-        "question": "Vous avez réglé votre disque de stationnement et vous vous êtes garé. Une heure plus tard vous revenez et réglez à nouveau le disque à l'heure actuelle. Est-ce permis ?",
+        "question": "Vous avez réglé le disque. Une heure plus tard, vous modifiez l’heure sans quitter la place. Est-ce autorisé ?",
         "choices": [
           {
-            "text": "Non : le disque ne peut être réglé qu'à l'arrivée ; le réajuster ensuite est une fraude et est interdit",
+            "text": "Non, l’indication ne peut pas être modifiée avant que le véhicule ait quitté la place",
             "is_correct": true
           },
           {
-            "text": "Oui : vous pouvez ajuster le disque tant que vous n'avez pas encore dépassé le temps maximum",
+            "text": "Oui, l’heure peut être corrigée une fois",
             "is_correct": false
           }
         ],
-        "explanation": "Le disque de stationnement ne peut être réglé qu'à l'arrivée. Quiconque réajuste le disque ensuite pour prolonger la durée de stationnement commet une fraude. Il s'agit d'une infraction séparée qui est sanctionnée en plus d'un éventuel dépassement de la durée de stationnement."
+        "explanation": "Le code interdit de modifier l’indication tant que le véhicule reste stationné. Quittez la place au plus tard à l’expiration de la durée autorisée."
       },
       "AR": {
-        "question": "ضبطت قرص الوقوف ووقفت. بعد ساعة عدت وأعدت ضبط القرص على الوقت الحالي. هل هذا مسموح؟",
+        "question": "ضبطت قرص الوقوف ثم غيّرت الوقت بعد ساعة دون مغادرة المكان. هل هذا مسموح؟",
         "choices": [
           {
-            "text": "لا: لا يجوز ضبط القرص إلا عند الوصول؛ إعادة ضبطه لاحقاً تُعدّ احتيالاً وهي محظورة",
+            "text": "لا، لا يجوز تغيير الوقت قبل أن تغادر المركبة مكان الوقوف",
             "is_correct": true
           },
           {
-            "text": "نعم: يمكن تعديل القرص طالما لم تتجاوز الوقت الأقصى بعد",
+            "text": "نعم، يجوز تعديل الوقت مرة واحدة",
             "is_correct": false
           }
         ],
-        "explanation": "لا يجوز ضبط قرص الوقوف إلا عند الوصول. من يُعيد ضبط القرص لاحقاً لتمديد مدة الوقوف يرتكب احتيالاً. هذه مخالفة مستقلة يُعاقب عليها بالإضافة إلى أي تجاوز محتمل لمدة الوقوف."
+        "explanation": "تحظر القواعد تغيير الوقت ما دامت المركبة متوقفة، ويجب مغادرة المكان في موعد أقصاه انتهاء المدة المسموحة."
       }
     }
   }

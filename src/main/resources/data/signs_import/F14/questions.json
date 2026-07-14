@@ -7,121 +7,154 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat betekent bord F14 opstelvak voor fietsers?",
+        "question": "U nadert een kruispunt en ziet dit bord vlak voor het verkeerslicht. Wat betekent dit voor de weg voor u?",
         "choices": [
           {
-            "text": "Het markeert een vooropgeplaatst wachtvak aan verkeerslichten waar fietsers zich voor motorvoertuigen kunnen opstellen",
+            "text": "Er is een opstelvak voor fietsers en bestuurders van tweewielige bromfietsen vlak voor het kruispunt",
             "is_correct": true
           },
           {
-            "text": "Het verbiedt fietsers om bij rood licht te stoppen voor de stopstreep",
+            "text": "De rijbaan wordt verderop versmald tot één strook",
             "is_correct": false
           },
           {
-            "text": "Het geeft een fietspad aan dat voor auto's verboden is",
+            "text": "Er komt een verplichte omleiding voor gemotoriseerd verkeer",
             "is_correct": false
           }
         ],
-        "explanation": "Het F14-opstelvak laat fietsers toe zich bij rood licht voor de motorvoertuigen op te stellen zodat zij als eersten kunnen wegrijden wanneer het licht op groen gaat."
+        "explanation": "Dit bord kondigt een opstelvak aan dat exclusief bestemd is voor fietsers en bestuurders van tweewielige bromfietsen om vooraan te wachten bij het kruispunt."
       },
       "EN": {
-        "question": "What does sign F14 advance stop box for cyclists mean?",
+        "question": "You are approaching an intersection and see this sign right before the traffic light. What does it mean for the road ahead?",
         "choices": [
           {
-            "text": "It marks an advance waiting area at traffic lights where cyclists can position themselves in front of motor vehicles",
+            "text": "There is a reserved waiting box for cyclists and riders of two-wheeled mopeds right before the intersection",
             "is_correct": true
           },
           {
-            "text": "It prohibits cyclists from stopping before the stop line at a red light",
+            "text": "The road narrows to a single lane further ahead",
             "is_correct": false
           },
           {
-            "text": "It indicates a cycle path forbidden to cars",
+            "text": "A mandatory diversion for motor traffic is coming up",
             "is_correct": false
           }
         ],
-        "explanation": "The F14 advance stop box allows cyclists to position themselves ahead of motor vehicles at a red light so they can move off first when the light turns green."
+        "explanation": "This sign announces a reserved waiting box exclusively for cyclists and riders of two-wheeled mopeds to wait at the front of the intersection."
       },
       "FR": {
-        "question": "Que signifie le panneau F14 sas velo ?",
+        "question": "Vous approchez d'un carrefour et voyez ce panneau juste avant le feu de circulation. Que signifie-t-il pour la route devant vous ?",
         "choices": [
           {
-            "text": "Il marque une zone d attente avancee aux feux de signalisation ou les cyclistes peuvent se placer devant les vehicules a moteur",
+            "text": "Il y a un sas d'attente réservé aux cyclistes et conducteurs de cyclomoteurs à deux roues juste avant le carrefour",
             "is_correct": true
           },
           {
-            "text": "Il interdit aux cyclistes de s arreter avant la ligne d arret au feu rouge",
+            "text": "La route se rétrécit à une seule voie plus loin",
             "is_correct": false
           },
           {
-            "text": "Il indique une piste cyclable interdite aux voitures",
+            "text": "Une déviation obligatoire pour la circulation motorisée arrive",
             "is_correct": false
           }
         ],
-        "explanation": "Le sas velo F14 permet aux cyclistes de se positionner devant les vehicules a moteur au feu rouge afin de pouvoir demarrer en premier quand le feu passe au vert."
+        "explanation": "Ce panneau annonce un sas d'attente réservé exclusivement aux cyclistes et conducteurs de cyclomoteurs à deux roues pour attendre à l'avant du carrefour."
       },
       "AR": {
-        "question": "ما معنى هذه العلامة المرورية؟",
+        "question": "أنت تقترب من تقاطع ولاحظت هذه العلامة مباشرة قبل إشارة المرور، فماذا تعني للطريق أمامك؟",
         "choices": [
           {
-            "text": "تحدد منطقة انتظار متقدمة عند إشارات المرور حيث يمكن للدراجين التموضع أمام المركبات الآلية",
+            "text": "توجد منطقة انتظار مخصصة لراكبي الدراجات وقائدي الدراجات النارية الخفيفة ذات العجلتين مباشرة قبل التقاطع",
             "is_correct": true
           },
+          { "text": "الطريق يضيق إلى مسار واحد بعد قليل", "is_correct": false },
           {
-            "text": "تحظر على الدراجين التوقف أمام خط التوقف عند الضوء الأحمر",
-            "is_correct": false
-          },
-          {
-            "text": "تشير إلى مسار دراجات محظور على السيارات",
+            "text": "يوجد تحويل إلزامي قادم للمركبات المحرَّكة",
             "is_correct": false
           }
         ],
-        "explanation": "يسمح صندوق التوقف المتقدم F14 للدراجين بالتموضع أمام المركبات الآلية عند الضوء الأحمر حتى يتمكنوا من الانطلاق أولاً عند تحول الضوء إلى الأخضر."
+        "explanation": "تعلن هذه العلامة عن منطقة انتظار مخصصة حصريًا لراكبي الدراجات وقائدي الدراجات النارية الخفيفة ذات العجلتين للانتظار في مقدمة التقاطع."
       }
     }
   },
   {
     "question_id": "F14_Q02",
-    "type": "WHICH_SIGN",
+    "type": "WHAT_MUST_YOU_DO",
     "difficulty": "EASY",
     "is_critical": false,
-    "show_sign": true,
+    "show_sign": false,
     "i18n": {
       "NL": {
-        "question": "Tot welke categorie behoort bord F14?",
+        "question": "Als bestuurder van een auto stopt u voor het rode licht bij dit bord. Wat moet u doen?",
         "choices": [
-          { "text": "informatieve borden", "is_correct": true },
-          { "text": "voorrangsborden", "is_correct": false },
-          { "text": "gebodsborden", "is_correct": false }
+          {
+            "text": "Stoppen voor het opstelvak en het volledig vrijlaten voor fietsers en bestuurders van tweewielige bromfietsen",
+            "is_correct": true
+          },
+          {
+            "text": "Zo dicht mogelijk bij het verkeerslicht stoppen, ook al staat u dan op het opstelvak",
+            "is_correct": false
+          },
+          {
+            "text": "Het opstelvak gebruiken als extra ruimte om sneller te kunnen optrekken",
+            "is_correct": false
+          }
         ],
-        "explanation": "F14 behoort tot deze categorie informatieve markeringsborden."
+        "explanation": "Het opstelvak moet volledig vrij blijven, dus auto's moeten stoppen vóór dit vak en niet erop of erin gaan staan."
       },
       "EN": {
-        "question": "Which category does sign F14 belong to?",
+        "question": "As a car driver, you stop at the red light near this sign. What must you do?",
         "choices": [
-          { "text": "information signs", "is_correct": true },
-          { "text": "priority signs", "is_correct": false },
-          { "text": "mandatory signs", "is_correct": false }
+          {
+            "text": "Stop before the reserved box and leave it entirely clear for cyclists and riders of two-wheeled mopeds",
+            "is_correct": true
+          },
+          {
+            "text": "Stop as close as possible to the traffic light, even if that means standing on the box",
+            "is_correct": false
+          },
+          {
+            "text": "Use the box as extra space to be able to pull away faster",
+            "is_correct": false
+          }
         ],
-        "explanation": "F14 belongs to this category of information and marking signs."
+        "explanation": "The reserved box must stay completely clear, so cars must stop before it and never position themselves on or in it."
       },
       "FR": {
-        "question": "A quelle categorie appartient le panneau F14 ?",
+        "question": "En tant que conducteur de voiture, vous vous arrêtez au feu rouge près de ce panneau. Que devez-vous faire ?",
         "choices": [
-          { "text": "panneaux d information", "is_correct": true },
-          { "text": "panneaux de priorite", "is_correct": false },
-          { "text": "panneaux d obligation", "is_correct": false }
+          {
+            "text": "Vous arrêter avant le sas et le laisser entièrement libre pour les cyclistes et conducteurs de cyclomoteurs à deux roues",
+            "is_correct": true
+          },
+          {
+            "text": "Vous arrêter le plus près possible du feu, même si cela signifie être sur le sas",
+            "is_correct": false
+          },
+          {
+            "text": "Utiliser le sas comme espace supplémentaire pour démarrer plus vite",
+            "is_correct": false
+          }
         ],
-        "explanation": "F14 appartient à cette catégorie des panneaux d information et de marquage."
+        "explanation": "Le sas doit rester entièrement libre, les voitures doivent donc s'arrêter avant celui-ci et ne jamais s'y positionner."
       },
       "AR": {
-        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
+        "question": "كسائق سيارة، توقفت عند الإشارة الحمراء قرب هذه العلامة، فماذا يجب عليك؟",
         "choices": [
-          { "text": "العلامات الإرشادية", "is_correct": true },
-          { "text": "علامات الأولوية", "is_correct": false },
-          { "text": "العلامات الإلزامية", "is_correct": false }
+          {
+            "text": "التوقف قبل منطقة الانتظار وتركها خالية تمامًا لراكبي الدراجات وقائدي الدراجات النارية الخفيفة ذات العجلتين",
+            "is_correct": true
+          },
+          {
+            "text": "التوقف بأقرب مسافة ممكنة من الإشارة حتى لو كان ذلك يعني الوقوف داخل المنطقة",
+            "is_correct": false
+          },
+          {
+            "text": "استخدام منطقة الانتظار كمساحة إضافية للانطلاق بشكل أسرع",
+            "is_correct": false
+          }
         ],
-        "explanation": "تنتمي F14 إلى هذه الفئة من علامات الإعلام والتعليم."
+        "explanation": "يجب أن تبقى منطقة الانتظار خالية تمامًا، لذا يجب على السيارات التوقف قبلها وعدم التموضع فيها أبدًا."
       }
     }
   },
@@ -133,70 +166,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Welk gevaar vermijdt het F14-opstelvak?",
+        "question": "Wat is het gevaar als u als bestuurder toch in het opstelvak stopt?",
         "choices": [
           {
-            "text": "Het vermijdt dat fietsers worden ingesloten door optrekkende motorvoertuigen waardoor ze kwetsbaar zijn",
+            "text": "Fietsers en bestuurders van tweewielige bromfietsen kunnen niet veilig vooraan opstellen en worden gedwongen om u onveilig te omzeilen",
             "is_correct": true
           },
           {
-            "text": "Het vermijdt files aan verkeerslichten",
+            "text": "Uw voertuig raakt beschadigd door de wegmarkering van het vak",
             "is_correct": false
           },
           {
-            "text": "Het vermijdt dat auto's door rood rijden",
+            "text": "Het verkeerslicht springt hierdoor langer op rood",
             "is_correct": false
           }
         ],
-        "explanation": "Zonder opstelvak starten fietsers achter auto's en worden ze omgeven door verkeer bij het optrekken. Het F14-vak geeft hen een veilige startpositie."
+        "explanation": "Wanneer het vak bezet is, moeten fietsers rond geparkeerde of stilstaande voertuigen manoeuvreren, wat gevaarlijke situaties met het overige verkeer kan veroorzaken."
       },
       "EN": {
-        "question": "What hazard does the F14 advance stop box prevent?",
+        "question": "What is the danger if you, as a driver, still stop in the reserved box?",
         "choices": [
           {
-            "text": "It prevents cyclists from being boxed in by accelerating motor vehicles making them vulnerable",
+            "text": "Cyclists and riders of two-wheeled mopeds cannot position themselves safely at the front and are forced to move around you unsafely",
             "is_correct": true
           },
           {
-            "text": "It prevents traffic jams at traffic lights",
+            "text": "Your vehicle gets damaged by the box's road markings",
             "is_correct": false
           },
           {
-            "text": "It prevents cars from running red lights",
+            "text": "The traffic light stays red for a longer period because of it",
             "is_correct": false
           }
         ],
-        "explanation": "Without the advance box cyclists start behind cars and are surrounded by traffic when pulling away. The F14 box gives them a safe starting position."
+        "explanation": "When the box is occupied, cyclists must manoeuvre around the stopped vehicle, which can create dangerous situations with other traffic."
       },
       "FR": {
-        "question": "Quel danger le sas velo F14 evite-t-il ?",
+        "question": "Quel est le danger si, en tant que conducteur, vous vous arrêtez malgré tout dans le sas ?",
         "choices": [
           {
-            "text": "Il evite que les cyclistes soient encercles par des vehicules a moteur en acceleration ce qui les rend vulnerables",
+            "text": "Les cyclistes et conducteurs de cyclomoteurs à deux roues ne peuvent pas se placer en sécurité à l'avant et sont forcés de vous contourner dangereusement",
             "is_correct": true
           },
           {
-            "text": "Il evite les embouteillages aux feux de signalisation",
+            "text": "Votre véhicule est endommagé par le marquage au sol du sas",
             "is_correct": false
           },
           {
-            "text": "Il evite que les voitures brulent les feux rouges",
+            "text": "Le feu de circulation reste plus longtemps au rouge à cause de cela",
             "is_correct": false
           }
         ],
-        "explanation": "Sans le sas les cyclistes demarrent derriere les voitures et se retrouvent entourés de trafic lors du demarrage. Le sas F14 leur donne une position de depart sure."
+        "explanation": "Lorsque le sas est occupé, les cyclistes doivent contourner le véhicule arrêté, ce qui peut créer des situations dangereuses avec le reste de la circulation."
       },
       "AR": {
-        "question": "ما هو الخطر الذي تشير إليه هذه العلامة المرورية؟",
+        "question": "ما الخطر إذا توقفت كسائق داخل منطقة الانتظار المخصصة؟",
         "choices": [
           {
-            "text": "يمنع محاصرة الدراجين من قبل المركبات الآلية المتسارعة مما يجعلهم عرضة للخطر",
+            "text": "لا يستطيع راكبو الدراجات التموضع بأمان في المقدمة ويُضطرون للالتفاف حولك بشكل غير آمن",
             "is_correct": true
           },
-          { "text": "يمنع الازدحام عند إشارات المرور", "is_correct": false },
-          { "text": "يمنع السيارات من تجاوز الضوء الأحمر", "is_correct": false }
+          {
+            "text": "تتضرر مركبتك بسبب علامات الطريق الخاصة بالمنطقة",
+            "is_correct": false
+          },
+          {
+            "text": "تبقى إشارة المرور حمراء لفترة أطول بسبب ذلك",
+            "is_correct": false
+          }
         ],
-        "explanation": "بدون الصندوق يبدأ الدراجون خلف السيارات ويحاط بهم من كل جانب عند الانطلاق. يمنحهم صندوق F14 موضع بداية آمناً."
+        "explanation": "عند احتلال منطقة الانتظار، يُضطر راكبو الدراجات للالتفاف حول المركبة المتوقفة، مما قد يخلق أوضاعًا خطيرة مع بقية حركة المرور."
       }
     }
   },
@@ -205,241 +244,235 @@
     "type": "WHAT_MUST_YOU_DO",
     "difficulty": "MEDIUM",
     "is_critical": false,
-    "show_sign": true,
+    "show_sign": false,
     "i18n": {
       "NL": {
-        "question": "U rijdt een personenwagen en nadert een verkeerslicht met F14-opstelvak voor fietsers. Het licht staat op rood. Wat doet u?",
+        "question": "Je wacht met de auto voor een rood licht en vóór je ligt dit opstelvak. Wat moet je doen?",
         "choices": [
           {
-            "text": "Stoppen voor het opstelvak en het vak leeg laten voor fietsers",
+            "text": "Vóór het opstelvak stoppen en het volledig vrijlaten",
             "is_correct": true
           },
           {
-            "text": "In het opstelvak rijden want er zijn op dat moment geen fietsers",
+            "text": "In het opstelvak rijden om dichter bij het verkeerslicht te staan",
             "is_correct": false
           },
           {
-            "text": "Over het opstelvak heen rijden als u als eerste wil vertrekken bij groen",
+            "text": "Naast de gebruikers in het opstelvak stoppen",
             "is_correct": false
           }
         ],
-        "explanation": "Motorvoertuigen moeten stoppen voor het F14-opstelvak. Het in of over het vak rijden is verboden ook als er geen fietsers aanwezig zijn."
+        "explanation": "Bestuurders van andere voertuigen moeten vóór het opstelvak stoppen, zodat het beschikbaar blijft voor fietsers en bestuurders van tweewielige bromfietsen."
       },
       "EN": {
-        "question": "You are driving a car and approach a traffic light with an F14 advance stop box. The light is red. What do you do?",
+        "question": "You are waiting in a car at a red light and this box is in front of you. What must you do?",
         "choices": [
           {
-            "text": "Stop before the advance box and leave it clear for cyclists",
+            "text": "Stop before the box and keep it completely clear",
             "is_correct": true
           },
           {
-            "text": "Drive into the advance box because there are no cyclists at that moment",
+            "text": "Enter the box to wait closer to the traffic light",
             "is_correct": false
           },
-          {
-            "text": "Drive over the advance box if you want to be first when the light turns green",
-            "is_correct": false
-          }
+          { "text": "Stop beside the users waiting inside the box", "is_correct": false }
         ],
-        "explanation": "Motor vehicles must stop before the F14 advance stop box. Driving into or over the box is forbidden even if no cyclists are present."
+        "explanation": "Drivers of other vehicles must stop before the box so that it remains available to cyclists and riders of two-wheeled mopeds."
       },
       "FR": {
-        "question": "Vous conduisez une voiture et approchez un feu de signalisation avec un sas velo F14. Le feu est rouge. Que faites-vous ?",
+        "question": "Vous attendez en voiture devant un feu rouge et ce sas se trouve devant vous. Que devez-vous faire ?",
         "choices": [
           {
-            "text": "S arreter avant le sas et le laisser libre pour les cyclistes",
+            "text": "S'arrêter avant le sas et le laisser entièrement libre",
             "is_correct": true
           },
           {
-            "text": "Entrer dans le sas car il n y a pas de cyclistes a ce moment",
+            "text": "Entrer dans le sas pour attendre plus près du feu",
             "is_correct": false
           },
           {
-            "text": "Passer par-dessus le sas si vous voulez partir en premier au vert",
+            "text": "S'arrêter à côté des usagers qui attendent dans le sas",
             "is_correct": false
           }
         ],
-        "explanation": "Les vehicules a moteur doivent s arreter avant le sas velo F14. Entrer dans le sas ou le traverser est interdit meme si aucun cycliste n est present."
+        "explanation": "Les conducteurs des autres véhicules doivent s'arrêter avant le sas afin qu'il reste disponible pour les cyclistes et les conducteurs de cyclomoteurs à deux roues."
       },
       "AR": {
-        "question": "تقود سيارة وتقترب من إشارة مرور تحتوي على صندوق توقف متقدم F14. الضوء أحمر. ماذا تفعل؟",
+        "question": "أنت تنتظر بسيارة عند إشارة حمراء وتقع منطقة الانتظار هذه أمامك. ماذا يجب أن تفعل؟",
         "choices": [
           {
-            "text": "توقف قبل الصندوق واتركه فارغاً للدراجين",
+            "text": "التوقف قبل منطقة الانتظار وتركها خالية تمامًا",
             "is_correct": true
           },
           {
-            "text": "ادخل إلى الصندوق لأنه لا يوجد دراجون في هذه اللحظة",
+            "text": "الدخول إلى المنطقة للانتظار بالقرب من الإشارة",
             "is_correct": false
           },
-          {
-            "text": "مر فوق الصندوق إذا أردت أن تكون الأول عند تحول الضوء إلى الأخضر",
-            "is_correct": false
-          }
+          { "text": "التوقف بجانب المستخدمين المنتظرين داخل المنطقة", "is_correct": false }
         ],
-        "explanation": "يجب على المركبات الآلية التوقف قبل صندوق التوقف المتقدم F14. الدخول إليه أو عبوره محظور حتى لو لم يكن هناك دراجون."
+        "explanation": "يجب على سائقي المركبات الأخرى التوقف قبل المنطقة لكي تبقى متاحة لراكبي الدراجات الهوائية وقائدي الدراجات النارية الخفيفة ذات العجلتين."
       }
     }
   },
   {
     "question_id": "F14_Q05",
-    "type": "WHAT_MUST_YOU_DO",
+    "type": "WHAT_HAPPENS_IF",
     "difficulty": "MEDIUM",
     "is_critical": false,
-    "show_sign": true,
+    "show_sign": false,
     "i18n": {
       "NL": {
-        "question": "Een fietser arriveert bij rood licht waar een F14-opstelvak is. Mag de fietser vooraan gaan staan?",
+        "question": "Wat kan er gebeuren als een bestuurder van een auto het opstelvak blokkeert op het moment dat het licht op groen springt?",
         "choices": [
           {
-            "text": "Ja de fietser mag en moet het opstelvak benutten om zich voor de auto's op te stellen",
+            "text": "Fietsers moeten vanaf een positie achter of naast de auto vertrekken, wat hun zichtbaarheid en veiligheid vermindert",
             "is_correct": true
           },
           {
-            "text": "Nee de fietser moet achter de gewone stopstreep blijven",
+            "text": "Er gebeurt niets bijzonders, want fietsers hebben toch voorrang op elk moment",
             "is_correct": false
           },
           {
-            "text": "Ja maar alleen als alle auto's al gestopt zijn",
+            "text": "Het verkeerslicht schakelt automatisch terug naar rood",
             "is_correct": false
           }
         ],
-        "explanation": "Het F14-vak bestaat precies om fietsers toe te laten vooraan te stellen bij rood. Fietsers mogen het vak altijd gebruiken."
+        "explanation": "Als het vak geblokkeerd is, verliezen fietsers hun voorsprong en zichtbare startpositie, wat het risico op een aanrijding bij het optrekken vergroot."
       },
       "EN": {
-        "question": "A cyclist arrives at a red light where there is an F14 advance stop box. May the cyclist stand at the front?",
+        "question": "What can happen if a car driver blocks the reserved box right when the light turns green?",
         "choices": [
           {
-            "text": "Yes the cyclist may and should use the advance stop box to position in front of the cars",
+            "text": "Cyclists must start from behind or beside the car, reducing their visibility and safety",
             "is_correct": true
           },
           {
-            "text": "No the cyclist must stay behind the regular stop line",
+            "text": "Nothing special happens, because cyclists always have priority at every moment",
             "is_correct": false
           },
           {
-            "text": "Yes but only once all cars have already stopped",
+            "text": "The traffic light automatically switches back to red",
             "is_correct": false
           }
         ],
-        "explanation": "The F14 box exists precisely to allow cyclists to position at the front at a red light. Cyclists may always use the box."
+        "explanation": "If the box is blocked, cyclists lose their head start and visible starting position, increasing the risk of a collision when pulling away."
       },
       "FR": {
-        "question": "Un cycliste arrive a un feu rouge ou il y a un sas velo F14. Le cycliste peut-il se placer en tete ?",
+        "question": "Que peut-il se passer si un conducteur de voiture bloque le sas au moment où le feu passe au vert ?",
         "choices": [
           {
-            "text": "Oui le cycliste peut et doit utiliser le sas pour se placer devant les voitures",
+            "text": "Les cyclistes doivent démarrer depuis une position derrière ou à côté de la voiture, ce qui réduit leur visibilité et leur sécurité",
             "is_correct": true
           },
           {
-            "text": "Non le cycliste doit rester derriere la ligne d arret ordinaire",
+            "text": "Rien de particulier ne se passe, car les cyclistes ont toujours la priorité à tout moment",
             "is_correct": false
           },
           {
-            "text": "Oui mais seulement quand toutes les voitures sont deja arretees",
+            "text": "Le feu de circulation repasse automatiquement au rouge",
             "is_correct": false
           }
         ],
-        "explanation": "Le sas F14 existe precisement pour permettre aux cyclistes de se placer en tete au feu rouge. Les cyclistes peuvent toujours utiliser le sas."
+        "explanation": "Si le sas est bloqué, les cyclistes perdent leur avance et leur position de départ visible, augmentant le risque de collision au démarrage."
       },
       "AR": {
-        "question": "يصل دراج إلى ضوء أحمر يوجد فيه صندوق توقف متقدم F14. هل يمكن للدراج الوقوف في المقدمة؟",
+        "question": "ماذا يمكن أن يحدث إذا حجب سائق سيارة منطقة الانتظار في اللحظة التي تتحول فيها الإشارة إلى الأخضر؟",
         "choices": [
           {
-            "text": "نعم يمكن للدراج ويجب عليه استخدام الصندوق المتقدم للتموضع أمام السيارات",
+            "text": "يُضطر راكبو الدراجات للانطلاق من موقع خلف أو جانب السيارة، مما يقلل من رؤيتهم وسلامتهم",
             "is_correct": true
           },
           {
-            "text": "لا يجب على الدراج البقاء خلف خط التوقف العادي",
+            "text": "لا يحدث شيء خاص لأن راكبي الدراجات لهم الأولوية دائمًا في كل لحظة",
             "is_correct": false
           },
           {
-            "text": "نعم لكن فقط بعد أن تتوقف جميع السيارات",
+            "text": "تتحول إشارة المرور تلقائيًا إلى الأحمر مجددًا",
             "is_correct": false
           }
         ],
-        "explanation": "يوجد صندوق F14 تحديداً للسماح للدراجين بالتموضع في المقدمة عند الضوء الأحمر. يمكن للدراجين دائماً استخدام الصندوق."
+        "explanation": "إذا كانت المنطقة محجوبة، يفقد راكبو الدراجات موقع انطلاقهم المتقدم والمرئي، مما يزيد من خطر الاصطدام عند الانطلاق."
       }
     }
   },
   {
     "question_id": "F14_Q06",
-    "type": "WHAT_MUST_YOU_DO",
+    "type": "DRIVER_ACTION",
     "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Het verkeerslicht springt op groen. Er staan fietsers in het F14-vak voor uw auto. Hoe rijdt u weg?",
+        "question": "U rijdt met de auto en het licht springt op rood net terwijl u dit bord passeert. Wat is de juiste reactie?",
         "choices": [
           {
-            "text": "Geduldig wachten tot de fietsers zijn weggereden en dan voorzichtig optrekken",
+            "text": "Op tijd remmen en stoppen vóór het opstelvak, zodat het volledig vrij blijft",
             "is_correct": true
           },
           {
-            "text": "Meteen optrekken want het licht is groen en de fietsers moeten opzij",
+            "text": "Doorrijden tot net voor het verkeerslicht, ook al staat u dan op het vak",
             "is_correct": false
           },
           {
-            "text": "Claxonneren om de fietsers sneller te laten rijden",
+            "text": "Versnellen om het licht nog te halen voordat het rood wordt",
             "is_correct": false
           }
         ],
-        "explanation": "Fietsers vertrekken vanuit het F14-vak. U wacht geduldig en trekt pas op als de weg veilig vrij is."
+        "explanation": "De juiste reactie is tijdig afremmen zodat u stopt vóór het opstelvak en de ruimte voor fietsers en bestuurders van tweewielige bromfietsen volledig vrijlaat."
       },
       "EN": {
-        "question": "The traffic light turns green. Cyclists are in the F14 box in front of your car. How do you pull away?",
+        "question": "You are driving a car and the light turns red just as you pass this sign. What is the correct reaction?",
         "choices": [
           {
-            "text": "Wait patiently until the cyclists have moved off then pull away carefully",
+            "text": "Brake in good time and stop before the reserved box, so it stays entirely clear",
             "is_correct": true
           },
           {
-            "text": "Pull away immediately because the light is green and cyclists must move aside",
+            "text": "Keep driving right up to the traffic light, even if that means standing on the box",
             "is_correct": false
           },
           {
-            "text": "Sound your horn to make the cyclists ride faster",
+            "text": "Accelerate to try to make the light before it turns red",
             "is_correct": false
           }
         ],
-        "explanation": "Cyclists pull away from the F14 box. You wait patiently and only pull away once the road is safely clear."
+        "explanation": "The correct reaction is to brake in good time so you stop before the reserved box, keeping the space for cyclists and riders of two-wheeled mopeds entirely clear."
       },
       "FR": {
-        "question": "Le feu de signalisation passe au vert. Des cyclistes se trouvent dans le sas F14 devant votre voiture. Comment demarrez-vous ?",
+        "question": "Vous conduisez et le feu passe au rouge juste au moment où vous dépassez ce panneau. Quelle est la bonne réaction ?",
         "choices": [
           {
-            "text": "Attendre patiemment que les cyclistes soient partis puis demarrer avec prudence",
+            "text": "Freiner à temps et vous arrêter avant le sas, afin qu'il reste entièrement libre",
             "is_correct": true
           },
           {
-            "text": "Demarrer immediatement car le feu est vert et les cyclistes doivent s ecarter",
+            "text": "Continuer à rouler jusqu'au feu, même si cela signifie être sur le sas",
             "is_correct": false
           },
           {
-            "text": "Klaxonner pour faire rouler les cyclistes plus vite",
+            "text": "Accélérer pour essayer de passer avant que le feu ne devienne rouge",
             "is_correct": false
           }
         ],
-        "explanation": "Les cyclistes partent depuis le sas F14. Vous attendez patiemment et ne demarrez qu une fois la route en toute securite degagee."
+        "explanation": "La bonne réaction est de freiner à temps pour s'arrêter avant le sas, en laissant l'espace pour les cyclistes et conducteurs de cyclomoteurs à deux roues entièrement libre."
       },
       "AR": {
-        "question": "يتحول ضوء المرور إلى الأخضر. توجد دراجات في صندوق F14 أمام سيارتك. كيف تنطلق؟",
+        "question": "أنت تقود سيارتك وتحولت الإشارة إلى الأحمر بينما تتجاوز هذه العلامة، فما رد الفعل الصحيح؟",
         "choices": [
           {
-            "text": "انتظر بصبر حتى ينطلق الدراجون ثم انطلق بحذر",
+            "text": "الفرملة في الوقت المناسب والتوقف قبل منطقة الانتظار حتى تبقى خالية تمامًا",
             "is_correct": true
           },
           {
-            "text": "انطلق فوراً لأن الضوء أخضر والدراجون يجب أن يتنحوا جانباً",
+            "text": "الاستمرار بالقيادة حتى الإشارة مباشرة حتى لو أصبحت داخل المنطقة",
             "is_correct": false
           },
           {
-            "text": "اضغط على البوق لجعل الدراجين يسيرون أسرع",
+            "text": "التسريع لمحاولة تجاوز الإشارة قبل أن تتحول إلى الأحمر",
             "is_correct": false
           }
         ],
-        "explanation": "الدراجون ينطلقون من صندوق F14. انتظر بصبر ولا تنطلق إلا عندما يكون الطريق آمناً."
+        "explanation": "رد الفعل الصحيح هو الفرملة في الوقت المناسب للتوقف قبل منطقة الانتظار، تاركًا المساحة خالية تمامًا لراكبي الدراجات وقائدي الدراجات النارية الخفيفة ذات العجلتين."
       }
     }
   },
@@ -448,63 +481,63 @@
     "type": "IS_IT_ALLOWED",
     "difficulty": "HARD",
     "is_critical": true,
-    "show_sign": true,
+    "show_sign": false,
     "i18n": {
       "NL": {
-        "question": "Mag een automobilist in het F14-opstelvak voor fietsers rijden als er geen fietsers aanwezig zijn?",
+        "question": "Mag een motorfiets die geen tweewielige bromfiets is, dit opstelvak gebruiken om vooraan te wachten?",
         "choices": [
           {
-            "text": "Nee het opstelvak is te allen tijde voorbehouden aan fietsers en motorvoertuigen mogen er nooit in rijden",
+            "text": "Nee, het vak is voorbehouden aan fietsers en bestuurders van tweewielige bromfietsen",
             "is_correct": true
           },
           {
-            "text": "Ja als er geen fietsers zijn is het vak vrij bruikbaar voor iedereen",
+            "text": "Ja, alle tweewielers mogen dit opstelvak gebruiken zonder onderscheid",
             "is_correct": false
           }
         ],
-        "explanation": "Het F14-opstelvak is exclusief voorbehouden aan fietsers. Motorvoertuigen mogen het vak nooit berijden ongeacht of er fietsers aanwezig zijn."
+        "explanation": "Het vak is bestemd voor fietsers en bestuurders van tweewielige bromfietsen. Een gewone motorfiets valt daar niet onder en moet achter het vak wachten."
       },
       "EN": {
-        "question": "May a car driver enter the F14 advance stop box if no cyclists are present?",
+        "question": "May a motorcycle that is not a two-wheeled moped use this reserved box to wait at the front?",
         "choices": [
           {
-            "text": "No the advance stop box is reserved for cyclists at all times and motor vehicles may never enter it",
+            "text": "No, the box is reserved for cyclists and riders of two-wheeled mopeds",
             "is_correct": true
           },
           {
-            "text": "Yes if no cyclists are present the box is freely usable by anyone",
+            "text": "Yes, all two-wheeled vehicles may use this box without distinction",
             "is_correct": false
           }
         ],
-        "explanation": "The F14 advance stop box is exclusively reserved for cyclists. Motor vehicles may never enter it regardless of whether cyclists are present."
+        "explanation": "The box is intended for cyclists and riders of two-wheeled mopeds. An ordinary motorcycle is not included and must wait behind the box."
       },
       "FR": {
-        "question": "Un conducteur de voiture peut-il entrer dans le sas velo F14 si aucun cycliste n est present ?",
+        "question": "Une moto qui n'est pas un cyclomoteur à deux roues peut-elle utiliser ce sas pour attendre à l'avant ?",
         "choices": [
           {
-            "text": "Non le sas est reserve aux cyclistes en tout temps et les vehicules a moteur ne peuvent jamais y entrer",
+            "text": "Non, le sas est réservé aux cyclistes et aux conducteurs de cyclomoteurs à deux roues",
             "is_correct": true
           },
           {
-            "text": "Oui si aucun cycliste n est present le sas est librement utilisable par tout le monde",
+            "text": "Oui, tous les véhicules à deux roues peuvent utiliser ce sas sans distinction",
             "is_correct": false
           }
         ],
-        "explanation": "Le sas velo F14 est exclusivement reserve aux cyclistes. Les vehicules a moteur ne peuvent jamais y entrer qu il y ait des cyclistes ou non."
+        "explanation": "Le sas est destiné aux cyclistes et aux conducteurs de cyclomoteurs à deux roues. Une moto ordinaire n'en fait pas partie et doit attendre derrière le sas."
       },
       "AR": {
-        "question": "هل يمكن لسائق السيارة الدخول إلى صندوق التوقف المتقدم F14 إذا لم يكن هناك دراجون؟",
+        "question": "هل يجوز لدراجة نارية لا تُعد دراجة نارية خفيفة ذات عجلتين استخدام هذه المنطقة للانتظار في المقدمة؟",
         "choices": [
           {
-            "text": "لا الصندوق محجوز للدراجين في جميع الأوقات ولا يجوز للمركبات الآلية الدخول إليه أبداً",
+            "text": "لا، المنطقة مخصصة لراكبي الدراجات الهوائية وقائدي الدراجات النارية الخفيفة ذات العجلتين",
             "is_correct": true
           },
           {
-            "text": "نعم إذا لم يكن هناك دراجون يمكن لأي شخص استخدام الصندوق بحرية",
+            "text": "نعم، يمكن لجميع المركبات ذات العجلتين استخدام هذه المنطقة دون تمييز",
             "is_correct": false
           }
         ],
-        "explanation": "صندوق التوقف المتقدم F14 محجوز حصرياً للدراجين. لا يجوز للمركبات الآلية الدخول إليه أبداً بغض النظر عن وجود دراجين."
+        "explanation": "المنطقة مخصصة لراكبي الدراجات الهوائية وقائدي الدراجات النارية الخفيفة ذات العجلتين. لا تدخل الدراجة النارية العادية ضمن ذلك ويجب أن تنتظر خلف المنطقة."
       }
     }
   },
@@ -516,60 +549,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Mag een fietser het F14-vak gebruiken als het verkeerslicht al op groen staat?",
+        "question": "Mag u als automobilist kort in het opstelvak stoppen als u wacht om af te slaan en er toch geen fietsers zichtbaar zijn?",
         "choices": [
           {
-            "text": "Nee het vak is bedoeld voor het opstellen bij rood; bij groen rijdt u gewoon door",
+            "text": "Nee, het vak moet altijd volledig vrij blijven, ongeacht of er op dat moment fietsers zichtbaar zijn",
             "is_correct": true
           },
           {
-            "text": "Ja de fietser mag altijd in het vak wachten ongeacht de kleur van het licht",
+            "text": "Ja, als er geen fietsers te zien zijn mag u er kort stoppen",
             "is_correct": false
           }
         ],
-        "explanation": "Het opstelvak dient om fietsers bij rood licht voor te laten opstellen. Als het licht groen is rijdt u als fietser gewoon door zonder te stoppen in het vak."
+        "explanation": "De verplichting om het opstelvak vrij te houden geldt permanent en hangt niet af van de zichtbare aanwezigheid van fietsers op dat moment."
       },
       "EN": {
-        "question": "May a cyclist use the F14 box when the traffic light is already green?",
+        "question": "As a car driver, may you briefly stop in the reserved box while waiting to turn, if no cyclists are visible at that moment?",
         "choices": [
           {
-            "text": "No the box is intended for waiting at red; when the light is green you simply ride through",
+            "text": "No, the box must always remain completely clear, regardless of whether cyclists are visible at that moment",
             "is_correct": true
           },
           {
-            "text": "Yes the cyclist may always wait in the box regardless of the light colour",
+            "text": "Yes, if no cyclists are visible you may stop there briefly",
             "is_correct": false
           }
         ],
-        "explanation": "The advance stop box is for cyclists to position at a red light. When the light is green you simply ride through without stopping in the box."
+        "explanation": "The obligation to keep the reserved box clear applies permanently and does not depend on whether cyclists happen to be visible at that moment."
       },
       "FR": {
-        "question": "Un cycliste peut-il utiliser le sas F14 lorsque le feu est deja vert ?",
+        "question": "En tant qu'automobiliste, pouvez-vous vous arrêter brièvement dans le sas en attendant de tourner, si aucun cycliste n'est visible à ce moment ?",
         "choices": [
           {
-            "text": "Non le sas est destine a l attente au rouge; quand le feu est vert vous passez simplement",
+            "text": "Non, le sas doit toujours rester entièrement libre, que des cyclistes soient visibles ou non à ce moment",
             "is_correct": true
           },
           {
-            "text": "Oui le cycliste peut toujours attendre dans le sas quelle que soit la couleur du feu",
+            "text": "Oui, si aucun cycliste n'est visible vous pouvez vous y arrêter brièvement",
             "is_correct": false
           }
         ],
-        "explanation": "Le sas est fait pour que les cyclistes se positionnent au feu rouge. Quand le feu est vert vous passez simplement sans vous arreter dans le sas."
+        "explanation": "L'obligation de laisser le sas libre s'applique en permanence et ne dépend pas de la présence visible ou non de cyclistes à ce moment."
       },
       "AR": {
-        "question": "هل يمكن للدراج استخدام صندوق F14 عندما تكون إشارة المرور خضراء بالفعل؟",
+        "question": "كسائق سيارة، هل يمكنك التوقف لحظيًا في منطقة الانتظار بينما تنتظر للانحراف، إذا لم يكن هناك راكبو دراجات ظاهرون في تلك اللحظة؟",
         "choices": [
           {
-            "text": "لا الصندوق مخصص للانتظار عند الضوء الأحمر؛ عندما يكون الضوء أخضر تمر ببساطة",
+            "text": "لا، يجب أن تبقى المنطقة خالية تمامًا دائمًا، بغض النظر عن ظهور راكبي الدراجات في تلك اللحظة",
             "is_correct": true
           },
           {
-            "text": "نعم يمكن للدراج دائماً الانتظار في الصندوق بغض النظر عن لون الضوء",
+            "text": "نعم، إذا لم يكن هناك راكبو دراجات ظاهرون يمكنك التوقف فيها لحظيًا",
             "is_correct": false
           }
         ],
-        "explanation": "الصندوق مخصص لتموضع الدراجين عند الضوء الأحمر. عندما يكون الضوء أخضر تمر ببساطة دون التوقف في الصندوق."
+        "explanation": "يسري الالتزام بترك منطقة الانتظار خالية بشكل دائم ولا يعتمد على وجود راكبي دراجات ظاهرين في تلك اللحظة بالتحديد."
       }
     }
   }

@@ -10,6 +10,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.cache.CacheManager;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -49,6 +50,9 @@ class CategoryProgressIntegrationTest {
     @Autowired
     private UserCategoryProgressRepository userCategoryProgressRepository;
 
+    @Autowired
+    private CacheManager cacheManager;
+
     private User testUser;
     private User otherUser;
     private Category trafficSignsCategory;
@@ -81,10 +85,15 @@ class CategoryProgressIntegrationTest {
         otherUser = userRepository.save(otherUser);
 
         // Create test categories
-        trafficSignsCategory = createCategory("SIGNS", "Traffic Signs");
-        speedLimitsCategory = createCategory("SPEED_LIM", "Speed Limits");
-        priorityRulesCategory = createCategory("PRIORITY", "Priority Rules");
-        roadSignsCategory = createCategory("ROAD_SIGN", "Road Signs");
+        trafficSignsCategory = createCategory("B3_SIGNS", "Traffic Signs");
+        speedLimitsCategory = createCategory("B3_SPEED", "Speed Limits");
+        priorityRulesCategory = createCategory("B3_PRIOR", "Priority Rules");
+        roadSignsCategory = createCategory("B3_ROAD", "Road Signs");
+
+        var categoriesCache = cacheManager.getCache("categories");
+        if (categoriesCache != null) {
+            categoriesCache.clear();
+        }
     }
 
     // ----------------------------------------
@@ -383,7 +392,7 @@ class CategoryProgressIntegrationTest {
         category.setNameFr(nameEn + " FR");
         category.setIsActive(true);
         category.setDisplayOrder(1);
-        return categoryRepository.save(category);
+        return categoryRepository.saveAndFlush(category);
     }
 
     /**

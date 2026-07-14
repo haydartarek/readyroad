@@ -4,16 +4,33 @@
   "image_path": "/images/signs/information_signs/F11 Einde van de autoweg.png",
   "serious_violation": false,
   "i18n": {
-    "NL": { "name": "Einde autoweg", "description": "Einde autoweg." },
-    "EN": { "name": "End of expressway", "description": "End of expressway." },
+    "NL": {
+      "name": "Einde autoweg",
+      "summary": "Dit bord geeft het einde van de autoweg aan. Voorbij dit bord gelden de gewone verkeersregels: voetgangers en fietsers mogen de weg gebruiken en de normale snelheidslimieten zijn van toepassing.",
+      "description": "Dit bord geeft het einde van de autoweg aan. Vanaf dit punt vervallen de bijzondere regels van de autoweg en gelden de gewone verkeersregels en signalisatie van de weg die u binnenrijdt.",
+      "driver_guidance": "Dit bord markeert het einde van de autoweg. Vanaf hier gelden de gewone verkeersregels van de weg in kwestie.",
+      "exceptions": []
+    },
+    "EN": {
+      "name": "End of expressway",
+      "summary": "This sign indicates the end of the expressway. Beyond this sign normal traffic rules apply: pedestrians and cyclists may use the road and normal speed limits are in force.",
+      "description": "This sign marks the end of the expressway. From this point the special expressway rules no longer apply and the normal traffic rules and signage of the road you are entering take effect.",
+      "driver_guidance": "This sign marks the end of the expressway. From here on the normal traffic rules of that specific road apply.",
+      "exceptions": []
+    },
     "FR": {
       "name": "Fin de route pour automobiles",
-      "description": "Fin de route pour automobiles."
+      "summary": "Ce panneau indique la fin de la route pour automobiles. Au-delà, les règles ordinaires de circulation s'appliquent.",
+      "description": "Ce panneau marque la fin de la route pour automobiles. À partir de ce point, les règles spéciales de la route pour automobiles ne s'appliquent plus et les règles de circulation normales ainsi que la signalisation de la route sur laquelle vous entrez prennent effet.",
+      "driver_guidance": "Ce panneau marque la fin de la route pour automobiles. À partir de là, les règles ordinaires de circulation s'appliquent.",
+      "exceptions": []
     },
     "AR": {
       "name": "نهاية الطريق المخصص للمركبات",
-      "description": "نهاية طريق السيارات."
+      "summary": "تشير هذه العلامة إلى نهاية الطريق السريع للسيارات. بعد هذه العلامة تسري قواعد المرور العادية.",
+      "description": "تشير هذه العلامة إلى نهاية الطريق المخصص للسيارات. ابتداءً من هذه النقطة تنتهي القواعد الخاصة بهذا الطريق، ويجب على السائقين الالتزام بقوانين وإشارات المرور المطبقة على الطريق الذي يدخلون إليه بعد ذلك.",
+      "driver_guidance": "تشير هذه العلامة إلى نهاية الطريق السريع للسيارات. من هنا تسري قواعد المرور العادية.",
+      "exceptions": []
     }
   }
 }
-

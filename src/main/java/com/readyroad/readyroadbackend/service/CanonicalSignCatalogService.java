@@ -1,11 +1,9 @@
 package com.readyroad.readyroadbackend.service;
 
-import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.readyroad.readyroadbackend.domain.entity.RoadSign;
 import com.readyroad.readyroadbackend.domain.enums.SignCategory;
-import com.readyroad.readyroadbackend.util.DrivingTextSanitizer;
 import com.readyroad.readyroadbackend.util.RouteCodeNormalizer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,7 +17,6 @@ import org.springframework.stereotype.Service;
 
 import jakarta.annotation.PostConstruct;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
@@ -27,7 +24,6 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.LinkedHashMap;
-import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -39,6 +35,7 @@ import java.util.stream.Stream;
 public class CanonicalSignCatalogService {
 
     private static final Logger log = LoggerFactory.getLogger(CanonicalSignCatalogService.class);
+    private static final int EXPECTED_CANONICAL_SIGN_COUNT = 184;
 
     private static final Map<String, SignCategory> CATEGORY_NAME_TO_ENUM = Map.ofEntries(
             Map.entry("gevaarsborden", SignCategory.DANGER),
@@ -56,17 +53,10 @@ public class CanonicalSignCatalogService {
             Map.entry("informatieborden en tijdelijke verkeersmaatregelen", SignCategory.INFORMATION));
 
     private final ObjectMapper objectMapper;
-    private final ResourceLoader resourceLoader;
     private final ResourcePatternResolver resourcePatternResolver;
-
-    @Value("${readyroad.signs.canonical-path:data/signs.json}")
-    private String canonicalSignsPath;
 
     @Value("${readyroad.signs-import.path:src/main/resources/data/signs_import}")
     private String signsImportPath;
-
-    @Value("${readyroad.signs.images-manifest-path:data/canonical_sign_images.json}")
-    private String canonicalImagesPath;
 
     private volatile List<CanonicalSignSeed> seeds = List.of();
     private volatile Map<String, CanonicalSignSeed> seedsByRoute = Map.of();
@@ -77,13 +67,17 @@ public class CanonicalSignCatalogService {
 
     public CanonicalSignCatalogService(ObjectMapper objectMapper, ResourceLoader resourceLoader) {
         this.objectMapper = objectMapper;
-        this.resourceLoader = resourceLoader;
         this.resourcePatternResolver = new PathMatchingResourcePatternResolver(resourceLoader);
     }
 
     @PostConstruct
     public void refresh() {
         List<CanonicalSignSeed> loadedSeeds = loadCanonicalSeeds();
+        if (loadedSeeds.size() != EXPECTED_CANONICAL_SIGN_COUNT) {
+            throw new IllegalStateException(
+                    "Canonical signs_import must contain exactly " + EXPECTED_CANONICAL_SIGN_COUNT
+                            + " valid signs, found " + loadedSeeds.size());
+        }
         Map<String, CanonicalSignSeed> byRoute = new LinkedHashMap<>();
         Map<String, CanonicalSignSeed> byCode = new LinkedHashMap<>();
         Map<String, CanonicalSignSeed> byImage = new LinkedHashMap<>();
@@ -104,7 +98,7 @@ public class CanonicalSignCatalogService {
         this.seedsByCode = Map.copyOf(byCode);
         this.seedsByImage = Map.copyOf(byImage);
         this.variantCountByCode = Map.copyOf(counts);
-        this.allowedImagePaths = loadAllowedImagePaths();
+        this.allowedImagePaths = Set.copyOf(byImage.keySet());
 
         log.info(
                 "Loaded canonical sign catalog: {} seeds, {} route keys, {} allowed images",
@@ -158,36 +152,30 @@ public class CanonicalSignCatalogService {
     }
 
     public ResolvedSignData resolve(RoadSign sign) {
-        CanonicalSignSeed seed = findSeedFor(sign).orElse(null);
-
-        String imagePath = firstUsable(seed != null ? seed.imagePath() : null, sign.getImagePath());
+        String imagePath = firstUsable(sign.getImagePath());
         String normalizedImagePath = normalizeImagePath(imagePath);
         boolean allowed = !normalizedImagePath.isBlank() && allowedImagePaths.contains(normalizedImagePath);
-        String nameEn = firstUsable(seed != null ? seed.nameEn() : null, sign.getNameEn(), sign.getSignCode());
-        String nameAr = firstUsable(seed != null ? seed.nameAr() : null, sign.getNameAr(), nameEn, sign.getSignCode());
-        String nameNl = firstUsable(seed != null ? seed.nameNl() : null, sign.getNameNl(), nameEn, sign.getSignCode());
-        String nameFr = firstUsable(seed != null ? seed.nameFr() : null, sign.getNameFr(), nameEn, sign.getSignCode());
+        String nameEn = firstUsable(sign.getNameEn());
+        String nameAr = firstUsable(sign.getNameAr());
+        String nameNl = firstUsable(sign.getNameNl());
+        String nameFr = firstUsable(sign.getNameFr());
 
-        String descriptionEn = DrivingTextSanitizer.sanitize("EN",
-                firstUsable(seed != null ? seed.shortDescriptionEn() : null, sign.getDescriptionEn()));
-        String descriptionAr = DrivingTextSanitizer.sanitize("AR",
-                firstUsable(seed != null ? seed.shortDescriptionAr() : null, sign.getDescriptionAr()));
-        String descriptionNl = DrivingTextSanitizer.sanitize("NL",
-                firstUsable(seed != null ? seed.shortDescriptionNl() : null, sign.getDescriptionNl()));
-        String descriptionFr = DrivingTextSanitizer.sanitize("FR",
-                firstUsable(seed != null ? seed.shortDescriptionFr() : null, sign.getDescriptionFr()));
+        String descriptionEn = firstUsable(sign.getDescriptionEn());
+        String descriptionAr = firstUsable(sign.getDescriptionAr());
+        String descriptionNl = firstUsable(sign.getDescriptionNl());
+        String descriptionFr = firstUsable(sign.getDescriptionFr());
 
-        String longDescriptionEn = DrivingTextSanitizer.sanitize("EN",
-                firstUsable(seed != null ? seed.longDescriptionEn() : null, descriptionEn));
-        String longDescriptionNl = DrivingTextSanitizer.sanitize("NL",
-                firstUsable(seed != null ? seed.longDescriptionNl() : null, descriptionNl));
-        String longDescriptionFr = DrivingTextSanitizer.sanitize("FR",
-                firstUsable(seed != null ? seed.longDescriptionFr() : null, descriptionFr));
-        String longDescriptionAr = DrivingTextSanitizer.sanitize("AR",
-                firstUsable(seed != null ? seed.longDescriptionAr() : null, descriptionAr));
+        String summaryEn = firstUsable(sign.getSummaryEn());
+        String summaryAr = firstUsable(sign.getSummaryAr());
+        String summaryNl = firstUsable(sign.getSummaryNl());
+        String summaryFr = firstUsable(sign.getSummaryFr());
+        String driverGuidanceEn = firstUsable(sign.getDriverGuidanceEn());
+        String driverGuidanceAr = firstUsable(sign.getDriverGuidanceAr());
+        String driverGuidanceNl = firstUsable(sign.getDriverGuidanceNl());
+        String driverGuidanceFr = firstUsable(sign.getDriverGuidanceFr());
 
         return new ResolvedSignData(
-                firstUsable(seed != null ? seed.signCode() : null, sign.getSignCode()),
+                firstUsable(sign.getSignCode()),
                 routeCodeFor(sign),
                 nameEn,
                 nameAr,
@@ -197,14 +185,18 @@ public class CanonicalSignCatalogService {
                 descriptionAr,
                 descriptionNl,
                 descriptionFr,
-                longDescriptionEn,
-                longDescriptionNl,
-                longDescriptionFr,
-                longDescriptionAr,
-                !isBlank(longDescriptionEn)
-                        || !isBlank(longDescriptionNl)
-                        || !isBlank(longDescriptionFr)
-                        || !isBlank(longDescriptionAr),
+                summaryEn,
+                summaryAr,
+                summaryNl,
+                summaryFr,
+                driverGuidanceEn,
+                driverGuidanceAr,
+                driverGuidanceNl,
+                driverGuidanceFr,
+                safeList(sign.getExceptionsEn()),
+                safeList(sign.getExceptionsAr()),
+                safeList(sign.getExceptionsNl()),
+                safeList(sign.getExceptionsFr()),
                 normalizedImagePath,
                 allowed);
     }
@@ -219,7 +211,10 @@ public class CanonicalSignCatalogService {
             return;
         }
 
-        CanonicalSignSeed seed = seedOpt.get();
+        applyCanonicalFields(sign, seedOpt.get());
+    }
+
+    public void applyCanonicalFields(RoadSign sign, CanonicalSignSeed seed) {
         sign.setSignCode(seed.routeCode());
         sign.setNormalizedSignCode(seed.routeKey());
         sign.setCategory(seed.category());
@@ -227,10 +222,23 @@ public class CanonicalSignCatalogService {
         sign.setNameAr(seed.nameAr());
         sign.setNameNl(seed.nameNl());
         sign.setNameFr(seed.nameFr());
-        sign.setDescriptionEn(DrivingTextSanitizer.sanitize("EN", seed.shortDescriptionEn()));
-        sign.setDescriptionAr(DrivingTextSanitizer.sanitize("AR", seed.shortDescriptionAr()));
-        sign.setDescriptionNl(DrivingTextSanitizer.sanitize("NL", seed.shortDescriptionNl()));
-        sign.setDescriptionFr(DrivingTextSanitizer.sanitize("FR", seed.shortDescriptionFr()));
+        sign.setDescriptionEn(seed.descriptionEn());
+        sign.setDescriptionAr(seed.descriptionAr());
+        sign.setDescriptionNl(seed.descriptionNl());
+        sign.setDescriptionFr(seed.descriptionFr());
+        sign.setSummaryEn(seed.summaryEn());
+        sign.setSummaryAr(seed.summaryAr());
+        sign.setSummaryNl(seed.summaryNl());
+        sign.setSummaryFr(seed.summaryFr());
+        sign.setDriverGuidanceEn(seed.driverGuidanceEn());
+        sign.setDriverGuidanceAr(seed.driverGuidanceAr());
+        sign.setDriverGuidanceNl(seed.driverGuidanceNl());
+        sign.setDriverGuidanceFr(seed.driverGuidanceFr());
+        sign.setExceptionsEn(seed.exceptionsEn());
+        sign.setExceptionsAr(seed.exceptionsAr());
+        sign.setExceptionsNl(seed.exceptionsNl());
+        sign.setExceptionsFr(seed.exceptionsFr());
+        sign.setSeriousViolation(seed.seriousViolation());
         if (!seed.imagePath().isBlank()) {
             sign.setImagePath(seed.imagePath());
         }
@@ -266,63 +274,10 @@ public class CanonicalSignCatalogService {
     }
 
     private List<CanonicalSignSeed> loadCanonicalSeeds() {
-        Map<String, CanonicalSignSeed> legacySeeds = loadLegacyCanonicalSeedsByRoute();
-        List<CanonicalSignSeed> importedSeeds = loadImportSignSeeds(legacySeeds);
-        if (!importedSeeds.isEmpty()) {
-            return importedSeeds;
-        }
-        return new ArrayList<>(legacySeeds.values());
+        return loadImportSignSeeds();
     }
 
-    private Map<String, CanonicalSignSeed> loadLegacyCanonicalSeedsByRoute() {
-        try (InputStream input = openInputStream(canonicalSignsPath)) {
-            List<JsonNode> entries = objectMapper.readValue(input, new TypeReference<List<JsonNode>>() {
-            });
-            Map<String, CanonicalSignSeed> loaded = new LinkedHashMap<>();
-
-            for (JsonNode node : entries) {
-                String routeCode = firstUsable(text(node, "id"), text(node, "code"));
-                String signCode = firstUsable(text(node, "code"), routeCode);
-                String routeKey = normalizeRouteKey(routeCode);
-                String normalizedCode = normalizeCode(signCode);
-                SignCategory category = mapCategory(text(node, "category"));
-                String imagePath = normalizeImagePath(firstUsable(text(node, "image"), text(node, "imagePath")));
-
-                if (routeKey.isBlank() || normalizedCode.isBlank() || category == null || imagePath.isBlank()) {
-                    continue;
-                }
-
-                loaded.put(routeKey, new CanonicalSignSeed(
-                        routeCode,
-                        routeKey,
-                        signCode,
-                        normalizedCode,
-                        category,
-                        firstUsable(text(node, "title_en"), text(node, "title")),
-                        firstUsable(text(node, "title_ar"), text(node, "title_en"), text(node, "title")),
-                        firstUsable(text(node, "title_nl"), text(node, "title")),
-                        firstUsable(text(node, "title_fr"), text(node, "title_en"), text(node, "title")),
-                        firstUsable(text(node, "long_description_en_official"), text(node, "long_description_en")),
-                        firstUsable(text(node, "long_description_ar_official"), text(node, "long_description_ar")),
-                        firstUsable(text(node, "long_description_nl_official"), text(node, "long_description_nl"),
-                                text(node, "long_description")),
-                        firstUsable(text(node, "long_description_fr_official"), text(node, "long_description_fr")),
-                        firstUsable(text(node, "long_description_en"), text(node, "long_description_en_official")),
-                        firstUsable(text(node, "long_description_ar"), text(node, "long_description_ar_official")),
-                        firstUsable(text(node, "long_description_nl"), text(node, "long_description_nl_official"),
-                                text(node, "long_description")),
-                        firstUsable(text(node, "long_description_fr"), text(node, "long_description_fr_official")),
-                        imagePath));
-            }
-
-            return loaded;
-        } catch (IOException ex) {
-            log.error("Failed to load canonical signs catalog from {}: {}", canonicalSignsPath, ex.getMessage(), ex);
-            return Map.of();
-        }
-    }
-
-    private List<CanonicalSignSeed> loadImportSignSeeds(Map<String, CanonicalSignSeed> legacySeedsByRoute) {
+    private List<CanonicalSignSeed> loadImportSignSeeds() {
         try {
             List<Resource> signResources = resolveImportSignResources();
             Map<String, CanonicalSignSeed> loaded = new LinkedHashMap<>();
@@ -330,9 +285,13 @@ public class CanonicalSignCatalogService {
             for (Resource resource : signResources) {
                 try (InputStream input = resource.getInputStream()) {
                     JsonNode node = objectMapper.readTree(input);
-                    CanonicalSignSeed seed = importSeed(node, legacySeedsByRoute);
+                    CanonicalSignSeed seed = importSeed(node);
                     if (seed != null) {
-                        loaded.put(seed.routeKey(), seed);
+                        CanonicalSignSeed duplicate = loaded.putIfAbsent(seed.routeKey(), seed);
+                        if (duplicate != null) {
+                            throw new IllegalStateException(
+                                    "Duplicate canonical route key detected while loading: " + seed.routeCode());
+                        }
                     }
                 }
             }
@@ -361,6 +320,9 @@ public class CanonicalSignCatalogService {
                                 path.toAbsolutePath().normalize().toString(),
                                 new FileSystemResource(path)));
             }
+            List<Resource> resources = new ArrayList<>(resourcesByDescription.values());
+            resources.sort(Comparator.comparing(Resource::getDescription));
+            return resources;
         }
 
         for (Resource resource : resourcePatternResolver.getResources("classpath*:data/signs_import/*/sign.json")) {
@@ -374,7 +336,7 @@ public class CanonicalSignCatalogService {
         return resources;
     }
 
-    private CanonicalSignSeed importSeed(JsonNode node, Map<String, CanonicalSignSeed> legacySeedsByRoute) {
+    private CanonicalSignSeed importSeed(JsonNode node) {
         String routeCode = firstUsable(text(node, "route_code"), text(node, "id"), text(node, "code"));
         String signCode = firstUsable(text(node, "code"), routeCode);
         String routeKey = normalizeRouteKey(routeCode);
@@ -387,16 +349,28 @@ public class CanonicalSignCatalogService {
             return null;
         }
 
-        CanonicalSignSeed legacy = legacySeedsByRoute.get(routeKey);
         JsonNode i18n = node.path("i18n");
-        String descriptionEn = firstUsable(importText(i18n, "EN", "description"),
-                legacy != null ? legacy.shortDescriptionEn() : null);
-        String descriptionAr = firstUsable(importText(i18n, "AR", "description"),
-                legacy != null ? legacy.shortDescriptionAr() : null);
-        String descriptionNl = firstUsable(importText(i18n, "NL", "description"),
-                legacy != null ? legacy.shortDescriptionNl() : null);
-        String descriptionFr = firstUsable(importText(i18n, "FR", "description"),
-                legacy != null ? legacy.shortDescriptionFr() : null);
+        String nameEn = requiredImportText(i18n, "EN", "name", routeCode);
+        String nameAr = requiredImportText(i18n, "AR", "name", routeCode);
+        String nameNl = requiredImportText(i18n, "NL", "name", routeCode);
+        String nameFr = requiredImportText(i18n, "FR", "name", routeCode);
+        String descriptionEn = requiredImportText(i18n, "EN", "description", routeCode);
+        String descriptionAr = requiredImportText(i18n, "AR", "description", routeCode);
+        String descriptionNl = requiredImportText(i18n, "NL", "description", routeCode);
+        String descriptionFr = requiredImportText(i18n, "FR", "description", routeCode);
+        String summaryEn = requiredImportText(i18n, "EN", "summary", routeCode);
+        String summaryAr = requiredImportText(i18n, "AR", "summary", routeCode);
+        String summaryNl = requiredImportText(i18n, "NL", "summary", routeCode);
+        String summaryFr = requiredImportText(i18n, "FR", "summary", routeCode);
+        String driverGuidanceEn = requiredImportText(i18n, "EN", "driver_guidance", routeCode);
+        String driverGuidanceAr = requiredImportText(i18n, "AR", "driver_guidance", routeCode);
+        String driverGuidanceNl = requiredImportText(i18n, "NL", "driver_guidance", routeCode);
+        String driverGuidanceFr = requiredImportText(i18n, "FR", "driver_guidance", routeCode);
+        List<String> exceptionsEn = requiredImportTextList(i18n, "EN", "exceptions", routeCode);
+        List<String> exceptionsAr = requiredImportTextList(i18n, "AR", "exceptions", routeCode);
+        List<String> exceptionsNl = requiredImportTextList(i18n, "NL", "exceptions", routeCode);
+        List<String> exceptionsFr = requiredImportTextList(i18n, "FR", "exceptions", routeCode);
+        boolean seriousViolation = node.path("serious_violation").asBoolean(false);
 
         return new CanonicalSignSeed(
                 routeCode,
@@ -404,51 +378,63 @@ public class CanonicalSignCatalogService {
                 signCode,
                 normalizedCode,
                 category,
-                firstUsable(importText(i18n, "EN", "name"), legacy != null ? legacy.nameEn() : null),
-                firstUsable(importText(i18n, "AR", "name"), legacy != null ? legacy.nameAr() : null),
-                firstUsable(importText(i18n, "NL", "name"), legacy != null ? legacy.nameNl() : null),
-                firstUsable(importText(i18n, "FR", "name"), legacy != null ? legacy.nameFr() : null),
+                nameEn,
+                nameAr,
+                nameNl,
+                nameFr,
                 descriptionEn,
                 descriptionAr,
                 descriptionNl,
                 descriptionFr,
-                firstUsable(legacy != null ? legacy.longDescriptionEn() : null, descriptionEn),
-                firstUsable(legacy != null ? legacy.longDescriptionAr() : null, descriptionAr),
-                firstUsable(legacy != null ? legacy.longDescriptionNl() : null, descriptionNl),
-                firstUsable(legacy != null ? legacy.longDescriptionFr() : null, descriptionFr),
+                summaryEn,
+                summaryAr,
+                summaryNl,
+                summaryFr,
+                driverGuidanceEn,
+                driverGuidanceAr,
+                driverGuidanceNl,
+                driverGuidanceFr,
+                exceptionsEn,
+                exceptionsAr,
+                exceptionsNl,
+                exceptionsFr,
+                seriousViolation,
                 imagePath);
     }
 
-    private Set<String> loadAllowedImagePaths() {
-        try (InputStream input = openInputStream(canonicalImagesPath)) {
-            List<String> items = objectMapper.readValue(input, new TypeReference<List<String>>() {
-            });
-            Set<String> normalized = new LinkedHashSet<>();
-            for (String item : items) {
-                String path = normalizeImagePath(item);
-                if (!path.isBlank()) {
-                    normalized.add(path);
-                }
-            }
-            return normalized;
-        } catch (IOException ex) {
-            log.error("Failed to load canonical sign image manifest from {}: {}", canonicalImagesPath, ex.getMessage(),
-                    ex);
-            return Set.of();
+    private String requiredImportText(JsonNode i18n, String language, String field, String routeCode) {
+        String value = importText(i18n, language, field);
+        if (isBlank(value)) {
+            throw new IllegalStateException(
+                    "Missing i18n." + language + "." + field + " in signs_import/" + routeCode + "/sign.json");
         }
+        return value;
     }
 
-    private InputStream openInputStream(String path) throws IOException {
-        Resource resource = resourceLoader.getResource("classpath:" + path);
-        if (resource.exists()) {
-            return resource.getInputStream();
+    private List<String> requiredImportTextList(JsonNode i18n, String language, String field, String routeCode) {
+        JsonNode values = i18n.path(language).path(field);
+        if (!values.isArray()) {
+            throw new IllegalStateException(
+                    "Missing i18n." + language + "." + field + " array in signs_import/" + routeCode + "/sign.json");
         }
 
-        File file = new File(path);
-        if (!file.isAbsolute()) {
-            file = new File(System.getProperty("user.dir"), path);
+        List<String> result = new ArrayList<>();
+        for (JsonNode value : values) {
+            if (!value.isTextual() || isBlank(value.asText())) {
+                throw new IllegalStateException(
+                        "Invalid i18n." + language + "." + field + " entry in signs_import/" + routeCode
+                                + "/sign.json");
+            }
+            result.add(value.asText().trim());
         }
-        return new FileInputStream(file);
+        return List.copyOf(result);
+    }
+
+    private List<String> safeList(List<String> values) {
+        if (values == null || values.isEmpty()) {
+            return List.of();
+        }
+        return List.copyOf(values);
     }
 
     private static SignCategory mapCategory(String value) {
@@ -543,14 +529,23 @@ public class CanonicalSignCatalogService {
             String nameAr,
             String nameNl,
             String nameFr,
-            String shortDescriptionEn,
-            String shortDescriptionAr,
-            String shortDescriptionNl,
-            String shortDescriptionFr,
-            String longDescriptionEn,
-            String longDescriptionAr,
-            String longDescriptionNl,
-            String longDescriptionFr,
+            String descriptionEn,
+            String descriptionAr,
+            String descriptionNl,
+            String descriptionFr,
+            String summaryEn,
+            String summaryAr,
+            String summaryNl,
+            String summaryFr,
+            String driverGuidanceEn,
+            String driverGuidanceAr,
+            String driverGuidanceNl,
+            String driverGuidanceFr,
+            List<String> exceptionsEn,
+            List<String> exceptionsAr,
+            List<String> exceptionsNl,
+            List<String> exceptionsFr,
+            boolean seriousViolation,
             String imagePath) {
     }
 
@@ -565,11 +560,18 @@ public class CanonicalSignCatalogService {
             String descriptionAr,
             String descriptionNl,
             String descriptionFr,
-            String longDescriptionEn,
-            String longDescriptionNl,
-            String longDescriptionFr,
-            String longDescriptionAr,
-            boolean hasLongDescription,
+            String summaryEn,
+            String summaryAr,
+            String summaryNl,
+            String summaryFr,
+            String driverGuidanceEn,
+            String driverGuidanceAr,
+            String driverGuidanceNl,
+            String driverGuidanceFr,
+            List<String> exceptionsEn,
+            List<String> exceptionsAr,
+            List<String> exceptionsNl,
+            List<String> exceptionsFr,
             String imagePath,
             boolean publiclyAllowed) {
     }

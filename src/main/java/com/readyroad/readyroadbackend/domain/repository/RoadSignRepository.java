@@ -38,8 +38,6 @@ public interface RoadSignRepository extends JpaRepository<RoadSign, Long> {
 
         boolean existsByNormalizedSignCode(String normalizedSignCode);
 
-        boolean existsBySignCodeAndIdNot(String signCode, Long id);
-
         List<RoadSign> findAllByIsActiveTrue();
 
         /** Batch fetch signs by a set of sign codes — replaces per-sign N+1 lookups. */

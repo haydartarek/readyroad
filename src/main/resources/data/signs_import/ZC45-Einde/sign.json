@@ -6,19 +6,31 @@
   "i18n": {
     "NL": {
       "name": "Einde zone met een snelheidsbeperking",
-      "description": "Dit verkeersbord geeft aan dat hier het einde is van een zone waar de snelheid beperkt is tot de aangeduide snelheid."
+      "summary": "Dit is het eindbord van de zone met snelheidsbeperking. Voorbij dit bord geldt de zonelimiet niet meer.",
+      "description": "Dit verkeersbord geeft aan dat hier het einde is van een zone waar de snelheid beperkt is tot de aangeduide snelheid.",
+      "driver_guidance": "Het einde van een snelheidszone geeft geen uniforme snelheid voor heel België. De juiste limiet hangt af van het gewest en van de aanwezige borden.",
+      "exceptions": []
     },
     "EN": {
       "name": "End zone with speed limit",
-      "description": "This sign marks the end of a zone where the speed is limited to the indicated speed."
+      "summary": "This is the end sign of the speed-limit zone. Beyond this sign the zone limit no longer applies.",
+      "description": "This sign marks the end of a zone where the speed is limited to the indicated speed.",
+      "driver_guidance": "The end of a speed-limit zone does not give one uniform speed for all Belgium. The correct limit depends on the region and the signs present.",
+      "exceptions": []
     },
     "FR": {
       "name": "Fin zone avec limitation de vitesse",
-      "description": "Ce panneau indique la fin d'une zone où la vitesse est limitée à la vitesse indiquée."
+      "summary": "C'est le panneau de fin de la zone à vitesse limitée. Après ce panneau, la limite de zone ne s'applique plus.",
+      "description": "Ce panneau indique la fin d'une zone où la vitesse est limitée à la vitesse indiquée.",
+      "driver_guidance": "La fin d'une zone à vitesse limitée ne fixe pas une vitesse uniforme pour toute la Belgique. La bonne limite dépend de la région et des panneaux présents.",
+      "exceptions": []
     },
     "AR": {
       "name": "نهاية منطقة تحديد السرعة",
-      "description": "تُشير هذه العلامة المرورية إلى نهاية منطقة تُحدَّد فيها السرعة بالسرعة المبيَّنة على اللافتة."
+      "summary": "هذه علامة نهاية منطقة تحديد السرعة. بعد هذه العلامة لا يعود حد السرعة الخاص بالمنطقة سارياً.",
+      "description": "تُشير هذه العلامة المرورية إلى نهاية منطقة تُحدَّد فيها السرعة بالسرعة المبيَّنة على اللافتة.",
+      "driver_guidance": "نهاية منطقة محددة السرعة لا تحدد سرعة موحدة لكل بلجيكا. يعتمد الحد الصحيح على الإقليم والعلامات الموجودة.",
+      "exceptions": []
     }
   }
 }

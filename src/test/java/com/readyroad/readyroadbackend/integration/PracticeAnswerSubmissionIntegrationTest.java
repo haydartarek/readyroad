@@ -2,7 +2,7 @@ package com.readyroad.readyroadbackend.integration;
 
 import com.readyroad.readyroadbackend.domain.entity.*;
 import com.readyroad.readyroadbackend.domain.enums.Role;
-import com.readyroad.readyroadbackend.domain.model.UserQuestionHistory;
+import com.readyroad.readyroadbackend.domain.entity.UserQuestionHistory;
 import com.readyroad.readyroadbackend.domain.repository.*;
 import com.readyroad.readyroadbackend.dto.practice.SubmitPracticeAnswerRequest;
 import com.readyroad.readyroadbackend.dto.practice.SubmitPracticeAnswerResponse;
@@ -89,19 +89,19 @@ class PracticeAnswerSubmissionIntegrationTest {
         testUser = userRepository.save(testUser);
         testUserId = testUser.getId();
 
-        // Get or create test category
-        testCategory = categoryRepository.findAll().stream()
-                .findFirst()
+        // Use a dedicated parent fixture and its generated ID. findAll() is cached in
+        // production and can legitimately contain entries rolled back by another test.
+        testCategory = categoryRepository.findByCode("PRACTICE")
                 .orElseGet(() -> {
                     Category cat = new Category();
-                    cat.setCode("TEST");
+                    cat.setCode("PRACTICE");
                     cat.setNameEn("Test Category");
                     cat.setNameAr("فئة الاختبار");
                     cat.setNameNl("Testcategorie");
                     cat.setNameFr("Catégorie de test");
                     cat.setDisplayOrder(1);
                     cat.setIsActive(true);
-                    return categoryRepository.save(cat);
+                    return categoryRepository.saveAndFlush(cat);
                 });
     }
 

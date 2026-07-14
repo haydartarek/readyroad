@@ -1,7 +1,7 @@
 package com.readyroad.readyroadbackend.domain.entity;
 
+import com.readyroad.readyroadbackend.domain.converter.StringListJsonConverter;
 import com.readyroad.readyroadbackend.domain.enums.SignCategory;
-import com.readyroad.readyroadbackend.util.TextNormalizer;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
@@ -57,6 +57,46 @@ public class RoadSign extends BaseEntity {
     @Column(name = "description_ar", columnDefinition = "TEXT")
     private String descriptionAr;
 
+    @Column(name = "summary_nl", columnDefinition = "LONGTEXT")
+    private String summaryNl;
+
+    @Column(name = "summary_en", columnDefinition = "LONGTEXT")
+    private String summaryEn;
+
+    @Column(name = "summary_fr", columnDefinition = "LONGTEXT")
+    private String summaryFr;
+
+    @Column(name = "summary_ar", columnDefinition = "LONGTEXT")
+    private String summaryAr;
+
+    @Column(name = "driver_guidance_nl", columnDefinition = "LONGTEXT")
+    private String driverGuidanceNl;
+
+    @Column(name = "driver_guidance_en", columnDefinition = "LONGTEXT")
+    private String driverGuidanceEn;
+
+    @Column(name = "driver_guidance_fr", columnDefinition = "LONGTEXT")
+    private String driverGuidanceFr;
+
+    @Column(name = "driver_guidance_ar", columnDefinition = "LONGTEXT")
+    private String driverGuidanceAr;
+
+    @Convert(converter = StringListJsonConverter.class)
+    @Column(name = "exceptions_nl", columnDefinition = "LONGTEXT")
+    private List<String> exceptionsNl = new ArrayList<>();
+
+    @Convert(converter = StringListJsonConverter.class)
+    @Column(name = "exceptions_en", columnDefinition = "LONGTEXT")
+    private List<String> exceptionsEn = new ArrayList<>();
+
+    @Convert(converter = StringListJsonConverter.class)
+    @Column(name = "exceptions_fr", columnDefinition = "LONGTEXT")
+    private List<String> exceptionsFr = new ArrayList<>();
+
+    @Convert(converter = StringListJsonConverter.class)
+    @Column(name = "exceptions_ar", columnDefinition = "LONGTEXT")
+    private List<String> exceptionsAr = new ArrayList<>();
+
     @Column(name = "is_active", nullable = false)
     private Boolean isActive = true;
 
@@ -66,19 +106,6 @@ public class RoadSign extends BaseEntity {
 
     @OneToMany(mappedBy = "sign", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<SignExam> exams = new ArrayList<>();
-
-    // ── Text normalisation ───────────────────────────────────────────────────
-    @Override
-    protected void normalizeTextFields() {
-        nameNl = TextNormalizer.normalize(nameNl);
-        nameEn = TextNormalizer.normalize(nameEn);
-        nameFr = TextNormalizer.normalize(nameFr);
-        nameAr = TextNormalizer.normalize(nameAr);
-        descriptionNl = TextNormalizer.normalize(descriptionNl);
-        descriptionEn = TextNormalizer.normalize(descriptionEn);
-        descriptionFr = TextNormalizer.normalize(descriptionFr);
-        descriptionAr = TextNormalizer.normalize(descriptionAr);
-    }
 
     // ── Getters & Setters ────────────────────────────────────────────────────
     public String getSignCode() {
@@ -183,6 +210,102 @@ public class RoadSign extends BaseEntity {
 
     public void setDescriptionAr(String v) {
         this.descriptionAr = v;
+    }
+
+    public String getSummaryNl() {
+        return summaryNl;
+    }
+
+    public void setSummaryNl(String v) {
+        this.summaryNl = v;
+    }
+
+    public String getSummaryEn() {
+        return summaryEn;
+    }
+
+    public void setSummaryEn(String v) {
+        this.summaryEn = v;
+    }
+
+    public String getSummaryFr() {
+        return summaryFr;
+    }
+
+    public void setSummaryFr(String v) {
+        this.summaryFr = v;
+    }
+
+    public String getSummaryAr() {
+        return summaryAr;
+    }
+
+    public void setSummaryAr(String v) {
+        this.summaryAr = v;
+    }
+
+    public String getDriverGuidanceNl() {
+        return driverGuidanceNl;
+    }
+
+    public void setDriverGuidanceNl(String v) {
+        this.driverGuidanceNl = v;
+    }
+
+    public String getDriverGuidanceEn() {
+        return driverGuidanceEn;
+    }
+
+    public void setDriverGuidanceEn(String v) {
+        this.driverGuidanceEn = v;
+    }
+
+    public String getDriverGuidanceFr() {
+        return driverGuidanceFr;
+    }
+
+    public void setDriverGuidanceFr(String v) {
+        this.driverGuidanceFr = v;
+    }
+
+    public String getDriverGuidanceAr() {
+        return driverGuidanceAr;
+    }
+
+    public void setDriverGuidanceAr(String v) {
+        this.driverGuidanceAr = v;
+    }
+
+    public List<String> getExceptionsNl() {
+        return exceptionsNl;
+    }
+
+    public void setExceptionsNl(List<String> v) {
+        this.exceptionsNl = v == null ? new ArrayList<>() : new ArrayList<>(v);
+    }
+
+    public List<String> getExceptionsEn() {
+        return exceptionsEn;
+    }
+
+    public void setExceptionsEn(List<String> v) {
+        this.exceptionsEn = v == null ? new ArrayList<>() : new ArrayList<>(v);
+    }
+
+    public List<String> getExceptionsFr() {
+        return exceptionsFr;
+    }
+
+    public void setExceptionsFr(List<String> v) {
+        this.exceptionsFr = v == null ? new ArrayList<>() : new ArrayList<>(v);
+    }
+
+    public List<String> getExceptionsAr() {
+        return exceptionsAr;
+    }
+
+    public void setExceptionsAr(List<String> v) {
+        this.exceptionsAr = v == null ? new ArrayList<>() : new ArrayList<>(v);
     }
 
     public Boolean getIsActive() {

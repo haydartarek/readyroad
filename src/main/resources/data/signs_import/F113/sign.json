@@ -4,19 +4,33 @@
   "image_path": "/images/signs/information_signs/F113 Einde fietsstraat.png",
   "serious_violation": false,
   "i18n": {
-    "NL": { "name": "Einde fietsstraat", "description": "Fietsstraat." },
+    "NL": {
+      "name": "Einde van een fietszone",
+      "summary": "F113 markeert het einde van de fietszone die met F111 begon.",
+      "description": "Duidt het einde van een fietszone aan. De specifieke fietszone-regels eindigen hier; daarna gelden de algemene verkeersregels en alle andere aanwezige verkeersborden.",
+      "driver_guidance": "F113 schrijft zelf geen nieuwe snelheid voor; na het bord gelden de toepasselijke algemene of afzonderlijk aangeduide limieten.",
+      "exceptions": []
+    },
     "EN": {
-      "name": "End of bicycle street",
-      "description": "This sign indicates the end of a bicycle street. From this point, normal traffic rules apply again and cyclists no longer have special priority. The rules for regular roads apply."
+      "name": "End of a cycle zone",
+      "summary": "F113 marks the end of the cycle zone that began with F111.",
+      "description": "Indicates the end of a cycle zone. The specific cycle-zone rules end here; the general traffic rules and any other traffic signs then apply.",
+      "driver_guidance": "F113 does not set a new speed; the applicable general or separately signed limit applies.",
+      "exceptions": []
     },
     "FR": {
-      "name": "Fin de rue cyclable",
-      "description": "Ce panneau indique la fin d'une rue cyclable. À partir de ce point, les règles de circulation normales s'appliquent à nouveau et les cyclistes n'ont plus de priorité spéciale. Les règles des routes ordinaires s'appliquent."
+      "name": "Fin d'une zone cyclable",
+      "summary": "F113 marque la fin de la zone cyclable commencée par F111.",
+      "description": "Indique la fin d'une zone cyclable. Les règles propres à la zone cyclable prennent fin ici; les règles générales et les autres panneaux présents s'appliquent ensuite.",
+      "driver_guidance": "F113 ne fixe pas une nouvelle vitesse; la limite générale ou celle indiquée séparément s'applique.",
+      "exceptions": []
     },
     "AR": {
-      "name": "نهاية شارع الدراجات الهوائية",
-      "description": "تشير هذه العلامة إلى نهاية شارع الدراجات. من هذه النقطة، يتم تطبيق قواعد المرور العادية مرة أخرى ولم يعد لراكبي الدراجات أولوية خاصة. تنطبق قواعد الطرق العادية."
+      "name": "نهاية منطقة الدراجات",
+      "summary": "تحدد F113 نهاية منطقة الدراجات التي بدأت بـ F111.",
+      "description": "تشير إلى نهاية منطقة الدراجات. تنتهي هنا القواعد الخاصة بهذه المنطقة، ثم تطبق قواعد المرور العامة وأي علامات مرورية أخرى موجودة.",
+      "driver_guidance": "لا تحدد F113 سرعة جديدة، بل يطبق الحد العام أو الحد المبين بعلامة أخرى.",
+      "exceptions": []
     }
   }
 }
-

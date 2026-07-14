@@ -7,337 +7,400 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat betekent bord F23a?",
+        "question": "U ziet dit blauwe bord met een nummer langs de weg. Wat betekent het?",
         "choices": [
           {
-            "text": "Het toont het nummer van de gewone nationale of gewestweg waarop u rijdt",
+            "text": "Het geeft het nummer aan van de gewone weg waarop u rijdt of die u zal inrijden",
             "is_correct": true
           },
           {
-            "text": "Het geeft de maximumsnelheid aan op deze weg",
+            "text": "Het geeft het toegelaten aantal voertuigen op deze weg aan",
             "is_correct": false
           },
           {
-            "text": "Het geeft aan dat u een tolweg oprijdt",
+            "text": "Het duidt de maximumsnelheid in kilometer per uur aan",
             "is_correct": false
           }
         ],
-        "explanation": "F23a is een routenummerbord dat het nummer van de gewone weg aangeeft. Het helpt bestuurders hun route volgen."
+        "explanation": "Dit bord toont enkel het nummer van een gewone weg, wat de bestuurder helpt om de weg te identificeren en te navigeren."
       },
       "EN": {
-        "question": "What does sign F23a mean?",
+        "question": "You see this blue sign with a number along the road. What does it mean?",
         "choices": [
           {
-            "text": "It shows the number of the regular national or regional road you are driving on",
+            "text": "It indicates the number of the regular road you are on or about to enter",
             "is_correct": true
           },
           {
-            "text": "It indicates the maximum speed on this road",
+            "text": "It indicates the number of vehicles allowed on this road",
             "is_correct": false
           },
           {
-            "text": "It indicates you are entering a toll road",
+            "text": "It shows the maximum speed in kilometres per hour",
             "is_correct": false
           }
         ],
-        "explanation": "F23a is a road number sign showing the number of the regular road. It helps drivers follow their route."
+        "explanation": "This sign only shows the number of a regular road, helping the driver identify the road and navigate."
       },
       "FR": {
-        "question": "Que signifie le panneau F23a ?",
+        "question": "Vous apercevez ce panneau bleu portant un numéro le long de la route. Que signifie-t-il ?",
         "choices": [
           {
-            "text": "Il indique le numero de la route nationale ou regionale ordinaire sur laquelle vous roulez",
+            "text": "Il indique le numéro de la route ordinaire sur laquelle vous circulez ou que vous allez emprunter",
             "is_correct": true
           },
           {
-            "text": "Il indique la vitesse maximale sur cette route",
+            "text": "Il indique le nombre de véhicules autorisés sur cette route",
             "is_correct": false
           },
           {
-            "text": "Il indique que vous entrez sur une route a peage",
+            "text": "Il indique la vitesse maximale en kilomètres par heure",
             "is_correct": false
           }
         ],
-        "explanation": "F23a est un panneau de numerotation de route indiquant le numero de la route ordinaire. Il aide les conducteurs a suivre leur itineraire."
+        "explanation": "Ce panneau indique uniquement le numéro d'une route ordinaire, ce qui aide le conducteur à identifier la route et à s'orienter."
       },
       "AR": {
-        "question": "ما معنى هذه العلامة المرورية؟",
+        "question": "لاحظت هذه العلامة الزرقاء التي تحمل رقمًا على جانب الطريق، فماذا تعني؟",
         "choices": [
           {
-            "text": "تُظهر رقم الطريق الوطني أو الإقليمي العادي الذي تسير فيه",
+            "text": "تشير إلى رقم الطريق العادي الذي تسير عليه أو ستدخله",
             "is_correct": true
           },
           {
-            "text": "تشير إلى الحد الأقصى للسرعة على هذا الطريق",
+            "text": "تشير إلى عدد المركبات المسموح بها على هذا الطريق",
             "is_correct": false
           },
           {
-            "text": "تشير إلى أنك تدخل طريقاً مدفوع الأجر",
+            "text": "تشير إلى السرعة القصوى بالكيلومتر في الساعة",
             "is_correct": false
           }
         ],
-        "explanation": "F23a علامة مرورية ترقيم طريق تُظهر رقم الطريق العادي. تساعد السائقين على متابعة مسارهم."
+        "explanation": "تُظهر هذه العلامة فقط رقم طريق عادي، مما يساعد السائق على تحديد الطريق والتنقل عليه."
       }
     }
   },
   {
     "question_id": "F23a_Q02",
-    "type": "WHICH_SIGN",
+    "type": "DRIVER_ACTION",
     "difficulty": "EASY",
     "is_critical": false,
-    "show_sign": true,
+    "show_sign": false,
     "i18n": {
       "NL": {
-        "question": "Tot welke categorie behoort bord F23a?",
+        "question": "U volgt een routebeschrijving die verwijst naar een bepaald wegnummer en ziet dit bord. Wat doet u?",
         "choices": [
-          { "text": "informatieve borden", "is_correct": true },
-          { "text": "gevaarsborden", "is_correct": false },
-          { "text": "verbodsborden", "is_correct": false }
+          {
+            "text": "U vergelijkt het nummer op het bord met het nummer uit uw routebeschrijving om te bevestigen dat u op de juiste weg bent",
+            "is_correct": true
+          },
+          {
+            "text": "U negeert het bord, want het heeft geen enkel praktisch nut voor de bestuurder",
+            "is_correct": false
+          },
+          {
+            "text": "U vermindert onmiddellijk sterk uw snelheid omdat het bord dit verplicht",
+            "is_correct": false
+          }
         ],
-        "explanation": "F23a is een informatief routenummerbord."
+        "explanation": "Het wegnummer op dit bord dient om de bestuurder te helpen bevestigen dat hij zich op de juiste route bevindt volgens zijn navigatie of routebeschrijving."
       },
       "EN": {
-        "question": "Which category does sign F23a belong to?",
+        "question": "You are following a route description that refers to a certain road number and you see this sign. What do you do?",
         "choices": [
-          { "text": "information signs", "is_correct": true },
-          { "text": "warning signs", "is_correct": false },
-          { "text": "prohibition signs", "is_correct": false }
+          {
+            "text": "You compare the number on the sign with the number from your route description to confirm you are on the right road",
+            "is_correct": true
+          },
+          {
+            "text": "You ignore the sign, since it has no practical use for the driver",
+            "is_correct": false
+          },
+          {
+            "text": "You immediately reduce your speed significantly because the sign requires it",
+            "is_correct": false
+          }
         ],
-        "explanation": "F23a is an information route number sign in this category."
+        "explanation": "The road number on this sign helps the driver confirm they are on the correct route according to their navigation or directions."
       },
       "FR": {
-        "question": "À quelle catégorie appartient le panneau F23a ?",
+        "question": "Vous suivez un itinéraire qui mentionne un certain numéro de route et vous apercevez ce panneau. Que faites-vous ?",
         "choices": [
-          { "text": "panneaux d information", "is_correct": true },
-          { "text": "panneaux de danger", "is_correct": false },
-          { "text": "panneaux d interdiction", "is_correct": false }
+          {
+            "text": "Vous comparez le numéro sur le panneau avec celui de votre itinéraire pour confirmer que vous êtes sur la bonne route",
+            "is_correct": true
+          },
+          {
+            "text": "Vous ignorez le panneau, car il n'a aucune utilité pratique pour le conducteur",
+            "is_correct": false
+          },
+          {
+            "text": "Vous réduisez immédiatement fortement votre vitesse car le panneau l'exige",
+            "is_correct": false
+          }
         ],
-        "explanation": "F23a est un panneau d information de numerotation."
+        "explanation": "Le numéro de route sur ce panneau aide le conducteur à confirmer qu'il se trouve sur le bon itinéraire selon sa navigation ou ses indications."
       },
       "AR": {
-        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
+        "question": "تتبع مسارًا مكتوبًا يشير إلى رقم طريق معين، ولاحظت هذه العلامة، فماذا تفعل؟",
         "choices": [
-          { "text": "العلامات الإرشادية", "is_correct": true },
-          { "text": "هذه الفئة: علامات تحذير", "is_correct": false },
-          { "text": "علامات الحظر", "is_correct": false }
+          {
+            "text": "تقارن الرقم الموجود على العلامة برقم المسار الذي تتبعه للتأكد من أنك على الطريق الصحيح",
+            "is_correct": true
+          },
+          {
+            "text": "تتجاهل العلامة لأنها لا تحمل أي فائدة عملية للسائق",
+            "is_correct": false
+          },
+          {
+            "text": "تخفف سرعتك فورًا وبشكل كبير لأن العلامة تفرض ذلك",
+            "is_correct": false
+          }
         ],
-        "explanation": "F23a علامة مرورية رقم طريق إعلامية من هذه الفئة."
+        "explanation": "يساعد رقم الطريق على هذه العلامة السائق على التأكد من أنه يسير على المسار الصحيح وفق نظام التنقل أو الاتجاهات التي يتبعها."
       }
     }
   },
   {
     "question_id": "F23a_Q03",
-    "type": "HAZARD_IDENTIFICATION",
+    "type": "WHAT_HAPPENS_IF",
     "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat is het gevaar als bestuurders borden F23a negeren?",
+        "question": "Wat gebeurt er op vlak van verkeersregels als u dit bord passeert?",
         "choices": [
           {
-            "text": "Ze kunnen de verkeerde route nemen en verloren rijden met onnodige gevaarlijke manoeuvres als gevolg",
+            "text": "Er verandert niets aan de algemene verkeersregels; het bord dient enkel ter identificatie van de weg",
             "is_correct": true
           },
           {
-            "text": "De motor van hun voertuig kan overslagen",
-            "is_correct": false
-          },
-          { "text": "Ze rijden automatisch te snel", "is_correct": false }
-        ],
-        "explanation": "Routenummerborden helpen bestuurders hun weg te vinden. Ze negeren verhoogt de kans op verkeerde afslagen en gevaarlijke last-minute U-bochten."
-      },
-      "EN": {
-        "question": "What is the hazard if drivers ignore F23a signs?",
-        "choices": [
-          {
-            "text": "They may take the wrong route and get lost leading to unnecessary dangerous manoeuvres",
-            "is_correct": true
-          },
-          { "text": "Their vehicle engine may stall", "is_correct": false },
-          { "text": "They automatically drive too fast", "is_correct": false }
-        ],
-        "explanation": "Route number signs help drivers find their way. Ignoring them increases the chance of wrong turns and dangerous last-minute U-turns."
-      },
-      "FR": {
-        "question": "Quel est le danger si les conducteurs ignorent les panneaux F23a ?",
-        "choices": [
-          {
-            "text": "Ils peuvent prendre la mauvaise route et se perdre ce qui peut entrainer des manoeuvres dangereuses inutiles",
-            "is_correct": true
-          },
-          {
-            "text": "Le moteur de leur vehicule peut caler",
+            "text": "Alle voorrangsregels op deze weg worden automatisch opgeheven",
             "is_correct": false
           },
           {
-            "text": "Ils roulent automatiquement trop vite",
+            "text": "U moet verplicht van rijstrook veranderen zodra u dit bord ziet",
             "is_correct": false
           }
         ],
-        "explanation": "Les panneaux de numerotation de route aident les conducteurs a trouver leur chemin. Les ignorer augmente le risque de mauvais embranchements et de demi-tours dangereux de derniere minute."
+        "explanation": "Dit bord legt zelf geen extra verkeersregels of beperkingen op; het dient enkel om de weg te identificeren aan de hand van zijn nummer."
       },
-      "AR": {
-        "question": "ما هو الخطر الذي تشير إليه هذه العلامة المرورية؟",
+      "EN": {
+        "question": "What happens regarding traffic rules when you pass this sign?",
         "choices": [
           {
-            "text": "قد يأخذون الطريق الخطأ ويضيعون مما يؤدي إلى مناورات خطيرة غير ضرورية",
+            "text": "Nothing changes in the general traffic rules; the sign only serves to identify the road",
             "is_correct": true
           },
-          { "text": "قد يتعطل محرك مركبتهم", "is_correct": false },
-          { "text": "يسيرون تلقائياً بسرعة كبيرة", "is_correct": false }
+          {
+            "text": "All right-of-way rules on this road are automatically suspended",
+            "is_correct": false
+          },
+          {
+            "text": "You must change lanes as soon as you see this sign",
+            "is_correct": false
+          }
         ],
-        "explanation": "علامات رقم الطريق تساعد السائقين على إيجاد طريقهم. تجاهلها يزيد من احتمال الانعطاف الخاطئ والاستدارات الخطيرة في اللحظة الأخيرة."
+        "explanation": "This sign does not impose any additional traffic rules or restrictions itself; it only serves to identify the road by its number."
+      },
+      "FR": {
+        "question": "Que se passe-t-il concernant les règles de circulation lorsque vous dépassez ce panneau ?",
+        "choices": [
+          {
+            "text": "Rien ne change dans les règles générales de circulation; le panneau ne sert qu'à identifier la route",
+            "is_correct": true
+          },
+          {
+            "text": "Toutes les règles de priorité sur cette route sont automatiquement supprimées",
+            "is_correct": false
+          },
+          {
+            "text": "Vous devez obligatoirement changer de voie dès que vous voyez ce panneau",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Ce panneau n'impose lui-même aucune règle ou restriction de circulation supplémentaire; il sert uniquement à identifier la route par son numéro."
+      },
+      "AR": {
+        "question": "ما الذي يحدث من ناحية قواعد المرور عندما تتجاوز هذه العلامة؟",
+        "choices": [
+          {
+            "text": "لا يتغير شيء في قواعد المرور العامة؛ العلامة تُستخدم فقط للتعرف على الطريق",
+            "is_correct": true
+          },
+          {
+            "text": "تُلغى تلقائيًا جميع قواعد الأولوية على هذا الطريق",
+            "is_correct": false
+          },
+          {
+            "text": "يجب عليك تغيير مسارك بشكل إلزامي بمجرد رؤية هذه العلامة",
+            "is_correct": false
+          }
+        ],
+        "explanation": "لا تفرض هذه العلامة بحد ذاتها أي قواعد أو قيود مرورية إضافية؛ فهي تُستخدم فقط للتعرف على الطريق من خلال رقمه."
       }
     }
   },
   {
     "question_id": "F23a_Q04",
-    "type": "WHAT_MUST_YOU_DO",
+    "type": "WHICH_SIGN",
     "difficulty": "MEDIUM",
     "is_critical": false,
-    "show_sign": true,
+    "show_sign": false,
     "i18n": {
       "NL": {
-        "question": "Hoe gebruikt u bord F23a om uw route te bepalen?",
+        "question": "Welk kenmerk helpt u om een bord voor een gewone weg te onderscheiden van een bord voor een autosnelweg?",
         "choices": [
           {
-            "text": "U vergelijkt het routenummer op het bord met uw geplande route en rijdt de aangeduide weg",
+            "text": "Het bord voor een gewone weg heeft een blauwe kleur, terwijl autosnelwegborden een ander kleurkenmerk hebben",
             "is_correct": true
           },
           {
-            "text": "Het bord geeft de snelheid aan die u moet rijden",
+            "text": "Beide borden hebben exact dezelfde vorm, kleur en betekenis",
             "is_correct": false
           },
           {
-            "text": "Het bord geeft een detour aan die u altijd moet volgen",
+            "text": "Enkel borden voor autosnelwegen tonen een nummer, gewone wegen nooit",
             "is_correct": false
           }
         ],
-        "explanation": "F23a toont het wegnummer. U vergelijkt dit met uw reisplan of navigatie en volgt zo de correcte weg naar uw bestemming."
+        "explanation": "Een bord voor een gewone weg is te herkennen aan de blauwe kleur, wat het onderscheidt van de signalisatie die specifiek voor autosnelwegen wordt gebruikt."
       },
       "EN": {
-        "question": "How do you use sign F23a to determine your route?",
+        "question": "What feature helps you distinguish a sign for a regular road from a sign for a motorway?",
         "choices": [
           {
-            "text": "You compare the route number on the sign with your planned route and follow the indicated road",
+            "text": "The sign for a regular road has a blue colour, while motorway signs have a different colour characteristic",
             "is_correct": true
           },
           {
-            "text": "The sign indicates the speed you must travel",
+            "text": "Both signs have exactly the same shape, colour and meaning",
             "is_correct": false
           },
           {
-            "text": "The sign indicates a detour you must always follow",
+            "text": "Only motorway signs show a number, regular roads never do",
             "is_correct": false
           }
         ],
-        "explanation": "F23a shows the road number. You compare this with your travel plan or navigation and follow the correct road to your destination."
+        "explanation": "A sign for a regular road can be recognised by its blue colour, distinguishing it from the signage specifically used for motorways."
       },
       "FR": {
-        "question": "Comment utilisez-vous le panneau F23a pour determiner votre itineraire ?",
+        "question": "Quelle caractéristique vous aide à distinguer un panneau pour une route ordinaire d'un panneau pour une autoroute ?",
         "choices": [
           {
-            "text": "Vous comparez le numero de route sur le panneau avec votre itineraire prevu et suivez la route indiquee",
+            "text": "Le panneau pour une route ordinaire est de couleur bleue, tandis que les panneaux d'autoroute ont une autre caractéristique de couleur",
             "is_correct": true
           },
           {
-            "text": "Le panneau indique la vitesse a laquelle vous devez rouler",
+            "text": "Les deux panneaux ont exactement la même forme, couleur et signification",
             "is_correct": false
           },
           {
-            "text": "Le panneau indique un detour que vous devez toujours suivre",
+            "text": "Seuls les panneaux d'autoroute affichent un numéro, jamais les routes ordinaires",
             "is_correct": false
           }
         ],
-        "explanation": "F23a montre le numero de route. Vous le comparez avec votre plan de voyage ou votre navigation et suivez la route correcte vers votre destination."
+        "explanation": "Un panneau pour une route ordinaire se reconnaît à sa couleur bleue, ce qui le distingue de la signalisation spécifique aux autoroutes."
       },
       "AR": {
-        "question": "كيف تستخدم علامة مرورية F23a لتحديد مسارك؟",
+        "question": "ما الخاصية التي تساعدك على تمييز علامة طريق عادي عن علامة طريق سريع؟",
         "choices": [
           {
-            "text": "تقارن رقم الطريق على العلامة المرورية بمسارك المخطط وتسير في الطريق المشار إليه",
+            "text": "علامة الطريق العادي تحمل لونًا أزرق، بينما تتميز علامات الطرق السريعة بخاصية لون مختلفة",
             "is_correct": true
           },
           {
-            "text": "تشير العلامة المرورية إلى السرعة التي يجب أن تسير بها",
+            "text": "تحمل العلامتان نفس الشكل واللون والمعنى تمامًا",
             "is_correct": false
           },
           {
-            "text": "تشير العلامة المرورية إلى مسار بديل يجب دائماً اتباعه",
+            "text": "فقط علامات الطرق السريعة تحمل رقمًا، ولا تحمله الطرق العادية أبدًا",
             "is_correct": false
           }
         ],
-        "explanation": "تُظهر F23a رقم الطريق. تقارنه بخطة رحلتك أو الملاحة وتتبع الطريق الصحيح إلى وجهتك."
+        "explanation": "يمكن التعرف على علامة الطريق العادي من خلال لونها الأزرق، وهو ما يميزها عن الإشارات المستخدمة خصيصًا للطرق السريعة."
       }
     }
   },
   {
     "question_id": "F23a_Q05",
-    "type": "WHAT_MUST_YOU_DO",
+    "type": "WHERE_DOES_IT_APPLY",
     "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U rijdt op een weg genummerd N4. Hoe onderscheidt u F23a van een snelwegnummerbord (F23b)?",
+        "question": "Voor welk type verbinding wordt een weg met dit soort nummerbord doorgaans gebruikt?",
         "choices": [
           {
-            "text": "F23a heeft een witte achtergrond met zwarte letters voor normale wegen; F23b is blauw voor snelwegen",
+            "text": "Voor de verbinding tussen steden en dorpen via een gewone weg",
             "is_correct": true
           },
-          { "text": "F23a is groter dan F23b", "is_correct": false },
           {
-            "text": "Er is geen verschil beide borden zien er hetzelfde uit",
+            "text": "Enkel voor interne wegen binnen een bedrijfsterrein",
+            "is_correct": false
+          },
+          {
+            "text": "Enkel voor fietspaden die niet toegankelijk zijn voor motorvoertuigen",
             "is_correct": false
           }
         ],
-        "explanation": "F23a (gewone weg) heeft typisch een witte of rode achtergrond. F23b (snelweg) heeft een blauwe achtergrond. Dit helpt bestuurders snel herkennen op welk type weg ze rijden."
+        "explanation": "Een gewone weg met een nummerbord wordt vaak gebruikt om steden en dorpen onderling te verbinden, in tegenstelling tot autosnelwegen die voor langere afstanden dienen."
       },
       "EN": {
-        "question": "You are on a road numbered N4. How do you distinguish F23a from a motorway number sign (F23b)?",
+        "question": "What type of connection is a road with this kind of number sign usually used for?",
         "choices": [
           {
-            "text": "F23a has a white background with black numbers for normal roads; F23b is blue for motorways",
+            "text": "For connecting cities and villages via a regular road",
             "is_correct": true
           },
-          { "text": "F23a is larger than F23b", "is_correct": false },
           {
-            "text": "There is no difference both signs look the same",
+            "text": "Only for internal roads within a business park",
+            "is_correct": false
+          },
+          {
+            "text": "Only for cycle paths not accessible to motor vehicles",
             "is_correct": false
           }
         ],
-        "explanation": "F23a (regular road) typically has a white or red background. F23b (motorway) has a blue background. This helps drivers quickly recognise what type of road they are on."
+        "explanation": "A regular road with a number sign is often used to connect cities and villages, unlike motorways which serve longer distances."
       },
       "FR": {
-        "question": "Vous etes sur une route numerotee N4. Comment distinguez-vous F23a d un panneau de numero d autoroute (F23b) ?",
+        "question": "Pour quel type de liaison une route portant ce genre de panneau numéroté est-elle habituellement utilisée ?",
         "choices": [
           {
-            "text": "F23a a un fond blanc avec des chiffres noirs pour les routes normales; F23b est bleu pour les autoroutes",
+            "text": "Pour relier des villes et des villages via une route ordinaire",
             "is_correct": true
           },
-          { "text": "F23a est plus grand que F23b", "is_correct": false },
           {
-            "text": "Il n y a pas de difference les deux panneaux se ressemblent",
+            "text": "Uniquement pour des routes internes au sein d'une zone d'activité",
+            "is_correct": false
+          },
+          {
+            "text": "Uniquement pour des pistes cyclables non accessibles aux véhicules motorisés",
             "is_correct": false
           }
         ],
-        "explanation": "F23a (route ordinaire) a generalement un fond blanc ou rouge. F23b (autoroute) a un fond bleu. Cela aide les conducteurs a reconnaitre rapidement le type de route sur laquelle ils roulent."
+        "explanation": "Une route ordinaire portant un panneau numéroté est souvent utilisée pour relier les villes et les villages, contrairement aux autoroutes destinées aux longues distances."
       },
       "AR": {
-        "question": "أنت على طريق مرقم N4. كيف تميز F23a عن علامة مرورية رقم الطريق السريع (F23b)؟",
+        "question": "لأي نوع من الربط يُستخدم عادةً طريق يحمل هذا النوع من لوحة الأرقام؟",
         "choices": [
           {
-            "text": "F23a لها خلفية بيضاء بأرقام سوداء للطرق العادية؛ F23b زرقاء للطرق السريعة",
+            "text": "للربط بين المدن والقرى عبر طريق عادي",
             "is_correct": true
           },
-          { "text": "F23a أكبر من F23b", "is_correct": false },
           {
-            "text": "لا يوجد فرق، كلتا العلامتين تبدوان متشابهتين.",
+            "text": "فقط للطرق الداخلية داخل منطقة صناعية",
+            "is_correct": false
+          },
+          {
+            "text": "فقط لمسارات الدراجات غير المتاحة للمركبات الآلية",
             "is_correct": false
           }
         ],
-        "explanation": "عادةً تكون F23a (طريق عادي) ذات خلفية بيضاء أو حمراء. F23b (طريق سريع) ذات خلفية زرقاء. يساعد هذا السائقين على التعرف بسرعة على نوع الطريق الذي يسيرون فيه."
+        "explanation": "يُستخدم الطريق العادي الذي يحمل لوحة رقمية غالبًا للربط بين المدن والقرى، بخلاف الطرق السريعة المخصصة للمسافات الطويلة."
       }
     }
   },
@@ -346,76 +409,79 @@
     "type": "WHAT_MUST_YOU_DO",
     "difficulty": "MEDIUM",
     "is_critical": false,
-    "show_sign": true,
+    "show_sign": false,
     "i18n": {
       "NL": {
-        "question": "U ziet F23a met het nummer van de weg vlak voor een kruispunt. Wat is het nut van dit bord op dat moment?",
+        "question": "U twijfelt of u de juiste weg volgt en ziet een bord met een wegnummer zoals dit. Wat is de beste aanpak?",
         "choices": [
           {
-            "text": "Het bevestigt de weg waarop u rijdt zodat u de juiste afslag kunt nemen",
+            "text": "Het nummer op het bord controleren en vergelijken met uw geplande route om zeker te zijn dat u juist rijdt",
             "is_correct": true
           },
           {
-            "text": "Het geeft aan dat er een verkeerscontrole is op het kruispunt",
+            "text": "Onmiddellijk stoppen op de rijbaan om het bord rustig te bekijken",
             "is_correct": false
           },
           {
-            "text": "Het geeft een snelheidsbeperking aan op het kruispunt",
+            "text": "Het bord volledig negeren, want het heeft geen invloed op uw navigatie",
             "is_correct": false
           }
         ],
-        "explanation": "Een F23a vlak voor een kruispunt helpt u bevestigen op welke weg u rijdt zodat u de correcte afslag kiest."
+        "explanation": "Het controleren van het wegnummer op het bord is de veilige en correcte manier om te bevestigen dat u de juiste weg volgt, zonder de rijbaan te blokkeren."
       },
       "EN": {
-        "question": "You see F23a with the road number just before an intersection. What is the purpose of this sign at that point?",
+        "question": "You are unsure whether you are following the right road and see a sign with a road number like this one. What is the best approach?",
         "choices": [
           {
-            "text": "It confirms the road you are on so you can take the correct turn-off",
+            "text": "Check the number on the sign and compare it with your planned route to make sure you are driving correctly",
             "is_correct": true
           },
           {
-            "text": "It indicates there is a police checkpoint at the intersection",
+            "text": "Immediately stop on the roadway to calmly look at the sign",
             "is_correct": false
           },
           {
-            "text": "It indicates a speed restriction at the intersection",
+            "text": "Completely ignore the sign, since it has no influence on your navigation",
             "is_correct": false
           }
         ],
-        "explanation": "An F23a just before an intersection helps you confirm which road you are on so you can choose the correct exit."
+        "explanation": "Checking the road number on the sign is the safe and correct way to confirm you are on the right road, without blocking the roadway."
       },
       "FR": {
-        "question": "Vous voyez F23a avec le numero de route juste avant un carrefour. Quel est l utilite de ce panneau a ce moment ?",
+        "question": "Vous n'êtes pas sûr de suivre la bonne route et voyez un panneau portant un numéro de route comme celui-ci. Quelle est la meilleure approche ?",
         "choices": [
           {
-            "text": "Il confirme la route sur laquelle vous etes afin que vous puissiez prendre la bonne sortie",
+            "text": "Vérifier le numéro sur le panneau et le comparer avec votre itinéraire prévu pour vous assurer que vous roulez correctement",
             "is_correct": true
           },
           {
-            "text": "Il indique qu il y a un controle de police au carrefour",
+            "text": "Vous arrêter immédiatement sur la chaussée pour observer calmement le panneau",
             "is_correct": false
           },
           {
-            "text": "Il indique une limitation de vitesse au carrefour",
+            "text": "Ignorer complètement le panneau, car il n'a aucune influence sur votre navigation",
             "is_correct": false
           }
         ],
-        "explanation": "Un F23a juste avant un carrefour vous aide a confirmer sur quelle route vous etes afin que vous choisissiez la bonne sortie."
+        "explanation": "Vérifier le numéro de route sur le panneau est la manière sûre et correcte de confirmer que vous suivez la bonne route, sans bloquer la chaussée."
       },
       "AR": {
-        "question": "ترى F23a برقم الطريق مباشرة قبل تقاطع. ما فائدة هذه العلامة المرورية في هذه اللحظة؟",
+        "question": "أنت غير متأكد من أنك تسير على الطريق الصحيح ولاحظت علامة تحمل رقم طريق مثل هذه، فما أفضل تصرف؟",
         "choices": [
           {
-            "text": "تؤكد الطريق الذي أنت فيه حتى تتمكن من أخذ المخرج الصحيح",
+            "text": "تفقّد الرقم الموجود على العلامة ومقارنته بمسارك المخطط للتأكد من أنك تسير بشكل صحيح",
             "is_correct": true
           },
           {
-            "text": "تشير إلى وجود نقطة تفتيش شرطة عند التقاطع",
+            "text": "التوقف فورًا على الطريق لتفحص العلامة بهدوء",
             "is_correct": false
           },
-          { "text": "تشير إلى قيد سرعة عند التقاطع", "is_correct": false }
+          {
+            "text": "تجاهل العلامة تمامًا لأنها لا تؤثر على تنقلك",
+            "is_correct": false
+          }
         ],
-        "explanation": "F23a مباشرة قبل التقاطع تساعدك على التأكد من الطريق الذي أنت فيه حتى تختار المخرج الصحيح."
+        "explanation": "تفقّد رقم الطريق على العلامة هو الطريقة الآمنة والصحيحة للتأكد من أنك تسير على الطريق الصحيح، دون إعاقة حركة المرور على الطريق."
       }
     }
   },
@@ -424,63 +490,63 @@
     "type": "IS_IT_ALLOWED",
     "difficulty": "HARD",
     "is_critical": true,
-    "show_sign": true,
+    "show_sign": false,
     "i18n": {
       "NL": {
-        "question": "Mag u stoppen op de rijbaan om bord F23a beter te lezen?",
+        "question": "Mag u ervan uitgaan dat een specifieke maximumsnelheid geldt enkel op basis van een bord met een gewoon wegnummer?",
         "choices": [
           {
-            "text": "Nee stoppen op de rijbaan is gevaarlijk en verboden; lees borden snel of stop aan de kant op een veilige plek",
+            "text": "Nee, dit bord alleen legt geen specifieke maximumsnelheid op; daarvoor moet u een apart snelheidsbord raadplegen",
             "is_correct": true
           },
           {
-            "text": "Ja borden lezen is een verplichting dus even stoppen is toegestaan",
+            "text": "Ja, elk wegnummerbord bepaalt automatisch een vaste maximumsnelheid voor die weg",
             "is_correct": false
           }
         ],
-        "explanation": "Stoppen op de rijbaan om een bord te lezen is gevaarlijk. U stop veilig aan de kant of maakt gebruik van parkeerplaatsen om informatie te raadplegen."
+        "explanation": "Een bord met een wegnummer identificeert enkel de weg en legt op zichzelf geen maximumsnelheid vast; dit vereist een apart verkeersbord."
       },
       "EN": {
-        "question": "May you stop on the carriageway to read sign F23a more carefully?",
+        "question": "May you assume that a specific speed limit applies based solely on a sign with a regular road number?",
         "choices": [
           {
-            "text": "No stopping on the carriageway is dangerous and forbidden; read signs quickly or stop safely on the side in a safe spot",
+            "text": "No, this sign alone does not impose any specific speed limit; you must consult a separate speed sign for that",
             "is_correct": true
           },
           {
-            "text": "Yes reading signs is an obligation so stopping briefly is allowed",
+            "text": "Yes, every road number sign automatically sets a fixed speed limit for that road",
             "is_correct": false
           }
         ],
-        "explanation": "Stopping on the carriageway to read a sign is dangerous. Stop safely on the side or use lay-bys to consult information."
+        "explanation": "A sign with a road number only identifies the road and does not by itself set a speed limit; that requires a separate traffic sign."
       },
       "FR": {
-        "question": "Pouvez-vous vous arreter sur la chaussee pour mieux lire le panneau F23a ?",
+        "question": "Pouvez-vous supposer qu'une limite de vitesse spécifique s'applique uniquement sur la base d'un panneau portant un numéro de route ordinaire ?",
         "choices": [
           {
-            "text": "Non s arreter sur la chaussee est dangereux et interdit; lisez rapidement les panneaux ou arretez-vous en toute securite sur le cote en lieu sur",
+            "text": "Non, ce panneau seul n'impose aucune limite de vitesse spécifique; vous devez consulter un panneau de vitesse distinct pour cela",
             "is_correct": true
           },
           {
-            "text": "Oui lire les panneaux est une obligation donc s arreter brievement est autorise",
+            "text": "Oui, chaque panneau de numéro de route fixe automatiquement une vitesse limite pour cette route",
             "is_correct": false
           }
         ],
-        "explanation": "S arreter sur la chaussee pour lire un panneau est dangereux. Arretez-vous en toute securite sur le cote ou utilisez des aires de stationnement pour consulter des informations."
+        "explanation": "Un panneau portant un numéro de route identifie uniquement la route et ne fixe pas de limite de vitesse par lui-même; cela nécessite un panneau de circulation distinct."
       },
       "AR": {
-        "question": "هل يمكنك التوقف على الطريق لقراءة علامة مرورية F23a بشكل أفضل؟",
+        "question": "هل يمكنك أن تفترض وجود حد سرعة معين بناءً فقط على علامة تحمل رقم طريق عادي؟",
         "choices": [
           {
-            "text": "لا التوقف على الطريق خطير ومحظور؛ اقرأ العلامات بسرعة أو توقف بأمان على الجانب في مكان آمن",
+            "text": "لا، هذه العلامة وحدها لا تفرض أي حد سرعة معين؛ يجب الرجوع إلى علامة سرعة مستقلة لذلك",
             "is_correct": true
           },
           {
-            "text": "نعم قراءة العلامات واجب لذا يُسمح بالتوقف المؤقت",
+            "text": "نعم، كل علامة رقم طريق تحدد تلقائيًا سرعة قصوى ثابتة لذلك الطريق",
             "is_correct": false
           }
         ],
-        "explanation": "التوقف على الطريق لقراءة علامة مرورية أمر خطير. توقف بأمان على الجانب أو استخدم مناطق الانتظار للاستشارة."
+        "explanation": "تُستخدم العلامة التي تحمل رقم الطريق فقط للتعرف على الطريق ولا تحدد بحد ذاتها أي سرعة قصوى؛ يتطلب ذلك علامة مرورية مستقلة."
       }
     }
   },
@@ -492,60 +558,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Verandert bord F23a de verkeersregels die op die weg gelden?",
+        "question": "Mag u aannemen dat een weg met dit soort nummerbord altijd voorrang heeft op elke kruisende weg zonder nummerbord?",
         "choices": [
           {
-            "text": "Nee F23a is puur informatief en wijzigt geen enkele verkeersregel",
+            "text": "Nee, het wegnummer alleen bepaalt geen voorrangsregels; die worden vastgelegd door de aanwezige voorrangsborden of -markeringen",
             "is_correct": true
           },
           {
-            "text": "Ja het bord geeft een speciale status aan die extra rechten verleent",
+            "text": "Ja, een genummerde gewone weg heeft altijd automatisch voorrang op alle andere wegen",
             "is_correct": false
           }
         ],
-        "explanation": "F23a is een puur informatief routenummerbord. Het wijzigt geen snelheidslimieten, voorrangsregels of andere verkeersregels."
+        "explanation": "Voorrang wordt bepaald door specifieke voorrangsborden of -markeringen, en niet door de aanwezigheid van een wegnummerbord op zich."
       },
       "EN": {
-        "question": "Does sign F23a change the traffic rules that apply on that road?",
+        "question": "May you assume that a road with this kind of number sign always has priority over any crossing road without a number sign?",
         "choices": [
           {
-            "text": "No F23a is purely informational and does not change any traffic rule",
+            "text": "No, the road number alone does not determine right-of-way rules; these are set by the priority signs or markings present",
             "is_correct": true
           },
           {
-            "text": "Yes the sign indicates a special status that grants extra rights",
+            "text": "Yes, a numbered regular road always automatically has priority over all other roads",
             "is_correct": false
           }
         ],
-        "explanation": "F23a is a purely informational route number sign. It does not change speed limits priority rules or any other traffic rules."
+        "explanation": "Right-of-way is determined by specific priority signs or markings, not by the mere presence of a road number sign."
       },
       "FR": {
-        "question": "Le panneau F23a modifie-t-il les regles de circulation applicables sur cette route ?",
+        "question": "Pouvez-vous supposer qu'une route portant ce genre de panneau numéroté a toujours la priorité sur toute route croisée sans panneau numéroté ?",
         "choices": [
           {
-            "text": "Non F23a est purement informatif et ne modifie aucune regle de circulation",
+            "text": "Non, le numéro de route seul ne détermine pas les règles de priorité; celles-ci sont fixées par les panneaux ou marquages de priorité présents",
             "is_correct": true
           },
           {
-            "text": "Oui le panneau indique un statut special qui accorde des droits supplementaires",
+            "text": "Oui, une route ordinaire numérotée a toujours automatiquement la priorité sur toutes les autres routes",
             "is_correct": false
           }
         ],
-        "explanation": "F23a est un panneau de numerotation purement informatif. Il ne modifie pas les limitations de vitesse les regles de priorite ni aucune autre regle de circulation."
+        "explanation": "La priorité est déterminée par des panneaux ou marquages de priorité spécifiques, et non par la simple présence d'un panneau de numéro de route."
       },
       "AR": {
-        "question": "هل تغير علامة مرورية F23a قواعد المرور المعمول بها على ذلك الطريق؟",
+        "question": "هل يمكنك أن تفترض أن طريقًا يحمل هذا النوع من لوحة الأرقام يتمتع دائمًا بالأولوية على أي طريق متقاطع لا يحمل لوحة أرقام؟",
         "choices": [
           {
-            "text": "لا F23a إعلامية بحتة ولا تغير أي قاعدة مرورية",
+            "text": "لا، رقم الطريق وحده لا يحدد قواعد الأولوية؛ تُحدد هذه القواعد بواسطة علامات أو خطوط الأولوية الموجودة فعليًا",
             "is_correct": true
           },
           {
-            "text": "نعم تشير العلامة المرورية إلى حالة خاصة تمنح حقوقاً إضافية",
+            "text": "نعم، الطريق العادي المرقّم يتمتع دائمًا تلقائيًا بالأولوية على جميع الطرق الأخرى",
             "is_correct": false
           }
         ],
-        "explanation": "F23a هذه علامة رقم طريق إرشادية فقط. لا تغير حدود السرعة أو قواعد الأولوية أو أي قواعد مرورية أخرى."
+        "explanation": "تُحدد الأولوية بواسطة علامات أو خطوط أولوية معينة، وليس بمجرد وجود علامة رقم طريق."
       }
     }
   }

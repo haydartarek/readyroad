@@ -33,7 +33,7 @@ public class TrafficSignMapper {
         CATEGORY_TO_LETTER.put(SignCategory.CYCLIST, "M");
         CATEGORY_TO_LETTER.put(SignCategory.DELINEATION, "T");
         CATEGORY_TO_LETTER.put(SignCategory.ZONE, "Z");
-        CATEGORY_TO_LETTER.put(SignCategory.ROAD_MANAGEMENT, "F");
+        CATEGORY_TO_LETTER.put(SignCategory.ROAD_MANAGEMENT, "FM");
     }
 
     public TrafficSignResponse toResponse(RoadSign sign) {
@@ -50,23 +50,22 @@ public class TrafficSignMapper {
                 resolved.nameEn(),
                 resolved.nameNl(),
                 resolved.nameFr(),
+                resolved.summaryAr(),
+                resolved.summaryEn(),
+                resolved.summaryNl(),
+                resolved.summaryFr(),
                 resolved.descriptionAr(),
                 resolved.descriptionEn(),
                 resolved.descriptionNl(),
                 resolved.descriptionFr(),
-                resolved.descriptionAr(),
-                resolved.descriptionEn(),
-                resolved.descriptionNl(),
-                resolved.descriptionFr(),
-                resolved.longDescriptionEn(),
-                resolved.longDescriptionNl(),
-                resolved.longDescriptionFr(),
-                resolved.longDescriptionAr(),
-                resolved.longDescriptionAr(),
-                resolved.longDescriptionEn(),
-                resolved.longDescriptionNl(),
-                resolved.longDescriptionFr(),
-                resolved.hasLongDescription(),
+                resolved.driverGuidanceAr(),
+                resolved.driverGuidanceEn(),
+                resolved.driverGuidanceNl(),
+                resolved.driverGuidanceFr(),
+                resolved.exceptionsAr(),
+                resolved.exceptionsEn(),
+                resolved.exceptionsNl(),
+                resolved.exceptionsFr(),
                 resolved.imagePath());
     }
 
@@ -85,11 +84,6 @@ public class TrafficSignMapper {
                 resolved.descriptionEn(),
                 resolved.descriptionNl(),
                 resolved.descriptionFr(),
-                resolved.longDescriptionEn(),
-                resolved.longDescriptionNl(),
-                resolved.longDescriptionFr(),
-                resolved.longDescriptionAr(),
-                resolved.hasLongDescription(),
                 resolved.imagePath(),
                 sign.getIsActive(),
                 sign.getCreatedAt(),

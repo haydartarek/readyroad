@@ -7,340 +7,372 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat betekent bord F17?",
+        "question": "U ziet dit bord boven een rijstrook hangen. Wat betekent dit voor gewone bestuurders?",
         "choices": [
           {
-            "text": "Het geeft een rijstrook aan die voorbehouden is aan bussen en andere toegelaten voertuigen",
+            "text": "Dit is een busstrook voor geregelde openbaarvervoerdiensten; andere aangeduide categorieën kunnen eveneens toegelaten zijn",
             "is_correct": true
           },
           {
-            "text": "Het verbiedt bussen om op de rijbaan te rijden",
+            "text": "Deze rijstrook is bestemd voor voertuigen die sneller dan de rest willen rijden",
             "is_correct": false
           },
-          { "text": "Het geeft een bushalte aan", "is_correct": false }
+          {
+            "text": "Deze rijstrook is enkel bestemd voor fietsers",
+            "is_correct": false
+          }
         ],
-        "explanation": "F17 duidt een rijstrook of weggedeelte aan dat uitsluitend bestemd is voor bussen en in sommige gevallen ook voor trams, taxi's of andere toegelaten voertuigen."
+        "explanation": "F17 en de bijbehorende brede onderbroken of dambordmarkering bakenen een busstrook af. Geregelde openbaarvervoerdiensten mogen er rijden; andere categorieën zijn toegelaten wanneer hun symbool, woord of bord is aangebracht."
       },
       "EN": {
-        "question": "What does sign F17 mean?",
+        "question": "You see this sign above a lane. What does it mean for ordinary drivers?",
         "choices": [
           {
-            "text": "It indicates a lane reserved for buses and other authorised vehicles",
+            "text": "This is a bus lane for regular public transport services; other displayed categories may also be permitted",
             "is_correct": true
           },
           {
-            "text": "It prohibits buses from driving on the road",
+            "text": "This lane is meant for vehicles that want to drive faster than the rest",
             "is_correct": false
           },
-          { "text": "It indicates a bus stop", "is_correct": false }
+          {
+            "text": "This lane is only meant for cyclists",
+            "is_correct": false
+          }
         ],
-        "explanation": "F17 marks a lane or road section exclusively for buses and in some cases also trams, taxis or other authorised vehicles."
+        "explanation": "F17 and the associated broad broken or chequered marking define a bus lane. Regular public transport services may use it; other categories are allowed when their symbol, wording or sign is displayed."
       },
       "FR": {
-        "question": "Que signifie le panneau F17 ?",
+        "question": "Vous apercevez ce panneau au-dessus d'une voie. Que signifie-t-il pour les conducteurs ordinaires ?",
         "choices": [
           {
-            "text": "Il indique une voie reservee aux bus et autres vehicules autorises",
+            "text": "C'est une voie de bus pour les services réguliers de transport en commun; d'autres catégories affichées peuvent aussi être admises",
             "is_correct": true
           },
           {
-            "text": "Il interdit aux bus de rouler sur la chaussee",
+            "text": "Cette voie est destinée aux véhicules souhaitant rouler plus vite que les autres",
             "is_correct": false
           },
-          { "text": "Il indique un arret de bus", "is_correct": false }
+          {
+            "text": "Cette voie est réservée uniquement aux cyclistes",
+            "is_correct": false
+          }
         ],
-        "explanation": "F17 marque une voie ou section de route exclusivement destinee aux bus et dans certains cas aussi aux trams taxis ou autres vehicules autorises."
+        "explanation": "F17 et le marquage large discontinu ou en damier délimitent une voie de bus. Les services réguliers de transport en commun peuvent l'utiliser; les autres catégories sont admises lorsque leur symbole, mot ou panneau est affiché."
       },
       "AR": {
-        "question": "ما معنى هذه العلامة المرورية؟",
+        "question": "لاحظت هذه العلامة معلّقة فوق مسار، فماذا تعني للسائقين العاديين؟",
         "choices": [
+          { "text": "هذا مسار لخدمات النقل العام المنتظمة، وقد يُسمح أيضًا للفئات الأخرى التي يظهر رمزها أو اسمها", "is_correct": true },
           {
-            "text": "تشير إلى حارة محجوزة للحافلات والمركبات المرخصة الأخرى",
-            "is_correct": true
+            "text": "هذا المسار مخصص للمركبات التي تريد السير أسرع من بقية المركبات",
+            "is_correct": false
           },
-          { "text": "تحظر على الحافلات السير على الطريق", "is_correct": false },
-          { "text": "تشير إلى محطة حافلات", "is_correct": false }
+          {
+            "text": "هذا المسار مخصص فقط للدراجات الهوائية",
+            "is_correct": false
+          }
         ],
-        "explanation": "تحدد F17 حارة أو قسماً من الطريق مخصصاً حصرياً للحافلات وفي بعض الحالات أيضاً للترام والتاكسيات والمركبات المرخصة الأخرى."
+        "explanation": "تحدد F17 مع العلامات العريضة المتقطعة أو المربعة مسار حافلات. يجوز لخدمات النقل العام المنتظمة استخدامه، وتُقبل فئات أخرى عندما يظهر رمزها أو اسمها أو لوحتها."
       }
     }
   },
   {
     "question_id": "F17_Q02",
-    "type": "WHICH_SIGN",
+    "type": "DRIVER_ACTION",
     "difficulty": "EASY",
     "is_critical": false,
-    "show_sign": true,
+    "show_sign": false,
     "i18n": {
       "NL": {
-        "question": "Tot welke categorie behoort bord F17?",
+        "question": "U rijdt met uw auto en ziet dit bord boven de rechtse strook. Wat doet u?",
         "choices": [
-          { "text": "informatieve borden", "is_correct": true },
-          { "text": "verbodsborden", "is_correct": false },
-          { "text": "parkeer- en stopverbodsborden", "is_correct": false }
-        ],
-        "explanation": "F17 is een deze categorie informatief bord dat een gereserveerde rijstrook aanduidt."
-      },
-      "EN": {
-        "question": "Which category does sign F17 belong to?",
-        "choices": [
-          { "text": "information signs", "is_correct": true },
-          { "text": "prohibition signs", "is_correct": false },
-          { "text": "parking and stopping signs", "is_correct": false }
-        ],
-        "explanation": "F17 is an information sign indicating a reserved lane."
-      },
-      "FR": {
-        "question": "À quelle catégorie appartient le panneau F17 ?",
-        "choices": [
-          { "text": "panneaux d information", "is_correct": true },
-          { "text": "panneaux d interdiction", "is_correct": false },
           {
-            "text": "panneaux de stationnement et d arret",
+            "text": "U blijft op een van de andere rijstroken en vermijdt de busstrook",
+            "is_correct": true
+          },
+          {
+            "text": "U rijdt op de busstrook omdat die meestal minder druk is",
+            "is_correct": false
+          },
+          {
+            "text": "U wisselt voortdurend tussen de busstrook en de andere stroken",
             "is_correct": false
           }
         ],
-        "explanation": "F17 est un panneau d information indiquant une voie reservee."
+        "explanation": "Omdat de busstrook voorbehouden is voor autobussen, moet een gewone bestuurder op de overige rijstroken blijven."
+      },
+      "EN": {
+        "question": "You are driving your car and see this sign above the right-hand lane. What do you do?",
+        "choices": [
+          {
+            "text": "You stay in one of the other lanes and avoid the bus lane",
+            "is_correct": true
+          },
+          {
+            "text": "You drive in the bus lane because it is usually less busy",
+            "is_correct": false
+          },
+          {
+            "text": "You keep switching between the bus lane and the other lanes",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Since the bus lane is reserved for buses, an ordinary driver must remain in the other available lanes."
+      },
+      "FR": {
+        "question": "Vous conduisez votre voiture et voyez ce panneau au-dessus de la voie de droite. Que faites-vous ?",
+        "choices": [
+          {
+            "text": "Vous restez sur l'une des autres voies et évitez la voie de bus",
+            "is_correct": true
+          },
+          {
+            "text": "Vous roulez sur la voie de bus car elle est généralement moins encombrée",
+            "is_correct": false
+          },
+          {
+            "text": "Vous alternez continuellement entre la voie de bus et les autres voies",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Puisque la voie de bus est réservée aux autobus, un conducteur ordinaire doit rester sur les autres voies disponibles."
       },
       "AR": {
-        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
+        "question": "أنت تقود سيارتك ولاحظت هذه العلامة فوق المسار الأيمن، فماذا تفعل؟",
         "choices": [
-          { "text": "العلامات الإرشادية", "is_correct": true },
-          { "text": "علامات الحظر", "is_correct": false },
-          { "text": "علامات الوقوف", "is_correct": false }
+          {
+            "text": "تبقى في أحد المسارات الأخرى وتتجنب مسار الحافلات",
+            "is_correct": true
+          },
+          {
+            "text": "تسير في مسار الحافلات لأنه غالبًا أقل ازدحامًا",
+            "is_correct": false
+          },
+          {
+            "text": "تنتقل باستمرار بين مسار الحافلات والمسارات الأخرى",
+            "is_correct": false
+          }
         ],
-        "explanation": "F17 علامة مرورية إعلامية من هذه الفئة تشير إلى حارة محجوزة."
+        "explanation": "بما أن مسار الحافلات مخصص للحافلات، يجب على السائق العادي البقاء في المسارات الأخرى المتاحة."
       }
     }
   },
   {
     "question_id": "F17_Q03",
-    "type": "HAZARD_IDENTIFICATION",
+    "type": "WHAT_HAPPENS_IF",
     "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Welk gevaar ontstaat als een personenwagen op de busbaan rijdt?",
+        "question": "Wat kan er gebeuren als u zonder toestemming op de busstrook rijdt?",
         "choices": [
           {
-            "text": "De busbaan kan geblokkeerd worden waardoor bussen en hulpdiensten vertraging oplopen en er botsingsrisico is",
+            "text": "U verstoort de doorstroming van het openbaar vervoer en riskeert een overtreding",
             "is_correct": true
           },
           {
-            "text": "De auto raakt beschadigd door speciale bestrating op de busbaan",
+            "text": "Er gebeurt niets, want de busstrook is voor iedereen toegankelijk",
             "is_correct": false
           },
           {
-            "text": "De bestuurder kan zijn rijbewijs verliezen door slijtage van de banden",
+            "text": "U krijgt automatisch voorrang op de bussen die er rijden",
             "is_correct": false
           }
         ],
-        "explanation": "De busbaan is voorbehouden aan bussen en hulpdiensten. Andere voertuigen op de busbaan blokkeren het openbaar vervoer en creëren gevaarlijke situaties."
+        "explanation": "Onbevoegd gebruik van de busstrook hindert bussen in hun normale doorstroming en kan bestraft worden als verkeersovertreding."
       },
       "EN": {
-        "question": "What hazard arises when a car drives on the bus lane?",
+        "question": "What can happen if you drive on the bus lane without authorisation?",
         "choices": [
           {
-            "text": "The bus lane can be blocked causing delays for buses and emergency services and creating collision risk",
+            "text": "You disrupt the flow of public transport and risk committing a violation",
             "is_correct": true
           },
           {
-            "text": "The car is damaged by special paving on the bus lane",
+            "text": "Nothing happens, since the bus lane is open to everyone",
             "is_correct": false
           },
           {
-            "text": "The driver may lose their licence due to tyre wear",
+            "text": "You automatically gain priority over the buses using it",
             "is_correct": false
           }
         ],
-        "explanation": "The bus lane is reserved for buses and emergency services. Other vehicles on the bus lane block public transport and create dangerous situations."
+        "explanation": "Unauthorised use of the bus lane hinders the normal flow of buses and can be penalised as a traffic violation."
       },
       "FR": {
-        "question": "Quel danger survient quand une voiture roule sur la voie de bus ?",
+        "question": "Que risque-t-il de se passer si vous circulez sur la voie de bus sans autorisation ?",
         "choices": [
           {
-            "text": "La voie de bus peut etre bloquee causant des retards pour les bus et les services d urgence et creant un risque de collision",
+            "text": "Vous perturbez la circulation des transports en commun et risquez une infraction",
             "is_correct": true
           },
           {
-            "text": "La voiture est endommagee par le revetement special de la voie de bus",
+            "text": "Rien ne se passe, car la voie de bus est accessible à tous",
             "is_correct": false
           },
           {
-            "text": "Le conducteur peut perdre son permis a cause de l usure des pneus",
+            "text": "Vous obtenez automatiquement la priorité sur les autobus qui l'utilisent",
             "is_correct": false
           }
         ],
-        "explanation": "La voie de bus est reservee aux bus et services d urgence. D autres vehicules sur la voie de bus bloquent les transports en commun et creent des situations dangereuses."
+        "explanation": "L'utilisation non autorisée de la voie de bus gêne la circulation normale des autobus et peut être sanctionnée comme infraction."
       },
       "AR": {
-        "question": "ما هو الخطر الذي تشير إليه هذه العلامة المرورية؟",
+        "question": "ماذا يمكن أن يحدث إذا سرت في مسار الحافلات دون تصريح؟",
         "choices": [
           {
-            "text": "يمكن إعاقة حارة الحافلات مما يسبب تأخيرات للحافلات وخدمات الطوارئ وخلق خطر التصادم",
+            "text": "تعطّل انسيابية النقل العام وتُعرّض نفسك لمخالفة مرورية",
             "is_correct": true
           },
           {
-            "text": "تتضرر السيارة من الرصف الخاص في حارة الحافلات",
+            "text": "لا يحدث شيء لأن مسار الحافلات مفتوح لجميع السائقين",
             "is_correct": false
           },
           {
-            "text": "قد يفقد السائق رخصته بسبب تآكل الإطارات",
+            "text": "تحصل تلقائيًا على الأولوية على الحافلات التي تستخدمه",
             "is_correct": false
           }
         ],
-        "explanation": "حارة الحافلات محجوزة للحافلات وخدمات الطوارئ. المركبات الأخرى في حارة الحافلات تعيق النقل العام وتخلق مواقف خطيرة."
+        "explanation": "استخدام مسار الحافلات دون تصريح يعيق سيرها الطبيعي وقد يُعرّضك لمخالفة مرورية."
       }
     }
   },
   {
     "question_id": "F17_Q04",
-    "type": "WHAT_MUST_YOU_DO",
+    "type": "IS_IT_ALLOWED",
     "difficulty": "MEDIUM",
     "is_critical": false,
-    "show_sign": true,
+    "show_sign": false,
     "i18n": {
       "NL": {
-        "question": "U rijdt een gewone personenwagen en ziet een F17-bord. Wat doet u?",
+        "question": "Mag u de busstrook gebruiken als er op de gewone rijstrook een vrachtwagen staat die aan het lossen is?",
         "choices": [
           {
-            "text": "De aangeduide rijstrook vermijden en een andere rijstrook gebruiken",
+            "text": "Ja, u mag de busstrook tijdelijk gebruiken om de hindernis veilig voorbij te rijden",
             "is_correct": true
           },
           {
-            "text": "Op de busbaan rijden als er momenteel geen bus zichtbaar is",
-            "is_correct": false
-          },
-          {
-            "text": "Achter de bus rijden op de busbaan want dan blokkeer ik niets",
+            "text": "Nee, u moet altijd wachten tot de vrachtwagen klaar is, ook al blokkeert die volledig de weg",
             "is_correct": false
           }
         ],
-        "explanation": "Personenwagens mogen de busbaan niet berijden. U rijdt op de normale rijstroken."
+        "explanation": "Bij een tijdelijke hindernis zoals een lossende vrachtwagen mag de busstrook uitzonderlijk gebruikt worden om veilig verder te rijden."
       },
       "EN": {
-        "question": "You are driving a regular car and see an F17 sign. What do you do?",
+        "question": "May you use the bus lane if a truck is unloading on the regular lane?",
         "choices": [
           {
-            "text": "Avoid the designated lane and use another lane",
+            "text": "Yes, you may temporarily use the bus lane to safely pass the obstruction",
             "is_correct": true
           },
           {
-            "text": "Drive on the bus lane if no bus is currently visible",
-            "is_correct": false
-          },
-          {
-            "text": "Drive behind the bus on the bus lane because then I am not blocking anything",
+            "text": "No, you must always wait until the truck is finished, even if it completely blocks the road",
             "is_correct": false
           }
         ],
-        "explanation": "Private cars may not use the bus lane. You drive on the regular lanes."
+        "explanation": "In the case of a temporary obstruction such as an unloading truck, the bus lane may exceptionally be used to continue safely."
       },
       "FR": {
-        "question": "Vous conduisez une voiture ordinaire et voyez un panneau F17. Que faites-vous ?",
+        "question": "Pouvez-vous utiliser la voie de bus si un camion effectue un déchargement sur la voie normale ?",
         "choices": [
           {
-            "text": "Eviter la voie designee et utiliser une autre voie",
+            "text": "Oui, vous pouvez utiliser temporairement la voie de bus pour dépasser l'obstacle en sécurité",
             "is_correct": true
           },
           {
-            "text": "Rouler sur la voie de bus si aucun bus n est visible actuellement",
-            "is_correct": false
-          },
-          {
-            "text": "Rouler derriere le bus sur la voie de bus car alors je ne bloque rien",
+            "text": "Non, vous devez toujours attendre que le camion ait terminé, même s'il bloque complètement la route",
             "is_correct": false
           }
         ],
-        "explanation": "Les voitures particulieres ne peuvent pas emprunter la voie de bus. Vous roulez sur les voies normales."
+        "explanation": "En cas d'obstacle temporaire comme un camion en déchargement, la voie de bus peut exceptionnellement être utilisée pour continuer en sécurité."
       },
       "AR": {
-        "question": "تقود سيارة عادية وترى علامة مرورية F17. ماذا تفعل؟",
+        "question": "هل يمكنك استخدام مسار الحافلات إذا كانت شاحنة تُفرّغ حمولتها على المسار العادي؟",
         "choices": [
           {
-            "text": "تجنب الحارة المحددة واستخدم حارة أخرى",
+            "text": "نعم، يمكنك استخدام مسار الحافلات مؤقتًا لتجاوز العائق بأمان",
             "is_correct": true
           },
           {
-            "text": "سر في حارة الحافلات إذا لم تكن هناك حافلة مرئية حالياً",
-            "is_correct": false
-          },
-          {
-            "text": "سر خلف الحافلة في حارة الحافلات لأنني لن أعيق أحداً",
+            "text": "لا، يجب عليك الانتظار دائمًا حتى تنتهي الشاحنة، حتى لو كانت تسد الطريق بالكامل",
             "is_correct": false
           }
         ],
-        "explanation": "لا يجوز للسيارات الخاصة استخدام حارة الحافلات. تسير في الحارات العادية."
+        "explanation": "في حال وجود عائق مؤقت مثل شاحنة تفرّغ حمولتها، يمكن استخدام مسار الحافلات استثنائيًا للاستمرار بأمان."
       }
     }
   },
   {
     "question_id": "F17_Q05",
-    "type": "WHAT_MUST_YOU_DO",
+    "type": "WHERE_DOES_IT_APPLY",
     "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Welke voertuigen mogen naast bussen ook op de F17-busbaan rijden?",
+        "question": "Vanaf welk punt geldt de beperking die dit bord aanduidt voor de aangeduide strook?",
         "choices": [
           {
-            "text": "Trams, taxi's en voertuigen van hulpdiensten zijn in de regel ook toegelaten",
+            "text": "Onmiddellijk vanaf het bord, en de beperking blijft gelden tot ze uitdrukkelijk wordt opgeheven",
             "is_correct": true
           },
           {
-            "text": "Alle voertuigen zwaarder dan 3500 kg",
+            "text": "Pas nadat de bestuurder een volgend kruispunt heeft bereikt",
+            "is_correct": false
+          },
+          { "text": "Enkel tijdens de ochtendspits", "is_correct": false }
+        ],
+        "explanation": "De busstrookbeperking geldt vanaf het bord zelf en blijft van toepassing tot een bord of markering aangeeft dat de busstrook eindigt."
+      },
+      "EN": {
+        "question": "From which point does the restriction shown by this sign apply to the indicated lane?",
+        "choices": [
+          {
+            "text": "Immediately from the sign itself, and the restriction remains in force until it is explicitly lifted",
+            "is_correct": true
+          },
+          {
+            "text": "Only once the driver reaches the next intersection",
+            "is_correct": false
+          },
+          { "text": "Only during the morning rush hour", "is_correct": false }
+        ],
+        "explanation": "The bus lane restriction applies from the sign itself and remains in force until a sign or marking indicates that the bus lane ends."
+      },
+      "FR": {
+        "question": "À partir de quel point la restriction indiquée par ce panneau s'applique-t-elle à la voie concernée ?",
+        "choices": [
+          {
+            "text": "Immédiatement à partir du panneau lui-même, et la restriction reste en vigueur jusqu'à ce qu'elle soit explicitement levée",
+            "is_correct": true
+          },
+          {
+            "text": "Seulement une fois que le conducteur atteint le carrefour suivant",
             "is_correct": false
           },
           {
-            "text": "Alleen vrachtwagens met een laadklep",
+            "text": "Uniquement pendant les heures de pointe du matin",
             "is_correct": false
           }
         ],
-        "explanation": "Naast bussen zijn ook trams, taxi's en hulpdienstvoertuigen (politie, brandweer, ziekenwagen) doorgaans toegelaten op de busbaan. Soms worden ze vermeld op een onderbord."
-      },
-      "EN": {
-        "question": "Which vehicles besides buses may also use the F17 bus lane?",
-        "choices": [
-          {
-            "text": "Trams, taxis and emergency vehicles are generally also permitted",
-            "is_correct": true
-          },
-          { "text": "All vehicles heavier than 3500 kg", "is_correct": false },
-          { "text": "Only lorries with a tail lift", "is_correct": false }
-        ],
-        "explanation": "Besides buses, trams, taxis and emergency vehicles (police, fire brigade, ambulance) are generally also permitted on the bus lane. They are sometimes listed on a sub-sign."
-      },
-      "FR": {
-        "question": "Quels vehicules outre les bus peuvent egalement emprunter la voie de bus F17 ?",
-        "choices": [
-          {
-            "text": "Les trams les taxis et les vehicules de secours sont generalement aussi autorises",
-            "is_correct": true
-          },
-          {
-            "text": "Tous les vehicules de plus de 3500 kg",
-            "is_correct": false
-          },
-          { "text": "Uniquement les camions avec hayon", "is_correct": false }
-        ],
-        "explanation": "Outre les bus les trams taxis et vehicules de secours (police pompiers ambulance) sont generalement aussi autorises sur la voie de bus. Ils sont parfois mentionnes sur un panneau complementaire."
+        "explanation": "La restriction de la voie de bus s'applique à partir du panneau lui-même et reste en vigueur jusqu'à ce qu'un panneau ou un marquage indique la fin de la voie de bus."
       },
       "AR": {
-        "question": "ما المركبات التي يُسمح لها بالسير في حارة الحافلات F17 إلى جانب الحافلات؟",
+        "question": "من أي نقطة يسري القيد الذي تشير إليه هذه العلامة على المسار المحدد؟",
         "choices": [
           {
-            "text": "الترام والتاكسيات ومركبات الطوارئ مسموح لها عموماً",
+            "text": "مباشرة من عند العلامة نفسها، ويبقى القيد ساريًا حتى يُرفع صراحة",
             "is_correct": true
           },
           {
-            "text": "جميع المركبات التي تزيد عن 3500 كجم",
+            "text": "فقط بعد أن يصل السائق إلى التقاطع التالي",
             "is_correct": false
           },
-          { "text": "فقط الشاحنات ذات منصة الرفع", "is_correct": false }
+          { "text": "فقط خلال ساعات الازدحام الصباحية", "is_correct": false }
         ],
-        "explanation": "إلى جانب الحافلات يُسمح عموماً أيضاً للترام والتاكسيات ومركبات الطوارئ (شرطة، إطفاء، سيارة إسعاف) في حارة الحافلات. وأحياناً تُذكر في علامة مرورية إضافية."
+        "explanation": "يسري قيد مسار الحافلات من عند العلامة نفسها ويبقى ساريًا حتى تُشير علامة أو خط أرضي إلى نهاية مسار الحافلات."
       }
     }
   },
@@ -349,79 +381,79 @@
     "type": "WHAT_MUST_YOU_DO",
     "difficulty": "MEDIUM",
     "is_critical": false,
-    "show_sign": true,
+    "show_sign": false,
     "i18n": {
       "NL": {
-        "question": "U rijdt een taxi en nadert een weg met F17-bord. Wat mag u doen?",
+        "question": "U moet naar rechts afslaan net na een busstrook die door dit bord wordt aangeduid. Wat is de juiste aanpak?",
         "choices": [
           {
-            "text": "De busbaan gebruiken want taxi's zijn in de regel toegelaten op een busbaan",
+            "text": "Gebruik de busstrook alleen in de onmiddellijke nabijheid van het kruispunt om af te slaan en controleer dat dit veilig kan",
             "is_correct": true
           },
           {
-            "text": "De busbaan niet gebruiken want die is enkel voor bussen",
+            "text": "Voortdurend op de busstrook rijden zodra u wilt afslaan",
             "is_correct": false
           },
           {
-            "text": "Enkel de busbaan gebruiken als er geen passagiers in uw taxi zitten",
+            "text": "Altijd wachten op de busstrook zelf tot er een gat in het verkeer is",
             "is_correct": false
           }
         ],
-        "explanation": "Taxi's zijn in de regel toegelaten op de busbaan tenzij anders aangegeven. Controleer steeds het onderbord voor uitzonderingen."
+        "explanation": "Een ander voertuig mag op de busstrook rijden om in de onmiddellijke nabijheid van een kruispunt van richting te veranderen. Daarvoor is geen extra toelatingsbord vereist, maar de bestuurder mag niet vroeger langs de busstrook rijden en moet de manoeuvre veilig uitvoeren."
       },
       "EN": {
-        "question": "You are driving a taxi and approach a road with an F17 sign. What may you do?",
+        "question": "You need to turn right just after a bus lane indicated by this sign. What is the correct approach?",
         "choices": [
           {
-            "text": "Use the bus lane because taxis are generally permitted on a bus lane",
+            "text": "Use the bus lane only in the immediate vicinity of the intersection to turn, after checking that it is safe",
             "is_correct": true
           },
           {
-            "text": "Not use the bus lane because it is only for buses",
+            "text": "Drive continuously in the bus lane once you intend to turn",
             "is_correct": false
           },
           {
-            "text": "Only use the bus lane if there are no passengers in your taxi",
+            "text": "Always wait in the bus lane itself until there is a gap in traffic",
             "is_correct": false
           }
         ],
-        "explanation": "Taxis are generally permitted on the bus lane unless indicated otherwise. Always check the sub-sign for exceptions."
+        "explanation": "Another vehicle may enter the bus lane to change direction in the immediate vicinity of an intersection. No additional permission sign is required, but the driver must not travel along the lane earlier and must perform the manoeuvre safely."
       },
       "FR": {
-        "question": "Vous conduisez un taxi et approchez une route avec un panneau F17. Que pouvez-vous faire ?",
+        "question": "Vous devez tourner à droite juste après une voie de bus indiquée par ce panneau. Quelle est la bonne approche ?",
         "choices": [
           {
-            "text": "Utiliser la voie de bus car les taxis sont generalement autorises sur une voie de bus",
+            "text": "N'utiliser la voie de bus qu'à proximité immédiate du carrefour pour tourner, après avoir vérifié que cela peut se faire sans danger",
             "is_correct": true
           },
           {
-            "text": "Ne pas utiliser la voie de bus car elle est uniquement pour les bus",
+            "text": "Rouler continuellement sur la voie de bus dès que vous voulez tourner",
             "is_correct": false
           },
           {
-            "text": "Utiliser la voie de bus uniquement s il n y a pas de passagers dans votre taxi",
+            "text": "Toujours attendre sur la voie de bus elle-même jusqu'à trouver une brèche dans la circulation",
             "is_correct": false
           }
         ],
-        "explanation": "Les taxis sont generalement autorises sur la voie de bus sauf indication contraire. Verifiez toujours le panneau complementaire pour les exceptions."
+        "explanation": "Un autre véhicule peut emprunter la voie de bus pour changer de direction à proximité immédiate d'un carrefour. Aucun panneau d'autorisation supplémentaire n'est requis, mais il ne peut pas circuler plus tôt le long de la voie et doit effectuer la manœuvre sans danger."
       },
       "AR": {
-        "question": "تقود تاكسي وتقترب من طريق به علامة مرورية F17. ماذا يمكنك فعله؟",
+        "question": "تحتاج إلى الانحراف يمينًا مباشرة بعد مسار حافلات تشير إليه هذه العلامة، فما النهج الصحيح؟",
         "choices": [
           {
-            "text": "استخدام حارة الحافلات لأن التاكسيات مسموح لها عموماً في حارة الحافلات",
+            "text": "استخدم مسار الحافلات فقط قرب التقاطع مباشرة لتغيير الاتجاه وبعد التأكد من إمكان ذلك بأمان",
             "is_correct": true
           },
           {
-            "text": "عدم استخدام حارة الحافلات لأنها للحافلات فقط",
+            "text": "السير باستمرار في مسار الحافلات بمجرد نيتك الانحراف",
             "is_correct": false
           },
           {
-            "text": "استخدام حارة الحافلات فقط إذا لم يكن هناك ركاب في تاكسيك",
+            "text": "الانتظار دائمًا داخل مسار الحافلات نفسه حتى تجد فرصة في حركة المرور",
             "is_correct": false
           }
         ],
-        "explanation": "يُسمح للتاكسيات عموماً بالسير في حارة الحافلات ما لم يُشر إلى خلاف ذلك. تحقق دائماً من العلامة المرورية الإضافية للاستثناءات."
+        "explanation": "يجوز لمركبة أخرى دخول مسار الحافلات لتغيير الاتجاه في الجوار المباشر للتقاطع، ولا تحتاج لذلك إلى لوحة سماح إضافية. لكن لا يجوز السير في المسار قبل نقطة الانعطاف، ويجب تنفيذ المناورة بأمان."
       }
     }
   },
@@ -430,63 +462,63 @@
     "type": "IS_IT_ALLOWED",
     "difficulty": "HARD",
     "is_critical": true,
-    "show_sign": true,
+    "show_sign": false,
     "i18n": {
       "NL": {
-        "question": "Is het toegestaan voor een personenwagen om kortdurend op de busbaan te rijden om er een andere auto te laten passeren?",
+        "question": "Mag u kort op de busstrook rijden omdat het verkeer op de andere stroken erg druk is?",
         "choices": [
           {
-            "text": "Nee een personenwagen mag de busbaan nooit berijden ongeacht hoe kort of om welke reden",
+            "text": "Nee, drukte op de andere stroken geeft geen recht om de busstrook te gebruiken",
             "is_correct": true
           },
           {
-            "text": "Ja voor een heel korte afstand van minder dan 50 meter is het toegestaan",
+            "text": "Ja, bij drukte mag u tijdelijk uitwijken naar de busstrook",
             "is_correct": false
           }
         ],
-        "explanation": "Het is te allen tijde verboden voor personenwagens om op de busbaan te rijden. Er bestaat geen uitzondering voor korte afstanden."
+        "explanation": "Verkeersdrukte alleen is geen toegelaten reden. Een ander voertuig mag de busstrook slechts gebruiken in de specifieke gevallen van artikel 72.5, zoals een hindernis omzeilen, vlak bij een kruispunt afslaan of de strook dwarsen voor een kruispunt, eigendom of parkeerplaats."
       },
       "EN": {
-        "question": "Is it allowed for a car to briefly use the bus lane to let another car pass?",
+        "question": "May you briefly drive on the bus lane because traffic on the other lanes is very heavy?",
         "choices": [
           {
-            "text": "No a car may never use the bus lane regardless of how short or for what reason",
+            "text": "No, heavy traffic on the other lanes does not give the right to use the bus lane",
             "is_correct": true
           },
           {
-            "text": "Yes for a very short distance of less than 50 metres it is allowed",
+            "text": "Yes, during heavy traffic you may temporarily move into the bus lane",
             "is_correct": false
           }
         ],
-        "explanation": "It is at all times forbidden for cars to use the bus lane. There is no exception for short distances."
+        "explanation": "Congestion alone is not a permitted reason. Another vehicle may use the bus lane only in the specific cases in Article 72.5, such as passing an obstruction, turning close to an intersection, or crossing the lane for an intersection, property or parking place."
       },
       "FR": {
-        "question": "Est-il permis a une voiture d utiliser brievement la voie de bus pour laisser passer une autre voiture ?",
+        "question": "Pouvez-vous rouler brièvement sur la voie de bus parce que la circulation sur les autres voies est très dense ?",
         "choices": [
           {
-            "text": "Non une voiture ne peut jamais emprunter la voie de bus quelle que soit la duree ou la raison",
+            "text": "Non, une circulation dense sur les autres voies ne donne pas le droit d'utiliser la voie de bus",
             "is_correct": true
           },
           {
-            "text": "Oui pour une tres courte distance de moins de 50 metres c est autorise",
+            "text": "Oui, en cas de forte circulation vous pouvez temporairement passer sur la voie de bus",
             "is_correct": false
           }
         ],
-        "explanation": "Il est a tout moment interdit aux voitures d emprunter la voie de bus. Il n existe pas d exception pour les courtes distances."
+        "explanation": "La congestion seule n'est pas un motif admis. Un autre véhicule ne peut utiliser la voie de bus que dans les cas précis de l'article 72.5, par exemple pour contourner un obstacle, tourner près d'un carrefour ou traverser la voie vers un carrefour, une propriété ou un stationnement."
       },
       "AR": {
-        "question": "هل يُسمح لسيارة باستخدام حارة الحافلات بصورة مؤقتة للسماح لسيارة أخرى بالمرور؟",
+        "question": "هل يمكنك السير لفترة قصيرة في مسار الحافلات لأن حركة المرور في المسارات الأخرى مزدحمة جدًا؟",
         "choices": [
           {
-            "text": "لا يجوز لسيارة استخدام حارة الحافلات أبداً بغض النظر عن المدة أو السبب",
+            "text": "لا، الازدحام في المسارات الأخرى لا يعطيك الحق في استخدام مسار الحافلات",
             "is_correct": true
           },
           {
-            "text": "نعم لمسافة قصيرة جداً أقل من 50 متراً يُسمح بذلك",
+            "text": "نعم، عند الازدحام يمكنك الانتقال مؤقتًا إلى مسار الحافلات",
             "is_correct": false
           }
         ],
-        "explanation": "يُحظر في جميع الأوقات على السيارات استخدام حارة الحافلات. لا يوجد استثناء للمسافات القصيرة."
+        "explanation": "الازدحام وحده ليس سببًا مسموحًا. لا يجوز لمركبة أخرى استخدام مسار الحافلات إلا في الحالات المحددة بالمادة 72.5، مثل تجاوز عائق أو الانعطاف قرب تقاطع أو عبور المسار إلى تقاطع أو ملكية أو موقف."
       }
     }
   },
@@ -498,60 +530,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Mag een fietser op een busbaan rijden als er geen apart fietspad is?",
+        "question": "Mag een gewone bestuurder de busstrook dwarsen om een oprit naar een eigendom langs de strook in te rijden?",
         "choices": [
           {
-            "text": "Ja fietsers zijn in de regel toegelaten op de busbaan als er geen apart fietspad is",
+            "text": "Ja, u mag de strook veilig dwarsen om de aanliggende eigendom in of uit te rijden, zonder erlangs te blijven rijden",
             "is_correct": true
           },
           {
-            "text": "Nee fietsers mogen nooit op een busbaan rijden",
+            "text": "Nee, een gewone bestuurder mag een busstrook onder geen enkele omstandigheid kruisen",
             "is_correct": false
           }
         ],
-        "explanation": "Fietsers zijn in België toegelaten op de busbaan wanneer er geen apart fietspad aanwezig is. Ze moeten wel voorzichtig rijden en bussen voorrang verlenen."
+        "explanation": "Andere voertuigen mogen een busstrook dwarsen om een eigendom of parkeerplaats langs de strook in te nemen of te verlaten. Dat geeft geen recht om over de lengte van de busstrook te rijden; de oversteek moet veilig gebeuren."
       },
       "EN": {
-        "question": "May a cyclist use a bus lane if there is no separate cycle path?",
+        "question": "May an ordinary driver cross the bus lane to enter a driveway serving property alongside it?",
         "choices": [
           {
-            "text": "Yes cyclists are generally permitted on the bus lane if there is no separate cycle path",
+            "text": "Yes, you may safely cross it to enter or leave the adjoining property, without continuing along the lane",
             "is_correct": true
           },
           {
-            "text": "No cyclists may never use a bus lane",
+            "text": "No, an ordinary driver may never cross a bus lane under any circumstances",
             "is_correct": false
           }
         ],
-        "explanation": "In Belgium cyclists are permitted on the bus lane when there is no separate cycle path. They must however ride carefully and give way to buses."
+        "explanation": "Other vehicles may cross a bus lane to enter or leave property or a parking place alongside it. This does not permit travelling along the bus lane; the crossing must be performed safely."
       },
       "FR": {
-        "question": "Un cycliste peut-il utiliser une voie de bus s il n y a pas de piste cyclable separee ?",
+        "question": "Un conducteur ordinaire peut-il traverser la voie de bus pour entrer dans une propriété située le long de celle-ci ?",
         "choices": [
           {
-            "text": "Oui les cyclistes sont generalement autorises sur la voie de bus s il n y a pas de piste cyclable separee",
+            "text": "Oui, il peut la traverser sans danger pour entrer dans la propriété ou en sortir, sans continuer à circuler le long de la voie",
             "is_correct": true
           },
           {
-            "text": "Non les cyclistes ne peuvent jamais utiliser une voie de bus",
+            "text": "Non, un conducteur ordinaire ne peut jamais traverser une voie de bus, quelles que soient les circonstances",
             "is_correct": false
           }
         ],
-        "explanation": "En Belgique les cyclistes sont autorises sur la voie de bus lorsqu il n y a pas de piste cyclable separee. Ils doivent cependant rouler prudemment et laisser la priorite aux bus."
+        "explanation": "Les autres véhicules peuvent traverser une voie de bus pour entrer dans une propriété ou un emplacement de stationnement riverain, ou en sortir. Cela ne permet pas de circuler le long de la voie; la traversée doit se faire sans danger."
       },
       "AR": {
-        "question": "هل يمكن للدراج استخدام حارة الحافلات إذا لم يكن هناك مسار دراجات منفصل؟",
+        "question": "هل يجوز لسائق عادي عبور مسار الحافلات لدخول مدخل ملكية تقع بمحاذاته؟",
         "choices": [
           {
-            "text": "نعم يُسمح للدراجين عموماً بالسير في حارة الحافلات إذا لم يكن هناك مسار دراجات منفصل",
+            "text": "نعم، يجوز عبوره بأمان لدخول الملكية المحاذية أو الخروج منها، من دون الاستمرار في السير بطول المسار",
             "is_correct": true
           },
           {
-            "text": "لا لا يجوز للدراجين أبداً استخدام حارة الحافلات",
+            "text": "لا، لا يجوز للسائق العادي عبور مسار الحافلات تحت أي ظرف",
             "is_correct": false
           }
         ],
-        "explanation": "في بلجيكا يُسمح للدراجين بالسير في حارة الحافلات عند غياب مسار دراجات منفصل. يجب عليهم مع ذلك القيادة بحذر وإعطاء الأولوية للحافلات."
+        "explanation": "يجوز للمركبات الأخرى عبور مسار الحافلات لدخول ملكية أو موقف يقع بمحاذاته أو الخروج منه. لا يسمح ذلك بالسير بطول المسار، ويجب تنفيذ العبور بأمان."
       }
     }
   }

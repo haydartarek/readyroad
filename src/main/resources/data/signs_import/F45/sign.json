@@ -4,10 +4,33 @@
   "image_path": "/images/signs/information_signs/F45 Doodlopende weg.png",
   "serious_violation": false,
   "i18n": {
-    "NL": { "name": "Doodlopende weg", "description": "Doodlopende weg." },
-    "EN": { "name": "Dead end road", "description": "Dead end." },
-    "FR": { "name": "Voie sans issue", "description": "Voie sans issue." },
-    "AR": { "name": "طريق مغلق", "description": "طريق مسدود." }
+    "NL": {
+      "name": "Doodlopende weg",
+      "summary": "Dit bord waarschuwt dat de straat verder geen doorgang biedt naar een andere weg en in een dood spoor eindigt.",
+      "description": "Dit bord geeft aan dat de weg geen doorgang biedt naar een andere weg. Het verbiedt niet om de weg in te rijden en legt op zichzelf geen snelheids-, voorrangs- of parkeerregel op. Alle weggebruikers moeten rekening houden met de plaatselijke inrichting en andere signalisatie. Het symbool kan aan de plaatsgesteldheid worden aangepast.",
+      "driver_guidance": "Het bord waarschuwt enkel dat de straat geen doorgang biedt naar een andere weg; wie effectief in die straat moet zijn, mag ze gewoon inrijden.",
+      "exceptions": []
+    },
+    "EN": {
+      "name": "Dead end road",
+      "summary": "This sign warns that the street does not lead to another road and ends without any way through.",
+      "description": "This sign indicates that the road does not lead through to another road. It does not prohibit entering and does not by itself impose a speed, priority or parking rule. All road users must still take account of the local layout and other signs. The symbol may be adapted to the actual road layout.",
+      "driver_guidance": "The sign only warns that the street offers no way through to another road; anyone whose destination is actually there may simply enter it.",
+      "exceptions": []
+    },
+    "FR": {
+      "name": "Voie sans issue",
+      "summary": "Ce panneau avertit que la rue ne débouche sur aucune autre route et se termine en impasse.",
+      "description": "Ce panneau indique que la voie ne débouche sur aucune autre route. Il n'interdit pas de s'y engager et n'impose à lui seul aucune règle de vitesse, de priorité ou de stationnement. Tous les usagers doivent encore tenir compte de l'aménagement des lieux et des autres signaux. Le symbole peut être adapté à la configuration réelle de la voie.",
+      "driver_guidance": "Le panneau avertit uniquement que la rue ne débouche sur aucune autre route; quiconque a effectivement une destination dans cette rue peut simplement y entrer.",
+      "exceptions": []
+    },
+    "AR": {
+      "name": "طريق مسدود (طريق بلا مخرج)",
+      "summary": "تحذّر هذه العلامة من أن الشارع لا يؤدي إلى طريق آخر وينتهي دون أي مخرج.",
+      "description": "تشير هذه العلامة إلى أن الطريق لا يوفر ممراً نافذاً إلى طريق آخر. وهي لا تمنع دخول الطريق ولا تفرض بحد ذاتها قاعدة للسرعة أو الأولوية أو الوقوف. يجب على جميع مستخدمي الطريق مراعاة تصميم المكان والإشارات الأخرى. ويمكن تكييف رمز العلامة مع الشكل الفعلي للطريق.",
+      "driver_guidance": "تحذّر العلامة فقط من أن الشارع لا يؤدي إلى طريق آخر؛ ومن كانت وجهته فعليًا في ذلك الشارع يمكنه دخوله بشكل طبيعي.",
+      "exceptions": []
+    }
   }
 }
-

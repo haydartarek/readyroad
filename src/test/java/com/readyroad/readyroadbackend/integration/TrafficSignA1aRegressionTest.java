@@ -5,6 +5,8 @@ import com.readyroad.readyroadbackend.domain.entity.SignImportRun;
 import com.readyroad.readyroadbackend.domain.enums.SignCategory;
 import com.readyroad.readyroadbackend.domain.repository.RoadSignRepository;
 import com.readyroad.readyroadbackend.dto.response.TrafficSignResponse;
+import com.readyroad.readyroadbackend.service.CanonicalRoadSignSyncService;
+import com.readyroad.readyroadbackend.service.CanonicalSignCatalogService;
 import com.readyroad.readyroadbackend.service.SignQuizImportService;
 import com.readyroad.readyroadbackend.service.TrafficSignService;
 import org.junit.jupiter.api.*;
@@ -40,8 +42,7 @@ class TrafficSignA1aRegressionTest {
     // ── Canonical V6 / V86 values ──────────────────────
     private static final String SIGN_CODE = "A1a";
     private static final String CATEGORY_CODE = "A";
-    // Values come from signs.json canonical catalog (title_* /
-    // long_description_*_official fields)
+    // Values come from signs_import/A1a/sign.json.
     private static final String NAME_EN = "Dangerous bend to the left";
     private static final String NAME_AR = "منعطف خطير إلى اليسار";
     private static final String NAME_NL = "Gevaarlijke bocht naar links";
@@ -65,6 +66,12 @@ class TrafficSignA1aRegressionTest {
 
     @Autowired
     private SignQuizImportService signQuizImportService;
+
+    @Autowired
+    private CanonicalSignCatalogService canonicalSignCatalogService;
+
+    @Autowired
+    private CanonicalRoadSignSyncService canonicalRoadSignSyncService;
 
     private RoadSign a1a;
 
@@ -90,6 +97,9 @@ class TrafficSignA1aRegressionTest {
         a1a.setDescriptionFr(DESC_FR);
         a1a.setImagePath("/images/signs/danger_signs/A1a Gevaarlijke bocht naar links.png");
         a1a.setIsActive(true);
+        canonicalSignCatalogService.applyCanonicalFields(
+                a1a,
+                canonicalSignCatalogService.findSeedByRouteCode(SIGN_CODE).orElseThrow());
         a1a = RoadSignRepository.saveAndFlush(a1a);
     }
 
@@ -120,20 +130,6 @@ class TrafficSignA1aRegressionTest {
             assertThat(response.descriptionAr()).isNotBlank().isEqualTo(DESC_AR);
             assertThat(response.descriptionNl()).isNotBlank().isEqualTo(DESC_NL);
             assertThat(response.descriptionFr()).isNotBlank().isEqualTo(DESC_FR);
-        }
-
-        @Test
-        @DisplayName("Given A1a in road_signs without long desc, When getSignByCode is called, Then catalog enriches with long descriptions")
-        void a1a_has_no_long_descriptions_in_road_signs() {
-            TrafficSignResponse response = trafficSignService.getSignByCode(SIGN_CODE);
-
-            // signs.json provides long descriptions for A1a — catalog enriches even when
-            // road_signs row has none
-            assertThat(response.longDescriptionEn()).isNotBlank();
-            assertThat(response.longDescriptionNl()).isNotBlank();
-            assertThat(response.longDescriptionFr()).isNotBlank();
-            assertThat(response.longDescriptionAr()).isNotBlank();
-            assertThat(response.isLongDescriptionComplete()).isTrue();
         }
 
         @Test
@@ -174,10 +170,6 @@ class TrafficSignA1aRegressionTest {
             assertNoEscapedUnicode("descriptionAr", response.descriptionAr());
             assertNoEscapedUnicode("descriptionNl", response.descriptionNl());
             assertNoEscapedUnicode("descriptionFr", response.descriptionFr());
-            assertNoEscapedUnicode("longDescriptionEn", response.longDescriptionEn());
-            assertNoEscapedUnicode("longDescriptionAr", response.longDescriptionAr());
-            assertNoEscapedUnicode("longDescriptionNl", response.longDescriptionNl());
-            assertNoEscapedUnicode("longDescriptionFr", response.longDescriptionFr());
             assertNoEscapedUnicode("categoryCode", response.categoryCode());
         }
 
@@ -224,12 +216,12 @@ class TrafficSignA1aRegressionTest {
     }
 
     @Nested
-    @DisplayName("Scenario: signs_import translations override legacy catalog pollution")
+    @DisplayName("Scenario: canonical synchronization repairs database pollution")
     class SignsImportTranslationGuard {
 
         @Test
-        @DisplayName("Given A1b row has legacy English fallbacks, Then FR and AR come from signs_import")
-        void a1b_uses_signs_import_translations_over_legacy_fallbacks() {
+        @DisplayName("Given A1b has stale text, Then synchronization repairs the derived row before API read")
+        void a1b_database_pollution_is_repaired_before_api_read() {
             RoadSignRepository.findBySignCode("A1b")
                     .ifPresent(RoadSignRepository::delete);
 
@@ -251,6 +243,7 @@ class TrafficSignA1aRegressionTest {
             pollutedA1b.setIsActive(true);
             RoadSignRepository.saveAndFlush(pollutedA1b);
 
+            canonicalRoadSignSyncService.syncCanonicalFields();
             TrafficSignResponse response = trafficSignService.getSignByCode("A1b");
 
             assertThat(response.nameFr()).isEqualTo("Virage dangereux à droite");

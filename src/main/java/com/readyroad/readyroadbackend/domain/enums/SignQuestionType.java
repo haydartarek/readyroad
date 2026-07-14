@@ -4,8 +4,8 @@ package com.readyroad.readyroadbackend.domain.enums;
  * Question type for the Sign Quiz System.
  *
  * Choice-count rule:
- * HARD questions → exactly 2 choices
- * EASY/MEDIUM questions → up to 3 choices
+ * HARD and IS_IT_ALLOWED questions expose exactly 2 choices.
+ * Other EASY/MEDIUM questions expose 3 choices.
  */
 public enum SignQuestionType {
 

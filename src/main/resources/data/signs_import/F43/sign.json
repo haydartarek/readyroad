@@ -6,20 +6,31 @@
   "i18n": {
     "NL": {
       "name": "Gemeentegrens",
-      "description": "Dit bord geeft de grens van een gemeente aan en wordt vaak vergezeld door snelheidswijzigingen. Het heeft geen speciale verkeersregels, maar dient als aanduiding dat je een bepaalde stad of gemeente binnenrijdt."
+      "summary": "Dit bord toont enkel de naam van de gemeente en geeft aan waar haar grondgebied begint, zonder zelf een snelheidsbeperking of andere verkeersregel op te leggen.",
+      "description": "Dit bord toont de naam van de gemeente die de bestuurder binnenrijdt en geeft aan waar het grondgebied van die gemeente begint. Het bord op zich legt geen snelheidsbeperking, voorrangsregel of andere verkeersregel op; het dient uitsluitend om de bestuurder te informeren over zijn locatie. Dit bord mag niet verward worden met het bord voor het begin van de bebouwde kom, dat wel een juridische betekenis heeft op vlak van snelheid en dat een ander, specifiek bord is.",
+      "driver_guidance": "Het gemeentegrensbord verandert zelf niets aan de snelheid; die blijft afhankelijk van het type weg en van andere signalisatie die eventueel aanwezig is.",
+      "exceptions": []
     },
     "EN": {
-      "name": "Start of residential area",
-      "description": "This sign is used to indicate entry into a residential area, usually accompanied by speed changes. It has no special rules, just consider it a notification that you have arrived at this city or another."
+      "name": "Municipal boundary",
+      "summary": "This sign only shows the municipality's name and marks where its territory begins, without imposing any speed limit or other traffic rule itself.",
+      "description": "This sign shows the name of the municipality the driver is entering and marks where that municipality's territory begins. The sign itself does not impose a speed limit, right-of-way rule or any other traffic rule; it is purely informational, showing the driver's location. This sign must not be confused with the separate sign marking the start of a built-up area, which does carry legal significance for speed limits.",
+      "driver_guidance": "The municipal boundary sign itself does not change the speed; that continues to depend on the type of road and any other signage that may be present.",
+      "exceptions": []
     },
     "FR": {
       "name": "Limite de commune",
-      "description": "Ce panneau est utilisé pour indiquer l'entrée dans une zone résidentielle, généralement accompagnée de changements de vitesse. Il n'a pas de règles particulières, considérez-le simplement comme une notification que vous êtes arrivé dans cette ville ou une autre."
+      "summary": "Ce panneau indique uniquement le nom de la commune et marque le début de son territoire, sans imposer lui-même de limite de vitesse ou d'autre règle de circulation.",
+      "description": "Ce panneau indique le nom de la commune que le conducteur est en train d'atteindre et marque le début du territoire de cette commune. Le panneau lui-même n'impose ni limite de vitesse, ni règle de priorité, ni aucune autre règle de circulation; il est purement informatif et indique au conducteur sa localisation. Ce panneau ne doit pas être confondu avec le panneau distinct marquant le début d'une agglomération, qui a lui une portée juridique en matière de vitesse.",
+      "driver_guidance": "Le panneau de limite de commune ne change rien lui-même à la vitesse; celle-ci dépend toujours du type de route et des éventuels autres panneaux présents.",
+      "exceptions": []
     },
     "AR": {
-      "name": "بداية منطقة سكنية",
-      "description": "تُستخدم هذه العلامة للإشارة إلى الدخول إلى منطقة سكنية، وعادةً ما يكون مصحوبًا بتغييرات في السرعة. ليس لها قواعد خاصة، فقط اعتبرها إشعارًا بوصولك إلى هذه المدينة أو تلك."
+      "name": "علامة حدود البلدية",
+      "summary": "تُظهر هذه العلامة فقط اسم البلدية وتشير إلى بداية أراضيها، دون أن تفرض بحد ذاتها أي حد سرعة أو قاعدة مرورية أخرى.",
+      "description": "تُظهر هذه العلامة اسم البلدية التي يدخلها السائق وتشير إلى بداية أراضي تلك البلدية. لا تفرض العلامة بحد ذاتها أي حد سرعة أو قاعدة أولوية أو أي قاعدة مرورية أخرى؛ فهي علامة معلوماتية بحتة تهدف إلى إعلام السائق بموقعه. يجب عدم الخلط بين هذه العلامة وعلامة بداية المنطقة المبنية المستقلة، والتي لها أثر قانوني فعلي على السرعة.",
+      "driver_guidance": "لا تُغيّر علامة حدود البلدية بحد ذاتها من السرعة؛ فهي تبقى معتمدة على نوع الطريق وعلى أي إشارات أخرى قد تكون موجودة فعليًا.",
+      "exceptions": []
     }
   }
 }
-

@@ -102,12 +102,6 @@ public class ContentSwapProofTest {
                     "Options must be sorted by displayOrder");
         }
 
-        System.out.println("✅ Math Question Test PASSED");
-        System.out.println("   Question: " + dto.getQuestionAr());
-        System.out.println("   Image: " + dto.getContentImageUrl());
-        System.out.println("   Options: " + dto.getOptions().size() + " (sorted by displayOrder)");
-        System.out.println("   ✓ No correctness signals in delivery DTO");
-        System.out.println("   ✓ No Java code modification needed");
     }
 
     /**
@@ -138,10 +132,6 @@ public class ContentSwapProofTest {
         // Assert - Category is generic
         assertEquals("Medical Sciences", dto.getCategoryNameEn());
 
-        System.out.println("✅ Medical Question Test PASSED");
-        System.out.println("   Question: " + dto.getQuestionAr());
-        System.out.println("   Image: " + dto.getContentImageUrl());
-        System.out.println("   ✓ No Java code modification needed");
     }
 
     /**
@@ -182,10 +172,6 @@ public class ContentSwapProofTest {
         assertFalse(errorName.contains("SIGN"),
                 "Error type should not contain 'SIGN'");
 
-        System.out.println("✅ Generic Error Pattern Test PASSED");
-        System.out.println("   Error Type: " + errorType);
-        System.out.println("   Applies to: Traffic, Math, Medical, etc.");
-        System.out.println("   ✓ Content-agnostic patterns confirmed");
     }
 
     /**
@@ -201,44 +187,11 @@ public class ContentSwapProofTest {
     @Test
     @DisplayName("Content swap estimated time < 48 hours")
     public void testContentSwapTimeEstimate() {
-        // This test documents the process
-        String swapProcess = """
-                Content Swap Process (Traffic → Math):
-
-                Step 1: Database (2 hours)
-                - Clear quiz_questions table
-                - Insert Math questions
-                - Update content_image_url field
-
-                Step 2: Java Code (0 hours) ✅
-                - NO CHANGES NEEDED
-                - Services work as-is
-                - DTOs work as-is
-
-                Step 3: API Testing (1 hour)
-                - Test /api/quiz/random
-                - Test /api/quiz/questions/{questionId}/answer
-                - Verify responses
-
-                Step 4: Frontend (8 hours)
-                - Update UI text (category names)
-                - No logic changes
-
-                Total Time: 11 hours < 48 hours ✅
-                """;
-
-        System.out.println(swapProcess);
-
         // Assert - Time is within contract
         int estimatedHours = 11;
         int contractLimit = 48;
         assertTrue(estimatedHours < contractLimit,
                 "Content swap time should be < 48 hours (Grand Contract)");
-
-        System.out.println("✅ Content Swap Time Test PASSED");
-        System.out.println("   Estimated: " + estimatedHours + " hours");
-        System.out.println("   Limit: " + contractLimit + " hours");
-        System.out.println("   ✓ Grand Contract fulfilled");
     }
 
     // ═══════════════════════════════════════════════════════════

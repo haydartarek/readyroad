@@ -9,8 +9,14 @@
       "NL": {
         "question": "Wat betekent dit verkeersbord?",
         "choices": [
-          { "text": "Oversteekplaats voor voetgangers", "is_correct": true },
-          { "text": "Opgelet kinderen", "is_correct": false },
+          {
+            "text": "Oversteekplaats voor voetgangers",
+            "is_correct": true
+          },
+          {
+            "text": "Opgelet kinderen",
+            "is_correct": false
+          },
           {
             "text": "Oversteekplaats voor fietsers en bromfietsers",
             "is_correct": false
@@ -21,17 +27,32 @@
       "EN": {
         "question": "What does this traffic sign mean?",
         "choices": [
-          { "text": "Pedestrian crossing", "is_correct": true },
-          { "text": "Warning: children", "is_correct": false },
-          { "text": "Cyclist and moped crossing", "is_correct": false }
+          {
+            "text": "Pedestrian crossing",
+            "is_correct": true
+          },
+          {
+            "text": "Warning: children",
+            "is_correct": false
+          },
+          {
+            "text": "Cyclist and moped crossing",
+            "is_correct": false
+          }
         ],
         "explanation": "This sign warns of a pedestrian crossing (zebra crossing) where pedestrians may cross or be about to cross the road."
       },
       "FR": {
         "question": "Que signifie ce panneau de signalisation ?",
         "choices": [
-          { "text": "Passage pour piétons", "is_correct": true },
-          { "text": "Attention: enfants", "is_correct": false },
+          {
+            "text": "Passage pour piétons",
+            "is_correct": true
+          },
+          {
+            "text": "Attention: enfants",
+            "is_correct": false
+          },
           {
             "text": "Traversée pour cyclistes et cyclomoteurs",
             "is_correct": false
@@ -42,8 +63,14 @@
       "AR": {
         "question": "ما معنى هذه العلامة المرورية؟",
         "choices": [
-          { "text": "ممر عبور المشاة", "is_correct": true },
-          { "text": "علامة تحذير: أطفال", "is_correct": false },
+          {
+            "text": "ممر عبور المشاة",
+            "is_correct": true
+          },
+          {
+            "text": "علامة تحذير: أطفال",
+            "is_correct": false
+          },
           {
             "text": "ممر عبور الدراجات والدراجات البخارية",
             "is_correct": false
@@ -170,7 +197,10 @@
             "text": "Cyclists crossing the road without stopping",
             "is_correct": false
           },
-          { "text": "School children waiting for a bus", "is_correct": false }
+          {
+            "text": "School children waiting for a bus",
+            "is_correct": false
+          }
         ],
         "explanation": "This sign announces a zebra crossing where pedestrians may be crossing or about to cross the road."
       },
@@ -185,7 +215,10 @@
             "text": "Des cyclistes traversant la chaussée sans s'arrêter",
             "is_correct": false
           },
-          { "text": "Des écoliers attendant le bus", "is_correct": false }
+          {
+            "text": "Des écoliers attendant le bus",
+            "is_correct": false
+          }
         ],
         "explanation": "Ce panneau annonce un passage clouté où des piétons peuvent traverser ou sont sur le point de traverser."
       },
@@ -196,8 +229,14 @@
             "text": "مشاة يعبرون الطريق أو على وشك العبور",
             "is_correct": true
           },
-          { "text": "دراجون يعبرون الطريق دون توقف", "is_correct": false },
-          { "text": "أطفال مدارس ينتظرون الحافلة", "is_correct": false }
+          {
+            "text": "دراجون يعبرون الطريق دون توقف",
+            "is_correct": false
+          },
+          {
+            "text": "أطفال مدارس ينتظرون الحافلة",
+            "is_correct": false
+          }
         ],
         "explanation": "تُحذّر هذه العلامة من ممر مشاة حيث قد يعبر المشاة الطريق أو يكونون على وشك العبور."
       }
@@ -275,7 +314,10 @@
             "text": "الاستمرار إذا لم يكن هناك مشاة مرئيون",
             "is_correct": false
           },
-          { "text": "التجاوز لعبور الممر بسرعة", "is_correct": false }
+          {
+            "text": "التجاوز لعبور الممر بسرعة",
+            "is_correct": false
+          }
         ],
         "explanation": "عند ممر المشاة ينبغي تقليل السرعة والانتباه للمشاة. يجب التوقف إذا كان المشاة يعبرون أو على وشك العبور."
       }
@@ -370,43 +412,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Op welke afstand wordt dit gevaarsbord buiten de bebouwde kom geplaatst?",
+        "question": "Op welke afstand van het gevaar wordt dit gevaarsbord in het Brussels Hoofdstedelijk en Vlaams Gewest normaal geplaatst?",
         "choices": [
-          { "text": "Ongeveer 150 meter voor het gevaar", "is_correct": true },
-          { "text": "Precies op de gevaarlijke plek", "is_correct": false },
-          { "text": "Op 500 meter voor het gevaar", "is_correct": false }
+          {
+            "text": "Ongeveer 150 meter voor het gevaar",
+            "is_correct": true
+          },
+          {
+            "text": "Precies op de gevaarlijke plek",
+            "is_correct": false
+          },
+          {
+            "text": "Op 500 meter voor het gevaar",
+            "is_correct": false
+          }
         ],
-        "explanation": "Buiten de bebouwde kom worden gevaarsborden op ±150 meter voor het gevaar geplaatst. Binnen de bebouwde kom is dit ±50 meter."
+        "explanation": "Volgens de huidige plaatsingsregel voor het Brussels Hoofdstedelijk en Vlaams Gewest staat een gevaarsbord normaal op ongeveer 150 meter van de gevaarlijke plaats. Staat het dichter of verder, dan vermeldt een onderbord de afstand bij benadering."
       },
       "EN": {
-        "question": "At what distance is this danger sign placed outside built-up areas?",
+        "question": "At what distance from the hazard is this warning sign normally placed in the Brussels-Capital and Flemish Regions?",
         "choices": [
           {
             "text": "Approximately 150 metres before the hazard",
             "is_correct": true
           },
-          { "text": "Exactly at the hazard location", "is_correct": false },
-          { "text": "500 metres before the hazard", "is_correct": false }
+          {
+            "text": "Exactly at the hazard location",
+            "is_correct": false
+          },
+          {
+            "text": "500 metres before the hazard",
+            "is_correct": false
+          }
         ],
-        "explanation": "Outside built-up areas, danger signs are placed ±150 metres before the hazard. Inside built-up areas it is ±50 metres."
+        "explanation": "Under the current placement rule for the Brussels-Capital and Flemish Regions, a warning sign is normally placed about 150 metres from the hazard. If it is closer or farther away, a supplementary plate indicates the approximate distance."
       },
       "FR": {
-        "question": "À quelle distance ce panneau de danger est-il placé hors agglomération ?",
+        "question": "À quelle distance du danger ce panneau est-il normalement placé dans les Régions de Bruxelles-Capitale et flamande ?",
         "choices": [
-          { "text": "Environ 150 mètres avant le danger", "is_correct": true },
-          { "text": "Exactement à l'endroit du danger", "is_correct": false },
-          { "text": "500 mètres avant le danger", "is_correct": false }
+          {
+            "text": "Environ 150 mètres avant le danger",
+            "is_correct": true
+          },
+          {
+            "text": "Exactement à l'endroit du danger",
+            "is_correct": false
+          },
+          {
+            "text": "500 mètres avant le danger",
+            "is_correct": false
+          }
         ],
-        "explanation": "Hors agglomération, les panneaux de danger sont placés à ±150 mètres avant le danger. En agglomération, c'est ±50 mètres."
+        "explanation": "Selon la règle de placement actuelle pour les Régions de Bruxelles-Capitale et flamande, un panneau de danger est normalement placé à environ 150 mètres du danger. S’il est plus proche ou plus éloigné, un panneau additionnel indique la distance approximative."
       },
       "AR": {
-        "question": "على أي مسافة توضع هذه العلامة المرورية التحذيرية خارج المنطقة السكنية؟",
+        "question": "على أي مسافة من الخطر توضع هذه العلامة التحذيرية عادةً في إقليمي بروكسل العاصمة وفلاندرز؟",
         "choices": [
-          { "text": "حوالي 150 متر قبل الخطر", "is_correct": true },
-          { "text": "مباشرة عند موقع الخطر", "is_correct": false },
-          { "text": "500 متر قبل الخطر", "is_correct": false }
+          {
+            "text": "حوالي 150 متر قبل الخطر",
+            "is_correct": true
+          },
+          {
+            "text": "مباشرة عند موقع الخطر",
+            "is_correct": false
+          },
+          {
+            "text": "500 متر قبل الخطر",
+            "is_correct": false
+          }
         ],
-        "explanation": "خارج المنطقة السكنية توضع علامات الخطر على مسافة ±150 متر قبل الخطر. داخل المنطقة السكنية تكون المسافة ±50 متر."
+        "explanation": "وفق قاعدة الوضع الحالية في إقليمي بروكسل العاصمة وفلاندرز، توضع علامة الخطر عادةً على بُعد نحو 150 متراً من موضع الخطر. وإذا وُضعت أقرب أو أبعد فتبيّن لوحة تكميلية المسافة التقريبية."
       }
     }
   },
@@ -420,32 +495,56 @@
       "NL": {
         "question": "Bent u verplicht te stoppen voor voetgangers bij een zebrapad?",
         "choices": [
-          { "text": "Ja", "is_correct": true },
-          { "text": "Nee", "is_correct": false }
+          {
+            "text": "Ja",
+            "is_correct": true
+          },
+          {
+            "text": "Nee",
+            "is_correct": false
+          }
         ],
         "explanation": "Bij een zebrapad bent u verplicht te stoppen voor voetgangers die oversteken of willen oversteken."
       },
       "EN": {
         "question": "Are you required to stop for pedestrians crossing or about to cross at a pedestrian crossing?",
         "choices": [
-          { "text": "Yes", "is_correct": true },
-          { "text": "No", "is_correct": false }
+          {
+            "text": "Yes",
+            "is_correct": true
+          },
+          {
+            "text": "No",
+            "is_correct": false
+          }
         ],
         "explanation": "At a pedestrian crossing, you are required to give way to pedestrians who are crossing or about to cross."
       },
       "FR": {
         "question": "Êtes-vous obligé de vous arrêter pour les piétons à un passage pour piétons ?",
         "choices": [
-          { "text": "Oui", "is_correct": true },
-          { "text": "Non", "is_correct": false }
+          {
+            "text": "Oui",
+            "is_correct": true
+          },
+          {
+            "text": "Non",
+            "is_correct": false
+          }
         ],
         "explanation": "À un passage pour piétons, vous êtes obligé de céder la priorité aux piétons qui traversent ou sont sur le point de traverser."
       },
       "AR": {
         "question": "هل أنت ملزم بالتوقف للمشاة الذين يعبرون أو على وشك العبور عند ممر المشاة؟",
         "choices": [
-          { "text": "نعم", "is_correct": true },
-          { "text": "لا", "is_correct": false }
+          {
+            "text": "نعم",
+            "is_correct": true
+          },
+          {
+            "text": "لا",
+            "is_correct": false
+          }
         ],
         "explanation": "عند ممر المشاة، أنت ملزم بإعطاء الأولوية للمشاة الذين يعبرون أو على وشك العبور."
       }
@@ -461,32 +560,56 @@
       "NL": {
         "question": "Mag u vlak voor een zebrapad inhalen?",
         "choices": [
-          { "text": "Nee", "is_correct": true },
-          { "text": "Ja", "is_correct": false }
+          {
+            "text": "Nee",
+            "is_correct": true
+          },
+          {
+            "text": "Ja",
+            "is_correct": false
+          }
         ],
         "explanation": "Inhalen vlak voor een voetgangersoversteekplaats is verboden. Een inhalend voertuig kan een overstekende voetganger niet tijdig zien."
       },
       "EN": {
         "question": "Is it allowed to overtake immediately before a pedestrian crossing?",
         "choices": [
-          { "text": "No", "is_correct": true },
-          { "text": "Yes", "is_correct": false }
+          {
+            "text": "No",
+            "is_correct": true
+          },
+          {
+            "text": "Yes",
+            "is_correct": false
+          }
         ],
         "explanation": "Overtaking just before a pedestrian crossing is prohibited. An overtaking vehicle may not see a crossing pedestrian in time."
       },
       "FR": {
         "question": "Êtes-vous autorisé à dépasser juste avant un passage pour piétons ?",
         "choices": [
-          { "text": "Non", "is_correct": true },
-          { "text": "Oui", "is_correct": false }
+          {
+            "text": "Non",
+            "is_correct": true
+          },
+          {
+            "text": "Oui",
+            "is_correct": false
+          }
         ],
         "explanation": "Dépasser juste avant un passage pour piétons est interdit. Un véhicule dépassant ne peut pas voir un piéton traversant à temps."
       },
       "AR": {
         "question": "هل يُسمح بالتجاوز مباشرة قبل ممر عبور المشاة؟",
         "choices": [
-          { "text": "لا", "is_correct": true },
-          { "text": "نعم", "is_correct": false }
+          {
+            "text": "لا",
+            "is_correct": true
+          },
+          {
+            "text": "نعم",
+            "is_correct": false
+          }
         ],
         "explanation": "يُحظر التجاوز قبيل ممر عبور المشاة مباشرة. المركبة المتجاوِزة قد لا ترى المشاة العابرين في الوقت المناسب."
       }

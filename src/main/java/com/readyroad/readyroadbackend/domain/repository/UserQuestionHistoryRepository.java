@@ -1,6 +1,6 @@
 package com.readyroad.readyroadbackend.domain.repository;
 
-import com.readyroad.readyroadbackend.domain.model.UserQuestionHistory;
+import com.readyroad.readyroadbackend.domain.entity.UserQuestionHistory;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;

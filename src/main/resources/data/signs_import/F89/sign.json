@@ -6,19 +6,31 @@
   "i18n": {
     "NL": {
       "name": "Aanduiding van de maximumsnelheid per rijstrook",
-      "description": "Dit bord geeft de maximumsnelheid per rijstrook aan, met vermelding van de afstand waarbinnen de limieten gelden. De limiet boven uw rijstrook is van toepassing op u — andere rijstroken kunnen gelijktijdig andere limieten hebben."
+      "summary": "F89 toont per rijstrook een aparte maximumsnelheid én de afstand waarbinnen die limiet geldt. Het onderscheidende kenmerk ten opzichte van F91 is de aanduiding van de geldende afstand.",
+      "description": "Dit bord geeft de maximumsnelheid per rijstrook aan, met vermelding van de afstand waarbinnen de limieten gelden. De limiet boven uw rijstrook is van toepassing op u — andere rijstroken kunnen gelijktijdig andere limieten hebben.",
+      "driver_guidance": "Bij F89 geldt de limiet boven uw eigen rijstrook. Andere rijstroken kunnen tegelijkertijd hogere of lagere limieten tonen. Alleen de limiet boven uw rijstrook is voor u bindend.",
+      "exceptions": []
     },
     "EN": {
       "name": "Speed limit per lane with distance indication",
-      "description": "This sign shows the maximum speed for each lane, with an indication of the distance over which the limits apply. The limit shown above your lane applies to you — other lanes may have different limits simultaneously."
+      "summary": "F89 shows a separate maximum speed per lane AND the distance for which that limit applies. The distinguishing feature compared to F91 is the distance indication.",
+      "description": "This sign shows the maximum speed for each lane, with an indication of the distance over which the limits apply. The limit shown above your lane applies to you — other lanes may have different limits simultaneously.",
+      "driver_guidance": "At F89 the limit above your own lane applies. Other lanes may simultaneously show higher or lower limits. Only the limit above your lane is binding for you.",
+      "exceptions": []
     },
     "FR": {
       "name": "Vitesse maximale par voie avec indication de distance",
-      "description": "Ce panneau indique la vitesse maximale par voie, avec la distance sur laquelle les limites s'appliquent. La limite affichée au-dessus de votre voie s'applique à vous ; les autres voies peuvent avoir des limites différentes simultanément."
+      "summary": "F89 affiche une vitesse maximale séparée par voie ET la distance pour laquelle cette limite s'applique. La caractéristique distinctive par rapport à F91 est l'indication de distance.",
+      "description": "Ce panneau indique la vitesse maximale par voie, avec la distance sur laquelle les limites s'appliquent. La limite affichée au-dessus de votre voie s'applique à vous ; les autres voies peuvent avoir des limites différentes simultanément.",
+      "driver_guidance": "Au F89 la limite au-dessus de votre propre voie s'applique. Les autres voies peuvent simultanément afficher des limites plus élevées ou plus basses. Seule la limite au-dessus de votre voie vous est contraignante.",
+      "exceptions": []
     },
     "AR": {
       "name": "حد السرعة القصوى لكل مسار مع بيان المسافة",
-      "description": "توضح هذه العلامة السرعة القصوى لكل مسار والمسافة التي تطبق خلالها هذه الحدود. الحد المعروض فوق مسارك هو الذي ينطبق عليك، وقد تكون للمسارات الأخرى حدود مختلفة في الوقت نفسه."
+      "summary": "F89 تعرض حد سرعة أقصى إلى جانب المسافة التي يسري فيها. السمة المميزة مقارنة بـF91 هي ذكر المسافة.",
+      "description": "توضح هذه العلامة السرعة القصوى لكل مسار والمسافة التي تطبق خلالها هذه الحدود. الحد المعروض فوق مسارك هو الذي ينطبق عليك، وقد تكون للمسارات الأخرى حدود مختلفة في الوقت نفسه.",
+      "driver_guidance": "عند F89 يسري الحد فوق مسارك فقط. قد تعرض مسارات أخرى حدودًا مختلفة. فقط الحد فوق مسارك ملزم لك.",
+      "exceptions": []
     }
   }
 }

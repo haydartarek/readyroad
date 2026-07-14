@@ -6,21 +6,31 @@
   "i18n": {
     "NL": {
       "name": "Aanduiding van de maximumsnelheid per rijstrook (zonder afstand)",
-      "description": "Dit bord geeft de maximumsnelheid per rijstrook aan zonder vermelding van de geldende afstand. De limiet boven uw rijstrook geldt tot een nieuw bord of het einde van het wegvak."
+      "summary": "F91 toont per rijstrook een aparte maximumsnelheid zonder afstandsaanduiding. De limiet geldt tot een nieuw bord of het einde van het wegvak. Het onderscheidende kenmerk ten opzichte van F89 is de afwezigheid van een afstandsaanduiding.",
+      "description": "Dit bord geeft de maximumsnelheid per rijstrook aan zonder vermelding van de geldende afstand. De limiet boven uw rijstrook geldt tot een nieuw bord of het einde van het wegvak.",
+      "driver_guidance": "Bij F91 is de limiet even bindend als bij F89. Het ontbreken van een afstandsaanduiding betekent niet dat de limiet adviserend is — zij geldt tot een wijziging door een nieuw bord of het einde van het wegvak.",
+      "exceptions": []
     },
     "EN": {
       "name": "Speed limit per lane without distance indication",
-      "description": "This sign shows the maximum speed for each lane without indicating the distance over which the limits apply. The limit above your lane applies until a new sign or the end of the road section."
+      "summary": "F91 shows a separate maximum speed per lane without a distance indication. The limit applies until a new sign or the end of the road section. The distinguishing feature compared to F89 is the absence of a distance indication.",
+      "description": "This sign shows the maximum speed for each lane without indicating the distance over which the limits apply. The limit above your lane applies until a new sign or the end of the road section.",
+      "driver_guidance": "Under F91 the limit is as binding as under F89. The absence of a distance indication does not make the limit advisory — it applies until changed by a new sign or the end of the road section.",
+      "exceptions": []
     },
     "FR": {
       "name": "Vitesse maximale par voie sans indication de distance",
-      "description": "Ce panneau indique la vitesse maximale par voie sans préciser la distance d’application. La limite au-dessus de votre voie s’applique jusqu’à un nouveau panneau ou la fin du tronçon."
+      "summary": "F91 affiche une vitesse maximale séparée par voie sans indication de distance. La limite s'applique jusqu'à un nouveau panneau ou la fin du tronçon. La caractéristique distinctive par rapport à F89 est l'absence d'indication de distance.",
+      "description": "Ce panneau indique la vitesse maximale par voie sans préciser la distance d’application. La limite au-dessus de votre voie s’applique jusqu’à un nouveau panneau ou la fin du tronçon.",
+      "driver_guidance": "Sous F91 la limite est aussi contraignante que sous F89. L'absence d'indication de distance ne rend pas la limite facultative — elle s'applique jusqu'à un nouveau panneau ou la fin du tronçon.",
+      "exceptions": []
     },
     "AR": {
       "name": "الحد الأقصى للسرعة لكل مسار بدون إشارة مسافة",
-      "description": "تعرض هذه العلامة المرورية الحد الأقصى لكل مسار دون تحديد المسافة. يسري الحد فوق مسارك حتى علامة مرورية جديدة أو نهاية القطاع."
+      "summary": "F91 تعرض حد سرعة أقصى لكل مسار دون ذكر مسافة. يسري الحد حتى علامة مرورية جديدة أو نهاية القسم.",
+      "description": "تعرض هذه العلامة المرورية الحد الأقصى لكل مسار دون تحديد المسافة. يسري الحد فوق مسارك حتى علامة مرورية جديدة أو نهاية القطاع.",
+      "driver_guidance": "في F91 الحد ملزم كما في F89. غياب ذكر المسافة لا يجعله إرشاديًا.",
+      "exceptions": []
     }
   }
 }
-
-

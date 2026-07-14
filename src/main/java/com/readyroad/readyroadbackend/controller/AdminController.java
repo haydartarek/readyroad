@@ -15,19 +15,15 @@ import com.readyroad.readyroadbackend.domain.entity.User;
 import com.readyroad.readyroadbackend.domain.entity.SignRandomPracticeSession;
 import com.readyroad.readyroadbackend.dto.AdminSystemSettingsUpdateRequest;
 import com.readyroad.readyroadbackend.dto.AdminQuizQuestionRequest;
-import com.readyroad.readyroadbackend.dto.CreateTrafficSignRequest;
 import com.readyroad.readyroadbackend.dto.SignGovernanceReport;
-import com.readyroad.readyroadbackend.dto.SignImportEntry;
 import com.readyroad.readyroadbackend.dto.response.AdminQuizQuestionResponse;
 import com.readyroad.readyroadbackend.dto.response.AdminSystemSettingsResponse;
 import com.readyroad.readyroadbackend.dto.response.AdminTrafficSignResponse;
 import com.readyroad.readyroadbackend.dto.response.PageResponse;
-import com.readyroad.readyroadbackend.dto.response.TrafficSignResponse;
 import com.readyroad.readyroadbackend.service.AdminQuizService;
 import com.readyroad.readyroadbackend.service.AdminSystemSettingsService;
 import com.readyroad.readyroadbackend.service.BackendMessageService;
 import com.readyroad.readyroadbackend.service.TrafficSignService;
-import com.readyroad.readyroadbackend.service.SignImportService;
 import com.readyroad.readyroadbackend.service.SignGovernanceService;
 import jakarta.validation.ConstraintViolationException;
 import jakarta.validation.Valid;
@@ -86,7 +82,6 @@ public class AdminController {
     private final TrafficSignService trafficSignService;
     private final AdminQuizService adminQuizService;
     private final FileUploadService fileUploadService;
-    private final SignImportService signImportService;
     private final SignGovernanceService signGovernanceService;
     private final NotificationService notificationService;
     private final AdminSystemSettingsService adminSystemSettingsService;
@@ -181,103 +176,16 @@ public class AdminController {
         }
     }
 
-    /**
-     * Scenario: Admin can delete a traffic sign via admin endpoint
-     * DELETE /api/admin/signs/{id}
-     * Handles 404, 409 (foreign key constraint)
-     */
-    @DeleteMapping("/signs/{id}")
-    public ResponseEntity<?> deleteSign(@PathVariable Long id) {
-        log.info("🗑️ Attempting to delete sign with id: {}", id);
-        try {
-            trafficSignService.deleteSign(id);
-            log.info("✅ Sign deleted successfully with id: {}", id);
-            return ResponseEntity.ok(Map.of(
-                    "message", messages.get("admin.sign.deleted"),
-                    "id", id));
-        } catch (IllegalArgumentException e) {
-            log.warn("⚠️ Sign not found with id: {}", id);
-            return errorResponse(HttpStatus.NOT_FOUND, e.getMessage());
-        } catch (DataIntegrityViolationException e) {
-            log.warn("⚠️ Cannot delete sign id={} — referenced by other records", id);
-            return errorResponse(HttpStatus.CONFLICT, messages.get("admin.sign.delete_referenced"));
-        }
-    }
-
-    /**
-     * Create a new traffic sign
-     * POST /api/admin/signs
-     */
-    @PostMapping("/signs")
-    public ResponseEntity<?> createSign(@Valid @RequestBody CreateTrafficSignRequest request) {
-        log.info("➕ Creating new traffic sign: {}", request.getSignCode());
-        try {
-            TrafficSignResponse created = trafficSignService.createSign(request);
-            log.info("✅ Sign created successfully: {}", created.signCode());
-            return ResponseEntity.status(HttpStatus.CREATED).body(created);
-        } catch (IllegalArgumentException e) {
-            log.warn("⚠️ Failed to create sign: {}", e.getMessage());
-            return errorResponse(HttpStatus.BAD_REQUEST, e.getMessage());
-        }
-    }
-
-    /**
-     * Update an existing traffic sign
-     * PUT /api/admin/signs/{id}
-     */
-    @PutMapping("/signs/{id}")
-    public ResponseEntity<?> updateSign(@PathVariable Long id, @Valid @RequestBody CreateTrafficSignRequest request) {
-        log.info("✏️ Updating traffic sign with id: {}", id);
-        try {
-            TrafficSignResponse updated = trafficSignService.updateSign(id, request);
-            log.info("✅ Sign updated successfully: {}", updated.signCode());
-            return ResponseEntity.ok(updated);
-        } catch (IllegalArgumentException e) {
-            log.warn("⚠️ Failed to update sign: {}", e.getMessage());
-            return errorResponse(HttpStatus.BAD_REQUEST, e.getMessage());
-        }
-    }
-
-    // ─── Signs: Long Description Import Pipeline ─────────────
-
-    /**
-     * Validate (dry-run) a batch of sign long descriptions.
-     * POST /api/admin/signs/import/validate
-     * Returns a preview of what would change without writing to DB.
-     */
-    @PostMapping("/signs/import/validate")
-    public ResponseEntity<SignImportEntry.ImportResult> validateSignImport(
-            @RequestBody SignImportEntry.ImportRequest request) {
-        log.info("🔍 Validating sign import: {} entries", request.signs().size());
-        SignImportEntry.ImportResult result = signImportService.validateEntries(request.signs());
-        return ResponseEntity.ok(result);
-    }
-
-    /**
-     * Execute a batch import of sign long descriptions.
-     * POST /api/admin/signs/import/execute
-     * Upserts long_description_* fields matched by sign code.
-     * Set dryRun=true in the request body to preview without writing.
-     */
-    @PostMapping("/signs/import/execute")
-    public ResponseEntity<SignImportEntry.ImportResult> executeSignImport(
-            @RequestBody SignImportEntry.ImportRequest request) {
-        log.info("📥 Executing sign import: {} entries, dryRun={}", request.signs().size(), request.dryRun());
-        SignImportEntry.ImportResult result = signImportService.importLongDescriptions(
-                request.signs(), request.dryRun());
-        return ResponseEntity.ok(result);
-    }
-
     // ─── Signs: Governance Audit ─────────────────────────
 
     /**
-     * Run a canonical-source governance audit (signs.json ↔ DB consistency check).
+     * Run a canonical-source governance audit (signs_import ↔ DB consistency check).
      * GET /api/admin/signs/governance/audit
      * Returns a detailed report of mismatches, orphans and completeness issues.
      */
     @GetMapping("/signs/governance/audit")
     public ResponseEntity<SignGovernanceReport.AuditResult> governanceAudit() {
-        log.info("Running canonical governance audit (signs.json vs DB)");
+        log.info("Running canonical governance audit (signs_import vs DB)");
         SignGovernanceReport.AuditResult result = signGovernanceService.audit();
         return ResponseEntity.ok(result);
     }

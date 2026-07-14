@@ -1,33 +1,24 @@
 package com.readyroad.readyroadbackend.service;
 
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.readyroad.readyroadbackend.domain.entity.RoadSign;
 import com.readyroad.readyroadbackend.domain.repository.RoadSignRepository;
 import com.readyroad.readyroadbackend.dto.SignGovernanceReport.AuditResult;
 import com.readyroad.readyroadbackend.dto.SignGovernanceReport.SignAuditItem;
+import com.readyroad.readyroadbackend.util.RouteCodeNormalizer;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.core.io.Resource;
-import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Service;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.*;
 import java.util.stream.Collectors;
 
 /**
- * Governance audit: compares signs.json (canonical source) against the
+ * Governance audit: compares signs_import (canonical source) against the
  * database.
  * <p>
  * This service is ONLY invoked by admin audit endpoints — never at public
  * request time.
- * It reads signs.json solely for consistency verification, not for serving
- * content.
+ * It reuses the validated canonical catalog instead of parsing a second JSON
+ * source.
  * </p>
  */
 @Service
@@ -35,30 +26,30 @@ import java.util.stream.Collectors;
 public class SignGovernanceService {
 
     private final RoadSignRepository roadSignRepository;
-    private final ObjectMapper objectMapper;
-    private final ResourceLoader resourceLoader;
-
-    @Value("${readyroad.signs.canonical-path:data/signs.json}")
-    private String canonicalPath;
+    private final CanonicalSignCatalogService canonicalSignCatalogService;
 
     public SignGovernanceService(
             RoadSignRepository roadSignRepository,
-            ObjectMapper objectMapper,
-            ResourceLoader resourceLoader) {
+            CanonicalSignCatalogService canonicalSignCatalogService) {
         this.roadSignRepository = roadSignRepository;
-        this.objectMapper = objectMapper;
-        this.resourceLoader = resourceLoader;
+        this.canonicalSignCatalogService = canonicalSignCatalogService;
     }
 
     /**
      * Perform a full canonical-source governance audit.
-     * Compares every DB sign against signs.json and vice versa.
+     * Compares every DB sign against signs_import and vice versa.
      */
     public AuditResult audit() {
-        Map<String, JsonNode> jsonSignsByCode = loadCanonicalSigns();
+        Map<String, CanonicalSignCatalogService.CanonicalSignSeed> canonicalSignsByRoute =
+                canonicalSignCatalogService.getCanonicalSeeds().stream()
+                        .collect(Collectors.toMap(
+                                CanonicalSignCatalogService.CanonicalSignSeed::routeKey,
+                                seed -> seed,
+                                (left, right) -> left,
+                                LinkedHashMap::new));
         List<RoadSign> dbSigns = roadSignRepository.findAll();
-        Map<String, RoadSign> dbSignsByCode = dbSigns.stream()
-                .collect(Collectors.toMap(RoadSign::getSignCode, s -> s, (a, b) -> a));
+        Map<String, RoadSign> dbSignsByRoute = dbSigns.stream()
+                .collect(Collectors.toMap(this::routeKeyFor, sign -> sign, (left, right) -> left));
 
         List<SignAuditItem> details = new ArrayList<>();
         int fullyConsistent = 0;
@@ -69,15 +60,15 @@ public class SignGovernanceService {
         // Check every DB sign against JSON
         for (RoadSign dbSign : dbSigns) {
             String code = dbSign.getSignCode();
-            JsonNode jsonSign = jsonSignsByCode.get(code);
-            if (jsonSign == null) {
+            CanonicalSignCatalogService.CanonicalSignSeed canonicalSign = canonicalSignsByRoute.get(routeKeyFor(dbSign));
+            if (canonicalSign == null) {
                 details.add(new SignAuditItem(code, "ORPHAN_IN_DB",
-                        List.of("Sign exists in DB but not in signs.json")));
+                        List.of("Sign exists in DB but not in signs_import")));
                 orphanInDb++;
                 withIssues++;
                 continue;
             }
-            List<String> issues = compareSign(dbSign, jsonSign);
+            List<String> issues = compareSign(dbSign, canonicalSign);
             if (issues.isEmpty()) {
                 fullyConsistent++;
             } else {
@@ -87,10 +78,10 @@ public class SignGovernanceService {
         }
 
         // Check for JSON signs not in DB
-        for (String jsonCode : jsonSignsByCode.keySet()) {
-            if (!dbSignsByCode.containsKey(jsonCode)) {
-                details.add(new SignAuditItem(jsonCode, "ORPHAN_IN_JSON",
-                        List.of("Sign exists in signs.json but not in DB")));
+        for (CanonicalSignCatalogService.CanonicalSignSeed canonicalSign : canonicalSignsByRoute.values()) {
+            if (!dbSignsByRoute.containsKey(canonicalSign.routeKey())) {
+                details.add(new SignAuditItem(canonicalSign.routeCode(), "ORPHAN_IN_JSON",
+                        List.of("Sign exists in signs_import but not in DB")));
                 orphanInJson++;
                 withIssues++;
             }
@@ -98,11 +89,11 @@ public class SignGovernanceService {
 
         boolean passed = (withIssues == 0);
         log.info("Governance audit: {} DB signs, {} JSON signs, {} consistent, {} issues, passed={}",
-                dbSigns.size(), jsonSignsByCode.size(), fullyConsistent, withIssues, passed);
+                dbSigns.size(), canonicalSignsByRoute.size(), fullyConsistent, withIssues, passed);
 
         return new AuditResult(
                 dbSigns.size(),
-                jsonSignsByCode.size(),
+                canonicalSignsByRoute.size(),
                 fullyConsistent,
                 withIssues,
                 orphanInDb,
@@ -112,81 +103,74 @@ public class SignGovernanceService {
     }
 
     /**
-     * Compare a single DB sign's long_description fields against its JSON
-     * counterpart.
+     * Compare every field persisted in road_signs against its canonical sign.json.
      */
-    private List<String> compareSign(RoadSign dbSign, JsonNode jsonSign) {
+    private List<String> compareSign(
+            RoadSign dbSign,
+            CanonicalSignCatalogService.CanonicalSignSeed canonicalSign) {
         List<String> issues = new ArrayList<>();
 
-        compareField(issues, dbSign.getSignCode(), "description_en",
-                dbSign.getDescriptionEn(), textOrNull(jsonSign, "long_description_en"));
-        compareField(issues, dbSign.getSignCode(), "description_nl",
-                dbSign.getDescriptionNl(), textOrNull(jsonSign, "long_description_nl"));
-        compareField(issues, dbSign.getSignCode(), "description_fr",
-                dbSign.getDescriptionFr(), textOrNull(jsonSign, "long_description_fr"));
-        compareField(issues, dbSign.getSignCode(), "description_ar",
-                dbSign.getDescriptionAr(), textOrNull(jsonSign, "long_description_ar"));
+        compareField(issues, "sign_code", dbSign.getSignCode(), canonicalSign.routeCode());
+        compareField(issues, "normalized_sign_code", dbSign.getNormalizedSignCode(), canonicalSign.routeKey());
+        compareField(issues, "category", dbSign.getCategory() == null ? null : dbSign.getCategory().name(),
+                canonicalSign.category().name());
+        compareField(issues, "image_path", dbSign.getImagePath(), canonicalSign.imagePath());
+        compareField(issues, "name_en", dbSign.getNameEn(), canonicalSign.nameEn());
+        compareField(issues, "name_nl", dbSign.getNameNl(), canonicalSign.nameNl());
+        compareField(issues, "name_fr", dbSign.getNameFr(), canonicalSign.nameFr());
+        compareField(issues, "name_ar", dbSign.getNameAr(), canonicalSign.nameAr());
+        compareField(issues, "description_en", dbSign.getDescriptionEn(), canonicalSign.descriptionEn());
+        compareField(issues, "description_nl", dbSign.getDescriptionNl(), canonicalSign.descriptionNl());
+        compareField(issues, "description_fr", dbSign.getDescriptionFr(), canonicalSign.descriptionFr());
+        compareField(issues, "description_ar", dbSign.getDescriptionAr(), canonicalSign.descriptionAr());
+        compareField(issues, "summary_en", dbSign.getSummaryEn(), canonicalSign.summaryEn());
+        compareField(issues, "summary_nl", dbSign.getSummaryNl(), canonicalSign.summaryNl());
+        compareField(issues, "summary_fr", dbSign.getSummaryFr(), canonicalSign.summaryFr());
+        compareField(issues, "summary_ar", dbSign.getSummaryAr(), canonicalSign.summaryAr());
+        compareField(
+                issues, "driver_guidance_en", dbSign.getDriverGuidanceEn(), canonicalSign.driverGuidanceEn());
+        compareField(
+                issues, "driver_guidance_nl", dbSign.getDriverGuidanceNl(), canonicalSign.driverGuidanceNl());
+        compareField(
+                issues, "driver_guidance_fr", dbSign.getDriverGuidanceFr(), canonicalSign.driverGuidanceFr());
+        compareField(
+                issues, "driver_guidance_ar", dbSign.getDriverGuidanceAr(), canonicalSign.driverGuidanceAr());
+        compareList(issues, "exceptions_en", dbSign.getExceptionsEn(), canonicalSign.exceptionsEn());
+        compareList(issues, "exceptions_nl", dbSign.getExceptionsNl(), canonicalSign.exceptionsNl());
+        compareList(issues, "exceptions_fr", dbSign.getExceptionsFr(), canonicalSign.exceptionsFr());
+        compareList(issues, "exceptions_ar", dbSign.getExceptionsAr(), canonicalSign.exceptionsAr());
+        if (!Objects.equals(Boolean.TRUE.equals(dbSign.getSeriousViolation()), canonicalSign.seriousViolation())) {
+            issues.add("serious_violation: DB does not match sign.json");
+        }
+        if (!Boolean.TRUE.equals(dbSign.getIsActive())) {
+            issues.add("is_active: DB sign is not active");
+        }
 
         return issues;
     }
 
-    private void compareField(List<String> issues, String code, String field, String dbValue, String jsonValue) {
+    private String routeKeyFor(RoadSign sign) {
+        String normalized = RouteCodeNormalizer.normalize(sign.getNormalizedSignCode());
+        return normalized.isBlank() ? RouteCodeNormalizer.normalize(sign.getSignCode()) : normalized;
+    }
+
+    private void compareField(List<String> issues, String field, String dbValue, String jsonValue) {
         if (jsonValue == null || jsonValue.isBlank()) {
             // JSON has no value — nothing to enforce
             return;
         }
         if (dbValue == null || dbValue.isBlank()) {
-            issues.add(field + ": DB is null/empty but signs.json has a value");
+            issues.add(field + ": DB is null/empty but sign.json has a value");
             return;
         }
         if (!dbValue.equals(jsonValue)) {
-            issues.add(field + ": DB does not match signs.json");
+            issues.add(field + ": DB does not match sign.json");
         }
     }
 
-    /**
-     * Load the canonical signs.json file and index entries by code.
-     */
-    private Map<String, JsonNode> loadCanonicalSigns() {
-        try (InputStream input = openCanonicalInputStream()) {
-            List<JsonNode> signs = objectMapper.readValue(input, new TypeReference<List<JsonNode>>() {
-            });
-            Map<String, JsonNode> byCode = new LinkedHashMap<>();
-            for (JsonNode sign : signs) {
-                String code = sign.has("code") ? sign.get("code").asText() : null;
-                if (code != null && !code.isBlank()) {
-                    byCode.put(code, sign);
-                }
-            }
-            log.info("Loaded {} entries from canonical signs.json", byCode.size());
-            return byCode;
-        } catch (IOException e) {
-            log.error("Failed to read canonical signs.json: {}", e.getMessage());
-            return Map.of();
+    private void compareList(List<String> issues, String field, List<String> dbValue, List<String> jsonValue) {
+        if (dbValue == null || !dbValue.equals(jsonValue)) {
+            issues.add(field + ": DB does not match sign.json");
         }
-    }
-
-    private InputStream openCanonicalInputStream() throws IOException {
-        Resource classpathResource = resourceLoader.getResource("classpath:" + canonicalPath);
-        if (classpathResource.exists()) {
-            return classpathResource.getInputStream();
-        }
-
-        File file = new File(canonicalPath);
-        if (!file.isAbsolute()) {
-            file = new File(System.getProperty("user.dir"), canonicalPath);
-        }
-        if (!file.exists()) {
-            log.warn("Canonical signs.json not found at: {}", file.getAbsolutePath());
-            throw new IOException("Canonical signs.json not found");
-        }
-        return new FileInputStream(file);
-    }
-
-    private static String textOrNull(JsonNode node, String field) {
-        if (node == null || !node.has(field) || node.get(field).isNull()) {
-            return null;
-        }
-        return node.get(field).asText();
     }
 }

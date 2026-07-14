@@ -7,274 +7,310 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat betekent bord F45?",
+        "question": "U ziet dit bord aan het begin van een straat. Wat betekent het?",
         "choices": [
           {
-            "text": "De weg die u inrijdt is een doodlopende weg en u kunt er niet doorrijden",
+            "text": "Deze straat biedt geen doorgang en eindigt zonder verbinding met een andere weg",
             "is_correct": true
           },
           {
-            "text": "Doorgaand verkeer heeft hier voorrang",
+            "text": "Deze straat is enkel toegankelijk voor voetgangers",
             "is_correct": false
           },
           {
-            "text": "De weg is gereserveerd voor hulpdiensten",
+            "text": "Deze straat wordt binnenkort afgesloten voor werken",
             "is_correct": false
           }
         ],
-        "explanation": "F45 duidt een doodlopende weg aan. Bestuurders die er inrijden zullen op dezelfde weg moeten terugkeren."
+        "explanation": "Dit bord waarschuwt dat de straat verder geen doorgang biedt naar een andere weg en in een dood spoor eindigt."
       },
       "EN": {
-        "question": "What does sign F45 mean?",
+        "question": "You see this sign at the start of a street. What does it mean?",
         "choices": [
           {
-            "text": "The road you are entering is a dead-end road and you cannot pass through",
+            "text": "This street does not lead through and ends without connecting to another road",
             "is_correct": true
           },
-          { "text": "Through traffic has priority here", "is_correct": false },
           {
-            "text": "The road is reserved for emergency services",
+            "text": "This street is only accessible to pedestrians",
+            "is_correct": false
+          },
+          {
+            "text": "This street will soon be closed for roadworks",
             "is_correct": false
           }
         ],
-        "explanation": "F45 indicates a dead-end road. Drivers entering it will have to turn back on the same road."
+        "explanation": "This sign warns that the street does not lead to another road and ends without any way through."
       },
       "FR": {
-        "question": "Que signifie le panneau F45 ?",
+        "question": "Vous apercevez ce panneau au début d'une rue. Que signifie-t-il ?",
         "choices": [
           {
-            "text": "La rue que vous abordez est sans issue et vous ne pouvez pas passer",
+            "text": "Cette rue ne débouche pas et se termine sans liaison avec une autre route",
             "is_correct": true
           },
           {
-            "text": "Le trafic en transit a la priorite ici",
+            "text": "Cette rue n'est accessible qu'aux piétons",
             "is_correct": false
           },
           {
-            "text": "La route est reservee aux services d urgence",
+            "text": "Cette rue sera bientôt fermée pour travaux",
             "is_correct": false
           }
         ],
-        "explanation": "F45 indique une voie sans issue. Les conducteurs qui s y engagent devront revenir sur la meme route."
+        "explanation": "Ce panneau avertit que la rue ne débouche sur aucune autre route et se termine en impasse."
       },
       "AR": {
-        "question": "ما معنى هذه العلامة المرورية؟",
+        "question": "لاحظت هذه العلامة عند بداية شارع، فماذا تعني؟",
         "choices": [
           {
-            "text": "الطريق الذي تدخله طريق مسدود ولا يمكنك المرور",
+            "text": "هذا الشارع لا يؤدي إلى طريق آخر وينتهي دون أي ربط بطريق آخر",
             "is_correct": true
           },
-          { "text": "لحركة المرور العابرة الأولوية هنا", "is_correct": false },
-          { "text": "الطريق محجوز للخدمات الطارئة", "is_correct": false }
+          { "text": "هذا الشارع مخصص فقط للمشاة", "is_correct": false },
+          {
+            "text": "هذا الشارع سيُغلق قريبًا بسبب أعمال طرق",
+            "is_correct": false
+          }
         ],
-        "explanation": "تشير F45 إلى طريق مسدود. يجب على السائقين الذين يدخلونه العودة على نفس الطريق."
+        "explanation": "تحذّر هذه العلامة من أن الشارع لا يؤدي إلى طريق آخر وينتهي دون أي مخرج."
       }
     }
   },
   {
     "question_id": "F45_Q02",
-    "type": "WHICH_SIGN",
+    "type": "DRIVER_ACTION",
     "difficulty": "EASY",
     "is_critical": false,
-    "show_sign": true,
+    "show_sign": false,
     "i18n": {
       "NL": {
-        "question": "Welk bord geeft aan dat een weg geen uitweg biedt en men kan er niet doorrijden?",
+        "question": "U rijdt met de auto en ziet dit bord aan een straat waar uw bestemming niet ligt. Wat doet u het best?",
         "choices": [
           {
-            "text": "F45 - het bord voor doodlopende wegen",
+            "text": "U rijdt die straat niet in, want ze biedt geen doorgang naar uw verdere route",
             "is_correct": true
           },
-          { "text": "C3 - verboden voor motorvoertuigen", "is_correct": false },
-          { "text": "A51 - gevaar voor file", "is_correct": false }
-        ],
-        "explanation": "F45 is het specifieke bord voor doodlopende wegen in de Belgische reglementering."
-      },
-      "EN": {
-        "question": "Which sign indicates that a road offers no way out and you cannot drive through?",
-        "choices": [
-          { "text": "F45 - the dead-end road sign", "is_correct": true },
-          { "text": "C3 - no motor vehicles", "is_correct": false },
-          { "text": "A51 - traffic jam warning", "is_correct": false }
-        ],
-        "explanation": "F45 is the specific sign for dead-end roads in Belgian regulations."
-      },
-      "FR": {
-        "question": "Quel panneau indique qu une voie n offre pas d issue et qu on ne peut pas y circuler ?",
-        "choices": [
-          { "text": "F45 - le panneau de voie sans issue", "is_correct": true },
           {
-            "text": "C3 - interdit aux vehicules a moteur",
+            "text": "U rijdt toch de straat in, want het bord heeft geen praktisch belang",
             "is_correct": false
           },
-          { "text": "A51 - avertissement de bouchon", "is_correct": false }
+          {
+            "text": "U rijdt de straat in en verwacht een doorsteek naar de volgende weg",
+            "is_correct": false
+          }
         ],
-        "explanation": "F45 est le panneau specifique pour les voies sans issue dans la reglementation belge."
+        "explanation": "Omdat een straat met dit bord in een dood spoor eindigt, is het voor bestuurders die er niet naartoe moeten nutteloos en oneconomisch om ze in te rijden."
+      },
+      "EN": {
+        "question": "You are driving a car and see this sign at a street that is not your destination. What is the best thing to do?",
+        "choices": [
+          {
+            "text": "You do not enter that street, since it offers no way through to continue your journey",
+            "is_correct": true
+          },
+          {
+            "text": "You enter the street anyway, since the sign has no practical relevance",
+            "is_correct": false
+          },
+          {
+            "text": "You enter the street expecting a shortcut to the next road",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Since a street with this sign ends without a way through, it is pointless for drivers who do not need to go there to enter it."
+      },
+      "FR": {
+        "question": "Vous conduisez une voiture et voyez ce panneau devant une rue qui n'est pas votre destination. Que faites-vous de mieux ?",
+        "choices": [
+          {
+            "text": "Vous n'entrez pas dans cette rue, car elle n'offre aucun passage pour poursuivre votre trajet",
+            "is_correct": true
+          },
+          {
+            "text": "Vous entrez quand même dans la rue, car le panneau n'a aucune importance pratique",
+            "is_correct": false
+          },
+          {
+            "text": "Vous entrez dans la rue en espérant un raccourci vers la route suivante",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Comme une rue portant ce panneau se termine en impasse, il est inutile pour les conducteurs qui n'y ont pas affaire de s'y engager."
       },
       "AR": {
-        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
+        "question": "تقود سيارتك ولاحظت هذه العلامة عند شارع ليست وجهتك فيه، فما أفضل تصرف؟",
         "choices": [
-          { "text": "F45 - علامة مرورية الطريق المسدود", "is_correct": true },
-          { "text": "C3 - ممنوع للمركبات الآلية", "is_correct": false },
-          { "text": "A51 - تحذير ازدحام مروري", "is_correct": false }
+          {
+            "text": "لا تدخل هذا الشارع لأنه لا يوفر أي ممر لمواصلة رحلتك",
+            "is_correct": true
+          },
+          {
+            "text": "تدخل الشارع مع ذلك لأن العلامة لا أهمية عملية لها",
+            "is_correct": false
+          },
+          {
+            "text": "تدخل الشارع متوقعًا وجود اختصار إلى الطريق التالي",
+            "is_correct": false
+          }
         ],
-        "explanation": "F45 هي العلامة المرورية المحددة للطرق المسدودة في اللوائح البلجيكية."
+        "explanation": "بما أن الشارع الذي يحمل هذه العلامة ينتهي دون مخرج، فمن غير المفيد للسائقين الذين ليست وجهتهم فيه أن يدخلوه."
       }
     }
   },
   {
     "question_id": "F45_Q03",
-    "type": "HAZARD_IDENTIFICATION",
+    "type": "WHERE_DOES_IT_APPLY",
     "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Welk gevaar kan voorkomen als bestuurders bord F45 negeren?",
+        "question": "Welke weggebruikers worden door dit bord geïnformeerd?",
         "choices": [
           {
-            "text": "U moet aan het einde keren op een mogelijk smalle weg en kunt andere voertuigen blokkeren",
+            "text": "Voor weggebruikers die willen weten of de weg een doorgang naar een andere weg biedt",
             "is_correct": true
           },
           {
-            "text": "U rijdt automatisch een verboden zone in",
+            "text": "Uitsluitend voor voetgangers die de straat willen oversteken",
             "is_correct": false
           },
           {
-            "text": "Uw rijbewijs wordt onmiddellijk ingetrokken",
+            "text": "Uitsluitend voor hulpdiensten tijdens een noodsituatie",
             "is_correct": false
           }
         ],
-        "explanation": "Als u een doodlopende weg inrijdt moet u aan het einde keren. Dit kan lastig zijn op smalle wegen en leidt tot oponthoud."
+        "explanation": "Het bord informeert weggebruikers dat de weg geen doorgang naar een andere weg biedt; het legt geen toegangsverbod op."
       },
       "EN": {
-        "question": "What hazard can occur if drivers ignore sign F45?",
+        "question": "Which road users are informed by this sign?",
         "choices": [
           {
-            "text": "You have to turn around at the end on a possibly narrow road and can block other vehicles",
+            "text": "Road users who need to know whether the road leads through to another road",
             "is_correct": true
           },
           {
-            "text": "You automatically enter a forbidden zone",
+            "text": "Exclusively pedestrians wanting to cross the street",
             "is_correct": false
           },
           {
-            "text": "Your driving licence is immediately revoked",
+            "text": "Exclusively emergency services during an emergency",
             "is_correct": false
           }
         ],
-        "explanation": "If you enter a dead-end road you have to turn around at the end. This can be difficult on narrow roads and causes delays."
+        "explanation": "The sign informs road users that the road does not lead through to another road; it does not impose an entry ban."
       },
       "FR": {
-        "question": "Quel danger peut survenir si les conducteurs ignorent le panneau F45 ?",
+        "question": "Quels usagers de la route sont informés par ce panneau ?",
         "choices": [
           {
-            "text": "Vous devez faire demi-tour au bout d une route potentiellement etroite et pouvez bloquer d autres vehicules",
+            "text": "Aux usagers qui doivent savoir si la voie débouche sur une autre route",
             "is_correct": true
           },
           {
-            "text": "Vous entrez automatiquement dans une zone interdite",
+            "text": "Uniquement aux piétons souhaitant traverser la rue",
             "is_correct": false
           },
           {
-            "text": "Votre permis de conduire est immediatement retire",
+            "text": "Uniquement aux services de secours lors d'une urgence",
             "is_correct": false
           }
         ],
-        "explanation": "Si vous vous engagez dans une voie sans issue vous devez faire demi-tour au bout. Cela peut etre difficile sur les routes etroites et cause des retards."
+        "explanation": "Le panneau informe les usagers que la voie ne débouche sur aucune autre route; il n'impose pas d'interdiction d'accès."
       },
       "AR": {
-        "question": "ما هو الخطر الذي تشير إليه هذه العلامة المرورية؟",
+        "question": "من هم مستخدمو الطريق الذين تُعلمهم هذه العلامة؟",
         "choices": [
           {
-            "text": "يجب عليك الاستدارة في النهاية على طريق قد يكون ضيقاً وقد تعيق مركبات أخرى",
+            "text": "لمستخدمي الطريق الذين يحتاجون إلى معرفة ما إذا كان الطريق يؤدي إلى طريق آخر",
             "is_correct": true
           },
-          { "text": "تدخل تلقائياً منطقة محظورة", "is_correct": false },
-          { "text": "يُسحب رخصة القيادة منك فوراً", "is_correct": false }
+          { "text": "للمشاة فقط الراغبين في عبور الشارع", "is_correct": false },
+          { "text": "لخدمات الطوارئ فقط أثناء حالة طارئة", "is_correct": false }
         ],
-        "explanation": "إذا دخلت طريقاً مسدوداً يجب عليك الاستدارة في النهاية. يمكن أن يكون هذا صعباً على الطرق الضيقة ويسبب تأخيراً."
+        "explanation": "تُعلم العلامة مستخدمي الطريق بأن الطريق لا يؤدي إلى طريق آخر، ولا تفرض حظرًا على الدخول."
       }
     }
   },
   {
     "question_id": "F45_Q04",
-    "type": "WHAT_MUST_YOU_DO",
+    "type": "WHICH_SIGN",
     "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U ziet bord F45 aan het begin van een straat. U wilt naar een huis aan het einde van die straat. Wat doet u?",
+        "question": "U ziet dit bord, zonder enige afbeelding van een voetganger of fietser erop. Wat mag u hieruit afleiden over voetgangers en fietsers?",
         "choices": [
           {
-            "text": "U rijdt de straat in want bewoners en bezoekers mogen een doodlopende weg inrijden als bestemming",
+            "text": "Het bord vermeldt alleen dat de weg niet doorloopt naar een andere weg; het verbiedt hun toegang niet en garandeert evenmin een doorgang",
             "is_correct": true
           },
           {
-            "text": "U mag de straat niet inrijden want het is verboden voor iedereen",
+            "text": "Het betekent automatisch dat ook voetgangers en fietsers niet verder kunnen",
             "is_correct": false
           },
           {
-            "text": "U vraagt toestemming aan de gemeente voordat u de straat inrijdt",
+            "text": "Het betekent automatisch dat voetgangers en fietsers wel altijd kunnen doorgaan",
             "is_correct": false
           }
         ],
-        "explanation": "F45 informeert dat de weg geen doorgaang biedt. Bestemmingsverkeer (zoals bewoners en bezoekers) mag er wel inrijden."
+        "explanation": "Het standaardbord geeft enkel de doodlopende weginrichting weer. Of voetgangers of fietsers verder kunnen, blijkt uit de werkelijke inrichting en eventuele andere signalisatie."
       },
       "EN": {
-        "question": "You see sign F45 at the beginning of a street. You want to go to a house at the end of that street. What do you do?",
+        "question": "You see this sign without any image of a pedestrian or cyclist on it. What can you conclude about pedestrians and cyclists?",
         "choices": [
           {
-            "text": "You drive into the street because residents and visitors may enter a dead-end road as their destination",
+            "text": "The sign only states that the road does not lead through to another road; it neither prohibits their access nor guarantees a way through",
             "is_correct": true
           },
           {
-            "text": "You may not enter the street because it is forbidden for everyone",
+            "text": "It automatically means pedestrians and cyclists cannot continue either",
             "is_correct": false
           },
           {
-            "text": "You ask permission from the municipality before entering the street",
+            "text": "It automatically means pedestrians and cyclists can always continue through",
             "is_correct": false
           }
         ],
-        "explanation": "F45 informs that the road offers no through passage. Destination traffic (such as residents and visitors) may still enter."
+        "explanation": "The standard sign only depicts the dead-end road layout. Whether pedestrians or cyclists can continue depends on the actual layout and any other signs."
       },
       "FR": {
-        "question": "Vous voyez le panneau F45 au debut d une rue. Vous voulez vous rendre chez quelqu un au bout de cette rue. Que faites-vous ?",
+        "question": "Vous voyez ce panneau sans aucune image de piéton ou de cycliste. Que pouvez-vous en conclure concernant les piétons et les cyclistes ?",
         "choices": [
           {
-            "text": "Vous entrez dans la rue car les residents et les visiteurs peuvent s engager dans une voie sans issue comme destination",
+            "text": "Le panneau indique seulement que la voie ne débouche pas sur une autre route; il ne leur interdit pas l'accès et ne garantit pas davantage un passage",
             "is_correct": true
           },
           {
-            "text": "Vous ne pouvez pas entrer dans la rue car c est interdit a tout le monde",
+            "text": "Cela signifie automatiquement que les piétons et cyclistes ne peuvent pas non plus continuer",
             "is_correct": false
           },
           {
-            "text": "Vous demandez la permission a la commune avant d entrer dans la rue",
+            "text": "Cela signifie automatiquement que les piétons et cyclistes peuvent toujours continuer",
             "is_correct": false
           }
         ],
-        "explanation": "F45 informe que la route n offre pas de passage. La circulation a destination (comme les residents et les visiteurs) peut quand meme y entrer."
+        "explanation": "Le panneau standard représente uniquement la configuration en impasse. La possibilité pour les piétons ou cyclistes de continuer dépend de l'aménagement réel et des autres signaux."
       },
       "AR": {
-        "question": "ترى علامة مرورية F45 في بداية شارع. تريد الذهاب إلى منزل في نهاية ذلك الشارع. ماذا تفعل؟",
+        "question": "لاحظت هذه العلامة دون أي رسم لمشاة أو دراجين عليها، فماذا يمكنك أن تستنتج بشأن المشاة وراكبي الدراجات؟",
         "choices": [
           {
-            "text": "تدخل الشارع لأن السكان والزوار يستطيعون الدخول إلى طريق مسدود كوجهة",
+            "text": "تشير العلامة فقط إلى أن الطريق لا ينفذ إلى طريق آخر؛ فهي لا تمنع دخولهم ولا تضمن لهم وجود ممر نافذ",
             "is_correct": true
           },
           {
-            "text": "لا يمكنك دخول الشارع لأنه ممنوع على الجميع",
+            "text": "تعني تلقائيًا أن المشاة وراكبي الدراجات لا يمكنهم الاستمرار أيضًا",
             "is_correct": false
           },
           {
-            "text": "تطلب إذناً من البلدية قبل دخول الشارع",
+            "text": "تعني تلقائيًا أن المشاة وراكبي الدراجات يمكنهم الاستمرار دائمًا",
             "is_correct": false
           }
         ],
-        "explanation": "تُعلم F45 أن الطريق لا يوفر ممراً. يستطيع مرور الوجهة (كالسكان والزوار) الدخول."
+        "explanation": "تعرض العلامة القياسية فقط شكل الطريق المسدود. وتعتمد إمكانية استمرار المشاة أو راكبي الدراجات على تصميم المكان الفعلي والإشارات الأخرى."
       }
     }
   },
@@ -283,148 +319,160 @@
     "type": "WHAT_MUST_YOU_DO",
     "difficulty": "MEDIUM",
     "is_critical": false,
-    "show_sign": true,
+    "show_sign": false,
     "i18n": {
       "NL": {
-        "question": "U rijdt een doodlopende weg in en merkt dat u moet terugkeren. Wat is de juiste handeling?",
+        "question": "Uw bestemming ligt effectief in een straat met dit bord. Wat mag u doen?",
         "choices": [
           {
-            "text": "Veilig keren op de weg of in een oprit zonder te gevaarlijk te manoeuvreren",
+            "text": "U mag de straat inrijden, want uw bestemming bevindt zich in die straat zelf",
             "is_correct": true
           },
           {
-            "text": "Achteruit rijden over de volledige lengte van de weg",
+            "text": "U mag de straat nooit inrijden, ongeacht uw bestemming",
             "is_correct": false
           },
           {
-            "text": "Gewoon doorrijden totdat u een opening vindt",
+            "text": "U mag de straat enkel inrijden na toestemming van de gemeente",
             "is_correct": false
           }
         ],
-        "explanation": "Op een doodlopende weg moet u keren. Doe dit veilig via een oprit of in een bredere zone. Achteruit rijden over een lange afstand is gevaarlijk en verboden."
+        "explanation": "Het bord waarschuwt enkel dat de straat geen doorgang biedt naar een andere weg; wie effectief in die straat moet zijn, mag ze gewoon inrijden."
       },
       "EN": {
-        "question": "You drive into a dead-end road and realize you have to turn back. What is the correct action?",
+        "question": "Your destination is actually located in a street with this sign. What may you do?",
         "choices": [
           {
-            "text": "Safely turn around on the road or in a driveway without making dangerous manoeuvres",
+            "text": "You may enter the street, since your destination is located in that street itself",
             "is_correct": true
           },
           {
-            "text": "Reverse over the full length of the road",
+            "text": "You may never enter the street, regardless of your destination",
             "is_correct": false
           },
           {
-            "text": "Just keep driving until you find an opening",
+            "text": "You may only enter the street with permission from the municipality",
             "is_correct": false
           }
         ],
-        "explanation": "On a dead-end road you must turn around. Do this safely via a driveway or in a wider area. Reversing over a long distance is dangerous and prohibited."
+        "explanation": "The sign only warns that the street offers no way through to another road; anyone whose destination is actually there may simply enter it."
       },
       "FR": {
-        "question": "Vous vous engagez dans une voie sans issue et vous rendez compte que vous devez faire demi-tour. Quelle est la bonne action ?",
+        "question": "Votre destination se trouve effectivement dans une rue portant ce panneau. Que pouvez-vous faire ?",
         "choices": [
           {
-            "text": "Faire demi-tour en toute securite sur la route ou dans une allee sans effectuer de manoeuvres dangereuses",
+            "text": "Vous pouvez entrer dans la rue, car votre destination se trouve dans cette rue même",
             "is_correct": true
           },
           {
-            "text": "Reculer sur toute la longueur de la route",
+            "text": "Vous ne pouvez jamais entrer dans la rue, quelle que soit votre destination",
             "is_correct": false
           },
           {
-            "text": "Continuer a rouler jusqu a trouver une ouverture",
+            "text": "Vous ne pouvez entrer dans la rue qu'avec l'autorisation de la commune",
             "is_correct": false
           }
         ],
-        "explanation": "Sur une voie sans issue vous devez faire demi-tour. Faites-le en toute securite via une allee ou dans une zone plus large. Reculer sur une longue distance est dangereux et interdit."
+        "explanation": "Le panneau avertit uniquement que la rue ne débouche sur aucune autre route; quiconque a effectivement une destination dans cette rue peut simplement y entrer."
       },
       "AR": {
-        "question": "تدخل طريقاً مسدوداً وتدرك أنك يجب أن تعود. ما هو التصرف الصحيح؟",
+        "question": "وجهتك تقع فعليًا في شارع يحمل هذه العلامة، فماذا يمكنك أن تفعل؟",
         "choices": [
           {
-            "text": "استدر بأمان على الطريق أو في ممر دخول دون القيام بمناورات خطيرة",
+            "text": "يمكنك دخول الشارع لأن وجهتك تقع فيه فعليًا",
             "is_correct": true
           },
-          { "text": "تراجع على طول الطريق بالكامل", "is_correct": false },
-          { "text": "استمر في السير حتى تجد فتحة", "is_correct": false }
+          {
+            "text": "لا يمكنك دخول الشارع أبدًا بغض النظر عن وجهتك",
+            "is_correct": false
+          },
+          {
+            "text": "لا يمكنك دخول الشارع إلا بإذن من البلدية",
+            "is_correct": false
+          }
         ],
-        "explanation": "على طريق مسدود يجب عليك الاستدارة. افعل ذلك بأمان عبر ممر دخول أو في منطقة أوسع. التراجع لمسافة طويلة خطير ومحظور."
+        "explanation": "تحذّر العلامة فقط من أن الشارع لا يؤدي إلى طريق آخر؛ ومن كانت وجهته فعليًا في ذلك الشارع يمكنه دخوله بشكل طبيعي."
       }
     }
   },
   {
     "question_id": "F45_Q06",
-    "type": "WHAT_MUST_YOU_DO",
+    "type": "WHAT_HAPPENS_IF",
     "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Is bord F45 gericht aan doorgaand verkeer of aan alle bestuurders?",
+        "question": "Wat gebeurt er op vlak van verkeersregels wanneer u dit bord passeert?",
         "choices": [
           {
-            "text": "F45 is een waarschuwing gericht aan doorgaand verkeer dat de weg geen doorgaand karakter heeft",
+            "text": "Er verandert niets aan de algemene verkeersregels; het bord dient enkel als waarschuwing dat de straat doodloopt",
             "is_correct": true
           },
           {
-            "text": "F45 verbiedt elke weggebruiker de weg te berijden",
+            "text": "Alle voorrangsregels in die straat worden automatisch opgeheven",
             "is_correct": false
           },
           {
-            "text": "F45 is enkel bedoeld voor vrachtwagens",
+            "text": "U moet er verplicht keren zodra u het bord ziet",
             "is_correct": false
           }
         ],
-        "explanation": "F45 informeert doorgaand verkeer dat het de weg niet kan gebruiken als doorgaande route. Lokaal bestemmingsverkeer is vrij de weg te gebruiken."
+        "explanation": "Dit bord legt zelf geen gebod of verbod op; het waarschuwt enkel dat de straat geen doorgang biedt, zodat de bestuurder zelf kan beslissen of hij ze wil inrijden."
       },
       "EN": {
-        "question": "Is sign F45 directed at through traffic or at all drivers?",
+        "question": "What happens regarding traffic rules when you pass this sign?",
         "choices": [
           {
-            "text": "F45 is a warning directed at through traffic that the road has no through character",
+            "text": "Nothing changes in the general traffic rules; the sign only warns that the street is a dead end",
             "is_correct": true
           },
           {
-            "text": "F45 prohibits every road user from using the road",
-            "is_correct": false
-          },
-          { "text": "F45 is only intended for lorries", "is_correct": false }
-        ],
-        "explanation": "F45 informs through traffic that it cannot use the road as a through route. Local destination traffic is free to use the road."
-      },
-      "FR": {
-        "question": "Le panneau F45 est-il destine au trafic en transit ou a tous les conducteurs ?",
-        "choices": [
-          {
-            "text": "F45 est un avertissement destine au trafic en transit que la route n a pas de caractere traversant",
-            "is_correct": true
-          },
-          {
-            "text": "F45 interdit a tout usager de la route d emprunter la voie",
+            "text": "All right-of-way rules in that street are automatically suspended",
             "is_correct": false
           },
           {
-            "text": "F45 est uniquement destine aux camions",
+            "text": "You must turn around as soon as you see the sign",
             "is_correct": false
           }
         ],
-        "explanation": "F45 informe le trafic en transit qu il ne peut pas utiliser la route comme itineraire de transit. La circulation locale a destination est libre d utiliser la route."
+        "explanation": "This sign does not itself impose any obligation or prohibition; it only warns that the street offers no way through, so the driver can decide whether to enter."
       },
-      "AR": {
-        "question": "هل علامة مرورية F45 موجهة لحركة المرور العابرة أم لجميع السائقين؟",
+      "FR": {
+        "question": "Que se passe-t-il concernant les règles de circulation lorsque vous dépassez ce panneau ?",
         "choices": [
           {
-            "text": "F45 تحذير موجه لحركة المرور العابرة بأن الطريق ليس له طابع عبور",
+            "text": "Rien ne change dans les règles générales de circulation; le panneau avertit uniquement que la rue est sans issue",
             "is_correct": true
           },
           {
-            "text": "F45 تحظر على كل مستخدم الطريق استخدام الطريق",
+            "text": "Toutes les règles de priorité de cette rue sont automatiquement suspendues",
             "is_correct": false
           },
-          { "text": "F45 مخصصة فقط للشاحنات", "is_correct": false }
+          {
+            "text": "Vous devez obligatoirement faire demi-tour dès que vous voyez le panneau",
+            "is_correct": false
+          }
         ],
-        "explanation": "تُعلم F45 حركة المرور العابرة أنها لا تستطيع استخدام الطريق كمسار عبور. مرور الوجهة المحلي حر في استخدام الطريق."
+        "explanation": "Ce panneau n'impose lui-même aucune obligation ni interdiction; il avertit uniquement que la rue n'offre pas de passage, laissant au conducteur le choix d'y entrer ou non."
+      },
+      "AR": {
+        "question": "ما الذي يحدث من ناحية قواعد المرور عندما تتجاوز هذه العلامة؟",
+        "choices": [
+          {
+            "text": "لا يتغير شيء في قواعد المرور العامة؛ العلامة تحذّر فقط من أن الشارع مسدود",
+            "is_correct": true
+          },
+          {
+            "text": "تُعلَّق تلقائيًا جميع قواعد الأولوية في هذا الشارع",
+            "is_correct": false
+          },
+          {
+            "text": "يجب عليك الالتفاف إلزاميًا بمجرد رؤية العلامة",
+            "is_correct": false
+          }
+        ],
+        "explanation": "لا تفرض هذه العلامة بحد ذاتها أي إلزام أو منع؛ فهي تحذّر فقط من أن الشارع لا يوفر ممرًا، تاركةً للسائق حرية اتخاذ القرار بدخوله أم لا."
       }
     }
   },
@@ -433,63 +481,63 @@
     "type": "IS_IT_ALLOWED",
     "difficulty": "HARD",
     "is_critical": true,
-    "show_sign": true,
+    "show_sign": false,
     "i18n": {
       "NL": {
-        "question": "Mag een fietser een doodlopende weg die aangegeven is met F45 inrijden?",
+        "question": "Mag u ervan uitgaan dat een straat met dit bord ook voor fietsers en voetgangers volledig ontoegankelijk is aan het einde?",
         "choices": [
           {
-            "text": "Ja fietsers mogen er als bestemmingsverkeer in rijden net als automobilisten",
+            "text": "Nee, dit bord alleen verbiedt hun toegang niet, maar garandeert ook niet dat zij aan het einde kunnen doorgaan",
             "is_correct": true
           },
           {
-            "text": "Nee F45 verbiedt fietsers ook om de weg te gebruiken",
+            "text": "Ja, dit bord sluit automatisch ook fietsers en voetgangers volledig uit aan het einde van de straat",
             "is_correct": false
           }
         ],
-        "explanation": "F45 richt zich op doorgaand (gemotoriseerd) verkeer. Fietsers en voetgangers mogen als bestemmingsverkeer de weg gebruiken."
+        "explanation": "Het standaardbord legt geen toegangsverbod voor voetgangers of fietsers op. Een eventuele doorgang moet blijken uit de werkelijke inrichting en andere signalisatie."
       },
       "EN": {
-        "question": "May a cyclist enter a dead-end road indicated by F45?",
+        "question": "May you assume that a street with this sign is also completely inaccessible for cyclists and pedestrians at the end?",
         "choices": [
           {
-            "text": "Yes cyclists may enter as destination traffic just like motorists",
+            "text": "No, this sign alone does not prohibit their access, but it also does not guarantee that they can continue at the end",
             "is_correct": true
           },
           {
-            "text": "No F45 also prohibits cyclists from using the road",
+            "text": "Yes, this sign automatically excludes cyclists and pedestrians completely at the end of the street as well",
             "is_correct": false
           }
         ],
-        "explanation": "F45 is directed at through (motorised) traffic. Cyclists and pedestrians may use the road as destination traffic."
+        "explanation": "The standard sign does not ban pedestrians or cyclists from entering. Any way through must be established from the actual layout and other signs."
       },
       "FR": {
-        "question": "Un cycliste peut-il s engager dans une voie sans issue indiquee par F45 ?",
+        "question": "Pouvez-vous supposer qu'une rue portant ce panneau est également totalement inaccessible aux cyclistes et aux piétons à son extrémité ?",
         "choices": [
           {
-            "text": "Oui les cyclistes peuvent y entrer comme trafic a destination tout comme les automobilistes",
+            "text": "Non, ce panneau seul ne leur interdit pas l'accès, mais il ne garantit pas non plus qu'ils puissent continuer à l'extrémité",
             "is_correct": true
           },
           {
-            "text": "Non F45 interdit egalement aux cyclistes d utiliser la route",
+            "text": "Oui, ce panneau exclut automatiquement aussi complètement les cyclistes et les piétons à l'extrémité de la rue",
             "is_correct": false
           }
         ],
-        "explanation": "F45 s adresse au trafic en transit (motorise). Les cyclistes et les pietons peuvent utiliser la route comme trafic a destination."
+        "explanation": "Le panneau standard n'interdit pas l'accès aux piétons ou aux cyclistes. Un éventuel passage doit ressortir de l'aménagement réel et des autres signaux."
       },
       "AR": {
-        "question": "هل يستطيع الدراج دخول طريق مسدود مشار إليه بـ F45؟",
+        "question": "هل يمكنك أن تفترض أن شارعًا يحمل هذه العلامة يكون مغلقًا تمامًا أمام راكبي الدراجات والمشاة أيضًا في نهايته؟",
         "choices": [
           {
-            "text": "نعم يستطيع الدراجون الدخول كمرور وجهة تماماً مثل السائقين",
+            "text": "لا، هذه العلامة وحدها لا تمنع دخولهم، لكنها لا تضمن أيضًا قدرتهم على الاستمرار عند نهاية الطريق",
             "is_correct": true
           },
           {
-            "text": "لا F45 تحظر أيضاً على الدراجين استخدام الطريق",
+            "text": "نعم، تستثني هذه العلامة تلقائيًا راكبي الدراجات والمشاة تمامًا أيضًا في نهاية الشارع",
             "is_correct": false
           }
         ],
-        "explanation": "F45 موجهة لحركة المرور العابرة (الآلية). يستطيع الدراجون والمشاة استخدام الطريق كمرور وجهة."
+        "explanation": "لا تمنع العلامة القياسية دخول المشاة أو راكبي الدراجات. ويجب التحقق من وجود ممر نافذ من تصميم المكان الفعلي والإشارات الأخرى."
       }
     }
   },
@@ -501,60 +549,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Is het toegestaan een voertuig geparkeerd te laten in een doodlopende weg aangegeven met F45?",
+        "question": "Mag u erop vertrouwen dat een straat met dit bord als doorgaande sluiproute kan dienen?",
         "choices": [
           {
-            "text": "Ja parkeren is toegestaan tenzij extra parkeerverbodsborden het verbieden",
+            "text": "Nee, het bord geeft juist aan dat de weg geen doorgang biedt; u mag inrijden, maar moet via een toegankelijke route terugkeren",
             "is_correct": true
           },
           {
-            "text": "Nee parkeren is altijd verboden in een doodlopende weg",
+            "text": "Ja, elke doodlopende straat biedt in de praktijk altijd een verborgen doorgang naar een andere weg",
             "is_correct": false
           }
         ],
-        "explanation": "F45 zelf verbiedt parkeren niet. Parkeerregels worden bepaald door E-borden of gele markeringen op de weg. Zonder specifiek verbod mag u er parkeren."
+        "explanation": "F45 verbiedt het inrijden niet, maar geeft wel aan dat de weg geen doorgaande verbinding met een andere weg biedt."
       },
       "EN": {
-        "question": "Is it allowed to leave a vehicle parked on a dead-end road indicated by F45?",
+        "question": "May you rely on a street with this sign as a through shortcut?",
         "choices": [
           {
-            "text": "Yes parking is allowed unless additional no-parking signs prohibit it",
+            "text": "No, the sign specifically indicates that the road does not lead through; you may enter, but must return by an accessible route",
             "is_correct": true
           },
           {
-            "text": "No parking is always prohibited on a dead-end road",
+            "text": "Yes, every dead end street in practice always offers a hidden way through to another road",
             "is_correct": false
           }
         ],
-        "explanation": "F45 itself does not prohibit parking. Parking rules are determined by E-signs or yellow markings on the road. Without a specific prohibition you may park there."
+        "explanation": "F45 does not prohibit entering, but it does indicate that the road offers no through connection to another road."
       },
       "FR": {
-        "question": "Est-il permis de laisser un vehicule gare dans une voie sans issue indiquee par F45 ?",
+        "question": "Pouvez-vous compter sur une rue portant ce panneau comme raccourci permettant de la traverser ?",
         "choices": [
           {
-            "text": "Oui le stationnement est autorise sauf si des panneaux d interdiction de stationnement supplementaires l interdisent",
+            "text": "Non, le panneau indique précisément que la voie ne débouche pas; vous pouvez y entrer, mais devez revenir par un itinéraire accessible",
             "is_correct": true
           },
           {
-            "text": "Non le stationnement est toujours interdit dans une voie sans issue",
+            "text": "Oui, toute voie sans issue offre en pratique toujours un passage caché vers une autre route",
             "is_correct": false
           }
         ],
-        "explanation": "F45 en lui-meme n interdit pas le stationnement. Les regles de stationnement sont determinees par les panneaux E ou les marquages jaunes sur la route. Sans interdiction specifique vous pouvez y garer."
+        "explanation": "F45 n'interdit pas de s'engager dans la voie, mais indique qu'elle n'offre aucune liaison traversante vers une autre route."
       },
       "AR": {
-        "question": "هل يُسمح بترك مركبة مركونة على طريق مسدود مشار إليه بـ F45؟",
+        "question": "هل يمكنك الاعتماد على شارع يحمل هذه العلامة باعتباره طريقًا مختصرًا نافذًا؟",
         "choices": [
           {
-            "text": "نعم الانتظار مسموح ما لم تحظره علامات حظر انتظار إضافية",
+            "text": "لا، فالعلامة تشير تحديدًا إلى أن الطريق غير نافذ؛ يمكنك دخوله لكن يجب أن تعود عبر مسار متاح",
             "is_correct": true
           },
           {
-            "text": "لا الانتظار محظور دائماً على طريق مسدود",
+            "text": "نعم، كل طريق مسدود يوفر عمليًا دائمًا ممرًا خفيًا إلى طريق آخر",
             "is_correct": false
           }
         ],
-        "explanation": "F45 نفسها لا تحظر الانتظار. تحدد قواعد الانتظار علامات E أو العلامات الصفراء على الطريق. بدون حظر محدد يمكنك الانتظار هناك."
+        "explanation": "لا تمنع F45 دخول الطريق، لكنها تشير إلى أنه لا يوفر اتصالًا نافذًا إلى طريق آخر."
       }
     }
   }

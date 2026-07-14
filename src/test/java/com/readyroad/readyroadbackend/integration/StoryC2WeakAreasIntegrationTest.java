@@ -13,6 +13,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.cache.CacheManager;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -40,6 +41,9 @@ public class StoryC2WeakAreasIntegrationTest {
     @Autowired
     private CategoryRepository categoryRepository;
 
+    @Autowired
+    private CacheManager cacheManager;
+
     private Long testUserId;
     private Category speedLimitsCategory;
     private Category parkingCategory;
@@ -52,11 +56,16 @@ public class StoryC2WeakAreasIntegrationTest {
         testUserId = 1L;
 
         // Create 5 test categories
-        speedLimitsCategory = createCategory("SPEED", "Speed Limits", 1);
-        parkingCategory = createCategory("PARKING", "Parking Rules", 2);
-        priorityCategory = createCategory("PRIORITY", "Priority Rules", 3);
-        signsCategory = createCategory("SIGNS", "Traffic Signs", 4);
-        zonesCategory = createCategory("ZONES", "Zone Regulations", 5);
+        speedLimitsCategory = createCategory("C2_SPEED", "Speed Limits", 1);
+        parkingCategory = createCategory("C2_PARK", "Parking Rules", 2);
+        priorityCategory = createCategory("C2_PRIOR", "Priority Rules", 3);
+        signsCategory = createCategory("C2_SIGNS", "Traffic Signs", 4);
+        zonesCategory = createCategory("C2_ZONES", "Zone Regulations", 5);
+
+        var categoriesCache = cacheManager.getCache("categories");
+        if (categoriesCache != null) {
+            categoriesCache.clear();
+        }
     }
 
     @Test
@@ -252,7 +261,7 @@ public class StoryC2WeakAreasIntegrationTest {
         category.setNameFr(nameEn + " FR");
         category.setIsActive(true);
         category.setDisplayOrder(displayOrder);
-        return categoryRepository.save(category);
+        return categoryRepository.saveAndFlush(category);
     }
 
     private void createProgress(Long userId, Long categoryId, int attempted, int correct, double accuracy) {
@@ -264,7 +273,7 @@ public class StoryC2WeakAreasIntegrationTest {
         progress.setAccuracyRate(BigDecimal.valueOf(accuracy));
         progress.setMasteryLevel(determineMasteryLevel(accuracy));
         progress.setLastPracticed(LocalDateTime.now());
-        progressRepository.save(progress);
+        progressRepository.saveAndFlush(progress);
     }
 
     private UserCategoryProgress.MasteryLevel determineMasteryLevel(double accuracy) {

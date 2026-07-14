@@ -5,79 +5,78 @@
     "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE: Replace wrong answers with actual sign names from the same category.",
     "i18n": {
       "NL": {
-        "question": "Wat betekent dit verkeersbord?",
+        "question": "Wat betekent bord F113?",
         "choices": [
           {
-            "text": "Einde fietsstraat",
+            "text": "Einde van een fietszone",
             "is_correct": true
           },
           {
-            "text": "Rijden verboden in beide richtingen",
+            "text": "Begin van een fietszone",
             "is_correct": false
           },
           {
-            "text": "Gevaarsbord voor wegwerkzaamheden",
+            "text": "Einde van een fietspad",
             "is_correct": false
           }
         ],
-        "explanation": "Fietsstraat."
+        "explanation": "F113 markeert het einde van de fietszone die met F111 begon."
       },
       "EN": {
-        "question": "What does this traffic sign mean?",
+        "question": "What does sign F113 mean?",
         "choices": [
           {
-            "text": "End of bicycle street",
+            "text": "End of a cycle zone",
             "is_correct": true
           },
           {
-            "text": "Driving prohibited in both directions",
+            "text": "Start of a cycle zone",
             "is_correct": false
           },
           {
-            "text": "Danger sign for roadworks",
+            "text": "End of a cycle path",
             "is_correct": false
           }
         ],
-        "explanation": "This sign indicates the end of a bicycle street. From this point, normal traffic rules apply again and cyclists no longer have special priority. The rules for regular roads apply."
+        "explanation": "F113 marks the end of the cycle zone that began with F111."
       },
       "FR": {
-        "question": "Que signifie ce panneau de signalisation ?",
+        "question": "Que signifie le panneau F113 ?",
         "choices": [
           {
-            "text": "Fin de rue cyclable",
+            "text": "Fin d'une zone cyclable",
             "is_correct": true
           },
           {
-            "text": "Circulation interdite dans les deux sens",
+            "text": "Début d'une zone cyclable",
             "is_correct": false
           },
           {
-            "text": "Panneau de danger pour travaux",
+            "text": "Fin d'une piste cyclable",
             "is_correct": false
           }
         ],
-        "explanation": "Ce panneau indique la fin d'une rue cyclable. À partir de ce point, les règles de circulation normales s'appliquent à nouveau et les cyclistes n'ont plus de priorité spéciale."
+        "explanation": "F113 marque la fin de la zone cyclable commencée par F111."
       },
       "AR": {
-        "question": "ما معنى هذه العلامة المرورية؟",
+        "question": "ما معنى العلامة F113؟",
         "choices": [
           {
-            "text": "نهاية شارع الدراجات الهوائية",
+            "text": "نهاية منطقة للدراجات",
             "is_correct": true
           },
           {
-            "text": "منع السير في كلا الاتجاهين",
+            "text": "بداية منطقة للدراجات",
             "is_correct": false
           },
           {
-            "text": "علامة خطر بسبب أعمال الطريق",
+            "text": "نهاية مسار للدراجات",
             "is_correct": false
           }
         ],
-        "explanation": "تشير هذه العلامة إلى نهاية شارع الدراجات. من هذه النقطة تطبق قواعد المرور العادية مرة أخرى ولا تعود لراكبي الدراجات أولوية خاصة."
+        "explanation": "تحدد F113 نهاية منطقة الدراجات التي بدأت بـ F111."
       }
     }
   },
@@ -87,161 +86,159 @@
     "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE: Ready to use — category identification question.",
     "i18n": {
       "NL": {
-        "question": "Tot welke categorie verkeerstekens behoort dit bord?",
+        "question": "Welk bord markeert het begin van de fietszone die bij F113 eindigt?",
         "choices": [
           {
-            "text": "Aanwijzingsborden",
+            "text": "F111",
             "is_correct": true
           },
           {
-            "text": "Gebodsborden",
+            "text": "F99c",
             "is_correct": false
           },
           {
-            "text": "Parkeerregelementsborden",
+            "text": "F50",
             "is_correct": false
           }
         ],
-        "explanation": "Dit bord behoort tot de categorie 'Aanwijzingsborden'. Elk type bord heeft een specifieke vorm en kleurschema."
+        "explanation": "F111 is het beginbord en F113 het eindbord van een fietszone."
       },
       "EN": {
-        "question": "To which category of traffic signs does this sign belong?",
+        "question": "Which sign marks the start of the cycle zone that ends at F113?",
         "choices": [
           {
-            "text": "Information signs",
+            "text": "F111",
             "is_correct": true
           },
           {
-            "text": "Mandatory signs",
+            "text": "F99c",
             "is_correct": false
           },
           {
-            "text": "Parking regulation signs",
+            "text": "F50",
             "is_correct": false
           }
         ],
-        "explanation": "This sign belongs to the 'Information signs' category. Each type of sign has a specific shape and color scheme."
+        "explanation": "F111 starts and F113 ends a cycle zone."
       },
       "FR": {
-        "question": "À quelle catégorie de panneaux de signalisation ce panneau appartient-il ?",
+        "question": "Quel panneau marque le début de la zone cyclable qui se termine par F113 ?",
         "choices": [
           {
-            "text": "Panneaux d'indication",
+            "text": "F111",
             "is_correct": true
           },
           {
-            "text": "Panneaux d'obligation",
+            "text": "F99c",
             "is_correct": false
           },
           {
-            "text": "Panneaux de stationnement",
+            "text": "F50",
             "is_correct": false
           }
         ],
-        "explanation": "Ce panneau appartient à la catégorie des panneaux d'indication. Chaque type de panneau a une forme et un schéma de couleurs spécifiques."
+        "explanation": "F111 commence et F113 termine une zone cyclable."
       },
       "AR": {
-        "question": "إلى أي فئة من العلامات المرورية تنتمي هذه العلامة؟",
+        "question": "أي علامة تحدد بداية منطقة الدراجات التي تنتهي عند F113؟",
         "choices": [
           {
-            "text": "علامات الإرشاد",
+            "text": "F111",
             "is_correct": true
           },
           {
-            "text": "علامات الإلزام",
+            "text": "F99c",
             "is_correct": false
           },
           {
-            "text": "علامات الوقوف",
+            "text": "F50",
             "is_correct": false
           }
         ],
-        "explanation": "تنتمي هذه العلامة إلى فئة علامات الإرشاد. لكل نوع من العلامات شكل ونظام ألوان محدد."
+        "explanation": "تبدأ منطقة الدراجات بـ F111 وتنتهي بـ F113."
       }
     }
   },
   {
     "question_id": "F113_Q03",
-    "type": "WHAT_MUST_YOU_DO",
-    "difficulty": "MEDIUM",
+    "type": "DRIVER_ACTION",
+    "difficulty": "EASY",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE (MEDIUM): Replace with sign-specific question for production.",
     "i18n": {
       "NL": {
-        "question": "Welke informatie of aanwijzing geeft dit bord aan weggebruikers?",
+        "question": "Welke regels eindigen door F113?",
         "choices": [
           {
-            "text": "Het bord geeft nuttige informatie of aanwijzingen over de wegsituatie of faciliteiten",
+            "text": "De specifieke fietszone-regels, waaronder maximaal 30 km/u en het inhaalverbod voor motorvoertuigen",
             "is_correct": true
           },
           {
-            "text": "Het bord verbiedt een specifieke rijbeweging",
+            "text": "Alle snelheids- en voorrangsregels op de weg",
             "is_correct": false
           },
           {
-            "text": "Het bord verplicht tot stoppen voor controle",
+            "text": "Alle regels ter bescherming van fietsers",
             "is_correct": false
           }
         ],
-        "explanation": "Aanwijzingsborden geven weggebruikers nuttige informatie over de wegsituatie, faciliteiten of speciale rijstroken."
+        "explanation": "F113 beëindigt het fietszone-regime, niet de overige verkeersregels of andere borden."
       },
       "EN": {
-        "question": "What information or guidance does this sign provide to road users?",
+        "question": "Which rules end at F113?",
         "choices": [
           {
-            "text": "The sign provides useful information or guidance about the road situation or facilities",
+            "text": "The specific cycle-zone rules, including the 30 km/h maximum and the ban on motor vehicles overtaking cyclists",
             "is_correct": true
           },
           {
-            "text": "The sign prohibits a specific driving maneuver",
+            "text": "All speed and priority rules on the road",
             "is_correct": false
           },
           {
-            "text": "The sign requires stopping for inspection",
+            "text": "All rules protecting cyclists",
             "is_correct": false
           }
         ],
-        "explanation": "Information signs provide road users with useful info about road situation, facilities, or special lanes."
+        "explanation": "F113 ends the cycle-zone regime, not other traffic rules or signs."
       },
       "FR": {
-        "question": "Quelles informations ou indications ce panneau donne-t-il aux usagers de la route ?",
+        "question": "Quelles règles prennent fin à F113 ?",
         "choices": [
           {
-            "text": "Le panneau donne des informations ou indications utiles sur la situation routière ou les équipements",
+            "text": "Les règles propres à la zone cyclable, dont le maximum de 30 km/h et l'interdiction de dépasser pour les véhicules à moteur",
             "is_correct": true
           },
           {
-            "text": "Le panneau interdit une manoeuvre de conduite spécifique",
+            "text": "Toutes les règles de vitesse et de priorité de la route",
             "is_correct": false
           },
           {
-            "text": "Le panneau impose un arrêt pour contrôle",
+            "text": "Toutes les règles protégeant les cyclistes",
             "is_correct": false
           }
         ],
-        "explanation": "Les panneaux d'indication informent les usagers sur la situation routière, les équipements ou les voies spéciales."
+        "explanation": "F113 met fin au régime de la zone cyclable, pas aux autres règles ou panneaux."
       },
       "AR": {
-        "question": "ما المعلومات أو الإرشادات التي تقدمها هذه العلامة لمستخدمي الطريق؟",
+        "question": "أي قواعد تنتهي عند F113؟",
         "choices": [
           {
-            "text": "توفر العلامة معلومات أو إرشادات مفيدة حول وضع الطريق أو التجهيزات",
+            "text": "القواعد الخاصة بمنطقة الدراجات، ومنها حد 30 كم/ساعة ومنع المركبات الآلية من تجاوز الدراجات",
             "is_correct": true
           },
           {
-            "text": "تحظر العلامة مناورة قيادة محددة",
+            "text": "جميع قواعد السرعة والأولوية على الطريق",
             "is_correct": false
           },
           {
-            "text": "تفرض العلامة التوقف للتفتيش",
+            "text": "جميع القواعد التي تحمي راكبي الدراجات",
             "is_correct": false
           }
         ],
-        "explanation": "تعطي علامات الإرشاد معلومات لمستخدمي الطريق حول وضع الطريق أو التجهيزات أو المسارات الخاصة."
+        "explanation": "تنهي F113 نظام منطقة الدراجات فقط، ولا تنهي بقية القواعد أو العلامات."
       }
     }
   },
@@ -251,145 +248,159 @@
     "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE (MEDIUM): Replace with sign-specific question for production.",
     "i18n": {
       "NL": {
-        "question": "Wat is het kleurenschema van aanwijzingsborden in België?",
+        "question": "Hoe bepaalt u de toegelaten snelheid na F113?",
         "choices": [
           {
-            "text": "Blauw of groen achtergrond met witte symbolen en tekst",
+            "text": "Aan de hand van de algemene snelheidsregels en de andere aanwezige verkeersborden",
             "is_correct": true
           },
           {
-            "text": "Rode achtergrond met witte tekst",
+            "text": "Ze wordt automatisch 50 km/u",
             "is_correct": false
           },
           {
-            "text": "Gele achtergrond met zwarte tekst",
+            "text": "Ze wordt automatisch 70 km/u",
             "is_correct": false
           }
         ],
-        "explanation": "Aanwijzingsborden hebben doorgaans een blauwe achtergrond voor gewone wegen of een groene achtergrond voor autosnelwegen."
+        "explanation": "F113 schrijft zelf geen nieuwe snelheid voor; na het bord gelden de toepasselijke algemene of afzonderlijk aangeduide limieten."
       },
       "EN": {
-        "question": "What is the color scheme of information signs in Belgium?",
+        "question": "How do you determine the permitted speed after F113?",
         "choices": [
           {
-            "text": "Blue or green background with white symbols and text",
+            "text": "From the general speed rules and any other traffic signs present",
             "is_correct": true
           },
           {
-            "text": "Red background with white text",
+            "text": "It automatically becomes 50 km/h",
             "is_correct": false
           },
           {
-            "text": "Yellow background with black text",
+            "text": "It automatically becomes 70 km/h",
             "is_correct": false
           }
         ],
-        "explanation": "Information signs typically have a blue (urban) or green (motorway) background."
+        "explanation": "F113 does not set a new speed; the applicable general or separately signed limit applies."
       },
       "FR": {
-        "question": "Quel est le schéma de couleurs des panneaux d'indication en Belgique ?",
+        "question": "Comment déterminez-vous la vitesse autorisée après F113 ?",
         "choices": [
           {
-            "text": "Fond bleu ou vert avec des symboles et du texte blancs",
+            "text": "Selon les règles générales de vitesse et les autres panneaux présents",
             "is_correct": true
           },
           {
-            "text": "Fond rouge avec texte blanc",
+            "text": "Elle devient automatiquement 50 km/h",
             "is_correct": false
           },
           {
-            "text": "Fond jaune avec texte noir",
+            "text": "Elle devient automatiquement 70 km/h",
             "is_correct": false
           }
         ],
-        "explanation": "Les panneaux d'indication ont généralement un fond bleu pour les routes ordinaires ou un fond vert pour les autoroutes."
+        "explanation": "F113 ne fixe pas une nouvelle vitesse; la limite générale ou celle indiquée séparément s'applique."
       },
       "AR": {
-        "question": "ما نظام ألوان علامات الإرشاد في بلجيكا؟",
+        "question": "كيف تحدد السرعة المسموح بها بعد F113؟",
         "choices": [
           {
-            "text": "خلفية زرقاء أو خضراء مع رموز ونصوص بيضاء",
+            "text": "وفق قواعد السرعة العامة وأي علامات مرورية أخرى موجودة",
             "is_correct": true
           },
           {
-            "text": "خلفية حمراء مع نص أبيض",
+            "text": "تصبح تلقائياً 50 كم/ساعة",
             "is_correct": false
           },
           {
-            "text": "خلفية صفراء مع نص أسود",
+            "text": "تصبح تلقائياً 70 كم/ساعة",
             "is_correct": false
           }
         ],
-        "explanation": "عادة تكون علامات الإرشاد بخلفية زرقاء للطرق العادية أو بخلفية خضراء للطرق السيارة."
+        "explanation": "لا تحدد F113 سرعة جديدة، بل يطبق الحد العام أو الحد المبين بعلامة أخرى."
       }
     }
   },
   {
     "question_id": "F113_Q05",
-    "type": "IS_IT_ALLOWED",
-    "difficulty": "EASY",
+    "type": "WHAT_MUST_YOU_DO",
+    "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
-    "_note": "TEMPLATE (HARD): Replace with sign-specific question for production.",
     "i18n": {
       "NL": {
-        "question": "Mag u als weggebruiker aanwijzingsborden negeren?",
+        "question": "Mag een automobilist na F113 onmiddellijk een fietser inhalen?",
         "choices": [
           {
-            "text": "Nee, aanwijzingsborden moeten worden opgevolgd want ze geven wettelijk bindende aanwijzingen",
+            "text": "Alleen als inhalen volgens de overige regels is toegestaan en volledig veilig kan",
             "is_correct": true
           },
           {
-            "text": "Ja, aanwijzingsborden zijn vrijblijvend en kunnen naar eigen inzicht worden genegeerd",
+            "text": "Altijd, omdat alle bescherming voor fietsers eindigt",
+            "is_correct": false
+          },
+          {
+            "text": "Nooit, want het verbod blijft nog 200 meter gelden",
             "is_correct": false
           }
         ],
-        "explanation": "Aanwijzingsborden geven wettelijk bindende aanwijzingen aan weggebruikers. Ze mogen niet worden genegeerd en dienen te worden nageleefd."
+        "explanation": "Het fietszone-inhaalverbod eindigt, maar de algemene inhaalregels, zichtbaarheid en veilige zijdelingse afstand blijven gelden."
       },
       "EN": {
-        "question": "Are you as a road user allowed to ignore information signs?",
+        "question": "May a motorist immediately overtake a cyclist after F113?",
         "choices": [
           {
-            "text": "No, information signs must be followed as they provide legally binding directions",
+            "text": "Only if overtaking is allowed by the other rules and can be completed safely",
             "is_correct": true
           },
           {
-            "text": "Yes, information signs are optional and can be ignored at your own discretion",
+            "text": "Always, because all cyclist protection ends",
+            "is_correct": false
+          },
+          {
+            "text": "Never, because the ban continues for another 200 metres",
             "is_correct": false
           }
         ],
-        "explanation": "Information signs provide legally binding guidance to road users. They must not be ignored and should be followed."
+        "explanation": "The cycle-zone ban ends, but general overtaking rules, visibility and safe lateral distance still apply."
       },
       "FR": {
-        "question": "En tant qu'usager de la route, êtes-vous autorisé à ignorer les panneaux d'indication ?",
+        "question": "Un automobiliste peut-il dépasser immédiatement un cycliste après F113 ?",
         "choices": [
           {
-            "text": "Non, les panneaux d'indication doivent être respectés car ils donnent des indications juridiquement contraignantes",
+            "text": "Seulement si les autres règles l'autorisent et si le dépassement peut se faire en toute sécurité",
             "is_correct": true
           },
           {
-            "text": "Oui, les panneaux d'indication sont facultatifs et peuvent être ignorés à votre discrétion",
+            "text": "Toujours, car toute protection des cyclistes prend fin",
+            "is_correct": false
+          },
+          {
+            "text": "Jamais, car l'interdiction reste valable pendant 200 mètres",
             "is_correct": false
           }
         ],
-        "explanation": "Les panneaux d'indication donnent des directives juridiquement contraignantes aux usagers. Ils ne doivent pas être ignorés."
+        "explanation": "L'interdiction propre à la zone prend fin, mais les règles générales, la visibilité et la distance latérale sûre restent applicables."
       },
       "AR": {
-        "question": "هل يجوز لك كمستخدم للطريق تجاهل علامات الإرشاد؟",
+        "question": "هل يجوز لسائق سيارة تجاوز راكب دراجة مباشرة بعد F113؟",
         "choices": [
           {
-            "text": "لا، يجب احترام علامات الإرشاد لأنها تقدم توجيهات ملزمة قانونياً",
+            "text": "فقط إذا سمحت بقية القواعد وكان التجاوز آمناً بالكامل",
             "is_correct": true
           },
           {
-            "text": "نعم، علامات الإرشاد اختيارية ويمكن تجاهلها حسب تقديرك",
+            "text": "دائماً، لأن كل حماية لراكبي الدراجات تنتهي",
+            "is_correct": false
+          },
+          {
+            "text": "أبداً، لأن المنع يستمر 200 متر أخرى",
             "is_correct": false
           }
         ],
-        "explanation": "تقدم علامات الإرشاد توجيهات ملزمة قانونياً لمستخدمي الطريق، لذلك لا يجوز تجاهلها."
+        "explanation": "ينتهي منع التجاوز الخاص بالمنطقة، لكن تبقى قواعد التجاوز العامة والرؤية والمسافة الجانبية الآمنة سارية."
       }
     }
   },
@@ -401,76 +412,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Mag een automobilist na bord F113 een fietser inhalen?",
+        "question": "Er geldt ook een afzonderlijke zone 30 die na F113 verderloopt. Welke snelheid geldt?",
         "choices": [
           {
-            "text": "Ja na F113 gelden normale verkeersregels en mag men fietsers inhalen als het veilig is",
+            "text": "De afzonderlijke zone 30 blijft gelden",
             "is_correct": true
           },
           {
-            "text": "Nee het inhalverbod voor fietsers blijft 200 meter voorbij F113 van kracht",
+            "text": "F113 heft elke andere zone 30 op",
             "is_correct": false
           },
           {
-            "text": "Inhalen mag pas na 50 meter na F113",
+            "text": "De snelheid wordt automatisch 50 km/u",
             "is_correct": false
           }
         ],
-        "explanation": "F113 markeert het einde van de fietsstraat. Voorbij dit bord is het inhalverbod voor fietsers niet meer van toepassing. Inhalen is weer toegestaan mits veilig."
+        "explanation": "F113 beëindigt alleen de fietszone; een afzonderlijk geldige snelheidszone wordt daardoor niet opgeheven."
       },
       "EN": {
-        "question": "May a motorist overtake a cyclist after sign F113?",
+        "question": "A separate 30 km/h zone continues beyond F113. What speed applies?",
         "choices": [
           {
-            "text": "Yes after F113 normal traffic rules apply and overtaking cyclists is permitted when safe",
+            "text": "The separate 30 km/h zone continues to apply",
             "is_correct": true
           },
           {
-            "text": "No the overtaking prohibition remains in force 200 metres beyond F113",
+            "text": "F113 cancels every other 30 km/h zone",
             "is_correct": false
           },
           {
-            "text": "Overtaking is only permitted after 50 metres",
+            "text": "The speed automatically becomes 50 km/h",
             "is_correct": false
           }
         ],
-        "explanation": "F113 marks the end of the bicycle street. Beyond this sign the no-overtaking rule for cyclists no longer applies. Overtaking is permitted again provided it is safe."
+        "explanation": "F113 ends only the cycle zone; it does not cancel a separately applicable speed zone."
       },
       "FR": {
-        "question": "Un automobiliste peut-il depasser un cycliste apres le panneau F113 ?",
+        "question": "Une zone 30 distincte continue après F113. Quelle vitesse s'applique ?",
         "choices": [
           {
-            "text": "Oui apres F113 les regles normales s appliquent et il est permis de depasser si c est securise",
+            "text": "La zone 30 distincte reste applicable",
             "is_correct": true
           },
           {
-            "text": "Non l interdiction de depasser reste en vigueur 200 metres apres F113",
+            "text": "F113 supprime toute autre zone 30",
             "is_correct": false
           },
           {
-            "text": "On ne peut depasser qu apres 50 metres",
+            "text": "La vitesse devient automatiquement 50 km/h",
             "is_correct": false
           }
         ],
-        "explanation": "F113 marque la fin de la rue cyclable. Au-dela les regles speciales ne s appliquent plus. Il est a nouveau permis de depasser les cyclistes si c est securise."
+        "explanation": "F113 met fin uniquement à la zone cyclable et n'annule pas une zone de vitesse distincte."
       },
       "AR": {
-        "question": "هل يجوز لسائق مركبة آلية تجاوز راكب دراجة بعد علامة F113؟",
+        "question": "تستمر منطقة مستقلة بحد 30 كم/ساعة بعد F113، فما السرعة المطبقة؟",
         "choices": [
           {
-            "text": "نعم، بعد F113 تطبق قواعد المرور العادية ويجوز تجاوز راكبي الدراجات عندما يكون ذلك آمناً",
+            "text": "يبقى حد المنطقة المستقلة 30 كم/ساعة سارياً",
             "is_correct": true
           },
           {
-            "text": "لا، يبقى منع التجاوز سارياً لمسافة 200 متر بعد F113",
+            "text": "تلغي F113 كل منطقة أخرى بحد 30",
             "is_correct": false
           },
           {
-            "text": "لا يسمح بالتجاوز إلا بعد 50 متراً",
+            "text": "تصبح السرعة تلقائياً 50 كم/ساعة",
             "is_correct": false
           }
         ],
-        "explanation": "تحدد F113 نهاية شارع الدراجات. بعد هذه العلامة لا تعود قاعدة منع تجاوز راكبي الدراجات سارية، ويجوز التجاوز إذا كان آمناً."
+        "explanation": "تنهي F113 منطقة الدراجات فقط ولا تلغي منطقة سرعة مستقلة."
       }
     }
   },
@@ -482,60 +493,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Geldt de 30 km/u limiet van de fietsstraat nog na het passeren van F113?",
+        "question": "Mag u na F113 zonder verdere controle aannemen dat 50 km/u is toegestaan?",
         "choices": [
           {
-            "text": "Nee de 30 km/u limiet vervalt na F113; de normale snelheidslimiet van de weg is van toepassing",
+            "text": "Nee, u controleert de algemene limiet en alle andere geldende borden",
             "is_correct": true
           },
           {
-            "text": "Ja de 30 km/u limiet blijft gelden tot een nieuw snelheidsbord anders aangeeft",
+            "text": "Ja, F113 stelt de snelheid altijd automatisch op 50 km/u",
             "is_correct": false
           }
         ],
-        "explanation": "De 30 km/u limiet is een specifieke regelgeving voor de fietsstraat. Zodra je F113 passeert geldt de normale snelheidslimiet van die weg."
+        "explanation": "Het eindbord van een fietszone bepaalt geen nieuwe vaste snelheid."
       },
       "EN": {
-        "question": "Does the 30 km/h limit of the bicycle street still apply after passing F113?",
+        "question": "After F113, may you assume without checking that 50 km/h is permitted?",
         "choices": [
           {
-            "text": "No the 30 km/h limit ceases after F113; the normal speed limit of the road applies",
+            "text": "No, check the general limit and every other applicable sign",
             "is_correct": true
           },
           {
-            "text": "Yes the 30 km/h limit continues until a new speed sign indicates otherwise",
+            "text": "Yes, F113 always automatically sets the speed to 50 km/h",
             "is_correct": false
           }
         ],
-        "explanation": "The 30 km/h speed limit is specific to the bicycle street. Once you pass F113 the normal speed limit for that road applies."
+        "explanation": "The end sign of a cycle zone does not establish a new fixed speed."
       },
       "FR": {
-        "question": "La limite de 30 km/h de la rue cyclable s applique-t-elle encore apres F113 ?",
+        "question": "Après F113, pouvez-vous supposer sans vérifier que 50 km/h est autorisé ?",
         "choices": [
           {
-            "text": "Non la limite de 30 km/h cesse apres F113; la limite normale de la route s applique",
+            "text": "Non, vous vérifiez la limite générale et les autres panneaux applicables",
             "is_correct": true
           },
           {
-            "text": "Oui la limite de 30 km/h continue jusqu a un nouveau panneau de vitesse",
+            "text": "Oui, F113 fixe toujours automatiquement la vitesse à 50 km/h",
             "is_correct": false
           }
         ],
-        "explanation": "La limite de 30 km/h est specifique a la rue cyclable. Une fois que vous passez F113 la limite normale de la route s applique."
+        "explanation": "Le panneau de fin d'une zone cyclable ne fixe pas une nouvelle vitesse déterminée."
       },
       "AR": {
-        "question": "هل يبقى حد 30 كم/ساعة الخاص بشارع الدراجات سارياً بعد المرور بعلامة F113؟",
+        "question": "هل يجوز بعد F113 افتراض أن 50 كم/ساعة مسموحة من دون تحقق؟",
         "choices": [
           {
-            "text": "لا، ينتهي حد 30 كم/ساعة بعد F113 وتطبق السرعة العادية للطريق",
+            "text": "لا، يجب التحقق من الحد العام وكل علامة أخرى سارية",
             "is_correct": true
           },
           {
-            "text": "نعم، يستمر حد 30 كم/ساعة حتى تظهر علامة سرعة جديدة",
+            "text": "نعم، تضبط F113 السرعة تلقائياً على 50 كم/ساعة دائماً",
             "is_correct": false
           }
         ],
-        "explanation": "حد 30 كم/ساعة خاص بشارع الدراجات. بعد المرور بعلامة F113 تطبق السرعة العادية لذلك الطريق."
+        "explanation": "لا تحدد علامة نهاية منطقة الدراجات سرعة ثابتة جديدة."
       }
     }
   },
@@ -547,60 +558,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Moet F113 aan elke uitgang van een fietsstraat geplaatst worden?",
+        "question": "Mag een bestuurder na F113 de algemene veiligheidsregels tegenover fietsers negeren?",
         "choices": [
           {
-            "text": "Ja, F113 staat aan elke uitgang zodat bestuurders weten waar de fietsstraatregels eindigen",
+            "text": "Nee, de algemene zorgplicht en veilige afstand blijven gelden",
             "is_correct": true
           },
           {
-            "text": "Nee, één F113-bord aan de hoofduitgang volstaat",
+            "text": "Ja, alle regels ter bescherming van fietsers eindigen bij F113",
             "is_correct": false
           }
         ],
-        "explanation": "Het eindbord F113 wordt aan elke uitgang van de fietsstraat geplaatst, zodat bestuurders die via een zijstraat vertrekken ook weten dat de fietsstraatregels niet meer gelden."
+        "explanation": "Alleen de specifieke fietszone-regels eindigen; bestuurders mogen fietsers ook daarna niet in gevaar brengen."
       },
       "EN": {
-        "question": "Must F113 be placed at every exit of a bicycle street?",
+        "question": "After F113, may a driver ignore the general safety rules towards cyclists?",
         "choices": [
           {
-            "text": "Yes F113 is placed at every exit so drivers know where the bicycle street rules end",
+            "text": "No, the general duty of care and safe distance still apply",
             "is_correct": true
           },
           {
-            "text": "No one F113 at the main exit is sufficient",
+            "text": "Yes, all rules protecting cyclists end at F113",
             "is_correct": false
           }
         ],
-        "explanation": "The end sign (F113) is placed at every exit of the bicycle street ensuring drivers leaving via a side street also know the bicycle street rules no longer apply."
+        "explanation": "Only the specific cycle-zone rules end; drivers must still not endanger cyclists."
       },
       "FR": {
-        "question": "Doit-on placer F113 a chaque sortie d une rue cyclable ?",
+        "question": "Après F113, un conducteur peut-il ignorer les règles générales de sécurité envers les cyclistes ?",
         "choices": [
           {
-            "text": "Oui F113 est place a chaque sortie pour que les conducteurs sachent ou les regles se terminent",
+            "text": "Non, le devoir général de prudence et la distance de sécurité restent applicables",
             "is_correct": true
           },
           {
-            "text": "Non un seul F113 a la sortie principale suffit",
+            "text": "Oui, toutes les règles protégeant les cyclistes prennent fin à F113",
             "is_correct": false
           }
         ],
-        "explanation": "Le panneau de fin (F113) est place a chaque sortie de la rue cyclable pour que les conducteurs quittant par une rue laterale sachent aussi que les regles ne s appliquent plus."
+        "explanation": "Seules les règles propres à la zone prennent fin; les conducteurs ne peuvent toujours pas mettre les cyclistes en danger."
       },
       "AR": {
-        "question": "هل يجب وضع F113 عند كل مخرج من شارع الدراجات؟",
+        "question": "هل يجوز للسائق بعد F113 تجاهل قواعد السلامة العامة تجاه راكبي الدراجات؟",
         "choices": [
           {
-            "text": "نعم، توضع F113 عند كل مخرج حتى يعرف السائقون أين تنتهي قواعد شارع الدراجات",
+            "text": "لا، يبقى واجب الحذر العام والمسافة الآمنة ساريين",
             "is_correct": true
           },
           {
-            "text": "لا، تكفي علامة F113 واحدة عند المخرج الرئيسي",
+            "text": "نعم، تنتهي جميع قواعد حماية راكبي الدراجات عند F113",
             "is_correct": false
           }
         ],
-        "explanation": "توضع علامة نهاية شارع الدراجات F113 عند كل مخرج حتى يعرف السائقون الذين يغادرون عبر شارع جانبي أن قواعد شارع الدراجات لم تعد سارية."
+        "explanation": "تنتهي القواعد الخاصة بالمنطقة فقط، ويبقى منع تعريض راكبي الدراجات للخطر سارياً."
       }
     }
   }
