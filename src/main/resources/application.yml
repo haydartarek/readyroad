@@ -72,7 +72,7 @@ google:
     user-info-uri: ${GOOGLE_OAUTH_USER_INFO_URI:https://openidconnect.googleapis.com/v1/userinfo}
 
 server:
-  port: 8890
+  port: ${PORT:8890}
   servlet:
     encoding:
       charset: UTF-8

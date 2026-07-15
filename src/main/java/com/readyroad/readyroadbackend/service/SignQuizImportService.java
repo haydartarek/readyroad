@@ -175,13 +175,12 @@ public class SignQuizImportService {
                 // Steps 6-8 — DB upsert in its own independent transaction.
                 // If this sign fails, only THIS sign is rolled back; others are unaffected.
                 int[] counts = txTemplate.execute(status -> {
-                    boolean isNew = !roadSignRepo.existsBySignCode(
-                            signNode.path("code").asText().trim());
-                    RoadSign sign = upsertRoadSign(signNode);
+                    RoadSignUpsertResult signResult = upsertRoadSign(signNode);
+                    RoadSign sign = signResult.sign();
                     int[] qCounts = upsertQuestions(questionsNode, sign);
                     int ec = upsertExams(examsNode, sign);
                     // [0]=created, [1]=updated, [2]=qCreated, [3]=qUpdated, [4]=exams
-                    return new int[] { isNew ? 1 : 0, isNew ? 0 : 1,
+                    return new int[] { signResult.created() ? 1 : 0, signResult.updated() ? 1 : 0,
                             qCounts[0], qCounts[1], ec };
                 });
 
@@ -513,7 +512,7 @@ public class SignQuizImportService {
     // Step 6 — Upsert RoadSign
     // ─────────────────────────────────────────────────────────────────────────
 
-    private RoadSign upsertRoadSign(JsonNode node) {
+    private RoadSignUpsertResult upsertRoadSign(JsonNode node) {
         String signCode = node.path("code").asText().trim();
         String routeSource = firstNonBlank(
                 node.path("route_code").asText(""),
@@ -527,11 +526,16 @@ public class SignQuizImportService {
         RoadSign sign = roadSignRepo.findByNormalizedSignCode(seed.routeKey())
                 .or(() -> roadSignRepo.findFirstBySignCodeOrderByIdAsc(seed.routeCode()))
                 .orElse(new RoadSign());
+        boolean isNew = sign.getId() == null;
+        boolean changed = isNew || !roadSignMatchesSeed(sign, seed);
 
-        sign.setIsActive(true);
-        canonicalSignCatalogService.applyCanonicalFields(sign, seed);
+        if (changed) {
+            sign.setIsActive(true);
+            canonicalSignCatalogService.applyCanonicalFields(sign, seed);
+            sign = roadSignRepo.save(sign);
+        }
 
-        return roadSignRepo.save(sign);
+        return new RoadSignUpsertResult(sign, isNew, !isNew && changed);
     }
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -551,35 +555,21 @@ public class SignQuizImportService {
                     .orElseGet(SignQuestion::new);
             boolean isNew = question.getId() == null;
             SignQuestionType questionType = SignQuestionType.valueOf(q.path("type").asText().trim());
-
-            question.setSign(sign);
-            question.setQuestionRef(ref);
-            question.setQuestionType(questionType);
-            question.setDifficulty(SignDifficulty.valueOf(q.path("difficulty").asText().trim()));
-            question.setIsCritical(q.path("is_critical").asBoolean(false));
-            question.setShowSign(q.path("show_sign").asBoolean(true));
-            question.setIsActive(true);
-
             JsonNode i18n = q.path("i18n");
-            question.setQuestionNl(
-                    SignQuestionTextSanitizer.sanitizeQuestion(questionType, "NL", text(i18n, "NL", "question")));
-            question.setQuestionEn(
-                    SignQuestionTextSanitizer.sanitizeQuestion(questionType, "EN", text(i18n, "EN", "question")));
-            question.setQuestionFr(
-                    SignQuestionTextSanitizer.sanitizeQuestion(questionType, "FR", text(i18n, "FR", "question")));
-            question.setQuestionAr(
-                    SignQuestionTextSanitizer.sanitizeQuestion(questionType, "AR", text(i18n, "AR", "question")));
-            question.setExplanationNl(
-                    SignQuestionTextSanitizer.sanitizeExplanation(questionType, "NL", text(i18n, "NL", "explanation")));
-            question.setExplanationEn(
-                    SignQuestionTextSanitizer.sanitizeExplanation(questionType, "EN", text(i18n, "EN", "explanation")));
-            question.setExplanationFr(
-                    SignQuestionTextSanitizer.sanitizeExplanation(questionType, "FR", text(i18n, "FR", "explanation")));
-            question.setExplanationAr(
-                    SignQuestionTextSanitizer.sanitizeExplanation(questionType, "AR", text(i18n, "AR", "explanation")));
+            ImportedQuestionData importedQuestion = buildImportedQuestionData(q, questionType, i18n);
+            List<ImportedChoiceData> importedChoices = buildImportedChoices(i18n, questionType);
+            boolean changed = isNew
+                    || !questionMatchesImport(question, sign, importedQuestion)
+                    || !choicesMatchImport(question, importedChoices);
+
+            if (!changed) {
+                continue;
+            }
+
+            applyQuestionData(question, sign, importedQuestion);
 
             SignQuestion saved = questionRepo.save(question);
-            syncChoices(saved, i18n, isNew, questionType);
+            syncChoices(saved, importedChoices, isNew);
             questionRepo.save(saved);
 
             if (isNew)
@@ -589,9 +579,10 @@ public class SignQuizImportService {
         }
 
         for (SignQuestion existing : questionRepo.findAllBySignId(sign.getId())) {
-            if (!importedRefs.contains(existing.getQuestionRef())) {
+            if (!importedRefs.contains(existing.getQuestionRef()) && Boolean.TRUE.equals(existing.getIsActive())) {
                 existing.setIsActive(false);
                 questionRepo.save(existing);
+                updated++;
             }
         }
 
@@ -625,20 +616,24 @@ public class SignQuizImportService {
             SignExam exam = examRepo.findBySignIdAndExamNumber(sign.getId(), examNumber)
                     .orElseGet(SignExam::new);
             boolean isNew = exam.getId() == null;
-
-            exam.setSign(sign);
-            exam.setExamNumber(examNumber);
-            exam.setPassingScore(examsNode.path("passing_score").asInt(6));
-            exam.setTotalQuestions(examsNode.path("total_questions").asInt(REQUIRED_EXAM_QUESTIONS));
-            exam.setIsActive(true);
-
             JsonNode dist = examsNode.path("distribution");
-            exam.setEasyCount(dist.path("EASY").asInt(REQUIRED_EASY));
-            exam.setMediumCount(dist.path("MEDIUM").asInt(REQUIRED_MEDIUM));
-            exam.setHardCount(dist.path("HARD").asInt(REQUIRED_HARD));
+            ImportedExamData importedExam = new ImportedExamData(
+                    examNumber,
+                    examsNode.path("passing_score").asInt(6),
+                    examsNode.path("total_questions").asInt(REQUIRED_EXAM_QUESTIONS),
+                    dist.path("EASY").asInt(REQUIRED_EASY),
+                    dist.path("MEDIUM").asInt(REQUIRED_MEDIUM),
+                    dist.path("HARD").asInt(REQUIRED_HARD),
+                    toRealRefs(examsNode.path(fieldName).path("questions")));
+
+            if (!isNew && examMatchesImport(exam, sign, importedExam)) {
+                continue;
+            }
+
+            applyExamData(exam, sign, importedExam);
 
             SignExam savedExam = examRepo.save(exam);
-            syncExamQuestions(savedExam, examsNode.path(fieldName).path("questions"));
+            syncExamQuestions(savedExam, importedExam.questionRefs());
             examRepo.save(savedExam);
 
             if (isNew) {
@@ -647,7 +642,7 @@ public class SignQuizImportService {
         }
 
         for (SignExam existing : examRepo.findAllBySignIdOrderByExamNumberAsc(sign.getId())) {
-            if (!importedExamNumbers.contains(existing.getExamNumber())) {
+            if (!importedExamNumbers.contains(existing.getExamNumber()) && Boolean.TRUE.equals(existing.getIsActive())) {
                 existing.setIsActive(false);
                 examRepo.save(existing);
             }
@@ -773,9 +768,8 @@ public class SignQuizImportService {
         return sanitized.trim();
     }
 
-    private void syncChoices(SignQuestion question, JsonNode i18n, boolean isNewQuestion,
-            SignQuestionType questionType) {
-        List<ImportedChoiceData> importedChoices = buildImportedChoices(i18n, questionType);
+    private void syncChoices(SignQuestion question, List<ImportedChoiceData> importedChoices,
+            boolean isNewQuestion) {
         if (importedChoices.isEmpty()) {
             throw new IllegalStateException("Question " + question.getQuestionRef() + " has no choices");
         }
@@ -927,19 +921,14 @@ public class SignQuizImportService {
                 .toLowerCase(Locale.ROOT);
     }
 
-    private void syncExamQuestions(SignExam exam, JsonNode questionRefsNode) {
+    private void syncExamQuestions(SignExam exam, List<String> questionRefs) {
         if (!exam.getExamQuestions().isEmpty()) {
             exam.clearExamQuestions();
             examRepo.saveAndFlush(exam);
         }
 
         int order = 1;
-        for (JsonNode qRef : questionRefsNode) {
-            String ref = qRef.asText("").trim();
-            if (ref.startsWith("[")) {
-                continue;
-            }
-
+        for (String ref : questionRefs) {
             SignQuestion question = questionRepo.findByQuestionRef(ref)
                     .orElseThrow(() -> new IllegalStateException(
                             "Exam references unknown question: " + ref));
@@ -1205,6 +1194,186 @@ public class SignQuizImportService {
 
         if (hasInvalidImportedText(value)) {
             throw new ImportValidationException(context + " contains placeholder or corrupted text");
+        }
+    }
+
+    private boolean roadSignMatchesSeed(
+            RoadSign sign,
+            CanonicalSignCatalogService.CanonicalSignSeed seed) {
+        return Boolean.TRUE.equals(sign.getIsActive())
+                && Objects.equals(sign.getSignCode(), seed.routeCode())
+                && Objects.equals(sign.getNormalizedSignCode(), seed.routeKey())
+                && Objects.equals(sign.getCategory(), seed.category())
+                && (seed.imagePath().isBlank() || Objects.equals(sign.getImagePath(), seed.imagePath()))
+                && Objects.equals(sign.getNameEn(), seed.nameEn())
+                && Objects.equals(sign.getNameAr(), seed.nameAr())
+                && Objects.equals(sign.getNameNl(), seed.nameNl())
+                && Objects.equals(sign.getNameFr(), seed.nameFr())
+                && Objects.equals(sign.getDescriptionEn(), seed.descriptionEn())
+                && Objects.equals(sign.getDescriptionAr(), seed.descriptionAr())
+                && Objects.equals(sign.getDescriptionNl(), seed.descriptionNl())
+                && Objects.equals(sign.getDescriptionFr(), seed.descriptionFr())
+                && Objects.equals(sign.getSummaryEn(), seed.summaryEn())
+                && Objects.equals(sign.getSummaryAr(), seed.summaryAr())
+                && Objects.equals(sign.getSummaryNl(), seed.summaryNl())
+                && Objects.equals(sign.getSummaryFr(), seed.summaryFr())
+                && Objects.equals(sign.getDriverGuidanceEn(), seed.driverGuidanceEn())
+                && Objects.equals(sign.getDriverGuidanceAr(), seed.driverGuidanceAr())
+                && Objects.equals(sign.getDriverGuidanceNl(), seed.driverGuidanceNl())
+                && Objects.equals(sign.getDriverGuidanceFr(), seed.driverGuidanceFr())
+                && Objects.equals(sign.getExceptionsEn(), seed.exceptionsEn())
+                && Objects.equals(sign.getExceptionsAr(), seed.exceptionsAr())
+                && Objects.equals(sign.getExceptionsNl(), seed.exceptionsNl())
+                && Objects.equals(sign.getExceptionsFr(), seed.exceptionsFr())
+                && Objects.equals(sign.getSeriousViolation(), seed.seriousViolation());
+    }
+
+    private ImportedQuestionData buildImportedQuestionData(
+            JsonNode question,
+            SignQuestionType questionType,
+            JsonNode i18n) {
+        return new ImportedQuestionData(
+                question.path("question_id").asText().trim(),
+                questionType,
+                SignDifficulty.valueOf(question.path("difficulty").asText().trim()),
+                question.path("is_critical").asBoolean(false),
+                question.path("show_sign").asBoolean(true),
+                TextNormalizer.normalize(
+                        SignQuestionTextSanitizer.sanitizeQuestion(questionType, "NL", text(i18n, "NL", "question"))),
+                TextNormalizer.normalize(
+                        SignQuestionTextSanitizer.sanitizeQuestion(questionType, "EN", text(i18n, "EN", "question"))),
+                TextNormalizer.normalize(
+                        SignQuestionTextSanitizer.sanitizeQuestion(questionType, "FR", text(i18n, "FR", "question"))),
+                TextNormalizer.normalize(
+                        SignQuestionTextSanitizer.sanitizeQuestion(questionType, "AR", text(i18n, "AR", "question"))),
+                TextNormalizer.normalize(SignQuestionTextSanitizer.sanitizeExplanation(
+                        questionType, "NL", text(i18n, "NL", "explanation"))),
+                TextNormalizer.normalize(SignQuestionTextSanitizer.sanitizeExplanation(
+                        questionType, "EN", text(i18n, "EN", "explanation"))),
+                TextNormalizer.normalize(SignQuestionTextSanitizer.sanitizeExplanation(
+                        questionType, "FR", text(i18n, "FR", "explanation"))),
+                TextNormalizer.normalize(SignQuestionTextSanitizer.sanitizeExplanation(
+                        questionType, "AR", text(i18n, "AR", "explanation"))));
+    }
+
+    private boolean questionMatchesImport(
+            SignQuestion question,
+            RoadSign sign,
+            ImportedQuestionData imported) {
+        return question.getSign() != null
+                && Objects.equals(question.getSign().getId(), sign.getId())
+                && Objects.equals(question.getQuestionRef(), imported.questionRef())
+                && Objects.equals(question.getQuestionType(), imported.questionType())
+                && Objects.equals(question.getDifficulty(), imported.difficulty())
+                && Objects.equals(Boolean.TRUE.equals(question.getIsCritical()), imported.isCritical())
+                && Objects.equals(Boolean.TRUE.equals(question.getShowSign()), imported.showSign())
+                && Boolean.TRUE.equals(question.getIsActive())
+                && Objects.equals(question.getQuestionNl(), imported.questionNl())
+                && Objects.equals(question.getQuestionEn(), imported.questionEn())
+                && Objects.equals(question.getQuestionFr(), imported.questionFr())
+                && Objects.equals(question.getQuestionAr(), imported.questionAr())
+                && Objects.equals(question.getExplanationNl(), imported.explanationNl())
+                && Objects.equals(question.getExplanationEn(), imported.explanationEn())
+                && Objects.equals(question.getExplanationFr(), imported.explanationFr())
+                && Objects.equals(question.getExplanationAr(), imported.explanationAr());
+    }
+
+    private boolean choicesMatchImport(
+            SignQuestion question,
+            List<ImportedChoiceData> importedChoices) {
+        List<String> existingFingerprints = question.getDeliverableChoices().stream()
+                .map(this::choiceFingerprint)
+                .sorted()
+                .toList();
+        List<String> importedFingerprints = importedChoices.stream()
+                .map(ImportedChoiceData::fingerprint)
+                .sorted()
+                .toList();
+        return existingFingerprints.equals(importedFingerprints);
+    }
+
+    private void applyQuestionData(
+            SignQuestion question,
+            RoadSign sign,
+            ImportedQuestionData imported) {
+        question.setSign(sign);
+        question.setQuestionRef(imported.questionRef());
+        question.setQuestionType(imported.questionType());
+        question.setDifficulty(imported.difficulty());
+        question.setIsCritical(imported.isCritical());
+        question.setShowSign(imported.showSign());
+        question.setIsActive(true);
+        question.setQuestionNl(imported.questionNl());
+        question.setQuestionEn(imported.questionEn());
+        question.setQuestionFr(imported.questionFr());
+        question.setQuestionAr(imported.questionAr());
+        question.setExplanationNl(imported.explanationNl());
+        question.setExplanationEn(imported.explanationEn());
+        question.setExplanationFr(imported.explanationFr());
+        question.setExplanationAr(imported.explanationAr());
+    }
+
+    private boolean examMatchesImport(SignExam exam, RoadSign sign, ImportedExamData imported) {
+        if (exam.getSign() == null
+                || !Objects.equals(exam.getSign().getId(), sign.getId())
+                || !Objects.equals(exam.getExamNumber(), imported.examNumber())
+                || !Objects.equals(exam.getPassingScore(), imported.passingScore())
+                || !Objects.equals(exam.getTotalQuestions(), imported.totalQuestions())
+                || !Objects.equals(exam.getEasyCount(), imported.easyCount())
+                || !Objects.equals(exam.getMediumCount(), imported.mediumCount())
+                || !Objects.equals(exam.getHardCount(), imported.hardCount())
+                || !Boolean.TRUE.equals(exam.getIsActive())) {
+            return false;
+        }
+
+        List<String> existingRefs = exam.getExamQuestions().stream()
+                .sorted(Comparator.comparing(SignExamQuestion::getQuestionOrder))
+                .map(SignExamQuestion::getQuestion)
+                .map(SignQuestion::getQuestionRef)
+                .toList();
+        return existingRefs.equals(imported.questionRefs());
+    }
+
+    private void applyExamData(SignExam exam, RoadSign sign, ImportedExamData imported) {
+        exam.setSign(sign);
+        exam.setExamNumber(imported.examNumber());
+        exam.setPassingScore(imported.passingScore());
+        exam.setTotalQuestions(imported.totalQuestions());
+        exam.setEasyCount(imported.easyCount());
+        exam.setMediumCount(imported.mediumCount());
+        exam.setHardCount(imported.hardCount());
+        exam.setIsActive(true);
+    }
+
+    private record RoadSignUpsertResult(RoadSign sign, boolean created, boolean updated) {
+    }
+
+    private record ImportedQuestionData(
+            String questionRef,
+            SignQuestionType questionType,
+            SignDifficulty difficulty,
+            boolean isCritical,
+            boolean showSign,
+            String questionNl,
+            String questionEn,
+            String questionFr,
+            String questionAr,
+            String explanationNl,
+            String explanationEn,
+            String explanationFr,
+            String explanationAr) {
+    }
+
+    private record ImportedExamData(
+            Integer examNumber,
+            Integer passingScore,
+            Integer totalQuestions,
+            Integer easyCount,
+            Integer mediumCount,
+            Integer hardCount,
+            List<String> questionRefs) {
+        private ImportedExamData {
+            questionRefs = List.copyOf(questionRefs);
         }
     }
 

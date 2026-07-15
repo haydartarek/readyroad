@@ -131,7 +131,7 @@ public class ExamService {
         }
 
         // ✅ Belgian exam standard: 20 EASY + 20 MEDIUM + 10 HARD = 50 questions
-        // Uses ORDER BY RAND() in DB for true randomness per difficulty tier
+        // Uses database-native random ordering for each difficulty tier
         List<QuizQuestion> easyPool = questionRepository
                 .findRandomQuestionsByDifficulty(QuizQuestion.DifficultyLevel.EASY).stream()
                 .filter(q -> q != null && q.getId() != null)

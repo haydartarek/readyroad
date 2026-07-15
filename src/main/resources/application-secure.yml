@@ -33,7 +33,7 @@ spring:
     mode: secure
 
 server:
-  port: 8890
+  port: ${PORT:8890}
   error:
     include-message: never
     include-stacktrace: never

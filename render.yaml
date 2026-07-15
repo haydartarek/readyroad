@@ -1,0 +1,47 @@
+services:
+  - type: web
+    name: readyroad-backend-haydar
+    runtime: docker
+    repo: https://github.com/haydartarek/readyroad.git
+    branch: feature/postgresql-supabase
+    plan: free
+    region: frankfurt
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /actuator/health
+    envVars:
+      - key: SPRING_PROFILES_ACTIVE
+        value: secure,postgresql
+      - key: POSTGRES_HOST
+        sync: false
+      - key: POSTGRES_PORT
+        sync: false
+      - key: POSTGRES_DATABASE
+        sync: false
+      - key: POSTGRES_USERNAME
+        sync: false
+      - key: POSTGRES_PASSWORD
+        sync: false
+      - key: POSTGRES_SSL_MODE
+        value: require
+      - key: POSTGRES_SCHEMA
+        value: readyroad
+      - key: POSTGRES_MAX_POOL_SIZE
+        value: "5"
+      - key: POSTGRES_MIN_IDLE
+        value: "1"
+      - key: POSTGRES_CONNECTION_TIMEOUT
+        value: "30000"
+      - key: POSTGRES_IDLE_TIMEOUT
+        value: "300000"
+      - key: POSTGRES_MAX_LIFETIME
+        value: "1200000"
+      - key: JWT_SECRET
+        generateValue: true
+      - key: ADMIN_DEFAULT_PASSWORD
+        sync: false
+      - key: FRONTEND_URL
+        value: http://localhost:3000
+      - key: CORS_ALLOWED_ORIGINS
+        value: http://localhost:3000
+      - key: JAVA_OPTS
+        value: -XX:+UseContainerSupport -XX:InitialRAMPercentage=15.0 -XX:MaxRAMPercentage=55.0 -XX:+UseSerialGC

@@ -1,8 +1,8 @@
 package com.readyroad.readyroadbackend.domain.repository;
 
 import com.readyroad.readyroadbackend.domain.entity.UserWeakArea;
+import com.readyroad.readyroadbackend.domain.repository.custom.UserWeakAreaUpsertRepository;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface UserWeakAreaRepository extends JpaRepository<UserWeakArea, Long> {
+public interface UserWeakAreaRepository extends JpaRepository<UserWeakArea, Long>, UserWeakAreaUpsertRepository {
 
     Optional<UserWeakArea> findByUserIdAndCategory(Long userId, String category);
 
@@ -32,54 +32,4 @@ public interface UserWeakAreaRepository extends JpaRepository<UserWeakArea, Long
 
     List<UserWeakArea> findAllByUserId(Long userId);
 
-    /**
-     * Upsert a sign-specific weak-area record keyed by {@code traffic_sign_code}.
-     */
-    @Modifying
-    @Query(nativeQuery = true, value = """
-            INSERT INTO user_weak_areas
-                (user_id, traffic_sign_code, total_questions, correct_answers, wrong_answers,
-                 accuracy_percentage, last_updated)
-            VALUES (:userId, :signCode, :totalQ, :correct, :wrong,
-                CASE WHEN :totalQ > 0 THEN (:correct * 100.0 / :totalQ) ELSE 0.0 END,
-                NOW())
-            ON DUPLICATE KEY UPDATE
-                total_questions     = total_questions     + :totalQ,
-                correct_answers     = correct_answers     + :correct,
-                wrong_answers       = wrong_answers       + :wrong,
-                accuracy_percentage = (correct_answers + :correct) * 100.0
-                                      / (total_questions + :totalQ),
-                last_updated        = NOW()
-            """)
-    void upsertBySignCode(@Param("userId") Long userId,
-            @Param("signCode") String signCode,
-            @Param("totalQ") int totalQ,
-            @Param("correct") int correct,
-            @Param("wrong") int wrong);
-
-    /**
-     * Upsert a category-based weak-area record keyed by the raw {@code category}
-     * varchar column.
-     */
-    @Modifying
-    @Query(nativeQuery = true, value = """
-            INSERT INTO user_weak_areas
-                (user_id, category, total_questions, correct_answers, wrong_answers,
-                 accuracy_percentage, last_updated)
-            VALUES (:userId, :category, :totalQ, :correct, :wrong,
-                CASE WHEN :totalQ > 0 THEN (:correct * 100.0 / :totalQ) ELSE 0.0 END,
-                NOW())
-            ON DUPLICATE KEY UPDATE
-                total_questions     = total_questions     + :totalQ,
-                correct_answers     = correct_answers     + :correct,
-                wrong_answers       = wrong_answers       + :wrong,
-                accuracy_percentage = (correct_answers + :correct) * 100.0
-                                      / (total_questions + :totalQ),
-                last_updated        = NOW()
-            """)
-    void upsertByCategoryName(@Param("userId") Long userId,
-            @Param("category") String category,
-            @Param("totalQ") int totalQ,
-            @Param("correct") int correct,
-            @Param("wrong") int wrong);
 }

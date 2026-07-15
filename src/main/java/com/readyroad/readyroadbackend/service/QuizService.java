@@ -55,7 +55,7 @@ public class QuizService {
      * 
      * **Fix Applied:** Uses two-step approach to prevent
      * LazyInitializationException:
-     * 1. Get random question IDs using native query with RAND()
+     * 1. Get random question IDs using database-native random ordering
      * 2. Fetch questions with options using @EntityGraph for eager loading
      *
      * @param count Number of questions requested (capped at MAX_QUESTIONS_PER_QUIZ)
@@ -77,7 +77,7 @@ public class QuizService {
         // Adjust count if requested more than available
         actualCount = (int) Math.min(actualCount, totalQuestions);
 
-        // Step 1: Get random question IDs (fast native query with RAND())
+        // Step 1: Get random question IDs using database-native random ordering
         List<Long> questionIds = quizQuestionRepository.findRandomQuestionIds(actualCount);
 
         // If no questions found, return empty list
@@ -110,7 +110,7 @@ public class QuizService {
      * 
      * **Fix Applied:** Uses two-step approach to prevent
      * LazyInitializationException:
-     * 1. Get random question IDs by category using native query with RAND()
+     * 1. Get random question IDs by category using database-native random ordering
      * 2. Fetch questions with options using @EntityGraph for eager loading
      *
      * @param categoryId Category ID to filter by
@@ -145,7 +145,7 @@ public class QuizService {
         // Adjust count if requested more than available
         actualCount = (int) Math.min(actualCount, totalQuestions);
 
-        // Step 1: Get random question IDs by category (fast native query with RAND())
+        // Step 1: Get random question IDs by category using database-native random ordering
         List<Long> questionIds = quizQuestionRepository.findRandomQuestionIdsByCategory(
                 categoryId,
                 actualCount);
@@ -260,7 +260,7 @@ public class QuizService {
     /**
      * Return 50 randomly selected questions (20E+20M+10H) for a Belgian theory exam
      * practice session. Shuffled so difficulty distribution is not predictable.
-     * Uses 2-step native RAND() pattern to avoid full-table scans.
+     * Uses two-step database-native random ordering to limit entity hydration.
      */
     public List<QuizQuestion> getTheoryExamQuestions() {
         List<Long> easyIds = quizQuestionRepository.findRandomQuestionIdsByDifficulty("EASY", THEORY_EASY_COUNT);

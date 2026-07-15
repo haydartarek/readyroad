@@ -1,13 +1,12 @@
 package com.readyroad.readyroadbackend.domain.repository;
 
 import com.readyroad.readyroadbackend.domain.entity.UserQuestionHistory;
+import com.readyroad.readyroadbackend.domain.repository.custom.UserQuestionHistoryUpsertRepository;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -17,7 +16,8 @@ import java.util.List;
  * Repository for tracking user question history (24h cooldown enforcement).
  */
 @Repository
-public interface UserQuestionHistoryRepository extends JpaRepository<UserQuestionHistory, Long> {
+public interface UserQuestionHistoryRepository extends JpaRepository<UserQuestionHistory, Long>,
+              UserQuestionHistoryUpsertRepository {
 
        /**
         * Find all question IDs that a user has seen within a given time window.
@@ -168,64 +168,4 @@ public interface UserQuestionHistoryRepository extends JpaRepository<UserQuestio
                      "WHERE user_id = :userId AND answered_at IS NOT NULL", nativeQuery = true)
        LocalDate findMostRecentAnsweredDateByUserId(@Param("userId") Long userId);
 
-       /**
-        * Upsert a question-shown event.
-        * INSERT if (user_id, question_ref_id) not seen before;
-        * UPDATE last_shown_at, last_shown_type, times_shown if already exists.
-        * This prevents DataIntegrityViolationException when the same user
-        * gets the same question again across sessions.
-        */
-       @Modifying
-       @Transactional
-       @Query(value = "INSERT INTO user_question_history " +
-                     "(user_id, question_id, question_ref_id, last_shown_at, last_shown_type, " +
-                     " times_shown, times_correct, times_wrong, created_at, updated_at) " +
-                     "VALUES (:userId, :questionId, :questionId, :lastShownAt, :lastShownType, " +
-                     "        1, 0, 0, NOW(), NOW()) " +
-                     "ON DUPLICATE KEY UPDATE " +
-                     "  last_shown_at   = :lastShownAt, " +
-                     "  last_shown_type = :lastShownType, " +
-                     "  times_shown     = times_shown + 1, " +
-                     "  updated_at      = NOW()", nativeQuery = true)
-       void upsertQuestionShown(@Param("userId") Long userId,
-                     @Param("questionId") Long questionId,
-                     @Param("lastShownAt") LocalDateTime lastShownAt,
-                     @Param("lastShownType") String lastShownType);
-
-       /**
-        * Upsert a question-answered event (when user submits an answer in practice
-        * mode).
-        * INSERT if (user_id, question_ref_id) not seen before;
-        * UPDATE answer data and counters if record already exists from a prior quiz
-        * display event.
-        * This prevents DataIntegrityViolationException when a question was already
-        * shown
-        * and is now being answered.
-        */
-       @Modifying
-       @Transactional
-       @Query(value = "INSERT INTO user_question_history " +
-                     "(user_id, question_id, question_ref_id, answered_at, is_correct, last_answer_correct, " +
-                     " time_taken_seconds, last_shown_at, last_shown_type, " +
-                     " times_shown, times_correct, times_wrong, created_at, updated_at) " +
-                     "VALUES (:userId, :questionId, :questionId, :answeredAt, :isCorrect, :isCorrect, " +
-                     "        :timeTaken, :answeredAt, 'PRACTICE', " +
-                     "        1, CASE WHEN :isCorrect THEN 1 ELSE 0 END, CASE WHEN :isCorrect THEN 0 ELSE 1 END, NOW(), NOW()) "
-                     +
-                     "ON DUPLICATE KEY UPDATE " +
-                     "  answered_at       = :answeredAt, " +
-                     "  is_correct        = :isCorrect, " +
-                     "  last_answer_correct = :isCorrect, " +
-                     "  time_taken_seconds = :timeTaken, " +
-                     "  last_shown_at     = :answeredAt, " +
-                     "  last_shown_type   = 'PRACTICE', " +
-                     "  times_shown       = times_shown + 1, " +
-                     "  times_correct     = times_correct + CASE WHEN :isCorrect THEN 1 ELSE 0 END, " +
-                     "  times_wrong       = times_wrong + CASE WHEN :isCorrect THEN 0 ELSE 1 END, " +
-                     "  updated_at        = NOW()", nativeQuery = true)
-       void upsertQuestionAnswered(@Param("userId") Long userId,
-                     @Param("questionId") Long questionId,
-                     @Param("answeredAt") LocalDateTime answeredAt,
-                     @Param("isCorrect") boolean isCorrect,
-                     @Param("timeTaken") int timeTaken);
 }

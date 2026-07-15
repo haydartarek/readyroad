@@ -1,6 +1,7 @@
 package com.readyroad.readyroadbackend.domain.repository;
 
 import com.readyroad.readyroadbackend.domain.entity.QuizQuestion;
+import com.readyroad.readyroadbackend.domain.repository.custom.QuizQuestionRandomRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.EntityGraph;
@@ -19,7 +20,7 @@ import java.util.Optional;
  * Provides data access for quiz questions with smart query methods
  */
 @Repository
-public interface QuizQuestionRepository extends JpaRepository<QuizQuestion, Long> {
+public interface QuizQuestionRepository extends JpaRepository<QuizQuestion, Long>, QuizQuestionRandomRepository {
 
         /**
          * Find all active quiz questions
@@ -44,26 +45,6 @@ public interface QuizQuestionRepository extends JpaRepository<QuizQuestion, Long
                         QuizQuestion.DifficultyLevel difficultyLevel);
 
         /**
-         * Get random questions (MySQL RAND())
-         * Filters: isActive=true AND status=PUBLISHED
-         */
-        @Query("SELECT qq FROM QuizQuestion qq WHERE qq.isActive = true AND qq.status = 'PUBLISHED' ORDER BY RAND()")
-        List<QuizQuestion> findRandomQuestions();
-
-        /**
-         * Get random questions with options loaded (EAGER fetch)
-         * Step 1: Get random question IDs using native query
-         *
-         * @param limit Maximum number of questions to return
-         * @return List of random question IDs
-         */
-        @Query(value = "SELECT q.id FROM quiz_questions q " +
-                        "WHERE q.is_active = true AND q.status = 'PUBLISHED' " +
-                        "ORDER BY RAND() " +
-                        "LIMIT :limit", nativeQuery = true)
-        List<Long> findRandomQuestionIds(@Param("limit") int limit);
-
-        /**
          * Get random questions with options loaded (EAGER fetch)
          * Step 2: Fetch full questions with options by IDs
          * Uses @EntityGraph for reliable eager loading
@@ -74,50 +55,6 @@ public interface QuizQuestionRepository extends JpaRepository<QuizQuestion, Long
         @EntityGraph(attributePaths = { "options" })
         @Query("SELECT qq FROM QuizQuestion qq WHERE qq.id IN :ids")
         List<QuizQuestion> findAllByIdWithOptions(@Param("ids") List<Long> ids);
-
-        /**
-         * Get random questions by category
-         */
-        @Query("SELECT qq FROM QuizQuestion qq WHERE qq.category.id = :categoryId " +
-                        "AND qq.isActive = true AND qq.status = 'PUBLISHED' ORDER BY RAND()")
-        List<QuizQuestion> findRandomQuestionsByCategory(@Param("categoryId") Long categoryId);
-
-        /**
-         * Get random questions by category with options loaded (EAGER fetch)
-         * Step 1: Get random question IDs by category using native query
-         *
-         * @param categoryId Category ID to filter by
-         * @param limit      Maximum number of questions to return
-         * @return List of random question IDs from category
-         */
-        @Query(value = "SELECT q.id FROM quiz_questions q " +
-                        "WHERE q.category_id = :categoryId AND q.is_active = true AND q.status = 'PUBLISHED' " +
-                        "ORDER BY RAND() " +
-                        "LIMIT :limit", nativeQuery = true)
-        List<Long> findRandomQuestionIdsByCategory(@Param("categoryId") Long categoryId,
-                        @Param("limit") int limit);
-
-        /**
-         * Get random questions by difficulty
-         */
-        @Query("SELECT qq FROM QuizQuestion qq WHERE qq.difficultyLevel = :difficulty " +
-                        "AND qq.isActive = true AND qq.status = 'PUBLISHED' ORDER BY RAND()")
-        List<QuizQuestion> findRandomQuestionsByDifficulty(
-                        @Param("difficulty") QuizQuestion.DifficultyLevel difficulty);
-
-        /**
-         * Theory exam: Get random question IDs by difficulty level (native, for 2-step
-         * pattern)
-         *
-         * @param difficulty Difficulty level string ("EASY", "MEDIUM", "HARD")
-         * @param limit      Maximum number of IDs to return
-         * @return List of random question IDs with given difficulty
-         */
-        @Query(value = "SELECT q.id FROM quiz_questions q " +
-                        "WHERE q.difficulty_level = :difficulty AND q.is_active = true AND q.status = 'PUBLISHED' " +
-                        "ORDER BY RAND() LIMIT :limit", nativeQuery = true)
-        List<Long> findRandomQuestionIdsByDifficulty(@Param("difficulty") String difficulty,
-                        @Param("limit") int limit);
 
         /**
          * Theory exam answer check: fetch questions with options AND category eagerly

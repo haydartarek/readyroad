@@ -33,6 +33,9 @@ COPY --from=build /app/target/*.jar app.jar
 # Copy official traffic sign images into the backend image.
 COPY public/images/signs ./public/images/signs
 
+# The sign importer intentionally reads one directory per sign from disk.
+COPY --from=build /app/src/main/resources/data/signs_import ./data/signs_import
+
 # Install su-exec for privilege drop in entrypoint
 RUN apk add --no-cache su-exec
 
@@ -54,7 +57,8 @@ EXPOSE 8890
 
 # Environment variables (with defaults)
 ENV SPRING_PROFILES_ACTIVE=prod \
-    JAVA_OPTS="-Xms512m -Xmx1024m" \
+    READYROAD_SIGNS_IMPORT_PATH=/app/data/signs_import \
+    JAVA_OPTS="-XX:+UseContainerSupport -XX:InitialRAMPercentage=15.0 -XX:MaxRAMPercentage=55.0 -XX:+UseSerialGC" \
     TZ=UTC
 
 # Run application (via entrypoint script that fixes volume permissions first)

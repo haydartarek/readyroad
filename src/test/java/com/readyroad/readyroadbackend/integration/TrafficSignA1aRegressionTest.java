@@ -2,8 +2,10 @@ package com.readyroad.readyroadbackend.integration;
 
 import com.readyroad.readyroadbackend.domain.entity.RoadSign;
 import com.readyroad.readyroadbackend.domain.entity.SignImportRun;
+import com.readyroad.readyroadbackend.domain.entity.SignQuestion;
 import com.readyroad.readyroadbackend.domain.enums.SignCategory;
 import com.readyroad.readyroadbackend.domain.repository.RoadSignRepository;
+import com.readyroad.readyroadbackend.domain.repository.SignQuestionRepository;
 import com.readyroad.readyroadbackend.dto.response.TrafficSignResponse;
 import com.readyroad.readyroadbackend.service.CanonicalRoadSignSyncService;
 import com.readyroad.readyroadbackend.service.CanonicalSignCatalogService;
@@ -63,6 +65,9 @@ class TrafficSignA1aRegressionTest {
 
     @Autowired
     private RoadSignRepository RoadSignRepository;
+
+    @Autowired
+    private SignQuestionRepository signQuestionRepository;
 
     @Autowired
     private SignQuizImportService signQuizImportService;
@@ -302,12 +307,39 @@ class TrafficSignA1aRegressionTest {
     class SignQuizImportGuard {
 
         @Test
-        @DisplayName("Given sign quiz data already exists, When import runs again, Then it completes without duplicate choice-order errors")
+        @DisplayName("Given canonical data already exists, When import runs again, Then no rows change and real drift remains detectable")
         void sign_quiz_import_is_idempotent() {
-            SignImportRun run = signQuizImportService.runImport("TEST_IDEMPOTENT");
+            SignImportRun firstRun = signQuizImportService.runImport("TEST_IDEMPOTENT_INITIAL");
+            SignImportRun secondRun = signQuizImportService.runImport("TEST_IDEMPOTENT_REPEAT");
 
-            assertThat(run.getStatus()).isEqualTo("SUCCESS");
-            assertThat(run.getErrorsCount()).isZero();
+            assertThat(firstRun.getStatus()).isEqualTo("SUCCESS");
+            assertThat(secondRun.getStatus()).isEqualTo("SUCCESS");
+            assertThat(secondRun.getSignsCreated()).isZero();
+            assertThat(secondRun.getSignsUpdated()).isZero();
+            assertThat(secondRun.getQuestionsCreated()).isZero();
+            assertThat(secondRun.getQuestionsUpdated()).isZero();
+            assertThat(secondRun.getExamsCreated()).isZero();
+            assertThat(secondRun.getErrorsCount()).isZero();
+
+            RoadSign driftedSign = RoadSignRepository.findBySignCode(SIGN_CODE).orElseThrow();
+            driftedSign.setNameEn("DRIFTED SIGN NAME");
+            RoadSignRepository.saveAndFlush(driftedSign);
+
+            SignQuestion driftedQuestion = signQuestionRepository.findByQuestionRef("A1a_Q01").orElseThrow();
+            driftedQuestion.setQuestionEn("DRIFTED QUESTION TEXT");
+            signQuestionRepository.saveAndFlush(driftedQuestion);
+
+            SignImportRun repairRun = signQuizImportService.runImport("TEST_IDEMPOTENT_DRIFT_REPAIR");
+
+            assertThat(repairRun.getStatus()).isEqualTo("SUCCESS");
+            assertThat(repairRun.getSignsCreated()).isZero();
+            assertThat(repairRun.getSignsUpdated()).isEqualTo(1);
+            assertThat(repairRun.getQuestionsCreated()).isZero();
+            assertThat(repairRun.getQuestionsUpdated()).isEqualTo(1);
+            assertThat(repairRun.getErrorsCount()).isZero();
+            assertThat(RoadSignRepository.findBySignCode(SIGN_CODE).orElseThrow().getNameEn()).isEqualTo(NAME_EN);
+            assertThat(signQuestionRepository.findByQuestionRef("A1a_Q01").orElseThrow().getQuestionEn())
+                    .isNotEqualTo("DRIFTED QUESTION TEXT");
         }
     }
 
