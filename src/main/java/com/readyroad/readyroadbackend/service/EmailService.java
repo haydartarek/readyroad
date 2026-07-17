@@ -3,10 +3,13 @@ package com.readyroad.readyroadbackend.service;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.mail.MailException;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
+import org.springframework.web.util.HtmlUtils;
+import org.springframework.web.util.UriComponentsBuilder;
 
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
@@ -39,7 +42,7 @@ public class EmailService {
      */
     @Async
     public void sendPasswordResetEmail(String toEmail, String token, String fullName) {
-        String resetLink = frontendUrl + "/reset-password?token=" + token;
+        String resetLink = buildResetLink(token);
         String subject   = "ReadyRoad – Password Reset Request";
         String body      = buildResetEmailHtml(fullName, resetLink);
 
@@ -52,15 +55,28 @@ public class EmailService {
             helper.setText(body, true); // true = HTML
             mailSender.send(message);
             log.info("Password reset email sent to {}", toEmail);
-        } catch (MessagingException e) {
+        } catch (MessagingException | MailException e) {
             log.error("Failed to send password reset email to {}: {}", toEmail, e.getMessage());
             // Don't rethrow — email failure must not expose user-existence info
         }
     }
 
+    private String buildResetLink(String token) {
+        String baseUrl = frontendUrl.endsWith("/")
+                ? frontendUrl.substring(0, frontendUrl.length() - 1)
+                : frontendUrl;
+        return UriComponentsBuilder.fromUriString(baseUrl)
+                .path("/reset-password")
+                .queryParam("token", token)
+                .build()
+                .encode()
+                .toUriString();
+    }
+
     // ─── HTML Template ────────────────────────────────────────────────────────
 
     private String buildResetEmailHtml(String name, String resetLink) {
+        String safeName = HtmlUtils.htmlEscape(name == null || name.isBlank() ? "ReadyRoad user" : name);
         return """
                 <!DOCTYPE html>
                 <html lang="en">
@@ -128,6 +144,6 @@ public class EmailService {
                   </table>
                 </body>
                 </html>
-                """.formatted(name, resetLink, resetLink, resetLink, java.time.Year.now().getValue());
+                """.formatted(safeName, resetLink, resetLink, resetLink, java.time.Year.now().getValue());
     }
 }
