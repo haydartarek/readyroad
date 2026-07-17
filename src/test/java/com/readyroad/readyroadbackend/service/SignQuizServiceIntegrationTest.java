@@ -31,6 +31,8 @@ import com.readyroad.readyroadbackend.dto.sign.SignQuizQuestionDto;
 import com.readyroad.readyroadbackend.dto.sign.SignRandomPracticeAnswerRequest;
 import com.readyroad.readyroadbackend.dto.sign.SignRandomPracticeResultDto;
 import com.readyroad.readyroadbackend.dto.sign.SignRandomPracticeSessionDto;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -71,6 +73,12 @@ class SignQuizServiceIntegrationTest {
 
         @Autowired
         private SignQuestionRepository signQuestionRepository;
+
+        @Autowired
+        private EntityManager entityManager;
+
+        @Autowired
+        private EntityManagerFactory entityManagerFactory;
 
         @Autowired
         private SignRandomPracticeSessionRepository signRandomPracticeSessionRepository;
@@ -194,6 +202,33 @@ class SignQuizServiceIntegrationTest {
                 assertThat(signRandomPracticeQuestionRepository
                                 .findBySessionIdOrderByQuestionOrder(started.sessionId()))
                                 .hasSize(50);
+        }
+
+        @Test
+        @DisplayName("Random practice candidates eagerly load the sign and choices used by eligibility filtering")
+        void randomPracticeCandidateQueryLoadsFilteringDependencies() {
+                seedRandomPracticePool();
+                entityManager.flush();
+                entityManager.clear();
+
+                List<SignQuestion> candidates = signQuestionRepository
+                                .findAllActiveForActiveSignsByDifficulty(SignDifficulty.EASY);
+
+                assertThat(candidates).isNotEmpty();
+                assertThat(candidates)
+                                .allSatisfy(question -> {
+                                        assertThat(entityManagerFactory.getPersistenceUnitUtil()
+                                                        .isLoaded(question, "sign")).isTrue();
+                                        assertThat(entityManagerFactory.getPersistenceUnitUtil()
+                                                        .isLoaded(question, "choices")).isTrue();
+                                });
+
+                entityManager.clear();
+                assertThat(candidates)
+                                .allSatisfy(question -> {
+                                        assertThat(question.getSign().getSignCode()).isNotBlank();
+                                        assertThat(question.getDeliverableChoices()).isNotEmpty();
+                                });
         }
 
         @Test
