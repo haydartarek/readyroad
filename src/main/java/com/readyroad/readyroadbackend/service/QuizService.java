@@ -158,8 +158,8 @@ public class QuizService {
 
         log.debug("📋 Retrieved {} random question IDs for category {}", questionIds.size(), categoryId);
 
-        // Step 2: Fetch full questions with options (eager loading with @EntityGraph)
-        List<QuizQuestion> questions = quizQuestionRepository.findAllByIdWithOptions(questionIds);
+        // Step 2: Fetch every association required by the response mapper.
+        List<QuizQuestion> questions = quizQuestionRepository.findAllByIdWithOptionsAndCategory(questionIds);
 
         // Filter out questions whose options are placeholder / corrupted content
         List<QuizQuestion> validQuestions = questions.stream()
@@ -170,7 +170,7 @@ public class QuizService {
                     questions.size() - validQuestions.size());
         }
 
-        log.info("✅ Generated quiz with {} questions from category {} (options eagerly loaded)",
+        log.info("✅ Generated quiz with {} questions from category {} (options and categories eagerly loaded)",
                 validQuestions.size(), categoryId);
         return validQuestions;
     }

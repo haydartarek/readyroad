@@ -49,6 +49,7 @@ class RandomQuizEndpointTest {
     private QuizQuestionRepository quizQuestionRepository;
 
     private MockMvc mockMvc;
+    private Long categoryId;
 
     @BeforeEach
     void setUp() {
@@ -59,6 +60,7 @@ class RandomQuizEndpointTest {
         quizQuestionRepository.deleteAll();
         Category category = categoryRepository.findByCode("RANDOM")
                 .orElseGet(() -> categoryRepository.saveAndFlush(createCategory()));
+        categoryId = category.getId();
 
         for (int index = 1; index <= 3; index++) {
             quizQuestionRepository.save(createPublishedQuestion(category, index));
@@ -69,6 +71,29 @@ class RandomQuizEndpointTest {
     @Test
     void returnsMappedCategoriesAndOptionsAfterTheServiceTransactionCloses() throws Exception {
         MvcResult result = mockMvc.perform(get("/api/quiz/random").param("count", "2")
+                        .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.length()").value(2))
+                .andExpect(jsonPath("$[*].categoryCode")
+                        .value(org.hamcrest.Matchers.everyItem(org.hamcrest.Matchers.equalTo("RANDOM"))))
+                .andExpect(jsonPath("$[*].categoryNameEn")
+                        .value(org.hamcrest.Matchers.everyItem(
+                                org.hamcrest.Matchers.equalTo("Random quiz category"))))
+                .andExpect(jsonPath("$[*].options.length()")
+                        .value(org.hamcrest.Matchers.everyItem(org.hamcrest.Matchers.equalTo(3))))
+                .andReturn();
+
+        JsonNode response = objectMapper.readTree(result.getResponse().getContentAsString());
+        Set<Long> ids = new HashSet<>();
+        response.forEach(question -> ids.add(question.get("id").asLong()));
+
+        assertThat(ids).hasSize(2);
+    }
+
+    @Test
+    void categoryQuizReturnsMappedCategoryAndOptionsAfterTheServiceTransactionCloses() throws Exception {
+        MvcResult result = mockMvc.perform(get("/api/quiz/category/{categoryId}", categoryId)
+                        .param("count", "2")
                         .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.length()").value(2))
