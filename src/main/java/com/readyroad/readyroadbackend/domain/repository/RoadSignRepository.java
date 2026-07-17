@@ -63,7 +63,7 @@ public interface RoadSignRepository extends JpaRepository<RoadSign, Long> {
 
         @Query("SELECT r FROM RoadSign r WHERE " +
                         "(:cat IS NULL OR r.category = :cat) AND " +
-                        "(:q IS NULL OR " +
+                        "(:q IS NULL OR :q = '' OR " +
                         " LOWER(r.signCode) LIKE LOWER(CONCAT('%', :q, '%')) OR " +
                         " LOWER(r.nameNl) LIKE LOWER(CONCAT('%', :q, '%')) OR " +
                         " LOWER(r.nameEn) LIKE LOWER(CONCAT('%', :q, '%')) OR " +

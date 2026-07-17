@@ -12,7 +12,9 @@ import com.readyroad.readyroadbackend.domain.repository.CategoryRepository;
 import com.readyroad.readyroadbackend.domain.repository.DevExamCategoryRepository;
 import com.readyroad.readyroadbackend.domain.repository.DevExamQuestionRepository;
 import com.readyroad.readyroadbackend.domain.repository.QuizQuestionRepository;
+import com.readyroad.readyroadbackend.domain.repository.RoadSignRepository;
 import com.readyroad.readyroadbackend.domain.repository.UserQuestionHistoryRepository;
+import com.readyroad.readyroadbackend.domain.repository.UserErrorPatternRepository;
 import com.readyroad.readyroadbackend.domain.repository.UserRepository;
 import com.readyroad.readyroadbackend.domain.repository.UserWeakAreaRepository;
 import jakarta.persistence.EntityManager;
@@ -43,6 +45,9 @@ abstract class AbstractDatabasePortableRepositoryIntegrationTest {
     private QuizQuestionRepository quizQuestionRepository;
 
     @Autowired
+    private RoadSignRepository roadSignRepository;
+
+    @Autowired
     private DevExamCategoryRepository devExamCategoryRepository;
 
     @Autowired
@@ -53,6 +58,9 @@ abstract class AbstractDatabasePortableRepositoryIntegrationTest {
 
     @Autowired
     private UserQuestionHistoryRepository userQuestionHistoryRepository;
+
+    @Autowired
+    private UserErrorPatternRepository userErrorPatternRepository;
 
     @Autowired
     private UserWeakAreaRepository userWeakAreaRepository;
@@ -114,6 +122,33 @@ abstract class AbstractDatabasePortableRepositoryIntegrationTest {
         user = userRepository.saveAndFlush(user);
 
         entityManager.clear();
+    }
+
+    @Test
+    void adminCatalogQueriesAcceptMissingOptionalFilters() {
+        assertThat(roadSignRepository.findAdminSigns(null, null, PageRequest.of(0, 20)))
+                .isNotNull();
+
+        assertThat(quizQuestionRepository.findAdminQuestions(
+                null, null, null, null, PageRequest.of(0, 20)))
+                .isNotEmpty();
+    }
+
+    @Test
+    void signErrorPatternInsertPopulatesRequiredPolymorphicReference() {
+        Long questionId = eligibleQuestionIds.iterator().next();
+
+        userErrorPatternRepository.insertSignError(
+                user.getId(), "SIGN_CONFUSION", questionId, "PORTABLE");
+
+        assertThat(userErrorPatternRepository.findAllByUserIdOrderByOccurredAtDesc(user.getId()))
+                .singleElement()
+                .satisfies(pattern -> {
+                    assertThat(pattern.getQuestionType()).isEqualTo("PRACTICE");
+                    assertThat(pattern.getQuestionRefType()).isEqualTo("SIGN");
+                    assertThat(pattern.getQuestionRefId()).isEqualTo(questionId);
+                    assertThat(pattern.getTrafficSignCode()).isEqualTo("PORTABLE");
+                });
     }
 
     @Test

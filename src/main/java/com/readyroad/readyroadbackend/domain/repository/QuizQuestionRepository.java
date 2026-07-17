@@ -159,7 +159,7 @@ public interface QuizQuestionRepository extends JpaRepository<QuizQuestion, Long
                         "(:hasImage IS NULL OR " +
                         " (:hasImage = true AND LENGTH(TRIM(COALESCE(qq.contentImageUrl, ''))) > 0) OR " +
                         " (:hasImage = false AND LENGTH(TRIM(COALESCE(qq.contentImageUrl, ''))) = 0)) AND " +
-                        "(:q IS NULL OR " +
+                        "(:q IS NULL OR :q = '' OR " +
                         " LOWER(qq.questionEn) LIKE LOWER(CONCAT('%', :q, '%')) OR " +
                         " LOWER(qq.questionAr) LIKE LOWER(CONCAT('%', :q, '%')) OR " +
                         " LOWER(qq.questionNl) LIKE LOWER(CONCAT('%', :q, '%')) OR " +

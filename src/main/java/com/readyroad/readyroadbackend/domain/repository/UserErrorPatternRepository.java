@@ -40,15 +40,17 @@ public interface UserErrorPatternRepository extends JpaRepository<UserErrorPatte
         /**
          * Insert a sign-specific error pattern using raw native SQL.
          * question_type='PRACTICE' is a fixed literal (matches the DB ENUM).
-         * question_ref_id holds the sign_questions.id.
-         * traffic_sign_id and category_id are intentionally left NULL
-         * (sign-quiz bypasses the legacy FK columns).
+         * question_ref_type='SIGN' identifies the polymorphic reference.
+         * question_ref_id holds the sign_questions.id and traffic_sign_code keeps
+         * the stable canonical sign identifier used by analytics.
          */
         @Modifying
         @Query(nativeQuery = true, value = """
                         INSERT INTO user_error_patterns
-                            (user_id, error_type, question_type, question_ref_id, occurred_at)
-                        VALUES (:userId, :errorType, 'PRACTICE', :questionId, NOW())
+                            (user_id, error_type, question_type, question_ref_type,
+                             question_ref_id, traffic_sign_code, occurred_at)
+                        VALUES (:userId, :errorType, 'PRACTICE', 'SIGN',
+                                :questionId, :signCode, NOW())
                         """)
         void insertSignError(@Param("userId") Long userId,
                         @Param("errorType") String errorType,
