@@ -13,17 +13,32 @@
             "text": "Een rijstrook valt weg en het verkeer moet samenvoegen",
             "is_correct": true
           },
-          { "text": "De rijbaan wordt breder", "is_correct": false },
-          { "text": "Inhalen is verboden", "is_correct": false }
+          {
+            "text": "De rijbaan wordt breder",
+            "is_correct": false
+          },
+          {
+            "text": "Inhalen is verboden",
+            "is_correct": false
+          }
         ],
         "explanation": "F97 duidt aan dat een rijstrook versmalt. Een van de rijstroken eindigt en het verkeer moet samenvoegen naar de overblijvende rijstrook."
       },
       "EN": {
         "question": "What does sign F97 mean?",
         "choices": [
-          { "text": "A lane ends and traffic must merge", "is_correct": true },
-          { "text": "The road becomes wider", "is_correct": false },
-          { "text": "Overtaking is prohibited", "is_correct": false }
+          {
+            "text": "A lane ends and traffic must merge",
+            "is_correct": true
+          },
+          {
+            "text": "The road becomes wider",
+            "is_correct": false
+          },
+          {
+            "text": "Overtaking is prohibited",
+            "is_correct": false
+          }
         ],
         "explanation": "F97 indicates that a lane is narrowing. One of the lanes ends and traffic must merge into the remaining lane."
       },
@@ -34,8 +49,14 @@
             "text": "Une voie disparait et la circulation doit fusionner",
             "is_correct": true
           },
-          { "text": "La route s elargit", "is_correct": false },
-          { "text": "Le depassement est interdit", "is_correct": false }
+          {
+            "text": "La route s elargit",
+            "is_correct": false
+          },
+          {
+            "text": "Le depassement est interdit",
+            "is_correct": false
+          }
         ],
         "explanation": "F97 indique un retrecissement de voie. L une des voies se termine et la circulation doit fusionner dans la voie restante."
       },
@@ -46,8 +67,14 @@
             "text": "تنتهي حارة مرور ويجب على السائقين الاندماج",
             "is_correct": true
           },
-          { "text": "الطريق يتسع", "is_correct": false },
-          { "text": "التجاوز محظور", "is_correct": false }
+          {
+            "text": "الطريق يتسع",
+            "is_correct": false
+          },
+          {
+            "text": "التجاوز محظور",
+            "is_correct": false
+          }
         ],
         "explanation": "تشير F97 إلى تضييق مسار السير. تنتهي إحدى الحارات ويجب على السائقين الاندماج في الحارة المتبقية."
       }
@@ -63,45 +90,72 @@
       "NL": {
         "question": "Welk bord geeft aan dat een rijstrook wegvalt en verkeer moet samenvoegen?",
         "choices": [
-          { "text": "F97 rijstrook versmalling", "is_correct": true },
+          {
+            "text": "F97 rijstrook versmalling",
+            "is_correct": true
+          },
           {
             "text": "F45 verplichte rijrichting rechtdoor",
             "is_correct": false
           },
-          { "text": "A7c rijbaanversmalling", "is_correct": false }
+          {
+            "text": "A7c rijbaanversmalling",
+            "is_correct": false
+          }
         ],
         "explanation": "F97 is het informatief bord dat een rijstrookversmalling aanduidt. A7c is een gevarenbord voor een rijbaanversmalling maar heeft een andere functie en plaatsing."
       },
       "EN": {
         "question": "Which sign indicates that a lane ends and traffic must merge?",
         "choices": [
-          { "text": "F97 lane narrowing", "is_correct": true },
+          {
+            "text": "F97 lane narrowing",
+            "is_correct": true
+          },
           {
             "text": "F45 compulsory direction straight ahead",
             "is_correct": false
           },
-          { "text": "A7c road narrows", "is_correct": false }
+          {
+            "text": "A7c road narrows",
+            "is_correct": false
+          }
         ],
         "explanation": "F97 is the information sign indicating a lane narrowing. A7c is a danger sign for road narrowing but has a different function and position."
       },
       "FR": {
         "question": "Quel panneau indique qu une voie disparait et que la circulation doit fusionner ?",
         "choices": [
-          { "text": "F97 retrecissement de voie", "is_correct": true },
+          {
+            "text": "F97 retrecissement de voie",
+            "is_correct": true
+          },
           {
             "text": "F45 direction obligatoire tout droit",
             "is_correct": false
           },
-          { "text": "A7c retrecissement de la chaussee", "is_correct": false }
+          {
+            "text": "A7c retrecissement de la chaussee",
+            "is_correct": false
+          }
         ],
         "explanation": "F97 est le panneau d information indiquant un retrecissement de voie. A7c est un panneau de danger pour le retrecissement de chaussee mais a une fonction et un placement differents."
       },
       "AR": {
         "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
         "choices": [
-          { "text": "F97 تضييق مسار السير", "is_correct": true },
-          { "text": "F45 اتجاه إلزامي للأمام", "is_correct": false },
-          { "text": "A7c تضييق الطريق", "is_correct": false }
+          {
+            "text": "F97 تضييق مسار السير",
+            "is_correct": true
+          },
+          {
+            "text": "F45 اتجاه إلزامي للأمام",
+            "is_correct": false
+          },
+          {
+            "text": "A7c تضييق الطريق",
+            "is_correct": false
+          }
         ],
         "explanation": "F97 هي علامة مرورية المعلومات التي تشير إلى تضييق مسار السير. A7c هي علامة مرورية خطر لتضييق الطريق ولكن لها وظيفة وموضع مختلفان."
       }
@@ -175,8 +229,14 @@
             "text": "خطر الاصطدام لأن المركبات يجب أن تندمج",
             "is_correct": true
           },
-          { "text": "خطر الانزلاق بسبب الماء على الطريق", "is_correct": false },
-          { "text": "زيادة خطر المشاة على الطريق", "is_correct": false }
+          {
+            "text": "خطر الانزلاق بسبب الماء على الطريق",
+            "is_correct": false
+          },
+          {
+            "text": "زيادة خطر المشاة على الطريق",
+            "is_correct": false
+          }
         ],
         "explanation": "عند تضييق المسار يجب على المركبات الاندماج. هذا يزيد من خطر الاصطدامات الجانبية إذا لم يقم السائقون بالاندماج بشكل صحيح."
       }
@@ -190,76 +250,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat moet je doen als je bord F97 ziet en in de wegvallende rijstrook rijdt?",
+        "question": "U rijdt bij sterk vertraagd verkeer op de rijstrook die bij F97 ophoudt. Wanneer voegt u in?",
         "choices": [
           {
-            "text": "Tijdig de ritsbeweging uitvoeren en invoegen in de doorgaande rijstrook",
+            "text": "Pas vlak voor de versmalling, veilig en volgens het ritsprincipe",
             "is_correct": true
           },
           {
-            "text": "Stoppen en wachten tot de andere rijstrook vrij is",
+            "text": "Zo vroeg mogelijk zodra u F97 ziet",
             "is_correct": false
           },
           {
-            "text": "Versnellen om zoveel mogelijk voertuigen voor te blijven",
+            "text": "Na de versmalling via de pechstrook",
             "is_correct": false
           }
         ],
-        "explanation": "Bij een rijstrookversmalling moet je de ritsbeweging toepassen. Dat betekent dat je tot aan het punt waar de rijstrook eindigt doorrijdt en dan om beurt invoegt. Je moet dit veilig en tijdig uitvoeren."
+        "explanation": "Bij sterk vertraagd verkeer schrijft artikel 12bis voor dat bestuurders op de eindigende of geblokkeerde rijstrook pas vlak voor de versmalling invoegen."
       },
       "EN": {
-        "question": "What must you do when you see sign F97 and are driving in the ending lane?",
+        "question": "In heavily slowed traffic, you are in the lane ending at F97. When do you merge?",
         "choices": [
           {
-            "text": "Perform the zipper merge in time and merge into the continuing lane",
+            "text": "Only just before the narrowing, safely and under the zipper rule",
             "is_correct": true
           },
           {
-            "text": "Stop and wait until the other lane is clear",
+            "text": "As early as possible when you first see F97",
             "is_correct": false
           },
           {
-            "text": "Accelerate to stay ahead of as many vehicles as possible",
+            "text": "After the narrowing via the hard shoulder",
             "is_correct": false
           }
         ],
-        "explanation": "At a lane narrowing you must apply the zipper merge rule. This means you continue to the point where the lane ends and then merge alternately. You must do this safely and in time."
+        "explanation": "In heavily slowed traffic, Article 12bis requires drivers in the ending or blocked lane to merge only just before the narrowing."
       },
       "FR": {
-        "question": "Que devez-vous faire lorsque vous voyez le panneau F97 et que vous conduisez dans la voie qui disparait ?",
+        "question": "Dans une circulation fortement ralentie, vous êtes sur la bande qui prend fin à F97. Quand vous insérez-vous ?",
         "choices": [
           {
-            "text": "Effectuer la fermeture eclair a temps et vous inserer dans la voie continue",
+            "text": "Juste avant le rétrécissement, en sécurité et selon la tirette",
             "is_correct": true
           },
           {
-            "text": "Vous arreter et attendre que l autre voie soit libre",
+            "text": "Le plus tôt possible dès que vous voyez F97",
             "is_correct": false
           },
           {
-            "text": "Accelerer pour devancer le plus de vehicules possible",
+            "text": "Après le rétrécissement par la bande d'arrêt",
             "is_correct": false
           }
         ],
-        "explanation": "Lors d un retrecissement de voie vous devez appliquer la regle de la fermeture eclair. Cela signifie que vous continuez jusqu au point ou la voie se termine puis vous vous inserez alternativement. Vous devez le faire en toute securite et a temps."
+        "explanation": "Lorsque la circulation est fortement ralentie, l'article 12bis impose aux conducteurs de la bande qui prend fin ou est obstruée de s'insérer juste avant le rétrécissement."
       },
       "AR": {
-        "question": "ماذا يجب أن تفعل عندما ترى علامة مرورية F97 وأنت تسير في الحارة المنتهية؟",
+        "question": "في حركة متباطئة بشدة أنت في الحارة التي تنتهي عند F97. متى تندمج؟",
         "choices": [
           {
-            "text": "تنفيذ حركة السحاب في الوقت المناسب والاندماج في الحارة المستمرة",
+            "text": "مباشرة قبل التضيق وبأمان ووفق الاندماج المتناوب",
             "is_correct": true
           },
           {
-            "text": "التوقف والانتظار حتى تخلو الحارة الأخرى",
+            "text": "بأبكر وقت بمجرد رؤية F97",
             "is_correct": false
           },
           {
-            "text": "التسارع للبقاء أمام أكبر عدد من المركبات",
+            "text": "بعد التضيق عبر حارة الطوارئ",
             "is_correct": false
           }
         ],
-        "explanation": "عند تضييق المسار يجب تطبيق قاعدة الاندماج المتناوب (السحاب). هذا يعني الاستمرار إلى النقطة التي تنتهي فيها الحارة ثم الاندماج بالتناوب. يجب القيام بذلك بأمان وفي الوقت المناسب."
+        "explanation": "عند التباطؤ الشديد تفرض المادة 12bis على سائقي الحارة المنتهية أو المسدودة الاندماج مباشرة قبل التضيق."
       }
     }
   },
@@ -271,73 +331,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Hoe moet je als bestuurder in de doorgaande rijstrook reageren bij een F97 rijstrookversmalling?",
+        "question": "Hoe reageert u in de vrije rijstrook bij F97 wanneer het verkeer sterk vertraagd is?",
         "choices": [
           {
-            "text": "Voldoende ruimte laten voor invoegend verkeer en de ritsbeweging faciliteren",
+            "text": "U verleent vlak voor de versmalling beurtelings voorrang aan één invoegende bestuurder",
             "is_correct": true
           },
           {
-            "text": "Je snelheid verhogen zodat er minder ruimte ontstaat voor invoegers",
+            "text": "U sluit elke ruimte zodat niemand kan invoegen",
             "is_correct": false
           },
           {
-            "text": "Naar de wegvallende rijstrook rijden om die te gebruiken",
+            "text": "U geeft alle voertuigen van de eindigende rijstrook tegelijk voorrang",
             "is_correct": false
           }
         ],
-        "explanation": "De bestuurder in de doorgaande rijstrook moet medewerking verlenen aan de ritsbeweging door voldoende ruimte te laten voor het invoegend verkeer. Dit zorgt voor een vlotte en veilige doorstroom."
+        "explanation": "Bij sterk vertraagd verkeer laat de vrije rijstrook vlak voor de versmalling beurtelings één bestuurder invoegen."
       },
       "EN": {
-        "question": "How must you as a driver in the continuing lane react at an F97 lane narrowing?",
+        "question": "In the free lane at F97, how do you react when traffic is heavily slowed?",
         "choices": [
           {
-            "text": "Leave enough space for merging traffic and facilitate the zipper merge",
+            "text": "Just before the narrowing, alternately give way to one merging driver",
             "is_correct": true
           },
           {
-            "text": "Increase your speed so there is less space for merging vehicles",
+            "text": "Close every gap so nobody can merge",
             "is_correct": false
           },
-          { "text": "Move to the ending lane to use it", "is_correct": false }
+          {
+            "text": "Give way to all vehicles in the ending lane at once",
+            "is_correct": false
+          }
         ],
-        "explanation": "The driver in the continuing lane must cooperate with the zipper merge by leaving sufficient space for merging traffic. This ensures smooth and safe traffic flow."
+        "explanation": "In heavily slowed traffic, the free lane alternately lets one driver merge just before the narrowing."
       },
       "FR": {
-        "question": "Comment devez-vous en tant que conducteur dans la voie continue reagir lors d un retrecissement F97 ?",
+        "question": "Sur la bande libre à F97, comment réagissez-vous lorsque la circulation est fortement ralentie ?",
         "choices": [
           {
-            "text": "Laisser suffisamment d espace pour le trafic qui s insere et faciliter la fermeture eclair",
+            "text": "Juste avant le rétrécissement, céder alternativement le passage à un conducteur qui s'insère",
             "is_correct": true
           },
           {
-            "text": "Augmenter votre vitesse pour qu il y ait moins d espace pour les vehicules qui s inserent",
+            "text": "Fermer tout espace pour empêcher l'insertion",
             "is_correct": false
           },
           {
-            "text": "Vous deplacer vers la voie qui disparait pour l utiliser",
+            "text": "Céder en une fois à tous les véhicules de la bande qui prend fin",
             "is_correct": false
           }
         ],
-        "explanation": "Le conducteur dans la voie continue doit cooperer avec la fermeture eclair en laissant suffisamment d espace pour le trafic qui s insere. Cela assure un flux de trafic fluide et sur."
+        "explanation": "Lorsque la circulation est fortement ralentie, la bande libre laisse alternativement un conducteur s'insérer juste avant le rétrécissement."
       },
       "AR": {
-        "question": "كيف يجب أن تتصرف كسائق في الحارة المستمرة عند تضييق مسار F97؟",
+        "question": "كيف تتصرف في الحارة الحرة عند F97 عندما تكون الحركة متباطئة بشدة؟",
         "choices": [
           {
-            "text": "ترك مساحة كافية للمركبات المندمجة وتسهيل حركة الاندماج المتناوب",
+            "text": "مباشرة قبل التضيق تسمح بالتناوب لسائق واحد بالاندماج",
             "is_correct": true
           },
           {
-            "text": "زيادة السرعة لتقليل المساحة للمركبات المندمجة",
+            "text": "تغلق كل فراغ كي لا يندمج أحد",
             "is_correct": false
           },
           {
-            "text": "التحرك إلى الحارة المنتهية لاستخدامها",
+            "text": "تعطي جميع مركبات الحارة المنتهية الأولوية دفعة واحدة",
             "is_correct": false
           }
         ],
-        "explanation": "يجب على السائق في الحارة المستمرة التعاون مع حركة الاندماج المتناوب بترك مساحة كافية للمركبات المندمجة. هذا يضمن تدفق مرور سلس وآمن."
+        "explanation": "عند التباطؤ الشديد تسمح الحارة الحرة بالتناوب لسائق واحد بالاندماج مباشرة قبل التضيق."
       }
     }
   },
@@ -349,76 +412,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat is de ritsregel bij een rijstrookversmalling (F97)?",
+        "question": "Wanneer geldt de wettelijke ritsplicht bij de door F97 aangeduide versmalling?",
         "choices": [
           {
-            "text": "Voertuigen wisselen om beurten in: een uit de doorgaande rijstrook dan een uit de wegvallende rijstrook",
+            "text": "Wanneer het verkeer sterk vertraagd is en een rijstrook ophoudt of verder rijden erop wordt verhinderd",
             "is_correct": true
           },
           {
-            "text": "De rijstrook die het eerst vol is heeft altijd voorrang",
+            "text": "Bij elke F97, ook wanneer het verkeer vrij doorrijdt",
             "is_correct": false
           },
           {
-            "text": "Voertuigen in de wegvallende rijstrook moeten stoppen en wachten",
+            "text": "Alleen 's nachts",
             "is_correct": false
           }
         ],
-        "explanation": "De ritsregel bepaalt dat voertuigen bij een rijstrookversmalling om beurten invoegen zoals de tanden van een rits. Een voertuig uit de doorgaande rijstrook laat er een in vanuit de wegvallende rijstrook. Dit zorgt voor een eerlijke en efficiënte doorstroom."
+        "explanation": "Artikel 12bis koppelt ritsen uitdrukkelijk aan sterk vertraagd verkeer. Buiten die situatie gelden de gewone regels voor rijstrookwissel en manoeuvres."
       },
       "EN": {
-        "question": "What is the zipper rule at a lane narrowing (F97)?",
+        "question": "When does the statutory zipper rule apply at the narrowing indicated by F97?",
         "choices": [
           {
-            "text": "Vehicles alternate merging: one from the continuing lane then one from the ending lane",
+            "text": "When traffic is heavily slowed and a lane ends or further travel on it is blocked",
             "is_correct": true
           },
           {
-            "text": "The lane that fills up first always has priority",
+            "text": "At every F97 even when traffic flows freely",
             "is_correct": false
           },
           {
-            "text": "Vehicles in the ending lane must stop and wait",
+            "text": "Only at night",
             "is_correct": false
           }
         ],
-        "explanation": "The zipper rule states that at a lane narrowing vehicles merge alternately like the teeth of a zip. One vehicle from the continuing lane lets one in from the ending lane. This ensures fair and efficient traffic flow."
+        "explanation": "Article 12bis expressly links zipper merging to heavily slowed traffic. Outside that situation, the ordinary lane-change and manoeuvre rules apply."
       },
       "FR": {
-        "question": "Quelle est la regle de la fermeture eclair lors d un retrecissement de voie (F97) ?",
+        "question": "Quand la règle légale de la tirette s'applique-t-elle au rétrécissement indiqué par F97 ?",
         "choices": [
           {
-            "text": "Les vehicules s inserent alternativement : un de la voie continue puis un de la voie qui disparait",
+            "text": "Lorsque la circulation est fortement ralentie et qu'une bande prend fin ou que la poursuite sur celle-ci est empêchée",
             "is_correct": true
           },
           {
-            "text": "La voie qui se remplit en premier a toujours la priorite",
+            "text": "À chaque F97 même lorsque la circulation est fluide",
             "is_correct": false
           },
           {
-            "text": "Les vehicules dans la voie qui disparait doivent s arreter et attendre",
+            "text": "Uniquement la nuit",
             "is_correct": false
           }
         ],
-        "explanation": "La regle de la fermeture eclair stipule que lors d un retrecissement de voie les vehicules fusionnent alternativement comme les dents d une fermeture eclair. Un vehicule de la voie continue en laisse entrer un de la voie qui disparait. Cela assure un flux de trafic equitable et efficace."
+        "explanation": "L'article 12bis lie expressément la tirette à une circulation fortement ralentie. En dehors de cette situation, les règles ordinaires de changement de bande et de manœuvre s'appliquent."
       },
       "AR": {
-        "question": "ما هي قاعدة الاندماج المتناوب (السحاب) عند تضييق المسار (F97)؟",
+        "question": "متى تطبق قاعدة الاندماج المتناوب القانونية عند تضيق F97؟",
         "choices": [
           {
-            "text": "تتناوب المركبات في الاندماج: واحدة من الحارة المستمرة ثم واحدة من الحارة المنتهية",
+            "text": "عندما تكون الحركة متباطئة بشدة وتنتهي حارة أو يُمنع استمرار السير فيها",
             "is_correct": true
           },
           {
-            "text": "الحارة التي تمتلئ أولاً لها الأولوية دائماً",
+            "text": "عند كل F97 حتى مع انسياب الحركة",
             "is_correct": false
           },
           {
-            "text": "يجب على المركبات في الحارة المنتهية التوقف والانتظار",
+            "text": "ليلًا فقط",
             "is_correct": false
           }
         ],
-        "explanation": "تنص قاعدة الاندماج المتناوب على أن المركبات عند تضييق المسار تندمج بالتناوب مثل أسنان السحاب. مركبة من الحارة المستمرة تترك مركبة من الحارة المنتهية تندمج. هذا يضمن تدفق مرور عادل وفعّال."
+        "explanation": "تربط المادة 12bis الاندماج المتناوب صراحة بحركة متباطئة بشدة. خارج هذه الحالة تطبق قواعد تغيير الحارة والمناورة العادية."
       }
     }
   },
@@ -430,60 +493,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Mag je in de wegvallende rijstrook tot helemaal aan het samenvoegpunt doorrijden alvorens in te voegen?",
+        "question": "Mag u bij sterk vertraagd verkeer de eindigende rijstrook tot vlak voor F97 gebruiken?",
         "choices": [
           {
-            "text": "Ja de ritsregel staat toe om de volledige lengte van de wegvallende rijstrook te gebruiken",
+            "text": "Ja, u voegt pas vlak voor de versmalling in en doet dit veilig volgens de ritssituatie",
             "is_correct": true
           },
           {
-            "text": "Nee je moet zo snel mogelijk invoegen zodra je bord F97 ziet",
+            "text": "Nee, u moet de rijstrook verlaten zodra F97 zichtbaar wordt",
             "is_correct": false
           }
         ],
-        "explanation": "Ja de ritsregel laat uitdrukkelijk toe dat je de volledige lengte van de wegvallende rijstrook gebruikt. Vroeg invoegen is niet verplicht en kan zelfs de doorstroom verstoren. Je voegt in bij het samenvoegpunt en dat is geen voorrangskwestie maar beurtregeling."
+        "explanation": "Bij sterk vertraagd verkeer gebruikt de invoegende bestuurder de eindigende rijstrook tot vlak voor de versmalling. Dat is de wettelijke ritssituatie, geen algemene voorrang buiten die omstandigheden."
       },
       "EN": {
-        "question": "Are you allowed to continue in the ending lane all the way to the merge point before merging?",
+        "question": "In heavily slowed traffic, may you use the ending lane until just before F97?",
         "choices": [
           {
-            "text": "Yes the zipper rule allows use of the full length of the ending lane",
+            "text": "Yes, merge only just before the narrowing and do so safely under the zipper situation",
             "is_correct": true
           },
           {
-            "text": "No you must merge as soon as possible when you see sign F97",
+            "text": "No, leave the lane as soon as F97 becomes visible",
             "is_correct": false
           }
         ],
-        "explanation": "Yes the zipper rule explicitly allows you to use the full length of the ending lane. Merging early is not mandatory and can even disrupt traffic flow. You merge at the merge point which is not a priority matter but an alternating turn system."
+        "explanation": "In heavily slowed traffic, the merging driver uses the ending lane until just before the narrowing. This is the statutory zipper situation, not general priority outside those conditions."
       },
       "FR": {
-        "question": "Etes-vous autorise a continuer dans la voie qui disparait jusqu au point de fusion avant de vous inserer ?",
+        "question": "Dans une circulation fortement ralentie, pouvez-vous utiliser la bande qui prend fin jusqu'à l'approche immédiate de F97 ?",
         "choices": [
           {
-            "text": "Oui la regle de la fermeture eclair permet d utiliser toute la longueur de la voie qui disparait",
+            "text": "Oui, insérez-vous juste avant le rétrécissement et en sécurité selon la tirette",
             "is_correct": true
           },
           {
-            "text": "Non vous devez vous inserer le plus tot possible lorsque vous voyez le panneau F97",
+            "text": "Non, quittez la bande dès que F97 devient visible",
             "is_correct": false
           }
         ],
-        "explanation": "Oui la regle de la fermeture eclair vous autorise explicitement a utiliser toute la longueur de la voie qui disparait. S inserer tot n est pas obligatoire et peut meme perturber le flux de trafic. Vous vous inserez au point de fusion ce qui n est pas une question de priorite mais un systeme de rotation."
+        "explanation": "Dans une circulation fortement ralentie, le conducteur utilise la bande qui prend fin jusqu'à l'approche du rétrécissement. Il s'agit de la situation légale de tirette, pas d'une priorité générale hors de ces conditions."
       },
       "AR": {
-        "question": "هل يُسمح لك بالاستمرار في الحارة المنتهية حتى نقطة الاندماج قبل الاندماج؟",
+        "question": "عند التباطؤ الشديد، هل يجوز استخدام الحارة المنتهية حتى قبيل F97؟",
         "choices": [
           {
-            "text": "نعم تسمح قاعدة الاندماج المتناوب باستخدام كامل طول الحارة المنتهية",
+            "text": "نعم، اندمج مباشرة قبل التضيق وبأمان وفق حالة الاندماج المتناوب",
             "is_correct": true
           },
           {
-            "text": "لا يجب الاندماج في أقرب وقت ممكن عند رؤية علامة مرورية F97",
+            "text": "لا، غادر الحارة بمجرد ظهور F97",
             "is_correct": false
           }
         ],
-        "explanation": "نعم تسمح قاعدة الاندماج المتناوب صراحةً باستخدام كامل طول الحارة المنتهية. الاندماج المبكر ليس إلزامياً وقد يعطل تدفق المرور. تندمج عند نقطة الاندماج وهذه ليست مسألة أولوية بل نظام تناوب."
+        "explanation": "عند التباطؤ الشديد يستخدم السائق الحارة المنتهية حتى قبيل التضيق. هذه حالة الاندماج المتناوب القانونية وليست أولوية عامة خارج تلك الظروف."
       }
     }
   },
@@ -495,60 +558,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Is het toegestaan om bij een F97 rijstrookversmalling de volgorde van de ritsbeweging te negeren en zonder toestemming in te voegen?",
+        "question": "Geeft F97 de eindigende rijstrook altijd voorrang wanneer het verkeer niet sterk vertraagd is?",
         "choices": [
           {
-            "text": "Nee je moet de beurtregeling respecteren en wachten tot het voertuig voor jou heeft ingevoegd",
+            "text": "Nee, buiten sterk vertraagd verkeer gelden de gewone regels voor manoeuvres, rijstrookwissels en voorrang",
             "is_correct": true
           },
           {
-            "text": "Ja als je haast hebt mag je twee achtereenvolgende voertuigen laten invoegen en dan pas gaan",
+            "text": "Ja, F97 geeft die rijstrook in alle omstandigheden voorrang",
             "is_correct": false
           }
         ],
-        "explanation": "De ritsregel vereist dat voertuigen om beurt invoegen. Je mag niet buiten de beurt invoegen. Als je in de wegvallende rijstrook rijdt moet je wachten tot het voertuig dat voor jou staat in de rits heeft ingevoegd en dan pas is het jouw beurt."
+        "explanation": "F97 duidt de versmalling aan. De bijzondere beurtelingse voorrang van artikel 12bis geldt alleen bij sterk vertraagd verkeer."
       },
       "EN": {
-        "question": "Is it allowed at an F97 lane narrowing to ignore the zipper turn order and merge without permission?",
+        "question": "Does F97 always give priority to the ending lane when traffic is not heavily slowed?",
         "choices": [
           {
-            "text": "No you must respect the turn order and wait until the vehicle in front of you has merged",
+            "text": "No, outside heavily slowed traffic the ordinary manoeuvre, lane-change and priority rules apply",
             "is_correct": true
           },
           {
-            "text": "Yes if you are in a hurry you may let two consecutive vehicles merge then go",
+            "text": "Yes, F97 gives that lane priority in every condition",
             "is_correct": false
           }
         ],
-        "explanation": "The zipper rule requires vehicles to merge alternately. You may not merge out of turn. If you are in the ending lane you must wait until the vehicle ahead of you in the zipper has merged and then it is your turn."
+        "explanation": "F97 identifies the narrowing. The special alternating priority in Article 12bis applies only in heavily slowed traffic."
       },
       "FR": {
-        "question": "Est-il permis lors d un retrecissement de voie F97 d ignorer l ordre de la fermeture eclair et de s inserer sans permission ?",
+        "question": "F97 donne-t-il toujours la priorité à la bande qui prend fin lorsque la circulation n'est pas fortement ralentie ?",
         "choices": [
           {
-            "text": "Non vous devez respecter l ordre de rotation et attendre que le vehicule devant vous se soit insere",
+            "text": "Non, hors circulation fortement ralentie les règles ordinaires de manœuvre, de changement de bande et de priorité s'appliquent",
             "is_correct": true
           },
           {
-            "text": "Oui si vous etes presse vous pouvez laisser deux vehicules consecutifs s inserer puis partir",
+            "text": "Oui, F97 donne la priorité à cette bande en toute circonstance",
             "is_correct": false
           }
         ],
-        "explanation": "La regle de la fermeture eclair exige que les vehicules fusionnent alternativement. Vous ne pouvez pas vous inserer hors tour. Si vous etes dans la voie qui disparait vous devez attendre que le vehicule devant vous dans la fermeture eclair se soit insere et c est alors votre tour."
+        "explanation": "F97 indique le rétrécissement. La priorité alternée spéciale de l'article 12bis ne s'applique que lorsque la circulation est fortement ralentie."
       },
       "AR": {
-        "question": "هل يُسمح عند تضييق مسار F97 بتجاهل ترتيب الاندماج المتناوب والاندماج دون إذن؟",
+        "question": "هل تمنح F97 دائمًا الأولوية للحارة المنتهية عندما لا تكون الحركة متباطئة بشدة؟",
         "choices": [
           {
-            "text": "لا يجب احترام ترتيب الدور والانتظار حتى تندمج المركبة أمامك",
+            "text": "لا، خارج التباطؤ الشديد تطبق قواعد المناورة وتغيير الحارة والأولوية المعتادة",
             "is_correct": true
           },
           {
-            "text": "نعم إذا كنت في عجلة يمكنك السماح لمركبتين متتاليتين بالاندماج ثم المضي",
+            "text": "نعم، تمنح F97 تلك الحارة الأولوية في كل الظروف",
             "is_correct": false
           }
         ],
-        "explanation": "تشترط قاعدة الاندماج المتناوب أن تندمج المركبات بالتناوب. لا يجوز الاندماج خارج الدور. إذا كنت في الحارة المنتهية يجب الانتظار حتى تندمج المركبة أمامك في الاندماج المتناوب ثم يأتي دورك."
+        "explanation": "تشير F97 إلى التضيق. ولا تطبق الأولوية المتناوبة الخاصة في المادة 12bis إلا عند التباطؤ الشديد."
       }
     }
   }

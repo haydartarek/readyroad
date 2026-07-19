@@ -7,61 +7,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat betekent bord F101b?",
+        "question": "Wat betekent F101b?",
         "choices": [
           {
-            "text": "Einde van het verplichte gescheiden pad voor voetgangers en fietsers",
+            "text": "Einde van de bijzondere voorbehouden-wegregeling die met F99b begon",
             "is_correct": true
           },
           {
-            "text": "Begin van een gescheiden voetgangers- en fietspad",
+            "text": "Begin van een verplicht fietspad",
             "is_correct": false
           },
-          { "text": "Einde van een gewone rijbaan", "is_correct": false }
+          {
+            "text": "Automatische toegang voor alle motorvoertuigen",
+            "is_correct": false
+          }
         ],
-        "explanation": "F101b duidt het einde aan van het verplichte gescheiden pad (F99b) waarbij voetgangers en fietsers elk een eigen zone hadden."
+        "explanation": "F101b beeindigt de bijzondere regeling; de algemene regels en andere borden blijven gelden."
       },
       "EN": {
-        "question": "What does sign F101b mean?",
+        "question": "What does F101b mean?",
         "choices": [
           {
-            "text": "End of the compulsory separated path for pedestrians and cyclists",
+            "text": "End of the special reserved-road regime that began with F99b",
             "is_correct": true
           },
           {
-            "text": "Start of a separated pedestrian and cycle path",
+            "text": "Start of a compulsory cycle path",
             "is_correct": false
           },
-          { "text": "End of a normal road", "is_correct": false }
+          {
+            "text": "Automatic access for every motor vehicle",
+            "is_correct": false
+          }
         ],
-        "explanation": "F101b indicates the end of the compulsory separated path (F99b) where pedestrians and cyclists each had their own zone."
+        "explanation": "F101b ends the special regime; the general rules and other signs remain in force."
       },
       "FR": {
-        "question": "Que signifie le panneau F101b ?",
+        "question": "Que signifie F101b ?",
         "choices": [
           {
-            "text": "Fin du chemin separe oblige pour pietons et cyclistes",
+            "text": "Fin du régime spécial de la voie réservée qui a commencé avec F99b",
             "is_correct": true
           },
           {
-            "text": "Debut d un chemin pieton et cycliste separe",
+            "text": "Début d'une piste cyclable obligatoire",
             "is_correct": false
           },
-          { "text": "Fin d une chaussee normale", "is_correct": false }
+          {
+            "text": "Acces automatique pour tout véhicule a moteur",
+            "is_correct": false
+          }
         ],
-        "explanation": "F101b indique la fin du chemin separe oblige (F99b) ou les pietons et les cyclistes avaient chacun leur propre zone."
+        "explanation": "F101b met fin au régime spécial; les règles générales et les autres signaux restent applicables."
       },
       "AR": {
-        "question": "ما معنى هذه العلامة المرورية؟",
+        "question": "ما معنى F101b؟",
         "choices": [
           {
-            "text": "نهاية المسار المنفصل الإلزامي للمشاة والدراجين",
+            "text": "نهاية نظام الطريق المخصص الخاص الذي بدأ بـF99b",
             "is_correct": true
           },
-          { "text": "بداية مسار منفصل للمشاة والدراجين", "is_correct": false },
-          { "text": "نهاية طريق عادي", "is_correct": false }
+          {
+            "text": "بداية مسار دراجات إلزامي",
+            "is_correct": false
+          },
+          {
+            "text": "دخول تلقائي لكل مركبة آلية",
+            "is_correct": false
+          }
         ],
-        "explanation": "تشير F101b إلى نهاية المسار المنفصل الإلزامي (F99b) حيث كان للمشاة والدراجين كل منهم منطقته الخاصة."
+        "explanation": "تنهي F101b النظام الخاص، وتبقى القواعد العامة والعلامات الأخرى سارية."
       }
     }
   },
@@ -73,76 +88,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat is het verschil tussen F101a en F101b?",
+        "question": "Welk bord begint de regeling die bij F101b eindigt?",
         "choices": [
           {
-            "text": "F101a beëindigt een gemengd pad voor voetgangers fietsers en ruiters; F101b beëindigt een gescheiden pad voor voetgangers en fietsers",
+            "text": "F99b",
             "is_correct": true
           },
           {
-            "text": "F101a geldt voor steden; F101b geldt voor landelijke gebieden",
+            "text": "F5",
             "is_correct": false
           },
           {
-            "text": "Er is geen verschil beide borden betekenen hetzelfde",
+            "text": "C43",
             "is_correct": false
           }
         ],
-        "explanation": "F101a is het eindbord van F99a (gemengd pad met ruiters). F101b is het eindbord van F99b (gescheiden pad zonder ruiters). De functie is gelijkaardig maar de gebruikersgroep verschilt."
+        "explanation": "F99b is het bijbehorende beginbord en F101b het eindbord."
       },
       "EN": {
-        "question": "What is the difference between F101a and F101b?",
+        "question": "Which sign starts the regime that ends at F101b?",
         "choices": [
           {
-            "text": "F101a ends a mixed path for pedestrians cyclists and horse riders; F101b ends a separated path for pedestrians and cyclists",
+            "text": "F99b",
             "is_correct": true
           },
           {
-            "text": "F101a applies in cities; F101b applies in rural areas",
+            "text": "F5",
             "is_correct": false
           },
           {
-            "text": "There is no difference both signs mean the same thing",
+            "text": "C43",
             "is_correct": false
           }
         ],
-        "explanation": "F101a is the end sign for F99a (mixed path with horse riders). F101b is the end sign for F99b (separated path without horse riders). The function is similar but the user group differs."
+        "explanation": "F99b is the corresponding start sign and F101b is the end sign."
       },
       "FR": {
-        "question": "Quelle est la difference entre F101a et F101b ?",
+        "question": "Quel signal commence le régime qui se termine à F101b ?",
         "choices": [
           {
-            "text": "F101a termine un chemin mixte pour pietons cyclistes et cavaliers ; F101b termine un chemin separe pour pietons et cyclistes",
+            "text": "F99b",
             "is_correct": true
           },
           {
-            "text": "F101a s applique dans les villes ; F101b s applique dans les zones rurales",
+            "text": "F5",
             "is_correct": false
           },
           {
-            "text": "Il n y a pas de difference les deux panneaux signifient la meme chose",
+            "text": "C43",
             "is_correct": false
           }
         ],
-        "explanation": "F101a est le panneau de fin de F99a (chemin mixte avec cavaliers). F101b est le panneau de fin de F99b (chemin separe sans cavaliers). La fonction est similaire mais le groupe d usagers differe."
+        "explanation": "F99b est le signal de debut correspondant et F101b le signal de fin."
       },
       "AR": {
-        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
+        "question": "أي علامة تبدأ النظام الذي ينتهي عند F101b؟",
         "choices": [
           {
-            "text": "F101a تنهي مساراً مختلطاً للمشاة والدراجين وراكبي الخيل؛ F101b تنهي مساراً منفصلاً للمشاة والدراجين",
+            "text": "F99b",
             "is_correct": true
           },
           {
-            "text": "F101a تنطبق في المدن؛ F101b تنطبق في المناطق الريفية",
+            "text": "F5",
             "is_correct": false
           },
           {
-            "text": "لا فرق كلتا العلامتين المروريتين تعنيان نفس الشيء",
+            "text": "C43",
             "is_correct": false
           }
         ],
-        "explanation": "F101a هي علامة مرورية نهاية F99a (مسار مختلط مع راكبي الخيل). F101b هي علامة مرورية نهاية F99b (مسار منفصل بدون راكبي الخيل). الوظيفة مماثلة لكن مجموعة المستخدمين تختلف."
+        "explanation": "F99b علامة البداية المقابلة وF101b علامة النهاية."
       }
     }
   },
@@ -154,76 +169,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Welk gevaar loopt een voetganger na bord F101b als hij verdergaat op de vroegere voetgangerszijde?",
+        "question": "Welk gevaar kan vlak na F101b ontstaan?",
         "choices": [
           {
-            "text": "De afbakening tussen voetgangers en fietsers vervalt na F101b wat kan leiden tot conflicten",
+            "text": "Gebruikers komen in een andere weginrichting en moeten hun plaats opnieuw volgens de algemene regels bepalen",
             "is_correct": true
           },
           {
-            "text": "Voetgangers mogen het pad daarna helemaal niet meer gebruiken",
+            "text": "Alle voorrangsregels verdwijnen",
             "is_correct": false
           },
           {
-            "text": "Er is geen enkel gevaar want het pad blijft hetzelfde",
+            "text": "Iedereen krijgt automatisch dezelfde plaats",
             "is_correct": false
           }
         ],
-        "explanation": "Na F101b is de formele scheiding opgeheven. Voetgangers en fietsers bewegen zich nu in dezelfde ruimte (rijbaan of ongemarkeerd pad) wat meer aandacht vereist."
+        "explanation": "Het einde van de bijzondere regeling kan een overgang naar een andere inrichting veroorzaken; kijk naar markeringen, verkeersborden en ander verkeer."
       },
       "EN": {
-        "question": "What danger does a pedestrian face after sign F101b if they continue on the former pedestrian side?",
+        "question": "Which hazard may occur just after F101b?",
         "choices": [
           {
-            "text": "The separation between pedestrians and cyclists ceases after F101b which can lead to conflicts",
+            "text": "Users enter a different road layout and must determine their position again under the general rules",
             "is_correct": true
           },
           {
-            "text": "Pedestrians may no longer use the path at all after that",
+            "text": "All priority rules disappear",
             "is_correct": false
           },
           {
-            "text": "There is no danger at all because the path remains the same",
+            "text": "Everyone automatically receives the same road position",
             "is_correct": false
           }
         ],
-        "explanation": "After F101b the formal separation is lifted. Pedestrians and cyclists now move in the same space (road or unmarked path) which requires more attention."
+        "explanation": "Ending the special regime may create a transition to a different layout; check markings, signs and other traffic."
       },
       "FR": {
-        "question": "Quel danger court un pieton apres le panneau F101b s il continue sur l ancien cote pieton ?",
+        "question": "Quel danger peut apparaître juste après F101b ?",
         "choices": [
           {
-            "text": "La separation entre pietons et cyclistes cesse apres F101b ce qui peut entrainer des conflits",
+            "text": "Les usagers entrent dans un autre aménagement et doivent déterminer leur place selon les règles générales",
             "is_correct": true
           },
           {
-            "text": "Les pietons ne peuvent plus du tout utiliser le chemin apres cela",
+            "text": "Toutes les règles de priorité disparaissent",
             "is_correct": false
           },
           {
-            "text": "Il n y a aucun danger car le chemin reste le meme",
+            "text": "Chacun obtient automatiquement la même place",
             "is_correct": false
           }
         ],
-        "explanation": "Apres F101b la separation formelle est levee. Les pietons et les cyclistes se deplacent maintenant dans le meme espace (chaussee ou chemin non marque) ce qui necessite plus d attention."
+        "explanation": "La fin du régime spécial peut creer une transition; verifiez marquages, signaux et autres usagers."
       },
       "AR": {
-        "question": "ما هو الخطر الذي تشير إليه هذه العلامة المرورية؟",
+        "question": "أي خطر قد يظهر مباشرة بعد F101b؟",
         "choices": [
           {
-            "text": "الفصل بين المشاة والدراجين ينتهي بعد F101b مما قد يؤدي إلى تعارضات",
+            "text": "ينتقل المستخدمون إلى تخطيط مختلف ويجب تحديد موضعهم من جديد وفق القواعد العامة",
             "is_correct": true
           },
           {
-            "text": "لا يمكن للمشاة استخدام المسار بعد ذلك على الإطلاق",
+            "text": "تختفي كل قواعد الأولوية",
             "is_correct": false
           },
           {
-            "text": "لا يوجد أي خطر لأن المسار يبقى كما هو",
+            "text": "يحصل الجميع تلقائيًا على الموضع نفسه",
             "is_correct": false
           }
         ],
-        "explanation": "بعد F101b يُرفع الفصل الرسمي. يتحرك المشاة والدراجون الآن في نفس المساحة (الطريق أو المسار غير المُعلَّم) مما يستلزم مزيداً من الانتباه."
+        "explanation": "قد تنشئ نهاية النظام الخاص انتقالًا إلى تخطيط آخر؛ افحص التخطيطات والعلامات وبقية المرور."
       }
     }
   },
@@ -235,64 +250,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat doet een fietser na F101b als er een trottoir is maar geen apart fietspad?",
+        "question": "Wat doet u na F101b?",
         "choices": [
           {
-            "text": "De fietser rijdt op de rijbaan of de rijweg want het trottoir is voorbehouden aan voetgangers",
+            "text": "De algemene regels en alle andere aanwezige verkeersborden volgen",
             "is_correct": true
           },
           {
-            "text": "De fietser rijdt langzaam op het trottoir",
+            "text": "Automatisch versnellen tot 50 km/u",
             "is_correct": false
           },
           {
-            "text": "De fietser moet zijn fiets aan de hand nemen",
+            "text": "Aannemen dat alle toegang vrij is",
             "is_correct": false
           }
         ],
-        "explanation": "Na F101b gelden de normale verkeersregels. Fietsers mogen niet op het trottoir rijden tenzij dat aangeduid is. Ze rijden op de rijbaan."
+        "explanation": "F101b stelt geen nieuwe snelheid, voorrang of onbeperkte toegang vast."
       },
       "EN": {
-        "question": "What does a cyclist do after F101b if there is a pavement but no separate cycle path?",
+        "question": "What do you do after F101b?",
         "choices": [
           {
-            "text": "The cyclist rides on the road because the pavement is reserved for pedestrians",
+            "text": "Follow the general rules and every other traffic sign present",
             "is_correct": true
           },
           {
-            "text": "The cyclist rides slowly on the pavement",
+            "text": "Automatically accelerate to 50 km/h",
             "is_correct": false
           },
-          { "text": "The cyclist must walk the bike", "is_correct": false }
+          {
+            "text": "Assume unrestricted access",
+            "is_correct": false
+          }
         ],
-        "explanation": "After F101b the normal traffic rules apply. Cyclists may not ride on the pavement unless it is designated. They ride on the road."
+        "explanation": "F101b sets no new speed, priority or unrestricted access."
       },
       "FR": {
-        "question": "Que fait un cycliste apres F101b s il y a un trottoir mais pas de piste cyclable separee ?",
+        "question": "Que faites-vous après F101b ?",
         "choices": [
           {
-            "text": "Le cycliste roule sur la chaussee car le trottoir est reserve aux pietons",
+            "text": "Respecter les règles générales et tous les autres signaux présents",
             "is_correct": true
           },
           {
-            "text": "Le cycliste roule lentement sur le trottoir",
+            "text": "Accelerer automatiquement a 50 km/h",
             "is_correct": false
           },
-          { "text": "Le cycliste doit pousser son velo", "is_correct": false }
+          {
+            "text": "Supposer que tout accès est libre",
+            "is_correct": false
+          }
         ],
-        "explanation": "Apres F101b les regles normales de circulation s appliquent. Les cyclistes ne peuvent pas rouler sur le trottoir sauf s il est designe. Ils roulent sur la chaussee."
+        "explanation": "F101b ne fixe ni nouvelle vitesse, ni priorité, ni accès illimite."
       },
       "AR": {
-        "question": "ماذا يفعل الدراج بعد F101b إذا كان هناك رصيف لكن لا يوجد مسار دراجات منفصل؟",
+        "question": "ماذا تفعل بعد F101b؟",
         "choices": [
           {
-            "text": "يسير الدراج على الطريق لأن الرصيف محجوز للمشاة",
+            "text": "تتبع القواعد العامة وكل العلامات المرورية الأخرى الموجودة",
             "is_correct": true
           },
-          { "text": "يسير الدراج ببطء على الرصيف", "is_correct": false },
-          { "text": "يجب على الدراج دفع دراجته سيراً", "is_correct": false }
+          {
+            "text": "تسرع تلقائيًا إلى 50 كم/س",
+            "is_correct": false
+          },
+          {
+            "text": "تفترض أن الدخول مفتوح بلا قيود",
+            "is_correct": false
+          }
         ],
-        "explanation": "بعد F101b تنطبق قواعد المرور العادية. لا يمكن للدراجين السير على الرصيف ما لم يكن مُعيَّناً لذلك. يسيرون على الطريق."
+        "explanation": "لا تحدد F101b سرعة أو أولوية جديدة ولا تفتح الدخول بلا قيود."
       }
     }
   },
@@ -304,76 +331,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Herinnert F101b als bord aan de coureurs op een wielrenwedstrijd dat ze terug op de openbare weg rijden?",
+        "question": "Mag een gewone automobilist na F101b aannemen dat de weg automatisch voor hem open is?",
         "choices": [
           {
-            "text": "Ja officieel signaleert F101b dat het verplichte gescheiden pad is afgelopen en normale wegregels gelden",
+            "text": "Nee, andere regels en borden kunnen de toegang nog beperken",
             "is_correct": true
           },
           {
-            "text": "Nee F101b is enkel bedoeld voor recreatief verkeer niet voor wedstrijden",
+            "text": "Ja, elk eindbord heft alle beperkingen op",
             "is_correct": false
           },
           {
-            "text": "Nee F101b heeft geen juridische betekenis op de openbare weg",
+            "text": "Ja, maar alleen overdag",
             "is_correct": false
           }
         ],
-        "explanation": "F101b sluit het regime van het verplichte gescheiden pad af. Of het nu gaat om recreatief verkeer of een wedstrijd de normale verkeersregelgeving neemt het over."
+        "explanation": "Alleen de bijzondere voorbehouden-wegregeling eindigt. Andere toegangsregels blijven van kracht."
       },
       "EN": {
-        "question": "Does F101b as a sign remind racing cyclists in a cycling competition that they are back on the public road?",
+        "question": "May an ordinary motorist assume that the road is automatically open after F101b?",
         "choices": [
           {
-            "text": "Yes officially F101b signals that the compulsory separated path has ended and normal road rules apply",
+            "text": "No, other rules and signs may still restrict access",
             "is_correct": true
           },
           {
-            "text": "No F101b is only meant for recreational traffic not competitions",
+            "text": "Yes, every end sign cancels all restrictions",
             "is_correct": false
           },
           {
-            "text": "No F101b has no legal meaning on the public road",
+            "text": "Yes, but only by day",
             "is_correct": false
           }
         ],
-        "explanation": "F101b closes the regime of the compulsory separated path. Whether it is recreational traffic or a competition the normal traffic regulations take over."
+        "explanation": "Only the special reserved-road regime ends. Other access rules remain effective."
       },
       "FR": {
-        "question": "Le panneau F101b rappelle-t-il aux coureurs d une competition cycliste qu ils sont de retour sur la voie publique ?",
+        "question": "Un automobiliste ordinaire peut-il supposer que la voie lui est automatiquement ouverte après F101b ?",
         "choices": [
           {
-            "text": "Oui officiellement F101b signale que le chemin separe oblige est termine et que les regles normales de la route s appliquent",
+            "text": "Non, d'autres règles et signaux peuvent encore limiter l'accès",
             "is_correct": true
           },
           {
-            "text": "Non F101b est uniquement destine a la circulation recreative pas aux competitions",
+            "text": "Oui, tout signal de fin supprime toutes les restrictions",
             "is_correct": false
           },
           {
-            "text": "Non F101b n a pas de signification legale sur la voie publique",
+            "text": "Oui, mais seulement le jour",
             "is_correct": false
           }
         ],
-        "explanation": "F101b cloture le regime du chemin separe oblige. Qu il s agisse de circulation recreative ou d une competition les reglements normaux de la circulation prennent le relais."
+        "explanation": "Seul le régime spécial de la voie réservée prend fin. Les autres limitations d'accès restent applicables."
       },
       "AR": {
-        "question": "هل تذكّر علامة مرورية F101b المتسابقين في سباق الدراجات بأنهم عادوا إلى الطريق العام؟",
+        "question": "هل يجوز لسائق سيارة عادية افتراض أن الطريق مفتوح له تلقائيًا بعد F101b؟",
         "choices": [
           {
-            "text": "نعم رسمياً تشير F101b إلى انتهاء المسار المنفصل الإلزامي وتطبيق قواعد الطريق العادية",
+            "text": "لا، قد تستمر قواعد وعلامات أخرى في تقييد الدخول",
             "is_correct": true
           },
           {
-            "text": "لا F101b مخصصة فقط لحركة المرور الترفيهية وليس للمسابقات",
+            "text": "نعم، تلغي كل علامة نهاية جميع القيود",
             "is_correct": false
           },
           {
-            "text": "لا F101b ليس لها معنى قانوني على الطريق العام",
+            "text": "نعم، نهارًا فقط",
             "is_correct": false
           }
         ],
-        "explanation": "F101b تغلق نظام المسار المنفصل الإلزامي. سواء كان مرور ترفيهي أو مسابقة تتولى لوائح المرور العادية."
+        "explanation": "ينتهي فقط نظام الطريق المخصص الخاص، وتبقى قيود الدخول الأخرى سارية."
       }
     }
   },
@@ -385,67 +412,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Bij F101b eindigt het gescheiden pad maar er is geen rijbaan. Wat moeten fietsers doen?",
+        "question": "Wat gebeurt met de aangeduide delen na F101b?",
         "choices": [
           {
-            "text": "Fietsers gebruiken de beschikbare verharde of onverharde weg en houden rekening met voetgangers",
+            "text": "De bijzondere aanwijzing eindigt; de plaats van elke gebruiker volgt daarna uit de inrichting en de algemene regels",
             "is_correct": true
           },
           {
-            "text": "Fietsers moeten stoppen tot er een officieel fietspad is aangeduid",
-            "is_correct": false
-          },
-          { "text": "Fietsers stappen af en lopen", "is_correct": false }
-        ],
-        "explanation": "Als het gescheiden pad eindigt (F101b) en er geen rijbaan is moeten fietsers de beschikbare weg gebruiken in overeenstemming met de verkeersregels: rechts houden en voetgangers respecteren."
-      },
-      "EN": {
-        "question": "At F101b the separated path ends but there is no road. What must cyclists do?",
-        "choices": [
-          {
-            "text": "Cyclists use the available paved or unpaved way and take account of pedestrians",
-            "is_correct": true
-          },
-          {
-            "text": "Cyclists must stop until an official cycle path is signposted",
-            "is_correct": false
-          },
-          { "text": "Cyclists dismount and walk", "is_correct": false }
-        ],
-        "explanation": "When the separated path ends (F101b) and there is no road cyclists must use the available way in accordance with the traffic rules: keep right and respect pedestrians."
-      },
-      "FR": {
-        "question": "Au niveau de F101b le chemin separe se termine mais il n y a pas de chaussee. Que doivent faire les cyclistes ?",
-        "choices": [
-          {
-            "text": "Les cyclistes utilisent la voie disponible revetue ou non revetue et tiennent compte des pietons",
-            "is_correct": true
-          },
-          {
-            "text": "Les cyclistes doivent s arreter jusqu a ce qu une piste cyclable officielle soit signalee",
+            "text": "Dezelfde bijzondere aanwijzing blijft onbeperkt gelden",
             "is_correct": false
           },
           {
-            "text": "Les cyclistes descendent de velo et marchent",
+            "text": "Het wordt automatisch parkeerterrein",
             "is_correct": false
           }
         ],
-        "explanation": "Lorsque le chemin separe se termine (F101b) et qu il n y a pas de chaussee les cyclistes doivent utiliser la voie disponible conformement au code de la route : serrer a droite et respecter les pietons."
+        "explanation": "Het eindbord bepaalt niet zelfstandig de nieuwe inrichting of bestemming van de ruimte."
       },
-      "AR": {
-        "question": "عند F101b ينتهي المسار المنفصل لكن لا يوجد طريق. ماذا يجب على الدراجين فعله؟",
+      "EN": {
+        "question": "What happens to the designated parts after F101b?",
         "choices": [
           {
-            "text": "يستخدم الدراجون الطريق المتاح المعبد أو غير المعبد ويأخذون في الاعتبار المشاة",
+            "text": "The special designation ends; each user's position then follows from the layout and general rules",
             "is_correct": true
           },
           {
-            "text": "يجب على الدراجين التوقف حتى يُعلَّن عن مسار دراجات رسمي",
+            "text": "The same special designation continues indefinitely",
             "is_correct": false
           },
-          { "text": "الدراجون ينزلون عن دراجاتهم ويمشون", "is_correct": false }
+          {
+            "text": "It automatically becomes a parking area",
+            "is_correct": false
+          }
         ],
-        "explanation": "عندما ينتهي المسار المنفصل (F101b) ولا يوجد طريق يجب على الدراجين استخدام الطريق المتاح وفقاً لقواعد المرور: التزام اليمين واحترام المشاة."
+        "explanation": "The end sign does not by itself define the new layout or use of the space."
+      },
+      "FR": {
+        "question": "Que deviennent les parties désignées après F101b ?",
+        "choices": [
+          {
+            "text": "La désignation spéciale prend fin; la place de chacun dépend ensuite de l'aménagement et des règles générales",
+            "is_correct": true
+          },
+          {
+            "text": "La même désignation continue sans limite",
+            "is_correct": false
+          },
+          {
+            "text": "L'espace devient automatiquement une zone de stationnement",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Le signal de fin ne definit pas a lui seul le nouvel aménagement ou l'usage de l'espace."
+      },
+      "AR": {
+        "question": "ماذا يحدث لـالأجزاء المحددة بعد F101b؟",
+        "choices": [
+          {
+            "text": "ينتهي التحديد الخاص، ثم يتبع موضع كل مستخدم التخطيط والقواعد العامة",
+            "is_correct": true
+          },
+          {
+            "text": "يستمر التحديد الخاص نفسه بلا نهاية",
+            "is_correct": false
+          },
+          {
+            "text": "تتحول المساحة تلقائيًا إلى موقف",
+            "is_correct": false
+          }
+        ],
+        "explanation": "لا تحدد علامة النهاية وحدها التخطيط أو الاستخدام الجديد للمساحة."
       }
     }
   },
@@ -457,60 +493,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Na F101b loopt een voetganger nog 100 meter op de vroegere fietsbaan. Is dit toegestaan?",
+        "question": "Mag een vroegere gebruiker na F101b zonder verdere controle dezelfde ruimte blijven volgen?",
         "choices": [
           {
-            "text": "Ja na F101b is de scheiding opgeheven en zijn er geen afzonderlijke zones meer",
+            "text": "Alleen als de algemene regels, de weginrichting en andere borden dat toelaten",
             "is_correct": true
           },
           {
-            "text": "Nee de fietsbaan blijft gereserveerd voor fietsers ook na F101b",
+            "text": "Ja, altijd",
             "is_correct": false
           }
         ],
-        "explanation": "Zodra F101b het verplichte gescheiden pad beëindigt zijn de aparte zones opgeheven. Voetgangers en fietsers opereren terug onder de gewone verkeersregels zonder wettelijk onderscheid op die zone."
+        "explanation": "Na het eindbord moet de gebruiker opnieuw beoordelen welke plaats en toegang wettelijk gelden."
       },
       "EN": {
-        "question": "After F101b a pedestrian walks another 100 metres on the former cycle lane. Is this allowed?",
+        "question": "May a former user continue in the same space after F101b without further checks?",
         "choices": [
           {
-            "text": "Yes after F101b the separation is lifted and there are no longer separate zones",
+            "text": "Only if the general rules, road layout and other signs allow it",
             "is_correct": true
           },
           {
-            "text": "No the cycle lane remains reserved for cyclists even after F101b",
+            "text": "Yes, always",
             "is_correct": false
           }
         ],
-        "explanation": "Once F101b ends the compulsory separated path the separate zones are lifted. Pedestrians and cyclists operate again under the ordinary traffic rules without legal distinction in that zone."
+        "explanation": "After the end sign, the user must reassess the lawful position and access."
       },
       "FR": {
-        "question": "Apres F101b un pieton marche encore 100 metres sur l ancienne piste cyclable. Est-ce autorise ?",
+        "question": "Un ancien usager peut-il continuer dans le même espace après F101b sans autre vérification ?",
         "choices": [
           {
-            "text": "Oui apres F101b la separation est levee et il n y a plus de zones separees",
+            "text": "Uniquement si les règles générales, l'aménagement et les autres signaux le permettent",
             "is_correct": true
           },
           {
-            "text": "Non la piste cyclable reste reservee aux cyclistes meme apres F101b",
+            "text": "Oui, toujours",
             "is_correct": false
           }
         ],
-        "explanation": "Des que F101b met fin au chemin separe oblige les zones separees sont levees. Les pietons et les cyclistes operent a nouveau selon les regles ordinaires de la circulation sans distinction legale dans cette zone."
+        "explanation": "Apres le signal de fin, l'usager doit réévaluer sa place et son accès licites."
       },
       "AR": {
-        "question": "بعد F101b يمشي المشاة 100 متر أخرى على مسار الدراجات السابق. هل هذا مسموح؟",
+        "question": "هل يجوز لمستخدم سابق الاستمرار في المساحة نفسها بعد F101b بلا فحص آخر؟",
         "choices": [
           {
-            "text": "نعم بعد F101b يُرفع الفصل ولم تعد هناك مناطق منفصلة",
+            "text": "فقط إذا سمحت القواعد العامة وتخطيط الطريق والعلامات الأخرى",
             "is_correct": true
           },
           {
-            "text": "لا مسار الدراجات يظل محجوزاً للدراجين حتى بعد F101b",
+            "text": "نعم، دائمًا",
             "is_correct": false
           }
         ],
-        "explanation": "بمجرد أن تنهي F101b المسار المنفصل الإلزامي تُرفع المناطق المنفصلة. يعمل المشاة والدراجون مجدداً وفق قواعد المرور العادية دون تمييز قانوني في تلك المنطقة."
+        "explanation": "بعد علامة النهاية يجب إعادة تحديد الموضع والدخول القانونيين."
       }
     }
   },
@@ -522,60 +558,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Mag een bestuurder zijn auto parkeren op het stuk grond dat na F101b vrijkomt als het pad niet langer aangeduid is?",
+        "question": "Geeft F101b motorvoertuigen automatisch voorrang op voetgangers of fietsers?",
         "choices": [
           {
-            "text": "Enkel als er geen parkeerverbod geldt en de grond deel uitmaakt van de openbare weg of als privéterrein is vrijgegeven",
+            "text": "Nee, voorrang volgt uit de algemene regels en andere verkeerstekens",
             "is_correct": true
           },
           {
-            "text": "Altijd want na F101b is de weg vrij voor alle gebruik",
+            "text": "Ja, elk eindbord geeft motorvoertuigen voorrang",
             "is_correct": false
           }
         ],
-        "explanation": "F101b beëindigt het gemengde padregime. Of de ruimte daarna als parkeerplaats beschikbaar is hangt af van de lokale verkeersregels en mogelijke parkeerverboden. Het is niet automatisch een parkeerzone."
+        "explanation": "F101b beeindigt alleen de bijzondere regeling en kent geen voorrang toe."
       },
       "EN": {
-        "question": "May a driver park their car on the land that becomes free after F101b when the path is no longer marked?",
+        "question": "Does F101b automatically give motor vehicles priority over pedestrians or cyclists?",
         "choices": [
           {
-            "text": "Only if there is no parking prohibition and the land is part of the public road or private land has been released",
+            "text": "No, priority follows from the general rules and other traffic signs",
             "is_correct": true
           },
           {
-            "text": "Always because after F101b the road is free for all use",
+            "text": "Yes, every end sign gives motor vehicles priority",
             "is_correct": false
           }
         ],
-        "explanation": "F101b ends the mixed path regime. Whether the space is then available as a parking area depends on local traffic rules and possible parking prohibitions. It is not automatically a parking zone."
+        "explanation": "F101b only ends the special regime and grants no priority."
       },
       "FR": {
-        "question": "Un conducteur peut-il garer sa voiture sur le terrain qui se libere apres F101b lorsque le chemin n est plus marque ?",
+        "question": "F101b donne-t-il automatiquement priorité aux véhicules à moteur sur les piétons ou cyclistes ?",
         "choices": [
           {
-            "text": "Seulement s il n y a pas d interdiction de stationnement et que le terrain fait partie de la voie publique ou que le terrain prive est libere",
+            "text": "Non, la priorité dépend des règles générales et des autres signaux",
             "is_correct": true
           },
           {
-            "text": "Toujours car apres F101b la route est libre pour tout usage",
+            "text": "Oui, tout signal de fin donne priorité aux véhicules à moteur",
             "is_correct": false
           }
         ],
-        "explanation": "F101b met fin au regime du chemin mixte. Que l espace soit alors disponible comme zone de stationnement depend des regles de circulation locales et des interdictions de stationnement eventuelles. Ce n est pas automatiquement une zone de stationnement."
+        "explanation": "F101b met seulement fin au régime spécial et n'accorde aucune priorité."
       },
       "AR": {
-        "question": "هل يمكن لسائق ركن سيارته على الأرض التي تتحرر بعد F101b عندما لا يكون المسار مُعلَّماً بعد الآن؟",
+        "question": "هل تمنح F101b المركبات الآلية تلقائيًا الأولوية على المشاة أو الدراجات؟",
         "choices": [
           {
-            "text": "فقط إذا لم يكن هناك حظر ركن وكانت الأرض جزءاً من الطريق العام أو تم تحرير الأرض الخاصة",
+            "text": "لا، تتبع الأولوية القواعد العامة والعلامات الأخرى",
             "is_correct": true
           },
           {
-            "text": "دائماً لأنه بعد F101b الطريق مفتوح لجميع الاستخدامات",
+            "text": "نعم، تمنح كل علامة نهاية الأولوية للمركبات الآلية",
             "is_correct": false
           }
         ],
-        "explanation": "F101b تنهي نظام المسار المختلط. ما إذا كانت المساحة متاحة بعد ذلك كمنطقة انتظار يعتمد على قواعد المرور المحلية وحظر الانتظار المحتمل. إنها ليست منطقة انتظار تلقائياً."
+        "explanation": "تنهي F101b النظام الخاص فقط ولا تمنح أولوية."
       }
     }
   }

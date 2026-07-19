@@ -7,58 +7,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat betekent bord F101a?",
+        "question": "Wat betekent F101a?",
         "choices": [
           {
-            "text": "Einde van het verplichte gemengde pad voor voetgangers fietsers en ruiters",
+            "text": "Einde van de bijzondere voorbehouden-wegregeling die met F99a begon",
             "is_correct": true
           },
-          { "text": "Begin van een nieuw gemengd pad", "is_correct": false },
-          { "text": "Verbod voor voetgangers en fietsers", "is_correct": false }
+          {
+            "text": "Begin van een verplicht fietspad",
+            "is_correct": false
+          },
+          {
+            "text": "Automatische toegang voor alle motorvoertuigen",
+            "is_correct": false
+          }
         ],
-        "explanation": "F101a duidt het einde aan van het verplicht gemengde pad (F99a) voor voetgangers fietsers en ruiters. Gebruikers keren terug naar de normale rijbaan als die beschikbaar is."
+        "explanation": "F101a beeindigt de bijzondere regeling; de algemene regels en andere borden blijven gelden."
       },
       "EN": {
-        "question": "What does sign F101a mean?",
+        "question": "What does F101a mean?",
         "choices": [
           {
-            "text": "End of the compulsory mixed path for pedestrians cyclists and horse riders",
+            "text": "End of the special reserved-road regime that began with F99a",
             "is_correct": true
           },
-          { "text": "Start of a new mixed path", "is_correct": false },
           {
-            "text": "Prohibition for pedestrians and cyclists",
+            "text": "Start of a compulsory cycle path",
+            "is_correct": false
+          },
+          {
+            "text": "Automatic access for every motor vehicle",
             "is_correct": false
           }
         ],
-        "explanation": "F101a indicates the end of the compulsory mixed path (F99a) for pedestrians cyclists and horse riders. Users return to the normal road if it is available."
+        "explanation": "F101a ends the special regime; the general rules and other signs remain in force."
       },
       "FR": {
-        "question": "Que signifie le panneau F101a ?",
+        "question": "Que signifie F101a ?",
         "choices": [
           {
-            "text": "Fin du chemin mixte oblige pour pietons cyclistes et cavaliers",
+            "text": "Fin du régime spécial de la voie réservée qui a commencé avec F99a",
             "is_correct": true
           },
-          { "text": "Debut d un nouveau chemin mixte", "is_correct": false },
           {
-            "text": "Interdiction pour les pietons et les cyclistes",
+            "text": "Début d'une piste cyclable obligatoire",
+            "is_correct": false
+          },
+          {
+            "text": "Acces automatique pour tout véhicule a moteur",
             "is_correct": false
           }
         ],
-        "explanation": "F101a indique la fin du chemin mixte oblige (F99a) pour les pietons les cyclistes et les cavaliers. Les usagers retournent a la route normale si elle est disponible."
+        "explanation": "F101a met fin au régime spécial; les règles générales et les autres signaux restent applicables."
       },
       "AR": {
-        "question": "ما معنى هذه العلامة المرورية؟",
+        "question": "ما معنى F101a؟",
         "choices": [
           {
-            "text": "نهاية المسار المختلط الإلزامي للمشاة والدراجين وراكبي الخيل",
+            "text": "نهاية نظام الطريق المخصص الخاص الذي بدأ بـF99a",
             "is_correct": true
           },
-          { "text": "بداية مسار مختلط جديد", "is_correct": false },
-          { "text": "حظر للمشاة والدراجين", "is_correct": false }
+          {
+            "text": "بداية مسار دراجات إلزامي",
+            "is_correct": false
+          },
+          {
+            "text": "دخول تلقائي لكل مركبة آلية",
+            "is_correct": false
+          }
         ],
-        "explanation": "تشير F101a إلى نهاية المسار المختلط الإلزامي (F99a) للمشاة والدراجين وراكبي الخيل. يعود المستخدمون إلى الطريق العادي إذا كان متاحاً."
+        "explanation": "تنهي F101a النظام الخاص، وتبقى القواعد العامة والعلامات الأخرى سارية."
       }
     }
   },
@@ -70,76 +88,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Na F101a rijdt een fietser verder op de rijbaan. Is dat correct?",
+        "question": "Welk bord begint de regeling die bij F101a eindigt?",
         "choices": [
           {
-            "text": "Ja als er geen apart fietspad meer is keert de fietser terug naar de rijbaan",
+            "text": "F99a",
             "is_correct": true
           },
           {
-            "text": "Nee een fietser moet altijd een apart fietspad zoeken",
+            "text": "F5",
             "is_correct": false
           },
           {
-            "text": "Nee fietsers mogen nooit op de rijbaan rijden",
+            "text": "C43",
             "is_correct": false
           }
         ],
-        "explanation": "Als het gemengde pad eindigt (F101a) en er is geen apart fietspad beschikbaar dan rijdt de fietser op de rijbaan zoals de wet toelaat."
+        "explanation": "F99a is het bijbehorende beginbord en F101a het eindbord."
       },
       "EN": {
-        "question": "After F101a a cyclist continues on the road. Is that correct?",
+        "question": "Which sign starts the regime that ends at F101a?",
         "choices": [
           {
-            "text": "Yes if there is no separate cycle path the cyclist returns to the road",
+            "text": "F99a",
             "is_correct": true
           },
           {
-            "text": "No a cyclist must always look for a separate cycle path",
+            "text": "F5",
             "is_correct": false
           },
           {
-            "text": "No cyclists may never ride on the road",
+            "text": "C43",
             "is_correct": false
           }
         ],
-        "explanation": "When the mixed path ends (F101a) and no separate cycle path is available the cyclist rides on the road as the law allows."
+        "explanation": "F99a is the corresponding start sign and F101a is the end sign."
       },
       "FR": {
-        "question": "Apres F101a un cycliste continue sur la chaussee. Est-ce correct ?",
+        "question": "Quel signal commence le régime qui se termine à F101a ?",
         "choices": [
           {
-            "text": "Oui s il n y a plus de piste cyclable separee le cycliste retourne sur la chaussee",
+            "text": "F99a",
             "is_correct": true
           },
           {
-            "text": "Non un cycliste doit toujours chercher une piste cyclable separee",
+            "text": "F5",
             "is_correct": false
           },
           {
-            "text": "Non les cyclistes ne peuvent jamais rouler sur la chaussee",
+            "text": "C43",
             "is_correct": false
           }
         ],
-        "explanation": "Lorsque le chemin mixte se termine (F101a) et qu il n y a pas de piste cyclable separee disponible le cycliste roule sur la chaussee comme la loi le permet."
+        "explanation": "F99a est le signal de debut correspondant et F101a le signal de fin."
       },
       "AR": {
-        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
+        "question": "أي علامة تبدأ النظام الذي ينتهي عند F101a؟",
         "choices": [
           {
-            "text": "نعم إذا لم يكن هناك مسار دراجات منفصل يعود الدراج إلى الطريق",
+            "text": "F99a",
             "is_correct": true
           },
           {
-            "text": "لا يجب على الدراج دائماً البحث عن مسار دراجات منفصل",
+            "text": "F5",
             "is_correct": false
           },
           {
-            "text": "لا الدراجون لا يجوز لهم أبداً السير على الطريق",
+            "text": "C43",
             "is_correct": false
           }
         ],
-        "explanation": "عندما تنتهي المسار المختلط (F101a) ولا يتوفر مسار دراجات منفصل يسير الدراج على الطريق كما يسمح القانون."
+        "explanation": "F99a علامة البداية المقابلة وF101a علامة النهاية."
       }
     }
   },
@@ -151,73 +169,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Welk gevaar kan optreden net na bord F101a voor een fietser?",
+        "question": "Welk gevaar kan vlak na F101a ontstaan?",
         "choices": [
           {
-            "text": "De overgang naar de rijbaan met autoverkeer kan gevaarlijk zijn als fietsers niet op de auto s letten",
+            "text": "Gebruikers komen in een andere weginrichting en moeten hun plaats opnieuw volgens de algemene regels bepalen",
             "is_correct": true
           },
           {
-            "text": "Gevaar voor landbouwvoertuigen op het pad",
+            "text": "Alle voorrangsregels verdwijnen",
             "is_correct": false
           },
           {
-            "text": "De rijbaan is altijd glad direct na F101a",
+            "text": "Iedereen krijgt automatisch dezelfde plaats",
             "is_correct": false
           }
         ],
-        "explanation": "Na het einde van het verplichte gemengde pad (F101a) moeten fietsers die de rijbaan oprijden opletten voor (snel) autoverkeer."
+        "explanation": "Het einde van de bijzondere regeling kan een overgang naar een andere inrichting veroorzaken; kijk naar markeringen, verkeersborden en ander verkeer."
       },
       "EN": {
-        "question": "What hazard can occur just after sign F101a for a cyclist?",
+        "question": "Which hazard may occur just after F101a?",
         "choices": [
           {
-            "text": "The transition onto the road with vehicle traffic can be dangerous if cyclists do not watch out for cars",
+            "text": "Users enter a different road layout and must determine their position again under the general rules",
             "is_correct": true
           },
           {
-            "text": "Danger from agricultural vehicles on the path",
+            "text": "All priority rules disappear",
             "is_correct": false
           },
           {
-            "text": "The road is always slippery directly after F101a",
+            "text": "Everyone automatically receives the same road position",
             "is_correct": false
           }
         ],
-        "explanation": "After the end of the compulsory mixed path (F101a) cyclists joining the road must watch out for (fast) vehicle traffic."
+        "explanation": "Ending the special regime may create a transition to a different layout; check markings, signs and other traffic."
       },
       "FR": {
-        "question": "Quel danger peut survenir juste apres le panneau F101a pour un cycliste ?",
+        "question": "Quel danger peut apparaître juste après F101a ?",
         "choices": [
           {
-            "text": "La transition vers la chaussee avec la circulation automobile peut etre dangereuse si les cyclistes ne font pas attention aux voitures",
+            "text": "Les usagers entrent dans un autre aménagement et doivent déterminer leur place selon les règles générales",
             "is_correct": true
           },
           {
-            "text": "Danger lie aux vehicules agricoles sur le chemin",
+            "text": "Toutes les règles de priorité disparaissent",
             "is_correct": false
           },
           {
-            "text": "La chaussee est toujours glissante directement apres F101a",
+            "text": "Chacun obtient automatiquement la même place",
             "is_correct": false
           }
         ],
-        "explanation": "Apres la fin du chemin mixte oblige (F101a) les cyclistes qui rejoignent la chaussee doivent faire attention a la circulation (rapide) des vehicules."
+        "explanation": "La fin du régime spécial peut creer une transition; verifiez marquages, signaux et autres usagers."
       },
       "AR": {
-        "question": "ما هو الخطر الذي تشير إليه هذه العلامة المرورية؟",
+        "question": "أي خطر قد يظهر مباشرة بعد F101a؟",
         "choices": [
           {
-            "text": "الانتقال إلى الطريق مع حركة المركبات قد يكون خطراً إذا لم ينتبه الدراجون للسيارات",
+            "text": "ينتقل المستخدمون إلى تخطيط مختلف ويجب تحديد موضعهم من جديد وفق القواعد العامة",
             "is_correct": true
           },
           {
-            "text": "خطر من المركبات الزراعية على المسار",
+            "text": "تختفي كل قواعد الأولوية",
             "is_correct": false
           },
-          { "text": "الطريق دائماً زلق مباشرة بعد F101a", "is_correct": false }
+          {
+            "text": "يحصل الجميع تلقائيًا على الموضع نفسه",
+            "is_correct": false
+          }
         ],
-        "explanation": "بعد نهاية المسار المختلط الإلزامي (F101a) يجب على الدراجين الذين ينضمون إلى الطريق الانتباه لحركة المركبات (السريعة)."
+        "explanation": "قد تنشئ نهاية النظام الخاص انتقالًا إلى تخطيط آخر؛ افحص التخطيطات والعلامات وبقية المرور."
       }
     }
   },
@@ -229,67 +250,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat moeten ruiters doen als ze bord F101a zien?",
+        "question": "Wat doet u na F101a?",
         "choices": [
           {
-            "text": "Ze verlaten het gemengde pad en mogen de rijbaan of een berm gebruiken afhankelijk van de situatie",
+            "text": "De algemene regels en alle andere aanwezige verkeersborden volgen",
             "is_correct": true
           },
-          { "text": "Ze moeten stoppen en afstijgen", "is_correct": false },
           {
-            "text": "Ze hebben geen speciale actie nodig want bord F101a geldt niet voor ruiters",
+            "text": "Automatisch versnellen tot 50 km/u",
+            "is_correct": false
+          },
+          {
+            "text": "Aannemen dat alle toegang vrij is",
             "is_correct": false
           }
         ],
-        "explanation": "F101a beëindigt het verplichte gebruik van het gemengde pad. Ruiters mogen daarna de rijbaan of een berm gebruiken overeenkomstig de verkeersregels."
+        "explanation": "F101a stelt geen nieuwe snelheid, voorrang of onbeperkte toegang vast."
       },
       "EN": {
-        "question": "What must horse riders do when they see sign F101a?",
+        "question": "What do you do after F101a?",
         "choices": [
           {
-            "text": "They leave the mixed path and may use the road or a verge depending on the situation",
+            "text": "Follow the general rules and every other traffic sign present",
             "is_correct": true
           },
-          { "text": "They must stop and dismount", "is_correct": false },
           {
-            "text": "No special action needed because sign F101a does not apply to horse riders",
+            "text": "Automatically accelerate to 50 km/h",
+            "is_correct": false
+          },
+          {
+            "text": "Assume unrestricted access",
             "is_correct": false
           }
         ],
-        "explanation": "F101a ends the compulsory use of the mixed path. Horse riders may then use the road or a verge in accordance with the traffic rules."
+        "explanation": "F101a sets no new speed, priority or unrestricted access."
       },
       "FR": {
-        "question": "Que doivent faire les cavaliers quand ils voient le panneau F101a ?",
+        "question": "Que faites-vous après F101a ?",
         "choices": [
           {
-            "text": "Ils quittent le chemin mixte et peuvent utiliser la chaussee ou un accotement selon la situation",
+            "text": "Respecter les règles générales et tous les autres signaux présents",
             "is_correct": true
           },
           {
-            "text": "Ils doivent s arreter et descendre de cheval",
+            "text": "Accelerer automatiquement a 50 km/h",
             "is_correct": false
           },
           {
-            "text": "Aucune action speciale n est necessaire car le panneau F101a ne s applique pas aux cavaliers",
+            "text": "Supposer que tout accès est libre",
             "is_correct": false
           }
         ],
-        "explanation": "F101a met fin a l utilisation obligatoire du chemin mixte. Les cavaliers peuvent ensuite utiliser la chaussee ou un accotement conformement au code de la route."
+        "explanation": "F101a ne fixe ni nouvelle vitesse, ni priorité, ni accès illimite."
       },
       "AR": {
-        "question": "ماذا يجب على راكبي الخيل فعله عند رؤية علامة مرورية F101a؟",
+        "question": "ماذا تفعل بعد F101a؟",
         "choices": [
           {
-            "text": "يغادرون المسار المختلط ويمكنهم استخدام الطريق أو الجانب حسب الموقف",
+            "text": "تتبع القواعد العامة وكل العلامات المرورية الأخرى الموجودة",
             "is_correct": true
           },
-          { "text": "يجب عليهم التوقف والنزول من الخيل", "is_correct": false },
           {
-            "text": "لا حاجة لأي إجراء خاص لأن علامة مرورية F101a لا تنطبق على راكبي الخيل",
+            "text": "تسرع تلقائيًا إلى 50 كم/س",
+            "is_correct": false
+          },
+          {
+            "text": "تفترض أن الدخول مفتوح بلا قيود",
             "is_correct": false
           }
         ],
-        "explanation": "F101a تنهي الاستخدام الإلزامي للمسار المختلط. يمكن لراكبي الخيل استخدام الطريق أو الجانب وفقاً لقواعد المرور."
+        "explanation": "لا تحدد F101a سرعة أو أولوية جديدة ولا تفتح الدخول بلا قيود."
       }
     }
   },
@@ -301,76 +331,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Mag een autobestuurder beginnen rijden op het rijgedeelte dat vrijkomt na F101a als het voorheen bezet was door het gemengde pad?",
+        "question": "Mag een gewone automobilist na F101a aannemen dat de weg automatisch voor hem open is?",
         "choices": [
           {
-            "text": "Ja na F101a is de ruimte beschikbaar voor motorvoertuigen als die deel uitmaakt van de rijbaan",
+            "text": "Nee, andere regels en borden kunnen de toegang nog beperken",
             "is_correct": true
           },
           {
-            "text": "Nee het gedeelte blijft altijd voorbehouden aan fietsers",
+            "text": "Ja, elk eindbord heft alle beperkingen op",
             "is_correct": false
           },
           {
-            "text": "Nee het blijft een fietszone ook al staat er geen bord",
+            "text": "Ja, maar alleen overdag",
             "is_correct": false
           }
         ],
-        "explanation": "Na F101a is het verplichte gemengde pad afgelopen. De rijbaan wordt teruggeven aan het normale verkeerssysteem tenzij andere borden anders aangeven."
+        "explanation": "Alleen de bijzondere voorbehouden-wegregeling eindigt. Andere toegangsregels blijven van kracht."
       },
       "EN": {
-        "question": "May a car driver start using the road space that becomes available after F101a if it was previously occupied by the mixed path?",
+        "question": "May an ordinary motorist assume that the road is automatically open after F101a?",
         "choices": [
           {
-            "text": "Yes after F101a the space is available for motor vehicles if it is part of the road",
+            "text": "No, other rules and signs may still restrict access",
             "is_correct": true
           },
           {
-            "text": "No the section always remains reserved for cyclists",
+            "text": "Yes, every end sign cancels all restrictions",
             "is_correct": false
           },
           {
-            "text": "No it remains a cycling zone even without a sign",
+            "text": "Yes, but only by day",
             "is_correct": false
           }
         ],
-        "explanation": "After F101a the compulsory mixed path has ended. The road is returned to the normal traffic system unless other signs indicate otherwise."
+        "explanation": "Only the special reserved-road regime ends. Other access rules remain effective."
       },
       "FR": {
-        "question": "Un conducteur de voiture peut-il commencer a utiliser l espace de la chaussee qui devient disponible apres F101a s il etait auparavant occupe par le chemin mixte ?",
+        "question": "Un automobiliste ordinaire peut-il supposer que la voie lui est automatiquement ouverte après F101a ?",
         "choices": [
           {
-            "text": "Oui apres F101a l espace est disponible pour les vehicules motorises s il fait partie de la chaussee",
+            "text": "Non, d'autres règles et signaux peuvent encore limiter l'accès",
             "is_correct": true
           },
           {
-            "text": "Non la section reste toujours reservee aux cyclistes",
+            "text": "Oui, tout signal de fin supprime toutes les restrictions",
             "is_correct": false
           },
           {
-            "text": "Non elle reste une zone cyclable meme sans panneau",
+            "text": "Oui, mais seulement le jour",
             "is_correct": false
           }
         ],
-        "explanation": "Apres F101a le chemin mixte oblige est termine. La chaussee est rendue au systeme de circulation normal sauf si d autres panneaux indiquent le contraire."
+        "explanation": "Seul le régime spécial de la voie réservée prend fin. Les autres limitations d'accès restent applicables."
       },
       "AR": {
-        "question": "هل يمكن لسائق السيارة البدء في استخدام مساحة الطريق المتاحة بعد F101a إذا كانت مشغولة سابقاً بالمسار المختلط؟",
+        "question": "هل يجوز لسائق سيارة عادية افتراض أن الطريق مفتوح له تلقائيًا بعد F101a؟",
         "choices": [
           {
-            "text": "نعم بعد F101a المساحة متاحة للمركبات الآلية إذا كانت جزءاً من الطريق",
+            "text": "لا، قد تستمر قواعد وعلامات أخرى في تقييد الدخول",
             "is_correct": true
           },
           {
-            "text": "لا يظل الجزء محجوزاً للدراجين دائماً",
+            "text": "نعم، تلغي كل علامة نهاية جميع القيود",
             "is_correct": false
           },
           {
-            "text": "لا يظل منطقة دراجات حتى بدون علامة مرورية",
+            "text": "نعم، نهارًا فقط",
             "is_correct": false
           }
         ],
-        "explanation": "بعد F101a انتهى المسار المختلط الإلزامي. يعاد الطريق إلى نظام المرور العادي ما لم تشر علامات أخرى إلى خلاف ذلك."
+        "explanation": "ينتهي فقط نظام الطريق المخصص الخاص، وتبقى قيود الدخول الأخرى سارية."
       }
     }
   },
@@ -382,67 +412,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Staan er twee opeenvolgende borden F99a en F101a op korte afstand van elkaar. Is het gemengde pad verplicht voor het stuk ertussen?",
+        "question": "Wat gebeurt met de voorbehouden weg na F101a?",
         "choices": [
           {
-            "text": "Ja het gemengde pad is verplicht voor het weggedeelte tussen de twee borden",
+            "text": "De bijzondere aanwijzing eindigt; de plaats van elke gebruiker volgt daarna uit de inrichting en de algemene regels",
             "is_correct": true
           },
-          { "text": "Nee de borden heffen elkaar op", "is_correct": false },
           {
-            "text": "Nee enkel als de weg ook officieel als pad is aangeduid",
+            "text": "Dezelfde bijzondere aanwijzing blijft onbeperkt gelden",
+            "is_correct": false
+          },
+          {
+            "text": "Het wordt automatisch parkeerterrein",
             "is_correct": false
           }
         ],
-        "explanation": "F99a start de verplichting tot gebruik van het gemengde pad. F101a beëindigt die verplichting. Alles tussen de twee borden is verplicht gemengd pad."
+        "explanation": "Het eindbord bepaalt niet zelfstandig de nieuwe inrichting of bestemming van de ruimte."
       },
       "EN": {
-        "question": "Two consecutive signs F99a and F101a are placed close together. Is the mixed path compulsory for the section between them?",
+        "question": "What happens to the reserved road after F101a?",
         "choices": [
           {
-            "text": "Yes the mixed path is compulsory for the road section between the two signs",
+            "text": "The special designation ends; each user's position then follows from the layout and general rules",
             "is_correct": true
           },
-          { "text": "No the signs cancel each other out", "is_correct": false },
           {
-            "text": "No only if the road is also officially designated as a path",
+            "text": "The same special designation continues indefinitely",
+            "is_correct": false
+          },
+          {
+            "text": "It automatically becomes a parking area",
             "is_correct": false
           }
         ],
-        "explanation": "F99a starts the obligation to use the mixed path. F101a ends that obligation. Everything between the two signs is a compulsory mixed path."
+        "explanation": "The end sign does not by itself define the new layout or use of the space."
       },
       "FR": {
-        "question": "Deux panneaux consecutifs F99a et F101a sont places a courte distance l un de l autre. Le chemin mixte est-il obligatoire pour le troncon entre eux ?",
+        "question": "Que devient la voie réservée après F101a ?",
         "choices": [
           {
-            "text": "Oui le chemin mixte est obligatoire pour le troncon de route entre les deux panneaux",
+            "text": "La désignation spéciale prend fin; la place de chacun dépend ensuite de l'aménagement et des règles générales",
             "is_correct": true
           },
           {
-            "text": "Non les panneaux s annulent mutuellement",
+            "text": "La même désignation continue sans limite",
             "is_correct": false
           },
           {
-            "text": "Non seulement si la route est egalement officiellement designee comme chemin",
+            "text": "L'espace devient automatiquement une zone de stationnement",
             "is_correct": false
           }
         ],
-        "explanation": "F99a commence l obligation d utiliser le chemin mixte. F101a met fin a cette obligation. Tout ce qui se trouve entre les deux panneaux est un chemin mixte obligatoire."
+        "explanation": "Le signal de fin ne definit pas a lui seul le nouvel aménagement ou l'usage de l'espace."
       },
       "AR": {
-        "question": "توجد لافتتان متتاليتان F99a وF101a على مسافة قريبة من بعضهما. هل المسار المختلط إلزامي للجزء بينهما؟",
+        "question": "ماذا يحدث لـالطريق المخصص بعد F101a؟",
         "choices": [
           {
-            "text": "نعم المسار المختلط إلزامي لجزء الطريق بين العلامتين المروريتين",
+            "text": "ينتهي التحديد الخاص، ثم يتبع موضع كل مستخدم التخطيط والقواعد العامة",
             "is_correct": true
           },
-          { "text": "لا اللافتتان تلغي بعضهما", "is_correct": false },
           {
-            "text": "لا فقط إذا كان الطريق مخصصاً رسمياً كمسار",
+            "text": "يستمر التحديد الخاص نفسه بلا نهاية",
+            "is_correct": false
+          },
+          {
+            "text": "تتحول المساحة تلقائيًا إلى موقف",
             "is_correct": false
           }
         ],
-        "explanation": "F99a تبدأ إلزامية استخدام المسار المختلط. F101a تنهي تلك الإلزامية. كل شيء بين العلامتين المروريتين هو مسار مختلط إلزامي."
+        "explanation": "لا تحدد علامة النهاية وحدها التخطيط أو الاستخدام الجديد للمساحة."
       }
     }
   },
@@ -454,60 +493,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Na bord F101a mag een gemotoriseerde fietser (bromfietser) meteen de rijbaan oprijden. Is dit toegestaan?",
+        "question": "Mag een vroegere gebruiker na F101a zonder verdere controle dezelfde ruimte blijven volgen?",
         "choices": [
           {
-            "text": "Ja bromfietsers mogen de rijbaan gebruiken als er geen geldig fietspad is",
+            "text": "Alleen als de algemene regels, de weginrichting en andere borden dat toelaten",
             "is_correct": true
           },
           {
-            "text": "Nee bromfietsers moeten altijd een apart bromfietspad zoeken",
+            "text": "Ja, altijd",
             "is_correct": false
           }
         ],
-        "explanation": "Na het einde van het gemengde pad (F101a) mogen bromfietsers de rijbaan gebruiken conform de verkeersregels als er geen specifiek bromfietspad is aangewezen."
+        "explanation": "Na het eindbord moet de gebruiker opnieuw beoordelen welke plaats en toegang wettelijk gelden."
       },
       "EN": {
-        "question": "After sign F101a a motorised cyclist (moped rider) immediately joins the road. Is this allowed?",
+        "question": "May a former user continue in the same space after F101a without further checks?",
         "choices": [
           {
-            "text": "Yes moped riders may use the road if there is no valid cycle path",
+            "text": "Only if the general rules, road layout and other signs allow it",
             "is_correct": true
           },
           {
-            "text": "No moped riders must always look for a separate moped lane",
+            "text": "Yes, always",
             "is_correct": false
           }
         ],
-        "explanation": "After the end of the mixed path (F101a) moped riders may use the road in accordance with the traffic rules if no specific moped lane is designated."
+        "explanation": "After the end sign, the user must reassess the lawful position and access."
       },
       "FR": {
-        "question": "Apres le panneau F101a un cycliste motorise (conducteur de cyclomoteur) peut-il immediatement rejoindre la chaussee. Est-ce autorise ?",
+        "question": "Un ancien usager peut-il continuer dans le même espace après F101a sans autre vérification ?",
         "choices": [
           {
-            "text": "Oui les conducteurs de cyclomoteurs peuvent utiliser la chaussee s il n y a pas de piste cyclable valide",
+            "text": "Uniquement si les règles générales, l'aménagement et les autres signaux le permettent",
             "is_correct": true
           },
           {
-            "text": "Non les conducteurs de cyclomoteurs doivent toujours chercher une voie de cyclomoteur separee",
+            "text": "Oui, toujours",
             "is_correct": false
           }
         ],
-        "explanation": "Apres la fin du chemin mixte (F101a) les conducteurs de cyclomoteurs peuvent utiliser la chaussee conformement au code de la route s il n y a pas de voie de cyclomoteur specifique designee."
+        "explanation": "Apres le signal de fin, l'usager doit réévaluer sa place et son accès licites."
       },
       "AR": {
-        "question": "بعد علامة مرورية F101a يقوم دراج آلي (دراجة نارية صغيرة) بالانضمام فوراً للطريق. هل هذا مسموح؟",
+        "question": "هل يجوز لمستخدم سابق الاستمرار في المساحة نفسها بعد F101a بلا فحص آخر؟",
         "choices": [
           {
-            "text": "نعم راكبو الدراجات الآلية الصغيرة يمكنهم استخدام الطريق إذا لم يكن هناك مسار دراجات صالح",
+            "text": "فقط إذا سمحت القواعد العامة وتخطيط الطريق والعلامات الأخرى",
             "is_correct": true
           },
           {
-            "text": "لا راكبو الدراجات الآلية الصغيرة يجب عليهم دائماً البحث عن مسار منفصل",
+            "text": "نعم، دائمًا",
             "is_correct": false
           }
         ],
-        "explanation": "بعد نهاية المسار المختلط (F101a) يمكن لراكبي الدراجات الآلية الصغيرة استخدام الطريق وفقاً لقواعد المرور إذا لم يُحدد مسار خاص للدراجات الآلية الصغيرة."
+        "explanation": "بعد علامة النهاية يجب إعادة تحديد الموضع والدخول القانونيين."
       }
     }
   },
@@ -519,60 +558,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Maak F101a het verplichte gemengde pad tot een optioneel pad? Mogen gebruikers het pad na F101a toch blijven gebruiken als alternatieve route?",
+        "question": "Geeft F101a motorvoertuigen automatisch voorrang op voetgangers of fietsers?",
         "choices": [
           {
-            "text": "Nee na F101a eindigt het aangeduide pad en keer je terug naar de normale rijbaan of stoepregels",
+            "text": "Nee, voorrang volgt uit de algemene regels en andere verkeerstekens",
             "is_correct": true
           },
           {
-            "text": "Ja het pad wordt gewoon optioneel na F101a",
+            "text": "Ja, elk eindbord geeft motorvoertuigen voorrang",
             "is_correct": false
           }
         ],
-        "explanation": "F101a beëindigt het aangeduide verplichte gemengde pad volledig. Er is geen aanduiding meer dat de bijzondere regels van het gemengde pad van toepassing zijn. Normale verkeersregels gelden."
+        "explanation": "F101a beeindigt alleen de bijzondere regeling en kent geen voorrang toe."
       },
       "EN": {
-        "question": "Does F101a turn the compulsory mixed path into an optional path? May users continue using the path after F101a as an alternative route?",
+        "question": "Does F101a automatically give motor vehicles priority over pedestrians or cyclists?",
         "choices": [
           {
-            "text": "No after F101a the designated path ends and you return to normal road or pavement rules",
+            "text": "No, priority follows from the general rules and other traffic signs",
             "is_correct": true
           },
           {
-            "text": "Yes the path simply becomes optional after F101a",
+            "text": "Yes, every end sign gives motor vehicles priority",
             "is_correct": false
           }
         ],
-        "explanation": "F101a completely ends the designated compulsory mixed path. There is no longer any indication that the special rules of the mixed path apply. Normal traffic rules apply."
+        "explanation": "F101a only ends the special regime and grants no priority."
       },
       "FR": {
-        "question": "F101a transforme-t-il le chemin mixte oblige en chemin optionnel ? Les usagers peuvent-ils continuer a utiliser le chemin apres F101a comme itineraire alternatif ?",
+        "question": "F101a donne-t-il automatiquement priorité aux véhicules à moteur sur les piétons ou cyclistes ?",
         "choices": [
           {
-            "text": "Non apres F101a le chemin designe se termine et vous retournez aux regles normales de la chaussee ou du trottoir",
+            "text": "Non, la priorité dépend des règles générales et des autres signaux",
             "is_correct": true
           },
           {
-            "text": "Oui le chemin devient simplement optionnel apres F101a",
+            "text": "Oui, tout signal de fin donne priorité aux véhicules à moteur",
             "is_correct": false
           }
         ],
-        "explanation": "F101a met completement fin au chemin mixte oblige designe. Il n y a plus aucune indication que les regles speciales du chemin mixte s appliquent. Les regles normales de la circulation s appliquent."
+        "explanation": "F101a met seulement fin au régime spécial et n'accorde aucune priorité."
       },
       "AR": {
-        "question": "هل تحول F101a المسار المختلط الإلزامي إلى مسار اختياري؟ هل يمكن للمستخدمين الاستمرار في استخدام المسار بعد F101a كطريق بديل؟",
+        "question": "هل تمنح F101a المركبات الآلية تلقائيًا الأولوية على المشاة أو الدراجات؟",
         "choices": [
           {
-            "text": "لا بعد F101a تنتهي المسار المُعيَّن وتعود إلى قواعد الطريق أو الرصيف العادية",
+            "text": "لا، تتبع الأولوية القواعد العامة والعلامات الأخرى",
             "is_correct": true
           },
           {
-            "text": "نعم يصبح المسار اختيارياً ببساطة بعد F101a",
+            "text": "نعم، تمنح كل علامة نهاية الأولوية للمركبات الآلية",
             "is_correct": false
           }
         ],
-        "explanation": "F101a تنهي تماماً المسار المختلط الإلزامي المُعيَّن. لم يعد هناك أي إشارة إلى تطبيق قواعد المسار المختلط الخاصة. تنطبق قواعد المرور العادية."
+        "explanation": "تنهي F101a النظام الخاص فقط ولا تمنح أولوية."
       }
     }
   }

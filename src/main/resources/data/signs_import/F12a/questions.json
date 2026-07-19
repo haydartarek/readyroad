@@ -28,7 +28,7 @@
         "question": "You see this sign at the start of a street. What does it actually mean for you as a driver?",
         "choices": [
           {
-            "text": "You are entering a residential area where pedestrians and children may use the whole road and a low speed limit applies",
+            "text": "You are entering a living street (woonerf/erf) where pedestrians and children may use the whole road and a low speed limit applies",
             "is_correct": true
           },
           {
@@ -40,13 +40,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "This sign marks a residential area, a zone with special rules protecting pedestrians and a strict speed limit meant to keep playing children safe."
+        "explanation": "This sign marks a living street (woonerf/erf), a zone with special rules protecting pedestrians and a strict speed limit meant to keep playing children safe."
       },
       "FR": {
         "question": "Vous apercevez ce panneau au début d'une rue. Que signifie-t-il concrètement pour vous ?",
         "choices": [
           {
-            "text": "Vous entrez dans une zone résidentielle où les piétons et les enfants peuvent utiliser toute la voie et où une vitesse réduite s'applique",
+            "text": "Vous entrez dans une zone residentielle ou de rencontre (woonerf/erf) où les piétons et les enfants peuvent utiliser toute la voie et où une vitesse réduite s'applique",
             "is_correct": true
           },
           {
@@ -58,13 +58,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "Ce panneau annonce une zone résidentielle, où des règles particulières protègent les piétons et où une vitesse strictement limitée s'impose à cause des enfants qui jouent."
+        "explanation": "Ce panneau annonce une zone residentielle ou de rencontre (woonerf/erf), où des règles particulières protègent les piétons et où une vitesse strictement limitée s'impose à cause des enfants qui jouent."
       },
       "AR": {
         "question": "لاحظت هذه العلامة عند مدخل شارع، فماذا تعني بالضبط للسائق؟",
         "choices": [
           {
-            "text": "أنك تدخل منطقة سكنية يمكن فيها للمشاة والأطفال استخدام الطريق بالكامل ويسري فيها حد سرعة منخفض",
+            "text": "أنك تدخل منطقة معيشة مشتركة (woonerf/erf) يمكن فيها للمشاة والأطفال استخدام الطريق بالكامل ويسري فيها حد سرعة منخفض",
             "is_correct": true
           },
           {
@@ -76,7 +76,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "تشير هذه العلامة إلى منطقة سكنية تحكمها قواعد خاصة لحماية المشاة، مع حد سرعة صارم بسبب احتمال وجود أطفال يلعبون في الطريق."
+        "explanation": "تشير هذه العلامة إلى منطقة معيشة مشتركة (woonerf/erf) تحكمها قواعد خاصة لحماية المشاة، مع حد سرعة صارم بسبب احتمال وجود أطفال يلعبون في الطريق."
       }
     }
   },
@@ -106,7 +106,7 @@
         "explanation": "In een woonerf verwacht de wetgever extra waakzaamheid, omdat voetgangers en kinderen zich vrij over de rijbaan mogen bewegen."
       },
       "EN": {
-        "question": "You have just entered a residential area. What is expected from you as a driver?",
+        "question": "You have just entered a living street (woonerf/erf). What is expected from you as a driver?",
         "choices": [
           {
             "text": "Drive with heightened attention and adjust your speed because of the living environment and possible children nearby",
@@ -116,12 +116,15 @@
             "text": "Keep driving normally as on any other street",
             "is_correct": false
           },
-          { "text": "Only watch out for other cars", "is_correct": false }
+          {
+            "text": "Only watch out for other cars",
+            "is_correct": false
+          }
         ],
-        "explanation": "In a residential area, extra vigilance is required because pedestrians and children may move freely across the entire roadway."
+        "explanation": "In a living street (woonerf/erf), extra vigilance is required because pedestrians and children may move freely across the entire roadway."
       },
       "FR": {
-        "question": "Vous venez d'entrer dans une zone résidentielle. Qu'attend-on de vous en tant que conducteur ?",
+        "question": "Vous venez d'entrer dans une zone residentielle ou de rencontre (woonerf/erf). Qu'attend-on de vous en tant que conducteur ?",
         "choices": [
           {
             "text": "Conduire avec une vigilance accrue et adapter votre vitesse en raison du cadre de vie et de la présence possible d'enfants",
@@ -136,10 +139,10 @@
             "is_correct": false
           }
         ],
-        "explanation": "Dans une zone résidentielle, une vigilance accrue est exigée puisque les piétons et les enfants peuvent circuler librement sur toute la chaussée."
+        "explanation": "Dans une zone residentielle ou de rencontre (woonerf/erf), une vigilance accrue est exigée puisque les piétons et les enfants peuvent circuler librement sur toute la chaussée."
       },
       "AR": {
-        "question": "دخلت للتو إلى منطقة سكنية، فما المطلوب منك كسائق؟",
+        "question": "دخلت للتو إلى منطقة معيشة مشتركة (woonerf/erf)، فما المطلوب منك كسائق؟",
         "choices": [
           {
             "text": "القيادة بانتباه أعلى وتعديل سرعتك بسبب طبيعة المنطقة واحتمال وجود أطفال قريبين",
@@ -149,9 +152,12 @@
             "text": "الاستمرار بالقيادة بشكل طبيعي كما في أي شارع آخر",
             "is_correct": false
           },
-          { "text": "الانتباه فقط للمركبات الأخرى", "is_correct": false }
+          {
+            "text": "الانتباه فقط للمركبات الأخرى",
+            "is_correct": false
+          }
         ],
-        "explanation": "تتطلب المنطقة السكنية انتباهًا إضافيًا من السائق لأن المشاة والأطفال يمكنهم التحرك بحرية عبر الطريق بالكامل."
+        "explanation": "تتطلب منطقة المعيشة المشتركة (woonerf/erf) انتباهًا إضافيًا من السائق لأن المشاة والأطفال يمكنهم التحرك بحرية عبر الطريق بالكامل."
       }
     }
   },
@@ -277,7 +283,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "Random parking in a residential area restricts pedestrians' freedom of movement, so parking is only allowed in specifically designated spots."
+        "explanation": "Random parking in a living street (woonerf/erf) restricts pedestrians' freedom of movement, so parking is only allowed in specifically designated spots."
       },
       "FR": {
         "question": "Vous souhaitez garer votre voiture dans une rue portant ce panneau. Comment devez-vous procéder ?",
@@ -295,7 +301,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "Le stationnement aléatoire dans une zone résidentielle limite la liberté de mouvement des piétons, c'est pourquoi il n'est autorisé qu'aux emplacements prévus."
+        "explanation": "Le stationnement aléatoire dans une zone residentielle ou de rencontre (woonerf/erf) limite la liberté de mouvement des piétons, c'est pourquoi il n'est autorisé qu'aux emplacements prévus."
       },
       "AR": {
         "question": "ترغب في وقوف سيارتك في شارع يحمل هذه العلامة، فكيف تتصرف؟",
@@ -313,7 +319,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "الوقوف العشوائي في المنطقة السكنية يقيد حرية تنقل المشاة، لذلك لا يُسمح بالوقوف إلا في الأماكن المخصصة له."
+        "explanation": "الوقوف العشوائي في منطقة المعيشة المشتركة (woonerf/erf) يقيد حرية تنقل المشاة، لذلك لا يُسمح بالوقوف إلا في الأماكن المخصصة له."
       }
     }
   },
@@ -335,12 +341,15 @@
             "text": "Pas nadat de bestuurder honderd meter heeft gereden",
             "is_correct": false
           },
-          { "text": "Enkel op kruispunten binnen de zone", "is_correct": false }
+          {
+            "text": "Enkel op kruispunten binnen de zone",
+            "is_correct": false
+          }
         ],
         "explanation": "De regels van een woonerf gaan onmiddellijk in vanaf het bord en blijven van toepassing tot het overeenkomstige eindbord de zone afsluit."
       },
       "EN": {
-        "question": "From which point do the special rules of a residential area apply to the driver?",
+        "question": "From which point do the special rules of a living street (woonerf/erf) apply to the driver?",
         "choices": [
           {
             "text": "Immediately from the sign itself, until the end of the zone is indicated",
@@ -355,10 +364,10 @@
             "is_correct": false
           }
         ],
-        "explanation": "The rules of a residential area take effect immediately at the sign and remain valid until the matching end sign closes the zone."
+        "explanation": "The rules of a living street (woonerf/erf) take effect immediately at the sign and remain valid until the matching end sign closes the zone."
       },
       "FR": {
-        "question": "À partir de quel point les règles particulières de la zone résidentielle s'appliquent-elles au conducteur ?",
+        "question": "À partir de quel point les règles particulières de la zone residentielle ou de rencontre (woonerf/erf) s'appliquent-elles au conducteur ?",
         "choices": [
           {
             "text": "Immédiatement à partir du panneau lui-même, jusqu'à ce que la fin de la zone soit signalée",
@@ -373,10 +382,10 @@
             "is_correct": false
           }
         ],
-        "explanation": "Les règles de la zone résidentielle entrent en vigueur immédiatement au niveau du panneau et restent valables jusqu'au panneau de fin correspondant."
+        "explanation": "Les règles de la zone residentielle ou de rencontre (woonerf/erf) entrent en vigueur immédiatement au niveau du panneau et restent valables jusqu'au panneau de fin correspondant."
       },
       "AR": {
-        "question": "من أي نقطة تبدأ القواعد الخاصة بالمنطقة السكنية بالسريان على السائق؟",
+        "question": "من أي نقطة تبدأ القواعد الخاصة بمنطقة المعيشة المشتركة (woonerf/erf) بالسريان على السائق؟",
         "choices": [
           {
             "text": "مباشرة من عند العلامة نفسها، وتستمر حتى يُشار إلى نهاية المنطقة",
@@ -391,7 +400,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "تبدأ قواعد المنطقة السكنية بالتطبيق فورًا عند العلامة وتستمر سارية حتى تظهر علامة النهاية المقابلة التي تُغلق المنطقة."
+        "explanation": "تبدأ قواعد منطقة المعيشة المشتركة (woonerf/erf) بالتطبيق فورًا عند العلامة وتستمر سارية حتى تظهر علامة النهاية المقابلة التي تُغلق المنطقة."
       }
     }
   },
@@ -421,7 +430,7 @@
         "explanation": "In een woonerf mogen voetgangers de volledige breedte van de openbare weg gebruiken en mogen kinderen spelen. Bestuurders mogen hen niet hinderen of in gevaar brengen, moeten zo nodig stoppen en moeten dubbel voorzichtig zijn tegenover kinderen."
       },
       "EN": {
-        "question": "A child is playing with a ball close to the carriageway in a residential area. What is the correct attitude for a driver?",
+        "question": "A child is playing with a ball close to the carriageway in a living street (woonerf/erf). What is the correct attitude for a driver?",
         "choices": [
           {
             "text": "Slow down substantially, take extra care and stop if necessary so the child is neither hindered nor endangered",
@@ -436,10 +445,10 @@
             "is_correct": false
           }
         ],
-        "explanation": "In a residential area pedestrians may use the entire width of the public road and children may play. Drivers must not endanger or hinder them, must stop if necessary and must take extra care around children."
+        "explanation": "In a living street (woonerf/erf) pedestrians may use the entire width of the public road and children may play. Drivers must not endanger or hinder them, must stop if necessary and must take extra care around children."
       },
       "FR": {
-        "question": "Un enfant joue au ballon près de la chaussée dans une zone résidentielle. Quelle attitude le conducteur doit-il adopter ?",
+        "question": "Un enfant joue au ballon près de la chaussée dans une zone residentielle ou de rencontre (woonerf/erf). Quelle attitude le conducteur doit-il adopter ?",
         "choices": [
           {
             "text": "Ralentir fortement, redoubler de prudence et s'arrêter si nécessaire afin de ne ni gêner ni mettre l'enfant en danger",
@@ -454,10 +463,10 @@
             "is_correct": false
           }
         ],
-        "explanation": "Dans une zone résidentielle, les piétons peuvent utiliser toute la largeur de la voie publique et les enfants peuvent jouer. Les conducteurs ne peuvent ni les mettre en danger ni les gêner, doivent s'arrêter si nécessaire et redoubler de prudence envers les enfants."
+        "explanation": "Dans une zone residentielle ou de rencontre (woonerf/erf), les piétons peuvent utiliser toute la largeur de la voie publique et les enfants peuvent jouer. Les conducteurs ne peuvent ni les mettre en danger ni les gêner, doivent s'arrêter si nécessaire et redoubler de prudence envers les enfants."
       },
       "AR": {
-        "question": "طفل يلعب بكرة قريبًا من طريق السير داخل منطقة سكنية، فما التصرف الصحيح للسائق؟",
+        "question": "طفل يلعب بكرة قريبًا من طريق السير داخل منطقة معيشة مشتركة (woonerf/erf)، فما التصرف الصحيح للسائق؟",
         "choices": [
           {
             "text": "خفف السرعة كثيرًا وتوخَّ حذرًا مضاعفًا وتوقف عند الحاجة كي لا تعيق الطفل أو تعرضه للخطر",
@@ -472,7 +481,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "في المنطقة السكنية يجوز للمشاة استخدام كامل عرض الطريق العام ويجوز للأطفال اللعب. ولا يجوز للسائقين تعريضهم للخطر أو إعاقتهم، وعليهم التوقف عند الحاجة وتوخي حذر مضاعف تجاه الأطفال."
+        "explanation": "في منطقة المعيشة المشتركة (woonerf/erf) يجوز للمشاة استخدام كامل عرض الطريق العام ويجوز للأطفال اللعب. ولا يجوز للسائقين تعريضهم للخطر أو إعاقتهم، وعليهم التوقف عند الحاجة وتوخي حذر مضاعف تجاه الأطفال."
       }
     }
   },
@@ -498,7 +507,7 @@
         "explanation": "De lage snelheidslimiet in een woonerf is niet afhankelijk van wat de bestuurder op dat moment ziet, omdat kinderen plots onverwacht kunnen opduiken."
       },
       "EN": {
-        "question": "Is it allowed to drive faster than the imposed limit in a residential area if the street currently looks completely empty?",
+        "question": "Is it allowed to drive faster than the imposed limit in a living street (woonerf/erf) if the street currently looks completely empty?",
         "choices": [
           {
             "text": "No, the speed limit applies permanently, regardless of whether anyone is visible at that moment",
@@ -509,10 +518,10 @@
             "is_correct": false
           }
         ],
-        "explanation": "The low speed limit in a residential area does not depend on what the driver can currently see, since children can appear unexpectedly at any moment."
+        "explanation": "The low speed limit in a living street (woonerf/erf) does not depend on what the driver can currently see, since children can appear unexpectedly at any moment."
       },
       "FR": {
-        "question": "Est-il permis de rouler plus vite que la limite imposée dans une zone résidentielle si la rue semble totalement vide à ce moment ?",
+        "question": "Est-il permis de rouler plus vite que la limite imposée dans une zone residentielle ou de rencontre (woonerf/erf) si la rue semble totalement vide à ce moment ?",
         "choices": [
           {
             "text": "Non, la limitation de vitesse s'applique en permanence, peu importe si quelqu'un est visible à ce moment",
@@ -523,10 +532,10 @@
             "is_correct": false
           }
         ],
-        "explanation": "La limite de vitesse réduite dans une zone résidentielle ne dépend pas de ce que le conducteur voit à cet instant, car des enfants peuvent apparaître de manière inattendue."
+        "explanation": "La limite de vitesse réduite dans une zone residentielle ou de rencontre (woonerf/erf) ne dépend pas de ce que le conducteur voit à cet instant, car des enfants peuvent apparaître de manière inattendue."
       },
       "AR": {
-        "question": "هل يُسمح بالسير أسرع من الحد المفروض في المنطقة السكنية إذا بدا الشارع خاليًا تمامًا في تلك اللحظة؟",
+        "question": "هل يُسمح بالسير أسرع من الحد المفروض في منطقة المعيشة المشتركة (woonerf/erf) إذا بدا الشارع خاليًا تمامًا في تلك اللحظة؟",
         "choices": [
           {
             "text": "لا، يسري حد السرعة بشكل دائم بغض النظر عن ظهور أي شخص في تلك اللحظة",
@@ -537,7 +546,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "لا يعتمد حد السرعة المنخفض في المنطقة السكنية على ما يراه السائق في تلك اللحظة، لأن الأطفال قد يظهرون بشكل غير متوقع في أي وقت."
+        "explanation": "لا يعتمد حد السرعة المنخفض في منطقة المعيشة المشتركة (woonerf/erf) على ما يراه السائق في تلك اللحظة، لأن الأطفال قد يظهرون بشكل غير متوقع في أي وقت."
       }
     }
   },
@@ -563,7 +572,7 @@
         "explanation": "Voetgangers mogen in een woonerf de volledige breedte van de openbare weg gebruiken. De bestuurder mag hen niet hinderen of in gevaar brengen en moet zo nodig stoppen; de voetganger mag het verkeer op zijn beurt niet nodeloos belemmeren."
       },
       "EN": {
-        "question": "In a residential area, may a driver force a walking pedestrian to clear the carriageway immediately?",
+        "question": "In a living street (woonerf/erf), may a driver force a walking pedestrian to clear the carriageway immediately?",
         "choices": [
           {
             "text": "No, pedestrians may use the entire width; the driver must not hinder or endanger them and must stop if necessary",
@@ -574,10 +583,10 @@
             "is_correct": false
           }
         ],
-        "explanation": "Pedestrians may use the entire width of the public road in a residential area. Drivers must not hinder or endanger them and must stop if necessary; pedestrians, in turn, must not obstruct traffic unnecessarily."
+        "explanation": "Pedestrians may use the entire width of the public road in a living street (woonerf/erf). Drivers must not hinder or endanger them and must stop if necessary; pedestrians, in turn, must not obstruct traffic unnecessarily."
       },
       "FR": {
-        "question": "Dans une zone résidentielle, un conducteur peut-il forcer un piéton à libérer immédiatement la chaussée ?",
+        "question": "Dans une zone residentielle ou de rencontre (woonerf/erf), un conducteur peut-il forcer un piéton à libérer immédiatement la chaussée ?",
         "choices": [
           {
             "text": "Non, les piétons peuvent utiliser toute la largeur; le conducteur ne peut ni les gêner ni les mettre en danger et doit s'arrêter si nécessaire",
@@ -588,10 +597,10 @@
             "is_correct": false
           }
         ],
-        "explanation": "Dans une zone résidentielle, les piétons peuvent utiliser toute la largeur de la voie publique. Le conducteur ne peut ni les gêner ni les mettre en danger et doit s'arrêter si nécessaire; le piéton ne peut toutefois pas entraver inutilement la circulation."
+        "explanation": "Dans une zone residentielle ou de rencontre (woonerf/erf), les piétons peuvent utiliser toute la largeur de la voie publique. Le conducteur ne peut ni les gêner ni les mettre en danger et doit s'arrêter si nécessaire; le piéton ne peut toutefois pas entraver inutilement la circulation."
       },
       "AR": {
-        "question": "في المنطقة السكنية، هل يجوز للسائق إجبار أحد المشاة على إخلاء مسار السير فورًا؟",
+        "question": "في منطقة المعيشة المشتركة (woonerf/erf)، هل يجوز للسائق إجبار أحد المشاة على إخلاء مسار السير فورًا؟",
         "choices": [
           {
             "text": "لا، يجوز للمشاة استخدام كامل عرض الطريق، ولا يجوز للسائق إعاقتهم أو تعريضهم للخطر وعليه التوقف عند الحاجة",
@@ -602,7 +611,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "يجوز للمشاة في المنطقة السكنية استخدام كامل عرض الطريق العام. ولا يجوز للسائق إعاقتهم أو تعريضهم للخطر وعليه التوقف عند الحاجة، وفي المقابل لا يجوز للمشاة تعطيل حركة المرور بلا داعٍ."
+        "explanation": "يجوز للمشاة في منطقة المعيشة المشتركة (woonerf/erf) استخدام كامل عرض الطريق العام. ولا يجوز للسائق إعاقتهم أو تعريضهم للخطر وعليه التوقف عند الحاجة، وفي المقابل لا يجوز للمشاة تعطيل حركة المرور بلا داعٍ."
       }
     }
   }

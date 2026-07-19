@@ -31,8 +31,14 @@
             "text": "Caution: when turning, cyclists may cross from the right or continue straight",
             "is_correct": true
           },
-          { "text": "Cyclists are obliged to turn right", "is_correct": false },
-          { "text": "Only cyclists may enter this street", "is_correct": false }
+          {
+            "text": "Cyclists are obliged to turn right",
+            "is_correct": false
+          },
+          {
+            "text": "Only cyclists may enter this street",
+            "is_correct": false
+          }
         ],
         "explanation": "This variant warns drivers who change direction that cyclists may cross from the right or continue straight ahead."
       },
@@ -61,8 +67,14 @@
             "text": "تحذير: عند الانعطاف قد يعبر الدراجون من اليمين أو يواصلون السير مباشرة",
             "is_correct": true
           },
-          { "text": "يجب على الدراجين الانعطاف يمينًا", "is_correct": false },
-          { "text": "يسمح فقط للدراجين بدخول هذا الشارع", "is_correct": false }
+          {
+            "text": "يجب على الدراجين الانعطاف يمينًا",
+            "is_correct": false
+          },
+          {
+            "text": "يسمح فقط للدراجين بدخول هذا الشارع",
+            "is_correct": false
+          }
         ],
         "explanation": "تحذر هذه النسخة السائقين الذين يغيرون اتجاههم من أن الدراجين قد يعبرون من اليمين أو يواصلون السير مباشرة."
       }
@@ -82,7 +94,10 @@
             "text": "Ze waarschuwt specifiek voor fietsers bij een richtingsverandering",
             "is_correct": true
           },
-          { "text": "Ze vervangt elk fietspadbord", "is_correct": false },
+          {
+            "text": "Ze vervangt elk fietspadbord",
+            "is_correct": false
+          },
           {
             "text": "Ze verbiedt voetgangers op het kruispunt",
             "is_correct": false
@@ -97,7 +112,10 @@
             "text": "It specifically warns about cyclists when changing direction",
             "is_correct": true
           },
-          { "text": "It replaces every cycle-track sign", "is_correct": false },
+          {
+            "text": "It replaces every cycle-track sign",
+            "is_correct": false
+          },
           {
             "text": "It prohibits pedestrians at the junction",
             "is_correct": false
@@ -134,7 +152,10 @@
             "text": "إنها تستبدل كل إشارة لمسار الدراجات",
             "is_correct": false
           },
-          { "text": "إنها تمنع المشاة عند التقاطع", "is_correct": false }
+          {
+            "text": "إنها تمنع المشاة عند التقاطع",
+            "is_correct": false
+          }
         ],
         "explanation": "تحذر هذه النسخة من F50bis من احتمال تعارض مع الدراجين عندما ينعطف السائق."
       }
@@ -208,7 +229,10 @@
             "text": "قد يواصل الدراجون السير مباشرة بمحاذاتك بينما تنعطف",
             "is_correct": true
           },
-          { "text": "قد يغلق المشاة الطريق فجأة", "is_correct": false },
+          {
+            "text": "قد يغلق المشاة الطريق فجأة",
+            "is_correct": false
+          },
           {
             "text": "تمر المركبات القادمة عكس الاتجاه دائمًا عند الضوء الأحمر",
             "is_correct": false
@@ -282,8 +306,14 @@
       "AR": {
         "question": "أنت تريد الانعطاف يمينًا ويقترب دراج من الجهة اليمنى. ماذا تفعل؟",
         "choices": [
-          { "text": "تخفف السرعة وتعطي الأولوية للدراج", "is_correct": true },
-          { "text": "تتابع لأنك أشرت مسبقًا", "is_correct": false },
+          {
+            "text": "تخفف السرعة وتعطي الأولوية للدراج",
+            "is_correct": true
+          },
+          {
+            "text": "تتابع لأنك أشرت مسبقًا",
+            "is_correct": false
+          },
           {
             "text": "تجبر الدراج على التوقف باستخدام المنبه وإشارة اليد",
             "is_correct": false
@@ -301,76 +331,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Hoe verhoudt deze waarschuwing zich tot een gewone fietsoversteekplaats?",
+        "question": "Welke wettelijke situatie benadrukt deze F50bis?",
         "choices": [
           {
-            "text": "Ze vraagt dezelfde voorzichtigheid: vertragen en zo nodig stoppen voor fietsers",
+            "text": "Een afslaande bestuurder kruist mogelijk fietsers of tweewielige bromfietsers die dezelfde openbare weg volgen",
             "is_correct": true
           },
           {
-            "text": "Ze is minder streng omdat het enkel een informatiebord is",
+            "text": "Een gewone F50-oversteek waar elke wachtende fietser automatisch voorrang heeft",
             "is_correct": false
           },
           {
-            "text": "Ze laat u voorrang nemen als u groter bent dan de fietser",
+            "text": "Een begin van een fietszone",
             "is_correct": false
           }
         ],
-        "explanation": "Ook al is dit een waarschuwings- of informatiebord, het doel blijft conflicten met fietsers vermijden door tijdig te vertragen en voorrang te geven."
+        "explanation": "F50bis wijst de afslaande bestuurder op fietsers en bestuurders van tweewielige bromfietsen die dezelfde openbare weg volgen. De voorrangsplicht volgt uit de regels voor richtingsverandering."
       },
       "EN": {
-        "question": "How does this warning compare to a normal cyclist crossing?",
+        "question": "Which legal situation does this F50bis highlight?",
         "choices": [
           {
-            "text": "It requires the same caution: slow down and stop if necessary for cyclists",
+            "text": "A turning driver may cross cyclists or two-wheeled moped riders following the same public road",
             "is_correct": true
           },
           {
-            "text": "It is less strict because it is only an information sign",
+            "text": "An ordinary F50 crossing where every waiting cyclist automatically has priority",
             "is_correct": false
           },
           {
-            "text": "It lets you take priority if your vehicle is larger than the bicycle",
+            "text": "The start of a cycle zone",
             "is_correct": false
           }
         ],
-        "explanation": "Even though it is an information or warning sign, the goal remains to avoid conflicts with cyclists by slowing down in time and giving way."
+        "explanation": "F50bis alerts the turning driver to cyclists and riders of two-wheeled mopeds following the same public road. The duty to give way follows from the turning rules."
       },
       "FR": {
-        "question": "Comment cet avertissement se compare-t-il a un passage cycliste ordinaire ?",
+        "question": "Quelle situation juridique cette F50bis met-elle en évidence ?",
         "choices": [
           {
-            "text": "Il exige la meme prudence : ralentir et s arreter si necessaire pour les cyclistes",
+            "text": "Un conducteur qui tourne peut croiser des cyclistes ou cyclomotoristes à deux roues qui suivent la même voie publique",
             "is_correct": true
           },
           {
-            "text": "Il est moins strict parce que c est seulement un panneau d information",
+            "text": "Un passage F50 ordinaire où tout cycliste en attente a automatiquement priorité",
             "is_correct": false
           },
           {
-            "text": "Il vous permet de prendre la priorite si votre vehicule est plus grand que le velo",
+            "text": "Le début d'une zone cyclable",
             "is_correct": false
           }
         ],
-        "explanation": "Meme s il s agit d un panneau d information ou d avertissement, l objectif reste d eviter les conflits avec les cyclistes en ralentissant a temps et en cedant le passage."
+        "explanation": "F50bis attire l'attention du conducteur qui tourne sur les cyclistes et conducteurs de cyclomoteurs à deux roues qui suivent la même voie publique. L'obligation de céder le passage découle des règles du changement de direction."
       },
       "AR": {
-        "question": "كيف تقارن هذه الإشارة التحذيرية بممر دراجات عادي؟",
+        "question": "أي حالة قانونية تبرزها هذه F50bis؟",
         "choices": [
           {
-            "text": "تتطلب الحذر نفسه: خفف السرعة وتوقف إذا لزم الأمر للدراجين",
+            "text": "قد يتقاطع السائق المنعطف مع راكبي الدراجات أو الدراجات النارية الصغيرة ذات العجلتين الذين يتبعون الطريق نفسه",
             "is_correct": true
           },
           {
-            "text": "هي أقل صرامة لأنها مجرد إشارة معلومات",
+            "text": "ممر F50 عادي يتمتع فيه كل راكب دراجة منتظر بالأولوية تلقائيًا",
             "is_correct": false
           },
           {
-            "text": "تسمح لك بأخذ الأولوية إذا كانت مركبتك أكبر من الدراجة",
+            "text": "بداية منطقة دراجات",
             "is_correct": false
           }
         ],
-        "explanation": "حتى لو كانت إشارة معلومات أو تحذير، يبقى الهدف تجنب التعارض مع الدراجين عبر التخفيف المبكر وإعطاء الأولوية."
+        "explanation": "تنبه F50bis السائق المنعطف إلى راكبي الدراجات وقائدي الدراجات النارية الصغيرة ذات العجلتين الذين يتبعون الطريق العام نفسه. وينتج واجب إعطاء الأولوية من قواعد تغيير الاتجاه."
       }
     }
   },
@@ -406,7 +436,10 @@
             "text": "A marked cycle crossing or conflict area where vehicles turn",
             "is_correct": true
           },
-          { "text": "A level crossing without barriers", "is_correct": false },
+          {
+            "text": "A level crossing without barriers",
+            "is_correct": false
+          },
           {
             "text": "A zebra crossing only, without cycle markings",
             "is_correct": false
@@ -421,7 +454,10 @@
             "text": "Un passage cycliste marque ou une zone de conflit lors du virage",
             "is_correct": true
           },
-          { "text": "Un passage a niveau sans barrieres", "is_correct": false },
+          {
+            "text": "Un passage a niveau sans barrieres",
+            "is_correct": false
+          },
           {
             "text": "Uniquement un zebra sans marquage cycliste",
             "is_correct": false
@@ -436,8 +472,14 @@
             "text": "ممر دراجات مُعلَّم أو منطقة تعارض عند الانعطاف",
             "is_correct": true
           },
-          { "text": "معبر سكة حديد بلا حواجز", "is_correct": false },
-          { "text": "ممر مشاة فقط دون علامات دراجات", "is_correct": false }
+          {
+            "text": "معبر سكة حديد بلا حواجز",
+            "is_correct": false
+          },
+          {
+            "text": "ممر مشاة فقط دون علامات دراجات",
+            "is_correct": false
+          }
         ],
         "explanation": "تظهر هذه الإشارة غالبًا قرب ممر دراجات أو منطقة تعارض حيث يقطع الدراجون مسار المركبات المنعطفة."
       }
@@ -516,60 +558,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Mag een tractor deze oversteekplaats passeren zonder te stoppen als er geen fietsers zichtbaar zijn?",
+        "question": "Mag u afslaan als geen fietser of tweewielige bromfietser de conflictzone volgt of nadert en de manoeuvre veilig is?",
         "choices": [
           {
-            "text": "Ja, als er niemand oversteekt of wil oversteken hoeft u niet te stoppen",
+            "text": "Ja, na zorgvuldig controleren mag u veilig afslaan; F50bis legt geen onvoorwaardelijke stop op",
             "is_correct": true
           },
           {
-            "text": "Nee, een tractor moet hier altijd volledig stoppen",
+            "text": "Nee, bij F50bis moet elke bestuurder altijd volledig stoppen",
             "is_correct": false
           }
         ],
-        "explanation": "De bestuurder moet vooral vertragen en klaar zijn om te stoppen. Als er geen fietser aanwezig is of wil oversteken, is doorrijden toegelaten."
+        "explanation": "Controleer spiegels, dode hoek en de conflictzone. Als niemand voorrang moet krijgen en de manoeuvre veilig is, mag u afslaan."
       },
       "EN": {
-        "question": "May a tractor pass this crossing without stopping if no cyclists are visible?",
+        "question": "May you turn when no cyclist or two-wheeled moped rider is following or approaching the conflict area and the manoeuvre is safe?",
         "choices": [
           {
-            "text": "Yes, if nobody is crossing or intending to cross you do not have to stop",
+            "text": "Yes, after careful checks you may turn safely; F50bis imposes no unconditional stop",
             "is_correct": true
           },
           {
-            "text": "No, a tractor must always come to a complete stop here",
+            "text": "No, every driver must always stop completely at F50bis",
             "is_correct": false
           }
         ],
-        "explanation": "The driver must mainly slow down and be ready to stop. If no cyclist is present or intends to cross, driving on is allowed."
+        "explanation": "Check mirrors, the blind spot and the conflict area. If nobody must be given way and the manoeuvre is safe, you may turn."
       },
       "FR": {
-        "question": "Un tracteur peut-il passer ce passage sans s arreter si aucun cycliste n est visible ?",
+        "question": "Pouvez-vous tourner lorsqu'aucun cycliste ou cyclomotoriste à deux roues ne suit ou n'approche la zone de conflit et que la manœuvre est sûre ?",
         "choices": [
           {
-            "text": "Oui, si personne ne traverse ou n a l intention de traverser vous n etes pas oblige de vous arreter",
+            "text": "Oui, après contrôle attentif vous pouvez tourner en sécurité; F50bis n'impose pas un arrêt inconditionnel",
             "is_correct": true
           },
           {
-            "text": "Non, un tracteur doit toujours s arreter completement ici",
+            "text": "Non, tout conducteur doit toujours s'arrêter complètement à F50bis",
             "is_correct": false
           }
         ],
-        "explanation": "Le conducteur doit surtout ralentir et etre pret a s arreter. Si aucun cycliste n est present ou n a l intention de traverser, il peut continuer."
+        "explanation": "Contrôlez les rétroviseurs, l'angle mort et la zone de conflit. Si personne ne doit recevoir la priorité et si la manœuvre est sûre, vous pouvez tourner."
       },
       "AR": {
-        "question": "هل يمكن لجرار أن يمر من هذا الممر دون توقف إذا لم يكن هناك دراجون مرئيون؟",
+        "question": "هل يجوز الانعطاف عندما لا يتبع منطقة التعارض أو يقترب منها راكب دراجة أو دراجة نارية صغيرة ذات عجلتين وكانت المناورة آمنة؟",
         "choices": [
           {
-            "text": "نعم، إذا لم يكن أحد يعبر أو ينوي العبور فلا يجب التوقف",
+            "text": "نعم، بعد الفحص الدقيق يجوز الانعطاف بأمان؛ فلا تفرض F50bis توقفًا غير مشروط",
             "is_correct": true
           },
           {
-            "text": "لا، يجب على الجرار أن يتوقف هنا دائمًا توقفًا كاملًا",
+            "text": "لا، يجب على كل سائق التوقف الكامل دائمًا عند F50bis",
             "is_correct": false
           }
         ],
-        "explanation": "يجب على السائق أساسًا أن يخفف السرعة وأن يكون مستعدًا للتوقف. إذا لم يكن هناك دراج حاضر أو ينوي العبور، فيجوز المتابعة."
+        "explanation": "افحص المرايا والنقطة العمياء ومنطقة التعارض. إذا لم يوجد من يجب إعطاؤه الأولوية وكانت المناورة آمنة، يجوز الانعطاف."
       }
     }
   }

@@ -22,7 +22,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "F5 markeert het begin van een autosnelweg. De algemene maximumsnelheid is 120 km/u, tenzij een lagere limiet of de omstandigheden een lagere snelheid vereisen. De eis dat een motorvoertuig of sleep op een horizontale weg minstens 70 km/u moet kunnen halen, is een toelatingscriterium en geen algemene minimumrijsnelheid."
+        "explanation": "F5 markeert het begin of de oprit van een autosnelweg. De vereiste dat een voertuig of sleep op een horizontale weg 70 km/u moet kunnen halen is een toegangsvoorwaarde. Eenmaal op de autosnelweg mag een bestuurder, behalve bij een lagere C43, niet trager dan 70 km/u rijden en moet hij tegelijk zijn snelheid aan de veiligheid aanpassen."
       },
       "EN": {
         "question": "What does sign F5 'Motorway start' mean?",
@@ -40,7 +40,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "F5 marks the start of a motorway. The general maximum speed is 120 km/h unless a lower limit or the conditions require a lower speed. The requirement that a motor vehicle or combination be capable of reaching at least 70 km/h on a level road is an access criterion, not a general minimum driving speed."
+        "explanation": "F5 marks the start of, or an entrance to, a motorway. The ability to reach 70 km/h on a level road is an access condition. Once on the motorway, unless C43 imposes a lower speed, a driver may not drive below 70 km/h and must at the same time adapt speed for safety."
       },
       "FR": {
         "question": "Que signifie le panneau F5 'Autoroute début' ?",
@@ -58,7 +58,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "F5 marque le début d'une autoroute. La vitesse maximale générale est de 120 km/h, sauf limitation inférieure ou circonstances imposant de ralentir. L'exigence qu'un véhicule à moteur ou train de véhicules puisse atteindre au moins 70 km/h en palier est un critère d'accès, pas une vitesse minimale générale de circulation."
+        "explanation": "F5 marque le début d'une autoroute ou l'accès à celle-ci. La capacité d'atteindre 70 km/h en palier est une condition d'accès. Sur l'autoroute, sauf C43 imposant une vitesse inférieure, le conducteur ne peut rouler à moins de 70 km/h et doit en même temps adapter sa vitesse à la sécurité."
       },
       "AR": {
         "question": "ما معنى هذه العلامة المرورية؟",
@@ -76,7 +76,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "تحدد F5 بداية طريق سيار. الحد الأقصى العام للسرعة هو 120 كم/س ما لم تُفرض سرعة أقل أو تستوجب الظروف تخفيفها. اشتراط قدرة المركبة الآلية أو مجموعة المركبات على بلوغ 70 كم/س على طريق مستوٍ هو شرط للدخول، وليس حداً أدنى عاماً لسرعة السير."
+        "explanation": "تحدد F5 بداية الطريق السيار أو مدخله. القدرة على بلوغ 70 كم/س على طريق مستوٍ شرط للدخول. وبعد الدخول، وما لم تفرض C43 سرعة أقل، لا يجوز السير بأقل من 70 كم/س مع وجوب تكييف السرعة في الوقت نفسه مع متطلبات السلامة."
       }
     }
   },
@@ -90,27 +90,54 @@
       "NL": {
         "question": "Welk bord markeert het einde van de autosnelweg die begint met bord F5?",
         "choices": [
-          { "text": "Bord F7 'Einde autosnelweg'", "is_correct": true },
-          { "text": "Bord F11 'Einde autoweg'", "is_correct": false },
-          { "text": "Bord F3b 'Einde bebouwde kom'", "is_correct": false }
+          {
+            "text": "Bord F7 'Einde autosnelweg'",
+            "is_correct": true
+          },
+          {
+            "text": "Bord F11 'Einde autoweg'",
+            "is_correct": false
+          },
+          {
+            "text": "Bord F3b 'Einde bebouwde kom'",
+            "is_correct": false
+          }
         ],
         "explanation": "F7 markeert het einde van de autosnelweg die bij F5 begon. F11 markeert het einde van een autoweg (F9)."
       },
       "EN": {
         "question": "Which sign marks the end of the motorway that begins with sign F5?",
         "choices": [
-          { "text": "Sign F7 'End of motorway'", "is_correct": true },
-          { "text": "Sign F11 'End of expressway'", "is_correct": false },
-          { "text": "Sign F3b 'End of built-up area'", "is_correct": false }
+          {
+            "text": "Sign F7 'End of motorway'",
+            "is_correct": true
+          },
+          {
+            "text": "Sign F11 'End of expressway'",
+            "is_correct": false
+          },
+          {
+            "text": "Sign F3b 'End of built-up area'",
+            "is_correct": false
+          }
         ],
         "explanation": "F7 marks the end of the motorway that started at F5. F11 marks the end of an expressway (F9)."
       },
       "FR": {
         "question": "Quel panneau marque la fin de l'autoroute qui commence avec le panneau F5 ?",
         "choices": [
-          { "text": "Panneau F7 'Fin autoroute'", "is_correct": true },
-          { "text": "Panneau F11 'Fin route express'", "is_correct": false },
-          { "text": "Panneau F3b 'Fin d'agglomération'", "is_correct": false }
+          {
+            "text": "Panneau F7 'Fin autoroute'",
+            "is_correct": true
+          },
+          {
+            "text": "Panneau F11 'Fin route express'",
+            "is_correct": false
+          },
+          {
+            "text": "Panneau F3b 'Fin d'agglomération'",
+            "is_correct": false
+          }
         ],
         "explanation": "F7 marque la fin de l'autoroute qui a commencé à F5. F11 marque la fin d'une route expresse (F9)."
       },
@@ -157,7 +184,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "Voetgangers, fietsers en bromfietsen mogen de autosnelweg niet gebruiken. Ook motorvoertuigen en slepen die op een horizontale weg geen 70 km/u kunnen halen, zijn niet toegelaten. Dit gaat om de technische geschiktheid voor toegang, niet om een verplichting om altijd minstens 70 km/u te rijden."
+        "explanation": "Voetgangers, fietsers, bromfietsers, bestuurders van dieren, landbouwvoertuigen en de andere categorieën van artikel 21.1 hebben geen toegang. Ook voertuigen of slepen die op een horizontale weg geen 70 km/u kunnen halen, zijn uitgesloten. Op de autosnelweg geldt daarnaast de minimumregel van artikel 21.2, behoudens een lagere C43 en de algemene plicht om de snelheid aan de veiligheid aan te passen."
       },
       "EN": {
         "question": "Which road users are NOT allowed on a motorway (sign F5)?",
@@ -175,7 +202,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "Pedestrians, cyclists and mopeds may not use a motorway. Motor vehicles and combinations unable to reach 70 km/h on a level road are also excluded. This concerns technical eligibility for access, not a duty to drive at least 70 km/h at all times."
+        "explanation": "Pedestrians, cyclists, moped riders, animal drivers, agricultural vehicles and the other categories in Article 21.1 have no access. Vehicles or combinations unable to reach 70 km/h on a level road are also excluded. Article 21.2 additionally sets the motorway minimum, subject to a lower C43 and the general duty to adapt speed for safety."
       },
       "FR": {
         "question": "Quels usagers de la route ne sont PAS autorisés sur une autoroute (panneau F5) ?",
@@ -193,7 +220,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "Les piétons, cyclistes et cyclomoteurs ne peuvent pas utiliser l'autoroute. Les véhicules à moteur et trains de véhicules incapables d'atteindre 70 km/h en palier en sont également exclus. Il s'agit de l'aptitude technique à y accéder, et non d'une obligation de rouler toujours à au moins 70 km/h."
+        "explanation": "Les piétons, cyclistes, cyclomotoristes, conducteurs d'animaux, véhicules agricoles et autres catégories de l'article 21.1 n'ont pas accès. Les véhicules ou trains de véhicules incapables d'atteindre 70 km/h en palier sont aussi exclus. L'article 21.2 fixe en outre le minimum sur autoroute, sous réserve d'un C43 inférieur et de l'obligation générale d'adapter la vitesse à la sécurité."
       },
       "AR": {
         "question": "من مستخدمي الطريق الذين لا يُسمح لهم على الطريق السريع (علامة مرورية F5)؟",
@@ -211,7 +238,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "لا يجوز للمشاة وراكبي الدراجات والدراجات النارية الصغيرة استخدام الطريق السيار. كما تُمنع المركبات الآلية ومجموعات المركبات غير القادرة على بلوغ 70 كم/س على طريق مستوٍ. يتعلق ذلك بالأهلية التقنية للدخول، لا بوجوب السير بسرعة 70 كم/س على الأقل طوال الوقت."
+        "explanation": "لا يُسمح بدخول المشاة وراكبي الدراجات والدراجات النارية الصغيرة وقائدي الحيوانات والمركبات الزراعية والفئات الأخرى في المادة 21.1. كما تُستبعد المركبات أو مجموعات المركبات غير القادرة على بلوغ 70 كم/س على طريق مستوٍ. وتحدد المادة 21.2 أيضًا الحد الأدنى على الطريق السيار، مع مراعاة C43 الأقل وواجب تكييف السرعة للسلامة."
       }
     }
   },
@@ -251,7 +278,10 @@
             "text": "Remain in the middle of the roadway and ask other drivers for help",
             "is_correct": false
           },
-          { "text": "Reverse back to the nearest exit", "is_correct": false }
+          {
+            "text": "Reverse back to the nearest exit",
+            "is_correct": false
+          }
         ],
         "explanation": "Move the vehicle as safely as possible to the hard shoulder, activate the hazard lights and wear a reflective vest when leaving it. If safe, place the warning triangle at least 100 m behind on a motorway and wait with passengers behind the barrier for assistance."
       },
@@ -284,7 +314,10 @@
             "text": "البقاء في وسط الطريق وطلب المساعدة من السائقين الآخرين",
             "is_correct": false
           },
-          { "text": "التراجع للخلف حتى أقرب مخرج", "is_correct": false }
+          {
+            "text": "التراجع للخلف حتى أقرب مخرج",
+            "is_correct": false
+          }
         ],
         "explanation": "انقل المركبة بأمان قدر الإمكان إلى حارة الطوارئ، وشغّل أضواء الخطر، وارتدِ سترة عاكسة عند الخروج. إذا كان ذلك آمنًا، ضع المثلث على بعد 100 متر على الأقل خلف المركبة وانتظر المساعدة مع الركاب خلف الحاجز."
       }
@@ -298,76 +331,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Op de autosnelweg (bord F5): welke rijstrook gebruikt u normaal voor rijden?",
+        "question": "Welke rijstrook gebruikt u normaal op de autosnelweg?",
         "choices": [
           {
-            "text": "De rechter rijstrook; u rijdt alleen op een andere rijstrook om in te halen en weegt daarna direct naar rechts terug",
+            "text": "U houdt zo veel mogelijk rechts en gebruikt andere rijstroken volgens de regels en verkeerssituatie",
             "is_correct": true
           },
           {
-            "text": "De middelste rijstrook; die is het veiligst op de autosnelweg",
+            "text": "U blijft altijd op de middelste rijstrook",
             "is_correct": false
           },
           {
-            "text": "De linkse rijstrook; die is gereserveerd voor snelheidsrijders",
+            "text": "U kiest permanent de rijstrook met het minste verkeer",
             "is_correct": false
           }
         ],
-        "explanation": "Op de autosnelweg houdt u zoveel mogelijk de rechter rijstrook aan. De andere stroken zijn alleen voor inhalen."
+        "explanation": "De algemene regel is zo veel mogelijk rechts houden. Gebruik van andere rijstroken hangt af van onder meer inhalen, voorsorteren, rijstrooksignalisatie en de wettelijk geregelde verkeerssituatie."
       },
       "EN": {
-        "question": "On the motorway (sign F5): which lane do you normally use for driving?",
+        "question": "Which lane do you normally use on a motorway?",
         "choices": [
           {
-            "text": "The right-hand lane; you only use another lane to overtake and then return to the right immediately",
+            "text": "Keep as far right as possible and use other lanes according to the rules and traffic situation",
             "is_correct": true
           },
           {
-            "text": "The middle lane; it is the safest on a motorway",
+            "text": "Always remain in the middle lane",
             "is_correct": false
           },
           {
-            "text": "The left lane; it is reserved for fast drivers",
+            "text": "Permanently choose the lane with the least traffic",
             "is_correct": false
           }
         ],
-        "explanation": "On a motorway you keep to the right-hand lane as much as possible. Other lanes are for overtaking only."
+        "explanation": "The general rule is to keep as far right as possible. Use of other lanes depends on overtaking, lane selection, lane signals and legally defined traffic situations."
       },
       "FR": {
-        "question": "Sur l'autoroute (panneau F5) : quelle voie utilisez-vous normalement pour rouler ?",
+        "question": "Quelle bande utilisez-vous normalement sur l'autoroute ?",
         "choices": [
           {
-            "text": "La voie de droite; vous n'utilisez une autre voie que pour dépasser et revenez immédiatement à droite ensuite",
+            "text": "Tenez votre droite autant que possible et utilisez les autres bandes selon les regles et la circulation",
             "is_correct": true
           },
           {
-            "text": "La voie du milieu; c'est la plus sûre sur l'autoroute",
+            "text": "Restez toujours sur la bande du milieu",
             "is_correct": false
           },
           {
-            "text": "La voie de gauche; elle est réservée aux conducteurs rapides",
+            "text": "Choisissez en permanence la bande la moins chargee",
             "is_correct": false
           }
         ],
-        "explanation": "Sur l'autoroute vous tenez la voie de droite autant que possible. Les autres voies sont uniquement pour dépasser."
+        "explanation": "La regle generale est de tenir sa droite autant que possible. L'usage des autres bandes depend notamment du depassement, de la selection de bande, de la signalisation et de la situation de circulation."
       },
       "AR": {
-        "question": "على الطريق السريع (علامة مرورية F5): أي حارة تستخدم عادةً للقيادة؟",
+        "question": "أي حارة تستخدم عادة على الطريق السيار؟",
         "choices": [
           {
-            "text": "الحارة اليمنى؛ تستخدم حارة أخرى فقط للتجاوز ثم تعود فوراً إلى اليمين",
+            "text": "تلتزم اليمين قدر الإمكان وتستخدم الحارات الأخرى وفق القواعد وحالة المرور",
             "is_correct": true
           },
           {
-            "text": "الحارة الوسطى؛ هي الأكثر أماناً على الطريق السريع",
+            "text": "تبقى دائمًا في الحارة الوسطى",
             "is_correct": false
           },
           {
-            "text": "الحارة اليسرى؛ مخصصة للسائقين السريعين",
+            "text": "تختار دائمًا الحارة الأقل ازدحامًا",
             "is_correct": false
           }
         ],
-        "explanation": "على الطريق السريع تلتزم بالحارة اليمنى قدر الإمكان. الحارات الأخرى مخصصة للتجاوز فقط."
+        "explanation": "القاعدة العامة هي الالتزام باليمين قدر الإمكان. يعتمد استخدام الحارات الأخرى على التجاوز واختيار الحارة وإشارات الحارات وحالات المرور المنظمة قانونيًا."
       }
     }
   },
@@ -525,60 +558,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Op de autosnelweg (bord F5): is rechts inhalen (rechts voorbijrijden) toegestaan?",
+        "question": "Mag u bij vlot verkeer op de autosnelweg bewust rechts inhalen?",
         "choices": [
           {
-            "text": "Nee, rechts inhalen is op de autosnelweg algemeen verboden; u haalt altijd links in",
+            "text": "Nee, bij vlot verkeer haalt u links in; alleen situaties die wettelijk niet als inhalen gelden, zoals rijstroken met verschillende snelheid in druk verkeer, worden anders beoordeeld",
             "is_correct": true
           },
           {
-            "text": "Ja, rechts inhalen is toegestaan als de rechter rijstrook vrij is en u het vlottere rijden niet verstoort",
+            "text": "Ja, zodra de rechter rijstrook vrij is mag u die gebruiken om sneller voorbij te rijden",
             "is_correct": false
           }
         ],
-        "explanation": "Op de autosnelweg is rechts inhalen verboden. U haalt altijd in via de linker rijstrook en keert daarna terug naar rechts."
+        "explanation": "Bij vlot verkeer gebeurt inhalen links. Dat voertuigen in druk verkeer op de ene rijstrook sneller rijden dan op een andere, wordt in de wettelijk bepaalde gevallen niet als inhalen beschouwd; daarom is een absolute uitspraak over elke snelheidswisseling tussen rijstroken onjuist."
       },
       "EN": {
-        "question": "On the motorway (sign F5): is overtaking on the right permitted?",
+        "question": "In free-flowing motorway traffic, may you deliberately overtake on the right?",
         "choices": [
           {
-            "text": "No, passing on the right is generally forbidden on the motorway; you always overtake on the left",
+            "text": "No, in free-flowing traffic you overtake on the left; legally defined situations that are not treated as overtaking, such as lanes moving at different speeds in dense traffic, are assessed differently",
             "is_correct": true
           },
           {
-            "text": "Yes, passing on the right is allowed if the right lane is free and you do not disrupt the flow",
+            "text": "Yes, whenever the right lane is clear you may use it to pass faster",
             "is_correct": false
           }
         ],
-        "explanation": "Overtaking on the right is forbidden on motorways. You always overtake using the left lane and then return to the right."
+        "explanation": "In free-flowing traffic, overtaking is done on the left. In legally defined dense-traffic situations, one lane moving faster than another is not treated as overtaking, so an absolute statement about every speed difference between lanes would be inaccurate."
       },
       "FR": {
-        "question": "Sur l'autoroute (panneau F5) : est-il permis de dépasser par la droite ?",
+        "question": "Lorsque la circulation est fluide sur l'autoroute, pouvez-vous dépasser volontairement par la droite ?",
         "choices": [
           {
-            "text": "Non, dépasser par la droite est généralement interdit sur l'autoroute; on dépasse toujours par la gauche",
+            "text": "Non, lorsque la circulation est fluide on dépasse à gauche; les situations que la loi ne considère pas comme un dépassement, notamment des files avançant à des vitesses différentes en trafic dense, sont appréciées autrement",
             "is_correct": true
           },
           {
-            "text": "Oui, dépasser par la droite est autorisé si la voie de droite est libre et que vous ne perturbez pas la fluidité",
+            "text": "Oui, dès que la voie de droite est libre vous pouvez l'utiliser pour passer plus vite",
             "is_correct": false
           }
         ],
-        "explanation": "Dépasser par la droite est interdit sur les autoroutes. On dépasse toujours par la voie de gauche puis on revient à droite."
+        "explanation": "Lorsque la circulation est fluide, le dépassement s'effectue à gauche. Dans les situations de trafic dense définies par la loi, le fait qu'une file avance plus vite qu'une autre n'est pas considéré comme un dépassement; une affirmation absolue sur toute différence de vitesse entre files serait donc inexacte."
       },
       "AR": {
-        "question": "على الطريق السريع (علامة مرورية F5): هل يُسمح بالتجاوز من اليمين؟",
+        "question": "عندما تكون حركة الطريق السيار انسيابية، هل يجوز التعمد في التجاوز من اليمين؟",
         "choices": [
           {
-            "text": "لا، يُحظر عموماً التجاوز من اليمين على الطريق السريع؛ تتجاوز دائماً من اليسار",
+            "text": "لا، عند انسياب الحركة يكون التجاوز من اليسار؛ أما الحالات التي لا يعدها القانون تجاوزًا، مثل اختلاف سرعة الحارات في المرور الكثيف، فتُعامل بصورة مختلفة",
             "is_correct": true
           },
           {
-            "text": "نعم يُسمح بالتجاوز من اليمين إذا كانت الحارة اليمنى خالية ولم تعطل سير المرور",
+            "text": "نعم، كلما كانت الحارة اليمنى خالية يجوز استخدامها للمرور بسرعة أكبر",
             "is_correct": false
           }
         ],
-        "explanation": "يُحظر التجاوز من اليمين على الطرق السريعة. تتجاوز دائماً من الحارة اليسرى ثم تعود إلى اليمين."
+        "explanation": "عند انسياب الحركة يتم التجاوز من اليسار. وفي حالات المرور الكثيف المحددة قانونًا لا يُعد تحرك حارة أسرع من أخرى تجاوزًا، لذلك لا يصح إطلاق حكم مطلق على كل اختلاف في السرعة بين الحارات."
       }
     }
   }

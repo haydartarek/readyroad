@@ -7,73 +7,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat betekent bord F50bis?",
+        "question": "Wat betekent deze F50bis-uitvoering?",
         "choices": [
           {
-            "text": "Er is een gecombineerde oversteekplaats voor voetgangers en fietsers of een oversteekplaats met een bijzondere situatie",
+            "text": "Bestuurders die afslaan worden gewezen op een oversteekplaats voor voetgangers",
             "is_correct": true
           },
           {
-            "text": "Fietsen is alleen aan de rechterkant toegestaan",
+            "text": "Een gecombineerde oversteekplaats waar fietsers automatisch voorrang hebben",
             "is_correct": false
           },
           {
-            "text": "Er is een drempel net na de oversteekplaats",
+            "text": "Een voetgangerszone begint",
             "is_correct": false
           }
         ],
-        "explanation": "F50bis is een variant van F50 die een gecombineerde of bijzondere oversteekplaats voor fietsers en voetgangers aanduidt."
+        "explanation": "In deze uitvoering is A25 vervangen door A21 om een oversteekplaats voor voetgangers aan te duiden aan bestuurders die van richting veranderen."
       },
       "EN": {
-        "question": "What does sign F50bis mean?",
+        "question": "What does this F50bis version mean?",
         "choices": [
           {
-            "text": "There is a combined crossing for pedestrians and cyclists or a crossing with a special situation",
+            "text": "Drivers changing direction are alerted to a pedestrian crossing",
             "is_correct": true
           },
           {
-            "text": "Cycling is only allowed on the right side",
+            "text": "A combined crossing where cyclists automatically have priority",
             "is_correct": false
           },
           {
-            "text": "There is a speed bump just after the crossing",
+            "text": "A pedestrian zone begins",
             "is_correct": false
           }
         ],
-        "explanation": "F50bis is a variant of F50 indicating a combined or special crossing for cyclists and pedestrians."
+        "explanation": "In this version A25 is replaced by A21 to indicate a pedestrian crossing to drivers changing direction."
       },
       "FR": {
-        "question": "Que signifie le panneau F50bis ?",
+        "question": "Que signifie cette version de F50bis ?",
         "choices": [
           {
-            "text": "Il y a un passage combine pour pietons et cyclistes ou un passage avec une situation particuliere",
+            "text": "Les conducteurs qui changent de direction sont avertis d'un passage pour piétons",
             "is_correct": true
           },
           {
-            "text": "Le velo n est autorise que du cote droit",
+            "text": "Un passage combiné où les cyclistes ont automatiquement priorité",
             "is_correct": false
           },
           {
-            "text": "Il y a un dos d ane juste apres le passage",
+            "text": "Le début d'une zone piétonne",
             "is_correct": false
           }
         ],
-        "explanation": "F50bis est une variante de F50 indiquant un passage combine ou special pour cyclistes et pietons."
+        "explanation": "Dans cette version, A25 est remplacé par A21 pour indiquer un passage pour piétons aux conducteurs qui changent de direction."
       },
       "AR": {
-        "question": "ما معنى هذه العلامة المرورية؟",
+        "question": "ما معنى هذا الشكل من F50bis؟",
         "choices": [
           {
-            "text": "يوجد ممر مشترك للمشاة والدراجين أو ممر بوضع خاص",
+            "text": "تنبه السائقين الذين يغيّرون اتجاههم إلى ممر مشاة",
             "is_correct": true
           },
           {
-            "text": "ركوب الدراجات مسموح على الجانب الأيمن فقط",
+            "text": "ممر مشترك يتمتع فيه راكبو الدراجات تلقائيًا بالأولوية",
             "is_correct": false
           },
-          { "text": "يوجد مطب سرعة مباشرة بعد الممر", "is_correct": false }
+          {
+            "text": "بداية منطقة مشاة",
+            "is_correct": false
+          }
         ],
-        "explanation": "F50bis متغير من F50 يشير إلى ممر مشترك أو خاص للدراجين والمشاة."
+        "explanation": "في هذا الشكل استُبدل A25 بـA21 للدلالة على ممر مشاة للسائقين الذين يغيّرون اتجاههم."
       }
     }
   },
@@ -85,76 +88,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat is het verband tussen F50 en F50bis?",
+        "question": "Welk symbool vervangt in deze F50bis A25?",
         "choices": [
           {
-            "text": "F50bis is een bijzondere variant van F50 voor gecombineerde voetgangers-en-fietsoversteekplaats",
+            "text": "A21, om op een oversteekplaats voor voetgangers te wijzen",
             "is_correct": true
           },
           {
-            "text": "F50bis is een geheel ander bord zonder verband met F50",
+            "text": "F49, om een autosnelweg aan te duiden",
             "is_correct": false
           },
           {
-            "text": "F50bis vervangt F50 in stedelijke omgevingen",
+            "text": "C43, om een snelheid op te leggen",
             "is_correct": false
           }
         ],
-        "explanation": "F50bis is een 'bis'-variant (aanvulling) van F50 en duidt een bijzondere of gecombineerde oversteekplaats aan."
+        "explanation": "De wettelijke omschrijving laat toe A25 te vervangen door A21 om een voetgangersoversteekplaats aan te duiden."
       },
       "EN": {
-        "question": "What is the relationship between F50 and F50bis?",
+        "question": "Which symbol replaces A25 in this F50bis version?",
         "choices": [
           {
-            "text": "F50bis is a special variant of F50 for combined pedestrian and cyclist crossing",
+            "text": "A21, to indicate a pedestrian crossing",
             "is_correct": true
           },
           {
-            "text": "F50bis is a completely different sign with no link to F50",
+            "text": "F49, to indicate a motorway",
             "is_correct": false
           },
           {
-            "text": "F50bis replaces F50 in urban environments",
+            "text": "C43, to impose a speed",
             "is_correct": false
           }
         ],
-        "explanation": "F50bis is a bis-variant (supplement) of F50 indicating a special or combined crossing."
+        "explanation": "The legal definition allows A25 to be replaced by A21 to point out a pedestrian crossing."
       },
       "FR": {
-        "question": "Quel est le rapport entre F50 et F50bis ?",
+        "question": "Quel symbole remplace A25 dans cette version de F50bis ?",
         "choices": [
           {
-            "text": "F50bis est une variante speciale de F50 pour passage combine pietons-cyclistes",
+            "text": "A21, pour indiquer un passage pour piétons",
             "is_correct": true
           },
           {
-            "text": "F50bis est un panneau completement different sans lien avec F50",
+            "text": "F49, pour indiquer une autoroute",
             "is_correct": false
           },
           {
-            "text": "F50bis remplace F50 en milieu urbain",
+            "text": "C43, pour imposer une vitesse",
             "is_correct": false
           }
         ],
-        "explanation": "F50bis est une variante bis (supplement) de F50 indiquant un passage special ou combine."
+        "explanation": "La définition légale permet de remplacer A25 par A21 pour signaler un passage pour piétons."
       },
       "AR": {
-        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
+        "question": "أي رمز يحل محل A25 في هذا الشكل من F50bis؟",
         "choices": [
           {
-            "text": "F50bis متغير خاص من F50 لممر مشترك للمشاة والدراجين",
+            "text": "A21 للدلالة على ممر مشاة",
             "is_correct": true
           },
           {
-            "text": "F50bis علامة مرورية مختلفة تماماً ولا صلة لها بـ F50",
+            "text": "F49 للدلالة على طريق سيار",
             "is_correct": false
           },
           {
-            "text": "F50bis تحل محل F50 في البيئات الحضرية",
+            "text": "C43 لفرض سرعة",
             "is_correct": false
           }
         ],
-        "explanation": "F50bis متغير (ملحق) من F50 يشير إلى ممر خاص أو مشترك."
+        "explanation": "يسمح التعريف القانوني باستبدال A25 بـA21 للإشارة إلى ممر مشاة."
       }
     }
   },
@@ -166,67 +169,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Welke extra gevaren zijn er bij een F50bis oversteekplaats ten opzichte van F50?",
+        "question": "Welk conflict benadrukt deze F50bis?",
         "choices": [
           {
-            "text": "Zowel voetgangers als fietsers kunnen tegelijkertijd oversteken",
+            "text": "Een afslaand voertuig kan voetgangers kruisen op de rijbaan die het oprijdt",
             "is_correct": true
           },
           {
-            "text": "Er zijn meer vrachtwagens dan bij F50",
+            "text": "Twee autosnelwegen komen samen",
             "is_correct": false
           },
           {
-            "text": "De oversteekplaats heeft geen markeringen op de weg",
+            "text": "Een trein kruist de weg",
             "is_correct": false
           }
         ],
-        "explanation": "Bij een gecombineerde oversteekplaats (F50bis) kunnen zowel fietsers als voetgangers gebruik maken van de oversteekplaats. Dus dubbele aandacht is vereist."
+        "explanation": "Een bestuurder die van richting verandert moet voorrang verlenen aan voetgangers die de rijbaan oversteken die hij gaat oprijden."
       },
       "EN": {
-        "question": "What additional hazards exist at an F50bis crossing compared to F50?",
+        "question": "Which conflict does this F50bis highlight?",
         "choices": [
           {
-            "text": "Both pedestrians and cyclists can cross simultaneously",
+            "text": "A turning vehicle may cross pedestrians on the carriageway it enters",
             "is_correct": true
           },
-          { "text": "There are more lorries than at F50", "is_correct": false },
           {
-            "text": "The crossing has no markings on the road",
+            "text": "Two motorways merge",
+            "is_correct": false
+          },
+          {
+            "text": "A train crosses the road",
             "is_correct": false
           }
         ],
-        "explanation": "At a combined crossing (F50bis) both cyclists and pedestrians can use the crossing. Double attention is therefore required."
+        "explanation": "A driver changing direction must give way to pedestrians crossing the carriageway being entered."
       },
       "FR": {
-        "question": "Quels dangers supplementaires y a-t-il a un passage F50bis par rapport a F50 ?",
+        "question": "Quel conflit cette F50bis met-elle en évidence ?",
         "choices": [
           {
-            "text": "Les pietons et les cyclistes peuvent traverser simultanement",
+            "text": "Un véhicule qui tourne peut croiser des piétons sur la chaussée qu'il aborde",
             "is_correct": true
           },
-          { "text": "Il y a plus de camions qu a F50", "is_correct": false },
           {
-            "text": "Le passage n a pas de marquages sur la route",
+            "text": "Deux autoroutes se rejoignent",
+            "is_correct": false
+          },
+          {
+            "text": "Un train traverse la route",
             "is_correct": false
           }
         ],
-        "explanation": "A un passage combine (F50bis) les cyclistes et les pietons peuvent utiliser le passage. Une double attention est donc necessaire."
+        "explanation": "Le conducteur qui change de direction doit céder le passage aux piétons qui traversent la chaussée qu'il va aborder."
       },
       "AR": {
-        "question": "ما المخاطر الإضافية عند ممر F50bis مقارنة بـ F50؟",
+        "question": "أي تعارض تبرز هذه F50bis؟",
         "choices": [
           {
-            "text": "يمكن للمشاة والدراجين العبور في نفس الوقت",
+            "text": "قد تتقاطع مركبة منعطفة مع مشاة على الطريق الذي تدخله",
             "is_correct": true
           },
-          { "text": "يوجد شاحنات أكثر من F50", "is_correct": false },
           {
-            "text": "الممر لا يحتوي على علامات على الطريق",
+            "text": "اندماج طريقين سيارين",
+            "is_correct": false
+          },
+          {
+            "text": "عبور قطار للطريق",
             "is_correct": false
           }
         ],
-        "explanation": "عند ممر مشترك (F50bis) يمكن لكل من الدراجين والمشاة استخدام الممر. لذلك يلزم الانتباه المضاعف."
+        "explanation": "يجب على السائق الذي يغيّر اتجاهه إعطاء الأولوية للمشاة الذين يعبرون الطريق الذي سيدخله."
       }
     }
   },
@@ -238,73 +250,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Bij een F50bis oversteekplaats staan zowel een voetganger als een fietser te wachten. Wie heeft voorrang?",
+        "question": "U slaat af bij deze F50bis en een voetganger steekt de ingeslagen rijbaan over. Wat doet u?",
         "choices": [
           {
-            "text": "Beiden hebben voorrang en u moet wachten tot beiden de oversteekplaats hebben vrijgemaakt",
+            "text": "U verleent voorrang en stopt zo nodig",
             "is_correct": true
           },
           {
-            "text": "Alleen de fietser heeft voorrang want F50 gaat over fietsers",
+            "text": "U rijdt door omdat de voetganger van rechts komt",
             "is_correct": false
           },
           {
-            "text": "Alleen de voetganger heeft voorrang want die is zwakker",
+            "text": "U toetert zodat de voetganger terugkeert",
             "is_correct": false
           }
         ],
-        "explanation": "Bij F50bis hebben zowel fietsers als voetgangers voorrang. U moet wachten tot de oversteekplaats volledig vrij is."
+        "explanation": "De afslaande bestuurder moet voorrang verlenen aan voetgangers die de rijbaan oversteken die hij gaat oprijden."
       },
       "EN": {
-        "question": "At an F50bis crossing both a pedestrian and a cyclist are waiting. Who has priority?",
+        "question": "You turn at this F50bis and a pedestrian is crossing the carriageway you enter. What do you do?",
         "choices": [
           {
-            "text": "Both have priority and you must wait until both have cleared the crossing",
+            "text": "Give way and stop if necessary",
             "is_correct": true
           },
           {
-            "text": "Only the cyclist has priority because F50 is about cyclists",
+            "text": "Continue because the pedestrian comes from the right",
             "is_correct": false
           },
           {
-            "text": "Only the pedestrian has priority because they are more vulnerable",
+            "text": "Sound the horn so the pedestrian returns",
             "is_correct": false
           }
         ],
-        "explanation": "At F50bis both cyclists and pedestrians have priority. You must wait until the crossing is completely clear."
+        "explanation": "The turning driver must give way to pedestrians crossing the carriageway being entered."
       },
       "FR": {
-        "question": "A un passage F50bis un pieton et un cycliste attendent tous les deux. Qui a la priorite ?",
+        "question": "Vous tournez à cette F50bis et un piéton traverse la chaussée que vous abordez. Que faites-vous ?",
         "choices": [
           {
-            "text": "Les deux ont la priorite et vous devez attendre que les deux aient libere le passage",
+            "text": "Céder le passage et s'arrêter si nécessaire",
             "is_correct": true
           },
           {
-            "text": "Seul le cycliste a la priorite car F50 concerne les cyclistes",
+            "text": "Continuer parce que le piéton vient de droite",
             "is_correct": false
           },
           {
-            "text": "Seul le pieton a la priorite car il est plus vulnerable",
+            "text": "Klaxonner pour que le piéton revienne",
             "is_correct": false
           }
         ],
-        "explanation": "A F50bis les cyclistes et les pietons ont tous les deux la priorite. Vous devez attendre que le passage soit completement libre."
+        "explanation": "Le conducteur qui tourne doit céder le passage aux piétons qui traversent la chaussée qu'il aborde."
       },
       "AR": {
-        "question": "عند ممر F50bis ينتظر كل من مشاة ودراج. لمن الأولوية؟",
+        "question": "تنعطف عند هذه F50bis ويعبر أحد المشاة الطريق الذي تدخله. ماذا تفعل؟",
         "choices": [
           {
-            "text": "لكليهما الأولوية ويجب الانتظار حتى يخلي كلاهما الممر",
+            "text": "تعطيه الأولوية وتتوقف عند الحاجة",
             "is_correct": true
           },
           {
-            "text": "فقط للدراج الأولوية لأن F50 عن الدراجين",
+            "text": "تتابع لأن المشاة جاء من اليمين",
             "is_correct": false
           },
-          { "text": "فقط للمشاة الأولوية لأنه أكثر ضعفاً", "is_correct": false }
+          {
+            "text": "تطلق المنبه ليعود المشاة",
+            "is_correct": false
+          }
         ],
-        "explanation": "عند F50bis لكل من الدراجين والمشاة الأولوية. يجب الانتظار حتى يخلو الممر تماماً."
+        "explanation": "يجب على السائق المنعطف إعطاء الأولوية للمشاة الذين يعبرون الطريق الذي يدخله."
       }
     }
   },
@@ -316,76 +331,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Hoe verhoudt de stopplicht bij F50bis zich tot die bij gewone zebrapaden?",
+        "question": "Betekent deze F50bis dat fietsers en voetgangers samen één oversteekplaats met dezelfde voorrang gebruiken?",
         "choices": [
           {
-            "text": "Vergelijkbaar: u moet stoppen voor iedereen die de oversteekplaats gebruikt of wil gebruiken",
+            "text": "Nee, deze uitvoering wijst specifiek op een voetgangersoversteekplaats; de toepasselijke voorrang volgt uit de regels voor afslaan en oversteekplaatsen",
             "is_correct": true
           },
           {
-            "text": "Minder streng want bij F50bis mogen fietsers wachten",
+            "text": "Ja, het bord verleent beide groepen altijd dezelfde absolute voorrang",
             "is_correct": false
           },
           {
-            "text": "Strenger: u moet altijd stoppen ook zonder gebruikers op het pad",
+            "text": "Ja, maar alleen 's nachts",
             "is_correct": false
           }
         ],
-        "explanation": "De stopregels bij F50bis zijn gelijkwaardig aan die bij zebrapad en fietsoversteekplaats. U stopt voor actieve of intenderende overstekers."
+        "explanation": "Het A21-symbool duidt de voetgangersoversteekplaats aan. Het bord is geen algemene gecombineerde-oversteekplaatsregel."
       },
       "EN": {
-        "question": "How does the stop obligation at F50bis compare to regular zebra crossings?",
+        "question": "Does this F50bis mean cyclists and pedestrians share one crossing with identical priority?",
         "choices": [
           {
-            "text": "Similar: you must stop for everyone using or intending to use the crossing",
+            "text": "No, this version specifically points out a pedestrian crossing; applicable priority follows from the turning and crossing rules",
             "is_correct": true
           },
           {
-            "text": "Less strict because at F50bis cyclists may wait",
+            "text": "Yes, the sign always gives both groups identical absolute priority",
             "is_correct": false
           },
           {
-            "text": "Stricter: you must always stop even without users on the path",
+            "text": "Yes, but only at night",
             "is_correct": false
           }
         ],
-        "explanation": "The stop rules at F50bis are equivalent to those at zebra crossings and cyclist crossings. You stop for active or intending crossers."
+        "explanation": "The A21 symbol indicates the pedestrian crossing. The sign is not a general combined-crossing rule."
       },
       "FR": {
-        "question": "Comment l obligation d arret a F50bis se compare-t-elle aux passages pour pietons ordinaires ?",
+        "question": "Cette F50bis signifie-t-elle que cyclistes et piétons partagent un passage avec une priorité identique ?",
         "choices": [
           {
-            "text": "Similaire : vous devez vous arreter pour toute personne utilisant ou ayant l intention d utiliser le passage",
+            "text": "Non, cette version signale spécifiquement un passage pour piétons; la priorité applicable découle des règles de changement de direction et de passage",
             "is_correct": true
           },
           {
-            "text": "Moins stricte car a F50bis les cyclistes peuvent attendre",
+            "text": "Oui, le signal donne toujours aux deux groupes la même priorité absolue",
             "is_correct": false
           },
           {
-            "text": "Plus stricte : vous devez toujours vous arreter meme sans usagers sur le chemin",
+            "text": "Oui, mais uniquement la nuit",
             "is_correct": false
           }
         ],
-        "explanation": "Les regles d arret a F50bis sont equivalentes a celles des passages pour pietons et des passages pour cyclistes. Vous vous arretez pour les traversants actifs ou ayant l intention de traverser."
+        "explanation": "Le symbole A21 indique le passage pour piétons. Le signal n'est pas une règle générale de passage combiné."
       },
       "AR": {
-        "question": "كيف تتناسب التزام التوقف في F50bis مع ممرات المشاة العادية؟",
+        "question": "هل تعني هذه F50bis أن راكبي الدراجات والمشاة يتشاركون ممرًا بأولوية متطابقة؟",
         "choices": [
           {
-            "text": "مماثل: يجب التوقف لجميع من يستخدم أو ينوي استخدام الممر",
+            "text": "لا، يشير هذا الشكل تحديدًا إلى ممر مشاة؛ وتنتج الأولوية من قواعد الانعطاف والعبور",
             "is_correct": true
           },
           {
-            "text": "أقل صرامة لأن الدراجين يمكنهم الانتظار عند F50bis",
+            "text": "نعم، تمنح العلامة الفئتين دائمًا أولوية مطلقة متطابقة",
             "is_correct": false
           },
           {
-            "text": "أكثر صرامة: يجب التوقف دائماً حتى بدون مستخدمين على المسار",
+            "text": "نعم، ولكن ليلًا فقط",
             "is_correct": false
           }
         ],
-        "explanation": "قواعد التوقف عند F50bis تعادل تلك الخاصة بممرات المشاة وممرات الدراجين. تتوقف للعابرين النشطين أو المنتوين."
+        "explanation": "يدل رمز A21 على ممر المشاة. وليست العلامة قاعدة عامة لممر مشترك."
       }
     }
   },
@@ -397,73 +412,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Is de markering van een F50bis oversteekplaats op de weg anders dan bij F49 of F50?",
+        "question": "Wat controleert u vóór het afslaan bij deze F50bis?",
         "choices": [
           {
-            "text": "Ja F50bis heeft doorgaans zowel zebrastrepen als fietsoversteekmarkeringen naast elkaar",
+            "text": "De volledige oversteekplaats en beide zijden waar voetgangers kunnen naderen",
             "is_correct": true
           },
           {
-            "text": "Nee het is exact dezelfde markering als F49",
+            "text": "Alleen het voertuig achter u",
             "is_correct": false
           },
           {
-            "text": "Er zijn nooit wegmarkeringen bij F50bis",
+            "text": "Alleen de verkeerslichten voor tegenliggers",
             "is_correct": false
           }
         ],
-        "explanation": "Bij F50bis ziet u op het wegdek dikwijls een zebrapad naast een fietsoversteekplaats. Dit visuele onderscheid helpt gebruikers."
+        "explanation": "Kijk vóór en tijdens het afslaan naar de oversteekplaats, vertraag en wees klaar om voorrang te verlenen en te stoppen."
       },
       "EN": {
-        "question": "Is the road marking of an F50bis crossing different from F49 or F50?",
+        "question": "What do you check before turning at this F50bis?",
         "choices": [
           {
-            "text": "Yes F50bis typically has both zebra stripes and cyclist crossing markings side by side",
+            "text": "The whole crossing and both sides from which pedestrians may approach",
             "is_correct": true
           },
           {
-            "text": "No it is exactly the same marking as F49",
+            "text": "Only the vehicle behind you",
             "is_correct": false
           },
           {
-            "text": "There are never road markings at F50bis",
+            "text": "Only the lights for oncoming traffic",
             "is_correct": false
           }
         ],
-        "explanation": "At F50bis you often see a zebra crossing next to a cyclist crossing on the road surface. This visual distinction helps users."
+        "explanation": "Before and while turning, scan the crossing, slow down and be ready to give way and stop."
       },
       "FR": {
-        "question": "Le marquage au sol d un passage F50bis est-il different de F49 ou F50 ?",
+        "question": "Que contrôlez-vous avant de tourner à cette F50bis ?",
         "choices": [
           {
-            "text": "Oui F50bis a generalement des zebras et des marquages de passage pour cyclistes cote a cote",
+            "text": "Tout le passage et les deux côtés d'où les piétons peuvent approcher",
             "is_correct": true
           },
           {
-            "text": "Non c est exactement le meme marquage que F49",
+            "text": "Uniquement le véhicule derrière vous",
             "is_correct": false
           },
           {
-            "text": "Il n y a jamais de marquages au sol pour F50bis",
+            "text": "Uniquement les feux du trafic venant en sens inverse",
             "is_correct": false
           }
         ],
-        "explanation": "A F50bis vous voyez souvent un passage pour pietons cote a cote avec un passage pour cyclistes sur la chaussee. Cette distinction visuelle aide les usagers."
+        "explanation": "Avant et pendant le virage, observez le passage, ralentissez et soyez prêt à céder le passage et à vous arrêter."
       },
       "AR": {
-        "question": "هل علامات الطريق لممر F50bis مختلفة عن F49 أو F50؟",
+        "question": "ماذا تفحص قبل الانعطاف عند هذه F50bis؟",
         "choices": [
           {
-            "text": "نعم لدى F50bis عادةً خطوط حمار وحشي وعلامات ممر دراجين جنباً إلى جنب",
+            "text": "كامل الممر والجانبين اللذين قد يأتي منهما المشاة",
             "is_correct": true
           },
-          { "text": "لا إنها نفس العلامات تماماً كـ F49", "is_correct": false },
           {
-            "text": "لا توجد أبداً علامات طريق عند F50bis",
+            "text": "المركبة خلفك فقط",
+            "is_correct": false
+          },
+          {
+            "text": "أضواء حركة الاتجاه المقابل فقط",
             "is_correct": false
           }
         ],
-        "explanation": "عند F50bis ترى غالباً ممر مشاة بجانب ممر دراجين على سطح الطريق. يساعد هذا التمييز البصري المستخدمين."
+        "explanation": "افحص الممر قبل الانعطاف وأثناءه وخفف واستعد لإعطاء الأولوية والتوقف."
       }
     }
   },
@@ -475,57 +493,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Mag u doorrijden bij F50bis als een fietser al is overgestoken maar een voetganger nog staat te wachten?",
+        "question": "Mag u afslaan terwijl een voetganger de aangeduide oversteekplaats gebruikt?",
         "choices": [
           {
-            "text": "Nee zolang de voetganger de intentie toont te willen oversteken moet u wachten",
+            "text": "Alleen nadat u voorrang hebt verleend en de manoeuvre zonder hinder of gevaar kan uitvoeren",
             "is_correct": true
           },
           {
-            "text": "Ja want de fietser heeft al gebruik gemaakt van de oversteekplaats",
+            "text": "Ja, omdat F50bis slechts informatie geeft",
             "is_correct": false
           }
         ],
-        "explanation": "Bij F50bis moet u wachten voor iedereen die wil oversteken. Zelfs als de fietser al over is moet u wachten voor de wachtende voetganger."
+        "explanation": "Het informatieve karakter van het bord neemt de wettelijke voorrangsplicht van de afslaande bestuurder niet weg."
       },
       "EN": {
-        "question": "May you drive on at F50bis if a cyclist has already crossed but a pedestrian is still waiting?",
+        "question": "May you turn while a pedestrian is using the indicated crossing?",
         "choices": [
           {
-            "text": "No as long as the pedestrian shows the intention to cross you must wait",
+            "text": "Only after giving way and when the manoeuvre can be completed without obstruction or danger",
             "is_correct": true
           },
           {
-            "text": "Yes because the cyclist has already used the crossing",
+            "text": "Yes, because F50bis is only informational",
             "is_correct": false
           }
         ],
-        "explanation": "At F50bis you must wait for everyone who wants to cross. Even if the cyclist has already crossed you must wait for the waiting pedestrian."
+        "explanation": "The sign's informational category does not remove the turning driver's statutory duty to give way."
       },
       "FR": {
-        "question": "Pouvez-vous continuer a F50bis si un cycliste a deja traverse mais qu un pieton attend encore ?",
+        "question": "Pouvez-vous tourner pendant qu'un piéton utilise le passage indiqué ?",
         "choices": [
           {
-            "text": "Non tant que le pieton montre l intention de traverser vous devez attendre",
+            "text": "Uniquement après avoir cédé le passage et lorsque la manœuvre peut se faire sans gêne ni danger",
             "is_correct": true
           },
           {
-            "text": "Oui car le cycliste a deja utilise le passage",
+            "text": "Oui, parce que F50bis est seulement informative",
             "is_correct": false
           }
         ],
-        "explanation": "A F50bis vous devez attendre pour toute personne qui veut traverser. Meme si le cycliste a deja traverse vous devez attendre pour le pieton en attente."
+        "explanation": "La catégorie informative du signal ne supprime pas l'obligation légale de céder le passage du conducteur qui tourne."
       },
       "AR": {
-        "question": "هل يمكنك المتابعة عند F50bis إذا عبر دراج بالفعل لكن مشاة لا يزال ينتظر؟",
+        "question": "هل يجوز الانعطاف أثناء استخدام أحد المشاة للممر المبين؟",
         "choices": [
           {
-            "text": "لا طالما يُظهر المشاة نية العبور يجب الانتظار",
+            "text": "فقط بعد إعطائه الأولوية وعندما يمكن تنفيذ المناورة بلا إعاقة أو خطر",
             "is_correct": true
           },
-          { "text": "نعم لأن الدراج استخدم الممر بالفعل", "is_correct": false }
+          {
+            "text": "نعم، لأن F50bis إعلامية فقط",
+            "is_correct": false
+          }
         ],
-        "explanation": "عند F50bis يجب الانتظار لجميع من يريد العبور. حتى لو عبر الدراج بالفعل يجب الانتظار للمشاة المنتظر."
+        "explanation": "لا يلغي تصنيف العلامة الإعلامي واجب السائق المنعطف القانوني في إعطاء الأولوية."
       }
     }
   },
@@ -537,60 +558,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Mag een trekker een F50bis oversteekplaats oversteken zonder te stoppen als er geen gebruikers zichtbaar zijn?",
+        "question": "Mag u bij deze F50bis doorrijden als de oversteekplaats volledig vrij is en u veilig kunt afslaan?",
         "choices": [
           {
-            "text": "Ja als er niemand overstaat of wil oversteken hoeft u niet te stoppen",
+            "text": "Ja, na zorgvuldig controleren mag u afslaan als niemand voorrang moet krijgen en de manoeuvre veilig is",
             "is_correct": true
           },
           {
-            "text": "Nee een trekker moet altijd stoppen bij F50bis om te controleren",
+            "text": "Nee, elke bestuurder moet bij F50bis altijd volledig stoppen",
             "is_correct": false
           }
         ],
-        "explanation": "De verplichting tot stoppen bij F50bis geldt pas wanneer er iemand de oversteekplaats gebruikt of wil gebruiken. Als de oversteekplaats vrij is hoeft u niet te stoppen."
+        "explanation": "F50bis legt geen onvoorwaardelijke stop op. De bestuurder moet controleren, vertragen waar nodig en voorrang verlenen wanneer de situatie dit vereist."
       },
       "EN": {
-        "question": "May a tractor cross an F50bis crossing without stopping if no users are visible?",
+        "question": "May you proceed at this F50bis when the crossing is completely clear and you can turn safely?",
         "choices": [
           {
-            "text": "Yes if nobody is crossing or intending to cross you do not have to stop",
+            "text": "Yes, after careful checks you may turn if nobody must be given way and the manoeuvre is safe",
             "is_correct": true
           },
           {
-            "text": "No a tractor must always stop at F50bis to check",
+            "text": "No, every driver must always stop completely at F50bis",
             "is_correct": false
           }
         ],
-        "explanation": "The obligation to stop at F50bis only applies when someone is using or intending to use the crossing. If the crossing is free you do not have to stop."
+        "explanation": "F50bis does not impose an unconditional stop. The driver must check, slow where needed and give way when the situation requires."
       },
       "FR": {
-        "question": "Un tracteur peut-il traverser un passage F50bis sans s arreter si aucun usager n est visible ?",
+        "question": "Pouvez-vous continuer à cette F50bis lorsque le passage est entièrement libre et que vous pouvez tourner en sécurité ?",
         "choices": [
           {
-            "text": "Oui si personne ne traverse ou n a l intention de traverser vous n etes pas oblige de vous arreter",
+            "text": "Oui, après contrôle attentif vous pouvez tourner si personne ne doit recevoir la priorité et si la manœuvre est sûre",
             "is_correct": true
           },
           {
-            "text": "Non un tracteur doit toujours s arreter a F50bis pour verifier",
+            "text": "Non, tout conducteur doit toujours s'arrêter complètement à F50bis",
             "is_correct": false
           }
         ],
-        "explanation": "L obligation de s arreter a F50bis ne s applique que lorsque quelqu un utilise ou a l intention d utiliser le passage. Si le passage est libre vous n etes pas oblige de vous arreter."
+        "explanation": "F50bis n'impose pas un arrêt inconditionnel. Le conducteur doit contrôler, ralentir si nécessaire et céder le passage lorsque la situation l'exige."
       },
       "AR": {
-        "question": "هل يمكن لجرار عبور ممر F50bis دون توقف إذا لم يكن هناك مستخدمون مرئيون؟",
+        "question": "هل يجوز المتابعة عند هذه F50bis إذا كان الممر خاليًا تمامًا ويمكن الانعطاف بأمان؟",
         "choices": [
           {
-            "text": "نعم إذا لم يكن أحد يعبر أو ينوي العبور لا داعي للتوقف",
+            "text": "نعم، بعد الفحص الدقيق يجوز الانعطاف إذا لم يوجد من يجب إعطاؤه الأولوية وكانت المناورة آمنة",
             "is_correct": true
           },
           {
-            "text": "لا يجب على الجرار التوقف دائماً عند F50bis للتحقق",
+            "text": "لا، يجب على كل سائق التوقف الكامل دائمًا عند F50bis",
             "is_correct": false
           }
         ],
-        "explanation": "التزام التوقف عند F50bis ينطبق فقط عندما يستخدم شخص ما الممر أو ينوي استخدامه. إذا كان الممر خالياً لا داعي للتوقف."
+        "explanation": "لا تفرض F50bis توقفًا غير مشروط. يجب على السائق الفحص والتخفيف عند الحاجة وإعطاء الأولوية عندما تتطلب الحالة."
       }
     }
   }

@@ -7,64 +7,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat betekent bord F99a?",
+        "question": "Wat betekent F99a in deze uitvoering?",
         "choices": [
           {
-            "text": "Verplicht gezamenlijk pad voor voetgangers fietsers en ruiters",
+            "text": "Begin van een weg voorbehouden voor de afgebeelde voetgangers, fietsers, ruiters en speedpedelecs",
             "is_correct": true
           },
-          { "text": "Verboden voor voetgangers", "is_correct": false },
           {
-            "text": "Fietspad exclusief voor snelle fietsers",
+            "text": "Een verplicht fietspad naast een gewone rijbaan",
+            "is_correct": false
+          },
+          {
+            "text": "Een voetgangerszone zonder fietsers",
             "is_correct": false
           }
         ],
-        "explanation": "F99a duidt een verplicht gemengd pad aan voor voetgangers fietsers en ruiters. Alle drie groepen moeten dit pad gebruiken en niet de rijbaan."
+        "explanation": "F99a begint een voorbehouden weg of wegdeel voor de afgebeelde categorieën. Het is geen algemeen verplicht fietspad naast een gewone rijbaan."
       },
       "EN": {
-        "question": "What does sign F99a mean?",
+        "question": "What does F99a mean in this version?",
         "choices": [
           {
-            "text": "Compulsory shared path for pedestrians cyclists and horse riders",
+            "text": "Start of a road reserved for the depicted pedestrians, cyclists, horse riders and speed-pedelec riders",
             "is_correct": true
           },
-          { "text": "Forbidden for pedestrians", "is_correct": false },
           {
-            "text": "Cycle path exclusively for fast cyclists",
+            "text": "A compulsory cycle path alongside an ordinary carriageway",
+            "is_correct": false
+          },
+          {
+            "text": "A pedestrian zone without cyclists",
             "is_correct": false
           }
         ],
-        "explanation": "F99a indicates a compulsory mixed path for pedestrians cyclists and horse riders. All three groups must use this path and not the road."
+        "explanation": "F99a starts a road or part of a road reserved for the depicted categories. It is not a general compulsory cycle path alongside an ordinary carriageway."
       },
       "FR": {
-        "question": "Que signifie le panneau F99a ?",
+        "question": "Que signifie F99a dans cette version ?",
         "choices": [
           {
-            "text": "Chemin oblige partage pour pietons cyclistes et cavaliers",
+            "text": "Début d'une voie réservée aux piétons, cyclistes, cavaliers et conducteurs de speed pedelecs représentés",
             "is_correct": true
           },
-          { "text": "Interdit aux pietons", "is_correct": false },
           {
-            "text": "Piste cyclable exclusivement pour cyclistes rapides",
+            "text": "Une piste cyclable obligatoire longeant une chaussée ordinaire",
+            "is_correct": false
+          },
+          {
+            "text": "Une zone piétonne sans cyclistes",
             "is_correct": false
           }
         ],
-        "explanation": "F99a indique un chemin mixte oblige pour les pietons les cyclistes et les cavaliers. Les trois groupes doivent utiliser ce chemin et non la chaussee."
+        "explanation": "F99a commence une voie ou partie de voie réservée aux catégories représentées. Ce n'est pas une piste cyclable obligatoire générale longeant une chaussée ordinaire."
       },
       "AR": {
-        "question": "ما معنى هذه العلامة المرورية؟",
+        "question": "ما معنى F99a بهذا الشكل؟",
         "choices": [
           {
-            "text": "مسار مشترك إلزامي للمشاة والدراجين وراكبي الخيل",
+            "text": "بداية طريق مخصص للمشاة وراكبي الدراجات والخيول والدراجات السريعة المبينين",
             "is_correct": true
           },
-          { "text": "محظور للمشاة", "is_correct": false },
           {
-            "text": "مسار دراجات حصرياً للدراجين السريعين",
+            "text": "مسار دراجات إلزامي بمحاذاة مسار سير عادي",
+            "is_correct": false
+          },
+          {
+            "text": "منطقة مشاة بلا دراجات",
             "is_correct": false
           }
         ],
-        "explanation": "تشير F99a إلى مسار مشترك إلزامي للمشاة والدراجين وراكبي الخيل. يجب على الثلاث مجموعات استخدام هذا المسار وليس الطريق."
+        "explanation": "تبدأ F99a طريقًا أو جزءًا منه مخصصًا للفئات المبينة، وليست علامة عامة لمسار دراجات إلزامي بمحاذاة مسار سير عادي."
       }
     }
   },
@@ -76,43 +88,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Welke weggebruikers zijn verplicht te rijden op een F99a-pad?",
-        "choices": [
-          { "text": "Voetgangers fietsers en ruiters", "is_correct": true },
-          { "text": "Enkel fietsers", "is_correct": false },
-          { "text": "Alle gemotoriseerde voertuigen", "is_correct": false }
-        ],
-        "explanation": "F99a verplicht voetgangers fietsers en ruiters dit pad te gebruiken en niet de rijbaan te betreden."
-      },
-      "EN": {
-        "question": "Which road users are required to use an F99a path?",
+        "question": "Welke categorieën zijn op deze F99a afgebeeld?",
         "choices": [
           {
-            "text": "Pedestrians cyclists and horse riders",
+            "text": "Voetgangers, fietsers, ruiters en bestuurders van speedpedelecs",
             "is_correct": true
           },
-          { "text": "Only cyclists", "is_correct": false },
-          { "text": "All motorised vehicles", "is_correct": false }
+          {
+            "text": "Alle motorvoertuigen",
+            "is_correct": false
+          },
+          {
+            "text": "Alleen voetgangers en fietsers",
+            "is_correct": false
+          }
         ],
-        "explanation": "F99a obliges pedestrians cyclists and horse riders to use this path and not to use the road."
+        "explanation": "De toegang volgt in beginsel de symbolen op het bord; de wet bevat daarnaast beperkte uitzonderingen voor prioritaire en vergunde voertuigen."
+      },
+      "EN": {
+        "question": "Which categories are depicted on this F99a?",
+        "choices": [
+          {
+            "text": "Pedestrians, cyclists, horse riders and speed-pedelec riders",
+            "is_correct": true
+          },
+          {
+            "text": "All motor vehicles",
+            "is_correct": false
+          },
+          {
+            "text": "Only pedestrians and cyclists",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Access normally follows the symbols on the sign; the law also contains limited exceptions for priority and authorised vehicles."
       },
       "FR": {
-        "question": "Quels usagers de la route sont tenus d utiliser un chemin F99a ?",
+        "question": "Quelles catégories sont représentées sur cette F99a ?",
         "choices": [
-          { "text": "Pietons cyclistes et cavaliers", "is_correct": true },
-          { "text": "Uniquement les cyclistes", "is_correct": false },
-          { "text": "Tous les vehicules motorises", "is_correct": false }
+          {
+            "text": "Piétons, cyclistes, cavaliers et conducteurs de speed pedelecs",
+            "is_correct": true
+          },
+          {
+            "text": "Tous les véhicules à moteur",
+            "is_correct": false
+          },
+          {
+            "text": "Uniquement piétons et cyclistes",
+            "is_correct": false
+          }
         ],
-        "explanation": "F99a oblige les pietons les cyclistes et les cavaliers a utiliser ce chemin et a ne pas emprunter la chaussee."
+        "explanation": "L'accès suit en principe les symboles du signal; la loi prévoit aussi des exceptions limitées pour les véhicules prioritaires et autorisés."
       },
       "AR": {
-        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
+        "question": "ما الفئات المبينة على هذه F99a؟",
         "choices": [
-          { "text": "المشاة والدراجون وراكبو الخيل", "is_correct": true },
-          { "text": "الدراجون فقط", "is_correct": false },
-          { "text": "جميع المركبات الآلية", "is_correct": false }
+          {
+            "text": "المشاة وراكبو الدراجات والخيول والدراجات السريعة",
+            "is_correct": true
+          },
+          {
+            "text": "جميع المركبات الآلية",
+            "is_correct": false
+          },
+          {
+            "text": "المشاة وراكبو الدراجات فقط",
+            "is_correct": false
+          }
         ],
-        "explanation": "تلزم F99a المشاة والدراجين وراكبي الخيل باستخدام هذا المسار وعدم استخدام الطريق."
+        "explanation": "يتبع الدخول من حيث الأصل الرموز على العلامة؛ ويحتوي القانون أيضًا على استثناءات محدودة لمركبات الأولوية والمركبات المرخصة."
       }
     }
   },
@@ -124,61 +169,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Welk gevaar bestaat er op een F99a gemengd pad?",
+        "question": "Welke maximumsnelheid geldt op de met F99a voorbehouden weg?",
         "choices": [
           {
-            "text": "Conflicten tussen voetgangers en snelle fietsers of grote paarden",
+            "text": "30 km/u",
             "is_correct": true
           },
           {
-            "text": "Motorvoertuigen die het pad invallen",
-            "is_correct": false
-          },
-          { "text": "De weg is altijd nat en glibberig", "is_correct": false }
-        ],
-        "explanation": "Op een gemengd pad delen voetgangers fietsers en ruiters dezelfde ruimte. Dit kan leiden tot gevaarlijke situaties bij hoge snelheden of grote aantallen gebruikers."
-      },
-      "EN": {
-        "question": "What hazard exists on an F99a mixed path?",
-        "choices": [
-          {
-            "text": "Conflicts between pedestrians and fast cyclists or large horses",
-            "is_correct": true
-          },
-          { "text": "Motor vehicles invading the path", "is_correct": false },
-          { "text": "The road is always wet and slippery", "is_correct": false }
-        ],
-        "explanation": "On a mixed path pedestrians cyclists and horse riders share the same space. This can lead to dangerous situations at high speeds or with large numbers of users."
-      },
-      "FR": {
-        "question": "Quel danger existe sur un chemin mixte F99a ?",
-        "choices": [
-          {
-            "text": "Conflits entre pietons et cyclistes rapides ou grands chevaux",
-            "is_correct": true
-          },
-          {
-            "text": "Des vehicules a moteur qui envahissent le chemin",
+            "text": "50 km/u",
             "is_correct": false
           },
           {
-            "text": "La route est toujours mouilee et glissante",
+            "text": "Stapvoets voor elke gebruiker",
             "is_correct": false
           }
         ],
-        "explanation": "Sur un chemin mixte les pietons les cyclistes et les cavaliers partagent le meme espace. Cela peut conduire a des situations dangereuses a grande vitesse ou avec de nombreux usagers."
+        "explanation": "Artikel 22quinquies beperkt de snelheid op deze voorbehouden wegen tot 30 km/u."
       },
-      "AR": {
-        "question": "ما هو الخطر الذي تشير إليه هذه العلامة المرورية؟",
+      "EN": {
+        "question": "What maximum speed applies on the road reserved by F99a?",
         "choices": [
           {
-            "text": "تعارضات بين المشاة والدراجين السريعين أو الخيول الكبيرة",
+            "text": "30 km/h",
             "is_correct": true
           },
-          { "text": "مركبات آلية تغزو المسار", "is_correct": false },
-          { "text": "الطريق دائماً رطب وزلق", "is_correct": false }
+          {
+            "text": "50 km/h",
+            "is_correct": false
+          },
+          {
+            "text": "Walking pace for every user",
+            "is_correct": false
+          }
         ],
-        "explanation": "على مسار مختلط يشترك المشاة والدراجون وراكبو الخيل في نفس المساحة. يمكن أن يؤدي ذلك إلى مواقف خطيرة عند السرعات العالية أو مع أعداد كبيرة من المستخدمين."
+        "explanation": "Article 22quinquies limits speed on these reserved roads to 30 km/h."
+      },
+      "FR": {
+        "question": "Quelle vitesse maximale s'applique sur la voie réservée par F99a ?",
+        "choices": [
+          {
+            "text": "30 km/h",
+            "is_correct": true
+          },
+          {
+            "text": "50 km/h",
+            "is_correct": false
+          },
+          {
+            "text": "L'allure du pas pour tout usager",
+            "is_correct": false
+          }
+        ],
+        "explanation": "L'article 22quinquies limite la vitesse sur ces voies réservées à 30 km/h."
+      },
+      "AR": {
+        "question": "ما الحد الأقصى على الطريق المخصص بـF99a؟",
+        "choices": [
+          {
+            "text": "30 كم/س",
+            "is_correct": true
+          },
+          {
+            "text": "50 كم/س",
+            "is_correct": false
+          },
+          {
+            "text": "سرعة المشي لكل مستخدم",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تحدد المادة 22quinquies السرعة على هذه الطرق المخصصة بـ30 كم/س."
       }
     }
   },
@@ -190,67 +250,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Mag een fietser snel rijden op een F99a-pad als er voetgangers op lopen?",
+        "question": "Hoe gedragen de afgebeelde gebruikers zich tegenover elkaar?",
         "choices": [
           {
-            "text": "Nee de fietser moet zijn snelheid aanpassen aan de voetgangers en voldoende ruimte geven",
+            "text": "Zij brengen elkaar niet in gevaar of hinderen elkaar en zijn dubbel voorzichtig voor kinderen",
             "is_correct": true
           },
           {
-            "text": "Ja fietsers hebben voorrang op het pad",
+            "text": "De snelste gebruiker heeft altijd voorrang",
             "is_correct": false
           },
           {
-            "text": "Ja zolang hij belt om te waarschuwen",
+            "text": "Ruiters mogen de hele weg opeisen",
             "is_correct": false
           }
         ],
-        "explanation": "Op een gemengd pad moeten alle gebruikers rekening houden met elkaar. Fietsers moeten hun snelheid aanpassen in functie van andere gebruikers."
+        "explanation": "Gebruikers mogen elkaar niet in gevaar brengen of hinderen, moeten dubbel voorzichtig zijn voor kinderen en mogen het verkeer niet nodeloos belemmeren."
       },
       "EN": {
-        "question": "May a cyclist ride fast on an F99a path when pedestrians are walking on it?",
+        "question": "How do the depicted users behave towards one another?",
         "choices": [
           {
-            "text": "No the cyclist must adapt speed to the pedestrians and give enough space",
+            "text": "They do not endanger or hinder one another and take extra care around children",
             "is_correct": true
           },
           {
-            "text": "Yes cyclists have priority on the path",
+            "text": "The fastest user always has priority",
             "is_correct": false
           },
           {
-            "text": "Yes as long as they ring their bell to warn",
+            "text": "Horse riders may claim the whole road",
             "is_correct": false
           }
         ],
-        "explanation": "On a mixed path all users must consider each other. Cyclists must adapt their speed based on other users."
+        "explanation": "Users must not endanger or hinder one another, must take extra care around children and must not obstruct traffic unnecessarily."
       },
       "FR": {
-        "question": "Un cycliste peut-il rouler vite sur un chemin F99a lorsque des pietons y marchent ?",
+        "question": "Comment les usagers représentés se comportent-ils entre eux ?",
         "choices": [
           {
-            "text": "Non le cycliste doit adapter sa vitesse aux pietons et leur donner suffisamment d espace",
+            "text": "Ils ne se mettent pas en danger ni ne se gênent et redoublent de prudence envers les enfants",
             "is_correct": true
           },
           {
-            "text": "Oui les cyclistes ont la priorite sur le chemin",
+            "text": "L'usager le plus rapide a toujours priorité",
             "is_correct": false
           },
-          { "text": "Oui tant qu il sonne pour avertir", "is_correct": false }
+          {
+            "text": "Les cavaliers peuvent occuper toute la voie",
+            "is_correct": false
+          }
         ],
-        "explanation": "Sur un chemin mixte tous les usagers doivent tenir compte les uns des autres. Les cyclistes doivent adapter leur vitesse en fonction des autres usagers."
+        "explanation": "Les usagers ne peuvent se mettre en danger ni se gêner, doivent redoubler de prudence envers les enfants et ne peuvent entraver inutilement la circulation."
       },
       "AR": {
-        "question": "هل يستطيع الدراج السير بسرعة على مسار F99a عندما يمشي مشاة عليه؟",
+        "question": "كيف يتصرف المستخدمون المبينون بعضهم تجاه بعض؟",
         "choices": [
           {
-            "text": "لا يجب على الدراج تكييف سرعته مع المشاة وإعطائهم مساحة كافية",
+            "text": "لا يعرّضون بعضهم للخطر أو يعيق بعضهم بعضًا ويضاعفون الحذر تجاه الأطفال",
             "is_correct": true
           },
-          { "text": "نعم للدراجين الأولوية على المسار", "is_correct": false },
-          { "text": "نعم طالما يرن الجرس للتحذير", "is_correct": false }
+          {
+            "text": "للمستخدم الأسرع الأولوية دائمًا",
+            "is_correct": false
+          },
+          {
+            "text": "يجوز لراكبي الخيول احتلال الطريق كاملًا",
+            "is_correct": false
+          }
         ],
-        "explanation": "على مسار مختلط يجب على جميع المستخدمين مراعاة بعضهم البعض. يجب على الدراجين تكييف سرعتهم بناءً على المستخدمين الآخرين."
+        "explanation": "يجب ألا يعرّض المستخدمون بعضهم للخطر أو يعيق بعضهم بعضًا، وأن يضاعفوا الحذر تجاه الأطفال وألا يعرقلوا الحركة بلا ضرورة."
       }
     }
   },
@@ -262,64 +331,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Is een motorvoertuig verboden op een F99a-pad?",
+        "question": "Mag elk gewoon motorvoertuig F99a gebruiken?",
         "choices": [
           {
-            "text": "Ja motorvoertuigen mogen een F99a-pad niet berijden",
+            "text": "Nee, alleen afgebeelde categorieën en de uitdrukkelijk wettelijke uitzonderingen zijn toegelaten",
             "is_correct": true
           },
           {
-            "text": "Nee motorvoertuigen mogen er als er geen voetgangers zijn",
+            "text": "Ja, als het trager dan 30 km/u rijdt",
             "is_correct": false
           },
-          { "text": "Alleen tractoren zijn verboden", "is_correct": false }
+          {
+            "text": "Ja, buiten de spitsuren",
+            "is_correct": false
+          }
         ],
-        "explanation": "F99a-paden zijn verplichte paden voor voetgangers fietsers en ruiters. Motorvoertuigen zijn er verboden tenzij een sub-bord een uitzondering toestaat."
+        "explanation": "Een gewone auto heeft niet louter door traag te rijden toegang. Alleen de afgebeelde categorieën en de wettelijk bepaalde prioritaire of vergunde voertuigen zijn toegelaten."
       },
       "EN": {
-        "question": "Is a motor vehicle prohibited on an F99a path?",
+        "question": "May every ordinary motor vehicle use F99a?",
         "choices": [
           {
-            "text": "Yes motor vehicles may not use an F99a path",
+            "text": "No, only depicted categories and the express statutory exceptions are admitted",
             "is_correct": true
           },
           {
-            "text": "No motor vehicles may when there are no pedestrians",
+            "text": "Yes, if it stays below 30 km/h",
             "is_correct": false
           },
-          { "text": "Only tractors are prohibited", "is_correct": false }
+          {
+            "text": "Yes, outside peak hours",
+            "is_correct": false
+          }
         ],
-        "explanation": "F99a paths are compulsory paths for pedestrians cyclists and horse riders. Motor vehicles are prohibited unless a sub-sign allows an exception."
+        "explanation": "An ordinary car does not gain access merely by driving slowly. Only depicted categories and the legally defined priority or authorised vehicles are admitted."
       },
       "FR": {
-        "question": "Un vehicule a moteur est-il interdit sur un chemin F99a ?",
+        "question": "Tout véhicule à moteur ordinaire peut-il utiliser F99a ?",
         "choices": [
           {
-            "text": "Oui les vehicules a moteur ne peuvent pas emprunter un chemin F99a",
+            "text": "Non, seules les catégories représentées et les exceptions légales expresses sont admises",
             "is_correct": true
           },
           {
-            "text": "Non les vehicules a moteur peuvent si il n y a pas de pietons",
+            "text": "Oui, s'il reste sous 30 km/h",
             "is_correct": false
           },
-          { "text": "Seuls les tracteurs sont interdits", "is_correct": false }
+          {
+            "text": "Oui, hors heures de pointe",
+            "is_correct": false
+          }
         ],
-        "explanation": "Les chemins F99a sont des chemins obliges pour les pietons les cyclistes et les cavaliers. Les vehicules a moteur y sont interdits sauf si un sous-panneau autorise une exception."
+        "explanation": "Une voiture ordinaire n'obtient pas l'accès en roulant lentement. Seules les catégories représentées et les véhicules prioritaires ou autorisés définis par la loi sont admis."
       },
       "AR": {
-        "question": "هل المركبة الآلية محظورة على مسار F99a؟",
+        "question": "هل يجوز لكل مركبة آلية عادية استخدام F99a؟",
         "choices": [
           {
-            "text": "نعم لا يستطيع المركبات الآلية استخدام مسار F99a",
+            "text": "لا، لا يُسمح إلا للفئات المبينة والاستثناءات القانونية الصريحة",
             "is_correct": true
           },
           {
-            "text": "لا يمكن للمركبات الآلية عندما لا يوجد مشاة",
+            "text": "نعم، إذا سارت بأقل من 30 كم/س",
             "is_correct": false
           },
-          { "text": "الجرارات فقط محظورة", "is_correct": false }
+          {
+            "text": "نعم، خارج ساعات الذروة",
+            "is_correct": false
+          }
         ],
-        "explanation": "مسارات F99a مسارات إلزامية للمشاة والدراجين وراكبي الخيل. المركبات الآلية محظورة ما لم يسمح علامة مرورية فرعية باستثناء."
+        "explanation": "لا تحصل السيارة العادية على حق الدخول لمجرد السير ببطء. يُسمح فقط للفئات المبينة ومركبات الأولوية أو المركبات المرخصة المحددة قانونًا."
       }
     }
   },
@@ -331,73 +412,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Moet een ruiter zijn paard inhouden wanneer er voetgangers op het F99a-pad lopen?",
+        "question": "Is spelen toegestaan op een F99a-weg?",
         "choices": [
           {
-            "text": "Ja de ruiter moet de snelheid aanpassen en genoeg ruimte geven aan voetgangers",
+            "text": "Ja, maar gebruikers mogen elkaar niet in gevaar brengen en verkeer niet nodeloos belemmeren",
             "is_correct": true
           },
           {
-            "text": "Nee paarden hebben voorrang op voetgangers op dit pad",
+            "text": "Nee, spelen is op elke openbare weg verboden",
             "is_correct": false
           },
           {
-            "text": "Ruiters mogen het pad helemaal niet gebruiken",
+            "text": "Alleen na toestemming van iedere fietser",
             "is_correct": false
           }
         ],
-        "explanation": "Alle gebruikers van een F99a-pad moeten rekening houden met elkaar. Een ruiter op een groot paard moet bijzonder voorzichtig zijn voor voetgangers."
+        "explanation": "Artikel 22quinquies staat spelen toe en legt tegelijk wederzijdse voorzichtigheid op."
       },
       "EN": {
-        "question": "Must a horse rider slow their horse when pedestrians are walking on the F99a path?",
+        "question": "Is playing allowed on an F99a road?",
         "choices": [
           {
-            "text": "Yes the rider must adjust speed and give enough space to pedestrians",
+            "text": "Yes, but users must not endanger one another or obstruct traffic unnecessarily",
             "is_correct": true
           },
           {
-            "text": "No horses have priority over pedestrians on this path",
+            "text": "No, playing is prohibited on every public road",
             "is_correct": false
           },
-          { "text": "Riders may not use the path at all", "is_correct": false }
+          {
+            "text": "Only with every cyclist's consent",
+            "is_correct": false
+          }
         ],
-        "explanation": "All users of an F99a path must take account of each other. A rider on a large horse must be particularly careful around pedestrians."
+        "explanation": "Article 22quinquies permits playing while imposing mutual care."
       },
       "FR": {
-        "question": "Un cavalier doit-il retenir son cheval lorsque des pietons marchent sur le chemin F99a ?",
+        "question": "Le jeu est-il autorisé sur une voie F99a ?",
         "choices": [
           {
-            "text": "Oui le cavalier doit adapter sa vitesse et donner suffisamment d espace aux pietons",
+            "text": "Oui, mais les usagers ne peuvent se mettre en danger ni entraver inutilement la circulation",
             "is_correct": true
           },
           {
-            "text": "Non les chevaux ont la priorite sur les pietons sur ce chemin",
+            "text": "Non, le jeu est interdit sur toute voie publique",
             "is_correct": false
           },
           {
-            "text": "Les cavaliers ne peuvent pas du tout utiliser le chemin",
+            "text": "Uniquement avec l'accord de chaque cycliste",
             "is_correct": false
           }
         ],
-        "explanation": "Tous les usagers d un chemin F99a doivent tenir compte les uns des autres. Un cavalier sur un grand cheval doit etre particulierement prudent avec les pietons."
+        "explanation": "L'article 22quinquies autorise le jeu tout en imposant une prudence réciproque."
       },
       "AR": {
-        "question": "هل يجب على راكب الخيل كبح حصانه عندما يمشي مشاة على مسار F99a؟",
+        "question": "هل اللعب مسموح على طريق F99a؟",
         "choices": [
           {
-            "text": "نعم يجب على الراكب ضبط السرعة وإعطاء مساحة كافية للمشاة",
+            "text": "نعم، لكن يجب ألا يعرّض المستخدمون بعضهم للخطر أو يعرقلوا الحركة بلا ضرورة",
             "is_correct": true
           },
           {
-            "text": "لا للخيول الأولوية على المشاة على هذا المسار",
+            "text": "لا، اللعب ممنوع على كل طريق عام",
             "is_correct": false
           },
           {
-            "text": "الراكبون لا يستطيعون استخدام المسار على الإطلاق",
+            "text": "فقط بموافقة كل راكب دراجة",
             "is_correct": false
           }
         ],
-        "explanation": "يجب على جميع مستخدمي مسار F99a مراعاة بعضهم البعض. يجب على الراكب على حصان كبير توخي الحذر الشديد مع المشاة."
+        "explanation": "تسمح المادة 22quinquies باللعب مع فرض الحذر المتبادل."
       }
     }
   },
@@ -409,60 +493,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Mag een fietser de rijbaan naast het F99a-pad gebruiken?",
+        "question": "Verplicht F99a een fietser automatisch om een parallelle gewone rijbaan te verlaten?",
         "choices": [
           {
-            "text": "Nee als er een verplicht fietspad is (F99a) moet de fietser dat gebruiken en is de rijbaan verboden",
+            "text": "Nee, F99a bakent de voorbehouden weg of het wegdeel af; de plaats van de fietser op een eventuele andere weg volgt uit de algemene inrichting en regels",
             "is_correct": true
           },
           {
-            "text": "Ja fietsers mogen altijd kiezen tussen het pad en de rijbaan",
+            "text": "Ja, F99a is altijd hetzelfde als een verplicht fietspad",
             "is_correct": false
           }
         ],
-        "explanation": "Een verplicht fietspad (aangeduid met F99a of gelijkaardig) betekent dat fietsers dit pad MOETEN gebruiken. De rijbaan is dan verboden voor fietsers."
+        "explanation": "F99a regelt de toegang tot de aangeduide voorbehouden weg. Het bord is niet de D-signalisatie voor een verplicht fietspad."
       },
       "EN": {
-        "question": "May a cyclist use the road next to the F99a path?",
+        "question": "Does F99a automatically require a cyclist to leave a parallel ordinary carriageway?",
         "choices": [
           {
-            "text": "No if there is a compulsory cycle path (F99a) the cyclist must use it and the road is prohibited",
+            "text": "No, F99a defines the reserved road or road part; position on any other road follows from its layout and the general rules",
             "is_correct": true
           },
           {
-            "text": "Yes cyclists may always choose between the path and the road",
+            "text": "Yes, F99a is always identical to a compulsory cycle-path sign",
             "is_correct": false
           }
         ],
-        "explanation": "A compulsory cycle path (indicated by F99a or similar) means cyclists MUST use this path. The road is then prohibited for cyclists."
+        "explanation": "F99a regulates access to the indicated reserved road. It is not the D-sign for a compulsory cycle path."
       },
       "FR": {
-        "question": "Un cycliste peut-il utiliser la chaussee a cote du chemin F99a ?",
+        "question": "F99a oblige-t-il automatiquement un cycliste à quitter une chaussée ordinaire parallèle ?",
         "choices": [
           {
-            "text": "Non s il y a une piste cyclable obligatoire (F99a) le cycliste doit l utiliser et la chaussee est interdite",
+            "text": "Non, F99a délimite la voie ou partie réservée; la place sur une autre route dépend de son aménagement et des règles générales",
             "is_correct": true
           },
           {
-            "text": "Oui les cyclistes peuvent toujours choisir entre le chemin et la chaussee",
+            "text": "Oui, F99a est toujours identique à un signal de piste cyclable obligatoire",
             "is_correct": false
           }
         ],
-        "explanation": "Une piste cyclable obligatoire (indiquee par F99a ou equivalent) signifie que les cyclistes DOIVENT utiliser ce chemin. La chaussee est alors interdite aux cyclistes."
+        "explanation": "F99a règle l'accès à la voie réservée indiquée. Ce n'est pas le signal D d'une piste cyclable obligatoire."
       },
       "AR": {
-        "question": "هل يستطيع الدراج استخدام الطريق بجانب مسار F99a؟",
+        "question": "هل تُلزم F99a راكب الدراجة تلقائيًا بمغادرة مسار سير عادي موازٍ؟",
         "choices": [
           {
-            "text": "لا إذا كان هناك مسار دراجات إلزامي (F99a) يجب على الدراج استخدامه والطريق محظور",
+            "text": "لا، تحدد F99a الطريق أو الجزء المخصص؛ ويعتمد الموضع على أي طريق آخر على تخطيطه والقواعد العامة",
             "is_correct": true
           },
           {
-            "text": "نعم يستطيع الدراجون دائماً الاختيار بين المسار والطريق",
+            "text": "نعم، F99a مطابقة دائمًا لعلامة مسار الدراجات الإلزامي",
             "is_correct": false
           }
         ],
-        "explanation": "مسار الدراجات الإلزامي (المشار إليه بـ F99a أو مشابه) يعني أن الدراجين يجب استخدام هذا المسار. الطريق محظور على الدراجين حينئذ."
+        "explanation": "تنظم F99a الدخول إلى الطريق المخصص المبين، وليست علامة D لمسار دراجات إلزامي."
       }
     }
   },
@@ -474,60 +558,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Is een elektrische step (speed pedelec) toegestaan op een F99a-pad?",
+        "question": "Mag een speedpedelec deze afgebeelde F99a-weg gebruiken?",
         "choices": [
           {
-            "text": "Nee een speed pedelec is een gemotoriseerd voertuig en mag geen verplicht fiets/voetgangerspad gebruiken",
+            "text": "Ja, omdat het speedpedelec-symbool op deze uitvoering staat",
             "is_correct": true
           },
           {
-            "text": "Ja elektrische steps zijn gelijk aan gewone fietsers",
+            "text": "Nee, speedpedelecs zijn altijd uitgesloten",
             "is_correct": false
           }
         ],
-        "explanation": "Speed pedelecs zijn gecategoriseerd als gemotoriseerde voertuigen, vergelijkbaar met bromfietsen. Ze mogen geen verplichte fietspaden of voetgangerspaden gebruiken."
+        "explanation": "Artikel 22quinquies laat de categorieën toe waarvan het symbool op F99a staat; hier is de speedpedelec afgebeeld."
       },
       "EN": {
-        "question": "Is a speed pedelec (electric scooter over 25km/h) allowed on an F99a path?",
+        "question": "May a speed-pedelec rider use this depicted F99a road?",
         "choices": [
           {
-            "text": "No a speed pedelec is a motorised vehicle and may not use a compulsory cycle/pedestrian path",
+            "text": "Yes, because the speed-pedelec symbol appears on this version",
             "is_correct": true
           },
           {
-            "text": "Yes electric scooters are equivalent to regular cyclists",
+            "text": "No, speed pedelecs are always excluded",
             "is_correct": false
           }
         ],
-        "explanation": "Speed pedelecs are categorised as motorised vehicles, similar to mopeds. They may not use compulsory cycle paths or pedestrian paths."
+        "explanation": "Article 22quinquies admits categories whose symbols are displayed on F99a; the speed pedelec is depicted here."
       },
       "FR": {
-        "question": "Un speed pedelec (scooter electrique) est-il autorise sur un chemin F99a ?",
+        "question": "Un conducteur de speed pedelec peut-il utiliser cette voie F99a ?",
         "choices": [
           {
-            "text": "Non un speed pedelec est un vehicule motorise et ne peut pas utiliser un chemin cyclable obligatoire",
+            "text": "Oui, parce que le symbole du speed pedelec figure sur cette version",
             "is_correct": true
           },
           {
-            "text": "Oui les scooters electriques sont equivalents aux cyclistes ordinaires",
+            "text": "Non, les speed pedelecs sont toujours exclus",
             "is_correct": false
           }
         ],
-        "explanation": "Les speed pedelecs sont categorises comme vehicules motorises, similaires aux cyclomoteurs. Ils ne peuvent pas utiliser les pistes cyclables ou les chemins pietons obligatoires."
+        "explanation": "L'article 22quinquies admet les catégories dont le symbole figure sur F99a; le speed pedelec est représenté ici."
       },
       "AR": {
-        "question": "هل دراجة سرعة كهربائية (speed pedelec) مسموح بها على مسار F99a؟",
+        "question": "هل يجوز لراكب دراجة سريعة استخدام طريق F99a هذا؟",
         "choices": [
           {
-            "text": "لا دراجة السرعة الكهربائية مركبة آلية ولا يمكنها استخدام مسار دراجات/مشاة إلزامي",
+            "text": "نعم، لأن رمز الدراجة السريعة ظاهر على هذا الشكل",
             "is_correct": true
           },
           {
-            "text": "نعم الدراجات الكهربائية مكافئة للدراجين العاديين",
+            "text": "لا، الدراجات السريعة مستبعدة دائمًا",
             "is_correct": false
           }
         ],
-        "explanation": "دراجات السرعة الكهربائية مصنفة كمركبات آلية، مشابهة للدراجات الآلية. لا يمكنها استخدام مسارات الدراجات الإلزامية أو مسارات المشاة."
+        "explanation": "تسمح المادة 22quinquies للفئات التي تظهر رموزها على F99a؛ والدراجة السريعة مبينة هنا."
       }
     }
   }

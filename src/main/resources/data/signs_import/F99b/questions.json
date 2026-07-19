@@ -7,73 +7,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat betekent bord F99b?",
+        "question": "Wat betekent F99b in deze uitvoering?",
         "choices": [
           {
-            "text": "Gescheiden verplicht pad met een aparte zone voor voetgangers en een aparte zone voor fietsers",
+            "text": "Begin van een voorbehouden weg met afzonderlijk aangeduide delen voor fietsers en voetgangers",
             "is_correct": true
           },
           {
-            "text": "Pad enkel voor voetgangers en verboden voor fietsers",
+            "text": "Een verplicht fietspad met een voetpad ernaast",
             "is_correct": false
           },
           {
-            "text": "Fietsers en voetgangers mogen zelf kiezen welke zone ze gebruiken",
+            "text": "Een voetgangerszone waar fietsen verboden is",
             "is_correct": false
           }
         ],
-        "explanation": "F99b toont een verplicht tweeledig pad. De twee zijden zijn duidelijk afgebakend: een kant voor voetgangers en een kant voor fietsers."
+        "explanation": "F99b begint een voorbehouden weg of wegdeel en wijst delen toe aan de afgebeelde categorieen. Het is geen D-bord voor een verplicht fietspad."
       },
       "EN": {
-        "question": "What does sign F99b mean?",
+        "question": "What does F99b mean in this version?",
         "choices": [
           {
-            "text": "Separated compulsory path with a separate zone for pedestrians and a separate zone for cyclists",
+            "text": "Start of a reserved road with separately designated parts for cyclists and pedestrians",
             "is_correct": true
           },
           {
-            "text": "Path only for pedestrians and forbidden for cyclists",
+            "text": "A compulsory cycle path with a pavement beside it",
             "is_correct": false
           },
           {
-            "text": "Cyclists and pedestrians may choose which zone they use",
+            "text": "A pedestrian zone where cycling is prohibited",
             "is_correct": false
           }
         ],
-        "explanation": "F99b shows a compulsory two-part path. The two sides are clearly demarcated: one side for pedestrians and one side for cyclists."
+        "explanation": "F99b starts a reserved road or road part and assigns parts to the depicted categories. It is not a D-sign for a compulsory cycle path."
       },
       "FR": {
-        "question": "Que signifie le panneau F99b ?",
+        "question": "Que signifie F99b dans cette version ?",
         "choices": [
           {
-            "text": "Chemin oblige separe avec une zone separee pour les pietons et une zone separee pour les cyclistes",
+            "text": "Début d'une voie réservée avec des parties distinctes pour cyclistes et piétons",
             "is_correct": true
           },
           {
-            "text": "Chemin uniquement pour les pietons et interdit aux cyclistes",
+            "text": "Une piste cyclable obligatoire avec un trottoir a côté",
             "is_correct": false
           },
           {
-            "text": "Les cyclistes et les pietons peuvent choisir la zone qu ils utilisent",
+            "text": "Une zone piétonne ou le vélo est interdit",
             "is_correct": false
           }
         ],
-        "explanation": "F99b montre un chemin oblige en deux parties. Les deux cotes sont clairement delimites : un cote pour les pietons et un cote pour les cyclistes."
+        "explanation": "F99b commence une voie ou partie de voie réservée et attribue des parties aux catégories représentées. Ce n'est pas un signal D de piste cyclable obligatoire."
       },
       "AR": {
-        "question": "ما معنى هذه العلامة المرورية؟",
+        "question": "ما معنى F99b بهذا الشكل؟",
         "choices": [
           {
-            "text": "مسار إلزامي منفصل مع منطقة منفصلة للمشاة ومنطقة منفصلة للدراجين",
+            "text": "بداية طريق مخصص بأجزاء منفصلة محددة لراكبي الدراجات والمشاة",
             "is_correct": true
           },
-          { "text": "مسار للمشاة فقط ومحظور للدراجين", "is_correct": false },
           {
-            "text": "يمكن للدراجين والمشاة اختيار أي منطقة يستخدمونها",
+            "text": "مسار دراجات إلزامي وبجانبه رصيف",
+            "is_correct": false
+          },
+          {
+            "text": "منطقة مشاة تمنع الدراجات",
             "is_correct": false
           }
         ],
-        "explanation": "تُظهر F99b مساراً إلزامياً ذو جزأين. الجانبان محددان بوضوح: جانب للمشاة وجانب للدراجين."
+        "explanation": "تبدأ F99b طريقًا أو جزءًا من طريق مخصص وتوزع أجزاءه على الفئات المبينة. وهي ليست علامة D لمسار دراجات إلزامي."
       }
     }
   },
@@ -85,70 +88,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat is het verschil tussen F99a en F99b?",
+        "question": "Wat is het kenmerkende verschil tussen F99a en F99b?",
         "choices": [
           {
-            "text": "F99a is een gemengd pad waar alle gebruikers samen rijden terwijl F99b een gescheiden pad is met aparte zones",
+            "text": "F99b wijst delen van de weg aan de verschillende afgebeelde categorieen toe",
             "is_correct": true
           },
           {
-            "text": "F99a is voor fietsers en F99b voor voetgangers",
+            "text": "F99b laat altijd alle motorvoertuigen toe",
             "is_correct": false
           },
           {
-            "text": "Er is geen verschil het zijn synoniemen",
+            "text": "F99a geldt alleen voor voetgangers",
             "is_correct": false
           }
         ],
-        "explanation": "F99a = gemengd gebruik zonder afbakening. F99b = gescheiden gebruik met aparte zones voor voetgangers en fietsers."
+        "explanation": "F99a kan de toegelaten categorieen samen op de voorbehouden weg tonen; F99b duidt bovendien aan welk deel voor welke categorie bestemd is."
       },
       "EN": {
-        "question": "What is the difference between F99a and F99b?",
+        "question": "What is the defining difference between F99a and F99b?",
         "choices": [
           {
-            "text": "F99a is a mixed path where all users ride together while F99b is a separated path with distinct zones",
+            "text": "F99b assigns parts of the road to the different depicted categories",
             "is_correct": true
           },
           {
-            "text": "F99a is for cyclists and F99b for pedestrians",
+            "text": "F99b always admits all motor vehicles",
             "is_correct": false
           },
           {
-            "text": "There is no difference they are synonyms",
+            "text": "F99a applies only to pedestrians",
             "is_correct": false
           }
         ],
-        "explanation": "F99a = mixed use without demarcation. F99b = separated use with distinct zones for pedestrians and cyclists."
+        "explanation": "F99a may show the categories sharing the reserved road; F99b also indicates which part is intended for each category."
       },
       "FR": {
-        "question": "Quelle est la difference entre F99a et F99b ?",
+        "question": "Quelle est la différence caractéristique entre F99a et F99b ?",
         "choices": [
           {
-            "text": "F99a est un chemin mixte ou tous les usagers roulent ensemble tandis que F99b est un chemin separe avec des zones distinctes",
+            "text": "F99b attribue des parties de la voie aux differentes catégories représentées",
             "is_correct": true
           },
           {
-            "text": "F99a est pour les cyclistes et F99b pour les pietons",
+            "text": "F99b admet toujours tous les véhicules à moteur",
             "is_correct": false
           },
           {
-            "text": "Il n y a pas de difference ce sont des synonymes",
+            "text": "F99a ne concerne que les piétons",
             "is_correct": false
           }
         ],
-        "explanation": "F99a = usage mixte sans delimitation. F99b = usage separe avec des zones distinctes pour les pietons et les cyclistes."
+        "explanation": "F99a peut montrer les catégories partageant la voie réservée; F99b indique en plus la partie destinee a chaque categorie."
       },
       "AR": {
-        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
+        "question": "ما الفرق المميز بين F99a وF99b؟",
         "choices": [
           {
-            "text": "F99a مسار مختلط حيث يسير جميع المستخدمين معاً بينما F99b مسار منفصل مع مناطق مميزة",
+            "text": "تحدد F99b أجزاء الطريق المخصصة لكل فئة مبينة",
             "is_correct": true
           },
-          { "text": "F99a للدراجين وF99b للمشاة", "is_correct": false },
-          { "text": "لا يوجد فرق فهما مترادفان", "is_correct": false }
+          {
+            "text": "تسمح F99b دائمًا لكل المركبات الآلية",
+            "is_correct": false
+          },
+          {
+            "text": "تخص F99a المشاة فقط",
+            "is_correct": false
+          }
         ],
-        "explanation": "F99a = استخدام مختلط بدون تحديد. F99b = استخدام منفصل مع مناطق مميزة للمشاة والدراجين."
+        "explanation": "قد تعرض F99a الفئات التي تشترك في الطريق المخصص، بينما تبين F99b أيضًا الجزء المخصص لكل فئة."
       }
     }
   },
@@ -160,67 +169,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat is een typisch gevaar bij een F99b gescheiden pad?",
+        "question": "Welk conflict moet u op een F99b-weg vooral voorkomen?",
         "choices": [
           {
-            "text": "Gebruikers die op de verkeerde zone rijden of lopen en zo in conflict komen met de andere groep",
+            "text": "Een gebruiker van het andere deel hinderen of in gevaar brengen",
             "is_correct": true
           },
           {
-            "text": "Motorvoertuigen die het pad inrijden",
+            "text": "Dat twee fietsers naast elkaar rijden op elke mogelijke plaats",
             "is_correct": false
           },
           {
-            "text": "Er zijn geen gevaren want de zones zijn gescheiden",
+            "text": "Dat een voetganger stilstaat buiten de voorbehouden weg",
             "is_correct": false
           }
         ],
-        "explanation": "Zelfs bij gescheiden paden kunnen gebruikers de afbakening negeren. Voetgangers kunnen op de fietsdeel lopen en fietsers op de voetgangerszijde."
+        "explanation": "Gebruikers volgen in beginsel hun aangeduide deel en mogen elkaar niet hinderen of in gevaar brengen."
       },
       "EN": {
-        "question": "What is a typical hazard on an F99b separated path?",
+        "question": "Which conflict should you particularly prevent on an F99b road?",
         "choices": [
           {
-            "text": "Users riding or walking on the wrong zone and coming into conflict with the other group",
+            "text": "Hindering or endangering a user of the other part",
             "is_correct": true
           },
-          { "text": "Motor vehicles entering the path", "is_correct": false },
           {
-            "text": "There are no hazards because the zones are separated",
+            "text": "Two cyclists riding side by side in every possible place",
+            "is_correct": false
+          },
+          {
+            "text": "A pedestrian stopping outside the reserved road",
             "is_correct": false
           }
         ],
-        "explanation": "Even with separated paths users can ignore the demarcation. Pedestrians can walk on the cycling section and cyclists on the pedestrian side."
+        "explanation": "Users normally follow their designated part and must not hinder or endanger one another."
       },
       "FR": {
-        "question": "Quel est un danger typique sur un chemin separe F99b ?",
+        "question": "Quel conflit faut-il surtout éviter sur une voie F99b ?",
         "choices": [
           {
-            "text": "Les usagers qui roulent ou marchent dans la mauvaise zone et entrent en conflit avec l autre groupe",
+            "text": "Gêner ou mettre en danger un usager de l'autre partie",
             "is_correct": true
           },
           {
-            "text": "Des vehicules a moteur entrant dans le chemin",
+            "text": "Deux cyclistes roulant côté a côté en tout lieu",
             "is_correct": false
           },
           {
-            "text": "Il n y a pas de dangers car les zones sont separees",
+            "text": "Un piéton s'arretant hors de la voie réservée",
             "is_correct": false
           }
         ],
-        "explanation": "Meme avec des chemins separes les usagers peuvent ignorer la delimitation. Les pietons peuvent marcher sur la partie cycliste et les cyclistes du cote pietons."
+        "explanation": "Les usagers empruntent en principe la partie désignée et ne peuvent se gêner ni se mettre en danger."
       },
       "AR": {
-        "question": "ما هو الخطر الذي تشير إليه هذه العلامة المرورية؟",
+        "question": "أي تعارض يجب منعه خصوصًا على طريق F99b؟",
         "choices": [
           {
-            "text": "مستخدمون يسيرون في المنطقة الخاطئة ويدخلون في تعارض مع المجموعة الأخرى",
+            "text": "إعاقة مستخدم الجزء الآخر أو تعريضه للخطر",
             "is_correct": true
           },
-          { "text": "مركبات آلية تدخل المسار", "is_correct": false },
-          { "text": "لا توجد مخاطر لأن المناطق مفصولة", "is_correct": false }
+          {
+            "text": "سير دراجتين جنبًا إلى جنب في كل موضع",
+            "is_correct": false
+          },
+          {
+            "text": "توقف مشاة خارج الطريق المخصص",
+            "is_correct": false
+          }
         ],
-        "explanation": "حتى مع المسارات المنفصلة يمكن للمستخدمين تجاهل التحديد. يمكن للمشاة المشي في القسم الدراجي وللدراجين على جانب المشاة."
+        "explanation": "يتبع المستخدمون من حيث الأصل الجزء المحدد لهم، ولا يجوز أن يعيق بعضهم بعضًا أو يعرضه للخطر."
       }
     }
   },
@@ -232,73 +250,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Een voetganger loopt per abuis op de fietszone van een F99b-pad. Wat moet hij doen?",
+        "question": "Een voetganger moet kort het fietsersdeel gebruiken. Wat geldt?",
         "choices": [
           {
-            "text": "Zo snel mogelijk terugkeren naar de voetgangerzone om conflicten met fietsers te vermijden",
+            "text": "Dat mag als de doorgang vrij blijft voor de gebruikers die daar regelmatig rijden",
             "is_correct": true
           },
           {
-            "text": "Doorgaan want voetgangers hebben overal voorrang",
+            "text": "Dat is zonder uitzondering verboden",
             "is_correct": false
           },
           {
-            "text": "Wachten tot een fietser hem vraagt te vertrekken",
+            "text": "Dat mag alleen wanneer een auto toestemming geeft",
             "is_correct": false
           }
         ],
-        "explanation": "Op een F99b-pad moet elke gebruiker in de juiste zone blijven. Een voetganger op de fietszone moet terugkeren naar de voetgangerzone."
+        "explanation": "Artikel 22quinquies laat het andere deel toe op voorwaarde dat de doorgang wordt vrijgelaten voor de regelmatige gebruikers ervan."
       },
       "EN": {
-        "question": "A pedestrian is accidentally walking on the cycling zone of an F99b path. What should they do?",
+        "question": "A pedestrian briefly needs to use the cyclist part. What rule applies?",
         "choices": [
           {
-            "text": "Return to the pedestrian zone as quickly as possible to avoid conflicts with cyclists",
+            "text": "They may do so if they leave passage for the users lawfully using that part",
             "is_correct": true
           },
           {
-            "text": "Continue because pedestrians have priority everywhere",
+            "text": "It is prohibited without exception",
             "is_correct": false
           },
           {
-            "text": "Wait until a cyclist asks them to leave",
+            "text": "It is allowed only when a motorist gives permission",
             "is_correct": false
           }
         ],
-        "explanation": "On an F99b path every user must stay in the correct zone. A pedestrian on the cycling zone must return to the pedestrian zone."
+        "explanation": "Article 22quinquies permits use of the other part provided passage is left for its regular users."
       },
       "FR": {
-        "question": "Un pieton marche accidentellement sur la zone cycliste d un chemin F99b. Que doit-il faire ?",
+        "question": "Un piéton doit brièvement emprunter la partie cycliste. Quelle règle s'applique ?",
         "choices": [
           {
-            "text": "Retourner le plus vite possible dans la zone pietons pour eviter les conflits avec les cyclistes",
+            "text": "Il peut le faire s'il laisse le passage aux usagers qui s'y trouvent régulièrement",
             "is_correct": true
           },
           {
-            "text": "Continuer car les pietons ont la priorite partout",
+            "text": "C'est interdit sans aucune exception",
             "is_correct": false
           },
           {
-            "text": "Attendre qu un cycliste lui demande de partir",
+            "text": "C'est permis uniquement avec l'autorisation d'un automobiliste",
             "is_correct": false
           }
         ],
-        "explanation": "Sur un chemin F99b chaque usager doit rester dans la bonne zone. Un pieton dans la zone cycliste doit retourner dans la zone pietons."
+        "explanation": "L'article 22quinquies permet d'emprunter l'autre partie à condition de laisser le passage a ses usagers réguliers."
       },
       "AR": {
-        "question": "مشاة يسير عن طريق الخطأ في منطقة ركوب الدراجات من مسار F99b. ماذا يجب عليه فعله؟",
+        "question": "احتاج أحد المشاة إلى استخدام جزء الدراجات قليلًا. ما القاعدة؟",
         "choices": [
           {
-            "text": "العودة إلى منطقة المشاة بأسرع وقت ممكن لتجنب التعارضات مع الدراجين",
+            "text": "يجوز إذا ترك المرور لمستخدمي ذلك الجزء النظاميين",
             "is_correct": true
           },
           {
-            "text": "الاستمرار لأن المشاة لهم أولوية في كل مكان",
+            "text": "يحظر ذلك بلا أي استثناء",
             "is_correct": false
           },
-          { "text": "الانتظار حتى يطلب منه دراج المغادرة", "is_correct": false }
+          {
+            "text": "يجوز فقط بإذن سائق سيارة",
+            "is_correct": false
+          }
         ],
-        "explanation": "على مسار F99b يجب على كل مستخدم البقاء في المنطقة الصحيحة. مشاة في منطقة الدراجات يجب عليه العودة إلى منطقة المشاة."
+        "explanation": "تسمح المادة 22quinquies باستخدام الجزء الآخر بشرط ترك المرور لمستخدميه النظاميين."
       }
     }
   },
@@ -310,64 +331,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Hoe is de afbakening op het wegdek bij een F99b-pad doorgaans aangegeven?",
+        "question": "Welke maximumsnelheid geldt op de met F99b voorbehouden weg?",
         "choices": [
           {
-            "text": "Via een doorgetrokken lijn of een duidelijke markering die de voetgangers- en fietszijde scheidt",
+            "text": "30 km/u",
             "is_correct": true
           },
-          { "text": "Via borden op elk meter afstand", "is_correct": false },
           {
-            "text": "Er is nooit enige markering op de weg",
+            "text": "50 km/u",
+            "is_correct": false
+          },
+          {
+            "text": "De snelheid van de snelste afgebeelde gebruiker",
             "is_correct": false
           }
         ],
-        "explanation": "Op een F99b-pad is doorgaans een doorgetrokken lijn of kleurverschil op de weg aangebracht om de twee zones te scheiden."
+        "explanation": "Op de wegen die door F99a of F99b worden afgebakend, is de snelheid beperkt tot 30 km/u."
       },
       "EN": {
-        "question": "How is the demarcation on the road surface at an F99b path typically indicated?",
+        "question": "What maximum speed applies on the road reserved by F99b?",
         "choices": [
           {
-            "text": "Via a solid line or a clear marking separating the pedestrian and cyclist sides",
+            "text": "30 km/h",
             "is_correct": true
           },
-          { "text": "Via signs spaced every metre", "is_correct": false },
           {
-            "text": "There is never any marking on the road",
+            "text": "50 km/h",
+            "is_correct": false
+          },
+          {
+            "text": "The speed of the fastest depicted user",
             "is_correct": false
           }
         ],
-        "explanation": "On an F99b path a solid line or colour difference is typically applied to the road to separate the two zones."
+        "explanation": "Speed is limited to 30 km/h on roads bounded by F99a or F99b."
       },
       "FR": {
-        "question": "Comment la delimitation sur la chaussee d un chemin F99b est-elle generalement indiquee ?",
+        "question": "Quelle vitesse maximale s'applique sur la voie réservée par F99b ?",
         "choices": [
           {
-            "text": "Via une ligne continue ou un marquage clair separant les cotes pietons et cyclistes",
+            "text": "30 km/h",
             "is_correct": true
           },
           {
-            "text": "Via des panneaux espaces d un metre",
+            "text": "50 km/h",
             "is_correct": false
           },
           {
-            "text": "Il n y a jamais de marquage sur la route",
+            "text": "La vitesse de l'usager représenté le plus rapide",
             "is_correct": false
           }
         ],
-        "explanation": "Sur un chemin F99b une ligne continue ou une difference de couleur est generalement appliquee sur la route pour separer les deux zones."
+        "explanation": "La vitesse est limitée a 30 km/h sur les voies delimitées par F99a ou F99b."
       },
       "AR": {
-        "question": "كيف يُشار عادةً إلى التحديد على سطح الطريق عند مسار F99b؟",
+        "question": "ما الحد الأقصى على الطريق المخصص بـF99b؟",
         "choices": [
           {
-            "text": "عبر خط متصل أو علامة واضحة تفصل بين جانب المشاة والدراجين",
+            "text": "30 كم/س",
             "is_correct": true
           },
-          { "text": "عبر علامات متباعدة كل متر", "is_correct": false },
-          { "text": "لا توجد أبداً علامات على الطريق", "is_correct": false }
+          {
+            "text": "50 كم/س",
+            "is_correct": false
+          },
+          {
+            "text": "سرعة أسرع فئة مبينة",
+            "is_correct": false
+          }
         ],
-        "explanation": "على مسار F99b عادةً ما يُطبق خط متصل أو فرق لوني على الطريق لفصل المنطقتين."
+        "explanation": "تحدد السرعة بـ30 كم/س على الطرق المحددة بـF99a أو F99b."
       }
     }
   },
@@ -379,64 +412,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Mag een fietser op een F99b de voetgangerszijde gebruiken als de fietszone vol staat?",
+        "question": "Hoe gebruikt een fietser het door F99b aangeduide deel?",
         "choices": [
           {
-            "text": "Nee de fietser moet zijn eigen zone gebruiken ook al is die druk",
+            "text": "In beginsel het fietsersdeel; het andere deel alleen met vrije doorgang voor de regelmatige gebruikers",
             "is_correct": true
           },
           {
-            "text": "Ja in drukke situaties mogen fietsers oversteken naar de voetgangerszijde",
+            "text": "Altijd uitsluitend het fietsersdeel, ook als uitwijken veilig nodig is",
             "is_correct": false
           },
-          { "text": "Ja als er geen voetgangers zijn", "is_correct": false }
+          {
+            "text": "Willekeurig een van beide delen zonder rekening met anderen",
+            "is_correct": false
+          }
         ],
-        "explanation": "Elke zone op een F99b-pad is voorbehouden voor de specifieke gebruiker. Een fietser mag de voetgangerszijde niet gebruiken ook niet in drukke omstandigheden."
+        "explanation": "Het aangewezen deel is de hoofdregel. Het andere deel mag worden gevolgd als de doorgang voor de regelmatige gebruikers vrij blijft."
       },
       "EN": {
-        "question": "May a cyclist on an F99b use the pedestrian side if the cycling zone is crowded?",
+        "question": "How does a cyclist use the parts designated by F99b?",
         "choices": [
           {
-            "text": "No the cyclist must use their own zone even if it is busy",
+            "text": "Normally the cyclist part; the other part only while leaving passage for its regular users",
             "is_correct": true
           },
           {
-            "text": "Yes in busy situations cyclists may cross to the pedestrian side",
+            "text": "Only the cyclist part in every circumstance, even where a safe deviation is needed",
             "is_correct": false
           },
-          { "text": "Yes if there are no pedestrians", "is_correct": false }
+          {
+            "text": "Either part freely without considering other users",
+            "is_correct": false
+          }
         ],
-        "explanation": "Each zone on an F99b path is reserved for the specific user. A cyclist may not use the pedestrian side not even in busy circumstances."
+        "explanation": "The designated part is the main rule. The other part may be used if passage remains free for its regular users."
       },
       "FR": {
-        "question": "Un cycliste sur F99b peut-il utiliser le cote pieton si la zone cycliste est bondee ?",
+        "question": "Comment un cycliste utilise-t-il les parties indiquées par F99b ?",
         "choices": [
           {
-            "text": "Non le cycliste doit utiliser sa propre zone meme si elle est frequentee",
+            "text": "En principe la partie cycliste; l'autre seulement en laissant le passage à ses usagers réguliers",
             "is_correct": true
           },
           {
-            "text": "Oui dans les situations chargees les cyclistes peuvent passer du cote pietons",
+            "text": "Toujours exclusivement la partie cycliste, même si un écart sur est nécessaire",
             "is_correct": false
           },
-          { "text": "Oui s il n y a pas de pietons", "is_correct": false }
+          {
+            "text": "N'importe quelle partie sans tenir compte des autres",
+            "is_correct": false
+          }
         ],
-        "explanation": "Chaque zone sur un chemin F99b est reservee a l usager specifique. Un cycliste ne peut pas utiliser le cote pietons meme dans des circonstances chargees."
+        "explanation": "La partie désignée est la règle principale. L'autre partie peut être empruntee si le passage reste libre pour ses usagers réguliers."
       },
       "AR": {
-        "question": "هل يستطيع دراج على F99b استخدام جانب المشاة إذا كانت منطقة الدراجين مزدحمة؟",
+        "question": "كيف يستخدم راكب الدراجة الأجزاء التي تحددها F99b؟",
         "choices": [
           {
-            "text": "لا يجب على الدراج استخدام منطقته الخاصة حتى لو كانت مشغولة",
+            "text": "يستخدم من حيث الأصل جزء الدراجات، والجزء الآخر فقط مع ترك المرور لمستخدميه النظاميين",
             "is_correct": true
           },
           {
-            "text": "نعم في المواقف المزدحمة يمكن للدراجين الانتقال إلى جانب المشاة",
+            "text": "يستخدم جزء الدراجات وحده في كل ظرف ولو احتاج إلى انحراف آمن",
             "is_correct": false
           },
-          { "text": "نعم إذا لم يكن هناك مشاة", "is_correct": false }
+          {
+            "text": "يختار أي جزء من دون مراعاة الآخرين",
+            "is_correct": false
+          }
         ],
-        "explanation": "كل منطقة على مسار F99b محجوزة للمستخدم المحدد. لا يستطيع الدراج استخدام جانب المشاة حتى في الظروف المزدحمة."
+        "explanation": "الجزء المحدد هو القاعدة، ويجوز استخدام الجزء الآخر إذا بقي المرور متاحًا لمستخدميه النظاميين."
       }
     }
   },
@@ -448,60 +493,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Mogen rolstoelgebruikers de fietszone van F99b gebruiken?",
+        "question": "Mag een voetganger het andere deel van een F99b-weg gebruiken?",
         "choices": [
           {
-            "text": "Ja rolstoelgebruikers worden gelijkgesteld met voetgangers maar mogen beide zones gebruiken voor hun veiligheid",
+            "text": "Ja, mits de doorgang vrij blijft voor de gebruikers die zich daar regelmatig bevinden",
             "is_correct": true
           },
           {
-            "text": "Nee enkel voetgangers mogen op de voetgangerszijde en rolstoelen zijn verboden",
+            "text": "Nee, nooit",
             "is_correct": false
           }
         ],
-        "explanation": "Rolstoelgebruikers zijn gelijkgesteld met voetgangers. Ze mogen voornamelijk de voetgangerszijde gebruiken maar kunnen ook de fietszijde nemen als dat veiliger is."
+        "explanation": "De wet bevat uitdrukkelijk deze voorwaarde voor het gebruik van het andere deel."
       },
       "EN": {
-        "question": "May wheelchair users use the cycling zone of F99b?",
+        "question": "May a pedestrian use the other part of an F99b road?",
         "choices": [
           {
-            "text": "Yes wheelchair users are equated with pedestrians but may use both zones for their safety",
+            "text": "Yes, provided they leave passage for the users lawfully using it",
             "is_correct": true
           },
           {
-            "text": "No only pedestrians may be on the pedestrian side and wheelchairs are prohibited",
+            "text": "No, never",
             "is_correct": false
           }
         ],
-        "explanation": "Wheelchair users are equated with pedestrians. They may primarily use the pedestrian side but can also take the cycling side if that is safer."
+        "explanation": "The law expressly permits this subject to leaving passage for the regular users of that part."
       },
       "FR": {
-        "question": "Les utilisateurs de fauteuil roulant peuvent-ils utiliser la zone cycliste de F99b ?",
+        "question": "Un piéton peut-il emprunter l'autre partie d'une voie F99b ?",
         "choices": [
           {
-            "text": "Oui les utilisateurs de fauteuil roulant sont assimiles aux pietons mais peuvent utiliser les deux zones pour leur securite",
+            "text": "Oui, à condition de laisser le passage aux usagers qui s'y trouvent régulièrement",
             "is_correct": true
           },
           {
-            "text": "Non seuls les pietons peuvent etre du cote pietons et les fauteuils roulants sont interdits",
+            "text": "Non, jamais",
             "is_correct": false
           }
         ],
-        "explanation": "Les utilisateurs de fauteuil roulant sont assimiles aux pietons. Ils peuvent utiliser principalement le cote pietons mais peuvent aussi prendre le cote cycliste si c est plus sur."
+        "explanation": "La loi le permet expressément sous cette condition."
       },
       "AR": {
-        "question": "هل يستطيع مستخدمو الكراسي المتحركة استخدام منطقة الدراجات في F99b؟",
+        "question": "هل يجوز للمشاة استخدام الجزء الآخر من طريق F99b؟",
         "choices": [
           {
-            "text": "نعم مستخدمو الكراسي المتحركة يُعادلون المشاة لكن يمكنهم استخدام كلا المنطقتين لسلامتهم",
+            "text": "نعم، بشرط ترك المرور للمستخدمين الموجودين فيه بصورة نظامية",
             "is_correct": true
           },
           {
-            "text": "لا فقط المشاة يمكنهم التواجد على جانب المشاة والكراسي المتحركة محظورة",
+            "text": "لا، أبدًا",
             "is_correct": false
           }
         ],
-        "explanation": "مستخدمو الكراسي المتحركة يُعادلون المشاة. يمكنهم استخدام جانب المشاة بشكل رئيسي لكن يمكنهم أيضاً أخذ جانب الدراجات إذا كان ذلك أكثر أماناً."
+        "explanation": "يسمح القانون بذلك صراحة وفق هذا الشرط."
       }
     }
   },
@@ -513,60 +558,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Mag een elektrische fiets (pedelec tot 25 km/h) de fietszone van F99b gebruiken?",
+        "question": "Mag een gewone elektrische fiets tot 25 km/u het afgebeelde fietsersdeel gebruiken?",
         "choices": [
           {
-            "text": "Ja een gewone elektrische fiets (pedelec) is een fiets en mag de fietszone gebruiken",
+            "text": "Ja, die geldt verkeersrechtelijk als fiets en het fietssymbool is afgebeeld",
             "is_correct": true
           },
           {
-            "text": "Nee elektrische fietsen zijn gemotoriseerd en mogen geen fietspaden gebruiken",
+            "text": "Nee, elke elektrische ondersteuning sluit toegang uit",
             "is_correct": false
           }
         ],
-        "explanation": "Een pedelec tot 25 km/h wordt gelijkgesteld met een gewone fiets. De fietser mag de fietszone van F99b gebruiken."
+        "explanation": "Een gewone elektrische fiets die als fiets is ingedeeld, valt onder de afgebeelde categorie fietsers."
       },
       "EN": {
-        "question": "May a regular electric bicycle (pedelec up to 25 km/h) use the cycling zone of F99b?",
+        "question": "May an ordinary electric bicycle assisted up to 25 km/h use the depicted cyclist part?",
         "choices": [
           {
-            "text": "Yes a regular electric bicycle (pedelec) is a bicycle and may use the cycling zone",
+            "text": "Yes, it is legally treated as a bicycle and the cyclist symbol is depicted",
             "is_correct": true
           },
           {
-            "text": "No electric bicycles are motorised and may not use cycle paths",
+            "text": "No, any electric assistance excludes access",
             "is_correct": false
           }
         ],
-        "explanation": "A pedelec up to 25 km/h is equated with a regular bicycle. The cyclist may use the cycling zone of F99b."
+        "explanation": "An ordinary electric bicycle classified as a bicycle belongs to the depicted cyclist category."
       },
       "FR": {
-        "question": "Un velo electrique ordinaire (pedelec jusqu a 25 km/h) peut-il utiliser la zone cycliste de F99b ?",
+        "question": "Un vélo électrique ordinaire assisté jusqu'à 25 km/h peut-il utiliser la partie cycliste représentée ?",
         "choices": [
           {
-            "text": "Oui un velo electrique ordinaire (pedelec) est un velo et peut utiliser la zone cycliste",
+            "text": "Oui, il est juridiquement assimilé à un vélo et le symbole cycliste est représenté",
             "is_correct": true
           },
           {
-            "text": "Non les velos electriques sont motorises et ne peuvent pas utiliser les pistes cyclables",
+            "text": "Non, toute assistance électrique exclut l'accès",
             "is_correct": false
           }
         ],
-        "explanation": "Un pedelec jusqu a 25 km/h est assimile a un velo ordinaire. Le cycliste peut utiliser la zone cycliste de F99b."
+        "explanation": "Un vélo électrique ordinaire classe comme vélo appartient a la catégorie des cyclistes représentée."
       },
       "AR": {
-        "question": "هل يستطيع دراجة كهربائية عادية (pedelec حتى 25 كم/ساعة) استخدام منطقة الدراجات في F99b؟",
+        "question": "هل يجوز لدراجة كهربائية عادية بمساعدة حتى 25 كم/س استخدام جزء الدراجات المبين؟",
         "choices": [
           {
-            "text": "نعم الدراجة الكهربائية العادية (pedelec) هي دراجة ويمكنها استخدام منطقة الدراجات",
+            "text": "نعم، تعامل قانونيًا كدراجة ورمز الدراجات ظاهر",
             "is_correct": true
           },
           {
-            "text": "لا الدراجات الكهربائية آلية ولا يمكنها استخدام مسارات الدراجات",
+            "text": "لا، أي مساعدة كهربائية تمنع الدخول",
             "is_correct": false
           }
         ],
-        "explanation": "الـpedelec حتى 25 كم/ساعة يُعادل الدراجة العادية. يستطيع الدراج استخدام منطقة الدراجات في F99b."
+        "explanation": "تنتمي الدراجة الكهربائية العادية المصنفة دراجة إلى فئة راكبي الدراجات المبينة."
       }
     }
   }

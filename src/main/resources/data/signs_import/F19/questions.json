@@ -250,67 +250,76 @@
     "show_sign": false,
     "i18n": {
       "NL": {
-        "question": "Tot waar geldt de verplichting van eenrichtingsverkeer die door dit bord wordt aangeduid?",
+        "question": "Waar geldt de met F19 aangeduide eenrichtingsregel?",
         "choices": [
           {
-            "text": "Tot het einde van de straat of tot een bord dat het einde van de maatregel aangeeft",
+            "text": "Op de betrokken openbare weg in de aangeduide richting, rekening houdend met eventuele bijkomende uitzonderingssignalisatie",
             "is_correct": true
           },
           {
-            "text": "Enkel tot het eerste kruispunt, ongeacht verdere signalisatie",
-            "is_correct": false
-          },
-          { "text": "Enkel tijdens de spitsuren", "is_correct": false }
-        ],
-        "explanation": "De verplichting geldt vanaf het bord tot het einde van de straat of tot een bord dat de maatregel opheft, en niet enkel voor een vast aantal meter."
-      },
-      "EN": {
-        "question": "Until where does the one-way obligation indicated by this sign apply?",
-        "choices": [
-          {
-            "text": "Until the end of the street or until a sign indicating the end of the measure",
-            "is_correct": true
-          },
-          {
-            "text": "Only until the first intersection, regardless of further signage",
-            "is_correct": false
-          },
-          { "text": "Only during peak traffic hours", "is_correct": false }
-        ],
-        "explanation": "The obligation applies from the sign until the end of the street or until a sign lifting the measure, not just for a fixed number of metres."
-      },
-      "FR": {
-        "question": "Jusqu'où s'applique l'obligation de sens unique indiquée par ce panneau ?",
-        "choices": [
-          {
-            "text": "Jusqu'à la fin de la rue ou jusqu'à un panneau signalant la fin de la mesure",
-            "is_correct": true
-          },
-          {
-            "text": "Uniquement jusqu'au premier carrefour, sans tenir compte d'une signalisation ultérieure",
+            "text": "Slechts gedurende de eerste 100 meter",
             "is_correct": false
           },
           {
-            "text": "Uniquement pendant les heures de pointe",
+            "text": "Alleen tot het eerst geparkeerde voertuig",
             "is_correct": false
           }
         ],
-        "explanation": "L'obligation s'applique à partir du panneau jusqu'à la fin de la rue ou jusqu'à un panneau levant la mesure, et non pour une distance fixe."
+        "explanation": "F19 duidt een openbare weg met eenrichtingsverkeer aan. Er bestaat geen algemene vaste afstand; eventuele toegelaten tegenrichting voor bepaalde tweewielers moet uit bijkomende signalisatie blijken."
       },
-      "AR": {
-        "question": "حتى أين يسري الالتزام باتجاه السير الواحد الذي تشير إليه هذه العلامة؟",
+      "EN": {
+        "question": "Where does the one-way rule indicated by F19 apply?",
         "choices": [
           {
-            "text": "حتى نهاية الشارع أو حتى ظهور علامة تشير إلى انتهاء هذا الإجراء",
+            "text": "On the road concerned in the indicated direction, taking account of any supplementary exception signing",
             "is_correct": true
           },
           {
-            "text": "فقط حتى أول تقاطع، بغض النظر عن أي إشارات لاحقة",
+            "text": "Only for the first 100 metres",
             "is_correct": false
           },
-          { "text": "فقط خلال ساعات الازدحام", "is_correct": false }
+          {
+            "text": "Only up to the first parked vehicle",
+            "is_correct": false
+          }
         ],
-        "explanation": "يسري هذا الالتزام من عند العلامة حتى نهاية الشارع أو حتى ظهور علامة تُلغي هذا الإجراء، وليس لمسافة ثابتة محددة."
+        "explanation": "F19 indicates a public road with one-way traffic. There is no general fixed distance; any permitted contraflow for specified two-wheelers must be shown by supplementary signing."
+      },
+      "FR": {
+        "question": "Où s'applique la règle de sens unique indiquée par F19 ?",
+        "choices": [
+          {
+            "text": "Sur la voie publique concernée dans le sens indiqué, compte tenu d'une éventuelle signalisation complémentaire d'exception",
+            "is_correct": true
+          },
+          {
+            "text": "Uniquement pendant les 100 premiers mètres",
+            "is_correct": false
+          },
+          {
+            "text": "Uniquement jusqu'au premier véhicule stationné",
+            "is_correct": false
+          }
+        ],
+        "explanation": "F19 indique une voie publique à sens unique. Il n'existe pas de distance générale fixe; une éventuelle circulation en sens inverse de certains deux-roues doit résulter d'une signalisation complémentaire."
+      },
+      "AR": {
+        "question": "أين تطبق قاعدة الاتجاه الواحد التي تشير إليها F19؟",
+        "choices": [
+          {
+            "text": "على الطريق العام المعني في الاتجاه المبين مع مراعاة أي علامات إضافية للاستثناء",
+            "is_correct": true
+          },
+          {
+            "text": "فقط خلال أول 100 متر",
+            "is_correct": false
+          },
+          {
+            "text": "فقط حتى أول مركبة متوقفة",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تشير F19 إلى طريق عام باتجاه واحد. لا توجد مسافة عامة ثابتة؛ ويجب أن يظهر السماح باتجاه معاكس لمركبات ثنائية محددة في علامات إضافية."
       }
     }
   },

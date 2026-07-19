@@ -253,73 +253,73 @@
         "question": "U ziet dit bord bij het naderen van een kruispunt met meerdere rijstroken. Wat wordt van u verwacht?",
         "choices": [
           {
-            "text": "Ruim op voorhand de rijstrook kiezen die overeenkomt met uw gewenste richting en die aanhouden",
+            "text": "Kies tijdig de rijstrook voor uw richting, volg die richting en verander alleen waar de markeringen dit toelaten en het veilig kan",
             "is_correct": true
           },
           {
-            "text": "Elke willekeurige strook nemen en pas op het kruispunt zelf beslissen",
+            "text": "Kies om het even welke rijstrook en corrigeer op het kruispunt",
             "is_correct": false
           },
           {
-            "text": "Altijd de meest linkse strook nemen, ongeacht de gewenste richting",
+            "text": "Stop op de rijstrook om de pijlen opnieuw te bekijken",
             "is_correct": false
           }
         ],
-        "explanation": "Het bord dient net om de bestuurder toe te laten tijdig en veilig de juiste rijstrook te kiezen volgens de bestemming, zonder haastige manoeuvres later."
+        "explanation": "F13 kondigt de strookindeling aan en schrijft de richting per rijstrook voor. Een latere rijstrookwissel is alleen mogelijk waar ze toegestaan en veilig is."
       },
       "EN": {
         "question": "You see this sign as you approach an intersection with several lanes. What is expected of you?",
         "choices": [
           {
-            "text": "Choose well in advance the lane that matches your intended direction and stay in it",
+            "text": "Choose the lane for your direction in good time, follow that direction and change only where markings permit and it is safe",
             "is_correct": true
           },
           {
-            "text": "Take any lane and decide only once you reach the intersection itself",
+            "text": "Choose any lane and correct your route in the junction",
             "is_correct": false
           },
           {
-            "text": "Always take the leftmost lane, regardless of your intended direction",
+            "text": "Stop in the lane to inspect the arrows again",
             "is_correct": false
           }
         ],
-        "explanation": "The sign exists precisely so the driver can choose the correct lane early and safely according to the destination, avoiding rushed manoeuvres later."
+        "explanation": "F13 announces the lane layout and prescribes the direction for each lane. A later lane change is possible only where it is permitted and safe."
       },
       "FR": {
         "question": "Vous apercevez ce panneau en approchant d'un carrefour comportant plusieurs voies. Qu'attend-on de vous ?",
         "choices": [
           {
-            "text": "Choisir suffisamment à l'avance la voie correspondant à votre direction souhaitée et la conserver",
+            "text": "Choisir à temps la bande correspondant à votre direction, suivre cette direction et ne changer que si le marquage le permet et si c'est sûr",
             "is_correct": true
           },
           {
-            "text": "Prendre n'importe quelle voie et décider seulement au niveau du carrefour",
+            "text": "Choisir n'importe quelle bande et corriger dans le carrefour",
             "is_correct": false
           },
           {
-            "text": "Toujours prendre la voie la plus à gauche, quelle que soit votre direction",
+            "text": "S'arrêter sur la bande pour revoir les flèches",
             "is_correct": false
           }
         ],
-        "explanation": "Ce panneau existe justement pour permettre au conducteur de choisir tôt et en toute sécurité la voie adaptée à sa destination, sans manœuvre précipitée plus tard."
+        "explanation": "F13 annonce la disposition des bandes et prescrit la direction de chacune. Un changement ultérieur n'est possible que s'il est autorisé et sûr."
       },
       "AR": {
         "question": "لاحظت هذه العلامة عند اقترابك من تقاطع يحتوي على عدة مسارات، فما المطلوب منك؟",
         "choices": [
           {
-            "text": "اختيار المسار المناسب لوجهتك مسبقًا بوقت كافٍ والالتزام به",
+            "text": "اختر في وقت مناسب الحارة الموافقة لاتجاهك واتبعها ولا تغيّر إلا حيث تسمح التخطيطات وبأمان",
             "is_correct": true
           },
           {
-            "text": "أخذ أي مسار عشوائي وتقرر فقط عند الوصول إلى التقاطع نفسه",
+            "text": "اختر أي حارة وصحح مسارك داخل التقاطع",
             "is_correct": false
           },
           {
-            "text": "أخذ المسار الأقصى يسارًا دائمًا بغض النظر عن وجهتك",
+            "text": "توقف في الحارة لإعادة فحص الأسهم",
             "is_correct": false
           }
         ],
-        "explanation": "توجد هذه العلامة تحديدًا لتمكين السائق من اختيار المسار الصحيح مبكرًا وبأمان وفق وجهته، دون الحاجة إلى مناورات متسرعة لاحقًا."
+        "explanation": "تعلن F13 توزيع الحارات وتفرض اتجاه كل حارة. ولا يمكن تغيير الحارة لاحقًا إلا حيث يكون مسموحًا وآمنًا."
       }
     }
   },
@@ -341,7 +341,10 @@
             "text": "Pas na het kruispunt, als bevestiging van de gemaakte keuze",
             "is_correct": false
           },
-          { "text": "Enkel midden op het kruispunt zelf", "is_correct": false }
+          {
+            "text": "Enkel midden op het kruispunt zelf",
+            "is_correct": false
+          }
         ],
         "explanation": "Dit bord wordt geplaatst vóór het kruispunt of de splitsing, zodat de bestuurder voldoende tijd heeft om zich op de juiste rijstrook te positioneren."
       },
@@ -392,7 +395,10 @@
             "text": "بعد التقاطع فقط، كتأكيد للخيار الذي تم اتخاذه بالفعل",
             "is_correct": false
           },
-          { "text": "في وسط التقاطع نفسه فقط", "is_correct": false }
+          {
+            "text": "في وسط التقاطع نفسه فقط",
+            "is_correct": false
+          }
         ],
         "explanation": "توضع هذه العلامة قبل التقاطع أو نقطة التفرع، مما يمنح السائق وقتًا كافيًا للتموضع في المسار الصحيح."
       }
@@ -487,60 +493,60 @@
     "show_sign": false,
     "i18n": {
       "NL": {
-        "question": "Mag u van rijstrook wisselen net vlak voor het kruispunt nadat u dit bord heeft gepasseerd, om nog een andere richting te nemen?",
+        "question": "Mag u na F13 nog van rijstrook veranderen vóór het kruispunt?",
         "choices": [
           {
-            "text": "Nee, u moet zich al na het bord op de juiste strook plaatsen; laat wisselen vlak voor het kruispunt is gevaarlijk en niet toegelaten als het de veiligheid in het gedrang brengt",
+            "text": "Alleen waar de wegmarkeringen dit toelaten en wanneer de manoeuvre tijdig en veilig kan",
             "is_correct": true
           },
           {
-            "text": "Ja, u mag altijd op het laatste moment wisselen zolang u uw richtingaanwijzer gebruikt",
+            "text": "Nee, na F13 is elke rijstrookwissel zonder uitzondering verboden",
             "is_correct": false
           }
         ],
-        "explanation": "Het bord verplicht de bestuurder om de keuze op tijd te maken. Laat wisselen vlak voor het kruispunt creëert onnodig gevaar en is niet de bedoeling van dit bord."
+        "explanation": "F13 schrijft de richting van de stroken voor, maar maakt niet op zichzelf elke rijstrookwissel verboden. De markeringen en de gewone veiligheidsregels bepalen of een wissel nog kan."
       },
       "EN": {
-        "question": "May you change lanes right before the intersection after passing this sign, in order to take a different direction?",
+        "question": "After F13, may you still change lanes before the junction?",
         "choices": [
           {
-            "text": "No, you must position yourself in the correct lane right after the sign; switching lanes right before the intersection is dangerous and not permitted if it compromises safety",
+            "text": "Only where the road markings permit and the manoeuvre can be made in good time and safely",
             "is_correct": true
           },
           {
-            "text": "Yes, you may always switch at the last moment as long as you use your indicator",
+            "text": "No, every lane change after F13 is prohibited without exception",
             "is_correct": false
           }
         ],
-        "explanation": "The sign requires the driver to make the choice in good time. Switching lanes right before the intersection creates unnecessary danger and defeats the purpose of the sign."
+        "explanation": "F13 prescribes lane directions but does not by itself prohibit every lane change. The markings and ordinary safety rules determine whether a change remains possible."
       },
       "FR": {
-        "question": "Pouvez-vous changer de voie juste avant le carrefour après avoir dépassé ce panneau, pour prendre une autre direction ?",
+        "question": "Après F13, pouvez-vous encore changer de bande avant le carrefour ?",
         "choices": [
           {
-            "text": "Non, vous devez vous positionner sur la bonne voie dès le panneau; changer de voie juste avant le carrefour est dangereux et n'est pas autorisé si cela compromet la sécurité",
+            "text": "Uniquement si le marquage le permet et si la manœuvre peut être effectuée à temps et en sécurité",
             "is_correct": true
           },
           {
-            "text": "Oui, vous pouvez toujours changer au dernier moment tant que vous utilisez votre clignotant",
+            "text": "Non, tout changement de bande après F13 est interdit sans exception",
             "is_correct": false
           }
         ],
-        "explanation": "Le panneau impose au conducteur de faire son choix à temps. Changer de voie juste avant le carrefour crée un danger inutile et va à l'encontre de l'objectif du panneau."
+        "explanation": "F13 prescrit la direction des bandes mais n'interdit pas à lui seul tout changement. Le marquage et les règles ordinaires de sécurité déterminent si le changement reste possible."
       },
       "AR": {
-        "question": "هل يمكنك تغيير مسارك مباشرة قبل التقاطع بعد تجاوز هذه العلامة لتأخذ اتجاهًا مختلفًا؟",
+        "question": "بعد F13، هل ما زال يجوز تغيير الحارة قبل التقاطع؟",
         "choices": [
           {
-            "text": "لا، يجب أن تتموضع في المسار الصحيح فور رؤية العلامة؛ تغيير المسار مباشرة قبل التقاطع خطير وغير مسموح به إذا كان يهدد السلامة",
+            "text": "فقط حيث تسمح تخطيطات الطريق ويمكن تنفيذ المناورة في وقت مناسب وبأمان",
             "is_correct": true
           },
           {
-            "text": "نعم، يمكنك التغيير دائمًا في اللحظة الأخيرة طالما تستخدم إشارة الانحناء",
+            "text": "لا، كل تغيير للحارة بعد F13 ممنوع بلا استثناء",
             "is_correct": false
           }
         ],
-        "explanation": "تفرض هذه العلامة على السائق اتخاذ قراره في وقت مناسب. تغيير المسار مباشرة قبل التقاطع يخلق خطرًا غير ضروري ويناقض الغرض من العلامة."
+        "explanation": "تفرض F13 اتجاهات الحارات لكنها لا تمنع بذاتها كل تغيير. تحدد التخطيطات وقواعد السلامة المعتادة ما إذا كان التغيير ما زال ممكنًا."
       }
     }
   },

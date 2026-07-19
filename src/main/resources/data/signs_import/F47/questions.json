@@ -10,64 +10,73 @@
         "question": "Wat betekent bord F47?",
         "choices": [
           {
-            "text": "Het einde van een wegenwerkenzone en de normale verkeersregels gelden weer",
+            "text": "De werken eindigen hier; afzonderlijk gesignaleerde regels kunnen nog blijven gelden",
             "is_correct": true
           },
           {
-            "text": "Het begin van een nieuwe wegenwerkenzone",
+            "text": "Alle tijdelijke en permanente verkeersregels eindigen hier",
             "is_correct": false
           },
           {
-            "text": "Werk aan de weg is verboden voorbij dit punt",
+            "text": "Vanaf hier geldt automatisch de maximumsnelheid van de weg",
             "is_correct": false
           }
         ],
-        "explanation": "F47 markeert het einde van een zone voor wegenwerken. Vanaf dit punt gelden de normale wegregels opnieuw."
+        "explanation": "F47 duidt het einde van de werken aan. Het bord heft niet automatisch elke afzonderlijke snelheids-, inhaal- of rijstrookregel op en stelt geen nieuwe snelheid vast."
       },
       "EN": {
         "question": "What does sign F47 mean?",
         "choices": [
           {
-            "text": "The end of a road works zone and normal traffic rules apply again",
+            "text": "The road works end here; separately signed rules may still remain applicable",
             "is_correct": true
           },
-          { "text": "The start of a new road works zone", "is_correct": false },
           {
-            "text": "Road work is prohibited beyond this point",
+            "text": "All temporary and permanent traffic rules end here",
+            "is_correct": false
+          },
+          {
+            "text": "The road's maximum speed automatically applies from here",
             "is_correct": false
           }
         ],
-        "explanation": "F47 marks the end of a road works zone. From this point normal road rules apply again."
+        "explanation": "F47 indicates the end of road works. It does not automatically cancel every separately signed speed, overtaking or lane rule and sets no new speed."
       },
       "FR": {
         "question": "Que signifie le panneau F47 ?",
         "choices": [
           {
-            "text": "La fin d une zone de travaux et les regles de circulation normales s appliquent a nouveau",
+            "text": "Les travaux se terminent ici; des règles signalées séparément peuvent rester applicables",
             "is_correct": true
           },
           {
-            "text": "Le debut d une nouvelle zone de travaux",
+            "text": "Toutes les règles temporaires et permanentes prennent fin ici",
             "is_correct": false
           },
           {
-            "text": "Les travaux routiers sont interdits apres ce point",
+            "text": "La vitesse maximale de la route s'applique automatiquement dès ici",
             "is_correct": false
           }
         ],
-        "explanation": "F47 marque la fin d une zone de travaux routiers. A partir de ce point les regles normales s appliquent a nouveau."
+        "explanation": "F47 indique la fin des travaux. Il n'annule pas automatiquement chaque règle de vitesse, de dépassement ou de voie signalée séparément et ne fixe aucune nouvelle vitesse."
       },
       "AR": {
         "question": "ما معنى هذه العلامة المرورية؟",
         "choices": [
           {
-            "text": "نهاية منطقة أعمال الطريق وتعود قواعد المرور العادية للتطبيق",
+            "text": "تنتهي الأشغال هنا؛ وقد تبقى القواعد الموضوعة بعلامات مستقلة سارية",
             "is_correct": true
           },
-          { "text": "بداية منطقة أعمال طريق جديدة", "is_correct": false },
-          { "text": "أعمال الطريق محظورة بعد هذه النقطة", "is_correct": false }
+          {
+            "text": "تنتهي هنا جميع القواعد المؤقتة والدائمة",
+            "is_correct": false
+          },
+          {
+            "text": "يبدأ تلقائيًا الحد الأقصى للطريق من هنا",
+            "is_correct": false
+          }
         ],
-        "explanation": "تحدد F47 نهاية منطقة أعمال الطريق. من هذه النقطة تعود قواعد الطريق العادية للتطبيق."
+        "explanation": "تشير F47 إلى نهاية الأشغال، لكنها لا تلغي تلقائيًا كل قاعدة سرعة أو تجاوز أو حارة موضوعة بعلامة مستقلة ولا تحدد سرعة جديدة."
       }
     }
   },
@@ -81,36 +90,72 @@
       "NL": {
         "question": "Welk bord geeft aan dat de wegenwerkenzone is afgelopen?",
         "choices": [
-          { "text": "F47", "is_correct": true },
-          { "text": "F5", "is_correct": false },
-          { "text": "A51", "is_correct": false }
+          {
+            "text": "F47",
+            "is_correct": true
+          },
+          {
+            "text": "F5",
+            "is_correct": false
+          },
+          {
+            "text": "A51",
+            "is_correct": false
+          }
         ],
         "explanation": "F47 is het bord dat specifiek het einde van een wegenwerkenzone aanduidt."
       },
       "EN": {
         "question": "Which sign indicates that the road works zone has ended?",
         "choices": [
-          { "text": "F47", "is_correct": true },
-          { "text": "F5", "is_correct": false },
-          { "text": "A51", "is_correct": false }
+          {
+            "text": "F47",
+            "is_correct": true
+          },
+          {
+            "text": "F5",
+            "is_correct": false
+          },
+          {
+            "text": "A51",
+            "is_correct": false
+          }
         ],
         "explanation": "F47 is the sign that specifically marks the end of a road works zone."
       },
       "FR": {
         "question": "Quel panneau indique que la zone de travaux est terminee ?",
         "choices": [
-          { "text": "F47", "is_correct": true },
-          { "text": "F5", "is_correct": false },
-          { "text": "A51", "is_correct": false }
+          {
+            "text": "F47",
+            "is_correct": true
+          },
+          {
+            "text": "F5",
+            "is_correct": false
+          },
+          {
+            "text": "A51",
+            "is_correct": false
+          }
         ],
         "explanation": "F47 est le panneau qui marque specifiquement la fin d une zone de travaux."
       },
       "AR": {
         "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
         "choices": [
-          { "text": "F47", "is_correct": true },
-          { "text": "F5", "is_correct": false },
-          { "text": "A51", "is_correct": false }
+          {
+            "text": "F47",
+            "is_correct": true
+          },
+          {
+            "text": "F5",
+            "is_correct": false
+          },
+          {
+            "text": "A51",
+            "is_correct": false
+          }
         ],
         "explanation": "F47 هي العلامة المرورية التي تحدد تحديداً نهاية منطقة أعمال الطريق."
       }
@@ -205,76 +250,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "In een wegenwerkenzone gold een tijdelijke snelheidslimiet van 50 km/h. U passeert bord F47. Welke snelheid geldt nu?",
+        "question": "In de werken gold een afzonderlijk bord C43 met 50 km/u. U passeert F47 maar ziet nog geen einde van die beperking. Wat doet u?",
         "choices": [
           {
-            "text": "De normaal geldende snelheidslimiet voor dit wegtype tenzij een bord anders aangeeft",
+            "text": "U blijft de afzonderlijke snelheidsbeperking volgen tot zij volgens haar eigen regels of eindsignalisatie eindigt",
             "is_correct": true
           },
           {
-            "text": "U moet nog steeds 50 km/h rijden want de tijdelijke limiet blijft van kracht",
+            "text": "U versnelt bij F47 automatisch naar de algemene limiet",
             "is_correct": false
           },
           {
-            "text": "U moet stoppen en de snelheidslimiet opzoeken op uw navigatie",
+            "text": "U kiest zelf een snelheid omdat de werken voorbij zijn",
             "is_correct": false
           }
         ],
-        "explanation": "Na F47 geldt de gewone snelheidslimiet voor het wegtype weer. De tijdelijke beperking geldt niet meer."
+        "explanation": "F47 beëindigt de werken, maar is niet het algemene eindbord voor elke afzonderlijke C43-beperking. Controleer de geldigheid en eindsignalisatie van de snelheidsregel zelf."
       },
       "EN": {
-        "question": "In a road works zone a temporary speed limit of 50 km/h applied. You pass sign F47. What speed now applies?",
+        "question": "A separate C43 sign imposed 50 km/h in the works. You pass F47 but have not seen the restriction end. What do you do?",
         "choices": [
           {
-            "text": "The normally applicable speed limit for this road type unless a sign indicates otherwise",
+            "text": "Continue to obey the separate speed restriction until it ends under its own rules or end signing",
             "is_correct": true
           },
           {
-            "text": "You still must drive at 50 km/h because the temporary limit remains in force",
+            "text": "Automatically accelerate to the general limit at F47",
             "is_correct": false
           },
           {
-            "text": "You must stop and look up the speed limit on your navigation",
+            "text": "Choose your own speed because the works have ended",
             "is_correct": false
           }
         ],
-        "explanation": "After F47 the normal speed limit for the road type applies again. The temporary restriction no longer applies."
+        "explanation": "F47 ends the works but is not the universal end sign for every separate C43 restriction. Check the speed rule's own validity and end signing."
       },
       "FR": {
-        "question": "Dans une zone de travaux une limitation de vitesse temporaire de 50 km/h s appliquait. Vous passez le panneau F47. Quelle vitesse s applique maintenant ?",
+        "question": "Un signal C43 distinct imposait 50 km/h dans les travaux. Vous passez F47 sans avoir vu la fin de cette limitation. Que faites-vous ?",
         "choices": [
           {
-            "text": "La limitation de vitesse normalement applicable pour ce type de route sauf si un panneau indique autre chose",
+            "text": "Continuer à respecter la limitation distincte jusqu'à sa fin selon ses propres règles ou sa signalisation de fin",
             "is_correct": true
           },
           {
-            "text": "Vous devez encore rouler a 50 km/h car la limitation temporaire reste en vigueur",
+            "text": "Accélérer automatiquement à la limite générale dès F47",
             "is_correct": false
           },
           {
-            "text": "Vous devez vous arreter et chercher la limitation de vitesse sur votre navigation",
+            "text": "Choisir vous-même une vitesse puisque les travaux sont finis",
             "is_correct": false
           }
         ],
-        "explanation": "Apres F47 la limitation de vitesse normale pour le type de route s applique a nouveau. La restriction temporaire ne s applique plus."
+        "explanation": "F47 met fin aux travaux mais n'est pas le signal universel de fin de chaque limitation C43 distincte. Vérifiez la validité propre et la signalisation de fin de la limitation."
       },
       "AR": {
-        "question": "في منطقة أعمال الطريق كان حد سرعة مؤقت 50 كم/ساعة مطبقاً. تمر بعلامة مرورية F47. ما السرعة التي تنطبق الآن؟",
+        "question": "فرضت علامة C43 مستقلة 50 كم/س داخل الأشغال. تجاوزت F47 ولم تر نهاية القيد. ماذا تفعل؟",
         "choices": [
           {
-            "text": "حد السرعة المعتاد لهذا النوع من الطريق ما لم تشر علامة مرورية إلى خلاف ذلك",
+            "text": "تستمر في اتباع قيد السرعة المستقل حتى ينتهي وفق قواعده أو علامة نهايته",
             "is_correct": true
           },
           {
-            "text": "لا يزال يجب السير بسرعة 50 كم/ساعة لأن الحد المؤقت لا يزال سارياً",
+            "text": "تزيد تلقائيًا إلى الحد العام عند F47",
             "is_correct": false
           },
           {
-            "text": "يجب التوقف والبحث عن حد السرعة على نظام الملاحة",
+            "text": "تختار سرعتك لأن الأشغال انتهت",
             "is_correct": false
           }
         ],
-        "explanation": "بعد F47 يعود حد السرعة العادي لنوع الطريق للتطبيق. القيد المؤقت لم يعد ينطبق."
+        "explanation": "تنهي F47 الأشغال لكنها ليست علامة النهاية العامة لكل قيد C43 مستقل. تحقّق من سريان قاعدة السرعة وعلامة نهايتها الخاصة."
       }
     }
   },
@@ -286,76 +331,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Is het verplicht een ander rijgedrag aan te nemen na F47 of kunt u direct terug naar normaal?",
+        "question": "Hoe rijdt u onmiddellijk na F47?",
         "choices": [
           {
-            "text": "U kunt geleidelijk terugkeren naar normaal rijgedrag maar wees nog even voorzichtig voor resterende gevaren",
+            "text": "U volgt alle nog geldende borden en markeringen en past snelheid en rijlijn geleidelijk aan de werkelijke situatie aan",
             "is_correct": true
           },
           {
-            "text": "U moet nog 500 meter voorzichtig rijden na F47",
+            "text": "U versnelt onmiddellijk tot de hoogste mogelijke snelheid",
             "is_correct": false
           },
           {
-            "text": "Na F47 moet u onmiddellijk de maximum snelheid bereiken",
+            "text": "U negeert resterende markeringen omdat de werken geëindigd zijn",
             "is_correct": false
           }
         ],
-        "explanation": "Er is geen wettelijke verplichting om een kilometer voorzichtig te rijden na F47 maar gezond verstand vereist een geleidelijke overgang."
+        "explanation": "F47 geeft het einde van de werken aan. Nog geldende signalisatie en markeringen blijven bindend, en achtergebleven risico's vragen een veilige overgang."
       },
       "EN": {
-        "question": "Is it mandatory to adopt different driving behaviour after F47 or can you immediately return to normal?",
+        "question": "How do you drive immediately after F47?",
         "choices": [
           {
-            "text": "You can gradually return to normal driving behaviour but be careful for a moment for remaining hazards",
+            "text": "Obey every sign and marking still in force and adapt speed and road position gradually to the actual situation",
             "is_correct": true
           },
           {
-            "text": "You must still drive carefully for 500 metres after F47",
+            "text": "Immediately accelerate to the highest possible speed",
             "is_correct": false
           },
           {
-            "text": "After F47 you must immediately reach the maximum speed",
+            "text": "Ignore remaining markings because the works have ended",
             "is_correct": false
           }
         ],
-        "explanation": "There is no legal obligation to drive carefully for a kilometre after F47 but common sense requires a gradual transition."
+        "explanation": "F47 identifies the end of works. Signing and markings still in force remain binding, and residual hazards require a safe transition."
       },
       "FR": {
-        "question": "Est-il obligatoire d adopter un comportement de conduite different apres F47 ou peut-on retourner immediatement a la normale ?",
+        "question": "Comment conduisez-vous immédiatement après F47 ?",
         "choices": [
           {
-            "text": "Vous pouvez progressivement revenir a un comportement de conduite normal mais soyez encore un moment prudent pour les dangers residuels",
+            "text": "Respecter tout signal et marquage encore applicable et adapter progressivement vitesse et position à la situation réelle",
             "is_correct": true
           },
           {
-            "text": "Vous devez encore conduire prudemment pendant 500 metres apres F47",
+            "text": "Accélérer immédiatement à la vitesse la plus élevée possible",
             "is_correct": false
           },
           {
-            "text": "Apres F47 vous devez immediatement atteindre la vitesse maximale",
+            "text": "Ignorer les marquages restants puisque les travaux sont finis",
             "is_correct": false
           }
         ],
-        "explanation": "Il n y a pas d obligation legale de conduire prudemment pendant un kilometre apres F47 mais le bon sens exige une transition progressive."
+        "explanation": "F47 indique la fin des travaux. La signalisation et les marquages encore applicables restent obligatoires et les dangers résiduels exigent une transition sûre."
       },
       "AR": {
-        "question": "هل من الإلزامي تبني سلوك قيادة مختلف بعد F47 أم يمكنك العودة فوراً إلى الوضع الطبيعي؟",
+        "question": "كيف تقود مباشرة بعد F47؟",
         "choices": [
           {
-            "text": "يمكنك العودة تدريجياً إلى سلوك القيادة العادي لكن كن حذراً للحظة من المخاطر المتبقية",
+            "text": "تتبع كل علامة وتخطيط ما زال ساريًا وتكيّف السرعة والموضع تدريجيًا مع الواقع",
             "is_correct": true
           },
           {
-            "text": "يجب أن تسير بحذر لمسافة 500 متر بعد F47",
+            "text": "تزيد فورًا إلى أعلى سرعة ممكنة",
             "is_correct": false
           },
           {
-            "text": "بعد F47 يجب الوصول فوراً إلى السرعة القصوى",
+            "text": "تتجاهل التخطيطات المتبقية لأن الأشغال انتهت",
             "is_correct": false
           }
         ],
-        "explanation": "لا يوجد التزام قانوني بالقيادة بحذر لمسافة كيلومتر بعد F47 لكن الحس السليم يتطلب انتقالاً تدريجياً."
+        "explanation": "تحدد F47 نهاية الأشغال. تبقى العلامات والتخطيطات السارية ملزمة، وتتطلب الأخطار المتبقية انتقالًا آمنًا."
       }
     }
   },
@@ -367,73 +412,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat moet u doen als u na F47 nog steeds wegmarkeringen voor wegenwerken ziet op de weg?",
+        "question": "Na F47 zijn tijdelijke rijstrookmarkeringen nog zichtbaar en niet door andere signalisatie opgeheven. Wat doet u?",
         "choices": [
           {
-            "text": "Volg de wegmarkeringen want ze geven de rijstroken aan totdat de weg volledig genormaliseerd is",
+            "text": "U blijft de toepasselijke markeringen en rijstrooksignalen volgen totdat de normale inrichting duidelijk en geldig is",
             "is_correct": true
           },
           {
-            "text": "Negeer de markeringen want F47 maakt ze ongeldig",
+            "text": "U rijdt dwars over alle markeringen naar de oude rijstrook",
             "is_correct": false
           },
           {
-            "text": "Stop onmiddellijk en wacht op politie-instructies",
+            "text": "U stopt op de rijbaan om te kiezen",
             "is_correct": false
           }
         ],
-        "explanation": "Tijdelijke markeringen kunnen soms iets verder reiken dan het F47-bord. Volg ze zolang ze zichtbaar zijn."
+        "explanation": "F47 wist verkeersmarkeringen niet. Volg de markeringen en signalen die nog geldig zijn en verander alleen veilig en waar dit is toegestaan."
       },
       "EN": {
-        "question": "What should you do if you still see road works markings on the road after F47?",
+        "question": "Temporary lane markings remain visible after F47 and have not been superseded by other signing. What do you do?",
         "choices": [
           {
-            "text": "Follow the road markings because they indicate the lanes until the road is fully normalised",
+            "text": "Continue to follow the applicable markings and lane signals until the normal layout is clearly and validly restored",
             "is_correct": true
           },
           {
-            "text": "Ignore the markings because F47 makes them invalid",
+            "text": "Drive across every marking to the old lane",
             "is_correct": false
           },
           {
-            "text": "Stop immediately and wait for police instructions",
+            "text": "Stop on the carriageway to decide",
             "is_correct": false
           }
         ],
-        "explanation": "Temporary markings can sometimes extend slightly beyond the F47 sign. Follow them as long as they are visible."
+        "explanation": "F47 does not erase road markings. Follow the markings and signals still in force and change only safely and where permitted."
       },
       "FR": {
-        "question": "Que devez-vous faire si vous voyez encore des marquages de travaux sur la chaussee apres F47 ?",
+        "question": "Des marquages temporaires restent visibles après F47 sans avoir été remplacés par une autre signalisation. Que faites-vous ?",
         "choices": [
           {
-            "text": "Suivez les marquages routiers car ils indiquent les voies jusqu a ce que la route soit completement normalisee",
+            "text": "Continuer à suivre les marquages et signaux de voie applicables jusqu'au rétablissement clair et valable de la disposition normale",
             "is_correct": true
           },
           {
-            "text": "Ignorez les marquages car F47 les rend invalides",
+            "text": "Traverser tous les marquages pour rejoindre l'ancienne bande",
             "is_correct": false
           },
           {
-            "text": "Arretez-vous immediatement et attendez les instructions de la police",
+            "text": "S'arrêter sur la chaussée pour choisir",
             "is_correct": false
           }
         ],
-        "explanation": "Les marquages temporaires peuvent parfois depasser legerement le panneau F47. Suivez-les tant qu ils sont visibles."
+        "explanation": "F47 n'efface pas les marquages. Respectez les marquages et signaux encore applicables et ne changez qu'en sécurité et là où c'est autorisé."
       },
       "AR": {
-        "question": "ماذا تفعل إذا رأيت علامات أعمال الطريق لا تزال على الطريق بعد F47؟",
+        "question": "بقيت تخطيطات حارات مؤقتة ظاهرة بعد F47 ولم تستبدلها علامات أخرى. ماذا تفعل؟",
         "choices": [
           {
-            "text": "اتبع علامات الطريق لأنها تشير إلى المسارات حتى تتطبع الطريق تماماً",
+            "text": "تستمر في اتباع التخطيطات وإشارات الحارات السارية حتى يعود التخطيط المعتاد بوضوح وبصورة صحيحة",
             "is_correct": true
           },
           {
-            "text": "تجاهل العلامات لأن F47 تجعلها غير صالحة",
+            "text": "تعبر كل التخطيطات إلى الحارة القديمة",
             "is_correct": false
           },
-          { "text": "توقف فوراً وانتظر تعليمات الشرطة", "is_correct": false }
+          {
+            "text": "تتوقف على مسار السير للاختيار",
+            "is_correct": false
+          }
         ],
-        "explanation": "يمكن أن تمتد العلامات المؤقتة أحياناً قليلاً إلى ما بعد علامة مرورية F47. اتبعها طالما أنها مرئية."
+        "explanation": "لا تمحو F47 تخطيطات الطريق. اتبع ما بقي ساريًا ولا تغيّر إلا بأمان وحيث يكون مسموحًا."
       }
     }
   },
@@ -445,60 +493,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Mag u na F47 onmiddellijk 120 km/h rijden op een autosnelweg?",
+        "question": "Mag u na F47 op een autosnelweg automatisch 120 km/u rijden?",
         "choices": [
           {
-            "text": "Ja als er geen snelheidsbord anders aangeeft geldt de normale autosnelweglimiet van 120 km/h",
+            "text": "Nee, controleer eerst alle nog geldende snelheidsborden, uw voertuigcategorie en de omstandigheden",
             "is_correct": true
           },
           {
-            "text": "Nee u moet nog altijd 90 km/h rijden tot het volgende snelheidsbord",
+            "text": "Ja, F47 legt op elke autosnelweg onmiddellijk 120 km/u op",
             "is_correct": false
           }
         ],
-        "explanation": "Na F47 vervalt de tijdelijke snelheidsbeperking. Op een autosnelweg geldt dan de normale limiet van 120 km/h tenzij een bord anders aangeeft."
+        "explanation": "F47 stelt geen snelheid vast. De toegelaten snelheid hangt af van de nog geldende signalen, de voertuigcategorie en de algemene snelheids- en veiligheidsregels."
       },
       "EN": {
-        "question": "May you immediately drive at 120 km/h on a motorway after F47?",
+        "question": "After F47 on a motorway, may you automatically drive at 120 km/h?",
         "choices": [
           {
-            "text": "Yes if no speed sign indicates otherwise the normal motorway limit of 120 km/h applies",
+            "text": "No, first check every speed sign still in force, your vehicle category and the conditions",
             "is_correct": true
           },
           {
-            "text": "No you must still drive at 90 km/h until the next speed sign",
+            "text": "Yes, F47 immediately imposes 120 km/h on every motorway",
             "is_correct": false
           }
         ],
-        "explanation": "After F47 the temporary speed restriction lapses. On a motorway the normal limit of 120 km/h then applies unless a sign indicates otherwise."
+        "explanation": "F47 sets no speed. The permitted speed depends on signs still in force, the vehicle category and the general speed and safety rules."
       },
       "FR": {
-        "question": "Pouvez-vous conduire immediatement a 120 km/h sur une autoroute apres F47 ?",
+        "question": "Après F47 sur une autoroute, pouvez-vous automatiquement rouler à 120 km/h ?",
         "choices": [
           {
-            "text": "Oui si aucun panneau de vitesse n indique autre chose la limite normale d autoroute de 120 km/h s applique",
+            "text": "Non, vérifiez d'abord tous les signaux de vitesse encore applicables, votre catégorie de véhicule et les circonstances",
             "is_correct": true
           },
           {
-            "text": "Non vous devez encore rouler a 90 km/h jusqu au prochain panneau de vitesse",
+            "text": "Oui, F47 impose immédiatement 120 km/h sur toute autoroute",
             "is_correct": false
           }
         ],
-        "explanation": "Apres F47 la restriction de vitesse temporaire expire. Sur une autoroute la limite normale de 120 km/h s applique alors sauf si un panneau indique autre chose."
+        "explanation": "F47 ne fixe aucune vitesse. La vitesse admise dépend des signaux encore applicables, de la catégorie du véhicule et des règles générales de vitesse et de sécurité."
       },
       "AR": {
-        "question": "هل يمكنك السير فوراً بسرعة 120 كم/ساعة على طريق سيار بعد F47؟",
+        "question": "بعد F47 على طريق سيار، هل يجوز تلقائيًا السير بسرعة 120 كم/س؟",
         "choices": [
           {
-            "text": "نعم إذا لم تشر علامة مرورية سرعة إلى خلاف ذلك تنطبق الحد العادي للطريق السيار 120 كم/ساعة",
+            "text": "لا، تحقق أولًا من كل علامات السرعة السارية وفئة مركبتك والظروف",
             "is_correct": true
           },
           {
-            "text": "لا يجب أن تسير بسرعة 90 كم/ساعة حتى علامة مرورية السرعة التالية",
+            "text": "نعم، تفرض F47 فورًا 120 كم/س على كل طريق سيار",
             "is_correct": false
           }
         ],
-        "explanation": "بعد F47 تنتهي صلاحية قيد السرعة المؤقت. على الطريق السيار ينطبق الحد العادي 120 كم/ساعة ما لم تشر علامة مرورية إلى خلاف ذلك."
+        "explanation": "لا تحدد F47 سرعة. تعتمد السرعة المسموحة على العلامات السارية وفئة المركبة وقواعد السرعة والسلامة العامة."
       }
     }
   },
@@ -510,60 +558,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Is inhalen weer toegestaan na bord F47 als het eerder verboden was door wegenwerken?",
+        "question": "Beëindigt F47 automatisch een afzonderlijk aangeduid inhaalverbod?",
         "choices": [
           {
-            "text": "Ja tenzij een specifiek inhaalbord het nog verbiedt",
+            "text": "Nee, volg het inhaalverbod tot het volgens zijn eigen geldigheidsregels of eindbord eindigt",
             "is_correct": true
           },
           {
-            "text": "Nee inhalen blijft verboden tot aan het volgend kruispunt",
+            "text": "Ja, elk inhaalverbod vervalt altijd bij F47",
             "is_correct": false
           }
         ],
-        "explanation": "Na F47 vervallen alle tijdelijke beperkingen die bij de wegenwerken hoorden, inclusief een eventueel inhalverbod, tenzij een specifiek bord anders aangeeft."
+        "explanation": "F47 betekent einde van de werken en is niet het algemene eindbord voor een afzonderlijk inhaalverbod. Controleer de specifieke signalisatie."
       },
       "EN": {
-        "question": "Is overtaking allowed again after sign F47 if it was previously prohibited due to road works?",
+        "question": "Does F47 automatically end a separately signed overtaking prohibition?",
         "choices": [
           {
-            "text": "Yes unless a specific overtaking sign still prohibits it",
+            "text": "No, obey the prohibition until it ends under its own validity rules or end sign",
             "is_correct": true
           },
           {
-            "text": "No overtaking remains prohibited until the next junction",
+            "text": "Yes, every overtaking prohibition always ends at F47",
             "is_correct": false
           }
         ],
-        "explanation": "After F47 all temporary restrictions associated with road works lapse including any overtaking prohibition unless a specific sign indicates otherwise."
+        "explanation": "F47 means end of works and is not the universal end sign for a separate overtaking prohibition. Check its specific signing."
       },
       "FR": {
-        "question": "Le depassement est-il a nouveau autorise apres le panneau F47 s il etait precedemment interdit en raison de travaux routiers ?",
+        "question": "F47 met-il automatiquement fin à une interdiction de dépasser signalée séparément ?",
         "choices": [
           {
-            "text": "Oui sauf si un panneau specifique de depassement l interdit encore",
+            "text": "Non, respectez l'interdiction jusqu'à sa fin selon ses propres règles de validité ou son signal de fin",
             "is_correct": true
           },
           {
-            "text": "Non le depassement reste interdit jusqu au prochain carrefour",
+            "text": "Oui, toute interdiction de dépasser prend toujours fin à F47",
             "is_correct": false
           }
         ],
-        "explanation": "Apres F47 toutes les restrictions temporaires associees aux travaux routiers expirent y compris toute interdiction de depassement sauf si un panneau specifique indique autre chose."
+        "explanation": "F47 signifie fin des travaux et n'est pas le signal universel de fin d'une interdiction de dépasser distincte. Vérifiez sa signalisation propre."
       },
       "AR": {
-        "question": "هل التجاوز مسموح مرة أخرى بعد علامة مرورية F47 إذا كان محظوراً سابقاً بسبب أعمال الطريق؟",
+        "question": "هل تنهي F47 تلقائيًا حظر تجاوز موضوعًا بعلامة مستقلة؟",
         "choices": [
           {
-            "text": "نعم ما لم تحظره علامة مرورية تجاوز محددة لا تزال سارية",
+            "text": "لا، اتبع الحظر حتى ينتهي وفق قواعد سريانه أو علامة نهايته",
             "is_correct": true
           },
           {
-            "text": "لا يظل التجاوز محظوراً حتى التقاطع التالي",
+            "text": "نعم، ينتهي كل حظر تجاوز دائمًا عند F47",
             "is_correct": false
           }
         ],
-        "explanation": "بعد F47 تنتهي جميع القيود المؤقتة المرتبطة بأعمال الطريق بما فيها أي حظر تجاوز ما لم تشر علامة مرورية محددة إلى خلاف ذلك."
+        "explanation": "تعني F47 نهاية الأشغال وليست علامة النهاية العامة لحظر تجاوز مستقل. تحقق من علاماته الخاصة."
       }
     }
   }

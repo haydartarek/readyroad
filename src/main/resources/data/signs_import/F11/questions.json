@@ -13,10 +13,16 @@
             "text": "De autoweg eindigt hier; de bijzondere regels voor autowegen gelden niet meer en de gewone verkeersregels zijn van toepassing",
             "is_correct": true
           },
-          { "text": "Het begin van een nieuwe autoweg", "is_correct": false },
-          { "text": "Het einde van een snelweg", "is_correct": false }
+          {
+            "text": "Het begin van een nieuwe autoweg",
+            "is_correct": false
+          },
+          {
+            "text": "Het einde van een snelweg",
+            "is_correct": false
+          }
         ],
-        "explanation": "Dit bord geeft het einde van de autoweg aan. Voorbij dit bord gelden de gewone verkeersregels: voetgangers en fietsers mogen de weg gebruiken en de normale snelheidslimieten zijn van toepassing."
+        "explanation": "F11 beëindigt de bijzondere regels van de autoweg. De regels, toegang en snelheid van de volgende weg volgen uit het wegtype en de aanwezige verkeersborden; F11 laat niet automatisch elke weggebruiker toe."
       },
       "EN": {
         "question": "What does this traffic sign mean?",
@@ -25,10 +31,16 @@
             "text": "The expressway ends here; the special rules for expressways no longer apply and normal traffic rules are in force",
             "is_correct": true
           },
-          { "text": "The start of a new expressway", "is_correct": false },
-          { "text": "The end of a motorway", "is_correct": false }
+          {
+            "text": "The start of a new expressway",
+            "is_correct": false
+          },
+          {
+            "text": "The end of a motorway",
+            "is_correct": false
+          }
         ],
-        "explanation": "This sign indicates the end of the expressway. Beyond this sign normal traffic rules apply: pedestrians and cyclists may use the road and normal speed limits are in force."
+        "explanation": "F11 ends the special expressway rules. The following road's rules, access and speed depend on its road type and the signs present; F11 does not automatically admit every road user."
       },
       "FR": {
         "question": "Que signifie ce panneau ?",
@@ -41,9 +53,12 @@
             "text": "Le début d'une nouvelle route pour automobiles",
             "is_correct": false
           },
-          { "text": "La fin d'une autoroute", "is_correct": false }
+          {
+            "text": "La fin d'une autoroute",
+            "is_correct": false
+          }
         ],
-        "explanation": "Ce panneau indique la fin de la route pour automobiles. Au-delà, les règles ordinaires de circulation s'appliquent."
+        "explanation": "F11 met fin aux règles particulières de la route pour automobiles. Les règles, l'accès et la vitesse de la route suivante dépendent de son type et des signaux présents; F11 n'admet pas automatiquement tout usager."
       },
       "AR": {
         "question": "ما معنى هذه العلامة المرورية؟",
@@ -52,10 +67,16 @@
             "text": "ينتهي الطريق السريع هنا؛ القواعد الخاصة بالطرق السريعة لم تعد سارية وتسري قواعد المرور العادية",
             "is_correct": true
           },
-          { "text": "بداية طريق سريع جديد للسيارات", "is_correct": false },
-          { "text": "نهاية طريق الأوتوستراد", "is_correct": false }
+          {
+            "text": "بداية طريق سريع جديد للسيارات",
+            "is_correct": false
+          },
+          {
+            "text": "نهاية طريق الأوتوستراد",
+            "is_correct": false
+          }
         ],
-        "explanation": "تشير هذه العلامة إلى نهاية الطريق السريع للسيارات. بعد هذه العلامة تسري قواعد المرور العادية."
+        "explanation": "تنهي F11 القواعد الخاصة بالطريق المخصص للمركبات. وتعتمد قواعد الطريق التالي والدخول إليه وسرعته على نوعه والعلامات الموجودة؛ ولا تسمح F11 تلقائيًا لكل مستخدمي الطريق."
       }
     }
   },
@@ -69,36 +90,72 @@
       "NL": {
         "question": "Welk bord is dit?",
         "choices": [
-          { "text": "Einde autoweg", "is_correct": true },
-          { "text": "Begin autoweg", "is_correct": false },
-          { "text": "Einde autosnelweg", "is_correct": false }
+          {
+            "text": "Einde autoweg",
+            "is_correct": true
+          },
+          {
+            "text": "Begin autoweg",
+            "is_correct": false
+          },
+          {
+            "text": "Einde autosnelweg",
+            "is_correct": false
+          }
         ],
         "explanation": "Dit is het specifieke bord dat het einde van een autoweg aangeeft. Niet te verwarren met het bord dat het einde van een autosnelweg aangeeft."
       },
       "EN": {
         "question": "Which sign is this?",
         "choices": [
-          { "text": "End of expressway", "is_correct": true },
-          { "text": "Start of expressway", "is_correct": false },
-          { "text": "End of motorway", "is_correct": false }
+          {
+            "text": "End of expressway",
+            "is_correct": true
+          },
+          {
+            "text": "Start of expressway",
+            "is_correct": false
+          },
+          {
+            "text": "End of motorway",
+            "is_correct": false
+          }
         ],
         "explanation": "This is the specific sign that indicates the end of an expressway. Not to be confused with the sign that indicates the end of a motorway."
       },
       "FR": {
         "question": "Quel est ce panneau ?",
         "choices": [
-          { "text": "Fin de la route pour automobiles", "is_correct": true },
-          { "text": "Début de la route pour automobiles", "is_correct": false },
-          { "text": "Fin de l'autoroute", "is_correct": false }
+          {
+            "text": "Fin de la route pour automobiles",
+            "is_correct": true
+          },
+          {
+            "text": "Début de la route pour automobiles",
+            "is_correct": false
+          },
+          {
+            "text": "Fin de l'autoroute",
+            "is_correct": false
+          }
         ],
         "explanation": "C'est le panneau spécifique qui indique la fin d'une route pour automobiles."
       },
       "AR": {
         "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
         "choices": [
-          { "text": "نهاية الطريق السريع للسيارات", "is_correct": true },
-          { "text": "بداية الطريق السريع للسيارات", "is_correct": false },
-          { "text": "نهاية الأوتوستراد", "is_correct": false }
+          {
+            "text": "نهاية الطريق السريع للسيارات",
+            "is_correct": true
+          },
+          {
+            "text": "بداية الطريق السريع للسيارات",
+            "is_correct": false
+          },
+          {
+            "text": "نهاية الأوتوستراد",
+            "is_correct": false
+          }
         ],
         "explanation": "هذه هي العلامة المحددة التي تشير إلى نهاية الطريق السريع للسيارات."
       }
@@ -436,60 +493,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Mag een bromfiets rijden op de weg direct na dit bord als er geen verbodsbord is?",
+        "question": "Mag een bromfietser na F11 verder op de volgende weg?",
         "choices": [
           {
-            "text": "Ja op een gewone weg zonder bijzondere verboden mogen bromfietsen rijden; op de autoweg zelf was dat verboden",
+            "text": "Alleen als het wegtype, de algemene regels en de aanwezige borden dat toelaten",
             "is_correct": true
           },
           {
-            "text": "Nee bromfietsen mogen nooit op wegen waar eerder een autoweg was",
+            "text": "Ja, F11 geeft bromfietsers altijd toegang",
             "is_correct": false
           }
         ],
-        "explanation": "Een autoweg is verboden voor bromfietsen. Na dit bord is de autowegreglementering opgeheven."
+        "explanation": "F11 beeindigt de autowegregels, maar geeft geen onvoorwaardelijke toegang. De volgende weg en haar signalisatie bepalen wat is toegelaten."
       },
       "EN": {
-        "question": "May a moped ride on the road immediately after this sign if there is no prohibition sign?",
+        "question": "May a moped rider continue on the road after F11?",
         "choices": [
           {
-            "text": "Yes on a normal road without specific prohibitions mopeds may ride; on the expressway itself that was prohibited",
+            "text": "Only if the road type, general rules and signs present allow it",
             "is_correct": true
           },
           {
-            "text": "No mopeds may never ride on roads that were previously an expressway",
+            "text": "Yes, F11 always grants moped access",
             "is_correct": false
           }
         ],
-        "explanation": "An expressway is prohibited for mopeds. After this sign the expressway regulations are lifted."
+        "explanation": "F11 ends the expressway rules but grants no unconditional access. The following road and its signs determine what is permitted."
       },
       "FR": {
-        "question": "Un cyclomoteur peut-il circuler sur la route juste après ce panneau s'il n'y a aucun panneau d'interdiction ?",
+        "question": "Un cyclomotoriste peut-il continuer sur la route apres F11 ?",
         "choices": [
           {
-            "text": "Oui, sur une route ordinaire sans interdiction spécifique, les cyclomoteurs peuvent circuler; ils étaient interdits sur la route pour automobiles",
+            "text": "Uniquement si le type de route, les regles generales et les signaux presents le permettent",
             "is_correct": true
           },
           {
-            "text": "Non, les cyclomoteurs restent toujours interdits sur une route qui suivait précédemment une route pour automobiles",
+            "text": "Oui, F11 donne toujours acces aux cyclomoteurs",
             "is_correct": false
           }
         ],
-        "explanation": "Les cyclomoteurs sont interdits sur une route pour automobiles. Après F11, cette restriction prend fin, sous réserve des panneaux de la route suivante."
+        "explanation": "F11 met fin aux regles de la route pour automobiles, mais n'accorde aucun acces inconditionnel. La route suivante et sa signalisation determinent ce qui est permis."
       },
       "AR": {
-        "question": "هل يُسمح للدراجة البخارية بالسير على الطريق مباشرة بعد هذه العلامة إذا لم يكن هناك علامة حظر؟",
+        "question": "هل يجوز لقائد دراجة نارية صغيرة الاستمرار على الطريق بعد F11؟",
         "choices": [
           {
-            "text": "نعم على الطريق العادي دون محظورات خاصة يُسمح للدراجات البخارية بالسير؛ على الطريق السريع نفسه كان ذلك محظوراً",
+            "text": "فقط إذا سمح نوع الطريق والقواعد العامة والعلامات الموجودة",
             "is_correct": true
           },
           {
-            "text": "لا لا يُسمح للدراجات البخارية أبداً على الطرق التي كانت سابقاً طرقاً سريعة",
+            "text": "نعم، تمنح F11 دخولًا دائمًا للدراجات النارية الصغيرة",
             "is_correct": false
           }
         ],
-        "explanation": "الطريق السريع محظور على الدراجات البخارية. بعد هذه العلامة تُرفع لوائح الطريق السريع."
+        "explanation": "تنهي F11 قواعد الطريق المخصص للمركبات لكنها لا تمنح دخولًا غير مشروط. يحدد الطريق التالي وعلاماته ما هو مسموح."
       }
     }
   },

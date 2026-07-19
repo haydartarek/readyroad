@@ -7,70 +7,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat betekent bord F45R?",
+        "question": "Wat betekent F45R?",
         "choices": [
           {
-            "text": "De weg is doodlopend voor motorvoertuigen maar er is een doorgang voor voetgangers en fietsers aan de rechterkant",
+            "text": "Rechtdoor is doodlopend en de werkelijke weg loopt rechts verder",
             "is_correct": true
           },
           {
-            "text": "Verplicht rechts afslaan aan het einde",
+            "text": "De doorgang rechts is uitsluitend voor voetgangers en fietsers",
             "is_correct": false
           },
           {
-            "text": "Enkel rechtsaf rijden is toegestaan in deze weg",
+            "text": "Alle verkeer is vanaf het bord verboden",
             "is_correct": false
           }
         ],
-        "explanation": "F45R duidt een doodlopende weg aan voor motorvoertuigen maar met een doorgang rechts voor voetgangers en fietsers."
+        "explanation": "Het aangepaste F45-symbool toont de plaatsgesteldheid: rechtdoor is geen doorgaande route en de weg heeft een verbinding naar rechts."
       },
       "EN": {
-        "question": "What does sign F45R mean?",
+        "question": "What does F45R mean?",
         "choices": [
           {
-            "text": "The road is a dead-end for motor vehicles but there is a passage for pedestrians and cyclists on the right",
+            "text": "The road is a dead end straight ahead and the actual road continues to the right",
             "is_correct": true
           },
-          { "text": "Mandatory turn right at the end", "is_correct": false },
           {
-            "text": "Only turning right is allowed in this road",
+            "text": "The right-hand connection is reserved exclusively for pedestrians and cyclists",
+            "is_correct": false
+          },
+          {
+            "text": "All traffic is prohibited from the sign",
             "is_correct": false
           }
         ],
-        "explanation": "F45R indicates a dead-end road for motor vehicles but with a passage on the right for pedestrians and cyclists."
+        "explanation": "The adapted F45 symbol shows the actual layout: there is no through route straight ahead and the road has a connection to the right."
       },
       "FR": {
-        "question": "Que signifie le panneau F45R ?",
+        "question": "Que signifie F45R ?",
         "choices": [
           {
-            "text": "La route est sans issue pour les vehicules a moteur mais il y a un passage pour les pietons et cyclistes a droite",
+            "text": "La route est sans issue tout droit et la voie réelle continue vers la droite",
             "is_correct": true
           },
           {
-            "text": "Tourner obligatoirement a droite en bout de route",
+            "text": "La liaison vers la droite est réservée exclusivement aux piétons et cyclistes",
             "is_correct": false
           },
           {
-            "text": "Seul le virage a droite est autorise dans cette rue",
+            "text": "Toute circulation est interdite dès le signal",
             "is_correct": false
           }
         ],
-        "explanation": "F45R indique une voie sans issue pour les vehicules a moteur mais avec un passage a droite pour les pietons et les cyclistes."
+        "explanation": "Le symbole F45 adapté montre la configuration des lieux: il n'y a pas de passage tout droit et la route présente une liaison vers la droite."
       },
       "AR": {
-        "question": "ما معنى هذه العلامة المرورية؟",
+        "question": "ما معنى F45R؟",
         "choices": [
           {
-            "text": "الطريق مسدود للمركبات الآلية لكن يوجد ممر للمشاة والدراجين على اليمين",
+            "text": "الطريق مسدود إلى الأمام والطريق الفعلي يتابع نحو اليمين",
             "is_correct": true
           },
-          { "text": "انعطاف إلزامي يميناً في النهاية", "is_correct": false },
           {
-            "text": "الانعطاف يميناً فقط مسموح في هذا الطريق",
+            "text": "الاتصال نحو اليمين مخصص حصريًا للمشاة وراكبي الدراجات",
+            "is_correct": false
+          },
+          {
+            "text": "تُحظر جميع حركة المرور من العلامة",
             "is_correct": false
           }
         ],
-        "explanation": "تشير F45R إلى طريق مسدود للمركبات الآلية لكن مع ممر على اليمين للمشاة والدراجين."
+        "explanation": "يبين رمز F45 المكيّف تخطيط الموقع: لا يوجد طريق نافذ إلى الأمام ويوجد اتصال طريق نحو اليمين."
       }
     }
   },
@@ -82,40 +88,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Welk bord toont een doodlopende weg met een doorgang rechts voor fietsers en voetgangers?",
+        "question": "Welke weginrichting toont F45R?",
         "choices": [
-          { "text": "F45R", "is_correct": true },
-          { "text": "F45L", "is_correct": false },
-          { "text": "F45b", "is_correct": false }
+          {
+            "text": "Geen doorgang rechtdoor, met een wegverbinding naar rechts",
+            "is_correct": true
+          },
+          {
+            "text": "Geen doorgang naar rechts, met een wegverbinding naar links",
+            "is_correct": false
+          },
+          {
+            "text": "Een verplichte richting rechtdoor",
+            "is_correct": false
+          }
         ],
-        "explanation": "F45R heeft de doorgangspijl aan de rechterkant. F45L heeft die aan de linkerkant."
+        "explanation": "De witte zijtak aan de rechts geeft de werkelijke wegverbinding weer; de rode balk sluit de doorgaande richting rechtdoor af."
       },
       "EN": {
-        "question": "Which sign shows a dead-end road with a right passage for cyclists and pedestrians?",
+        "question": "Which road layout does F45R show?",
         "choices": [
-          { "text": "F45R", "is_correct": true },
-          { "text": "F45L", "is_correct": false },
-          { "text": "F45b", "is_correct": false }
+          {
+            "text": "No way through straight ahead, with a road connection to the right",
+            "is_correct": true
+          },
+          {
+            "text": "No way through to the right, with a connection to the left",
+            "is_correct": false
+          },
+          {
+            "text": "A compulsory straight-ahead direction",
+            "is_correct": false
+          }
         ],
-        "explanation": "F45R has the passage arrow on the right side. F45L has it on the left side."
+        "explanation": "The white branch on the right represents the actual road connection; the red bar closes the through direction straight ahead."
       },
       "FR": {
-        "question": "Quel panneau montre une voie sans issue avec un passage a droite pour les cyclistes et les pietons ?",
+        "question": "Quelle configuration routière montre F45R ?",
         "choices": [
-          { "text": "F45R", "is_correct": true },
-          { "text": "F45L", "is_correct": false },
-          { "text": "F45b", "is_correct": false }
+          {
+            "text": "Pas de passage tout droit, avec une liaison vers la droite",
+            "is_correct": true
+          },
+          {
+            "text": "Pas de passage vers la droite, avec une liaison vers la gauche",
+            "is_correct": false
+          },
+          {
+            "text": "Une direction obligatoire tout droit",
+            "is_correct": false
+          }
         ],
-        "explanation": "F45R a la fleche de passage a droite. F45L l a a gauche."
+        "explanation": "La branche blanche à droite représente la liaison réelle; la barre rouge ferme la direction tout droit."
       },
       "AR": {
-        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
+        "question": "أي تخطيط طريق تظهره F45R؟",
         "choices": [
-          { "text": "F45R", "is_correct": true },
-          { "text": "F45L", "is_correct": false },
-          { "text": "F45b", "is_correct": false }
+          {
+            "text": "لا يوجد ممر إلى الأمام مع اتصال طريق نحو اليمين",
+            "is_correct": true
+          },
+          {
+            "text": "لا يوجد ممر نحو اليمين مع اتصال نحو اليسار",
+            "is_correct": false
+          },
+          {
+            "text": "اتجاه إلزامي إلى الأمام",
+            "is_correct": false
+          }
         ],
-        "explanation": "لدى F45R سهم الممر على الجانب الأيمن. F45L لديه على الجانب الأيسر."
+        "explanation": "يمثل الفرع الأبيض نحو اليمين اتصال الطريق الفعلي، ويغلق الشريط الأحمر الاتجاه النافذ إلى الأمام."
       }
     }
   },
@@ -127,76 +169,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Rijdend in een F45R-weg welk gevaar verwacht u aan de rechterkant?",
+        "question": "Welk risico verwacht u bij de zijweg die F45R toont?",
         "choices": [
           {
-            "text": "Fietsers en voetgangers kunnen van rechts de weg opkomen via de doorgang",
+            "text": "Kruisend of afslaand verkeer bij de verbinding naar rechts",
             "is_correct": true
           },
           {
-            "text": "Een verboden zone begint aan de rechterkant",
+            "text": "Een spoorwegovergang zonder slagbomen",
             "is_correct": false
           },
           {
-            "text": "De weg heeft een gecamoufleerd stop-bord rechts",
+            "text": "Een verplicht fietspad op de rijbaan",
             "is_correct": false
           }
         ],
-        "explanation": "De doorgang rechts laat fietsers en voetgangers toe de weg op te rijden. Let op bij het naderen van die kant."
+        "explanation": "De zijverbinding kan verkeer laten afslaan of naderen. Pas snelheid en observatie aan de werkelijke kruising aan."
       },
       "EN": {
-        "question": "Driving in an F45R road what hazard do you expect on the right side?",
+        "question": "What risk should you expect at the side road shown by F45R?",
         "choices": [
           {
-            "text": "Cyclists and pedestrians can enter the road from the right via the passage",
+            "text": "Crossing or turning traffic at the connection to the right",
             "is_correct": true
           },
           {
-            "text": "A prohibited zone starts on the right side",
+            "text": "A level crossing without barriers",
             "is_correct": false
           },
           {
-            "text": "The road has a camouflaged stop sign on the right",
+            "text": "A compulsory cycle path on the carriageway",
             "is_correct": false
           }
         ],
-        "explanation": "The passage on the right allows cyclists and pedestrians to ride onto the road. Be alert when approaching that side."
+        "explanation": "The side connection may carry approaching or turning traffic. Adapt speed and observation to the actual junction."
       },
       "FR": {
-        "question": "En conduisant dans une route F45R quel danger attendez-vous du cote droit ?",
+        "question": "Quel risque faut-il prévoir à la voie latérale montrée par F45R ?",
         "choices": [
           {
-            "text": "Les cyclistes et les pietons peuvent entrer dans la route par la droite via le passage",
+            "text": "Des véhicules qui croisent ou tournent à la liaison vers la droite",
             "is_correct": true
           },
           {
-            "text": "Une zone interdite commence du cote droit",
+            "text": "Un passage à niveau sans barrières",
             "is_correct": false
           },
           {
-            "text": "La route a un panneau stop camouffle a droite",
+            "text": "Une piste cyclable obligatoire sur la chaussée",
             "is_correct": false
           }
         ],
-        "explanation": "Le passage a droite permet aux cyclistes et aux pietons de s engager sur la route. Soyez attentif en vous approchant de ce cote."
+        "explanation": "La liaison latérale peut recevoir des véhicules qui approchent ou tournent. Adaptez vitesse et observation au carrefour réel."
       },
       "AR": {
-        "question": "ما هو الخطر الذي تشير إليه هذه العلامة المرورية؟",
+        "question": "ما الخطر المتوقع عند الطريق الجانبي الذي تظهره F45R؟",
         "choices": [
           {
-            "text": "يمكن للدراجين والمشاة دخول الطريق من اليمين عبر الممر",
+            "text": "حركة عابرة أو منعطفة عند الاتصال نحو اليمين",
             "is_correct": true
           },
           {
-            "text": "تبدأ منطقة محظورة على الجانب الأيمن",
+            "text": "معبر سكة حديد بلا حواجز",
             "is_correct": false
           },
           {
-            "text": "يوجد علامة مرورية توقف مخفية على الجانب الأيمن من الطريق",
+            "text": "مسار دراجات إلزامي على مسار السير",
             "is_correct": false
           }
         ],
-        "explanation": "الممر على اليمين يسمح للدراجين والمشاة بالدخول إلى الطريق. كن يقظاً عند الاقتراب من ذلك الجانب."
+        "explanation": "قد يحمل الاتصال الجانبي حركة قادمة أو منعطفة. كيّف السرعة والمراقبة مع التقاطع الفعلي."
       }
     }
   },
@@ -208,70 +250,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U nadert het einde van een F45R-weg met de auto. Wat doet u?",
+        "question": "U wilt met de auto verder rijden bij F45R. Wat doet u?",
         "choices": [
           {
-            "text": "U keert om door te manoeuvreren op de weg of in een oprit want de doorgang rechts is niet voor motorvoertuigen",
+            "text": "Volg de wegverbinding naar rechts als de weg en andere borden dit toelaten; rechtdoor is geen doorgaande route",
             "is_correct": true
           },
           {
-            "text": "U rijdt via de doorgang rechts door",
+            "text": "Rijd rechtdoor voorbij de rode balk",
             "is_correct": false
           },
           {
-            "text": "U wacht tot een fietser u de weg wijst",
+            "text": "Keer altijd om omdat geen enkele motorvoertuigverbinding bestaat",
             "is_correct": false
           }
         ],
-        "explanation": "Motorvoertuigen mogen de doorgang rechts bij F45R niet gebruiken. U moet keren op de weg."
+        "explanation": "F45R toont een verbinding naar rechts. Het bord verbiedt motorvoertuigen daar niet op zichzelf; controleer de werkelijke weg en overige signalisatie."
       },
       "EN": {
-        "question": "You are approaching the end of an F45R road with a car. What do you do?",
+        "question": "You want to continue by car at F45R. What do you do?",
         "choices": [
           {
-            "text": "You turn around by manoeuvring on the road or in a driveway because the right passage is not for motor vehicles",
+            "text": "Follow the connection to the right where the road and other signs allow; there is no through route straight ahead",
             "is_correct": true
           },
           {
-            "text": "You drive through the right passage",
+            "text": "Drive straight ahead beyond the red bar",
             "is_correct": false
           },
           {
-            "text": "You wait until a cyclist shows you the way",
+            "text": "Always turn back because no motor-vehicle connection exists",
             "is_correct": false
           }
         ],
-        "explanation": "Motor vehicles may not use the right passage at F45R. You must turn around on the road."
+        "explanation": "F45R shows a connection to the right. The sign itself does not prohibit motor vehicles there; check the actual road and other signing."
       },
       "FR": {
-        "question": "Vous approchez de l extremite d une route F45R en voiture. Que faites-vous ?",
+        "question": "Vous voulez continuer en voiture à F45R. Que faites-vous ?",
         "choices": [
           {
-            "text": "Vous faites demi-tour en manoeuvrant sur la route ou dans une allee car le passage de droite n est pas pour les vehicules a moteur",
+            "text": "Suivre la liaison vers la droite si la route et les autres signaux l'autorisent; il n'y a pas de passage tout droit",
             "is_correct": true
           },
           {
-            "text": "Vous passez par le passage de droite",
+            "text": "Continuer tout droit au-delà de la barre rouge",
             "is_correct": false
           },
           {
-            "text": "Vous attendez qu un cycliste vous indique le chemin",
+            "text": "Toujours faire demi-tour puisqu'aucune liaison automobile n'existe",
             "is_correct": false
           }
         ],
-        "explanation": "Les vehicules a moteur ne peuvent pas utiliser le passage de droite de F45R. Vous devez faire demi-tour sur la route."
+        "explanation": "F45R montre une liaison vers la droite. Le signal n'y interdit pas lui-même les véhicules à moteur; vérifiez la route réelle et les autres signaux."
       },
       "AR": {
-        "question": "تقترب من نهاية طريق F45R بالسيارة. ماذا تفعل؟",
+        "question": "تريد المتابعة بالسيارة عند F45R. ماذا تفعل؟",
         "choices": [
           {
-            "text": "تستدير بالمناورة على الطريق أو في ممر دخول لأن الممر الأيمن ليس للمركبات الآلية",
+            "text": "تتبع الاتصال نحو اليمين إذا سمح الطريق والعلامات الأخرى؛ فلا يوجد طريق نافذ إلى الأمام",
             "is_correct": true
           },
-          { "text": "تسير عبر الممر الأيمن", "is_correct": false },
-          { "text": "تنتظر حتى يريك دراج الطريق", "is_correct": false }
+          {
+            "text": "تتابع إلى الأمام متجاوزًا الشريط الأحمر",
+            "is_correct": false
+          },
+          {
+            "text": "تستدير دائمًا لعدم وجود اتصال للمركبات",
+            "is_correct": false
+          }
         ],
-        "explanation": "لا يستطيع المركبات الآلية استخدام الممر الأيمن في F45R. يجب عليك الاستدارة على الطريق."
+        "explanation": "تظهر F45R اتصالًا نحو اليمين. لا تحظر العلامة بذاتها المركبات الآلية هناك؛ تحقق من الطريق الفعلي والعلامات الأخرى."
       }
     }
   },
@@ -283,73 +331,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Een voetganger wil de doorgang rechts bij F45R gebruiken. Moet hij een vergunning?",
+        "question": "Reserveert F45R de verbinding naar rechts voor voetgangers en fietsers?",
         "choices": [
           {
-            "text": "Nee de doorgang is vrij toegankelijk voor voetgangers en fietsers",
+            "text": "Nee, het bord toont de weginrichting; een voorbehouden doorgang moet uit andere specifieke signalisatie blijken",
             "is_correct": true
           },
           {
-            "text": "Ja hij moet toestemming hebben van de gemeente",
+            "text": "Ja, elke witte zijtak op F45 is uitsluitend voor voetgangers en fietsers",
             "is_correct": false
           },
           {
-            "text": "Alleen voetgangers met een bewijs van bewoning mogen erdoor",
+            "text": "Ja, maar alleen voor voetgangers",
             "is_correct": false
           }
         ],
-        "explanation": "De doorgang bij F45R staat open voor alle voetgangers en fietsers zonder bijzondere vergunning."
+        "explanation": "Het afgebeelde F45R bevat geen voetgangers- of fietssymbolen. Het toont een aangepaste doodlopende weginrichting."
       },
       "EN": {
-        "question": "A pedestrian wants to use the right passage at F45R. Does he need a permit?",
+        "question": "Does F45R reserve the right-hand connection for pedestrians and cyclists?",
         "choices": [
           {
-            "text": "No the passage is freely accessible for pedestrians and cyclists",
+            "text": "No, the sign shows the road layout; a reserved passage must be established by other specific signing",
             "is_correct": true
           },
           {
-            "text": "Yes he needs permission from the municipality",
+            "text": "Yes, every white branch on F45 is exclusively for pedestrians and cyclists",
             "is_correct": false
           },
           {
-            "text": "Only pedestrians with proof of residence may use it",
+            "text": "Yes, but only for pedestrians",
             "is_correct": false
           }
         ],
-        "explanation": "The passage at F45R is open to all pedestrians and cyclists without special permission."
+        "explanation": "This F45R image contains no pedestrian or cyclist symbols. It shows an adapted dead-end layout."
       },
       "FR": {
-        "question": "Un pieton veut utiliser le passage de droite de F45R. Doit-il obtenir un permis ?",
+        "question": "F45R réserve-t-il la liaison vers la droite aux piétons et cyclistes ?",
         "choices": [
           {
-            "text": "Non le passage est librement accessible aux pietons et aux cyclistes",
+            "text": "Non, le signal montre la configuration; un passage réservé doit résulter d'une autre signalisation spécifique",
             "is_correct": true
           },
           {
-            "text": "Oui il doit avoir la permission de la commune",
+            "text": "Oui, toute branche blanche sur F45 est exclusivement destinée aux piétons et cyclistes",
             "is_correct": false
           },
           {
-            "text": "Seuls les pietons avec une preuve de residence peuvent l utiliser",
+            "text": "Oui, mais uniquement aux piétons",
             "is_correct": false
           }
         ],
-        "explanation": "Le passage de F45R est ouvert a tous les pietons et cyclistes sans autorisation speciale."
+        "explanation": "Cette image F45R ne comporte aucun symbole de piéton ou de cycliste. Elle montre une configuration d'impasse adaptée."
       },
       "AR": {
-        "question": "يريد مشاة استخدام الممر الأيمن في F45R. هل يحتاج إلى تصريح؟",
+        "question": "هل تخصص F45R الاتصال نحو اليمين للمشاة وراكبي الدراجات؟",
         "choices": [
           {
-            "text": "لا الممر متاح بحرية للمشاة والدراجين",
+            "text": "لا، تُظهر العلامة تخطيط الطريق؛ ويجب إثبات الممر المخصص بعلامات أخرى محددة",
             "is_correct": true
           },
-          { "text": "نعم يحتاج إذناً من البلدية", "is_correct": false },
           {
-            "text": "فقط المشاة بإثبات الإقامة يمكنهم استخدامه",
+            "text": "نعم، كل فرع أبيض في F45 مخصص حصريًا للمشاة وراكبي الدراجات",
+            "is_correct": false
+          },
+          {
+            "text": "نعم، للمشاة فقط",
             "is_correct": false
           }
         ],
-        "explanation": "الممر في F45R مفتوح لجميع المشاة والدراجين بدون إذن خاص."
+        "explanation": "لا تحتوي صورة F45R هذه على رمز مشاة أو دراجة، بل تُظهر تخطيط طريق مسدود مكيّفًا."
       }
     }
   },
@@ -361,67 +412,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Is F45R een verbodsbord of een informatief bord?",
+        "question": "Waarom kan het symbool van F45R van de standaard-F45 afwijken?",
         "choices": [
           {
-            "text": "F45R is informatief en waarschuwt bestuurders dat de weg niet doorloopt maar toont doorgangen voor zwakke weggebruikers",
+            "text": "Omdat het F45-symbool aan de werkelijke plaatsgesteldheid mag worden aangepast",
             "is_correct": true
           },
           {
-            "text": "F45R is een verbodsbord dat doorgaand verkeer verbiedt",
-            "is_correct": false
-          },
-          { "text": "F45R is een gevaarsbord", "is_correct": false }
-        ],
-        "explanation": "F45R behoort tot deze categorie en is informatief. Het verbiedt niets maar informeert over de aard van de weg."
-      },
-      "EN": {
-        "question": "Is F45R a prohibition sign or an informational sign?",
-        "choices": [
-          {
-            "text": "F45R is informational and warns drivers that the road does not continue but shows passages for vulnerable road users",
-            "is_correct": true
-          },
-          {
-            "text": "F45R is a prohibition sign that forbids through traffic",
+            "text": "Omdat elke gemeente zelf een nieuwe wettelijke betekenis kiest",
             "is_correct": false
           },
           {
-            "text": "F45R is a hazard sign in this category",
+            "text": "Omdat het bord een tijdelijke omleiding is",
             "is_correct": false
           }
         ],
-        "explanation": "F45R belongs to this category and is informational. It prohibits nothing but informs about the nature of the road."
+        "explanation": "De regelgeving laat toe het F45-symbool aan te passen om de plaatsgesteldheid duidelijker weer te geven."
+      },
+      "EN": {
+        "question": "Why may the F45R symbol differ from the standard F45?",
+        "choices": [
+          {
+            "text": "Because the F45 symbol may be adapted to show the actual layout more clearly",
+            "is_correct": true
+          },
+          {
+            "text": "Because each municipality chooses a new legal meaning",
+            "is_correct": false
+          },
+          {
+            "text": "Because it is a temporary diversion sign",
+            "is_correct": false
+          }
+        ],
+        "explanation": "The rules allow the F45 symbol to be adapted so that the actual road layout is shown more clearly."
       },
       "FR": {
-        "question": "F45R est-il un panneau d interdiction ou un panneau informatif ?",
+        "question": "Pourquoi le symbole F45R peut-il différer du F45 standard ?",
         "choices": [
           {
-            "text": "F45R est informatif et avertit les conducteurs que la route ne continue pas mais montre des passages pour les usagers vulnerables",
+            "text": "Parce que le symbole F45 peut être adapté pour mieux représenter la configuration réelle",
             "is_correct": true
           },
           {
-            "text": "F45R est un panneau d interdiction qui interdit la circulation en transit",
+            "text": "Parce que chaque commune choisit une nouvelle signification juridique",
             "is_correct": false
           },
-          { "text": "F45R est un panneau de danger", "is_correct": false }
+          {
+            "text": "Parce qu'il s'agit d'un signal temporaire de déviation",
+            "is_correct": false
+          }
         ],
-        "explanation": "F45R appartient à cette catégorie et est informatif. Il n interdit rien mais informe sur la nature de la route."
+        "explanation": "La réglementation permet d'adapter le symbole F45 afin de représenter plus clairement la configuration des lieux."
       },
       "AR": {
-        "question": "هل F45R علامة مرورية حظر أم علامة مرورية إعلامية؟",
+        "question": "لماذا قد يختلف رمز F45R عن F45 القياسية؟",
         "choices": [
           {
-            "text": "F45R إعلامية وتحذر السائقين بأن الطريق لا يستمر لكن تُظهر ممرات لمستخدمي الطريق الضعفاء",
+            "text": "لأن رمز F45 يمكن تكييفه لإظهار تخطيط الموقع الفعلي بوضوح أكبر",
             "is_correct": true
           },
           {
-            "text": "F45R علامة مرورية حظر تمنع المرور العابر",
+            "text": "لأن كل بلدية تختار معنى قانونيًا جديدًا",
             "is_correct": false
           },
-          { "text": "F45R علامة مرورية خطر من هذه الفئة", "is_correct": false }
+          {
+            "text": "لأنها علامة تحويلة مؤقتة",
+            "is_correct": false
+          }
         ],
-        "explanation": "F45R تنتمي إلى هذه الفئة وهي إعلامية. لا تحظر شيئاً لكنها تُعلم عن طبيعة الطريق."
+        "explanation": "تسمح القواعد بتكييف رمز F45 لإظهار تخطيط الطريق الفعلي بوضوح أكبر."
       }
     }
   },
@@ -433,60 +493,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Mag een bakfiets (cargo bike) de doorgang rechts bij F45R gebruiken?",
+        "question": "Mag een motorvoertuig de bij F45R getoonde verbinding naar rechts gebruiken?",
         "choices": [
           {
-            "text": "Ja een bakfiets is een fiets en mag de doorgang voor fietsers gebruiken mits die breed genoeg is",
+            "text": "Ja, als de werkelijke weg en andere verkeersborden het toelaten; dit bord reserveert de verbinding niet voor een bepaalde categorie",
             "is_correct": true
           },
           {
-            "text": "Nee bakfietsen zijn te groot en verboden in elke doorgang",
+            "text": "Nee, de verbinding is altijd uitsluitend voor voetgangers en fietsers",
             "is_correct": false
           }
         ],
-        "explanation": "Een bakfiets is een fiets. Als de doorgang breed genoeg is mag een bakfiets er gebruik van maken. Fysieke beperkingen zijn echter het enige obstakel."
+        "explanation": "Dit aangepaste F45-symbool toont de weginrichting. Toegang volgt uit de weg zelf en andere signalisatie, niet uit een niet-afgebeeld voetgangers- of fietssymbool."
       },
       "EN": {
-        "question": "May a cargo bike use the right passage at F45R?",
+        "question": "May a motor vehicle use the right-hand connection shown by F45R?",
         "choices": [
           {
-            "text": "Yes a cargo bike is a bicycle and may use the cyclist passage provided it is wide enough",
+            "text": "Yes, where the actual road and other signs allow; this sign does not reserve the connection for a category",
             "is_correct": true
           },
           {
-            "text": "No cargo bikes are too large and prohibited in any passage",
+            "text": "No, the connection is always exclusively for pedestrians and cyclists",
             "is_correct": false
           }
         ],
-        "explanation": "A cargo bike is a bicycle. If the passage is wide enough a cargo bike may use it. Physical limitations are the only obstacle."
+        "explanation": "This adapted F45 symbol shows the road layout. Access follows from the road and other signing, not from a pedestrian or cyclist symbol that is not present."
       },
       "FR": {
-        "question": "Un velo cargo peut-il utiliser le passage de droite de F45R ?",
+        "question": "Un véhicule à moteur peut-il emprunter la liaison vers la droite montrée par F45R ?",
         "choices": [
           {
-            "text": "Oui un velo cargo est un velo et peut utiliser le passage pour cyclistes a condition qu il soit suffisamment large",
+            "text": "Oui, si la route réelle et les autres signaux l'autorisent; ce signal ne réserve pas la liaison à une catégorie",
             "is_correct": true
           },
           {
-            "text": "Non les velos cargo sont trop grands et interdits dans tout passage",
+            "text": "Non, la liaison est toujours exclusivement destinée aux piétons et cyclistes",
             "is_correct": false
           }
         ],
-        "explanation": "Un velo cargo est un velo. Si le passage est suffisamment large un velo cargo peut l utiliser. Les limitations physiques sont le seul obstacle."
+        "explanation": "Ce symbole F45 adapté montre la configuration. L'accès découle de la route et des autres signaux, pas d'un symbole de piéton ou cycliste qui n'est pas présent."
       },
       "AR": {
-        "question": "هل يستطيع دراجة الشحن (cargo bike) استخدام الممر الأيمن في F45R؟",
+        "question": "هل يجوز لمركبة آلية استخدام الاتصال نحو اليمين الظاهر في F45R؟",
         "choices": [
           {
-            "text": "نعم دراجة الشحن هي دراجة ويمكنها استخدام ممر الدراجين شريطة أن يكون واسعاً بما يكفي",
+            "text": "نعم، إذا سمح الطريق الفعلي والعلامات الأخرى؛ فهذه العلامة لا تخصص الاتصال لفئة",
             "is_correct": true
           },
           {
-            "text": "لا دراجات الشحن كبيرة جداً ومحظورة في أي ممر",
+            "text": "لا، الاتصال دائمًا مخصص حصريًا للمشاة وراكبي الدراجات",
             "is_correct": false
           }
         ],
-        "explanation": "دراجة الشحن هي دراجة. إذا كان الممر واسعاً بما يكفي يمكن لدراجة الشحن استخدامه. القيود الجسدية هي العائق الوحيد."
+        "explanation": "يُظهر رمز F45 المكيّف تخطيط الطريق. ينتج حق الدخول من الطريق والعلامات الأخرى لا من رمز مشاة أو دراجة غير موجود."
       }
     }
   },
@@ -498,60 +558,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Is het toegestaan voor een bestuurder van een motorvoertuig om te stoppen en zijn fiets van het dak te halen om de doorgang bij F45R te gebruiken?",
+        "question": "Geeft F45R u automatisch voorrang wanneer u de verbinding naar rechts volgt?",
         "choices": [
           {
-            "text": "Ja als de bestuurder zijn motorvoertuig parkeer en te voet of met de fiets verdergaat mag hij de doorgang gebruiken",
+            "text": "Nee, voorrang volgt uit de algemene regels, borden en markeringen bij de werkelijke aansluiting",
             "is_correct": true
           },
           {
-            "text": "Nee enkel inwoners van de straat mogen de doorgang te voet gebruiken",
+            "text": "Ja, de witte zijtak op F45 geeft altijd voorrang",
             "is_correct": false
           }
         ],
-        "explanation": "De doorgang is voor voetgangers en fietsers. Als de bestuurder zijn voertuig achterlaat en te voet of per fiets verdergaat mag hij die doorgang uiteraard gebruiken."
+        "explanation": "F45R beschrijft de doodlopende weginrichting en regelt geen voorrang."
       },
       "EN": {
-        "question": "Is it allowed for a motor vehicle driver to stop and take his bicycle off the roof to use the passage at F45R?",
+        "question": "Does F45R automatically give you priority when following the connection to the right?",
         "choices": [
           {
-            "text": "Yes if the driver parks his motor vehicle and continues on foot or by bicycle he may use the passage",
+            "text": "No, priority follows from the general rules, signs and markings at the actual junction",
             "is_correct": true
           },
           {
-            "text": "No only street residents may use the passage on foot",
+            "text": "Yes, the white branch on F45 always gives priority",
             "is_correct": false
           }
         ],
-        "explanation": "The passage is for pedestrians and cyclists. If the driver leaves his vehicle and continues on foot or by bicycle he may certainly use that passage."
+        "explanation": "F45R describes the dead-end layout and does not regulate priority."
       },
       "FR": {
-        "question": "Est-il permis a un conducteur de vehicule a moteur de s arreter et de prendre son velo sur le toit pour utiliser le passage de F45R ?",
+        "question": "F45R vous donne-t-il automatiquement la priorité lorsque vous suivez la liaison vers la droite ?",
         "choices": [
           {
-            "text": "Oui si le conducteur gare son vehicule a moteur et continue a pied ou a velo il peut utiliser le passage",
+            "text": "Non, la priorité découle des règles générales, signaux et marquages au carrefour réel",
             "is_correct": true
           },
           {
-            "text": "Non seuls les habitants de la rue peuvent utiliser le passage a pied",
+            "text": "Oui, la branche blanche sur F45 donne toujours la priorité",
             "is_correct": false
           }
         ],
-        "explanation": "Le passage est pour les pietons et les cyclistes. Si le conducteur laisse son vehicule et continue a pied ou a velo il peut bien sur utiliser ce passage."
+        "explanation": "F45R décrit la configuration d'impasse et ne règle pas la priorité."
       },
       "AR": {
-        "question": "هل يُسمح لسائق مركبة آلية بالتوقف وأخذ دراجته من السقف لاستخدام الممر في F45R؟",
+        "question": "هل تمنحك F45R الأولوية تلقائيًا عند اتباع الاتصال نحو اليمين؟",
         "choices": [
           {
-            "text": "نعم إذا ركن السائق مركبته الآلية واستمر سيراً على الأقدام أو بالدراجة يمكنه استخدام الممر",
+            "text": "لا، تنتج الأولوية من القواعد العامة والعلامات والتخطيطات عند التقاطع الفعلي",
             "is_correct": true
           },
           {
-            "text": "لا فقط سكان الشارع يمكنهم استخدام الممر سيراً على الأقدام",
+            "text": "نعم، يمنح الفرع الأبيض في F45 الأولوية دائمًا",
             "is_correct": false
           }
         ],
-        "explanation": "الممر للمشاة والدراجين. إذا ترك السائق مركبته واستمر سيراً على الأقدام أو بالدراجة يمكنه بالطبع استخدام ذلك الممر."
+        "explanation": "تصف F45R تخطيط الطريق المسدود ولا تنظّم الأولوية."
       }
     }
   }

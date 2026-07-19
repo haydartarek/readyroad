@@ -2,9 +2,10 @@
   "schema_version": 1,
   "scope": "SHARED",
   "reviewed_categories": [
-    "DANGER"
+    "DANGER",
+    "INFORMATION"
   ],
-  "last_reviewed": "2026-07-18",
+  "last_reviewed": "2026-07-19",
   "translation_policy": "NL and FR legal terms follow the official texts. EN and AR are faithful editorial translations and must not expand or narrow the legal meaning.",
   "terms": [
     {
@@ -140,6 +141,283 @@
       },
       "source_ids": [
         "BE-KB2024-ART86"
+      ]
+    },
+    {
+      "term_id": "INFORMATION_SIGN",
+      "i18n": {
+        "NL": "aanwijzingsbord",
+        "EN": "information sign",
+        "FR": "signal d'indication",
+        "AR": "علامة إرشاد"
+      },
+      "definition": "A sign that indicates a road status, facility, layout or applicable traffic regime.",
+      "context": "Use for the F-series category without implying that the sign is merely optional advice.",
+      "preferred_wording": {
+        "NL": "aanwijzingsbord",
+        "EN": "information sign",
+        "FR": "signal d'indication",
+        "AR": "علامة إرشاد"
+      },
+      "forbidden_or_misleading_wording": [
+        "advisory sign"
+      ],
+      "source_ids": [
+        "BE-KB1975-INFORMATION-CURRENT"
+      ]
+    },
+    {
+      "term_id": "MOTORWAY",
+      "i18n": {
+        "NL": "autosnelweg",
+        "EN": "motorway",
+        "FR": "autoroute",
+        "AR": "طريق سيار"
+      },
+      "definition": "A public road bounded by F5 and F7 and governed by the motorway rules.",
+      "context": "Use only for autosnelweg/autoroute, not for an expressway.",
+      "preferred_wording": {
+        "NL": "autosnelweg",
+        "EN": "motorway",
+        "FR": "autoroute",
+        "AR": "طريق سيار"
+      },
+      "forbidden_or_misleading_wording": [
+        "expressway"
+      ],
+      "source_ids": [
+        "BE-KB1975-INFORMATION-CURRENT"
+      ]
+    },
+    {
+      "term_id": "EXPRESSWAY",
+      "i18n": {
+        "NL": "autoweg",
+        "EN": "expressway / road for motor vehicles",
+        "FR": "route pour automobiles",
+        "AR": "طريق مخصص للمركبات"
+      },
+      "definition": "A public road bounded by F9 and F11 and governed by Article 22.",
+      "context": "Keep distinct from motorway in every language.",
+      "preferred_wording": {
+        "NL": "autoweg",
+        "EN": "expressway / road for motor vehicles",
+        "FR": "route pour automobiles",
+        "AR": "طريق مخصص للمركبات"
+      },
+      "forbidden_or_misleading_wording": [
+        "motorway"
+      ],
+      "source_ids": [
+        "BE-KB1975-INFORMATION-CURRENT"
+      ]
+    },
+    {
+      "term_id": "BUILT_UP_AREA",
+      "i18n": {
+        "NL": "bebouwde kom",
+        "EN": "built-up area",
+        "FR": "agglomération",
+        "AR": "منطقة مبنية"
+      },
+      "definition": "An area whose entrance and exit are indicated by F1 and F3 variants.",
+      "context": "Do not translate it as a generic residential neighbourhood.",
+      "preferred_wording": {
+        "NL": "bebouwde kom",
+        "EN": "built-up area",
+        "FR": "agglomération",
+        "AR": "منطقة مبنية"
+      },
+      "forbidden_or_misleading_wording": [
+        "residential area"
+      ],
+      "source_ids": [
+        "BE-KB1975-INFORMATION-CURRENT"
+      ]
+    },
+    {
+      "term_id": "LIVING_STREET",
+      "i18n": {
+        "NL": "woonerf of erf",
+        "EN": "living street (woonerf/erf)",
+        "FR": "zone résidentielle ou de rencontre (woonerf/erf)",
+        "AR": "منطقة معيشة مشتركة (woonerf/erf)"
+      },
+      "definition": "A specially designed public-road area bounded by F12a and F12b and governed by Article 22bis.",
+      "context": "Retain woonerf/erf where needed to preserve the Belgian legal concept.",
+      "preferred_wording": {
+        "NL": "woonerf of erf",
+        "EN": "living street (woonerf/erf)",
+        "FR": "zone résidentielle ou de rencontre (woonerf/erf)",
+        "AR": "منطقة معيشة مشتركة (woonerf/erf)"
+      },
+      "forbidden_or_misleading_wording": [
+        "ordinary residential area"
+      ],
+      "source_ids": [
+        "BE-KB1975-INFORMATION-CURRENT"
+      ]
+    },
+    {
+      "term_id": "RESERVED_ROAD",
+      "i18n": {
+        "NL": "voorbehouden weg",
+        "EN": "reserved road",
+        "FR": "voie réservée",
+        "AR": "طريق مخصص"
+      },
+      "definition": "A road or road part whose access and conduct rules are defined by F99/F101 signs and the depicted categories.",
+      "context": "Do not call F99 signs compulsory cycle-path signs.",
+      "preferred_wording": {
+        "NL": "voorbehouden weg",
+        "EN": "reserved road",
+        "FR": "voie réservée",
+        "AR": "طريق مخصص"
+      },
+      "forbidden_or_misleading_wording": [
+        "compulsory mixed path",
+        "compulsory separated path"
+      ],
+      "source_ids": [
+        "BE-KB1975-INFORMATION-CURRENT"
+      ]
+    },
+    {
+      "term_id": "CYCLE_ZONE",
+      "i18n": {
+        "NL": "fietszone",
+        "EN": "cycle zone",
+        "FR": "zone cyclable",
+        "AR": "منطقة دراجات"
+      },
+      "definition": "A zone bounded by F111 and F113 where cyclists have the statutory road-position and overtaking protections.",
+      "context": "Use cycle zone rather than cycle street for the complete zone.",
+      "preferred_wording": {
+        "NL": "fietszone",
+        "EN": "cycle zone",
+        "FR": "zone cyclable",
+        "AR": "منطقة دراجات"
+      },
+      "forbidden_or_misleading_wording": [
+        "ordinary cycle lane"
+      ],
+      "source_ids": [
+        "BE-KB1975-INFORMATION-CURRENT"
+      ]
+    },
+    {
+      "term_id": "BUS_LANE",
+      "i18n": {
+        "NL": "busstrook",
+        "EN": "bus lane",
+        "FR": "bande bus",
+        "AR": "حارة حافلات"
+      },
+      "definition": "A carriageway lane marked under Article 72.5 and indicated by F17.",
+      "context": "Keep separate from the special traversable track indicated by F18.",
+      "preferred_wording": {
+        "NL": "busstrook",
+        "EN": "bus lane",
+        "FR": "bande bus",
+        "AR": "حارة حافلات"
+      },
+      "forbidden_or_misleading_wording": [
+        "special traversable track"
+      ],
+      "source_ids": [
+        "BE-KB1975-INFORMATION-CURRENT"
+      ]
+    },
+    {
+      "term_id": "SPECIAL_TRAVERSABLE_TRACK",
+      "i18n": {
+        "NL": "bijzondere overrijdbare bedding",
+        "EN": "special traversable track",
+        "FR": "site spécial franchissable",
+        "AR": "مسار خاص قابل للعبور"
+      },
+      "definition": "A part of the public road reserved under Article 72.6 and indicated by F18.",
+      "context": "Do not collapse it into the ordinary bus-lane concept.",
+      "preferred_wording": {
+        "NL": "bijzondere overrijdbare bedding",
+        "EN": "special traversable track",
+        "FR": "site spécial franchissable",
+        "AR": "مسار خاص قابل للعبور"
+      },
+      "forbidden_or_misleading_wording": [
+        "ordinary bus lane"
+      ],
+      "source_ids": [
+        "BE-KB1975-INFORMATION-CURRENT"
+      ]
+    },
+    {
+      "term_id": "ONE_WAY_ROAD",
+      "i18n": {
+        "NL": "eenrichtingsverkeer",
+        "EN": "one-way road",
+        "FR": "voie à sens unique",
+        "AR": "طريق باتجاه واحد"
+      },
+      "definition": "A public road where drivers follow the direction indicated by F19, subject to supplementary contra-flow signing.",
+      "context": "Mention supplementary exceptions where relevant.",
+      "preferred_wording": {
+        "NL": "eenrichtingsverkeer",
+        "EN": "one-way road",
+        "FR": "voie à sens unique",
+        "AR": "طريق باتجاه واحد"
+      },
+      "forbidden_or_misleading_wording": [
+        "no user can ever approach from the opposite direction"
+      ],
+      "source_ids": [
+        "BE-KB1975-INFORMATION-CURRENT"
+      ]
+    },
+    {
+      "term_id": "PEDESTRIAN_CROSSING",
+      "i18n": {
+        "NL": "oversteekplaats voor voetgangers",
+        "EN": "pedestrian crossing",
+        "FR": "passage pour piétons",
+        "AR": "ممر مشاة"
+      },
+      "definition": "A crossing intended for pedestrians and identified by the applicable sign or markings.",
+      "context": "Do not merge it with a cyclist crossing or grant waiting cyclists pedestrian priority.",
+      "preferred_wording": {
+        "NL": "oversteekplaats voor voetgangers",
+        "EN": "pedestrian crossing",
+        "FR": "passage pour piétons",
+        "AR": "ممر مشاة"
+      },
+      "forbidden_or_misleading_wording": [
+        "combined pedestrian and cyclist crossing"
+      ],
+      "source_ids": [
+        "BE-KB1975-INFORMATION-CURRENT"
+      ]
+    },
+    {
+      "term_id": "ZIPPER_MERGE",
+      "i18n": {
+        "NL": "ritsen",
+        "EN": "zipper merge",
+        "FR": "fermeture éclair / tirette",
+        "AR": "اندماج بالتناوب"
+      },
+      "definition": "Alternating merge immediately before a lane ends when traffic is heavily slowed.",
+      "context": "Always include the heavily-slowed-traffic condition.",
+      "preferred_wording": {
+        "NL": "ritsen",
+        "EN": "zipper merge",
+        "FR": "fermeture éclair / tirette",
+        "AR": "اندماج بالتناوب"
+      },
+      "forbidden_or_misleading_wording": [
+        "merge early in all traffic conditions"
+      ],
+      "source_ids": [
+        "BE-KB1975-INFORMATION-CURRENT"
       ]
     }
   ]

@@ -31,18 +31,22 @@
     {
       "category": "INFORMATION",
       "slug": "information",
-      "status": "NOT_REVIEWED",
-      "approval_status": "PENDING",
-      "last_reviewed": null,
+      "status": "APPROVED",
+      "approval_status": "APPROVED",
+      "last_reviewed": "2026-07-19",
+      "review_started_at": "2026-07-19",
+      "review_branch": "feature/postgresql-supabase",
+      "review_scope": "37 INFORMATION signs, 296 questions, 37 exams, linked lessons, and four languages",
+      "reviewer_status": "COMPLETED",
       "counts": {
         "signs": 37,
         "questions": 296,
         "exams": 37,
         "lessons": 0
       },
-      "risk_level": "UNASSESSED",
-      "review_file": null,
-      "report_file": null
+      "risk_level": "HIGH",
+      "review_file": "category-reviews/information.json",
+      "report_file": "docs/content-governance/category-reviews/information/content-review-report.md"
     },
     {
       "category": "MANDATORY",

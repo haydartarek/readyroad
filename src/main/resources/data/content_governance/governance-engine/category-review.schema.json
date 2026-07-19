@@ -31,7 +31,7 @@
     "canonical_content_root": { "type": "string", "minLength": 1 },
     "canonical_ownership": { "type": "string", "minLength": 1 },
     "review_date": { "type": "string", "format": "date" },
-    "review_status": { "enum": ["OPEN", "REQUIRES_HUMAN_REVIEW", "APPROVED"] },
+    "review_status": { "enum": ["IN_REVIEW", "OPEN", "REQUIRES_HUMAN_REVIEW", "APPROVED"] },
     "reviewed_languages": {
       "type": "array",
       "uniqueItems": true,

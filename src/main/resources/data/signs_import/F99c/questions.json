@@ -7,58 +7,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat betekent bord F99c?",
+        "question": "Wat betekent F99c in deze uitvoering?",
         "choices": [
           {
-            "text": "Verplicht gemengd pad voor voetgangers fietsers en landbouwvoertuigen",
+            "text": "Begin van een weg voorbehouden voor de afgebeelde landbouwvoertuigen, voetgangers, fietsers, ruiters en speedpedelecs",
             "is_correct": true
           },
-          { "text": "Pad enkel voor landbouwvoertuigen", "is_correct": false },
-          { "text": "Verboden voor landbouwvoertuigen", "is_correct": false }
+          {
+            "text": "Een verplicht gemengd voet- en fietspad",
+            "is_correct": false
+          },
+          {
+            "text": "Een gewone landbouwweg zonder bijzondere regels",
+            "is_correct": false
+          }
         ],
-        "explanation": "F99c duidt een verplicht gemengd pad aan waarop naast voetgangers en fietsers ook landbouwvoertuigen zijn toegestaan."
+        "explanation": "F99c begint de in artikel 22octies geregelde voorbehouden weg voor de afgebeelde categorieen."
       },
       "EN": {
-        "question": "What does sign F99c mean?",
+        "question": "What does F99c mean in this version?",
         "choices": [
           {
-            "text": "Compulsory mixed path for pedestrians cyclists and agricultural vehicles",
+            "text": "Start of a road reserved for the depicted agricultural vehicles, pedestrians, cyclists, horse riders and speed-pedelec riders",
             "is_correct": true
           },
           {
-            "text": "Path exclusively for agricultural vehicles",
+            "text": "A compulsory mixed pedestrian and cycle path",
             "is_correct": false
           },
-          { "text": "Forbidden for agricultural vehicles", "is_correct": false }
+          {
+            "text": "An ordinary farm road without special rules",
+            "is_correct": false
+          }
         ],
-        "explanation": "F99c indicates a compulsory mixed path on which agricultural vehicles are allowed in addition to pedestrians and cyclists."
+        "explanation": "F99c starts the reserved road governed by Article 22octies for the depicted categories."
       },
       "FR": {
-        "question": "Que signifie le panneau F99c ?",
+        "question": "Que signifie F99c dans cette version ?",
         "choices": [
           {
-            "text": "Chemin mixte oblige pour pietons cyclistes et vehicules agricoles",
+            "text": "Début d'une voie réservée aux véhicules agricoles, piétons, cyclistes, cavaliers et speed pedelecs représentés",
             "is_correct": true
           },
           {
-            "text": "Chemin exclusivement pour les vehicules agricoles",
+            "text": "Une piste mixte obligatoire pour piétons et cyclistes",
             "is_correct": false
           },
-          { "text": "Interdit aux vehicules agricoles", "is_correct": false }
+          {
+            "text": "Un simple chemin agricole sans règles spéciales",
+            "is_correct": false
+          }
         ],
-        "explanation": "F99c indique un chemin mixte oblige sur lequel les vehicules agricoles sont autorises en plus des pietons et des cyclistes."
+        "explanation": "F99c commence la voie réservée regie par l'article 22octies pour les catégories représentées."
       },
       "AR": {
-        "question": "ما معنى هذه العلامة المرورية؟",
+        "question": "ما معنى F99c بهذا الشكل؟",
         "choices": [
           {
-            "text": "مسار مختلط إلزامي للمشاة والدراجين والمركبات الزراعية",
+            "text": "بداية طريق مخصص للمركبات الزراعية والمشاة وراكبي الدراجات والخيول والدراجات السريعة المبينة",
             "is_correct": true
           },
-          { "text": "مسار حصرياً للمركبات الزراعية", "is_correct": false },
-          { "text": "محظور للمركبات الزراعية", "is_correct": false }
+          {
+            "text": "مسار مختلط إلزامي للمشاة والدراجات",
+            "is_correct": false
+          },
+          {
+            "text": "طريق زراعي عادي بلا قواعد خاصة",
+            "is_correct": false
+          }
         ],
-        "explanation": "تشير F99c إلى مسار مختلط إلزامي يُسمح فيه للمركبات الزراعية بالإضافة إلى المشاة والدراجين."
+        "explanation": "تبدأ F99c الطريق المخصص الذي تنظمه المادة 22octies للفئات المبينة."
       }
     }
   },
@@ -70,61 +88,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Welke weggebruikers zijn toegestaan op een F99c-pad?",
+        "question": "Wie mag deze F99c-weg gebruiken?",
         "choices": [
           {
-            "text": "Voetgangers fietsers en landbouwvoertuigen",
+            "text": "De afgebeelde categorieen en de beperkte categorieen die artikel 22octies uitdrukkelijk toevoegt",
             "is_correct": true
           },
           {
-            "text": "Alle gemotoriseerde voertuigen inclusief personenwagens",
+            "text": "Alle motorvoertuigen die trager dan 30 km/u rijden",
             "is_correct": false
           },
-          { "text": "Enkel landbouwvoertuigen", "is_correct": false }
+          {
+            "text": "Uitsluitend landbouwvoertuigen",
+            "is_correct": false
+          }
         ],
-        "explanation": "F99c is een variant van F99a maar met toevoeging van landbouwvoertuigen. Gewone personenwagens zijn er nog steeds verboden."
+        "explanation": "Naast de afgebeelde categorieen noemt de wet onder meer verkeer van en naar aanliggende percelen en bepaalde dienst- en prioritaire voertuigen."
       },
       "EN": {
-        "question": "Which road users are allowed on an F99c path?",
+        "question": "Who may use this F99c road?",
         "choices": [
           {
-            "text": "Pedestrians cyclists and agricultural vehicles",
+            "text": "The depicted categories and the limited categories expressly added by Article 22octies",
             "is_correct": true
           },
           {
-            "text": "All motorised vehicles including passenger cars",
+            "text": "All motor vehicles travelling below 30 km/h",
             "is_correct": false
           },
-          { "text": "Only agricultural vehicles", "is_correct": false }
+          {
+            "text": "Agricultural vehicles only",
+            "is_correct": false
+          }
         ],
-        "explanation": "F99c is a variant of F99a but with the addition of agricultural vehicles. Regular passenger cars are still prohibited."
+        "explanation": "In addition to depicted categories, the law includes traffic to and from adjacent properties and certain service and priority vehicles."
       },
       "FR": {
-        "question": "Quels usagers de la route sont autorises sur un chemin F99c ?",
+        "question": "Qui peut emprunter cette voie F99c ?",
         "choices": [
           {
-            "text": "Pietons cyclistes et vehicules agricoles",
+            "text": "Les catégories représentées et les catégories limitées expressément ajoutées par l'article 22octies",
             "is_correct": true
           },
           {
-            "text": "Tous les vehicules motorises y compris les voitures particulieres",
+            "text": "Tous les véhicules à moteur roulant sous 30 km/h",
             "is_correct": false
           },
-          { "text": "Uniquement les vehicules agricoles", "is_correct": false }
+          {
+            "text": "Uniquement les véhicules agricoles",
+            "is_correct": false
+          }
         ],
-        "explanation": "F99c est une variante de F99a mais avec l ajout de vehicules agricoles. Les voitures particulieres ordinaires y sont toujours interdites."
+        "explanation": "Outre les catégories représentées, la loi admet notamment les véhicules de et vers les parcelles riveraines ainsi que certains véhicules de service et prioritaires."
       },
       "AR": {
-        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
+        "question": "من يجوز له استخدام طريق F99c هذا؟",
         "choices": [
-          { "text": "المشاة والدراجون والمركبات الزراعية", "is_correct": true },
           {
-            "text": "جميع المركبات الآلية بما فيها سيارات الركاب",
+            "text": "الفئات المبينة والفئات المحدودة التي تضيفها المادة 22octies صراحة",
+            "is_correct": true
+          },
+          {
+            "text": "كل مركبة آلية تسير بأقل من 30 كم/س",
             "is_correct": false
           },
-          { "text": "المركبات الزراعية فقط", "is_correct": false }
+          {
+            "text": "المركبات الزراعية فقط",
+            "is_correct": false
+          }
         ],
-        "explanation": "F99c متغير من F99a لكن مع إضافة المركبات الزراعية. سيارات الركاب العادية لا تزال محظورة."
+        "explanation": "إضافة إلى الفئات المبينة، يسمح القانون بالمرور من العقارات المجاورة وإليها وبعض مركبات الخدمة والأولوية."
       }
     }
   },
@@ -136,73 +169,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Welk specifiek gevaar stellen landbouwvoertuigen op een F99c-pad?",
+        "question": "Welk gevaar vraagt bijzondere aandacht op een F99c-weg?",
         "choices": [
           {
-            "text": "Ze zijn groot en langzaam en kunnen voetgangers en fietsers in het gedrang brengen",
+            "text": "Grote landbouwvoertuigen delen de ruimte met kwetsbare weggebruikers",
             "is_correct": true
           },
           {
-            "text": "Ze rijden altijd te snel op het pad",
+            "text": "Alle gebruikers rijden er met dezelfde snelheid",
             "is_correct": false
           },
           {
-            "text": "Ze produceren geen enkel gevaar want het pad is breed genoeg",
+            "text": "Voetgangers zijn er altijd verboden",
             "is_correct": false
           }
         ],
-        "explanation": "Landbouwvoertuigen (tractoren combinaties) zijn breed en traag. Ze kunnen moeilijk uitwijken voor fietsers en voetgangers. Wees alert."
+        "explanation": "Gemotoriseerd verkeer, vooral landbouwvoertuigen, moet dubbel voorzichtig zijn tegenover de kwetsbare gebruikers."
       },
       "EN": {
-        "question": "What specific hazard do agricultural vehicles pose on an F99c path?",
+        "question": "Which hazard needs particular attention on an F99c road?",
         "choices": [
           {
-            "text": "They are large and slow and can endanger pedestrians and cyclists",
+            "text": "Large agricultural vehicles share the space with vulnerable road users",
             "is_correct": true
           },
           {
-            "text": "They always drive too fast on the path",
+            "text": "Every user travels at the same speed",
             "is_correct": false
           },
           {
-            "text": "They pose no hazard because the path is wide enough",
+            "text": "Pedestrians are always prohibited",
             "is_correct": false
           }
         ],
-        "explanation": "Agricultural vehicles (tractors and combinations) are wide and slow. They can have difficulty avoiding cyclists and pedestrians. Be alert."
+        "explanation": "Motor traffic, especially agricultural vehicles, must take extra care around vulnerable users."
       },
       "FR": {
-        "question": "Quel danger specifique les vehicules agricoles posent-ils sur un chemin F99c ?",
+        "question": "Quel danger exige une attention particulière sur une voie F99c ?",
         "choices": [
           {
-            "text": "Ils sont grands et lents et peuvent mettre en danger les pietons et les cyclistes",
+            "text": "De grands véhicules agricoles partagent l'espace avec des usagers vulnérables",
             "is_correct": true
           },
           {
-            "text": "Ils roulent toujours trop vite sur le chemin",
+            "text": "Tous les usagers roulent a la même vitesse",
             "is_correct": false
           },
           {
-            "text": "Ils ne posent aucun danger car le chemin est suffisamment large",
+            "text": "Les piétons y sont toujours interdits",
             "is_correct": false
           }
         ],
-        "explanation": "Les vehicules agricoles (tracteurs et combinaisons) sont larges et lents. Ils peuvent avoir du mal a eviter les cyclistes et les pietons. Soyez vigilant."
+        "explanation": "La circulation motorisée, surtout les véhicules agricoles, doit redoubler de prudence envers les usagers vulnérables."
       },
       "AR": {
-        "question": "ما هو الخطر الذي تشير إليه هذه العلامة المرورية؟",
+        "question": "أي خطر يحتاج انتباهًا خاصًا على طريق F99c؟",
         "choices": [
           {
-            "text": "إنها كبيرة وبطيئة ويمكن أن تعرض المشاة والدراجين للخطر",
+            "text": "تشترك المركبات الزراعية الكبيرة في المكان مع مستخدمين ضعفاء",
             "is_correct": true
           },
-          { "text": "دائماً تسير بسرعة كبيرة على المسار", "is_correct": false },
           {
-            "text": "لا تشكل أي خطر لأن المسار واسع بما يكفي",
+            "text": "يسير كل المستخدمين بالسرعة نفسها",
+            "is_correct": false
+          },
+          {
+            "text": "يمنع المشاة دائمًا",
             "is_correct": false
           }
         ],
-        "explanation": "المركبات الزراعية (الجرارات والمجموعات) عريضة وبطيئة. قد تجد صعوبة في تجنب الدراجين والمشاة. كن يقظاً."
+        "explanation": "يجب على المرور الآلي، وخصوصًا المركبات الزراعية، مضاعفة الحذر تجاه المستخدمين الضعفاء."
       }
     }
   },
@@ -214,73 +250,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Een traktorchauffeur nadert een groep voetgangers op een F99c-pad. Wat moet hij doen?",
+        "question": "Een tractor nadert voetgangers op deze weg. Wat moet de bestuurder doen?",
         "choices": [
           {
-            "text": "Vaart minderen en voorzichtig langs de voetgangers rijden met voldoende veilige afstand",
+            "text": "Snelheid en ruimte aanpassen, extra voorzichtig zijn en niemand hinderen of in gevaar brengen",
             "is_correct": true
           },
           {
-            "text": "Claxonneren en verwachten dat de voetgangers snel opzij gaan",
+            "text": "Claxonneren zodat de voetgangers onmiddellijk verdwijnen",
             "is_correct": false
           },
           {
-            "text": "Doorrijden aan normale snelheid want hij heeft voorrang",
+            "text": "De snelheid behouden omdat de tractor is afgebeeld",
             "is_correct": false
           }
         ],
-        "explanation": "Op een F99c-pad deelt de traktorchauffeur de ruimte met voetgangers. Hij moet vertragen en veilig passeren met genoeg ruimte."
+        "explanation": "Alle gebruikers mogen elkaar niet hinderen of in gevaar brengen; gemotoriseerd verkeer moet bijzonder voorzichtig zijn."
       },
       "EN": {
-        "question": "A tractor driver approaches a group of pedestrians on an F99c path. What should he do?",
+        "question": "A tractor approaches pedestrians on this road. What must its driver do?",
         "choices": [
           {
-            "text": "Slow down and carefully drive past the pedestrians with sufficient safe clearance",
+            "text": "Adapt speed and space, take extra care and neither hinder nor endanger anyone",
             "is_correct": true
           },
           {
-            "text": "Sound the horn and expect the pedestrians to move aside quickly",
+            "text": "Sound the horn so the pedestrians leave immediately",
             "is_correct": false
           },
           {
-            "text": "Drive on at normal speed because he has priority",
+            "text": "Maintain speed because the tractor is depicted",
             "is_correct": false
           }
         ],
-        "explanation": "On an F99c path the tractor driver shares the space with pedestrians. He must slow down and pass safely with enough clearance."
+        "explanation": "Users must not hinder or endanger one another; motor traffic has a particular duty of care."
       },
       "FR": {
-        "question": "Un chauffeur de tracteur approche un groupe de pietons sur un chemin F99c. Que doit-il faire ?",
+        "question": "Un tracteur approche des piétons sur cette voie. Que doit faire son conducteur ?",
         "choices": [
           {
-            "text": "Ralentir et depasser prudemment les pietons avec un degagement suffisant",
+            "text": "Adapter vitesse et espace, redoubler de prudence et ne gêner ni mettre personne en danger",
             "is_correct": true
           },
           {
-            "text": "Klaxonner et s attendre a ce que les pietons s ecartent rapidement",
+            "text": "Klaxonner pour faire partir immediatement les piétons",
             "is_correct": false
           },
           {
-            "text": "Continuer a vitesse normale car il a la priorite",
+            "text": "Maintenir sa vitesse parce que le tracteur est représenté",
             "is_correct": false
           }
         ],
-        "explanation": "Sur un chemin F99c le chauffeur de tracteur partage l espace avec les pietons. Il doit ralentir et passer en toute securite avec suffisamment d espace."
+        "explanation": "Les usagers ne peuvent se gêner ni se mettre en danger; la circulation motorisée a un devoir particulier de prudence."
       },
       "AR": {
-        "question": "سائق جرار يقترب من مجموعة من المشاة على مسار F99c. ماذا يجب عليه فعله؟",
+        "question": "اقترب جرار من مشاة على هذا الطريق. ماذا يفعل سائقه؟",
         "choices": [
           {
-            "text": "تباطأ وتجاوز المشاة بحذر مع مسافة أمان كافية",
+            "text": "يكيّف السرعة والمساحة ويضاعف الحذر ولا يعيق أحدًا أو يعرضه للخطر",
             "is_correct": true
           },
           {
-            "text": "انفخ البوق وتوقع أن يتنحى المشاة بسرعة",
+            "text": "يستخدم البوق ليغادر المشاة فورًا",
             "is_correct": false
           },
-          { "text": "استمر بسرعة عادية لأن له الأولوية", "is_correct": false }
+          {
+            "text": "يحافظ على السرعة لأن رمز الجرار ظاهر",
+            "is_correct": false
+          }
         ],
-        "explanation": "على مسار F99c سائق الجرار يشترك في المساحة مع المشاة. يجب عليه التباطؤ والمرور بأمان مع مسافة كافية."
+        "explanation": "يجب ألا يعيق المستخدمون بعضهم أو يعرضوه للخطر، وعلى المرور الآلي واجب حذر خاص."
       }
     }
   },
@@ -292,61 +331,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Mag een gewone auto een F99c-pad gebruiken?",
+        "question": "Mag een gewone auto van of naar een aanliggend perceel deze F99c-weg gebruiken?",
         "choices": [
           {
-            "text": "Nee een gewone auto is geen landbouwvoertuig en mag het pad niet gebruiken",
+            "text": "Ja, verkeer van en naar aanliggende percelen is een wettelijke uitzondering",
             "is_correct": true
           },
           {
-            "text": "Ja als de bestuurder voorzichtig rijdt",
-            "is_correct": false
-          },
-          { "text": "Ja als er geen fietsers op zijn", "is_correct": false }
-        ],
-        "explanation": "F99c staat enkel landbouwvoertuigen toe naast voetgangers en fietsers. Een gewone personenwagen mag het pad niet berijden."
-      },
-      "EN": {
-        "question": "May a regular car use an F99c path?",
-        "choices": [
-          {
-            "text": "No a regular car is not an agricultural vehicle and may not use the path",
-            "is_correct": true
-          },
-          { "text": "Yes if the driver drives carefully", "is_correct": false },
-          { "text": "Yes if there are no cyclists on it", "is_correct": false }
-        ],
-        "explanation": "F99c only allows agricultural vehicles in addition to pedestrians and cyclists. A regular passenger car may not use the path."
-      },
-      "FR": {
-        "question": "Une voiture ordinaire peut-elle utiliser un chemin F99c ?",
-        "choices": [
-          {
-            "text": "Non une voiture ordinaire n est pas un vehicule agricole et ne peut pas utiliser le chemin",
-            "is_correct": true
-          },
-          {
-            "text": "Oui si le conducteur conduit prudemment",
+            "text": "Nee, een personenauto is zonder uitzondering verboden",
             "is_correct": false
           },
           {
-            "text": "Oui s il n y a pas de cyclistes dessus",
+            "text": "Ja, elk doorgaand autoverkeer is toegestaan",
             "is_correct": false
           }
         ],
-        "explanation": "F99c n autorise que les vehicules agricoles en plus des pietons et des cyclistes. Une voiture particuliere ordinaire ne peut pas emprunter le chemin."
+        "explanation": "Artikel 22octies laat voertuigen van en naar de aanliggende percelen toe, maar opent de weg niet voor gewoon doorgaand autoverkeer."
       },
-      "AR": {
-        "question": "هل يستطيع سيارة عادية استخدام مسار F99c؟",
+      "EN": {
+        "question": "May an ordinary car travelling to or from an adjacent property use this F99c road?",
         "choices": [
           {
-            "text": "لا السيارة العادية ليست مركبة زراعية ولا يمكنها استخدام المسار",
+            "text": "Yes, traffic to and from adjacent properties is a statutory exception",
             "is_correct": true
           },
-          { "text": "نعم إذا كان السائق يسير بحذر", "is_correct": false },
-          { "text": "نعم إذا لم يكن هناك دراجون عليه", "is_correct": false }
+          {
+            "text": "No, a passenger car is prohibited without exception",
+            "is_correct": false
+          },
+          {
+            "text": "Yes, all through motor traffic is permitted",
+            "is_correct": false
+          }
         ],
-        "explanation": "F99c تسمح فقط للمركبات الزراعية بالإضافة إلى المشاة والدراجين. سيارة الركاب العادية لا يمكنها استخدام المسار."
+        "explanation": "Article 22octies admits vehicles travelling to and from adjacent properties but does not open the road to ordinary through traffic."
+      },
+      "FR": {
+        "question": "Une voiture ordinaire allant vers ou venant d'une parcelle riveraine peut-elle utiliser cette voie ?",
+        "choices": [
+          {
+            "text": "Oui, ce trafic constitue une exception légale",
+            "is_correct": true
+          },
+          {
+            "text": "Non, une voiture est interdite sans aucune exception",
+            "is_correct": false
+          },
+          {
+            "text": "Oui, tout trafic automobile de transit est permis",
+            "is_correct": false
+          }
+        ],
+        "explanation": "L'article 22octies admet les véhicules de et vers les parcelles riveraines, sans ouvrir la voie au trafic automobile ordinaire de transit."
+      },
+      "AR": {
+        "question": "هل يجوز لسيارة عادية متجهة إلى عقار مجاور أو قادمة منه استخدام طريق F99c؟",
+        "choices": [
+          {
+            "text": "نعم، هذا المرور استثناء قانوني",
+            "is_correct": true
+          },
+          {
+            "text": "لا، السيارة محظورة بلا أي استثناء",
+            "is_correct": false
+          },
+          {
+            "text": "نعم، كل مرور السيارات العابر مسموح",
+            "is_correct": false
+          }
+        ],
+        "explanation": "تسمح المادة 22octies للمركبات من العقارات المجاورة وإليها، لكنها لا تفتح الطريق لمرور السيارات العابر العادي."
       }
     }
   },
@@ -358,76 +412,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Welke bijzondere voorzorg moet een fietser nemen op een F99c-pad vergeleken met een gewoon fietspad?",
+        "question": "Hoe mogen voetgangers, fietsers, ruiters en speedpedelecs de F99c-weg gebruiken?",
         "choices": [
           {
-            "text": "Opletten voor brede trage landbouwvoertuigen die mogelijk de volledige breedte van het pad innemen",
+            "text": "Over de hele breedte, zonder het verkeer nodeloos te belemmeren",
             "is_correct": true
           },
           {
-            "text": "Altijd aan de rechterkant rijden want links is voor landbouwvoertuigen",
+            "text": "Alleen op een afzonderlijk gemarkeerde strook",
             "is_correct": false
           },
           {
-            "text": "Geen bijzondere voorzorg; het is hetzelfde als een gewoon fietspad",
+            "text": "Uitsluitend achter landbouwvoertuigen",
             "is_correct": false
           }
         ],
-        "explanation": "Op een F99c-pad kunnen brede landbouwvoertuigen de volledige breedte innemen. Fietsers moeten uitkijken en zo nodig uitzwenken."
+        "explanation": "Deze kwetsbare categorieen mogen de hele breedte gebruiken, maar mogen het verkeer niet nodeloos belemmeren."
       },
       "EN": {
-        "question": "What special precaution must a cyclist take on an F99c path compared to a regular cycle path?",
+        "question": "How may pedestrians, cyclists, horse riders and speed-pedelec riders use the F99c road?",
         "choices": [
           {
-            "text": "Watch out for wide slow agricultural vehicles that may take up the full width of the path",
+            "text": "Across its full width without unnecessarily obstructing traffic",
             "is_correct": true
           },
           {
-            "text": "Always ride on the right side because the left is for agricultural vehicles",
+            "text": "Only on a separately marked strip",
             "is_correct": false
           },
           {
-            "text": "No special precaution; it is the same as a regular cycle path",
+            "text": "Only behind agricultural vehicles",
             "is_correct": false
           }
         ],
-        "explanation": "On an F99c path wide agricultural vehicles can take up the full width. Cyclists must watch out and swerve aside if needed."
+        "explanation": "These vulnerable categories may use the full width but must not obstruct traffic unnecessarily."
       },
       "FR": {
-        "question": "Quelle precaution speciale un cycliste doit-il prendre sur un chemin F99c par rapport a une piste cyclable normale ?",
+        "question": "Comment les piétons, cyclistes, cavaliers et speed pedelecs peuvent-ils utiliser la voie F99c ?",
         "choices": [
           {
-            "text": "Faire attention aux vehicules agricoles larges et lents qui peuvent occuper toute la largeur du chemin",
+            "text": "Sur toute sa largeur sans entraver inutilement la circulation",
             "is_correct": true
           },
           {
-            "text": "Toujours rouler sur le cote droit car la gauche est pour les vehicules agricoles",
+            "text": "Seulement sur une bande marquee séparément",
             "is_correct": false
           },
           {
-            "text": "Aucune precaution speciale c est pareil a une piste cyclable normale",
+            "text": "Uniquement derriere les véhicules agricoles",
             "is_correct": false
           }
         ],
-        "explanation": "Sur un chemin F99c les vehicules agricoles larges peuvent occuper toute la largeur. Les cyclistes doivent faire attention et s ecarter si necessaire."
+        "explanation": "Ces catégories vulnérables peuvent utiliser toute la largeur mais ne peuvent entraver inutilement la circulation."
       },
       "AR": {
-        "question": "ما الاحتياط الخاص الذي يجب على الدراج اتخاذه على مسار F99c مقارنة بمسار الدراجات العادي؟",
+        "question": "كيف يستخدم المشاة وراكبو الدراجات والخيول والدراجات السريعة طريق F99c؟",
         "choices": [
           {
-            "text": "الانتباه للمركبات الزراعية العريضة البطيئة التي قد تشغل العرض الكامل للمسار",
+            "text": "على عرضه الكامل من دون عرقلة المرور بلا ضرورة",
             "is_correct": true
           },
           {
-            "text": "دائماً السير على الجانب الأيمن لأن اليسار للمركبات الزراعية",
+            "text": "على شريط منفصل محدد فقط",
             "is_correct": false
           },
           {
-            "text": "لا احتياط خاص إنه مثل مسار الدراجات العادي",
+            "text": "خلف المركبات الزراعية فقط",
             "is_correct": false
           }
         ],
-        "explanation": "على مسار F99c يمكن للمركبات الزراعية العريضة أن تشغل العرض الكامل. يجب على الدراجين الانتباه والانحراف جانباً إذا لزم الأمر."
+        "explanation": "يجوز لهذه الفئات الضعيفة استخدام العرض الكامل، لكن لا يجوز لها عرقلة المرور بلا ضرورة."
       }
     }
   },
@@ -439,57 +493,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Mag een boer met een tractor en aanhangwagen een F99c-pad gebruiken?",
+        "question": "Mag een tractor met aanhangwagen de weg gebruiken wanneer het landbouwvoertuigsymbool is afgebeeld?",
         "choices": [
           {
-            "text": "Ja de aanhangwagen maakt deel uit van het landbouwvoertuig en is ook toegestaan",
+            "text": "Ja, als landbouwvoertuigcombinatie, met naleving van de voorbehouden-wegregels",
             "is_correct": true
           },
           {
-            "text": "Nee enkel de tractor is toegestaan niet de aanhangwagen",
+            "text": "Nee, alleen een tractor zonder aanhangwagen",
             "is_correct": false
           }
         ],
-        "explanation": "F99c staat landbouwvoertuigen toe. Een tractor met aanhangwagen behoort tot de categorie landbouwvoertuigen en is dus toegestaan. Let op breedte en voorzichtigheid."
+        "explanation": "Het afgebeelde landbouwvoertuigsymbool laat die categorie toe; wederzijdse voorzichtigheid en de maximumsnelheid blijven gelden."
       },
       "EN": {
-        "question": "May a farmer with a tractor and trailer use an F99c path?",
+        "question": "May a tractor with a trailer use the road when the agricultural-vehicle symbol is depicted?",
         "choices": [
           {
-            "text": "Yes the trailer is part of the agricultural vehicle and is also allowed",
+            "text": "Yes, as an agricultural-vehicle combination subject to the reserved-road rules",
             "is_correct": true
           },
           {
-            "text": "No only the tractor is allowed not the trailer",
+            "text": "No, only a tractor without a trailer",
             "is_correct": false
           }
         ],
-        "explanation": "F99c allows agricultural vehicles. A tractor with trailer belongs to the category of agricultural vehicles and is therefore allowed. Pay attention to width and caution."
+        "explanation": "The depicted agricultural-vehicle symbol admits that category; mutual care and the speed limit still apply."
       },
       "FR": {
-        "question": "Un agriculteur avec un tracteur et une remorque peut-il utiliser un chemin F99c ?",
+        "question": "Un tracteur avec remorque peut-il utiliser la voie si le symbole agricole est représenté ?",
         "choices": [
           {
-            "text": "Oui la remorque fait partie du vehicule agricole et est egalement autorisee",
+            "text": "Oui, comme ensemble agricole soumis aux règles de la voie réservée",
             "is_correct": true
           },
           {
-            "text": "Non seul le tracteur est autorise pas la remorque",
+            "text": "Non, seul un tracteur sans remorque",
             "is_correct": false
           }
         ],
-        "explanation": "F99c autorise les vehicules agricoles. Un tracteur avec remorque appartient a la categorie des vehicules agricoles et est donc autorise. Attention a la largeur et a la prudence."
+        "explanation": "Le symbole agricole représenté admet cette catégorie; la prudence reciproque et la limite de vitesse restent applicables."
       },
       "AR": {
-        "question": "هل يستطيع مزارع بجرار ومقطورة استخدام مسار F99c؟",
+        "question": "هل يجوز لجرار مع مقطورة استخدام الطريق إذا ظهر رمز المركبة الزراعية؟",
         "choices": [
           {
-            "text": "نعم المقطورة جزء من المركبة الزراعية ومسموح بها أيضاً",
+            "text": "نعم، بوصفه مجموعة زراعية خاضعة لقواعد الطريق المخصص",
             "is_correct": true
           },
-          { "text": "لا الجرار فقط مسموح وليس المقطورة", "is_correct": false }
+          {
+            "text": "لا، يسمح بجرار بلا مقطورة فقط",
+            "is_correct": false
+          }
         ],
-        "explanation": "F99c تسمح للمركبات الزراعية. الجرار مع المقطورة ينتمي إلى فئة المركبات الزراعية وبالتالي مسموح به. انتبه للعرض والحذر."
+        "explanation": "يسمح الرمز الزراعي المبين بهذه الفئة، وتبقى قواعد الحذر المتبادل وحد السرعة سارية."
       }
     }
   },
@@ -501,60 +558,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Is een quad (ATQ) die wordt gebruikt in de landbouw toegestaan op een F99c-pad?",
+        "question": "Mag een voertuig voor onderhoud of hulpverlening deze F99c-weg gebruiken?",
         "choices": [
           {
-            "text": "Ja als de quad wordt ingezet als landbouwvoertuig in een landbouwactiviteit op het aangrenzend terrein",
+            "text": "Ja, zulke voertuigen behoren tot de uitdrukkelijke wettelijke uitzonderingen",
             "is_correct": true
           },
           {
-            "text": "Nee quads zijn altijd verboden op fiets- of voetgangerspaden",
+            "text": "Nee, alleen de symbolen op het bord tellen zonder uitzonderingen",
             "is_correct": false
           }
         ],
-        "explanation": "Als een quad in een landbouwcontext kan het in sommige gevallen gelijkgesteld worden met een landbouwvoertuig. Raadpleeg de specifieke wettelijke definitie."
+        "explanation": "Onderhoud, afvalophaling, toezicht, hulpverlening en prioritaire voertuigen behoren tot de wettelijke uitzonderingen."
       },
       "EN": {
-        "question": "Is a quad (ATV) used in agriculture allowed on an F99c path?",
+        "question": "May a maintenance or relief vehicle use this F99c road?",
         "choices": [
           {
-            "text": "Yes if the quad is used as an agricultural vehicle in a farming activity on adjacent land",
+            "text": "Yes, such vehicles are among the express statutory exceptions",
             "is_correct": true
           },
           {
-            "text": "No quads are always prohibited on cycle or pedestrian paths",
+            "text": "No, only the symbols count and there are no exceptions",
             "is_correct": false
           }
         ],
-        "explanation": "If a quad is used in an agricultural context it can in some cases be equated with an agricultural vehicle. Consult the specific legal definition."
+        "explanation": "Maintenance, refuse collection, supervision, relief and priority vehicles are statutory exceptions."
       },
       "FR": {
-        "question": "Un quad (VTT) utilise en agriculture est-il autorise sur un chemin F99c ?",
+        "question": "Un véhicule d'entretien ou de secours peut-il emprunter cette voie F99c ?",
         "choices": [
           {
-            "text": "Oui si le quad est utilise comme vehicule agricole dans une activite agricole sur le terrain adjacent",
+            "text": "Oui, ces véhicules font partie des exceptions légales expresses",
             "is_correct": true
           },
           {
-            "text": "Non les quads sont toujours interdits sur les pistes cyclables ou pietonnes",
+            "text": "Non, seuls les symboles comptent et il n'existe aucune exception",
             "is_correct": false
           }
         ],
-        "explanation": "Si un quad est utilise dans un contexte agricole il peut dans certains cas etre assimile a un vehicule agricole. Consultez la definition legale specifique."
+        "explanation": "Les véhicules d'entretien, de collecte, de surveillance, de secours et prioritaires sont des exceptions légales."
       },
       "AR": {
-        "question": "هل سيارة رباعية الدفع (ATV) مستخدمة في الزراعة مسموح بها على مسار F99c؟",
+        "question": "هل يجوز لمركبة صيانة أو إغاثة استخدام طريق F99c؟",
         "choices": [
           {
-            "text": "نعم إذا كانت السيارة الرباعية تُستخدم كمركبة زراعية في نشاط زراعي على الأرض المجاورة",
+            "text": "نعم، هذه المركبات من الاستثناءات القانونية الصريحة",
             "is_correct": true
           },
           {
-            "text": "لا السيارات الرباعية دائماً محظورة على مسارات الدراجات والمشاة",
+            "text": "لا، لا اعتبار إلا للرموز ولا توجد استثناءات",
             "is_correct": false
           }
         ],
-        "explanation": "إذا كانت السيارة الرباعية تُستخدم في سياق زراعي يمكن في بعض الحالات معادلتها بمركبة زراعية. راجع التعريف القانوني المحدد."
+        "explanation": "تعد مركبات الصيانة وجمع النفايات والمراقبة والإغاثة والأولوية استثناءات قانونية."
       }
     }
   }

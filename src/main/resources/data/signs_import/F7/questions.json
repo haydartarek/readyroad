@@ -71,7 +71,10 @@
             "text": "يتحول الطريق تلقائيًا إلى منطقة مخصصة حصريًا للمشاة والدراجين",
             "is_correct": false
           },
-          { "text": "ينخفض حد السرعة فوراً إلى 50 كم/س", "is_correct": false }
+          {
+            "text": "ينخفض حد السرعة فوراً إلى 50 كم/س",
+            "is_correct": false
+          }
         ],
         "explanation": "تحدد F7 نهاية الطريق السريع. بعد هذه العلامة المرورية لم تعد قواعد الطريق السريع سارية وأنت على طريق عادي بحدود مختلفة."
       }
@@ -87,27 +90,54 @@
       "NL": {
         "question": "Welk bord markeert het begin van de autosnelweg die eindigt met bord F7?",
         "choices": [
-          { "text": "Bord F5 'Autosnelweg'", "is_correct": true },
-          { "text": "Bord F9 'Autoweg'", "is_correct": false },
-          { "text": "Bord F13 'Rijstrook keuze'", "is_correct": false }
+          {
+            "text": "Bord F5 'Autosnelweg'",
+            "is_correct": true
+          },
+          {
+            "text": "Bord F9 'Autoweg'",
+            "is_correct": false
+          },
+          {
+            "text": "Bord F13 'Rijstrook keuze'",
+            "is_correct": false
+          }
         ],
         "explanation": "F5 en F7 vormen een paar: F5 markeert het begin en F7 het einde van de autosnelweg."
       },
       "EN": {
         "question": "Which sign marks the start of the motorway that ends with sign F7?",
         "choices": [
-          { "text": "Sign F5 'Motorway start'", "is_correct": true },
-          { "text": "Sign F9 'Expressway start'", "is_correct": false },
-          { "text": "Sign F13 'Lane choice'", "is_correct": false }
+          {
+            "text": "Sign F5 'Motorway start'",
+            "is_correct": true
+          },
+          {
+            "text": "Sign F9 'Expressway start'",
+            "is_correct": false
+          },
+          {
+            "text": "Sign F13 'Lane choice'",
+            "is_correct": false
+          }
         ],
         "explanation": "F5 and F7 form a pair: F5 marks the start and F7 the end of the motorway."
       },
       "FR": {
         "question": "Quel panneau marque le début de l'autoroute qui se termine avec le panneau F7 ?",
         "choices": [
-          { "text": "Panneau F5 « Début d'autoroute »", "is_correct": true },
-          { "text": "Panneau F9 « Début de route pour automobiles »", "is_correct": false },
-          { "text": "Panneau F13 « Choix de voie »", "is_correct": false }
+          {
+            "text": "Panneau F5 « Début d'autoroute »",
+            "is_correct": true
+          },
+          {
+            "text": "Panneau F9 « Début de route pour automobiles »",
+            "is_correct": false
+          },
+          {
+            "text": "Panneau F13 « Choix de voie »",
+            "is_correct": false
+          }
         ],
         "explanation": "F5 et F7 forment une paire: F5 marque le début et F7 la fin de l'autoroute."
       },
@@ -284,7 +314,10 @@
             "text": "120 كم/س لأنك تغادر الطريق السريع ولا تزال بسرعة مرتفعة",
             "is_correct": false
           },
-          { "text": "90 كم/س لأنك الآن على طريق محلي", "is_correct": false }
+          {
+            "text": "90 كم/س لأنك الآن على طريق محلي",
+            "is_correct": false
+          }
         ],
         "explanation": "تبدأ قواعد المنطقة المبنية عند F1b. ويُحدد الحد الدقيق إقليميًا وقد تعدله لوحة سرعة، بينما تنتهي قواعد سرعة الطريق السريع عند F7."
       }
@@ -362,7 +395,10 @@
             "text": "حافظ على السرعة حتى العلامة المرورية بالضبط ثم افرمل بشدة",
             "is_correct": false
           },
-          { "text": "سر على حارة الطوارئ لتفرمل بهدوء", "is_correct": false }
+          {
+            "text": "سر على حارة الطوارئ لتفرمل بهدوء",
+            "is_correct": false
+          }
         ],
         "explanation": "ابدأ بتقليل سرعتك في الوقت المناسب حتى تنضم بأمان إلى الطريق المتصل وتلتزم بالحد المطبق."
       }
@@ -457,60 +493,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Na bord F7 (einde autosnelweg): mogen fietsers nu de weg gebruiken als er geen verbodsbord staat?",
+        "question": "Mogen fietsers na F7 een gewone weg gebruiken als geen ander bord of wegtype hun toegang verbiedt?",
         "choices": [
           {
-            "text": "Ja, zodra de autosnelweg eindigt gelden de normale regels en zijn fietsers opnieuw toegestaan op gewone wegen",
+            "text": "Ja, op een gewone weg mogen zij rijden volgens de algemene regels als geen andere beperking geldt",
             "is_correct": true
           },
           {
-            "text": "Nee, fietsers blijven nog 1 km verboden na het einde van de autosnelweg als veiligheidsmaatregel",
+            "text": "Nee, F7 houdt fietsers ook na het einde van de autosnelweg verboden",
             "is_correct": false
           }
         ],
-        "explanation": "Op de autosnelweg zelf zijn fietsers verboden. Zodra F7 de snelweg afsluit mogen fietsers de weg gebruiken tenzij een specifiek verbodsbord dit verbiedt."
+        "explanation": "F7 beëindigt het autosnelwegregime. Of fietsers daarna toegang hebben, hangt af van het type volgende weg en alle andere verkeersborden; op een gewone weg zonder verbod zijn zij toegelaten."
       },
       "EN": {
-        "question": "After sign F7 (end of motorway): may cyclists use the road if there is no prohibition sign?",
+        "question": "After F7, may cyclists use an ordinary road if no other sign or road type prohibits their access?",
         "choices": [
           {
-            "text": "Yes, once the motorway ends normal rules apply and cyclists are again allowed on ordinary roads",
+            "text": "Yes, they may use an ordinary road under the general rules where no other restriction applies",
             "is_correct": true
           },
           {
-            "text": "No, cyclists remain prohibited for 1 km after the end of the motorway as a safety measure",
+            "text": "No, F7 keeps cyclists prohibited even after the motorway ends",
             "is_correct": false
           }
         ],
-        "explanation": "On the motorway itself cyclists are forbidden. Once F7 closes the motorway cyclists may use the road unless a specific prohibition sign forbids it."
+        "explanation": "F7 ends the motorway regime. Cyclist access then depends on the next road type and every other sign; they are admitted on an ordinary road without a prohibition."
       },
       "FR": {
-        "question": "Après le panneau F7 (fin d'autoroute), les cyclistes peuvent-ils utiliser la route en l'absence de panneau d'interdiction ?",
+        "question": "Après F7, les cyclistes peuvent-ils emprunter une route ordinaire si aucun autre signal ou type de route ne leur interdit l'accès ?",
         "choices": [
           {
-            "text": "Oui, dès que l'autoroute se termine, les règles ordinaires s'appliquent et les cyclistes sont admis si aucune interdiction ne l'empêche",
+            "text": "Oui, ils peuvent emprunter une route ordinaire selon les règles générales si aucune autre restriction ne s'applique",
             "is_correct": true
           },
           {
-            "text": "Non, les cyclistes restent interdits pendant 1 km après la fin de l'autoroute par mesure de sécurité",
+            "text": "Non, F7 maintient l'interdiction des cyclistes après la fin de l'autoroute",
             "is_correct": false
           }
         ],
-        "explanation": "Les cyclistes sont interdits sur l'autoroute. Après F7, ils peuvent utiliser la route ordinaire sauf si une signalisation particulière l'interdit."
+        "explanation": "F7 met fin au régime de l'autoroute. L'accès des cyclistes dépend ensuite du type de route suivante et de tous les autres signaux; ils sont admis sur une route ordinaire sans interdiction."
       },
       "AR": {
-        "question": "بعد علامة مرورية F7 (نهاية الطريق السريع): هل يمكن للدراجين استخدام الطريق إذا لم تكن هناك علامة مرورية حظر؟",
+        "question": "بعد F7، هل يجوز لراكبي الدراجات استخدام طريق عادي إذا لم تمنعهم علامة أخرى أو نوع الطريق؟",
         "choices": [
           {
-            "text": "نعم بمجرد انتهاء الطريق السريع تسري القواعد العادية ويُسمح للدراجين مجدداً على الطرق العادية",
+            "text": "نعم، يجوز لهم استخدام طريق عادي وفق القواعد العامة عند عدم وجود قيد آخر",
             "is_correct": true
           },
           {
-            "text": "لا يبقى الدراجون محظورين لمسافة 1 كم بعد نهاية الطريق السريع كإجراء أمني",
+            "text": "لا، تبقي F7 راكبي الدراجات ممنوعين حتى بعد نهاية الطريق السيار",
             "is_correct": false
           }
         ],
-        "explanation": "على الطريق السريع نفسه يُحظر الدراجون. بمجرد إغلاق F7 للطريق السريع يمكن للدراجين استخدام الطريق ما لم تحظر ذلك علامة مرورية حظر محددة."
+        "explanation": "تنهي F7 نظام الطريق السيار. وبعدها يعتمد دخول راكبي الدراجات على نوع الطريق التالي وجميع العلامات الأخرى؛ ويُسمح لهم على طريق عادي بلا حظر."
       }
     }
   },
@@ -522,60 +558,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U nadert F7 aan de toegelaten autosnelwegsnelheid. Mag u het bord passeren zonder uw snelheid aan de aansluitende weg aan te passen?",
+        "question": "U nadert F7 met autosnelwegsnelheid en verderop begint een lagere limiet. Mag u wachten met vertragen tot na het begin van die lagere limiet?",
         "choices": [
           {
-            "text": "Nee, u moet uw snelheid verminderen voor F7 zodat u bij het passeren aan de limiet van de aansluitende weg voldoet",
+            "text": "Nee, vertraag tijdig zodat u aan de lagere limiet voldoet vanaf het punt waar die begint",
             "is_correct": true
           },
           {
-            "text": "Ja, u mag pas remmen nadat u het einde-bord passeert",
+            "text": "Ja, F7 geeft u altijd nog 500 meter om uw snelheid aan te passen",
             "is_correct": false
           }
         ],
-        "explanation": "U moet uw snelheid aanpassen aan de komende weg voordat u bord F7 passeert. Te snel doorrijden voorbij F7 leidt tot een snelheidsovertreding."
+        "explanation": "F7 stelt zelf geen nieuwe snelheid vast. Zodra de lagere limiet van de volgende weg of een verkeersbord begint, moet u eraan voldoen; bereid die overgang vooraf veilig voor."
       },
       "EN": {
-        "question": "You approach F7 at the permitted motorway speed. May you pass the sign without adapting your speed to the connecting road?",
+        "question": "You approach F7 at motorway speed and a lower limit begins farther ahead. May you wait to slow down until after that lower limit starts?",
         "choices": [
           {
-            "text": "No, you must reduce your speed before F7 so that you comply with the limit of the connecting road when passing",
+            "text": "No, slow in good time so that you comply from the point where the lower limit begins",
             "is_correct": true
           },
           {
-            "text": "Yes, you may only brake after passing the end sign",
+            "text": "Yes, F7 always gives you another 500 metres to adapt",
             "is_correct": false
           }
         ],
-        "explanation": "You must adjust your speed to the upcoming road before passing sign F7. Driving too fast beyond F7 results in a speeding offence."
+        "explanation": "F7 itself sets no new speed. You must comply from the point where the following road's lower limit or a speed sign begins, and should prepare for that transition safely in advance."
       },
       "FR": {
-        "question": "Vous approchez de F7 à la vitesse autorisée sur l'autoroute. Pouvez-vous franchir le panneau sans adapter votre vitesse à la route de raccordement ?",
+        "question": "Vous approchez de F7 à la vitesse d'autoroute et une limite inférieure commence plus loin. Pouvez-vous attendre d'avoir dépassé le début de cette limite pour ralentir ?",
         "choices": [
           {
-            "text": "Non, vous devez réduire votre vitesse avant F7 afin de respecter la limite de la route de raccordement lors du passage",
+            "text": "Non, ralentissez à temps afin de respecter la limite dès l'endroit où elle commence",
             "is_correct": true
           },
           {
-            "text": "Oui, vous ne pouvez freiner qu'après avoir dépassé le panneau de fin",
+            "text": "Oui, F7 vous laisse toujours encore 500 mètres pour vous adapter",
             "is_correct": false
           }
         ],
-        "explanation": "Vous devez adapter votre vitesse à la route à venir avant de dépasser F7. Rouler trop vite après F7 constitue une infraction."
+        "explanation": "F7 ne fixe lui-même aucune nouvelle vitesse. Vous devez respecter la limite inférieure de la route suivante ou d'un signal dès son point de départ et préparer la transition en sécurité."
       },
       "AR": {
-        "question": "تقترب من F7 بسرعة مسموح بها على الطريق السريع. هل يجوز عبور العلامة من دون ضبط السرعة وفق الطريق المتصل؟",
+        "question": "تقترب من F7 بسرعة الطريق السيار ويبدأ حد أقل لاحقًا. هل يجوز تأخير التخفيف إلى ما بعد بداية الحد الأقل؟",
         "choices": [
           {
-            "text": "لا، يجب تقليل سرعتك قبل F7 حتى تلتزم بحد الطريق المتصل عند العبور",
+            "text": "لا، خفف في وقت مناسب كي تلتزم منذ النقطة التي يبدأ عندها الحد الأقل",
             "is_correct": true
           },
           {
-            "text": "نعم يمكنك الفرملة فقط بعد تجاوز علامة مرورية النهاية",
+            "text": "نعم، تمنحك F7 دائمًا 500 متر إضافي للتكيف",
             "is_correct": false
           }
         ],
-        "explanation": "يجب ضبط سرعتك وفق الطريق القادم قبل عبور F7. فالقيادة بسرعة أعلى من الحد بعد F7 تُشكّل مخالفة."
+        "explanation": "لا تحدد F7 بذاتها سرعة جديدة. يجب الالتزام من النقطة التي يبدأ عندها الحد الأقل للطريق التالي أو علامة السرعة، والاستعداد للانتقال بأمان قبلها."
       }
     }
   }
