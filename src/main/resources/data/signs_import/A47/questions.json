@@ -10,77 +10,76 @@
         "question": "Wat betekent dit verkeersbord?",
         "choices": [
           {
-            "text": "Overweg met meerdere sporen",
+            "text": "Overweg met twee of meer sporen",
             "is_correct": true
           },
           {
-            "text": "Overweg voor één spoor.",
+            "text": "Overweg met één spoor",
             "is_correct": false
           },
           {
-            "text": "Verbod om de overweg te passeren.",
+            "text": "Kruising met sporen in de rijbaan",
             "is_correct": false
           }
         ],
-        "explanation": "A47 geeft een spoorwegovergang met meerdere sporen aan die zich op deze exacte plaats bevindt."
+        "explanation": "A47 is het Sint-Andrieskruis voor een overweg met twee of meer sporen en wordt aan of in de onmiddellijke nabijheid van de overweg geplaatst."
       },
       "EN": {
         "question": "What does this traffic sign mean?",
         "choices": [
           {
-            "text": "Level crossing with multiple tracks",
+            "text": "Level crossing with two or more tracks",
             "is_correct": true
           },
           {
-            "text": "Level crossing with one track.",
+            "text": "Level crossing with one track",
             "is_correct": false
           },
           {
-            "text": "Prohibition to use the level crossing.",
+            "text": "Crossing with tracks laid in the carriageway",
             "is_correct": false
           }
         ],
-        "explanation": "A47 indicates a level crossing with multiple tracks at this exact location."
+        "explanation": "A47 is the Saint Andrew's cross for a level crossing with two or more tracks and is placed at or in the immediate vicinity of the crossing."
       },
       "FR": {
-        "question": "Que signifie ce panneau de signalisation ?",
+        "question": "Que signifie ce signal routier ?",
         "choices": [
           {
-            "text": "Passage à niveau à plusieurs voies",
+            "text": "Passage à niveau à deux ou plusieurs voies",
             "is_correct": true
           },
           {
-            "text": "Passage à niveau à une seule voie.",
+            "text": "Passage à niveau à voie unique",
             "is_correct": false
           },
           {
-            "text": "Interdiction d'utiliser le passage à niveau.",
+            "text": "Croisement avec des voies ferrées établies sur la chaussée",
             "is_correct": false
           }
         ],
-        "explanation": "A47 indique un passage à niveau à plusieurs voies situé à cette position exacte."
+        "explanation": "A47 est la croix de Saint-André pour un passage à niveau à deux ou plusieurs voies et se place au droit ou à proximité immédiate du passage."
       },
       "AR": {
-        "question": "ما معنى هذه العلامة المرورية؟",
+        "question": "ماذا تعني علامة المرور هذه؟",
         "choices": [
           {
-            "text": "معبر سكة حديد بعدة مسارات",
+            "text": "معبر سكة حديد بمسارين أو أكثر",
             "is_correct": true
           },
           {
-            "text": "معبر سكة حديد ذو مسار واحد.",
+            "text": "معبر سكة حديد بمسار واحد",
             "is_correct": false
           },
           {
-            "text": "حظر استخدام معبر سكة حديد.",
+            "text": "تقاطع مع مسارات حديدية ممتدة داخل الطريق",
             "is_correct": false
           }
         ],
-        "explanation": "تشير A47 إلى معبر سكة حديد بعدة مسارات يقع في هذا الموضع تحديداً."
+        "explanation": "A47 هي صليب القديس أندرو لمعبر سكة حديد بمسارين أو أكثر، وتوضع عند المعبر أو في جواره المباشر."
       }
     }
   },
-
   {
     "question_id": "A47_Q02",
     "type": "WHICH_SIGN",
@@ -332,76 +331,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Welk rijgedrag is correct bij een overweg voor twee of meer sporen?",
+        "question": "Een trein is gepasseerd op een overweg met meerdere sporen. Wat controleert u vóór u verder rijdt?",
         "choices": [
           {
-            "text": "Volledig stoppen, alle sporen in beide richtingen controleren en pas rijden als alle sporen vrij zijn.",
+            "text": "Dat de seinen doorgang toelaten en dat op geen van de sporen nog een trein nadert",
             "is_correct": true
           },
           {
-            "text": "Stoppen na de eerste trein en dan direct rijden.",
+            "text": "Alleen het spoor waarop de eerste trein reed",
             "is_correct": false
           },
           {
-            "text": "Langzaam rijden en alleen stoppen als u een trein ziet.",
+            "text": "Niets; na één trein is de overweg altijd vrij",
             "is_correct": false
           }
         ],
-        "explanation": "Bij een overweg met meerdere sporen doet u er goed aan volledig te stoppen en elk spoor in beide richtingen te controleren. Rijd pas verder wanneer alle sporen volledig vrij zijn."
+        "explanation": "Bij meerdere sporen kan nog een trein volgen. Wacht zolang rode lichten, slagbomen of het geluidssein de doorgang verbieden en controleer alle sporen wanneer u zelf moet beoordelen of oversteken veilig is."
       },
       "EN": {
-        "question": "What driving behaviour is correct at a level crossing with two or more tracks?",
+        "question": "A train has passed at a multi-track level crossing. What do you check before proceeding?",
         "choices": [
           {
-            "text": "Stop completely, check all tracks in both directions, and proceed only when all tracks are clear.",
+            "text": "That the signals permit passage and no train is approaching on any track",
             "is_correct": true
           },
           {
-            "text": "Stop after the first train and then drive immediately.",
+            "text": "Only the track used by the first train",
             "is_correct": false
           },
           {
-            "text": "Drive slowly and only stop if you see a train.",
+            "text": "Nothing; the crossing is always clear after one train",
             "is_correct": false
           }
         ],
-        "explanation": "At a level crossing with two or more tracks, you should stop completely and check each track in both directions. Proceed only when every track is fully clear."
+        "explanation": "At a multi-track crossing another train may follow. Wait while red lights, barriers or the audible signal prohibit passage, and check all tracks where you must judge whether crossing is safe."
       },
       "FR": {
-        "question": "Quel comportement de conduite est correct à un passage à niveau à deux voies ou plus ?",
+        "question": "Un train est passé à un passage à niveau comportant plusieurs voies. Que vérifiez-vous avant de repartir ?",
         "choices": [
           {
-            "text": "S'arrêter complètement, vérifier toutes les voies dans les deux sens et ne s'engager que lorsque toutes les voies sont libres.",
+            "text": "Que les signaux autorisent le passage et qu'aucun train n'approche sur aucune voie",
             "is_correct": true
           },
           {
-            "text": "S'arrêter après le premier train et partir immédiatement.",
+            "text": "Uniquement la voie empruntée par le premier train",
             "is_correct": false
           },
           {
-            "text": "Rouler lentement et ne s'arrêter que si vous voyez un train.",
+            "text": "Rien; le passage est toujours libre après un train",
             "is_correct": false
           }
         ],
-        "explanation": "À un passage à niveau à deux voies ou plus, vous devriez vous arrêter complètement et vérifier chaque voie dans les deux sens. Ne vous engagez que lorsque toutes les voies sont entièrement libres."
+        "explanation": "À un passage à plusieurs voies, un autre train peut suivre. Attendez tant que les feux rouges, les barrières ou le signal sonore interdisent le passage et contrôlez toutes les voies lorsque vous devez vous-même évaluer si la traversée est sûre."
       },
       "AR": {
-        "question": "ما هو سلوك القيادة الصحيح عند معبر سكة حديد بمسارين أو أكثر؟",
+        "question": "مر قطار عند معبر متعدد المسارات. ما الذي تتحقق منه قبل المتابعة؟",
         "choices": [
           {
-            "text": "توقف تماماً، تحقق من جميع المسارات في كلا الاتجاهين، وتابع فقط عندما تكون جميع المسارات خالية.",
+            "text": "أن الإشارات تسمح بالمرور وألا يقترب قطار على أي مسار",
             "is_correct": true
           },
           {
-            "text": "توقف بعد القطار الأول ثم انطلق مباشرة.",
+            "text": "المسار الذي استخدمه القطار الأول فقط",
             "is_correct": false
           },
           {
-            "text": "سِر ببطء وتوقف فقط إذا رأيت قطاراً.",
+            "text": "لا شيء؛ يكون المعبر خاليًا دائمًا بعد قطار واحد",
             "is_correct": false
           }
         ],
-        "explanation": "عند معبر سكة حديد بمسارين أو أكثر ينبغي أن تتوقف تماماً وأن تتحقق من كل مسار في كلا الاتجاهين. لا تتابع السير إلا عندما تكون جميع المسارات خالية تماماً."
+        "explanation": "قد يتبع قطار آخر عند المعبر متعدد المسارات. انتظر ما دامت الأضواء الحمراء أو الحواجز أو الإشارة الصوتية تمنع المرور، وافحص كل المسارات عندما يتعين عليك تقدير أمان العبور بنفسك."
       }
     }
   },
@@ -413,76 +412,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Op welke afstand van het gevaar wordt dit bord geplaatst?",
+        "question": "Waar wordt dit Sint-Andrieskruis geplaatst?",
         "choices": [
           {
-            "text": "Ter hoogte van het gevaar zelf, bij de overweg.",
+            "text": "Aan of in de onmiddellijke nabijheid van de overweg",
             "is_correct": true
           },
           {
-            "text": "Ongeveer 150 meter voor het gevaar.",
+            "text": "Normaal op ongeveer 150 meter van de overweg",
             "is_correct": false
           },
           {
-            "text": "Ongeveer 500 meter voor het gevaar.",
+            "text": "Altijd op ongeveer 500 meter",
             "is_correct": false
           }
         ],
-        "explanation": "Deze markering is geen vooraankondiging op afstand. Ze staat bij de overweg zelf en duidt precies de plaats van het gevaar aan."
+        "explanation": "A45 en A47 zijn uitzonderingen op de normale plaatsingsafstand: ze worden aan of in de onmiddellijke nabijheid van de overweg geplaatst."
       },
       "EN": {
-        "question": "At what distance from the hazard is this sign placed?",
+        "question": "Where is this Saint Andrew's cross placed?",
         "choices": [
           {
-            "text": "At the hazard itself, at the level crossing.",
+            "text": "At or in the immediate vicinity of the level crossing",
             "is_correct": true
           },
           {
-            "text": "About 150 meters before the hazard.",
+            "text": "Normally approximately 150 metres before the crossing",
             "is_correct": false
           },
           {
-            "text": "About 500 meters before the hazard.",
+            "text": "Always approximately 500 metres away",
             "is_correct": false
           }
         ],
-        "explanation": "This marker is not an advance warning sign placed at a distance. It stands at the level crossing itself and marks the exact place of the hazard."
+        "explanation": "A45 and A47 are exceptions to the normal placement distance: they are placed at or in the immediate vicinity of the level crossing."
       },
       "FR": {
-        "question": "À quelle distance du danger ce panneau est-il placé ?",
+        "question": "Où cette croix de Saint-André est-elle placée ?",
         "choices": [
           {
-            "text": "À l'endroit même du danger, au passage à niveau.",
+            "text": "Au droit ou à proximité immédiate du passage à niveau",
             "is_correct": true
           },
           {
-            "text": "À environ 150 mètres avant le danger.",
+            "text": "Normalement à environ 150 mètres du passage",
             "is_correct": false
           },
           {
-            "text": "À environ 500 mètres avant le danger.",
+            "text": "Toujours à environ 500 mètres",
             "is_correct": false
           }
         ],
-        "explanation": "Ce marquage n'est pas un panneau d'annonce placé à distance. Il se trouve au passage à niveau lui-même et indique l'endroit exact du danger."
+        "explanation": "A45 et A47 font exception à la distance de placement normale : ils sont placés au droit ou à proximité immédiate du passage à niveau."
       },
       "AR": {
-        "question": "على أي مسافة من الخطر تُوضع هذه العلامة المرورية؟",
+        "question": "أين يوضع صليب القديس أندرو هذا؟",
         "choices": [
           {
-            "text": "عند موقع الخطر نفسه، أي عند معبر سكة حديد.",
+            "text": "عند معبر السكة الحديدية أو في جواره المباشر",
             "is_correct": true
           },
           {
-            "text": "على بعد نحو 150 متراً قبل الخطر.",
+            "text": "عادةً على بعد نحو 150 مترًا من المعبر",
             "is_correct": false
           },
           {
-            "text": "على بعد نحو 500 متر قبل الخطر.",
+            "text": "دائمًا على بعد نحو 500 متر",
             "is_correct": false
           }
         ],
-        "explanation": "هذه العلامة ليست علامة تحذير مسبق توضع على مسافة. بل توضع عند معبر سكة حديد نفسه وتدل على مكان الخطر بدقة."
+        "explanation": "تمثل A45 وA47 استثناءً من مسافة الوضع العادية، إذ توضعان عند معبر السكة الحديدية أو في جواره المباشر."
       }
     }
   },
@@ -559,7 +558,7 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Mag u stoppen op de overweg om anderen te laten passeren?",
+        "question": "Mag u een overweg oprijden wanneer het verkeer voor u zo vaststaat dat u waarschijnlijk op de sporen moet stoppen?",
         "choices": [
           {
             "text": "Nee",
@@ -570,10 +569,10 @@
             "is_correct": false
           }
         ],
-        "explanation": "Stoppen op een overweg is absoluut verboden en levensgevaarlijk. Rijd alleen de overweg op wanneer de uitgang vrij is en u zonder te stoppen kunt doorrijden."
+        "explanation": "Nee. Een bestuurder mag een overweg niet oprijden wanneer het verkeer zo belemmerd is dat hij waarschijnlijk op de overweg zou moeten stoppen."
       },
       "EN": {
-        "question": "Is it allowed to stop on the level crossing to let others pass?",
+        "question": "May you enter a level crossing when traffic ahead is so congested that you would probably have to stop on the tracks?",
         "choices": [
           {
             "text": "No",
@@ -584,10 +583,10 @@
             "is_correct": false
           }
         ],
-        "explanation": "Stopping on a level crossing is absolutely prohibited and life-threatening. Only enter the level crossing when the exit is clear and you can continue without stopping."
+        "explanation": "No. A driver must not enter a level crossing when traffic is so obstructed that the driver would probably have to stop on it."
       },
       "FR": {
-        "question": "Est-il permis de s'arrêter sur le passage à niveau pour laisser passer les autres ?",
+        "question": "Pouvez-vous vous engager sur un passage à niveau lorsque la circulation devant vous est tellement encombrée que vous devrez probablement vous arrêter sur les voies ?",
         "choices": [
           {
             "text": "Non",
@@ -598,10 +597,10 @@
             "is_correct": false
           }
         ],
-        "explanation": "S'arrêter sur un passage à niveau est absolument interdit et extrêmement dangereux. N'entrez sur le passage que lorsque la sortie est libre et que vous pouvez continuer sans vous arrêter."
+        "explanation": "Non. Un conducteur ne peut pas s'engager sur un passage à niveau lorsque la circulation est si encombrée qu'il devra probablement s'y arrêter."
       },
       "AR": {
-        "question": "هل يُسمح بالتوقف على معبر سكة حديد للسماح للآخرين بالمرور؟",
+        "question": "هل يجوز دخول معبر سكة حديد عندما يكون الازدحام أمامك شديدًا إلى حد أنك ستضطر غالبًا للتوقف على المسارات؟",
         "choices": [
           {
             "text": "لا",
@@ -612,7 +611,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "التوقف على معبر سكة حديد محظور تماماً وشديد الخطورة. لا تدخل المعبر إلا عندما يكون المخرج خالياً ويمكنك المتابعة دون توقف."
+        "explanation": "لا. لا يجوز للسائق دخول معبر سكة حديد عندما تكون حركة المرور معرقلة بحيث يُحتمل أن يضطر إلى التوقف عليه."
       }
     }
   }

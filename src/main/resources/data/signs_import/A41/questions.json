@@ -80,7 +80,6 @@
       }
     }
   },
-
   {
     "question_id": "A41_Q02",
     "type": "WHICH_SIGN",
@@ -170,76 +169,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Welk gevaar kondigt dit bord aan?",
+        "question": "Welk specifiek gevaar kondigt A41 aan?",
         "choices": [
           {
-            "text": "Een trein kan de overweg kruisen; de slagbomen dalen en de lichten knipperen — u moet stoppen en wachten",
+            "text": "Een overweg met slagbomen waar een spoorvoertuig kan naderen",
             "is_correct": true
           },
           {
-            "text": "Gevaar van scheefzakking van de rijbaan door de trillingen van de trein",
+            "text": "Een beweegbare brug",
             "is_correct": false
           },
           {
-            "text": "Gevaar van elektrische kabels boven de rijbaan afkomstig van de spoorleiding",
+            "text": "Een tunnel met verkeerslichten",
             "is_correct": false
           }
         ],
-        "explanation": "Bij een spoorwegovergang met slagbomen is het gevaar dat een trein de overweg nadert of kruist. De slagbomen en knipperlichten zijn de waarschuwingssignalen. U mag nooit de rijbaan oprijden als de slagbomen dalen of de lichten knipperen."
+        "explanation": "A41 waarschuwt voor een overweg met slagbomen. Rijd de overweg niet op wanneer de slagbomen bewegen of gesloten zijn, de rode lichten knipperen of het geluidssein werkt."
       },
       "EN": {
-        "question": "What hazard does this sign announce?",
+        "question": "What specific hazard does A41 announce?",
         "choices": [
           {
-            "text": "A train may cross the level crossing; the barriers lower and the lights flash — you must stop and wait",
+            "text": "A level crossing with barriers where a rail vehicle may approach",
             "is_correct": true
           },
           {
-            "text": "Risk of road subsidence due to vibrations from the train",
+            "text": "A movable bridge",
             "is_correct": false
           },
           {
-            "text": "Risk of electric cables above the carriageway from the overhead rail line",
+            "text": "A tunnel with traffic lights",
             "is_correct": false
           }
         ],
-        "explanation": "At a level crossing with barriers the hazard is that a train is approaching or crossing. The barriers and flashing lights are the warning signals. You must never enter the carriageway when the barriers are lowering or the lights are flashing."
+        "explanation": "A41 warns of a level crossing with barriers. Do not enter when the barriers are moving or closed, red lights are flashing or the audible signal is operating."
       },
       "FR": {
-        "question": "Quel danger ce panneau annonce-t-il ?",
+        "question": "Quel danger précis A41 annonce-t-il ?",
         "choices": [
           {
-            "text": "Un train peut traverser le passage à niveau; les barrières s'abaissent et les feux clignotent — vous devez vous arrêter et attendre",
+            "text": "Un passage à niveau avec barrières où un véhicule sur rails peut approcher",
             "is_correct": true
           },
           {
-            "text": "Risque d'affaissement de la chaussée dû aux vibrations du train",
+            "text": "Un pont mobile",
             "is_correct": false
           },
           {
-            "text": "Risque de câbles électriques au-dessus de la chaussée provenant de la ligne aérienne ferroviaire",
+            "text": "Un tunnel avec signaux lumineux",
             "is_correct": false
           }
         ],
-        "explanation": "À un passage à niveau avec barrières, le danger est qu'un train approche ou traverse. Les barrières et les feux clignotants sont les signaux d'avertissement. Vous ne devez jamais vous engager sur la voie ferrée lorsque les barrières s'abaissent ou que les feux clignotent."
+        "explanation": "A41 avertit d'un passage à niveau avec barrières. Ne vous y engagez pas lorsque les barrières sont en mouvement ou fermées, que les feux rouges clignotent ou que le signal sonore fonctionne."
       },
       "AR": {
-        "question": "ما الخطر الذي يُحذّرك منه هذا اللوح عند تقاطع سككة حديدية بحواجز؟",
+        "question": "من أي خطر محدد تحذر A41؟",
         "choices": [
           {
-            "text": "قد يمر قطار عبر المعبر؛ تنزل الحواجز وتومض الأضواء — يجب التوقف والانتظار",
+            "text": "معبر سكة حديد مع حواجز قد تقترب منه مركبة تسير على السكة",
             "is_correct": true
           },
           {
-            "text": "خطر هبوط الطريق بسبب اهتزازات القطار",
+            "text": "جسر متحرك",
             "is_correct": false
           },
           {
-            "text": "خطر كابلات كهربائية فوق الطريق من خط السكة الحديدية العلوي",
+            "text": "نفق مع إشارات ضوئية",
             "is_correct": false
           }
         ],
-        "explanation": "عند معبر سكة حديد بحواجز، يكون الخطر أن قطاراً يقترب أو يمر عبر المعبر. الحواجز والأضواء الوامضة هي إشارات التحذير. يجب ألا تدخل المعبر أبداً حين تنزل الحواجز أو تومض الأضواء."
+        "explanation": "تحذر A41 من معبر سكة حديد مع حواجز. لا تدخل المعبر عندما تكون الحواجز متحركة أو مغلقة أو تومض الأضواء الحمراء أو تعمل الإشارة الصوتية."
       }
     }
   },
@@ -332,76 +331,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "De slagbomen zijn neergelaten en de lichten knipperen. U staat stil voor de overweg. Wanneer mag u doorrijden?",
+        "question": "De slagbomen zijn gesloten en de rode lichten of het geluidssein werken. Wanneer mag u verder rijden?",
         "choices": [
           {
-            "text": "Pas als de slagbomen volledig omhoog zijn EN de lichten gestopt zijn met knipperen; beide voorwaarden moeten vervuld zijn",
+            "text": "Pas wanneer de slagbomen volledig omhoog zijn, alle verbiedende licht- en geluidsseinen gestopt zijn en u de overweg veilig kunt vrijmaken",
             "is_correct": true
           },
           {
-            "text": "Zodra de trein gepasseerd is, ook al zijn de slagbomen nog niet volledig omhoog",
+            "text": "Zodra de slagbomen beginnen te stijgen",
             "is_correct": false
           },
           {
-            "text": "Zodra de slagbomen half omhoog zijn en er geen tweede trein zichtbaar is",
+            "text": "Zodra u zelf geen trein meer ziet",
             "is_correct": false
           }
         ],
-        "explanation": "U mag pas rijden als de slagbomen volledig zijn opgeheven EN de knipperlichten uitgedoofd zijn. Een tweede trein in de tegenovergestelde richting is mogelijk. Wacht tot alle signalen bevestigen dat de overweg vrij is."
+        "explanation": "Wacht totdat de slagbomen volledig omhoog zijn en de rode lichten en het geluidssein niet meer werken. Rijd pas op wanneer u de overweg zonder gevaar volledig kunt vrijmaken."
       },
       "EN": {
-        "question": "The barriers are down and the lights are flashing. You are stopped in front of the level crossing. When may you drive on?",
+        "question": "The barriers are closed and the red lights or audible signal are operating. When may you proceed?",
         "choices": [
           {
-            "text": "Only when the barriers are fully raised AND the lights have stopped flashing; both conditions must be met",
+            "text": "Only after the barriers are fully raised, all prohibitive light and audible signals have stopped, and you can clear the crossing safely",
             "is_correct": true
           },
           {
-            "text": "As soon as the train has passed, even if the barriers have not yet fully risen",
+            "text": "As soon as the barriers begin to rise",
             "is_correct": false
           },
           {
-            "text": "As soon as the barriers are half raised and no second train is visible",
+            "text": "As soon as you personally can no longer see a train",
             "is_correct": false
           }
         ],
-        "explanation": "You may only drive when the barriers are fully raised AND the flashing lights have gone out. A second train in the opposite direction is possible. Wait until all signals confirm the crossing is clear."
+        "explanation": "Wait until the barriers are fully raised and the red lights and audible signal have stopped. Enter only when you can clear the crossing completely and safely."
       },
       "FR": {
-        "question": "Les barrières sont abaissées et les feux clignotent. Vous êtes arrêté devant le passage à niveau. Quand pouvez-vous repartir ?",
+        "question": "Les barrières sont fermées et les feux rouges ou le signal sonore fonctionnent. Quand pouvez-vous repartir ?",
         "choices": [
           {
-            "text": "Seulement lorsque les barrières sont entièrement relevées ET que les feux ont cessé de clignoter; les deux conditions doivent être remplies",
+            "text": "Seulement lorsque les barrières sont entièrement relevées, que tous les signaux lumineux et sonores d'interdiction ont cessé et que vous pouvez dégager le passage en sécurité",
             "is_correct": true
           },
           {
-            "text": "Dès que le train est passé, même si les barrières ne sont pas encore entièrement relevées",
+            "text": "Dès que les barrières commencent à se relever",
             "is_correct": false
           },
           {
-            "text": "Dès que les barrières sont à moitié relevées et qu'aucun deuxième train n'est visible",
+            "text": "Dès que vous ne voyez personnellement plus de train",
             "is_correct": false
           }
         ],
-        "explanation": "Vous ne pouvez conduire que lorsque les barrières sont entièrement relevées ET que les feux clignotants se sont éteints. Un deuxième train dans la direction opposée est possible. Attendez que tous les signaux confirment que le passage est libre."
+        "explanation": "Attendez que les barrières soient entièrement relevées et que les feux rouges et le signal sonore aient cessé. Ne vous engagez que si vous pouvez dégager complètement le passage en sécurité."
       },
       "AR": {
-        "question": "الحواجز منخفضة والأضواء تومض. أنت متوقف أمام المعبر. متى يُسمح لك بالمواصلة؟",
+        "question": "الحواجز مغلقة والأضواء الحمراء أو الإشارة الصوتية تعمل. متى يجوز المتابعة؟",
         "choices": [
           {
-            "text": "فقط عندما ترتفع الحواجز بالكامل وتتوقف الأضواء عن الوميض؛ يجب استيفاء الشرطين معاً",
+            "text": "فقط بعد ارتفاع الحواجز بالكامل وتوقف كل إشارات المنع الضوئية والصوتية والقدرة على إخلاء المعبر بأمان",
             "is_correct": true
           },
           {
-            "text": "فور مرور القطار حتى لو لم ترتفع الحواجز بالكامل بعد",
+            "text": "بمجرد أن تبدأ الحواجز بالارتفاع",
             "is_correct": false
           },
           {
-            "text": "حالما ترتفع الحواجز إلى المنتصف ولا يُرى قطار ثانٍ",
+            "text": "بمجرد ألا ترى قطارًا بنفسك",
             "is_correct": false
           }
         ],
-        "explanation": "يمكنك القيادة فقط حين ترتفع الحواجز بالكامل وتنطفئ الأضواء الوامضة. قطار ثانٍ في الاتجاه المعاكس ممكن. انتظر حتى تؤكد جميع الإشارات أن المعبر خالٍ."
+        "explanation": "انتظر حتى ترتفع الحواجز بالكامل وتتوقف الأضواء الحمراء والإشارة الصوتية. ولا تدخل إلا إذا استطعت إخلاء المعبر بالكامل وبأمان."
       }
     }
   },
@@ -413,76 +412,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Uw voertuig valt stil op de spoorwegovergang. Wat doet u onmiddellijk?",
+        "question": "Uw voertuig valt stil op een overweg. Wat doet u eerst?",
         "choices": [
           {
-            "text": "Iedereen laten uitstappen, het voertuig van de spoorweg duwen indien mogelijk, 112 bellen en het noodnummer van de spoorwegen melden (bord bij de overweg)",
+            "text": "Iedereen onmiddellijk in veiligheid brengen en de sporen verlaten; daarna 1711 en zo nodig 112 bellen met de locatiegegevens op de overwegsticker",
             "is_correct": true
           },
           {
-            "text": "In het stilgevallen voertuig blijven en wachten op hulp van passerende bestuurders",
+            "text": "In het voertuig blijven wachten op technische bijstand",
             "is_correct": false
           },
           {
-            "text": "Het voertuig zelf proberen te starten en zo snel mogelijk van de overweg rijden",
+            "text": "Alleen de waarschuwingslichten inschakelen en niets melden",
             "is_correct": false
           }
         ],
-        "explanation": "Als uw voertuig op een spoorwegovergang stilstaat, is dit levensbedreigend. Iedereen moet onmiddellijk uitstappen en zo ver mogelijk van de overweg staan. Bel 112 en het noodnummer vermeld op het bord bij de overweg. Probeer het voertuig weg te duwen als dat veilig is."
+        "explanation": "Breng eerst iedereen in veiligheid en verlaat de sporen. Bel vervolgens Infrabel via 1711 om het treinverkeer te laten stilleggen en bel bij een noodsituatie ook 112. Geef de gegevens op de sticker aan de overweg door."
       },
       "EN": {
-        "question": "Your vehicle breaks down on the level crossing. What do you do immediately?",
+        "question": "Your vehicle breaks down on a level crossing. What do you do first?",
         "choices": [
           {
-            "text": "Get everyone out, push the vehicle off the railway if possible, call 112 and report the railway emergency number shown at the crossing",
+            "text": "Get everyone to safety and leave the tracks immediately; then call 1711 and, where necessary, 112 using the location details on the crossing sticker",
             "is_correct": true
           },
           {
-            "text": "Stay in the stationary vehicle and wait for help from passing drivers",
+            "text": "Stay in the vehicle and wait for roadside assistance",
             "is_correct": false
           },
           {
-            "text": "Try to restart the vehicle yourself and drive off the crossing as fast as possible",
+            "text": "Only switch on the hazard lights and report nothing",
             "is_correct": false
           }
         ],
-        "explanation": "If your vehicle breaks down on a level crossing this is life-threatening. Everyone must get out immediately and stand as far as possible from the crossing. Call 112 and the railway emergency number shown at the crossing. Try to push the vehicle away if it is safe to do so."
+        "explanation": "First get everyone to safety and leave the tracks. Then call Infrabel on 1711 so train traffic can be stopped and, in an emergency, also call 112. Give the details shown on the crossing sticker."
       },
       "FR": {
-        "question": "Votre véhicule tombe en panne sur le passage à niveau. Que faites-vous immédiatement ?",
+        "question": "Votre véhicule tombe en panne sur un passage à niveau. Que faites-vous d'abord ?",
         "choices": [
           {
-            "text": "Faire sortir tout le monde, pousser le véhicule hors des voies si possible, appeler le 112 et signaler le numéro d'urgence ferroviaire indiqué au passage à niveau",
+            "text": "Mettre immédiatement tout le monde en sécurité et quitter les voies; appeler ensuite le 1711 et, si nécessaire, le 112 avec les données de localisation de l'autocollant du passage",
             "is_correct": true
           },
           {
-            "text": "Rester dans le véhicule immobilisé et attendre l'aide de conducteurs qui passent",
+            "text": "Rester dans le véhicule et attendre le dépannage",
             "is_correct": false
           },
           {
-            "text": "Essayer de redémarrer le véhicule soi-même et quitter le passage à niveau le plus vite possible",
+            "text": "Allumer uniquement les feux de détresse sans rien signaler",
             "is_correct": false
           }
         ],
-        "explanation": "Si votre véhicule tombe en panne sur un passage à niveau, c'est une situation mettant la vie en danger. Tout le monde doit sortir immédiatement et se tenir le plus loin possible du passage. Appelez le 112 et le numéro d'urgence indiqué sur le panneau au passage à niveau. Essayez de pousser le véhicule en dehors des rails si cela est possible en toute sécurité."
+        "explanation": "Mettez d'abord tout le monde en sécurité et quittez les voies. Appelez ensuite Infrabel au 1711 pour faire interrompre le trafic ferroviaire et, en cas d'urgence, appelez aussi le 112. Communiquez les données figurant sur l'autocollant du passage."
       },
       "AR": {
-        "question": "تعطّلت مركبتك على معبر سكة حديد. ماذا تفعل فوراً؟",
+        "question": "تعطلت مركبتك على معبر سكة حديد. ماذا تفعل أولًا؟",
         "choices": [
           {
-            "text": "إخراج الجميع ودفع المركبة بعيداً عن السكة إن أمكن والاتصال بـ 112 ثم برقم الطوارئ الخاص بالسكك الحديدية الموجود عند المعبر",
+            "text": "إخراج الجميع فورًا إلى مكان آمن ومغادرة السكة، ثم الاتصال بـ1711 وعند الضرورة بـ112 مع بيانات الموقع على ملصق المعبر",
             "is_correct": true
           },
           {
-            "text": "البقاء في المركبة المتوقفة وانتظار المساعدة من السائقين المارّين",
+            "text": "البقاء في المركبة وانتظار المساعدة الفنية",
             "is_correct": false
           },
           {
-            "text": "محاولة إعادة تشغيل المركبة بنفسك ومغادرة المعبر بأسرع ما يمكن",
+            "text": "تشغيل أضواء الخطر فقط من دون الإبلاغ",
             "is_correct": false
           }
         ],
-        "explanation": "تعطّل مركبتك على معبر سكة حديد وضع يهدد الحياة. يجب على الجميع الخروج فوراً والوقوف بعيداً قدر الإمكان عن المعبر. اتصل بـ 112 ثم برقم الطوارئ الخاص بالسكك الحديدية الموجود عند المعبر. حاول دفع المركبة بعيداً عن السكة إذا كان ذلك آمناً."
+        "explanation": "أخرج الجميع أولًا إلى مكان آمن وغادر السكة. ثم اتصل بإنفرابل على 1711 لإيقاف حركة القطارات، واتصل أيضًا بـ112 في حالة الطوارئ، وقدم بيانات ملصق المعبر."
       }
     }
   },
@@ -559,60 +558,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Mag u om de gesloten slagbomen heen zigzaggen als u haast heeft en er geen trein zichtbaar is?",
+        "question": "Mag u gesloten of dalende slagbomen omzeilen wanneer u geen trein ziet?",
         "choices": [
           {
-            "text": "Neen, de slagbomen omzeilen is uiterst gevaarlijk, wettelijk verboden en kan leiden tot een fatale botsing met een trein",
+            "text": "Nee",
             "is_correct": true
           },
           {
-            "text": "Ja, als er duidelijk geen trein in zicht is en u absoluut moet doorrijden",
+            "text": "Ja",
             "is_correct": false
           }
         ],
-        "explanation": "Het is absoluut verboden de slagbomen te omzeilen. Treinen naderen snel en stil; 'geen trein zichtbaar' biedt geen zekerheid. Bovendien kan een tweede trein vanuit de andere richting komen. Dit is een ernstige overtreding die tot de zwaarste verkeersboetes en zelfs rijontzegging kan leiden."
+        "explanation": "Nee. U mag een overweg niet oprijden wanneer de slagbomen bewegen of gesloten zijn, de rode knipperlichten branden of het geluidssein werkt."
       },
       "EN": {
-        "question": "Is it allowed to zigzag around closed barriers if you are in a hurry and no train is visible?",
+        "question": "May you go around closed or lowering barriers when no train is visible?",
         "choices": [
           {
-            "text": "No, bypassing the barriers is extremely dangerous, legally prohibited and can lead to a fatal collision with a train",
+            "text": "No",
             "is_correct": true
           },
           {
-            "text": "Yes, if there is clearly no train in sight and you absolutely must get through",
+            "text": "Yes",
             "is_correct": false
           }
         ],
-        "explanation": "It is absolutely prohibited to bypass the barriers. Trains approach quickly and quietly; 'no train visible' provides no certainty. Moreover a second train may come from the other direction. This is a serious offence that can lead to the heaviest traffic fines and even disqualification from driving."
+        "explanation": "No. You must not enter a level crossing when the barriers are moving or closed, the red lights are flashing or the audible signal is operating."
       },
       "FR": {
-        "question": "Est-il permis de zigzaguer autour de barrières fermées si vous êtes pressé et qu'aucun train n'est visible ?",
+        "question": "Pouvez-vous contourner des barrières fermées ou en mouvement lorsqu'aucun train n'est visible ?",
         "choices": [
           {
-            "text": "Non, contourner les barrières est extrêmement dangereux, légalement interdit et peut entraîner une collision fatale avec un train",
+            "text": "Non",
             "is_correct": true
           },
           {
-            "text": "Oui, s'il n'y a clairement pas de train en vue et que vous devez absolument passer",
+            "text": "Oui",
             "is_correct": false
           }
         ],
-        "explanation": "Il est absolument interdit de contourner les barrières. Les trains approchent rapidement et silencieusement; 'aucun train visible' ne garantit rien. De plus, un deuxième train peut venir de l'autre direction. Il s'agit d'une infraction grave pouvant entraîner les amendes les plus lourdes et même la suspension du permis de conduire."
+        "explanation": "Non. Vous ne pouvez pas vous engager sur un passage à niveau lorsque les barrières sont en mouvement ou fermées, que les feux rouges clignotent ou que le signal sonore fonctionne."
       },
       "AR": {
-        "question": "هل يُسمح بالتعرّج حول الحواجز المغلقة إذا كنت مستعجلاً ولم يكن هناك قطار مرئي؟",
+        "question": "هل يجوز الالتفاف حول حواجز مغلقة أو نازلة عندما لا ترى قطارًا؟",
         "choices": [
           {
-            "text": "لا، تجاوز الحواجز بالغ الخطورة ومحظور قانوناً وقد يؤدي إلى تصادم مميت مع قطار",
+            "text": "لا",
             "is_correct": true
           },
           {
-            "text": "نعم، إذا كان لا يوجد قطار مرئي بوضوح وكنت مضطراً تماماً للمرور",
+            "text": "نعم",
             "is_correct": false
           }
         ],
-        "explanation": "يُحظر تجاوز الحواجز حظراً مطلقاً. تقترب القطارات بسرعة وصمت؛ 'لا يوجد قطار مرئي' لا يمنح أي ضمان. علاوة على ذلك قد يأتي قطار ثانٍ من الاتجاه الآخر. هذه مخالفة خطيرة قد تفضي إلى أثقل الغرامات المرورية وحتى سحب رخصة القيادة."
+        "explanation": "لا. لا يجوز دخول المعبر عندما تكون الحواجز متحركة أو مغلقة، أو تومض الأضواء الحمراء، أو تعمل الإشارة الصوتية."
       }
     }
   }

@@ -152,7 +152,10 @@
             "text": "العلامة التي تُحذّر من وجود ممر عبور للمشاة (الممر المخطط)",
             "is_correct": false
           },
-          { "text": "العلامة التي تُحذّر من وجود أطفال", "is_correct": false }
+          {
+            "text": "العلامة التي تُحذّر من وجود أطفال",
+            "is_correct": false
+          }
         ],
         "explanation": "علامة الخطر A25 تُحذّر تحديداً من معبر للدراجات والدراجات البخارية. علامة المشاة (A21) وعلامة الأطفال (A23) تبدو مشابهة لكنها تُشير إلى أخطار مختلفة."
       }
@@ -328,76 +331,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Een fietser nadert de oversteekplaats voor fietsers en bromfietsers van rechts. Wat doet u?",
+        "question": "Een fietser bevindt zich al op de oversteekplaats. Wat doet u?",
         "choices": [
           {
-            "text": "Onmiddellijk voorrang verlenen aan de overstekende fietser en stoppen indien nodig",
+            "text": "Met matige snelheid naderen en zo nodig stoppen zodat de fietser veilig kan doorrijden",
             "is_correct": true
           },
           {
-            "text": "Doorrijden als u sneller bent dan de fietser om een file te vermijden",
+            "text": "Doorrijden zolang de fietser uw rijstrook nog niet heeft bereikt",
             "is_correct": false
           },
           {
-            "text": "Lichtsignaal geven en doorgaan als de fietser u ziet",
+            "text": "Claxonneren zodat de fietser sneller oversteekt",
             "is_correct": false
           }
         ],
-        "explanation": "Aan een oversteekplaats voor fietsers en bromfietsers moet u voorrang verlenen aan fietsers en bromfietsers die oversteken of duidelijk op het punt staan over te steken. U moet stoppen als dat nodig is om hen veilig te laten passeren."
+        "explanation": "U nadert een oversteekplaats voor fietsers en bestuurders van tweewielige bromfietsen met matige snelheid. U mag gebruikers die zich erop bevinden niet in gevaar brengen of hinderen en stopt zo nodig om hen hun oversteek te laten beëindigen."
       },
       "EN": {
-        "question": "A cyclist is approaching the cyclist and moped crossing from the right. What do you do?",
+        "question": "A cyclist is already on the crossing. What do you do?",
         "choices": [
           {
-            "text": "Give way immediately to the crossing cyclist and stop if necessary",
+            "text": "Approach at moderate speed and stop if necessary so the cyclist can finish crossing safely",
             "is_correct": true
           },
           {
-            "text": "Continue if you are faster than the cyclist to avoid congestion",
+            "text": "Continue as long as the cyclist has not yet reached your lane",
             "is_correct": false
           },
           {
-            "text": "Flash your lights and proceed if the cyclist sees you",
+            "text": "Sound the horn so the cyclist crosses faster",
             "is_correct": false
           }
         ],
-        "explanation": "At a cyclist and moped crossing, you must give way to cyclists and moped riders who are crossing or clearly about to cross. You must stop if necessary to let them pass safely."
+        "explanation": "Approach a crossing for cyclists and two-wheeled moped riders at moderate speed. You must not endanger or obstruct users already on it and must stop if necessary so they can finish crossing."
       },
       "FR": {
-        "question": "Un cycliste approche du passage pour cyclistes et cyclomotoristes par la droite. Que faites-vous ?",
+        "question": "Un cycliste se trouve déjà sur le passage. Que faites-vous ?",
         "choices": [
           {
-            "text": "Céder immédiatement la priorité au cycliste qui traverse et s'arrêter si nécessaire",
+            "text": "Approcher à vitesse modérée et s'arrêter si nécessaire pour que le cycliste achève sa traversée en sécurité",
             "is_correct": true
           },
           {
-            "text": "Continuer si vous êtes plus rapide que le cycliste pour éviter les embouteillages",
+            "text": "Continuer tant que le cycliste n'a pas encore atteint votre voie",
             "is_correct": false
           },
           {
-            "text": "Faire un appel de phares et continuer si le cycliste vous voit",
+            "text": "Klaxonner pour que le cycliste traverse plus vite",
             "is_correct": false
           }
         ],
-        "explanation": "À un passage pour cyclistes et cyclomotoristes, vous devez céder la priorité aux cyclistes et aux cyclomotoristes qui traversent ou qui montrent clairement l'intention de traverser. Vous devez vous arrêter si nécessaire pour les laisser passer en sécurité."
+        "explanation": "Approchez un passage pour cyclistes et cyclomoteurs à deux roues à vitesse modérée. Vous ne pouvez ni mettre en danger ni gêner les usagers qui s'y trouvent et vous devez vous arrêter si nécessaire pour leur permettre d'achever la traversée."
       },
       "AR": {
-        "question": "دراج يقترب من ممر عبور الدراجات والدراجات البخارية من جهة اليمين. ماذا تفعل؟",
+        "question": "يوجد دراج بالفعل على ممر العبور. ماذا تفعل؟",
         "choices": [
           {
-            "text": "إعطاء الأولوية فورًا للدراج العابر والتوقف عند الضرورة",
+            "text": "الاقتراب بسرعة معتدلة والتوقف عند الضرورة حتى يكمل الدراج عبوره بأمان",
             "is_correct": true
           },
           {
-            "text": "الاستمرار إذا كنت أسرع من الدراج لتجنب الازدحام",
+            "text": "المواصلة ما دام الدراج لم يصل إلى مسارك بعد",
             "is_correct": false
           },
           {
-            "text": "وميض الأضواء والمضي قدماً إذا رآك الدراج",
+            "text": "استخدام المنبه كي يعبر الدراج بسرعة أكبر",
             "is_correct": false
           }
         ],
-        "explanation": "عند ممر عبور الدراجات والدراجات البخارية، يجب إعطاء الأولوية للدراجين وراكبي الدراجات البخارية الذين يعبرون أو يظهر بوضوح أنهم على وشك العبور. يجب التوقف إذا لزم الأمر للسماح لهم بالمرور بأمان."
+        "explanation": "اقترب من ممر الدراجين وراكبي الدراجات البخارية ذات العجلتين بسرعة معتدلة. لا يجوز تعريض الموجودين عليه للخطر أو عرقلة إكمال عبورهم، وتوقف عند الضرورة للسماح لهم بإنهائه."
       }
     }
   },
@@ -409,76 +412,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat is het verschil tussen een voetgangersoversteekplaats en een oversteekplaats voor fietsers en bromfietsers?",
+        "question": "Welk belangrijk voorrangsverschil geldt aan een niet-geregelde voetgangersoversteekplaats en een fietsoversteekplaats?",
         "choices": [
           {
-            "text": "Een voetgangersoversteekplaats is bedoeld voor voetgangers; een oversteekplaats voor fietsers en bromfietsers is bedoeld voor fietsers en bromfietsers",
+            "text": "Een voetganger op of op het punt de oversteekplaats te betreden heeft voorrang; een fietser die nog wil oprijden moet dit voorzichtig doen en rekening houden met naderende voertuigen",
             "is_correct": true
           },
           {
-            "text": "Ze zijn identiek en gelden voor alle weggebruikers zonder onderscheid",
+            "text": "Voor voetgangers en fietsers geldt exact dezelfde regel voordat zij de oversteekplaats betreden",
             "is_correct": false
           },
           {
-            "text": "Een voetgangersoversteekplaats is altijd gevaarlijker dan een oversteekplaats voor fietsers en bromfietsers en vereist altijd stoppen",
+            "text": "Fietsers hebben altijd voorrang en voetgangers alleen wanneer zij al oversteken",
             "is_correct": false
           }
         ],
-        "explanation": "Een voetgangersoversteekplaats is voor voetgangers, terwijl een oversteekplaats voor fietsers en bromfietsers bedoeld is voor fietsers en bromfietsers. In beide gevallen moet u voorrang verlenen aan de betrokken overstekers."
+        "explanation": "Aan een niet-geregelde voetgangersoversteekplaats verleent de bestuurder voorrang aan voetgangers die oversteken of op het punt staan dit te doen. Een fietser mag een fietsoversteekplaats slechts voorzichtig oprijden en moet rekening houden met naderende voertuigen; bestuurders beschermen wie al oversteekt."
       },
       "EN": {
-        "question": "What is the difference between a pedestrian crossing and a cyclist and moped crossing?",
+        "question": "What important priority difference applies at an uncontrolled pedestrian crossing and cyclist crossing?",
         "choices": [
           {
-            "text": "A pedestrian crossing is for pedestrians, whereas a cyclist and moped crossing is for cyclists and moped riders",
+            "text": "A pedestrian on or about to enter the crossing has priority; a cyclist who has not entered must do so cautiously and consider approaching vehicles",
             "is_correct": true
           },
           {
-            "text": "They are identical and apply to all road users without distinction",
+            "text": "Exactly the same rule applies to pedestrians and cyclists before they enter the crossing",
             "is_correct": false
           },
           {
-            "text": "A pedestrian crossing is always more dangerous than a cyclist and moped crossing and always requires stopping",
+            "text": "Cyclists always have priority, while pedestrians only have it once they are crossing",
             "is_correct": false
           }
         ],
-        "explanation": "A pedestrian crossing is for pedestrians, while a crossing for cyclists and moped riders is for cyclists and moped riders. In both cases, you must give way to the relevant road users who are crossing."
+        "explanation": "At an uncontrolled pedestrian crossing, drivers give way to pedestrians on or about to enter it. A cyclist may enter a cyclist crossing only cautiously and must consider approaching vehicles; drivers protect users already crossing."
       },
       "FR": {
-        "question": "Quelle est la différence entre un passage pour piétons et un passage pour cyclistes et cyclomotoristes ?",
+        "question": "Quelle différence importante de priorité existe entre un passage pour piétons et un passage pour cyclistes non réglés ?",
         "choices": [
           {
-            "text": "Un passage pour piétons est destiné aux piétons, tandis qu'un passage pour cyclistes et cyclomotoristes est destiné aux cyclistes et aux cyclomotoristes",
+            "text": "Le piéton engagé ou sur le point de s'engager a la priorité; le cycliste qui n'est pas encore engagé doit le faire prudemment en tenant compte des véhicules qui approchent",
             "is_correct": true
           },
           {
-            "text": "Ils sont identiques et s'appliquent à tous les usagers de la route sans distinction",
+            "text": "La même règle s'applique exactement aux piétons et aux cyclistes avant qu'ils s'engagent",
             "is_correct": false
           },
           {
-            "text": "Un passage pour piétons est toujours plus dangereux qu'un passage pour cyclistes et cyclomotoristes et impose toujours l'arrêt",
+            "text": "Les cyclistes ont toujours la priorité et les piétons uniquement lorsqu'ils traversent déjà",
             "is_correct": false
           }
         ],
-        "explanation": "Un passage pour piétons concerne les piétons, tandis qu'un passage pour cyclistes et cyclomotoristes concerne les cyclistes et les cyclomotoristes. Dans les deux cas, vous devez céder la priorité aux usagers concernés qui traversent."
+        "explanation": "À un passage pour piétons non réglé, le conducteur cède le passage aux piétons engagés ou sur le point de s'engager. Un cycliste ne peut s'engager sur son passage qu'avec prudence et en tenant compte des véhicules qui approchent; les conducteurs protègent ceux qui traversent déjà."
       },
       "AR": {
-        "question": "ما الفرق بين ممر عبور المشاة وممر عبور الدراجات والدراجات البخارية؟",
+        "question": "ما الفرق المهم في الأولوية بين ممر مشاة غير منظم وممر دراجات غير منظم؟",
         "choices": [
           {
-            "text": "ممر عبور المشاة مخصص للمشاة، أما ممر عبور الدراجات والدراجات البخارية فهو مخصص للدراجين وراكبي الدراجات البخارية",
+            "text": "للمشاة الموجودين على الممر أو المستعدين لدخوله الأولوية؛ أما الدراج الذي لم يدخل بعد فعليه الدخول بحذر ومراعاة المركبات المقتربة",
             "is_correct": true
           },
           {
-            "text": "هما متطابقان وينطبقان على جميع مستخدمي الطريق دون تمييز",
+            "text": "تنطبق القاعدة نفسها تمامًا على المشاة والدراجين قبل دخولهم الممر",
             "is_correct": false
           },
           {
-            "text": "ممر عبور المشاة أخطر دائماً من ممر عبور الدراجات ويستلزم التوقف في كل مرة",
+            "text": "للدراجين الأولوية دائمًا وللمشاة فقط بعد بدء العبور",
             "is_correct": false
           }
         ],
-        "explanation": "ممر عبور المشاة يخص المشاة، أما ممر عبور الدراجات والدراجات البخارية فيخص الدراجين وراكبي الدراجات البخارية. في الحالتين يجب إعطاء الأولوية للعابرين المعنيين."
+        "explanation": "في ممر المشاة غير المنظم يعطي السائق الأولوية للمشاة الموجودين عليه أو المستعدين لدخوله. أما الدراج فلا يدخل ممر الدراجات إلا بحذر ومع مراعاة المركبات المقتربة، وعلى السائقين حماية من بدأ العبور بالفعل."
       }
     }
   },
@@ -490,60 +493,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wanneer een fietser een oversteekplaats voor fietsers en bromfietsers nadert en duidelijk wil oversteken, moet de bestuurder dan stoppen?",
+        "question": "Moet een bestuurder alleen omdat een fietser naast een niet-geregelde fietsoversteekplaats wacht altijd stoppen om hem te laten oprijden?",
         "choices": [
           {
-            "text": "Ja, u moet voorrang verlenen aan een fietser die duidelijk op het punt staat over te steken",
+            "text": "Nee",
             "is_correct": true
           },
           {
-            "text": "Nee, de fietser moet wachten tot de weg vrij is voordat hij oversteekt",
+            "text": "Ja",
             "is_correct": false
           }
         ],
-        "explanation": "Aan een oversteekplaats voor fietsers en bromfietsers moet u stoppen of vertragen om voorrang te verlenen aan fietsers die oversteken of duidelijk op het punt staan over te steken. Dezelfde regel geldt aan voetgangersoversteekplaatsen."
+        "explanation": "Nee. Een fietser die de oversteekplaats nog moet oprijden, moet dit voorzichtig doen en rekening houden met naderende voertuigen. De bestuurder nadert met matige snelheid en beschermt fietsers die zich al op de oversteekplaats bevinden."
       },
       "EN": {
-        "question": "When a cyclist approaches a cyclist and moped crossing and is clearly about to cross, must the driver stop?",
+        "question": "Must a driver always stop solely because a cyclist is waiting beside an uncontrolled cyclist crossing, so the cyclist can enter it?",
         "choices": [
           {
-            "text": "Yes, you must give way to a cyclist who is clearly about to cross",
+            "text": "No",
             "is_correct": true
           },
           {
-            "text": "No, the cyclist must wait until the road is clear before crossing",
+            "text": "Yes",
             "is_correct": false
           }
         ],
-        "explanation": "At a crossing for cyclists and moped riders, you must stop or slow down to give way to cyclists who are crossing or clearly about to cross. The same rule applies at pedestrian crossings."
+        "explanation": "No. A cyclist who has not yet entered the crossing must do so cautiously and consider approaching vehicles. The driver approaches at moderate speed and protects cyclists already on the crossing."
       },
       "FR": {
-        "question": "Lorsqu'un cycliste s'approche d'un passage pour cyclistes et cyclomotoristes et montre clairement l'intention de traverser, le conducteur doit-il s'arrêter ?",
+        "question": "Un conducteur doit-il toujours s'arrêter uniquement parce qu'un cycliste attend à côté d'un passage pour cyclistes non réglé afin de le laisser s'engager ?",
         "choices": [
           {
-            "text": "Oui, vous devez céder la priorité à un cycliste qui montre clairement l'intention de traverser",
+            "text": "Non",
             "is_correct": true
           },
           {
-            "text": "Non, le cycliste doit attendre que la route soit libre avant de traverser",
+            "text": "Oui",
             "is_correct": false
           }
         ],
-        "explanation": "À un passage pour cyclistes et cyclomotoristes, vous devez vous arrêter ou ralentir pour céder la priorité aux cyclistes qui traversent ou qui montrent clairement l'intention de traverser. La même règle s'applique aux passages pour piétons."
+        "explanation": "Non. Le cycliste qui n'est pas encore engagé doit le faire avec prudence en tenant compte des véhicules qui approchent. Le conducteur approche à vitesse modérée et protège les cyclistes déjà engagés."
       },
       "AR": {
-        "question": "هل يجب على السائق التوقف عند اقتراب دراج من ممر عبور الدراجات والدراجات البخارية وظهور نيته بوضوح في العبور؟",
+        "question": "هل يجب على السائق التوقف دائمًا لمجرد أن دراجًا ينتظر بجانب ممر دراجات غير منظم كي يسمح له بالدخول؟",
         "choices": [
           {
-            "text": "نعم، يجب إعطاء الأولوية للدراج الذي يظهر بوضوح أنه على وشك العبور",
+            "text": "لا",
             "is_correct": true
           },
           {
-            "text": "لا، يجب على الدراج الانتظار حتى يخلو الطريق قبل العبور",
+            "text": "نعم",
             "is_correct": false
           }
         ],
-        "explanation": "عند ممر عبور الدراجات والدراجات البخارية، يجب عليك التوقف أو تقليل السرعة لإعطاء الأولوية للدراجين الذين يعبرون أو يظهر بوضوح أنهم على وشك العبور. تنطبق القاعدة نفسها على ممرات عبور المشاة."
+        "explanation": "لا. على الدراج الذي لم يدخل الممر بعد أن يدخله بحذر مع مراعاة المركبات المقتربة. ويقترب السائق بسرعة معتدلة ويحمي الدراجين الموجودين بالفعل على الممر."
       }
     }
   },
@@ -555,60 +558,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Mag u vlak voor een oversteekplaats voor fietsers en bromfietsers inhalen?",
+        "question": "Mag u links een bestuurder inhalen die een niet-geregelde fietsoversteekplaats nadert of ervoor stopt?",
         "choices": [
           {
-            "text": "Neen, want er is een risico op een botsing met fietsers tijdens het oversteken",
+            "text": "Nee",
             "is_correct": true
           },
           {
-            "text": "Ja, als er geen fietser zichtbaar is mag u inhalen voor de oversteekplaats",
+            "text": "Ja",
             "is_correct": false
           }
         ],
-        "explanation": "Inhalen vlak voor een oversteekplaats voor fietsers en bromfietsers is verboden. Een inhalende auto belemmert het zicht op overstekende fietsers en bromfietsers en vergroot het gevaar aanzienlijk."
+        "explanation": "Het links inhalen van een bestuurder die een niet-geregelde oversteekplaats voor fietsers en tweewielige bromfietsen nadert of ervoor stopt, is verboden."
       },
       "EN": {
-        "question": "Is it allowed to overtake just before a cyclist and moped crossing?",
+        "question": "May you overtake on the left a driver who is approaching or stopping before an uncontrolled cyclist crossing?",
         "choices": [
           {
-            "text": "No, because there is a risk of colliding with cyclists while they are crossing",
+            "text": "No",
             "is_correct": true
           },
           {
-            "text": "Yes, if no cyclist is visible you may overtake before the crossing",
+            "text": "Yes",
             "is_correct": false
           }
         ],
-        "explanation": "Overtaking just before a cyclist and moped crossing is prohibited. An overtaking car blocks the view of crossing cyclists and moped riders and significantly increases the danger."
+        "explanation": "Overtaking on the left a driver who approaches or stops before an uncontrolled crossing for cyclists and two-wheeled moped riders is prohibited."
       },
       "FR": {
-        "question": "Est-il permis de dépasser juste avant un passage pour cyclistes et cyclomotoristes ?",
+        "question": "Pouvez-vous dépasser par la gauche un conducteur qui approche d'un passage non réglé pour cyclistes ou s'y arrête ?",
         "choices": [
           {
-            "text": "Non, car il existe un risque de collision avec des cyclistes pendant la traversée",
+            "text": "Non",
             "is_correct": true
           },
           {
-            "text": "Oui, si aucun cycliste n'est visible vous pouvez dépasser avant la traversée",
+            "text": "Oui",
             "is_correct": false
           }
         ],
-        "explanation": "Dépasser juste avant un passage pour cyclistes et cyclomotoristes est interdit. Une voiture qui dépasse bloque la vue sur les cyclistes et les cyclomotoristes qui traversent et augmente considérablement le danger."
+        "explanation": "Il est interdit de dépasser par la gauche un conducteur qui approche d'un passage non réglé pour cyclistes et cyclomoteurs à deux roues ou qui s'y arrête."
       },
       "AR": {
-        "question": "هل يُسمح بالتجاوز مباشرة قبل ممر عبور الدراجات والدراجات البخارية؟",
+        "question": "هل يجوز التجاوز من اليسار لسائق يقترب من ممر غير منظم للدراجات أو يتوقف قبله؟",
         "choices": [
           {
-            "text": "لا، لأن هناك خطر الاصطدام بالدراجين أثناء عبورهم للطريق",
+            "text": "لا",
             "is_correct": true
           },
           {
-            "text": "نعم، إذا لم يكن هناك دراج مرئي يمكن التجاوز قبل ممر العبور",
+            "text": "نعم",
             "is_correct": false
           }
         ],
-        "explanation": "التجاوز مباشرة قبل ممر عبور الدراجات والدراجات البخارية محظور. السيارة المتجاوزة تحجب الرؤية عن الدراجين وراكبي الدراجات البخارية أثناء عبورهم وتزيد الخطر بشكل كبير."
+        "explanation": "يُحظر التجاوز من اليسار لسائق يقترب من ممر غير منظم للدراجين وراكبي الدراجات البخارية ذات العجلتين أو يتوقف قبله."
       }
     }
   }

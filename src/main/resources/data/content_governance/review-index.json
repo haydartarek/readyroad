@@ -1,0 +1,144 @@
+{
+  "schema_version": 1,
+  "framework_version": 1,
+  "last_updated": "2026-07-19",
+  "canonical_content_root": "src/main/resources/data/signs_import",
+  "category_review_root": "src/main/resources/data/content_governance/category-reviews",
+  "shared_resources": {
+    "legal_sources": "src/main/resources/data/content_governance/legal-sources.json",
+    "terminology_glossary": "src/main/resources/data/content_governance/terminology-glossary.json",
+    "category_review_schema": "src/main/resources/data/content_governance/governance-engine/category-review.schema.json",
+    "content_change_log": "docs/content-governance/content-change-log.md",
+    "report_template": "docs/content-governance/governance-engine/category-report-template.md"
+  },
+  "categories": [
+    {
+      "category": "DANGER",
+      "slug": "danger",
+      "status": "APPROVED",
+      "approval_status": "APPROVED",
+      "last_reviewed": "2026-07-18",
+      "counts": {
+        "signs": 34,
+        "questions": 272,
+        "exams": 34,
+        "lessons": 1
+      },
+      "risk_level": "HIGH",
+      "review_file": "category-reviews/danger.json",
+      "report_file": "docs/content-governance/category-reviews/danger/content-review-report.md"
+    },
+    {
+      "category": "INFORMATION",
+      "slug": "information",
+      "status": "NOT_REVIEWED",
+      "approval_status": "PENDING",
+      "last_reviewed": null,
+      "counts": {
+        "signs": 37,
+        "questions": 296,
+        "exams": 37,
+        "lessons": 0
+      },
+      "risk_level": "UNASSESSED",
+      "review_file": null,
+      "report_file": null
+    },
+    {
+      "category": "MANDATORY",
+      "slug": "mandatory",
+      "status": "NOT_REVIEWED",
+      "approval_status": "PENDING",
+      "last_reviewed": null,
+      "counts": {
+        "signs": 18,
+        "questions": 144,
+        "exams": 18,
+        "lessons": 0
+      },
+      "risk_level": "UNASSESSED",
+      "review_file": null,
+      "report_file": null
+    },
+    {
+      "category": "PARKING",
+      "slug": "parking",
+      "status": "NOT_REVIEWED",
+      "approval_status": "PENDING",
+      "last_reviewed": null,
+      "counts": {
+        "signs": 15,
+        "questions": 120,
+        "exams": 15,
+        "lessons": 0
+      },
+      "risk_level": "UNASSESSED",
+      "review_file": null,
+      "report_file": null
+    },
+    {
+      "category": "PRIORITY",
+      "slug": "priority",
+      "status": "NOT_REVIEWED",
+      "approval_status": "PENDING",
+      "last_reviewed": null,
+      "counts": {
+        "signs": 16,
+        "questions": 128,
+        "exams": 16,
+        "lessons": 0
+      },
+      "risk_level": "UNASSESSED",
+      "review_file": null,
+      "report_file": null
+    },
+    {
+      "category": "PROHIBITION",
+      "slug": "prohibition",
+      "status": "NOT_REVIEWED",
+      "approval_status": "PENDING",
+      "last_reviewed": null,
+      "counts": {
+        "signs": 33,
+        "questions": 264,
+        "exams": 33,
+        "lessons": 0
+      },
+      "risk_level": "UNASSESSED",
+      "review_file": null,
+      "report_file": null
+    },
+    {
+      "category": "ROAD_MANAGEMENT",
+      "slug": "road-management",
+      "status": "NOT_REVIEWED",
+      "approval_status": "PENDING",
+      "last_reviewed": null,
+      "counts": {
+        "signs": 9,
+        "questions": 72,
+        "exams": 9,
+        "lessons": 0
+      },
+      "risk_level": "UNASSESSED",
+      "review_file": null,
+      "report_file": null
+    },
+    {
+      "category": "ZONE",
+      "slug": "zone",
+      "status": "NOT_REVIEWED",
+      "approval_status": "PENDING",
+      "last_reviewed": null,
+      "counts": {
+        "signs": 22,
+        "questions": 176,
+        "exams": 22,
+        "lessons": 0
+      },
+      "risk_level": "UNASSESSED",
+      "review_file": null,
+      "report_file": null
+    }
+  ]
+}

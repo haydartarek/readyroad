@@ -88,76 +88,76 @@
     "show_sign": false,
     "i18n": {
       "NL": {
-        "question": "Welk bord waarschuwt voor een gevaarlijk kruispunt?",
+        "question": "Welk bord kondigt verkeerslichten verderop aan?",
         "choices": [
           {
-            "text": "Het bord dat waarschuwt voor een gevaarlijk kruispunt met beperkt zicht",
+            "text": "A33 - Verkeerslichten",
             "is_correct": true
           },
           {
-            "text": "Het bord dat waarschuwt voor wegwerkzaamheden op of langs de rijbaan",
+            "text": "A31 - Werken",
             "is_correct": false
           },
           {
-            "text": "Het bord dat waarschuwt voor overstekende voetgangers",
+            "text": "A41 - Overweg met slagbomen",
             "is_correct": false
           }
         ],
-        "explanation": "Het gevaarsbord A33 waarschuwt specifiek voor een gevaarlijk kruispunt. Het bord voor wegwerkzaamheden (A31) geldt voor werken op de weg. Het bord voor voetgangers (A21) geldt voor een zebrapad."
+        "explanation": "A33 kondigt verkeerslichten aan. A31 waarschuwt voor werken en A41 voor een overweg met slagbomen."
       },
       "EN": {
-        "question": "Which sign warns of a dangerous junction?",
+        "question": "Which sign announces traffic lights ahead?",
         "choices": [
           {
-            "text": "The sign that warns of a dangerous junction with limited visibility",
+            "text": "A33 - Traffic lights",
             "is_correct": true
           },
           {
-            "text": "The sign that warns of roadworks on or alongside the carriageway",
+            "text": "A31 - Roadworks",
             "is_correct": false
           },
           {
-            "text": "The sign that warns of pedestrians crossing",
+            "text": "A41 - Level crossing with barriers",
             "is_correct": false
           }
         ],
-        "explanation": "Danger sign A33 specifically warns of a dangerous junction. The roadworks sign (A31) applies to works on the road. The pedestrian crossing sign (A21) applies to a zebra crossing."
+        "explanation": "A33 announces traffic lights. A31 warns of roadworks and A41 of a level crossing with barriers."
       },
       "FR": {
-        "question": "Quel panneau signale un carrefour dangereux ?",
+        "question": "Quel signal annonce des signaux lumineux de circulation plus loin ?",
         "choices": [
           {
-            "text": "Le panneau qui avertit d'un carrefour dangereux avec visibilité limitée",
+            "text": "A33 - Signaux lumineux de circulation",
             "is_correct": true
           },
           {
-            "text": "Le panneau qui avertit de travaux sur la chaussée ou à ses abords",
+            "text": "A31 - Travaux",
             "is_correct": false
           },
           {
-            "text": "Le panneau qui avertit d'un passage pour piétons",
+            "text": "A41 - Passage à niveau avec barrières",
             "is_correct": false
           }
         ],
-        "explanation": "Le panneau de danger A33 signale spécifiquement un carrefour dangereux. Le panneau travaux (A31) concerne les travaux sur la route. Le panneau piétons (A21) concerne un passage clouté."
+        "explanation": "A33 annonce des signaux lumineux de circulation. A31 avertit de travaux et A41 d'un passage à niveau avec barrières."
       },
       "AR": {
-        "question": "أي علامة مرورية تُحذّر من وجود تقاطع خطير؟",
+        "question": "أي علامة تعلن عن إشارات ضوئية مرورية أمامك؟",
         "choices": [
           {
-            "text": "العلامة التي تُحذّر من تقاطع خطير محدود الرؤية",
+            "text": "A33 - إشارات ضوئية مرورية",
             "is_correct": true
           },
           {
-            "text": "العلامة التي تُحذّر من أشغال على الطريق أو على جانبه",
+            "text": "A31 - أشغال الطريق",
             "is_correct": false
           },
           {
-            "text": "العلامة التي تُحذّر من ممر عبور للمشاة",
+            "text": "A41 - معبر سكة حديد مع حواجز",
             "is_correct": false
           }
         ],
-        "explanation": "علامة الخطر A33 تُحذّر تحديداً من تقاطع خطير. علامة الأشغال (A31) تختص بأعمال على الطريق. علامة المشاة (A21) تختص بالممر المخطط."
+        "explanation": "تعلن A33 عن إشارات ضوئية مرورية، وتحذر A31 من الأشغال وA41 من معبر سكة حديد مع حواجز."
       }
     }
   },
@@ -184,7 +184,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "Het gevaar is dat chauffeurs bij onbekende verkeerslichten te laat reageren, doorrijden bij rood of niet tijdig kunnen stoppen."
+        "explanation": "A33 waarschuwt dat u verkeerslichten nadert die door de plaatsgesteldheid mogelijk niet tijdig zichtbaar zijn. Pas uw snelheid aan zodat u veilig kunt stoppen."
       },
       "EN": {
         "question": "What specific hazard does this sign announce?",
@@ -202,7 +202,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "The hazard is that drivers unfamiliar with the lights may react too late, run red or be unable to stop in time."
+        "explanation": "A33 warns that you are approaching traffic lights that may not be visible in time because of the road layout. Adjust speed so you can stop safely."
       },
       "FR": {
         "question": "Quel danger spécifique ce panneau annonce-t-il ?",
@@ -220,7 +220,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "Le danger est que les conducteurs ne connaissant pas les feux réagissent trop tard, grillent le rouge ou ne peuvent pas s'arrêter à temps."
+        "explanation": "A33 avertit que vous approchez de signaux lumineux qui pourraient ne pas être visibles à temps en raison de la configuration des lieux. Adaptez votre vitesse pour pouvoir vous arrêter en sécurité."
       },
       "AR": {
         "question": "ما الخطر الذي يُحذّرك منه هذا اللوح عند التقاطعات؟",
@@ -238,7 +238,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "الخطر هو أن السائقين غير المعتادين على الإشارات قد يتأخرون في الاستجابة أو يتجاوزون الضوء الأحمر أو يعجزون عن التوقف في الوقت المناسب."
+        "explanation": "تحذر A33 من اقتراب إشارات ضوئية قد لا تظهر في الوقت المناسب بسبب شكل الطريق. كيّف سرعتك لتتمكن من التوقف بأمان."
       }
     }
   },
@@ -331,76 +331,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Het licht springt op oranje terwijl u dicht genoeg bij de stopstreep bent om nog veilig te stoppen. Wat doet u?",
+        "question": "Het licht wordt vast oranjegeel terwijl u nog veilig vóór de stopstreep kunt stoppen. Wat doet u?",
         "choices": [
           {
-            "text": "Remmen en stoppen voor de stopstreep; oranje betekent 'stop, tenzij u al zo dicht bij de lichten bent dat stoppen gevaarlijk is'",
+            "text": "Stoppen vóór de stopstreep",
             "is_correct": true
           },
           {
-            "text": "Doorrijden want oranje geeft u nog enkele seconden om door te rijden",
+            "text": "Doorrijden omdat oranjegeel altijd doorgang toestaat",
             "is_correct": false
           },
           {
-            "text": "Versnellen om de kruising te passeren voor het licht rood wordt",
+            "text": "Versnellen om het licht voorbij te rijden",
             "is_correct": false
           }
         ],
-        "explanation": "Oranje licht is een stopsignaal. U mag alleen doorrijden als stoppen gevaarlijker zou zijn dan doorrijden — bijvoorbeeld als u al voorbij de stopstreep bent of er vlak voor staat. Wanneer u veilig kunt stoppen, moet u dat doen."
+        "explanation": "Een vast oranjegeel licht verbiedt het voorbijrijden. Alleen wanneer u bij het aangaan ervan zo dicht genaderd bent dat veilig stoppen niet meer mogelijk is, mag u doorrijden zonder andere weggebruikers in gevaar te brengen. Hier kunt u veilig stoppen en moet u dat doen."
       },
       "EN": {
-        "question": "The light turns orange while you are close enough to the stop line to still stop safely. What do you do?",
+        "question": "The light turns steady amber while you can still stop safely before the stop line. What do you do?",
         "choices": [
           {
-            "text": "Brake and stop before the stop line; orange means 'stop, unless you are so close to the lights that stopping is dangerous'",
+            "text": "Stop before the stop line",
             "is_correct": true
           },
           {
-            "text": "Drive on because orange gives you a few more seconds to pass through",
+            "text": "Continue because amber always permits passage",
             "is_correct": false
           },
           {
-            "text": "Accelerate to clear the junction before the light turns red",
+            "text": "Accelerate to pass the light",
             "is_correct": false
           }
         ],
-        "explanation": "An orange light is a stop signal. You may only drive on if stopping would be more dangerous than continuing — for example if you have already passed the stop line or are right in front of it. When you can safely stop, you must do so."
+        "explanation": "A steady amber light prohibits proceeding. You may continue only when, as it appears, you are so close that stopping safely is no longer possible, without endangering other road users. Here you can stop safely and must do so."
       },
       "FR": {
-        "question": "Le feu passe à l'orange alors que vous êtes assez près de la ligne d'arrêt pour pouvoir encore vous arrêter en toute sécurité. Que faites-vous ?",
+        "question": "Le feu devient jaune-orange fixe alors que vous pouvez encore vous arrêter en sécurité avant la ligne d'arrêt. Que faites-vous ?",
         "choices": [
           {
-            "text": "Freiner et s'arrêter avant la ligne d'arrêt; l'orange signifie 'arrêt, sauf si vous êtes si près des feux que s'arrêter serait dangereux'",
+            "text": "S'arrêter avant la ligne d'arrêt",
             "is_correct": true
           },
           {
-            "text": "Continuer car l'orange vous donne encore quelques secondes pour passer",
+            "text": "Continuer parce que le jaune-orange autorise toujours le passage",
             "is_correct": false
           },
           {
-            "text": "Accélérer pour dégager le carrefour avant que le feu ne passe au rouge",
+            "text": "Accélérer pour franchir le feu",
             "is_correct": false
           }
         ],
-        "explanation": "Un feu orange est un signal d'arrêt. Vous ne pouvez continuer que si s'arrêter serait plus dangereux que de continuer — par exemple si vous avez déjà dépassé la ligne d'arrêt ou en êtes juste devant. Lorsque vous pouvez vous arrêter en toute sécurité, vous devez le faire."
+        "explanation": "Le feu jaune-orange fixe interdit de franchir le signal. Vous ne pouvez continuer que si, au moment où il s'allume, vous êtes si près que vous ne pouvez plus vous arrêter en sécurité, sans mettre les autres usagers en danger. Ici, vous pouvez vous arrêter en sécurité et devez le faire."
       },
       "AR": {
-        "question": "تتحوّل الإشارة إلى البرتقالي بينما أنت قريب بما يكفي من خط الإيقاف للتوقف بأمان. ماذا تفعل؟",
+        "question": "تحول الضوء إلى برتقالي أصفر ثابت بينما لا يزال بإمكانك التوقف بأمان قبل خط التوقف. ماذا تفعل؟",
         "choices": [
           {
-            "text": "الكبح والتوقف قبل خط الإيقاف؛ البرتقالي يعني 'قف إلا إذا كنت قريبًا جدًا من الإشارة بحيث يكون التوقف خطيرًا'",
+            "text": "التوقف قبل خط التوقف",
             "is_correct": true
           },
           {
-            "text": "الاستمرار في السير لأن البرتقالي يمنحك بضع ثوانٍ للعبور",
+            "text": "المتابعة لأن الضوء البرتقالي الأصفر يسمح دائمًا بالمرور",
             "is_correct": false
           },
           {
-            "text": "التسارع لاجتياز التقاطع قبل أن تتحوّل الإشارة إلى الأحمر",
+            "text": "التسارع لتجاوز الضوء",
             "is_correct": false
           }
         ],
-        "explanation": "الضوء البرتقالي إشارة توقف. يمكنك الاستمرار فقط إذا كان التوقف أخطر من المواصلة — مثلًا إذا كنت قد تجاوزت خط الإيقاف أو كنت أمامه مباشرة. حين يمكنك التوقف بأمان يجب عليك ذلك."
+        "explanation": "يمنع الضوء البرتقالي الأصفر الثابت التجاوز. ولا يجوز الاستمرار إلا إذا كنت عند ظهوره قريبًا إلى حد يتعذر معه التوقف بأمان، من دون تعريض الآخرين للخطر. هنا يمكنك التوقف بأمان، ولذلك يجب أن تتوقف."
       }
     }
   },
@@ -493,60 +493,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Mag u door een rood licht rijden als u oordeelt dat er geen ander verkeer is?",
+        "question": "Mag een autobestuurder een rood verkeerslicht voorbijrijden wanneer geen bevoegd persoon een ander bevel geeft?",
         "choices": [
           {
-            "text": "Neen, rijden door rood is altijd verboden en vormt een ernstige overtreding",
+            "text": "Nee",
             "is_correct": true
           },
           {
-            "text": "Ja, als de kruising volledig vrij is mag u voorzichtig doorrijden",
+            "text": "Ja",
             "is_correct": false
           }
         ],
-        "explanation": "Rijden door rood is altijd verboden, ongeacht de verkeerssituatie. U kunt voetgangers, fietsers of voertuigen op een zijstraat over het hoofd zien. Een rode lamp is een absoluut verbod om de stopstreep te overschrijden."
+        "explanation": "Voor een autobestuurder betekent rood dat de stopstreep of, zonder stopstreep, het verkeerslicht niet mag worden voorbijgereden. Een bevel van een bevoegd persoon gaat voor."
       },
       "EN": {
-        "question": "Is it allowed to drive through a red light if you judge that there is no other traffic?",
+        "question": "May a car driver pass a red traffic light when no authorised person gives a different order?",
         "choices": [
           {
-            "text": "No, driving through a red light is always prohibited and constitutes a serious offence",
+            "text": "No",
             "is_correct": true
           },
           {
-            "text": "Yes, if the junction is completely clear you may carefully drive through",
+            "text": "Yes",
             "is_correct": false
           }
         ],
-        "explanation": "Driving through a red light is always prohibited regardless of the traffic situation. You may overlook pedestrians, cyclists or vehicles on a side road. A red light is an absolute prohibition to cross the stop line."
+        "explanation": "For a car driver, red means the stop line or, if none exists, the signal itself must not be passed. An order from an authorised person takes precedence."
       },
       "FR": {
-        "question": "Est-il permis de brûler un feu rouge si vous estimez qu'il n'y a pas d'autre circulation ?",
+        "question": "Un conducteur de voiture peut-il franchir un feu rouge lorsqu'aucun agent qualifié ne donne une autre injonction ?",
         "choices": [
           {
-            "text": "Non, griller un feu rouge est toujours interdit et constitue une infraction grave",
+            "text": "Non",
             "is_correct": true
           },
           {
-            "text": "Oui, si le carrefour est complètement dégagé vous pouvez prudemment continuer",
+            "text": "Oui",
             "is_correct": false
           }
         ],
-        "explanation": "Griller un feu rouge est toujours interdit, quelle que soit la situation de circulation. Vous pouvez ne pas voir des piétons, des cyclistes ou des véhicules sur une voie latérale. Un feu rouge est une interdiction absolue de franchir la ligne d'arrêt."
+        "explanation": "Pour un conducteur de voiture, le rouge interdit de franchir la ligne d'arrêt ou, à défaut, le signal lui-même. L'injonction d'un agent qualifié prime."
       },
       "AR": {
-        "question": "هل يُسمح بتجاوز الضوء الأحمر إذا قدّرت أنه لا يوجد مرور آخر؟",
+        "question": "هل يجوز لسائق سيارة تجاوز ضوء أحمر عندما لا يصدر شخص مخول أمرًا مختلفًا؟",
         "choices": [
           {
-            "text": "لا، تجاوز الضوء الأحمر محظور دائمًا ويشكّل مخالفة خطيرة",
+            "text": "لا",
             "is_correct": true
           },
           {
-            "text": "نعم، إذا كان التقاطع خاليًا تمامًا يمكنك المرور بحذر",
+            "text": "نعم",
             "is_correct": false
           }
         ],
-        "explanation": "تجاوز الضوء الأحمر محظور دائمًا بصرف النظر عن حالة المرور. قد تغفل عن مشاة أو دراجين أو مركبات في طريق جانبي. الضوء الأحمر حظر مطلق من تجاوز خط الإيقاف."
+        "explanation": "يعني الضوء الأحمر لسائق السيارة عدم تجاوز خط التوقف أو الإشارة نفسها عند غياب الخط. ويتقدم أمر الشخص المخول على الإشارة."
       }
     }
   },
@@ -558,60 +558,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Het licht staat op oranje en u kunt veilig stoppen. Mag u doorrijden om tijd te winnen?",
+        "question": "Mag u een vast oranjegeel licht voorbijrijden wanneer u nog veilig vóór de stopstreep kunt stoppen?",
         "choices": [
           {
-            "text": "Neen, als u veilig kunt stoppen voor oranje, bent u verplicht te stoppen",
+            "text": "Nee",
             "is_correct": true
           },
           {
-            "text": "Ja, oranje licht is enkel een waarschuwing en u mag doorrijden als er geen onmiddellijk gevaar is",
+            "text": "Ja",
             "is_correct": false
           }
         ],
-        "explanation": "Oranje is een stopsignaal. De wet staat doorrijden alleen toe wanneer stoppen gevaarlijker zou zijn — bijvoorbeeld wanneer u zich al op de rijbaan van de kruising bevindt. Als u veilig kunt stoppen, biedt het doorrijden bij oranje u geen legale keuze."
+        "explanation": "Een vast oranjegeel licht verbiedt het voorbijrijden. Alleen wanneer u bij het aangaan ervan zo dicht genaderd bent dat veilig stoppen niet meer mogelijk is, mag u doorrijden zonder andere weggebruikers in gevaar te brengen."
       },
       "EN": {
-        "question": "The light is orange and you can stop safely. Is it allowed to drive on to save time?",
+        "question": "May you pass a steady amber light when you can still stop safely before the stop line?",
         "choices": [
           {
-            "text": "No, if you can safely stop for orange you are obliged to stop",
+            "text": "No",
             "is_correct": true
           },
           {
-            "text": "Yes, an orange light is only a warning and you may drive on if there is no immediate danger",
+            "text": "Yes",
             "is_correct": false
           }
         ],
-        "explanation": "Orange is a stop signal. The law only permits driving on when stopping would be more dangerous — for example when you are already in the junction. If you can safely stop, driving on at orange gives you no legal choice."
+        "explanation": "A steady amber light prohibits proceeding. You may continue only when, as it appears, you are so close that stopping safely is no longer possible, without endangering other road users."
       },
       "FR": {
-        "question": "Le feu est à l'orange et vous pouvez vous arrêter en toute sécurité. Est-il permis de continuer pour gagner du temps ?",
+        "question": "Pouvez-vous franchir un feu jaune-orange fixe lorsque vous pouvez encore vous arrêter en sécurité avant la ligne d'arrêt ?",
         "choices": [
           {
-            "text": "Non, si vous pouvez vous arrêter en toute sécurité à l'orange, vous êtes obligé de vous arrêter",
+            "text": "Non",
             "is_correct": true
           },
           {
-            "text": "Oui, un feu orange n'est qu'un avertissement et vous pouvez continuer s'il n'y a pas de danger immédiat",
+            "text": "Oui",
             "is_correct": false
           }
         ],
-        "explanation": "L'orange est un signal d'arrêt. La loi ne permet de continuer que lorsque s'arrêter serait plus dangereux — par exemple lorsque vous êtes déjà engagé dans le carrefour. Si vous pouvez vous arrêter en toute sécurité, continuer à l'orange ne vous offre aucun choix légal."
+        "explanation": "Le feu jaune-orange fixe interdit de franchir le signal. Vous ne pouvez continuer que si, au moment où il s'allume, vous êtes si près que vous ne pouvez plus vous arrêter en sécurité, sans mettre les autres usagers en danger."
       },
       "AR": {
-        "question": "الإشارة برتقالية وبإمكانك التوقف بأمان. هل يُسمح بالاستمرار في السير توفيرًا للوقت؟",
+        "question": "هل يجوز تجاوز ضوء برتقالي أصفر ثابت عندما لا يزال بإمكانك التوقف بأمان قبل خط التوقف؟",
         "choices": [
           {
-            "text": "لا، إذا كان بإمكانك التوقف بأمان عند البرتقالي فأنت ملزم بالتوقف",
+            "text": "لا",
             "is_correct": true
           },
           {
-            "text": "نعم، الضوء البرتقالي مجرد تحذير ويمكنك المواصلة إذا لم يكن هناك خطر فوري",
+            "text": "نعم",
             "is_correct": false
           }
         ],
-        "explanation": "البرتقالي إشارة توقف. يُجيز القانون الاستمرار فقط عندما يكون التوقف أخطر — مثلًا عندما تكون قد دخلت التقاطع بالفعل. إذا كان بإمكانك التوقف بأمان فلا يوجد لك خيار قانوني في مواصلة السير عند البرتقالي."
+        "explanation": "يمنع الضوء البرتقالي الأصفر الثابت التجاوز. ولا يجوز الاستمرار إلا إذا كنت عند ظهوره قريبًا إلى حد يتعذر معه التوقف بأمان، من دون تعريض مستخدمي الطريق الآخرين للخطر."
       }
     }
   }

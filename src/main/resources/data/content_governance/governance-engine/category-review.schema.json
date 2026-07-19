@@ -1,0 +1,114 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://readyroad.example/schemas/content-governance/category-review.schema.json",
+  "title": "ReadyRoad category content review",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "framework_version",
+    "category",
+    "slug",
+    "canonical_content_root",
+    "canonical_ownership",
+    "review_date",
+    "review_status",
+    "reviewed_languages",
+    "counts",
+    "risk_level",
+    "quality_metrics",
+    "validation_rules",
+    "terminology_ids",
+    "future_law_items",
+    "reports",
+    "signs",
+    "lesson_items"
+  ],
+  "properties": {
+    "schema_version": { "const": 2 },
+    "framework_version": { "const": 1 },
+    "category": { "type": "string", "minLength": 1 },
+    "slug": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "canonical_content_root": { "type": "string", "minLength": 1 },
+    "canonical_ownership": { "type": "string", "minLength": 1 },
+    "review_date": { "type": "string", "format": "date" },
+    "review_status": { "enum": ["OPEN", "REQUIRES_HUMAN_REVIEW", "APPROVED"] },
+    "reviewed_languages": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "enum": ["NL", "EN", "FR", "AR"] },
+      "minItems": 4,
+      "maxItems": 4
+    },
+    "counts": { "$ref": "#/$defs/counts" },
+    "risk_level": { "enum": ["LOW", "MEDIUM", "HIGH", "CRITICAL"] },
+    "quality_metrics": {
+      "type": "object",
+      "required": [
+        "signs_reviewed",
+        "questions_reviewed",
+        "lessons_reviewed",
+        "legal_sources_linked",
+        "terminology_standardized",
+        "cross_language_consistency",
+        "future_law_items",
+        "human_review_required",
+        "risk_level"
+      ],
+      "properties": {
+        "signs_reviewed": { "type": "integer", "minimum": 0 },
+        "questions_reviewed": { "type": "integer", "minimum": 0 },
+        "lessons_reviewed": { "type": "integer", "minimum": 0 },
+        "legal_sources_linked": { "type": "integer", "minimum": 0 },
+        "terminology_standardized": { "type": "integer", "minimum": 0 },
+        "cross_language_consistency": { "enum": ["PASSED", "FAILED"] },
+        "future_law_items": { "type": "integer", "minimum": 0 },
+        "human_review_required": { "type": "integer", "minimum": 0 },
+        "risk_level": { "enum": ["LOW", "MEDIUM", "HIGH", "CRITICAL"] }
+      },
+      "additionalProperties": false
+    },
+    "validation_rules": {
+      "type": "object",
+      "required": [
+        "questions_per_sign",
+        "passing_score",
+        "difficulty_distribution",
+        "default_choice_count",
+        "hard_choice_count",
+        "binary_choice_count",
+        "binary_question_types",
+        "correct_choices_per_language"
+      ]
+    },
+    "terminology_ids": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
+    "future_law_items": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
+    "reports": {
+      "type": "object",
+      "required": [
+        "content_review",
+        "cross_file_consistency",
+        "ambiguous_questions",
+        "human_approval",
+        "last_reviewed"
+      ],
+      "additionalProperties": false
+    },
+    "content_assertions": { "type": "array", "items": { "type": "object" } },
+    "signs": { "type": "object", "minProperties": 1 },
+    "lesson_items": { "type": "object" }
+  },
+  "$defs": {
+    "counts": {
+      "type": "object",
+      "required": ["signs", "questions", "exams", "lessons"],
+      "properties": {
+        "signs": { "type": "integer", "minimum": 0 },
+        "questions": { "type": "integer", "minimum": 0 },
+        "exams": { "type": "integer", "minimum": 0 },
+        "lessons": { "type": "integer", "minimum": 0 }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

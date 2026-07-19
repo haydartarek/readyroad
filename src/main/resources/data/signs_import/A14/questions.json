@@ -7,76 +7,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat betekent dit verkeersbord?",
+        "question": "Wat betekent A14?",
         "choices": [
           {
-            "text": "Verhoogde inrichting",
+            "text": "Een of meer verhoogde inrichtingen",
             "is_correct": true
           },
           {
-            "text": "Dwarse uitholling of ezelsrug",
+            "text": "Een uitholling overdwars of een ezelsrug",
             "is_correct": false
           },
           {
-            "text": "Gladde rijbaan",
+            "text": "Wegdek in slechte staat",
             "is_correct": false
           }
         ],
-        "explanation": "Dit bord waarschuwt voor een verhoogde inrichting (verkeersdrempel) in de rijbaan."
+        "explanation": "A14 waarschuwt voor een of meer verhoogde inrichtingen die dwars op de rijbaan zijn aangebracht om de snelheid te matigen."
       },
       "EN": {
-        "question": "What does this traffic sign mean?",
+        "question": "What does A14 mean?",
         "choices": [
           {
-            "text": "Speed bump",
+            "text": "One or more raised devices",
             "is_correct": true
           },
           {
-            "text": "Transverse dip or hump",
+            "text": "A transverse dip or hump",
             "is_correct": false
           },
           {
-            "text": "Slippery road",
+            "text": "Road surface in poor condition",
             "is_correct": false
           }
         ],
-        "explanation": "This sign warns of a speed bump, an artificial raised section in the roadway."
+        "explanation": "A14 warns of one or more raised devices installed across the carriageway to moderate speed."
       },
       "FR": {
-        "question": "Que signifie ce panneau de signalisation ?",
+        "question": "Que signifie A14 ?",
         "choices": [
           {
-            "text": "Dispositif surélevé",
+            "text": "Un ou plusieurs dispositifs surélevés",
             "is_correct": true
           },
           {
-            "text": "Cassis ou dos d'âne",
+            "text": "Un cassis ou un dos d'âne",
             "is_correct": false
           },
           {
-            "text": "Chaussée glissante",
+            "text": "Une chaussée en mauvais état",
             "is_correct": false
           }
         ],
-        "explanation": "Ce panneau avertit d'un ralentisseur, un dispositif surélevé dans la chaussée."
+        "explanation": "A14 avertit de la présence d'un ou de plusieurs dispositifs surélevés aménagés transversalement sur la chaussée pour modérer la vitesse."
       },
       "AR": {
-        "question": "ما معنى هذه العلامة المرورية؟",
+        "question": "ماذا تعني A14؟",
         "choices": [
           {
-            "text": "مطب صناعي",
+            "text": "منشأة مرتفعة واحدة أو أكثر",
             "is_correct": true
           },
           {
-            "text": "انخفاض أو مطب عرضي",
+            "text": "انخفاض عرضي أو مطب طبيعي",
             "is_correct": false
           },
           {
-            "text": "طريق زلق",
+            "text": "سطح طريق في حالة سيئة",
             "is_correct": false
           }
         ],
-        "explanation": "تحذر هذه العلامة المرورية من وجود مطب صناعي في الطريق."
+        "explanation": "تحذر A14 من منشأة مرتفعة واحدة أو أكثر ممتدة عرضيًا على الطريق لتهدئة السرعة."
       }
     }
   },
@@ -103,13 +103,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "Dit bord behoort tot de gevaarsborden. Alle gevaarsborden zijn driehoekig met een rode rand op een witte achtergrond."
+        "explanation": "Dit bord behoort tot de gevaarsborden. Dit bord is driehoekig met een rode rand op een witte achtergrond; A45 en A47 zijn uitzonderingen in de vorm van een Sint-Andrieskruis."
       },
       "EN": {
         "question": "To which category of traffic signs does this sign belong?",
         "choices": [
           {
-            "text": "Warning signs",
+            "text": "Danger signs",
             "is_correct": true
           },
           {
@@ -121,13 +121,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "This sign belongs to the warning signs. All warning signs are triangular with a red border on a white background."
+        "explanation": "This is a danger sign. This sign is triangular with a red border on a white background; A45 and A47 are Saint Andrew's cross exceptions."
       },
       "FR": {
         "question": "À quelle catégorie de panneaux de signalisation ce panneau appartient-il ?",
         "choices": [
           {
-            "text": "Panneaux de danger",
+            "text": "Signaux de danger",
             "is_correct": true
           },
           {
@@ -139,7 +139,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "Ce panneau appartient aux panneaux de danger. Tous les panneaux de danger sont triangulaires avec une bordure rouge sur fond blanc."
+        "explanation": "Ce signal appartient aux signaux de danger. Il est triangulaire à bord rouge sur fond blanc; A45 et A47 sont des exceptions en forme de croix de Saint-André."
       },
       "AR": {
         "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
@@ -157,7 +157,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "تنتمي هذه العلامة المرورية إلى علامات الخطر. جميع علامات الخطر مثلثة بحافة حمراء على خلفية بيضاء."
+        "explanation": "تنتمي هذه العلامة إلى علامات الخطر. وهي مثلثة بحافة حمراء على خلفية بيضاء؛ أما A45 وA47 فهما استثناءان على شكل صليب القديس أندرو."
       }
     }
   },
@@ -169,76 +169,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Welk gevaar kondigt dit bord aan?",
+        "question": "Welk gevaar kondigt A14 aan?",
         "choices": [
           {
-            "text": "Een kunstmatige drempel op de rijbaan bedoeld om de snelheid te verlagen",
+            "text": "Een of meer verhoogde inrichtingen waarvoor u uw snelheid moet aanpassen",
             "is_correct": true
           },
           {
-            "text": "Een gladde rijbaan door regenval of olie",
+            "text": "Een beweegbare brug",
             "is_correct": false
           },
           {
-            "text": "Een plotse daling van de rijbaan naar een lagere zone",
+            "text": "Een overweg zonder slagbomen",
             "is_correct": false
           }
         ],
-        "explanation": "Dit bord kondigt een verhoogde inrichting aan, een kunstmatig aangelegde verkeersdrempel. Bij te hoge snelheid kan dit leiden tot voertuigschade en verlies van controle."
+        "explanation": "A14 kondigt een of meer verhoogde inrichtingen aan. Te snel erover rijden kan de voertuigcontrole en het comfort van de inzittenden nadelig beïnvloeden."
       },
       "EN": {
-        "question": "What hazard does this sign indicate?",
+        "question": "What hazard does A14 announce?",
         "choices": [
           {
-            "text": "A speed bump on the road intended to reduce speed",
+            "text": "One or more raised devices requiring you to adapt speed",
             "is_correct": true
           },
           {
-            "text": "A slippery road surface due to rain or oil",
+            "text": "A movable bridge",
             "is_correct": false
           },
           {
-            "text": "A sudden descent of the road to a lower zone",
+            "text": "A level crossing without barriers",
             "is_correct": false
           }
         ],
-        "explanation": "This sign indicates a speed bump intentionally installed to reduce speed. Crossing it too fast can lead to vehicle damage and loss of control."
+        "explanation": "A14 announces one or more raised devices. Crossing them too fast can affect vehicle control and occupant comfort."
       },
       "FR": {
-        "question": "Quel danger ce panneau annonce-t-il ?",
+        "question": "Quel danger A14 annonce-t-il ?",
         "choices": [
           {
-            "text": "Un dispositif surélevé artificiel sur la route destiné à réduire la vitesse",
+            "text": "Un ou plusieurs dispositifs surélevés qui imposent d'adapter la vitesse",
             "is_correct": true
           },
           {
-            "text": "Une chaussée glissante due à la pluie ou à l'huile",
+            "text": "Un pont mobile",
             "is_correct": false
           },
           {
-            "text": "Une descente soudaine de la route vers une zone plus basse",
+            "text": "Un passage à niveau sans barrières",
             "is_correct": false
           }
         ],
-        "explanation": "Ce panneau annonce un ralentisseur artificiel installé intentionnellement pour réduire la vitesse. Le franchir trop vite peut causer des dommages et une perte de contrôle."
+        "explanation": "A14 annonce un ou plusieurs dispositifs surélevés. Les franchir trop vite peut nuire à la maîtrise du véhicule et au confort des occupants."
       },
       "AR": {
-        "question": "ما هو الخطر الذي تشير إليه هذه العلامة المرورية؟",
+        "question": "ما الخطر الذي تعلن عنه A14؟",
         "choices": [
           {
-            "text": "مطب صناعي على الطريق مصمم لتقليل السرعة",
+            "text": "منشأة مرتفعة واحدة أو أكثر تستلزم تكييف السرعة",
             "is_correct": true
           },
           {
-            "text": "طريق زلق بسبب المطر أو الزيت",
+            "text": "جسر متحرك",
             "is_correct": false
           },
           {
-            "text": "هبوط مفاجئ للطريق نحو منطقة أخفض",
+            "text": "معبر سكة حديد من دون حواجز",
             "is_correct": false
           }
         ],
-        "explanation": "تشير هذه العلامة إلى وجود مطب صناعي تم إنشاؤه عمداً لتقليل السرعة. عبوره بسرعة عالية قد يؤدي إلى تلف المركبة وفقدان السيطرة."
+        "explanation": "تعلن A14 عن منشأة مرتفعة واحدة أو أكثر. قد يؤثر عبورها بسرعة عالية في السيطرة على المركبة وراحة الركاب."
       }
     }
   },
@@ -250,76 +250,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat doet u best wanneer u dit bord ziet?",
+        "question": "Wat doet u wanneer u A14 ziet?",
         "choices": [
           {
-            "text": "Uw snelheid tijdig verminderen voor de verkeersdrempel en er voorzichtig overheen rijden",
+            "text": "Vóór de verhoogde inrichting vertragen en ze voorzichtig met aangepaste snelheid oversteken",
             "is_correct": true
           },
           {
-            "text": "Uw rijstrook verlaten om de verkeersdrempel te ontwijken",
+            "text": "Dezelfde snelheid aanhouden zolang u de maximumsnelheid niet overschrijdt",
             "is_correct": false
           },
           {
-            "text": "Gas geven vlak voor de verkeersdrempel voor een soepelere oversteek",
+            "text": "Op het laatste moment krachtig remmen",
             "is_correct": false
           }
         ],
-        "explanation": "U doet er goed aan uw snelheid te verminderen voor de verhoogde inrichting. Ze te snel nemen kan schade aan het voertuig veroorzaken en is gevaarlijk voor de inzittenden."
+        "explanation": "Vertraag tijdig vóór de verhoogde inrichting en rijd er voorzichtig met aangepaste snelheid over."
       },
       "EN": {
-        "question": "What should you do when you see this sign?",
+        "question": "What do you do when you see A14?",
         "choices": [
           {
-            "text": "Reduce speed in time before the speed bump and cross it carefully",
+            "text": "Slow down before the raised device and cross it carefully at an appropriate speed",
             "is_correct": true
           },
           {
-            "text": "Leave your lane to avoid the speed bump",
+            "text": "Maintain the same speed while below the maximum limit",
             "is_correct": false
           },
           {
-            "text": "Accelerate just before the speed bump for a smoother crossing",
+            "text": "Brake hard at the last moment",
             "is_correct": false
           }
         ],
-        "explanation": "You should reduce speed before the speed bump. Crossing it too fast can damage the vehicle and endanger the occupants."
+        "explanation": "Slow down in good time before the raised device and cross it carefully at an appropriate speed."
       },
       "FR": {
-        "question": "Que devriez-vous faire lorsque vous voyez ce panneau ?",
+        "question": "Que faites-vous lorsque vous voyez A14 ?",
         "choices": [
           {
-            "text": "Réduire votre vitesse à temps avant le ralentisseur et le franchir prudemment",
+            "text": "Ralentir avant le dispositif surélevé et le franchir prudemment à une vitesse adaptée",
             "is_correct": true
           },
           {
-            "text": "Quitter votre voie pour éviter le ralentisseur",
+            "text": "Maintenir la même vitesse tant que vous ne dépassez pas la vitesse maximale",
             "is_correct": false
           },
           {
-            "text": "Accélérer juste avant le ralentisseur pour un passage plus fluide",
+            "text": "Freiner brusquement au dernier moment",
             "is_correct": false
           }
         ],
-        "explanation": "Vous devriez réduire la vitesse avant le ralentisseur. Le franchir trop vite peut endommager le véhicule et mettre les occupants en danger."
+        "explanation": "Ralentissez à temps avant le dispositif surélevé et franchissez-le prudemment à une vitesse adaptée."
       },
       "AR": {
-        "question": "ماذا ينبغي عليك فعله عند رؤية هذه العلامة المرورية؟",
+        "question": "ماذا تفعل عند رؤية A14؟",
         "choices": [
           {
-            "text": "تقليل سرعتك في الوقت المناسب قبل المطب الصناعي والمرور فوقه بحذر",
+            "text": "تخفيف السرعة قبل المنشأة المرتفعة وعبورها بحذر وبسرعة ملائمة",
             "is_correct": true
           },
           {
-            "text": "مغادرة مسارك لتجنب المطب الصناعي",
+            "text": "الحفاظ على السرعة نفسها ما دمت دون الحد الأقصى",
             "is_correct": false
           },
           {
-            "text": "التسارع قبيل المطب الصناعي مباشرة لعبور أكثر سلاسة",
+            "text": "الكبح بقوة في اللحظة الأخيرة",
             "is_correct": false
           }
         ],
-        "explanation": "ينبغي تقليل السرعة قبل المطب الصناعي. اجتيازه بسرعة عالية قد يؤدي إلى تلف المركبة ويشكل خطراً على الركاب."
+        "explanation": "خفف السرعة في الوقت المناسب قبل المنشأة المرتفعة واعبرها بحذر وبسرعة ملائمة."
       }
     }
   },
@@ -331,76 +331,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U rijdt aan 50 km/u in een woonwijk en ziet dit bord vlak voor een verkeersdrempel. Wat is de juiste actie?",
+        "question": "U rijdt 50 km/u op een weg waar die snelheid is toegestaan en ziet A14 vlak voor een verhoogde inrichting. Wat doet u?",
         "choices": [
           {
-            "text": "Snelheid verminderen tot een lage snelheid en de drempel voorzichtig oversteken",
+            "text": "Vóór de verhoogde inrichting vertragen en ze voorzichtig met lage snelheid oversteken",
             "is_correct": true
           },
           {
-            "text": "Uw snelheid houden want 50 km/u is de toegestane snelheid in een woonwijk",
+            "text": "50 km/u aanhouden omdat u de aangegeven maximumsnelheid niet overschrijdt",
             "is_correct": false
           },
           {
-            "text": "Stoppen vlak voor de drempel en dan gas geven om over te steken",
+            "text": "Vlak ervoor stoppen en daarna versnellen om erover te rijden",
             "is_correct": false
           }
         ],
-        "explanation": "Bij een verhoogde inrichting doet u er goed aan uw snelheid te verminderen, ook al rijdt u al aan de toegestane snelheid. De drempel moet voorzichtig worden genomen."
+        "explanation": "Een toegestane maximumsnelheid is geen snelheid die in elke omstandigheid veilig is. Vertraag vóór de verhoogde inrichting en rijd er voorzichtig over."
       },
       "EN": {
-        "question": "You are driving at 50 km/h in a residential area and see this sign just before a speed bump. What is the correct action?",
+        "question": "You are driving at 50 km/h on a road where that speed is permitted and see A14 before a raised device. What do you do?",
         "choices": [
           {
-            "text": "Reduce speed to a low speed and cross the bump carefully",
+            "text": "Slow down before the raised device and cross it carefully at low speed",
             "is_correct": true
           },
           {
-            "text": "Keep your speed since 50 km/h is the permitted speed in a residential area",
+            "text": "Maintain 50 km/h because you are not exceeding the posted maximum",
             "is_correct": false
           },
           {
-            "text": "Stop just before the bump then accelerate to cross it",
+            "text": "Stop just before it and then accelerate across it",
             "is_correct": false
           }
         ],
-        "explanation": "At a speed bump, you should reduce speed even if you are already within the permitted limit. The bump should be crossed carefully at a low speed."
+        "explanation": "A permitted maximum speed is not safe in every circumstance. Slow down before the raised device and cross it carefully."
       },
       "FR": {
-        "question": "Vous roulez à 50 km/h dans une zone résidentielle et voyez ce panneau juste avant un ralentisseur. Quelle est la bonne action ?",
+        "question": "Vous roulez à 50 km/h sur une route où cette vitesse est autorisée et voyez A14 avant un dispositif surélevé. Que faites-vous ?",
         "choices": [
           {
-            "text": "Réduire la vitesse à une vitesse basse et franchir le ralentisseur prudemment",
+            "text": "Ralentir avant le dispositif surélevé et le franchir prudemment à basse vitesse",
             "is_correct": true
           },
           {
-            "text": "Maintenir votre vitesse car 50 km/h est la vitesse autorisée en zone résidentielle",
+            "text": "Maintenir 50 km/h parce que vous ne dépassez pas la vitesse maximale indiquée",
             "is_correct": false
           },
           {
-            "text": "S'arrêter juste avant le ralentisseur puis accélérer pour le franchir",
+            "text": "S'arrêter juste avant puis accélérer pour le franchir",
             "is_correct": false
           }
         ],
-        "explanation": "Devant un ralentisseur, vous devriez réduire la vitesse même si vous êtes déjà à la limite autorisée. Le ralentisseur doit être franchi prudemment à basse vitesse."
+        "explanation": "Une vitesse maximale autorisée n'est pas sûre en toutes circonstances. Ralentissez avant le dispositif surélevé et franchissez-le prudemment."
       },
       "AR": {
-        "question": "أنت تقود بسرعة 50 كم/ساعة في منطقة سكنية وترى هذه العلامة المرورية قبيل مطب صناعي. ما الإجراء الصحيح؟",
+        "question": "تقود بسرعة 50 كم/س على طريق يُسمح فيه بهذه السرعة وترى A14 قبل منشأة مرتفعة. ماذا تفعل؟",
         "choices": [
           {
-            "text": "تقليل السرعة إلى مستوى منخفض والمرور فوق المطب الصناعي بحذر",
+            "text": "تخفيف السرعة قبل المنشأة المرتفعة وعبورها بحذر وبسرعة منخفضة",
             "is_correct": true
           },
           {
-            "text": "الحفاظ على سرعتك لأن 50 كم/ساعة هي السرعة المسموح بها في المنطقة السكنية",
+            "text": "الحفاظ على 50 كم/س لأنك لا تتجاوز الحد الأقصى المبيّن",
             "is_correct": false
           },
           {
-            "text": "التوقف قبيل المطب الصناعي مباشرة ثم التسارع للعبور",
+            "text": "التوقف قبلها مباشرة ثم التسارع لعبورها",
             "is_correct": false
           }
         ],
-        "explanation": "عند مطب صناعي ينبغي تقليل السرعة إلى مستوى منخفض حتى لو كنت ضمن الحد المسموح به. ينبغي عبوره بحذر وبسرعة بطيئة."
+        "explanation": "السرعة القصوى المسموح بها ليست آمنة في كل ظرف. خفف السرعة قبل المنشأة المرتفعة واعبرها بحذر."
       }
     }
   },
@@ -493,7 +493,7 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Is het aan te raden om over een verkeersdrempel te rijden zonder uw snelheid te verminderen?",
+        "question": "Is het aan te raden een verhoogde inrichting over te rijden zonder uw snelheid aan te passen?",
         "choices": [
           {
             "text": "Nee",
@@ -504,10 +504,10 @@
             "is_correct": false
           }
         ],
-        "explanation": "Nee, dat is niet raadzaam. Een verkeersdrempel vereist een lage snelheid voor een veilige passage."
+        "explanation": "Nee. Vertraag vóór de verhoogde inrichting en kies een snelheid waarmee u ze veilig en gecontroleerd kunt oversteken."
       },
       "EN": {
-        "question": "Is it advisable to drive over a speed bump without reducing speed?",
+        "question": "Is it advisable to cross a raised device without adapting your speed?",
         "choices": [
           {
             "text": "No",
@@ -518,10 +518,10 @@
             "is_correct": false
           }
         ],
-        "explanation": "No, it is not advisable. A speed bump requires a low speed for safe passage."
+        "explanation": "No. Slow down before the raised device and choose a speed that lets you cross it safely and under control."
       },
       "FR": {
-        "question": "Est-il conseillé de franchir un ralentisseur sans réduire votre vitesse ?",
+        "question": "Est-il conseillé de franchir un dispositif surélevé sans adapter votre vitesse ?",
         "choices": [
           {
             "text": "Non",
@@ -532,10 +532,10 @@
             "is_correct": false
           }
         ],
-        "explanation": "Non, ce n'est pas conseillé. Un ralentisseur exige une vitesse basse pour un franchissement sûr."
+        "explanation": "Non. Ralentissez avant le dispositif surélevé et choisissez une vitesse qui permet de le franchir en sécurité et en gardant la maîtrise."
       },
       "AR": {
-        "question": "هل يُنصح بالمرور فوق مطب صناعي دون تقليل السرعة؟",
+        "question": "هل يُنصح بعبور منشأة مرتفعة من دون تكييف السرعة؟",
         "choices": [
           {
             "text": "لا",
@@ -546,7 +546,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "لا، لا يُنصح بذلك. يتطلب المطب الصناعي سرعة منخفضة للعبور الآمن."
+        "explanation": "لا. خفف السرعة قبل المنشأة المرتفعة واختر سرعة تتيح عبورها بأمان مع الحفاظ على السيطرة."
       }
     }
   },
@@ -558,7 +558,7 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wordt van u verwacht uw snelheid te verminderen voor een verkeersdrempel?",
+        "question": "Moet u vóór een met A14 aangekondigde verhoogde inrichting uw snelheid aanpassen?",
         "choices": [
           {
             "text": "Ja",
@@ -569,10 +569,10 @@
             "is_correct": false
           }
         ],
-        "explanation": "Ja. Van u wordt verwacht dat u uw snelheid vermindert voor een verkeersdrempel. Te snel over de drempel rijden kan schade veroorzaken en is gevaarlijk voor passagiers."
+        "explanation": "Ja. De toegelaten maximumsnelheid blijft slechts een bovengrens; uw werkelijke snelheid moet aangepast zijn aan de verhoogde inrichting en de omstandigheden."
       },
       "EN": {
-        "question": "Are you expected to reduce your speed before a speed bump?",
+        "question": "Must you adapt your speed before a raised device announced by A14?",
         "choices": [
           {
             "text": "Yes",
@@ -583,10 +583,10 @@
             "is_correct": false
           }
         ],
-        "explanation": "Yes. You are expected to reduce your speed before a speed bump. Crossing it too fast can cause damage and endanger passengers."
+        "explanation": "Yes. The permitted maximum remains only an upper limit; your actual speed must suit the raised device and the conditions."
       },
       "FR": {
-        "question": "Êtes-vous censé réduire votre vitesse avant un ralentisseur ?",
+        "question": "Devez-vous adapter votre vitesse avant un dispositif surélevé annoncé par A14 ?",
         "choices": [
           {
             "text": "Oui",
@@ -597,10 +597,10 @@
             "is_correct": false
           }
         ],
-        "explanation": "Oui. Vous êtes censé réduire votre vitesse avant un ralentisseur. Le franchir trop vite peut causer des dommages et mettre les passagers en danger."
+        "explanation": "Oui. La vitesse maximale autorisée n'est qu'une limite supérieure; votre vitesse réelle doit être adaptée au dispositif surélevé et aux circonstances."
       },
       "AR": {
-        "question": "هل يُتوقع منك تقليل السرعة قبل مطب صناعي؟",
+        "question": "هل يجب تكييف السرعة قبل منشأة مرتفعة تعلن عنها A14؟",
         "choices": [
           {
             "text": "نعم",
@@ -611,7 +611,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "نعم. يُتوقع منك تقليل السرعة قبل مطب صناعي لحماية المركبة والحفاظ على سلامة الركاب."
+        "explanation": "نعم. يبقى الحد الأقصى المسموح به سقفًا فقط؛ ويجب أن تلائم سرعتك الفعلية المنشأة المرتفعة والظروف."
       }
     }
   }

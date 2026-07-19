@@ -225,12 +225,18 @@
       "AR": {
         "question": "ما الخطر الذي يُحذّرك منه هذا اللوح في منطقة الحيوانات البرية؟",
         "choices": [
-          { "text": "حيوانات برية قد تعبر الطريق فجأة", "is_correct": true },
+          {
+            "text": "حيوانات برية قد تعبر الطريق فجأة",
+            "is_correct": true
+          },
           {
             "text": "حديقة حيوانات على جانب الطريق تتسلل منها حيوانات إلى الطريق",
             "is_correct": false
           },
-          { "text": "مركبات زراعية تدخل الطريق من الحقول", "is_correct": false }
+          {
+            "text": "مركبات زراعية تدخل الطريق من الحقول",
+            "is_correct": false
+          }
         ],
         "explanation": "الحيوانات البرية مثل الغزلان والخنازير البرية أشد خطورة عند الغسق وفي الليل. تعبر الطريق بصورة غير متوقعة وتصعب رؤيتها في الظلام."
       }
@@ -325,76 +331,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U raakt een wild dier aan op de rijbaan. Wat doet u?",
+        "question": "Een groot wild dier verschijnt plots op de rijbaan. Wat doet u?",
         "choices": [
           {
-            "text": "Op een veilige plaats stoppen, de weg beveiligen en de politie verwittigen; het gewond dier niet zelf verplaatsen",
+            "text": "Gecontroleerd vertragen, uw koers stabiel houden en zo nodig stoppen",
             "is_correct": true
           },
           {
-            "text": "Doorrijden want het dier zal zichzelf wel redden",
+            "text": "Hard uitwijken zonder de omgeving te controleren",
             "is_correct": false
           },
           {
-            "text": "Het gewonde dier onmiddellijk zelf van de rijbaan verwijderen",
+            "text": "Versnellen om vóór het dier te passeren",
             "is_correct": false
           }
         ],
-        "explanation": "Na een aanrijding met een wild dier moet u stoppen, de weg beveiligen en de politie en eventueel de lokale dienst voor wildschade verwittigen. Verplaats een gewond wild dier nooit zelf, want het kan gevaarlijk reageren."
+        "explanation": "Pas uw snelheid aan, vermijd een ongecontroleerde uitwijkbeweging en stop zo nodig voor het voorzienbare obstakel."
       },
       "EN": {
-        "question": "You hit a wild animal on the road. What do you do?",
+        "question": "A large wild animal suddenly appears on the road. What do you do?",
         "choices": [
           {
-            "text": "Stop in a safe place, secure the scene and notify the police; do not move the injured animal yourself",
+            "text": "Slow down in a controlled manner, keep a steady course and stop if necessary",
             "is_correct": true
           },
           {
-            "text": "Drive on — the animal will manage on its own",
+            "text": "Swerve sharply without checking the surroundings",
             "is_correct": false
           },
           {
-            "text": "Immediately remove the injured animal from the road yourself",
+            "text": "Accelerate to pass before the animal",
             "is_correct": false
           }
         ],
-        "explanation": "After a collision with a wild animal, you must stop, secure the road and notify the police and the local wildlife damage authority. Never move an injured wild animal yourself, because it may react dangerously."
+        "explanation": "Adjust speed, avoid an uncontrolled evasive manoeuvre and stop if necessary for the foreseeable obstacle."
       },
       "FR": {
-        "question": "Vous heurtez un animal sauvage sur la route. Que faites-vous ?",
+        "question": "Un grand animal sauvage apparaît soudainement sur la chaussée. Que faites-vous ?",
         "choices": [
           {
-            "text": "S'arrêter dans un endroit sûr, sécuriser les lieux et avertir la police; ne pas déplacer l'animal blessé soi-même",
+            "text": "Ralentir de manière contrôlée, maintenir une trajectoire stable et s'arrêter si nécessaire",
             "is_correct": true
           },
           {
-            "text": "Continuer à rouler — l'animal se débrouillera tout seul",
+            "text": "Faire un écart brusque sans contrôler les alentours",
             "is_correct": false
           },
           {
-            "text": "Retirer immédiatement l'animal blessé de la route soi-même",
+            "text": "Accélérer pour passer avant l'animal",
             "is_correct": false
           }
         ],
-        "explanation": "Après une collision avec un animal sauvage, vous devez vous arrêter, sécuriser la route et avertir la police ainsi que l'instance locale compétente pour les dégâts causés par la faune. Ne déplacez jamais vous-même un animal sauvage blessé, car il peut réagir dangereusement."
+        "explanation": "Adaptez votre vitesse, évitez une manœuvre d'évitement incontrôlée et arrêtez-vous si nécessaire devant l'obstacle prévisible."
       },
       "AR": {
-        "question": "اصطدمت بحيوان بري على الطريق. ماذا تفعل؟",
+        "question": "ظهر حيوان بري كبير فجأة على الطريق. ماذا تفعل؟",
         "choices": [
           {
-            "text": "التوقف في مكان آمن وتأمين موقع الحادث وإبلاغ الشرطة؛ عدم تحريك الحيوان المصاب بنفسك",
+            "text": "تخفيف السرعة بصورة متحكم بها والحفاظ على مسار ثابت والتوقف عند الضرورة",
             "is_correct": true
           },
           {
-            "text": "الاستمرار في القيادة — سينجو الحيوان بنفسه",
+            "text": "الانحراف الحاد من دون فحص المحيط",
             "is_correct": false
           },
           {
-            "text": "إزالة الحيوان المصاب من الطريق فوراً بنفسك",
+            "text": "التسارع للمرور قبل الحيوان",
             "is_correct": false
           }
         ],
-        "explanation": "بعد الاصطدام بحيوان بري، يجب التوقف وتأمين الطريق وإبلاغ الشرطة والجهة المحلية المختصة بأضرار الحياة البرية. لا تحاول أبدًا نقل الحيوان البري المصاب بنفسك، لأنه قد يتصرف بشكل خطير."
+        "explanation": "كيّف سرعتك وتجنب مناورة انحراف غير متحكم بها، وتوقف عند الضرورة أمام العائق المتوقع."
       }
     }
   },
@@ -563,7 +569,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "Wilde dieren zijn het actiefst bij schemering en 's nachts. U moet uw snelheid altijd aanpassen aan de omstandigheden, en 's nachts mag uw stopafstand nooit groter zijn dan uw zichtafstand."
+        "explanation": "U moet uw snelheid aanpassen aan het zicht, de toestand van de weg en de mogelijke aanwezigheid van dieren, zodat u kunt stoppen voor een voorzienbare hindernis."
       },
       "EN": {
         "question": "Can you drive at full speed at night when this sign warns of wild animals crossing?",
@@ -577,7 +583,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "Wild animals are most active at dusk and at night. You must always adapt your speed to the conditions, and at night your stopping distance must never exceed what you can see."
+        "explanation": "You must adapt speed to visibility, road conditions and the possible presence of animals so that you can stop for a foreseeable obstacle."
       },
       "FR": {
         "question": "Pouvez-vous rouler à pleine vitesse la nuit lorsque ce panneau avertit d'un passage d'animaux sauvages ?",
@@ -591,7 +597,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "Les animaux sauvages sont les plus actifs au crépuscule et la nuit. Vous devez toujours adapter votre vitesse aux conditions, et la nuit votre distance d'arrêt ne doit jamais dépasser votre distance de visibilité."
+        "explanation": "Vous devez adapter votre vitesse à la visibilité, à l'état de la route et à la présence possible d'animaux afin de pouvoir vous arrêter devant un obstacle prévisible."
       },
       "AR": {
         "question": "هل يمكنك القيادة بأقصى سرعة ليلًا عند وجود علامة عبور الحيوانات البرية؟",
@@ -605,7 +611,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "تكون الحيوانات البرية أكثر نشاطًا عند الغسق وفي الليل. يجب عليك دائمًا تكييف سرعتك مع الظروف، ويجب ألا تتجاوز مسافة التوقف ليلاً مدى الرؤية المتاح لك."
+        "explanation": "يجب تكييف السرعة مع مدى الرؤية وحالة الطريق واحتمال وجود حيوانات، بحيث تستطيع التوقف أمام عائق متوقع."
       }
     }
   }

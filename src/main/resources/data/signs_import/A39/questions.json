@@ -80,7 +80,6 @@
       }
     }
   },
-
   {
     "question_id": "A39_Q02",
     "type": "WHICH_SIGN",
@@ -117,7 +116,10 @@
             "text": "The sign that warns of low-flying aircraft near an airfield",
             "is_correct": false
           },
-          { "text": "The sign that warns of crosswind", "is_correct": false }
+          {
+            "text": "The sign that warns of crosswind",
+            "is_correct": false
+          }
         ],
         "explanation": "Danger sign A39 specifically warns of two-way traffic. The aircraft sign (A35) applies to low-flying aircraft. The crosswind sign (A37) applies to strong wind gusts."
       },
@@ -182,7 +184,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "Het risico is dat bestuurders die uit de éénrichtingssectie komen, psychologisch nog neigen naar de volledige rijbaanbreedte. Ze kunnen plotseling te ver naar het midden rijden en een frontale botsing veroorzaken."
+        "explanation": "A39 kondigt aan dat na een gedeelte met eenrichtingsverkeer opnieuw tegenliggers kunnen komen. Neem onmiddellijk uw plaats rechts op de rijbaan in."
       },
       "EN": {
         "question": "What hazard does A39 announce?",
@@ -200,7 +202,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "The risk is that drivers coming from the one-way section may still tend to use the full road width. They may suddenly drive too far towards the centre and cause a head-on collision."
+        "explanation": "A39 announces that oncoming traffic may appear again after a one-way section. Immediately take your position on the right-hand side of the carriageway."
       },
       "FR": {
         "question": "Quel danger A39 annonce-t-il ?",
@@ -218,7 +220,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "Le risque est que les conducteurs arrivant de la section à sens unique aient encore tendance à utiliser toute la largeur de la route. Ils peuvent soudainement rouler trop près du centre et provoquer une collision frontale."
+        "explanation": "A39 annonce que des usagers venant en sens inverse peuvent de nouveau apparaître après une section à sens unique. Reprenez immédiatement votre place à droite sur la chaussée."
       },
       "AR": {
         "question": "ما الخطر الذي يُحذّرك منه هذا اللوح في منطقة حركة المرور ثنائية؟",
@@ -236,7 +238,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "الخطر هو أن السائقين القادمين من القسم أحادي الاتجاه قد يواصلون استخدام العرض الكامل للطريق. وقد يقودون فجأة بشكل قريب جداً من الوسط، مما يسبب تصادماً أمامياً عند بداية المرور في اتجاهين."
+        "explanation": "تعلن A39 عن احتمال ظهور مركبات قادمة مجددًا بعد جزء أحادي الاتجاه. اتخذ موضعك فورًا على الجانب الأيمن من الطريق."
       }
     }
   },
@@ -556,60 +558,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Mag u na bord A39 inhalen op de linkerrijstrook als het zicht beperkt is door een bocht?",
+        "question": "Mag u na A39 links een motorvoertuig inhalen wanneer een bocht verhindert dat u tegenliggers ver genoeg kunt zien?",
         "choices": [
           {
-            "text": "Neen, bij beperkt zicht en tweerichtingsverkeer is inhalen onveilig en doorgaans niet toegelaten; het risico op een frontale botsing is te groot",
+            "text": "Nee",
             "is_correct": true
           },
           {
-            "text": "Ja, als het voertuig voor u duidelijk trager rijdt mag u snel inhalen",
+            "text": "Ja",
             "is_correct": false
           }
         ],
-        "explanation": "Op een tweerichtingsweg met beperkt zicht creëert inhalen een hoog risico op een frontale botsing. Een tegenligger in de bocht kan plotseling voor uw neus verschijnen. U haalt alleen in als u zeker bent dat de inhaalkant volledig vrij is."
+        "explanation": "Op een weg met verkeer in beide richtingen is links inhalen verboden in een bocht wanneer u tegenliggers niet van voldoende afstand kunt zien om veilig in te halen."
       },
       "EN": {
-        "question": "Is it allowed to overtake on the left lane after sign A39 when visibility is limited by a bend?",
+        "question": "After A39, may you overtake a motor vehicle on the left when a bend prevents you from seeing oncoming users far enough away?",
         "choices": [
           {
-            "text": "No, with limited visibility and two-way traffic overtaking is unsafe and generally not allowed; the risk of a head-on collision is too great",
+            "text": "No",
             "is_correct": true
           },
           {
-            "text": "Yes, if the vehicle in front of you is clearly driving slower you may quickly overtake",
+            "text": "Yes",
             "is_correct": false
           }
         ],
-        "explanation": "On a two-way road with limited visibility, overtaking creates a high risk of a head-on collision. An oncoming vehicle in the bend can suddenly appear in front of you. You should only overtake when you are certain the overtaking side is completely clear."
+        "explanation": "On a two-way road, overtaking on the left is prohibited at a bend when oncoming users cannot be seen from far enough away to overtake safely."
       },
       "FR": {
-        "question": "Est-il permis de dépasser sur la voie gauche après le panneau A39 lorsque la visibilité est limitée par un virage ?",
+        "question": "Après A39, pouvez-vous dépasser un véhicule à moteur par la gauche lorsqu'un virage empêche de voir les usagers venant en sens inverse à une distance suffisante ?",
         "choices": [
           {
-            "text": "Non, avec une visibilité limitée et une circulation à double sens, le dépassement est dangereux et généralement non autorisé; le risque de collision frontale est trop grand",
+            "text": "Non",
             "is_correct": true
           },
           {
-            "text": "Oui, si le véhicule devant vous roule clairement plus lentement vous pouvez dépasser rapidement",
+            "text": "Oui",
             "is_correct": false
           }
         ],
-        "explanation": "Sur une route à double sens avec visibilité limitée, dépasser crée un risque élevé de collision frontale. Un véhicule venant en sens inverse dans le virage peut soudainement apparaître devant vous. Vous ne devriez dépasser que lorsque vous êtes certain que le côté de dépassement est complètement dégagé."
+        "explanation": "Sur une route à double sens, le dépassement par la gauche est interdit dans un virage lorsque les usagers venant en sens inverse ne peuvent pas être aperçus à une distance suffisante pour dépasser en sécurité."
       },
       "AR": {
-        "question": "هل يُسمح بالتجاوز على المسار الأيسر بعد العلامة المرورية A39 عندما تكون الرؤية محدودة بسبب منعطف؟",
+        "question": "بعد A39، هل يجوز تجاوز مركبة آلية من اليسار عندما يمنع المنعطف رؤية القادمين من الاتجاه المقابل من مسافة كافية؟",
         "choices": [
           {
-            "text": "لا، عند محدودية الرؤية ومع المرور في اتجاهين يكون التجاوز خطيراً وغير مسموح به عادةً؛ خطر التصادم الأمامي كبير جداً",
+            "text": "لا",
             "is_correct": true
           },
           {
-            "text": "نعم، إذا كانت المركبة أمامك تسير بوضوح بشكل أبطأ يمكنك التجاوز بسرعة",
+            "text": "نعم",
             "is_correct": false
           }
         ],
-        "explanation": "على طريق يسير فيه المرور في اتجاهين ومع محدودية الرؤية يخلق التجاوز خطرًا مرتفعًا لحدوث تصادم أمامي. قد تظهر مركبة قادمة في المنعطف فجأة أمامك. ينبغي ألا تتجاوز إلا حين تتأكد من أن جانب التجاوز خالٍ تماماً."
+        "explanation": "على طريق ذي اتجاهين يُمنع التجاوز من اليسار في منعطف عندما لا يمكن رؤية القادمين من الاتجاه المقابل من مسافة تكفي لإتمام التجاوز بأمان."
       }
     }
   }

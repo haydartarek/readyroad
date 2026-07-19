@@ -103,13 +103,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "Dit bord behoort tot de gevaarsborden. Alle gevaarsborden zijn driehoekig met een rode rand op een witte achtergrond."
+        "explanation": "Dit bord behoort tot de gevaarsborden. Dit bord is driehoekig met een rode rand op een witte achtergrond; A45 en A47 zijn uitzonderingen in de vorm van een Sint-Andrieskruis."
       },
       "EN": {
         "question": "To which category of traffic signs does this sign belong?",
         "choices": [
           {
-            "text": "Warning signs",
+            "text": "Danger signs",
             "is_correct": true
           },
           {
@@ -121,13 +121,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "This sign belongs to the warning signs. All warning signs are triangular with a red border on a white background."
+        "explanation": "This is a danger sign. This sign is triangular with a red border on a white background; A45 and A47 are Saint Andrew's cross exceptions."
       },
       "FR": {
         "question": "À quelle catégorie de panneaux de signalisation ce panneau appartient-il ?",
         "choices": [
           {
-            "text": "Panneaux de danger",
+            "text": "Signaux de danger",
             "is_correct": true
           },
           {
@@ -139,7 +139,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "Ce panneau appartient aux panneaux de danger. Tous les panneaux de danger sont triangulaires avec une bordure rouge sur fond blanc."
+        "explanation": "Ce signal appartient aux signaux de danger. Il est triangulaire à bord rouge sur fond blanc; A45 et A47 sont des exceptions en forme de croix de Saint-André."
       },
       "AR": {
         "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
@@ -157,7 +157,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "تنتمي هذه العلامة المرورية إلى علامات الخطر. جميع علامات الخطر مثلثة بحافة حمراء على خلفية بيضاء."
+        "explanation": "تنتمي هذه العلامة إلى علامات الخطر. وهي مثلثة بحافة حمراء على خلفية بيضاء؛ أما A45 وA47 فهما استثناءان على شكل صليب القديس أندرو."
       }
     }
   },
@@ -265,7 +265,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "Bij een gevaarlijke steile daling doet u er goed aan een lage versnelling in te schakelen en de motorrem te gebruiken. Vrijlopen is verboden en de handrem is niet geschikt voor snelheidsregeling tijdens het rijden."
+        "explanation": "Bij een gevaarlijke daling gebruikt u best een lage versnelling en de motorrem om de snelheid te beheersen. Vrijlopen vermindert de controle en de handrem is niet geschikt om tijdens het rijden de snelheid te regelen."
       },
       "EN": {
         "question": "What should you do when you see this sign for a steep dangerous descent?",
@@ -283,7 +283,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "On a steep dangerous descent you should engage a low gear and rely on engine braking. Neutral driving is dangerous and the handbrake is not suitable for speed control while moving."
+        "explanation": "On a dangerous descent, use a low gear and engine braking to control speed. Coasting reduces control, and the parking brake is not suitable for controlling speed while driving."
       },
       "FR": {
         "question": "Que devriez-vous faire lorsque vous voyez ce panneau de descente dangereuse ?",
@@ -301,7 +301,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "Dans une descente dangereuse, vous devriez passer en vitesse réduite et utiliser le frein moteur. Rouler au point mort est interdit et le frein à main n'est pas adapté au contrôle de la vitesse en marche."
+        "explanation": "Dans une descente dangereuse, utilisez un rapport inférieur et le frein moteur pour maîtriser la vitesse. Rouler au point mort réduit le contrôle, et le frein de stationnement ne convient pas pour régler la vitesse en roulant."
       },
       "AR": {
         "question": "ماذا ينبغي أن تفعل عند رؤية هذه العلامة المرورية الخاصة بانحدار شديد خطير؟",
@@ -319,7 +319,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "في الانحدار الشديد الخطير ينبغي استخدام غيار منخفض والاعتماد على فرملة المحرك. القيادة بوضع محايد محظورة وفرامل اليد غير مناسبة للتحكم في السرعة أثناء السير."
+        "explanation": "في المنحدر الخطير استخدم غيارًا منخفضًا وفرملة المحرك للتحكم في السرعة. يقلل السير بالوضع المحايد من السيطرة، ولا تصلح فرامل التوقف لتنظيم السرعة أثناء السير."
       }
     }
   },
@@ -493,7 +493,7 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Mag u een gevaarlijke steile daling afdalen met de versnelling in vrijloop (vrijstaand)?",
+        "question": "Is het aan te raden een gevaarlijke daling af te rijden met de versnelling in vrijloop?",
         "choices": [
           {
             "text": "Nee",
@@ -504,10 +504,10 @@
             "is_correct": false
           }
         ],
-        "explanation": "Rijden in vrijloop bij een gevaarlijke steile daling is gevaarlijk. U verliest de motorrem en kunt niet meer voldoende vertragen."
+        "explanation": "Nee. Vrijlopen neemt de motorrem weg en vermindert uw controle over de snelheid. Gebruik een passende versnelling en rem gecontroleerd."
       },
       "EN": {
-        "question": "Is it allowed to drive down a steep dangerous descent with the gear in neutral?",
+        "question": "Is it advisable to descend a dangerous slope with the transmission in neutral?",
         "choices": [
           {
             "text": "No",
@@ -518,10 +518,10 @@
             "is_correct": false
           }
         ],
-        "explanation": "Driving in neutral is dangerous because you lose engine braking and vehicle control."
+        "explanation": "No. Coasting removes engine braking and reduces speed control. Use an appropriate gear and brake in a controlled manner."
       },
       "FR": {
-        "question": "Êtes-vous autorisé à descendre une pente dangereuse avec le levier de vitesse au point mort ?",
+        "question": "Est-il conseillé de descendre une pente dangereuse au point mort ?",
         "choices": [
           {
             "text": "Non",
@@ -532,10 +532,10 @@
             "is_correct": false
           }
         ],
-        "explanation": "Descendre au point mort est dangereux dans une pente dangereuse. Vous perdez le frein moteur et ne pouvez plus ralentir suffisamment."
+        "explanation": "Non. Rouler au point mort supprime le frein moteur et réduit la maîtrise de la vitesse. Utilisez un rapport adapté et freinez de manière contrôlée."
       },
       "AR": {
-        "question": "هل يُسمح باستخدام ناقل الحركة على الوضع المحايد أثناء النزول في انحدار شديد خطير؟",
+        "question": "هل يُنصح بالنزول في منحدر خطير مع وضع ناقل الحركة على الحياد؟",
         "choices": [
           {
             "text": "لا",
@@ -546,7 +546,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "القيادة على الوضع المحايد خطيرة لأنها تؤدي إلى فقدان فرملة المحرك والسيطرة على المركبة."
+        "explanation": "لا. يلغي الوضع المحايد فرملة المحرك ويقلل التحكم في السرعة. استخدم غيارًا مناسبًا واكبح بصورة متحكم بها."
       }
     }
   },

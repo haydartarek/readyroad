@@ -14,15 +14,15 @@
             "is_correct": true
           },
           {
-            "text": "Weg afgesloten voor alle verkeer door wegwerkzaamheden",
+            "text": "Verkeerslichten",
             "is_correct": false
           },
           {
-            "text": "Parkeerplaats voor bouwvoertuigen langs de weg",
+            "text": "Rijbaanversmalling",
             "is_correct": false
           }
         ],
-        "explanation": "A31 waarschuwt voor wegwerkzaamheden. De rijbaan kan versmald zijn en er kan tijdelijke signalisatie aanwezig zijn, evenals obstakels of werklieden. De weg is open maar vereist extra voorzichtigheid."
+        "explanation": "A31 waarschuwt voor werken op of naast de rijbaan. De inrichting kan gewijzigd zijn en er kunnen tijdelijke signalisatie, obstakels, arbeiders of machines aanwezig zijn."
       },
       "EN": {
         "question": "What does this traffic sign mean?",
@@ -32,51 +32,51 @@
             "is_correct": true
           },
           {
-            "text": "Road closed to all traffic because of roadworks",
+            "text": "Traffic lights",
             "is_correct": false
           },
           {
-            "text": "Parking area for construction vehicles alongside the road",
+            "text": "Road narrowing",
             "is_correct": false
           }
         ],
-        "explanation": "A31 warns of roadworks. The carriageway may be narrowed, temporary signs, obstacles or workers may be present. The road is open but requires extra caution."
+        "explanation": "A31 warns of works on or beside the carriageway. The layout may be changed and temporary signs, obstacles, workers or machinery may be present."
       },
       "FR": {
-        "question": "Que signifie ce panneau de signalisation ?",
+        "question": "Que signifie ce signal routier ?",
         "choices": [
           {
             "text": "Travaux",
             "is_correct": true
           },
           {
-            "text": "Route fermée à toute circulation en raison de travaux",
+            "text": "Signaux lumineux de circulation",
             "is_correct": false
           },
           {
-            "text": "Aire de stationnement pour véhicules de chantier le long de la route",
+            "text": "Rétrécissement de la chaussée",
             "is_correct": false
           }
         ],
-        "explanation": "A31 avertit de travaux routiers. La chaussée peut être rétrécie et une signalisation temporaire, des obstacles ou des ouvriers peuvent être présents. La route est ouverte mais nécessite une prudence accrue."
+        "explanation": "A31 avertit de travaux sur la chaussée ou à côté de celle-ci. La configuration peut être modifiée et des signaux temporaires, obstacles, ouvriers ou engins peuvent être présents."
       },
       "AR": {
-        "question": "ما معنى هذه العلامة المرورية؟",
+        "question": "ماذا تعني علامة المرور هذه؟",
         "choices": [
           {
             "text": "أشغال الطريق",
             "is_correct": true
           },
           {
-            "text": "الطريق مغلق أمام جميع المركبات بسبب أشغال",
+            "text": "إشارات ضوئية مرورية",
             "is_correct": false
           },
           {
-            "text": "موقف للمركبات الإنشائية على جانب الطريق",
+            "text": "تضيق الطريق",
             "is_correct": false
           }
         ],
-        "explanation": "تحذّر A31 من وجود أشغال على الطريق. قد يكون الطريق مُضيَّقًا وقد توجد إشارات مؤقتة أو عوائق أو عمّال. الطريق مفتوح لكنه يستلزم توخّي الحذر الشديد."
+        "explanation": "تحذر A31 من أشغال على الطريق أو بجانبه. وقد يتغير شكل الطريق وتوجد علامات مؤقتة أو عوائق أو عمال أو آليات."
       }
     }
   },
@@ -88,76 +88,76 @@
     "show_sign": false,
     "i18n": {
       "NL": {
-        "question": "Welk bord waarschuwt voor wegwerkzaamheden?",
+        "question": "Welk bord waarschuwt voor werken op of naast de rijbaan?",
         "choices": [
           {
-            "text": "Het bord dat waarschuwt voor wegwerkzaamheden op of langs de rijbaan",
+            "text": "A31 - Werken",
             "is_correct": true
           },
           {
-            "text": "Het bord dat waarschuwt voor een gevaarlijk kruispunt verderop",
+            "text": "A33 - Verkeerslichten",
             "is_correct": false
           },
           {
-            "text": "Het bord dat waarschuwt voor rijbaanversmalling",
+            "text": "A7a - Rijbaanversmalling",
             "is_correct": false
           }
         ],
-        "explanation": "Het gevaarsbord A31 waarschuwt specifiek voor wegwerkzaamheden. Het bord voor gevaarlijk kruispunt (A33) geldt voor onveilige kruispunten. Het bord voor rijbaanversmalling (A41) geldt voor vernauwing van de weg."
+        "explanation": "A31 waarschuwt voor werken. A33 kondigt verkeerslichten aan en A7a een rijbaanversmalling."
       },
       "EN": {
-        "question": "Which sign warns of roadworks?",
+        "question": "Which sign warns of works on or beside the carriageway?",
         "choices": [
           {
-            "text": "The sign that warns of roadworks on or alongside the carriageway",
+            "text": "A31 - Roadworks",
             "is_correct": true
           },
           {
-            "text": "The sign that warns of a dangerous junction ahead",
+            "text": "A33 - Traffic lights",
             "is_correct": false
           },
           {
-            "text": "The sign that warns of a road narrowing",
+            "text": "A7a - Road narrowing",
             "is_correct": false
           }
         ],
-        "explanation": "Danger sign A31 specifically warns of roadworks. The dangerous junction sign (A33) applies to unsafe intersections. The road narrowing sign (A41) applies to a narrowing of the road."
+        "explanation": "A31 warns of roadworks. A33 announces traffic lights and A7a a road narrowing."
       },
       "FR": {
-        "question": "Quel panneau signale des travaux sur la route ?",
+        "question": "Quel signal avertit de travaux sur la chaussée ou à côté de celle-ci ?",
         "choices": [
           {
-            "text": "Le panneau qui avertit de travaux sur la chaussée ou à ses abords",
+            "text": "A31 - Travaux",
             "is_correct": true
           },
           {
-            "text": "Le panneau qui avertit d'un carrefour dangereux",
+            "text": "A33 - Signaux lumineux de circulation",
             "is_correct": false
           },
           {
-            "text": "Le panneau qui avertit d'un rétrécissement de la chaussée",
+            "text": "A7a - Rétrécissement de la chaussée",
             "is_correct": false
           }
         ],
-        "explanation": "Le panneau de danger A31 signale spécifiquement des travaux routiers. Le panneau carrefour dangereux (A33) concerne les intersections dangereuses. Le panneau rétrécissement (A41) concerne un rétrécissement de la route."
+        "explanation": "A31 avertit de travaux. A33 annonce des signaux lumineux de circulation et A7a un rétrécissement de la chaussée."
       },
       "AR": {
-        "question": "أي علامة مرورية تُحذّر من وجود أشغال على الطريق؟",
+        "question": "أي علامة تحذر من أشغال على الطريق أو بجانبه؟",
         "choices": [
           {
-            "text": "العلامة التي تُحذّر من أشغال على الطريق أو على جانبه",
+            "text": "A31 - أشغال الطريق",
             "is_correct": true
           },
           {
-            "text": "العلامة التي تُحذّر من تقاطع خطير أمامك",
+            "text": "A33 - إشارات ضوئية مرورية",
             "is_correct": false
           },
           {
-            "text": "العلامة التي تُحذّر من تضييق في الطريق",
+            "text": "A7a - تضيق الطريق",
             "is_correct": false
           }
         ],
-        "explanation": "علامة الخطر A31 تُحذّر تحديداً من أشغال الطريق. علامة التقاطع الخطير (A33) تختص بالتقاطعات غير الآمنة. علامة تضييق الطريق (A41) تختص بتقليص عرض الطريق."
+        "explanation": "تحذر A31 من الأشغال، بينما تعلن A33 عن إشارات ضوئية مرورية وتحذر A7a من تضيق الطريق."
       }
     }
   },
@@ -265,7 +265,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "In een werkzone vervangt de tijdelijke signalisatie de gewone verkeerstekens. U verlaagt best uw snelheid en volgt alle tijdelijke borden, markeringen en aanwijzingen van werklieden of verkeersregelaars nauwgezet op."
+        "explanation": "Verminder uw snelheid en volg de tijdelijke borden, oranje markeringen en geldige aanwijzingen ter plaatse. De inrichting van de rijbaan kan door de werken gewijzigd zijn."
       },
       "EN": {
         "question": "You are entering a work zone. What do you do?",
@@ -283,7 +283,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "In a work zone temporary signs replace normal traffic signs. You should reduce your speed and carefully follow all temporary signs, markings and instructions from workers or traffic controllers."
+        "explanation": "Reduce speed and follow the temporary signs, orange markings and valid directions on site. The road layout may have been changed by the works."
       },
       "FR": {
         "question": "Vous entrez dans une zone de travaux. Que faites-vous ?",
@@ -301,7 +301,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "Dans une zone de travaux, la signalisation temporaire remplace la signalisation normale. Vous devriez réduire votre vitesse et suivre attentivement toute la signalisation temporaire, les marquages et les instructions des ouvriers ou régulateurs de trafic."
+        "explanation": "Réduisez votre vitesse et respectez les signaux temporaires, les marquages orange et les indications valables sur place. La configuration de la chaussée peut avoir été modifiée par les travaux."
       },
       "AR": {
         "question": "أنت تدخل منطقة أشغال. ماذا تفعل؟",
@@ -319,7 +319,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "في منطقة الأشغال تحلّ الإشارات المؤقتة محلّ العلامات المرورية العادية. ينبغي تخفيض السرعة واتباع جميع الإشارات المؤقتة والعلامات الأرضية وتعليمات العمّال أو منظّمي المرور بعناية."
+        "explanation": "خفف السرعة واتبع العلامات المؤقتة والخطوط البرتقالية والتوجيهات السارية في الموقع، فقد تكون الأشغال قد غيرت شكل الطريق."
       }
     }
   },
@@ -331,76 +331,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Een werfopzichter staat op de rijbaan en gebaart u te stoppen, terwijl het verkeerslicht groen is. Wat doet u?",
+        "question": "Een bevoegd persoon geeft u in een werkzone een bevel dat afwijkt van het groene licht. Wat volgt u?",
         "choices": [
           {
-            "text": "Stoppen; de aanwijzingen van de werfopzichter hebben voorrang op verkeerstekens",
+            "text": "Het bevel van de bevoegde persoon",
             "is_correct": true
           },
           {
-            "text": "Doorrijden want een groen licht geeft altijd voorrang",
+            "text": "Altijd het groene licht",
             "is_correct": false
           },
           {
-            "text": "Vertragen maar doorrijden want de opzichter heeft geen wettelijke bevoegdheid",
+            "text": "De bestuurder voor u, ongeacht het bevel",
             "is_correct": false
           }
         ],
-        "explanation": "Personen die bevoegd zijn om het verkeer te regelen — ook werfopzichters met een officieel signaal — hebben voorrang op verkeerstekens. Een groen licht verliest zijn geldigheid als een bevoegd persoon u een stopteken geeft."
+        "explanation": "Bevelen van bevoegde personen gaan boven verkeerstekens en verkeersregels. Alleen een persoon die wettelijk bevoegd is, kan zulke bindende bevelen geven."
       },
       "EN": {
-        "question": "A site supervisor is standing on the carriageway and gestures for you to stop, while the traffic light is green. What do you do?",
+        "question": "An authorised person in a work zone gives an order that differs from a green light. What do you follow?",
         "choices": [
           {
-            "text": "Stop; the instructions of the site supervisor take priority over traffic signs",
+            "text": "The order of the authorised person",
             "is_correct": true
           },
           {
-            "text": "Drive on because a green light always gives right of way",
+            "text": "Always the green light",
             "is_correct": false
           },
           {
-            "text": "Slow down but continue because the supervisor has no legal authority",
+            "text": "The driver ahead regardless of the order",
             "is_correct": false
           }
         ],
-        "explanation": "Persons authorised to direct traffic — including site supervisors with an official signal — take priority over traffic signs. A green light loses its validity when an authorised person gives you a stop signal."
+        "explanation": "Orders from authorised persons take precedence over traffic signs and traffic rules. Only a person legally authorised to do so may give such binding orders."
       },
       "FR": {
-        "question": "Un chef de chantier se tient sur la chaussée et vous fait signe de vous arrêter, alors que le feu est vert. Que faites-vous ?",
+        "question": "Dans une zone de travaux, un agent qualifié donne une injonction différente du feu vert. Que suivez-vous ?",
         "choices": [
           {
-            "text": "S'arrêter; les instructions du chef de chantier ont priorité sur les panneaux de signalisation",
+            "text": "L'injonction de l'agent qualifié",
             "is_correct": true
           },
           {
-            "text": "Continuer car un feu vert donne toujours la priorité",
+            "text": "Toujours le feu vert",
             "is_correct": false
           },
           {
-            "text": "Ralentir mais continuer car le chef de chantier n'a pas d'autorité légale",
+            "text": "Le conducteur devant vous, indépendamment de l'injonction",
             "is_correct": false
           }
         ],
-        "explanation": "Les personnes habilitées à régler la circulation — y compris les chefs de chantier avec un signal officiel — ont priorité sur les panneaux de signalisation. Un feu vert perd sa validité lorsqu'une personne habilitée vous fait signe de vous arrêter."
+        "explanation": "Les injonctions des agents qualifiés priment sur les signaux routiers et les règles de circulation. Seule une personne légalement habilitée peut donner de telles injonctions contraignantes."
       },
       "AR": {
-        "question": "مشرف موقع يقف على الطريق ويُشير إليك بالتوقف بينما الإشارة المرورية خضراء. ماذا تفعل؟",
+        "question": "أصدر شخص مخول في منطقة أشغال أمرًا يخالف الضوء الأخضر. ماذا تتبع؟",
         "choices": [
           {
-            "text": "التوقف؛ تعليمات مشرف الموقع لها الأولوية على العلامات المرورية",
+            "text": "أمر الشخص المخول",
             "is_correct": true
           },
           {
-            "text": "الاستمرار في السير لأن الضوء الأخضر يمنح الأولوية دائماً",
+            "text": "الضوء الأخضر دائمًا",
             "is_correct": false
           },
           {
-            "text": "التباطؤ والمواصلة لأن المشرف لا يملك صلاحية قانونية",
+            "text": "المركبة أمامك بصرف النظر عن الأمر",
             "is_correct": false
           }
         ],
-        "explanation": "الأشخاص المخوّلون بتنظيم المرور — بما فيهم مشرفو المواقع بإشارة رسمية — لهم الأولوية على العلامات المرورية. يفقد الضوء الأخضر صلاحيته عندما يعطيك شخص مخوّل إشارة التوقف."
+        "explanation": "تعلو أوامر الأشخاص المخولين على العلامات وقواعد المرور. ولا يملك إصدار أمر ملزم كهذا إلا شخص مخول قانونًا."
       }
     }
   },
@@ -412,76 +412,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U rijdt 's nachts door een werkzone die overdag druk bezocht werd. Welke snelheidslimiet geldt?",
+        "question": "Moet u een tijdelijke snelheidsbeperking in een werkzone naleven wanneer er op dat moment geen arbeiders zichtbaar zijn?",
         "choices": [
           {
-            "text": "De tijdelijke snelheidslimiet die in de werkzone is aangebracht — die geldt dag en nacht, zeven dagen per week",
+            "text": "Ja, zolang het bord van toepassing is en geen onderbord de geldigheid beperkt",
             "is_correct": true
           },
           {
-            "text": "'s Nachts mag u de normale snelheidslimiet aanhouden want er zijn geen werklieden",
+            "text": "Nee, zonder zichtbare arbeiders vervalt de beperking",
             "is_correct": false
           },
           {
-            "text": "U mag sneller rijden in het weekend omdat de werken dan stilliggen",
+            "text": "Alleen overdag",
             "is_correct": false
           }
         ],
-        "explanation": "Een tijdelijk bord in een werkzone is even verbindend als een permanent bord. De beperking geldt ononderbroken totdat het tijdelijke bord wordt verwijderd, ongeacht het tijdstip of de dag van de week."
+        "explanation": "Een geplaatst tijdelijk snelheidsbord blijft bindend zolang het van toepassing is. Een onderbord kan de geldigheid naar tijd of omstandigheden beperken."
       },
       "EN": {
-        "question": "You are driving at night through a work zone that was busy during the day. What speed limit applies?",
+        "question": "Must you obey a temporary speed limit in a work zone when no workers are visible at that moment?",
         "choices": [
           {
-            "text": "The temporary speed limit posted in the work zone — it applies day and night, seven days a week",
+            "text": "Yes, while the sign applies and no supplementary plate limits its validity",
             "is_correct": true
           },
           {
-            "text": "At night you may keep to the normal speed limit because there are no workers",
+            "text": "No, the limit ends when no workers are visible",
             "is_correct": false
           },
           {
-            "text": "You may drive faster at the weekend because the works are not active then",
+            "text": "Only during daylight",
             "is_correct": false
           }
         ],
-        "explanation": "A temporary sign in a work zone is as binding as a permanent sign. The restriction applies continuously until the temporary sign is removed, regardless of the time or day of the week."
+        "explanation": "A temporary speed-limit sign remains binding while it applies. A supplementary plate may limit validity by time or circumstance."
       },
       "FR": {
-        "question": "Vous roulez de nuit dans une zone de travaux qui était très fréquentée pendant la journée. Quelle limitation de vitesse s'applique ?",
+        "question": "Devez-vous respecter une limitation de vitesse temporaire dans une zone de travaux lorsqu'aucun ouvrier n'est visible à ce moment-là ?",
         "choices": [
           {
-            "text": "La limitation de vitesse temporaire affichée dans la zone de travaux — elle s'applique jour et nuit, sept jours sur sept",
+            "text": "Oui, tant que le signal s'applique et qu'aucun panneau additionnel n'en limite la validité",
             "is_correct": true
           },
           {
-            "text": "La nuit vous pouvez respecter la limitation normale car il n'y a pas d'ouvriers",
+            "text": "Non, la limitation cesse lorsqu'aucun ouvrier n'est visible",
             "is_correct": false
           },
           {
-            "text": "Vous pouvez rouler plus vite le week-end car les travaux sont à l'arrêt",
+            "text": "Uniquement de jour",
             "is_correct": false
           }
         ],
-        "explanation": "Un panneau temporaire dans une zone de travaux est aussi contraignant qu'un panneau permanent. La restriction s'applique en permanence jusqu'à ce que le panneau temporaire soit retiré, quel que soit le moment ou le jour de la semaine."
+        "explanation": "Un signal temporaire de limitation de vitesse reste contraignant tant qu'il s'applique. Un panneau additionnel peut en limiter la validité dans le temps ou selon les circonstances."
       },
       "AR": {
-        "question": "تقود ليلاً عبر منطقة أشغال كانت مزدحمة خلال النهار. أي حد سرعة ينطبق؟",
+        "question": "هل يجب احترام حد سرعة مؤقت في منطقة أشغال عندما لا يظهر عمال في تلك اللحظة؟",
         "choices": [
           {
-            "text": "حد السرعة المؤقت المنشور في منطقة الأشغال — ينطبق نهاراً وليلاً سبعة أيام في الأسبوع",
+            "text": "نعم، ما دامت العلامة سارية ولا تحد لوحة إضافية من صلاحيتها",
             "is_correct": true
           },
           {
-            "text": "ليلاً يمكنك الالتزام بحد السرعة الاعتيادي لأنه لا يوجد عمّال",
+            "text": "لا، ينتهي الحد عند عدم ظهور عمال",
             "is_correct": false
           },
           {
-            "text": "يمكنك القيادة بسرعة أكبر في عطلة نهاية الأسبوع لأن الأشغال متوقفة",
+            "text": "نهارًا فقط",
             "is_correct": false
           }
         ],
-        "explanation": "العلامة المرورية المؤقتة في منطقة الأشغال ملزمة كالعلامة المرورية الدائمة تماماً. يسري التقييد باستمرار حتى تُرفع العلامة المرورية المؤقتة بصرف النظر عن الوقت أو اليوم."
+        "explanation": "تبقى علامة حد السرعة المؤقتة ملزمة ما دامت سارية، وقد تحد لوحة إضافية من صلاحيتها زمنياً أو بحسب الظروف."
       }
     }
   },
@@ -493,60 +493,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Mag u inhalen in een werkzone wanneer er geen tijdelijk inhaalverbod is aangebracht en de weg éénrijstrookig is?",
+        "question": "Mag u een oranje doorlopende lijn overschrijden om in te halen?",
         "choices": [
           {
-            "text": "Neen, in een nauwe werkzone is inhalen gevaarlijk en doorgaans niet mogelijk wanneer de rijbaan slechts één rijstrook biedt",
+            "text": "Nee",
             "is_correct": true
           },
           {
-            "text": "Ja, als er geen tijdelijk inhaalverbod staat mag u inhalen",
+            "text": "Ja",
             "is_correct": false
           }
         ],
-        "explanation": "In een werkzone die tot één rijstrook is beperkt, is er geen veilige ruimte om in te halen. Een poging daartoe creëert een hoog risico op een aanrijding met werklieden, obstakels of tegenliggers."
+        "explanation": "Een oranje voorlopige doorlopende lijn heeft dezelfde betekenis als een witte doorlopende lijn en mag niet worden overschreden."
       },
       "EN": {
-        "question": "Is it allowed to overtake in a work zone when there is no temporary overtaking ban sign and the road is reduced to one lane?",
+        "question": "May you cross a solid orange temporary line to overtake?",
         "choices": [
           {
-            "text": "No, in a narrow work zone overtaking is unsafe and generally not possible when the carriageway offers only one lane",
+            "text": "No",
             "is_correct": true
           },
           {
-            "text": "Yes, if there is no temporary overtaking ban sign you may overtake",
+            "text": "Yes",
             "is_correct": false
           }
         ],
-        "explanation": "In a work zone reduced to one lane, there is no safe space to overtake. Attempting to do so would create a high risk of collision with workers, obstacles or oncoming traffic."
+        "explanation": "A solid orange temporary line has the same meaning as a solid white line and must not be crossed."
       },
       "FR": {
-        "question": "Est-il permis de dépasser dans une zone de travaux lorsqu'il n'y a pas de panneau d'interdiction de dépasser temporaire et que la route est réduite à une voie ?",
+        "question": "Pouvez-vous franchir une ligne orange continue provisoire pour dépasser ?",
         "choices": [
           {
-            "text": "Non, dans une zone de travaux étroite, dépasser est dangereux et généralement impossible lorsque la chaussée ne comporte qu'une seule voie",
+            "text": "Non",
             "is_correct": true
           },
           {
-            "text": "Oui, s'il n'y a pas de panneau d'interdiction de dépasser temporaire, vous pouvez dépasser",
+            "text": "Oui",
             "is_correct": false
           }
         ],
-        "explanation": "Dans une zone de travaux réduite à une seule voie, il n'existe pas d'espace sûr pour dépasser. Tenter de le faire créerait un risque élevé de collision avec des ouvriers, des obstacles ou des véhicules venant en sens inverse."
+        "explanation": "Une ligne orange continue provisoire a la même signification qu'une ligne blanche continue et ne peut pas être franchie."
       },
       "AR": {
-        "question": "هل يُسمح بالتجاوز في منطقة أشغال عندما لا توجد علامة حظر تجاوز مؤقتة وكان الطريق مكوّنًا من مسار واحد فقط؟",
+        "question": "هل يجوز تجاوز خط برتقالي مؤقت متصل بغرض التجاوز؟",
         "choices": [
           {
-            "text": "لا، في منطقة أشغال ضيقة يكون التجاوز خطيرًا وغالبًا غير ممكن عندما يكون الطريق مكوّنًا من مسار واحد فقط",
+            "text": "لا",
             "is_correct": true
           },
           {
-            "text": "نعم، إذا لم توجد علامة حظر تجاوز مؤقتة يمكنك التجاوز",
+            "text": "نعم",
             "is_correct": false
           }
         ],
-        "explanation": "في منطقة أشغال محصورة في مسار واحد لا توجد مساحة آمنة للتجاوز. محاولة القيام بذلك تخلق خطرًا مرتفعًا للاصطدام بالعمّال أو العوائق أو المركبات القادمة من الاتجاه المعاكس."
+        "explanation": "للخط البرتقالي المؤقت المتصل المعنى نفسه للخط الأبيض المتصل، ولا يجوز تجاوزه."
       }
     }
   },
@@ -558,60 +558,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Mag u de tijdelijke snelheidslimiet in een werkzone negeren omdat u oordeelt dat er momenteel geen werklieden aanwezig zijn?",
+        "question": "Mag u een toepasselijk tijdelijk verkeersbord negeren omdat er geen werken bezig lijken?",
         "choices": [
           {
-            "text": "Neen, een tijdelijk bord is even verbindend als een permanent bord en moet altijd worden nageleefd",
+            "text": "Nee",
             "is_correct": true
           },
           {
-            "text": "Ja, als u ziet dat er geen werklieden zijn mag u de gewone limiet aanhouden",
+            "text": "Ja",
             "is_correct": false
           }
         ],
-        "explanation": "Tijdelijke verkeerstekens zijn wettelijk even verbindend als permanente. De snelheidslimiet geldt ononderbroken zolang het bord aanwezig is. Overtreding kan zware boetes en rijontzegging opleveren."
+        "explanation": "Nee. Een toepasselijk tijdelijk verkeersbord is bindend totdat de aangegeven regeling eindigt of het bord niet langer van toepassing is."
       },
       "EN": {
-        "question": "Is it allowed to ignore the temporary speed limit in a work zone because you judge that there are currently no workers present?",
+        "question": "May you ignore an applicable temporary traffic sign because no work appears to be taking place?",
         "choices": [
           {
-            "text": "No, a temporary sign is as binding as a permanent sign and must always be observed",
+            "text": "No",
             "is_correct": true
           },
           {
-            "text": "Yes, if you can see there are no workers you may keep to the normal limit",
+            "text": "Yes",
             "is_correct": false
           }
         ],
-        "explanation": "Temporary traffic signs are legally as binding as permanent ones. The speed limit applies continuously as long as the sign is present. Violation can result in heavy fines and loss of licence."
+        "explanation": "No. An applicable temporary traffic sign is binding until the indicated arrangement ends or the sign no longer applies."
       },
       "FR": {
-        "question": "Est-il permis d'ignorer la limitation de vitesse temporaire dans une zone de travaux parce que vous estimez qu'il n'y a actuellement pas d'ouvriers présents ?",
+        "question": "Pouvez-vous ignorer un signal routier temporaire applicable parce qu'aucun travail ne semble être en cours ?",
         "choices": [
           {
-            "text": "Non, un panneau temporaire est aussi contraignant qu'un panneau permanent et doit toujours être respecté",
+            "text": "Non",
             "is_correct": true
           },
           {
-            "text": "Oui, si vous voyez qu'il n'y a pas d'ouvriers vous pouvez respecter la limitation normale",
+            "text": "Oui",
             "is_correct": false
           }
         ],
-        "explanation": "Les panneaux de signalisation temporaires sont légalement aussi contraignants que les permanents. La limitation de vitesse s'applique en permanence tant que le panneau est présent. La violation peut entraîner de lourdes amendes et la perte du permis."
+        "explanation": "Non. Un signal routier temporaire applicable reste contraignant jusqu'à la fin de la réglementation indiquée ou jusqu'à ce qu'il ne soit plus applicable."
       },
       "AR": {
-        "question": "هل يُسمح بتجاهل حد السرعة المؤقت في منطقة أشغال لأنك تقدّر أنه لا يوجد عمّال حالياً؟",
+        "question": "هل يجوز تجاهل علامة مرور مؤقتة سارية لأن الأشغال لا تبدو قائمة؟",
         "choices": [
           {
-            "text": "لا، العلامة المرورية المؤقتة ملزمة كالعلامة المرورية الدائمة ويجب احترامها دائماً",
+            "text": "لا",
             "is_correct": true
           },
           {
-            "text": "نعم، إذا رأيت أنه لا يوجد عمّال يمكنك الالتزام بالحد الاعتيادي",
+            "text": "نعم",
             "is_correct": false
           }
         ],
-        "explanation": "العلامات المرورية المؤقتة ملزمة قانونياً كالدائمة تماماً. يسري حد السرعة باستمرار طالما العلامة المرورية موجودة. المخالفة قد تفضي إلى غرامات ثقيلة وسحب الرخصة."
+        "explanation": "لا. تبقى علامة المرور المؤقتة السارية ملزمة حتى انتهاء التنظيم المبين أو زوال انطباق العلامة."
       }
     }
   }

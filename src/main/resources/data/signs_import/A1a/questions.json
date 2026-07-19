@@ -103,13 +103,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "Dit bord behoort tot de gevaarsborden. Ze zijn driehoekig met een rode rand en witte achtergrond."
+        "explanation": "Dit bord behoort tot de gevaarsborden. Dit bord is driehoekig met een rode rand op een witte achtergrond; A45 en A47 zijn uitzonderingen in de vorm van een Sint-Andrieskruis."
       },
       "EN": {
         "question": "Which category does this sign belong to?",
         "choices": [
           {
-            "text": "Warning signs",
+            "text": "Danger signs",
             "is_correct": true
           },
           {
@@ -121,13 +121,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "This sign belongs to warning signs. These signs are triangular with a red border and white background."
+        "explanation": "This is a danger sign. This sign is triangular with a red border on a white background; A45 and A47 are Saint Andrew's cross exceptions."
       },
       "FR": {
         "question": "À quelle catégorie appartient ce panneau ?",
         "choices": [
           {
-            "text": "Panneaux de danger",
+            "text": "Signaux de danger",
             "is_correct": true
           },
           {
@@ -139,7 +139,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "Ce panneau appartient aux panneaux de danger. Ils sont triangulaires avec un bord rouge et un fond blanc."
+        "explanation": "Ce signal appartient aux signaux de danger. Il est triangulaire à bord rouge sur fond blanc; A45 et A47 sont des exceptions en forme de croix de Saint-André."
       },
       "AR": {
         "question": "إلى أي فئة تنتمي هذه العلامة؟",
@@ -157,7 +157,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "تنتمي هذه العلامة إلى علامات الخطر. تكون مثلثة الشكل بحافة حمراء وخلفية بيضاء."
+        "explanation": "تنتمي هذه العلامة إلى علامات الخطر. وهي مثلثة بحافة حمراء على خلفية بيضاء؛ أما A45 وA47 فهما استثناءان على شكل صليب القديس أندرو."
       }
     }
   },
@@ -412,76 +412,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Op welke afstand wordt dit gevaarsbord buiten de bebouwde kom geplaatst?",
+        "question": "Op welke afstand wordt dit gevaarsbord in het Brussels Hoofdstedelijk en Vlaams Gewest normaal van het gevaar geplaatst?",
         "choices": [
           {
-            "text": "Ongeveer 150 meter voor het gevaar",
+            "text": "Op ongeveer 150 meter",
             "is_correct": true
           },
           {
-            "text": "Precies op de gevaarlijke plek",
+            "text": "Altijd precies op de gevaarlijke plaats",
             "is_correct": false
           },
           {
-            "text": "Op 500 meter voor het gevaar",
+            "text": "Altijd op 500 meter",
             "is_correct": false
           }
         ],
-        "explanation": "Ongeveer 150 meter voor het gevaar buiten de bebouwde kom."
+        "explanation": "In het Brussels Hoofdstedelijk en Vlaams Gewest staat een gevaarsbord normaal op ongeveer 150 meter van het gevaar. Een afwijkende afstand wordt bij benadering op een onderbord vermeld."
       },
       "EN": {
-        "question": "At what distance is this danger sign placed outside built-up areas?",
+        "question": "At what distance is this danger sign normally placed from the hazard in the Brussels-Capital and Flemish Regions?",
         "choices": [
           {
-            "text": "Approximately 150 metres before the hazard",
+            "text": "Approximately 150 metres",
             "is_correct": true
           },
           {
-            "text": "Exactly at the hazard location",
+            "text": "Always exactly at the hazard",
             "is_correct": false
           },
           {
-            "text": "500 metres before the hazard",
+            "text": "Always 500 metres away",
             "is_correct": false
           }
         ],
-        "explanation": "Approximately 150 metres before the hazard outside built-up areas."
+        "explanation": "In the Brussels-Capital and Flemish Regions, a danger sign is normally placed approximately 150 metres from the hazard. A different distance is shown approximately on a supplementary plate."
       },
       "FR": {
-        "question": "À quelle distance ce panneau de danger est-il placé hors agglomération ?",
+        "question": "À quelle distance ce signal de danger est-il normalement placé du danger en Région de Bruxelles-Capitale et en Région flamande ?",
         "choices": [
           {
-            "text": "Environ 150 mètres avant le danger",
+            "text": "À environ 150 mètres",
             "is_correct": true
           },
           {
-            "text": "Exactement à l'endroit du danger",
+            "text": "Toujours exactement à l'endroit dangereux",
             "is_correct": false
           },
           {
-            "text": "500 mètres avant le danger",
+            "text": "Toujours à 500 mètres",
             "is_correct": false
           }
         ],
-        "explanation": "Environ 150 mètres avant le danger hors agglomération."
+        "explanation": "En Région de Bruxelles-Capitale et en Région flamande, un signal de danger est normalement placé à environ 150 mètres du danger. Une autre distance est indiquée approximativement sur un panneau additionnel."
       },
       "AR": {
-        "question": "على أي مسافة توضع هذه العلامة التحذيرية خارج المنطقة السكنية؟",
+        "question": "على أي مسافة من الخطر توضع هذه العلامة عادةً في إقليم بروكسل العاصمة والإقليم الفلمنكي؟",
         "choices": [
           {
-            "text": "حوالي 150 متر قبل الخطر",
+            "text": "على بعد نحو 150 مترًا",
             "is_correct": true
           },
           {
-            "text": "مباشرة عند موقع الخطر",
+            "text": "دائمًا عند موضع الخطر تمامًا",
             "is_correct": false
           },
           {
-            "text": "500 متر قبل الخطر",
+            "text": "دائمًا على بعد 500 متر",
             "is_correct": false
           }
         ],
-        "explanation": "حوالي 150 متر قبل الخطر خارج المنطقة السكنية."
+        "explanation": "في إقليم بروكسل العاصمة والإقليم الفلمنكي توضع علامة الخطر عادةً على بعد نحو 150 مترًا من الخطر. وتُذكر المسافة المختلفة بصورة تقريبية على لوحة إضافية."
       }
     }
   },
