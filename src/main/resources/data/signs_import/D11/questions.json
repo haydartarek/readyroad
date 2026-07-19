@@ -331,76 +331,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat betekent dit bord voor andere weggebruikers?",
+        "question": "Iemand leidt een fiets aan de hand zonder andere voetgangers te hinderen. Mag die persoon het D11-pad gebruiken?",
         "choices": [
           {
-            "text": "Zij gebruiken dit pad niet",
+            "text": "Ja, die persoon volgt de regels voor voetgangers.",
             "is_correct": true
           },
           {
-            "text": "Zij mogen het ook gebruiken",
+            "text": "Nee, een fiets mag nooit op D11 aanwezig zijn.",
             "is_correct": false
           },
           {
-            "text": "Zij hebben voorrang",
+            "text": "Alleen als de persoon op de fiets rijdt.",
             "is_correct": false
           }
         ],
-        "explanation": "Het pad is bedoeld voor voetgangers."
+        "explanation": "Een persoon die een fiets aan de hand leidt, wordt voor deze regels als voetganger behandeld."
       },
       "EN": {
-        "question": "What does this sign mean for other road users?",
+        "question": "A person walks a bicycle without obstructing other pedestrians. May that person use the D11 path?",
         "choices": [
           {
-            "text": "They do not use this path",
+            "text": "Yes, that person follows the pedestrian rules.",
             "is_correct": true
           },
           {
-            "text": "They may use it",
+            "text": "No, a bicycle may never be present on D11.",
             "is_correct": false
           },
           {
-            "text": "They have priority",
+            "text": "Only if the person rides the bicycle.",
             "is_correct": false
           }
         ],
-        "explanation": "The path is intended for pedestrians."
+        "explanation": "A person walking a bicycle is treated as a pedestrian for these rules."
       },
       "FR": {
-        "question": "Que signifie ce panneau pour les autres usagers ?",
+        "question": "Une personne conduit un vélo à la main sans gêner les autres piétons. Peut-elle utiliser le chemin D11 ?",
         "choices": [
           {
-            "text": "Ils n'utilisent pas ce chemin",
+            "text": "Oui, cette personne suit les règles des piétons.",
             "is_correct": true
           },
           {
-            "text": "Ils peuvent l'utiliser",
+            "text": "Non, un vélo ne peut jamais être présent sur D11.",
             "is_correct": false
           },
           {
-            "text": "Ils ont la priorité",
+            "text": "Uniquement si la personne roule à vélo.",
             "is_correct": false
           }
         ],
-        "explanation": "Le chemin est destiné aux piétons."
+        "explanation": "La personne qui conduit un vélo à la main est traitée comme un piéton pour ces règles."
       },
       "AR": {
-        "question": "ماذا تعني هذه العلامة لباقي مستخدمي الطريق؟",
+        "question": "يقود شخص دراجة بيده من دون إعاقة المشاة الآخرين. هل يجوز له استخدام طريق D11؟",
         "choices": [
           {
-            "text": "لا يستخدمون هذا المسار",
+            "text": "نعم، يخضع هذا الشخص لقواعد المشاة.",
             "is_correct": true
           },
           {
-            "text": "يمكنهم استخدامه",
+            "text": "لا، لا يجوز وجود دراجة على D11 مطلقًا.",
             "is_correct": false
           },
           {
-            "text": "لهم الأولوية",
+            "text": "فقط إذا كان الشخص يركب الدراجة.",
             "is_correct": false
           }
         ],
-        "explanation": "المسار مخصص للمشاة."
+        "explanation": "يُعامل من يقود دراجة بيده بصفته ماشيًا لأغراض هذه القواعد."
       }
     }
   },
@@ -412,60 +412,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Mag een fietser dit pad gebruiken?",
+        "question": "Mag een fietser op zijn fiets over een D11-pad rijden enkel omdat het pad vrij is?",
         "choices": [
           {
-            "text": "Nee",
+            "text": "Nee, D11 is een verplichte weg voor voetgangers.",
             "is_correct": true
           },
           {
-            "text": "Ja",
+            "text": "Ja, wanneer er op dat moment geen voetgangers zijn.",
             "is_correct": false
           }
         ],
-        "explanation": "Het pad is voor voetgangers."
+        "explanation": "Het tijdelijk leeg zijn van het pad verandert de gebruikerscategorie van D11 niet."
       },
       "EN": {
-        "question": "May a cyclist use this path?",
+        "question": "May a cyclist ride on a D11 path merely because it is empty?",
         "choices": [
           {
-            "text": "No",
+            "text": "No, D11 is a mandatory path for pedestrians.",
             "is_correct": true
           },
           {
-            "text": "Yes",
+            "text": "Yes, whenever no pedestrians are present at that moment.",
             "is_correct": false
           }
         ],
-        "explanation": "The path is for pedestrians."
+        "explanation": "The path being temporarily empty does not change the user category of D11."
       },
       "FR": {
-        "question": "Un cycliste peut-il utiliser ce chemin ?",
+        "question": "Un cycliste peut-il rouler sur un chemin D11 simplement parce qu'il est vide ?",
         "choices": [
           {
-            "text": "Non",
+            "text": "Non, D11 est un chemin obligatoire pour les piétons.",
             "is_correct": true
           },
           {
-            "text": "Oui",
+            "text": "Oui, lorsqu'aucun piéton n'est présent à ce moment-là.",
             "is_correct": false
           }
         ],
-        "explanation": "Le chemin est pour piétons."
+        "explanation": "Le fait que le chemin soit temporairement vide ne change pas la catégorie d'usagers de D11."
       },
       "AR": {
-        "question": "هل يمكن لراكب دراجة استخدام هذا المسار؟",
+        "question": "هل يجوز لراكب دراجة السير على طريق D11 لمجرد أنه خالٍ؟",
         "choices": [
           {
-            "text": "لا",
+            "text": "لا، D11 طريق إلزامي للمشاة.",
             "is_correct": true
           },
           {
-            "text": "نعم",
+            "text": "نعم، إذا لم يكن فيه مشاة في تلك اللحظة.",
             "is_correct": false
           }
         ],
-        "explanation": "المسار للمشاة."
+        "explanation": "كون الطريق خاليًا مؤقتًا لا يغيّر فئة المستخدمين المحددة بعلامة D11."
       }
     }
   },
@@ -477,60 +477,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Mag een bestuurder dit pad gebruiken?",
+        "question": "Mag een bestuurder van een motorvoertuig een D11-pad gebruiken omdat dit de kortste route is?",
         "choices": [
           {
-            "text": "Nee",
+            "text": "Nee, D11 is niet bestemd voor motorvoertuigen.",
             "is_correct": true
           },
           {
-            "text": "Ja",
+            "text": "Ja, als de bestuurder stapvoets rijdt.",
             "is_correct": false
           }
         ],
-        "explanation": "Het pad is voor voetgangers."
+        "explanation": "D11 reserveert de weg voor voetgangers; routegemak creëert geen uitzondering voor motorvoertuigen."
       },
       "EN": {
-        "question": "May a driver use this path?",
+        "question": "May a motor-vehicle driver use a D11 path because it is the shortest route?",
         "choices": [
           {
-            "text": "No",
+            "text": "No, D11 is not intended for motor vehicles.",
             "is_correct": true
           },
           {
-            "text": "Yes",
+            "text": "Yes, if the driver proceeds at walking pace.",
             "is_correct": false
           }
         ],
-        "explanation": "The path is for pedestrians."
+        "explanation": "D11 reserves the path for pedestrians; route convenience creates no motor-vehicle exception."
       },
       "FR": {
-        "question": "Un conducteur peut-il utiliser ce chemin ?",
+        "question": "Un conducteur de véhicule à moteur peut-il emprunter un chemin D11 parce qu'il s'agit du trajet le plus court ?",
         "choices": [
           {
-            "text": "Non",
+            "text": "Non, D11 n'est pas destiné aux véhicules à moteur.",
             "is_correct": true
           },
           {
-            "text": "Oui",
+            "text": "Oui, si le conducteur roule au pas.",
             "is_correct": false
           }
         ],
-        "explanation": "Le chemin est pour piétons."
+        "explanation": "D11 réserve le chemin aux piétons ; la commodité du trajet ne crée aucune exception pour les véhicules à moteur."
       },
       "AR": {
-        "question": "هل يمكن لسائق استخدام هذا المسار؟",
+        "question": "هل يجوز لسائق مركبة آلية استخدام طريق D11 لأنه أقصر مسار؟",
         "choices": [
           {
-            "text": "لا",
+            "text": "لا، D11 غير مخصص للمركبات الآلية.",
             "is_correct": true
           },
           {
-            "text": "نعم",
+            "text": "نعم، إذا سار السائق بسرعة المشي.",
             "is_correct": false
           }
         ],
-        "explanation": "المسار للمشاة."
+        "explanation": "تخصص D11 الطريق للمشاة، ولا ينشئ اختصار المسار استثناءً للمركبات الآلية."
       }
     }
   },
@@ -542,60 +542,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Mag iemand met een voertuig dit pad gebruiken?",
+        "question": "Iemand leidt een fiets aan de hand en hindert de andere voetgangers aanzienlijk. Welk deel moet die persoon volgen?",
         "choices": [
           {
-            "text": "Nee",
+            "text": "De rijbaan, omdat de andere voetgangers aanzienlijk worden gehinderd.",
             "is_correct": true
           },
           {
-            "text": "Ja",
+            "text": "Het D11-pad, ongeacht de hinder.",
             "is_correct": false
           }
         ],
-        "explanation": "Het pad is enkel voor voetgangers."
+        "explanation": "Artikel 42.2.1 verplicht personen die een fiets of vergelijkbaar voertuig aan de hand leiden de rijbaan te volgen wanneer zij voetgangers aanzienlijk hinderen."
       },
       "EN": {
-        "question": "May someone with a vehicle use this path?",
+        "question": "A person walks a bicycle and significantly obstructs other pedestrians. Which part must that person use?",
         "choices": [
           {
-            "text": "No",
+            "text": "The carriageway, because other pedestrians are significantly obstructed.",
             "is_correct": true
           },
           {
-            "text": "Yes",
+            "text": "The D11 path, regardless of the obstruction.",
             "is_correct": false
           }
         ],
-        "explanation": "The path is only for pedestrians."
+        "explanation": "Article 42.2.1 requires people walking a bicycle or similar vehicle to use the carriageway when they significantly obstruct pedestrians."
       },
       "FR": {
-        "question": "Quelqu'un avec un véhicule peut-il utiliser ce chemin ?",
+        "question": "Une personne conduit un vélo à la main et gêne considérablement les autres piétons. Quelle partie doit-elle suivre ?",
         "choices": [
           {
-            "text": "Non",
+            "text": "La chaussée, parce que les autres piétons sont considérablement gênés.",
             "is_correct": true
           },
           {
-            "text": "Oui",
+            "text": "Le chemin D11, quelle que soit la gêne.",
             "is_correct": false
           }
         ],
-        "explanation": "Le chemin est uniquement pour les piétons."
+        "explanation": "L'article 42.2.1 impose aux personnes conduisant à la main un vélo ou un véhicule similaire de suivre la chaussée lorsqu'elles gênent considérablement les piétons."
       },
       "AR": {
-        "question": "هل يمكن لشخص لديه مركبة استخدام هذا المسار؟",
+        "question": "يقود شخص دراجة بيده ويعيق المشاة الآخرين بدرجة كبيرة. أي جزء يجب أن يستخدم؟",
         "choices": [
           {
-            "text": "لا",
+            "text": "الطريق، لأن المشاة الآخرين يتعرضون لإعاقة كبيرة.",
             "is_correct": true
           },
           {
-            "text": "نعم",
+            "text": "طريق D11 مهما كانت الإعاقة.",
             "is_correct": false
           }
         ],
-        "explanation": "المسار مخصص للمشاة فقط."
+        "explanation": "تُلزم المادة 42.2.1 من يقود دراجة أو مركبة مماثلة بيده باستخدام الطريق عندما يعيق المشاة بدرجة كبيرة."
       }
     }
   }

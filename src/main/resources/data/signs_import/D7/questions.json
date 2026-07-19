@@ -88,76 +88,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Op wie is dit bord van toepassing?",
+        "question": "Voor wie duidt D7 in de eerste plaats een verplicht fietspad aan?",
         "choices": [
           {
-            "text": "Fietsers",
+            "text": "Voor fietsers en bestuurders van tweewielige bromfietsen klasse A.",
             "is_correct": true
           },
           {
-            "text": "Voetgangers",
+            "text": "Alleen voor voetgangers.",
             "is_correct": false
           },
           {
-            "text": "Alle weggebruikers",
+            "text": "Voor alle motorvoertuigen.",
             "is_correct": false
           }
         ],
-        "explanation": "Dit bord is bedoeld voor fietsers."
+        "explanation": "D7 en D9 reserveren een fietspad voor fietsen en tweewielige bromfietsen klasse A; voor klasse B en speed pedelecs gelden aanvullende regels."
       },
       "EN": {
-        "question": "To whom does this sign apply?",
+        "question": "For whom does D7 primarily mark a mandatory cycle path?",
         "choices": [
           {
-            "text": "Cyclists",
+            "text": "Cyclists and riders of class A two-wheeled mopeds.",
             "is_correct": true
           },
           {
-            "text": "Pedestrians",
+            "text": "Pedestrians only.",
             "is_correct": false
           },
           {
-            "text": "All road users",
+            "text": "All motor vehicles.",
             "is_correct": false
           }
         ],
-        "explanation": "This sign is intended for cyclists."
+        "explanation": "D7 and D9 reserve a cycle path for cycles and class A two-wheeled mopeds; additional rules apply to class B mopeds and speed pedelecs."
       },
       "FR": {
-        "question": "À qui s'applique ce panneau ?",
+        "question": "Pour qui D7 indique-t-il principalement une piste cyclable obligatoire ?",
         "choices": [
           {
-            "text": "Aux cyclistes",
+            "text": "Pour les cyclistes et les conducteurs de cyclomoteurs à deux roues de classe A.",
             "is_correct": true
           },
           {
-            "text": "Aux piétons",
+            "text": "Uniquement pour les piétons.",
             "is_correct": false
           },
           {
-            "text": "À tous les usagers",
+            "text": "Pour tous les véhicules à moteur.",
             "is_correct": false
           }
         ],
-        "explanation": "Ce panneau concerne les cyclistes."
+        "explanation": "D7 et D9 réservent une piste aux cycles et aux cyclomoteurs à deux roues de classe A ; des règles supplémentaires concernent la classe B et les speed pedelecs."
       },
       "AR": {
-        "question": "على من تنطبق هذه العلامة؟",
+        "question": "لمن تحدد D7 أساسًا مسار دراجات إلزاميًا؟",
         "choices": [
           {
-            "text": "راكبو الدراجات",
+            "text": "لراكبي الدراجات والدراجات البخارية ذات العجلتين من الفئة A.",
             "is_correct": true
           },
           {
-            "text": "المشاة",
+            "text": "للمشاة فقط.",
             "is_correct": false
           },
           {
-            "text": "جميع مستخدمي الطريق",
+            "text": "لجميع المركبات الآلية.",
             "is_correct": false
           }
         ],
-        "explanation": "هذه العلامة مخصصة لراكبي الدراجات."
+        "explanation": "تخصص D7 وD9 مسارًا للدراجات وللدراجات البخارية ذات العجلتين من الفئة A، وتطبق قواعد إضافية على الفئة B والدراجات السريعة."
       }
     }
   },
@@ -412,60 +412,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Mag een voetganger dit pad gebruiken?",
+        "question": "Alle hoger gerangschikte, toegankelijke plaatsen voor voetgangers ontbreken. Mag een voetganger dan het D7-fietspad gebruiken?",
         "choices": [
           {
-            "text": "Nee",
+            "text": "Ja, als uitwijkmogelijkheid, maar hij moet doorgang verlenen aan de gebruikers van het fietspad.",
             "is_correct": true
           },
           {
-            "text": "Ja",
+            "text": "Nee, een voetganger mag onder geen enkele omstandigheid een fietspad volgen.",
             "is_correct": false
           }
         ],
-        "explanation": "Het pad is bedoeld voor fietsers."
+        "explanation": "Artikel 42 plaatst het fietspad als zevende keuze voor voetgangers. Bij gebruik moeten zij doorgang verlenen aan de andere gebruikers ervan."
       },
       "EN": {
-        "question": "May a pedestrian use this path?",
+        "question": "All higher-ranked accessible places for pedestrians are absent. May a pedestrian then use the D7 cycle path?",
         "choices": [
           {
-            "text": "No",
+            "text": "Yes, as a fallback, but they must give way to users of the cycle path.",
             "is_correct": true
           },
           {
-            "text": "Yes",
+            "text": "No, a pedestrian may never use a cycle path under any circumstances.",
             "is_correct": false
           }
         ],
-        "explanation": "The path is intended for cyclists."
+        "explanation": "Article 42 ranks the cycle path seventh for pedestrians. When using it, they must give way to its other users."
       },
       "FR": {
-        "question": "Un piéton peut-il utiliser ce chemin ?",
+        "question": "Tous les emplacements accessibles mieux classés pour les piétons sont absents. Un piéton peut-il alors utiliser la piste D7 ?",
         "choices": [
           {
-            "text": "Non",
+            "text": "Oui, à titre subsidiaire, mais il doit céder le passage aux usagers de la piste.",
             "is_correct": true
           },
           {
-            "text": "Oui",
+            "text": "Non, un piéton ne peut jamais emprunter une piste cyclable.",
             "is_correct": false
           }
         ],
-        "explanation": "Ce chemin est destiné aux cyclistes."
+        "explanation": "L'article 42 place la piste cyclable au septième rang pour les piétons. Lorsqu'ils l'empruntent, ils doivent céder le passage aux autres usagers."
       },
       "AR": {
-        "question": "هل يمكن للمشاة استخدام هذا المسار؟",
+        "question": "لا تتوفر أي أماكن أعلى ترتيبًا ومناسبة للمشاة. هل يجوز للماشي حينها استخدام مسار D7؟",
         "choices": [
           {
-            "text": "لا",
+            "text": "نعم كخيار احتياطي، لكن عليه إفساح الطريق لمستخدمي مسار الدراجات.",
             "is_correct": true
           },
           {
-            "text": "نعم",
+            "text": "لا، لا يجوز للماشي استخدام مسار دراجات في أي ظرف.",
             "is_correct": false
           }
         ],
-        "explanation": "هذا المسار مخصص لراكبي الدراجات."
+        "explanation": "تضع المادة 42 مسار الدراجات في المرتبة السابعة للمشاة، وعند استخدامه يجب عليهم إفساح الطريق لبقية مستخدميه."
       }
     }
   },
@@ -477,60 +477,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Mag u als fietser de rijbaan gebruiken als het fietspad leeg is?",
+        "question": "Mag een fietser een verplicht te volgen D7-fietspad verlaten om af te slaan, in te halen of een hindernis te ontwijken?",
         "choices": [
           {
-            "text": "Nee",
+            "text": "Ja, voor die handelingen mag het fietspad worden verlaten wanneer dat veilig gebeurt.",
             "is_correct": true
           },
           {
-            "text": "Ja",
+            "text": "Nee, een D7-fietspad mag nooit worden verlaten.",
             "is_correct": false
           }
         ],
-        "explanation": "Het fietspad blijft verplicht voor fietsers."
+        "explanation": "Artikel 9.1.2 laat het verlaten van een verplicht fietspad toe om af te slaan, in te halen of om een hindernis heen te rijden."
       },
       "EN": {
-        "question": "May you as a cyclist use the road if the cycle path is empty?",
+        "question": "May a cyclist leave a mandatory D7 path to turn, overtake or go around an obstacle?",
         "choices": [
           {
-            "text": "No",
+            "text": "Yes, the path may be left for those actions when this is done safely.",
             "is_correct": true
           },
           {
-            "text": "Yes",
+            "text": "No, a D7 path may never be left.",
             "is_correct": false
           }
         ],
-        "explanation": "The cycle path remains mandatory."
+        "explanation": "Article 9.1.2 allows a mandatory cycle path to be left to turn, overtake or go around an obstacle."
       },
       "FR": {
-        "question": "Pouvez-vous utiliser la route si la piste est vide ?",
+        "question": "Un cycliste peut-il quitter une piste D7 obligatoire pour tourner, dépasser ou contourner un obstacle ?",
         "choices": [
           {
-            "text": "Non",
+            "text": "Oui, il peut la quitter pour ces actions si cela se fait en sécurité.",
             "is_correct": true
           },
           {
-            "text": "Oui",
+            "text": "Non, une piste D7 ne peut jamais être quittée.",
             "is_correct": false
           }
         ],
-        "explanation": "La piste reste obligatoire."
+        "explanation": "L'article 9.1.2 permet de quitter une piste obligatoire pour changer de direction, dépasser ou contourner un obstacle."
       },
       "AR": {
-        "question": "هل يمكنك استخدام الطريق إذا كان مسار الدراجات فارغاً؟",
+        "question": "هل يجوز لراكب الدراجة مغادرة مسار D7 الإلزامي للانعطاف أو التجاوز أو تفادي عائق؟",
         "choices": [
           {
-            "text": "لا",
+            "text": "نعم، يجوز مغادرته لهذه الأفعال إذا تم ذلك بأمان.",
             "is_correct": true
           },
           {
-            "text": "نعم",
+            "text": "لا، لا يجوز مغادرة مسار D7 مطلقًا.",
             "is_correct": false
           }
         ],
-        "explanation": "يبقى مسار الدراجات إلزامياً."
+        "explanation": "تسمح المادة 9.1.2 بمغادرة المسار الإلزامي للانعطاف أو التجاوز أو المرور حول عائق."
       }
     }
   },
@@ -542,60 +542,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Mag een bromfietser dit pad gebruiken?",
+        "question": "Moet een bestuurder van een tweewielige bromfiets klasse A een berijdbaar D7-pad volgen dat in zijn rijrichting is gesignaleerd?",
         "choices": [
           {
-            "text": "Nee",
+            "text": "Ja, klasse A moet het aangeduide fietspad volgen.",
             "is_correct": true
           },
           {
-            "text": "Ja",
+            "text": "Nee, D7 geldt uitsluitend voor fietsen zonder motor.",
             "is_correct": false
           }
         ],
-        "explanation": "Het pad is voor fietsers."
+        "explanation": "De verplichting voor een D7-fietspad geldt voor fietsers en bestuurders van tweewielige bromfietsen klasse A."
       },
       "EN": {
-        "question": "May a moped rider use this path?",
+        "question": "Must a rider of a class A two-wheeled moped use a usable D7 path signed for their direction?",
         "choices": [
           {
-            "text": "No",
+            "text": "Yes, class A must use the indicated cycle path.",
             "is_correct": true
           },
           {
-            "text": "Yes",
+            "text": "No, D7 applies only to cycles without a motor.",
             "is_correct": false
           }
         ],
-        "explanation": "The path is for cyclists."
+        "explanation": "The D7 cycle-path duty applies to cyclists and riders of class A two-wheeled mopeds."
       },
       "FR": {
-        "question": "Un cyclomoteur peut-il utiliser ce chemin ?",
+        "question": "Le conducteur d'un cyclomoteur à deux roues de classe A doit-il emprunter une piste D7 praticable signalée dans son sens ?",
         "choices": [
           {
-            "text": "Non",
+            "text": "Oui, la classe A doit emprunter la piste indiquée.",
             "is_correct": true
           },
           {
-            "text": "Oui",
+            "text": "Non, D7 ne concerne que les cycles sans moteur.",
             "is_correct": false
           }
         ],
-        "explanation": "Ce chemin est pour les cyclistes."
+        "explanation": "L'obligation liée à D7 s'applique aux cyclistes et aux conducteurs de cyclomoteurs à deux roues de classe A."
       },
       "AR": {
-        "question": "هل يمكن لدراجة نارية خفيفة استخدام هذا المسار؟",
+        "question": "هل يجب على راكب دراجة بخارية ذات عجلتين من الفئة A استخدام مسار D7 صالح ومعلَّم لاتجاهه؟",
         "choices": [
           {
-            "text": "لا",
+            "text": "نعم، يجب على الفئة A استخدام مسار الدراجات المحدد.",
             "is_correct": true
           },
           {
-            "text": "نعم",
+            "text": "لا، تطبق D7 فقط على الدراجات غير المزودة بمحرك.",
             "is_correct": false
           }
         ],
-        "explanation": "هذا المسار مخصص لراكبي الدراجات."
+        "explanation": "يشمل إلزام D7 راكبي الدراجات والدراجات البخارية ذات العجلتين من الفئة A."
       }
     }
   }

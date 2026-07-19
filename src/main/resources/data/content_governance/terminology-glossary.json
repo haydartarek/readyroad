@@ -3,7 +3,8 @@
   "scope": "SHARED",
   "reviewed_categories": [
     "DANGER",
-    "INFORMATION"
+    "INFORMATION",
+    "MANDATORY"
   ],
   "last_reviewed": "2026-07-19",
   "translation_policy": "NL and FR legal terms follow the official texts. EN and AR are faithful editorial translations and must not expand or narrow the legal meaning.",
@@ -418,6 +419,287 @@
       ],
       "source_ids": [
         "BE-KB1975-INFORMATION-CURRENT"
+      ]
+    },
+    {
+      "term_id": "MANDATORY_SIGN",
+      "i18n": {
+        "NL": "gebodsbord",
+        "EN": "mandatory sign",
+        "FR": "signal d'obligation",
+        "AR": "علامة إلزام"
+      },
+      "definition": "A binding circular blue sign that imposes the displayed conduct or route.",
+      "context": "Use for the D-series category; do not describe it as optional guidance.",
+      "preferred_wording": {
+        "NL": "gebodsbord",
+        "EN": "mandatory sign",
+        "FR": "signal d'obligation",
+        "AR": "علامة إلزام"
+      },
+      "forbidden_or_misleading_wording": [
+        "advisory direction sign"
+      ],
+      "source_ids": [
+        "BE-KB1975-MANDATORY-CURRENT"
+      ]
+    },
+    {
+      "term_id": "MANDATORY_DIRECTION",
+      "i18n": {
+        "NL": "verplichte rijrichting",
+        "EN": "mandatory direction",
+        "FR": "direction obligatoire",
+        "AR": "اتجاه إلزامي"
+      },
+      "definition": "A direction imposed by a D1 or D3 arrow from the sign location.",
+      "context": "Keep separate from priority and lane advice.",
+      "preferred_wording": {
+        "NL": "verplichte rijrichting",
+        "EN": "mandatory direction",
+        "FR": "direction obligatoire",
+        "AR": "اتجاه إلزامي"
+      },
+      "forbidden_or_misleading_wording": [
+        "recommended direction"
+      ],
+      "source_ids": [
+        "BE-KB1975-MANDATORY-CURRENT",
+        "BE-MB1976-MANDATORY-PLACEMENT"
+      ]
+    },
+    {
+      "term_id": "CIRCULAR_TRAFFIC",
+      "i18n": {
+        "NL": "rondgaand verkeer",
+        "EN": "circular traffic",
+        "FR": "circulation giratoire",
+        "AR": "حركة دائرية"
+      },
+      "definition": "The direction of circulation imposed by D5 around a traffic island.",
+      "context": "Do not present D5 itself as a priority sign.",
+      "preferred_wording": {
+        "NL": "verplicht rondgaand verkeer",
+        "EN": "mandatory circular traffic",
+        "FR": "circulation giratoire obligatoire",
+        "AR": "حركة دائرية إلزامية"
+      },
+      "forbidden_or_misleading_wording": [
+        "D5 automatically grants priority"
+      ],
+      "source_ids": [
+        "BE-KB1975-MANDATORY-CURRENT",
+        "BE-MB1976-MANDATORY-PLACEMENT"
+      ]
+    },
+    {
+      "term_id": "ROUNDABOUT",
+      "i18n": {
+        "NL": "rotonde",
+        "EN": "roundabout",
+        "FR": "rond-point",
+        "AR": "دوار"
+      },
+      "definition": "A one-direction road around a central island signed with D5 and with B1 or B5 at its entries.",
+      "context": "Use the complete statutory definition when explaining priority.",
+      "preferred_wording": {
+        "NL": "rotonde",
+        "EN": "roundabout",
+        "FR": "rond-point",
+        "AR": "دوار"
+      },
+      "forbidden_or_misleading_wording": [
+        "D5 alone is a roundabout priority rule"
+      ],
+      "source_ids": [
+        "BE-KB1975-MANDATORY-CURRENT"
+      ]
+    },
+    {
+      "term_id": "CYCLE_PATH",
+      "i18n": {
+        "NL": "fietspad",
+        "EN": "cycle path",
+        "FR": "piste cyclable",
+        "AR": "مسار دراجات"
+      },
+      "definition": "A part of the public road reserved for cycles and class A two-wheeled mopeds by D7, D9 or statutory markings.",
+      "context": "Do not merge it with a suggestion strip or D10 shared part.",
+      "preferred_wording": {
+        "NL": "fietspad",
+        "EN": "cycle path",
+        "FR": "piste cyclable",
+        "AR": "مسار دراجات"
+      },
+      "forbidden_or_misleading_wording": [
+        "suggested cycle strip"
+      ],
+      "source_ids": [
+        "BE-KB1975-MANDATORY-CURRENT"
+      ]
+    },
+    {
+      "term_id": "SEPARATED_PEDESTRIAN_CYCLE_PATH",
+      "i18n": {
+        "NL": "gescheiden voetgangers- en fietsgedeelte",
+        "EN": "separated pedestrian and cycle parts",
+        "FR": "parties piétonne et cyclable séparées",
+        "AR": "جزآن منفصلان للمشاة والدراجات"
+      },
+      "definition": "The D9 layout with a pedestrian part separated from the part for cycles and class A two-wheeled mopeds.",
+      "context": "Do not describe D9 as an unseparated shared path.",
+      "preferred_wording": {
+        "NL": "D9 met gescheiden delen",
+        "EN": "D9 separated parts",
+        "FR": "parties séparées D9",
+        "AR": "أجزاء D9 المنفصلة"
+      },
+      "forbidden_or_misleading_wording": [
+        "shared without separation"
+      ],
+      "source_ids": [
+        "BE-KB1975-MANDATORY-CURRENT",
+        "BE-MB1976-MANDATORY-PLACEMENT"
+      ]
+    },
+    {
+      "term_id": "SHARED_PEDESTRIAN_CYCLE_PATH",
+      "i18n": {
+        "NL": "gedeeld voetgangers- en fietsgedeelte",
+        "EN": "shared pedestrian and cycle part",
+        "FR": "partie partagée piétons-cyclistes",
+        "AR": "جزء مشترك للمشاة والدراجات"
+      },
+      "definition": "The D10 part shared by pedestrians and cyclists without separate sides.",
+      "context": "Keep distinct from D9 and from a cycle path available to mopeds.",
+      "preferred_wording": {
+        "NL": "gedeeld D10-gedeelte",
+        "EN": "shared D10 part",
+        "FR": "partie D10 partagée",
+        "AR": "جزء D10 مشترك"
+      },
+      "forbidden_or_misleading_wording": [
+        "class A moped path"
+      ],
+      "source_ids": [
+        "BE-KB1975-MANDATORY-CURRENT"
+      ]
+    },
+    {
+      "term_id": "PEDESTRIAN_PATH",
+      "i18n": {
+        "NL": "verplichte weg voor voetgangers",
+        "EN": "mandatory pedestrian path",
+        "FR": "chemin obligatoire pour piétons",
+        "AR": "طريق إلزامي للمشاة"
+      },
+      "definition": "A D11 path that pedestrians must use when accessible and passable in the statutory order.",
+      "context": "A person walking a cycle follows pedestrian rules unless significantly obstructing others.",
+      "preferred_wording": {
+        "NL": "verplichte weg voor voetgangers",
+        "EN": "mandatory pedestrian path",
+        "FR": "chemin obligatoire pour piétons",
+        "AR": "طريق إلزامي للمشاة"
+      },
+      "forbidden_or_misleading_wording": [
+        "no bicycle may ever be present"
+      ],
+      "source_ids": [
+        "BE-KB1975-MANDATORY-CURRENT"
+      ]
+    },
+    {
+      "term_id": "RIDER_PATH",
+      "i18n": {
+        "NL": "verplichte weg voor ruiters",
+        "EN": "mandatory horse-rider path",
+        "FR": "chemin obligatoire pour cavaliers",
+        "AR": "طريق إلزامي لراكبي الخيل"
+      },
+      "definition": "A D13 path mandatory for horse riders and second in the statutory fallback order for pedestrians.",
+      "context": "Do not state that pedestrians are absolutely prohibited.",
+      "preferred_wording": {
+        "NL": "D13-ruiterpad",
+        "EN": "D13 rider path",
+        "FR": "chemin D13 pour cavaliers",
+        "AR": "طريق D13 لراكبي الخيل"
+      },
+      "forbidden_or_misleading_wording": [
+        "horse riders only in every circumstance"
+      ],
+      "source_ids": [
+        "BE-KB1975-MANDATORY-CURRENT"
+      ]
+    },
+    {
+      "term_id": "DANGEROUS_GOODS_ROUTE",
+      "i18n": {
+        "NL": "reisweg voor gevaarlijke goederen",
+        "EN": "dangerous-goods route",
+        "FR": "itinéraire pour marchandises dangereuses",
+        "AR": "مسار المواد الخطرة"
+      },
+      "definition": "A route imposed by D4 on relevant dangerous-goods vehicles, optionally scoped by an ADR tunnel-category plate.",
+      "context": "Do not apply D4 to ordinary vehicles without the relevant load.",
+      "preferred_wording": {
+        "NL": "aangepaste reisweg voor gevaarlijke goederen",
+        "EN": "suited dangerous-goods route",
+        "FR": "itinéraire adapté aux marchandises dangereuses",
+        "AR": "مسار ملائم للمواد الخطرة"
+      },
+      "forbidden_or_misleading_wording": [
+        "mandatory for every vehicle"
+      ],
+      "source_ids": [
+        "BE-KB1975-MANDATORY-CURRENT",
+        "BE-MB1976-MANDATORY-PLACEMENT"
+      ]
+    },
+    {
+      "term_id": "CLASS_A_MOPED",
+      "i18n": {
+        "NL": "tweewielige bromfiets klasse A",
+        "EN": "class A two-wheeled moped",
+        "FR": "cyclomoteur à deux roues de classe A",
+        "AR": "دراجة بخارية ذات عجلتين من الفئة A"
+      },
+      "definition": "A two- or three-wheeled class A moped with a design speed not exceeding 25 km/h under the current Road Code definition.",
+      "context": "For D7 and D9, specify class A rather than using the ambiguous generic word moped.",
+      "preferred_wording": {
+        "NL": "tweewielige bromfiets klasse A",
+        "EN": "class A two-wheeled moped",
+        "FR": "cyclomoteur à deux roues de classe A",
+        "AR": "دراجة بخارية ذات عجلتين من الفئة A"
+      },
+      "forbidden_or_misleading_wording": [
+        "moped"
+      ],
+      "source_ids": [
+        "BE-KB1975-MANDATORY-CURRENT"
+      ]
+    },
+    {
+      "term_id": "SPEED_PEDELEC",
+      "i18n": {
+        "NL": "speed pedelec",
+        "EN": "speed pedelec",
+        "FR": "speed pedelec",
+        "AR": "دراجة سريعة"
+      },
+      "definition": "A speed pedelec whose use of D7 or D9 depends on the current speed-based rules and supplementary plates.",
+      "context": "Do not list speed pedelecs as unconditional D9 or D10 users.",
+      "preferred_wording": {
+        "NL": "speed pedelec",
+        "EN": "speed pedelec",
+        "FR": "speed pedelec",
+        "AR": "دراجة سريعة"
+      },
+      "forbidden_or_misleading_wording": [
+        "always included in D9",
+        "included in D10"
+      ],
+      "source_ids": [
+        "BE-KB1975-MANDATORY-CURRENT"
       ]
     }
   ]

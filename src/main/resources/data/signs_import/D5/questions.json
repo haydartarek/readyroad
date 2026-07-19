@@ -169,76 +169,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wie heeft volgens dit bord voorrang in de rotonde?",
+        "question": "Bepaalt bord D5 op zichzelf wie voorrang heeft bij het oprijden?",
         "choices": [
           {
-            "text": "Bestuurders die al in de rotonde rijden",
+            "text": "Nee. D5 legt de rijrichting op; de voorrang volgt uit B1/B5 en de voorrangsregels.",
             "is_correct": true
           },
           {
-            "text": "Bestuurders die de rotonde willen oprijden",
+            "text": "Ja. D5 geeft altijd voorrang aan wie de rotonde oprijdt.",
             "is_correct": false
           },
           {
-            "text": "Voetgangers in alle richtingen zonder uitzondering",
+            "text": "Ja. D5 geeft altijd voorrang aan wie van rechts komt.",
             "is_correct": false
           }
         ],
-        "explanation": "Bij dit bord hebben bestuurders die zich al in de rotonde bevinden voorrang."
+        "explanation": "D5 is een gebodsbord voor rondgaand verkeer. Een wettelijk gesignaleerde rotonde heeft B1 of B5 aan de toegangen; die borden en artikel 12 regelen de voorrang."
       },
       "EN": {
-        "question": "Who has priority according to this sign in the roundabout?",
+        "question": "Does D5 by itself determine priority when entering?",
         "choices": [
           {
-            "text": "Drivers already in the roundabout",
+            "text": "No. D5 imposes the direction; priority follows from B1/B5 and the priority rules.",
             "is_correct": true
           },
           {
-            "text": "Drivers who want to enter the roundabout",
+            "text": "Yes. D5 always gives priority to entering traffic.",
             "is_correct": false
           },
           {
-            "text": "Pedestrians in all directions without exception",
+            "text": "Yes. D5 always gives priority to traffic from the right.",
             "is_correct": false
           }
         ],
-        "explanation": "With this sign, drivers already in the roundabout have priority."
+        "explanation": "D5 is a mandatory circular-traffic sign. A legally signed roundabout has B1 or B5 at its entries; those signs and Article 12 govern priority."
       },
       "FR": {
-        "question": "Qui a la priorité selon ce panneau dans le giratoire ?",
+        "question": "Le signal D5 détermine-t-il à lui seul la priorité à l'entrée ?",
         "choices": [
           {
-            "text": "Les conducteurs déjà dans le giratoire",
+            "text": "Non. D5 impose le sens ; la priorité découle de B1/B5 et des règles de priorité.",
             "is_correct": true
           },
           {
-            "text": "Les conducteurs qui veulent entrer dans le giratoire",
+            "text": "Oui. D5 donne toujours la priorité à celui qui entre.",
             "is_correct": false
           },
           {
-            "text": "Les piétons dans toutes les directions sans exception",
+            "text": "Oui. D5 donne toujours la priorité à celui qui vient de droite.",
             "is_correct": false
           }
         ],
-        "explanation": "Avec ce panneau, les conducteurs déjà dans le giratoire ont la priorité."
+        "explanation": "D5 est un signal d'obligation de circulation giratoire. Un rond-point légalement signalé comporte B1 ou B5 aux accès ; ces signaux et l'article 12 règlent la priorité."
       },
       "AR": {
-        "question": "من له الأولوية وفقًا لهذه العلامة داخل الدوار؟",
+        "question": "هل تحدد علامة D5 وحدها أولوية الدخول؟",
         "choices": [
           {
-            "text": "السائقون الموجودون داخل الدوار بالفعل",
+            "text": "لا. تفرض D5 اتجاه السير، وتُحدد الأولوية بواسطة B1/B5 وقواعد الأولوية.",
             "is_correct": true
           },
           {
-            "text": "السائقون الذين يريدون دخول الدوار",
+            "text": "نعم. تمنح D5 دائمًا الأولوية للداخل إلى الدوار.",
             "is_correct": false
           },
           {
-            "text": "المشاة في جميع الاتجاهات دون استثناء",
+            "text": "نعم. تمنح D5 دائمًا الأولوية للقادم من اليمين.",
             "is_correct": false
           }
         ],
-        "explanation": "مع هذه العلامة، يتمتع السائقون الموجودون داخل الدوار بالفعل بالأولوية."
+        "explanation": "D5 علامة إلزام للحركة الدائرية. ويحتوي الدوار المعلَّم قانونًا على B1 أو B5 عند المداخل؛ وهذه العلامات والمادة 12 هي التي تنظم الأولوية."
       }
     }
   },
@@ -331,76 +331,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U rijdt al in de rotonde en een voertuig wil invoegen. Wie heeft voorrang?",
+        "question": "Je nadert een rotonde via een toegang met B1 terwijl een voertuig op de rotonde rijdt. Wat doe je?",
         "choices": [
           {
-            "text": "U hebt voorrang omdat u al in de rotonde rijdt",
+            "text": "Je verleent voorrang aan het voertuig op de rotonde.",
             "is_correct": true
           },
           {
-            "text": "Het invoegende voertuig heeft voorrang",
+            "text": "Je rijdt eerst omdat D5 je voorrang geeft.",
             "is_correct": false
           },
           {
-            "text": "Beide voertuigen moeten altijd stoppen",
+            "text": "Je stopt op de rotonde om het andere voertuig door te laten.",
             "is_correct": false
           }
         ],
-        "explanation": "Bestuurders die al in de rotonde rijden hebben hier voorrang."
+        "explanation": "B1 verplicht de bestuurder aan de toegang voorrang te verlenen aan bestuurders op de weg die hij oprijdt."
       },
       "EN": {
-        "question": "You are already driving in the roundabout and another vehicle wants to enter. Who has priority?",
+        "question": "You approach a roundabout through an entry with B1 while a vehicle is circulating. What do you do?",
         "choices": [
           {
-            "text": "You have priority because you are already in the roundabout",
+            "text": "Yield to the vehicle on the roundabout.",
             "is_correct": true
           },
           {
-            "text": "The entering vehicle has priority",
+            "text": "Enter first because D5 gives you priority.",
             "is_correct": false
           },
           {
-            "text": "Both vehicles must always stop",
+            "text": "Stop on the roundabout so the other vehicle can pass.",
             "is_correct": false
           }
         ],
-        "explanation": "Drivers already in the roundabout have priority here."
+        "explanation": "B1 requires the driver at the entry to yield to drivers on the road being entered."
       },
       "FR": {
-        "question": "Vous circulez déjà dans le giratoire et un autre véhicule veut entrer. Qui a la priorité ?",
+        "question": "Vous approchez d'un rond-point par un accès muni de B1 tandis qu'un véhicule circule sur le rond-point. Que faites-vous ?",
         "choices": [
           {
-            "text": "Vous avez la priorité parce que vous êtes déjà dans le giratoire",
+            "text": "Vous cédez le passage au véhicule sur le rond-point.",
             "is_correct": true
           },
           {
-            "text": "Le véhicule entrant a la priorité",
+            "text": "Vous entrez d'abord parce que D5 vous donne la priorité.",
             "is_correct": false
           },
           {
-            "text": "Les deux véhicules doivent toujours s'arrêter",
+            "text": "Vous vous arrêtez sur le rond-point pour laisser passer l'autre véhicule.",
             "is_correct": false
           }
         ],
-        "explanation": "Les conducteurs déjà dans le giratoire ont ici la priorité."
+        "explanation": "B1 oblige le conducteur à l'accès à céder le passage aux conducteurs qui circulent sur la voie qu'il aborde."
       },
       "AR": {
-        "question": "أنت تسير بالفعل داخل الدوار ومركبة أخرى تريد الدخول. من له الأولوية؟",
+        "question": "تقترب من دوار عبر مدخل يحمل B1 بينما تسير مركبة داخل الدوار. ماذا تفعل؟",
         "choices": [
           {
-            "text": "أنت لك الأولوية لأنك داخل الدوار بالفعل",
+            "text": "تعطي الأولوية للمركبة الموجودة داخل الدوار.",
             "is_correct": true
           },
           {
-            "text": "المركبة الداخلة لها الأولوية",
+            "text": "تدخل أولًا لأن D5 تمنحك الأولوية.",
             "is_correct": false
           },
           {
-            "text": "يجب على المركبتين التوقف دائمًا",
+            "text": "تتوقف داخل الدوار لتسمح للمركبة الأخرى بالمرور.",
             "is_correct": false
           }
         ],
-        "explanation": "السائقون الموجودون بالفعل داخل الدوار لهم الأولوية هنا."
+        "explanation": "تُلزم B1 السائق عند المدخل بإعطاء الأولوية للسائقين على الطريق الذي سيدخله."
       }
     }
   },
@@ -558,60 +558,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U wilt de rotonde oprijden terwijl er verkeer in de rotonde rijdt. Mag u gewoon doorrijden?",
+        "question": "Je nadert een met B1 gesignaleerde rotonde terwijl er verkeer rondrijdt. Mag je zonder voorrang te verlenen oprijden?",
         "choices": [
           {
-            "text": "Nee, bestuurders in de rotonde hebben voorrang",
+            "text": "Nee, je moet voorrang verlenen en pas veilig oprijden.",
             "is_correct": true
           },
           {
-            "text": "Ja, inrijdend verkeer mag eerst rijden",
+            "text": "Ja, want D5 maakt de oprijrichting verplicht.",
             "is_correct": false
           }
         ],
-        "explanation": "Bij dit bord hebben bestuurders die al in de rotonde rijden voorrang."
+        "explanation": "De verplichte rijrichting van D5 heft de voorrangsplicht van B1 niet op."
       },
       "EN": {
-        "question": "You want to enter the roundabout while traffic is already circulating. May you simply continue?",
+        "question": "You approach a roundabout signed with B1 while traffic is circulating. May you enter without yielding?",
         "choices": [
           {
-            "text": "No, drivers in the roundabout have priority",
+            "text": "No, you must yield and enter only when safe.",
             "is_correct": true
           },
           {
-            "text": "Yes, entering traffic may go first",
+            "text": "Yes, because D5 makes the entry direction mandatory.",
             "is_correct": false
           }
         ],
-        "explanation": "With this sign, drivers already in the roundabout have priority."
+        "explanation": "The mandatory direction imposed by D5 does not cancel the duty to yield under B1."
       },
       "FR": {
-        "question": "Vous voulez entrer dans le giratoire alors que des véhicules y circulent déjà. Pouvez-vous simplement continuer ?",
+        "question": "Vous approchez d'un rond-point signalé par B1 alors que des véhicules y circulent. Pouvez-vous entrer sans céder le passage ?",
         "choices": [
           {
-            "text": "Non, les conducteurs dans le giratoire ont la priorité",
+            "text": "Non, vous devez céder le passage et n'entrer qu'en sécurité.",
             "is_correct": true
           },
           {
-            "text": "Oui, les véhicules entrants peuvent passer en premier",
+            "text": "Oui, car D5 rend le sens d'entrée obligatoire.",
             "is_correct": false
           }
         ],
-        "explanation": "Avec ce panneau, les conducteurs déjà dans le giratoire ont la priorité."
+        "explanation": "Le sens obligatoire imposé par D5 ne supprime pas l'obligation de céder le passage de B1."
       },
       "AR": {
-        "question": "تريد دخول الدوار بينما توجد حركة مرور داخله بالفعل. هل يجوز لك المتابعة مباشرة؟",
+        "question": "تقترب من دوار معلَّم بـB1 وفيه حركة دائرية. هل يجوز الدخول من دون إعطاء الأولوية؟",
         "choices": [
           {
-            "text": "لا، السائقون الموجودون داخل الدوار لهم الأولوية",
+            "text": "لا، يجب إعطاء الأولوية وعدم الدخول إلا بأمان.",
             "is_correct": true
           },
           {
-            "text": "نعم، يحق للمركبات الداخلة المرور أولًا",
+            "text": "نعم، لأن D5 تجعل اتجاه الدخول إلزاميًا.",
             "is_correct": false
           }
         ],
-        "explanation": "مع هذه العلامة، يتمتع السائقون الموجودون داخل الدوار بالفعل بالأولوية."
+        "explanation": "اتجاه السير الإلزامي الذي تفرضه D5 لا يلغي واجب إعطاء الأولوية بموجب B1."
       }
     }
   }

@@ -6,31 +6,39 @@
   "i18n": {
     "NL": {
       "name": "Verplicht links afslaan gevaarlijke goederen",
-      "summary": "Dit bord geeft aan dat voertuigen die gevaarlijke goederen vervoeren verplicht links moeten afslaan.",
-      "description": "Geeft aan dat voertuigen die gevaarlijke goederen vervoeren verplicht links moeten afslaan.",
-      "driver_guidance": "Voor voertuigen die gevaarlijke goederen vervoeren is links afslaan hier verplicht.",
-      "exceptions": []
+      "summary": "Voertuigen die gevaarlijke goederen vervoeren moeten de pijl linksaf volgen.",
+      "description": "D4 legt een aangepaste reisweg op aan voertuigen die gevaarlijke goederen vervoeren. Een onderbord met B, C, D of E beperkt het gebod tot voertuigen waarvoor de overeenkomstige ADR-tunnelcategorie verboden is.",
+      "driver_guidance": "Controleer vóór de rit de ADR-classificatie van voertuig en lading en volg vanaf het bord de aangeduide reisweg. Andere bestuurders blijven onderworpen aan de overige verkeerstekens.",
+      "exceptions": [
+        "Zonder het relevante vervoer van gevaarlijke goederen legt D4 op zichzelf geen rijrichting op aan een gewoon voertuig."
+      ]
     },
     "EN": {
       "name": "Mandatory left turn for vehicles carrying dangerous goods",
-      "summary": "This sign indicates that vehicles carrying dangerous goods must turn left.",
-      "description": "Indicates that vehicles carrying dangerous goods must turn left.",
-      "driver_guidance": "For vehicles carrying dangerous goods, turning left is mandatory here.",
-      "exceptions": []
+      "summary": "Vehicles carrying dangerous goods must follow the arrow left.",
+      "description": "D4 assigns a route suited to vehicles carrying dangerous goods. A supplementary plate marked B, C, D or E limits the obligation to vehicles prohibited from the corresponding ADR tunnel category.",
+      "driver_guidance": "Check the ADR classification of the vehicle and load before the journey and follow the indicated route from the sign. Other drivers remain bound by all other traffic controls.",
+      "exceptions": [
+        "For a vehicle not carrying the relevant dangerous goods, D4 alone does not impose a direction of travel."
+      ]
     },
     "FR": {
       "name": "Obligation de tourner à gauche pour les véhicules transportant des marchandises dangereuses",
-      "summary": "Ce panneau indique que les véhicules transportant des marchandises dangereuses doivent tourner à gauche.",
-      "description": "Indique que les véhicules transportant des marchandises dangereuses doivent tourner à gauche.",
-      "driver_guidance": "Pour les véhicules transportant des marchandises dangereuses, tourner à gauche est obligatoire ici.",
-      "exceptions": []
+      "summary": "Les véhicules transportant des marchandises dangereuses doivent suivre la flèche à gauche.",
+      "description": "Le signal D4 impose un itinéraire adapté aux véhicules transportant des marchandises dangereuses. Un panneau additionnel B, C, D ou E limite l'obligation aux véhicules auxquels la catégorie de tunnel ADR correspondante est interdite.",
+      "driver_guidance": "Vérifiez avant le trajet la classification ADR du véhicule et du chargement, puis suivez l'itinéraire indiqué à partir du signal. Les autres conducteurs restent soumis aux autres signaux.",
+      "exceptions": [
+        "Pour un véhicule qui ne transporte pas les marchandises dangereuses concernées, D4 n'impose pas à lui seul une direction."
+      ]
     },
     "AR": {
       "name": "إلزامية الانعطاف إلى اليسار للمركبات التي تنقل بضائع خطرة",
-      "summary": "تدل هذه العلامة على أن المركبات التي تنقل بضائع خطرة يجب عليها الانعطاف إلى اليسار.",
-      "description": "تشير إلى أن المركبات التي تنقل بضائع خطرة يجب عليها الانعطاف إلى اليسار.",
-      "driver_guidance": "بالنسبة للمركبات التي تنقل بضائع خطرة، يكون الانعطاف إلى اليسار إلزاميًا هنا.",
-      "exceptions": []
+      "summary": "يجب على المركبات الناقلة للمواد الخطرة اتباع السهم يسارًا.",
+      "description": "تفرض علامة D4 مسارًا ملائمًا للمركبات الناقلة للمواد الخطرة. وتُقصر لوحة إضافية تحمل B أو C أو D أو E الإلزام على المركبات الممنوعة من فئة نفق ADR المقابلة.",
+      "driver_guidance": "تحقق قبل الرحلة من تصنيف ADR للمركبة والحمولة، واتبع المسار المبين ابتداءً من العلامة. وتبقى المركبات الأخرى خاضعة لبقية الإشارات المرورية.",
+      "exceptions": [
+        "إذا لم تكن المركبة تنقل المواد الخطرة المعنية، فلا تفرض علامة D4 وحدها اتجاه سير عليها."
+      ]
     }
   }
 }

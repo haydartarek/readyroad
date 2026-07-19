@@ -1,0 +1,3548 @@
+{
+  "schema_version": 2,
+  "framework_version": 1,
+  "category": "MANDATORY",
+  "slug": "mandatory",
+  "canonical_content_root": "classpath:data/signs_import",
+  "canonical_ownership": "Each sign directory's sign.json is the sole runtime source for sign text.",
+  "review_date": "2026-07-19",
+  "review_status": "APPROVED",
+  "reviewed_languages": [
+    "NL",
+    "EN",
+    "FR",
+    "AR"
+  ],
+  "counts": {
+    "signs": 18,
+    "questions": 144,
+    "exams": 18,
+    "lessons": 13
+  },
+  "risk_level": "HIGH",
+  "quality_metrics": {
+    "signs_reviewed": 18,
+    "questions_reviewed": 144,
+    "lessons_reviewed": 13,
+    "legal_sources_linked": 3,
+    "terminology_standardized": 13,
+    "cross_language_consistency": "PASSED",
+    "future_law_items": 1,
+    "human_review_required": 0,
+    "risk_level": "HIGH"
+  },
+  "validation_rules": {
+    "questions_per_sign": 8,
+    "passing_score": 6,
+    "difficulty_distribution": {
+      "EASY": 3,
+      "MEDIUM": 3,
+      "HARD": 2
+    },
+    "default_choice_count": 3,
+    "hard_choice_count": 2,
+    "binary_choice_count": 2,
+    "binary_question_types": [
+      "IS_IT_ALLOWED"
+    ],
+    "correct_choices_per_language": 1
+  },
+  "terminology_ids": [
+    "MANDATORY_SIGN",
+    "MANDATORY_DIRECTION",
+    "CIRCULAR_TRAFFIC",
+    "ROUNDABOUT",
+    "CYCLE_PATH",
+    "SEPARATED_PEDESTRIAN_CYCLE_PATH",
+    "SHARED_PEDESTRIAN_CYCLE_PATH",
+    "PEDESTRIAN_PATH",
+    "RIDER_PATH",
+    "DANGEROUS_GOODS_ROUTE",
+    "CLASS_A_MOPED",
+    "SPEED_PEDELEC",
+    "SUPPLEMENTARY_PLATE"
+  ],
+  "future_law_items": [
+    "BE-FPS-ROAD-CODE-2027"
+  ],
+  "reports": {
+    "content_review": "docs/content-governance/category-reviews/mandatory/content-review-report.md",
+    "cross_file_consistency": "docs/content-governance/category-reviews/mandatory/cross-file-consistency-report.json",
+    "ambiguous_questions": "docs/content-governance/category-reviews/mandatory/ambiguous-questions-report.json",
+    "human_approval": "docs/content-governance/category-reviews/mandatory/corrections-requiring-human-approval.json",
+    "last_reviewed": "docs/content-governance/category-reviews/mandatory/last-reviewed.json"
+  },
+  "content_assertions": [
+    {
+      "type": "FORBIDDEN_FRAGMENT",
+      "scope": "REVIEWED_CATEGORY_CONTENT",
+      "fragments": [
+        "cyclists often have priority",
+        "orange signs for temporary",
+        "orange = priority",
+        "anyone who is in the roundabout has priority",
+        "may a moped use this path?",
+        "speed pedelecs and class A two-wheeled mopeds"
+      ]
+    },
+    {
+      "type": "CORRECT_CHOICE_CONTAINS",
+      "sign_code": "D5",
+      "question_id": "D5_Q03",
+      "language": "EN",
+      "expected": "D5 imposes the direction"
+    },
+    {
+      "type": "CORRECT_CHOICE_CONTAINS",
+      "sign_code": "D7",
+      "question_id": "D7_Q06",
+      "language": "EN",
+      "expected": "fallback"
+    },
+    {
+      "type": "CORRECT_CHOICE_CONTAINS",
+      "sign_code": "D9a",
+      "question_id": "D9a_Q02",
+      "language": "EN",
+      "expected": "class A"
+    },
+    {
+      "type": "CORRECT_CHOICE_CONTAINS",
+      "sign_code": "D10",
+      "question_id": "D10_Q07",
+      "language": "EN",
+      "expected": "No"
+    },
+    {
+      "type": "CORRECT_CHOICE_CONTAINS",
+      "sign_code": "D11",
+      "question_id": "D11_Q08",
+      "language": "EN",
+      "expected": "carriageway"
+    },
+    {
+      "type": "CORRECT_CHOICE_CONTAINS",
+      "sign_code": "D13",
+      "question_id": "D13_Q07",
+      "language": "EN",
+      "expected": "Yes"
+    }
+  ],
+  "signs": {
+    "D10": {
+      "canonical_path": "src/main/resources/data/signs_import/D10/sign.json",
+      "source_ids": [
+        "BE-KB1975-MANDATORY-CURRENT",
+        "BE-MB1976-MANDATORY-PLACEMENT",
+        "BE-FPS-ROAD-CODE-2027"
+      ],
+      "last_reviewed": "2026-07-19",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "questions": {
+        "D10_Q01": {
+          "canonical_path": "src/main/resources/data/signs_import/D10/questions.json#/0",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D10_Q02": {
+          "canonical_path": "src/main/resources/data/signs_import/D10/questions.json#/1",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D10_Q03": {
+          "canonical_path": "src/main/resources/data/signs_import/D10/questions.json#/2",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D10_Q04": {
+          "canonical_path": "src/main/resources/data/signs_import/D10/questions.json#/3",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D10_Q05": {
+          "canonical_path": "src/main/resources/data/signs_import/D10/questions.json#/4",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D10_Q06": {
+          "canonical_path": "src/main/resources/data/signs_import/D10/questions.json#/5",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D10_Q07": {
+          "canonical_path": "src/main/resources/data/signs_import/D10/questions.json#/6",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D10_Q08": {
+          "canonical_path": "src/main/resources/data/signs_import/D10/questions.json#/7",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        }
+      },
+      "exam": {
+        "canonical_path": "src/main/resources/data/signs_import/D10/exams.json",
+        "source_ids": [
+          "BE-KB1975-MANDATORY-CURRENT",
+          "BE-FPS-ROAD-CODE-2027"
+        ],
+        "last_reviewed": "2026-07-19",
+        "review_reason": "Reviewed as an assessment manifest that references the eight governed questions for this sign.",
+        "original_review_language": "NL",
+        "reviewed_languages": [
+          "NL",
+          "EN",
+          "FR",
+          "AR"
+        ],
+        "status": "APPROVED"
+      }
+    },
+    "D11": {
+      "canonical_path": "src/main/resources/data/signs_import/D11/sign.json",
+      "source_ids": [
+        "BE-KB1975-MANDATORY-CURRENT",
+        "BE-MB1976-MANDATORY-PLACEMENT",
+        "BE-FPS-ROAD-CODE-2027"
+      ],
+      "last_reviewed": "2026-07-19",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "questions": {
+        "D11_Q01": {
+          "canonical_path": "src/main/resources/data/signs_import/D11/questions.json#/0",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D11_Q02": {
+          "canonical_path": "src/main/resources/data/signs_import/D11/questions.json#/1",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D11_Q03": {
+          "canonical_path": "src/main/resources/data/signs_import/D11/questions.json#/2",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D11_Q04": {
+          "canonical_path": "src/main/resources/data/signs_import/D11/questions.json#/3",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D11_Q05": {
+          "canonical_path": "src/main/resources/data/signs_import/D11/questions.json#/4",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D11_Q06": {
+          "canonical_path": "src/main/resources/data/signs_import/D11/questions.json#/5",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D11_Q07": {
+          "canonical_path": "src/main/resources/data/signs_import/D11/questions.json#/6",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D11_Q08": {
+          "canonical_path": "src/main/resources/data/signs_import/D11/questions.json#/7",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        }
+      },
+      "exam": {
+        "canonical_path": "src/main/resources/data/signs_import/D11/exams.json",
+        "source_ids": [
+          "BE-KB1975-MANDATORY-CURRENT",
+          "BE-FPS-ROAD-CODE-2027"
+        ],
+        "last_reviewed": "2026-07-19",
+        "review_reason": "Reviewed as an assessment manifest that references the eight governed questions for this sign.",
+        "original_review_language": "NL",
+        "reviewed_languages": [
+          "NL",
+          "EN",
+          "FR",
+          "AR"
+        ],
+        "status": "APPROVED"
+      }
+    },
+    "D13": {
+      "canonical_path": "src/main/resources/data/signs_import/D13/sign.json",
+      "source_ids": [
+        "BE-KB1975-MANDATORY-CURRENT",
+        "BE-MB1976-MANDATORY-PLACEMENT",
+        "BE-FPS-ROAD-CODE-2027"
+      ],
+      "last_reviewed": "2026-07-19",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "questions": {
+        "D13_Q01": {
+          "canonical_path": "src/main/resources/data/signs_import/D13/questions.json#/0",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D13_Q02": {
+          "canonical_path": "src/main/resources/data/signs_import/D13/questions.json#/1",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D13_Q03": {
+          "canonical_path": "src/main/resources/data/signs_import/D13/questions.json#/2",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D13_Q04": {
+          "canonical_path": "src/main/resources/data/signs_import/D13/questions.json#/3",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D13_Q05": {
+          "canonical_path": "src/main/resources/data/signs_import/D13/questions.json#/4",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D13_Q06": {
+          "canonical_path": "src/main/resources/data/signs_import/D13/questions.json#/5",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D13_Q07": {
+          "canonical_path": "src/main/resources/data/signs_import/D13/questions.json#/6",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D13_Q08": {
+          "canonical_path": "src/main/resources/data/signs_import/D13/questions.json#/7",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        }
+      },
+      "exam": {
+        "canonical_path": "src/main/resources/data/signs_import/D13/exams.json",
+        "source_ids": [
+          "BE-KB1975-MANDATORY-CURRENT",
+          "BE-FPS-ROAD-CODE-2027"
+        ],
+        "last_reviewed": "2026-07-19",
+        "review_reason": "Reviewed as an assessment manifest that references the eight governed questions for this sign.",
+        "original_review_language": "NL",
+        "reviewed_languages": [
+          "NL",
+          "EN",
+          "FR",
+          "AR"
+        ],
+        "status": "APPROVED"
+      }
+    },
+    "D1a": {
+      "canonical_path": "src/main/resources/data/signs_import/D1a/sign.json",
+      "source_ids": [
+        "BE-KB1975-MANDATORY-CURRENT",
+        "BE-MB1976-MANDATORY-PLACEMENT",
+        "BE-FPS-ROAD-CODE-2027"
+      ],
+      "last_reviewed": "2026-07-19",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "questions": {
+        "D1a_Q01": {
+          "canonical_path": "src/main/resources/data/signs_import/D1a/questions.json#/0",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D1a_Q02": {
+          "canonical_path": "src/main/resources/data/signs_import/D1a/questions.json#/1",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D1a_Q03": {
+          "canonical_path": "src/main/resources/data/signs_import/D1a/questions.json#/2",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D1a_Q04": {
+          "canonical_path": "src/main/resources/data/signs_import/D1a/questions.json#/3",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D1a_Q05": {
+          "canonical_path": "src/main/resources/data/signs_import/D1a/questions.json#/4",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D1a_Q06": {
+          "canonical_path": "src/main/resources/data/signs_import/D1a/questions.json#/5",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D1a_Q07": {
+          "canonical_path": "src/main/resources/data/signs_import/D1a/questions.json#/6",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D1a_Q08": {
+          "canonical_path": "src/main/resources/data/signs_import/D1a/questions.json#/7",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        }
+      },
+      "exam": {
+        "canonical_path": "src/main/resources/data/signs_import/D1a/exams.json",
+        "source_ids": [
+          "BE-KB1975-MANDATORY-CURRENT",
+          "BE-FPS-ROAD-CODE-2027"
+        ],
+        "last_reviewed": "2026-07-19",
+        "review_reason": "Reviewed as an assessment manifest that references the eight governed questions for this sign.",
+        "original_review_language": "NL",
+        "reviewed_languages": [
+          "NL",
+          "EN",
+          "FR",
+          "AR"
+        ],
+        "status": "APPROVED"
+      }
+    },
+    "D1b-links": {
+      "canonical_path": "src/main/resources/data/signs_import/D1b-links/sign.json",
+      "source_ids": [
+        "BE-KB1975-MANDATORY-CURRENT",
+        "BE-MB1976-MANDATORY-PLACEMENT",
+        "BE-FPS-ROAD-CODE-2027"
+      ],
+      "last_reviewed": "2026-07-19",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "questions": {
+        "D1b-links_Q01": {
+          "canonical_path": "src/main/resources/data/signs_import/D1b-links/questions.json#/0",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D1b-links_Q02": {
+          "canonical_path": "src/main/resources/data/signs_import/D1b-links/questions.json#/1",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D1b-links_Q03": {
+          "canonical_path": "src/main/resources/data/signs_import/D1b-links/questions.json#/2",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D1b-links_Q04": {
+          "canonical_path": "src/main/resources/data/signs_import/D1b-links/questions.json#/3",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D1b-links_Q05": {
+          "canonical_path": "src/main/resources/data/signs_import/D1b-links/questions.json#/4",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D1b-links_Q06": {
+          "canonical_path": "src/main/resources/data/signs_import/D1b-links/questions.json#/5",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D1b-links_Q07": {
+          "canonical_path": "src/main/resources/data/signs_import/D1b-links/questions.json#/6",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D1b-links_Q08": {
+          "canonical_path": "src/main/resources/data/signs_import/D1b-links/questions.json#/7",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        }
+      },
+      "exam": {
+        "canonical_path": "src/main/resources/data/signs_import/D1b-links/exams.json",
+        "source_ids": [
+          "BE-KB1975-MANDATORY-CURRENT",
+          "BE-FPS-ROAD-CODE-2027"
+        ],
+        "last_reviewed": "2026-07-19",
+        "review_reason": "Reviewed as an assessment manifest that references the eight governed questions for this sign.",
+        "original_review_language": "NL",
+        "reviewed_languages": [
+          "NL",
+          "EN",
+          "FR",
+          "AR"
+        ],
+        "status": "APPROVED"
+      }
+    },
+    "D1b-rechts": {
+      "canonical_path": "src/main/resources/data/signs_import/D1b-rechts/sign.json",
+      "source_ids": [
+        "BE-KB1975-MANDATORY-CURRENT",
+        "BE-MB1976-MANDATORY-PLACEMENT",
+        "BE-FPS-ROAD-CODE-2027"
+      ],
+      "last_reviewed": "2026-07-19",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "questions": {
+        "D1b-rechts_Q01": {
+          "canonical_path": "src/main/resources/data/signs_import/D1b-rechts/questions.json#/0",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D1b-rechts_Q02": {
+          "canonical_path": "src/main/resources/data/signs_import/D1b-rechts/questions.json#/1",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D1b-rechts_Q03": {
+          "canonical_path": "src/main/resources/data/signs_import/D1b-rechts/questions.json#/2",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D1b-rechts_Q04": {
+          "canonical_path": "src/main/resources/data/signs_import/D1b-rechts/questions.json#/3",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D1b-rechts_Q05": {
+          "canonical_path": "src/main/resources/data/signs_import/D1b-rechts/questions.json#/4",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D1b-rechts_Q06": {
+          "canonical_path": "src/main/resources/data/signs_import/D1b-rechts/questions.json#/5",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D1b-rechts_Q07": {
+          "canonical_path": "src/main/resources/data/signs_import/D1b-rechts/questions.json#/6",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D1b-rechts_Q08": {
+          "canonical_path": "src/main/resources/data/signs_import/D1b-rechts/questions.json#/7",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        }
+      },
+      "exam": {
+        "canonical_path": "src/main/resources/data/signs_import/D1b-rechts/exams.json",
+        "source_ids": [
+          "BE-KB1975-MANDATORY-CURRENT",
+          "BE-FPS-ROAD-CODE-2027"
+        ],
+        "last_reviewed": "2026-07-19",
+        "review_reason": "Reviewed as an assessment manifest that references the eight governed questions for this sign.",
+        "original_review_language": "NL",
+        "reviewed_languages": [
+          "NL",
+          "EN",
+          "FR",
+          "AR"
+        ],
+        "status": "APPROVED"
+      }
+    },
+    "D1c": {
+      "canonical_path": "src/main/resources/data/signs_import/D1c/sign.json",
+      "source_ids": [
+        "BE-KB1975-MANDATORY-CURRENT",
+        "BE-MB1976-MANDATORY-PLACEMENT",
+        "BE-FPS-ROAD-CODE-2027"
+      ],
+      "last_reviewed": "2026-07-19",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "questions": {
+        "D1c_Q01": {
+          "canonical_path": "src/main/resources/data/signs_import/D1c/questions.json#/0",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D1c_Q02": {
+          "canonical_path": "src/main/resources/data/signs_import/D1c/questions.json#/1",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D1c_Q03": {
+          "canonical_path": "src/main/resources/data/signs_import/D1c/questions.json#/2",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D1c_Q04": {
+          "canonical_path": "src/main/resources/data/signs_import/D1c/questions.json#/3",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D1c_Q05": {
+          "canonical_path": "src/main/resources/data/signs_import/D1c/questions.json#/4",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D1c_Q06": {
+          "canonical_path": "src/main/resources/data/signs_import/D1c/questions.json#/5",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D1c_Q07": {
+          "canonical_path": "src/main/resources/data/signs_import/D1c/questions.json#/6",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D1c_Q08": {
+          "canonical_path": "src/main/resources/data/signs_import/D1c/questions.json#/7",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        }
+      },
+      "exam": {
+        "canonical_path": "src/main/resources/data/signs_import/D1c/exams.json",
+        "source_ids": [
+          "BE-KB1975-MANDATORY-CURRENT",
+          "BE-FPS-ROAD-CODE-2027"
+        ],
+        "last_reviewed": "2026-07-19",
+        "review_reason": "Reviewed as an assessment manifest that references the eight governed questions for this sign.",
+        "original_review_language": "NL",
+        "reviewed_languages": [
+          "NL",
+          "EN",
+          "FR",
+          "AR"
+        ],
+        "status": "APPROVED"
+      }
+    },
+    "D1d": {
+      "canonical_path": "src/main/resources/data/signs_import/D1d/sign.json",
+      "source_ids": [
+        "BE-KB1975-MANDATORY-CURRENT",
+        "BE-MB1976-MANDATORY-PLACEMENT",
+        "BE-FPS-ROAD-CODE-2027"
+      ],
+      "last_reviewed": "2026-07-19",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "questions": {
+        "D1d_Q01": {
+          "canonical_path": "src/main/resources/data/signs_import/D1d/questions.json#/0",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D1d_Q02": {
+          "canonical_path": "src/main/resources/data/signs_import/D1d/questions.json#/1",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D1d_Q03": {
+          "canonical_path": "src/main/resources/data/signs_import/D1d/questions.json#/2",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D1d_Q04": {
+          "canonical_path": "src/main/resources/data/signs_import/D1d/questions.json#/3",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D1d_Q05": {
+          "canonical_path": "src/main/resources/data/signs_import/D1d/questions.json#/4",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D1d_Q06": {
+          "canonical_path": "src/main/resources/data/signs_import/D1d/questions.json#/5",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D1d_Q07": {
+          "canonical_path": "src/main/resources/data/signs_import/D1d/questions.json#/6",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D1d_Q08": {
+          "canonical_path": "src/main/resources/data/signs_import/D1d/questions.json#/7",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        }
+      },
+      "exam": {
+        "canonical_path": "src/main/resources/data/signs_import/D1d/exams.json",
+        "source_ids": [
+          "BE-KB1975-MANDATORY-CURRENT",
+          "BE-FPS-ROAD-CODE-2027"
+        ],
+        "last_reviewed": "2026-07-19",
+        "review_reason": "Reviewed as an assessment manifest that references the eight governed questions for this sign.",
+        "original_review_language": "NL",
+        "reviewed_languages": [
+          "NL",
+          "EN",
+          "FR",
+          "AR"
+        ],
+        "status": "APPROVED"
+      }
+    },
+    "D1e": {
+      "canonical_path": "src/main/resources/data/signs_import/D1e/sign.json",
+      "source_ids": [
+        "BE-KB1975-MANDATORY-CURRENT",
+        "BE-MB1976-MANDATORY-PLACEMENT",
+        "BE-FPS-ROAD-CODE-2027"
+      ],
+      "last_reviewed": "2026-07-19",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "questions": {
+        "D1e_Q01": {
+          "canonical_path": "src/main/resources/data/signs_import/D1e/questions.json#/0",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D1e_Q02": {
+          "canonical_path": "src/main/resources/data/signs_import/D1e/questions.json#/1",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D1e_Q03": {
+          "canonical_path": "src/main/resources/data/signs_import/D1e/questions.json#/2",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D1e_Q04": {
+          "canonical_path": "src/main/resources/data/signs_import/D1e/questions.json#/3",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D1e_Q05": {
+          "canonical_path": "src/main/resources/data/signs_import/D1e/questions.json#/4",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D1e_Q06": {
+          "canonical_path": "src/main/resources/data/signs_import/D1e/questions.json#/5",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D1e_Q07": {
+          "canonical_path": "src/main/resources/data/signs_import/D1e/questions.json#/6",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D1e_Q08": {
+          "canonical_path": "src/main/resources/data/signs_import/D1e/questions.json#/7",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        }
+      },
+      "exam": {
+        "canonical_path": "src/main/resources/data/signs_import/D1e/exams.json",
+        "source_ids": [
+          "BE-KB1975-MANDATORY-CURRENT",
+          "BE-FPS-ROAD-CODE-2027"
+        ],
+        "last_reviewed": "2026-07-19",
+        "review_reason": "Reviewed as an assessment manifest that references the eight governed questions for this sign.",
+        "original_review_language": "NL",
+        "reviewed_languages": [
+          "NL",
+          "EN",
+          "FR",
+          "AR"
+        ],
+        "status": "APPROVED"
+      }
+    },
+    "D1f": {
+      "canonical_path": "src/main/resources/data/signs_import/D1f/sign.json",
+      "source_ids": [
+        "BE-KB1975-MANDATORY-CURRENT",
+        "BE-MB1976-MANDATORY-PLACEMENT",
+        "BE-FPS-ROAD-CODE-2027"
+      ],
+      "last_reviewed": "2026-07-19",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "questions": {
+        "D1f_Q01": {
+          "canonical_path": "src/main/resources/data/signs_import/D1f/questions.json#/0",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D1f_Q02": {
+          "canonical_path": "src/main/resources/data/signs_import/D1f/questions.json#/1",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D1f_Q03": {
+          "canonical_path": "src/main/resources/data/signs_import/D1f/questions.json#/2",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D1f_Q04": {
+          "canonical_path": "src/main/resources/data/signs_import/D1f/questions.json#/3",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D1f_Q05": {
+          "canonical_path": "src/main/resources/data/signs_import/D1f/questions.json#/4",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D1f_Q06": {
+          "canonical_path": "src/main/resources/data/signs_import/D1f/questions.json#/5",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D1f_Q07": {
+          "canonical_path": "src/main/resources/data/signs_import/D1f/questions.json#/6",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D1f_Q08": {
+          "canonical_path": "src/main/resources/data/signs_import/D1f/questions.json#/7",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        }
+      },
+      "exam": {
+        "canonical_path": "src/main/resources/data/signs_import/D1f/exams.json",
+        "source_ids": [
+          "BE-KB1975-MANDATORY-CURRENT",
+          "BE-FPS-ROAD-CODE-2027"
+        ],
+        "last_reviewed": "2026-07-19",
+        "review_reason": "Reviewed as an assessment manifest that references the eight governed questions for this sign.",
+        "original_review_language": "NL",
+        "reviewed_languages": [
+          "NL",
+          "EN",
+          "FR",
+          "AR"
+        ],
+        "status": "APPROVED"
+      }
+    },
+    "D3a": {
+      "canonical_path": "src/main/resources/data/signs_import/D3a/sign.json",
+      "source_ids": [
+        "BE-KB1975-MANDATORY-CURRENT",
+        "BE-MB1976-MANDATORY-PLACEMENT",
+        "BE-FPS-ROAD-CODE-2027"
+      ],
+      "last_reviewed": "2026-07-19",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "questions": {
+        "D3a_Q01": {
+          "canonical_path": "src/main/resources/data/signs_import/D3a/questions.json#/0",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D3a_Q02": {
+          "canonical_path": "src/main/resources/data/signs_import/D3a/questions.json#/1",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D3a_Q03": {
+          "canonical_path": "src/main/resources/data/signs_import/D3a/questions.json#/2",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D3a_Q04": {
+          "canonical_path": "src/main/resources/data/signs_import/D3a/questions.json#/3",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D3a_Q05": {
+          "canonical_path": "src/main/resources/data/signs_import/D3a/questions.json#/4",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D3a_Q06": {
+          "canonical_path": "src/main/resources/data/signs_import/D3a/questions.json#/5",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D3a_Q07": {
+          "canonical_path": "src/main/resources/data/signs_import/D3a/questions.json#/6",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D3a_Q08": {
+          "canonical_path": "src/main/resources/data/signs_import/D3a/questions.json#/7",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        }
+      },
+      "exam": {
+        "canonical_path": "src/main/resources/data/signs_import/D3a/exams.json",
+        "source_ids": [
+          "BE-KB1975-MANDATORY-CURRENT",
+          "BE-FPS-ROAD-CODE-2027"
+        ],
+        "last_reviewed": "2026-07-19",
+        "review_reason": "Reviewed as an assessment manifest that references the eight governed questions for this sign.",
+        "original_review_language": "NL",
+        "reviewed_languages": [
+          "NL",
+          "EN",
+          "FR",
+          "AR"
+        ],
+        "status": "APPROVED"
+      }
+    },
+    "D3b": {
+      "canonical_path": "src/main/resources/data/signs_import/D3b/sign.json",
+      "source_ids": [
+        "BE-KB1975-MANDATORY-CURRENT",
+        "BE-MB1976-MANDATORY-PLACEMENT",
+        "BE-FPS-ROAD-CODE-2027"
+      ],
+      "last_reviewed": "2026-07-19",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "questions": {
+        "D3b_Q01": {
+          "canonical_path": "src/main/resources/data/signs_import/D3b/questions.json#/0",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D3b_Q02": {
+          "canonical_path": "src/main/resources/data/signs_import/D3b/questions.json#/1",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D3b_Q03": {
+          "canonical_path": "src/main/resources/data/signs_import/D3b/questions.json#/2",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D3b_Q04": {
+          "canonical_path": "src/main/resources/data/signs_import/D3b/questions.json#/3",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D3b_Q05": {
+          "canonical_path": "src/main/resources/data/signs_import/D3b/questions.json#/4",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D3b_Q06": {
+          "canonical_path": "src/main/resources/data/signs_import/D3b/questions.json#/5",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D3b_Q07": {
+          "canonical_path": "src/main/resources/data/signs_import/D3b/questions.json#/6",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D3b_Q08": {
+          "canonical_path": "src/main/resources/data/signs_import/D3b/questions.json#/7",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        }
+      },
+      "exam": {
+        "canonical_path": "src/main/resources/data/signs_import/D3b/exams.json",
+        "source_ids": [
+          "BE-KB1975-MANDATORY-CURRENT",
+          "BE-FPS-ROAD-CODE-2027"
+        ],
+        "last_reviewed": "2026-07-19",
+        "review_reason": "Reviewed as an assessment manifest that references the eight governed questions for this sign.",
+        "original_review_language": "NL",
+        "reviewed_languages": [
+          "NL",
+          "EN",
+          "FR",
+          "AR"
+        ],
+        "status": "APPROVED"
+      }
+    },
+    "D4-links": {
+      "canonical_path": "src/main/resources/data/signs_import/D4-links/sign.json",
+      "source_ids": [
+        "BE-KB1975-MANDATORY-CURRENT",
+        "BE-MB1976-MANDATORY-PLACEMENT",
+        "BE-FPS-ROAD-CODE-2027"
+      ],
+      "last_reviewed": "2026-07-19",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "questions": {
+        "D4-links_Q01": {
+          "canonical_path": "src/main/resources/data/signs_import/D4-links/questions.json#/0",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D4-links_Q02": {
+          "canonical_path": "src/main/resources/data/signs_import/D4-links/questions.json#/1",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D4-links_Q03": {
+          "canonical_path": "src/main/resources/data/signs_import/D4-links/questions.json#/2",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D4-links_Q04": {
+          "canonical_path": "src/main/resources/data/signs_import/D4-links/questions.json#/3",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D4-links_Q05": {
+          "canonical_path": "src/main/resources/data/signs_import/D4-links/questions.json#/4",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D4-links_Q06": {
+          "canonical_path": "src/main/resources/data/signs_import/D4-links/questions.json#/5",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D4-links_Q07": {
+          "canonical_path": "src/main/resources/data/signs_import/D4-links/questions.json#/6",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D4-links_Q08": {
+          "canonical_path": "src/main/resources/data/signs_import/D4-links/questions.json#/7",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        }
+      },
+      "exam": {
+        "canonical_path": "src/main/resources/data/signs_import/D4-links/exams.json",
+        "source_ids": [
+          "BE-KB1975-MANDATORY-CURRENT",
+          "BE-FPS-ROAD-CODE-2027"
+        ],
+        "last_reviewed": "2026-07-19",
+        "review_reason": "Reviewed as an assessment manifest that references the eight governed questions for this sign.",
+        "original_review_language": "NL",
+        "reviewed_languages": [
+          "NL",
+          "EN",
+          "FR",
+          "AR"
+        ],
+        "status": "APPROVED"
+      }
+    },
+    "D4-rechtdoor": {
+      "canonical_path": "src/main/resources/data/signs_import/D4-rechtdoor/sign.json",
+      "source_ids": [
+        "BE-KB1975-MANDATORY-CURRENT",
+        "BE-MB1976-MANDATORY-PLACEMENT",
+        "BE-FPS-ROAD-CODE-2027"
+      ],
+      "last_reviewed": "2026-07-19",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "questions": {
+        "D4-rechtdoor_Q01": {
+          "canonical_path": "src/main/resources/data/signs_import/D4-rechtdoor/questions.json#/0",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D4-rechtdoor_Q02": {
+          "canonical_path": "src/main/resources/data/signs_import/D4-rechtdoor/questions.json#/1",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D4-rechtdoor_Q03": {
+          "canonical_path": "src/main/resources/data/signs_import/D4-rechtdoor/questions.json#/2",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D4-rechtdoor_Q04": {
+          "canonical_path": "src/main/resources/data/signs_import/D4-rechtdoor/questions.json#/3",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D4-rechtdoor_Q05": {
+          "canonical_path": "src/main/resources/data/signs_import/D4-rechtdoor/questions.json#/4",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D4-rechtdoor_Q06": {
+          "canonical_path": "src/main/resources/data/signs_import/D4-rechtdoor/questions.json#/5",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D4-rechtdoor_Q07": {
+          "canonical_path": "src/main/resources/data/signs_import/D4-rechtdoor/questions.json#/6",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D4-rechtdoor_Q08": {
+          "canonical_path": "src/main/resources/data/signs_import/D4-rechtdoor/questions.json#/7",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        }
+      },
+      "exam": {
+        "canonical_path": "src/main/resources/data/signs_import/D4-rechtdoor/exams.json",
+        "source_ids": [
+          "BE-KB1975-MANDATORY-CURRENT",
+          "BE-FPS-ROAD-CODE-2027"
+        ],
+        "last_reviewed": "2026-07-19",
+        "review_reason": "Reviewed as an assessment manifest that references the eight governed questions for this sign.",
+        "original_review_language": "NL",
+        "reviewed_languages": [
+          "NL",
+          "EN",
+          "FR",
+          "AR"
+        ],
+        "status": "APPROVED"
+      }
+    },
+    "D4-rechts": {
+      "canonical_path": "src/main/resources/data/signs_import/D4-rechts/sign.json",
+      "source_ids": [
+        "BE-KB1975-MANDATORY-CURRENT",
+        "BE-MB1976-MANDATORY-PLACEMENT",
+        "BE-FPS-ROAD-CODE-2027"
+      ],
+      "last_reviewed": "2026-07-19",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "questions": {
+        "D4-rechts_Q01": {
+          "canonical_path": "src/main/resources/data/signs_import/D4-rechts/questions.json#/0",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D4-rechts_Q02": {
+          "canonical_path": "src/main/resources/data/signs_import/D4-rechts/questions.json#/1",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D4-rechts_Q03": {
+          "canonical_path": "src/main/resources/data/signs_import/D4-rechts/questions.json#/2",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D4-rechts_Q04": {
+          "canonical_path": "src/main/resources/data/signs_import/D4-rechts/questions.json#/3",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D4-rechts_Q05": {
+          "canonical_path": "src/main/resources/data/signs_import/D4-rechts/questions.json#/4",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D4-rechts_Q06": {
+          "canonical_path": "src/main/resources/data/signs_import/D4-rechts/questions.json#/5",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D4-rechts_Q07": {
+          "canonical_path": "src/main/resources/data/signs_import/D4-rechts/questions.json#/6",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D4-rechts_Q08": {
+          "canonical_path": "src/main/resources/data/signs_import/D4-rechts/questions.json#/7",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        }
+      },
+      "exam": {
+        "canonical_path": "src/main/resources/data/signs_import/D4-rechts/exams.json",
+        "source_ids": [
+          "BE-KB1975-MANDATORY-CURRENT",
+          "BE-FPS-ROAD-CODE-2027"
+        ],
+        "last_reviewed": "2026-07-19",
+        "review_reason": "Reviewed as an assessment manifest that references the eight governed questions for this sign.",
+        "original_review_language": "NL",
+        "reviewed_languages": [
+          "NL",
+          "EN",
+          "FR",
+          "AR"
+        ],
+        "status": "APPROVED"
+      }
+    },
+    "D5": {
+      "canonical_path": "src/main/resources/data/signs_import/D5/sign.json",
+      "source_ids": [
+        "BE-KB1975-MANDATORY-CURRENT",
+        "BE-MB1976-MANDATORY-PLACEMENT",
+        "BE-FPS-ROAD-CODE-2027"
+      ],
+      "last_reviewed": "2026-07-19",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "questions": {
+        "D5_Q01": {
+          "canonical_path": "src/main/resources/data/signs_import/D5/questions.json#/0",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D5_Q02": {
+          "canonical_path": "src/main/resources/data/signs_import/D5/questions.json#/1",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D5_Q03": {
+          "canonical_path": "src/main/resources/data/signs_import/D5/questions.json#/2",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D5_Q04": {
+          "canonical_path": "src/main/resources/data/signs_import/D5/questions.json#/3",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D5_Q05": {
+          "canonical_path": "src/main/resources/data/signs_import/D5/questions.json#/4",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D5_Q06": {
+          "canonical_path": "src/main/resources/data/signs_import/D5/questions.json#/5",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D5_Q07": {
+          "canonical_path": "src/main/resources/data/signs_import/D5/questions.json#/6",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D5_Q08": {
+          "canonical_path": "src/main/resources/data/signs_import/D5/questions.json#/7",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        }
+      },
+      "exam": {
+        "canonical_path": "src/main/resources/data/signs_import/D5/exams.json",
+        "source_ids": [
+          "BE-KB1975-MANDATORY-CURRENT",
+          "BE-FPS-ROAD-CODE-2027"
+        ],
+        "last_reviewed": "2026-07-19",
+        "review_reason": "Reviewed as an assessment manifest that references the eight governed questions for this sign.",
+        "original_review_language": "NL",
+        "reviewed_languages": [
+          "NL",
+          "EN",
+          "FR",
+          "AR"
+        ],
+        "status": "APPROVED"
+      }
+    },
+    "D7": {
+      "canonical_path": "src/main/resources/data/signs_import/D7/sign.json",
+      "source_ids": [
+        "BE-KB1975-MANDATORY-CURRENT",
+        "BE-MB1976-MANDATORY-PLACEMENT",
+        "BE-FPS-ROAD-CODE-2027"
+      ],
+      "last_reviewed": "2026-07-19",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "questions": {
+        "D7_Q01": {
+          "canonical_path": "src/main/resources/data/signs_import/D7/questions.json#/0",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D7_Q02": {
+          "canonical_path": "src/main/resources/data/signs_import/D7/questions.json#/1",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D7_Q03": {
+          "canonical_path": "src/main/resources/data/signs_import/D7/questions.json#/2",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D7_Q04": {
+          "canonical_path": "src/main/resources/data/signs_import/D7/questions.json#/3",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D7_Q05": {
+          "canonical_path": "src/main/resources/data/signs_import/D7/questions.json#/4",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D7_Q06": {
+          "canonical_path": "src/main/resources/data/signs_import/D7/questions.json#/5",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D7_Q07": {
+          "canonical_path": "src/main/resources/data/signs_import/D7/questions.json#/6",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D7_Q08": {
+          "canonical_path": "src/main/resources/data/signs_import/D7/questions.json#/7",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        }
+      },
+      "exam": {
+        "canonical_path": "src/main/resources/data/signs_import/D7/exams.json",
+        "source_ids": [
+          "BE-KB1975-MANDATORY-CURRENT",
+          "BE-FPS-ROAD-CODE-2027"
+        ],
+        "last_reviewed": "2026-07-19",
+        "review_reason": "Reviewed as an assessment manifest that references the eight governed questions for this sign.",
+        "original_review_language": "NL",
+        "reviewed_languages": [
+          "NL",
+          "EN",
+          "FR",
+          "AR"
+        ],
+        "status": "APPROVED"
+      }
+    },
+    "D9a": {
+      "canonical_path": "src/main/resources/data/signs_import/D9a/sign.json",
+      "source_ids": [
+        "BE-KB1975-MANDATORY-CURRENT",
+        "BE-MB1976-MANDATORY-PLACEMENT",
+        "BE-FPS-ROAD-CODE-2027"
+      ],
+      "last_reviewed": "2026-07-19",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "questions": {
+        "D9a_Q01": {
+          "canonical_path": "src/main/resources/data/signs_import/D9a/questions.json#/0",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D9a_Q02": {
+          "canonical_path": "src/main/resources/data/signs_import/D9a/questions.json#/1",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D9a_Q03": {
+          "canonical_path": "src/main/resources/data/signs_import/D9a/questions.json#/2",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D9a_Q04": {
+          "canonical_path": "src/main/resources/data/signs_import/D9a/questions.json#/3",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D9a_Q05": {
+          "canonical_path": "src/main/resources/data/signs_import/D9a/questions.json#/4",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D9a_Q06": {
+          "canonical_path": "src/main/resources/data/signs_import/D9a/questions.json#/5",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D9a_Q07": {
+          "canonical_path": "src/main/resources/data/signs_import/D9a/questions.json#/6",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "D9a_Q08": {
+          "canonical_path": "src/main/resources/data/signs_import/D9a/questions.json#/7",
+          "source_ids": [
+            "BE-KB1975-MANDATORY-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        }
+      },
+      "exam": {
+        "canonical_path": "src/main/resources/data/signs_import/D9a/exams.json",
+        "source_ids": [
+          "BE-KB1975-MANDATORY-CURRENT",
+          "BE-FPS-ROAD-CODE-2027"
+        ],
+        "last_reviewed": "2026-07-19",
+        "review_reason": "Reviewed as an assessment manifest that references the eight governed questions for this sign.",
+        "original_review_language": "NL",
+        "reviewed_languages": [
+          "NL",
+          "EN",
+          "FR",
+          "AR"
+        ],
+        "status": "APPROVED"
+      }
+    }
+  },
+  "lesson_items": {
+    "les-1/page-4": {
+      "canonical_path": "data/lessons_content.json#/lessons/les-1/pages/4",
+      "content_locator": {
+        "type": "LESSON_PAGE",
+        "file": "data/lessons_content.json",
+        "lesson_id": "les-1",
+        "page_number": 4
+      },
+      "source_ids": [
+        "BE-KB1975-MANDATORY-CURRENT",
+        "BE-FPS-ROAD-CODE-2027"
+      ],
+      "last_reviewed": "2026-07-19",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED"
+    },
+    "les-7/page-2": {
+      "canonical_path": "data/lessons_content.json#/lessons/les-7/pages/2",
+      "content_locator": {
+        "type": "LESSON_PAGE",
+        "file": "data/lessons_content.json",
+        "lesson_id": "les-7",
+        "page_number": 2
+      },
+      "source_ids": [
+        "BE-KB1975-MANDATORY-CURRENT",
+        "BE-FPS-ROAD-CODE-2027"
+      ],
+      "last_reviewed": "2026-07-19",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED"
+    },
+    "les-7/page-4": {
+      "canonical_path": "data/lessons_content.json#/lessons/les-7/pages/4",
+      "content_locator": {
+        "type": "LESSON_PAGE",
+        "file": "data/lessons_content.json",
+        "lesson_id": "les-7",
+        "page_number": 4
+      },
+      "source_ids": [
+        "BE-KB1975-MANDATORY-CURRENT",
+        "BE-FPS-ROAD-CODE-2027"
+      ],
+      "last_reviewed": "2026-07-19",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED"
+    },
+    "les-7/page-5": {
+      "canonical_path": "data/lessons_content.json#/lessons/les-7/pages/5",
+      "content_locator": {
+        "type": "LESSON_PAGE",
+        "file": "data/lessons_content.json",
+        "lesson_id": "les-7",
+        "page_number": 5
+      },
+      "source_ids": [
+        "BE-KB1975-MANDATORY-CURRENT",
+        "BE-FPS-ROAD-CODE-2027"
+      ],
+      "last_reviewed": "2026-07-19",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED"
+    },
+    "les-20/page-5": {
+      "canonical_path": "data/lessons_content.json#/lessons/les-20/pages/5",
+      "content_locator": {
+        "type": "LESSON_PAGE",
+        "file": "data/lessons_content.json",
+        "lesson_id": "les-20",
+        "page_number": 5
+      },
+      "source_ids": [
+        "BE-KB1975-MANDATORY-CURRENT",
+        "BE-FPS-ROAD-CODE-2027"
+      ],
+      "last_reviewed": "2026-07-19",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED"
+    },
+    "les-23/page-1": {
+      "canonical_path": "data/lessons_content.json#/lessons/les-23/pages/1",
+      "content_locator": {
+        "type": "LESSON_PAGE",
+        "file": "data/lessons_content.json",
+        "lesson_id": "les-23",
+        "page_number": 1
+      },
+      "source_ids": [
+        "BE-KB1975-MANDATORY-CURRENT",
+        "BE-FPS-ROAD-CODE-2027"
+      ],
+      "last_reviewed": "2026-07-19",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED"
+    },
+    "les-23/page-2": {
+      "canonical_path": "data/lessons_content.json#/lessons/les-23/pages/2",
+      "content_locator": {
+        "type": "LESSON_PAGE",
+        "file": "data/lessons_content.json",
+        "lesson_id": "les-23",
+        "page_number": 2
+      },
+      "source_ids": [
+        "BE-KB1975-MANDATORY-CURRENT",
+        "BE-FPS-ROAD-CODE-2027"
+      ],
+      "last_reviewed": "2026-07-19",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED"
+    },
+    "les-23/page-3": {
+      "canonical_path": "data/lessons_content.json#/lessons/les-23/pages/3",
+      "content_locator": {
+        "type": "LESSON_PAGE",
+        "file": "data/lessons_content.json",
+        "lesson_id": "les-23",
+        "page_number": 3
+      },
+      "source_ids": [
+        "BE-KB1975-MANDATORY-CURRENT",
+        "BE-FPS-ROAD-CODE-2027"
+      ],
+      "last_reviewed": "2026-07-19",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED"
+    },
+    "les-23/page-4": {
+      "canonical_path": "data/lessons_content.json#/lessons/les-23/pages/4",
+      "content_locator": {
+        "type": "LESSON_PAGE",
+        "file": "data/lessons_content.json",
+        "lesson_id": "les-23",
+        "page_number": 4
+      },
+      "source_ids": [
+        "BE-KB1975-MANDATORY-CURRENT",
+        "BE-FPS-ROAD-CODE-2027"
+      ],
+      "last_reviewed": "2026-07-19",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED"
+    },
+    "les-23/page-5": {
+      "canonical_path": "data/lessons_content.json#/lessons/les-23/pages/5",
+      "content_locator": {
+        "type": "LESSON_PAGE",
+        "file": "data/lessons_content.json",
+        "lesson_id": "les-23",
+        "page_number": 5
+      },
+      "source_ids": [
+        "BE-KB1975-MANDATORY-CURRENT",
+        "BE-FPS-ROAD-CODE-2027"
+      ],
+      "last_reviewed": "2026-07-19",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED"
+    },
+    "les-23/page-6": {
+      "canonical_path": "data/lessons_content.json#/lessons/les-23/pages/6",
+      "content_locator": {
+        "type": "LESSON_PAGE",
+        "file": "data/lessons_content.json",
+        "lesson_id": "les-23",
+        "page_number": 6
+      },
+      "source_ids": [
+        "BE-KB1975-MANDATORY-CURRENT",
+        "BE-FPS-ROAD-CODE-2027"
+      ],
+      "last_reviewed": "2026-07-19",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED"
+    },
+    "les-23/page-7": {
+      "canonical_path": "data/lessons_content.json#/lessons/les-23/pages/7",
+      "content_locator": {
+        "type": "LESSON_PAGE",
+        "file": "data/lessons_content.json",
+        "lesson_id": "les-23",
+        "page_number": 7
+      },
+      "source_ids": [
+        "BE-KB1975-MANDATORY-CURRENT",
+        "BE-FPS-ROAD-CODE-2027"
+      ],
+      "last_reviewed": "2026-07-19",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED"
+    },
+    "les-23/page-8": {
+      "canonical_path": "data/lessons_content.json#/lessons/les-23/pages/8",
+      "content_locator": {
+        "type": "LESSON_PAGE",
+        "file": "data/lessons_content.json",
+        "lesson_id": "les-23",
+        "page_number": 8
+      },
+      "source_ids": [
+        "BE-KB1975-MANDATORY-CURRENT",
+        "BE-FPS-ROAD-CODE-2027"
+      ],
+      "last_reviewed": "2026-07-19",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED"
+    }
+  }
+}
