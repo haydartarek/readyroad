@@ -7,70 +7,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat betekent dit verkeersbord?",
+        "question": "Voor wie is deze parkeerplaats voorbehouden?",
         "choices": [
           {
-            "text": "Parkeerplaats voorbehouden voor voertuigen van personen met een geldige Europese handicapkaart",
+            "text": "Voor een voertuig dat wordt gebruikt door de houder van een geldige speciale parkeerkaart",
             "is_correct": true
           },
           {
-            "text": "Parkeerplaats voor iedereen die een blauwe parkeerkaart heeft",
+            "text": "Voor elk voertuig met een passagier",
             "is_correct": false
           },
           {
-            "text": "Fietsparkeerplaats voor mensen met een beperking",
+            "text": "Voor bewoners zonder kaart",
             "is_correct": false
           }
         ],
-        "explanation": "E9a-mindervaliden reserveert de parkeerplaats uitsluitend voor voertuigen waarvan de houder van een geldige Europese handicapkaart aanwezig is. Zonder die kaart mag u hier niet parkeren."
+        "explanation": "De kaarthouder moet als bestuurder of passagier aanwezig zijn en de kaart moet correct worden getoond."
       },
       "EN": {
-        "question": "What does this road sign mean?",
+        "question": "Who is this parking space reserved for?",
         "choices": [
           {
-            "text": "Parking space reserved for vehicles of persons with a valid European disabled parking badge",
+            "text": "A vehicle used by the holder of a valid special disabled parking card",
             "is_correct": true
           },
           {
-            "text": "Parking for anyone who has a blue parking card",
+            "text": "Any vehicle carrying a passenger",
             "is_correct": false
           },
           {
-            "text": "Bicycle parking for people with disabilities",
+            "text": "Residents without a card",
             "is_correct": false
           }
         ],
-        "explanation": "E9a-mindervaliden reserves the parking space exclusively for vehicles whose holder of a valid European disabled parking badge is present. Without that badge you may not park here."
+        "explanation": "The card holder must be present as driver or passenger and the card must be displayed correctly."
       },
       "FR": {
-        "question": "Que signifie ce panneau de signalisation ?",
+        "question": "À qui cette place est-elle réservée ?",
         "choices": [
           {
-            "text": "Place de stationnement réservée aux véhicules des personnes détenant une carte européenne de stationnement pour handicapés valide",
+            "text": "À un véhicule utilisé par le titulaire d’une carte spéciale valide",
             "is_correct": true
           },
           {
-            "text": "Stationnement pour toute personne ayant une carte de stationnement bleue",
+            "text": "À tout véhicule transportant un passager",
             "is_correct": false
           },
           {
-            "text": "Stationnement pour vélos destiné aux personnes handicapées",
+            "text": "Aux riverains sans carte",
             "is_correct": false
           }
         ],
-        "explanation": "E9a-mindervaliden réserve la place de stationnement exclusivement aux véhicules dont le titulaire d'une carte européenne valide pour handicapés est présent. Sans cette carte vous ne pouvez pas stationner ici."
+        "explanation": "Le titulaire doit être présent comme conducteur ou passager et la carte correctement affichée."
       },
       "AR": {
-        "question": "ماذا تعني هذه العلامة المرورية؟",
+        "question": "لمن يخصص هذا الموقف؟",
         "choices": [
           {
-            "text": "موقف وقوف محجوز لمركبات الأشخاص الحاملين لبطاقة الإعاقة الأوروبية الصالحة",
+            "text": "لمركبة يستخدمها حامل بطاقة ركن خاصة صالحة لذوي الإعاقة",
             "is_correct": true
           },
-          { "text": "موقف لأي شخص لديه بطاقة وقوف زرقاء", "is_correct": false },
-          { "text": "موقف دراجات لذوي الإعاقة", "is_correct": false }
+          {
+            "text": "لكل مركبة تحمل راكبًا",
+            "is_correct": false
+          },
+          {
+            "text": "للسكان بلا بطاقة",
+            "is_correct": false
+          }
         ],
-        "explanation": "تحجز E9a-mindervaliden الموقف حصراً لمركبات الأشخاص الحاملين لبطاقة الإعاقة الأوروبية الصالحة الموجودين في المركبة. بدون تلك البطاقة لا يحق لك الوقوف هنا."
+        "explanation": "يجب أن يكون حامل البطاقة موجودًا كسائق أو راكب وأن تُعرض البطاقة صحيحًا."
       }
     }
   },
@@ -82,58 +88,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Welk document moet zichtbaar zijn als u parkeert op een E9a-mindervaliden-plek?",
+        "question": "Wat moet van buitenaf zichtbaar zijn op de kaart?",
         "choices": [
           {
-            "text": "De geldige Europese handicapkaart, gelegd op het dashboard met de voorzijde naar boven zodat foto en vervaldatum zichtbaar zijn",
+            "text": "Het rolstoelsymbool en het unieke kaartnummer",
             "is_correct": true
           },
           {
-            "text": "Het kentekenbewijs van het voertuig",
+            "text": "Alleen de foto en vervaldatum",
             "is_correct": false
           },
-          { "text": "Een attest van de behandelende arts", "is_correct": false }
-        ],
-        "explanation": "De Europese handicapkaart moet zichtbaar op het dashboard liggen met de voorzijde naar boven. Zo kunnen verbalisanten de geldigheid en de identiteit van de houder controleren."
-      },
-      "EN": {
-        "question": "Which document must be visible when you park in an E9a-mindervaliden space?",
-        "choices": [
           {
-            "text": "The valid European disabled parking badge placed on the dashboard with the front face upward so that the photo and expiry date are visible",
-            "is_correct": true
-          },
-          { "text": "The vehicle registration document", "is_correct": false },
-          {
-            "text": "A certificate from the treating physician",
+            "text": "Alleen de handtekening op de achterzijde",
             "is_correct": false
           }
         ],
-        "explanation": "The European disabled parking badge must be placed visibly on the dashboard with the front face upward. This allows enforcement officers to verify the validity and the identity of the holder."
+        "explanation": "De officiële instructie verlangt dat de kaart vooraan op het dashboard ligt met rolstoelsymbool en uniek kaartnummer goed zichtbaar."
+      },
+      "EN": {
+        "question": "What must be visible from outside on the card?",
+        "choices": [
+          {
+            "text": "The wheelchair symbol and unique card number",
+            "is_correct": true
+          },
+          {
+            "text": "Only the photograph and expiry date",
+            "is_correct": false
+          },
+          {
+            "text": "Only the signature on the back",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Official guidance requires the card at the front on the dashboard with the wheelchair symbol and unique number clearly visible."
       },
       "FR": {
-        "question": "Quel document doit être visible lorsque vous vous garez sur une place E9a-mindervaliden ?",
+        "question": "Que doit-on voir de l’extérieur sur la carte ?",
         "choices": [
           {
-            "text": "La carte européenne de stationnement pour handicapés valide, posée sur le tableau de bord face avant vers le haut afin que la photo et la date d'expiration soient visibles",
+            "text": "Le symbole du fauteuil roulant et le numéro unique",
             "is_correct": true
           },
-          { "text": "La carte grise du véhicule", "is_correct": false },
-          { "text": "Un certificat du médecin traitant", "is_correct": false }
+          {
+            "text": "Uniquement la photo et la date d’expiration",
+            "is_correct": false
+          },
+          {
+            "text": "Uniquement la signature au dos",
+            "is_correct": false
+          }
         ],
-        "explanation": "La carte européenne de stationnement pour handicapés doit être posée visiblement sur le tableau de bord face avant vers le haut. Cela permet aux agents verbalisateurs de vérifier la validité et l'identité du titulaire."
+        "explanation": "Les instructions officielles exigent la carte à l’avant sur le tableau de bord avec le symbole et le numéro unique bien visibles."
       },
       "AR": {
-        "question": "أي وثيقة يجب أن تكون مرئية عند الوقوف في موقف E9a-mindervaliden؟",
+        "question": "ما الذي يجب أن يظهر من الخارج على البطاقة؟",
         "choices": [
           {
-            "text": "بطاقة الإعاقة الأوروبية الصالحة موضوعة على لوحة القيادة بالوجه الأمامي لأعلى بحيث تكون الصورة وتاريخ الانتهاء مرئيَيْن",
+            "text": "رمز الكرسي المتحرك ورقم البطاقة الفريد",
             "is_correct": true
           },
-          { "text": "وثيقة تسجيل المركبة", "is_correct": false },
-          { "text": "شهادة من الطبيب المعالج", "is_correct": false }
+          {
+            "text": "الصورة وتاريخ الانتهاء فقط",
+            "is_correct": false
+          },
+          {
+            "text": "التوقيع على الخلف فقط",
+            "is_correct": false
+          }
         ],
-        "explanation": "يجب وضع بطاقة الإعاقة الأوروبية بشكل مرئي على لوحة القيادة بالوجه الأمامي لأعلى. يتيح ذلك لضباط الرقابة التحقق من صلاحية البطاقة وهوية صاحبها."
+        "explanation": "تطلب التعليمات الرسمية وضع البطاقة في مقدمة لوحة القيادة مع ظهور الرمز والرقم الفريد بوضوح."
       }
     }
   },
@@ -226,76 +250,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U heeft een geldige handicapkaart. U parkeert op een E9a-mindervaliden-plek. Hoe legt u de kaart neer?",
+        "question": "Hoe toont u de kaart correct?",
         "choices": [
           {
-            "text": "Zichtbaar op het dashboard met de voorzijde naar boven zodat foto en vervaldatum van buitenaf leesbaar zijn",
+            "text": "Vooraan op het dashboard, met rolstoelsymbool en uniek kaartnummer goed zichtbaar van buitenaf",
             "is_correct": true
           },
           {
-            "text": "In het handschoenenkastje zodat de kaart veilig bewaard is",
+            "text": "Verborgen in het handschoenenkastje",
             "is_correct": false
           },
           {
-            "text": "Achter de voorruit omgekeerd zodat de zon de kaart niet beschadigt",
+            "text": "Alleen een foto van de kaart op de telefoon tonen",
             "is_correct": false
           }
         ],
-        "explanation": "De handicapkaart moet altijd zichtbaar op het dashboard liggen met de voorzijde naar boven. Controleurs moeten van buitenaf kunnen zien dat de kaart geldig is. Verborgen of omgekeerd neerleggen is niet toegestaan."
+        "explanation": "De originele geldige kaart moet zichtbaar zijn zodat de reservering controleerbaar is."
       },
       "EN": {
-        "question": "You have a valid disabled badge. You park in an E9a-mindervaliden space. How do you place the badge?",
+        "question": "How do you display the card correctly?",
         "choices": [
           {
-            "text": "Visibly on the dashboard with the front face upward so that the photo and expiry date are readable from outside",
+            "text": "At the front on the dashboard, with the wheelchair symbol and unique number clearly visible from outside",
             "is_correct": true
           },
           {
-            "text": "In the glove compartment to keep the badge safe",
+            "text": "Hidden in the glovebox",
             "is_correct": false
           },
           {
-            "text": "Behind the windscreen face down so the sun does not damage the badge",
+            "text": "Only show a photograph of the card on a phone",
             "is_correct": false
           }
         ],
-        "explanation": "The disabled badge must always be placed visibly on the dashboard with the front face upward. Enforcement officers must be able to see from outside that the badge is valid. Placing it hidden or face down is not permitted."
+        "explanation": "The valid original card must be visible so entitlement can be checked."
       },
       "FR": {
-        "question": "Vous avez une carte de stationnement pour handicapés valide. Vous vous garez sur une place E9a-mindervaliden. Comment placez-vous la carte ?",
+        "question": "Comment afficher correctement la carte ?",
         "choices": [
           {
-            "text": "Visiblement sur le tableau de bord face avant vers le haut afin que la photo et la date d'expiration soient lisibles de l'extérieur",
+            "text": "À l’avant sur le tableau de bord, symbole du fauteuil roulant et numéro unique visibles de l’extérieur",
             "is_correct": true
           },
           {
-            "text": "Dans la boîte à gants pour garder la carte en sécurité",
+            "text": "Cachée dans la boîte à gants",
             "is_correct": false
           },
           {
-            "text": "Derrière le pare-brise face vers le bas pour que le soleil n'endommage pas la carte",
+            "text": "Montrer seulement une photo sur téléphone",
             "is_correct": false
           }
         ],
-        "explanation": "La carte de stationnement pour handicapés doit toujours être placée visiblement sur le tableau de bord face avant vers le haut. Les agents verbalisateurs doivent pouvoir voir de l'extérieur que la carte est valide. Placer la carte cachée ou face vers le bas n'est pas autorisé."
+        "explanation": "La carte originale valide doit être visible pour permettre le contrôle du droit."
       },
       "AR": {
-        "question": "لديك بطاقة إعاقة صالحة. تقف في موقف E9a-mindervaliden. كيف تضع البطاقة؟",
+        "question": "كيف تعرض البطاقة صحيحًا؟",
         "choices": [
           {
-            "text": "بشكل مرئي على لوحة القيادة بالوجه الأمامي لأعلى بحيث تكون الصورة وتاريخ الانتهاء مقروءَيْن من الخارج",
+            "text": "في مقدمة لوحة القيادة مع ظهور رمز الكرسي المتحرك والرقم الفريد من الخارج",
             "is_correct": true
           },
           {
-            "text": "في صندوق القفازات حفاظاً على البطاقة",
+            "text": "مخفية في صندوق القفازات",
             "is_correct": false
           },
           {
-            "text": "خلف الزجاج الأمامي بالوجه لأسفل حتى لا تتضرر البطاقة من الشمس",
+            "text": "عرض صورة البطاقة على الهاتف فقط",
             "is_correct": false
           }
         ],
-        "explanation": "يجب دائماً وضع بطاقة الإعاقة بشكل مرئي على لوحة القيادة بالوجه الأمامي لأعلى. يجب أن يتمكن ضباط الرقابة من رؤية صلاحية البطاقة من الخارج. وضعها مخفيةً أو بالوجه لأسفل غير مسموح."
+        "explanation": "يجب أن تظهر البطاقة الأصلية الصالحة حتى يمكن التحقق من الاستحقاق."
       }
     }
   },
@@ -307,76 +331,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Uw moeder heeft een handicapkaart. U rijdt haar naar de winkel en zij zit op de achterbank. Mag u parkeren op een E9a-mindervaliden-plek?",
+        "question": "Mag u de kaart gebruiken wanneer de houder als passagier meerijdt?",
         "choices": [
           {
-            "text": "Ja, de kaart is persoonsgebonden en geldig zolang de houder aanwezig is in het voertuig, ook als passagier",
+            "text": "Ja, de kaart is persoonsgebonden en mag worden gebruikt wanneer de houder bestuurder of passagier is",
             "is_correct": true
           },
           {
-            "text": "Neen, de kaart geldt alleen als de houder zelf rijdt",
+            "text": "Neen, alleen wanneer de houder zelf rijdt",
             "is_correct": false
           },
           {
-            "text": "Neen, de kaart geldt alleen als de houder op de voorpassagiersstoel zit",
+            "text": "Ja, ook wanneer de houder niet aanwezig is",
             "is_correct": false
           }
         ],
-        "explanation": "De Europese handicapkaart is persoonsgebonden en niet voertuiggebonden. Ze is geldig als de houder in het voertuig aanwezig is, ongeacht of die bestuurder of passagier is en ongeacht de zitplaats."
+        "explanation": "De kaart volgt de persoon, niet één vaste auto. Zonder de houder mag zij niet worden gebruikt."
       },
       "EN": {
-        "question": "Your mother has a disabled badge. You drive her to the shops and she sits in the back seat. May you park in an E9a-mindervaliden space?",
+        "question": "May the card be used when its holder travels as a passenger?",
         "choices": [
           {
-            "text": "Yes, the badge is person-based and valid as long as the holder is present in the vehicle, including as a passenger",
+            "text": "Yes, the card is personal and may be used when the holder is the driver or a passenger",
             "is_correct": true
           },
           {
-            "text": "No, the badge is only valid when the holder drives the vehicle herself",
+            "text": "No, only when the holder drives",
             "is_correct": false
           },
           {
-            "text": "No, the badge is only valid when the holder sits in the front passenger seat",
+            "text": "Yes, even when the holder is absent",
             "is_correct": false
           }
         ],
-        "explanation": "The European disabled parking badge is person-based, not vehicle-based. It is valid when the holder is present in the vehicle, regardless of whether they are the driver or a passenger and regardless of seating position."
+        "explanation": "The card follows the person, not one fixed car. It may not be used without the holder."
       },
       "FR": {
-        "question": "Votre mère a une carte de stationnement pour handicapés. Vous la conduisez au magasin et elle est assise sur le siège arrière. Pouvez-vous vous garer sur une place E9a-mindervaliden ?",
+        "question": "La carte peut-elle être utilisée lorsque son titulaire est passager ?",
         "choices": [
           {
-            "text": "Oui, la carte est liée à la personne et valable tant que le titulaire est présent dans le véhicule, même comme passager",
+            "text": "Oui, elle est personnelle et peut être utilisée si le titulaire est conducteur ou passager",
             "is_correct": true
           },
           {
-            "text": "Non, la carte n'est valable que si le titulaire conduit lui-même le véhicule",
+            "text": "Non, seulement si le titulaire conduit",
             "is_correct": false
           },
           {
-            "text": "Non, la carte n'est valable que si le titulaire est assis sur le siège passager avant",
+            "text": "Oui, même si le titulaire est absent",
             "is_correct": false
           }
         ],
-        "explanation": "La carte européenne de stationnement pour handicapés est liée à la personne et non au véhicule. Elle est valable lorsque le titulaire est présent dans le véhicule, qu'il soit conducteur ou passager et quelle que soit sa place."
+        "explanation": "La carte suit la personne et non une voiture fixe. Elle ne peut être utilisée sans le titulaire."
       },
       "AR": {
-        "question": "والدتك تملك بطاقة إعاقة. تقودها إلى المتجر وهي جالسة في المقعد الخلفي. هل يجوز لك الوقوف في موقف E9a-mindervaliden؟",
+        "question": "هل يجوز استخدام البطاقة عندما يكون حاملها راكبًا؟",
         "choices": [
           {
-            "text": "نعم، البطاقة مرتبطة بالشخص وصالحة طالما صاحبها موجود في المركبة حتى كراكب",
+            "text": "نعم، البطاقة شخصية ويجوز استعمالها عندما يكون حاملها سائقًا أو راكبًا",
             "is_correct": true
           },
           {
-            "text": "لا، البطاقة صالحة فقط عندما يقود صاحبها المركبة بنفسه",
+            "text": "لا، فقط عندما يقود حاملها",
             "is_correct": false
           },
           {
-            "text": "لا، البطاقة صالحة فقط عندما يجلس صاحبها في مقعد الراكب الأمامي",
+            "text": "نعم، حتى في غياب حاملها",
             "is_correct": false
           }
         ],
-        "explanation": "بطاقة الإعاقة الأوروبية مرتبطة بالشخص لا بالمركبة. تكون صالحة عندما يكون صاحبها موجوداً في المركبة بصرف النظر عما إذا كان سائقاً أو راكباً وبصرف النظر عن مقعده."
+        "explanation": "تتبع البطاقة الشخص لا سيارة ثابتة، ولا يجوز استخدامها من دونه."
       }
     }
   },
@@ -388,76 +412,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Hoe lang mag een houder van een geldige handicapkaart parkeren op een E9a-mindervaliden-plek zonder bijkomend tijdsbord?",
+        "question": "Geeft de kaart automatisch overal gratis en onbeperkt parkeren?",
         "choices": [
           {
-            "text": "Zo lang als nodig, want zonder bijkomend tijdsbord geldt er geen tijdslimiet op de gereserveerde plek",
+            "text": "Neen, controleer plaatselijke betalings-, registratie-, tijds- en bewonersregels",
             "is_correct": true
           },
           {
-            "text": "Maximaal 2 uur, want dat is de standaardparkeertijd in België",
+            "text": "Ja, de kaart heft elke plaatselijke regel op",
             "is_correct": false
           },
           {
-            "text": "Maximaal 4 uur, want dat is de standaardtermijn voor gereserveerde plekken",
+            "text": "Ja, maar alleen ’s nachts",
             "is_correct": false
           }
         ],
-        "explanation": "Zonder bijkomend tijdsbord geldt geen tijdslimiet op een E9a-mindervaliden-plek. De houder mag blijven staan zo lang als nodig. Een plaatselijk reglement of een onderbord kan wel een tijdslimiet opleggen."
+        "explanation": "Gratis parkeren verschilt per gemeente en de kaart alleen volstaat niet voor bewonersplaatsen."
       },
       "EN": {
-        "question": "How long may a holder of a valid disabled badge park in an E9a-mindervaliden space without an additional time sign?",
+        "question": "Does the card automatically provide free and unlimited parking everywhere?",
         "choices": [
           {
-            "text": "As long as needed, because without an additional time sign there is no time limit on the reserved space",
+            "text": "No, check local payment, registration, time and resident rules",
             "is_correct": true
           },
           {
-            "text": "A maximum of 2 hours, because that is the standard parking time in Belgium",
+            "text": "Yes, the card cancels every local rule",
             "is_correct": false
           },
           {
-            "text": "A maximum of 4 hours, because that is the standard term for reserved spaces",
+            "text": "Yes, but only at night",
             "is_correct": false
           }
         ],
-        "explanation": "Without an additional time sign there is no time limit on an E9a-mindervaliden space. The holder may stay as long as needed. A local regulation or a supplementary plate may impose a time limit."
+        "explanation": "Free parking varies by municipality and the card alone is not sufficient for resident-only spaces."
       },
       "FR": {
-        "question": "Combien de temps le titulaire d'une carte de stationnement pour handicapés valide peut-il se garer sur une place E9a-mindervaliden sans panneau de temps supplémentaire ?",
+        "question": "La carte donne-t-elle automatiquement un stationnement gratuit et illimité partout ?",
         "choices": [
           {
-            "text": "Aussi longtemps que nécessaire, car sans panneau de temps supplémentaire il n'y a pas de limite de temps sur la place réservée",
+            "text": "Non, vérifiez les règles locales de paiement, enregistrement, durée et riverains",
             "is_correct": true
           },
           {
-            "text": "Maximum 2 heures, car c'est la durée de stationnement standard en Belgique",
+            "text": "Oui, la carte annule toute règle locale",
             "is_correct": false
           },
           {
-            "text": "Maximum 4 heures, car c'est le délai standard pour les places réservées",
+            "text": "Oui, mais seulement la nuit",
             "is_correct": false
           }
         ],
-        "explanation": "Sans panneau de temps supplémentaire il n'y a pas de limite de temps sur une place E9a-mindervaliden. Le titulaire peut rester aussi longtemps que nécessaire. Un règlement local ou un panneau additionnel peut imposer une limite de temps."
+        "explanation": "La gratuité varie selon la commune et la carte seule ne suffit pas pour les places de riverains."
       },
       "AR": {
-        "question": "كم يجوز لحامل بطاقة إعاقة صالحة الوقوف في موقف E9a-mindervaliden بدون علامة زمنية إضافية؟",
+        "question": "هل تمنح البطاقة تلقائيًا ركنًا مجانيًا غير محدود في كل مكان؟",
         "choices": [
           {
-            "text": "بقدر الحاجة، لأنه بدون علامة زمنية إضافية لا يوجد حد زمني في الموقف المحجوز",
+            "text": "لا، تحقق من قواعد الدفع والتسجيل والوقت والسكان المحلية",
             "is_correct": true
           },
           {
-            "text": "ساعتان كحد أقصى لأن ذلك هو وقت الوقوف المعياري في بلجيكا",
+            "text": "نعم، تلغي البطاقة كل قاعدة محلية",
             "is_correct": false
           },
           {
-            "text": "4 ساعات كحد أقصى لأن ذلك هو المدة المعيارية للمواقف المحجوزة",
+            "text": "نعم، لكن ليلًا فقط",
             "is_correct": false
           }
         ],
-        "explanation": "بدون علامة زمنية إضافية لا يوجد حد زمني في موقف E9a-mindervaliden. يجوز للحامل البقاء بقدر الحاجة. يمكن لنظام محلي أو لوحة إضافية فرض حد زمني."
+        "explanation": "يختلف الركن المجاني بين البلديات ولا تكفي البطاقة وحدها لمواقف السكان."
       }
     }
   },
@@ -469,60 +493,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U heeft geen handicapkaart maar wilt even stoppen op een E9a-mindervaliden-plek om iemand af te zetten. Is dit toegelaten?",
+        "question": "U hebt geen kaart en blijft op de plaats wachten nadat uw passagier is uitgestapt. Mag dat?",
         "choices": [
           {
-            "text": "Neen, de E9a-mindervaliden-plek is voorbehouden voor houders van een handicapkaart en mag niet worden gebruikt om iemand af te zetten",
+            "text": "Neen, zodra de strikt nodige uitstaptijd voorbij is, parkeert u zonder recht op de voorbehouden plaats",
             "is_correct": true
           },
           {
-            "text": "Ja, kort iemand afzetten geldt als stoppen en niet als parkeren",
+            "text": "Ja, zolang de bestuurder in de auto blijft",
             "is_correct": false
           }
         ],
-        "explanation": "Een gereserveerde gehandicaptenparkeerplaats is voorbehouden voor houders van een geldige handicapkaart, zowel voor parkeren als voor stoppen. Iemand afzetten zonder handicapkaart is een overtreding, ook al duurt het maar enkele seconden."
+        "explanation": "Een onmiddellijke uitstaphandeling kan stilstaan zijn, maar wachten daarna is parkeren. De aanwezigheid van de bestuurder verandert dat niet."
       },
       "EN": {
-        "question": "You have no disabled badge but want to briefly stop in an E9a-mindervaliden space to drop someone off. Is this permitted?",
+        "question": "You have no card and remain waiting in the space after your passenger has alighted. Is that allowed?",
         "choices": [
           {
-            "text": "No, the E9a-mindervaliden space is reserved for badge holders and may not be used to drop someone off",
+            "text": "No, once the strictly necessary alighting time has passed, you are parking without entitlement in the reserved space",
             "is_correct": true
           },
           {
-            "text": "Yes, briefly dropping someone off counts as stopping and not as parking",
+            "text": "Yes, provided the driver stays in the car",
             "is_correct": false
           }
         ],
-        "explanation": "A reserved disabled parking space is reserved for holders of a valid disabled badge, both for parking and for stopping. Dropping someone off without a badge is an offence, even if it only takes a few seconds."
+        "explanation": "Immediate alighting may be stopping, but waiting afterwards is parking. Driver presence does not change that."
       },
       "FR": {
-        "question": "Vous n'avez pas de carte de stationnement pour handicapés mais voulez vous arrêter brièvement sur une place E9a-mindervaliden pour déposer quelqu'un. Est-ce permis ?",
+        "question": "Sans carte, vous restez attendre sur la place après la descente du passager. Est-ce permis ?",
         "choices": [
           {
-            "text": "Non, la place E9a-mindervaliden est réservée aux titulaires d'une carte et ne peut pas être utilisée pour déposer quelqu'un",
+            "text": "Non, après le temps strictement nécessaire à la descente, vous stationnez sans droit sur la place réservée",
             "is_correct": true
           },
           {
-            "text": "Oui, déposer brièvement quelqu'un compte comme un arrêt et non comme un stationnement",
+            "text": "Oui, si le conducteur reste dans la voiture",
             "is_correct": false
           }
         ],
-        "explanation": "Une place de stationnement réservée aux handicapés est réservée aux titulaires d'une carte valide, tant pour stationner que pour s'arrêter. Déposer quelqu'un sans carte est une infraction, même si cela ne dure que quelques secondes."
+        "explanation": "La descente immédiate peut être un arrêt, mais attendre ensuite est un stationnement. La présence du conducteur n’y change rien."
       },
       "AR": {
-        "question": "ليس لديك بطاقة إعاقة لكنك تريد التوقف لفترة قصيرة في موقف E9a-mindervaliden لإنزال شخص. هل هذا مسموح؟",
+        "question": "لا تحمل بطاقة وبقيت تنتظر في المكان بعد نزول الراكب. هل يجوز؟",
         "choices": [
           {
-            "text": "لا، موقف E9a-mindervaliden محجوز لحاملي البطاقة ولا يجوز استخدامه لإنزال شخص",
+            "text": "لا، بعد انتهاء وقت النزول الضروري تكون قد ركنت بلا استحقاق في المكان المخصص",
             "is_correct": true
           },
           {
-            "text": "نعم، إنزال شخص بسرعة يُعدّ توقفاً لا وقوفاً",
+            "text": "نعم، ما دام السائق داخل السيارة",
             "is_correct": false
           }
         ],
-        "explanation": "موقف وقوف ذوي الإعاقة المحجوز مخصص لحاملي البطاقة الصالحة سواء للوقوف أو للتوقف. إنزال شخص بدون بطاقة يُعدّ مخالفة حتى لو استغرق بضع ثوانٍ فقط."
+        "explanation": "قد يكون النزول الفوري توقفًا، لكن الانتظار بعده ركن. ولا يغير وجود السائق ذلك."
       }
     }
   },
@@ -534,60 +558,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U bent houder van een handicapkaart maar de vervaldatum is gisteren verstreken. Mag u parkeren op een E9a-mindervaliden-plek?",
+        "question": "Mag een ongeldige of verlopen kaart worden gebruikt?",
         "choices": [
           {
-            "text": "Neen, een verlopen handicapkaart is juridisch ongeldig en geeft geen parkeerrecht op een voorbehouden plek",
+            "text": "Neen, alleen een geldige kaart met aanwezige houder geeft toegang tot de voorbehouden plaats",
             "is_correct": true
           },
           {
-            "text": "Ja, de handicap blijft bestaan ook al is de kaart verlopen",
+            "text": "Ja, gedurende één maand na de vervaldatum",
             "is_correct": false
           }
         ],
-        "explanation": "De geldigheid van de kaart is een wettelijke voorwaarde, niet enkel een formaliteit. Zelfs als de handicap reëel is, geeft een verlopen kaart geen parkeerrecht. De houder moet de kaart laten vernieuwen via de bevoegde diensten."
+        "explanation": "Een ongeldige kaart bewijst geen actueel parkeerrecht."
       },
       "EN": {
-        "question": "You hold a disabled badge but its expiry date was yesterday. May you park in an E9a-mindervaliden space?",
+        "question": "May an invalid or expired card be used?",
         "choices": [
           {
-            "text": "No, an expired disabled badge is legally invalid and gives no parking right in a reserved space",
+            "text": "No, only a valid card with its holder present gives access to the reserved space",
             "is_correct": true
           },
           {
-            "text": "Yes, the disability continues to exist even if the badge has expired",
+            "text": "Yes, for one month after expiry",
             "is_correct": false
           }
         ],
-        "explanation": "The validity of the badge is a legal requirement, not merely a formality. Even if the disability is real, an expired badge gives no parking right. The holder must have the badge renewed through the competent services."
+        "explanation": "An invalid card does not establish current parking entitlement."
       },
       "FR": {
-        "question": "Vous êtes titulaire d'une carte de stationnement pour handicapés mais la date d'expiration était hier. Pouvez-vous vous garer sur une place E9a-mindervaliden ?",
+        "question": "Une carte invalide ou expirée peut-elle être utilisée ?",
         "choices": [
           {
-            "text": "Non, une carte de stationnement pour handicapés périmée est juridiquement invalide et ne donne aucun droit de stationnement sur une place réservée",
+            "text": "Non, seule une carte valide avec son titulaire présent donne accès à la place",
             "is_correct": true
           },
           {
-            "text": "Oui, le handicap continue d'exister même si la carte est périmée",
+            "text": "Oui, pendant un mois après l’expiration",
             "is_correct": false
           }
         ],
-        "explanation": "La validité de la carte est une exigence légale, pas seulement une formalité. Même si le handicap est réel, une carte périmée ne donne aucun droit de stationnement. Le titulaire doit faire renouveler la carte par les services compétents."
+        "explanation": "Une carte invalide n’établit aucun droit actuel au stationnement."
       },
       "AR": {
-        "question": "لديك بطاقة إعاقة لكن تاريخ انتهاء صلاحيتها كان أمس. هل يجوز لك الوقوف في موقف E9a-mindervaliden؟",
+        "question": "هل يجوز استخدام بطاقة غير صالحة أو منتهية؟",
         "choices": [
           {
-            "text": "لا، بطاقة الإعاقة المنتهية الصلاحية غير صالحة قانوناً ولا تمنح حق الوقوف في موقف محجوز",
+            "text": "لا، البطاقة الصالحة مع حضور حاملها وحدها تمنح حق استعمال المكان",
             "is_correct": true
           },
           {
-            "text": "نعم، الإعاقة لا تزال قائمة حتى لو انتهت صلاحية البطاقة",
+            "text": "نعم، لمدة شهر بعد الانتهاء",
             "is_correct": false
           }
         ],
-        "explanation": "صلاحية البطاقة شرط قانوني لا مجرد إجراء شكلي. حتى لو كانت الإعاقة حقيقية، لا تمنح البطاقة المنتهية حق الوقوف. يجب على الحامل تجديد البطاقة عبر الجهات المختصة."
+        "explanation": "لا تثبت البطاقة غير الصالحة حقًا حاليًا في الركن."
       }
     }
   }

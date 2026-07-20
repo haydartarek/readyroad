@@ -7,73 +7,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat betekent dit verkeersbord?",
+        "question": "Wat betekent E3?",
         "choices": [
           {
-            "text": "Stilstaan én parkeren zijn hier volledig verboden",
+            "text": "Vrijwillig stilstaan en parkeren zijn verboden",
             "is_correct": true
           },
           {
-            "text": "Alleen parkeren is verboden; even stoppen mag nog",
+            "text": "Alleen parkeren is verboden",
             "is_correct": false
           },
           {
-            "text": "Alleen vrachtwagens mogen hier niet stoppen",
+            "text": "Alleen vrachtwagens mogen niet stoppen",
             "is_correct": false
           }
         ],
-        "explanation": "Dit bord verbiedt zowel stilstaan als parkeren. Geen enkel voertuig mag hier ook maar even stoppen, ongeacht de reden."
+        "explanation": "E3 verbiedt zowel vrijwillig stilstaan als parkeren. Een gedwongen immobilisatie door verkeer, bevel, pech of nood is een andere situatie."
       },
       "EN": {
-        "question": "What does this road sign mean?",
+        "question": "What does E3 mean?",
         "choices": [
           {
-            "text": "Both stopping and parking are completely forbidden here",
+            "text": "Voluntary stopping and parking are prohibited",
             "is_correct": true
           },
           {
-            "text": "Only parking is forbidden; briefly stopping is still allowed",
+            "text": "Only parking is prohibited",
             "is_correct": false
           },
           {
-            "text": "Only trucks are not allowed to stop here",
+            "text": "Only lorries may not stop",
             "is_correct": false
           }
         ],
-        "explanation": "This sign forbids both stopping and parking. No vehicle may stop here for any reason, not even briefly."
+        "explanation": "E3 prohibits both voluntary stopping and parking. Forced immobilisation caused by traffic, an order, breakdown or emergency is a different situation."
       },
       "FR": {
-        "question": "Que signifie ce panneau de signalisation ?",
+        "question": "Que signifie E3 ?",
         "choices": [
           {
-            "text": "L'arrêt et le stationnement sont tous deux complètement interdits ici",
+            "text": "L’arrêt volontaire et le stationnement sont interdits",
             "is_correct": true
           },
           {
-            "text": "Seul le stationnement est interdit ; s'arrêter brièvement est encore autorisé",
+            "text": "Seul le stationnement est interdit",
             "is_correct": false
           },
           {
-            "text": "Seuls les camions n'ont pas le droit de s'arrêter ici",
+            "text": "Seuls les camions ne peuvent pas s’arrêter",
             "is_correct": false
           }
         ],
-        "explanation": "Ce panneau interdit à la fois l'arrêt et le stationnement. Aucun véhicule ne peut s'immobiliser ici pour quelque raison que ce soit, même brièvement."
+        "explanation": "E3 interdit l’arrêt volontaire et le stationnement. Une immobilisation imposée par la circulation, un ordre, une panne ou une urgence est une autre situation."
       },
       "AR": {
-        "question": "ماذا تعني هذه العلامة المرورية؟",
+        "question": "ماذا تعني E3؟",
         "choices": [
           {
-            "text": "التوقف والوقوف ممنوعان هنا بشكل كامل",
+            "text": "التوقف الاختياري والركن محظوران",
             "is_correct": true
           },
           {
-            "text": "الوقوف محظور فقط، والتوقف القصير لا يزال مسموحاً",
+            "text": "الركن وحده محظور",
             "is_correct": false
           },
-          { "text": "الشاحنات فقط ممنوعة من التوقف هنا", "is_correct": false }
+          {
+            "text": "الشاحنات وحدها ممنوعة من التوقف",
+            "is_correct": false
+          }
         ],
-        "explanation": "هذه العلامة تحظر التوقف والوقوف معاً. لا يجوز لأي مركبة التوقف هنا لأي سبب كان، حتى لثوانٍ قليلة."
+        "explanation": "تحظر E3 التوقف الاختياري والركن. أما التوقف القسري بسبب المرور أو أمر أو عطل أو طارئ فهو حالة مختلفة."
       }
     }
   },
@@ -85,76 +88,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat is het verschil tussen dit bord en het bord E1?",
+        "question": "Wat is het verschil tussen E3 en E1?",
         "choices": [
           {
-            "text": "Dit bord verbiedt zowel stilstaan als parkeren; E1 verbiedt alleen parkeren",
+            "text": "E3 verbiedt stilstaan en parkeren; E1 verbiedt alleen parkeren",
             "is_correct": true
           },
           {
-            "text": "Dit bord is alleen voor voetgangerszones; E1 is voor rijwegen",
+            "text": "E1 is strenger dan E3",
             "is_correct": false
           },
           {
-            "text": "Dit bord en E1 zijn hetzelfde, maar voor verschillende voertuigtypes",
+            "text": "Er is geen verschil",
             "is_correct": false
           }
         ],
-        "explanation": "E1 verbiedt enkel parkeren — even stoppen terwijl je bij je voertuig blijft mag nog. Dit bord (E3) gaat verder: zelfs een korte stilstand is verboden."
+        "explanation": "Bij E1 blijft stilstaan voor de noodzakelijke tijd van in- of uitstappen of laden en lossen mogelijk. E3 verbiedt ook dat vrijwillige stilstaan."
       },
       "EN": {
-        "question": "What is the difference between this sign and sign E1?",
+        "question": "What is the difference between E3 and E1?",
         "choices": [
           {
-            "text": "This sign forbids both stopping and parking; E1 only forbids parking",
+            "text": "E3 prohibits stopping and parking; E1 prohibits parking only",
             "is_correct": true
           },
           {
-            "text": "This sign is only for pedestrian zones; E1 is for roads",
+            "text": "E1 is stricter than E3",
             "is_correct": false
           },
           {
-            "text": "This sign and E1 are the same but for different vehicle types",
+            "text": "There is no difference",
             "is_correct": false
           }
         ],
-        "explanation": "E1 only forbids parking — briefly stopping while staying with your vehicle is still allowed. This sign (E3) goes further: even a brief stop is forbidden."
+        "explanation": "Under E1, stopping for the necessary time for boarding, alighting, loading or unloading remains possible. E3 also prohibits that voluntary stop."
       },
       "FR": {
-        "question": "Quelle est la différence entre ce panneau et le panneau E1 ?",
+        "question": "Quelle est la différence entre E3 et E1 ?",
         "choices": [
           {
-            "text": "Ce panneau interdit à la fois l'arrêt et le stationnement ; E1 interdit uniquement le stationnement",
+            "text": "E3 interdit l’arrêt et le stationnement; E1 interdit uniquement le stationnement",
             "is_correct": true
           },
           {
-            "text": "Ce panneau est uniquement pour les zones piétonnes ; E1 est pour les routes",
+            "text": "E1 est plus strict que E3",
             "is_correct": false
           },
           {
-            "text": "Ce panneau et E1 sont identiques mais pour des types de véhicules différents",
+            "text": "Il n’y a aucune différence",
             "is_correct": false
           }
         ],
-        "explanation": "E1 interdit uniquement le stationnement — s'arrêter brièvement en restant auprès de votre véhicule est encore autorisé. Ce panneau (E3) va plus loin : même un bref arrêt est interdit."
+        "explanation": "Sous E1, l’arrêt pendant le temps nécessaire à la montée, à la descente, au chargement ou au déchargement reste possible. E3 interdit aussi cet arrêt volontaire."
       },
       "AR": {
-        "question": "ما الفرق بين هذه العلامة وعلامة E1؟",
+        "question": "ما الفرق بين E3 وE1؟",
         "choices": [
           {
-            "text": "هذه العلامة تحظر التوقف والوقوف معاً؛ أما E1 فتحظر الوقوف فقط",
+            "text": "تحظر E3 التوقف والركن، بينما تحظر E1 الركن فقط",
             "is_correct": true
           },
           {
-            "text": "هذه العلامة مخصصة للمناطق المشاة فقط؛ وE1 للطرق العامة",
+            "text": "E1 أشد من E3",
             "is_correct": false
           },
           {
-            "text": "هذه العلامة وE1 متطابقتان لكن لأنواع مركبات مختلفة",
+            "text": "لا فرق بينهما",
             "is_correct": false
           }
         ],
-        "explanation": "E1 تحظر الوقوف فقط — التوقف القصير مع بقائك بجانب سيارتك لا يزال مسموحاً. هذه العلامة (E3) أشد من ذلك: حتى التوقف القصير ممنوع تماماً."
+        "explanation": "عند E1 يبقى التوقف للمدة اللازمة لصعود الركاب أو نزولهم أو التحميل أو التفريغ ممكنًا. أما E3 فتحظر هذا التوقف الاختياري أيضًا."
       }
     }
   },
@@ -226,8 +229,14 @@
             "text": "لضمان أن المخرج خالٍ دائماً حتى تتمكن سيارات الطوارئ من الخروج بسرعة",
             "is_correct": true
           },
-          { "text": "لتخفيض السرعة بالقرب من المركز", "is_correct": false },
-          { "text": "لحجز أماكن وقوف لعناصر الإطفاء", "is_correct": false }
+          {
+            "text": "لتخفيض السرعة بالقرب من المركز",
+            "is_correct": false
+          },
+          {
+            "text": "لحجز أماكن وقوف لعناصر الإطفاء",
+            "is_correct": false
+          }
         ],
         "explanation": "تُوضع هذه العلامة في الأماكن التي يكون فيها أي توقف خطيراً، كأمام مخرج مركز الإطفاء. فإذا كان المخرج مسدوداً، لن تستطيع سيارات الإطفاء الخروج بالسرعة الكافية في حالة الطوارئ."
       }
@@ -301,7 +310,10 @@
             "text": "لا، هذه العلامة تحظر أي توقف؛ يجب عليك الاستمرار في السير",
             "is_correct": true
           },
-          { "text": "نعم، لكن فقط إذا شغّلت أضواء الخطر", "is_correct": false },
+          {
+            "text": "نعم، لكن فقط إذا شغّلت أضواء الخطر",
+            "is_correct": false
+          },
           {
             "text": "نعم، طالما لا تتوقف أكثر من دقيقة واحدة",
             "is_correct": false
@@ -319,61 +331,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Geldt dit bord voor alle voertuigen of alleen voor personenwagens?",
+        "question": "Op welke voertuigen geldt E3 zonder categorie-aanduiding?",
         "choices": [
           {
-            "text": "Voor alle voertuigen zonder uitzondering",
+            "text": "Op alle voertuigen; een toegelaten categorie-aanduiding kan het toepassingsgebied beperken",
             "is_correct": true
           },
           {
-            "text": "Alleen voor personenwagens en bestelwagens",
+            "text": "Alleen op personenauto’s",
             "is_correct": false
           },
           {
-            "text": "Alleen voor voertuigen zwaarder dan 3,5 ton",
+            "text": "Alleen op vrachtwagens",
             "is_correct": false
           }
         ],
-        "explanation": "Dit bord maakt geen onderscheid tussen voertuigtypes. Personenwagens, vrachtwagens, motorfietsen, bussen — iedereen valt onder dit verbod."
+        "explanation": "Zonder categorie-aanduiding maakt E3 geen onderscheid naar voertuigtype. De wet laat wel toe dat een opschrift of symbool de betrokken categorie aanduidt."
       },
       "EN": {
-        "question": "Does this sign apply to all vehicles or only to passenger cars?",
+        "question": "Which vehicles does E3 cover without a category indication?",
         "choices": [
-          { "text": "To all vehicles without exception", "is_correct": true },
-          { "text": "Only to passenger cars and vans", "is_correct": false },
           {
-            "text": "Only to vehicles heavier than 3.5 tonnes",
+            "text": "All vehicles; an authorised category indication may limit its scope",
+            "is_correct": true
+          },
+          {
+            "text": "Passenger cars only",
+            "is_correct": false
+          },
+          {
+            "text": "Lorries only",
             "is_correct": false
           }
         ],
-        "explanation": "This sign makes no distinction between vehicle types. Passenger cars, trucks, motorcycles, buses — everyone falls under this prohibition."
+        "explanation": "Without a category indication, E3 does not distinguish by vehicle type. The law does allow an inscription or symbol to specify the category concerned."
       },
       "FR": {
-        "question": "Ce panneau s'applique-t-il à tous les véhicules ou uniquement aux voitures de tourisme ?",
+        "question": "Quels véhicules sont visés par E3 sans indication de catégorie ?",
         "choices": [
-          { "text": "À tous les véhicules sans exception", "is_correct": true },
           {
-            "text": "Uniquement aux voitures de tourisme et aux camionnettes",
+            "text": "Tous les véhicules; une indication de catégorie autorisée peut en limiter la portée",
+            "is_correct": true
+          },
+          {
+            "text": "Uniquement les voitures",
             "is_correct": false
           },
           {
-            "text": "Uniquement aux véhicules de plus de 3,5 tonnes",
+            "text": "Uniquement les camions",
             "is_correct": false
           }
         ],
-        "explanation": "Ce panneau ne fait aucune distinction entre les types de véhicules. Voitures, camions, motos, bus — tout le monde est soumis à cette interdiction."
+        "explanation": "Sans indication de catégorie, E3 ne distingue pas les types de véhicules. La réglementation permet toutefois à une inscription ou un symbole de préciser la catégorie visée."
       },
       "AR": {
-        "question": "هل تنطبق هذه العلامة على جميع المركبات أم على السيارات الخاصة فقط؟",
+        "question": "ما المركبات التي تشملها E3 من دون بيان فئة؟",
         "choices": [
-          { "text": "على جميع المركبات دون استثناء", "is_correct": true },
           {
-            "text": "على السيارات الخاصة والشاحنات الخفيفة فقط",
+            "text": "جميع المركبات؛ ويمكن لبيان فئة مسموح أن يحد من نطاقها",
+            "is_correct": true
+          },
+          {
+            "text": "السيارات الخاصة فقط",
             "is_correct": false
           },
-          { "text": "على المركبات الأثقل من 3.5 طن فقط", "is_correct": false }
+          {
+            "text": "الشاحنات فقط",
+            "is_correct": false
+          }
         ],
-        "explanation": "هذه العلامة لا تفرّق بين أنواع المركبات. السيارات الخاصة والشاحنات والدراجات النارية والحافلات — الجميع يخضع لهذا الحظر."
+        "explanation": "من دون بيان فئة لا تميز E3 بين أنواع المركبات. لكن القانون يسمح لكتابة أو رمز بتحديد الفئة المعنية."
       }
     }
   },
@@ -449,7 +476,10 @@
             "text": "نعم، إنزال الركاب استثناء من هذا الحظر",
             "is_correct": false
           },
-          { "text": "نعم، طالما يُبقي السائق المحرك يعمل", "is_correct": false }
+          {
+            "text": "نعم، طالما يُبقي السائق المحرك يعمل",
+            "is_correct": false
+          }
         ],
         "explanation": "هذه العلامة تحظر كل توقف بما في ذلك إنزال الركاب أو إركابهم. يجب على السائق الاستمرار في السير حتى مكان يُسمح فيه بالتوقف."
       }
@@ -528,60 +558,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Mag u bij dit bord stilstaan vanwege pech, ook als u een gevarendriehoek plaatst?",
+        "question": "Is een voertuig dat door echte pech gedwongen stilvalt een toegelaten vrijwillige stop bij E3?",
         "choices": [
           {
-            "text": "Alleen bij echte pech is noodstop tijdelijk geduld; u moet het voertuig zo snel mogelijk verplaatsen",
+            "text": "Neen; het is een gedwongen immobilisatie. Beveilig de situatie en verplaats het voertuig zo snel als veilig mogelijk",
             "is_correct": true
           },
           {
-            "text": "Ja, een geplaatste gevarendriehoek maakt stilstaan hier altijd legaal",
+            "text": "Ja; de gevarendriehoek maakt vrijwillig stoppen toegestaan",
             "is_correct": false
           }
         ],
-        "explanation": "Bij echte motorpech is een noodstop tijdelijk geduld, maar dit is geen vrijbrief. U bent verplicht het voertuig zo snel mogelijk te verplaatsen. Een gevarendriehoek plaatsen maakt het stilstaan hier niet legaal — het is enkel een veiligheidsmaatregel voor andere weggebruikers."
+        "explanation": "Pech verandert E3 niet in een toelating om te stoppen. De immobilisatie is gedwongen en activeert veiligheids- en verwijderingsplichten."
       },
       "EN": {
-        "question": "May you stop at this sign due to a breakdown, even if you place a warning triangle?",
+        "question": "Is a vehicle forced to remain still by a genuine breakdown making a permitted voluntary stop under E3?",
         "choices": [
           {
-            "text": "Only in a genuine breakdown is an emergency stop temporarily tolerated; you must move the vehicle as soon as possible",
+            "text": "No; it is forced immobilisation. Secure the situation and move the vehicle as soon as safely possible",
             "is_correct": true
           },
           {
-            "text": "Yes, placing a warning triangle makes stopping here always legal",
+            "text": "Yes; a warning triangle makes voluntary stopping permitted",
             "is_correct": false
           }
         ],
-        "explanation": "In a genuine breakdown, an emergency stop is temporarily tolerated, but this is no free pass. You are obliged to move the vehicle as quickly as possible. Placing a warning triangle does not make stopping here legal — it is only a safety measure for other road users."
+        "explanation": "A breakdown does not turn E3 into permission to stop. The immobilisation is forced and triggers safety and removal duties."
       },
       "FR": {
-        "question": "Pouvez-vous vous immobiliser à ce panneau en raison d'une panne, même en plaçant un triangle de signalisation ?",
+        "question": "Un véhicule immobilisé par une panne réelle effectue-t-il un arrêt volontaire autorisé sous E3 ?",
         "choices": [
           {
-            "text": "Seulement en cas de vraie panne, un arrêt d'urgence est temporairement toléré ; vous devez déplacer le véhicule le plus vite possible",
+            "text": "Non; il s’agit d’une immobilisation forcée. Sécurisez la situation et déplacez le véhicule dès que cela peut se faire en sécurité",
             "is_correct": true
           },
           {
-            "text": "Oui, poser un triangle de signalisation rend l'arrêt toujours légal ici",
+            "text": "Oui; le triangle rend l’arrêt volontaire autorisé",
             "is_correct": false
           }
         ],
-        "explanation": "En cas de vraie panne, un arrêt d'urgence est temporairement toléré, mais ce n'est pas un passe-droit. Vous êtes obligé de déplacer le véhicule le plus rapidement possible. Poser un triangle de signalisation ne rend pas l'arrêt légal ici — c'est uniquement une mesure de sécurité pour les autres usagers."
+        "explanation": "Une panne ne transforme pas E3 en autorisation d’arrêt. L’immobilisation est forcée et entraîne des obligations de sécurité et de déplacement."
       },
       "AR": {
-        "question": "هل يجوز لك التوقف عند هذه العلامة بسبب عطل في سيارتك، حتى لو وضعت مثلث التحذير؟",
+        "question": "هل المركبة التي أجبرها عطل حقيقي على السكون تقوم بتوقف اختياري مسموح عند E3؟",
         "choices": [
           {
-            "text": "فقط في حالة العطل الحقيقي يُتسامح مع التوقف الاضطراري مؤقتاً؛ يجب نقل المركبة في أقرب وقت ممكن",
+            "text": "لا؛ إنه توقف قسري. أمّن المكان وانقل المركبة بأسرع ما يمكن بأمان",
             "is_correct": true
           },
           {
-            "text": "نعم، وضع مثلث التحذير يجعل التوقف هنا قانونياً دائماً",
+            "text": "نعم؛ يجعل مثلث التحذير التوقف الاختياري مسموحًا",
             "is_correct": false
           }
         ],
-        "explanation": "في حالة العطل الحقيقي، يُتسامح مع التوقف الاضطراري بشكل مؤقت، لكن هذا ليس تصريحاً مفتوحاً. يجب عليك نقل المركبة في أقرب وقت ممكن. وضع مثلث التحذير لا يجعل التوقف هنا قانونياً — هو مجرد إجراء أمان للمركبات الأخرى."
+        "explanation": "لا يحول العطل E3 إلى إذن بالتوقف. فالسكون قسري وتترتب عليه واجبات السلامة والإزالة."
       }
     }
   }

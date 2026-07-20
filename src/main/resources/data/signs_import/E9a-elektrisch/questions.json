@@ -7,76 +7,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat betekent dit verkeersbord?",
+        "question": "Wat betekent het elektrische symbool bij E9a?",
         "choices": [
           {
-            "text": "Parkeerplaats voorbehouden voor het elektrisch opladen van voertuigen, doorgaans uitgerust met een laadpaal",
+            "text": "Parkeren is voorbehouden voor elektrische of hybride elektrische voertuigen; bij publieke laadinfrastructuur moeten ze verbonden zijn",
             "is_correct": true
           },
           {
-            "text": "Parkeerverbod voor voertuigen met verbrandingsmotor op de volledige openbare weg",
+            "text": "Alle voertuigen mogen er gratis parkeren",
             "is_correct": false
           },
           {
-            "text": "Parkeerplaats voor elektrische fietsen en steps",
+            "text": "Alleen voertuigen met een verbrandingsmotor mogen er staan",
             "is_correct": false
           }
         ],
-        "explanation": "E9a-elektrisch reserveert de parkeerplaats uitsluitend voor het elektrisch opladen van voertuigen. Alleen BEV's en PHEV's die extern kunnen worden opgeladen, hebben toegang. De plek is gewoonlijk uitgerust met een laadpaal."
+        "explanation": "De categorie kan verder worden beperkt door de voertuigsymbolen op het bord of onderbord."
       },
       "EN": {
-        "question": "What does this road sign mean?",
+        "question": "What does the electric symbol with E9a mean?",
         "choices": [
           {
-            "text": "Parking space reserved for electric vehicle charging, usually equipped with a charging point",
+            "text": "Parking is reserved for electric or hybrid electric vehicles; at public charging infrastructure they must be connected",
             "is_correct": true
           },
           {
-            "text": "Parking prohibition for combustion engine vehicles on the entire public road",
+            "text": "All vehicles may park there free of charge",
             "is_correct": false
           },
           {
-            "text": "Parking space for electric bicycles and scooters",
+            "text": "Only combustion vehicles may use it",
             "is_correct": false
           }
         ],
-        "explanation": "E9a-elektrisch reserves the parking space exclusively for charging electric vehicles. Only BEVs and PHEVs that can be charged externally have access. The space is usually equipped with a charging point."
+        "explanation": "The category may be narrowed further by vehicle symbols on the sign or plate."
       },
       "FR": {
-        "question": "Que signifie ce panneau de signalisation ?",
+        "question": "Que signifie le symbole électrique avec E9a ?",
         "choices": [
           {
-            "text": "Place de stationnement réservée à la recharge électrique des véhicules, généralement équipée d'une borne de recharge",
+            "text": "Le stationnement est réservé aux véhicules électriques ou hybrides électriques; avec une recharge publique ils doivent être connectés",
             "is_correct": true
           },
           {
-            "text": "Interdiction de stationner pour les véhicules à moteur à combustion sur toute la voie publique",
+            "text": "Tous les véhicules peuvent stationner gratuitement",
             "is_correct": false
           },
           {
-            "text": "Place de stationnement pour vélos électriques et trottinettes",
+            "text": "Seuls les véhicules thermiques peuvent y stationner",
             "is_correct": false
           }
         ],
-        "explanation": "E9a-elektrisch réserve la place de stationnement exclusivement à la recharge électrique des véhicules. Seuls les BEV et les PHEV pouvant être chargés en externe ont accès à cette place. Elle est généralement équipée d'une borne de recharge."
+        "explanation": "La catégorie peut être davantage limitée par les symboles de véhicules."
       },
       "AR": {
-        "question": "ماذا تعني هذه العلامة المرورية؟",
+        "question": "ماذا يعني الرمز الكهربائي مع E9a؟",
         "choices": [
           {
-            "text": "موقف محجوز لشحن المركبات الكهربائية، مزوّد في الغالب بنقطة شحن",
+            "text": "الركن مخصص للمركبات الكهربائية أو الهجينة الكهربائية؛ وعند شاحن عام يجب توصيلها به",
             "is_correct": true
           },
           {
-            "text": "ممنوع الوقوف للمركبات ذات المحركات الاحتراقية على كامل الطريق العام",
+            "text": "يجوز لكل المركبات الركن مجانًا",
             "is_correct": false
           },
           {
-            "text": "موقف للدراجات الكهربائية والسكوترات الكهربائية",
+            "text": "المركبات ذات محرك الاحتراق وحدها مسموحة",
             "is_correct": false
           }
         ],
-        "explanation": "تحجز E9a-elektrisch الموقف حصرياً لشحن المركبات الكهربائية. فقط BEV وPHEV القابلة للشحن الخارجي يحق لها الدخول. الموقف مزوّد في الغالب بنقطة شحن."
+        "explanation": "قد تضيق رموز فئات المركبات على العلامة نطاق التخصيص."
       }
     }
   },
@@ -88,73 +88,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Voor welke voertuigen is dit parkeerbord bedoeld?",
+        "question": "Voor welke aandrijving reserveert dit symbool de plaats?",
         "choices": [
           {
-            "text": "Volledig elektrische voertuigen (BEV) en plug-in hybrides (PHEV) die extern kunnen worden opgeladen",
+            "text": "Voor elektrische of hybride elektrische voertuigen, eventueel beperkt tot afgebeelde voertuigcategorieën",
             "is_correct": true
           },
           {
-            "text": "Alleen waterstofvoertuigen met een brandstofcel",
+            "text": "Alleen voor dieselvoertuigen met een milieulabel",
             "is_correct": false
           },
           {
-            "text": "Alle voertuigen met een milieuvriendelijk kenteken of groene nummerplaat",
+            "text": "Voor elk voertuig met de noodknipperlichten aan",
             "is_correct": false
           }
         ],
-        "explanation": "E9a-elektrisch is bedoeld voor voertuigen die extern opgeladen kunnen worden: volledig elektrische wagens (BEV) en plug-in hybrides (PHEV). Niet-plug-in hybrides en waterstofvoertuigen vallen er niet onder."
+        "explanation": "De wettelijke formulering omvat elektrische en hybride elektrische voertuigen; het bord kan categorieën nader afbakenen."
       },
       "EN": {
-        "question": "For which vehicles is this parking sign intended?",
+        "question": "Which propulsion types does this symbol reserve the space for?",
         "choices": [
           {
-            "text": "Fully electric vehicles (BEV) and plug-in hybrids (PHEV) that can be charged externally",
+            "text": "Electric or hybrid electric vehicles, possibly limited to depicted vehicle categories",
             "is_correct": true
           },
-          { "text": "Only hydrogen fuel-cell vehicles", "is_correct": false },
           {
-            "text": "All vehicles with an eco-label or green number plate",
+            "text": "Diesel vehicles with an eco-label only",
+            "is_correct": false
+          },
+          {
+            "text": "Any vehicle using hazard lights",
             "is_correct": false
           }
         ],
-        "explanation": "E9a-elektrisch is intended for vehicles that can be charged externally: fully electric cars (BEV) and plug-in hybrids (PHEV). Non-plug-in hybrids and hydrogen vehicles are not covered."
+        "explanation": "The statutory wording covers electric and hybrid electric vehicles; the sign may further define categories."
       },
       "FR": {
-        "question": "Pour quels véhicules ce panneau de stationnement est-il destiné ?",
+        "question": "À quels types de propulsion ce symbole réserve-t-il la place ?",
         "choices": [
           {
-            "text": "Véhicules entièrement électriques (BEV) et hybrides rechargeables (PHEV) pouvant être chargés en externe",
+            "text": "Aux véhicules électriques ou hybrides électriques, éventuellement limités aux catégories représentées",
             "is_correct": true
           },
           {
-            "text": "Uniquement les véhicules à hydrogène à pile à combustible",
+            "text": "Uniquement aux diesels avec label écologique",
             "is_correct": false
           },
           {
-            "text": "Tous les véhicules ayant un label écologique ou une plaque verte",
+            "text": "À tout véhicule avec feux de détresse",
             "is_correct": false
           }
         ],
-        "explanation": "E9a-elektrisch est destiné aux véhicules pouvant être chargés en externe : voitures entièrement électriques (BEV) et hybrides rechargeables (PHEV). Les hybrides non rechargeables et les véhicules à hydrogène ne sont pas concernés."
+        "explanation": "La formulation légale vise les véhicules électriques et hybrides électriques; le panneau peut préciser les catégories."
       },
       "AR": {
-        "question": "لأي نوع من المركبات مُخصَّصة هذه العلامة المرورية للوقوف؟",
+        "question": "لأي أنواع الدفع يخصص الرمز المكان؟",
         "choices": [
           {
-            "text": "المركبات الكهربائية الكاملة (BEV) والهجينات القابلة للشحن (PHEV) التي يمكن شحنها خارجياً",
+            "text": "للمركبات الكهربائية أو الهجينة الكهربائية، وقد يقتصر على الفئات المرسومة",
             "is_correct": true
           },
           {
-            "text": "مركبات الهيدروجين ذات خلايا الوقود فقط",
+            "text": "لمركبات الديزل ذات الملصق البيئي فقط",
             "is_correct": false
           },
           {
-            "text": "جميع المركبات ذات التصنيف البيئي أو اللوحة الخضراء",
+            "text": "لكل مركبة تشغل أضواء الخطر",
             "is_correct": false
           }
         ],
-        "explanation": "E9a-elektrisch مخصصة للمركبات القابلة للشحن الخارجي: السيارات الكهربائية الكاملة (BEV) والهجينات القابلة للشحن (PHEV). الهجينات غير القابلة للشحن ومركبات الهيدروجين لا تندرج ضمنها."
+        "explanation": "تشمل الصياغة القانونية المركبات الكهربائية والهجينة الكهربائية، وقد تحدد العلامة الفئات أكثر."
       }
     }
   },
@@ -166,76 +169,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Waarom is het problematisch als een benzinevoertuig op een E9a-elektrisch-plek parkeert?",
+        "question": "Waarom mag een voertuig met uitsluitend een verbrandingsmotor hier niet parkeren?",
         "choices": [
           {
-            "text": "Het elektrische voertuig kan niet laden, wat de laadinfrastructuur blokkeert en de EV-bestuurder benadeelt",
+            "text": "Het gebruikt een wettelijk voor elektrische of hybride elektrische voertuigen voorbehouden plaats",
             "is_correct": true
           },
           {
-            "text": "Het benzinevoertuig kan beschadigd worden door de elektrische laadpaal",
+            "text": "Omdat elke brandstofauto te breed is",
             "is_correct": false
           },
           {
-            "text": "De laadpaal schakelt automatisch uit als er een niet-EV staat",
+            "text": "Omdat de plaats alleen ’s nachts bestaat",
             "is_correct": false
           }
         ],
-        "explanation": "Een benzine- of dieselauto die een EV-laadplek bezet, verhindert elektrische voertuigen van laden. Dit schaadt EV-rijders en ondermijnt de laadinfrastructuur. De laadpaal schakelt niet automatisch uit — de plek is gewoon fysiek geblokkeerd."
+        "explanation": "Beschikbaarheid van andere plaatsen verandert het wettelijke voorbehoud niet."
       },
       "EN": {
-        "question": "Why is it problematic if a petrol car parks in an E9a-elektrisch space?",
+        "question": "Why may a combustion-only vehicle not park here?",
         "choices": [
           {
-            "text": "The electric vehicle cannot charge, blocking the charging infrastructure and harming the EV driver",
+            "text": "It would use a space legally reserved for electric or hybrid electric vehicles",
             "is_correct": true
           },
           {
-            "text": "The petrol car can be damaged by the electric charging point",
+            "text": "Every combustion car is too wide",
             "is_correct": false
           },
           {
-            "text": "The charging point automatically shuts off when a non-EV is parked",
+            "text": "The space exists only at night",
             "is_correct": false
           }
         ],
-        "explanation": "A petrol or diesel car occupying an EV charging space prevents electric vehicles from charging. This harms EV drivers and undermines the charging infrastructure. The charging point does not automatically shut off — the space is simply physically blocked."
+        "explanation": "The availability of other spaces does not change the legal reservation."
       },
       "FR": {
-        "question": "Pourquoi est-il problématique qu'une voiture à essence se gare sur une place E9a-elektrisch ?",
+        "question": "Pourquoi un véhicule uniquement thermique ne peut-il pas stationner ici ?",
         "choices": [
           {
-            "text": "Le véhicule électrique ne peut pas se recharger, bloquant l'infrastructure de recharge et lésant le conducteur de VE",
+            "text": "Il utiliserait une place légalement réservée aux véhicules électriques ou hybrides électriques",
             "is_correct": true
           },
           {
-            "text": "La voiture à essence peut être endommagée par la borne de recharge électrique",
+            "text": "Tout véhicule thermique est trop large",
             "is_correct": false
           },
           {
-            "text": "La borne de recharge s'éteint automatiquement si une voiture non-VE est garée",
+            "text": "La place n’existe que la nuit",
             "is_correct": false
           }
         ],
-        "explanation": "Une voiture à essence ou diesel occupant une place de recharge VE empêche les véhicules électriques de se recharger. Cela nuit aux conducteurs de VE et compromet l'infrastructure de recharge. La borne ne s'éteint pas automatiquement — la place est simplement physiquement bloquée."
+        "explanation": "La disponibilité d’autres places ne modifie pas la réservation légale."
       },
       "AR": {
-        "question": "لماذا يُشكّل وقوف سيارة بنزين في موقف E9a-elektrisch مشكلة؟",
+        "question": "لماذا لا يجوز لمركبة بمحرك احتراق فقط أن تركن هنا؟",
         "choices": [
           {
-            "text": "لا تستطيع المركبة الكهربائية الشحن، مما يُعطّل البنية التحتية للشحن ويضر بسائق المركبة الكهربائية",
+            "text": "لأنها ستستخدم مكانًا مخصصًا قانونيًا للمركبات الكهربائية أو الهجينة الكهربائية",
             "is_correct": true
           },
           {
-            "text": "قد تتضرر سيارة البنزين من نقطة الشحن الكهربائية",
+            "text": "لأن كل مركبة احتراق عريضة جدًا",
             "is_correct": false
           },
           {
-            "text": "تنطفئ نقطة الشحن تلقائياً عند وقوف سيارة غير كهربائية",
+            "text": "لأن المكان موجود ليلًا فقط",
             "is_correct": false
           }
         ],
-        "explanation": "سيارة البنزين أو الديزل التي تشغل موقف شحن المركبات الكهربائية تمنع المركبات الكهربائية من الشحن. يضر ذلك بسائقي المركبات الكهربائية ويُقوّض البنية التحتية للشحن. نقطة الشحن لا تنطفئ تلقائياً — المكان محجوز فعلياً فحسب."
+        "explanation": "لا يغير توفر أماكن أخرى التخصيص القانوني."
       }
     }
   },
@@ -247,76 +250,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U rijdt een volledig elektrische auto. U ziet dit bord met een vrije plek. Wat doet u?",
+        "question": "U parkeert een toegelaten voertuig bij publieke laadinfrastructuur. Wat moet u doen?",
         "choices": [
           {
-            "text": "U parkeert op de aangeduide plek en sluit de laadkabel aan als dat gewenst of vereist is",
+            "text": "Het voertuig met de laadinfrastructuur verbinden en alle aangegeven voorwaarden volgen",
             "is_correct": true
           },
           {
-            "text": "U rijdt door want dit bord is alleen voor plug-in hybrides, niet voor volledig elektrische wagens",
+            "text": "Aansluiten is volledig vrijblijvend",
             "is_correct": false
           },
           {
-            "text": "U mag hier enkel parkeren als uw voertuig een gemeentelijk EV-label draagt",
+            "text": "Alleen de noodknipperlichten inschakelen",
             "is_correct": false
           }
         ],
-        "explanation": "Volledig elektrische voertuigen zijn de primaire doelgroep van E9a-elektrisch-plekken. U mag parkeren en de laadkabel aansluiten. Het bord is voor BEV's en PHEV's, niet exclusief voor een van beiden."
+        "explanation": "Artikel 70 vereist verbinding met publieke laadinfrastructuur voor elektrische of hybride elektrische voertuigen die daar parkeren."
       },
       "EN": {
-        "question": "You drive a fully electric car. You see this sign with a free space. What do you do?",
+        "question": "You park an eligible vehicle at public charging infrastructure. What must you do?",
         "choices": [
           {
-            "text": "You park in the indicated space and connect the charging cable if desired or required",
+            "text": "Connect the vehicle to the charging infrastructure and follow all posted conditions",
             "is_correct": true
           },
           {
-            "text": "You drive on because this sign is for plug-in hybrids only, not for fully electric cars",
+            "text": "Connecting is entirely optional",
             "is_correct": false
           },
           {
-            "text": "You may only park here if your vehicle carries a municipal EV label",
+            "text": "Only switch on the hazard lights",
             "is_correct": false
           }
         ],
-        "explanation": "Fully electric vehicles are the primary target group of E9a-elektrisch spaces. You may park and connect the charging cable. The sign covers both BEVs and PHEVs, not exclusively one of them."
+        "explanation": "Article 70 requires an electric or hybrid electric vehicle parked at public charging infrastructure to be connected."
       },
       "FR": {
-        "question": "Vous conduisez une voiture entièrement électrique. Vous voyez ce panneau avec une place libre. Que faites-vous ?",
+        "question": "Vous stationnez un véhicule admis sur une recharge publique. Que devez-vous faire ?",
         "choices": [
           {
-            "text": "Vous vous garez à l'endroit indiqué et branchez le câble de recharge si souhaité ou requis",
+            "text": "Connecter le véhicule à l’infrastructure et respecter toutes les conditions affichées",
             "is_correct": true
           },
           {
-            "text": "Vous continuez car ce panneau est uniquement pour les hybrides rechargeables, pas pour les voitures entièrement électriques",
+            "text": "La connexion est entièrement facultative",
             "is_correct": false
           },
           {
-            "text": "Vous ne pouvez stationner ici que si votre véhicule porte un label VE communal",
+            "text": "Allumer seulement les feux de détresse",
             "is_correct": false
           }
         ],
-        "explanation": "Les véhicules entièrement électriques sont le groupe cible principal des places E9a-elektrisch. Vous pouvez vous garer et brancher le câble de recharge. Le panneau couvre les BEV et les PHEV, pas exclusivement l'un des deux."
+        "explanation": "L’article 70 exige la connexion du véhicule électrique ou hybride électrique stationné sur une infrastructure publique."
       },
       "AR": {
-        "question": "تقود سيارة كهربائية كاملة. ترى هذه العلامة مع موقف خالٍ. ماذا تفعل؟",
+        "question": "تركن مركبة مسموحة عند بنية شحن عامة. ماذا يجب أن تفعل؟",
         "choices": [
           {
-            "text": "تقف في المكان المحدد وتوصّل كابل الشحن إذا كان مرغوباً أو مطلوباً",
+            "text": "توصيل المركبة ببنية الشحن واتباع جميع الشروط المبينة",
             "is_correct": true
           },
           {
-            "text": "تمضي لأن هذه العلامة للهجينات القابلة للشحن فقط وليست للسيارات الكهربائية الكاملة",
+            "text": "التوصيل اختياري تمامًا",
             "is_correct": false
           },
           {
-            "text": "يجوز لك الوقوف هنا فقط إذا كانت على مركبتك ملصق المركبة الكهربائية البلدي",
+            "text": "تشغيل أضواء الخطر فقط",
             "is_correct": false
           }
         ],
-        "explanation": "المركبات الكهربائية الكاملة هي الفئة المستهدفة الأولى لمواقف E9a-elektrisch. يمكنك الوقوف وتوصيل كابل الشحن. العلامة تشمل BEV وPHEV معاً وليست حصرية لإحداهما."
+        "explanation": "تفرض المادة 70 توصيل المركبة الكهربائية أو الهجينة الكهربائية عند ركنها في بنية شحن عامة."
       }
     }
   },
@@ -328,73 +331,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Uw EV is volledig geladen maar u laat de auto op de E9a-elektrisch-plek staan. Is dat problematisch?",
+        "question": "Legt het elektrische symbool alleen een wettelijke vertrektermijn op zodra de batterij vol is?",
         "choices": [
           {
-            "text": "Ja, zodra het laden klaar is bezet u onnodig een laadplek en belemmert u andere EV-rijders die moeten laden",
+            "text": "Neen; respecteer de verbindingseis en alle aangegeven tijds-, betaal- en exploitatievoorwaarden",
             "is_correct": true
           },
           {
-            "text": "Neen, als u betaalt voor de parkeertijd heeft u het recht om te blijven staan",
+            "text": "Ja, de wet geeft altijd exact vijf minuten om te vertrekken",
             "is_correct": false
           },
           {
-            "text": "Neen, de plek is van u zolang u er geparkeerd staat",
+            "text": "Neen, geen enkele voorwaarde kan ooit gelden",
             "is_correct": false
           }
         ],
-        "explanation": "E9a-elektrisch-plekken zijn bedoeld voor het laden, niet voor langdurig parkeren na het laden. Een volledig geladen EV die de plek blijft bezetten, belet andere EV's van laden. Veel laadoperatoren rekenen bovendien een vertragingsvergoeding aan na het einde van de laadsessie."
+        "explanation": "Het huidige E9-symbool bepaalt het voorbehoud en, bij publieke infrastructuur, de verbinding. Andere voorwaarden kunnen lokaal of door de exploitant zijn aangegeven."
       },
       "EN": {
-        "question": "Your EV is fully charged but you leave the car in the E9a-elektrisch space. Is that problematic?",
+        "question": "Does the electric symbol alone impose a statutory departure deadline as soon as the battery is full?",
         "choices": [
           {
-            "text": "Yes, once charging is complete you unnecessarily occupy a charging space and prevent other EV drivers who need to charge",
+            "text": "No; comply with the connection requirement and all posted time, payment and operator conditions",
             "is_correct": true
           },
           {
-            "text": "No, if you pay for the parking time you have the right to stay",
+            "text": "Yes, the law always gives exactly five minutes to leave",
             "is_correct": false
           },
           {
-            "text": "No, the space is yours as long as you are parked there",
+            "text": "No condition can ever apply",
             "is_correct": false
           }
         ],
-        "explanation": "E9a-elektrisch spaces are intended for charging, not for extended parking after charging. A fully charged EV occupying the space prevents other EVs from charging. Many charging operators also charge an idling fee after the charging session ends."
+        "explanation": "The current E9 symbol establishes the reservation and, at public infrastructure, the connection requirement. Other conditions may be posted locally or by the operator."
       },
       "FR": {
-        "question": "Votre VE est entièrement chargé mais vous laissez la voiture sur la place E9a-elektrisch. Est-ce problématique ?",
+        "question": "Le symbole électrique impose-t-il à lui seul un délai légal de départ dès que la batterie est pleine ?",
         "choices": [
           {
-            "text": "Oui, une fois la recharge terminée vous occupez inutilement une place de recharge et empêchez d'autres conducteurs de VE qui doivent se recharger",
+            "text": "Non; respectez l’obligation de connexion et toutes les conditions de durée, paiement et exploitation affichées",
             "is_correct": true
           },
           {
-            "text": "Non, si vous payez le temps de stationnement vous avez le droit de rester",
+            "text": "Oui, la loi donne toujours exactement cinq minutes",
             "is_correct": false
           },
           {
-            "text": "Non, la place vous appartient tant que vous y stationnez",
+            "text": "Aucune condition ne peut jamais s’appliquer",
             "is_correct": false
           }
         ],
-        "explanation": "Les places E9a-elektrisch sont destinées à la recharge, pas au stationnement prolongé après la recharge. Un VE entièrement chargé qui occupe la place empêche d'autres VE de se recharger. De nombreux opérateurs facturent également des frais d'immobilisation après la fin de la session de recharge."
+        "explanation": "Le symbole E9 fixe la réservation et, avec une infrastructure publique, la connexion. D’autres conditions peuvent être affichées localement ou par l’exploitant."
       },
       "AR": {
-        "question": "سيارتك الكهربائية مشحونة بالكامل لكنك تركتها في موقف E9a-elektrisch. هل هذا إشكالي؟",
+        "question": "هل يفرض الرمز الكهربائي وحده مهلة قانونية للمغادرة فور امتلاء البطارية؟",
         "choices": [
           {
-            "text": "نعم، بمجرد اكتمال الشحن تشغل موقف شحن بلا ضرورة وتمنع سائقي المركبات الكهربائية الآخرين المحتاجين للشحن",
+            "text": "لا؛ التزم بوجوب التوصيل وبكل شروط الوقت والدفع والتشغيل المبينة",
             "is_correct": true
           },
           {
-            "text": "لا، إذا دفعت ثمن وقت الوقوف لديك الحق في البقاء",
+            "text": "نعم، يمنح القانون دائمًا خمس دقائق بالضبط",
             "is_correct": false
           },
-          { "text": "لا، المكان لك طالما أنك واقف فيه", "is_correct": false }
+          {
+            "text": "لا يمكن تطبيق أي شرط أبدًا",
+            "is_correct": false
+          }
         ],
-        "explanation": "مواقف E9a-elektrisch مخصصة للشحن لا للوقوف المطوّل بعد اكتمال الشحن. مركبة كهربائية مشحونة تشغل الموقف تمنع المركبات الكهربائية الأخرى من الشحن. كثير من مشغّلي الشحن يفرضون أيضاً رسوم تأخير بعد انتهاء جلسة الشحن."
+        "explanation": "يحدد رمز E9 الحالي التخصيص ووجوب التوصيل عند الشاحن العام. وقد تُعرض شروط أخرى محليًا أو من المشغل."
       }
     }
   },
@@ -406,76 +412,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Mag een hybride zonder stekker (niet-plug-in) op een E9a-elektrisch-plek parkeren?",
+        "question": "Mag een hybride elektrisch voertuig bij publieke laadinfrastructuur parkeren zonder aangesloten te zijn?",
         "choices": [
           {
-            "text": "Neen, een niet-plug-in hybride wordt niet als EV beschouwd voor parkeerdoeleinden en mag deze plek niet gebruiken",
+            "text": "Neen, op die plaats moet het voertuig met de publieke laadinfrastructuur verbonden zijn",
             "is_correct": true
           },
           {
-            "text": "Ja, hybrides zijn milieuvriendelijk genoeg om EV-plekken te gebruiken",
+            "text": "Ja, de hybride aandrijving volstaat zonder aansluiting",
             "is_correct": false
           },
           {
-            "text": "Ja, elke auto met een elektromotor aan boord telt als een EV",
+            "text": "Ja, als de bestuurder in de auto blijft",
             "is_correct": false
           }
         ],
-        "explanation": "Niet-plug-in hybrides kunnen niet extern worden opgeladen en maken geen gebruik van de laadinfrastructuur. Voor parkeerdoeleinden vallen zij niet onder de EV-categorie. Alleen voertuigen die de laadpaal effectief kunnen gebruiken, hebben toegang."
+        "explanation": "De verbindingseis geldt voor elektrische en hybride elektrische voertuigen bij publieke laadinfrastructuur."
       },
       "EN": {
-        "question": "May a non-plug-in hybrid park in an E9a-elektrisch space?",
+        "question": "May a hybrid electric vehicle park at public charging infrastructure without being connected?",
         "choices": [
           {
-            "text": "No, a non-plug-in hybrid is not considered an EV for parking purposes and may not use this space",
+            "text": "No, at that location it must be connected to the public charging infrastructure",
             "is_correct": true
           },
           {
-            "text": "Yes, hybrids are eco-friendly enough to use EV spaces",
+            "text": "Yes, hybrid propulsion is enough without connection",
             "is_correct": false
           },
           {
-            "text": "Yes, any car with an electric motor on board counts as an EV",
+            "text": "Yes, if the driver stays inside",
             "is_correct": false
           }
         ],
-        "explanation": "Non-plug-in hybrids cannot be charged externally and do not use the charging infrastructure. For parking purposes they do not fall under the EV category. Only vehicles that can actually use the charging point have access."
+        "explanation": "The connection requirement applies to electric and hybrid electric vehicles at public charging infrastructure."
       },
       "FR": {
-        "question": "Un hybride sans prise (non rechargeable) peut-il se garer sur une place E9a-elektrisch ?",
+        "question": "Un véhicule hybride électrique peut-il stationner sur une recharge publique sans être connecté ?",
         "choices": [
           {
-            "text": "Non, un hybride non rechargeable n'est pas considéré comme un VE pour les besoins du stationnement et ne peut pas utiliser cette place",
+            "text": "Non, il doit y être connecté à l’infrastructure publique",
             "is_correct": true
           },
           {
-            "text": "Oui, les hybrides sont suffisamment respectueux de l'environnement pour utiliser les places VE",
+            "text": "Oui, la propulsion hybride suffit sans connexion",
             "is_correct": false
           },
           {
-            "text": "Oui, toute voiture équipée d'un moteur électrique compte comme un VE",
+            "text": "Oui, si le conducteur reste à bord",
             "is_correct": false
           }
         ],
-        "explanation": "Les hybrides non rechargeables ne peuvent pas être chargés en externe et n'utilisent pas l'infrastructure de recharge. Pour les besoins du stationnement, ils n'entrent pas dans la catégorie VE. Seuls les véhicules pouvant effectivement utiliser la borne de recharge ont accès."
+        "explanation": "L’obligation de connexion vise les véhicules électriques et hybrides électriques sur une infrastructure publique."
       },
       "AR": {
-        "question": "هل يجوز للهجينة غير القابلة للشحن الوقوف في موقف E9a-elektrisch؟",
+        "question": "هل يجوز لمركبة هجينة كهربائية أن تركن عند شاحن عام دون اتصال؟",
         "choices": [
           {
-            "text": "لا، الهجينة غير القابلة للشحن لا تُعدّ مركبة كهربائية لأغراض الوقوف ولا يحق لها استخدام هذا الموقف",
+            "text": "لا، يجب في ذلك المكان توصيلها ببنية الشحن العامة",
             "is_correct": true
           },
           {
-            "text": "نعم، الهجينات صديقة للبيئة بما يكفي لاستخدام مواقف المركبات الكهربائية",
+            "text": "نعم، يكفي الدفع الهجين بلا اتصال",
             "is_correct": false
           },
           {
-            "text": "نعم، أي سيارة مزودة بمحرك كهربائي تُعدّ مركبة كهربائية",
+            "text": "نعم، إذا بقي السائق داخلها",
             "is_correct": false
           }
         ],
-        "explanation": "الهجينات غير القابلة للشحن لا يمكن شحنها خارجياً ولا تستخدم البنية التحتية للشحن. لأغراض الوقوف لا تندرج ضمن فئة المركبات الكهربائية. فقط المركبات التي يمكنها فعلياً استخدام نقطة الشحن لها حق الدخول."
+        "explanation": "يسري وجوب التوصيل على المركبات الكهربائية والهجينة الكهربائية عند بنية الشحن العامة."
       }
     }
   },
@@ -487,60 +493,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Alle andere parkeerplaatsen in de straat zijn bezet. Mag u als benzineautobestuurder op een E9a-elektrisch-plek parkeren?",
+        "question": "Alle andere plaatsen zijn bezet. Mag een voertuig met uitsluitend een benzinemotor hier parkeren?",
         "choices": [
           {
-            "text": "Neen, de reservering voor elektrische voertuigen geldt altijd ongeacht de bezettingsgraad van andere parkeerplaatsen",
+            "text": "Neen, de bezetting van andere plaatsen heft het voorbehoud niet op",
             "is_correct": true
           },
           {
-            "text": "Ja, overmacht laat tijdelijk afwijken van een parkeerreservering",
+            "text": "Ja, zolang het minder dan tien minuten duurt",
             "is_correct": false
           }
         ],
-        "explanation": "De exclusieve reservering voor elektrische voertuigen is absoluut en kent geen uitzonderingen op basis van de beschikbaarheid van andere parkeerplaatsen. De bestuurder is zelf verantwoordelijk voor het zoeken van een geschikte alternatieve parkeerplaats."
+        "explanation": "Het voorbehoud blijft gelden ongeacht de beschikbaarheid van gewone parkeerplaatsen."
       },
       "EN": {
-        "question": "All other parking spaces in the street are occupied. May you as a petrol car driver park in an E9a-elektrisch space?",
+        "question": "All other spaces are occupied. May a petrol-only vehicle park here?",
         "choices": [
           {
-            "text": "No, the reservation for electric vehicles always applies regardless of the occupancy of other parking spaces",
+            "text": "No, occupancy of other spaces does not cancel the reservation",
             "is_correct": true
           },
           {
-            "text": "Yes, force majeure allows temporary deviation from a parking reservation",
+            "text": "Yes, provided it stays less than ten minutes",
             "is_correct": false
           }
         ],
-        "explanation": "The exclusive reservation for electric vehicles is absolute and admits no exceptions based on the availability of other parking spaces. The driver is personally responsible for finding a suitable alternative parking space."
+        "explanation": "The reservation applies regardless of the availability of ordinary parking spaces."
       },
       "FR": {
-        "question": "Toutes les autres places de stationnement de la rue sont occupées. En tant que conducteur d'une voiture à essence, pouvez-vous vous garer sur une place E9a-elektrisch ?",
+        "question": "Toutes les autres places sont occupées. Un véhicule uniquement à essence peut-il stationner ici ?",
         "choices": [
           {
-            "text": "Non, la réservation pour les véhicules électriques s'applique toujours quelle que soit l'occupation des autres places de stationnement",
+            "text": "Non, l’occupation des autres places n’annule pas la réservation",
             "is_correct": true
           },
           {
-            "text": "Oui, la force majeure permet une dérogation temporaire à une réservation de stationnement",
+            "text": "Oui, s’il reste moins de dix minutes",
             "is_correct": false
           }
         ],
-        "explanation": "La réservation exclusive pour les véhicules électriques est absolue et n'admet aucune exception basée sur la disponibilité d'autres places de stationnement. Le conducteur est personnellement responsable de trouver une place de stationnement alternative appropriée."
+        "explanation": "La réservation reste applicable quelle que soit la disponibilité des places ordinaires."
       },
       "AR": {
-        "question": "جميع مواقف السيارات الأخرى في الشارع مشغولة. هل يجوز لك كسائق سيارة بنزين الوقوف في موقف E9a-elektrisch؟",
+        "question": "كل الأماكن الأخرى مشغولة. هل يجوز لمركبة بنزين فقط أن تركن هنا؟",
         "choices": [
           {
-            "text": "لا، الحجز للمركبات الكهربائية ينطبق دائماً بصرف النظر عن إشغال المواقف الأخرى",
+            "text": "لا، لا يلغي إشغال الأماكن الأخرى التخصيص",
             "is_correct": true
           },
           {
-            "text": "نعم، القوة القاهرة تُتيح انحرافاً مؤقتاً عن حجز الوقوف",
+            "text": "نعم، إذا بقيت أقل من عشر دقائق",
             "is_correct": false
           }
         ],
-        "explanation": "الحجز الحصري للمركبات الكهربائية مطلق ولا يقبل أي استثناءات بناءً على توافر مواقف أخرى. السائق مسؤول شخصياً عن إيجاد موقف بديل مناسب."
+        "explanation": "يبقى التخصيص ساريًا بصرف النظر عن توفر أماكن ركن عادية."
       }
     }
   },
@@ -552,60 +558,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Mag een benzinemotor op een E9a-elektrisch-plek parkeren omdat hij klein is en de laadpaal niet blokkeert?",
+        "question": "Kan het elektrische voorbehoud tot een afgebeelde voertuigcategorie worden beperkt?",
         "choices": [
           {
-            "text": "Neen, E9a-elektrisch is voorbehouden voor elektrische voertuigen ongeacht de grootte van het voertuig",
+            "text": "Ja, de categorie of categorieën mogen op het bord of onderbord worden afgebeeld",
             "is_correct": true
           },
           {
-            "text": "Ja, kleine voertuigen zoals motorfietsen belemmeren het gebruik van de laadpaal niet",
+            "text": "Neen, elk elektrisch voertuig heeft altijd toegang",
             "is_correct": false
           }
         ],
-        "explanation": "De reservering geldt voor het type voertuig, niet voor de fysieke grootte ervan. Een benzinemotor voldoet niet aan de voorwaarde van een elektrisch voertuig en mag de plek niet gebruiken, ongeacht of hij de laadpaal al dan niet blokkeert."
+        "explanation": "Lees zowel het elektrische symbool als eventuele voertuigcategorieën en aanvullende voorwaarden."
       },
       "EN": {
-        "question": "May a petrol motorcycle park in an E9a-elektrisch space because it is small and does not block the charging point?",
+        "question": "May the electric reservation be limited to a depicted vehicle category?",
         "choices": [
           {
-            "text": "No, E9a-elektrisch is reserved for electric vehicles regardless of the size of the vehicle",
+            "text": "Yes, one or more categories may be depicted on the sign or supplementary plate",
             "is_correct": true
           },
           {
-            "text": "Yes, small vehicles such as motorcycles do not hinder the use of the charging point",
+            "text": "No, every electric vehicle always has access",
             "is_correct": false
           }
         ],
-        "explanation": "The reservation applies to the type of vehicle, not its physical size. A petrol motorcycle does not meet the condition of being an electric vehicle and may not use the space, regardless of whether it blocks the charging point or not."
+        "explanation": "Read both the electric symbol and any vehicle-category symbols or additional conditions."
       },
       "FR": {
-        "question": "Une moto à essence peut-elle se garer sur une place E9a-elektrisch parce qu'elle est petite et ne bloque pas la borne de recharge ?",
+        "question": "La réservation électrique peut-elle être limitée à une catégorie représentée ?",
         "choices": [
           {
-            "text": "Non, E9a-elektrisch est réservée aux véhicules électriques quelle que soit la taille du véhicule",
+            "text": "Oui, une ou plusieurs catégories peuvent figurer sur le panneau",
             "is_correct": true
           },
           {
-            "text": "Oui, les petits véhicules comme les motos n'entravent pas l'utilisation de la borne de recharge",
+            "text": "Non, tout véhicule électrique a toujours accès",
             "is_correct": false
           }
         ],
-        "explanation": "La réservation s'applique au type de véhicule, pas à sa taille physique. Une moto à essence ne remplit pas la condition d'être un véhicule électrique et ne peut pas utiliser la place, qu'elle bloque ou non la borne de recharge."
+        "explanation": "Lisez le symbole électrique ainsi que les catégories et conditions supplémentaires."
       },
       "AR": {
-        "question": "هل يجوز لدراجة نارية تعمل بالبنزين الوقوف في موقف E9a-elektrisch لأنها صغيرة ولا تسد نقطة الشحن؟",
+        "question": "هل يمكن قصر التخصيص الكهربائي على فئة مركبات مرسومة؟",
         "choices": [
           {
-            "text": "لا، E9a-elektrisch محجوزة للمركبات الكهربائية بصرف النظر عن حجم المركبة",
+            "text": "نعم، يجوز رسم فئة أو أكثر على العلامة أو اللوحة التكميلية",
             "is_correct": true
           },
           {
-            "text": "نعم، المركبات الصغيرة كالدراجات النارية لا تُعيق استخدام نقطة الشحن",
+            "text": "لا، لكل مركبة كهربائية حق الدخول دائمًا",
             "is_correct": false
           }
         ],
-        "explanation": "الحجز ينطبق على نوع المركبة لا على حجمها الفيزيائي. الدراجة النارية التي تعمل بالبنزين لا تستوفي شرط كونها مركبة كهربائية ولا يحق لها استخدام الموقف، بصرف النظر عما إذا كانت تسد نقطة الشحن أم لا."
+        "explanation": "اقرأ الرمز الكهربائي ورموز الفئات والشروط الإضافية معًا."
       }
     }
   }

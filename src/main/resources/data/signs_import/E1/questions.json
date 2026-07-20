@@ -7,55 +7,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat betekent dit verkeersbord?",
+        "question": "Wat betekent E1?",
         "choices": [
-          { "text": "Parkeren is hier verboden", "is_correct": true },
           {
-            "text": "Stoppen én parkeren zijn hier verboden",
-            "is_correct": false
+            "text": "Parkeren is verboden; alleen stilstaan voor de strikt nodige tijd van in- of uitstappen of laden en lossen blijft mogelijk",
+            "is_correct": true
           },
-          { "text": "Parkeren is hier verplicht", "is_correct": false }
-        ],
-        "explanation": "Dit bord verbiedt parkeren aan de kant van de weg waar het staat. Je mag wel even stoppen om iemand in of uit te laten, zolang je bij je voertuig blijft."
-      },
-      "EN": {
-        "question": "What does this road sign mean?",
-        "choices": [
-          { "text": "Parking is not allowed here", "is_correct": true },
           {
-            "text": "Both stopping and parking are forbidden here",
-            "is_correct": false
-          },
-          { "text": "Parking is compulsory here", "is_correct": false }
-        ],
-        "explanation": "This sign means you cannot park on the side of the road where it is placed. You may still stop briefly to let someone in or out, as long as you stay with your vehicle."
-      },
-      "FR": {
-        "question": "Que signifie ce panneau de signalisation ?",
-        "choices": [
-          { "text": "Le stationnement est interdit ici", "is_correct": true },
-          {
-            "text": "L'arrêt et le stationnement sont tous les deux interdits ici",
+            "text": "Stilstaan en parkeren zijn altijd beide verboden",
             "is_correct": false
           },
           {
-            "text": "Le stationnement est obligatoire ici",
+            "text": "Parkeren is verplicht",
             "is_correct": false
           }
         ],
-        "explanation": "Ce panneau vous interdit de vous garer du côté de la route où il est placé. Vous pouvez toutefois vous arrêter brièvement pour faire monter ou descendre un passager, à condition de rester auprès de votre véhicule."
+        "explanation": "E1 is een parkeerverbod. Het onderscheid hangt af van het doel en de nodige duur, niet van de aanwezigheid van de bestuurder."
       },
-      "AR": {
-        "question": "ماذا تعني هذه العلامة المرورية؟",
+      "EN": {
+        "question": "What does E1 mean?",
         "choices": [
-          { "text": "ممنوع وقوف السيارات في هذا المكان", "is_correct": true },
           {
-            "text": "ممنوع الوقوف والتوقف معاً في هذا المكان",
+            "text": "Parking is prohibited; only stopping for the strictly necessary time for boarding, alighting, loading or unloading remains possible",
+            "is_correct": true
+          },
+          {
+            "text": "Stopping and parking are always both prohibited",
             "is_correct": false
           },
-          { "text": "الوقوف إلزامي في هذا المكان", "is_correct": false }
+          {
+            "text": "Parking is compulsory",
+            "is_correct": false
+          }
         ],
-        "explanation": "هذه العلامة تعني أنك لا تستطيع ترك سيارتك موقوفة على الجانب الذي وُضعت عليه. لكن يمكنك التوقف لفترة قصيرة لإنزال أو إركاب شخص، طالما تبقى بجانب سيارتك."
+        "explanation": "E1 is a parking prohibition. The distinction depends on the purpose and necessary duration, not on whether the driver remains present."
+      },
+      "FR": {
+        "question": "Que signifie E1 ?",
+        "choices": [
+          {
+            "text": "Le stationnement est interdit; seul l’arrêt limité au temps strictement nécessaire à la montée, à la descente, au chargement ou au déchargement reste possible",
+            "is_correct": true
+          },
+          {
+            "text": "L’arrêt et le stationnement sont toujours tous deux interdits",
+            "is_correct": false
+          },
+          {
+            "text": "Le stationnement est obligatoire",
+            "is_correct": false
+          }
+        ],
+        "explanation": "E1 est une interdiction de stationner. La distinction dépend du but et de la durée nécessaire, pas de la présence du conducteur."
+      },
+      "AR": {
+        "question": "ماذا تعني E1؟",
+        "choices": [
+          {
+            "text": "الركن محظور؛ ويبقى مسموحًا فقط التوقف للمدة الضرورية لصعود الركاب أو نزولهم أو التحميل أو التفريغ",
+            "is_correct": true
+          },
+          {
+            "text": "التوقف والركن محظوران دائمًا معًا",
+            "is_correct": false
+          },
+          {
+            "text": "الركن إلزامي",
+            "is_correct": false
+          }
+        ],
+        "explanation": "E1 حظر للركن. ويتحدد الفرق بالهدف والمدة اللازمة، لا ببقاء السائق قرب المركبة."
       }
     }
   },
@@ -69,9 +90,18 @@
       "NL": {
         "question": "Tot welke categorie behoort dit verkeersbord?",
         "choices": [
-          { "text": "Parkeer- en stilstandsborden", "is_correct": true },
-          { "text": "Verbodsborden voor rijdend verkeer", "is_correct": false },
-          { "text": "Informatieborden", "is_correct": false }
+          {
+            "text": "Parkeer- en stilstandsborden",
+            "is_correct": true
+          },
+          {
+            "text": "Verbodsborden voor rijdend verkeer",
+            "is_correct": false
+          },
+          {
+            "text": "Informatieborden",
+            "is_correct": false
+          }
         ],
         "explanation": "Dit bord hoort bij de parkeer- en stilstandsborden, ook wel de E-reeks genoemd in de Belgische wegcode. Deze borden regelen waar je wel en niet mag parkeren of stoppen."
       },
@@ -86,7 +116,10 @@
             "text": "Prohibitory signs for moving traffic",
             "is_correct": false
           },
-          { "text": "Information signs", "is_correct": false }
+          {
+            "text": "Information signs",
+            "is_correct": false
+          }
         ],
         "explanation": "This sign belongs to the parking and stopping regulation signs, known as the E-series in the Belgian Highway Code. These signs indicate where parking or stopping is allowed or forbidden."
       },
@@ -101,16 +134,28 @@
             "text": "Panneaux d'interdiction pour la circulation",
             "is_correct": false
           },
-          { "text": "Panneaux d'information", "is_correct": false }
+          {
+            "text": "Panneaux d'information",
+            "is_correct": false
+          }
         ],
         "explanation": "Ce panneau fait partie des panneaux de réglementation du stationnement et de l'arrêt, appelés série E dans le Code de la route belge. Ils indiquent où vous pouvez ou non vous garer ou vous arrêter."
       },
       "AR": {
         "question": "إلى أي فئة تنتمي هذه العلامة المرورية؟",
         "choices": [
-          { "text": "علامات تنظيم الوقوف والتوقف", "is_correct": true },
-          { "text": "علامات حظر المرور المتحرك", "is_correct": false },
-          { "text": "العلامات الإرشادية", "is_correct": false }
+          {
+            "text": "علامات تنظيم الوقوف والتوقف",
+            "is_correct": true
+          },
+          {
+            "text": "علامات حظر المرور المتحرك",
+            "is_correct": false
+          },
+          {
+            "text": "العلامات الإرشادية",
+            "is_correct": false
+          }
         ],
         "explanation": "هذه العلامة تنتمي إلى فئة علامات تنظيم الوقوف والتوقف، المعروفة بالسلسلة E في قانون المرور البلجيكي. هذه الفئة تُحدد الأماكن المسموح وغير المسموح فيها بالوقوف أو التوقف."
       }
@@ -126,8 +171,14 @@
       "NL": {
         "question": "Tot waar geldt het parkeerverbod van dit bord?",
         "choices": [
-          { "text": "Tot aan het eerstvolgende kruispunt", "is_correct": true },
-          { "text": "Tot aan het volgende verkeersbord", "is_correct": false },
+          {
+            "text": "Tot aan het eerstvolgende kruispunt",
+            "is_correct": true
+          },
+          {
+            "text": "Tot aan het volgende verkeersbord",
+            "is_correct": false
+          },
           {
             "text": "Over de volledige lengte van de straat",
             "is_correct": false
@@ -138,8 +189,14 @@
       "EN": {
         "question": "How far does the no-parking restriction of this sign extend?",
         "choices": [
-          { "text": "Up to the next intersection", "is_correct": true },
-          { "text": "Up to the next traffic sign", "is_correct": false },
+          {
+            "text": "Up to the next intersection",
+            "is_correct": true
+          },
+          {
+            "text": "Up to the next traffic sign",
+            "is_correct": false
+          },
           {
             "text": "Along the entire length of the street",
             "is_correct": false
@@ -150,21 +207,36 @@
       "FR": {
         "question": "Jusqu'où s'étend l'interdiction de stationnement indiquée par ce panneau ?",
         "choices": [
-          { "text": "Jusqu'au prochain carrefour", "is_correct": true },
+          {
+            "text": "Jusqu'au prochain carrefour",
+            "is_correct": true
+          },
           {
             "text": "Jusqu'au prochain panneau de signalisation",
             "is_correct": false
           },
-          { "text": "Sur toute la longueur de la rue", "is_correct": false }
+          {
+            "text": "Sur toute la longueur de la rue",
+            "is_correct": false
+          }
         ],
         "explanation": "L'interdiction de stationnement s'applique du côté de la route où le panneau est placé et se prolonge jusqu'au prochain carrefour. Au-delà, les règles normales de stationnement s'appliquent à nouveau, sauf si un nouveau panneau est présent."
       },
       "AR": {
         "question": "حتى أين يمتد حظر الوقوف الذي تفرضه هذه العلامة؟",
         "choices": [
-          { "text": "حتى أقرب تقاطع", "is_correct": true },
-          { "text": "حتى العلامة المرورية التالية", "is_correct": false },
-          { "text": "على طول الشارع بالكامل", "is_correct": false }
+          {
+            "text": "حتى أقرب تقاطع",
+            "is_correct": true
+          },
+          {
+            "text": "حتى العلامة المرورية التالية",
+            "is_correct": false
+          },
+          {
+            "text": "على طول الشارع بالكامل",
+            "is_correct": false
+          }
         ],
         "explanation": "يسري حظر الوقوف على الجانب الذي وُضعت عليه العلامة، ويستمر من موضعها حتى أقرب تقاطع. بعد التقاطع تعود قواعد الوقوف العادية، ما لم تكن هناك علامة جديدة."
       }
@@ -178,14 +250,14 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U rijdt langs dit bord. Wat mag u hier wél doen?",
+        "question": "Wat mag u bij E1 nog doen?",
         "choices": [
           {
-            "text": "Even stoppen om een passagier te laten uitstappen, terwijl u bij uw voertuig blijft",
+            "text": "Alleen stilstaan gedurende de tijd die nodig is om een passagier te laten in- of uitstappen of zaken te laden of lossen",
             "is_correct": true
           },
           {
-            "text": "Uw auto parkeren om snel boodschappen te doen",
+            "text": "Parkeren om snel boodschappen te doen",
             "is_correct": false
           },
           {
@@ -193,52 +265,61 @@
             "is_correct": false
           }
         ],
-        "explanation": "Dit bord verbiedt alleen parkeren, niet stoppen. U mag dus even stilstaan om iemand in of uit te laten, maar u moet bij uw voertuig blijven. Zodra u uw auto verlaat, wordt het beschouwd als parkeren."
+        "explanation": "De toegelaten stilstand wordt bepaald door doel en noodzakelijke duur. Bij het voertuig blijven is op zichzelf niet beslissend."
       },
       "EN": {
-        "question": "You are driving past this sign. What are you still allowed to do here?",
+        "question": "What may you still do under E1?",
         "choices": [
           {
-            "text": "Stop briefly to let a passenger out, while staying with your vehicle",
+            "text": "Stop only for the time needed for a passenger to board or alight or for goods to be loaded or unloaded",
             "is_correct": true
           },
           {
-            "text": "Park your car to quickly do some shopping",
-            "is_correct": false
-          },
-          { "text": "Park with your hazard lights on", "is_correct": false }
-        ],
-        "explanation": "This sign only forbids parking, not stopping. You may briefly stand still to let someone in or out, but you must stay with your vehicle. The moment you leave your car unattended, it becomes parking."
-      },
-      "FR": {
-        "question": "Vous passez devant ce panneau. Que vous est-il encore permis de faire ici ?",
-        "choices": [
-          {
-            "text": "Vous arrêter brièvement pour laisser descendre un passager, en restant auprès de votre véhicule",
-            "is_correct": true
-          },
-          {
-            "text": "Garer votre voiture le temps de faire quelques courses",
+            "text": "Park to do a quick errand",
             "is_correct": false
           },
           {
-            "text": "Vous garer avec les feux de détresse allumés",
+            "text": "Park with the hazard lights on",
             "is_correct": false
           }
         ],
-        "explanation": "Ce panneau interdit uniquement le stationnement, pas l'arrêt. Vous pouvez donc vous immobiliser brièvement pour faire monter ou descendre quelqu'un, mais vous devez rester auprès de votre véhicule. Dès que vous quittez votre voiture, cela devient du stationnement."
+        "explanation": "A permitted stop is determined by its purpose and necessary duration. Remaining with the vehicle is not decisive by itself."
       },
-      "AR": {
-        "question": "أنت تسير بجانب هذه العلامة. ما الذي لا يزال مسموحاً لك به هنا؟",
+      "FR": {
+        "question": "Que pouvez-vous encore faire sous E1 ?",
         "choices": [
           {
-            "text": "التوقف لفترة قصيرة لإنزال راكب مع البقاء بجانب سيارتك",
+            "text": "Vous arrêter uniquement pendant le temps nécessaire à la montée ou à la descente d’un passager ou au chargement ou déchargement",
             "is_correct": true
           },
-          { "text": "إيقاف سيارتك للذهاب السريع للتسوق", "is_correct": false },
-          { "text": "الوقوف مع تشغيل أضواء الخطر", "is_correct": false }
+          {
+            "text": "Stationner pour une course rapide",
+            "is_correct": false
+          },
+          {
+            "text": "Stationner avec les feux de détresse",
+            "is_correct": false
+          }
         ],
-        "explanation": "هذه العلامة تحظر الوقوف فقط، وليس التوقف. يمكنك إذن التوقف لفترة قصيرة لإنزال أو إركاب شخص، لكن يجب أن تبقى بجانب سيارتك. في اللحظة التي تتركها دون مراقبة، يصبح ذلك وقوفاً محظوراً."
+        "explanation": "L’arrêt permis est déterminé par son but et sa durée nécessaire. Rester près du véhicule n’est pas décisif en soi."
+      },
+      "AR": {
+        "question": "ما الذي يبقى مسموحًا عند E1؟",
+        "choices": [
+          {
+            "text": "التوقف فقط للمدة اللازمة لصعود راكب أو نزوله أو لتحميل الأشياء أو تفريغها",
+            "is_correct": true
+          },
+          {
+            "text": "ركن المركبة لإنجاز مهمة سريعة",
+            "is_correct": false
+          },
+          {
+            "text": "الركن مع تشغيل أضواء الخطر",
+            "is_correct": false
+          }
+        ],
+        "explanation": "يتحدد التوقف المسموح بهدفه ومدته اللازمة. ولا يكفي بقاء السائق قرب المركبة وحده."
       }
     }
   },
@@ -256,8 +337,14 @@
             "text": "Alleen aan de kant waar het bord geplaatst is",
             "is_correct": true
           },
-          { "text": "Aan beide kanten van de weg", "is_correct": false },
-          { "text": "Aan de overkant van het bord", "is_correct": false }
+          {
+            "text": "Aan beide kanten van de weg",
+            "is_correct": false
+          },
+          {
+            "text": "Aan de overkant van het bord",
+            "is_correct": false
+          }
         ],
         "explanation": "Het parkeerverbod geldt uitsluitend aan de kant van de weg waar het bord staat. Aan de andere kant mag je gewoon parkeren, tenzij daar ook een bord staat."
       },
@@ -268,8 +355,14 @@
             "text": "Only on the side where the sign is placed",
             "is_correct": true
           },
-          { "text": "On both sides of the road", "is_correct": false },
-          { "text": "On the opposite side of the sign", "is_correct": false }
+          {
+            "text": "On both sides of the road",
+            "is_correct": false
+          },
+          {
+            "text": "On the opposite side of the sign",
+            "is_correct": false
+          }
         ],
         "explanation": "The no-parking restriction applies only on the side of the road where the sign is installed. You may park normally on the other side, unless there is a sign there too."
       },
@@ -280,8 +373,14 @@
             "text": "Uniquement du côté où le panneau est placé",
             "is_correct": true
           },
-          { "text": "Des deux côtés de la route", "is_correct": false },
-          { "text": "Du côté opposé au panneau", "is_correct": false }
+          {
+            "text": "Des deux côtés de la route",
+            "is_correct": false
+          },
+          {
+            "text": "Du côté opposé au panneau",
+            "is_correct": false
+          }
         ],
         "explanation": "L'interdiction de stationnement ne s'applique que du côté de la route où le panneau est installé. De l'autre côté, vous pouvez vous garer normalement, sauf si un panneau y est également présent."
       },
@@ -292,8 +391,14 @@
             "text": "فقط على الجانب الذي وُضعت عليه العلامة",
             "is_correct": true
           },
-          { "text": "على كلا جانبي الطريق", "is_correct": false },
-          { "text": "على الجانب المقابل للعلامة", "is_correct": false }
+          {
+            "text": "على كلا جانبي الطريق",
+            "is_correct": false
+          },
+          {
+            "text": "على الجانب المقابل للعلامة",
+            "is_correct": false
+          }
         ],
         "explanation": "يسري حظر الوقوف فقط على الجانب الذي وُضعت عليه العلامة. على الجانب الآخر يمكنك الوقوف بشكل طبيعي، ما لم تكن هناك علامة مماثلة عليه أيضاً."
       }
@@ -363,8 +468,14 @@
       "AR": {
         "question": "ماذا قد يحدث إذا أوقفت سيارتك بجانب هذه العلامة؟",
         "choices": [
-          { "text": "تخاطر بغرامة مالية وقد تُسحب سيارتك", "is_correct": true },
-          { "text": "ستحصل فقط على تحذير شفهي من الشرطة", "is_correct": false },
+          {
+            "text": "تخاطر بغرامة مالية وقد تُسحب سيارتك",
+            "is_correct": true
+          },
+          {
+            "text": "ستحصل فقط على تحذير شفهي من الشرطة",
+            "is_correct": false
+          },
           {
             "text": "لا توجد عقوبة ما لم تعيق حركة المرور",
             "is_correct": false
@@ -447,60 +558,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Mag u hier laden of lossen als u bij uw voertuig blijft?",
+        "question": "Mag u bij E1 laden of lossen?",
         "choices": [
           {
-            "text": "Ja, laden en lossen terwijl u bij uw voertuig blijft geldt als stoppen, niet als parkeren",
+            "text": "Ja, zolang de stilstand niet langer duurt dan werkelijk nodig voor het laden of lossen",
             "is_correct": true
           },
           {
-            "text": "Neen, dit bord verbiedt elke stilstand, ook laden en lossen",
+            "text": "Neen, E1 verbiedt ook elke laad- en loshandeling",
             "is_correct": false
           }
         ],
-        "explanation": "Parkeren betekent je voertuig onbeheerd achterlaten. Als u bij uw voertuig blijft tijdens het laden of lossen, wordt dit beschouwd als stoppen en niet als parkeren. Dit bord verbiedt alleen parkeren, dus laden en lossen is hier toegestaan."
+        "explanation": "Laden of lossen gedurende de strikt nodige tijd is stilstaan. Duurt het langer dan nodig, dan is het parkeren en geldt het verbod."
       },
       "EN": {
-        "question": "Are you allowed to load or unload here while staying with your vehicle?",
+        "question": "May you load or unload under E1?",
         "choices": [
           {
-            "text": "Yes, loading or unloading while staying with your vehicle counts as stopping, not parking",
+            "text": "Yes, provided the vehicle remains only for the time genuinely needed for loading or unloading",
             "is_correct": true
           },
           {
-            "text": "No, this sign forbids all standing still, including loading and unloading",
+            "text": "No, E1 also prohibits every loading or unloading operation",
             "is_correct": false
           }
         ],
-        "explanation": "Parking means leaving your vehicle unattended. If you stay with your vehicle while loading or unloading, this is considered stopping and not parking. Since this sign only forbids parking, loading and unloading is permitted here."
+        "explanation": "Loading or unloading for the strictly necessary time is stopping. If it lasts longer than needed, it becomes parking and the prohibition applies."
       },
       "FR": {
-        "question": "Avez-vous le droit de charger ou décharger ici en restant auprès de votre véhicule ?",
+        "question": "Pouvez-vous charger ou décharger sous E1 ?",
         "choices": [
           {
-            "text": "Oui, charger ou décharger en restant auprès de votre véhicule compte comme un arrêt, pas un stationnement",
+            "text": "Oui, à condition que l’immobilisation ne dépasse pas le temps réellement nécessaire au chargement ou au déchargement",
             "is_correct": true
           },
           {
-            "text": "Non, ce panneau interdit toute immobilisation, y compris le chargement et le déchargement",
+            "text": "Non, E1 interdit également toute opération de chargement ou de déchargement",
             "is_correct": false
           }
         ],
-        "explanation": "Le stationnement signifie laisser votre véhicule sans surveillance. Si vous restez auprès de votre véhicule pendant le chargement ou déchargement, cela est considéré comme un arrêt et non comme un stationnement. Comme ce panneau interdit uniquement le stationnement, le chargement et le déchargement sont autorisés ici."
+        "explanation": "Le chargement ou déchargement pendant le temps strictement nécessaire constitue un arrêt. Au-delà, il s’agit d’un stationnement interdit."
       },
       "AR": {
-        "question": "هل يُسمح لك بالتحميل أو التفريغ هنا مع بقائك بجانب سيارتك؟",
+        "question": "هل يجوز التحميل أو التفريغ عند E1؟",
         "choices": [
           {
-            "text": "نعم، التحميل أو التفريغ مع بقائك بجانب سيارتك يُعدّ توقفاً لا وقوفاً",
+            "text": "نعم، بشرط ألا يستمر التوقف أكثر من الزمن اللازم فعليًا للتحميل أو التفريغ",
             "is_correct": true
           },
           {
-            "text": "لا، هذه العلامة تحظر كل توقف بما في ذلك التحميل والتفريغ",
+            "text": "لا، تحظر E1 كل عملية تحميل أو تفريغ أيضًا",
             "is_correct": false
           }
         ],
-        "explanation": "الوقوف يعني ترك سيارتك دون مراقبة. إذا بقيت بجانب سيارتك أثناء التحميل أو التفريغ، فهذا يُعدّ توقفاً وليس وقوفاً. ولأن هذه العلامة تحظر الوقوف فقط، يُسمح لك بالتحميل والتفريغ هنا."
+        "explanation": "التحميل أو التفريغ خلال الزمن الضروري يُعد توقفًا. فإذا طال أكثر من اللازم أصبح ركنًا ويسري الحظر."
       }
     }
   }

@@ -94,7 +94,10 @@
             "text": "Personenwagens, vrachtwagens, motorfietsen en autobussen",
             "is_correct": true
           },
-          { "text": "Autocars", "is_correct": false },
+          {
+            "text": "Autocars",
+            "is_correct": false
+          },
           {
             "text": "Enkel voertuigen zwaarder dan 7,5 ton",
             "is_correct": false
@@ -109,7 +112,10 @@
             "text": "Passenger cars, lorries, motorcycles and public-service buses",
             "is_correct": true
           },
-          { "text": "Coaches", "is_correct": false },
+          {
+            "text": "Coaches",
+            "is_correct": false
+          },
           {
             "text": "Only vehicles heavier than 7.5 tonnes",
             "is_correct": false
@@ -124,7 +130,10 @@
             "text": "Voitures particulières, camions, motocyclettes et autobus de service public",
             "is_correct": true
           },
-          { "text": "Autocars", "is_correct": false },
+          {
+            "text": "Autocars",
+            "is_correct": false
+          },
           {
             "text": "Uniquement les véhicules de plus de 7,5 tonnes",
             "is_correct": false
@@ -139,8 +148,14 @@
             "text": "السيارات الخاصة والشاحنات والدراجات النارية وحافلات النقل العام",
             "is_correct": true
           },
-          { "text": "حافلات الرحلات من فئة autocar", "is_correct": false },
-          { "text": "فقط المركبات التي تزيد عن 7.5 طن", "is_correct": false }
+          {
+            "text": "حافلات الرحلات من فئة autocar",
+            "is_correct": false
+          },
+          {
+            "text": "فقط المركبات التي تزيد عن 7.5 طن",
+            "is_correct": false
+          }
         ],
         "explanation": "تُخصص E9d حصراً لحافلات الرحلات من فئة autocar. ولا تندرج السيارات والشاحنات والدراجات النارية وحافلات النقل العام ضمن هذه الفئة، لذلك لا يجوز لها الوقوف هناك."
       }
@@ -154,76 +169,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Een vrachtwagenchauffeur parkeert zijn voertuig op een E9d-parkeerplaats omdat hij geen andere plek vindt. Wat is het gevaar?",
+        "question": "Een vrachtauto parkeert bij E9d. Welke regel wordt geschonden?",
         "choices": [
           {
-            "text": "De vrachtwagen bezet een plek die bestemd is voor autocars die daar passagiers moeten in- en uitlaten, en kan de touristisch-logistieke doorgang ernstig belemmeren",
+            "text": "De plaats is uitsluitend voor autocars voorbehouden",
             "is_correct": true
           },
           {
-            "text": "De vrachtwagen kan beschadigd raken door de autocars die naast hem parkeren",
+            "text": "Geen regel omdat beide voertuigen groot zijn",
             "is_correct": false
           },
           {
-            "text": "De vrachtwagen veroorzaakt lawaaioverlast voor de buurt",
+            "text": "Alleen een geluidsregel",
             "is_correct": false
           }
         ],
-        "explanation": "Autocars hebben specifieke parkeerplaatsen nodig om veilig passagiers in en uit te laten stappen. Een vrachtwagen die op een E9d-plek parkeert blokkeert deze ruimte en brengt de veiligheid van passagiers en de doorgang van andere autocars in gevaar."
+        "explanation": "Afmetingen of personenvervoer veranderen een vrachtauto niet in een autocar."
       },
       "EN": {
-        "question": "A lorry driver parks his vehicle in an E9d space because he cannot find another space. What is the hazard?",
+        "question": "A lorry parks under E9d. Which rule is breached?",
         "choices": [
           {
-            "text": "The lorry occupies a space intended for coaches that need to board and alight passengers, and can seriously obstruct the tourist-logistical passage",
+            "text": "The space is reserved exclusively for coaches",
             "is_correct": true
           },
           {
-            "text": "The lorry may be damaged by the coaches parking next to it",
+            "text": "No rule because both vehicles are large",
             "is_correct": false
           },
           {
-            "text": "The lorry causes noise nuisance for the neighbourhood",
+            "text": "Only a noise rule",
             "is_correct": false
           }
         ],
-        "explanation": "Coaches need specific parking spaces to safely board and alight passengers. A lorry parking in an E9d space blocks this area and endangers the safety of passengers and the passage of other coaches."
+        "explanation": "Size or passenger use does not turn a lorry into a coach."
       },
       "FR": {
-        "question": "Un chauffeur de camion gare son véhicule sur une place E9d car il ne trouve pas d'autre emplacement. Quel est le danger ?",
+        "question": "Un camion stationne sous E9d. Quelle règle est enfreinte ?",
         "choices": [
           {
-            "text": "Le camion occupe une place destinée aux autocars qui doivent y embarquer et débarquer des passagers, et peut sérieusement entraver le passage touristico-logistique",
+            "text": "La place est exclusivement réservée aux autocars",
             "is_correct": true
           },
           {
-            "text": "Le camion peut être endommagé par les autocars qui se garent à côté de lui",
+            "text": "Aucune règle car les deux sont grands",
             "is_correct": false
           },
           {
-            "text": "Le camion provoque des nuisances sonores pour le voisinage",
+            "text": "Uniquement une règle de bruit",
             "is_correct": false
           }
         ],
-        "explanation": "Les autocars ont besoin de places de stationnement spécifiques pour faire monter et descendre les passagers en toute sécurité. Un camion garé sur une place E9d bloque cet espace et met en danger la sécurité des passagers et le passage des autres autocars."
+        "explanation": "La taille ou le transport de personnes ne transforme pas un camion en autocar."
       },
       "AR": {
-        "question": "يركن سائق شاحنة مركبته في موقف E9d لأنه لا يجد مكاناً آخر. ما الخطر في ذلك؟",
+        "question": "ركنت شاحنة عند E9d. ما القاعدة المخالفة؟",
         "choices": [
           {
-            "text": "الشاحنة تشغل مكاناً مخصصاً للحافلات الكبيرة التي تحتاجه لإركاب الركاب وإنزالهم، وقد تعيق المرور السياحي اللوجستي بشكل خطير",
+            "text": "المكان مخصص حصريًا لحافلات الرحلات من فئة autocar",
             "is_correct": true
           },
           {
-            "text": "قد تتضرر الشاحنة من الحافلات الكبيرة التي تقف بجانبها",
+            "text": "لا مخالفة لأن المركبتين كبيرتان",
             "is_correct": false
           },
           {
-            "text": "الشاحنة تُحدث ضوضاء مزعجة للحي السكني",
+            "text": "قاعدة ضوضاء فقط",
             "is_correct": false
           }
         ],
-        "explanation": "تحتاج الحافلات الكبيرة إلى مواقف محددة لإركاب الركاب وإنزالهم بأمان. شاحنة تقف في موقف E9d تحجب هذه المساحة وتُعرّض سلامة الركاب ومرور الحافلات الأخرى للخطر."
+        "explanation": "لا يحول الحجم أو نقل الركاب الشاحنة إلى حافلة رحلات."
       }
     }
   },
@@ -397,76 +412,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Geldt de E9d-reservering ook 's nachts als er een onderbord staat met '8u–20u'?",
+        "question": "Een onderbord beperkt E9d tot 8–20 uur. Wat geldt ’s nachts?",
         "choices": [
           {
-            "text": "Neen: buiten de aangegeven uren geldt de E9d-reservering niet; parkeren blijft wel afhankelijk van alle andere geldende regels en borden",
+            "text": "Het E9d-voorbehoud geldt niet, maar alle andere parkeerregels blijven gelden",
             "is_correct": true
           },
           {
-            "text": "Ja: de reservering voor autocars geldt altijd, ook 's nachts",
+            "text": "Iedereen mag zonder voorwaarden parkeren",
             "is_correct": false
           },
           {
-            "text": "Neen: 's nachts is parkeren voor alle voertuigen verboden op die locatie",
+            "text": "Parkeren is altijd verboden",
             "is_correct": false
           }
         ],
-        "explanation": "Een onderbord met '8u–20u' beperkt de E9d-reservering tot die uren. Buiten dat tijdvak geldt de reservering voor autocars niet, maar bestuurders moeten nog steeds andere parkeerregels, borden en plaatselijke beperkingen naleven."
+        "explanation": "De tijdsaanduiding beperkt alleen het voorbehoud voor autocars."
       },
       "EN": {
-        "question": "Does the E9d reservation also apply at night when a supplementary sign reads '08:00–20:00'?",
+        "question": "A plate limits E9d to 08:00–20:00. What applies at night?",
         "choices": [
           {
-            "text": "No: outside the indicated hours the E9d reservation does not apply, but parking remains subject to all other applicable rules and signs",
+            "text": "The E9d reservation does not apply, but all other parking rules remain in force",
             "is_correct": true
           },
           {
-            "text": "Yes: the reservation for coaches always applies, even at night",
+            "text": "Anyone may park without conditions",
             "is_correct": false
           },
           {
-            "text": "No: parking is forbidden for all vehicles at night at that location",
+            "text": "Parking is always prohibited",
             "is_correct": false
           }
         ],
-        "explanation": "A supplementary sign reading '08:00–20:00' limits the E9d reservation to those hours. Outside that period the coach reservation does not apply, but drivers must still comply with other parking rules, signs and local restrictions."
+        "explanation": "The time indication limits only the coach reservation."
       },
       "FR": {
-        "question": "La réservation E9d s'applique-t-elle aussi la nuit quand un panneau complémentaire indique '8h–20h' ?",
+        "question": "Un panneau limite E9d à 8 h–20 h. Que vaut-il la nuit ?",
         "choices": [
           {
-            "text": "Non : hors des heures indiquées, la réservation E9d ne s'applique pas, mais le stationnement reste soumis aux autres règles et panneaux en vigueur",
+            "text": "La réservation E9d ne s’applique pas, mais les autres règles restent valables",
             "is_correct": true
           },
           {
-            "text": "Oui : la réservation pour les autocars s'applique toujours, même la nuit",
+            "text": "Tout le monde peut stationner sans condition",
             "is_correct": false
           },
           {
-            "text": "Non : le stationnement est interdit pour tous les véhicules la nuit à cet endroit",
+            "text": "Le stationnement est toujours interdit",
             "is_correct": false
           }
         ],
-        "explanation": "Un panneau complémentaire '8h–20h' limite la réservation E9d à cette plage horaire. En dehors de celle-ci, la réservation aux autocars ne s'applique plus, mais les autres règles, panneaux et restrictions locales restent à respecter."
+        "explanation": "L’horaire limite uniquement la réservation aux autocars."
       },
       "AR": {
-        "question": "هل يسري حجز E9d ليلاً أيضاً عندما تُشير علامة تكميلية إلى '8:00–20:00'؟",
+        "question": "تقصر لوحة E9d على 8–20. ماذا يسري ليلًا؟",
         "choices": [
           {
-            "text": "لا: خارج الساعات المحددة لا يسري حجز E9d، لكن الوقوف يبقى خاضعاً لبقية القواعد والعلامات المطبقة",
+            "text": "لا يسري تخصيص E9d، لكن تبقى سائر قواعد الركن نافذة",
             "is_correct": true
           },
           {
-            "text": "نعم: حجز الحافلات الكبيرة ساري دائماً حتى ليلاً",
+            "text": "يجوز للجميع الركن بلا شروط",
             "is_correct": false
           },
           {
-            "text": "لا: الوقوف محظور لجميع المركبات ليلاً في ذلك الموقع",
+            "text": "الركن محظور دائمًا",
             "is_correct": false
           }
         ],
-        "explanation": "تحصر اللوحة التكميلية '8:00–20:00' حجز E9d في هذه الساعات. وخارجها لا يسري الحجز المخصص لحافلات الرحلات، لكن يجب الاستمرار في احترام قواعد الوقوف والعلامات والقيود المحلية الأخرى."
+        "explanation": "يحد بيان الوقت تخصيص حافلات الرحلات فقط."
       }
     }
   },

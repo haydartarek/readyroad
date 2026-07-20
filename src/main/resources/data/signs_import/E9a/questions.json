@@ -7,73 +7,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat betekent dit verkeersbord?",
+        "question": "Wat betekent E9a?",
         "choices": [
           {
-            "text": "Het is een openbare parkeerplaats voor alle soorten voertuigen, vrij en zonder bijkomende voorwaarden",
+            "text": "Parkeren is toegelaten, met naleving van alle andere borden en algemene, zonale en plaatselijke regels",
             "is_correct": true
           },
           {
-            "text": "Parkeren is toegelaten maar u moet verplicht een parkeerschijf plaatsen",
+            "text": "Parkeren is altijd gratis en onbeperkt",
             "is_correct": false
           },
           {
-            "text": "De parkeerplaats is uitsluitend voorbehouden voor personenwagens",
+            "text": "Parkeren is verboden",
             "is_correct": false
           }
         ],
-        "explanation": "E9a is het basisparkeerbord: parkeren is hier vrij toegelaten voor alle voertuigen, zonder tijdslimiet en zonder parkeerschijfplicht. Alleen een onderbord kan bijkomende voorwaarden toevoegen."
+        "explanation": "E9a laat parkeren toe, maar bepaalt op zichzelf niet dat het gratis, onbeperkt of zonder andere voorwaarden is."
       },
       "EN": {
-        "question": "What does this road sign mean?",
+        "question": "What does E9a mean?",
         "choices": [
           {
-            "text": "It is a public parking area for all types of vehicles, free and without additional conditions",
+            "text": "Parking is permitted subject to all other signs and general, zone and local rules",
             "is_correct": true
           },
           {
-            "text": "Parking is allowed but you must compulsorily display a parking disc",
+            "text": "Parking is always free and unlimited",
             "is_correct": false
           },
           {
-            "text": "The parking area is exclusively reserved for passenger cars",
+            "text": "Parking is prohibited",
             "is_correct": false
           }
         ],
-        "explanation": "E9a is the basic parking sign: parking is freely permitted here for all vehicles, with no time limit and no parking disc requirement. Only a supplementary plate can add extra conditions."
+        "explanation": "E9a permits parking, but by itself it does not make parking free, unlimited or exempt from other conditions."
       },
       "FR": {
-        "question": "Que signifie ce panneau de signalisation ?",
+        "question": "Que signifie E9a ?",
         "choices": [
           {
-            "text": "C'est un espace de stationnement public pour tous les types de véhicules, libre et sans conditions supplémentaires",
+            "text": "Le stationnement est autorisé sous réserve des autres panneaux et des règles générales, zonales et locales",
             "is_correct": true
           },
           {
-            "text": "Le stationnement est autorisé mais vous devez obligatoirement placer un disque de stationnement",
+            "text": "Le stationnement est toujours gratuit et illimité",
             "is_correct": false
           },
           {
-            "text": "L'espace de stationnement est exclusivement réservé aux voitures particulières",
+            "text": "Le stationnement est interdit",
             "is_correct": false
           }
         ],
-        "explanation": "E9a est le panneau de stationnement de base : le stationnement est librement autorisé ici pour tous les véhicules, sans limite de temps et sans obligation de disque. Seul un panneau additionnel peut ajouter des conditions supplémentaires."
+        "explanation": "E9a autorise le stationnement, mais ne le rend pas à lui seul gratuit, illimité ou exempt d’autres conditions."
       },
       "AR": {
-        "question": "ماذا تعني هذه العلامة المرورية؟",
+        "question": "ماذا تعني E9a؟",
         "choices": [
           {
-            "text": "موقف عام لجميع أنواع المركبات، مسموح بالوقوف بحرية دون أي شروط إضافية",
+            "text": "الركن مسموح مع الالتزام بسائر العلامات والقواعد العامة وقواعد المنطقة والبلدية",
             "is_correct": true
           },
           {
-            "text": "الوقوف مسموح لكن يجب إلزامياً وضع قرص الوقوف",
+            "text": "الركن مجاني وغير محدود دائمًا",
             "is_correct": false
           },
-          { "text": "الموقف مخصص حصرياً للسيارات الخاصة", "is_correct": false }
+          {
+            "text": "الركن محظور",
+            "is_correct": false
+          }
         ],
-        "explanation": "E9a هي علامة الوقوف الأساسية: الوقوف مسموح به بحرية هنا لجميع المركبات، دون حد زمني ودون اشتراط قرص الوقوف. فقط لوحة إضافية أسفل العلامة يمكنها إضافة شروط."
+        "explanation": "تسمح E9a بالركن، لكنها لا تجعله وحدها مجانيًا أو غير محدود أو معفيًا من الشروط الأخرى."
       }
     }
   },
@@ -85,67 +88,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Welk bord zou u hier in de plaats van E9a verwachten als parkeren beperkt is in de tijd?",
+        "question": "Hoe kan een parkeerschijfplicht bij een E9a-regeling worden aangeduid?",
         "choices": [
           {
-            "text": "E9a-parkeerschijf: parkeren toegelaten maar met verplichte parkeerschijf om aankomsttijd aan te geven",
+            "text": "Door de parkeerschijf op E9a of op een onderbord af te beelden, eventueel binnen zonale signalisatie",
             "is_correct": true
           },
           {
-            "text": "E1: parkeerverbod aan deze kant van de weg",
-            "is_correct": false
-          },
-          { "text": "E3: stilstaan en parkeren verboden", "is_correct": false }
-        ],
-        "explanation": "Als de parkeertijd beperkt is, wordt E9a vervangen door E9a-parkeerschijf. Dat bord verplicht de bestuurder bij aankomst een parkeerschijf te plaatsen waarop de aankomsttijd zichtbaar is."
-      },
-      "EN": {
-        "question": "Which sign would you expect here instead of E9a if parking is time-limited?",
-        "choices": [
-          {
-            "text": "E9a-parkeerschijf: parking allowed but with a compulsory parking disc to indicate arrival time",
-            "is_correct": true
-          },
-          {
-            "text": "E1: no parking on this side of the road",
-            "is_correct": false
-          },
-          { "text": "E3: stopping and parking forbidden", "is_correct": false }
-        ],
-        "explanation": "When parking time is limited, E9a is replaced by E9a-parkeerschijf. That sign requires the driver to display a parking disc on arrival showing the arrival time."
-      },
-      "FR": {
-        "question": "Quel panneau attendriez-vous ici à la place de E9a si le stationnement est limité dans le temps ?",
-        "choices": [
-          {
-            "text": "E9a-parkeerschijf : stationnement autorisé mais avec disque de stationnement obligatoire pour indiquer l'heure d'arrivée",
-            "is_correct": true
-          },
-          {
-            "text": "E1 : interdiction de stationner de ce côté de la route",
+            "text": "Door E9a te vervangen door E1",
             "is_correct": false
           },
           {
-            "text": "E3 : arrêt et stationnement interdits",
+            "text": "Alleen door een gele lijn",
             "is_correct": false
           }
         ],
-        "explanation": "Quand le stationnement est limité dans le temps, E9a est remplacé par E9a-parkeerschijf. Ce panneau oblige le conducteur à placer un disque de stationnement à l'arrivée indiquant l'heure d'arrivée."
+        "explanation": "De parkeerschijf kan op E9a of een onderbord staan. Bijzondere voorwaarden op de signalisatie bepalen de toepasselijke uren of duur."
       },
-      "AR": {
-        "question": "أي علامة تتوقع رؤيتها هنا بدلاً من E9a إذا كان الوقوف محدوداً بوقت؟",
+      "EN": {
+        "question": "How may a parking-disc requirement be shown with an E9a arrangement?",
         "choices": [
           {
-            "text": "E9a-parkeerschijf: الوقوف مسموح لكن مع قرص وقوف إلزامي لتحديد وقت الوصول",
+            "text": "By depicting the parking disc on E9a or on a supplementary plate, including in zone signage",
             "is_correct": true
           },
           {
-            "text": "E1: ممنوع الوقوف على هذا الجانب من الطريق",
+            "text": "By replacing E9a with E1",
             "is_correct": false
           },
-          { "text": "E3: ممنوع الوقوف والتوقف", "is_correct": false }
+          {
+            "text": "Only by a yellow line",
+            "is_correct": false
+          }
         ],
-        "explanation": "عندما يكون الوقوف محدوداً بوقت، تُستبدل E9a بـ E9a-parkeerschijf. تلك العلامة تُلزم السائق بوضع قرص الوقوف عند وصوله يُظهر وقت الوصول."
+        "explanation": "The disc may be shown on E9a or a supplementary plate. Special posted conditions determine the applicable hours or duration."
+      },
+      "FR": {
+        "question": "Comment une obligation de disque peut-elle être indiquée avec E9a ?",
+        "choices": [
+          {
+            "text": "En représentant le disque sur E9a ou sur un panneau additionnel, y compris dans une signalisation zonale",
+            "is_correct": true
+          },
+          {
+            "text": "En remplaçant E9a par E1",
+            "is_correct": false
+          },
+          {
+            "text": "Uniquement par une ligne jaune",
+            "is_correct": false
+          }
+        ],
+        "explanation": "Le disque peut figurer sur E9a ou sur un panneau additionnel. Les conditions particulières affichées fixent les heures ou la durée."
+      },
+      "AR": {
+        "question": "كيف يمكن بيان وجوب قرص الوقوف مع تنظيم E9a؟",
+        "choices": [
+          {
+            "text": "برسم القرص على E9a أو على لوحة تكميلية، بما في ذلك علامة منطقة",
+            "is_correct": true
+          },
+          {
+            "text": "باستبدال E9a بعلامة E1",
+            "is_correct": false
+          },
+          {
+            "text": "بخط أصفر فقط",
+            "is_correct": false
+          }
+        ],
+        "explanation": "قد يظهر القرص على E9a أو لوحة تكميلية. وتحدد الشروط الخاصة المبينة الساعات أو المدة المطبقة."
       }
     }
   },
@@ -157,67 +169,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Voor welke voertuigen geldt dit parkeerbord?",
+        "question": "Reserveert E9a zonder symbool of opschrift de plaats voor één voertuigcategorie?",
         "choices": [
           {
-            "text": "Voor alle voertuigen: personenwagens, vrachtwagens, bussen en motorfietsen",
+            "text": "Neen, E9a zelf bevat dan geen categorievoorbehoud; andere regels blijven wel gelden",
             "is_correct": true
           },
-          { "text": "Alleen voor personenwagens", "is_correct": false },
           {
-            "text": "Alleen voor voertuigen met een maximum toegelaten massa onder de 3,5 ton",
+            "text": "Ja, uitsluitend voor personenauto’s",
+            "is_correct": false
+          },
+          {
+            "text": "Ja, uitsluitend voor motorfietsen",
             "is_correct": false
           }
         ],
-        "explanation": "E9a kent geen beperking tot een voertuigcategorie. Tenzij een onderbord een specifieke categorie vermeldt, geldt het bord voor alle soorten voertuigen."
+        "explanation": "Een voertuigcategorie wordt door een toegelaten opschrift, symbool of een specifieker E9-bord aangeduid."
       },
       "EN": {
-        "question": "For which vehicles does this parking sign apply?",
+        "question": "Does E9a without a symbol or inscription reserve the space for one vehicle category?",
         "choices": [
           {
-            "text": "For all vehicles: passenger cars, trucks, buses and motorcycles",
+            "text": "No, E9a itself then contains no category reservation, although other rules still apply",
             "is_correct": true
           },
-          { "text": "For passenger cars only", "is_correct": false },
           {
-            "text": "Only for vehicles with a maximum authorised mass below 3.5 tonnes",
+            "text": "Yes, for passenger cars only",
+            "is_correct": false
+          },
+          {
+            "text": "Yes, for motorcycles only",
             "is_correct": false
           }
         ],
-        "explanation": "E9a has no restriction to a vehicle category. Unless a supplementary plate specifies a particular category, the sign applies to all types of vehicles."
+        "explanation": "A vehicle category is indicated by an authorised inscription, symbol or a more specific E9 sign."
       },
       "FR": {
-        "question": "Pour quels véhicules ce panneau de stationnement s'applique-t-il ?",
+        "question": "E9a sans symbole ni inscription réserve-t-il la place à une catégorie ?",
         "choices": [
           {
-            "text": "Pour tous les véhicules : voitures, camions, bus et motos",
+            "text": "Non, E9a ne contient alors aucune réservation de catégorie, mais les autres règles restent applicables",
             "is_correct": true
           },
           {
-            "text": "Pour les voitures particulières uniquement",
+            "text": "Oui, uniquement aux voitures",
             "is_correct": false
           },
           {
-            "text": "Uniquement pour les véhicules dont la masse maximale autorisée est inférieure à 3,5 tonnes",
+            "text": "Oui, uniquement aux motocyclettes",
             "is_correct": false
           }
         ],
-        "explanation": "E9a ne comporte aucune restriction à une catégorie de véhicule. Sauf si un panneau additionnel précise une catégorie particulière, le panneau s'applique à tous les types de véhicules."
+        "explanation": "Une catégorie est indiquée par une inscription, un symbole autorisé ou un panneau E9 plus spécifique."
       },
       "AR": {
-        "question": "لأي نوع من المركبات تنطبق هذه العلامة المرورية للوقوف؟",
+        "question": "هل تخصص E9a من دون رمز أو كتابة المكان لفئة مركبات واحدة؟",
         "choices": [
           {
-            "text": "لجميع المركبات: السيارات والشاحنات والحافلات والدراجات النارية",
+            "text": "لا، لا تتضمن E9a عندئذ تخصيصًا لفئة، مع بقاء القواعد الأخرى سارية",
             "is_correct": true
           },
-          { "text": "للسيارات الخاصة فقط", "is_correct": false },
           {
-            "text": "فقط للمركبات التي لا يتجاوز وزنها الإجمالي 3.5 طن",
+            "text": "نعم، للسيارات الخاصة فقط",
+            "is_correct": false
+          },
+          {
+            "text": "نعم، للدراجات النارية فقط",
             "is_correct": false
           }
         ],
-        "explanation": "لا تحتوي E9a على أي تقييد لفئة معينة من المركبات. ما لم تُحدد لوحة إضافية أسفلها فئة معينة، تنطبق العلامة على جميع أنواع المركبات."
+        "explanation": "تُحدد الفئة بكتابة أو رمز مسموح أو بعلامة E9 أكثر تخصيصًا."
       }
     }
   },
@@ -229,76 +250,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U rijdt een woonwijk in en ziet dit bord. U wilt uw auto er een hele dag laten staan. Wat doet u?",
+        "question": "U wilt bij E9a de hele dag parkeren. Wat controleert u eerst?",
         "choices": [
           {
-            "text": "U parkeert zonder parkeerschijf; E9a laat vrij parkeren toe voor alle voertuigen zonder tijdslimiet",
+            "text": "Onderborden, zonale signalisatie, betaalregeling, tijdsvoorwaarden, markeringen en plaatselijke regels",
             "is_correct": true
           },
           {
-            "text": "U plaatst een parkeerschijf, want parkeren in een woonwijk is altijd tijdsbeperkt",
+            "text": "Niets, E9a garandeert onbeperkt gratis parkeren",
             "is_correct": false
           },
           {
-            "text": "U mag hier maximaal 2 uur parkeren en daarna moet u de auto verplaatsen",
+            "text": "Alleen of de noodknipperlichten werken",
             "is_correct": false
           }
         ],
-        "explanation": "E9a staat vrij parkeren toe zonder tijdslimiet of parkeerschijfplicht. Een hele dag parkeren is toegestaan tenzij een onderbord of gemeentelijk reglement een beperking oplegt."
+        "explanation": "E9a laat parkeren toe, maar de volledige plaatselijke regeling bepaalt de voorwaarden."
       },
       "EN": {
-        "question": "You drive into a residential area and see this sign. You want to leave your car there all day. What do you do?",
+        "question": "You want to park all day under E9a. What must you check first?",
         "choices": [
           {
-            "text": "You park without a parking disc; E9a permits free parking for all vehicles with no time limit",
+            "text": "Supplementary plates, zone signs, payment rules, time conditions, markings and local rules",
             "is_correct": true
           },
           {
-            "text": "You display a parking disc because parking in a residential area is always time-limited",
+            "text": "Nothing, E9a guarantees unlimited free parking",
             "is_correct": false
           },
           {
-            "text": "You may park here for a maximum of 2 hours and then must move the car",
+            "text": "Only whether the hazard lights work",
             "is_correct": false
           }
         ],
-        "explanation": "E9a allows free parking with no time limit or parking disc requirement. Parking all day is permitted unless a supplementary plate or municipal regulation imposes a restriction."
+        "explanation": "E9a permits parking, but the complete local arrangement determines the conditions."
       },
       "FR": {
-        "question": "Vous entrez dans un quartier résidentiel et voyez ce panneau. Vous voulez laisser votre voiture là toute la journée. Que faites-vous ?",
+        "question": "Vous voulez stationner toute la journée sous E9a. Que vérifiez-vous d’abord ?",
         "choices": [
           {
-            "text": "Vous vous garez sans disque de stationnement ; E9a autorise le stationnement libre pour tous les véhicules sans limite de temps",
+            "text": "Panneaux additionnels, signalisation zonale, paiement, conditions horaires, marquages et règles locales",
             "is_correct": true
           },
           {
-            "text": "Vous placez un disque de stationnement car le stationnement dans un quartier résidentiel est toujours limité",
+            "text": "Rien, E9a garantit un stationnement gratuit illimité",
             "is_correct": false
           },
           {
-            "text": "Vous pouvez stationner ici maximum 2 heures puis vous devez déplacer la voiture",
+            "text": "Seulement le fonctionnement des feux de détresse",
             "is_correct": false
           }
         ],
-        "explanation": "E9a autorise le stationnement libre sans limite de temps ni obligation de disque. Stationner toute la journée est autorisé sauf si un panneau additionnel ou un règlement communal impose une restriction."
+        "explanation": "E9a autorise le stationnement, mais l’ensemble de la réglementation locale en fixe les conditions."
       },
       "AR": {
-        "question": "تدخل حياً سكنياً وترى هذه العلامة. تريد إبقاء سيارتك هناك طوال اليوم. ماذا تفعل؟",
+        "question": "تريد الركن طوال اليوم عند E9a. ماذا تتحقق منه أولًا؟",
         "choices": [
           {
-            "text": "تقف دون قرص وقوف؛ E9a تسمح بالوقوف الحر لجميع المركبات دون حد زمني",
+            "text": "اللوحات التكميلية وعلامات المنطقة والدفع والأوقات والتخطيطات والقواعد المحلية",
             "is_correct": true
           },
           {
-            "text": "تضع قرص الوقوف لأن الوقوف في الأحياء السكنية محدود دائماً",
+            "text": "لا شيء، تضمن E9a ركنًا مجانيًا غير محدود",
             "is_correct": false
           },
           {
-            "text": "يمكنك الوقوف هنا ساعتين كحد أقصى ثم يجب نقل السيارة",
+            "text": "عمل أضواء الخطر فقط",
             "is_correct": false
           }
         ],
-        "explanation": "تسمح E9a بالوقوف الحر دون حد زمني واشتراط قرص الوقوف. الوقوف طوال اليوم مسموح به ما لم تفرض لوحة إضافية أو نظام بلدي قيداً."
+        "explanation": "تسمح E9a بالركن، لكن التنظيم المحلي كاملًا هو الذي يحدد الشروط."
       }
     }
   },
@@ -310,76 +331,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U wilt uw vrachtwagen parkeren. Er staat alleen bord E9a zonder onderbord. Mag dit?",
+        "question": "Mag een vrachtwagen parkeren bij een gewone E9a zonder categorie-aanduiding?",
         "choices": [
           {
-            "text": "Ja, E9a staat parkeren toe voor alle voertuigen inclusief vrachtwagens, tenzij een onderbord een voertuigcategorie uitsluit",
+            "text": "E9a zelf sluit de vrachtwagen niet uit, maar voertuig-, plaats-, gewichts- en andere parkeerregels moeten het parkeren toelaten",
             "is_correct": true
           },
           {
-            "text": "Nee, E9a geldt uitsluitend voor voertuigen onder de 3,5 ton",
+            "text": "Ja, zonder enige andere controle",
             "is_correct": false
           },
           {
-            "text": "Nee, vrachtwagens mogen enkel parkeren op parkeerplaatsen met bord E9c",
+            "text": "Neen, vrachtwagens mogen alleen bij E9c parkeren",
             "is_correct": false
           }
         ],
-        "explanation": "E9a kent geen beperking naar voertuigtype. Zonder onderbord mogen alle voertuigen, ook vrachtwagens, hier parkeren. Bord E9c is specifiek voor vrachtwagens en is een aparte aanduiding."
+        "explanation": "E9a bevat zonder categorie-aanduiding geen voorbehoud. Dat heft andere wettelijke of plaatselijke beperkingen niet op."
       },
       "EN": {
-        "question": "You want to park your truck. Only sign E9a is present with no supplementary plate. Is this permitted?",
+        "question": "May a lorry park under an ordinary E9a without a category indication?",
         "choices": [
           {
-            "text": "Yes, E9a permits parking for all vehicles including trucks, unless a supplementary plate excludes a vehicle category",
+            "text": "E9a itself does not exclude it, but vehicle, location, weight and other parking rules must allow it",
             "is_correct": true
           },
           {
-            "text": "No, E9a applies only to vehicles under 3.5 tonnes",
+            "text": "Yes, without checking anything else",
             "is_correct": false
           },
           {
-            "text": "No, trucks may only park at spots marked with sign E9c",
+            "text": "No, lorries may park only under E9c",
             "is_correct": false
           }
         ],
-        "explanation": "E9a has no vehicle type restriction. Without a supplementary plate all vehicles, including trucks, may park here. Sign E9c is specifically for trucks and is a separate designation."
+        "explanation": "Without a category indication, E9a contains no reservation. It does not cancel other statutory or local restrictions."
       },
       "FR": {
-        "question": "Vous voulez garer votre camion. Seul le panneau E9a est présent, sans panneau additionnel. Est-ce permis ?",
+        "question": "Un camion peut-il stationner sous un E9a ordinaire sans catégorie ?",
         "choices": [
           {
-            "text": "Oui, E9a autorise le stationnement pour tous les véhicules y compris les camions, sauf si un panneau additionnel exclut une catégorie de véhicule",
+            "text": "E9a ne l’exclut pas en soi, mais les règles liées au véhicule, au lieu, au poids et au stationnement doivent l’autoriser",
             "is_correct": true
           },
           {
-            "text": "Non, E9a s'applique uniquement aux véhicules de moins de 3,5 tonnes",
+            "text": "Oui, sans aucune autre vérification",
             "is_correct": false
           },
           {
-            "text": "Non, les camions ne peuvent stationner que sur des places marquées avec le panneau E9c",
+            "text": "Non, les camions ne peuvent stationner que sous E9c",
             "is_correct": false
           }
         ],
-        "explanation": "E9a ne comporte aucune restriction de type de véhicule. Sans panneau additionnel, tous les véhicules, y compris les camions, peuvent stationner ici. Le panneau E9c est spécifique aux camions et constitue une désignation séparée."
+        "explanation": "Sans catégorie, E9a ne contient aucune réservation. Il n’annule pas les autres restrictions légales ou locales."
       },
       "AR": {
-        "question": "تريد وقوف شاحنتك. لا توجد إلا علامة E9a دون لوحة إضافية. هل هذا مسموح؟",
+        "question": "هل يجوز لشاحنة أن تركن عند E9a عادية بلا بيان فئة؟",
         "choices": [
           {
-            "text": "نعم، تُجيز E9a الوقوف لجميع المركبات بما فيها الشاحنات، ما لم تستثنِ لوحة إضافية فئة معينة",
+            "text": "لا تستبعدها E9a بذاتها، لكن يجب أن تسمح قواعد المركبة والمكان والوزن وسائر قواعد الركن بذلك",
             "is_correct": true
           },
           {
-            "text": "لا، E9a تنطبق فقط على المركبات التي يقل وزنها عن 3.5 طن",
+            "text": "نعم، بلا أي تحقق آخر",
             "is_correct": false
           },
           {
-            "text": "لا، الشاحنات لا يمكنها الوقوف إلا في أماكن مُعلَّمة بعلامة E9c",
+            "text": "لا، لا تركن الشاحنات إلا عند E9c",
             "is_correct": false
           }
         ],
-        "explanation": "لا تحتوي E9a على أي تقييد لنوع المركبة. دون لوحة إضافية يُسمح لجميع المركبات بما فيها الشاحنات بالوقوف هنا. علامة E9c مخصصة للشاحنات وهي تصنيف منفصل."
+        "explanation": "لا تتضمن E9a بلا بيان فئة تخصيصًا، لكنها لا تلغي القيود القانونية أو المحلية الأخرى."
       }
     }
   },
@@ -391,76 +412,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat is het verschil tussen bord E9a en bord E9a-parkeerschijf?",
+        "question": "Wat voegt een parkeerschijfsymbool aan E9a toe?",
         "choices": [
           {
-            "text": "E9a laat vrij parkeren toe zonder tijdslimiet; E9a-parkeerschijf verplicht de bestuurder bij aankomst een parkeerschijf te plaatsen",
+            "text": "Een beperkte parkeertijd en de plicht de schijf correct te gebruiken volgens de aangegeven of wettelijke voorwaarden",
             "is_correct": true
           },
           {
-            "text": "E9a is voor personenwagens; E9a-parkeerschijf is voor vrachtwagens en bussen",
+            "text": "Een verbod voor alle voertuigen",
             "is_correct": false
           },
           {
-            "text": "E9a geldt alleen overdag; E9a-parkeerschijf geldt ook 's nachts",
+            "text": "Een voorbehoud uitsluitend voor vrachtwagens",
             "is_correct": false
           }
         ],
-        "explanation": "Het enige verschil is de parkeerschijfplicht. E9a legt geen tijdslimiet op. E9a-parkeerschijf verplicht u de aankomsttijd aan te geven via een parkeerschijf, waarmee de parkeerduur gecontroleerd kan worden."
+        "explanation": "Zonder bijzondere voorwaarden geldt de wettelijke standaardregeling; bijzondere signalisatie kan uren of duur wijzigen."
       },
       "EN": {
-        "question": "What is the difference between sign E9a and sign E9a-parkeerschijf?",
+        "question": "What does a parking-disc symbol add to E9a?",
         "choices": [
           {
-            "text": "E9a permits free parking with no time limit; E9a-parkeerschijf requires the driver to display a parking disc on arrival",
+            "text": "Limited parking time and the duty to use the disc correctly under the posted or statutory conditions",
             "is_correct": true
           },
           {
-            "text": "E9a is for passenger cars; E9a-parkeerschijf is for trucks and buses",
+            "text": "A prohibition for all vehicles",
             "is_correct": false
           },
           {
-            "text": "E9a only applies during daytime; E9a-parkeerschijf also applies at night",
+            "text": "A reservation for lorries only",
             "is_correct": false
           }
         ],
-        "explanation": "The only difference is the parking disc requirement. E9a imposes no time limit. E9a-parkeerschijf requires you to indicate the arrival time using a parking disc, allowing parking duration to be checked."
+        "explanation": "Without special conditions, the statutory default applies; special signage may change the hours or duration."
       },
       "FR": {
-        "question": "Quelle est la différence entre le panneau E9a et le panneau E9a-parkeerschijf ?",
+        "question": "Qu’ajoute un symbole de disque à E9a ?",
         "choices": [
           {
-            "text": "E9a autorise le stationnement libre sans limite de temps ; E9a-parkeerschijf oblige le conducteur à placer un disque de stationnement à l'arrivée",
+            "text": "Une durée limitée et l’obligation d’utiliser correctement le disque selon les conditions affichées ou légales",
             "is_correct": true
           },
           {
-            "text": "E9a est pour les voitures ; E9a-parkeerschijf est pour les camions et les bus",
+            "text": "Une interdiction pour tous les véhicules",
             "is_correct": false
           },
           {
-            "text": "E9a s'applique uniquement de jour ; E9a-parkeerschijf s'applique aussi de nuit",
+            "text": "Une réservation aux camions",
             "is_correct": false
           }
         ],
-        "explanation": "La seule différence est l'obligation du disque de stationnement. E9a n'impose pas de limite de temps. E9a-parkeerschijf vous oblige à indiquer l'heure d'arrivée via un disque de stationnement, permettant de contrôler la durée de stationnement."
+        "explanation": "Sans conditions particulières, la règle légale par défaut s’applique; la signalisation peut modifier les heures ou la durée."
       },
       "AR": {
-        "question": "ما الفرق بين علامة E9a وعلامة E9a-parkeerschijf؟",
+        "question": "ماذا يضيف رمز قرص الوقوف إلى E9a؟",
         "choices": [
           {
-            "text": "E9a تُجيز الوقوف الحر دون حد زمني؛ E9a-parkeerschijf تُلزم السائق بوضع قرص الوقوف عند وصوله",
+            "text": "مدة ركن محدودة ووجوب استخدام القرص صحيحًا وفق الشروط المبينة أو القانونية",
             "is_correct": true
           },
           {
-            "text": "E9a للسيارات الخاصة؛ E9a-parkeerschijf للشاحنات والحافلات",
+            "text": "حظرًا على جميع المركبات",
             "is_correct": false
           },
           {
-            "text": "E9a تسري نهاراً فقط؛ E9a-parkeerschijf تسري أيضاً ليلاً",
+            "text": "تخصيصًا للشاحنات فقط",
             "is_correct": false
           }
         ],
-        "explanation": "الفرق الوحيد هو اشتراط قرص الوقوف. E9a لا تفرض أي حد زمني. أما E9a-parkeerschijf فتُلزمك بتحديد وقت وصولك عبر قرص الوقوف، مما يُتيح مراقبة مدة الوقوف."
+        "explanation": "تسري القاعدة القانونية الافتراضية عند غياب شروط خاصة، وقد تغير الإشارات الساعات أو المدة."
       }
     }
   },
@@ -472,60 +493,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U parkeert bij een E9a-bord. Moet u verplicht een parkeerschijf plaatsen?",
+        "question": "Verplicht E9a zonder parkeerschijfsymbool op zichzelf tot het gebruik van een schijf?",
         "choices": [
           {
-            "text": "Nee, E9a verplicht geen parkeerschijf; u mag hier vrij parkeren zonder enige tijdsaanduiding",
+            "text": "Neen, maar een zonebord of andere toepasselijke signalisatie kan de schijf toch verplichten",
             "is_correct": true
           },
           {
-            "text": "Ja, in stedelijk gebied is een parkeerschijf altijd verplicht bij alle parkeerplaatsen",
+            "text": "Ja, bij elke E9a is een schijf verplicht",
             "is_correct": false
           }
         ],
-        "explanation": "Een parkeerschijf is enkel verplicht wanneer het bord E9a-parkeerschijf aanwezig is. Bord E9a zonder meer betekent vrij parkeren, zonder tijdslimiet en zonder schijfplicht. Het is een veelgemaakte vergissing beide borden te verwarren."
+        "explanation": "Beoordeel altijd de volledige signalisatie en niet alleen het dichtstbijzijnde bord."
       },
       "EN": {
-        "question": "You park at an E9a sign. Are you required to display a parking disc?",
+        "question": "Does E9a without a parking-disc symbol itself require a disc?",
         "choices": [
           {
-            "text": "No, E9a does not require a parking disc; you may park freely here without any time indication",
+            "text": "No, but a zone sign or other applicable signage may still require one",
             "is_correct": true
           },
           {
-            "text": "Yes, in an urban area a parking disc is always compulsory at all parking spaces",
+            "text": "Yes, every E9a always requires a disc",
             "is_correct": false
           }
         ],
-        "explanation": "A parking disc is only compulsory when the sign E9a-parkeerschijf is present. Sign E9a on its own means free parking, with no time limit and no disc requirement. Confusing the two signs is a common mistake."
+        "explanation": "Always assess the complete signage, not only the nearest sign."
       },
       "FR": {
-        "question": "Vous vous garez à un panneau E9a. Êtes-vous obligé de placer un disque de stationnement ?",
+        "question": "E9a sans symbole de disque impose-t-il lui-même un disque ?",
         "choices": [
           {
-            "text": "Non, E9a n'exige pas de disque de stationnement ; vous pouvez stationner librement ici sans aucune indication de temps",
+            "text": "Non, mais un panneau de zone ou une autre signalisation applicable peut l’imposer",
             "is_correct": true
           },
           {
-            "text": "Oui, en zone urbaine un disque de stationnement est toujours obligatoire à tous les emplacements de stationnement",
+            "text": "Oui, tout E9a exige toujours un disque",
             "is_correct": false
           }
         ],
-        "explanation": "Un disque de stationnement n'est obligatoire que lorsque le panneau E9a-parkeerschijf est présent. Le panneau E9a seul signifie stationnement libre, sans limite de temps et sans obligation de disque. Confondre les deux panneaux est une erreur fréquente."
+        "explanation": "Évaluez toujours l’ensemble de la signalisation, pas seulement le panneau le plus proche."
       },
       "AR": {
-        "question": "تقف بجانب علامة E9a. هل يجب عليك إلزامياً وضع قرص الوقوف؟",
+        "question": "هل تفرض E9a بلا رمز قرص استعمال القرص بذاتها؟",
         "choices": [
           {
-            "text": "لا، لا تشترط E9a قرص الوقوف؛ يمكنك الوقوف هنا بحرية دون أي إشارة للوقت",
+            "text": "لا، لكن قد تفرضه علامة منطقة أو إشارة أخرى سارية",
             "is_correct": true
           },
           {
-            "text": "نعم، في المناطق الحضرية قرص الوقوف إلزامي دائماً في جميع مواقف السيارات",
+            "text": "نعم، كل E9a تفرض القرص دائمًا",
             "is_correct": false
           }
         ],
-        "explanation": "قرص الوقوف إلزامي فقط عند وجود علامة E9a-parkeerschijf. علامة E9a وحدها تعني الوقوف الحر دون حد زمني واشتراط قرص. الخلط بين العلامتين خطأ شائع."
+        "explanation": "قيّم الإشارات كاملة لا أقرب علامة وحدها."
       }
     }
   },
@@ -537,60 +558,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U wilt uw auto meerdere dagen parkeren bij een E9a-bord zonder onderbord. Is dit wettelijk toegelaten?",
+        "question": "Garandeert E9a zonder onderbord dat u een gewone auto meerdere dagen mag laten staan?",
         "choices": [
           {
-            "text": "Ja, E9a zonder onderbord legt geen tijdslimiet op; parkeren voor meerdere dagen is wettelijk toegelaten",
+            "text": "Neen, E9a alleen geeft die garantie niet; algemene, zonale en plaatselijke duur- of gebruiksregels blijven gelden",
             "is_correct": true
           },
           {
-            "text": "Nee, in België geldt altijd een maximumparkeerduur van 24 uur in stedelijk gebied, ook bij E9a",
+            "text": "Ja, E9a maakt meerdaags parkeren altijd onbeperkt toegestaan",
             "is_correct": false
           }
         ],
-        "explanation": "E9a zonder onderbord stelt geen tijdslimiet in. Er bestaat in België geen algemene wettelijke maximumparkeerduur van 24 uur in stedelijk gebied. Alleen een onderbord, een betalend parkeerregime of een gemeentelijk reglement kan een tijdsbeperking opleggen."
+        "explanation": "Controleer de volledige regeling. E9a betekent “parkeren toegelaten”, niet “vrijgesteld van alle andere regels”."
       },
       "EN": {
-        "question": "You want to park your car for several days at an E9a sign with no supplementary plate. Is this legally permitted?",
+        "question": "Does E9a without a supplementary plate guarantee that an ordinary car may remain for several days?",
         "choices": [
           {
-            "text": "Yes, E9a without a supplementary plate imposes no time limit; parking for several days is legally permitted",
+            "text": "No, E9a alone gives no such guarantee; general, zone and local duration or use rules still apply",
             "is_correct": true
           },
           {
-            "text": "No, in Belgium a maximum parking duration of 24 hours always applies in urban areas, even at E9a",
+            "text": "Yes, E9a always makes multi-day parking unlimited",
             "is_correct": false
           }
         ],
-        "explanation": "E9a without a supplementary plate sets no time limit. There is no general legal maximum parking duration of 24 hours in urban areas in Belgium. Only a supplementary plate, a paid parking regime or a municipal regulation can impose a time restriction."
+        "explanation": "Check the complete arrangement. E9a means “parking permitted”, not “exempt from every other rule”."
       },
       "FR": {
-        "question": "Vous voulez garer votre voiture plusieurs jours à un panneau E9a sans panneau additionnel. Est-ce légalement autorisé ?",
+        "question": "E9a sans panneau additionnel garantit-il qu’une voiture peut rester plusieurs jours ?",
         "choices": [
           {
-            "text": "Oui, E9a sans panneau additionnel n'impose pas de limite de temps ; stationner plusieurs jours est légalement autorisé",
+            "text": "Non, E9a seul ne donne aucune garantie; les règles générales, zonales et locales de durée ou d’usage restent applicables",
             "is_correct": true
           },
           {
-            "text": "Non, en Belgique une durée maximale de stationnement de 24 heures s'applique toujours en zone urbaine, même à E9a",
+            "text": "Oui, E9a rend toujours le stationnement de plusieurs jours illimité",
             "is_correct": false
           }
         ],
-        "explanation": "E9a sans panneau additionnel ne fixe pas de limite de temps. Il n'existe pas en Belgique de durée maximale légale générale de 24 heures en zone urbaine. Seul un panneau additionnel, un régime de stationnement payant ou un règlement communal peut imposer une limite de temps."
+        "explanation": "Vérifiez toute la réglementation. E9a signifie « stationnement autorisé », pas « exempt de toute autre règle »."
       },
       "AR": {
-        "question": "تريد وقوف سيارتك لعدة أيام بجانب علامة E9a دون لوحة إضافية. هل هذا مسموح به قانوناً؟",
+        "question": "هل تضمن E9a بلا لوحة تكميلية بقاء سيارة عادية عدة أيام؟",
         "choices": [
           {
-            "text": "نعم، E9a دون لوحة إضافية لا تفرض أي حد زمني؛ الوقوف لعدة أيام مسموح به قانوناً",
+            "text": "لا، لا تعطي E9a وحدها هذا الضمان؛ تبقى قواعد المدة أو الاستعمال العامة وقواعد المنطقة والبلدية سارية",
             "is_correct": true
           },
           {
-            "text": "لا، في بلجيكا تسري دائماً مدة وقوف قصوى مدتها 24 ساعة في المناطق الحضرية حتى عند E9a",
+            "text": "نعم، تجعل E9a الركن لعدة أيام غير محدود دائمًا",
             "is_correct": false
           }
         ],
-        "explanation": "لا تحدد E9a دون لوحة إضافية أي حد زمني. لا يوجد في بلجيكا حد زمني قانوني عام للوقوف مدته 24 ساعة في المناطق الحضرية. فقط لوحة إضافية أو نظام وقوف مدفوع أو نظام بلدي يمكنه فرض قيد زمني."
+        "explanation": "تحقق من التنظيم كاملًا. تعني E9a «الركن مسموح»، لا «الإعفاء من كل قاعدة أخرى»."
       }
     }
   }

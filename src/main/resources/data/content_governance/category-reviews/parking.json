@@ -1,0 +1,2865 @@
+{
+  "schema_version": 2,
+  "framework_version": 1,
+  "category": "PARKING",
+  "slug": "parking",
+  "canonical_content_root": "classpath:data/signs_import",
+  "canonical_ownership": "Each sign directory's sign.json is the sole runtime source for sign text.",
+  "review_date": "2026-07-19",
+  "review_status": "APPROVED",
+  "reviewed_languages": [
+    "NL",
+    "EN",
+    "FR",
+    "AR"
+  ],
+  "counts": {
+    "signs": 15,
+    "questions": 120,
+    "exams": 15,
+    "lessons": 4
+  },
+  "risk_level": "HIGH",
+  "quality_metrics": {
+    "signs_reviewed": 15,
+    "questions_reviewed": 120,
+    "lessons_reviewed": 4,
+    "legal_sources_linked": 4,
+    "terminology_standardized": 16,
+    "cross_language_consistency": "PASSED",
+    "future_law_items": 1,
+    "human_review_required": 0,
+    "risk_level": "HIGH"
+  },
+  "validation_rules": {
+    "questions_per_sign": 8,
+    "passing_score": 6,
+    "difficulty_distribution": {
+      "EASY": 3,
+      "MEDIUM": 3,
+      "HARD": 2
+    },
+    "default_choice_count": 3,
+    "hard_choice_count": 2,
+    "binary_choice_count": 2,
+    "binary_question_types": [
+      "IS_IT_ALLOWED"
+    ],
+    "correct_choices_per_language": 1
+  },
+  "terminology_ids": [
+    "PARKING_REGULATION_SIGN",
+    "STOPPED_VEHICLE",
+    "PARKED_VEHICLE",
+    "NO_PARKING",
+    "NO_STOPPING_AND_PARKING",
+    "HALF_MONTHLY_ALTERNATING_PARKING",
+    "PARKING_DISC",
+    "PARKING_PERMITTED",
+    "RESERVED_PARKING",
+    "ELECTRIC_OR_HYBRID_ELECTRIC_VEHICLE",
+    "DISABLED_PARKING_CARD",
+    "VERGE",
+    "PAVEMENT",
+    "CARRIAGEWAY",
+    "E9J_ALTERNATING_PARKING",
+    "SUPPLEMENTARY_PLATE"
+  ],
+  "future_law_items": [
+    "BE-FPS-ROAD-CODE-2027"
+  ],
+  "reports": {
+    "content_review": "docs/content-governance/category-reviews/parking/content-review-report.md",
+    "cross_file_consistency": "docs/content-governance/category-reviews/parking/cross-file-consistency-report.json",
+    "ambiguous_questions": "docs/content-governance/category-reviews/parking/ambiguous-questions-report.json",
+    "human_approval": "docs/content-governance/category-reviews/parking/corrections-requiring-human-approval.json",
+    "last_reviewed": "docs/content-governance/category-reviews/parking/last-reviewed.json"
+  },
+  "content_assertions": [
+    {
+      "type": "FORBIDDEN_FRAGMENT",
+      "scope": "REVIEWED_CATEGORY_CONTENT",
+      "fragments": [
+        "less than 60 seconds",
+        "korter dan 60 seconden",
+        "stay with your vehicle",
+        "zolang je bij je voertuig blijft",
+        "free parking with no time limit",
+        "stationnement libre sans limite",
+        "photo and expiry date",
+        "no fixed 1.5-metre",
+        "geen vaste vrije breedte",
+        "cyclists: 07:00–09:00",
+        "cars: 09:00–18:00"
+      ]
+    },
+    {
+      "type": "CORRECT_CHOICE_CONTAINS",
+      "sign_code": "E1",
+      "question_id": "E1_Q08",
+      "language": "EN",
+      "expected": "time genuinely needed"
+    },
+    {
+      "type": "CORRECT_CHOICE_CONTAINS",
+      "sign_code": "E9a",
+      "question_id": "E9a_Q08",
+      "language": "EN",
+      "expected": "No"
+    },
+    {
+      "type": "CORRECT_CHOICE_CONTAINS",
+      "sign_code": "E9a-elektrisch",
+      "question_id": "E9a-elektrisch_Q04",
+      "language": "EN",
+      "expected": "Connect"
+    },
+    {
+      "type": "CORRECT_CHOICE_CONTAINS",
+      "sign_code": "E9a-mindervaliden",
+      "question_id": "E9a-mindervaliden_Q02",
+      "language": "EN",
+      "expected": "wheelchair symbol"
+    },
+    {
+      "type": "CORRECT_CHOICE_CONTAINS",
+      "sign_code": "E9g",
+      "question_id": "E9g_Q07",
+      "language": "EN",
+      "expected": "3 metres"
+    },
+    {
+      "type": "CORRECT_CHOICE_CONTAINS",
+      "sign_code": "E9j",
+      "question_id": "E9j_Q04",
+      "language": "EN",
+      "expected": "Bicycles"
+    },
+    {
+      "type": "CORRECT_CHOICE_CONTAINS",
+      "sign_code": "E9j",
+      "question_id": "E9j_Q08",
+      "language": "EN",
+      "expected": "No"
+    },
+    {
+      "type": "FILE_CONTAINS_ALL",
+      "path": "data/lessons_content.json",
+      "fragments": [
+        "Purpose and necessary duration are decisive",
+        "Leave at least 3 metres of free passage",
+        "Use hazard lights only as a warning, not as permission"
+      ]
+    }
+  ],
+  "signs": {
+    "E1": {
+      "canonical_path": "src/main/resources/data/signs_import/E1/sign.json",
+      "source_ids": [
+        "BE-KB1975-PARKING-CURRENT",
+        "BE-MB1976-PARKING-PLACEMENT",
+        "BE-FPS-ROAD-CODE-2027"
+      ],
+      "last_reviewed": "2026-07-19",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "questions": {
+        "E1_Q01": {
+          "canonical_path": "src/main/resources/data/signs_import/E1/questions.json#/0",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E1_Q02": {
+          "canonical_path": "src/main/resources/data/signs_import/E1/questions.json#/1",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E1_Q03": {
+          "canonical_path": "src/main/resources/data/signs_import/E1/questions.json#/2",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027",
+            "BE-MB1976-PARKING-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E1_Q04": {
+          "canonical_path": "src/main/resources/data/signs_import/E1/questions.json#/3",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E1_Q05": {
+          "canonical_path": "src/main/resources/data/signs_import/E1/questions.json#/4",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027",
+            "BE-MB1976-PARKING-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E1_Q06": {
+          "canonical_path": "src/main/resources/data/signs_import/E1/questions.json#/5",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E1_Q07": {
+          "canonical_path": "src/main/resources/data/signs_import/E1/questions.json#/6",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E1_Q08": {
+          "canonical_path": "src/main/resources/data/signs_import/E1/questions.json#/7",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        }
+      },
+      "exam": {
+        "canonical_path": "src/main/resources/data/signs_import/E1/exams.json",
+        "source_ids": [
+          "BE-KB1975-PARKING-CURRENT",
+          "BE-FPS-ROAD-CODE-2027"
+        ],
+        "last_reviewed": "2026-07-19",
+        "review_reason": "Reviewed as an assessment manifest that references the eight governed questions for this sign.",
+        "original_review_language": "NL",
+        "reviewed_languages": [
+          "NL",
+          "EN",
+          "FR",
+          "AR"
+        ],
+        "status": "APPROVED"
+      }
+    },
+    "E3": {
+      "canonical_path": "src/main/resources/data/signs_import/E3/sign.json",
+      "source_ids": [
+        "BE-KB1975-PARKING-CURRENT",
+        "BE-MB1976-PARKING-PLACEMENT",
+        "BE-FPS-ROAD-CODE-2027"
+      ],
+      "last_reviewed": "2026-07-19",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "questions": {
+        "E3_Q01": {
+          "canonical_path": "src/main/resources/data/signs_import/E3/questions.json#/0",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E3_Q02": {
+          "canonical_path": "src/main/resources/data/signs_import/E3/questions.json#/1",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E3_Q03": {
+          "canonical_path": "src/main/resources/data/signs_import/E3/questions.json#/2",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E3_Q04": {
+          "canonical_path": "src/main/resources/data/signs_import/E3/questions.json#/3",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E3_Q05": {
+          "canonical_path": "src/main/resources/data/signs_import/E3/questions.json#/4",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027",
+            "BE-MB1976-PARKING-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E3_Q06": {
+          "canonical_path": "src/main/resources/data/signs_import/E3/questions.json#/5",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E3_Q07": {
+          "canonical_path": "src/main/resources/data/signs_import/E3/questions.json#/6",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E3_Q08": {
+          "canonical_path": "src/main/resources/data/signs_import/E3/questions.json#/7",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        }
+      },
+      "exam": {
+        "canonical_path": "src/main/resources/data/signs_import/E3/exams.json",
+        "source_ids": [
+          "BE-KB1975-PARKING-CURRENT",
+          "BE-FPS-ROAD-CODE-2027"
+        ],
+        "last_reviewed": "2026-07-19",
+        "review_reason": "Reviewed as an assessment manifest that references the eight governed questions for this sign.",
+        "original_review_language": "NL",
+        "reviewed_languages": [
+          "NL",
+          "EN",
+          "FR",
+          "AR"
+        ],
+        "status": "APPROVED"
+      }
+    },
+    "E5": {
+      "canonical_path": "src/main/resources/data/signs_import/E5/sign.json",
+      "source_ids": [
+        "BE-KB1975-PARKING-CURRENT",
+        "BE-MB1976-PARKING-PLACEMENT",
+        "BE-FPS-ROAD-CODE-2027"
+      ],
+      "last_reviewed": "2026-07-19",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "questions": {
+        "E5_Q01": {
+          "canonical_path": "src/main/resources/data/signs_import/E5/questions.json#/0",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E5_Q02": {
+          "canonical_path": "src/main/resources/data/signs_import/E5/questions.json#/1",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E5_Q03": {
+          "canonical_path": "src/main/resources/data/signs_import/E5/questions.json#/2",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E5_Q04": {
+          "canonical_path": "src/main/resources/data/signs_import/E5/questions.json#/3",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E5_Q05": {
+          "canonical_path": "src/main/resources/data/signs_import/E5/questions.json#/4",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E5_Q06": {
+          "canonical_path": "src/main/resources/data/signs_import/E5/questions.json#/5",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E5_Q07": {
+          "canonical_path": "src/main/resources/data/signs_import/E5/questions.json#/6",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E5_Q08": {
+          "canonical_path": "src/main/resources/data/signs_import/E5/questions.json#/7",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        }
+      },
+      "exam": {
+        "canonical_path": "src/main/resources/data/signs_import/E5/exams.json",
+        "source_ids": [
+          "BE-KB1975-PARKING-CURRENT",
+          "BE-FPS-ROAD-CODE-2027"
+        ],
+        "last_reviewed": "2026-07-19",
+        "review_reason": "Reviewed as an assessment manifest that references the eight governed questions for this sign.",
+        "original_review_language": "NL",
+        "reviewed_languages": [
+          "NL",
+          "EN",
+          "FR",
+          "AR"
+        ],
+        "status": "APPROVED"
+      }
+    },
+    "E7": {
+      "canonical_path": "src/main/resources/data/signs_import/E7/sign.json",
+      "source_ids": [
+        "BE-KB1975-PARKING-CURRENT",
+        "BE-MB1976-PARKING-PLACEMENT",
+        "BE-FPS-ROAD-CODE-2027"
+      ],
+      "last_reviewed": "2026-07-19",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "questions": {
+        "E7_Q01": {
+          "canonical_path": "src/main/resources/data/signs_import/E7/questions.json#/0",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E7_Q02": {
+          "canonical_path": "src/main/resources/data/signs_import/E7/questions.json#/1",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E7_Q03": {
+          "canonical_path": "src/main/resources/data/signs_import/E7/questions.json#/2",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E7_Q04": {
+          "canonical_path": "src/main/resources/data/signs_import/E7/questions.json#/3",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E7_Q05": {
+          "canonical_path": "src/main/resources/data/signs_import/E7/questions.json#/4",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E7_Q06": {
+          "canonical_path": "src/main/resources/data/signs_import/E7/questions.json#/5",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E7_Q07": {
+          "canonical_path": "src/main/resources/data/signs_import/E7/questions.json#/6",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E7_Q08": {
+          "canonical_path": "src/main/resources/data/signs_import/E7/questions.json#/7",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        }
+      },
+      "exam": {
+        "canonical_path": "src/main/resources/data/signs_import/E7/exams.json",
+        "source_ids": [
+          "BE-KB1975-PARKING-CURRENT",
+          "BE-FPS-ROAD-CODE-2027"
+        ],
+        "last_reviewed": "2026-07-19",
+        "review_reason": "Reviewed as an assessment manifest that references the eight governed questions for this sign.",
+        "original_review_language": "NL",
+        "reviewed_languages": [
+          "NL",
+          "EN",
+          "FR",
+          "AR"
+        ],
+        "status": "APPROVED"
+      }
+    },
+    "E9a": {
+      "canonical_path": "src/main/resources/data/signs_import/E9a/sign.json",
+      "source_ids": [
+        "BE-KB1975-PARKING-CURRENT",
+        "BE-MB1976-PARKING-PLACEMENT",
+        "BE-FPS-ROAD-CODE-2027"
+      ],
+      "last_reviewed": "2026-07-19",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "questions": {
+        "E9a_Q01": {
+          "canonical_path": "src/main/resources/data/signs_import/E9a/questions.json#/0",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9a_Q02": {
+          "canonical_path": "src/main/resources/data/signs_import/E9a/questions.json#/1",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9a_Q03": {
+          "canonical_path": "src/main/resources/data/signs_import/E9a/questions.json#/2",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9a_Q04": {
+          "canonical_path": "src/main/resources/data/signs_import/E9a/questions.json#/3",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9a_Q05": {
+          "canonical_path": "src/main/resources/data/signs_import/E9a/questions.json#/4",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9a_Q06": {
+          "canonical_path": "src/main/resources/data/signs_import/E9a/questions.json#/5",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9a_Q07": {
+          "canonical_path": "src/main/resources/data/signs_import/E9a/questions.json#/6",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9a_Q08": {
+          "canonical_path": "src/main/resources/data/signs_import/E9a/questions.json#/7",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        }
+      },
+      "exam": {
+        "canonical_path": "src/main/resources/data/signs_import/E9a/exams.json",
+        "source_ids": [
+          "BE-KB1975-PARKING-CURRENT",
+          "BE-FPS-ROAD-CODE-2027"
+        ],
+        "last_reviewed": "2026-07-19",
+        "review_reason": "Reviewed as an assessment manifest that references the eight governed questions for this sign.",
+        "original_review_language": "NL",
+        "reviewed_languages": [
+          "NL",
+          "EN",
+          "FR",
+          "AR"
+        ],
+        "status": "APPROVED"
+      }
+    },
+    "E9a-elektrisch": {
+      "canonical_path": "src/main/resources/data/signs_import/E9a-elektrisch/sign.json",
+      "source_ids": [
+        "BE-KB1975-PARKING-CURRENT",
+        "BE-MB1976-PARKING-PLACEMENT",
+        "BE-FPS-ROAD-CODE-2027"
+      ],
+      "last_reviewed": "2026-07-19",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "questions": {
+        "E9a-elektrisch_Q01": {
+          "canonical_path": "src/main/resources/data/signs_import/E9a-elektrisch/questions.json#/0",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9a-elektrisch_Q02": {
+          "canonical_path": "src/main/resources/data/signs_import/E9a-elektrisch/questions.json#/1",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9a-elektrisch_Q03": {
+          "canonical_path": "src/main/resources/data/signs_import/E9a-elektrisch/questions.json#/2",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9a-elektrisch_Q04": {
+          "canonical_path": "src/main/resources/data/signs_import/E9a-elektrisch/questions.json#/3",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9a-elektrisch_Q05": {
+          "canonical_path": "src/main/resources/data/signs_import/E9a-elektrisch/questions.json#/4",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9a-elektrisch_Q06": {
+          "canonical_path": "src/main/resources/data/signs_import/E9a-elektrisch/questions.json#/5",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9a-elektrisch_Q07": {
+          "canonical_path": "src/main/resources/data/signs_import/E9a-elektrisch/questions.json#/6",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9a-elektrisch_Q08": {
+          "canonical_path": "src/main/resources/data/signs_import/E9a-elektrisch/questions.json#/7",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        }
+      },
+      "exam": {
+        "canonical_path": "src/main/resources/data/signs_import/E9a-elektrisch/exams.json",
+        "source_ids": [
+          "BE-KB1975-PARKING-CURRENT",
+          "BE-FPS-ROAD-CODE-2027"
+        ],
+        "last_reviewed": "2026-07-19",
+        "review_reason": "Reviewed as an assessment manifest that references the eight governed questions for this sign.",
+        "original_review_language": "NL",
+        "reviewed_languages": [
+          "NL",
+          "EN",
+          "FR",
+          "AR"
+        ],
+        "status": "APPROVED"
+      }
+    },
+    "E9a-mindervaliden": {
+      "canonical_path": "src/main/resources/data/signs_import/E9a-mindervaliden/sign.json",
+      "source_ids": [
+        "BE-KB1975-PARKING-CURRENT",
+        "BE-MB1976-PARKING-PLACEMENT",
+        "BE-FPS-ROAD-CODE-2027",
+        "BE-FPS-DISABILITY-PARKING-CARD-2026"
+      ],
+      "last_reviewed": "2026-07-19",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "questions": {
+        "E9a-mindervaliden_Q01": {
+          "canonical_path": "src/main/resources/data/signs_import/E9a-mindervaliden/questions.json#/0",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027",
+            "BE-FPS-DISABILITY-PARKING-CARD-2026"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9a-mindervaliden_Q02": {
+          "canonical_path": "src/main/resources/data/signs_import/E9a-mindervaliden/questions.json#/1",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027",
+            "BE-FPS-DISABILITY-PARKING-CARD-2026"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9a-mindervaliden_Q03": {
+          "canonical_path": "src/main/resources/data/signs_import/E9a-mindervaliden/questions.json#/2",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027",
+            "BE-FPS-DISABILITY-PARKING-CARD-2026"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9a-mindervaliden_Q04": {
+          "canonical_path": "src/main/resources/data/signs_import/E9a-mindervaliden/questions.json#/3",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027",
+            "BE-FPS-DISABILITY-PARKING-CARD-2026"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9a-mindervaliden_Q05": {
+          "canonical_path": "src/main/resources/data/signs_import/E9a-mindervaliden/questions.json#/4",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027",
+            "BE-FPS-DISABILITY-PARKING-CARD-2026"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9a-mindervaliden_Q06": {
+          "canonical_path": "src/main/resources/data/signs_import/E9a-mindervaliden/questions.json#/5",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027",
+            "BE-FPS-DISABILITY-PARKING-CARD-2026"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9a-mindervaliden_Q07": {
+          "canonical_path": "src/main/resources/data/signs_import/E9a-mindervaliden/questions.json#/6",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027",
+            "BE-FPS-DISABILITY-PARKING-CARD-2026"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9a-mindervaliden_Q08": {
+          "canonical_path": "src/main/resources/data/signs_import/E9a-mindervaliden/questions.json#/7",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027",
+            "BE-FPS-DISABILITY-PARKING-CARD-2026"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        }
+      },
+      "exam": {
+        "canonical_path": "src/main/resources/data/signs_import/E9a-mindervaliden/exams.json",
+        "source_ids": [
+          "BE-KB1975-PARKING-CURRENT",
+          "BE-FPS-ROAD-CODE-2027"
+        ],
+        "last_reviewed": "2026-07-19",
+        "review_reason": "Reviewed as an assessment manifest that references the eight governed questions for this sign.",
+        "original_review_language": "NL",
+        "reviewed_languages": [
+          "NL",
+          "EN",
+          "FR",
+          "AR"
+        ],
+        "status": "APPROVED"
+      }
+    },
+    "E9a-parkeerschijf": {
+      "canonical_path": "src/main/resources/data/signs_import/E9a-parkeerschijf/sign.json",
+      "source_ids": [
+        "BE-KB1975-PARKING-CURRENT",
+        "BE-MB1976-PARKING-PLACEMENT",
+        "BE-FPS-ROAD-CODE-2027"
+      ],
+      "last_reviewed": "2026-07-19",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "questions": {
+        "E9a-parkeerschijf_Q01": {
+          "canonical_path": "src/main/resources/data/signs_import/E9a-parkeerschijf/questions.json#/0",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9a-parkeerschijf_Q02": {
+          "canonical_path": "src/main/resources/data/signs_import/E9a-parkeerschijf/questions.json#/1",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9a-parkeerschijf_Q03": {
+          "canonical_path": "src/main/resources/data/signs_import/E9a-parkeerschijf/questions.json#/2",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9a-parkeerschijf_Q04": {
+          "canonical_path": "src/main/resources/data/signs_import/E9a-parkeerschijf/questions.json#/3",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9a-parkeerschijf_Q05": {
+          "canonical_path": "src/main/resources/data/signs_import/E9a-parkeerschijf/questions.json#/4",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9a-parkeerschijf_Q06": {
+          "canonical_path": "src/main/resources/data/signs_import/E9a-parkeerschijf/questions.json#/5",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9a-parkeerschijf_Q07": {
+          "canonical_path": "src/main/resources/data/signs_import/E9a-parkeerschijf/questions.json#/6",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9a-parkeerschijf_Q08": {
+          "canonical_path": "src/main/resources/data/signs_import/E9a-parkeerschijf/questions.json#/7",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        }
+      },
+      "exam": {
+        "canonical_path": "src/main/resources/data/signs_import/E9a-parkeerschijf/exams.json",
+        "source_ids": [
+          "BE-KB1975-PARKING-CURRENT",
+          "BE-FPS-ROAD-CODE-2027"
+        ],
+        "last_reviewed": "2026-07-19",
+        "review_reason": "Reviewed as an assessment manifest that references the eight governed questions for this sign.",
+        "original_review_language": "NL",
+        "reviewed_languages": [
+          "NL",
+          "EN",
+          "FR",
+          "AR"
+        ],
+        "status": "APPROVED"
+      }
+    },
+    "E9b": {
+      "canonical_path": "src/main/resources/data/signs_import/E9b/sign.json",
+      "source_ids": [
+        "BE-KB1975-PARKING-CURRENT",
+        "BE-MB1976-PARKING-PLACEMENT",
+        "BE-FPS-ROAD-CODE-2027"
+      ],
+      "last_reviewed": "2026-07-19",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "questions": {
+        "E9b_Q01": {
+          "canonical_path": "src/main/resources/data/signs_import/E9b/questions.json#/0",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9b_Q02": {
+          "canonical_path": "src/main/resources/data/signs_import/E9b/questions.json#/1",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9b_Q03": {
+          "canonical_path": "src/main/resources/data/signs_import/E9b/questions.json#/2",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9b_Q04": {
+          "canonical_path": "src/main/resources/data/signs_import/E9b/questions.json#/3",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9b_Q05": {
+          "canonical_path": "src/main/resources/data/signs_import/E9b/questions.json#/4",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9b_Q06": {
+          "canonical_path": "src/main/resources/data/signs_import/E9b/questions.json#/5",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9b_Q07": {
+          "canonical_path": "src/main/resources/data/signs_import/E9b/questions.json#/6",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9b_Q08": {
+          "canonical_path": "src/main/resources/data/signs_import/E9b/questions.json#/7",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        }
+      },
+      "exam": {
+        "canonical_path": "src/main/resources/data/signs_import/E9b/exams.json",
+        "source_ids": [
+          "BE-KB1975-PARKING-CURRENT",
+          "BE-FPS-ROAD-CODE-2027"
+        ],
+        "last_reviewed": "2026-07-19",
+        "review_reason": "Reviewed as an assessment manifest that references the eight governed questions for this sign.",
+        "original_review_language": "NL",
+        "reviewed_languages": [
+          "NL",
+          "EN",
+          "FR",
+          "AR"
+        ],
+        "status": "APPROVED"
+      }
+    },
+    "E9c": {
+      "canonical_path": "src/main/resources/data/signs_import/E9c/sign.json",
+      "source_ids": [
+        "BE-KB1975-PARKING-CURRENT",
+        "BE-MB1976-PARKING-PLACEMENT",
+        "BE-FPS-ROAD-CODE-2027"
+      ],
+      "last_reviewed": "2026-07-19",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "questions": {
+        "E9c_Q01": {
+          "canonical_path": "src/main/resources/data/signs_import/E9c/questions.json#/0",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9c_Q02": {
+          "canonical_path": "src/main/resources/data/signs_import/E9c/questions.json#/1",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9c_Q03": {
+          "canonical_path": "src/main/resources/data/signs_import/E9c/questions.json#/2",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9c_Q04": {
+          "canonical_path": "src/main/resources/data/signs_import/E9c/questions.json#/3",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9c_Q05": {
+          "canonical_path": "src/main/resources/data/signs_import/E9c/questions.json#/4",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9c_Q06": {
+          "canonical_path": "src/main/resources/data/signs_import/E9c/questions.json#/5",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9c_Q07": {
+          "canonical_path": "src/main/resources/data/signs_import/E9c/questions.json#/6",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9c_Q08": {
+          "canonical_path": "src/main/resources/data/signs_import/E9c/questions.json#/7",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        }
+      },
+      "exam": {
+        "canonical_path": "src/main/resources/data/signs_import/E9c/exams.json",
+        "source_ids": [
+          "BE-KB1975-PARKING-CURRENT",
+          "BE-FPS-ROAD-CODE-2027"
+        ],
+        "last_reviewed": "2026-07-19",
+        "review_reason": "Reviewed as an assessment manifest that references the eight governed questions for this sign.",
+        "original_review_language": "NL",
+        "reviewed_languages": [
+          "NL",
+          "EN",
+          "FR",
+          "AR"
+        ],
+        "status": "APPROVED"
+      }
+    },
+    "E9d": {
+      "canonical_path": "src/main/resources/data/signs_import/E9d/sign.json",
+      "source_ids": [
+        "BE-KB1975-PARKING-CURRENT",
+        "BE-MB1976-PARKING-PLACEMENT",
+        "BE-FPS-ROAD-CODE-2027"
+      ],
+      "last_reviewed": "2026-07-19",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "questions": {
+        "E9d_Q01": {
+          "canonical_path": "src/main/resources/data/signs_import/E9d/questions.json#/0",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9d_Q02": {
+          "canonical_path": "src/main/resources/data/signs_import/E9d/questions.json#/1",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9d_Q03": {
+          "canonical_path": "src/main/resources/data/signs_import/E9d/questions.json#/2",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9d_Q04": {
+          "canonical_path": "src/main/resources/data/signs_import/E9d/questions.json#/3",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9d_Q05": {
+          "canonical_path": "src/main/resources/data/signs_import/E9d/questions.json#/4",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9d_Q06": {
+          "canonical_path": "src/main/resources/data/signs_import/E9d/questions.json#/5",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9d_Q07": {
+          "canonical_path": "src/main/resources/data/signs_import/E9d/questions.json#/6",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9d_Q08": {
+          "canonical_path": "src/main/resources/data/signs_import/E9d/questions.json#/7",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        }
+      },
+      "exam": {
+        "canonical_path": "src/main/resources/data/signs_import/E9d/exams.json",
+        "source_ids": [
+          "BE-KB1975-PARKING-CURRENT",
+          "BE-FPS-ROAD-CODE-2027"
+        ],
+        "last_reviewed": "2026-07-19",
+        "review_reason": "Reviewed as an assessment manifest that references the eight governed questions for this sign.",
+        "original_review_language": "NL",
+        "reviewed_languages": [
+          "NL",
+          "EN",
+          "FR",
+          "AR"
+        ],
+        "status": "APPROVED"
+      }
+    },
+    "E9e": {
+      "canonical_path": "src/main/resources/data/signs_import/E9e/sign.json",
+      "source_ids": [
+        "BE-KB1975-PARKING-CURRENT",
+        "BE-MB1976-PARKING-PLACEMENT",
+        "BE-FPS-ROAD-CODE-2027"
+      ],
+      "last_reviewed": "2026-07-19",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "questions": {
+        "E9e_Q01": {
+          "canonical_path": "src/main/resources/data/signs_import/E9e/questions.json#/0",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9e_Q02": {
+          "canonical_path": "src/main/resources/data/signs_import/E9e/questions.json#/1",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9e_Q03": {
+          "canonical_path": "src/main/resources/data/signs_import/E9e/questions.json#/2",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9e_Q04": {
+          "canonical_path": "src/main/resources/data/signs_import/E9e/questions.json#/3",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9e_Q05": {
+          "canonical_path": "src/main/resources/data/signs_import/E9e/questions.json#/4",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027",
+            "BE-MB1976-PARKING-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9e_Q06": {
+          "canonical_path": "src/main/resources/data/signs_import/E9e/questions.json#/5",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9e_Q07": {
+          "canonical_path": "src/main/resources/data/signs_import/E9e/questions.json#/6",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027",
+            "BE-MB1976-PARKING-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9e_Q08": {
+          "canonical_path": "src/main/resources/data/signs_import/E9e/questions.json#/7",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        }
+      },
+      "exam": {
+        "canonical_path": "src/main/resources/data/signs_import/E9e/exams.json",
+        "source_ids": [
+          "BE-KB1975-PARKING-CURRENT",
+          "BE-FPS-ROAD-CODE-2027"
+        ],
+        "last_reviewed": "2026-07-19",
+        "review_reason": "Reviewed as an assessment manifest that references the eight governed questions for this sign.",
+        "original_review_language": "NL",
+        "reviewed_languages": [
+          "NL",
+          "EN",
+          "FR",
+          "AR"
+        ],
+        "status": "APPROVED"
+      }
+    },
+    "E9f": {
+      "canonical_path": "src/main/resources/data/signs_import/E9f/sign.json",
+      "source_ids": [
+        "BE-KB1975-PARKING-CURRENT",
+        "BE-MB1976-PARKING-PLACEMENT",
+        "BE-FPS-ROAD-CODE-2027"
+      ],
+      "last_reviewed": "2026-07-19",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "questions": {
+        "E9f_Q01": {
+          "canonical_path": "src/main/resources/data/signs_import/E9f/questions.json#/0",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9f_Q02": {
+          "canonical_path": "src/main/resources/data/signs_import/E9f/questions.json#/1",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9f_Q03": {
+          "canonical_path": "src/main/resources/data/signs_import/E9f/questions.json#/2",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9f_Q04": {
+          "canonical_path": "src/main/resources/data/signs_import/E9f/questions.json#/3",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9f_Q05": {
+          "canonical_path": "src/main/resources/data/signs_import/E9f/questions.json#/4",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027",
+            "BE-MB1976-PARKING-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9f_Q06": {
+          "canonical_path": "src/main/resources/data/signs_import/E9f/questions.json#/5",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9f_Q07": {
+          "canonical_path": "src/main/resources/data/signs_import/E9f/questions.json#/6",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9f_Q08": {
+          "canonical_path": "src/main/resources/data/signs_import/E9f/questions.json#/7",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        }
+      },
+      "exam": {
+        "canonical_path": "src/main/resources/data/signs_import/E9f/exams.json",
+        "source_ids": [
+          "BE-KB1975-PARKING-CURRENT",
+          "BE-FPS-ROAD-CODE-2027"
+        ],
+        "last_reviewed": "2026-07-19",
+        "review_reason": "Reviewed as an assessment manifest that references the eight governed questions for this sign.",
+        "original_review_language": "NL",
+        "reviewed_languages": [
+          "NL",
+          "EN",
+          "FR",
+          "AR"
+        ],
+        "status": "APPROVED"
+      }
+    },
+    "E9g": {
+      "canonical_path": "src/main/resources/data/signs_import/E9g/sign.json",
+      "source_ids": [
+        "BE-KB1975-PARKING-CURRENT",
+        "BE-MB1976-PARKING-PLACEMENT",
+        "BE-FPS-ROAD-CODE-2027"
+      ],
+      "last_reviewed": "2026-07-19",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "questions": {
+        "E9g_Q01": {
+          "canonical_path": "src/main/resources/data/signs_import/E9g/questions.json#/0",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9g_Q02": {
+          "canonical_path": "src/main/resources/data/signs_import/E9g/questions.json#/1",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9g_Q03": {
+          "canonical_path": "src/main/resources/data/signs_import/E9g/questions.json#/2",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9g_Q04": {
+          "canonical_path": "src/main/resources/data/signs_import/E9g/questions.json#/3",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9g_Q05": {
+          "canonical_path": "src/main/resources/data/signs_import/E9g/questions.json#/4",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027",
+            "BE-MB1976-PARKING-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9g_Q06": {
+          "canonical_path": "src/main/resources/data/signs_import/E9g/questions.json#/5",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9g_Q07": {
+          "canonical_path": "src/main/resources/data/signs_import/E9g/questions.json#/6",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027",
+            "BE-MB1976-PARKING-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9g_Q08": {
+          "canonical_path": "src/main/resources/data/signs_import/E9g/questions.json#/7",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        }
+      },
+      "exam": {
+        "canonical_path": "src/main/resources/data/signs_import/E9g/exams.json",
+        "source_ids": [
+          "BE-KB1975-PARKING-CURRENT",
+          "BE-FPS-ROAD-CODE-2027"
+        ],
+        "last_reviewed": "2026-07-19",
+        "review_reason": "Reviewed as an assessment manifest that references the eight governed questions for this sign.",
+        "original_review_language": "NL",
+        "reviewed_languages": [
+          "NL",
+          "EN",
+          "FR",
+          "AR"
+        ],
+        "status": "APPROVED"
+      }
+    },
+    "E9j": {
+      "canonical_path": "src/main/resources/data/signs_import/E9j/sign.json",
+      "source_ids": [
+        "BE-KB1975-PARKING-CURRENT",
+        "BE-MB1976-PARKING-PLACEMENT",
+        "BE-FPS-ROAD-CODE-2027"
+      ],
+      "last_reviewed": "2026-07-19",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "questions": {
+        "E9j_Q01": {
+          "canonical_path": "src/main/resources/data/signs_import/E9j/questions.json#/0",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9j_Q02": {
+          "canonical_path": "src/main/resources/data/signs_import/E9j/questions.json#/1",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9j_Q03": {
+          "canonical_path": "src/main/resources/data/signs_import/E9j/questions.json#/2",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9j_Q04": {
+          "canonical_path": "src/main/resources/data/signs_import/E9j/questions.json#/3",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9j_Q05": {
+          "canonical_path": "src/main/resources/data/signs_import/E9j/questions.json#/4",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9j_Q06": {
+          "canonical_path": "src/main/resources/data/signs_import/E9j/questions.json#/5",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9j_Q07": {
+          "canonical_path": "src/main/resources/data/signs_import/E9j/questions.json#/6",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "E9j_Q08": {
+          "canonical_path": "src/main/resources/data/signs_import/E9j/questions.json#/7",
+          "source_ids": [
+            "BE-KB1975-PARKING-CURRENT",
+            "BE-FPS-ROAD-CODE-2027"
+          ],
+          "last_reviewed": "2026-07-19",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        }
+      },
+      "exam": {
+        "canonical_path": "src/main/resources/data/signs_import/E9j/exams.json",
+        "source_ids": [
+          "BE-KB1975-PARKING-CURRENT",
+          "BE-FPS-ROAD-CODE-2027"
+        ],
+        "last_reviewed": "2026-07-19",
+        "review_reason": "Reviewed as an assessment manifest that references the eight governed questions for this sign.",
+        "original_review_language": "NL",
+        "reviewed_languages": [
+          "NL",
+          "EN",
+          "FR",
+          "AR"
+        ],
+        "status": "APPROVED"
+      }
+    }
+  },
+  "lesson_items": {
+    "les-4/page-1": {
+      "canonical_path": "data/lessons_content.json#/lessons/les-4/pages/1",
+      "source_ids": [
+        "BE-KB1975-PARKING-CURRENT",
+        "BE-FPS-ROAD-CODE-2027"
+      ],
+      "last_reviewed": "2026-07-19",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "content_locator": {
+        "type": "LESSON_PAGE",
+        "file": "data/lessons_content.json",
+        "lesson_id": "les-4",
+        "page_number": 1
+      }
+    },
+    "les-4/page-2": {
+      "canonical_path": "data/lessons_content.json#/lessons/les-4/pages/2",
+      "source_ids": [
+        "BE-KB1975-PARKING-CURRENT",
+        "BE-FPS-ROAD-CODE-2027",
+        "BE-MB1976-PARKING-PLACEMENT"
+      ],
+      "last_reviewed": "2026-07-19",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "content_locator": {
+        "type": "LESSON_PAGE",
+        "file": "data/lessons_content.json",
+        "lesson_id": "les-4",
+        "page_number": 2
+      }
+    },
+    "les-4/page-3": {
+      "canonical_path": "data/lessons_content.json#/lessons/les-4/pages/3",
+      "source_ids": [
+        "BE-KB1975-PARKING-CURRENT",
+        "BE-FPS-ROAD-CODE-2027",
+        "BE-MB1976-PARKING-PLACEMENT"
+      ],
+      "last_reviewed": "2026-07-19",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "content_locator": {
+        "type": "LESSON_PAGE",
+        "file": "data/lessons_content.json",
+        "lesson_id": "les-4",
+        "page_number": 3
+      }
+    },
+    "les-4/page-4": {
+      "canonical_path": "data/lessons_content.json#/lessons/les-4/pages/4",
+      "source_ids": [
+        "BE-KB1975-PARKING-CURRENT",
+        "BE-FPS-ROAD-CODE-2027"
+      ],
+      "last_reviewed": "2026-07-19",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "content_locator": {
+        "type": "LESSON_PAGE",
+        "file": "data/lessons_content.json",
+        "lesson_id": "les-4",
+        "page_number": 4
+      }
+    }
+  }
+}
