@@ -9,53 +9,74 @@
       "NL": {
         "question": "Wat betekent dit verkeersbord?",
         "choices": [
-          { "text": "Verboden toegang voor quads", "is_correct": true },
           {
-            "text": "Verboden toegang voor bestuurders van rijwielen met motor",
+            "text": "Verboden toegang voor het wettelijk omschreven vierwielige terreinmotorvoertuig",
+            "is_correct": true
+          },
+          {
+            "text": "Verboden toegang voor alle auto's",
             "is_correct": false
           },
           {
-            "text": "Verboden toegang voor voertuigen bestemd voor het vervoer van zaken",
+            "text": "Verboden toegang voor alle motorfietsen",
             "is_correct": false
           }
         ],
-        "explanation": "C6 verbiedt quads de toegang. Een quad is een vierwielig motorvoertuig met kenmerken van een motorfiets. Gewone motorfietsen of auto s vallen hier niet onder."
+        "explanation": "C6 viseert een vierwielig motorvoertuig dat voor onverhard terrein is geconstrueerd en een open carrosserie, motorfietsstuur en zadel heeft."
       },
       "EN": {
         "question": "What does this traffic sign mean?",
         "choices": [
-          { "text": "No entry for quads", "is_correct": true },
-          { "text": "No entry for motorized bicycles", "is_correct": false },
-          { "text": "No entry for goods vehicles", "is_correct": false }
+          {
+            "text": "No entry for the statutorily specified four-wheeled off-road motor vehicle",
+            "is_correct": true
+          },
+          {
+            "text": "No entry for all cars",
+            "is_correct": false
+          },
+          {
+            "text": "No entry for all motorcycles",
+            "is_correct": false
+          }
         ],
-        "explanation": "C6 prohibits quads from entering. A quad is a four-wheeled motor vehicle with motorcycle characteristics. Ordinary motorcycles or cars are not covered by this sign."
+        "explanation": "C6 targets a four-wheeled motor vehicle constructed for off-road use with an open body, motorcycle-type handlebar and saddle."
       },
       "FR": {
         "question": "Que signifie ce panneau de signalisation ?",
         "choices": [
-          { "text": "Acces interdit aux quads", "is_correct": true },
           {
-            "text": "Acces interdit aux conducteurs de cyclomoteurs",
+            "text": "Accès interdit au véhicule tout-terrain à quatre roues défini par la loi",
+            "is_correct": true
+          },
+          {
+            "text": "Accès interdit à toutes les voitures",
             "is_correct": false
           },
           {
-            "text": "Acces interdit aux vehicules de transport de marchandises",
+            "text": "Accès interdit à toutes les motocyclettes",
             "is_correct": false
           }
         ],
-        "explanation": "C6 interdit aux quads l acces. Un quad est un vehicule motorise a quatre roues avec des caracteristiques de moto. Les motos ordinaires ou les voitures ne sont pas concernees."
+        "explanation": "C6 vise un véhicule à moteur à quatre roues construit pour le terrain non revêtu, avec carrosserie ouverte, guidon de motocyclette et selle."
       },
       "AR": {
         "question": "ما معنى هذه العلامة المرورية؟",
         "choices": [
-          { "text": "ممنوع دخول الدراجات الرباعية", "is_correct": true },
           {
-            "text": "ممنوع دخول الدراجات النارية الصغيرة",
+            "text": "ممنوع دخول مركبة الطرق الوعرة ذات الأربع عجلات المحددة قانونياً",
+            "is_correct": true
+          },
+          {
+            "text": "ممنوع دخول جميع السيارات",
             "is_correct": false
           },
-          { "text": "ممنوع دخول مركبات الشحن", "is_correct": false }
+          {
+            "text": "ممنوع دخول جميع الدراجات النارية",
+            "is_correct": false
+          }
         ],
-        "explanation": "تحظر C6 الدراجات الرباعية من الدخول. الدراجة الرباعية مركبة بمحرك ذات اربع عجلات بخصائص الدراجة النارية. الدراجات النارية العادية والسيارات غير مشمولة."
+        "explanation": "تستهدف C6 مركبة ذات محرك وأربع عجلات مصممة للطرق غير المعبدة ولها هيكل مفتوح ومقود دراجة نارية ومقعد سرجي."
       }
     }
   },
@@ -69,36 +90,72 @@
       "NL": {
         "question": "Tot welke categorie verkeersborden behoort dit bord?",
         "choices": [
-          { "text": "Verbodsborden", "is_correct": true },
-          { "text": "Gevaarsborden", "is_correct": false },
-          { "text": "Gebodsborden", "is_correct": false }
+          {
+            "text": "Verbodsborden",
+            "is_correct": true
+          },
+          {
+            "text": "Gevaarsborden",
+            "is_correct": false
+          },
+          {
+            "text": "Gebodsborden",
+            "is_correct": false
+          }
         ],
         "explanation": "Verbodsborden zijn rond met een rode rand en witte achtergrond. De ronde vorm en rode rand zijn de identificatiekenmerken van verbodsborden."
       },
       "EN": {
         "question": "To which category of traffic signs does this sign belong?",
         "choices": [
-          { "text": "Prohibition signs", "is_correct": true },
-          { "text": "Danger signs", "is_correct": false },
-          { "text": "Mandatory signs", "is_correct": false }
+          {
+            "text": "Prohibition signs",
+            "is_correct": true
+          },
+          {
+            "text": "Danger signs",
+            "is_correct": false
+          },
+          {
+            "text": "Mandatory signs",
+            "is_correct": false
+          }
         ],
         "explanation": "Prohibition signs are round with a red border and white background. The round shape and red border are the identifying features of prohibition signs."
       },
       "FR": {
         "question": "A quelle categorie de panneaux de signalisation appartient ce panneau ?",
         "choices": [
-          { "text": "Panneaux d interdiction", "is_correct": true },
-          { "text": "Panneaux de danger", "is_correct": false },
-          { "text": "Panneaux d obligation", "is_correct": false }
+          {
+            "text": "Panneaux d interdiction",
+            "is_correct": true
+          },
+          {
+            "text": "Panneaux de danger",
+            "is_correct": false
+          },
+          {
+            "text": "Panneaux d obligation",
+            "is_correct": false
+          }
         ],
         "explanation": "Les panneaux d interdiction sont ronds avec un bord rouge et un fond blanc. La forme ronde et le bord rouge sont les caracteristiques d identification des panneaux d interdiction."
       },
       "AR": {
         "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
         "choices": [
-          { "text": "علامات الحظر", "is_correct": true },
-          { "text": "علامات الخطر", "is_correct": false },
-          { "text": "العلامات الإلزامية", "is_correct": false }
+          {
+            "text": "علامات الحظر",
+            "is_correct": true
+          },
+          {
+            "text": "علامات الخطر",
+            "is_correct": false
+          },
+          {
+            "text": "العلامات الإلزامية",
+            "is_correct": false
+          }
         ],
         "explanation": "علامات الحظر مستديرة ذات حد احمر وخلفية بيضاء. الشكل المستدير والحد الاحمر هما العلامتان المميزتان لعلامات الحظر."
       }
@@ -115,73 +172,73 @@
         "question": "Wat verbiedt dit bord precies?",
         "choices": [
           {
-            "text": "De toegang voor vierwielige motorvoertuigen van het type quad",
+            "text": "Toegang voor voertuigen die alle wettelijke C6-constructiekenmerken hebben",
             "is_correct": true
           },
           {
-            "text": "De toegang voor alle motorvoertuigen met meer dan twee wielen",
+            "text": "Toegang voor iedere vierwieler zonder onderscheid",
             "is_correct": false
           },
           {
-            "text": "De toegang voor bromfietsen en lichte motorfietsen",
+            "text": "Toegang voor gewone tweewielige motorfietsen",
             "is_correct": false
           }
         ],
-        "explanation": "C6 richt zich specifiek tot quads: vierwielige motorvoertuigen gelijkgesteld met motorfietsen. Andere voertuigen met meer dan twee wielen zoals auto s vallen hier niet onder."
+        "explanation": "Niet elke vierwieler valt automatisch onder C6; de wettelijke constructiekenmerken bepalen het toepassingsgebied."
       },
       "EN": {
         "question": "What exactly does this sign prohibit?",
         "choices": [
           {
-            "text": "Entry for four-wheeled motor vehicles of the quad type",
+            "text": "Access by vehicles meeting all statutory C6 construction characteristics",
             "is_correct": true
           },
           {
-            "text": "Entry for all motor vehicles with more than two wheels",
+            "text": "Access by every four-wheeler without distinction",
             "is_correct": false
           },
           {
-            "text": "Entry for mopeds and light motorcycles",
+            "text": "Access by ordinary two-wheeled motorcycles",
             "is_correct": false
           }
         ],
-        "explanation": "C6 specifically targets quads: four-wheeled motor vehicles classified as motorcycles. Other multi-wheeled vehicles such as cars are not covered."
+        "explanation": "Not every four-wheeler is automatically covered; the statutory construction characteristics determine the scope."
       },
       "FR": {
         "question": "Que interdit exactement ce panneau ?",
         "choices": [
           {
-            "text": "L acces aux vehicules motorises a quatre roues de type quad",
+            "text": "L'accès des véhicules réunissant toutes les caractéristiques légales de C6",
             "is_correct": true
           },
           {
-            "text": "L acces a tous les vehicules motorises de plus de deux roues",
+            "text": "L'accès de tout véhicule à quatre roues sans distinction",
             "is_correct": false
           },
           {
-            "text": "L acces aux cyclomoteurs et aux motos legeres",
+            "text": "L'accès des motocyclettes ordinaires à deux roues",
             "is_correct": false
           }
         ],
-        "explanation": "C6 vise specifiquement les quads : vehicules motorises a quatre roues assimiles aux motos. Les autres vehicules a plusieurs roues comme les voitures ne sont pas concernes."
+        "explanation": "Tout véhicule à quatre roues n'est pas automatiquement visé ; les caractéristiques légales de construction déterminent le champ d'application."
       },
       "AR": {
         "question": "ما الذي تحظره هذه العلامة المرورية بالضبط؟",
         "choices": [
           {
-            "text": "دخول المركبات ذات المحرك والاربع عجلات من نوع الدراجة الرباعية",
+            "text": "دخول المركبات التي تستوفي جميع خصائص C6 القانونية",
             "is_correct": true
           },
           {
-            "text": "دخول جميع المركبات ذات المحرك التي تزيد عجلاتها عن اثنتين",
+            "text": "دخول كل مركبة ذات أربع عجلات بلا تمييز",
             "is_correct": false
           },
           {
-            "text": "دخول الدراجات النارية الصغيرة والخفيفة",
+            "text": "دخول الدراجات النارية العادية ذات العجلتين",
             "is_correct": false
           }
         ],
-        "explanation": "تستهدف C6 تحديدا الدراجات الرباعية: مركبات بمحرك وذات اربع عجلات مصنفة كدراجات نارية. المركبات الاخرى متعددة العجلات كالسيارات غير مشمولة."
+        "explanation": "لا تشمل C6 كل مركبة ذات أربع عجلات تلقائياً؛ بل تحدد خصائص التصميم القانونية نطاقها."
       }
     }
   },
@@ -193,7 +250,7 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat moet u doen als bestuurder van een quad als u dit bord ziet?",
+        "question": "Uw voertuig voldoet aan alle constructiekenmerken van C6. Wat moet u doen?",
         "choices": [
           {
             "text": "U rijdt niet in en zoekt een andere route",
@@ -203,12 +260,15 @@
             "text": "U rijdt in als uw quad kleiner is dan een standaard quad",
             "is_correct": false
           },
-          { "text": "U rijdt in als u een helm draagt", "is_correct": false }
+          {
+            "text": "U rijdt in als u een helm draagt",
+            "is_correct": false
+          }
         ],
-        "explanation": "Bord C6 verbiedt alle quads de toegang. Het formaat van de quad of de uitrusting van de bestuurder verandert niets aan het verbod."
+        "explanation": "Wanneer uw voertuig aan de wettelijke C6-omschrijving voldoet, mag u niet inrijden en kiest u een andere route."
       },
       "EN": {
-        "question": "What must you do as a quad driver when you see this sign?",
+        "question": "Your vehicle meets all C6 construction characteristics. What must you do?",
         "choices": [
           {
             "text": "Do not enter and find an alternative route",
@@ -223,10 +283,10 @@
             "is_correct": false
           }
         ],
-        "explanation": "Sign C6 prohibits all quads from entering. The size of the quad or the equipment of the driver does not change the prohibition."
+        "explanation": "When your vehicle meets the statutory C6 description, you must not enter and must choose another route."
       },
       "FR": {
-        "question": "Que devez-vous faire en tant que conducteur de quad lorsque vous voyez ce panneau ?",
+        "question": "Votre véhicule réunit toutes les caractéristiques de construction de C6. Que devez-vous faire ?",
         "choices": [
           {
             "text": "Ne pas entrer et trouver un autre itineraire",
@@ -241,19 +301,25 @@
             "is_correct": false
           }
         ],
-        "explanation": "Le panneau C6 interdit a tous les quads d entrer. La taille du quad ou l equipement du conducteur ne change pas l interdiction."
+        "explanation": "Lorsque votre véhicule correspond à la définition légale de C6, vous ne pouvez pas entrer et devez choisir un autre itinéraire."
       },
       "AR": {
-        "question": "ماذا يجب عليك فعله كسائق دراجة رباعية عند رؤية هذه العلامة المرورية؟",
+        "question": "تستوفي مركبتك جميع خصائص التصميم الخاصة بـC6. ماذا يجب أن تفعل؟",
         "choices": [
-          { "text": "لا تدخل وابحث عن طريق بديل", "is_correct": true },
+          {
+            "text": "لا تدخل وابحث عن طريق بديل",
+            "is_correct": true
+          },
           {
             "text": "يمكنك الدخول اذا كانت دراجتك الرباعية اصغر من المعيار",
             "is_correct": false
           },
-          { "text": "يمكنك الدخول اذا كنت ترتدي خوذة", "is_correct": false }
+          {
+            "text": "يمكنك الدخول اذا كنت ترتدي خوذة",
+            "is_correct": false
+          }
         ],
-        "explanation": "تحظر علامة مرورية C6 جميع الدراجات الرباعية من الدخول. حجم الدراجة او معدات السائق لا يغير الحظر."
+        "explanation": "إذا انطبقت على مركبتك مواصفات C6 القانونية فلا يجوز لك الدخول وعليك اختيار طريق آخر."
       }
     }
   },
@@ -321,8 +387,14 @@
       "AR": {
         "question": "انت تقود دراجة رباعية وترى علامة مرورية C6. وجهتك تقع مباشرة بعد هذه العلامة المرورية. ماذا تفعل؟",
         "choices": [
-          { "text": "ابحث عن طريق بديل الى وجهتك", "is_correct": true },
-          { "text": "تمر بسرعة لان المسافة قصيرة جدا", "is_correct": false },
+          {
+            "text": "ابحث عن طريق بديل الى وجهتك",
+            "is_correct": true
+          },
+          {
+            "text": "تمر بسرعة لان المسافة قصيرة جدا",
+            "is_correct": false
+          },
           {
             "text": "اركن الدراجة الرباعية قبل العلامة المرورية واكمل سيرا على الاقدام",
             "is_correct": false
@@ -355,7 +427,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "C6 is specifiek voor quads die op vlakke wegen rijden. Tweewielige motorfietsen worden geregeld door andere borden zoals C11. C6 staat los van C11."
+        "explanation": "C6 is gericht op het specifiek omschreven vierwielige terreinmotorvoertuig. Voor motorfietsen bestaat bord C7; C11 betreft rijwielen."
       },
       "EN": {
         "question": "Does sign C6 also apply to ordinary two-wheeled motorcycles?",
@@ -373,7 +445,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "C6 is specific to quads used on flat roads. Two-wheeled motorcycles are regulated by other signs such as C11. C6 is independent of C11."
+        "explanation": "C6 targets the specifically described four-wheeled off-road motor vehicle. C7 concerns motorcycles; C11 concerns cycles."
       },
       "FR": {
         "question": "Le panneau C6 s applique-t-il aussi aux motos a deux roues ordinaires ?",
@@ -391,7 +463,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "C6 est specifique aux quads utilises sur routes plates. Les motos a deux roues sont reglementees par d autres panneaux comme C11. C6 est independant de C11."
+        "explanation": "C6 vise le véhicule tout-terrain à quatre roues spécifiquement décrit. C7 concerne les motocyclettes et C11 les cycles."
       },
       "AR": {
         "question": "هل تنطبق علامة مرورية C6 ايضا على الدراجات النارية العادية ذات العجلتين؟",
@@ -409,7 +481,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "C6 خاصة بالدراجات الرباعية المستخدمة على الطرق المستوية. الدراجات النارية ذات العجلتين تنظمها علامات اخرى مثل C11. C6 مستقلة عن C11."
+        "explanation": "تستهدف C6 مركبة الطرق الوعرة ذات الأربع عجلات بالمواصفات المحددة. أما C7 فتخص الدراجات النارية وC11 تخص الدراجات الهوائية."
       }
     }
   },
@@ -424,57 +496,57 @@
         "question": "Mag u als quadbestuurder toch inrijden als de weg er verlaten uitziet?",
         "choices": [
           {
-            "text": "Nee, bord C6 geldt altijd ongeacht de toestand van de weg",
+            "text": "Nee, de lege weg verandert C6 niet wanneer uw voertuig eronder valt",
             "is_correct": true
           },
           {
-            "text": "Ja, als de weg verlaten is mag u rustig inrijden",
+            "text": "Ja, als er geen verkeer zichtbaar is",
             "is_correct": false
           }
         ],
-        "explanation": "De zichtbare toestand van de weg heeft geen invloed op het verbod. C6 is absoluut. Dit is een ernstige verkeersovertreding."
+        "explanation": "De verkeersdrukte verandert het toepassingsgebied van C6 niet."
       },
       "EN": {
         "question": "May you as a quad driver enter anyway if the road looks deserted?",
         "choices": [
           {
-            "text": "No, sign C6 always applies regardless of the state of the road",
+            "text": "No, an empty road does not change C6 when your vehicle is covered",
             "is_correct": true
           },
           {
-            "text": "Yes, if the road is deserted you may enter calmly",
+            "text": "Yes, if no traffic is visible",
             "is_correct": false
           }
         ],
-        "explanation": "The visible state of the road has no effect on the prohibition. C6 is absolute. This is a serious traffic offence."
+        "explanation": "Traffic conditions do not change the scope of C6."
       },
       "FR": {
         "question": "En tant que conducteur de quad, pouvez-vous quand meme entrer si la route semble deserte ?",
         "choices": [
           {
-            "text": "Non, le panneau C6 s applique toujours quelle que soit la situation de la route",
+            "text": "Non, une route vide ne modifie pas C6 lorsque votre véhicule est visé",
             "is_correct": true
           },
           {
-            "text": "Oui, si la route est deserte vous pouvez entrer tranquillement",
+            "text": "Oui, si aucune circulation n'est visible",
             "is_correct": false
           }
         ],
-        "explanation": "L etat visible de la route n a aucun effet sur l interdiction. C6 est absolu. Il s agit d une infraction grave au code de la route."
+        "explanation": "La circulation présente ne modifie pas le champ d'application de C6."
       },
       "AR": {
         "question": "هل يجوز لك كسائق دراجة رباعية الدخول اذا بدت الطريق مقفرة؟",
         "choices": [
           {
-            "text": "لا، علامة مرورية C6 تنطبق دائما بغض النظر عن حالة الطريق",
+            "text": "لا، خلو الطريق لا يغيّر C6 إذا كانت مركبتك مشمولة",
             "is_correct": true
           },
           {
-            "text": "نعم، اذا كانت الطريق خالية يجوز لك الدخول بهدوء",
+            "text": "نعم، إذا لم تظهر حركة مرور",
             "is_correct": false
           }
         ],
-        "explanation": "الحالة الظاهرة للطريق لا تاثير لها على الحظر. C6 مطلقة. هذه مخالفة مرورية خطيرة."
+        "explanation": "لا تغيّر حالة حركة المرور نطاق تطبيق C6."
       }
     }
   },
@@ -486,60 +558,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Geldt bord C6 ook voor quads van elk motorvermogen, inclusief kleine quads?",
+        "question": "Bepaalt alleen het motorvermogen of een vierwielig voertuig onder C6 valt?",
         "choices": [
           {
-            "text": "Ja, C6 geldt voor alle quads ongeacht de motorinhoud of het vermogen",
+            "text": "Nee, de wettelijke constructiekenmerken bepalen het toepassingsgebied",
             "is_correct": true
           },
           {
-            "text": "Nee, kleine quads van minder dan 50cc zijn vrijgesteld van C6",
+            "text": "Ja, elk klein motorvermogen valt automatisch onder C6",
             "is_correct": false
           }
         ],
-        "explanation": "Het bord maakt geen onderscheid op basis van motorinhoud of vermogen. Alle quads zijn verboden. Dit is een ernstige verkeersovertreding."
+        "explanation": "C6 verwijst naar vier wielen, constructie voor onverhard terrein, open carrosserie, motorfietsstuur en zadel; vermogen alleen beslist dit niet."
       },
       "EN": {
-        "question": "Does sign C6 apply to quads of all engine capacities including small quads?",
+        "question": "Does engine power alone determine whether a four-wheeled vehicle is covered by C6?",
         "choices": [
           {
-            "text": "Yes, C6 applies to all quads regardless of engine size or power",
+            "text": "No, the statutory construction characteristics determine the scope",
             "is_correct": true
           },
           {
-            "text": "No, small quads with less than 50cc are exempt from C6",
+            "text": "Yes, every low-powered vehicle is automatically covered",
             "is_correct": false
           }
         ],
-        "explanation": "The sign makes no distinction based on engine size or power. All quads are prohibited. This is a serious traffic offence."
+        "explanation": "C6 refers to four wheels, off-road construction, an open body, motorcycle-type handlebar and saddle; power alone is not decisive."
       },
       "FR": {
-        "question": "Le panneau C6 s applique-t-il aux quads de toute puissance moteur, y compris les petits quads ?",
+        "question": "La puissance du moteur suffit-elle à déterminer si un véhicule à quatre roues relève de C6 ?",
         "choices": [
           {
-            "text": "Oui, C6 s applique a tous les quads quelle que soit la cylindree ou la puissance",
+            "text": "Non, les caractéristiques légales de construction déterminent le champ",
             "is_correct": true
           },
           {
-            "text": "Non, les petits quads de moins de 50cc sont exemptes du C6",
+            "text": "Oui, tout véhicule de faible puissance est automatiquement visé",
             "is_correct": false
           }
         ],
-        "explanation": "Le panneau ne fait aucune distinction selon la cylindree ou la puissance. Tous les quads sont interdits. Il s agit d une infraction grave au code de la route."
+        "explanation": "C6 vise quatre roues, une construction tout-terrain, une carrosserie ouverte, un guidon de motocyclette et une selle ; la puissance seule n'est pas décisive."
       },
       "AR": {
-        "question": "هل تنطبق علامة مرورية C6 على الدراجات الرباعية بجميع سعات المحرك بما في ذلك الصغيرة؟",
+        "question": "هل تكفي قوة المحرك وحدها لتحديد ما إذا كانت مركبة بأربع عجلات مشمولة بـC6؟",
         "choices": [
           {
-            "text": "نعم، C6 تنطبق على جميع الدراجات الرباعية بغض النظر عن سعة المحرك او القدرة",
+            "text": "لا، خصائص التصميم القانونية هي التي تحدد النطاق",
             "is_correct": true
           },
           {
-            "text": "لا، الدراجات الرباعية الصغيرة ذات المحرك الاقل من 50 سم مكعب معفاة من C6",
+            "text": "نعم، كل مركبة منخفضة القوة مشمولة تلقائياً",
             "is_correct": false
           }
         ],
-        "explanation": "العلامة المرورية لا تفرق بناء على سعة المحرك او القدرة. جميع الدراجات الرباعية محظورة. هذه مخالفة مرورية خطيرة."
+        "explanation": "تشترط C6 أربع عجلات وتصميماً للطرق غير المعبدة وهيكلاً مفتوحاً ومقود دراجة نارية ومقعداً سرجياً؛ ولا تحسم القوة وحدها الأمر."
       }
     }
   }

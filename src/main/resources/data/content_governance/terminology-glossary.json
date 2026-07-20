@@ -6,7 +6,8 @@
     "INFORMATION",
     "MANDATORY",
     "PARKING",
-    "PRIORITY"
+    "PRIORITY",
+    "PROHIBITION"
   ],
   "last_reviewed": "2026-07-20",
   "translation_policy": "NL and FR legal terms follow the official texts. EN and AR are faithful editorial translations and must not expand or narrow the legal meaning.",
@@ -1230,6 +1231,294 @@
       "source_ids": [
         "BE-KB1975-PRIORITY-CURRENT",
         "BE-MB1976-PRIORITY-PLACEMENT"
+      ]
+    },
+    {
+      "term_id": "PROHIBITION_SIGN",
+      "i18n": {
+        "NL": "verbodsbord",
+        "EN": "prohibition sign",
+        "FR": "signal d’interdiction",
+        "AR": "علامة حظر"
+      },
+      "definition": "A C-series sign imposing or ending a prohibition under the current Belgian Road Code.",
+      "context": "Use for governed PROHIBITION content.",
+      "preferred_wording": {
+        "NL": "verbodsbord",
+        "EN": "prohibition sign",
+        "FR": "signal d’interdiction",
+        "AR": "علامة حظر"
+      },
+      "forbidden_or_misleading_wording": [],
+      "source_ids": [
+        "BE-KB1975-PROHIBITION-CURRENT",
+        "BE-MB1976-PROHIBITION-PLACEMENT"
+      ]
+    },
+    {
+      "term_id": "NO_ENTRY_DIRECTION",
+      "i18n": {
+        "NL": "verboden inrijrichting",
+        "EN": "prohibited entry direction",
+        "FR": "sens d’entrée interdit",
+        "AR": "اتجاه دخول ممنوع"
+      },
+      "definition": "C1 prohibits every driver from entering in the signed direction, subject to an express lawful exception.",
+      "context": "Do not describe C1 as closing both directions.",
+      "preferred_wording": {
+        "NL": "verboden inrijrichting",
+        "EN": "prohibited entry direction",
+        "FR": "sens d’entrée interdit",
+        "AR": "اتجاه دخول ممنوع"
+      },
+      "forbidden_or_misleading_wording": [
+        "road closed in both directions"
+      ],
+      "source_ids": [
+        "BE-KB1975-PROHIBITION-CURRENT",
+        "BE-MB1976-PROHIBITION-PLACEMENT"
+      ]
+    },
+    {
+      "term_id": "ACCESS_PROHIBITED_BOTH_DIRECTIONS",
+      "i18n": {
+        "NL": "verboden toegang in beide richtingen",
+        "EN": "access prohibited in both directions",
+        "FR": "accès interdit dans les deux sens",
+        "AR": "الدخول ممنوع في الاتجاهين"
+      },
+      "definition": "C3 prohibits access in both directions to all drivers, subject to express supplementary exceptions.",
+      "context": "Distinguish drivers from pedestrians and C3 from C1.",
+      "preferred_wording": {
+        "NL": "verboden toegang in beide richtingen",
+        "EN": "access prohibited in both directions",
+        "FR": "accès interdit dans les deux sens",
+        "AR": "الدخول ممنوع في الاتجاهين"
+      },
+      "forbidden_or_misleading_wording": [],
+      "source_ids": [
+        "BE-KB1975-PROHIBITION-CURRENT",
+        "BE-MB1976-PROHIBITION-PLACEMENT"
+      ]
+    },
+    {
+      "term_id": "LADEN_MASS",
+      "i18n": {
+        "NL": "massa in beladen toestand",
+        "EN": "laden mass",
+        "FR": "masse en charge",
+        "AR": "الكتلة في حالة التحميل"
+      },
+      "definition": "The vehicle's actual mass in its laden condition, used by C21.",
+      "context": "Do not replace with maximum authorised mass.",
+      "preferred_wording": {
+        "NL": "massa in beladen toestand",
+        "EN": "laden mass",
+        "FR": "masse en charge",
+        "AR": "الكتلة في حالة التحميل"
+      },
+      "forbidden_or_misleading_wording": [],
+      "source_ids": [
+        "BE-KB1975-PROHIBITION-CURRENT",
+        "BE-MB1976-PROHIBITION-PLACEMENT"
+      ]
+    },
+    {
+      "term_id": "MAXIMUM_AUTHORISED_MASS",
+      "i18n": {
+        "NL": "maximaal toegelaten massa",
+        "EN": "maximum authorised mass",
+        "FR": "masse maximale autorisée",
+        "AR": "الكتلة القصوى المسموح بها"
+      },
+      "definition": "The administratively authorised maximum mass, used by the C23 supplementary inscription and C39.",
+      "context": "Keep distinct from actual laden mass.",
+      "preferred_wording": {
+        "NL": "maximaal toegelaten massa",
+        "EN": "maximum authorised mass",
+        "FR": "masse maximale autorisée",
+        "AR": "الكتلة القصوى المسموح بها"
+      },
+      "forbidden_or_misleading_wording": [],
+      "source_ids": [
+        "BE-KB1975-PROHIBITION-CURRENT",
+        "BE-MB1976-PROHIBITION-PLACEMENT"
+      ]
+    },
+    {
+      "term_id": "GOODS_VEHICLE_ACCESS_PROHIBITION",
+      "i18n": {
+        "NL": "toegangsverbod voor goederenvoertuigen",
+        "EN": "goods-vehicle access prohibition",
+        "FR": "interdiction d’accès aux véhicules de marchandises",
+        "AR": "حظر دخول مركبات نقل البضائع"
+      },
+      "definition": "C23 applies to motor vehicles and combinations designed and constructed for carrying goods.",
+      "context": "Do not use the superseded broader wording ‘intended or used’.",
+      "preferred_wording": {
+        "NL": "toegangsverbod voor goederenvoertuigen",
+        "EN": "goods-vehicle access prohibition",
+        "FR": "interdiction d’accès aux véhicules de marchandises",
+        "AR": "حظر دخول مركبات نقل البضائع"
+      },
+      "forbidden_or_misleading_wording": [],
+      "source_ids": [
+        "BE-KB1975-PROHIBITION-CURRENT",
+        "BE-MB1976-PROHIBITION-PLACEMENT"
+      ]
+    },
+    {
+      "term_id": "DANGEROUS_GOODS_ACCESS_PROHIBITION",
+      "i18n": {
+        "NL": "toegangsverbod voor aangewezen gevaarlijke goederen",
+        "EN": "designated dangerous-goods access prohibition",
+        "FR": "interdiction d’accès pour marchandises dangereuses déterminées",
+        "AR": "حظر دخول البضائع الخطرة المحددة"
+      },
+      "definition": "C24a, C24b and C24c apply to the categories designated by the competent ministers.",
+      "context": "Preserve the official designation and ADR tunnel-category qualifier.",
+      "preferred_wording": {
+        "NL": "toegangsverbod voor aangewezen gevaarlijke goederen",
+        "EN": "designated dangerous-goods access prohibition",
+        "FR": "interdiction d’accès pour marchandises dangereuses déterminées",
+        "AR": "حظر دخول البضائع الخطرة المحددة"
+      },
+      "forbidden_or_misleading_wording": [],
+      "source_ids": [
+        "BE-KB1975-PROHIBITION-CURRENT",
+        "BE-MB1976-PROHIBITION-PLACEMENT"
+      ]
+    },
+    {
+      "term_id": "DIMENSION_ACCESS_PROHIBITION",
+      "i18n": {
+        "NL": "toegangsverbod wegens afmetingen",
+        "EN": "dimension-based access prohibition",
+        "FR": "interdiction d’accès liée aux dimensions",
+        "AR": "حظر دخول قائم على الأبعاد"
+      },
+      "definition": "C25, C27 and C29 compare the indicated length, width or height with the vehicle and its load.",
+      "context": "Include the load in the measured dimension.",
+      "preferred_wording": {
+        "NL": "toegangsverbod wegens afmetingen",
+        "EN": "dimension-based access prohibition",
+        "FR": "interdiction d’accès liée aux dimensions",
+        "AR": "حظر دخول قائم على الأبعاد"
+      },
+      "forbidden_or_misleading_wording": [],
+      "source_ids": [
+        "BE-KB1975-PROHIBITION-CURRENT",
+        "BE-MB1976-PROHIBITION-PLACEMENT"
+      ]
+    },
+    {
+      "term_id": "TURN_PROHIBITION_NEXT_JUNCTION",
+      "i18n": {
+        "NL": "afslagverbod aan het volgende kruispunt",
+        "EN": "turn prohibition at the next junction",
+        "FR": "interdiction de tourner au prochain carrefour",
+        "AR": "حظر الانعطاف عند التقاطع التالي"
+      },
+      "definition": "C31a and C31b prohibit the arrowed turn at the next junction, subject to indicated supplementary exceptions.",
+      "context": "Do not describe it as a continuous road-section ban.",
+      "preferred_wording": {
+        "NL": "afslagverbod aan het volgende kruispunt",
+        "EN": "turn prohibition at the next junction",
+        "FR": "interdiction de tourner au prochain carrefour",
+        "AR": "حظر الانعطاف عند التقاطع التالي"
+      },
+      "forbidden_or_misleading_wording": [],
+      "source_ids": [
+        "BE-KB1975-PROHIBITION-CURRENT",
+        "BE-MB1976-PROHIBITION-PLACEMENT"
+      ]
+    },
+    {
+      "term_id": "OVERTAKING_PROHIBITION",
+      "i18n": {
+        "NL": "inhaalverbod",
+        "EN": "overtaking prohibition",
+        "FR": "interdiction de dépasser",
+        "AR": "حظر التجاوز"
+      },
+      "definition": "C35 and C39 prohibit specified left overtaking from the sign through the next junction; C37 and C41 end the respective prohibition.",
+      "context": "Preserve the exact driver and overtaken-vehicle scope.",
+      "preferred_wording": {
+        "NL": "inhaalverbod",
+        "EN": "overtaking prohibition",
+        "FR": "interdiction de dépasser",
+        "AR": "حظر التجاوز"
+      },
+      "forbidden_or_misleading_wording": [],
+      "source_ids": [
+        "BE-KB1975-PROHIBITION-CURRENT",
+        "BE-MB1976-PROHIBITION-PLACEMENT"
+      ]
+    },
+    {
+      "term_id": "LOCAL_SPEED_LIMIT",
+      "i18n": {
+        "NL": "plaatselijke snelheidsbeperking",
+        "EN": "local speed limit",
+        "FR": "limitation locale de vitesse",
+        "AR": "تحديد سرعة محلي"
+      },
+      "definition": "C43 imposes the displayed maximum until the first statutory endpoint; C45 ends the limit imposed by C43.",
+      "context": "Ending C43 does not prove that a different rule cannot impose the same speed.",
+      "preferred_wording": {
+        "NL": "plaatselijke snelheidsbeperking",
+        "EN": "local speed limit",
+        "FR": "limitation locale de vitesse",
+        "AR": "تحديد سرعة محلي"
+      },
+      "forbidden_or_misleading_wording": [],
+      "source_ids": [
+        "BE-KB1975-PROHIBITION-CURRENT",
+        "BE-MB1976-PROHIBITION-PLACEMENT"
+      ]
+    },
+    {
+      "term_id": "END_OF_LOCAL_MOVING_PROHIBITIONS",
+      "i18n": {
+        "NL": "einde van plaatselijke verbodsbepalingen voor rijdende voertuigen",
+        "EN": "end of local prohibitions for moving vehicles",
+        "FR": "fin des interdictions locales pour véhicules en mouvement",
+        "AR": "نهاية الحظر المحلي على المركبات المتحركة"
+      },
+      "definition": "Under the placement rules, C46 may end only C33, C35, C39 and C43.",
+      "context": "Do not present C46 as ending access, turning, parking or every traffic rule.",
+      "preferred_wording": {
+        "NL": "einde van plaatselijke verbodsbepalingen voor rijdende voertuigen",
+        "EN": "end of local prohibitions for moving vehicles",
+        "FR": "fin des interdictions locales pour véhicules en mouvement",
+        "AR": "نهاية الحظر المحلي على المركبات المتحركة"
+      },
+      "forbidden_or_misleading_wording": [],
+      "source_ids": [
+        "BE-KB1975-PROHIBITION-CURRENT",
+        "BE-MB1976-PROHIBITION-PLACEMENT"
+      ]
+    },
+    {
+      "term_id": "TOLL_STOP",
+      "i18n": {
+        "NL": "stoppen aan de tolpost",
+        "EN": "stop at the toll post",
+        "FR": "arrêt au poste de péage",
+        "AR": "التوقف عند محطة الرسوم"
+      },
+      "definition": "C47 prohibits passing the toll post without stopping.",
+      "context": "Stopping remains required even when no barrier is visible.",
+      "preferred_wording": {
+        "NL": "stoppen aan de tolpost",
+        "EN": "stop at the toll post",
+        "FR": "arrêt au poste de péage",
+        "AR": "التوقف عند محطة الرسوم"
+      },
+      "forbidden_or_misleading_wording": [],
+      "source_ids": [
+        "BE-KB1975-PROHIBITION-CURRENT",
+        "BE-MB1976-PROHIBITION-PLACEMENT"
       ]
     }
   ]

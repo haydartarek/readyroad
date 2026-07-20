@@ -6,31 +6,47 @@
   "i18n": {
     "NL": {
       "name": "Verboden richting voor iedere bestuurder",
-      "summary": "C1 verbiedt iedere bestuurder om deze richting in te rijden. Dat geldt ook voor fietsers en bromfietsers.",
+      "summary": "C1 verbiedt iedere bestuurder om deze richting in te rijden. Fietsers, bromfietsers en speedpedelecs vallen er standaard onder, tenzij een wettelijk onderbord hen uitdrukkelijk uitzondert.",
       "description": "Geeft aan dat het verboden is deze rijrichting in te rijden voor iedere bestuurder.",
-      "driver_guidance": "Dit bord geeft aan dat deze rijrichting niet mag worden ingereden. Kies daarom een andere, toegestane route.",
-      "exceptions": []
+      "driver_guidance": "Rijd deze richting niet in en controleer elk onderbord. Alleen een toepasselijke, uitdrukkelijke uitzondering laat de aangeduide categorie toe.",
+      "exceptions": [
+        "Onderborden M2 of M3 kunnen fietsers en tweewielige bromfietsen klasse A uitzonderen.",
+        "Onderborden M11 of M12 kunnen speedpedelecs en, bij M12, ook tweewielige bromfietsen klasse A uitzonderen.",
+        "Een passend onderbord kan voertuigen van geregelde openbare vervoerdiensten of andere op een busstrook of bijzondere overrijdbare bedding toegelaten categorieën uitzonderen."
+      ]
     },
     "EN": {
       "name": "Prohibited direction for every driver",
-      "summary": "C1 prohibits every driver from entering in this direction. This also applies to cyclists and moped riders.",
+      "summary": "C1 prohibits every driver from entering in this direction. Cyclists, moped riders and speed-pedelec riders are covered by default unless a lawful supplementary plate expressly exempts them.",
       "description": "Indicates that entering this direction is prohibited for every driver.",
-      "driver_guidance": "This sign indicates that you may not enter in this direction. Choose another permitted route.",
-      "exceptions": []
+      "driver_guidance": "Do not enter in this direction and check every supplementary plate. Only an applicable express exception permits the category shown.",
+      "exceptions": [
+        "M2 or M3 supplementary plates may exempt cyclists and riders of two-wheeled class A mopeds.",
+        "M11 or M12 supplementary plates may exempt speed-pedelec riders and, with M12, riders of two-wheeled class A mopeds.",
+        "An appropriate supplementary plate may exempt scheduled public-transport vehicles or other categories authorised on a bus lane or special passable track."
+      ]
     },
     "FR": {
       "name": "Direction interdite pour tout conducteur",
-      "summary": "C1 interdit à tout conducteur de circuler dans ce sens. Cela vaut aussi pour les cyclistes et les cyclomotoristes.",
+      "summary": "C1 interdit à tout conducteur de circuler dans ce sens. Les cyclistes, cyclomotoristes et conducteurs de speed pedelecs sont concernés par défaut, sauf si un panneau complémentaire légal les exempte expressément.",
       "description": "Indique qu’il est interdit d’emprunter cette direction pour tout conducteur.",
-      "driver_guidance": "Ce panneau indique que cette direction ne peut pas être empruntée. Choisissez donc un autre itinéraire autorisé.",
-      "exceptions": []
+      "driver_guidance": "N'entrez pas dans ce sens et lisez chaque panneau complémentaire. Seule une exception expresse et applicable autorise la catégorie indiquée.",
+      "exceptions": [
+        "Les panneaux complémentaires M2 ou M3 peuvent exempter les cyclistes et les conducteurs de cyclomoteurs à deux roues de classe A.",
+        "Les panneaux M11 ou M12 peuvent exempter les conducteurs de speed pedelecs et, avec M12, les cyclomoteurs à deux roues de classe A.",
+        "Un panneau approprié peut exempter les véhicules des services réguliers de transport en commun ou d'autres catégories autorisées sur une bande bus ou un site spécial franchissable."
+      ]
     },
     "AR": {
       "name": "ممنوع الدخول",
-      "summary": "تعني C1 أن الدخول في هذا الاتجاه محظور على جميع السائقين، بما في ذلك راكبو الدراجات والدراجات النارية الصغيرة.",
+      "summary": "تحظر C1 على كل سائق الدخول في هذا الاتجاه. ويشمل الحظر افتراضياً راكبي الدراجات والدراجات النارية الصغيرة وسبيد بيديليكس، ما لم تستثنهم لوحة تكميلية قانونية بصورة صريحة.",
       "description": "توضح أن دخول هذا الاتجاه ممنوع على جميع السائقين.",
-      "driver_guidance": "تعني هذه العلامة أن هذا الاتجاه غير مسموح بالدخول منه. لذلك اختر مساراً آخر مسموحاً.",
-      "exceptions": []
+      "driver_guidance": "لا تدخل في هذا الاتجاه واقرأ كل لوحة تكميلية. لا يسمح بالمرور إلا إذا كان هناك استثناء صريح ينطبق على فئتك.",
+      "exceptions": [
+        "قد تستثني اللوحتان M2 أو M3 راكبي الدراجات وراكبي الدراجات النارية الصغيرة ذات العجلتين من الفئة A.",
+        "قد تستثني اللوحتان M11 أو M12 راكبي سبيد بيديليكس، وتستثني M12 أيضاً راكبي الدراجات النارية الصغيرة ذات العجلتين من الفئة A.",
+        "قد تستثني لوحة مناسبة مركبات النقل العام المنتظم أو فئات أخرى مسموحاً لها باستعمال مسار الحافلات أو المسار الخاص القابل للعبور."
+      ]
     }
   }
 }

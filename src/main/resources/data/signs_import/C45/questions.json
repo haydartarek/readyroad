@@ -250,7 +250,7 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U reed voordien in een zone met maximum 50 km/u en passeert nu dit bord. Wat betekent dit voor uw rijgedrag?",
+        "question": "U reed voordien op een weggedeelte waar C43 maximum 50 km/u oplegde en passeert nu dit bord. Wat betekent dit voor uw rijgedrag?",
         "choices": [
           {
             "text": "De beperking van 50 km/u eindigt en u beoordeelt opnieuw de geldende situatie",
@@ -265,10 +265,10 @@
             "is_correct": false
           }
         ],
-        "explanation": "Na dit bord geldt de beperking van 50 km/u opgelegd door C43 niet meer."
+        "explanation": "Na dit bord geldt de beperking van 50 km/u opgelegd door C43 niet meer. U bepaalt opnieuw welke snelheid volgens de algemene regels en andere verkeerstekens geldt."
       },
       "EN": {
-        "question": "You were previously in a 50 km/h zone and now pass this sign. What does this mean for your driving?",
+        "question": "You were on a road section where C43 imposed 50 km/h and now pass this sign. What does this mean for your driving?",
         "choices": [
           {
             "text": "The 50 km/h limit ends and you assess the applicable situation again",
@@ -283,10 +283,10 @@
             "is_correct": false
           }
         ],
-        "explanation": "After this sign, the 50 km/h limit imposed by C43 no longer applies."
+        "explanation": "After this sign, the 50 km/h limit imposed by C43 no longer applies. You reassess the speed required by the general rules and other traffic signs."
       },
       "FR": {
-        "question": "Vous rouliez auparavant dans une zone à 50 km/h et vous passez maintenant ce panneau. Qu’est-ce que cela signifie pour votre conduite ?",
+        "question": "Vous rouliez sur une section où C43 imposait 50 km/h et vous passez maintenant ce panneau. Qu’est-ce que cela signifie pour votre conduite ?",
         "choices": [
           {
             "text": "La limitation de 50 km/h prend fin et vous réévaluez la situation applicable",
@@ -301,10 +301,10 @@
             "is_correct": false
           }
         ],
-        "explanation": "Après ce panneau, la limitation de 50 km/h imposée par C43 ne s’applique plus."
+        "explanation": "Après ce panneau, la limitation de 50 km/h imposée par C43 ne s’applique plus. Vous déterminez de nouveau la vitesse applicable selon les règles générales et les autres signaux."
       },
       "AR": {
-        "question": "كنت سابقًا داخل نطاق سرعة قصوى 50 كم/س والآن تجاوزت هذه العلامة. ماذا يعني ذلك لقيادتك؟",
+        "question": "كنت على مقطع طريق تفرض فيه C43 سرعة 50 كم/س ثم تجاوزت هذه العلامة. ماذا يعني ذلك لقيادتك؟",
         "choices": [
           {
             "text": "ينتهي تحديد 50 كم/س وتعيد تقييم الوضع المطبق من جديد",
@@ -319,7 +319,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "بعد هذه العلامة لا يعود تحديد 50 كم/س الذي فرضته C43 ساريًا."
+        "explanation": "بعد هذه العلامة لا يعود تحديد 50 كم/س الذي فرضته C43 ساريًا. وتعيد تحديد السرعة المطبقة وفق القواعد العامة والعلامات الأخرى."
       }
     }
   },
@@ -477,10 +477,10 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Betekent dit bord dat u vanaf hier nog altijd verplicht bent maximaal 50 km/u te rijden?",
+        "question": "Blijft de eerdere C43-beperking van 50 km/u door dit bord zelf gelden?",
         "choices": [
           {
-            "text": "Nee, alleen de beperking van 50 km/u eindigt hier",
+            "text": "Nee, de C43-beperking eindigt; een andere regel kan wel 50 km/u opleggen",
             "is_correct": true
           },
           {
@@ -488,13 +488,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "Dit bord beëindigt de snelheidsbeperking van 50 km/u die door C43 was opgelegd."
+        "explanation": "Dit bord beëindigt de snelheidsbeperking van 50 km/u die door C43 was opgelegd. De snelheid die daarna geldt, volgt uit de algemene regels en andere verkeerstekens en kan opnieuw 50 km/u zijn."
       },
       "EN": {
-        "question": "Does this sign mean that from here on you are still obliged to drive at no more than 50 km/h?",
+        "question": "Does this sign itself keep the earlier C43 limit of 50 km/h in force?",
         "choices": [
           {
-            "text": "No, the 50 km/h limit ends here",
+            "text": "No, the C43 limit ends; another rule may still impose 50 km/h",
             "is_correct": true
           },
           {
@@ -502,13 +502,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "This sign ends the 50 km/h speed limit that was imposed by C43."
+        "explanation": "This sign ends the 50 km/h limit imposed by C43. The speed that applies afterwards follows from the general rules and other traffic signs and may again be 50 km/h."
       },
       "FR": {
-        "question": "Ce panneau signifie-t-il qu’à partir d’ici vous êtes encore obligé de rouler à maximum 50 km/h ?",
+        "question": "Ce panneau maintient-il lui-même la limitation précédente de 50 km/h imposée par C43 ?",
         "choices": [
           {
-            "text": "Non, la limitation de 50 km/h prend fin ici",
+            "text": "Non, la limitation C43 prend fin ; une autre règle peut encore imposer 50 km/h",
             "is_correct": true
           },
           {
@@ -516,13 +516,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "Ce panneau met fin à la limitation de vitesse de 50 km/h imposée par C43."
+        "explanation": "Ce panneau met fin à la limitation de 50 km/h imposée par C43. La vitesse applicable ensuite découle des règles générales et des autres signaux et peut de nouveau être de 50 km/h."
       },
       "AR": {
-        "question": "هل تعني هذه العلامة أنك ما زلت ملزمًا من هنا بالسير بحد أقصى 50 كم/س؟",
+        "question": "هل تُبقي هذه العلامة نفسها تحديد C43 السابق البالغ 50 كم/س سارياً؟",
         "choices": [
           {
-            "text": "لا، ينتهي هنا تحديد 50 كم/س",
+            "text": "لا، ينتهي تحديد C43؛ وقد تفرض قاعدة أخرى 50 كم/س",
             "is_correct": true
           },
           {
@@ -530,7 +530,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "تنهي هذه العلامة تحديد السرعة 50 كم/س الذي كانت قد فرضته C43."
+        "explanation": "تنهي هذه العلامة تحديد 50 كم/س الذي فرضته C43. أما السرعة المطبقة بعدها فتتحدد بالقواعد العامة والعلامات الأخرى وقد تكون 50 كم/س من جديد."
       }
     }
   },

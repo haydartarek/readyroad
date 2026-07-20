@@ -22,7 +22,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "Dit bord geeft aan dat bestuurders van voertuigen die gevaarlijke goederen vervoeren hier niet mogen inrijden."
+        "explanation": "C24a geldt voor voertuigen die gevaarlijke goederen die door de voor het vervoer bevoegde ministers zijn bepaald vervoeren."
       },
       "EN": {
         "question": "What does this traffic sign mean?",
@@ -40,7 +40,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "This sign indicates that drivers of vehicles carrying dangerous goods may not enter here."
+        "explanation": "C24a applies to vehicles carrying dangerous goods designated by the ministers responsible for their transport."
       },
       "FR": {
         "question": "Que signifie ce panneau ?",
@@ -58,7 +58,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "Ce panneau indique que les conducteurs de véhicules transportant des marchandises dangereuses ne peuvent pas entrer ici."
+        "explanation": "C24a s'applique aux véhicules transportant des marchandises dangereuses déterminées par les ministres compétents pour leur transport."
       },
       "AR": {
         "question": "ما معنى هذه العلامة المرورية؟",
@@ -76,7 +76,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "تدل هذه العلامة على أن سائقي المركبات التي تنقل بضائع خطرة لا يجوز لهم الدخول من هنا."
+        "explanation": "تنطبق C24a على المركبات التي تنقل البضائع الخطرة التي يحددها الوزراء المختصون بنقلها."
       }
     }
   },
@@ -172,7 +172,7 @@
         "question": "Wat verbiedt dit bord precies?",
         "choices": [
           {
-            "text": "De toegang voor voertuigen die gevaarlijke goederen vervoeren",
+            "text": "De toegang voor voertuigen die de officieel aangewezen gevaarlijke goederen vervoeren",
             "is_correct": true
           },
           {
@@ -184,13 +184,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "Dit bord verbiedt specifiek de toegang voor voertuigen die gevaarlijke goederen vervoeren."
+        "explanation": "Dit bord verbiedt de toegang voor voertuigen die gevaarlijke goederen vervoeren die door de bevoegde ministers zijn aangewezen."
       },
       "EN": {
         "question": "What exactly does this sign prohibit?",
         "choices": [
           {
-            "text": "Access for vehicles carrying dangerous goods",
+            "text": "Access for vehicles carrying officially designated dangerous goods",
             "is_correct": true
           },
           {
@@ -202,13 +202,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "This sign specifically prohibits access for vehicles carrying dangerous goods."
+        "explanation": "This sign prohibits access for vehicles carrying dangerous goods designated by the ministers responsible for their transport."
       },
       "FR": {
         "question": "Qu’interdit précisément ce panneau ?",
         "choices": [
           {
-            "text": "L’accès des véhicules transportant des marchandises dangereuses",
+            "text": "L’accès des véhicules transportant les marchandises dangereuses officiellement déterminées",
             "is_correct": true
           },
           {
@@ -220,13 +220,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "Ce panneau interdit précisément l’accès aux véhicules transportant des marchandises dangereuses."
+        "explanation": "Ce panneau interdit l’accès aux véhicules transportant les marchandises dangereuses déterminées par les ministres compétents pour leur transport."
       },
       "AR": {
         "question": "ما الذي تمنعه هذه العلامة تحديدًا؟",
         "choices": [
           {
-            "text": "دخول المركبات التي تنقل بضائع خطرة",
+            "text": "دخول المركبات التي تنقل البضائع الخطرة المحددة رسمياً",
             "is_correct": true
           },
           {
@@ -238,7 +238,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "تمنع هذه العلامة تحديدًا دخول المركبات التي تنقل بضائع خطرة."
+        "explanation": "تمنع هذه العلامة دخول المركبات التي تنقل البضائع الخطرة التي يحددها الوزراء المختصون بنقلها."
       }
     }
   },
@@ -542,60 +542,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Mag een voertuig met gevaarlijke goederen deze weg kort gebruiken om snel door te rijden?",
+        "question": "C24a heeft een onderbord met de letter C. Wat betekent die letter?",
         "choices": [
           {
-            "text": "Nee, het verbod blijft gelden",
+            "text": "Het verbod geldt voor gevaarlijke goederen die niet in ADR-tunnels van categorie C mogen",
             "is_correct": true
           },
           {
-            "text": "Ja, als het maar voor een kort stuk is",
+            "text": "Alleen voertuigen van rijbewijscategorie C zijn verboden",
             "is_correct": false
           }
         ],
-        "explanation": "Ook voor een korte doorgang blijft de toegang verboden voor voertuigen die gevaarlijke goederen vervoeren."
+        "explanation": "De letter B, C, D of E verwijst naar de overeenkomstige ADR-tunnelcategorie waarvoor bepaalde gevaarlijke goederen verboden zijn."
       },
       "EN": {
-        "question": "May a vehicle carrying dangerous goods use this road briefly just to pass through quickly?",
+        "question": "C24a has a supplementary plate bearing C. What does the letter mean?",
         "choices": [
           {
-            "text": "No, the prohibition remains in force",
+            "text": "The prohibition covers dangerous goods barred from ADR category C tunnels",
             "is_correct": true
           },
           {
-            "text": "Yes, if it is only for a short distance",
+            "text": "Only vehicles requiring a category C licence are prohibited",
             "is_correct": false
           }
         ],
-        "explanation": "Even for a short passage, access remains prohibited for vehicles carrying dangerous goods."
+        "explanation": "B, C, D or E refers to the corresponding ADR tunnel category from which specified dangerous goods are barred."
       },
       "FR": {
-        "question": "Un véhicule transportant des marchandises dangereuses peut-il utiliser brièvement cette route juste pour passer rapidement ?",
+        "question": "C24a comporte un panneau complémentaire C. Que signifie la lettre ?",
         "choices": [
           {
-            "text": "Non, l’interdiction reste en vigueur",
+            "text": "L'interdiction vise les marchandises dangereuses interdites dans les tunnels ADR de catégorie C",
             "is_correct": true
           },
           {
-            "text": "Oui, si ce n’est que pour une courte distance",
+            "text": "Seuls les véhicules exigeant un permis C sont interdits",
             "is_correct": false
           }
         ],
-        "explanation": "Même pour un passage bref, l’accès reste interdit aux véhicules transportant des marchandises dangereuses."
+        "explanation": "B, C, D ou E renvoie à la catégorie de tunnel ADR correspondante dans laquelle certaines marchandises sont interdites."
       },
       "AR": {
-        "question": "هل يجوز لمركبة تنقل بضائع خطرة استخدام هذا الطريق لمسافة قصيرة فقط من أجل المرور السريع؟",
+        "question": "تحت C24a لوحة تكميلية تحمل C. ماذا يعني الحرف؟",
         "choices": [
           {
-            "text": "لا، يبقى الحظر ساريًا",
+            "text": "يشمل الحظر البضائع الخطرة الممنوعة في أنفاق ADR من الفئة C",
             "is_correct": true
           },
           {
-            "text": "نعم، إذا كان ذلك لمسافة قصيرة فقط",
+            "text": "تُمنع فقط المركبات التي تتطلب رخصة فئة C",
             "is_correct": false
           }
         ],
-        "explanation": "حتى في حالة المرور القصير، يبقى الدخول ممنوعًا على المركبات التي تنقل بضائع خطرة."
+        "explanation": "تشير B أو C أو D أو E إلى فئة نفق ADR المقابلة التي تُمنع فيها بضائع خطرة محددة."
       }
     }
   }
