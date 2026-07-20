@@ -10,73 +10,73 @@
         "question": "Wat betekent dit verkeersbord?",
         "choices": [
           {
-            "text": "Een rijstrook eindigt voor u — voeg tijdig samen met de naastliggende rijstrook",
+            "text": "Een bord dat een speciaal aangelegde noodstopstrook aanduidt.",
             "is_correct": true
           },
           {
-            "text": "De rijbaan wordt smaller; verminder uw snelheid en pas uw zijdelingse positie aan",
+            "text": "Een bord dat het einde van een gewone rijstrook en een verplichte invoeging aanduidt.",
             "is_correct": false
           },
           {
-            "text": "De rijbaan verlegt zijdelings; volg de aangeduide richting en handhaaf uw huidige koers niet",
+            "text": "Een bord dat een afrit naar een tankstation of rustplaats aankondigt.",
             "is_correct": false
           }
         ],
-        "explanation": "F95 kondigt het einde van een rijstrook aan. De bestuurder in de eindende rijstrook moet tijdig samenvoegen met de aangrenzende rijstrook. Wachten tot het allerlaatste moment is niet toegestaan."
+        "explanation": "F95 duidt een speciaal aangelegde noodstopstrook aan en kan onderaan de afstand ernaartoe vermelden."
       },
       "EN": {
         "question": "What does this traffic sign mean?",
         "choices": [
           {
-            "text": "A lane ends ahead of you — merge into the adjacent lane in good time",
+            "text": "A sign marking a purpose-built emergency escape lane.",
             "is_correct": true
           },
           {
-            "text": "The road narrows; reduce speed and adapt your lateral position",
+            "text": "A sign marking the end of an ordinary lane and a compulsory merge.",
             "is_correct": false
           },
           {
-            "text": "The carriageway shifts laterally; follow the indicated direction and do not maintain your current path",
+            "text": "A sign announcing an exit to a service station or rest area.",
             "is_correct": false
           }
         ],
-        "explanation": "F95 announces the end of a lane. The driver in the ending lane must merge into the adjacent lane in good time. Waiting until the very last moment is not permitted."
+        "explanation": "F95 marks a purpose-built emergency escape lane and may show the distance to it at the bottom."
       },
       "FR": {
-        "question": "Que signifie ce panneau de signalisation?",
+        "question": "Que signifie ce panneau de signalisation ?",
         "choices": [
           {
-            "text": "Une voie se termine devant vous — rabattez-vous à temps sur la voie adjacente",
+            "text": "Un signal indiquant une piste de détresse spécialement aménagée.",
             "is_correct": true
           },
           {
-            "text": "La chaussée se rétrécit; réduisez la vitesse et adaptez votre position latérale",
+            "text": "Un signal indiquant la fin d'une bande ordinaire et un rabattement obligatoire.",
             "is_correct": false
           },
           {
-            "text": "La chaussée se déplace latéralement; suivez la direction indiquée sans maintenir votre trajectoire",
+            "text": "Un signal annonçant une sortie vers une station-service ou une aire de repos.",
             "is_correct": false
           }
         ],
-        "explanation": "F95 annonce la fin d'une voie. Le conducteur dans la voie qui se termine doit se rabattre à temps sur la voie adjacente. Attendre le tout dernier moment n'est pas autorisé."
+        "explanation": "F95 indique une piste de détresse spécialement aménagée et peut mentionner en bas la distance qui y mène."
       },
       "AR": {
         "question": "ما معنى هذه العلامة المرورية؟",
         "choices": [
           {
-            "text": "مسار ينتهي أمامك — اندمج في الوقت المناسب مع المسار المجاور",
+            "text": "علامة تحدد مسار توقف اضطراري منشأ خصيصًا.",
             "is_correct": true
           },
           {
-            "text": "يضيق الطريق؛ خفّض السرعة وعدّل موضعك",
+            "text": "علامة تحدد نهاية مسار عادي واندماجًا إلزاميًا.",
             "is_correct": false
           },
           {
-            "text": "ينزاح الطريق جانبيًا؛ اتبع الاتجاه المحدد",
+            "text": "علامة تعلن عن مخرج إلى محطة خدمة أو استراحة.",
             "is_correct": false
           }
         ],
-        "explanation": "F95 تُعلن نهاية مسار. يجب الاندماج مبكرًا في الوقت المناسب. الانتظار حتى آخر لحظة غير مسموح."
+        "explanation": "تدل F95 على مسار توقف اضطراري منشأ خصيصًا، وقد تعرض في أسفلها المسافة إليه."
       }
     }
   },
@@ -88,40 +88,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Tot welke categorie verkeersborden behoort dit bord?",
+        "question": "Tot welke inhoudscategorie behoort dit bord binnen ReadyRoad?",
         "choices": [
-          { "text": "Wegbeheersingstekens", "is_correct": true },
-          { "text": "Gevaarsborden", "is_correct": false },
-          { "text": "Gebodsborden", "is_correct": false }
+          {
+            "text": "Wegbeheer en rijstrooksignalisatie",
+            "is_correct": true
+          },
+          {
+            "text": "Voorrangsborden",
+            "is_correct": false
+          },
+          {
+            "text": "Parkeerborden",
+            "is_correct": false
+          }
         ],
-        "explanation": "F95 behoort tot deze categorie. Het aankondigen van een rijstrookeinde vereist actieve aanpassing door de betrokken bestuurder."
+        "explanation": "Binnen ReadyRoad is dit bord onder ROAD_MANAGEMENT ingedeeld. De concrete betekenis blijft die van het afgebeelde officiële F-bord."
       },
       "EN": {
-        "question": "To which category of traffic signs does this sign belong?",
+        "question": "Which ReadyRoad content category contains this sign?",
         "choices": [
-          { "text": "Road management signs", "is_correct": true },
-          { "text": "Danger signs", "is_correct": false },
-          { "text": "Mandatory signs", "is_correct": false }
+          {
+            "text": "Road management and lane-control signs",
+            "is_correct": true
+          },
+          {
+            "text": "Priority signs",
+            "is_correct": false
+          },
+          {
+            "text": "Parking signs",
+            "is_correct": false
+          }
         ],
-        "explanation": "F95 belongs to this category. Announcing a lane end requires active adaptation by the driver concerned."
+        "explanation": "ReadyRoad classifies this sign under ROAD_MANAGEMENT. Its actual meaning remains that of the official F sign shown."
       },
       "FR": {
-        "question": "À quelle catégorie de panneaux appartient ce panneau?",
+        "question": "Dans quelle catégorie de contenu ReadyRoad ce panneau est-il classé ?",
         "choices": [
-          { "text": "Panneaux de gestion de la route", "is_correct": true },
-          { "text": "Panneaux de danger", "is_correct": false },
-          { "text": "Panneaux d'obligation", "is_correct": false }
+          {
+            "text": "Gestion de la route et signalisation par bande",
+            "is_correct": true
+          },
+          {
+            "text": "Signaux de priorité",
+            "is_correct": false
+          },
+          {
+            "text": "Signaux de stationnement",
+            "is_correct": false
+          }
         ],
-        "explanation": "F95 appartient à cette catégorie. Annoncer la fin d'une voie exige une adaptation active du conducteur concerné."
+        "explanation": "ReadyRoad classe ce panneau dans ROAD_MANAGEMENT. Sa signification concrète reste celle du signal F officiel représenté."
       },
       "AR": {
-        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
+        "question": "ضمن أي فئة محتوى في ReadyRoad تندرج هذه العلامة؟",
         "choices": [
-          { "text": "علامات إدارة الطريق", "is_correct": true },
-          { "text": "علامات الخطر", "is_correct": false },
-          { "text": "العلامات الإلزامية", "is_correct": false }
+          {
+            "text": "إدارة الطريق وتنظيم المسارات",
+            "is_correct": true
+          },
+          {
+            "text": "علامات الأولوية",
+            "is_correct": false
+          },
+          {
+            "text": "علامات الوقوف والركن",
+            "is_correct": false
+          }
         ],
-        "explanation": "F95 تنتمي إلى هذه الفئة. تستوجب تكيفًا فعليًا من السائق المعني."
+        "explanation": "يصنّف ReadyRoad هذه العلامة ضمن ROAD_MANAGEMENT، وتبقى دلالتها الفعلية هي دلالة علامة F الرسمية المعروضة."
       }
     }
   },
@@ -133,76 +169,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Welke wegsituatie kondigt dit bord aan?",
+        "question": "Welke uitspraak over dit bord is juist?",
         "choices": [
           {
-            "text": "Uw rijstrook eindigt — tijdig samenvoegen met de aangrenzende rijstrook is verplicht",
+            "text": "F95 mag alleen worden geplaatst waar daadwerkelijk een noodstopstrook is aangelegd; de afstand ernaartoe kan onderaan staan.",
             "is_correct": true
           },
           {
-            "text": "De rijbaan versmalt — snelheid en positionering aanpassen is vereist",
+            "text": "F95 mag bij elke gewone pechstrook worden geplaatst, ook zonder noodstopvoorziening.",
             "is_correct": false
           },
           {
-            "text": "De rijbaan verlegt lateraal — volg de aangeduide richting",
+            "text": "F95 betekent dat een rijstrook voor normaal verkeer opnieuw opent.",
             "is_correct": false
           }
         ],
-        "explanation": "F95 kondigt het einde van uw rijstrook aan. Het samenvoegen moet tijdig en soepel gebeuren — niet op het allerlaatste moment."
+        "explanation": "Een noodstopstrook is een uitloopvoorziening waar een voertuig dat niet normaal kan stoppen in een noodsituatie tot stilstand kan worden gebracht. Het symbool mag aan de plaatsgesteldheid worden aangepast en F95 mag alleen worden geplaatst waar zo'n strook is aangelegd."
       },
       "EN": {
-        "question": "What road situation does this sign announce?",
+        "question": "Which statement about this sign is correct?",
         "choices": [
           {
-            "text": "Your lane ends — merging with the adjacent lane in good time is mandatory",
+            "text": "F95 may be placed only where an emergency escape lane actually exists; the distance to it may be shown at the bottom.",
             "is_correct": true
           },
           {
-            "text": "The road narrows — adapting speed and position is required",
+            "text": "F95 may mark any ordinary hard shoulder even without an escape facility.",
             "is_correct": false
           },
           {
-            "text": "The carriageway shifts laterally — follow the indicated direction",
+            "text": "F95 means a lane for normal traffic reopens.",
             "is_correct": false
           }
         ],
-        "explanation": "F95 announces the end of your lane. Merging must be done in good time and smoothly — not at the very last moment."
+        "explanation": "An emergency escape lane is a run-off facility intended to stop a vehicle that cannot stop normally in an emergency. The symbol may be adapted to the site and F95 may be placed only where such a lane has been built."
       },
       "FR": {
-        "question": "Quelle situation routière ce panneau annonce-t-il?",
+        "question": "Quelle affirmation concernant ce panneau est correcte ?",
         "choices": [
           {
-            "text": "Votre voie se termine — se rabattre à temps sur la voie adjacente est obligatoire",
+            "text": "F95 ne peut être placé que là où une piste de détresse existe réellement; la distance jusqu'à celle-ci peut figurer en bas.",
             "is_correct": true
           },
           {
-            "text": "La chaussée se rétrécit — adapter la vitesse et la position est requis",
+            "text": "F95 peut indiquer toute bande d'arrêt ordinaire même sans piste de détresse.",
             "is_correct": false
           },
           {
-            "text": "La chaussée se déplace latéralement — suivre la direction indiquée",
+            "text": "F95 signifie qu'une bande de circulation normale rouvre.",
             "is_correct": false
           }
         ],
-        "explanation": "F95 annonce la fin de votre voie. La fusion doit se faire à temps et doucement — pas au tout dernier moment."
+        "explanation": "Une piste de détresse est une voie de dégagement destinée à arrêter un véhicule qui ne peut plus s'arrêter normalement en situation d'urgence. Le symbole peut être adapté aux lieux et F95 ne peut être placé que là où une telle piste existe."
       },
       "AR": {
-        "question": "ما الوضع الذي تُعلن عنه هذه العلامة المرورية؟",
+        "question": "أي عبارة عن هذه العلامة صحيحة؟",
         "choices": [
           {
-            "text": "مسارك ينتهي — الاندماج مع المسار المجاور في الوقت المناسب إلزامي",
+            "text": "لا توضع F95 إلا حيث يوجد بالفعل مسار توقف اضطراري، ويمكن عرض المسافة إليه في أسفل العلامة.",
             "is_correct": true
           },
           {
-            "text": "يضيق الطريق — تعديل السرعة والموضع ضروري",
+            "text": "يجوز وضع F95 عند أي كتف طريق عادي حتى من دون مرفق توقف اضطراري.",
             "is_correct": false
           },
           {
-            "text": "ينزاح الطريق جانبيًا — ابع الاتجاه المحدد",
+            "text": "تعني F95 إعادة فتح مسار للمرور العادي.",
             "is_correct": false
           }
         ],
-        "explanation": "F95 تُعلن نهاية مسارك. الاندماج يجب أن يتم بسلاسة وفي الوقت المناسب."
+        "explanation": "مسار التوقف الاضطراري مرفق خروج مصمم لإيقاف مركبة لا تستطيع التوقف بصورة عادية في حالة طارئة. يمكن تكييف الرسم مع الموقع، ولا توضع F95 إلا حيث أُنشئ مثل هذا المسار."
       }
     }
   },
@@ -214,76 +250,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat moet u doen wanneer u F95 ziet?",
+        "question": "Wat is de juiste reactie wanneer u dit bord nadert?",
         "choices": [
           {
-            "text": "Soepel en tijdig samenvoegen met de aangrenzende rijstrook — niet wachten tot het allerlaatste moment",
+            "text": "Herken de voorziening als nooduitloop en gebruik haar alleen wanneer het voertuig niet veilig op normale wijze tot stilstand kan komen.",
             "is_correct": true
           },
           {
-            "text": "Stoppen aan het einde van de rijstrook en wachten op een geschikte opening om in te voegen",
+            "text": "Gebruik de strook als gewone afrit om een file te vermijden.",
             "is_correct": false
           },
           {
-            "text": "Aandringen op invoegen omdat u als bestuurder in de eindende rijstrook absolute voorrang heeft",
+            "text": "Stop er voor rust, ook zonder pech of noodsituatie.",
             "is_correct": false
           }
         ],
-        "explanation": "F95 vereist anticiperend rijgedrag: tijdig en soepel samenvoegen met de aangrenzende rijstrook. Er is geen absolute voorrang voor de invoegende bestuurder. Samenvoegen op het allerlaatste moment is gevaarlijk en niet toegestaan."
+        "explanation": "Gebruik de voorziening alleen wanneer een noodsituatie veilig stoppen op de normale rijbaan onmogelijk maakt. Stuur beheerst de aangeduide strook in en volg eventuele hulp- en veiligheidsinstructies."
       },
       "EN": {
-        "question": "What must you do when you see F95?",
+        "question": "What is the correct response when approaching this sign?",
         "choices": [
           {
-            "text": "Merge smoothly and in good time into the adjacent lane — do not wait until the very last moment",
+            "text": "Recognise the facility as an emergency run-off and use it only when the vehicle cannot stop safely in the normal way.",
             "is_correct": true
           },
           {
-            "text": "Stop at the end of the lane and wait for a suitable gap to merge",
+            "text": "Use it as an ordinary exit to bypass congestion.",
             "is_correct": false
           },
           {
-            "text": "Insist on merging because as the driver in the ending lane you have absolute priority",
+            "text": "Stop there for a rest even without breakdown or emergency.",
             "is_correct": false
           }
         ],
-        "explanation": "F95 requires anticipatory driving: merge smoothly and in good time into the adjacent lane. There is no absolute priority for the merging driver. Merging at the very last moment is dangerous and not permitted."
+        "explanation": "Use the facility only when an emergency makes safe stopping on the normal carriageway impossible. Enter it under control and follow any safety or assistance instructions."
       },
       "FR": {
-        "question": "Que devez-vous faire lorsque vous voyez F95?",
+        "question": "Quelle est la réaction correcte à l'approche de ce panneau ?",
         "choices": [
           {
-            "text": "Se rabattre doucement et à temps sur la voie adjacente — ne pas attendre le tout dernier moment",
+            "text": "Reconnaissez cette voie comme un dispositif d'urgence et ne l'utilisez que si le véhicule ne peut pas s'arrêter normalement en sécurité.",
             "is_correct": true
           },
           {
-            "text": "S'arrêter à la fin de la voie et attendre une ouverture pour se rabattre",
+            "text": "Utilisez-la comme sortie ordinaire pour contourner un embouteillage.",
             "is_correct": false
           },
           {
-            "text": "Insister pour se rabattre car le conducteur dans la voie qui se termine a la priorité absolue",
+            "text": "Arrêtez-vous pour vous reposer même sans panne ni urgence.",
             "is_correct": false
           }
         ],
-        "explanation": "F95 exige une conduite anticipée: se rabattre doucement et à temps. Il n'y a pas de priorité absolue pour le conducteur qui se rabat. Se rabattre au tout dernier moment est dangereux et interdit."
+        "explanation": "N'utilisez la piste que lorsqu'une urgence empêche un arrêt sûr sur la chaussée normale. Engagez-vous de manière maîtrisée et suivez les consignes éventuelles de sécurité et d'assistance."
       },
       "AR": {
-        "question": "ماذا يجب أن تفعل عند رؤية F95؟",
+        "question": "ما التصرف الصحيح عند الاقتراب من هذه العلامة؟",
         "choices": [
           {
-            "text": "الاندماج بسلاسة وفي الوقت المناسب — لا تنتظر حتى آخر لحظة",
+            "text": "تعرف إلى المرفق بوصفه مخرج توقف طارئًا، ولا تستخدمه إلا إذا تعذر إيقاف المركبة بأمان بالطريقة العادية.",
             "is_correct": true
           },
           {
-            "text": "التوقف عند نهاية المسار وانتظار فرصة مناسبة",
+            "text": "استخدمه مخرجًا عاديًا لتجاوز الازدحام.",
             "is_correct": false
           },
           {
-            "text": "الإصرار على الاندماج لأن لديك أولوية مطلقة",
+            "text": "توقف فيه للاستراحة حتى من دون عطل أو طارئ.",
             "is_correct": false
           }
         ],
-        "explanation": "F95 تستوجب قيادة استباقية: اندمج بسلاسة وفي وقت مناسب. لا توجد أولوية مطلقة للسائق المندمج."
+        "explanation": "لا تستخدم المرفق إلا عندما تجعل حالة طارئة التوقف الآمن على الطريق العادي مستحيلًا. ادخله بتحكم واتبع أي تعليمات للسلامة أو المساعدة."
       }
     }
   },
@@ -295,76 +331,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Uw rijstrook eindigt over 300 meter. Het verkeer op de aangrenzende rijstrook is dicht. Wanneer begint u met samenvoegen?",
+        "question": "Welke uitspraak over het toepassingsgebied is juist?",
         "choices": [
           {
-            "text": "Zo vroeg als veilig mogelijk — anticiperend rijgedrag is vereist; niet wachten tot uw rijstrook volledig verdwijnt",
+            "text": "Het symbool mag aan de plaatsgesteldheid worden aangepast en een afstand mag worden toegevoegd, maar de betekenis blijft noodstopstrook.",
             "is_correct": true
           },
           {
-            "text": "Zo laat mogelijk om het doorgaande verkeer op de andere rijstrook niet onnodig te hinderen",
+            "text": "Elke aangepaste tekening verandert F95 in een gewone uitrit.",
             "is_correct": false
           },
           {
-            "text": "Pas wanneer u de rijbaanmarkering ziet die het absolute einde van uw rijstrook aangeeft",
+            "text": "Een afstand onderaan geeft de lengte van de noodstopstrook aan, nooit de afstand ernaartoe.",
             "is_correct": false
           }
         ],
-        "explanation": "Bij F95 moet u anticiperend rijden. Dit betekent dat u tijdig zoekt naar een veilige samenvoegmogelijkheid en niet wacht tot de rijstrook volledig is geëindigd. Vroegtijdig samenvoegen is veiliger voor alle weggebruikers."
+        "explanation": "Het symbool mag aan de plaatsgesteldheid worden aangepast en een afstand mag worden toegevoegd, maar de betekenis blijft noodstopstrook."
       },
       "EN": {
-        "question": "Your lane ends in 300 metres. Traffic on the adjacent lane is dense. When do you start merging?",
+        "question": "Which statement about its scope is correct?",
         "choices": [
           {
-            "text": "As early as safely possible — anticipatory driving is required; do not wait for your lane to fully disappear",
+            "text": "The symbol may be adapted and a distance may be added, but the meaning remains an emergency escape lane.",
             "is_correct": true
           },
           {
-            "text": "As late as possible to avoid unnecessarily disrupting through traffic on the other lane",
+            "text": "Any adapted drawing turns F95 into an ordinary exit.",
             "is_correct": false
           },
           {
-            "text": "Only when you see the road marking indicating the absolute end of your lane",
+            "text": "A distance at the bottom always gives the length of the escape lane, never the distance to it.",
             "is_correct": false
           }
         ],
-        "explanation": "With F95 you must drive anticipatorily. This means finding a safe merging opportunity early and not waiting until the lane has completely ended. Early merging is safer for all road users."
+        "explanation": "The symbol may be adapted and a distance may be added, but the meaning remains an emergency escape lane."
       },
       "FR": {
-        "question": "Votre voie se termine dans 300 mètres. La circulation sur la voie adjacente est dense. Quand commencez-vous à vous rabattre?",
+        "question": "Quelle affirmation concernant son champ d'application est correcte ?",
         "choices": [
           {
-            "text": "Aussi tôt que possible en toute sécurité — une conduite anticipée est requise; ne pas attendre que votre voie disparaisse complètement",
+            "text": "Le symbole peut être adapté et une distance ajoutée, mais la signification reste celle d'une piste de détresse.",
             "is_correct": true
           },
           {
-            "text": "Le plus tard possible pour ne pas perturber inutilement la circulation sur l'autre voie",
+            "text": "Tout dessin adapté transforme F95 en sortie ordinaire.",
             "is_correct": false
           },
           {
-            "text": "Seulement quand vous voyez le marquage indiquant la fin absolue de votre voie",
+            "text": "Une distance en bas donne toujours la longueur de la piste, jamais la distance jusqu'à elle.",
             "is_correct": false
           }
         ],
-        "explanation": "Avec F95 vous devez conduire de manière anticipée. Cela signifie trouver une opportunité de fusion sûre tôt et ne pas attendre que la voie soit entièrement terminée."
+        "explanation": "Le symbole peut être adapté et une distance ajoutée, mais la signification reste celle d'une piste de détresse."
       },
       "AR": {
-        "question": "مسارك ينتهي بعد 300 متر. الحركة كثيفة على المسار المجاور. متى تبدأ بالاندماج؟",
+        "question": "أي عبارة عن نطاق تطبيقها صحيحة؟",
         "choices": [
           {
-            "text": "في أقرب وقت ممكن — القيادة الاستباقية ضرورية؛ لا تنتظر حتى يختفي المسار تمامًا",
+            "text": "يمكن تكييف الرسم وإضافة مسافة، لكن المعنى يبقى مسار توقف اضطراري.",
             "is_correct": true
           },
           {
-            "text": "في أخر وقت ممكن حتى لا تعيق المرور على المسار الآخر",
+            "text": "كل رسم مكيّف يحوّل F95 إلى مخرج عادي.",
             "is_correct": false
           },
           {
-            "text": "فقط حين ترى الخط المشير إلى نهاية المسار",
+            "text": "توضح المسافة في الأسفل دائمًا طول المسار، ولا توضح أبدًا البعد إليه.",
             "is_correct": false
           }
         ],
-        "explanation": "مع F95 يجب القيادة بشكل استباقي. ابحث عن فرصة اندماج مبكراً ولا تنتظر حتى يختفي المسار."
+        "explanation": "يمكن تكييف الرسم وإضافة مسافة، لكن المعنى يبقى مسار توقف اضطراري."
       }
     }
   },
@@ -376,76 +412,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wanneer moet u samenvoegen bij F95 — tijdig ruim op voorhand of pas op het allerlaatste moment?",
+        "question": "Welk onderscheid is juridisch en praktisch juist?",
         "choices": [
           {
-            "text": "Ruim op voorhand — anticiperend rijgedrag is vereist om de verkeersdoorstroming niet te verstoren",
+            "text": "F95 duidt een noodstopstrook aan; F98 duidt een vluchthaven aan.",
             "is_correct": true
           },
           {
-            "text": "Op het allerlaatste moment zodat uw rijstrook zo lang mogelijk wordt benut",
+            "text": "F95 duidt een eindigende rijstrook aan en F98 heropent die rijstrook.",
             "is_correct": false
           },
           {
-            "text": "Het tijdstip maakt niet uit want u heeft als invoegende bestuurder altijd voorrang",
+            "text": "F95 en F98 zijn gewone parkeer- en rustplaatsen.",
             "is_correct": false
           }
         ],
-        "explanation": "Tijdig en anticiperend samenvoegen is de kern van F95. Wachten tot het allerlaatste moment veroorzaakt gevaarlijke situaties en verstoring van de verkeersstroom. Er is geen absolute voorrang voor de invoegende bestuurder."
+        "explanation": "F95 duidt een noodstopstrook aan; F98 duidt een vluchthaven aan."
       },
       "EN": {
-        "question": "When must you merge under F95 — well in advance or at the very last moment?",
+        "question": "Which legal and practical distinction is correct?",
         "choices": [
           {
-            "text": "Well in advance — anticipatory driving is required to avoid disrupting traffic flow",
+            "text": "F95 marks an emergency escape lane; F98 marks an emergency refuge bay.",
             "is_correct": true
           },
           {
-            "text": "At the very last moment to use your lane for as long as possible",
+            "text": "F95 marks a lane ending and F98 reopens that lane.",
             "is_correct": false
           },
           {
-            "text": "The timing does not matter because as the merging driver you always have priority",
+            "text": "F95 and F98 are ordinary parking and rest areas.",
             "is_correct": false
           }
         ],
-        "explanation": "Merging in good time and anticipatorily is the core of F95. Waiting until the very last moment creates dangerous situations and disrupts traffic flow. There is no absolute priority for the merging driver."
+        "explanation": "F95 marks an emergency escape lane; F98 marks an emergency refuge bay."
       },
       "FR": {
-        "question": "Quand devez-vous vous rabattre avec F95 — bien à l'avance ou au tout dernier moment?",
+        "question": "Quelle distinction juridique et pratique est correcte ?",
         "choices": [
           {
-            "text": "Bien à l'avance — une conduite anticipée est requise pour ne pas perturber le flux de circulation",
+            "text": "F95 indique une piste de détresse; F98 indique un refuge d'urgence (garage F98).",
             "is_correct": true
           },
           {
-            "text": "Au tout dernier moment pour utiliser votre voie aussi longtemps que possible",
+            "text": "F95 indique une bande qui se termine et F98 rouvre cette bande.",
             "is_correct": false
           },
           {
-            "text": "Le moment n'a pas d'importance car le conducteur qui se rabat a toujours la priorité",
+            "text": "F95 et F98 sont des lieux ordinaires de stationnement et de repos.",
             "is_correct": false
           }
         ],
-        "explanation": "Se rabattre à temps et de manière anticipée est le cœur de F95. Attendre le dernier moment crée des situations dangereuses. Il n'y a pas de priorité absolue pour le conducteur qui se rabat."
+        "explanation": "F95 indique une piste de détresse; F98 indique un refuge d'urgence (garage F98)."
       },
       "AR": {
-        "question": "متى يجب الاندماج في F95 — مبكرًا أم في آخر لحظة؟",
+        "question": "أي تمييز قانوني وعملي صحيح؟",
         "choices": [
           {
-            "text": "مبكرًا — القيادة الاستباقية ضرورية لتجنب تعطل سير المرور",
+            "text": "تدل F95 على مسار توقف اضطراري، بينما تدل F98 على جيب لجوء للطوارئ.",
             "is_correct": true
           },
           {
-            "text": "في آخر لحظة حتى تستفيد من مسارك أطول مدة ممكنة",
+            "text": "تدل F95 على نهاية مسار وتعيد F98 فتحه.",
             "is_correct": false
           },
           {
-            "text": "لا يهم التوقيت لأن السائق المندمج له أولوية دائمًا",
+            "text": "F95 وF98 مكانان عاديان للركن والاستراحة.",
             "is_correct": false
           }
         ],
-        "explanation": "الاندماج المبكر والاستباقي هو جوهر F95. الانتظار حتى آخر لحظة يخلق خطرًا. لا توجد أولوية مطلقة."
+        "explanation": "تدل F95 على مسار توقف اضطراري، بينما تدل F98 على جيب لجوء للطوارئ."
       }
     }
   },
@@ -457,60 +493,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Uw rijstrook eindigt. U heeft niet tijdig samengevoegd. Mag u aan het einde van uw rijstrook stoppen en uzelf met kracht in de rijstroom invoegen?",
+        "question": "Mag u een F95-noodstopstrook gebruiken als gewone afrit of om een file voorbij te rijden?",
         "choices": [
           {
-            "text": "Neen, stoppen en uzelf invoegen via dwang is niet toegestaan — tijdig samenvoegen is verplicht",
-            "is_correct": true
+            "text": "Ja",
+            "is_correct": false
           },
           {
-            "text": "Ja, als u niet tijdig heeft samengevoegd mag u stoppen en dan invoegen bij de eerstvolgende gelegenheid",
-            "is_correct": false
+            "text": "Neen",
+            "is_correct": true
           }
         ],
-        "explanation": "F95 verplicht anticiperend en tijdig samenvoegen. Tot stilstand komen aan het einde van de rijstrook en dwingend invoegen is gevaarlijk en in strijd met de verplichtingen die voortvloeien uit F95."
+        "explanation": "Neen. Het is een noodvoorziening om een voertuig in een kritieke stopsituatie tot stilstand te brengen, geen verkeers- of serviceafrit."
       },
       "EN": {
-        "question": "Your lane ends. You have not merged in time. May you stop at the end of your lane and force your way into the traffic stream?",
+        "question": "May you use an F95 emergency escape lane as an ordinary exit or to pass a traffic queue?",
         "choices": [
           {
-            "text": "No, stopping and forcing yourself into the traffic stream is not permitted — merging in good time is mandatory",
-            "is_correct": true
+            "text": "Yes",
+            "is_correct": false
           },
           {
-            "text": "Yes, if you did not merge in time you may stop and then merge at the first opportunity",
-            "is_correct": false
+            "text": "No",
+            "is_correct": true
           }
         ],
-        "explanation": "F95 requires anticipatory and timely merging. Coming to a standstill at the end of the lane and forcing your way into the stream is dangerous and contrary to the obligations under F95."
+        "explanation": "No. It is an emergency facility for bringing a vehicle to a stop in a critical stopping situation, not a traffic or service exit."
       },
       "FR": {
-        "question": "Votre voie se termine. Vous ne vous êtes pas rabattu à temps. Pouvez-vous vous arrêter à la fin de votre voie et vous insérer de force dans le flux de circulation?",
+        "question": "Pouvez-vous utiliser une piste de détresse F95 comme sortie ordinaire ou pour dépasser une file ?",
         "choices": [
           {
-            "text": "Non, s'arrêter et s'insérer de force n'est pas autorisé — se rabattre à temps est obligatoire",
-            "is_correct": true
+            "text": "Oui",
+            "is_correct": false
           },
           {
-            "text": "Oui, si vous ne vous êtes pas rabattu à temps vous pouvez vous arrêter puis vous insérer à la première occasion",
-            "is_correct": false
+            "text": "Non",
+            "is_correct": true
           }
         ],
-        "explanation": "F95 exige une insertion anticipée et rapide. S'immobiliser à la fin de la voie et s'insérer de force est dangereux et contraire aux obligations de F95."
+        "explanation": "Non. Il s'agit d'un dispositif d'urgence destiné à arrêter un véhicule dans une situation critique, pas d'une sortie de circulation ou de service."
       },
       "AR": {
-        "question": "مسارك ينتهي ولم تندمج في الوقت المناسب. هل يجوز التوقف والاندماج قسراً؟",
+        "question": "هل يجوز استخدام مسار F95 كمخرج عادي أو لتجاوز طابور المرور؟",
         "choices": [
           {
-            "text": "لا، التوقف والاندماج قسراً غير مسموح — الاندماج المبكر إلزامي",
-            "is_correct": true
+            "text": "نعم",
+            "is_correct": false
           },
           {
-            "text": "نعم، يجوز التوقف ثم الاندماج عند أول فرصة",
-            "is_correct": false
+            "text": "لا",
+            "is_correct": true
           }
         ],
-        "explanation": "F95 توجب الاندماج الاستباقي. التوقف والاندماج قسرًا خطير ومخالف لما تستوجبه F95."
+        "explanation": "لا. إنه مرفق طوارئ لإيقاف مركبة في حالة حرجة، وليس مخرج مرور أو خدمات."
       }
     }
   },
@@ -522,60 +558,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Dicht verkeer verhindert tijdig samenvoegen bij F95. Mag u tijdelijk op of over de rijbaanmarkering rijden terwijl u wacht op een geschikte invoegmogelijkheid?",
+        "question": "Mag een bestuurder die het voertuig niet normaal tot stilstand kan brengen de aangeduide noodstopstrook gebruiken?",
         "choices": [
           {
-            "text": "Neen, rijden op of over de rijbaanmarkering is niet toegestaan; u moet tijdig en soepel samenvoegen",
+            "text": "Ja",
             "is_correct": true
           },
           {
-            "text": "Ja, bij dicht verkeer en een naderende rijstrookbeëindiging is tijdelijk rijden op de markering aanvaardbaar",
+            "text": "Neen",
             "is_correct": false
           }
         ],
-        "explanation": "Rijbaanmarkeringen mogen niet worden overschreden of bereden als parkeer- of wachtplaats. De verplichting van F95 is tijdig en anticiperend samenvoegen — nooit wachten op de markering."
+        "explanation": "Ja. Dat is de functie van de noodstopstrook; de bestuurder moet de voorziening zo beheerst mogelijk inrijden."
       },
       "EN": {
-        "question": "Dense traffic prevents timely merging under F95. May you temporarily drive on or over the lane marking while waiting for a suitable merging opportunity?",
+        "question": "May a driver whose vehicle cannot be stopped normally use the indicated emergency escape lane?",
         "choices": [
           {
-            "text": "No, driving on or over the lane marking is not permitted; you must merge in good time and smoothly",
+            "text": "Yes",
             "is_correct": true
           },
           {
-            "text": "Yes, with dense traffic and an approaching lane end, temporarily driving on the marking is acceptable",
+            "text": "No",
             "is_correct": false
           }
         ],
-        "explanation": "Lane markings may not be straddled or used as a waiting position. The obligation under F95 is to merge in good time and anticipatorily — never wait on the marking."
+        "explanation": "Yes. That is the function of the emergency escape lane; the driver should enter it as controllably as possible."
       },
       "FR": {
-        "question": "Une circulation dense empêche une insertion à temps avec F95. Pouvez-vous rouler temporairement sur ou au-dessus du marquage de voie en attendant une opportunité de fusion?",
+        "question": "Un conducteur dont le véhicule ne peut plus s'arrêter normalement peut-il utiliser la piste de détresse indiquée ?",
         "choices": [
           {
-            "text": "Non, rouler sur ou au-dessus du marquage de voie n'est pas autorisé; vous devez vous rabattre à temps et doucement",
+            "text": "Oui",
             "is_correct": true
           },
           {
-            "text": "Oui, avec une circulation dense et une fin de voie imminente, rouler temporairement sur le marquage est acceptable",
+            "text": "Non",
             "is_correct": false
           }
         ],
-        "explanation": "Les marquages de voie ne peuvent pas être chevauchés ou utilisés comme position d'attente. L'obligation de F95 est de se rabattre à temps et de manière anticipée."
+        "explanation": "Oui. C'est la fonction de la piste de détresse; le conducteur doit s'y engager de la manière la plus maîtrisée possible."
       },
       "AR": {
-        "question": "الحركة الكثيفة تمنع الاندماج المبكر. هل يجوز السير فوق خط المسار أثناء انتظار فرصة الاندماج؟",
+        "question": "هل يجوز لسائق لا يستطيع إيقاف مركبته بصورة عادية استخدام مسار التوقف الاضطراري المشار إليه؟",
         "choices": [
           {
-            "text": "لا، السير فوق خط المسار غير مسموح؛ يجب الاندماج بسلاسة وفي وقته",
+            "text": "نعم",
             "is_correct": true
           },
           {
-            "text": "نعم، عند الحركة الكثيفة السير فوق الخط مقبول",
+            "text": "لا",
             "is_correct": false
           }
         ],
-        "explanation": "لا يجوز استخدام وسط خط المسار مكان انتظار. واجب F95 هو الاندماج المبكر والاستباقي."
+        "explanation": "نعم. هذه وظيفة مسار التوقف الاضطراري، وعلى السائق دخوله بأكبر قدر ممكن من التحكم."
       }
     }
   }

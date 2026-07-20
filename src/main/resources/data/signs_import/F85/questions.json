@@ -10,70 +10,73 @@
         "question": "Wat betekent dit verkeersbord?",
         "choices": [
           {
-            "text": "De rijbaan verlegt zijdelings naar een nieuwe positie; volg de aangeduide richting en handhaaf uw huidige koers niet",
+            "text": "Een tijdelijke aanwijzing bij werken dat verkeer in beide richtingen is toegelaten op een deel van een normaal eenrichtingsrijbaan.",
             "is_correct": true
           },
           {
-            "text": "De rijbaan wordt smaller; verminder snelheid en pas uw zijdelingse positie aan",
+            "text": "Een bord dat alleen een zijdelingse verlegging van de rijbaan aankondigt.",
             "is_correct": false
           },
           {
-            "text": "Een rijstrook eindigt; voeg tijdig samen met de naastliggende rijstrook",
+            "text": "Een bord dat een rijstrookvermindering zonder tegemoetkomend verkeer aankondigt.",
             "is_correct": false
           }
         ],
-        "explanation": "F85 kondigt een zijdelingse verlegging van de rijbaan aan. De rijbaan verschuift naar een nieuwe positie. De bestuurder moet de aangeduide richting volgen en zijn huidige rechte koers verlaten."
+        "explanation": "F85 geeft bij werken aan dat verkeer tijdelijk in beide richtingen rijdt op een deel van een rijbaan die normaal eenrichtingsverkeer heeft."
       },
       "EN": {
         "question": "What does this traffic sign mean?",
         "choices": [
           {
-            "text": "The carriageway shifts laterally to a new position; follow the indicated direction and do not maintain your current path",
+            "text": "A temporary roadworks indication that traffic is permitted in both directions on part of a normally one-way carriageway.",
             "is_correct": true
           },
           {
-            "text": "The road narrows; reduce speed and adapt your lateral position",
+            "text": "A sign announcing only a lateral shift of the carriageway.",
             "is_correct": false
           },
           {
-            "text": "A lane ends; merge into the adjacent lane in time",
+            "text": "A sign announcing a lane reduction without oncoming traffic.",
             "is_correct": false
           }
         ],
-        "explanation": "F85 announces a lateral shift in the carriageway. The road moves to a new position. The driver must follow the indicated direction and leave their current straight path."
+        "explanation": "F85 indicates at roadworks that traffic temporarily runs in both directions on part of a carriageway normally used one way."
       },
       "FR": {
-        "question": "Que signifie ce panneau de signalisation?",
+        "question": "Que signifie ce panneau de signalisation ?",
         "choices": [
           {
-            "text": "La chaussée se déplace latéralement vers une nouvelle position; suivez la direction indiquée sans maintenir votre trajectoire actuelle",
+            "text": "Une indication provisoire de travaux autorisant la circulation dans les deux sens sur une partie d'une chaussée normalement à sens unique.",
             "is_correct": true
           },
           {
-            "text": "La chaussée se rétrécit; réduisez la vitesse et adaptez votre position latérale",
+            "text": "Un signal annonçant seulement un déplacement latéral de la chaussée.",
             "is_correct": false
           },
           {
-            "text": "Une voie se termine; rabattez-vous à temps sur la voie adjacente",
+            "text": "Un signal annonçant une réduction de bandes sans circulation opposée.",
             "is_correct": false
           }
         ],
-        "explanation": "F85 annonce un déplacement latéral de la chaussée. La route se déplace vers une nouvelle position. Le conducteur doit suivre la direction indiquée et quitter sa trajectoire rectiligne actuelle."
+        "explanation": "F85 indique, lors de travaux, que la circulation se fait temporairement dans les deux sens sur une partie d'une chaussée normalement à sens unique."
       },
       "AR": {
         "question": "ما معنى هذه العلامة المرورية؟",
         "choices": [
           {
-            "text": "ينزاح الطريق جانبيًا إلى موضع جديد؛ اتبع الاتجاه المحدد ولا تواصل مسارك الحالي",
+            "text": "إشارة أشغال مؤقتة تسمح بالسير بالاتجاهين على جزء من طريق يكون عادةً باتجاه واحد.",
             "is_correct": true
           },
           {
-            "text": "يضيق الطريق؛ خفّض السرعة وعدّل موضعك الجانبي",
+            "text": "علامة تعلن فقط عن إزاحة جانبية للطريق.",
             "is_correct": false
           },
-          { "text": "ينتهي مسارك؛ اندمج في الوقت المناسب", "is_correct": false }
+          {
+            "text": "علامة تعلن عن انخفاض عدد المسارات من دون مرور مقابل.",
+            "is_correct": false
+          }
         ],
-        "explanation": "تُعلن F85 عن انزياح جانبي للطريق. يجب على السائق اتباع الاتجاه المحدد وعدم الاستمرار في مساره المستقيم الحالي."
+        "explanation": "تدل F85 عند الأشغال على أن المرور يجري مؤقتًا بالاتجاهين على جزء من طريق يُستخدم عادةً باتجاه واحد."
       }
     }
   },
@@ -85,40 +88,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Tot welke categorie verkeersborden behoort dit bord?",
+        "question": "Tot welke inhoudscategorie behoort dit bord binnen ReadyRoad?",
         "choices": [
-          { "text": "Wegbeheersingstekens", "is_correct": true },
-          { "text": "Gevaarsborden", "is_correct": false },
-          { "text": "Gebodsborden", "is_correct": false }
+          {
+            "text": "Wegbeheer en rijstrooksignalisatie",
+            "is_correct": true
+          },
+          {
+            "text": "Voorrangsborden",
+            "is_correct": false
+          },
+          {
+            "text": "Parkeerborden",
+            "is_correct": false
+          }
         ],
-        "explanation": "F85 behoort tot deze categorie. Deze borden informeren de bestuurder over structurele veranderingen in de weg en vereisen actieve aanpassing, ook al lijken ze informatief."
+        "explanation": "Binnen ReadyRoad is dit bord onder ROAD_MANAGEMENT ingedeeld. De concrete betekenis blijft die van het afgebeelde officiële F-bord."
       },
       "EN": {
-        "question": "To which category of traffic signs does this sign belong?",
+        "question": "Which ReadyRoad content category contains this sign?",
         "choices": [
-          { "text": "Road management signs", "is_correct": true },
-          { "text": "Danger signs", "is_correct": false },
-          { "text": "Mandatory signs", "is_correct": false }
+          {
+            "text": "Road management and lane-control signs",
+            "is_correct": true
+          },
+          {
+            "text": "Priority signs",
+            "is_correct": false
+          },
+          {
+            "text": "Parking signs",
+            "is_correct": false
+          }
         ],
-        "explanation": "F85 belongs to this category. These signs inform drivers about structural road changes and require active adaptation even though they appear informational."
+        "explanation": "ReadyRoad classifies this sign under ROAD_MANAGEMENT. Its actual meaning remains that of the official F sign shown."
       },
       "FR": {
-        "question": "À quelle catégorie de panneaux appartient ce panneau?",
+        "question": "Dans quelle catégorie de contenu ReadyRoad ce panneau est-il classé ?",
         "choices": [
-          { "text": "Panneaux de gestion de la route", "is_correct": true },
-          { "text": "Panneaux de danger", "is_correct": false },
-          { "text": "Panneaux d'obligation", "is_correct": false }
+          {
+            "text": "Gestion de la route et signalisation par bande",
+            "is_correct": true
+          },
+          {
+            "text": "Signaux de priorité",
+            "is_correct": false
+          },
+          {
+            "text": "Signaux de stationnement",
+            "is_correct": false
+          }
         ],
-        "explanation": "F85 appartient à cette catégorie. Ces panneaux informent les conducteurs des changements structurels et exigent une adaptation active."
+        "explanation": "ReadyRoad classe ce panneau dans ROAD_MANAGEMENT. Sa signification concrète reste celle du signal F officiel représenté."
       },
       "AR": {
-        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
+        "question": "ضمن أي فئة محتوى في ReadyRoad تندرج هذه العلامة؟",
         "choices": [
-          { "text": "علامات إدارة الطريق", "is_correct": true },
-          { "text": "علامات الخطر", "is_correct": false },
-          { "text": "العلامات الإلزامية", "is_correct": false }
+          {
+            "text": "إدارة الطريق وتنظيم المسارات",
+            "is_correct": true
+          },
+          {
+            "text": "علامات الأولوية",
+            "is_correct": false
+          },
+          {
+            "text": "علامات الوقوف والركن",
+            "is_correct": false
+          }
         ],
-        "explanation": "F85 تنتمي إلى هذه الفئة. تُخبر هذه العلامات عن تغييرات هيكلية وتستوجب تكيفًا فعليًا."
+        "explanation": "يصنّف ReadyRoad هذه العلامة ضمن ROAD_MANAGEMENT، وتبقى دلالتها الفعلية هي دلالة علامة F الرسمية المعروضة."
       }
     }
   },
@@ -130,76 +169,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Welke wegsituatie kondigt dit bord aan?",
+        "question": "Welke uitspraak over dit bord is juist?",
         "choices": [
           {
-            "text": "De rijbaan verlegt lateraal — de bestuurder moet de aangeduide richting volgen en de bestaande koers verlaten",
+            "text": "F85 waarschuwt dat u op het aangeduide deel tegemoetkomend verkeer kunt ontmoeten waar normaal één rijrichting rijdt.",
             "is_correct": true
           },
           {
-            "text": "De rijbaan versmalt — snelheid en positionering moeten worden aangepast",
+            "text": "F85 betekent dat alle rijstroken dezelfde richting blijven volgen.",
             "is_correct": false
           },
           {
-            "text": "Een rijstrook eindigt — tijdig samenvoegen is vereist",
+            "text": "F85 maakt de hele weg permanent tweerichtingsverkeer.",
             "is_correct": false
           }
         ],
-        "explanation": "F85 kondigt een zijdelingse rijbaanverlegging aan. In tegenstelling tot F83 (versmalling) verschuift de hele rijbaan naar een nieuwe positie."
+        "explanation": "F85 is een voorlopige aanwijzing bij werken. Het afgebeelde rijbaanvak wordt tijdelijk door beide rijrichtingen gebruikt; het aantal pijlen en de weergave moeten overeenstemmen met de werkelijke inrichting."
       },
       "EN": {
-        "question": "What road situation does this sign announce?",
+        "question": "Which statement about this sign is correct?",
         "choices": [
           {
-            "text": "The carriageway shifts laterally — the driver must follow the indicated direction and leave their current path",
+            "text": "F85 warns that you may meet oncoming traffic on the shown section where traffic normally travels one way.",
             "is_correct": true
           },
           {
-            "text": "The road narrows — speed and positioning must be adapted",
+            "text": "F85 means every lane continues in the same direction.",
             "is_correct": false
           },
           {
-            "text": "A lane ends — merging in time is required",
+            "text": "F85 permanently converts the whole road to two-way traffic.",
             "is_correct": false
           }
         ],
-        "explanation": "F85 announces a lateral carriageway shift. Unlike F83 (narrowing), the entire road moves to a new position."
+        "explanation": "F85 is a temporary indication used at roadworks. The shown section is temporarily shared by both directions of traffic; the arrows and layout must match the actual arrangement."
       },
       "FR": {
-        "question": "Quelle situation routière ce panneau annonce-t-il?",
+        "question": "Quelle affirmation concernant ce panneau est correcte ?",
         "choices": [
           {
-            "text": "La chaussée se déplace latéralement — le conducteur doit suivre la direction indiquée et quitter sa trajectoire actuelle",
+            "text": "F85 avertit que vous pouvez rencontrer du trafic venant en sens inverse sur une section normalement parcourue dans un seul sens.",
             "is_correct": true
           },
           {
-            "text": "La chaussée se rétrécit — la vitesse et le positionnement doivent être adaptés",
+            "text": "F85 signifie que toutes les bandes conservent le même sens.",
             "is_correct": false
           },
           {
-            "text": "Une voie se termine — se rabattre à temps est requis",
+            "text": "F85 transforme définitivement toute la route en circulation à double sens.",
             "is_correct": false
           }
         ],
-        "explanation": "F85 annonce un déplacement latéral de la chaussée. Contrairement à F83 (rétrécissement), toute la route se déplace vers une nouvelle position."
+        "explanation": "F85 est une indication provisoire utilisée lors de travaux. La section représentée est temporairement partagée par les deux sens de circulation; les flèches et le dessin doivent correspondre à l'aménagement réel."
       },
       "AR": {
-        "question": "ما الوضع الذي تُعلن عنه هذه العلامة المرورية؟",
+        "question": "أي عبارة عن هذه العلامة صحيحة؟",
         "choices": [
           {
-            "text": "ينزاح الطريق جانبيًا — يجب اتباع الاتجاه المحدد ومغادرة المسار الحالي",
+            "text": "تحذر F85 من احتمال مواجهة مرور مقابل في الجزء المعروض الذي يسير فيه المرور عادةً باتجاه واحد.",
             "is_correct": true
           },
           {
-            "text": "يضيق الطريق — يجب تعديل السرعة والموضع",
+            "text": "تعني F85 أن جميع المسارات تستمر في الاتجاه نفسه.",
             "is_correct": false
           },
           {
-            "text": "ينتهي مسار — الاندماج في الوقت المناسب ضروري",
+            "text": "تحوّل F85 الطريق كله بصورة دائمة إلى مرور بالاتجاهين.",
             "is_correct": false
           }
         ],
-        "explanation": "تُعلن F85 عن انزياح جانبي. خلافًا لـF83 الذي يضيق فيه الطريق، ينتقل الطريق كله إلى موضع جديد."
+        "explanation": "F85 إشارة مؤقتة عند الأشغال. يشترك اتجاها المرور مؤقتًا في الجزء المعروض من الطريق، ويجب أن تطابق السهام والرسم الترتيب الفعلي."
       }
     }
   },
@@ -211,76 +250,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat moet u doen wanneer u F85 ziet?",
+        "question": "Wat is de juiste reactie wanneer u dit bord nadert?",
         "choices": [
           {
-            "text": "De zijdelingse rijbaanverlegging volgen in de aangeduide richting; uw huidige rijlijn niet aanhouden",
+            "text": "Blijf binnen de tijdelijke rijruimte, verwacht tegenliggers en respecteer scheidingen, snelheden en inhaalverboden.",
             "is_correct": true
           },
           {
-            "text": "Stoppen en wachten totdat de rijbaan naar zijn normale positie terugkeert",
+            "text": "Gebruik de helft voor tegemoetkomend verkeer om langzamere voertuigen voorbij te rijden.",
             "is_correct": false
           },
           {
-            "text": "Rechtdoor rijden als uw rijstrook visueel lijkt door te lopen",
+            "text": "Rijd alsof de normale eenrichtingssituatie ongewijzigd is.",
             "is_correct": false
           }
         ],
-        "explanation": "Bij F85 moet u de rijbaanverlegging actief volgen. Het visueel doorlopen van uw rijstrook noch een ogenschijnlijk vrije weg ontheft u van de verplichting de aangeduide verlegging te volgen."
+        "explanation": "Verwacht tegemoetkomend verkeer, houd rechts binnen uw toegewezen deel, respecteer de afbakening en pas snelheid en volgafstand aan."
       },
       "EN": {
-        "question": "What must you do when you see F85?",
+        "question": "What is the correct response when approaching this sign?",
         "choices": [
           {
-            "text": "Follow the lateral carriageway shift in the indicated direction; do not maintain your current driving line",
+            "text": "Remain in the temporary traffic space, expect oncoming vehicles and obey separation, speeds and overtaking prohibitions.",
             "is_correct": true
           },
           {
-            "text": "Stop and wait for the road to return to its normal position",
+            "text": "Use the part assigned to oncoming traffic to overtake slower vehicles.",
             "is_correct": false
           },
           {
-            "text": "Continue straight if your lane appears to continue visually",
+            "text": "Drive as though the normal one-way arrangement were unchanged.",
             "is_correct": false
           }
         ],
-        "explanation": "At F85 you must actively follow the carriageway shift. The visual continuation of your lane or an apparently clear road does not exempt you from following the indicated shift."
+        "explanation": "Expect oncoming traffic, keep to your assigned side, respect the separation and adapt speed and following distance."
       },
       "FR": {
-        "question": "Que devez-vous faire lorsque vous voyez F85?",
+        "question": "Quelle est la réaction correcte à l'approche de ce panneau ?",
         "choices": [
           {
-            "text": "Suivre le déplacement latéral de la chaussée dans la direction indiquée; ne pas maintenir votre trajectoire actuelle",
+            "text": "Restez dans l'espace temporaire attribué, attendez-vous aux véhicules opposés et respectez séparations, vitesses et interdictions de dépasser.",
             "is_correct": true
           },
           {
-            "text": "S'arrêter et attendre que la route retrouve sa position normale",
+            "text": "Utilisez la partie réservée au sens opposé pour dépasser les véhicules lents.",
             "is_correct": false
           },
           {
-            "text": "Continuer tout droit si votre voie semble se poursuivre visuellement",
+            "text": "Conduisez comme si l'organisation normale à sens unique était inchangée.",
             "is_correct": false
           }
         ],
-        "explanation": "Au F85 vous devez suivre activement le déplacement de la chaussée. La continuation visuelle de votre voie ne vous dispense pas de suivre le déplacement indiqué."
+        "explanation": "Attendez-vous à des véhicules venant en sens inverse, restez dans la partie qui vous est attribuée, respectez la séparation et adaptez vitesse et distance."
       },
       "AR": {
-        "question": "ماذا يجب أن تفعل عند رؤية F85؟",
+        "question": "ما التصرف الصحيح عند الاقتراب من هذه العلامة؟",
         "choices": [
           {
-            "text": "اتباع انزياح الطريق في الاتجاه المحدد؛ لا تواصل خط سيرك الحالي",
+            "text": "ابق داخل الحيز المؤقت المخصص لك، وتوقع المركبات المقابلة، واحترم الفصل والسرعات وحظر التجاوز.",
             "is_correct": true
           },
           {
-            "text": "التوقف والانتظار حتى يعود الطريق إلى وضعه الطبيعي",
+            "text": "استخدم الجزء المخصص للاتجاه المقابل لتجاوز المركبات الأبطأ.",
             "is_correct": false
           },
           {
-            "text": "السير مستقيمًا إذا بدا مسارك مستمرًا",
+            "text": "تصرف كما لو أن ترتيب الاتجاه الواحد المعتاد لم يتغير.",
             "is_correct": false
           }
         ],
-        "explanation": "عند F85 يجب اتباع الانزياح بفعالية. لا يعفيك استمرار مسارك بصريًا من اتباع الانزياح المحدد."
+        "explanation": "توقع مركبات مقابلة، والزم الجزء المخصص لاتجاهك، واحترم الفصل، وعدّل السرعة ومسافة الأمان."
       }
     }
   },
@@ -292,73 +331,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "F85 geeft een verlegging naar links aan maar uw rijstrook lijkt visueel rechtdoor door te lopen. Wat doet u?",
+        "question": "Welke uitspraak over het toepassingsgebied is juist?",
         "choices": [
           {
-            "text": "De door F85 aangeduide rijbaanverlegging naar links volgen — de visuele voortzetting van de rijstrook is niet maatgevend",
+            "text": "F85 is een voorlopige aanwijzing bij werken en geldt voor het aangeduide tijdelijk ingerichte deel; andere borden en afbakening bepalen de concrete regeling.",
             "is_correct": true
           },
           {
-            "text": "Rechtdoor rijden zolang de rijstrook zichtbaar doorloopt",
+            "text": "F85 heft rijstrooklichten en tijdelijke verboden op.",
             "is_correct": false
           },
           {
-            "text": "Stoppen en wachten op aanwijzingen van een verkeersregelaar",
+            "text": "F85 geeft altijd een permanente wijziging van de rijrichting aan.",
             "is_correct": false
           }
         ],
-        "explanation": "Het visuele beeld van een doorgaande rijstrook overschrijft de aanwijzing van F85 niet. U bent verplicht de verlegging te volgen zoals aangegeven op het bord."
+        "explanation": "F85 is een voorlopige aanwijzing bij werken en geldt voor het aangeduide tijdelijk ingerichte deel; andere borden en afbakening bepalen de concrete regeling."
       },
       "EN": {
-        "question": "F85 indicates a shift to the left but your lane appears to continue straight visually. What do you do?",
+        "question": "Which statement about its scope is correct?",
         "choices": [
           {
-            "text": "Follow the left shift indicated by F85 — the visual continuation of your lane is not authoritative",
+            "text": "F85 is a temporary roadworks indication for the shown arranged section; other signs and barriers determine the detailed traffic control.",
             "is_correct": true
           },
           {
-            "text": "Continue straight as long as the lane appears to continue visually",
+            "text": "F85 cancels lane-control signals and temporary prohibitions.",
             "is_correct": false
           },
           {
-            "text": "Stop and wait for instructions from a traffic officer",
+            "text": "F85 always establishes a permanent change of direction.",
             "is_correct": false
           }
         ],
-        "explanation": "The visual appearance of a continuing lane does not override the instruction of F85. You are required to follow the shift as indicated on the sign."
+        "explanation": "F85 is a temporary roadworks indication for the shown arranged section; other signs and barriers determine the detailed traffic control."
       },
       "FR": {
-        "question": "F85 indique un déplacement vers la gauche mais votre voie semble visuellement se poursuivre tout droit. Que faites-vous?",
+        "question": "Quelle affirmation concernant son champ d'application est correcte ?",
         "choices": [
           {
-            "text": "Suivre le déplacement vers la gauche indiqué par F85 — la continuation visuelle de la voie n'est pas déterminante",
+            "text": "F85 est une indication provisoire de travaux pour la section aménagée; les autres signaux et le balisage déterminent la réglementation concrète.",
             "is_correct": true
           },
           {
-            "text": "Continuer tout droit tant que la voie semble se poursuivre visuellement",
+            "text": "F85 annule les signaux par bande et les interdictions temporaires.",
             "is_correct": false
           },
           {
-            "text": "S'arrêter et attendre les instructions d'un agent de la circulation",
+            "text": "F85 établit toujours une modification permanente du sens de circulation.",
             "is_correct": false
           }
         ],
-        "explanation": "L'apparence visuelle d'une voie continue ne remplace pas l'instruction de F85. Vous êtes tenu de suivre le déplacement tel qu'indiqué sur le panneau."
+        "explanation": "F85 est une indication provisoire de travaux pour la section aménagée; les autres signaux et le balisage déterminent la réglementation concrète."
       },
       "AR": {
-        "question": "F85 تشير إلى انزياح لليسار لكن مسارك يبدو مستقيمًا. ماذا تفعل؟",
+        "question": "أي عبارة عن نطاق تطبيقها صحيحة؟",
         "choices": [
           {
-            "text": "اتباع الانزياح لليسار المحدد بـF85 — استمرار المسار بصريًا ليس معيارًا",
+            "text": "F85 إشارة أشغال مؤقتة تسري على الجزء المعروض، وتحدد العلامات والحواجز الأخرى التنظيم التفصيلي.",
             "is_correct": true
           },
           {
-            "text": "السير مستقيمًا طالما يبدو المسار مستمرًا",
+            "text": "تلغي F85 إشارات المسارات والحظر المؤقت.",
             "is_correct": false
           },
-          { "text": "التوقف وانتظار تعليمات من رجل مرور", "is_correct": false }
+          {
+            "text": "تقرر F85 دائمًا تغييرًا دائمًا لاتجاه السير.",
+            "is_correct": false
+          }
         ],
-        "explanation": "لا يعلو استمرار المسار بصريًا على تعليمات F85. أنت ملزم باتباع الانزياح كما هو مبيّن على العلامة المرورية."
+        "explanation": "F85 إشارة أشغال مؤقتة تسري على الجزء المعروض، وتحدد العلامات والحواجز الأخرى التنظيم التفصيلي."
       }
     }
   },
@@ -370,76 +412,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat onderscheidt F85 van F83?",
+        "question": "Welk onderscheid is juridisch en praktisch juist?",
         "choices": [
           {
-            "text": "F85 kondigt een zijdelingse verlegging van de rijbaan aan; F83 kondigt aan dat de rijbaan smaller wordt",
+            "text": "F85 meldt tweerichtingsverkeer op een normaal eenrichtingsdeel; F81 meldt een uitwijking van rijstroken.",
             "is_correct": true
           },
           {
-            "text": "F85 is bedoeld voor éénrichtingsverkeer; F83 geldt voor tweerichtingsverkeer",
+            "text": "F85 en F81 zijn beide alleen aankondigingen van een lagere maximumsnelheid.",
             "is_correct": false
           },
           {
-            "text": "F85 geldt alleen op autosnelwegen; F83 geldt op alle wegen",
+            "text": "F85 duidt een middenbermdoorsteek aan en F83 tweerichtingsverkeer.",
             "is_correct": false
           }
         ],
-        "explanation": "F85 = rijbaan verlegt naar een nieuwe zijdelingse positie. F83 = rijbaan wordt smaller (breedte neemt af). Beide zijn GROUP A-rijbaanbeheersingstekens maar beschrijven fundamenteel verschillende wegconfiguraties."
+        "explanation": "F85 meldt tweerichtingsverkeer op een normaal eenrichtingsdeel; F81 meldt een uitwijking van rijstroken."
       },
       "EN": {
-        "question": "What distinguishes F85 from F83?",
+        "question": "Which legal and practical distinction is correct?",
         "choices": [
           {
-            "text": "F85 announces a lateral shift of the carriageway; F83 announces that the road narrows",
+            "text": "F85 indicates two-way traffic on a normally one-way section; F81 indicates a lane deviation.",
             "is_correct": true
           },
           {
-            "text": "F85 is for one-way traffic; F83 applies to two-way traffic",
+            "text": "F85 and F81 both announce only a lower speed limit.",
             "is_correct": false
           },
           {
-            "text": "F85 applies only on motorways; F83 applies on all roads",
+            "text": "F85 indicates a central-reservation crossover and F83 two-way traffic.",
             "is_correct": false
           }
         ],
-        "explanation": "F85 = carriageway shifts to a new lateral position. F83 = road narrows (width decreases). Both are GROUP A road management signs but describe fundamentally different road configurations."
+        "explanation": "F85 indicates two-way traffic on a normally one-way section; F81 indicates a lane deviation."
       },
       "FR": {
-        "question": "Qu'est-ce qui distingue F85 de F83?",
+        "question": "Quelle distinction juridique et pratique est correcte ?",
         "choices": [
           {
-            "text": "F85 annonce un déplacement latéral de la chaussée; F83 annonce que la chaussée se rétrécit",
+            "text": "F85 indique une circulation à double sens sur une section normalement à sens unique; F81 indique un évitement des bandes.",
             "is_correct": true
           },
           {
-            "text": "F85 est pour la circulation à sens unique; F83 s'applique à double sens",
+            "text": "F85 et F81 annoncent uniquement une limitation de vitesse plus basse.",
             "is_correct": false
           },
           {
-            "text": "F85 s'applique uniquement sur les autoroutes; F83 s'applique sur toutes les routes",
+            "text": "F85 annonce une traversée de la berme centrale et F83 une circulation à double sens.",
             "is_correct": false
           }
         ],
-        "explanation": "F85 = la chaussée se déplace latéralement. F83 = la chaussée se rétrécit. Les deux sont des panneaux de gestion de la route du groupe A mais décrivent des configurations fondamentalement différentes."
+        "explanation": "F85 indique une circulation à double sens sur une section normalement à sens unique; F81 indique un évitement des bandes."
       },
       "AR": {
-        "question": "ما الذي يميز F85 عن F83؟",
+        "question": "أي تمييز قانوني وعملي صحيح؟",
         "choices": [
           {
-            "text": "F85 تُعلن عن انزياح جانبي؛ F83 تُعلن أن الطريق يضيق",
+            "text": "تدل F85 على مرور بالاتجاهين في جزء يكون عادةً أحادي الاتجاه، بينما تدل F81 على انحراف المسارات.",
             "is_correct": true
           },
           {
-            "text": "F85 للطريق باتجاه واحد؛ F83 للطريق باتجاهين",
+            "text": "تعلن F85 وF81 فقط عن حد سرعة أقل.",
             "is_correct": false
           },
           {
-            "text": "F85 للطرق السريعة فقط؛ F83 لجميع الطرق",
+            "text": "تدل F85 على عبور الفاصل الوسطي وتدل F83 على مرور بالاتجاهين.",
             "is_correct": false
           }
         ],
-        "explanation": "F85 = ينزاح الطريق جانبيًا. F83 = يضيق الطريق. كلتاهما لافتتا إدارة طريق لكن وضعيهما مختلفان تمامًا."
+        "explanation": "تدل F85 على مرور بالاتجاهين في جزء يكون عادةً أحادي الاتجاه، بينما تدل F81 على انحراف المسارات."
       }
     }
   },
@@ -451,60 +493,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "F85 geeft een rijbaanverlegging naar rechts aan. Uw rijstrook lijkt rechtdoor door te lopen. Mag u de verlegging negeren en uw huidige koers aanhouden?",
+        "question": "Mag u na F85 aannemen dat er geen tegenliggers zijn omdat de rijbaan normaal eenrichtingsverkeer heeft?",
         "choices": [
           {
-            "text": "Neen, u bent verplicht de rijbaanverlegging in de door F85 aangeduide richting te volgen",
-            "is_correct": true
+            "text": "Ja",
+            "is_correct": false
           },
           {
-            "text": "Ja, als uw rijstrook zichtbaar doorloopt mag u uw huidige koers aanhouden",
-            "is_correct": false
+            "text": "Neen",
+            "is_correct": true
           }
         ],
-        "explanation": "F85 verplicht u de verlegging te volgen. De visuele voortzetting van uw rijstrook is niet bepalend — het bord geeft de werkelijke weggeleiding aan. deze categorieborden zijn niet optioneel."
+        "explanation": "Neen. F85 waarschuwt juist dat het aangeduide deel tijdelijk door beide rijrichtingen wordt gebruikt."
       },
       "EN": {
-        "question": "F85 indicates a carriageway shift to the right. Your lane appears to continue straight. May you ignore the shift and maintain your current path?",
+        "question": "After F85, may you assume there is no oncoming traffic because the carriageway is normally one way?",
         "choices": [
           {
-            "text": "No, you are required to follow the carriageway shift in the direction indicated by F85",
-            "is_correct": true
+            "text": "Yes",
+            "is_correct": false
           },
           {
-            "text": "Yes, if your lane appears to continue you may maintain your current path",
-            "is_correct": false
+            "text": "No",
+            "is_correct": true
           }
         ],
-        "explanation": "F85 requires you to follow the shift. The visual continuation of your lane is not authoritative — the sign shows the actual road guidance. information signs are not optional."
+        "explanation": "No. F85 specifically warns that the shown section is temporarily used by both directions."
       },
       "FR": {
-        "question": "F85 indique un déplacement de la chaussée vers la droite. Votre voie semble continuer tout droit. Pouvez-vous ignorer le déplacement et maintenir votre trajectoire actuelle?",
+        "question": "Après F85, pouvez-vous supposer qu'il n'y a pas de trafic opposé puisque la chaussée est normalement à sens unique ?",
         "choices": [
           {
-            "text": "Non, vous êtes tenu de suivre le déplacement de la chaussée dans la direction indiquée par F85",
-            "is_correct": true
+            "text": "Oui",
+            "is_correct": false
           },
           {
-            "text": "Oui, si votre voie semble continuer vous pouvez maintenir votre trajectoire",
-            "is_correct": false
+            "text": "Non",
+            "is_correct": true
           }
         ],
-        "explanation": "F85 vous oblige à suivre le déplacement. La continuation visuelle de votre voie n'est pas déterminante. Les panneaux de cette catégorie ne sont pas facultatifs."
+        "explanation": "Non. F85 avertit précisément que la section indiquée est temporairement utilisée dans les deux sens."
       },
       "AR": {
-        "question": "F85 تشير إلى انزياح لليمين. مسارك يبدو مستقيمًا. هل يجوز تجاهل الانزياح ومواصلة مسارك؟",
+        "question": "هل يجوز بعد F85 افتراض عدم وجود مرور مقابل لأن الطريق يكون عادةً باتجاه واحد؟",
         "choices": [
           {
-            "text": "لا، يجب اتباع انزياح الطريق بالاتجاه المحدد بـF85",
-            "is_correct": true
+            "text": "نعم",
+            "is_correct": false
           },
           {
-            "text": "نعم، إذا بدا المسار مستمرًا يجوز مواصلة مسارك",
-            "is_correct": false
+            "text": "لا",
+            "is_correct": true
           }
         ],
-        "explanation": "توجب F85 اتباع الانزياح. استمرار المسار بصريًا ليس حجة. علامات هذه الفئة ليست اختيارية."
+        "explanation": "لا. تحذر F85 تحديدًا من أن الجزء المعروض يُستخدم مؤقتًا بالاتجاهين."
       }
     }
   },
@@ -516,60 +558,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Het voertuig vóór u negeert F85 en rijdt rechtdoor in plaats van de rijbaanverlegging te volgen. Mag u hetzelfde doen?",
+        "question": "Mag u het voor de tegenrichting afgebakende deel gebruiken om in te halen?",
         "choices": [
           {
-            "text": "Neen, het rijgedrag van het voertuig voor u ontheft u niet van uw verplichting de rijbaanverlegging te volgen",
-            "is_correct": true
+            "text": "Ja",
+            "is_correct": false
           },
           {
-            "text": "Ja, als het voorliggende voertuig dezelfde keuze maakt is dit veilig om te volgen",
-            "is_correct": false
+            "text": "Neen",
+            "is_correct": true
           }
         ],
-        "explanation": "Elke bestuurder is individueel verplicht F85 te volgen. Het rijgedrag van anderen ontheft u niet van uw eigen verplichtingen. Anderen die een bord negeren begaan zelf een overtreding."
+        "explanation": "Neen. F85 geeft geen toestemming om de toegewezen verkeersruimte of andere bindende markeringen en verboden te overschrijden."
       },
       "EN": {
-        "question": "The vehicle in front of you ignores F85 and goes straight instead of following the carriageway shift. May you do the same?",
+        "question": "May you use the part separated for opposing traffic to overtake?",
         "choices": [
           {
-            "text": "No, the behaviour of the vehicle in front does not exempt you from your obligation to follow the carriageway shift",
-            "is_correct": true
+            "text": "Yes",
+            "is_correct": false
           },
           {
-            "text": "Yes, if the vehicle ahead makes the same choice it is safe to follow",
-            "is_correct": false
+            "text": "No",
+            "is_correct": true
           }
         ],
-        "explanation": "Every driver is individually required to follow F85. The behaviour of others does not exempt you from your own obligations. Others ignoring a sign are themselves committing an infraction."
+        "explanation": "No. F85 does not authorise crossing the assigned traffic space or other binding markings and prohibitions."
       },
       "FR": {
-        "question": "Le véhicule devant vous ignore F85 et continue tout droit au lieu de suivre le déplacement de la chaussée. Pouvez-vous faire de même?",
+        "question": "Pouvez-vous utiliser la partie délimitée pour le sens opposé afin de dépasser ?",
         "choices": [
           {
-            "text": "Non, le comportement du véhicule devant vous ne vous dispense pas de votre obligation de suivre le déplacement",
-            "is_correct": true
+            "text": "Oui",
+            "is_correct": false
           },
           {
-            "text": "Oui, si le véhicule précédent fait le même choix il est sûr de suivre",
-            "is_correct": false
+            "text": "Non",
+            "is_correct": true
           }
         ],
-        "explanation": "Chaque conducteur est individuellement tenu de suivre F85. Le comportement des autres ne vous dispense pas de vos propres obligations."
+        "explanation": "Non. F85 n'autorise pas à franchir l'espace attribué ni les autres marquages et interdictions contraignants."
       },
       "AR": {
-        "question": "المركبة أمامك تتجاهل F85 وتسير مستقيمة. هل يجوز لك القيام بالمثل؟",
+        "question": "هل يجوز استخدام الجزء المفصول للاتجاه المقابل من أجل التجاوز؟",
         "choices": [
           {
-            "text": "لا، سلوك المركبة الأمامية لا يعفيك من اتباع الانزياح",
-            "is_correct": true
+            "text": "نعم",
+            "is_correct": false
           },
           {
-            "text": "نعم، إذا فعلت المركبة الأمامية ذلك فهو آمن للاتباع",
-            "is_correct": false
+            "text": "لا",
+            "is_correct": true
           }
         ],
-        "explanation": "كل سائق ملزم بصورة فردية باتباع F85. سلوك الآخرين لا يعفيك من التزاماتك."
+        "explanation": "لا. لا تسمح F85 بتجاوز الحيز المروري المخصص أو الخطوط وأوامر الحظر الملزمة الأخرى."
       }
     }
   }

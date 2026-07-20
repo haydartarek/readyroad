@@ -10,70 +10,73 @@
         "question": "Wat betekent dit verkeersbord?",
         "choices": [
           {
-            "text": "Voorwegwijzer uitwijking: een alternatieve uitrit of uitwijkingsroute is iets verderop beschikbaar",
+            "text": "Een voorwegwijzer bij werken die een tijdelijke uitwijking van de rijstroken aankondigt.",
             "is_correct": true
           },
           {
-            "text": "Aankondiging van een omleiding: een omleidingsroute zal verderop worden aangegeven",
+            "text": "Een bord dat een facultatieve afrit naar een alternatieve route aanbiedt.",
             "is_correct": false
           },
           {
-            "text": "Tijdelijke rijstrookverdeling: de weg is tijdelijk herorganiseerd voor de aangegeven afstand",
+            "text": "Een bord dat een vermindering van het aantal rijstroken aankondigt.",
             "is_correct": false
           }
         ],
-        "explanation": "F81 is een voorwegwijzer die de bestuurder informeert dat een alternatieve uitrit of uitwijkingsroute iets verderop beschikbaar is. De doorgaande weg is op dit punt niet noodzakelijk afgesloten."
+        "explanation": "F81 kondigt bij werken vooraf aan dat de rijstroken tijdelijk uitwijken volgens het afgebeelde verloop."
       },
       "EN": {
         "question": "What does this traffic sign mean?",
         "choices": [
           {
-            "text": "Advance diversion sign: an alternative exit or diversion route is available a little further ahead",
+            "text": "An advance roadworks sign announcing a temporary deviation of the lanes.",
             "is_correct": true
           },
           {
-            "text": "Advance announcement of a diversion: a diversion route will be indicated further ahead",
+            "text": "A sign offering an optional exit to an alternative route.",
             "is_correct": false
           },
           {
-            "text": "Temporary lane division: the road has been temporarily reorganised for the indicated distance",
+            "text": "A sign announcing a reduction in the number of lanes.",
             "is_correct": false
           }
         ],
-        "explanation": "F81 is an advance directional sign informing the driver that an alternative exit or diversion route is available a little further ahead. The through road is not necessarily closed at this point."
+        "explanation": "F81 gives advance warning at roadworks that the lanes temporarily deviate as shown."
       },
       "FR": {
-        "question": "Que signifie ce panneau de signalisation?",
+        "question": "Que signifie ce panneau de signalisation ?",
         "choices": [
           {
-            "text": "Pré-signalisation de déviation: une sortie alternative ou un itinéraire de déviation est disponible un peu plus loin",
+            "text": "Un signal de préavis de travaux annonçant un évitement temporaire des bandes.",
             "is_correct": true
           },
           {
-            "text": "Annonce d'une déviation: un itinéraire de déviation sera indiqué plus loin",
+            "text": "Un signal proposant une sortie facultative vers un autre itinéraire.",
             "is_correct": false
           },
           {
-            "text": "Répartition temporaire des voies: la route a été temporairement réorganisée",
+            "text": "Un signal annonçant une réduction du nombre de bandes.",
             "is_correct": false
           }
         ],
-        "explanation": "F81 est un panneau de pré-signalisation qui informe le conducteur qu'une sortie alternative ou un itinéraire de déviation est disponible un peu plus loin. La route principale n'est pas nécessairement fermée à ce point."
+        "explanation": "F81 annonce à l'avance, lors de travaux, que les bandes dévient temporairement selon le tracé représenté."
       },
       "AR": {
         "question": "ما معنى هذه العلامة المرورية؟",
         "choices": [
           {
-            "text": "علامة مرورية المسار البديل المسبق: مخرج بديل أو مسار انحراف متاح قريبًا",
+            "text": "علامة أشغال تمهيدية تعلن عن انحراف مؤقت للمسارات.",
             "is_correct": true
           },
           {
-            "text": "إعلان مسبق عن تحويلة: سيتم الإشارة إلى مسار التحويلة لاحقًا",
+            "text": "علامة تعرض مخرجًا اختياريًا إلى طريق بديل.",
             "is_correct": false
           },
-          { "text": "توزيع مؤقت للمسارات", "is_correct": false }
+          {
+            "text": "علامة تعلن عن انخفاض عدد المسارات.",
+            "is_correct": false
+          }
         ],
-        "explanation": "F81 علامة مرورية إرشاد مسبق تُعلم السائق بأن مخرجًا بديلاً متاح قريبًا. الطريق الرئيسي ليس بالضرورة مغلقًا."
+        "explanation": "تعلن F81 مسبقًا عند الأشغال أن المسارات تنحرف مؤقتًا وفق الرسم المعروض."
       }
     }
   },
@@ -85,40 +88,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Tot welke categorie verkeersborden behoort dit bord?",
+        "question": "Tot welke inhoudscategorie behoort dit bord binnen ReadyRoad?",
         "choices": [
-          { "text": "Wegbeheersingstekens", "is_correct": true },
-          { "text": "Gevaarsborden", "is_correct": false },
-          { "text": "Gebodsborden", "is_correct": false }
+          {
+            "text": "Wegbeheer en rijstrooksignalisatie",
+            "is_correct": true
+          },
+          {
+            "text": "Voorrangsborden",
+            "is_correct": false
+          },
+          {
+            "text": "Parkeerborden",
+            "is_correct": false
+          }
         ],
-        "explanation": "F81 behoort tot deze categorie. De informatie op het bord is bindend in die zin dat de bestuurder de aangeduide uitrit moet gebruiken wanneer de doorgaande weg afgesloten is."
+        "explanation": "Binnen ReadyRoad is dit bord onder ROAD_MANAGEMENT ingedeeld. De concrete betekenis blijft die van het afgebeelde officiële F-bord."
       },
       "EN": {
-        "question": "To which category of traffic signs does this sign belong?",
+        "question": "Which ReadyRoad content category contains this sign?",
         "choices": [
-          { "text": "Road management signs", "is_correct": true },
-          { "text": "Danger signs", "is_correct": false },
-          { "text": "Mandatory signs", "is_correct": false }
+          {
+            "text": "Road management and lane-control signs",
+            "is_correct": true
+          },
+          {
+            "text": "Priority signs",
+            "is_correct": false
+          },
+          {
+            "text": "Parking signs",
+            "is_correct": false
+          }
         ],
-        "explanation": "F81 belongs to this category. The information on the sign is binding in the sense that the driver must use the indicated exit when the through road is closed."
+        "explanation": "ReadyRoad classifies this sign under ROAD_MANAGEMENT. Its actual meaning remains that of the official F sign shown."
       },
       "FR": {
-        "question": "À quelle catégorie de panneaux appartient ce panneau?",
+        "question": "Dans quelle catégorie de contenu ReadyRoad ce panneau est-il classé ?",
         "choices": [
-          { "text": "Panneaux de gestion de la route", "is_correct": true },
-          { "text": "Panneaux de danger", "is_correct": false },
-          { "text": "Panneaux d'obligation", "is_correct": false }
+          {
+            "text": "Gestion de la route et signalisation par bande",
+            "is_correct": true
+          },
+          {
+            "text": "Signaux de priorité",
+            "is_correct": false
+          },
+          {
+            "text": "Signaux de stationnement",
+            "is_correct": false
+          }
         ],
-        "explanation": "F81 appartient à cette catégorie. L'information sur le panneau est contraignante dans le sens où le conducteur doit utiliser la sortie indiquée lorsque la route principale est fermée."
+        "explanation": "ReadyRoad classe ce panneau dans ROAD_MANAGEMENT. Sa signification concrète reste celle du signal F officiel représenté."
       },
       "AR": {
-        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
+        "question": "ضمن أي فئة محتوى في ReadyRoad تندرج هذه العلامة؟",
         "choices": [
-          { "text": "علامات إدارة الطريق", "is_correct": true },
-          { "text": "علامات الخطر", "is_correct": false },
-          { "text": "العلامات الإلزامية", "is_correct": false }
+          {
+            "text": "إدارة الطريق وتنظيم المسارات",
+            "is_correct": true
+          },
+          {
+            "text": "علامات الأولوية",
+            "is_correct": false
+          },
+          {
+            "text": "علامات الوقوف والركن",
+            "is_correct": false
+          }
         ],
-        "explanation": "F81 تنتمي إلى هذه الفئة. المعلومات ملزمة بمعنى أن السائق يجب أن يستخدم المخرج عند إغلاق الطريق الرئيسي."
+        "explanation": "يصنّف ReadyRoad هذه العلامة ضمن ROAD_MANAGEMENT، وتبقى دلالتها الفعلية هي دلالة علامة F الرسمية المعروضة."
       }
     }
   },
@@ -130,73 +169,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Welke wegsituatie kondigt dit bord aan?",
+        "question": "Welke uitspraak over dit bord is juist?",
         "choices": [
           {
-            "text": "Een alternatieve uitrijmogelijkheid of uitwijkingsroute is iets verderop beschikbaar — de doorgaande weg is hier niet noodzakelijk afgesloten",
+            "text": "F81 toont hoe de bestaande rijstroken rond de werkzone uitwijken; het symbool moet de werkelijke plaatsgesteldheid volgen.",
             "is_correct": true
           },
           {
-            "text": "Een omleiding is verderop verplicht: de doorgaande weg is op dit punt effectief afgesloten",
+            "text": "F81 betekent dat de doorgaande weg altijd volledig gesloten is.",
             "is_correct": false
           },
           {
-            "text": "De weg is tijdelijk herorganiseerd — tijdelijke markeringen hebben voorrang op permanente markeringen",
+            "text": "F81 geeft een permanente nieuwe ligging van de rijbaan aan.",
             "is_correct": false
           }
         ],
-        "explanation": "F81 wijst op de beschikbaarheid van een alternatieve uitrit of uitwijkingsroute. De doorgaande weg kan op dit moment nog open zijn. De uitrit is uitsluitend verplicht wanneer de doorgaande weg daadwerkelijk afgesloten blijkt."
+        "explanation": "F81 is een voorlopige aanwijzing bij werken. Het bord kondigt een zijdelingse uitwijking van de rijstroken aan; het aantal pijlen moet met de werkelijke rijstroken en het symbool met de plaatsgesteldheid overeenstemmen."
       },
       "EN": {
-        "question": "What road situation does this sign announce?",
+        "question": "Which statement about this sign is correct?",
         "choices": [
           {
-            "text": "An alternative exit or diversion route is available a little further ahead — the through road is not necessarily closed at this point",
+            "text": "F81 shows how the existing lanes deviate around the work area; the symbol must match the actual site.",
             "is_correct": true
           },
           {
-            "text": "A diversion is compulsory ahead: the through road is effectively closed at this point",
+            "text": "F81 means the through road is always completely closed.",
             "is_correct": false
           },
           {
-            "text": "The road has been temporarily reorganised — temporary markings take precedence over permanent markings",
+            "text": "F81 establishes a permanent new road alignment.",
             "is_correct": false
           }
         ],
-        "explanation": "F81 indicates the availability of an alternative exit or diversion route. The through road may still be open at this point. The exit is only compulsory when the through road is actually found to be closed."
+        "explanation": "F81 is a temporary indication used at roadworks. It announces a lateral deviation of the lanes; the number of arrows must match the actual lanes and the symbol must match the site layout."
       },
       "FR": {
-        "question": "Quelle situation routière ce panneau annonce-t-il?",
+        "question": "Quelle affirmation concernant ce panneau est correcte ?",
         "choices": [
           {
-            "text": "Une sortie alternative ou un itinéraire de déviation est disponible un peu plus loin — la route principale n'est pas nécessairement fermée à ce point",
+            "text": "F81 montre comment les bandes existantes contournent la zone de travaux; le symbole doit correspondre aux lieux.",
             "is_correct": true
           },
           {
-            "text": "Une déviation est obligatoire plus loin: la route principale est effectivement fermée à ce point",
+            "text": "F81 signifie que la route est toujours entièrement fermée.",
             "is_correct": false
           },
           {
-            "text": "La route a été temporairement réorganisée — les marquages temporaires ont priorité sur les marquages permanents",
+            "text": "F81 établit définitivement un nouveau tracé de chaussée.",
             "is_correct": false
           }
         ],
-        "explanation": "F81 indique la disponibilité d'une sortie alternative ou d'un itinéraire de déviation. La route principale peut être encore ouverte à ce point. La sortie n'est obligatoire que lorsque la route principale est effectivement fermée."
+        "explanation": "F81 est une indication provisoire utilisée lors de travaux. Il annonce un évitement latéral des bandes; le nombre de flèches doit correspondre aux bandes réelles et le symbole à la disposition des lieux."
       },
       "AR": {
-        "question": "ما الوضع الذي تُعلن عنه هذه العلامة المرورية؟",
+        "question": "أي عبارة عن هذه العلامة صحيحة؟",
         "choices": [
           {
-            "text": "مخرج بديل متاح قريبًا — الطريق الرئيسي ليس بالضرورة مغلقًا هنا",
+            "text": "توضح F81 كيف تنحرف المسارات القائمة حول منطقة الأشغال، ويجب أن يطابق الرسم الوضع الفعلي.",
             "is_correct": true
           },
           {
-            "text": "التحويلة إلزامية: الطريق مغلوق فعليًا",
+            "text": "تعني F81 أن الطريق المباشر مغلق بالكامل دائمًا.",
             "is_correct": false
           },
-          { "text": "الطريق معاد تنظيمه مؤقتًا", "is_correct": false }
+          {
+            "text": "تقرر F81 مسارًا جديدًا دائمًا للطريق.",
+            "is_correct": false
+          }
         ],
-        "explanation": "F81 تدل على توفر مخرج بديل. الطريق الرئيسي ما زال مفتوحًا. المخرج إلزامي فقط عند إغلاق الطريق."
+        "explanation": "F81 إشارة مؤقتة عند الأشغال تعلن عن انحراف جانبي للمسارات. يجب أن يطابق عدد السهام المسارات الفعلية وأن يطابق الرسم ترتيب الموقع."
       }
     }
   },
@@ -208,73 +250,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat moet u doen wanneer u F81 ziet?",
+        "question": "Wat is de juiste reactie wanneer u dit bord nadert?",
         "choices": [
           {
-            "text": "Kennis nemen van de beschikbare alternatieve uitrit — deze gebruiken alleen als de doorgaande weg daadwerkelijk geblokkeerd of afgesloten blijkt",
+            "text": "Verminder zo nodig uw snelheid, lees het pijlverloop en volg de tijdelijke rijstrookgeleiding.",
             "is_correct": true
           },
           {
-            "text": "Onmiddellijk de uitrit nemen ongeacht de toestand van de doorgaande weg",
+            "text": "Blijf rechtuit over de tijdelijke lijnen rijden omdat het aantal rijstroken gelijk kan blijven.",
             "is_correct": false
           },
           {
-            "text": "Stoppen en wachten op bevestiging van een verkeersregelaar vóór u verder rijdt",
+            "text": "Neem automatisch de eerste afrit, ook als de pijlen een rijstrookverschuiving tonen.",
             "is_correct": false
           }
         ],
-        "explanation": "F81 informeert de bestuurder over een beschikbare uitrit, maar maakt die uitrit niet automatisch verplicht. De uitrit is pas verplicht wanneer de doorgaande weg daadwerkelijk afgesloten of geblokkeerd is. De bestuurder mag de doorgaande weg blijven volgen zolang die open is."
+        "explanation": "Volg de pijlen en tijdelijke markeringen, pas uw snelheid aan en maak alleen veilige rijstrookwissels waar de signalisatie dit toelaat."
       },
       "EN": {
-        "question": "What must you do when you see F81?",
+        "question": "What is the correct response when approaching this sign?",
         "choices": [
           {
-            "text": "Take note of the available alternative exit — use it only if the through road is actually found to be blocked or closed",
+            "text": "Reduce speed where necessary, read the arrow path and follow the temporary lane guidance.",
             "is_correct": true
           },
           {
-            "text": "Take the exit immediately regardless of the condition of the through road",
+            "text": "Drive straight across the temporary lines because the number of lanes may remain unchanged.",
             "is_correct": false
           },
           {
-            "text": "Stop and wait for confirmation from a traffic officer before continuing",
+            "text": "Automatically take the first exit even when the arrows show a lane shift.",
             "is_correct": false
           }
         ],
-        "explanation": "F81 informs the driver about an available exit but does not automatically make that exit compulsory. The exit is only compulsory when the through road is actually closed or blocked. The driver may continue on the through road for as long as it is open."
+        "explanation": "Follow the arrows and temporary markings, adapt your speed and change lane only safely and where the traffic control permits."
       },
       "FR": {
-        "question": "Que devez-vous faire lorsque vous voyez F81?",
+        "question": "Quelle est la réaction correcte à l'approche de ce panneau ?",
         "choices": [
           {
-            "text": "Prendre note de la sortie alternative disponible — ne l'utiliser que si la route principale est effectivement bloquée ou fermée",
+            "text": "Réduisez la vitesse si nécessaire, lisez le tracé des flèches et suivez le guidage temporaire.",
             "is_correct": true
           },
           {
-            "text": "Prendre la sortie immédiatement quel que soit l'état de la route principale",
+            "text": "Continuez tout droit à travers les marquages temporaires puisque le nombre de bandes peut rester inchangé.",
             "is_correct": false
           },
           {
-            "text": "S'arrêter et attendre la confirmation d'un agent de la circulation avant de continuer",
+            "text": "Prenez automatiquement la première sortie même lorsque les flèches indiquent un déplacement des bandes.",
             "is_correct": false
           }
         ],
-        "explanation": "F81 informe le conducteur d'une sortie disponible mais ne rend pas cette sortie automatiquement obligatoire. La sortie n'est obligatoire que lorsque la route principale est effectivement fermée ou bloquée."
+        "explanation": "Suivez les flèches et les marquages temporaires, adaptez votre vitesse et ne changez de bande qu'en sécurité et là où la signalisation le permet."
       },
       "AR": {
-        "question": "ماذا يجب أن تفعل عند رؤية F81؟",
+        "question": "ما التصرف الصحيح عند الاقتراب من هذه العلامة؟",
         "choices": [
           {
-            "text": "الانتباه للمخرج المتاح — استخدامه فقط إن كان الطريق مغلقًا فعليًا",
+            "text": "خفّض السرعة عند الحاجة، واقرأ مسار السهام، واتبع توجيه المسارات المؤقت.",
             "is_correct": true
           },
           {
-            "text": "أخذ المخرج فورًا بغض النظر عن حالة الطريق",
+            "text": "استمر مستقيمًا عابرًا الخطوط المؤقتة لأن عدد المسارات قد يبقى ثابتًا.",
             "is_correct": false
           },
-          { "text": "التوقف وانتظار تأكيد من عنصر مرور", "is_correct": false }
+          {
+            "text": "خذ أول مخرج تلقائيًا حتى إذا كانت السهام تعرض انحرافًا للمسارات.",
+            "is_correct": false
+          }
         ],
-        "explanation": "F81 تُعلم السائق بالمخرج المتاح لكنها لا تجعله إلزاميًا تلقائيًا. المخرج إلزامي فقط عند إغلاق الطريق."
+        "explanation": "اتبع السهام والخطوط المؤقتة، وعدّل السرعة، ولا تغيّر المسار إلا بأمان وفي الموضع الذي تسمح به الإشارات."
       }
     }
   },
@@ -286,73 +331,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "F81 is 500 meter vóór een uitrit geplaatst. De snelweg voor u lijkt volledig vrij. Bent u verplicht de uitrit te nemen?",
+        "question": "Welke uitspraak over het toepassingsgebied is juist?",
         "choices": [
           {
-            "text": "Neen, F81 toont een beschikbare alternatieve uitrit maar verplicht u niet die te nemen als de doorgaande weg vrij is",
+            "text": "F81 mag alleen als voorlopige aanwijzing bij werken worden gebruikt en de concrete pijlen moeten de situatie ter plaatse weergeven.",
             "is_correct": true
           },
           {
-            "text": "Ja, F81 geeft aan dat de uitrit verplicht is ongeacht de toestand van de doorgaande weg",
+            "text": "F81 geldt als een algemene toestemming om van rijstrook te wisselen, ook over verboden markeringen.",
             "is_correct": false
           },
           {
-            "text": "Ja, F81 betekent altijd dat de doorgaande weg geblokkeerd is",
+            "text": "F81 is een permanent routekeuzebord voor alle kruispunten.",
             "is_correct": false
           }
         ],
-        "explanation": "F81 informeert de bestuurder over de beschikbaarheid van een alternatieve uitrit. Zolang de doorgaande weg open en vrij is, is de bestuurder niet verplicht de uitrit te nemen. De uitrit wordt slechts verplicht wanneer de doorgaande weg daadwerkelijk geblokkeerd of afgesloten is."
+        "explanation": "F81 mag alleen als voorlopige aanwijzing bij werken worden gebruikt en de concrete pijlen moeten de situatie ter plaatse weergeven."
       },
       "EN": {
-        "question": "F81 is placed 500 metres before an exit. The motorway ahead of you appears completely clear. Are you required to take the exit?",
+        "question": "Which statement about its scope is correct?",
         "choices": [
           {
-            "text": "No, F81 shows an available alternative exit but does not require you to take it if the through road is clear",
+            "text": "F81 may be used only as a temporary roadworks indication and its arrows must represent the actual site arrangement.",
             "is_correct": true
           },
           {
-            "text": "Yes, F81 indicates that the exit is compulsory regardless of the condition of the through road",
+            "text": "F81 is a general permission to change lane even across prohibited markings.",
             "is_correct": false
           },
           {
-            "text": "Yes, F81 always means the through road is blocked",
+            "text": "F81 is a permanent route-choice sign for every junction.",
             "is_correct": false
           }
         ],
-        "explanation": "F81 informs the driver about the availability of an alternative exit. As long as the through road is open and clear, the driver is not required to take the exit. The exit only becomes compulsory when the through road is actually blocked or closed."
+        "explanation": "F81 may be used only as a temporary roadworks indication and its arrows must represent the actual site arrangement."
       },
       "FR": {
-        "question": "F81 est placé 500 mètres avant une sortie. L'autoroute devant vous semble totalement libre. Êtes-vous obligé de prendre la sortie?",
+        "question": "Quelle affirmation concernant son champ d'application est correcte ?",
         "choices": [
           {
-            "text": "Non, F81 indique une sortie alternative disponible mais ne vous oblige pas à la prendre si la route principale est libre",
+            "text": "F81 ne peut être utilisé que comme indication provisoire de travaux et les flèches doivent représenter la disposition réelle des lieux.",
             "is_correct": true
           },
           {
-            "text": "Oui, F81 indique que la sortie est obligatoire quelle que soit la situation de la route principale",
+            "text": "F81 autorise de manière générale tout changement de bande, même à travers un marquage interdit.",
             "is_correct": false
           },
           {
-            "text": "Oui, F81 signifie toujours que la route principale est bloquée",
+            "text": "F81 est un panneau permanent de choix d'itinéraire à tous les carrefours.",
             "is_correct": false
           }
         ],
-        "explanation": "Tant que la route principale est ouverte et libre, le conducteur n'est pas tenu de prendre la sortie. La sortie ne devient obligatoire que lorsque la route principale est effectivement fermée."
+        "explanation": "F81 ne peut être utilisé que comme indication provisoire de travaux et les flèches doivent représenter la disposition réelle des lieux."
       },
       "AR": {
-        "question": "F81 موضوعة على بُعد 500 متر من مخرج. الطريق السريع أمامك يبدو خاليًا. هل يجب أخذ المخرج؟",
+        "question": "أي عبارة عن نطاق تطبيقها صحيحة؟",
         "choices": [
           {
-            "text": "لا، F81 تعرض مخرجًا بديلاً لكن لا توجب أخذه إن كان الطريق خاليًا",
+            "text": "لا تُستخدم F81 إلا كإرشاد مؤقت عند الأشغال، ويجب أن تمثل سهامها ترتيب الموقع الفعلي.",
             "is_correct": true
           },
-          { "text": "نعم، F81 تجعل أخذ المخرج إلزاميًا", "is_correct": false },
           {
-            "text": "نعم، F81 تعني دائمًا أن الطريق مغلوق",
+            "text": "تسمح F81 عمومًا بتغيير المسار حتى عبر الخطوط التي تمنع العبور.",
+            "is_correct": false
+          },
+          {
+            "text": "F81 علامة دائمة لاختيار الطريق عند كل تقاطع.",
             "is_correct": false
           }
         ],
-        "explanation": "F81 لا توجب أخذ المخرج ما دام الطريق مفتوحًا."
+        "explanation": "لا تُستخدم F81 إلا كإرشاد مؤقت عند الأشغال، ويجب أن تمثل سهامها ترتيب الموقع الفعلي."
       }
     }
   },
@@ -364,73 +412,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Betekent F81 dat de doorgaande weg op dit moment afgesloten is?",
+        "question": "Welk onderscheid is juridisch en praktisch juist?",
         "choices": [
           {
-            "text": "Neen, F81 toont uitsluitend de beschikbaarheid van een alternatieve uitrit — de doorgaande weg kan nog steeds open zijn",
+            "text": "F81 kondigt een uitwijking aan; F79 kondigt aan dat het aantal rijstroken vermindert.",
             "is_correct": true
           },
           {
-            "text": "Ja, F81 wordt alleen geplaatst wanneer de doorgaande weg al afgesloten is",
+            "text": "F81 en F79 betekenen beide dat een omleiding verplicht is.",
             "is_correct": false
           },
           {
-            "text": "Ja, F81 en F39 hebben dezelfde betekenis: de weg is afgesloten en een omleiding is verplicht",
+            "text": "F81 duidt een middenbermdoorsteek aan en F83 alleen een zijwaartse uitwijking.",
             "is_correct": false
           }
         ],
-        "explanation": "F81 geeft uitsluitend aan dat een alternatieve uitrit beschikbaar is. De doorgaande weg kan op dat moment nog open zijn. F81 en F39 zijn niet identiek: F39 is een advance warning, F81 wijst op de uitrit zelf maar impliceert geen afsluiting."
+        "explanation": "F81 kondigt een uitwijking aan; F79 kondigt aan dat het aantal rijstroken vermindert."
       },
       "EN": {
-        "question": "Does F81 mean the through road is currently closed?",
+        "question": "Which legal and practical distinction is correct?",
         "choices": [
           {
-            "text": "No, F81 indicates exclusively the availability of an alternative exit — the through road may still be open",
+            "text": "F81 announces a lane deviation; F79 announces a reduction in the number of lanes.",
             "is_correct": true
           },
           {
-            "text": "Yes, F81 is only placed when the through road is already closed",
+            "text": "F81 and F79 both mean that a diversion is compulsory.",
             "is_correct": false
           },
           {
-            "text": "Yes, F81 and F39 have the same meaning: the road is closed and a diversion is compulsory",
+            "text": "F81 indicates a central-reservation crossover while F83 indicates only a lateral deviation.",
             "is_correct": false
           }
         ],
-        "explanation": "F81 indicates exclusively that an alternative exit is available. The through road may still be open at that point. F81 and F39 are not identical: F39 is an advance warning, F81 indicates the exit itself but does not imply a closure."
+        "explanation": "F81 announces a lane deviation; F79 announces a reduction in the number of lanes."
       },
       "FR": {
-        "question": "F81 signifie-t-il que la route principale est actuellement fermée?",
+        "question": "Quelle distinction juridique et pratique est correcte ?",
         "choices": [
           {
-            "text": "Non, F81 indique exclusivement la disponibilité d'une sortie alternative — la route principale peut encore être ouverte",
+            "text": "F81 annonce un évitement; F79 annonce une réduction du nombre de bandes.",
             "is_correct": true
           },
           {
-            "text": "Oui, F81 n'est placé que lorsque la route principale est déjà fermée",
+            "text": "F81 et F79 signifient tous deux qu'une déviation est obligatoire.",
             "is_correct": false
           },
           {
-            "text": "Oui, F81 et F39 ont la même signification: la route est fermée et une déviation est obligatoire",
+            "text": "F81 annonce une traversée de la berme centrale tandis que F83 annonce seulement un déplacement latéral.",
             "is_correct": false
           }
         ],
-        "explanation": "F81 indique uniquement qu'une sortie alternative est disponible. La route principale peut encore être ouverte à ce point. F81 et F39 ne sont pas identiques."
+        "explanation": "F81 annonce un évitement; F79 annonce une réduction du nombre de bandes."
       },
       "AR": {
-        "question": "هل تعني F81 أن الطريق الرئيسي مغلوق حاليًا؟",
+        "question": "أي تمييز قانوني وعملي صحيح؟",
         "choices": [
           {
-            "text": "لا، F81 تدل حصريًا على توفر مخرج بديل — الطريق قد يكون مفتوحًا بعد",
+            "text": "تعلن F81 عن انحراف المسارات، بينما تعلن F79 عن انخفاض عددها.",
             "is_correct": true
           },
-          { "text": "نعم، F81 توضع فقط عند إغلاق الطريق", "is_correct": false },
           {
-            "text": "نعم، F81 وF39 لهما معنى واحد: الطريق مغلوق",
+            "text": "تعني F81 وF79 كلتاهما أن التحويلة إلزامية.",
+            "is_correct": false
+          },
+          {
+            "text": "تدل F81 على عبور الفاصل الوسطي بينما تدل F83 على انحراف جانبي فقط.",
             "is_correct": false
           }
         ],
-        "explanation": "F81 تدل حصريًا على توفر مخرج بديل. الطريق قد يكون مفتوحًا بعد."
+        "explanation": "تعلن F81 عن انحراف المسارات، بينما تعلن F79 عن انخفاض عددها."
       }
     }
   },
@@ -442,60 +493,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "F81 is zichtbaar vóór een uitrit. De snelweg voor u lijkt open en vrij. Bent u verplicht de uitrit te nemen?",
+        "question": "Mag u de tijdelijke pijlen en markeringen negeren omdat F81 niet noodzakelijk een rijstrook laat verdwijnen?",
         "choices": [
           {
-            "text": "Neen, F81 kondigt een beschikbare uitwijkingsroute aan maar verplicht die niet tenzij de doorgaande weg afgesloten blijkt",
-            "is_correct": true
+            "text": "Ja",
+            "is_correct": false
           },
           {
-            "text": "Ja, het tonen van F81 maakt het nemen van de uitrit verplicht voor alle voertuigen ongeacht de toestand van de doorgaande weg",
-            "is_correct": false
+            "text": "Neen",
+            "is_correct": true
           }
         ],
-        "explanation": "F81 brengt de beschikbaarheid van een uitrit onder de aandacht maar legt geen verplichting op zolang de doorgaande weg open en beschikbaar is. De verplichting om de uitrit te nemen ontstaat pas wanneer de doorgaande weg daadwerkelijk geblokkeerd of afgesloten is."
+        "explanation": "Neen. F81 kondigt het feitelijke tijdelijke verloop aan; het behoud van het aantal rijstroken maakt die geleiding niet vrijblijvend."
       },
       "EN": {
-        "question": "F81 is visible before an exit. The motorway ahead of you appears open and clear. Are you required to take the exit?",
+        "question": "May you ignore the temporary arrows and markings because F81 does not necessarily remove a lane?",
         "choices": [
           {
-            "text": "No, F81 announces an available diversion route but does not make it compulsory unless the through road is found to be closed",
-            "is_correct": true
+            "text": "Yes",
+            "is_correct": false
           },
           {
-            "text": "Yes, the presence of F81 makes taking the exit compulsory for all vehicles regardless of the condition of the through road",
-            "is_correct": false
+            "text": "No",
+            "is_correct": true
           }
         ],
-        "explanation": "F81 brings an available exit to the driver's attention but imposes no obligation as long as the through road is open and available. The obligation to take the exit only arises when the through road is actually blocked or closed."
+        "explanation": "No. F81 announces the actual temporary lane path; keeping the same lane count does not make the guidance optional."
       },
       "FR": {
-        "question": "F81 est visible avant une sortie. L'autoroute devant vous semble ouverte et libre. Êtes-vous obligé de prendre la sortie?",
+        "question": "Pouvez-vous ignorer les flèches et marquages temporaires parce que F81 ne supprime pas nécessairement une bande ?",
         "choices": [
           {
-            "text": "Non, F81 annonce un itinéraire de déviation disponible mais ne le rend pas obligatoire tant que la route principale n'est pas fermée",
-            "is_correct": true
+            "text": "Oui",
+            "is_correct": false
           },
           {
-            "text": "Oui, la présence de F81 rend la prise de la sortie obligatoire pour tous les véhicules",
-            "is_correct": false
+            "text": "Non",
+            "is_correct": true
           }
         ],
-        "explanation": "F81 attire l'attention du conducteur sur une sortie disponible mais n'impose aucune obligation tant que la route principale est ouverte. L'obligation ne nait que lorsque la route principale est effectivement bloquée."
+        "explanation": "Non. F81 annonce le tracé temporaire réel; le maintien du nombre de bandes ne rend pas le guidage facultatif."
       },
       "AR": {
-        "question": "F81 مرئية قبل مخرج. الطريق السريع يبدو مفتوحًا. هل يجب أخذ المخرج؟",
+        "question": "هل يجوز تجاهل السهام والخطوط المؤقتة لأن F81 لا تُنقص عدد المسارات بالضرورة؟",
         "choices": [
           {
-            "text": "لا، F81 تُعلن عن مسار بديل متاح لكنها لا تجعله إلزاميًا ما لم يغلق الطريق",
-            "is_correct": true
+            "text": "نعم",
+            "is_correct": false
           },
           {
-            "text": "نعم، وجود F81 يجعل أخذ المخرج إلزاميًا لجميع المركبات",
-            "is_correct": false
+            "text": "لا",
+            "is_correct": true
           }
         ],
-        "explanation": "F81 تلفت الانتباه إلى مخرج متاح لكن لا تفرض التزامًا ما دام الطريق مفتوحًا."
+        "explanation": "لا. تعلن F81 عن المسار المؤقت الفعلي، وبقاء عدد المسارات لا يجعل التوجيه اختياريًا."
       }
     }
   },
@@ -507,57 +558,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "F81 is geplaatst maar u ziet geen enkel wegafsluitingsbord op de doorgaande weg. Mag u op de doorgaande weg verder rijden?",
+        "question": "Betekent F81 op zichzelf dat een facultatieve uitrit beschikbaar is terwijl de rijstroken rechtdoor onveranderd blijven?",
         "choices": [
           {
-            "text": "Ja, bij afwezigheid van een afsluitingsbord mag u op de doorgaande weg verder rijden — F81 maakt de uitrit beschikbaar maar niet verplicht",
-            "is_correct": true
+            "text": "Ja",
+            "is_correct": false
           },
           {
-            "text": "Neen, F81 verplicht u altijd de uitrit te nemen ongeacht of er een afsluitingsbord zichtbaar is",
-            "is_correct": false
+            "text": "Neen",
+            "is_correct": true
           }
         ],
-        "explanation": "F81 alleen volstaat niet om de bestuurder te verplichten de uitrit te nemen. Er is altijd een aanvullend afsluiting- of omleidingsbord nodig om de verplichting te activeren. Zolang de doorgaande weg vrij en open lijkt en geen afsluitingsbord aanwezig is, mag de bestuurder de doorgaande weg blijven volgen."
+        "explanation": "Neen. De officiële betekenis is een vooraf aangekondigde uitwijking van de rijstroken bij werken, geen algemene facultatieve uitrit."
       },
       "EN": {
-        "question": "F81 has been placed but you see no road closure sign on the through road. May you continue on the through road?",
+        "question": "Does F81 by itself mean an optional exit is available while the through lanes remain unchanged?",
         "choices": [
           {
-            "text": "Yes, in the absence of a closure sign you may continue on the through road — F81 makes the exit available but not compulsory",
-            "is_correct": true
+            "text": "Yes",
+            "is_correct": false
           },
           {
-            "text": "No, F81 always requires you to take the exit regardless of whether a closure sign is visible",
-            "is_correct": false
+            "text": "No",
+            "is_correct": true
           }
         ],
-        "explanation": "F81 alone is not sufficient to require the driver to take the exit. A supplementary closure or diversion sign is always needed to activate the obligation. As long as the through road appears clear and open and no closure sign is present, the driver may continue on the through road."
+        "explanation": "No. Its official meaning is an advance warning of a lane deviation at roadworks, not a general optional exit."
       },
       "FR": {
-        "question": "F81 a été placé mais vous ne voyez aucun panneau de fermeture de route sur la route principale. Pouvez-vous continuer sur la route principale?",
+        "question": "F81 signifie-t-il à lui seul qu'une sortie facultative est disponible tandis que les bandes continuent sans changement ?",
         "choices": [
           {
-            "text": "Oui, en l'absence d'un panneau de fermeture vous pouvez continuer sur la route principale — F81 rend la sortie disponible mais pas obligatoire",
-            "is_correct": true
+            "text": "Oui",
+            "is_correct": false
           },
           {
-            "text": "Non, F81 vous oblige toujours à prendre la sortie qu'il y ait ou non un panneau de fermeture visible",
-            "is_correct": false
+            "text": "Non",
+            "is_correct": true
           }
         ],
-        "explanation": "F81 seul ne suffit pas à obliger le conducteur à prendre la sortie. Un panneau de fermeture ou de déviation supplémentaire est toujours nécessaire pour activer l'obligation."
+        "explanation": "Non. Sa signification officielle est le préavis d'un évitement lors de travaux, pas une sortie facultative générale."
       },
       "AR": {
-        "question": "F81 موضوعة لكنك لا ترى أي علامة مرورية إغلاق على الطريق الرئيسي. هل يجوز مواصلة السير عليه؟",
+        "question": "هل تعني F81 وحدها وجود مخرج اختياري مع بقاء المسارات المباشرة دون تغيير؟",
         "choices": [
           {
-            "text": "نعم، في غياب علامة مرورية إغلاق يجوز مواصلة السير — F81 تجعل المخرج متاحًا لا إلزاميًا",
-            "is_correct": true
+            "text": "نعم",
+            "is_correct": false
           },
-          { "text": "لا، F81 توجب دائمًا أخذ المخرج", "is_correct": false }
+          {
+            "text": "لا",
+            "is_correct": true
+          }
         ],
-        "explanation": "F81 وحدها لا تكفي لإلزام السائق بأخذ المخرج."
+        "explanation": "لا. معناها الرسمي هو الإعلان المسبق عن انحراف للمسارات عند الأشغال، وليس مخرجًا اختياريًا عامًا."
       }
     }
   }

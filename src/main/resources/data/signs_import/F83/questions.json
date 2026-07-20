@@ -10,73 +10,73 @@
         "question": "Wat betekent dit verkeersbord?",
         "choices": [
           {
-            "text": "De rijbaan wordt smaller; u moet uw snelheid verminderen en uw zijdelingse positie aanpassen",
+            "text": "Een voorwegwijzer bij werken die een doorsteek van de middenberm aankondigt.",
             "is_correct": true
           },
           {
-            "text": "De rijbaan verlegt zijdelings; volg de aangegeven rijrichting en handhaaf uw huidige koers niet",
+            "text": "Een bord dat uitsluitend een gewone wegversmalling zonder middenbermdoorsteek aankondigt.",
             "is_correct": false
           },
           {
-            "text": "Een rijstrook eindigt; voeg tijdig samen met de naastliggende rijstrook",
+            "text": "Een bord dat het einde van een rijstrook aangeeft.",
             "is_correct": false
           }
         ],
-        "explanation": "F83 kondigt een versmalling van de rijbaan aan. Dit vereist zowel snelheidsvermindering als aanpassing van de zijdelingse positie — het is geen louter informatief bord."
+        "explanation": "F83 kondigt bij werken vooraf aan dat het verkeer via een tijdelijke doorsteek van de middenberm wordt geleid."
       },
       "EN": {
         "question": "What does this traffic sign mean?",
         "choices": [
           {
-            "text": "The road narrows ahead; you must reduce speed and adapt your lateral position",
+            "text": "An advance roadworks sign announcing a crossover through the central reservation.",
             "is_correct": true
           },
           {
-            "text": "The carriageway shifts laterally; follow the indicated direction and do not maintain your current path",
+            "text": "A sign announcing only an ordinary road narrowing without a central-reservation crossover.",
             "is_correct": false
           },
           {
-            "text": "A lane ends ahead; merge into the adjacent lane in time",
+            "text": "A sign marking the end of a lane.",
             "is_correct": false
           }
         ],
-        "explanation": "F83 announces a carriageway narrowing ahead. This requires both speed reduction and lateral position adaptation — it is not merely an informational sign."
+        "explanation": "F83 gives advance warning at roadworks that traffic will be guided through a temporary central-reservation crossover."
       },
       "FR": {
-        "question": "Que signifie ce panneau de signalisation?",
+        "question": "Que signifie ce panneau de signalisation ?",
         "choices": [
           {
-            "text": "La chaussée se rétrécit; vous devez réduire votre vitesse et adapter votre position latérale",
+            "text": "Un signal de préavis de travaux annonçant une traversée de la berme centrale.",
             "is_correct": true
           },
           {
-            "text": "La chaussée se déplace latéralement; suivez la direction indiquée sans maintenir votre trajectoire actuelle",
+            "text": "Un signal annonçant seulement un rétrécissement ordinaire sans traversée de la berme centrale.",
             "is_correct": false
           },
           {
-            "text": "Une voie se termine; rabattez-vous à temps sur la voie adjacente",
+            "text": "Un signal indiquant la fin d'une bande.",
             "is_correct": false
           }
         ],
-        "explanation": "F83 annonce un rétrécissement de la chaussée. Cela exige à la fois une réduction de vitesse et une adaptation de la position latérale."
+        "explanation": "F83 annonce à l'avance, lors de travaux, que la circulation sera guidée par une traversée temporaire de la berme centrale."
       },
       "AR": {
         "question": "ما معنى هذه العلامة المرورية؟",
         "choices": [
           {
-            "text": "يضيق الطريق أمامك؛ يجب تخفيض السرعة وتعديل موضعك الجانبي",
+            "text": "علامة أشغال تمهيدية تعلن عن عبور الفاصل الوسطي.",
             "is_correct": true
           },
           {
-            "text": "ينزاح الطريق جانبيًا؛ اتبع الاتجاه المحدد",
+            "text": "علامة تعلن فقط عن تضيق عادي من دون عبور الفاصل الوسطي.",
             "is_correct": false
           },
           {
-            "text": "ينتهي مسارك؛ اندمج في الوقت المناسب مع المسار المجاور",
+            "text": "علامة تحدد نهاية مسار.",
             "is_correct": false
           }
         ],
-        "explanation": "تُعلن F83 عن تضييق في الطريق. يستلزم ذلك تخفيض السرعة وتعديل الموضع الجانبي."
+        "explanation": "تعلن F83 مسبقًا عند الأشغال أن المرور سيوجّه عبر فتحة مؤقتة في الفاصل الوسطي."
       }
     }
   },
@@ -88,40 +88,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Tot welke categorie verkeersborden behoort dit bord?",
+        "question": "Tot welke inhoudscategorie behoort dit bord binnen ReadyRoad?",
         "choices": [
-          { "text": "Wegbeheersingstekens", "is_correct": true },
-          { "text": "Gevaarsborden", "is_correct": false },
-          { "text": "Gebodsborden", "is_correct": false }
+          {
+            "text": "Wegbeheer en rijstrooksignalisatie",
+            "is_correct": true
+          },
+          {
+            "text": "Voorrangsborden",
+            "is_correct": false
+          },
+          {
+            "text": "Parkeerborden",
+            "is_correct": false
+          }
         ],
-        "explanation": "F83 behoort tot deze categorie (wegbeheersingstekens). Deze borden informeren over een structurele wegverandering en vereisen aanpassend rijgedrag, ook al lijken ze informatief."
+        "explanation": "Binnen ReadyRoad is dit bord onder ROAD_MANAGEMENT ingedeeld. De concrete betekenis blijft die van het afgebeelde officiële F-bord."
       },
       "EN": {
-        "question": "To which category of traffic signs does this sign belong?",
+        "question": "Which ReadyRoad content category contains this sign?",
         "choices": [
-          { "text": "Road management signs", "is_correct": true },
-          { "text": "Danger signs", "is_correct": false },
-          { "text": "Mandatory signs", "is_correct": false }
+          {
+            "text": "Road management and lane-control signs",
+            "is_correct": true
+          },
+          {
+            "text": "Priority signs",
+            "is_correct": false
+          },
+          {
+            "text": "Parking signs",
+            "is_correct": false
+          }
         ],
-        "explanation": "F83 belongs to this category (road management signs). These signs inform drivers of structural road changes and require behavioural adaptation even though they appear informational."
+        "explanation": "ReadyRoad classifies this sign under ROAD_MANAGEMENT. Its actual meaning remains that of the official F sign shown."
       },
       "FR": {
-        "question": "À quelle catégorie de panneaux appartient ce panneau?",
+        "question": "Dans quelle catégorie de contenu ReadyRoad ce panneau est-il classé ?",
         "choices": [
-          { "text": "Panneaux de gestion de la route", "is_correct": true },
-          { "text": "Panneaux de danger", "is_correct": false },
-          { "text": "Panneaux d'obligation", "is_correct": false }
+          {
+            "text": "Gestion de la route et signalisation par bande",
+            "is_correct": true
+          },
+          {
+            "text": "Signaux de priorité",
+            "is_correct": false
+          },
+          {
+            "text": "Signaux de stationnement",
+            "is_correct": false
+          }
         ],
-        "explanation": "F83 appartient à cette catégorie (panneaux de gestion de la route). Ces panneaux informent des changements structurels de la route et exigent une adaptation du comportement."
+        "explanation": "ReadyRoad classe ce panneau dans ROAD_MANAGEMENT. Sa signification concrète reste celle du signal F officiel représenté."
       },
       "AR": {
-        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
+        "question": "ضمن أي فئة محتوى في ReadyRoad تندرج هذه العلامة؟",
         "choices": [
-          { "text": "علامات إدارة الطريق", "is_correct": true },
-          { "text": "علامات الخطر", "is_correct": false },
-          { "text": "العلامات الإلزامية", "is_correct": false }
+          {
+            "text": "إدارة الطريق وتنظيم المسارات",
+            "is_correct": true
+          },
+          {
+            "text": "علامات الأولوية",
+            "is_correct": false
+          },
+          {
+            "text": "علامات الوقوف والركن",
+            "is_correct": false
+          }
         ],
-        "explanation": "F83 تنتمي إلى هذه الفئة (علامات إدارة الطريق). تُخبر هذه العلامات عن تغييرات هيكلية في الطريق وتستوجب التكيف."
+        "explanation": "يصنّف ReadyRoad هذه العلامة ضمن ROAD_MANAGEMENT، وتبقى دلالتها الفعلية هي دلالة علامة F الرسمية المعروضة."
       }
     }
   },
@@ -133,76 +169,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Welke wegsituatie kondigt dit bord aan?",
+        "question": "Welke uitspraak over dit bord is juist?",
         "choices": [
           {
-            "text": "De rijbaan versmalt — de verminderde breedte vereist aanpassing van zowel snelheid als zijdelingse positie",
+            "text": "De pijlen tonen de tijdelijke overleiding door de middenberm en moeten de werkelijke verkeersinrichting weergeven.",
             "is_correct": true
           },
           {
-            "text": "De rijbaan verlegt lateraal — de bestuurder moet de aangeduide richting volgen",
+            "text": "F83 geeft een permanente plaats voor keren in de middenberm aan.",
             "is_correct": false
           },
           {
-            "text": "Een rijstrook eindigt — tijdig samenvoegen met de naastliggende rijstrook is vereist",
+            "text": "F83 betekent enkel dat de rijbaan iets smaller wordt, zonder wijziging van het verloop.",
             "is_correct": false
           }
         ],
-        "explanation": "F83 kondigt een rijbaanversmalling aan waarbij de bestuurder actief moet reageren: snelheid verminderen én zijdelingse positie aanpassen."
+        "explanation": "F83 is een voorlopige aanwijzing bij werken. De pijlen tonen hoe rijstroken door een opening in de middenberm naar een tijdelijk ingericht deel van de andere rijbaan worden geleid; het symbool moet met de plaatsgesteldheid overeenstemmen."
       },
       "EN": {
-        "question": "What road situation does this sign announce?",
+        "question": "Which statement about this sign is correct?",
         "choices": [
           {
-            "text": "The road narrows — reduced width requires adaptation of both speed and lateral position",
+            "text": "The arrows show the temporary crossover through the central reservation and must represent the actual traffic layout.",
             "is_correct": true
           },
           {
-            "text": "The carriageway shifts laterally — the driver must follow the indicated direction",
+            "text": "F83 marks a permanent place for making a U-turn through the central reservation.",
             "is_correct": false
           },
           {
-            "text": "A lane ends — merging in time into the adjacent lane is required",
+            "text": "F83 means only that the road becomes slightly narrower without changing alignment.",
             "is_correct": false
           }
         ],
-        "explanation": "F83 announces a road narrowing where the driver must actively respond: reduce speed and adapt lateral position."
+        "explanation": "F83 is a temporary indication used at roadworks. Its arrows show lanes crossing through an opening in the central reservation onto a temporarily arranged part of the other carriageway; the symbol must match the actual site."
       },
       "FR": {
-        "question": "Quelle situation routière ce panneau annonce-t-il?",
+        "question": "Quelle affirmation concernant ce panneau est correcte ?",
         "choices": [
           {
-            "text": "La chaussée se rétrécit — la largeur réduite exige d'adapter à la fois la vitesse et la position latérale",
+            "text": "Les flèches montrent la traversée temporaire de la berme centrale et doivent représenter la configuration réelle.",
             "is_correct": true
           },
           {
-            "text": "La chaussée se déplace latéralement — le conducteur doit suivre la direction indiquée",
+            "text": "F83 indique un endroit permanent où faire demi-tour à travers la berme centrale.",
             "is_correct": false
           },
           {
-            "text": "Une voie se termine — se rabattre à temps sur la voie adjacente est requis",
+            "text": "F83 signifie uniquement que la route se rétrécit légèrement sans déviation.",
             "is_correct": false
           }
         ],
-        "explanation": "F83 annonce un rétrécissement où le conducteur doit réagir activement: réduire la vitesse et adapter sa position latérale."
+        "explanation": "F83 est une indication provisoire utilisée lors de travaux. Les flèches montrent comment les bandes traversent une ouverture de la berme centrale vers une partie temporairement aménagée de l'autre chaussée; le symbole doit correspondre aux lieux."
       },
       "AR": {
-        "question": "ما الوضع الذي تُعلن عنه هذه العلامة المرورية؟",
+        "question": "أي عبارة عن هذه العلامة صحيحة؟",
         "choices": [
           {
-            "text": "يضيق الطريق — العرض المخفّض يستوجب تكييف السرعة والموضع الجانبي معًا",
+            "text": "توضح السهام العبور المؤقت للفاصل الوسطي ويجب أن تمثل ترتيب المرور الفعلي.",
             "is_correct": true
           },
           {
-            "text": "ينزاح الطريق جانبيًا — يجب على السائق اتباع الاتجاه المحدد",
+            "text": "تحدد F83 مكانًا دائمًا للالتفاف عبر الفاصل الوسطي.",
             "is_correct": false
           },
           {
-            "text": "ينتهي مسار — الاندماج مع المسار المجاور في الوقت المناسب ضروري",
+            "text": "تعني F83 فقط أن الطريق يضيق قليلًا من دون تغيير المسار.",
             "is_correct": false
           }
         ],
-        "explanation": "تُعلن F83 عن تضييق يستوجب ردّ فعل نشط: تخفيض السرعة وتعديل الموضع الجانبي."
+        "explanation": "F83 إشارة مؤقتة عند الأشغال. توضح سهامها انتقال المسارات عبر فتحة في الفاصل الوسطي إلى جزء مجهز مؤقتًا من الطريق المقابل، ويجب أن يطابق الرسم وضع الموقع."
       }
     }
   },
@@ -214,73 +250,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat moet u doen wanneer u dit bord ziet?",
+        "question": "Wat is de juiste reactie wanneer u dit bord nadert?",
         "choices": [
           {
-            "text": "Snelheid verminderen én de zijdelingse positie aanpassen aan de verminderde rijbaanbreedte",
+            "text": "Volg de afgebakende tijdelijke overleiding en pas snelheid en afstand aan vóór de doorsteek.",
             "is_correct": true
           },
           {
-            "text": "Snelheid handhaven — versmaltingsborden zijn louter informatief en vereisen geen actie",
+            "text": "Gebruik elke zichtbare opening in de middenberm als vrije keermogelijkheid.",
             "is_correct": false
           },
           {
-            "text": "Onmiddellijk naar de meest linkse rijstrook gaan",
+            "text": "Rijd naast de afbakening om de tijdelijke overleiding te vermijden.",
             "is_correct": false
           }
         ],
-        "explanation": "F83 vereist twee aanpassingen: snelheid verminderen én de zijdelingse positie aanpassen. Enkel vaart minderen is onvoldoende. deze categorieborden vereisen actief rijgedrag."
+        "explanation": "Verminder zo nodig uw snelheid, volg nauwkeurig de tijdelijke pijlen, afbakening en markeringen en blijf binnen de toegewezen verkeersruimte."
       },
       "EN": {
-        "question": "What must you do when you see this sign?",
+        "question": "What is the correct response when approaching this sign?",
         "choices": [
           {
-            "text": "Reduce speed and adapt your lateral position to the reduced road width ahead",
+            "text": "Follow the bounded temporary crossover and adapt speed and following distance before entering it.",
             "is_correct": true
           },
           {
-            "text": "Maintain speed — narrowing signs are purely informational and require no action",
+            "text": "Use any visible opening in the central reservation as a free U-turn facility.",
             "is_correct": false
           },
           {
-            "text": "Move immediately to the leftmost lane",
+            "text": "Drive outside the barriers to avoid the temporary crossover.",
             "is_correct": false
           }
         ],
-        "explanation": "F83 requires two adaptations: reduce speed and adjust lateral position. Slowing down alone is insufficient. These information signs require active driving behaviour."
+        "explanation": "Reduce speed where necessary, follow the temporary arrows, barriers and markings precisely, and remain within the traffic space assigned to you."
       },
       "FR": {
-        "question": "Que devez-vous faire lorsque vous voyez ce panneau?",
+        "question": "Quelle est la réaction correcte à l'approche de ce panneau ?",
         "choices": [
           {
-            "text": "Réduire la vitesse et adapter votre position latérale à la largeur réduite de la chaussée",
+            "text": "Suivez la traversée temporaire délimitée et adaptez vitesse et distance avant de l'emprunter.",
             "is_correct": true
           },
           {
-            "text": "Maintenir la vitesse — les panneaux de rétrécissement sont purement informatifs",
+            "text": "Utilisez toute ouverture visible de la berme centrale pour faire demi-tour librement.",
             "is_correct": false
           },
           {
-            "text": "Se déplacer immédiatement sur la voie la plus à gauche",
+            "text": "Circulez à l'extérieur du balisage pour éviter la traversée temporaire.",
             "is_correct": false
           }
         ],
-        "explanation": "F83 exige deux adaptations: réduire la vitesse et adapter la position latérale. Ralentir seul est insuffisant. Les panneaux de cette catégorie exigent un comportement de conduite actif."
+        "explanation": "Réduisez la vitesse si nécessaire, suivez précisément les flèches, balises et marquages temporaires et restez dans l'espace de circulation attribué."
       },
       "AR": {
-        "question": "ماذا يجب أن تفعل عند رؤية هذه العلامة المرورية؟",
+        "question": "ما التصرف الصحيح عند الاقتراب من هذه العلامة؟",
         "choices": [
           {
-            "text": "تخفيض السرعة وتعديل الموضع الجانبي وفق عرض الطريق المخفّض",
+            "text": "اتبع العبور المؤقت المحدد بالحواجز وعدّل السرعة ومسافة الأمان قبل دخوله.",
             "is_correct": true
           },
           {
-            "text": "الحفاظ على السرعة — علامات التضييق للمعلومات فقط",
+            "text": "استخدم أي فتحة ظاهرة في الفاصل الوسطي للالتفاف بحرية.",
             "is_correct": false
           },
-          { "text": "التحرك فورًا إلى أقصى اليسار", "is_correct": false }
+          {
+            "text": "اسلك مسارًا خارج الحواجز لتجنب العبور المؤقت.",
+            "is_correct": false
+          }
         ],
-        "explanation": "تستوجب F83 اجراءين: تخفيض السرعة وتعديل الموضع الجانبي. التباطؤ وحده غير كاف."
+        "explanation": "خفّض السرعة عند الحاجة، واتبع بدقة السهام والحواجز والخطوط المؤقتة، وابق داخل الحيز المروري المخصص لك."
       }
     }
   },
@@ -292,76 +331,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U ziet F83 en uw voertuig is smal. Bent u nog steeds verplicht uw snelheid te verminderen en uw positie aan te passen?",
+        "question": "Welke uitspraak over het toepassingsgebied is juist?",
         "choices": [
           {
-            "text": "Ja, de aanpassingsplicht geldt voor alle bestuurders ongeacht de breedte van hun voertuig",
+            "text": "F83 mag alleen voor voorlopige aanwijzingen bij werken worden gebruikt; het bord machtigt geen beweging buiten het afgebeelde en afgebakende verkeersverloop.",
             "is_correct": true
           },
           {
-            "text": "Neen, een smal voertuig hoeft de rijbaanversmalling niet te compenseren",
+            "text": "F83 maakt iedere middenbermopening permanent toegankelijk voor bestuurders.",
             "is_correct": false
           },
           {
-            "text": "Alleen als er tegenliggers aanwezig zijn in het versmalde gedeelte",
+            "text": "F83 geldt uitsluitend voor voertuigen op de linkerrijstrook.",
             "is_correct": false
           }
         ],
-        "explanation": "De verplichting om snelheid en positie aan te passen bij F83 geldt ongeacht de voertuigbreedte. De wegsituatie staat centraal, niet de afmetingen van uw voertuig."
+        "explanation": "F83 mag alleen voor voorlopige aanwijzingen bij werken worden gebruikt; het bord machtigt geen beweging buiten het afgebeelde en afgebakende verkeersverloop."
       },
       "EN": {
-        "question": "You see F83 ahead and your vehicle is narrow. Are you still required to reduce speed and adapt your position?",
+        "question": "Which statement about its scope is correct?",
         "choices": [
           {
-            "text": "Yes, the obligation to adapt applies to all drivers regardless of vehicle width",
+            "text": "F83 may be used only for temporary indications at roadworks; it does not authorise movement outside the shown and bounded traffic path.",
             "is_correct": true
           },
           {
-            "text": "No, a narrow vehicle does not need to compensate for the road narrowing",
+            "text": "F83 permanently opens every central-reservation gap to drivers.",
             "is_correct": false
           },
           {
-            "text": "Only if there is oncoming traffic in the narrowed section",
+            "text": "F83 applies only to vehicles in the left lane.",
             "is_correct": false
           }
         ],
-        "explanation": "The obligation to adapt speed and position at F83 applies regardless of vehicle width. The road situation is the determining factor, not the dimensions of your vehicle."
+        "explanation": "F83 may be used only for temporary indications at roadworks; it does not authorise movement outside the shown and bounded traffic path."
       },
       "FR": {
-        "question": "Vous voyez F83 et votre véhicule est étroit. Êtes-vous toujours tenu de réduire votre vitesse et d'adapter votre position?",
+        "question": "Quelle affirmation concernant son champ d'application est correcte ?",
         "choices": [
           {
-            "text": "Oui, l'obligation d'adaptation s'applique à tous les conducteurs quelle que soit la largeur du véhicule",
+            "text": "F83 ne peut servir qu'à des indications provisoires lors de travaux; il n'autorise aucun mouvement hors du tracé représenté et délimité.",
             "is_correct": true
           },
           {
-            "text": "Non, un véhicule étroit n'a pas à compenser le rétrécissement",
+            "text": "F83 rend définitivement toute ouverture de la berme centrale accessible aux conducteurs.",
             "is_correct": false
           },
           {
-            "text": "Seulement s'il y a des véhicules venant en sens inverse dans la section rétrécie",
+            "text": "F83 ne concerne que les véhicules de la bande de gauche.",
             "is_correct": false
           }
         ],
-        "explanation": "L'obligation d'adapter la vitesse et la position au F83 s'applique quelle que soit la largeur du véhicule. C'est la situation routière qui est déterminante."
+        "explanation": "F83 ne peut servir qu'à des indications provisoires lors de travaux; il n'autorise aucun mouvement hors du tracé représenté et délimité."
       },
       "AR": {
-        "question": "ترى F83 أمامك ومركبتك ضيقة. هل لا تزال ملزمًا بتخفيض السرعة وتعديل موضعك؟",
+        "question": "أي عبارة عن نطاق تطبيقها صحيحة؟",
         "choices": [
           {
-            "text": "نعم، التزام التكييف يسري على جميع السائقين بصرف النظر عن عرض المركبة",
+            "text": "لا تُستخدم F83 إلا لإرشادات مؤقتة عند الأشغال، ولا تسمح بحركة خارج المسار المعروض والمحدد بالحواجز.",
             "is_correct": true
           },
           {
-            "text": "لا، لا تحتاج المركبة الضيقة إلى تعويض عن التضييق",
+            "text": "تفتح F83 بصورة دائمة كل فتحة في الفاصل الوسطي للسائقين.",
             "is_correct": false
           },
           {
-            "text": "فقط عند وجود سيارات مقابلة في القسم الضيق",
+            "text": "تسري F83 فقط على مركبات المسار الأيسر.",
             "is_correct": false
           }
         ],
-        "explanation": "يسري التزام تعديل السرعة والموضع بصرف النظر عن عرض المركبة. وضع الطريق هو العامل الحاسم."
+        "explanation": "لا تُستخدم F83 إلا لإرشادات مؤقتة عند الأشغال، ولا تسمح بحركة خارج المسار المعروض والمحدد بالحواجز."
       }
     }
   },
@@ -373,73 +412,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat is het verschil tussen F83 en F85?",
+        "question": "Welk onderscheid is juridisch en praktisch juist?",
         "choices": [
           {
-            "text": "F83 kondigt aan dat de rijbaan smaller wordt; F85 kondigt aan dat de rijbaan lateraal verlegt naar een nieuwe positie",
+            "text": "F83 kondigt een doorsteek van de middenberm aan; F81 kondigt een uitwijking aan die niet noodzakelijk door de middenberm gaat.",
             "is_correct": true
           },
           {
-            "text": "F83 is altijd een tijdelijk bord; F85 is een permanent bord",
+            "text": "F83 is een versmallingsbord en F81 beëindigt die versmalling.",
             "is_correct": false
           },
           {
-            "text": "F83 geldt uitsluitend voor vrachtwagens; F85 geldt voor alle voertuigen",
+            "text": "F83 en F85 duiden beide een permanent tweerichtingsverkeer aan.",
             "is_correct": false
           }
         ],
-        "explanation": "F83 en F85 zijn beide GROUP A-rijbaanbeheersingstekens maar beschrijven verschillende situaties. F83 = rijbaan versmalt (breedte neemt af). F85 = rijbaan verlegt zijdelings (positie verschuift)."
+        "explanation": "F83 kondigt een doorsteek van de middenberm aan; F81 kondigt een uitwijking aan die niet noodzakelijk door de middenberm gaat."
       },
       "EN": {
-        "question": "What is the difference between F83 and F85?",
+        "question": "Which legal and practical distinction is correct?",
         "choices": [
           {
-            "text": "F83 announces the road narrows; F85 announces the carriageway shifts laterally to a new position",
+            "text": "F83 announces a central-reservation crossover; F81 announces a deviation that need not cross the central reservation.",
             "is_correct": true
           },
           {
-            "text": "F83 is always a temporary sign; F85 is a permanent sign",
+            "text": "F83 is a narrowing sign and F81 ends that narrowing.",
             "is_correct": false
           },
           {
-            "text": "F83 applies only to trucks; F85 applies to all vehicles",
+            "text": "F83 and F85 both establish permanent two-way traffic.",
             "is_correct": false
           }
         ],
-        "explanation": "F83 and F85 are both GROUP A road management signs but describe different situations. F83 = road narrows (width decreases). F85 = carriageway shifts laterally (position moves sideways)."
+        "explanation": "F83 announces a central-reservation crossover; F81 announces a deviation that need not cross the central reservation."
       },
       "FR": {
-        "question": "Quelle est la différence entre F83 et F85?",
+        "question": "Quelle distinction juridique et pratique est correcte ?",
         "choices": [
           {
-            "text": "F83 annonce que la chaussée se rétrécit; F85 annonce que la chaussée se déplace latéralement vers une nouvelle position",
+            "text": "F83 annonce une traversée de la berme centrale; F81 annonce un évitement qui ne traverse pas nécessairement la berme centrale.",
             "is_correct": true
           },
           {
-            "text": "F83 est toujours un panneau temporaire; F85 est un panneau permanent",
+            "text": "F83 est un signal de rétrécissement et F81 met fin à ce rétrécissement.",
             "is_correct": false
           },
           {
-            "text": "F83 s'applique uniquement aux camions; F85 s'applique à tous les véhicules",
+            "text": "F83 et F85 établissent tous deux une circulation permanente à double sens.",
             "is_correct": false
           }
         ],
-        "explanation": "F83 et F85 sont tous deux des panneaux de gestion de la route du groupe A mais décrivent des situations différentes. F83 = la chaussée se rétrécit. F85 = la chaussée se déplace latéralement."
+        "explanation": "F83 annonce une traversée de la berme centrale; F81 annonce un évitement qui ne traverse pas nécessairement la berme centrale."
       },
       "AR": {
-        "question": "ما الفرق بين F83 وF85؟",
+        "question": "أي تمييز قانوني وعملي صحيح؟",
         "choices": [
           {
-            "text": "F83 تُعلن أن الطريق يضيق؛ F85 تُعلن أن الطريق ينزاح جانبيًا إلى موضع جديد",
+            "text": "تعلن F83 عن عبور الفاصل الوسطي، بينما تعلن F81 عن انحراف لا يمر بالضرورة عبر الفاصل.",
             "is_correct": true
           },
-          { "text": "F83 دائمًا مؤقتة؛ F85 دائمة", "is_correct": false },
           {
-            "text": "F83 للشاحنات فقط؛ F85 لجميع المركبات",
+            "text": "F83 علامة تضيق وتنهي F81 ذلك التضيق.",
+            "is_correct": false
+          },
+          {
+            "text": "تقرر F83 وF85 كلتاهما مرورًا دائمًا بالاتجاهين.",
             "is_correct": false
           }
         ],
-        "explanation": "F83 وF85 كلتاهما علامات إدارة طريق لكن لكل موقف مختلف. F83 = يضيق الطريق. F85 = ينزاح الطريق جانبيًا."
+        "explanation": "تعلن F83 عن عبور الفاصل الوسطي، بينما تعلن F81 عن انحراف لا يمر بالضرورة عبر الفاصل."
       }
     }
   },
@@ -451,60 +493,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "De rijbaan versmalt maar er zijn geen tegenliggers zichtbaar. Mag u uw huidige snelheid en zijdelingse positie onveranderd aanhouden?",
+        "question": "Mag u een door F83 aangeduide middenbermopening gebruiken om uit eigen keuze te keren?",
         "choices": [
           {
-            "text": "Neen, u moet uw snelheid verminderen en uw positie aanpassen ongeacht de aanwezigheid van tegenliggers",
-            "is_correct": true
+            "text": "Ja",
+            "is_correct": false
           },
           {
-            "text": "Ja, bij afwezigheid van tegenliggers vereist de versmalling geen bijzondere actie",
-            "is_correct": false
+            "text": "Neen",
+            "is_correct": true
           }
         ],
-        "explanation": "F83 verplicht aanpassing ongeacht het tegemoetkomende verkeer. De verplichting vloeit voort uit de gewijzigde wegsituatie zelf, niet uit de aanwezigheid van andere voertuigen. deze categorieborden zijn geen optionele borden."
+        "explanation": "Neen. F83 kondigt een afgebakende tijdelijke overleiding bij werken aan en vormt geen algemene toestemming om te keren."
       },
       "EN": {
-        "question": "The road narrows but there is no oncoming traffic visible. May you maintain your current speed and lateral position unchanged?",
+        "question": "May you use a central-reservation opening shown by F83 to make a U-turn of your own choice?",
         "choices": [
           {
-            "text": "No, you must reduce speed and adapt your position regardless of oncoming traffic",
-            "is_correct": true
+            "text": "Yes",
+            "is_correct": false
           },
           {
-            "text": "Yes, without oncoming traffic the narrowing requires no special action",
-            "is_correct": false
+            "text": "No",
+            "is_correct": true
           }
         ],
-        "explanation": "F83 requires adaptation regardless of oncoming traffic. The obligation arises from the changed road situation itself, not from the presence of other vehicles. information signs are not optional."
+        "explanation": "No. F83 announces a bounded temporary crossover at roadworks and is not a general permission to make a U-turn."
       },
       "FR": {
-        "question": "La chaussée se rétrécit mais aucun véhicule venant en sens inverse n'est visible. Pouvez-vous maintenir votre vitesse et position latérale actuelles?",
+        "question": "Pouvez-vous utiliser l'ouverture de berme centrale annoncée par F83 pour faire demi-tour de votre propre initiative ?",
         "choices": [
           {
-            "text": "Non, vous devez réduire votre vitesse et adapter votre position quelle que soit la présence de véhicules venant en face",
-            "is_correct": true
+            "text": "Oui",
+            "is_correct": false
           },
           {
-            "text": "Oui, sans véhicules venant en sens inverse le rétrécissement ne nécessite pas d'action",
-            "is_correct": false
+            "text": "Non",
+            "is_correct": true
           }
         ],
-        "explanation": "F83 impose une adaptation indépendamment du trafic venant en sens inverse. L'obligation découle de la situation routière elle-même. Les panneaux de cette catégorie ne sont pas facultatifs."
+        "explanation": "Non. F83 annonce une traversée temporaire délimitée lors de travaux et ne constitue pas une autorisation générale de faire demi-tour."
       },
       "AR": {
-        "question": "يضيق الطريق لكن لا توجد سيارات مقابلة. هل يجوز لك الإبقاء على سرعتك وموضعك دون تغيير؟",
+        "question": "هل يجوز استعمال فتحة الفاصل الوسطي التي تعلن عنها F83 للالتفاف باختيارك؟",
         "choices": [
           {
-            "text": "لا، يجب تخفيض السرعة وتعديل الموضع بصرف النظر عن وجود سيارات مقابلة",
-            "is_correct": true
+            "text": "نعم",
+            "is_correct": false
           },
           {
-            "text": "نعم، عدم وجود سيارات مقابلة يعني أن التضييق لا يستوجب أي إجراء",
-            "is_correct": false
+            "text": "لا",
+            "is_correct": true
           }
         ],
-        "explanation": "توجب F83 التكيف بصرف النظر عن حركة السيارات المقابلة. الواجب ينبثق من وضع الطريق ذاته. علامات هذه الفئة ليست اختيارية."
+        "explanation": "لا. تعلن F83 عن عبور مؤقت محدد عند الأشغال، وليست إذنًا عامًا بالالتفاف."
       }
     }
   },
@@ -516,60 +558,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "De versmalling is beperkt en uw voertuig is klein. Mag u in het midden van de rijbaan rijden om de versmalling makkelijker te nemen?",
+        "question": "Moet u bij F83 het door pijlen en afbakening aangegeven verloop volgen, ook wanneer dit naar de andere rijbaan leidt?",
         "choices": [
           {
-            "text": "Neen, u moet binnen uw rijstrook of rijbaanhelft blijven; rijden in het midden van de rijbaan is niet toegestaan",
+            "text": "Ja",
             "is_correct": true
           },
           {
-            "text": "Ja, bij een beperkte versmalling en een klein voertuig is rijden in het midden van de rijbaan aanvaardbaar",
+            "text": "Neen",
             "is_correct": false
           }
         ],
-        "explanation": "Rijden in het midden van de rijbaan is niet toegestaan ook niet bij een beperkte versmalling of een klein voertuig. U moet uw positie aanpassen binnen de correcte rijbaanhelft."
+        "explanation": "Ja. De tijdelijke doorsteek is juist bedoeld om het verkeer volgens de ter plaatse weergegeven inrichting om te leiden."
       },
       "EN": {
-        "question": "The narrowing is minor and your vehicle is small. May you drive in the centre of the road to navigate the narrowing more easily?",
+        "question": "Must you follow the path shown by arrows and barriers at F83 even when it leads onto the other carriageway?",
         "choices": [
           {
-            "text": "No, you must stay within your lane or carriageway half; driving in the centre of the road is not permitted",
+            "text": "Yes",
             "is_correct": true
           },
           {
-            "text": "Yes, with a minor narrowing and a small vehicle driving in the centre of the road is acceptable",
+            "text": "No",
             "is_correct": false
           }
         ],
-        "explanation": "Driving in the centre of the road is not permitted even with a minor narrowing or a small vehicle. You must adjust your position while remaining on the correct side."
+        "explanation": "Yes. The temporary crossover exists to guide traffic through the site layout shown."
       },
       "FR": {
-        "question": "Le rétrécissement est mineur et votre véhicule est petit. Pouvez-vous conduire au milieu de la route pour naviguer plus facilement dans le rétrécissement?",
+        "question": "Devez-vous suivre le tracé indiqué par les flèches et le balisage F83 même s'il mène sur l'autre chaussée ?",
         "choices": [
           {
-            "text": "Non, vous devez rester dans votre voie ou demi-chaussée; conduire au milieu de la route n'est pas autorisé",
+            "text": "Oui",
             "is_correct": true
           },
           {
-            "text": "Oui, avec un rétrécissement mineur et un petit véhicule conduire au centre est acceptable",
+            "text": "Non",
             "is_correct": false
           }
         ],
-        "explanation": "Conduire au milieu de la route n'est pas autorisé, même avec un rétrécissement mineur ou un petit véhicule. Vous devez adapter votre position en restant du bon côté."
+        "explanation": "Oui. La traversée temporaire est précisément destinée à guider la circulation selon l'aménagement représenté."
       },
       "AR": {
-        "question": "التضييق طفيف ومركبتك صغيرة. هل يجوز السير في وسط الطريق لتجاوز التضييق بسهولة؟",
+        "question": "هل يجب اتباع المسار الذي تعرضه سهام وحواجز F83 حتى إذا قاد إلى الطريق المقابل؟",
         "choices": [
           {
-            "text": "لا، يجب البقاء ضمن مسارك أو نصف الطريق؛ السير في الوسط غير مسموح",
+            "text": "نعم",
             "is_correct": true
           },
           {
-            "text": "نعم، مع تضييق طفيف ومركبة صغيرة يكون السير في الوسط مقبولًا",
+            "text": "لا",
             "is_correct": false
           }
         ],
-        "explanation": "السير في وسط الطريق غير مسموح حتى مع تضييق صغير أو مركبة صغيرة. يجب تعديل موضعك مع البقاء في الجانب الصحيح."
+        "explanation": "نعم. أُنشئ العبور المؤقت لتوجيه المرور وفق ترتيب الموقع المعروض."
       }
     }
   }

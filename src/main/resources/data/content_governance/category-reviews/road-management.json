@@ -1,0 +1,1651 @@
+{
+  "schema_version": 2,
+  "framework_version": 1,
+  "category": "ROAD_MANAGEMENT",
+  "slug": "road-management",
+  "canonical_content_root": "classpath:data/signs_import",
+  "canonical_ownership": "Each sign directory's sign.json is the sole runtime source for sign text.",
+  "review_date": "2026-07-20",
+  "review_status": "APPROVED",
+  "reviewed_languages": [
+    "NL",
+    "EN",
+    "FR",
+    "AR"
+  ],
+  "counts": {
+    "signs": 9,
+    "questions": 72,
+    "exams": 9,
+    "lessons": 0
+  },
+  "risk_level": "HIGH",
+  "quality_metrics": {
+    "signs_reviewed": 9,
+    "questions_reviewed": 72,
+    "lessons_reviewed": 0,
+    "legal_sources_linked": 2,
+    "terminology_standardized": 10,
+    "cross_language_consistency": "PASSED",
+    "future_law_items": 1,
+    "human_review_required": 0,
+    "risk_level": "HIGH"
+  },
+  "validation_rules": {
+    "questions_per_sign": 8,
+    "passing_score": 6,
+    "difficulty_distribution": {
+      "EASY": 3,
+      "MEDIUM": 3,
+      "HARD": 2
+    },
+    "default_choice_count": 3,
+    "hard_choice_count": 2,
+    "binary_choice_count": 2,
+    "binary_question_types": [
+      "IS_IT_ALLOWED"
+    ],
+    "correct_choices_per_language": 1
+  },
+  "terminology_ids": [
+    "DIVERSION_ADVANCE_SIGN",
+    "ROADWORKS_TEMPORARY_INDICATION",
+    "LANE_REDUCTION_ADVANCE",
+    "LANE_DEVIATION_ADVANCE",
+    "CENTRAL_RESERVATION_CROSSOVER_ADVANCE",
+    "TEMPORARY_TWO_WAY_ON_ONE_WAY_CARRIAGEWAY",
+    "LANE_SPECIFIC_ADVANCE_SIGN",
+    "LANE_SPECIFIC_RULE_SIGN",
+    "EMERGENCY_ESCAPE_LANE",
+    "EMERGENCY_REFUGE_BAY"
+  ],
+  "future_law_items": [
+    "BE-FPS-ROAD-CODE-2027"
+  ],
+  "reports": {
+    "content_review": "docs/content-governance/category-reviews/road-management/content-review-report.md",
+    "cross_file_consistency": "docs/content-governance/category-reviews/road-management/cross-file-consistency-report.json",
+    "ambiguous_questions": "docs/content-governance/category-reviews/road-management/ambiguous-questions-report.json",
+    "human_approval": "docs/content-governance/category-reviews/road-management/corrections-requiring-human-approval.json",
+    "last_reviewed": "docs/content-governance/category-reviews/road-management/last-reviewed.json"
+  },
+  "content_assertions": [
+    {
+      "type": "CORRECT_CHOICE_CONTAINS",
+      "sign_code": "F79",
+      "question_id": "F79_Q01",
+      "language": "EN",
+      "expected": "reduction in the number of lanes"
+    },
+    {
+      "type": "CORRECT_CHOICE_CONTAINS",
+      "sign_code": "F83",
+      "question_id": "F83_Q01",
+      "language": "EN",
+      "expected": "central reservation"
+    },
+    {
+      "type": "CORRECT_CHOICE_CONTAINS",
+      "sign_code": "F85",
+      "question_id": "F85_Q01",
+      "language": "EN",
+      "expected": "both directions"
+    },
+    {
+      "type": "CORRECT_CHOICE_CONTAINS",
+      "sign_code": "F95",
+      "question_id": "F95_Q01",
+      "language": "EN",
+      "expected": "emergency escape lane"
+    },
+    {
+      "type": "CORRECT_CHOICE_CONTAINS",
+      "sign_code": "F98",
+      "question_id": "F98_Q01",
+      "language": "EN",
+      "expected": "emergency refuge bay"
+    }
+  ],
+  "signs": {
+    "F39": {
+      "canonical_path": "src/main/resources/data/signs_import/F39/sign.json",
+      "source_ids": [
+        "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+        "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+      ],
+      "last_reviewed": "2026-07-20",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "questions": {
+        "F39_Q01": {
+          "canonical_path": "src/main/resources/data/signs_import/F39/questions.json#/0",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "F39_Q02": {
+          "canonical_path": "src/main/resources/data/signs_import/F39/questions.json#/1",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "F39_Q03": {
+          "canonical_path": "src/main/resources/data/signs_import/F39/questions.json#/2",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "F39_Q04": {
+          "canonical_path": "src/main/resources/data/signs_import/F39/questions.json#/3",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "F39_Q05": {
+          "canonical_path": "src/main/resources/data/signs_import/F39/questions.json#/4",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "F39_Q06": {
+          "canonical_path": "src/main/resources/data/signs_import/F39/questions.json#/5",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "F39_Q07": {
+          "canonical_path": "src/main/resources/data/signs_import/F39/questions.json#/6",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "F39_Q08": {
+          "canonical_path": "src/main/resources/data/signs_import/F39/questions.json#/7",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        }
+      },
+      "exam": {
+        "canonical_path": "src/main/resources/data/signs_import/F39/exams.json",
+        "source_ids": [
+          "BE-KB1975-ROAD-MANAGEMENT-CURRENT"
+        ],
+        "last_reviewed": "2026-07-20",
+        "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+        "original_review_language": "NL",
+        "reviewed_languages": [
+          "NL",
+          "EN",
+          "FR",
+          "AR"
+        ],
+        "status": "APPROVED"
+      }
+    },
+    "F79": {
+      "canonical_path": "src/main/resources/data/signs_import/F79/sign.json",
+      "source_ids": [
+        "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+        "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+      ],
+      "last_reviewed": "2026-07-20",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "questions": {
+        "F79_Q01": {
+          "canonical_path": "src/main/resources/data/signs_import/F79/questions.json#/0",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "F79_Q02": {
+          "canonical_path": "src/main/resources/data/signs_import/F79/questions.json#/1",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "F79_Q03": {
+          "canonical_path": "src/main/resources/data/signs_import/F79/questions.json#/2",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "F79_Q04": {
+          "canonical_path": "src/main/resources/data/signs_import/F79/questions.json#/3",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "F79_Q05": {
+          "canonical_path": "src/main/resources/data/signs_import/F79/questions.json#/4",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "F79_Q06": {
+          "canonical_path": "src/main/resources/data/signs_import/F79/questions.json#/5",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "F79_Q07": {
+          "canonical_path": "src/main/resources/data/signs_import/F79/questions.json#/6",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "F79_Q08": {
+          "canonical_path": "src/main/resources/data/signs_import/F79/questions.json#/7",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        }
+      },
+      "exam": {
+        "canonical_path": "src/main/resources/data/signs_import/F79/exams.json",
+        "source_ids": [
+          "BE-KB1975-ROAD-MANAGEMENT-CURRENT"
+        ],
+        "last_reviewed": "2026-07-20",
+        "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+        "original_review_language": "NL",
+        "reviewed_languages": [
+          "NL",
+          "EN",
+          "FR",
+          "AR"
+        ],
+        "status": "APPROVED"
+      }
+    },
+    "F81": {
+      "canonical_path": "src/main/resources/data/signs_import/F81/sign.json",
+      "source_ids": [
+        "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+        "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+      ],
+      "last_reviewed": "2026-07-20",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "questions": {
+        "F81_Q01": {
+          "canonical_path": "src/main/resources/data/signs_import/F81/questions.json#/0",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "F81_Q02": {
+          "canonical_path": "src/main/resources/data/signs_import/F81/questions.json#/1",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "F81_Q03": {
+          "canonical_path": "src/main/resources/data/signs_import/F81/questions.json#/2",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "F81_Q04": {
+          "canonical_path": "src/main/resources/data/signs_import/F81/questions.json#/3",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "F81_Q05": {
+          "canonical_path": "src/main/resources/data/signs_import/F81/questions.json#/4",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "F81_Q06": {
+          "canonical_path": "src/main/resources/data/signs_import/F81/questions.json#/5",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "F81_Q07": {
+          "canonical_path": "src/main/resources/data/signs_import/F81/questions.json#/6",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "F81_Q08": {
+          "canonical_path": "src/main/resources/data/signs_import/F81/questions.json#/7",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        }
+      },
+      "exam": {
+        "canonical_path": "src/main/resources/data/signs_import/F81/exams.json",
+        "source_ids": [
+          "BE-KB1975-ROAD-MANAGEMENT-CURRENT"
+        ],
+        "last_reviewed": "2026-07-20",
+        "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+        "original_review_language": "NL",
+        "reviewed_languages": [
+          "NL",
+          "EN",
+          "FR",
+          "AR"
+        ],
+        "status": "APPROVED"
+      }
+    },
+    "F83": {
+      "canonical_path": "src/main/resources/data/signs_import/F83/sign.json",
+      "source_ids": [
+        "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+        "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+      ],
+      "last_reviewed": "2026-07-20",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "questions": {
+        "F83_Q01": {
+          "canonical_path": "src/main/resources/data/signs_import/F83/questions.json#/0",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "F83_Q02": {
+          "canonical_path": "src/main/resources/data/signs_import/F83/questions.json#/1",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "F83_Q03": {
+          "canonical_path": "src/main/resources/data/signs_import/F83/questions.json#/2",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "F83_Q04": {
+          "canonical_path": "src/main/resources/data/signs_import/F83/questions.json#/3",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "F83_Q05": {
+          "canonical_path": "src/main/resources/data/signs_import/F83/questions.json#/4",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "F83_Q06": {
+          "canonical_path": "src/main/resources/data/signs_import/F83/questions.json#/5",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "F83_Q07": {
+          "canonical_path": "src/main/resources/data/signs_import/F83/questions.json#/6",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "F83_Q08": {
+          "canonical_path": "src/main/resources/data/signs_import/F83/questions.json#/7",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        }
+      },
+      "exam": {
+        "canonical_path": "src/main/resources/data/signs_import/F83/exams.json",
+        "source_ids": [
+          "BE-KB1975-ROAD-MANAGEMENT-CURRENT"
+        ],
+        "last_reviewed": "2026-07-20",
+        "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+        "original_review_language": "NL",
+        "reviewed_languages": [
+          "NL",
+          "EN",
+          "FR",
+          "AR"
+        ],
+        "status": "APPROVED"
+      }
+    },
+    "F85": {
+      "canonical_path": "src/main/resources/data/signs_import/F85/sign.json",
+      "source_ids": [
+        "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+        "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+      ],
+      "last_reviewed": "2026-07-20",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "questions": {
+        "F85_Q01": {
+          "canonical_path": "src/main/resources/data/signs_import/F85/questions.json#/0",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "F85_Q02": {
+          "canonical_path": "src/main/resources/data/signs_import/F85/questions.json#/1",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "F85_Q03": {
+          "canonical_path": "src/main/resources/data/signs_import/F85/questions.json#/2",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "F85_Q04": {
+          "canonical_path": "src/main/resources/data/signs_import/F85/questions.json#/3",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "F85_Q05": {
+          "canonical_path": "src/main/resources/data/signs_import/F85/questions.json#/4",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "F85_Q06": {
+          "canonical_path": "src/main/resources/data/signs_import/F85/questions.json#/5",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "F85_Q07": {
+          "canonical_path": "src/main/resources/data/signs_import/F85/questions.json#/6",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "F85_Q08": {
+          "canonical_path": "src/main/resources/data/signs_import/F85/questions.json#/7",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        }
+      },
+      "exam": {
+        "canonical_path": "src/main/resources/data/signs_import/F85/exams.json",
+        "source_ids": [
+          "BE-KB1975-ROAD-MANAGEMENT-CURRENT"
+        ],
+        "last_reviewed": "2026-07-20",
+        "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+        "original_review_language": "NL",
+        "reviewed_languages": [
+          "NL",
+          "EN",
+          "FR",
+          "AR"
+        ],
+        "status": "APPROVED"
+      }
+    },
+    "F89": {
+      "canonical_path": "src/main/resources/data/signs_import/F89/sign.json",
+      "source_ids": [
+        "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+        "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+      ],
+      "last_reviewed": "2026-07-20",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "questions": {
+        "F89_Q01": {
+          "canonical_path": "src/main/resources/data/signs_import/F89/questions.json#/0",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "F89_Q02": {
+          "canonical_path": "src/main/resources/data/signs_import/F89/questions.json#/1",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "F89_Q03": {
+          "canonical_path": "src/main/resources/data/signs_import/F89/questions.json#/2",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "F89_Q04": {
+          "canonical_path": "src/main/resources/data/signs_import/F89/questions.json#/3",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "F89_Q05": {
+          "canonical_path": "src/main/resources/data/signs_import/F89/questions.json#/4",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "F89_Q06": {
+          "canonical_path": "src/main/resources/data/signs_import/F89/questions.json#/5",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "F89_Q07": {
+          "canonical_path": "src/main/resources/data/signs_import/F89/questions.json#/6",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "F89_Q08": {
+          "canonical_path": "src/main/resources/data/signs_import/F89/questions.json#/7",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        }
+      },
+      "exam": {
+        "canonical_path": "src/main/resources/data/signs_import/F89/exams.json",
+        "source_ids": [
+          "BE-KB1975-ROAD-MANAGEMENT-CURRENT"
+        ],
+        "last_reviewed": "2026-07-20",
+        "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+        "original_review_language": "NL",
+        "reviewed_languages": [
+          "NL",
+          "EN",
+          "FR",
+          "AR"
+        ],
+        "status": "APPROVED"
+      }
+    },
+    "F91": {
+      "canonical_path": "src/main/resources/data/signs_import/F91/sign.json",
+      "source_ids": [
+        "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+        "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+      ],
+      "last_reviewed": "2026-07-20",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "questions": {
+        "F91_Q01": {
+          "canonical_path": "src/main/resources/data/signs_import/F91/questions.json#/0",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "F91_Q02": {
+          "canonical_path": "src/main/resources/data/signs_import/F91/questions.json#/1",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "F91_Q03": {
+          "canonical_path": "src/main/resources/data/signs_import/F91/questions.json#/2",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "F91_Q04": {
+          "canonical_path": "src/main/resources/data/signs_import/F91/questions.json#/3",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "F91_Q05": {
+          "canonical_path": "src/main/resources/data/signs_import/F91/questions.json#/4",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "F91_Q06": {
+          "canonical_path": "src/main/resources/data/signs_import/F91/questions.json#/5",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "F91_Q07": {
+          "canonical_path": "src/main/resources/data/signs_import/F91/questions.json#/6",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "F91_Q08": {
+          "canonical_path": "src/main/resources/data/signs_import/F91/questions.json#/7",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        }
+      },
+      "exam": {
+        "canonical_path": "src/main/resources/data/signs_import/F91/exams.json",
+        "source_ids": [
+          "BE-KB1975-ROAD-MANAGEMENT-CURRENT"
+        ],
+        "last_reviewed": "2026-07-20",
+        "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+        "original_review_language": "NL",
+        "reviewed_languages": [
+          "NL",
+          "EN",
+          "FR",
+          "AR"
+        ],
+        "status": "APPROVED"
+      }
+    },
+    "F95": {
+      "canonical_path": "src/main/resources/data/signs_import/F95/sign.json",
+      "source_ids": [
+        "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+        "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+      ],
+      "last_reviewed": "2026-07-20",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "questions": {
+        "F95_Q01": {
+          "canonical_path": "src/main/resources/data/signs_import/F95/questions.json#/0",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "F95_Q02": {
+          "canonical_path": "src/main/resources/data/signs_import/F95/questions.json#/1",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "F95_Q03": {
+          "canonical_path": "src/main/resources/data/signs_import/F95/questions.json#/2",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "F95_Q04": {
+          "canonical_path": "src/main/resources/data/signs_import/F95/questions.json#/3",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "F95_Q05": {
+          "canonical_path": "src/main/resources/data/signs_import/F95/questions.json#/4",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "F95_Q06": {
+          "canonical_path": "src/main/resources/data/signs_import/F95/questions.json#/5",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "F95_Q07": {
+          "canonical_path": "src/main/resources/data/signs_import/F95/questions.json#/6",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "F95_Q08": {
+          "canonical_path": "src/main/resources/data/signs_import/F95/questions.json#/7",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        }
+      },
+      "exam": {
+        "canonical_path": "src/main/resources/data/signs_import/F95/exams.json",
+        "source_ids": [
+          "BE-KB1975-ROAD-MANAGEMENT-CURRENT"
+        ],
+        "last_reviewed": "2026-07-20",
+        "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+        "original_review_language": "NL",
+        "reviewed_languages": [
+          "NL",
+          "EN",
+          "FR",
+          "AR"
+        ],
+        "status": "APPROVED"
+      }
+    },
+    "F98": {
+      "canonical_path": "src/main/resources/data/signs_import/F98/sign.json",
+      "source_ids": [
+        "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+        "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+      ],
+      "last_reviewed": "2026-07-20",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "questions": {
+        "F98_Q01": {
+          "canonical_path": "src/main/resources/data/signs_import/F98/questions.json#/0",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "F98_Q02": {
+          "canonical_path": "src/main/resources/data/signs_import/F98/questions.json#/1",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "F98_Q03": {
+          "canonical_path": "src/main/resources/data/signs_import/F98/questions.json#/2",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "F98_Q04": {
+          "canonical_path": "src/main/resources/data/signs_import/F98/questions.json#/3",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "F98_Q05": {
+          "canonical_path": "src/main/resources/data/signs_import/F98/questions.json#/4",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "F98_Q06": {
+          "canonical_path": "src/main/resources/data/signs_import/F98/questions.json#/5",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "F98_Q07": {
+          "canonical_path": "src/main/resources/data/signs_import/F98/questions.json#/6",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "F98_Q08": {
+          "canonical_path": "src/main/resources/data/signs_import/F98/questions.json#/7",
+          "source_ids": [
+            "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+            "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        }
+      },
+      "exam": {
+        "canonical_path": "src/main/resources/data/signs_import/F98/exams.json",
+        "source_ids": [
+          "BE-KB1975-ROAD-MANAGEMENT-CURRENT"
+        ],
+        "last_reviewed": "2026-07-20",
+        "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+        "original_review_language": "NL",
+        "reviewed_languages": [
+          "NL",
+          "EN",
+          "FR",
+          "AR"
+        ],
+        "status": "APPROVED"
+      }
+    }
+  },
+  "lesson_items": {}
+}

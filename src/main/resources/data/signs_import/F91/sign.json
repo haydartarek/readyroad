@@ -5,31 +5,31 @@
   "serious_violation": false,
   "i18n": {
     "NL": {
-      "name": "Aanduiding van de maximumsnelheid per rijstrook (zonder afstand)",
-      "summary": "F91 toont per rijstrook een aparte maximumsnelheid zonder afstandsaanduiding. De limiet geldt tot een nieuw bord of het einde van het wegvak. Het onderscheidende kenmerk ten opzichte van F89 is de afwezigheid van een afstandsaanduiding.",
-      "description": "Dit bord geeft de maximumsnelheid per rijstrook aan zonder vermelding van de geldende afstand. De limiet boven uw rijstrook geldt tot een nieuw bord of het einde van het wegvak.",
-      "driver_guidance": "Bij F91 is de limiet even bindend als bij F89. Het ontbreken van een afstandsaanduiding betekent niet dat de limiet adviserend is — zij geldt tot een wijziging door een nieuw bord of het einde van het wegvak.",
+      "name": "Rijstrookgebonden gevaar of verkeersregel",
+      "summary": "F91 duidt een gevaar aan of schrijft een verkeersregel voor die slechts voor één of meer aangeduide rijstroken geldt.",
+      "description": "F91 wordt gebruikt op een rijbaan met meerdere rijstroken in dezelfde richting. De afgebeelde regel of het gevaar geldt alleen voor de betrokken rijstrook of rijstroken. F91 zelf mag niet boven de rijbaan worden geplaatst; rechtstreekse borden boven elke betrokken rijstrook kunnen zonder F91.",
+      "driver_guidance": "Pas de regel toe die boven de pijl van uw rijstrook staat. Wissel alleen veilig en waar toegestaan van rijstrook; een rijstrookwissel heft de overige algemene regels niet op.",
       "exceptions": []
     },
     "EN": {
-      "name": "Speed limit per lane without distance indication",
-      "summary": "F91 shows a separate maximum speed per lane without a distance indication. The limit applies until a new sign or the end of the road section. The distinguishing feature compared to F89 is the absence of a distance indication.",
-      "description": "This sign shows the maximum speed for each lane without indicating the distance over which the limits apply. The limit above your lane applies until a new sign or the end of the road section.",
-      "driver_guidance": "Under F91 the limit is as binding as under F89. The absence of a distance indication does not make the limit advisory — it applies until changed by a new sign or the end of the road section.",
+      "name": "Lane-specific danger or traffic rule",
+      "summary": "F91 indicates a danger or prescribes a traffic rule applying only to one or more indicated lanes.",
+      "description": "F91 is used on a carriageway with several lanes in the same direction. The shown rule or danger applies only to the relevant lane or lanes. F91 itself may not be placed above the carriageway; direct signs above the relevant lanes may be used without F91.",
+      "driver_guidance": "Apply the rule shown above your lane arrow. Change lane only safely and where permitted; changing lane does not cancel other general traffic rules.",
       "exceptions": []
     },
     "FR": {
-      "name": "Vitesse maximale par voie sans indication de distance",
-      "summary": "F91 affiche une vitesse maximale séparée par voie sans indication de distance. La limite s'applique jusqu'à un nouveau panneau ou la fin du tronçon. La caractéristique distinctive par rapport à F89 est l'absence d'indication de distance.",
-      "description": "Ce panneau indique la vitesse maximale par voie sans préciser la distance d’application. La limite au-dessus de votre voie s’applique jusqu’à un nouveau panneau ou la fin du tronçon.",
-      "driver_guidance": "Sous F91 la limite est aussi contraignante que sous F89. L'absence d'indication de distance ne rend pas la limite facultative — elle s'applique jusqu'à un nouveau panneau ou la fin du tronçon.",
+      "name": "Danger ou réglementation propre à une bande",
+      "summary": "F91 indique un danger ou prescrit une réglementation applicable uniquement à une ou plusieurs bandes indiquées.",
+      "description": "F91 est utilisé sur une chaussée comportant plusieurs bandes dans le même sens. La règle ou le danger représenté ne s'applique qu'aux bandes concernées. F91 ne peut pas être placé au-dessus de la chaussée; des signaux directs au-dessus des bandes peuvent être utilisés sans F91.",
+      "driver_guidance": "Appliquez la règle placée au-dessus de la flèche de votre bande. Ne changez de bande qu'en sécurité et lorsque cela est permis; ce changement n'annule pas les autres règles générales.",
       "exceptions": []
     },
     "AR": {
-      "name": "الحد الأقصى للسرعة لكل مسار بدون إشارة مسافة",
-      "summary": "F91 تعرض حد سرعة أقصى لكل مسار دون ذكر مسافة. يسري الحد حتى علامة مرورية جديدة أو نهاية القسم.",
-      "description": "تعرض هذه العلامة المرورية الحد الأقصى لكل مسار دون تحديد المسافة. يسري الحد فوق مسارك حتى علامة مرورية جديدة أو نهاية القطاع.",
-      "driver_guidance": "في F91 الحد ملزم كما في F89. غياب ذكر المسافة لا يجعله إرشاديًا.",
+      "name": "خطر أو قاعدة مرور خاصة بمسار",
+      "summary": "تبيّن F91 خطرًا أو تفرض قاعدة مرور لا تسري إلا على مسار واحد أو أكثر من المسارات المحددة.",
+      "description": "تُستخدم F91 على طريق يضم عدة مسارات في الاتجاه نفسه. لا تسري القاعدة أو الخطر المعروض إلا على المسارات المعنية. ولا توضع لوحة F91 نفسها فوق الطريق، إذ يمكن وضع العلامات مباشرة فوق المسارات المعنية من دون F91.",
+      "driver_guidance": "طبّق القاعدة المعروضة فوق سهم مسارك. لا تغيّر المسار إلا بأمان وحيث يسمح بذلك، ولا يلغي تغيير المسار قواعد المرور العامة الأخرى.",
       "exceptions": []
     }
   }

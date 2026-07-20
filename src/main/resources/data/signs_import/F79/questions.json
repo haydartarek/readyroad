@@ -10,70 +10,73 @@
         "question": "Wat betekent dit verkeersbord?",
         "choices": [
           {
-            "text": "Tijdelijke verdeling van de rijstroken met afstandsaanduiding: de weg is tijdelijk herorganiseerd; volg de tijdelijke rijstrookindeling voor de aangegeven afstand",
+            "text": "Een voorwegwijzer bij werken die de vermindering van het aantal rijstroken aankondigt.",
             "is_correct": true
           },
           {
-            "text": "Aankondiging van een omleiding: een omleidingsroute zal verderop worden aangegeven",
+            "text": "Een bord dat tijdelijke markeringen voor een vaste afstand automatisch boven alle andere signalen plaatst.",
             "is_correct": false
           },
           {
-            "text": "De rijbaan wordt smaller; verminder uw snelheid en pas uw zijdelingse positie aan",
+            "text": "Een bord dat een doorsteek van de middenberm aankondigt.",
             "is_correct": false
           }
         ],
-        "explanation": "F79 geeft aan dat de rijstroken tijdelijk zijn herverdeeld over de aangegeven afstand. De tijdelijke indeling is bindend en vervangt de normale permanente rijstrookverdeling."
+        "explanation": "F79 kondigt bij werken vooraf aan dat het aantal rijstroken vermindert."
       },
       "EN": {
         "question": "What does this traffic sign mean?",
         "choices": [
           {
-            "text": "Temporary lane division with distance indication: the road has been temporarily reorganised; follow the temporary lane layout for the indicated distance",
+            "text": "An advance roadworks sign announcing a reduction in the number of lanes.",
             "is_correct": true
           },
           {
-            "text": "Advance announcement of a diversion: a diversion route will be indicated further ahead",
+            "text": "A sign that automatically gives temporary markings priority over every other signal for a fixed distance.",
             "is_correct": false
           },
           {
-            "text": "The road narrows; reduce your speed and adapt your lateral position",
+            "text": "A sign announcing a crossover through the central reservation.",
             "is_correct": false
           }
         ],
-        "explanation": "F79 indicates that the lanes have been temporarily redistributed for the indicated distance. The temporary layout is binding and replaces the normal permanent lane distribution."
+        "explanation": "F79 gives advance warning at roadworks that the number of lanes will be reduced."
       },
       "FR": {
-        "question": "Que signifie ce panneau de signalisation?",
+        "question": "Que signifie ce panneau de signalisation ?",
         "choices": [
           {
-            "text": "Répartition temporaire des voies avec indication de distance: la route a été temporairement réorganisée; suivez la disposition temporaire des voies pour la distance indiquée",
+            "text": "Un signal de préavis de travaux annonçant une réduction du nombre de bandes de circulation.",
             "is_correct": true
           },
           {
-            "text": "Annonce d'une déviation: un itinéraire de déviation sera indiqué plus loin",
+            "text": "Un signal qui donne automatiquement priorité aux marquages temporaires sur toute autre signalisation pendant une distance fixe.",
             "is_correct": false
           },
           {
-            "text": "La chaussée se rétrécit; réduisez votre vitesse et adaptez votre position latérale",
+            "text": "Un signal annonçant une traversée de la berme centrale.",
             "is_correct": false
           }
         ],
-        "explanation": "F79 indique que les voies ont été temporairement réparties sur la distance indiquée. La disposition temporaire est contraignante et remplace la répartition permanente normale."
+        "explanation": "F79 annonce à l'avance, à l'occasion de travaux, une réduction du nombre de bandes de circulation."
       },
       "AR": {
         "question": "ما معنى هذه العلامة المرورية؟",
         "choices": [
           {
-            "text": "توزيع مؤقت للمسارات مع ذكر المسافة: اتبع الترتيب المؤقت للمسافة المحددة",
+            "text": "علامة أشغال تمهيدية تعلن عن انخفاض عدد مسارات السير.",
             "is_correct": true
           },
-          { "text": "إعلان مسبق عن تحويلة", "is_correct": false },
           {
-            "text": "الطريق يضيق — خفّض السرعة وعدّل موضعك الجانبي",
+            "text": "علامة تجعل الخطوط المؤقتة تتقدم تلقائيًا على جميع الإشارات الأخرى لمسافة ثابتة.",
+            "is_correct": false
+          },
+          {
+            "text": "علامة تعلن عن عبور الفاصل الوسطي.",
             "is_correct": false
           }
         ],
-        "explanation": "F79 تدل على أن المسارات أُعيدت توزيعها مؤقتًا. الترتيب المؤقت ملزم ويحل محل التوزيع الدائم."
+        "explanation": "تعلن F79 مسبقًا عند الأشغال أن عدد مسارات السير سينخفض."
       }
     }
   },
@@ -85,40 +88,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Tot welke categorie verkeersborden behoort dit bord?",
+        "question": "Tot welke inhoudscategorie behoort dit bord binnen ReadyRoad?",
         "choices": [
-          { "text": "Wegbeheersingstekens", "is_correct": true },
-          { "text": "Gevaarsborden", "is_correct": false },
-          { "text": "Gebodsborden", "is_correct": false }
+          {
+            "text": "Wegbeheer en rijstrooksignalisatie",
+            "is_correct": true
+          },
+          {
+            "text": "Voorrangsborden",
+            "is_correct": false
+          },
+          {
+            "text": "Parkeerborden",
+            "is_correct": false
+          }
         ],
-        "explanation": "F79 behoort tot deze categorie. De tijdelijke rijstrookverdeling is bindend — de bestuurder moet de tijdelijke indeling volgen voor de volledige aangegeven afstand."
+        "explanation": "Binnen ReadyRoad is dit bord onder ROAD_MANAGEMENT ingedeeld. De concrete betekenis blijft die van het afgebeelde officiële F-bord."
       },
       "EN": {
-        "question": "To which category of traffic signs does this sign belong?",
+        "question": "Which ReadyRoad content category contains this sign?",
         "choices": [
-          { "text": "Road management signs", "is_correct": true },
-          { "text": "Danger signs", "is_correct": false },
-          { "text": "Mandatory signs", "is_correct": false }
+          {
+            "text": "Road management and lane-control signs",
+            "is_correct": true
+          },
+          {
+            "text": "Priority signs",
+            "is_correct": false
+          },
+          {
+            "text": "Parking signs",
+            "is_correct": false
+          }
         ],
-        "explanation": "F79 belongs to this category. The temporary lane division is binding — the driver must follow the temporary layout for the full indicated distance."
+        "explanation": "ReadyRoad classifies this sign under ROAD_MANAGEMENT. Its actual meaning remains that of the official F sign shown."
       },
       "FR": {
-        "question": "À quelle catégorie de panneaux appartient ce panneau?",
+        "question": "Dans quelle catégorie de contenu ReadyRoad ce panneau est-il classé ?",
         "choices": [
-          { "text": "Panneaux de gestion de la route", "is_correct": true },
-          { "text": "Panneaux de danger", "is_correct": false },
-          { "text": "Panneaux d'obligation", "is_correct": false }
+          {
+            "text": "Gestion de la route et signalisation par bande",
+            "is_correct": true
+          },
+          {
+            "text": "Signaux de priorité",
+            "is_correct": false
+          },
+          {
+            "text": "Signaux de stationnement",
+            "is_correct": false
+          }
         ],
-        "explanation": "F79 appartient à cette catégorie. La répartition temporaire des voies est contraignante pour toute la distance indiquée."
+        "explanation": "ReadyRoad classe ce panneau dans ROAD_MANAGEMENT. Sa signification concrète reste celle du signal F officiel représenté."
       },
       "AR": {
-        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
+        "question": "ضمن أي فئة محتوى في ReadyRoad تندرج هذه العلامة؟",
         "choices": [
-          { "text": "علامات إدارة الطريق", "is_correct": true },
-          { "text": "علامات الخطر", "is_correct": false },
-          { "text": "العلامات الإلزامية", "is_correct": false }
+          {
+            "text": "إدارة الطريق وتنظيم المسارات",
+            "is_correct": true
+          },
+          {
+            "text": "علامات الأولوية",
+            "is_correct": false
+          },
+          {
+            "text": "علامات الوقوف والركن",
+            "is_correct": false
+          }
         ],
-        "explanation": "F79 تنتمي إلى هذه الفئة. الترتيب المؤقت ملزم لكامل المسافة المحددة."
+        "explanation": "يصنّف ReadyRoad هذه العلامة ضمن ROAD_MANAGEMENT، وتبقى دلالتها الفعلية هي دلالة علامة F الرسمية المعروضة."
       }
     }
   },
@@ -130,76 +169,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Welke wegsituatie kondigt dit bord aan?",
+        "question": "Welke uitspraak over dit bord is juist?",
         "choices": [
           {
-            "text": "De weg is tijdelijk herverdeeld — de tijdelijke rijstrookindeling geldt voor de aangegeven afstand en vervangt de permanente rijstrookverdeling volledig",
+            "text": "Het aantal pijlen toont het werkelijke aantal rijstroken en het symbool volgt de plaatselijke inrichting.",
             "is_correct": true
           },
           {
-            "text": "Een omleiding wordt aangekondigd — de doorgaande weg wordt verderop onderbroken",
+            "text": "De pijlen zijn louter decoratief en hoeven niet met de rijstroken overeen te stemmen.",
             "is_correct": false
           },
           {
-            "text": "De rijbaan versmalt — de verminderde breedte vereist aanpassing van snelheid en zijdelingse positie",
+            "text": "Het bord kondigt altijd een permanente wegversmalling aan.",
             "is_correct": false
           }
         ],
-        "explanation": "F79 kondigt een tijdelijke rijstrookverdeling aan voor een bepaalde afstand. Voor die afstand zijn de tijdelijke markeringen gezaghebbend en vervangen ze de permanente markering volledig."
+        "explanation": "F79 is een voorlopige aanwijzing bij werken. Het aantal pijlen moet overeenstemmen met het werkelijke aantal rijstroken en het symbool met de plaatsgesteldheid. Een vermelde afstand is de afstand tot de aangekondigde vermindering, niet de lengte van een zogenoemde F79-zone."
       },
       "EN": {
-        "question": "What road situation does this sign announce?",
+        "question": "Which statement about this sign is correct?",
         "choices": [
           {
-            "text": "The road has been temporarily redistributed — the temporary lane layout applies for the indicated distance and completely replaces the permanent lane distribution",
+            "text": "The number of arrows represents the actual lanes and the symbol follows the site layout.",
             "is_correct": true
           },
           {
-            "text": "A diversion is being announced — the through road will be interrupted further ahead",
+            "text": "The arrows are decorative and need not match the lanes.",
             "is_correct": false
           },
           {
-            "text": "The road narrows — the reduced width requires adjustment of speed and lateral position",
+            "text": "The sign always announces a permanent road narrowing.",
             "is_correct": false
           }
         ],
-        "explanation": "F79 announces a temporary lane redistribution for a specific distance. For that distance, the temporary markings are authoritative and completely replace the permanent markings."
+        "explanation": "F79 is a temporary indication used at roadworks. The number of arrows must match the actual number of lanes and the symbol must match the site layout. A displayed distance is the distance to the announced reduction, not the length of an F79 zone."
       },
       "FR": {
-        "question": "Quelle situation routière ce panneau annonce-t-il?",
+        "question": "Quelle affirmation concernant ce panneau est correcte ?",
         "choices": [
           {
-            "text": "La route a été temporairement redistribuée — la disposition temporaire des voies s'applique pour la distance indiquée et remplace complètement la distribution permanente",
+            "text": "Le nombre de flèches représente les bandes réelles et le symbole correspond à la disposition des lieux.",
             "is_correct": true
           },
           {
-            "text": "Une déviation est annoncée — la route principale sera interrompue plus loin",
+            "text": "Les flèches sont décoratives et ne doivent pas correspondre aux bandes.",
             "is_correct": false
           },
           {
-            "text": "La chaussée se rétrécit — la largeur réduite nécessite une adaptation de la vitesse et de la position latérale",
+            "text": "Le signal annonce toujours un rétrécissement permanent.",
             "is_correct": false
           }
         ],
-        "explanation": "F79 annonce une redistribution temporaire des voies sur une distance spécifique. Pour cette distance, les marquages temporaires ont autorité et remplacent complètement les marquages permanents."
+        "explanation": "F79 est une indication provisoire utilisée lors de travaux. Le nombre de flèches doit correspondre au nombre réel de bandes et le symbole à la disposition des lieux. Une distance affichée indique la distance jusqu'à la réduction annoncée, et non la longueur d'une zone F79."
       },
       "AR": {
-        "question": "ما الوضع الذي تُعلن عنه هذه العلامة المرورية؟",
+        "question": "أي عبارة عن هذه العلامة صحيحة؟",
         "choices": [
           {
-            "text": "الطريق معاد توزيعه مؤقتًا — الترتيب المؤقت ساري للمسافة المحددة ويحل محل التوزيع الدائم كليًا",
+            "text": "يمثل عدد السهام المسارات الفعلية ويطابق الرسم ترتيب الموقع.",
             "is_correct": true
           },
           {
-            "text": "إعلان تحويلة — سيُقطع الطريق لاحقًا",
+            "text": "السهام للزينة ولا يلزم أن تطابق عدد المسارات.",
             "is_correct": false
           },
           {
-            "text": "الطريق يضيق — يجب تعديل السرعة والموضع",
+            "text": "تعلن العلامة دائمًا عن تضيق دائم للطريق.",
             "is_correct": false
           }
         ],
-        "explanation": "F79 تُعلن عن إعادة توزيع مؤقتة للمسارات. الخطوط المؤقتة مرجعية وتحل محل الخطوط الدائمة."
+        "explanation": "F79 إشارة مؤقتة تُستخدم عند الأشغال. يجب أن يطابق عدد السهام العدد الفعلي للمسارات وأن يطابق الرسم وضع الموقع. وإذا ظهرت مسافة فهي المسافة إلى موضع انخفاض المسارات، وليست طول منطقة F79."
       }
     }
   },
@@ -211,76 +250,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat moet u doen in een zone aangeduid door F79?",
+        "question": "Wat is de juiste reactie wanneer u dit bord nadert?",
         "choices": [
           {
-            "text": "De tijdelijke rijstrookmarkeringen nauwkeurig volgen — deze hebben voorrang op de permanente markeringen voor de volledige aangegeven afstand",
+            "text": "Kijk welke rijstrook eindigt, houd voldoende afstand en bereid een veilige invoegbeweging voor.",
             "is_correct": true
           },
           {
-            "text": "De tijdelijke indeling is optioneel als uw normale rijstrook vrij lijkt te zijn",
+            "text": "Wacht tot aan de fysieke afsluiting en dwing dan onmiddellijk voorrang af.",
             "is_correct": false
           },
           {
-            "text": "Stoppen voor de tijdelijke zone en wachten op aanwijzingen van een verkeersregelaar",
+            "text": "Blijf de verdwijnende rijstrook volgen nadat zij door signalisatie is afgesloten.",
             "is_correct": false
           }
         ],
-        "explanation": "In een F79-zone zijn de tijdelijke markeringen bindend en vervangt ze de permanente markering. De bestuurder moet de tijdelijke rijstrookindeling volgen voor de volledige aangegeven afstand, ongeacht de zichtbaarheid van de permanente markering."
+        "explanation": "Controleer welke rijstrook verdwijnt, pas snelheid en afstand aan en voeg veilig in volgens de tijdelijke signalisatie, markeringen en geldende verkeersregels."
       },
       "EN": {
-        "question": "What must you do in a zone indicated by F79?",
+        "question": "What is the correct response when approaching this sign?",
         "choices": [
           {
-            "text": "Follow the temporary lane markings precisely — they take precedence over the permanent markings for the full indicated distance",
+            "text": "Identify the lane that ends, keep sufficient distance and prepare to merge safely.",
             "is_correct": true
           },
           {
-            "text": "The temporary layout is optional if your normal lane appears to be clear",
+            "text": "Wait until the physical closure and then force your way into the next lane.",
             "is_correct": false
           },
           {
-            "text": "Stop before the temporary zone and wait for instructions from a traffic officer",
+            "text": "Continue in the disappearing lane after temporary signs have closed it.",
             "is_correct": false
           }
         ],
-        "explanation": "In an F79 zone the temporary markings are binding and replace the permanent markings. The driver must follow the temporary lane layout for the full indicated distance regardless of the visibility of the permanent markings."
+        "explanation": "Check which lane disappears, adapt speed and following distance, and merge safely in accordance with the temporary signs, markings and applicable traffic rules."
       },
       "FR": {
-        "question": "Que devez-vous faire dans une zone indiquée par F79?",
+        "question": "Quelle est la réaction correcte à l'approche de ce panneau ?",
         "choices": [
           {
-            "text": "Suivre précisément les marquages temporaires de voie — ils ont priorité sur les marquages permanents pour toute la distance indiquée",
+            "text": "Repérez la bande qui se termine, gardez une distance suffisante et préparez un rabattement sûr.",
             "is_correct": true
           },
           {
-            "text": "La disposition temporaire est optionnelle si votre voie habituelle semble libre",
+            "text": "Attendez la fermeture physique puis imposez immédiatement votre passage dans la bande voisine.",
             "is_correct": false
           },
           {
-            "text": "S'arrêter avant la zone temporaire et attendre les instructions d'un agent de la circulation",
+            "text": "Continuez dans la bande qui disparaît après sa fermeture par la signalisation temporaire.",
             "is_correct": false
           }
         ],
-        "explanation": "Dans une zone F79, les marquages temporaires sont contraignants et remplacent les marquages permanents. Le conducteur doit suivre la disposition temporaire pour toute la distance indiquée."
+        "explanation": "Repérez la bande qui disparaît, adaptez la vitesse et la distance de sécurité, puis rabattez-vous en sécurité selon la signalisation, les marquages temporaires et les règles applicables."
       },
       "AR": {
-        "question": "ماذا يجب أن تفعل في منطقة F79؟",
+        "question": "ما التصرف الصحيح عند الاقتراب من هذه العلامة؟",
         "choices": [
           {
-            "text": "اتباع الخطوط المؤقتة بدقة — فهي أولى بالأولوية على الخطوط الدائمة لكامل المسافة",
+            "text": "حدّد المسار الذي ينتهي، وحافظ على مسافة كافية، واستعد للاندماج بأمان.",
             "is_correct": true
           },
           {
-            "text": "الترتيب المؤقت اختياري إذا كان مسارك المعتاد خاليًا",
+            "text": "انتظر حتى الحاجز ثم افرض انتقالك فورًا إلى المسار المجاور.",
             "is_correct": false
           },
           {
-            "text": "التوقف قبل المنطقة وانتظار تعليمات عنصر مرور",
+            "text": "استمر في المسار المنتهي بعد أن تغلقه الإشارات المؤقتة.",
             "is_correct": false
           }
         ],
-        "explanation": "في منطقة F79 الخطوط المؤقتة ملزمة وتحل محل الخطوط الدائمة."
+        "explanation": "حدّد المسار الذي سينتهي، وعدّل السرعة ومسافة الأمان، واندمج بأمان وفق الإشارات والخطوط المؤقتة وقواعد المرور السارية."
       }
     }
   },
@@ -292,73 +331,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "In een F79-zone zijn de permanente en tijdelijke rijstrookmarkeringen met elkaar in tegenspraak. Welke markeringen volgt u?",
+        "question": "Welke uitspraak over het toepassingsgebied is juist?",
         "choices": [
           {
-            "text": "De tijdelijke markeringen — hierdoor worden de permanente markeringen overschreven voor de volledige aangegeven afstand van de F79-zone",
+            "text": "F79 mag alleen voorlopige aanwijzingen bij werken geven; de afgebeelde pijlen en de concrete signalisatie bepalen de feitelijke inrichting.",
             "is_correct": true
           },
           {
-            "text": "De permanente markeringen — die zijn gezaghebbender omdat ze op de weg zijn geschilderd",
+            "text": "F79 geldt altijd over de afstand die onderaan staat en begint onmiddellijk bij het bord.",
             "is_correct": false
           },
           {
-            "text": "Geen van beide — stop en wacht op aanwijzingen van een verkeersregelaar",
+            "text": "F79 machtigt bestuurders om afgesloten rijstroken te gebruiken.",
             "is_correct": false
           }
         ],
-        "explanation": "In een F79-zone hebben tijdelijke markeringen uitdrukkelijk voorrang op permanente markeringen. De tijdelijke signalisatie is bindend en de bestuurder mag de permanente markering niet als leidraad gebruiken zolang de F79-zone van kracht is."
+        "explanation": "F79 mag alleen voorlopige aanwijzingen bij werken geven; de afgebeelde pijlen en de concrete signalisatie bepalen de feitelijke inrichting."
       },
       "EN": {
-        "question": "In an F79 zone the permanent and temporary lane markings conflict with each other. Which markings do you follow?",
+        "question": "Which statement about its scope is correct?",
         "choices": [
           {
-            "text": "The temporary markings — they override the permanent markings for the full indicated distance of the F79 zone",
+            "text": "F79 may be used only for temporary indications at roadworks; the arrows and site signs show the actual arrangement.",
             "is_correct": true
           },
           {
-            "text": "The permanent markings — they are more authoritative because they are painted on the road",
+            "text": "F79 always applies for the distance written at the bottom and starts immediately at the sign.",
             "is_correct": false
           },
           {
-            "text": "Neither — stop and wait for instructions from a traffic officer",
+            "text": "F79 authorises drivers to use closed lanes.",
             "is_correct": false
           }
         ],
-        "explanation": "In an F79 zone, temporary markings explicitly take precedence over permanent markings. The temporary signage is binding and the driver may not use the permanent markings as guidance for as long as the F79 zone is in force."
+        "explanation": "F79 may be used only for temporary indications at roadworks; the arrows and site signs show the actual arrangement."
       },
       "FR": {
-        "question": "Dans une zone F79, les marquages permanents et temporaires de voie sont en contradiction. Quels marquages suivez-vous?",
+        "question": "Quelle affirmation concernant son champ d'application est correcte ?",
         "choices": [
           {
-            "text": "Les marquages temporaires — ils remplacent les marquages permanents pour toute la distance indiquée de la zone F79",
+            "text": "F79 ne peut servir qu'à donner des indications provisoires lors de travaux; les flèches et la signalisation sur place montrent la configuration réelle.",
             "is_correct": true
           },
           {
-            "text": "Les marquages permanents — ils sont plus autoritaires car ils sont peints sur la route",
+            "text": "F79 s'applique toujours sur la distance inscrite et commence immédiatement au panneau.",
             "is_correct": false
           },
           {
-            "text": "Aucun des deux — arrêtez-vous et attendez les instructions d'un agent de la circulation",
+            "text": "F79 autorise les conducteurs à utiliser des bandes fermées.",
             "is_correct": false
           }
         ],
-        "explanation": "Dans une zone F79, les marquages temporaires ont explicitement priorité sur les marquages permanents. La signalisation temporaire est contraignante."
+        "explanation": "F79 ne peut servir qu'à donner des indications provisoires lors de travaux; les flèches et la signalisation sur place montrent la configuration réelle."
       },
       "AR": {
-        "question": "في منطقة F79 تتعارض الخطوط الدائمة والمؤقتة. أيها تتبع؟",
+        "question": "أي عبارة عن نطاق تطبيقها صحيحة؟",
         "choices": [
           {
-            "text": "الخطوط المؤقتة — تحل محل الخطوط الدائمة لكامل المسافة",
+            "text": "لا تستخدم F79 إلا لإعطاء إرشادات مؤقتة عند الأشغال، وتحدد السهام وإشارات الموقع الترتيب الفعلي.",
             "is_correct": true
           },
           {
-            "text": "الخطوط الدائمة — أكثر سلطة لأنها مرسومة على الطريق",
+            "text": "تبدأ F79 فورًا عند العلامة وتسري دائمًا بطول المسافة المكتوبة أسفلها.",
             "is_correct": false
           },
-          { "text": "لا شيء — توقف وانتظر تعليمات", "is_correct": false }
+          {
+            "text": "تسمح F79 للسائق باستعمال المسارات المغلقة.",
+            "is_correct": false
+          }
         ],
-        "explanation": "في منطقة F79 الخطوط المؤقتة لها الأولوية الصريحة على الخطوط الدائمة."
+        "explanation": "لا تستخدم F79 إلا لإعطاء إرشادات مؤقتة عند الأشغال، وتحدد السهام وإشارات الموقع الترتيب الفعلي."
       }
     }
   },
@@ -370,73 +412,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Overschrijven de tijdelijke rijstrookmarkeringen in een F79-zone de permanente markeringen?",
+        "question": "Welk onderscheid is juridisch en praktisch juist?",
         "choices": [
           {
-            "text": "Ja, tijdelijke markeringen in een F79-zone hebben voorrang op permanente markeringen voor de gehele aangegeven afstand",
+            "text": "F79 kondigt een vermindering van rijstroken aan; F81 kondigt een uitwijking van de rijstroken aan zonder noodzakelijk een rijstrook te laten verdwijnen.",
             "is_correct": true
           },
           {
-            "text": "Neen, permanente markeringen zijn altijd gezaghebbender dan tijdelijke markeringen",
+            "text": "F79 duidt een vluchthaven aan en F81 een noodstopstrook.",
             "is_correct": false
           },
           {
-            "text": "Neen, u mag zelf kiezen welke markeringen u volgt op basis van de actuele verkeerssituatie",
+            "text": "F79 en F81 betekenen beide uitsluitend dat de maximumsnelheid verandert.",
             "is_correct": false
           }
         ],
-        "explanation": "F79 verleent tijdelijke markeringen uitdrukkelijk voorrang op permanente voor de aangegeven afstand. Er is geen keuzemogelijkheid: de tijdelijke indeling is bindend voor alle bestuurders in de zone."
+        "explanation": "F79 kondigt een vermindering van rijstroken aan; F81 kondigt een uitwijking van de rijstroken aan zonder noodzakelijk een rijstrook te laten verdwijnen."
       },
       "EN": {
-        "question": "Do the temporary lane markings in an F79 zone override the permanent markings?",
+        "question": "Which legal and practical distinction is correct?",
         "choices": [
           {
-            "text": "Yes, temporary markings in an F79 zone take precedence over permanent markings for the entire indicated distance",
+            "text": "F79 announces a lane reduction; F81 announces a lane deviation without necessarily removing a lane.",
             "is_correct": true
           },
           {
-            "text": "No, permanent markings are always more authoritative than temporary markings",
+            "text": "F79 marks an emergency refuge bay and F81 an emergency escape lane.",
             "is_correct": false
           },
           {
-            "text": "No, you may choose which markings to follow based on the current traffic situation",
+            "text": "F79 and F81 both mean only that the speed limit changes.",
             "is_correct": false
           }
         ],
-        "explanation": "F79 explicitly grants temporary markings precedence over permanent ones for the indicated distance. There is no choice: the temporary layout is binding for all drivers in the zone."
+        "explanation": "F79 announces a lane reduction; F81 announces a lane deviation without necessarily removing a lane."
       },
       "FR": {
-        "question": "Les marquages temporaires de voie dans une zone F79 remplacent-ils les marquages permanents?",
+        "question": "Quelle distinction juridique et pratique est correcte ?",
         "choices": [
           {
-            "text": "Oui, les marquages temporaires dans une zone F79 ont priorité sur les marquages permanents pour toute la distance indiquée",
+            "text": "F79 annonce une réduction de bandes; F81 annonce un évitement sans nécessairement supprimer une bande.",
             "is_correct": true
           },
           {
-            "text": "Non, les marquages permanents sont toujours plus autoritaires que les marquages temporaires",
+            "text": "F79 indique un refuge d'urgence et F81 une piste de détresse.",
             "is_correct": false
           },
           {
-            "text": "Non, vous pouvez choisir quels marquages suivre en fonction de la situation de trafic actuelle",
+            "text": "F79 et F81 signifient uniquement que la vitesse maximale change.",
             "is_correct": false
           }
         ],
-        "explanation": "F79 accorde explicitement la priorité aux marquages temporaires sur les marquages permanents pour la distance indiquée. Il n'y a pas de choix: la disposition temporaire est contraignante."
+        "explanation": "F79 annonce une réduction de bandes; F81 annonce un évitement sans nécessairement supprimer une bande."
       },
       "AR": {
-        "question": "هل تحل الخطوط المؤقتة في منطقة F79 محل الخطوط الدائمة؟",
+        "question": "أي تمييز قانوني وعملي صحيح؟",
         "choices": [
           {
-            "text": "نعم، الخطوط المؤقتة أولى بالأولوية على الدائمة لكامل المسافة",
+            "text": "تعلن F79 عن نقص عدد المسارات، بينما تعلن F81 عن انحراف المسارات من دون أن يختفي مسار بالضرورة.",
             "is_correct": true
           },
           {
-            "text": "لا، الخطوط الدائمة دائمًا أكثر سلطة",
+            "text": "تدل F79 على جيب لجوء وتدل F81 على مسار توقف اضطراري.",
             "is_correct": false
           },
-          { "text": "لا، يمكنك اختيار أي خطوط تتبعها", "is_correct": false }
+          {
+            "text": "تعني F79 وF81 فقط تغير حد السرعة.",
+            "is_correct": false
+          }
         ],
-        "explanation": "F79 تمنح الخطوط المؤقتة الأولوية صراحةً. لا يوجد خيار: الترتيب المؤقت ملزم."
+        "explanation": "تعلن F79 عن نقص عدد المسارات، بينما تعلن F81 عن انحراف المسارات من دون أن يختفي مسار بالضرورة."
       }
     }
   },
@@ -448,60 +493,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "In een F79-tijdelijke zone zijn de permanente rijstrookmarkeringen nog vaag zichtbaar onder de tijdelijke. Welke markeringen zijn van toepassing?",
+        "question": "Als F79 '1500 m' vermeldt, betekent dit dan dat de aangekondigde rijstrookvermindering zich 1500 meter verder bevindt?",
         "choices": [
           {
-            "text": "De tijdelijke markeringen — deze overschrijven de permanente markeringen zolang de F79-zone van kracht is",
+            "text": "Ja",
             "is_correct": true
           },
           {
-            "text": "De permanente markeringen — omdat ze op de weg zijn aangebracht als eerste en hebben ze voorrang boven tijdelijke signalisatie",
+            "text": "Neen",
             "is_correct": false
           }
         ],
-        "explanation": "De zichtbaarheid van permanente markeringen onder of naast de tijdelijke markeringen doet niets af aan de bindende kracht van de tijdelijke indeling. Zolang F79 van kracht is, zijn tijdelijke markeringen gezaghebbend en het enige geldende referentiekader."
+        "explanation": "Ja. Bij een voorwegwijzer duidt die afstand de afstand tot de aangekondigde situatie aan; zij beschrijft niet de duur van een F79-zone."
       },
       "EN": {
-        "question": "In an F79 temporary zone, the permanent lane markings are still faintly visible beneath the temporary ones. Which markings apply?",
+        "question": "If F79 displays '1500 m', does that mean the announced lane reduction is 1500 metres ahead?",
         "choices": [
           {
-            "text": "The temporary markings — they override the permanent markings for as long as the F79 zone is in force",
+            "text": "Yes",
             "is_correct": true
           },
           {
-            "text": "The permanent markings — because they were placed on the road first they take precedence over temporary signage",
+            "text": "No",
             "is_correct": false
           }
         ],
-        "explanation": "The visibility of permanent markings beneath or beside the temporary markings does not diminish the binding force of the temporary layout. As long as F79 is in force, the temporary markings are authoritative and the only applicable frame of reference."
+        "explanation": "Yes. On an advance sign, that distance is the distance to the announced situation; it is not the duration of an F79 zone."
       },
       "FR": {
-        "question": "Dans une zone temporaire F79, les marquages permanents de voie sont encore vaguement visibles sous les marquages temporaires. Quels marquages s'appliquent?",
+        "question": "Si F79 porte la mention '1500 m', la réduction annoncée se trouve-t-elle 1500 mètres plus loin ?",
         "choices": [
           {
-            "text": "Les marquages temporaires — ils remplacent les marquages permanents tant que la zone F79 est en vigueur",
+            "text": "Oui",
             "is_correct": true
           },
           {
-            "text": "Les marquages permanents — étant placés sur la route en premier ils ont priorité sur la signalisation temporaire",
+            "text": "Non",
             "is_correct": false
           }
         ],
-        "explanation": "La visibilité des marquages permanents sous ou à côté des marquages temporaires ne diminue pas la force contraignante de la disposition temporaire. Tant que F79 est en vigueur, les marquages temporaires sont la seule référence applicable."
+        "explanation": "Oui. Sur un signal de préavis, cette distance sépare le panneau de la situation annoncée; elle ne fixe pas la durée d'une zone F79."
       },
       "AR": {
-        "question": "في منطقة F79 المؤقتة لا تزال الخطوط الدائمة ظاهرة بخفوت تحت المؤقتة. أي الخطوط تسري؟",
+        "question": "إذا كُتب على F79 مقدار 1500 م، فهل يعني ذلك أن انخفاض عدد المسارات يقع بعد 1500 متر؟",
         "choices": [
           {
-            "text": "الخطوط المؤقتة — تحل محل الدائمة طالما F79 سارية",
+            "text": "نعم",
             "is_correct": true
           },
           {
-            "text": "الخطوط الدائمة — لأنها وُضعت أولاً ولها الأولوية",
+            "text": "لا",
             "is_correct": false
           }
         ],
-        "explanation": "ظهور الخطوط الدائمة لا يقلل من إلزامية المؤقتة. طالما F79 سارية الخطوط المؤقتة هي المرجع الوحيد."
+        "explanation": "نعم. تبيّن المسافة على العلامة التمهيدية البعد إلى الوضع المعلن، ولا تحدد مدة منطقة F79."
       }
     }
   },
@@ -513,60 +558,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "De tijdelijke rijstrookindeling van F79 vereist dat u tijdelijk in een rijstrook op de andere rijbaan rijdt. Bent u verplicht deze tijdelijke indeling te volgen ook al voelt dat ongewoon?",
+        "question": "Mag u met F79 als enige reden een door kegels of borden afgesloten rijstrook blijven gebruiken?",
         "choices": [
           {
-            "text": "Ja, de tijdelijke rijstrookindeling van F79 is bindend — volg deze ook als ze ongebruikelijk lijkt",
-            "is_correct": true
+            "text": "Ja",
+            "is_correct": false
           },
           {
-            "text": "Neen, rijden op de rijbaan voor tegemoetkomend verkeer is nooit toegestaan, zelfs niet bij een tijdelijke regeling zoals F79",
-            "is_correct": false
+            "text": "Neen",
+            "is_correct": true
           }
         ],
-        "explanation": "F79 kan tijdelijk verkeer op rijstroken die normaal voor de tegengestelde richting zijn bedoeld, toestaan. Dit is wettelijk toegestaan wanneer dit uitdrukkelijk door een bevoegde instantie is gesignaleerd via F79. De bestuurder is verplicht de tijdelijke indeling te volgen ongeacht hoe ongewoon die lijkt."
+        "explanation": "Neen. F79 kondigt de inrichting aan maar heft een rijstrookafsluiting of andere bindende tijdelijke signalisatie niet op."
       },
       "EN": {
-        "question": "The temporary lane layout of F79 requires you to drive temporarily in a lane on the opposing carriageway. Are you required to follow this temporary layout even though it feels unusual?",
+        "question": "May you rely on F79 alone to keep using a lane closed by cones or signs?",
         "choices": [
           {
-            "text": "Yes, the temporary lane layout of F79 is binding — follow it even if it seems unusual",
-            "is_correct": true
+            "text": "Yes",
+            "is_correct": false
           },
           {
-            "text": "No, driving on the carriageway for oncoming traffic is never permitted, not even under a temporary arrangement like F79",
-            "is_correct": false
+            "text": "No",
+            "is_correct": true
           }
         ],
-        "explanation": "F79 may temporarily authorise traffic on lanes that are normally intended for the opposing direction. This is legally permitted when it has been explicitly signposted by a competent authority via F79. The driver is required to follow the temporary layout regardless of how unusual it may seem."
+        "explanation": "No. F79 announces the layout but does not cancel a lane closure or other binding temporary traffic control."
       },
       "FR": {
-        "question": "La disposition temporaire des voies de F79 vous oblige à circuler temporairement dans une voie de la chaussée opposée. Êtes-vous tenu de suivre cette disposition même si elle semble inhabituelle?",
+        "question": "Pouvez-vous invoquer F79 seul pour continuer dans une bande fermée par des cônes ou des signaux ?",
         "choices": [
           {
-            "text": "Oui, la disposition temporaire des voies de F79 est contraignante — suivez-la même si elle semble inhabituelle",
-            "is_correct": true
+            "text": "Oui",
+            "is_correct": false
           },
           {
-            "text": "Non, circuler sur la chaussée destinée au trafic en sens inverse n'est jamais autorisé, même avec une disposition temporaire comme F79",
-            "is_correct": false
+            "text": "Non",
+            "is_correct": true
           }
         ],
-        "explanation": "F79 peut temporairement autoriser la circulation sur des voies normalement réservées à la direction opposée. C'est légalement permis lorsque cela a été explicitement signalé par une autorité compétente via F79."
+        "explanation": "Non. F79 annonce la configuration mais n'annule ni une fermeture de bande ni une autre signalisation temporaire contraignante."
       },
       "AR": {
-        "question": "الترتيب المؤقت لـF79 يستلزم السير مؤقتًا في مسار على الطريق المعاكس. هل يجب اتباع هذا الترتيب رغم غرابته؟",
+        "question": "هل يجوز الاعتماد على F79 وحدها لمواصلة السير في مسار أغلقته الأقماع أو الإشارات؟",
         "choices": [
           {
-            "text": "نعم، الترتيب المؤقت لـF79 ملزم — اتبعه حتى ولو بدا غير مألوف",
-            "is_correct": true
+            "text": "نعم",
+            "is_correct": false
           },
           {
-            "text": "لا، السير على طريق السير المعاكس غير مسموح به أبدًا حتى مع F79",
-            "is_correct": false
+            "text": "لا",
+            "is_correct": true
           }
         ],
-        "explanation": "F79 قد تُجيز مؤقتًا السير على مسارات مخصصة عادةً للاتجاه المعاكس. هذا مسموح قانونيًا عندما تضعها سلطة مختصة عبر F79. السائق ملزم باتباع الترتيب."
+        "explanation": "لا. تعلن F79 عن الترتيب لكنها لا تلغي إغلاق المسار أو أي إشارة مؤقتة ملزمة."
       }
     }
   }

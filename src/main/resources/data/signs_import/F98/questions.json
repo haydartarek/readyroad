@@ -10,67 +10,73 @@
         "question": "Wat betekent dit verkeersbord?",
         "choices": [
           {
-            "text": "Een bijzondere rijstrookregeling is van kracht — lees het bord nauwkeurig en volg de specifieke aanwijzing die erop staat",
+            "text": "Een bord dat in een tunnel de plaats van een vluchthaven aanduidt.",
             "is_correct": true
           },
           {
-            "text": "Elke rijstrook heeft zijn eigen maximumsnelheid, aangegeven boven die rijstrook, met vermelding van de geldende afstand",
+            "text": "Een bord dat een bijzondere rijstrookregeling voor normaal doorgaand verkeer oplegt.",
             "is_correct": false
           },
           {
-            "text": "Een rijstrook eindigt — voeg tijdig samen met de naastliggende rijstrook",
+            "text": "Een bord dat een noodstopstrook voor voertuigen met remproblemen aankondigt.",
             "is_correct": false
           }
         ],
-        "explanation": "F98 kondigt een bijzondere rijstrookregeling aan die van toepassing is op de specifiek aangegeven rijstrook. De exacte inhoud van de regeling staat op het bord zelf — er is geen vaste universele betekenis."
+        "explanation": "F98 duidt in een tunnel de plaats van een vluchthaven aan."
       },
       "EN": {
         "question": "What does this traffic sign mean?",
         "choices": [
           {
-            "text": "A special lane regulation is in force — read the sign carefully and follow the specific instruction shown on it",
+            "text": "A sign marking the location of an emergency refuge bay in a tunnel.",
             "is_correct": true
           },
           {
-            "text": "Each lane has its own maximum speed, indicated above that lane, with a distance indication",
+            "text": "A sign imposing a special lane arrangement for ordinary through traffic.",
             "is_correct": false
           },
           {
-            "text": "A lane ends — merge into the adjacent lane in good time",
+            "text": "A sign announcing an emergency escape lane for vehicles with braking problems.",
             "is_correct": false
           }
         ],
-        "explanation": "F98 announces a special lane regulation that applies to the specifically indicated lane. The exact content of the regulation is shown on the sign itself — there is no fixed universal meaning."
+        "explanation": "F98 marks the location of an emergency refuge bay in a tunnel."
       },
       "FR": {
-        "question": "Que signifie ce panneau de signalisation?",
+        "question": "Que signifie ce panneau de signalisation ?",
         "choices": [
           {
-            "text": "Une réglementation spéciale de voie est en vigueur — lisez attentivement le panneau et suivez l'instruction spécifique qui y figure",
+            "text": "Un signal indiquant dans un tunnel l'emplacement d'un refuge d'urgence (garage F98).",
             "is_correct": true
           },
           {
-            "text": "Chaque voie a sa propre vitesse maximale avec indication de distance",
+            "text": "Un signal imposant une organisation spéciale des bandes pour la circulation normale.",
             "is_correct": false
           },
           {
-            "text": "Une voie se termine — rabattez-vous à temps",
+            "text": "Un signal annonçant une piste de détresse pour les véhicules ayant un problème de freinage.",
             "is_correct": false
           }
         ],
-        "explanation": "F98 annonce une réglementation spéciale de voie applicable à la voie spécifiquement indiquée. Le contenu exact de la réglementation est indiqué sur le panneau lui-même."
+        "explanation": "F98 indique dans un tunnel l'emplacement d'un refuge d'urgence, appelé « garage » dans le texte réglementaire français."
       },
       "AR": {
         "question": "ما معنى هذه العلامة المرورية؟",
         "choices": [
           {
-            "text": "تنظيم خاص لمسار بعينه — اقرأ العلامة المرورية بعناية واتبع التعليمات المحددة",
+            "text": "علامة تحدد داخل النفق موقع جيب لجوء للطوارئ.",
             "is_correct": true
           },
-          { "text": "لكل مسار حده الأقصى مع ذكر المسافة", "is_correct": false },
-          { "text": "مسار ينتهي — اندمج في الوقت المناسب", "is_correct": false }
+          {
+            "text": "علامة تفرض تنظيمًا خاصًا للمسارات على المرور العادي.",
+            "is_correct": false
+          },
+          {
+            "text": "علامة تعلن عن مسار توقف اضطراري لمركبة تعاني مشكلة في الكبح.",
+            "is_correct": false
+          }
         ],
-        "explanation": "F98 تُعلن تنظيمًا خاصًا لمسار محدد. المحتوى الدقيق مبيّن على العلامة المرورية ذاتها."
+        "explanation": "تدل F98 داخل النفق على موقع جيب لجوء للطوارئ."
       }
     }
   },
@@ -82,40 +88,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Tot welke categorie verkeersborden behoort dit bord?",
+        "question": "Tot welke inhoudscategorie behoort dit bord binnen ReadyRoad?",
         "choices": [
-          { "text": "Wegbeheersingstekens", "is_correct": true },
-          { "text": "Gevaarsborden", "is_correct": false },
-          { "text": "Gebodsborden", "is_correct": false }
+          {
+            "text": "Wegbeheer en rijstrooksignalisatie",
+            "is_correct": true
+          },
+          {
+            "text": "Voorrangsborden",
+            "is_correct": false
+          },
+          {
+            "text": "Parkeerborden",
+            "is_correct": false
+          }
         ],
-        "explanation": "F98 behoort tot deze categorie. De bijzondere rijstrookregeling is bindend voor bestuurders in de betreffende rijstrook, ook al lijkt het bord informatief."
+        "explanation": "Binnen ReadyRoad is dit bord onder ROAD_MANAGEMENT ingedeeld. De concrete betekenis blijft die van het afgebeelde officiële F-bord."
       },
       "EN": {
-        "question": "To which category of traffic signs does this sign belong?",
+        "question": "Which ReadyRoad content category contains this sign?",
         "choices": [
-          { "text": "Road management signs", "is_correct": true },
-          { "text": "Danger signs", "is_correct": false },
-          { "text": "Mandatory signs", "is_correct": false }
+          {
+            "text": "Road management and lane-control signs",
+            "is_correct": true
+          },
+          {
+            "text": "Priority signs",
+            "is_correct": false
+          },
+          {
+            "text": "Parking signs",
+            "is_correct": false
+          }
         ],
-        "explanation": "F98 belongs to this category. The special lane regulation is binding for drivers in the relevant lane even though the sign may appear informational."
+        "explanation": "ReadyRoad classifies this sign under ROAD_MANAGEMENT. Its actual meaning remains that of the official F sign shown."
       },
       "FR": {
-        "question": "À quelle catégorie de panneaux appartient ce panneau?",
+        "question": "Dans quelle catégorie de contenu ReadyRoad ce panneau est-il classé ?",
         "choices": [
-          { "text": "Panneaux de gestion de la route", "is_correct": true },
-          { "text": "Panneaux de danger", "is_correct": false },
-          { "text": "Panneaux d'obligation", "is_correct": false }
+          {
+            "text": "Gestion de la route et signalisation par bande",
+            "is_correct": true
+          },
+          {
+            "text": "Signaux de priorité",
+            "is_correct": false
+          },
+          {
+            "text": "Signaux de stationnement",
+            "is_correct": false
+          }
         ],
-        "explanation": "F98 appartient à cette catégorie. La réglementation spéciale de voie est contraignante pour les conducteurs dans la voie concernée."
+        "explanation": "ReadyRoad classe ce panneau dans ROAD_MANAGEMENT. Sa signification concrète reste celle du signal F officiel représenté."
       },
       "AR": {
-        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
+        "question": "ضمن أي فئة محتوى في ReadyRoad تندرج هذه العلامة؟",
         "choices": [
-          { "text": "علامات إدارة الطريق", "is_correct": true },
-          { "text": "علامات الخطر", "is_correct": false },
-          { "text": "العلامات الإلزامية", "is_correct": false }
+          {
+            "text": "إدارة الطريق وتنظيم المسارات",
+            "is_correct": true
+          },
+          {
+            "text": "علامات الأولوية",
+            "is_correct": false
+          },
+          {
+            "text": "علامات الوقوف والركن",
+            "is_correct": false
+          }
         ],
-        "explanation": "F98 تنتمي إلى هذه الفئة. التنظيم الخاص ملزم لسائقي المسار المعني."
+        "explanation": "يصنّف ReadyRoad هذه العلامة ضمن ROAD_MANAGEMENT، وتبقى دلالتها الفعلية هي دلالة علامة F الرسمية المعروضة."
       }
     }
   },
@@ -127,70 +169,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Welke wegsituatie kondigt dit bord aan?",
+        "question": "Welke uitspraak over dit bord is juist?",
         "choices": [
           {
-            "text": "Een speciale rijstrookregeling is van kracht in de aangeduide rijstrook — de exacte regel staat op het bord en moet nauwkeurig worden gevolgd",
+            "text": "Een onderbord met de juiste symbolen duidt aan dat de vluchthaven een noodtelefoon en brandblusser heeft.",
             "is_correct": true
           },
           {
-            "text": "Elke rijstrook heeft zijn eigen snelheidsgrens — de limiet boven uw rijstrook geldt voor u",
+            "text": "Elke F98-vluchthaven heeft automatisch een tankstation en rustplaats.",
             "is_correct": false
           },
           {
-            "text": "Een rijstrook eindigt — tijdig samenvoegen is vereist",
+            "text": "F98 geeft aan dat de vluchtstrook als gewone rijstrook geopend is.",
             "is_correct": false
           }
         ],
-        "explanation": "F98 kondigt een specifieke rijstrookregeling aan die uitsluitend geldt voor de aangeduide rijstrook. De bestuurder moet het bord lezen en de specifieke aanwijzing opvolgen."
+        "explanation": "De vluchthaven is een afgebakende noodruimte naast de tunnelrijbaan. Een onderbord met de officiële symbolen geeft aan dat er een noodtelefoon en een brandblusser aanwezig zijn; zonder dat onderbord mag die uitrusting niet uit F98 alleen worden afgeleid."
       },
       "EN": {
-        "question": "What road situation does this sign announce?",
+        "question": "Which statement about this sign is correct?",
         "choices": [
           {
-            "text": "A special lane regulation is in force in the indicated lane — the exact rule is on the sign and must be followed precisely",
+            "text": "A supplementary panel with the relevant symbols indicates that the bay has an emergency telephone and fire extinguisher.",
             "is_correct": true
           },
           {
-            "text": "Each lane has its own speed limit — the limit above your lane applies to you",
+            "text": "Every F98 bay automatically contains a service station and rest area.",
             "is_correct": false
           },
           {
-            "text": "A lane ends — merging in good time is required",
+            "text": "F98 means the hard shoulder is open as an ordinary traffic lane.",
             "is_correct": false
           }
         ],
-        "explanation": "F98 announces a specific lane regulation that applies exclusively to the indicated lane. The driver must read the sign and follow the specific instruction."
+        "explanation": "The refuge bay is a bounded emergency space beside the tunnel carriageway. A supplementary panel with the official symbols indicates an emergency telephone and fire extinguisher; without that panel, the equipment cannot be inferred from F98 alone."
       },
       "FR": {
-        "question": "Quelle situation routière ce panneau annonce-t-il?",
+        "question": "Quelle affirmation concernant ce panneau est correcte ?",
         "choices": [
           {
-            "text": "Une réglementation spéciale de voie est en vigueur dans la voie indiquée — la règle exacte figure sur le panneau et doit être suivie précisément",
+            "text": "Un panneau additionnel avec les symboles appropriés indique que le refuge dispose d'un téléphone d'urgence et d'un extincteur.",
             "is_correct": true
           },
           {
-            "text": "Chaque voie a sa propre limite de vitesse — la limite au-dessus de votre voie vous est applicable",
+            "text": "Chaque refuge F98 contient automatiquement une station-service et une aire de repos.",
             "is_correct": false
           },
           {
-            "text": "Une voie se termine — se rabattre à temps est requis",
+            "text": "F98 signifie que la bande d'arrêt est ouverte comme bande de circulation ordinaire.",
             "is_correct": false
           }
         ],
-        "explanation": "F98 annonce une réglementation spécifique de voie qui s'applique exclusivement à la voie indiquée. Le conducteur doit lire le panneau et suivre l'instruction spécifique."
+        "explanation": "Le refuge est un espace d'urgence délimité à côté de la chaussée du tunnel. Un panneau additionnel portant les symboles officiels indique la présence d'un téléphone d'appel d'urgence et d'un extincteur; sans ce panneau, cet équipement ne peut être déduit de F98 seul."
       },
       "AR": {
-        "question": "ما الوضع الذي تُعلن عنه هذه العلامة المرورية؟",
+        "question": "أي عبارة عن هذه العلامة صحيحة؟",
         "choices": [
           {
-            "text": "تنظيم خاص في المسار المحدد — القاعدة مبيّنة على العلامة المرورية ويجب اتباعها بدقة",
+            "text": "تدل لوحة إضافية بالرموز المختصة على أن الجيب مجهز بهاتف طوارئ وطفاية حريق.",
             "is_correct": true
           },
-          { "text": "لكل مسار حد سرعة خاص", "is_correct": false },
-          { "text": "مسار ينتهي — الاندماج ضروري", "is_correct": false }
+          {
+            "text": "يحتوي كل جيب F98 تلقائيًا على محطة خدمة واستراحة.",
+            "is_correct": false
+          },
+          {
+            "text": "تعني F98 فتح كتف الطريق كمسار عادي.",
+            "is_correct": false
+          }
         ],
-        "explanation": "F98 تُعلن تنظيمًا خاصًا ينطبق حصريًا على المسار المحدد. يجب قراءة العلامة المرورية واتباع التعليمات."
+        "explanation": "جيب اللجوء مساحة طوارئ محددة بجانب طريق النفق. وتدل لوحة إضافية تحمل الرموز الرسمية على وجود هاتف طوارئ وطفاية حريق، ولا يجوز استنتاج وجودهما من F98 وحدها من دون تلك اللوحة."
       }
     }
   },
@@ -202,73 +250,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat moet u doen wanneer u F98 ziet?",
+        "question": "Wat is de juiste reactie wanneer u dit bord nadert?",
         "choices": [
           {
-            "text": "Het bord nauwkeurig lezen en de specifieke rijstrookregeling volgen die erop staat aangegeven",
+            "text": "Rijd bij een noodstop zo veilig mogelijk de vluchthaven in, beveilig de situatie en gebruik alleen de aangeduide noodvoorzieningen.",
             "is_correct": true
           },
           {
-            "text": "Het bord negeren omdat F98 uitsluitend geldt voor vrachtwagens en bussen",
+            "text": "Gebruik de vluchthaven voor gewoon parkeren of een geplande rustpauze.",
             "is_correct": false
           },
           {
-            "text": "Van rijstrook wisselen om de bijzondere regeling te vermijden",
+            "text": "Stop op de rijstrook naast de vluchthaven om de uitrusting te bekijken.",
             "is_correct": false
           }
         ],
-        "explanation": "F98 geldt voor elke bestuurder in de aangeduide rijstrook. De inhoud van de regeling staat op het bord en moet worden nageleefd. Het bord negeren of van rijstrook wisselen om het te vermijden is niet toegestaan."
+        "explanation": "Gebruik de vluchthaven wanneer u in een noodsituatie van de rijbaan moet stoppen, beveilig de situatie en volg de tunnel- en hulpinstructies. Controleer het onderbord voordat u op telefoon of brandblusser rekent."
       },
       "EN": {
-        "question": "What must you do when you see F98?",
+        "question": "What is the correct response when approaching this sign?",
         "choices": [
           {
-            "text": "Read the sign carefully and follow the specific lane regulation shown on it",
+            "text": "For an emergency stop, enter the bay as safely as possible, secure the situation and use only the emergency equipment shown.",
             "is_correct": true
           },
           {
-            "text": "Ignore the sign because F98 applies only to trucks and buses",
+            "text": "Use the bay for ordinary parking or a planned rest break.",
             "is_correct": false
           },
           {
-            "text": "Change lane to avoid the special regulation",
+            "text": "Stop in the traffic lane beside the bay to inspect its equipment.",
             "is_correct": false
           }
         ],
-        "explanation": "F98 applies to every driver in the indicated lane. The content of the regulation is on the sign and must be complied with. Ignoring the sign or changing lane to avoid it is not permitted."
+        "explanation": "Use the bay when an emergency requires you to stop clear of the traffic lane, secure the situation and follow tunnel and assistance instructions. Check the supplementary panel before relying on a telephone or extinguisher."
       },
       "FR": {
-        "question": "Que devez-vous faire lorsque vous voyez F98?",
+        "question": "Quelle est la réaction correcte à l'approche de ce panneau ?",
         "choices": [
           {
-            "text": "Lire attentivement le panneau et suivre la réglementation spécifique de voie qui y figure",
+            "text": "Pour un arrêt d'urgence, engagez-vous aussi sûrement que possible dans le refuge, sécurisez la situation et n'utilisez que l'équipement indiqué.",
             "is_correct": true
           },
           {
-            "text": "Ignorer le panneau car F98 s'applique uniquement aux camions et aux bus",
+            "text": "Utilisez le refuge pour un stationnement ordinaire ou une pause planifiée.",
             "is_correct": false
           },
           {
-            "text": "Changer de voie pour éviter la réglementation spéciale",
+            "text": "Arrêtez-vous sur la bande de circulation à côté du refuge pour examiner son équipement.",
             "is_correct": false
           }
         ],
-        "explanation": "F98 s'applique à tout conducteur dans la voie indiquée. Le contenu de la réglementation figure sur le panneau et doit être respecté. Ignorer le panneau ou changer de voie pour l'éviter n'est pas autorisé."
+        "explanation": "Utilisez le refuge lorsqu'une urgence impose de vous arrêter hors de la bande de circulation, sécurisez la situation et suivez les consignes du tunnel et des secours. Vérifiez le panneau additionnel avant de compter sur un téléphone ou un extincteur."
       },
       "AR": {
-        "question": "ماذا يجب أن تفعل عند رؤية F98؟",
+        "question": "ما التصرف الصحيح عند الاقتراب من هذه العلامة؟",
         "choices": [
           {
-            "text": "قراءة العلامة المرورية بعناية واتباع التنظيم الخاص المحدد",
+            "text": "عند التوقف الطارئ، ادخل الجيب بأكبر قدر من الأمان، وأمّن الوضع، ولا تستخدم إلا معدات الطوارئ المبينة.",
             "is_correct": true
           },
           {
-            "text": "تجاهل العلامة المرورية لأنها تخص الشاحنات والحافلات فقط",
+            "text": "استخدم الجيب للركن العادي أو استراحة مخطط لها.",
             "is_correct": false
           },
-          { "text": "تغيير المسار لتجنب التنظيم الخاص", "is_correct": false }
+          {
+            "text": "توقف في مسار السير بجانب الجيب لفحص تجهيزاته.",
+            "is_correct": false
+          }
         ],
-        "explanation": "F98 تسري على كل سائق في المسار المحدد. تجاهل العلامة المرورية أو تغيير المسار لتجنبها غير مسموح."
+        "explanation": "استخدم الجيب عندما تفرض حالة طارئة التوقف بعيدًا عن مسار السير، وأمّن الوضع واتبع تعليمات النفق والمساعدة. تحقق من اللوحة الإضافية قبل الاعتماد على هاتف أو طفاية."
       }
     }
   },
@@ -280,73 +331,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "F98 toont een bijzondere regeling voor uw rijstrook maar u weet niet precies wat er van u verwacht wordt. Wat doet u?",
+        "question": "Welke uitspraak over het toepassingsgebied is juist?",
         "choices": [
           {
-            "text": "Uw snelheid verminderen en het bord aandachtig lezen om de specifieke aanwijzing te begrijpen alvorens verder te rijden",
+            "text": "Volgens de plaatsingsvoorwaarden duidt F98 de vluchthaven in een tunnel aan; de uitrusting wordt afzonderlijk op een onderbord gesignaleerd.",
             "is_correct": true
           },
           {
-            "text": "Van rijstrook veranderen om de bijzondere regeling te vermijden",
+            "text": "F98 maakt iedere pechstrook buiten tunnels tot parkeerplaats.",
             "is_correct": false
           },
           {
-            "text": "Gewoon doorrijden — F98-borden zijn vrijblijvend voor particuliere bestuurders",
+            "text": "F98 verplicht alle bestuurders bij elke passage in de vluchthaven te stoppen.",
             "is_correct": false
           }
         ],
-        "explanation": "Bij twijfel over de inhoud van F98 is voorzichtigheid geboden. Snelheid verminderen en het bord aandachtig lezen is de juiste aanpak. F98 is nooit vrijblijvend en bewust van rijstrook veranderen om het te vermijden is een overtreding."
+        "explanation": "Volgens de plaatsingsvoorwaarden duidt F98 de vluchthaven in een tunnel aan; de uitrusting wordt afzonderlijk op een onderbord gesignaleerd."
       },
       "EN": {
-        "question": "F98 shows a special regulation for your lane but you are not sure exactly what is expected of you. What do you do?",
+        "question": "Which statement about its scope is correct?",
         "choices": [
           {
-            "text": "Reduce your speed and read the sign attentively to understand the specific instruction before continuing",
+            "text": "Under the placement rules, F98 marks a refuge bay in a tunnel; its equipment is indicated separately on a supplementary panel.",
             "is_correct": true
           },
           {
-            "text": "Change lane to avoid the special regulation",
+            "text": "F98 turns every hard shoulder outside tunnels into a parking place.",
             "is_correct": false
           },
           {
-            "text": "Simply continue driving — F98 signs are non-binding for private drivers",
+            "text": "F98 requires every driver to stop in the bay on each passage.",
             "is_correct": false
           }
         ],
-        "explanation": "When in doubt about the content of F98, caution is required. Reducing speed and reading the sign carefully is the correct approach. F98 is never non-binding and deliberately changing lane to avoid it is an infraction."
+        "explanation": "Under the placement rules, F98 marks a refuge bay in a tunnel; its equipment is indicated separately on a supplementary panel."
       },
       "FR": {
-        "question": "F98 affiche une réglementation spéciale pour votre voie mais vous n'êtes pas certain de ce qui est attendu de vous. Que faites-vous?",
+        "question": "Quelle affirmation concernant son champ d'application est correcte ?",
         "choices": [
           {
-            "text": "Réduire votre vitesse et lire attentivement le panneau pour comprendre l'instruction spécifique avant de continuer",
+            "text": "Selon les conditions de placement, F98 indique un refuge dans un tunnel; son équipement est signalé séparément par un panneau additionnel.",
             "is_correct": true
           },
           {
-            "text": "Changer de voie pour éviter la réglementation spéciale",
+            "text": "F98 transforme chaque bande d'arrêt hors tunnel en emplacement de stationnement.",
             "is_correct": false
           },
           {
-            "text": "Continuer à rouler normalement — les panneaux F98 ne sont pas contraignants pour les conducteurs privés",
+            "text": "F98 oblige chaque conducteur à s'arrêter dans le refuge à chaque passage.",
             "is_correct": false
           }
         ],
-        "explanation": "En cas de doute sur le contenu de F98, la prudence s'impose. Réduire la vitesse et lire attentivement le panneau est la bonne approche. F98 n'est jamais facultatif."
+        "explanation": "Selon les conditions de placement, F98 indique un refuge dans un tunnel; son équipement est signalé séparément par un panneau additionnel."
       },
       "AR": {
-        "question": "F98 تعرض تنظيمًا خاصًا لمسارك لكنك غير متأكد مما هو مطلوب منك. ماذا تفعل؟",
+        "question": "أي عبارة عن نطاق تطبيقها صحيحة؟",
         "choices": [
           {
-            "text": "خفّض سرعتك واقرأ العلامة المرورية بعناية لفهم التعليمات قبل المتابعة",
+            "text": "وفق شروط الوضع، تحدد F98 جيب لجوء داخل نفق، وتبيَّن تجهيزاته بصورة مستقلة على لوحة إضافية.",
             "is_correct": true
           },
-          { "text": "غيّر المسار لتجنب التنظيم الخاص", "is_correct": false },
           {
-            "text": "واصل السير — F98 غير ملزمة للسائقين الخصوصيين",
+            "text": "تحوّل F98 كل كتف طريق خارج الأنفاق إلى موقف.",
+            "is_correct": false
+          },
+          {
+            "text": "تلزم F98 كل سائق بالتوقف في الجيب عند كل مرور.",
             "is_correct": false
           }
         ],
-        "explanation": "عند الشك في محتوى F98 يجب التحلي. تخفيض السرعة وقراءة العلامة المرورية النهج الصحيح. F98 ليست اختيارية."
+        "explanation": "وفق شروط الوضع، تحدد F98 جيب لجوء داخل نفق، وتبيَّن تجهيزاته بصورة مستقلة على لوحة إضافية."
       }
     }
   },
@@ -358,73 +412,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Voor welke bestuurders geldt de aanwijzing op F98?",
+        "question": "Welk onderscheid is juridisch en praktisch juist?",
         "choices": [
           {
-            "text": "Uitsluitend voor bestuurders in de rijstrook waarboven of waarop F98 van toepassing is",
+            "text": "F98 duidt een vluchthaven aan; F95 duidt een noodstopstrook aan.",
             "is_correct": true
           },
           {
-            "text": "Voor alle voertuigen op de rijbaan, ongeacht welke rijstrook zij bezetten",
+            "text": "F98 en F95 betekenen beide het einde van een gewone rijstrook.",
             "is_correct": false
           },
           {
-            "text": "Alleen voor vrachtwagens, bussen en taxi's",
+            "text": "F98 is een voorwegwijzer voor rijstrookvermindering en F95 kondigt een uitwijking aan.",
             "is_correct": false
           }
         ],
-        "explanation": "F98 is rijstrookspecifiek. Alleen bestuurders in de rijstrook waarop het bord van toepassing is, zijn verplicht de aanwijzing te volgen. Bestuurders in andere rijstroken zijn niet betrokken bij F98 van een andere rijstrook."
+        "explanation": "F98 duidt een vluchthaven aan; F95 duidt een noodstopstrook aan."
       },
       "EN": {
-        "question": "For which drivers does the instruction on F98 apply?",
+        "question": "Which legal and practical distinction is correct?",
         "choices": [
           {
-            "text": "Exclusively for drivers in the lane above which or to which F98 applies",
+            "text": "F98 marks an emergency refuge bay; F95 marks an emergency escape lane.",
             "is_correct": true
           },
           {
-            "text": "For all vehicles on the carriageway regardless of which lane they occupy",
+            "text": "F98 and F95 both mean the end of an ordinary lane.",
             "is_correct": false
           },
-          { "text": "Only for trucks, buses and taxis", "is_correct": false }
+          {
+            "text": "F98 announces a lane reduction and F95 a lane deviation.",
+            "is_correct": false
+          }
         ],
-        "explanation": "F98 is lane-specific. Only drivers in the lane to which the sign applies are required to follow the instruction. Drivers in other lanes are not affected by an F98 on a different lane."
+        "explanation": "F98 marks an emergency refuge bay; F95 marks an emergency escape lane."
       },
       "FR": {
-        "question": "Pour quels conducteurs l'instruction de F98 s'applique-t-elle?",
+        "question": "Quelle distinction juridique et pratique est correcte ?",
         "choices": [
           {
-            "text": "Exclusivement pour les conducteurs dans la voie au-dessus de laquelle ou pour laquelle F98 s'applique",
+            "text": "F98 indique un refuge d'urgence; F95 indique une piste de détresse.",
             "is_correct": true
           },
           {
-            "text": "Pour tous les véhicules sur la chaussée quelle que soit la voie qu'ils occupent",
+            "text": "F98 et F95 signifient tous deux la fin d'une bande ordinaire.",
             "is_correct": false
           },
           {
-            "text": "Uniquement pour les camions, les bus et les taxis",
+            "text": "F98 annonce une réduction de bandes et F95 un évitement.",
             "is_correct": false
           }
         ],
-        "explanation": "F98 est spécifique à la voie. Seuls les conducteurs dans la voie à laquelle le panneau s'applique sont tenus de suivre l'instruction."
+        "explanation": "F98 indique un refuge d'urgence; F95 indique une piste de détresse."
       },
       "AR": {
-        "question": "على أي سائقين تسري تعليمات F98؟",
+        "question": "أي تمييز قانوني وعملي صحيح؟",
         "choices": [
           {
-            "text": "حصريًا على سائقي المسار المحدد في F98",
+            "text": "تدل F98 على جيب لجوء للطوارئ، بينما تدل F95 على مسار توقف اضطراري.",
             "is_correct": true
           },
           {
-            "text": "على جميع المركبات بغض النظر عن مساريها",
+            "text": "تعني F98 وF95 كلتاهما نهاية مسار عادي.",
             "is_correct": false
           },
           {
-            "text": "فقط على الشاحنات والحافلات وسيارات الأجرة",
+            "text": "تعلن F98 عن انخفاض عدد المسارات وتعلن F95 عن انحرافها.",
             "is_correct": false
           }
         ],
-        "explanation": "F98 خاصة بالمسار. فقط سائقو المسار المعني ملزمون باتباع التعليمات."
+        "explanation": "تدل F98 على جيب لجوء للطوارئ، بينما تدل F95 على مسار توقف اضطراري."
       }
     }
   },
@@ -436,60 +493,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "F98 toont een bijzondere rijstrookregeling voor uw rijstrook. Mag u van rijstrook veranderen om deze regeling te vermijden?",
+        "question": "Mag u zonder onderbord uit F98 alleen besluiten dat de vluchthaven zeker een noodtelefoon en brandblusser heeft?",
         "choices": [
           {
-            "text": "Neen, u bent verplicht de rijstrookregeling te volgen zolang u in de aangeduide rijstrook rijdt",
-            "is_correct": true
+            "text": "Ja",
+            "is_correct": false
           },
           {
-            "text": "Ja, als u tijdig van rijstrook verandert heeft de regeling geen betrekking meer op u",
-            "is_correct": false
+            "text": "Neen",
+            "is_correct": true
           }
         ],
-        "explanation": "F98 is bindend voor elke bestuurder in de betreffende rijstrook. Van rijstrook wisselen met het uitdrukkelijke doel de F98-regeling te omzeilen is een overtreding. U dient de regeling te volgen zolang u in de aangeduide rijstrook rijdt."
+        "explanation": "Neen. Die uitrusting wordt door de daarvoor bestemde symbolen op een onderbord aangegeven."
       },
       "EN": {
-        "question": "F98 shows a special lane regulation for your lane. May you change lane to avoid this regulation?",
+        "question": "Without a supplementary panel, may you conclude from F98 alone that the bay definitely has an emergency telephone and fire extinguisher?",
         "choices": [
           {
-            "text": "No, you are required to follow the lane regulation for as long as you are in the indicated lane",
-            "is_correct": true
+            "text": "Yes",
+            "is_correct": false
           },
           {
-            "text": "Yes, if you change lane in time the regulation no longer applies to you",
-            "is_correct": false
+            "text": "No",
+            "is_correct": true
           }
         ],
-        "explanation": "F98 is binding on every driver in the relevant lane. Changing lane with the express intention of circumventing the F98 regulation is an infraction. You must follow the regulation for as long as you are in the indicated lane."
+        "explanation": "No. That equipment is indicated by the designated symbols on a supplementary panel."
       },
       "FR": {
-        "question": "F98 affiche une réglementation spéciale pour votre voie. Pouvez-vous changer de voie pour éviter cette réglementation?",
+        "question": "Sans panneau additionnel, pouvez-vous conclure de F98 seul que le refuge possède nécessairement un téléphone d'urgence et un extincteur ?",
         "choices": [
           {
-            "text": "Non, vous êtes tenu de suivre la réglementation de voie tant que vous êtes dans la voie indiquée",
-            "is_correct": true
+            "text": "Oui",
+            "is_correct": false
           },
           {
-            "text": "Oui, si vous changez de voie à temps la réglementation ne vous concerne plus",
-            "is_correct": false
+            "text": "Non",
+            "is_correct": true
           }
         ],
-        "explanation": "F98 est contraignant pour tout conducteur dans la voie concernée. Changer de voie avec l'intention expresse de contourner la réglementation F98 est une infraction."
+        "explanation": "Non. Cet équipement est indiqué par les symboles prévus sur un panneau additionnel."
       },
       "AR": {
-        "question": "F98 تعرض تنظيمًا خاصًا لمسارك. هل يجوز تغيير المسار لتجنب هذا التنظيم؟",
+        "question": "هل يجوز من دون لوحة إضافية استنتاج أن جيب F98 مجهز حتمًا بهاتف طوارئ وطفاية حريق؟",
         "choices": [
           {
-            "text": "لا، يجب اتباع التنظيم طالما أنت في المسار المحدد",
-            "is_correct": true
+            "text": "نعم",
+            "is_correct": false
           },
           {
-            "text": "نعم، إذا غيّرت المسار فالتنظيم لم يعد يخصك",
-            "is_correct": false
+            "text": "لا",
+            "is_correct": true
           }
         ],
-        "explanation": "F98 ملزمة لكل سائق في المسار المعني. تغيير المسار بهدف تجنب F98 يُعد مخالفة."
+        "explanation": "لا. يُبيّن وجود تلك التجهيزات بالرموز المخصصة على لوحة إضافية."
       }
     }
   },
@@ -501,60 +558,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U begrijpt de bijzondere regeling op F98 niet volledig. Is het toegestaan uw snelheid aanzienlijk te verminderen totdat u de aanwijzing begrijpt?",
+        "question": "Mag u een F98-vluchthaven gebruiken als gewone parkeer- of rustplaats zonder noodzaak?",
         "choices": [
           {
-            "text": "Ja, een voorzichtige snelheidsvermindering is gepast wanneer u onzeker bent over een rijstrookregeling",
-            "is_correct": true
+            "text": "Ja",
+            "is_correct": false
           },
           {
-            "text": "Neen, plotseling aanzienlijk vertragen in een rijstrook is gevaarlijker dan gewoon doorrijden",
-            "is_correct": false
+            "text": "Neen",
+            "is_correct": true
           }
         ],
-        "explanation": "Voorzichtigheid bij onduidelijkheid is een correct en veilig rijprincipe. Snelheid verminderen om een bord te kunnen lezen en begrijpen is altijd beter dan zonder begrip doorrijden. Let wel op het achterliggende verkeer bij het afremmen."
+        "explanation": "Neen. De vluchthaven is een noodruimte in de tunnel en geen gewone parkeer- of rustvoorziening."
       },
       "EN": {
-        "question": "You do not fully understand the special regulation on F98. Is it permitted to reduce your speed considerably until you understand the instruction?",
+        "question": "May you use an F98 refuge bay as an ordinary parking or rest place without necessity?",
         "choices": [
           {
-            "text": "Yes, a cautious speed reduction is appropriate when you are uncertain about a lane regulation",
-            "is_correct": true
+            "text": "Yes",
+            "is_correct": false
           },
           {
-            "text": "No, suddenly slowing down significantly in a lane is more dangerous than simply continuing to drive",
-            "is_correct": false
+            "text": "No",
+            "is_correct": true
           }
         ],
-        "explanation": "Caution when uncertain is a correct and safe driving principle. Reducing speed to read and understand a sign is always better than continuing without understanding. Be mindful of traffic behind you when braking."
+        "explanation": "No. It is an emergency space in a tunnel, not an ordinary parking or rest facility."
       },
       "FR": {
-        "question": "Vous ne comprenez pas pleinement la réglementation spéciale sur F98. Est-il permis de réduire considérablement votre vitesse jusqu'à ce que vous compreniez l'instruction?",
+        "question": "Pouvez-vous utiliser un refuge F98 comme emplacement ordinaire de stationnement ou de repos sans nécessité ?",
         "choices": [
           {
-            "text": "Oui, une réduction prudente de la vitesse est appropriée quand vous êtes incertain d'une réglementation de voie",
-            "is_correct": true
+            "text": "Oui",
+            "is_correct": false
           },
           {
-            "text": "Non, freiner brusquement dans une voie est plus dangereux que de continuer à rouler normalement",
-            "is_correct": false
+            "text": "Non",
+            "is_correct": true
           }
         ],
-        "explanation": "La prudence en cas d'incertitude est un principe de conduite correct et sûr. Réduire la vitesse pour lire et comprendre un panneau est toujours préférable à continuer sans comprendre."
+        "explanation": "Non. Il s'agit d'un espace d'urgence dans un tunnel, pas d'une installation ordinaire de stationnement ou de repos."
       },
       "AR": {
-        "question": "لا تفهم تمامًا التنظيم الخاص على F98. هل يجوز تخفيض سرعتك بشكل كبير حتى تفهم التعليمات؟",
+        "question": "هل يجوز استعمال جيب F98 موقفًا عاديًا أو مكان استراحة من دون ضرورة؟",
         "choices": [
           {
-            "text": "نعم، تخفيض السرعة بحذر مناسب عند عدم التأكد من تنظيم المسار",
-            "is_correct": true
+            "text": "نعم",
+            "is_correct": false
           },
           {
-            "text": "لا، التباطؤ المفاجئ أخطر من مواصلة السير",
-            "is_correct": false
+            "text": "لا",
+            "is_correct": true
           }
         ],
-        "explanation": "التحلي عند عدم التأكد مبدأ قيادة صحيح. تخفيض السرعة لقراءة العلامة المرورية أفضل من المتابعة بدون فهم."
+        "explanation": "لا. إنه مساحة طوارئ داخل نفق، وليس مرفقًا عاديًا للركن أو الاستراحة."
       }
     }
   }

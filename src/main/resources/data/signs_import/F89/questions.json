@@ -10,73 +10,73 @@
         "question": "Wat betekent dit verkeersbord?",
         "choices": [
           {
-            "text": "Elke rijstrook heeft zijn eigen maximumsnelheid, aangegeven boven die rijstrook, met vermelding van de afstand waarvoor die snelheidslimiet geldt",
+            "text": "Een voorwegwijzer die een rijstrookgebonden gevaar of verkeersregel aankondigt.",
             "is_correct": true
           },
           {
-            "text": "Elke rijstrook heeft zijn eigen maximumsnelheid, aangegeven boven die rijstrook, zonder vermelding van een geldende afstand",
+            "text": "Een bord dat altijd één maximumsnelheid voor de volledige rijbaan oplegt.",
             "is_correct": false
           },
           {
-            "text": "Een bijzondere rijstrookregeling is van kracht — lees het bord nauwkeurig en volg de specifieke aanwijzing",
+            "text": "Een bord dat een tijdelijke middenbermdoorsteek bij werken aankondigt.",
             "is_correct": false
           }
         ],
-        "explanation": "F89 toont per rijstrook een aparte maximumsnelheid én de afstand waarbinnen die limiet geldt. Het onderscheidende kenmerk ten opzichte van F91 is de aanduiding van de geldende afstand."
+        "explanation": "F89 kondigt vooraf een gevaar of verkeersregel aan die slechts voor één of meer aangeduide rijstroken geldt."
       },
       "EN": {
         "question": "What does this traffic sign mean?",
         "choices": [
           {
-            "text": "Each lane has its own maximum speed, indicated above that lane, with the distance for which that speed limit applies",
+            "text": "An advance sign announcing a lane-specific danger or traffic rule.",
             "is_correct": true
           },
           {
-            "text": "Each lane has its own maximum speed, indicated above that lane, without any distance indication",
+            "text": "A sign that always imposes one speed limit on the whole carriageway.",
             "is_correct": false
           },
           {
-            "text": "A special lane regulation is in force — read the sign carefully and follow the specific instruction",
+            "text": "A sign announcing a temporary central-reservation crossover at roadworks.",
             "is_correct": false
           }
         ],
-        "explanation": "F89 shows a separate maximum speed per lane AND the distance for which that limit applies. The distinguishing feature compared to F91 is the distance indication."
+        "explanation": "F89 gives advance warning of a danger or traffic rule applying only to one or more indicated lanes."
       },
       "FR": {
-        "question": "Que signifie ce panneau de signalisation?",
+        "question": "Que signifie ce panneau de signalisation ?",
         "choices": [
           {
-            "text": "Chaque voie a sa propre vitesse maximale, indiquée au-dessus de cette voie, avec la distance pour laquelle cette limite s'applique",
+            "text": "Un signal de préavis annonçant un danger ou une réglementation propre à une ou plusieurs bandes.",
             "is_correct": true
           },
           {
-            "text": "Chaque voie a sa propre vitesse maximale, indiquée au-dessus de cette voie, sans indication de distance",
+            "text": "Un signal qui impose toujours une seule vitesse à toute la chaussée.",
             "is_correct": false
           },
           {
-            "text": "Une réglementation spéciale de voie est en vigueur — lisez attentivement le panneau",
+            "text": "Un signal annonçant une traversée temporaire de la berme centrale lors de travaux.",
             "is_correct": false
           }
         ],
-        "explanation": "F89 affiche une vitesse maximale séparée par voie ET la distance pour laquelle cette limite s'applique. La caractéristique distinctive par rapport à F91 est l'indication de distance."
+        "explanation": "F89 annonce à l'avance un danger ou une réglementation applicable uniquement à une ou plusieurs bandes indiquées."
       },
       "AR": {
         "question": "ما معنى هذه العلامة المرورية؟",
         "choices": [
           {
-            "text": "لكل مسار حده الأقصى للسرعة ويُذكر في العلامة المرورية المسافة التي يسري فيها هذا الحد",
+            "text": "علامة تمهيدية تعلن عن خطر أو قاعدة مرور خاصة بمسار أو أكثر.",
             "is_correct": true
           },
           {
-            "text": "لكل مسار حده الأقصى للسرعة دون ذكر مسافة",
+            "text": "علامة تفرض دائمًا حد سرعة واحدًا على الطريق كله.",
             "is_correct": false
           },
           {
-            "text": "تنظيم خاص لمسار بعينه — اقرأ العلامة المرورية بعناية",
+            "text": "علامة تعلن عن عبور مؤقت للفاصل الوسطي عند الأشغال.",
             "is_correct": false
           }
         ],
-        "explanation": "F89 تعرض حد سرعة أقصى إلى جانب المسافة التي يسري فيها. السمة المميزة مقارنة بـF91 هي ذكر المسافة."
+        "explanation": "تعلن F89 مسبقًا عن خطر أو قاعدة مرور تسري فقط على مسار واحد أو أكثر من المسارات المحددة."
       }
     }
   },
@@ -88,40 +88,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Tot welke categorie verkeersborden behoort dit bord?",
+        "question": "Tot welke inhoudscategorie behoort dit bord binnen ReadyRoad?",
         "choices": [
-          { "text": "Wegbeheersingstekens", "is_correct": true },
-          { "text": "Gevaarsborden", "is_correct": false },
-          { "text": "Gebodsborden", "is_correct": false }
+          {
+            "text": "Wegbeheer en rijstrooksignalisatie",
+            "is_correct": true
+          },
+          {
+            "text": "Voorrangsborden",
+            "is_correct": false
+          },
+          {
+            "text": "Parkeerborden",
+            "is_correct": false
+          }
         ],
-        "explanation": "F89 behoort tot deze categorie. De snelheidslimiet per rijstrook is bindend voor elke bestuurder die zich in de betreffende rijstrook bevindt."
+        "explanation": "Binnen ReadyRoad is dit bord onder ROAD_MANAGEMENT ingedeeld. De concrete betekenis blijft die van het afgebeelde officiële F-bord."
       },
       "EN": {
-        "question": "To which category of traffic signs does this sign belong?",
+        "question": "Which ReadyRoad content category contains this sign?",
         "choices": [
-          { "text": "Road management signs", "is_correct": true },
-          { "text": "Danger signs", "is_correct": false },
-          { "text": "Mandatory signs", "is_correct": false }
+          {
+            "text": "Road management and lane-control signs",
+            "is_correct": true
+          },
+          {
+            "text": "Priority signs",
+            "is_correct": false
+          },
+          {
+            "text": "Parking signs",
+            "is_correct": false
+          }
         ],
-        "explanation": "F89 belongs to this category. The per-lane speed limit is binding for every driver in the relevant lane."
+        "explanation": "ReadyRoad classifies this sign under ROAD_MANAGEMENT. Its actual meaning remains that of the official F sign shown."
       },
       "FR": {
-        "question": "À quelle catégorie de panneaux appartient ce panneau?",
+        "question": "Dans quelle catégorie de contenu ReadyRoad ce panneau est-il classé ?",
         "choices": [
-          { "text": "Panneaux de gestion de la route", "is_correct": true },
-          { "text": "Panneaux de danger", "is_correct": false },
-          { "text": "Panneaux d'obligation", "is_correct": false }
+          {
+            "text": "Gestion de la route et signalisation par bande",
+            "is_correct": true
+          },
+          {
+            "text": "Signaux de priorité",
+            "is_correct": false
+          },
+          {
+            "text": "Signaux de stationnement",
+            "is_correct": false
+          }
         ],
-        "explanation": "F89 appartient à cette catégorie. La limite de vitesse par voie est contraignante pour tout conducteur dans la voie concernée."
+        "explanation": "ReadyRoad classe ce panneau dans ROAD_MANAGEMENT. Sa signification concrète reste celle du signal F officiel représenté."
       },
       "AR": {
-        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
+        "question": "ضمن أي فئة محتوى في ReadyRoad تندرج هذه العلامة؟",
         "choices": [
-          { "text": "علامات إدارة الطريق", "is_correct": true },
-          { "text": "علامات الخطر", "is_correct": false },
-          { "text": "العلامات الإلزامية", "is_correct": false }
+          {
+            "text": "إدارة الطريق وتنظيم المسارات",
+            "is_correct": true
+          },
+          {
+            "text": "علامات الأولوية",
+            "is_correct": false
+          },
+          {
+            "text": "علامات الوقوف والركن",
+            "is_correct": false
+          }
         ],
-        "explanation": "F89 تنتمي إلى هذه الفئة. حد السرعة لكل مسار ملزم لكل سائق في ذلك المسار."
+        "explanation": "يصنّف ReadyRoad هذه العلامة ضمن ROAD_MANAGEMENT، وتبقى دلالتها الفعلية هي دلالة علامة F الرسمية المعروضة."
       }
     }
   },
@@ -133,76 +169,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Welke wegsituatie kondigt dit bord aan?",
+        "question": "Welke uitspraak over dit bord is juist?",
         "choices": [
           {
-            "text": "Elke rijstrook heeft een eigen snelheidsgrens — de limiet boven uw rijstrook is voor u van kracht voor de aangeduide afstand",
+            "text": "De afgebeelde regel of het gevaar geldt alleen voor de betrokken rijstrook of rijstroken van een rijbaan met meerdere rijstroken in dezelfde richting.",
             "is_correct": true
           },
           {
-            "text": "Elke rijstrook heeft een eigen snelheidsgrens — de limiet boven uw rijstrook is voor u van kracht zonder afstandsaanduiding",
+            "text": "Elke afgebeelde regel geldt automatisch voor alle rijstroken.",
             "is_correct": false
           },
           {
-            "text": "Een speciale rijstrookregeling is van kracht — lees en volg het bord exact",
+            "text": "F89 mag uitsluitend voor snelheidsbeperkingen worden gebruikt.",
             "is_correct": false
           }
         ],
-        "explanation": "F89 toont rijstrookspecifieke maximumsnelheden voor een bepaalde afstand. Het verschil met F91 is dat F89 altijd een afstandsaanduiding bevat."
+        "explanation": "F89 wordt gebruikt op een rijbaan met meerdere rijstroken in dezelfde richting. De weergegeven gevaren of regels gelden alleen voor de rijstroken waarop zij zijn afgebeeld. Het bord zelf mag niet boven de rijbaan worden geplaatst; een rechtstreekse aanduiding boven elke betrokken rijstrook kan zonder F89."
       },
       "EN": {
-        "question": "What road situation does this sign announce?",
+        "question": "Which statement about this sign is correct?",
         "choices": [
           {
-            "text": "Each lane has its own speed limit — the limit above your lane applies to you for the indicated distance",
+            "text": "The shown rule or danger applies only to the relevant lane or lanes on a multi-lane same-direction carriageway.",
             "is_correct": true
           },
           {
-            "text": "Each lane has its own speed limit — the limit above your lane applies to you without a distance indication",
+            "text": "Every shown rule automatically applies to every lane.",
             "is_correct": false
           },
           {
-            "text": "A special lane regulation is in force — read and follow the sign exactly",
+            "text": "F89 may be used only for speed limits.",
             "is_correct": false
           }
         ],
-        "explanation": "F89 shows lane-specific maximum speeds for a specific distance. The difference from F91 is that F89 always includes a distance indicator."
+        "explanation": "F89 is used on a carriageway with several lanes in the same direction. The dangers or rules shown apply only to the lanes under them. F89 itself may not be placed above the carriageway; direct signs above the relevant lanes may be used without F89."
       },
       "FR": {
-        "question": "Quelle situation routière ce panneau annonce-t-il?",
+        "question": "Quelle affirmation concernant ce panneau est correcte ?",
         "choices": [
           {
-            "text": "Chaque voie a sa propre limite de vitesse — la limite au-dessus de votre voie s'applique à vous pour la distance indiquée",
+            "text": "La règle ou le danger représenté ne concerne que la ou les bandes visées sur une chaussée à plusieurs bandes dans le même sens.",
             "is_correct": true
           },
           {
-            "text": "Chaque voie a sa propre limite de vitesse — la limite s'applique sans indication de distance",
+            "text": "Chaque règle représentée s'applique automatiquement à toutes les bandes.",
             "is_correct": false
           },
           {
-            "text": "Une réglementation spéciale de voie est en vigueur — lisez et suivez le panneau exactement",
+            "text": "F89 ne peut servir qu'aux limitations de vitesse.",
             "is_correct": false
           }
         ],
-        "explanation": "F89 affiche des vitesses maximales spécifiques par voie pour une distance définie. La différence avec F91 est que F89 inclut toujours un indicateur de distance."
+        "explanation": "F89 est utilisé sur une chaussée comportant plusieurs bandes dans le même sens. Les dangers ou règles représentés ne s'appliquent qu'aux bandes concernées. F89 ne peut pas être placé au-dessus de la chaussée; des signaux directs au-dessus des bandes peuvent être utilisés sans F89."
       },
       "AR": {
-        "question": "ما الوضع الذي تُعلن عنه هذه العلامة المرورية؟",
+        "question": "أي عبارة عن هذه العلامة صحيحة؟",
         "choices": [
           {
-            "text": "لكل مسار حد سرعة خاص — يسري الحد فوق مسارك عليك للمسافة المحددة",
+            "text": "تسري القاعدة أو الخطر المعروض فقط على المسار أو المسارات المعنية في طريق متعدد المسارات بالاتجاه نفسه.",
             "is_correct": true
           },
           {
-            "text": "لكل مسار حد سرعة خاص بدون ذكر مسافة",
+            "text": "تسري كل قاعدة معروضة تلقائيًا على جميع المسارات.",
             "is_correct": false
           },
           {
-            "text": "تنظيم خاص لمسار بعينه — اقرأ واتبع العلامة المرورية بدقة",
+            "text": "لا تُستخدم F89 إلا لحدود السرعة.",
             "is_correct": false
           }
         ],
-        "explanation": "F89 تعرض حدود سرعة خاصة بكل مسار لمسافة محددة. الفرق عن F91 أن F89 تتضمن دائمًا مؤشر مسافة."
+        "explanation": "تُستخدم F89 على طريق يضم عدة مسارات في الاتجاه نفسه. لا تسري الأخطار أو القواعد المعروضة إلا على المسارات المقابلة لها. ولا توضع لوحة F89 نفسها فوق الطريق، إذ يمكن وضع العلامات مباشرة فوق المسارات المعنية من دون F89."
       }
     }
   },
@@ -214,76 +250,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat moet u doen bij F89?",
+        "question": "Wat is de juiste reactie wanneer u dit bord nadert?",
         "choices": [
           {
-            "text": "De maximumsnelheid boven uw rijstrook respecteren — andere rijstroken kunnen gelijktijdig andere limieten hebben die voor u niet gelden",
+            "text": "Bepaal welke aankondiging bij uw rijstrook hoort en pas uw rijstrookkeuze en rijgedrag tijdig en veilig aan.",
             "is_correct": true
           },
           {
-            "text": "De hoogste aangegeven snelheid op het bord hanteren — die geldt voor alle rijstroken gelijkelijk",
+            "text": "Volg alleen de strengste afgebeelde regel, ongeacht uw rijstrook.",
             "is_correct": false
           },
           {
-            "text": "Zelf beslissen welke rijstrooklimiet het best van toepassing is op uw rijsituatie",
+            "text": "Wissel onmiddellijk van rijstrook zonder op het overige verkeer te letten.",
             "is_correct": false
           }
         ],
-        "explanation": "Bij F89 geldt de limiet boven uw eigen rijstrook. Andere rijstroken kunnen tegelijkertijd hogere of lagere limieten tonen. Alleen de limiet boven uw rijstrook is voor u bindend."
+        "explanation": "Lees elke pijl afzonderlijk, controleer welke regel voor uw rijstrook wordt aangekondigd en wissel alleen tijdig en veilig van rijstrook wanneer dat is toegestaan."
       },
       "EN": {
-        "question": "What must you do at F89?",
+        "question": "What is the correct response when approaching this sign?",
         "choices": [
           {
-            "text": "Respect the maximum speed above your lane — other lanes may simultaneously have different limits that do not apply to you",
+            "text": "Identify which announcement belongs to your lane and adapt lane choice and driving in good time and safely.",
             "is_correct": true
           },
           {
-            "text": "Use the highest speed shown on the sign — it applies equally to all lanes",
+            "text": "Follow only the strictest displayed rule regardless of your lane.",
             "is_correct": false
           },
           {
-            "text": "Decide for yourself which lane limit best applies to your driving situation",
+            "text": "Change lane immediately without considering other traffic.",
             "is_correct": false
           }
         ],
-        "explanation": "At F89 the limit above your own lane applies. Other lanes may simultaneously show higher or lower limits. Only the limit above your lane is binding for you."
+        "explanation": "Read each arrow separately, identify the rule announced for your lane, and change lane only in good time, safely and where permitted."
       },
       "FR": {
-        "question": "Que devez-vous faire face à F89?",
+        "question": "Quelle est la réaction correcte à l'approche de ce panneau ?",
         "choices": [
           {
-            "text": "Respecter la vitesse maximale au-dessus de votre voie — les autres voies peuvent simultanément avoir des limites différentes qui ne vous concernent pas",
+            "text": "Identifiez l'annonce correspondant à votre bande et adaptez à temps et en sécurité votre choix de bande et votre conduite.",
             "is_correct": true
           },
           {
-            "text": "Utiliser la vitesse la plus élevée indiquée sur le panneau — elle s'applique également à toutes les voies",
+            "text": "Suivez uniquement la règle la plus stricte, quelle que soit votre bande.",
             "is_correct": false
           },
           {
-            "text": "Décider vous-même quelle limite de voie s'applique le mieux à votre situation",
+            "text": "Changez immédiatement de bande sans tenir compte des autres usagers.",
             "is_correct": false
           }
         ],
-        "explanation": "Au F89 la limite au-dessus de votre propre voie s'applique. Les autres voies peuvent simultanément afficher des limites plus élevées ou plus basses. Seule la limite au-dessus de votre voie vous est contraignante."
+        "explanation": "Lisez chaque flèche séparément, identifiez la règle annoncée pour votre bande et ne changez de bande qu'à temps, en sécurité et lorsque cela est permis."
       },
       "AR": {
-        "question": "ماذا يجب أن تفعل عند F89؟",
+        "question": "ما التصرف الصحيح عند الاقتراب من هذه العلامة؟",
         "choices": [
           {
-            "text": "احترام الحد الأقصى فوق مسارك — قد تتضمن المسارات الأخرى حدودًا مختلفة لا تسري عليك",
+            "text": "حدّد الإعلان الخاص بمسارك وعدّل اختيار المسار وسلوك القيادة مبكرًا وبأمان.",
             "is_correct": true
           },
           {
-            "text": "استخدام أعلى سرعة مذكورة — تسري على جميع المسارات",
+            "text": "اتبع أشد قاعدة معروضة بصرف النظر عن مسارك.",
             "is_correct": false
           },
           {
-            "text": "اختيار أي حد مسار تراه مناسبًا بنفسك",
+            "text": "غيّر المسار فورًا من دون مراعاة حركة المرور الأخرى.",
             "is_correct": false
           }
         ],
-        "explanation": "عند F89 يسري الحد فوق مسارك فقط. قد تعرض مسارات أخرى حدودًا مختلفة. فقط الحد فوق مسارك ملزم لك."
+        "explanation": "اقرأ كل سهم على حدة، وحدد القاعدة المعلنة لمسارك، ولا تغيّر المسار إلا مبكرًا وبأمان وحيث يسمح بذلك."
       }
     }
   },
@@ -295,76 +331,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U rijdt in de rechterrijstrook; F89 toont een lagere snelheidslimiet boven uw rijstrook dan boven de linkerrijstrook. Geldt de hogere limiet van de linkerrijstrook ook voor u?",
+        "question": "Welke uitspraak over het toepassingsgebied is juist?",
         "choices": [
           {
-            "text": "Neen, de limiet boven uw rijstrook geldt voor u — de hogere limiet van de linkerrijstrook is voor u niet van toepassing",
+            "text": "F89 kondigt de rijstrookgebonden situatie vooraf aan; een weergegeven afstand duidt de afstand tot die situatie aan.",
             "is_correct": true
           },
           {
-            "text": "Ja, de hoogste aangegeven snelheid is ook op u van toepassing",
+            "text": "F89 bepaalt hoe lang een verkeersregel na het bord duurt.",
             "is_correct": false
           },
           {
-            "text": "Ja, de hogere limiet geldt voor alle rijstroken zodra deze op hetzelfde F89-bord staat",
+            "text": "F89 geldt alleen op rijbanen met verkeer in beide richtingen zonder rijstroken.",
             "is_correct": false
           }
         ],
-        "explanation": "Bij F89 is de limiet rijstrookspecifiek. Alleen de limiet boven de rijstrook waarin u rijdt — in dit geval de lagere limiet — is voor u van toepassing."
+        "explanation": "F89 kondigt de rijstrookgebonden situatie vooraf aan; een weergegeven afstand duidt de afstand tot die situatie aan."
       },
       "EN": {
-        "question": "You are in the right lane; F89 shows a lower speed limit above your lane than above the left lane. Does the higher limit of the left lane also apply to you?",
+        "question": "Which statement about its scope is correct?",
         "choices": [
           {
-            "text": "No, the limit above your lane applies to you — the higher limit of the left lane does not apply to you",
+            "text": "F89 announces the lane-specific situation in advance; a displayed distance gives the distance to that situation.",
             "is_correct": true
           },
           {
-            "text": "Yes, the highest indicated speed also applies to you",
+            "text": "F89 states how long a traffic rule lasts after the sign.",
             "is_correct": false
           },
           {
-            "text": "Yes, the higher limit applies to all lanes once shown on the same F89 sign",
+            "text": "F89 applies only on two-way roads without marked lanes.",
             "is_correct": false
           }
         ],
-        "explanation": "Under F89 the limit is lane-specific. Only the limit above the lane you are in — in this case the lower limit — applies to you."
+        "explanation": "F89 announces the lane-specific situation in advance; a displayed distance gives the distance to that situation."
       },
       "FR": {
-        "question": "Vous roulez dans la voie de droite; F89 affiche une limite de vitesse plus basse au-dessus de votre voie qu'au-dessus de la voie de gauche. La limite plus élevée de la voie de gauche s'applique-t-elle aussi à vous?",
+        "question": "Quelle affirmation concernant son champ d'application est correcte ?",
         "choices": [
           {
-            "text": "Non, la limite au-dessus de votre voie s'applique à vous — la limite plus élevée de la voie de gauche ne vous concerne pas",
+            "text": "F89 annonce la situation par bande; une distance affichée indique la distance jusqu'à cette situation.",
             "is_correct": true
           },
           {
-            "text": "Oui, la vitesse la plus élevée indiquée s'applique aussi à vous",
+            "text": "F89 indique la durée d'une réglementation après le panneau.",
             "is_correct": false
           },
           {
-            "text": "Oui, la limite plus élevée s'applique à toutes les voies dès qu'elle figure sur le même panneau F89",
+            "text": "F89 ne s'applique que sur les routes à double sens sans bandes marquées.",
             "is_correct": false
           }
         ],
-        "explanation": "Avec F89 la limite est spécifique à chaque voie. Seule la limite au-dessus de la voie dans laquelle vous roulez — dans ce cas la limite plus basse — vous est applicable."
+        "explanation": "F89 annonce la situation par bande; une distance affichée indique la distance jusqu'à cette situation."
       },
       "AR": {
-        "question": "أنت في المسار الأيمن، F89 تعرض حدًا أدنى فوق مسارك مقارنة بالمسار الأيسر. هل يسري عليك الحد الأعلى؟",
+        "question": "أي عبارة عن نطاق تطبيقها صحيحة؟",
         "choices": [
           {
-            "text": "لا، يسري عليك الحد فوق مسارك — وليس الحد الأعلى للمسار الآخر",
+            "text": "تعلن F89 مسبقًا عن الوضع الخاص بالمسارات، وتوضح المسافة المعروضة البعد إلى ذلك الوضع.",
             "is_correct": true
           },
           {
-            "text": "نعم، أعلى سرعة موضحة تسري عليك أيضًا",
+            "text": "تحدد F89 مدة سريان قاعدة المرور بعد العلامة.",
             "is_correct": false
           },
           {
-            "text": "نعم، الحد الأعلى يسري على جميع المسارات في نفس F89",
+            "text": "تسري F89 فقط على طرق باتجاهين من دون مسارات محددة.",
             "is_correct": false
           }
         ],
-        "explanation": "في F89 الحد خاص بكل مسار. يسري عليك فقط الحد فوق مسارك الحالي."
+        "explanation": "تعلن F89 مسبقًا عن الوضع الخاص بالمسارات، وتوضح المسافة المعروضة البعد إلى ذلك الوضع."
       }
     }
   },
@@ -376,73 +412,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat is het verschil tussen F89 en F91?",
+        "question": "Welk onderscheid is juridisch en praktisch juist?",
         "choices": [
           {
-            "text": "F89 toont de maximumsnelheid per rijstrook mét afstandsaanduiding; F91 toont de maximumsnelheid per rijstrook zónder afstandsaanduiding",
+            "text": "F89 is de vooraankondiging; F91 duidt het rijstrookgebonden gevaar aan of schrijft de regel voor waar die geldt.",
             "is_correct": true
           },
           {
-            "text": "F89 geldt uitsluitend op autosnelwegen; F91 geldt op alle wegen",
+            "text": "F89 en F91 mogen allebei alleen boven de rijbaan worden geplaatst.",
             "is_correct": false
           },
           {
-            "text": "F89 is bindend; F91 is louter adviserend",
+            "text": "F89 betreft alleen snelheid en F91 alleen parkeren.",
             "is_correct": false
           }
         ],
-        "explanation": "Het enige inhoudelijke verschil is de afstandsaanduiding: F89 vermeldt de afstand waarbinnen de limiet geldt; F91 heeft geen afstandsaanduiding. Beide zijn bindend."
+        "explanation": "F89 is de vooraankondiging; F91 duidt het rijstrookgebonden gevaar aan of schrijft de regel voor waar die geldt."
       },
       "EN": {
-        "question": "What is the difference between F89 and F91?",
+        "question": "Which legal and practical distinction is correct?",
         "choices": [
           {
-            "text": "F89 shows the maximum speed per lane WITH a distance indication; F91 shows the maximum speed per lane WITHOUT a distance indication",
+            "text": "F89 is the advance sign; F91 indicates the lane-specific danger or prescribes the rule where it applies.",
             "is_correct": true
           },
           {
-            "text": "F89 applies only on motorways; F91 applies on all roads",
+            "text": "F89 and F91 may both be placed only above the carriageway.",
             "is_correct": false
           },
           {
-            "text": "F89 is mandatory; F91 is merely advisory",
+            "text": "F89 concerns only speed and F91 only parking.",
             "is_correct": false
           }
         ],
-        "explanation": "The only substantive difference is the distance indication: F89 states the distance for which the limit applies; F91 has no distance indication. Both are mandatory."
+        "explanation": "F89 is the advance sign; F91 indicates the lane-specific danger or prescribes the rule where it applies."
       },
       "FR": {
-        "question": "Quelle est la différence entre F89 et F91?",
+        "question": "Quelle distinction juridique et pratique est correcte ?",
         "choices": [
           {
-            "text": "F89 affiche la vitesse maximale par voie AVEC indication de distance; F91 affiche la vitesse maximale par voie SANS indication de distance",
+            "text": "F89 est le préavis; F91 indique le danger ou prescrit la règle par bande à l'endroit où elle s'applique.",
             "is_correct": true
           },
           {
-            "text": "F89 s'applique uniquement sur les autoroutes; F91 sur toutes les routes",
+            "text": "F89 et F91 doivent tous deux être placés uniquement au-dessus de la chaussée.",
             "is_correct": false
           },
           {
-            "text": "F89 est obligatoire; F91 est seulement indicatif",
+            "text": "F89 concerne seulement la vitesse et F91 seulement le stationnement.",
             "is_correct": false
           }
         ],
-        "explanation": "La seule différence substantielle est l'indication de distance: F89 mentionne la distance pour laquelle la limite s'applique; F91 n'a pas d'indication de distance. Les deux sont obligatoires."
+        "explanation": "F89 est le préavis; F91 indique le danger ou prescrit la règle par bande à l'endroit où elle s'applique."
       },
       "AR": {
-        "question": "ما الفرق بين F89 و F91؟",
+        "question": "أي تمييز قانوني وعملي صحيح؟",
         "choices": [
           {
-            "text": "F89 تعرض الحد الأقصى مع ذكر المسافة؛ F91 تعرضه دون ذكر مسافة",
+            "text": "F89 إعلان مسبق، بينما تبين F91 الخطر أو تفرض القاعدة الخاصة بالمسار في موضع سريانها.",
             "is_correct": true
           },
           {
-            "text": "F89 للطرق السريعة فقط؛ F91 لجميع الطرق",
+            "text": "لا توضع F89 وF91 إلا فوق الطريق.",
             "is_correct": false
           },
-          { "text": "F89 إلزامية؛ F91 إرشادية فقط", "is_correct": false }
+          {
+            "text": "تختص F89 بالسرعة فقط وتختص F91 بالركن فقط.",
+            "is_correct": false
+          }
         ],
-        "explanation": "الفرق الوحيد هو ذكر المسافة: F89 تذكر المسافة، F91 لا تذكرها. كلتاهما ملزمتان."
+        "explanation": "F89 إعلان مسبق، بينما تبين F91 الخطر أو تفرض القاعدة الخاصة بالمسار في موضع سريانها."
       }
     }
   },
@@ -454,60 +493,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U rijdt in de linkerrijstrook. F89 toont een hogere snelheidslimiet boven uw rijstrook dan boven de rechterrijstrook. Mag u de hogere limiet die boven uw rijstrook staat rijden?",
+        "question": "Kan een gevaar of regel rechtstreeks boven de betrokken rijstrook worden aangekondigd zonder een apart F89-bord?",
         "choices": [
           {
-            "text": "Ja, de limiet boven uw rijstrook is de maximumsnelheid die voor u van toepassing is",
+            "text": "Ja",
             "is_correct": true
           },
           {
-            "text": "Neen, u moet de laagste aangegeven limiet op het bord aanhouden ongeacht uw rijstrook",
+            "text": "Neen",
             "is_correct": false
           }
         ],
-        "explanation": "Bij F89 geldt de limiet boven uw rijstrook. Als u in de linkerrijstrook rijdt en de hogere limiet staat boven die rijstrook, dan geldt die hogere limiet voor u. U hoeft niet de laagste limiet op het bord te respecteren."
+        "explanation": "Ja. De officiële regeling laat een rechtstreekse aanduiding boven de betrokken rijstrook toe zonder F89."
       },
       "EN": {
-        "question": "You are in the left lane. F89 shows a higher speed limit above your lane than above the right lane. May you drive at the higher limit shown above your lane?",
+        "question": "May a danger or rule be announced directly above the relevant lane without a separate F89 sign?",
         "choices": [
           {
-            "text": "Yes, the limit above your lane is the maximum speed that applies to you",
+            "text": "Yes",
             "is_correct": true
           },
           {
-            "text": "No, you must observe the lowest indicated limit on the sign regardless of your lane",
+            "text": "No",
             "is_correct": false
           }
         ],
-        "explanation": "Under F89 the limit above your lane applies. If you are in the left lane and the higher limit is shown above that lane, then that higher limit applies to you. You do not need to observe the lowest limit on the sign."
+        "explanation": "Yes. The official rules allow direct signs above the relevant lane without F89."
       },
       "FR": {
-        "question": "Vous roulez dans la voie de gauche. F89 affiche une limite de vitesse plus élevée au-dessus de votre voie qu'au-dessus de la voie de droite. Pouvez-vous rouler à la limite plus élevée indiquée au-dessus de votre voie?",
+        "question": "Un danger ou une règle peut-il être annoncé directement au-dessus de la bande concernée sans signal F89 distinct ?",
         "choices": [
           {
-            "text": "Oui, la limite au-dessus de votre voie est la vitesse maximale qui s'applique à vous",
+            "text": "Oui",
             "is_correct": true
           },
           {
-            "text": "Non, vous devez respecter la limite la plus basse indiquée sur le panneau quelle que soit votre voie",
+            "text": "Non",
             "is_correct": false
           }
         ],
-        "explanation": "Avec F89 la limite au-dessus de votre voie s'applique. Si vous êtes dans la voie de gauche et que la limite plus élevée est indiquée au-dessus de cette voie, cette limite plus élevée vous est applicable."
+        "explanation": "Oui. La réglementation autorise une indication directe au-dessus de la bande concernée sans F89."
       },
       "AR": {
-        "question": "أنت في المسار الأيسر. F89 تعرض حدًا أعلى فوق مسارك مقارنة بالمسار الأيمن. هل يجوز السير بالحد الأعلى فوق مسارك؟",
+        "question": "هل يمكن الإعلان عن خطر أو قاعدة مباشرة فوق المسار المعني من دون لوحة F89 مستقلة؟",
         "choices": [
           {
-            "text": "نعم، الحد فوق مسارك هو الحد الأقصى المطبّق عليك",
+            "text": "نعم",
             "is_correct": true
           },
           {
-            "text": "لا، يجب احترام أدنى حد مذكور بصرف النظر عن مسارك",
+            "text": "لا",
             "is_correct": false
           }
         ],
-        "explanation": "في F89 يسري الحد فوق مسارك. إذا كنت في المسار الأيسر وكان الحد الأعلى فوق ذلك المسار، فهذا الحد الأعلى يسري عليك."
+        "explanation": "نعم. تسمح القواعد الرسمية بوضع العلامة مباشرة فوق المسار المعني من دون F89."
       }
     }
   },
@@ -519,60 +558,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U rijdt in een rijstrook met een lagere F89-limiet en wisselt naar een naastliggende rijstrook met een hogere F89-limiet. Geldt de hogere limiet van uw nieuwe rijstrook nu voor u?",
+        "question": "Moet een snelheidsgetal dat op F89 boven één pijl staat door alle andere rijstroken uitsluitend wegens dat bord worden gevolgd?",
         "choices": [
           {
-            "text": "Ja, de maximumsnelheid boven de rijstrook waarin u zich nu bevindt is voor u van toepassing",
-            "is_correct": true
+            "text": "Ja",
+            "is_correct": false
           },
           {
-            "text": "Neen, de limiet van uw vorige rijstrook blijft gelden tot het einde van de F89-zone",
-            "is_correct": false
+            "text": "Neen",
+            "is_correct": true
           }
         ],
-        "explanation": "Bij F89 bepaalt uw huidige rijstrook welke limiet voor u geldt. Zodra u naar een andere rijstrook rijdt, geldt de limiet boven die nieuwe rijstrook voor u."
+        "explanation": "Neen. Bij F89 geldt de afgebeelde aankondiging alleen voor de rijstrook of rijstroken waarop zij betrekking heeft."
       },
       "EN": {
-        "question": "You move from a lane with a lower F89 limit to an adjacent lane with a higher F89 limit. Does the higher limit of your new lane now apply to you?",
+        "question": "Must a speed shown on F89 above one arrow be followed by all other lanes solely because of that sign?",
         "choices": [
           {
-            "text": "Yes, the maximum speed above the lane you are now in applies to you",
-            "is_correct": true
+            "text": "Yes",
+            "is_correct": false
           },
           {
-            "text": "No, your previous lane's limit continues to apply until the end of the F89 zone",
-            "is_correct": false
+            "text": "No",
+            "is_correct": true
           }
         ],
-        "explanation": "Under F89 your current lane determines which limit applies to you. Once you move to a different lane, the limit above that new lane applies to you."
+        "explanation": "No. Under F89, the displayed announcement applies only to the lane or lanes concerned."
       },
       "FR": {
-        "question": "Vous passez d'une voie avec une limite F89 plus basse à une voie adjacente avec une limite F89 plus élevée. La limite plus élevée de votre nouvelle voie s'applique-t-elle maintenant à vous?",
+        "question": "Une vitesse affichée sur F89 au-dessus d'une flèche s'impose-t-elle à toutes les autres bandes du seul fait de ce panneau ?",
         "choices": [
           {
-            "text": "Oui, la vitesse maximale au-dessus de la voie dans laquelle vous vous trouvez maintenant s'applique à vous",
-            "is_correct": true
+            "text": "Oui",
+            "is_correct": false
           },
           {
-            "text": "Non, la limite de votre voie précédente continue de s'appliquer jusqu'à la fin de la zone F89",
-            "is_correct": false
+            "text": "Non",
+            "is_correct": true
           }
         ],
-        "explanation": "Avec F89 votre voie actuelle détermine quelle limite s'applique à vous. Dès que vous changez de voie, la limite au-dessus de cette nouvelle voie vous est applicable."
+        "explanation": "Non. Avec F89, l'annonce représentée ne concerne que la ou les bandes visées."
       },
       "AR": {
-        "question": "انتقلت من مسار بحد F89 أدنى إلى مسار مجاور بحد أعلى. هل يسري عليك الحد الأعلى لمسارك الجديد؟",
+        "question": "هل يجب أن تتبع جميع المسارات رقم سرعة يظهر على F89 فوق سهم واحد لمجرد وجود هذه العلامة؟",
         "choices": [
           {
-            "text": "نعم، الحد الأقصى فوق المسار الذي تسير فيه الآن يسري عليك",
-            "is_correct": true
+            "text": "نعم",
+            "is_correct": false
           },
           {
-            "text": "لا، يستمر حد مسارك السابق حتى نهاية منطقة F89",
-            "is_correct": false
+            "text": "لا",
+            "is_correct": true
           }
         ],
-        "explanation": "في F89 يحدد مسارك الحالي الحد المطبّق. بمجرد الانتقال إلى مسار جديد يسري عليك حد ذلك المسار."
+        "explanation": "لا. لا يسري الإعلان المعروض في F89 إلا على المسار أو المسارات المعنية."
       }
     }
   }

@@ -10,70 +10,73 @@
         "question": "Wat betekent dit verkeersbord?",
         "choices": [
           {
-            "text": "Aankondiging van een omleiding: een omleidingsroute zal verderop worden aangegeven",
+            "text": "Een voorwegwijzer die een omlegging aankondigt omdat de normale reisweg verderop niet kan worden gevolgd.",
             "is_correct": true
           },
           {
-            "text": "Voorwegwijzer uitwijking: een alternatieve uitrit of omleidingsroute is iets verderop beschikbaar",
+            "text": "Een voorwegwijzer die uitsluitend een rijstrookvermindering bij werken aankondigt.",
             "is_correct": false
           },
           {
-            "text": "Tijdelijke rijstrookverdeling met afstandsaanduiding: de weg is tijdelijk herverdeeld",
+            "text": "Een bord dat de plaats van een vluchthaven in een tunnel aanduidt.",
             "is_correct": false
           }
         ],
-        "explanation": "F39 kondigt op voorhand een omleiding aan. De doorgaande weg is op dit punt niet noodzakelijk al afgesloten maar de bestuurder wordt gewaarschuwd dat hij verderop een omleidingsroute zal moeten volgen of aantreffen."
+        "explanation": "F39 kondigt nabij het begin van een omlegging aan dat de normale reisweg niet kan worden gevolgd."
       },
       "EN": {
         "question": "What does this traffic sign mean?",
         "choices": [
           {
-            "text": "Advance announcement of a diversion: a diversion route will be indicated further ahead",
+            "text": "An advance sign announcing a diversion because the normal route cannot be followed further ahead.",
             "is_correct": true
           },
           {
-            "text": "Advance diversion sign: an alternative exit or diversion route is available a little further ahead",
+            "text": "An advance sign used only to announce a lane reduction at roadworks.",
             "is_correct": false
           },
           {
-            "text": "Temporary lane division with distance indication: the road has been temporarily redistributed",
+            "text": "A sign marking an emergency refuge bay in a tunnel.",
             "is_correct": false
           }
         ],
-        "explanation": "F39 announces a diversion in advance. The through road is not necessarily already closed at this point, but the driver is warned that a diversion route will need to be followed or will be encountered further ahead."
+        "explanation": "F39 announces near the start of a diversion that the normal route cannot be followed."
       },
       "FR": {
-        "question": "Que signifie ce panneau de signalisation?",
+        "question": "Que signifie ce panneau de signalisation ?",
         "choices": [
           {
-            "text": "Annonce d'une déviation: un itinéraire de déviation sera indiqué plus loin",
+            "text": "Un signal de préavis annonçant une déviation parce que l'itinéraire normal ne peut pas être suivi plus loin.",
             "is_correct": true
           },
           {
-            "text": "Pré-signalisation de déviation: une sortie alternative est disponible un peu plus loin",
+            "text": "Un signal de préavis utilisé uniquement pour annoncer une réduction de bandes lors de travaux.",
             "is_correct": false
           },
           {
-            "text": "Répartition temporaire des voies avec indication de distance",
+            "text": "Un signal indiquant l'emplacement d'un refuge d'urgence dans un tunnel.",
             "is_correct": false
           }
         ],
-        "explanation": "F39 annonce préalablement une déviation. La route principale n'est pas nécessairement déjà fermée à ce point, mais le conducteur est averti qu'un itinéraire de déviation sera à suivre plus loin."
+        "explanation": "F39 annonce, à proximité du début d'une déviation, que l'itinéraire normal ne peut pas être suivi."
       },
       "AR": {
         "question": "ما معنى هذه العلامة المرورية؟",
         "choices": [
           {
-            "text": "إعلان مسبق عن تحويلة: سيتم الإشارة إلى مسار التحويلة لاحقًا",
+            "text": "علامة تمهيدية تعلن عن تحويلة لأن المسار المعتاد لا يمكن متابعته في الأمام.",
             "is_correct": true
           },
           {
-            "text": "إعلان مسبق عن تحويلة: يوجد مسار بديل لاحقًا",
+            "text": "علامة تمهيدية مخصصة فقط للإعلان عن نقص عدد المسارات عند الأشغال.",
             "is_correct": false
           },
-          { "text": "توزيع مؤقت للمسارات مع ذكر المسافة", "is_correct": false }
+          {
+            "text": "علامة تحدد موقع جيب لجوء للطوارئ داخل نفق.",
+            "is_correct": false
+          }
         ],
-        "explanation": "F39 تُعلن مسبقًا عن تحويلة. الطريق ليس بالضرورة مغلقًا بعد، لكن يجب التأهب لاتباع مسار التحويلة."
+        "explanation": "تعلن F39 قرب بداية التحويلة أن المسار المعتاد لا يمكن متابعته."
       }
     }
   },
@@ -85,40 +88,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Tot welke categorie verkeersborden behoort dit bord?",
+        "question": "Tot welke inhoudscategorie behoort dit bord binnen ReadyRoad?",
         "choices": [
-          { "text": "Wegbeheersingstekens", "is_correct": true },
-          { "text": "Gevaarsborden", "is_correct": false },
-          { "text": "Gebodsborden", "is_correct": false }
+          {
+            "text": "Wegbeheer en rijstrooksignalisatie",
+            "is_correct": true
+          },
+          {
+            "text": "Voorrangsborden",
+            "is_correct": false
+          },
+          {
+            "text": "Parkeerborden",
+            "is_correct": false
+          }
         ],
-        "explanation": "F39 behoort tot deze categorie. De omleidingsaankondiging is bindend: de bestuurder moet de aangekondigde omleidingsroute volgen of een wettelijk toegankelijk alternatief gebruiken."
+        "explanation": "Binnen ReadyRoad is dit bord onder ROAD_MANAGEMENT ingedeeld. De concrete betekenis blijft die van het afgebeelde officiële F-bord."
       },
       "EN": {
-        "question": "To which category of traffic signs does this sign belong?",
+        "question": "Which ReadyRoad content category contains this sign?",
         "choices": [
-          { "text": "Road management signs", "is_correct": true },
-          { "text": "Danger signs", "is_correct": false },
-          { "text": "Mandatory signs", "is_correct": false }
+          {
+            "text": "Road management and lane-control signs",
+            "is_correct": true
+          },
+          {
+            "text": "Priority signs",
+            "is_correct": false
+          },
+          {
+            "text": "Parking signs",
+            "is_correct": false
+          }
         ],
-        "explanation": "F39 belongs to this category. The diversion announcement is binding: the driver must follow the announced diversion route or use a legally accessible alternative."
+        "explanation": "ReadyRoad classifies this sign under ROAD_MANAGEMENT. Its actual meaning remains that of the official F sign shown."
       },
       "FR": {
-        "question": "À quelle catégorie de panneaux appartient ce panneau?",
+        "question": "Dans quelle catégorie de contenu ReadyRoad ce panneau est-il classé ?",
         "choices": [
-          { "text": "Panneaux de gestion de la route", "is_correct": true },
-          { "text": "Panneaux de danger", "is_correct": false },
-          { "text": "Panneaux d'obligation", "is_correct": false }
+          {
+            "text": "Gestion de la route et signalisation par bande",
+            "is_correct": true
+          },
+          {
+            "text": "Signaux de priorité",
+            "is_correct": false
+          },
+          {
+            "text": "Signaux de stationnement",
+            "is_correct": false
+          }
         ],
-        "explanation": "F39 appartient à cette catégorie. L'annonce de déviation est contraignante."
+        "explanation": "ReadyRoad classe ce panneau dans ROAD_MANAGEMENT. Sa signification concrète reste celle du signal F officiel représenté."
       },
       "AR": {
-        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
+        "question": "ضمن أي فئة محتوى في ReadyRoad تندرج هذه العلامة؟",
         "choices": [
-          { "text": "علامات إدارة الطريق", "is_correct": true },
-          { "text": "علامات الخطر", "is_correct": false },
-          { "text": "العلامات الإلزامية", "is_correct": false }
+          {
+            "text": "إدارة الطريق وتنظيم المسارات",
+            "is_correct": true
+          },
+          {
+            "text": "علامات الأولوية",
+            "is_correct": false
+          },
+          {
+            "text": "علامات الوقوف والركن",
+            "is_correct": false
+          }
         ],
-        "explanation": "F39 تنتمي إلى هذه الفئة. إعلان التحويلة ملزم."
+        "explanation": "يصنّف ReadyRoad هذه العلامة ضمن ROAD_MANAGEMENT، وتبقى دلالتها الفعلية هي دلالة علامة F الرسمية المعروضة."
       }
     }
   },
@@ -130,73 +169,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Welke wegsituatie kondigt dit bord aan?",
+        "question": "Welke uitspraak over dit bord is juist?",
         "choices": [
           {
-            "text": "Een omleiding is verderop op de weg van kracht — de weg wordt verderop onderbroken of vereist een omleidingsroute; de weg is op dit punt niet noodzakelijk al afgesloten",
+            "text": "F39 wordt nabij het begin van een omlegging geplaatst wanneer de normale reisweg niet kan worden gevolgd.",
             "is_correct": true
           },
           {
-            "text": "Een alternatieve uitrit is iets verderop beschikbaar — de doorgaande weg is niet noodzakelijk afgesloten",
+            "text": "F39 wordt alleen geplaatst waar een rijstrook onmiddellijk eindigt.",
             "is_correct": false
           },
           {
-            "text": "De weg is tijdelijk herverdeeld — volg de tijdelijke rijstrookindeling voor de aangegeven afstand",
+            "text": "F39 maakt een weg permanent tot eenrichtingsweg.",
             "is_correct": false
           }
         ],
-        "explanation": "F39 is een vooraankondiging. Op het punt van het bord is de weg nog niet per se afgesloten; de bestuurder moet zich echter voorbereiden op een omleidingsroute verderop of een wettelijk toegankelijk alternatief zoeken."
+        "explanation": "Dit is een voorwegwijzer voor een omlegging. Het bord toont vooraf hoe het verkeer rond de onderbroken normale reisweg wordt geleid; de verdere route wordt met omleggingswegwijzers en andere tijdelijke signalisatie verduidelijkt."
       },
       "EN": {
-        "question": "What road situation does this sign announce?",
+        "question": "Which statement about this sign is correct?",
         "choices": [
           {
-            "text": "A diversion is in force further ahead — the road will be interrupted or requires a diversion route; the road is not necessarily already closed at this point",
+            "text": "F39 is placed near the start of a diversion when the normal route cannot be followed.",
             "is_correct": true
           },
           {
-            "text": "An alternative exit is available a little further ahead — the through road is not necessarily closed",
+            "text": "F39 is placed only where a lane ends immediately.",
             "is_correct": false
           },
           {
-            "text": "The road has been temporarily redistributed — follow the temporary lane layout for the indicated distance",
+            "text": "F39 permanently turns the road into a one-way road.",
             "is_correct": false
           }
         ],
-        "explanation": "F39 is an advance warning. At the sign location the road is not yet necessarily closed; however the driver must prepare to follow a diversion route further ahead or seek a legally accessible alternative."
+        "explanation": "This is an advance direction sign for a diversion. It shows in advance how traffic is guided around the interrupted normal route; further diversion direction signs and temporary traffic control clarify the route."
       },
       "FR": {
-        "question": "Quelle situation routière ce panneau annonce-t-il?",
+        "question": "Quelle affirmation concernant ce panneau est correcte ?",
         "choices": [
           {
-            "text": "Une déviation est en vigueur plus loin — la route sera interrompue; la route n’est pas nécessairement déjà fermée à ce point",
+            "text": "F39 est placé à proximité du début d'une déviation lorsque l'itinéraire normal ne peut pas être suivi.",
             "is_correct": true
           },
           {
-            "text": "Une sortie alternative est disponible un peu plus loin — la route principale n'est pas nécessairement fermée",
+            "text": "F39 est placé uniquement à l'endroit où une bande se termine immédiatement.",
             "is_correct": false
           },
           {
-            "text": "La route a été temporairement réorganisée — suivez la disposition temporaire des voies",
+            "text": "F39 transforme définitivement la chaussée en voie à sens unique.",
             "is_correct": false
           }
         ],
-        "explanation": "F39 est un avertissement préalable. À l'emplacement du panneau, la route n'est pas encore nécessairement fermée; cependant le conducteur doit se préparer à suivre un itinéraire de déviation plus loin."
+        "explanation": "Il s'agit d'un signal de préavis relatif à une déviation. Il montre à l'avance comment la circulation contourne l'itinéraire normal interrompu; les signaux de direction de la déviation et la signalisation temporaire précisent ensuite le trajet."
       },
       "AR": {
-        "question": "ما الوضع الذي تُعلن عنه هذه العلامة المرورية؟",
+        "question": "أي عبارة عن هذه العلامة صحيحة؟",
         "choices": [
           {
-            "text": "تحويلة ستكون سارية أمامك — الطريق ليس بالضرورة مغلقًا بعد",
+            "text": "توضع F39 قرب بداية التحويلة عندما يتعذر اتباع المسار المعتاد.",
             "is_correct": true
           },
           {
-            "text": "مخرج بديل متاح قريبًا — الطريق الرئيسي ليس مغلقًا",
+            "text": "توضع F39 فقط حيث ينتهي مسار فورًا.",
             "is_correct": false
           },
-          { "text": "الطريق معاد توزيعه مؤقتًا", "is_correct": false }
+          {
+            "text": "تحوّل F39 الطريق بصورة دائمة إلى طريق باتجاه واحد.",
+            "is_correct": false
+          }
         ],
-        "explanation": "F39 تحذير مسبق. عند العلامة المرورية الطريق ليس مغلقًا بعد؛ لكن يجب الاستعداد لاتباع مسار التحويلة."
+        "explanation": "هذه علامة اتجاه تمهيدية لتحويلة، تعرض مسبقًا كيفية توجيه المرور حول المسار المعتاد المنقطع، ثم توضّح علامات مسار التحويلة والإشارات المؤقتة اللاحقة الطريق الواجب اتباعه."
       }
     }
   },
@@ -208,76 +250,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat moet u doen wanneer u F39 ziet?",
+        "question": "Wat is de juiste reactie wanneer u dit bord nadert?",
         "choices": [
           {
-            "text": "Voorbereiden om de aangekondigde omleidingsroute te volgen — of een wettelijk toegankelijke alternatieve route zoeken als die beschikbaar is",
+            "text": "Lees de route-informatie, positioneer u tijdig en volg de daaropvolgende omleggings- en afsluitingsborden.",
             "is_correct": true
           },
           {
-            "text": "Onmiddellijk omkeren — de weg voor u is nu al afgesloten",
+            "text": "Stop onmiddellijk naast het bord, ook wanneer het verkeer kan doorrijden.",
             "is_correct": false
           },
           {
-            "text": "Verder rijden en wachten op expliciete stopborden voordat u actie onderneemt",
+            "text": "Negeer alle volgende tijdelijke borden zodra u F39 hebt gezien.",
             "is_correct": false
           }
         ],
-        "explanation": "F39 is een advance warning: de bestuurder moet zich mentaal en rijdynamisch voorbereiden op de omleiding. Als er een wettelijk toegankelijke alternatieve route beschikbaar is, mag die worden gebruikt in plaats van de aangekondigde omleidingsroute. Niet de weg op blijven rijden zonder voorbereiding."
+        "explanation": "Lees de bestemmingen en pijlen, kies tijdig de passende rijstrook en volg de verdere omleggings- en afsluitingssignalisatie. Leid uit F39 alleen niet af dat de afsluiting exact ter hoogte van dit bord begint."
       },
       "EN": {
-        "question": "What must you do when you see F39?",
+        "question": "What is the correct response when approaching this sign?",
         "choices": [
           {
-            "text": "Prepare to follow the announced diversion route — or seek a legally accessible alternative route if one is available",
+            "text": "Read the route information, position yourself in good time and follow the later diversion and closure signs.",
             "is_correct": true
           },
           {
-            "text": "Turn around immediately — the road ahead is already closed",
+            "text": "Stop immediately beside the sign even when traffic can continue.",
             "is_correct": false
           },
           {
-            "text": "Continue driving and wait for explicit stop signs before taking action",
+            "text": "Ignore all later temporary signs once you have seen F39.",
             "is_correct": false
           }
         ],
-        "explanation": "F39 is an advance warning: the driver must prepare mentally and dynamically for the diversion. If a legally accessible alternative route is available, it may be used instead of the announced diversion. Do not continue without preparation."
+        "explanation": "Read the destinations and arrows, choose the appropriate lane in good time and follow the subsequent diversion and closure signs. Do not infer from F39 alone that the closure starts exactly at the sign."
       },
       "FR": {
-        "question": "Que devez-vous faire lorsque vous voyez F39?",
+        "question": "Quelle est la réaction correcte à l'approche de ce panneau ?",
         "choices": [
           {
-            "text": "Vous préparer à suivre l'itinéraire de déviation annoncé — ou chercher un itinéraire alternatif légalement accessible s'il en existe un",
+            "text": "Lisez l'itinéraire, placez-vous à temps et suivez les signaux ultérieurs de déviation et de fermeture.",
             "is_correct": true
           },
           {
-            "text": "Faire demi-tour immédiatement — la route devant vous est déjà fermée",
+            "text": "Arrêtez-vous immédiatement à côté du panneau même si la circulation peut continuer.",
             "is_correct": false
           },
           {
-            "text": "Continuer à rouler et attendre des panneaux d'arrêt explicites avant d'agir",
+            "text": "Ignorez tous les signaux temporaires suivants dès que vous avez vu F39.",
             "is_correct": false
           }
         ],
-        "explanation": "F39 est un avertissement préalable: le conducteur doit se préparer mentalement à la déviation. S'il existe un itinéraire alternatif légalement accessible, il peut être utilisé à la place."
+        "explanation": "Lisez les destinations et les flèches, placez-vous à temps dans la bande appropriée et suivez la signalisation ultérieure de déviation et de fermeture. F39 seul ne signifie pas que la fermeture commence exactement au panneau."
       },
       "AR": {
-        "question": "ماذا يجب أن تفعل عند رؤية F39؟",
+        "question": "ما التصرف الصحيح عند الاقتراب من هذه العلامة؟",
         "choices": [
           {
-            "text": "الاستعداد لاتباع مسار التحويلة أو البحث عن بديل مشروع",
+            "text": "اقرأ معلومات المسار، وتموضع مبكرًا، واتبع علامات التحويلة والإغلاق اللاحقة.",
             "is_correct": true
           },
           {
-            "text": "الاستدارة فورًا — الطريق مغلوق بالفعل",
+            "text": "توقف فورًا بجانب العلامة حتى لو كان السير قادرًا على المتابعة.",
             "is_correct": false
           },
           {
-            "text": "مواصلة السير وانتظار علامات الوقف قبل التصرف",
+            "text": "تجاهل جميع الإشارات المؤقتة اللاحقة بعد رؤية F39.",
             "is_correct": false
           }
         ],
-        "explanation": "F39 تحذير مسبق. يجب التحضُر لاتباع التحويلة أو استخدام بديل مشروع إن وُجد."
+        "explanation": "اقرأ الوجهات والسهام، واختر المسار المناسب مبكرًا، واتبع إشارات التحويلة والإغلاق اللاحقة. لا تستنتج من F39 وحدها أن الإغلاق يبدأ تمامًا عند موضع العلامة."
       }
     }
   },
@@ -289,76 +331,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "F39 kondigt een omleiding aan. U kent een parallelle weg die wettelijk beschikbaar is voor alle verkeer. Mag u die gebruiken in plaats van de omleidingsroute?",
+        "question": "Welke uitspraak over het toepassingsgebied is juist?",
         "choices": [
           {
-            "text": "Ja, F39 kondigt de beschikbaarheid van een omleidingsroute aan maar verplicht u niet die te gebruiken als een wettelijk toegankelijk alternatief beschikbaar is",
+            "text": "F39 kondigt de omlegging vooraf aan; het bord verklaart niet op zichzelf dat de weg precies op die plaats al gesloten is.",
             "is_correct": true
           },
           {
-            "text": "Neen, u bent verplicht de aangekondigde omleidingsroute te volgen zonder uitzondering",
+            "text": "F39 geldt alleen voor vrachtwagens, tenzij een onderbord anders vermeldt.",
             "is_correct": false
           },
           {
-            "text": "Neen, alle doorgaande routes zijn bij een omleidingsbord verboden behalve de aangekondigde omleiding",
+            "text": "F39 heft alle verbods- en gebodsborden op de omleggingsroute op.",
             "is_correct": false
           }
         ],
-        "explanation": "F39 voorziet in een omleidingsroute maar verbiedt geen wettelijk toegankelijke alternatieve routes. Als een parallelle weg open en legaal beschikbaar is voor alle verkeer, mag de bestuurder die gebruiken."
+        "explanation": "F39 kondigt de omlegging vooraf aan; het bord verklaart niet op zichzelf dat de weg precies op die plaats al gesloten is."
       },
       "EN": {
-        "question": "F39 announces a diversion. You know of a parallel road that is legally available for all traffic. May you use it instead of the diversion route?",
+        "question": "Which statement about its scope is correct?",
         "choices": [
           {
-            "text": "Yes, F39 announces the availability of a diversion route but does not require you to use it if a legally accessible alternative is available",
+            "text": "F39 announces the diversion in advance; it does not by itself state that the road is already closed at that exact point.",
             "is_correct": true
           },
           {
-            "text": "No, you are required to follow the announced diversion route without exception",
+            "text": "F39 applies only to goods vehicles unless a supplementary panel says otherwise.",
             "is_correct": false
           },
           {
-            "text": "No, all through routes are prohibited when a diversion sign is present except the announced diversion",
+            "text": "F39 cancels every prohibition and obligation along the diversion route.",
             "is_correct": false
           }
         ],
-        "explanation": "F39 provides a diversion route but does not prohibit legally accessible alternative routes. If a parallel road is open and legally available for all traffic, the driver may use it."
+        "explanation": "F39 announces the diversion in advance; it does not by itself state that the road is already closed at that exact point."
       },
       "FR": {
-        "question": "F39 annonce une déviation. Vous connaissez une route parallèle légalement accessible à tout le trafic. Pouvez-vous l'utiliser à la place de l'itinéraire de déviation?",
+        "question": "Quelle affirmation concernant son champ d'application est correcte ?",
         "choices": [
           {
-            "text": "Oui, F39 annonce la disponibilité d'un itinéraire de déviation mais ne vous oblige pas à l'utiliser si un itinéraire alternatif légalement accessible existe",
+            "text": "F39 annonce la déviation; il ne déclare pas à lui seul que la route est déjà fermée exactement à cet endroit.",
             "is_correct": true
           },
           {
-            "text": "Non, vous êtes tenu de suivre l'itinéraire de déviation annoncé sans exception",
+            "text": "F39 ne concerne que les véhicules de marchandises, sauf indication contraire d'un panneau additionnel.",
             "is_correct": false
           },
           {
-            "text": "Non, toutes les routes de transit sont interdites en présence d'un panneau de déviation sauf la déviation annoncée",
+            "text": "F39 annule toutes les interdictions et obligations sur l'itinéraire de déviation.",
             "is_correct": false
           }
         ],
-        "explanation": "F39 prévoit un itinéraire de déviation mais n'interdit pas les routes alternatives légalement accessibles."
+        "explanation": "F39 annonce la déviation; il ne déclare pas à lui seul que la route est déjà fermée exactement à cet endroit."
       },
       "AR": {
-        "question": "F39 تُعلن تحويلة. تعرف طريقًا موازيًا متاحًا قانونيًا. هل يجوز استخدامه بدلاً من التحويلة؟",
+        "question": "أي عبارة عن نطاق تطبيقها صحيحة؟",
         "choices": [
           {
-            "text": "نعم، F39 تُعلن عن مسار التحويلة ولكن لا توجب استخدامه إن وُجد بديل مشروع",
+            "text": "تعلن F39 عن التحويلة مسبقًا، لكنها لا تعني وحدها أن الطريق مغلق بالفعل عند موضعها بالضبط.",
             "is_correct": true
           },
           {
-            "text": "لا، يجب اتباع مسار التحويلة دون استثناء",
+            "text": "تسري F39 على مركبات البضائع فقط ما لم تنص لوحة إضافية على غير ذلك.",
             "is_correct": false
           },
           {
-            "text": "لا، جميع الطرق محظورة إلا مسار التحويلة",
+            "text": "تلغي F39 كل علامات الحظر والإلزام على طريق التحويلة.",
             "is_correct": false
           }
         ],
-        "explanation": "F39 توفّر مسار التحويلة لكنها لا تحظر الطرق البديلة المتاحة قانونيًا."
+        "explanation": "تعلن F39 عن التحويلة مسبقًا، لكنها لا تعني وحدها أن الطريق مغلق بالفعل عند موضعها بالضبط."
       }
     }
   },
@@ -370,73 +412,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat is het verschil tussen F39 en F81?",
+        "question": "Welk onderscheid is juridisch en praktisch juist?",
         "choices": [
           {
-            "text": "F39 kondigt op voorhand een omleiding aan die verderop zal gelden; F81 wijst op de uitrijpunt of uitwijkingsroute zelf die beschikbaar is",
+            "text": "F39 kondigt de omlegging aan; F41 wijst de omleggingsweg verder langs de route aan.",
             "is_correct": true
           },
           {
-            "text": "F39 wordt alleen gebruikt bij wegwerkzaamheden; F81 is gereserveerd voor evenementen en incidenten",
+            "text": "F39 en F41 duiden beide een noodstopstrook aan.",
             "is_correct": false
           },
           {
-            "text": "F39 is een permanent bord; F81 is altijd tijdelijk",
+            "text": "F39 schrijft een maximumsnelheid per rijstrook voor en F41 beëindigt die snelheid.",
             "is_correct": false
           }
         ],
-        "explanation": "F39 is een vooraankondiging: de omleiding komt verderop. F81 is een bord dat de uitrijmogelijkheid of de uitwijkingsroute zelf aangeeft, d.w.z. de bestuurder benadert het punt van de uitrit. Beide zijn deze categorieborden maar ze geven verschillende fasen van de omleidingsinfrastructuur aan."
+        "explanation": "F39 kondigt de omlegging aan; F41 wijst de omleggingsweg verder langs de route aan."
       },
       "EN": {
-        "question": "What is the difference between F39 and F81?",
+        "question": "Which legal and practical distinction is correct?",
         "choices": [
           {
-            "text": "F39 announces a diversion in advance that will apply further ahead; F81 indicates the actual exit point or diversion route that is available",
+            "text": "F39 announces the diversion; F41 guides traffic along the diversion route.",
             "is_correct": true
           },
           {
-            "text": "F39 is used only for roadworks; F81 is reserved for events and incidents",
+            "text": "F39 and F41 both mark an emergency escape lane.",
             "is_correct": false
           },
           {
-            "text": "F39 is a permanent sign; F81 is always temporary",
+            "text": "F39 prescribes a speed per lane and F41 ends that speed.",
             "is_correct": false
           }
         ],
-        "explanation": "F39 is an advance announcement: the diversion is coming up ahead. F81 is a sign indicating the actual exit or diversion route itself, i.e., the driver is approaching the exit point. Both are information signs, but they indicate different phases of the diversion route."
+        "explanation": "F39 announces the diversion; F41 guides traffic along the diversion route."
       },
       "FR": {
-        "question": "Quelle est la différence entre F39 et F81?",
+        "question": "Quelle distinction juridique et pratique est correcte ?",
         "choices": [
           {
-            "text": "F39 annonce préalablement une déviation qui sera applicable plus loin; F81 indique le point de sortie effectif ou l'itinéraire de déviation lui-même",
+            "text": "F39 annonce la déviation; F41 jalonne ensuite l'itinéraire de déviation.",
             "is_correct": true
           },
           {
-            "text": "F39 est utilisé uniquement pour les travaux; F81 est réservé aux événements et incidents",
+            "text": "F39 et F41 indiquent tous deux une piste de détresse.",
             "is_correct": false
           },
           {
-            "text": "F39 est un panneau permanent; F81 est toujours temporaire",
+            "text": "F39 prescrit une vitesse par bande et F41 met fin à cette vitesse.",
             "is_correct": false
           }
         ],
-        "explanation": "F39 est une annonce préalable: la déviation est à venir. F81 indique le point de sortie effectif ou l'itinéraire de déviation lui-même."
+        "explanation": "F39 annonce la déviation; F41 jalonne ensuite l'itinéraire de déviation."
       },
       "AR": {
-        "question": "ما الفرق بين F39 وF81؟",
+        "question": "أي تمييز قانوني وعملي صحيح؟",
         "choices": [
           {
-            "text": "F39 تُعلن مسبقًا عن تحويلة ستكون لاحقًا؛ F81 تدل على نقطة الخروج الفعلية أو مسار التحويلة نفسه",
+            "text": "تعلن F39 عن التحويلة، بينما ترشد F41 إلى مسار التحويلة على امتداد الطريق.",
             "is_correct": true
           },
           {
-            "text": "F39 لأشغال الطرق فقط؛ F81 للفعاليات والحوادث",
+            "text": "تدل F39 وF41 كلتاهما على مسار توقف اضطراري.",
             "is_correct": false
           },
-          { "text": "F39 دائمة؛ F81 مؤقتة دائمًا", "is_correct": false }
+          {
+            "text": "تفرض F39 سرعة لكل مسار وتنهي F41 تلك السرعة.",
+            "is_correct": false
+          }
         ],
-        "explanation": "F39 إعلان مسبق. F81 تدل على نقطة الخروج / مسار التحويلة نفسه. كلتاهما فئة F لكن تمثلان مرحلتين مختلفتين."
+        "explanation": "تعلن F39 عن التحويلة، بينما ترشد F41 إلى مسار التحويلة على امتداد الطريق."
       }
     }
   },
@@ -448,60 +493,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "F39 kondigt een omleiding aan. U kent een parallelle weg die wettelijk open is voor alle verkeer. Mag u die weg gebruiken in plaats van de aangekondigde omleidingsroute?",
+        "question": "Mag u uit F39 alleen afleiden dat de normale weg precies ter hoogte van het bord al gesloten is?",
         "choices": [
           {
-            "text": "Ja, F39 kondigt de beschikbaarheid van een omleidingsroute aan maar verplicht u niet die te gebruiken als een wettelijk toegankelijk alternatief open is",
-            "is_correct": true
+            "text": "Ja",
+            "is_correct": false
           },
           {
-            "text": "Neen, bij een omleidingsbord bent u altijd verplicht de aangekondigde omleidingsroute te volgen",
-            "is_correct": false
+            "text": "Neen",
+            "is_correct": true
           }
         ],
-        "explanation": "De omleidingsroute van F39 is een aangeboden route, geen exclusieve verplichting om iedere andere route uit te sluiten. Een wettelijk open alternatieve weg mag worden gebruikt. De omleidingsroute is verplicht wanneer de doorgaande weg daadwerkelijk afgesloten is en geen wettelijk alternatief beschikbaar is."
+        "explanation": "Neen. F39 is een voorwegwijzer nabij het begin van de omlegging; een afsluiting of andere beperking wordt door de relevante signalisatie op de toepasselijke plaats aangegeven."
       },
       "EN": {
-        "question": "F39 announces a diversion. You know of a parallel road that is legally open for all traffic. May you use that road instead of the announced diversion route?",
+        "question": "May you infer from F39 alone that the normal road is already closed exactly at the sign?",
         "choices": [
           {
-            "text": "Yes, F39 announces the availability of a diversion route but does not require you to use it if a legally accessible alternative is open",
-            "is_correct": true
+            "text": "Yes",
+            "is_correct": false
           },
           {
-            "text": "No, when a diversion sign is shown you are always required to follow the announced diversion route",
-            "is_correct": false
+            "text": "No",
+            "is_correct": true
           }
         ],
-        "explanation": "The diversion route announced by F39 is an offered route, not an exclusive obligation that excludes every other route. A legally open alternative road may be used. The diversion route is only compulsory when the through road is actually closed and no legal alternative is available."
+        "explanation": "No. F39 is an advance sign near the start of the diversion; a closure or other restriction is shown by the relevant signs where it applies."
       },
       "FR": {
-        "question": "F39 annonce une déviation. Vous connaissez une route parallèle légalement ouverte à tout le trafic. Pouvez-vous utiliser cette route à la place de l'itinéraire de déviation annoncé?",
+        "question": "Pouvez-vous déduire de F39 seul que la route normale est déjà fermée exactement à hauteur du panneau ?",
         "choices": [
           {
-            "text": "Oui, F39 annonce la disponibilité d'un itinéraire de déviation mais ne vous oblige pas à l'utiliser si un itinéraire alternatif légalement accessible est ouvert",
-            "is_correct": true
+            "text": "Oui",
+            "is_correct": false
           },
           {
-            "text": "Non, en présence d'un panneau de déviation vous êtes toujours tenu de suivre l'itinéraire annoncé",
-            "is_correct": false
+            "text": "Non",
+            "is_correct": true
           }
         ],
-        "explanation": "L'itinéraire de déviation annoncé par F39 est un itinéraire proposé, non une obligation exclusive excluant tout autre itinéraire. Une route alternative légalement ouverte peut être utilisée."
+        "explanation": "Non. F39 est un signal de préavis proche du début de la déviation; la fermeture ou la restriction est indiquée par la signalisation correspondante à l'endroit où elle s'applique."
       },
       "AR": {
-        "question": "F39 تُعلن تحويلة. تعرف طريقًا موازيًا مفتوحًا قانونيًا. هل يجوز استخدامه بدلاً من مسار التحويلة؟",
+        "question": "هل يجوز أن تستنتج من F39 وحدها أن الطريق المعتاد مغلق تمامًا عند موضع العلامة؟",
         "choices": [
           {
-            "text": "نعم، F39 تُعلن عن مسار التحويلة لكن لا توجب استخدامه إن وُجد بديل مشروع",
-            "is_correct": true
+            "text": "نعم",
+            "is_correct": false
           },
           {
-            "text": "لا، عند وجود علامة مرورية تحويلة يجب دائمًا اتباع المسار المعلن",
-            "is_correct": false
+            "text": "لا",
+            "is_correct": true
           }
         ],
-        "explanation": "مسار F39 مسار مقترح، ليس إلزامًا حصريًا. الطريق البديل المشروع يُستخدم."
+        "explanation": "لا. F39 علامة تمهيدية قرب بداية التحويلة، ويُبيَّن الإغلاق أو القيد بعلامته المختصة في موضع سريانه."
       }
     }
   },
@@ -513,60 +558,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U heeft de omleidingsroute van F39 genomen. Onderweg vindt u een wettelijk open kortere weg. Mag u de omleidingsroute vóór het officiële einde verlaten?",
+        "question": "Mag u een later geplaatst verbods- of afsluitingsbord voorbijrijden omdat u zelf een andere route kent?",
         "choices": [
           {
-            "text": "Ja, de omleidingsroute is een aanbevolen route — u mag deze verlaten als u een wettelijk toegankelijke kortere weg heeft gevonden",
-            "is_correct": true
+            "text": "Ja",
+            "is_correct": false
           },
           {
-            "text": "Neen, u moet de volledige omleidingsroute afleggen tot aan het officiële einde ervan",
-            "is_correct": false
+            "text": "Neen",
+            "is_correct": true
           }
         ],
-        "explanation": "F39 en de daarmee verbonden omleidingsroute zijn bedoeld om bestuurders langs de afgesloten weg te leiden. Ze verbieden geen wettelijk toegankelijke alternatieve routes. Als de bestuurder onderweg een wettelijk open kortere weg vindt, mag hij de omleidingsroute verlaten."
+        "explanation": "Neen. Een eigen routekeuze geeft geen toestemming om bindende verbods- of afsluitingssignalisatie te negeren."
       },
       "EN": {
-        "question": "You have taken the diversion route announced by F39. En route you find a legally open shorter road. May you leave the diversion route before its official end?",
+        "question": "May you pass a later prohibition or closure sign because you know a different route yourself?",
         "choices": [
           {
-            "text": "Yes, the diversion route is a recommended route — you may leave it if you have found a legally accessible shorter road",
-            "is_correct": true
+            "text": "Yes",
+            "is_correct": false
           },
           {
-            "text": "No, you must complete the entire diversion route up to its official end",
-            "is_correct": false
+            "text": "No",
+            "is_correct": true
           }
         ],
-        "explanation": "F39 and its associated diversion route are intended to guide drivers past the closed road. They do not prohibit legally accessible alternative routes. If the driver finds a legally open shorter road en route, they may leave the diversion route."
+        "explanation": "No. Choosing your own route does not permit you to ignore binding prohibition or closure signs."
       },
       "FR": {
-        "question": "Vous avez emprunté l'itinéraire de déviation annoncé par F39. En cours de route, vous trouvez une route plus courte légalement ouverte. Pouvez-vous quitter l'itinéraire de déviation avant sa fin officielle?",
+        "question": "Pouvez-vous franchir un signal ultérieur d'interdiction ou de fermeture parce que vous connaissez un autre itinéraire ?",
         "choices": [
           {
-            "text": "Oui, l'itinéraire de déviation est un itinéraire recommandé — vous pouvez le quitter si vous avez trouvé une route plus courte légalement accessible",
-            "is_correct": true
+            "text": "Oui",
+            "is_correct": false
           },
           {
-            "text": "Non, vous devez parcourir l'itinéraire de déviation complet jusqu'à sa fin officielle",
-            "is_correct": false
+            "text": "Non",
+            "is_correct": true
           }
         ],
-        "explanation": "F39 et son itinéraire de déviation associé sont destinés à guider les conducteurs autour de la route fermée. Ils n'interdisent pas les routes alternatives légalement accessibles."
+        "explanation": "Non. Le choix d'un autre itinéraire ne permet pas d'ignorer une signalisation contraignante."
       },
       "AR": {
-        "question": "سلكت مسار التحويلة المُعلن من F39. في الطريق وجدت طريقًا أقصر مفتوحًا قانونيًا. هل يجوز مغادرة مسار التحويلة قبل نهايته الرسمية؟",
+        "question": "هل يجوز تجاوز علامة حظر أو إغلاق لاحقة لأنك تعرف طريقًا آخر؟",
         "choices": [
           {
-            "text": "نعم، مسار التحويلة مؤشر ويجوز مغادرته إن وُجد طريق أقصر مشروع",
-            "is_correct": true
+            "text": "نعم",
+            "is_correct": false
           },
           {
-            "text": "لا، يجب إتمام مسار التحويلة كاملاً حتى نهايته الرسمية",
-            "is_correct": false
+            "text": "لا",
+            "is_correct": true
           }
         ],
-        "explanation": "F39 ومسار التحويلة مسار مقترح. لا يحظران الطرق البديلة المشروعة."
+        "explanation": "لا. معرفة طريق بديل لا تسمح بتجاهل علامة حظر أو إغلاق ملزمة."
       }
     }
   }

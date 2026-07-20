@@ -7,7 +7,8 @@
     "MANDATORY",
     "PARKING",
     "PRIORITY",
-    "PROHIBITION"
+    "PROHIBITION",
+    "ROAD_MANAGEMENT"
   ],
   "last_reviewed": "2026-07-20",
   "translation_policy": "NL and FR legal terms follow the official texts. EN and AR are faithful editorial translations and must not expand or narrow the legal meaning.",
@@ -1519,6 +1520,226 @@
       "source_ids": [
         "BE-KB1975-PROHIBITION-CURRENT",
         "BE-MB1976-PROHIBITION-PLACEMENT"
+      ]
+    },
+    {
+      "term_id": "DIVERSION_ADVANCE_SIGN",
+      "i18n": {
+        "NL": "voorwegwijzer die een omlegging aankondigt",
+        "EN": "advance sign announcing a diversion",
+        "FR": "signal de préavis annonçant une déviation",
+        "AR": "علامة تمهيدية تعلن عن تحويلة"
+      },
+      "definition": "F39 announces a diversion near its beginning because the normal route cannot be followed.",
+      "context": "Do not describe F39 as proof that the closure starts exactly at the sign.",
+      "preferred_wording": {
+        "NL": "voorwegwijzer die een omlegging aankondigt",
+        "EN": "advance sign announcing a diversion",
+        "FR": "signal de préavis annonçant une déviation",
+        "AR": "علامة تمهيدية تعلن عن تحويلة"
+      },
+      "forbidden_or_misleading_wording": [],
+      "source_ids": [
+        "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+        "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+      ]
+    },
+    {
+      "term_id": "ROADWORKS_TEMPORARY_INDICATION",
+      "i18n": {
+        "NL": "voorlopige aanwijzing bij werken",
+        "EN": "temporary roadworks indication",
+        "FR": "indication provisoire à l'occasion de travaux",
+        "AR": "إشارة مؤقتة عند الأشغال"
+      },
+      "definition": "F79-F85 are temporary indications used at roadworks; arrows and symbols match the actual site.",
+      "context": "Do not generalise a sample distance or layout into a national fixed rule.",
+      "preferred_wording": {
+        "NL": "voorlopige aanwijzing bij werken",
+        "EN": "temporary roadworks indication",
+        "FR": "indication provisoire à l'occasion de travaux",
+        "AR": "إشارة مؤقتة عند الأشغال"
+      },
+      "forbidden_or_misleading_wording": [],
+      "source_ids": [
+        "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+        "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+      ]
+    },
+    {
+      "term_id": "LANE_REDUCTION_ADVANCE",
+      "i18n": {
+        "NL": "voorwegwijzer die de vermindering van rijstroken aankondigt",
+        "EN": "advance sign announcing a lane reduction",
+        "FR": "signal de préavis annonçant une réduction de bandes",
+        "AR": "علامة تمهيدية تعلن عن انخفاض عدد المسارات"
+      },
+      "definition": "F79 announces that the number of lanes will be reduced.",
+      "context": "A displayed distance is the distance to the announced situation, not the duration of an F79 zone.",
+      "preferred_wording": {
+        "NL": "voorwegwijzer die de vermindering van rijstroken aankondigt",
+        "EN": "advance sign announcing a lane reduction",
+        "FR": "signal de préavis annonçant une réduction de bandes",
+        "AR": "علامة تمهيدية تعلن عن انخفاض عدد المسارات"
+      },
+      "forbidden_or_misleading_wording": [],
+      "source_ids": [
+        "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+        "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+      ]
+    },
+    {
+      "term_id": "LANE_DEVIATION_ADVANCE",
+      "i18n": {
+        "NL": "voorwegwijzer die een uitwijking aankondigt",
+        "EN": "advance sign announcing a lane deviation",
+        "FR": "signal de préavis annonçant un évitement",
+        "AR": "علامة تمهيدية تعلن عن انحراف المسارات"
+      },
+      "definition": "F81 announces a temporary deviation of lanes at roadworks.",
+      "context": "Do not describe it as an optional exit or generic alternative route.",
+      "preferred_wording": {
+        "NL": "voorwegwijzer die een uitwijking aankondigt",
+        "EN": "advance sign announcing a lane deviation",
+        "FR": "signal de préavis annonçant un évitement",
+        "AR": "علامة تمهيدية تعلن عن انحراف المسارات"
+      },
+      "forbidden_or_misleading_wording": [],
+      "source_ids": [
+        "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+        "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+      ]
+    },
+    {
+      "term_id": "CENTRAL_RESERVATION_CROSSOVER_ADVANCE",
+      "i18n": {
+        "NL": "voorwegwijzer voor een middenbermdoorsteek",
+        "EN": "advance sign for a central-reservation crossover",
+        "FR": "signal de préavis d'une traversée de la berme centrale",
+        "AR": "علامة تمهيدية لعبور الفاصل الوسطي"
+      },
+      "definition": "F83 announces a temporary crossover through the central reservation.",
+      "context": "Do not reduce the meaning to a generic road narrowing.",
+      "preferred_wording": {
+        "NL": "voorwegwijzer voor een middenbermdoorsteek",
+        "EN": "advance sign for a central-reservation crossover",
+        "FR": "signal de préavis d'une traversée de la berme centrale",
+        "AR": "علامة تمهيدية لعبور الفاصل الوسطي"
+      },
+      "forbidden_or_misleading_wording": [],
+      "source_ids": [
+        "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+        "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+      ]
+    },
+    {
+      "term_id": "TEMPORARY_TWO_WAY_ON_ONE_WAY_CARRIAGEWAY",
+      "i18n": {
+        "NL": "tijdelijk verkeer in beide richtingen op een eenrichtingsrijbaan",
+        "EN": "temporary two-way traffic on a one-way carriageway",
+        "FR": "circulation temporaire dans les deux sens sur une chaussée à sens unique",
+        "AR": "مرور مؤقت بالاتجاهين على طريق أحادي الاتجاه"
+      },
+      "definition": "F85 indicates that both directions temporarily use part of a normally one-way carriageway.",
+      "context": "Do not describe it merely as a lateral road shift.",
+      "preferred_wording": {
+        "NL": "tijdelijk verkeer in beide richtingen op een eenrichtingsrijbaan",
+        "EN": "temporary two-way traffic on a one-way carriageway",
+        "FR": "circulation temporaire dans les deux sens sur une chaussée à sens unique",
+        "AR": "مرور مؤقت بالاتجاهين على طريق أحادي الاتجاه"
+      },
+      "forbidden_or_misleading_wording": [],
+      "source_ids": [
+        "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+        "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+      ]
+    },
+    {
+      "term_id": "LANE_SPECIFIC_ADVANCE_SIGN",
+      "i18n": {
+        "NL": "voorwegwijzer voor een rijstrookgebonden gevaar of regel",
+        "EN": "advance sign for a lane-specific danger or rule",
+        "FR": "signal de préavis d'un danger ou d'une règle par bande",
+        "AR": "علامة تمهيدية لخطر أو قاعدة خاصة بمسار"
+      },
+      "definition": "F89 announces a danger or traffic rule applying only to one or more indicated same-direction lanes.",
+      "context": "F89 is not limited to speed signs and a displayed distance does not state rule duration.",
+      "preferred_wording": {
+        "NL": "voorwegwijzer voor een rijstrookgebonden gevaar of regel",
+        "EN": "advance sign for a lane-specific danger or rule",
+        "FR": "signal de préavis d'un danger ou d'une règle par bande",
+        "AR": "علامة تمهيدية لخطر أو قاعدة خاصة بمسار"
+      },
+      "forbidden_or_misleading_wording": [],
+      "source_ids": [
+        "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+        "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+      ]
+    },
+    {
+      "term_id": "LANE_SPECIFIC_RULE_SIGN",
+      "i18n": {
+        "NL": "rijstrookgebonden gevaar of verkeersregel",
+        "EN": "lane-specific danger or traffic rule",
+        "FR": "danger ou réglementation propre à une bande",
+        "AR": "خطر أو قاعدة مرور خاصة بمسار"
+      },
+      "definition": "F91 indicates a danger or prescribes a rule applying only to one or more indicated same-direction lanes.",
+      "context": "Do not apply the displayed rule to unindicated lanes solely because it appears on F91.",
+      "preferred_wording": {
+        "NL": "rijstrookgebonden gevaar of verkeersregel",
+        "EN": "lane-specific danger or traffic rule",
+        "FR": "danger ou réglementation propre à une bande",
+        "AR": "خطر أو قاعدة مرور خاصة بمسار"
+      },
+      "forbidden_or_misleading_wording": [],
+      "source_ids": [
+        "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+        "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+      ]
+    },
+    {
+      "term_id": "EMERGENCY_ESCAPE_LANE",
+      "i18n": {
+        "NL": "noodstopstrook",
+        "EN": "emergency escape lane",
+        "FR": "piste de détresse",
+        "AR": "مسار توقف اضطراري"
+      },
+      "definition": "F95 marks a purpose-built emergency escape lane and may show the distance to it.",
+      "context": "Do not translate it as the end of a lane, a service exit or a rest area.",
+      "preferred_wording": {
+        "NL": "noodstopstrook",
+        "EN": "emergency escape lane",
+        "FR": "piste de détresse",
+        "AR": "مسار توقف اضطراري"
+      },
+      "forbidden_or_misleading_wording": [],
+      "source_ids": [
+        "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+        "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+      ]
+    },
+    {
+      "term_id": "EMERGENCY_REFUGE_BAY",
+      "i18n": {
+        "NL": "vluchthaven",
+        "EN": "emergency refuge bay",
+        "FR": "refuge d'urgence (garage F98)",
+        "AR": "جيب لجوء للطوارئ"
+      },
+      "definition": "F98 marks a tunnel refuge bay; equipment is indicated separately by a supplementary panel.",
+      "context": "The official French text uses garage; learner wording should clarify its emergency-refuge meaning.",
+      "preferred_wording": {
+        "NL": "vluchthaven",
+        "EN": "emergency refuge bay",
+        "FR": "refuge d'urgence (garage F98)",
+        "AR": "جيب لجوء للطوارئ"
+      },
+      "forbidden_or_misleading_wording": [],
+      "source_ids": [
+        "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
+        "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
       ]
     }
   ]
