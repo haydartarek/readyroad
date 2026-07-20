@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "framework_version": 1,
-  "last_updated": "2026-07-19",
+  "last_updated": "2026-07-20",
   "canonical_content_root": "src/main/resources/data/signs_import",
   "category_review_root": "src/main/resources/data/content_governance/category-reviews",
   "shared_resources": {
@@ -83,18 +83,18 @@
     {
       "category": "PRIORITY",
       "slug": "priority",
-      "status": "NOT_REVIEWED",
-      "approval_status": "PENDING",
-      "last_reviewed": null,
+      "status": "APPROVED",
+      "approval_status": "APPROVED",
+      "last_reviewed": "2026-07-20",
       "counts": {
         "signs": 16,
         "questions": 128,
         "exams": 16,
-        "lessons": 0
+        "lessons": 28
       },
-      "risk_level": "UNASSESSED",
-      "review_file": null,
-      "report_file": null
+      "risk_level": "HIGH",
+      "review_file": "category-reviews/priority.json",
+      "report_file": "docs/content-governance/category-reviews/priority/content-review-report.md"
     },
     {
       "category": "PROHIBITION",

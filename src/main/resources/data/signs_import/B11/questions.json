@@ -10,7 +10,7 @@
         "question": "Wat betekent dit verkeersbord?",
         "choices": [
           {
-            "text": "De voorrangsweg eindigt hier, en vanaf dit punt gelden de normale voorrangsregels",
+            "text": "De voorrangsweg eindigt; de voorrangsregeling aan het naderende kruispunt wordt door een volgend bord aangegeven",
             "is_correct": true
           },
           {
@@ -22,13 +22,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "Dit verkeersbord geeft het einde van een voorrangsweg aan. Vanaf dit punt vervalt uw bijzondere voorrang en gelden opnieuw de normale voorrangsregels."
+        "explanation": "B11 kondigt een kruispunt aan waar de voorrangsweg eindigt. Volgens de plaatsingsregels wordt de regeling aan dat kruispunt steeds aangeduid met B1, B5 of B17."
       },
       "EN": {
         "question": "What does this traffic sign mean?",
         "choices": [
           {
-            "text": "The priority road ends here, and from this point the normal priority rules apply",
+            "text": "The priority road ends; a following sign indicates the priority rule at the approaching junction",
             "is_correct": true
           },
           {
@@ -40,13 +40,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "This traffic sign indicates the end of a priority road. From this point, your special right of way ends and the normal priority rules apply again."
+        "explanation": "B11 announces a junction where the priority road ends. Under the placement rules, B1, B5 or B17 always indicates the rule at that junction."
       },
       "FR": {
         "question": "Que signifie ce panneau de signalisation ?",
         "choices": [
           {
-            "text": "La route prioritaire se termine ici, et à partir de ce point les règles de priorité normales s'appliquent",
+            "text": "La route prioritaire se termine; un panneau suivant indique la règle de priorité au carrefour qui approche",
             "is_correct": true
           },
           {
@@ -58,13 +58,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "Ce panneau de signalisation indique la fin d'une route prioritaire. À partir de ce point, votre droit de priorité spécial prend fin et les règles de priorité normales s'appliquent à nouveau."
+        "explanation": "B11 annonce un carrefour où la route prioritaire prend fin. Selon les règles de placement, B1, B5 ou B17 indique toujours la règle applicable à ce carrefour."
       },
       "AR": {
         "question": "ما معنى هذه العلامة المرورية؟",
         "choices": [
           {
-            "text": "ينتهي طريق الأولوية هنا، ومن هذه النقطة تسري قواعد الأولوية العادية",
+            "text": "ينتهي طريق الأولوية، وتبين علامة تالية قاعدة الأولوية عند التقاطع الذي تقترب منه",
             "is_correct": true
           },
           {
@@ -76,7 +76,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "تُشير هذه العلامة المرورية إلى انتهاء طريق الأولوية. من هذه النقطة تزول أولوية المرور الخاصة بك، وتعود قواعد الأولوية العادية إلى التطبيق."
+        "explanation": "تعلن B11 عن تقاطع ينتهي عنده طريق الأولوية. ووفق قواعد وضع العلامات، تبين B1 أو B5 أو B17 دائماً القاعدة المطبقة عند ذلك التقاطع."
       }
     }
   },
@@ -148,7 +148,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "Na dit bord verliest u uw bijzondere voorrang. U moet opnieuw letten op andere weggebruikers en de normale voorrangsregels toepassen, tenzij andere borden iets anders aangeven."
+        "explanation": "B11 waarschuwt dat de doorlopende voorrang eindigt. Lees vóór het kruispunt het bijbehorende bord B1, B5 of B17 en pas die regeling toe."
       },
       "EN": {
         "question": "What hazard does this traffic sign warn you about?",
@@ -166,7 +166,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "After this sign, you lose your special right of way. You must again watch for other road users and apply the normal priority rules unless other signs indicate otherwise."
+        "explanation": "B11 warns that continuing priority ends. Before the junction, read the accompanying B1, B5 or B17 sign and apply that rule."
       },
       "FR": {
         "question": "Quel danger ce panneau de signalisation annonce-t-il ?",
@@ -184,7 +184,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "Après ce panneau, vous perdez votre priorité spéciale. Vous devez à nouveau être attentif aux autres usagers et appliquer les règles de priorité normales, sauf indication contraire d'autres panneaux."
+        "explanation": "B11 avertit que la priorité continue prend fin. Avant le carrefour, lisez le panneau B1, B5 ou B17 qui l'accompagne et appliquez cette règle."
       },
       "AR": {
         "question": "ما الخطر الذي تشير إليه هذه العلامة المرورية؟",
@@ -202,7 +202,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "بعد هذه العلامة المرورية تفقد أولوية المرور الخاصة بك. لذلك يجب عليك من جديد الانتباه إلى المركبات الأخرى وتطبيق قواعد الأولوية العادية، ما لم توجد علامات أخرى."
+        "explanation": "تحذر B11 من انتهاء الأولوية المستمرة. وقبل التقاطع يجب قراءة العلامة المصاحبة B1 أو B5 أو B17 وتطبيق القاعدة التي تبينها."
       }
     }
   },
@@ -214,10 +214,10 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat moet u doen onmiddellijk nadat u dit verkeersbord bent gepasseerd?",
+        "question": "Wat moet u doen wanneer u B11 nadert vóór het aangekondigde kruispunt?",
         "choices": [
           {
-            "text": "De normale verkeersregels toepassen; tenzij er andere borden staan, geldt de voorrang van rechts",
+            "text": "Snelheid en aandacht aanpassen en de regeling volgen die B1, B5 of B17 bij het kruispunt aangeeft",
             "is_correct": true
           },
           {
@@ -229,13 +229,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "Onmiddellijk na dit bord moet u de normale voorrangsregels toepassen. Let op de borden bij de volgende kruispunten; zonder andere borden geldt de voorrang van rechts."
+        "explanation": "B11 wordt vóór het kruispunt geplaatst en de toepasselijke regeling wordt steeds aangekondigd met B1, B5 of B17. B11 alleen legt geen stop op en geeft ook geen nieuwe voorrang."
       },
       "EN": {
-        "question": "What must you do immediately after passing this traffic sign?",
+        "question": "What must you do when approaching B11 before the announced junction?",
         "choices": [
           {
-            "text": "Apply the normal traffic rules; unless other signs are present, right-of-way from the right applies",
+            "text": "Adjust speed and attention, then follow the B1, B5 or B17 rule shown at the junction",
             "is_correct": true
           },
           {
@@ -247,13 +247,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "Immediately after this sign, you must apply the normal priority rules. Check the signs at the next junctions; if there are no other signs, right-of-way from the right applies."
+        "explanation": "B11 is placed before the junction, and B1, B5 or B17 always announces the applicable rule. B11 alone neither requires a stop nor grants new priority."
       },
       "FR": {
-        "question": "Que devez-vous faire immédiatement après avoir dépassé ce panneau de signalisation ?",
+        "question": "Que devez-vous faire à l'approche de B11 avant le carrefour annoncé ?",
         "choices": [
           {
-            "text": "Appliquer les règles de circulation normales ; sauf autre signalisation, la priorité de droite s'applique",
+            "text": "Adapter votre vitesse et votre attention, puis suivre la règle indiquée par B1, B5 ou B17 au carrefour",
             "is_correct": true
           },
           {
@@ -265,13 +265,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "Immédiatement après ce panneau, vous devez appliquer les règles de priorité normales. Vérifiez la signalisation aux carrefours suivants ; sans autre panneau, la priorité de droite s'applique."
+        "explanation": "B11 est placé avant le carrefour et B1, B5 ou B17 annonce toujours la règle applicable. B11 seul n'impose pas l'arrêt et n'accorde pas une nouvelle priorité."
       },
       "AR": {
-        "question": "ماذا يجب عليك فعله مباشرة بعد تجاوز هذه العلامة المرورية؟",
+        "question": "ماذا يجب فعله عند الاقتراب من B11 قبل التقاطع المعلن؟",
         "choices": [
           {
-            "text": "أطبق قواعد المرور العادية، وما لم توجد علامات أخرى تسري قاعدة أولوية اليمين",
+            "text": "أكيف السرعة والانتباه ثم أتبع القاعدة التي تبينها B1 أو B5 أو B17 عند التقاطع",
             "is_correct": true
           },
           {
@@ -283,7 +283,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "مباشرة بعد هذه العلامة تطبق قواعد الأولوية العادية. راقب العلامات الموجودة عند التقاطعات التالية، وإذا لم توجد علامات أخرى فتسري قاعدة أولوية اليمين."
+        "explanation": "توضع B11 قبل التقاطع، وتعلن B1 أو B5 أو B17 دائماً القاعدة المطبقة. ولا تفرض B11 وحدها التوقف ولا تمنح أولوية جديدة."
       }
     }
   },
@@ -295,10 +295,10 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U bent dit verkeersbord net gepasseerd en nadert een ongeregeld kruispunt zonder borden. Er komt een voertuig van rechts. Wat doet u?",
+        "question": "B11 kondigt het einde van de voorrangsweg aan en B17 staat bij het kruispunt. Een bestuurder komt van rechts. Wat doet u?",
         "choices": [
           {
-            "text": "Voorrang verlenen aan het voertuig van rechts omdat de voorrang van rechts opnieuw geldt",
+            "text": "Voorrang verlenen aan de bestuurder van rechts, tenzij een wettelijke uitzondering geldt",
             "is_correct": true
           },
           {
@@ -310,13 +310,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "Na dit bord gelden opnieuw de normale voorrangsregels. Op een ongeregeld kruispunt zonder borden heeft het voertuig van rechts voorrang."
+        "explanation": "B17 bevestigt de voorrang van rechts aan het kruispunt, met de wettelijke uitzonderingen voor een bestuurder op een rotonde of voor een bestuurder die uit een verboden rijrichting komt."
       },
       "EN": {
-        "question": "You have just passed this traffic sign and are approaching an uncontrolled junction with no signs. A vehicle comes from the right. What do you do?",
+        "question": "B11 announces the end of the priority road and B17 is shown at the junction. A driver comes from the right. What do you do?",
         "choices": [
           {
-            "text": "Give way to the vehicle from the right because right-of-way from the right applies again",
+            "text": "Give way to the driver from the right unless a statutory exception applies",
             "is_correct": true
           },
           {
@@ -328,13 +328,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "After this sign, the normal priority rules apply again. At an uncontrolled junction without signs, the vehicle coming from the right has priority."
+        "explanation": "B17 confirms priority from the right at the junction, subject to the statutory exceptions for a driver on a roundabout or a driver coming from a prohibited direction."
       },
       "FR": {
-        "question": "Vous venez de dépasser ce panneau de signalisation et vous approchez d'un carrefour non réglementé sans panneaux. Un véhicule vient de droite. Que faites-vous ?",
+        "question": "B11 annonce la fin de la route prioritaire et B17 est placé au carrefour. Un conducteur vient de droite. Que faites-vous ?",
         "choices": [
           {
-            "text": "Céder le passage au véhicule venant de droite parce que la priorité de droite redevient applicable",
+            "text": "Céder le passage au conducteur venant de droite, sauf si une exception légale s'applique",
             "is_correct": true
           },
           {
@@ -346,13 +346,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "Après ce panneau, les règles de priorité normales s'appliquent à nouveau. À un carrefour non réglementé sans signalisation, le véhicule venant de droite a la priorité."
+        "explanation": "B17 confirme la priorité de droite au carrefour, sous réserve des exceptions légales visant le conducteur engagé dans un rond-point ou celui venant d'un sens interdit."
       },
       "AR": {
-        "question": "لقد تجاوزت للتو هذه العلامة المرورية وتقترب من تقاطع غير منظَّم من دون علامات. تأتي مركبة من اليمين. ماذا تفعل؟",
+        "question": "تعلن B11 انتهاء طريق الأولوية وتوجد B17 عند التقاطع. يأتي سائق من اليمين. ماذا تفعل؟",
         "choices": [
           {
-            "text": "أعطي الأولوية للمركبة القادمة من اليمين لأن قاعدة أولوية اليمين تعود إلى التطبيق",
+            "text": "أعطي الأولوية للسائق القادم من اليمين ما لم ينطبق استثناء قانوني",
             "is_correct": true
           },
           {
@@ -364,7 +364,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "بعد هذه العلامة تعود قواعد الأولوية العادية. وعند تقاطع غير منظَّم من دون علامات، تكون الأولوية للمركبة القادمة من اليمين."
+        "explanation": "تؤكد B17 أولوية اليمين عند التقاطع، مع الاستثناءين القانونيين للسائق الموجود على دوار أو القادم من اتجاه محظور."
       }
     }
   },

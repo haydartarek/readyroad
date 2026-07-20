@@ -6,31 +6,39 @@
   "i18n": {
     "NL": {
       "name": "Voorrangsweg",
-      "summary": "Bord B9 geeft aan dat u zich op een voorrangsweg bevindt. Bestuurders die deze weg oprijden of kruisen, moeten u voorrang verlenen.",
-      "description": "Duidt een weg aan waarop u voorrang heeft op kruisend en invoegend verkeer, tot het einde van de voorrangsweg.",
-      "driver_guidance": "Op een voorrangsweg (B9) moeten alle bestuurders van zijstraten en kruisende wegen u voorrang verlenen. Dit geldt op alle wegen waar het bord staat.",
-      "exceptions": []
+      "summary": "B9 duidt het begin of de voortzetting van een voorrangsweg aan.",
+      "description": "Op de voorrangsweg genieten bestuurders aan kruispunten de met B9 aangeduide voorrang tegenover bestuurders uit wegen die met B1 of B5 zijn gesignaleerd, totdat dit statuut eindigt.",
+      "driver_guidance": "Blijf voorzichtig en volg steeds bevelen, verkeerslichten en specifieke regels. Het voorrangsrecht ontslaat u niet van de plicht een ongeval te voorkomen.",
+      "exceptions": [
+        "B11 beëindigt het statuut van voorrangsweg; werkende verkeerslichten en bevelen van bevoegde personen gaan voor."
+      ]
     },
     "EN": {
       "name": "Priority road",
-      "summary": "Sign B9 indicates you are on a priority road. Drivers entering or crossing this road must give way to you.",
-      "description": "Indicates a road on which you have priority over traffic entering or crossing, until the end of the priority road.",
-      "driver_guidance": "On a priority road (B9), all drivers from side streets and crossing roads must give you right of way. This applies on all roads where the sign is placed.",
-      "exceptions": []
+      "summary": "B9 marks the beginning or continuation of a priority road.",
+      "description": "At junctions on the priority road, drivers have the priority indicated by B9 over drivers entering from roads signed with B1 or B5, until that status ends.",
+      "driver_guidance": "Remain cautious and always obey authorized directions, traffic lights and specific rules. Priority does not remove the duty to prevent a collision.",
+      "exceptions": [
+        "B11 ends priority-road status; operating traffic lights and orders from authorized persons take precedence."
+      ]
     },
     "FR": {
       "name": "Route prioritaire",
-      "summary": "Le panneau B9 indique que vous êtes sur une route prioritaire. Les conducteurs qui s'y engagent ou la traversent doivent vous céder le passage.",
-      "description": "Indique une route sur laquelle vous avez la priorité sur les usagers qui s'y engagent ou la traversent, jusqu'à la fin de la route prioritaire.",
-      "driver_guidance": "Sur une route prioritaire (B9), tous les conducteurs des rues latérales et des routes transversales doivent vous céder la priorité. Cela s'applique sur toutes les routes où le panneau est placé.",
-      "exceptions": []
+      "summary": "B9 indique le début ou la continuation d'une route prioritaire.",
+      "description": "Aux carrefours de la route prioritaire, les conducteurs bénéficient de la priorité indiquée par B9 sur ceux venant de voies signalées par B1 ou B5, jusqu'à la fin de ce statut.",
+      "driver_guidance": "Restez prudent et respectez toujours les injonctions, les feux et les règles particulières. La priorité ne supprime pas l'obligation d'éviter un accident.",
+      "exceptions": [
+        "B11 met fin au statut de route prioritaire ; les feux en fonctionnement et les injonctions des agents qualifiés prévalent."
+      ]
     },
     "AR": {
-      "name": "طريق الأولوية",
-      "summary": "تشير علامة مرورية B9 إلى أنك على طريق أولوية. يجب على السائقين الذين يدخلون أو يتقاطعون مع هذا الطريق إعطاؤك الأولوية.",
-      "description": "تشير إلى طريق تكون لك فيه الأولوية على حركة المرور التي تدخل أو تتقاطع معه، حتى نهاية طريق الأولوية.",
-      "driver_guidance": "على طريق الأولوية (B9) يجب على جميع السائقين من الشوارع الجانبية والطرق المتقاطعة إعطاؤك الأولوية. ينطبق هذا على جميع الطرق التي توجد بها هذه العلامة المرورية.",
-      "exceptions": []
+      "name": "طريق ذو أولوية",
+      "summary": "تشير B9 إلى بداية طريق ذي أولوية أو استمراره.",
+      "description": "عند تقاطعات طريق الأولوية يتمتع السائقون بالأولوية التي تعلنها B9 على السائقين القادمين من طرق مزودة بـB1 أو B5، إلى أن تنتهي هذه الصفة.",
+      "driver_guidance": "ابقَ حذرًا واتبع دائمًا أوامر الأشخاص المخولين وإشارات المرور والقواعد الخاصة. الأولوية لا تلغي واجب تفادي الحوادث.",
+      "exceptions": [
+        "تنهي B11 صفة طريق الأولوية، وتتقدم إشارات المرور العاملة وأوامر الأشخاص المخولين."
+      ]
     }
   }
 }

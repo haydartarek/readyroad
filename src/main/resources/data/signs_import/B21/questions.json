@@ -253,7 +253,7 @@
         "question": "U nadert een smalle doorgang met dit bord en wilt die doorgang inrijden. Wat doet u?",
         "choices": [
           {
-            "text": "U rijdt de doorgang in; tegenliggers moeten wachten en u voorrang verlenen",
+            "text": "U controleert of u veilig kunt inrijden en gebruikt uw voorrang zonder een botsing te riskeren",
             "is_correct": true
           },
           {
@@ -265,13 +265,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "Met dit bord heeft u voorrang. U mag de doorgang inrijden; tegenliggers zijn verplicht te wachten. Wees wel alert voor bestuurders die uw voorrang niet respecteren."
+        "explanation": "B21 geeft u voorrang op bestuurders uit de tegenovergestelde richting. U blijft verplicht gevaar te voorkomen en rijdt de doorgang alleen in wanneer dat veilig kan."
       },
       "EN": {
         "question": "You are approaching a narrow passage with this sign and want to enter it. What do you do?",
         "choices": [
           {
-            "text": "You enter the passage; oncoming drivers must wait and give way to you",
+            "text": "You check that entry is safe and use your priority without risking a collision",
             "is_correct": true
           },
           {
@@ -283,13 +283,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "With this sign you have priority. You may enter the passage; oncoming drivers are required to wait. However, stay alert for drivers who do not respect your priority."
+        "explanation": "B21 gives you priority over drivers coming from the opposite direction. You still have to prevent danger and enter only when it is safe."
       },
       "FR": {
         "question": "Vous approchez d'un passage étroit avec ce panneau et voulez vous y engager. Que faites-vous ?",
         "choices": [
           {
-            "text": "Vous vous engagez dans le passage ; les conducteurs venant en sens inverse doivent attendre et vous céder le passage",
+            "text": "Vous vérifiez que l'entrée est sûre et exercez votre priorité sans risquer une collision",
             "is_correct": true
           },
           {
@@ -301,13 +301,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "Avec ce panneau, vous avez la priorité. Vous pouvez vous engager dans le passage ; les conducteurs venant en sens inverse sont obligés d'attendre. Restez toutefois vigilant face aux conducteurs qui ne respectent pas votre priorité."
+        "explanation": "B21 vous donne la priorité sur les conducteurs venant en sens inverse. Vous devez néanmoins prévenir tout danger et ne vous engager que lorsque cela peut se faire sans danger."
       },
       "AR": {
         "question": "أنت تقترب من ممر ضيق توجد عنده هذه العلامة وتريد الدخول فيه. ماذا تفعل؟",
         "choices": [
           {
-            "text": "تدخل الممر؛ يجب على السائقين المقابلين الانتظار وإعطاؤك الأولوية",
+            "text": "تتحقق من إمكان الدخول بأمان وتستخدم أولويتك دون تعريض أحد لخطر الاصطدام",
             "is_correct": true
           },
           {
@@ -319,7 +319,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "مع هذه العلامة لديك الأولوية. يمكنك دخول الممر؛ السائقون المقابلون ملزمون بالانتظار. ابقَ يقظاً للسائقين الذين لا يحترمون أولويتك."
+        "explanation": "تمنحك B21 الأولوية على السائقين القادمين من الاتجاه المقابل، لكن يبقى عليك منع الخطر وألا تدخل الممر إلا عندما يكون ذلك آمناً."
       }
     }
   },
@@ -334,7 +334,7 @@
         "question": "U rijdt in de smalle doorgang waarvoor dit bord u voorrang geeft. Halverwege ziet u een tegenligger die ook de doorgang is ingereden. Wat doet u?",
         "choices": [
           {
-            "text": "U geeft een signaal en stopt; de tegenligger heeft uw voorrang geschonden en moet achteruitzetten",
+            "text": "U vertraagt of stopt om een botsing te voorkomen en werkt mee aan de veiligste oplossing",
             "is_correct": true
           },
           {
@@ -342,17 +342,17 @@
             "is_correct": false
           },
           {
-            "text": "U zet zelf achteruit want het is efficienter en veiliger",
+            "text": "U zet altijd zelf achteruit, ongeacht de beschikbare ruimte en het gevaar",
             "is_correct": false
           }
         ],
-        "explanation": "Ook al heeft u voorrang, u moet een botsing vermijden. U stopt, geeft een signaal aan de tegenligger die uw voorrang heeft geschonden en wacht tot hij achteruitgezet heeft."
+        "explanation": "B21 bepaalt wie voorrang heeft, maar legt niet in elke concrete blokkering vast wie moet achteruitrijden. Voorkom de botsing en kies samen de veiligste oplossing volgens ruimte en omstandigheden."
       },
       "EN": {
         "question": "You are in the narrow passage where this sign gives you priority. Halfway through you see an oncoming vehicle that also entered the passage. What do you do?",
         "choices": [
           {
-            "text": "You give a signal and stop; the oncoming driver violated your right of way and must reverse",
+            "text": "You slow or stop to prevent a collision and cooperate on the safest solution",
             "is_correct": true
           },
           {
@@ -360,17 +360,17 @@
             "is_correct": false
           },
           {
-            "text": "You reverse yourself because it is more efficient and safer",
+            "text": "You must always reverse, regardless of available space and danger",
             "is_correct": false
           }
         ],
-        "explanation": "Even though you have priority, you must avoid a collision. You stop, signal the oncoming driver who violated your right of way and wait until they reverse."
+        "explanation": "B21 determines priority, but it does not prescribe who must reverse in every concrete blockage. Prevent the collision and cooperate on the safest solution according to space and circumstances."
       },
       "FR": {
         "question": "Vous êtes dans le passage étroit où ce panneau vous donne la priorité. À mi-chemin, vous voyez un véhicule venant en sens inverse qui s'est également engagé dans le passage. Que faites-vous ?",
         "choices": [
           {
-            "text": "Vous signalez et vous vous arrêtez ; le conducteur venant en sens inverse a violé votre droit de priorité et doit faire marche arrière",
+            "text": "Vous ralentissez ou vous arrêtez pour éviter la collision et coopérez à la solution la plus sûre",
             "is_correct": true
           },
           {
@@ -378,26 +378,26 @@
             "is_correct": false
           },
           {
-            "text": "Vous faites vous-même marche arrière car c'est plus efficace et plus sûr",
+            "text": "Vous devez toujours reculer, quels que soient l'espace disponible et le danger",
             "is_correct": false
           }
         ],
-        "explanation": "Même si vous avez la priorité, vous devez éviter une collision. Vous vous arrêtez, signalez au conducteur venant en sens inverse qu'il a violé votre droit de priorité et attendez qu'il fasse marche arrière."
+        "explanation": "B21 détermine la priorité, mais ne désigne pas dans chaque blocage concret celui qui doit reculer. Évitez la collision et coopérez à la solution la plus sûre selon l'espace et les circonstances."
       },
       "AR": {
         "question": "أنت داخل الممر الضيق الذي تمنحك فيه هذه العلامة الأولوية. في المنتصف ترى مركبة مقابلة دخلت الممر أيضاً. ماذا تفعل؟",
         "choices": [
           {
-            "text": "ترسل إشارة وتتوقف؛ السائق المقابل انتهك حق أولويتك ويجب أن يتراجع",
+            "text": "تبطئ أو تتوقف لمنع الاصطدام وتتعاون للوصول إلى الحل الأكثر أماناً",
             "is_correct": true
           },
           {
             "text": "تستمر لأنك صاحب الأولوية والسائق المقابل يجب أن يتجنب",
             "is_correct": false
           },
-          { "text": "تتراجع أنت لأنه أكثر كفاءة وأماناً", "is_correct": false }
+          { "text": "يجب أن تتراجع أنت دائماً بصرف النظر عن المساحة والخطر", "is_correct": false }
         ],
-        "explanation": "حتى لو كنت صاحب الأولوية يجب تجنب الاصطدام. تتوقف وترسل إشارة للسائق المقابل الذي انتهك حق أولويتك وتنتظر حتى يتراجع."
+        "explanation": "تحدد B21 الأولوية لكنها لا تحدد في كل انسداد فعلي من يجب أن يتراجع. امنع الاصطدام وتعاون للوصول إلى الحل الأكثر أماناً بحسب المساحة والظروف."
       }
     }
   },
@@ -501,7 +501,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "Dit bord regelt de voorrang op gemotoriseerde tegenliggers in de rijbaan. Een voetganger die op het trottoir wacht, belemmert de doorgang niet en vereist geen wachtbeurt."
+        "explanation": "B21 regelt de voorrang tussen bestuurders uit tegengestelde richtingen. Een voetganger die enkel op het trottoir staat en de doorgang niet gebruikt, verandert die regeling niet; blijf wel voorzichtig."
       },
       "EN": {
         "question": "You are approaching the narrow passage with this sign. A pedestrian is standing on the pavement next to the passage. May you enter the passage without waiting?",
@@ -515,7 +515,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "This sign governs priority over motorised oncoming traffic in the roadway. A pedestrian waiting on the pavement does not obstruct the passage and does not require a waiting turn."
+        "explanation": "B21 governs priority between drivers coming from opposite directions. A pedestrian merely standing on the pavement and not using the passage does not change that rule; caution still remains required."
       },
       "FR": {
         "question": "Vous approchez du passage étroit avec ce panneau. Un piéton se tient sur le trottoir à côté du passage. Pouvez-vous entrer dans le passage sans attendre ?",
@@ -529,7 +529,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "Ce panneau régit la priorité sur les véhicules motorisés venant en sens inverse dans la chaussée. Un piéton qui attend sur le trottoir n'obstrue pas le passage et ne nécessite pas d'attente."
+        "explanation": "B21 règle la priorité entre les conducteurs venant de directions opposées. Un piéton qui se tient seulement sur le trottoir sans utiliser le passage ne modifie pas cette règle; la prudence reste nécessaire."
       },
       "AR": {
         "question": "أنت تقترب من الممر الضيق مع هذه العلامة. يقف أحد المشاة على الرصيف بجانب الممر. هل يجوز لك دخول الممر دون انتظار؟",
@@ -543,7 +543,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "هذه العلامة تنظم الأولوية على المركبات ذات المحرك المقابلة في الطريق. وجود أحد المشاة على الرصيف لا يعيق الممر ولا يستوجب الانتظار."
+        "explanation": "تنظم B21 الأولوية بين السائقين القادمين من اتجاهين متعاكسين. وجود أحد المشاة على الرصيف فقط وعدم استخدامه الممر لا يغير هذه القاعدة، مع بقاء واجب الحذر."
       }
     }
   },

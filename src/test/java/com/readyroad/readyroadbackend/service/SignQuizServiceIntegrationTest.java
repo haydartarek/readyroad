@@ -322,7 +322,7 @@ class SignQuizServiceIntegrationTest {
 
                 SignQuestion question = new SignQuestion();
                 question.setSign(sign);
-                question.setQuestionRef(sign.getSignCode() + "_Q01");
+                question.setQuestionRef(sign.getSignCode() + "_REFERENCE_RESOLUTION_Q01");
                 question.setQuestionType(SignQuestionType.WHAT_MUST_YOU_DO);
                 question.setDifficulty(SignDifficulty.EASY);
                 question.setIsCritical(false);
@@ -557,9 +557,16 @@ class SignQuizServiceIntegrationTest {
         }
 
         private void assertReferencedSignNamesAreResolved(SignQuizQuestionDto question) {
+                String b11NameEn = roadSignRepository.findByNormalizedSignCode("b11")
+                                .orElseThrow()
+                                .getNameEn();
+                String b17NameEn = roadSignRepository.findByNormalizedSignCode("b17")
+                                .orElseThrow()
+                                .getNameEn();
+
                 assertThat(question.questionEn())
-                                .contains("End of priority road")
-                                .contains("Crossroads where priority from the right applies")
+                                .contains(b11NameEn)
+                                .contains(b17NameEn)
                                 .doesNotContain("B11")
                                 .doesNotContain("B17");
                 assertThat(question.questionAr()).doesNotContain("B11").doesNotContain("B17");

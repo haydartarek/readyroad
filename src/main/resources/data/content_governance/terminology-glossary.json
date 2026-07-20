@@ -4,9 +4,11 @@
   "reviewed_categories": [
     "DANGER",
     "INFORMATION",
-    "MANDATORY"
+    "MANDATORY",
+    "PARKING",
+    "PRIORITY"
   ],
-  "last_reviewed": "2026-07-19",
+  "last_reviewed": "2026-07-20",
   "translation_policy": "NL and FR legal terms follow the official texts. EN and AR are faithful editorial translations and must not expand or narrow the legal meaning.",
   "terms": [
     {
@@ -31,6 +33,7 @@
       },
       "source_ids": [
         "BE-KB1975-ART61-66",
+        "BE-KB1975-PARKING-CURRENT",
         "BE-MB1976-ART7"
       ]
     },
@@ -1015,6 +1018,218 @@
       "forbidden_or_misleading_wording": [],
       "source_ids": [
         "BE-KB1975-PARKING-CURRENT"
+      ]
+    },
+    {
+      "term_id": "PRIORITY_SIGN",
+      "i18n": {
+        "NL": "voorrangsbord",
+        "EN": "priority sign",
+        "FR": "signal de priorité",
+        "AR": "علامة أولوية"
+      },
+      "definition": "A B-series sign that determines or announces priority under the current Belgian road code.",
+      "context": "Use for the governed B-series signs in PRIORITY content.",
+      "preferred_wording": {
+        "NL": "voorrangsbord",
+        "EN": "priority sign",
+        "FR": "signal de priorité",
+        "AR": "علامة أولوية"
+      },
+      "forbidden_or_misleading_wording": [],
+      "source_ids": [
+        "BE-KB1975-PRIORITY-CURRENT",
+        "BE-MB1976-PRIORITY-PLACEMENT"
+      ]
+    },
+    {
+      "term_id": "GIVE_WAY",
+      "i18n": {
+        "NL": "voorrang verlenen",
+        "EN": "give way",
+        "FR": "céder le passage",
+        "AR": "إعطاء الأولوية"
+      },
+      "definition": "The duty to let the driver or road user identified by the applicable rule proceed.",
+      "context": "Use instead of wording that implies an unconditional stop.",
+      "preferred_wording": {
+        "NL": "voorrang verlenen",
+        "EN": "give way",
+        "FR": "céder le passage",
+        "AR": "إعطاء الأولوية"
+      },
+      "forbidden_or_misleading_wording": [
+        "always stop at B1"
+      ],
+      "source_ids": [
+        "BE-KB1975-PRIORITY-CURRENT"
+      ]
+    },
+    {
+      "term_id": "STOP_AND_GIVE_WAY",
+      "i18n": {
+        "NL": "stoppen en voorrang verlenen",
+        "EN": "stop and give way",
+        "FR": "s'arrêter et céder le passage",
+        "AR": "التوقف وإعطاء الأولوية"
+      },
+      "definition": "The combined B5 duty to come to a complete stop and then give way.",
+      "context": "A stop line determines the stopping position when present.",
+      "preferred_wording": {
+        "NL": "stoppen en voorrang verlenen",
+        "EN": "stop and give way",
+        "FR": "s'arrêter et céder le passage",
+        "AR": "التوقف وإعطاء الأولوية"
+      },
+      "forbidden_or_misleading_wording": [
+        "slow down without stopping"
+      ],
+      "source_ids": [
+        "BE-KB1975-PRIORITY-CURRENT"
+      ]
+    },
+    {
+      "term_id": "PRIORITY_ROAD",
+      "i18n": {
+        "NL": "voorrangsweg",
+        "EN": "priority road",
+        "FR": "route prioritaire",
+        "AR": "طريق أولوية"
+      },
+      "definition": "A road marked by B9 on which junction priority continues until B11 or leaving that road.",
+      "context": "Distinguish from B15, which concerns the next junction.",
+      "preferred_wording": {
+        "NL": "voorrangsweg",
+        "EN": "priority road",
+        "FR": "route prioritaire",
+        "AR": "طريق أولوية"
+      },
+      "forbidden_or_misleading_wording": [
+        "priority at only one junction"
+      ],
+      "source_ids": [
+        "BE-KB1975-PRIORITY-CURRENT",
+        "BE-MB1976-PRIORITY-PLACEMENT"
+      ]
+    },
+    {
+      "term_id": "PRIORITY_FROM_RIGHT",
+      "i18n": {
+        "NL": "voorrang van rechts",
+        "EN": "priority from the right",
+        "FR": "priorité de droite",
+        "AR": "أولوية اليمين"
+      },
+      "definition": "At a junction, every driver gives way to a driver approaching from the right, subject to the statutory roundabout and prohibited-direction exceptions and higher instructions.",
+      "context": "Apply only after identifying the junction and applicable hierarchy.",
+      "preferred_wording": {
+        "NL": "voorrang van rechts",
+        "EN": "priority from the right",
+        "FR": "priorité de droite",
+        "AR": "أولوية اليمين"
+      },
+      "forbidden_or_misleading_wording": [
+        "all traffic from the right always has priority"
+      ],
+      "source_ids": [
+        "BE-KB1975-PRIORITY-CURRENT"
+      ]
+    },
+    {
+      "term_id": "NARROW_PASSAGE_PRIORITY",
+      "i18n": {
+        "NL": "voorrang aan een smalle doorgang",
+        "EN": "priority at a narrow passage",
+        "FR": "priorité dans un passage étroit",
+        "AR": "الأولوية عند ممر ضيق"
+      },
+      "definition": "The paired B19/B21 arrangement determining priority between drivers coming from opposite directions.",
+      "context": "B19 requires giving way; B21 grants priority over oncoming drivers.",
+      "preferred_wording": {
+        "NL": "voorrang aan een smalle doorgang",
+        "EN": "priority at a narrow passage",
+        "FR": "priorité dans un passage étroit",
+        "AR": "الأولوية عند ممر ضيق"
+      },
+      "forbidden_or_misleading_wording": [
+        "the other driver must always reverse"
+      ],
+      "source_ids": [
+        "BE-KB1975-PRIORITY-CURRENT",
+        "BE-MB1976-PRIORITY-PLACEMENT"
+      ]
+    },
+    {
+      "term_id": "RAIL_VEHICLE",
+      "i18n": {
+        "NL": "spoorvoertuig",
+        "EN": "rail vehicle",
+        "FR": "véhicule sur rails",
+        "AR": "مركبة تسير على السكك"
+      },
+      "definition": "A rail vehicle to which drivers must give way under the current priority rules.",
+      "context": "Avoid the broader and inaccurate wording that a tram always has priority in every possible conflict.",
+      "preferred_wording": {
+        "NL": "spoorvoertuig",
+        "EN": "rail vehicle",
+        "FR": "véhicule sur rails",
+        "AR": "مركبة تسير على السكك"
+      },
+      "forbidden_or_misleading_wording": [
+        "tram always has priority"
+      ],
+      "source_ids": [
+        "BE-KB1975-PRIORITY-CURRENT"
+      ]
+    },
+    {
+      "term_id": "B22_RIGHT_TURN_EXCEPTION",
+      "i18n": {
+        "NL": "rechtsaf bij rood of oranjegeel voor fietsers en speed pedelecs",
+        "EN": "right turn at red or amber for cyclists and speed pedelecs",
+        "FR": "tourner à droite au rouge ou à l'orange pour les cyclistes et speed pedelecs",
+        "AR": "الانعطاف يميناً عند الأحمر أو البرتقالي لراكبي الدراجات وسبيد بيديليكس"
+      },
+      "definition": "B22 permits the indicated right turn but retains the statutory duty to give way to other road users moving on the public road or carriageway.",
+      "context": "The permission applies only where B22 is placed.",
+      "preferred_wording": {
+        "NL": "B22-rechtsafuitzondering",
+        "EN": "B22 right-turn exception",
+        "FR": "exception B22 de virage à droite",
+        "AR": "استثناء B22 للانعطاف يميناً"
+      },
+      "forbidden_or_misleading_wording": [
+        "absolute priority at red",
+        "only give way to green traffic"
+      ],
+      "source_ids": [
+        "BE-KB1975-PRIORITY-CURRENT",
+        "BE-MB1976-PRIORITY-PLACEMENT"
+      ]
+    },
+    {
+      "term_id": "B23_STRAIGHT_AHEAD_EXCEPTION",
+      "i18n": {
+        "NL": "rechtdoor bij rood of oranjegeel voor fietsers en speed pedelecs",
+        "EN": "straight ahead at red or amber for cyclists and speed pedelecs",
+        "FR": "aller tout droit au rouge ou à l'orange pour les cyclistes et speed pedelecs",
+        "AR": "السير إلى الأمام عند الأحمر أو البرتقالي لراكبي الدراجات وسبيد بيديليكس"
+      },
+      "definition": "B23 permits going straight while retaining the statutory duty to give way to users moving from the red or amber light; placement is limited to layouts without crossing a traffic flow.",
+      "context": "The permission applies only where B23 is placed under the current code.",
+      "preferred_wording": {
+        "NL": "B23-rechtdooruitzondering",
+        "EN": "B23 straight-ahead exception",
+        "FR": "exception B23 tout droit",
+        "AR": "استثناء B23 للسير إلى الأمام"
+      },
+      "forbidden_or_misleading_wording": [
+        "crossing traffic has green",
+        "absolute priority at red"
+      ],
+      "source_ids": [
+        "BE-KB1975-PRIORITY-CURRENT",
+        "BE-MB1976-PRIORITY-PLACEMENT"
       ]
     }
   ]

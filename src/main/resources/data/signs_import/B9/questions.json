@@ -534,10 +534,10 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U rijdt op een voorrangsweg (B9) en nadert een zebrapad. Een voetganger wacht aan de zijkant. Moet u stoppen voor de voetganger?",
+        "question": "U rijdt op een voorrangsweg (B9). Een voetganger bevindt zich op het zebrapad of staat op het punt het te betreden. Moet u voorrang verlenen?",
         "choices": [
           {
-            "text": "Ja, u moet stoppen voor voetgangers die het zebrapad willen oversteken, ook op een voorrangsweg",
+            "text": "Ja, u moet zo nodig stoppen en de voetganger laten oversteken, ook op een voorrangsweg",
             "is_correct": true
           },
           {
@@ -545,13 +545,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "Het voorrangsrecht van B9 geldt enkel ten opzichte van bestuurders die de weg kruisen of inrijden. Voetgangers op een zebrapad hebben te allen tijde voorrang."
+        "explanation": "B9 regelt de voorrang ten opzichte van bestuurders aan kruispunten. Het neemt de afzonderlijke plicht niet weg om een voetganger die zich op een zebrapad bevindt of op het punt staat het te betreden, te laten oversteken."
       },
       "EN": {
-        "question": "You are on a priority road (B9) approaching a zebra crossing. A pedestrian is waiting at the side. Must you stop for the pedestrian?",
+        "question": "You are on a priority road (B9). A pedestrian is on a marked crossing or is about to enter it. Must you give way?",
         "choices": [
           {
-            "text": "Yes, you must stop for pedestrians who want to cross the zebra crossing, even on a priority road",
+            "text": "Yes, you must stop if necessary and let the pedestrian cross, even on a priority road",
             "is_correct": true
           },
           {
@@ -559,35 +559,35 @@
             "is_correct": false
           }
         ],
-        "explanation": "The right of way of B9 only applies to drivers crossing or entering the road. Pedestrians at a zebra crossing always have priority."
+        "explanation": "B9 governs priority relative to drivers at junctions. It does not remove the separate duty to let a pedestrian who is on a marked crossing or about to enter it cross."
       },
       "FR": {
-        "question": "Vous roulez sur une route prioritaire (B9) et approchez d\u0027un passage pour pi\u00e9tons. Un pi\u00e9ton attend sur le c\u00f4t\u00e9. Devez-vous vous arr\u00eater pour le pi\u00e9ton ?",
+        "question": "Vous roulez sur une route prioritaire (B9). Un piéton se trouve sur un passage pour piétons ou est sur le point de s'y engager. Devez-vous céder le passage ?",
         "choices": [
           {
-            "text": "Oui, vous devez vous arr\u00eater pour les pi\u00e9tons qui souhaitent traverser le passage z\u00e8bre, m\u00eame sur une route prioritaire",
+            "text": "Oui, vous devez vous arrêter si nécessaire et laisser traverser le piéton, même sur une route prioritaire",
             "is_correct": true
           },
           {
-            "text": "Non, sur une route prioritaire vous avez la priorit\u00e9 sur tous les usagers y compris les pi\u00e9tons",
+            "text": "Non, sur une route prioritaire vous avez la priorité sur tous les usagers, y compris les piétons",
             "is_correct": false
           }
         ],
-        "explanation": "La priorit\u00e9 de B9 ne s\u0027applique qu\u0027aux conducteurs qui traversent ou s\u0027engagent sur la route. Les pi\u00e9tons sur un passage z\u00e8bre ont toujours la priorit\u00e9."
+        "explanation": "B9 règle la priorité par rapport aux conducteurs aux carrefours. Il ne supprime pas l'obligation distincte de laisser traverser un piéton qui se trouve sur un passage ou est sur le point de s'y engager."
       },
       "AR": {
-        "question": "\u0623\u0646\u062a \u062a\u0633\u064a\u0631 \u0639\u0644\u0649 \u0637\u0631\u064a\u0642 \u0623\u0648\u0644\u0648\u064a\u0629 (B9) \u0648\u062a\u0642\u062a\u0631\u0628 \u0645\u0646 \u0645\u0645\u0631 \u0645\u0634\u0627\u0629. \u064a\u0642\u0641 \u0645\u0634\u0627\u0629 \u0639\u0644\u0649 \u0627\u0644\u062c\u0627\u0646\u0628. \u0647\u0644 \u064a\u062c\u0628 \u0639\u0644\u064a\u0643 \u0627\u0644\u062a\u0648\u0642\u0641 \u0644\u0644\u0645\u0634\u0627\u0629\u061f",
+        "question": "أنت تسير على طريق أولوية (B9). يوجد أحد المشاة على ممر محدد أو على وشك دخوله. هل يجب إعطاؤه الأولوية؟",
         "choices": [
           {
-            "text": "\u0646\u0639\u0645\u060c \u064a\u062c\u0628 \u0627\u0644\u062a\u0648\u0642\u0641 \u0644\u0644\u0645\u0634\u0627\u0629 \u0627\u0644\u0631\u0627\u063a\u0628\u064a\u0646 \u0628\u0639\u0628\u0648\u0631 \u0645\u0645\u0631 \u0627\u0644\u0645\u0634\u0627\u0629 \u062d\u062a\u0649 \u0639\u0644\u0649 \u0637\u0631\u064a\u0642 \u0627\u0644\u0623\u0648\u0644\u0648\u064a\u0629",
+            "text": "نعم، يجب التوقف عند الحاجة وترك المشاة يعبر، حتى على طريق الأولوية",
             "is_correct": true
           },
           {
-            "text": "\u0644\u0627\u060c \u0639\u0644\u0649 \u0637\u0631\u064a\u0642 \u0627\u0644\u0623\u0648\u0644\u0648\u064a\u0629 \u0644\u062f\u064a\u0643 \u0627\u0644\u0623\u0648\u0644\u0648\u064a\u0629 \u0639\u0644\u0649 \u062c\u0645\u064a\u0639 \u0645\u0633\u062a\u062e\u062f\u0645\u064a \u0627\u0644\u0637\u0631\u064a\u0642 \u0628\u0645\u0627 \u0641\u064a\u0647\u0645 \u0627\u0644\u0645\u0634\u0627\u0629",
+            "text": "لا، تمنحك طريق الأولوية الأسبقية على جميع مستخدمي الطريق بمن فيهم المشاة",
             "is_correct": false
           }
         ],
-        "explanation": "\u062d\u0642 \u0627\u0644\u0623\u0648\u0644\u0648\u064a\u0629 \u0641\u064a B9 \u064a\u0646\u0637\u0628\u0642 \u0641\u0642\u0637 \u0639\u0644\u0649 \u0627\u0644\u0633\u0627\u0626\u0642\u064a\u0646 \u0627\u0644\u0630\u064a\u0646 \u064a\u062a\u0642\u0627\u0637\u0639\u0648\u0646 \u0645\u0639 \u0627\u0644\u0637\u0631\u064a\u0642 \u0623\u0648 \u064a\u062f\u062e\u0644\u0648\u0646\u0647. \u0644\u0644\u0645\u0634\u0627\u0629 \u0641\u064a \u0645\u0645\u0631 \u0627\u0644\u0645\u0634\u0627\u0629 \u0627\u0644\u0623\u0648\u0644\u0648\u064a\u0629 \u062f\u0627\u0626\u0645\u0627\u064b."
+        "explanation": "تنظم B9 الأولوية بالنسبة إلى السائقين عند التقاطعات، ولا تلغي الواجب المستقل بترك المشاة الموجود على الممر المحدد أو الذي هو على وشك دخوله يعبر."
       }
     }
   }

@@ -522,60 +522,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U volgt de hoofdweg niet verder en slaat een andere richting in op het kruispunt. Behoudt u dan nog dezelfde voorrang van dit bord?",
+        "question": "Geeft dit bord u automatisch voorrang op alle latere kruispunten van dezelfde weg?",
         "choices": [
           {
-            "text": "Nee, dit bord geeft voorrang volgens de aangeduide situatie; zodra u die lijn niet volgt, geldt die voorrang niet meer op dezelfde manier",
+            "text": "Nee, B15 regelt de voorrang op het aangeduide eerstvolgende kruispunt",
             "is_correct": true
           },
           {
-            "text": "Ja, zodra u het bord gepasseerd bent, behoudt u overal op het kruispunt dezelfde voorrang",
+            "text": "Ja, B15 maakt de hele verdere weg automatisch tot voorrangsweg",
             "is_correct": false
           }
         ],
-        "explanation": "De voorrang van dit bord is gekoppeld aan de situatie die in het symbool wordt weergegeven. Als u die aangeduide lijn niet volgt, kunt u niet zomaar dezelfde voorrang blijven claimen."
+        "explanation": "B15 geeft voorrang op de onmiddellijk aangeduide plaats. Een blijvende voorrangsweg wordt met B9 aangeduid; op latere kruispunten moet u de daar aanwezige tekens en regels volgen."
       },
       "EN": {
-        "question": "You do not continue along the main road and turn in another direction at the junction. Do you still keep the same priority from this sign?",
+        "question": "Does this sign automatically give you priority at every later junction on the same road?",
         "choices": [
           {
-            "text": "No, this sign gives priority according to the indicated layout; once you do not follow that line, the same priority no longer applies in the same way",
+            "text": "No, B15 governs priority at the indicated next junction",
             "is_correct": true
           },
           {
-            "text": "Yes, once you have passed the sign you keep the same priority everywhere in the junction",
+            "text": "Yes, B15 automatically makes the entire road ahead a priority road",
             "is_correct": false
           }
         ],
-        "explanation": "The priority from this sign is tied to the layout shown in the symbol. If you do not follow that indicated line, you cannot automatically claim the same priority in the same way."
+        "explanation": "B15 gives priority at the immediately indicated location. A continuing priority road is marked by B9; at later junctions you must follow the signs and rules present there."
       },
       "FR": {
-        "question": "Vous ne continuez pas sur la route principale et tournez dans une autre direction au carrefour. Gardez-vous alors la même priorité donnée par ce panneau ?",
+        "question": "Ce panneau vous donne-t-il automatiquement la priorité à tous les carrefours suivants de la même route ?",
         "choices": [
           {
-            "text": "Non, ce panneau donne la priorité selon la configuration indiquée ; si vous ne suivez pas cette ligne, la même priorité ne s'applique plus de la même manière",
+            "text": "Non, B15 règle la priorité au prochain carrefour indiqué",
             "is_correct": true
           },
           {
-            "text": "Oui, dès que vous avez dépassé le panneau, vous gardez partout dans le carrefour la même priorité",
+            "text": "Oui, B15 transforme automatiquement toute la suite de la route en route prioritaire",
             "is_correct": false
           }
         ],
-        "explanation": "La priorité donnée par ce panneau est liée à la configuration montrée dans le symbole. Si vous ne suivez pas cette ligne indiquée, vous ne pouvez pas automatiquement revendiquer la même priorité de la même façon."
+        "explanation": "B15 accorde la priorité à l'endroit immédiatement indiqué. Une route prioritaire continue est signalée par B9 ; aux carrefours suivants, vous devez suivre les signaux et règles qui s'y trouvent."
       },
       "AR": {
-        "question": "إذا لم تتابع السير على الطريق الرئيسي وانعطفت في اتجاه آخر داخل التقاطع، فهل تبقى لك الأولوية نفسها التي تمنحها هذه العلامة؟",
+        "question": "هل تمنحك هذه العلامة الأولوية تلقائيًا في كل التقاطعات اللاحقة على الطريق نفسه؟",
         "choices": [
           {
-            "text": "لا، هذه العلامة تمنح الأولوية وفق الوضع المبين في الرسم، وإذا لم تتبع ذلك المسار فلا تبقى الأولوية نفسها بالطريقة نفسها",
+            "text": "لا، تنظم B15 الأولوية عند التقاطع التالي المحدد",
             "is_correct": true
           },
           {
-            "text": "نعم، بمجرد تجاوزك العلامة تبقى لك الأولوية نفسها في جميع أجزاء التقاطع",
+            "text": "نعم، تجعل B15 الطريق كله بعد العلامة طريق أولوية تلقائيًا",
             "is_correct": false
           }
         ],
-        "explanation": "أولوية هذه العلامة مرتبطة بالترتيب الموضح في الرمز. إذا لم تتبع ذلك المسار فلا يمكنك المطالبة تلقائيًا بالأولوية نفسها بالطريقة نفسها."
+        "explanation": "تمنح B15 الأولوية في الموضع المحدد مباشرة. أما طريق الأولوية المستمر فتعلنه B9، ويجب في التقاطعات اللاحقة اتباع العلامات والقواعد الموجودة هناك."
       }
     }
   }

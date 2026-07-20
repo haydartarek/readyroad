@@ -1,0 +1,3353 @@
+{
+  "schema_version": 2,
+  "framework_version": 1,
+  "category": "PRIORITY",
+  "slug": "priority",
+  "canonical_content_root": "classpath:data/signs_import",
+  "canonical_ownership": "Each sign directory's sign.json is the sole runtime source for sign text.",
+  "review_date": "2026-07-20",
+  "review_status": "APPROVED",
+  "reviewed_languages": [
+    "NL",
+    "EN",
+    "FR",
+    "AR"
+  ],
+  "counts": {
+    "signs": 16,
+    "questions": 128,
+    "exams": 16,
+    "lessons": 28
+  },
+  "risk_level": "HIGH",
+  "quality_metrics": {
+    "signs_reviewed": 16,
+    "questions_reviewed": 128,
+    "lessons_reviewed": 28,
+    "legal_sources_linked": 2,
+    "terminology_standardized": 9,
+    "cross_language_consistency": "PASSED",
+    "future_law_items": 1,
+    "human_review_required": 0,
+    "risk_level": "HIGH"
+  },
+  "validation_rules": {
+    "questions_per_sign": 8,
+    "passing_score": 6,
+    "difficulty_distribution": {
+      "EASY": 3,
+      "MEDIUM": 3,
+      "HARD": 2
+    },
+    "default_choice_count": 3,
+    "hard_choice_count": 2,
+    "binary_choice_count": 2,
+    "binary_question_types": [
+      "IS_IT_ALLOWED"
+    ],
+    "correct_choices_per_language": 1
+  },
+  "terminology_ids": [
+    "PRIORITY_SIGN",
+    "GIVE_WAY",
+    "STOP_AND_GIVE_WAY",
+    "PRIORITY_ROAD",
+    "PRIORITY_FROM_RIGHT",
+    "NARROW_PASSAGE_PRIORITY",
+    "RAIL_VEHICLE",
+    "B22_RIGHT_TURN_EXCEPTION",
+    "B23_STRAIGHT_AHEAD_EXCEPTION"
+  ],
+  "future_law_items": [
+    "BE-FPS-ROAD-CODE-2027"
+  ],
+  "reports": {
+    "content_review": "docs/content-governance/category-reviews/priority/content-review-report.md",
+    "cross_file_consistency": "docs/content-governance/category-reviews/priority/cross-file-consistency-report.json",
+    "ambiguous_questions": "docs/content-governance/category-reviews/priority/ambiguous-questions-report.json",
+    "human_approval": "docs/content-governance/category-reviews/priority/corrections-requiring-human-approval.json",
+    "last_reviewed": "docs/content-governance/category-reviews/priority/last-reviewed.json"
+  },
+  "content_assertions": [
+    {
+      "type": "CORRECT_CHOICE_CONTAINS",
+      "sign_code": "B17",
+      "question_id": "B17_Q05",
+      "language": "EN",
+      "expected": "prohibited direction"
+    },
+    {
+      "type": "CORRECT_CHOICE_CONTAINS",
+      "sign_code": "B17",
+      "question_id": "B17_Q07",
+      "language": "EN",
+      "expected": "roundabout"
+    },
+    {
+      "type": "CORRECT_CHOICE_CONTAINS",
+      "sign_code": "B21",
+      "question_id": "B21_Q05",
+      "language": "EN",
+      "expected": "safest solution"
+    },
+    {
+      "type": "CORRECT_CHOICE_CONTAINS",
+      "sign_code": "B22",
+      "question_id": "B22_Q01",
+      "language": "EN",
+      "expected": "red or amber"
+    },
+    {
+      "type": "CORRECT_CHOICE_CONTAINS",
+      "sign_code": "B23",
+      "question_id": "B23_Q01",
+      "language": "EN",
+      "expected": "red or amber"
+    },
+    {
+      "type": "CORRECT_CHOICE_CONTAINS",
+      "sign_code": "B9",
+      "question_id": "B9_Q08",
+      "language": "EN",
+      "expected": "let the pedestrian cross"
+    },
+    {
+      "type": "FILE_CONTAINS_ALL",
+      "path": "data/lessons_content.json",
+      "fragments": [
+        "A driver on a roundabout is excepted",
+        "Belgian law has no general rule automatically granting priority to uphill traffic",
+        "The statutory one-metre distance in built-up areas",
+        "Parking is prohibited within 15 metres on either side"
+      ]
+    }
+  ],
+  "signs": {
+    "B1": {
+      "canonical_path": "src/main/resources/data/signs_import/B1/sign.json",
+      "source_ids": [
+        "BE-KB1975-PRIORITY-CURRENT",
+        "BE-MB1976-PRIORITY-PLACEMENT"
+      ],
+      "last_reviewed": "2026-07-20",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "questions": {
+        "B1_Q01": {
+          "canonical_path": "src/main/resources/data/signs_import/B1/questions.json#/0",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B1_Q02": {
+          "canonical_path": "src/main/resources/data/signs_import/B1/questions.json#/1",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B1_Q03": {
+          "canonical_path": "src/main/resources/data/signs_import/B1/questions.json#/2",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B1_Q04": {
+          "canonical_path": "src/main/resources/data/signs_import/B1/questions.json#/3",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B1_Q05": {
+          "canonical_path": "src/main/resources/data/signs_import/B1/questions.json#/4",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B1_Q06": {
+          "canonical_path": "src/main/resources/data/signs_import/B1/questions.json#/5",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B1_Q07": {
+          "canonical_path": "src/main/resources/data/signs_import/B1/questions.json#/6",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B1_Q08": {
+          "canonical_path": "src/main/resources/data/signs_import/B1/questions.json#/7",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        }
+      },
+      "exam": {
+        "canonical_path": "src/main/resources/data/signs_import/B1/exams.json",
+        "source_ids": [
+          "BE-KB1975-PRIORITY-CURRENT"
+        ],
+        "last_reviewed": "2026-07-20",
+        "review_reason": "Reviewed as an assessment manifest referencing the eight governed questions for this sign.",
+        "original_review_language": "NL",
+        "reviewed_languages": [
+          "NL",
+          "EN",
+          "FR",
+          "AR"
+        ],
+        "status": "APPROVED"
+      }
+    },
+    "B5": {
+      "canonical_path": "src/main/resources/data/signs_import/B5/sign.json",
+      "source_ids": [
+        "BE-KB1975-PRIORITY-CURRENT",
+        "BE-MB1976-PRIORITY-PLACEMENT"
+      ],
+      "last_reviewed": "2026-07-20",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "questions": {
+        "B5_Q01": {
+          "canonical_path": "src/main/resources/data/signs_import/B5/questions.json#/0",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B5_Q02": {
+          "canonical_path": "src/main/resources/data/signs_import/B5/questions.json#/1",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B5_Q03": {
+          "canonical_path": "src/main/resources/data/signs_import/B5/questions.json#/2",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B5_Q04": {
+          "canonical_path": "src/main/resources/data/signs_import/B5/questions.json#/3",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B5_Q05": {
+          "canonical_path": "src/main/resources/data/signs_import/B5/questions.json#/4",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B5_Q06": {
+          "canonical_path": "src/main/resources/data/signs_import/B5/questions.json#/5",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B5_Q07": {
+          "canonical_path": "src/main/resources/data/signs_import/B5/questions.json#/6",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B5_Q08": {
+          "canonical_path": "src/main/resources/data/signs_import/B5/questions.json#/7",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        }
+      },
+      "exam": {
+        "canonical_path": "src/main/resources/data/signs_import/B5/exams.json",
+        "source_ids": [
+          "BE-KB1975-PRIORITY-CURRENT"
+        ],
+        "last_reviewed": "2026-07-20",
+        "review_reason": "Reviewed as an assessment manifest referencing the eight governed questions for this sign.",
+        "original_review_language": "NL",
+        "reviewed_languages": [
+          "NL",
+          "EN",
+          "FR",
+          "AR"
+        ],
+        "status": "APPROVED"
+      }
+    },
+    "B9": {
+      "canonical_path": "src/main/resources/data/signs_import/B9/sign.json",
+      "source_ids": [
+        "BE-KB1975-PRIORITY-CURRENT",
+        "BE-MB1976-PRIORITY-PLACEMENT"
+      ],
+      "last_reviewed": "2026-07-20",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "questions": {
+        "B9_Q01": {
+          "canonical_path": "src/main/resources/data/signs_import/B9/questions.json#/0",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B9_Q02": {
+          "canonical_path": "src/main/resources/data/signs_import/B9/questions.json#/1",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B9_Q03": {
+          "canonical_path": "src/main/resources/data/signs_import/B9/questions.json#/2",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B9_Q04": {
+          "canonical_path": "src/main/resources/data/signs_import/B9/questions.json#/3",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B9_Q05": {
+          "canonical_path": "src/main/resources/data/signs_import/B9/questions.json#/4",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B9_Q06": {
+          "canonical_path": "src/main/resources/data/signs_import/B9/questions.json#/5",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B9_Q07": {
+          "canonical_path": "src/main/resources/data/signs_import/B9/questions.json#/6",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B9_Q08": {
+          "canonical_path": "src/main/resources/data/signs_import/B9/questions.json#/7",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        }
+      },
+      "exam": {
+        "canonical_path": "src/main/resources/data/signs_import/B9/exams.json",
+        "source_ids": [
+          "BE-KB1975-PRIORITY-CURRENT"
+        ],
+        "last_reviewed": "2026-07-20",
+        "review_reason": "Reviewed as an assessment manifest referencing the eight governed questions for this sign.",
+        "original_review_language": "NL",
+        "reviewed_languages": [
+          "NL",
+          "EN",
+          "FR",
+          "AR"
+        ],
+        "status": "APPROVED"
+      }
+    },
+    "B11": {
+      "canonical_path": "src/main/resources/data/signs_import/B11/sign.json",
+      "source_ids": [
+        "BE-KB1975-PRIORITY-CURRENT",
+        "BE-MB1976-PRIORITY-PLACEMENT"
+      ],
+      "last_reviewed": "2026-07-20",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "questions": {
+        "B11_Q01": {
+          "canonical_path": "src/main/resources/data/signs_import/B11/questions.json#/0",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B11_Q02": {
+          "canonical_path": "src/main/resources/data/signs_import/B11/questions.json#/1",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B11_Q03": {
+          "canonical_path": "src/main/resources/data/signs_import/B11/questions.json#/2",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B11_Q04": {
+          "canonical_path": "src/main/resources/data/signs_import/B11/questions.json#/3",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B11_Q05": {
+          "canonical_path": "src/main/resources/data/signs_import/B11/questions.json#/4",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B11_Q06": {
+          "canonical_path": "src/main/resources/data/signs_import/B11/questions.json#/5",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B11_Q07": {
+          "canonical_path": "src/main/resources/data/signs_import/B11/questions.json#/6",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B11_Q08": {
+          "canonical_path": "src/main/resources/data/signs_import/B11/questions.json#/7",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        }
+      },
+      "exam": {
+        "canonical_path": "src/main/resources/data/signs_import/B11/exams.json",
+        "source_ids": [
+          "BE-KB1975-PRIORITY-CURRENT"
+        ],
+        "last_reviewed": "2026-07-20",
+        "review_reason": "Reviewed as an assessment manifest referencing the eight governed questions for this sign.",
+        "original_review_language": "NL",
+        "reviewed_languages": [
+          "NL",
+          "EN",
+          "FR",
+          "AR"
+        ],
+        "status": "APPROVED"
+      }
+    },
+    "B15a": {
+      "canonical_path": "src/main/resources/data/signs_import/B15a/sign.json",
+      "source_ids": [
+        "BE-KB1975-PRIORITY-CURRENT",
+        "BE-MB1976-PRIORITY-PLACEMENT"
+      ],
+      "last_reviewed": "2026-07-20",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "questions": {
+        "B15a_Q01": {
+          "canonical_path": "src/main/resources/data/signs_import/B15a/questions.json#/0",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B15a_Q02": {
+          "canonical_path": "src/main/resources/data/signs_import/B15a/questions.json#/1",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B15a_Q03": {
+          "canonical_path": "src/main/resources/data/signs_import/B15a/questions.json#/2",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B15a_Q04": {
+          "canonical_path": "src/main/resources/data/signs_import/B15a/questions.json#/3",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B15a_Q05": {
+          "canonical_path": "src/main/resources/data/signs_import/B15a/questions.json#/4",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B15a_Q06": {
+          "canonical_path": "src/main/resources/data/signs_import/B15a/questions.json#/5",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B15a_Q07": {
+          "canonical_path": "src/main/resources/data/signs_import/B15a/questions.json#/6",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B15a_Q08": {
+          "canonical_path": "src/main/resources/data/signs_import/B15a/questions.json#/7",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        }
+      },
+      "exam": {
+        "canonical_path": "src/main/resources/data/signs_import/B15a/exams.json",
+        "source_ids": [
+          "BE-KB1975-PRIORITY-CURRENT"
+        ],
+        "last_reviewed": "2026-07-20",
+        "review_reason": "Reviewed as an assessment manifest referencing the eight governed questions for this sign.",
+        "original_review_language": "NL",
+        "reviewed_languages": [
+          "NL",
+          "EN",
+          "FR",
+          "AR"
+        ],
+        "status": "APPROVED"
+      }
+    },
+    "B15b": {
+      "canonical_path": "src/main/resources/data/signs_import/B15b/sign.json",
+      "source_ids": [
+        "BE-KB1975-PRIORITY-CURRENT",
+        "BE-MB1976-PRIORITY-PLACEMENT"
+      ],
+      "last_reviewed": "2026-07-20",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "questions": {
+        "B15b_Q01": {
+          "canonical_path": "src/main/resources/data/signs_import/B15b/questions.json#/0",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B15b_Q02": {
+          "canonical_path": "src/main/resources/data/signs_import/B15b/questions.json#/1",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B15b_Q03": {
+          "canonical_path": "src/main/resources/data/signs_import/B15b/questions.json#/2",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B15b_Q04": {
+          "canonical_path": "src/main/resources/data/signs_import/B15b/questions.json#/3",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B15b_Q05": {
+          "canonical_path": "src/main/resources/data/signs_import/B15b/questions.json#/4",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B15b_Q06": {
+          "canonical_path": "src/main/resources/data/signs_import/B15b/questions.json#/5",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B15b_Q07": {
+          "canonical_path": "src/main/resources/data/signs_import/B15b/questions.json#/6",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B15b_Q08": {
+          "canonical_path": "src/main/resources/data/signs_import/B15b/questions.json#/7",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        }
+      },
+      "exam": {
+        "canonical_path": "src/main/resources/data/signs_import/B15b/exams.json",
+        "source_ids": [
+          "BE-KB1975-PRIORITY-CURRENT"
+        ],
+        "last_reviewed": "2026-07-20",
+        "review_reason": "Reviewed as an assessment manifest referencing the eight governed questions for this sign.",
+        "original_review_language": "NL",
+        "reviewed_languages": [
+          "NL",
+          "EN",
+          "FR",
+          "AR"
+        ],
+        "status": "APPROVED"
+      }
+    },
+    "B15c": {
+      "canonical_path": "src/main/resources/data/signs_import/B15c/sign.json",
+      "source_ids": [
+        "BE-KB1975-PRIORITY-CURRENT",
+        "BE-MB1976-PRIORITY-PLACEMENT"
+      ],
+      "last_reviewed": "2026-07-20",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "questions": {
+        "B15c_Q01": {
+          "canonical_path": "src/main/resources/data/signs_import/B15c/questions.json#/0",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B15c_Q02": {
+          "canonical_path": "src/main/resources/data/signs_import/B15c/questions.json#/1",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B15c_Q03": {
+          "canonical_path": "src/main/resources/data/signs_import/B15c/questions.json#/2",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B15c_Q04": {
+          "canonical_path": "src/main/resources/data/signs_import/B15c/questions.json#/3",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B15c_Q05": {
+          "canonical_path": "src/main/resources/data/signs_import/B15c/questions.json#/4",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B15c_Q06": {
+          "canonical_path": "src/main/resources/data/signs_import/B15c/questions.json#/5",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B15c_Q07": {
+          "canonical_path": "src/main/resources/data/signs_import/B15c/questions.json#/6",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B15c_Q08": {
+          "canonical_path": "src/main/resources/data/signs_import/B15c/questions.json#/7",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        }
+      },
+      "exam": {
+        "canonical_path": "src/main/resources/data/signs_import/B15c/exams.json",
+        "source_ids": [
+          "BE-KB1975-PRIORITY-CURRENT"
+        ],
+        "last_reviewed": "2026-07-20",
+        "review_reason": "Reviewed as an assessment manifest referencing the eight governed questions for this sign.",
+        "original_review_language": "NL",
+        "reviewed_languages": [
+          "NL",
+          "EN",
+          "FR",
+          "AR"
+        ],
+        "status": "APPROVED"
+      }
+    },
+    "B15d": {
+      "canonical_path": "src/main/resources/data/signs_import/B15d/sign.json",
+      "source_ids": [
+        "BE-KB1975-PRIORITY-CURRENT",
+        "BE-MB1976-PRIORITY-PLACEMENT"
+      ],
+      "last_reviewed": "2026-07-20",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "questions": {
+        "B15d_Q01": {
+          "canonical_path": "src/main/resources/data/signs_import/B15d/questions.json#/0",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B15d_Q02": {
+          "canonical_path": "src/main/resources/data/signs_import/B15d/questions.json#/1",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B15d_Q03": {
+          "canonical_path": "src/main/resources/data/signs_import/B15d/questions.json#/2",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B15d_Q04": {
+          "canonical_path": "src/main/resources/data/signs_import/B15d/questions.json#/3",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B15d_Q05": {
+          "canonical_path": "src/main/resources/data/signs_import/B15d/questions.json#/4",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B15d_Q06": {
+          "canonical_path": "src/main/resources/data/signs_import/B15d/questions.json#/5",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B15d_Q07": {
+          "canonical_path": "src/main/resources/data/signs_import/B15d/questions.json#/6",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B15d_Q08": {
+          "canonical_path": "src/main/resources/data/signs_import/B15d/questions.json#/7",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        }
+      },
+      "exam": {
+        "canonical_path": "src/main/resources/data/signs_import/B15d/exams.json",
+        "source_ids": [
+          "BE-KB1975-PRIORITY-CURRENT"
+        ],
+        "last_reviewed": "2026-07-20",
+        "review_reason": "Reviewed as an assessment manifest referencing the eight governed questions for this sign.",
+        "original_review_language": "NL",
+        "reviewed_languages": [
+          "NL",
+          "EN",
+          "FR",
+          "AR"
+        ],
+        "status": "APPROVED"
+      }
+    },
+    "B15e": {
+      "canonical_path": "src/main/resources/data/signs_import/B15e/sign.json",
+      "source_ids": [
+        "BE-KB1975-PRIORITY-CURRENT",
+        "BE-MB1976-PRIORITY-PLACEMENT"
+      ],
+      "last_reviewed": "2026-07-20",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "questions": {
+        "B15e_Q01": {
+          "canonical_path": "src/main/resources/data/signs_import/B15e/questions.json#/0",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B15e_Q02": {
+          "canonical_path": "src/main/resources/data/signs_import/B15e/questions.json#/1",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B15e_Q03": {
+          "canonical_path": "src/main/resources/data/signs_import/B15e/questions.json#/2",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B15e_Q04": {
+          "canonical_path": "src/main/resources/data/signs_import/B15e/questions.json#/3",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B15e_Q05": {
+          "canonical_path": "src/main/resources/data/signs_import/B15e/questions.json#/4",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B15e_Q06": {
+          "canonical_path": "src/main/resources/data/signs_import/B15e/questions.json#/5",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B15e_Q07": {
+          "canonical_path": "src/main/resources/data/signs_import/B15e/questions.json#/6",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B15e_Q08": {
+          "canonical_path": "src/main/resources/data/signs_import/B15e/questions.json#/7",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        }
+      },
+      "exam": {
+        "canonical_path": "src/main/resources/data/signs_import/B15e/exams.json",
+        "source_ids": [
+          "BE-KB1975-PRIORITY-CURRENT"
+        ],
+        "last_reviewed": "2026-07-20",
+        "review_reason": "Reviewed as an assessment manifest referencing the eight governed questions for this sign.",
+        "original_review_language": "NL",
+        "reviewed_languages": [
+          "NL",
+          "EN",
+          "FR",
+          "AR"
+        ],
+        "status": "APPROVED"
+      }
+    },
+    "B15f": {
+      "canonical_path": "src/main/resources/data/signs_import/B15f/sign.json",
+      "source_ids": [
+        "BE-KB1975-PRIORITY-CURRENT",
+        "BE-MB1976-PRIORITY-PLACEMENT"
+      ],
+      "last_reviewed": "2026-07-20",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "questions": {
+        "B15f_Q01": {
+          "canonical_path": "src/main/resources/data/signs_import/B15f/questions.json#/0",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B15f_Q02": {
+          "canonical_path": "src/main/resources/data/signs_import/B15f/questions.json#/1",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B15f_Q03": {
+          "canonical_path": "src/main/resources/data/signs_import/B15f/questions.json#/2",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B15f_Q04": {
+          "canonical_path": "src/main/resources/data/signs_import/B15f/questions.json#/3",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B15f_Q05": {
+          "canonical_path": "src/main/resources/data/signs_import/B15f/questions.json#/4",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B15f_Q06": {
+          "canonical_path": "src/main/resources/data/signs_import/B15f/questions.json#/5",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B15f_Q07": {
+          "canonical_path": "src/main/resources/data/signs_import/B15f/questions.json#/6",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B15f_Q08": {
+          "canonical_path": "src/main/resources/data/signs_import/B15f/questions.json#/7",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        }
+      },
+      "exam": {
+        "canonical_path": "src/main/resources/data/signs_import/B15f/exams.json",
+        "source_ids": [
+          "BE-KB1975-PRIORITY-CURRENT"
+        ],
+        "last_reviewed": "2026-07-20",
+        "review_reason": "Reviewed as an assessment manifest referencing the eight governed questions for this sign.",
+        "original_review_language": "NL",
+        "reviewed_languages": [
+          "NL",
+          "EN",
+          "FR",
+          "AR"
+        ],
+        "status": "APPROVED"
+      }
+    },
+    "B15g": {
+      "canonical_path": "src/main/resources/data/signs_import/B15g/sign.json",
+      "source_ids": [
+        "BE-KB1975-PRIORITY-CURRENT",
+        "BE-MB1976-PRIORITY-PLACEMENT"
+      ],
+      "last_reviewed": "2026-07-20",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "questions": {
+        "B15g_Q01": {
+          "canonical_path": "src/main/resources/data/signs_import/B15g/questions.json#/0",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B15g_Q02": {
+          "canonical_path": "src/main/resources/data/signs_import/B15g/questions.json#/1",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B15g_Q03": {
+          "canonical_path": "src/main/resources/data/signs_import/B15g/questions.json#/2",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B15g_Q04": {
+          "canonical_path": "src/main/resources/data/signs_import/B15g/questions.json#/3",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B15g_Q05": {
+          "canonical_path": "src/main/resources/data/signs_import/B15g/questions.json#/4",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B15g_Q06": {
+          "canonical_path": "src/main/resources/data/signs_import/B15g/questions.json#/5",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B15g_Q07": {
+          "canonical_path": "src/main/resources/data/signs_import/B15g/questions.json#/6",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B15g_Q08": {
+          "canonical_path": "src/main/resources/data/signs_import/B15g/questions.json#/7",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        }
+      },
+      "exam": {
+        "canonical_path": "src/main/resources/data/signs_import/B15g/exams.json",
+        "source_ids": [
+          "BE-KB1975-PRIORITY-CURRENT"
+        ],
+        "last_reviewed": "2026-07-20",
+        "review_reason": "Reviewed as an assessment manifest referencing the eight governed questions for this sign.",
+        "original_review_language": "NL",
+        "reviewed_languages": [
+          "NL",
+          "EN",
+          "FR",
+          "AR"
+        ],
+        "status": "APPROVED"
+      }
+    },
+    "B17": {
+      "canonical_path": "src/main/resources/data/signs_import/B17/sign.json",
+      "source_ids": [
+        "BE-KB1975-PRIORITY-CURRENT",
+        "BE-MB1976-PRIORITY-PLACEMENT"
+      ],
+      "last_reviewed": "2026-07-20",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "questions": {
+        "B17_Q01": {
+          "canonical_path": "src/main/resources/data/signs_import/B17/questions.json#/0",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B17_Q02": {
+          "canonical_path": "src/main/resources/data/signs_import/B17/questions.json#/1",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B17_Q03": {
+          "canonical_path": "src/main/resources/data/signs_import/B17/questions.json#/2",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B17_Q04": {
+          "canonical_path": "src/main/resources/data/signs_import/B17/questions.json#/3",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B17_Q05": {
+          "canonical_path": "src/main/resources/data/signs_import/B17/questions.json#/4",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B17_Q06": {
+          "canonical_path": "src/main/resources/data/signs_import/B17/questions.json#/5",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B17_Q07": {
+          "canonical_path": "src/main/resources/data/signs_import/B17/questions.json#/6",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B17_Q08": {
+          "canonical_path": "src/main/resources/data/signs_import/B17/questions.json#/7",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        }
+      },
+      "exam": {
+        "canonical_path": "src/main/resources/data/signs_import/B17/exams.json",
+        "source_ids": [
+          "BE-KB1975-PRIORITY-CURRENT"
+        ],
+        "last_reviewed": "2026-07-20",
+        "review_reason": "Reviewed as an assessment manifest referencing the eight governed questions for this sign.",
+        "original_review_language": "NL",
+        "reviewed_languages": [
+          "NL",
+          "EN",
+          "FR",
+          "AR"
+        ],
+        "status": "APPROVED"
+      }
+    },
+    "B19": {
+      "canonical_path": "src/main/resources/data/signs_import/B19/sign.json",
+      "source_ids": [
+        "BE-KB1975-PRIORITY-CURRENT",
+        "BE-MB1976-PRIORITY-PLACEMENT"
+      ],
+      "last_reviewed": "2026-07-20",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "questions": {
+        "B19_Q01": {
+          "canonical_path": "src/main/resources/data/signs_import/B19/questions.json#/0",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B19_Q02": {
+          "canonical_path": "src/main/resources/data/signs_import/B19/questions.json#/1",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B19_Q03": {
+          "canonical_path": "src/main/resources/data/signs_import/B19/questions.json#/2",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B19_Q04": {
+          "canonical_path": "src/main/resources/data/signs_import/B19/questions.json#/3",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B19_Q05": {
+          "canonical_path": "src/main/resources/data/signs_import/B19/questions.json#/4",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B19_Q06": {
+          "canonical_path": "src/main/resources/data/signs_import/B19/questions.json#/5",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B19_Q07": {
+          "canonical_path": "src/main/resources/data/signs_import/B19/questions.json#/6",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B19_Q08": {
+          "canonical_path": "src/main/resources/data/signs_import/B19/questions.json#/7",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        }
+      },
+      "exam": {
+        "canonical_path": "src/main/resources/data/signs_import/B19/exams.json",
+        "source_ids": [
+          "BE-KB1975-PRIORITY-CURRENT"
+        ],
+        "last_reviewed": "2026-07-20",
+        "review_reason": "Reviewed as an assessment manifest referencing the eight governed questions for this sign.",
+        "original_review_language": "NL",
+        "reviewed_languages": [
+          "NL",
+          "EN",
+          "FR",
+          "AR"
+        ],
+        "status": "APPROVED"
+      }
+    },
+    "B21": {
+      "canonical_path": "src/main/resources/data/signs_import/B21/sign.json",
+      "source_ids": [
+        "BE-KB1975-PRIORITY-CURRENT",
+        "BE-MB1976-PRIORITY-PLACEMENT"
+      ],
+      "last_reviewed": "2026-07-20",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "questions": {
+        "B21_Q01": {
+          "canonical_path": "src/main/resources/data/signs_import/B21/questions.json#/0",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B21_Q02": {
+          "canonical_path": "src/main/resources/data/signs_import/B21/questions.json#/1",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B21_Q03": {
+          "canonical_path": "src/main/resources/data/signs_import/B21/questions.json#/2",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B21_Q04": {
+          "canonical_path": "src/main/resources/data/signs_import/B21/questions.json#/3",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B21_Q05": {
+          "canonical_path": "src/main/resources/data/signs_import/B21/questions.json#/4",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B21_Q06": {
+          "canonical_path": "src/main/resources/data/signs_import/B21/questions.json#/5",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B21_Q07": {
+          "canonical_path": "src/main/resources/data/signs_import/B21/questions.json#/6",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B21_Q08": {
+          "canonical_path": "src/main/resources/data/signs_import/B21/questions.json#/7",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        }
+      },
+      "exam": {
+        "canonical_path": "src/main/resources/data/signs_import/B21/exams.json",
+        "source_ids": [
+          "BE-KB1975-PRIORITY-CURRENT"
+        ],
+        "last_reviewed": "2026-07-20",
+        "review_reason": "Reviewed as an assessment manifest referencing the eight governed questions for this sign.",
+        "original_review_language": "NL",
+        "reviewed_languages": [
+          "NL",
+          "EN",
+          "FR",
+          "AR"
+        ],
+        "status": "APPROVED"
+      }
+    },
+    "B22": {
+      "canonical_path": "src/main/resources/data/signs_import/B22/sign.json",
+      "source_ids": [
+        "BE-KB1975-PRIORITY-CURRENT",
+        "BE-MB1976-PRIORITY-PLACEMENT"
+      ],
+      "last_reviewed": "2026-07-20",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "questions": {
+        "B22_Q01": {
+          "canonical_path": "src/main/resources/data/signs_import/B22/questions.json#/0",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B22_Q02": {
+          "canonical_path": "src/main/resources/data/signs_import/B22/questions.json#/1",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B22_Q03": {
+          "canonical_path": "src/main/resources/data/signs_import/B22/questions.json#/2",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B22_Q04": {
+          "canonical_path": "src/main/resources/data/signs_import/B22/questions.json#/3",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B22_Q05": {
+          "canonical_path": "src/main/resources/data/signs_import/B22/questions.json#/4",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B22_Q06": {
+          "canonical_path": "src/main/resources/data/signs_import/B22/questions.json#/5",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B22_Q07": {
+          "canonical_path": "src/main/resources/data/signs_import/B22/questions.json#/6",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B22_Q08": {
+          "canonical_path": "src/main/resources/data/signs_import/B22/questions.json#/7",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        }
+      },
+      "exam": {
+        "canonical_path": "src/main/resources/data/signs_import/B22/exams.json",
+        "source_ids": [
+          "BE-KB1975-PRIORITY-CURRENT"
+        ],
+        "last_reviewed": "2026-07-20",
+        "review_reason": "Reviewed as an assessment manifest referencing the eight governed questions for this sign.",
+        "original_review_language": "NL",
+        "reviewed_languages": [
+          "NL",
+          "EN",
+          "FR",
+          "AR"
+        ],
+        "status": "APPROVED"
+      }
+    },
+    "B23": {
+      "canonical_path": "src/main/resources/data/signs_import/B23/sign.json",
+      "source_ids": [
+        "BE-KB1975-PRIORITY-CURRENT",
+        "BE-MB1976-PRIORITY-PLACEMENT"
+      ],
+      "last_reviewed": "2026-07-20",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "questions": {
+        "B23_Q01": {
+          "canonical_path": "src/main/resources/data/signs_import/B23/questions.json#/0",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B23_Q02": {
+          "canonical_path": "src/main/resources/data/signs_import/B23/questions.json#/1",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B23_Q03": {
+          "canonical_path": "src/main/resources/data/signs_import/B23/questions.json#/2",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B23_Q04": {
+          "canonical_path": "src/main/resources/data/signs_import/B23/questions.json#/3",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B23_Q05": {
+          "canonical_path": "src/main/resources/data/signs_import/B23/questions.json#/4",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B23_Q06": {
+          "canonical_path": "src/main/resources/data/signs_import/B23/questions.json#/5",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B23_Q07": {
+          "canonical_path": "src/main/resources/data/signs_import/B23/questions.json#/6",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        },
+        "B23_Q08": {
+          "canonical_path": "src/main/resources/data/signs_import/B23/questions.json#/7",
+          "source_ids": [
+            "BE-KB1975-PRIORITY-CURRENT"
+          ],
+          "last_reviewed": "2026-07-20",
+          "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+          "original_review_language": "NL",
+          "reviewed_languages": [
+            "NL",
+            "EN",
+            "FR",
+            "AR"
+          ],
+          "status": "APPROVED"
+        }
+      },
+      "exam": {
+        "canonical_path": "src/main/resources/data/signs_import/B23/exams.json",
+        "source_ids": [
+          "BE-KB1975-PRIORITY-CURRENT"
+        ],
+        "last_reviewed": "2026-07-20",
+        "review_reason": "Reviewed as an assessment manifest referencing the eight governed questions for this sign.",
+        "original_review_language": "NL",
+        "reviewed_languages": [
+          "NL",
+          "EN",
+          "FR",
+          "AR"
+        ],
+        "status": "APPROVED"
+      }
+    }
+  },
+  "lesson_items": {
+    "les-2/page-1": {
+      "canonical_path": "data/lessons_content.json#/lessons/les-2/pages/1",
+      "source_ids": [
+        "BE-KB1975-PRIORITY-CURRENT"
+      ],
+      "last_reviewed": "2026-07-20",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "content_locator": {
+        "type": "LESSON_PAGE",
+        "file": "data/lessons_content.json",
+        "lesson_id": "les-2",
+        "page_number": 1
+      }
+    },
+    "les-2/page-2": {
+      "canonical_path": "data/lessons_content.json#/lessons/les-2/pages/2",
+      "source_ids": [
+        "BE-KB1975-PRIORITY-CURRENT"
+      ],
+      "last_reviewed": "2026-07-20",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "content_locator": {
+        "type": "LESSON_PAGE",
+        "file": "data/lessons_content.json",
+        "lesson_id": "les-2",
+        "page_number": 2
+      }
+    },
+    "les-2/page-3": {
+      "canonical_path": "data/lessons_content.json#/lessons/les-2/pages/3",
+      "source_ids": [
+        "BE-KB1975-PRIORITY-CURRENT"
+      ],
+      "last_reviewed": "2026-07-20",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "content_locator": {
+        "type": "LESSON_PAGE",
+        "file": "data/lessons_content.json",
+        "lesson_id": "les-2",
+        "page_number": 3
+      }
+    },
+    "les-2/page-4": {
+      "canonical_path": "data/lessons_content.json#/lessons/les-2/pages/4",
+      "source_ids": [
+        "BE-KB1975-PRIORITY-CURRENT"
+      ],
+      "last_reviewed": "2026-07-20",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "content_locator": {
+        "type": "LESSON_PAGE",
+        "file": "data/lessons_content.json",
+        "lesson_id": "les-2",
+        "page_number": 4
+      }
+    },
+    "les-15/page-1": {
+      "canonical_path": "data/lessons_content.json#/lessons/les-15/pages/1",
+      "source_ids": [
+        "BE-KB1975-PRIORITY-CURRENT"
+      ],
+      "last_reviewed": "2026-07-20",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "content_locator": {
+        "type": "LESSON_PAGE",
+        "file": "data/lessons_content.json",
+        "lesson_id": "les-15",
+        "page_number": 1
+      }
+    },
+    "les-15/page-2": {
+      "canonical_path": "data/lessons_content.json#/lessons/les-15/pages/2",
+      "source_ids": [
+        "BE-KB1975-PRIORITY-CURRENT"
+      ],
+      "last_reviewed": "2026-07-20",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "content_locator": {
+        "type": "LESSON_PAGE",
+        "file": "data/lessons_content.json",
+        "lesson_id": "les-15",
+        "page_number": 2
+      }
+    },
+    "les-15/page-3": {
+      "canonical_path": "data/lessons_content.json#/lessons/les-15/pages/3",
+      "source_ids": [
+        "BE-KB1975-PRIORITY-CURRENT"
+      ],
+      "last_reviewed": "2026-07-20",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "content_locator": {
+        "type": "LESSON_PAGE",
+        "file": "data/lessons_content.json",
+        "lesson_id": "les-15",
+        "page_number": 3
+      }
+    },
+    "les-15/page-4": {
+      "canonical_path": "data/lessons_content.json#/lessons/les-15/pages/4",
+      "source_ids": [
+        "BE-KB1975-PRIORITY-CURRENT"
+      ],
+      "last_reviewed": "2026-07-20",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "content_locator": {
+        "type": "LESSON_PAGE",
+        "file": "data/lessons_content.json",
+        "lesson_id": "les-15",
+        "page_number": 4
+      }
+    },
+    "les-15/page-5": {
+      "canonical_path": "data/lessons_content.json#/lessons/les-15/pages/5",
+      "source_ids": [
+        "BE-KB1975-PRIORITY-CURRENT"
+      ],
+      "last_reviewed": "2026-07-20",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "content_locator": {
+        "type": "LESSON_PAGE",
+        "file": "data/lessons_content.json",
+        "lesson_id": "les-15",
+        "page_number": 5
+      }
+    },
+    "les-15/page-6": {
+      "canonical_path": "data/lessons_content.json#/lessons/les-15/pages/6",
+      "source_ids": [
+        "BE-KB1975-PRIORITY-CURRENT"
+      ],
+      "last_reviewed": "2026-07-20",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "content_locator": {
+        "type": "LESSON_PAGE",
+        "file": "data/lessons_content.json",
+        "lesson_id": "les-15",
+        "page_number": 6
+      }
+    },
+    "les-15/page-7": {
+      "canonical_path": "data/lessons_content.json#/lessons/les-15/pages/7",
+      "source_ids": [
+        "BE-KB1975-PRIORITY-CURRENT"
+      ],
+      "last_reviewed": "2026-07-20",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "content_locator": {
+        "type": "LESSON_PAGE",
+        "file": "data/lessons_content.json",
+        "lesson_id": "les-15",
+        "page_number": 7
+      }
+    },
+    "les-15/page-8": {
+      "canonical_path": "data/lessons_content.json#/lessons/les-15/pages/8",
+      "source_ids": [
+        "BE-KB1975-PRIORITY-CURRENT"
+      ],
+      "last_reviewed": "2026-07-20",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "content_locator": {
+        "type": "LESSON_PAGE",
+        "file": "data/lessons_content.json",
+        "lesson_id": "les-15",
+        "page_number": 8
+      }
+    },
+    "les-19/page-1": {
+      "canonical_path": "data/lessons_content.json#/lessons/les-19/pages/1",
+      "source_ids": [
+        "BE-KB1975-PRIORITY-CURRENT"
+      ],
+      "last_reviewed": "2026-07-20",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "content_locator": {
+        "type": "LESSON_PAGE",
+        "file": "data/lessons_content.json",
+        "lesson_id": "les-19",
+        "page_number": 1
+      }
+    },
+    "les-19/page-2": {
+      "canonical_path": "data/lessons_content.json#/lessons/les-19/pages/2",
+      "source_ids": [
+        "BE-KB1975-PRIORITY-CURRENT"
+      ],
+      "last_reviewed": "2026-07-20",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "content_locator": {
+        "type": "LESSON_PAGE",
+        "file": "data/lessons_content.json",
+        "lesson_id": "les-19",
+        "page_number": 2
+      }
+    },
+    "les-19/page-3": {
+      "canonical_path": "data/lessons_content.json#/lessons/les-19/pages/3",
+      "source_ids": [
+        "BE-KB1975-PRIORITY-CURRENT"
+      ],
+      "last_reviewed": "2026-07-20",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "content_locator": {
+        "type": "LESSON_PAGE",
+        "file": "data/lessons_content.json",
+        "lesson_id": "les-19",
+        "page_number": 3
+      }
+    },
+    "les-19/page-4": {
+      "canonical_path": "data/lessons_content.json#/lessons/les-19/pages/4",
+      "source_ids": [
+        "BE-KB1975-PRIORITY-CURRENT"
+      ],
+      "last_reviewed": "2026-07-20",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "content_locator": {
+        "type": "LESSON_PAGE",
+        "file": "data/lessons_content.json",
+        "lesson_id": "les-19",
+        "page_number": 4
+      }
+    },
+    "les-19/page-5": {
+      "canonical_path": "data/lessons_content.json#/lessons/les-19/pages/5",
+      "source_ids": [
+        "BE-KB1975-PRIORITY-CURRENT"
+      ],
+      "last_reviewed": "2026-07-20",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "content_locator": {
+        "type": "LESSON_PAGE",
+        "file": "data/lessons_content.json",
+        "lesson_id": "les-19",
+        "page_number": 5
+      }
+    },
+    "les-19/page-6": {
+      "canonical_path": "data/lessons_content.json#/lessons/les-19/pages/6",
+      "source_ids": [
+        "BE-KB1975-PRIORITY-CURRENT"
+      ],
+      "last_reviewed": "2026-07-20",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "content_locator": {
+        "type": "LESSON_PAGE",
+        "file": "data/lessons_content.json",
+        "lesson_id": "les-19",
+        "page_number": 6
+      }
+    },
+    "les-19/page-7": {
+      "canonical_path": "data/lessons_content.json#/lessons/les-19/pages/7",
+      "source_ids": [
+        "BE-KB1975-PRIORITY-CURRENT"
+      ],
+      "last_reviewed": "2026-07-20",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "content_locator": {
+        "type": "LESSON_PAGE",
+        "file": "data/lessons_content.json",
+        "lesson_id": "les-19",
+        "page_number": 7
+      }
+    },
+    "les-19/page-8": {
+      "canonical_path": "data/lessons_content.json#/lessons/les-19/pages/8",
+      "source_ids": [
+        "BE-KB1975-PRIORITY-CURRENT"
+      ],
+      "last_reviewed": "2026-07-20",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "content_locator": {
+        "type": "LESSON_PAGE",
+        "file": "data/lessons_content.json",
+        "lesson_id": "les-19",
+        "page_number": 8
+      }
+    },
+    "les-21/page-1": {
+      "canonical_path": "data/lessons_content.json#/lessons/les-21/pages/1",
+      "source_ids": [
+        "BE-KB1975-PRIORITY-CURRENT"
+      ],
+      "last_reviewed": "2026-07-20",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "content_locator": {
+        "type": "LESSON_PAGE",
+        "file": "data/lessons_content.json",
+        "lesson_id": "les-21",
+        "page_number": 1
+      }
+    },
+    "les-21/page-2": {
+      "canonical_path": "data/lessons_content.json#/lessons/les-21/pages/2",
+      "source_ids": [
+        "BE-KB1975-PRIORITY-CURRENT"
+      ],
+      "last_reviewed": "2026-07-20",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "content_locator": {
+        "type": "LESSON_PAGE",
+        "file": "data/lessons_content.json",
+        "lesson_id": "les-21",
+        "page_number": 2
+      }
+    },
+    "les-21/page-3": {
+      "canonical_path": "data/lessons_content.json#/lessons/les-21/pages/3",
+      "source_ids": [
+        "BE-KB1975-PRIORITY-CURRENT"
+      ],
+      "last_reviewed": "2026-07-20",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "content_locator": {
+        "type": "LESSON_PAGE",
+        "file": "data/lessons_content.json",
+        "lesson_id": "les-21",
+        "page_number": 3
+      }
+    },
+    "les-21/page-4": {
+      "canonical_path": "data/lessons_content.json#/lessons/les-21/pages/4",
+      "source_ids": [
+        "BE-KB1975-PRIORITY-CURRENT"
+      ],
+      "last_reviewed": "2026-07-20",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "content_locator": {
+        "type": "LESSON_PAGE",
+        "file": "data/lessons_content.json",
+        "lesson_id": "les-21",
+        "page_number": 4
+      }
+    },
+    "les-21/page-5": {
+      "canonical_path": "data/lessons_content.json#/lessons/les-21/pages/5",
+      "source_ids": [
+        "BE-KB1975-PRIORITY-CURRENT"
+      ],
+      "last_reviewed": "2026-07-20",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "content_locator": {
+        "type": "LESSON_PAGE",
+        "file": "data/lessons_content.json",
+        "lesson_id": "les-21",
+        "page_number": 5
+      }
+    },
+    "les-21/page-6": {
+      "canonical_path": "data/lessons_content.json#/lessons/les-21/pages/6",
+      "source_ids": [
+        "BE-KB1975-PRIORITY-CURRENT"
+      ],
+      "last_reviewed": "2026-07-20",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "content_locator": {
+        "type": "LESSON_PAGE",
+        "file": "data/lessons_content.json",
+        "lesson_id": "les-21",
+        "page_number": 6
+      }
+    },
+    "les-21/page-7": {
+      "canonical_path": "data/lessons_content.json#/lessons/les-21/pages/7",
+      "source_ids": [
+        "BE-KB1975-PRIORITY-CURRENT"
+      ],
+      "last_reviewed": "2026-07-20",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "content_locator": {
+        "type": "LESSON_PAGE",
+        "file": "data/lessons_content.json",
+        "lesson_id": "les-21",
+        "page_number": 7
+      }
+    },
+    "les-21/page-8": {
+      "canonical_path": "data/lessons_content.json#/lessons/les-21/pages/8",
+      "source_ids": [
+        "BE-KB1975-PRIORITY-CURRENT"
+      ],
+      "last_reviewed": "2026-07-20",
+      "review_reason": "Milestone 2 legal, educational, terminology, translation, and cross-file consistency review.",
+      "original_review_language": "NL",
+      "reviewed_languages": [
+        "NL",
+        "EN",
+        "FR",
+        "AR"
+      ],
+      "status": "APPROVED",
+      "content_locator": {
+        "type": "LESSON_PAGE",
+        "file": "data/lessons_content.json",
+        "lesson_id": "les-21",
+        "page_number": 8
+      }
+    }
+  }
+}

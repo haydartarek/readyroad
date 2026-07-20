@@ -481,7 +481,7 @@
         "question": "U rijdt op een weg met dit verkeersbord. Een fietser wil vanuit een zijstraat de weg oprijden. Moet hij u voorrang verlenen?",
         "choices": [
           {
-            "text": "Ja, alle weggebruikers die uit de zijweg komen moeten u voorrang verlenen, ook fietsers",
+            "text": "Ja, alle bestuurders die uit de zijweg komen moeten u voorrang verlenen, ook fietsers",
             "is_correct": true
           },
           {
@@ -489,13 +489,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "De voorrang die dit bord aangeeft geldt voor alle weggebruikers die uit de zijwegen komen, ongeacht het type voertuig."
+        "explanation": "De voorrang geldt tegenover bestuurders uit de zijweg. Een fietser die rijdt is een bestuurder en moet de daar geplaatste B1 of B5 naleven."
       },
       "EN": {
         "question": "You are on a road with this traffic sign. A cyclist wants to enter the road from a side street. Must the cyclist give you priority?",
         "choices": [
           {
-            "text": "Yes, all road users coming from the side road must give you priority, including cyclists",
+            "text": "Yes, all drivers coming from the side road must give you priority, including cyclists",
             "is_correct": true
           },
           {
@@ -503,13 +503,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "The priority indicated by this sign applies to all road users coming from the side roads, regardless of vehicle type."
+        "explanation": "The priority applies against drivers from the side road. A cyclist who is riding is a driver and must comply with the B1 or B5 placed there."
       },
       "FR": {
         "question": "Vous roulez sur une route avec ce panneau de signalisation. Un cycliste veut s'engager depuis une rue latérale. Doit-il vous céder la priorité ?",
         "choices": [
           {
-            "text": "Oui, tous les usagers venant de la route latérale doivent vous céder la priorité, y compris les cyclistes",
+            "text": "Oui, tous les conducteurs venant de la route latérale doivent vous céder la priorité, y compris les cyclistes",
             "is_correct": true
           },
           {
@@ -517,13 +517,13 @@
             "is_correct": false
           }
         ],
-        "explanation": "La priorité indiquée par ce panneau s'applique à tous les usagers venant des routes latérales, quel que soit le type de véhicule."
+        "explanation": "La priorité vaut à l'égard des conducteurs venant de la voie latérale. Un cycliste qui roule est un conducteur et doit respecter le B1 ou B5 qui y est placé."
       },
       "AR": {
         "question": "أنت تسير على طريق تحمل هذه العلامة المرورية. دراج يريد دخول الطريق من شارع جانبي. هل يجب عليه أن يعطيك الأولوية؟",
         "choices": [
           {
-            "text": "نعم، يجب على جميع مستخدمي الطريق القادمين من الطريق الجانبي إعطاؤك الأولوية، بما في ذلك راكبو الدراجات",
+            "text": "نعم، يجب على جميع السائقين القادمين من الطريق الجانبي إعطاؤك الأولوية، بمن فيهم راكبو الدراجات",
             "is_correct": true
           },
           {
@@ -531,7 +531,7 @@
             "is_correct": false
           }
         ],
-        "explanation": "ينطبق حق الأولوية الذي تمنحه هذه العلامة على جميع مستخدمي الطريق القادمين من الطرق الجانبية، بغض النظر عن نوع المركبة."
+        "explanation": "تسري الأولوية تجاه السائقين القادمين من الطريق الجانبي. ويعد راكب الدراجة أثناء القيادة سائقًا ويلتزم بـB1 أو B5 الموضوعة هناك."
       }
     }
   },
@@ -543,60 +543,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Dit verkeersbord staat op uw weg en u wilt afslaan naar een zijstraat. Heeft u dan nog steeds voorrang op voertuigen die uit die zijstraat komen?",
+      "question": "Geeft dit bord u automatisch voorrang op alle latere kruispunten van dezelfde weg?",
         "choices": [
           {
-            "text": "Nee, zodra u de zijstraat inrijdt verliest u deze voorrang en moet u de regels volgen die daar gelden",
+          "text": "Nee, B15 regelt de voorrang op het aangeduide eerstvolgende kruispunt",
             "is_correct": true
           },
           {
-            "text": "Ja, zolang u dit bord gepasseerd bent behoudt u overal op dat kruispunt voorrang",
+          "text": "Ja, B15 maakt de hele verdere weg automatisch tot voorrangsweg",
             "is_correct": false
           }
         ],
-        "explanation": "De voorrang die dit bord geeft geldt alleen zolang u op de hoofdweg blijft. Zodra u de zijstraat inrijdt, gelden opnieuw de normale voorrangsregels van die straat."
+      "explanation": "B15 geeft voorrang op de onmiddellijk aangeduide plaats. Een blijvende voorrangsweg wordt met B9 aangeduid; op latere kruispunten moet u de daar aanwezige tekens en regels volgen."
       },
       "EN": {
-        "question": "This traffic sign is on your road, and you want to turn into a side street. Do you still have priority over vehicles coming from that side street?",
+      "question": "Does this sign automatically give you priority at every later junction on the same road?",
         "choices": [
           {
-            "text": "No, once you turn into the side street you lose this priority and must follow the rules that apply there",
+          "text": "No, B15 governs priority at the indicated next junction",
             "is_correct": true
           },
           {
-            "text": "Yes, as long as you have passed this sign, you keep priority everywhere in that junction",
+          "text": "Yes, B15 automatically makes the entire road ahead a priority road",
             "is_correct": false
           }
         ],
-        "explanation": "The priority given by this sign applies only while you remain on the main road. Once you enter the side street, the normal priority rules for that street apply again."
+      "explanation": "B15 gives priority at the immediately indicated location. A continuing priority road is marked by B9; at later junctions you must follow the signs and rules present there."
       },
       "FR": {
-        "question": "Ce panneau de signalisation se trouve sur votre route et vous voulez tourner dans une rue latérale. Gardez-vous la priorité sur les véhicules venant de cette rue ?",
+      "question": "Ce panneau vous donne-t-il automatiquement la priorité à tous les carrefours suivants de la même route ?",
         "choices": [
           {
-            "text": "Non, dès que vous tournez dans la rue latérale, vous perdez cette priorité et devez suivre les règles applicables à cette rue",
+          "text": "Non, B15 règle la priorité au prochain carrefour indiqué",
             "is_correct": true
           },
           {
-            "text": "Oui, tant que vous avez dépassé ce panneau, vous gardez la priorité partout dans ce carrefour",
+          "text": "Oui, B15 transforme automatiquement toute la suite de la route en route prioritaire",
             "is_correct": false
           }
         ],
-        "explanation": "La priorité donnée par ce panneau s'applique seulement tant que vous restez sur la route principale. Dès que vous vous engagez dans la rue latérale, les règles de priorité normales de cette rue s'appliquent à nouveau."
+      "explanation": "B15 accorde la priorité à l'endroit immédiatement indiqué. Une route prioritaire continue est signalée par B9 ; aux carrefours suivants, vous devez suivre les signaux et règles qui s'y trouvent."
       },
       "AR": {
-        "question": "هذه العلامة المرورية موجودة على طريقك، وأنت تريد الانعطاف نحو شارع جانبي. هل تبقى لك الأولوية على المركبات القادمة من ذلك الشارع؟",
+      "question": "هل تمنحك هذه العلامة الأولوية تلقائيًا في كل التقاطعات اللاحقة على الطريق نفسه؟",
         "choices": [
           {
-            "text": "لا، عند دخولك الشارع الجانبي تفقد هذه الأفضلية ويجب أن تراعي القواعد المطبقة هناك",
+          "text": "لا، تنظم B15 الأولوية عند التقاطع التالي المحدد",
             "is_correct": true
           },
           {
-            "text": "نعم، ما دمت تجاوزت هذه العلامة فتبقى لك الأولوية في كل مكان داخل هذا التقاطع",
+          "text": "نعم، تجعل B15 الطريق كله بعد العلامة طريق أولوية تلقائيًا",
             "is_correct": false
           }
         ],
-        "explanation": "حق الأولوية الذي تمنحه هذه العلامة يسري فقط عندما تبقى على الطريق الرئيسي. أما إذا دخلت الشارع الجانبي فتعود قواعد الأولوية العادية لذلك الشارع إلى التطبيق."
+      "explanation": "تمنح B15 الأولوية في الموضع المحدد مباشرة. أما طريق الأولوية المستمر فتعلنه B9، ويجب في التقاطعات اللاحقة اتباع العلامات والقواعد الموجودة هناك."
       }
     }
   }
