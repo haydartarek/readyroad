@@ -53,12 +53,12 @@ Dutch and French legal terminology follows the published legal texts. English an
 | Category | Status | Last review | Signs | Questions | Lessons | Risk | Approval |
 | --- | --- | --- | ---: | ---: | ---: | --- | --- |
 | DANGER | APPROVED | 2026-07-18 | 34 | 272 | 1 | HIGH | APPROVED |
-| INFORMATION | NOT_REVIEWED | - | 37 | 296 | 0 | UNASSESSED | PENDING |
-| MANDATORY | NOT_REVIEWED | - | 18 | 144 | 0 | UNASSESSED | PENDING |
-| PARKING | NOT_REVIEWED | - | 15 | 120 | 0 | UNASSESSED | PENDING |
-| PRIORITY | NOT_REVIEWED | - | 16 | 128 | 0 | UNASSESSED | PENDING |
-| PROHIBITION | NOT_REVIEWED | - | 33 | 264 | 0 | UNASSESSED | PENDING |
-| ROAD_MANAGEMENT | NOT_REVIEWED | - | 9 | 72 | 0 | UNASSESSED | PENDING |
-| ZONE | NOT_REVIEWED | - | 22 | 176 | 0 | UNASSESSED | PENDING |
+| INFORMATION | APPROVED | 2026-07-19 | 37 | 296 | 0 | HIGH | APPROVED |
+| MANDATORY | APPROVED | 2026-07-19 | 18 | 144 | 13 | HIGH | APPROVED |
+| PARKING | APPROVED | 2026-07-19 | 15 | 120 | 4 | HIGH | APPROVED |
+| PRIORITY | APPROVED | 2026-07-20 | 16 | 128 | 28 | HIGH | APPROVED |
+| PROHIBITION | APPROVED | 2026-07-20 | 33 | 264 | 19 | HIGH | APPROVED |
+| ROAD_MANAGEMENT | APPROVED | 2026-07-20 | 9 | 72 | 0 | HIGH | APPROVED |
+| ZONE | APPROVED | 2026-07-21 | 22 | 176 | 1 | HIGH | APPROVED |
 
 The Markdown table is a readable summary. Automated validation always reads the JSON index.

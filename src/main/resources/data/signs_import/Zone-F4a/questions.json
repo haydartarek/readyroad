@@ -10,73 +10,73 @@
         "question": "Wat betekent dit verkeersbord?",
         "choices": [
           {
-            "text": "U rijdt een zone in waar de maximumsnelheid 30 km/u bedraagt, dag en nacht",
+            "text": "Begin van een zone 30 (F4a)",
             "is_correct": true
           },
           {
-            "text": "U moet vertragen tot 30 km/u alleen wanneer er kinderen aanwezig zijn",
+            "text": "Waarschuwing voor tijdelijke wegenwerken",
             "is_correct": false
           },
           {
-            "text": "De minimumsnelheid in deze zone is 30 km/u",
+            "text": "Verplichte rijrichting zonder zonale werking",
             "is_correct": false
           }
         ],
-        "explanation": "Zone-F4a markeert het begin van een zone 30 waar de maximumsnelheid constant 30 km/u is, ongeacht tijdstip of omstandigheden."
+        "explanation": "F4a begint een zone waar 30 km/u de maximumsnelheid is op de openbare wegen binnen de afbakening."
       },
       "EN": {
         "question": "What does this traffic sign mean?",
         "choices": [
           {
-            "text": "You are entering a zone where the maximum speed is 30 km/h at all times, day and night",
+            "text": "Start of a 30 km/h zone (F4a)",
             "is_correct": true
           },
           {
-            "text": "You must slow to 30 km/h only when children are present",
+            "text": "Warning of temporary roadworks",
             "is_correct": false
           },
           {
-            "text": "The minimum speed in this zone is 30 km/h",
+            "text": "Mandatory direction without zonal validity",
             "is_correct": false
           }
         ],
-        "explanation": "Zone-F4a marks the start of a 30 km/h zone where the maximum speed is a constant 30 km/h regardless of time or circumstances."
+        "explanation": "F4a starts a zone where 30 km/h is the maximum speed on the public roads within its boundary."
       },
       "FR": {
         "question": "Que signifie ce panneau de signalisation?",
         "choices": [
           {
-            "text": "Vous entrez dans une zone où la vitesse maximale est de 30 km/h jour et nuit",
+            "text": "Début d'une zone 30 (F4a)",
             "is_correct": true
           },
           {
-            "text": "Vous devez ralentir à 30 km/h uniquement quand des enfants sont présents",
+            "text": "Avertissement de travaux routiers temporaires",
             "is_correct": false
           },
           {
-            "text": "La vitesse minimale dans cette zone est de 30 km/h",
+            "text": "Direction obligatoire sans validité zonale",
             "is_correct": false
           }
         ],
-        "explanation": "Zone-F4a marque le début d'une zone 30 où la vitesse maximale est constamment de 30 km/h quel que soit le moment ou les circonstances."
+        "explanation": "F4a ouvre une zone où 30 km/h est la vitesse maximale sur les voies publiques comprises dans son périmètre."
       },
       "AR": {
         "question": "ما معنى هذه العلامة المرورية؟",
         "choices": [
           {
-            "text": "أنت داخل منطقة يكون فيها الحد الأقصى للسرعة 30 كم/س ليلاً ونهاراً",
+            "text": "بداية منطقة 30 كم/ساعة (F4a)",
             "is_correct": true
           },
           {
-            "text": "عليك التباطؤ إلى 30 كم/س فقط عند وجود أطفال",
+            "text": "تحذير من أعمال طريق مؤقتة",
             "is_correct": false
           },
           {
-            "text": "الحد الأدنى للسرعة في هذه المنطقة هو 30 كم/س",
+            "text": "اتجاه إلزامي بلا نطاق مناطقي",
             "is_correct": false
           }
         ],
-        "explanation": "Zone-F4a تحدد بداية منطقة 30 حيث الحد الأقصى للسرعة 30 كم/س باستمرار بغض النظر عن الوقت أو الظروف."
+        "explanation": "تبدأ F4a منطقة يكون فيها الحد الأقصى للسرعة 30 كم/ساعة على الطرق العامة داخل حدودها."
       }
     }
   },
@@ -88,76 +88,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Welk bord markeert het einde van een zone 30 die begint met Zone-F4a?",
+        "question": "Tot welk soort signalisatie behoort dit bord?",
         "choices": [
           {
-            "text": "Bord Zone-F4b 'Einde zone 30'",
+            "text": "Signalisatie met zonale geldigheid",
             "is_correct": true
           },
           {
-            "text": "Bord F3b 'Einde bebouwde kom'",
+            "text": "Een gevaarsbord zonder zonale werking",
             "is_correct": false
           },
           {
-            "text": "Bord C43 met maximumsnelheid 50",
+            "text": "Een wegmarkering",
             "is_correct": false
           }
         ],
-        "explanation": "Een zone 30 wordt altijd afgesloten met bord Zone-F4b 'Einde zone 30'. Zone-F4a en Zone-F4b werken altijd als een paar."
+        "explanation": "Het bord bakent het begin of einde van een zone af. De betrokken regel geldt binnen de grenzen van die zone."
       },
       "EN": {
-        "question": "Which sign marks the end of a zone 30 that starts with Zone-F4a?",
+        "question": "What kind of signing is this?",
         "choices": [
           {
-            "text": "Sign Zone-F4b 'End of 30 km/h zone'",
+            "text": "Signing with zonal validity",
             "is_correct": true
           },
           {
-            "text": "Sign F3b 'End of built-up area'",
+            "text": "A warning sign without zonal effect",
             "is_correct": false
           },
           {
-            "text": "Sign C43 with maximum speed 50",
+            "text": "A road marking",
             "is_correct": false
           }
         ],
-        "explanation": "A zone 30 is always closed by sign Zone-F4b 'End of zone 30'. Zone-F4a and Zone-F4b always work as a pair."
+        "explanation": "The sign marks the beginning or end of a zone. The relevant rule applies within that zone's boundaries."
       },
       "FR": {
-        "question": "Quel panneau marque la fin d'une zone 30 qui commence avec Zone-F4a?",
+        "question": "À quel type de signalisation ce panneau appartient-il ?",
         "choices": [
           {
-            "text": "Panneau Zone-F4b 'Fin de zone 30'",
+            "text": "Signalisation à validité zonale",
             "is_correct": true
           },
           {
-            "text": "Panneau F3b 'Fin d'agglomération'",
+            "text": "Un signal de danger sans effet zonal",
             "is_correct": false
           },
           {
-            "text": "Panneau C43 avec vitesse maximale 50",
+            "text": "Un marquage routier",
             "is_correct": false
           }
         ],
-        "explanation": "Une zone 30 est toujours fermée par le panneau Zone-F4b 'Fin de zone 30'. Zone-F4a et Zone-F4b fonctionnent toujours en paire."
+        "explanation": "Le signal délimite le début ou la fin d'une zone. La règle concernée s'applique dans les limites de cette zone."
       },
       "AR": {
-        "question": "ما العلامة التي تحدد نهاية منطقة 30 التي تبدأ بـ Zone-F4a؟",
+        "question": "إلى أي نوع من الإشارات تنتمي هذه العلامة؟",
         "choices": [
           {
-            "text": "علامة Zone-F4b 'نهاية منطقة سرعة 30 كم/س'",
+            "text": "إشارة ذات نطاق مناطقي",
             "is_correct": true
           },
           {
-            "text": "علامة F3b 'نهاية المنطقة المبنية'",
+            "text": "علامة خطر بلا أثر مناطقي",
             "is_correct": false
           },
           {
-            "text": "علامة C43 مع السرعة القصوى 50",
+            "text": "علامة طريق مرسومة",
             "is_correct": false
           }
         ],
-        "explanation": "يتم دائماً إغلاق منطقة 30 بعلامة Zone-F4b 'نهاية منطقة 30'. تعمل Zone-F4a وZone-F4b دائماً كزوج."
+        "explanation": "تحدد العلامة بداية منطقة أو نهايتها، وتسري القاعدة المعنية داخل حدود تلك المنطقة."
       }
     }
   },
@@ -558,60 +558,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U rijdt in een zone 30 en ziet geen bord Zone-F4b maar de huizen maken plaats voor een industrieterrein. Mag u uw snelheid verhogen naar 50 km/u?",
+        "question": "De bebouwing maakt plaats voor een industriezone, maar u passeert geen bord dat de zone 30 beëindigt of wijzigt. Mag u alleen door die verandering versnellen?",
         "choices": [
           {
-            "text": "Neen, de zone 30 eindigt pas officieel bij bord Zone-F4b; zolang dat bord er niet staat blijft 30 km/u van kracht",
+            "text": "Neen, een verandering van omgeving beëindigt de gesignaleerde zone niet",
             "is_correct": true
           },
           {
-            "text": "Ja, wanneer het straatbeeld verandert van woonwijk naar industrieterrein vervalt de zone 30 automatisch",
+            "text": "Ja, het uitzicht van de omgeving bepaalt automatisch de maximumsnelheid",
             "is_correct": false
           }
         ],
-        "explanation": "Zones eindigen enkel bij het officiële eindbord Zone-F4b. Een verandering in het straatbeeld of de omgeving heeft geen juridisch effect op de geldigheid van de zone."
+        "explanation": "Volg de rechtsgeldige signalisatie; 30 km/u blijft het maximum zolang de zone niet rechtsgeldig eindigt of wordt gewijzigd."
       },
       "EN": {
-        "question": "You are driving in a zone 30 and see no sign Zone-F4b but the houses give way to an industrial area. May you increase your speed to 50 km/h?",
+        "question": "Buildings give way to an industrial area, but you pass no sign ending or changing the 30 zone. May you accelerate solely because the surroundings changed?",
         "choices": [
           {
-            "text": "No, zone 30 ends officially only at sign Zone-F4b; until that sign appears 30 km/h remains in force",
+            "text": "No, a change in surroundings does not end the signed zone",
             "is_correct": true
           },
           {
-            "text": "Yes, when the streetscape changes from residential to industrial the zone 30 automatically expires",
+            "text": "Yes, the appearance of the surroundings automatically determines the limit",
             "is_correct": false
           }
         ],
-        "explanation": "Zones end only at the official end sign Zone-F4b. A change in the streetscape or surroundings has no legal effect on the validity of the zone."
+        "explanation": "Follow valid signing; 30 km/h remains the maximum until the zone lawfully ends or is changed."
       },
       "FR": {
-        "question": "Vous conduisez dans une zone 30 et ne voyez pas le panneau Zone-F4b mais les maisons laissent place à une zone industrielle. Pouvez-vous augmenter votre vitesse à 50 km/h?",
+        "question": "Les bâtiments laissent place à une zone industrielle, mais aucun signal ne termine ou ne modifie la zone 30. Pouvez-vous accélérer uniquement à cause du changement d'environnement ?",
         "choices": [
           {
-            "text": "Non, la zone 30 ne se termine officiellement qu'au panneau Zone-F4b; jusqu'à ce panneau 30 km/h reste en vigueur",
+            "text": "Non, un changement d'environnement ne met pas fin à la zone signalée",
             "is_correct": true
           },
           {
-            "text": "Oui, lorsque le paysage urbain passe d'une zone résidentielle à une zone industrielle la zone 30 expire automatiquement",
+            "text": "Oui, l'apparence des lieux détermine automatiquement la limite",
             "is_correct": false
           }
         ],
-        "explanation": "Les zones se terminent uniquement au panneau de fin officiel Zone-F4b. Un changement de paysage urbain ou d'environnement n'a aucun effet juridique sur la validité de la zone."
+        "explanation": "Suivez la signalisation valable; 30 km/h reste le maximum jusqu'à la fin ou la modification régulière de la zone."
       },
       "AR": {
-        "question": "تسير في منطقة 30 ولا ترى علامة Zone-F4b لكن المنازل تُفسح المجال لمنطقة صناعية. هل يجوز رفع سرعتك إلى 50 كم/س؟",
+        "question": "يتحول العمران إلى منطقة صناعية من دون علامة تنهي منطقة 30 أو تغيرها. هل يجوز زيادة السرعة لمجرد تغير المحيط؟",
         "choices": [
           {
-            "text": "لا، تنتهي منطقة 30 رسمياً عند علامة Zone-F4b فقط؛ ما دامت العلامة غائبة يبقى حد 30 كم/س سارياً",
+            "text": "لا، لا ينهي تغير المحيط المنطقة المعلنة",
             "is_correct": true
           },
           {
-            "text": "نعم، عندما يتغير المشهد العمراني من سكني إلى صناعي تنتهي منطقة 30 تلقائياً",
+            "text": "نعم، يحدد شكل المحيط الحد تلقائيًا",
             "is_correct": false
           }
         ],
-        "explanation": "تنتهي المناطق فقط عند علامة النهاية الرسمية Zone-F4b. تغيير المشهد العمراني أو البيئة المحيطة لا يؤثر قانونياً على سريان المنطقة."
+        "explanation": "اتبع العلامات الصالحة؛ يبقى 30 كم/ساعة الحد الأقصى حتى تنتهي المنطقة أو تتغير قانونيًا."
       }
     }
   }

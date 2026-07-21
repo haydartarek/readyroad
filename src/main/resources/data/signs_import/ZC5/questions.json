@@ -10,61 +10,73 @@
         "question": "Wat betekent dit verkeersbord?",
         "choices": [
           {
-            "text": "Zone verboden toegang voor motorvoertuigen met meer dan 2 wielen",
+            "text": "Zone: verboden toegang voor motorvoertuigen met meer dan twee wielen en motorfietsen met zijspan",
             "is_correct": true
           },
-          { "text": "Zone verboden inhalen", "is_correct": false },
           {
-            "text": "Zone verboden toegang voor voertuigen waarvan de massa hoger is dan 3500 kg",
+            "text": "Waarschuwing voor tijdelijke wegenwerken",
+            "is_correct": false
+          },
+          {
+            "text": "Verplichte rijrichting zonder zonale werking",
             "is_correct": false
           }
         ],
-        "explanation": "ZC5 is het beginbord van een zone waar motorvoertuigen met meer dan 2 wielen niet mogen inrijden of doorrijden. De beperking geldt in de gehele zone, niet alleen bij het bord."
+        "explanation": "Dit bord begint een zone waar het verbod van C5 geldt: bestuurders van motorvoertuigen met meer dan twee wielen en van motorfietsen met zijspan mogen de zone niet in."
       },
       "EN": {
         "question": "What does this traffic sign mean?",
         "choices": [
           {
-            "text": "Zone no entry for motor vehicles with more than 2 wheels",
+            "text": "Zone: no entry for motor vehicles with more than two wheels and motorcycles with sidecars",
             "is_correct": true
           },
-          { "text": "Zone no overtaking", "is_correct": false },
           {
-            "text": "Zone no entry for vehicles over 3500 kg",
+            "text": "Warning of temporary roadworks",
+            "is_correct": false
+          },
+          {
+            "text": "Mandatory direction without zonal validity",
             "is_correct": false
           }
         ],
-        "explanation": "ZC5 is the entry sign of a zone where motor vehicles with more than 2 wheels may not enter or drive through. The restriction applies throughout the entire zone."
+        "explanation": "This sign starts a zone in which the C5 prohibition applies: drivers of motor vehicles with more than two wheels and motorcycles with sidecars may not enter."
       },
       "FR": {
         "question": "Que signifie ce panneau de signalisation?",
         "choices": [
           {
-            "text": "Zone accès interdit aux véhicules à moteur de plus de 2 roues",
+            "text": "Zone : accès interdit aux véhicules à moteur de plus de deux roues et aux motocyclettes avec side-car",
             "is_correct": true
           },
-          { "text": "Zone interdiction de dépasser", "is_correct": false },
           {
-            "text": "Zone accès interdit aux véhicules dont la masse dépasse 3500 kg",
+            "text": "Avertissement de travaux routiers temporaires",
+            "is_correct": false
+          },
+          {
+            "text": "Direction obligatoire sans validité zonale",
             "is_correct": false
           }
         ],
-        "explanation": "ZC5 est le panneau de début d'une zone interdisant l'accès aux véhicules à moteur de plus de 2 roues. La restriction s'applique dans toute la zone."
+        "explanation": "Ce signal ouvre une zone où s'applique l'interdiction C5 : les conducteurs de véhicules à moteur de plus de deux roues et de motocyclettes avec side-car ne peuvent pas entrer."
       },
       "AR": {
         "question": "ما معنى هذه العلامة المرورية؟",
         "choices": [
           {
-            "text": "منطقة ممنوع دخول المركبات ذات المحرك بأكثر من عجلتين",
+            "text": "منطقة ممنوع دخول المركبات الآلية ذات أكثر من عجلتين والدراجات النارية المزودة بعربة جانبية",
             "is_correct": true
           },
-          { "text": "منطقة ممنوع التجاوز", "is_correct": false },
           {
-            "text": "منطقة ممنوع دخول المركبات التي تزيد كتلتها عن 3500 كغ",
+            "text": "تحذير من أعمال طريق مؤقتة",
+            "is_correct": false
+          },
+          {
+            "text": "اتجاه إلزامي بلا نطاق مناطقي",
             "is_correct": false
           }
         ],
-        "explanation": "ZC5 هي علامة بداية منطقة لا يجوز فيها للمركبات ذات المحرك بأكثر من عجلتين الدخول أو السير. تسري القيود في كامل المنطقة."
+        "explanation": "تبدأ هذه العلامة منطقة يسري فيها حظر C5: لا يجوز لسائقي المركبات الآلية ذات أكثر من عجلتين ولا للدراجات النارية المزودة بعربة جانبية الدخول."
       }
     }
   },
@@ -76,40 +88,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Tot welke categorie verkeersborden behoort dit bord?",
+        "question": "Tot welk soort signalisatie behoort dit bord?",
         "choices": [
-          { "text": "Zoneborden", "is_correct": true },
-          { "text": "Verbodsborden", "is_correct": false },
-          { "text": "Parkeerborden", "is_correct": false }
+          {
+            "text": "Signalisatie met zonale geldigheid",
+            "is_correct": true
+          },
+          {
+            "text": "Een gevaarsbord zonder zonale werking",
+            "is_correct": false
+          },
+          {
+            "text": "Een wegmarkering",
+            "is_correct": false
+          }
         ],
-        "explanation": "ZC5 is een zonebord. In tegenstelling tot C-borden geldt een zonebord niet alleen op het punt waar het bord staat, maar in de gehele aangeduide zone."
+        "explanation": "Het bord bakent het begin of einde van een zone af. De betrokken regel geldt binnen de grenzen van die zone."
       },
       "EN": {
-        "question": "To which category of traffic signs does this sign belong?",
+        "question": "What kind of signing is this?",
         "choices": [
-          { "text": "Zone signs", "is_correct": true },
-          { "text": "Prohibition signs", "is_correct": false },
-          { "text": "Parking signs", "is_correct": false }
+          {
+            "text": "Signing with zonal validity",
+            "is_correct": true
+          },
+          {
+            "text": "A warning sign without zonal effect",
+            "is_correct": false
+          },
+          {
+            "text": "A road marking",
+            "is_correct": false
+          }
         ],
-        "explanation": "ZC5 is a zone sign. Unlike C-signs, a zone sign applies not only at the point where the sign is placed, but throughout the entire defined zone."
+        "explanation": "The sign marks the beginning or end of a zone. The relevant rule applies within that zone's boundaries."
       },
       "FR": {
-        "question": "À quelle catégorie de panneaux appartient ce panneau?",
+        "question": "À quel type de signalisation ce panneau appartient-il ?",
         "choices": [
-          { "text": "Panneaux de zone", "is_correct": true },
-          { "text": "Panneaux d'interdiction", "is_correct": false },
-          { "text": "Panneaux de stationnement", "is_correct": false }
+          {
+            "text": "Signalisation à validité zonale",
+            "is_correct": true
+          },
+          {
+            "text": "Un signal de danger sans effet zonal",
+            "is_correct": false
+          },
+          {
+            "text": "Un marquage routier",
+            "is_correct": false
+          }
         ],
-        "explanation": "ZC5 est un panneau de zone. Contrairement aux panneaux C, un panneau de zone ne s'applique pas seulement au point où il est placé, mais dans toute la zone définie."
+        "explanation": "Le signal délimite le début ou la fin d'une zone. La règle concernée s'applique dans les limites de cette zone."
       },
       "AR": {
-        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
+        "question": "إلى أي نوع من الإشارات تنتمي هذه العلامة؟",
         "choices": [
-          { "text": "علامات المنطقة", "is_correct": true },
-          { "text": "علامات الحظر", "is_correct": false },
-          { "text": "علامات الوقوف", "is_correct": false }
+          {
+            "text": "إشارة ذات نطاق مناطقي",
+            "is_correct": true
+          },
+          {
+            "text": "علامة خطر بلا أثر مناطقي",
+            "is_correct": false
+          },
+          {
+            "text": "علامة طريق مرسومة",
+            "is_correct": false
+          }
         ],
-        "explanation": "ZC5 علامة منطقة. خلافاً لعلامات C، تسري علامة المنطقة في كامل المنطقة المحددة، وليس فقط عند نقطة وضعها."
+        "explanation": "تحدد العلامة بداية منطقة أو نهايتها، وتسري القاعدة المعنية داخل حدود تلك المنطقة."
       }
     }
   },
@@ -121,73 +169,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Welke regel geldt in de gehele zone die door dit bord wordt aangeduid?",
+        "question": "Voor welke bestuurders geldt het verbod in deze zone?",
         "choices": [
           {
-            "text": "Motorvoertuigen met meer dan 2 wielen mogen de zone niet inrijden of doorrijden",
+            "text": "Voor bestuurders van motorvoertuigen met meer dan twee wielen en van motorfietsen met zijspan",
             "is_correct": true
           },
           {
-            "text": "Inhalen is verboden in de gehele zone",
+            "text": "Alleen voor bestuurders van fietsen",
             "is_correct": false
           },
           {
-            "text": "Voertuigen met een massa van meer dan 3500 kg mogen de zone niet inrijden",
+            "text": "Alleen voor voetgangers",
             "is_correct": false
           }
         ],
-        "explanation": "ZC5 verbiedt motorvoertuigen met meer dan 2 wielen de zone in te rijden of er doorheen te rijden. Dit verbod geldt overal in de zone, niet alleen bij het bord."
+        "explanation": "De zonale betekenis is die van C5 en omvat beide wettelijk genoemde categorieën."
       },
       "EN": {
-        "question": "What rule applies throughout the zone indicated by this sign?",
+        "question": "Which drivers are covered by the prohibition in this zone?",
         "choices": [
           {
-            "text": "Motor vehicles with more than 2 wheels may not enter or drive through this zone",
+            "text": "Drivers of motor vehicles with more than two wheels and motorcycles with sidecars",
             "is_correct": true
           },
           {
-            "text": "Overtaking is prohibited throughout the entire zone",
+            "text": "Only cyclists",
             "is_correct": false
           },
           {
-            "text": "Vehicles with a mass over 3500 kg may not enter the zone",
+            "text": "Only pedestrians",
             "is_correct": false
           }
         ],
-        "explanation": "ZC5 prohibits motor vehicles with more than 2 wheels from entering or driving through the zone. This prohibition applies everywhere in the zone, not only at the sign."
+        "explanation": "The zonal meaning is that of C5 and covers both statutory categories."
       },
       "FR": {
-        "question": "Quelle règle s'applique dans toute la zone indiquée par ce panneau?",
+        "question": "Quels conducteurs sont visés par l'interdiction dans cette zone ?",
         "choices": [
           {
-            "text": "Les véhicules à moteur de plus de 2 roues ne peuvent ni entrer ni circuler dans cette zone",
+            "text": "Les conducteurs de véhicules à moteur de plus de deux roues et de motocyclettes avec side-car",
             "is_correct": true
           },
           {
-            "text": "Le dépassement est interdit dans toute la zone",
+            "text": "Uniquement les cyclistes",
             "is_correct": false
           },
           {
-            "text": "Les véhicules dont la masse dépasse 3500 kg ne peuvent pas entrer dans la zone",
+            "text": "Uniquement les piétons",
             "is_correct": false
           }
         ],
-        "explanation": "ZC5 interdit aux véhicules à moteur de plus de 2 roues d'entrer dans la zone ou d'y circuler. Cette interdiction s'applique partout dans la zone, pas seulement au panneau."
+        "explanation": "La signification zonale est celle de C5 et couvre les deux catégories prévues par la loi."
       },
       "AR": {
-        "question": "ما القاعدة السارية في كامل المنطقة التي تحددها هذه العلامة المرورية؟",
+        "question": "أي السائقين يشملهم الحظر في هذه المنطقة؟",
         "choices": [
           {
-            "text": "لا يجوز للمركبات ذات المحرك بأكثر من عجلتين دخول المنطقة أو السير فيها",
+            "text": "سائقو المركبات الآلية ذات أكثر من عجلتين والدراجات النارية المزودة بعربة جانبية",
             "is_correct": true
           },
-          { "text": "التجاوز ممنوع في كامل المنطقة", "is_correct": false },
           {
-            "text": "لا يجوز للمركبات التي تزيد كتلتها عن 3500 كغ دخول المنطقة",
+            "text": "راكبو الدراجات فقط",
+            "is_correct": false
+          },
+          {
+            "text": "المشاة فقط",
             "is_correct": false
           }
         ],
-        "explanation": "ZC5 تحظر على المركبات ذات المحرك بأكثر من عجلتين دخول المنطقة أو المرور بها. يسري هذا الحظر في كامل أرجاء المنطقة."
+        "explanation": "المعنى المناطقي هو معنى C5 ويشمل الفئتين المذكورتين في القانون."
       }
     }
   },
@@ -199,70 +250,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat moet u doen wanneer u dit bord ziet?",
+        "question": "U nadert de zone met een personenauto. Wat moet u doen?",
         "choices": [
           {
-            "text": "Als uw motorvoertuig meer dan 2 wielen heeft, mag u de zone niet inrijden",
+            "text": "Niet inrijden en een andere toegelaten route kiezen",
             "is_correct": true
           },
           {
-            "text": "U mag de zone inrijden mits u langzaam rijdt",
+            "text": "Inrijden als u stapvoets rijdt",
             "is_correct": false
           },
           {
-            "text": "De beperking geldt alleen tijdens de spitsuren",
+            "text": "Inrijden wanneer uw bestemming in de zone ligt",
             "is_correct": false
           }
         ],
-        "explanation": "ZC5 is een absoluut verbod voor de aangeduide voertuigcategorie. Er zijn geen uitzonderingen op basis van snelheid of tijdstip."
+        "explanation": "Een personenauto heeft meer dan twee wielen en valt onder het afgebeelde C5-zoneverbod. Snelheid of bestemming creëert geen uitzondering."
       },
       "EN": {
-        "question": "What must you do when you see this sign?",
+        "question": "You approach the zone in a passenger car. What must you do?",
         "choices": [
           {
-            "text": "If your motor vehicle has more than 2 wheels, you may not enter this zone",
+            "text": "Do not enter and choose another permitted route",
             "is_correct": true
           },
           {
-            "text": "You may enter the zone as long as you drive slowly",
+            "text": "Enter if you drive at walking pace",
             "is_correct": false
           },
           {
-            "text": "The restriction only applies during peak hours",
+            "text": "Enter when your destination is inside the zone",
             "is_correct": false
           }
         ],
-        "explanation": "ZC5 is an absolute prohibition for the indicated vehicle category. There are no exceptions based on speed or time of day."
+        "explanation": "A passenger car has more than two wheels and falls within the displayed C5 zonal prohibition. Speed or destination creates no exception."
       },
       "FR": {
-        "question": "Que devez-vous faire lorsque vous voyez ce panneau?",
+        "question": "Vous approchez de la zone en voiture. Que devez-vous faire ?",
         "choices": [
           {
-            "text": "Si votre véhicule à moteur a plus de 2 roues, vous ne pouvez pas entrer dans cette zone",
+            "text": "Ne pas entrer et choisir un autre itinéraire autorisé",
             "is_correct": true
           },
           {
-            "text": "Vous pouvez entrer dans la zone à condition de rouler lentement",
+            "text": "Entrer en roulant au pas",
             "is_correct": false
           },
           {
-            "text": "La restriction ne s'applique que pendant les heures de pointe",
+            "text": "Entrer si votre destination se trouve dans la zone",
             "is_correct": false
           }
         ],
-        "explanation": "ZC5 est une interdiction absolue pour la catégorie de véhicules indiquée. Il n'y a pas d'exception basée sur la vitesse ou l'heure."
+        "explanation": "Une voiture a plus de deux roues et relève de l'interdiction zonale C5 affichée. La vitesse ou la destination ne crée pas d'exception."
       },
       "AR": {
-        "question": "ماذا يجب عليك فعله عند رؤية هذه العلامة المرورية؟",
+        "question": "تقترب من المنطقة بسيارة ركوب. ماذا يجب أن تفعل؟",
         "choices": [
           {
-            "text": "إذا كانت مركبتك ذات محرك ولديها أكثر من عجلتين، فلا يجوز لك دخول المنطقة",
+            "text": "لا تدخل واختر طريقًا آخر مسموحًا",
             "is_correct": true
           },
-          { "text": "يمكنك دخول المنطقة طالما سرت ببطء", "is_correct": false },
-          { "text": "القيد يسري فقط خلال ساعات الذروة", "is_correct": false }
+          {
+            "text": "ادخل إذا سرت بسرعة المشي",
+            "is_correct": false
+          },
+          {
+            "text": "ادخل إذا كانت وجهتك داخل المنطقة",
+            "is_correct": false
+          }
         ],
-        "explanation": "ZC5 حظر مطلق لفئة المركبات المذكورة. لا توجد استثناءات تتعلق بالسرعة أو التوقيت."
+        "explanation": "لسيارة الركوب أكثر من عجلتين، ولذلك يشملها حظر C5 المناطقي المعروض. ولا تنشئ السرعة أو الوجهة استثناءً."
       }
     }
   },
@@ -355,70 +412,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat is het verschil tussen ZC5 en C5?",
+        "question": "Wat is het verschil tussen dit zonebord en een gewoon C5-bord?",
         "choices": [
           {
-            "text": "ZC5 geldt in de gehele zone tot aan het bijbehorende eindbord ZC5-; C5 geldt enkel op het punt waar het bord geplaatst is",
+            "text": "Het zonebord geeft de C5-regel zonale geldigheid tot het eindezonebord",
             "is_correct": true
           },
           {
-            "text": "ZC5 en C5 zijn identiek en hebben hetzelfde toepassingsgebied",
+            "text": "Het zonebord geldt alleen precies ter hoogte van het bord",
             "is_correct": false
           },
           {
-            "text": "C5 heeft een breder toepassingsgebied dan ZC5",
+            "text": "Een gewoon C5-bord geldt automatisch in een hele gemeente",
             "is_correct": false
           }
         ],
-        "explanation": "Een zonebord (ZC5) is van kracht in de gehele zone. Een gewoon verbodsbord (C5) geldt enkel op de locatie van het bord of het aangeduide weggedeelte."
+        "explanation": "De betekenis van C5 blijft gelijk; het verschil is de zonale draagwijdte van de signalisatie."
       },
       "EN": {
-        "question": "What is the difference between ZC5 and C5?",
+        "question": "What is the difference between this zonal sign and an ordinary C5 sign?",
         "choices": [
           {
-            "text": "ZC5 applies throughout the entire zone until the corresponding exit sign ZC5-; C5 applies only at the point where the sign is placed",
+            "text": "The zonal sign gives the C5 rule zonal validity until the end-of-zone sign",
             "is_correct": true
           },
           {
-            "text": "ZC5 and C5 are identical with the same area of effect",
-            "is_correct": false
-          },
-          { "text": "C5 has a broader scope than ZC5", "is_correct": false }
-        ],
-        "explanation": "A zone sign (ZC5) is in force throughout the entire zone. A regular prohibition sign (C5) only applies at the location of the sign or the indicated road section."
-      },
-      "FR": {
-        "question": "Quelle est la différence entre ZC5 et C5?",
-        "choices": [
-          {
-            "text": "ZC5 s'applique dans toute la zone jusqu'au panneau de fin correspondant ZC5-; C5 ne s'applique qu'au point où le panneau est placé",
-            "is_correct": true
-          },
-          {
-            "text": "ZC5 et C5 sont identiques et ont le même champ d'application",
+            "text": "The zonal sign applies only at its exact position",
             "is_correct": false
           },
           {
-            "text": "C5 a un champ d'application plus large que ZC5",
+            "text": "An ordinary C5 automatically applies throughout an entire municipality",
             "is_correct": false
           }
         ],
-        "explanation": "Un panneau de zone (ZC5) est en vigueur dans toute la zone. Un panneau d'interdiction ordinaire (C5) ne s'applique qu'à l'emplacement du panneau ou à la section de route indiquée."
+        "explanation": "The meaning of C5 remains the same; the difference is the zonal scope of the signing."
       },
-      "AR": {
-        "question": "ما الفرق بين ZC5 و C5؟",
+      "FR": {
+        "question": "Quelle est la différence entre ce signal zonal et un signal C5 ordinaire ?",
         "choices": [
           {
-            "text": "ZC5 تسري في كامل المنطقة حتى علامة النهاية ZC5-؛ C5 تسري فقط عند النقطة التي وُضعت فيها",
+            "text": "Le signal zonal donne à la règle C5 une validité dans toute la zone jusqu'au signal de fin",
             "is_correct": true
           },
           {
-            "text": "ZC5 و C5 متطابقتان ولهما نفس نطاق التطبيق",
+            "text": "Le signal zonal ne s'applique qu'à son emplacement exact",
             "is_correct": false
           },
-          { "text": "C5 لها نطاق تطبيق أوسع من ZC5", "is_correct": false }
+          {
+            "text": "Un C5 ordinaire s'applique automatiquement à toute une commune",
+            "is_correct": false
+          }
         ],
-        "explanation": "علامة المنطقة (ZC5) سارية في كامل المنطقة. علامة الحظر العادية (C5) تسري فقط عند موضع العلامة أو القسم المحدد من الطريق."
+        "explanation": "La signification de C5 reste la même; la différence réside dans la portée zonale de la signalisation."
+      },
+      "AR": {
+        "question": "ما الفرق بين هذه العلامة المناطقية وعلامة C5 العادية؟",
+        "choices": [
+          {
+            "text": "تمنح العلامة المناطقية قاعدة C5 نطاقًا داخل المنطقة حتى علامة النهاية",
+            "is_correct": true
+          },
+          {
+            "text": "لا تسري العلامة المناطقية إلا عند موضعها بالضبط",
+            "is_correct": false
+          },
+          {
+            "text": "تسري علامة C5 العادية تلقائيًا في بلدية كاملة",
+            "is_correct": false
+          }
+        ],
+        "explanation": "يبقى معنى C5 نفسه؛ والفرق هو النطاق المناطقي للإشارة."
       }
     }
   },
@@ -430,60 +493,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U reed een ZC5-zone in maar hebt het beginbord niet gezien. Geldt de beperking nog steeds voor uw voertuig?",
+        "question": "U rijdt met een motorfiets met zijspan. Mag u deze zone inrijden?",
         "choices": [
           {
-            "text": "Ja, de zoneregel geldt in de gehele zone ongeacht of u het beginbord hebt gezien",
+            "text": "Neen, een motorfiets met zijspan wordt uitdrukkelijk door C5 getroffen",
             "is_correct": true
           },
           {
-            "text": "Neen, u bent alleen gebonden als u het beginbord persoonlijk hebt gezien",
+            "text": "Ja, omdat de motorfiets zelf twee wielen heeft",
             "is_correct": false
           }
         ],
-        "explanation": "De zoneregel is van kracht in de gehele zone. Het al dan niet zien van het beginbord wijzigt de wettelijke verplichting niet."
+        "explanation": "De wettelijke betekenis van C5 vermeldt motorfietsen met zijspan naast motorvoertuigen met meer dan twee wielen."
       },
       "EN": {
-        "question": "You entered a ZC5 zone but did not see the entry sign. Does the restriction still apply to your vehicle?",
+        "question": "You are riding a motorcycle with a sidecar. May you enter this zone?",
         "choices": [
           {
-            "text": "Yes, the zone rule applies throughout the entire zone regardless of whether you saw the entry sign",
+            "text": "No, motorcycles with sidecars are expressly covered by C5",
             "is_correct": true
           },
           {
-            "text": "No, you are only bound if you personally saw the entry sign",
+            "text": "Yes, because the motorcycle itself has two wheels",
             "is_correct": false
           }
         ],
-        "explanation": "The zone rule is in force throughout the entire zone. Whether or not you saw the entry sign does not change the legal obligation."
+        "explanation": "The statutory meaning of C5 expressly mentions motorcycles with sidecars in addition to motor vehicles with more than two wheels."
       },
       "FR": {
-        "question": "Vous avez pénétré dans une zone ZC5 mais n'avez pas vu le panneau de début. La restriction s'applique-t-elle toujours à votre véhicule?",
+        "question": "Vous conduisez une motocyclette avec side-car. Pouvez-vous entrer dans cette zone ?",
         "choices": [
           {
-            "text": "Oui, la règle de zone s'applique dans toute la zone, que vous ayez vu ou non le panneau de début",
+            "text": "Non, les motocyclettes avec side-car sont expressément visées par C5",
             "is_correct": true
           },
           {
-            "text": "Non, vous n'êtes lié que si vous avez personnellement vu le panneau de début",
+            "text": "Oui, parce que la motocyclette elle-même a deux roues",
             "is_correct": false
           }
         ],
-        "explanation": "La règle de zone est en vigueur dans toute la zone. Le fait d'avoir vu ou non le panneau de début ne modifie pas l'obligation légale."
+        "explanation": "La signification légale de C5 mentionne expressément les motocyclettes avec side-car en plus des véhicules à moteur de plus de deux roues."
       },
       "AR": {
-        "question": "دخلت منطقة ZC5 لكنك لم تر علامة البداية. هل تسري القيود على مركبتك؟",
+        "question": "تقود دراجة نارية بعربة جانبية. هل يجوز لك دخول المنطقة؟",
         "choices": [
           {
-            "text": "نعم، قاعدة المنطقة سارية في كامل المنطقة بصرف النظر عما إذا رأيت علامة البداية أم لا",
+            "text": "لا، فالدراجات النارية ذات العربة الجانبية مشمولة صراحةً بـC5",
             "is_correct": true
           },
           {
-            "text": "لا، أنت ملزم فقط إذا رأيت علامة البداية شخصياً",
+            "text": "نعم، لأن الدراجة النارية نفسها ذات عجلتين",
             "is_correct": false
           }
         ],
-        "explanation": "قاعدة المنطقة سارية في كامل المنطقة. رؤيتك أو عدم رؤيتك لعلامة البداية لا تغيّر الالتزام القانوني."
+        "explanation": "يذكر المعنى القانوني لـC5 صراحة الدراجات النارية المزودة بعربة جانبية إلى جانب المركبات الآلية ذات أكثر من عجلتين."
       }
     }
   },
@@ -495,60 +558,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U rijdt een personenwagen in een ZC5-zone en uw bestemming bevindt zich in die zone. Mag u doorrijden?",
+        "question": "U rijdt met een personenauto en uw bestemming ligt in de zone. Mag u zonder andere aangegeven uitzondering inrijden?",
         "choices": [
           {
-            "text": "Neen, het verbod is absoluut; een bestemming in de zone rechtvaardigt het rijden in de zone niet",
+            "text": "Neen, een bestemming in de zone vormt op zichzelf geen uitzondering op het afgebeelde verbod",
             "is_correct": true
           },
           {
-            "text": "Ja, als uw bestemming in de zone ligt, mag u doorrijden",
+            "text": "Ja, bestemmingsverkeer is altijd toegelaten",
             "is_correct": false
           }
         ],
-        "explanation": "ZC5 verbiedt de aangeduide voertuigcategorie absoluut de zone in te rijden, ongeacht de bestemming. Er bestaat geen uitzondering voor bestemmingen in de zone."
+        "explanation": "Volg de regel zoals zij is gesignaleerd. Alleen een geldige aanvulling, beperking of hogere verkeersaanwijzing kan de situatie wijzigen."
       },
       "EN": {
-        "question": "You are driving a car inside a ZC5 zone and your destination is within that zone. Are you allowed to continue?",
+        "question": "You are driving a passenger car and your destination is inside the zone. May you enter without another displayed exception?",
         "choices": [
           {
-            "text": "No, the prohibition is absolute; having a destination inside the zone does not justify driving through it",
+            "text": "No, a destination inside the zone is not by itself an exception to the displayed prohibition",
             "is_correct": true
           },
           {
-            "text": "Yes, if your destination is inside the zone you may continue",
+            "text": "Yes, destination traffic is always admitted",
             "is_correct": false
           }
         ],
-        "explanation": "ZC5 absolutely prohibits the indicated vehicle category from being in the zone, regardless of the destination. No exception exists for destinations inside the zone."
+        "explanation": "Follow the rule as signed. Only a valid supplement, limitation or higher-ranking traffic direction can change the situation."
       },
       "FR": {
-        "question": "Vous conduisez une voiture dans une zone ZC5 et votre destination se trouve dans cette zone. Êtes-vous autorisé à continuer?",
+        "question": "Vous conduisez une voiture et votre destination se trouve dans la zone. Pouvez-vous entrer sans autre exception affichée ?",
         "choices": [
           {
-            "text": "Non, l'interdiction est absolue; avoir une destination dans la zone ne justifie pas d'y circuler",
+            "text": "Non, une destination dans la zone ne constitue pas à elle seule une exception à l'interdiction affichée",
             "is_correct": true
           },
           {
-            "text": "Oui, si votre destination est dans la zone, vous pouvez continuer",
+            "text": "Oui, le trafic de destination est toujours admis",
             "is_correct": false
           }
         ],
-        "explanation": "ZC5 interdit absolument à la catégorie de véhicules indiquée de se trouver dans la zone, quelle que soit la destination. Il n'existe pas d'exception pour les destinations situées à l'intérieur de la zone."
+        "explanation": "Respectez la règle signalée. Seul un complément, une limitation valable ou une indication de rang supérieur peut modifier la situation."
       },
       "AR": {
-        "question": "تقود سيارة داخل منطقة ZC5 ووجهتك تقع داخل المنطقة. هل يجوز لك الاستمرار؟",
+        "question": "تقود سيارة ووجهتك داخل المنطقة. هل يجوز الدخول من دون استثناء آخر ظاهر؟",
         "choices": [
           {
-            "text": "لا، الحظر مطلق؛ وجود وجهة داخل المنطقة لا يبرّر السير فيها",
+            "text": "لا، وجود وجهة داخل المنطقة لا يشكل بحد ذاته استثناءً من الحظر المعروض",
             "is_correct": true
           },
           {
-            "text": "نعم، إذا كانت وجهتك داخل المنطقة يجوز لك الاستمرار",
+            "text": "نعم، فحركة المرور إلى الوجهات مسموحة دائمًا",
             "is_correct": false
           }
         ],
-        "explanation": "ZC5 تحظر بشكل مطلق على فئة المركبات المحددة التواجد في المنطقة، بغض النظر عن الوجهة. لا توجد استثناءات للوجهات داخل المنطقة."
+        "explanation": "اتبع القاعدة كما تظهر على العلامة. ولا يغير الحالة إلا تكملة أو تقييد صالح أو توجيه مروري أعلى مرتبة."
       }
     }
   }

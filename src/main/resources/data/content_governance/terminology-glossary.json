@@ -8,9 +8,10 @@
     "PARKING",
     "PRIORITY",
     "PROHIBITION",
-    "ROAD_MANAGEMENT"
+    "ROAD_MANAGEMENT",
+    "ZONE"
   ],
-  "last_reviewed": "2026-07-20",
+  "last_reviewed": "2026-07-21",
   "translation_policy": "NL and FR legal terms follow the official texts. EN and AR are faithful editorial translations and must not expand or narrow the legal meaning.",
   "terms": [
     {
@@ -1740,6 +1741,109 @@
       "source_ids": [
         "BE-KB1975-ROAD-MANAGEMENT-CURRENT",
         "BE-MB1976-ROAD-MANAGEMENT-PLACEMENT"
+      ]
+    },
+    {
+      "term_id": "ZONE_SIGN",
+      "i18n": {
+        "NL": "zonebord",
+        "EN": "zone sign",
+        "FR": "signal zonal",
+        "AR": "علامة منطقة"
+      },
+      "source_ids": [
+        "BE-KB1975-ZONE-CURRENT",
+        "BE-MB1976-ZONE-PLACEMENT"
+      ]
+    },
+    {
+      "term_id": "ZONAL_VALIDITY",
+      "i18n": {
+        "NL": "zonale geldigheid",
+        "EN": "zonal validity",
+        "FR": "validité zonale",
+        "AR": "السريان المناطقي"
+      },
+      "source_ids": [
+        "BE-KB1975-ZONE-CURRENT",
+        "BE-MB1976-ZONE-PLACEMENT"
+      ]
+    },
+    {
+      "term_id": "END_OF_ZONE_SIGN",
+      "i18n": {
+        "NL": "eindezonebord",
+        "EN": "end-of-zone sign",
+        "FR": "signal de fin de zone",
+        "AR": "علامة نهاية المنطقة"
+      },
+      "source_ids": [
+        "BE-KB1975-ZONE-CURRENT",
+        "BE-MB1976-ZONE-PLACEMENT"
+      ]
+    },
+    {
+      "term_id": "PAID_PARKING",
+      "i18n": {
+        "NL": "betalend parkeren",
+        "EN": "paid parking",
+        "FR": "stationnement payant",
+        "AR": "ركن مدفوع"
+      },
+      "source_ids": [
+        "BE-KB1975-ZONE-CURRENT"
+      ]
+    },
+    {
+      "term_id": "PEDESTRIAN_ZONE",
+      "i18n": {
+        "NL": "voetgangerszone",
+        "EN": "pedestrian zone",
+        "FR": "zone piétonne",
+        "AR": "منطقة مشاة"
+      },
+      "source_ids": [
+        "BE-KB1975-ZONE-CURRENT"
+      ]
+    },
+    {
+      "term_id": "LOW_EMISSION_ZONE",
+      "i18n": {
+        "NL": "lage-emissiezone",
+        "EN": "low-emission zone",
+        "FR": "zone de basses émissions",
+        "AR": "منطقة منخفضة الانبعاثات"
+      },
+      "source_ids": [
+        "BE-KB1975-ZONE-CURRENT",
+        "BE-FLEMISH-LEZ-CURRENT",
+        "BE-WALLOON-LEZ-CURRENT",
+        "BE-BRUSSELS-LEZ-CURRENT"
+      ]
+    },
+    {
+      "term_id": "ZONE_30",
+      "i18n": {
+        "NL": "zone 30",
+        "EN": "30 km/h zone",
+        "FR": "zone 30",
+        "AR": "منطقة 30 كم/ساعة"
+      },
+      "source_ids": [
+        "BE-KB1975-ZONE-CURRENT",
+        "BE-MB1976-ZONE-PLACEMENT"
+      ]
+    },
+    {
+      "term_id": "E9B_RESERVED_PARKING",
+      "i18n": {
+        "NL": "parkeren voorbehouden voor E9b-voertuigcategorieën",
+        "EN": "parking reserved for E9b vehicle categories",
+        "FR": "stationnement réservé aux catégories de véhicules E9b",
+        "AR": "ركن مخصص لفئات المركبات E9b"
+      },
+      "source_ids": [
+        "BE-KB1975-ZONE-CURRENT"
       ]
     }
   ]

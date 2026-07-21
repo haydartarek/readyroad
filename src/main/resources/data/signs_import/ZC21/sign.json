@@ -5,32 +5,40 @@
   "serious_violation": false,
   "i18n": {
     "NL": {
-      "name": "Zone verboden toegang voor bestuurders van voertuigen waarvan de massa hoger dan 3500 kg",
-      "summary": "ZC21 is het beginbord van een zone waar voertuigen met een massa van meer dan 3500 kg niet mogen inrijden of doorrijden. Voertuigen die exact 3500 kg wegen, vallen NIET onder dit verbod.",
-      "description": "Dit verkeersbord geeft aan dat hier het begin is van een zone waar de toegang verboden is voor bestuurders van voertuigen waarvan de massa in beladen toestand hoger is dan de aangeduide massa.",
-      "driver_guidance": "4200 kg overschrijdt de grens van 3500 kg. ZC21 verbiedt uw vrachtwagen absoluut de zone in te rijden, ongeacht snelheid of bestemming.",
-      "exceptions": []
+      "name": "Zone: verboden toegang boven 3,5 t massa in beladen toestand",
+      "summary": "Dit bord begint een zone die verboden is voor bestuurders van voertuigen waarvan de werkelijke massa in beladen toestand hoger is dan 3.500 kg.",
+      "description": "Het criterium is de massa in beladen toestand, niet de maximaal toegelaten massa. Een voertuig van precies 3.500 kg overschrijdt de aangeduide grens niet.",
+      "driver_guidance": "Bepaal de werkelijke beladen massa voordat u binnenrijdt. Is die hoger dan 3.500 kg, kies dan een route buiten de zone.",
+      "exceptions": [
+        "Andere gewichts-, aslast- of toegangsbeperkingen kunnen ook gelden."
+      ]
     },
     "EN": {
-      "name": "Zone no entry for vehicles with a mass exceeding 3500 kg",
-      "summary": "ZC21 is the entry sign of a zone where vehicles with a mass exceeding 3500 kg may not enter or drive through. Vehicles weighing exactly 3500 kg are NOT covered by this prohibition.",
-      "description": "This sign marks the beginning of a zone where entry is prohibited for drivers of vehicles whose laden mass exceeds the indicated limit of 3500 kg.",
-      "driver_guidance": "4200 kg exceeds the 3500 kg limit. ZC21 absolutely prohibits your truck from entering the zone, regardless of speed or destination.",
-      "exceptions": []
+      "name": "Zone: no entry above 3.5 t laden mass",
+      "summary": "This sign starts a zone closed to drivers of vehicles whose actual laden mass is greater than 3,500 kg.",
+      "description": "The criterion is laden mass, not maximum authorised mass. A vehicle at exactly 3,500 kg does not exceed the indicated threshold.",
+      "driver_guidance": "Determine the actual laden mass before entering. If it is above 3,500 kg, use a route outside the zone.",
+      "exceptions": [
+        "Other weight, axle-load or access restrictions may also apply."
+      ]
     },
     "FR": {
-      "name": "Zone accès interdit aux véhicules dont la masse dépasse 3500 kg",
-      "summary": "ZC21 est le panneau de début d'une zone interdisant l'accès aux véhicules dont la masse dépasse 3500 kg. Les véhicules pesant exactement 3500 kg ne sont PAS visés.",
-      "description": "Ce panneau indique le début d'une zone dans laquelle l'accès est interdit aux conducteurs de véhicules dont la masse en charge dépasse la masse indiquée de 3500 kg.",
-      "driver_guidance": "4200 kg dépasse la limite de 3500 kg. ZC21 interdit absolument à votre camion d'entrer dans la zone, quelle que soit la vitesse ou la destination.",
-      "exceptions": []
+      "name": "Zone : accès interdit au-dessus de 3,5 t de masse en charge",
+      "summary": "Ce signal ouvre une zone interdite aux conducteurs de véhicules dont la masse réelle en charge dépasse 3 500 kg.",
+      "description": "Le critère est la masse en charge et non la masse maximale autorisée. Un véhicule pesant exactement 3 500 kg ne dépasse pas le seuil indiqué.",
+      "driver_guidance": "Déterminez la masse réelle en charge avant d'entrer. Si elle dépasse 3 500 kg, empruntez un itinéraire hors de la zone.",
+      "exceptions": [
+        "D'autres restrictions de poids, de charge par essieu ou d'accès peuvent également s'appliquer."
+      ]
     },
     "AR": {
-      "name": "منطقة ممنوع دخول المركبات التي تزيد كتلتها عن 3500 كغ",
-      "summary": "ZC21 هي علامة بداية منطقة لا يجوز فيها للمركبات التي تزيد كتلتها عن 3500 كغ الدخول أو المرور. المركبات ذات الكتلة بالضبط 3500 كغ لا يشملها هذا الحظر.",
-      "description": "تُشير هذه العلامة المرورية إلى بداية منطقة يُحظر فيها الدخول على سائقي المركبات التي تتجاوز كتلتها في الحالة المحمّلة الحدَّ المُشار إليه البالغ 3500 كغ.",
-      "driver_guidance": "4200 كغ تتجاوز حد 3500 كغ. ZC21 تحظر بشكل مطلق على شاحنتك دخول المنطقة بغض النظر عن السرعة أو الوجهة.",
-      "exceptions": []
+      "name": "منطقة ممنوع دخول المركبات التي تتجاوز كتلتها في حالة التحميل 3.5 طن",
+      "summary": "تبدأ هذه العلامة منطقة ممنوعة على سائقي المركبات التي تتجاوز كتلتها الفعلية في حالة التحميل 3500 كغ.",
+      "description": "المعيار هو الكتلة في حالة التحميل لا الكتلة القصوى المسموح بها. والمركبة التي تبلغ كتلتها 3500 كغ تمامًا لا تتجاوز الحد المبين.",
+      "driver_guidance": "تحقق من الكتلة الفعلية في حالة التحميل قبل الدخول. إذا تجاوزت 3500 كغ، فاسلك طريقًا خارج المنطقة.",
+      "exceptions": [
+        "قد تسري أيضًا قيود أخرى للوزن أو حمولة المحور أو الدخول."
+      ]
     }
   }
 }

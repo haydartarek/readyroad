@@ -10,73 +10,73 @@
         "question": "Wat betekent dit verkeersbord?",
         "choices": [
           {
-            "text": "De zone 30 is voorbij; volg vanaf hier de limiet die geldt voor de volgende weg",
+            "text": "Einde van een zone 30 (F4b)",
             "is_correct": true
           },
           {
-            "text": "Een nieuwe zone 30 begint onmiddellijk voorbij dit bord",
+            "text": "Waarschuwing voor tijdelijke wegenwerken",
             "is_correct": false
           },
           {
-            "text": "U mag nu sneller rijden zonder naar andere snelheidsregels te kijken",
+            "text": "Verplichte rijrichting zonder zonale werking",
             "is_correct": false
           }
         ],
-        "explanation": "Het bord markeert het einde van een zone 30. Voorbij dit bord bepaalt de volgende weg, het gewest en eventuele snelheidsborden welke limiet geldt."
+        "explanation": "F4b beëindigt de specifieke zonale maximumsnelheid van 30 km/u."
       },
       "EN": {
         "question": "What does this traffic sign mean?",
         "choices": [
           {
-            "text": "The zone 30 has ended; from here follow the limit that applies to the next road",
+            "text": "End of a 30 km/h zone (F4b)",
             "is_correct": true
           },
           {
-            "text": "A new zone 30 starts immediately beyond this sign",
+            "text": "Warning of temporary roadworks",
             "is_correct": false
           },
           {
-            "text": "You may now drive faster without checking any other speed rules",
+            "text": "Mandatory direction without zonal validity",
             "is_correct": false
           }
         ],
-        "explanation": "The sign marks the end of a zone 30. Beyond it, the next road, the region and any speed signs determine the applicable limit."
+        "explanation": "F4b ends the specific zonal maximum speed of 30 km/h."
       },
       "FR": {
         "question": "Que signifie ce panneau de signalisation?",
         "choices": [
           {
-            "text": "La zone 30 est terminée; à partir d'ici, respectez la limite applicable à la route suivante",
+            "text": "Fin d'une zone 30 (F4b)",
             "is_correct": true
           },
           {
-            "text": "Une nouvelle zone 30 commence immédiatement après ce panneau",
+            "text": "Avertissement de travaux routiers temporaires",
             "is_correct": false
           },
           {
-            "text": "Vous pouvez maintenant rouler plus vite sans tenir compte des autres règles de vitesse",
+            "text": "Direction obligatoire sans validité zonale",
             "is_correct": false
           }
         ],
-        "explanation": "Le panneau marque la fin d'une zone 30. Au-delà, la route suivante, la région et les panneaux de vitesse déterminent la limite applicable."
+        "explanation": "F4b met fin à la vitesse maximale zonale particulière de 30 km/h."
       },
       "AR": {
         "question": "ما معنى هذه العلامة المرورية؟",
         "choices": [
           {
-            "text": "انتهت منطقة 30؛ اتبع من هنا الحد الذي ينطبق على الطريق التالي",
+            "text": "نهاية منطقة 30 كم/ساعة (F4b)",
             "is_correct": true
           },
           {
-            "text": "تبدأ منطقة 30 جديدة فوراً بعد هذه العلامة",
+            "text": "تحذير من أعمال طريق مؤقتة",
             "is_correct": false
           },
           {
-            "text": "يمكنك الآن القيادة بسرعة أعلى دون النظر إلى قواعد السرعة الأخرى",
+            "text": "اتجاه إلزامي بلا نطاق مناطقي",
             "is_correct": false
           }
         ],
-        "explanation": "تحدد العلامة نهاية منطقة 30. بعدها يحدد الطريق التالي والإقليم وأي علامات سرعة الحد المطبق."
+        "explanation": "تنهي F4b الحد الأقصى المناطقي المحدد البالغ 30 كم/ساعة."
       }
     }
   },
@@ -88,76 +88,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Tot welke categorie behoort dit eindbord van een zone 30?",
+        "question": "Tot welk soort signalisatie behoort dit bord?",
         "choices": [
           {
-            "text": "Zoneborden",
+            "text": "Signalisatie met zonale geldigheid",
             "is_correct": true
           },
           {
-            "text": "Verbodsborden",
+            "text": "Een gevaarsbord zonder zonale werking",
             "is_correct": false
           },
           {
-            "text": "Voorrangsborden",
+            "text": "Een wegmarkering",
             "is_correct": false
           }
         ],
-        "explanation": "Dit is een zonebord dat het einde van een zone 30 aanduidt. Vanaf het bord is de specifieke zonebeperking beëindigd."
+        "explanation": "Het bord bakent het begin of einde van een zone af. De betrokken regel geldt binnen de grenzen van die zone."
       },
       "EN": {
-        "question": "To which category does this end-of-zone-30 sign belong?",
+        "question": "What kind of signing is this?",
         "choices": [
           {
-            "text": "Zone signs",
+            "text": "Signing with zonal validity",
             "is_correct": true
           },
           {
-            "text": "Prohibition signs",
+            "text": "A warning sign without zonal effect",
             "is_correct": false
           },
           {
-            "text": "Priority signs",
+            "text": "A road marking",
             "is_correct": false
           }
         ],
-        "explanation": "This is a zone sign marking the end of a zone 30. From the sign, the specific zone restriction has ended."
+        "explanation": "The sign marks the beginning or end of a zone. The relevant rule applies within that zone's boundaries."
       },
       "FR": {
-        "question": "À quelle catégorie appartient ce panneau de fin de zone 30?",
+        "question": "À quel type de signalisation ce panneau appartient-il ?",
         "choices": [
           {
-            "text": "Panneaux de zone",
+            "text": "Signalisation à validité zonale",
             "is_correct": true
           },
           {
-            "text": "Panneaux d'interdiction",
+            "text": "Un signal de danger sans effet zonal",
             "is_correct": false
           },
           {
-            "text": "Panneaux de priorité",
+            "text": "Un marquage routier",
             "is_correct": false
           }
         ],
-        "explanation": "C'est un panneau de zone indiquant la fin d'une zone 30. À partir du panneau, la restriction propre à la zone prend fin."
+        "explanation": "Le signal délimite le début ou la fin d'une zone. La règle concernée s'applique dans les limites de cette zone."
       },
       "AR": {
-        "question": "إلى أي فئة تنتمي علامة نهاية منطقة 30؟",
+        "question": "إلى أي نوع من الإشارات تنتمي هذه العلامة؟",
         "choices": [
           {
-            "text": "علامات المنطقة",
+            "text": "إشارة ذات نطاق مناطقي",
             "is_correct": true
           },
           {
-            "text": "علامات الحظر",
+            "text": "علامة خطر بلا أثر مناطقي",
             "is_correct": false
           },
           {
-            "text": "علامات الأولوية",
+            "text": "علامة طريق مرسومة",
             "is_correct": false
           }
         ],
-        "explanation": "هذه علامة منطقة تشير إلى نهاية منطقة 30. من عند العلامة ينتهي قيد السرعة الخاص بتلك المنطقة."
+        "explanation": "تحدد العلامة بداية منطقة أو نهايتها، وتسري القاعدة المعنية داخل حدود تلك المنطقة."
       }
     }
   },
@@ -325,82 +325,66 @@
   },
   {
     "question_id": "Zone-F4b-Einde_Q05",
-    "type": "WHAT_MUST_YOU_DO",
+    "type": "IS_IT_ALLOWED",
     "difficulty": "MEDIUM",
     "is_critical": false,
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U rijdt door een zone 30 en het eindbord ontbreekt of is beschadigd. Welke snelheid houdt u aan?",
+        "question": "U hebt F4a gepasseerd en daarna geen geldig bord gezien dat de zone beëindigt of wijzigt. Eindigt de zone alleen omdat de omgeving verandert?",
         "choices": [
           {
-            "text": "30 km/u; zonder duidelijk eindbord blijft de zone 30-limiet van kracht",
+            "text": "Neen, de gesignaleerde zone blijft gelden tot een rechtsgeldige beëindiging of wijziging",
             "is_correct": true
           },
           {
-            "text": "50 km/u; bij een ontbrekend bord geldt automatisch de standaard stedelijke snelheid",
-            "is_correct": false
-          },
-          {
-            "text": "U mag zelf inschatten welke snelheid gepast is",
+            "text": "Ja, een ander straatbeeld vervangt automatisch F4b",
             "is_correct": false
           }
         ],
-        "explanation": "Zonder zichtbaar eindbord van een zone 30 blijven de zone 30-regels van kracht. Rijden met 30 km/u is de veiligste en wettelijke keuze."
+        "explanation": "Baseer de snelheid op geldige signalisatie en niet op een veronderstelde verandering van buurt."
       },
       "EN": {
-        "question": "You are driving through a zone 30 and the end sign is missing or damaged. What speed do you maintain?",
+        "question": "You passed F4a and then saw no valid sign ending or changing the zone. Does the zone end merely because the surroundings change?",
         "choices": [
           {
-            "text": "30 km/h; without a clear end sign the zone 30 limit remains in force",
+            "text": "No, the signed zone continues until it is lawfully ended or changed",
             "is_correct": true
           },
           {
-            "text": "50 km/h; when a sign is missing the standard urban speed automatically applies",
-            "is_correct": false
-          },
-          {
-            "text": "You may judge for yourself what speed is appropriate",
+            "text": "Yes, a different streetscape automatically replaces F4b",
             "is_correct": false
           }
         ],
-        "explanation": "Without a visible end sign for a zone 30 the zone 30 rules remain in force. Driving at 30 km/h is the safest and lawful choice."
+        "explanation": "Base speed on valid signing, not on an assumed change of neighbourhood."
       },
       "FR": {
-        "question": "Vous roulez dans une zone 30 et le panneau de fin est absent ou endommagé. Quelle vitesse maintenez-vous?",
+        "question": "Vous avez franchi F4a sans voir ensuite de signal valable mettant fin ou modifiant la zone. Celle-ci finit-elle uniquement parce que l'environnement change ?",
         "choices": [
           {
-            "text": "30 km/h; sans panneau de fin visible la limite de la zone 30 reste en vigueur",
+            "text": "Non, la zone signalée continue jusqu'à sa fin ou modification régulière",
             "is_correct": true
           },
           {
-            "text": "50 km/h; en l'absence de panneau la vitesse urbaine standard s'applique automatiquement",
-            "is_correct": false
-          },
-          {
-            "text": "Vous pouvez juger vous-même quelle vitesse est appropriée",
+            "text": "Oui, un autre paysage urbain remplace automatiquement F4b",
             "is_correct": false
           }
         ],
-        "explanation": "Sans panneau de fin visible pour une zone 30 les règles de la zone 30 restent en vigueur. Rouler à 30 km/h est le choix le plus sûr et légal."
+        "explanation": "Fondez la vitesse sur une signalisation valable et non sur un changement supposé de quartier."
       },
       "AR": {
-        "question": "تقود عبر منطقة 30 وعلامة النهاية مفقودة أو تالفة. ما السرعة التي تحافظ عليها؟",
+        "question": "تجاوزت F4a ولم تر بعد ذلك علامة صالحة تنهي المنطقة أو تغيرها. هل تنتهي لمجرد تغير المحيط؟",
         "choices": [
           {
-            "text": "30 كم/س؛ بدون علامة نهاية واضحة يبقى حد منطقة 30 سارياً",
+            "text": "لا، تستمر المنطقة المعلنة حتى تنتهي أو تتغير بصورة قانونية",
             "is_correct": true
           },
           {
-            "text": "50 كم/س؛ عند غياب العلامة تسري السرعة الحضرية القياسية تلقائياً",
-            "is_correct": false
-          },
-          {
-            "text": "يمكنك أنت الحكم على السرعة المناسبة بنفسك",
+            "text": "نعم، يحل شكل شارع مختلف تلقائيًا محل F4b",
             "is_correct": false
           }
         ],
-        "explanation": "بدون علامة نهاية مرئية لمنطقة 30 تبقى قواعد المنطقة سارية. القيادة بسرعة 30 كم/س هي الخيار الأكثر أماناً وقانونية."
+        "explanation": "استند في السرعة إلى العلامات الصالحة لا إلى افتراض تغير الحي."
       }
     }
   },

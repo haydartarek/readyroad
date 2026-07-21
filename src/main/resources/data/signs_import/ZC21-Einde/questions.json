@@ -10,73 +10,73 @@
         "question": "Wat betekent dit verkeersbord?",
         "choices": [
           {
-            "text": "Einde zone verboden toegang voor bestuurders van voertuigen waarvan de massa hoger is dan 3500 kg",
+            "text": "Einde van de zone met toegangsverbod boven 3,5 t beladen massa",
             "is_correct": true
           },
           {
-            "text": "Einde zone verboden toegang voor motorvoertuigen met meer dan 2 wielen",
+            "text": "Waarschuwing voor tijdelijke wegenwerken",
             "is_correct": false
           },
           {
-            "text": "Einde zone verboden inhalen",
+            "text": "Verplichte rijrichting zonder zonale werking",
             "is_correct": false
           }
         ],
-        "explanation": "ZC21- is het eindbord van de zone die werd ingeleid door ZC21. Voorbij dit bord mogen voertuigen zwaarder dan 3500 kg weer vrij rijden, tenzij nieuwe borden anders aangeven."
+        "explanation": "Dit bord beëindigt het zonale toegangsverbod voor voertuigen met een massa in beladen toestand boven 3.500 kg."
       },
       "EN": {
         "question": "What does this traffic sign mean?",
         "choices": [
           {
-            "text": "End zone no entry for vehicles with a mass exceeding 3500 kg",
+            "text": "End of the zone with the access prohibition above 3.5 t laden mass",
             "is_correct": true
           },
           {
-            "text": "End zone no entry for motor vehicles with more than 2 wheels",
+            "text": "Warning of temporary roadworks",
             "is_correct": false
           },
           {
-            "text": "End zone no overtaking",
+            "text": "Mandatory direction without zonal validity",
             "is_correct": false
           }
         ],
-        "explanation": "ZC21- is the end sign of the zone introduced by ZC21. Beyond this sign, vehicles over 3500 kg may travel freely again, unless new signs indicate otherwise."
+        "explanation": "This sign ends the zonal access prohibition for vehicles with a laden mass above 3,500 kg."
       },
       "FR": {
         "question": "Que signifie ce panneau de signalisation?",
         "choices": [
           {
-            "text": "Fin zone accès interdit aux véhicules dont la masse dépasse 3500 kg",
+            "text": "Fin de la zone interdite au-dessus de 3,5 t de masse en charge",
             "is_correct": true
           },
           {
-            "text": "Fin zone accès interdit aux véhicules à moteur de plus de 2 roues",
+            "text": "Avertissement de travaux routiers temporaires",
             "is_correct": false
           },
           {
-            "text": "Fin zone interdiction de dépasser",
+            "text": "Direction obligatoire sans validité zonale",
             "is_correct": false
           }
         ],
-        "explanation": "ZC21- est le panneau de fin de la zone introduite par ZC21. Au-delà de ce panneau, les véhicules de plus de 3500 kg peuvent à nouveau circuler librement."
+        "explanation": "Ce signal met fin à l'interdiction zonale d'accès des véhicules dont la masse en charge dépasse 3 500 kg."
       },
       "AR": {
         "question": "ما معنى هذه العلامة المرورية؟",
         "choices": [
           {
-            "text": "نهاية منطقة ممنوع دخول المركبات التي تزيد كتلتها عن 3500 كغ",
+            "text": "نهاية منطقة حظر الدخول فوق 3.5 طن من الكتلة المحمّلة",
             "is_correct": true
           },
           {
-            "text": "نهاية منطقة ممنوع دخول المركبات ذات المحرك بأكثر من عجلتين",
+            "text": "تحذير من أعمال طريق مؤقتة",
             "is_correct": false
           },
           {
-            "text": "نهاية منطقة ممنوع التجاوز",
+            "text": "اتجاه إلزامي بلا نطاق مناطقي",
             "is_correct": false
           }
         ],
-        "explanation": "ZC21- هي علامة نهاية المنطقة التي بدأت بـ ZC21. بعد هذه العلامة يجوز للمركبات التي تتجاوز 3500 كغ السير بحرية مرة أخرى."
+        "explanation": "تنهي هذه العلامة حظر الدخول المناطقي على المركبات التي تتجاوز كتلتها في حالة التحميل 3500 كغ."
       }
     }
   },
@@ -88,76 +88,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Tot welke categorie verkeersborden behoort dit bord?",
+        "question": "Tot welk soort signalisatie behoort dit bord?",
         "choices": [
           {
-            "text": "Zoneborden",
+            "text": "Signalisatie met zonale geldigheid",
             "is_correct": true
           },
           {
-            "text": "Verbodsborden",
+            "text": "Een gevaarsbord zonder zonale werking",
             "is_correct": false
           },
           {
-            "text": "Parkeerborden",
+            "text": "Een wegmarkering",
             "is_correct": false
           }
         ],
-        "explanation": "ZC21- is een zonebord. Het vormt het einde van de zone aangeduid door ZC21 en heft de massabeperking voor de gehele zone op."
+        "explanation": "Het bord bakent het begin of einde van een zone af. De betrokken regel geldt binnen de grenzen van die zone."
       },
       "EN": {
-        "question": "To which category of traffic signs does this sign belong?",
+        "question": "What kind of signing is this?",
         "choices": [
           {
-            "text": "Zone signs",
+            "text": "Signing with zonal validity",
             "is_correct": true
           },
           {
-            "text": "Prohibition signs",
+            "text": "A warning sign without zonal effect",
             "is_correct": false
           },
           {
-            "text": "Parking signs",
+            "text": "A road marking",
             "is_correct": false
           }
         ],
-        "explanation": "ZC21- is a zone sign. It marks the end of the zone indicated by ZC21 and cancels the mass restriction for the entire zone."
+        "explanation": "The sign marks the beginning or end of a zone. The relevant rule applies within that zone's boundaries."
       },
       "FR": {
-        "question": "À quelle catégorie de panneaux appartient ce panneau?",
+        "question": "À quel type de signalisation ce panneau appartient-il ?",
         "choices": [
           {
-            "text": "Panneaux de zone",
+            "text": "Signalisation à validité zonale",
             "is_correct": true
           },
           {
-            "text": "Panneaux d'interdiction",
+            "text": "Un signal de danger sans effet zonal",
             "is_correct": false
           },
           {
-            "text": "Panneaux de stationnement",
+            "text": "Un marquage routier",
             "is_correct": false
           }
         ],
-        "explanation": "ZC21- est un panneau de zone. Il marque la fin de la zone indiquée par ZC21 et annule la restriction de masse pour toute la zone."
+        "explanation": "Le signal délimite le début ou la fin d'une zone. La règle concernée s'applique dans les limites de cette zone."
       },
       "AR": {
-        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
+        "question": "إلى أي نوع من الإشارات تنتمي هذه العلامة؟",
         "choices": [
           {
-            "text": "علامات المنطقة",
+            "text": "إشارة ذات نطاق مناطقي",
             "is_correct": true
           },
           {
-            "text": "علامات الحظر",
+            "text": "علامة خطر بلا أثر مناطقي",
             "is_correct": false
           },
           {
-            "text": "علامات الوقوف",
+            "text": "علامة طريق مرسومة",
             "is_correct": false
           }
         ],
-        "explanation": "ZC21- علامة منطقة. تحدد نهاية المنطقة التي أنشأها ZC21 وتلغي قيود الكتلة لكامل المنطقة."
+        "explanation": "تحدد العلامة بداية منطقة أو نهايتها، وتسري القاعدة المعنية داخل حدود تلك المنطقة."
       }
     }
   },
@@ -169,76 +169,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat geeft ZC21- aan over de massabeperking op de weg die volgt?",
+        "question": "Welke beperking eindigt bij dit bord?",
         "choices": [
           {
-            "text": "De massabeperking voor voertuigen boven 3500 kg wordt hier volledig opgeheven",
+            "text": "Het zonale toegangsverbod voor voertuigen met een beladen massa boven 3.500 kg",
             "is_correct": true
           },
           {
-            "text": "Er begint hier een nieuwe massabeperking van 7500 kg",
+            "text": "Elke gewichtsbeperking op alle volgende wegen",
             "is_correct": false
           },
           {
-            "text": "De massabeperking geldt voortaan alleen voor voertuigen boven 6000 kg",
+            "text": "De maximaal toegelaten massa van het voertuig",
             "is_correct": false
           }
         ],
-        "explanation": "ZC21- beëindigt de massabeperking. Op de weg na ZC21- gelden opnieuw de normale verkeersregels voor de massa van voertuigen, tenzij nieuwe borden anders aangeven."
+        "explanation": "Alleen de overeenkomstige zonale C21-regel eindigt."
       },
       "EN": {
-        "question": "What does ZC21- indicate about the mass restriction on the road that follows?",
+        "question": "Which restriction ends at this sign?",
         "choices": [
           {
-            "text": "The mass restriction for vehicles over 3500 kg is fully lifted here",
+            "text": "The zonal access prohibition for vehicles with a laden mass above 3,500 kg",
             "is_correct": true
           },
           {
-            "text": "A new mass restriction of 7500 kg begins here",
+            "text": "Every weight restriction on every road ahead",
             "is_correct": false
           },
           {
-            "text": "The mass restriction from now on only applies to vehicles above 6000 kg",
+            "text": "The vehicle's maximum authorised mass",
             "is_correct": false
           }
         ],
-        "explanation": "ZC21- ends the mass restriction. Normal traffic rules regarding vehicle mass apply again on the road after ZC21-, unless new signs indicate otherwise."
+        "explanation": "Only the corresponding zonal C21 rule ends."
       },
       "FR": {
-        "question": "Que signifie ZC21- concernant la restriction de masse sur la route qui suit?",
+        "question": "Quelle restriction prend fin à ce signal ?",
         "choices": [
           {
-            "text": "La restriction de masse pour les véhicules de plus de 3500 kg est entièrement levée ici",
+            "text": "L'interdiction zonale d'accès des véhicules dont la masse en charge dépasse 3 500 kg",
             "is_correct": true
           },
           {
-            "text": "Une nouvelle restriction de masse de 7500 kg commence ici",
+            "text": "Toute restriction de poids sur toutes les routes suivantes",
             "is_correct": false
           },
           {
-            "text": "La restriction de masse ne s'applique désormais qu'aux véhicules de plus de 6000 kg",
+            "text": "La masse maximale autorisée du véhicule",
             "is_correct": false
           }
         ],
-        "explanation": "ZC21- met fin à la restriction de masse. Les règles normales de circulation concernant la masse des véhicules s'appliquent à nouveau après ZC21-."
+        "explanation": "Seule la règle zonale C21 correspondante prend fin."
       },
       "AR": {
-        "question": "ماذا تشير ZC21- بشأن قيد الكتلة على الطريق التالي؟",
+        "question": "أي قيد ينتهي عند هذه العلامة؟",
         "choices": [
           {
-            "text": "يرتفع قيد الكتلة للمركبات التي تتجاوز 3500 كغ كلياً هنا",
+            "text": "حظر الدخول المناطقي للمركبات التي تتجاوز كتلتها المحمّلة 3500 كغ",
             "is_correct": true
           },
           {
-            "text": "يبدأ هنا قيد كتلة جديد بـ 7500 كغ",
+            "text": "كل قيد وزن على جميع الطرق التالية",
             "is_correct": false
           },
           {
-            "text": "يسري قيد الكتلة من الآن فقط على المركبات التي تتجاوز 6000 كغ",
+            "text": "الكتلة القصوى المسموح بها للمركبة",
             "is_correct": false
           }
         ],
-        "explanation": "ZC21- تنهي قيد الكتلة. تسري قواعد المرور العادية بشأن كتلة المركبات مرة أخرى بعد ZC21- ما لم تشر علامات جديدة إلى غير ذلك."
+        "explanation": "تنتهي قاعدة C21 المناطقية المقابلة فقط."
       }
     }
   },
@@ -250,76 +250,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U passeert ZC21- met een vrachtwagen van 5000 kg. Wat verandert er voor uw voertuig?",
+        "question": "U passeert het bord met een vrachtwagen van 5.000 kg beladen massa. Wat moet u daarna doen?",
         "choices": [
           {
-            "text": "De massabeperking is opgeheven; uw vrachtwagen mag voortaan vrij rijden op de volgende weg",
+            "text": "Controleren welke gewichts-, aslast- en toegangsregels op de volgende weg gelden",
             "is_correct": true
           },
           {
-            "text": "Uw vrachtwagen moet na ZC21- onmiddellijk een zijstraat inslaan",
+            "text": "Aannemen dat geen enkele gewichtsregel meer kan gelden",
             "is_correct": false
           },
           {
-            "text": "Uw vrachtwagen moet na ZC21- zijn snelheid halveren",
+            "text": "Onmiddellijk parkeren omdat de zone eindigt",
             "is_correct": false
           }
         ],
-        "explanation": "ZC21- heft de massabeperking volledig op. Er zijn geen extra verplichtingen verbonden aan het passeren van dit bord."
+        "explanation": "De vorige zonale C21-regel eindigt, maar andere beperkingen kunnen beginnen of blijven gelden."
       },
       "EN": {
-        "question": "You pass ZC21- with a 5000 kg truck. What changes for your vehicle?",
+        "question": "You pass the sign in a truck with a 5,000 kg laden mass. What must you do next?",
         "choices": [
           {
-            "text": "The mass restriction is lifted; your truck may now travel freely on the following road",
+            "text": "Check the weight, axle-load and access rules on the road ahead",
             "is_correct": true
           },
           {
-            "text": "Your truck must immediately take a side street after ZC21-",
+            "text": "Assume that no weight rule can apply anymore",
             "is_correct": false
           },
           {
-            "text": "Your truck must halve its speed after ZC21-",
+            "text": "Park immediately because the zone has ended",
             "is_correct": false
           }
         ],
-        "explanation": "ZC21- fully lifts the mass restriction. No additional obligations are associated with passing this sign."
+        "explanation": "The previous zonal C21 rule ends, but other restrictions may begin or remain applicable."
       },
       "FR": {
-        "question": "Vous dépassez ZC21- avec un camion de 5000 kg. Qu'est-ce qui change pour votre véhicule?",
+        "question": "Vous dépassez le signal avec un camion dont la masse en charge est de 5 000 kg. Que devez-vous faire ensuite ?",
         "choices": [
           {
-            "text": "La restriction de masse est levée; votre camion peut maintenant circuler librement sur la route suivante",
+            "text": "Vérifier les règles de poids, de charge par essieu et d'accès sur la route suivante",
             "is_correct": true
           },
           {
-            "text": "Votre camion doit immédiatement prendre une rue latérale après ZC21-",
+            "text": "Supposer qu'aucune règle de poids ne peut encore s'appliquer",
             "is_correct": false
           },
           {
-            "text": "Votre camion doit réduire sa vitesse de moitié après ZC21-",
+            "text": "Stationner immédiatement puisque la zone est terminée",
             "is_correct": false
           }
         ],
-        "explanation": "ZC21- lève entièrement la restriction de masse. Aucune obligation supplémentaire n'est associée au passage de ce panneau."
+        "explanation": "La règle zonale C21 précédente prend fin, mais d'autres restrictions peuvent commencer ou subsister."
       },
       "AR": {
-        "question": "تجتاز ZC21- بشاحنة 5000 كغ. ماذا يتغيّر لمركبتك؟",
+        "question": "تتجاوز العلامة بشاحنة كتلتها المحمّلة 5000 كغ. ماذا تفعل بعد ذلك؟",
         "choices": [
           {
-            "text": "يرتفع قيد الكتلة؛ يجوز لشاحنتك السير بحرية على الطريق التالي",
+            "text": "تحقق من قواعد الوزن وحمولة المحور والدخول على الطريق التالي",
             "is_correct": true
           },
           {
-            "text": "يجب على شاحنتك السير فوراً في شارع جانبي بعد ZC21-",
+            "text": "افترض أن أي قاعدة وزن لم تعد ممكنة",
             "is_correct": false
           },
           {
-            "text": "يجب على شاحنتك تخفيض سرعتها إلى النصف بعد ZC21-",
+            "text": "اركن فورًا لأن المنطقة انتهت",
             "is_correct": false
           }
         ],
-        "explanation": "ZC21- ترفع قيد الكتلة كلياً. لا توجد التزامات إضافية مرتبطة باجتياز هذه العلامة."
+        "explanation": "تنتهي قاعدة C21 المناطقية السابقة، لكن قد تبدأ قيود أخرى أو تبقى سارية."
       }
     }
   },
@@ -331,76 +331,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U verlaat een ZC21-zone via ZC21-. Geen nieuwe borden staan er. Welke maximummassa geldt nu?",
+        "question": "Stelt dit eindezonebord zelf een nieuwe toegelaten massa vast?",
         "choices": [
           {
-            "text": "De wettelijke basisregel voor de weg is van toepassing; er geldt geen afzonderlijke massabeperking meer",
+            "text": "Neen, het beëindigt alleen de vorige zonale grens",
             "is_correct": true
           },
           {
-            "text": "Er geldt automatisch een massabeperking van 7500 kg op de volgende weg",
+            "text": "Ja, vanaf het bord is elk gewicht onbeperkt toegelaten",
             "is_correct": false
           },
           {
-            "text": "U moet de massabeperking van ZC21 beschouwen als aanbeveling totdat u 200 meter verder bent",
+            "text": "Ja, het stelt automatisch 7.500 kg vast",
             "is_correct": false
           }
         ],
-        "explanation": "ZC21- beëindigt de zone volledig. Op de weg daarna gelden de algemene regels van het verkeersreglement, zonder bijzondere massabeperking."
+        "explanation": "De volgende toepasselijke regel moet uit andere signalisatie en de algemene wetgeving worden bepaald."
       },
       "EN": {
-        "question": "You leave a ZC21 zone via ZC21-. No new signs are present. Which maximum mass applies now?",
+        "question": "Does this end-of-zone sign itself set a new permitted mass?",
         "choices": [
           {
-            "text": "The legal default rule for the road applies; no separate mass restriction is in force anymore",
+            "text": "No, it only ends the previous zonal threshold",
             "is_correct": true
           },
           {
-            "text": "A mass restriction of 7500 kg automatically applies on the next road",
+            "text": "Yes, every weight is unrestricted from the sign",
             "is_correct": false
           },
           {
-            "text": "You must consider the ZC21 mass restriction as advisory until you are 200 metres further",
+            "text": "Yes, it automatically sets 7,500 kg",
             "is_correct": false
           }
         ],
-        "explanation": "ZC21- ends the zone completely. The general rules of the traffic code apply on the road beyond, with no special mass restriction."
+        "explanation": "The next applicable rule must be determined from other signs and general law."
       },
       "FR": {
-        "question": "Vous quittez une zone ZC21 via ZC21-. Aucun nouveau panneau n'est présent. Quelle masse maximale s'applique maintenant?",
+        "question": "Ce signal de fin fixe-t-il lui-même une nouvelle masse autorisée ?",
         "choices": [
           {
-            "text": "La règle légale par défaut pour la route s'applique; aucune restriction de masse spécifique n'est plus en vigueur",
+            "text": "Non, il met seulement fin au seuil zonal précédent",
             "is_correct": true
           },
           {
-            "text": "Une restriction de masse de 7500 kg s'applique automatiquement sur la route suivante",
+            "text": "Oui, tout poids devient sans restriction à partir du signal",
             "is_correct": false
           },
           {
-            "text": "Vous devez considérer la restriction de masse de ZC21 comme un conseil jusqu'à 200 mètres plus loin",
+            "text": "Oui, il fixe automatiquement 7 500 kg",
             "is_correct": false
           }
         ],
-        "explanation": "ZC21- met complètement fin à la zone. Les règles générales du code de la route s'appliquent sur la route au-delà, sans restriction de masse spéciale."
+        "explanation": "La règle applicable ensuite doit être déterminée à partir des autres signaux et de la législation générale."
       },
       "AR": {
-        "question": "تغادر منطقة ZC21 عبر ZC21-. لا توجد علامات جديدة. أي حد أقصى للكتلة يسري الآن؟",
+        "question": "هل تحدد علامة النهاية نفسها كتلة جديدة مسموحة؟",
         "choices": [
           {
-            "text": "تسري القاعدة الافتراضية للطريق؛ لا يسري أي قيد كتلة منفصل بعد الآن",
+            "text": "لا، فهي تنهي الحد المناطقي السابق فقط",
             "is_correct": true
           },
           {
-            "text": "يسري قيد كتلة 7500 كغ تلقائياً على الطريق التالي",
+            "text": "نعم، يصبح كل وزن بلا قيود بعد العلامة",
             "is_correct": false
           },
           {
-            "text": "يجب اعتبار قيد ZC21 إرشادياً حتى 200 متر للأمام",
+            "text": "نعم، تحدد تلقائيًا 7500 كغ",
             "is_correct": false
           }
         ],
-        "explanation": "ZC21- تنهي المنطقة كلياً. تسري القواعد العامة لقانون المرور على الطريق بعد ذلك دون قيد كتلة خاص."
+        "explanation": "يجب تحديد القاعدة التالية من العلامات الأخرى والقانون العام."
       }
     }
   },
@@ -412,76 +412,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U passeert ZC21-. Geldt de massabeperking nog 500 meter na het bord?",
+        "question": "Blijft de zonale grens nog 500 meter gelden nadat u dit bord volledig bent gepasseerd?",
         "choices": [
           {
-            "text": "Neen, ZC21- beëindigt de massabeperking volledig; de beperking geldt niet meer nadat u ZC21- hebt gepasseerd",
+            "text": "Neen, de overeenkomstige zoneregel eindigt bij het bord",
             "is_correct": true
           },
           {
-            "text": "Ja, de massabeperking geldt nog 500 meter na het bord",
+            "text": "Ja, elk eindezonebord heeft een uitloop van 500 meter",
             "is_correct": false
           },
           {
-            "text": "Ja, de massabeperking geldt nog tot aan het volgende kruispunt",
+            "text": "Ja, maar alleen voor lege voertuigen",
             "is_correct": false
           }
         ],
-        "explanation": "ZC21- beëindigt de zone onmiddellijk en volledig. Er is geen nawerking; de beperking vervalt direct voorbij het bord."
+        "explanation": "Andere gewichtsregels kunnen wel afzonderlijk gelden."
       },
       "EN": {
-        "question": "You pass ZC21-. Does the mass restriction still apply for 500 metres after the sign?",
+        "question": "Does the zonal threshold continue for 500 metres after you have fully passed this sign?",
         "choices": [
           {
-            "text": "No, ZC21- ends the mass restriction completely; the restriction no longer applies after you have passed ZC21-",
+            "text": "No, the corresponding zonal rule ends at the sign",
             "is_correct": true
           },
           {
-            "text": "Yes, the mass restriction still applies for 500 metres after the sign",
+            "text": "Yes, every end sign has a 500-metre after-effect",
             "is_correct": false
           },
           {
-            "text": "Yes, the mass restriction still applies until the next intersection",
+            "text": "Yes, but only for empty vehicles",
             "is_correct": false
           }
         ],
-        "explanation": "ZC21- ends the zone immediately and completely. There is no aftereffect; the restriction lapses directly beyond the sign."
+        "explanation": "Other weight rules may nevertheless apply separately."
       },
       "FR": {
-        "question": "Vous dépassez ZC21-. La restriction de masse s'applique-t-elle encore 500 mètres après le panneau?",
+        "question": "Le seuil zonal reste-t-il valable sur 500 mètres après avoir entièrement franchi ce signal ?",
         "choices": [
           {
-            "text": "Non, ZC21- met fin à la restriction de masse; la restriction ne s'applique plus après ZC21-",
+            "text": "Non, la règle zonale correspondante prend fin au signal",
             "is_correct": true
           },
           {
-            "text": "Oui, la restriction de masse s'applique encore 500 mètres après le panneau",
+            "text": "Oui, tout signal de fin a un prolongement de 500 mètres",
             "is_correct": false
           },
           {
-            "text": "Oui, la restriction de masse s'applique encore jusqu'au prochain carrefour",
+            "text": "Oui, mais uniquement pour les véhicules vides",
             "is_correct": false
           }
         ],
-        "explanation": "ZC21- met fin immédiatement et complètement à la zone. Il n'y a pas d'effet résidu; la restriction cesse directement au-delà du panneau."
+        "explanation": "D'autres règles de poids peuvent toutefois s'appliquer séparément."
       },
       "AR": {
-        "question": "تجتاز ZC21-. هل يسري قيد الكتلة لمدة 500 متر بعد العلامة؟",
+        "question": "هل يستمر الحد المناطقي 500 متر بعد تجاوز العلامة بالكامل؟",
         "choices": [
           {
-            "text": "لا، ZC21- تنهي قيد الكتلة كلياً؛ لا يسري القيد بعد اجتياز ZC21-",
+            "text": "لا، تنتهي القاعدة المناطقية المقابلة عند العلامة",
             "is_correct": true
           },
           {
-            "text": "نعم، يسري قيد الكتلة لمدة 500 متر بعد العلامة",
+            "text": "نعم، لكل علامة نهاية امتداد 500 متر",
             "is_correct": false
           },
           {
-            "text": "نعم، يسري قيد الكتلة حتى التقاطع التالي",
+            "text": "نعم، لكن للمركبات الفارغة فقط",
             "is_correct": false
           }
         ],
-        "explanation": "ZC21- تنهي المنطقة فوراً وكلياً. لا يوجد أثر لاحق؛ ينتهي القيد مباشرة بعد العلامة."
+        "explanation": "قد تسري مع ذلك قواعد وزن أخرى بصورة منفصلة."
       }
     }
   },
@@ -493,60 +493,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Na ZC21- geldt de massabeperking van ZC21 werkelijk niet meer voor de volgende weg?",
+        "question": "Na dit bord staat een brug met een afzonderlijke gewichtsbeperking. Mag u die negeren?",
         "choices": [
           {
-            "text": "Neen, de massabeperking is volledig opgeheven; voertuigen boven 3500 kg mogen weer vrij rijden",
+            "text": "Neen, het eindezonebord heft die andere beperking niet op",
             "is_correct": true
           },
           {
-            "text": "Ja, de massabeperking blijft van kracht totdat een nieuw toestemmingsbord wordt geplaatst",
+            "text": "Ja, het bord verleent onbeperkte toegang voor zware voertuigen",
             "is_correct": false
           }
         ],
-        "explanation": "ZC21- beëindigt de zone definitief. Er is geen afzonderlijk toestemmingsbord vereist; de beperking vervalt van rechtswege."
+        "explanation": "Een eindezonebord heeft alleen betrekking op de overeenkomstige zoneregel."
       },
       "EN": {
-        "question": "After ZC21- does the mass restriction of ZC21 truly no longer apply on the following road?",
+        "question": "A bridge after this sign has a separate weight restriction. May you ignore it?",
         "choices": [
           {
-            "text": "Yes, the mass restriction is fully lifted; vehicles above 3500 kg may travel freely again",
+            "text": "No, the end sign does not cancel that other restriction",
             "is_correct": true
           },
           {
-            "text": "No, the mass restriction remains in force until a new permission sign is placed",
+            "text": "Yes, the sign grants unrestricted access to heavy vehicles",
             "is_correct": false
           }
         ],
-        "explanation": "ZC21- ends the zone definitively. No separate permission sign is required; the restriction lapses by operation of law."
+        "explanation": "An end-of-zone sign relates only to the corresponding zonal rule."
       },
       "FR": {
-        "question": "Après ZC21- la restriction de masse de ZC21 ne s'applique-t-elle vraiment plus sur la route suivante?",
+        "question": "Un pont après ce signal comporte une restriction de poids distincte. Pouvez-vous l'ignorer ?",
         "choices": [
           {
-            "text": "Oui, la restriction de masse est entièrement levée; les véhicules de plus de 3500 kg peuvent à nouveau circuler librement",
+            "text": "Non, le signal de fin n'annule pas cette autre restriction",
             "is_correct": true
           },
           {
-            "text": "Non, la restriction de masse reste en vigueur jusqu'à ce qu'un nouveau panneau d'autorisation soit placé",
+            "text": "Oui, le signal donne un accès sans restriction aux véhicules lourds",
             "is_correct": false
           }
         ],
-        "explanation": "ZC21- met définitivement fin à la zone. Aucun panneau d'autorisation distinct n'est requis; la restriction cesse de plein droit."
+        "explanation": "Un signal de fin de zone ne concerne que la règle zonale correspondante."
       },
       "AR": {
-        "question": "هل ينتهي فعلاً قيد ZC21 بعد ZC21- على الطريق التالي؟",
+        "question": "يوجد جسر بعد العلامة عليه قيد وزن منفصل. هل يجوز تجاهله؟",
         "choices": [
           {
-            "text": "نعم، يرتفع قيد الكتلة كلياً؛ يجوز للمركبات التي تتجاوز 3500 كغ السير بحرية مرة أخرى",
+            "text": "لا، لا تلغي علامة النهاية ذلك القيد الآخر",
             "is_correct": true
           },
           {
-            "text": "لا، يظل القيد سارياً حتى تُوضع علامة تصريح جديدة",
+            "text": "نعم، تمنح العلامة دخولًا بلا قيود للمركبات الثقيلة",
             "is_correct": false
           }
         ],
-        "explanation": "ZC21- تنهي المنطقة نهائياً. لا توجد حاجة لعلامة تصريح منفصلة؛ ينتهي القيد تلقائياً بموجب القانون."
+        "explanation": "تتعلق علامة نهاية المنطقة بالقاعدة المناطقية المقابلة فقط."
       }
     }
   },
@@ -558,60 +558,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U reed een ZC21-zone door en verliet ze via ZC21-. Er staan 500 meter na ZC21- geen nieuwe borden. Geldt er een nieuwe ZC21-zone?",
+        "question": "Begint verderop automatisch een nieuwe C21-zone zonder nieuw beginbord?",
         "choices": [
           {
-            "text": "Neen, zonder een nieuw ZC21-beginbord verderop is er geen nieuwe ZC21-massabeperking",
+            "text": "Neen, een nieuwe zone vereist nieuwe geldige zonale signalisatie",
             "is_correct": true
           },
           {
-            "text": "Ja, elke zonegrens wordt stilzwijgend hervat na 500 meter",
+            "text": "Ja, elke oude zone begint na 500 meter opnieuw",
             "is_correct": false
           }
         ],
-        "explanation": "Een nieuwe zone begint alleen met een nieuw beginbord. Na ZC21- geldt de normale situatie totdat een nieuw bord een nieuwe beperking instelt."
+        "explanation": "Het eindezonebord sluit de vorige afbakening af."
       },
       "EN": {
-        "question": "You drove through a ZC21 zone and left it via ZC21-. No new signs are present 500 metres after ZC21-. Is a new ZC21 zone in force?",
+        "question": "Does a new C21 zone automatically begin farther ahead without a new entry sign?",
         "choices": [
           {
-            "text": "No, without a new ZC21 entry sign further ahead there is no new ZC21 mass restriction",
+            "text": "No, a new zone requires new valid zonal signing",
             "is_correct": true
           },
           {
-            "text": "Yes, every zone boundary is silently resumed after 500 metres",
+            "text": "Yes, every old zone restarts after 500 metres",
             "is_correct": false
           }
         ],
-        "explanation": "A new zone only begins with a new entry sign. After ZC21- the normal situation applies until a new sign establishes a new restriction."
+        "explanation": "The end sign closes the previous boundary."
       },
       "FR": {
-        "question": "Vous avez traversé une zone ZC21 et l'avez quittée via ZC21-. Aucun nouveau panneau n'est présent 500 mètres après ZC21-. Une nouvelle zone ZC21 est-elle en vigueur?",
+        "question": "Une nouvelle zone C21 commence-t-elle automatiquement plus loin sans nouveau signal d'entrée ?",
         "choices": [
           {
-            "text": "Non, sans nouveau panneau de début ZC21 plus loin, il n'y a pas de nouvelle restriction de masse ZC21",
+            "text": "Non, une nouvelle zone exige une nouvelle signalisation zonale valable",
             "is_correct": true
           },
           {
-            "text": "Oui, chaque limite de zone reprend silencieusement après 500 mètres",
+            "text": "Oui, toute ancienne zone recommence après 500 mètres",
             "is_correct": false
           }
         ],
-        "explanation": "Une nouvelle zone ne commence qu'avec un nouveau panneau de début. Après ZC21- la situation normale s'applique jusqu'à ce qu'un nouveau panneau établisse une nouvelle restriction."
+        "explanation": "Le signal de fin clôt la délimitation précédente."
       },
       "AR": {
-        "question": "مررت بمنطقة ZC21 وغادرتها عبر ZC21-. لا توجد علامات جديدة بعد 500 متر. هل ثمة منطقة ZC21 جديدة سارية؟",
+        "question": "هل تبدأ منطقة C21 جديدة تلقائيًا لاحقًا من دون علامة بداية جديدة؟",
         "choices": [
           {
-            "text": "لا، بدون علامة بداية ZC21 جديدة لا يسري أي قيد كتلة ZC21",
+            "text": "لا، تتطلب المنطقة الجديدة علامات مناطقية صالحة جديدة",
             "is_correct": true
           },
           {
-            "text": "نعم، كل حدود منطقة تُستأنف ضمنياً بعد 500 متر",
+            "text": "نعم، تعود كل منطقة قديمة بعد 500 متر",
             "is_correct": false
           }
         ],
-        "explanation": "منطقة جديدة تبدأ فقط بعلامة بداية جديدة. بعد ZC21- تسري الحالة العادية حتى تضع علامة جديدة قيداً جديداً."
+        "explanation": "تغلق علامة النهاية الحدود السابقة."
       }
     }
   }

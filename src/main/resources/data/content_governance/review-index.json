@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "framework_version": 1,
-  "last_updated": "2026-07-20",
+  "last_updated": "2026-07-21",
   "canonical_content_root": "src/main/resources/data/signs_import",
   "category_review_root": "src/main/resources/data/content_governance/category-reviews",
   "shared_resources": {
@@ -131,18 +131,18 @@
     {
       "category": "ZONE",
       "slug": "zone",
-      "status": "NOT_REVIEWED",
-      "approval_status": "PENDING",
-      "last_reviewed": null,
+      "status": "APPROVED",
+      "approval_status": "APPROVED",
+      "last_reviewed": "2026-07-21",
       "counts": {
         "signs": 22,
         "questions": 176,
         "exams": 22,
-        "lessons": 0
+        "lessons": 1
       },
-      "risk_level": "UNASSESSED",
-      "review_file": null,
-      "report_file": null
+      "risk_level": "HIGH",
+      "review_file": "category-reviews/zone.json",
+      "report_file": "docs/content-governance/category-reviews/zone/content-review-report.md"
     }
   ]
 }

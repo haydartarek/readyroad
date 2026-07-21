@@ -10,73 +10,73 @@
         "question": "Wat betekent dit verkeersbord?",
         "choices": [
           {
-            "text": "Zone verboden inhalen",
+            "text": "Zone met verbod om gespannen of voertuigen met meer dan twee wielen links in te halen",
             "is_correct": true
           },
           {
-            "text": "Zone met een snelheidsbeperking",
+            "text": "Waarschuwing voor tijdelijke wegenwerken",
             "is_correct": false
           },
           {
-            "text": "Zone verboden toegang voor voertuigen waarvan de massa hoger is dan 3500 kg",
+            "text": "Verplichte rijrichting zonder zonale werking",
             "is_correct": false
           }
         ],
-        "explanation": "ZC35 is het beginbord van een zone waar inhalen verboden is. Dit verbod geldt op alle wegen in de aangeduide zone, niet alleen op het punt van het bord."
+        "explanation": "Dit bord begint een zone waar het C35-verbod geldt: een gespan of een voertuig met meer dan twee wielen mag niet links worden ingehaald."
       },
       "EN": {
         "question": "What does this traffic sign mean?",
         "choices": [
           {
-            "text": "Zone no overtaking",
+            "text": "Zone prohibiting the left overtaking of harnessed vehicles or vehicles with more than two wheels",
             "is_correct": true
           },
           {
-            "text": "Zone with speed limit",
+            "text": "Warning of temporary roadworks",
             "is_correct": false
           },
           {
-            "text": "Zone no entry for vehicles over 3500 kg",
+            "text": "Mandatory direction without zonal validity",
             "is_correct": false
           }
         ],
-        "explanation": "ZC35 is the entry sign of a zone where overtaking is prohibited. This prohibition applies on all roads within the indicated zone, not only at the point of the sign."
+        "explanation": "This sign starts a zone where the C35 rule applies: a harnessed vehicle or a vehicle with more than two wheels may not be overtaken on the left."
       },
       "FR": {
         "question": "Que signifie ce panneau de signalisation?",
         "choices": [
           {
-            "text": "Zone interdiction de dépasser",
+            "text": "Zone interdisant de dépasser par la gauche les véhicules attelés ou les véhicules de plus de deux roues",
             "is_correct": true
           },
           {
-            "text": "Zone avec limitation de vitesse",
+            "text": "Avertissement de travaux routiers temporaires",
             "is_correct": false
           },
           {
-            "text": "Zone accès interdit aux véhicules dont la masse dépasse 3500 kg",
+            "text": "Direction obligatoire sans validité zonale",
             "is_correct": false
           }
         ],
-        "explanation": "ZC35 est le panneau de début d'une zone où il est interdit de dépasser. Cette interdiction s'applique sur toutes les routes de la zone indiquée, pas seulement au panneau."
+        "explanation": "Ce signal ouvre une zone où s'applique la règle C35 : il est interdit de dépasser par la gauche un véhicule attelé ou un véhicule de plus de deux roues."
       },
       "AR": {
         "question": "ما معنى هذه العلامة المرورية؟",
         "choices": [
           {
-            "text": "منطقة ممنوع التجاوز",
+            "text": "منطقة يُحظر فيها التجاوز من اليسار للمركبات المقطورة أو ذات أكثر من عجلتين",
             "is_correct": true
           },
           {
-            "text": "منطقة تحديد السرعة",
+            "text": "تحذير من أعمال طريق مؤقتة",
             "is_correct": false
           },
           {
-            "text": "منطقة ممنوع دخول المركبات التي تزيد كتلتها عن 3500 كغ",
+            "text": "اتجاه إلزامي بلا نطاق مناطقي",
             "is_correct": false
           }
         ],
-        "explanation": "ZC35 هي علامة بداية منطقة يُحظر فيها التجاوز. يسري هذا الحظر على جميع طرق المنطقة، وليس فقط عند موضع العلامة."
+        "explanation": "تبدأ هذه العلامة منطقة تسري فيها قاعدة C35: يُحظر تجاوز مركبة مقطورة أو مركبة ذات أكثر من عجلتين من اليسار."
       }
     }
   },
@@ -88,76 +88,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Tot welke categorie verkeersborden behoort dit bord?",
+        "question": "Tot welk soort signalisatie behoort dit bord?",
         "choices": [
           {
-            "text": "Zoneborden",
+            "text": "Signalisatie met zonale geldigheid",
             "is_correct": true
           },
           {
-            "text": "Verbodsborden",
+            "text": "Een gevaarsbord zonder zonale werking",
             "is_correct": false
           },
           {
-            "text": "Parkeerborden",
+            "text": "Een wegmarkering",
             "is_correct": false
           }
         ],
-        "explanation": "ZC35 is een zonebord. Het inhalerverbod geldt in de volledige zone, niet enkel op de weg waar het bord is opgesteld."
+        "explanation": "Het bord bakent het begin of einde van een zone af. De betrokken regel geldt binnen de grenzen van die zone."
       },
       "EN": {
-        "question": "To which category of traffic signs does this sign belong?",
+        "question": "What kind of signing is this?",
         "choices": [
           {
-            "text": "Zone signs",
+            "text": "Signing with zonal validity",
             "is_correct": true
           },
           {
-            "text": "Prohibition signs",
+            "text": "A warning sign without zonal effect",
             "is_correct": false
           },
           {
-            "text": "Parking signs",
+            "text": "A road marking",
             "is_correct": false
           }
         ],
-        "explanation": "ZC35 is a zone sign. The overtaking prohibition applies throughout the entire zone, not only on the road where the sign is placed."
+        "explanation": "The sign marks the beginning or end of a zone. The relevant rule applies within that zone's boundaries."
       },
       "FR": {
-        "question": "À quelle catégorie de panneaux appartient ce panneau?",
+        "question": "À quel type de signalisation ce panneau appartient-il ?",
         "choices": [
           {
-            "text": "Panneaux de zone",
+            "text": "Signalisation à validité zonale",
             "is_correct": true
           },
           {
-            "text": "Panneaux d'interdiction",
+            "text": "Un signal de danger sans effet zonal",
             "is_correct": false
           },
           {
-            "text": "Panneaux de stationnement",
+            "text": "Un marquage routier",
             "is_correct": false
           }
         ],
-        "explanation": "ZC35 est un panneau de zone. L'interdiction de dépasser s'applique dans toute la zone, pas seulement sur la route où le panneau est installé."
+        "explanation": "Le signal délimite le début ou la fin d'une zone. La règle concernée s'applique dans les limites de cette zone."
       },
       "AR": {
-        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
+        "question": "إلى أي نوع من الإشارات تنتمي هذه العلامة؟",
         "choices": [
           {
-            "text": "علامات المنطقة",
+            "text": "إشارة ذات نطاق مناطقي",
             "is_correct": true
           },
           {
-            "text": "علامات الحظر",
+            "text": "علامة خطر بلا أثر مناطقي",
             "is_correct": false
           },
           {
-            "text": "علامات الوقوف",
+            "text": "علامة طريق مرسومة",
             "is_correct": false
           }
         ],
-        "explanation": "ZC35 علامة منطقة. يسري حظر التجاوز في كامل المنطقة، وليس فقط على الطريق الذي تقع فيه العلامة."
+        "explanation": "تحدد العلامة بداية منطقة أو نهايتها، وتسري القاعدة المعنية داخل حدود تلك المنطقة."
       }
     }
   },
@@ -169,76 +169,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Welke handeling is verboden in de gehele zone aangeduid door ZC35?",
+        "question": "Wat verbiedt dit bord in de zone?",
         "choices": [
           {
-            "text": "Inhalen",
+            "text": "Een gespan of een voertuig met meer dan twee wielen links inhalen",
             "is_correct": true
           },
           {
-            "text": "Claxonneren",
+            "text": "Elke fietser inhalen, ongeacht de omstandigheden",
             "is_correct": false
           },
           {
-            "text": "Achteruit rijden",
+            "text": "Alleen rechts voorbijrijden van een stilstaand voertuig",
             "is_correct": false
           }
         ],
-        "explanation": "ZC35 verbiedt uitsluitend inhalen in de zone. Andere handelingen zoals claxonneren of achteruit rijden worden door dit bord niet verboden (tenzij andere borden dat doen)."
+        "explanation": "De betekenis van C35 heeft een precieze richting en een precies omschreven categorie van ingehaalde voertuigen."
       },
       "EN": {
-        "question": "Which action is prohibited throughout the entire zone indicated by ZC35?",
+        "question": "What does this sign prohibit within the zone?",
         "choices": [
           {
-            "text": "Overtaking",
+            "text": "Overtaking a harnessed vehicle or a vehicle with more than two wheels on the left",
             "is_correct": true
           },
           {
-            "text": "Using the horn",
+            "text": "Overtaking every cyclist regardless of circumstances",
             "is_correct": false
           },
           {
-            "text": "Reversing",
+            "text": "Only passing a stationary vehicle on the right",
             "is_correct": false
           }
         ],
-        "explanation": "ZC35 only prohibits overtaking in the zone. Other actions such as using the horn or reversing are not prohibited by this sign (unless other signs do so)."
+        "explanation": "C35 has a precise direction and a precisely defined category of vehicles being overtaken."
       },
       "FR": {
-        "question": "Quelle action est interdite dans toute la zone indiquée par ZC35?",
+        "question": "Qu'interdit ce signal dans la zone ?",
         "choices": [
           {
-            "text": "Dépasser",
+            "text": "Dépasser par la gauche un véhicule attelé ou un véhicule de plus de deux roues",
             "is_correct": true
           },
           {
-            "text": "Klaxonner",
+            "text": "Dépasser tout cycliste quelles que soient les circonstances",
             "is_correct": false
           },
           {
-            "text": "Faire marche arrière",
+            "text": "Uniquement passer à droite d'un véhicule immobilisé",
             "is_correct": false
           }
         ],
-        "explanation": "ZC35 interdit uniquement de dépasser dans la zone. D'autres actions comme klaxonner ou faire marche arrière ne sont pas interdites par ce panneau."
+        "explanation": "C35 vise une direction précise et une catégorie précisément définie de véhicules dépassés."
       },
       "AR": {
-        "question": "أي فعل محظور في كامل المنطقة التي تحددها ZC35؟",
+        "question": "ما الذي تحظره هذه العلامة داخل المنطقة؟",
         "choices": [
           {
-            "text": "التجاوز",
+            "text": "تجاوز مركبة مقطورة أو مركبة ذات أكثر من عجلتين من اليسار",
             "is_correct": true
           },
           {
-            "text": "استخدام البوق",
+            "text": "تجاوز كل راكب دراجة مهما كانت الظروف",
             "is_correct": false
           },
           {
-            "text": "السير للخلف",
+            "text": "المرور فقط عن يمين مركبة متوقفة",
             "is_correct": false
           }
         ],
-        "explanation": "ZC35 تحظر التجاوز فقط داخل المنطقة. أفعال أخرى كاستخدام البوق أو السير للخلف ليست محظورة بهذه العلامة."
+        "explanation": "تحدد C35 اتجاهًا دقيقًا وفئة محددة بدقة للمركبات التي يجري تجاوزها."
       }
     }
   },
@@ -250,76 +250,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U rijdt in een ZC35-zone en u wilt een langzamere auto voorbijrijden. Wat doet u?",
+        "question": "U volgt in de zone een trage personenauto. Wat doet u?",
         "choices": [
           {
-            "text": "U mag niet inhalen; u volgt het voertuig voor u op veilige afstand",
+            "text": "Achter de auto blijven en niet links inhalen",
             "is_correct": true
           },
           {
-            "text": "U mag inhalen als u uw signaalknipperlicht gebruikt",
+            "text": "Links inhalen als er geen tegenligger is",
             "is_correct": false
           },
           {
-            "text": "U mag inhalen als er geen tegenliggers zijn",
+            "text": "Links inhalen na een kort claxonsignaal",
             "is_correct": false
           }
         ],
-        "explanation": "In een ZC35-zone is inhalen volledig verboden, ongeacht de situatie. Er zijn geen uitzonderingen op basis van signalering of tegemoetkomend verkeer."
+        "explanation": "Een personenauto heeft meer dan twee wielen en mag binnen deze zone niet links worden ingehaald."
       },
       "EN": {
-        "question": "You are driving in a ZC35 zone and want to pass a slower car. What do you do?",
+        "question": "You are following a slow passenger car in the zone. What do you do?",
         "choices": [
           {
-            "text": "You may not overtake; you follow the vehicle ahead at a safe distance",
+            "text": "Remain behind it and do not overtake on the left",
             "is_correct": true
           },
           {
-            "text": "You may overtake if you use your turn signal",
+            "text": "Overtake on the left when there is no oncoming traffic",
             "is_correct": false
           },
           {
-            "text": "You may overtake if there is no oncoming traffic",
+            "text": "Overtake on the left after a short horn signal",
             "is_correct": false
           }
         ],
-        "explanation": "In a ZC35 zone overtaking is completely prohibited regardless of the situation. There are no exceptions based on signalling or oncoming traffic."
+        "explanation": "A passenger car has more than two wheels and may not be overtaken on the left in this zone."
       },
       "FR": {
-        "question": "Vous circulez dans une zone ZC35 et voulez dépasser une voiture plus lente. Que faites-vous?",
+        "question": "Vous suivez une voiture lente dans la zone. Que faites-vous ?",
         "choices": [
           {
-            "text": "Vous ne pouvez pas dépasser; vous suivez le véhicule devant vous à distance de sécurité",
+            "text": "Rester derrière et ne pas la dépasser par la gauche",
             "is_correct": true
           },
           {
-            "text": "Vous pouvez dépasser si vous utilisez votre clignotant",
+            "text": "La dépasser par la gauche en l'absence de trafic venant en sens inverse",
             "is_correct": false
           },
           {
-            "text": "Vous pouvez dépasser s'il n'y a pas de véhicule en sens inverse",
+            "text": "La dépasser par la gauche après un bref coup de klaxon",
             "is_correct": false
           }
         ],
-        "explanation": "Dans une zone ZC35 il est complètement interdit de dépasser quelle que soit la situation. Il n'y a pas d'exception basée sur la signalisation ou la circulation en sens inverse."
+        "explanation": "Une voiture a plus de deux roues et ne peut pas être dépassée par la gauche dans cette zone."
       },
       "AR": {
-        "question": "أنت تسير في منطقة ZC35 وتريد تجاوز سيارة أبطأ. ماذا تفعل؟",
+        "question": "تسير خلف سيارة بطيئة داخل المنطقة. ماذا تفعل؟",
         "choices": [
           {
-            "text": "لا يجوز لك التجاوز؛ اتبع المركبة الأمامية على مسافة آمنة",
+            "text": "ابق خلفها ولا تتجاوزها من اليسار",
             "is_correct": true
           },
           {
-            "text": "يجوز لك التجاوز إذا استخدمت إشارة التحويل",
+            "text": "تجاوزها من اليسار إذا لم توجد حركة مقابلة",
             "is_correct": false
           },
           {
-            "text": "يجوز لك التجاوز إذا لم يكن ثمة مرور مقابل",
+            "text": "تجاوزها من اليسار بعد إشارة قصيرة بالبوق",
             "is_correct": false
           }
         ],
-        "explanation": "في منطقة ZC35 التجاوز محظور كلياً بغض النظر عن الوضع. لا توجد استثناءات بناءً على الإشارة أو حركة المرور المقابلة."
+        "explanation": "لسيارة الركوب أكثر من عجلتين، ولا يجوز تجاوزها من اليسار في هذه المنطقة."
       }
     }
   },
@@ -331,76 +331,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U rijdt in een ZC35-zone. U wilt een fietser inhalen. Mag dit?",
+        "question": "U wilt een fietser met twee wielen inhalen. Verbiedt ZC35 dat op zichzelf?",
         "choices": [
           {
-            "text": "Neen, inhalen van om het even welk voertuig is verboden in een ZC35-zone",
+            "text": "Neen, maar inhalen mag alleen als alle andere regels en de veilige zijdelingse afstand worden gerespecteerd",
             "is_correct": true
           },
           {
-            "text": "Ja, want ZC35 geldt enkel voor het inhalen van auto's",
+            "text": "Ja, ZC35 verbiedt het inhalen van elk voertuig zonder uitzondering",
             "is_correct": false
           },
           {
-            "text": "Ja, want een fietser is geen motorvoertuig",
+            "text": "Neen, een fietser mag altijd zonder zijdelingse afstand worden ingehaald",
             "is_correct": false
           }
         ],
-        "explanation": "ZC35 verbiedt inhalen in zijn algemeenheid. De categorie voertuig die wordt ingehaald maakt geen verschil; ook een fietser inhalen is verboden."
+        "explanation": "Een tweewielige fiets behoort niet tot de door C35 omschreven ingehaalde voertuigen. De gewone inhaal- en veiligheidsregels blijven volledig gelden."
       },
       "EN": {
-        "question": "You are driving in a ZC35 zone. You want to overtake a cyclist. Is this allowed?",
+        "question": "You want to overtake a two-wheeled cyclist. Does ZC35 itself prohibit that?",
         "choices": [
           {
-            "text": "No, overtaking any vehicle is prohibited in a ZC35 zone",
+            "text": "No, but overtaking is allowed only when all other rules and the safe lateral distance are respected",
             "is_correct": true
           },
           {
-            "text": "Yes, because ZC35 only applies to overtaking cars",
+            "text": "Yes, ZC35 prohibits overtaking every vehicle without exception",
             "is_correct": false
           },
           {
-            "text": "Yes, because a cyclist is not a motor vehicle",
+            "text": "No, a cyclist may always be overtaken without lateral clearance",
             "is_correct": false
           }
         ],
-        "explanation": "ZC35 prohibits overtaking in general. The category of vehicle being overtaken makes no difference; overtaking a cyclist is also prohibited."
+        "explanation": "A two-wheeled cycle is outside the category of overtaken vehicles defined by C35. Ordinary overtaking and safety rules remain fully applicable."
       },
       "FR": {
-        "question": "Vous circulez dans une zone ZC35. Vous voulez dépasser un cycliste. Est-ce autorisé?",
+        "question": "Vous voulez dépasser un cycliste à deux roues. C35 l'interdit-il à lui seul ?",
         "choices": [
           {
-            "text": "Non, dépasser n'importe quel véhicule est interdit dans une zone ZC35",
+            "text": "Non, mais le dépassement n'est permis que si toutes les autres règles et la distance latérale de sécurité sont respectées",
             "is_correct": true
           },
           {
-            "text": "Oui, car ZC35 ne s'applique qu'au dépassement de voitures",
+            "text": "Oui, C35 interdit de dépasser tout véhicule sans exception",
             "is_correct": false
           },
           {
-            "text": "Oui, car un cycliste n'est pas un véhicule à moteur",
+            "text": "Non, un cycliste peut toujours être dépassé sans distance latérale",
             "is_correct": false
           }
         ],
-        "explanation": "ZC35 interdit le dépassement en général. La catégorie du véhicule dépassé ne fait aucune différence; dépasser un cycliste est également interdit."
+        "explanation": "Un cycle à deux roues ne fait pas partie des véhicules dépassés définis par C35. Les règles ordinaires de dépassement et de sécurité restent pleinement applicables."
       },
       "AR": {
-        "question": "أنت تسير في منطقة ZC35. تريد تجاوز دراج. هل يجوز ذلك؟",
+        "question": "تريد تجاوز راكب دراجة ذات عجلتين. هل تحظر C35 ذلك بحد ذاتها؟",
         "choices": [
           {
-            "text": "لا، تجاوز أي مركبة محظور في منطقة ZC35",
+            "text": "لا، لكن لا يسمح بالتجاوز إلا مع احترام كل القواعد الأخرى والمسافة الجانبية الآمنة",
             "is_correct": true
           },
           {
-            "text": "نعم، لأن ZC35 تسري فقط على تجاوز السيارات",
+            "text": "نعم، تحظر C35 تجاوز كل مركبة بلا استثناء",
             "is_correct": false
           },
           {
-            "text": "نعم، لأن الدراجة ليست مركبة آلية",
+            "text": "لا، ويجوز دائمًا تجاوز راكب الدراجة بلا مسافة جانبية",
             "is_correct": false
           }
         ],
-        "explanation": "ZC35 تحظر التجاوز بشكل عام. فئة المركبة المتجاوزة ليست مهمة؛ تجاوز الدراجة محظور أيضاً."
+        "explanation": "لا تدخل الدراجة ذات العجلتين ضمن فئة المركبات التي تحددها C35 للتجاوز. وتبقى قواعد التجاوز والسلامة العادية سارية بالكامل."
       }
     }
   },
@@ -412,76 +412,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Wat is het verschil tussen ZC35 en C35?",
+        "question": "Wat verandert de zonale uitvoering ten opzichte van een gewoon C35-bord?",
         "choices": [
           {
-            "text": "ZC35 geldt in de gehele zone tot aan ZC35-; C35 geldt enkel voor het aangeduide weggedeelte",
+            "text": "Dezelfde precieze C35-regel geldt binnen de hele afgebakende zone",
             "is_correct": true
           },
           {
-            "text": "ZC35 en C35 zijn identiek en hebben hetzelfde toepassingsgebied",
+            "text": "De zonale uitvoering verbiedt plots elk soort inhalen",
             "is_correct": false
           },
           {
-            "text": "C35 is strenger dan ZC35 omdat het meer voertuigen treft",
+            "text": "De betekenis van C35 verdwijnt na de eerste zijstraat",
             "is_correct": false
           }
         ],
-        "explanation": "Een zonebord heeft een bredere werking: ZC35 verbiedt inhalen op alle wegen in de zone. C35 geldt enkel op de weg of het weggedeelte bij het bord."
+        "explanation": "Zonale geldigheid vergroot de geografische draagwijdte, niet de inhoud van het verbod."
       },
       "EN": {
-        "question": "What is the difference between ZC35 and C35?",
+        "question": "What does the zonal version change compared with an ordinary C35 sign?",
         "choices": [
           {
-            "text": "ZC35 applies throughout the entire zone until ZC35-; C35 only applies for the indicated road section",
+            "text": "The same precise C35 rule applies throughout the delimited zone",
             "is_correct": true
           },
           {
-            "text": "ZC35 and C35 are identical with the same area of effect",
+            "text": "The zonal version suddenly prohibits every form of overtaking",
             "is_correct": false
           },
           {
-            "text": "C35 is stricter than ZC35 because it covers more vehicles",
+            "text": "The meaning of C35 disappears after the first side street",
             "is_correct": false
           }
         ],
-        "explanation": "A zone sign has broader effect: ZC35 prohibits overtaking on all roads in the zone. C35 only applies on the road or road section at the sign."
+        "explanation": "Zonal validity expands the geographical scope, not the content of the prohibition."
       },
       "FR": {
-        "question": "Quelle est la différence entre ZC35 et C35?",
+        "question": "Que change la version zonale par rapport à un signal C35 ordinaire ?",
         "choices": [
           {
-            "text": "ZC35 s'applique dans toute la zone jusqu'au ZC35-; C35 ne s'applique qu'à la section de route indiquée",
+            "text": "La même règle C35 précise s'applique dans toute la zone délimitée",
             "is_correct": true
           },
           {
-            "text": "ZC35 et C35 sont identiques et ont le même champ d'application",
+            "text": "La version zonale interdit soudain toute forme de dépassement",
             "is_correct": false
           },
           {
-            "text": "C35 est plus strict que ZC35 parce qu'il concerne plus de véhicules",
+            "text": "La signification de C35 disparaît après la première rue latérale",
             "is_correct": false
           }
         ],
-        "explanation": "Un panneau de zone a une portée plus large: ZC35 interdit de dépasser sur toutes les routes de la zone. C35 ne s'applique qu'à la route ou la section de route au panneau."
+        "explanation": "La validité zonale étend la portée géographique et non le contenu de l'interdiction."
       },
       "AR": {
-        "question": "ما الفرق بين ZC35 و C35؟",
+        "question": "ما الذي تغيره النسخة المناطقية مقارنة بعلامة C35 العادية؟",
         "choices": [
           {
-            "text": "ZC35 تسري في كامل المنطقة حتى ZC35-؛ C35 تسري فقط على القسم المحدد من الطريق",
+            "text": "تسري قاعدة C35 الدقيقة نفسها في كامل المنطقة المحددة",
             "is_correct": true
           },
           {
-            "text": "ZC35 و C35 متطابقتان ولهما نفس نطاق التطبيق",
+            "text": "تحظر النسخة المناطقية فجأة كل أشكال التجاوز",
             "is_correct": false
           },
           {
-            "text": "C35 أصرم من ZC35 لأنها تشمل مركبات أكثر",
+            "text": "ينتهي معنى C35 بعد أول شارع جانبي",
             "is_correct": false
           }
         ],
-        "explanation": "علامة المنطقة أوسع أثراً: ZC35 تحظر التجاوز على جميع طرق المنطقة. C35 تسري فقط على الطريق عند موضع العلامة."
+        "explanation": "يوسع النطاق المناطقي المجال الجغرافي ولا يغير مضمون الحظر."
       }
     }
   },
@@ -493,60 +493,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U rijdt in een ZC35-zone en het inhalerverbod geldt op 3 opeenvolgende straten zonder ZC35-. Geldt het verbod ook op de derde straat?",
+        "question": "U rijdt meerdere straten door zonder het eindezonebord. Blijft de precieze C35-regel gelden?",
         "choices": [
           {
-            "text": "Ja, ZC35 geldt in de gehele zone totdat ZC35- wordt bereikt, ongeacht het aantal straten",
+            "text": "Ja, de zonale regel blijft gelden binnen de afbakening",
             "is_correct": true
           },
           {
-            "text": "Neen, na 2 straten is het verbod automatisch opgeheven",
+            "text": "Neen, zij eindigt altijd na de eerste zijstraat",
             "is_correct": false
           }
         ],
-        "explanation": "ZC35 geldt op alle wegen in de zone totdat ZC35- het einde aangeeft. Het aantal straten dat u passeert is irrelevant."
+        "explanation": "De zonale draagwijdte eindigt niet door het aantal straten, maar bij de rechtsgeldige zonegrens."
       },
       "EN": {
-        "question": "You are in a ZC35 zone and the overtaking prohibition applies across 3 consecutive streets without ZC35-. Does the prohibition still apply on the third street?",
+        "question": "You travel through several streets without passing the end sign. Does the precise C35 rule continue?",
         "choices": [
           {
-            "text": "Yes, ZC35 applies throughout the entire zone until ZC35- is reached, regardless of the number of streets",
+            "text": "Yes, the zonal rule continues within the boundary",
             "is_correct": true
           },
           {
-            "text": "No, after 2 streets the prohibition is automatically lifted",
+            "text": "No, it always ends after the first side street",
             "is_correct": false
           }
         ],
-        "explanation": "ZC35 applies on all roads in the zone until ZC35- marks the end. The number of streets you pass through is irrelevant."
+        "explanation": "Zonal scope ends at the lawful boundary, not because of the number of streets."
       },
       "FR": {
-        "question": "Vous êtes dans une zone ZC35 et l'interdiction de dépasser s'applique sur 3 rues consécutives sans ZC35-. L'interdiction s'applique-t-elle encore dans la troisième rue?",
+        "question": "Vous parcourez plusieurs rues sans franchir le signal de fin. La règle C35 précise continue-t-elle ?",
         "choices": [
           {
-            "text": "Oui, ZC35 s'applique dans toute la zone jusqu'à ce que ZC35- soit atteint, quel que soit le nombre de rues",
+            "text": "Oui, la règle zonale continue dans le périmètre",
             "is_correct": true
           },
           {
-            "text": "Non, après 2 rues l'interdiction est automatiquement levée",
+            "text": "Non, elle finit toujours après la première rue latérale",
             "is_correct": false
           }
         ],
-        "explanation": "ZC35 s'applique sur toutes les routes de la zone jusqu'à ce que ZC35- indique la fin. Le nombre de rues que vous traversez est sans importance."
+        "explanation": "La portée zonale prend fin à la limite régulière et non en fonction du nombre de rues."
       },
       "AR": {
-        "question": "أنت في منطقة ZC35 ويسري حظر التجاوز على 3 شوارع متتالية دون ZC35-. هل يسري الحظر في الشارع الثالث؟",
+        "question": "تعبر عدة شوارع من دون علامة النهاية. هل تستمر قاعدة C35 الدقيقة؟",
         "choices": [
           {
-            "text": "نعم، ZC35 سارٍ في كامل المنطقة حتى الوصول إلى ZC35-، بغض النظر عن عدد الشوارع",
+            "text": "نعم، تستمر القاعدة داخل حدود المنطقة",
             "is_correct": true
           },
           {
-            "text": "لا، بعد شارعين يرتفع الحظر تلقائياً",
+            "text": "لا، تنتهي دائمًا بعد أول شارع جانبي",
             "is_correct": false
           }
         ],
-        "explanation": "ZC35 تسري على جميع طرق المنطقة حتى تحدد ZC35- النهاية. عدد الشوارع التي تمر بها ليس ذا أهمية."
+        "explanation": "ينتهي النطاق المناطقي عند الحد القانوني لا بسبب عدد الشوارع."
       }
     }
   },
@@ -558,60 +558,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U reed een ZC35-zone in maar hebt het beginbord niet gezien. Geldt het verbod toch?",
+        "question": "U bevindt zich binnen de zone en hebt het eindezonebord nog niet bereikt. Mag u een personenauto links inhalen?",
         "choices": [
           {
-            "text": "Ja, de zoneregel geldt in de gehele zone ongeacht of u het bord hebt gezien",
+            "text": "Neen, de C35-zoneregel geldt nog",
             "is_correct": true
           },
           {
-            "text": "Neen, u bent alleen gebonden als u het beginbord persoonlijk hebt opgemerkt",
+            "text": "Ja, als u het beginbord niet meer kunt zien",
             "is_correct": false
           }
         ],
-        "explanation": "De wettelijke verplichting hangt niet af van het feit of u het bord hebt gezien. De zone is juridisch van kracht zodra u de grens overschrijdt."
+        "explanation": "De geldigheid hangt af van de zonegrens, niet van de zichtbaarheid van het beginbord."
       },
       "EN": {
-        "question": "You entered a ZC35 zone but did not see the entry sign. Does the prohibition still apply?",
+        "question": "You are inside the zone and have not reached its end sign. May you overtake a passenger car on the left?",
         "choices": [
           {
-            "text": "Yes, the zone rule applies throughout the entire zone regardless of whether you saw the sign",
+            "text": "No, the zonal C35 rule still applies",
             "is_correct": true
           },
           {
-            "text": "No, you are only bound if you personally noticed the entry sign",
+            "text": "Yes, if the entry sign is no longer visible",
             "is_correct": false
           }
         ],
-        "explanation": "The legal obligation does not depend on whether you saw the sign. The zone is legally in force as soon as you cross its boundary."
+        "explanation": "Validity depends on the zone boundary, not on whether the entry sign remains visible."
       },
       "FR": {
-        "question": "Vous avez pénétré dans une zone ZC35 mais n'avez pas vu le panneau de début. L'interdiction s'applique-t-elle quand même?",
+        "question": "Vous êtes dans la zone sans avoir atteint le signal de fin. Pouvez-vous dépasser une voiture par la gauche ?",
         "choices": [
           {
-            "text": "Oui, la règle de zone s'applique dans toute la zone que vous ayez vu ou non le panneau",
+            "text": "Non, la règle zonale C35 s'applique encore",
             "is_correct": true
           },
           {
-            "text": "Non, vous n'êtes lié que si vous avez personnellement remarqué le panneau de début",
+            "text": "Oui, si le signal d'entrée n'est plus visible",
             "is_correct": false
           }
         ],
-        "explanation": "L'obligation légale ne dépend pas du fait que vous ayez vu le panneau. La zone est juridiquement en vigueur dès que vous en franchissez la limite."
+        "explanation": "La validité dépend de la limite de zone et non de la visibilité du signal d'entrée."
       },
       "AR": {
-        "question": "دخلت منطقة ZC35 لكنك لم تر علامة البداية. هل يسري الحظر رغم ذلك؟",
+        "question": "أنت داخل المنطقة ولم تصل إلى علامة النهاية. هل يجوز تجاوز سيارة من اليسار؟",
         "choices": [
           {
-            "text": "نعم، تسري قاعدة المنطقة في كاملها بغض النظر عن رؤيتك للعلامة",
+            "text": "لا، ما زالت قاعدة C35 المناطقية سارية",
             "is_correct": true
           },
           {
-            "text": "لا، أنت ملزم فقط إذا لاحظت علامة البداية شخصياً",
+            "text": "نعم، إذا لم تعد علامة البداية مرئية",
             "is_correct": false
           }
         ],
-        "explanation": "الالتزام القانوني لا يعتمد على رؤيتك للعلامة. المنطقة سارية قانونياً فور تجاوزك حدودها."
+        "explanation": "تعتمد الصلاحية على حدود المنطقة لا على بقاء علامة البداية مرئية."
       }
     }
   }

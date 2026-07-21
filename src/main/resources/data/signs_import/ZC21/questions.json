@@ -10,73 +10,73 @@
         "question": "Wat betekent dit verkeersbord?",
         "choices": [
           {
-            "text": "Zone verboden toegang voor bestuurders van voertuigen waarvan de massa hoger is dan 3500 kg",
+            "text": "Zone: verboden toegang boven 3,5 t massa in beladen toestand",
             "is_correct": true
           },
           {
-            "text": "Zone verboden toegang voor motorvoertuigen met meer dan 2 wielen",
+            "text": "Waarschuwing voor tijdelijke wegenwerken",
             "is_correct": false
           },
           {
-            "text": "Zone verboden inhalen",
+            "text": "Verplichte rijrichting zonder zonale werking",
             "is_correct": false
           }
         ],
-        "explanation": "ZC21 is het beginbord van een zone waar voertuigen met een massa van meer dan 3500 kg niet mogen inrijden of doorrijden. Voertuigen die exact 3500 kg wegen, vallen NIET onder dit verbod."
+        "explanation": "Dit bord begint een zone die verboden is voor bestuurders van voertuigen waarvan de werkelijke massa in beladen toestand hoger is dan 3.500 kg."
       },
       "EN": {
         "question": "What does this traffic sign mean?",
         "choices": [
           {
-            "text": "Zone no entry for vehicles with a mass exceeding 3500 kg",
+            "text": "Zone: no entry above 3.5 t laden mass",
             "is_correct": true
           },
           {
-            "text": "Zone no entry for motor vehicles with more than 2 wheels",
+            "text": "Warning of temporary roadworks",
             "is_correct": false
           },
           {
-            "text": "Zone no overtaking",
+            "text": "Mandatory direction without zonal validity",
             "is_correct": false
           }
         ],
-        "explanation": "ZC21 is the entry sign of a zone where vehicles with a mass exceeding 3500 kg may not enter or drive through. Vehicles weighing exactly 3500 kg are NOT covered by this prohibition."
+        "explanation": "This sign starts a zone closed to drivers of vehicles whose actual laden mass is greater than 3,500 kg."
       },
       "FR": {
         "question": "Que signifie ce panneau de signalisation?",
         "choices": [
           {
-            "text": "Zone accès interdit aux véhicules dont la masse dépasse 3500 kg",
+            "text": "Zone : accès interdit au-dessus de 3,5 t de masse en charge",
             "is_correct": true
           },
           {
-            "text": "Zone accès interdit aux véhicules à moteur de plus de 2 roues",
+            "text": "Avertissement de travaux routiers temporaires",
             "is_correct": false
           },
           {
-            "text": "Zone interdiction de dépasser",
+            "text": "Direction obligatoire sans validité zonale",
             "is_correct": false
           }
         ],
-        "explanation": "ZC21 est le panneau de début d'une zone interdisant l'accès aux véhicules dont la masse dépasse 3500 kg. Les véhicules pesant exactement 3500 kg ne sont PAS visés."
+        "explanation": "Ce signal ouvre une zone interdite aux conducteurs de véhicules dont la masse réelle en charge dépasse 3 500 kg."
       },
       "AR": {
         "question": "ما معنى هذه العلامة المرورية؟",
         "choices": [
           {
-            "text": "منطقة ممنوع دخول المركبات التي تزيد كتلتها عن 3500 كغ",
+            "text": "منطقة ممنوع دخول المركبات التي تتجاوز كتلتها في حالة التحميل 3.5 طن",
             "is_correct": true
           },
           {
-            "text": "منطقة ممنوع دخول المركبات ذات المحرك بأكثر من عجلتين",
+            "text": "تحذير من أعمال طريق مؤقتة",
             "is_correct": false
           },
           {
-            "text": "منطقة ممنوع التجاوز",
+            "text": "اتجاه إلزامي بلا نطاق مناطقي",
             "is_correct": false
           }
         ],
-        "explanation": "ZC21 هي علامة بداية منطقة لا يجوز فيها للمركبات التي تزيد كتلتها عن 3500 كغ الدخول أو المرور. المركبات ذات الكتلة بالضبط 3500 كغ لا يشملها هذا الحظر."
+        "explanation": "تبدأ هذه العلامة منطقة ممنوعة على سائقي المركبات التي تتجاوز كتلتها الفعلية في حالة التحميل 3500 كغ."
       }
     }
   },
@@ -88,76 +88,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Tot welke categorie verkeersborden behoort dit bord?",
+        "question": "Tot welk soort signalisatie behoort dit bord?",
         "choices": [
           {
-            "text": "Zoneborden",
+            "text": "Signalisatie met zonale geldigheid",
             "is_correct": true
           },
           {
-            "text": "Verbodsborden",
+            "text": "Een gevaarsbord zonder zonale werking",
             "is_correct": false
           },
           {
-            "text": "Parkeerborden",
+            "text": "Een wegmarkering",
             "is_correct": false
           }
         ],
-        "explanation": "ZC21 is een zonebord. De massabeperking geldt in de gehele zone, niet alleen op de weg waar ZC21 staat."
+        "explanation": "Het bord bakent het begin of einde van een zone af. De betrokken regel geldt binnen de grenzen van die zone."
       },
       "EN": {
-        "question": "To which category of traffic signs does this sign belong?",
+        "question": "What kind of signing is this?",
         "choices": [
           {
-            "text": "Zone signs",
+            "text": "Signing with zonal validity",
             "is_correct": true
           },
           {
-            "text": "Prohibition signs",
+            "text": "A warning sign without zonal effect",
             "is_correct": false
           },
           {
-            "text": "Parking signs",
+            "text": "A road marking",
             "is_correct": false
           }
         ],
-        "explanation": "ZC21 is a zone sign. The mass restriction applies throughout the entire zone, not only on the road where ZC21 is placed."
+        "explanation": "The sign marks the beginning or end of a zone. The relevant rule applies within that zone's boundaries."
       },
       "FR": {
-        "question": "À quelle catégorie de panneaux appartient ce panneau?",
+        "question": "À quel type de signalisation ce panneau appartient-il ?",
         "choices": [
           {
-            "text": "Panneaux de zone",
+            "text": "Signalisation à validité zonale",
             "is_correct": true
           },
           {
-            "text": "Panneaux d'interdiction",
+            "text": "Un signal de danger sans effet zonal",
             "is_correct": false
           },
           {
-            "text": "Panneaux de stationnement",
+            "text": "Un marquage routier",
             "is_correct": false
           }
         ],
-        "explanation": "ZC21 est un panneau de zone. La restriction de masse s'applique dans toute la zone, pas seulement sur la route où se trouve ZC21."
+        "explanation": "Le signal délimite le début ou la fin d'une zone. La règle concernée s'applique dans les limites de cette zone."
       },
       "AR": {
-        "question": "إلى أي فئة تُصنَّف هذه العلامة المرورية؟",
+        "question": "إلى أي نوع من الإشارات تنتمي هذه العلامة؟",
         "choices": [
           {
-            "text": "علامات المنطقة",
+            "text": "إشارة ذات نطاق مناطقي",
             "is_correct": true
           },
           {
-            "text": "علامات الحظر",
+            "text": "علامة خطر بلا أثر مناطقي",
             "is_correct": false
           },
           {
-            "text": "علامات الوقوف",
+            "text": "علامة طريق مرسومة",
             "is_correct": false
           }
         ],
-        "explanation": "ZC21 علامة منطقة. تسري قيود الكتلة في كامل المنطقة، وليس فقط على الطريق الذي تقع فيه ZC21."
+        "explanation": "تحدد العلامة بداية منطقة أو نهايتها، وتسري القاعدة المعنية داخل حدود تلك المنطقة."
       }
     }
   },
@@ -169,76 +169,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Welke voertuigen worden door ZC21 verboden in de zone?",
+        "question": "Welk voertuig valt onder het verbod van deze zone?",
         "choices": [
           {
-            "text": "Voertuigen met een massa van meer dan 3500 kg",
+            "text": "Een voertuig waarvan de massa in beladen toestand hoger is dan 3.500 kg",
             "is_correct": true
           },
           {
-            "text": "Alle voertuigen zwaarder dan of gelijk aan 3500 kg",
+            "text": "Een voertuig met een maximaal toegelaten massa boven 3.500 kg maar een werkelijke beladen massa van 3.000 kg",
             "is_correct": false
           },
           {
-            "text": "Alleen vrachtwagens met meer dan 2 assen",
+            "text": "Elk voertuig dat precies 3.500 kg beladen weegt",
             "is_correct": false
           }
         ],
-        "explanation": "ZC21 verbiedt uitsluitend voertuigen met een massa die strikt hoger is dan 3500 kg. Voertuigen die exact 3500 kg wegen zijn toegestaan."
+        "explanation": "C21 gebruikt de werkelijke massa in beladen toestand en de grens wordt alleen overschreden boven 3.500 kg."
       },
       "EN": {
-        "question": "Which vehicles are prohibited by ZC21 in the zone?",
+        "question": "Which vehicle is covered by this zonal prohibition?",
         "choices": [
           {
-            "text": "Vehicles with a mass exceeding 3500 kg",
+            "text": "A vehicle whose laden mass is greater than 3,500 kg",
             "is_correct": true
           },
           {
-            "text": "All vehicles weighing 3500 kg or more",
+            "text": "A vehicle with a maximum authorised mass above 3,500 kg but an actual laden mass of 3,000 kg",
             "is_correct": false
           },
           {
-            "text": "Only trucks with more than 2 axles",
+            "text": "Every vehicle whose laden mass is exactly 3,500 kg",
             "is_correct": false
           }
         ],
-        "explanation": "ZC21 prohibits only vehicles with a mass strictly above 3500 kg. Vehicles weighing exactly 3500 kg are permitted."
+        "explanation": "C21 uses the actual laden mass, and the threshold is exceeded only above 3,500 kg."
       },
       "FR": {
-        "question": "Quels véhicules sont interdits par ZC21 dans la zone?",
+        "question": "Quel véhicule est visé par cette interdiction zonale ?",
         "choices": [
           {
-            "text": "Les véhicules dont la masse dépasse 3500 kg",
+            "text": "Un véhicule dont la masse en charge dépasse 3 500 kg",
             "is_correct": true
           },
           {
-            "text": "Tous les véhicules pesant 3500 kg ou plus",
+            "text": "Un véhicule dont la masse maximale autorisée dépasse 3 500 kg mais dont la masse réelle en charge est de 3 000 kg",
             "is_correct": false
           },
           {
-            "text": "Uniquement les camions avec plus de 2 essieux",
+            "text": "Tout véhicule dont la masse en charge est exactement de 3 500 kg",
             "is_correct": false
           }
         ],
-        "explanation": "ZC21 interdit seulement les véhicules dont la masse est strictement supérieure à 3500 kg. Les véhicules pesant exactement 3500 kg sont autorisés."
+        "explanation": "C21 utilise la masse réelle en charge et le seuil n'est dépassé qu'au-dessus de 3 500 kg."
       },
       "AR": {
-        "question": "أي المركبات تحظرها ZC21 في المنطقة؟",
+        "question": "أي مركبة يشملها هذا الحظر المناطقي؟",
         "choices": [
           {
-            "text": "المركبات التي تزيد كتلتها عن 3500 كغ",
+            "text": "مركبة تتجاوز كتلتها في حالة التحميل 3500 كغ",
             "is_correct": true
           },
           {
-            "text": "جميع المركبات ذات الكتلة 3500 كغ أو أكثر",
+            "text": "مركبة كتلتها القصوى المسموح بها فوق 3500 كغ لكن كتلتها الفعلية المحمّلة 3000 كغ",
             "is_correct": false
           },
           {
-            "text": "الشاحنات ذات أكثر من محورين فقط",
+            "text": "كل مركبة تبلغ كتلتها المحمّلة 3500 كغ تمامًا",
             "is_correct": false
           }
         ],
-        "explanation": "ZC21 تحظر فقط المركبات ذات الكتلة التي تتجاوز 3500 كغ بصرامة. المركبات ذات الكتلة بالضبط 3500 كغ مسموح لها بالدخول."
+        "explanation": "تستخدم C21 الكتلة الفعلية في حالة التحميل، ولا يُتجاوز الحد إلا فوق 3500 كغ."
       }
     }
   },
@@ -250,76 +250,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U rijdt een vrachtwagen van 4200 kg. U ziet ZC21 bij de ingang van een zone. Wat doet u?",
+        "question": "De massa in beladen toestand van uw vrachtwagen is 4.200 kg. Wat doet u aan dit zonebord?",
         "choices": [
           {
-            "text": "U mag de zone niet inrijden, want uw vrachtwagen weegt meer dan 3500 kg",
+            "text": "Niet inrijden en een toegelaten route kiezen",
             "is_correct": true
           },
           {
-            "text": "U mag de zone inrijden als u langzaam rijdt",
+            "text": "Inrijden omdat alleen de maximaal toegelaten massa telt",
             "is_correct": false
           },
           {
-            "text": "U mag de zone inrijden als u rechtstreeks naar uw bestemming rijdt",
+            "text": "Inrijden als u zonder lading terugkeert na de levering",
             "is_correct": false
           }
         ],
-        "explanation": "4200 kg overschrijdt de grens van 3500 kg. ZC21 verbiedt uw vrachtwagen absoluut de zone in te rijden, ongeacht snelheid of bestemming."
+        "explanation": "De actuele beladen massa ligt boven de aangeduide 3.500 kg en valt daarom onder het verbod."
       },
       "EN": {
-        "question": "You are driving a 4200 kg truck. You see ZC21 at the entrance of a zone. What do you do?",
+        "question": "Your truck's laden mass is 4,200 kg. What do you do at this zonal sign?",
         "choices": [
           {
-            "text": "You may not enter the zone because your truck weighs more than 3500 kg",
+            "text": "Do not enter and choose a permitted route",
             "is_correct": true
           },
           {
-            "text": "You may enter the zone if you drive slowly",
+            "text": "Enter because only maximum authorised mass matters",
             "is_correct": false
           },
           {
-            "text": "You may enter the zone if you go directly to your destination",
+            "text": "Enter because you will return without the load after delivery",
             "is_correct": false
           }
         ],
-        "explanation": "4200 kg exceeds the 3500 kg limit. ZC21 absolutely prohibits your truck from entering the zone, regardless of speed or destination."
+        "explanation": "The current laden mass is above the displayed 3,500 kg and therefore falls within the prohibition."
       },
       "FR": {
-        "question": "Vous conduisez un camion de 4200 kg. Vous voyez ZC21 à l'entrée d'une zone. Que faites-vous?",
+        "question": "La masse en charge de votre camion est de 4 200 kg. Que faites-vous devant ce signal zonal ?",
         "choices": [
           {
-            "text": "Vous ne pouvez pas entrer dans la zone car votre camion pèse plus de 3500 kg",
+            "text": "Ne pas entrer et choisir un itinéraire autorisé",
             "is_correct": true
           },
           {
-            "text": "Vous pouvez entrer dans la zone si vous roulez lentement",
+            "text": "Entrer parce que seule la masse maximale autorisée compte",
             "is_correct": false
           },
           {
-            "text": "Vous pouvez entrer dans la zone si vous allez directement à votre destination",
+            "text": "Entrer parce que vous repartirez sans chargement après la livraison",
             "is_correct": false
           }
         ],
-        "explanation": "4200 kg dépasse la limite de 3500 kg. ZC21 interdit absolument à votre camion d'entrer dans la zone, quelle que soit la vitesse ou la destination."
+        "explanation": "La masse en charge actuelle dépasse les 3 500 kg affichés et relève donc de l'interdiction."
       },
       "AR": {
-        "question": "تقود شاحنة بوزن 4200 كغ. ترى ZC21 عند مدخل المنطقة. ماذا تفعل؟",
+        "question": "الكتلة المحمّلة لشاحنتك 4200 كغ. ماذا تفعل عند علامة المنطقة؟",
         "choices": [
           {
-            "text": "لا يجوز لك دخول المنطقة لأن وزن شاحنتك أكثر من 3500 كغ",
+            "text": "لا تدخل واختر طريقًا مسموحًا",
             "is_correct": true
           },
           {
-            "text": "يجوز لك الدخول إذا سرت ببطء",
+            "text": "ادخل لأن الكتلة القصوى المسموح بها وحدها هي المهمة",
             "is_correct": false
           },
           {
-            "text": "يجوز لك الدخول إذا ذهبت مباشرة إلى وجهتك",
+            "text": "ادخل لأنك ستعود بلا حمولة بعد التسليم",
             "is_correct": false
           }
         ],
-        "explanation": "4200 كغ تتجاوز حد 3500 كغ. ZC21 تحظر بشكل مطلق على شاحنتك دخول المنطقة بغض النظر عن السرعة أو الوجهة."
+        "explanation": "الكتلة الحالية في حالة التحميل أعلى من 3500 كغ المبينة، ولذلك يشملها الحظر."
       }
     }
   },
@@ -331,76 +331,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U rijdt een bestelwagen van 3200 kg in een ZC21-zone. Mag u op elke straat in de zone rijden?",
+        "question": "De werkelijke massa in beladen toestand van uw bestelwagen is 3.200 kg. Verbiedt dit bord de toegang?",
         "choices": [
           {
-            "text": "Ja, uw bestelwagen weegt minder dan 3500 kg en valt daarmee buiten het verbod van ZC21",
+            "text": "Neen, 3.200 kg overschrijdt de aangeduide 3.500 kg niet",
             "is_correct": true
           },
           {
-            "text": "Neen, alle voertuigen zwaarder dan 1000 kg zijn verboden in een ZC21-zone",
+            "text": "Ja, elke bestelwagen valt onder C21",
             "is_correct": false
           },
           {
-            "text": "Neen, u moet een ontheffing hebben voor elke straat in de zone",
+            "text": "Ja, alleen het aantal assen is bepalend",
             "is_correct": false
           }
         ],
-        "explanation": "ZC21 geldt alleen voor voertuigen met een massa van meer dan 3500 kg. Een bestelwagen van 3200 kg valt buiten dit verbod."
+        "explanation": "Dit antwoord betreft uitsluitend de getoonde C21-massagrens; andere beperkingen kunnen nog gelden."
       },
       "EN": {
-        "question": "You are driving a 3200 kg van in a ZC21 zone. May you drive on any street in the zone?",
+        "question": "Your van's actual laden mass is 3,200 kg. Does this sign prohibit entry?",
         "choices": [
           {
-            "text": "Yes, your van weighs less than 3500 kg and is therefore outside the prohibition of ZC21",
+            "text": "No, 3,200 kg does not exceed the displayed 3,500 kg",
             "is_correct": true
           },
           {
-            "text": "No, all vehicles heavier than 1000 kg are prohibited in a ZC21 zone",
+            "text": "Yes, every van is covered by C21",
             "is_correct": false
           },
           {
-            "text": "No, you must have an exemption for every street in the zone",
+            "text": "Yes, only the number of axles matters",
             "is_correct": false
           }
         ],
-        "explanation": "ZC21 only applies to vehicles with a mass exceeding 3500 kg. A 3200 kg van is outside this prohibition."
+        "explanation": "This answer concerns only the displayed C21 mass threshold; other restrictions may still apply."
       },
       "FR": {
-        "question": "Vous conduisez une camionnette de 3200 kg dans une zone ZC21. Pouvez-vous circuler dans chaque rue de la zone?",
+        "question": "La masse réelle en charge de votre camionnette est de 3 200 kg. Ce signal interdit-il l'accès ?",
         "choices": [
           {
-            "text": "Oui, votre camionnette pèse moins de 3500 kg et est donc en dehors de l'interdiction de ZC21",
+            "text": "Non, 3 200 kg ne dépasse pas les 3 500 kg affichés",
             "is_correct": true
           },
           {
-            "text": "Non, tous les véhicules de plus de 1000 kg sont interdits dans une zone ZC21",
+            "text": "Oui, toute camionnette est visée par C21",
             "is_correct": false
           },
           {
-            "text": "Non, vous devez avoir une dérogation pour chaque rue de la zone",
+            "text": "Oui, seul le nombre d'essieux compte",
             "is_correct": false
           }
         ],
-        "explanation": "ZC21 ne s'applique qu'aux véhicules dont la masse dépasse 3500 kg. Une camionnette de 3200 kg n'est pas concernée par cette interdiction."
+        "explanation": "Cette réponse concerne uniquement le seuil C21 affiché; d'autres restrictions peuvent encore s'appliquer."
       },
       "AR": {
-        "question": "تقود شاحنة صغيرة بوزن 3200 كغ داخل منطقة ZC21. هل يجوز لك السير في أي شارع بالمنطقة؟",
+        "question": "الكتلة الفعلية المحمّلة لشاحنتك الصغيرة 3200 كغ. هل تحظر العلامة الدخول؟",
         "choices": [
           {
-            "text": "نعم، وزن شاحنتك أقل من 3500 كغ وهي بذلك خارج نطاق حظر ZC21",
+            "text": "لا، 3200 كغ لا تتجاوز 3500 كغ المبينة",
             "is_correct": true
           },
           {
-            "text": "لا، جميع المركبات أثقل من 1000 كغ محظورة في منطقة ZC21",
+            "text": "نعم، تشمل C21 كل شاحنة صغيرة",
             "is_correct": false
           },
           {
-            "text": "لا، يجب أن يكون لديك إعفاء لكل شارع في المنطقة",
+            "text": "نعم، عدد المحاور وحده هو المهم",
             "is_correct": false
           }
         ],
-        "explanation": "ZC21 تسري فقط على المركبات ذات الكتلة التي تتجاوز 3500 كغ. الشاحنة الصغيرة بوزن 3200 كغ خارج نطاق هذا الحظر."
+        "explanation": "تتعلق الإجابة بحد C21 المعروض فقط، وقد تبقى قيود أخرى سارية."
       }
     }
   },
@@ -412,76 +412,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U rijdt in een ZC21-zone. Geldt de massabeperking alleen op de hoofdweg of ook op de zijstraten?",
+        "question": "Waar geldt de grens van 3.500 kg massa in beladen toestand?",
         "choices": [
           {
-            "text": "Op alle straten in de zone, ook de zijstraten, want ZC21 geldt in de gehele zone",
+            "text": "Op de openbare wegen binnen de afgebakende zone tot het eindezonebord",
             "is_correct": true
           },
           {
-            "text": "Alleen op de hoofdweg waar het bord ZC21 staat",
+            "text": "Alleen precies bij het beginbord",
             "is_correct": false
           },
           {
-            "text": "Alleen op straten die met een extra bord zijn aangeduid",
+            "text": "Alleen op de eerste hoofdweg",
             "is_correct": false
           }
         ],
-        "explanation": "De kracht van een zonebord zoals ZC21 is dat het op elke weg binnen de zone van toepassing is, niet alleen op de weg waar het bord staat."
+        "explanation": "Zonale geldigheid strekt de C21-regel uit over de afgebakende zone."
       },
       "EN": {
-        "question": "You are driving in a ZC21 zone. Does the mass restriction apply only on the main road or also on side streets?",
+        "question": "Where does the 3,500 kg laden-mass threshold apply?",
         "choices": [
           {
-            "text": "On all streets in the zone, including side streets, because ZC21 applies throughout the entire zone",
+            "text": "On the public roads within the delimited zone until the end-of-zone sign",
             "is_correct": true
           },
           {
-            "text": "Only on the main road where the ZC21 sign is placed",
+            "text": "Only at the exact position of the entry sign",
             "is_correct": false
           },
           {
-            "text": "Only on streets indicated by an additional sign",
+            "text": "Only on the first main road",
             "is_correct": false
           }
         ],
-        "explanation": "The power of a zone sign like ZC21 is that it applies to every road within the zone, not only the road where the sign is placed."
+        "explanation": "Zonal validity extends the C21 rule across the delimited zone."
       },
       "FR": {
-        "question": "Vous circulez dans une zone ZC21. La restriction de masse s'applique-t-elle uniquement sur la route principale ou aussi dans les rues latérales?",
+        "question": "Où s'applique le seuil de 3 500 kg de masse en charge ?",
         "choices": [
           {
-            "text": "Sur toutes les rues de la zone, y compris les rues latérales, car ZC21 s'applique dans toute la zone",
+            "text": "Sur les voies publiques de la zone délimitée jusqu'au signal de fin",
             "is_correct": true
           },
           {
-            "text": "Uniquement sur la route principale où se trouve le panneau ZC21",
+            "text": "Uniquement à l'emplacement exact du signal d'entrée",
             "is_correct": false
           },
           {
-            "text": "Uniquement sur les rues indiquées par un panneau supplémentaire",
+            "text": "Uniquement sur la première route principale",
             "is_correct": false
           }
         ],
-        "explanation": "La force d'un panneau de zone comme ZC21 est qu'il s'applique à toutes les routes de la zone, pas seulement à celle où il est placé."
+        "explanation": "La validité zonale étend la règle C21 à la zone délimitée."
       },
       "AR": {
-        "question": "أنت تسير في منطقة ZC21. هل تسري قيود الكتلة على الطريق الرئيسي فقط أم أيضاً على الشوارع الجانبية؟",
+        "question": "أين يسري حد 3500 كغ للكتلة في حالة التحميل؟",
         "choices": [
           {
-            "text": "على جميع شوارع المنطقة بما فيها الجانبية، لأن ZC21 تسري في كامل المنطقة",
+            "text": "على الطرق العامة داخل المنطقة المحددة حتى علامة النهاية",
             "is_correct": true
           },
           {
-            "text": "فقط على الطريق الرئيسي حيث تقع علامة ZC21",
+            "text": "عند موضع علامة البداية فقط",
             "is_correct": false
           },
           {
-            "text": "فقط على الشوارع المحددة بعلامة إضافية",
+            "text": "على الطريق الرئيسي الأول فقط",
             "is_correct": false
           }
         ],
-        "explanation": "قوة علامة المنطقة مثل ZC21 أنها تسري على كل طريق داخل المنطقة، وليس فقط على الطريق الذي تقع فيه العلامة."
+        "explanation": "يمدد النطاق المناطقي قاعدة C21 إلى كامل المنطقة المحددة."
       }
     }
   },
@@ -493,60 +493,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Een voertuig weegt precies 3500 kg. Geldt het verbod van ZC21 voor dit voertuig?",
+        "question": "De massa in beladen toestand is precies 3.500 kg. Verbiedt dit bord de toegang?",
         "choices": [
           {
-            "text": "Neen, ZC21 verbiedt voertuigen met een massa die strikt meer dan 3500 kg bedraagt; 3500 kg exact is toegestaan",
+            "text": "Neen, de aangeduide massa moet worden overschreden",
             "is_correct": true
           },
           {
-            "text": "Ja, ZC21 geldt voor alle voertuigen vanaf 3500 kg",
+            "text": "Ja, precies 3.500 kg is al hoger dan 3.500 kg",
             "is_correct": false
           }
         ],
-        "explanation": "De wettelijke formulering is 'meer dan 3500 kg'. Een voertuig dat exact 3500 kg weegt overschrijdt die grens niet en mag de zone in."
+        "explanation": "De wettelijke formulering is 'hoger dan'. Precies 3.500 kg valt niet onder dit specifieke verbod, al kunnen andere beperkingen gelden."
       },
       "EN": {
-        "question": "A vehicle weighs exactly 3500 kg. Does the ZC21 prohibition apply to this vehicle?",
+        "question": "The laden mass is exactly 3,500 kg. Does this sign prohibit entry?",
         "choices": [
           {
-            "text": "No, ZC21 prohibits vehicles with a mass strictly exceeding 3500 kg; exactly 3500 kg is permitted",
+            "text": "No, the indicated mass must be exceeded",
             "is_correct": true
           },
           {
-            "text": "Yes, ZC21 applies to all vehicles from 3500 kg onwards",
+            "text": "Yes, exactly 3,500 kg is already greater than 3,500 kg",
             "is_correct": false
           }
         ],
-        "explanation": "The legal wording is 'more than 3500 kg'. A vehicle weighing exactly 3500 kg does not exceed that limit and may enter the zone."
+        "explanation": "The statutory wording is 'greater than'. Exactly 3,500 kg is outside this specific prohibition, although other restrictions may apply."
       },
       "FR": {
-        "question": "Un véhicule pèse exactement 3500 kg. L'interdiction ZC21 s'applique-t-elle à ce véhicule?",
+        "question": "La masse en charge est exactement de 3 500 kg. Ce signal interdit-il l'accès ?",
         "choices": [
           {
-            "text": "Non, ZC21 interdit les véhicules dont la masse dépasse strictement 3500 kg; exactement 3500 kg est autorisé",
+            "text": "Non, la masse indiquée doit être dépassée",
             "is_correct": true
           },
           {
-            "text": "Oui, ZC21 s'applique à tous les véhicules à partir de 3500 kg",
+            "text": "Oui, exactement 3 500 kg est déjà supérieur à 3 500 kg",
             "is_correct": false
           }
         ],
-        "explanation": "Le libellé légal est 'plus de 3500 kg'. Un véhicule pesant exactement 3500 kg ne dépasse pas cette limite et peut entrer dans la zone."
+        "explanation": "Le texte légal dit « supérieure à ». Une masse exacte de 3 500 kg n'est pas visée par cette interdiction précise, même si d'autres restrictions peuvent s'appliquer."
       },
       "AR": {
-        "question": "مركبة تزن بالضبط 3500 كغ. هل يسري عليها حظر ZC21؟",
+        "question": "الكتلة في حالة التحميل 3500 كغ تمامًا. هل تحظر العلامة الدخول؟",
         "choices": [
           {
-            "text": "لا، ZC21 تحظر المركبات ذات الكتلة التي تتجاوز 3500 كغ بصرامة؛ الكتلة بالضبط 3500 كغ مسموح بها",
+            "text": "لا، يجب أن تتجاوز الكتلة الحد المبين",
             "is_correct": true
           },
           {
-            "text": "نعم، ZC21 تسري على جميع المركبات من 3500 كغ فما فوق",
+            "text": "نعم، فـ3500 كغ تمامًا أكبر من 3500 كغ",
             "is_correct": false
           }
         ],
-        "explanation": "الصياغة القانونية هي 'أكثر من 3500 كغ'. المركبة ذات الوزن بالضبط 3500 كغ لا تتجاوز هذا الحد ويجوز لها دخول المنطقة."
+        "explanation": "النص القانوني يقول «أعلى من». لذلك لا يشمل هذا الحظر المحدد كتلة 3500 كغ تمامًا، مع احتمال سريان قيود أخرى."
       }
     }
   },
@@ -558,60 +558,60 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "U reed de ZC21-zone in voor u het beginbord opmerkte. Is dit alsnog een overtreding?",
+        "question": "De MTM van uw voertuig is 4.000 kg, maar de werkelijke massa in beladen toestand is 3.300 kg. Valt het op basis van dit bord onder het verbod?",
         "choices": [
           {
-            "text": "Ja, de zoneregel geldt in de gehele zone en rijden in de zone is verboden ongeacht wanneer u het bord hebt opgemerkt",
+            "text": "Neen, C21 beoordeelt hier de massa in beladen toestand",
             "is_correct": true
           },
           {
-            "text": "Neen, omdat u al in de zone was voor u het bord zag, kunt u de overtreding niet vermijden",
+            "text": "Ja, C21 gebruikt altijd de maximaal toegelaten massa",
             "is_correct": false
           }
         ],
-        "explanation": "Het feit dat u het bord niet tijdig hebt gezien, ontslaat u niet van de wettelijke verplichting. De zone is juridisch van kracht zodra u de grens overschrijdt."
+        "explanation": "Verwar de massa in beladen toestand van C21 niet met de maximaal toegelaten massa die andere borden of opschriften kunnen gebruiken."
       },
       "EN": {
-        "question": "You entered the ZC21 zone before noticing the entry sign. Does this still constitute a violation?",
+        "question": "Your vehicle's maximum authorised mass is 4,000 kg, but its actual laden mass is 3,300 kg. Is it prohibited by this sign?",
         "choices": [
           {
-            "text": "Yes, the zone rule applies throughout the entire zone and driving in the zone is prohibited regardless of when you noticed the sign",
+            "text": "No, C21 assesses the laden mass here",
             "is_correct": true
           },
           {
-            "text": "No, because you were already in the zone before you saw the sign you cannot be expected to avoid the violation",
+            "text": "Yes, C21 always uses maximum authorised mass",
             "is_correct": false
           }
         ],
-        "explanation": "The fact that you did not see the sign in time does not release you from the legal obligation. The zone is legally in force as soon as you cross its boundary."
+        "explanation": "Do not confuse C21's laden mass with maximum authorised mass, which other signs or wording may use."
       },
       "FR": {
-        "question": "Vous êtes entré dans la zone ZC21 avant de remarquer le panneau de début. Cela constitue-t-il quand même une infraction?",
+        "question": "La masse maximale autorisée de votre véhicule est de 4 000 kg, mais sa masse réelle en charge est de 3 300 kg. Ce signal l'interdit-il ?",
         "choices": [
           {
-            "text": "Oui, la règle de zone s'applique dans toute la zone et circuler dans la zone est interdit quel que soit le moment où vous avez remarqué le panneau",
+            "text": "Non, C21 prend ici en compte la masse en charge",
             "is_correct": true
           },
           {
-            "text": "Non, puisque vous étiez déjà dans la zone avant de voir le panneau, il ne peut pas vous être demandé d'éviter l'infraction",
+            "text": "Oui, C21 utilise toujours la masse maximale autorisée",
             "is_correct": false
           }
         ],
-        "explanation": "Le fait de ne pas avoir vu le panneau à temps ne vous libère pas de l'obligation légale. La zone est juridiquement en vigueur dès que vous en franchissez la limite."
+        "explanation": "Ne confondez pas la masse en charge de C21 avec la masse maximale autorisée que d'autres signaux ou inscriptions peuvent utiliser."
       },
       "AR": {
-        "question": "دخلت منطقة ZC21 قبل أن تلاحظ علامة البداية. هل يُعدّ هذا مخالفة؟",
+        "question": "الكتلة القصوى المسموح بها لمركبتك 4000 كغ، لكن كتلتها الفعلية المحمّلة 3300 كغ. هل تحظرها هذه العلامة؟",
         "choices": [
           {
-            "text": "نعم، تسري قاعدة المنطقة في كاملها والسير فيها محظور بغض النظر عن وقت ملاحظة العلامة",
+            "text": "لا، فـC21 تعتمد هنا الكتلة في حالة التحميل",
             "is_correct": true
           },
           {
-            "text": "لا، لأنك كنت بالفعل داخل المنطقة قبل رؤية العلامة فلا يُتوقع منك تجنب المخالفة",
+            "text": "نعم، فـC21 تستخدم دائمًا الكتلة القصوى المسموح بها",
             "is_correct": false
           }
         ],
-        "explanation": "عدم رؤيتك للعلامة في الوقت المناسب لا يعفيك من الالتزام القانوني. المنطقة سارية قانونياً فور تجاوزك حدودها."
+        "explanation": "لا تخلط بين الكتلة في حالة التحميل في C21 والكتلة القصوى المسموح بها التي قد تستخدمها علامات أو كتابات أخرى."
       }
     }
   }

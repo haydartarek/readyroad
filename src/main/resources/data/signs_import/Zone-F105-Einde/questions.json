@@ -10,73 +10,73 @@
         "question": "Wat betekent dit verkeersbord?",
         "choices": [
           {
-            "text": "Het einde van een voetgangerszone; vanaf hier gelden de speciale regels niet meer",
+            "text": "Einde van een voetgangerszone",
             "is_correct": true
           },
           {
-            "text": "Het begin van een nieuwe voetgangerszone",
+            "text": "Waarschuwing voor tijdelijke wegenwerken",
             "is_correct": false
           },
           {
-            "text": "Een verbod op rijden in beide richtingen",
+            "text": "Verplichte rijrichting zonder zonale werking",
             "is_correct": false
           }
         ],
-        "explanation": "Dit bord markeert het einde van een voetgangerszone. Alle bijzondere regels die binnen de zone golden, inclusief de uitzonderingen voor laden en lossen en voor fietsers, vervallen vanaf dit bord."
+        "explanation": "F105 beëindigt de voetgangerszone en de bijzondere regels die daarbinnen golden."
       },
       "EN": {
         "question": "What does this traffic sign mean?",
         "choices": [
           {
-            "text": "The end of a pedestrian zone; the special rules no longer apply from here",
+            "text": "End of a pedestrian zone",
             "is_correct": true
           },
           {
-            "text": "The beginning of a new pedestrian zone",
+            "text": "Warning of temporary roadworks",
             "is_correct": false
           },
           {
-            "text": "A prohibition on driving in both directions",
+            "text": "Mandatory direction without zonal validity",
             "is_correct": false
           }
         ],
-        "explanation": "This sign marks the end of a pedestrian zone. All special rules that applied within the zone, including the exceptions for loading and unloading and for cyclists, cease from this sign."
+        "explanation": "F105 ends the pedestrian zone and the special rules that applied within it."
       },
       "FR": {
         "question": "Que signifie ce panneau de signalisation?",
         "choices": [
           {
-            "text": "La fin d'une zone piétonne; les règles spéciales ne s'appliquent plus à partir d'ici",
+            "text": "Fin d'une zone piétonne",
             "is_correct": true
           },
           {
-            "text": "Le début d'une nouvelle zone piétonne",
+            "text": "Avertissement de travaux routiers temporaires",
             "is_correct": false
           },
           {
-            "text": "Une interdiction de circuler dans les deux sens",
+            "text": "Direction obligatoire sans validité zonale",
             "is_correct": false
           }
         ],
-        "explanation": "Ce panneau marque la fin d'une zone piétonne. Toutes les règles spéciales qui s'appliquaient dans la zone, y compris les exceptions pour le chargement et le déchargement et pour les cyclistes, cessent à partir de ce panneau."
+        "explanation": "F105 met fin à la zone piétonne et aux règles particulières qui s'y appliquaient."
       },
       "AR": {
         "question": "ما معنى هذه العلامة المرورية؟",
         "choices": [
           {
-            "text": "نهاية منطقة المشاة؛ القواعد الخاصة لا تسري بعد الآن من هذه النقطة",
+            "text": "نهاية منطقة مشاة",
             "is_correct": true
           },
           {
-            "text": "بداية منطقة مشاة جديدة",
+            "text": "تحذير من أعمال طريق مؤقتة",
             "is_correct": false
           },
           {
-            "text": "حظر السير في كلا الاتجاهين",
+            "text": "اتجاه إلزامي بلا نطاق مناطقي",
             "is_correct": false
           }
         ],
-        "explanation": "تحدد هذه العلامة نهاية منطقة المشاة. تنتهي جميع القواعد الخاصة التي كانت سارية داخل المنطقة بما فيها استثناءات التحميل والتفريغ ومرور الدراجات عند هذه العلامة."
+        "explanation": "تنهي F105 منطقة المشاة والقواعد الخاصة التي كانت تسري داخلها."
       }
     }
   },
@@ -88,76 +88,76 @@
     "show_sign": true,
     "i18n": {
       "NL": {
-        "question": "Tot welke categorie behoort dit eindbord van een voetgangerszone?",
+        "question": "Tot welk soort signalisatie behoort dit bord?",
         "choices": [
           {
-            "text": "Zoneborden",
+            "text": "Signalisatie met zonale geldigheid",
             "is_correct": true
           },
           {
-            "text": "Verbodsborden",
+            "text": "Een gevaarsbord zonder zonale werking",
             "is_correct": false
           },
           {
-            "text": "Gebodsborden",
+            "text": "Een wegmarkering",
             "is_correct": false
           }
         ],
-        "explanation": "Dit is een zonebord. Zoneborden regelen de in- en uitgang van een volledig afgebakend gebied met eigen verkeersregels."
+        "explanation": "Het bord bakent het begin of einde van een zone af. De betrokken regel geldt binnen de grenzen van die zone."
       },
       "EN": {
-        "question": "To which category does this end-of-pedestrian-zone sign belong?",
+        "question": "What kind of signing is this?",
         "choices": [
           {
-            "text": "Zone signs",
+            "text": "Signing with zonal validity",
             "is_correct": true
           },
           {
-            "text": "Prohibition signs",
+            "text": "A warning sign without zonal effect",
             "is_correct": false
           },
           {
-            "text": "Mandatory signs",
+            "text": "A road marking",
             "is_correct": false
           }
         ],
-        "explanation": "This is a zone sign. Zone signs regulate the entry and exit of a fully defined area with its own traffic rules."
+        "explanation": "The sign marks the beginning or end of a zone. The relevant rule applies within that zone's boundaries."
       },
       "FR": {
-        "question": "À quelle catégorie appartient ce panneau de fin de zone piétonne?",
+        "question": "À quel type de signalisation ce panneau appartient-il ?",
         "choices": [
           {
-            "text": "Panneaux de zone",
+            "text": "Signalisation à validité zonale",
             "is_correct": true
           },
           {
-            "text": "Panneaux d'interdiction",
+            "text": "Un signal de danger sans effet zonal",
             "is_correct": false
           },
           {
-            "text": "Panneaux d'obligation",
+            "text": "Un marquage routier",
             "is_correct": false
           }
         ],
-        "explanation": "C'est un panneau de zone. Les panneaux de zone régulent l'entrée et la sortie d'une zone entièrement délimitée avec ses propres règles de circulation."
+        "explanation": "Le signal délimite le début ou la fin d'une zone. La règle concernée s'applique dans les limites de cette zone."
       },
       "AR": {
-        "question": "إلى أي فئة تنتمي علامة نهاية منطقة المشاة؟",
+        "question": "إلى أي نوع من الإشارات تنتمي هذه العلامة؟",
         "choices": [
           {
-            "text": "علامات المنطقة",
+            "text": "إشارة ذات نطاق مناطقي",
             "is_correct": true
           },
           {
-            "text": "علامات الحظر",
+            "text": "علامة خطر بلا أثر مناطقي",
             "is_correct": false
           },
           {
-            "text": "علامات الإلزام",
+            "text": "علامة طريق مرسومة",
             "is_correct": false
           }
         ],
-        "explanation": "هذه علامة منطقة. تُنظِّم علامات المنطقة دخول وخروج منطقة محددة بأكملها ذات قواعد مرور خاصة."
+        "explanation": "تحدد العلامة بداية منطقة أو نهايتها، وتسري القاعدة المعنية داخل حدود تلك المنطقة."
       }
     }
   },
