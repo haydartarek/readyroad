@@ -286,7 +286,7 @@ public class QuizService {
             return Collections.emptyList();
         }
 
-        List<QuizQuestion> questions = quizQuestionRepository.findAllByIdWithOptions(allIds);
+        List<QuizQuestion> questions = quizQuestionRepository.findAllByIdWithOptionsAndCategory(allIds);
 
         // Filter out questions whose options are placeholder / corrupted content
         List<QuizQuestion> validQuestions = questions.stream()

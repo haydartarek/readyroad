@@ -113,6 +113,21 @@ class RandomQuizEndpointTest {
         assertThat(ids).hasSize(2);
     }
 
+    @Test
+    void theoryExamReturnsMappedCategoriesAndOptionsAfterTheServiceTransactionCloses() throws Exception {
+        mockMvc.perform(get("/api/quiz/theory-exam")
+                        .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.length()").value(3))
+                .andExpect(jsonPath("$[*].categoryCode")
+                        .value(org.hamcrest.Matchers.everyItem(org.hamcrest.Matchers.equalTo("RANDOM"))))
+                .andExpect(jsonPath("$[*].categoryNameEn")
+                        .value(org.hamcrest.Matchers.everyItem(
+                                org.hamcrest.Matchers.equalTo("Random quiz category"))))
+                .andExpect(jsonPath("$[*].options.length()")
+                        .value(org.hamcrest.Matchers.everyItem(org.hamcrest.Matchers.equalTo(3))));
+    }
+
     private Category createCategory() {
         Category category = new Category();
         category.setCode("RANDOM");

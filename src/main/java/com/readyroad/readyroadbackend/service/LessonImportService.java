@@ -17,6 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 /**
@@ -125,21 +126,23 @@ public class LessonImportService {
 
             try {
                 if (dryRun) {
-                    boolean exists = lessonRepository.existsByLessonCode(lessonCode);
-                    String action = exists ? "UPDATED" : "CREATED";
-                    items.add(new LessonImportItem(lessonCode, titleEn, action, "Preview"));
-                    if (exists)
+                    ImportAction action = previewAction(node, lessonCode, i);
+                    items.add(new LessonImportItem(lessonCode, titleEn, action.name(), "Preview"));
+                    if (action == ImportAction.CREATED)
+                        created++;
+                    else if (action == ImportAction.UPDATED)
                         updated++;
                     else
-                        created++;
+                        skipped++;
                 } else {
-                    boolean isNew = upsertLesson(node, lessonCode, i);
-                    String action = isNew ? "CREATED" : "UPDATED";
-                    items.add(new LessonImportItem(lessonCode, titleEn, action, "OK"));
-                    if (isNew)
+                    ImportAction action = upsertLesson(node, lessonCode, i);
+                    items.add(new LessonImportItem(lessonCode, titleEn, action.name(), "OK"));
+                    if (action == ImportAction.CREATED)
                         created++;
-                    else
+                    else if (action == ImportAction.UPDATED)
                         updated++;
+                    else
+                        skipped++;
                 }
             } catch (Exception e) {
                 log.error("Error importing lesson {} at index {}", lessonCode, i, e);
@@ -158,11 +161,44 @@ public class LessonImportService {
     // Upsert a single lesson + its pages
     // ═══════════════════════════════════════════════════════════
 
-    private boolean upsertLesson(JsonNode node, String lessonCode, int index) {
+    private ImportAction previewAction(JsonNode node, String lessonCode, int index) {
+        Optional<Lesson> existing = lessonRepository.findByLessonCode(lessonCode);
+        if (existing.isEmpty()) {
+            return ImportAction.CREATED;
+        }
+        return matchesCanonicalLesson(existing.get(), buildCanonicalLesson(node, lessonCode, index))
+                ? ImportAction.SKIPPED
+                : ImportAction.UPDATED;
+    }
+
+    private ImportAction upsertLesson(JsonNode node, String lessonCode, int index) {
         Optional<Lesson> existing = lessonRepository.findByLessonCode(lessonCode);
         boolean isNew = existing.isEmpty();
+        Lesson canonical = buildCanonicalLesson(node, lessonCode, index);
+
+        if (!isNew && matchesCanonicalLesson(existing.get(), canonical)) {
+            return ImportAction.SKIPPED;
+        }
 
         Lesson lesson = existing.orElseGet(Lesson::new);
+        copyLessonFields(canonical, lesson);
+
+        // Clear and rebuild pages
+        lesson.clearPages();
+        lesson = lessonRepository.saveAndFlush(lesson);
+
+        for (LessonPage canonicalPage : canonical.getPages()) {
+            lesson.addPage(copyPage(canonicalPage));
+        }
+        if (!canonical.getPages().isEmpty()) {
+            lessonRepository.saveAndFlush(lesson);
+        }
+
+        return isNew ? ImportAction.CREATED : ImportAction.UPDATED;
+    }
+
+    private Lesson buildCanonicalLesson(JsonNode node, String lessonCode, int index) {
+        Lesson lesson = new Lesson();
         lesson.setLessonCode(lessonCode);
         lesson.setTitleNl(textOr(node, "title_nl", textOr(node, "title", "")));
         lesson.setTitleEn(textOr(node, "title_en", textOr(node, "title", "")));
@@ -176,15 +212,9 @@ public class LessonImportService {
         lesson.setDisplayOrder(index + 1);
         lesson.setIsActive(true);
 
-        // Calculate estimated minutes from pages
         JsonNode pagesNode = node.path("pages");
         int pageCount = pagesNode.isArray() ? pagesNode.size() : 0;
         lesson.setEstimatedMinutes(Math.max(5, pageCount * 3));
-
-        // Clear and rebuild pages
-        lesson.clearPages();
-        lesson = lessonRepository.saveAndFlush(lesson);
-
         if (pagesNode.isArray()) {
             for (int p = 0; p < pagesNode.size(); p++) {
                 JsonNode pageNode = pagesNode.get(p);
@@ -204,10 +234,90 @@ public class LessonImportService {
                 page.setBulletPointsAr(jsonArrayToString(pageNode, "bulletPoints_ar", "bulletPoints"));
                 lesson.addPage(page);
             }
-            lessonRepository.saveAndFlush(lesson);
+        }
+        return lesson;
+    }
+
+    private void copyLessonFields(Lesson source, Lesson target) {
+        target.setLessonCode(source.getLessonCode());
+        target.setTitleNl(source.getTitleNl());
+        target.setTitleEn(source.getTitleEn());
+        target.setTitleFr(source.getTitleFr());
+        target.setTitleAr(source.getTitleAr());
+        target.setDescriptionNl(source.getDescriptionNl());
+        target.setDescriptionEn(source.getDescriptionEn());
+        target.setDescriptionFr(source.getDescriptionFr());
+        target.setDescriptionAr(source.getDescriptionAr());
+        target.setIcon(source.getIcon());
+        target.setDisplayOrder(source.getDisplayOrder());
+        target.setEstimatedMinutes(source.getEstimatedMinutes());
+        target.setIsActive(source.getIsActive());
+    }
+
+    private LessonPage copyPage(LessonPage source) {
+        LessonPage target = new LessonPage();
+        target.setPageNumber(source.getPageNumber());
+        target.setTitleNl(source.getTitleNl());
+        target.setTitleEn(source.getTitleEn());
+        target.setTitleFr(source.getTitleFr());
+        target.setTitleAr(source.getTitleAr());
+        target.setContentNl(source.getContentNl());
+        target.setContentEn(source.getContentEn());
+        target.setContentFr(source.getContentFr());
+        target.setContentAr(source.getContentAr());
+        target.setBulletPointsNl(source.getBulletPointsNl());
+        target.setBulletPointsEn(source.getBulletPointsEn());
+        target.setBulletPointsFr(source.getBulletPointsFr());
+        target.setBulletPointsAr(source.getBulletPointsAr());
+        return target;
+    }
+
+    private boolean matchesCanonicalLesson(Lesson existing, Lesson canonical) {
+        if (!Objects.equals(existing.getLessonCode(), canonical.getLessonCode())
+                || !Objects.equals(existing.getTitleNl(), canonical.getTitleNl())
+                || !Objects.equals(existing.getTitleEn(), canonical.getTitleEn())
+                || !Objects.equals(existing.getTitleFr(), canonical.getTitleFr())
+                || !Objects.equals(existing.getTitleAr(), canonical.getTitleAr())
+                || !Objects.equals(existing.getDescriptionNl(), canonical.getDescriptionNl())
+                || !Objects.equals(existing.getDescriptionEn(), canonical.getDescriptionEn())
+                || !Objects.equals(existing.getDescriptionFr(), canonical.getDescriptionFr())
+                || !Objects.equals(existing.getDescriptionAr(), canonical.getDescriptionAr())
+                || !Objects.equals(existing.getIcon(), canonical.getIcon())
+                || !Objects.equals(existing.getDisplayOrder(), canonical.getDisplayOrder())
+                || !Objects.equals(existing.getEstimatedMinutes(), canonical.getEstimatedMinutes())
+                || !Objects.equals(existing.getIsActive(), canonical.getIsActive())
+                || existing.getPages().size() != canonical.getPages().size()) {
+            return false;
         }
 
-        return isNew;
+        for (int index = 0; index < existing.getPages().size(); index++) {
+            if (!matchesCanonicalPage(existing.getPages().get(index), canonical.getPages().get(index))) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private boolean matchesCanonicalPage(LessonPage existing, LessonPage canonical) {
+        return Objects.equals(existing.getPageNumber(), canonical.getPageNumber())
+                && Objects.equals(existing.getTitleNl(), canonical.getTitleNl())
+                && Objects.equals(existing.getTitleEn(), canonical.getTitleEn())
+                && Objects.equals(existing.getTitleFr(), canonical.getTitleFr())
+                && Objects.equals(existing.getTitleAr(), canonical.getTitleAr())
+                && Objects.equals(existing.getContentNl(), canonical.getContentNl())
+                && Objects.equals(existing.getContentEn(), canonical.getContentEn())
+                && Objects.equals(existing.getContentFr(), canonical.getContentFr())
+                && Objects.equals(existing.getContentAr(), canonical.getContentAr())
+                && Objects.equals(existing.getBulletPointsNl(), canonical.getBulletPointsNl())
+                && Objects.equals(existing.getBulletPointsEn(), canonical.getBulletPointsEn())
+                && Objects.equals(existing.getBulletPointsFr(), canonical.getBulletPointsFr())
+                && Objects.equals(existing.getBulletPointsAr(), canonical.getBulletPointsAr());
+    }
+
+    private enum ImportAction {
+        CREATED,
+        UPDATED,
+        SKIPPED
     }
 
     // ═══════════════════════════════════════════════════════════

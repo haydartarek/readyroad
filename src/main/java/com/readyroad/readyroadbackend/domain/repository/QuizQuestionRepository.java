@@ -45,22 +45,9 @@ public interface QuizQuestionRepository extends JpaRepository<QuizQuestion, Long
                         QuizQuestion.DifficultyLevel difficultyLevel);
 
         /**
-         * Get random questions with options loaded (EAGER fetch)
-         * Step 2: Fetch full questions with options by IDs
-         * Uses @EntityGraph for reliable eager loading
-         *
-         * @param ids List of question IDs to fetch
-         * @return List of questions with options eagerly loaded
-         */
-        @EntityGraph(attributePaths = { "options" })
-        @Query("SELECT qq FROM QuizQuestion qq WHERE qq.id IN :ids")
-        List<QuizQuestion> findAllByIdWithOptions(@Param("ids") List<Long> ids);
-
-        /**
-         * Theory exam answer check: fetch questions with options AND category eagerly
-         * loaded.
-         * Used by checkTheoryExamAnswers to avoid lazy-loading issues on category
-         * fields.
+         * Fetch questions with every association required by response and result
+         * mapping. Used by all ID-based quiz delivery paths so mapping remains safe
+         * after the service transaction closes.
          *
          * @param ids List of question IDs
          * @return Questions with options and category loaded
