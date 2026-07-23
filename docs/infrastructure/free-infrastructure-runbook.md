@@ -23,13 +23,14 @@ explicit owner approval.
 ## Current Release Baseline
 
 ```text
-Backend repository:
+Backend runtime:
   Branch: feature/postgresql-supabase
   Commit: e778d013c70ff8944d431a66a94d59e6e0f8e2bd
+  Note: later documentation-only commits do not require a Render deployment
 
 Frontend/mobile repository:
   Branch: feature/postgresql-supabase
-  Commit: 8bf419a110681ab5fb34b31955c1e07ce85de109
+  Commit: 8764dc696ea520cf4b37f7a59f51112a21f78360
 
 Frontend URL:
   https://readyroad-frontend-haydar.vercel.app
@@ -42,8 +43,10 @@ Backend health:
 ```
 
 The two worktrees were clean and synchronized with their remote branches on
-2026-07-23. Backend, web, mobile and Docker GitHub Actions checks passed for the
-commits above.
+2026-07-23. Backend verification passed for the deployed runtime commit. Web
+and Docker GitHub Actions checks passed for the frontend commit above; the
+latest mobile check remained green because these web-only changes did not
+trigger or modify the mobile application.
 
 ## Limitation Classification
 
@@ -214,4 +217,3 @@ Secret rotation and Git history cleanup
 ```
 
 Their deferral does not authorize bypasses or temporary secret storage in Git.
-

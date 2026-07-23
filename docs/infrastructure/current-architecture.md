@@ -147,10 +147,11 @@ should be observed after launch. Optimizing the API is outside this milestone.
   deployment using an immutable image tag.
 - Recommended future release tags are `vX.Y.Z` and the Git commit SHA. Production
   must not rely on `latest` alone.
-- Backend commit `e778d013c70ff8944d431a66a94d59e6e0f8e2bd` and
-  frontend/mobile commit `8bf419a110681ab5fb34b31955c1e07ce85de109`
-  are pushed on `feature/postgresql-supabase`, with clean synchronized
-  worktrees and passing GitHub Actions as observed on 2026-07-23.
+- Backend runtime commit `e778d013c70ff8944d431a66a94d59e6e0f8e2bd` and
+  frontend/mobile commit `8764dc696ea520cf4b37f7a59f51112a21f78360`
+  are the verified application baseline on `feature/postgresql-supabase`.
+  Later backend documentation-only commits do not require a Render deployment.
+  Both worktrees were clean and synchronized after validation.
 - Render is live on backend commit `e778d01`. Its deployment completed with
   successful canonical reconciliation and zero importer errors.
 - An initial Vercel deployment of frontend commit `8bf419a` failed during
@@ -160,6 +161,9 @@ should be observed after launch. Optimizing the API is outside this milestone.
   `readyroad-frontend-haydar-4q4e25ee6.vercel.app`; the public Vercel alias was
   updated successfully. The initial failure is classified as an infrastructure
   limitation.
+- Frontend commit `8764dc6` subsequently passed the complete Web CI pipeline
+  and became Ready at `readyroad-frontend-haydar-56hhtd9ua.vercel.app`. It owns
+  the public Vercel alias and includes the RTL desktop navigation overflow fix.
 - Free-infrastructure operation, validation and rollback are defined in
   `free-infrastructure-runbook.md`.
 
