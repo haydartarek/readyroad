@@ -1,7 +1,7 @@
 # ReadyRoad Current Production Architecture
 
-Last reviewed: 2026-07-22
-Status: Gate A planning baseline
+Last reviewed: 2026-07-23
+Status: Active free-infrastructure development baseline
 
 ## Scope
 
@@ -29,7 +29,7 @@ GitHub repositories --> source of release artifacts
 
 | Service | Current provider/plan | Region | Purpose | Runtime and limits | Persistence/backups | Known limitations | Cost |
 |---|---|---|---|---|---|---|---|
-| Frontend | Vercel, plan not authenticated during this audit; public behavior is consistent with Hobby | Provider-managed | Next.js web application | Next.js 16.2.10, server-rendered routes and middleware | Git-backed deployments; provider logs/retention depend on plan | Account plan and quota consumption were not available through an authenticated API | Not measured |
+| Frontend | Vercel Free | Provider-managed | Next.js web application | Next.js 16.2.10, server-rendered routes and middleware | Git-backed deployments; provider logs/retention depend on plan | Free-plan quotas and provider deployment delays | USD 0/month |
 | Backend | Render Free | Frankfurt | Spring Boot API | 0.1 CPU, 512 MB RAM; sleeps after inactivity | Ephemeral filesystem; no production-grade persistent application storage | Cold starts, SMTP ports blocked, 512 MB memory pressure, free tier is not intended for production | USD 0/month |
 | Database | Supabase Free PostgreSQL | eu-west-1 configuration | PostgreSQL schema `readyroad` | PostgreSQL 17.6; direct limit observed as 60 connections; application pool max 5 | Free tier has no managed automatic backup guarantee suitable for production | Free projects may pause; backup and log retention are limited | USD 0/month |
 | CI/CD | GitHub Actions | Provider-managed | Backend, web, mobile and release checks | Maven, Node, Playwright, Flutter and Docker builds | Workflow logs/artifacts according to GitHub plan | No protected production deployment job or immutable production image flow | Current account cost not measured |
@@ -62,6 +62,7 @@ level guarantees.
 | 1 CPU / 1 GiB Spring startup | 30.988 seconds |
 | 1 CPU / 1 GiB steady memory | 414.4 MiB, 40.47 percent |
 | Render cold request | Timed out after 120 seconds during one wake-up observation |
+| Render Free deployment on 2026-07-23 | Spring startup 245.901 seconds; canonical quiz reconciliation about 244 seconds; deployment live about 10 minutes after build start |
 | Render warm health | 143-255 ms |
 | Render warm traffic signs | 5.6-6.2 seconds, 511,381 bytes |
 | Render warm random quiz | 366-723 ms, about 14.4 KB |
@@ -146,11 +147,21 @@ should be observed after launch. Optimizing the API is outside this milestone.
   deployment using an immutable image tag.
 - Recommended future release tags are `vX.Y.Z` and the Git commit SHA. Production
   must not rely on `latest` alone.
-- The backend and frontend/mobile local branches contain work newer than the
-  latest observed remote CI runs.
-- The frontend/mobile worktree mixes changes from several completed milestones.
-  It cannot be truthfully isolated as a Milestone 8-only commit without a
-  deliberate release-baseline review.
+- Backend commit `e778d013c70ff8944d431a66a94d59e6e0f8e2bd` and
+  frontend/mobile commit `8bf419a110681ab5fb34b31955c1e07ce85de109`
+  are pushed on `feature/postgresql-supabase`, with clean synchronized
+  worktrees and passing GitHub Actions as observed on 2026-07-23.
+- Render is live on backend commit `e778d01`. Its deployment completed with
+  successful canonical reconciliation and zero importer errors.
+- An initial Vercel deployment of frontend commit `8bf419a` failed during
+  static generation because its sleeping Render dependency did not respond
+  within the build timeout. After Render was warm, the same deployment was
+  rebuilt without a source or environment change and became Ready at
+  `readyroad-frontend-haydar-4q4e25ee6.vercel.app`; the public Vercel alias was
+  updated successfully. The initial failure is classified as an infrastructure
+  limitation.
+- Free-infrastructure operation, validation and rollback are defined in
+  `free-infrastructure-runbook.md`.
 
 ## Current Security Posture
 
