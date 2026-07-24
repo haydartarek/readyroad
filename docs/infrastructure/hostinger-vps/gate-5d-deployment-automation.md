@@ -222,3 +222,30 @@ If automated rollback itself fails, stop. Do not retry deployment. Use the
 Gate 5C configuration backup, recorded image IDs, rollback state file, and the
 last healthy release directory to diagnose and recover without modifying
 Supabase.
+
+## Validation record
+
+Validation completed on 2026-07-24 against these immutable inputs:
+
+```text
+Backend commit: c86255dae7700b79c6eb75fcc1d13079c0592c77
+Frontend commit: 1ae36cc7525514d430609a9a30901f071242abab
+Production release: 20260724-g5d-c86255d-1ae36cc
+```
+
+- Bash syntax, ShellCheck, Compose validation, and retention tests: passed.
+- Deployment and rollback dry-runs: passed without production changes.
+- Controlled post-activation failure: automatic rollback passed in 197 seconds.
+- Successful immutable deployment: passed in 210 seconds.
+- Production smoke suite: 11 of 11 checks passed.
+- Deployment and rollback manifests: complete, read-only, and secret-free.
+- Docker image IDs: verified before activation and preserved after reboot.
+- VPS reboot recovery: Docker, Caddy, Frontend, Backend, monitoring, backup,
+  certificates, release symlink, and production health passed.
+- Supabase: unchanged. Gate 5C backup and manual restore verification remain
+  active; deployment does not restore or migrate the database.
+- Container restart counts after deployment and reboot: zero.
+- Unexpected public ports: zero; application ports remain loopback-only.
+- Sensitive values found in deployment logs and manifests: zero.
+- Backend `mvn clean test`, `mvn verify`, and `mvn package -DskipTests`: passed.
+- Production regression detected by the smoke suite: zero.
