@@ -1,0 +1,158 @@
+name: Production Uptime
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+    inputs:
+      simulation:
+        description: Safe alert-path validation
+        required: true
+        default: none
+        type: choice
+        options:
+          - none
+          - failure
+          - recovery
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: readyroad-production-uptime
+  cancel-in-progress: false
+
+jobs:
+  monitor:
+    name: Check production endpoints
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    env:
+      INCIDENT_TITLE: "[monitoring] ReadyRoad production outage"
+    steps:
+      - name: Check public endpoints
+        id: checks
+        shell: bash
+        env:
+          SIMULATION: ${{ inputs.simulation || 'none' }}
+        run: |
+          set -u
+
+          work_dir="$(mktemp -d)"
+          trap 'rm -rf "$work_dir"' EXIT
+          failures=()
+
+          check_http() {
+            local name="$1"
+            local url="$2"
+            local body_file="${work_dir}/${name}.body"
+            local code
+
+            code="$(curl \
+              --silent \
+              --show-error \
+              --location \
+              --max-time 20 \
+              --output "$body_file" \
+              --write-out '%{http_code}' \
+              "$url" 2>/dev/null || true)"
+
+            if [[ "$code" != "200" ]]; then
+              failures+=("${name}: expected HTTP 200, received ${code:-request failure}")
+              return
+            fi
+
+            if [[ "$name" == "backend" ]] &&
+              ! jq -e '.status == "UP"' "$body_file" >/dev/null 2>&1; then
+              failures+=("backend: HTTP 200 response did not report status UP")
+            fi
+          }
+
+          check_http "frontend" "https://readyroad.be"
+          check_http "backend" "https://api.readyroad.be/actuator/health"
+          check_http "robots" "https://readyroad.be/robots.txt"
+          check_http "sitemap" "https://readyroad.be/sitemap.xml"
+
+          if [[ "$SIMULATION" == "failure" ]]; then
+            failures+=("simulation: controlled alert-path test")
+          fi
+
+          {
+            echo "## ReadyRoad production uptime"
+            echo
+            echo "Checked at: $(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+            echo
+          } >"${work_dir}/summary.md"
+
+          if (( ${#failures[@]} > 0 )); then
+            echo "state=down" >>"$GITHUB_OUTPUT"
+            {
+              echo "Status: DOWN"
+              echo
+              printf -- "- %s\n" "${failures[@]}"
+            } >>"${work_dir}/summary.md"
+          else
+            echo "state=up" >>"$GITHUB_OUTPUT"
+            echo "Status: UP" >>"${work_dir}/summary.md"
+          fi
+
+          cat "${work_dir}/summary.md" >>"$GITHUB_STEP_SUMMARY"
+          cp "${work_dir}/summary.md" /tmp/readyroad-uptime-summary.md
+
+      - name: Create or update incident
+        if: steps.checks.outputs.state == 'down'
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+
+          issue_number="$(gh issue list \
+            --repo "$GITHUB_REPOSITORY" \
+            --state open \
+            --search "$INCIDENT_TITLE in:title" \
+            --json number \
+            --jq '.[0].number // empty')"
+
+          if [[ -z "$issue_number" ]]; then
+            gh issue create \
+              --repo "$GITHUB_REPOSITORY" \
+              --title "$INCIDENT_TITLE" \
+              --body-file /tmp/readyroad-uptime-summary.md
+          else
+            gh issue comment \
+              "$issue_number" \
+              --repo "$GITHUB_REPOSITORY" \
+              --body-file /tmp/readyroad-uptime-summary.md
+          fi
+
+      - name: Close recovered incident
+        if: steps.checks.outputs.state == 'up'
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+
+          issue_number="$(gh issue list \
+            --repo "$GITHUB_REPOSITORY" \
+            --state open \
+            --search "$INCIDENT_TITLE in:title" \
+            --json number \
+            --jq '.[0].number // empty')"
+
+          if [[ -n "$issue_number" ]]; then
+            gh issue comment \
+              "$issue_number" \
+              --repo "$GITHUB_REPOSITORY" \
+              --body "Recovery verified at $(date -u +'%Y-%m-%dT%H:%M:%SZ'). All monitored endpoints are healthy."
+            gh issue close "$issue_number" \
+              --repo "$GITHUB_REPOSITORY" \
+              --reason completed
+          fi
+
+      - name: Fail workflow when production is down
+        if: steps.checks.outputs.state == 'down'
+        shell: bash
+        run: exit 1

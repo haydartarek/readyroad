@@ -1,0 +1,13 @@
+[Unit]
+Description=Run ReadyRoad production monitor every five minutes
+
+[Timer]
+OnBootSec=2min
+OnUnitActiveSec=5min
+AccuracySec=15s
+RandomizedDelaySec=30s
+Persistent=true
+Unit=readyroad-monitor.service
+
+[Install]
+WantedBy=timers.target

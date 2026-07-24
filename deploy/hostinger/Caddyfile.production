@@ -1,0 +1,47 @@
+(safe_defaults) {
+	encode zstd gzip
+
+	header {
+		-Server
+		Strict-Transport-Security "max-age=31536000; includeSubDomains"
+		X-Content-Type-Options "nosniff"
+		X-Frame-Options "SAMEORIGIN"
+		Referrer-Policy "strict-origin-when-cross-origin"
+		Permissions-Policy "camera=(), microphone=(), geolocation=()"
+		X-XSS-Protection "0"
+	}
+
+	log {
+		output stdout
+		format filter {
+			request>uri query {
+				replace token REDACTED
+				replace code REDACTED
+				replace state REDACTED
+				replace access_token REDACTED
+				replace refresh_token REDACTED
+				replace id_token REDACTED
+				replace api_key REDACTED
+				replace apikey REDACTED
+				replace secret REDACTED
+				replace password REDACTED
+			}
+			wrap json
+		}
+	}
+}
+
+readyroad.be {
+	import safe_defaults
+	reverse_proxy frontend:3000
+}
+
+api.readyroad.be {
+	import safe_defaults
+	reverse_proxy backend:8890
+}
+
+www.readyroad.be {
+	import safe_defaults
+	redir https://readyroad.be{uri} 308
+}
