@@ -743,11 +743,72 @@ public class SignQuizService {
          */
         @Transactional(readOnly = true)
         public List<SignUserProgressDto> getAllUserProgress(Long userId) {
+                Map<Long, PracticeProgressSummary> practiceBySignId = sessionRepo
+                                .findProgressSummariesByUserId(userId)
+                                .stream()
+                                .collect(Collectors.toMap(
+                                                row -> numberAsLong(row[0]),
+                                                row -> new PracticeProgressSummary(
+                                                                numberAsLong(row[1]) > 0,
+                                                                numberAsLong(row[2]) > 0,
+                                                                nullableNumberAsDouble(row[3]))));
+                Map<String, ExamProgressSummary> examBySignCode = signExamResultRepo
+                                .findProgressSummariesByUserId(userId)
+                                .stream()
+                                .collect(Collectors.toMap(
+                                                row -> (String) row[0],
+                                                row -> new ExamProgressSummary(
+                                                                numberAsLong(row[1]) > 0,
+                                                                numberAsLong(row[2]) > 0,
+                                                                nullableNumberAsDouble(row[3]),
+                                                                ((Number) row[1]).intValue())));
+                Map<Long, ExamProgressConfig> examConfigBySignId = examRepo
+                                .findActiveExamOneProgressConfigs()
+                                .stream()
+                                .collect(Collectors.toMap(
+                                                row -> numberAsLong(row[0]),
+                                                row -> new ExamProgressConfig(
+                                                                ((Number) row[1]).intValue(),
+                                                                ((Number) row[2]).intValue())));
+
                 return roadSignRepo.findAllByIsActiveTrueOrderBySignCodeAsc()
                                 .stream()
                                 .filter(canonicalSignCatalogService::isPubliclyAllowed)
-                                .map(sign -> buildProgressDto(sign, userId))
+                                .map(sign -> buildProgressDto(
+                                                sign,
+                                                practiceBySignId.get(sign.getId()),
+                                                examBySignCode.get(sign.getSignCode()),
+                                                examConfigBySignId.get(sign.getId())))
                                 .toList();
+        }
+
+        private SignUserProgressDto buildProgressDto(
+                        RoadSign sign,
+                        PracticeProgressSummary practice,
+                        ExamProgressSummary exam,
+                        ExamProgressConfig examConfig) {
+                String code = sign.getSignCode();
+                String routeCode = canonicalSignCatalogService.routeCodeFor(sign);
+
+                return new SignUserProgressDto(
+                                sign.getId(),
+                                code,
+                                routeCode,
+                                sign.getCategory(),
+                                sign.getImagePath(),
+                                sign.getNameNl(),
+                                sign.getNameEn(),
+                                sign.getNameFr(),
+                                sign.getNameAr(),
+                                practice != null && practice.started(),
+                                practice != null && practice.completed(),
+                                practice != null ? practice.bestScorePct() : null,
+                                exam != null && exam.attempted(),
+                                exam != null && exam.passed(),
+                                exam != null ? exam.bestScorePct() : null,
+                                exam != null ? exam.attempts() : 0,
+                                examConfig != null ? examConfig.totalQuestions() : null,
+                                examConfig != null ? examConfig.passingScore() : null);
         }
 
         private SignUserProgressDto buildProgressDto(RoadSign sign, Long userId) {
@@ -791,6 +852,32 @@ public class SignQuizService {
                                 examAttempts,
                                 exam1Config.map(SignExam::getTotalQuestions).orElse(null),
                                 exam1Config.map(SignExam::getPassingScore).orElse(null));
+        }
+
+        private static long numberAsLong(Object value) {
+                return ((Number) value).longValue();
+        }
+
+        private static Double nullableNumberAsDouble(Object value) {
+                return value == null ? null : ((Number) value).doubleValue();
+        }
+
+        private record PracticeProgressSummary(
+                        boolean started,
+                        boolean completed,
+                        Double bestScorePct) {
+        }
+
+        private record ExamProgressSummary(
+                        boolean attempted,
+                        boolean passed,
+                        Double bestScorePct,
+                        int attempts) {
+        }
+
+        private record ExamProgressConfig(
+                        int totalQuestions,
+                        int passingScore) {
         }
 
         private SignExamResultDto buildStoredSignExamResultDto(

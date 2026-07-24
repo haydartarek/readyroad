@@ -41,5 +41,26 @@ public interface SignPracticeSessionRepository extends JpaRepository<SignPractic
            nativeQuery = true)
     Double findBestScorePctByUserIdAndSignId(@Param("userId") Long userId,
                                              @Param("signId") Long signId);
-}
 
+    /**
+     * One aggregate row per sign for the all-sign progress endpoint.
+     *
+     * Columns: sign_id, started_count, completed_count, best_score_pct.
+     * The score expression intentionally matches
+     * {@link #findBestScorePctByUserIdAndSignId(Long, Long)}.
+     */
+    @Query(value = """
+            SELECT sign_id,
+                   COUNT(*) AS started_count,
+                   SUM(CASE WHEN status = 'COMPLETED' THEN 1 ELSE 0 END) AS completed_count,
+                   MAX(CASE
+                           WHEN status = 'COMPLETED'
+                           THEN correct_count / NULLIF(total_questions, 0) * 100
+                           ELSE NULL
+                       END) AS best_score_pct
+            FROM sign_practice_sessions
+            WHERE user_id = :userId
+            GROUP BY sign_id
+            """, nativeQuery = true)
+    List<Object[]> findProgressSummariesByUserId(@Param("userId") Long userId);
+}

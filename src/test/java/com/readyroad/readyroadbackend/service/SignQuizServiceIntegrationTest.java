@@ -5,6 +5,7 @@ import com.readyroad.readyroadbackend.domain.entity.SignChoice;
 import com.readyroad.readyroadbackend.domain.entity.SignExam;
 import com.readyroad.readyroadbackend.domain.entity.SignExamQuestion;
 import com.readyroad.readyroadbackend.domain.entity.SignExamResult;
+import com.readyroad.readyroadbackend.domain.entity.SignPracticeSession;
 import com.readyroad.readyroadbackend.domain.entity.SignRandomPracticeSession;
 import com.readyroad.readyroadbackend.domain.entity.SignQuestion;
 import com.readyroad.readyroadbackend.domain.entity.User;
@@ -17,6 +18,8 @@ import com.readyroad.readyroadbackend.domain.enums.SignQuestionType;
 import com.readyroad.readyroadbackend.domain.repository.NotificationRepository;
 import com.readyroad.readyroadbackend.domain.repository.RoadSignRepository;
 import com.readyroad.readyroadbackend.domain.repository.SignExamResultRepository;
+import com.readyroad.readyroadbackend.domain.repository.SignExamRepository;
+import com.readyroad.readyroadbackend.domain.repository.SignPracticeSessionRepository;
 import com.readyroad.readyroadbackend.domain.repository.SignQuestionRepository;
 import com.readyroad.readyroadbackend.domain.repository.SignRandomPracticeQuestionRepository;
 import com.readyroad.readyroadbackend.domain.repository.SignRandomPracticeSessionRepository;
@@ -31,8 +34,11 @@ import com.readyroad.readyroadbackend.dto.sign.SignQuizQuestionDto;
 import com.readyroad.readyroadbackend.dto.sign.SignRandomPracticeAnswerRequest;
 import com.readyroad.readyroadbackend.dto.sign.SignRandomPracticeResultDto;
 import com.readyroad.readyroadbackend.dto.sign.SignRandomPracticeSessionDto;
+import com.readyroad.readyroadbackend.dto.sign.SignUserProgressDto;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
+import org.hibernate.SessionFactory;
+import org.hibernate.stat.Statistics;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -70,6 +76,12 @@ class SignQuizServiceIntegrationTest {
 
         @Autowired
         private SignExamResultRepository signExamResultRepository;
+
+        @Autowired
+        private SignExamRepository signExamRepository;
+
+        @Autowired
+        private SignPracticeSessionRepository signPracticeSessionRepository;
 
         @Autowired
         private SignQuestionRepository signQuestionRepository;
@@ -229,6 +241,64 @@ class SignQuizServiceIntegrationTest {
                                         assertThat(question.getSign().getSignCode()).isNotBlank();
                                         assertThat(question.getDeliverableChoices()).isNotEmpty();
                                 });
+        }
+
+        @Test
+        @DisplayName("All-sign progress preserves single-sign semantics with a bounded query count")
+        void allUserProgressPreservesSemanticsWithBoundedQueryCount() {
+                List<CanonicalSignCatalogService.CanonicalSignSeed> seeds = canonicalSignCatalogService
+                                .getCanonicalSeeds();
+                assertThat(seeds).hasSize(184);
+
+                List<RoadSign> signs = seeds.stream()
+                                .map(this::ensureCanonicalSignWithExam)
+                                .toList();
+                User user = createUser("sign-progress-performance");
+                RoadSign targetSign = signs.get(0);
+
+                SignPracticeSession inProgress = createPracticeSession(
+                                user,
+                                targetSign,
+                                SignPracticeSession.SessionStatus.IN_PROGRESS,
+                                8,
+                                3);
+                SignPracticeSession completed = createPracticeSession(
+                                user,
+                                targetSign,
+                                SignPracticeSession.SessionStatus.COMPLETED,
+                                8,
+                                5);
+                signPracticeSessionRepository.saveAllAndFlush(List.of(inProgress, completed));
+
+                SignExamResult failedAttempt = createSignExamResult(user, targetSign, 50.0, false);
+                SignExamResult passedAttempt = createSignExamResult(user, targetSign, 75.0, true);
+                signExamResultRepository.saveAllAndFlush(List.of(failedAttempt, passedAttempt));
+
+                entityManager.clear();
+                SignUserProgressDto expected = signQuizService.getUserSignProgress(
+                                targetSign.getSignCode(),
+                                user.getId());
+
+                entityManager.clear();
+                Statistics statistics = entityManagerFactory.unwrap(SessionFactory.class).getStatistics();
+                boolean statisticsWereEnabled = statistics.isStatisticsEnabled();
+                statistics.setStatisticsEnabled(true);
+                statistics.clear();
+
+                try {
+                        List<SignUserProgressDto> progress = signQuizService.getAllUserProgress(user.getId());
+
+                        assertThat(progress).hasSize(184);
+                        assertThat(progress)
+                                        .filteredOn(item -> item.signCode().equals(targetSign.getSignCode()))
+                                        .singleElement()
+                                        .isEqualTo(expected);
+                        assertThat(statistics.getPrepareStatementCount())
+                                        .as("all-sign progress SQL statement count")
+                                        .isEqualTo(4);
+                } finally {
+                        statistics.setStatisticsEnabled(statisticsWereEnabled);
+                }
         }
 
         @Test
@@ -519,6 +589,62 @@ class SignQuizServiceIntegrationTest {
                 sign.setDescriptionAr(seed.descriptionAr());
                 sign.setIsActive(true);
                 return roadSignRepository.saveAndFlush(sign);
+        }
+
+        private RoadSign ensureCanonicalSignWithExam(CanonicalSignCatalogService.CanonicalSignSeed seed) {
+                RoadSign sign = roadSignRepository.findByNormalizedSignCode(seed.routeKey())
+                                .orElseGet(() -> createCanonicalSign(seed));
+
+                signExamRepository.findBySignIdAndExamNumberAndIsActiveTrue(sign.getId(), 1)
+                                .orElseGet(() -> {
+                                        SignExam exam = new SignExam();
+                                        exam.setSign(sign);
+                                        exam.setExamNumber(1);
+                                        exam.setPassingScore(6);
+                                        exam.setTotalQuestions(8);
+                                        exam.setEasyCount(3);
+                                        exam.setMediumCount(3);
+                                        exam.setHardCount(2);
+                                        exam.setIsActive(true);
+                                        return signExamRepository.saveAndFlush(exam);
+                                });
+                return sign;
+        }
+
+        private SignPracticeSession createPracticeSession(
+                        User user,
+                        RoadSign sign,
+                        SignPracticeSession.SessionStatus status,
+                        int totalQuestions,
+                        int correctCount) {
+                SignPracticeSession session = new SignPracticeSession();
+                session.setUser(user);
+                session.setSign(sign);
+                session.setSignCode(sign.getSignCode());
+                session.setStatus(status);
+                session.setTotalQuestions(totalQuestions);
+                session.setCorrectCount(correctCount);
+                return session;
+        }
+
+        private SignExamResult createSignExamResult(
+                        User user,
+                        RoadSign sign,
+                        double scorePct,
+                        boolean passed) {
+                SignExamResult result = new SignExamResult();
+                result.setUserId(user.getId());
+                result.setSignId(sign.getId());
+                result.setSignCode(sign.getSignCode());
+                result.setExamNumber(1);
+                result.setTotalQuestions(8);
+                result.setAnsweredCount(8);
+                result.setCorrectCount((int) Math.round(scorePct * 8 / 100));
+                result.setRequiredToPass(6);
+                result.setScorePct(scorePct);
+                result.setPassed(passed);
+                result.setQuestionResultsJson("[]");
+                return result;
         }
 
         private SignChoice createChoice(String textNl, String textEn, String textFr, String textAr, boolean isCorrect,

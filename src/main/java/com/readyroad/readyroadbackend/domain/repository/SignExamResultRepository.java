@@ -48,4 +48,20 @@ public interface SignExamResultRepository extends JpaRepository<SignExamResult, 
 
         /** One stored sign-exam result owned by the given user. */
         Optional<SignExamResult> findByIdAndUserId(Long id, Long userId);
+
+        /**
+         * One aggregate row per sign for the all-sign progress endpoint.
+         *
+         * Columns: sign_code, attempt_count, passed_count, best_score_pct.
+         */
+        @Query(value = """
+                        SELECT sign_code,
+                               COUNT(*) AS attempt_count,
+                               SUM(CASE WHEN passed = TRUE THEN 1 ELSE 0 END) AS passed_count,
+                               MAX(score_pct) AS best_score_pct
+                        FROM sign_exam_results
+                        WHERE user_id = :userId
+                        GROUP BY sign_code
+                        """, nativeQuery = true)
+        List<Object[]> findProgressSummariesByUserId(@Param("userId") Long userId);
 }
