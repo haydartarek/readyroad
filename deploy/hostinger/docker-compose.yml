@@ -1,0 +1,173 @@
+name: readyroad
+
+services:
+  caddy:
+    image: caddy:2.11.4-alpine
+    container_name: readyroad-caddy
+    restart: unless-stopped
+    init: true
+    depends_on:
+      backend:
+        condition: service_healthy
+      frontend:
+        condition: service_healthy
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - readyroad-caddy-data:/data
+      - readyroad-caddy-config:/config
+    networks:
+      - readyroad-network
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "wget",
+          "--quiet",
+          "--tries=1",
+          "--spider",
+          "http://127.0.0.1:2019/config/",
+        ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 15s
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    cap_add:
+      - NET_BIND_SERVICE
+    mem_limit: 256m
+    mem_reservation: 64m
+    cpus: 0.25
+    pids_limit: 128
+    stop_grace_period: 20s
+    labels:
+      com.readyroad.project: readyroad
+      com.readyroad.environment: production-validation
+      com.readyroad.component: reverse-proxy
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    image: readyroad-backend:${BACKEND_IMAGE_TAG:?BACKEND_IMAGE_TAG must be set}
+    container_name: readyroad-backend
+    restart: unless-stopped
+    init: true
+    env_file:
+      - .env.production
+    environment:
+      SPRING_PROFILES_ACTIVE: secure,postgresql
+      PORT: "8890"
+      READYROAD_SIGNS_IMPORT_PATH: /app/data/signs_import
+      JAVA_OPTS: >-
+        -Xms256m -Xmx1536m
+        -XX:+UseContainerSupport
+        -XX:+UseSerialGC
+        -XX:+ExitOnOutOfMemoryError
+      TZ: UTC
+    ports:
+      - "127.0.0.1:8890:8890"
+    volumes:
+      - readyroad-backend-logs:/app/logs
+      - readyroad-uploads:/app/public/images/quiz
+    networks:
+      - readyroad-network
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "wget",
+          "--no-verbose",
+          "--tries=1",
+          "--spider",
+          "http://localhost:8890/actuator/health",
+        ]
+      interval: 30s
+      timeout: 10s
+      retries: 10
+      start_period: 300s
+    security_opt:
+      - no-new-privileges:true
+    tmpfs:
+      - /tmp:size=128m,mode=1777
+    mem_limit: 2304m
+    mem_reservation: 768m
+    cpus: 1.25
+    pids_limit: 512
+    stop_grace_period: 45s
+    labels:
+      com.readyroad.project: readyroad
+      com.readyroad.environment: production-validation
+      com.readyroad.component: backend
+
+  frontend:
+    build:
+      context: ./frontend/web_app
+      dockerfile: Dockerfile
+      args:
+        BACKEND_URL: http://backend:8890/api
+        NEXT_PUBLIC_API_BASE_URL: http://backend:8890/api
+        NEXT_PUBLIC_APP_URL: ${NEXT_PUBLIC_APP_URL:-https://readyroad.be}
+    image: readyroad-frontend:${FRONTEND_IMAGE_TAG:?FRONTEND_IMAGE_TAG must be set}
+    container_name: readyroad-frontend
+    restart: unless-stopped
+    init: true
+    depends_on:
+      backend:
+        condition: service_healthy
+    environment:
+      BACKEND_URL: http://backend:8890/api
+      NEXT_PUBLIC_API_BASE_URL: http://backend:8890/api
+      NEXT_PUBLIC_APP_URL: ${NEXT_PUBLIC_APP_URL:-https://readyroad.be}
+      FRONTEND_URL: ${FRONTEND_URL:-https://readyroad.be}
+      GOOGLE_OAUTH_CLIENT_ID: ${GOOGLE_OAUTH_CLIENT_ID:-}
+      NODE_ENV: production
+      TZ: UTC
+    ports:
+      - "127.0.0.1:3000:3000"
+    networks:
+      - readyroad-network
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "--silent", "http://localhost:3000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 90s
+    security_opt:
+      - no-new-privileges:true
+    tmpfs:
+      - /tmp:size=64m,mode=1777
+    mem_limit: 1024m
+    mem_reservation: 256m
+    cpus: 0.75
+    pids_limit: 256
+    stop_grace_period: 30s
+    labels:
+      com.readyroad.project: readyroad
+      com.readyroad.environment: production-validation
+      com.readyroad.component: frontend
+
+networks:
+  readyroad-network:
+    external: true
+    name: readyroad-network
+
+volumes:
+  readyroad-backend-logs:
+    external: true
+    name: readyroad-backend-logs
+  readyroad-uploads:
+    external: true
+    name: readyroad-uploads
+  readyroad-caddy-data:
+    external: true
+    name: readyroad-caddy-data
+  readyroad-caddy-config:
+    external: true
+    name: readyroad-caddy-config
