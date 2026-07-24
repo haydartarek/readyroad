@@ -1,0 +1,12 @@
+[Unit]
+Description=Run ReadyRoad encrypted production backup daily
+
+[Timer]
+OnCalendar=*-*-* 02:15:00 UTC
+RandomizedDelaySec=30min
+Persistent=true
+AccuracySec=1min
+Unit=readyroad-backup.service
+
+[Install]
+WantedBy=timers.target

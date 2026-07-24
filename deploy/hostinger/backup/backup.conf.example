@@ -1,0 +1,13 @@
+# Public, non-secret backup configuration.
+BACKUP_ROOT=/var/lib/docker/volumes/readyroad-backups/_data
+BACKUP_STATE_DIR=/var/lib/readyroad-backup/state
+AGE_RECIPIENT_FILE=/etc/readyroad-backup/age-recipient.txt
+DATABASE_ENV_FILE=/etc/readyroad-backup/database.env
+DATABASE_SCHEMA=readyroad
+POSTGRES_CLIENT_IMAGE=postgres@sha256:742f40ea20b9ff2ff31db5458d127452988a2164df9e17441e191f3b72252193
+
+DAILY_RETENTION=7
+WEEKLY_RETENTION=4
+MONTHLY_RETENTION=3
+WEEKLY_CONFIG_RETENTION=4
+DEPLOYMENT_CONFIG_RETENTION=5

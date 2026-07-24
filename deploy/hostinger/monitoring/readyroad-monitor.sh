@@ -14,6 +14,9 @@ readonly SSL_CRITICAL_DAYS="${SSL_CRITICAL_DAYS:-14}"
 readonly FIVE_XX_WARNING="${FIVE_XX_WARNING:-3}"
 readonly LOG_BYTES_WARNING="${LOG_BYTES_WARNING:-524288000}"
 readonly SUSTAINED_CHECKS="${SUSTAINED_CHECKS:-3}"
+readonly BACKUP_STATE_DIR="${BACKUP_STATE_DIR:-/var/lib/readyroad-backup/state}"
+readonly BACKUP_MAX_AGE_SECONDS="${BACKUP_MAX_AGE_SECONDS:-93600}"
+readonly RESTORE_MAX_AGE_SECONDS="${RESTORE_MAX_AGE_SECONDS:-3024000}"
 readonly SIMULATION="${1:-none}"
 readonly EXPECTED_CONTAINERS=(
   readyroad-caddy
@@ -258,8 +261,7 @@ sensitive_log_count="$(
   } |
     grep -Ei \
       'authorization.*(bearer|basic)|password=|jwt_secret|smtp_password|client_secret|postgres(ql)?://[^ ]+:[^ ]+@|[?&](token|code|state|access_token|refresh_token|id_token|api_key|apikey|secret|password)=' |
-    grep -Eiv 'REDACTED' |
-    wc -l |
+    grep -Eivc 'REDACTED' |
     tr -d ' '
 )"
 [[ "$sensitive_log_count" =~ ^[0-9]+$ ]] || sensitive_log_count=0
@@ -319,6 +321,50 @@ if ! fail2ban-client status sshd >/dev/null 2>&1; then
   alert WARNING security_service "fail2ban_sshd=unavailable"
 fi
 
+backup_last_success="$(read_counter "${BACKUP_STATE_DIR}/last-success")"
+backup_last_failure="$(read_counter "${BACKUP_STATE_DIR}/last-failure")"
+restore_last_success="$(read_counter "${BACKUP_STATE_DIR}/last-restore-success")"
+current_epoch="$(date +%s)"
+
+if (( backup_last_failure > backup_last_success )); then
+  alert CRITICAL backup_failure \
+    "last_failure=${backup_last_failure} last_success=${backup_last_success}"
+fi
+
+if (( backup_last_success == 0 )); then
+  alert WARNING backup_stale "status=never_completed"
+elif (( current_epoch - backup_last_success > BACKUP_MAX_AGE_SECONDS )); then
+  alert WARNING backup_stale \
+    "age_seconds=$((current_epoch - backup_last_success)) threshold=${BACKUP_MAX_AGE_SECONDS}"
+fi
+
+latest_backup_file="${BACKUP_STATE_DIR}/latest-backup"
+if [[ -r "$latest_backup_file" ]]; then
+  read -r latest_backup <"$latest_backup_file" || latest_backup=""
+  if [[ -z "$latest_backup" || ! -s "$latest_backup" ]]; then
+    alert CRITICAL backup_missing "latest_path_valid=false"
+  elif [[ ! -s "${latest_backup}.sha256" ]] ||
+    ! (
+      cd "$(dirname "$latest_backup")" &&
+        sha256sum --check --status "$(basename "${latest_backup}.sha256")"
+    ); then
+    alert CRITICAL backup_checksum "status=failed"
+  fi
+else
+  alert WARNING backup_missing "state_file=missing"
+fi
+
+if systemctl is-failed --quiet readyroad-backup.service; then
+  alert CRITICAL backup_timer "service=failed"
+fi
+
+if (( restore_last_success == 0 )); then
+  alert WARNING restore_overdue "status=never_verified"
+elif (( current_epoch - restore_last_success > RESTORE_MAX_AGE_SECONDS )); then
+  alert WARNING restore_overdue \
+    "age_seconds=$((current_epoch - restore_last_success)) threshold=${RESTORE_MAX_AGE_SECONDS}"
+fi
+
 unexpected_public_ports="$(
   ss -H -lntu |
     awk '$5 ~ /^0\.0\.0\.0:/ || $5 ~ /^\[::\]:/ {
@@ -336,7 +382,7 @@ fi
 
 if [[ "$SIMULATION" != "none" ]]; then
   case "$SIMULATION" in
-    container|disk|ssl|5xx|security)
+    container|disk|ssl|5xx|security|backup)
       alert WARNING simulated_alert "type=${SIMULATION}"
       ;;
     *)
