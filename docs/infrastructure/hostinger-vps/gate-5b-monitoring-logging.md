@@ -232,6 +232,32 @@ The failure opens or updates the incident and the recovery closes it.
 No rollback action is required for simulations. The production state is not
 changed.
 
+### Validation results
+
+| Test | Result |
+| --- | --- |
+| Normal external run | Passed; four endpoints healthy |
+| Simulated external failure | Passed; incident #1 created |
+| Simulated external recovery | Passed; incident #1 closed |
+| End-to-end failure alert time | About 85 seconds in the observed GitHub run |
+| Recovery workflow execution | 6 seconds |
+| Container simulation | Delivered immediately to journald |
+| Disk simulation | Delivered immediately to journald |
+| SSL simulation | Delivered immediately to journald |
+| 5xx simulation | Delivered immediately to journald |
+| Security simulation | Delivered immediately to journald |
+| Local simulation entries | Five of five present |
+| Caddy literal sensitive probe | Zero occurrences |
+| Caddy redaction marker | Three corresponding occurrences |
+| Local monitor healthy run | `alerts=0`, service result success |
+| Local scheduled run | Passed automatically with `alerts=0` |
+| Gate 5A Backend CI | Tests, verify, package, and Docker build passed |
+| Authenticated user progress | Five HTTP 200 responses; 277 ms average |
+| User progress response consistency | One unique SHA-256 response hash |
+| Admin authorization | Authenticated 200; anonymous 401 |
+| Production browser console | Zero console or page errors on four public pages |
+| Production public smoke | Home, login, signs, lessons, robots, sitemap, health, and quiz passed |
+
 ## Operational Commands
 
 ### Current resources
