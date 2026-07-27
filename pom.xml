@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>4.0.1</version>
+        <version>4.0.6</version>
         <relativePath/>
     </parent>
     <groupId>com.readyroad</groupId>
@@ -31,6 +31,10 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <mockito.version>5.20.0</mockito.version>
+        <tomcat.version>11.0.22</tomcat.version>
+        <postgresql.version>42.7.12</postgresql.version>
+        <jackson-2-bom.version>2.21.4</jackson-2-bom.version>
+        <jackson-bom.version>3.1.4</jackson-bom.version>
     </properties>
     <dependencies>
         <dependency>
