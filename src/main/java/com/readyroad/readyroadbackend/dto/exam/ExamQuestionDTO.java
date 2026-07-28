@@ -28,6 +28,8 @@ public class ExamQuestionDTO {
 
     private String questionTextFr;
 
+    private String imageUrl;
+
     private String difficultyLevel;
 
     private String categoryName;

@@ -49,6 +49,7 @@ public class ExamMapper {
                 .questionTextAr(roadSignReferenceTextResolver.resolveAr(question.getQuestionAr()))
                 .questionTextNl(roadSignReferenceTextResolver.resolveNl(question.getQuestionNl()))
                 .questionTextFr(roadSignReferenceTextResolver.resolveFr(question.getQuestionFr()))
+                .imageUrl(question.getContentImageUrl())
                 .difficultyLevel(question.getDifficultyLevel().name())
                 .categoryName(question.getCategory() != null ? question.getCategory().getNameEn() : null)
                 .options(question.getOptions() != null ? shuffled(question.getDeliverableOptions().stream()
