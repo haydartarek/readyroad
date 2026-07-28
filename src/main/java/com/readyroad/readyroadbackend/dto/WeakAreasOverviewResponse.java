@@ -36,5 +36,5 @@ public class WeakAreasOverviewResponse {
      * Provided here so the frontend does not have to approximate it from the
      * weak-areas subset.
      */
-    private double overallAccuracy;
+    private Double overallAccuracy;
 }

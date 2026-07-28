@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 /**
@@ -39,9 +40,65 @@ public class ErrorPatternResponse {
     private String description;
 
     /**
+     * Severity derived from frequency and share of the user's complete history.
+     */
+    private String severity;
+
+    /**
+     * Number of different questions/sign references involved in this pattern.
+     */
+    private Integer uniqueQuestions;
+
+    private LocalDateTime firstOccurredAt;
+    private LocalDateTime lastOccurredAt;
+
+    /**
+     * Stable frontend translation key for the personalized recommendation.
+     */
+    private String recommendationKey;
+
+    /**
+     * Makes the analytical scope explicit to clients.
+     */
+    private String sourceScope;
+
+    /**
+     * Complete-history breakdowns that explain where a pattern occurs.
+     */
+    private List<ErrorGroupDTO> groups;
+
+    /**
      * List of example questions where user made this type of error
      */
     private List<ExampleQuestionDTO> exampleQuestions;
+
+    @Data
+    @Builder
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public static class ErrorGroupDTO {
+
+        /**
+         * CATEGORY, TRAFFIC_SIGN_FAMILY, LEGAL_CONCEPT, or
+         * REPEATED_MISCONCEPTION.
+         */
+        private String groupType;
+
+        /**
+         * Stable category, sign-family, or error-concept identifier.
+         */
+        private String code;
+
+        private String nameEn;
+        private String nameAr;
+        private String nameNl;
+        private String nameFr;
+
+        /**
+         * Number of historical wrong answers represented by this group.
+         */
+        private Integer count;
+    }
 
     /**
      * Nested DTO for example questions
@@ -81,6 +138,10 @@ public class ErrorPatternResponse {
          * Category name (e.g., "Speed Limits")
          */
         private String categoryName;
+        private String categoryNameEn;
+        private String categoryNameAr;
+        private String categoryNameNl;
+        private String categoryNameFr;
 
         /**
          * URL to content image (traffic sign, etc.)

@@ -706,7 +706,9 @@ public class ExamService {
                     .selectedOption(selectedOption)
                     .isCorrect(selectedOption.getIsCorrect()) // Store but don't reveal
                     .answeredAt(now)
-                    .timeTakenSeconds(0) // Not tracked in answer submission
+                    .timeTakenSeconds(request.getTimeTakenSeconds() != null
+                            ? request.getTimeTakenSeconds()
+                            : 0)
                     .build();
             log.info("Created new answer for exam {} question {}", examId, questionId);
         } else {
@@ -715,6 +717,9 @@ public class ExamService {
             answer.setSelectedOption(selectedOption);
             answer.setIsCorrect(selectedOption.getIsCorrect());
             answer.setAnsweredAt(now);
+            if (request.getTimeTakenSeconds() != null) {
+                answer.setTimeTakenSeconds(request.getTimeTakenSeconds());
+            }
             log.info("Updated existing answer for exam {} question {}", examId, questionId);
         }
 

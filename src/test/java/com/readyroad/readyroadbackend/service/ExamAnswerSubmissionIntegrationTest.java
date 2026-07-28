@@ -94,6 +94,7 @@ class ExamAnswerSubmissionIntegrationTest extends BaseIntegrationTest {
 
                 SubmitExamAnswerRequest request = SubmitExamAnswerRequest.builder()
                                 .selectedOptionId(selectedOption.getId())
+                                .timeTakenSeconds(12)
                                 .build();
 
                 // When
@@ -120,6 +121,7 @@ class ExamAnswerSubmissionIntegrationTest extends BaseIntegrationTest {
 
                 assertThat(savedAnswer.getSelectedOption().getId()).isEqualTo(selectedOption.getId());
                 assertThat(savedAnswer.getAnsweredAt()).isNotNull();
+                assertThat(savedAnswer.getTimeTakenSeconds()).isEqualTo(12);
         }
 
         @Test
@@ -163,6 +165,7 @@ class ExamAnswerSubmissionIntegrationTest extends BaseIntegrationTest {
 
                 SubmitExamAnswerRequest firstRequest = SubmitExamAnswerRequest.builder()
                                 .selectedOptionId(options.get(0).getId())
+                                .timeTakenSeconds(8)
                                 .build();
 
                 examService.submitAnswer(
@@ -173,6 +176,7 @@ class ExamAnswerSubmissionIntegrationTest extends BaseIntegrationTest {
                 // When - Submit different answer for same question
                 SubmitExamAnswerRequest secondRequest = SubmitExamAnswerRequest.builder()
                                 .selectedOptionId(options.get(1).getId())
+                                .timeTakenSeconds(13)
                                 .build();
 
                 SubmitExamAnswerResponse response = examService.submitAnswer(
@@ -187,6 +191,10 @@ class ExamAnswerSubmissionIntegrationTest extends BaseIntegrationTest {
                 // Verify only one answer exists
                 long answerCount = answerRepository.countByExamId(exam.getId());
                 assertThat(answerCount).isEqualTo(1);
+                assertThat(answerRepository
+                                .findByExamIdAndQuestionId(exam.getId(), firstQuestion.getQuestionId())
+                                .orElseThrow()
+                                .getTimeTakenSeconds()).isEqualTo(13);
         }
 
         @Test

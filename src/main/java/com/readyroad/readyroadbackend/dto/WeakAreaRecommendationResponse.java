@@ -19,6 +19,10 @@ public class WeakAreaRecommendationResponse {
      * Category name (e.g., "Speed Limits", "Parking Rules")
      */
     private String categoryName;
+    private String categoryNameEn;
+    private String categoryNameNl;
+    private String categoryNameFr;
+    private String categoryNameAr;
 
     /**
      * Current accuracy percentage in this category (0-100)
@@ -71,4 +75,21 @@ public class WeakAreaRecommendationResponse {
      * Helps the frontend show "you answered X questions here".
      */
     private Integer questionsAttempted;
+
+    /**
+     * Weighted severity used for ordering (0-100).
+     */
+    private Double priorityScore;
+
+    /**
+     * Reliability of this category assessment based on evidence volume.
+     */
+    private Integer confidenceScore;
+
+    /**
+     * Historical direction where sufficient period evidence exists.
+     */
+    private String trend;
+
+    private Integer daysSincePractice;
 }

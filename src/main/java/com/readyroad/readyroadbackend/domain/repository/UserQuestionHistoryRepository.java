@@ -20,6 +20,19 @@ public interface UserQuestionHistoryRepository extends JpaRepository<UserQuestio
               UserQuestionHistoryUpsertRepository {
 
        /**
+        * Complete cumulative question history for one user.
+        * Used by the read-only student intelligence engine.
+        */
+       @Query("""
+                     SELECT h
+                     FROM UserQuestionHistory h
+                     JOIN FETCH h.question q
+                     JOIN FETCH q.category
+                     WHERE h.userId = :userId
+                     """)
+       List<UserQuestionHistory> findByUserId(@Param("userId") Long userId);
+
+       /**
         * Find all question IDs that a user has seen within a given time window.
         * Used to enforce 24h cooldown.
         *

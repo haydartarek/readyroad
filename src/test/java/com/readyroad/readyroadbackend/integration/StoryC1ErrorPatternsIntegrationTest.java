@@ -84,6 +84,7 @@ public class StoryC1ErrorPatternsIntegrationTest {
             assertThat(pattern.getCount()).isNotNull();
             assertThat(pattern.getPercentage()).isNotNull();
             assertThat(pattern.getDescription()).isNotEmpty();
+            assertThat(pattern.getGroups()).isNotNull();
             assertThat(pattern.getExampleQuestions()).isNotNull();
         }
 
@@ -165,6 +166,36 @@ public class StoryC1ErrorPatternsIntegrationTest {
 
         assertThat(signConfusion.getPercentage()).isEqualTo(40.0);
         assertThat(signConfusion.getCount()).isEqualTo(4);
+    }
+
+    @Test
+    @DisplayName("@C1 exposes category, legal-concept, and repeated-misconception groups")
+    void exposesCompleteHistoryGroups() {
+        createWrongAttemptWithPatternAndCount(
+                testUserId,
+                TypicalErrorType.PRIORITY_MISUNDERSTANDING,
+                3);
+
+        ErrorPatternResponse priority = analyticsService.getErrorPatterns(testUserId).stream()
+                .filter(pattern -> pattern.getPatternType() == TypicalErrorType.PRIORITY_MISUNDERSTANDING)
+                .findFirst()
+                .orElseThrow();
+
+        assertThat(priority.getGroups())
+                .anySatisfy(group -> {
+                    assertThat(group.getGroupType()).isEqualTo("CATEGORY");
+                    assertThat(group.getCode()).isEqualTo("SIGNS");
+                    assertThat(group.getCount()).isEqualTo(3);
+                })
+                .anySatisfy(group -> {
+                    assertThat(group.getGroupType()).isEqualTo("LEGAL_CONCEPT");
+                    assertThat(group.getCode()).isEqualTo("PRIORITY_MISUNDERSTANDING");
+                    assertThat(group.getCount()).isEqualTo(3);
+                })
+                .anySatisfy(group -> {
+                    assertThat(group.getGroupType()).isEqualTo("REPEATED_MISCONCEPTION");
+                    assertThat(group.getCount()).isEqualTo(3);
+                });
     }
 
     @Test
@@ -261,6 +292,13 @@ public class StoryC1ErrorPatternsIntegrationTest {
     }
 
     private void createWrongAttemptWithPattern(Long userId, TypicalErrorType errorType) {
+        createWrongAttemptWithPatternAndCount(userId, errorType, 1);
+    }
+
+    private void createWrongAttemptWithPatternAndCount(
+            Long userId,
+            TypicalErrorType errorType,
+            int timesIncorrect) {
         // Create question with specific error type
         QuizQuestion question = new QuizQuestion();
         question.setQuestionEn("Test question for " + errorType);
@@ -308,7 +346,7 @@ public class StoryC1ErrorPatternsIntegrationTest {
                 .questionId(question.getId())
                 .answeredAt(LocalDateTime.now())
                 .isCorrect(false)
-                .timesIncorrect(1)
+                .timesIncorrect(timesIncorrect)
                 .timeTakenSeconds(30)
                 .build();
 

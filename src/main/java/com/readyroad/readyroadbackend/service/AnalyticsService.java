@@ -4,15 +4,19 @@ import com.readyroad.readyroadbackend.domain.entity.Category;
 import com.readyroad.readyroadbackend.domain.entity.QuizQuestion;
 import com.readyroad.readyroadbackend.domain.entity.QuizQuestion.DifficultyLevel;
 import com.readyroad.readyroadbackend.domain.entity.QuizQuestion.TypicalErrorType;
+import com.readyroad.readyroadbackend.domain.entity.RoadSign;
 import com.readyroad.readyroadbackend.domain.entity.UserCategoryProgress;
 import com.readyroad.readyroadbackend.domain.entity.UserErrorPattern;
 import com.readyroad.readyroadbackend.domain.entity.UserQuestionHistory;
+import com.readyroad.readyroadbackend.domain.enums.SignCategory;
 import com.readyroad.readyroadbackend.domain.repository.CategoryRepository;
 import com.readyroad.readyroadbackend.domain.repository.QuizQuestionRepository;
+import com.readyroad.readyroadbackend.domain.repository.RoadSignRepository;
 import com.readyroad.readyroadbackend.domain.repository.UserCategoryProgressRepository;
 import com.readyroad.readyroadbackend.domain.repository.UserErrorPatternRepository;
 import com.readyroad.readyroadbackend.domain.repository.UserQuestionHistoryRepository;
 import com.readyroad.readyroadbackend.dto.ErrorPatternResponse;
+import com.readyroad.readyroadbackend.dto.ErrorPatternResponse.ErrorGroupDTO;
 import com.readyroad.readyroadbackend.dto.ErrorPatternResponse.ExampleQuestionDTO;
 import com.readyroad.readyroadbackend.dto.WeakAreaRecommendationResponse;
 import com.readyroad.readyroadbackend.dto.WeakAreasOverviewResponse;
@@ -21,6 +25,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -39,6 +45,7 @@ public class AnalyticsService {
     private final UserCategoryProgressRepository progressRepository;
     private final CategoryRepository categoryRepository;
     private final UserErrorPatternRepository errorPatternRepository;
+    private final RoadSignRepository roadSignRepository;
     private final RoadSignReferenceTextResolver roadSignReferenceTextResolver;
     private final BackendMessageService messages;
 
@@ -60,141 +67,251 @@ public class AnalyticsService {
     @Transactional(readOnly = true)
     public List<ErrorPatternResponse> getErrorPatterns(Long userId) {
         log.info("Getting error patterns for user {}", userId);
-
-        // ── PRIMARY SOURCE: user_error_patterns (sign quiz wrong answers) ──────
-        // This table is populated by SignQuizService when a user gets a sign quiz
-        // question wrong. If it has rows, use those as the canonical source.
         List<UserErrorPattern> rawPatterns = errorPatternRepository.findAllByUserIdOrderByOccurredAtDesc(userId);
-
-        if (!rawPatterns.isEmpty()) {
-            log.info("Using user_error_patterns ({} rows) as primary source for userId={}",
-                    rawPatterns.size(), userId);
-
-            // Aggregate count per supported error type
-            Map<UserErrorPattern.ErrorType, Long> countByType = rawPatterns.stream()
-                    .collect(Collectors.groupingBy(UserErrorPattern::getErrorType, Collectors.counting()));
-            long total = rawPatterns.size();
-
-            List<ErrorPatternResponse> responses = new ArrayList<>();
-            for (TypicalErrorType pattern : SUPPORTED_PATTERNS) {
-                // Both enums share the same constant names — map by name directly
-                UserErrorPattern.ErrorType epType;
-                try {
-                    epType = UserErrorPattern.ErrorType.valueOf(pattern.name());
-                } catch (IllegalArgumentException e) {
-                    epType = null;
-                }
-                int count = epType != null ? countByType.getOrDefault(epType, 0L).intValue() : 0;
-                double pct = total > 0 ? (count * 100.0 / total) : 0.0;
-
-                responses.add(ErrorPatternResponse.builder()
-                        .patternType(pattern)
-                        .count(count)
-                        .percentage(Math.round(pct * 10.0) / 10.0)
-                        .description(getPatternDescription(pattern))
-                        .exampleQuestions(new ArrayList<>())
-                        .build());
-            }
-            responses.sort(Comparator.comparing(ErrorPatternResponse::getCount).reversed());
-            return responses;
-        }
-
-        // ── FALLBACK: user_question_history (theory exam / practice wrong answers) ─
-        // Get all history rows where the user ever answered incorrectly.
-        // We use timesIncorrect (times_wrong column) which NEVER decreases, unlike
-        // is_correct which is overwritten to TRUE when the user later answers
-        // correctly.
         List<UserQuestionHistory> wrongAttempts = historyRepository
                 .findByUserIdAndTimesIncorrectGreaterThan(userId, 0);
 
-        log.debug("Found {} questions with wrong attempts in history for user {}", wrongAttempts.size(), userId);
-
-        if (wrongAttempts.isEmpty()) {
-            // No data in either source — return empty list
+        if (rawPatterns.isEmpty() && wrongAttempts.isEmpty()) {
             log.info("No wrong attempts found for user {} in any source, returning empty list", userId);
             return new ArrayList<>();
         }
 
-        // Extract question IDs
         List<Long> questionIds = wrongAttempts.stream()
                 .map(UserQuestionHistory::getQuestionId)
                 .distinct()
                 .collect(Collectors.toList());
-
-        // Load questions with their error types
         Map<Long, QuizQuestion> questionMap = questionRepository
                 .findAllById(questionIds)
                 .stream()
                 .collect(Collectors.toMap(QuizQuestion::getId, q -> q));
-
-        // Use each row's accumulated timesIncorrect as the wrong count per question.
-        // This correctly reflects how many times the user got that question wrong
-        // across all sessions.
         Map<Long, Integer> wrongCountPerQuestion = wrongAttempts.stream()
                 .collect(Collectors.toMap(
                         UserQuestionHistory::getQuestionId,
-                        UserQuestionHistory::getTimesIncorrect));
+                        attempt -> attempt.getTimesIncorrect() != null ? attempt.getTimesIncorrect() : 0,
+                        Integer::sum));
+        Set<String> signCodes = rawPatterns.stream()
+                .map(UserErrorPattern::getTrafficSignCode)
+                .filter(Objects::nonNull)
+                .filter(code -> !code.isBlank())
+                .collect(Collectors.toSet());
+        Map<String, RoadSign> signsByCode = roadSignRepository.findBySignCodeIn(signCodes).stream()
+                .collect(Collectors.toMap(RoadSign::getSignCode, sign -> sign, (first, ignored) -> first));
 
-        // Group by error pattern type
-        Map<TypicalErrorType, List<QuizQuestion>> questionsByPattern = new HashMap<>();
-        Map<TypicalErrorType, Integer> countByPattern = new HashMap<>();
+        Map<TypicalErrorType, PatternAggregate> aggregates = SUPPORTED_PATTERNS.stream()
+                .collect(Collectors.toMap(pattern -> pattern, ignored -> new PatternAggregate()));
+
+        for (UserErrorPattern raw : rawPatterns) {
+            TypicalErrorType type = toTypicalErrorType(raw.getErrorType());
+            if (type == null || !SUPPORTED_PATTERNS.contains(type)) {
+                continue;
+            }
+            PatternAggregate aggregate = aggregates.get(type);
+            aggregate.count++;
+            if (raw.getQuestionRefId() != null) {
+                aggregate.uniqueReferences.add(
+                        (raw.getQuestionRefType() != null ? raw.getQuestionRefType() : "PATTERN")
+                                + ":" + raw.getQuestionRefId());
+            } else if (raw.getTrafficSignCode() != null) {
+                aggregate.uniqueReferences.add("SIGN:" + raw.getTrafficSignCode());
+            }
+            String referenceKey = raw.getTrafficSignCode() != null
+                    ? "SIGN:" + raw.getTrafficSignCode()
+                    : (raw.getQuestionRefType() != null ? raw.getQuestionRefType() : "PATTERN")
+                            + ":" + raw.getQuestionRefId();
+            aggregate.addReference(referenceKey, 1);
+            RoadSign sign = signsByCode.get(raw.getTrafficSignCode());
+            if (sign != null && sign.getCategory() != null) {
+                aggregate.addGroup(signFamilyGroup(sign.getCategory()), 1);
+            }
+            if (raw.getRuleCategory() != null && !raw.getRuleCategory().isBlank()) {
+                aggregate.addGroup(ErrorGroupDTO.builder()
+                        .groupType("CATEGORY")
+                        .code(raw.getRuleCategory())
+                        .count(0)
+                        .build(), 1);
+            }
+            aggregate.includeDate(raw.getOccurredAt());
+        }
 
         for (UserQuestionHistory attempt : wrongAttempts) {
             QuizQuestion question = questionMap.get(attempt.getQuestionId());
             if (question != null) {
                 TypicalErrorType errorType = question.getTypicalErrorType();
-
-                // If question has no error type or is OTHER, categorize based on category
                 if (errorType == null || errorType == TypicalErrorType.OTHER) {
                     errorType = inferErrorTypeFromCategory(question);
                 }
-
-                // Only count supported patterns
                 if (SUPPORTED_PATTERNS.contains(errorType)) {
-                    questionsByPattern.computeIfAbsent(errorType, k -> new ArrayList<>()).add(question);
-                    // Add this question's accumulated wrong count (not just +1 per row)
-                    countByPattern.merge(errorType, attempt.getTimesIncorrect(), (a, b) -> a + b);
+                    PatternAggregate aggregate = aggregates.get(errorType);
+                    int wrongCount = attempt.getTimesIncorrect() != null ? attempt.getTimesIncorrect() : 0;
+                    aggregate.count += wrongCount;
+                    aggregate.questions.add(question);
+                    aggregate.uniqueReferences.add("QUIZ:" + question.getId());
+                    aggregate.addReference("QUIZ:" + question.getId(), wrongCount);
+                    if (question.getCategory() != null) {
+                        aggregate.addGroup(categoryGroup(question.getCategory()), wrongCount);
+                    }
+                    aggregate.includeDate(attempt.getCreatedAt());
+                    aggregate.includeDate(attempt.getAnsweredAt());
                 }
             }
         }
 
-        // Calculate total wrong attempts (only for supported patterns)
-        int totalWrongAttempts = countByPattern.values().stream()
-                .mapToInt(Integer::intValue)
+        int totalWrongAttempts = aggregates.values().stream()
+                .mapToInt(aggregate -> aggregate.count)
                 .sum();
-
-        // Build response list for all 6 supported patterns
         List<ErrorPatternResponse> responses = new ArrayList<>();
 
         for (TypicalErrorType pattern : SUPPORTED_PATTERNS) {
-            int count = countByPattern.getOrDefault(pattern, 0);
+            PatternAggregate aggregate = aggregates.get(pattern);
+            int count = aggregate.count;
             double percentage = totalWrongAttempts > 0
                     ? (count * 100.0 / totalWrongAttempts)
                     : 0.0;
-
-            List<QuizQuestion> questionsForPattern = questionsByPattern.getOrDefault(pattern, new ArrayList<>());
-
-            // Get up to 3 example questions for this pattern
-            List<ExampleQuestionDTO> examples = questionsForPattern.stream()
+            List<ExampleQuestionDTO> examples = aggregate.questions.stream()
                     .distinct()
                     .limit(3)
                     .map(q -> buildExampleQuestion(q, wrongCountPerQuestion.getOrDefault(q.getId(), 0)))
                     .collect(Collectors.toList());
+            List<ErrorGroupDTO> groups = buildGroups(pattern, aggregate, count);
 
             responses.add(ErrorPatternResponse.builder()
                     .patternType(pattern)
                     .count(count)
-                    .percentage(Math.round(percentage * 10.0) / 10.0) // 1 decimal place
+                    .percentage(Math.round(percentage * 10.0) / 10.0)
                     .description(getPatternDescription(pattern))
+                    .severity(determineSeverity(count, percentage))
+                    .uniqueQuestions(aggregate.uniqueReferences.size())
+                    .firstOccurredAt(aggregate.firstOccurredAt)
+                    .lastOccurredAt(aggregate.lastOccurredAt)
+                    .recommendationKey("error_patterns.rec_" + pattern.name().toLowerCase(Locale.ROOT))
+                    .sourceScope("COMPLETE_HISTORY")
+                    .groups(groups)
                     .exampleQuestions(examples)
                     .build());
         }
 
-        // Sort by count descending (most frequent first)
         responses.sort(Comparator.comparing(ErrorPatternResponse::getCount).reversed());
-
-        log.info("Returning {} error patterns for user {}", responses.size(), userId);
+        log.info(
+                "Returning {} combined error patterns for user {} from {} sign rows and {} theory rows",
+                responses.size(),
+                userId,
+                rawPatterns.size(),
+                wrongAttempts.size());
         return responses;
+    }
+
+    private TypicalErrorType toTypicalErrorType(UserErrorPattern.ErrorType type) {
+        if (type == null) {
+            return null;
+        }
+        try {
+            return TypicalErrorType.valueOf(type.name());
+        } catch (IllegalArgumentException ignored) {
+            return null;
+        }
+    }
+
+    private String determineSeverity(int count, double percentage) {
+        if (count >= 10 || percentage >= 35.0) {
+            return "CRITICAL";
+        }
+        if (count >= 5 || percentage >= 20.0) {
+            return "HIGH";
+        }
+        if (count >= 2) {
+            return "MODERATE";
+        }
+        return count == 1 ? "LOW" : "NONE";
+    }
+
+    private static class PatternAggregate {
+        private int count;
+        private final Set<String> uniqueReferences = new HashSet<>();
+        private final List<QuizQuestion> questions = new ArrayList<>();
+        private final Map<String, ErrorGroupDTO> groups = new HashMap<>();
+        private final Map<String, Integer> referenceCounts = new HashMap<>();
+        private LocalDateTime firstOccurredAt;
+        private LocalDateTime lastOccurredAt;
+
+        private void addGroup(ErrorGroupDTO group, int occurrenceCount) {
+            String key = group.getGroupType() + ":" + group.getCode();
+            ErrorGroupDTO existing = groups.get(key);
+            if (existing == null) {
+                group.setCount(occurrenceCount);
+                groups.put(key, group);
+            } else {
+                existing.setCount(existing.getCount() + occurrenceCount);
+            }
+        }
+
+        private void addReference(String reference, int occurrenceCount) {
+            if (reference == null || reference.endsWith(":null")) {
+                return;
+            }
+            referenceCounts.merge(reference, occurrenceCount, Integer::sum);
+        }
+
+        private void includeDate(LocalDateTime value) {
+            if (value == null) {
+                return;
+            }
+            if (firstOccurredAt == null || value.isBefore(firstOccurredAt)) {
+                firstOccurredAt = value;
+            }
+            if (lastOccurredAt == null || value.isAfter(lastOccurredAt)) {
+                lastOccurredAt = value;
+            }
+        }
+    }
+
+    private List<ErrorGroupDTO> buildGroups(
+            TypicalErrorType pattern,
+            PatternAggregate aggregate,
+            int totalCount) {
+        List<ErrorGroupDTO> groups = new ArrayList<>(aggregate.groups.values());
+        groups.add(ErrorGroupDTO.builder()
+                .groupType("LEGAL_CONCEPT")
+                .code(pattern.name())
+                .count(totalCount)
+                .build());
+
+        int repeatedCount = aggregate.referenceCounts.values().stream()
+                .filter(count -> count >= 2)
+                .mapToInt(Integer::intValue)
+                .sum();
+        if (repeatedCount > 0) {
+            groups.add(ErrorGroupDTO.builder()
+                    .groupType("REPEATED_MISCONCEPTION")
+                    .code(pattern.name())
+                    .count(repeatedCount)
+                    .build());
+        }
+
+        groups.sort(Comparator
+                .comparing(ErrorGroupDTO::getGroupType)
+                .thenComparing(ErrorGroupDTO::getCount, Comparator.reverseOrder())
+                .thenComparing(ErrorGroupDTO::getCode));
+        return groups;
+    }
+
+    private ErrorGroupDTO categoryGroup(Category category) {
+        return ErrorGroupDTO.builder()
+                .groupType("CATEGORY")
+                .code(category.getCode())
+                .nameEn(category.getNameEn())
+                .nameAr(category.getNameAr())
+                .nameNl(category.getNameNl())
+                .nameFr(category.getNameFr())
+                .count(0)
+                .build();
+    }
+
+    private ErrorGroupDTO signFamilyGroup(SignCategory category) {
+        return ErrorGroupDTO.builder()
+                .groupType("TRAFFIC_SIGN_FAMILY")
+                .code(category.name())
+                .count(0)
+                .build();
     }
 
     /**
@@ -248,6 +365,10 @@ public class AnalyticsService {
                 .categoryName(question.getCategory() != null
                         ? question.getCategory().getNameEn()
                         : messages.get("analytics.category.unknown"))
+                .categoryNameEn(question.getCategory() != null ? question.getCategory().getNameEn() : null)
+                .categoryNameAr(question.getCategory() != null ? question.getCategory().getNameAr() : null)
+                .categoryNameNl(question.getCategory() != null ? question.getCategory().getNameNl() : null)
+                .categoryNameFr(question.getCategory() != null ? question.getCategory().getNameFr() : null)
                 .contentImageUrl(question.getContentImageUrl())
                 .timesWrong(timesWrong)
                 .build();
@@ -308,7 +429,7 @@ public class AnalyticsService {
             return WeakAreasOverviewResponse.builder()
                     .weakAreas(new ArrayList<>())
                     .totalPracticedCategories(0)
-                    .overallAccuracy(0.0)
+                    .overallAccuracy(null)
                     .build();
         }
 
@@ -333,15 +454,14 @@ public class AnalyticsService {
             return WeakAreasOverviewResponse.builder()
                     .weakAreas(new ArrayList<>())
                     .totalPracticedCategories(0)
-                    .overallAccuracy(0.0)
+                    .overallAccuracy(null)
                     .build();
         }
 
-        // Keep only categories BELOW the target accuracy (genuinely weak)
-        // Sort by accuracy ascending (weakest first)
+        // Keep only categories below target. Final ordering uses weighted risk,
+        // not raw accuracy alone.
         List<UserCategoryProgress> weakCategories = measurableCategories.stream()
                 .filter(p -> p.getAccuracyRate().doubleValue() < TARGET_ACCURACY)
-                .sorted(Comparator.comparing(UserCategoryProgress::getAccuracyRate))
                 .collect(Collectors.toList());
 
         // Load category map (since relationship may not be loaded due to
@@ -374,11 +494,34 @@ public class AnalyticsService {
 
             // Estimate time to complete recommended practice
             int estimatedTimeMinutes = (recommendedQuestions * AVERAGE_TIME_PER_QUESTION_SECONDS) / 60;
+            int daysSincePractice = progress.getLastPracticed() == null
+                    ? -1
+                    : (int) Math.max(0, ChronoUnit.DAYS.between(
+                            progress.getLastPracticed().toLocalDate(),
+                            java.time.LocalDate.now()));
+            int confidenceScore = Math.min(100, progress.getQuestionsAttempted() * 5);
+            double frequencyScore = Math.min(100.0, progress.getQuestionsAttempted() * 100.0 / 30.0);
+            double recencyScore = daysSincePractice < 0
+                    ? 0.0
+                    : daysSincePractice <= 7 ? 0.0
+                    : daysSincePractice <= 30 ? 35.0
+                    : daysSincePractice <= 90 ? 70.0
+                    : 100.0;
+            double knownWeight = daysSincePractice < 0 ? 85.0 : 100.0;
+            double priorityScore = ((100.0 - currentAccuracy) * 55.0
+                    + frequencyScore * 20.0
+                    + confidenceScore * 10.0
+                    + (daysSincePractice < 0 ? 0.0 : recencyScore * 15.0))
+                    / knownWeight;
 
             WeakAreaRecommendationResponse recommendation = WeakAreaRecommendationResponse.builder()
                     .categoryId(category.getId())
                     .categoryCode(category.getCode())
                     .categoryName(category.getNameEn())
+                    .categoryNameEn(category.getNameEn())
+                    .categoryNameNl(category.getNameNl())
+                    .categoryNameFr(category.getNameFr())
+                    .categoryNameAr(category.getNameAr())
                     .currentAccuracy(Math.round(currentAccuracy * 10.0) / 10.0)
                     .targetAccuracy(TARGET_ACCURACY)
                     .accuracyGap(Math.round(accuracyGap * 10.0) / 10.0)
@@ -387,9 +530,21 @@ public class AnalyticsService {
                     .estimatedTimeMinutes(estimatedTimeMinutes)
                     .priority(priority++)
                     .questionsAttempted(progress.getQuestionsAttempted())
+                    .priorityScore(Math.round(priorityScore * 10.0) / 10.0)
+                    .confidenceScore(confidenceScore)
+                    .trend("INSUFFICIENT_DATA")
+                    .daysSincePractice(daysSincePractice < 0 ? null : daysSincePractice)
                     .build();
 
             recommendations.add(recommendation);
+        }
+
+        recommendations.sort(Comparator
+                .comparing(WeakAreaRecommendationResponse::getPriorityScore)
+                .reversed()
+                .thenComparing(WeakAreaRecommendationResponse::getCurrentAccuracy));
+        for (int index = 0; index < recommendations.size(); index++) {
+            recommendations.get(index).setPriority(index + 1);
         }
 
         log.info("Returning {} weak area recommendations for user {} (total practiced: {}, overallAccuracy: {}%)",

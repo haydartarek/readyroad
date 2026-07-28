@@ -1,7 +1,10 @@
 package com.readyroad.readyroadbackend.domain.repository;
 
 import com.readyroad.readyroadbackend.domain.entity.ExamSimulationAnswer;
+import com.readyroad.readyroadbackend.domain.entity.ExamSimulation;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -13,6 +16,24 @@ import java.util.Optional;
  */
 @Repository
 public interface ExamSimulationAnswerRepository extends JpaRepository<ExamSimulationAnswer, Long> {
+
+    /**
+     * Complete official-exam answer history with mapper dependencies loaded.
+     * Used for category evolution without changing the persistence model.
+     */
+    @Query("""
+            SELECT a
+            FROM ExamSimulationAnswer a
+            JOIN FETCH a.exam e
+            JOIN FETCH a.question q
+            JOIN FETCH q.category c
+            WHERE e.userId = :userId
+              AND e.status = :status
+            ORDER BY a.answeredAt DESC
+            """)
+    List<ExamSimulationAnswer> findHistoryForUser(
+            @Param("userId") Long userId,
+            @Param("status") ExamSimulation.ExamStatus status);
 
     /**
      * Find all answers for exam

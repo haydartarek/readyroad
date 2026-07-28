@@ -3,7 +3,9 @@ package com.readyroad.readyroadbackend.controller;
 import com.readyroad.readyroadbackend.util.AuthenticationUtil;
 import com.readyroad.readyroadbackend.dto.CategoryProgressResponse;
 import com.readyroad.readyroadbackend.dto.OverallProgressResponse;
+import com.readyroad.readyroadbackend.dto.StudentIntelligenceResponse;
 import com.readyroad.readyroadbackend.service.ProgressService;
+import com.readyroad.readyroadbackend.service.StudentIntelligenceService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -39,7 +41,30 @@ import java.util.Map;
 public class ProgressController {
 
     private final ProgressService progressService;
+    private final StudentIntelligenceService studentIntelligenceService;
     private final AuthenticationUtil authenticationUtil;
+
+    @GetMapping("/intelligence")
+    @Operation(
+            summary = "Get historical student intelligence",
+            description = "Returns read-only learning intelligence calculated from complete persisted history.")
+    @ApiResponses(value = {
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "Student intelligence retrieved successfully",
+                    content = @Content(
+                            mediaType = "application/json",
+                            schema = @Schema(implementation = StudentIntelligenceResponse.class))),
+            @ApiResponse(responseCode = "401", description = "User not authenticated", content = @Content)
+    })
+    public ResponseEntity<StudentIntelligenceResponse> getStudentIntelligence(
+            Authentication authentication) {
+        Long userId = authenticationUtil.extractUserId(authentication);
+        if (userId == null) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+        }
+        return ResponseEntity.ok(studentIntelligenceService.getStudentIntelligence(userId));
+    }
 
     // ============================================================================
     // STORY B2: VIEW OVERALL PROGRESS
