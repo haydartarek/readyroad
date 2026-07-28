@@ -57,6 +57,9 @@ public class User extends BaseEntity implements UserDetails {
     @Column(nullable = false, name = "is_locked")
     private Boolean isLocked = false;
 
+    @Column(name = "preferred_language", length = 2)
+    private String preferredLanguage;
+
     // ========================================
     // UserDetails Implementation (Spring Security)
     // ========================================

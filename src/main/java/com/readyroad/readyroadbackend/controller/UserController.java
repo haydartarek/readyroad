@@ -6,6 +6,7 @@ import com.readyroad.readyroadbackend.domain.repository.AuthIdentityRepository;
 import com.readyroad.readyroadbackend.domain.repository.UserRepository;
 import com.readyroad.readyroadbackend.dto.GoogleAuthExchangeRequest;
 import com.readyroad.readyroadbackend.dto.UpdateUserProfileRequest;
+import com.readyroad.readyroadbackend.dto.UpdatePreferredLanguageRequest;
 import com.readyroad.readyroadbackend.dto.UserProfileResponse;
 import com.readyroad.readyroadbackend.service.BackendMessageService;
 import com.readyroad.readyroadbackend.service.SocialAuthService;
@@ -26,6 +27,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -133,6 +135,26 @@ public class UserController {
         return ResponseEntity.ok(toUserProfileResponse(savedUser));
     }
 
+    @Transactional
+    @PatchMapping("/me/preferred-language")
+    @Operation(
+            summary = "Update preferred language",
+            description = "Persists the authenticated user's explicit language choice",
+            security = @SecurityRequirement(name = "bearer-jwt"))
+    public ResponseEntity<UserProfileResponse> updatePreferredLanguage(
+            Authentication authentication,
+            @Valid @RequestBody UpdatePreferredLanguageRequest request) {
+        Long userId = authenticationUtil.extractUserId(authentication);
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new ResponseStatusException(
+                        HttpStatus.NOT_FOUND,
+                        messages.get("auth.user_not_found")));
+
+        user.setPreferredLanguage(request.preferredLanguage());
+        User savedUser = userRepository.save(user);
+        return ResponseEntity.ok(toUserProfileResponse(savedUser));
+    }
+
     @DeleteMapping("/me")
     @Operation(summary = "Delete current user account", description = "Permanently deletes the authenticated user account and all associated data via DB cascade", security = @SecurityRequirement(name = "bearer-jwt"))
     @ApiResponses(value = {
@@ -167,6 +189,7 @@ public class UserController {
                 .email(user.getEmail())
                 .fullName(user.getFullName())
                 .role(user.getRole().name())
+                .preferredLanguage(user.getPreferredLanguage())
                 .isActive(user.getIsActive())
                 .createdAt(user.getCreatedAt())
                 .linkedProviders(linkedProviders)

@@ -1,5 +1,6 @@
 package com.readyroad.readyroadbackend.service;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.verify;
@@ -7,7 +8,11 @@ import static org.mockito.Mockito.when;
 
 import com.readyroad.readyroadbackend.domain.repository.AuthIdentityRepository;
 import com.readyroad.readyroadbackend.domain.repository.UserRepository;
+import com.readyroad.readyroadbackend.domain.entity.User;
+import com.readyroad.readyroadbackend.domain.enums.Role;
+import com.readyroad.readyroadbackend.dto.AuthResponse;
 import com.readyroad.readyroadbackend.dto.RegisterRequest;
+import java.util.List;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -64,5 +69,32 @@ class AuthServiceTest {
                 .hasMessage("Username already exists.");
 
         verify(userRepository).save(any());
+    }
+
+    @Test
+    void registerPersistsAndReturnsPreferredLanguage() {
+        RegisterRequest request = new RegisterRequest();
+        request.setUsername("learner");
+        request.setEmail("learner@example.com");
+        request.setFullName("Learner User");
+        request.setPassword("Secret123!");
+        request.setPreferredLanguage("nl");
+
+        when(userRepository.existsByUsernameIgnoreCase("learner")).thenReturn(false);
+        when(userRepository.existsByEmailIgnoreCase("learner@example.com")).thenReturn(false);
+        when(passwordEncoder.encode("Secret123!")).thenReturn("encoded-password");
+        when(userRepository.save(any(User.class))).thenAnswer(invocation -> {
+            User user = invocation.getArgument(0);
+            user.setId(12L);
+            return user;
+        });
+        when(authIdentityRepository.findByUserId(12L)).thenReturn(List.of());
+        when(jwtService.generateToken(any(), any())).thenReturn("jwt-token");
+
+        AuthResponse response = authService.register(request);
+
+        assertThat(response.getPreferredLanguage()).isEqualTo("nl");
+        assertThat(response.getRole()).isEqualTo(Role.USER);
+        verify(userRepository).save(any(User.class));
     }
 }

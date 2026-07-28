@@ -134,6 +134,7 @@ public class AuthController {
         userInfo.put("email", user.getEmail());
         userInfo.put("fullName", user.getFullName());
         userInfo.put("role", user.getRole());
+        userInfo.put("preferredLanguage", user.getPreferredLanguage());
         userInfo.put("isActive", user.getIsActive());
         userInfo.put("createdAt", user.getCreatedAt() != null ? user.getCreatedAt().toString() : null);
         userInfo.put(

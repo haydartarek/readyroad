@@ -64,7 +64,7 @@ public class SocialAuthService {
                     messages.get("auth.google.account_exists_with_password"));
         }
 
-        User newUser = createGoogleUser(googleUser, normalizedEmail);
+        User newUser = createGoogleUser(googleUser, normalizedEmail, request.preferredLanguage());
         createGoogleIdentity(newUser, googleUser, normalizedEmail);
 
         try {
@@ -143,7 +143,10 @@ public class SocialAuthService {
         }
     }
 
-    private User createGoogleUser(GoogleOAuthService.GoogleUserInfo googleUser, String normalizedEmail) {
+    private User createGoogleUser(
+            GoogleOAuthService.GoogleUserInfo googleUser,
+            String normalizedEmail,
+            String preferredLanguage) {
         User user = new User();
         user.setUsername(generateAvailableUsername(googleUser, normalizedEmail));
         user.setEmail(normalizedEmail);
@@ -152,6 +155,7 @@ public class SocialAuthService {
         user.setRole(Role.USER);
         user.setIsActive(true);
         user.setIsLocked(false);
+        user.setPreferredLanguage(preferredLanguage);
 
         return userRepository.save(user);
     }
@@ -178,6 +182,7 @@ public class SocialAuthService {
                 user.getEmail(),
                 user.getFullName(),
                 user.getRole(),
+                user.getPreferredLanguage(),
                 getLinkedProviders(user.getId()),
                 newUser);
     }

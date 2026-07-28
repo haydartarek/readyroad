@@ -23,6 +23,7 @@ public class UserProfileResponse {
     private String email;
     private String fullName;
     private String role;
+    private String preferredLanguage;
     private Boolean isActive;
     private LocalDateTime createdAt;
     private List<String> linkedProviders;

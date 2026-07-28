@@ -3,10 +3,12 @@ package com.readyroad.readyroadbackend.controller;
 import com.readyroad.readyroadbackend.domain.repository.AuthIdentityRepository;
 import com.readyroad.readyroadbackend.domain.repository.UserRepository;
 import com.readyroad.readyroadbackend.dto.UpdateUserProfileRequest;
+import com.readyroad.readyroadbackend.dto.UpdatePreferredLanguageRequest;
 import com.readyroad.readyroadbackend.service.BackendMessageService;
 import com.readyroad.readyroadbackend.service.SocialAuthService;
 import com.readyroad.readyroadbackend.util.AuthenticationUtil;
 import java.util.Optional;
+import java.util.List;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -19,6 +21,7 @@ import org.springframework.web.server.ResponseStatusException;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.verify;
 
 @ExtendWith(MockitoExtension.class)
 class UserControllerTest {
@@ -89,5 +92,31 @@ class UserControllerTest {
                     assertThat(ex.getStatusCode()).isEqualTo(HttpStatus.NOT_FOUND);
                     assertThat(ex.getReason()).isEqualTo("User not found");
                 });
+    }
+
+    @Test
+    void updatePreferredLanguagePersistsExplicitChoice() {
+        com.readyroad.readyroadbackend.domain.entity.User user =
+                new com.readyroad.readyroadbackend.domain.entity.User();
+        user.setId(7L);
+        user.setUsername("learner");
+        user.setEmail("learner@example.com");
+        user.setFullName("Learner User");
+        user.setRole(com.readyroad.readyroadbackend.domain.enums.Role.USER);
+        user.setIsActive(true);
+
+        when(authenticationUtil.extractUserId(authentication)).thenReturn(7L);
+        when(userRepository.findById(7L)).thenReturn(Optional.of(user));
+        when(userRepository.save(user)).thenReturn(user);
+        when(authIdentityRepository.findByUserId(7L)).thenReturn(List.of());
+
+        var response = userController.updatePreferredLanguage(
+                authentication,
+                new UpdatePreferredLanguageRequest("ar"));
+
+        assertThat(response.getBody()).isNotNull();
+        assertThat(response.getBody().getPreferredLanguage()).isEqualTo("ar");
+        assertThat(user.getPreferredLanguage()).isEqualTo("ar");
+        verify(userRepository).save(user);
     }
 }

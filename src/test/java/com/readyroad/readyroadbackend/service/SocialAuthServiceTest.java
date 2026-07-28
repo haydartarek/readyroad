@@ -36,6 +36,11 @@ class SocialAuthServiceTest {
                         "sample-code",
                         "http://localhost:3000/api/auth/google/callback",
                         "sample-verifier");
+        private static final GoogleAuthExchangeRequest ARABIC_REQUEST = new GoogleAuthExchangeRequest(
+                        "sample-code",
+                        "http://localhost:3000/api/auth/google/callback",
+                        "sample-verifier",
+                        "ar");
 
         @Mock
         private GoogleOAuthService googleOAuthService;
@@ -88,9 +93,44 @@ class SocialAuthServiceTest {
         }
 
         @Test
+        @DisplayName("authenticateWithGoogle preserves an existing account preference")
+        void authenticateWithGooglePreservesExistingPreference() {
+                User user = new User();
+                user.setId(11L);
+                user.setUsername("existing_google");
+                user.setEmail("google@readyroad.be");
+                user.setFullName("Google User");
+                user.setRole(Role.USER);
+                user.setPreferredLanguage("nl");
+
+                AuthIdentity identity = new AuthIdentity();
+                identity.setUser(user);
+                identity.setProvider(AuthProvider.GOOGLE);
+                identity.setProviderUserId("google-user-existing");
+
+                when(googleOAuthService.exchangeCodeForUser(ARABIC_REQUEST)).thenReturn(googleUser(
+                                "google-user-existing",
+                                "google@readyroad.be",
+                                true));
+                when(authIdentityRepository.findByProviderAndProviderUserId(
+                                AuthProvider.GOOGLE,
+                                "google-user-existing"))
+                                .thenReturn(Optional.of(identity));
+                when(authIdentityRepository.save(identity)).thenReturn(identity);
+                when(authIdentityRepository.findByUserId(11L)).thenReturn(List.of(identity));
+                when(jwtService.generateToken(anyMap(), anyString())).thenReturn("jwt-token");
+
+                AuthResponse response = socialAuthService.authenticateWithGoogle(ARABIC_REQUEST);
+
+                assertThat(response.getPreferredLanguage()).isEqualTo("nl");
+                assertThat(user.getPreferredLanguage()).isEqualTo("nl");
+                verify(userRepository, never()).save(any(User.class));
+        }
+
+        @Test
         @DisplayName("authenticateWithGoogle creates a new ReadyRoad account when no conflict exists")
         void authenticateWithGoogleCreatesNewUser() {
-                when(googleOAuthService.exchangeCodeForUser(REQUEST)).thenReturn(googleUser(
+                when(googleOAuthService.exchangeCodeForUser(ARABIC_REQUEST)).thenReturn(googleUser(
                                 "google-user-2",
                                 "newuser@readyroad.be",
                                 true));
@@ -110,10 +150,11 @@ class SocialAuthServiceTest {
                 when(authIdentityRepository.findByUserId(42L)).thenReturn(List.of(savedIdentity(42L, "google-user-2")));
                 when(jwtService.generateToken(anyMap(), anyString())).thenReturn("jwt-token");
 
-                AuthResponse response = socialAuthService.authenticateWithGoogle(REQUEST);
+                AuthResponse response = socialAuthService.authenticateWithGoogle(ARABIC_REQUEST);
 
                 assertThat(response.getToken()).isEqualTo("jwt-token");
                 assertThat(response.getNewUser()).isTrue();
+                assertThat(response.getPreferredLanguage()).isEqualTo("ar");
                 assertThat(response.getLinkedProviders()).containsExactly("GOOGLE");
                 verify(notificationService).notifyAdminsNewUser(anyString(), anyString());
         }

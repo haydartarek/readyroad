@@ -27,6 +27,7 @@ public class AuthResponse {
     private String email;
     private String fullName;
     private Role role;
+    private String preferredLanguage;
     private List<String> linkedProviders;
     private Boolean newUser;
     /**
@@ -40,6 +41,7 @@ public class AuthResponse {
             String email,
             String fullName,
             Role role,
+            String preferredLanguage,
             List<String> linkedProviders,
             boolean newUser) {
         AuthResponse response = new AuthResponse();
@@ -50,6 +52,7 @@ public class AuthResponse {
         response.setEmail(email);
         response.setFullName(fullName);
         response.setRole(role);
+        response.setPreferredLanguage(preferredLanguage);
         response.setLinkedProviders(linkedProviders);
         response.setNewUser(newUser);
         return response;

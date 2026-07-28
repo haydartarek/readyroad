@@ -90,6 +90,7 @@ public class AuthService {
         user.setRole(Role.USER); // Default role
         user.setIsActive(true);
         user.setIsLocked(false);
+        user.setPreferredLanguage(request.getPreferredLanguage());
 
         // Save user to database
         try {
@@ -193,6 +194,7 @@ public class AuthService {
                 user.getEmail(),
                 user.getFullName(),
                 user.getRole(),
+                user.getPreferredLanguage(),
                 linkedProviders,
                 false);
     }

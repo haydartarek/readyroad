@@ -40,4 +40,10 @@ public class RegisterRequest {
         message = "Password must contain uppercase, lowercase, number and special character"
     )
     private String password;
+
+    @Pattern(
+        regexp = "^(en|nl|fr|ar)$",
+        message = "Preferred language must be one of: en, nl, fr, ar"
+    )
+    private String preferredLanguage;
 }

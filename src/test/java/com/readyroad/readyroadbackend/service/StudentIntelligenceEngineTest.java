@@ -6,7 +6,11 @@ import com.readyroad.readyroadbackend.dto.StudentIntelligenceResponse;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Stream;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 
 class StudentIntelligenceEngineTest {
 
@@ -146,6 +150,179 @@ class StudentIntelligenceEngineTest {
         assertThat(result.getMonthlyProgress()).isNull();
         assertThat(result.getExamAnalytics().getAverageCompletionTimeSeconds()).isNull();
         assertThat(result.getEstimatedPassProbability()).isNull();
+    }
+
+    @ParameterizedTest(name = "{0}")
+    @MethodSource("historicalPersonas")
+    void keepsAllHistoricalPersonasCoherentAndWithinNumericBounds(
+            String persona,
+            StudentIntelligenceEngine.AnalyticsInput input,
+            boolean expectsAnswerTiming) {
+        StudentIntelligenceResponse result = engine.analyze(input, today);
+
+        assertBounded(result.getExamReadinessScore());
+        assertBounded(result.getConfidenceScore());
+        assertBounded(result.getLearningConsistencyScore());
+        assertBounded(result.getKnowledgeRetentionScore());
+        assertBounded(result.getEstimatedPassProbability());
+        assertThat(result.getEvidenceQuestions()).isGreaterThanOrEqualTo(0);
+        assertThat(result.getTotalLearningActivities()).isGreaterThanOrEqualTo(0);
+        assertThat(result.getActiveDaysLast28()).isBetween(0, 28);
+
+        if (input.totalOfficialExams() <= 1) {
+            assertThat(result.getEstimatedPassProbability())
+                    .as("%s requires multiple exams for probability", persona)
+                    .isNull();
+        }
+        if (result.getEvidenceQuestions() < 20) {
+            assertThat(result.getStudentLevel())
+                    .as("%s has insufficient evidence for an advanced label", persona)
+                    .isEqualTo("BEGINNER");
+            assertThat(result.getExamReadinessScore())
+                    .as("%s has insufficient evidence for readiness", persona)
+                    .isNull();
+        }
+        if (expectsAnswerTiming) {
+            assertThat(result.getTimingAnalytics().getAverageAnswerTimeSeconds()).isPositive();
+            assertThat(result.getTimingAnalytics().getAnswerTimingSamples()).isPositive();
+        } else {
+            assertThat(result.getTimingAnalytics().getAverageAnswerTimeSeconds()).isNull();
+            assertThat(result.getTimingAnalytics().getAnswerTimingSamples()).isZero();
+        }
+        if ("learner with repeated failed exams".equals(persona)) {
+            assertThat(result.getStudentLevel()).isNotIn("EXAM_READY", "EXPERT");
+            assertThat(result.getExamAnalytics().getPassedExams()).isZero();
+        }
+        if ("steadily improving learner".equals(persona)) {
+            assertThat(result.getOverallLearningTrend()).isEqualTo("IMPROVING");
+        }
+        if ("consistently successful learner".equals(persona)) {
+            assertThat(result.getStudentLevel()).isIn("EXAM_READY", "EXPERT");
+            assertThat(result.getExamAnalytics().getPassedExams()).isEqualTo(5);
+        }
+    }
+
+    private static Stream<Arguments> historicalPersonas() {
+        LocalDate today = LocalDate.of(2026, 7, 28);
+        Set<LocalDate> activeWeek = Set.of(
+                today,
+                today.minusDays(1),
+                today.minusDays(2),
+                today.minusDays(4));
+
+        return Stream.of(
+                Arguments.of(
+                        "new user without activity",
+                        new StudentIntelligenceEngine.AnalyticsInput(
+                                0, List.of(), List.of(), List.of(), Set.of(), 0, 0, 0, 0),
+                        false),
+                Arguments.of(
+                        "practice-only learner",
+                        new StudentIntelligenceEngine.AnalyticsInput(
+                                0,
+                                List.of(activity(today.minusDays(1), 68, false, "SIGN_PRACTICE")),
+                                List.of(category(1L, "PRIORITY", 30, 20, today, 12, 8, 10, 6)),
+                                List.of(question(1, 1, today, null, 1L, "PRIORITY")),
+                                activeWeek,
+                                2, 1, 3, 0),
+                        false),
+                Arguments.of(
+                        "learner with one official exam",
+                        new StudentIntelligenceEngine.AnalyticsInput(
+                                1,
+                                List.of(official(today.minusDays(1), 84, true, null)),
+                                List.of(category(1L, "DANGER", 35, 29, today, 10, 8, 10, 8)),
+                                List.of(question(1, 1, today, null, 1L, "DANGER")),
+                                activeWeek,
+                                3, 2, 1, 1),
+                        false),
+                Arguments.of(
+                        "learner with repeated failed exams",
+                        new StudentIntelligenceEngine.AnalyticsInput(
+                                3,
+                                List.of(
+                                        official(today.minusDays(20), 58, false, null),
+                                        official(today.minusDays(10), 63, false, null),
+                                        official(today.minusDays(2), 69, false, null)),
+                                List.of(category(1L, "PARKING", 120, 65, today, 20, 11, 20, 12)),
+                                List.of(question(4, 1, today, null, 1L, "PARKING")),
+                                activeWeek,
+                                5, 2, 4, 0),
+                        false),
+                Arguments.of(
+                        "steadily improving learner",
+                        new StudentIntelligenceEngine.AnalyticsInput(
+                                4,
+                                List.of(
+                                        official(today.minusDays(35), 62, false, null),
+                                        official(today.minusDays(20), 74, false, null),
+                                        official(today.minusDays(8), 84, true, null),
+                                        official(today.minusDays(1), 90, true, null)),
+                                List.of(category(1L, "PRIORITY", 130, 108, today, 25, 22, 25, 18)),
+                                List.of(question(5, 4, today, null, 1L, "PRIORITY")),
+                                activeWeek,
+                                6, 5, 5, 2),
+                        false),
+                Arguments.of(
+                        "consistently successful learner",
+                        new StudentIntelligenceEngine.AnalyticsInput(
+                                5,
+                                List.of(
+                                        official(today.minusDays(30), 91, true, 1_300),
+                                        official(today.minusDays(22), 93, true, 1_260),
+                                        official(today.minusDays(14), 92, true, 1_220),
+                                        official(today.minusDays(7), 94, true, 1_180),
+                                        official(today.minusDays(1), 95, true, 1_140)),
+                                List.of(category(1L, "MANDATORY", 180, 171, today, 30, 29, 30, 28)),
+                                List.of(question(6, 6, today, 14, 1L, "MANDATORY")),
+                                Set.of(
+                                        today,
+                                        today.minusDays(1),
+                                        today.minusDays(2),
+                                        today.minusDays(3),
+                                        today.minusDays(4),
+                                        today.minusDays(5),
+                                        today.minusDays(6),
+                                        today.minusDays(7),
+                                        today.minusDays(8),
+                                        today.minusDays(9),
+                                        today.minusDays(10),
+                                        today.minusDays(11)),
+                                8, 8, 8, 5),
+                        true),
+                Arguments.of(
+                        "historical records without answer timing",
+                        new StudentIntelligenceEngine.AnalyticsInput(
+                                3,
+                                List.of(
+                                        official(today.minusDays(18), 78, false, null),
+                                        official(today.minusDays(9), 84, true, null),
+                                        official(today.minusDays(2), 86, true, null)),
+                                List.of(category(1L, "INFORMATION", 105, 88, today, 20, 17, 20, 16)),
+                                List.of(question(3, 2, today, null, 1L, "INFORMATION")),
+                                activeWeek,
+                                4, 3, 3, 1),
+                        false),
+                Arguments.of(
+                        "new records with answer timing",
+                        new StudentIntelligenceEngine.AnalyticsInput(
+                                2,
+                                List.of(
+                                        official(today.minusDays(7), 80, false, 1_400),
+                                        official(today.minusDays(1), 86, true, 1_250)),
+                                List.of(category(1L, "PROHIBITION", 110, 90, today, 20, 17, 20, 16)),
+                                List.of(
+                                        question(4, 3, today.minusDays(1), 19, 1L, "PROHIBITION"),
+                                        question(3, 3, today, 15, 1L, "PROHIBITION")),
+                                activeWeek,
+                                4, 3, 4, 2),
+                        true));
+    }
+
+    private static void assertBounded(Integer value) {
+        if (value != null) {
+            assertThat(value).isBetween(0, 100);
+        }
     }
 
     private static StudentIntelligenceEngine.ScoredActivity official(
