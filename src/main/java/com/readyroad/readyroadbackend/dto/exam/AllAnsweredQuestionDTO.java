@@ -28,13 +28,25 @@ public class AllAnsweredQuestionDTO {
     // User's selected answer
     private Long selectedOptionId;
     private String selectedOptionText;
+    private String selectedOptionTextEn;
+    private String selectedOptionTextAr;
+    private String selectedOptionTextNl;
+    private String selectedOptionTextFr;
 
     // Correct answer
     private Long correctOptionId;
     private String correctOptionText;
+    private String correctOptionTextEn;
+    private String correctOptionTextAr;
+    private String correctOptionTextNl;
+    private String correctOptionTextFr;
 
     // Category
     private String categoryName;
+    private String categoryNameEn;
+    private String categoryNameAr;
+    private String categoryNameNl;
+    private String categoryNameFr;
     private String categoryCode;
 
     // Visual aid

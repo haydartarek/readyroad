@@ -30,13 +30,25 @@ public class IncorrectQuestionDTO {
     // User's Answer
     private Long selectedOptionId;
     private String selectedOptionText;
+    private String selectedOptionTextEn;
+    private String selectedOptionTextAr;
+    private String selectedOptionTextNl;
+    private String selectedOptionTextFr;
 
     // Correct Answer
     private Long correctOptionId;
     private String correctOptionText;
+    private String correctOptionTextEn;
+    private String correctOptionTextAr;
+    private String correctOptionTextNl;
+    private String correctOptionTextFr;
 
     // Category
     private String categoryName;
+    private String categoryNameEn;
+    private String categoryNameAr;
+    private String categoryNameNl;
+    private String categoryNameFr;
 
     // ========== PRODUCTION ENHANCEMENTS (v2.0) ==========
 

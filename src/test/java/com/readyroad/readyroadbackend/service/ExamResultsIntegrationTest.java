@@ -106,8 +106,10 @@ class ExamResultsIntegrationTest extends BaseIntegrationTest {
                 }
 
                 // Mark exam as completed
+                Instant completedAt = Instant.now();
+                exam.setStartedAt(completedAt.minusSeconds(600));
                 exam.setStatus(ExamSimulation.ExamStatus.COMPLETED);
-                exam.setCompletedAt(Instant.now());
+                exam.setCompletedAt(completedAt);
                 exam.setCorrectAnswers(45);
                 exam.setScorePercentage(90.0);
                 examRepository.save(exam);
@@ -125,6 +127,8 @@ class ExamResultsIntegrationTest extends BaseIntegrationTest {
                 assertThat(results.getScorePercentage()).isEqualTo(90.0);
                 assertThat(results.getPassed()).isTrue(); // 45/50 >= 41 (Belgian passing threshold)
                 assertThat(results.getPassingScore()).isEqualTo(41);
+                assertThat(results.getTimeTakenSeconds()).isEqualTo(600);
+                assertThat(results.getAverageTimePerQuestion()).isEqualTo(12);
 
                 // Verify category breakdown exists
                 assertThat(results.getCategoryBreakdown()).isNotEmpty();
@@ -133,6 +137,43 @@ class ExamResultsIntegrationTest extends BaseIntegrationTest {
                 assertThat(results.getIncorrectQuestions()).hasSize(5);
                 assertThat(results.getIncorrectQuestions().get(0).getQuestionTextEn()).isNotNull();
                 assertThat(results.getIncorrectQuestions().get(0).getCorrectOptionText()).isNotNull();
+                assertThat(results.getIncorrectQuestions().get(0).getSelectedOptionTextAr()).isNotBlank();
+                assertThat(results.getIncorrectQuestions().get(0).getCorrectOptionTextNl()).isNotBlank();
+                assertThat(results.getIncorrectQuestions().get(0).getCorrectOptionTextFr()).isNotBlank();
+                assertThat(results.getIncorrectQuestions().get(0).getCategoryNameAr()).isNotBlank();
+                assertThat(results.getAllAnswers()).hasSize(50);
+                assertThat(results.getAllAnswers().get(0).getSelectedOptionTextAr()).isNotBlank();
+        }
+
+        @Test
+        @DisplayName("Story A3: Completing an exam persists its elapsed time")
+        void testCompleteExamPersistsElapsedTime() {
+                ExamSimulation exam = examService.startExamSimulation(testUserId);
+                exam.setStartedAt(Instant.now().minusSeconds(120));
+                examRepository.save(exam);
+
+                examService.completeExam(exam.getId(), testUserId);
+
+                ExamSimulation completed = examRepository.findById(exam.getId()).orElseThrow();
+                assertThat(completed.getTimeTakenSeconds()).isBetween(119, 121);
+                assertThat(completed.getCompletedAt()).isNotNull();
+        }
+
+        @Test
+        @DisplayName("Story A3: Invalid historical timing remains unavailable")
+        void testInvalidHistoricalTimingIsUnavailable() {
+                ExamSimulation exam = examService.startExamSimulation(testUserId);
+                Instant completedAt = Instant.now();
+                exam.setStartedAt(completedAt.plusSeconds(30));
+                exam.setCompletedAt(completedAt);
+                exam.setTimeTakenSeconds(null);
+                exam.setStatus(ExamSimulation.ExamStatus.COMPLETED);
+                examRepository.save(exam);
+
+                ExamResultsDTO results = examService.getExamResults(exam.getId(), testUserId);
+
+                assertThat(results.getTimeTakenSeconds()).isNull();
+                assertThat(results.getAverageTimePerQuestion()).isNull();
         }
 
         @Test

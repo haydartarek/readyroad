@@ -431,10 +431,12 @@ public class ExamService {
         double scorePercentage = (correctCount * 100.0) / EXAM_QUESTION_COUNT;
 
         // Persist completion state and score on the exam entity
+        Instant completedAt = Instant.now();
         exam.setStatus(ExamSimulation.ExamStatus.COMPLETED);
-        exam.setCompletedAt(Instant.now());
+        exam.setCompletedAt(completedAt);
         exam.setCorrectAnswers(correctCount);
         exam.setScorePercentage(scorePercentage);
+        exam.setTimeTakenSeconds(calculateElapsedSeconds(exam.getStartedAt(), completedAt));
 
         examRepository.save(exam);
 
@@ -805,19 +807,13 @@ public class ExamService {
         String resultStatus = passed ? "PASSED" : "FAILED";
         int pointsToPass = passed ? 0 : (PASSING_SCORE - correctCount);
 
-        int totalTime = answers.stream()
-                .mapToInt(ExamSimulationAnswer::getTimeTakenSeconds)
-                .sum();
-        int avgTime = answeredCount > 0 ? totalTime / answeredCount : 0;
+        Integer totalTime = resolveExamElapsedSeconds(exam);
+        Integer avgTime = totalTime != null && answeredCount > 0
+                ? totalTime / answeredCount
+                : null;
 
         // Calculate duration in minutes
-        Integer durationMinutes = null;
-        if (exam.getStartedAt() != null && exam.getCompletedAt() != null) {
-            long durationSeconds = java.time.Duration.between(
-                    exam.getStartedAt(),
-                    exam.getCompletedAt()).getSeconds();
-            durationMinutes = (int) (durationSeconds / 60);
-        }
+        Integer durationMinutes = totalTime != null ? totalTime / 60 : null;
 
         // 7. Identify weak categories (<60% accuracy)
         List<String> weakCategories = categoryBreakdown.stream()
@@ -950,6 +946,16 @@ public class ExamService {
                         return null; // Skip if no correct option
                     }
 
+                    Category category = question.getCategory();
+                    String selectedEn = roadSignReferenceTextResolver.resolveEn(selectedOption.getOptionTextEn());
+                    String selectedAr = roadSignReferenceTextResolver.resolveAr(selectedOption.getOptionTextAr());
+                    String selectedNl = roadSignReferenceTextResolver.resolveNl(selectedOption.getOptionTextNl());
+                    String selectedFr = roadSignReferenceTextResolver.resolveFr(selectedOption.getOptionTextFr());
+                    String correctEn = roadSignReferenceTextResolver.resolveEn(correctOption.getOptionTextEn());
+                    String correctAr = roadSignReferenceTextResolver.resolveAr(correctOption.getOptionTextAr());
+                    String correctNl = roadSignReferenceTextResolver.resolveNl(correctOption.getOptionTextNl());
+                    String correctFr = roadSignReferenceTextResolver.resolveFr(correctOption.getOptionTextFr());
+
                     return IncorrectQuestionDTO.builder()
                             .questionId(question.getId())
                             .questionTextEn(roadSignReferenceTextResolver.resolveEn(question.getQuestionEn()))
@@ -957,15 +963,26 @@ public class ExamService {
                             .questionTextNl(roadSignReferenceTextResolver.resolveNl(question.getQuestionNl()))
                             .questionTextFr(roadSignReferenceTextResolver.resolveFr(question.getQuestionFr()))
                             .selectedOptionId(selectedOption.getId())
-                            .selectedOptionText(
-                                    roadSignReferenceTextResolver.resolveEn(selectedOption.getOptionTextEn()))
+                            .selectedOptionText(selectedEn)
+                            .selectedOptionTextEn(selectedEn)
+                            .selectedOptionTextAr(selectedAr)
+                            .selectedOptionTextNl(selectedNl)
+                            .selectedOptionTextFr(selectedFr)
                             .correctOptionId(correctOption.getId())
-                            .correctOptionText(roadSignReferenceTextResolver.resolveEn(correctOption.getOptionTextEn()))
-                            .categoryName(question.getCategory() != null
-                                    ? question.getCategory().getNameEn()
+                            .correctOptionText(correctEn)
+                            .correctOptionTextEn(correctEn)
+                            .correctOptionTextAr(correctAr)
+                            .correctOptionTextNl(correctNl)
+                            .correctOptionTextFr(correctFr)
+                            .categoryName(category != null
+                                    ? category.getNameEn()
                                     : messages.get("analytics.category.unknown"))
+                            .categoryNameEn(category != null ? category.getNameEn() : null)
+                            .categoryNameAr(category != null ? category.getNameAr() : null)
+                            .categoryNameNl(category != null ? category.getNameNl() : null)
+                            .categoryNameFr(category != null ? category.getNameFr() : null)
                             // Production enhancements (v2.0)
-                            .categoryCode(question.getCategory() != null ? question.getCategory().getCode() : null)
+                            .categoryCode(category != null ? category.getCode() : null)
                             .contentImageUrl(question.getContentImageUrl()) // Traffic sign image
                             .userAnswerOptionId(selectedOption.getId()) // For analytics
                             .correctAnswerOptionId(correctOption.getId()) // For analytics
@@ -1000,6 +1017,16 @@ public class ExamService {
                         return null;
                     }
 
+                    Category category = question.getCategory();
+                    String selectedEn = roadSignReferenceTextResolver.resolveEn(selectedOption.getOptionTextEn());
+                    String selectedAr = roadSignReferenceTextResolver.resolveAr(selectedOption.getOptionTextAr());
+                    String selectedNl = roadSignReferenceTextResolver.resolveNl(selectedOption.getOptionTextNl());
+                    String selectedFr = roadSignReferenceTextResolver.resolveFr(selectedOption.getOptionTextFr());
+                    String correctEn = roadSignReferenceTextResolver.resolveEn(correctOption.getOptionTextEn());
+                    String correctAr = roadSignReferenceTextResolver.resolveAr(correctOption.getOptionTextAr());
+                    String correctNl = roadSignReferenceTextResolver.resolveNl(correctOption.getOptionTextNl());
+                    String correctFr = roadSignReferenceTextResolver.resolveFr(correctOption.getOptionTextFr());
+
                     return AllAnsweredQuestionDTO.builder()
                             .questionId(question.getId())
                             .questionTextEn(roadSignReferenceTextResolver.resolveEn(question.getQuestionEn()))
@@ -1007,20 +1034,51 @@ public class ExamService {
                             .questionTextNl(roadSignReferenceTextResolver.resolveNl(question.getQuestionNl()))
                             .questionTextFr(roadSignReferenceTextResolver.resolveFr(question.getQuestionFr()))
                             .selectedOptionId(selectedOption.getId())
-                            .selectedOptionText(
-                                    roadSignReferenceTextResolver.resolveEn(selectedOption.getOptionTextEn()))
+                            .selectedOptionText(selectedEn)
+                            .selectedOptionTextEn(selectedEn)
+                            .selectedOptionTextAr(selectedAr)
+                            .selectedOptionTextNl(selectedNl)
+                            .selectedOptionTextFr(selectedFr)
                             .correctOptionId(correctOption.getId())
-                            .correctOptionText(roadSignReferenceTextResolver.resolveEn(correctOption.getOptionTextEn()))
-                            .categoryName(question.getCategory() != null
-                                    ? question.getCategory().getNameEn()
+                            .correctOptionText(correctEn)
+                            .correctOptionTextEn(correctEn)
+                            .correctOptionTextAr(correctAr)
+                            .correctOptionTextNl(correctNl)
+                            .correctOptionTextFr(correctFr)
+                            .categoryName(category != null
+                                    ? category.getNameEn()
                                     : messages.get("analytics.category.unknown"))
-                            .categoryCode(question.getCategory() != null ? question.getCategory().getCode() : null)
+                            .categoryNameEn(category != null ? category.getNameEn() : null)
+                            .categoryNameAr(category != null ? category.getNameAr() : null)
+                            .categoryNameNl(category != null ? category.getNameNl() : null)
+                            .categoryNameFr(category != null ? category.getNameFr() : null)
+                            .categoryCode(category != null ? category.getCode() : null)
                             .contentImageUrl(question.getContentImageUrl())
                             .isCorrect(answer.getIsCorrect())
                             .build();
                 })
                 .filter(java.util.Objects::nonNull)
                 .collect(Collectors.toList());
+    }
+
+    private Integer resolveExamElapsedSeconds(ExamSimulation exam) {
+        Integer calculated = calculateElapsedSeconds(exam.getStartedAt(), exam.getCompletedAt());
+        if (calculated != null) {
+            return calculated;
+        }
+
+        Integer stored = exam.getTimeTakenSeconds();
+        return stored != null && stored > 0 ? stored : null;
+    }
+
+    private Integer calculateElapsedSeconds(Instant startedAt, Instant completedAt) {
+        if (startedAt == null || completedAt == null || completedAt.isBefore(startedAt)) {
+            return null;
+        }
+
+        long elapsedSeconds = Duration.between(startedAt, completedAt).getSeconds();
+        long maximumSeconds = Duration.ofMinutes(EXAM_TIME_LIMIT_MINUTES).getSeconds();
+        return (int) Math.min(elapsedSeconds, maximumSeconds);
     }
 
     /**
