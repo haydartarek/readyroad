@@ -45,11 +45,14 @@ import com.readyroad.readyroadbackend.service.NotificationService;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.security.Principal;
+import java.sql.Connection;
 import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.stream.Collectors;
+import javax.sql.DataSource;
 
 /**
  * Admin Controller
@@ -86,6 +89,7 @@ public class AdminController {
     private final NotificationService notificationService;
     private final AdminSystemSettingsService adminSystemSettingsService;
     private final BackendMessageService messages;
+    private final DataSource dataSource;
 
     /**
      * Scenario: Admin dashboard returns aggregated stats
@@ -309,7 +313,11 @@ public class AdminController {
     @PutMapping("/settings")
     public ResponseEntity<AdminSystemSettingsResponse> updateAdminSettings(
             @Valid @RequestBody AdminSystemSettingsUpdateRequest request) {
-        return ResponseEntity.ok(adminSystemSettingsService.updateSettings(request));
+        try {
+            return ResponseEntity.ok(adminSystemSettingsService.updateSettings(request));
+        } catch (IllegalArgumentException ex) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, ex.getMessage(), ex);
+        }
     }
 
     /**
@@ -333,7 +341,9 @@ public class AdminController {
                 case "id", "username", "email", "fullName", "role", "createdAt" -> sortField;
                 default -> "createdAt";
             };
-            Pageable pageable = PageRequest.of(page, size, Sort.by(direction, safeSortField));
+            int safePage = Math.max(0, page);
+            int safeSize = Math.max(1, Math.min(size, 100));
+            Pageable pageable = PageRequest.of(safePage, safeSize, Sort.by(direction, safeSortField));
             Page<User> usersPage = userRepository.findAdminUsers(q == null ? "" : q.trim(), pageable);
 
             List<Map<String, Object>> userDTOs = usersPage.getContent().stream()
@@ -356,6 +366,18 @@ public class AdminController {
             log.error("❌ Error fetching users", e);
             return errorResponse(HttpStatus.INTERNAL_SERVER_ERROR, messages.get("admin.internal_server_error"));
         }
+    }
+
+    @GetMapping("/users/summary")
+    public ResponseEntity<Map<String, Object>> getUserSummary() {
+        LocalDateTime newSince = LocalDateTime.now().minusDays(7);
+        return ResponseEntity.ok(Map.of(
+                "total", userRepository.count(),
+                "active", userRepository.countByIsActiveTrueAndIsLockedFalse(),
+                "locked", userRepository.countByIsLockedTrue(),
+                "inactive", userRepository.countByIsActiveFalse(),
+                "newThisWeek", userRepository.countByCreatedAtGreaterThanEqual(newSince),
+                "newSince", newSince.toString()));
     }
 
     /**
@@ -390,7 +412,8 @@ public class AdminController {
     @PutMapping("/users/{id}/role")
     public ResponseEntity<?> updateUserRole(
             @PathVariable Long id,
-            @RequestBody Map<String, String> request) {
+            @RequestBody Map<String, String> request,
+            Principal principal) {
 
         log.info("🔄 Updating role for user with id: {}", id);
 
@@ -415,6 +438,18 @@ public class AdminController {
 
         var user = userOpt.get();
         Role oldRole = user.getRole();
+
+        if (oldRole == Role.ADMIN && newRole != Role.ADMIN) {
+            if (isCurrentAdmin(principal, user)) {
+                throw new ResponseStatusException(HttpStatus.CONFLICT,
+                        messages.get("admin.user.self_role_change_forbidden"));
+            }
+            if (userRepository.countByRole(Role.ADMIN) <= 1) {
+                throw new ResponseStatusException(HttpStatus.CONFLICT,
+                        messages.get("admin.user.last_admin_required"));
+            }
+        }
+
         user.setRole(newRole);
         userRepository.save(user);
 
@@ -438,7 +473,8 @@ public class AdminController {
     @PutMapping("/users/{id}/lock")
     public ResponseEntity<?> toggleUserLock(
             @PathVariable Long id,
-            @RequestBody Map<String, Boolean> request) {
+            @RequestBody Map<String, Boolean> request,
+            Principal principal) {
 
         log.info("🔒 Toggling lock for user with id: {}", id);
 
@@ -454,6 +490,19 @@ public class AdminController {
         }
 
         var user = userOpt.get();
+
+        if (Boolean.TRUE.equals(isLocked)) {
+            if (isCurrentAdmin(principal, user)) {
+                throw new ResponseStatusException(HttpStatus.CONFLICT,
+                        messages.get("admin.user.self_lock_forbidden"));
+            }
+            if (user.getRole() == Role.ADMIN
+                    && userRepository.countByRoleAndIsActiveTrueAndIsLockedFalse(Role.ADMIN) <= 1) {
+                throw new ResponseStatusException(HttpStatus.CONFLICT,
+                        messages.get("admin.user.last_admin_required"));
+            }
+        }
+
         user.setIsLocked(isLocked);
         userRepository.save(user);
 
@@ -473,13 +522,22 @@ public class AdminController {
     @GetMapping("/health")
     public ResponseEntity<?> getSystemHealth() {
         log.info("🏥 System health check requested");
+        long timestamp = System.currentTimeMillis();
 
-        Map<String, Object> health = Map.of(
-                "status", "UP",
-                "database", "Connected",
-                "timestamp", System.currentTimeMillis());
-
-        return ResponseEntity.ok(health);
+        try (Connection connection = dataSource.getConnection()) {
+            boolean databaseUp = connection.isValid(2);
+            Map<String, Object> health = Map.of(
+                    "status", databaseUp ? "UP" : "DOWN",
+                    "database", databaseUp ? "Connected" : "Unavailable",
+                    "timestamp", timestamp);
+            return ResponseEntity.status(databaseUp ? HttpStatus.OK : HttpStatus.SERVICE_UNAVAILABLE).body(health);
+        } catch (Exception exception) {
+            log.error("Admin database health check failed", exception);
+            return ResponseEntity.status(HttpStatus.SERVICE_UNAVAILABLE).body(Map.of(
+                    "status", "DOWN",
+                    "database", "Unavailable",
+                    "timestamp", timestamp));
+        }
     }
 
     // ─── Admin Analytics Endpoints ─────────────────────
@@ -613,6 +671,13 @@ public class AdminController {
         }
 
         return dto;
+    }
+
+    private boolean isCurrentAdmin(Principal principal, User user) {
+        return principal != null
+                && principal.getName() != null
+                && (principal.getName().equalsIgnoreCase(user.getUsername())
+                        || principal.getName().equalsIgnoreCase(user.getEmail()));
     }
 
     // ═══════════════════════════════════════════════════

@@ -89,47 +89,50 @@ public class DataImportService {
     @Transactional
     public ImportReport importCategoriesFromUpload(byte[] content, boolean dryRun) {
         ImportReport.Builder b = new ImportReport.Builder("categories", dryRun);
+        JsonNode root;
         try {
-            JsonNode root = objectMapper.readTree(content);
-            Iterator<Map.Entry<String, JsonNode>> fields = root.properties().iterator();
-            while (fields.hasNext()) {
-                Map.Entry<String, JsonNode> entry = fields.next();
-                String categoryName = entry.getKey();
-                JsonNode descriptions = entry.getValue();
-
-                String categoryCode = CATEGORY_NAME_TO_CODE.get(categoryName);
-                if (categoryCode == null) {
-                    b.incSkipped().warn(messages.get("admin.import.category.mapping_missing", categoryName));
-                    continue;
-                }
-
-                Optional<Category> optCat = categoryRepository.findByCode(categoryCode);
-                if (optCat.isEmpty()) {
-                    b.incSkipped().warn(messages.get("admin.import.category.not_found", categoryCode));
-                    continue;
-                }
-
-                b.incUpdated();
-                if (!dryRun) {
-                    Category category = optCat.get();
-                    String dNl = getTextOrNull(descriptions, "description_nl");
-                    String dEn = getTextOrNull(descriptions, "description_en");
-                    String dFr = getTextOrNull(descriptions, "description_fr");
-                    String dAr = getTextOrNull(descriptions, "description_ar");
-                    if (dNl != null)
-                        category.setDescriptionNl(DrivingTextSanitizer.sanitize("NL", dNl));
-                    if (dEn != null)
-                        category.setDescriptionEn(DrivingTextSanitizer.sanitize("EN", dEn));
-                    if (dFr != null)
-                        category.setDescriptionFr(DrivingTextSanitizer.sanitize("FR", dFr));
-                    if (dAr != null)
-                        category.setDescriptionAr(DrivingTextSanitizer.sanitize("AR", dAr));
-                    categoryRepository.save(category);
-                }
-            }
+            root = objectMapper.readTree(content);
         } catch (Exception e) {
             log.error("Categories upload import failed: {}", e.getMessage());
             b.error(messages.get("admin.import.parse_categories_failed", e.getMessage()));
+            return b.build();
+        }
+
+        Iterator<Map.Entry<String, JsonNode>> fields = root.properties().iterator();
+        while (fields.hasNext()) {
+            Map.Entry<String, JsonNode> entry = fields.next();
+            String categoryName = entry.getKey();
+            JsonNode descriptions = entry.getValue();
+
+            String categoryCode = CATEGORY_NAME_TO_CODE.get(categoryName);
+            if (categoryCode == null) {
+                b.incSkipped().warn(messages.get("admin.import.category.mapping_missing", categoryName));
+                continue;
+            }
+
+            Optional<Category> optCat = categoryRepository.findByCode(categoryCode);
+            if (optCat.isEmpty()) {
+                b.incSkipped().warn(messages.get("admin.import.category.not_found", categoryCode));
+                continue;
+            }
+
+            b.incUpdated();
+            if (!dryRun) {
+                Category category = optCat.get();
+                String dNl = getTextOrNull(descriptions, "description_nl");
+                String dEn = getTextOrNull(descriptions, "description_en");
+                String dFr = getTextOrNull(descriptions, "description_fr");
+                String dAr = getTextOrNull(descriptions, "description_ar");
+                if (dNl != null)
+                    category.setDescriptionNl(DrivingTextSanitizer.sanitize("NL", dNl));
+                if (dEn != null)
+                    category.setDescriptionEn(DrivingTextSanitizer.sanitize("EN", dEn));
+                if (dFr != null)
+                    category.setDescriptionFr(DrivingTextSanitizer.sanitize("FR", dFr));
+                if (dAr != null)
+                    category.setDescriptionAr(DrivingTextSanitizer.sanitize("AR", dAr));
+                categoryRepository.save(category);
+            }
         }
         return b.build();
     }
@@ -139,111 +142,141 @@ public class DataImportService {
     @Transactional
     public ImportReport importQuizQuestionsFromUpload(byte[] content, boolean dryRun) {
         ImportReport.Builder b = new ImportReport.Builder("quiz_questions", dryRun);
+        List<JsonNode> questions;
         try {
-            List<JsonNode> questions = objectMapper.readValue(content, new TypeReference<List<JsonNode>>() {
+            questions = objectMapper.readValue(content, new TypeReference<List<JsonNode>>() {
             });
-            for (int i = 0; i < questions.size(); i++) {
-                JsonNode qNode = questions.get(i);
-                String catCode = getTextOrNull(qNode, "categoryCode");
-                if (catCode == null) {
-                    b.incSkipped().warn(messages.get("admin.import.quiz.missing_category", i + 1));
-                    continue;
-                }
-
-                Optional<Category> optCat = categoryRepository.findByCode(catCode);
-                if (optCat.isEmpty()) {
-                    b.incSkipped().warn(messages.get("admin.import.quiz.category_not_found", i + 1, catCode));
-                    continue;
-                }
-
-                String qEn = getTextOrNull(qNode, "questionEn");
-                if (qEn == null) {
-                    b.incSkipped().warn(messages.get("admin.import.quiz.missing_question_en", i + 1));
-                    continue;
-                }
-
-                JsonNode optionsNode = qNode.get("options");
-                if (optionsNode == null || !optionsNode.isArray() || optionsNode.size() < 2) {
-                    b.incSkipped().warn(messages.get("admin.import.quiz.options_min", i + 1));
-                    continue;
-                }
-
-                boolean hasCorrect = false;
-                for (JsonNode opt : optionsNode) {
-                    JsonNode ic = opt.get("isCorrect");
-                    if (ic != null && ic.asBoolean()) {
-                        hasCorrect = true;
-                        break;
-                    }
-                }
-                if (!hasCorrect) {
-                    b.incSkipped().warn(messages.get("admin.import.quiz.no_correct", i + 1));
-                    continue;
-                }
-
-                b.incCreated(); // quiz questions are always new (no upsert key)
-
-                if (!dryRun) {
-                    Category category = optCat.get();
-                    QuizQuestion qq = new QuizQuestion();
-                    qq.setCategory(category);
-                    qq.setQuestionEn(DrivingTextSanitizer.sanitize("EN", qEn));
-                    qq.setQuestionAr(DrivingTextSanitizer.sanitize("AR",
-                            getTextOrNull(qNode, "questionAr") != null ? getTextOrNull(qNode, "questionAr") : qEn));
-                    qq.setQuestionNl(DrivingTextSanitizer.sanitize("NL",
-                            getTextOrNull(qNode, "questionNl") != null ? getTextOrNull(qNode, "questionNl") : qEn));
-                    qq.setQuestionFr(DrivingTextSanitizer.sanitize("FR",
-                            getTextOrNull(qNode, "questionFr") != null ? getTextOrNull(qNode, "questionFr") : qEn));
-
-                    String diff = getTextOrNull(qNode, "difficultyLevel");
-                    qq.setDifficultyLevel(parseDifficulty(diff));
-
-                    String qType = getTextOrNull(qNode, "questionType");
-                    qq.setQuestionType(parseQuestionType(qType));
-
-                    qq.setExplanationEn(DrivingTextSanitizer.sanitize("EN", getTextOrNull(qNode, "explanationEn")));
-                    qq.setExplanationAr(DrivingTextSanitizer.sanitize("AR", getTextOrNull(qNode, "explanationAr")));
-                    qq.setExplanationNl(DrivingTextSanitizer.sanitize("NL", getTextOrNull(qNode, "explanationNl")));
-                    qq.setExplanationFr(DrivingTextSanitizer.sanitize("FR", getTextOrNull(qNode, "explanationFr")));
-                    qq.setContentImageUrl(getTextOrNull(qNode, "contentImageUrl"));
-                    qq.setIsActive(true);
-                    qq.setStatus(QuizQuestion.QuestionStatus.PUBLISHED);
-                    qq.setPublishedAt(LocalDateTime.now());
-
-                    int order = 0;
-                    for (JsonNode optNode : optionsNode) {
-                        QuizAnswerOption opt = new QuizAnswerOption();
-                        String tEn = getTextOrNull(optNode, "textEn");
-                        if (tEn == null)
-                            tEn = "";
-                        String tAr = getTextOrNull(optNode, "textAr") != null ? getTextOrNull(optNode, "textAr") : tEn;
-                        String tNl = getTextOrNull(optNode, "textNl") != null ? getTextOrNull(optNode, "textNl") : tEn;
-                        String tFr = getTextOrNull(optNode, "textFr") != null ? getTextOrNull(optNode, "textFr") : tEn;
-                        // Reject placeholder / corrupted translations at import time
-                        if (PlaceholderDetector.hasPlaceholderNonBlank(tEn, tNl, tFr, tAr)) {
-                            log.warn("⚠️ DataImport: placeholder option skipped — question='{}', text_en='{}'", qEn,
-                                    tEn);
-                            order++;
-                            continue;
-                        }
-                        opt.setOptionTextEn(DrivingTextSanitizer.sanitize("EN", tEn));
-                        opt.setOptionTextAr(DrivingTextSanitizer.sanitize("AR", tAr));
-                        opt.setOptionTextNl(DrivingTextSanitizer.sanitize("NL", tNl));
-                        opt.setOptionTextFr(DrivingTextSanitizer.sanitize("FR", tFr));
-                        JsonNode ic = optNode.get("isCorrect");
-                        opt.setIsCorrect(ic != null && ic.asBoolean());
-                        opt.setDisplayOrder(order++);
-                        qq.addOption(opt);
-                    }
-                    ;
-                    quizQuestionRepository.save(qq);
-                }
-            }
         } catch (Exception e) {
             log.error("Quiz questions upload import failed: {}", e.getMessage());
             b.error(messages.get("admin.import.parse_quiz_failed", e.getMessage()));
+            return b.build();
+        }
+
+        List<QuizImportCandidate> candidates = new ArrayList<>();
+        Set<String> uploadKeys = new HashSet<>();
+        boolean hasValidationErrors = false;
+
+        for (int i = 0; i < questions.size(); i++) {
+            JsonNode qNode = questions.get(i);
+            int itemNumber = i + 1;
+            String catCode = getTextOrNull(qNode, "categoryCode");
+            if (catCode == null) {
+                b.incSkipped().error(messages.get("admin.import.quiz.missing_category", itemNumber));
+                hasValidationErrors = true;
+                continue;
+            }
+
+            Optional<Category> optCat = categoryRepository.findByCode(catCode);
+            if (optCat.isEmpty()) {
+                b.incSkipped().error(messages.get("admin.import.quiz.category_not_found", itemNumber, catCode));
+                hasValidationErrors = true;
+                continue;
+            }
+
+            String qEn = getTextOrNull(qNode, "questionEn");
+            if (qEn == null || qEn.isBlank()) {
+                b.incSkipped().error(messages.get("admin.import.quiz.missing_question_en", itemNumber));
+                hasValidationErrors = true;
+                continue;
+            }
+
+            JsonNode optionsNode = qNode.get("options");
+            if (optionsNode == null || !optionsNode.isArray() || optionsNode.size() < 2 || optionsNode.size() > 3) {
+                b.incSkipped().error(messages.get("admin.import.quiz.options_count", itemNumber));
+                hasValidationErrors = true;
+                continue;
+            }
+
+            int correctCount = 0;
+            boolean invalidOptionText = false;
+            for (JsonNode option : optionsNode) {
+                String textEn = getTextOrNull(option, "textEn");
+                String textAr = getTextOrNull(option, "textAr");
+                String textNl = getTextOrNull(option, "textNl");
+                String textFr = getTextOrNull(option, "textFr");
+                if (textEn == null || textEn.isBlank()
+                        || PlaceholderDetector.hasPlaceholderNonBlank(textEn, textNl, textFr, textAr)) {
+                    invalidOptionText = true;
+                }
+                if (option.path("isCorrect").asBoolean(false)) {
+                    correctCount++;
+                }
+            }
+            if (invalidOptionText) {
+                b.incSkipped().error(messages.get("admin.import.quiz.invalid_option_text", itemNumber));
+                hasValidationErrors = true;
+                continue;
+            }
+            if (correctCount != 1) {
+                b.incSkipped().error(messages.get("admin.import.quiz.correct_count", itemNumber));
+                hasValidationErrors = true;
+                continue;
+            }
+
+            Category category = optCat.get();
+            String duplicateKey = category.getId() + "\u0000" + qEn.trim().toLowerCase(Locale.ROOT);
+            if (!uploadKeys.add(duplicateKey)
+                    || quizQuestionRepository.existsByCategoryIdAndNormalizedQuestionEn(category.getId(), qEn)) {
+                b.incSkipped().warn(messages.get("admin.import.quiz.duplicate", itemNumber));
+                continue;
+            }
+
+            b.incCreated();
+            candidates.add(new QuizImportCandidate(category, qNode, qEn, optionsNode));
+        }
+
+        if (dryRun || hasValidationErrors) {
+            return b.build();
+        }
+
+        for (QuizImportCandidate candidate : candidates) {
+            quizQuestionRepository.save(toQuizQuestion(candidate));
         }
         return b.build();
+    }
+
+    private QuizQuestion toQuizQuestion(QuizImportCandidate candidate) {
+        JsonNode qNode = candidate.question();
+        String qEn = candidate.questionEn();
+        QuizQuestion question = new QuizQuestion();
+        question.setCategory(candidate.category());
+        question.setQuestionEn(DrivingTextSanitizer.sanitize("EN", qEn));
+        question.setQuestionAr(DrivingTextSanitizer.sanitize("AR",
+                getTextOrNull(qNode, "questionAr") != null ? getTextOrNull(qNode, "questionAr") : qEn));
+        question.setQuestionNl(DrivingTextSanitizer.sanitize("NL",
+                getTextOrNull(qNode, "questionNl") != null ? getTextOrNull(qNode, "questionNl") : qEn));
+        question.setQuestionFr(DrivingTextSanitizer.sanitize("FR",
+                getTextOrNull(qNode, "questionFr") != null ? getTextOrNull(qNode, "questionFr") : qEn));
+        question.setDifficultyLevel(parseDifficulty(getTextOrNull(qNode, "difficultyLevel")));
+        question.setQuestionType(parseQuestionType(getTextOrNull(qNode, "questionType")));
+        question.setExplanationEn(DrivingTextSanitizer.sanitize("EN", getTextOrNull(qNode, "explanationEn")));
+        question.setExplanationAr(DrivingTextSanitizer.sanitize("AR", getTextOrNull(qNode, "explanationAr")));
+        question.setExplanationNl(DrivingTextSanitizer.sanitize("NL", getTextOrNull(qNode, "explanationNl")));
+        question.setExplanationFr(DrivingTextSanitizer.sanitize("FR", getTextOrNull(qNode, "explanationFr")));
+        question.setContentImageUrl(getTextOrNull(qNode, "contentImageUrl"));
+        question.setIsActive(true);
+        question.setStatus(QuizQuestion.QuestionStatus.PUBLISHED);
+        question.setPublishedAt(LocalDateTime.now());
+
+        int order = 0;
+        for (JsonNode optionNode : candidate.options()) {
+            QuizAnswerOption option = new QuizAnswerOption();
+            String textEn = getTextOrNull(optionNode, "textEn");
+            String textAr = getTextOrNull(optionNode, "textAr") != null ? getTextOrNull(optionNode, "textAr") : textEn;
+            String textNl = getTextOrNull(optionNode, "textNl") != null ? getTextOrNull(optionNode, "textNl") : textEn;
+            String textFr = getTextOrNull(optionNode, "textFr") != null ? getTextOrNull(optionNode, "textFr") : textEn;
+            option.setOptionTextEn(DrivingTextSanitizer.sanitize("EN", textEn));
+            option.setOptionTextAr(DrivingTextSanitizer.sanitize("AR", textAr));
+            option.setOptionTextNl(DrivingTextSanitizer.sanitize("NL", textNl));
+            option.setOptionTextFr(DrivingTextSanitizer.sanitize("FR", textFr));
+            option.setIsCorrect(optionNode.path("isCorrect").asBoolean(false));
+            option.setDisplayOrder(order++);
+            question.addOption(option);
+        }
+        return question;
+    }
+
+    private record QuizImportCandidate(Category category, JsonNode question, String questionEn, JsonNode options) {
     }
 
     private QuizQuestion.DifficultyLevel parseDifficulty(String val) {

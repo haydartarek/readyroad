@@ -10,5 +10,7 @@ public record AdminSystemSettingsResponse(
         int examQuestions,
         int examDurationMinutes,
         int passingScorePercent,
+        boolean siteNameEditable,
+        boolean examSettingsEditable,
         LocalDateTime updatedAt) {
 }

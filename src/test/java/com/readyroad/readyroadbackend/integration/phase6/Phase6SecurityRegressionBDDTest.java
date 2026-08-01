@@ -52,9 +52,11 @@ public class Phase6SecurityRegressionBDDTest {
 
     private MockMvc mockMvc;
     private User normalUser;
+    private User moderatorUser;
     private User adminUser;
     private User userB;
     private String normalUserJwt;
+    private String moderatorUserJwt;
     private String adminUserJwt;
 
     @BeforeEach
@@ -74,6 +76,16 @@ public class Phase6SecurityRegressionBDDTest {
         normalUser.setIsActive(true);
         normalUser.setIsLocked(false);
         normalUser = userRepository.save(normalUser);
+
+        moderatorUser = new User();
+        moderatorUser.setUsername("moderatoruser");
+        moderatorUser.setEmail("moderator@test.com");
+        moderatorUser.setPasswordHash(passwordEncoder.encode("moderator123"));
+        moderatorUser.setFullName("Moderator User");
+        moderatorUser.setRole(Role.MODERATOR);
+        moderatorUser.setIsActive(true);
+        moderatorUser.setIsLocked(false);
+        moderatorUser = userRepository.save(moderatorUser);
 
         // Create admin user
         adminUser = new User();
@@ -99,6 +111,7 @@ public class Phase6SecurityRegressionBDDTest {
 
         // Login users and get JWTs
         normalUserJwt = loginAndGetJwt("normaluser", "password123");
+        moderatorUserJwt = loginAndGetJwt("moderatoruser", "moderator123");
         adminUserJwt = loginAndGetJwt("adminuser", "admin123");
     }
 
@@ -149,6 +162,25 @@ public class Phase6SecurityRegressionBDDTest {
                 .header("Authorization", "Bearer " + normalUserJwt)
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isForbidden()); // 403
+
+        mockMvc.perform(get("/api/admin/dashboard")
+                .header("Authorization", "Bearer " + normalUserJwt)
+                .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isForbidden());
+    }
+
+    @Test
+    @DisplayName("Moderator blocked from administrator-only endpoints (403)")
+    void moderatorBlockedFromAdminEndpoints() throws Exception {
+        mockMvc.perform(get("/api/admin/dashboard")
+                .header("Authorization", "Bearer " + moderatorUserJwt)
+                .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isForbidden());
+
+        mockMvc.perform(get("/api/admin/users")
+                .header("Authorization", "Bearer " + moderatorUserJwt)
+                .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isForbidden());
     }
 
     @Test
@@ -185,16 +217,14 @@ public class Phase6SecurityRegressionBDDTest {
     }
 
     @Test
-    @DisplayName("Admin endpoints return 404 (not implemented yet)")
+    @DisplayName("Admin can access implemented administrator endpoints")
     void adminCanAccessAdminEndpoints() throws Exception {
-        // NOTE: Admin endpoints not implemented yet - expecting 404
-        // When implemented, admin should get 200 OK
-
-        // When: Admin calls GET /api/admin/questions
-        mockMvc.perform(get("/api/admin/questions")
+        mockMvc.perform(get("/api/admin/dashboard")
                 .header("Authorization", "Bearer " + adminUserJwt)
                 .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isNotFound()); // 404 (endpoint doesn't exist yet)
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.totalUsers").isNumber())
+                .andExpect(jsonPath("$.totalQuizQuestions").isNumber());
     }
 
     @Test

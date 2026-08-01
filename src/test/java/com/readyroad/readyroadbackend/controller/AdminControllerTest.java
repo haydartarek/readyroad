@@ -20,6 +20,9 @@ import com.readyroad.readyroadbackend.service.SignGovernanceService;
 import com.readyroad.readyroadbackend.service.TrafficSignService;
 import java.util.Map;
 import java.util.Optional;
+import java.security.Principal;
+import java.sql.Connection;
+import javax.sql.DataSource;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -83,14 +86,46 @@ class AdminControllerTest {
     @Mock
     private BackendMessageService messages;
 
+    @Mock
+    private DataSource dataSource;
+
+    @Mock
+    private Connection connection;
+
+    @Mock
+    private Principal principal;
+
     @InjectMocks
     private AdminController adminController;
+
+    @Test
+    void healthReportsActualDatabaseConnectivity() throws Exception {
+        when(dataSource.getConnection()).thenReturn(connection);
+        when(connection.isValid(2)).thenReturn(true);
+
+        var response = adminController.getSystemHealth();
+
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
+        assertThat(response.getBody()).isInstanceOf(Map.class);
+        assertThat(((Map<?, ?>) response.getBody()).get("database")).isEqualTo("Connected");
+    }
+
+    @Test
+    void healthReturnsServiceUnavailableWhenDatabaseCannotBeReached() throws Exception {
+        when(dataSource.getConnection()).thenThrow(new java.sql.SQLException("offline"));
+
+        var response = adminController.getSystemHealth();
+
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.SERVICE_UNAVAILABLE);
+        assertThat(response.getBody()).isInstanceOf(Map.class);
+        assertThat(((Map<?, ?>) response.getBody()).get("status")).isEqualTo("DOWN");
+    }
 
     @Test
     void updateUserRoleThrowsBadRequestWhenRoleIsMissing() {
         when(messages.get("admin.user.role_required")).thenReturn("Role is required");
 
-        assertThatThrownBy(() -> adminController.updateUserRole(5L, Map.of()))
+        assertThatThrownBy(() -> adminController.updateUserRole(5L, Map.of(), principal))
                 .isInstanceOfSatisfying(ResponseStatusException.class, ex -> {
                     assertThat(ex.getStatusCode()).isEqualTo(HttpStatus.BAD_REQUEST);
                     assertThat(ex.getReason()).isEqualTo("Role is required");
@@ -102,7 +137,7 @@ class AdminControllerTest {
         when(messages.get("auth.user_not_found")).thenReturn("User not found");
         when(userRepository.findById(7L)).thenReturn(Optional.empty());
 
-        assertThatThrownBy(() -> adminController.updateUserRole(7L, Map.of("role", "ADMIN")))
+        assertThatThrownBy(() -> adminController.updateUserRole(7L, Map.of("role", "ADMIN"), principal))
                 .isInstanceOfSatisfying(ResponseStatusException.class, ex -> {
                     assertThat(ex.getStatusCode()).isEqualTo(HttpStatus.NOT_FOUND);
                     assertThat(ex.getReason()).isEqualTo("User not found");
@@ -113,7 +148,7 @@ class AdminControllerTest {
     void toggleUserLockThrowsBadRequestWhenFlagIsMissing() {
         when(messages.get("admin.user.lock_required")).thenReturn("Lock flag is required");
 
-        assertThatThrownBy(() -> adminController.toggleUserLock(8L, Map.of()))
+        assertThatThrownBy(() -> adminController.toggleUserLock(8L, Map.of(), principal))
                 .isInstanceOfSatisfying(ResponseStatusException.class, ex -> {
                     assertThat(ex.getStatusCode()).isEqualTo(HttpStatus.BAD_REQUEST);
                     assertThat(ex.getReason()).isEqualTo("Lock flag is required");
@@ -125,7 +160,7 @@ class AdminControllerTest {
         when(messages.get("auth.user_not_found")).thenReturn("User not found");
         when(userRepository.findById(9L)).thenReturn(Optional.empty());
 
-        assertThatThrownBy(() -> adminController.toggleUserLock(9L, Map.of("isLocked", true)))
+        assertThatThrownBy(() -> adminController.toggleUserLock(9L, Map.of("isLocked", true), principal))
                 .isInstanceOfSatisfying(ResponseStatusException.class, ex -> {
                     assertThat(ex.getStatusCode()).isEqualTo(HttpStatus.NOT_FOUND);
                     assertThat(ex.getReason()).isEqualTo("User not found");
@@ -142,10 +177,47 @@ class AdminControllerTest {
         when(userRepository.findById(11L)).thenReturn(Optional.of(user));
         when(messages.get("admin.user.role_updated")).thenReturn("Role updated");
 
-        var response = adminController.updateUserRole(11L, Map.of("role", "MODERATOR"));
+        var response = adminController.updateUserRole(11L, Map.of("role", "MODERATOR"), principal);
 
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
         assertThat(user.getRole()).isEqualTo(Role.MODERATOR);
+    }
+
+    @Test
+    void updateUserRoleRejectsSelfDemotion() {
+        User admin = user(20L, "admin", Role.ADMIN);
+        when(principal.getName()).thenReturn("admin");
+        when(userRepository.findById(20L)).thenReturn(Optional.of(admin));
+        when(messages.get("admin.user.self_role_change_forbidden")).thenReturn("Self demotion forbidden");
+
+        assertThatThrownBy(() -> adminController.updateUserRole(20L, Map.of("role", "USER"), principal))
+                .isInstanceOfSatisfying(ResponseStatusException.class, ex ->
+                        assertThat(ex.getStatusCode()).isEqualTo(HttpStatus.CONFLICT));
+    }
+
+    @Test
+    void updateUserRoleRejectsRemovingLastAdmin() {
+        User admin = user(21L, "other-admin", Role.ADMIN);
+        when(principal.getName()).thenReturn("admin");
+        when(userRepository.findById(21L)).thenReturn(Optional.of(admin));
+        when(userRepository.countByRole(Role.ADMIN)).thenReturn(1L);
+        when(messages.get("admin.user.last_admin_required")).thenReturn("Last admin required");
+
+        assertThatThrownBy(() -> adminController.updateUserRole(21L, Map.of("role", "USER"), principal))
+                .isInstanceOfSatisfying(ResponseStatusException.class, ex ->
+                        assertThat(ex.getStatusCode()).isEqualTo(HttpStatus.CONFLICT));
+    }
+
+    @Test
+    void toggleUserLockRejectsLockingCurrentAdmin() {
+        User admin = user(22L, "admin", Role.ADMIN);
+        when(principal.getName()).thenReturn("admin");
+        when(userRepository.findById(22L)).thenReturn(Optional.of(admin));
+        when(messages.get("admin.user.self_lock_forbidden")).thenReturn("Self lock forbidden");
+
+        assertThatThrownBy(() -> adminController.toggleUserLock(22L, Map.of("isLocked", true), principal))
+                .isInstanceOfSatisfying(ResponseStatusException.class, ex ->
+                        assertThat(ex.getStatusCode()).isEqualTo(HttpStatus.CONFLICT));
     }
 
     @Test
@@ -162,5 +234,17 @@ class AdminControllerTest {
                 "error", "User not found",
                 "message", "User not found",
                 "timestamp", body.get("timestamp")));
+    }
+
+    private User user(Long id, String username, Role role) {
+        User user = new User();
+        user.setId(id);
+        user.setUsername(username);
+        user.setEmail(username + "@example.com");
+        user.setFullName(username);
+        user.setRole(role);
+        user.setIsActive(true);
+        user.setIsLocked(false);
+        return user;
     }
 }

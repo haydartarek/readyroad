@@ -16,6 +16,11 @@ import org.springframework.transaction.annotation.Transactional;
 @Slf4j
 public class AdminSystemSettingsService {
 
+    public static final String FIXED_SITE_NAME = "ReadyRoad";
+    public static final int FIXED_EXAM_QUESTION_COUNT = 50;
+    public static final int FIXED_EXAM_DURATION_MINUTES = 30;
+    public static final int FIXED_PASSING_SCORE_PERCENT = 82;
+
     private final AdminSystemSettingsRepository settingsRepository;
 
     @Transactional(readOnly = true)
@@ -25,8 +30,9 @@ public class AdminSystemSettingsService {
 
     @Transactional
     public AdminSystemSettingsResponse updateSettings(AdminSystemSettingsUpdateRequest request) {
+        validateFixedSiteName(request);
+        validateFixedExamConfiguration(request);
         AdminSystemSettings settings = getOrCreateSettings();
-        settings.setSiteName(request.siteName().trim());
         settings.setDefaultLanguage(request.defaultLanguage().trim());
         settings.setMaintenanceMode(request.maintenanceMode());
         settings.setAllowRegistrations(request.allowRegistrations());
@@ -48,6 +54,11 @@ public class AdminSystemSettingsService {
         return Boolean.TRUE.equals(getOrCreateSettings().getAllowRegistrations());
     }
 
+    @Transactional(readOnly = true)
+    public String getDefaultLanguage() {
+        return getOrCreateSettings().getDefaultLanguage();
+    }
+
     @Transactional
     public AdminSystemSettings getOrCreateSettings() {
         return settingsRepository.findFirstByOrderByIdAsc()
@@ -66,14 +77,29 @@ public class AdminSystemSettingsService {
 
     private AdminSystemSettings defaultSettings() {
         AdminSystemSettings settings = new AdminSystemSettings();
-        settings.setSiteName("ReadyRoad");
+        settings.setSiteName(FIXED_SITE_NAME);
         settings.setDefaultLanguage("en");
         settings.setMaintenanceMode(false);
         settings.setAllowRegistrations(true);
-        settings.setExamQuestions(50);
-        settings.setExamDurationMinutes(30);
-        settings.setPassingScorePercent(82);
+        settings.setExamQuestions(FIXED_EXAM_QUESTION_COUNT);
+        settings.setExamDurationMinutes(FIXED_EXAM_DURATION_MINUTES);
+        settings.setPassingScorePercent(FIXED_PASSING_SCORE_PERCENT);
         return settings;
+    }
+
+    private void validateFixedExamConfiguration(AdminSystemSettingsUpdateRequest request) {
+        if (!Integer.valueOf(FIXED_EXAM_QUESTION_COUNT).equals(request.examQuestions())
+                || !Integer.valueOf(FIXED_EXAM_DURATION_MINUTES).equals(request.examDurationMinutes())
+                || !Integer.valueOf(FIXED_PASSING_SCORE_PERCENT).equals(request.passingScorePercent())) {
+            throw new IllegalArgumentException(
+                    "The Belgian exam configuration is fixed at 50 questions, 30 minutes, and an 82% passing score.");
+        }
+    }
+
+    private void validateFixedSiteName(AdminSystemSettingsUpdateRequest request) {
+        if (!FIXED_SITE_NAME.equals(request.siteName().trim())) {
+            throw new IllegalArgumentException("The ReadyRoad product name is fixed and read-only.");
+        }
     }
 
     private AdminSystemSettingsResponse toResponse(AdminSystemSettings settings) {
@@ -85,6 +111,8 @@ public class AdminSystemSettingsService {
                 settings.getExamQuestions(),
                 settings.getExamDurationMinutes(),
                 settings.getPassingScorePercent(),
+                false,
+                false,
                 settings.getUpdatedAt());
     }
 }

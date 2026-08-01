@@ -46,6 +46,9 @@ class AuthServiceTest {
     @Mock
     private BackendMessageService messages;
 
+    @Mock
+    private AdminSystemSettingsService adminSystemSettingsService;
+
     @InjectMocks
     private AuthService authService;
 
@@ -96,5 +99,28 @@ class AuthServiceTest {
         assertThat(response.getPreferredLanguage()).isEqualTo("nl");
         assertThat(response.getRole()).isEqualTo(Role.USER);
         verify(userRepository).save(any(User.class));
+    }
+
+    @Test
+    void registerUsesAdminDefaultLanguageWhenRequestOmitsIt() {
+        RegisterRequest request = new RegisterRequest();
+        request.setUsername("learner");
+        request.setEmail("learner@example.com");
+        request.setFullName("Learner User");
+        request.setPassword("Secret123!");
+
+        when(adminSystemSettingsService.getDefaultLanguage()).thenReturn("fr");
+        when(passwordEncoder.encode("Secret123!")).thenReturn("encoded-password");
+        when(userRepository.save(any(User.class))).thenAnswer(invocation -> {
+            User user = invocation.getArgument(0);
+            user.setId(13L);
+            return user;
+        });
+        when(authIdentityRepository.findByUserId(13L)).thenReturn(List.of());
+        when(jwtService.generateToken(any(), any())).thenReturn("jwt-token");
+
+        AuthResponse response = authService.register(request);
+
+        assertThat(response.getPreferredLanguage()).isEqualTo("fr");
     }
 }

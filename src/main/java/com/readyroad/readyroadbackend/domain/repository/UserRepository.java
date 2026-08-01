@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
+import java.time.LocalDateTime;
 
 /**
  * User Repository
@@ -65,6 +66,14 @@ public interface UserRepository extends JpaRepository<User, Long> {
      */
     long countByIsActiveTrue();
 
+    long countByIsActiveTrueAndIsLockedFalse();
+
+    long countByIsActiveFalse();
+
+    long countByIsLockedTrue();
+
+    long countByCreatedAtGreaterThanEqual(LocalDateTime createdAt);
+
     /**
      * Count users by role
      * Used by: AdminController.getDashboard()
@@ -72,6 +81,8 @@ public interface UserRepository extends JpaRepository<User, Long> {
      * @param role - Role enum (USER, MODERATOR, ADMIN)
      */
     long countByRole(com.readyroad.readyroadbackend.domain.enums.Role role);
+
+    long countByRoleAndIsActiveTrueAndIsLockedFalse(com.readyroad.readyroadbackend.domain.enums.Role role);
 
     /**
      * Find all users with a given role.

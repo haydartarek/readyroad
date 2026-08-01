@@ -44,6 +44,7 @@ public class AuthService {
     private final AuthenticationManager authenticationManager;
     private final NotificationService notificationService;
     private final BackendMessageService messages;
+    private final AdminSystemSettingsService adminSystemSettingsService;
 
     // Computed once at startup; used to run BCrypt when a login identifier is not
     // found, keeping response time indistinguishable from a real wrong-password attempt.
@@ -90,7 +91,10 @@ public class AuthService {
         user.setRole(Role.USER); // Default role
         user.setIsActive(true);
         user.setIsLocked(false);
-        user.setPreferredLanguage(request.getPreferredLanguage());
+        String requestedLanguage = request.getPreferredLanguage();
+        user.setPreferredLanguage(requestedLanguage == null || requestedLanguage.isBlank()
+                ? adminSystemSettingsService.getDefaultLanguage()
+                : requestedLanguage);
 
         // Save user to database
         try {

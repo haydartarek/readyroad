@@ -165,6 +165,14 @@ public interface QuizQuestionRepository extends JpaRepository<QuizQuestion, Long
         @Query("SELECT qq FROM QuizQuestion qq WHERE qq.id = :id")
         Optional<QuizQuestion> findByIdWithOptions(@Param("id") Long id);
 
+        /** Prevent duplicate theory questions during admin JSON imports. */
+        @Query("SELECT CASE WHEN COUNT(qq) > 0 THEN true ELSE false END FROM QuizQuestion qq " +
+                        "WHERE qq.category.id = :categoryId " +
+                        "AND LOWER(TRIM(qq.questionEn)) = LOWER(TRIM(:questionEn))")
+        boolean existsByCategoryIdAndNormalizedQuestionEn(
+                        @Param("categoryId") Long categoryId,
+                        @Param("questionEn") String questionEn);
+
         // ========== Integrity Diagnostic Counts (Admin diagnostics endpoint)
         // ==========
 
