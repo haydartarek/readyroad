@@ -127,6 +127,7 @@ services:
       NEXT_PUBLIC_APP_URL: ${NEXT_PUBLIC_APP_URL:-https://readyroad.be}
       FRONTEND_URL: ${FRONTEND_URL:-https://readyroad.be}
       GOOGLE_OAUTH_CLIENT_ID: ${GOOGLE_OAUTH_CLIENT_ID:-}
+      YOUTUBE_API_KEY: ${YOUTUBE_API_KEY:?YOUTUBE_API_KEY must be set}
       NODE_ENV: production
       TZ: UTC
     ports:
