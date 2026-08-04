@@ -6,17 +6,20 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.lenient;
 import static org.mockito.Mockito.never;
+import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyNoInteractions;
 import static org.mockito.Mockito.when;
 
 import com.readyroad.readyroadbackend.domain.entity.Category;
+import com.readyroad.readyroadbackend.domain.entity.QuizAnswerOption;
 import com.readyroad.readyroadbackend.domain.entity.QuizQuestion;
 import com.readyroad.readyroadbackend.domain.repository.CategoryRepository;
 import com.readyroad.readyroadbackend.domain.repository.QuizQuestionRepository;
 import com.readyroad.readyroadbackend.domain.repository.QuizUserAnswerRepository;
 import com.readyroad.readyroadbackend.domain.repository.UserQuestionHistoryRepository;
 import com.readyroad.readyroadbackend.dto.AdminQuizQuestionRequest;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import org.junit.jupiter.api.BeforeEach;
@@ -28,20 +31,11 @@ import org.mockito.junit.jupiter.MockitoExtension;
 @ExtendWith(MockitoExtension.class)
 class AdminQuizServiceTest {
 
-    @Mock
-    private QuizQuestionRepository questionRepository;
-
-    @Mock
-    private CategoryRepository categoryRepository;
-
-    @Mock
-    private QuizUserAnswerRepository userAnswerRepository;
-
-    @Mock
-    private UserQuestionHistoryRepository historyRepository;
-
-    @Mock
-    private BackendMessageService messages;
+    @Mock private QuizQuestionRepository questionRepository;
+    @Mock private CategoryRepository categoryRepository;
+    @Mock private QuizUserAnswerRepository userAnswerRepository;
+    @Mock private UserQuestionHistoryRepository historyRepository;
+    @Mock private BackendMessageService messages;
 
     private AdminQuizService service;
 
@@ -58,81 +52,230 @@ class AdminQuizServiceTest {
     }
 
     @Test
-    void createsACompliantMultilingualQuestion() {
-        Category category = category();
-        when(categoryRepository.findByCode("A")).thenReturn(Optional.of(category));
+    void createsACompliantMultilingualQuestionWithImageAndExplanation() {
+        when(categoryRepository.findByCode("A")).thenReturn(Optional.of(category()));
         when(questionRepository.save(any(QuizQuestion.class))).thenAnswer(invocation -> {
             QuizQuestion question = invocation.getArgument(0);
             question.setId(99L);
             return question;
         });
+        AdminQuizQuestionRequest request = validRequest();
+        request.setContentImageUrl("/images/quiz/question.png");
 
-        var response = service.createQuestion(validRequest());
+        var response = service.createQuestion(request);
 
-        assertThat(response.id()).isEqualTo(99L);
-        assertThat(response.questionEn()).isEqualTo("What does this traffic sign mean?");
-        assertThat(response.questionAr()).isEqualTo("ماذا تعني هذه العلامة؟");
-        assertThat(response.isActive()).isTrue();
+        assertThat(response.contentImageUrl()).isEqualTo("/images/quiz/question.png");
+        assertThat(response.explanationAr()).isEqualTo("شرح عربي");
         assertThat(response.options()).hasSize(2);
         assertThat(response.options()).filteredOn(option -> Boolean.TRUE.equals(option.isCorrect())).hasSize(1);
-        verify(questionRepository).save(any(QuizQuestion.class));
     }
 
     @Test
-    void rejectsMoreThanThreeOptionsBeforeDatabaseAccess() {
+    void updatesQuestionAndOptionTextInOneSave() {
+        QuizQuestion question = existingQuestion(2);
+        when(questionRepository.findByIdForUpdate(7L)).thenReturn(Optional.of(question));
+        AdminQuizQuestionRequest request = requestFrom(question);
+        request.setQuestionEn("Updated question");
+        request.getOptions().get(0).setTextEn("Updated answer");
+
+        var response = service.updateQuestion(7L, request);
+
+        assertThat(response.questionEn()).isEqualTo("Updated question");
+        assertThat(response.options().get(0).textEn()).isEqualTo("Updated answer");
+        assertThat(response.options().get(0).id()).isEqualTo(101L);
+        verify(questionRepository, times(2)).flush();
+    }
+
+    @Test
+    void changesTheCorrectOptionWithoutChangingItsIdentity() {
+        QuizQuestion question = existingQuestion(2);
+        when(questionRepository.findByIdForUpdate(7L)).thenReturn(Optional.of(question));
+        AdminQuizQuestionRequest request = requestFrom(question);
+        request.getOptions().get(0).setIsCorrect(false);
+        request.getOptions().get(1).setIsCorrect(true);
+
+        var response = service.updateQuestion(7L, request);
+
+        assertThat(response.options()).extracting(option -> option.isCorrect())
+                .containsExactly(false, true);
+        assertThat(response.options().get(1).id()).isEqualTo(102L);
+    }
+
+    @Test
+    void addsAThirdOption() {
+        QuizQuestion question = existingQuestion(2);
+        when(questionRepository.findByIdForUpdate(7L)).thenReturn(Optional.of(question));
+        AdminQuizQuestionRequest request = requestFrom(question);
+        request.getOptions().add(option(null, "Third", false, 3));
+
+        var response = service.updateQuestion(7L, request);
+
+        assertThat(response.options()).hasSize(3);
+        assertThat(question.getActiveOptions()).hasSize(3);
+    }
+
+    @Test
+    void archivesRemovedThirdOptionAndPreservesItsId() {
+        QuizQuestion question = existingQuestion(3);
+        when(questionRepository.findByIdForUpdate(7L)).thenReturn(Optional.of(question));
+        AdminQuizQuestionRequest request = requestFrom(question);
+        request.setOptions(new ArrayList<>(request.getOptions().subList(0, 2)));
+
+        var response = service.updateQuestion(7L, request);
+
+        QuizAnswerOption archived = question.getOptions().stream()
+                .filter(option -> option.getId().equals(103L))
+                .findFirst().orElseThrow();
+        assertThat(archived.getIsActive()).isFalse();
+        assertThat(archived.getQuestion().getId()).isEqualTo(7L);
+        assertThat(response.options()).hasSize(2);
+    }
+
+    @Test
+    void referencedQuestionStillAllowsSafeAnswerEditing() {
+        QuizQuestion question = existingQuestion(2);
+        when(questionRepository.findByIdForUpdate(7L)).thenReturn(Optional.of(question));
+        when(userAnswerRepository.existsByQuestionRefId(7L)).thenReturn(true);
+        AdminQuizQuestionRequest request = requestFrom(question);
+        request.getOptions().get(0).setTextFr("Réponse mise à jour");
+
+        var response = service.updateQuestion(7L, request);
+
+        assertThat(response.options().get(0).textFr()).isEqualTo("Réponse mise à jour");
+    }
+
+    @Test
+    void rejectsOptionOwnedByAnotherQuestionBeforeMutation() {
+        QuizQuestion question = existingQuestion(2);
+        when(questionRepository.findByIdForUpdate(7L)).thenReturn(Optional.of(question));
+        AdminQuizQuestionRequest request = requestFrom(question);
+        request.getOptions().get(0).setId(999L);
+
+        assertThatThrownBy(() -> service.updateQuestion(7L, request))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessage("admin.quiz.option_not_owned");
+        verify(questionRepository, never()).flush();
+        assertThat(question.getOptions().get(0).getOptionTextEn()).isEqualTo("Option 1");
+    }
+
+    @Test
+    void rejectsMalformedImageBeforeDatabaseAccess() {
         AdminQuizQuestionRequest request = validRequest();
-        request.setOptions(List.of(
-                option("One", true, 0),
-                option("Two", false, 1),
-                option("Three", false, 2),
-                option("Four", false, 3)));
+        request.setContentImageUrl("javascript:alert(1)");
 
         assertThatThrownBy(() -> service.createQuestion(request))
                 .isInstanceOf(IllegalArgumentException.class)
-                .hasMessage("admin.quiz.options_count");
+                .hasMessage("admin.quiz.image_reference_invalid");
         verifyNoInteractions(categoryRepository, questionRepository);
     }
 
     @Test
-    void blocksDeletingAReferencedQuestion() {
-        QuizQuestion question = new QuizQuestion();
-        question.setId(7L);
-        when(questionRepository.findById(7L)).thenReturn(Optional.of(question));
-        when(userAnswerRepository.existsByQuestionRefId(7L)).thenReturn(true);
-
-        assertThatThrownBy(() -> service.deleteQuestion(7L))
-                .isInstanceOf(IllegalStateException.class)
-                .hasMessage("admin.quiz.delete_referenced");
-        verify(questionRepository, never()).delete(any());
+    void rejectsOneOrFourOptionsAndInvalidCorrectCounts() {
+        assertRejectedOptions(List.of(option(null, "One", true, 1)), "admin.quiz.options_count");
+        assertRejectedOptions(List.of(
+                option(null, "One", true, 1), option(null, "Two", false, 2),
+                option(null, "Three", false, 3), option(null, "Four", false, 4)),
+                "admin.quiz.options_count");
+        assertRejectedOptions(List.of(
+                option(null, "One", false, 1), option(null, "Two", false, 2)),
+                "admin.quiz.correct_count");
+        assertRejectedOptions(List.of(
+                option(null, "One", true, 1), option(null, "Two", true, 2)),
+                "admin.quiz.correct_count");
     }
 
     @Test
-    void deletesAnUnreferencedQuestion() {
-        QuizQuestion question = new QuizQuestion();
-        question.setId(8L);
-        when(questionRepository.findById(8L)).thenReturn(Optional.of(question));
+    void rejectsDuplicateOptionTextAfterNormalization() {
+        AdminQuizQuestionRequest request = validRequest();
+        request.getOptions().get(1).setTextEn("  OPTION   1 ");
 
-        service.deleteQuestion(8L);
+        assertThatThrownBy(() -> service.createQuestion(request))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessage("admin.quiz.option_text_duplicate");
+    }
 
-        verify(questionRepository).delete(question);
+    private void assertRejectedOptions(List<AdminQuizQuestionRequest.OptionDTO> options, String message) {
+        AdminQuizQuestionRequest request = validRequest();
+        request.setOptions(new ArrayList<>(options));
+        assertThatThrownBy(() -> service.createQuestion(request))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessage(message);
     }
 
     private AdminQuizQuestionRequest validRequest() {
-        return new AdminQuizQuestionRequest(
-                "A",
-                "MEDIUM",
-                "MULTIPLE_CHOICE",
-                "What does this sign mean?",
-                "ماذا تعني هذه العلامة؟",
-                "Wat betekent dit bord?",
-                "Que signifie ce panneau ?",
-                null,
-                true,
-                List.of(option("Stop", true, 0), option("Continue", false, 1)));
+        AdminQuizQuestionRequest request = new AdminQuizQuestionRequest();
+        request.setCategoryCode("A");
+        request.setDifficultyLevel("MEDIUM");
+        request.setQuestionType("MULTIPLE_CHOICE");
+        request.setQuestionEn("What does this sign mean?");
+        request.setQuestionAr("ماذا تعني هذه العلامة؟");
+        request.setQuestionNl("Wat betekent dit bord?");
+        request.setQuestionFr("Que signifie ce panneau ?");
+        request.setExplanationEn("English explanation");
+        request.setExplanationAr("شرح عربي");
+        request.setExplanationNl("Nederlandse uitleg");
+        request.setExplanationFr("Explication française");
+        request.setIsActive(true);
+        request.setOptions(new ArrayList<>(List.of(
+                option(null, "Option 1", true, 1),
+                option(null, "Option 2", false, 2))));
+        return request;
     }
 
-    private AdminQuizQuestionRequest.OptionDTO option(String text, boolean correct, int order) {
-        return new AdminQuizQuestionRequest.OptionDTO(null, text, text, text, text, correct, order);
+    private AdminQuizQuestionRequest requestFrom(QuizQuestion question) {
+        AdminQuizQuestionRequest request = validRequest();
+        request.setQuestionEn(question.getQuestionEn());
+        request.setQuestionAr(question.getQuestionAr());
+        request.setQuestionNl(question.getQuestionNl());
+        request.setQuestionFr(question.getQuestionFr());
+        request.setExplanationEn(question.getExplanationEn());
+        request.setExplanationAr(question.getExplanationAr());
+        request.setExplanationNl(question.getExplanationNl());
+        request.setExplanationFr(question.getExplanationFr());
+        request.setContentImageUrl(question.getContentImageUrl());
+        request.setOptions(question.getActiveOptions().stream()
+                .map(option -> new AdminQuizQuestionRequest.OptionDTO(
+                        option.getId(), option.getOptionTextEn(), option.getOptionTextAr(),
+                        option.getOptionTextNl(), option.getOptionTextFr(), option.getIsCorrect(),
+                        option.getDisplayOrder()))
+                .collect(java.util.stream.Collectors.toCollection(ArrayList::new)));
+        return request;
+    }
+
+    private QuizQuestion existingQuestion(int optionCount) {
+        QuizQuestion question = new QuizQuestion();
+        question.setId(7L);
+        question.setCategory(category());
+        question.setDifficultyLevel(QuizQuestion.DifficultyLevel.MEDIUM);
+        question.setQuestionType(QuizQuestion.QuestionType.MULTIPLE_CHOICE);
+        question.setQuestionEn("What does this sign mean?");
+        question.setQuestionAr("ماذا تعني هذه العلامة؟");
+        question.setQuestionNl("Wat betekent dit bord?");
+        question.setQuestionFr("Que signifie ce panneau ?");
+        question.setExplanationEn("English explanation");
+        question.setExplanationAr("شرح عربي");
+        question.setExplanationNl("Nederlandse uitleg");
+        question.setExplanationFr("Explication française");
+        question.setIsActive(true);
+        question.setOptions(new ArrayList<>());
+        for (int index = 1; index <= optionCount; index++) {
+            QuizAnswerOption option = new QuizAnswerOption();
+            option.setId(100L + index);
+            option.setOptionTextEn("Option " + index);
+            option.setOptionTextAr("خيار " + index);
+            option.setOptionTextNl("Optie " + index);
+            option.setOptionTextFr("Option " + index);
+            option.setIsCorrect(index == 1);
+            option.setDisplayOrder(index);
+            option.setIsActive(true);
+            question.addOption(option);
+        }
+        return question;
+    }
+
+    private AdminQuizQuestionRequest.OptionDTO option(Long id, String text, boolean correct, int order) {
+        return new AdminQuizQuestionRequest.OptionDTO(
+                id, text, text + " AR", text + " NL", text + " FR", correct, order);
     }
 
     private Category category() {

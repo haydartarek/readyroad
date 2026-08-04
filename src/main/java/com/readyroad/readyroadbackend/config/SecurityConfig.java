@@ -134,6 +134,8 @@ public class SecurityConfig {
                                                 // Public static traffic sign images served by the backend
                                                 .requestMatchers(HttpMethod.GET, "/images/signs/**").permitAll()
                                                 .requestMatchers(HttpMethod.HEAD, "/images/signs/**").permitAll()
+                                                .requestMatchers(HttpMethod.GET, "/images/quiz/**").permitAll()
+                                                .requestMatchers(HttpMethod.HEAD, "/images/quiz/**").permitAll()
 
                                                 // Authentication
                                                 .requestMatchers(

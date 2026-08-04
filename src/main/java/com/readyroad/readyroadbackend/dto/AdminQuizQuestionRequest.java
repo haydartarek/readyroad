@@ -31,9 +31,17 @@ public class AdminQuizQuestionRequest {
     @NotBlank(message = "English question text is required")
     private String questionEn;
 
+    @NotBlank(message = "Arabic question text is required")
     private String questionAr;
+    @NotBlank(message = "Dutch question text is required")
     private String questionNl;
+    @NotBlank(message = "French question text is required")
     private String questionFr;
+
+    private String explanationEn;
+    private String explanationAr;
+    private String explanationNl;
+    private String explanationFr;
 
     private String contentImageUrl;
 
@@ -53,8 +61,11 @@ public class AdminQuizQuestionRequest {
         @NotBlank(message = "English option text is required")
         private String textEn;
 
+        @NotBlank(message = "Arabic option text is required")
         private String textAr;
+        @NotBlank(message = "Dutch option text is required")
         private String textNl;
+        @NotBlank(message = "French option text is required")
         private String textFr;
 
         private Boolean isCorrect = false;

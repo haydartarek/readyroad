@@ -162,14 +162,24 @@ public class QuizQuestion extends BaseEntity {
 
     @Transient
     public List<QuizAnswerOption> getDeliverableOptions() {
-        if (options == null || options.isEmpty()) {
-            return List.of();
-        }
-        return options.stream()
+        return getActiveOptions().stream()
                 .sorted(Comparator.comparing(
                         QuizAnswerOption::getDisplayOrder,
                         Comparator.nullsLast(Integer::compareTo)))
                 .limit(getExpectedOptionCount())
+                .toList();
+    }
+
+    @Transient
+    public List<QuizAnswerOption> getActiveOptions() {
+        if (options == null || options.isEmpty()) {
+            return List.of();
+        }
+        return options.stream()
+                .filter(option -> !Boolean.FALSE.equals(option.getIsActive()))
+                .sorted(Comparator.comparing(
+                        QuizAnswerOption::getDisplayOrder,
+                        Comparator.nullsLast(Integer::compareTo)))
                 .toList();
     }
 

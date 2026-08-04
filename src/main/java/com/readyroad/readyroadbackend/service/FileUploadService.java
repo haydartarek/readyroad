@@ -7,11 +7,13 @@ import org.springframework.web.multipart.MultipartFile;
 
 import jakarta.annotation.PostConstruct;
 import java.io.IOException;
+import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.Set;
+import java.util.Locale;
 import java.util.UUID;
 
 /**
@@ -83,6 +85,13 @@ public class FileUploadService {
                     messages.get("upload.invalid_extension", extension));
         }
 
+        String normalizedType = contentType.toLowerCase(Locale.ROOT);
+        String normalizedExtension = extension.toLowerCase(Locale.ROOT);
+        if (!matchesDeclaredType(normalizedType, normalizedExtension) ||
+                !hasValidImageSignature(file, normalizedType)) {
+            throw new IllegalArgumentException(messages.get("upload.unreadable_image"));
+        }
+
         // Validate file size
         long maxBytes = (long) maxFileSizeMb * 1024 * 1024;
         if (file.getSize() > maxBytes) {
@@ -152,5 +161,38 @@ public class FileUploadService {
             return "";
         }
         return filename.substring(filename.lastIndexOf('.') + 1);
+    }
+
+    private boolean matchesDeclaredType(String contentType, String extension) {
+        return switch (extension) {
+            case "jpg", "jpeg" -> contentType.equals("image/jpeg") || contentType.equals("image/jpg");
+            case "png" -> contentType.equals("image/png");
+            case "webp" -> contentType.equals("image/webp");
+            default -> false;
+        };
+    }
+
+    private boolean hasValidImageSignature(MultipartFile file, String contentType) {
+        try (InputStream input = file.getInputStream()) {
+            byte[] header = input.readNBytes(12);
+            if (contentType.equals("image/jpeg") || contentType.equals("image/jpg")) {
+                return header.length >= 3 &&
+                        (header[0] & 0xFF) == 0xFF && (header[1] & 0xFF) == 0xD8 && (header[2] & 0xFF) == 0xFF;
+            }
+            if (contentType.equals("image/png")) {
+                byte[] png = {(byte) 0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0A};
+                if (header.length < png.length) return false;
+                for (int index = 0; index < png.length; index++) {
+                    if (header[index] != png[index]) return false;
+                }
+                return true;
+            }
+            return contentType.equals("image/webp") && header.length >= 12 &&
+                    header[0] == 'R' && header[1] == 'I' && header[2] == 'F' && header[3] == 'F' &&
+                    header[8] == 'W' && header[9] == 'E' && header[10] == 'B' && header[11] == 'P';
+        } catch (IOException exception) {
+            log.warn("Unreadable image upload rejected: {}", exception.getClass().getSimpleName());
+            return false;
+        }
     }
 }

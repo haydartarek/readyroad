@@ -27,7 +27,9 @@ public class BelgianOptionsCountValidator
             return true;
         }
 
-        int count = options.size();
+        int count = (int) options.stream()
+                .filter(option -> !Boolean.FALSE.equals(option.getIsActive()))
+                .count();
 
         if (count < MIN_OPTIONS || count > MAX_OPTIONS) {
             context.disableDefaultConstraintViolation();

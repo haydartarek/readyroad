@@ -6,12 +6,14 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Lock;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
+import jakarta.persistence.LockModeType;
 
 /**
  * Quiz Question Repository
@@ -165,6 +167,10 @@ public interface QuizQuestionRepository extends JpaRepository<QuizQuestion, Long
         @Query("SELECT qq FROM QuizQuestion qq WHERE qq.id = :id")
         Optional<QuizQuestion> findByIdWithOptions(@Param("id") Long id);
 
+        @Lock(LockModeType.PESSIMISTIC_WRITE)
+        @Query("SELECT qq FROM QuizQuestion qq WHERE qq.id = :id")
+        Optional<QuizQuestion> findByIdForUpdate(@Param("id") Long id);
+
         /** Prevent duplicate theory questions during admin JSON imports. */
         @Query("SELECT CASE WHEN COUNT(qq) > 0 THEN true ELSE false END FROM QuizQuestion qq " +
                         "WHERE qq.category.id = :categoryId " +
@@ -179,7 +185,7 @@ public interface QuizQuestionRepository extends JpaRepository<QuizQuestion, Long
         /** Questions with fewer than 2 options (Belgian minimum). */
         @Query(value = "SELECT COUNT(*) FROM (" +
                         "  SELECT q.id FROM quiz_questions q" +
-                        "  LEFT JOIN quiz_answer_options o ON o.question_id = q.id" +
+                        "  LEFT JOIN quiz_answer_options o ON o.question_id = q.id AND o.is_active = true" +
                         "  GROUP BY q.id HAVING COUNT(o.id) < 2" +
                         ") subq", nativeQuery = true)
         long countQuestionsWithFewerThanTwoOptions();
@@ -187,7 +193,7 @@ public interface QuizQuestionRepository extends JpaRepository<QuizQuestion, Long
         /** Questions with more than 3 options (Belgian maximum). */
         @Query(value = "SELECT COUNT(*) FROM (" +
                         "  SELECT q.id FROM quiz_questions q" +
-                        "  LEFT JOIN quiz_answer_options o ON o.question_id = q.id" +
+                        "  LEFT JOIN quiz_answer_options o ON o.question_id = q.id AND o.is_active = true" +
                         "  GROUP BY q.id HAVING COUNT(o.id) > 3" +
                         ") subq", nativeQuery = true)
         long countQuestionsWithMoreThanThreeOptions();
@@ -195,7 +201,7 @@ public interface QuizQuestionRepository extends JpaRepository<QuizQuestion, Long
         /** Questions that have no correct answer option. */
         @Query(value = "SELECT COUNT(*) FROM (" +
                         "  SELECT q.id FROM quiz_questions q" +
-                        "  LEFT JOIN quiz_answer_options o ON o.question_id = q.id AND o.is_correct = true" +
+                        "  LEFT JOIN quiz_answer_options o ON o.question_id = q.id AND o.is_active = true AND o.is_correct = true" +
                         "  GROUP BY q.id HAVING COUNT(o.id) = 0" +
                         ") subq", nativeQuery = true)
         long countQuestionsWithZeroCorrectOptions();
@@ -203,14 +209,14 @@ public interface QuizQuestionRepository extends JpaRepository<QuizQuestion, Long
         /** Questions that have more than one correct answer option. */
         @Query(value = "SELECT COUNT(*) FROM (" +
                         "  SELECT q.id FROM quiz_questions q" +
-                        "  JOIN quiz_answer_options o ON o.question_id = q.id AND o.is_correct = true" +
+                        "  JOIN quiz_answer_options o ON o.question_id = q.id AND o.is_active = true AND o.is_correct = true" +
                         "  GROUP BY q.id HAVING COUNT(o.id) > 1" +
                         ") subq", nativeQuery = true)
         long countQuestionsWithMultipleCorrectOptions();
 
         /** Questions that have at least one option with blank/null English text. */
         @Query(value = "SELECT COUNT(DISTINCT q.id) FROM quiz_questions q" +
-                        " JOIN quiz_answer_options o ON o.question_id = q.id" +
+                        " JOIN quiz_answer_options o ON o.question_id = q.id AND o.is_active = true" +
                         " WHERE o.option_text_en IS NULL OR TRIM(o.option_text_en) = ''", nativeQuery = true)
         long countQuestionsWithOptionsMissingEnglishText();
 
@@ -231,7 +237,7 @@ public interface QuizQuestionRepository extends JpaRepository<QuizQuestion, Long
          */
         @Query(value = "SELECT COUNT(*) FROM (" +
                         "  SELECT q.id FROM quiz_questions q" +
-                        "  JOIN quiz_answer_options o ON o.question_id = q.id" +
+                        "  JOIN quiz_answer_options o ON o.question_id = q.id AND o.is_active = true" +
                         "  WHERE q.is_active = true AND q.status = 'PUBLISHED'" +
                         "  GROUP BY q.id" +
                         "  HAVING COUNT(o.id) BETWEEN 2 AND 3" +
@@ -244,7 +250,7 @@ public interface QuizQuestionRepository extends JpaRepository<QuizQuestion, Long
          */
         @Query(value = "SELECT COUNT(*) FROM (" +
                         "  SELECT q.id FROM quiz_questions q" +
-                        "  JOIN quiz_answer_options o ON o.question_id = q.id" +
+                        "  JOIN quiz_answer_options o ON o.question_id = q.id AND o.is_active = true" +
                         "  WHERE q.is_active = true AND q.status = 'PUBLISHED'" +
                         "  AND q.category_id = :categoryId" +
                         "  GROUP BY q.id" +
@@ -259,7 +265,7 @@ public interface QuizQuestionRepository extends JpaRepository<QuizQuestion, Long
          */
         @Query(value = "SELECT compliant.category_id, COUNT(*) AS cnt FROM (" +
                         "  SELECT q.id, q.category_id FROM quiz_questions q" +
-                        "  JOIN quiz_answer_options o ON o.question_id = q.id" +
+                        "  JOIN quiz_answer_options o ON o.question_id = q.id AND o.is_active = true" +
                         "  WHERE q.is_active = true AND q.status = 'PUBLISHED'" +
                         "  GROUP BY q.id, q.category_id" +
                         "  HAVING COUNT(o.id) BETWEEN 2 AND 3" +

@@ -49,6 +49,9 @@ public class QuizAnswerOption {
     @Column(nullable = false)
     private Integer displayOrder = 0;
 
+    @Column(name = "is_active", nullable = false)
+    private Boolean isActive = true;
+
     @Column(nullable = false, updatable = false)
     private java.time.LocalDateTime createdAt;
 

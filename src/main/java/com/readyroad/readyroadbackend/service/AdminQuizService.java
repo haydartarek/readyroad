@@ -19,14 +19,23 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.support.TransactionSynchronization;
+import org.springframework.transaction.support.TransactionSynchronizationManager;
 
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -124,6 +133,7 @@ public class AdminQuizService {
             option.setOptionTextFr(DrivingTextSanitizer.sanitize("FR", optDto.getTextFr() != null ? optDto.getTextFr() : ""));
             option.setIsCorrect(optDto.getIsCorrect() != null ? optDto.getIsCorrect() : false);
             option.setDisplayOrder(optDto.getDisplayOrder() != null ? optDto.getDisplayOrder() : 0);
+            option.setIsActive(true);
             question.addOption(option);
         }
 
@@ -138,13 +148,17 @@ public class AdminQuizService {
     public AdminQuizQuestionResponse updateQuestion(Long id, AdminQuizQuestionRequest request) {
         validateOptionsPolicy(request);
 
-        QuizQuestion question = questionRepository.findByIdWithOptions(id)
+        QuizQuestion question = questionRepository.findByIdForUpdate(id)
                 .orElseThrow(() -> new IllegalArgumentException(messages.get("admin.quiz.not_found", id)));
+        question.getOptions().size();
         boolean isReferenced = isQuestionReferenced(id);
 
         if (isReferenced) {
             validateReferencedQuestionUpdate(question, request);
         }
+
+        validateRequestedOptionIds(question, request.getOptions());
+        QuizUpdateAudit audit = captureAudit(question, request);
 
         // Update category if changed
         if (!question.getCategory().getCode().equals(request.getCategoryCode())) {
@@ -157,10 +171,13 @@ public class AdminQuizService {
         mapRequestToEntity(request, question);
         synchronizeDeliveryStatus(question);
 
-        List<QuizAnswerOption> existingOptions = new ArrayList<>(question.getOptions());
+        List<QuizAnswerOption> existingOptions = new ArrayList<>(question.getActiveOptions());
         Map<Long, QuizAnswerOption> existingById = existingOptions.stream()
                 .filter(option -> option.getId() != null)
                 .collect(Collectors.toMap(QuizAnswerOption::getId, option -> option));
+        Map<Long, Integer> originalOrders = existingOptions.stream()
+                .filter(option -> option.getId() != null)
+                .collect(Collectors.toMap(QuizAnswerOption::getId, QuizAnswerOption::getDisplayOrder));
 
         for (int index = 0; index < existingOptions.size(); index++) {
             existingOptions.get(index).setDisplayOrder(1000 + index);
@@ -175,12 +192,9 @@ public class AdminQuizService {
         for (AdminQuizQuestionRequest.OptionDTO optDto : request.getOptions()) {
             QuizAnswerOption option = optDto.getId() != null ? existingById.get(optDto.getId()) : null;
             if (option == null) {
-                if (!unmatchedExistingOptions.isEmpty()) {
-                    option = unmatchedExistingOptions.remove(0);
-                } else {
-                    option = new QuizAnswerOption();
-                    question.addOption(option);
-                }
+                option = new QuizAnswerOption();
+                option.setIsActive(true);
+                question.addOption(option);
             } else {
                 unmatchedExistingOptions.remove(option);
             }
@@ -191,14 +205,16 @@ public class AdminQuizService {
             option.setOptionTextFr(DrivingTextSanitizer.sanitize("FR", optDto.getTextFr() != null ? optDto.getTextFr() : ""));
             option.setIsCorrect(optDto.getIsCorrect() != null ? optDto.getIsCorrect() : false);
             option.setDisplayOrder(optDto.getDisplayOrder() != null ? optDto.getDisplayOrder() : 0);
+            option.setIsActive(true);
         }
 
         for (QuizAnswerOption staleOption : unmatchedExistingOptions) {
-            question.removeOption(staleOption);
+            staleOption.setIsActive(false);
+            staleOption.setDisplayOrder(originalOrders.get(staleOption.getId()));
         }
 
         questionRepository.flush();
-        log.info("✅ Quiz question updated id={}", question.getId());
+        auditAfterCommit(audit);
         return toResponse(question);
     }
 
@@ -210,18 +226,24 @@ public class AdminQuizService {
      * - Option count outside [2, 3]
      * - Not exactly 1 correct option
      * - Duplicate displayOrder values
-     * - Any option missing English text
+     * - Any option missing text in a supported language
+     * - Duplicate option text in any supported language
      */
     private void validateOptionsPolicy(AdminQuizQuestionRequest request) {
         List<AdminQuizQuestionRequest.OptionDTO> options = request.getOptions();
         if (options == null) {
             throw new IllegalArgumentException(messages.get("admin.quiz.options_required"));
         }
+        if (isBlank(request.getQuestionEn()) || isBlank(request.getQuestionAr()) ||
+                isBlank(request.getQuestionNl()) || isBlank(request.getQuestionFr())) {
+            throw new IllegalArgumentException(messages.get("admin.quiz.question_text_required"));
+        }
 
         if (parseQuestionType(request.getQuestionType()) == QuizQuestion.QuestionType.IMAGE_BASED &&
                 (request.getContentImageUrl() == null || request.getContentImageUrl().isBlank())) {
             throw new IllegalArgumentException(messages.get("admin.quiz.image_required"));
         }
+        validateImageReference(request.getContentImageUrl());
 
         int count = options.size();
         if (count < 2 || count > 3) {
@@ -236,14 +258,24 @@ public class AdminQuizService {
         }
 
         Set<Integer> orders = new HashSet<>();
+        Map<String, Set<String>> normalizedTexts = Map.of(
+                "EN", new HashSet<>(),
+                "AR", new HashSet<>(),
+                "NL", new HashSet<>(),
+                "FR", new HashSet<>());
         for (AdminQuizQuestionRequest.OptionDTO opt : options) {
             int order = opt.getDisplayOrder() != null ? opt.getDisplayOrder() : 0;
             if (!orders.add(order)) {
                 throw new IllegalArgumentException(messages.get("admin.quiz.display_order_duplicate", order));
             }
-            if (opt.getTextEn() == null || opt.getTextEn().isBlank()) {
+            if (isBlank(opt.getTextEn()) || isBlank(opt.getTextAr()) ||
+                    isBlank(opt.getTextNl()) || isBlank(opt.getTextFr())) {
                 throw new IllegalArgumentException(messages.get("admin.quiz.option_text_required"));
             }
+            addUniqueOptionText(normalizedTexts.get("EN"), opt.getTextEn(), "EN");
+            addUniqueOptionText(normalizedTexts.get("AR"), opt.getTextAr(), "AR");
+            addUniqueOptionText(normalizedTexts.get("NL"), opt.getTextNl(), "NL");
+            addUniqueOptionText(normalizedTexts.get("FR"), opt.getTextFr(), "FR");
             if (PlaceholderDetector.hasPlaceholderNonBlank(
                     opt.getTextEn(), opt.getTextNl(), opt.getTextFr(), opt.getTextAr())) {
                 throw new IllegalArgumentException(messages.get("admin.quiz.option_placeholder"));
@@ -256,48 +288,70 @@ public class AdminQuizService {
                 || !existing.getCategory().getCode().equals(request.getCategoryCode());
         boolean difficultyChanged = parseDifficultyOrDefault(request.getDifficultyLevel()) != existing.getDifficultyLevel();
         boolean typeChanged = parseQuestionType(request.getQuestionType()) != existing.getQuestionType();
-        boolean optionsChanged = !hasSameOptionStructure(existing, request.getOptions());
-
-        if (categoryChanged || difficultyChanged || typeChanged || optionsChanged) {
+        if (categoryChanged || difficultyChanged || typeChanged) {
             throw new IllegalStateException(messages.get("admin.quiz.referenced_update_blocked"));
         }
     }
 
-    private boolean hasSameOptionStructure(
-            QuizQuestion existing,
+    private void validateRequestedOptionIds(
+            QuizQuestion question,
             List<AdminQuizQuestionRequest.OptionDTO> requestedOptions) {
+        Set<Long> activeOptionIds = question.getActiveOptions().stream()
+                .map(QuizAnswerOption::getId)
+                .filter(Objects::nonNull)
+                .collect(Collectors.toSet());
+        Set<Long> requestedIds = new HashSet<>();
 
-        if (existing.getOptions() == null || requestedOptions == null) {
-            return existing.getOptions() == null && requestedOptions == null;
+        for (AdminQuizQuestionRequest.OptionDTO option : requestedOptions) {
+            Long optionId = option.getId();
+            if (optionId == null) {
+                continue;
+            }
+            if (!requestedIds.add(optionId) || !activeOptionIds.contains(optionId)) {
+                throw new IllegalArgumentException(messages.get("admin.quiz.option_not_owned", optionId));
+            }
+        }
+    }
+
+    private void addUniqueOptionText(Set<String> values, String value, String language) {
+        if (!values.add(normalizeOptionText(value))) {
+            throw new IllegalArgumentException(messages.get("admin.quiz.option_text_duplicate", language));
+        }
+    }
+
+    private String normalizeOptionText(String value) {
+        return normalize(value).replaceAll("\\s+", " ").toLowerCase(Locale.ROOT);
+    }
+
+    private boolean isBlank(String value) {
+        return value == null || value.isBlank();
+    }
+
+    private void validateImageReference(String imageReference) {
+        if (imageReference == null || imageReference.isBlank()) {
+            return;
         }
 
-        List<OptionSignature> existingOptions = existing.getOptions().stream()
-                .sorted(Comparator.comparing(
-                        QuizAnswerOption::getDisplayOrder,
-                        Comparator.nullsLast(Integer::compareTo)))
-                .map(option -> new OptionSignature(
-                        normalize(option.getOptionTextEn()),
-                        normalize(option.getOptionTextAr()),
-                        normalize(option.getOptionTextNl()),
-                        normalize(option.getOptionTextFr()),
-                        Boolean.TRUE.equals(option.getIsCorrect()),
-                        option.getDisplayOrder() != null ? option.getDisplayOrder() : 0))
-                .toList();
+        String value = imageReference.trim();
+        if (value.matches("^/images/quiz/[A-Za-z0-9][A-Za-z0-9._-]*\\.(?i:jpg|jpeg|png|webp)$")) {
+            return;
+        }
 
-        List<OptionSignature> incomingOptions = requestedOptions.stream()
-                .sorted(Comparator.comparing(
-                        AdminQuizQuestionRequest.OptionDTO::getDisplayOrder,
-                        Comparator.nullsLast(Integer::compareTo)))
-                .map(option -> new OptionSignature(
-                        normalize(option.getTextEn()),
-                        normalize(option.getTextAr()),
-                        normalize(option.getTextNl()),
-                        normalize(option.getTextFr()),
-                        Boolean.TRUE.equals(option.getIsCorrect()),
-                        option.getDisplayOrder() != null ? option.getDisplayOrder() : 0))
-                .toList();
+        try {
+            URI uri = new URI(value);
+            if ("https".equalsIgnoreCase(uri.getScheme()) && uri.getHost() != null &&
+                    uri.getUserInfo() == null) {
+                return;
+            }
+        } catch (URISyntaxException ignored) {
+            // Converted to the API's normal 400 validation response below.
+        }
 
-        return existingOptions.equals(incomingOptions);
+        throw new IllegalArgumentException(messages.get("admin.quiz.image_reference_invalid"));
+    }
+
+    private String normalizeImageReference(String imageReference) {
+        return imageReference == null || imageReference.isBlank() ? null : imageReference.trim();
     }
 
     private void synchronizeDeliveryStatus(QuizQuestion question) {
@@ -315,6 +369,119 @@ public class AdminQuizService {
 
     private String normalize(String value) {
         return value == null ? "" : value.trim();
+    }
+
+    private QuizUpdateAudit captureAudit(QuizQuestion question, AdminQuizQuestionRequest request) {
+        Set<String> changedFields = new LinkedHashSet<>();
+        addChanged(changedFields, "questionEn", question.getQuestionEn(), request.getQuestionEn());
+        addChanged(changedFields, "questionAr", question.getQuestionAr(), request.getQuestionAr());
+        addChanged(changedFields, "questionNl", question.getQuestionNl(), request.getQuestionNl());
+        addChanged(changedFields, "questionFr", question.getQuestionFr(), request.getQuestionFr());
+        addChanged(changedFields, "explanationEn", question.getExplanationEn(), request.getExplanationEn());
+        addChanged(changedFields, "explanationAr", question.getExplanationAr(), request.getExplanationAr());
+        addChanged(changedFields, "explanationNl", question.getExplanationNl(), request.getExplanationNl());
+        addChanged(changedFields, "explanationFr", question.getExplanationFr(), request.getExplanationFr());
+        addChanged(changedFields, "contentImageUrl", question.getContentImageUrl(), request.getContentImageUrl());
+
+        if (!Objects.equals(question.getIsActive(), request.getIsActive())) changedFields.add("isActive");
+        if (question.getDifficultyLevel() != parseDifficultyOrDefault(request.getDifficultyLevel())) changedFields.add("difficultyLevel");
+        if (question.getQuestionType() != parseQuestionType(request.getQuestionType())) changedFields.add("questionType");
+        if (question.getCategory() == null || !Objects.equals(question.getCategory().getCode(), request.getCategoryCode())) {
+            changedFields.add("categoryCode");
+        }
+
+        List<QuizAnswerOption> activeOptions = question.getActiveOptions();
+        Set<Long> requestedIds = request.getOptions().stream()
+                .map(AdminQuizQuestionRequest.OptionDTO::getId)
+                .filter(Objects::nonNull)
+                .collect(Collectors.toSet());
+        int added = (int) request.getOptions().stream().filter(option -> option.getId() == null).count();
+        int removed = (int) activeOptions.stream()
+                .filter(option -> option.getId() != null && !requestedIds.contains(option.getId()))
+                .count();
+        if (added > 0 || removed > 0 || optionsContentChanged(activeOptions, request.getOptions())) {
+            changedFields.add("options");
+        }
+
+        Long oldCorrectId = activeOptions.stream()
+                .filter(option -> Boolean.TRUE.equals(option.getIsCorrect()))
+                .map(QuizAnswerOption::getId)
+                .findFirst()
+                .orElse(null);
+        Long requestedCorrectId = request.getOptions().stream()
+                .filter(option -> Boolean.TRUE.equals(option.getIsCorrect()))
+                .map(AdminQuizQuestionRequest.OptionDTO::getId)
+                .findFirst()
+                .orElse(null);
+        boolean correctChanged = !Objects.equals(oldCorrectId, requestedCorrectId);
+        if (correctChanged) changedFields.add("correctAnswer");
+
+        String oldImage = normalize(question.getContentImageUrl());
+        String newImage = normalize(request.getContentImageUrl());
+        String imageAction = Objects.equals(oldImage, newImage) ? "UNCHANGED"
+                : oldImage.isEmpty() ? "ADDED"
+                : newImage.isEmpty() ? "REMOVED" : "REPLACED";
+
+        return new QuizUpdateAudit(
+                currentAdmin(),
+                question.getId(),
+                List.copyOf(changedFields),
+                correctChanged,
+                added,
+                removed,
+                imageAction,
+                LocalDateTime.now());
+    }
+
+    private void addChanged(Set<String> changedFields, String field, String before, String after) {
+        if (!Objects.equals(normalize(before), normalize(after))) {
+            changedFields.add(field);
+        }
+    }
+
+    private boolean optionsContentChanged(
+            List<QuizAnswerOption> existing,
+            List<AdminQuizQuestionRequest.OptionDTO> requested) {
+        Map<Long, QuizAnswerOption> existingById = existing.stream()
+                .filter(option -> option.getId() != null)
+                .collect(Collectors.toMap(QuizAnswerOption::getId, option -> option));
+        return requested.stream()
+                .filter(option -> option.getId() != null)
+                .anyMatch(option -> {
+                    QuizAnswerOption current = existingById.get(option.getId());
+                    return current == null ||
+                            !Objects.equals(normalize(current.getOptionTextEn()), normalize(option.getTextEn())) ||
+                            !Objects.equals(normalize(current.getOptionTextAr()), normalize(option.getTextAr())) ||
+                            !Objects.equals(normalize(current.getOptionTextNl()), normalize(option.getTextNl())) ||
+                            !Objects.equals(normalize(current.getOptionTextFr()), normalize(option.getTextFr())) ||
+                            !Objects.equals(current.getDisplayOrder(), option.getDisplayOrder());
+                });
+    }
+
+    private String currentAdmin() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        return authentication != null && authentication.isAuthenticated()
+                ? authentication.getName()
+                : "system";
+    }
+
+    private void auditAfterCommit(QuizUpdateAudit audit) {
+        Runnable writeAudit = () -> log.info(
+                "AUDIT admin_quiz_update actor={} questionId={} changedFields={} correctAnswerChanged={} " +
+                        "optionsAdded={} optionsArchived={} imageAction={} timestamp={}",
+                audit.adminUser(), audit.questionId(), audit.changedFields(), audit.correctAnswerChanged(),
+                audit.optionsAdded(), audit.optionsArchived(), audit.imageAction(), audit.timestamp());
+
+        if (TransactionSynchronizationManager.isSynchronizationActive()) {
+            TransactionSynchronizationManager.registerSynchronization(new TransactionSynchronization() {
+                @Override
+                public void afterCommit() {
+                    writeAudit.run();
+                }
+            });
+        } else {
+            writeAudit.run();
+        }
     }
 
     // ─── Delete ────────────────────────────────────────
@@ -359,18 +526,14 @@ public class AdminQuizService {
         question.setQuestionNl(DrivingTextSanitizer.sanitize("NL", request.getQuestionNl() != null ? request.getQuestionNl() : ""));
         question.setQuestionFr(DrivingTextSanitizer.sanitize("FR", request.getQuestionFr() != null ? request.getQuestionFr() : ""));
 
-        question.setExplanationEn(null);
-        question.setExplanationAr(null);
-        question.setExplanationNl(null);
-        question.setExplanationFr(null);
-        question.setErrorExplanationEn(null);
-        question.setErrorExplanationAr(null);
-        question.setErrorExplanationNl(null);
-        question.setErrorExplanationFr(null);
+        question.setExplanationEn(DrivingTextSanitizer.sanitize("EN", normalize(request.getExplanationEn())));
+        question.setExplanationAr(DrivingTextSanitizer.sanitize("AR", normalize(request.getExplanationAr())));
+        question.setExplanationNl(DrivingTextSanitizer.sanitize("NL", normalize(request.getExplanationNl())));
+        question.setExplanationFr(DrivingTextSanitizer.sanitize("FR", normalize(request.getExplanationFr())));
         question.setContextSpecific(false);
         question.setRequiresSignImage(false);
 
-        question.setContentImageUrl(request.getContentImageUrl());
+        question.setContentImageUrl(normalizeImageReference(request.getContentImageUrl()));
         question.setIsActive(request.getIsActive() != null ? request.getIsActive() : true);
 
         // Parse enums with defaults
@@ -379,7 +542,7 @@ public class AdminQuizService {
     }
 
     private AdminQuizQuestionResponse toResponse(QuizQuestion q) {
-        List<AdminQuizQuestionResponse.OptionResponse> options = q.getDeliverableOptions().stream()
+        List<AdminQuizQuestionResponse.OptionResponse> options = q.getActiveOptions().stream()
                 .map(o -> new AdminQuizQuestionResponse.OptionResponse(
                         o.getId(),
                         DrivingTextSanitizer.sanitize("EN", o.getOptionTextEn()),
@@ -400,6 +563,10 @@ public class AdminQuizService {
                 DrivingTextSanitizer.sanitize("AR", q.getQuestionAr()),
                 DrivingTextSanitizer.sanitize("NL", q.getQuestionNl()),
                 DrivingTextSanitizer.sanitize("FR", q.getQuestionFr()),
+                DrivingTextSanitizer.sanitize("EN", q.getExplanationEn()),
+                DrivingTextSanitizer.sanitize("AR", q.getExplanationAr()),
+                DrivingTextSanitizer.sanitize("NL", q.getExplanationNl()),
+                DrivingTextSanitizer.sanitize("FR", q.getExplanationFr()),
                 q.getContentImageUrl(),
                 q.getIsActive(),
                 options.size(),
@@ -461,12 +628,14 @@ public class AdminQuizService {
         }
     }
 
-    private record OptionSignature(
-            String textEn,
-            String textAr,
-            String textNl,
-            String textFr,
-            boolean isCorrect,
-            int displayOrder) {
+    private record QuizUpdateAudit(
+            String adminUser,
+            Long questionId,
+            List<String> changedFields,
+            boolean correctAnswerChanged,
+            int optionsAdded,
+            int optionsArchived,
+            String imageAction,
+            LocalDateTime timestamp) {
     }
 }
