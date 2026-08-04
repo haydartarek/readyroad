@@ -311,6 +311,10 @@ class SignQuizServiceIntegrationTest {
                 SignQuizQuestionDto wrongQuestion = session.questions().get(1);
                 SignQuestion storedCorrectQuestion = signQuestionRepository.findById(correctQuestion.id()).orElseThrow();
                 SignQuestion storedWrongQuestion = signQuestionRepository.findById(wrongQuestion.id()).orElseThrow();
+                storedWrongQuestion.getSign().setSignCode("TEST-LONG-CODE-01");
+                storedWrongQuestion.getSign().setNormalizedSignCode("test-long-code-01");
+                roadSignRepository.saveAndFlush(storedWrongQuestion.getSign());
+                assertThat(storedWrongQuestion.getSign().getSignCode()).hasSizeGreaterThan(10);
                 Long correctChoiceId = storedCorrectQuestion.getDeliverableChoices().stream()
                                 .filter(choice -> Boolean.TRUE.equals(choice.getIsCorrect()))
                                 .findFirst()

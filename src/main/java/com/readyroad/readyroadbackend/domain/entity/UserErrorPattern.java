@@ -62,7 +62,7 @@ public class UserErrorPattern {
     @Column(name = "question_ref_id")
     private Long questionRefId;
 
-    @Column(name = "traffic_sign_code", length = 10)
+    @Column(name = "traffic_sign_code", length = 50)
     private String trafficSignCode;
 
     @Column(name = "rule_category", length = 50)
