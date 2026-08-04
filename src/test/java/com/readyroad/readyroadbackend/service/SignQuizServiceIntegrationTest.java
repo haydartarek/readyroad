@@ -302,6 +302,81 @@ class SignQuizServiceIntegrationTest {
         }
 
         @Test
+        @DisplayName("Random sign exam review preserves correct and wrong selected answers in every language")
+        void randomSignExamReviewReturnsPersistedSelectedAnswers() {
+                seedRandomPracticePool();
+                User user = createUser("sign-random-review");
+                SignRandomPracticeSessionDto session = signQuizService.startRandomSignPracticeSession(user.getId());
+                SignQuizQuestionDto correctQuestion = session.questions().get(0);
+                SignQuizQuestionDto wrongQuestion = session.questions().get(1);
+                SignQuestion storedCorrectQuestion = signQuestionRepository.findById(correctQuestion.id()).orElseThrow();
+                SignQuestion storedWrongQuestion = signQuestionRepository.findById(wrongQuestion.id()).orElseThrow();
+                Long correctChoiceId = storedCorrectQuestion.getDeliverableChoices().stream()
+                                .filter(choice -> Boolean.TRUE.equals(choice.getIsCorrect()))
+                                .findFirst()
+                                .orElseThrow()
+                                .getId();
+                Long wrongChoiceId = storedWrongQuestion.getDeliverableChoices().stream()
+                                .filter(choice -> !Boolean.TRUE.equals(choice.getIsCorrect()))
+                                .findFirst()
+                                .orElseThrow()
+                                .getId();
+
+                List<SignRandomPracticeAnswerRequest> answers = session.questions().stream()
+                                .map(question -> new SignRandomPracticeAnswerRequest(
+                                                question.id(),
+                                                question.id().equals(correctQuestion.id())
+                                                                ? correctChoiceId
+                                                                : question.id().equals(wrongQuestion.id())
+                                                                                ? wrongChoiceId
+                                                                                : null))
+                                .toList();
+
+                SignRandomPracticeResultDto submitted = signQuizService.submitRandomSignPracticeAnswers(
+                                session.sessionId(), answers, user.getId());
+                SignRandomPracticeResultDto.QuestionResult correctResult = submitted.questions().stream()
+                                .filter(question -> question.questionId().equals(correctQuestion.id()))
+                                .findFirst()
+                                .orElseThrow();
+                SignRandomPracticeResultDto.QuestionResult wrongResult = submitted.questions().stream()
+                                .filter(question -> question.questionId().equals(wrongQuestion.id()))
+                                .findFirst()
+                                .orElseThrow();
+
+                assertThat(correctResult.selectedChoiceId()).isEqualTo(correctChoiceId);
+                assertThat(correctResult.selectedChoiceNl()).isNotBlank();
+                assertThat(correctResult.selectedChoiceEn()).isNotBlank();
+                assertThat(correctResult.selectedChoiceFr()).isNotBlank();
+                assertThat(correctResult.selectedChoiceAr()).isNotBlank();
+                assertThat(correctResult.isCorrect()).isTrue();
+                assertThat(wrongResult.selectedChoiceId()).isEqualTo(wrongChoiceId);
+                assertThat(wrongResult.selectedChoiceNl()).isNotBlank();
+                assertThat(wrongResult.selectedChoiceEn()).isNotBlank();
+                assertThat(wrongResult.selectedChoiceFr()).isNotBlank();
+                assertThat(wrongResult.selectedChoiceAr()).isNotBlank();
+                assertThat(wrongResult.isCorrect()).isFalse();
+                assertThat(submitted.correctAnswers()).isEqualTo(1);
+                assertThat(submitted.wrongAnswers()).isEqualTo(1);
+                assertThat(submitted.unanswered()).isEqualTo(48);
+
+                entityManager.flush();
+                entityManager.clear();
+
+                SignRandomPracticeResultDto reloaded = signQuizService.getRandomSignPracticeResult(
+                                session.sessionId(), user.getId());
+                assertThat(reloaded.questions())
+                                .filteredOn(question -> question.questionId().equals(wrongQuestion.id()))
+                                .singleElement()
+                                .satisfies(question -> {
+                                        assertThat(question.selectedChoiceId()).isEqualTo(wrongChoiceId);
+                                        assertThat(question.selectedChoiceEn()).isNotBlank();
+                                        assertThat(question.correctChoiceEn()).isNotBlank();
+                                        assertThat(question.selectedChoiceId()).isNotEqualTo(question.correctChoiceId());
+                                        assertThat(question.isCorrect()).isFalse();
+                                });
+        }
+
+        @Test
         @DisplayName("Submitting unanswered mixed sign exam stores a failed result, creates a notification, and excludes those questions for 24 hours")
         void submitRandomSignPracticeAnswersStoresFailedResultAndEnforces24HourCooldown() {
                 seedRandomPracticePool();
@@ -333,6 +408,7 @@ class SignQuizServiceIntegrationTest {
                                 .hasSize(50)
                                 .allSatisfy(question -> {
                                         assertThat(question.selectedChoiceId()).isNull();
+                                        assertThat(question.selectedChoiceEn()).isNull();
                                         assertThat(question.wasTimeout()).isTrue();
                                         assertThat(question.isCorrect()).isFalse();
                                 });

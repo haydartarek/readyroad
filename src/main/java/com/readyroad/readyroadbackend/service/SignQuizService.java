@@ -1501,6 +1501,7 @@ public class SignQuizService {
                         SignRandomPracticeQuestion row) {
                 SignQuestion question = row.getQuestion();
                 SignQuestionType questionType = question.getQuestionType();
+                SignChoice selectedChoice = row.getSelectedChoice();
                 SignChoice correctChoice = question.getDeliverableChoices().stream()
                                 .filter(choice -> Boolean.TRUE.equals(choice.getIsCorrect()))
                                 .findFirst()
@@ -1512,7 +1513,15 @@ public class SignQuizService {
                                 resolveText(TextLanguage.EN, question.getQuestionEn()),
                                 resolveText(TextLanguage.FR, question.getQuestionFr()),
                                 resolveText(TextLanguage.AR, question.getQuestionAr()),
-                                row.getSelectedChoice() != null ? row.getSelectedChoice().getId() : null,
+                                selectedChoice != null ? selectedChoice.getId() : null,
+                                selectedChoice != null ? sanitizeAndResolveChoice(questionType, TextLanguage.NL,
+                                                selectedChoice.getTextNl()) : null,
+                                selectedChoice != null ? sanitizeAndResolveChoice(questionType, TextLanguage.EN,
+                                                selectedChoice.getTextEn()) : null,
+                                selectedChoice != null ? sanitizeAndResolveChoice(questionType, TextLanguage.FR,
+                                                selectedChoice.getTextFr()) : null,
+                                selectedChoice != null ? sanitizeAndResolveChoice(questionType, TextLanguage.AR,
+                                                selectedChoice.getTextAr()) : null,
                                 correctChoice != null ? correctChoice.getId() : null,
                                 correctChoice != null ? sanitizeAndResolveChoice(questionType, TextLanguage.NL,
                                                 correctChoice.getTextNl()) : null,
