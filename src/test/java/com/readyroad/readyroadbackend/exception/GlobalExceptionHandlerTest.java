@@ -14,6 +14,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.web.multipart.MaxUploadSizeExceededException;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.mock;
@@ -76,5 +77,20 @@ class GlobalExceptionHandlerTest {
         Map<String, String> fields = (Map<String, String>) response.getBody().get("fields");
         assertThat(fields)
                 .containsEntry("createSign.request.signCode", "must not be blank");
+    }
+
+    @Test
+    void oversizedMultipartRequestReturnsBadRequestWithoutExposingInternals() {
+        when(messages.get("upload.file_too_large_request", 5L))
+                .thenReturn("The uploaded file exceeds the maximum allowed size of 5 MB.");
+
+        ResponseEntity<Map<String, Object>> response = globalExceptionHandler
+                .handleMaxUploadSizeExceeded(new MaxUploadSizeExceededException(5L * 1024L * 1024L));
+
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.BAD_REQUEST);
+        assertThat(response.getBody())
+                .containsEntry("error", "The uploaded file exceeds the maximum allowed size of 5 MB.")
+                .containsEntry("message", "The uploaded file exceeds the maximum allowed size of 5 MB.")
+                .containsKey("timestamp");
     }
 }

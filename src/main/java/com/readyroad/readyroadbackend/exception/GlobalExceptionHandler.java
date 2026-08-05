@@ -15,6 +15,7 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MaxUploadSizeExceededException;
 import org.springframework.web.servlet.resource.NoResourceFoundException;
 import org.springframework.web.server.ResponseStatusException;
 import lombok.extern.slf4j.Slf4j;
@@ -231,6 +232,20 @@ public class GlobalExceptionHandler {
     public ResponseEntity<Map<String, Object>> handleTrafficSignNotFound(TrafficSignNotFoundException ex) {
         Map<String, Object> error = errorBody("TrafficSignNotFoundException", ex.getMessage());
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
+    }
+
+    /**
+     * Handle multipart requests rejected by Spring before reaching the upload
+     * controller.
+     * HTTP 400 BAD REQUEST
+     */
+    @ExceptionHandler(MaxUploadSizeExceededException.class)
+    @ResponseBody
+    public ResponseEntity<Map<String, Object>> handleMaxUploadSizeExceeded(MaxUploadSizeExceededException ex) {
+        long maxSizeMb = Math.max(1L, ex.getMaxUploadSize() / (1024L * 1024L));
+        log.warn("Upload rejected because it exceeds the configured {} MB limit", maxSizeMb);
+        return ResponseEntity.badRequest()
+                .body(errorBody(messages.get("upload.file_too_large_request", maxSizeMb)));
     }
 
     /**
