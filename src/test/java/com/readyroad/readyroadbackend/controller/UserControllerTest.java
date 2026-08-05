@@ -84,7 +84,7 @@ class UserControllerTest {
     @Test
     void deleteCurrentUserThrowsNotFoundStatusWhenUserIsMissing() {
         when(authenticationUtil.extractUserId(authentication)).thenReturn(9L);
-        when(userRepository.existsById(9L)).thenReturn(false);
+        when(userRepository.findById(9L)).thenReturn(Optional.empty());
         when(messages.get("auth.user_not_found")).thenReturn("User not found");
 
         assertThatThrownBy(() -> userController.deleteCurrentUser(authentication))
@@ -92,6 +92,26 @@ class UserControllerTest {
                     assertThat(ex.getStatusCode()).isEqualTo(HttpStatus.NOT_FOUND);
                     assertThat(ex.getReason()).isEqualTo("User not found");
                 });
+    }
+
+    @Test
+    void deleteCurrentUserRejectsAdministratorAndModeratorRoles() {
+        for (com.readyroad.readyroadbackend.domain.enums.Role role : List.of(
+                com.readyroad.readyroadbackend.domain.enums.Role.ADMIN,
+                com.readyroad.readyroadbackend.domain.enums.Role.MODERATOR)) {
+            com.readyroad.readyroadbackend.domain.entity.User user =
+                    new com.readyroad.readyroadbackend.domain.entity.User();
+            user.setId(9L);
+            user.setRole(role);
+            when(authenticationUtil.extractUserId(authentication)).thenReturn(9L);
+            when(userRepository.findById(9L)).thenReturn(Optional.of(user));
+            when(messages.get("user.role_account_deletion_forbidden"))
+                    .thenReturn("Protected role");
+
+            assertThatThrownBy(() -> userController.deleteCurrentUser(authentication))
+                    .isInstanceOfSatisfying(ResponseStatusException.class, ex ->
+                            assertThat(ex.getStatusCode()).isEqualTo(HttpStatus.FORBIDDEN));
+        }
     }
 
     @Test

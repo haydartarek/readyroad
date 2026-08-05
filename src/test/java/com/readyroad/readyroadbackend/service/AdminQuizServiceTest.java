@@ -15,6 +15,7 @@ import com.readyroad.readyroadbackend.domain.entity.Category;
 import com.readyroad.readyroadbackend.domain.entity.QuizAnswerOption;
 import com.readyroad.readyroadbackend.domain.entity.QuizQuestion;
 import com.readyroad.readyroadbackend.domain.repository.CategoryRepository;
+import com.readyroad.readyroadbackend.domain.repository.QuizAnswerOptionRepository;
 import com.readyroad.readyroadbackend.domain.repository.QuizQuestionRepository;
 import com.readyroad.readyroadbackend.domain.repository.QuizUserAnswerRepository;
 import com.readyroad.readyroadbackend.domain.repository.UserQuestionHistoryRepository;
@@ -26,12 +27,16 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
+import org.mockito.ArgumentCaptor;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.Pageable;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
 class AdminQuizServiceTest {
 
     @Mock private QuizQuestionRepository questionRepository;
+    @Mock private QuizAnswerOptionRepository optionRepository;
     @Mock private CategoryRepository categoryRepository;
     @Mock private QuizUserAnswerRepository userAnswerRepository;
     @Mock private UserQuestionHistoryRepository historyRepository;
@@ -43,12 +48,56 @@ class AdminQuizServiceTest {
     void setUp() {
         service = new AdminQuizService(
                 questionRepository,
+                optionRepository,
                 categoryRepository,
                 userAnswerRepository,
                 historyRepository,
                 messages);
         lenient().when(messages.get(anyString(), any(Object[].class)))
                 .thenAnswer(invocation -> invocation.getArgument(0));
+    }
+
+    @Test
+    void usesNewestFirstSortingWithIdDescendingTieBreaker() {
+        when(questionRepository.findAdminQuestions(any(), any(), any(), any(), any(Pageable.class)))
+                .thenAnswer(invocation -> new PageImpl<>(List.of(), invocation.getArgument(4), 0));
+
+        service.getQuestionsPaginated(0, 20, "createdAt,desc", null, null, null, null);
+
+        ArgumentCaptor<Pageable> pageable = ArgumentCaptor.forClass(Pageable.class);
+        verify(questionRepository).findAdminQuestions(any(), any(), any(), any(), pageable.capture());
+        assertThat(pageable.getValue().getSort().getOrderFor("createdAt").getDirection().isDescending()).isTrue();
+        assertThat(pageable.getValue().getSort().getOrderFor("id").getDirection().isDescending()).isTrue();
+    }
+
+    @Test
+    void reportsCorrectAnswerDistributionForAThroughC() {
+        when(optionRepository.countCorrectAnswersByDisplayOrder()).thenReturn(List.of(
+                new Object[] { 1, 6L },
+                new Object[] { 2, 3L },
+                new Object[] { 3, 1L }));
+
+        var distribution = service.getCorrectAnswerDistribution();
+
+        assertThat(distribution.total()).isEqualTo(10);
+        assertThat(distribution.positions()).extracting(position -> position.percentage())
+                .containsExactly(60.0, 30.0, 10.0);
+    }
+
+    @Test
+    void shufflesOnlyDisplayOrderAndPreservesCorrectOptionIdentity() {
+        QuizQuestion question = existingQuestion(3);
+        Long correctOptionId = question.getActiveOptions().stream()
+                .filter(option -> Boolean.TRUE.equals(option.getIsCorrect()))
+                .findFirst().orElseThrow().getId();
+        when(questionRepository.findByIdForUpdate(7L)).thenReturn(Optional.of(question));
+
+        int count = service.shuffleAnswerOrder(List.of(7L));
+
+        assertThat(count).isEqualTo(1);
+        assertThat(question.getActiveOptions()).filteredOn(option -> Boolean.TRUE.equals(option.getIsCorrect()))
+                .singleElement().extracting(QuizAnswerOption::getId).isEqualTo(correctOptionId);
+        verify(questionRepository, times(2)).flush();
     }
 
     @Test

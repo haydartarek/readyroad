@@ -25,6 +25,7 @@ public class UserProfileResponse {
     private String role;
     private String preferredLanguage;
     private Boolean isActive;
+    private Boolean emailVerified;
     private LocalDateTime createdAt;
     private List<String> linkedProviders;
     private Boolean googleLinked;

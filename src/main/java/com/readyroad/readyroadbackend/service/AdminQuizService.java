@@ -4,11 +4,13 @@ import com.readyroad.readyroadbackend.domain.entity.Category;
 import com.readyroad.readyroadbackend.domain.entity.QuizAnswerOption;
 import com.readyroad.readyroadbackend.domain.entity.QuizQuestion;
 import com.readyroad.readyroadbackend.domain.repository.CategoryRepository;
+import com.readyroad.readyroadbackend.domain.repository.QuizAnswerOptionRepository;
 import com.readyroad.readyroadbackend.domain.repository.QuizQuestionRepository;
 import com.readyroad.readyroadbackend.domain.repository.QuizUserAnswerRepository;
 import com.readyroad.readyroadbackend.domain.repository.UserQuestionHistoryRepository;
 import com.readyroad.readyroadbackend.dto.AdminQuizQuestionRequest;
 import com.readyroad.readyroadbackend.dto.response.AdminQuizQuestionResponse;
+import com.readyroad.readyroadbackend.dto.response.CorrectAnswerDistributionResponse;
 import com.readyroad.readyroadbackend.util.DrivingTextSanitizer;
 import com.readyroad.readyroadbackend.dto.response.PageResponse;
 import com.readyroad.readyroadbackend.util.PlaceholderDetector;
@@ -29,6 +31,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
@@ -50,6 +53,7 @@ import java.util.stream.Collectors;
 public class AdminQuizService {
 
     private final QuizQuestionRepository questionRepository;
+    private final QuizAnswerOptionRepository optionRepository;
     private final CategoryRepository categoryRepository;
     private final QuizUserAnswerRepository userAnswerRepository;
     private final UserQuestionHistoryRepository historyRepository;
@@ -291,6 +295,75 @@ public class AdminQuizService {
         if (categoryChanged || difficultyChanged || typeChanged) {
             throw new IllegalStateException(messages.get("admin.quiz.referenced_update_blocked"));
         }
+    }
+
+    public CorrectAnswerDistributionResponse getCorrectAnswerDistribution() {
+        Map<Integer, Long> counts = optionRepository.countCorrectAnswersByDisplayOrder().stream()
+                .collect(Collectors.toMap(
+                        row -> ((Number) row[0]).intValue(),
+                        row -> ((Number) row[1]).longValue()));
+        long total = counts.values().stream().mapToLong(Long::longValue).sum();
+        List<CorrectAnswerDistributionResponse.AnswerPosition> positions = new ArrayList<>();
+        for (int order = 1; order <= 3; order++) {
+            long count = counts.getOrDefault(order, 0L);
+            double percentage = total == 0 ? 0.0 : Math.round((count * 1000.0) / total) / 10.0;
+            positions.add(new CorrectAnswerDistributionResponse.AnswerPosition(
+                    String.valueOf((char) ('A' + order - 1)), count, percentage));
+        }
+        return new CorrectAnswerDistributionResponse(total, positions);
+    }
+
+    @Transactional
+    public int shuffleAnswerOrder(List<Long> questionIds) {
+        List<Long> selectedIds = questionIds.stream().distinct().sorted().toList();
+        int shuffledCount = 0;
+
+        for (Long questionId : selectedIds) {
+            QuizQuestion question = questionRepository.findByIdForUpdate(questionId)
+                    .orElseThrow(() -> new IllegalArgumentException(messages.get("admin.quiz.not_found", questionId)));
+            question.getOptions().size();
+            List<QuizAnswerOption> options = new ArrayList<>(question.getActiveOptions());
+            if (options.size() < 2) {
+                continue;
+            }
+
+            List<Integer> displayOrders = options.stream()
+                    .map(QuizAnswerOption::getDisplayOrder)
+                    .sorted()
+                    .toList();
+            List<QuizAnswerOption> shuffled = new ArrayList<>(options);
+            Collections.shuffle(shuffled);
+            if (shuffled.equals(options)) {
+                Collections.rotate(shuffled, 1);
+            }
+
+            for (int index = 0; index < options.size(); index++) {
+                options.get(index).setDisplayOrder(1000 + index);
+            }
+            questionRepository.flush();
+
+            for (int index = 0; index < shuffled.size(); index++) {
+                shuffled.get(index).setDisplayOrder(displayOrders.get(index));
+            }
+            questionRepository.flush();
+            shuffledCount++;
+        }
+
+        int finalShuffledCount = shuffledCount;
+        Runnable writeAudit = () -> log.info(
+                "AUDIT admin_quiz_option_shuffle actor={} questionIds={} shuffledCount={} timestamp={}",
+                currentAdmin(), selectedIds, finalShuffledCount, LocalDateTime.now());
+        if (TransactionSynchronizationManager.isSynchronizationActive()) {
+            TransactionSynchronizationManager.registerSynchronization(new TransactionSynchronization() {
+                @Override
+                public void afterCommit() {
+                    writeAudit.run();
+                }
+            });
+        } else {
+            writeAudit.run();
+        }
+        return shuffledCount;
     }
 
     private void validateRequestedOptionIds(
@@ -580,7 +653,8 @@ public class AdminQuizService {
 
     private Sort parseSort(String sortParam) {
         if (sortParam == null || sortParam.isBlank()) {
-            return Sort.by(Sort.Direction.DESC, "createdAt");
+            return Sort.by(Sort.Direction.DESC, "createdAt")
+                    .and(Sort.by(Sort.Direction.DESC, "id"));
         }
         String[] parts = sortParam.split(",");
         String field = parts[0].trim();
@@ -593,9 +667,11 @@ public class AdminQuizService {
         }
 
         if (!ALLOWED_SORT_FIELDS.contains(field)) {
-            return Sort.by(Sort.Direction.DESC, "createdAt");
+            return Sort.by(Sort.Direction.DESC, "createdAt")
+                    .and(Sort.by(Sort.Direction.DESC, "id"));
         }
-        return Sort.by(direction, field);
+        Sort sort = Sort.by(direction, field);
+        return "id".equals(field) ? sort : sort.and(Sort.by(Sort.Direction.DESC, "id"));
     }
 
     private QuizQuestion.DifficultyLevel parseDifficulty(String level) {

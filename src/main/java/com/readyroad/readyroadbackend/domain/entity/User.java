@@ -60,6 +60,9 @@ public class User extends BaseEntity implements UserDetails {
     @Column(name = "preferred_language", length = 2)
     private String preferredLanguage;
 
+    @Column(name = "email_verified", nullable = false)
+    private Boolean emailVerified = false;
+
     // ========================================
     // UserDetails Implementation (Spring Security)
     // ========================================

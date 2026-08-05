@@ -2,6 +2,7 @@ package com.readyroad.readyroadbackend.domain.repository;
 
 import com.readyroad.readyroadbackend.domain.entity.QuizAnswerOption;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -29,4 +30,15 @@ public interface QuizAnswerOptionRepository extends JpaRepository<QuizAnswerOpti
      * Count options for a question
      */
     Long countByQuestionId(Long questionId);
+
+    @Query("""
+            SELECT option.displayOrder, COUNT(option)
+            FROM QuizAnswerOption option
+            WHERE option.isActive = true
+              AND option.isCorrect = true
+              AND option.displayOrder BETWEEN 1 AND 3
+            GROUP BY option.displayOrder
+            ORDER BY option.displayOrder
+            """)
+    List<Object[]> countCorrectAnswersByDisplayOrder();
 }

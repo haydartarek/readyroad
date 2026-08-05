@@ -59,6 +59,7 @@ public class DefaultAdminInitializer {
                     existingAdmin.setRole(Role.ADMIN);
                     existingAdmin.setIsActive(true);
                     existingAdmin.setIsLocked(false);
+                    existingAdmin.setEmailVerified(true);
                     userRepository.save(existingAdmin);
                     log.info("✅ Admin password and role synced from configured admin password");
                 });
@@ -74,6 +75,7 @@ public class DefaultAdminInitializer {
             admin.setRole(Role.ADMIN);
             admin.setIsActive(true);
             admin.setIsLocked(false);
+            admin.setEmailVerified(true);
 
             userRepository.save(admin);
 

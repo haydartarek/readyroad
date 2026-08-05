@@ -136,6 +136,7 @@ public class AuthController {
         userInfo.put("role", user.getRole());
         userInfo.put("preferredLanguage", user.getPreferredLanguage());
         userInfo.put("isActive", user.getIsActive());
+        userInfo.put("emailVerified", user.getEmailVerified());
         userInfo.put("createdAt", user.getCreatedAt() != null ? user.getCreatedAt().toString() : null);
         userInfo.put(
                 "linkedProviders",

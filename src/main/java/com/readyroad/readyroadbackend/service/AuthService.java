@@ -91,6 +91,7 @@ public class AuthService {
         user.setRole(Role.USER); // Default role
         user.setIsActive(true);
         user.setIsLocked(false);
+        user.setEmailVerified(false);
         String requestedLanguage = request.getPreferredLanguage();
         user.setPreferredLanguage(requestedLanguage == null || requestedLanguage.isBlank()
                 ? adminSystemSettingsService.getDefaultLanguage()
@@ -199,6 +200,7 @@ public class AuthService {
                 user.getFullName(),
                 user.getRole(),
                 user.getPreferredLanguage(),
+                user.getEmailVerified(),
                 linkedProviders,
                 false);
     }

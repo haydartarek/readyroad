@@ -51,6 +51,8 @@ public class SocialAuthService {
             identity.setProviderEmail(normalizedEmail);
             identity.setEmailVerified(Boolean.TRUE.equals(googleUser.emailVerified()));
             authIdentityRepository.save(identity);
+            identity.getUser().setEmailVerified(Boolean.TRUE.equals(googleUser.emailVerified()));
+            userRepository.save(identity.getUser());
 
             return buildAuthResponse(identity.getUser(), false);
         }
@@ -96,6 +98,8 @@ public class SocialAuthService {
                 linkedIdentity.setProviderEmail(normalizedEmail);
                 linkedIdentity.setEmailVerified(true);
                 authIdentityRepository.save(linkedIdentity);
+                user.setEmailVerified(true);
+                userRepository.save(user);
                 return user;
             }
 
@@ -124,6 +128,8 @@ public class SocialAuthService {
         }
 
         createGoogleIdentity(user, googleUser, normalizedEmail);
+        user.setEmailVerified(true);
+        userRepository.save(user);
         return user;
     }
 
@@ -155,6 +161,7 @@ public class SocialAuthService {
         user.setRole(Role.USER);
         user.setIsActive(true);
         user.setIsLocked(false);
+        user.setEmailVerified(true);
         user.setPreferredLanguage(preferredLanguage);
 
         return userRepository.save(user);
@@ -183,6 +190,7 @@ public class SocialAuthService {
                 user.getFullName(),
                 user.getRole(),
                 user.getPreferredLanguage(),
+                user.getEmailVerified(),
                 getLinkedProviders(user.getId()),
                 newUser);
     }

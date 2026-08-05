@@ -15,12 +15,15 @@ import com.readyroad.readyroadbackend.domain.entity.User;
 import com.readyroad.readyroadbackend.domain.entity.SignRandomPracticeSession;
 import com.readyroad.readyroadbackend.dto.AdminSystemSettingsUpdateRequest;
 import com.readyroad.readyroadbackend.dto.AdminQuizQuestionRequest;
+import com.readyroad.readyroadbackend.dto.AdminQuizShuffleRequest;
+import com.readyroad.readyroadbackend.dto.AdminCreateUserRequest;
 import com.readyroad.readyroadbackend.dto.SignGovernanceReport;
 import com.readyroad.readyroadbackend.dto.response.AdminQuizQuestionResponse;
 import com.readyroad.readyroadbackend.dto.response.AdminSystemSettingsResponse;
 import com.readyroad.readyroadbackend.dto.response.AdminTrafficSignResponse;
 import com.readyroad.readyroadbackend.dto.response.PageResponse;
 import com.readyroad.readyroadbackend.service.AdminQuizService;
+import com.readyroad.readyroadbackend.service.AdminUserService;
 import com.readyroad.readyroadbackend.service.AdminSystemSettingsService;
 import com.readyroad.readyroadbackend.service.BackendMessageService;
 import com.readyroad.readyroadbackend.service.TrafficSignService;
@@ -84,6 +87,7 @@ public class AdminController {
     private final UserCategoryProgressRepository categoryProgressRepository;
     private final TrafficSignService trafficSignService;
     private final AdminQuizService adminQuizService;
+    private final AdminUserService adminUserService;
     private final FileUploadService fileUploadService;
     private final SignGovernanceService signGovernanceService;
     private final NotificationService notificationService;
@@ -320,6 +324,23 @@ public class AdminController {
         }
     }
 
+    @GetMapping("/quiz/correct-answer-distribution")
+    public ResponseEntity<?> getCorrectAnswerDistribution() {
+        return ResponseEntity.ok(adminQuizService.getCorrectAnswerDistribution());
+    }
+
+    @PostMapping("/quiz/questions/shuffle-answer-order")
+    public ResponseEntity<?> shuffleAnswerOrder(@Valid @RequestBody AdminQuizShuffleRequest request) {
+        try {
+            int shuffledCount = adminQuizService.shuffleAnswerOrder(request.questionIds());
+            return ResponseEntity.ok(Map.of(
+                    "message", messages.get("admin.quiz.shuffle_success"),
+                    "shuffledCount", shuffledCount));
+        } catch (IllegalArgumentException ex) {
+            return errorResponse(HttpStatus.NOT_FOUND, ex.getMessage());
+        }
+    }
+
     /**
      * Get all users (admin only)
      * GET /api/admin/users?page=0&size=20&q=haydar&sortField=createdAt&sortDir=desc
@@ -365,6 +386,22 @@ public class AdminController {
         } catch (Exception e) {
             log.error("❌ Error fetching users", e);
             return errorResponse(HttpStatus.INTERNAL_SERVER_ERROR, messages.get("admin.internal_server_error"));
+        }
+    }
+
+    @PostMapping("/users")
+    public ResponseEntity<?> createUser(
+            @Valid @RequestBody AdminCreateUserRequest request,
+            Principal principal) {
+        try {
+            User user = adminUserService.createUser(
+                    request,
+                    principal != null ? principal.getName() : "system");
+            return ResponseEntity.status(HttpStatus.CREATED).body(convertToUserDTO(user));
+        } catch (IllegalStateException ex) {
+            return errorResponse(HttpStatus.CONFLICT, ex.getMessage());
+        } catch (IllegalArgumentException ex) {
+            return errorResponse(HttpStatus.BAD_REQUEST, ex.getMessage());
         }
     }
 
@@ -659,6 +696,8 @@ public class AdminController {
         // Boolean fields with null safety
         dto.put("isActive", user.getIsActive() != null ? user.getIsActive() : true);
         dto.put("isLocked", user.getIsLocked() != null ? user.getIsLocked() : false);
+        dto.put("preferredLanguage", user.getPreferredLanguage());
+        dto.put("emailVerified", user.getEmailVerified() != null ? user.getEmailVerified() : false);
 
         // Timestamp field with null check (from BaseEntity)
         try {

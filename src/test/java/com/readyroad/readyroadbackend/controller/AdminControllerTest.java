@@ -12,6 +12,7 @@ import com.readyroad.readyroadbackend.domain.repository.SignRandomPracticeSessio
 import com.readyroad.readyroadbackend.domain.repository.UserCategoryProgressRepository;
 import com.readyroad.readyroadbackend.domain.repository.UserRepository;
 import com.readyroad.readyroadbackend.service.AdminQuizService;
+import com.readyroad.readyroadbackend.service.AdminUserService;
 import com.readyroad.readyroadbackend.service.AdminSystemSettingsService;
 import com.readyroad.readyroadbackend.service.BackendMessageService;
 import com.readyroad.readyroadbackend.service.FileUploadService;
@@ -70,6 +71,9 @@ class AdminControllerTest {
 
     @Mock
     private AdminQuizService adminQuizService;
+
+    @Mock
+    private AdminUserService adminUserService;
 
     @Mock
     private FileUploadService fileUploadService;

@@ -2,6 +2,7 @@ package com.readyroad.readyroadbackend.controller;
 
 import com.readyroad.readyroadbackend.domain.entity.User;
 import com.readyroad.readyroadbackend.domain.enums.AuthProvider;
+import com.readyroad.readyroadbackend.domain.enums.Role;
 import com.readyroad.readyroadbackend.domain.repository.AuthIdentityRepository;
 import com.readyroad.readyroadbackend.domain.repository.UserRepository;
 import com.readyroad.readyroadbackend.dto.GoogleAuthExchangeRequest;
@@ -166,12 +167,19 @@ public class UserController {
         Long userId = authenticationUtil.extractUserId(authentication);
         log.info("DELETE /api/users/me - userId: {}", userId);
 
-        if (!userRepository.existsById(userId)) {
+        User user = userRepository.findById(userId).orElse(null);
+        if (user == null) {
             log.error("User not found for deletion: {}", userId);
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, messages.get("auth.user_not_found"));
         }
 
-        userRepository.deleteById(userId);
+        if (user.getRole() == Role.ADMIN || user.getRole() == Role.MODERATOR) {
+            throw new ResponseStatusException(
+                    HttpStatus.FORBIDDEN,
+                    messages.get("user.role_account_deletion_forbidden"));
+        }
+
+        userRepository.delete(user);
         log.info("User account permanently deleted: userId={}", userId);
 
         return ResponseEntity.noContent().build();
@@ -191,6 +199,7 @@ public class UserController {
                 .role(user.getRole().name())
                 .preferredLanguage(user.getPreferredLanguage())
                 .isActive(user.getIsActive())
+                .emailVerified(user.getEmailVerified())
                 .createdAt(user.getCreatedAt())
                 .linkedProviders(linkedProviders)
                 .googleLinked(linkedProviders.contains(AuthProvider.GOOGLE.name()))
