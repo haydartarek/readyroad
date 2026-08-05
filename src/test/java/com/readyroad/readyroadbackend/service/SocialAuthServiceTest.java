@@ -124,7 +124,8 @@ class SocialAuthServiceTest {
 
                 assertThat(response.getPreferredLanguage()).isEqualTo("nl");
                 assertThat(user.getPreferredLanguage()).isEqualTo("nl");
-                verify(userRepository, never()).save(any(User.class));
+                assertThat(user.getEmailVerified()).isTrue();
+                verify(userRepository).save(user);
         }
 
         @Test
