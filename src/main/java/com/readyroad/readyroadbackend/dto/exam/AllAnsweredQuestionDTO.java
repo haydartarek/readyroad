@@ -41,6 +41,12 @@ public class AllAnsweredQuestionDTO {
     private String correctOptionTextNl;
     private String correctOptionTextFr;
 
+    // Current explanation saved on the question (all languages)
+    private String explanationEn;
+    private String explanationAr;
+    private String explanationNl;
+    private String explanationFr;
+
     // Category
     private String categoryName;
     private String categoryNameEn;

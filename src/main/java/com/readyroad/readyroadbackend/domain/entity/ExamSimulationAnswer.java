@@ -33,6 +33,10 @@ public class ExamSimulationAnswer extends BaseEntity {
     @JoinColumn(name = "selected_option_id", nullable = false)
     private QuizAnswerOption selectedOption;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "correct_option_id")
+    private QuizAnswerOption correctOption;
+
     @Column(name = "is_correct", nullable = false)
     private Boolean isCorrect;
 

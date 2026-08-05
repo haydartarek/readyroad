@@ -120,6 +120,8 @@ class ExamAnswerSubmissionIntegrationTest extends BaseIntegrationTest {
                                 .orElseThrow();
 
                 assertThat(savedAnswer.getSelectedOption().getId()).isEqualTo(selectedOption.getId());
+                assertThat(savedAnswer.getCorrectOption()).isNotNull();
+                assertThat(savedAnswer.getCorrectOption().getIsCorrect()).isTrue();
                 assertThat(savedAnswer.getAnsweredAt()).isNotNull();
                 assertThat(savedAnswer.getTimeTakenSeconds()).isEqualTo(12);
         }

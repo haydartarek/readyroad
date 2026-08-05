@@ -692,6 +692,11 @@ public class ExamService {
             throw new InvalidAnswerException(
                     messages.get("exam.submit.option_mismatch"));
         }
+        QuizAnswerOption correctOption = question.getDeliverableOptions().stream()
+                .filter(QuizAnswerOption::getIsCorrect)
+                .findFirst()
+                .orElseThrow(() -> new InvalidAnswerException(
+                        messages.get("exam.submit.option_mismatch")));
 
         // 4. Check if answer already exists (update if exists, create if not)
         ExamSimulationAnswer answer = answerRepository
@@ -704,6 +709,7 @@ public class ExamService {
                     .exam(exam)
                     .question(question) // Use the loaded question entity
                     .selectedOption(selectedOption)
+                    .correctOption(correctOption)
                     .isCorrect(selectedOption.getIsCorrect()) // Store but don't reveal
                     .answeredAt(now)
                     .timeTakenSeconds(request.getTimeTakenSeconds() != null
@@ -715,6 +721,7 @@ public class ExamService {
             // Update existing answer
             answer.setQuestion(question); // Ensure question is set
             answer.setSelectedOption(selectedOption);
+            answer.setCorrectOption(correctOption);
             answer.setIsCorrect(selectedOption.getIsCorrect());
             answer.setAnsweredAt(now);
             if (request.getTimeTakenSeconds() != null) {
@@ -942,10 +949,7 @@ public class ExamService {
                     }
 
                     // Get correct option
-                    QuizAnswerOption correctOption = question.getDeliverableOptions().stream()
-                            .filter(QuizAnswerOption::getIsCorrect)
-                            .findFirst()
-                            .orElse(null);
+                    QuizAnswerOption correctOption = resolveHistoricalCorrectOption(answer, question);
 
                     if (correctOption == null) {
                         return null; // Skip if no correct option
@@ -979,6 +983,10 @@ public class ExamService {
                             .correctOptionTextAr(correctAr)
                             .correctOptionTextNl(correctNl)
                             .correctOptionTextFr(correctFr)
+                            .explanationEn(roadSignReferenceTextResolver.resolveEn(question.getExplanationEn()))
+                            .explanationAr(roadSignReferenceTextResolver.resolveAr(question.getExplanationAr()))
+                            .explanationNl(roadSignReferenceTextResolver.resolveNl(question.getExplanationNl()))
+                            .explanationFr(roadSignReferenceTextResolver.resolveFr(question.getExplanationFr()))
                             .categoryName(category != null
                                     ? category.getNameEn()
                                     : messages.get("analytics.category.unknown"))
@@ -1013,10 +1021,7 @@ public class ExamService {
                         return null;
                     }
 
-                    QuizAnswerOption correctOption = question.getDeliverableOptions().stream()
-                            .filter(QuizAnswerOption::getIsCorrect)
-                            .findFirst()
-                            .orElse(null);
+                    QuizAnswerOption correctOption = resolveHistoricalCorrectOption(answer, question);
 
                     if (correctOption == null) {
                         return null;
@@ -1050,6 +1055,10 @@ public class ExamService {
                             .correctOptionTextAr(correctAr)
                             .correctOptionTextNl(correctNl)
                             .correctOptionTextFr(correctFr)
+                            .explanationEn(roadSignReferenceTextResolver.resolveEn(question.getExplanationEn()))
+                            .explanationAr(roadSignReferenceTextResolver.resolveAr(question.getExplanationAr()))
+                            .explanationNl(roadSignReferenceTextResolver.resolveNl(question.getExplanationNl()))
+                            .explanationFr(roadSignReferenceTextResolver.resolveFr(question.getExplanationFr()))
                             .categoryName(category != null
                                     ? category.getNameEn()
                                     : messages.get("analytics.category.unknown"))
@@ -1064,6 +1073,21 @@ public class ExamService {
                 })
                 .filter(java.util.Objects::nonNull)
                 .collect(Collectors.toList());
+    }
+
+    private QuizAnswerOption resolveHistoricalCorrectOption(
+            ExamSimulationAnswer answer,
+            QuizQuestion question) {
+        if (answer.getCorrectOption() != null) {
+            return answer.getCorrectOption();
+        }
+        return question.getOptions().stream()
+                .filter(QuizAnswerOption::getIsCorrect)
+                .sorted(Comparator.comparing(
+                        QuizAnswerOption::getDisplayOrder,
+                        Comparator.nullsLast(Integer::compareTo)))
+                .findFirst()
+                .orElse(null);
     }
 
     private Integer resolveExamElapsedSeconds(ExamSimulation exam) {

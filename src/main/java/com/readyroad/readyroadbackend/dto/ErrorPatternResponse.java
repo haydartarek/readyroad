@@ -29,6 +29,13 @@ public class ErrorPatternResponse {
      */
     private Integer count;
 
+    private Integer previousCount;
+    private Integer currentCount;
+    private Integer delta;
+    private String trend;
+    private Integer recentAttemptsCount;
+    private LocalDateTime lastCalculatedAt;
+
     /**
      * Percentage of this pattern among all errors (0-100)
      */

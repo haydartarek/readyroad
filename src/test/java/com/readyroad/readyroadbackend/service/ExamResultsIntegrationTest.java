@@ -8,6 +8,7 @@ import com.readyroad.readyroadbackend.domain.entity.QuizQuestion;
 
 import com.readyroad.readyroadbackend.domain.repository.ExamSimulationQuestionRepository;
 import com.readyroad.readyroadbackend.domain.repository.ExamSimulationRepository;
+import com.readyroad.readyroadbackend.domain.repository.QuizAnswerOptionRepository;
 import com.readyroad.readyroadbackend.domain.repository.QuizQuestionRepository;
 import com.readyroad.readyroadbackend.dto.exam.ExamResultsDTO;
 import com.readyroad.readyroadbackend.dto.exam.SubmitExamAnswerRequest;
@@ -20,6 +21,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.jdbc.core.JdbcTemplate;
+
+import jakarta.persistence.EntityManager;
 
 import java.time.Instant;
 import java.util.List;
@@ -50,6 +54,15 @@ class ExamResultsIntegrationTest extends BaseIntegrationTest {
 
         @Autowired
         private QuizQuestionRepository quizQuestionRepository;
+
+        @Autowired
+        private QuizAnswerOptionRepository quizAnswerOptionRepository;
+
+        @Autowired
+        private JdbcTemplate jdbcTemplate;
+
+        @Autowired
+        private EntityManager entityManager;
 
         private Long testUserId;
 
@@ -143,6 +156,78 @@ class ExamResultsIntegrationTest extends BaseIntegrationTest {
                 assertThat(results.getIncorrectQuestions().get(0).getCategoryNameAr()).isNotBlank();
                 assertThat(results.getAllAnswers()).hasSize(50);
                 assertThat(results.getAllAnswers().get(0).getSelectedOptionTextAr()).isNotBlank();
+        }
+
+        @Test
+        @DisplayName("Story A3: Historical option IDs stay resolvable and explanations use current saved content")
+        void testHistoricalOptionsAndCurrentLocalizedExplanations() {
+                ExamSimulation exam = examService.startExamSimulation(testUserId);
+                ExamSimulationQuestion examQuestion = examQuestionRepository
+                                .findByExamIdOrderByQuestionOrder(exam.getId())
+                                .get(0);
+                QuizQuestion question = quizQuestionRepository.findById(examQuestion.getQuestionId())
+                                .orElseThrow();
+                QuizAnswerOption originalCorrect = question.getOptions().stream()
+                                .filter(QuizAnswerOption::getIsCorrect)
+                                .findFirst()
+                                .orElseThrow();
+                QuizAnswerOption selectedWrong = question.getOptions().stream()
+                                .filter(option -> !option.getIsCorrect())
+                                .findFirst()
+                                .orElseThrow();
+                Long originalCorrectId = originalCorrect.getId();
+                Long selectedWrongId = selectedWrong.getId();
+                String originalCorrectAr = originalCorrect.getOptionTextAr();
+                String selectedWrongNl = selectedWrong.getOptionTextNl();
+
+                examService.submitAnswer(
+                                exam.getId(),
+                                question.getId(),
+                                SubmitExamAnswerRequest.builder()
+                                                .selectedOptionId(selectedWrongId)
+                                                .build(),
+                                testUserId);
+
+                // Simulate a later Admin edit. The historical answer must retain both
+                // option identities while explanations intentionally resolve current content.
+                selectedWrong.setIsActive(false);
+                selectedWrong.setIsCorrect(true);
+                originalCorrect.setIsActive(false);
+                originalCorrect.setIsCorrect(false);
+                quizAnswerOptionRepository.saveAllAndFlush(List.of(selectedWrong, originalCorrect));
+                jdbcTemplate.update(
+                                """
+                                                UPDATE quiz_questions
+                                                SET explanation_en = ?, explanation_ar = ?, explanation_nl = ?, explanation_fr = ?
+                                                WHERE id = ?
+                                                """,
+                                "Updated explanation EN",
+                                "شرح محدث",
+                                "Bijgewerkte uitleg",
+                                "Explication mise à jour",
+                                question.getId());
+                entityManager.clear();
+
+                exam.setStatus(ExamSimulation.ExamStatus.COMPLETED);
+                exam.setCompletedAt(Instant.now());
+                exam.setCorrectAnswers(0);
+                exam.setScorePercentage(0.0);
+                examRepository.saveAndFlush(exam);
+
+                ExamResultsDTO results = examService.getExamResults(exam.getId(), testUserId);
+                var answer = results.getAllAnswers().stream()
+                                .filter(item -> item.getQuestionId().equals(question.getId()))
+                                .findFirst()
+                                .orElseThrow();
+
+                assertThat(answer.getSelectedOptionId()).isEqualTo(selectedWrongId);
+                assertThat(answer.getSelectedOptionTextNl()).isEqualTo(selectedWrongNl);
+                assertThat(answer.getCorrectOptionId()).isEqualTo(originalCorrectId);
+                assertThat(answer.getCorrectOptionTextAr()).isEqualTo(originalCorrectAr);
+                assertThat(answer.getExplanationEn()).isEqualTo("Updated explanation EN");
+                assertThat(answer.getExplanationAr()).isEqualTo("شرح محدث");
+                assertThat(answer.getExplanationNl()).isEqualTo("Bijgewerkte uitleg");
+                assertThat(answer.getExplanationFr()).isEqualTo("Explication mise à jour");
         }
 
         @Test

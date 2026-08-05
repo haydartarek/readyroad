@@ -1,6 +1,8 @@
 package com.readyroad.readyroadbackend.service;
 
 import com.readyroad.readyroadbackend.domain.entity.Category;
+import com.readyroad.readyroadbackend.domain.entity.ExamSimulation;
+import com.readyroad.readyroadbackend.domain.entity.ExamSimulationAnswer;
 import com.readyroad.readyroadbackend.domain.entity.QuizQuestion;
 import com.readyroad.readyroadbackend.domain.entity.QuizQuestion.DifficultyLevel;
 import com.readyroad.readyroadbackend.domain.entity.QuizQuestion.TypicalErrorType;
@@ -10,6 +12,7 @@ import com.readyroad.readyroadbackend.domain.entity.UserErrorPattern;
 import com.readyroad.readyroadbackend.domain.entity.UserQuestionHistory;
 import com.readyroad.readyroadbackend.domain.enums.SignCategory;
 import com.readyroad.readyroadbackend.domain.repository.CategoryRepository;
+import com.readyroad.readyroadbackend.domain.repository.ExamSimulationAnswerRepository;
 import com.readyroad.readyroadbackend.domain.repository.QuizQuestionRepository;
 import com.readyroad.readyroadbackend.domain.repository.RoadSignRepository;
 import com.readyroad.readyroadbackend.domain.repository.UserCategoryProgressRepository;
@@ -26,6 +29,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
+import java.time.ZoneOffset;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -48,6 +52,7 @@ public class AnalyticsService {
     private final RoadSignRepository roadSignRepository;
     private final RoadSignReferenceTextResolver roadSignReferenceTextResolver;
     private final BackendMessageService messages;
+    private final ExamSimulationAnswerRepository examAnswerRepository;
 
     // Supported error pattern types (6 types as per requirements)
     private static final List<TypicalErrorType> SUPPORTED_PATTERNS = Arrays.asList(
@@ -70,8 +75,12 @@ public class AnalyticsService {
         List<UserErrorPattern> rawPatterns = errorPatternRepository.findAllByUserIdOrderByOccurredAtDesc(userId);
         List<UserQuestionHistory> wrongAttempts = historyRepository
                 .findByUserIdAndTimesIncorrectGreaterThan(userId, 0);
+        List<ExamSimulationAnswer> completedExamAnswers = examAnswerRepository.findHistoryForUser(
+                userId,
+                ExamSimulation.ExamStatus.COMPLETED);
+        RecentErrorComparison recentComparison = buildRecentErrorComparison(completedExamAnswers);
 
-        if (rawPatterns.isEmpty() && wrongAttempts.isEmpty()) {
+        if (rawPatterns.isEmpty() && wrongAttempts.isEmpty() && !recentComparison.hasCurrentAttempt()) {
             log.info("No wrong attempts found for user {} in any source, returning empty list", userId);
             return new ArrayList<>();
         }
@@ -156,14 +165,21 @@ public class AnalyticsService {
             }
         }
 
-        int totalWrongAttempts = aggregates.values().stream()
-                .mapToInt(aggregate -> aggregate.count)
-                .sum();
+        int totalWrongAttempts = recentComparison.hasCurrentAttempt()
+                ? SUPPORTED_PATTERNS.stream().mapToInt(recentComparison::currentCount).sum()
+                : aggregates.values().stream().mapToInt(aggregate -> aggregate.count).sum();
         List<ErrorPatternResponse> responses = new ArrayList<>();
 
         for (TypicalErrorType pattern : SUPPORTED_PATTERNS) {
             PatternAggregate aggregate = aggregates.get(pattern);
-            int count = aggregate.count;
+            int count = recentComparison.hasCurrentAttempt()
+                    ? recentComparison.currentCount(pattern)
+                    : aggregate.count;
+            Integer previousCount = recentComparison.hasPreviousAttempt()
+                    ? recentComparison.previousCount(pattern)
+                    : null;
+            Integer delta = previousCount != null ? count - previousCount : null;
+            String trend = determineTrend(delta);
             double percentage = totalWrongAttempts > 0
                     ? (count * 100.0 / totalWrongAttempts)
                     : 0.0;
@@ -177,6 +193,12 @@ public class AnalyticsService {
             responses.add(ErrorPatternResponse.builder()
                     .patternType(pattern)
                     .count(count)
+                    .previousCount(previousCount)
+                    .currentCount(count)
+                    .delta(delta)
+                    .trend(trend)
+                    .recentAttemptsCount(recentComparison.attemptCount())
+                    .lastCalculatedAt(recentComparison.lastCalculatedAt())
                     .percentage(Math.round(percentage * 10.0) / 10.0)
                     .description(getPatternDescription(pattern))
                     .severity(determineSeverity(count, percentage))
@@ -184,7 +206,9 @@ public class AnalyticsService {
                     .firstOccurredAt(aggregate.firstOccurredAt)
                     .lastOccurredAt(aggregate.lastOccurredAt)
                     .recommendationKey("error_patterns.rec_" + pattern.name().toLowerCase(Locale.ROOT))
-                    .sourceScope("COMPLETE_HISTORY")
+                    .sourceScope(recentComparison.hasCurrentAttempt()
+                            ? "LAST_TWO_COMPLETED_EXAMS"
+                            : "COMPLETE_HISTORY")
                     .groups(groups)
                     .exampleQuestions(examples)
                     .build());
@@ -198,6 +222,104 @@ public class AnalyticsService {
                 rawPatterns.size(),
                 wrongAttempts.size());
         return responses;
+    }
+
+    private RecentErrorComparison buildRecentErrorComparison(List<ExamSimulationAnswer> answers) {
+        if (answers == null || answers.isEmpty()) {
+            return RecentErrorComparison.empty();
+        }
+
+        Map<Long, List<ExamSimulationAnswer>> answersByExam = answers.stream()
+                .filter(answer -> answer.getExam() != null && answer.getExam().getId() != null)
+                .collect(Collectors.groupingBy(answer -> answer.getExam().getId()));
+
+        List<List<ExamSimulationAnswer>> recentAttempts = answersByExam.values().stream()
+                .sorted(Comparator
+                        .comparing(
+                                (List<ExamSimulationAnswer> attempt) -> attempt.get(0).getExam().getCompletedAt(),
+                                Comparator.nullsLast(Comparator.reverseOrder()))
+                        .thenComparing(
+                                attempt -> attempt.get(0).getExam().getId(),
+                                Comparator.reverseOrder()))
+                .limit(2)
+                .toList();
+
+        if (recentAttempts.isEmpty()) {
+            return RecentErrorComparison.empty();
+        }
+
+        Map<TypicalErrorType, Integer> current = countAttemptErrors(recentAttempts.get(0));
+        Map<TypicalErrorType, Integer> previous = recentAttempts.size() > 1
+                ? countAttemptErrors(recentAttempts.get(1))
+                : Map.of();
+        LocalDateTime lastCalculatedAt = recentAttempts.get(0).get(0).getExam().getCompletedAt() == null
+                ? null
+                : LocalDateTime.ofInstant(
+                        recentAttempts.get(0).get(0).getExam().getCompletedAt(),
+                        ZoneOffset.UTC);
+
+        return new RecentErrorComparison(
+                current,
+                previous,
+                recentAttempts.size(),
+                lastCalculatedAt);
+    }
+
+    private Map<TypicalErrorType, Integer> countAttemptErrors(List<ExamSimulationAnswer> answers) {
+        Map<TypicalErrorType, Integer> counts = new EnumMap<>(TypicalErrorType.class);
+        for (ExamSimulationAnswer answer : answers) {
+            if (Boolean.TRUE.equals(answer.getIsCorrect()) || answer.getQuestion() == null) {
+                continue;
+            }
+            TypicalErrorType type = answer.getQuestion().getTypicalErrorType();
+            if (type == null || type == TypicalErrorType.OTHER) {
+                type = inferErrorTypeFromCategory(answer.getQuestion());
+            }
+            if (SUPPORTED_PATTERNS.contains(type)) {
+                counts.merge(type, 1, Integer::sum);
+            }
+        }
+        return counts;
+    }
+
+    private String determineTrend(Integer delta) {
+        if (delta == null) {
+            return "INSUFFICIENT_DATA";
+        }
+        if (delta < 0) {
+            return "IMPROVED";
+        }
+        if (delta > 0) {
+            return "WORSENED";
+        }
+        return "UNCHANGED";
+    }
+
+    private record RecentErrorComparison(
+            Map<TypicalErrorType, Integer> current,
+            Map<TypicalErrorType, Integer> previous,
+            int attemptCount,
+            LocalDateTime lastCalculatedAt) {
+
+        private static RecentErrorComparison empty() {
+            return new RecentErrorComparison(Map.of(), Map.of(), 0, null);
+        }
+
+        private boolean hasCurrentAttempt() {
+            return attemptCount > 0;
+        }
+
+        private boolean hasPreviousAttempt() {
+            return attemptCount > 1;
+        }
+
+        private int currentCount(TypicalErrorType type) {
+            return current.getOrDefault(type, 0);
+        }
+
+        private int previousCount(TypicalErrorType type) {
+            return previous.getOrDefault(type, 0);
+        }
     }
 
     private TypicalErrorType toTypicalErrorType(UserErrorPattern.ErrorType type) {

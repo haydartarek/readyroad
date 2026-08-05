@@ -1,11 +1,15 @@
 package com.readyroad.readyroadbackend.integration;
 
 import com.readyroad.readyroadbackend.domain.entity.Category;
+import com.readyroad.readyroadbackend.domain.entity.ExamSimulation;
+import com.readyroad.readyroadbackend.domain.entity.ExamSimulationAnswer;
 import com.readyroad.readyroadbackend.domain.entity.QuizAnswerOption;
 import com.readyroad.readyroadbackend.domain.entity.QuizQuestion;
 import com.readyroad.readyroadbackend.domain.entity.QuizQuestion.TypicalErrorType;
 import com.readyroad.readyroadbackend.domain.entity.UserQuestionHistory;
 import com.readyroad.readyroadbackend.domain.repository.CategoryRepository;
+import com.readyroad.readyroadbackend.domain.repository.ExamSimulationAnswerRepository;
+import com.readyroad.readyroadbackend.domain.repository.ExamSimulationRepository;
 import com.readyroad.readyroadbackend.domain.repository.QuizQuestionRepository;
 import com.readyroad.readyroadbackend.domain.repository.UserQuestionHistoryRepository;
 import com.readyroad.readyroadbackend.dto.ErrorPatternResponse;
@@ -18,9 +22,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.Instant;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -45,6 +51,12 @@ public class StoryC1ErrorPatternsIntegrationTest {
 
     @Autowired
     private CategoryRepository categoryRepository;
+
+    @Autowired
+    private ExamSimulationRepository examRepository;
+
+    @Autowired
+    private ExamSimulationAnswerRepository examAnswerRepository;
 
     private Long testUserId;
     private Category testCategory;
@@ -281,7 +293,121 @@ public class StoryC1ErrorPatternsIntegrationTest {
         assertThat(patterns).isEmpty();
     }
 
+    @Test
+    @DisplayName("@C1 compares the last two completed attempts and remains idempotent")
+    void comparesRecentCompletedAttempts() {
+        Long userId = 444L;
+        Instant now = Instant.now();
+        createCompletedAttempt(
+                userId,
+                now.minusSeconds(3600),
+                Map.of(
+                        TypicalErrorType.PRIORITY_MISUNDERSTANDING, 8,
+                        TypicalErrorType.SPEED_LIMIT_ERROR, 2),
+                40);
+        createCompletedAttempt(
+                userId,
+                now,
+                Map.of(
+                        TypicalErrorType.PRIORITY_MISUNDERSTANDING, 3,
+                        TypicalErrorType.SPEED_LIMIT_ERROR, 6),
+                41);
+
+        List<ErrorPatternResponse> firstRead = analyticsService.getErrorPatterns(userId);
+        List<ErrorPatternResponse> secondRead = analyticsService.getErrorPatterns(userId);
+
+        ErrorPatternResponse priority = pattern(firstRead, TypicalErrorType.PRIORITY_MISUNDERSTANDING);
+        assertThat(priority.getPreviousCount()).isEqualTo(8);
+        assertThat(priority.getCurrentCount()).isEqualTo(3);
+        assertThat(priority.getCount()).isEqualTo(3);
+        assertThat(priority.getDelta()).isEqualTo(-5);
+        assertThat(priority.getTrend()).isEqualTo("IMPROVED");
+        assertThat(priority.getRecentAttemptsCount()).isEqualTo(2);
+        assertThat(priority.getSourceScope()).isEqualTo("LAST_TWO_COMPLETED_EXAMS");
+
+        ErrorPatternResponse speed = pattern(firstRead, TypicalErrorType.SPEED_LIMIT_ERROR);
+        assertThat(speed.getPreviousCount()).isEqualTo(2);
+        assertThat(speed.getCurrentCount()).isEqualTo(6);
+        assertThat(speed.getDelta()).isEqualTo(4);
+        assertThat(speed.getTrend()).isEqualTo("WORSENED");
+
+        // The latest exam passed overall, but its actual category errors still count.
+        assertThat(speed.getCurrentCount()).isEqualTo(6);
+        assertThat(secondRead).usingRecursiveComparison().isEqualTo(firstRead);
+    }
+
+    @Test
+    @DisplayName("@C1 reports insufficient comparison data for one completed attempt")
+    void reportsInsufficientDataForOneAttempt() {
+        Long userId = 445L;
+        createCompletedAttempt(
+                userId,
+                Instant.now(),
+                Map.of(TypicalErrorType.SIGN_CONFUSION, 2),
+                38);
+
+        ErrorPatternResponse pattern = pattern(
+                analyticsService.getErrorPatterns(userId),
+                TypicalErrorType.SIGN_CONFUSION);
+
+        assertThat(pattern.getPreviousCount()).isNull();
+        assertThat(pattern.getCurrentCount()).isEqualTo(2);
+        assertThat(pattern.getDelta()).isNull();
+        assertThat(pattern.getTrend()).isEqualTo("INSUFFICIENT_DATA");
+        assertThat(pattern.getRecentAttemptsCount()).isEqualTo(1);
+    }
+
     // Helper methods
+
+    private ErrorPatternResponse pattern(
+            List<ErrorPatternResponse> patterns,
+            TypicalErrorType type) {
+        return patterns.stream()
+                .filter(pattern -> pattern.getPatternType() == type)
+                .findFirst()
+                .orElseThrow();
+    }
+
+    private void createCompletedAttempt(
+            Long userId,
+            Instant completedAt,
+            Map<TypicalErrorType, Integer> errors,
+            int correctAnswers) {
+        ExamSimulation exam = new ExamSimulation();
+        exam.setUserId(userId);
+        exam.setStartedAt(completedAt.minusSeconds(600));
+        exam.setCompletedAt(completedAt);
+        exam.setExpiresAt(completedAt.plusSeconds(1200));
+        exam.setStatus(ExamSimulation.ExamStatus.COMPLETED);
+        exam.setTotalQuestions(50);
+        exam.setCorrectAnswers(correctAnswers);
+        exam.setScorePercentage(correctAnswers * 2.0);
+        exam = examRepository.save(exam);
+
+        int seconds = 1;
+        for (Map.Entry<TypicalErrorType, Integer> entry : errors.entrySet()) {
+            for (int i = 0; i < entry.getValue(); i++) {
+                QuizQuestion question = createWrongAttemptWithPattern(userId, entry.getKey());
+                QuizAnswerOption correct = question.getOptions().stream()
+                        .filter(QuizAnswerOption::getIsCorrect)
+                        .findFirst()
+                        .orElseThrow();
+                QuizAnswerOption wrong = question.getOptions().stream()
+                        .filter(option -> !option.getIsCorrect())
+                        .findFirst()
+                        .orElseThrow();
+                examAnswerRepository.save(ExamSimulationAnswer.builder()
+                        .exam(exam)
+                        .question(question)
+                        .selectedOption(wrong)
+                        .correctOption(correct)
+                        .isCorrect(false)
+                        .timeTakenSeconds(10)
+                        .answeredAt(completedAt.minusSeconds(seconds++))
+                        .build());
+            }
+        }
+    }
 
     private void createWrongAttempts(Long userId, int count) {
         for (int i = 0; i < count; i++) {
@@ -291,11 +417,11 @@ public class StoryC1ErrorPatternsIntegrationTest {
         }
     }
 
-    private void createWrongAttemptWithPattern(Long userId, TypicalErrorType errorType) {
-        createWrongAttemptWithPatternAndCount(userId, errorType, 1);
+    private QuizQuestion createWrongAttemptWithPattern(Long userId, TypicalErrorType errorType) {
+        return createWrongAttemptWithPatternAndCount(userId, errorType, 1);
     }
 
-    private void createWrongAttemptWithPatternAndCount(
+    private QuizQuestion createWrongAttemptWithPatternAndCount(
             Long userId,
             TypicalErrorType errorType,
             int timesIncorrect) {
@@ -351,5 +477,6 @@ public class StoryC1ErrorPatternsIntegrationTest {
                 .build();
 
         historyRepository.save(history);
+        return question;
     }
 }
