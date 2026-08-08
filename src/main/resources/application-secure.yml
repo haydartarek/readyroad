@@ -69,6 +69,7 @@ jwt:
   enabled: true
   secret-key: ${JWT_SECRET:}
   expiration: 3600000 # 1 hour
+  admin-expiration: 86400000 # 24 hours, fixed from successful ADMIN login
   refresh-token:
     expiration: 604800000 # 7 days
   issuer: readyroad-backend

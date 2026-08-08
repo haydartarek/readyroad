@@ -9,10 +9,8 @@ import com.readyroad.readyroadbackend.domain.repository.UserRepository;
 import com.readyroad.readyroadbackend.dto.AuthResponse;
 import com.readyroad.readyroadbackend.dto.GoogleAuthExchangeRequest;
 import com.readyroad.readyroadbackend.exception.SocialAuthException;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
-import java.util.Map;
 import java.util.Optional;
 import java.util.UUID;
 import lombok.RequiredArgsConstructor;
@@ -32,7 +30,7 @@ public class SocialAuthService {
     private final UserRepository userRepository;
     private final AuthIdentityRepository authIdentityRepository;
     private final PasswordEncoder passwordEncoder;
-    private final JwtService jwtService;
+    private final AuthenticationTokenService authenticationTokenService;
     private final NotificationService notificationService;
     private final BackendMessageService messages;
 
@@ -178,12 +176,10 @@ public class SocialAuthService {
     }
 
     private AuthResponse buildAuthResponse(User user, boolean newUser) {
-        Map<String, Object> claims = new HashMap<>();
-        claims.put("role", user.getRole().name());
-        String jwtToken = jwtService.generateToken(claims, user.getUsername());
+        AuthenticationTokenService.IssuedToken issuedToken = authenticationTokenService.issue(user);
 
         return AuthResponse.of(
-                jwtToken,
+                issuedToken.value(),
                 user.getId(),
                 user.getUsername(),
                 user.getEmail(),
@@ -192,7 +188,8 @@ public class SocialAuthService {
                 user.getPreferredLanguage(),
                 user.getEmailVerified(),
                 getLinkedProviders(user.getId()),
-                newUser);
+                newUser,
+                issuedToken.expiresAt());
     }
 
     private String resolveFullName(GoogleOAuthService.GoogleUserInfo googleUser, String normalizedEmail) {

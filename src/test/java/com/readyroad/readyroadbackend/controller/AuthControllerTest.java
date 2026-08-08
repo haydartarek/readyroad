@@ -11,6 +11,7 @@ import com.readyroad.readyroadbackend.dto.LoginRequest;
 import com.readyroad.readyroadbackend.dto.RegisterRequest;
 import com.readyroad.readyroadbackend.dto.ResetPasswordRequest;
 import com.readyroad.readyroadbackend.service.AdminSystemSettingsService;
+import com.readyroad.readyroadbackend.service.AuthenticationTokenService;
 import com.readyroad.readyroadbackend.service.AuthService;
 import com.readyroad.readyroadbackend.service.BackendMessageService;
 import com.readyroad.readyroadbackend.service.PasswordResetService;
@@ -24,6 +25,9 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.junit.jupiter.api.AfterEach;
 
 @ExtendWith(MockitoExtension.class)
 class AuthControllerTest {
@@ -47,10 +51,30 @@ class AuthControllerTest {
     private SocialAuthService socialAuthService;
 
     @Mock
+    private AuthenticationTokenService authenticationTokenService;
+
+    @Mock
     private BackendMessageService messages;
 
     @InjectMocks
     private AuthController authController;
+
+    @AfterEach
+    void clearSecurityContext() {
+        SecurityContextHolder.clearContext();
+    }
+
+    @Test
+    void logoutRevokesTheCurrentAuthenticatedToken() {
+        SecurityContextHolder.getContext().setAuthentication(
+                new UsernamePasswordAuthenticationToken("admin", null, java.util.List.of()));
+
+        ResponseEntity<Void> response = authController.logout("Bearer admin-token");
+
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.NO_CONTENT);
+        org.mockito.Mockito.verify(authenticationTokenService).revoke("admin-token", "admin");
+        assertThat(SecurityContextHolder.getContext().getAuthentication()).isNull();
+    }
 
     @Test
     void loginReturnsUnauthorizedForAuthenticationFailures() {

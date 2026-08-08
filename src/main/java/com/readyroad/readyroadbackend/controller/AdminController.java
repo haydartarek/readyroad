@@ -19,6 +19,7 @@ import com.readyroad.readyroadbackend.dto.AdminQuizShuffleRequest;
 import com.readyroad.readyroadbackend.dto.AdminCreateUserRequest;
 import com.readyroad.readyroadbackend.dto.SignGovernanceReport;
 import com.readyroad.readyroadbackend.dto.response.AdminQuizQuestionResponse;
+import com.readyroad.readyroadbackend.dto.response.AdminQuizCategoryResponse;
 import com.readyroad.readyroadbackend.dto.response.AdminSystemSettingsResponse;
 import com.readyroad.readyroadbackend.dto.response.AdminTrafficSignResponse;
 import com.readyroad.readyroadbackend.dto.response.PageResponse;
@@ -201,6 +202,11 @@ public class AdminController {
     // ═══════════════════════════════════════════════════
     // Quiz Questions CRUD
     // ═══════════════════════════════════════════════════
+
+    @GetMapping("/quiz/categories")
+    public ResponseEntity<List<AdminQuizCategoryResponse>> getTheoreticalQuizCategories() {
+        return ResponseEntity.ok(adminQuizService.getTheoreticalCategories());
+    }
 
     /**
      * Paginated admin quiz questions list

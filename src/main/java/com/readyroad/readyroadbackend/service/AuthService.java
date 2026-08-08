@@ -7,10 +7,8 @@ import com.readyroad.readyroadbackend.domain.repository.UserRepository;
 import com.readyroad.readyroadbackend.dto.AuthResponse;
 import com.readyroad.readyroadbackend.dto.LoginRequest;
 import com.readyroad.readyroadbackend.dto.RegisterRequest;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
-import java.util.Map;
 import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -40,7 +38,7 @@ public class AuthService {
     private final UserRepository userRepository;
     private final AuthIdentityRepository authIdentityRepository;
     private final PasswordEncoder passwordEncoder;
-    private final JwtService jwtService;
+    private final AuthenticationTokenService authenticationTokenService;
     private final AuthenticationManager authenticationManager;
     private final NotificationService notificationService;
     private final BackendMessageService messages;
@@ -117,12 +115,10 @@ public class AuthService {
         }
 
         // Generate JWT token with role claim
-        Map<String, Object> claims = new HashMap<>();
-        claims.put("role", user.getRole().name());
-        String jwtToken = jwtService.generateToken(claims, user.getUsername());
+        AuthenticationTokenService.IssuedToken issuedToken = authenticationTokenService.issue(user);
 
         // Build and return response
-        return buildAuthResponse(user, jwtToken);
+        return buildAuthResponse(user, issuedToken);
     }
 
     private IllegalArgumentException registrationConflict(
@@ -172,11 +168,9 @@ public class AuthService {
             throw e;
         }
 
-        Map<String, Object> claims = new HashMap<>();
-        claims.put("role", user.getRole().name());
-        String jwtToken = jwtService.generateToken(claims, user.getUsername());
+        AuthenticationTokenService.IssuedToken issuedToken = authenticationTokenService.issue(user);
 
-        return buildAuthResponse(user, jwtToken);
+        return buildAuthResponse(user, issuedToken);
     }
 
     /**
@@ -186,14 +180,14 @@ public class AuthService {
      * @param token JWT token
      * @return AuthResponse
      */
-    private AuthResponse buildAuthResponse(User user, String token) {
+    private AuthResponse buildAuthResponse(User user, AuthenticationTokenService.IssuedToken issuedToken) {
         List<String> linkedProviders = authIdentityRepository.findByUserId(user.getId()).stream()
                 .map(identity -> identity.getProvider().name())
                 .sorted()
                 .toList();
 
         return AuthResponse.of(
-                token,
+                issuedToken.value(),
                 user.getId(),
                 user.getUsername(),
                 user.getEmail(),
@@ -202,6 +196,7 @@ public class AuthService {
                 user.getPreferredLanguage(),
                 user.getEmailVerified(),
                 linkedProviders,
-                false);
+                false,
+                issuedToken.expiresAt());
     }
 }

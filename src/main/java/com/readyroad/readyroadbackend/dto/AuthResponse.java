@@ -1,6 +1,7 @@
 package com.readyroad.readyroadbackend.dto;
 
 import com.readyroad.readyroadbackend.domain.enums.Role;
+import java.time.Instant;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -31,6 +32,7 @@ public class AuthResponse {
     private Boolean emailVerified;
     private List<String> linkedProviders;
     private Boolean newUser;
+    private Instant expiresAt;
     /**
      * Static factory method to create AuthResponse
      * Replaces Lombok @Builder pattern
@@ -45,7 +47,8 @@ public class AuthResponse {
             String preferredLanguage,
             Boolean emailVerified,
             List<String> linkedProviders,
-            boolean newUser) {
+            boolean newUser,
+            Instant expiresAt) {
         AuthResponse response = new AuthResponse();
         response.setToken(token);
         response.setType("Bearer");
@@ -58,6 +61,7 @@ public class AuthResponse {
         response.setEmailVerified(emailVerified);
         response.setLinkedProviders(linkedProviders);
         response.setNewUser(newUser);
+        response.setExpiresAt(expiresAt);
         return response;
     }
 }

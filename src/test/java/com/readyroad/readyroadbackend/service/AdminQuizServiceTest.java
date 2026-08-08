@@ -14,6 +14,7 @@ import static org.mockito.Mockito.when;
 import com.readyroad.readyroadbackend.domain.entity.Category;
 import com.readyroad.readyroadbackend.domain.entity.QuizAnswerOption;
 import com.readyroad.readyroadbackend.domain.entity.QuizQuestion;
+import com.readyroad.readyroadbackend.domain.enums.CategoryContentScope;
 import com.readyroad.readyroadbackend.domain.repository.CategoryRepository;
 import com.readyroad.readyroadbackend.domain.repository.QuizAnswerOptionRepository;
 import com.readyroad.readyroadbackend.domain.repository.QuizQuestionRepository;
@@ -120,6 +121,30 @@ class AdminQuizServiceTest {
     }
 
     @Test
+    void rejectsTrafficSignOnlyCategoryForTheoreticalQuestion() {
+        Category category = category();
+        category.setContentScope(CategoryContentScope.TRAFFIC_SIGN);
+        when(categoryRepository.findByCode("A")).thenReturn(Optional.of(category));
+
+        assertThatThrownBy(() -> service.createQuestion(validRequest()))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessage("admin.quiz.category_not_theoretical");
+        verify(questionRepository, never()).save(any());
+    }
+
+    @Test
+    void listsOnlyTheoreticalCategoryScopes() {
+        Category category = category();
+        when(categoryRepository.findAllByIsActiveTrueAndContentScopeInOrderByDisplayOrderAsc(any()))
+                .thenReturn(List.of(category));
+
+        assertThat(service.getTheoreticalCategories())
+                .singleElement()
+                .extracting(response -> response.code())
+                .isEqualTo("A");
+    }
+
+    @Test
     void updatesQuestionAndOptionTextInOneSave() {
         QuizQuestion question = existingQuestion(2);
         when(questionRepository.findByIdForUpdate(7L)).thenReturn(Optional.of(question));
@@ -191,6 +216,43 @@ class AdminQuizServiceTest {
         var response = service.updateQuestion(7L, request);
 
         assertThat(response.options().get(0).textFr()).isEqualTo("Réponse mise à jour");
+    }
+
+    @Test
+    void referencedQuestionAllowsCategoryDifficultyAndTypeEditing() {
+        QuizQuestion question = existingQuestion(2);
+        Category replacement = category();
+        replacement.setCode("B");
+        replacement.setNameEn("Priority");
+        when(questionRepository.findByIdForUpdate(7L)).thenReturn(Optional.of(question));
+        when(userAnswerRepository.existsByQuestionRefId(7L)).thenReturn(true);
+        when(categoryRepository.findByCode("B")).thenReturn(Optional.of(replacement));
+        AdminQuizQuestionRequest request = requestFrom(question);
+        request.setCategoryCode("B");
+        request.setDifficultyLevel("HARD");
+        request.setQuestionType("TRUE_FALSE");
+
+        var response = service.updateQuestion(7L, request);
+
+        assertThat(response.categoryCode()).isEqualTo("B");
+        assertThat(response.difficultyLevel()).isEqualTo("HARD");
+        assertThat(response.questionType()).isEqualTo("TRUE_FALSE");
+    }
+
+    @Test
+    void rejectsUnknownDifficultyAndQuestionType() {
+        when(categoryRepository.findByCode("A")).thenReturn(Optional.of(category()));
+        AdminQuizQuestionRequest invalidDifficulty = validRequest();
+        invalidDifficulty.setDifficultyLevel("EXPERT");
+        assertThatThrownBy(() -> service.createQuestion(invalidDifficulty))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessage("admin.quiz.difficulty_invalid");
+
+        AdminQuizQuestionRequest invalidType = validRequest();
+        invalidType.setQuestionType("VIDEO");
+        assertThatThrownBy(() -> service.createQuestion(invalidType))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessage("admin.quiz.type_invalid");
     }
 
     @Test
@@ -332,6 +394,11 @@ class AdminQuizServiceTest {
         category.setId(1L);
         category.setCode("A");
         category.setNameEn("Danger signs");
+        category.setNameAr("علامات الخطر");
+        category.setNameNl("Gevaarsborden");
+        category.setNameFr("Panneaux de danger");
+        category.setIsActive(true);
+        category.setContentScope(CategoryContentScope.BOTH);
         return category;
     }
 }

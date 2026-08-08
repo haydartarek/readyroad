@@ -1,6 +1,7 @@
 package com.readyroad.readyroadbackend.config;
 
 import com.readyroad.readyroadbackend.service.JwtService;
+import com.readyroad.readyroadbackend.service.AuthenticationTokenService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -40,6 +41,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
     private final JwtService jwtService;
     private final UserDetailsService userDetailsService;
+    private final AuthenticationTokenService authenticationTokenService;
 
     /**
      * Skip JWT authentication filter for public endpoints
@@ -54,7 +56,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         String path = request.getRequestURI();
 
         // /api/auth/me REQUIRES JWT - do NOT skip
-        if (path.equals("/api/auth/me")) {
+        if (path.equals("/api/auth/me") || path.equals("/api/auth/logout")) {
             log.debug("🔐 JWT filter ACTIVE for /api/auth/me (requires authentication)");
             return false;
         }
@@ -121,7 +123,8 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                 log.debug("✅ User details loaded from database");
 
                 // Validate token
-                if (jwtService.validateToken(jwt, userDetails)) {
+                if (jwtService.validateToken(jwt, userDetails)
+                        && authenticationTokenService.isSessionActive(jwt, userDetails)) {
 
                     // Create authentication token
                     UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(

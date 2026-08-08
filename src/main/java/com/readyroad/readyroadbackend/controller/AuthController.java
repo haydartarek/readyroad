@@ -12,6 +12,7 @@ import com.readyroad.readyroadbackend.dto.RegisterRequest;
 import com.readyroad.readyroadbackend.dto.ResetPasswordRequest;
 import com.readyroad.readyroadbackend.service.AuthService;
 import com.readyroad.readyroadbackend.service.AdminSystemSettingsService;
+import com.readyroad.readyroadbackend.service.AuthenticationTokenService;
 import com.readyroad.readyroadbackend.service.BackendMessageService;
 import com.readyroad.readyroadbackend.service.PasswordResetService;
 import com.readyroad.readyroadbackend.service.SocialAuthService;
@@ -51,6 +52,7 @@ public class AuthController {
     private final PasswordResetService passwordResetService;
     private final AdminSystemSettingsService adminSystemSettingsService;
     private final SocialAuthService socialAuthService;
+    private final AuthenticationTokenService authenticationTokenService;
     private final BackendMessageService messages;
 
     /**
@@ -93,6 +95,19 @@ public class AuthController {
     public ResponseEntity<AuthResponse> exchangeGoogleCode(@Valid @RequestBody GoogleAuthExchangeRequest request) {
         AuthResponse response = socialAuthService.authenticateWithGoogle(request);
         return ResponseEntity.ok(response);
+    }
+
+    @PostMapping("/logout")
+    public ResponseEntity<Void> logout(@RequestHeader("Authorization") String authorization) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (authentication == null || !authentication.isAuthenticated()) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+        }
+
+        String token = authorization.substring("Bearer ".length());
+        authenticationTokenService.revoke(token, authentication.getName());
+        SecurityContextHolder.clearContext();
+        return ResponseEntity.noContent().build();
     }
 
     /**

@@ -55,7 +55,7 @@ class SocialAuthServiceTest {
         private PasswordEncoder passwordEncoder;
 
         @Mock
-        private JwtService jwtService;
+        private AuthenticationTokenService authenticationTokenService;
 
         @Mock
         private NotificationService notificationService;
@@ -118,7 +118,7 @@ class SocialAuthServiceTest {
                                 .thenReturn(Optional.of(identity));
                 when(authIdentityRepository.save(identity)).thenReturn(identity);
                 when(authIdentityRepository.findByUserId(11L)).thenReturn(List.of(identity));
-                when(jwtService.generateToken(anyMap(), anyString())).thenReturn("jwt-token");
+                when(authenticationTokenService.issue(user)).thenReturn(issuedToken());
 
                 AuthResponse response = socialAuthService.authenticateWithGoogle(ARABIC_REQUEST);
 
@@ -149,7 +149,7 @@ class SocialAuthServiceTest {
                 when(authIdentityRepository.save(any(AuthIdentity.class)))
                                 .thenAnswer(invocation -> invocation.getArgument(0));
                 when(authIdentityRepository.findByUserId(42L)).thenReturn(List.of(savedIdentity(42L, "google-user-2")));
-                when(jwtService.generateToken(anyMap(), anyString())).thenReturn("jwt-token");
+                when(authenticationTokenService.issue(any(User.class))).thenReturn(issuedToken());
 
                 AuthResponse response = socialAuthService.authenticateWithGoogle(ARABIC_REQUEST);
 
@@ -224,6 +224,11 @@ class SocialAuthServiceTest {
                                 "Ready",
                                 "Road",
                                 null);
+        }
+
+        private AuthenticationTokenService.IssuedToken issuedToken() {
+                return new AuthenticationTokenService.IssuedToken(
+                                "jwt-token", java.time.Instant.parse("2026-08-09T10:00:00Z"));
         }
 
         private AuthIdentity savedIdentity(Long userId, String providerUserId) {

@@ -35,7 +35,7 @@ class AuthServiceTest {
     private PasswordEncoder passwordEncoder;
 
     @Mock
-    private JwtService jwtService;
+    private AuthenticationTokenService authenticationTokenService;
 
     @Mock
     private AuthenticationManager authenticationManager;
@@ -92,7 +92,9 @@ class AuthServiceTest {
             return user;
         });
         when(authIdentityRepository.findByUserId(12L)).thenReturn(List.of());
-        when(jwtService.generateToken(any(), any())).thenReturn("jwt-token");
+        when(authenticationTokenService.issue(any(User.class))).thenReturn(
+                new AuthenticationTokenService.IssuedToken(
+                        "jwt-token", java.time.Instant.parse("2026-08-09T10:00:00Z")));
 
         AuthResponse response = authService.register(request);
 
@@ -117,7 +119,9 @@ class AuthServiceTest {
             return user;
         });
         when(authIdentityRepository.findByUserId(13L)).thenReturn(List.of());
-        when(jwtService.generateToken(any(), any())).thenReturn("jwt-token");
+        when(authenticationTokenService.issue(any(User.class))).thenReturn(
+                new AuthenticationTokenService.IssuedToken(
+                        "jwt-token", java.time.Instant.parse("2026-08-09T10:00:00Z")));
 
         AuthResponse response = authService.register(request);
 

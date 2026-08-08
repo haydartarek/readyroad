@@ -166,6 +166,7 @@ public class SecurityConfig {
                                                 // Note: Role-specific restrictions should use @PreAuthorize in
                                                 // controllers
                                                 .requestMatchers(HttpMethod.GET, "/api/auth/me").authenticated()
+                                                .requestMatchers(HttpMethod.POST, "/api/auth/logout").authenticated()
                                                 .requestMatchers(HttpMethod.GET, "/api/assessment/**").authenticated()
                                                 .requestMatchers("/api/users/me/**").authenticated()
                                                 .requestMatchers("/api/users/**").authenticated()

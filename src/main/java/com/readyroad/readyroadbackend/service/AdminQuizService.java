@@ -3,6 +3,7 @@ package com.readyroad.readyroadbackend.service;
 import com.readyroad.readyroadbackend.domain.entity.Category;
 import com.readyroad.readyroadbackend.domain.entity.QuizAnswerOption;
 import com.readyroad.readyroadbackend.domain.entity.QuizQuestion;
+import com.readyroad.readyroadbackend.domain.enums.CategoryContentScope;
 import com.readyroad.readyroadbackend.domain.repository.CategoryRepository;
 import com.readyroad.readyroadbackend.domain.repository.QuizAnswerOptionRepository;
 import com.readyroad.readyroadbackend.domain.repository.QuizQuestionRepository;
@@ -10,6 +11,7 @@ import com.readyroad.readyroadbackend.domain.repository.QuizUserAnswerRepository
 import com.readyroad.readyroadbackend.domain.repository.UserQuestionHistoryRepository;
 import com.readyroad.readyroadbackend.dto.AdminQuizQuestionRequest;
 import com.readyroad.readyroadbackend.dto.response.AdminQuizQuestionResponse;
+import com.readyroad.readyroadbackend.dto.response.AdminQuizCategoryResponse;
 import com.readyroad.readyroadbackend.dto.response.CorrectAnswerDistributionResponse;
 import com.readyroad.readyroadbackend.util.DrivingTextSanitizer;
 import com.readyroad.readyroadbackend.dto.response.PageResponse;
@@ -62,6 +64,23 @@ public class AdminQuizService {
     private static final List<String> ALLOWED_SORT_FIELDS = List.of(
             "id", "questionEn", "questionAr", "difficultyLevel", "questionType",
             "category.code", "isActive", "createdAt", "updatedAt");
+
+    private static final Set<CategoryContentScope> THEORETICAL_CATEGORY_SCOPES = Set.of(
+            CategoryContentScope.THEORETICAL_EXAM,
+            CategoryContentScope.BOTH);
+
+    public List<AdminQuizCategoryResponse> getTheoreticalCategories() {
+        return categoryRepository
+                .findAllByIsActiveTrueAndContentScopeInOrderByDisplayOrderAsc(THEORETICAL_CATEGORY_SCOPES)
+                .stream()
+                .map(category -> new AdminQuizCategoryResponse(
+                        category.getCode(),
+                        category.getNameEn(),
+                        category.getNameAr(),
+                        category.getNameNl(),
+                        category.getNameFr()))
+                .toList();
+    }
 
     // ─── List (paginated) ──────────────────────────────
 
@@ -119,9 +138,7 @@ public class AdminQuizService {
     public AdminQuizQuestionResponse createQuestion(AdminQuizQuestionRequest request) {
         validateOptionsPolicy(request);
 
-        Category category = categoryRepository.findByCode(request.getCategoryCode())
-                .orElseThrow(() -> new IllegalArgumentException(
-                        messages.get("admin.quiz.category_not_found", request.getCategoryCode())));
+        Category category = getTheoreticalCategory(request.getCategoryCode());
 
         QuizQuestion question = new QuizQuestion();
         mapRequestToEntity(request, question);
@@ -155,20 +172,12 @@ public class AdminQuizService {
         QuizQuestion question = questionRepository.findByIdForUpdate(id)
                 .orElseThrow(() -> new IllegalArgumentException(messages.get("admin.quiz.not_found", id)));
         question.getOptions().size();
-        boolean isReferenced = isQuestionReferenced(id);
-
-        if (isReferenced) {
-            validateReferencedQuestionUpdate(question, request);
-        }
-
         validateRequestedOptionIds(question, request.getOptions());
         QuizUpdateAudit audit = captureAudit(question, request);
 
         // Update category if changed
         if (!question.getCategory().getCode().equals(request.getCategoryCode())) {
-            Category category = categoryRepository.findByCode(request.getCategoryCode())
-                    .orElseThrow(() -> new IllegalArgumentException(
-                            messages.get("admin.quiz.category_not_found", request.getCategoryCode())));
+            Category category = getTheoreticalCategory(request.getCategoryCode());
             question.setCategory(category);
         }
 
@@ -287,14 +296,15 @@ public class AdminQuizService {
         }
     }
 
-    private void validateReferencedQuestionUpdate(QuizQuestion existing, AdminQuizQuestionRequest request) {
-        boolean categoryChanged = existing.getCategory() == null
-                || !existing.getCategory().getCode().equals(request.getCategoryCode());
-        boolean difficultyChanged = parseDifficultyOrDefault(request.getDifficultyLevel()) != existing.getDifficultyLevel();
-        boolean typeChanged = parseQuestionType(request.getQuestionType()) != existing.getQuestionType();
-        if (categoryChanged || difficultyChanged || typeChanged) {
-            throw new IllegalStateException(messages.get("admin.quiz.referenced_update_blocked"));
+    private Category getTheoreticalCategory(String categoryCode) {
+        Category category = categoryRepository.findByCode(categoryCode)
+                .orElseThrow(() -> new IllegalArgumentException(
+                        messages.get("admin.quiz.category_not_found", categoryCode)));
+        if (!Boolean.TRUE.equals(category.getIsActive()) || category.getContentScope() == null
+                || !category.getContentScope().supportsTheoreticalExam()) {
+            throw new IllegalArgumentException(messages.get("admin.quiz.category_not_theoretical", categoryCode));
         }
+        return category;
     }
 
     public CorrectAnswerDistributionResponse getCorrectAnswerDistribution() {
@@ -690,7 +700,7 @@ public class AdminQuizService {
         try {
             return QuizQuestion.DifficultyLevel.valueOf(level.toUpperCase().trim());
         } catch (IllegalArgumentException e) {
-            return QuizQuestion.DifficultyLevel.EASY;
+            throw new IllegalArgumentException(messages.get("admin.quiz.difficulty_invalid", level));
         }
     }
 
@@ -700,7 +710,7 @@ public class AdminQuizService {
         try {
             return QuizQuestion.QuestionType.valueOf(type.toUpperCase().trim());
         } catch (IllegalArgumentException e) {
-            return QuizQuestion.QuestionType.MULTIPLE_CHOICE;
+            throw new IllegalArgumentException(messages.get("admin.quiz.type_invalid", type));
         }
     }
 

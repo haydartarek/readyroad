@@ -91,6 +91,14 @@ public class JwtService {
         return extractClaim(token, Claims::getExpiration);
     }
 
+    public String extractTokenId(String token) {
+        return extractClaim(token, claims -> claims.get("jti", String.class));
+    }
+
+    public String extractRole(String token) {
+        return extractClaim(token, claims -> claims.get("role", String.class));
+    }
+
     /**
      * Extract a specific claim from JWT token
      *
@@ -163,6 +171,10 @@ public class JwtService {
         return createToken(extraClaims, username);
     }
 
+    public String generateToken(Map<String, Object> extraClaims, String username, long expirationMillis) {
+        return createToken(extraClaims, username, expirationMillis);
+    }
+
     /**
      * Create JWT token
      *
@@ -171,13 +183,17 @@ public class JwtService {
      * @return JWT token
      */
     private String createToken(Map<String, Object> claims, String username) {
+        return createToken(claims, username, expiration);
+    }
+
+    private String createToken(Map<String, Object> claims, String username, long expirationMillis) {
         long now = System.currentTimeMillis();
         return Jwts.builder()
                 .claims(claims)
                 .subject(username)
                 .issuer(issuer)
                 .issuedAt(new Date(now))
-                .expiration(new Date(now + expiration))
+                .expiration(new Date(now + expirationMillis))
                 .signWith(getSignKey())
                 .compact();
     }

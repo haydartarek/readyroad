@@ -1,5 +1,6 @@
 package com.readyroad.readyroadbackend.domain.entity;
 
+import com.readyroad.readyroadbackend.domain.enums.CategoryContentScope;
 import com.readyroad.readyroadbackend.util.TextNormalizer;
 import jakarta.persistence.*;
 
@@ -39,6 +40,10 @@ public class Category extends BaseEntity {
 
     @Column(nullable = false)
     private Boolean isActive = true;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false, length = 30)
+    private CategoryContentScope contentScope = CategoryContentScope.TRAFFIC_SIGN;
 
     // Getters and Setters
     public String getCode() {
@@ -127,6 +132,14 @@ public class Category extends BaseEntity {
 
     public void setIsActive(Boolean isActive) {
         this.isActive = isActive;
+    }
+
+    public CategoryContentScope getContentScope() {
+        return contentScope;
+    }
+
+    public void setContentScope(CategoryContentScope contentScope) {
+        this.contentScope = contentScope;
     }
 
     @Override
