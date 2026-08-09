@@ -176,6 +176,11 @@ public class OverallProgressResponse {
          */
         private String categoryName;
 
+        private String categoryNameEn;
+        private String categoryNameNl;
+        private String categoryNameFr;
+        private String categoryNameAr;
+
         /**
          * Short category code (e.g. "A", "B", "C")
          */

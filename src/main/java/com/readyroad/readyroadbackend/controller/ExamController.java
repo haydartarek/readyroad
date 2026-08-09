@@ -198,6 +198,17 @@ public class ExamController {
                 return ResponseEntity.ok(response);
         }
 
+        @PostMapping("/{examId}/abandon")
+        @Operation(summary = "Abandon an incomplete exam", description = "Terminates an incomplete attempt without creating a score or learner result.")
+        public ResponseEntity<Map<String, Object>> abandonExam(
+                        @Parameter(description = "Exam ID", required = true) @PathVariable Long examId) {
+                Long userId = authenticationUtil.getCurrentUserId();
+                examService.cancelExam(examId, userId);
+                return ResponseEntity.ok(Map.of(
+                                "examId", examId,
+                                "status", "ABANDONED"));
+        }
+
         /**
          * Story A3: Get exam results
          *

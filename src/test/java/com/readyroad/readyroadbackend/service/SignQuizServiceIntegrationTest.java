@@ -44,6 +44,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
+import org.springframework.web.server.ResponseStatusException;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.HashSet;
@@ -55,6 +56,7 @@ import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 @SpringBootTest
 @ActiveProfiles("test")
@@ -302,6 +304,28 @@ class SignQuizServiceIntegrationTest {
         }
 
         @Test
+        @DisplayName("Abandoning individual sign practice is idempotent and excluded from learner history")
+        void abandonSignPracticeIsExcludedFromHistory() {
+                RoadSign sign = ensureCanonicalSignWithExam(
+                                canonicalSignCatalogService.getCanonicalSeeds().get(0));
+                User user = createUser("sign-practice-abandon");
+                SignPracticeSession session = createPracticeSession(
+                                user, sign, SignPracticeSession.SessionStatus.IN_PROGRESS, 8, 0);
+                session = signPracticeSessionRepository.saveAndFlush(session);
+
+                signQuizService.abandonPracticeSession(session.getId(), user.getId());
+                signQuizService.abandonPracticeSession(session.getId(), user.getId());
+
+                assertThat(signPracticeSessionRepository.findById(session.getId()))
+                                .hasValueSatisfying(stored -> {
+                                        assertThat(stored.getStatus())
+                                                        .isEqualTo(SignPracticeSession.SessionStatus.ABANDONED);
+                                        assertThat(stored.getCompletedAt()).isNull();
+                                });
+                assertThat(signQuizService.getPracticeHistory(user.getId()).sessions()).isEmpty();
+        }
+
+        @Test
         @DisplayName("Random sign exam review preserves correct and wrong selected answers in every language")
         void randomSignExamReviewReturnsPersistedSelectedAnswers() {
                 seedRandomPracticePool();
@@ -325,6 +349,16 @@ class SignQuizServiceIntegrationTest {
                                 .findFirst()
                                 .orElseThrow()
                                 .getId();
+                Map<Long, Long> correctChoiceByQuestion = session.questions().stream()
+                                .collect(Collectors.toMap(
+                                                SignQuizQuestionDto::id,
+                                                question -> signQuestionRepository.findById(question.id())
+                                                                .orElseThrow()
+                                                                .getDeliverableChoices().stream()
+                                                                .filter(choice -> Boolean.TRUE.equals(choice.getIsCorrect()))
+                                                                .findFirst()
+                                                                .orElseThrow()
+                                                                .getId()));
 
                 List<SignRandomPracticeAnswerRequest> answers = session.questions().stream()
                                 .map(question -> new SignRandomPracticeAnswerRequest(
@@ -333,7 +367,7 @@ class SignQuizServiceIntegrationTest {
                                                                 ? correctChoiceId
                                                                 : question.id().equals(wrongQuestion.id())
                                                                                 ? wrongChoiceId
-                                                                                : null))
+                                                                                : correctChoiceByQuestion.get(question.id())))
                                 .toList();
 
                 SignRandomPracticeResultDto submitted = signQuizService.submitRandomSignPracticeAnswers(
@@ -359,9 +393,9 @@ class SignQuizServiceIntegrationTest {
                 assertThat(wrongResult.selectedChoiceFr()).isNotBlank();
                 assertThat(wrongResult.selectedChoiceAr()).isNotBlank();
                 assertThat(wrongResult.isCorrect()).isFalse();
-                assertThat(submitted.correctAnswers()).isEqualTo(1);
+                assertThat(submitted.correctAnswers()).isEqualTo(49);
                 assertThat(submitted.wrongAnswers()).isEqualTo(1);
-                assertThat(submitted.unanswered()).isEqualTo(48);
+                assertThat(submitted.unanswered()).isZero();
 
                 entityManager.flush();
                 entityManager.clear();
@@ -381,8 +415,8 @@ class SignQuizServiceIntegrationTest {
         }
 
         @Test
-        @DisplayName("Submitting unanswered mixed sign exam stores a failed result, creates a notification, and excludes those questions for 24 hours")
-        void submitRandomSignPracticeAnswersStoresFailedResultAndEnforces24HourCooldown() {
+        @DisplayName("Incomplete mixed sign exam is abandoned without results or analytics and keeps the cooldown")
+        void incompleteRandomSignPracticeIsAbandonedWithoutResult() {
                 seedRandomPracticePool();
                 User user = createUser("sign-random-submit");
 
@@ -394,51 +428,27 @@ class SignQuizServiceIntegrationTest {
                                 .map(question -> new SignRandomPracticeAnswerRequest(question.id(), null))
                                 .toList();
 
-                SignRandomPracticeResultDto firstResult = signQuizService.submitRandomSignPracticeAnswers(
-                                firstSession.sessionId(),
-                                unansweredPayload,
-                                user.getId());
+                assertThatThrownBy(() -> signQuizService.submitRandomSignPracticeAnswers(
+                                firstSession.sessionId(), unansweredPayload, user.getId()))
+                                .isInstanceOf(ResponseStatusException.class)
+                                .hasMessageContaining("400 BAD_REQUEST");
 
-                assertThat(firstResult.sessionId()).isEqualTo(firstSession.sessionId());
-                assertThat(firstResult.status()).isEqualTo(SignRandomPracticeSession.SessionStatus.COMPLETED.name());
-                assertThat(firstResult.totalQuestions()).isEqualTo(50);
-                assertThat(firstResult.answeredCount()).isZero();
-                assertThat(firstResult.correctAnswers()).isZero();
-                assertThat(firstResult.wrongAnswers()).isZero();
-                assertThat(firstResult.unanswered()).isEqualTo(50);
-                assertThat(firstResult.scorePercentage()).isZero();
-                assertThat(firstResult.passed()).isFalse();
-                assertThat(firstResult.questions())
-                                .hasSize(50)
-                                .allSatisfy(question -> {
-                                        assertThat(question.selectedChoiceId()).isNull();
-                                        assertThat(question.selectedChoiceEn()).isNull();
-                                        assertThat(question.wasTimeout()).isTrue();
-                                        assertThat(question.isCorrect()).isFalse();
-                                });
+                signQuizService.abandonRandomSignPracticeSession(firstSession.sessionId(), user.getId());
+                signQuizService.abandonRandomSignPracticeSession(firstSession.sessionId(), user.getId());
 
                 assertThat(signRandomPracticeSessionRepository.findById(firstSession.sessionId()))
                                 .hasValueSatisfying(session -> {
                                         assertThat(session.getStatus())
-                                                        .isEqualTo(SignRandomPracticeSession.SessionStatus.COMPLETED);
+                                                        .isEqualTo(SignRandomPracticeSession.SessionStatus.ABANDONED);
                                         assertThat(session.getAnsweredCount()).isZero();
                                         assertThat(session.getCorrectCount()).isZero();
-                                        assertThat(session.getPassed()).isFalse();
+                                        assertThat(session.getScorePct()).isNull();
+                                        assertThat(session.getPassed()).isNull();
+                                        assertThat(session.getCompletedAt()).isNull();
                                 });
-                assertThat(userWeakAreaRepository.findAllByUserId(user.getId()))
-                                .hasSize(new HashSet<>(firstSession.questions().stream()
-                                                .map(SignQuizQuestionDto::signCode)
-                                                .toList()).size())
-                                .allSatisfy(weakArea -> {
-                                        assertThat(weakArea.getTrafficSignCode()).isNotBlank();
-                                        assertThat(weakArea.getTotalQuestions()).isGreaterThan(0);
-                                        assertThat(weakArea.getWrongAnswers()).isGreaterThanOrEqualTo(0);
-                                });
-
-                assertThat(notificationRepository.findTop50ByUserIdOrderByCreatedAtDesc(user.getId()))
-                                .singleElement()
-                                .satisfies(notification -> assertRandomPracticeFailureNotification(notification,
-                                                firstSession.sessionId()));
+                assertThat(userWeakAreaRepository.findAllByUserId(user.getId())).isEmpty();
+                assertThat(notificationRepository.findTop50ByUserIdOrderByCreatedAtDesc(user.getId())).isEmpty();
+                assertThat(signQuizService.getRandomSignPracticeHistory(user.getId()).sessions()).isEmpty();
 
                 SignRandomPracticeSessionDto secondSession = signQuizService
                                 .startRandomSignPracticeSession(user.getId());

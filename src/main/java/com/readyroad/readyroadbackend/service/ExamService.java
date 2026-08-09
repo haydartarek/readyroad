@@ -372,18 +372,12 @@ public class ExamService {
         return examMapper.toStartResponse(activeExam, getExamQuestions(activeExam.getId()));
     }
 
-    /**
-     * Get exam history for user — includes COMPLETED, EXPIRED, and ABANDONED exams.
-     * IN_PROGRESS exams are excluded (they haven't produced results yet).
-     *
-     * @param userId User ID
-     * @return All non-active exams ordered by start date (newest first)
-     */
+    /** Get learner-visible exam history. Only completed attempts have results. */
     @Transactional(readOnly = true)
     public List<ExamSimulation> getCompletedExams(Long userId) {
         log.info("Fetching exam history for user: {}", userId);
-        return examRepository.findByUserIdAndStatusNotOrderByStartedAtDesc(
-                userId, ExamSimulation.ExamStatus.IN_PROGRESS);
+        return examRepository.findByUserIdAndStatusOrderByCompletedAtDesc(
+                userId, ExamSimulation.ExamStatus.COMPLETED);
     }
 
     /**
@@ -425,6 +419,12 @@ public class ExamService {
 
         // Calculate final score from all submitted answers
         List<ExamSimulationAnswer> answers = answerRepository.findByExamId(examId);
+        if (answers.size() != exam.getTotalQuestions()) {
+            throw new ExamNotActiveException(messages.get(
+                    "exam.complete.unanswered",
+                    answers.size(),
+                    exam.getTotalQuestions()));
+        }
         int correctCount = (int) answers.stream()
                 .filter(ExamSimulationAnswer::getIsCorrect)
                 .count();
@@ -585,11 +585,19 @@ public class ExamService {
      * @param examId Exam ID
      */
     @Transactional
-    public void cancelExam(Long examId) {
-        log.info("Cancelling exam: {}", examId);
+    public void cancelExam(Long examId, Long userId) {
+        log.info("Cancelling exam: examId={}, userId={}", examId, userId);
 
         ExamSimulation exam = examRepository.findById(examId)
                 .orElseThrow(() -> new ExamNotFoundException(messages.get("exam.not_found", examId)));
+
+        if (!exam.getUserId().equals(userId)) {
+            throw new UnauthorizedException(userId, examId);
+        }
+
+        if (exam.getStatus() == ExamSimulation.ExamStatus.ABANDONED) {
+            return;
+        }
 
         if (exam.getStatus() != ExamSimulation.ExamStatus.IN_PROGRESS) {
             log.warn("Cannot cancel exam that is not in progress: examId={}, status={}",
@@ -599,18 +607,12 @@ public class ExamService {
 
         // Mark as abandoned — distinct from a completed (submitted) exam
         exam.setStatus(ExamSimulation.ExamStatus.ABANDONED);
-        exam.setCompletedAt(Instant.now());
-        exam.setCorrectAnswers(0);
-        exam.setScorePercentage(0.0);
+        exam.setCompletedAt(null);
+        exam.setCorrectAnswers(null);
+        exam.setScorePercentage(null);
+        exam.setTimeTakenSeconds(null);
 
         examRepository.save(exam);
-
-        // Fire a neutral cancelled notification — not exam-failed, which implies a performance result
-        try {
-            notificationService.createExamAbandonedNotification(exam.getUserId(), examId);
-        } catch (Exception ex) {
-            log.warn("Failed to create notification for cancelled examId={}: {}", examId, ex.getMessage());
-        }
 
         log.info("✅ Exam cancelled: examId={}", examId);
     }

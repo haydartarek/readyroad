@@ -70,4 +70,15 @@ class ExamControllerTest {
         assertThat(response.getBody()).containsEntry("activeExam", activeExam);
         verify(examService).getActiveExamResponse(9L);
     }
+
+    @Test
+    void abandonExamUsesAuthenticatedOwnerAndReturnsAbandonedStatus() {
+        when(authenticationUtil.getCurrentUserId()).thenReturn(9L);
+
+        ResponseEntity<Map<String, Object>> response = examController.abandonExam(84L);
+
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
+        assertThat(response.getBody()).containsEntry("status", "ABANDONED");
+        verify(examService).cancelExam(84L, 9L);
+    }
 }

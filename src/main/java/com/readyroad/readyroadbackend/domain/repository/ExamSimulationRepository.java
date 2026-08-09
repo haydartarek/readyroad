@@ -27,17 +27,8 @@ public interface ExamSimulationRepository extends JpaRepository<ExamSimulation, 
             Long userId,
             ExamSimulation.ExamStatus status);
 
-    /**
-     * Find all exams for user (for history)
-     */
+    /** All statuses for operational activity counters; never use as result history. */
     List<ExamSimulation> findByUserIdOrderByStartedAtDesc(Long userId);
-
-    /**
-     * Find all non-active exams for user (history view — excludes IN_PROGRESS)
-     */
-    List<ExamSimulation> findByUserIdAndStatusNotOrderByStartedAtDesc(
-            Long userId,
-            ExamSimulation.ExamStatus status);
 
     /**
      * Check if user has active exam

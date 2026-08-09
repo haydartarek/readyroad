@@ -11,7 +11,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -79,8 +78,7 @@ public class QuizQuestionMapper {
             dto.setCategoryNameFr(question.getCategory().getNameFr());
         }
 
-        // Options: filter placeholder / corrupted translations, then shuffle
-        // the delivery order so the correct answer is not fixed in one slot.
+        // Options follow the audited display order maintained by Admin.
         if (question.getOptions() != null) {
             List<QuizAnswerOptionDTO> optionDTOs = question.getDeliverableOptions().stream()
                     .filter(option -> {
@@ -99,10 +97,6 @@ public class QuizQuestionMapper {
                             Comparator.nullsLast(Integer::compareTo)))
                     .map(this::toOptionDTO)
                     .collect(Collectors.toCollection(ArrayList::new));
-            Collections.shuffle(optionDTOs);
-            for (int i = 0; i < optionDTOs.size(); i++) {
-                optionDTOs.get(i).setDisplayOrder(i + 1);
-            }
             dto.setOptions(optionDTOs);
         }
 

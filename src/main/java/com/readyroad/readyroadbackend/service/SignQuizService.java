@@ -267,43 +267,11 @@ public class SignQuizService {
                 if (sessionCompleted) {
                         session.setStatus(SessionStatus.COMPLETED);
                         session.setCompletedAt(LocalDateTime.now());
+                        applyCompletedPracticeAnalytics(session, userId);
                         log.info("Session {} COMPLETED — score {}/{}", sessionId,
                                         session.getCorrectCount(), session.getTotalQuestions());
                 }
                 sessionRepo.save(session);
-
-                // ── V11: update user_weak_areas ───────────────────────────────────────
-                int correct_ = isCorrect ? 1 : 0;
-                int wrong_ = isCorrect ? 0 : 1;
-                try {
-                        weakAreaRepo.upsertBySignCode(userId, session.getSignCode(), 1, correct_, wrong_);
-                } catch (Exception e) {
-                        log.warn("V11 upsertBySignCode failed for user={} sign={}: {}", userId, session.getSignCode(),
-                                        e.getMessage());
-                }
-
-                // ── V11: insert error pattern when wrong ──────────────────────────────
-                if (!isCorrect) {
-                        String errorType = resolveErrorType(session.getSign().getCategory());
-                        try {
-                                errorPatternRepo.insertSignError(userId, errorType, questionId, session.getSignCode());
-                        } catch (Exception e) {
-                                log.warn("V11 insertSignError failed for user={} question={}: {}", userId, questionId,
-                                                e.getMessage());
-                        }
-                }
-
-                // ── Dashboard bridge: update user_category_progress ───────────────────
-                // This makes sign-quiz practice answers visible in the main dashboard
-                // and analytics pages (weak areas, category progress).
-                try {
-                        String catCode = signCategoryToCode(session.getSign().getCategory());
-                        categoryRepo.findByCode(catCode)
-                                        .ifPresent(cat -> updateSignCategoryProgress(userId, cat, isCorrect));
-                } catch (Exception e) {
-                        log.warn("Dashboard bridge failed for user={} sign={}: {}",
-                                        userId, session.getSignCode(), e.getMessage());
-                }
 
                 // ── Compute accuracy for response (best-effort) ───────────────────────
                 double accuracy = answeredCount == 0 ? 0.0
@@ -371,10 +339,65 @@ public class SignQuizService {
         public SignPracticeHistoryResponse getPracticeHistory(Long userId) {
                 List<SignPracticeHistoryItem> sessions = sessionRepo.findAllByUserIdOrderByStartedAtDesc(userId)
                                 .stream()
+                                .filter(session -> session.getStatus() == SessionStatus.COMPLETED)
                                 .map(this::toPracticeHistoryItem)
                                 .toList();
 
                 return new SignPracticeHistoryResponse(sessions.size(), sessions);
+        }
+
+        @Transactional
+        public void abandonPracticeSession(Long sessionId, Long userId) {
+                SignPracticeSession session = sessionRepo.findByIdAndUserId(sessionId, userId)
+                                .orElseThrow(() -> new ResponseStatusException(
+                                                HttpStatus.NOT_FOUND, "Practice session not found"));
+                if (session.getStatus() == SessionStatus.ABANDONED) {
+                        return;
+                }
+                if (session.getStatus() != SessionStatus.IN_PROGRESS) {
+                        throw new ResponseStatusException(HttpStatus.CONFLICT, "Practice session is already closed");
+                }
+                session.setStatus(SessionStatus.ABANDONED);
+                sessionRepo.save(session);
+        }
+
+        private void applyCompletedPracticeAnalytics(SignPracticeSession session, Long userId) {
+                for (SignPracticeAnswer completedAnswer : answerRepo.findAllBySessionIdWithDetails(session.getId())) {
+                        boolean isCorrect = Boolean.TRUE.equals(completedAnswer.getIsCorrect());
+                        SignQuestion question = completedAnswer.getQuestion();
+                        int correct = isCorrect ? 1 : 0;
+                        int wrong = isCorrect ? 0 : 1;
+
+                        try {
+                                weakAreaRepo.upsertBySignCode(userId, session.getSignCode(), 1, correct, wrong);
+                        } catch (Exception e) {
+                                log.warn("Weak-area update failed for completed practice user={} sign={}: {}",
+                                                userId, session.getSignCode(), e.getMessage());
+                        }
+
+                        if (!isCorrect) {
+                                try {
+                                        errorPatternRepo.insertSignError(
+                                                        userId,
+                                                        resolveErrorType(session.getSign().getCategory()),
+                                                        question.getId(),
+                                                        session.getSignCode());
+                                } catch (Exception e) {
+                                        log.warn("Error-pattern update failed for completed practice user={} question={}: {}",
+                                                        userId, question.getId(), e.getMessage());
+                                }
+                        }
+
+                        try {
+                                String categoryCode = signCategoryToCode(session.getSign().getCategory());
+                                categoryRepo.findByCode(categoryCode)
+                                                .ifPresent(category -> updateSignCategoryProgress(
+                                                                userId, category, isCorrect));
+                        } catch (Exception e) {
+                                log.warn("Category progress failed for completed practice user={} sign={}: {}",
+                                                userId, session.getSignCode(), e.getMessage());
+                        }
+                }
         }
 
         // ── 5. Get exam questions (stateless) ────────────────────────────────────
@@ -1161,6 +1184,11 @@ public class SignQuizService {
                         return getRandomSignPracticeResult(sessionId, userId);
                 }
 
+                if (session.getStatus() != SignRandomPracticeSession.SessionStatus.IN_PROGRESS) {
+                        throw new ResponseStatusException(HttpStatus.CONFLICT,
+                                        "Random practice session is already closed");
+                }
+
                 if (session.isExpired()) {
                         session.setStatus(SignRandomPracticeSession.SessionStatus.EXPIRED);
                         randomPracticeSessionRepo.save(session);
@@ -1173,7 +1201,18 @@ public class SignQuizService {
                                 sessionId);
                 Map<Long, Long> submittedMap = new HashMap<>();
                 for (SignRandomPracticeAnswerRequest answer : answers) {
-                        submittedMap.putIfAbsent(answer.questionId(), answer.selectedChoiceId());
+                        if (answer.questionId() == null || answer.selectedChoiceId() == null
+                                        || submittedMap.putIfAbsent(answer.questionId(), answer.selectedChoiceId()) != null) {
+                                throw new ResponseStatusException(HttpStatus.BAD_REQUEST,
+                                                "Every question must have exactly one selected answer");
+                        }
+                }
+                Set<Long> expectedQuestionIds = rows.stream()
+                                .map(row -> row.getQuestion().getId())
+                                .collect(Collectors.toSet());
+                if (submittedMap.size() != rows.size() || !submittedMap.keySet().equals(expectedQuestionIds)) {
+                        throw new ResponseStatusException(HttpStatus.BAD_REQUEST,
+                                        "All assigned questions must be answered before submission");
                 }
 
                 int correctCount = 0;
@@ -1192,19 +1231,16 @@ public class SignQuizService {
                                                         "Question has no correct choice: " + question.getId()));
 
                         Long submittedChoiceId = submittedMap.get(question.getId());
-                        boolean wasTimeout = submittedChoiceId == null;
-                        SignChoice selectedChoice = null;
-                        if (!wasTimeout) {
-                                selectedChoice = question.getDeliverableChoices().stream()
-                                                .filter(choice -> choice.getId().equals(submittedChoiceId))
-                                                .findFirst()
-                                                .orElseThrow(() -> new ResponseStatusException(
-                                                                HttpStatus.BAD_REQUEST,
-                                                                "Choice " + submittedChoiceId
-                                                                                + " does not belong to question "
-                                                                                + question.getId()));
-                                answeredCount++;
-                        }
+                        boolean wasTimeout = false;
+                        SignChoice selectedChoice = question.getDeliverableChoices().stream()
+                                        .filter(choice -> choice.getId().equals(submittedChoiceId))
+                                        .findFirst()
+                                        .orElseThrow(() -> new ResponseStatusException(
+                                                        HttpStatus.BAD_REQUEST,
+                                                        "Choice " + submittedChoiceId
+                                                                        + " does not belong to question "
+                                                                        + question.getId()));
+                        answeredCount++;
 
                         boolean isCorrect = !wasTimeout && selectedChoice != null
                                         && Boolean.TRUE.equals(selectedChoice.getIsCorrect());
@@ -1314,6 +1350,7 @@ public class SignQuizService {
                 List<SignRandomPracticeHistoryItemDto> sessions = randomPracticeSessionRepo
                                 .findAllByUserIdOrderByStartedAtDesc(userId)
                                 .stream()
+                                .filter(session -> session.getStatus() == SignRandomPracticeSession.SessionStatus.COMPLETED)
                                 .map(this::toRandomPracticeHistoryItem)
                                 .toList();
                 return new SignRandomPracticeHistoryResponseDto(sessions.size(), sessions);
@@ -1324,6 +1361,10 @@ public class SignQuizService {
                 SignRandomPracticeSession session = randomPracticeSessionRepo.findByIdAndUserId(sessionId, userId)
                                 .orElseThrow(() -> new ResponseStatusException(
                                                 HttpStatus.NOT_FOUND, "Random practice session not found"));
+                if (session.getStatus() != SignRandomPracticeSession.SessionStatus.COMPLETED) {
+                        throw new ResponseStatusException(HttpStatus.CONFLICT,
+                                        "Random practice result is not available for an incomplete session");
+                }
                 List<SignRandomPracticeQuestion> rows = randomPracticeQuestionRepo.findBySessionIdOrderByQuestionOrder(
                                 sessionId);
                 int totalQuestions = rows.size();
@@ -1352,6 +1393,22 @@ public class SignQuizService {
                                 passed,
                                 session.getPassingScore(),
                                 rows.stream().map(this::toRandomPracticeQuestionResult).toList());
+        }
+
+        @Transactional
+        public void abandonRandomSignPracticeSession(Long sessionId, Long userId) {
+                SignRandomPracticeSession session = randomPracticeSessionRepo.findByIdAndUserId(sessionId, userId)
+                                .orElseThrow(() -> new ResponseStatusException(
+                                                HttpStatus.NOT_FOUND, "Random practice session not found"));
+                if (session.getStatus() == SignRandomPracticeSession.SessionStatus.ABANDONED) {
+                        return;
+                }
+                if (session.getStatus() != SignRandomPracticeSession.SessionStatus.IN_PROGRESS) {
+                        throw new ResponseStatusException(HttpStatus.CONFLICT,
+                                        "Random practice session is already closed");
+                }
+                session.setStatus(SignRandomPracticeSession.SessionStatus.ABANDONED);
+                randomPracticeSessionRepo.save(session);
         }
 
         private void expireRandomPracticeSessionIfNeeded(Long userId) {

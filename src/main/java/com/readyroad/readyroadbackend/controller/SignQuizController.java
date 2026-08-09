@@ -107,6 +107,15 @@ public class SignQuizController {
         return ResponseEntity.ok(response);
     }
 
+    @PostMapping("/practice/{sessionId}/abandon")
+    @Operation(summary = "Abandon an incomplete practice session")
+    public ResponseEntity<Void> abandonPractice(
+            @PathVariable Long sessionId,
+            Authentication auth) {
+        signQuizService.abandonPracticeSession(sessionId, authUtil.extractUserId(auth));
+        return ResponseEntity.noContent().build();
+    }
+
     // ── GET /api/sign-quiz/practice/{sessionId}/results ─────────────────────
 
     @GetMapping("/practice/{sessionId}/results")
@@ -287,6 +296,15 @@ public class SignQuizController {
                 userId, request.sessionId(), request.answers().size());
         return ResponseEntity.ok(signQuizService.submitRandomSignPracticeAnswers(
                 request.sessionId(), request.answers(), userId));
+    }
+
+    @PostMapping("/random-practice/{sessionId}/abandon")
+    @Operation(summary = "Abandon an incomplete mixed sign exam")
+    public ResponseEntity<Void> abandonRandomPractice(
+            @PathVariable Long sessionId,
+            Authentication auth) {
+        signQuizService.abandonRandomSignPracticeSession(sessionId, authUtil.extractUserId(auth));
+        return ResponseEntity.noContent().build();
     }
 
     @GetMapping("/random-practice/history")

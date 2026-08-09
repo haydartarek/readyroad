@@ -11,8 +11,6 @@ import com.readyroad.readyroadbackend.service.RoadSignReferenceTextResolver;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -52,16 +50,10 @@ public class ExamMapper {
                 .imageUrl(question.getContentImageUrl())
                 .difficultyLevel(question.getDifficultyLevel().name())
                 .categoryName(question.getCategory() != null ? question.getCategory().getNameEn() : null)
-                .options(question.getOptions() != null ? shuffled(question.getDeliverableOptions().stream()
+                .options(question.getOptions() != null ? question.getDeliverableOptions().stream()
                         .map(this::toOptionDTO)
-                        .collect(Collectors.toCollection(ArrayList::new))) : new ArrayList<>())
+                        .collect(Collectors.toList()) : List.of())
                 .build();
-    }
-
-    /** Shuffle in-place and return the same list. */
-    private <T> List<T> shuffled(List<T> list) {
-        Collections.shuffle(list);
-        return list;
     }
 
     private ExamOptionDTO toOptionDTO(QuizAnswerOption option) {

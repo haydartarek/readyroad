@@ -33,6 +33,11 @@ public class CategoryProgressResponse {
      */
     private String categoryName;
 
+    private String categoryNameEn;
+    private String categoryNameNl;
+    private String categoryNameFr;
+    private String categoryNameAr;
+
     /**
      * Category code (unique identifier)
      */

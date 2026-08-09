@@ -356,6 +356,10 @@ public class ProgressService {
 
                 return CategoryProgressSummary.builder()
                                 .categoryName(categoryName)
+                                .categoryNameEn(category != null ? category.getNameEn() : null)
+                                .categoryNameNl(category != null ? category.getNameNl() : null)
+                                .categoryNameFr(category != null ? category.getNameFr() : null)
+                                .categoryNameAr(category != null ? category.getNameAr() : null)
                                 .categoryCode(categoryCode)
                                 .accuracy(progress.getAccuracyRate().setScale(2, RoundingMode.HALF_UP))
                                 .attempted(progress.getQuestionsAttempted())
@@ -437,18 +441,24 @@ public class ProgressService {
                 categoryProgressRecords.forEach(progress -> addDate(dates, progress.getLastPracticed()));
 
                 signPracticeSessionRepository.findAllByUserIdOrderByStartedAtDesc(userId)
+                                .stream()
+                                .filter(session -> session.getStatus() == SignPracticeSession.SessionStatus.COMPLETED)
                                 .forEach(session -> {
                                         addDate(dates, session.getStartedAt());
                                         addDate(dates, session.getCompletedAt());
                                 });
 
                 signRandomPracticeSessionRepository.findAllByUserIdOrderByStartedAtDesc(userId)
+                                .stream()
+                                .filter(session -> session.getStatus() == SignRandomPracticeSession.SessionStatus.COMPLETED)
                                 .forEach(session -> {
                                         addDate(dates, session.getStartedAt());
                                         addDate(dates, session.getCompletedAt());
                                 });
 
                 examSimulationRepository.findByUserIdOrderByStartedAtDesc(userId)
+                                .stream()
+                                .filter(ExamSimulation::isCompleted)
                                 .forEach(exam -> {
                                         addDate(dates, exam.getStartedAt());
                                         addDate(dates, exam.getCompletedAt());
@@ -573,6 +583,10 @@ public class ProgressService {
                 return CategoryProgressResponse.builder()
                                 .categoryId(progress.getCategoryId())
                                 .categoryName(category != null ? category.getNameEn() : "Unknown")
+                                .categoryNameEn(category != null ? category.getNameEn() : null)
+                                .categoryNameNl(category != null ? category.getNameNl() : null)
+                                .categoryNameFr(category != null ? category.getNameFr() : null)
+                                .categoryNameAr(category != null ? category.getNameAr() : null)
                                 .categoryCode(category != null ? category.getCode() : null)
                                 .questionsAttempted(questionsAttempted)
                                 .correctAnswers(progress.getCorrectAnswers())

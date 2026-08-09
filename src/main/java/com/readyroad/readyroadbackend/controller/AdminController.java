@@ -338,10 +338,16 @@ public class AdminController {
     @PostMapping("/quiz/questions/shuffle-answer-order")
     public ResponseEntity<?> shuffleAnswerOrder(@Valid @RequestBody AdminQuizShuffleRequest request) {
         try {
-            int shuffledCount = adminQuizService.shuffleAnswerOrder(request.questionIds());
-            return ResponseEntity.ok(Map.of(
-                    "message", messages.get("admin.quiz.shuffle_success"),
-                    "shuffledCount", shuffledCount));
+            return ResponseEntity.ok(adminQuizService.balanceAnswerOrder(request.questionIds()));
+        } catch (IllegalArgumentException ex) {
+            return errorResponse(HttpStatus.NOT_FOUND, ex.getMessage());
+        }
+    }
+
+    @PostMapping("/quiz/questions/shuffle-answer-order/preview")
+    public ResponseEntity<?> previewAnswerOrder(@Valid @RequestBody AdminQuizShuffleRequest request) {
+        try {
+            return ResponseEntity.ok(adminQuizService.previewAnswerDistribution(request.questionIds()));
         } catch (IllegalArgumentException ex) {
             return errorResponse(HttpStatus.NOT_FOUND, ex.getMessage());
         }

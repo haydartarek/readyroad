@@ -26,7 +26,7 @@ import java.util.List;
 public class SignPracticeSession {
 
     // ── Status ───────────────────────────────────────────────────────────────
-    public enum SessionStatus { IN_PROGRESS, COMPLETED }
+    public enum SessionStatus { IN_PROGRESS, COMPLETED, ABANDONED }
 
     // ── Fields ───────────────────────────────────────────────────────────────
     @Id
