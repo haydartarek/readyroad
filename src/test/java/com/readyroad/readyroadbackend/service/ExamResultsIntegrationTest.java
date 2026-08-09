@@ -234,8 +234,25 @@ class ExamResultsIntegrationTest extends BaseIntegrationTest {
         @DisplayName("Story A3: Completing an exam persists its elapsed time")
         void testCompleteExamPersistsElapsedTime() {
                 ExamSimulation exam = examService.startExamSimulation(testUserId);
+                List<ExamSimulationQuestion> questions = examQuestionRepository
+                                .findByExamIdOrderByQuestionOrder(exam.getId());
+                for (ExamSimulationQuestion examQuestion : questions) {
+                        QuizQuestion question = quizQuestionRepository.findById(examQuestion.getQuestionId())
+                                        .orElseThrow();
+                        QuizAnswerOption correctOption = question.getOptions().stream()
+                                        .filter(QuizAnswerOption::getIsCorrect)
+                                        .findFirst()
+                                        .orElseThrow();
+                        examService.submitAnswer(
+                                        exam.getId(),
+                                        examQuestion.getQuestionId(),
+                                        SubmitExamAnswerRequest.builder()
+                                                        .selectedOptionId(correctOption.getId())
+                                                        .build(),
+                                        testUserId);
+                }
                 exam.setStartedAt(Instant.now().minusSeconds(120));
-                examRepository.save(exam);
+                examRepository.saveAndFlush(exam);
 
                 examService.completeExam(exam.getId(), testUserId);
 
