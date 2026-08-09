@@ -15,7 +15,6 @@ import com.readyroad.readyroadbackend.domain.entity.User;
 import com.readyroad.readyroadbackend.domain.entity.SignRandomPracticeSession;
 import com.readyroad.readyroadbackend.dto.AdminSystemSettingsUpdateRequest;
 import com.readyroad.readyroadbackend.dto.AdminQuizQuestionRequest;
-import com.readyroad.readyroadbackend.dto.AdminQuizShuffleRequest;
 import com.readyroad.readyroadbackend.dto.AdminCreateUserRequest;
 import com.readyroad.readyroadbackend.dto.SignGovernanceReport;
 import com.readyroad.readyroadbackend.dto.response.AdminQuizQuestionResponse;
@@ -333,24 +332,6 @@ public class AdminController {
     @GetMapping("/quiz/correct-answer-distribution")
     public ResponseEntity<?> getCorrectAnswerDistribution() {
         return ResponseEntity.ok(adminQuizService.getCorrectAnswerDistribution());
-    }
-
-    @PostMapping("/quiz/questions/shuffle-answer-order")
-    public ResponseEntity<?> shuffleAnswerOrder(@Valid @RequestBody AdminQuizShuffleRequest request) {
-        try {
-            return ResponseEntity.ok(adminQuizService.balanceAnswerOrder(request.questionIds()));
-        } catch (IllegalArgumentException ex) {
-            return errorResponse(HttpStatus.NOT_FOUND, ex.getMessage());
-        }
-    }
-
-    @PostMapping("/quiz/questions/shuffle-answer-order/preview")
-    public ResponseEntity<?> previewAnswerOrder(@Valid @RequestBody AdminQuizShuffleRequest request) {
-        try {
-            return ResponseEntity.ok(adminQuizService.previewAnswerDistribution(request.questionIds()));
-        } catch (IllegalArgumentException ex) {
-            return errorResponse(HttpStatus.NOT_FOUND, ex.getMessage());
-        }
     }
 
     /**

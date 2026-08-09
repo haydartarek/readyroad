@@ -542,7 +542,9 @@ public class AnalyticsService {
         log.info("Getting weak area recommendations for user {}", userId);
 
         // Get all category progress for user
-        List<UserCategoryProgress> progressRecords = progressRepository.findByUserId(userId);
+        List<UserCategoryProgress> progressRecords = progressRepository.findByUserId(userId).stream()
+                .filter(this::isActiveTheoreticalProgress)
+                .toList();
 
         log.debug("Found {} progress records for user {}", progressRecords.size(), userId);
 
@@ -676,6 +678,14 @@ public class AnalyticsService {
                 .totalPracticedCategories(totalPracticed)
                 .overallAccuracy(overallAccuracy)
                 .build();
+    }
+
+    private boolean isActiveTheoreticalProgress(UserCategoryProgress progress) {
+        Category category = progress.getCategory();
+        return category != null
+                && Boolean.TRUE.equals(category.getIsActive())
+                && category.getContentScope() != null
+                && category.getContentScope().supportsTheoreticalExam();
     }
 
     /**

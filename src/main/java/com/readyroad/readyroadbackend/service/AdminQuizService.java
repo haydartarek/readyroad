@@ -12,7 +12,6 @@ import com.readyroad.readyroadbackend.domain.repository.UserQuestionHistoryRepos
 import com.readyroad.readyroadbackend.dto.AdminQuizQuestionRequest;
 import com.readyroad.readyroadbackend.dto.response.AdminQuizQuestionResponse;
 import com.readyroad.readyroadbackend.dto.response.AdminQuizCategoryResponse;
-import com.readyroad.readyroadbackend.dto.response.AnswerDistributionPreviewResponse;
 import com.readyroad.readyroadbackend.dto.response.CorrectAnswerDistributionResponse;
 import com.readyroad.readyroadbackend.util.DrivingTextSanitizer;
 import com.readyroad.readyroadbackend.dto.response.PageResponse;
@@ -36,7 +35,6 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashSet;
-import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Locale;
@@ -322,173 +320,6 @@ public class AdminQuizService {
                     String.valueOf((char) ('A' + order - 1)), count, percentage));
         }
         return new CorrectAnswerDistributionResponse(total, positions);
-    }
-
-    public AnswerDistributionPreviewResponse previewAnswerDistribution(List<Long> questionIds) {
-        return createBalancePlan(loadSelectedQuestions(questionIds, false)).response();
-    }
-
-    @Transactional
-    public AnswerDistributionPreviewResponse balanceAnswerOrder(List<Long> questionIds) {
-        BalancePlan plan = createBalancePlan(loadSelectedQuestions(questionIds, true));
-
-        for (QuestionAssignment assignment : plan.assignments()) {
-            if (assignment.currentPosition() == assignment.targetPosition()) {
-                continue;
-            }
-            List<QuizAnswerOption> options = assignment.options();
-            List<Integer> originalOrders = options.stream()
-                    .map(QuizAnswerOption::getDisplayOrder)
-                    .sorted()
-                    .toList();
-            QuizAnswerOption correct = options.get(assignment.currentPosition() - 1);
-            QuizAnswerOption target = options.get(assignment.targetPosition() - 1);
-
-            for (int index = 0; index < options.size(); index++) {
-                options.get(index).setDisplayOrder(1000 + index);
-            }
-            questionRepository.flush();
-
-            correct.setDisplayOrder(originalOrders.get(assignment.targetPosition() - 1));
-            target.setDisplayOrder(originalOrders.get(assignment.currentPosition() - 1));
-            for (int index = 0; index < options.size(); index++) {
-                QuizAnswerOption option = options.get(index);
-                if (option != correct && option != target) {
-                    option.setDisplayOrder(originalOrders.get(index));
-                }
-            }
-            questionRepository.flush();
-        }
-
-        List<Long> selectedIds = questionIds.stream().distinct().sorted().toList();
-        Runnable writeAudit = () -> log.info(
-                "AUDIT admin_quiz_answer_balance actor={} questionIds={} before={} after={} timestamp={}",
-                currentAdmin(), selectedIds, plan.response().before(), plan.response().after(), LocalDateTime.now());
-        if (TransactionSynchronizationManager.isSynchronizationActive()) {
-            TransactionSynchronizationManager.registerSynchronization(new TransactionSynchronization() {
-                @Override
-                public void afterCommit() {
-                    writeAudit.run();
-                }
-            });
-        } else {
-            writeAudit.run();
-        }
-        return plan.response();
-    }
-
-    private List<QuizQuestion> loadSelectedQuestions(List<Long> questionIds, boolean lock) {
-        List<Long> selectedIds = questionIds.stream().distinct().sorted().toList();
-        List<QuizQuestion> questions = new ArrayList<>();
-        for (Long questionId : selectedIds) {
-            QuizQuestion question = (lock
-                    ? questionRepository.findByIdForUpdate(questionId)
-                    : questionRepository.findByIdWithOptions(questionId))
-                    .orElseThrow(() -> new IllegalArgumentException(messages.get("admin.quiz.not_found", questionId)));
-            question.getOptions().size();
-            questions.add(question);
-        }
-        return questions;
-    }
-
-    private BalancePlan createBalancePlan(List<QuizQuestion> questions) {
-        Map<DistributionGroup, List<QuizQuestion>> groups = new LinkedHashMap<>();
-        questions.stream()
-                .sorted(Comparator.comparing(QuizQuestion::getDifficultyLevel)
-                        .thenComparing(QuizQuestion::getId))
-                .forEach(question -> {
-                    List<QuizAnswerOption> options = validatedBalanceOptions(question);
-                    groups.computeIfAbsent(
-                            new DistributionGroup(question.getDifficultyLevel(), options.size()),
-                            ignored -> new ArrayList<>()).add(question);
-                });
-
-        List<QuestionAssignment> assignments = new ArrayList<>();
-        List<AnswerDistributionPreviewResponse.GroupDistribution> before = new ArrayList<>();
-        List<AnswerDistributionPreviewResponse.GroupDistribution> after = new ArrayList<>();
-
-        for (Map.Entry<DistributionGroup, List<QuizQuestion>> entry : groups.entrySet()) {
-            DistributionGroup group = entry.getKey();
-            int[] beforeCounts = new int[group.optionCount()];
-            int[] afterCounts = new int[group.optionCount()];
-
-            for (QuizQuestion question : entry.getValue()) {
-                List<QuizAnswerOption> options = validatedBalanceOptions(question);
-                int currentPosition = correctPosition(options);
-                beforeCounts[currentPosition - 1]++;
-
-                int targetPosition = leastUsedPosition(afterCounts, currentPosition);
-                afterCounts[targetPosition - 1]++;
-                assignments.add(new QuestionAssignment(question.getId(), options, currentPosition, targetPosition));
-            }
-
-            before.add(distribution(group, beforeCounts));
-            after.add(distribution(group, afterCounts));
-        }
-
-        return new BalancePlan(
-                assignments,
-                new AnswerDistributionPreviewResponse(questions.size(), before, after));
-    }
-
-    private List<QuizAnswerOption> validatedBalanceOptions(QuizQuestion question) {
-        List<QuizAnswerOption> options = new ArrayList<>(question.getActiveOptions());
-        if (options.size() < 2 || options.size() > 3
-                || options.stream().filter(option -> Boolean.TRUE.equals(option.getIsCorrect())).count() != 1) {
-            throw new IllegalArgumentException(messages.get("admin.quiz.invalid_options"));
-        }
-        return options;
-    }
-
-    private int correctPosition(List<QuizAnswerOption> options) {
-        for (int index = 0; index < options.size(); index++) {
-            if (Boolean.TRUE.equals(options.get(index).getIsCorrect())) {
-                return index + 1;
-            }
-        }
-        throw new IllegalArgumentException(messages.get("admin.quiz.invalid_options"));
-    }
-
-    private int leastUsedPosition(int[] counts, int currentPosition) {
-        int minimum = java.util.Arrays.stream(counts).min().orElse(0);
-        if (counts[currentPosition - 1] == minimum) {
-            return currentPosition;
-        }
-        for (int index = 0; index < counts.length; index++) {
-            if (counts[index] == minimum) {
-                return index + 1;
-            }
-        }
-        return 1;
-    }
-
-    private AnswerDistributionPreviewResponse.GroupDistribution distribution(
-            DistributionGroup group,
-            int[] counts) {
-        int total = java.util.Arrays.stream(counts).sum();
-        List<CorrectAnswerDistributionResponse.AnswerPosition> positions = new ArrayList<>();
-        for (int index = 0; index < counts.length; index++) {
-            double percentage = total == 0 ? 0.0 : Math.round(counts[index] * 1000.0 / total) / 10.0;
-            positions.add(new CorrectAnswerDistributionResponse.AnswerPosition(
-                    String.valueOf((char) ('A' + index)), counts[index], percentage));
-        }
-        return new AnswerDistributionPreviewResponse.GroupDistribution(
-                group.difficulty().name(), group.optionCount(), total, positions);
-    }
-
-    private record DistributionGroup(QuizQuestion.DifficultyLevel difficulty, int optionCount) {
-    }
-
-    private record QuestionAssignment(
-            Long questionId,
-            List<QuizAnswerOption> options,
-            int currentPosition,
-            int targetPosition) {
-    }
-
-    private record BalancePlan(
-            List<QuestionAssignment> assignments,
-            AnswerDistributionPreviewResponse response) {
     }
 
     private void validateRequestedOptionIds(

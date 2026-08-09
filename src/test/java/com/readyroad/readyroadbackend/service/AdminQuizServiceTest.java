@@ -86,64 +86,6 @@ class AdminQuizServiceTest {
     }
 
     @Test
-    void balancesOnlyDisplayOrderAndPreservesCorrectOptionIdentity() {
-        QuizQuestion question = existingQuestion(3);
-        Long correctOptionId = question.getActiveOptions().stream()
-                .filter(option -> Boolean.TRUE.equals(option.getIsCorrect()))
-                .findFirst().orElseThrow().getId();
-        when(questionRepository.findByIdForUpdate(7L)).thenReturn(Optional.of(question));
-
-        var result = service.balanceAnswerOrder(List.of(7L));
-
-        assertThat(result.selectedQuestions()).isEqualTo(1);
-        assertThat(question.getActiveOptions()).filteredOn(option -> Boolean.TRUE.equals(option.getIsCorrect()))
-                .singleElement().extracting(QuizAnswerOption::getId).isEqualTo(correctOptionId);
-    }
-
-    @Test
-    void balancesThreeOptionQuestionsAcrossAThroughCWithinDifficulty() {
-        List<QuizQuestion> questions = new ArrayList<>();
-        for (long id = 1; id <= 6; id++) {
-            QuizQuestion question = existingQuestion(3);
-            question.setId(id);
-            questions.add(question);
-            when(questionRepository.findByIdForUpdate(id)).thenReturn(Optional.of(question));
-        }
-
-        var result = service.balanceAnswerOrder(List.of(1L, 2L, 3L, 4L, 5L, 6L));
-
-        assertThat(result.after()).singleElement().satisfies(group -> {
-            assertThat(group.difficulty()).isEqualTo("MEDIUM");
-            assertThat(group.optionCount()).isEqualTo(3);
-            assertThat(group.positions()).extracting(position -> position.count())
-                    .containsExactly(2L, 2L, 2L);
-        });
-        assertThat(questions).allSatisfy(question ->
-                assertThat(question.getActiveOptions())
-                        .filteredOn(option -> Boolean.TRUE.equals(option.getIsCorrect()))
-                        .singleElement()
-                        .extracting(QuizAnswerOption::getId)
-                        .isEqualTo(101L));
-    }
-
-    @Test
-    void balancesTwoOptionQuestionsAcrossAAndB() {
-        for (long id = 1; id <= 4; id++) {
-            QuizQuestion question = existingQuestion(2);
-            question.setId(id);
-            when(questionRepository.findByIdForUpdate(id)).thenReturn(Optional.of(question));
-        }
-
-        var result = service.balanceAnswerOrder(List.of(1L, 2L, 3L, 4L));
-
-        assertThat(result.after()).singleElement().satisfies(group -> {
-            assertThat(group.optionCount()).isEqualTo(2);
-            assertThat(group.positions()).extracting(position -> position.count())
-                    .containsExactly(2L, 2L);
-        });
-    }
-
-    @Test
     void createsACompliantMultilingualQuestionWithImageAndExplanation() {
         when(categoryRepository.findByCode("A")).thenReturn(Optional.of(category()));
         when(questionRepository.save(any(QuizQuestion.class))).thenAnswer(invocation -> {

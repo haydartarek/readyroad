@@ -129,6 +129,12 @@ class StudentIntelligenceEngineTest {
         assertThat(result.getRecommendations())
                 .extracting(StudentIntelligenceResponse.Recommendation::getKey)
                 .contains("student_intelligence.recommendation.focus_weak_category");
+        assertThat(result.getRecommendations())
+                .filteredOn(recommendation ->
+                        "student_intelligence.recommendation.focus_weak_category"
+                                .equals(recommendation.getKey()))
+                .extracting(StudentIntelligenceResponse.Recommendation::getActionPath)
+                .containsExactly("/exam");
     }
 
     @Test

@@ -383,7 +383,7 @@ public class StudentIntelligenceEngine {
             result.add(recommendation(
                     "student_intelligence.recommendation.focus_weak_category",
                     weakest.getCategoryCode(),
-                    "/practice/" + weakest.getCategoryCode(),
+                    "/exam",
                     1));
         }
 

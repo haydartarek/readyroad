@@ -21,6 +21,7 @@ import com.readyroad.readyroadbackend.service.SignGovernanceService;
 import com.readyroad.readyroadbackend.service.TrafficSignService;
 import java.util.Map;
 import java.util.Optional;
+import java.util.Arrays;
 import java.security.Principal;
 import java.sql.Connection;
 import javax.sql.DataSource;
@@ -30,6 +31,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.server.ResponseStatusException;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -101,6 +103,17 @@ class AdminControllerTest {
 
     @InjectMocks
     private AdminController adminController;
+
+    @Test
+    void exposesNoAnswerShuffleEndpoint() {
+        boolean shuffleEndpointExists = Arrays.stream(AdminController.class.getDeclaredMethods())
+                .map(method -> method.getAnnotation(PostMapping.class))
+                .filter(annotation -> annotation != null)
+                .flatMap(annotation -> Arrays.stream(annotation.value()))
+                .anyMatch(path -> path.contains("shuffle-answer-order"));
+
+        assertThat(shuffleEndpointExists).isFalse();
+    }
 
     @Test
     void healthReportsActualDatabaseConnectivity() throws Exception {

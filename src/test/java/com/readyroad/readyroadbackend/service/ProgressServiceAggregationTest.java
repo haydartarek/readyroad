@@ -9,6 +9,7 @@ import com.readyroad.readyroadbackend.domain.entity.SignPracticeSession;
 import com.readyroad.readyroadbackend.domain.entity.SignRandomPracticeSession;
 import com.readyroad.readyroadbackend.domain.entity.UserCategoryProgress;
 import com.readyroad.readyroadbackend.domain.entity.UserLessonProgress;
+import com.readyroad.readyroadbackend.domain.enums.CategoryContentScope;
 import com.readyroad.readyroadbackend.domain.repository.CategoryRepository;
 import com.readyroad.readyroadbackend.domain.repository.ExamSimulationRepository;
 import com.readyroad.readyroadbackend.domain.repository.QuizQuestionRepository;
@@ -70,8 +71,26 @@ class ProgressServiceAggregationTest {
 
         Category category = new Category();
         category.setId(3L);
-        category.setCode("B");
-        category.setNameEn("Priority");
+        category.setCode("TH01");
+        category.setNameEn("Priority and intersections");
+        category.setIsActive(true);
+        category.setContentScope(CategoryContentScope.THEORETICAL_EXAM);
+        categoryProgress.setCategory(category);
+
+        Category signCategory = new Category();
+        signCategory.setId(4L);
+        signCategory.setCode("B");
+        signCategory.setNameEn("Priority signs");
+        signCategory.setIsActive(true);
+        signCategory.setContentScope(CategoryContentScope.TRAFFIC_SIGN);
+
+        UserCategoryProgress signProgress = new UserCategoryProgress();
+        signProgress.setUserId(USER_ID);
+        signProgress.setCategoryId(4L);
+        signProgress.setQuestionsAttempted(9);
+        signProgress.setCorrectAnswers(8);
+        signProgress.setAccuracyRate(BigDecimal.valueOf(88.89));
+        signProgress.setCategory(signCategory);
 
         List<UserLessonProgress> lessons = List.of(
                 completedLesson(1L),
@@ -79,8 +98,8 @@ class ProgressServiceAggregationTest {
                 completedLesson(3L),
                 completedLesson(4L));
 
-        when(progressRepository.findByUserId(USER_ID)).thenReturn(List.of(categoryProgress));
-        when(categoryRepository.findAll()).thenReturn(List.of(category));
+        when(progressRepository.findByUserId(USER_ID)).thenReturn(List.of(categoryProgress, signProgress));
+        when(categoryRepository.findAll()).thenReturn(List.of(category, signCategory));
         when(lessonProgressRepository.findAllByUserId(USER_ID)).thenReturn(lessons);
         when(historyRepository.findDistinctAnswerDatesByUserId(USER_ID)).thenReturn(List.of());
         when(signPracticeSessionRepository.findAllByUserIdOrderByStartedAtDesc(USER_ID)).thenReturn(List.of());

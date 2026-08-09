@@ -65,8 +65,11 @@ public class StudentIntelligenceService {
                 randomPracticeRepository.findAllByUserIdOrderByStartedAtDesc(userId);
         List<SignExamResult> signExamResults =
                 signExamRepository.findByUserIdOrderByCompletedAtDesc(userId);
-        List<UserCategoryProgress> categoryProgress =
+        List<UserCategoryProgress> allCategoryProgress =
                 categoryProgressRepository.findByUserId(userId);
+        List<UserCategoryProgress> categoryProgress = allCategoryProgress.stream()
+                .filter(this::isActiveTheoreticalProgress)
+                .toList();
         List<UserQuestionHistory> questionHistory =
                 questionHistoryRepository.findByUserId(userId);
         List<UserLessonProgress> lessonProgress =
@@ -187,6 +190,14 @@ public class StudentIntelligenceService {
                         completedPracticeSessions,
                         masteredSigns),
                 today);
+    }
+
+    private boolean isActiveTheoreticalProgress(UserCategoryProgress progress) {
+        Category category = progress.getCategory();
+        return category != null
+                && Boolean.TRUE.equals(category.getIsActive())
+                && category.getContentScope() != null
+                && category.getContentScope().supportsTheoreticalExam();
     }
 
     private Map<Long, CategoryTrendEvidence> buildCategoryTrends(

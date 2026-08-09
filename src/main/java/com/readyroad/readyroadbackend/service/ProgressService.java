@@ -86,7 +86,10 @@ public class ProgressService {
                 log.info("Getting overall progress for user {}", userId);
 
                 // Get all progress records for the user
-                List<UserCategoryProgress> progressRecords = progressRepository.findByUserId(userId);
+                List<UserCategoryProgress> allProgressRecords = progressRepository.findByUserId(userId);
+                List<UserCategoryProgress> progressRecords = allProgressRecords.stream()
+                                .filter(this::isActiveTheoreticalProgress)
+                                .toList();
                 List<UserLessonProgress> lessonProgressRecords = lessonProgressRepository.findAllByUserId(userId);
 
                 // Calculate aggregated statistics
@@ -133,10 +136,10 @@ public class ProgressService {
                                 + activeRandomSignExamCount;
 
                 // Real consecutive-day study streak using all tracked learning activity
-                int studyStreak = calculateStudyStreak(userId, progressRecords, lessonProgressRecords);
+                int studyStreak = calculateStudyStreak(userId, allProgressRecords, lessonProgressRecords);
 
                 // Date of the most recent tracked learning activity
-                String lastActivityDate = findLastActivityDate(userId, progressRecords, lessonProgressRecords);
+                String lastActivityDate = findLastActivityDate(userId, allProgressRecords, lessonProgressRecords);
 
                 // Recommend difficulty
                 QuizQuestion.DifficultyLevel recommendedDifficulty = recommendDifficulty(totalAttempted,
@@ -525,7 +528,9 @@ public class ProgressService {
                 log.info("Getting category progress for user {}", userId);
 
                 // Get all progress records for user
-                List<UserCategoryProgress> progressRecords = progressRepository.findByUserId(userId);
+                List<UserCategoryProgress> progressRecords = progressRepository.findByUserId(userId).stream()
+                                .filter(this::isActiveTheoreticalProgress)
+                                .toList();
 
                 if (progressRecords.isEmpty()) {
                         log.info("User {} has no category progress", userId);
@@ -551,6 +556,14 @@ public class ProgressService {
 
                 log.info("Returning {} category progress records for user {}", responses.size(), userId);
                 return responses;
+        }
+
+        private boolean isActiveTheoreticalProgress(UserCategoryProgress progress) {
+                Category category = progress.getCategory();
+                return category != null
+                                && Boolean.TRUE.equals(category.getIsActive())
+                                && category.getContentScope() != null
+                                && category.getContentScope().supportsTheoreticalExam();
         }
 
         /**
