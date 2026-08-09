@@ -3,6 +3,7 @@ package com.readyroad.readyroadbackend;
 import com.readyroad.readyroadbackend.domain.entity.Category;
 import com.readyroad.readyroadbackend.domain.entity.QuizAnswerOption;
 import com.readyroad.readyroadbackend.domain.entity.QuizQuestion;
+import com.readyroad.readyroadbackend.domain.enums.CategoryContentScope;
 import com.readyroad.readyroadbackend.domain.repository.CategoryRepository;
 import com.readyroad.readyroadbackend.domain.repository.ExamSimulationAnswerRepository;
 import com.readyroad.readyroadbackend.domain.repository.ExamSimulationRepository;
@@ -108,6 +109,7 @@ public abstract class BaseIntegrationTest {
                     cat.setNameAr(name + " AR");
                     cat.setIsActive(true);
                     cat.setDisplayOrder(1);
+                    cat.setContentScope(CategoryContentScope.THEORETICAL_EXAM);
                     return categoryRepository.saveAndFlush(cat);
                 });
     }

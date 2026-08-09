@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 
 import com.readyroad.readyroadbackend.domain.entity.Category;
 import com.readyroad.readyroadbackend.domain.entity.UserCategoryProgress;
+import com.readyroad.readyroadbackend.domain.enums.CategoryContentScope;
 import com.readyroad.readyroadbackend.domain.repository.CategoryRepository;
 import com.readyroad.readyroadbackend.domain.repository.UserCategoryProgressRepository;
 import com.readyroad.readyroadbackend.dto.WeakAreaRecommendationResponse;
@@ -261,6 +262,7 @@ public class StoryC2WeakAreasIntegrationTest {
         category.setNameFr(nameEn + " FR");
         category.setIsActive(true);
         category.setDisplayOrder(displayOrder);
+        category.setContentScope(CategoryContentScope.THEORETICAL_EXAM);
         return categoryRepository.saveAndFlush(category);
     }
 
@@ -268,6 +270,7 @@ public class StoryC2WeakAreasIntegrationTest {
         UserCategoryProgress progress = new UserCategoryProgress();
         progress.setUserId(userId);
         progress.setCategoryId(categoryId);
+        progress.setCategory(categoryRepository.findById(categoryId).orElseThrow());
         progress.setQuestionsAttempted(attempted);
         progress.setCorrectAnswers(correct);
         progress.setAccuracyRate(BigDecimal.valueOf(accuracy));

@@ -282,6 +282,7 @@ class OverallProgressIntegrationTest {
         UserCategoryProgress progress = new UserCategoryProgress();
         progress.setUserId(testUser.getId());
         progress.setCategoryId(category.getId());
+        progress.setCategory(category);
         progress.setQuestionsAttempted(attempted);
         progress.setCorrectAnswers(correct);
         progress.setLastPracticed(LocalDateTime.now());

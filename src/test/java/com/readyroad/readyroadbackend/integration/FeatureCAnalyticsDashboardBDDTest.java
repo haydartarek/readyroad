@@ -578,6 +578,7 @@ public class FeatureCAnalyticsDashboardBDDTest extends BaseIntegrationTest {
                 UserCategoryProgress progress = new UserCategoryProgress();
                 progress.setUserId(userId);
                 progress.setCategoryId(categoryId);
+                progress.setCategory(categoryRepository.findById(categoryId).orElseThrow());
                 progress.setQuestionsAttempted(totalAttempts);
                 progress.setCorrectAnswers(correctAnswers);
                 progress.setAccuracyRate(BigDecimal.valueOf((correctAnswers * 100.0) / totalAttempts));
@@ -602,6 +603,7 @@ public class FeatureCAnalyticsDashboardBDDTest extends BaseIntegrationTest {
                 UserCategoryProgress progress = new UserCategoryProgress();
                 progress.setUserId(userId);
                 progress.setCategoryId(categoryId);
+                progress.setCategory(categoryRepository.findById(categoryId).orElseThrow());
                 progress.setQuestionsAttempted(consecutiveDays * 2);
                 progress.setCorrectAnswers(consecutiveDays);
                 progress.setAccuracyRate(BigDecimal.valueOf(50.0));

@@ -2,6 +2,7 @@ package com.readyroad.readyroadbackend.integration;
 
 import com.readyroad.readyroadbackend.domain.entity.*;
 import com.readyroad.readyroadbackend.domain.enums.Role;
+import com.readyroad.readyroadbackend.domain.enums.CategoryContentScope;
 import com.readyroad.readyroadbackend.domain.repository.*;
 import com.readyroad.readyroadbackend.dto.CategoryProgressResponse;
 import com.readyroad.readyroadbackend.service.ProgressService;
@@ -392,6 +393,7 @@ class CategoryProgressIntegrationTest {
         category.setNameFr(nameEn + " FR");
         category.setIsActive(true);
         category.setDisplayOrder(1);
+        category.setContentScope(CategoryContentScope.THEORETICAL_EXAM);
         return categoryRepository.saveAndFlush(category);
     }
 
@@ -408,6 +410,7 @@ class CategoryProgressIntegrationTest {
         UserCategoryProgress progress = new UserCategoryProgress();
         progress.setUserId(userId);
         progress.setCategoryId(categoryId);
+        progress.setCategory(categoryRepository.findById(categoryId).orElseThrow());
         progress.setQuestionsAttempted(questionsAttempted);
         progress.setCorrectAnswers(correctAnswers);
         progress.setMasteryLevel(masteryLevel);

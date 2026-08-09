@@ -319,6 +319,7 @@ class OverallUserProgressIntegrationTest {
         UserCategoryProgress progress = new UserCategoryProgress();
         progress.setUserId(userId);
         progress.setCategoryId(categoryId);
+        progress.setCategory(categoryRepository.findById(categoryId).orElseThrow());
         progress.setQuestionsAttempted(questionsAttempted);
         progress.setCorrectAnswers(correctAnswers);
         progress.setMasteryLevel(masteryLevel);

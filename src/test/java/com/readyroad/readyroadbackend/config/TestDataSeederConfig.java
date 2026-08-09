@@ -3,6 +3,7 @@ package com.readyroad.readyroadbackend.config;
 import com.readyroad.readyroadbackend.domain.entity.Category;
 import com.readyroad.readyroadbackend.domain.entity.QuizAnswerOption;
 import com.readyroad.readyroadbackend.domain.entity.QuizQuestion;
+import com.readyroad.readyroadbackend.domain.enums.CategoryContentScope;
 import com.readyroad.readyroadbackend.domain.repository.CategoryRepository;
 import com.readyroad.readyroadbackend.domain.repository.QuizQuestionRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -91,6 +92,7 @@ public class TestDataSeederConfig {
             category.setNameAr(nameAr);
             category.setIsActive(true);
             category.setDisplayOrder(1);
+            category.setContentScope(CategoryContentScope.THEORETICAL_EXAM);
             return repo.save(category);
         }
 
