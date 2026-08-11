@@ -165,6 +165,7 @@ class AdminQuizServiceTest {
         when(questionRepository.findByIdForUpdate(7L)).thenReturn(Optional.of(question));
         AdminQuizQuestionRequest request = requestFrom(question);
         request.getOptions().add(option(null, "Third", false, 3));
+        request.setDifficultyLevel("MEDIUM");
 
         var response = service.updateQuestion(7L, request);
 
@@ -178,6 +179,7 @@ class AdminQuizServiceTest {
         when(questionRepository.findByIdForUpdate(7L)).thenReturn(Optional.of(question));
         AdminQuizQuestionRequest request = requestFrom(question);
         request.setOptions(new ArrayList<>(request.getOptions().subList(0, 2)));
+        request.setDifficultyLevel("HARD");
 
         var response = service.updateQuestion(7L, request);
 
@@ -203,7 +205,7 @@ class AdminQuizServiceTest {
     }
 
     @Test
-    void referencedQuestionAllowsCategoryDifficultyAndTypeEditing() {
+    void referencedQuestionAllowsCategoryAndDifficultyEditingButPreservesHistoricalType() {
         QuizQuestion question = existingQuestion(2);
         Category replacement = category();
         replacement.setCode("B");
@@ -220,11 +222,11 @@ class AdminQuizServiceTest {
 
         assertThat(response.categoryCode()).isEqualTo("B");
         assertThat(response.difficultyLevel()).isEqualTo("HARD");
-        assertThat(response.questionType()).isEqualTo("TRUE_FALSE");
+        assertThat(response.questionType()).isEqualTo("MULTIPLE_CHOICE");
     }
 
     @Test
-    void rejectsUnknownDifficultyAndQuestionType() {
+    void rejectsUnknownDifficultyAndIgnoresLegacyQuestionTypeInput() {
         when(categoryRepository.findByCode("A")).thenReturn(Optional.of(category()));
         AdminQuizQuestionRequest invalidDifficulty = validRequest();
         invalidDifficulty.setDifficultyLevel("EXPERT");
@@ -234,9 +236,10 @@ class AdminQuizServiceTest {
 
         AdminQuizQuestionRequest invalidType = validRequest();
         invalidType.setQuestionType("VIDEO");
-        assertThatThrownBy(() -> service.createQuestion(invalidType))
-                .isInstanceOf(IllegalArgumentException.class)
-                .hasMessage("admin.quiz.type_invalid");
+        when(categoryRepository.findByCode("A")).thenReturn(Optional.of(category()));
+        when(questionRepository.save(any(QuizQuestion.class))).thenAnswer(invocation -> invocation.getArgument(0));
+        assertThat(service.createQuestion(invalidType).questionType())
+                .isEqualTo("MULTIPLE_CHOICE");
     }
 
     @Test
@@ -289,6 +292,21 @@ class AdminQuizServiceTest {
                 .hasMessage("admin.quiz.option_text_duplicate");
     }
 
+    @Test
+    void rejectsDifficultyAndOptionCountMismatches() {
+        AdminQuizQuestionRequest easyWithTwo = validRequest();
+        easyWithTwo.setDifficultyLevel("EASY");
+        assertThatThrownBy(() -> service.createQuestion(easyWithTwo))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessage("admin.quiz.difficulty_option_mismatch");
+
+        AdminQuizQuestionRequest hardWithThree = validRequest();
+        hardWithThree.getOptions().add(option(null, "Third", false, 3));
+        assertThatThrownBy(() -> service.createQuestion(hardWithThree))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessage("admin.quiz.difficulty_option_mismatch");
+    }
+
     private void assertRejectedOptions(List<AdminQuizQuestionRequest.OptionDTO> options, String message) {
         AdminQuizQuestionRequest request = validRequest();
         request.setOptions(new ArrayList<>(options));
@@ -300,7 +318,7 @@ class AdminQuizServiceTest {
     private AdminQuizQuestionRequest validRequest() {
         AdminQuizQuestionRequest request = new AdminQuizQuestionRequest();
         request.setCategoryCode("A");
-        request.setDifficultyLevel("MEDIUM");
+        request.setDifficultyLevel("HARD");
         request.setQuestionType("MULTIPLE_CHOICE");
         request.setQuestionEn("What does this sign mean?");
         request.setQuestionAr("ماذا تعني هذه العلامة؟");
@@ -328,6 +346,7 @@ class AdminQuizServiceTest {
         request.setExplanationNl(question.getExplanationNl());
         request.setExplanationFr(question.getExplanationFr());
         request.setContentImageUrl(question.getContentImageUrl());
+        request.setDifficultyLevel(question.getDifficultyLevel().name());
         request.setOptions(question.getActiveOptions().stream()
                 .map(option -> new AdminQuizQuestionRequest.OptionDTO(
                         option.getId(), option.getOptionTextEn(), option.getOptionTextAr(),
@@ -341,7 +360,9 @@ class AdminQuizServiceTest {
         QuizQuestion question = new QuizQuestion();
         question.setId(7L);
         question.setCategory(category());
-        question.setDifficultyLevel(QuizQuestion.DifficultyLevel.MEDIUM);
+        question.setDifficultyLevel(optionCount == 2
+                ? QuizQuestion.DifficultyLevel.HARD
+                : QuizQuestion.DifficultyLevel.MEDIUM);
         question.setQuestionType(QuizQuestion.QuestionType.MULTIPLE_CHOICE);
         question.setQuestionEn("What does this sign mean?");
         question.setQuestionAr("ماذا تعني هذه العلامة؟");

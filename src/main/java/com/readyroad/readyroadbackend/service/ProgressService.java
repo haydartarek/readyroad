@@ -224,7 +224,8 @@ public class ProgressService {
                                                         area.getAccuracyPercentage() != null
                                                                         ? area.getAccuracyPercentage()
                                                                         : 0.0);
-                                        return accuracy.compareTo(WEAK_SIGN_THRESHOLD) < 0;
+                                        return accuracy.compareTo(BigDecimal.ZERO) > 0
+                                                        && accuracy.compareTo(WEAK_SIGN_THRESHOLD) < 0;
                                 })
                                 .sorted(Comparator
                                                 .comparing((UserWeakArea area) -> area.getAccuracyPercentage() != null

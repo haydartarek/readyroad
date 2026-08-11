@@ -486,7 +486,11 @@ public class ExamService {
                                 .isEmpty();
                         if (!recentlySent) {
                             notificationService.createWeakAreaNotification(
-                                    exam.getUserId(), cat.getCategoryNameEn());
+                                    exam.getUserId(),
+                                    cat.getCategoryNameEn(),
+                                    cat.getCategoryNameAr(),
+                                    cat.getCategoryNameNl(),
+                                    cat.getCategoryNameFr());
                             log.info("WEAK_AREA notification sent for userId={}, category={}",
                                     exam.getUserId(), cat.getCategoryNameEn());
                         } else {

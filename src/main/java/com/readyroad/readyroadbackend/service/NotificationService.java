@@ -280,22 +280,39 @@ public class NotificationService {
      * Create a WEAK_AREA notification when a category stays below 60% accuracy.
      *
      * @param userId       recipient user ID
-     * @param categoryName category that is weak
+     * @param categoryNameEn English category name used by the legacy fallback
+     * @param categoryNameAr Arabic category name
+     * @param categoryNameNl Dutch category name
+     * @param categoryNameFr French category name
      */
     @Transactional
-    public void createWeakAreaNotification(Long userId, String categoryName) {
+    public void createWeakAreaNotification(
+            Long userId,
+            String categoryNameEn,
+            String categoryNameAr,
+            String categoryNameNl,
+            String categoryNameFr) {
         save(Notification.builder()
                 .userId(userId)
                 .type(NotificationType.WEAK_AREA)
                 .title("⚠️ Weak Area Detected")
                 .message(String.format(
                         "Your accuracy in '%s' is below 60%%. Consider reviewing this topic before your next exam.",
-                        categoryName))
+                        categoryNameEn))
                 .messageKey("notif.msg.weak_area")
-                .messageParams(String.format("{\"category\":\"%s\"}",
-                        categoryName.replace("\\", "\\\\").replace("\"", "\\\"")))
+                .messageParams(String.format(
+                        "{\"category\":\"%s\",\"categoryEn\":\"%s\",\"categoryAr\":\"%s\",\"categoryNl\":\"%s\",\"categoryFr\":\"%s\"}",
+                        escapeJson(categoryNameEn),
+                        escapeJson(categoryNameEn),
+                        escapeJson(categoryNameAr),
+                        escapeJson(categoryNameNl),
+                        escapeJson(categoryNameFr)))
                 .link("/dashboard?section=weak-areas")
                 .build());
+    }
+
+    private static String escapeJson(String value) {
+        return value == null ? "" : value.replace("\\", "\\\\").replace("\"", "\\\"");
     }
 
     /**

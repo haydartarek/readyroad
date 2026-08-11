@@ -253,6 +253,23 @@ class AdminControllerTest {
                 "timestamp", body.get("timestamp")));
     }
 
+    @Test
+    void dashboardTheoryTotalEqualsTheDifficultyBreakdown() {
+        when(quizQuestionRepository.countEligibleQuestionsByDifficulty("EASY")).thenReturn(10L);
+        when(quizQuestionRepository.countEligibleQuestionsByDifficulty("MEDIUM")).thenReturn(20L);
+        when(quizQuestionRepository.countEligibleQuestionsByDifficulty("HARD")).thenReturn(30L);
+
+        var response = adminController.getDashboard();
+        var body = response.getBody();
+
+        assertThat(body).isNotNull();
+        assertThat(body.get("totalQuizQuestions")).isEqualTo(60L);
+        assertThat(body.get("quizQuestionDifficultyCounts")).isEqualTo(Map.of(
+                "EASY", 10L,
+                "MEDIUM", 20L,
+                "HARD", 30L));
+    }
+
     private User user(Long id, String username, Role role) {
         User user = new User();
         user.setId(id);

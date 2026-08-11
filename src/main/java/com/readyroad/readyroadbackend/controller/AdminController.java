@@ -107,7 +107,12 @@ public class AdminController {
         stats.put("totalSigns", signRepository.countByIsActiveTrue());
         stats.put("totalUsers", userRepository.count());
         stats.put("totalQuizAttempts", examSimulationRepository.countByStatus(ExamSimulation.ExamStatus.COMPLETED));
-        stats.put("totalQuizQuestions", quizQuestionRepository.count());
+        Map<String, Long> difficultyCounts = new java.util.LinkedHashMap<>();
+        difficultyCounts.put("EASY", quizQuestionRepository.countEligibleQuestionsByDifficulty("EASY"));
+        difficultyCounts.put("MEDIUM", quizQuestionRepository.countEligibleQuestionsByDifficulty("MEDIUM"));
+        difficultyCounts.put("HARD", quizQuestionRepository.countEligibleQuestionsByDifficulty("HARD"));
+        stats.put("quizQuestionDifficultyCounts", difficultyCounts);
+        stats.put("totalQuizQuestions", difficultyCounts.values().stream().mapToLong(Long::longValue).sum());
         stats.put("totalSignQuestions", signQuestionRepository.count());
         stats.put("totalSignPracticeSessions", signPracticeSessionRepository.count());
         stats.put("totalSignExamAttempts", signExamResultRepository.count());

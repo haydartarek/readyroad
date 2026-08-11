@@ -5,10 +5,12 @@ import static org.mockito.Mockito.when;
 
 import com.readyroad.readyroadbackend.domain.entity.Category;
 import com.readyroad.readyroadbackend.domain.entity.ExamSimulation;
+import com.readyroad.readyroadbackend.domain.entity.RoadSign;
 import com.readyroad.readyroadbackend.domain.entity.SignPracticeSession;
 import com.readyroad.readyroadbackend.domain.entity.SignRandomPracticeSession;
 import com.readyroad.readyroadbackend.domain.entity.UserCategoryProgress;
 import com.readyroad.readyroadbackend.domain.entity.UserLessonProgress;
+import com.readyroad.readyroadbackend.domain.entity.UserWeakArea;
 import com.readyroad.readyroadbackend.domain.enums.CategoryContentScope;
 import com.readyroad.readyroadbackend.domain.repository.CategoryRepository;
 import com.readyroad.readyroadbackend.domain.repository.ExamSimulationRepository;
@@ -23,11 +25,13 @@ import com.readyroad.readyroadbackend.domain.repository.UserQuestionHistoryRepos
 import com.readyroad.readyroadbackend.domain.repository.UserWeakAreaRepository;
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.Set;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.test.util.ReflectionTestUtils;
 
 @ExtendWith(MockitoExtension.class)
 class ProgressServiceAggregationTest {
@@ -146,6 +150,38 @@ class ProgressServiceAggregationTest {
         assertThat(progress.getIncompleteSignPracticeCount()).isEqualTo(1);
         assertThat(progress.getActiveRandomSignExamCount()).isEqualTo(1);
         assertThat(progress.getIncompleteActivitiesCount()).isEqualTo(3);
+    }
+
+    @Test
+    void weakSignsExcludeZeroAccuracyButKeepNonZeroValues() {
+        UserWeakArea zeroAccuracy = weakSign("A1", 0.0);
+        UserWeakArea nonZeroAccuracy = weakSign("F9", 50.0);
+        RoadSign sign = new RoadSign();
+        sign.setSignCode("F9");
+        sign.setNameEn("Motorway");
+
+        when(weakAreaRepository.findAllByUserId(USER_ID))
+                .thenReturn(List.of(zeroAccuracy, nonZeroAccuracy));
+        when(roadSignRepository.findBySignCodeIn(Set.of("F9")))
+                .thenReturn(List.of(sign));
+
+        @SuppressWarnings("unchecked")
+        List<Object> weakSigns = ReflectionTestUtils.invokeMethod(
+                progressService,
+                "identifyWeakSigns",
+                USER_ID);
+
+        assertThat(weakSigns).hasSize(1);
+        assertThat(ReflectionTestUtils.getField(weakSigns.get(0), "signCode"))
+                .isEqualTo("F9");
+    }
+
+    private static UserWeakArea weakSign(String code, double accuracy) {
+        UserWeakArea area = new UserWeakArea();
+        area.setTrafficSignCode(code);
+        area.setTotalQuestions(2);
+        area.setAccuracyPercentage(accuracy);
+        return area;
     }
 
     private static UserLessonProgress completedLesson(long lessonId) {

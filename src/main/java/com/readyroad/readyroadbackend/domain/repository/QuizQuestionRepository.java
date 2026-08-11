@@ -68,6 +68,19 @@ public interface QuizQuestionRepository extends JpaRepository<QuizQuestion, Long
          */
         Long countByIsActiveTrueAndStatus(QuizQuestion.QuestionStatus status);
 
+        /** Count questions eligible for delivery for one difficulty tier. */
+        @Query(value = "SELECT COUNT(*) FROM (" +
+                        "  SELECT q.id FROM quiz_questions q" +
+                        "  JOIN quiz_answer_options o ON o.question_id = q.id AND o.is_active = true" +
+                        "  WHERE q.is_active = true AND q.status = 'PUBLISHED'" +
+                        "  AND q.difficulty_level = :difficulty" +
+                        "  GROUP BY q.id, q.difficulty_level" +
+                        "  HAVING SUM(CASE WHEN o.is_correct = true THEN 1 ELSE 0 END) = 1" +
+                        "  AND ((q.difficulty_level = 'HARD' AND COUNT(o.id) = 2)" +
+                        "    OR (q.difficulty_level IN ('EASY', 'MEDIUM') AND COUNT(o.id) = 3))" +
+                        ") eligible", nativeQuery = true)
+        long countEligibleQuestionsByDifficulty(@Param("difficulty") String difficulty);
+
         /**
          * Count active questions by category
          */

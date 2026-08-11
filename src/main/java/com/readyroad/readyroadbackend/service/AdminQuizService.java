@@ -61,7 +61,7 @@ public class AdminQuizService {
     private final BackendMessageService messages;
 
     private static final List<String> ALLOWED_SORT_FIELDS = List.of(
-            "id", "questionEn", "questionAr", "difficultyLevel", "questionType",
+            "id", "questionEn", "questionAr", "difficultyLevel",
             "category.code", "isActive", "createdAt", "updatedAt");
 
     private static final Set<CategoryContentScope> THEORETICAL_CATEGORY_SCOPES = Set.of(
@@ -141,6 +141,7 @@ public class AdminQuizService {
 
         QuizQuestion question = new QuizQuestion();
         mapRequestToEntity(request, question);
+        question.setQuestionType(QuizQuestion.QuestionType.MULTIPLE_CHOICE);
         question.setCategory(category);
         synchronizeDeliveryStatus(question);
 
@@ -251,15 +252,20 @@ public class AdminQuizService {
             throw new IllegalArgumentException(messages.get("admin.quiz.question_text_required"));
         }
 
-        if (parseQuestionType(request.getQuestionType()) == QuizQuestion.QuestionType.IMAGE_BASED &&
-                (request.getContentImageUrl() == null || request.getContentImageUrl().isBlank())) {
-            throw new IllegalArgumentException(messages.get("admin.quiz.image_required"));
-        }
         validateImageReference(request.getContentImageUrl());
 
         int count = options.size();
         if (count < 2 || count > 3) {
             throw new IllegalArgumentException(messages.get("admin.quiz.options_count", count));
+        }
+        QuizQuestion.DifficultyLevel difficulty = parseDifficultyOrDefault(request.getDifficultyLevel());
+        boolean compatible = (count == 2 && difficulty == QuizQuestion.DifficultyLevel.HARD)
+                || (count == 3 && difficulty != QuizQuestion.DifficultyLevel.HARD);
+        if (!compatible) {
+            throw new IllegalArgumentException(messages.get(
+                    "admin.quiz.difficulty_option_mismatch",
+                    difficulty.name(),
+                    count));
         }
 
         long correctCount = options.stream()
@@ -414,7 +420,6 @@ public class AdminQuizService {
 
         if (!Objects.equals(question.getIsActive(), request.getIsActive())) changedFields.add("isActive");
         if (question.getDifficultyLevel() != parseDifficultyOrDefault(request.getDifficultyLevel())) changedFields.add("difficultyLevel");
-        if (question.getQuestionType() != parseQuestionType(request.getQuestionType())) changedFields.add("questionType");
         if (question.getCategory() == null || !Objects.equals(question.getCategory().getCode(), request.getCategoryCode())) {
             changedFields.add("categoryCode");
         }
@@ -566,7 +571,6 @@ public class AdminQuizService {
         question.setIsActive(request.getIsActive() != null ? request.getIsActive() : true);
 
         // Parse enums with defaults
-        question.setQuestionType(parseQuestionType(request.getQuestionType()));
         question.setDifficultyLevel(parseDifficultyOrDefault(request.getDifficultyLevel()));
     }
 
@@ -647,16 +651,6 @@ public class AdminQuizService {
             return QuizQuestion.DifficultyLevel.valueOf(level.toUpperCase().trim());
         } catch (IllegalArgumentException e) {
             throw new IllegalArgumentException(messages.get("admin.quiz.difficulty_invalid", level));
-        }
-    }
-
-    private QuizQuestion.QuestionType parseQuestionType(String type) {
-        if (type == null || type.isBlank())
-            return QuizQuestion.QuestionType.MULTIPLE_CHOICE;
-        try {
-            return QuizQuestion.QuestionType.valueOf(type.toUpperCase().trim());
-        } catch (IllegalArgumentException e) {
-            throw new IllegalArgumentException(messages.get("admin.quiz.type_invalid", type));
         }
     }
 
