@@ -1,6 +1,7 @@
 package com.readyroad.readyroadbackend.controller;
 
 import com.readyroad.readyroadbackend.domain.entity.User;
+import com.readyroad.readyroadbackend.domain.entity.QuizQuestion;
 import com.readyroad.readyroadbackend.domain.enums.Role;
 import com.readyroad.readyroadbackend.domain.repository.ExamSimulationRepository;
 import com.readyroad.readyroadbackend.domain.repository.QuizQuestionRepository;
@@ -255,19 +256,22 @@ class AdminControllerTest {
 
     @Test
     void dashboardTheoryTotalEqualsTheDifficultyBreakdown() {
-        when(quizQuestionRepository.countEligibleQuestionsByDifficulty("EASY")).thenReturn(10L);
-        when(quizQuestionRepository.countEligibleQuestionsByDifficulty("MEDIUM")).thenReturn(20L);
-        when(quizQuestionRepository.countEligibleQuestionsByDifficulty("HARD")).thenReturn(30L);
+        when(quizQuestionRepository.count()).thenReturn(61L);
+        when(quizQuestionRepository.countByDifficultyLevel(QuizQuestion.DifficultyLevel.EASY)).thenReturn(10L);
+        when(quizQuestionRepository.countByDifficultyLevel(QuizQuestion.DifficultyLevel.MEDIUM)).thenReturn(20L);
+        when(quizQuestionRepository.countByDifficultyLevel(QuizQuestion.DifficultyLevel.HARD)).thenReturn(30L);
+        when(quizQuestionRepository.countByDifficultyLevelIsNull()).thenReturn(1L);
 
         var response = adminController.getDashboard();
         var body = response.getBody();
 
         assertThat(body).isNotNull();
-        assertThat(body.get("totalQuizQuestions")).isEqualTo(60L);
+        assertThat(body.get("totalQuizQuestions")).isEqualTo(61L);
         assertThat(body.get("quizQuestionDifficultyCounts")).isEqualTo(Map.of(
                 "EASY", 10L,
                 "MEDIUM", 20L,
-                "HARD", 30L));
+                "HARD", 30L,
+                "UNCLASSIFIED", 1L));
     }
 
     private User user(Long id, String username, Role role) {

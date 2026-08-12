@@ -4,6 +4,7 @@ import com.readyroad.readyroadbackend.domain.repository.RoadSignRepository;
 import com.readyroad.readyroadbackend.domain.repository.UserRepository;
 import com.readyroad.readyroadbackend.domain.repository.UserCategoryProgressRepository;
 import com.readyroad.readyroadbackend.domain.entity.ExamSimulation;
+import com.readyroad.readyroadbackend.domain.entity.QuizQuestion;
 import com.readyroad.readyroadbackend.domain.repository.ExamSimulationRepository;
 import com.readyroad.readyroadbackend.domain.repository.QuizQuestionRepository;
 import com.readyroad.readyroadbackend.domain.repository.SignExamResultRepository;
@@ -108,11 +109,15 @@ public class AdminController {
         stats.put("totalUsers", userRepository.count());
         stats.put("totalQuizAttempts", examSimulationRepository.countByStatus(ExamSimulation.ExamStatus.COMPLETED));
         Map<String, Long> difficultyCounts = new java.util.LinkedHashMap<>();
-        difficultyCounts.put("EASY", quizQuestionRepository.countEligibleQuestionsByDifficulty("EASY"));
-        difficultyCounts.put("MEDIUM", quizQuestionRepository.countEligibleQuestionsByDifficulty("MEDIUM"));
-        difficultyCounts.put("HARD", quizQuestionRepository.countEligibleQuestionsByDifficulty("HARD"));
+        difficultyCounts.put("EASY",
+                quizQuestionRepository.countByDifficultyLevel(QuizQuestion.DifficultyLevel.EASY));
+        difficultyCounts.put("MEDIUM",
+                quizQuestionRepository.countByDifficultyLevel(QuizQuestion.DifficultyLevel.MEDIUM));
+        difficultyCounts.put("HARD",
+                quizQuestionRepository.countByDifficultyLevel(QuizQuestion.DifficultyLevel.HARD));
+        difficultyCounts.put("UNCLASSIFIED", quizQuestionRepository.countByDifficultyLevelIsNull());
         stats.put("quizQuestionDifficultyCounts", difficultyCounts);
-        stats.put("totalQuizQuestions", difficultyCounts.values().stream().mapToLong(Long::longValue).sum());
+        stats.put("totalQuizQuestions", quizQuestionRepository.count());
         stats.put("totalSignQuestions", signQuestionRepository.count());
         stats.put("totalSignPracticeSessions", signPracticeSessionRepository.count());
         stats.put("totalSignExamAttempts", signExamResultRepository.count());
