@@ -111,7 +111,7 @@ class MarketingPostgreSqlIntegrationTest {
         auditRepository.deleteAll();
         approvalRepository.deleteAll();
         attemptRepository.deleteAll();
-        taskRepository.deleteAll();
+        taskRepository.deleteAllInBatch();
         settingRepository.deleteAll();
         scheduleRepository.deleteAll();
         definitionRepository.deleteAll();
