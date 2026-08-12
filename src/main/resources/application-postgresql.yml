@@ -35,3 +35,11 @@ spring:
     schemas: ${POSTGRES_SCHEMA:public}
     create-schemas: true
     validate-on-migrate: true
+
+readyroad:
+  marketing:
+    enabled: ${READYROAD_MARKETING_ENABLED:true}
+    worker:
+      poll-interval-ms: ${READYROAD_MARKETING_POLL_INTERVAL_MS:5000}
+      batch-size: ${READYROAD_MARKETING_BATCH_SIZE:10}
+      lock-ttl: ${READYROAD_MARKETING_LOCK_TTL:10m}
