@@ -3,12 +3,17 @@ package com.readyroad.readyroadbackend.marketing.repository;
 import com.readyroad.readyroadbackend.marketing.domain.AgentSchedule;
 import java.time.Instant;
 import java.util.List;
+import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 public interface AgentScheduleRepository extends JpaRepository<AgentSchedule, Long> {
     List<AgentSchedule> findAllByOrderByAgentTypeAscScheduleKeyAsc();
+
+    List<AgentSchedule> findByAgentTypeOrderByScheduleKeyAsc(String agentType);
+
+    Optional<AgentSchedule> findByAgentTypeAndScheduleKey(String agentType, String scheduleKey);
 
     List<AgentSchedule> findByEnabledTrueAndNextRunAtLessThanEqualOrderByNextRunAtAsc(Instant now);
 

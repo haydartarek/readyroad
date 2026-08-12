@@ -47,6 +47,9 @@ public class AgentSchedule {
     @Column(name = "cron_expression", nullable = false, length = 128)
     private String cronExpression;
 
+    @Column(name = "interval_days")
+    private Short intervalDays;
+
     @Column(name = "zone_id", nullable = false, length = 64)
     private String zoneId = "Europe/Brussels";
 

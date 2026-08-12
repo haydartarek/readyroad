@@ -64,6 +64,7 @@ services:
     environment:
       SPRING_PROFILES_ACTIVE: secure,postgresql
       PORT: "8890"
+      GOOGLE_APPLICATION_CREDENTIALS: /run/secrets/google/marketing-service-account.json
       READYROAD_SIGNS_IMPORT_PATH: /app/data/signs_import
       JAVA_OPTS: >-
         -Xms256m -Xmx1536m
@@ -76,6 +77,7 @@ services:
     volumes:
       - readyroad-backend-logs:/app/logs
       - readyroad-uploads:/app/public/images/quiz
+      - /opt/readyroad/secrets/google/marketing-service-account.json:/run/secrets/google/marketing-service-account.json:ro
     networks:
       - readyroad-network
     healthcheck:

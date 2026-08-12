@@ -14,6 +14,7 @@ public class MarketingProperties {
 
     private boolean enabled;
     private Worker worker = new Worker();
+    private Analytics analytics = new Analytics();
 
     @Getter
     @Setter
@@ -21,5 +22,14 @@ public class MarketingProperties {
         private long pollIntervalMs = 5_000;
         private int batchSize = 10;
         private Duration lockTtl = Duration.ofMinutes(10);
+    }
+
+    @Getter
+    @Setter
+    public static class Analytics {
+        private String serviceAccountFile;
+        private String ga4AccountId = "403159538";
+        private String ga4PropertyId = "548176182";
+        private String searchConsoleSiteUrl = "sc-domain:readyroad.be";
     }
 }

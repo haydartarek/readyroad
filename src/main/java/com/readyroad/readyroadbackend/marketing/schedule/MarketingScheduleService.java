@@ -64,6 +64,9 @@ public class MarketingScheduleService {
 
     private static Instant nextRun(AgentSchedule schedule, Instant after) {
         ZoneId zone = ZoneId.of(schedule.getZoneId());
+        if (schedule.getIntervalDays() != null) {
+            return after.atZone(zone).plusDays(schedule.getIntervalDays()).toInstant();
+        }
         ZonedDateTime next = CronExpression.parse(schedule.getCronExpression()).next(after.atZone(zone));
         if (next == null) {
             throw new IllegalStateException("Schedule has no next execution: " + schedule.getId());

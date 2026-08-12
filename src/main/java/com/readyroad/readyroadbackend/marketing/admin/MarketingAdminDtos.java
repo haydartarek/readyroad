@@ -115,6 +115,7 @@ public final class MarketingAdminDtos {
             String key,
             String taskType,
             String cronExpression,
+            Short intervalDays,
             String zoneId,
             boolean enabled,
             Instant lastRunAt,
@@ -122,7 +123,7 @@ public final class MarketingAdminDtos {
         static ScheduleItem from(AgentSchedule schedule) {
             return new ScheduleItem(
                     schedule.getId(), schedule.getAgentType(), schedule.getScheduleKey(), schedule.getTaskType(),
-                    schedule.getCronExpression(), schedule.getZoneId(), schedule.isEnabled(),
+                    schedule.getCronExpression(), schedule.getIntervalDays(), schedule.getZoneId(), schedule.isEnabled(),
                     schedule.getLastRunAt(), schedule.getNextRunAt());
         }
     }
