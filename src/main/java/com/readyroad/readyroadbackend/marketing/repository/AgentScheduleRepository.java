@@ -8,6 +8,8 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 public interface AgentScheduleRepository extends JpaRepository<AgentSchedule, Long> {
+    List<AgentSchedule> findAllByOrderByAgentTypeAscScheduleKeyAsc();
+
     List<AgentSchedule> findByEnabledTrueAndNextRunAtLessThanEqualOrderByNextRunAtAsc(Instant now);
 
     @Query(value = """

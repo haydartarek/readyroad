@@ -2,6 +2,7 @@ package com.readyroad.readyroadbackend.marketing;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -55,6 +56,14 @@ class MarketingAdminSecurityTest {
                             true));
             strategy.setEnabled(true);
             agentDefinitionRepository.saveAndFlush(strategy);
+            AgentDefinition adminPlatform = agentDefinitionRepository
+                    .findByAgentType("ADMIN_PLATFORM")
+                    .orElseGet(() -> new AgentDefinition(
+                            "ADMIN_PLATFORM",
+                            "ReadyRoad Marketing Admin Platform",
+                            true));
+            adminPlatform.setEnabled(true);
+            agentDefinitionRepository.saveAndFlush(adminPlatform);
         });
         userToken = createUserAndLogin("marketing-user", "marketing-user@test.local", Role.USER);
         adminToken = createUserAndLogin("marketing-admin", "marketing-admin@test.local", Role.ADMIN);
@@ -81,6 +90,38 @@ class MarketingAdminSecurityTest {
                 .andExpect(jsonPath("$.batchSize").value(10))
                 .andExpect(jsonPath("$.lockTtlSeconds").value(600))
                 .andExpect(jsonPath("$.tasksByStatus.PENDING").value(0));
+    }
+
+    @Test
+    void protectsAndExposesTheAdminBasicPlatformContracts() throws Exception {
+        mockMvc.perform(get("/api/admin/marketing/overview"))
+                .andExpect(status().isUnauthorized());
+
+        mockMvc.perform(get("/api/admin/marketing/overview")
+                        .header("Authorization", "Bearer " + userToken))
+                .andExpect(status().isForbidden());
+
+        for (String path : new String[] {
+                "/api/admin/marketing/overview",
+                "/api/admin/marketing/agents",
+                "/api/admin/marketing/tasks",
+                "/api/admin/marketing/errors",
+                "/api/admin/marketing/audit",
+                "/api/admin/marketing/settings",
+                "/api/admin/marketing/worker-health"
+        }) {
+            mockMvc.perform(get(path).header("Authorization", "Bearer " + adminToken))
+                    .andExpect(status().isOk());
+        }
+
+        mockMvc.perform(put("/api/admin/marketing/agents/STRATEGY/enabled")
+                        .header("Authorization", "Bearer " + adminToken)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("{\"enabled\":false,\"idempotencyKey\":\"security-agent-control\"}"))
+                .andExpect(status().isAccepted())
+                .andExpect(jsonPath("$.agentType").value("ADMIN_PLATFORM"))
+                .andExpect(jsonPath("$.taskType").value("AGENT_ENABLED_CHANGE"))
+                .andExpect(jsonPath("$.status").value("WAITING_APPROVAL"));
     }
 
     @Test

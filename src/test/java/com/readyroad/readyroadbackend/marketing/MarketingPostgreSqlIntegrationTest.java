@@ -6,6 +6,7 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.readyroad.readyroadbackend.marketing.approval.ApprovalMetadata;
 import com.readyroad.readyroadbackend.marketing.approval.ApprovalService;
+import com.readyroad.readyroadbackend.marketing.admin.MarketingAdminPlatformService;
 import com.readyroad.readyroadbackend.marketing.domain.AgentDefinition;
 import com.readyroad.readyroadbackend.marketing.domain.AgentSchedule;
 import com.readyroad.readyroadbackend.marketing.domain.AgentTask;
@@ -30,6 +31,7 @@ import com.readyroad.readyroadbackend.marketing.task.TaskCreationResult;
 import com.readyroad.readyroadbackend.marketing.task.TaskCreationService;
 import com.readyroad.readyroadbackend.marketing.task.MarketingTaskExecutionException;
 import com.readyroad.readyroadbackend.marketing.task.TaskExecutionService;
+import com.readyroad.readyroadbackend.marketing.worker.MarketingTaskDispatcher;
 import java.time.Instant;
 import java.util.HashSet;
 import java.util.List;
@@ -98,6 +100,8 @@ class MarketingPostgreSqlIntegrationTest {
     @Autowired ApprovalService approvalService;
     @Autowired MarketingScheduleService scheduleService;
     @Autowired AgentSettingsService settingsService;
+    @Autowired MarketingAdminPlatformService adminPlatformService;
+    @Autowired MarketingTaskDispatcher dispatcher;
     @Autowired ObjectMapper objectMapper;
     @Autowired DataSource dataSource;
 
@@ -271,6 +275,53 @@ class MarketingPostgreSqlIntegrationTest {
         assertThat(failed.getStatus()).isEqualTo(TaskStatus.FAILED);
         assertThat(failed.getNextRetryAt()).isNull();
         assertThat(failed.getLockedBy()).isNull();
+    }
+
+    @Test
+    void manualRetryCreatesANewTaskLinkedToTheFailedTask() {
+        AgentTask original = creationService.create(command(
+                "MANUAL_RETRY", "manual-retry-original", TaskPriority.HIGH,
+                ApprovalMetadata.standingOwnerAuthorization())).task();
+        claimService.claimNextBatch("manual-retry-worker");
+        executionService.fail(original.getId(), "manual-retry-worker",
+                new MarketingTaskExecutionException("INVALID_CREDENTIALS", "Credentials rejected"));
+
+        var response = adminPlatformService.retry(original.getId(), "admin");
+
+        AgentTask replacement = taskRepository.findById(response.id()).orElseThrow();
+        assertThat(replacement.getId()).isNotEqualTo(original.getId());
+        assertThat(replacement.getParentTaskId()).isEqualTo(original.getId());
+        assertThat(replacement.getSourceType()).isEqualTo("MANUAL_RETRY");
+        assertThat(replacement.getStatus()).isEqualTo(TaskStatus.PENDING);
+        assertThat(replacement.getIdempotencyKey()).startsWith("manual-retry-" + original.getId() + "-");
+        assertThat(taskRepository.findById(original.getId()).orElseThrow().getStatus())
+                .isEqualTo(TaskStatus.FAILED);
+    }
+
+    @Test
+    void approvedAgentControlRunsThroughTheExistingWorkerAndAuditFlow() {
+        definitionRepository.saveAndFlush(new AgentDefinition(
+                MarketingAdminPlatformService.ADMIN_AGENT_TYPE,
+                "ReadyRoad Marketing Admin Platform",
+                true));
+
+        var requested = adminPlatformService.requestAgentEnabledChange(
+                "TEST_AGENT", false, "postgres-agent-control", "admin");
+        assertThat(requested.status()).isEqualTo("WAITING_APPROVAL");
+        assertThat(definitionRepository.findByAgentType("TEST_AGENT").orElseThrow().isEnabled()).isTrue();
+
+        approvalService.approve(requested.id(), "admin", "Approved agent shutdown");
+        ClaimedTask claimed = claimService.claimNextBatch("admin-control-worker").stream()
+                .filter(task -> task.taskId().equals(requested.id()))
+                .findFirst()
+                .orElseThrow();
+        dispatcher.dispatch(claimed);
+        executionService.complete(requested.id(), "admin-control-worker");
+
+        assertThat(definitionRepository.findByAgentType("TEST_AGENT").orElseThrow().isEnabled()).isFalse();
+        assertThat(taskRepository.findById(requested.id()).orElseThrow().getStatus())
+                .isEqualTo(TaskStatus.COMPLETED);
+        assertThat(auditRepository.countByEventType("AGENT_DISABLED")).isOne();
     }
 
     @Test

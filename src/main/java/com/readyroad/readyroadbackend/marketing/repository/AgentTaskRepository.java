@@ -6,6 +6,8 @@ import jakarta.persistence.LockModeType;
 import java.time.Instant;
 import java.util.List;
 import java.util.Optional;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Lock;
 import org.springframework.data.jpa.repository.Query;
@@ -52,4 +54,33 @@ public interface AgentTaskRepository extends JpaRepository<AgentTask, Long> {
             @Param("now") Instant now);
 
     long countByStatus(TaskStatus status);
+
+    Page<AgentTask> findAllByOrderByCreatedAtDesc(Pageable pageable);
+
+    Page<AgentTask> findByStatusOrderByCreatedAtDesc(TaskStatus status, Pageable pageable);
+
+    long countByAgentType(String agentType);
+
+    long countByCreatedAtGreaterThanEqual(Instant createdAt);
+
+    long countByAgentTypeAndCreatedAtGreaterThanEqual(String agentType, Instant createdAt);
+
+    long countByAgentTypeAndStatus(String agentType, TaskStatus status);
+
+    long countByAgentTypeAndAttemptsGreaterThan(String agentType, int attempts);
+
+    @Query("SELECT MAX(task.startedAt) FROM AgentTask task WHERE task.agentType = :agentType")
+    Instant findLastRunAt(@Param("agentType") String agentType);
+
+    @Query("SELECT MAX(task.completedAt) FROM AgentTask task WHERE task.agentType = :agentType")
+    Instant findLastSuccessAt(@Param("agentType") String agentType);
+
+    @Query("SELECT MAX(task.failedAt) FROM AgentTask task WHERE task.agentType = :agentType")
+    Instant findLastFailureAt(@Param("agentType") String agentType);
+
+    @Query("SELECT COUNT(DISTINCT task.lockedBy) FROM AgentTask task "
+            + "WHERE task.status = 'RUNNING' AND task.lockedBy IS NOT NULL")
+    long countActiveWorkers();
+
+    long countByStatusAndLockExpiresAtBefore(TaskStatus status, Instant now);
 }
