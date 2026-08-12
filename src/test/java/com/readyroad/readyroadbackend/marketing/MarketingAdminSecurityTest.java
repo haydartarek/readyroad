@@ -9,6 +9,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.readyroad.readyroadbackend.domain.entity.User;
 import com.readyroad.readyroadbackend.domain.enums.Role;
 import com.readyroad.readyroadbackend.domain.repository.UserRepository;
+import com.readyroad.readyroadbackend.marketing.domain.AgentDefinition;
+import com.readyroad.readyroadbackend.marketing.repository.AgentDefinitionRepository;
+import com.readyroad.readyroadbackend.marketing.strategy.MarketingStrategyChangeService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +22,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.TransactionDefinition;
+import org.springframework.transaction.support.TransactionTemplate;
 
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -30,12 +36,26 @@ class MarketingAdminSecurityTest {
     @Autowired ObjectMapper objectMapper;
     @Autowired UserRepository userRepository;
     @Autowired PasswordEncoder passwordEncoder;
+    @Autowired AgentDefinitionRepository agentDefinitionRepository;
+    @Autowired PlatformTransactionManager transactionManager;
 
     private String userToken;
     private String adminToken;
 
     @BeforeEach
     void setUpUsers() throws Exception {
+        TransactionTemplate committedSetup = new TransactionTemplate(transactionManager);
+        committedSetup.setPropagationBehavior(TransactionDefinition.PROPAGATION_REQUIRES_NEW);
+        committedSetup.executeWithoutResult(status -> {
+            AgentDefinition strategy = agentDefinitionRepository
+                    .findByAgentType(MarketingStrategyChangeService.AGENT_TYPE)
+                    .orElseGet(() -> new AgentDefinition(
+                            MarketingStrategyChangeService.AGENT_TYPE,
+                            "ReadyRoad Marketing Strategy Engine",
+                            true));
+            strategy.setEnabled(true);
+            agentDefinitionRepository.saveAndFlush(strategy);
+        });
         userToken = createUserAndLogin("marketing-user", "marketing-user@test.local", Role.USER);
         adminToken = createUserAndLogin("marketing-admin", "marketing-admin@test.local", Role.ADMIN);
     }
@@ -61,6 +81,66 @@ class MarketingAdminSecurityTest {
                 .andExpect(jsonPath("$.batchSize").value(10))
                 .andExpect(jsonPath("$.lockTtlSeconds").value(600))
                 .andExpect(jsonPath("$.tasksByStatus.PENDING").value(0));
+    }
+
+    @Test
+    void protectsTheStrategySnapshotWithTheExistingAdminRole() throws Exception {
+        mockMvc.perform(get("/api/admin/marketing/strategy"))
+                .andExpect(status().isUnauthorized());
+
+        mockMvc.perform(get("/api/admin/marketing/strategy")
+                        .header("Authorization", "Bearer " + userToken))
+                .andExpect(status().isForbidden());
+
+        mockMvc.perform(get("/api/admin/marketing/strategy")
+                        .header("Authorization", "Bearer " + adminToken))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.usps").isArray())
+                .andExpect(jsonPath("$.conversionGoals").isArray());
+    }
+
+    @Test
+    void createsAnApprovalBoundStrategyTaskWithoutApplyingTheChange() throws Exception {
+        mockMvc.perform(post("/api/admin/marketing/strategy/change-requests")
+                        .header("Authorization", "Bearer " + adminToken)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("""
+                                {
+                                  "resourceType": "USP",
+                                  "data": {
+                                    "title": "Four-language learning",
+                                    "description": "ReadyRoad supports four languages.",
+                                    "evidenceType": "READYROAD_FEATURE",
+                                    "evidenceReference": "SUPPORTED_LANGUAGES",
+                                    "active": true,
+                                    "priority": 2
+                                  },
+                                  "idempotencyKey": "security-test-strategy-usp"
+                                }
+                                """))
+                .andExpect(status().isAccepted())
+                .andExpect(jsonPath("$.agentType").value("STRATEGY"))
+                .andExpect(jsonPath("$.taskType").value("STRATEGY_CHANGE"))
+                .andExpect(jsonPath("$.status").value("WAITING_APPROVAL"))
+                .andExpect(jsonPath("$.requiresApproval").value(true));
+    }
+
+    @Test
+    void returnsBlockedStrategyContextInsteadOfInventingMissingValues() throws Exception {
+        mockMvc.perform(post("/api/admin/marketing/strategy/context/resolve")
+                        .header("Authorization", "Bearer " + adminToken)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("""
+                                {
+                                  "uspId": 999,
+                                  "icpId": "ICP-AR-BEGINNER",
+                                  "contentPillarId": 1,
+                                  "funnelStageId": 1,
+                                  "conversionGoalId": 1
+                                }
+                                """))
+                .andExpect(status().isUnprocessableContent())
+                .andExpect(jsonPath("$.errorCode").value("BLOCKED_STRATEGY_CONTEXT"));
     }
 
     private String createUserAndLogin(String username, String email, Role role) throws Exception {

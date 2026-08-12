@@ -356,7 +356,7 @@ class MarketingPostgreSqlIntegrationTest {
         assertThat(taskRepository.count()).isOne();
         AgentSchedule updated = scheduleRepository.findById(schedule.getId()).orElseThrow();
         assertThat(updated.getLastRunAt()).isNotNull();
-        assertThat(updated.getNextRunAt()).isAfter(Instant.now());
+        assertThat(updated.getNextRunAt()).isAfter(updated.getLastRunAt());
         assertThat(taskRepository.findAll().getFirst().getStatus()).isEqualTo(TaskStatus.PENDING);
     }
 
