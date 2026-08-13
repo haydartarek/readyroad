@@ -4,6 +4,7 @@ import com.readyroad.readyroadbackend.marketing.audit.ExecutionLogService;
 import com.readyroad.readyroadbackend.marketing.audit.MarketingAuditService;
 import com.readyroad.readyroadbackend.marketing.config.MarketingProperties;
 import com.readyroad.readyroadbackend.marketing.domain.ExecutionLogLevel;
+import com.readyroad.readyroadbackend.marketing.editorial.EditorialPriorityTaskService;
 import com.readyroad.readyroadbackend.marketing.task.MarketingTaskExecutionException;
 import java.time.Instant;
 import java.time.LocalDate;
@@ -25,6 +26,7 @@ public class AnalyticsSyncService {
     private final AnalyticsSettingsService settingsService;
     private final AnalyticsScheduleActivator scheduleActivator;
     private final OrganicOpportunityService opportunityService;
+    private final EditorialPriorityTaskService editorialPriorityTaskService;
     private final ExecutionLogService logService;
     private final MarketingAuditService auditService;
     private final MarketingProperties properties;
@@ -66,6 +68,7 @@ public class AnalyticsSyncService {
                     searchConsole, properties.getAnalytics().getSearchConsoleSiteUrl(), taskId, partialFailures);
             opportunityService.analyze(end);
             warnIfDataIsLate(taskId, end, settings);
+            editorialPriorityTaskService.enqueueAfterAnalytics(taskId, end);
         }
         if (!partialFailures.isEmpty()) {
             logService.record(

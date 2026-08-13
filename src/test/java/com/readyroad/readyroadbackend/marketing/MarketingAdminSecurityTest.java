@@ -120,6 +120,33 @@ class MarketingAdminSecurityTest {
         mockMvc.perform(get("/api/admin/marketing/editorial/backlog")
                         .header("Authorization", "Bearer " + userToken))
                 .andExpect(status().isForbidden());
+
+        for (String path : new String[] {
+                "/api/admin/marketing/editorial/priorities",
+                "/api/admin/marketing/editorial/priority-settings"
+        }) {
+            mockMvc.perform(get(path)).andExpect(status().isUnauthorized());
+            mockMvc.perform(get(path).header("Authorization", "Bearer " + userToken))
+                    .andExpect(status().isForbidden());
+        }
+
+        mockMvc.perform(get("/api/admin/marketing/editorial/priority-settings")
+                        .header("Authorization", "Bearer " + adminToken))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.weights.searchDemand").value(20))
+                .andExpect(jsonPath("$.thresholds.p0").value(80));
+
+        mockMvc.perform(post("/api/admin/marketing/editorial/priorities/recalculate")
+                        .header("Authorization", "Bearer " + userToken)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("{\"idempotencyKey\":\"security-editorial-priority\"}"))
+                .andExpect(status().isForbidden());
+
+        mockMvc.perform(put("/api/admin/marketing/editorial/priority-settings")
+                        .header("Authorization", "Bearer " + userToken)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("{\"settings\":{},\"idempotencyKey\":\"security-editorial-settings\"}"))
+                .andExpect(status().isForbidden());
     }
 
     @Test

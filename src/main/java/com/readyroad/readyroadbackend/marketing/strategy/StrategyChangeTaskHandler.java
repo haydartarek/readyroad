@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.readyroad.readyroadbackend.marketing.audit.MarketingAuditService;
 import com.readyroad.readyroadbackend.marketing.domain.AgentTask;
+import com.readyroad.readyroadbackend.marketing.editorial.EditorialPriorityTaskService;
 import com.readyroad.readyroadbackend.marketing.repository.AgentTaskRepository;
 import com.readyroad.readyroadbackend.marketing.strategy.domain.MarketingContentPillar;
 import com.readyroad.readyroadbackend.marketing.strategy.domain.MarketingConversionGoal;
@@ -41,6 +42,7 @@ public class StrategyChangeTaskHandler implements MarketingTaskHandler {
     private final StrategyChangeValidator validator;
     private final MarketingAuditService auditService;
     private final ObjectMapper objectMapper;
+    private final EditorialPriorityTaskService editorialPriorityTaskService;
 
     @Override
     public boolean supports(String agentType, String taskType) {
@@ -78,6 +80,7 @@ public class StrategyChangeTaskHandler implements MarketingTaskHandler {
                 objectMapper.createObjectNode()
                         .put("resourceType", type.name())
                         .put("resourceId", savedId));
+        editorialPriorityTaskService.enqueueAfterStrategyChange(task.getId());
     }
 
     private String saveUsp(String resourceId, JsonNode data, String actor) {

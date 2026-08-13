@@ -5,6 +5,7 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyList;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verifyNoInteractions;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -12,6 +13,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.readyroad.readyroadbackend.marketing.audit.ExecutionLogService;
 import com.readyroad.readyroadbackend.marketing.audit.MarketingAuditService;
 import com.readyroad.readyroadbackend.marketing.config.MarketingProperties;
+import com.readyroad.readyroadbackend.marketing.editorial.EditorialPriorityTaskService;
 import com.readyroad.readyroadbackend.marketing.task.MarketingTaskExecutionException;
 import java.time.LocalDate;
 import java.util.List;
@@ -27,11 +29,13 @@ class AnalyticsSyncServiceTest {
     private final AnalyticsSettingsService settings = mock(AnalyticsSettingsService.class);
     private final AnalyticsScheduleActivator schedules = mock(AnalyticsScheduleActivator.class);
     private final OrganicOpportunityService opportunities = mock(OrganicOpportunityService.class);
+    private final EditorialPriorityTaskService editorialPriorities = mock(EditorialPriorityTaskService.class);
     private final ExecutionLogService logs = mock(ExecutionLogService.class);
     private final MarketingAuditService audit = mock(MarketingAuditService.class);
     private final MarketingProperties properties = new MarketingProperties();
     private final AnalyticsSyncService service = new AnalyticsSyncService(
-            ga4, search, store, settings, schedules, opportunities, logs, audit, properties);
+            ga4, search, store, settings, schedules, opportunities, editorialPriorities,
+            logs, audit, properties);
 
     @BeforeEach
     void setUp() {
@@ -51,6 +55,7 @@ class AnalyticsSyncServiceTest {
 
         verify(store).saveReadyRoad(any(), any(), eq(42L), eq(List.of("GA4:HTTP_503")));
         verify(store).saveSearchConsole(any(), any(), eq(42L), eq(List.of("GA4:HTTP_503")));
+        verify(editorialPriorities).enqueueAfterAnalytics(eq(42L), any());
         verify(schedules).activateAfterSuccessfulSync(any());
     }
 
@@ -67,5 +72,6 @@ class AnalyticsSyncServiceTest {
                 .isEqualTo("HTTP_503");
 
         verify(store).saveReadyRoad(any(), any(), eq(43L), anyList());
+        verifyNoInteractions(editorialPriorities);
     }
 }
