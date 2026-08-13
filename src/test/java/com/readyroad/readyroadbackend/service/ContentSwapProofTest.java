@@ -91,11 +91,9 @@ public class ContentSwapProofTest {
         assertNotNull(dto.getCategoryId());
         assertEquals("Mathematics", dto.getCategoryNameEn());
 
-        // Assert - Options work (generic structure, sorted by displayOrder)
-        // System delivers max 3 options for EASY/MEDIUM questions (Belgian exam
-        // standard)
+        // Assert - Options work independently from difficulty and remain sorted.
         assertNotNull(dto.getOptions());
-        assertEquals(3, dto.getOptions().size());
+        assertEquals(4, dto.getOptions().size());
         // Options must be sorted by displayOrder
         for (int i = 1; i < dto.getOptions().size(); i++) {
             assertTrue(dto.getOptions().get(i - 1).getDisplayOrder() <= dto.getOptions().get(i).getDisplayOrder(),
