@@ -93,6 +93,16 @@ class MarketingAdminSecurityTest {
     }
 
     @Test
+    void protectsYouTubeAdminContractsWithTheExistingAdminBoundary() throws Exception {
+        mockMvc.perform(get("/api/admin/marketing/youtube/status"))
+                .andExpect(status().isUnauthorized());
+
+        mockMvc.perform(get("/api/admin/marketing/youtube/status")
+                        .header("Authorization", "Bearer " + userToken))
+                .andExpect(status().isForbidden());
+    }
+
+    @Test
     void allowsAdminAccessWithoutExposingPayloads() throws Exception {
         mockMvc.perform(get("/api/admin/marketing/infrastructure")
                         .header("Authorization", "Bearer " + adminToken))

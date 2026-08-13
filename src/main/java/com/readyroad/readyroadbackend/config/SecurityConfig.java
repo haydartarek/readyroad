@@ -157,6 +157,7 @@ public class SecurityConfig {
                                                 .requestMatchers(HttpMethod.GET, "/api/traffic-rules/**").permitAll()
                                                 .requestMatchers(HttpMethod.GET, "/api/search").permitAll()
                                                 .requestMatchers(HttpMethod.GET, "/api/home/stats").permitAll()
+                                                .requestMatchers(HttpMethod.GET, "/api/youtube/videos").permitAll()
 
                                                 // ═══════════════════════════════════════════════════════════
                                                 // PROTECTED ENDPOINTS (JWT Authentication Required)

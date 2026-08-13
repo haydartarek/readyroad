@@ -48,3 +48,10 @@ readyroad:
       ga4-account-id: ${MARKETING_GA4_ACCOUNT_ID:403159538}
       ga4-property-id: ${MARKETING_GA4_PROPERTY_ID:548176182}
       search-console-site-url: ${MARKETING_GSC_SITE_URL:sc-domain:readyroad.be}
+    youtube:
+      api-key: ${YOUTUBE_API_KEY:}
+      channel-handle: ${MARKETING_YOUTUBE_CHANNEL_HANDLE:@RijBewijsBe}
+      channel-id: ${MARKETING_YOUTUBE_CHANNEL_ID:UCs_IDQXCz6zADuHIdfS2C2w}
+      channel-url: ${MARKETING_YOUTUBE_CHANNEL_URL:https://www.youtube.com/@RijBewijsBe/featured}
+      monitoring-interval-hours: ${MARKETING_YOUTUBE_INTERVAL_HOURS:24}
+      page-size: ${MARKETING_YOUTUBE_PAGE_SIZE:13}
