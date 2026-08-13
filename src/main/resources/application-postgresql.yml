@@ -55,3 +55,14 @@ readyroad:
       channel-url: ${MARKETING_YOUTUBE_CHANNEL_URL:https://www.youtube.com/@RijBewijsBe/featured}
       monitoring-interval-hours: ${MARKETING_YOUTUBE_INTERVAL_HOURS:24}
       page-size: ${MARKETING_YOUTUBE_PAGE_SIZE:13}
+    content:
+      api-key: ${OPENAI_API_KEY:}
+      primary-model: ${MARKETING_CONTENT_PRIMARY_MODEL:gpt-5.6-terra}
+      review-model: ${MARKETING_CONTENT_REVIEW_MODEL:gpt-5.6-sol}
+      reasoning-effort: ${MARKETING_CONTENT_REASONING_EFFORT:medium}
+      max-output-tokens: ${MARKETING_CONTENT_MAX_OUTPUT_TOKENS:1200}
+      max-source-characters: ${MARKETING_CONTENT_MAX_SOURCE_CHARACTERS:6000}
+      max-title-characters: ${MARKETING_CONTENT_MAX_TITLE_CHARACTERS:140}
+      max-summary-characters: ${MARKETING_CONTENT_MAX_SUMMARY_CHARACTERS:360}
+      max-body-characters: ${MARKETING_CONTENT_MAX_BODY_CHARACTERS:1600}
+      max-cta-characters: ${MARKETING_CONTENT_MAX_CTA_CHARACTERS:180}

@@ -16,6 +16,7 @@ public class MarketingProperties {
     private Worker worker = new Worker();
     private Analytics analytics = new Analytics();
     private YouTube youtube = new YouTube();
+    private Content content = new Content();
 
     @Getter
     @Setter
@@ -43,5 +44,20 @@ public class MarketingProperties {
         private String channelUrl = "https://www.youtube.com/@RijBewijsBe/featured";
         private int monitoringIntervalHours = 24;
         private int pageSize = 13;
+    }
+
+    @Getter
+    @Setter
+    public static class Content {
+        private String apiKey;
+        private String primaryModel = "gpt-5.6-terra";
+        private String reviewModel = "gpt-5.6-sol";
+        private String reasoningEffort = "medium";
+        private long maxOutputTokens = 1_200;
+        private int maxSourceCharacters = 6_000;
+        private int maxTitleCharacters = 140;
+        private int maxSummaryCharacters = 360;
+        private int maxBodyCharacters = 1_600;
+        private int maxCtaCharacters = 180;
     }
 }
