@@ -5,6 +5,7 @@ import com.readyroad.readyroadbackend.marketing.audit.MarketingAuditService;
 import com.readyroad.readyroadbackend.marketing.config.MarketingProperties;
 import com.readyroad.readyroadbackend.marketing.domain.ExecutionLogLevel;
 import com.readyroad.readyroadbackend.marketing.editorial.EditorialPriorityTaskService;
+import com.readyroad.readyroadbackend.marketing.editorial.EditorialOpportunityDiscoveryService;
 import com.readyroad.readyroadbackend.marketing.task.MarketingTaskExecutionException;
 import java.time.Instant;
 import java.time.LocalDate;
@@ -27,6 +28,7 @@ public class AnalyticsSyncService {
     private final AnalyticsScheduleActivator scheduleActivator;
     private final OrganicOpportunityService opportunityService;
     private final EditorialPriorityTaskService editorialPriorityTaskService;
+    private final EditorialOpportunityDiscoveryService editorialOpportunityDiscoveryService;
     private final ExecutionLogService logService;
     private final MarketingAuditService auditService;
     private final MarketingProperties properties;
@@ -69,6 +71,7 @@ public class AnalyticsSyncService {
             opportunityService.analyze(end);
             warnIfDataIsLate(taskId, end, settings);
             editorialPriorityTaskService.enqueueAfterAnalytics(taskId, end);
+            editorialOpportunityDiscoveryService.enqueueCandidates(taskId);
         }
         if (!partialFailures.isEmpty()) {
             logService.record(

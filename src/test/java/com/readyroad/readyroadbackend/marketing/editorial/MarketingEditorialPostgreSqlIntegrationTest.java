@@ -4,6 +4,10 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.readyroad.readyroadbackend.marketing.approval.ApprovalService;
+import com.readyroad.readyroadbackend.marketing.domain.AgentTask;
+import com.readyroad.readyroadbackend.marketing.repository.AgentTaskRepository;
+import com.readyroad.readyroadbackend.marketing.task.ClaimedTask;
 import java.util.List;
 import javax.sql.DataSource;
 import org.junit.jupiter.api.BeforeEach;
@@ -45,12 +49,17 @@ class MarketingEditorialPostgreSqlIntegrationTest {
     @Autowired EditorialPriorityService priorityService;
     @Autowired EditorialPrioritySettingsService prioritySettingsService;
     @Autowired EditorialPriorityTaskService priorityTaskService;
+    @Autowired EditorialOpportunityDiscoveryService opportunityDiscoveryService;
+    @Autowired EditorialOpportunityTaskHandler opportunityTaskHandler;
+    @Autowired AgentTaskRepository taskRepository;
+    @Autowired ApprovalService approvalService;
     @Autowired ObjectMapper objectMapper;
 
     @BeforeEach
     void resetPriorityTestData() {
         JdbcTemplate jdbc = new JdbcTemplate(dataSource);
         jdbc.update("DELETE FROM article_priorities");
+        jdbc.update("DELETE FROM article_topics WHERE source_type = 'SEARCH_CONSOLE_OPPORTUNITY'");
         jdbc.update("""
                 UPDATE article_topics
                 SET article_priority = NULL, priority_reason = NULL,
@@ -60,6 +69,8 @@ class MarketingEditorialPostgreSqlIntegrationTest {
                 """);
         jdbc.update("DELETE FROM seo_content_gaps WHERE gap_key = 'editorial-priority-gap'");
         jdbc.update("DELETE FROM seo_opportunities WHERE opportunity_key = 'editorial-priority-test'");
+        jdbc.update("DELETE FROM seo_content_gaps WHERE gap_key LIKE 'editorial-discovery-%'");
+        jdbc.update("DELETE FROM seo_opportunities WHERE opportunity_key LIKE 'editorial-discovery-%'");
         jdbc.update("DELETE FROM audit_logs WHERE event_type = 'EDITORIAL_PRIORITIES_RECALCULATED'");
         jdbc.update("DELETE FROM agent_tasks WHERE agent_type = 'EDITORIAL'");
         jdbc.update("DELETE FROM marketing_conversion_goals WHERE goal_key = 'EDITORIAL_PRIORITY_TEST'");
@@ -249,5 +260,114 @@ class MarketingEditorialPostgreSqlIntegrationTest {
         assertThat(first.created()).isTrue();
         assertThat(duplicate.created()).isFalse();
         assertThat(duplicate.task().getId()).isEqualTo(first.task().getId());
+    }
+
+    @Test
+    void discoversOnlyEvidenceBackedTopicsAndCreatesThemAfterHumanApproval() {
+        JdbcTemplate jdbc = new JdbcTemplate(dataSource);
+        Long opportunityId = insertDiscoveryOpportunity(jdbc, "eligible", false, true);
+
+        assertThat(opportunityDiscoveryService.enqueueCandidates(null)).isOne();
+        assertThat(opportunityDiscoveryService.enqueueCandidates(null)).isZero();
+
+        AgentTask task = taskRepository
+                .findByAgentTypeAndTaskTypeAndIdempotencyKey(
+                        "EDITORIAL", "ARTICLE_OPPORTUNITY_DISCOVERY",
+                        "article-opportunity:" + opportunityId)
+                .orElseThrow();
+        assertThat(task.getStatus().name()).isEqualTo("WAITING_APPROVAL");
+        assertThat(task.isRequiresApproval()).isTrue();
+        assertThat(task.getApprovalMode().name()).isEqualTo("HUMAN_APPROVAL");
+        assertThat(task.getPayload().path("queryEvidencePresent").asBoolean()).isTrue();
+        assertThat(task.getPayload().path("legalCheckRequired").asBoolean()).isTrue();
+        assertThat(jdbc.queryForObject(
+                "SELECT count(*) FROM article_topics WHERE source_opportunity_id = ?",
+                Integer.class,
+                opportunityId)).isZero();
+
+        approvalService.approve(task.getId(), "owner-test", "Legal and human review passed");
+        AgentTask approved = taskRepository.findById(task.getId()).orElseThrow();
+        opportunityTaskHandler.execute(new ClaimedTask(
+                approved.getId(), approved.getAgentType(), approved.getTaskType(),
+                approved.getPayload(), approved.getPayloadVersion(), approved.getPriority(),
+                1, approved.getCorrelationId()));
+        opportunityTaskHandler.execute(new ClaimedTask(
+                approved.getId(), approved.getAgentType(), approved.getTaskType(),
+                approved.getPayload(), approved.getPayloadVersion(), approved.getPriority(),
+                2, approved.getCorrelationId()));
+
+        assertThat(jdbc.queryForObject(
+                "SELECT count(*) FROM article_topics WHERE source_opportunity_id = ?",
+                Integer.class,
+                opportunityId)).isOne();
+        assertThat(jdbc.queryForObject(
+                "SELECT official_backlog_order FROM article_topics WHERE source_opportunity_id = ?",
+                Integer.class,
+                opportunityId)).isEqualTo(41);
+        assertThat(jdbc.queryForObject(
+                "SELECT source_type FROM article_topics WHERE source_opportunity_id = ?",
+                String.class,
+                opportunityId)).isEqualTo("SEARCH_CONSOLE_OPPORTUNITY");
+        assertThat(jdbc.queryForObject(
+                "SELECT status FROM article_topics WHERE source_opportunity_id = ?",
+                String.class,
+                opportunityId)).isEqualTo("PLANNED");
+        assertThat(service.backlog().total()).isEqualTo(40);
+        assertThat(jdbc.queryForObject("SELECT count(*) FROM article_topics", Integer.class)).isEqualTo(41);
+        assertThat(jdbc.queryForObject("""
+                SELECT count(*) FROM agent_tasks
+                WHERE agent_type = 'EDITORIAL'
+                  AND task_type = 'EDITORIAL_PRIORITY_RECALCULATE'
+                  AND idempotency_key LIKE 'priority:ARTICLE_TOPIC_ADDED:%'
+                """, Integer.class)).isOne();
+    }
+
+    @Test
+    void rejectsCannibalizedMissingGapAndDuplicateTitleCandidates() {
+        JdbcTemplate jdbc = new JdbcTemplate(dataSource);
+        insertDiscoveryOpportunity(jdbc, "cannibalized", true, true);
+        insertDiscoveryOpportunity(jdbc, "missing-gap", false, false);
+        insertDiscoveryOpportunity(jdbc, "duplicate", false, true);
+        jdbc.update("""
+                UPDATE seo_opportunities
+                SET query = (SELECT working_title FROM article_topics WHERE official_backlog_order = 1)
+                WHERE opportunity_key = 'editorial-discovery-duplicate'
+                """);
+
+        assertThat(opportunityDiscoveryService.enqueueCandidates(null)).isZero();
+        assertThat(jdbc.queryForObject("""
+                SELECT count(*) FROM agent_tasks
+                WHERE task_type = 'ARTICLE_OPPORTUNITY_DISCOVERY'
+                """, Integer.class)).isZero();
+        assertThat(jdbc.queryForObject("SELECT count(*) FROM article_topics", Integer.class)).isEqualTo(40);
+    }
+
+    private static Long insertDiscoveryOpportunity(
+            JdbcTemplate jdbc, String suffix, boolean cannibalization, boolean contentGap) {
+        String key = "editorial-discovery-" + suffix;
+        String query = "Belgian driving theory discovery " + suffix;
+        Long id = jdbc.queryForObject("""
+                INSERT INTO seo_opportunities (
+                    opportunity_key, query, page, language, state, previous_state,
+                    brand_classification, long_tail, search_intent, relevance,
+                    cannibalization, impressions, clicks, ctr, average_position,
+                    trend, evidence, first_seen_at, last_seen_at
+                ) VALUES (?, ?, 'https://readyroad.be/lessons', 'EN', 'OPPORTUNITY', 'EMERGING',
+                          'NON_BRAND', TRUE, 'INFORMATIONAL', TRUE, ?,
+                          120, 8, 0.066, 9, 'IMPROVING',
+                          '{"hasHistoricalComparison":true}'::jsonb,
+                          CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
+                RETURNING id
+                """, Long.class, key, query, cannibalization);
+        if (contentGap) {
+            jdbc.update("""
+                    INSERT INTO seo_content_gaps (
+                        gap_key, query, language, search_intent, status,
+                        evidence, first_seen_at, last_seen_at
+                    ) VALUES (?, ?, 'EN', 'INFORMATIONAL', 'DISCOVERED', '{}'::jsonb,
+                              CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
+                    """, key, query);
+        }
+        return id;
     }
 }

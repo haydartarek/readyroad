@@ -14,6 +14,7 @@ import com.readyroad.readyroadbackend.marketing.audit.ExecutionLogService;
 import com.readyroad.readyroadbackend.marketing.audit.MarketingAuditService;
 import com.readyroad.readyroadbackend.marketing.config.MarketingProperties;
 import com.readyroad.readyroadbackend.marketing.editorial.EditorialPriorityTaskService;
+import com.readyroad.readyroadbackend.marketing.editorial.EditorialOpportunityDiscoveryService;
 import com.readyroad.readyroadbackend.marketing.task.MarketingTaskExecutionException;
 import java.time.LocalDate;
 import java.util.List;
@@ -30,11 +31,14 @@ class AnalyticsSyncServiceTest {
     private final AnalyticsScheduleActivator schedules = mock(AnalyticsScheduleActivator.class);
     private final OrganicOpportunityService opportunities = mock(OrganicOpportunityService.class);
     private final EditorialPriorityTaskService editorialPriorities = mock(EditorialPriorityTaskService.class);
+    private final EditorialOpportunityDiscoveryService editorialOpportunities =
+            mock(EditorialOpportunityDiscoveryService.class);
     private final ExecutionLogService logs = mock(ExecutionLogService.class);
     private final MarketingAuditService audit = mock(MarketingAuditService.class);
     private final MarketingProperties properties = new MarketingProperties();
     private final AnalyticsSyncService service = new AnalyticsSyncService(
             ga4, search, store, settings, schedules, opportunities, editorialPriorities,
+            editorialOpportunities,
             logs, audit, properties);
 
     @BeforeEach
@@ -56,6 +60,7 @@ class AnalyticsSyncServiceTest {
         verify(store).saveReadyRoad(any(), any(), eq(42L), eq(List.of("GA4:HTTP_503")));
         verify(store).saveSearchConsole(any(), any(), eq(42L), eq(List.of("GA4:HTTP_503")));
         verify(editorialPriorities).enqueueAfterAnalytics(eq(42L), any());
+        verify(editorialOpportunities).enqueueCandidates(42L);
         verify(schedules).activateAfterSuccessfulSync(any());
     }
 
@@ -73,5 +78,6 @@ class AnalyticsSyncServiceTest {
 
         verify(store).saveReadyRoad(any(), any(), eq(43L), anyList());
         verifyNoInteractions(editorialPriorities);
+        verifyNoInteractions(editorialOpportunities);
     }
 }
