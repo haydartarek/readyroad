@@ -8,6 +8,7 @@ import java.util.List;
  */
 public record AdminQuizQuestionResponse(
                 Long id,
+                Long version,
                 String categoryCode,
                 String categoryNameEn,
                 String difficultyLevel,

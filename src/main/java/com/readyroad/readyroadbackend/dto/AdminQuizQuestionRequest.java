@@ -18,6 +18,9 @@ import java.util.List;
 @AllArgsConstructor
 public class AdminQuizQuestionRequest {
 
+    /** Required for updates so a stale Admin form cannot overwrite newer content. */
+    private Long version;
+
     @NotBlank(message = "Category code is required")
     @Size(max = 10)
     private String categoryCode;

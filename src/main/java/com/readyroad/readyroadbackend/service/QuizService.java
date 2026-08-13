@@ -217,14 +217,9 @@ public class QuizService {
         }
 
         int optionCount = question.getDeliverableOptions().size();
-        int expectedCount = question.getExpectedOptionCount();
         if (optionCount < 2 || optionCount > 3) {
             throw new BelgianComplianceException(
                     messages.get("quiz.compliance.options_range", optionCount));
-        }
-        if (question.getDifficultyLevel() == QuizQuestion.DifficultyLevel.HARD && optionCount != expectedCount) {
-            throw new BelgianComplianceException(
-                    messages.get("quiz.compliance.hard_exact", expectedCount, optionCount));
         }
 
         log.debug("✅ Question {} validated: {} options (compliant)",
@@ -243,8 +238,7 @@ public class QuizService {
             return false;
         }
         int count = question.getDeliverableOptions().size();
-        return count >= 2 && count <= 3
-                && (question.getDifficultyLevel() != QuizQuestion.DifficultyLevel.HARD || count == 2);
+        return count >= 2 && count <= 3;
     }
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -316,11 +310,11 @@ public class QuizService {
                         option.getOptionTextEn(), option.getOptionTextNl(),
                         option.getOptionTextFr(), option.getOptionTextAr()))
                 .count();
-        if (validCount < 2) {
-            log.warn("⚠️ Question {} excluded from pool: only {} valid option(s) after placeholder check",
+        if (validCount < 2 || validCount > 3) {
+            log.warn("⚠️ Question {} excluded from pool: {} valid option(s), expected 2-3",
                     question.getId(), validCount);
         }
-        return validCount >= 2;
+        return validCount >= 2 && validCount <= 3;
     }
 
     /**

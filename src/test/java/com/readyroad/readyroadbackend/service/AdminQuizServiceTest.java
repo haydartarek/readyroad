@@ -21,6 +21,7 @@ import com.readyroad.readyroadbackend.domain.repository.QuizQuestionRepository;
 import com.readyroad.readyroadbackend.domain.repository.QuizUserAnswerRepository;
 import com.readyroad.readyroadbackend.domain.repository.UserQuestionHistoryRepository;
 import com.readyroad.readyroadbackend.dto.AdminQuizQuestionRequest;
+import com.readyroad.readyroadbackend.marketing.audit.MarketingAuditService;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -42,6 +43,7 @@ class AdminQuizServiceTest {
     @Mock private QuizUserAnswerRepository userAnswerRepository;
     @Mock private UserQuestionHistoryRepository historyRepository;
     @Mock private BackendMessageService messages;
+    @Mock private MarketingAuditService auditService;
 
     private AdminQuizService service;
 
@@ -53,7 +55,8 @@ class AdminQuizServiceTest {
                 categoryRepository,
                 userAnswerRepository,
                 historyRepository,
-                messages);
+                messages,
+                auditService);
         lenient().when(messages.get(anyString(), any(Object[].class)))
                 .thenAnswer(invocation -> invocation.getArgument(0));
     }
@@ -257,6 +260,22 @@ class AdminQuizServiceTest {
     }
 
     @Test
+    void rejectsStaleAdminEditBeforeMutatingTheQuestion() {
+        QuizQuestion question = existingQuestion(2);
+        question.setVersion(4L);
+        when(questionRepository.findByIdForUpdate(7L)).thenReturn(Optional.of(question));
+        AdminQuizQuestionRequest request = requestFrom(question);
+        request.setVersion(3L);
+
+        assertThatThrownBy(() -> service.updateQuestion(7L, request))
+                .isInstanceOf(IllegalStateException.class)
+                .hasMessage("admin.quiz.edit_conflict");
+
+        verify(questionRepository, never()).flush();
+        assertThat(question.getQuestionEn()).isEqualTo("What does this sign mean?");
+    }
+
+    @Test
     void rejectsMalformedImageBeforeDatabaseAccess() {
         AdminQuizQuestionRequest request = validRequest();
         request.setContentImageUrl("javascript:alert(1)");
@@ -293,18 +312,17 @@ class AdminQuizServiceTest {
     }
 
     @Test
-    void rejectsDifficultyAndOptionCountMismatches() {
+    void allowsAdminDifficultyIndependentOfTwoOrThreeOptionCount() {
+        when(categoryRepository.findByCode("A")).thenReturn(Optional.of(category()));
+        when(questionRepository.save(any(QuizQuestion.class))).thenAnswer(invocation -> invocation.getArgument(0));
+
         AdminQuizQuestionRequest easyWithTwo = validRequest();
         easyWithTwo.setDifficultyLevel("EASY");
-        assertThatThrownBy(() -> service.createQuestion(easyWithTwo))
-                .isInstanceOf(IllegalArgumentException.class)
-                .hasMessage("admin.quiz.difficulty_option_mismatch");
+        assertThat(service.createQuestion(easyWithTwo).difficultyLevel()).isEqualTo("EASY");
 
         AdminQuizQuestionRequest hardWithThree = validRequest();
         hardWithThree.getOptions().add(option(null, "Third", false, 3));
-        assertThatThrownBy(() -> service.createQuestion(hardWithThree))
-                .isInstanceOf(IllegalArgumentException.class)
-                .hasMessage("admin.quiz.difficulty_option_mismatch");
+        assertThat(service.createQuestion(hardWithThree).difficultyLevel()).isEqualTo("HARD");
     }
 
     private void assertRejectedOptions(List<AdminQuizQuestionRequest.OptionDTO> options, String message) {
@@ -337,6 +355,7 @@ class AdminQuizServiceTest {
 
     private AdminQuizQuestionRequest requestFrom(QuizQuestion question) {
         AdminQuizQuestionRequest request = validRequest();
+        request.setVersion(question.getVersion());
         request.setQuestionEn(question.getQuestionEn());
         request.setQuestionAr(question.getQuestionAr());
         request.setQuestionNl(question.getQuestionNl());
@@ -359,6 +378,7 @@ class AdminQuizServiceTest {
     private QuizQuestion existingQuestion(int optionCount) {
         QuizQuestion question = new QuizQuestion();
         question.setId(7L);
+        question.setVersion(0L);
         question.setCategory(category());
         question.setDifficultyLevel(optionCount == 2
                 ? QuizQuestion.DifficultyLevel.HARD

@@ -112,6 +112,10 @@ public class QuizQuestion extends BaseEntity {
     @Column(name = "published_at")
     private LocalDateTime publishedAt;
 
+    @Version
+    @Column(nullable = false)
+    private Long version;
+
     @OneToMany(mappedBy = "question", cascade = CascadeType.ALL, orphanRemoval = true)
     @BelgianOptionsCount // Story D1: Belgian compliance - 2-3 options
     private List<QuizAnswerOption> options = new ArrayList<>();
@@ -156,17 +160,11 @@ public class QuizQuestion extends BaseEntity {
     }
 
     @Transient
-    public int getExpectedOptionCount() {
-        return difficultyLevel == DifficultyLevel.HARD ? 2 : 3;
-    }
-
-    @Transient
     public List<QuizAnswerOption> getDeliverableOptions() {
         return getActiveOptions().stream()
                 .sorted(Comparator.comparing(
                         QuizAnswerOption::getDisplayOrder,
                         Comparator.nullsLast(Integer::compareTo)))
-                .limit(getExpectedOptionCount())
                 .toList();
     }
 

@@ -2,6 +2,7 @@ package com.readyroad.readyroadbackend.controller;
 
 import com.readyroad.readyroadbackend.domain.entity.User;
 import com.readyroad.readyroadbackend.domain.entity.QuizQuestion;
+import com.readyroad.readyroadbackend.dto.AdminQuizQuestionRequest;
 import com.readyroad.readyroadbackend.domain.enums.Role;
 import com.readyroad.readyroadbackend.domain.repository.ExamSimulationRepository;
 import com.readyroad.readyroadbackend.domain.repository.QuizQuestionRepository;
@@ -114,6 +115,17 @@ class AdminControllerTest {
                 .anyMatch(path -> path.contains("shuffle-answer-order"));
 
         assertThat(shuffleEndpointExists).isFalse();
+    }
+
+    @Test
+    void staleQuizQuestionEditReturnsConflict() {
+        AdminQuizQuestionRequest request = new AdminQuizQuestionRequest();
+        when(adminQuizService.updateQuestion(7L, request))
+                .thenThrow(new IllegalStateException("stale edit"));
+
+        var response = adminController.updateQuizQuestion(7L, request);
+
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.CONFLICT);
     }
 
     @Test

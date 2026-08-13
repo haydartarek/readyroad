@@ -1,8 +1,11 @@
 package com.readyroad.readyroadbackend.service;
 
+import com.fasterxml.jackson.databind.node.JsonNodeFactory;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.readyroad.readyroadbackend.domain.entity.Category;
 import com.readyroad.readyroadbackend.domain.entity.QuizAnswerOption;
 import com.readyroad.readyroadbackend.domain.entity.QuizQuestion;
+import com.readyroad.readyroadbackend.domain.entity.User;
 import com.readyroad.readyroadbackend.domain.enums.CategoryContentScope;
 import com.readyroad.readyroadbackend.domain.repository.CategoryRepository;
 import com.readyroad.readyroadbackend.domain.repository.QuizAnswerOptionRepository;
@@ -15,6 +18,7 @@ import com.readyroad.readyroadbackend.dto.response.AdminQuizCategoryResponse;
 import com.readyroad.readyroadbackend.dto.response.CorrectAnswerDistributionResponse;
 import com.readyroad.readyroadbackend.util.DrivingTextSanitizer;
 import com.readyroad.readyroadbackend.dto.response.PageResponse;
+import com.readyroad.readyroadbackend.marketing.audit.MarketingAuditService;
 import com.readyroad.readyroadbackend.util.PlaceholderDetector;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -59,6 +63,7 @@ public class AdminQuizService {
     private final QuizUserAnswerRepository userAnswerRepository;
     private final UserQuestionHistoryRepository historyRepository;
     private final BackendMessageService messages;
+    private final MarketingAuditService auditService;
 
     private static final List<String> ALLOWED_SORT_FIELDS = List.of(
             "id", "questionEn", "questionAr", "difficultyLevel",
@@ -172,6 +177,7 @@ public class AdminQuizService {
         QuizQuestion question = questionRepository.findByIdForUpdate(id)
                 .orElseThrow(() -> new IllegalArgumentException(messages.get("admin.quiz.not_found", id)));
         question.getOptions().size();
+        validateVersion(question, request.getVersion());
         validateRequestedOptionIds(question, request.getOptions());
         QuizUpdateAudit audit = captureAudit(question, request);
 
@@ -227,6 +233,7 @@ public class AdminQuizService {
         }
 
         questionRepository.flush();
+        persistAudit(audit, question);
         auditAfterCommit(audit);
         return toResponse(question);
     }
@@ -258,15 +265,7 @@ public class AdminQuizService {
         if (count < 2 || count > 3) {
             throw new IllegalArgumentException(messages.get("admin.quiz.options_count", count));
         }
-        QuizQuestion.DifficultyLevel difficulty = parseDifficultyOrDefault(request.getDifficultyLevel());
-        boolean compatible = (count == 2 && difficulty == QuizQuestion.DifficultyLevel.HARD)
-                || (count == 3 && difficulty != QuizQuestion.DifficultyLevel.HARD);
-        if (!compatible) {
-            throw new IllegalArgumentException(messages.get(
-                    "admin.quiz.difficulty_option_mismatch",
-                    difficulty.name(),
-                    count));
-        }
+        parseDifficultyOrDefault(request.getDifficultyLevel());
 
         long correctCount = options.stream()
                 .filter(o -> Boolean.TRUE.equals(o.getIsCorrect()))
@@ -345,6 +344,12 @@ public class AdminQuizService {
             if (!requestedIds.add(optionId) || !activeOptionIds.contains(optionId)) {
                 throw new IllegalArgumentException(messages.get("admin.quiz.option_not_owned", optionId));
             }
+        }
+    }
+
+    private void validateVersion(QuizQuestion question, Long requestedVersion) {
+        if (requestedVersion == null || !Objects.equals(question.getVersion(), requestedVersion)) {
+            throw new IllegalStateException(messages.get("admin.quiz.edit_conflict"));
         }
     }
 
@@ -456,14 +461,17 @@ public class AdminQuizService {
                 : oldImage.isEmpty() ? "ADDED"
                 : newImage.isEmpty() ? "REMOVED" : "REPLACED";
 
+        AdminActor actor = currentAdmin();
         return new QuizUpdateAudit(
-                currentAdmin(),
+                actor.actor(),
+                actor.adminId(),
                 question.getId(),
                 List.copyOf(changedFields),
                 correctChanged,
                 added,
                 removed,
                 imageAction,
+                summarize(question),
                 LocalDateTime.now());
     }
 
@@ -492,11 +500,68 @@ public class AdminQuizService {
                 });
     }
 
-    private String currentAdmin() {
+    private AdminActor currentAdmin() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        return authentication != null && authentication.isAuthenticated()
-                ? authentication.getName()
-                : "system";
+        if (authentication != null && authentication.isAuthenticated()) {
+            if (authentication.getPrincipal() instanceof User user) {
+                return new AdminActor(user.getId(), authentication.getName());
+            }
+            return new AdminActor(null, authentication.getName());
+        }
+        return new AdminActor(null, "system");
+    }
+
+    private QuizAuditSummary summarize(QuizQuestion question) {
+        List<QuizAnswerOption> activeOptions = question.getActiveOptions();
+        Long correctOptionId = activeOptions.stream()
+                .filter(option -> Boolean.TRUE.equals(option.getIsCorrect()))
+                .map(QuizAnswerOption::getId)
+                .findFirst()
+                .orElse(null);
+        return new QuizAuditSummary(
+                question.getVersion(),
+                question.getCategory() != null ? question.getCategory().getCode() : null,
+                question.getDifficultyLevel() != null ? question.getDifficultyLevel().name() : null,
+                question.getIsActive(),
+                imageState(question.getContentImageUrl()),
+                textLengths(question.getQuestionEn(), question.getQuestionAr(), question.getQuestionNl(), question.getQuestionFr()),
+                textLengths(question.getExplanationEn(), question.getExplanationAr(), question.getExplanationNl(), question.getExplanationFr()),
+                activeOptions.stream().map(QuizAnswerOption::getId).filter(Objects::nonNull).toList(),
+                correctOptionId);
+    }
+
+    private Map<String, Integer> textLengths(String en, String ar, String nl, String fr) {
+        return Map.of(
+                "en", normalize(en).length(),
+                "ar", normalize(ar).length(),
+                "nl", normalize(nl).length(),
+                "fr", normalize(fr).length());
+    }
+
+    private String imageState(String value) {
+        return isBlank(value) ? "ABSENT" : "PRESENT";
+    }
+
+    private void persistAudit(QuizUpdateAudit audit, QuizQuestion question) {
+        ObjectNode details = JsonNodeFactory.instance.objectNode();
+        if (audit.adminId() != null) {
+            details.put("adminId", audit.adminId());
+        }
+        details.putPOJO("fieldsChanged", audit.changedFields());
+        details.putPOJO("oldValueSummary", audit.oldSummary());
+        details.putPOJO("newValueSummary", summarize(question));
+        details.put("correctAnswerChanged", audit.correctAnswerChanged());
+        details.put("optionsAdded", audit.optionsAdded());
+        details.put("optionsArchived", audit.optionsArchived());
+        details.put("imageAction", audit.imageAction());
+        auditService.recordEntityEvent(
+                "ADMIN_QUIZ_UPDATED",
+                audit.adminUser(),
+                "QUIZ_QUESTION",
+                String.valueOf(audit.questionId()),
+                null,
+                null,
+                details);
     }
 
     private void auditAfterCommit(QuizUpdateAudit audit) {
@@ -588,6 +653,7 @@ public class AdminQuizService {
 
         return new AdminQuizQuestionResponse(
                 q.getId(),
+                q.getVersion(),
                 q.getCategory() != null ? q.getCategory().getCode() : null,
                 q.getCategory() != null ? q.getCategory().getNameEn() : null,
                 q.getDifficultyLevel() != null ? q.getDifficultyLevel().name() : null,
@@ -656,12 +722,29 @@ public class AdminQuizService {
 
     private record QuizUpdateAudit(
             String adminUser,
+            Long adminId,
             Long questionId,
             List<String> changedFields,
             boolean correctAnswerChanged,
             int optionsAdded,
             int optionsArchived,
             String imageAction,
+            QuizAuditSummary oldSummary,
             LocalDateTime timestamp) {
+    }
+
+    private record AdminActor(Long adminId, String actor) {
+    }
+
+    private record QuizAuditSummary(
+            Long version,
+            String categoryCode,
+            String difficultyLevel,
+            Boolean active,
+            String imageState,
+            Map<String, Integer> questionTextLengths,
+            Map<String, Integer> explanationTextLengths,
+            List<Long> activeOptionIds,
+            Long correctOptionId) {
     }
 }
