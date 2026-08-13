@@ -2,6 +2,7 @@ package com.readyroad.readyroadbackend.marketing.content;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static org.assertj.core.api.Assertions.catchThrowable;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
@@ -19,6 +20,7 @@ import com.openai.services.blocking.ResponseService;
 import com.readyroad.readyroadbackend.marketing.config.MarketingProperties;
 import java.util.List;
 import java.util.Optional;
+import java.net.SocketException;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;
 import org.springframework.test.util.ReflectionTestUtils;
@@ -81,13 +83,15 @@ class OpenAIResponsesContentGeneratorTest {
         ResponseService responses = mock(ResponseService.class);
         when(client.responses()).thenReturn(responses);
         when(responses.create(any(StructuredResponseCreateParams.class)))
-                .thenThrow(new OpenAIIoException("test-only I/O failure"));
+                .thenThrow(new OpenAIIoException("test-only I/O failure", new SocketException("test-only")));
         var generator = new OpenAIResponsesContentGenerator(properties, client);
 
-        assertThatThrownBy(() -> generator.generate(ContentTestFixtures.generationRequest(ContentLocale.EN)))
+        Throwable failure = catchThrowable(
+                () -> generator.generate(ContentTestFixtures.generationRequest(ContentLocale.EN)));
+        assertThat(failure)
                 .isInstanceOf(OpenAIContentGenerationException.class)
-                .extracting(error -> ((OpenAIContentGenerationException) error).errorCode())
-                .isEqualTo("NETWORK_INTERRUPTION");
+                .hasMessageContaining("SocketException");
+        assertThat(((OpenAIContentGenerationException) failure).errorCode()).isEqualTo("NETWORK_INTERRUPTION");
         assertThat(ReflectionTestUtils.getField(generator, "client")).isNull();
     }
 

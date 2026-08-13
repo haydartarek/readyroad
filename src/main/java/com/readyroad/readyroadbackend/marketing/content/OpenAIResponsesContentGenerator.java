@@ -85,7 +85,8 @@ public class OpenAIResponsesContentGenerator implements ContentGenerationClient 
             throw serviceFailure(serviceError);
         } catch (OpenAIIoException ioError) {
             invalidate(activeClient);
-            throw new OpenAIContentGenerationException("NETWORK_INTERRUPTION", "OpenAI request failed");
+            throw new OpenAIContentGenerationException(
+                    "NETWORK_INTERRUPTION", "OpenAI request failed (" + rootCauseType(ioError) + ")");
         } catch (OpenAIInvalidDataException invalidData) {
             throw new OpenAIContentGenerationException(
                     "MALFORMED_STRUCTURED_OUTPUT", "OpenAI returned an invalid structured response");
@@ -100,6 +101,15 @@ public class OpenAIResponsesContentGenerator implements ContentGenerationClient 
                 client = null;
             }
         }
+    }
+
+    private static String rootCauseType(Throwable error) {
+        Throwable current = error;
+        while (current.getCause() != null && current.getCause() != current) {
+            current = current.getCause();
+        }
+        String name = current.getClass().getSimpleName();
+        return name.isBlank() ? "UnknownIoFailure" : name;
     }
 
     private OpenAIClient client() {
