@@ -1,5 +1,8 @@
 package com.readyroad.readyroadbackend.marketing.content;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.openai.client.OpenAIClient;
 import com.openai.client.okhttp.OpenAIOkHttpClient;
 import com.openai.errors.OpenAIException;
@@ -9,11 +12,10 @@ import com.openai.errors.OpenAIServiceException;
 import com.openai.models.Reasoning;
 import com.openai.models.ReasoningEffort;
 import com.openai.models.responses.ResponseCreateParams;
-import com.openai.models.responses.ResponseUsage;
-import com.openai.models.responses.StructuredResponse;
 import com.openai.models.responses.StructuredResponseCreateParams;
 import com.readyroad.readyroadbackend.marketing.config.MarketingProperties;
 import com.readyroad.readyroadbackend.marketing.strategy.MarketingStrategyContext;
+import java.io.IOException;
 import java.time.Duration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -31,15 +33,24 @@ public class OpenAIResponsesContentGenerator implements ContentGenerationClient 
             """;
 
     private final MarketingProperties properties;
+    private final ObjectMapper objectMapper;
     private volatile OpenAIClient client;
 
     @Autowired
-    public OpenAIResponsesContentGenerator(MarketingProperties properties) {
-        this(properties, null);
+    public OpenAIResponsesContentGenerator(MarketingProperties properties, ObjectMapper objectMapper) {
+        this(properties, objectMapper, null);
     }
 
     OpenAIResponsesContentGenerator(MarketingProperties properties, OpenAIClient client) {
+        this(properties, new ObjectMapper(), client);
+    }
+
+    OpenAIResponsesContentGenerator(
+            MarketingProperties properties,
+            ObjectMapper objectMapper,
+            OpenAIClient client) {
         this.properties = properties;
+        this.objectMapper = objectMapper;
         this.client = client;
     }
 
@@ -59,15 +70,9 @@ public class OpenAIResponsesContentGenerator implements ContentGenerationClient 
                 .build();
         OpenAIClient activeClient = client();
         try {
-            StructuredResponse<OpenAIStructuredContent> response = activeClient.responses().create(params);
-            OpenAIStructuredContent output = response.output().stream()
-                    .flatMap(item -> item.message().stream())
-                    .flatMap(message -> message.content().stream())
-                    .flatMap(content -> content.outputText().stream())
-                    .findFirst()
-                    .orElseThrow(() -> new OpenAIContentGenerationException(
-                            "MALFORMED_STRUCTURED_OUTPUT", "OpenAI returned no structured content"));
-            ResponseUsage usage = response.usage().orElse(null);
+            JsonNode response = response(activeClient, params.rawParams());
+            String outputText = outputText(response);
+            OpenAIStructuredContent output = parse(outputText);
             return new GeneratedContent(
                     output.language,
                     output.sourceReference,
@@ -75,9 +80,9 @@ public class OpenAIResponsesContentGenerator implements ContentGenerationClient 
                     output.summary,
                     output.body,
                     output.cta,
-                    response.model().asString(),
-                    usage == null ? 0 : usage.inputTokens(),
-                    usage == null ? 0 : usage.outputTokens(),
+                    response.path("model").asText(properties.getContent().getPrimaryModel()),
+                    response.path("usage").path("input_tokens").asLong(0),
+                    response.path("usage").path("output_tokens").asLong(0),
                     "SUCCEEDED");
         } catch (OpenAIContentGenerationException expected) {
             throw expected;
@@ -92,6 +97,48 @@ public class OpenAIResponsesContentGenerator implements ContentGenerationClient 
                     "MALFORMED_STRUCTURED_OUTPUT", "OpenAI returned an invalid structured response");
         } catch (OpenAIException clientError) {
             throw new OpenAIContentGenerationException("OPENAI_CLIENT_FAILURE", "OpenAI client request failed");
+        }
+    }
+
+    private JsonNode response(OpenAIClient activeClient, ResponseCreateParams params) {
+        try (var raw = activeClient.responses().withRawResponse().create(params)) {
+            if (raw.statusCode() < 200 || raw.statusCode() >= 300) {
+                throw serviceFailure(raw.statusCode());
+            }
+            return objectMapper.readTree(raw.body());
+        } catch (OpenAIContentGenerationException expected) {
+            throw expected;
+        } catch (JsonProcessingException invalidBody) {
+            throw new OpenAIContentGenerationException(
+                    "MALFORMED_STRUCTURED_OUTPUT", "OpenAI returned an unreadable response body");
+        } catch (IOException interruptedBody) {
+            invalidate(activeClient);
+            throw new OpenAIContentGenerationException(
+                    "NETWORK_INTERRUPTION", "OpenAI response body failed (" + rootCauseType(interruptedBody) + ")");
+        }
+    }
+
+    private static String outputText(JsonNode response) {
+        for (JsonNode output : response.path("output")) {
+            if (!"message".equals(output.path("type").asText())) {
+                continue;
+            }
+            for (JsonNode content : output.path("content")) {
+                if ("output_text".equals(content.path("type").asText()) && content.path("text").isTextual()) {
+                    return content.path("text").asText();
+                }
+            }
+        }
+        throw new OpenAIContentGenerationException(
+                "MALFORMED_STRUCTURED_OUTPUT", "OpenAI returned no structured content");
+    }
+
+    private OpenAIStructuredContent parse(String outputText) {
+        try {
+            return objectMapper.readValue(outputText, OpenAIStructuredContent.class);
+        } catch (JsonProcessingException invalidJson) {
+            throw new OpenAIContentGenerationException(
+                    "MALFORMED_STRUCTURED_OUTPUT", "OpenAI returned invalid structured JSON");
         }
     }
 
@@ -137,16 +184,20 @@ public class OpenAIResponsesContentGenerator implements ContentGenerationClient 
     }
 
     private static OpenAIContentGenerationException serviceFailure(OpenAIServiceException error) {
-        String code = switch (error.statusCode()) {
+        return serviceFailure(error.statusCode());
+    }
+
+    private static OpenAIContentGenerationException serviceFailure(int statusCode) {
+        String code = switch (statusCode) {
             case 429 -> "HTTP_429";
             case 502 -> "HTTP_502";
             case 503 -> "HTTP_503";
             case 504 -> "HTTP_504";
             case 401, 403 -> "INVALID_API_KEY";
             case 400 -> "OPENAI_VALIDATION_FAILURE";
-            default -> "OPENAI_HTTP_" + error.statusCode();
+            default -> "OPENAI_HTTP_" + statusCode;
         };
-        return new OpenAIContentGenerationException(code, "OpenAI request failed with HTTP " + error.statusCode());
+        return new OpenAIContentGenerationException(code, "OpenAI request failed with HTTP " + statusCode);
     }
 
     private static String prompt(GenerationRequest request) {
