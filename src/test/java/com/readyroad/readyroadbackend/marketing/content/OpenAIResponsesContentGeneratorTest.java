@@ -1,11 +1,14 @@
 package com.readyroad.readyroadbackend.marketing.content;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 import com.openai.client.OpenAIClient;
+import com.openai.errors.OpenAIIoException;
+import com.openai.errors.OpenAIInvalidDataException;
 import com.openai.models.ResponsesModel;
 import com.openai.models.responses.ResponseUsage;
 import com.openai.models.responses.StructuredResponse;
@@ -18,6 +21,7 @@ import java.util.List;
 import java.util.Optional;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;
+import org.springframework.test.util.ReflectionTestUtils;
 
 class OpenAIResponsesContentGeneratorTest {
 
@@ -68,5 +72,44 @@ class OpenAIResponsesContentGeneratorTest {
         assertThat(captor.getValue().rawParams().reasoning()).isPresent();
         assertThat(captor.getValue().rawParams().reasoning().orElseThrow().effort().orElseThrow().asString())
                 .isEqualTo("medium");
+    }
+
+    @Test
+    void invalidatesTheCachedClientAfterIoFailureSoUnifiedRetryCanReconnect() {
+        MarketingProperties properties = configuredProperties();
+        OpenAIClient client = mock(OpenAIClient.class);
+        ResponseService responses = mock(ResponseService.class);
+        when(client.responses()).thenReturn(responses);
+        when(responses.create(any(StructuredResponseCreateParams.class)))
+                .thenThrow(new OpenAIIoException("test-only I/O failure"));
+        var generator = new OpenAIResponsesContentGenerator(properties, client);
+
+        assertThatThrownBy(() -> generator.generate(ContentTestFixtures.generationRequest(ContentLocale.EN)))
+                .isInstanceOf(OpenAIContentGenerationException.class)
+                .extracting(error -> ((OpenAIContentGenerationException) error).errorCode())
+                .isEqualTo("NETWORK_INTERRUPTION");
+        assertThat(ReflectionTestUtils.getField(generator, "client")).isNull();
+    }
+
+    @Test
+    void classifiesInvalidSdkDataAsNonNetworkStructuredOutputFailure() {
+        MarketingProperties properties = configuredProperties();
+        OpenAIClient client = mock(OpenAIClient.class);
+        ResponseService responses = mock(ResponseService.class);
+        when(client.responses()).thenReturn(responses);
+        when(responses.create(any(StructuredResponseCreateParams.class)))
+                .thenThrow(new OpenAIInvalidDataException("test-only invalid data"));
+        var generator = new OpenAIResponsesContentGenerator(properties, client);
+
+        assertThatThrownBy(() -> generator.generate(ContentTestFixtures.generationRequest(ContentLocale.EN)))
+                .isInstanceOf(OpenAIContentGenerationException.class)
+                .extracting(error -> ((OpenAIContentGenerationException) error).errorCode())
+                .isEqualTo("MALFORMED_STRUCTURED_OUTPUT");
+    }
+
+    private static MarketingProperties configuredProperties() {
+        MarketingProperties properties = new MarketingProperties();
+        properties.getContent().setApiKey("test-only-key");
+        return properties;
     }
 }

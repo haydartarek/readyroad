@@ -44,4 +44,9 @@ final class ContentTestFixtures {
                 "Educational body " + locale, "Continue " + locale,
                 "gpt-5.6-terra", 100, 50, "SUCCEEDED");
     }
+
+    static ContentGenerationClient.GenerationRequest generationRequest(ContentLocale locale) {
+        VerifiedContentSource source = source();
+        return new ContentGenerationClient.GenerationRequest(locale, source, source.factsFor(locale), strategy());
+    }
 }

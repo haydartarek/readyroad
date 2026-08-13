@@ -3,6 +3,8 @@ package com.readyroad.readyroadbackend.marketing.content;
 import com.openai.client.OpenAIClient;
 import com.openai.client.okhttp.OpenAIOkHttpClient;
 import com.openai.errors.OpenAIException;
+import com.openai.errors.OpenAIIoException;
+import com.openai.errors.OpenAIInvalidDataException;
 import com.openai.errors.OpenAIServiceException;
 import com.openai.models.Reasoning;
 import com.openai.models.ReasoningEffort;
@@ -55,8 +57,9 @@ public class OpenAIResponsesContentGenerator implements ContentGenerationClient 
                 .text(OpenAIStructuredContent.class)
                 .model(properties.getContent().getPrimaryModel())
                 .build();
+        OpenAIClient activeClient = client();
         try {
-            StructuredResponse<OpenAIStructuredContent> response = client().responses().create(params);
+            StructuredResponse<OpenAIStructuredContent> response = activeClient.responses().create(params);
             OpenAIStructuredContent output = response.output().stream()
                     .flatMap(item -> item.message().stream())
                     .flatMap(message -> message.content().stream())
@@ -80,8 +83,22 @@ public class OpenAIResponsesContentGenerator implements ContentGenerationClient 
             throw expected;
         } catch (OpenAIServiceException serviceError) {
             throw serviceFailure(serviceError);
-        } catch (OpenAIException clientError) {
+        } catch (OpenAIIoException ioError) {
+            invalidate(activeClient);
             throw new OpenAIContentGenerationException("NETWORK_INTERRUPTION", "OpenAI request failed");
+        } catch (OpenAIInvalidDataException invalidData) {
+            throw new OpenAIContentGenerationException(
+                    "MALFORMED_STRUCTURED_OUTPUT", "OpenAI returned an invalid structured response");
+        } catch (OpenAIException clientError) {
+            throw new OpenAIContentGenerationException("OPENAI_CLIENT_FAILURE", "OpenAI client request failed");
+        }
+    }
+
+    private void invalidate(OpenAIClient failedClient) {
+        synchronized (this) {
+            if (client == failedClient) {
+                client = null;
+            }
         }
     }
 
