@@ -123,7 +123,8 @@ class MarketingAdminSecurityTest {
 
         for (String path : new String[] {
                 "/api/admin/marketing/editorial/priorities",
-                "/api/admin/marketing/editorial/priority-settings"
+                "/api/admin/marketing/editorial/priority-settings",
+                "/api/admin/marketing/editorial/sources"
         }) {
             mockMvc.perform(get(path)).andExpect(status().isUnauthorized());
             mockMvc.perform(get(path).header("Authorization", "Bearer " + userToken))
@@ -146,6 +147,17 @@ class MarketingAdminSecurityTest {
                         .header("Authorization", "Bearer " + userToken)
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("{\"settings\":{},\"idempotencyKey\":\"security-editorial-settings\"}"))
+                .andExpect(status().isForbidden());
+
+        mockMvc.perform(post("/api/admin/marketing/editorial/source-collections")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("{}"))
+                .andExpect(status().isUnauthorized());
+
+        mockMvc.perform(post("/api/admin/marketing/editorial/source-collections")
+                        .header("Authorization", "Bearer " + userToken)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("{}"))
                 .andExpect(status().isForbidden());
     }
 

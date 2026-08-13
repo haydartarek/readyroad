@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -23,6 +24,7 @@ public class EditorialAdminController {
 
     private final EditorialBacklogService service;
     private final EditorialPriorityAdminService priorityAdminService;
+    private final EditorialSourceCollectionService sourceCollectionService;
 
     @GetMapping("/backlog")
     public EditorialDtos.Backlog backlog() {
@@ -53,5 +55,19 @@ public class EditorialAdminController {
             Principal principal) {
         return ResponseEntity.accepted().body(
                 priorityAdminService.requestSettingsUpdate(request, principal.getName()));
+    }
+
+    @GetMapping("/sources")
+    public List<EditorialSourceDtos.Source> sources(
+            @RequestParam(required = false) Long articleTopicId) {
+        return sourceCollectionService.sources(articleTopicId);
+    }
+
+    @PostMapping("/source-collections")
+    public ResponseEntity<MarketingTaskLifecycleResponse> collectSources(
+            @Valid @RequestBody EditorialSourceDtos.SourceCollectionRequest request,
+            Principal principal) {
+        return ResponseEntity.accepted().body(
+                sourceCollectionService.request(request, principal.getName()));
     }
 }

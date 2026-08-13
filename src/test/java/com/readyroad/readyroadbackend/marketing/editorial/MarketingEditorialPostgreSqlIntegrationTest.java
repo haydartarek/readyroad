@@ -51,6 +51,8 @@ class MarketingEditorialPostgreSqlIntegrationTest {
     @Autowired EditorialPriorityTaskService priorityTaskService;
     @Autowired EditorialOpportunityDiscoveryService opportunityDiscoveryService;
     @Autowired EditorialOpportunityTaskHandler opportunityTaskHandler;
+    @Autowired EditorialSourceCollectionService sourceCollectionService;
+    @Autowired EditorialSourceCollectionTaskHandler sourceCollectionTaskHandler;
     @Autowired AgentTaskRepository taskRepository;
     @Autowired ApprovalService approvalService;
     @Autowired ObjectMapper objectMapper;
@@ -58,6 +60,10 @@ class MarketingEditorialPostgreSqlIntegrationTest {
     @BeforeEach
     void resetPriorityTestData() {
         JdbcTemplate jdbc = new JdbcTemplate(dataSource);
+        jdbc.update("DELETE FROM editorial_claim_sources");
+        jdbc.update("DELETE FROM editorial_claims");
+        jdbc.update("DELETE FROM editorial_source_versions");
+        jdbc.update("DELETE FROM editorial_sources");
         jdbc.update("DELETE FROM article_priorities");
         jdbc.update("DELETE FROM article_topics WHERE source_type = 'SEARCH_CONSOLE_OPPORTUNITY'");
         jdbc.update("""
@@ -72,6 +78,7 @@ class MarketingEditorialPostgreSqlIntegrationTest {
         jdbc.update("DELETE FROM seo_content_gaps WHERE gap_key LIKE 'editorial-discovery-%'");
         jdbc.update("DELETE FROM seo_opportunities WHERE opportunity_key LIKE 'editorial-discovery-%'");
         jdbc.update("DELETE FROM audit_logs WHERE event_type = 'EDITORIAL_PRIORITIES_RECALCULATED'");
+        jdbc.update("DELETE FROM audit_logs WHERE event_type = 'EDITORIAL_SOURCE_COLLECTION_COMPLETED'");
         jdbc.update("DELETE FROM agent_tasks WHERE agent_type = 'EDITORIAL'");
         jdbc.update("DELETE FROM marketing_conversion_goals WHERE goal_key = 'EDITORIAL_PRIORITY_TEST'");
     }
@@ -340,6 +347,146 @@ class MarketingEditorialPostgreSqlIntegrationTest {
                 WHERE task_type = 'ARTICLE_OPPORTUNITY_DISCOVERY'
                 """, Integer.class)).isZero();
         assertThat(jdbc.queryForObject("SELECT count(*) FROM article_topics", Integer.class)).isEqualTo(40);
+    }
+
+    @Test
+    void collectsExplicitClaimsOnlyAfterHumanApprovalAndRemainsIdempotent() {
+        JdbcTemplate jdbc = new JdbcTemplate(dataSource);
+        long topicId = jdbc.queryForObject(
+                "SELECT id FROM article_topics WHERE official_backlog_order = 1", Long.class);
+        var request = sourceCollectionRequest(topicId, "source-collection-1", "fingerprint-v1");
+
+        var first = sourceCollectionService.request(request, "admin-owner");
+        var duplicate = sourceCollectionService.request(request, "admin-owner");
+
+        assertThat(first.id()).isEqualTo(duplicate.id());
+        AgentTask waiting = taskRepository.findById(first.id()).orElseThrow();
+        assertThat(waiting.getStatus().name()).isEqualTo("WAITING_APPROVAL");
+        assertThat(waiting.getApprovalMode().name()).isEqualTo("HUMAN_APPROVAL");
+        assertThat(waiting.getApprovalSource()).isEqualTo("MASTER_SPEC_V3_PART_06_SOURCE_REGISTRY");
+        assertThat(jdbc.queryForObject("SELECT count(*) FROM editorial_sources", Integer.class)).isZero();
+        assertThatThrownBy(() -> sourceCollectionTaskHandler.execute(claimed(waiting)))
+                .isInstanceOf(com.readyroad.readyroadbackend.marketing.task.MarketingTaskExecutionException.class)
+                .hasMessageContaining("explicit human approval");
+
+        approvalService.approve(waiting.getId(), "owner-test", "Sources and claims reviewed");
+        AgentTask approved = taskRepository.findById(waiting.getId()).orElseThrow();
+        ClaimedTask claimed = claimed(approved);
+        sourceCollectionTaskHandler.execute(claimed);
+        sourceCollectionTaskHandler.execute(claimed);
+
+        assertThat(jdbc.queryForObject("SELECT count(*) FROM editorial_sources", Integer.class)).isEqualTo(2);
+        assertThat(jdbc.queryForObject("SELECT count(*) FROM editorial_source_versions", Integer.class))
+                .isEqualTo(2);
+        assertThat(jdbc.queryForObject("SELECT count(*) FROM editorial_claims", Integer.class)).isEqualTo(3);
+        assertThat(jdbc.queryForObject("SELECT count(*) FROM editorial_claim_sources", Integer.class))
+                .isEqualTo(2);
+        assertThat(jdbc.queryForList("""
+                SELECT evidence_status FROM editorial_claims ORDER BY claim_key
+                """, String.class)).containsExactly("SUPPORTED", "MISSING", "SUPPORTED");
+        assertThat(jdbc.queryForObject("""
+                SELECT count(*) FROM audit_logs
+                WHERE task_id = ? AND event_type = 'EDITORIAL_SOURCE_COLLECTION_COMPLETED'
+                """, Integer.class, waiting.getId())).isOne();
+        assertThat(sourceCollectionService.sources(topicId)).hasSize(2)
+                .allSatisfy(source -> assertThat(source.claimCount()).isOne());
+        assertThat(jdbc.queryForObject("SELECT count(*) FROM article_topics", Integer.class)).isEqualTo(40);
+    }
+
+    @Test
+    void blocksNonOfficialLegalEvidenceAndMarksChangedVerifiedSourcesStale() {
+        JdbcTemplate jdbc = new JdbcTemplate(dataSource);
+        long topicId = jdbc.queryForObject(
+                "SELECT id FROM article_topics WHERE official_backlog_order = 2", Long.class);
+        var referenceRequest = new EditorialSourceDtos.SourceCollectionRequest(
+                topicId,
+                "BRIEF-OFFICIAL-002",
+                List.of(new EditorialSourceDtos.ClaimInput(
+                        "legal-reference-only",
+                        "A legal claim cannot rely on a reference source",
+                        "LEGAL",
+                        "EN",
+                        true,
+                        List.of(new EditorialSourceDtos.SourceInput(
+                                "APPROVED_REFERENCE_SOURCE", "EXTERNAL", "Reference", "Reference publisher",
+                                "https://reference.example/legal", null, "BE", "EN", "VERIFIED",
+                                "APPROVED_REFERENCE", true, "VERIFIED", "reference-v1", null, null)))),
+                "reference-legal");
+        executeApproved(referenceRequest, "reference-legal-owner");
+
+        assertThat(jdbc.queryForObject("""
+                SELECT evidence_status FROM editorial_claims WHERE claim_key = 'legal-reference-only'
+                """, String.class)).isEqualTo("REQUIRES_REVIEW");
+
+        var original = sourceCollectionRequest(topicId, "official-original", "official-v1");
+        executeApproved(original, "official-owner");
+        var changed = sourceCollectionRequest(topicId, "official-changed", "official-v2");
+        executeApproved(changed, "official-owner");
+
+        assertThat(jdbc.queryForObject("""
+                SELECT verification_status FROM editorial_sources
+                WHERE canonical_url = 'https://mobilit.belgium.be/rules'
+                """, String.class)).isEqualTo("STALE");
+        assertThat(jdbc.queryForObject("""
+                SELECT legal_review_status FROM editorial_sources
+                WHERE canonical_url = 'https://mobilit.belgium.be/rules'
+                """, String.class)).isEqualTo("STALE");
+        assertThat(jdbc.queryForObject("""
+                SELECT count(*) FROM editorial_source_versions version
+                JOIN editorial_sources source ON source.id = version.source_id
+                WHERE source.canonical_url = 'https://mobilit.belgium.be/rules'
+                """, Integer.class)).isEqualTo(2);
+        assertThat(jdbc.queryForObject("""
+                SELECT count(*) FROM editorial_sources
+                WHERE canonical_url = 'https://mobilit.belgium.be/rules'
+                """, Integer.class)).isOne();
+        assertThat(jdbc.queryForObject("""
+                SELECT evidence_status FROM editorial_claims WHERE claim_key = 'legal-claim'
+                """, String.class)).isEqualTo("REQUIRES_REVIEW");
+    }
+
+    private void executeApproved(
+            EditorialSourceDtos.SourceCollectionRequest request,
+            String actor) {
+        var response = sourceCollectionService.request(request, actor);
+        approvalService.approve(response.id(), actor, "Owner approved source collection");
+        AgentTask task = taskRepository.findById(response.id()).orElseThrow();
+        sourceCollectionTaskHandler.execute(claimed(task));
+    }
+
+    private static ClaimedTask claimed(AgentTask task) {
+        return new ClaimedTask(
+                task.getId(), task.getAgentType(), task.getTaskType(), task.getPayload(),
+                task.getPayloadVersion(), task.getPriority(), 1, task.getCorrelationId());
+    }
+
+    private static EditorialSourceDtos.SourceCollectionRequest sourceCollectionRequest(
+            long topicId,
+            String idempotencyKey,
+            String officialFingerprint) {
+        var official = new EditorialSourceDtos.SourceInput(
+                "OFFICIAL_GOVERNMENT_SOURCE", "EXTERNAL", "Belgian mobility rules",
+                "Belgian mobility authority", "https://Mobilit.Belgium.be/rules/", null,
+                "BE", "EN", "VERIFIED", "OFFICIAL", true, "VERIFIED",
+                officialFingerprint, "official-etag", "Wed, 13 Aug 2026 10:00:00 GMT");
+        var core = new EditorialSourceDtos.SourceInput(
+                "READYROAD_CORE_DATA", "INTERNAL", "ReadyRoad exam configuration", "ReadyRoad",
+                null, "core:exam-configuration", "BE", "EN", "VERIFIED",
+                "CORE_TRUSTED", false, "NOT_REQUIRED", "core-v1", null, null);
+        return new EditorialSourceDtos.SourceCollectionRequest(
+                topicId,
+                "BRIEF-" + topicId,
+                List.of(
+                        new EditorialSourceDtos.ClaimInput(
+                                "legal-claim", "A reviewed legal statement", "LEGAL", "EN", true,
+                                List.of(official)),
+                        new EditorialSourceDtos.ClaimInput(
+                                "missing-claim", "A claim with explicitly missing evidence", "FACTUAL", "EN", false,
+                                List.of()),
+                        new EditorialSourceDtos.ClaimInput(
+                                "product-claim", "A ReadyRoad product fact", "PRODUCT_FACT", "EN", false,
+                                List.of(core))),
+                idempotencyKey);
     }
 
     private static Long insertDiscoveryOpportunity(
