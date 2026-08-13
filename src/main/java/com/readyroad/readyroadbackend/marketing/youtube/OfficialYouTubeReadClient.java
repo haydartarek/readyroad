@@ -1,5 +1,6 @@
 package com.readyroad.readyroadbackend.marketing.youtube;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.readyroad.readyroadbackend.marketing.config.MarketingProperties;
@@ -10,6 +11,7 @@ import java.net.URLEncoder;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.net.http.HttpTimeoutException;
 import java.nio.charset.StandardCharsets;
 import java.time.Duration;
 import java.time.Instant;
@@ -169,6 +171,7 @@ public class OfficialYouTubeReadClient implements YouTubeReadClient {
     }
 
     private JsonNode get(String resource, Map<String, String> parameters) {
+        HttpResponse<String> response;
         try {
             StringBuilder url = new StringBuilder(API_BASE).append('/').append(resource).append('?');
             Map<String, String> all = new LinkedHashMap<>(parameters);
@@ -186,22 +189,35 @@ public class OfficialYouTubeReadClient implements YouTubeReadClient {
                     .header("Accept", "application/json")
                     .GET()
                     .build();
-            HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
-            if (response.statusCode() >= 400) {
-                String code = switch (response.statusCode()) {
-                    case 429 -> "HTTP_429";
-                    case 502, 503, 504 -> "EXTERNAL_API_TEMPORARY_OUTAGE";
-                    default -> "YOUTUBE_SOURCE_HTTP_" + response.statusCode();
-                };
-                throw failure(code, "YouTube read request failed");
-            }
-            return objectMapper.readTree(response.body());
+            response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
+        } catch (HttpTimeoutException error) {
+            throw transportFailure(error);
         } catch (IOException error) {
-            throw failure("YOUTUBE_SOURCE_INVALID_RESPONSE", "YouTube returned an invalid response");
+            throw transportFailure(error);
         } catch (InterruptedException error) {
             Thread.currentThread().interrupt();
             throw failure("YOUTUBE_SOURCE_INTERRUPTED", "YouTube request was interrupted");
         }
+
+        if (response.statusCode() >= 400) {
+            String code = switch (response.statusCode()) {
+                case 429 -> "HTTP_429";
+                case 502, 503, 504 -> "EXTERNAL_API_TEMPORARY_OUTAGE";
+                default -> "YOUTUBE_SOURCE_HTTP_" + response.statusCode();
+            };
+            throw failure(code, "YouTube read request failed");
+        }
+        try {
+            return objectMapper.readTree(response.body());
+        } catch (JsonProcessingException error) {
+            throw failure("YOUTUBE_SOURCE_INVALID_RESPONSE", "YouTube returned an invalid response");
+        }
+    }
+
+    static MarketingTaskExecutionException transportFailure(IOException error) {
+        return error instanceof HttpTimeoutException
+                ? failure("TIMEOUT", "YouTube read request timed out")
+                : failure("NETWORK_INTERRUPTION", "YouTube read request was interrupted by the network");
     }
 
     private void ensureConfigured() {
