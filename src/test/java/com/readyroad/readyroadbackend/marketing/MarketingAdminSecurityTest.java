@@ -113,6 +113,16 @@ class MarketingAdminSecurityTest {
     }
 
     @Test
+    void protectsEditorialBacklogWithTheExistingAdminBoundary() throws Exception {
+        mockMvc.perform(get("/api/admin/marketing/editorial/backlog"))
+                .andExpect(status().isUnauthorized());
+
+        mockMvc.perform(get("/api/admin/marketing/editorial/backlog")
+                        .header("Authorization", "Bearer " + userToken))
+                .andExpect(status().isForbidden());
+    }
+
+    @Test
     void allowsAdminAccessWithoutExposingPayloads() throws Exception {
         mockMvc.perform(get("/api/admin/marketing/infrastructure")
                         .header("Authorization", "Bearer " + adminToken))
