@@ -3,6 +3,7 @@ package com.readyroad.readyroadbackend.service;
 import com.readyroad.readyroadbackend.domain.entity.UserLessonProgress;
 import com.readyroad.readyroadbackend.domain.repository.LessonRepository;
 import com.readyroad.readyroadbackend.domain.repository.UserLessonProgressRepository;
+import com.readyroad.readyroadbackend.domain.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -30,6 +31,7 @@ public class LessonProgressService {
     private final NotificationService notificationService;
     private final LessonRepository lessonRepository;
     private final UserLessonProgressRepository progressRepository;
+    private final UserRepository userRepository;
 
     /**
      * Mark a page as read for the given user and lesson.
@@ -57,6 +59,10 @@ public class LessonProgressService {
                 : Math.min(Math.max(prog.getPagesRead() + 1, 1), normalizedTotalPages);
 
         prog.setLastSeenAt(Instant.now());
+        prog.setLanguageCode(userRepository.findById(userId)
+                .map(user -> user.getPreferredLanguage())
+                .filter(language -> java.util.Set.of("en", "nl", "fr", "ar").contains(language))
+                .orElse(null));
 
         if (!"COMPLETED".equals(prog.getStatus())) {
             int newCount = Math.max(prog.getPagesRead(), targetPage);

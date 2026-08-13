@@ -29,6 +29,9 @@ public class UserLessonProgress {
     @Column(name = "last_seen_at")
     private Instant lastSeenAt;
 
+    @Column(name = "language_code", length = 2)
+    private String languageCode;
+
     @Column(name = "created_at", nullable = false, updatable = false)
     private Instant createdAt;
 
@@ -104,6 +107,14 @@ public class UserLessonProgress {
 
     public void setLastSeenAt(Instant lastSeenAt) {
         this.lastSeenAt = lastSeenAt;
+    }
+
+    public String getLanguageCode() {
+        return languageCode;
+    }
+
+    public void setLanguageCode(String languageCode) {
+        this.languageCode = languageCode;
     }
 
     public Instant getCreatedAt() {

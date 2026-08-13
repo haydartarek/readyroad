@@ -7,6 +7,7 @@ import com.readyroad.readyroadbackend.domain.entity.ExamSimulationQuestion;
 import com.readyroad.readyroadbackend.domain.entity.QuizAnswerOption;
 import com.readyroad.readyroadbackend.domain.entity.QuizQuestion;
 import com.readyroad.readyroadbackend.domain.entity.UserCategoryProgress;
+import com.readyroad.readyroadbackend.domain.entity.User;
 import com.readyroad.readyroadbackend.domain.entity.NotificationType;
 import com.readyroad.readyroadbackend.domain.repository.ExamSimulationAnswerRepository;
 import com.readyroad.readyroadbackend.domain.repository.ExamSimulationQuestionRepository;
@@ -17,6 +18,7 @@ import com.readyroad.readyroadbackend.domain.repository.QuizQuestionRepository;
 import com.readyroad.readyroadbackend.domain.repository.UserCategoryProgressRepository;
 import com.readyroad.readyroadbackend.domain.repository.UserQuestionHistoryRepository;
 import com.readyroad.readyroadbackend.domain.repository.UserWeakAreaRepository;
+import com.readyroad.readyroadbackend.domain.repository.UserRepository;
 import com.readyroad.readyroadbackend.util.PlaceholderDetector;
 import com.readyroad.readyroadbackend.dto.exam.SubmitExamAnswerRequest;
 import com.readyroad.readyroadbackend.dto.exam.SubmitExamAnswerResponse;
@@ -49,6 +51,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Set;
 import java.util.Map;
 import java.util.stream.Collectors;
 
@@ -82,6 +85,7 @@ public class ExamService {
     private final RoadSignReferenceTextResolver roadSignReferenceTextResolver;
     private final ExamMapper examMapper;
     private final BackendMessageService messages;
+    private final UserRepository userRepository;
 
     private static final int EXAM_QUESTION_COUNT = 50;
     private static final int EXAM_TIME_LIMIT_MINUTES = 30;
@@ -205,6 +209,10 @@ public class ExamService {
         exam.setExpiresAt(expiresAt);
         exam.setTotalQuestions(EXAM_QUESTION_COUNT);
         exam.setStatus(ExamSimulation.ExamStatus.IN_PROGRESS);
+        exam.setLanguageCode(userRepository.findById(userId)
+                .map(User::getPreferredLanguage)
+                .filter(ExamService::isSupportedLanguage)
+                .orElse(null));
 
         exam = examRepository.save(exam);
         log.info("Created exam simulation: id={}, expiresAt={}", exam.getId(), expiresAt);
@@ -1079,6 +1087,10 @@ public class ExamService {
                 })
                 .filter(java.util.Objects::nonNull)
                 .collect(Collectors.toList());
+    }
+
+    private static boolean isSupportedLanguage(String language) {
+        return language != null && Set.of("en", "nl", "fr", "ar").contains(language);
     }
 
     private QuizAnswerOption resolveHistoricalCorrectOption(

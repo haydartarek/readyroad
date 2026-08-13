@@ -166,6 +166,7 @@ public class SignQuizService {
                 session.setSign(sign);
                 session.setSignCode(sign.getSignCode());
                 session.setTotalQuestions(shuffled.size());
+                session.setLanguageCode(supportedLanguage(user.getPreferredLanguage()));
                 sessionRepo.save(session);
 
                 // Map questions to DTOs (no isCorrect)
@@ -449,6 +450,22 @@ public class SignQuizService {
         public SignExamResultDto submitExam(String signCode, int examNumber,
                         List<SignExamAnswerItem> answers, Long userId) {
 
+                return submitExam(signCode, examNumber, answers, userId, null);
+        }
+
+        @Transactional
+        public SignExamResultDto submitExam(String signCode, int examNumber,
+                        List<SignExamAnswerItem> answers, Long userId, String submissionKey) {
+
+                String safeSubmissionKey = normalizeSubmissionKey(submissionKey);
+                if (safeSubmissionKey != null) {
+                        Optional<SignExamResult> existing = signExamResultRepo
+                                        .findByUserIdAndSubmissionKey(userId, safeSubmissionKey);
+                        if (existing.isPresent()) {
+                                return getStoredSignExamResult(existing.get().getId(), userId);
+                        }
+                }
+
                 RoadSign sign = findActiveSignOrThrow(signCode);
 
                 SignExam exam = examRepo.findBySignIdAndExamNumberAndIsActiveTrue(sign.getId(), examNumber)
@@ -502,6 +519,7 @@ public class SignQuizService {
                                                 false, // answered
                                                 null, // isCorrect
                                                 null, // selectedChoiceId
+                                                null, null, null, null,
                                                 correctChoice != null ? correctChoice.getId() : null,
                                                 correctChoice != null ? sanitizeAndResolveChoice(questionType,
                                                                 TextLanguage.NL, correctChoice.getTextNl()) : null,
@@ -547,6 +565,22 @@ public class SignQuizService {
                                         true, // answered
                                         isCorrect,
                                         submitted,
+                                        selectedChoice != null
+                                                        ? sanitizeAndResolveChoice(questionType, TextLanguage.NL,
+                                                                        selectedChoice.getTextNl())
+                                                        : null,
+                                        selectedChoice != null
+                                                        ? sanitizeAndResolveChoice(questionType, TextLanguage.EN,
+                                                                        selectedChoice.getTextEn())
+                                                        : null,
+                                        selectedChoice != null
+                                                        ? sanitizeAndResolveChoice(questionType, TextLanguage.FR,
+                                                                        selectedChoice.getTextFr())
+                                                        : null,
+                                        selectedChoice != null
+                                                        ? sanitizeAndResolveChoice(questionType, TextLanguage.AR,
+                                                                        selectedChoice.getTextAr())
+                                                        : null,
                                         correctChoice != null ? correctChoice.getId() : null,
                                         correctChoice != null
                                                         ? sanitizeAndResolveChoice(questionType, TextLanguage.NL,
@@ -623,6 +657,11 @@ public class SignQuizService {
                         result.setScorePct(scorePct);
                         result.setPassed(passed);
                         result.setCompletedAt(LocalDateTime.now());
+                        result.setLanguageCode(userRepo.findById(userId)
+                                        .map(User::getPreferredLanguage)
+                                        .map(SignQuizService::supportedLanguage)
+                                        .orElse(null));
+                        result.setSubmissionKey(safeSubmissionKey);
                         result.setQuestionResultsJson(objectMapper.writeValueAsString(results));
                         persistedResult = signExamResultRepo.save(result);
                         log.info("Saved SignExamResult id={} user={} sign={} passed={}",
@@ -1157,6 +1196,7 @@ public class SignQuizService {
                 session.setStatus(SignRandomPracticeSession.SessionStatus.IN_PROGRESS);
                 session.setStartedAt(now);
                 session.setExpiresAt(now.plusHours(RANDOM_PRACTICE_COOLDOWN_HOURS));
+                session.setLanguageCode(supportedLanguage(user.getPreferredLanguage()));
                 session = randomPracticeSessionRepo.save(session);
 
                 int order = 1;
@@ -1393,6 +1433,23 @@ public class SignQuizService {
                                 passed,
                                 session.getPassingScore(),
                                 rows.stream().map(this::toRandomPracticeQuestionResult).toList());
+        }
+
+        private static String supportedLanguage(String language) {
+                return language != null && Set.of("en", "nl", "fr", "ar").contains(language)
+                                ? language
+                                : null;
+        }
+
+        private static String normalizeSubmissionKey(String submissionKey) {
+                if (submissionKey == null || submissionKey.isBlank()) {
+                        return null;
+                }
+                String trimmed = submissionKey.trim();
+                if (trimmed.length() > 64 || !trimmed.matches("[A-Za-z0-9._:-]+")) {
+                        throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid idempotency key");
+                }
+                return trimmed;
         }
 
         @Transactional

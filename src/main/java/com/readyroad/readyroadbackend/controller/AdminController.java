@@ -107,7 +107,7 @@ public class AdminController {
         Map<String, Object> stats = new HashMap<>();
         stats.put("totalSigns", signRepository.countByIsActiveTrue());
         stats.put("totalUsers", userRepository.count());
-        stats.put("totalQuizAttempts", examSimulationRepository.countByStatus(ExamSimulation.ExamStatus.COMPLETED));
+        stats.put("totalQuizAttempts", examSimulationRepository.countStudentExamsByStatus(ExamSimulation.ExamStatus.COMPLETED));
         Map<String, Long> difficultyCounts = new java.util.LinkedHashMap<>();
         difficultyCounts.put("EASY",
                 quizQuestionRepository.countByDifficultyLevel(QuizQuestion.DifficultyLevel.EASY));
@@ -119,13 +119,13 @@ public class AdminController {
         stats.put("quizQuestionDifficultyCounts", difficultyCounts);
         stats.put("totalQuizQuestions", quizQuestionRepository.count());
         stats.put("totalSignQuestions", signQuestionRepository.count());
-        stats.put("totalSignPracticeSessions", signPracticeSessionRepository.count());
-        stats.put("totalSignExamAttempts", signExamResultRepository.count());
-        stats.put("totalPassedSignExamResults", signExamResultRepository.countByPassedTrue());
+        stats.put("totalSignPracticeSessions", signPracticeSessionRepository.countStudentSessions());
+        stats.put("totalSignExamAttempts", signExamResultRepository.countStudentResults());
+        stats.put("totalPassedSignExamResults", signExamResultRepository.countPassedStudentResults());
         stats.put("totalRandomSignExamAttempts",
-                signRandomPracticeSessionRepository.countByStatus(
+                signRandomPracticeSessionRepository.countStudentSessionsByStatus(
                         SignRandomPracticeSession.SessionStatus.COMPLETED));
-        stats.put("totalPassedRandomSignExamResults", signRandomPracticeSessionRepository.countByPassedTrue());
+        stats.put("totalPassedRandomSignExamResults", signRandomPracticeSessionRepository.countPassedStudentSessions());
         stats.put("activeUsers", userRepository.countByIsActiveTrue());
         stats.put("adminUsers", userRepository.countByRole(Role.ADMIN));
         stats.put("moderatorUsers", userRepository.countByRole(Role.MODERATOR));
@@ -590,9 +590,9 @@ public class AdminController {
     public ResponseEntity<?> getQuizStats() {
         log.info("📊 Admin exam stats requested");
 
-        Double avgScore = examSimulationRepository.getAverageScoreOfCompleted();
-        Long totalCompleted = examSimulationRepository.countByStatus(ExamSimulation.ExamStatus.COMPLETED);
-        Long totalPassed = examSimulationRepository.countByStatusAndCorrectAnswersGreaterThanEqual(
+        Double avgScore = examSimulationRepository.getStudentAverageScoreOfCompleted();
+        Long totalCompleted = examSimulationRepository.countStudentExamsByStatus(ExamSimulation.ExamStatus.COMPLETED);
+        Long totalPassed = examSimulationRepository.countStudentExamsByStatusAndCorrectAnswersGreaterThanEqual(
                 ExamSimulation.ExamStatus.COMPLETED, 41);
         double passRate = (totalCompleted != null && totalCompleted > 0 && totalPassed != null)
                 ? (double) totalPassed / totalCompleted * 100.0
@@ -646,7 +646,7 @@ public class AdminController {
         log.info("📊 Admin recent exams requested (limit: {})", limit);
 
         List<ExamSimulation> recentExams = examSimulationRepository
-                .findByStatusOrderByCompletedAtDesc(
+                .findStudentExamsByStatusOrderByCompletedAtDesc(
                         ExamSimulation.ExamStatus.COMPLETED,
                         PageRequest.of(0, limit));
 
@@ -677,7 +677,7 @@ public class AdminController {
                 })
                 .collect(Collectors.toList());
 
-        long total = examSimulationRepository.countByStatus(ExamSimulation.ExamStatus.COMPLETED);
+        long total = examSimulationRepository.countStudentExamsByStatus(ExamSimulation.ExamStatus.COMPLETED);
         return ResponseEntity.ok(Map.of("exams", exams, "total", total));
     }
 

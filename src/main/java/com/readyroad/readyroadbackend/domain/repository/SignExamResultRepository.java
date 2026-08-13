@@ -43,11 +43,21 @@ public interface SignExamResultRepository extends JpaRepository<SignExamResult, 
         /** Total passed sign exam results across all users. */
         long countByPassedTrue();
 
+        @Query(value = "SELECT COUNT(*) FROM sign_exam_results r JOIN users u ON u.id = r.user_id WHERE u.role = 'USER'",
+                        nativeQuery = true)
+        long countStudentResults();
+
+        @Query(value = "SELECT COUNT(*) FROM sign_exam_results r JOIN users u ON u.id = r.user_id WHERE u.role = 'USER' AND r.passed = TRUE",
+                        nativeQuery = true)
+        long countPassedStudentResults();
+
         /** Complete sign exam history for one user, newest first. */
         List<SignExamResult> findByUserIdOrderByCompletedAtDesc(Long userId);
 
         /** One stored sign-exam result owned by the given user. */
         Optional<SignExamResult> findByIdAndUserId(Long id, Long userId);
+
+        Optional<SignExamResult> findByUserIdAndSubmissionKey(Long userId, String submissionKey);
 
         /**
          * One aggregate row per sign for the all-sign progress endpoint.

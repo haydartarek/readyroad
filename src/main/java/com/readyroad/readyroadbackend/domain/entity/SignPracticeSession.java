@@ -61,6 +61,9 @@ public class SignPracticeSession {
     @Column(name = "completed_at")
     private LocalDateTime completedAt;
 
+    @Column(name = "language_code", length = 2)
+    private String languageCode;
+
     // ── Relationship ─────────────────────────────────────────────────────────
     @OneToMany(mappedBy = "session", cascade = CascadeType.ALL, orphanRemoval = true)
     @OrderBy("answeredAt ASC")
@@ -103,6 +106,8 @@ public class SignPracticeSession {
 
     public LocalDateTime   getCompletedAt()        { return completedAt; }
     public void            setCompletedAt(LocalDateTime v) { this.completedAt = v; }
+    public String          getLanguageCode()       { return languageCode; }
+    public void            setLanguageCode(String v) { this.languageCode = v; }
 
     public List<SignPracticeAnswer> getAnswers()   { return answers; }
 }

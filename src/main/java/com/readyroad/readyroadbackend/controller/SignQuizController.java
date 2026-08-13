@@ -187,6 +187,7 @@ public class SignQuizController {
             @Parameter(description = "Exam number: 1 or 2", example = "1") @PathVariable int examNumber,
 
             @Valid @RequestBody SignExamSubmitRequest request,
+            @RequestHeader(name = "X-Idempotency-Key", required = false) String idempotencyKey,
             Authentication auth) {
 
         Long userId = authUtil.extractUserId(auth);
@@ -194,7 +195,7 @@ public class SignQuizController {
                 signCode, examNumber, userId, request.answers().size());
 
         SignExamResultDto result = signQuizService.submitExam(
-                signCode, examNumber, request.answers(), userId);
+                signCode, examNumber, request.answers(), userId, idempotencyKey);
         return ResponseEntity.ok(result);
     }
 

@@ -54,6 +54,10 @@ public record SignExamResultDto(
             Boolean isCorrect,
 
             Long   selectedChoiceId,
+            String selectedTextNl,
+            String selectedTextEn,
+            String selectedTextFr,
+            String selectedTextAr,
 
             Long   correctChoiceId,
             String correctTextNl,

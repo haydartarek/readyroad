@@ -57,6 +57,9 @@ public class ExamSimulation extends BaseEntity {
     @Column(name = "time_taken_seconds")
     private Integer timeTakenSeconds;
 
+    @Column(name = "language_code", length = 2)
+    private String languageCode;
+
     @Enumerated(EnumType.STRING)
     @Column(name = "status", nullable = false, length = 20)
     private ExamStatus status;

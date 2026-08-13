@@ -66,6 +66,9 @@ public class SignRandomPracticeSession {
     @Column(name = "completed_at")
     private LocalDateTime completedAt;
 
+    @Column(name = "language_code", length = 2)
+    private String languageCode;
+
     @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt;
 
@@ -183,6 +186,14 @@ public class SignRandomPracticeSession {
 
     public void setCompletedAt(LocalDateTime completedAt) {
         this.completedAt = completedAt;
+    }
+
+    public String getLanguageCode() {
+        return languageCode;
+    }
+
+    public void setLanguageCode(String languageCode) {
+        this.languageCode = languageCode;
     }
 
     public LocalDateTime getCreatedAt() {

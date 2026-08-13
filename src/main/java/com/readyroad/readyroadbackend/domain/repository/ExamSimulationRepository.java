@@ -55,6 +55,14 @@ public interface ExamSimulationRepository extends JpaRepository<ExamSimulation, 
             ExamSimulation.ExamStatus status,
             Pageable pageable);
 
+    @Query("""
+            SELECT es FROM ExamSimulation es, User u
+            WHERE es.userId = u.id AND u.role = 'USER' AND es.status = :status
+            ORDER BY es.completedAt DESC
+            """)
+    List<ExamSimulation> findStudentExamsByStatusOrderByCompletedAtDesc(
+            ExamSimulation.ExamStatus status, Pageable pageable);
+
     /**
      * Count all exams with given status (admin use)
      */
@@ -65,6 +73,26 @@ public interface ExamSimulationRepository extends JpaRepository<ExamSimulation, 
      */
     @Query("SELECT AVG(es.scorePercentage) FROM ExamSimulation es WHERE es.status = 'COMPLETED'")
     Double getAverageScoreOfCompleted();
+
+    @Query("""
+            SELECT AVG(es.scorePercentage) FROM ExamSimulation es, User u
+            WHERE es.userId = u.id AND u.role = 'USER' AND es.status = 'COMPLETED'
+            """)
+    Double getStudentAverageScoreOfCompleted();
+
+    @Query("""
+            SELECT COUNT(es) FROM ExamSimulation es, User u
+            WHERE es.userId = u.id AND u.role = 'USER' AND es.status = :status
+            """)
+    long countStudentExamsByStatus(ExamSimulation.ExamStatus status);
+
+    @Query("""
+            SELECT COUNT(es) FROM ExamSimulation es, User u
+            WHERE es.userId = u.id AND u.role = 'USER' AND es.status = :status
+              AND es.correctAnswers >= :threshold
+            """)
+    long countStudentExamsByStatusAndCorrectAnswersGreaterThanEqual(
+            ExamSimulation.ExamStatus status, Integer threshold);
 
     /**
      * Count completed exams where user passed (correctAnswers >= threshold)

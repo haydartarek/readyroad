@@ -52,6 +52,12 @@ public class SignExamResult {
     @Column(name = "passed", nullable = false)
     private Boolean passed = false;
 
+    @Column(name = "language_code", length = 2)
+    private String languageCode;
+
+    @Column(name = "submission_key", length = 64)
+    private String submissionKey;
+
     @Lob
     @Column(name = "question_results_json", columnDefinition = "LONGTEXT")
     private String questionResultsJson;
@@ -150,6 +156,22 @@ public class SignExamResult {
 
     public Boolean getPassed() {
         return passed;
+    }
+
+    public String getLanguageCode() {
+        return languageCode;
+    }
+
+    public void setLanguageCode(String languageCode) {
+        this.languageCode = languageCode;
+    }
+
+    public String getSubmissionKey() {
+        return submissionKey;
+    }
+
+    public void setSubmissionKey(String submissionKey) {
+        this.submissionKey = submissionKey;
     }
 
     public void setPassed(Boolean v) {

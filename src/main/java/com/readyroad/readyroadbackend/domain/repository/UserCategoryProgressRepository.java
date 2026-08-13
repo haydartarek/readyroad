@@ -58,6 +58,7 @@ public interface UserCategoryProgressRepository extends JpaRepository<UserCatego
             "       AVG(p.accuracy_rate) AS avg_accuracy " +
             "FROM user_category_progress p " +
             "JOIN categories c ON c.id = p.category_id " +
+            "JOIN users u ON u.id = p.user_id AND u.role = 'USER' " +
             "GROUP BY p.category_id, c.code, c.name_en " +
             "ORDER BY avg_accuracy ASC", nativeQuery = true)
     List<Object[]> findCategoryStatsAggregated();

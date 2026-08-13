@@ -30,6 +30,12 @@ public interface SignRandomPracticeSessionRepository extends JpaRepository<SignR
 
     long countByStatus(SignRandomPracticeSession.SessionStatus status);
 
+    @Query("SELECT COUNT(s) FROM SignRandomPracticeSession s WHERE s.user.role = 'USER' AND s.status = :status")
+    long countStudentSessionsByStatus(@Param("status") SignRandomPracticeSession.SessionStatus status);
+
+    @Query("SELECT COUNT(s) FROM SignRandomPracticeSession s WHERE s.user.role = 'USER' AND s.passed = true")
+    long countPassedStudentSessions();
+
     @Query("SELECT COUNT(s) FROM SignRandomPracticeSession s WHERE s.user.id = :userId AND s.passed = true")
     long countByUserIdAndPassedTrue(@Param("userId") Long userId);
 }

@@ -34,6 +34,9 @@ public interface SignPracticeSessionRepository extends JpaRepository<SignPractic
     /** Count sessions for a user by status (used for dashboard summary). */
     long countByUserIdAndStatus(Long userId, SessionStatus status);
 
+    @Query("SELECT COUNT(s) FROM SignPracticeSession s WHERE s.user.role = 'USER'")
+    long countStudentSessions();
+
     /** Best accuracy (correctCount / totalQuestions) for user+sign, or null if none. */
     @Query(value = "SELECT MAX(correct_count / NULLIF(total_questions, 0) * 100) " +
                    "FROM sign_practice_sessions " +

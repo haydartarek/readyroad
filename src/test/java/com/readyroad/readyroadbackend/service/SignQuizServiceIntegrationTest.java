@@ -168,7 +168,12 @@ class SignQuizServiceIntegrationTest {
 
                 assertThat(result.resultId()).isNotNull();
                 assertThat(result.passed()).isTrue();
-                assertThat(result.questionResults()).hasSize(1);
+                assertThat(result.questionResults()).singleElement()
+                                .satisfies(item -> {
+                                        assertThat(item.selectedChoiceId()).isEqualTo(correctChoiceId);
+                                        assertThat(item.selectedTextEn()).isEqualTo("Correct");
+                                        assertThat(item.selectedTextAr()).isEqualTo("صحيح");
+                                });
 
                 SignExamHistoryResponseDto history = signQuizService.getSignExamHistory(user.getId());
                 assertThat(history.totalResults()).isEqualTo(1);
@@ -180,7 +185,12 @@ class SignQuizServiceIntegrationTest {
 
                 SignExamResultDto stored = signQuizService.getStoredSignExamResult(result.resultId(), user.getId());
                 assertThat(stored.resultId()).isEqualTo(result.resultId());
-                assertThat(stored.questionResults()).hasSize(1);
+                assertThat(stored.questionResults()).singleElement()
+                                .satisfies(item -> {
+                                        assertThat(item.selectedChoiceId()).isEqualTo(correctChoiceId);
+                                        assertThat(item.selectedTextEn()).isEqualTo("Correct");
+                                        assertThat(item.selectedTextAr()).isEqualTo("صحيح");
+                                });
 
                 assertThat(notificationRepository.findTop50ByUserIdOrderByCreatedAtDesc(user.getId()))
                                 .singleElement()
@@ -216,6 +226,22 @@ class SignQuizServiceIntegrationTest {
                 assertThat(signRandomPracticeQuestionRepository
                                 .findBySessionIdOrderByQuestionOrder(started.sessionId()))
                                 .hasSize(50);
+        }
+
+        @Test
+        @DisplayName("Repeating a sign exam submission key returns the same historical result")
+        void submitExamIsIdempotentForTheSameSubmissionKey() {
+                User user = createUser("sign-exam-idempotent");
+                RoadSign sign = createSignWithSingleQuestionExam();
+
+                SignExamResultDto first = signQuizService.submitExam(
+                                sign.getSignCode(), 1, List.of(), user.getId(), "attempt-one");
+                SignExamResultDto second = signQuizService.submitExam(
+                                sign.getSignCode(), 1, List.of(), user.getId(), "attempt-one");
+
+                assertThat(second.resultId()).isEqualTo(first.resultId());
+                assertThat(signExamResultRepository.findByUserIdAndSignCodeOrderByCompletedAtDesc(
+                                user.getId(), sign.getSignCode())).hasSize(1);
         }
 
         @Test
