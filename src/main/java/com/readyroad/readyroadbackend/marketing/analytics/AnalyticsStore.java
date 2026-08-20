@@ -54,9 +54,9 @@ public class AnalyticsStore {
             Long id = jdbc.queryForObject("""
                     INSERT INTO seo_snapshots (
                         site_url, period_start, period_end, clicks, impressions, ctr,
-                        average_position, source_record_count, task_id
-                    ) VALUES (?, ?, ?, ?, ?, ?, ?, 1, ?)
-                    ON CONFLICT (site_url, period_start, period_end) DO UPDATE SET
+                        average_position, source_record_count, task_id, source_kind
+                    ) VALUES (?, ?, ?, ?, ?, ?, ?, 1, ?, 'LIVE_API')
+                    ON CONFLICT (site_url, period_start, period_end, source_kind) DO UPDATE SET
                         clicks = EXCLUDED.clicks,
                         impressions = EXCLUDED.impressions,
                         ctr = EXCLUDED.ctr,
@@ -94,7 +94,7 @@ public class AnalyticsStore {
     }
 
     @Transactional
-    public void saveReadyRoad(LocalDate start, LocalDate end, Long taskId, List<String> partialFailures) {
+    public void saveRijVia(LocalDate start, LocalDate end, Long taskId, List<String> partialFailures) {
         List<Map<String, Object>> rows = jdbc.queryForList("""
                 SELECT day::date AS snapshot_date,
                        (SELECT COUNT(*) FROM users WHERE created_at::date = day::date) AS registrations,
@@ -113,26 +113,34 @@ public class AnalyticsStore {
             metrics.put("quizAttempts", number(row.get("quiz_attempts")));
             metrics.put("signPracticeSessions", number(row.get("sign_practice")));
             saveAnalyticsSnapshot(
-                    "READYROAD", "DAILY", date, date, Map.of(), metrics, 1,
+                    "RIJVIA", "DAILY", date, date, Map.of(), metrics, 1,
                     partialFailures.isEmpty() ? "COMPLETE" : "PARTIAL", partialFailures,
-                    Map.of(), "READYROAD:DAILY:" + date, taskId);
+                    Map.of(), "RIJVIA:DAILY:" + date, taskId);
         }
     }
 
     @Transactional(readOnly = true)
     public List<AnalyticsModels.QueryAggregate> aggregateQueries(LocalDate start, LocalDate end) {
         String sql = """
-                SELECT query, page, language, brand_classification, long_tail, search_intent,
-                       SUM(clicks)::double precision AS clicks,
-                       SUM(impressions)::double precision AS impressions,
-                       CASE WHEN SUM(impressions) = 0 THEN 0
-                            ELSE SUM(clicks) / SUM(impressions) END::double precision AS ctr,
-                       CASE WHEN SUM(impressions) = 0 THEN 0
-                            ELSE SUM(average_position * impressions) / SUM(impressions) END::double precision
+                SELECT query_snapshot.query, query_snapshot.page, query_snapshot.language,
+                       query_snapshot.brand_classification, query_snapshot.long_tail,
+                       query_snapshot.search_intent,
+                       SUM(query_snapshot.clicks)::double precision AS clicks,
+                       SUM(query_snapshot.impressions)::double precision AS impressions,
+                       CASE WHEN SUM(query_snapshot.impressions) = 0 THEN 0
+                            ELSE SUM(query_snapshot.clicks) / SUM(query_snapshot.impressions) END::double precision AS ctr,
+                       CASE WHEN SUM(query_snapshot.impressions) = 0 THEN 0
+                            ELSE SUM(query_snapshot.average_position * query_snapshot.impressions)
+                                 / SUM(query_snapshot.impressions) END::double precision
                             AS average_position
-                FROM seo_query_snapshots
-                WHERE snapshot_date BETWEEN ? AND ?
-                GROUP BY query, page, language, brand_classification, long_tail, search_intent
+                FROM seo_query_snapshots query_snapshot
+                JOIN seo_snapshots source_snapshot
+                  ON source_snapshot.id = query_snapshot.seo_snapshot_id
+                 AND source_snapshot.source_kind = 'LIVE_API'
+                WHERE query_snapshot.snapshot_date BETWEEN ? AND ?
+                GROUP BY query_snapshot.query, query_snapshot.page, query_snapshot.language,
+                         query_snapshot.brand_classification, query_snapshot.long_tail,
+                         query_snapshot.search_intent
                 """;
         return jdbc.query(sql, (result, rowNumber) -> new AnalyticsModels.QueryAggregate(
                 result.getString("query"), result.getString("page"), result.getString("language"),
@@ -274,16 +282,20 @@ public class AnalyticsStore {
     @Transactional(readOnly = true)
     public List<Map<String, Object>> languagePerformance(LocalDate start, LocalDate end) {
         return jdbc.queryForList("""
-                SELECT language,
-                       SUM(clicks) AS clicks,
-                       SUM(impressions) AS impressions,
-                       CASE WHEN SUM(impressions) = 0 THEN 0
-                            ELSE SUM(clicks) / SUM(impressions) END AS ctr,
-                       CASE WHEN SUM(impressions) = 0 THEN 0
-                            ELSE SUM(average_position * impressions) / SUM(impressions) END AS average_position
-                FROM seo_page_snapshots
-                WHERE snapshot_date BETWEEN ? AND ?
-                GROUP BY language
+                SELECT page_snapshot.language,
+                       SUM(page_snapshot.clicks) AS clicks,
+                       SUM(page_snapshot.impressions) AS impressions,
+                       CASE WHEN SUM(page_snapshot.impressions) = 0 THEN 0
+                            ELSE SUM(page_snapshot.clicks) / SUM(page_snapshot.impressions) END AS ctr,
+                       CASE WHEN SUM(page_snapshot.impressions) = 0 THEN 0
+                            ELSE SUM(page_snapshot.average_position * page_snapshot.impressions)
+                                 / SUM(page_snapshot.impressions) END AS average_position
+                FROM seo_page_snapshots page_snapshot
+                JOIN seo_snapshots source_snapshot
+                  ON source_snapshot.id = page_snapshot.seo_snapshot_id
+                 AND source_snapshot.source_kind = 'LIVE_API'
+                WHERE page_snapshot.snapshot_date BETWEEN ? AND ?
+                GROUP BY page_snapshot.language
                 ORDER BY impressions DESC
                 """, start, end);
     }
@@ -291,16 +303,20 @@ public class AnalyticsStore {
     @Transactional(readOnly = true)
     public List<Map<String, Object>> devicePerformance(LocalDate start, LocalDate end) {
         return jdbc.queryForList("""
-                SELECT device,
-                       SUM(clicks) AS clicks,
-                       SUM(impressions) AS impressions,
-                       CASE WHEN SUM(impressions) = 0 THEN 0
-                            ELSE SUM(clicks) / SUM(impressions) END AS ctr,
-                       CASE WHEN SUM(impressions) = 0 THEN 0
-                            ELSE SUM(average_position * impressions) / SUM(impressions) END AS average_position
-                FROM seo_page_snapshots
-                WHERE snapshot_date BETWEEN ? AND ?
-                GROUP BY device
+                SELECT page_snapshot.device,
+                       SUM(page_snapshot.clicks) AS clicks,
+                       SUM(page_snapshot.impressions) AS impressions,
+                       CASE WHEN SUM(page_snapshot.impressions) = 0 THEN 0
+                            ELSE SUM(page_snapshot.clicks) / SUM(page_snapshot.impressions) END AS ctr,
+                       CASE WHEN SUM(page_snapshot.impressions) = 0 THEN 0
+                            ELSE SUM(page_snapshot.average_position * page_snapshot.impressions)
+                                 / SUM(page_snapshot.impressions) END AS average_position
+                FROM seo_page_snapshots page_snapshot
+                JOIN seo_snapshots source_snapshot
+                  ON source_snapshot.id = page_snapshot.seo_snapshot_id
+                 AND source_snapshot.source_kind = 'LIVE_API'
+                WHERE page_snapshot.snapshot_date BETWEEN ? AND ?
+                GROUP BY page_snapshot.device
                 ORDER BY impressions DESC
                 """, start, end);
     }
@@ -308,20 +324,27 @@ public class AnalyticsStore {
     @Transactional(readOnly = true)
     public List<Map<String, Object>> queryClassificationSummary(LocalDate start, LocalDate end) {
         return jdbc.queryForList("""
-                SELECT brand_classification, long_tail, search_intent,
-                       COUNT(DISTINCT query) AS query_count,
-                       SUM(clicks) AS clicks,
-                       SUM(impressions) AS impressions
-                FROM seo_query_snapshots
-                WHERE snapshot_date BETWEEN ? AND ?
-                GROUP BY brand_classification, long_tail, search_intent
+                SELECT query_snapshot.brand_classification, query_snapshot.long_tail,
+                       query_snapshot.search_intent,
+                       COUNT(DISTINCT query_snapshot.query) AS query_count,
+                       SUM(query_snapshot.clicks) AS clicks,
+                       SUM(query_snapshot.impressions) AS impressions
+                FROM seo_query_snapshots query_snapshot
+                JOIN seo_snapshots source_snapshot
+                  ON source_snapshot.id = query_snapshot.seo_snapshot_id
+                 AND source_snapshot.source_kind = 'LIVE_API'
+                WHERE query_snapshot.snapshot_date BETWEEN ? AND ?
+                GROUP BY query_snapshot.brand_classification, query_snapshot.long_tail,
+                         query_snapshot.search_intent
                 ORDER BY impressions DESC
                 """, start, end);
     }
 
     @Transactional(readOnly = true)
     public LocalDate latestSearchConsoleDate() {
-        return jdbc.queryForObject("SELECT MAX(period_end) FROM seo_snapshots", LocalDate.class);
+        return jdbc.queryForObject(
+                "SELECT MAX(period_end) FROM seo_snapshots WHERE source_kind = 'LIVE_API'",
+                LocalDate.class);
     }
 
     @Transactional(readOnly = true)
@@ -345,7 +368,7 @@ public class AnalyticsStore {
                        CASE WHEN SUM(impressions) = 0 THEN 0
                             ELSE SUM(clicks) / SUM(impressions) END AS organic_ctr
                 FROM seo_snapshots
-                WHERE period_start BETWEEN ? AND ?
+                WHERE source_kind = 'LIVE_API' AND period_start BETWEEN ? AND ?
                 """, start, end);
         if (!seo.isEmpty()) {
             result.putAll(seo.getFirst());
@@ -356,7 +379,7 @@ public class AnalyticsStore {
                        COALESCE(SUM((metrics->>'quizAttempts')::numeric), 0) AS quiz_attempts,
                        COALESCE(SUM((metrics->>'signPracticeSessions')::numeric), 0) AS sign_practice_sessions
                 FROM analytics_snapshots
-                WHERE source = 'READYROAD' AND snapshot_type = 'DAILY'
+                WHERE source IN ('READYROAD', 'RIJVIA') AND snapshot_type = 'DAILY'
                   AND period_start BETWEEN ? AND ?
                 """, start, end);
         if (!readyRoad.isEmpty()) {
@@ -376,7 +399,7 @@ public class AnalyticsStore {
             Map<String, Object> previous,
             Long taskId) {
         saveAnalyticsSnapshot(
-                "READYROAD", type, start, end,
+                "RIJVIA", type, start, end,
                 Map.of("comparisonStart", comparisonStart, "comparisonEnd", comparisonEnd),
                 Map.of("current", current, "previous", previous), 1, "COMPLETE",
                 List.of(), Map.of(), type + ":" + start + ":" + end, taskId);
@@ -389,7 +412,9 @@ public class AnalyticsStore {
                 WHERE snapshot_type IN ('DAILY', 'LANGUAGE', 'DEVICE', 'PROPERTY_TOTAL')
                   AND period_end < ?
                 """, cutoff);
-        int search = jdbc.update("DELETE FROM seo_snapshots WHERE period_end < ?", cutoff);
+        int search = jdbc.update(
+                "DELETE FROM seo_snapshots WHERE source_kind = 'LIVE_API' AND period_end < ?",
+                cutoff);
         return analytics + search;
     }
 
@@ -465,8 +490,13 @@ public class AnalyticsStore {
     private int distinctPages(String query, LocalDate start, LocalDate end) {
         Integer result = jdbc.queryForObject("""
                 SELECT COUNT(DISTINCT page)
-                FROM seo_query_snapshots
-                WHERE query = ? AND snapshot_date BETWEEN ? AND ? AND page <> ''
+                FROM seo_query_snapshots query_snapshot
+                JOIN seo_snapshots source_snapshot
+                  ON source_snapshot.id = query_snapshot.seo_snapshot_id
+                 AND source_snapshot.source_kind = 'LIVE_API'
+                WHERE query_snapshot.query = ?
+                  AND query_snapshot.snapshot_date BETWEEN ? AND ?
+                  AND query_snapshot.page <> ''
                 """, Integer.class, query, start, end);
         return result == null ? 0 : result;
     }

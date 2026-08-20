@@ -61,7 +61,7 @@ public class AnalyticsSyncService {
         if (searchFailure != null) {
             partialFailures.add("SEARCH_CONSOLE:" + searchFailure.errorCode());
         }
-        store.saveReadyRoad(start, end, taskId, partialFailures);
+        store.saveRijVia(start, end, taskId, partialFailures);
         if (ga4 != null) {
             store.saveGa4(ga4, start, end, taskId, partialFailures);
         }

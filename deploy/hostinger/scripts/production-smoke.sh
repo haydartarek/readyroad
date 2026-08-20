@@ -12,8 +12,8 @@ else
   source "${SCRIPT_DIR}/deploy-lib.sh"
 fi
 
-FRONTEND_URL="${READYROAD_FRONTEND_URL:-https://readyroad.be}"
-API_URL="${READYROAD_API_URL:-https://api.readyroad.be}"
+FRONTEND_URL="${READYROAD_FRONTEND_URL:-https://rijvia.be}"
+API_URL="${READYROAD_API_URL:-https://api.rijvia.be}"
 ENV_FILE="${READYROAD_CURRENT_LINK}/.env.production"
 temporary_directory=""
 checks=0

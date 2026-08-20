@@ -15,7 +15,7 @@ class YouTubeContentPackageServiceTest {
         assertThat(YouTubeContentPackageService.classifyPillar("اختبار سريع"))
                 .isEqualTo("TRAINING_TESTS");
         assertThat(YouTubeContentPackageService.classifyPillar("ReadyRoad update"))
-                .isEqualTo("READYROAD_EDUCATIONAL_VIDEOS");
+                .isEqualTo("RIJVIA_EDUCATIONAL_VIDEOS");
     }
 
     @Test

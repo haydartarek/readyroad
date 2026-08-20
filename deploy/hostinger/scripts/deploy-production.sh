@@ -111,7 +111,7 @@ if ! flock -n 9; then
   rr_die "deployment_already_running"
 fi
 
-rr_require_commands docker git curl jq flock sha256sum readlink
+rr_require_commands docker git curl jq flock grep sha256sum readlink
 [[ -x "$SMOKE_SCRIPT" ]] || rr_die "smoke_script_missing"
 [[ -x "$ROLLBACK_SCRIPT" ]] || rr_die "rollback_script_missing"
 [[ -s "${TEMPLATE_DIR}/docker-compose.yml" ]] ||
@@ -140,6 +140,24 @@ cleanup_staging() {
 cleanup_temporary_resources() {
   cleanup_candidate_container
   cleanup_staging
+}
+
+smoke_release() {
+  local release="$1"
+  local env_file="${release}/.env.production"
+  local caddy_file="${release}/Caddyfile"
+
+  if grep -qE '^rijvia\.be[[:space:]]*\{' "$caddy_file"; then
+    "$SMOKE_SCRIPT" \
+      --env-file "$env_file" \
+      --frontend-url https://rijvia.be \
+      --api-url https://api.rijvia.be
+  else
+    "$SMOKE_SCRIPT" \
+      --env-file "$env_file" \
+      --frontend-url https://readyroad.be \
+      --api-url https://api.readyroad.be
+  fi
 }
 
 finalize_result() {
@@ -198,7 +216,7 @@ rr_validate_release_files "$rollback_target"
 rr_log INFO deployment_started \
   "backend_ref=${BACKEND_REF} frontend_ref=${FRONTEND_REF} operator=${SUDO_USER:-root}"
 
-"$SMOKE_SCRIPT" --env-file "${rollback_target}/.env.production"
+smoke_release "$rollback_target"
 
 if (( DRY_RUN == 1 )); then
   validate_remote_ref() {
@@ -305,7 +323,7 @@ docker run --detach --name "$candidate_frontend" \
   --network "$READYROAD_NETWORK" \
   --env BACKEND_URL=http://backend:8890/api \
   --env NEXT_PUBLIC_API_BASE_URL=http://backend:8890/api \
-  --env NEXT_PUBLIC_APP_URL=https://readyroad.be \
+  --env NEXT_PUBLIC_APP_URL=https://rijvia.be \
   --env NODE_ENV=production \
   "$frontend_image" >/dev/null
 rr_wait_exec_http "$candidate_frontend" \
@@ -357,11 +375,11 @@ if (( SIMULATE_HEALTH_FAILURE == 1 )); then
   false
 fi
 
-"$SMOKE_SCRIPT" --env-file "${final_release}/.env.production"
+smoke_release "$rollback_target"
 rr_atomic_current_link "$final_release"
 rr_compose "$final_release" up -d --no-deps --no-build caddy
 rr_wait_container_health readyroad-caddy 120
-"$SMOKE_SCRIPT" --env-file "${final_release}/.env.production"
+smoke_release "$final_release"
 
 rr_prune_releases dry-run "$RELEASE_RETENTION" "$final_release" "$rollback_target"
 rr_prune_releases execute "$RELEASE_RETENTION" "$final_release" "$rollback_target"

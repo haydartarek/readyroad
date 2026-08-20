@@ -27,20 +27,21 @@ class EmailServiceTest {
     void setUp() {
         mailSender = mock(JavaMailSender.class);
         emailService = new EmailService(mailSender);
-        ReflectionTestUtils.setField(emailService, "fromAddress", "noreply@readyroad.be");
+        ReflectionTestUtils.setField(emailService, "fromAddress", "info@rijvia.be");
         ReflectionTestUtils.setField(emailService, "frontendUrl", "https://readyroad.example/");
         message = new MimeMessage(Session.getInstance(new Properties()));
         when(mailSender.createMimeMessage()).thenReturn(message);
     }
 
     @Test
-    void buildsProductionResetLinkAndEscapesDisplayName() {
+    void buildsProductionResetLinkAndEscapesDisplayName() throws Exception {
         emailService.sendPasswordResetEmail(
                 "driver@example.com",
                 "token-with-special+value",
                 "<strong>Driver</strong>");
 
         verify(mailSender).send(message);
+        assertThat(message.getFrom()[0].toString()).isEqualTo("info@rijvia.be");
         String resetLink = ReflectionTestUtils.invokeMethod(
                 emailService,
                 "buildResetLink",

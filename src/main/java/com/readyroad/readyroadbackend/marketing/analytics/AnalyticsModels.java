@@ -9,7 +9,17 @@ public final class AnalyticsModels {
     private AnalyticsModels() {}
 
     public enum OpportunityState {
-        DISCOVERING, EMERGING, OPPORTUNITY, ESTABLISHED, DECLINING
+        DISCOVERING,
+        EMERGING,
+        OPPORTUNITY,
+        ESTABLISHED,
+        DECLINING,
+        MIGRATION_RISK,
+        CTR_REPAIR,
+        CONTENT_GAP,
+        INTERNAL_LINK_GAP,
+        TECHNICAL_SEO_RISK,
+        LOW_CONFIDENCE
     }
 
     public enum Trend {
@@ -17,7 +27,11 @@ public final class AnalyticsModels {
     }
 
     public enum BrandClassification {
-        OWN_BRAND, NON_BRAND, COMPETITOR_OR_AMBIGUOUS_BRAND
+        OWN_BRAND,
+        OWN_BRAND_RIJVIA,
+        OLD_BRAND_READYROAD,
+        NON_BRAND,
+        COMPETITOR_OR_AMBIGUOUS_BRAND
     }
 
     public enum SearchIntent {

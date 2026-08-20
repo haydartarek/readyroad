@@ -16,8 +16,8 @@ import org.springframework.stereotype.Service;
 public class OrganicDiscoveryClassifier {
 
     private static final Pattern ARABIC = Pattern.compile("[\\p{InArabic}]");
-    private static final Set<String> OWN_BRAND = Set.of(
-            "rijvia", "rij via", "readyroad", "ready road", "readyroad.be");
+    private static final Set<String> OWN_BRAND = Set.of("rijvia", "rij via", "rijvia.be");
+    private static final Set<String> OLD_BRAND = Set.of("readyroad", "ready road", "readyroad.be");
     private static final Set<String> AMBIGUOUS_BRAND = Set.of("ready to road", "readytoroad");
     private static final Set<String> NAVIGATIONAL = Set.of("login", "inloggen", "connexion", "تسجيل", "دخول");
     private static final Set<String> TRANSACTIONAL = Set.of(
@@ -32,7 +32,10 @@ public class OrganicDiscoveryClassifier {
     public AnalyticsModels.BrandClassification brand(String query) {
         String normalized = normalize(query);
         if (OWN_BRAND.contains(normalized)) {
-            return AnalyticsModels.BrandClassification.OWN_BRAND;
+            return AnalyticsModels.BrandClassification.OWN_BRAND_RIJVIA;
+        }
+        if (OLD_BRAND.contains(normalized)) {
+            return AnalyticsModels.BrandClassification.OLD_BRAND_READYROAD;
         }
         if (AMBIGUOUS_BRAND.contains(normalized)) {
             return AnalyticsModels.BrandClassification.COMPETITOR_OR_AMBIGUOUS_BRAND;

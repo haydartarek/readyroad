@@ -112,7 +112,7 @@ public class YouTubeContentPackageService {
         if (contains(text, "تدريب", "اختبار", "oefen", "quiz", "practice")) return "TRAINING_TESTS";
         if (contains(text, "عملي", "praktijk", "pratique", "practical")) return "PRACTICAL_EXAM";
         if (contains(text, "امتحان", "examen", "exam")) return "THEORY_EXAM";
-        return "READYROAD_EDUCATIONAL_VIDEOS";
+        return "RIJVIA_EDUCATIONAL_VIDEOS";
     }
 
     static String clean(String value) {

@@ -115,7 +115,7 @@ services:
       args:
         BACKEND_URL: http://backend:8890/api
         NEXT_PUBLIC_API_BASE_URL: http://backend:8890/api
-        NEXT_PUBLIC_APP_URL: ${NEXT_PUBLIC_APP_URL:-https://readyroad.be}
+        NEXT_PUBLIC_APP_URL: ${NEXT_PUBLIC_APP_URL:-https://rijvia.be}
     image: readyroad-frontend:${FRONTEND_IMAGE_TAG:?FRONTEND_IMAGE_TAG must be set}
     container_name: readyroad-frontend
     restart: unless-stopped
@@ -126,8 +126,8 @@ services:
     environment:
       BACKEND_URL: http://backend:8890/api
       NEXT_PUBLIC_API_BASE_URL: http://backend:8890/api
-      NEXT_PUBLIC_APP_URL: ${NEXT_PUBLIC_APP_URL:-https://readyroad.be}
-      FRONTEND_URL: ${FRONTEND_URL:-https://readyroad.be}
+      NEXT_PUBLIC_APP_URL: ${NEXT_PUBLIC_APP_URL:-https://rijvia.be}
+      FRONTEND_URL: ${FRONTEND_URL:-https://rijvia.be}
       GOOGLE_OAUTH_CLIENT_ID: ${GOOGLE_OAUTH_CLIENT_ID:-}
       YOUTUBE_API_KEY: ${YOUTUBE_API_KEY:?YOUTUBE_API_KEY must be set}
       NODE_ENV: production

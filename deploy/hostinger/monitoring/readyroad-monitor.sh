@@ -24,6 +24,9 @@ readonly EXPECTED_CONTAINERS=(
   readyroad-backend
 )
 readonly TLS_HOSTS=(
+  rijvia.be
+  www.rijvia.be
+  api.rijvia.be
   readyroad.be
   www.readyroad.be
   api.readyroad.be

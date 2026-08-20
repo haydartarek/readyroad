@@ -14,13 +14,13 @@ class OrganicDiscoveryClassifierTest {
     @Test
     void followsTheApprovedBrandClassificationExamples() {
         assertThat(classifier.brand("rijvia"))
-                .isEqualTo(AnalyticsModels.BrandClassification.OWN_BRAND);
+                .isEqualTo(AnalyticsModels.BrandClassification.OWN_BRAND_RIJVIA);
         assertThat(classifier.brand("Rij Via"))
-                .isEqualTo(AnalyticsModels.BrandClassification.OWN_BRAND);
+                .isEqualTo(AnalyticsModels.BrandClassification.OWN_BRAND_RIJVIA);
         assertThat(classifier.brand("readyroad"))
-                .isEqualTo(AnalyticsModels.BrandClassification.OWN_BRAND);
+                .isEqualTo(AnalyticsModels.BrandClassification.OLD_BRAND_READYROAD);
         assertThat(classifier.brand("Ready Road"))
-                .isEqualTo(AnalyticsModels.BrandClassification.OWN_BRAND);
+                .isEqualTo(AnalyticsModels.BrandClassification.OLD_BRAND_READYROAD);
         assertThat(classifier.brand("ready to road"))
                 .isEqualTo(AnalyticsModels.BrandClassification.COMPETITOR_OR_AMBIGUOUS_BRAND);
         assertThat(classifier.brand("readytoroad"))

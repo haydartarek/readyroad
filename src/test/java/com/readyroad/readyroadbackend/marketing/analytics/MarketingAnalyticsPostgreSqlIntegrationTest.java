@@ -29,7 +29,8 @@ class MarketingAnalyticsPostgreSqlIntegrationTest {
 
     private static final Set<String> TABLES = Set.of(
             "analytics_snapshots", "seo_snapshots", "seo_query_snapshots",
-            "seo_page_snapshots", "seo_opportunities", "seo_content_gaps");
+            "seo_page_snapshots", "seo_opportunities", "seo_content_gaps",
+            "search_console_import_snapshots", "marketing_draft_briefs");
 
     @Container
     static final PostgreSQLContainer POSTGRES = new PostgreSQLContainer("postgres:17-alpine");
@@ -50,6 +51,8 @@ class MarketingAnalyticsPostgreSqlIntegrationTest {
 
     @Autowired DataSource dataSource;
     @Autowired AnalyticsStore store;
+    @Autowired RijViaSeoMigrationStore migrationStore;
+    @Autowired RijViaSeoOpportunityEngine opportunityEngine;
     @Autowired AgentScheduleRepository scheduleRepository;
 
     private JdbcTemplate jdbc;
@@ -57,18 +60,20 @@ class MarketingAnalyticsPostgreSqlIntegrationTest {
     @BeforeEach
     void clean() {
         jdbc = new JdbcTemplate(dataSource);
-        jdbc.update("TRUNCATE seo_content_gaps, seo_opportunities, seo_page_snapshots, "
-                + "seo_query_snapshots, seo_snapshots, analytics_snapshots RESTART IDENTITY CASCADE");
+        jdbc.update("TRUNCATE marketing_draft_briefs, seo_content_gaps, seo_opportunities, "
+                + "seo_page_snapshots, seo_query_snapshots, search_console_import_snapshots, "
+                + "seo_snapshots, analytics_snapshots RESTART IDENTITY CASCADE");
     }
 
     @Test
-    void migrationCreatesExactlyTheSixAnalyticsTablesAndDisabledSchedules() {
+    void migrationCreatesTheAnalyticsAndLocalEvidenceTablesWithDisabledSchedules() {
         List<String> tables = jdbc.queryForList("""
                 SELECT table_name FROM information_schema.tables
                 WHERE table_schema = 'public'
                   AND table_name IN (
                     'analytics_snapshots', 'seo_snapshots', 'seo_query_snapshots',
-                    'seo_page_snapshots', 'seo_opportunities', 'seo_content_gaps')
+                    'seo_page_snapshots', 'seo_opportunities', 'seo_content_gaps',
+                    'search_console_import_snapshots', 'marketing_draft_briefs')
                 """, String.class);
         assertThat(new HashSet<>(tables)).containsExactlyInAnyOrderElementsOf(TABLES);
         assertThat(jdbc.queryForObject(
@@ -108,14 +113,66 @@ class MarketingAnalyticsPostgreSqlIntegrationTest {
     }
 
     @Test
-    void storesReadyRoadDailyMetricsWithoutUsingProductionData() {
+    void storesRijViaDailyMetricsWithoutUsingProductionData() {
         LocalDate date = LocalDate.of(2026, 8, 10);
 
-        store.saveReadyRoad(date, date, null, List.of());
+        store.saveRijVia(date, date, null, List.of());
 
         assertThat(jdbc.queryForObject("""
                 SELECT metrics->>'registrations' FROM analytics_snapshots
-                WHERE source = 'READYROAD' AND period_start = '2026-08-10'
+                WHERE source = 'RIJVIA' AND period_start = '2026-08-10'
                 """, String.class)).isEqualTo("0");
+    }
+
+    @Test
+    void persistsTheLocalSearchConsoleEvidenceIdempotentlyAndConfiguresRijViaStrategy() {
+        var workbook = new SearchConsoleWorkbookParser.ParsedWorkbook(
+                "readyroad-search-console.xlsx", "a".repeat(64), 4096,
+                LocalDate.of(2026, 8, 18), LocalDate.of(2026, 8, 19),
+                List.of(
+                        new SearchConsoleWorkbookParser.MetricRow("readyroad", 12, 38, 12d / 38d, 3),
+                        new SearchConsoleWorkbookParser.MetricRow(
+                                "autoweg autosnelweg verschil belgië", 0, 100, 0, 12)),
+                List.of(
+                        new SearchConsoleWorkbookParser.MetricRow(
+                                "https://readyroad.be/fr", 1, 1158, 0.0009, 5.01),
+                        new SearchConsoleWorkbookParser.MetricRow(
+                                "https://readyroad.be/nl/traffic-signs/A13", 0, 189, 0, 8.38)),
+                List.of(), List.of(), List.of(),
+                List.of(
+                        new SearchConsoleWorkbookParser.ChartRow(
+                                LocalDate.of(2026, 8, 18), 20, 2500, .008, 9),
+                        new SearchConsoleWorkbookParser.ChartRow(
+                                LocalDate.of(2026, 8, 19), 18, 2367, .0076, 9.4)),
+                Map.of("نوع البحث", "الويب"), List.of(), 0);
+        var analysis = opportunityEngine.analyze(workbook, "https://rijvia.be");
+
+        var first = migrationStore.save(workbook, analysis, "marketing-admin");
+        var repeated = migrationStore.save(workbook, analysis, "marketing-admin");
+
+        assertThat(first.created()).isTrue();
+        assertThat(repeated.created()).isFalse();
+        assertThat(repeated.importId()).isEqualTo(first.importId());
+        assertThat(jdbc.queryForObject("SELECT COUNT(*) FROM search_console_import_snapshots", Integer.class))
+                .isEqualTo(1);
+        assertThat(jdbc.queryForObject("SELECT COUNT(*) FROM seo_query_snapshots", Integer.class))
+                .isEqualTo(2);
+        assertThat(jdbc.queryForObject("SELECT COUNT(*) FROM seo_page_snapshots", Integer.class))
+                .isEqualTo(2);
+        assertThat(jdbc.queryForObject("SELECT COUNT(*) FROM seo_opportunities", Integer.class))
+                .isEqualTo(4);
+        assertThat(store.latestSearchConsoleDate()).isNull();
+        assertThat(store.aggregateQueries(
+                LocalDate.of(2026, 8, 18), LocalDate.of(2026, 8, 19))).isEmpty();
+        assertThat(jdbc.queryForObject(
+                "SELECT COUNT(*) FROM marketing_usp WHERE active = TRUE", Integer.class)).isEqualTo(9);
+        assertThat(jdbc.queryForObject("""
+                SELECT COUNT(*) FROM marketing_content_pillars
+                WHERE pillar_key = 'RIJVIA_EDUCATIONAL_VIDEOS' AND active = TRUE
+                """, Integer.class)).isEqualTo(1);
+        assertThat(jdbc.queryForObject("""
+                SELECT setting_value->>'activationStatus' FROM agent_settings
+                WHERE agent_type = 'STRATEGY' AND setting_key = 'seo.migration'
+                """, String.class)).isEqualTo("OWNER_CONFIRMED_PENDING_RELEASE");
     }
 }

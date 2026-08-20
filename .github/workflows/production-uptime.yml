@@ -29,7 +29,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 3
     env:
-      INCIDENT_TITLE: "[monitoring] ReadyRoad production outage"
+      INCIDENT_TITLE: "[monitoring] RijVia production outage"
     steps:
       - name: Check public endpoints
         id: checks
@@ -69,17 +69,18 @@ jobs:
             fi
           }
 
-          check_http "frontend" "https://readyroad.be"
-          check_http "backend" "https://api.readyroad.be/actuator/health"
-          check_http "robots" "https://readyroad.be/robots.txt"
-          check_http "sitemap" "https://readyroad.be/sitemap.xml"
+          check_http "frontend" "https://rijvia.be"
+          check_http "backend" "https://api.rijvia.be/actuator/health"
+          check_http "robots" "https://rijvia.be/robots.txt"
+          check_http "sitemap" "https://rijvia.be/sitemap.xml"
+          check_http "legacy_redirect" "https://readyroad.be"
 
           if [[ "$SIMULATION" == "failure" ]]; then
             failures+=("simulation: controlled alert-path test")
           fi
 
           {
-            echo "## ReadyRoad production uptime"
+            echo "## RijVia production uptime"
             echo
             echo "Checked at: $(date -u +'%Y-%m-%dT%H:%M:%SZ')"
             echo

@@ -21,7 +21,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
  * Default Credentials:
  * - Username: admin
  * - Password: loaded from ADMIN_DEFAULT_PASSWORD environment variable
- * - Email: admin@readyroad.be
+ * - Email: info@rijvia.be
  * - Role: ADMIN
  * 
  * @author ReadyRoad Team
@@ -69,7 +69,7 @@ public class DefaultAdminInitializer {
             // Create admin user if it doesn't exist at all
             User admin = new User();
             admin.setUsername(adminUsername);
-            admin.setEmail("admin@readyroad.be");
+            admin.setEmail("info@rijvia.be");
             admin.setFullName("System Administrator");
             admin.setPasswordHash(encodedPassword);
             admin.setRole(Role.ADMIN);
@@ -83,7 +83,7 @@ public class DefaultAdminInitializer {
             log.info("║        ✅ DEFAULT ADMIN USER CREATED                      ║");
             log.info("╚════════════════════════════════════════════════════════════╝");
             log.info("   Username: {}", adminUsername);
-            log.info("   Email: admin@readyroad.be");
+            log.info("   Email: info@rijvia.be");
             log.info("   Role: ADMIN");
             log.info("");
             log.warn("⚠️  CRITICAL: Password set from configured admin password");

@@ -27,7 +27,7 @@ public class EmailService {
 
     private final JavaMailSender mailSender;
 
-    @Value("${app.mail.from:noreply@readyroad.be}")
+    @Value("${app.mail.from:info@rijvia.be}")
     private String fromAddress;
 
     @Value("${app.frontend.url:http://localhost:3000}")

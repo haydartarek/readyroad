@@ -17,7 +17,7 @@ public record EditorialPriorityConfig(
     static final String BUSINESS_RELEVANCE = "businessConversionRelevance";
     static final String CONTENT_GAP = "contentGap";
     static final String STRATEGIC_RELEVANCE = "strategicIcpRelevance";
-    static final String AUTHORITY = "existingReadyRoadAuthority";
+    static final String AUTHORITY = "existingRijViaAuthority";
     static final String LONG_TAIL = "longTailOpportunity";
     static final String MULTILINGUAL = "multilingualOpportunity";
     static final String FRESHNESS = "contentFreshnessNeed";

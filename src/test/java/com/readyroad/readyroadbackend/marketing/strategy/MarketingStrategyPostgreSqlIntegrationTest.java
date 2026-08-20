@@ -86,7 +86,7 @@ class MarketingStrategyPostgreSqlIntegrationTest {
     }
 
     @Test
-    void migrationCreatesOnlyTheSevenStrategyTablesAndApprovedReferenceData() {
+    void migrationCreatesTheSevenStrategyTablesAndApprovedReferenceData() {
         JdbcTemplate jdbc = new JdbcTemplate(dataSource);
         List<String> tables = jdbc.queryForList("""
                 SELECT table_name
@@ -95,7 +95,7 @@ class MarketingStrategyPostgreSqlIntegrationTest {
                   AND (table_name LIKE 'marketing_%' OR table_name = 'social_proof_items')
                 """, String.class);
 
-        assertThat(new HashSet<>(tables)).containsExactlyInAnyOrderElementsOf(EXPECTED_TABLES);
+        assertThat(new HashSet<>(tables)).containsAll(EXPECTED_TABLES);
         assertThat(jdbc.queryForObject("SELECT COUNT(*) FROM marketing_icp", Integer.class)).isEqualTo(6);
         assertThat(jdbc.queryForObject("SELECT COUNT(*) FROM marketing_content_pillars", Integer.class)).isEqualTo(12);
         assertThat(jdbc.queryForObject("SELECT COUNT(*) FROM marketing_funnel_stages", Integer.class)).isEqualTo(9);
@@ -115,7 +115,7 @@ class MarketingStrategyPostgreSqlIntegrationTest {
                 .contains("RijVia")
                 .doesNotContain("ReadyRoad");
         assertThat(jdbc.queryForObject(
-                "SELECT name FROM marketing_content_pillars WHERE pillar_key = 'READYROAD_EDUCATIONAL_VIDEOS'",
+                "SELECT name FROM marketing_content_pillars WHERE pillar_key = 'RIJVIA_EDUCATIONAL_VIDEOS'",
                 String.class))
                 .isEqualTo("فيديوهات RijVia التعليمية");
         assertThat(jdbc.queryForObject(

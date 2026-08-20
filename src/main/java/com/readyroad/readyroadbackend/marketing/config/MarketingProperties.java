@@ -17,6 +17,7 @@ public class MarketingProperties {
     private Analytics analytics = new Analytics();
     private YouTube youtube = new YouTube();
     private Content content = new Content();
+    private LocalSeo localSeo = new LocalSeo();
 
     @Getter
     @Setter
@@ -59,5 +60,13 @@ public class MarketingProperties {
         private int maxSummaryCharacters = 360;
         private int maxBodyCharacters = 1_600;
         private int maxCtaCharacters = 180;
+    }
+
+    @Getter
+    @Setter
+    public static class LocalSeo {
+        private boolean importEnabled;
+        private long maxUploadBytes = 5L * 1024L * 1024L;
+        private String candidateDomain = "https://rijvia.be";
     }
 }

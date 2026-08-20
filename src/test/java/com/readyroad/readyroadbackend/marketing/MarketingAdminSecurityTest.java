@@ -1,6 +1,7 @@
 package com.readyroad.readyroadbackend.marketing;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.multipart;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
@@ -22,6 +23,7 @@ import org.springframework.http.MediaType;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.TransactionDefinition;
@@ -88,6 +90,25 @@ class MarketingAdminSecurityTest {
                 .andExpect(status().isUnauthorized());
 
         mockMvc.perform(get("/api/admin/marketing/analytics/status")
+                        .header("Authorization", "Bearer " + userToken))
+                .andExpect(status().isForbidden());
+    }
+
+    @Test
+    void protectsLocalSeoEvidenceImportWithTheExistingAdminBoundary() throws Exception {
+        String workspace = "/api/admin/marketing/seo-migration/workspace";
+        mockMvc.perform(get(workspace)).andExpect(status().isUnauthorized());
+        mockMvc.perform(get(workspace).header("Authorization", "Bearer " + userToken))
+                .andExpect(status().isForbidden());
+
+        MockMultipartFile workbook = new MockMultipartFile(
+                "file", "search-console.xlsx",
+                "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                new byte[] {'P', 'K', 1, 2});
+        mockMvc.perform(multipart("/api/admin/marketing/seo-migration/import").file(workbook))
+                .andExpect(status().isUnauthorized());
+        mockMvc.perform(multipart("/api/admin/marketing/seo-migration/import")
+                        .file(workbook)
                         .header("Authorization", "Bearer " + userToken))
                 .andExpect(status().isForbidden());
     }

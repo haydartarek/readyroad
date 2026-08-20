@@ -57,7 +57,7 @@ class AnalyticsSyncServiceTest {
 
         service.synchronize(42L, true);
 
-        verify(store).saveReadyRoad(any(), any(), eq(42L), eq(List.of("GA4:HTTP_503")));
+        verify(store).saveRijVia(any(), any(), eq(42L), eq(List.of("GA4:HTTP_503")));
         verify(store).saveSearchConsole(any(), any(), eq(42L), eq(List.of("GA4:HTTP_503")));
         verify(editorialPriorities).enqueueAfterAnalytics(eq(42L), any());
         verify(editorialOpportunities).enqueueCandidates(42L);
@@ -76,7 +76,7 @@ class AnalyticsSyncServiceTest {
                 .extracting(error -> ((MarketingTaskExecutionException) error).errorCode())
                 .isEqualTo("HTTP_503");
 
-        verify(store).saveReadyRoad(any(), any(), eq(43L), anyList());
+        verify(store).saveRijVia(any(), any(), eq(43L), anyList());
         verifyNoInteractions(editorialPriorities);
         verifyNoInteractions(editorialOpportunities);
     }

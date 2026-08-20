@@ -74,7 +74,7 @@ class MarketingContentPostgreSqlIntegrationTest {
         long uspId = jdbc.queryForObject(
                 "SELECT id FROM marketing_usp WHERE approved_by = 'CONTENT_TEST'", Long.class);
         long pillarId = jdbc.queryForObject(
-                "SELECT id FROM marketing_content_pillars WHERE pillar_key = 'READYROAD_EDUCATIONAL_VIDEOS'",
+                "SELECT id FROM marketing_content_pillars WHERE pillar_key = 'RIJVIA_EDUCATIONAL_VIDEOS'",
                 Long.class);
         long funnelId = jdbc.queryForObject(
                 "SELECT id FROM marketing_funnel_stages WHERE stage_key = 'EDUCATION'", Long.class);

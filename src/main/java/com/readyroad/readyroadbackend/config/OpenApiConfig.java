@@ -25,7 +25,7 @@ public class OpenApiConfig {
 
         Contact contact = new Contact();
         contact.setName("RijVia Team");
-        contact.setEmail("support@readyroad.com");
+        contact.setEmail("info@rijvia.be");
 
         License license = new License()
                 .name("MIT License")
