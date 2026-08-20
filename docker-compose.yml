@@ -89,7 +89,7 @@ services:
       READYROAD_SIGNS_IMPORT_PATH: /app/data/signs_import
 
       # Email / Password Reset
-      SMTP_HOST: smtp.gmail.com
+      SMTP_HOST: ${SMTP_HOST:-smtp.gmail.com}
       SMTP_PORT: "587"
       SMTP_USERNAME: ${SMTP_USERNAME:-}
       SMTP_PASSWORD: ${SMTP_PASSWORD:-}
