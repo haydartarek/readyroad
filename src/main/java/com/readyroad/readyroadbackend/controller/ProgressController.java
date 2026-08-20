@@ -4,8 +4,12 @@ import com.readyroad.readyroadbackend.util.AuthenticationUtil;
 import com.readyroad.readyroadbackend.dto.CategoryProgressResponse;
 import com.readyroad.readyroadbackend.dto.OverallProgressResponse;
 import com.readyroad.readyroadbackend.dto.StudentIntelligenceResponse;
+import com.readyroad.readyroadbackend.dto.TheoryQuestionCoverageResponse;
+import com.readyroad.readyroadbackend.dto.TheoryTimeoutAnalysisResponse;
 import com.readyroad.readyroadbackend.service.ProgressService;
 import com.readyroad.readyroadbackend.service.StudentIntelligenceService;
+import com.readyroad.readyroadbackend.service.TheoryQuestionCoverageService;
+import com.readyroad.readyroadbackend.service.TheoryTimeoutAnalysisService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -42,6 +46,8 @@ public class ProgressController {
 
     private final ProgressService progressService;
     private final StudentIntelligenceService studentIntelligenceService;
+    private final TheoryQuestionCoverageService theoryQuestionCoverageService;
+    private final TheoryTimeoutAnalysisService theoryTimeoutAnalysisService;
     private final AuthenticationUtil authenticationUtil;
 
     @GetMapping("/intelligence")
@@ -64,6 +70,42 @@ public class ProgressController {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
         return ResponseEntity.ok(studentIntelligenceService.getStudentIntelligence(userId));
+    }
+
+    @GetMapping("/theory-coverage")
+    @Operation(
+            summary = "Get current theory-question coverage",
+            description = "Returns localized current-bank exposure and answer metrics without treating coverage as accuracy.")
+    @ApiResponses(value = {
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "Theory coverage retrieved successfully",
+                    content = @Content(
+                            mediaType = "application/json",
+                            schema = @Schema(implementation = TheoryQuestionCoverageResponse.class))),
+            @ApiResponse(responseCode = "401", description = "User not authenticated", content = @Content)
+    })
+    public ResponseEntity<TheoryQuestionCoverageResponse> getTheoryQuestionCoverage(
+            Authentication authentication) {
+        Long userId = authenticationUtil.extractUserId(authentication);
+        if (userId == null) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+        }
+        return ResponseEntity.ok(theoryQuestionCoverageService.getCoverage(userId));
+    }
+
+    @GetMapping("/theory-timeouts")
+    @Operation(
+            summary = "Get completed theory-exam timeouts",
+            description = "Returns persisted unanswered timeouts from completed theory exams only.")
+    public ResponseEntity<TheoryTimeoutAnalysisResponse> getTheoryTimeoutAnalysis(
+            Authentication authentication,
+            @RequestParam(defaultValue = "10") int limit) {
+        Long userId = authenticationUtil.extractUserId(authentication);
+        if (userId == null) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+        }
+        return ResponseEntity.ok(theoryTimeoutAnalysisService.getAnalysis(userId, limit));
     }
 
     // ============================================================================

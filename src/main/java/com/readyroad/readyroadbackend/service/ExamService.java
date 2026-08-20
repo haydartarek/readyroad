@@ -3,6 +3,7 @@ package com.readyroad.readyroadbackend.service;
 import com.readyroad.readyroadbackend.domain.entity.Category;
 import com.readyroad.readyroadbackend.domain.entity.ExamSimulation;
 import com.readyroad.readyroadbackend.domain.entity.ExamSimulationAnswer;
+import com.readyroad.readyroadbackend.domain.entity.ExamSimulationAnswer.AnswerState;
 import com.readyroad.readyroadbackend.domain.entity.ExamSimulationQuestion;
 import com.readyroad.readyroadbackend.domain.entity.QuizAnswerOption;
 import com.readyroad.readyroadbackend.domain.entity.QuizQuestion;
@@ -19,7 +20,6 @@ import com.readyroad.readyroadbackend.domain.repository.UserCategoryProgressRepo
 import com.readyroad.readyroadbackend.domain.repository.UserQuestionHistoryRepository;
 import com.readyroad.readyroadbackend.domain.repository.UserWeakAreaRepository;
 import com.readyroad.readyroadbackend.domain.repository.UserRepository;
-import com.readyroad.readyroadbackend.util.PlaceholderDetector;
 import com.readyroad.readyroadbackend.dto.exam.SubmitExamAnswerRequest;
 import com.readyroad.readyroadbackend.dto.exam.SubmitExamAnswerResponse;
 import com.readyroad.readyroadbackend.dto.exam.ExamResultsDTO;
@@ -27,6 +27,10 @@ import com.readyroad.readyroadbackend.dto.exam.ExamStartResponse;
 import com.readyroad.readyroadbackend.dto.exam.CategoryBreakdownDTO;
 import com.readyroad.readyroadbackend.dto.exam.IncorrectQuestionDTO;
 import com.readyroad.readyroadbackend.dto.exam.AllAnsweredQuestionDTO;
+import com.readyroad.readyroadbackend.dto.exam.TheoryExamQuestionSnapshot;
+import com.readyroad.readyroadbackend.dto.exam.TheoryExamQuestionSnapshot.CategorySnapshot;
+import com.readyroad.readyroadbackend.dto.exam.TheoryExamQuestionSnapshot.LocalizedText;
+import com.readyroad.readyroadbackend.dto.exam.TheoryExamQuestionSnapshot.OptionSnapshot;
 import com.readyroad.readyroadbackend.exception.ActiveExamAlreadyExistsException;
 import com.readyroad.readyroadbackend.exception.ExamNotActiveException;
 import com.readyroad.readyroadbackend.exception.ExamNotCompletedException;
@@ -60,9 +64,9 @@ import java.util.stream.Collectors;
  *
  * Implements Belgian driving license exam simulation:
  * - 50 questions per exam
- * - 30 minutes time limit
+ * - 15 seconds per question (12 minutes 30 seconds for 50 questions)
  * - 41/50 passing score (82%)
- * - Respects 24h cooldown (Law #1)
+ * - Respects the theory-question presentation cooldown
  * - Uses adaptive difficulty (Law #2)
  */
 @Service
@@ -86,26 +90,23 @@ public class ExamService {
     private final ExamMapper examMapper;
     private final BackendMessageService messages;
     private final UserRepository userRepository;
+    private final TheoryExamQuestionAllocator questionAllocator;
+    private final TheoryExamQuestionSnapshotService questionSnapshotService;
 
     private static final int EXAM_QUESTION_COUNT = 50;
-    private static final int EXAM_TIME_LIMIT_MINUTES = 30;
     private static final int PASSING_SCORE = 41;
-
-    // Belgian driving exam: fixed difficulty distribution
-    private static final int EASY_QUESTION_COUNT = 20; // 40%
-    private static final int MEDIUM_QUESTION_COUNT = 20; // 40%
-    private static final int HARD_QUESTION_COUNT = 10; // 20%
-    // Total: 50 = EASY + MEDIUM + HARD ✅
+    private static final String HISTORY_CONTEXT_EXAM = "EXAM";
+    private static final Duration THEORY_QUESTION_COOLDOWN = Duration.ofHours(8);
 
     /**
      * Start a new exam simulation.
      *
      * Story A1 Implementation:
      * 1. Check if user has active exam
-     * 2. Generate 50 questions (respecting 24h cooldown + adaptive difficulty)
+     * 2. Generate 50 questions from the user's cooldown-eligible pool
      * 3. Create exam simulation record
      * 4. Link questions to exam
-     * 5. Set time limit (30 minutes)
+     * 5. Derive the answering window from question count × 15 seconds
      *
      * @param userId User ID
      * @return ExamSimulation entity (Controller will map to DTO)
@@ -134,74 +135,30 @@ public class ExamService {
             }
         }
 
-        // ✅ Belgian exam standard: 20 EASY + 20 MEDIUM + 10 HARD = 50 questions
-        // Uses database-native random ordering for each difficulty tier
-        List<QuizQuestion> easyPool = questionRepository
-                .findRandomQuestionsByDifficulty(QuizQuestion.DifficultyLevel.EASY).stream()
-                .filter(q -> q != null && q.getId() != null)
-                .filter(q -> hasMinValidOptionsForExam(q))
-                .collect(Collectors.toList());
+        LocalDateTime cooldownCutoff = LocalDateTime.now().minus(THEORY_QUESTION_COOLDOWN);
+        TheoryExamQuestionAllocator.Allocation allocation =
+                questionAllocator.allocate(userId, cooldownCutoff);
+        List<QuizQuestion> questions = new ArrayList<>(allocation.questions());
+        Collections.shuffle(questions);
 
-        List<QuizQuestion> mediumPool = questionRepository
-                .findRandomQuestionsByDifficulty(QuizQuestion.DifficultyLevel.MEDIUM).stream()
-                .filter(q -> q != null && q.getId() != null)
-                .filter(q -> hasMinValidOptionsForExam(q))
-                .collect(Collectors.toList());
-
-        List<QuizQuestion> hardPool = questionRepository
-                .findRandomQuestionsByDifficulty(QuizQuestion.DifficultyLevel.HARD).stream()
-                .filter(q -> q != null && q.getId() != null)
-                .filter(q -> hasMinValidOptionsForExam(q))
-                .collect(Collectors.toList());
-
-        log.debug("Difficulty pool sizes — EASY: {}, MEDIUM: {}, HARD: {}",
-                easyPool.size(), mediumPool.size(), hardPool.size());
-
-        // Validate each tier has enough questions before building the exam
-        if (easyPool.size() < EASY_QUESTION_COUNT) {
-            log.error("Insufficient EASY questions. Required: {}, Available: {}",
-                    EASY_QUESTION_COUNT, easyPool.size());
-            throw new ResponseStatusException(
-                    HttpStatus.CONFLICT,
-                    messages.get(
-                            "exam.pool.insufficient_easy",
-                            EASY_QUESTION_COUNT,
-                            easyPool.size()));
+        if (!allocation.unconfiguredCategoryCodes().isEmpty()) {
+            log.warn("Bank-eligible theory categories remain inventory-only because no exam weight is configured: {}",
+                    allocation.unconfiguredCategoryCodes());
         }
-        if (mediumPool.size() < MEDIUM_QUESTION_COUNT) {
-            log.error("Insufficient MEDIUM questions. Required: {}, Available: {}",
-                    MEDIUM_QUESTION_COUNT, mediumPool.size());
-            throw new ResponseStatusException(
-                    HttpStatus.CONFLICT,
-                    messages.get(
-                            "exam.pool.insufficient_medium",
-                            MEDIUM_QUESTION_COUNT,
-                            mediumPool.size()));
-        }
-        if (hardPool.size() < HARD_QUESTION_COUNT) {
-            log.error("Insufficient HARD questions. Required: {}, Available: {}",
-                    HARD_QUESTION_COUNT, hardPool.size());
-            throw new ResponseStatusException(
-                    HttpStatus.CONFLICT,
-                    messages.get(
-                            "exam.pool.insufficient_hard",
-                            HARD_QUESTION_COUNT,
-                            hardPool.size()));
-        }
-
-        // Build the 50-question set with correct distribution, then shuffle order
-        List<QuizQuestion> questions = new ArrayList<>(EXAM_QUESTION_COUNT);
-        questions.addAll(easyPool.subList(0, EASY_QUESTION_COUNT));
-        questions.addAll(mediumPool.subList(0, MEDIUM_QUESTION_COUNT));
-        questions.addAll(hardPool.subList(0, HARD_QUESTION_COUNT));
-        Collections.shuffle(questions); // Randomise final question order
-
-        log.info("Selected {} questions for exam (EASY={}, MEDIUM={}, HARD={})",
-                questions.size(), EASY_QUESTION_COUNT, MEDIUM_QUESTION_COUNT, HARD_QUESTION_COUNT);
+        log.info("Selected {} questions for exam: bankEligible={}, userAvailable={}, blueprint={}, "
+                        + "allocated={}, difficulties={}, relaxedDifficulty={}",
+                questions.size(),
+                allocation.bankEligibleCounts(),
+                allocation.userAvailableCounts(),
+                allocation.blueprintCategoryTargets(),
+                allocation.categoryTargets(),
+                allocation.difficultyCounts(),
+                allocation.difficultyRelaxed());
 
         // AC6-AC7: Create exam simulation (UTC-aware timestamps)
         Instant now = Instant.now();
-        Instant expiresAt = now.plus(Duration.ofMinutes(EXAM_TIME_LIMIT_MINUTES));
+        Instant expiresAt = now.plus(Duration.ofSeconds(
+                TheoryExamTiming.totalSeconds(questions.size())));
 
         ExamSimulation exam = new ExamSimulation();
         exam.setUserId(userId);
@@ -227,6 +184,7 @@ public class ExamService {
             esq.setQuestion(question); // ✅ Set the actual question object (fixes NPE!)
             esq.setQuestionId(question.getId());
             esq.setQuestionOrder(i + 1);
+            questionSnapshotService.captureInto(esq, question);
             esq = examQuestionRepository.save(esq);
             examQuestionsList.add(esq);
         }
@@ -314,27 +272,6 @@ public class ExamService {
     }
 
     /**
-     * Returns {@code true} if the question has at least 2 options whose text is
-     * free of placeholder or corrupted content across all four language fields.
-     * Questions failing this check are excluded from the exam pool.
-     */
-    private boolean hasMinValidOptionsForExam(QuizQuestion question) {
-        if (question.getOptions() == null) {
-            return false;
-        }
-        long validCount = question.getDeliverableOptions().stream()
-                .filter(option -> !PlaceholderDetector.hasPlaceholder(
-                        option.getOptionTextEn(), option.getOptionTextNl(),
-                        option.getOptionTextFr(), option.getOptionTextAr()))
-                .count();
-        if (validCount < 2) {
-            log.warn("⚠️ Exam pool: question {} excluded — only {} valid option(s) after placeholder check",
-                    question.getId(), validCount);
-        }
-        return validCount >= 2;
-    }
-
-    /**
      * Get active exam for user.
      * ✅ Eagerly loads exam questions and options to prevent
      * LazyInitializationException
@@ -395,7 +332,7 @@ public class ExamService {
      * calculates and persists the final score on the exam entity.
      *
      * Idempotent: safe to call multiple times — subsequent calls on an already
-     * COMPLETED or EXPIRED exam are silently ignored.
+     * COMPLETED exam resolve the existing result without repeating side effects.
      *
      * @param examId Exam ID
      * @param userId Authenticated user ID (ownership check)
@@ -404,7 +341,7 @@ public class ExamService {
     public void completeExam(Long examId, Long userId) {
         log.info("Completing exam: examId={}, userId={}", examId, userId);
 
-        ExamSimulation exam = examRepository.findById(examId)
+        ExamSimulation exam = examRepository.findByIdForUpdate(examId)
                 .orElseThrow(() -> new ExamNotFoundException(
                         messages.get("exam.not_found", examId)));
 
@@ -413,10 +350,8 @@ public class ExamService {
         }
 
         // Idempotent — already in a terminal state, nothing to do
-        if (exam.getStatus() == ExamSimulation.ExamStatus.COMPLETED ||
-                exam.getStatus() == ExamSimulation.ExamStatus.EXPIRED ||
-                exam.getStatus() == ExamSimulation.ExamStatus.ABANDONED) {
-            log.info("Exam {} already in terminal state: {}", examId, exam.getStatus());
+        if (exam.getStatus() == ExamSimulation.ExamStatus.COMPLETED) {
+            log.info("Exam {} already completed; resolving the existing result", examId);
             return;
         }
 
@@ -436,7 +371,8 @@ public class ExamService {
         int correctCount = (int) answers.stream()
                 .filter(ExamSimulationAnswer::getIsCorrect)
                 .count();
-        double scorePercentage = (correctCount * 100.0) / EXAM_QUESTION_COUNT;
+        int totalQuestions = exam.getTotalQuestions();
+        double scorePercentage = (correctCount * 100.0) / totalQuestions;
 
         // Persist completion state and score on the exam entity
         Instant completedAt = Instant.now();
@@ -444,12 +380,13 @@ public class ExamService {
         exam.setCompletedAt(completedAt);
         exam.setCorrectAnswers(correctCount);
         exam.setScorePercentage(scorePercentage);
-        exam.setTimeTakenSeconds(calculateElapsedSeconds(exam.getStartedAt(), completedAt));
+        exam.setTimeTakenSeconds(calculateElapsedSeconds(
+                exam.getStartedAt(), completedAt, exam.getTotalQuestions()));
 
         examRepository.save(exam);
 
         log.info("Exam completed: examId={}, score={}/{} ({}%)",
-                examId, correctCount, EXAM_QUESTION_COUNT,
+                examId, correctCount, totalQuestions,
                 String.format("%.1f", scorePercentage));
 
         // ── Story N1: Fire exam-result notification ──────────────────────────
@@ -457,11 +394,11 @@ public class ExamService {
         try {
             if (passed) {
                 notificationService.createExamPassedNotification(
-                        exam.getUserId(), examId, correctCount, EXAM_QUESTION_COUNT);
+                        exam.getUserId(), examId, correctCount, totalQuestions);
             } else {
                 int pointsShort = PASSING_SCORE - correctCount;
                 notificationService.createExamFailedNotification(
-                        exam.getUserId(), examId, correctCount, EXAM_QUESTION_COUNT, pointsShort);
+                        exam.getUserId(), examId, correctCount, totalQuestions, pointsShort);
             }
         } catch (Exception ex) {
             // Notification failure must NEVER roll back the exam completion
@@ -526,6 +463,8 @@ public class ExamService {
         try {
             LocalDateTime now_ldt = LocalDateTime.now();
             for (ExamSimulationAnswer answer : answers) {
+                if (answer.isTimedOut())
+                    continue;
                 QuizQuestion q = answer.getQuestion();
                 if (q == null)
                     continue;
@@ -567,6 +506,8 @@ public class ExamService {
         try {
             LocalDateTime now_ldt2 = LocalDateTime.now();
             for (ExamSimulationAnswer answer : answers) {
+                if (answer.isTimedOut())
+                    continue;
                 QuizQuestion q = answer.getQuestion();
                 if (q == null)
                     continue;
@@ -600,7 +541,7 @@ public class ExamService {
     public void cancelExam(Long examId, Long userId) {
         log.info("Cancelling exam: examId={}, userId={}", examId, userId);
 
-        ExamSimulation exam = examRepository.findById(examId)
+        ExamSimulation exam = examRepository.findByIdForUpdate(examId)
                 .orElseThrow(() -> new ExamNotFoundException(messages.get("exam.not_found", examId)));
 
         if (!exam.getUserId().equals(userId)) {
@@ -627,6 +568,38 @@ public class ExamService {
         examRepository.save(exam);
 
         log.info("✅ Exam cancelled: examId={}", examId);
+    }
+
+    /**
+     * Records that one question was actually rendered to the exam owner.
+     * Repeated requests for the same persisted exam question are idempotent.
+     */
+    @Transactional
+    public void recordQuestionPresented(Long examId, Long questionId, Long userId) {
+        ExamSimulation exam = examRepository.findById(examId)
+                .orElseThrow(() -> new ExamNotFoundException(
+                        messages.get("exam.not_found", examId)));
+
+        if (!exam.getUserId().equals(userId)) {
+            throw new UnauthorizedException(userId, examId);
+        }
+        if (exam.getStatus() != ExamSimulation.ExamStatus.IN_PROGRESS) {
+            throw new ExamNotActiveException(
+                    messages.get("exam.submit.invalid_status", exam.getStatus()));
+        }
+        if (Instant.now().isAfter(exam.getExpiresAt())) {
+            exam.setStatus(ExamSimulation.ExamStatus.EXPIRED);
+            examRepository.save(exam);
+            throw new ExamExpiredException(
+                    messages.get("exam.submit.expired", TheoryExamTiming.QUESTION_TIME_SECONDS),
+                    examId);
+        }
+
+        examQuestionRepository.findByExamIdAndQuestionId(examId, questionId)
+                .orElseThrow(() -> new QuestionNotFoundException(
+                        messages.get("exam.submit.question_not_found_in_exam", questionId, examId)));
+
+        persistPresentationIfAbsent(examId, questionId, userId, LocalDateTime.now());
     }
 
     /**
@@ -663,7 +636,9 @@ public class ExamService {
         Instant now = Instant.now();
 
         // 1. Validate exam exists and ownership
-        ExamSimulation exam = getExamById(examId);
+        ExamSimulation exam = examRepository.findByIdForUpdate(examId)
+                .orElseThrow(() -> new ExamNotFoundException(
+                        messages.get("exam.not_found", examId)));
         if (!exam.getUserId().equals(userId)) {
             throw new UnauthorizedException(userId, examId);
         }
@@ -679,7 +654,7 @@ public class ExamService {
             examRepository.save(exam);
             log.warn("Exam {} expired at {}. Current time: {}", examId, exam.getExpiresAt(), now);
             throw new ExamExpiredException(
-                    messages.get("exam.submit.expired", EXAM_TIME_LIMIT_MINUTES),
+                    messages.get("exam.submit.expired", TheoryExamTiming.QUESTION_TIME_SECONDS),
                     examId);
         }
 
@@ -688,6 +663,10 @@ public class ExamService {
                 .findByExamIdAndQuestionId(examId, questionId)
                 .orElseThrow(() -> new QuestionNotFoundException(
                         messages.get("exam.submit.question_not_found_in_exam", questionId, examId)));
+
+        // A submitted answer proves the question was presented. This is a fallback for
+        // a failed client-side exposure request and remains idempotent per exam question.
+        persistPresentationIfAbsent(examId, questionId, userId, LocalDateTime.now());
 
         // Load the actual question entity
         QuizQuestion question = questionRepository.findById(questionId)
@@ -717,6 +696,11 @@ public class ExamService {
                 .findByExamIdAndQuestionId(examId, questionId)
                 .orElse(null);
 
+        if (answer != null && answer.isTimedOut()) {
+            throw new ExamNotActiveException(
+                    messages.get("exam.submit.question_timed_out"));
+        }
+
         if (answer == null) {
             // Create new answer
             answer = ExamSimulationAnswer.builder()
@@ -726,6 +710,7 @@ public class ExamService {
                     .correctOption(correctOption)
                     .isCorrect(selectedOption.getIsCorrect()) // Store but don't reveal
                     .answeredAt(now)
+                    .answerState(AnswerState.ANSWERED)
                     .timeTakenSeconds(request.getTimeTakenSeconds() != null
                             ? request.getTimeTakenSeconds()
                             : 0)
@@ -738,6 +723,8 @@ public class ExamService {
             answer.setCorrectOption(correctOption);
             answer.setIsCorrect(selectedOption.getIsCorrect());
             answer.setAnsweredAt(now);
+            answer.setAnswerState(AnswerState.ANSWERED);
+            answer.setTimedOutAt(null);
             if (request.getTimeTakenSeconds() != null) {
                 answer.setTimeTakenSeconds(request.getTimeTakenSeconds());
             }
@@ -764,6 +751,82 @@ public class ExamService {
         log.info("Answer submitted successfully. Progress: {}/{}", totalAnswered, EXAM_QUESTION_COUNT);
 
         return response;
+    }
+
+    /**
+     * Finalizes one displayed theory question as unanswered after its 15-second
+     * timer expires. Repeated timeout requests and a timeout racing an already
+     * persisted answer are harmless.
+     */
+    @Transactional
+    public void recordQuestionTimeout(Long examId, Long questionId, Long userId) {
+        Instant timedOutAt = Instant.now();
+        ExamSimulation exam = examRepository.findByIdForUpdate(examId)
+                .orElseThrow(() -> new ExamNotFoundException(
+                        messages.get("exam.not_found", examId)));
+
+        if (!exam.getUserId().equals(userId)) {
+            throw new UnauthorizedException(userId, examId);
+        }
+        if (exam.getStatus() != ExamSimulation.ExamStatus.IN_PROGRESS) {
+            throw new ExamNotActiveException(
+                    messages.get("exam.submit.invalid_status", exam.getStatus()));
+        }
+        if (timedOutAt.isAfter(exam.getExpiresAt())) {
+            exam.setStatus(ExamSimulation.ExamStatus.EXPIRED);
+            examRepository.save(exam);
+            throw new ExamExpiredException(
+                    messages.get("exam.submit.expired", TheoryExamTiming.QUESTION_TIME_SECONDS),
+                    examId);
+        }
+
+        examQuestionRepository.findByExamIdAndQuestionId(examId, questionId)
+                .orElseThrow(() -> new QuestionNotFoundException(
+                        messages.get("exam.submit.question_not_found_in_exam", questionId, examId)));
+        persistPresentationIfAbsent(examId, questionId, userId, LocalDateTime.now());
+
+        ExamSimulationAnswer existing = answerRepository
+                .findByExamIdAndQuestionId(examId, questionId)
+                .orElse(null);
+        if (existing != null) {
+            return;
+        }
+
+        QuizQuestion question = questionRepository.findById(questionId)
+                .orElseThrow(() -> new QuestionNotFoundException(
+                        messages.get("exam.submit.question_not_found", questionId)));
+        QuizAnswerOption correctOption = question.getDeliverableOptions().stream()
+                .filter(QuizAnswerOption::getIsCorrect)
+                .findFirst()
+                .orElseThrow(() -> new InvalidAnswerException(
+                        messages.get("exam.submit.option_mismatch")));
+
+        answerRepository.save(ExamSimulationAnswer.builder()
+                .exam(exam)
+                .question(question)
+                .selectedOption(null)
+                .correctOption(correctOption)
+                .isCorrect(false)
+                .timeTakenSeconds(15)
+                .answeredAt(timedOutAt)
+                .answerState(AnswerState.TIMED_OUT)
+                .timedOutAt(timedOutAt)
+                .build());
+    }
+
+    private void persistPresentationIfAbsent(
+            Long examId,
+            Long questionId,
+            Long userId,
+            LocalDateTime presentedAt) {
+        int updated = examQuestionRepository.markPresentedIfAbsent(examId, questionId, presentedAt);
+        if (updated == 1) {
+            historyRepository.upsertQuestionPresented(
+                    userId,
+                    questionId,
+                    presentedAt,
+                    HISTORY_CONTEXT_EXAM);
+        }
     }
 
     /**
@@ -798,9 +861,8 @@ public class ExamService {
             log.info("Auto-expired exam {} after time limit", examId);
         }
 
-        // 2. Verify exam is completed or expired (Story A4)
-        if (exam.getStatus() != ExamSimulation.ExamStatus.COMPLETED &&
-                exam.getStatus() != ExamSimulation.ExamStatus.EXPIRED) {
+        // Only canonical COMPLETED attempts expose completed-result analytics.
+        if (exam.getStatus() != ExamSimulation.ExamStatus.COMPLETED) {
             throw new ExamNotCompletedException(examId, exam.getStatus().name());
         }
 
@@ -819,15 +881,16 @@ public class ExamService {
         List<IncorrectQuestionDTO> incorrectQuestions = getIncorrectQuestions(answers);
 
         // 5b. Get all answered questions for full review
-        List<AllAnsweredQuestionDTO> allAnswers = getAllAnswers(answers);
+        List<AllAnsweredQuestionDTO> allAnswers = getAllAnswers(examId, answers);
 
         // 6. Calculate statistics
-        int answeredCount = answers.size();
+        int totalQuestions = exam.getTotalQuestions();
+        int answeredCount = (int) answers.stream().filter(answer -> !answer.isTimedOut()).count();
         int correctCount = (int) answers.stream().filter(ExamSimulationAnswer::getIsCorrect).count();
         int wrongCount = answeredCount - correctCount;
-        int unansweredCount = EXAM_QUESTION_COUNT - answeredCount;
+        int unansweredCount = totalQuestions - answeredCount;
 
-        double scorePercentage = (correctCount * 100.0) / EXAM_QUESTION_COUNT;
+        double scorePercentage = (correctCount * 100.0) / totalQuestions;
         boolean passed = correctCount >= PASSING_SCORE;
 
         String resultStatus = passed ? "PASSED" : "FAILED";
@@ -855,7 +918,7 @@ public class ExamService {
                 .examId(examId)
                 .userId(userId)
                 .completedAt(exam.getCompletedAt())
-                .totalQuestions(EXAM_QUESTION_COUNT)
+                .totalQuestions(totalQuestions)
                 .correctAnswers(correctCount)
                 .wrongAnswers(wrongCount)
                 .scorePercentage(Math.round(scorePercentage * 100.0) / 100.0) // 2 decimals
@@ -879,7 +942,7 @@ public class ExamService {
                 .build();
 
         log.info("✅ Exam results calculated: examId={}, score={}/{} ({}%), passed={}",
-                examId, correctCount, EXAM_QUESTION_COUNT, scorePercentage, passed);
+                examId, correctCount, totalQuestions, scorePercentage, passed);
 
         return results;
     }
@@ -892,6 +955,9 @@ public class ExamService {
         Map<Long, CategoryBreakdownDTO> categoryMap = new HashMap<>();
 
         for (ExamSimulationAnswer answer : answers) {
+            if (answer.isTimedOut()) {
+                continue;
+            }
             // Get question from relationship
             QuizQuestion question = answer.getQuestion();
 
@@ -952,7 +1018,7 @@ public class ExamService {
      */
     private List<IncorrectQuestionDTO> getIncorrectQuestions(List<ExamSimulationAnswer> answers) {
         return answers.stream()
-                .filter(answer -> !answer.getIsCorrect())
+                .filter(answer -> !answer.isTimedOut() && !answer.getIsCorrect())
                 .map(answer -> {
                     // Get question and options from relationships
                     QuizQuestion question = answer.getQuestion();
@@ -1025,13 +1091,21 @@ public class ExamService {
     /**
      * Get all answered questions (correct and incorrect) for full review.
      */
-    private List<AllAnsweredQuestionDTO> getAllAnswers(List<ExamSimulationAnswer> answers) {
+    private List<AllAnsweredQuestionDTO> getAllAnswers(Long examId, List<ExamSimulationAnswer> answers) {
+        Map<Long, TheoryExamQuestionSnapshot> snapshots = new HashMap<>();
+        for (ExamSimulationQuestion examQuestion : examQuestionRepository.findByExamIdOrderByQuestionOrder(examId)) {
+            TheoryExamQuestionSnapshot snapshot = questionSnapshotService.read(examQuestion);
+            if (snapshot != null) {
+                snapshots.put(examQuestion.getQuestionId(), snapshot);
+            }
+        }
+
         return answers.stream()
                 .map(answer -> {
                     QuizQuestion question = answer.getQuestion();
                     QuizAnswerOption selectedOption = answer.getSelectedOption();
 
-                    if (question == null || selectedOption == null) {
+                    if (question == null || (selectedOption == null && !answer.isTimedOut())) {
                         return null;
                     }
 
@@ -1042,22 +1116,44 @@ public class ExamService {
                     }
 
                     Category category = question.getCategory();
-                    String selectedEn = roadSignReferenceTextResolver.resolveEn(selectedOption.getOptionTextEn());
-                    String selectedAr = roadSignReferenceTextResolver.resolveAr(selectedOption.getOptionTextAr());
-                    String selectedNl = roadSignReferenceTextResolver.resolveNl(selectedOption.getOptionTextNl());
-                    String selectedFr = roadSignReferenceTextResolver.resolveFr(selectedOption.getOptionTextFr());
-                    String correctEn = roadSignReferenceTextResolver.resolveEn(correctOption.getOptionTextEn());
-                    String correctAr = roadSignReferenceTextResolver.resolveAr(correctOption.getOptionTextAr());
-                    String correctNl = roadSignReferenceTextResolver.resolveNl(correctOption.getOptionTextNl());
-                    String correctFr = roadSignReferenceTextResolver.resolveFr(correctOption.getOptionTextFr());
+                    TheoryExamQuestionSnapshot snapshot = snapshots.get(question.getId());
+                    OptionSnapshot selectedSnapshot = snapshotOption(
+                            snapshot, selectedOption == null ? null : selectedOption.getId());
+                    OptionSnapshot correctSnapshot = snapshotOption(snapshot, correctOption.getId());
+                    CategorySnapshot categorySnapshot = snapshot == null ? null : snapshot.category();
+
+                    String selectedEn = snapshot != null ? snapshotEn(selectedSnapshot)
+                            : selectedOption == null ? null
+                                    : roadSignReferenceTextResolver.resolveEn(selectedOption.getOptionTextEn());
+                    String selectedAr = snapshot != null ? snapshotAr(selectedSnapshot)
+                            : selectedOption == null ? null
+                                    : roadSignReferenceTextResolver.resolveAr(selectedOption.getOptionTextAr());
+                    String selectedNl = snapshot != null ? snapshotNl(selectedSnapshot)
+                            : selectedOption == null ? null
+                                    : roadSignReferenceTextResolver.resolveNl(selectedOption.getOptionTextNl());
+                    String selectedFr = snapshot != null ? snapshotFr(selectedSnapshot)
+                            : selectedOption == null ? null
+                                    : roadSignReferenceTextResolver.resolveFr(selectedOption.getOptionTextFr());
+                    String correctEn = snapshot != null ? snapshotEn(correctSnapshot)
+                            : roadSignReferenceTextResolver.resolveEn(correctOption.getOptionTextEn());
+                    String correctAr = snapshot != null ? snapshotAr(correctSnapshot)
+                            : roadSignReferenceTextResolver.resolveAr(correctOption.getOptionTextAr());
+                    String correctNl = snapshot != null ? snapshotNl(correctSnapshot)
+                            : roadSignReferenceTextResolver.resolveNl(correctOption.getOptionTextNl());
+                    String correctFr = snapshot != null ? snapshotFr(correctSnapshot)
+                            : roadSignReferenceTextResolver.resolveFr(correctOption.getOptionTextFr());
 
                     return AllAnsweredQuestionDTO.builder()
                             .questionId(question.getId())
-                            .questionTextEn(roadSignReferenceTextResolver.resolveEn(question.getQuestionEn()))
-                            .questionTextAr(roadSignReferenceTextResolver.resolveAr(question.getQuestionAr()))
-                            .questionTextNl(roadSignReferenceTextResolver.resolveNl(question.getQuestionNl()))
-                            .questionTextFr(roadSignReferenceTextResolver.resolveFr(question.getQuestionFr()))
-                            .selectedOptionId(selectedOption.getId())
+                            .questionTextEn(snapshot != null ? snapshotEn(snapshot.questionText())
+                                    : roadSignReferenceTextResolver.resolveEn(question.getQuestionEn()))
+                            .questionTextAr(snapshot != null ? snapshotAr(snapshot.questionText())
+                                    : roadSignReferenceTextResolver.resolveAr(question.getQuestionAr()))
+                            .questionTextNl(snapshot != null ? snapshotNl(snapshot.questionText())
+                                    : roadSignReferenceTextResolver.resolveNl(question.getQuestionNl()))
+                            .questionTextFr(snapshot != null ? snapshotFr(snapshot.questionText())
+                                    : roadSignReferenceTextResolver.resolveFr(question.getQuestionFr()))
+                            .selectedOptionId(selectedOption == null ? null : selectedOption.getId())
                             .selectedOptionText(selectedEn)
                             .selectedOptionTextEn(selectedEn)
                             .selectedOptionTextAr(selectedAr)
@@ -1069,24 +1165,80 @@ public class ExamService {
                             .correctOptionTextAr(correctAr)
                             .correctOptionTextNl(correctNl)
                             .correctOptionTextFr(correctFr)
-                            .explanationEn(roadSignReferenceTextResolver.resolveEn(question.getExplanationEn()))
-                            .explanationAr(roadSignReferenceTextResolver.resolveAr(question.getExplanationAr()))
-                            .explanationNl(roadSignReferenceTextResolver.resolveNl(question.getExplanationNl()))
-                            .explanationFr(roadSignReferenceTextResolver.resolveFr(question.getExplanationFr()))
-                            .categoryName(category != null
-                                    ? category.getNameEn()
+                            .explanationEn(snapshot != null ? snapshotEn(snapshot.explanation())
+                                    : roadSignReferenceTextResolver.resolveEn(question.getExplanationEn()))
+                            .explanationAr(snapshot != null ? snapshotAr(snapshot.explanation())
+                                    : roadSignReferenceTextResolver.resolveAr(question.getExplanationAr()))
+                            .explanationNl(snapshot != null ? snapshotNl(snapshot.explanation())
+                                    : roadSignReferenceTextResolver.resolveNl(question.getExplanationNl()))
+                            .explanationFr(snapshot != null ? snapshotFr(snapshot.explanation())
+                                    : roadSignReferenceTextResolver.resolveFr(question.getExplanationFr()))
+                            .categoryName(categorySnapshot != null
+                                    ? snapshotEn(categorySnapshot.name())
+                                    : category != null ? category.getNameEn()
                                     : messages.get("analytics.category.unknown"))
-                            .categoryNameEn(category != null ? category.getNameEn() : null)
-                            .categoryNameAr(category != null ? category.getNameAr() : null)
-                            .categoryNameNl(category != null ? category.getNameNl() : null)
-                            .categoryNameFr(category != null ? category.getNameFr() : null)
-                            .categoryCode(category != null ? category.getCode() : null)
-                            .contentImageUrl(question.getContentImageUrl())
+                            .categoryNameEn(categorySnapshot != null ? snapshotEn(categorySnapshot.name())
+                                    : category != null ? category.getNameEn() : null)
+                            .categoryNameAr(categorySnapshot != null ? snapshotAr(categorySnapshot.name())
+                                    : category != null ? category.getNameAr() : null)
+                            .categoryNameNl(categorySnapshot != null ? snapshotNl(categorySnapshot.name())
+                                    : category != null ? category.getNameNl() : null)
+                            .categoryNameFr(categorySnapshot != null ? snapshotFr(categorySnapshot.name())
+                                    : category != null ? category.getNameFr() : null)
+                            .categoryCode(categorySnapshot != null ? categorySnapshot.code()
+                                    : category != null ? category.getCode() : null)
+                            .contentImageUrl(snapshot != null ? snapshot.contentImageUrl() : question.getContentImageUrl())
                             .isCorrect(answer.getIsCorrect())
+                            .wasTimeout(answer.isTimedOut())
+                            .difficulty(snapshot != null ? snapshot.difficulty()
+                                    : question.getDifficultyLevel() == null
+                                    ? null : question.getDifficultyLevel().name())
                             .build();
                 })
                 .filter(java.util.Objects::nonNull)
                 .collect(Collectors.toList());
+    }
+
+    private static OptionSnapshot snapshotOption(TheoryExamQuestionSnapshot snapshot, Long optionId) {
+        if (snapshot == null || optionId == null) {
+            return null;
+        }
+        return snapshot.options().stream()
+                .filter(option -> optionId.equals(option.id()))
+                .findFirst()
+                .orElse(null);
+    }
+
+    private static String snapshotEn(OptionSnapshot option) {
+        return option == null ? null : snapshotEn(option.text());
+    }
+
+    private static String snapshotAr(OptionSnapshot option) {
+        return option == null ? null : snapshotAr(option.text());
+    }
+
+    private static String snapshotNl(OptionSnapshot option) {
+        return option == null ? null : snapshotNl(option.text());
+    }
+
+    private static String snapshotFr(OptionSnapshot option) {
+        return option == null ? null : snapshotFr(option.text());
+    }
+
+    private static String snapshotEn(LocalizedText text) {
+        return text == null ? null : text.en();
+    }
+
+    private static String snapshotAr(LocalizedText text) {
+        return text == null ? null : text.ar();
+    }
+
+    private static String snapshotNl(LocalizedText text) {
+        return text == null ? null : text.nl();
+    }
+
+    private static String snapshotFr(LocalizedText text) {
+        return text == null ? null : text.fr();
     }
 
     private static boolean isSupportedLanguage(String language) {
@@ -1109,7 +1261,8 @@ public class ExamService {
     }
 
     private Integer resolveExamElapsedSeconds(ExamSimulation exam) {
-        Integer calculated = calculateElapsedSeconds(exam.getStartedAt(), exam.getCompletedAt());
+        Integer calculated = calculateElapsedSeconds(
+                exam.getStartedAt(), exam.getCompletedAt(), exam.getTotalQuestions());
         if (calculated != null) {
             return calculated;
         }
@@ -1118,13 +1271,16 @@ public class ExamService {
         return stored != null && stored > 0 ? stored : null;
     }
 
-    private Integer calculateElapsedSeconds(Instant startedAt, Instant completedAt) {
+    private Integer calculateElapsedSeconds(
+            Instant startedAt,
+            Instant completedAt,
+            int totalQuestions) {
         if (startedAt == null || completedAt == null || completedAt.isBefore(startedAt)) {
             return null;
         }
 
         long elapsedSeconds = Duration.between(startedAt, completedAt).getSeconds();
-        long maximumSeconds = Duration.ofMinutes(EXAM_TIME_LIMIT_MINUTES).getSeconds();
+        long maximumSeconds = TheoryExamTiming.totalSeconds(totalQuestions);
         return (int) Math.min(elapsedSeconds, maximumSeconds);
     }
 

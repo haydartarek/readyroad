@@ -79,7 +79,7 @@ class MarketingStrategyPostgreSqlIntegrationTest {
         AgentDefinition definition = definitionRepository.findByAgentType(MarketingStrategyChangeService.AGENT_TYPE)
                 .orElseGet(() -> new AgentDefinition(
                         MarketingStrategyChangeService.AGENT_TYPE,
-                        "ReadyRoad Marketing Strategy Engine",
+                        "RijVia Marketing Strategy Engine",
                         true));
         definition.setEnabled(true);
         definitionRepository.saveAndFlush(definition);
@@ -101,6 +101,27 @@ class MarketingStrategyPostgreSqlIntegrationTest {
         assertThat(jdbc.queryForObject("SELECT COUNT(*) FROM marketing_funnel_stages", Integer.class)).isEqualTo(9);
         assertThat(jdbc.queryForObject("SELECT COUNT(*) FROM marketing_conversion_goals", Integer.class)).isZero();
         assertThat(jdbc.queryForObject("SELECT COUNT(*) FROM social_proof_items", Integer.class)).isZero();
+    }
+
+    @Test
+    void rebrandMigrationUpdatesTheActiveProductIdentity() {
+        JdbcTemplate jdbc = new JdbcTemplate(dataSource);
+
+        assertThat(jdbc.queryForObject(
+                "SELECT site_name FROM admin_system_settings ORDER BY id LIMIT 1", String.class))
+                .isEqualTo("RijVia");
+        assertThat(jdbc.queryForObject(
+                "SELECT statement FROM marketing_positioning WHERE active = TRUE", String.class))
+                .contains("RijVia")
+                .doesNotContain("ReadyRoad");
+        assertThat(jdbc.queryForObject(
+                "SELECT name FROM marketing_content_pillars WHERE pillar_key = 'READYROAD_EDUCATIONAL_VIDEOS'",
+                String.class))
+                .isEqualTo("فيديوهات RijVia التعليمية");
+        assertThat(jdbc.queryForObject(
+                "SELECT COUNT(*) FROM agent_definitions WHERE display_name LIKE '%ReadyRoad%'",
+                Integer.class))
+                .isZero();
     }
 
     @Test

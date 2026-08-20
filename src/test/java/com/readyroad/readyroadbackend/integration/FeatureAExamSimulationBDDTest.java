@@ -130,7 +130,7 @@ public class FeatureAExamSimulationBDDTest {
                         // And: The response should include an examSessionId
                         assertThat(exam.getId()).isNotNull();
 
-                        // And: Exam has time limit set (30 minutes)
+                        // And: Exam has a persisted answering deadline
                         assertThat(exam.getStartedAt()).isNotNull();
                         assertThat(exam.getExpiresAt()).isNotNull();
                         assertThat(exam.getExpiresAt()).isAfter(exam.getStartedAt());
@@ -217,8 +217,9 @@ public class FeatureAExamSimulationBDDTest {
                         // When & Then: User requests to start a new exam
                         // The request should be rejected with a conflict response exception
                         assertThatThrownBy(() -> examService.startExamSimulation(testUserId))
-                                        .isInstanceOf(org.springframework.web.server.ResponseStatusException.class)
-                                        .hasMessageContaining("Not enough easy questions");
+                                        .isInstanceOf(com.readyroad.readyroadbackend.exception.ExamQuestionPoolUnavailableException.class)
+                                        .hasMessageContaining("A complete theory exam is temporarily unavailable")
+                                        .hasMessageContaining("Required: 50 eligible questions, available: 0");
 
                         // Note: Response status code 409 is handled by controller exception handler
                 }

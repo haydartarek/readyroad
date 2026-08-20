@@ -81,4 +81,14 @@ class ExamControllerTest {
         assertThat(response.getBody()).containsEntry("status", "ABANDONED");
         verify(examService).cancelExam(84L, 9L);
     }
+
+    @Test
+    void recordsPresentedQuestionForAuthenticatedOwner() {
+        when(authenticationUtil.getCurrentUserId()).thenReturn(9L);
+
+        ResponseEntity<Void> response = examController.recordQuestionPresented(84L, 17L);
+
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.NO_CONTENT);
+        verify(examService).recordQuestionPresented(84L, 17L, 9L);
+    }
 }

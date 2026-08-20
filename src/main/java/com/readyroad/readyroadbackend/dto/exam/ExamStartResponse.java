@@ -22,7 +22,9 @@ public class ExamStartResponse {
 
     private Integer totalQuestions;
 
-    private Integer timeLimitMinutes;
+    private Double timeLimitMinutes;
+
+    private Integer timeLimitSeconds;
 
     private String status;
 

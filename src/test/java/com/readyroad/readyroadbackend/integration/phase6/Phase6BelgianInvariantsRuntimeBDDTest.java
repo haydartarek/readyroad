@@ -105,6 +105,9 @@ public class Phase6BelgianInvariantsRuntimeBDDTest {
                 testCategory.setNameFr("Conduite urbaine");
                 testCategory.setIsActive(true);
                 testCategory.setDisplayOrder(1);
+                testCategory.setExamTargetWeight(100);
+                testCategory.setContentScope(
+                                com.readyroad.readyroadbackend.domain.enums.CategoryContentScope.THEORETICAL_EXAM);
                 testCategory = categoryRepository.save(testCategory);
 
                 // Create test traffic sign

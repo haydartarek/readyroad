@@ -8,6 +8,7 @@ import com.readyroad.readyroadbackend.domain.repository.ExamSimulationQuestionRe
 import com.readyroad.readyroadbackend.domain.repository.ExamSimulationRepository;
 import com.readyroad.readyroadbackend.domain.repository.QuizQuestionRepository;
 import com.readyroad.readyroadbackend.exception.ActiveExamAlreadyExistsException;
+import com.readyroad.readyroadbackend.exception.ExamQuestionPoolUnavailableException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
@@ -19,6 +20,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.time.Instant;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 import static org.assertj.core.api.Assertions.*;
 
@@ -74,6 +77,16 @@ class ExamServiceIntegrationTest extends BaseIntegrationTest { // ✅ Changed fr
         // Verify questions linked
         List<ExamSimulationQuestion> questions = examQuestionRepository.findByExamIdOrderByQuestionOrder(exam.getId());
         assertThat(questions).hasSize(50);
+        assertThat(questions).extracting(ExamSimulationQuestion::getQuestionId).doesNotHaveDuplicates();
+
+        Map<QuizQuestion.DifficultyLevel, Long> difficultyCounts = questions.stream()
+                .map(ExamSimulationQuestion::getQuestionId)
+                .map(questionId -> quizQuestionRepository.findById(questionId).orElseThrow())
+                .collect(Collectors.groupingBy(QuizQuestion::getDifficultyLevel, Collectors.counting()));
+        assertThat(difficultyCounts).containsExactlyInAnyOrderEntriesOf(Map.of(
+                QuizQuestion.DifficultyLevel.EASY, 15L,
+                QuizQuestion.DifficultyLevel.MEDIUM, 20L,
+                QuizQuestion.DifficultyLevel.HARD, 15L));
 
         // Verify question order is sequential
         for (int i = 0; i < 50; i++) {
@@ -104,9 +117,13 @@ class ExamServiceIntegrationTest extends BaseIntegrationTest { // ✅ Changed fr
 
         // When/Then
         assertThatThrownBy(() -> examService.startExamSimulation(testUserId))
-                .isInstanceOf(org.springframework.web.server.ResponseStatusException.class)
-                .hasMessageContaining("Not enough")
-                .hasMessageContaining("questions to build the exam");
+                .isInstanceOf(ExamQuestionPoolUnavailableException.class)
+                .satisfies(error -> {
+                    ExamQuestionPoolUnavailableException unavailable =
+                            (ExamQuestionPoolUnavailableException) error;
+                    assertThat(unavailable.getRequiredQuestions()).isEqualTo(50);
+                    assertThat(unavailable.getEligibleCapacity()).isEqualTo(30);
+                });
     }
 
     @Test

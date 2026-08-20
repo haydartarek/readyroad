@@ -21,7 +21,7 @@ public class HomeController {
 
     @GetMapping("/")
     public String home() {
-        return "ReadyRoad API is running! ✅";
+        return "RijVia API is running! ✅";
     }
 
     @GetMapping("/api/home/stats")

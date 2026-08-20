@@ -29,6 +29,20 @@ public final class AdminLearningDtos {
             LocalDateTime lastPracticedAt) {
     }
 
+    public record DifficultyPerformance(
+            String difficulty,
+            long answeredQuestions,
+            long correctAnswers,
+            double accuracy) {
+    }
+
+    public record DifficultyPerformanceResponse(
+            List<DifficultyPerformance> items,
+            long snapshotBackedAnswers,
+            long legacyAnswersExcluded,
+            String evidenceStatus) {
+    }
+
     public record StudentSummary(
             Long userId,
             String username,
@@ -127,6 +141,45 @@ public final class AdminLearningDtos {
             Long userId,
             String examType,
             Long examId,
+            ExamSummary summary,
+            String historicalContentStatus,
             Object result) {
+    }
+
+    public record TheoryExamHistoryResult(
+            List<HistoricalTheoryQuestion> questions) {
+    }
+
+    public record HistoricalTheoryQuestion(
+            Long questionId,
+            int questionOrder,
+            String questionTextEn,
+            String questionTextNl,
+            String questionTextFr,
+            String questionTextAr,
+            Long selectedOptionId,
+            String selectedOptionTextEn,
+            String selectedOptionTextNl,
+            String selectedOptionTextFr,
+            String selectedOptionTextAr,
+            Long correctOptionId,
+            String correctOptionTextEn,
+            String correctOptionTextNl,
+            String correctOptionTextFr,
+            String correctOptionTextAr,
+            String explanationEn,
+            String explanationNl,
+            String explanationFr,
+            String explanationAr,
+            String categoryCode,
+            String categoryNameEn,
+            String categoryNameNl,
+            String categoryNameFr,
+            String categoryNameAr,
+            String difficulty,
+            String contentImageUrl,
+            Boolean isCorrect,
+            boolean answered,
+            boolean snapshotAvailable) {
     }
 }

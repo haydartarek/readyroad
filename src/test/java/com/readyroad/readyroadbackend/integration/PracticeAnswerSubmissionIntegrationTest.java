@@ -208,6 +208,9 @@ class PracticeAnswerSubmissionIntegrationTest {
         assertEquals(option.getIsCorrect(), record.getIsCorrect());
         assertEquals(15, record.getTimeTakenSeconds());
         assertNotNull(record.getAnsweredAt());
+        assertEquals("THEORY", record.getQuestionType());
+        assertNull(record.getLastPresentedAt());
+        assertEquals(0, record.getTimesPresented());
     }
 
     @Test

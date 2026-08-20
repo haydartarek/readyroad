@@ -41,4 +41,23 @@ class NotificationServiceTest {
                 .contains("\"categoryNl\":\"Informatieborden\"")
                 .contains("\"categoryFr\":\"Signaux d'information\"");
     }
+
+    @Test
+    void lessonNotificationStoresEveryLocalizedLessonTitle() {
+        notificationService.createLessonProgressNotification(
+                17L,
+                "Priority rules",
+                "قواعد الأولوية",
+                "Voorrangsregels",
+                "Règles de priorité");
+
+        ArgumentCaptor<Notification> captor = ArgumentCaptor.forClass(Notification.class);
+        verify(notificationRepository).save(captor.capture());
+
+        assertThat(captor.getValue().getMessageParams())
+                .contains("\"lessonEn\":\"Priority rules\"")
+                .contains("\"lessonAr\":\"قواعد الأولوية\"")
+                .contains("\"lessonNl\":\"Voorrangsregels\"")
+                .contains("\"lessonFr\":\"Règles de priorité\"");
+    }
 }

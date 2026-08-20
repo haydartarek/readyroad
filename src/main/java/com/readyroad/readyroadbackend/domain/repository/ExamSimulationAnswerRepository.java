@@ -5,6 +5,7 @@ import com.readyroad.readyroadbackend.domain.entity.ExamSimulation;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -29,11 +30,37 @@ public interface ExamSimulationAnswerRepository extends JpaRepository<ExamSimula
             JOIN FETCH q.category c
             WHERE e.userId = :userId
               AND e.status = :status
+              AND a.answerState = com.readyroad.readyroadbackend.domain.entity.ExamSimulationAnswer.AnswerState.ANSWERED
             ORDER BY a.answeredAt DESC
             """)
     List<ExamSimulationAnswer> findHistoryForUser(
             @Param("userId") Long userId,
             @Param("status") ExamSimulation.ExamStatus status);
+
+    @Query("""
+            SELECT COUNT(a)
+            FROM ExamSimulationAnswer a
+            JOIN a.exam e
+            WHERE e.userId = :userId
+              AND e.status = com.readyroad.readyroadbackend.domain.entity.ExamSimulation.ExamStatus.COMPLETED
+              AND a.answerState = com.readyroad.readyroadbackend.domain.entity.ExamSimulationAnswer.AnswerState.TIMED_OUT
+            """)
+    long countCompletedTheoryTimeouts(@Param("userId") Long userId);
+
+    @Query("""
+            SELECT a
+            FROM ExamSimulationAnswer a
+            JOIN FETCH a.exam e
+            JOIN FETCH a.question q
+            LEFT JOIN FETCH q.category
+            WHERE e.userId = :userId
+              AND e.status = com.readyroad.readyroadbackend.domain.entity.ExamSimulation.ExamStatus.COMPLETED
+              AND a.answerState = com.readyroad.readyroadbackend.domain.entity.ExamSimulationAnswer.AnswerState.TIMED_OUT
+            ORDER BY a.timedOutAt DESC, a.id DESC
+            """)
+    List<ExamSimulationAnswer> findRecentCompletedTheoryTimeouts(
+            @Param("userId") Long userId,
+            Pageable pageable);
 
     /**
      * Find all answers for exam

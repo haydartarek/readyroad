@@ -3,9 +3,12 @@ package com.readyroad.readyroadbackend.service;
 import com.readyroad.readyroadbackend.domain.entity.User;
 import com.readyroad.readyroadbackend.domain.enums.Role;
 import com.readyroad.readyroadbackend.domain.repository.UserRepository;
+import com.readyroad.readyroadbackend.dto.TheoryQuestionCoverageResponse;
 import com.readyroad.readyroadbackend.dto.admin.AdminLearningDtos.ActivityAvailability;
 import com.readyroad.readyroadbackend.dto.admin.AdminLearningDtos.CategoryPerformance;
+import com.readyroad.readyroadbackend.dto.admin.AdminLearningDtos.DifficultyPerformanceResponse;
 import com.readyroad.readyroadbackend.dto.admin.AdminLearningDtos.ExamDetail;
+import com.readyroad.readyroadbackend.dto.admin.AdminLearningDtos.ExamSummary;
 import com.readyroad.readyroadbackend.dto.admin.AdminLearningDtos.PageResponse;
 import com.readyroad.readyroadbackend.dto.admin.AdminLearningDtos.StudentSummary;
 import java.util.Comparator;
@@ -25,8 +28,9 @@ public class AdminLearningService {
 
     private final AdminLearningStore store;
     private final UserRepository userRepository;
-    private final ExamService examService;
     private final SignQuizService signQuizService;
+    private final TheoryQuestionCoverageService coverageService;
+    private final AdminTheoryExamHistoryService theoryExamHistoryService;
 
     @Transactional(readOnly = true)
     public PageResponse<StudentSummary> students(String query, int requestedPage, int requestedSize) {
@@ -85,6 +89,18 @@ public class AdminLearningService {
     }
 
     @Transactional(readOnly = true)
+    public TheoryQuestionCoverageResponse coverage(long userId) {
+        requireStudent(userId);
+        return coverageService.getCoverage(userId);
+    }
+
+    @Transactional(readOnly = true)
+    public DifficultyPerformanceResponse difficulty(long userId) {
+        requireStudent(userId);
+        return store.findDifficultyPerformance(userId);
+    }
+
+    @Transactional(readOnly = true)
     public List<?> signs(long userId) {
         requireStudent(userId);
         return store.findSignPerformance(userId);
@@ -111,13 +127,28 @@ public class AdminLearningService {
     @Transactional(readOnly = true)
     public ExamDetail examDetail(long userId, String examType, long examId) {
         requireStudent(userId);
-        Object detail = switch (examType) {
-            case "THEORY_EXAM" -> examService.getExamResults(examId, userId);
-            case "TRAFFIC_SIGN_EXAM" -> signQuizService.getStoredSignExamResult(examId, userId);
-            case "RANDOM_EXAM" -> signQuizService.getRandomSignPracticeResult(examId, userId);
+        ExamSummary summary = store.findExam(userId, examType, examId);
+        if (summary == null) throw notFound();
+
+        String historicalContentStatus;
+        Object detail;
+        switch (examType) {
+            case "THEORY_EXAM" -> {
+                AdminTheoryExamHistoryService.HistoricalResult historical = theoryExamHistoryService.load(examId);
+                historicalContentStatus = historical.status();
+                detail = historical.result();
+            }
+            case "TRAFFIC_SIGN_EXAM" -> {
+                historicalContentStatus = "STORED_RESULT";
+                detail = signQuizService.getStoredSignExamResult(examId, userId);
+            }
+            case "RANDOM_EXAM" -> {
+                historicalContentStatus = "STORED_RESULT";
+                detail = signQuizService.getRandomSignPracticeResult(examId, userId);
+            }
             default -> throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Unsupported exam type");
-        };
-        return new ExamDetail(userId, examType, examId, detail);
+        }
+        return new ExamDetail(userId, examType, examId, summary, historicalContentStatus, detail);
     }
 
     private User requireStudent(long userId) {

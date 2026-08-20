@@ -106,6 +106,9 @@ public class Phase6PerformanceSanityBDDTest {
         testCategory.setNameNl("Prestatie testcategorie");
         testCategory.setNameFr("Catégorie de test de performance");
         testCategory.setIsActive(true);
+        testCategory.setExamTargetWeight(100);
+        testCategory.setContentScope(
+                com.readyroad.readyroadbackend.domain.enums.CategoryContentScope.THEORETICAL_EXAM);
         testCategory = categoryRepository.save(testCategory);
 
         // Create traffic sign

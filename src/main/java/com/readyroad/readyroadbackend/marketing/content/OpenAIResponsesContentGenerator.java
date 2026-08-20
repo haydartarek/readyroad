@@ -24,7 +24,7 @@ import org.springframework.stereotype.Component;
 public class OpenAIResponsesContentGenerator implements ContentGenerationClient {
 
     private static final String INSTRUCTIONS = """
-            You are ReadyRoad's educational content adapter. Use only the verified facts in the request.
+            You are RijVia's educational content adapter. Use only the verified facts in the request.
             Do not add Belgian traffic rules, exceptions, statistics, social proof, guarantees, official status,
             government affiliation, or facts that are absent from the verified source. Preserve legal meaning.
             Write naturally for the requested language; do not translate from another generated version.

@@ -58,6 +58,7 @@ class AdminLearningPostgreSqlIntegrationTest {
         insertIncompleteExam(studentId);
         insertCompletedRandomExam(studentId, 40, 80);
         insertCompletedSignExam(studentId, 7, 70);
+        insertTheoryQuestionActivity(studentWithNoExamsId);
     }
 
     @Test
@@ -91,6 +92,8 @@ class AdminLearningPostgreSqlIntegrationTest {
                 .satisfies(student -> {
                     assertThat(student.totalCompletedExams()).isZero();
                     assertThat(student.averageExamScore()).isNull();
+                    assertThat(student.lastActiveAt()).isNotNull();
+                    assertThat(student.lastActivityType()).isEqualTo("THEORY_QUESTION");
                 });
         assertThat(store.countExams(null)).isEqualTo(4);
         assertThat(store.findExams(null, 20, 0))
@@ -147,5 +150,14 @@ class AdminLearningPostgreSqlIntegrationTest {
                      completed_at, language_code)
                 VALUES (?, ?, 'A11', 1, 10, 10, ?, 8, ?, false, '[]', ?, 'fr')
                 """, userId, signId, correct, score, LocalDateTime.now().minusMinutes(1));
+    }
+
+    private void insertTheoryQuestionActivity(long userId) {
+        jdbc.update("""
+                INSERT INTO user_question_history
+                    (user_id, question_ref_id, question_type, last_presented_at,
+                     answered_at, times_presented, times_shown)
+                VALUES (?, 900001, 'THEORY', ?, ?, 1, 1)
+                """, userId, LocalDateTime.now().minusMinutes(2), LocalDateTime.now().minusMinutes(1));
     }
 }

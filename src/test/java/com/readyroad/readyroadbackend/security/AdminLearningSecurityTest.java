@@ -55,6 +55,17 @@ class AdminLearningSecurityTest {
                 .andExpect(status().isForbidden());
         mockMvc.perform(get(endpoint).header("Authorization", "Bearer " + adminToken))
                 .andExpect(status().isOk());
+
+        for (String protectedEndpoint : new String[] {
+                "/api/admin/learning/users/" + studentId + "/coverage",
+                "/api/admin/learning/users/" + studentId + "/difficulty"
+        }) {
+            mockMvc.perform(get(protectedEndpoint)).andExpect(status().isUnauthorized());
+            mockMvc.perform(get(protectedEndpoint).header("Authorization", "Bearer " + userToken))
+                    .andExpect(status().isForbidden());
+            mockMvc.perform(get(protectedEndpoint).header("Authorization", "Bearer " + moderatorToken))
+                    .andExpect(status().isForbidden());
+        }
     }
 
     private User createUser(String username, String email, Role role) {

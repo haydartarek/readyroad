@@ -41,6 +41,9 @@ public class Category extends BaseEntity {
     @Column(nullable = false)
     private Boolean isActive = true;
 
+    @Column(name = "exam_target_weight")
+    private Integer examTargetWeight;
+
     @Enumerated(EnumType.STRING)
     @Column(nullable = false, length = 30)
     private CategoryContentScope contentScope = CategoryContentScope.TRAFFIC_SIGN;
@@ -132,6 +135,14 @@ public class Category extends BaseEntity {
 
     public void setIsActive(Boolean isActive) {
         this.isActive = isActive;
+    }
+
+    public Integer getExamTargetWeight() {
+        return examTargetWeight;
+    }
+
+    public void setExamTargetWeight(Integer examTargetWeight) {
+        this.examTargetWeight = examTargetWeight;
     }
 
     public CategoryContentScope getContentScope() {

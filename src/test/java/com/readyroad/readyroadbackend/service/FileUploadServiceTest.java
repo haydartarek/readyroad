@@ -63,4 +63,25 @@ class FileUploadServiceTest {
             assertThat(files).isEmpty();
         }
     }
+
+    @Test
+    void storesCustomSeoFilenameWithSafeExtensionAndUniqueSuffix() throws Exception {
+        BufferedImage image = new BufferedImage(40, 30, BufferedImage.TYPE_INT_RGB);
+        ByteArrayOutputStream output = new ByteArrayOutputStream();
+        ImageIO.write(image, "png", output);
+        MockMultipartFile file = new MockMultipartFile(
+                "file", "camera-name.PNG", "image/png", output.toByteArray());
+
+        String reference = service.uploadImage(file, "  Priority / ../ Signs 2026.png  ");
+
+        assertThat(reference)
+                .matches("^/images/quiz/priority-signs-2026-[a-f0-9-]{12}\\.png$");
+        assertThat(Files.exists(tempDir.resolve(reference.substring("/images/quiz/".length())))).isTrue();
+    }
+
+    @Test
+    void sanitizesUnicodeNamesWithoutAllowingPathTraversal() {
+        assertThat(FileUploadService.sanitizeBaseName("../علامات الأولوية\\ سؤال"))
+                .isEqualTo("علامات-الأولوية-سؤال");
+    }
 }

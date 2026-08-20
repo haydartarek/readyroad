@@ -71,6 +71,16 @@ public class AdminLearningController {
         return ResponseEntity.ok(service.categories(userId));
     }
 
+    @GetMapping("/users/{userId}/coverage")
+    public ResponseEntity<?> coverage(@PathVariable long userId) {
+        return ResponseEntity.ok(service.coverage(userId));
+    }
+
+    @GetMapping("/users/{userId}/difficulty")
+    public ResponseEntity<?> difficulty(@PathVariable long userId) {
+        return ResponseEntity.ok(service.difficulty(userId));
+    }
+
     @GetMapping("/users/{userId}/signs")
     public ResponseEntity<?> signs(@PathVariable long userId) {
         return ResponseEntity.ok(service.signs(userId));

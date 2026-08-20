@@ -1,7 +1,9 @@
 package com.readyroad.readyroadbackend.domain.repository;
 
 import com.readyroad.readyroadbackend.domain.entity.SignRandomPracticeSession;
+import jakarta.persistence.LockModeType;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Lock;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
@@ -20,6 +22,12 @@ public interface SignRandomPracticeSessionRepository extends JpaRepository<SignR
 
     @Query("SELECT s FROM SignRandomPracticeSession s WHERE s.id = :sessionId AND s.user.id = :userId")
     Optional<SignRandomPracticeSession> findByIdAndUserId(@Param("sessionId") Long sessionId,
+            @Param("userId") Long userId);
+
+    @Lock(LockModeType.PESSIMISTIC_WRITE)
+    @Query("SELECT s FROM SignRandomPracticeSession s WHERE s.id = :sessionId AND s.user.id = :userId")
+    Optional<SignRandomPracticeSession> findByIdAndUserIdForUpdate(
+            @Param("sessionId") Long sessionId,
             @Param("userId") Long userId);
 
     long countByUser_Id(Long userId);

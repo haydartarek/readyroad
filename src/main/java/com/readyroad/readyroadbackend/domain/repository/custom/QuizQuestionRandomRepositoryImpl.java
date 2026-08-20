@@ -7,6 +7,7 @@ import jakarta.persistence.Query;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.sql.DataSource;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Transactional(readOnly = true)
@@ -56,6 +57,43 @@ public class QuizQuestionRandomRepositoryImpl implements QuizQuestionRandomRepos
     }
 
     @Override
+    public List<QuizQuestion> findCooldownEligibleQuestionsByDifficulty(
+            Long userId,
+            QuizQuestion.DifficultyLevel difficulty,
+            LocalDateTime cooldownCutoff) {
+        Query query = cooldownEligibleTheoryQuery("AND q.difficulty_level = :difficulty");
+        query.setParameter("userId", userId);
+        query.setParameter("difficulty", difficulty.name());
+        query.setParameter("cooldownCutoff", cooldownCutoff);
+        return questionResults(query);
+    }
+
+    @Override
+    public List<QuizQuestion> findTheoryQuestionBankCandidates() {
+        String sql = """
+                SELECT q.*
+                FROM quiz_questions q
+                JOIN categories c ON c.id = q.category_id
+                WHERE q.is_active = true
+                  AND q.status = 'PUBLISHED'
+                  AND c.is_active = true
+                  AND c.content_scope IN ('THEORETICAL_EXAM', 'BOTH')
+                ORDER BY q.id
+                """;
+        return questionResults(entityManager.createNativeQuery(sql, QuizQuestion.class));
+    }
+
+    @Override
+    public List<QuizQuestion> findCooldownEligibleTheoryQuestions(
+            Long userId,
+            LocalDateTime cooldownCutoff) {
+        Query query = cooldownEligibleTheoryQuery("");
+        query.setParameter("userId", userId);
+        query.setParameter("cooldownCutoff", cooldownCutoff);
+        return questionResults(query);
+    }
+
+    @Override
     public List<Long> findRandomQuestionIdsByDifficulty(String difficulty, int limit) {
         Query query = randomQuery("SELECT q.id FROM quiz_questions q WHERE q.difficulty_level = :difficulty AND "
                 + PUBLISHED_FILTER);
@@ -80,6 +118,29 @@ public class QuizQuestionRandomRepositoryImpl implements QuizQuestionRandomRepos
     private Query randomEntityQuery(String sql, Class<?> entityType) {
         String randomFunction = dialectResolver.dialect().randomFunction();
         return entityManager.createNativeQuery(sql + " ORDER BY " + randomFunction + "()", entityType);
+    }
+
+    private Query cooldownEligibleTheoryQuery(String additionalFilter) {
+        String randomFunction = dialectResolver.dialect().randomFunction();
+        String sql = """
+                SELECT q.*
+                FROM quiz_questions q
+                JOIN categories c ON c.id = q.category_id
+                LEFT JOIN user_question_history h
+                  ON h.user_id = :userId
+                 AND h.question_ref_id = q.id
+                 AND h.question_type = 'THEORY'
+                WHERE q.is_active = true
+                  AND q.status = 'PUBLISHED'
+                  AND c.is_active = true
+                  AND c.content_scope IN ('THEORETICAL_EXAM', 'BOTH')
+                  AND (h.last_presented_at IS NULL OR h.last_presented_at <= :cooldownCutoff)
+                """ + additionalFilter + """
+
+                ORDER BY CASE WHEN h.last_presented_at IS NULL THEN 0 ELSE 1 END,
+                         h.last_presented_at ASC,
+                """ + randomFunction + "()";
+        return entityManager.createNativeQuery(sql, QuizQuestion.class);
     }
 
     @SuppressWarnings("unchecked")

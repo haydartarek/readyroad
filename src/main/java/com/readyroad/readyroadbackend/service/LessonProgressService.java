@@ -135,10 +135,15 @@ public class LessonProgressService {
     @Transactional
     public void recordLessonCompletion(Long userId, Long lessonId) {
         lessonRepository.findById(lessonId).ifPresentOrElse(lesson -> {
-            String title = lesson.getTitleEn() != null ? lesson.getTitleEn() : "Lesson #" + lessonId;
+            String fallbackTitle = lesson.getTitleEn() != null ? lesson.getTitleEn() : "Lesson #" + lessonId;
 
             try {
-                notificationService.createLessonProgressNotification(userId, title);
+                notificationService.createLessonProgressNotification(
+                        userId,
+                        fallbackTitle,
+                        localizedOrFallback(lesson.getTitleAr(), fallbackTitle),
+                        localizedOrFallback(lesson.getTitleNl(), fallbackTitle),
+                        localizedOrFallback(lesson.getTitleFr(), fallbackTitle));
                 log.info("Lesson progress notification sent: userId={}, lessonId={}", userId, lessonId);
             } catch (Exception ex) {
                 log.warn("Failed to send lesson progress notification: userId={}, lessonId={}: {}",
@@ -162,16 +167,23 @@ public class LessonProgressService {
                 .filter(l -> l.getDisplayOrder() != null && l.getDisplayOrder() > currentOrder)
                 .min((a, b) -> Integer.compare(a.getDisplayOrder(), b.getDisplayOrder()))
                 .ifPresent(next -> {
-                    String nextTitle = next.getTitleEn() != null ? next.getTitleEn() : "the next lesson";
+                    String fallbackTitle = next.getTitleEn() != null ? next.getTitleEn() : "the next lesson";
                     try {
                         notificationService.createNextStepNotification(
                                 userId,
-                                nextTitle,
+                                fallbackTitle,
+                                localizedOrFallback(next.getTitleAr(), fallbackTitle),
+                                localizedOrFallback(next.getTitleNl(), fallbackTitle),
+                                localizedOrFallback(next.getTitleFr(), fallbackTitle),
                                 "/lessons/" + next.getLessonCode());
                         log.debug("Next step notification sent: userId={}, nextLessonId={}", userId, next.getId());
                     } catch (Exception ex) {
                         log.warn("Failed to send next step notification: userId={}: {}", userId, ex.getMessage());
                     }
                 });
+    }
+
+    private static String localizedOrFallback(String localized, String fallback) {
+        return localized == null || localized.isBlank() ? fallback : localized;
     }
 }

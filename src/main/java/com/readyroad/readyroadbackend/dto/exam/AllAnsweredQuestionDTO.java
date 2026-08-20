@@ -60,4 +60,6 @@ public class AllAnsweredQuestionDTO {
 
     // Result flag
     private Boolean isCorrect;
+    private Boolean wasTimeout;
+    private String difficulty;
 }

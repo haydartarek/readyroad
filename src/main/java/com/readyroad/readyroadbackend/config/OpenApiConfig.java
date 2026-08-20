@@ -24,7 +24,7 @@ public class OpenApiConfig {
         localServer.setDescription("Local Development Server");
 
         Contact contact = new Contact();
-        contact.setName("ReadyRoad Team");
+        contact.setName("RijVia Team");
         contact.setEmail("support@readyroad.com");
 
         License license = new License()
@@ -32,9 +32,9 @@ public class OpenApiConfig {
                 .url("https://opensource.org/licenses/MIT");
 
         Info info = new Info()
-                .title("ReadyRoad Backend API")
+                .title("RijVia Backend API")
                 .version("0.0.1-SNAPSHOT")
-                .description("REST API for ReadyRoad - Driving exam preparation platform with exam questions, practice questions, lessons, traffic signs, and categories.")
+                .description("REST API for RijVia - Driving exam preparation platform with exam questions, practice questions, lessons, traffic signs, and categories.")
                 .contact(contact)
                 .license(license);
 

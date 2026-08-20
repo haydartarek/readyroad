@@ -138,18 +138,22 @@ public class AdminController {
     /**
      * Upload an image file for quiz questions.
      * POST /api/admin/upload/image
-     * Accepts multipart/form-data with a "file" part.
+     * Accepts multipart/form-data with a "file" part and an optional sanitized
+     * descriptive filename base.
      * Returns the URL path of the uploaded image.
      */
     @PostMapping("/upload/image")
-    public ResponseEntity<?> uploadImage(@RequestParam("file") MultipartFile file) {
+    public ResponseEntity<?> uploadImage(
+            @RequestParam("file") MultipartFile file,
+            @RequestParam(value = "filename", required = false) String requestedBaseName) {
         log.info("📤 Image upload request: name={}, size={}, type={}",
                 file.getOriginalFilename(), file.getSize(), file.getContentType());
         try {
-            String imageUrl = fileUploadService.uploadImage(file);
+            String imageUrl = fileUploadService.uploadImage(file, requestedBaseName);
+            String storedFilename = imageUrl.substring(imageUrl.lastIndexOf('/') + 1);
             return ResponseEntity.ok(Map.of(
                     "url", imageUrl,
-                    "filename", file.getOriginalFilename(),
+                    "filename", storedFilename,
                     "size", file.getSize()));
         } catch (IllegalArgumentException e) {
             log.warn("⚠️ Upload validation failed: {}", e.getMessage());

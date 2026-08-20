@@ -8,6 +8,7 @@ import com.readyroad.readyroadbackend.domain.entity.QuizQuestion;
 import com.readyroad.readyroadbackend.domain.entity.User;
 import com.readyroad.readyroadbackend.domain.enums.CategoryContentScope;
 import com.readyroad.readyroadbackend.domain.repository.CategoryRepository;
+import com.readyroad.readyroadbackend.domain.repository.ExamSimulationQuestionRepository;
 import com.readyroad.readyroadbackend.domain.repository.QuizAnswerOptionRepository;
 import com.readyroad.readyroadbackend.domain.repository.QuizQuestionRepository;
 import com.readyroad.readyroadbackend.domain.repository.QuizUserAnswerRepository;
@@ -62,6 +63,7 @@ public class AdminQuizService {
     private final CategoryRepository categoryRepository;
     private final QuizUserAnswerRepository userAnswerRepository;
     private final UserQuestionHistoryRepository historyRepository;
+    private final ExamSimulationQuestionRepository examQuestionRepository;
     private final BackendMessageService messages;
     private final MarketingAuditService auditService;
 
@@ -199,7 +201,9 @@ public class AdminQuizService {
                 .collect(Collectors.toMap(QuizAnswerOption::getId, QuizAnswerOption::getDisplayOrder));
 
         for (int index = 0; index < existingOptions.size(); index++) {
-            existingOptions.get(index).setDisplayOrder(1000 + index);
+            QuizAnswerOption option = existingOptions.get(index);
+            option.setDisplayOrder(1000 + index);
+            option.setIsCorrect(false);
         }
         questionRepository.flush();
 
@@ -612,6 +616,11 @@ public class AdminQuizService {
         }
         // Check user_question_history
         if (historyRepository.existsByQuestionId(questionId)) {
+            return true;
+        }
+        // Includes unanswered, abandoned, and in-progress exams where history is not
+        // recorded yet.
+        if (examQuestionRepository.existsByQuestionId(questionId)) {
             return true;
         }
         return false;

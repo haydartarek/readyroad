@@ -1,10 +1,13 @@
 package com.readyroad.readyroadbackend.dto;
 
+import jakarta.validation.constraints.DecimalMax;
+import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
+import java.math.BigDecimal;
 
 public record AdminSystemSettingsUpdateRequest(
         @NotBlank(message = "siteName is required")
@@ -26,9 +29,9 @@ public record AdminSystemSettingsUpdateRequest(
         Integer examQuestions,
 
         @NotNull(message = "examDurationMinutes is required")
-        @Min(value = 10, message = "examDurationMinutes must be at least 10")
-        @Max(value = 120, message = "examDurationMinutes must be at most 120")
-        Integer examDurationMinutes,
+        @DecimalMin(value = "1.00", message = "examDurationMinutes must be at least 1")
+        @DecimalMax(value = "120.00", message = "examDurationMinutes must be at most 120")
+        BigDecimal examDurationMinutes,
 
         @NotNull(message = "passingScorePercent is required")
         @Min(value = 50, message = "passingScorePercent must be at least 50")

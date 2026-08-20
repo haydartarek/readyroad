@@ -214,14 +214,15 @@ abstract class AbstractDatabasePortableRepositoryIntegrationTest {
         LocalDateTime firstShownAt = LocalDateTime.now().minusMinutes(5);
         LocalDateTime secondShownAt = LocalDateTime.now().minusMinutes(4);
 
-        userQuestionHistoryRepository.upsertQuestionShown(
+        userQuestionHistoryRepository.upsertQuestionPresented(
                 user.getId(), questionId, firstShownAt, "RANDOM");
-        userQuestionHistoryRepository.upsertQuestionShown(
+        userQuestionHistoryRepository.upsertQuestionPresented(
                 user.getId(), questionId, secondShownAt, "CATEGORY");
 
         assertThat(historyCount(questionId)).isEqualTo(1);
         HistoryStats shown = historyStats(questionId);
         assertThat(shown.timesShown()).isEqualTo(2);
+        assertThat(shown.timesPresented()).isEqualTo(2);
         assertThat(shown.timesCorrect()).isZero();
         assertThat(shown.timesWrong()).isZero();
         assertThat(shown.lastShownType()).isEqualTo("CATEGORY");
@@ -233,7 +234,8 @@ abstract class AbstractDatabasePortableRepositoryIntegrationTest {
 
         assertThat(historyCount(questionId)).isEqualTo(1);
         HistoryStats answered = historyStats(questionId);
-        assertThat(answered.timesShown()).isEqualTo(4);
+        assertThat(answered.timesShown()).isEqualTo(2);
+        assertThat(answered.timesPresented()).isEqualTo(2);
         assertThat(answered.timesCorrect()).isEqualTo(1);
         assertThat(answered.timesWrong()).isEqualTo(1);
         assertThat(answered.lastAnswerCorrect()).isFalse();
@@ -331,11 +333,12 @@ abstract class AbstractDatabasePortableRepositoryIntegrationTest {
 
     private HistoryStats historyStats(Long questionId) {
         return jdbcTemplate.queryForObject(
-                "SELECT times_shown, times_correct, times_wrong, last_shown_type, "
+                "SELECT times_shown, times_presented, times_correct, times_wrong, last_shown_type, "
                         + "last_answer_correct, time_taken_seconds "
                         + "FROM user_question_history WHERE user_id = ? AND question_ref_id = ?",
                 (rs, rowNum) -> new HistoryStats(
                         rs.getInt("times_shown"),
+                        rs.getInt("times_presented"),
                         rs.getInt("times_correct"),
                         rs.getInt("times_wrong"),
                         rs.getString("last_shown_type"),
@@ -365,6 +368,7 @@ abstract class AbstractDatabasePortableRepositoryIntegrationTest {
 
     private record HistoryStats(
             int timesShown,
+            int timesPresented,
             int timesCorrect,
             int timesWrong,
             String lastShownType,

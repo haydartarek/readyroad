@@ -43,7 +43,7 @@ public class EmailService {
     @Async
     public void sendPasswordResetEmail(String toEmail, String token, String fullName) {
         String resetLink = buildResetLink(token);
-        String subject   = "ReadyRoad – Password Reset Request";
+        String subject   = "RijVia – Password Reset Request";
         String body      = buildResetEmailHtml(fullName, resetLink);
 
         try {
@@ -76,7 +76,7 @@ public class EmailService {
     // ─── HTML Template ────────────────────────────────────────────────────────
 
     private String buildResetEmailHtml(String name, String resetLink) {
-        String safeName = HtmlUtils.htmlEscape(name == null || name.isBlank() ? "ReadyRoad user" : name);
+        String safeName = HtmlUtils.htmlEscape(name == null || name.isBlank() ? "RijVia user" : name);
         return """
                 <!DOCTYPE html>
                 <html lang="en">
@@ -94,7 +94,7 @@ public class EmailService {
                         <tr>
                           <td style="background:linear-gradient(135deg,#2563eb,#1d4ed8);padding:32px;text-align:center;">
                             <div style="display:inline-block;width:56px;height:56px;background:rgba(255,255,255,.15);border-radius:14px;line-height:56px;font-size:28px;font-weight:900;color:#fff;">R</div>
-                            <p style="margin:12px 0 0;color:#fff;font-size:20px;font-weight:700;">ReadyRoad</p>
+                            <p style="margin:12px 0 0;color:#fff;font-size:20px;font-weight:700;">RijVia</p>
                           </td>
                         </tr>
 
@@ -134,7 +134,7 @@ public class EmailService {
                         <tr>
                           <td style="background:#f9fafb;padding:20px 32px;text-align:center;border-top:1px solid #e5e7eb;">
                             <p style="margin:0;color:#9ca3af;font-size:12px;">
-                              © %d ReadyRoad · Belgian Driving License Exam Prep
+                              © %d RijVia · Belgian Driving License Exam Prep
                             </p>
                           </td>
                         </tr>

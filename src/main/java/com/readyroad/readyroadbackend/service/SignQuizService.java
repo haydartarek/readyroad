@@ -458,6 +458,9 @@ public class SignQuizService {
                         List<SignExamAnswerItem> answers, Long userId, String submissionKey) {
 
                 String safeSubmissionKey = normalizeSubmissionKey(submissionKey);
+                User lockedUser = userRepo.findByIdForUpdate(userId)
+                                .orElseThrow(() -> new ResponseStatusException(
+                                                HttpStatus.NOT_FOUND, "User not found"));
                 if (safeSubmissionKey != null) {
                         Optional<SignExamResult> existing = signExamResultRepo
                                         .findByUserIdAndSubmissionKey(userId, safeSubmissionKey);
@@ -641,57 +644,44 @@ public class SignQuizService {
                         }
                 }
 
-                SignExamResult persistedResult = null;
-
                 // ── Save exam result ──────────────────────────────────────────────────
-                try {
-                        SignExamResult result = new SignExamResult();
-                        result.setUserId(userId);
-                        result.setSignId(sign.getId());
-                        result.setSignCode(sign.getSignCode());
-                        result.setExamNumber(examNumber);
-                        result.setTotalQuestions(linkedCount);
-                        result.setAnsweredCount(answeredCount);
-                        result.setCorrectCount(correctCount);
-                        result.setRequiredToPass(requiredToPass);
-                        result.setScorePct(scorePct);
-                        result.setPassed(passed);
-                        result.setCompletedAt(LocalDateTime.now());
-                        result.setLanguageCode(userRepo.findById(userId)
-                                        .map(User::getPreferredLanguage)
-                                        .map(SignQuizService::supportedLanguage)
-                                        .orElse(null));
-                        result.setSubmissionKey(safeSubmissionKey);
-                        result.setQuestionResultsJson(objectMapper.writeValueAsString(results));
-                        persistedResult = signExamResultRepo.save(result);
-                        log.info("Saved SignExamResult id={} user={} sign={} passed={}",
-                                        persistedResult.getId(), userId, sign.getSignCode(), passed);
-                } catch (Exception e) {
-                        // Non-fatal — log and continue so the user still gets their result
-                        log.error("Failed to save SignExamResult for user={} sign={} exam={}: {}",
-                                        userId, sign.getSignCode(), examNumber, e.getMessage(), e);
-                }
+                SignExamResult result = new SignExamResult();
+                result.setUserId(userId);
+                result.setSignId(sign.getId());
+                result.setSignCode(sign.getSignCode());
+                result.setExamNumber(examNumber);
+                result.setTotalQuestions(linkedCount);
+                result.setAnsweredCount(answeredCount);
+                result.setCorrectCount(correctCount);
+                result.setRequiredToPass(requiredToPass);
+                result.setScorePct(scorePct);
+                result.setPassed(passed);
+                result.setCompletedAt(LocalDateTime.now());
+                result.setLanguageCode(supportedLanguage(lockedUser.getPreferredLanguage()));
+                result.setSubmissionKey(safeSubmissionKey);
+                result.setQuestionResultsJson(serializeSignExamResults(results));
+                SignExamResult persistedResult = signExamResultRepo.saveAndFlush(result);
+                log.info("Saved SignExamResult id={} user={} sign={} passed={}",
+                                persistedResult.getId(), userId, sign.getSignCode(), passed);
 
-                if (persistedResult != null) {
-                        try {
-                                if (passed) {
-                                        notificationService.createSignExamPassedNotification(
-                                                        userId,
-                                                        persistedResult.getId(),
-                                                        correctCount,
-                                                        linkedCount);
-                                } else {
-                                        notificationService.createSignExamFailedNotification(
-                                                        userId,
-                                                        persistedResult.getId(),
-                                                        correctCount,
-                                                        linkedCount,
-                                                        Math.max(0, requiredToPass - correctCount));
-                                }
-                        } catch (Exception e) {
-                                log.warn("Failed to create sign-exam notification for result {}: {}",
-                                                persistedResult.getId(), e.getMessage());
+                try {
+                        if (passed) {
+                                notificationService.createSignExamPassedNotification(
+                                                userId,
+                                                persistedResult.getId(),
+                                                correctCount,
+                                                linkedCount);
+                        } else {
+                                notificationService.createSignExamFailedNotification(
+                                                userId,
+                                                persistedResult.getId(),
+                                                correctCount,
+                                                linkedCount,
+                                                Math.max(0, requiredToPass - correctCount));
                         }
+                } catch (Exception e) {
+                        log.warn("Failed to create sign-exam notification for result {}: {}",
+                                        persistedResult.getId(), e.getMessage());
                 }
 
                 log.info("Exam {}/{} submitted by user {} — {}/{} correct, passed={}",
@@ -1216,7 +1206,8 @@ public class SignQuizService {
                         Long sessionId,
                         List<SignRandomPracticeAnswerRequest> answers,
                         Long userId) {
-                SignRandomPracticeSession session = randomPracticeSessionRepo.findByIdAndUserId(sessionId, userId)
+                SignRandomPracticeSession session = randomPracticeSessionRepo
+                                .findByIdAndUserIdForUpdate(sessionId, userId)
                                 .orElseThrow(() -> new ResponseStatusException(
                                                 HttpStatus.NOT_FOUND, "Random practice session not found"));
 
@@ -1452,9 +1443,18 @@ public class SignQuizService {
                 return trimmed;
         }
 
+        private String serializeSignExamResults(List<SignExamResultDto.ExamQuestionResult> results) {
+                try {
+                        return objectMapper.writeValueAsString(results);
+                } catch (Exception exception) {
+                        throw new IllegalStateException("Unable to persist sign exam result details", exception);
+                }
+        }
+
         @Transactional
         public void abandonRandomSignPracticeSession(Long sessionId, Long userId) {
-                SignRandomPracticeSession session = randomPracticeSessionRepo.findByIdAndUserId(sessionId, userId)
+                SignRandomPracticeSession session = randomPracticeSessionRepo
+                                .findByIdAndUserIdForUpdate(sessionId, userId)
                                 .orElseThrow(() -> new ResponseStatusException(
                                                 HttpStatus.NOT_FOUND, "Random practice session not found"));
                 if (session.getStatus() == SignRandomPracticeSession.SessionStatus.ABANDONED) {

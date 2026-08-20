@@ -8,6 +8,7 @@ import com.readyroad.readyroadbackend.dto.exam.ExamOptionDTO;
 import com.readyroad.readyroadbackend.dto.exam.ExamQuestionDTO;
 import com.readyroad.readyroadbackend.dto.exam.ExamStartResponse;
 import com.readyroad.readyroadbackend.service.RoadSignReferenceTextResolver;
+import com.readyroad.readyroadbackend.service.TheoryExamTiming;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -24,10 +25,12 @@ public class ExamMapper {
     private final RoadSignReferenceTextResolver roadSignReferenceTextResolver;
 
     public ExamStartResponse toStartResponse(ExamSimulation exam, List<ExamSimulationQuestion> examQuestions) {
+        int timeLimitSeconds = TheoryExamTiming.totalSeconds(exam.getTotalQuestions());
         return ExamStartResponse.builder()
                 .examId(exam.getId())
                 .totalQuestions(exam.getTotalQuestions())
-                .timeLimitMinutes(30)
+                .timeLimitMinutes(timeLimitSeconds / 60.0)
+                .timeLimitSeconds(timeLimitSeconds)
                 .status(exam.getStatus().name())
                 .startedAt(exam.getStartedAt())
                 .expiresAt(exam.getExpiresAt())

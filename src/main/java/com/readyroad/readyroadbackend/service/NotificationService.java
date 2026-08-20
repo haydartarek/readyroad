@@ -499,14 +499,20 @@ public class NotificationService {
      * Notify a user that they completed a lesson.
      */
     @Transactional
-    public void createLessonProgressNotification(Long userId, String lessonTitle) {
+    public void createLessonProgressNotification(
+            Long userId,
+            String lessonTitleEn,
+            String lessonTitleAr,
+            String lessonTitleNl,
+            String lessonTitleFr) {
         save(Notification.builder()
                 .userId(userId)
                 .type(NotificationType.LESSON_PROGRESS)
                 .title("Lesson completed!")
-                .message(String.format("You finished the lesson: \"%s\". Keep it up!", lessonTitle))
+                .message(String.format("You finished the lesson: \"%s\". Keep it up!", lessonTitleEn))
                 .messageKey("notif.msg.lesson_progress")
-                .messageParams(String.format("{\"lesson\":\"%s\"}", lessonTitle))
+                .messageParams(localizedLessonParams(
+                        lessonTitleEn, lessonTitleAr, lessonTitleNl, lessonTitleFr))
                 .link("/lessons")
                 .build());
     }
@@ -515,17 +521,37 @@ public class NotificationService {
      * Suggest the next learning step for a user.
      */
     @Transactional
-    public void createNextStepNotification(Long userId, String lessonTitle, String link) {
+    public void createNextStepNotification(
+            Long userId,
+            String lessonTitleEn,
+            String lessonTitleAr,
+            String lessonTitleNl,
+            String lessonTitleFr,
+            String link) {
         save(Notification.builder()
                 .userId(userId)
                 .type(NotificationType.NEXT_STEP)
                 .title("What to study next")
-                .message("Continue to: " + lessonTitle)
+                .message("Continue to: " + lessonTitleEn)
                 .messageKey("notif.msg.next_step")
-                .messageParams(String.format("{\"lesson\":\"%s\"}",
-                        lessonTitle.replace("\\", "\\\\").replace("\"", "\\\"")))
+                .messageParams(localizedLessonParams(
+                        lessonTitleEn, lessonTitleAr, lessonTitleNl, lessonTitleFr))
                 .link(link)
                 .build());
+    }
+
+    private static String localizedLessonParams(
+            String lessonTitleEn,
+            String lessonTitleAr,
+            String lessonTitleNl,
+            String lessonTitleFr) {
+        return String.format(
+                "{\"lesson\":\"%s\",\"lessonEn\":\"%s\",\"lessonAr\":\"%s\",\"lessonNl\":\"%s\",\"lessonFr\":\"%s\"}",
+                escapeJson(lessonTitleEn),
+                escapeJson(lessonTitleEn),
+                escapeJson(lessonTitleAr),
+                escapeJson(lessonTitleNl),
+                escapeJson(lessonTitleFr));
     }
 
     // ── Private helpers ───────────────────────────────────────────────────────

@@ -49,7 +49,11 @@ public class UserQuestionHistory {
     @Column(name = "question_ref_id", nullable = false)
     private Long questionRefId;
 
-    @Column(name = "answered_at", nullable = false)
+    @Column(name = "question_type", length = 10)
+    private String questionType;
+
+    /** Timestamp of the latest completed answer event. */
+    @Column(name = "answered_at")
     private LocalDateTime answeredAt;
 
     /**
@@ -68,11 +72,19 @@ public class UserQuestionHistory {
     @Column(name = "time_taken_seconds")
     private Integer timeTakenSeconds;
 
+    /** Latest verified presentation time. Historical rows are intentionally not inferred. */
+    @Column(name = "last_presented_at")
+    private LocalDateTime lastPresentedAt;
+
+    /** Verified presentation count recorded after Phase 3A. */
+    @Column(name = "times_presented", nullable = false)
+    @Builder.Default
+    private Integer timesPresented = 0;
+
     /**
-     * When the question was last shown to the user
-     * Used for cooldown tracking (24h rule)
+     * Legacy compatibility timestamp. New selection logic must use lastPresentedAt.
      */
-    @Column(name = "last_shown_at", nullable = false)
+    @Column(name = "last_shown_at")
     private LocalDateTime lastShownAt;
 
     /**
@@ -87,7 +99,7 @@ public class UserQuestionHistory {
      */
     @Column(name = "times_shown", nullable = false)
     @Builder.Default
-    private Integer timesShown = 1;
+    private Integer timesShown = 0;
 
     /**
      * Number of times user answered correctly
@@ -155,14 +167,12 @@ public class UserQuestionHistory {
         }
         // answeredAt is set only when the user submits an answer.
 
-        // ✅ Set lastShownAt if not set (for display tracking)
-        if (this.lastShownAt == null) {
-            this.lastShownAt = now;
-        }
-
         // ✅ Initialize counters
         if (this.timesShown == null) {
-            this.timesShown = 1;
+            this.timesShown = 0;
+        }
+        if (this.timesPresented == null) {
+            this.timesPresented = 0;
         }
         if (this.timesCorrect == null) {
             this.timesCorrect = 0;
@@ -211,10 +221,23 @@ public class UserQuestionHistory {
      * Records that the question was shown to the user
      */
     public void recordShown() {
-        this.timesShown++;
-        this.answeredAt = LocalDateTime.now();
+        this.timesShown = this.timesShown == null ? 1 : this.timesShown + 1;
+        this.timesPresented = this.timesPresented == null ? 1 : this.timesPresented + 1;
+        LocalDateTime now = LocalDateTime.now();
+        this.lastShownAt = now;
+        this.lastPresentedAt = now;
         log.debug("Question {} shown to user {} - Times shown: {}",
                 this.questionId, this.userId, this.timesShown);
+    }
+
+    public LocalDateTime getLastAnsweredAt() {
+        return answeredAt;
+    }
+
+    public int getTimesAnswered() {
+        int correct = timesCorrect == null ? 0 : timesCorrect;
+        int incorrect = timesIncorrect == null ? 0 : timesIncorrect;
+        return correct + incorrect;
     }
 
     /**

@@ -12,6 +12,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.text.Normalizer;
 import java.util.Set;
 import java.util.Locale;
 import java.util.UUID;
@@ -65,6 +66,10 @@ public class FileUploadService {
      *         /images/quiz/abc123.png)
      */
     public String uploadImage(MultipartFile file) {
+        return uploadImage(file, null);
+    }
+
+    public String uploadImage(MultipartFile file, String requestedBaseName) {
         // Validate not empty
         if (file.isEmpty()) {
             throw new IllegalArgumentException(messages.get("upload.file_empty"));
@@ -99,8 +104,12 @@ public class FileUploadService {
                     messages.get("upload.file_too_large", file.getSize() / 1024 / 1024, maxFileSizeMb));
         }
 
-        // Generate unique filename to prevent collisions and path traversal
-        String uniqueName = UUID.randomUUID().toString() + "." + extension.toLowerCase();
+        // Keep a readable owner-provided base name while the UUID suffix guarantees
+        // collision safety. The extension always comes from the validated file.
+        String safeBaseName = sanitizeBaseName(requestedBaseName);
+        String uniqueSuffix = UUID.randomUUID().toString().substring(0, 12);
+        String uniqueName = (safeBaseName.isBlank() ? uniqueSuffix : safeBaseName + "-" + uniqueSuffix)
+                + "." + normalizedExtension;
         Path targetPath = uploadPath.resolve(uniqueName).normalize();
 
         // Security: ensure target is still within upload directory
@@ -118,6 +127,31 @@ public class FileUploadService {
 
         // Return the URL path that matches the /images/** resource handler
         return "/images/quiz/" + uniqueName;
+    }
+
+    static String sanitizeBaseName(String requestedBaseName) {
+        if (requestedBaseName == null || requestedBaseName.isBlank()) {
+            return "";
+        }
+
+        String name = requestedBaseName.trim();
+        String lowerName = name.toLowerCase(Locale.ROOT);
+        for (String extension : ALLOWED_EXTENSIONS) {
+            String suffix = "." + extension;
+            if (lowerName.endsWith(suffix) && name.length() > suffix.length()) {
+                name = name.substring(0, name.length() - suffix.length());
+                break;
+            }
+        }
+
+        String normalized = Normalizer.normalize(name, Normalizer.Form.NFKC)
+                .toLowerCase(Locale.ROOT)
+                .replaceAll("[^\\p{L}\\p{N}]+", "-")
+                .replaceAll("^-+|-+$", "");
+        if (normalized.length() > 80) {
+            normalized = normalized.substring(0, 80).replaceAll("-+$", "");
+        }
+        return normalized;
     }
 
     /**

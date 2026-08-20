@@ -32,7 +32,7 @@ import java.util.Map;
 @RequestMapping("/api/exams/simulations")
 @RequiredArgsConstructor
 @Slf4j
-@Tag(name = "Exam Simulation", description = "Belgian driving license exam simulation (50 questions, 30 minutes)")
+@Tag(name = "Exam Simulation", description = "Theory exam simulation (50 questions, 15 seconds per question)")
 public class ExamController {
 
         private final ExamService examService;
@@ -45,7 +45,7 @@ public class ExamController {
          * POST /api/exams/simulations/start
          */
         @PostMapping("/start")
-        @Operation(summary = "Start exam simulation", description = "Start a new 50-question exam simulation with 30-minute time limit. "
+        @Operation(summary = "Start exam simulation", description = "Start a new 50-question exam simulation with 15 seconds per question. "
                         +
                         "Respects 24h cooldown (Law #1) and adaptive difficulty (Law #2).")
         @ApiResponses({
@@ -163,6 +163,23 @@ public class ExamController {
                 return ResponseEntity.ok(response);
         }
 
+        @PostMapping("/{examId}/questions/{questionId}/timeout")
+        @Operation(summary = "Record a timed-out exam question", description = "Finalizes a displayed theory question as unanswered after its 15-second timer. "
+                        + "The operation is idempotent and never fabricates a selected option.")
+        @ApiResponses({
+                        @ApiResponse(responseCode = "204", description = "Timeout recorded or the question was already finalized"),
+                        @ApiResponse(responseCode = "403", description = "Exam belongs to another user"),
+                        @ApiResponse(responseCode = "404", description = "Exam or question not found"),
+                        @ApiResponse(responseCode = "409", description = "Exam is not active")
+        })
+        public ResponseEntity<Void> recordQuestionTimeout(
+                        @PathVariable Long examId,
+                        @PathVariable Long questionId) {
+                Long userId = authenticationUtil.getCurrentUserId();
+                examService.recordQuestionTimeout(examId, questionId, userId);
+                return ResponseEntity.noContent().build();
+        }
+
         /**
          * Submit (complete) exam simulation
          *
@@ -196,6 +213,23 @@ public class ExamController {
 
                 log.info("✅ Exam submitted: examId={}", examId);
                 return ResponseEntity.ok(response);
+        }
+
+        @PostMapping("/{examId}/questions/{questionId}/presented")
+        @Operation(summary = "Record a presented exam question", description = "Records that the authenticated exam owner actually viewed one question. "
+                        + "The operation is idempotent for each question in an exam.")
+        @ApiResponses({
+                        @ApiResponse(responseCode = "204", description = "Presentation recorded or already recorded"),
+                        @ApiResponse(responseCode = "403", description = "Exam belongs to another user"),
+                        @ApiResponse(responseCode = "404", description = "Exam or question not found"),
+                        @ApiResponse(responseCode = "409", description = "Exam is not active")
+        })
+        public ResponseEntity<Void> recordQuestionPresented(
+                        @PathVariable Long examId,
+                        @PathVariable Long questionId) {
+                Long userId = authenticationUtil.getCurrentUserId();
+                examService.recordQuestionPresented(examId, questionId, userId);
+                return ResponseEntity.noContent().build();
         }
 
         @PostMapping("/{examId}/abandon")

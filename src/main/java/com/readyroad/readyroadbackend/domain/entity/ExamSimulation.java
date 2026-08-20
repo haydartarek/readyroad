@@ -18,7 +18,7 @@ import java.util.List;
  *
  * Compliance:
  * - 50 questions per exam
- * - 30 minutes time limit
+ * - Answering window derived from 15 seconds per persisted question
  * - 41/50 passing score (82%)
  */
 @Entity

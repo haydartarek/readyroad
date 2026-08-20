@@ -1,6 +1,7 @@
 package com.readyroad.readyroadbackend.dto.response;
 
 import java.time.LocalDateTime;
+import java.math.BigDecimal;
 
 public record AdminSystemSettingsResponse(
         String siteName,
@@ -8,7 +9,7 @@ public record AdminSystemSettingsResponse(
         boolean maintenanceMode,
         boolean allowRegistrations,
         int examQuestions,
-        int examDurationMinutes,
+        BigDecimal examDurationMinutes,
         int passingScorePercent,
         boolean siteNameEditable,
         boolean examSettingsEditable,

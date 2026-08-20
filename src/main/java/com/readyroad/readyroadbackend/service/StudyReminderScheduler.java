@@ -3,7 +3,6 @@ package com.readyroad.readyroadbackend.service;
 import com.readyroad.readyroadbackend.domain.entity.NotificationType;
 import com.readyroad.readyroadbackend.domain.entity.User;
 import com.readyroad.readyroadbackend.domain.repository.NotificationRepository;
-import com.readyroad.readyroadbackend.domain.repository.UserQuestionHistoryRepository;
 import com.readyroad.readyroadbackend.domain.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -12,7 +11,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import java.time.Instant;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
 
@@ -21,7 +20,7 @@ import java.util.List;
  *
  * Logic:
  * 1. Runs daily at 10:00 AM UTC (configurable via cron-expression).
- * 2. For each active user, checks their most recent answered_at date.
+ * 2. For each active learner, checks their most recent persisted learning activity.
  * 3. If the user has been inactive for ≥ {@code daysInactive} days:
  * - AND no STUDY_REMINDER was sent in the last {@code cooldownHours} hours:
  * → Sends a STUDY_REMINDER notification.
@@ -38,7 +37,7 @@ import java.util.List;
 public class StudyReminderScheduler {
 
     private final UserRepository userRepository;
-    private final UserQuestionHistoryRepository historyRepository;
+    private final AdminLearningStore learningStore;
     private final NotificationRepository notificationRepository;
     private final NotificationService notificationService;
 
@@ -65,8 +64,11 @@ public class StudyReminderScheduler {
         log.info("⏰ Study reminder scheduler started (daysInactive={}, cooldownHours={})",
                 daysInactive, cooldownHours);
 
-        List<User> activeUsers = userRepository.findByIsActiveTrue();
-        LocalDate inactivityThreshold = LocalDate.now().minusDays(daysInactive);
+        List<User> activeUsers = userRepository.findByRole(com.readyroad.readyroadbackend.domain.enums.Role.USER)
+                .stream()
+                .filter(user -> Boolean.TRUE.equals(user.getIsActive()))
+                .toList();
+        LocalDateTime inactivityThreshold = LocalDateTime.now().minusDays(daysInactive);
         Instant cooldownCutoff = Instant.now().minus(cooldownHours, ChronoUnit.HOURS);
 
         int sent = 0;
@@ -74,7 +76,11 @@ public class StudyReminderScheduler {
 
         for (User user : activeUsers) {
             try {
-                if (shouldSendReminder(user.getId(), inactivityThreshold, cooldownCutoff)) {
+                var profile = learningStore.findStudent(user.getId());
+                LocalDateTime lastActivity = profile != null && profile.lastActiveAt() != null
+                        ? profile.lastActiveAt()
+                        : user.getCreatedAt();
+                if (shouldSendReminder(user.getId(), lastActivity, inactivityThreshold, cooldownCutoff)) {
                     notificationService.createStudyReminderNotification(
                             user.getId(),
                             "📚 Time to Study!",
@@ -102,22 +108,17 @@ public class StudyReminderScheduler {
      * Determine whether a user should receive a study reminder.
      *
      * Returns true if:
-     * (a) The user has never studied OR last studied before the inactivity
-     * threshold.
+     * (a) The user's latest known activity is before the inactivity threshold.
      * (b) No STUDY_REMINDER was sent within the cooldown window.
      */
-    private boolean shouldSendReminder(Long userId, LocalDate inactivityThreshold, Instant cooldownCutoff) {
-        // Check last activity
-        LocalDate lastDate = historyRepository.findMostRecentAnsweredDateByUserId(userId);
-
-        if (lastDate != null) {
-            if (!lastDate.isBefore(inactivityThreshold)) {
-                // User was active recently — no reminder needed
-                return false;
-            }
+    boolean shouldSendReminder(
+            Long userId,
+            LocalDateTime lastActivity,
+            LocalDateTime inactivityThreshold,
+            Instant cooldownCutoff) {
+        if (lastActivity == null || !lastActivity.isBefore(inactivityThreshold)) {
+            return false;
         }
-        // If lastDate is null: user has NEVER practiced → always eligible for
-        // reminder
 
         // Check cooldown — don't spam
         boolean recentlySent = !notificationRepository

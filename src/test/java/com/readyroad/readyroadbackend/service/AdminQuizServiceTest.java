@@ -16,6 +16,7 @@ import com.readyroad.readyroadbackend.domain.entity.QuizAnswerOption;
 import com.readyroad.readyroadbackend.domain.entity.QuizQuestion;
 import com.readyroad.readyroadbackend.domain.enums.CategoryContentScope;
 import com.readyroad.readyroadbackend.domain.repository.CategoryRepository;
+import com.readyroad.readyroadbackend.domain.repository.ExamSimulationQuestionRepository;
 import com.readyroad.readyroadbackend.domain.repository.QuizAnswerOptionRepository;
 import com.readyroad.readyroadbackend.domain.repository.QuizQuestionRepository;
 import com.readyroad.readyroadbackend.domain.repository.QuizUserAnswerRepository;
@@ -42,6 +43,7 @@ class AdminQuizServiceTest {
     @Mock private CategoryRepository categoryRepository;
     @Mock private QuizUserAnswerRepository userAnswerRepository;
     @Mock private UserQuestionHistoryRepository historyRepository;
+    @Mock private ExamSimulationQuestionRepository examQuestionRepository;
     @Mock private BackendMessageService messages;
     @Mock private MarketingAuditService auditService;
 
@@ -55,6 +57,7 @@ class AdminQuizServiceTest {
                 categoryRepository,
                 userAnswerRepository,
                 historyRepository,
+                examQuestionRepository,
                 messages,
                 auditService);
         lenient().when(messages.get(anyString(), any(Object[].class)))
@@ -226,6 +229,19 @@ class AdminQuizServiceTest {
         assertThat(response.categoryCode()).isEqualTo("B");
         assertThat(response.difficultyLevel()).isEqualTo("HARD");
         assertThat(response.questionType()).isEqualTo("MULTIPLE_CHOICE");
+    }
+
+    @Test
+    void blocksDeletionWhenQuestionBelongsToAnyPersistedExam() {
+        QuizQuestion question = existingQuestion(2);
+        when(questionRepository.findById(7L)).thenReturn(Optional.of(question));
+        when(examQuestionRepository.existsByQuestionId(7L)).thenReturn(true);
+
+        assertThatThrownBy(() -> service.deleteQuestion(7L))
+                .isInstanceOf(IllegalStateException.class)
+                .hasMessage("admin.quiz.delete_referenced");
+
+        verify(questionRepository, never()).delete(any());
     }
 
     @Test

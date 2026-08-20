@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import java.math.BigDecimal;
 
 /**
  * Singleton admin-controlled system settings.
@@ -21,7 +22,7 @@ import lombok.NoArgsConstructor;
 public class AdminSystemSettings extends BaseEntity {
 
     @Column(nullable = false, length = 100)
-    private String siteName = "ReadyRoad";
+    private String siteName = "RijVia";
 
     @Column(nullable = false, length = 5)
     private String defaultLanguage = "en";
@@ -35,8 +36,8 @@ public class AdminSystemSettings extends BaseEntity {
     @Column(nullable = false)
     private Integer examQuestions = 50;
 
-    @Column(nullable = false)
-    private Integer examDurationMinutes = 30;
+    @Column(nullable = false, precision = 5, scale = 2)
+    private BigDecimal examDurationMinutes = new BigDecimal("12.50");
 
     @Column(nullable = false)
     private Integer passingScorePercent = 82;

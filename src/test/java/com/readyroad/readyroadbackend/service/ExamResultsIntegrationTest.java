@@ -159,8 +159,16 @@ class ExamResultsIntegrationTest extends BaseIntegrationTest {
         }
 
         @Test
-        @DisplayName("Story A3: Historical option IDs stay resolvable and explanations use current saved content")
-        void testHistoricalOptionsAndCurrentLocalizedExplanations() {
+        @DisplayName("Story A3: Historical option IDs and explanation snapshots remain stable")
+        void testHistoricalOptionsAndExplanationSnapshots() {
+                quizQuestionRepository.findAll().forEach(question -> {
+                        question.setExplanationEn("Original explanation EN");
+                        question.setExplanationAr("شرح أصلي");
+                        question.setExplanationNl("Oorspronkelijke uitleg");
+                        question.setExplanationFr("Explication originale");
+                });
+                quizQuestionRepository.flush();
+
                 ExamSimulation exam = examService.startExamSimulation(testUserId);
                 ExamSimulationQuestion examQuestion = examQuestionRepository
                                 .findByExamIdOrderByQuestionOrder(exam.getId())
@@ -188,8 +196,8 @@ class ExamResultsIntegrationTest extends BaseIntegrationTest {
                                                 .build(),
                                 testUserId);
 
-                // Simulate a later Admin edit. The historical answer must retain both
-                // option identities while explanations intentionally resolve current content.
+                // Simulate a later Admin edit. Historical option identities and explanation
+                // content must remain tied to the snapshot captured when the exam started.
                 selectedWrong.setIsActive(false);
                 selectedWrong.setIsCorrect(true);
                 originalCorrect.setIsActive(false);
@@ -224,10 +232,10 @@ class ExamResultsIntegrationTest extends BaseIntegrationTest {
                 assertThat(answer.getSelectedOptionTextNl()).isEqualTo(selectedWrongNl);
                 assertThat(answer.getCorrectOptionId()).isEqualTo(originalCorrectId);
                 assertThat(answer.getCorrectOptionTextAr()).isEqualTo(originalCorrectAr);
-                assertThat(answer.getExplanationEn()).isEqualTo("Updated explanation EN");
-                assertThat(answer.getExplanationAr()).isEqualTo("شرح محدث");
-                assertThat(answer.getExplanationNl()).isEqualTo("Bijgewerkte uitleg");
-                assertThat(answer.getExplanationFr()).isEqualTo("Explication mise à jour");
+                assertThat(answer.getExplanationEn()).isEqualTo("Original explanation EN");
+                assertThat(answer.getExplanationAr()).isEqualTo("شرح أصلي");
+                assertThat(answer.getExplanationNl()).isEqualTo("Oorspronkelijke uitleg");
+                assertThat(answer.getExplanationFr()).isEqualTo("Explication originale");
         }
 
         @Test

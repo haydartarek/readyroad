@@ -27,7 +27,7 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 /**
  * Story A4: Time Limit Enforcement Integration Tests
  *
- * BDD Feature: Exam time limit enforcement (30 minutes)
+ * BDD Feature: Exam time limit enforcement (15 seconds per question)
  *
  * Scenarios:
  * 1. Exam starts with correct time limit
@@ -98,12 +98,12 @@ class TimeLimitEnforcementIntegrationTest extends BaseIntegrationTest {
                 assertThat(exam.getExpiresAt()).isNotNull();
                 assertThat(exam.getStatus()).isEqualTo(ExamSimulation.ExamStatus.IN_PROGRESS);
 
-                // Time limit should be 30 minutes
-                long timeLimitMinutes = Duration.between(
+                // Fifty questions at 15 seconds each must produce exactly 750 seconds.
+                long timeLimitSeconds = Duration.between(
                                 exam.getStartedAt(),
-                                exam.getExpiresAt()).toMinutes();
+                                exam.getExpiresAt()).getSeconds();
 
-                assertThat(timeLimitMinutes).isEqualTo(30);
+                assertThat(timeLimitSeconds).isEqualTo(750);
 
                 // Start time should be now (within 1 second tolerance)
                 assertThat(exam.getStartedAt()).isBetween(beforeStart, afterStart);
@@ -112,7 +112,7 @@ class TimeLimitEnforcementIntegrationTest extends BaseIntegrationTest {
         @Test
         @DisplayName("Story A4: Submitting answer before expiry is allowed")
         void testSubmitAnswerBeforeExpiry() {
-                // Given - Fresh exam (30 minutes remaining)
+                // Given - Fresh exam within its derived answering window
                 ExamSimulation exam = examService.startExamSimulation(testUserId);
 
                 // Get the first question from the actual exam
@@ -172,7 +172,7 @@ class TimeLimitEnforcementIntegrationTest extends BaseIntegrationTest {
                                 request, testUserId))
                                 .isInstanceOf(ExamExpiredException.class)
                                 .hasMessageContaining("The exam has expired")
-                                .hasMessageContaining("30 minutes");
+                                .hasMessageContaining("15 seconds per question");
         }
 
         @Test
@@ -207,49 +207,16 @@ class TimeLimitEnforcementIntegrationTest extends BaseIntegrationTest {
         }
 
         @Test
-        @DisplayName("Story A4: Results available for expired exams")
-        void testResultsAvailableForExpiredExam() {
-                // Given - Start exam and answer 25 questions
+        @DisplayName("Story A4: Expired exams do not expose completed analytics")
+        void testExpiredExamDoesNotExposeCompletedResults() {
+                // Given - Start exam and expire it without canonical completion.
                 ExamSimulation exam = examService.startExamSimulation(testUserId);
-
-                // Get the actual questions in this exam
-                List<ExamSimulationQuestion> examQuestions = examService.getExamQuestions(exam.getId());
-
-                // Submit 25 answers (using actual exam questions)
-                for (int i = 0; i < 25; i++) {
-                        ExamSimulationQuestion examQuestion = examQuestions.get(i);
-
-                        // Use questionId directly instead of trying to access through lazy-loaded
-                        // relationship
-                        Long questionId = examQuestion.getQuestionId();
-                        QuizQuestion question = questionRepository.findById(questionId).orElseThrow();
-                        Long correctOptionId = question.getOptions().stream()
-                                        .filter(QuizAnswerOption::getIsCorrect)
-                                        .findFirst()
-                                        .orElseThrow()
-                                        .getId();
-
-                        SubmitExamAnswerRequest request = new SubmitExamAnswerRequest();
-                        request.setSelectedOptionId(correctOptionId);
-
-                        examService.submitAnswer(exam.getId(), questionId, request, testUserId);
-                }
-
-                // Manually expire the exam
                 exam.setStatus(ExamSimulation.ExamStatus.EXPIRED);
                 exam.setCompletedAt(Instant.now());
                 examRepository.save(exam);
 
-                // When - Request results
-                ExamResultsDTO results = examService.getExamResults(exam.getId(), testUserId);
-
-                // Then - Results should be available
-                assertThat(results).isNotNull();
-                assertThat(results.getExamId()).isEqualTo(exam.getId());
-                assertThat(results.getCorrectAnswers()).isEqualTo(25);
-                assertThat(results.getWrongAnswers()).isEqualTo(0);
-                assertThat(results.getUnansweredCount()).isEqualTo(25);
-                assertThat(results.getPassed()).isFalse(); // Only 25/50
+                assertThatThrownBy(() -> examService.getExamResults(exam.getId(), testUserId))
+                                .isInstanceOf(com.readyroad.readyroadbackend.exception.ExamNotCompletedException.class);
         }
 
         @Test

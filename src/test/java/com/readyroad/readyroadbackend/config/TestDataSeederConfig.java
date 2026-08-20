@@ -93,6 +93,7 @@ public class TestDataSeederConfig {
             category.setIsActive(true);
             category.setDisplayOrder(1);
             category.setContentScope(CategoryContentScope.THEORETICAL_EXAM);
+            category.setExamTargetWeight(10);
             return repo.save(category);
         }
 

@@ -21,7 +21,7 @@ public class HealthController {
     @GetMapping("/health")
     @Operation(
             summary = "Check API health status",
-            description = "Returns the current health status of the ReadyRoad backend API"
+            description = "Returns the current health status of the RijVia backend API"
     )
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "API is healthy and running"),
@@ -30,7 +30,7 @@ public class HealthController {
     public ResponseEntity<HealthResponse> health() {
         HealthResponse response = new HealthResponse(
                 "UP",
-                "Ready Road Backend is running",
+                "RijVia Backend is running",
                 LocalDateTime.now().format(DateTimeFormatter.ISO_DATE_TIME),
                 "0.0.1-SNAPSHOT"
         );

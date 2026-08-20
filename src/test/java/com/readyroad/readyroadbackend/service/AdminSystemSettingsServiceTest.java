@@ -3,6 +3,7 @@ package com.readyroad.readyroadbackend.service;
 import com.readyroad.readyroadbackend.domain.entity.AdminSystemSettings;
 import com.readyroad.readyroadbackend.domain.repository.AdminSystemSettingsRepository;
 import com.readyroad.readyroadbackend.dto.AdminSystemSettingsUpdateRequest;
+import java.math.BigDecimal;
 import java.util.Optional;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -32,16 +33,17 @@ class AdminSystemSettingsServiceTest {
         var response = service.getSettings();
 
         assertThat(response.siteNameEditable()).isFalse();
+        assertThat(response.siteName()).isEqualTo("RijVia");
         assertThat(response.examSettingsEditable()).isFalse();
         assertThat(response.examQuestions()).isEqualTo(50);
-        assertThat(response.examDurationMinutes()).isEqualTo(30);
+        assertThat(response.examDurationMinutes()).isEqualByComparingTo("12.50");
         assertThat(response.passingScorePercent()).isEqualTo(82);
     }
 
     @Test
     void rejectsUnsupportedExamRuleChanges() {
         var request = new AdminSystemSettingsUpdateRequest(
-                "ReadyRoad", "en", false, true, 40, 30, 82);
+                "RijVia", "en", false, true, 40, new BigDecimal("12.50"), 82);
 
         assertThatThrownBy(() -> service.updateSettings(request))
                 .isInstanceOf(IllegalArgumentException.class)
@@ -52,7 +54,7 @@ class AdminSystemSettingsServiceTest {
     @Test
     void rejectsUnsupportedSiteNameChanges() {
         var request = new AdminSystemSettingsUpdateRequest(
-                "Another product", "en", false, true, 50, 30, 82);
+                "Another product", "en", false, true, 50, new BigDecimal("12.50"), 82);
 
         assertThatThrownBy(() -> service.updateSettings(request))
                 .isInstanceOf(IllegalArgumentException.class)
@@ -71,12 +73,12 @@ class AdminSystemSettingsServiceTest {
 
     private AdminSystemSettings settings() {
         AdminSystemSettings settings = new AdminSystemSettings();
-        settings.setSiteName("ReadyRoad");
+        settings.setSiteName("RijVia");
         settings.setDefaultLanguage("en");
         settings.setMaintenanceMode(false);
         settings.setAllowRegistrations(true);
         settings.setExamQuestions(50);
-        settings.setExamDurationMinutes(30);
+        settings.setExamDurationMinutes(new BigDecimal("12.50"));
         settings.setPassingScorePercent(82);
         return settings;
     }

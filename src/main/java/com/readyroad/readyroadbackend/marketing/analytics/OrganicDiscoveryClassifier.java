@@ -16,7 +16,8 @@ import org.springframework.stereotype.Service;
 public class OrganicDiscoveryClassifier {
 
     private static final Pattern ARABIC = Pattern.compile("[\\p{InArabic}]");
-    private static final Set<String> OWN_BRAND = Set.of("readyroad", "ready road", "readyroad.be");
+    private static final Set<String> OWN_BRAND = Set.of(
+            "rijvia", "rij via", "readyroad", "ready road", "readyroad.be");
     private static final Set<String> AMBIGUOUS_BRAND = Set.of("ready to road", "readytoroad");
     private static final Set<String> NAVIGATIONAL = Set.of("login", "inloggen", "connexion", "تسجيل", "دخول");
     private static final Set<String> TRANSACTIONAL = Set.of(

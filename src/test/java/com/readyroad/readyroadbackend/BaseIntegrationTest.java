@@ -110,6 +110,7 @@ public abstract class BaseIntegrationTest {
                     cat.setIsActive(true);
                     cat.setDisplayOrder(1);
                     cat.setContentScope(CategoryContentScope.THEORETICAL_EXAM);
+                    cat.setExamTargetWeight(10);
                     return categoryRepository.saveAndFlush(cat);
                 });
     }

@@ -276,6 +276,29 @@ class ExamAnswerSubmissionIntegrationTest extends BaseIntegrationTest {
         }
 
         @Test
+        @DisplayName("Story A2: Cannot submit an option owned by another exam question")
+        void testCannotSubmitOptionOwnedByAnotherQuestion() {
+                ExamSimulation exam = examService.startExamSimulation(testUserId);
+                List<ExamSimulationQuestion> questions = examQuestionRepository
+                                .findByExamIdOrderByQuestionOrder(exam.getId());
+                ExamSimulationQuestion target = questions.get(0);
+                QuizQuestion differentQuestion = questionRepository.findById(questions.get(1).getQuestionId())
+                                .orElseThrow();
+                QuizAnswerOption foreignOption = differentQuestion.getDeliverableOptions().get(0);
+
+                SubmitExamAnswerRequest request = SubmitExamAnswerRequest.builder()
+                                .selectedOptionId(foreignOption.getId())
+                                .build();
+
+                assertThatThrownBy(() -> examService.submitAnswer(
+                                exam.getId(), target.getQuestionId(), request, testUserId))
+                                .isInstanceOf(InvalidAnswerException.class)
+                                .hasMessageContaining("does not belong to this question");
+                assertThat(answerRepository.existsByExamIdAndQuestionId(exam.getId(), target.getQuestionId()))
+                                .isFalse();
+        }
+
+        @Test
         @DisplayName("Story A2: Progress tracking updates correctly")
         void testProgressTrackingUpdates() {
                 // Given

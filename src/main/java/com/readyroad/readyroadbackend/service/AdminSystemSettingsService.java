@@ -10,15 +10,17 @@ import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.orm.ObjectOptimisticLockingFailureException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import java.math.BigDecimal;
 
 @Service
 @RequiredArgsConstructor
 @Slf4j
 public class AdminSystemSettingsService {
 
-    public static final String FIXED_SITE_NAME = "ReadyRoad";
+    public static final String FIXED_SITE_NAME = "RijVia";
     public static final int FIXED_EXAM_QUESTION_COUNT = 50;
-    public static final int FIXED_EXAM_DURATION_MINUTES = 30;
+    public static final BigDecimal FIXED_EXAM_DURATION_MINUTES =
+            TheoryExamTiming.totalMinutes(FIXED_EXAM_QUESTION_COUNT);
     public static final int FIXED_PASSING_SCORE_PERCENT = 82;
 
     private final AdminSystemSettingsRepository settingsRepository;
@@ -89,16 +91,17 @@ public class AdminSystemSettingsService {
 
     private void validateFixedExamConfiguration(AdminSystemSettingsUpdateRequest request) {
         if (!Integer.valueOf(FIXED_EXAM_QUESTION_COUNT).equals(request.examQuestions())
-                || !Integer.valueOf(FIXED_EXAM_DURATION_MINUTES).equals(request.examDurationMinutes())
+                || request.examDurationMinutes() == null
+                || FIXED_EXAM_DURATION_MINUTES.compareTo(request.examDurationMinutes()) != 0
                 || !Integer.valueOf(FIXED_PASSING_SCORE_PERCENT).equals(request.passingScorePercent())) {
             throw new IllegalArgumentException(
-                    "The Belgian exam configuration is fixed at 50 questions, 30 minutes, and an 82% passing score.");
+                    "The theory exam configuration is fixed at 50 questions, 15 seconds per question, and an 82% passing score.");
         }
     }
 
     private void validateFixedSiteName(AdminSystemSettingsUpdateRequest request) {
         if (!FIXED_SITE_NAME.equals(request.siteName().trim())) {
-            throw new IllegalArgumentException("The ReadyRoad product name is fixed and read-only.");
+            throw new IllegalArgumentException("The RijVia product name is fixed and read-only.");
         }
     }
 

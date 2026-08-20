@@ -21,6 +21,11 @@ import java.time.Instant;
 @EqualsAndHashCode(callSuper = true)
 public class ExamSimulationAnswer extends BaseEntity {
 
+    public enum AnswerState {
+        ANSWERED,
+        TIMED_OUT
+    }
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "exam_id", nullable = false)
     private ExamSimulation exam;
@@ -30,7 +35,7 @@ public class ExamSimulationAnswer extends BaseEntity {
     private QuizQuestion question;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "selected_option_id", nullable = false)
+    @JoinColumn(name = "selected_option_id")
     private QuizAnswerOption selectedOption;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -45,4 +50,16 @@ public class ExamSimulationAnswer extends BaseEntity {
 
     @Column(name = "answered_at", nullable = false)
     private Instant answeredAt;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "answer_state", nullable = false, length = 20)
+    @Builder.Default
+    private AnswerState answerState = AnswerState.ANSWERED;
+
+    @Column(name = "timed_out_at")
+    private Instant timedOutAt;
+
+    public boolean isTimedOut() {
+        return answerState == AnswerState.TIMED_OUT;
+    }
 }

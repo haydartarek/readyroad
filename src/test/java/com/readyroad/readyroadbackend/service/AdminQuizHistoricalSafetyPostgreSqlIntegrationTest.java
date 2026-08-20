@@ -14,6 +14,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -218,15 +219,79 @@ class AdminQuizHistoricalSafetyPostgreSqlIntegrationTest {
                 """, Integer.class)).isEqualTo(1);
     }
 
+    @Test
+    void databaseRejectsOptionsOwnedByAnotherQuestion() {
+        long foreignQuestionId = insertQuestion("Foreign question");
+        long foreignOptionId = insertOption(foreignQuestionId, "Foreign option", true, 1);
+
+        assertThatThrownBy(() -> jdbc.update("""
+                UPDATE exam_simulation_answers
+                SET selected_option_id = ?
+                WHERE exam_id = ? AND question_id = ?
+                """, foreignOptionId, examId, questionId))
+                .isInstanceOf(DataIntegrityViolationException.class);
+        assertThatThrownBy(() -> jdbc.update("""
+                UPDATE exam_simulation_answers
+                SET correct_option_id = ?
+                WHERE exam_id = ? AND question_id = ?
+                """, foreignOptionId, examId, questionId))
+                .isInstanceOf(DataIntegrityViolationException.class);
+
+        Map<String, Object> answer = jdbc.queryForMap("""
+                SELECT selected_option_id, correct_option_id
+                FROM exam_simulation_answers
+                WHERE exam_id = ? AND question_id = ?
+                """, examId, questionId);
+        assertThat(((Number) answer.get("selected_option_id")).longValue()).isEqualTo(selectedOptionId);
+        assertThat(((Number) answer.get("correct_option_id")).longValue()).isEqualTo(historicalCorrectOptionId);
+    }
+
+    @Test
+    void databasePreservesHistoricallyReferencedQuestionsAndOptions() {
+        assertThatThrownBy(() -> jdbc.update(
+                "DELETE FROM quiz_answer_options WHERE id = ?", selectedOptionId))
+                .isInstanceOf(DataIntegrityViolationException.class);
+        assertThatThrownBy(() -> jdbc.update(
+                "DELETE FROM quiz_questions WHERE id = ?", questionId))
+                .isInstanceOf(DataIntegrityViolationException.class);
+
+        assertThat(jdbc.queryForObject(
+                "SELECT COUNT(*) FROM exam_simulation_answers WHERE exam_id = ?", Integer.class, examId))
+                .isEqualTo(1);
+    }
+
+    @Test
+    void databaseAllowsOnlyOneActiveCorrectOptionPerQuestion() {
+        assertThatThrownBy(() -> jdbc.update(
+                "UPDATE quiz_answer_options SET is_correct = true WHERE id = ?", futureCorrectOptionId))
+                .isInstanceOf(DataIntegrityViolationException.class);
+    }
+
     private long insertOption(String english, boolean correct, int order) {
+        return insertOption(questionId, english, correct, order);
+    }
+
+    private long insertOption(long ownerQuestionId, String english, boolean correct, int order) {
         return jdbc.queryForObject("""
                 INSERT INTO quiz_answer_options
                     (question_id, option_text_ar, option_text_en, option_text_nl, option_text_fr,
                      is_correct, display_order, is_active)
                 VALUES (?, ?, ?, ?, ?, ?, ?, true)
                 RETURNING id
-                """, Long.class, questionId, english + " AR", english, english + " NL", english + " FR",
+                """, Long.class, ownerQuestionId, english + " AR", english, english + " NL", english + " FR",
                 correct, order);
+    }
+
+    private long insertQuestion(String english) {
+        Long categoryId = jdbc.queryForObject(
+                "SELECT category_id FROM quiz_questions WHERE id = ?", Long.class, questionId);
+        return jdbc.queryForObject("""
+                INSERT INTO quiz_questions
+                    (question_ar, question_en, question_nl, question_fr, question_type,
+                     difficulty_level, category_id, is_active, status, published_at)
+                VALUES (?, ?, ?, ?, 'MULTIPLE_CHOICE', 'EASY', ?, true, 'PUBLISHED', CURRENT_TIMESTAMP)
+                RETURNING id
+                """, Long.class, english + " AR", english, english + " NL", english + " FR", categoryId);
     }
 
     private AdminQuizQuestionRequest updatedRequest(long version) {

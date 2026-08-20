@@ -4,11 +4,11 @@ import java.time.LocalDateTime;
 
 public interface UserQuestionHistoryUpsertRepository {
 
-    void upsertQuestionShown(
+    void upsertQuestionPresented(
             Long userId,
             Long questionId,
-            LocalDateTime lastShownAt,
-            String lastShownType);
+            LocalDateTime presentedAt,
+            String presentationContext);
 
     void upsertQuestionAnswered(
             Long userId,
