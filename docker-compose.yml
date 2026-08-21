@@ -1,32 +1,30 @@
 # ============================================
-# ReadyRoad - Docker Compose Configuration
+# RijVia - Local Docker Compose Configuration
 # ============================================
 # Services:
-#   - mysql: MySQL 8 database
+#   - postgres: PostgreSQL 16 database
 #   - backend: Spring Boot application
 #   - frontend: Next.js application
 # ============================================
 
 services:
-  # MySQL Database
-  mysql:
-    image: mysql:8.0.46
-    container_name: readyroad-mysql
+  # PostgreSQL Database
+  postgres:
+    image: postgres:16.13-alpine
+    container_name: readyroad-postgres
     restart: unless-stopped
 
     environment:
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:?MYSQL_ROOT_PASSWORD must be set}
-      MYSQL_DATABASE: ${DB_NAME:-readyroad_prod}
-      MYSQL_USER: ${DB_USERNAME:?DB_USERNAME must be set}
-      MYSQL_PASSWORD: ${DB_PASSWORD:?DB_PASSWORD must be set}
+      POSTGRES_DB: ${POSTGRES_DB:?POSTGRES_DB must be set}
+      POSTGRES_USER: ${POSTGRES_USERNAME:?POSTGRES_USERNAME must be set}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?POSTGRES_PASSWORD must be set}
       TZ: UTC
 
-    ports:
-      - "127.0.0.1:3307:3306"
+    expose:
+      - "5432"
 
     volumes:
-      - mysql_data:/var/lib/mysql
-      - ./init-db.sql/readyroad-init.sql:/docker-entrypoint-initdb.d/readyroad-init.sql:ro
+      - postgres_data:/var/lib/postgresql/data
 
     networks:
       - readyroad-network
@@ -35,18 +33,12 @@ services:
       test:
         [
           "CMD-SHELL",
-          "mysqladmin ping -h localhost -u $$MYSQL_USER --password=$$MYSQL_PASSWORD 2>/dev/null",
+          "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB",
         ]
       interval: 10s
       timeout: 5s
       retries: 5
-      start_period: 30s
-
-    command:
-      - --character-set-server=utf8mb4
-      - --collation-server=utf8mb4_unicode_ci
-      - --max-connections=200
-      - --sql-mode=NO_ENGINE_SUBSTITUTION
+      start_period: 20s
 
   # Backend Application
   backend:
@@ -57,19 +49,23 @@ services:
     restart: unless-stopped
 
     depends_on:
-      mysql:
+      postgres:
         condition: service_healthy
 
     environment:
       # Spring Profile
-      SPRING_PROFILES_ACTIVE: prod
+      SPRING_PROFILES_ACTIVE: secure,postgresql
 
       # Database Configuration
-      DB_HOST: mysql
-      DB_PORT: 3306
-      DB_NAME: ${DB_NAME:-readyroad_prod}
-      DB_USERNAME: ${DB_USERNAME:?DB_USERNAME must be set}
-      DB_PASSWORD: ${DB_PASSWORD:?DB_PASSWORD must be set}
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+      POSTGRES_DB: ${POSTGRES_DB:?POSTGRES_DB must be set}
+      POSTGRES_USERNAME: ${POSTGRES_USERNAME:?POSTGRES_USERNAME must be set}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?POSTGRES_PASSWORD must be set}
+      POSTGRES_SSLMODE: disable
+
+      # Local-only Search Console workbook workspace. No publishing side effects.
+      READYROAD_MARKETING_LOCAL_SEO_IMPORT_ENABLED: "true"
 
       # JWT Configuration
       JWT_SECRET: ${JWT_SECRET:?JWT_SECRET must be set}
@@ -108,8 +104,8 @@ services:
       GOOGLE_OAUTH_TOKEN_URI: ${GOOGLE_OAUTH_TOKEN_URI:-https://oauth2.googleapis.com/token}
       GOOGLE_OAUTH_USER_INFO_URI: ${GOOGLE_OAUTH_USER_INFO_URI:-https://openidconnect.googleapis.com/v1/userinfo}
 
-    ports:
-      - "8890:8890"
+    expose:
+      - "8890"
 
     volumes:
       - backend_logs:/app/logs
@@ -142,7 +138,7 @@ services:
       dockerfile: Dockerfile
       args:
         BACKEND_URL: http://backend:8890/api
-        NEXT_PUBLIC_API_BASE_URL: http://localhost:8890
+        NEXT_PUBLIC_API_BASE_URL: http://localhost:3000
     container_name: readyroad-frontend
     restart: unless-stopped
 
@@ -153,7 +149,7 @@ services:
     environment:
       # Runtime env — used by the BFF proxy (server-side only)
       BACKEND_URL: http://backend:8890/api
-      NEXT_PUBLIC_API_BASE_URL: http://localhost:8890
+      NEXT_PUBLIC_API_BASE_URL: http://localhost:3000
       FRONTEND_URL: ${FRONTEND_URL:-http://localhost:3000}
       GOOGLE_OAUTH_CLIENT_ID: ${GOOGLE_OAUTH_CLIENT_ID:-}
       SMTP_USER: ${SMTP_USERNAME:-}
@@ -183,8 +179,9 @@ networks:
 
 # Volumes
 volumes:
-  mysql_data:
-    driver: local
+  postgres_data:
+    external: true
+    name: readyroad-postgresql_postgres_data
   backend_logs:
     driver: local
   sign_uploads:
