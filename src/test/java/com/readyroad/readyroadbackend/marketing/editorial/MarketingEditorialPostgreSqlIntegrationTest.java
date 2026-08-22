@@ -14,6 +14,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.DynamicPropertyRegistry;
@@ -60,6 +61,10 @@ class MarketingEditorialPostgreSqlIntegrationTest {
     @BeforeEach
     void resetPriorityTestData() {
         JdbcTemplate jdbc = new JdbcTemplate(dataSource);
+        jdbc.update("DELETE FROM article_versions");
+        jdbc.update("DELETE FROM article_briefs");
+        jdbc.update("DELETE FROM articles");
+        jdbc.update("DELETE FROM article_keyword_clusters");
         jdbc.update("DELETE FROM editorial_claim_sources");
         jdbc.update("DELETE FROM editorial_claims");
         jdbc.update("DELETE FROM editorial_source_versions");
@@ -445,6 +450,174 @@ class MarketingEditorialPostgreSqlIntegrationTest {
                 """, String.class)).isEqualTo("REQUIRES_REVIEW");
     }
 
+    @Test
+    void createsOnlyTheApprovedEditorialCoreTablesAndPreservesExistingData() {
+        JdbcTemplate jdbc = new JdbcTemplate(dataSource);
+
+        assertThat(jdbc.queryForList("""
+                SELECT table_name
+                FROM information_schema.tables
+                WHERE table_schema = current_schema()
+                  AND table_name IN (
+                      'article_keyword_clusters', 'article_briefs', 'articles', 'article_versions'
+                  )
+                ORDER BY table_name
+                """, String.class)).containsExactly(
+                        "article_briefs", "article_keyword_clusters", "article_versions", "articles");
+        assertThat(jdbc.queryForObject("""
+                SELECT count(*)
+                FROM information_schema.tables
+                WHERE table_schema = current_schema() AND table_name = 'article_sources'
+                """, Integer.class)).isZero();
+        assertThat(jdbc.queryForObject("SELECT count(*) FROM article_topics", Integer.class)).isEqualTo(40);
+        assertThat(jdbc.queryForObject("SELECT count(*) FROM article_keyword_clusters", Integer.class)).isZero();
+        assertThat(jdbc.queryForObject("SELECT count(*) FROM article_briefs", Integer.class)).isZero();
+        assertThat(jdbc.queryForObject("SELECT count(*) FROM articles", Integer.class)).isZero();
+        assertThat(jdbc.queryForObject("SELECT count(*) FROM article_versions", Integer.class)).isZero();
+    }
+
+    @Test
+    void persistsStrategyBoundBriefArticleAndLocalizedVersionHistory() {
+        JdbcTemplate jdbc = new JdbcTemplate(dataSource);
+        Long topicId = topicId(jdbc, 1);
+        String icpId = jdbc.queryForObject(
+                "SELECT id FROM marketing_icp WHERE active ORDER BY id LIMIT 1", String.class);
+        Long pillarId = jdbc.queryForObject(
+                "SELECT id FROM marketing_content_pillars WHERE active ORDER BY id LIMIT 1", Long.class);
+        Long funnelStageId = jdbc.queryForObject(
+                "SELECT id FROM marketing_funnel_stages WHERE active ORDER BY sequence_number LIMIT 1", Long.class);
+        Long conversionGoalId = null;
+
+        Long clusterId = jdbc.queryForObject("""
+                INSERT INTO article_keyword_clusters (
+                    cluster_key, primary_query, search_intent, primary_language,
+                    content_pillar_id, funnel_stage_id, status
+                ) VALUES ('task-7-cluster', 'Belgian driving theory', 'INFORMATIONAL', 'EN', ?, ?, 'ACTIVE')
+                RETURNING id
+                """, Long.class, pillarId, funnelStageId);
+        Long briefId = jdbc.queryForObject("""
+                INSERT INTO article_briefs (
+                    article_topic_id, keyword_cluster_id, target_language, search_intent,
+                    working_title, purpose, icp_id, content_pillar_id, funnel_stage_id,
+                    conversion_goal_id, primary_cta, target_queries, source_requirements,
+                    legal_review_required, status
+                ) VALUES (?, ?, 'AR', 'INFORMATIONAL', 'Belgian theory guide',
+                          'Prepare a factual localized article', ?, ?, ?, ?, 'Start learning',
+                          '["belgian driving theory"]'::jsonb,
+                          '["official government source"]'::jsonb, TRUE, 'APPROVED')
+                RETURNING id
+                """, Long.class, topicId, clusterId, icpId, pillarId, funnelStageId, conversionGoalId);
+        Long articleId = jdbc.queryForObject("""
+                INSERT INTO articles (
+                    article_topic_id, canonical_key, lifecycle_state, canonical_language,
+                    icp_id, content_pillar_id, funnel_stage_id, conversion_goal_id
+                ) VALUES (?, 'task-7-article', 'BRIEF_READY', 'AR', ?, ?, ?, ?)
+                RETURNING id
+                """, Long.class, topicId, icpId, pillarId, funnelStageId, conversionGoalId);
+
+        jdbc.update("""
+                INSERT INTO article_versions (
+                    article_id, version_number, language, title, slug, summary, body,
+                    metadata, generation_metadata, status, is_current, created_by
+                ) VALUES (?, 1, 'AR', 'First Arabic draft', 'arabic-guide', 'Initial summary',
+                          'Initial content', '{"legalReview":true}'::jsonb,
+                          '{"source":"CONTENT_AGENT"}'::jsonb, 'DRAFT', FALSE, 'editor@example.test')
+                """, articleId);
+        jdbc.update("""
+                INSERT INTO article_versions (
+                    article_id, version_number, language, title, slug, body,
+                    status, is_current, created_by
+                ) VALUES (?, 2, 'AR', 'Current Arabic draft', 'arabic-guide', 'Revised content',
+                          'DRAFT_READY', TRUE, 'editor@example.test')
+                """, articleId);
+        for (String language : List.of("NL", "EN", "FR")) {
+            jdbc.update("""
+                    INSERT INTO article_versions (
+                        article_id, version_number, language, title, slug, body,
+                        status, is_current, created_by
+                    ) VALUES (?, 1, ?, ?, ?, ?, 'DRAFT_READY', TRUE, 'editor@example.test')
+                    """, articleId, language, language + " localized draft",
+                    "localized-guide-" + language.toLowerCase(), language + " localized content");
+        }
+
+        assertThat(briefId).isPositive();
+        assertThat(jdbc.queryForObject(
+                "SELECT count(*) FROM article_versions WHERE article_id = ?", Integer.class, articleId))
+                .isEqualTo(5);
+        assertThat(jdbc.queryForObject("""
+                SELECT count(*) FROM article_versions
+                WHERE article_id = ? AND is_current
+                """, Integer.class, articleId)).isEqualTo(4);
+        assertThat(jdbc.queryForList("""
+                SELECT language FROM article_versions
+                WHERE article_id = ? AND is_current
+                ORDER BY language
+                """, String.class, articleId)).containsExactly("AR", "EN", "FR", "NL");
+        assertThat(jdbc.queryForList("""
+                SELECT version_number FROM article_versions
+                WHERE article_id = ? AND language = 'AR'
+                ORDER BY version_number
+                """, Integer.class, articleId)).containsExactly(1, 2);
+    }
+
+    @Test
+    void enforcesEditorialIdentityForeignKeysAndCurrentSlugUniqueness() {
+        JdbcTemplate jdbc = new JdbcTemplate(dataSource);
+        Long firstArticleId = insertArticle(jdbc, 1, "task-7-first-article");
+        jdbc.update("""
+                INSERT INTO article_versions (
+                    article_id, version_number, language, title, slug, body, status, is_current
+                ) VALUES (?, 1, 'EN', 'First article', 'belgian-theory', 'Content', 'DRAFT', TRUE)
+                """, firstArticleId);
+
+        assertThatThrownBy(() -> insertArticle(jdbc, 1, "duplicate-topic-article"))
+                .isInstanceOf(DataIntegrityViolationException.class);
+        assertThatThrownBy(() -> jdbc.update("""
+                INSERT INTO article_versions (
+                    article_id, version_number, language, title, body, status, is_current
+                ) VALUES (?, 1, 'EN', 'Duplicate version', 'Content', 'DRAFT', FALSE)
+                """, firstArticleId)).isInstanceOf(DataIntegrityViolationException.class);
+        assertThatThrownBy(() -> jdbc.update("""
+                INSERT INTO article_versions (
+                    article_id, version_number, language, title, body, status, is_current
+                ) VALUES (?, 2, 'DE', 'Unsupported locale', 'Content', 'DRAFT', FALSE)
+                """, firstArticleId)).isInstanceOf(DataIntegrityViolationException.class);
+
+        Long secondArticleId = insertArticle(jdbc, 2, "task-7-second-article");
+        assertThatThrownBy(() -> jdbc.update("""
+                INSERT INTO article_versions (
+                    article_id, version_number, language, title, slug, body, status, is_current
+                ) VALUES (?, 1, 'EN', 'Second article', 'BELGIAN-THEORY', 'Content', 'DRAFT', TRUE)
+                """, secondArticleId)).isInstanceOf(DataIntegrityViolationException.class);
+        assertThatThrownBy(() -> jdbc.update("""
+                INSERT INTO articles (
+                    article_topic_id, canonical_key, lifecycle_state, canonical_language
+                ) VALUES (9223372036854775807, 'missing-topic', 'IDEA', 'EN')
+                """)).isInstanceOf(DataIntegrityViolationException.class);
+    }
+
+    @Test
+    void preventsDestructiveDeletionOfArticleVersionHistory() {
+        JdbcTemplate jdbc = new JdbcTemplate(dataSource);
+        Long topicId = topicId(jdbc, 1);
+        Long articleId = insertArticle(jdbc, 1, "task-7-history-article");
+        jdbc.update("""
+                INSERT INTO article_versions (
+                    article_id, version_number, language, title, body, status, is_current
+                ) VALUES (?, 1, 'EN', 'Historical article', 'Historical content', 'DRAFT', TRUE)
+                """, articleId);
+
+        assertThatThrownBy(() -> jdbc.update("DELETE FROM articles WHERE id = ?", articleId))
+                .isInstanceOf(DataIntegrityViolationException.class);
+        assertThatThrownBy(() -> jdbc.update("DELETE FROM article_topics WHERE id = ?", topicId))
+                .isInstanceOf(DataIntegrityViolationException.class);
+        assertThat(jdbc.queryForObject(
+                "SELECT count(*) FROM article_versions WHERE article_id = ?", Integer.class, articleId))
+                .isOne();
+        assertThat(jdbc.queryForObject(
+                "SELECT count(*) FROM articles WHERE id = ?", Integer.class, articleId)).isOne();
+    }
+
     private void executeApproved(
             EditorialSourceDtos.SourceCollectionRequest request,
             String actor) {
@@ -458,6 +631,21 @@ class MarketingEditorialPostgreSqlIntegrationTest {
         return new ClaimedTask(
                 task.getId(), task.getAgentType(), task.getTaskType(), task.getPayload(),
                 task.getPayloadVersion(), task.getPriority(), 1, task.getCorrelationId());
+    }
+
+    private static Long insertArticle(JdbcTemplate jdbc, int backlogOrder, String canonicalKey) {
+        return jdbc.queryForObject("""
+                INSERT INTO articles (
+                    article_topic_id, canonical_key, lifecycle_state, canonical_language
+                ) VALUES (?, ?, 'IDEA', 'EN')
+                RETURNING id
+                """, Long.class, topicId(jdbc, backlogOrder), canonicalKey);
+    }
+
+    private static Long topicId(JdbcTemplate jdbc, int backlogOrder) {
+        return jdbc.queryForObject("""
+                SELECT id FROM article_topics WHERE official_backlog_order = ?
+                """, Long.class, backlogOrder);
     }
 
     private static EditorialSourceDtos.SourceCollectionRequest sourceCollectionRequest(
