@@ -77,7 +77,7 @@ class EditorialArticlePublicationPostgreSqlIntegrationTest {
         jdbc.update("DELETE FROM agent_approvals WHERE task_id IN "
                 + "(SELECT id FROM agent_tasks WHERE task_type IN ('ARTICLE_APPROVAL', 'ARTICLE_PUBLISH'))");
         jdbc.update("DELETE FROM agent_tasks WHERE task_type IN ('ARTICLE_APPROVAL', 'ARTICLE_PUBLISH')");
-        jdbc.execute("TRUNCATE article_versions, article_briefs, articles RESTART IDENTITY");
+        jdbc.execute("TRUNCATE article_publications, article_versions, article_briefs, articles RESTART IDENTITY");
     }
 
     @Test

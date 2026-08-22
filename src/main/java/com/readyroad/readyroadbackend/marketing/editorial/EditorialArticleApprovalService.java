@@ -37,6 +37,7 @@ public class EditorialArticleApprovalService {
     private final EditorialArticleWorkflowStore workflowStore;
     private final EditorialArticleWorkflowService workflowService;
     private final EditorialArticleApprovalStore approvalStore;
+    private final EditorialArticlePublicationService publicationService;
     private final TaskCreationService taskCreationService;
     private final ObjectMapper objectMapper;
 
@@ -107,7 +108,7 @@ public class EditorialArticleApprovalService {
     }
 
     @Transactional
-    public void complete(ClaimedTask task, String actor) {
+    public void complete(ClaimedTask task, AgentTask persistedApprovalTask) {
         AgentTask context = new AgentTask();
         context.setId(task.taskId());
         context.setAgentType(task.agentType());
@@ -121,8 +122,18 @@ public class EditorialArticleApprovalService {
                     "ARTICLE_APPROVAL_STALE",
                     "The current article versions changed after approval was requested");
         }
-        transition(context, EditorialArticleState.APPROVED, actor,
-                "Approved current article version snapshot");
+        EditorialArticleState state = workflowStore.lock(articleId).state();
+        if (state == EditorialArticleState.WAITING_APPROVAL) {
+            transition(context, EditorialArticleState.APPROVED, persistedApprovalTask.getApprovedBy(),
+                    "Approved current article version snapshot");
+        } else if (state != EditorialArticleState.APPROVED
+                && state != EditorialArticleState.SCHEDULED
+                && state != EditorialArticleState.PUBLISHED) {
+            throw new MarketingTaskExecutionException(
+                    "ARTICLE_APPROVAL_INVALID_STATE",
+                    "Article is not eligible for approved publication scheduling");
+        }
+        publicationService.schedule(persistedApprovalTask, persistedApprovalTask.getApprovedBy());
     }
 
     private void transition(

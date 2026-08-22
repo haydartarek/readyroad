@@ -49,7 +49,8 @@ class EditorialArticleVersioningPostgreSqlIntegrationTest {
 
     @BeforeEach
     void resetVersioningData() {
-        new JdbcTemplate(dataSource).execute("TRUNCATE article_versions, articles RESTART IDENTITY");
+        new JdbcTemplate(dataSource).execute(
+                "TRUNCATE article_publications, article_versions, articles RESTART IDENTITY");
     }
 
     @Test

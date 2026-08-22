@@ -62,12 +62,13 @@ class EditorialArticleApprovalPostgreSqlIntegrationTest {
     @BeforeEach
     void resetApprovalData() {
         jdbc = new JdbcTemplate(dataSource);
+        jdbc.update("DELETE FROM article_publications");
         jdbc.update("DELETE FROM audit_logs WHERE event_type IN "
-                + "('EDITORIAL_ARTICLE_STATE_CHANGED', 'EDITORIAL_ARTICLE_DRAFT_SAVED')");
+                + "('EDITORIAL_ARTICLE_STATE_CHANGED', 'EDITORIAL_ARTICLE_DRAFT_SAVED', 'ARTICLE_PUBLISHED')");
         jdbc.update("DELETE FROM agent_approvals WHERE task_id IN "
-                + "(SELECT id FROM agent_tasks WHERE task_type = 'ARTICLE_APPROVAL')");
-        jdbc.update("DELETE FROM agent_tasks WHERE task_type = 'ARTICLE_APPROVAL'");
-        jdbc.execute("TRUNCATE article_versions, article_briefs, articles RESTART IDENTITY");
+                + "(SELECT id FROM agent_tasks WHERE task_type IN ('ARTICLE_APPROVAL', 'ARTICLE_PUBLISH'))");
+        jdbc.update("DELETE FROM agent_tasks WHERE task_type IN ('ARTICLE_APPROVAL', 'ARTICLE_PUBLISH')");
+        jdbc.execute("TRUNCATE article_publications, article_versions, article_briefs, articles RESTART IDENTITY");
     }
 
     @Test
@@ -96,8 +97,12 @@ class EditorialArticleApprovalPostgreSqlIntegrationTest {
         approvalTaskHandler.execute(claimed(approved));
         approvalTaskHandler.execute(claimed(approved));
 
-        assertThat(state(articleId)).isEqualTo(EditorialArticleState.APPROVED);
-        assertThat(articleStateAuditCount(articleId)).isEqualTo(2);
+        assertThat(state(articleId)).isEqualTo(EditorialArticleState.SCHEDULED);
+        assertThat(articleStateAuditCount(articleId)).isEqualTo(3);
+        assertThat(jdbc.queryForObject("""
+                SELECT count(*) FROM agent_tasks
+                WHERE task_type = 'ARTICLE_PUBLISH' AND source_id = ?
+                """, Integer.class, String.valueOf(articleId))).isOne();
         var recorded = approvalRepository.findByTaskIdAndPayloadVersion(first.id(), 1).orElseThrow();
         assertThat(recorded.getDecision().name()).isEqualTo("APPROVED");
         assertThat(recorded.getPayloadSnapshot()).isEqualTo(waiting.getPayload());

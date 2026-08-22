@@ -58,7 +58,7 @@ class EditorialArticleWorkflowPostgreSqlIntegrationTest {
     @BeforeEach
     void resetWorkflowData() {
         jdbc = new JdbcTemplate(dataSource);
-        jdbc.execute("TRUNCATE article_versions, article_briefs, articles RESTART IDENTITY");
+        jdbc.execute("TRUNCATE article_publications, article_versions, article_briefs, articles RESTART IDENTITY");
         jdbc.update("DELETE FROM audit_logs WHERE event_type = 'EDITORIAL_ARTICLE_STATE_CHANGED'");
     }
 

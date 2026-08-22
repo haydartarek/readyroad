@@ -32,6 +32,6 @@ public class EditorialArticleApprovalTaskHandler implements MarketingTaskHandler
                     "ARTICLE_APPROVAL_REQUIRED",
                     "Article publication requires explicit human approval");
         }
-        service.complete(task, persisted.getApprovedBy());
+        service.complete(task, persisted);
     }
 }
