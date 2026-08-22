@@ -61,10 +61,10 @@ class MarketingEditorialPostgreSqlIntegrationTest {
     @BeforeEach
     void resetPriorityTestData() {
         JdbcTemplate jdbc = new JdbcTemplate(dataSource);
-        jdbc.update("DELETE FROM article_versions");
-        jdbc.update("DELETE FROM article_briefs");
-        jdbc.update("DELETE FROM articles");
-        jdbc.update("DELETE FROM article_keyword_clusters");
+        jdbc.execute("""
+                TRUNCATE article_versions, article_briefs, articles, article_keyword_clusters
+                RESTART IDENTITY
+                """);
         jdbc.update("DELETE FROM editorial_claim_sources");
         jdbc.update("DELETE FROM editorial_claims");
         jdbc.update("DELETE FROM editorial_source_versions");
