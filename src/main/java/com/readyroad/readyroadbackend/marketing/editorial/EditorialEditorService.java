@@ -3,6 +3,7 @@ package com.readyroad.readyroadbackend.marketing.editorial;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.readyroad.readyroadbackend.marketing.audit.MarketingAuditService;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -40,7 +41,10 @@ public class EditorialEditorService {
                         topic.strategyContextResolved(), topic.articleId(), topic.lifecycleState(),
                         topic.canonicalLanguage(), currentVersions(topic.articleId(), versions)))
                 .toList();
-        return new EditorialEditorDtos.Workspace(LANGUAGES, topics);
+        return new EditorialEditorDtos.Workspace(
+                LANGUAGES,
+                Arrays.stream(EditorialArticleQualityGate.values()).map(Enum::name).toList(),
+                topics);
     }
 
     @Transactional(readOnly = true)
@@ -65,6 +69,7 @@ public class EditorialEditorService {
                 .map(candidate -> candidate.articleId() == null)
                 .orElseThrow(() -> new IllegalArgumentException("Unknown article topic: " + topicId));
         var article = store.findOrCreateArticle(topic);
+        ensureEditable(article);
         versionStore.lockArticle(article.id());
         var current = versionStore.current(article.id(), normalizedLanguage);
         var normalized = normalizedRequest(request);
@@ -178,5 +183,14 @@ public class EditorialEditorService {
 
     private static String blankToNull(String value) {
         return value == null || value.isBlank() ? null : value.trim();
+    }
+
+    private static void ensureEditable(EditorialEditorStore.ArticleRow article) {
+        if (Set.of("WAITING_APPROVAL", "APPROVED", "SCHEDULED", "PUBLISHED", "REJECTED", "ARCHIVED")
+                .contains(article.lifecycleState())) {
+            throw new ResponseStatusException(
+                    HttpStatus.CONFLICT,
+                    "Article content is locked in lifecycle state " + article.lifecycleState());
+        }
     }
 }

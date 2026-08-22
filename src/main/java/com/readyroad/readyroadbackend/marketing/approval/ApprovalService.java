@@ -10,6 +10,7 @@ import com.readyroad.readyroadbackend.marketing.repository.AgentApprovalReposito
 import com.readyroad.readyroadbackend.marketing.repository.AgentTaskRepository;
 import com.readyroad.readyroadbackend.marketing.task.TaskStateMachine;
 import java.time.Instant;
+import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -24,12 +25,14 @@ public class ApprovalService {
     private final AgentApprovalRepository approvalRepository;
     private final TaskStateMachine stateMachine;
     private final MarketingAuditService auditService;
+    private final List<ApprovalDecisionHandler> decisionHandlers;
 
     @Transactional
     public AgentTask approve(Long taskId, String actor, String reason) {
         AgentTask task = taskForApproval(taskId);
         AgentApproval approval = currentApproval(task);
         ensureCurrentPayload(task, approval);
+        handlers(task).forEach(handler -> handler.validateApproval(task, actor, reason));
 
         stateMachine.validate(task.getStatus(), TaskStatus.APPROVED);
         Instant now = Instant.now();
@@ -60,6 +63,8 @@ public class ApprovalService {
         AgentTask task = taskForApproval(taskId);
         AgentApproval approval = currentApproval(task);
         ensureCurrentPayload(task, approval);
+        List<ApprovalDecisionHandler> handlers = handlers(task);
+        handlers.forEach(handler -> handler.validateRejection(task, actor, reason));
 
         stateMachine.validate(task.getStatus(), TaskStatus.REJECTED);
         Instant now = Instant.now();
@@ -72,6 +77,8 @@ public class ApprovalService {
         approval.setRejectedBy(actor);
         approval.setRejectedAt(now);
         approval.setReason(reason);
+
+        handlers.forEach(handler -> handler.afterRejection(task, actor, reason));
 
         auditService.recordTaskEvent(task, "TASK_REJECTED", actor,
                 auditService.detail("payloadVersion", task.getPayloadVersion()));
@@ -143,6 +150,10 @@ public class ApprovalService {
         if (!approval.getPayloadSnapshot().equals(task.getPayload())) {
             throw new IllegalStateException("Approval payload snapshot is stale");
         }
+    }
+
+    private List<ApprovalDecisionHandler> handlers(AgentTask task) {
+        return decisionHandlers.stream().filter(handler -> handler.supports(task)).toList();
     }
 
     private static AgentApproval pendingApproval(AgentTask task, String actor) {

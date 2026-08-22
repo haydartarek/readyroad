@@ -27,6 +27,7 @@ public class EditorialAdminController {
     private final EditorialPriorityAdminService priorityAdminService;
     private final EditorialSourceCollectionService sourceCollectionService;
     private final EditorialEditorService editorService;
+    private final EditorialArticleApprovalService articleApprovalService;
 
     @GetMapping("/backlog")
     public EditorialDtos.Backlog backlog() {
@@ -92,5 +93,14 @@ public class EditorialAdminController {
             @Valid @RequestBody EditorialEditorDtos.SaveRequest request,
             Principal principal) {
         return editorService.save(topicId, language, request, principal.getName());
+    }
+
+    @PostMapping("/editor/articles/{articleId}/approval-requests")
+    public ResponseEntity<MarketingTaskLifecycleResponse> requestArticleApproval(
+            @PathVariable long articleId,
+            @Valid @RequestBody EditorialArticleApprovalDtos.Request request,
+            Principal principal) {
+        return ResponseEntity.accepted().body(
+                articleApprovalService.request(articleId, request, principal.getName()));
     }
 }

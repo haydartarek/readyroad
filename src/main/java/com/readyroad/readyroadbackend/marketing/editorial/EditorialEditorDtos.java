@@ -12,6 +12,7 @@ public final class EditorialEditorDtos {
 
     public record Workspace(
             List<String> languages,
+            List<String> qualityGates,
             List<Topic> topics) {}
 
     public record Topic(

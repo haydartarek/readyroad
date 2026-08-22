@@ -199,6 +199,19 @@ class MarketingAdminSecurityTest {
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("{\"title\":\"Title\",\"body\":\"Body\"}"))
                 .andExpect(status().isForbidden());
+
+        String approvalRequest = """
+                {"passedQualityGates":["SOURCE_VERIFICATION"],"reason":"Reviewed"}
+                """;
+        mockMvc.perform(post("/api/admin/marketing/editorial/editor/articles/1/approval-requests")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(approvalRequest))
+                .andExpect(status().isUnauthorized());
+        mockMvc.perform(post("/api/admin/marketing/editorial/editor/articles/1/approval-requests")
+                        .header("Authorization", "Bearer " + userToken)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(approvalRequest))
+                .andExpect(status().isForbidden());
     }
 
     @Test

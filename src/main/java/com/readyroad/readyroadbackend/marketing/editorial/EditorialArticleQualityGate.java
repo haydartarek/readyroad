@@ -1,6 +1,6 @@
 package com.readyroad.readyroadbackend.marketing.editorial;
 
-enum EditorialArticleQualityGate {
+public enum EditorialArticleQualityGate {
     USEFUL_DEPTH,
     HUMAN_READABILITY,
     SEARCH_INTENT,
