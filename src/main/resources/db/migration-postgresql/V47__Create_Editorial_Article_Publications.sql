@@ -14,4 +14,3 @@ CREATE TABLE article_publications (
 
 CREATE INDEX idx_article_publications_article_language
     ON article_publications (article_id, language, published_at DESC);
-

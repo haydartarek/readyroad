@@ -61,4 +61,3 @@ class EditorialArticlePublicationStore {
         return persisted.equals(versions);
     }
 }
-

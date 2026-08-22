@@ -22,4 +22,3 @@ public class EditorialArticlePublicationTaskHandler implements MarketingTaskHand
         service.publish(task);
     }
 }
-

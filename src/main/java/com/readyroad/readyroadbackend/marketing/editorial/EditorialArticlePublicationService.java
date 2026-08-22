@@ -290,4 +290,3 @@ class EditorialArticlePublicationService {
         return new MarketingTaskExecutionException(code, message);
     }
 }
-
