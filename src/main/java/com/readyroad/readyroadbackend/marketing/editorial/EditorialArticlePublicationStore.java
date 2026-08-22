@@ -23,11 +23,13 @@ class EditorialArticlePublicationStore {
             jdbc.update("""
                     INSERT INTO article_publications (
                         article_id, article_version_id, language, approval_task_id,
-                        publication_task_id, status, published_at
-                    ) VALUES (?, ?, ?, ?, ?, 'PUBLISHED', ?)
+                        publication_task_id, status, published_at, published_slug
+                    )
+                    SELECT ?, version.id, version.language, ?, ?, 'PUBLISHED', ?, version.slug
+                    FROM article_versions version
+                    WHERE version.id = ?
                     ON CONFLICT (article_version_id) DO NOTHING
-                    """, articleId, version.id(), version.language(), approvalTaskId,
-                    publicationTaskId, publishedAt);
+                    """, articleId, approvalTaskId, publicationTaskId, publishedAt, version.id());
         }
         if (!hasExactPublications(articleId, approvalTaskId, publicationTaskId, versions)) {
             throw new IllegalStateException("Published article versions do not match the approved snapshot");
@@ -52,6 +54,7 @@ class EditorialArticlePublicationStore {
                   AND publication.approval_task_id = ?
                   AND publication.publication_task_id = ?
                   AND publication.status = 'PUBLISHED'
+                  AND publication.published_slug = version.slug
                 ORDER BY publication.language
                 """, (result, rowNumber) -> new EditorialArticleApprovalStore.VersionSnapshot(
                         result.getLong("id"),
@@ -60,4 +63,18 @@ class EditorialArticlePublicationStore {
                 articleId, approvalTaskId, publicationTaskId);
         return persisted.equals(versions);
     }
+
+    List<PublicationRoute> currentRoutes(long articleId) {
+        return jdbc.query("""
+                SELECT id, language, slug
+                FROM article_versions
+                WHERE article_id = ? AND is_current
+                ORDER BY language
+                """, (result, rowNumber) -> new PublicationRoute(
+                result.getLong("id"),
+                result.getString("language"),
+                result.getString("slug")), articleId);
+    }
+
+    record PublicationRoute(long versionId, String language, String slug) {}
 }

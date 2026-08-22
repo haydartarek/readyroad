@@ -188,8 +188,8 @@ class EditorialArticlePublicationPostgreSqlIntegrationTest {
         assertThatThrownBy(() -> jdbc.update("""
                 INSERT INTO article_publications (
                     article_id, article_version_id, language, approval_task_id,
-                    publication_task_id, status, published_at
-                ) VALUES (?, ?, 'EN', ?, ?, 'PUBLISHED', CURRENT_TIMESTAMP)
+                    publication_task_id, status, published_at, published_slug
+                ) VALUES (?, ?, 'EN', ?, ?, 'PUBLISHED', CURRENT_TIMESTAMP, 'publication-5-EN')
                 """, articleId, versionId, approval.getId(), publication.getId()))
                 .hasMessageContaining("uq_article_publications_version");
     }
@@ -236,10 +236,8 @@ class EditorialArticlePublicationPostgreSqlIntegrationTest {
     void publicationRejectsSnapshotsWithoutAUsableLocalizedSlug() {
         long articleId = eligibleArticle(8, "FR");
         AgentTask approval = approvedArticle(articleId);
-        approvalTaskHandler.execute(claimed(approval));
-        AgentTask publication = publicationTask(articleId);
 
-        assertThatThrownBy(() -> dispatcher.dispatch(claimed(publication)))
+        assertThatThrownBy(() -> approvalTaskHandler.execute(claimed(approval)))
                 .isInstanceOf(MarketingTaskExecutionException.class)
                 .extracting(failure -> ((MarketingTaskExecutionException) failure).errorCode())
                 .isEqualTo("ARTICLE_PUBLICATION_ROUTE_INVALID");

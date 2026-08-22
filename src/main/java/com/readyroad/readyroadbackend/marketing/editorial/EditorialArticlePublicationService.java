@@ -55,6 +55,7 @@ class EditorialArticlePublicationService {
                     "ARTICLE_PUBLICATION_STALE",
                     "The approved article versions changed before publication scheduling");
         }
+        requirePublicationRoutes(articleId, versions);
 
         ObjectNode payload = publicationPayload(articleId, approvalTask, versions);
         TaskCreationResult result = taskCreationService.create(new CreateMarketingTaskCommand(
@@ -107,6 +108,7 @@ class EditorialArticlePublicationService {
                     "ARTICLE_PUBLICATION_STALE",
                     "The current article versions do not match the approved publication snapshot");
         }
+        requirePublicationRoutes(articleId, approvedVersions);
 
         EditorialArticleWorkflowStore.LockedArticle article = workflowStore.lock(articleId);
         if (article.state() == EditorialArticleState.PUBLISHED) {
@@ -197,6 +199,34 @@ class EditorialArticlePublicationService {
 
     private List<EditorialArticleApprovalStore.VersionSnapshot> currentVersions(long articleId) {
         return approvalStore.currentVersions(articleId);
+    }
+
+    private void requirePublicationRoutes(
+            long articleId,
+            List<EditorialArticleApprovalStore.VersionSnapshot> versions) {
+        List<EditorialArticlePublicationStore.PublicationRoute> routes = publicationStore.currentRoutes(articleId);
+        boolean valid = routes.size() == versions.size()
+                && versions.stream().allMatch(version -> routes.stream().anyMatch(route ->
+                        route.versionId() == version.id()
+                                && route.language().equals(version.language())
+                                && isRouteSlugValid(route.slug())));
+        if (!valid) {
+            throw failure(
+                    "ARTICLE_PUBLICATION_ROUTE_INVALID",
+                    "Every approved AR, NL, FR and EN article version requires a safe route slug");
+        }
+    }
+
+    static boolean isRouteSlugValid(String slug) {
+        if (slug == null || slug.isBlank() || slug.length() > 255 || !slug.equals(slug.trim())) {
+            return false;
+        }
+        return slug.chars().noneMatch(character ->
+                Character.isWhitespace(character)
+                        || character == '/'
+                        || character == '\\'
+                        || character == '?'
+                        || character == '#');
     }
 
     private ObjectNode publicationPayload(
