@@ -2,6 +2,10 @@ package com.readyroad.readyroadbackend.marketing.editorial;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static org.springframework.security.test.web.servlet.setup.SecurityMockMvcConfigurers.springSecurity;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
@@ -26,9 +30,12 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 import org.testcontainers.postgresql.PostgreSQLContainer;
+import org.springframework.web.context.WebApplicationContext;
 
 @SpringBootTest
 @ActiveProfiles("postgresql")
@@ -62,12 +69,17 @@ class EditorialArticlePublicationPostgreSqlIntegrationTest {
     @Autowired TaskCreationService taskCreationService;
     @Autowired MarketingTaskDispatcher dispatcher;
     @Autowired ObjectMapper objectMapper;
+    @Autowired WebApplicationContext webApplicationContext;
 
     private JdbcTemplate jdbc;
+    private MockMvc mockMvc;
 
     @BeforeEach
     void resetPublicationData() {
         jdbc = new JdbcTemplate(dataSource);
+        mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext)
+                .apply(springSecurity())
+                .build();
         Boolean publicationTableExists = jdbc.queryForObject(
                 "SELECT to_regclass('article_publications') IS NOT NULL", Boolean.class);
         if (Boolean.TRUE.equals(publicationTableExists)) {
@@ -179,6 +191,30 @@ class EditorialArticlePublicationPostgreSqlIntegrationTest {
                 ) VALUES (?, ?, 'EN', ?, ?, 'PUBLISHED', CURRENT_TIMESTAMP)
                 """, articleId, versionId, approval.getId(), publication.getId()))
                 .hasMessageContaining("uq_article_publications_version");
+    }
+
+    @Test
+    void publicBlogRoutesExposeOnlyThePublishedLocalizedSnapshot() throws Exception {
+        long articleId = eligibleArticle(6);
+        AgentTask approval = approvedArticle(articleId);
+        approvalTaskHandler.execute(claimed(approval));
+        dispatcher.dispatch(claimed(publicationTask(articleId)));
+
+        mockMvc.perform(get("/api/articles").param("language", "AR"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$[0].language").value("AR"))
+                .andExpect(jsonPath("$[0].slug").value("publication-6-AR"))
+                .andExpect(jsonPath("$[0].title").value("AR title"))
+                .andExpect(jsonPath("$[0].body").doesNotExist());
+
+        mockMvc.perform(get("/api/articles/{slug}", "publication-6-AR")
+                        .param("language", "NL"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.language").value("NL"))
+                .andExpect(jsonPath("$.slug").value("publication-6-NL"))
+                .andExpect(jsonPath("$.body").value("NL body"))
+                .andExpect(jsonPath("$.alternateSlugs.AR").value("publication-6-AR"))
+                .andExpect(jsonPath("$.alternateSlugs.EN").value("publication-6-EN"));
     }
 
     private AgentTask approvedArticle(long articleId) {
