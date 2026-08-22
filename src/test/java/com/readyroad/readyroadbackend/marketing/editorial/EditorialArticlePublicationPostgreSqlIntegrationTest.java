@@ -27,6 +27,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;
@@ -217,6 +218,55 @@ class EditorialArticlePublicationPostgreSqlIntegrationTest {
                 .andExpect(jsonPath("$.alternateSlugs.EN").value("publication-6-EN"));
     }
 
+    @Test
+    void publicBlogRoutesHideUnpublishedArticlesAndRejectInvalidRoutes() throws Exception {
+        eligibleArticle(7);
+
+        mockMvc.perform(get("/api/articles").param("language", "EN"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$").isEmpty());
+        mockMvc.perform(get("/api/articles/{slug}", "publication-7-EN")
+                        .param("language", "EN"))
+                .andExpect(status().isNotFound());
+        mockMvc.perform(get("/api/articles").param("language", "DE"))
+                .andExpect(status().isBadRequest());
+    }
+
+    @Test
+    void publicationRejectsSnapshotsWithoutAUsableLocalizedSlug() {
+        long articleId = eligibleArticle(8, "FR");
+        AgentTask approval = approvedArticle(articleId);
+        approvalTaskHandler.execute(claimed(approval));
+        AgentTask publication = publicationTask(articleId);
+
+        assertThatThrownBy(() -> dispatcher.dispatch(claimed(publication)))
+                .isInstanceOf(MarketingTaskExecutionException.class)
+                .extracting(failure -> ((MarketingTaskExecutionException) failure).errorCode())
+                .isEqualTo("ARTICLE_PUBLICATION_ROUTE_INVALID");
+        assertThat(publicationRows(articleId)).isZero();
+    }
+
+    @Test
+    void persistedPublicationSlugsAreUniqueWithinEachLanguage() {
+        long articleId = eligibleArticle(9);
+        AgentTask approval = approvedArticle(articleId);
+        approvalTaskHandler.execute(claimed(approval));
+        AgentTask publication = publicationTask(articleId);
+        dispatcher.dispatch(claimed(publication));
+
+        assertThat(jdbc.queryForObject("""
+                SELECT published_slug FROM article_publications
+                WHERE article_id = ? AND language = 'EN'
+                """, String.class, articleId)).isEqualTo("publication-9-EN");
+        assertThatThrownBy(() -> jdbc.update("""
+                UPDATE article_publications
+                SET published_slug = lower(published_slug)
+                WHERE article_id = ? AND language = 'AR'
+                """, articleId))
+                .isInstanceOf(DataIntegrityViolationException.class)
+                .hasMessageContaining("Article publication routes are immutable");
+    }
+
     private AgentTask approvedArticle(long articleId) {
         var response = approvalRequestService.request(
                 articleId,
@@ -229,6 +279,10 @@ class EditorialArticlePublicationPostgreSqlIntegrationTest {
     }
 
     private long eligibleArticle(int backlogOrder) {
+        return eligibleArticle(backlogOrder, null);
+    }
+
+    private long eligibleArticle(int backlogOrder, String languageWithoutSlug) {
         Long articleId = jdbc.queryForObject("""
                 INSERT INTO articles (
                     article_topic_id, canonical_key, lifecycle_state, canonical_language
@@ -236,12 +290,15 @@ class EditorialArticlePublicationPostgreSqlIntegrationTest {
                 RETURNING id
                 """, Long.class, backlogOrder, "publication-" + backlogOrder);
         for (String language : List.of("AR", "NL", "FR", "EN")) {
+            String slug = language.equals(languageWithoutSlug)
+                    ? null
+                    : "publication-" + backlogOrder + "-" + language;
             jdbc.update("""
                     INSERT INTO article_versions (
                         article_id, version_number, language, title, slug, summary, body,
                         status, is_current, created_by
                     ) VALUES (?, 1, ?, ?, ?, ?, ?, 'DRAFT_READY', TRUE, 'editor')
-                    """, articleId, language, language + " title", "publication-" + backlogOrder + "-" + language,
+                    """, articleId, language, language + " title", slug,
                     language + " summary", language + " body");
         }
         return articleId;
