@@ -10,6 +10,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,6 +26,7 @@ public class EditorialAdminController {
     private final EditorialBacklogService service;
     private final EditorialPriorityAdminService priorityAdminService;
     private final EditorialSourceCollectionService sourceCollectionService;
+    private final EditorialEditorService editorService;
 
     @GetMapping("/backlog")
     public EditorialDtos.Backlog backlog() {
@@ -69,5 +71,26 @@ public class EditorialAdminController {
             Principal principal) {
         return ResponseEntity.accepted().body(
                 sourceCollectionService.request(request, principal.getName()));
+    }
+
+    @GetMapping("/editor")
+    public EditorialEditorDtos.Workspace editor() {
+        return editorService.workspace();
+    }
+
+    @GetMapping("/editor/articles/{articleId}/versions")
+    public List<EditorialEditorDtos.Version> articleVersions(
+            @PathVariable long articleId,
+            @RequestParam String language) {
+        return editorService.versions(articleId, language);
+    }
+
+    @PutMapping("/editor/topics/{topicId}/versions/{language}")
+    public EditorialEditorDtos.SaveResult saveDraft(
+            @PathVariable long topicId,
+            @PathVariable String language,
+            @Valid @RequestBody EditorialEditorDtos.SaveRequest request,
+            Principal principal) {
+        return editorService.save(topicId, language, request, principal.getName());
     }
 }
