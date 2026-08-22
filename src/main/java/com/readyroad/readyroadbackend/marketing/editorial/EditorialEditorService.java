@@ -86,8 +86,11 @@ public class EditorialEditorService {
                     "Article version changed; reload the editor before saving");
         }
 
-        var metadata = current.map(EditorialArticleVersionDtos.Version::metadata)
-                .orElseGet(objectMapper::createObjectNode);
+        var metadata = EditorialArticleMetadata.withSeoMetadata(
+                current.map(EditorialArticleVersionDtos.Version::metadata)
+                        .orElseGet(objectMapper::createObjectNode),
+                normalized.metaTitle(),
+                normalized.metaDescription());
         var generationMetadata = current.map(EditorialArticleVersionDtos.Version::generationMetadata)
                 .orElseGet(objectMapper::createObjectNode);
         var appended = versionService.append(new EditorialArticleVersionDtos.AppendRequest(
@@ -137,14 +140,18 @@ public class EditorialEditorService {
     private EditorialEditorDtos.Version version(EditorialArticleVersionDtos.Version value) {
         return new EditorialEditorDtos.Version(
                 value.id(), value.articleId(), value.versionNumber(), value.language(), value.title(),
-                value.slug(), value.summary(), value.body(), value.status(), value.current(),
+                value.slug(), value.summary(), value.body(),
+                EditorialArticleMetadata.metaTitle(value.metadata()),
+                EditorialArticleMetadata.metaDescription(value.metadata()),
+                value.status(), value.current(),
                 value.createdAt(), value.createdBy());
     }
 
     private EditorialEditorDtos.SaveRequest normalizedRequest(EditorialEditorDtos.SaveRequest request) {
         return new EditorialEditorDtos.SaveRequest(
                 request.title().trim(), blankToNull(request.slug()), blankToNull(request.summary()),
-                request.body(), request.expectedCurrentVersion());
+                request.body(), request.metaTitle().trim(), request.metaDescription().trim(),
+                request.expectedCurrentVersion());
     }
 
     private boolean sameContent(
@@ -154,7 +161,11 @@ public class EditorialEditorService {
                 && current.title().equals(request.title())
                 && Objects.equals(current.slug(), request.slug())
                 && Objects.equals(current.summary(), request.summary())
-                && current.body().equals(request.body());
+                && current.body().equals(request.body())
+                && Objects.equals(EditorialArticleMetadata.metaTitle(current.metadata()), request.metaTitle())
+                && Objects.equals(
+                        EditorialArticleMetadata.metaDescription(current.metadata()),
+                        request.metaDescription());
     }
 
     private static String language(String value) {
@@ -173,8 +184,10 @@ public class EditorialEditorService {
             throw new IllegalArgumentException("topicId must be positive");
         }
         if (request == null || request.title() == null || request.title().isBlank()
-                || request.body() == null || request.body().isBlank()) {
-            throw new IllegalArgumentException("Article title and body are required");
+                || request.body() == null || request.body().isBlank()
+                || request.metaTitle() == null || request.metaTitle().isBlank()
+                || request.metaDescription() == null || request.metaDescription().isBlank()) {
+            throw new IllegalArgumentException("Article title, body and SEO metadata are required");
         }
         if (actor == null || actor.isBlank() || actor.trim().length() > 160) {
             throw new IllegalArgumentException("A valid editor actor is required");

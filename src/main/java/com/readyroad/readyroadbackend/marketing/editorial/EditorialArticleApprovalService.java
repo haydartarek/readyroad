@@ -159,6 +159,12 @@ public class EditorialArticleApprovalService {
         if (versions.size() != REQUIRED_LANGUAGES.size() || !languages.equals(REQUIRED_LANGUAGES)) {
             throw new IllegalStateException("Current AR, NL, FR and EN article versions are required for approval");
         }
+        List<String> missingMetadata = approvalStore.languagesMissingMetadata(articleId);
+        if (!missingMetadata.isEmpty()) {
+            throw new IllegalStateException(
+                    "Complete localized article metadata is required for approval: "
+                            + String.join(", ", missingMetadata));
+        }
         return versions;
     }
 

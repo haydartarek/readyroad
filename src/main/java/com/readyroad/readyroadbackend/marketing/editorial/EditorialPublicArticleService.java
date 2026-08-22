@@ -41,6 +41,8 @@ class EditorialPublicArticleService {
                 value.title(),
                 value.summary(),
                 value.body(),
+                EditorialArticleMetadata.valueOrFallback(value.metaTitle(), value.title()),
+                EditorialArticleMetadata.valueOrFallback(value.metaDescription(), value.summary()),
                 value.publishedAt(),
                 store.alternateSlugs(value.articleId())));
     }

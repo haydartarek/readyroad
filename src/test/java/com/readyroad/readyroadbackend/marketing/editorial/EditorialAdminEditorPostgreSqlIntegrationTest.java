@@ -74,6 +74,8 @@ class EditorialAdminEditorPostgreSqlIntegrationTest {
         assertThat(saved.lifecycleState()).isEqualTo("PLANNED");
         assertThat(saved.version().versionNumber()).isOne();
         assertThat(saved.version().language()).isEqualTo("AR");
+        assertThat(saved.version().metaTitle()).isEqualTo("SEO العنوان");
+        assertThat(saved.version().metaDescription()).isEqualTo("SEO ملخص");
         assertThat(saved.version().createdBy()).isEqualTo("admin");
         assertThat(service.versions(saved.articleId(), "AR")).hasSize(1);
         assertThat(auditCount(saved.articleId())).isOne();
@@ -144,7 +146,14 @@ class EditorialAdminEditorPostgreSqlIntegrationTest {
             String summary,
             String body,
             Integer expectedCurrentVersion) {
-        return new EditorialEditorDtos.SaveRequest(title, slug, summary, body, expectedCurrentVersion);
+        return new EditorialEditorDtos.SaveRequest(
+                title,
+                slug,
+                summary,
+                body,
+                "SEO " + title,
+                "SEO " + summary,
+                expectedCurrentVersion);
     }
 
     private int auditCount(long articleId) {

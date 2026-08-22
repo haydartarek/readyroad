@@ -138,6 +138,21 @@ class EditorialArticleApprovalPostgreSqlIntegrationTest {
     }
 
     @Test
+    void refusesClaimedMetadataGateWhenALocalizedVersionHasNoSeoMetadata() {
+        long articleId = eligibleArticle(3);
+        replaceCurrentVersionWithoutMetadata(articleId, "FR");
+
+        assertThatThrownBy(() -> approvalRequestService.request(
+                articleId, request(allGates(), "Metadata evidence is incomplete"), "owner"))
+                .isInstanceOf(IllegalStateException.class)
+                .hasMessageContaining("metadata")
+                .hasMessageContaining("FR");
+
+        assertThat(state(articleId)).isEqualTo(EditorialArticleState.IMAGE_REQUIRED);
+        assertThat(taskCount()).isZero();
+    }
+
+    @Test
     void staleCurrentVersionPreventsApprovalAndKeepsTheTaskPending() {
         long articleId = eligibleArticle(4);
         var response = approvalRequestService.request(
@@ -163,7 +178,8 @@ class EditorialArticleApprovalPostgreSqlIntegrationTest {
         assertThatThrownBy(() -> editorService.save(
                 topicId(articleId), "EN",
                 new EditorialEditorDtos.SaveRequest(
-                        "Changed title", "changed", "Changed", "Changed body", 1),
+                        "Changed title", "changed", "Changed", "Changed body",
+                        "Changed meta title", "Changed meta description", 1),
                 "editor"))
                 .isInstanceOf(ResponseStatusException.class)
                 .hasMessageContaining("409 CONFLICT");
@@ -214,10 +230,13 @@ class EditorialArticleApprovalPostgreSqlIntegrationTest {
             jdbc.update("""
                     INSERT INTO article_versions (
                         article_id, version_number, language, title, slug, summary, body,
-                        status, is_current, created_by
-                    ) VALUES (?, 1, ?, ?, ?, ?, ?, 'DRAFT_READY', TRUE, 'editor')
+                        metadata, status, is_current, created_by
+                    ) VALUES (?, 1, ?, ?, ?, ?, ?,
+                              jsonb_build_object('metaTitle', ?, 'metaDescription', ?),
+                              'DRAFT_READY', TRUE, 'editor')
                     """, articleId, language, language + " title", "approval-" + backlogOrder + "-" + language,
-                    language + " summary", language + " body");
+                    language + " summary", language + " body",
+                    language + " meta title", language + " meta description");
         }
         return articleId;
     }
@@ -227,9 +246,27 @@ class EditorialArticleApprovalPostgreSqlIntegrationTest {
                 articleId, language);
         jdbc.update("""
                 INSERT INTO article_versions (
-                    article_id, version_number, language, title, body, status, is_current, created_by
-                ) VALUES (?, 2, ?, ?, ?, 'DRAFT_READY', TRUE, 'another-editor')
-                """, articleId, language, language + " changed", language + " changed body");
+                    article_id, version_number, language, title, slug, summary, body,
+                    metadata, status, is_current, created_by
+                ) VALUES (?, 2, ?, ?, ?, ?, ?,
+                          jsonb_build_object('metaTitle', ?, 'metaDescription', ?),
+                          'DRAFT_READY', TRUE, 'another-editor')
+                """, articleId, language, language + " changed", "changed-" + language,
+                language + " changed summary", language + " changed body",
+                language + " changed meta title", language + " changed meta description");
+    }
+
+    private void replaceCurrentVersionWithoutMetadata(long articleId, String language) {
+        jdbc.update("UPDATE article_versions SET is_current = FALSE WHERE article_id = ? AND language = ?",
+                articleId, language);
+        jdbc.update("""
+                INSERT INTO article_versions (
+                    article_id, version_number, language, title, slug, summary, body,
+                    metadata, status, is_current, created_by
+                ) VALUES (?, 2, ?, ?, ?, ?, ?, '{}'::jsonb,
+                          'DRAFT_READY', TRUE, 'another-editor')
+                """, articleId, language, language + " changed", "changed-" + language,
+                language + " changed summary", language + " changed body");
     }
 
     private EditorialArticleState state(long articleId) {

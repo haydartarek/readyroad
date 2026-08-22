@@ -20,6 +20,8 @@ final class EditorialPublicArticleDtos {
             String title,
             String summary,
             String body,
+            String metaTitle,
+            String metaDescription,
             Instant publishedAt,
             Map<String, String> alternateSlugs) {}
 }

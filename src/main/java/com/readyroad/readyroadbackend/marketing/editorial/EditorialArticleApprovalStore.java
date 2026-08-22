@@ -23,6 +23,20 @@ class EditorialArticleApprovalStore {
                         result.getInt("version_number")), articleId);
     }
 
+    List<String> languagesMissingMetadata(long articleId) {
+        return jdbc.queryForList("""
+                SELECT language
+                FROM article_versions
+                WHERE article_id = ?
+                  AND is_current
+                  AND (
+                      NULLIF(btrim(metadata ->> 'metaTitle'), '') IS NULL
+                      OR NULLIF(btrim(metadata ->> 'metaDescription'), '') IS NULL
+                  )
+                ORDER BY language
+                """, String.class, articleId);
+    }
+
     record VersionSnapshot(long id, String language, int versionNumber) {
     }
 }

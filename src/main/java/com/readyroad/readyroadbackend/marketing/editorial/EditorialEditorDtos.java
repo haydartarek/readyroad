@@ -44,6 +44,8 @@ public final class EditorialEditorDtos {
             @Size(max = 255) String slug,
             @Size(max = 2000) String summary,
             @NotBlank @Size(max = 500_000) String body,
+            @NotBlank @Size(max = 500) String metaTitle,
+            @NotBlank @Size(max = 2000) String metaDescription,
             @PositiveOrZero Integer expectedCurrentVersion) {}
 
     public record SaveResult(
@@ -63,6 +65,8 @@ public final class EditorialEditorDtos {
             String slug,
             String summary,
             String body,
+            String metaTitle,
+            String metaDescription,
             String status,
             boolean current,
             Instant createdAt,

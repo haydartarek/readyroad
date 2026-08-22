@@ -214,6 +214,8 @@ class EditorialArticlePublicationPostgreSqlIntegrationTest {
                 .andExpect(jsonPath("$.language").value("NL"))
                 .andExpect(jsonPath("$.slug").value("publication-6-NL"))
                 .andExpect(jsonPath("$.body").value("NL body"))
+                .andExpect(jsonPath("$.metaTitle").value("NL meta title"))
+                .andExpect(jsonPath("$.metaDescription").value("NL meta description"))
                 .andExpect(jsonPath("$.alternateSlugs.AR").value("publication-6-AR"))
                 .andExpect(jsonPath("$.alternateSlugs.EN").value("publication-6-EN"));
     }
@@ -294,10 +296,13 @@ class EditorialArticlePublicationPostgreSqlIntegrationTest {
             jdbc.update("""
                     INSERT INTO article_versions (
                         article_id, version_number, language, title, slug, summary, body,
-                        status, is_current, created_by
-                    ) VALUES (?, 1, ?, ?, ?, ?, ?, 'DRAFT_READY', TRUE, 'editor')
+                        metadata, status, is_current, created_by
+                    ) VALUES (?, 1, ?, ?, ?, ?, ?,
+                              jsonb_build_object('metaTitle', ?, 'metaDescription', ?),
+                              'DRAFT_READY', TRUE, 'editor')
                     """, articleId, language, language + " title", slug,
-                    language + " summary", language + " body");
+                    language + " summary", language + " body",
+                    language + " meta title", language + " meta description");
         }
         return articleId;
     }

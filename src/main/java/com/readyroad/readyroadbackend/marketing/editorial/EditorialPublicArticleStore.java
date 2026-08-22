@@ -110,6 +110,8 @@ class EditorialPublicArticleStore {
                        version.title,
                        version.summary,
                        version.body,
+                       version.metadata ->> 'metaTitle' AS meta_title,
+                       version.metadata ->> 'metaDescription' AS meta_description,
                        publication.published_at
                 FROM article_publications publication
                 JOIN article_versions version ON version.id = publication.article_version_id
@@ -132,6 +134,8 @@ class EditorialPublicArticleStore {
                 result.getString("title"),
                 result.getString("summary"),
                 result.getString("body"),
+                result.getString("meta_title"),
+                result.getString("meta_description"),
                 result.getObject("published_at", OffsetDateTime.class).toInstant());
     }
 
@@ -142,6 +146,8 @@ class EditorialPublicArticleStore {
             String title,
             String summary,
             String body,
+            String metaTitle,
+            String metaDescription,
             java.time.Instant publishedAt) {}
 
     private record RouteSlug(String language, String slug) {}
