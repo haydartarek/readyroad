@@ -153,6 +153,14 @@ class MarketingAnalyticsPostgreSqlIntegrationTest {
         assertThat(first.created()).isTrue();
         assertThat(repeated.created()).isFalse();
         assertThat(repeated.importId()).isEqualTo(first.importId());
+        assertThat(first.workspace()).containsEntry("publishingEnabled", true);
+        assertThat(first.workspace()).containsEntry("canonicalActivation", "RELEASED");
+        assertThat(first.workspace().get("ownerDecisionsRequired")).isEqualTo(List.of());
+        @SuppressWarnings("unchecked")
+        Map<String, Object> social = (Map<String, Object>) first.workspace().get("social");
+        assertThat(social)
+                .containsEntry("officialHandlesConfigured", true)
+                .containsEntry("publishing", "BLOCKED_PROVIDER_API_OAUTH");
         assertThat(jdbc.queryForObject("SELECT COUNT(*) FROM search_console_import_snapshots", Integer.class))
                 .isEqualTo(1);
         assertThat(jdbc.queryForObject("SELECT COUNT(*) FROM seo_query_snapshots", Integer.class))
@@ -177,6 +185,6 @@ class MarketingAnalyticsPostgreSqlIntegrationTest {
         assertThat(jdbc.queryForObject("""
                 SELECT setting_value->>'activationStatus' FROM agent_settings
                 WHERE agent_type = 'STRATEGY' AND setting_key = 'seo.migration'
-                """, String.class)).isEqualTo("OWNER_CONFIRMED_PENDING_RELEASE");
+                """, String.class)).isEqualTo("RELEASED");
     }
 }

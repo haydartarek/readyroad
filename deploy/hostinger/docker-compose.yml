@@ -65,6 +65,7 @@ services:
       SPRING_PROFILES_ACTIVE: secure,postgresql
       PORT: "8890"
       GOOGLE_APPLICATION_CREDENTIALS: /run/secrets/google/marketing-service-account.json
+      READYROAD_MARKETING_LOCAL_SEO_IMPORT_ENABLED: "true"
       READYROAD_SIGNS_IMPORT_PATH: /app/data/signs_import
       JAVA_OPTS: >-
         -Xms256m -Xmx1536m

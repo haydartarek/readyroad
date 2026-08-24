@@ -72,6 +72,53 @@ class EditorialEditorStore {
                 .orElseThrow(() -> new IllegalStateException("Editorial article was not persisted"));
     }
 
+    AuthoringRow authoringStatus(long topicId) {
+        return jdbc.query("""
+                SELECT t.id AS topic_id, t.status AS topic_status,
+                       a.id AS article_id, a.lifecycle_state,
+                       brief.id AS brief_id, brief.status AS brief_status,
+                       brief.target_language AS brief_language,
+                       count(claim.id)::int AS claims_total,
+                       count(claim.id) FILTER (WHERE claim.evidence_status = 'SUPPORTED')::int
+                           AS claims_supported,
+                       count(claim.id) FILTER (
+                           WHERE claim.evidence_status IN ('REQUIRES_REVIEW', 'REJECTED')
+                       )::int AS claims_requiring_review,
+                       count(claim.id) FILTER (WHERE claim.evidence_status = 'MISSING')::int
+                           AS claims_missing
+                FROM article_topics t
+                LEFT JOIN articles a ON a.article_topic_id = t.id
+                LEFT JOIN LATERAL (
+                    SELECT id, status, target_language
+                    FROM article_briefs
+                    WHERE article_topic_id = t.id AND status = 'APPROVED'
+                    ORDER BY id DESC
+                    LIMIT 1
+                ) brief ON TRUE
+                LEFT JOIN editorial_claims claim
+                    ON claim.article_topic_id = t.id
+                   AND (brief.target_language IS NULL OR claim.language = brief.target_language)
+                WHERE t.id = ?
+                GROUP BY t.id, t.status, a.id, a.lifecycle_state,
+                         brief.id, brief.status, brief.target_language
+                """, this::authoring, topicId).stream().findFirst()
+                .orElseThrow(() -> new IllegalArgumentException("Unknown article topic: " + topicId));
+    }
+
+    String latestTaskStatus(String taskType, String sourceType, String sourceId) {
+        return jdbc.query("""
+                SELECT status
+                FROM agent_tasks
+                WHERE agent_type = 'EDITORIAL'
+                  AND task_type = ?
+                  AND source_type = ?
+                  AND source_id = ?
+                ORDER BY id DESC
+                LIMIT 1
+                """, (result, rowNumber) -> result.getString("status"), taskType, sourceType, sourceId)
+                .stream().findFirst().orElse(null);
+    }
+
     private Optional<ArticleRow> articleByTopic(long topicId) {
         return jdbc.query("""
                 SELECT id, article_topic_id, lifecycle_state, canonical_language
@@ -103,8 +150,19 @@ class EditorialEditorStore {
                 primaryLanguage, result.getString("article_priority"),
                 uspId != null && icpId != null && pillarId != null && funnelId != null
                         && goalId != null && primaryLanguage != null,
+                uspId, icpId, pillarId, funnelId, goalId,
                 result.getObject("article_id", Long.class), result.getString("lifecycle_state"),
                 result.getString("canonical_language"));
+    }
+
+    private AuthoringRow authoring(ResultSet result, int rowNumber) throws SQLException {
+        return new AuthoringRow(
+                result.getLong("topic_id"), result.getString("topic_status"),
+                result.getObject("article_id", Long.class), result.getString("lifecycle_state"),
+                result.getObject("brief_id", Long.class), result.getString("brief_status"),
+                result.getString("brief_language"), result.getInt("claims_total"),
+                result.getInt("claims_supported"), result.getInt("claims_requiring_review"),
+                result.getInt("claims_missing"));
     }
 
     private CurrentVersionRow currentVersion(ResultSet result, int rowNumber) throws SQLException {
@@ -142,9 +200,27 @@ class EditorialEditorStore {
             String primaryLanguage,
             String priority,
             boolean strategyContextResolved,
+            Long uspId,
+            String icpId,
+            Long contentPillarId,
+            Long funnelStageId,
+            Long conversionGoalId,
             Long articleId,
             String lifecycleState,
             String canonicalLanguage) {}
+
+    record AuthoringRow(
+            long topicId,
+            String topicStatus,
+            Long articleId,
+            String lifecycleState,
+            Long briefId,
+            String briefStatus,
+            String briefLanguage,
+            int claimsTotal,
+            int claimsSupported,
+            int claimsRequiringReview,
+            int claimsMissing) {}
 
     record CurrentVersionRow(
             long articleId,

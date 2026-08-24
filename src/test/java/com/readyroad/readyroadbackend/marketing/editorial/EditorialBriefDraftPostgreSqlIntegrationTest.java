@@ -58,6 +58,7 @@ class EditorialBriefDraftPostgreSqlIntegrationTest {
     @Autowired EditorialDraftService draftService;
     @Autowired EditorialDraftTaskHandler draftHandler;
     @Autowired EditorialBacklogService backlogService;
+    @Autowired EditorialEditorService editorService;
     @Autowired AgentTaskRepository taskRepository;
     @Autowired AtomicInteger generationCalls;
 
@@ -121,6 +122,32 @@ class EditorialBriefDraftPostgreSqlIntegrationTest {
         assertThat(backlogService.backlog().topics().stream()
                 .filter(topic -> topic.id() == 2)
                 .findFirst().orElseThrow().strategyContextResolved()).isTrue();
+    }
+
+    @Test
+    void exposesTheNextSafeAuthoringActionFromBriefThroughVerifiedEvidence() {
+        var initial = editorService.authoringStatus(2);
+        assertThat(initial.canCreateBrief()).isTrue();
+        assertThat(initial.canCollectSources()).isFalse();
+        assertThat(initial.canCreateDraft()).isFalse();
+
+        var response = briefService.request(
+                2, briefRequest(strategy("EDUCATION", "CONTINUE_TOPIC_LEARNING")), "editorial-admin");
+        var queued = editorService.authoringStatus(2);
+        assertThat(queued.latestBriefTaskStatus()).isEqualTo("PENDING");
+        assertThat(queued.canCreateBrief()).isFalse();
+
+        briefHandler.execute(claimed(taskRepository.findById(response.id()).orElseThrow()));
+        var briefReady = editorService.authoringStatus(2);
+        assertThat(briefReady.briefReference()).startsWith("ARTICLE_BRIEF:");
+        assertThat(briefReady.canCollectSources()).isTrue();
+        assertThat(briefReady.canCreateDraft()).isFalse();
+
+        insertSupportedCoreClaim(2);
+        var evidenceReady = editorService.authoringStatus(2);
+        assertThat(evidenceReady.claimsTotal()).isOne();
+        assertThat(evidenceReady.claimsSupported()).isOne();
+        assertThat(evidenceReady.canCreateDraft()).isTrue();
     }
 
     @Test

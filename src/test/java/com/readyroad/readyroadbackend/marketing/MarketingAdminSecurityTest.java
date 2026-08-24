@@ -198,6 +198,7 @@ class MarketingAdminSecurityTest {
 
         for (String path : new String[] {
                 "/api/admin/marketing/editorial/editor",
+                "/api/admin/marketing/editorial/editor/topics/1/authoring-status",
                 "/api/admin/marketing/editorial/editor/articles/1/versions?language=EN",
                 "/api/admin/marketing/editorial/editor/articles/1/performance"
         }) {

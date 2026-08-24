@@ -41,7 +41,9 @@ public class EditorialEditorService {
                 .map(topic -> new EditorialEditorDtos.Topic(
                         topic.id(), topic.topicKey(), topic.order(), topic.sourceType(), topic.title(),
                         topic.titleLanguage(), topic.primaryLanguage(), topic.priority(),
-                        topic.strategyContextResolved(), topic.articleId(), topic.lifecycleState(),
+                        topic.strategyContextResolved(), topic.uspId(), topic.icpId(),
+                        topic.contentPillarId(), topic.funnelStageId(), topic.conversionGoalId(),
+                        topic.articleId(), topic.lifecycleState(),
                         topic.canonicalLanguage(),
                         topic.articleId() == null
                                 ? null
@@ -53,6 +55,40 @@ public class EditorialEditorService {
                 Arrays.stream(EditorialArticleQualityGate.values()).map(Enum::name).toList(),
                 contentGraphService.graph(),
                 topics);
+    }
+
+    @Transactional(readOnly = true)
+    public EditorialEditorDtos.AuthoringStatus authoringStatus(long topicId) {
+        if (topicId <= 0) {
+            throw new IllegalArgumentException("topicId must be positive");
+        }
+        var status = store.authoringStatus(topicId);
+        String briefTaskStatus = store.latestTaskStatus(
+                EditorialBriefService.TASK_TYPE, "ARTICLE_TOPIC", String.valueOf(topicId));
+        String sourceTaskStatus = store.latestTaskStatus(
+                EditorialSourceCollectionService.TASK_TYPE, "ARTICLE_TOPIC", String.valueOf(topicId));
+        String draftTaskStatus = status.articleId() == null
+                ? null
+                : store.latestTaskStatus(
+                        EditorialDraftService.TASK_TYPE, "ARTICLE", String.valueOf(status.articleId()));
+        boolean briefTaskActive = activeTask(briefTaskStatus);
+        boolean sourceTaskActive = activeTask(sourceTaskStatus);
+        boolean draftTaskActive = activeTask(draftTaskStatus);
+        boolean briefReady = status.briefId() != null && "BRIEF_READY".equals(status.lifecycleState());
+        return new EditorialEditorDtos.AuthoringStatus(
+                status.topicId(), status.topicStatus(), status.articleId(), status.lifecycleState(),
+                status.briefId(), status.briefStatus(), status.briefLanguage(),
+                status.briefId() == null ? null : "ARTICLE_BRIEF:" + status.briefId(),
+                status.claimsTotal(), status.claimsSupported(), status.claimsRequiringReview(),
+                status.claimsMissing(), briefTaskStatus, sourceTaskStatus, draftTaskStatus,
+                status.briefId() == null
+                        && Set.of("PLANNED", "BRIEF_READY").contains(status.topicStatus())
+                        && !briefTaskActive,
+                briefReady && !sourceTaskActive,
+                briefReady
+                        && status.claimsTotal() > 0
+                        && status.claimsSupported() == status.claimsTotal()
+                        && !draftTaskActive);
     }
 
     @Transactional(readOnly = true)
@@ -232,5 +268,11 @@ public class EditorialEditorService {
         return new ResponseStatusException(
                 HttpStatus.UNPROCESSABLE_ENTITY,
                 "BLOCKED_STRATEGY_CONTEXT: resolve the required Strategy Context first");
+    }
+
+    private static boolean activeTask(String status) {
+        return status != null
+                && Set.of("PENDING", "SCHEDULED", "WAITING_APPROVAL", "APPROVED", "RUNNING", "RETRY_SCHEDULED")
+                .contains(status);
     }
 }

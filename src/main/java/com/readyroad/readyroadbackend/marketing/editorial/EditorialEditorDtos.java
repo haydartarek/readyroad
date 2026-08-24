@@ -27,11 +27,36 @@ public final class EditorialEditorDtos {
             String primaryLanguage,
             String priority,
             boolean strategyContextResolved,
+            Long uspId,
+            String icpId,
+            Long contentPillarId,
+            Long funnelStageId,
+            Long conversionGoalId,
             Long articleId,
             String lifecycleState,
             String canonicalLanguage,
             EditorialArticleImageDtos.Asset image,
             List<CurrentVersion> currentVersions) {}
+
+    public record AuthoringStatus(
+            long topicId,
+            String topicStatus,
+            Long articleId,
+            String lifecycleState,
+            Long briefId,
+            String briefStatus,
+            String briefLanguage,
+            String briefReference,
+            int claimsTotal,
+            int claimsSupported,
+            int claimsRequiringReview,
+            int claimsMissing,
+            String latestBriefTaskStatus,
+            String latestSourceTaskStatus,
+            String latestDraftTaskStatus,
+            boolean canCreateBrief,
+            boolean canCollectSources,
+            boolean canCreateDraft) {}
 
     public record CurrentVersion(
             String language,

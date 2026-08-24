@@ -132,9 +132,12 @@ public class RijViaSeoMigrationStore {
 
     private Map<String, Object> workspace(Long importId, boolean importEnabled) {
         Map<String, Object> result = new LinkedHashMap<>();
+        Map<String, Object> publishingSafety = setting("STRATEGY", "publishing.safety");
+        Map<String, Object> migration = setting("STRATEGY", "seo.migration");
+        Map<String, Object> social = socialWorkspace(publishingSafety);
         result.put("localImportEnabled", importEnabled);
-        result.put("publishingEnabled", false);
-        result.put("canonicalActivation", "PENDING_RELEASE");
+        result.put("publishingEnabled", booleanValue(publishingSafety, "contentPublishing"));
+        result.put("canonicalActivation", stringValue(migration, "activationStatus", "PENDING_RELEASE"));
         result.put("targetDomain", "rijvia.be");
 
         Map<String, Object> imported = jdbc.queryForObject("""
@@ -184,16 +187,19 @@ public class RijViaSeoMigrationStore {
                 "officialTopics", officialBacklog()));
         result.put("strategy", strategy());
         result.put("authority", valueOrEmpty(report, "authority"));
-        result.put("social", valueOrEmpty(report, "social"));
-        result.put("ownerDecisionsRequired", valueOrEmpty(report, "ownerDecisionsRequired"));
+        result.put("social", social);
+        result.put("ownerDecisionsRequired", ownerDecisions(true, social));
         return Map.copyOf(result);
     }
 
     private Map<String, Object> emptyWorkspace(boolean importEnabled) {
+        Map<String, Object> publishingSafety = setting("STRATEGY", "publishing.safety");
+        Map<String, Object> migration = setting("STRATEGY", "seo.migration");
+        Map<String, Object> social = socialWorkspace(publishingSafety);
         return Map.ofEntries(
                 Map.entry("localImportEnabled", importEnabled),
-                Map.entry("publishingEnabled", false),
-                Map.entry("canonicalActivation", "PENDING_RELEASE"),
+                Map.entry("publishingEnabled", booleanValue(publishingSafety, "contentPublishing")),
+                Map.entry("canonicalActivation", stringValue(migration, "activationStatus", "PENDING_RELEASE")),
                 Map.entry("targetDomain", "rijvia.be"),
                 Map.entry("latestImport", Map.of()),
                 Map.entry("opportunities", List.of()),
@@ -202,10 +208,47 @@ public class RijViaSeoMigrationStore {
                 Map.entry("contentBacklog", Map.of("draftBriefs", List.of(), "officialTopics", officialBacklog())),
                 Map.entry("strategy", strategy()),
                 Map.entry("authority", Map.of("mode", "FREE_OR_EARNED_ONLY", "outreach", "DISABLED")),
-                Map.entry("social", Map.of("publishing", "DISABLED", "ownerDecisionRequired", true)),
-                Map.entry("ownerDecisionsRequired", List.of(
-                        "Upload the local Search Console XLSX export to create an evidence snapshot.",
-                        "Confirm official RijVia social handles before publishing.")));
+                Map.entry("social", social),
+                Map.entry("ownerDecisionsRequired", ownerDecisions(false, social)));
+    }
+
+    private Map<String, Object> socialWorkspace(Map<String, Object> publishingSafety) {
+        Map<String, Object> configured = setting("STRATEGY", "social.official_accounts");
+        boolean ownerConfirmed = booleanValue(configured, "ownerConfirmed");
+        boolean publishingEnabled = booleanValue(publishingSafety, "socialPublishing");
+        Map<String, Object> result = new LinkedHashMap<>(configured);
+        result.put("officialHandlesConfigured", ownerConfirmed);
+        result.put("draftOnly", !publishingEnabled);
+        result.put("publishing", publishingEnabled ? "ENABLED" : "BLOCKED_PROVIDER_API_OAUTH");
+        result.put("ownerDecisionRequired", !ownerConfirmed);
+        return Map.copyOf(result);
+    }
+
+    private List<String> ownerDecisions(boolean imported, Map<String, Object> social) {
+        List<String> decisions = new ArrayList<>();
+        if (!imported) {
+            decisions.add("Upload the local Search Console XLSX export to create an evidence snapshot.");
+        }
+        if (!booleanValue(social, "officialHandlesConfigured")) {
+            decisions.add("Confirm official RijVia social handles before publishing.");
+        }
+        return List.copyOf(decisions);
+    }
+
+    private Map<String, Object> setting(String agentType, String settingKey) {
+        List<String> values = jdbc.query(
+                "SELECT setting_value::text FROM agent_settings WHERE agent_type = ? AND setting_key = ?",
+                (result, rowNumber) -> result.getString(1), agentType, settingKey);
+        return values.isEmpty() ? Map.of() : jsonMap(values.getFirst());
+    }
+
+    private static boolean booleanValue(Map<String, Object> values, String key) {
+        return Boolean.TRUE.equals(values.get(key));
+    }
+
+    private static String stringValue(Map<String, Object> values, String key, String fallback) {
+        Object value = values.get(key);
+        return value instanceof String text && !text.isBlank() ? text : fallback;
     }
 
     private void insertQuery(

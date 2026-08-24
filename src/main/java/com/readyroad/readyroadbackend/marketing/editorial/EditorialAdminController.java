@@ -104,6 +104,11 @@ public class EditorialAdminController {
         return editorService.workspace();
     }
 
+    @GetMapping("/editor/topics/{topicId}/authoring-status")
+    public EditorialEditorDtos.AuthoringStatus authoringStatus(@PathVariable long topicId) {
+        return editorService.authoringStatus(topicId);
+    }
+
     @GetMapping("/editor/articles/{articleId}/versions")
     public List<EditorialEditorDtos.Version> articleVersions(
             @PathVariable long articleId,
