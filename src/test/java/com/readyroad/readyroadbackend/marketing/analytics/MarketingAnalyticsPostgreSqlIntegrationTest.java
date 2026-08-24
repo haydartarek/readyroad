@@ -165,7 +165,11 @@ class MarketingAnalyticsPostgreSqlIntegrationTest {
         assertThat(store.aggregateQueries(
                 LocalDate.of(2026, 8, 18), LocalDate.of(2026, 8, 19))).isEmpty();
         assertThat(jdbc.queryForObject(
-                "SELECT COUNT(*) FROM marketing_usp WHERE active = TRUE", Integer.class)).isEqualTo(9);
+                "SELECT COUNT(*) FROM marketing_usp WHERE active = TRUE", Integer.class)).isEqualTo(10);
+        assertThat(jdbc.queryForObject("""
+                SELECT COUNT(*) FROM marketing_usp
+                WHERE title = 'RijVia learning platform' AND active = TRUE
+                """, Integer.class)).isEqualTo(1);
         assertThat(jdbc.queryForObject("""
                 SELECT COUNT(*) FROM marketing_content_pillars
                 WHERE pillar_key = 'RIJVIA_EDUCATIONAL_VIDEOS' AND active = TRUE
