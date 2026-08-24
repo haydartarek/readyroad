@@ -38,6 +38,7 @@ class EditorialArticlePublicationService {
     private final EditorialArticleWorkflowStore workflowStore;
     private final EditorialArticleWorkflowService workflowService;
     private final EditorialArticleApprovalStore approvalStore;
+    private final EditorialArticleImageStore imageStore;
     private final EditorialArticlePublicationStore publicationStore;
     private final TaskCreationService taskCreationService;
     private final AgentTaskRepository taskRepository;
@@ -56,8 +57,9 @@ class EditorialArticlePublicationService {
                     "The approved article versions changed before publication scheduling");
         }
         requirePublicationRoutes(articleId, versions);
+        long imageAssetId = requireApprovedImage(articleId, approvalTask.getPayload());
 
-        ObjectNode payload = publicationPayload(articleId, approvalTask, versions);
+        ObjectNode payload = publicationPayload(articleId, approvalTask, versions, imageAssetId);
         TaskCreationResult result = taskCreationService.create(new CreateMarketingTaskCommand(
                 AGENT_TYPE,
                 TASK_TYPE,
@@ -65,7 +67,7 @@ class EditorialArticlePublicationService {
                 TaskPriority.CRITICAL,
                 null,
                 requireActor(actor),
-                idempotencyKey(articleId, versions),
+                idempotencyKey(articleId, versions, imageAssetId),
                 approvalTask.getCorrelationId(),
                 approvalTask.getId(),
                 ARTICLE_SOURCE,
@@ -101,6 +103,7 @@ class EditorialArticlePublicationService {
         AgentTask approvalTask = approvedParent(publicationTask);
         long articleId = articleId(publicationTask.getPayload());
         List<EditorialArticleApprovalStore.VersionSnapshot> approvedVersions = snapshot(publicationTask.getPayload());
+        long imageAssetId = imageAssetId(publicationTask.getPayload());
         requireCompleteSnapshot(approvedVersions);
         if (!approvedVersions.equals(snapshot(approvalTask.getPayload()))
                 || !approvedVersions.equals(currentVersions(articleId))) {
@@ -108,12 +111,18 @@ class EditorialArticlePublicationService {
                     "ARTICLE_PUBLICATION_STALE",
                     "The current article versions do not match the approved publication snapshot");
         }
+        if (imageAssetId != imageAssetId(approvalTask.getPayload())) {
+            throw failure(
+                    "ARTICLE_PUBLICATION_IMAGE_STALE",
+                    "The publication image does not match the approved image snapshot");
+        }
+        requireApprovedImage(articleId, publicationTask.getPayload());
         requirePublicationRoutes(articleId, approvedVersions);
 
         EditorialArticleWorkflowStore.LockedArticle article = workflowStore.lock(articleId);
         if (article.state() == EditorialArticleState.PUBLISHED) {
             if (!publicationStore.hasExactPublications(
-                    articleId, approvalTask.getId(), publicationTask.getId(), approvedVersions)) {
+                    articleId, approvalTask.getId(), publicationTask.getId(), imageAssetId, approvedVersions)) {
                 throw failure(
                         "ARTICLE_PUBLICATION_INCONSISTENT",
                         "Published article records do not match the approved snapshot");
@@ -127,7 +136,7 @@ class EditorialArticlePublicationService {
         }
 
         publicationStore.publish(
-                articleId, approvalTask.getId(), publicationTask.getId(), approvedVersions);
+                articleId, approvalTask.getId(), publicationTask.getId(), imageAssetId, approvedVersions);
         workflowService.transition(new EditorialArticleWorkflowDtos.TransitionRequest(
                 articleId,
                 EditorialArticleState.PUBLISHED,
@@ -143,7 +152,7 @@ class EditorialArticlePublicationService {
                 String.valueOf(articleId),
                 publicationTask.getId(),
                 publicationTask.getCorrelationId(),
-                publicationAuditDetails(approvalTask, approvedVersions));
+                publicationAuditDetails(approvalTask, approvedVersions, imageAssetId));
     }
 
     private AgentTask approvedParent(AgentTask publicationTask) {
@@ -232,11 +241,13 @@ class EditorialArticlePublicationService {
     private ObjectNode publicationPayload(
             long articleId,
             AgentTask approvalTask,
-            List<EditorialArticleApprovalStore.VersionSnapshot> versions) {
+            List<EditorialArticleApprovalStore.VersionSnapshot> versions,
+            long imageAssetId) {
         ObjectNode payload = objectMapper.createObjectNode();
         payload.put("articleId", articleId);
         payload.put("approvalTaskId", approvalTask.getId());
         payload.put("approvalPayloadVersion", approvalTask.getPayloadVersion());
+        payload.put("imageAssetId", imageAssetId);
         ArrayNode versionArray = payload.putArray("versions");
         versions.forEach(version -> versionArray.addObject()
                 .put("id", version.id())
@@ -247,10 +258,12 @@ class EditorialArticlePublicationService {
 
     private ObjectNode publicationAuditDetails(
             AgentTask approvalTask,
-            List<EditorialArticleApprovalStore.VersionSnapshot> versions) {
+            List<EditorialArticleApprovalStore.VersionSnapshot> versions,
+            long imageAssetId) {
         ObjectNode details = objectMapper.createObjectNode();
         details.put("approvalTaskId", approvalTask.getId());
         details.put("approvalPayloadVersion", approvalTask.getPayloadVersion());
+        details.put("imageAssetId", imageAssetId);
         ArrayNode publishedVersions = details.putArray("publishedVersions");
         versions.forEach(version -> publishedVersions.addObject()
                 .put("id", version.id())
@@ -302,11 +315,32 @@ class EditorialArticlePublicationService {
 
     private static String idempotencyKey(
             long articleId,
-            List<EditorialArticleApprovalStore.VersionSnapshot> versions) {
+            List<EditorialArticleApprovalStore.VersionSnapshot> versions,
+            long imageAssetId) {
         String versionIds = versions.stream()
                 .map(version -> String.valueOf(version.id()))
                 .collect(Collectors.joining("-"));
-        return "article-publication:" + articleId + ":" + versionIds;
+        return "article-publication:" + articleId + ":" + versionIds + ":image-" + imageAssetId;
+    }
+
+    private long requireApprovedImage(long articleId, JsonNode payload) {
+        long imageAssetId = imageAssetId(payload);
+        if (imageStore.requireApprovalReady(articleId).assetId() != imageAssetId) {
+            throw failure(
+                    "ARTICLE_PUBLICATION_IMAGE_STALE",
+                    "The current article image does not match the approved image snapshot");
+        }
+        return imageAssetId;
+    }
+
+    private static long imageAssetId(JsonNode payload) {
+        long imageAssetId = payload.path("imageAssetId").asLong();
+        if (imageAssetId <= 0) {
+            throw failure(
+                    "ARTICLE_PUBLICATION_IMAGE_MISSING",
+                    "Article publication requires an approved image snapshot");
+        }
+        return imageAssetId;
     }
 
     private static String requireActor(String actor) {

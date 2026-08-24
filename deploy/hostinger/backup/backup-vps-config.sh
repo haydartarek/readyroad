@@ -64,7 +64,7 @@ ensure_backup_layout
 case "$mode" in
   --retention-dry-run)
     for prefix in readyroad-config readyroad-environment readyroad-caddy \
-      readyroad-uploads; do
+      readyroad-uploads readyroad-article-images; do
       prune_artifacts "${BACKUP_ROOT}/config/weekly" "${prefix}-" \
         "$WEEKLY_RETENTION" dry-run
       prune_artifacts "${BACKUP_ROOT}/config/deployment" "${prefix}-" \
@@ -109,14 +109,16 @@ config_tree="${stage_dir}/config"
 env_tree="${stage_dir}/environment"
 caddy_tree="${stage_dir}/caddy"
 uploads_tree="${stage_dir}/uploads"
+article_images_tree="${stage_dir}/article-images"
 output_directory="${BACKUP_ROOT}/config/${series}"
 
 mkdir -p \
   "$config_tree/inventory" "$env_tree" "$caddy_tree" "$uploads_tree" \
+  "$article_images_tree" \
   "$output_directory"
 chmod 0700 \
   "$config_tree" "$config_tree/inventory" "$env_tree" "$caddy_tree" \
-  "$uploads_tree"
+  "$uploads_tree" "$article_images_tree"
 
 log_event INFO backup_started \
   "component=config timestamp=${created_at} series=${series}"
@@ -158,7 +160,7 @@ readlink -f /opt/readyroad/current \
   >"${config_tree}/inventory/current-release.txt"
 docker volume inspect \
   readyroad-backend-logs readyroad-backups readyroad-caddy-data \
-  readyroad-caddy-config readyroad-uploads \
+  readyroad-caddy-config readyroad-uploads readyroad-article-images \
   >"${config_tree}/inventory/docker-volumes.json"
 docker image inspect \
   "$(docker inspect -f '{{.Image}}' readyroad-backend)" \
@@ -200,16 +202,28 @@ else
     "component=uploads reason=empty_volume"
 fi
 
+article_images_path="/var/lib/docker/volumes/readyroad-article-images/_data"
+article_image_files="$(find "$article_images_path" -type f 2>/dev/null | wc -l | tr -d ' ')"
+if (( article_image_files > 0 )); then
+  copy_path "$article_images_path" "$article_images_tree"
+  archive_and_encrypt \
+    "$article_images_tree" "$output_directory" "readyroad-article-images" \
+    "$timestamp" "$created_at"
+else
+  log_event INFO backup_skipped \
+    "component=article_images reason=empty_volume"
+fi
+
 if [[ "$series" == "weekly" ]]; then
   retention="$WEEKLY_RETENTION"
 else
   retention="$DEPLOYMENT_RETENTION"
 fi
 for prefix in readyroad-config readyroad-environment readyroad-caddy \
-  readyroad-uploads; do
+  readyroad-uploads readyroad-article-images; do
   prune_artifacts "$output_directory" "${prefix}-" "$retention"
 done
 
 atomic_write "${BACKUP_STATE_DIR}/last-config-success" "$(date +%s)"
 log_event INFO backup_completed \
-  "component=config series=${series} uploads=${upload_files}"
+  "component=config series=${series} uploads=${upload_files} article_images=${article_image_files}"

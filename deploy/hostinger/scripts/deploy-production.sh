@@ -240,6 +240,11 @@ if (( DRY_RUN == 1 )); then
   exit 0
 fi
 
+if ! docker volume inspect readyroad-article-images >/dev/null 2>&1; then
+  docker volume create readyroad-article-images >/dev/null
+  rr_log INFO persistent_volume_created "volume=readyroad-article-images"
+fi
+
 staging_directory="$(mktemp -d "${READYROAD_RELEASES_DIR}/.staging.XXXXXX")"
 chmod 0700 "$staging_directory"
 

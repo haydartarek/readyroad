@@ -50,7 +50,12 @@ class EditorialAdminEditorPostgreSqlIntegrationTest {
     @BeforeEach
     void resetEditorData() {
         jdbc = new JdbcTemplate(dataSource);
-        jdbc.execute("TRUNCATE article_publications, article_versions, articles RESTART IDENTITY");
+        jdbc.execute("""
+                TRUNCATE article_refresh_recommendations, article_performance_snapshots,
+                         article_publications, article_image_licenses, article_image_localizations,
+                         article_image_variants, article_image_assets, article_versions, articles
+                RESTART IDENTITY
+                """);
         jdbc.update("DELETE FROM audit_logs WHERE event_type = 'EDITORIAL_ARTICLE_DRAFT_SAVED'");
     }
 
@@ -79,6 +84,52 @@ class EditorialAdminEditorPostgreSqlIntegrationTest {
         assertThat(saved.version().createdBy()).isEqualTo("admin");
         assertThat(service.versions(saved.articleId(), "AR")).hasSize(1);
         assertThat(auditCount(saved.articleId())).isOne();
+    }
+
+    @Test
+    void persistsValidatedInternalLinksInsideTheImmutableVersionMetadata() {
+        var saved = service.save(1, "EN", new EditorialEditorDtos.SaveRequest(
+                "Title",
+                "linked-article",
+                "Summary",
+                "Body",
+                "SEO Title",
+                "SEO Summary",
+                List.of(new EditorialInternalLinkDtos.Input("/exam", "Start the theory exam")),
+                null), "admin");
+
+        assertThat(saved.version().internalLinks()).containsExactly(
+                new EditorialInternalLinkDtos.Link("EXAM", "/exam", "Start the theory exam"));
+        assertThat(jdbc.queryForObject("""
+                SELECT metadata -> 'internalLinks' -> 0 ->> 'targetPath'
+                FROM article_versions WHERE id = ?
+                """, String.class, saved.version().id())).isEqualTo("/exam");
+    }
+
+    @Test
+    void derivesTheContentGraphAndReportsOnlyDisconnectedArticleVersionsAsOrphans() {
+        service.save(1, "EN", new EditorialEditorDtos.SaveRequest(
+                "Connected",
+                "connected",
+                "Summary",
+                "Body",
+                "Connected | RijVia",
+                "Connected description",
+                List.of(new EditorialInternalLinkDtos.Input("/exam", "Start the theory exam")),
+                null), "admin");
+        service.save(2, "EN", request(
+                "Disconnected", "disconnected", "Summary", "Body", null), "admin");
+
+        var graph = service.workspace().contentGraph();
+
+        assertThat(graph.articleNodeCount()).isEqualTo(2);
+        assertThat(graph.assetNodeCount()).isOne();
+        assertThat(graph.edgeCount()).isOne();
+        assertThat(graph.orphanArticleCount()).isOne();
+        assertThat(graph.orphanArticles())
+                .extracting(EditorialContentGraphDtos.OrphanArticle::title)
+                .containsExactly("Disconnected");
+        assertThat(graph.edges().getFirst().targetPath()).isEqualTo("/exam");
     }
 
     @Test

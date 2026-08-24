@@ -15,10 +15,27 @@ class EditorialPublicArticleService {
     private static final Set<String> LANGUAGES = Set.of("AR", "NL", "FR", "EN");
 
     private final EditorialPublicArticleStore store;
+    private final EditorialArticleImageStore imageStore;
 
     @Transactional(readOnly = true)
     public List<EditorialPublicArticleDtos.Summary> summaries(String requestedLanguage) {
-        return store.summaries(language(requestedLanguage));
+        String language = language(requestedLanguage);
+        return store.summaries(language).stream().map(row -> summary(row, language)).toList();
+    }
+
+    @Transactional(readOnly = true)
+    public List<EditorialPublicArticleDtos.Summary> related(
+            String requestedLanguage,
+            String requestedTargetPath,
+            int limit) {
+        if (limit < 1 || limit > 6) {
+            throw new IllegalArgumentException("Related article limit must be between 1 and 6");
+        }
+        String language = language(requestedLanguage);
+        return store.related(
+                language,
+                EditorialInternalLinkPolicy.cleanPath(requestedTargetPath),
+                limit).stream().map(row -> summary(row, language)).toList();
     }
 
     @Transactional(readOnly = true)
@@ -44,7 +61,26 @@ class EditorialPublicArticleService {
                 EditorialArticleMetadata.valueOrFallback(value.metaTitle(), value.title()),
                 EditorialArticleMetadata.valueOrFallback(value.metaDescription(), value.summary()),
                 value.publishedAt(),
+                value.imageAssetId() == null
+                        ? null
+                        : imageStore.publicImage(value.imageAssetId(), language).orElse(null),
+                EditorialArticleMetadata.internalLinks(value.metadata()),
                 store.alternateSlugs(value.articleId())));
+    }
+
+    private EditorialPublicArticleDtos.Summary summary(
+            EditorialPublicArticleStore.SummaryRow row,
+            String language) {
+        return new EditorialPublicArticleDtos.Summary(
+                row.language(),
+                row.slug(),
+                row.title(),
+                row.summary(),
+                row.publishedAt(),
+                row.imageAssetId() == null
+                        ? null
+                        : imageStore.publicImage(row.imageAssetId(), language).orElse(null),
+                row.alternateSlugs());
     }
 
     private static String language(String value) {

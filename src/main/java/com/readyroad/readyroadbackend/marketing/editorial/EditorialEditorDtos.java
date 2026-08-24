@@ -1,5 +1,6 @@
 package com.readyroad.readyroadbackend.marketing.editorial;
 
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.PositiveOrZero;
 import jakarta.validation.constraints.Size;
@@ -13,6 +14,7 @@ public final class EditorialEditorDtos {
     public record Workspace(
             List<String> languages,
             List<String> qualityGates,
+            EditorialContentGraphDtos.Graph contentGraph,
             List<Topic> topics) {}
 
     public record Topic(
@@ -28,6 +30,7 @@ public final class EditorialEditorDtos {
             Long articleId,
             String lifecycleState,
             String canonicalLanguage,
+            EditorialArticleImageDtos.Asset image,
             List<CurrentVersion> currentVersions) {}
 
     public record CurrentVersion(
@@ -46,7 +49,20 @@ public final class EditorialEditorDtos {
             @NotBlank @Size(max = 500_000) String body,
             @NotBlank @Size(max = 500) String metaTitle,
             @NotBlank @Size(max = 2000) String metaDescription,
-            @PositiveOrZero Integer expectedCurrentVersion) {}
+            @Valid List<EditorialInternalLinkDtos.Input> internalLinks,
+            @PositiveOrZero Integer expectedCurrentVersion) {
+
+        public SaveRequest(
+                String title,
+                String slug,
+                String summary,
+                String body,
+                String metaTitle,
+                String metaDescription,
+                Integer expectedCurrentVersion) {
+            this(title, slug, summary, body, metaTitle, metaDescription, List.of(), expectedCurrentVersion);
+        }
+    }
 
     public record SaveResult(
             long topicId,
@@ -67,6 +83,7 @@ public final class EditorialEditorDtos {
             String body,
             String metaTitle,
             String metaDescription,
+            List<EditorialInternalLinkDtos.Link> internalLinks,
             String status,
             boolean current,
             Instant createdAt,

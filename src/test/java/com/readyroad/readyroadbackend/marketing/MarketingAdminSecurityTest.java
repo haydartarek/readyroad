@@ -183,7 +183,8 @@ class MarketingAdminSecurityTest {
 
         for (String path : new String[] {
                 "/api/admin/marketing/editorial/editor",
-                "/api/admin/marketing/editorial/editor/articles/1/versions?language=EN"
+                "/api/admin/marketing/editorial/editor/articles/1/versions?language=EN",
+                "/api/admin/marketing/editorial/editor/articles/1/performance"
         }) {
             mockMvc.perform(get(path)).andExpect(status().isUnauthorized());
             mockMvc.perform(get(path).header("Authorization", "Bearer " + userToken))
@@ -211,6 +212,23 @@ class MarketingAdminSecurityTest {
                         .header("Authorization", "Bearer " + userToken)
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(approvalRequest))
+                .andExpect(status().isForbidden());
+
+        String imagePath = "/api/admin/marketing/editorial/editor/articles/1/image";
+        mockMvc.perform(get(imagePath)).andExpect(status().isUnauthorized());
+        mockMvc.perform(get(imagePath).header("Authorization", "Bearer " + userToken))
+                .andExpect(status().isForbidden());
+
+        MockMultipartFile image = new MockMultipartFile(
+                "file", "article.jpg", "image/jpeg", new byte[] {(byte) 0xff, (byte) 0xd8, (byte) 0xff});
+        MockMultipartFile imageMetadata = new MockMultipartFile(
+                "metadata", "", "application/json", "{}".getBytes());
+        mockMvc.perform(multipart(imagePath).file(image).file(imageMetadata))
+                .andExpect(status().isUnauthorized());
+        mockMvc.perform(multipart(imagePath)
+                        .file(image)
+                        .file(imageMetadata)
+                        .header("Authorization", "Bearer " + userToken))
                 .andExpect(status().isForbidden());
     }
 

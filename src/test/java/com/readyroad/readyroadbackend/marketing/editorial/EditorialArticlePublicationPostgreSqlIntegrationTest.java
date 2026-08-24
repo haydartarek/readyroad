@@ -90,7 +90,12 @@ class EditorialArticlePublicationPostgreSqlIntegrationTest {
         jdbc.update("DELETE FROM agent_approvals WHERE task_id IN "
                 + "(SELECT id FROM agent_tasks WHERE task_type IN ('ARTICLE_APPROVAL', 'ARTICLE_PUBLISH'))");
         jdbc.update("DELETE FROM agent_tasks WHERE task_type IN ('ARTICLE_APPROVAL', 'ARTICLE_PUBLISH')");
-        jdbc.execute("TRUNCATE article_publications, article_versions, article_briefs, articles RESTART IDENTITY");
+        jdbc.execute("""
+                TRUNCATE article_refresh_recommendations, article_performance_snapshots,
+                         article_publications, article_image_licenses, article_image_localizations,
+                         article_image_variants, article_image_assets, article_versions, article_briefs, articles
+                RESTART IDENTITY
+                """);
     }
 
     @Test
@@ -206,6 +211,13 @@ class EditorialArticlePublicationPostgreSqlIntegrationTest {
                 .andExpect(jsonPath("$[0].language").value("AR"))
                 .andExpect(jsonPath("$[0].slug").value("publication-6-AR"))
                 .andExpect(jsonPath("$[0].title").value("AR title"))
+                .andExpect(jsonPath("$[0].image.heroUrl").value(org.hamcrest.Matchers.startsWith("/images/articles/")))
+                .andExpect(jsonPath("$[0].image.altText").value("AR approved article image"))
+                .andExpect(jsonPath("$[0].image.sourcePlatform").value("UNSPLASH"))
+                .andExpect(jsonPath("$[0].alternateSlugs.AR").value("publication-6-AR"))
+                .andExpect(jsonPath("$[0].alternateSlugs.NL").value("publication-6-NL"))
+                .andExpect(jsonPath("$[0].alternateSlugs.FR").value("publication-6-FR"))
+                .andExpect(jsonPath("$[0].alternateSlugs.EN").value("publication-6-EN"))
                 .andExpect(jsonPath("$[0].body").doesNotExist());
 
         mockMvc.perform(get("/api/articles/{slug}", "publication-6-AR")
@@ -216,8 +228,20 @@ class EditorialArticlePublicationPostgreSqlIntegrationTest {
                 .andExpect(jsonPath("$.body").value("NL body"))
                 .andExpect(jsonPath("$.metaTitle").value("NL meta title"))
                 .andExpect(jsonPath("$.metaDescription").value("NL meta description"))
+                .andExpect(jsonPath("$.image.altText").value("NL approved article image"))
+                .andExpect(jsonPath("$.image.licenseName").value("Unsplash License"))
+                .andExpect(jsonPath("$.internalLinks[0].type").value("EXAM"))
+                .andExpect(jsonPath("$.internalLinks[0].targetPath").value("/nl/exam"))
+                .andExpect(jsonPath("$.internalLinks[0].anchorText").value("NL exam"))
                 .andExpect(jsonPath("$.alternateSlugs.AR").value("publication-6-AR"))
                 .andExpect(jsonPath("$.alternateSlugs.EN").value("publication-6-EN"));
+
+        mockMvc.perform(get("/api/articles/related")
+                        .param("language", "NL")
+                        .param("targetPath", "/nl/exam"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$[0].slug").value("publication-6-NL"))
+                .andExpect(jsonPath("$[0].title").value("NL title"));
     }
 
     @Test
@@ -293,17 +317,28 @@ class EditorialArticlePublicationPostgreSqlIntegrationTest {
             String slug = language.equals(languageWithoutSlug)
                     ? null
                     : "publication-" + backlogOrder + "-" + language;
+            String examPath = language.equals("EN") ? "/exam" : "/" + language.toLowerCase() + "/exam";
             jdbc.update("""
                     INSERT INTO article_versions (
                         article_id, version_number, language, title, slug, summary, body,
                         metadata, status, is_current, created_by
                     ) VALUES (?, 1, ?, ?, ?, ?, ?,
-                              jsonb_build_object('metaTitle', ?, 'metaDescription', ?),
+                              jsonb_build_object(
+                                  'metaTitle', ?,
+                                  'metaDescription', ?,
+                                  'internalLinks', jsonb_build_array(jsonb_build_object(
+                                      'type', 'EXAM',
+                                      'targetPath', ?,
+                                      'anchorText', ?
+                                  ))
+                              ),
                               'DRAFT_READY', TRUE, 'editor')
                     """, articleId, language, language + " title", slug,
                     language + " summary", language + " body",
-                    language + " meta title", language + " meta description");
+                    language + " meta title", language + " meta description",
+                    examPath, language + " exam");
         }
+        EditorialArticleImageTestData.seedApprovedImage(jdbc, articleId);
         return articleId;
     }
 
@@ -331,7 +366,11 @@ class EditorialArticlePublicationPostgreSqlIntegrationTest {
                 WHERE article_id = ? AND is_current
                 ORDER BY language
                 """, String.class, articleId).stream().reduce((left, right) -> left + "-" + right).orElseThrow();
-        return "article-publication:" + articleId + ":" + versionIds;
+        Long imageAssetId = jdbc.queryForObject("""
+                SELECT id FROM article_image_assets
+                WHERE article_id = ? AND status = 'APPROVED'
+                """, Long.class, articleId);
+        return "article-publication:" + articleId + ":" + versionIds + ":image-" + imageAssetId;
     }
 
     private EditorialArticleState state(long articleId) {

@@ -17,21 +17,22 @@ class EditorialArticlePublicationStore {
             long articleId,
             long approvalTaskId,
             long publicationTaskId,
+            long imageAssetId,
             List<EditorialArticleApprovalStore.VersionSnapshot> versions) {
         OffsetDateTime publishedAt = OffsetDateTime.now(ZoneOffset.UTC);
         for (var version : versions) {
             jdbc.update("""
                     INSERT INTO article_publications (
                         article_id, article_version_id, language, approval_task_id,
-                        publication_task_id, status, published_at, published_slug
+                        publication_task_id, image_asset_id, status, published_at, published_slug
                     )
-                    SELECT ?, version.id, version.language, ?, ?, 'PUBLISHED', ?, version.slug
+                    SELECT ?, version.id, version.language, ?, ?, ?, 'PUBLISHED', ?, version.slug
                     FROM article_versions version
                     WHERE version.id = ?
                     ON CONFLICT (article_version_id) DO NOTHING
-                    """, articleId, approvalTaskId, publicationTaskId, publishedAt, version.id());
+                    """, articleId, approvalTaskId, publicationTaskId, imageAssetId, publishedAt, version.id());
         }
-        if (!hasExactPublications(articleId, approvalTaskId, publicationTaskId, versions)) {
+        if (!hasExactPublications(articleId, approvalTaskId, publicationTaskId, imageAssetId, versions)) {
             throw new IllegalStateException("Published article versions do not match the approved snapshot");
         }
         for (var version : versions) {
@@ -43,6 +44,7 @@ class EditorialArticlePublicationStore {
             long articleId,
             long approvalTaskId,
             long publicationTaskId,
+            long imageAssetId,
             List<EditorialArticleApprovalStore.VersionSnapshot> versions) {
         List<EditorialArticleApprovalStore.VersionSnapshot> persisted = jdbc.query("""
                 SELECT publication.article_version_id AS id,
@@ -53,6 +55,7 @@ class EditorialArticlePublicationStore {
                 WHERE publication.article_id = ?
                   AND publication.approval_task_id = ?
                   AND publication.publication_task_id = ?
+                  AND publication.image_asset_id = ?
                   AND publication.status = 'PUBLISHED'
                   AND publication.published_slug = version.slug
                 ORDER BY publication.language
@@ -60,7 +63,7 @@ class EditorialArticlePublicationStore {
                         result.getLong("id"),
                         result.getString("language"),
                         result.getInt("version_number")),
-                articleId, approvalTaskId, publicationTaskId);
+                articleId, approvalTaskId, publicationTaskId, imageAssetId);
         return persisted.equals(versions);
     }
 

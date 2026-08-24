@@ -34,6 +34,20 @@ public class EditorialPublicArticleController {
         }
     }
 
+    @GetMapping("/related")
+    public ResponseEntity<List<EditorialPublicArticleDtos.Summary>> related(
+            @RequestParam(defaultValue = "EN") String language,
+            @RequestParam String targetPath,
+            @RequestParam(defaultValue = "3") int limit) {
+        try {
+            return ResponseEntity.ok()
+                    .cacheControl(PUBLIC_CACHE)
+                    .body(service.related(language, targetPath, limit));
+        } catch (IllegalArgumentException error) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, error.getMessage());
+        }
+    }
+
     @GetMapping("/{slug}")
     public ResponseEntity<EditorialPublicArticleDtos.Article> article(
             @PathVariable String slug,

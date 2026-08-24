@@ -37,6 +37,7 @@ public class EditorialArticleApprovalService {
     private final EditorialArticleWorkflowStore workflowStore;
     private final EditorialArticleWorkflowService workflowService;
     private final EditorialArticleApprovalStore approvalStore;
+    private final EditorialArticleImageStore imageStore;
     private final EditorialArticlePublicationService publicationService;
     private final TaskCreationService taskCreationService;
     private final ObjectMapper objectMapper;
@@ -60,8 +61,9 @@ public class EditorialArticleApprovalService {
             throw new IllegalStateException("All editorial quality gates must pass before approval");
         }
         List<EditorialArticleApprovalStore.VersionSnapshot> versions = currentVersions(articleId);
-        ObjectNode payload = payload(article, versions, gates, request.reason());
-        String idempotencyKey = idempotencyKey(articleId, versions);
+        EditorialArticleImageStore.ApprovedImage image = imageStore.requireApprovalReady(articleId);
+        ObjectNode payload = payload(article, versions, image, gates, request.reason());
+        String idempotencyKey = idempotencyKey(articleId, versions, image);
         var result = taskCreationService.create(new CreateMarketingTaskCommand(
                 AGENT_TYPE,
                 TASK_TYPE,
@@ -95,6 +97,7 @@ public class EditorialArticleApprovalService {
         if (!snapshot(task.getPayload()).equals(current)) {
             throw new IllegalStateException("The current article versions changed after approval was requested");
         }
+        requireCurrentImageSnapshot(articleId, task.getPayload());
         var article = workflowStore.lock(articleId);
         if (article.state() != EditorialArticleState.WAITING_APPROVAL) {
             throw new IllegalStateException("Article is not waiting for approval: " + articleId);
@@ -122,6 +125,7 @@ public class EditorialArticleApprovalService {
                     "ARTICLE_APPROVAL_STALE",
                     "The current article versions changed after approval was requested");
         }
+        requireCurrentImageSnapshot(articleId, task.payload());
         EditorialArticleState state = workflowStore.lock(articleId).state();
         if (state == EditorialArticleState.WAITING_APPROVAL) {
             transition(context, EditorialArticleState.APPROVED, persistedApprovalTask.getApprovedBy(),
@@ -171,6 +175,7 @@ public class EditorialArticleApprovalService {
     private ObjectNode payload(
             EditorialArticleWorkflowStore.LockedArticle article,
             List<EditorialArticleApprovalStore.VersionSnapshot> versions,
+            EditorialArticleImageStore.ApprovedImage image,
             Set<EditorialArticleQualityGate> gates,
             String reason) {
         ObjectNode payload = objectMapper.createObjectNode();
@@ -178,6 +183,8 @@ public class EditorialArticleApprovalService {
         payload.put("articleTopicId", article.topicId());
         payload.put("canonicalLanguage", article.canonicalLanguage());
         payload.put("requestReason", reason.trim());
+        payload.put("imageAssetId", image.assetId());
+        payload.put("imageLicenseId", image.licenseId());
         ArrayNode versionArray = payload.putArray("versions");
         versions.forEach(version -> versionArray.addObject()
                 .put("id", version.id())
@@ -204,11 +211,24 @@ public class EditorialArticleApprovalService {
 
     private static String idempotencyKey(
             long articleId,
-            List<EditorialArticleApprovalStore.VersionSnapshot> versions) {
+            List<EditorialArticleApprovalStore.VersionSnapshot> versions,
+            EditorialArticleImageStore.ApprovedImage image) {
         String versionIds = versions.stream()
                 .map(version -> String.valueOf(version.id()))
                 .collect(Collectors.joining("-"));
-        return "article-approval:" + articleId + ":" + versionIds;
+        return "article-approval:" + articleId + ":" + versionIds + ":image-" + image.assetId();
+    }
+
+    private void requireCurrentImageSnapshot(long articleId, JsonNode payload) {
+        EditorialArticleImageStore.ApprovedImage current = imageStore.requireApprovalReady(articleId);
+        long imageAssetId = payload.path("imageAssetId").asLong();
+        long imageLicenseId = payload.path("imageLicenseId").asLong();
+        if (imageAssetId <= 0
+                || imageLicenseId <= 0
+                || current.assetId() != imageAssetId
+                || current.licenseId() != imageLicenseId) {
+            throw new IllegalStateException("The approved article image changed after approval was requested");
+        }
     }
 
     private static long articleId(JsonNode payload) {

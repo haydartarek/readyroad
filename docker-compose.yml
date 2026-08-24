@@ -112,6 +112,7 @@ services:
       - ./src/main/resources/data/signs_import:/app/data/signs_import:ro
       - ./public/images/signs:/app/public/images/signs:ro
       - sign_uploads:/app/public/images/quiz
+      - article_uploads:/app/data/editorial-images
 
     networks:
       - readyroad-network
@@ -183,6 +184,8 @@ volumes:
     external: true
     name: readyroad-postgresql_postgres_data
   backend_logs:
+    driver: local
+  article_uploads:
     driver: local
   sign_uploads:
     driver: local

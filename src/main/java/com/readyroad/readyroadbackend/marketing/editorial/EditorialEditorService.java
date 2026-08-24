@@ -27,6 +27,9 @@ public class EditorialEditorService {
     private final EditorialEditorStore store;
     private final EditorialArticleVersionStore versionStore;
     private final EditorialArticleVersionService versionService;
+    private final EditorialInternalLinkPolicy internalLinkPolicy;
+    private final EditorialContentGraphService contentGraphService;
+    private final EditorialArticleImageService articleImageService;
     private final MarketingAuditService auditService;
     private final ObjectMapper objectMapper;
 
@@ -39,11 +42,16 @@ public class EditorialEditorService {
                         topic.id(), topic.topicKey(), topic.order(), topic.sourceType(), topic.title(),
                         topic.titleLanguage(), topic.primaryLanguage(), topic.priority(),
                         topic.strategyContextResolved(), topic.articleId(), topic.lifecycleState(),
-                        topic.canonicalLanguage(), currentVersions(topic.articleId(), versions)))
+                        topic.canonicalLanguage(),
+                        topic.articleId() == null
+                                ? null
+                                : articleImageService.current(topic.articleId()).orElse(null),
+                        currentVersions(topic.articleId(), versions)))
                 .toList();
         return new EditorialEditorDtos.Workspace(
                 LANGUAGES,
                 Arrays.stream(EditorialArticleQualityGate.values()).map(Enum::name).toList(),
+                contentGraphService.graph(),
                 topics);
     }
 
@@ -73,8 +81,10 @@ public class EditorialEditorService {
         versionStore.lockArticle(article.id());
         var current = versionStore.current(article.id(), normalizedLanguage);
         var normalized = normalizedRequest(request);
+        var internalLinks = internalLinkPolicy.normalize(
+                article.id(), normalizedLanguage, normalized.internalLinks());
 
-        if (current.isPresent() && sameContent(current.get(), normalized)) {
+        if (current.isPresent() && sameContent(current.get(), normalized, internalLinks)) {
             return result(topicId, article, articleCreated, false, current.get());
         }
         int currentVersion = current.map(EditorialArticleVersionDtos.Version::versionNumber).orElse(0);
@@ -91,6 +101,7 @@ public class EditorialEditorService {
                         .orElseGet(objectMapper::createObjectNode),
                 normalized.metaTitle(),
                 normalized.metaDescription());
+        metadata = EditorialArticleMetadata.withInternalLinks(metadata, internalLinks);
         var generationMetadata = current.map(EditorialArticleVersionDtos.Version::generationMetadata)
                 .orElseGet(objectMapper::createObjectNode);
         var appended = versionService.append(new EditorialArticleVersionDtos.AppendRequest(
@@ -143,6 +154,7 @@ public class EditorialEditorService {
                 value.slug(), value.summary(), value.body(),
                 EditorialArticleMetadata.metaTitle(value.metadata()),
                 EditorialArticleMetadata.metaDescription(value.metadata()),
+                EditorialArticleMetadata.internalLinks(value.metadata()),
                 value.status(), value.current(),
                 value.createdAt(), value.createdBy());
     }
@@ -151,12 +163,14 @@ public class EditorialEditorService {
         return new EditorialEditorDtos.SaveRequest(
                 request.title().trim(), blankToNull(request.slug()), blankToNull(request.summary()),
                 request.body(), request.metaTitle().trim(), request.metaDescription().trim(),
+                request.internalLinks() == null ? List.of() : List.copyOf(request.internalLinks()),
                 request.expectedCurrentVersion());
     }
 
     private boolean sameContent(
             EditorialArticleVersionDtos.Version current,
-            EditorialEditorDtos.SaveRequest request) {
+            EditorialEditorDtos.SaveRequest request,
+            List<EditorialInternalLinkDtos.Link> internalLinks) {
         return current.status().equals("DRAFT")
                 && current.title().equals(request.title())
                 && Objects.equals(current.slug(), request.slug())
@@ -165,7 +179,8 @@ public class EditorialEditorService {
                 && Objects.equals(EditorialArticleMetadata.metaTitle(current.metadata()), request.metaTitle())
                 && Objects.equals(
                         EditorialArticleMetadata.metaDescription(current.metadata()),
-                        request.metaDescription());
+                        request.metaDescription())
+                && EditorialArticleMetadata.internalLinks(current.metadata()).equals(internalLinks);
     }
 
     private static String language(String value) {

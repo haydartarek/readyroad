@@ -8,6 +8,7 @@ import java.util.Map;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,7 +16,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 @RequestMapping("/api/admin/marketing/editorial")
@@ -28,6 +31,8 @@ public class EditorialAdminController {
     private final EditorialSourceCollectionService sourceCollectionService;
     private final EditorialEditorService editorService;
     private final EditorialArticleApprovalService articleApprovalService;
+    private final EditorialArticleImageService articleImageService;
+    private final EditorialPerformanceService performanceService;
 
     @GetMapping("/backlog")
     public EditorialDtos.Backlog backlog() {
@@ -93,6 +98,30 @@ public class EditorialAdminController {
             @Valid @RequestBody EditorialEditorDtos.SaveRequest request,
             Principal principal) {
         return editorService.save(topicId, language, request, principal.getName());
+    }
+
+    @GetMapping("/editor/articles/{articleId}/image")
+    public ResponseEntity<EditorialArticleImageDtos.Asset> articleImage(
+            @PathVariable long articleId) {
+        return articleImageService.current(articleId)
+                .map(ResponseEntity::ok)
+                .orElseGet(() -> ResponseEntity.notFound().build());
+    }
+
+    @GetMapping("/editor/articles/{articleId}/performance")
+    public EditorialPerformanceDtos.Overview articlePerformance(@PathVariable long articleId) {
+        return performanceService.overview(articleId);
+    }
+
+    @PostMapping(
+            value = "/editor/articles/{articleId}/image",
+            consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    public EditorialArticleImageDtos.Asset uploadArticleImage(
+            @PathVariable long articleId,
+            @RequestPart("file") MultipartFile file,
+            @Valid @RequestPart("metadata") EditorialArticleImageDtos.UploadMetadata metadata,
+            Principal principal) {
+        return articleImageService.upload(articleId, file, metadata, principal.getName());
     }
 
     @PostMapping("/editor/articles/{articleId}/approval-requests")
