@@ -49,14 +49,20 @@ class EditorialArticleWorkflowStore {
             long articleId) {
         return Boolean.TRUE.equals(jdbc.queryForObject("""
                 SELECT EXISTS (
-                    SELECT 1 FROM agent_tasks
-                    WHERE id = ?
-                      AND agent_type = 'EDITORIAL'
-                      AND correlation_id = ?
-                      AND source_type = 'ARTICLE'
-                      AND source_id = ?
+                    SELECT 1
+                    FROM agent_tasks task
+                    JOIN articles article ON article.id = ?
+                    WHERE task.id = ?
+                      AND task.agent_type = 'EDITORIAL'
+                      AND task.correlation_id = ?
+                      AND (
+                          (task.source_type = 'ARTICLE' AND task.source_id = article.id::text)
+                          OR
+                          (task.source_type = 'ARTICLE_TOPIC'
+                           AND task.source_id = article.article_topic_id::text)
+                      )
                 )
-                """, Boolean.class, taskId, correlationId, String.valueOf(articleId)));
+                """, Boolean.class, articleId, taskId, correlationId));
     }
 
     boolean approvedBriefRequiresLegalReview(long topicId) {

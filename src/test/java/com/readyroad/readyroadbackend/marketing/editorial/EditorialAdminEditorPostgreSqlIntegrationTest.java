@@ -57,6 +57,39 @@ class EditorialAdminEditorPostgreSqlIntegrationTest {
                 RESTART IDENTITY
                 """);
         jdbc.update("DELETE FROM audit_logs WHERE event_type = 'EDITORIAL_ARTICLE_DRAFT_SAVED'");
+        jdbc.update("""
+                UPDATE article_topics
+                SET primary_language = title_language,
+                    usp_id = (SELECT id FROM marketing_usp WHERE active ORDER BY priority, id LIMIT 1),
+                    icp_id = (SELECT id FROM marketing_icp WHERE active ORDER BY id LIMIT 1),
+                    content_pillar_id = (
+                        SELECT id FROM marketing_content_pillars WHERE active ORDER BY priority, id LIMIT 1
+                    ),
+                    funnel_stage_id = (
+                        SELECT id FROM marketing_funnel_stages WHERE stage_key = 'EDUCATION'
+                    ),
+                    conversion_goal_id = (
+                        SELECT id FROM marketing_conversion_goals WHERE goal_key = 'CONTINUE_TOPIC_LEARNING'
+                    ),
+                    status = 'PLANNED'
+                """);
+    }
+
+    @Test
+    void blocksDirectDraftCreationWhenTheTopicHasNoApprovedStrategyContext() {
+        jdbc.update("""
+                UPDATE article_topics
+                SET primary_language = NULL, usp_id = NULL, icp_id = NULL,
+                    content_pillar_id = NULL, funnel_stage_id = NULL, conversion_goal_id = NULL
+                WHERE id = 1
+                """);
+
+        assertThatThrownBy(() -> service.save(
+                1, "AR", request("العنوان", "article-ar", "ملخص", "المحتوى", null), "admin"))
+                .isInstanceOf(ResponseStatusException.class)
+                .hasMessageContaining("422 UNPROCESSABLE_ENTITY")
+                .hasMessageContaining("BLOCKED_STRATEGY_CONTEXT");
+        assertThat(jdbc.queryForObject("SELECT count(*) FROM articles", Integer.class)).isZero();
     }
 
     @Test

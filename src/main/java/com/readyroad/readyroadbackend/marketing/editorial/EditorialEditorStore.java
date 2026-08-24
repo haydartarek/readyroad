@@ -20,7 +20,8 @@ class EditorialEditorStore {
                 SELECT t.id, t.topic_key, t.official_backlog_order, t.source_type,
                        t.working_title, t.title_language, t.primary_language,
                        t.article_priority, t.source_opportunity_id,
-                       t.content_pillar_id, t.funnel_stage_id, t.conversion_goal_id,
+                       t.usp_id, t.icp_id, t.content_pillar_id, t.funnel_stage_id,
+                       t.conversion_goal_id,
                        a.id AS article_id, a.lifecycle_state, a.canonical_language
                 FROM article_topics t
                 LEFT JOIN articles a ON a.article_topic_id = t.id
@@ -41,7 +42,7 @@ class EditorialEditorStore {
     TopicSeed lockTopic(long topicId) {
         return jdbc.query("""
                 SELECT id, topic_key, status, title_language, primary_language,
-                       content_pillar_id, funnel_stage_id, conversion_goal_id
+                       usp_id, icp_id, content_pillar_id, funnel_stage_id, conversion_goal_id
                 FROM article_topics
                 WHERE id = ?
                 FOR UPDATE
@@ -60,12 +61,13 @@ class EditorialEditorStore {
         Long id = jdbc.queryForObject("""
                 INSERT INTO articles (
                     article_topic_id, canonical_key, lifecycle_state, canonical_language,
-                    content_pillar_id, funnel_stage_id, conversion_goal_id
-                ) VALUES (?, ?, ?, ?, ?, ?, ?)
+                    usp_id, icp_id, content_pillar_id, funnel_stage_id, conversion_goal_id
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
                 RETURNING id
                 """, Long.class,
                 topic.id(), topic.topicKey(), topic.status(), canonicalLanguage,
-                topic.contentPillarId(), topic.funnelStageId(), topic.conversionGoalId());
+                topic.uspId(), topic.icpId(), topic.contentPillarId(),
+                topic.funnelStageId(), topic.conversionGoalId());
         return articleById(id == null ? -1 : id)
                 .orElseThrow(() -> new IllegalStateException("Editorial article was not persisted"));
     }
@@ -88,6 +90,8 @@ class EditorialEditorStore {
 
     private TopicRow topic(ResultSet result, int rowNumber) throws SQLException {
         Long opportunityId = result.getObject("source_opportunity_id", Long.class);
+        Long uspId = result.getObject("usp_id", Long.class);
+        String icpId = result.getString("icp_id");
         Long pillarId = result.getObject("content_pillar_id", Long.class);
         Long funnelId = result.getObject("funnel_stage_id", Long.class);
         Long goalId = result.getObject("conversion_goal_id", Long.class);
@@ -97,7 +101,7 @@ class EditorialEditorStore {
                 result.getInt("official_backlog_order"), result.getString("source_type"),
                 result.getString("working_title"), result.getString("title_language"),
                 primaryLanguage, result.getString("article_priority"),
-                opportunityId != null && pillarId != null && funnelId != null
+                uspId != null && icpId != null && pillarId != null && funnelId != null
                         && goalId != null && primaryLanguage != null,
                 result.getObject("article_id", Long.class), result.getString("lifecycle_state"),
                 result.getString("canonical_language"));
@@ -116,6 +120,7 @@ class EditorialEditorStore {
         return new TopicSeed(
                 result.getLong("id"), result.getString("topic_key"), result.getString("status"),
                 result.getString("title_language"), result.getString("primary_language"),
+                result.getObject("usp_id", Long.class), result.getString("icp_id"),
                 result.getObject("content_pillar_id", Long.class),
                 result.getObject("funnel_stage_id", Long.class),
                 result.getObject("conversion_goal_id", Long.class));
@@ -157,9 +162,21 @@ class EditorialEditorStore {
             String status,
             String titleLanguage,
             String primaryLanguage,
+            Long uspId,
+            String icpId,
             Long contentPillarId,
             Long funnelStageId,
-            Long conversionGoalId) {}
+            Long conversionGoalId) {
+
+        boolean strategyContextResolved() {
+            return primaryLanguage != null
+                    && uspId != null
+                    && icpId != null
+                    && contentPillarId != null
+                    && funnelStageId != null
+                    && conversionGoalId != null;
+        }
+    }
 
     record ArticleRow(
             long id,

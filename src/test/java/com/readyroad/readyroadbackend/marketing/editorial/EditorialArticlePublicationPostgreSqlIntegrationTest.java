@@ -267,6 +267,7 @@ class EditorialArticlePublicationPostgreSqlIntegrationTest {
         approvalTaskHandler.execute(claimed(targetApproval));
         dispatcher.dispatch(claimed(publicationTask(targetArticleId)));
 
+        assignCompleteStrategyContext(11);
         long sourceArticleId = editorService.save(11, "EN", new EditorialEditorDtos.SaveRequest(
                 "Source article",
                 "source-article",
@@ -345,6 +346,30 @@ class EditorialArticlePublicationPostgreSqlIntegrationTest {
                 "editor");
         approvalService.approve(response.id(), "owner", "Approved exact article snapshot for publication");
         return taskRepository.findById(response.id()).orElseThrow();
+    }
+
+    private void assignCompleteStrategyContext(int backlogOrder) {
+        jdbc.update("""
+                WITH selected_goal AS (
+                    SELECT id, funnel_stage_id
+                    FROM marketing_conversion_goals
+                    WHERE active
+                    ORDER BY id
+                    LIMIT 1
+                )
+                UPDATE article_topics topic
+                SET primary_language = 'EN',
+                    usp_id = (SELECT id FROM marketing_usp WHERE active ORDER BY priority DESC, id LIMIT 1),
+                    icp_id = (SELECT id FROM marketing_icp WHERE active ORDER BY id LIMIT 1),
+                    content_pillar_id = (
+                        SELECT id FROM marketing_content_pillars
+                        WHERE active ORDER BY priority DESC, id LIMIT 1
+                    ),
+                    funnel_stage_id = selected_goal.funnel_stage_id,
+                    conversion_goal_id = selected_goal.id
+                FROM selected_goal
+                WHERE topic.official_backlog_order = ?
+                """, backlogOrder);
     }
 
     private long eligibleArticle(int backlogOrder) {

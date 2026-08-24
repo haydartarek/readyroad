@@ -26,7 +26,8 @@ public class OpenAIResponsesContentGenerator implements ContentGenerationClient 
     private static final String INSTRUCTIONS = """
             You are RijVia's educational content adapter. Use only the verified facts in the request.
             Do not add Belgian traffic rules, exceptions, statistics, social proof, guarantees, official status,
-            government affiliation, or facts that are absent from the verified source. Preserve legal meaning.
+            government affiliation, personal experiences, testimonials, or facts that are absent from the
+            verified source. Preserve legal meaning.
             Write naturally for the requested language; do not translate from another generated version.
             Avoid generic filler, mechanical AI phrasing, keyword stuffing and emojis.
             Return only the requested structured output. Copy language and sourceReference exactly.
@@ -63,7 +64,9 @@ public class OpenAIResponsesContentGenerator implements ContentGenerationClient 
                 .reasoning(Reasoning.builder()
                         .effort(ReasoningEffort.of(properties.getContent().getReasoningEffort()))
                         .build())
-                .maxOutputTokens(properties.getContent().getMaxOutputTokens())
+                .maxOutputTokens(request.source().type() == ContentSourceType.EDITORIAL_BRIEF
+                        ? properties.getContent().getMaxArticleOutputTokens()
+                        : properties.getContent().getMaxOutputTokens())
                 .store(false)
                 .text(OpenAIStructuredContent.class)
                 .model(properties.getContent().getPrimaryModel())
@@ -227,14 +230,34 @@ public class OpenAIResponsesContentGenerator implements ContentGenerationClient 
                 Conversion goal: %s
                 Primary CTA: %s
 
-                Produce one concise educational draft in the target language. The title, summary, body and CTA
-                must be grounded in the source. If the source does not support useful content, do not fill gaps.
+                %s
                 """.formatted(
                 request.locale().name(), request.locale().brief(), request.source().sourceReference(),
                 request.source().type(), request.facts().title(), request.facts().facts(),
                 strategy.icp().name(), strategy.icp().primaryGoal(), strategy.usp().title(),
                 strategy.usp().evidenceReference(), strategy.positioning().statement(),
                 strategy.contentPillar().name(), strategy.funnelStage().stageKey(),
-                strategy.conversionGoal().name(), strategy.conversionGoal().primaryCta());
+                strategy.conversionGoal().name(), strategy.conversionGoal().primaryCta(),
+                outputInstruction(request));
+    }
+
+    private static String outputInstruction(GenerationRequest request) {
+        if (request.source().type() == ContentSourceType.EDITORIAL_BRIEF) {
+            return """
+                    Produce one complete, natural educational article draft in the target language.
+                    Use only the supplied verified claims and source references. Do not add a rule, exception,
+                    date, statistic, legal statement, regional claim or product claim that is absent from them.
+                    Write clearly, directly and smoothly for the intended learner. Explain rules and exceptions,
+                    and include practical examples, only when the verified claims support them. Keep the structure
+                    useful and reader-focused, without filler, literal translation, repetitive AI phrasing,
+                    invented experience, testimonials, exaggerated marketing or keyword stuffing. Return 600 to
+                    1600 words; pillar articles should contain at least 900 words. The CTA must fit the approved
+                    conversion goal naturally.
+                    """;
+        }
+        return """
+                Produce one concise educational draft in the target language. The title, summary, body and CTA
+                must be grounded in the source. If the source does not support useful content, do not fill gaps.
+                """;
     }
 }

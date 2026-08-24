@@ -41,6 +41,8 @@ public class ContentSourceService {
             case LESSON -> lesson(id.trim());
             case QUESTION -> question(id.trim());
             case YOUTUBE -> youtube(id.trim());
+            case EDITORIAL_BRIEF -> throw new BlockedContentSourceException(
+                    "Editorial brief sources are assembled only by the article draft workflow");
         };
     }
 

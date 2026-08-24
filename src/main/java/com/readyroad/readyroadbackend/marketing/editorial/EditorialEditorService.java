@@ -76,8 +76,14 @@ public class EditorialEditorService {
                 .findFirst()
                 .map(candidate -> candidate.articleId() == null)
                 .orElseThrow(() -> new IllegalArgumentException("Unknown article topic: " + topicId));
+        if (articleCreated && !topic.strategyContextResolved()) {
+            throw blockedStrategyContext();
+        }
         var article = store.findOrCreateArticle(topic);
         ensureEditable(article);
+        if (!topic.strategyContextResolved()) {
+            throw blockedStrategyContext();
+        }
         versionStore.lockArticle(article.id());
         var current = versionStore.current(article.id(), normalizedLanguage);
         var normalized = normalizedRequest(request);
@@ -220,5 +226,11 @@ public class EditorialEditorService {
                     HttpStatus.CONFLICT,
                     "Article content is locked in lifecycle state " + article.lifecycleState());
         }
+    }
+
+    private static ResponseStatusException blockedStrategyContext() {
+        return new ResponseStatusException(
+                HttpStatus.UNPROCESSABLE_ENTITY,
+                "BLOCKED_STRATEGY_CONTEXT: resolve the required Strategy Context first");
     }
 }

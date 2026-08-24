@@ -18,6 +18,7 @@ import com.readyroad.readyroadbackend.marketing.config.MarketingProperties;
 import java.io.ByteArrayInputStream;
 import java.net.SocketException;
 import java.nio.charset.StandardCharsets;
+import java.util.Map;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;
 import org.springframework.test.util.ReflectionTestUtils;
@@ -59,6 +60,43 @@ class OpenAIResponsesContentGeneratorTest {
         assertThat(captor.getValue().reasoning()).isPresent();
         assertThat(captor.getValue().reasoning().orElseThrow().effort().orElseThrow().asString())
                 .isEqualTo("medium");
+    }
+
+    @Test
+    @SuppressWarnings({"unchecked", "rawtypes"})
+    void usesTheDedicatedOutputBudgetForEditorialArticles() {
+        MarketingProperties properties = configuredProperties();
+        OpenAIClient client = mock(OpenAIClient.class);
+        ResponseService responses = mock(ResponseService.class);
+        ResponseService.WithRawResponse rawResponses = mock(ResponseService.WithRawResponse.class);
+        HttpResponseFor<Response> response = mock(HttpResponseFor.class);
+        when(client.responses()).thenReturn(responses);
+        when(responses.withRawResponse()).thenReturn(rawResponses);
+        when(rawResponses.create(any(ResponseCreateParams.class))).thenReturn(response);
+        when(response.statusCode()).thenReturn(200);
+        when(response.body()).thenReturn(new ByteArrayInputStream("""
+                {"model":"gpt-5.6-terra","usage":{"input_tokens":120,"output_tokens":60},"output":[
+                  {"type":"message","content":[{"type":"output_text","text":
+                  "{\\"language\\":\\"EN\\",\\"sourceReference\\":\\"ARTICLE_BRIEF:12:hash\\",\\"title\\":\\"Verified title\\",\\"summary\\":\\"Verified summary\\",\\"body\\":\\"Verified body\\",\\"cta\\":\\"Continue learning\\"}"}]}
+                ]}
+                """.getBytes(StandardCharsets.UTF_8)));
+        var source = new VerifiedContentSource(
+                ContentSourceType.EDITORIAL_BRIEF,
+                "12",
+                "ARTICLE_BRIEF:12:hash",
+                "hash",
+                Map.of(ContentLocale.EN,
+                        new VerifiedContentSource.LocalizedFacts("Article brief", "Verified claims")),
+                ContentTestFixtures.request());
+        var generator = new OpenAIResponsesContentGenerator(properties, client);
+
+        generator.generate(new ContentGenerationClient.GenerationRequest(
+                ContentLocale.EN, source, source.factsFor(ContentLocale.EN), ContentTestFixtures.strategy()));
+
+        ArgumentCaptor<ResponseCreateParams> captor = ArgumentCaptor.forClass(ResponseCreateParams.class);
+        org.mockito.Mockito.verify(rawResponses).create(captor.capture());
+        assertThat(captor.getValue().maxOutputTokens())
+                .contains(properties.getContent().getMaxArticleOutputTokens());
     }
 
     @Test

@@ -29,6 +29,8 @@ public class EditorialAdminController {
     private final EditorialBacklogService service;
     private final EditorialPriorityAdminService priorityAdminService;
     private final EditorialSourceCollectionService sourceCollectionService;
+    private final EditorialBriefService briefService;
+    private final EditorialDraftService draftService;
     private final EditorialEditorService editorService;
     private final EditorialArticleApprovalService articleApprovalService;
     private final EditorialArticleImageService articleImageService;
@@ -77,6 +79,24 @@ public class EditorialAdminController {
             Principal principal) {
         return ResponseEntity.accepted().body(
                 sourceCollectionService.request(request, principal.getName()));
+    }
+
+    @PostMapping("/topics/{topicId}/briefs")
+    public ResponseEntity<MarketingTaskLifecycleResponse> createBrief(
+            @PathVariable long topicId,
+            @Valid @RequestBody EditorialBriefDtos.CreateRequest request,
+            Principal principal) {
+        return ResponseEntity.accepted().body(
+                briefService.request(topicId, request, principal.getName()));
+    }
+
+    @PostMapping("/editor/articles/{articleId}/draft-requests")
+    public ResponseEntity<MarketingTaskLifecycleResponse> createDraft(
+            @PathVariable long articleId,
+            @Valid @RequestBody EditorialDraftDtos.CreateRequest request,
+            Principal principal) {
+        return ResponseEntity.accepted().body(
+                draftService.request(articleId, request, principal.getName()));
     }
 
     @GetMapping("/editor")

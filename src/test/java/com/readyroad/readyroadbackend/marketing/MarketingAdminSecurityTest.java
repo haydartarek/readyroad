@@ -182,6 +182,21 @@ class MarketingAdminSecurityTest {
                 .andExpect(status().isForbidden());
 
         for (String path : new String[] {
+                "/api/admin/marketing/editorial/topics/1/briefs",
+                "/api/admin/marketing/editorial/editor/articles/1/draft-requests"
+        }) {
+            mockMvc.perform(post(path)
+                            .contentType(MediaType.APPLICATION_JSON)
+                            .content("{}"))
+                    .andExpect(status().isUnauthorized());
+            mockMvc.perform(post(path)
+                            .header("Authorization", "Bearer " + userToken)
+                            .contentType(MediaType.APPLICATION_JSON)
+                            .content("{}"))
+                    .andExpect(status().isForbidden());
+        }
+
+        for (String path : new String[] {
                 "/api/admin/marketing/editorial/editor",
                 "/api/admin/marketing/editorial/editor/articles/1/versions?language=EN",
                 "/api/admin/marketing/editorial/editor/articles/1/performance"

@@ -77,7 +77,8 @@ class MarketingEditorialPostgreSqlIntegrationTest {
         jdbc.update("""
                 UPDATE article_topics
                 SET article_priority = NULL, priority_reason = NULL,
-                    source_opportunity_id = NULL, content_pillar_id = NULL,
+                    source_opportunity_id = NULL, primary_language = NULL,
+                    usp_id = NULL, icp_id = NULL, content_pillar_id = NULL,
                     funnel_stage_id = NULL, conversion_goal_id = NULL,
                     supporting_pages = '[]'::jsonb, internal_link_targets = '[]'::jsonb
                 """);
@@ -116,6 +117,8 @@ class MarketingEditorialPostgreSqlIntegrationTest {
                 WHERE article_priority IS NOT NULL
                    OR priority_reason IS NOT NULL
                    OR source_opportunity_id IS NOT NULL
+                   OR usp_id IS NOT NULL
+                   OR icp_id IS NOT NULL
                    OR content_pillar_id IS NOT NULL
                    OR funnel_stage_id IS NOT NULL
                    OR conversion_goal_id IS NOT NULL

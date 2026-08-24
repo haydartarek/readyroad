@@ -36,6 +36,8 @@ public final class EditorialDtos {
             String articlePriority,
             String priorityReason,
             Long sourceOpportunityId,
+            Long uspId,
+            String icpId,
             Long contentPillarId,
             Long funnelStageId,
             Long conversionGoalId,

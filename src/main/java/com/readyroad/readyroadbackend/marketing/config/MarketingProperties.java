@@ -55,11 +55,15 @@ public class MarketingProperties {
         private String reviewModel = "gpt-5.6-sol";
         private String reasoningEffort = "medium";
         private long maxOutputTokens = 1_200;
+        private long maxArticleOutputTokens = 7_000;
         private int maxSourceCharacters = 6_000;
         private int maxTitleCharacters = 140;
         private int maxSummaryCharacters = 360;
         private int maxBodyCharacters = 1_600;
         private int maxCtaCharacters = 180;
+        private int minArticleWords = 600;
+        private int minPillarArticleWords = 900;
+        private int maxArticleWords = 1_600;
     }
 
     @Getter

@@ -99,7 +99,28 @@ class MarketingStrategyPostgreSqlIntegrationTest {
         assertThat(jdbc.queryForObject("SELECT COUNT(*) FROM marketing_icp", Integer.class)).isEqualTo(6);
         assertThat(jdbc.queryForObject("SELECT COUNT(*) FROM marketing_content_pillars", Integer.class)).isEqualTo(12);
         assertThat(jdbc.queryForObject("SELECT COUNT(*) FROM marketing_funnel_stages", Integer.class)).isEqualTo(9);
-        assertThat(jdbc.queryForObject("SELECT COUNT(*) FROM marketing_conversion_goals", Integer.class)).isZero();
+        assertThat(jdbc.queryForObject(
+                "SELECT COUNT(*) FROM marketing_conversion_goals WHERE active", Integer.class)).isEqualTo(8);
+        assertThat(jdbc.queryForObject("""
+                SELECT COUNT(*)
+                FROM marketing_conversion_goals goal
+                JOIN marketing_funnel_stages stage ON stage.id = goal.funnel_stage_id
+                WHERE goal.active AND stage.stage_key = 'PAID_CONVERSION'
+                """, Integer.class)).isZero();
+        assertThat(jdbc.queryForList("""
+                SELECT stage.stage_key
+                FROM marketing_conversion_goals goal
+                JOIN marketing_funnel_stages stage ON stage.id = goal.funnel_stage_id
+                WHERE goal.active
+                ORDER BY stage.sequence_number
+                """, String.class)).containsExactly(
+                        "AWARENESS", "DISCOVERY", "EDUCATION", "PRACTICE",
+                        "ACCOUNT_CONVERSION", "EXAM_USAGE", "RETENTION", "ADVOCACY");
+        assertThat(jdbc.queryForObject("""
+                SELECT COUNT(*) FROM marketing_usp
+                WHERE active AND title = 'RijVia learning platform'
+                  AND evidence_reference = 'https://rijvia.be'
+                """, Integer.class)).isOne();
         assertThat(jdbc.queryForObject("SELECT COUNT(*) FROM social_proof_items", Integer.class)).isZero();
     }
 

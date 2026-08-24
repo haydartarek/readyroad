@@ -4,5 +4,6 @@ public enum ContentSourceType {
     ROAD_SIGN,
     LESSON,
     QUESTION,
-    YOUTUBE
+    YOUTUBE,
+    EDITORIAL_BRIEF
 }

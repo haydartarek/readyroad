@@ -1,6 +1,7 @@
 package com.readyroad.readyroadbackend.marketing.content;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -114,5 +115,12 @@ class ContentSourceServiceTest {
 
         assertThat(source.factsFor(ContentLocale.NL).facts()).contains("Antwoord", "Nederlandse uitleg");
         assertThat(source.factsFor(ContentLocale.FR).facts()).contains("Réponse", "Explication française");
+    }
+
+    @Test
+    void rejectsEditorialBriefsOutsideTheArticleDraftWorkflow() {
+        assertThatThrownBy(() -> service.load(ContentSourceType.EDITORIAL_BRIEF, "12"))
+                .isInstanceOf(BlockedContentSourceException.class)
+                .hasMessageContaining("article draft workflow");
     }
 }

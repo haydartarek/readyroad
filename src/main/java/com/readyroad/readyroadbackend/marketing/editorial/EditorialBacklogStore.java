@@ -16,18 +16,21 @@ class EditorialBacklogStore {
                 SELECT id, topic_key, official_backlog_order, cluster_order, cluster_key,
                        cluster_name, working_title, title_language, primary_language,
                        pillar, status, article_priority, priority_reason,
-                       source_opportunity_id, content_pillar_id, funnel_stage_id,
+                       source_opportunity_id, usp_id, icp_id, content_pillar_id, funnel_stage_id,
                        conversion_goal_id
                 FROM article_topics
                 WHERE source_type = 'OFFICIAL_STRATEGIC_BACKLOG'
                 ORDER BY official_backlog_order
                 """, (result, rowNumber) -> {
             Long opportunityId = result.getObject("source_opportunity_id", Long.class);
+            Long uspId = result.getObject("usp_id", Long.class);
+            String icpId = result.getString("icp_id");
             Long pillarId = result.getObject("content_pillar_id", Long.class);
             Long funnelId = result.getObject("funnel_stage_id", Long.class);
             Long goalId = result.getObject("conversion_goal_id", Long.class);
             String primaryLanguage = result.getString("primary_language");
-            boolean strategyResolved = opportunityId != null
+            boolean strategyResolved = uspId != null
+                    && icpId != null
                     && pillarId != null
                     && funnelId != null
                     && goalId != null
@@ -47,6 +50,8 @@ class EditorialBacklogStore {
                     result.getString("article_priority"),
                     result.getString("priority_reason"),
                     opportunityId,
+                    uspId,
+                    icpId,
                     pillarId,
                     funnelId,
                     goalId,
