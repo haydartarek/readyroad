@@ -50,7 +50,7 @@ class ExamServiceIntegrationTest extends BaseIntegrationTest { // ✅ Changed fr
 
     @BeforeEach
     void setUp() {
-        testUserId = 100L;
+        testUserId = getOrCreateTestUser("exam-service-user");
 
         // ✅ BaseIntegrationTest already seeded 200 PUBLISHED questions
         long questionCount = quizQuestionRepository.count();

@@ -313,6 +313,9 @@ public class StudentIntelligenceEngine {
             LocalDate today) {
         return categories.stream()
                 .filter(category -> category.attempted() >= MIN_CATEGORY_ATTEMPTS)
+                .filter(category -> TheoryEvidenceConfidence.supportsMasteryClaim(
+                        category.uniqueQuestionsAnswered(),
+                        category.eligibleQuestions()))
                 .map(category -> buildPriority(category, today))
                 .filter(category -> category.getAccuracy().doubleValue() >= PASS_THRESHOLD)
                 .sorted(Comparator.comparing(LearningPriority::getAccuracy).reversed())
@@ -352,7 +355,9 @@ public class StudentIntelligenceEngine {
                 .accuracy(decimal(accuracy))
                 .questionsAttempted(category.attempted())
                 .priorityScore(decimal(weightedAverage(riskParts)))
-                .confidenceScore(clampScore(Math.min(100.0, category.attempted() * 100.0 / 20.0)))
+                .confidenceScore(TheoryEvidenceConfidence.score(
+                        category.uniqueQuestionsAnswered(),
+                        category.eligibleQuestions()))
                 .trend(trend)
                 .trendChange(trendChange)
                 .daysSincePractice(daysSincePractice < 0 ? null : daysSincePractice)
@@ -499,6 +504,9 @@ public class StudentIntelligenceEngine {
         int activeDaysLast30 = countActiveDays(input.activityDates(), today, 30);
         int masteredCategories = (int) input.categories().stream()
                 .filter(category -> category.attempted() >= MIN_CATEGORY_ATTEMPTS)
+                .filter(category -> TheoryEvidenceConfidence.supportsMasteryClaim(
+                        category.uniqueQuestionsAnswered(),
+                        category.eligibleQuestions()))
                 .filter(category -> category.correct() * 100.0 / category.attempted() >= PASS_THRESHOLD)
                 .count();
 
@@ -646,6 +654,9 @@ public class StudentIntelligenceEngine {
     private Double categoryMasteryScore(List<CategoryEvidence> categories) {
         List<CategoryEvidence> measurable = categories.stream()
                 .filter(category -> category.attempted() >= MIN_CATEGORY_ATTEMPTS)
+                .filter(category -> TheoryEvidenceConfidence.supportsMasteryClaim(
+                        category.uniqueQuestionsAnswered(),
+                        category.eligibleQuestions()))
                 .toList();
         if (measurable.isEmpty()) {
             return null;
@@ -724,7 +735,9 @@ public class StudentIntelligenceEngine {
             int recentAttempts,
             int recentCorrect,
             int previousAttempts,
-            int previousCorrect) {
+            int previousCorrect,
+            long uniqueQuestionsAnswered,
+            long eligibleQuestions) {
     }
 
     public record QuestionEvidence(

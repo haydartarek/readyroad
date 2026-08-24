@@ -1,5 +1,6 @@
 package com.readyroad.readyroadbackend.integration;
 
+import com.readyroad.readyroadbackend.BaseIntegrationTest;
 import com.readyroad.readyroadbackend.config.TestDataSeederConfig;
 import com.readyroad.readyroadbackend.domain.entity.ExamSimulation;
 import com.readyroad.readyroadbackend.domain.entity.ExamSimulationAnswer;
@@ -51,7 +52,7 @@ import static org.assertj.core.api.Assertions.*;
 @Import(TestDataSeederConfig.class)
 @Transactional
 @DisplayName("Feature A: Exam Simulation Engine - BDD Integration Tests")
-public class FeatureAExamSimulationBDDTest {
+public class FeatureAExamSimulationBDDTest extends BaseIntegrationTest {
 
         @Autowired
         private ExamService examService;
@@ -73,8 +74,8 @@ public class FeatureAExamSimulationBDDTest {
 
         @BeforeEach
         void setUp() {
-                testUserId = 100L;
-                otherUserId = 200L;
+                testUserId = getOrCreateTestUser("feature-a-user");
+                otherUserId = getOrCreateTestUser("feature-a-other-user");
 
                 // TestDataSeederConfig has already seeded 60 published questions across 3
                 // categories

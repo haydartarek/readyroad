@@ -63,7 +63,7 @@ class TimeLimitEnforcementIntegrationTest extends BaseIntegrationTest {
 
         @BeforeEach
         void setUp() {
-                testUserId = 100L;
+                testUserId = getOrCreateTestUser("time-limit-user");
 
                 // Resolve the parent fixture from the database, never from the cached
                 // findAll() result or an assumed numeric ID.

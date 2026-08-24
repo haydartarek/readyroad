@@ -68,7 +68,7 @@ class ExamResultsIntegrationTest extends BaseIntegrationTest {
 
         @BeforeEach
         void setUp() {
-                testUserId = 999L;
+                testUserId = getOrCreateTestUser("exam-results-user");
 
                 // ✅ BaseIntegrationTest already seeded 200 PUBLISHED questions
                 long questionCount = quizQuestionRepository.count();

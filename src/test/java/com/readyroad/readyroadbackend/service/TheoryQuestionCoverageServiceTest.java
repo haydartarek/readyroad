@@ -41,14 +41,15 @@ class TheoryQuestionCoverageServiceTest {
         long userId = 42L;
         when(userRepository.findById(userId)).thenReturn(java.util.Optional.of(user("ar")));
         when(coverageStore.findCoverage(userId, "ar")).thenReturn(List.of(
-                row(101L, "TH01", "الأولوية", 6, 3, 5, 3, 2, 1),
-                row(102L, "TH02", "السرعة", 4, 1, 2, 0, 0, 0)));
+                row(101L, "TH01", "الأولوية", 6, 3, 3, 5, 3, 2, 1),
+                row(102L, "TH02", "السرعة", 4, 1, 0, 2, 0, 0, 0)));
 
         TheoryQuestionCoverageResponse result = service.getCoverage(userId);
 
         assertThat(result.getLanguageCode()).isEqualTo("ar");
         assertThat(result.getEligibleQuestions()).isEqualTo(10L);
         assertThat(result.getUniqueQuestionsSeen()).isEqualTo(4L);
+        assertThat(result.getUniqueQuestionsAnswered()).isEqualTo(3L);
         assertThat(result.getUnseenQuestions()).isEqualTo(6L);
         assertThat(result.getCoveragePercentage()).isEqualByComparingTo("40.00");
         assertThat(result.getTimesPresented()).isEqualTo(7L);
@@ -56,10 +57,13 @@ class TheoryQuestionCoverageServiceTest {
         assertThat(result.getTimesCorrect()).isEqualTo(2L);
         assertThat(result.getTimesIncorrect()).isEqualTo(1L);
         assertThat(result.getAccuracyPercentage()).isEqualByComparingTo("66.67");
+        assertThat(result.getConfidenceState()).isEqualTo("LOW");
 
         TheoryQuestionCoverageResponse.CategoryCoverage first = result.getCategories().getFirst();
         assertThat(first.getCoveragePercentage()).isEqualByComparingTo("50.00");
         assertThat(first.getAccuracyPercentage()).isEqualByComparingTo("66.67");
+        assertThat(first.getUniqueQuestionsAnswered()).isEqualTo(3L);
+        assertThat(first.getConfidenceState()).isEqualTo("LOW");
     }
 
     @Test
@@ -67,16 +71,43 @@ class TheoryQuestionCoverageServiceTest {
         long userId = 9L;
         when(userRepository.findById(userId)).thenReturn(java.util.Optional.of(user("en")));
         when(coverageStore.findCoverage(userId, "en")).thenReturn(List.of(
-                row(101L, "TH01", "Priority", 12, 1, 1, 1, 1, 0)));
+                row(101L, "TH01", "Priority", 12, 1, 1, 1, 1, 1, 0)));
 
         TheoryQuestionCoverageResponse.CategoryCoverage category =
                 service.getCoverage(userId).getCategories().getFirst();
 
         assertThat(category.getAccuracyPercentage()).isEqualByComparingTo("100.00");
         assertThat(category.getTimesAnswered()).isEqualTo(1L);
+        assertThat(category.getConfidenceState()).isEqualTo("LOW");
         assertThat(Arrays.stream(category.getClass().getDeclaredFields())
                 .map(java.lang.reflect.Field::getName))
                 .doesNotContain("mastery", "mastered", "masteryLevel");
+    }
+
+    @Test
+    void doesNotTreatTwoAnsweredQuestionsAsHighConfidenceEvenWhenBothAreCorrect() {
+        long userId = 10L;
+        when(userRepository.findById(userId)).thenReturn(java.util.Optional.of(user("en")));
+        when(coverageStore.findCoverage(userId, "en")).thenReturn(List.of(
+                row(101L, "TH01", "Priority", 20, 2, 2, 2, 2, 2, 0)));
+
+        TheoryQuestionCoverageResponse result = service.getCoverage(userId);
+
+        assertThat(result.getAccuracyPercentage()).isEqualByComparingTo("100.00");
+        assertThat(result.getConfidenceState()).isEqualTo("LOW");
+        assertThat(result.getCategories().getFirst().getConfidenceState()).isEqualTo("LOW");
+    }
+
+    @Test
+    void derivesConfidenceFromUniqueAnswerEvidenceAndCurrentInventory() {
+        assertThat(TheoryEvidenceConfidence.state(2, 20)).isEqualTo("LOW");
+        assertThat(TheoryEvidenceConfidence.state(9, 20)).isEqualTo("LOW");
+        assertThat(TheoryEvidenceConfidence.state(10, 20)).isEqualTo("MEDIUM");
+        assertThat(TheoryEvidenceConfidence.state(19, 20)).isEqualTo("MEDIUM");
+        assertThat(TheoryEvidenceConfidence.state(20, 20)).isEqualTo("HIGH");
+        assertThat(TheoryEvidenceConfidence.state(5, 5)).isEqualTo("HIGH");
+        assertThat(TheoryEvidenceConfidence.state(0, 0)).isEqualTo("LOW");
+        assertThat(TheoryEvidenceConfidence.score(2, 2)).isLessThan(40);
     }
 
     @ParameterizedTest
@@ -114,6 +145,7 @@ class TheoryQuestionCoverageServiceTest {
             String name,
             long eligible,
             long seen,
+            long uniqueAnswered,
             long presented,
             long answered,
             long correct,
@@ -124,6 +156,7 @@ class TheoryQuestionCoverageServiceTest {
                 name,
                 eligible,
                 seen,
+                uniqueAnswered,
                 presented,
                 answered,
                 correct,

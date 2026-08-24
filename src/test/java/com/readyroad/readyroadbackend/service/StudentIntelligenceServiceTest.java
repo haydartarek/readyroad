@@ -17,6 +17,7 @@ import com.readyroad.readyroadbackend.domain.repository.UserCategoryProgressRepo
 import com.readyroad.readyroadbackend.domain.repository.UserLessonProgressRepository;
 import com.readyroad.readyroadbackend.domain.repository.UserQuestionHistoryRepository;
 import com.readyroad.readyroadbackend.dto.StudentIntelligenceResponse;
+import com.readyroad.readyroadbackend.dto.TheoryQuestionCoverageResponse;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -47,6 +48,8 @@ class StudentIntelligenceServiceTest {
     private UserQuestionHistoryRepository questionHistoryRepository;
     @Mock
     private UserLessonProgressRepository lessonProgressRepository;
+    @Mock
+    private TheoryQuestionCoverageService theoryQuestionCoverageService;
 
     private StudentIntelligenceService service;
 
@@ -62,7 +65,8 @@ class StudentIntelligenceServiceTest {
                 categoryProgressRepository,
                 categoryRepository,
                 questionHistoryRepository,
-                lessonProgressRepository);
+                lessonProgressRepository,
+                theoryQuestionCoverageService);
     }
 
     @Test
@@ -78,6 +82,7 @@ class StudentIntelligenceServiceTest {
         when(lessonProgressRepository.findAllByUserId(userId)).thenReturn(List.of());
         when(examAnswerRepository.findHistoryForUser(userId, ExamSimulation.ExamStatus.COMPLETED))
                 .thenReturn(List.of());
+        when(theoryQuestionCoverageService.getCoverage(userId)).thenReturn(coverage());
 
         StudentIntelligenceResponse result = service.getStudentIntelligence(userId);
 
@@ -110,6 +115,12 @@ class StudentIntelligenceServiceTest {
         when(lessonProgressRepository.findAllByUserId(userId)).thenReturn(List.of());
         when(examAnswerRepository.findHistoryForUser(userId, ExamSimulation.ExamStatus.COMPLETED))
                 .thenReturn(List.of());
+        when(theoryQuestionCoverageService.getCoverage(userId)).thenReturn(coverage(
+                TheoryQuestionCoverageResponse.CategoryCoverage.builder()
+                        .categoryId(theory.getId())
+                        .eligibleQuestions(20L)
+                        .uniqueQuestionsAnswered(20L)
+                        .build()));
 
         StudentIntelligenceResponse result = service.getStudentIntelligence(userId);
 
@@ -148,5 +159,12 @@ class StudentIntelligenceServiceTest {
                 LocalDateTime.now(),
                 UserCategoryProgress.MasteryLevel.BEGINNER,
                 category);
+    }
+
+    private static TheoryQuestionCoverageResponse coverage(
+            TheoryQuestionCoverageResponse.CategoryCoverage... categories) {
+        return TheoryQuestionCoverageResponse.builder()
+                .categories(List.of(categories))
+                .build();
     }
 }

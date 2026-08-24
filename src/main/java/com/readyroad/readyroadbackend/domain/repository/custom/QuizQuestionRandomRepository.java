@@ -22,10 +22,11 @@ public interface QuizQuestionRandomRepository {
             QuizQuestion.DifficultyLevel difficulty,
             LocalDateTime cooldownCutoff);
 
-    List<QuizQuestion> findTheoryQuestionBankCandidates();
+    List<QuizQuestion> findTheoryQuestionBankCandidates(String languageCode);
 
     List<QuizQuestion> findCooldownEligibleTheoryQuestions(
             Long userId,
+            String languageCode,
             LocalDateTime cooldownCutoff);
 
     List<Long> findRandomQuestionIdsByDifficulty(String difficulty, int limit);

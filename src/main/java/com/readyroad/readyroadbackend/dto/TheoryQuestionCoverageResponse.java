@@ -17,6 +17,7 @@ public class TheoryQuestionCoverageResponse {
     private String languageCode;
     private Long eligibleQuestions;
     private Long uniqueQuestionsSeen;
+    private Long uniqueQuestionsAnswered;
     private Long unseenQuestions;
     private BigDecimal coveragePercentage;
     private Long timesPresented;
@@ -24,6 +25,7 @@ public class TheoryQuestionCoverageResponse {
     private Long timesCorrect;
     private Long timesIncorrect;
     private BigDecimal accuracyPercentage;
+    private String confidenceState;
     private List<CategoryCoverage> categories;
 
     @Data
@@ -37,6 +39,7 @@ public class TheoryQuestionCoverageResponse {
         private String categoryName;
         private Long eligibleQuestions;
         private Long uniqueQuestionsSeen;
+        private Long uniqueQuestionsAnswered;
         private Long unseenQuestions;
         private BigDecimal coveragePercentage;
         private Long timesPresented;
@@ -44,5 +47,6 @@ public class TheoryQuestionCoverageResponse {
         private Long timesCorrect;
         private Long timesIncorrect;
         private BigDecimal accuracyPercentage;
+        private String confidenceState;
     }
 }

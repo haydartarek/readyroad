@@ -61,7 +61,7 @@ class ExamAnswerSubmissionIntegrationTest extends BaseIntegrationTest {
 
         @BeforeEach
         void setUp() {
-                testUserId = 100L;
+                testUserId = getOrCreateTestUser("exam-answer-user");
 
                 // ✅ Clean up existing exams to avoid "User already has an active exam"
                 examRepository.deleteAll();

@@ -11,6 +11,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.EnumMap;
 import java.util.HashSet;
@@ -19,12 +20,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.Queue;
 import java.util.Set;
-import lombok.RequiredArgsConstructor;
+import java.util.concurrent.ThreadLocalRandom;
+import java.util.function.Supplier;
+import java.util.random.RandomGenerator;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
-@RequiredArgsConstructor
 public class TheoryExamQuestionAllocator {
 
     private static final int EXAM_SIZE = 50;
@@ -40,22 +43,54 @@ public class TheoryExamQuestionAllocator {
 
     private final QuizQuestionRepository questionRepository;
     private final BackendMessageService messages;
+    private final Supplier<RandomGenerator> randomProvider;
+
+    @Autowired
+    public TheoryExamQuestionAllocator(
+            QuizQuestionRepository questionRepository,
+            BackendMessageService messages) {
+        this(questionRepository, messages, ThreadLocalRandom::current);
+    }
+
+    TheoryExamQuestionAllocator(
+            QuizQuestionRepository questionRepository,
+            BackendMessageService messages,
+            RandomGenerator randomGenerator) {
+        this(questionRepository, messages, () -> randomGenerator);
+    }
+
+    private TheoryExamQuestionAllocator(
+            QuizQuestionRepository questionRepository,
+            BackendMessageService messages,
+            Supplier<RandomGenerator> randomProvider) {
+        this.questionRepository = questionRepository;
+        this.messages = messages;
+        this.randomProvider = randomProvider;
+    }
 
     @Transactional(readOnly = true)
-    public Allocation allocate(Long userId, LocalDateTime cooldownCutoff) {
+    public Allocation allocate(Long userId, String languageCode, LocalDateTime cooldownCutoff) {
         return allocateEligibleQuestions(
-                questionRepository.findTheoryQuestionBankCandidates(),
-                questionRepository.findCooldownEligibleTheoryQuestions(userId, cooldownCutoff));
+                questionRepository.findTheoryQuestionBankCandidates(languageCode),
+                questionRepository.findCooldownEligibleTheoryQuestions(userId, languageCode, cooldownCutoff),
+                languageCode);
     }
 
     Allocation allocateEligibleQuestions(List<QuizQuestion> candidates) {
-        return allocateEligibleQuestions(candidates, candidates);
+        return allocateEligibleQuestions(candidates, candidates, "en");
     }
 
     Allocation allocateEligibleQuestions(
             List<QuizQuestion> bankCandidates,
             List<QuizQuestion> userAvailableCandidates) {
-        Map<Long, QuizQuestion> bankQuestions = uniqueDeliveryEligible(bankCandidates);
+        return allocateEligibleQuestions(bankCandidates, userAvailableCandidates, "en");
+    }
+
+    Allocation allocateEligibleQuestions(
+            List<QuizQuestion> bankCandidates,
+            List<QuizQuestion> userAvailableCandidates,
+            String languageCode) {
+        Map<Long, QuizQuestion> bankQuestions = uniqueDeliveryEligible(bankCandidates, languageCode);
         Map<Long, CategoryPool> bankPools = groupByCategory(bankQuestions.values());
         List<CategoryPool> bankEligibleCategories = bankPools.values().stream()
                 .filter(pool -> pool.capacity() >= MIN_ELIGIBLE_QUESTIONS_PER_CATEGORY)
@@ -74,7 +109,7 @@ public class TheoryExamQuestionAllocator {
         Set<Long> bankQuestionIds = bankQuestions.keySet();
         Map<Long, QuizQuestion> userQuestions = new LinkedHashMap<>();
         for (QuizQuestion question : userAvailableCandidates) {
-            if (isDeliveryEligible(question) && bankQuestionIds.contains(question.getId())) {
+            if (isDeliveryEligible(question, languageCode) && bankQuestionIds.contains(question.getId())) {
                 userQuestions.putIfAbsent(question.getId(), question);
             }
         }
@@ -107,7 +142,10 @@ public class TheoryExamQuestionAllocator {
         Map<Long, Integer> categoryTargets =
                 applyUserAvailability(configuredUserCategories, blueprintCategoryTargets);
         DifficultyAllocation difficultyAllocation =
-                allocateDifficulties(configuredUserCategories, categoryTargets);
+                allocateDifficulties(
+                        configuredUserCategories,
+                        categoryTargets,
+                        randomProvider.get());
         List<QuizQuestion> selected =
                 selectQuestions(configuredUserCategories, difficultyAllocation.counts());
 
@@ -129,10 +167,12 @@ public class TheoryExamQuestionAllocator {
                 userEligibleCapacity);
     }
 
-    private Map<Long, QuizQuestion> uniqueDeliveryEligible(List<QuizQuestion> candidates) {
+    private Map<Long, QuizQuestion> uniqueDeliveryEligible(
+            List<QuizQuestion> candidates,
+            String languageCode) {
         Map<Long, QuizQuestion> uniqueCandidates = new LinkedHashMap<>();
         for (QuizQuestion question : candidates) {
-            if (isDeliveryEligible(question)) {
+            if (isDeliveryEligible(question, languageCode)) {
                 uniqueCandidates.putIfAbsent(question.getId(), question);
             }
         }
@@ -237,8 +277,11 @@ public class TheoryExamQuestionAllocator {
 
     private DifficultyAllocation allocateDifficulties(
             List<CategoryPool> categories,
-            Map<Long, Integer> categoryTargets) {
-        int categoryCount = categories.size();
+            Map<Long, Integer> categoryTargets,
+            RandomGenerator random) {
+        List<CategoryPool> allocationOrder = new ArrayList<>(categories);
+        shuffle(allocationOrder, random);
+        int categoryCount = allocationOrder.size();
         int difficultyCount = DIFFICULTIES.size();
         int source = 0;
         int firstCategory = 1;
@@ -249,7 +292,7 @@ public class TheoryExamQuestionAllocator {
         int[][] original = new int[nodeCount][nodeCount];
 
         for (int categoryIndex = 0; categoryIndex < categoryCount; categoryIndex++) {
-            CategoryPool pool = categories.get(categoryIndex);
+            CategoryPool pool = allocationOrder.get(categoryIndex);
             int categoryNode = firstCategory + categoryIndex;
             addCapacity(capacity, original, source, categoryNode,
                     categoryTargets.get(pool.category().getId()));
@@ -269,7 +312,7 @@ public class TheoryExamQuestionAllocator {
         Map<Long, EnumMap<QuizQuestion.DifficultyLevel, Integer>> counts = new LinkedHashMap<>();
         EnumMap<QuizQuestion.DifficultyLevel, Integer> globalCounts = zeroDifficultyCounts();
         for (int categoryIndex = 0; categoryIndex < categoryCount; categoryIndex++) {
-            CategoryPool pool = categories.get(categoryIndex);
+            CategoryPool pool = allocationOrder.get(categoryIndex);
             int categoryNode = firstCategory + categoryIndex;
             EnumMap<QuizQuestion.DifficultyLevel, Integer> categoryCounts = zeroDifficultyCounts();
             for (int difficultyIndex = 0; difficultyIndex < difficultyCount; difficultyIndex++) {
@@ -283,7 +326,7 @@ public class TheoryExamQuestionAllocator {
         }
 
         if (exactFlow < EXAM_SIZE) {
-            fillDifficultyShortage(categories, categoryTargets, counts, globalCounts);
+            fillDifficultyShortage(allocationOrder, categoryTargets, counts, globalCounts);
         }
         return new DifficultyAllocation(
                 counts,
@@ -382,7 +425,7 @@ public class TheoryExamQuestionAllocator {
         return counts;
     }
 
-    private boolean isDeliveryEligible(QuizQuestion question) {
+    private boolean isDeliveryEligible(QuizQuestion question, String languageCode) {
         if (question == null || question.getId() == null || question.getCategory() == null
                 || question.getDifficultyLevel() == null
                 || !Boolean.TRUE.equals(question.getIsActive())
@@ -394,23 +437,44 @@ public class TheoryExamQuestionAllocator {
         if (!Boolean.TRUE.equals(category.getIsActive()) || scope == null || !scope.supportsTheoreticalExam()) {
             return false;
         }
-        if (PlaceholderDetector.hasPlaceholder(
-                question.getQuestionEn(),
-                question.getQuestionNl(),
-                question.getQuestionFr(),
-                question.getQuestionAr())) {
+        if (PlaceholderDetector.isPlaceholder(localizedQuestion(question, languageCode))) {
             return false;
         }
         List<QuizAnswerOption> options = question.getDeliverableOptions();
         if (options.size() < 2 || options.size() > 3
-                || options.stream().anyMatch(option -> PlaceholderDetector.hasPlaceholder(
-                        option.getOptionTextEn(),
-                        option.getOptionTextNl(),
-                        option.getOptionTextFr(),
-                        option.getOptionTextAr()))) {
+                || options.stream().anyMatch(option ->
+                        PlaceholderDetector.isPlaceholder(localizedOption(option, languageCode)))) {
             return false;
         }
         return options.stream().filter(option -> Boolean.TRUE.equals(option.getIsCorrect())).count() == 1;
+    }
+
+    private static <T> void shuffle(List<T> values, RandomGenerator random) {
+        for (int index = values.size() - 1; index > 0; index--) {
+            Collections.swap(values, index, random.nextInt(index + 1));
+        }
+    }
+
+    private static String localizedQuestion(QuizQuestion question, String languageCode) {
+        return switch (normalizedLanguage(languageCode)) {
+            case "ar" -> question.getQuestionAr();
+            case "nl" -> question.getQuestionNl();
+            case "fr" -> question.getQuestionFr();
+            default -> question.getQuestionEn();
+        };
+    }
+
+    private static String localizedOption(QuizAnswerOption option, String languageCode) {
+        return switch (normalizedLanguage(languageCode)) {
+            case "ar" -> option.getOptionTextAr();
+            case "nl" -> option.getOptionTextNl();
+            case "fr" -> option.getOptionTextFr();
+            default -> option.getOptionTextEn();
+        };
+    }
+
+    private static String normalizedLanguage(String languageCode) {
+        return languageCode == null ? "en" : languageCode.trim().toLowerCase(java.util.Locale.ROOT);
     }
 
     private ExamQuestionPoolUnavailableException unavailable(int eligibleCapacity) {

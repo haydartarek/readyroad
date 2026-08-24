@@ -82,6 +82,7 @@ class TheoryQuestionCoveragePostgreSqlIntegrationTest {
 
         assertThat(row.eligibleQuestions()).isEqualTo(3);
         assertThat(row.uniqueQuestionsSeen()).isEqualTo(2);
+        assertThat(row.uniqueQuestionsAnswered()).isEqualTo(1);
         assertThat(row.timesPresented()).isEqualTo(3);
         assertThat(row.timesAnswered()).isEqualTo(2);
         assertThat(row.timesCorrect()).isEqualTo(1);
@@ -119,6 +120,7 @@ class TheoryQuestionCoveragePostgreSqlIntegrationTest {
 
         assertThat(row.eligibleQuestions()).isEqualTo(2);
         assertThat(row.uniqueQuestionsSeen()).isZero();
+        assertThat(row.uniqueQuestionsAnswered()).isEqualTo(1);
         assertThat(row.timesPresented()).isZero();
         assertThat(row.timesAnswered()).isEqualTo(1);
         assertThat(row.timesCorrect()).isEqualTo(1);

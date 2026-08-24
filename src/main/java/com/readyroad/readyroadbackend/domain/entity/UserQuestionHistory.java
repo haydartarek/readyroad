@@ -10,7 +10,7 @@ import lombok.extern.slf4j.Slf4j;
 import java.time.LocalDateTime;
 
 /**
- * Tracks when users see questions to enforce 24h cooldown (Law #1).
+ * Tracks question presentation and answer evidence across learning contexts.
  * Enhanced in Phase 4 to track performance for adaptive difficulty (Law #2).
  * Generic design - works for any content domain.
  * 
@@ -285,32 +285,6 @@ public class UserQuestionHistory {
             return 0.0;
         }
         return (double) this.timesCorrect / totalAttempts * 100.0;
-    }
-
-    /**
-     * Checks if the question is within 24-hour cooldown period
-     * 
-     * @return true if question was answered in last 24 hours
-     */
-    public boolean isWithinCooldown() {
-        if (this.answeredAt == null) {
-            return false;
-        }
-        LocalDateTime cooldownEnd = this.answeredAt.plusHours(24);
-        return LocalDateTime.now().isBefore(cooldownEnd);
-    }
-
-    /**
-     * Gets hours until cooldown expires
-     * 
-     * @return hours remaining (0 if cooldown expired)
-     */
-    public long getHoursUntilCooldownExpires() {
-        if (!isWithinCooldown()) {
-            return 0;
-        }
-        LocalDateTime cooldownEnd = this.answeredAt.plusHours(24);
-        return java.time.Duration.between(LocalDateTime.now(), cooldownEnd).toHours();
     }
 
     /**

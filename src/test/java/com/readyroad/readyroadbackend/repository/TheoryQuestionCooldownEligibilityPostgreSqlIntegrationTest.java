@@ -146,13 +146,29 @@ class TheoryQuestionCooldownEligibilityPostgreSqlIntegrationTest {
         long availableForUser = insertQuestion("Bank and user eligible");
         insertHistory(userA, blockedForUser, "THEORY", CUTOFF.plusHours(1), CUTOFF.plusHours(1));
 
-        List<Long> bankIds = questionRepository.findTheoryQuestionBankCandidates().stream()
+        List<Long> bankIds = questionRepository.findTheoryQuestionBankCandidates("en").stream()
                 .map(QuizQuestion::getId)
                 .toList();
         List<Long> userIds = eligibleQuestionIds(userA);
 
         assertThat(bankIds).contains(blockedForUser, availableForUser);
         assertThat(userIds).contains(availableForUser).doesNotContain(blockedForUser);
+    }
+
+    @Test
+    void bankEligibilityUsesTheRequestedLocaleWithoutBorrowingAnotherTranslation() {
+        long questionId = insertQuestion("Locale-specific question");
+        jdbc.update("UPDATE quiz_questions SET question_en = 'Option A' WHERE id = ?", questionId);
+
+        List<Long> arabicIds = questionRepository.findTheoryQuestionBankCandidates("ar").stream()
+                .map(QuizQuestion::getId)
+                .toList();
+        List<Long> englishIds = questionRepository.findTheoryQuestionBankCandidates("en").stream()
+                .map(QuizQuestion::getId)
+                .toList();
+
+        assertThat(arabicIds).contains(questionId);
+        assertThat(englishIds).doesNotContain(questionId);
     }
 
     private Set<Long> eligibleIds(long userId) {
@@ -178,7 +194,7 @@ class TheoryQuestionCooldownEligibilityPostgreSqlIntegrationTest {
     }
 
     private long insertQuestion(String englishText) {
-        return jdbc.queryForObject("""
+        long questionId = jdbc.queryForObject("""
                 INSERT INTO quiz_questions
                     (question_ar, question_en, question_nl, question_fr, question_type,
                      difficulty_level, category_id, is_active, status, published_at)
@@ -186,6 +202,15 @@ class TheoryQuestionCooldownEligibilityPostgreSqlIntegrationTest {
                     (?, ?, ?, ?, 'MULTIPLE_CHOICE', 'EASY', ?, true, 'PUBLISHED', CURRENT_TIMESTAMP)
                 RETURNING id
                 """, Long.class, englishText, englishText, englishText, englishText, categoryId);
+        jdbc.update("""
+                INSERT INTO quiz_answer_options
+                    (question_id, option_text_ar, option_text_en, option_text_nl, option_text_fr,
+                     is_correct, display_order, is_active)
+                VALUES
+                    (?, 'Correct', 'Correct', 'Correct', 'Correct', true, 1, true),
+                    (?, 'Incorrect', 'Incorrect', 'Incorrect', 'Incorrect', false, 2, true)
+                """, questionId, questionId);
+        return questionId;
     }
 
     private void insertHistory(

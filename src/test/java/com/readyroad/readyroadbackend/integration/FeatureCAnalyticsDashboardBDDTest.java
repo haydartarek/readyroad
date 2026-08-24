@@ -89,8 +89,8 @@ public class FeatureCAnalyticsDashboardBDDTest extends BaseIntegrationTest {
 
         @BeforeEach
         void setUp() {
-                testUserId = 888L;
-                otherUserId = 999L;
+                testUserId = getOrCreateTestUser("feature-c-user");
+                otherUserId = getOrCreateTestUser("feature-c-other-user");
 
                 // Resolve explicit parent fixtures from the database. CategoryRepository.findAll()
                 // is cached and may contain entities rolled back by an earlier test.

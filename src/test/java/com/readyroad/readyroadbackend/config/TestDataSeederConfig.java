@@ -70,7 +70,7 @@ public class TestDataSeederConfig {
             Category situations = createCategory(categoryRepo, "SITUATE", "Road Situations",
                 "Verkeerssituaties", "Situations routières", "مواقف الطريق");
 
-            // Create 200 PUBLISHED questions (supports 4 consecutive exams with 24h cooldown)
+            // Create 200 published questions for generator capacity and rotation tests.
             // Belgian exam requires 50, we create 200 to support 4 exams
             int questionsPerCategory = 67;
 

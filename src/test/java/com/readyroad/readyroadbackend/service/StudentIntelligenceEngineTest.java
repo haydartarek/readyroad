@@ -51,6 +51,28 @@ class StudentIntelligenceEngineTest {
     }
 
     @Test
+    void doesNotClaimCategoryMasteryFromTwoCorrectAnswers() {
+        StudentIntelligenceEngine.CategoryEvidence tinySample = category(
+                1L, "PRIORITY", 2, 2, today, 0, 0, 0, 0, 2, 2);
+
+        StudentIntelligenceResponse result = engine.analyze(
+                new StudentIntelligenceEngine.AnalyticsInput(
+                        0,
+                        List.of(),
+                        List.of(tinySample),
+                        List.of(),
+                        Set.of(today),
+                        0,
+                        0,
+                        0,
+                        0),
+                today);
+
+        assertThat(result.getStrongestCategories()).isEmpty();
+        assertThat(result.getProgressJourney().getMasteredCategories()).isZero();
+    }
+
+    @Test
     void calculatesHistoricalExamAndLearningIntelligenceFromCompleteEvidence() {
         List<StudentIntelligenceEngine.ScoredActivity> activities = List.of(
                 official(today.minusDays(50), 74, false, 1_500),
@@ -358,6 +380,33 @@ class StudentIntelligenceEngineTest {
             int recentCorrect,
             int previousAttempts,
             int previousCorrect) {
+        long evidence = Math.max(5, Math.min(20, attempted));
+        return category(
+                id,
+                code,
+                attempted,
+                correct,
+                lastPracticed,
+                recentAttempts,
+                recentCorrect,
+                previousAttempts,
+                previousCorrect,
+                evidence,
+                evidence);
+    }
+
+    private static StudentIntelligenceEngine.CategoryEvidence category(
+            Long id,
+            String code,
+            int attempted,
+            int correct,
+            LocalDate lastPracticed,
+            int recentAttempts,
+            int recentCorrect,
+            int previousAttempts,
+            int previousCorrect,
+            long uniqueQuestionsAnswered,
+            long eligibleQuestions) {
         return new StudentIntelligenceEngine.CategoryEvidence(
                 id,
                 code,
@@ -371,7 +420,9 @@ class StudentIntelligenceEngineTest {
                 recentAttempts,
                 recentCorrect,
                 previousAttempts,
-                previousCorrect);
+                previousCorrect,
+                uniqueQuestionsAnswered,
+                eligibleQuestions);
     }
 
     private static StudentIntelligenceEngine.QuestionEvidence question(

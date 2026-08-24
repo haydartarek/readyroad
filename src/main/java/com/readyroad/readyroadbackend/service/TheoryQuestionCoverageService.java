@@ -39,6 +39,7 @@ public class TheoryQuestionCoverageService {
 
         long eligible = sum(categories, CategoryCoverage::getEligibleQuestions);
         long seen = sum(categories, CategoryCoverage::getUniqueQuestionsSeen);
+        long uniqueAnswered = sum(categories, CategoryCoverage::getUniqueQuestionsAnswered);
         long presented = sum(categories, CategoryCoverage::getTimesPresented);
         long answered = sum(categories, CategoryCoverage::getTimesAnswered);
         long correct = sum(categories, CategoryCoverage::getTimesCorrect);
@@ -48,6 +49,7 @@ public class TheoryQuestionCoverageService {
                 .languageCode(languageCode)
                 .eligibleQuestions(eligible)
                 .uniqueQuestionsSeen(seen)
+                .uniqueQuestionsAnswered(uniqueAnswered)
                 .unseenQuestions(Math.max(0, eligible - seen))
                 .coveragePercentage(percentage(seen, eligible))
                 .timesPresented(presented)
@@ -55,6 +57,7 @@ public class TheoryQuestionCoverageService {
                 .timesCorrect(correct)
                 .timesIncorrect(incorrect)
                 .accuracyPercentage(percentage(correct, answered))
+                .confidenceState(TheoryEvidenceConfidence.state(uniqueAnswered, eligible))
                 .categories(categories)
                 .build();
     }
@@ -67,6 +70,7 @@ public class TheoryQuestionCoverageService {
                 .categoryName(row.categoryName())
                 .eligibleQuestions(row.eligibleQuestions())
                 .uniqueQuestionsSeen(row.uniqueQuestionsSeen())
+                .uniqueQuestionsAnswered(row.uniqueQuestionsAnswered())
                 .unseenQuestions(unseen)
                 .coveragePercentage(percentage(row.uniqueQuestionsSeen(), row.eligibleQuestions()))
                 .timesPresented(row.timesPresented())
@@ -74,6 +78,9 @@ public class TheoryQuestionCoverageService {
                 .timesCorrect(row.timesCorrect())
                 .timesIncorrect(row.timesIncorrect())
                 .accuracyPercentage(percentage(row.timesCorrect(), row.timesAnswered()))
+                .confidenceState(TheoryEvidenceConfidence.state(
+                        row.uniqueQuestionsAnswered(),
+                        row.eligibleQuestions()))
                 .build();
     }
 
@@ -96,4 +103,5 @@ public class TheoryQuestionCoverageService {
         String normalized = value == null ? "" : value.trim().toLowerCase(Locale.ROOT);
         return SUPPORTED_LANGUAGES.contains(normalized) ? normalized : "en";
     }
+
 }

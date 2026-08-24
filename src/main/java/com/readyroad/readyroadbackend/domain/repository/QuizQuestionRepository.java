@@ -114,6 +114,10 @@ public interface QuizQuestionRepository extends JpaRepository<QuizQuestion, Long
          */
         long countByIdInAndCategoryId(List<Long> ids, Long categoryId);
 
+        @EntityGraph(attributePaths = { "options", "category" })
+        @Query("SELECT DISTINCT qq FROM QuizQuestion qq ORDER BY qq.id")
+        List<QuizQuestion> findAllForTheoryBankHealth();
+
         // ========== Phase 4: Adaptive Difficulty Methods (Law #2) ==========
 
         /**

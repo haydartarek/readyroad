@@ -11,9 +11,14 @@ import com.readyroad.readyroadbackend.domain.enums.CategoryContentScope;
 import com.readyroad.readyroadbackend.domain.repository.QuizQuestionRepository;
 import com.readyroad.readyroadbackend.exception.ExamQuestionPoolUnavailableException;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
+import java.util.Set;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.Collectors;
 import org.junit.jupiter.api.BeforeEach;
@@ -162,6 +167,143 @@ class TheoryExamQuestionAllocatorTest {
                     assertThat(unavailable.getRequiredQuestions()).isEqualTo(50);
                     assertThat(unavailable.getEligibleCapacity()).isEqualTo(48);
                 });
+    }
+
+    @Test
+    void seededSimulationKeepsFiftyUniqueQuestionsAndCirculatesTheCurrentDynamicBank() {
+        TheoryExamQuestionAllocator simulationAllocator = new TheoryExamQuestionAllocator(
+                questionRepository, messages, new Random(20260824L));
+        List<QuizQuestion> bank = new ArrayList<>();
+        bank.addAll(categoryPool(category(1, "TH01", 14), 20, 15, 10));
+        bank.addAll(categoryPool(category(2, "TH02", 16), 20, 19, 3));
+        bank.addAll(categoryPool(category(3, "TH03", 14), 9, 7, 6));
+        bank.addAll(categoryPool(category(4, "TH04", 10), 2, 0, 0));
+        bank.addAll(categoryPool(category(5, "TH05", 16), 19, 11, 4));
+        bank.addAll(categoryPool(category(6, "TH06", 10), 5, 12, 5));
+        bank.addAll(categoryPool(category(7, "TH07", 10), 5, 2, 0));
+        bank.addAll(categoryPool(category(8, "TH08", 10), 9, 17, 4));
+
+        Random seededRandom = new Random(20260824L);
+        Map<Long, Integer> presentations = new HashMap<>();
+        Map<String, Integer> categoryPresentations = new LinkedHashMap<>();
+        Map<QuizQuestion.DifficultyLevel, Integer> difficultyPresentations = new LinkedHashMap<>();
+        Set<Long> previous = Set.of();
+        int totalAdjacentOverlap = 0;
+        int duplicateViolations = 0;
+        int categoryQuotaRelaxations = 0;
+        int difficultyRelaxations = 0;
+        int simulations = 500;
+
+        for (int iteration = 0; iteration < simulations; iteration++) {
+            List<QuizQuestion> ranked = new ArrayList<>(bank);
+            Collections.shuffle(ranked, seededRandom);
+            TheoryExamQuestionAllocator.Allocation allocation =
+                    simulationAllocator.allocateEligibleQuestions(ranked, ranked, "en");
+
+            assertThat(allocation.questions()).hasSize(50);
+            Set<Long> selected = allocation.questions().stream()
+                    .map(QuizQuestion::getId)
+                    .collect(Collectors.toSet());
+            if (selected.size() != allocation.questions().size()) {
+                duplicateViolations++;
+            }
+            assertThat(selected).hasSize(50);
+            assertThat(allocation.bankEligibleCounts()).doesNotContainKey(4L);
+            assertThat(allocation.difficultyCounts().values().stream()
+                    .mapToInt(Integer::intValue).sum()).isEqualTo(50);
+            allocation.questions().forEach(question -> {
+                assertThat(question.getCategory().getContentScope().supportsTheoreticalExam()).isTrue();
+                assertThat(question.getDifficultyLevel()).isNotNull();
+                assertThat(question.getQuestionEn()).isNotBlank();
+                assertThat(question.getOptions().stream().filter(QuizAnswerOption::getIsActive)).hasSizeBetween(2, 3);
+                assertThat(question.getOptions().stream()
+                        .filter(QuizAnswerOption::getIsActive)
+                        .filter(QuizAnswerOption::getIsCorrect)).hasSize(1);
+            });
+            countByCategory(allocation.questions()).forEach(
+                    (category, count) -> categoryPresentations.merge(category, count, Integer::sum));
+            countByDifficulty(allocation.questions()).forEach(
+                    (difficulty, count) -> difficultyPresentations.merge(difficulty, count, Integer::sum));
+            if (!allocation.categoryTargets().equals(allocation.blueprintCategoryTargets())) {
+                categoryQuotaRelaxations++;
+            }
+            if (allocation.difficultyRelaxed()) {
+                difficultyRelaxations++;
+            }
+            selected.forEach(id -> presentations.merge(id, 1, Integer::sum));
+            if (!previous.isEmpty()) {
+                Set<Long> overlap = new HashSet<>(previous);
+                overlap.retainAll(selected);
+                totalAdjacentOverlap += overlap.size();
+            }
+            previous = selected;
+        }
+
+        Set<Long> blueprintInventory = bank.stream()
+                .filter(question -> question.getCategory().getId() != 4L)
+                .map(QuizQuestion::getId)
+                .collect(Collectors.toSet());
+        assertThat(presentations.keySet()).containsExactlyInAnyOrderElementsOf(blueprintInventory);
+        assertThat(presentations.values()).allMatch(count -> count > 0);
+        assertThat(duplicateViolations).isZero();
+        assertThat(categoryPresentations.values()).allMatch(count -> count > 0);
+        assertThat(difficultyPresentations.values().stream().mapToInt(Integer::intValue).sum())
+                .isEqualTo(simulations * 50);
+        double averageAdjacentOverlap = totalAdjacentOverlap / (double) (simulations - 1);
+        assertThat(averageAdjacentOverlap).isLessThan(35.0);
+
+        List<QuizQuestion> firstRanking = new ArrayList<>(bank);
+        Collections.shuffle(firstRanking, new Random(7L));
+        TheoryExamQuestionAllocator.Allocation first =
+                simulationAllocator.allocateEligibleQuestions(firstRanking, firstRanking, "en");
+        Set<Long> coolingDown = first.questions().stream()
+                .map(QuizQuestion::getId)
+                .collect(Collectors.toSet());
+        List<QuizQuestion> secondAvailable = bank.stream()
+                .filter(question -> !coolingDown.contains(question.getId()))
+                .toList();
+        TheoryExamQuestionAllocator.Allocation second =
+                simulationAllocator.allocateEligibleQuestions(bank, secondAvailable, "en");
+        Set<Long> cooldownViolations = second.questions().stream()
+                .map(QuizQuestion::getId)
+                .filter(coolingDown::contains)
+                .collect(Collectors.toSet());
+        assertThat(cooldownViolations).isEmpty();
+
+        int leastQuestionExposure = presentations.values().stream().mapToInt(Integer::intValue).min().orElse(0);
+        int mostQuestionExposure = presentations.values().stream().mapToInt(Integer::intValue).max().orElse(0);
+        double inventoryUtilization = presentations.size() * 100.0 / blueprintInventory.size();
+        Map<String, Double> averageCategoryDistribution = categoryPresentations.entrySet().stream()
+                .collect(Collectors.toMap(
+                        Map.Entry::getKey,
+                        entry -> entry.getValue() / (double) simulations,
+                        (firstValue, ignored) -> firstValue,
+                        LinkedHashMap::new));
+        Map<QuizQuestion.DifficultyLevel, Double> averageDifficultyDistribution =
+                difficultyPresentations.entrySet().stream()
+                        .collect(Collectors.toMap(
+                                Map.Entry::getKey,
+                                entry -> entry.getValue() / (double) simulations,
+                                (firstValue, ignored) -> firstValue,
+                                LinkedHashMap::new));
+
+        System.out.printf(
+                "Theory allocator simulation: runs=%d, bank=%d, examSize=50, inventoryUtilization=%.2f%%, "
+                        + "questionExposure[min=%d,max=%d], avgAdjacentOverlap=%.2f, duplicateViolations=%d, "
+                        + "cooldownViolations=%d, categoryQuotaRelaxations=%d, difficultyRelaxations=%d, "
+                        + "avgCategoryDistribution=%s, avgDifficultyDistribution=%s%n",
+                simulations,
+                blueprintInventory.size(),
+                inventoryUtilization,
+                leastQuestionExposure,
+                mostQuestionExposure,
+                averageAdjacentOverlap,
+                duplicateViolations,
+                cooldownViolations.size(),
+                categoryQuotaRelaxations,
+                difficultyRelaxations,
+                averageCategoryDistribution,
+                averageDifficultyDistribution);
     }
 
     private Category category(long id, String code, Integer weight) {

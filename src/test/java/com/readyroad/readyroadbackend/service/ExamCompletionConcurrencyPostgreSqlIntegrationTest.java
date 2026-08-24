@@ -7,6 +7,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import com.readyroad.readyroadbackend.dto.exam.ExamResultsDTO;
+import com.readyroad.readyroadbackend.exception.ActiveExamAlreadyExistsException;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -142,6 +143,38 @@ class ExamCompletionConcurrencyPostgreSqlIntegrationTest {
     }
 
     @Test
+    void concurrentStartsForTheSameUserCreateOnlyOneActiveExam() throws Exception {
+        jdbc.update("DELETE FROM exam_simulations WHERE user_id = ?", userId);
+        jdbc.update("UPDATE categories SET exam_target_weight = 100 WHERE id = ?", categoryId);
+        CountDownLatch ready = new CountDownLatch(2);
+        CountDownLatch start = new CountDownLatch(1);
+
+        Future<StartOutcome> first = executor.submit(() -> startAfterBarrier(ready, start));
+        Future<StartOutcome> second = executor.submit(() -> startAfterBarrier(ready, start));
+        ready.await();
+        start.countDown();
+
+        StartOutcome firstOutcome = first.get();
+        StartOutcome secondOutcome = second.get();
+
+        assertThat(java.util.List.of(firstOutcome, secondOutcome))
+                .filteredOn(outcome -> outcome.examId() != null)
+                .hasSize(1);
+        assertThat(java.util.List.of(firstOutcome, secondOutcome))
+                .filteredOn(outcome -> outcome.failure() instanceof ActiveExamAlreadyExistsException)
+                .hasSize(1);
+        assertThat(jdbc.queryForObject("""
+                SELECT COUNT(*) FROM exam_simulations
+                WHERE user_id = ? AND status = 'IN_PROGRESS'
+                """, Integer.class, userId)).isEqualTo(1);
+        assertThat(jdbc.queryForObject("""
+                SELECT COUNT(*) FROM exam_simulation_questions q
+                JOIN exam_simulations e ON e.id = q.exam_id
+                WHERE e.user_id = ? AND e.status = 'IN_PROGRESS'
+                """, Integer.class, userId)).isEqualTo(50);
+    }
+
+    @Test
     void timedOutQuestionRemainsUnansweredAndDoesNotPolluteAccuracy() {
         jdbc.update("DELETE FROM exam_simulation_answers WHERE exam_id = ? AND question_id = ?", examId, questionId);
 
@@ -252,6 +285,19 @@ class ExamCompletionConcurrencyPostgreSqlIntegrationTest {
         }
     }
 
+    private StartOutcome startAfterBarrier(CountDownLatch ready, CountDownLatch start) {
+        ready.countDown();
+        try {
+            start.await();
+            return new StartOutcome(examService.startExamSimulation(userId).getId(), null);
+        } catch (InterruptedException exception) {
+            Thread.currentThread().interrupt();
+            throw new IllegalStateException(exception);
+        } catch (RuntimeException exception) {
+            return new StartOutcome(null, exception);
+        }
+    }
+
     private long insertOption(long optionQuestionId, String text, boolean correct, int displayOrder) {
         return jdbc.queryForObject("""
                 INSERT INTO quiz_answer_options
@@ -260,5 +306,8 @@ class ExamCompletionConcurrencyPostgreSqlIntegrationTest {
                 VALUES (?, ?, ?, ?, ?, ?, ?, true)
                 RETURNING id
                 """, Long.class, optionQuestionId, text, text, text, text, correct, displayOrder);
+    }
+
+    private record StartOutcome(Long examId, RuntimeException failure) {
     }
 }

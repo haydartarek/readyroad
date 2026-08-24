@@ -3,11 +3,14 @@ package com.readyroad.readyroadbackend;
 import com.readyroad.readyroadbackend.domain.entity.Category;
 import com.readyroad.readyroadbackend.domain.entity.QuizAnswerOption;
 import com.readyroad.readyroadbackend.domain.entity.QuizQuestion;
+import com.readyroad.readyroadbackend.domain.entity.User;
 import com.readyroad.readyroadbackend.domain.enums.CategoryContentScope;
+import com.readyroad.readyroadbackend.domain.enums.Role;
 import com.readyroad.readyroadbackend.domain.repository.CategoryRepository;
 import com.readyroad.readyroadbackend.domain.repository.ExamSimulationAnswerRepository;
 import com.readyroad.readyroadbackend.domain.repository.ExamSimulationRepository;
 import com.readyroad.readyroadbackend.domain.repository.QuizQuestionRepository;
+import com.readyroad.readyroadbackend.domain.repository.UserRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeEach;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,6 +40,9 @@ public abstract class BaseIntegrationTest {
 
     @Autowired(required = false)
     protected ExamSimulationAnswerRepository examSimulationAnswerRepository;
+
+    @Autowired
+    protected UserRepository userRepository;
 
     private static final Object SEED_LOCK = new Object();
 
@@ -113,6 +119,23 @@ public abstract class BaseIntegrationTest {
                     cat.setExamTargetWeight(10);
                     return categoryRepository.saveAndFlush(cat);
                 });
+    }
+
+    protected Long getOrCreateTestUser(String username) {
+        return userRepository.findByUsername(username)
+                .orElseGet(() -> {
+                    User user = new User();
+                    user.setUsername(username);
+                    user.setEmail(username + "@test.local");
+                    user.setFullName(username);
+                    user.setPasswordHash("integration-test-password-hash");
+                    user.setRole(Role.USER);
+                    user.setIsActive(true);
+                    user.setIsLocked(false);
+                    user.setPreferredLanguage("en");
+                    return userRepository.saveAndFlush(user);
+                })
+                .getId();
     }
 
     /**

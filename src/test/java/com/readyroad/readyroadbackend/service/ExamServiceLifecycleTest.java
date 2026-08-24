@@ -11,6 +11,7 @@ import static org.mockito.Mockito.when;
 
 import com.readyroad.readyroadbackend.domain.entity.ExamSimulation;
 import com.readyroad.readyroadbackend.domain.entity.ExamSimulationQuestion;
+import com.readyroad.readyroadbackend.domain.entity.User;
 import com.readyroad.readyroadbackend.domain.repository.ExamSimulationAnswerRepository;
 import com.readyroad.readyroadbackend.domain.repository.ExamSimulationQuestionRepository;
 import com.readyroad.readyroadbackend.domain.repository.ExamSimulationRepository;
@@ -20,6 +21,7 @@ import com.readyroad.readyroadbackend.domain.repository.QuizQuestionRepository;
 import com.readyroad.readyroadbackend.domain.repository.UserCategoryProgressRepository;
 import com.readyroad.readyroadbackend.domain.repository.UserQuestionHistoryRepository;
 import com.readyroad.readyroadbackend.domain.repository.UserWeakAreaRepository;
+import com.readyroad.readyroadbackend.domain.repository.UserRepository;
 import com.readyroad.readyroadbackend.exception.ExamNotActiveException;
 import com.readyroad.readyroadbackend.exception.ExamQuestionPoolUnavailableException;
 import com.readyroad.readyroadbackend.exception.UnauthorizedException;
@@ -54,6 +56,7 @@ class ExamServiceLifecycleTest {
     @Mock BackendMessageService messages;
     @Mock TheoryExamQuestionAllocator questionAllocator;
     @Mock TheoryExamQuestionSnapshotService questionSnapshotService;
+    @Mock UserRepository userRepository;
 
     @InjectMocks ExamService service;
 
@@ -175,9 +178,12 @@ class ExamServiceLifecycleTest {
 
     @Test
     void failedAllocationPreflightDoesNotPersistAnExam() {
+        User user = new User();
+        user.setPreferredLanguage("en");
+        when(userRepository.findByIdForUpdate(7L)).thenReturn(Optional.of(user));
         when(examRepository.findByUserIdAndStatus(7L, ExamSimulation.ExamStatus.IN_PROGRESS))
                 .thenReturn(Optional.empty());
-        when(questionAllocator.allocate(eq(7L), any(LocalDateTime.class)))
+        when(questionAllocator.allocate(eq(7L), eq("en"), any(LocalDateTime.class)))
                 .thenThrow(new ExamQuestionPoolUnavailableException("Unavailable", 50, 42));
 
         assertThatThrownBy(() -> service.startExamSimulation(7L))

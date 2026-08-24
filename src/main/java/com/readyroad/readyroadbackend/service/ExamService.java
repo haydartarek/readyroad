@@ -117,6 +117,12 @@ public class ExamService {
     public ExamSimulation startExamSimulation(Long userId) {
         log.info("Starting exam simulation for user: {}", userId);
 
+        User user = userRepository.findByIdForUpdate(userId)
+                .orElseThrow(() -> new IllegalArgumentException(messages.get("auth.user_not_found")));
+        String languageCode = isSupportedLanguage(user.getPreferredLanguage())
+                ? user.getPreferredLanguage().toLowerCase(java.util.Locale.ROOT)
+                : "en";
+
         // AC1: Check for active exam — auto-expire stale IN_PROGRESS exams first
         ExamSimulation activeExam = examRepository
                 .findByUserIdAndStatus(userId, ExamSimulation.ExamStatus.IN_PROGRESS)
@@ -137,7 +143,7 @@ public class ExamService {
 
         LocalDateTime cooldownCutoff = LocalDateTime.now().minus(THEORY_QUESTION_COOLDOWN);
         TheoryExamQuestionAllocator.Allocation allocation =
-                questionAllocator.allocate(userId, cooldownCutoff);
+                questionAllocator.allocate(userId, languageCode, cooldownCutoff);
         List<QuizQuestion> questions = new ArrayList<>(allocation.questions());
         Collections.shuffle(questions);
 
@@ -166,10 +172,7 @@ public class ExamService {
         exam.setExpiresAt(expiresAt);
         exam.setTotalQuestions(EXAM_QUESTION_COUNT);
         exam.setStatus(ExamSimulation.ExamStatus.IN_PROGRESS);
-        exam.setLanguageCode(userRepository.findById(userId)
-                .map(User::getPreferredLanguage)
-                .filter(ExamService::isSupportedLanguage)
-                .orElse(null));
+        exam.setLanguageCode(languageCode);
 
         exam = examRepository.save(exam);
         log.info("Created exam simulation: id={}, expiresAt={}", exam.getId(), expiresAt);

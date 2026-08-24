@@ -47,7 +47,8 @@ public class ExamController {
         @PostMapping("/start")
         @Operation(summary = "Start exam simulation", description = "Start a new 50-question exam simulation with 15 seconds per question. "
                         +
-                        "Respects 24h cooldown (Law #1) and adaptive difficulty (Law #2).")
+                        "Uses the current dynamic category blueprint, the 15/20/15 difficulty target, "
+                        + "and the 8-hour presentation cooldown.")
         @ApiResponses({
                         @ApiResponse(responseCode = "201", description = "Exam started successfully"),
                         @ApiResponse(responseCode = "400", description = "User already has active exam"),

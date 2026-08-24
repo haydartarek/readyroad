@@ -19,6 +19,7 @@ import com.readyroad.readyroadbackend.domain.repository.UserCategoryProgressRepo
 import com.readyroad.readyroadbackend.domain.repository.UserLessonProgressRepository;
 import com.readyroad.readyroadbackend.domain.repository.UserQuestionHistoryRepository;
 import com.readyroad.readyroadbackend.dto.StudentIntelligenceResponse;
+import com.readyroad.readyroadbackend.dto.TheoryQuestionCoverageResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -54,6 +55,7 @@ public class StudentIntelligenceService {
     private final CategoryRepository categoryRepository;
     private final UserQuestionHistoryRepository questionHistoryRepository;
     private final UserLessonProgressRepository lessonProgressRepository;
+    private final TheoryQuestionCoverageService theoryQuestionCoverageService;
 
     @Transactional(readOnly = true)
     public StudentIntelligenceResponse getStudentIntelligence(Long userId) {
@@ -126,13 +128,23 @@ public class StudentIntelligenceService {
                         null)));
 
         Map<Long, CategoryTrendEvidence> categoryTrends = buildCategoryTrends(examAnswers, today);
+        TheoryQuestionCoverageResponse coverage = theoryQuestionCoverageService.getCoverage(userId);
+        Map<Long, TheoryQuestionCoverageResponse.CategoryCoverage> coverageByCategory =
+                coverage.getCategories() == null
+                        ? Map.of()
+                        : coverage.getCategories().stream()
+                                .filter(category -> category.getCategoryId() != null)
+                                .collect(Collectors.toMap(
+                                        TheoryQuestionCoverageResponse.CategoryCoverage::getCategoryId,
+                                        category -> category));
         Map<Long, Category> categoriesById = categoryRepository.findAll().stream()
                 .collect(Collectors.toMap(Category::getId, category -> category));
         List<StudentIntelligenceEngine.CategoryEvidence> categoryEvidence = categoryProgress.stream()
                 .map(progress -> toCategoryEvidence(
                         progress,
                         categoriesById.get(progress.getCategoryId()),
-                        categoryTrends.getOrDefault(progress.getCategoryId(), new CategoryTrendEvidence())))
+                        categoryTrends.getOrDefault(progress.getCategoryId(), new CategoryTrendEvidence()),
+                        coverageByCategory.get(progress.getCategoryId())))
                 .toList();
 
         List<StudentIntelligenceEngine.QuestionEvidence> questionEvidence = questionHistory.stream()
@@ -237,7 +249,8 @@ public class StudentIntelligenceService {
     private StudentIntelligenceEngine.CategoryEvidence toCategoryEvidence(
             UserCategoryProgress progress,
             Category category,
-            CategoryTrendEvidence trend) {
+            CategoryTrendEvidence trend,
+            TheoryQuestionCoverageResponse.CategoryCoverage coverage) {
         return new StudentIntelligenceEngine.CategoryEvidence(
                 progress.getCategoryId(),
                 category != null ? category.getCode() : String.valueOf(progress.getCategoryId()),
@@ -251,7 +264,13 @@ public class StudentIntelligenceService {
                 trend.recentAttempts,
                 trend.recentCorrect,
                 trend.previousAttempts,
-                trend.previousCorrect);
+                trend.previousCorrect,
+                coverage != null && coverage.getUniqueQuestionsAnswered() != null
+                        ? coverage.getUniqueQuestionsAnswered()
+                        : 0,
+                coverage != null && coverage.getEligibleQuestions() != null
+                        ? coverage.getEligibleQuestions()
+                        : 0);
     }
 
     private Set<LocalDate> buildActivityDates(

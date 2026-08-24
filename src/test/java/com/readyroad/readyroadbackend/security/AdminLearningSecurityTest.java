@@ -2,12 +2,14 @@ package com.readyroad.readyroadbackend.security;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.readyroad.readyroadbackend.domain.entity.User;
 import com.readyroad.readyroadbackend.domain.enums.Role;
 import com.readyroad.readyroadbackend.domain.repository.UserRepository;
+import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,6 +58,15 @@ class AdminLearningSecurityTest {
         mockMvc.perform(get(endpoint).header("Authorization", "Bearer " + adminToken))
                 .andExpect(status().isOk());
 
+        String bankHealth = "/api/admin/quiz/bank-health";
+        mockMvc.perform(get(bankHealth)).andExpect(status().isUnauthorized());
+        mockMvc.perform(get(bankHealth).header("Authorization", "Bearer " + userToken))
+                .andExpect(status().isForbidden());
+        mockMvc.perform(get(bankHealth).header("Authorization", "Bearer " + moderatorToken))
+                .andExpect(status().isForbidden());
+        mockMvc.perform(get(bankHealth).header("Authorization", "Bearer " + adminToken))
+                .andExpect(status().isOk());
+
         for (String protectedEndpoint : new String[] {
                 "/api/admin/learning/users/" + studentId + "/coverage",
                 "/api/admin/learning/users/" + studentId + "/difficulty"
@@ -64,6 +75,23 @@ class AdminLearningSecurityTest {
             mockMvc.perform(get(protectedEndpoint).header("Authorization", "Bearer " + userToken))
                     .andExpect(status().isForbidden());
             mockMvc.perform(get(protectedEndpoint).header("Authorization", "Bearer " + moderatorToken))
+                    .andExpect(status().isForbidden());
+        }
+
+        for (var request : List.of(
+                post("/api/admin/quiz/categories"),
+                put("/api/admin/quiz/categories/1"))) {
+            mockMvc.perform(request.contentType(MediaType.APPLICATION_JSON).content("{}"))
+                    .andExpect(status().isUnauthorized());
+            mockMvc.perform(request
+                            .contentType(MediaType.APPLICATION_JSON)
+                            .content("{}")
+                            .header("Authorization", "Bearer " + userToken))
+                    .andExpect(status().isForbidden());
+            mockMvc.perform(request
+                            .contentType(MediaType.APPLICATION_JSON)
+                            .content("{}")
+                            .header("Authorization", "Bearer " + moderatorToken))
                     .andExpect(status().isForbidden());
         }
     }

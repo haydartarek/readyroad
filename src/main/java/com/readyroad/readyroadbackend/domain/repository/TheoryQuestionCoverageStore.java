@@ -51,9 +51,12 @@ public class TheoryQuestionCoverageStore {
                        COALESCE(NULLIF(TRIM(%s), ''), NULLIF(TRIM(c.name_en), ''), c.code)
                            AS category_name,
                        COUNT(e.question_id) AS eligible_questions,
-                       COALESCE(SUM(CASE
-                           WHEN COALESCE(h.times_presented, 0) > 0 THEN 1 ELSE 0 END), 0)
-                           AS unique_questions_seen,
+                        COALESCE(SUM(CASE
+                            WHEN COALESCE(h.times_presented, 0) > 0 THEN 1 ELSE 0 END), 0)
+                            AS unique_questions_seen,
+                        COALESCE(SUM(CASE
+                            WHEN COALESCE(h.times_correct, 0) + COALESCE(h.times_wrong, 0) > 0
+                            THEN 1 ELSE 0 END), 0) AS unique_questions_answered,
                        COALESCE(SUM(COALESCE(h.times_presented, 0)), 0) AS times_presented,
                        COALESCE(SUM(COALESCE(h.times_correct, 0) + COALESCE(h.times_wrong, 0)), 0)
                            AS times_answered,
@@ -81,6 +84,7 @@ public class TheoryQuestionCoverageStore {
                 rs.getString("category_name"),
                 rs.getLong("eligible_questions"),
                 rs.getLong("unique_questions_seen"),
+                rs.getLong("unique_questions_answered"),
                 rs.getLong("times_presented"),
                 rs.getLong("times_answered"),
                 rs.getLong("times_correct"),
@@ -113,6 +117,7 @@ public class TheoryQuestionCoverageStore {
             String categoryName,
             long eligibleQuestions,
             long uniqueQuestionsSeen,
+            long uniqueQuestionsAnswered,
             long timesPresented,
             long timesAnswered,
             long timesCorrect,
