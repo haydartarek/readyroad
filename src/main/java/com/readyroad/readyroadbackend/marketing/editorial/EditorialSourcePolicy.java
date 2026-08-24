@@ -79,7 +79,7 @@ final class EditorialSourcePolicy {
         }
 
         if ("READYROAD_CORE_DATA".equals(sourceType) && !"CORE_TRUSTED".equals(trustStatus)) {
-            throw new IllegalArgumentException("ReadyRoad core data must use CORE_TRUSTED status");
+            throw new IllegalArgumentException("RijVia core data must use CORE_TRUSTED status");
         }
         if (OFFICIAL_TYPES.contains(sourceType) && !"OFFICIAL".equals(trustStatus)) {
             throw new IllegalArgumentException("Official sources must use OFFICIAL trust status");

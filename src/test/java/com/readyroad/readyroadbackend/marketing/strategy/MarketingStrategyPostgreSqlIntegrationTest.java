@@ -143,6 +143,23 @@ class MarketingStrategyPostgreSqlIntegrationTest {
                 "SELECT COUNT(*) FROM agent_definitions WHERE display_name LIKE '%ReadyRoad%'",
                 Integer.class))
                 .isZero();
+        assertThat(jdbc.queryForObject("""
+                SELECT COUNT(*) FROM marketing_usp
+                WHERE active = TRUE
+                  AND concat_ws(' ', title, description, evidence_type, evidence_reference) ~* 'ReadyRoad'
+                """, Integer.class))
+                .isZero();
+        assertThat(jdbc.queryForObject("""
+                SELECT COUNT(*) FROM marketing_conversion_goals
+                WHERE active = TRUE
+                  AND concat_ws(' ', name, description, primary_cta) ~* 'ReadyRoad'
+                """, Integer.class))
+                .isZero();
+        assertThat(jdbc.queryForObject("""
+                SELECT COUNT(*) FROM audit_logs
+                WHERE event_type = 'RIJVIA_MARKETING_BRAND_IDENTITY_COMPLETED'
+                """, Integer.class))
+                .isOne();
     }
 
     @Test
