@@ -70,6 +70,8 @@ class EditorialArticlePublicationPostgreSqlIntegrationTest {
     @Autowired TaskCreationService taskCreationService;
     @Autowired MarketingTaskDispatcher dispatcher;
     @Autowired ObjectMapper objectMapper;
+    @Autowired EditorialContentGraphService contentGraphService;
+    @Autowired EditorialEditorService editorService;
     @Autowired WebApplicationContext webApplicationContext;
 
     private JdbcTemplate jdbc;
@@ -256,6 +258,49 @@ class EditorialArticlePublicationPostgreSqlIntegrationTest {
                 .andExpect(status().isNotFound());
         mockMvc.perform(get("/api/articles").param("language", "DE"))
                 .andExpect(status().isBadRequest());
+    }
+
+    @Test
+    void contentGraphStopsResolvingAnArchivedArticleRoute() {
+        long targetArticleId = eligibleArticle(10);
+        AgentTask targetApproval = approvedArticle(targetArticleId);
+        approvalTaskHandler.execute(claimed(targetApproval));
+        dispatcher.dispatch(claimed(publicationTask(targetArticleId)));
+
+        long sourceArticleId = editorService.save(11, "EN", new EditorialEditorDtos.SaveRequest(
+                "Source article",
+                "source-article",
+                "Source summary",
+                "Source body",
+                "Source article | RijVia",
+                "Source article description",
+                List.of(new EditorialInternalLinkDtos.Input(
+                        "/blog/publication-10-EN",
+                        "Published target article")),
+                null), "editor").articleId();
+
+        jdbc.update("UPDATE articles SET lifecycle_state = 'ARCHIVED' WHERE id = ?", targetArticleId);
+
+        var graph = contentGraphService.graph();
+        String archivedNodeId = "ARTICLE:" + targetArticleId + ":EN";
+        assertThat(graph.nodes())
+                .filteredOn(node -> node.id().equals(archivedNodeId))
+                .singleElement()
+                .satisfies(node -> {
+                    assertThat(node.published()).isFalse();
+                    assertThat(node.path()).isNull();
+                });
+        assertThat(graph.nodes())
+                .anySatisfy(node -> {
+                    assertThat(node.type()).isEqualTo("UNRESOLVED_ARTICLE");
+                    assertThat(node.path()).isEqualTo("/blog/publication-10-EN");
+                    assertThat(node.published()).isFalse();
+                });
+        assertThat(graph.edges())
+                .filteredOn(edge -> edge.sourceId().equals("ARTICLE:" + sourceArticleId + ":EN"))
+                .singleElement()
+                .satisfies(edge -> assertThat(edge.targetId())
+                        .isEqualTo("UNRESOLVED_ARTICLE:/blog/publication-10-EN"));
     }
 
     @Test
