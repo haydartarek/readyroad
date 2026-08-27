@@ -75,19 +75,24 @@ class TheoryExamQuestionAllocatorTest {
     }
 
     @Test
-    void categoryWithFiveQuestionsIsExcludedWhileSixOrMoreParticipates() {
+    void categoryWithFourQuestionsIsExcludedWhileFiveOrMoreParticipates() {
         Category excluded = category(1, "TH_SMALL", 10);
         Category eligible = category(2, "TH_READY", 10);
+        Category support = category(3, "TH_SUPPORT", 10);
         List<QuizQuestion> pool = new ArrayList<>();
-        pool.addAll(categoryPool(excluded, 2, 2, 1));
-        pool.addAll(categoryPool(eligible, 20, 20, 20));
+        pool.addAll(categoryPool(excluded, 2, 1, 1));
+        pool.addAll(categoryPool(eligible, 2, 2, 1));
+        pool.addAll(categoryPool(support, 20, 20, 20));
 
         TheoryExamQuestionAllocator.Allocation allocation = allocator.allocateEligibleQuestions(pool);
 
-        assertThat(allocation.questions()).hasSize(50)
-                .allSatisfy(question -> assertThat(question.getCategory().getCode()).isEqualTo("TH_READY"));
+        assertThat(allocation.questions()).hasSize(50);
+        assertThat(allocation.bankEligibleCounts()).doesNotContainKey(excluded.getId());
+        assertThat(allocation.bankEligibleCounts()).containsEntry(eligible.getId(), 5);
         assertThat(allocation.categoryTargets()).doesNotContainKey(excluded.getId());
-        assertThat(allocation.categoryTargets()).containsEntry(eligible.getId(), 50);
+        assertThat(allocation.categoryTargets()).containsKey(eligible.getId());
+        assertThat(countByCategory(allocation.questions()).getOrDefault("TH_READY", 0))
+                .isGreaterThanOrEqualTo(1);
     }
 
     @Test

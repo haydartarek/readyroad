@@ -112,6 +112,27 @@ class AdminTheoryBankHealthServiceTest {
     }
 
     @Test
+    void fiveEligibleQuestionsMeetTheSharedBlueprintMinimum() {
+        List<QuizQuestion> questions = List.of(
+                question(1L, category, "Question 1", true),
+                question(2L, category, "Question 2", true),
+                question(3L, category, "Question 3", true),
+                question(4L, category, "Question 4", true),
+                question(5L, category, "Question 5", true));
+
+        when(categoryRepository.findAll()).thenReturn(List.of(category));
+        when(questionRepository.findAllForTheoryBankHealth()).thenReturn(questions);
+        when(store.theoryPresentations()).thenReturn(Map.of());
+        when(store.completedPerformanceByLocale()).thenReturn(Map.of());
+
+        BankHealthResponse response = service.bankHealth();
+
+        assertThat(response.categories()).singleElement().satisfies(health -> {
+            assertThat(health.eligibleAllLocales()).isEqualTo(5);
+            assertThat(health.representationStatus()).isEqualTo("BALANCED");
+        });
+    }
+    @Test
     void categoryUpdatesPreserveTheStableCodeAndPersistAdminConfiguration() {
         when(categoryRepository.findById(1L)).thenReturn(Optional.of(category));
         when(categoryRepository.save(any(Category.class))).thenAnswer(invocation -> invocation.getArgument(0));

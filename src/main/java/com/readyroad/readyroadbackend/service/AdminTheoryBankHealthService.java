@@ -37,7 +37,6 @@ import org.springframework.transaction.annotation.Transactional;
 public class AdminTheoryBankHealthService {
 
     private static final List<String> LOCALES = List.of("ar", "nl", "en", "fr");
-    private static final int MIN_BLUEPRINT_INVENTORY = 6;
     private static final int MIN_QUESTION_SAMPLE = 30;
     private static final int MIN_LOCALE_SAMPLE = 20;
     private static final double SIGNIFICANCE_Z = 2.576;
@@ -455,7 +454,7 @@ public class AdminTheoryBankHealthService {
                 status = "INACTIVE";
             } else if (!configuredForBlueprint()) {
                 status = "UNCONFIGURED";
-            } else if (eligibleAll < MIN_BLUEPRINT_INVENTORY) {
+            } else if (eligibleAll < TheoryExamBlueprintPolicy.MIN_ELIGIBLE_QUESTIONS_PER_CATEGORY) {
                 status = "UNDERREPRESENTED";
             } else if (targetShare > 0 && inventoryShare > targetShare * OVERREPRESENTATION_FACTOR) {
                 status = "OVERREPRESENTED";

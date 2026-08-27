@@ -30,8 +30,6 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 public class TheoryExamQuestionAllocator {
 
-    private static final int EXAM_SIZE = 50;
-    private static final int MIN_ELIGIBLE_QUESTIONS_PER_CATEGORY = 6;
     private static final List<QuizQuestion.DifficultyLevel> DIFFICULTIES = List.of(
             QuizQuestion.DifficultyLevel.EASY,
             QuizQuestion.DifficultyLevel.MEDIUM,
@@ -93,7 +91,7 @@ public class TheoryExamQuestionAllocator {
         Map<Long, QuizQuestion> bankQuestions = uniqueDeliveryEligible(bankCandidates, languageCode);
         Map<Long, CategoryPool> bankPools = groupByCategory(bankQuestions.values());
         List<CategoryPool> bankEligibleCategories = bankPools.values().stream()
-                .filter(pool -> pool.capacity() >= MIN_ELIGIBLE_QUESTIONS_PER_CATEGORY)
+                .filter(pool -> pool.capacity() >= TheoryExamBlueprintPolicy.MIN_ELIGIBLE_QUESTIONS_PER_CATEGORY)
                 .sorted(CategoryPool.ORDER)
                 .toList();
 
@@ -133,7 +131,7 @@ public class TheoryExamQuestionAllocator {
         int configuredBankCapacity = configuredBankCategories.stream()
                 .mapToInt(CategoryPool::capacity)
                 .sum();
-        if (configuredBankCapacity < EXAM_SIZE || userEligibleCapacity < EXAM_SIZE) {
+        if (configuredBankCapacity < TheoryExamBlueprintPolicy.EXAM_SIZE || userEligibleCapacity < TheoryExamBlueprintPolicy.EXAM_SIZE) {
             throw unavailable(userEligibleCapacity);
         }
 
@@ -151,7 +149,7 @@ public class TheoryExamQuestionAllocator {
 
         Set<Long> uniqueQuestionIds = new HashSet<>();
         boolean allUnique = selected.stream().map(QuizQuestion::getId).allMatch(uniqueQuestionIds::add);
-        if (selected.size() != EXAM_SIZE || !allUnique) {
+        if (selected.size() != TheoryExamBlueprintPolicy.EXAM_SIZE || !allUnique) {
             throw new IllegalStateException("Theory exam preflight produced an invalid allocation");
         }
 
@@ -200,14 +198,14 @@ public class TheoryExamQuestionAllocator {
         categories.forEach(pool -> targets.put(pool.category().getId(), 0));
 
         int assigned = 0;
-        if (categories.size() <= EXAM_SIZE) {
+        if (categories.size() <= TheoryExamBlueprintPolicy.EXAM_SIZE) {
             for (CategoryPool pool : categories) {
                 targets.put(pool.category().getId(), 1);
                 assigned++;
             }
         }
 
-        while (assigned < EXAM_SIZE) {
+        while (assigned < TheoryExamBlueprintPolicy.EXAM_SIZE) {
             CategoryPool selected = null;
             for (CategoryPool candidate : categories) {
                 int current = targets.get(candidate.category().getId());
@@ -254,7 +252,7 @@ public class TheoryExamQuestionAllocator {
             assigned += availableTarget;
         }
 
-        while (assigned < EXAM_SIZE) {
+        while (assigned < TheoryExamBlueprintPolicy.EXAM_SIZE) {
             CategoryPool selected = null;
             for (CategoryPool candidate : userCategories) {
                 int current = targets.get(candidate.category().getId());
@@ -325,7 +323,7 @@ public class TheoryExamQuestionAllocator {
             counts.put(pool.category().getId(), categoryCounts);
         }
 
-        if (exactFlow < EXAM_SIZE) {
+        if (exactFlow < TheoryExamBlueprintPolicy.EXAM_SIZE) {
             fillDifficultyShortage(allocationOrder, categoryTargets, counts, globalCounts);
         }
         return new DifficultyAllocation(
@@ -365,7 +363,7 @@ public class TheoryExamQuestionAllocator {
     private List<QuizQuestion> selectQuestions(
             List<CategoryPool> categories,
             Map<Long, EnumMap<QuizQuestion.DifficultyLevel, Integer>> counts) {
-        List<QuizQuestion> selected = new ArrayList<>(EXAM_SIZE);
+        List<QuizQuestion> selected = new ArrayList<>(TheoryExamBlueprintPolicy.EXAM_SIZE);
         for (CategoryPool pool : categories) {
             EnumMap<QuizQuestion.DifficultyLevel, Integer> categoryCounts = counts.get(pool.category().getId());
             for (QuizQuestion.DifficultyLevel difficulty : DIFFICULTIES) {
@@ -479,8 +477,8 @@ public class TheoryExamQuestionAllocator {
 
     private ExamQuestionPoolUnavailableException unavailable(int eligibleCapacity) {
         return new ExamQuestionPoolUnavailableException(
-                messages.get("exam.pool.unavailable", EXAM_SIZE, eligibleCapacity),
-                EXAM_SIZE,
+                messages.get("exam.pool.unavailable", TheoryExamBlueprintPolicy.EXAM_SIZE, eligibleCapacity),
+                TheoryExamBlueprintPolicy.EXAM_SIZE,
                 eligibleCapacity);
     }
 
