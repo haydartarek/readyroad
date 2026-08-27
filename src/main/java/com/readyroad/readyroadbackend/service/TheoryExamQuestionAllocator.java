@@ -71,6 +71,7 @@ public class TheoryExamQuestionAllocator {
         return allocateEligibleQuestions(
                 questionRepository.findTheoryQuestionBankCandidates(languageCode),
                 questionRepository.findCooldownEligibleTheoryQuestions(userId, languageCode, cooldownCutoff),
+                questionRepository.findRankedTheoryQuestionsForUser(userId, languageCode),
                 languageCode);
     }
 
@@ -87,6 +88,18 @@ public class TheoryExamQuestionAllocator {
     Allocation allocateEligibleQuestions(
             List<QuizQuestion> bankCandidates,
             List<QuizQuestion> userAvailableCandidates,
+            String languageCode) {
+        return allocateEligibleQuestions(
+                bankCandidates,
+                userAvailableCandidates,
+                userAvailableCandidates,
+                languageCode);
+    }
+
+    Allocation allocateEligibleQuestions(
+            List<QuizQuestion> bankCandidates,
+            List<QuizQuestion> userAvailableCandidates,
+            List<QuizQuestion> rankedUserCandidates,
             String languageCode) {
         Map<Long, QuizQuestion> bankQuestions = uniqueDeliveryEligible(bankCandidates, languageCode);
         Map<Long, CategoryPool> bankPools = groupByCategory(bankQuestions.values());
@@ -105,13 +118,14 @@ public class TheoryExamQuestionAllocator {
                 .toList();
 
         Set<Long> bankQuestionIds = bankQuestions.keySet();
-        Map<Long, QuizQuestion> userQuestions = new LinkedHashMap<>();
-        for (QuizQuestion question : userAvailableCandidates) {
-            if (isDeliveryEligible(question, languageCode) && bankQuestionIds.contains(question.getId())) {
-                userQuestions.putIfAbsent(question.getId(), question);
-            }
-        }
+        Set<Long> configuredCategoryIds = configuredBankCategories.stream()
+                .map(pool -> pool.category().getId())
+                .collect(java.util.stream.Collectors.toSet());
+
+        Map<Long, QuizQuestion> userQuestions = eligibleBankSubset(
+                userAvailableCandidates, bankQuestionIds, languageCode);
         Map<Long, CategoryPool> userPoolsByCategory = groupByCategory(userQuestions.values());
+
         Map<Long, Integer> userAvailableCounts = new LinkedHashMap<>();
         for (CategoryPool bankCategory : bankEligibleCategories) {
             CategoryPool userPool = userPoolsByCategory.get(bankCategory.category().getId());
@@ -119,33 +133,77 @@ public class TheoryExamQuestionAllocator {
                     bankCategory.category().getId(),
                     userPool == null ? 0 : userPool.capacity());
         }
-        List<CategoryPool> configuredUserCategories = configuredBankCategories.stream()
-                .map(pool -> userPoolsByCategory.getOrDefault(
+
+        Map<Long, QuizQuestion> rankedUserQuestions = eligibleBankSubset(
+                rankedUserCandidates, bankQuestionIds, languageCode);
+
+        Map<Long, QuizQuestion> effectiveUserQuestions = new LinkedHashMap<>();
+        userQuestions.values().stream()
+                .filter(question -> configuredCategoryIds.contains(question.getCategory().getId()))
+                .forEach(question -> effectiveUserQuestions.putIfAbsent(question.getId(), question));
+
+        Set<Long> effectiveCategoryIds = effectiveUserQuestions.values().stream()
+                .map(question -> question.getCategory().getId())
+                .collect(java.util.stream.Collectors.toSet());
+
+        // Guarantee the mandatory one-question floor for every bank-eligible category.
+        for (CategoryPool bankCategory : configuredBankCategories) {
+            Long categoryId = bankCategory.category().getId();
+            if (effectiveCategoryIds.contains(categoryId)) {
+                continue;
+            }
+            for (QuizQuestion fallback : rankedUserQuestions.values()) {
+                if (categoryId.equals(fallback.getCategory().getId())
+                        && !effectiveUserQuestions.containsKey(fallback.getId())) {
+                    effectiveUserQuestions.put(fallback.getId(), fallback);
+                    effectiveCategoryIds.add(categoryId);
+                    break;
+                }
+            }
+        }
+
+        // Cooldown is preferred, not allowed to make a valid 50-question exam impossible.
+        if (effectiveUserQuestions.size() < TheoryExamBlueprintPolicy.EXAM_SIZE) {
+            for (QuizQuestion fallback : rankedUserQuestions.values()) {
+                if (effectiveUserQuestions.size() >= TheoryExamBlueprintPolicy.EXAM_SIZE) {
+                    break;
+                }
+                if (configuredCategoryIds.contains(fallback.getCategory().getId())) {
+                    effectiveUserQuestions.putIfAbsent(fallback.getId(), fallback);
+                }
+            }
+        }
+
+        Map<Long, CategoryPool> effectivePoolsByCategory =
+                groupByCategory(effectiveUserQuestions.values());
+        List<CategoryPool> effectiveUserCategories = configuredBankCategories.stream()
+                .map(pool -> effectivePoolsByCategory.getOrDefault(
                         pool.category().getId(),
                         new CategoryPool(pool.category())))
                 .toList();
 
-        int userEligibleCapacity = configuredUserCategories.stream()
+        int effectiveEligibleCapacity = effectiveUserCategories.stream()
                 .mapToInt(CategoryPool::capacity)
                 .sum();
         int configuredBankCapacity = configuredBankCategories.stream()
                 .mapToInt(CategoryPool::capacity)
                 .sum();
-        if (configuredBankCapacity < TheoryExamBlueprintPolicy.EXAM_SIZE || userEligibleCapacity < TheoryExamBlueprintPolicy.EXAM_SIZE) {
-            throw unavailable(userEligibleCapacity);
+        if (configuredBankCapacity < TheoryExamBlueprintPolicy.EXAM_SIZE
+                || effectiveEligibleCapacity < TheoryExamBlueprintPolicy.EXAM_SIZE) {
+            throw unavailable(effectiveEligibleCapacity);
         }
 
         Map<Long, Integer> blueprintCategoryTargets =
                 allocateCategoryTargets(configuredBankCategories);
         Map<Long, Integer> categoryTargets =
-                applyUserAvailability(configuredUserCategories, blueprintCategoryTargets);
+                applyUserAvailability(effectiveUserCategories, blueprintCategoryTargets);
         DifficultyAllocation difficultyAllocation =
                 allocateDifficulties(
-                        configuredUserCategories,
+                        effectiveUserCategories,
                         categoryTargets,
                         randomProvider.get());
         List<QuizQuestion> selected =
-                selectQuestions(configuredUserCategories, difficultyAllocation.counts());
+                selectQuestions(effectiveUserCategories, difficultyAllocation.counts());
 
         Set<Long> uniqueQuestionIds = new HashSet<>();
         boolean allUnique = selected.stream().map(QuizQuestion::getId).allMatch(uniqueQuestionIds::add);
@@ -162,7 +220,7 @@ public class TheoryExamQuestionAllocator {
                 categoryTargets,
                 difficultyAllocation.globalCounts(),
                 difficultyAllocation.relaxed(),
-                userEligibleCapacity);
+                effectiveEligibleCapacity);
     }
 
     private Map<Long, QuizQuestion> uniqueDeliveryEligible(
@@ -177,6 +235,19 @@ public class TheoryExamQuestionAllocator {
         return uniqueCandidates;
     }
 
+    private Map<Long, QuizQuestion> eligibleBankSubset(
+            List<QuizQuestion> candidates,
+            Set<Long> bankQuestionIds,
+            String languageCode) {
+        Map<Long, QuizQuestion> result = new LinkedHashMap<>();
+        for (QuizQuestion question : candidates) {
+            if (isDeliveryEligible(question, languageCode)
+                    && bankQuestionIds.contains(question.getId())) {
+                result.putIfAbsent(question.getId(), question);
+            }
+        }
+        return result;
+    }
     private Map<Long, CategoryPool> groupByCategory(Iterable<QuizQuestion> questions) {
         Map<Long, CategoryPool> grouped = new LinkedHashMap<>();
         for (QuizQuestion question : questions) {

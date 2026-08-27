@@ -109,6 +109,15 @@ public class QuizQuestionRandomRepositoryImpl implements QuizQuestionRandomRepos
     }
 
     @Override
+    public List<QuizQuestion> findRankedTheoryQuestionsForUser(
+            Long userId,
+            String languageCode) {
+        Query query = rankedTheoryQuery(localeColumns(languageCode));
+        query.setParameter("userId", userId);
+        return fetchQuestionsInOrder(idResults(query));
+    }
+
+    @Override
     public List<Long> findRandomQuestionIdsByDifficulty(String difficulty, int limit) {
         Query query = randomQuery("SELECT q.id FROM quiz_questions q WHERE q.difficulty_level = :difficulty AND "
                 + PUBLISHED_FILTER);
@@ -135,6 +144,36 @@ public class QuizQuestionRandomRepositoryImpl implements QuizQuestionRandomRepos
         return entityManager.createNativeQuery(sql + " ORDER BY " + randomFunction + "()", entityType);
     }
 
+    private Query rankedTheoryQuery(LocaleColumns locale) {
+        String randomFunction = dialectResolver.dialect().randomFunction();
+        String sql = """
+                SELECT q.id
+                FROM quiz_questions q
+                JOIN categories c ON c.id = q.category_id
+                JOIN quiz_answer_options o
+                  ON o.question_id = q.id
+                 AND o.is_active = true
+                LEFT JOIN user_question_history h
+                  ON h.user_id = :userId
+                 AND h.question_ref_id = q.id
+                 AND h.question_type = 'THEORY'
+                WHERE q.is_active = true
+                  AND q.status = 'PUBLISHED'
+                  AND c.is_active = true
+                  AND c.content_scope IN ('THEORETICAL_EXAM', 'BOTH')
+                  AND %s
+                GROUP BY q.id, h.last_presented_at
+                HAVING COUNT(o.id) BETWEEN 2 AND 3
+                   AND SUM(CASE WHEN o.is_correct = true THEN 1 ELSE 0 END) = 1
+                   AND SUM(CASE WHEN %s THEN 0 ELSE 1 END) = 0
+                ORDER BY CASE WHEN h.last_presented_at IS NULL THEN 0 ELSE 1 END,
+                         h.last_presented_at ASC,
+                """ + randomFunction + "()";
+        sql = sql.formatted(
+                usableText("q." + locale.questionColumn()),
+                usableText("o." + locale.optionColumn()));
+        return entityManager.createNativeQuery(sql);
+    }
     private Query cooldownEligibleTheoryQuery(String additionalFilter) {
         return cooldownEligibleTheoryQuery(additionalFilter, localeColumns("en"));
     }

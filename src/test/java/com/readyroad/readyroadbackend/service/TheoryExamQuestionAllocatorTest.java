@@ -137,6 +137,48 @@ class TheoryExamQuestionAllocatorTest {
     }
 
     @Test
+    void categoryWithNoCooldownAvailableQuestionsStillGetsOneMandatoryFallback() {
+        Category constrained = category(1, "TH_CONSTRAINED", 10);
+        Category available = category(2, "TH_AVAILABLE", 10);
+        List<QuizQuestion> constrainedBank = categoryPool(constrained, 2, 2, 1);
+        List<QuizQuestion> availableBank = categoryPool(available, 20, 20, 20);
+        List<QuizQuestion> bank = new ArrayList<>(constrainedBank);
+        bank.addAll(availableBank);
+
+        TheoryExamQuestionAllocator.Allocation allocation =
+                allocator.allocateEligibleQuestions(
+                        bank,
+                        availableBank,
+                        bank,
+                        "en");
+
+        assertThat(allocation.userAvailableCounts()).containsEntry(constrained.getId(), 0);
+        assertThat(allocation.blueprintCategoryTargets().get(constrained.getId()))
+                .isGreaterThanOrEqualTo(1);
+        assertThat(allocation.categoryTargets()).containsEntry(constrained.getId(), 1);
+        assertThat(countByCategory(allocation.questions())).containsEntry("TH_CONSTRAINED", 1);
+        assertThat(allocation.questions()).hasSize(50);
+    }
+
+    @Test
+    void cooldownFallbackFillsOnlyTheMissingCapacityNeededForFiftyQuestions() {
+        Category category = category(1, "TH_ONLY", 10);
+        List<QuizQuestion> bank = categoryPool(category, 20, 20, 20);
+        List<QuizQuestion> outsideCooldown = new ArrayList<>(bank.subList(0, 45));
+
+        TheoryExamQuestionAllocator.Allocation allocation =
+                allocator.allocateEligibleQuestions(
+                        bank,
+                        outsideCooldown,
+                        bank,
+                        "en");
+
+        assertThat(allocation.userAvailableCounts()).containsEntry(category.getId(), 45);
+        assertThat(allocation.questions()).hasSize(50);
+        assertThat(allocation.questions()).extracting(QuizQuestion::getId).doesNotHaveDuplicates();
+        assertThat(allocation.categoryTargets()).containsEntry(category.getId(), 50);
+    }
+    @Test
     void categoryWithoutConfiguredWeightRemainsInventoryOnly() {
         Category unconfigured = category(1, "TH_UNCONFIGURED", null);
         Category configured = category(2, "TH_CONFIGURED", 10);
