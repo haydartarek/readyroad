@@ -65,7 +65,10 @@ public final class AdminTheoryBankHealthDtos {
             long totalPresentations,
             double inventoryShare,
             double targetShare,
-            String representationStatus) {
+            String representationStatus,
+            int minimumRequired,
+            long questionsNeeded,
+            boolean examEligible) {
     }
 
     public record CategoryResponse(

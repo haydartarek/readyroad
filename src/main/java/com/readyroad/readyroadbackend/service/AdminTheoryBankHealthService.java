@@ -3,18 +3,15 @@ package com.readyroad.readyroadbackend.service;
 import com.readyroad.readyroadbackend.domain.entity.Category;
 import com.readyroad.readyroadbackend.domain.entity.QuizAnswerOption;
 import com.readyroad.readyroadbackend.domain.entity.QuizQuestion;
-import com.readyroad.readyroadbackend.domain.enums.CategoryContentScope;
 import com.readyroad.readyroadbackend.domain.repository.CategoryRepository;
 import com.readyroad.readyroadbackend.domain.repository.QuizQuestionRepository;
 import com.readyroad.readyroadbackend.dto.admin.AdminTheoryBankHealthDtos.BankHealthResponse;
 import com.readyroad.readyroadbackend.dto.admin.AdminTheoryBankHealthDtos.CategoryHealth;
-import com.readyroad.readyroadbackend.dto.admin.AdminTheoryBankHealthDtos.CategoryResponse;
 import com.readyroad.readyroadbackend.dto.admin.AdminTheoryBankHealthDtos.LocaleHealth;
 import com.readyroad.readyroadbackend.dto.admin.AdminTheoryBankHealthDtos.LocalePerformance;
 import com.readyroad.readyroadbackend.dto.admin.AdminTheoryBankHealthDtos.QuestionExposure;
 import com.readyroad.readyroadbackend.dto.admin.AdminTheoryBankHealthDtos.QuestionQuality;
 import com.readyroad.readyroadbackend.dto.admin.AdminTheoryBankHealthDtos.Summary;
-import com.readyroad.readyroadbackend.dto.admin.AdminTheoryCategoryRequest;
 import com.readyroad.readyroadbackend.service.AdminTheoryBankHealthStore.PerformanceRow;
 import com.readyroad.readyroadbackend.util.PlaceholderDetector;
 import java.time.Instant;
@@ -24,12 +21,10 @@ import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Collectors;
-import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -140,59 +135,15 @@ public class AdminTheoryBankHealthService {
                         .toList());
     }
 
-    @Transactional
-    @CacheEvict(cacheNames = "categories", allEntries = true)
-    public CategoryResponse createCategory(AdminTheoryCategoryRequest request) {
-        String code = normalizeCode(request.code());
-        if (categoryRepository.existsByCode(code)) {
-            throw new IllegalArgumentException("Category code already exists");
-        }
-        Category category = new Category();
-        category.setCode(code);
-        apply(category, request);
-        return response(categoryRepository.save(category));
-    }
 
-    @Transactional
-    @CacheEvict(cacheNames = "categories", allEntries = true)
-    public CategoryResponse updateCategory(long categoryId, AdminTheoryCategoryRequest request) {
-        Category category = categoryRepository.findById(categoryId)
-                .orElseThrow(() -> new IllegalArgumentException("Theory category not found"));
-        if (!category.getCode().equalsIgnoreCase(request.code().trim())) {
-            throw new IllegalArgumentException("Category code is a stable identifier and cannot be changed");
-        }
-        apply(category, request);
-        return response(categoryRepository.save(category));
+    @Transactional(readOnly = true)
+    public List<CategoryHealth> categoryManagement() {
+        return bankHealth().categories().stream()
+                .filter(category ->
+                        "THEORETICAL_EXAM".equals(category.contentScope())
+                                || "BOTH".equals(category.contentScope()))
+                .toList();
     }
-
-    private static void apply(Category category, AdminTheoryCategoryRequest request) {
-        CategoryContentScope scope = CategoryContentScope.valueOf(request.contentScope());
-        if (!scope.supportsTheoreticalExam()) {
-            throw new IllegalArgumentException("Theory categories must support theoretical exams");
-        }
-        category.setNameEn(required(request.nameEn()));
-        category.setNameNl(required(request.nameNl()));
-        category.setNameFr(required(request.nameFr()));
-        category.setNameAr(required(request.nameAr()));
-        category.setDescriptionEn(optional(request.descriptionEn()));
-        category.setDescriptionNl(optional(request.descriptionNl()));
-        category.setDescriptionFr(optional(request.descriptionFr()));
-        category.setDescriptionAr(optional(request.descriptionAr()));
-        category.setDisplayOrder(request.displayOrder());
-        category.setIsActive(request.active());
-        category.setContentScope(scope);
-        category.setExamTargetWeight(request.examTargetWeight());
-    }
-
-    private static CategoryResponse response(Category category) {
-        return new CategoryResponse(
-                category.getId(), category.getCode(), category.getNameEn(), category.getNameNl(),
-                category.getNameFr(), category.getNameAr(), category.getDescriptionEn(),
-                category.getDescriptionNl(), category.getDescriptionFr(), category.getDescriptionAr(),
-                category.getDisplayOrder(), Boolean.TRUE.equals(category.getIsActive()),
-                category.getContentScope().name(), category.getExamTargetWeight());
-    }
-
     private static QuestionFacts facts(QuizQuestion question, long presentations) {
         List<QuizAnswerOption> options = question.getDeliverableOptions();
         boolean structureValid = question.getDifficultyLevel() != null
@@ -340,17 +291,6 @@ public class AdminTheoryBankHealthService {
                 .thenComparing(Category::getId);
     }
 
-    private static String normalizeCode(String value) {
-        return value.trim().toUpperCase(Locale.ROOT);
-    }
-
-    private static String required(String value) {
-        return value.trim();
-    }
-
-    private static String optional(String value) {
-        return value == null || value.isBlank() ? null : value.trim();
-    }
 
     private static String questionText(QuizQuestion question, String locale) {
         return switch (locale) {
@@ -449,6 +389,11 @@ public class AdminTheoryBankHealthService {
             double targetShare = configuredForBlueprint() && totalWeight > 0
                     ? category.getExamTargetWeight() * 100.0 / totalWeight
                     : 0;
+            int minimumRequired =
+                    TheoryExamBlueprintPolicy.MIN_ELIGIBLE_QUESTIONS_PER_CATEGORY;
+            long questionsNeeded = Math.max(0L, minimumRequired - eligibleAll);
+            boolean examEligible =
+                    configuredForBlueprint() && questionsNeeded == 0;
             String status;
             if (!Boolean.TRUE.equals(category.getIsActive())) {
                 status = "INACTIVE";
@@ -470,7 +415,8 @@ public class AdminTheoryBankHealthService {
                     category.getDisplayOrder(), Boolean.TRUE.equals(category.getIsActive()),
                     category.getContentScope().name(), category.getExamTargetWeight(), total, active, published,
                     eligibleAll, Map.copyOf(eligibleByLocale), Map.copyOf(difficulty), translationGaps,
-                    explanationGaps, invalid, presentations, inventoryShare, targetShare, status);
+                    explanationGaps, invalid, presentations, inventoryShare, targetShare, status,
+                    minimumRequired, questionsNeeded, examEligible);
         }
     }
 
