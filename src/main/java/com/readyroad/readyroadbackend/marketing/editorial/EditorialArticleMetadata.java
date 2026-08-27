@@ -12,6 +12,7 @@ final class EditorialArticleMetadata {
     static final String META_TITLE = "metaTitle";
     static final String META_DESCRIPTION = "metaDescription";
     static final String INTERNAL_LINKS = "internalLinks";
+    static final String TYPOGRAPHY = "typography";
 
     private EditorialArticleMetadata() {}
 
@@ -38,6 +39,22 @@ final class EditorialArticleMetadata {
         return metadata;
     }
 
+    static ObjectNode withTypography(
+            JsonNode existing,
+            EditorialEditorDtos.Typography typography) {
+        ObjectNode metadata = existing != null && existing.isObject()
+                ? (ObjectNode) existing.deepCopy()
+                : JsonNodeFactory.instance.objectNode();
+        ObjectNode value = metadata.putObject(TYPOGRAPHY);
+        value.put("h1Size", typography.h1Size());
+        value.put("h2Size", typography.h2Size());
+        value.put("h3Size", typography.h3Size());
+        value.put("h4Size", typography.h4Size());
+        value.put("paragraphSize", typography.paragraphSize());
+        value.put("textColor", typography.textColor());
+        return metadata;
+    }
+
     static List<EditorialInternalLinkDtos.Link> internalLinks(JsonNode metadata) {
         if (metadata == null || !metadata.isObject() || !metadata.path(INTERNAL_LINKS).isArray()) {
             return List.of();
@@ -52,6 +69,34 @@ final class EditorialArticleMetadata {
             }
         }
         return List.copyOf(links);
+    }
+
+    static EditorialEditorDtos.Typography typography(JsonNode metadata) {
+        var defaults = EditorialEditorDtos.Typography.defaults();
+        if (metadata == null || !metadata.isObject() || !metadata.path(TYPOGRAPHY).isObject()) {
+            return defaults;
+        }
+        JsonNode value = metadata.path(TYPOGRAPHY);
+        return new EditorialEditorDtos.Typography(
+                safeTypographyValue(value, "h1Size", defaults.h1Size(), "COMPACT", "DEFAULT", "LARGE"),
+                safeTypographyValue(value, "h2Size", defaults.h2Size(), "COMPACT", "DEFAULT", "LARGE"),
+                safeTypographyValue(value, "h3Size", defaults.h3Size(), "COMPACT", "DEFAULT", "LARGE"),
+                safeTypographyValue(value, "h4Size", defaults.h4Size(), "COMPACT", "DEFAULT", "LARGE"),
+                safeTypographyValue(
+                        value,
+                        "paragraphSize",
+                        defaults.paragraphSize(),
+                        "COMPACT",
+                        "DEFAULT",
+                        "LARGE"),
+                safeTypographyValue(
+                        value,
+                        "textColor",
+                        defaults.textColor(),
+                        "DEFAULT",
+                        "MUTED",
+                        "PRIMARY",
+                        "SECONDARY"));
     }
 
     static String metaTitle(JsonNode metadata) {
@@ -76,5 +121,19 @@ final class EditorialArticleMetadata {
         }
         String value = metadata.path(field).asText("").trim();
         return value.isEmpty() ? null : value;
+    }
+
+    private static String safeTypographyValue(
+            JsonNode value,
+            String field,
+            String fallback,
+            String... allowed) {
+        String candidate = value.path(field).asText("").trim();
+        for (String item : allowed) {
+            if (item.equals(candidate)) {
+                return item;
+            }
+        }
+        return fallback;
     }
 }

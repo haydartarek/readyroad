@@ -33,7 +33,7 @@ public class MarketingProperties {
         private String serviceAccountFile;
         private String ga4AccountId = "403159538";
         private String ga4PropertyId = "548176182";
-        private String searchConsoleSiteUrl = "sc-domain:readyroad.be";
+        private String searchConsoleSiteUrl = "sc-domain:rijvia.be";
     }
 
     @Getter

@@ -73,26 +73,28 @@ class EditorialArticleImagePostgreSqlIntegrationTest {
     }
 
     @Test
-    void storesARealApprovedSourceWithFourBudgetedVariantsAndASeparateLicenseRecord() throws Exception {
+    void storesAConfirmedLocalUploadWithFiveResponsiveVariantsAndALicenseRecord() throws Exception {
         long articleId = imageRequiredArticle(1, "priority-from-right");
 
         var asset = service.upload(articleId, image("source-a"), metadata("source-a"), "admin@rijvia.be");
 
         assertThat(asset.status()).isEqualTo("APPROVED");
-        assertThat(asset.originalWidth()).isEqualTo(1800);
-        assertThat(asset.originalHeight()).isEqualTo(1000);
+        assertThat(asset.storedFileName()).isEqualTo("rijvia-en-source-a-hero");
+        assertThat(asset.originalWidth()).isEqualTo(2048);
+        assertThat(asset.originalHeight()).isEqualTo(1200);
         assertThat(asset.variants()).extracting(EditorialArticleImageDtos.Variant::type)
-                .containsExactly("HERO", "CARD", "MOBILE", "OG");
+                .containsExactlyInAnyOrder("HERO", "CARD", "MEDIUM", "MOBILE", "OG");
         assertThat(asset.variants()).allSatisfy(variant -> {
             assertThat(variant.publicPath()).startsWith("/images/articles/");
             assertThat(Files.size(publicFile(variant.publicPath()))).isEqualTo(variant.byteSize());
         });
         assertThat(asset.variants().stream().filter(value -> value.type().equals("HERO")).findFirst().orElseThrow().byteSize())
-                .isLessThan(256_000);
+                .isLessThan(420_000);
         assertThat(asset.localizations()).extracting(EditorialArticleImageDtos.Localization::language)
                 .containsExactly("AR", "NL", "FR", "EN");
-        assertThat(asset.license().sourcePlatform()).isEqualTo("UNSPLASH");
-        assertThat(asset.license().sourceAssetId()).isEqualTo("source-a");
+        assertThat(asset.license().sourcePlatform()).isEqualTo("LOCAL_UPLOAD");
+        assertThat(asset.license().sourceAssetId()).matches("[0-9a-f]{64}");
+        assertThat(asset.license().photographerName()).isEqualTo("RijVia owner upload");
         assertThat(asset.license().approvedBy()).isEqualTo("admin@rijvia.be");
         assertThat(store.requireApprovalReady(articleId).assetId()).isEqualTo(asset.id());
         assertThat(store.publicImage(asset.id(), "EN")).get()
@@ -151,6 +153,29 @@ class EditorialArticleImagePostgreSqlIntegrationTest {
                 .hasMessageContaining("409 CONFLICT");
     }
 
+    @Test
+    void removesTheCurrentImageBeforeApprovalWithoutDeletingItsAuditHistory() throws Exception {
+        long articleId = imageRequiredArticle(1, "removable-article");
+        var asset = service.upload(articleId, image("source-remove"), metadata("source-remove"), "admin");
+
+        service.remove(articleId, "admin");
+
+        assertThat(service.current(articleId)).isEmpty();
+        assertThat(jdbc.queryForObject(
+                "SELECT status FROM article_image_assets WHERE id = ?",
+                String.class,
+                asset.id())).isEqualTo("SUPERSEDED");
+        assertThat(jdbc.queryForObject(
+                "SELECT count(*) FROM article_image_licenses WHERE image_asset_id = ?",
+                Integer.class,
+                asset.id())).isOne();
+        assertThat(jdbc.queryForObject("""
+                SELECT count(*) FROM audit_logs
+                WHERE event_type = ? AND entity_id = ?
+                """, Integer.class, EditorialArticleImageService.REMOVE_AUDIT_EVENT,
+                String.valueOf(asset.id()))).isOne();
+    }
+
     private long imageRequiredArticle(long topicId, String canonicalKey) {
         return jdbc.queryForObject("""
                 INSERT INTO articles (
@@ -161,17 +186,14 @@ class EditorialArticleImagePostgreSqlIntegrationTest {
     }
 
     private static EditorialArticleImageDtos.UploadMetadata metadata(String sourceAssetId) {
-        Instant now = Instant.now();
         return new EditorialArticleImageDtos.UploadMetadata(
-                EditorialArticleImageDtos.SourcePlatform.UNSPLASH,
-                sourceAssetId,
-                "https://unsplash.com/photos/" + sourceAssetId,
-                "Road Photographer",
-                "https://unsplash.com/@road-photographer",
-                "Unsplash License",
-                "https://unsplash.com/license",
-                now.minusSeconds(3600),
-                now.minusSeconds(1800),
+                "rijvia-en-" + sourceAssetId + "-hero",
+                "RijVia owner upload",
+                "https://rijvia.be/image-sources/" + sourceAssetId,
+                "Owner-approved local file",
+                null,
+                "Usage rights and relevance verified by the administrator",
+                true,
                 "تقاطع أولوية بلجيكي",
                 "Een Belgisch voorrangskruispunt",
                 "Un carrefour de priorité belge",
@@ -180,22 +202,22 @@ class EditorialArticleImagePostgreSqlIntegrationTest {
                 null,
                 null,
                 null,
-                0.45,
-                0.55,
-                "The image source, license, relevance and privacy were reviewed");
+                0.5,
+                0.5
+        );
     }
 
     private static MockMultipartFile image(String seed) throws Exception {
-        BufferedImage image = new BufferedImage(1800, 1000, BufferedImage.TYPE_INT_RGB);
+        BufferedImage image = new BufferedImage(2048, 1200, BufferedImage.TYPE_INT_RGB);
         Graphics2D graphics = image.createGraphics();
         try {
             int accent = Math.floorMod(seed.hashCode(), 180) + 40;
             graphics.setPaint(new GradientPaint(
                     0, 0, new Color(accent, 90, 120),
-                    1800, 1000, new Color(30, 130, accent)));
-            graphics.fillRect(0, 0, 1800, 1000);
+                    2048, 1200, new Color(30, 130, accent)));
+            graphics.fillRect(0, 0, 2048, 1200);
             graphics.setColor(Color.WHITE);
-            graphics.fillRect(790, 0, 220, 1000);
+            graphics.fillRect(900, 0, 240, 1200);
         } finally {
             graphics.dispose();
         }

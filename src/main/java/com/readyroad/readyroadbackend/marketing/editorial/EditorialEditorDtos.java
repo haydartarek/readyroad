@@ -2,6 +2,7 @@ package com.readyroad.readyroadbackend.marketing.editorial;
 
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.PositiveOrZero;
 import jakarta.validation.constraints.Size;
 import java.time.Instant;
@@ -75,6 +76,7 @@ public final class EditorialEditorDtos {
             @NotBlank @Size(max = 500) String metaTitle,
             @NotBlank @Size(max = 2000) String metaDescription,
             @Valid List<EditorialInternalLinkDtos.Input> internalLinks,
+            @Valid Typography typography,
             @PositiveOrZero Integer expectedCurrentVersion) {
 
         public SaveRequest(
@@ -84,8 +86,57 @@ public final class EditorialEditorDtos {
                 String body,
                 String metaTitle,
                 String metaDescription,
+                List<EditorialInternalLinkDtos.Input> internalLinks,
                 Integer expectedCurrentVersion) {
-            this(title, slug, summary, body, metaTitle, metaDescription, List.of(), expectedCurrentVersion);
+            this(
+                    title,
+                    slug,
+                    summary,
+                    body,
+                    metaTitle,
+                    metaDescription,
+                    internalLinks,
+                    Typography.defaults(),
+                    expectedCurrentVersion);
+        }
+
+        public SaveRequest(
+                String title,
+                String slug,
+                String summary,
+                String body,
+                String metaTitle,
+                String metaDescription,
+                Integer expectedCurrentVersion) {
+            this(
+                    title,
+                    slug,
+                    summary,
+                    body,
+                    metaTitle,
+                    metaDescription,
+                    List.of(),
+                    Typography.defaults(),
+                    expectedCurrentVersion);
+        }
+    }
+
+    public record Typography(
+            @Pattern(regexp = "COMPACT|DEFAULT|LARGE") String h1Size,
+            @Pattern(regexp = "COMPACT|DEFAULT|LARGE") String h2Size,
+            @Pattern(regexp = "COMPACT|DEFAULT|LARGE") String h3Size,
+            @Pattern(regexp = "COMPACT|DEFAULT|LARGE") String h4Size,
+            @Pattern(regexp = "COMPACT|DEFAULT|LARGE") String paragraphSize,
+            @Pattern(regexp = "DEFAULT|MUTED|PRIMARY|SECONDARY") String textColor) {
+
+        public static Typography defaults() {
+            return new Typography(
+                    "DEFAULT",
+                    "DEFAULT",
+                    "DEFAULT",
+                    "DEFAULT",
+                    "DEFAULT",
+                    "DEFAULT");
         }
     }
 
@@ -109,6 +160,7 @@ public final class EditorialEditorDtos {
             String metaTitle,
             String metaDescription,
             List<EditorialInternalLinkDtos.Link> internalLinks,
+            Typography typography,
             String status,
             boolean current,
             Instant createdAt,

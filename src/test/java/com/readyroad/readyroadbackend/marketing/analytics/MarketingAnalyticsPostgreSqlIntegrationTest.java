@@ -169,6 +169,9 @@ class MarketingAnalyticsPostgreSqlIntegrationTest {
                 .isEqualTo(2);
         assertThat(jdbc.queryForObject("SELECT COUNT(*) FROM seo_opportunities", Integer.class))
                 .isEqualTo(4);
+        assertThat(jdbc.queryForObject("""
+                SELECT site_url FROM seo_snapshots WHERE source_kind = 'LOCAL_EXCEL'
+                """, String.class)).isEqualTo("sc-domain:rijvia.be");
         assertThat(store.latestSearchConsoleDate()).isNull();
         assertThat(store.aggregateQueries(
                 LocalDate.of(2026, 8, 18), LocalDate.of(2026, 8, 19))).isEmpty();

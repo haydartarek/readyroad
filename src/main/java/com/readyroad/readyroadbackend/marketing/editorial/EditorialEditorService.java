@@ -23,6 +23,9 @@ public class EditorialEditorService {
     static final String AUDIT_EVENT = "EDITORIAL_ARTICLE_DRAFT_SAVED";
     private static final List<String> LANGUAGES = List.of("AR", "NL", "FR", "EN");
     private static final Set<String> LANGUAGE_SET = Set.copyOf(LANGUAGES);
+    private static final Set<String> SIZE_TOKENS = Set.of("COMPACT", "DEFAULT", "LARGE");
+    private static final Set<String> COLOR_TOKENS =
+            Set.of("DEFAULT", "MUTED", "PRIMARY", "SECONDARY");
 
     private final EditorialEditorStore store;
     private final EditorialArticleVersionStore versionStore;
@@ -144,6 +147,7 @@ public class EditorialEditorService {
                 normalized.metaTitle(),
                 normalized.metaDescription());
         metadata = EditorialArticleMetadata.withInternalLinks(metadata, internalLinks);
+        metadata = EditorialArticleMetadata.withTypography(metadata, normalized.typography());
         var generationMetadata = current.map(EditorialArticleVersionDtos.Version::generationMetadata)
                 .orElseGet(objectMapper::createObjectNode);
         var appended = versionService.append(new EditorialArticleVersionDtos.AppendRequest(
@@ -197,6 +201,7 @@ public class EditorialEditorService {
                 EditorialArticleMetadata.metaTitle(value.metadata()),
                 EditorialArticleMetadata.metaDescription(value.metadata()),
                 EditorialArticleMetadata.internalLinks(value.metadata()),
+                EditorialArticleMetadata.typography(value.metadata()),
                 value.status(), value.current(),
                 value.createdAt(), value.createdBy());
     }
@@ -206,6 +211,7 @@ public class EditorialEditorService {
                 request.title().trim(), blankToNull(request.slug()), blankToNull(request.summary()),
                 request.body(), request.metaTitle().trim(), request.metaDescription().trim(),
                 request.internalLinks() == null ? List.of() : List.copyOf(request.internalLinks()),
+                normalizedTypography(request.typography()),
                 request.expectedCurrentVersion());
     }
 
@@ -222,7 +228,26 @@ public class EditorialEditorService {
                 && Objects.equals(
                         EditorialArticleMetadata.metaDescription(current.metadata()),
                         request.metaDescription())
-                && EditorialArticleMetadata.internalLinks(current.metadata()).equals(internalLinks);
+                && EditorialArticleMetadata.internalLinks(current.metadata()).equals(internalLinks)
+                && EditorialArticleMetadata.typography(current.metadata()).equals(request.typography());
+    }
+
+    private static EditorialEditorDtos.Typography normalizedTypography(
+            EditorialEditorDtos.Typography value) {
+        var typography = value == null ? EditorialEditorDtos.Typography.defaults() : value;
+        requireToken(typography.h1Size(), SIZE_TOKENS, "h1Size");
+        requireToken(typography.h2Size(), SIZE_TOKENS, "h2Size");
+        requireToken(typography.h3Size(), SIZE_TOKENS, "h3Size");
+        requireToken(typography.h4Size(), SIZE_TOKENS, "h4Size");
+        requireToken(typography.paragraphSize(), SIZE_TOKENS, "paragraphSize");
+        requireToken(typography.textColor(), COLOR_TOKENS, "textColor");
+        return typography;
+    }
+
+    private static void requireToken(String value, Set<String> allowed, String field) {
+        if (value == null || !allowed.contains(value)) {
+            throw new IllegalArgumentException("Unsupported article typography value for " + field);
+        }
     }
 
     private static String language(String value) {

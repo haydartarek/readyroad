@@ -27,9 +27,6 @@ readonly TLS_HOSTS=(
   rijvia.be
   www.rijvia.be
   api.rijvia.be
-  readyroad.be
-  www.readyroad.be
-  api.readyroad.be
 )
 
 alert_count=0

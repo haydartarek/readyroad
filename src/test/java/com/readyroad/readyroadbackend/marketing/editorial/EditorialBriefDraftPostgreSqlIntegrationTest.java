@@ -278,7 +278,7 @@ class EditorialBriefDraftPostgreSqlIntegrationTest {
                     language, verification_status, trust_status, legal_review_required,
                     legal_review_status, verified_at, verified_by
                 ) VALUES (
-                    'READYROAD_CORE_DATA', 'INTERNAL', 'RijVia theory lesson', 'RijVia',
+                    'RIJVIA_CORE_DATA', 'INTERNAL', 'RijVia theory lesson', 'RijVia',
                     'LESSON:les-1', 'AR', 'VERIFIED', 'CORE_TRUSTED', FALSE,
                     'NOT_REQUIRED', CURRENT_TIMESTAMP, 'integration-test'
                 ) RETURNING id

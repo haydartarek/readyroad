@@ -183,7 +183,8 @@ class MarketingAdminSecurityTest {
 
         for (String path : new String[] {
                 "/api/admin/marketing/editorial/topics/1/briefs",
-                "/api/admin/marketing/editorial/editor/articles/1/draft-requests"
+                "/api/admin/marketing/editorial/editor/articles/1/draft-requests",
+                "/api/admin/marketing/editorial/editor/articles/1/translation-requests"
         }) {
             mockMvc.perform(post(path)
                             .contentType(MediaType.APPLICATION_JSON)

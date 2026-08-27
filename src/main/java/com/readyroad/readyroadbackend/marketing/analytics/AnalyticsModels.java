@@ -29,7 +29,7 @@ public final class AnalyticsModels {
     public enum BrandClassification {
         OWN_BRAND,
         OWN_BRAND_RIJVIA,
-        OLD_BRAND_READYROAD,
+        LEGACY_BRAND_QUERY,
         NON_BRAND,
         COMPETITOR_OR_AMBIGUOUS_BRAND
     }

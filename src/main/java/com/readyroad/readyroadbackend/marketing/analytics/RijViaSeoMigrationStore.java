@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.readyroad.readyroadbackend.marketing.audit.MarketingAuditService;
+import com.readyroad.readyroadbackend.marketing.config.MarketingProperties;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -25,6 +26,7 @@ public class RijViaSeoMigrationStore {
     private final JdbcTemplate jdbc;
     private final ObjectMapper objectMapper;
     private final MarketingAuditService auditService;
+    private final MarketingProperties marketingProperties;
 
     @Transactional(readOnly = true)
     public Long importIdByHash(String sha256) {
@@ -76,9 +78,10 @@ public class RijViaSeoMigrationStore {
                 INSERT INTO seo_snapshots (
                     site_url, period_start, period_end, clicks, impressions, ctr,
                     average_position, source_record_count, task_id, source_kind
-                ) VALUES ('sc-domain:readyroad.be', ?, ?, ?, ?, ?, ?, ?, NULL, 'LOCAL_EXCEL')
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, NULL, 'LOCAL_EXCEL')
                 RETURNING id
                 """, Long.class,
+                marketingProperties.getAnalytics().getSearchConsoleSiteUrl(),
                 workbook.periodStart(), workbook.periodEnd(),
                 number(propertyTotals.get("clicks")), number(propertyTotals.get("impressions")),
                 number(propertyTotals.get("ctr")), number(propertyTotals.get("averagePosition")),

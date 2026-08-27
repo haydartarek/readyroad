@@ -53,11 +53,12 @@ class EditorialArticleImageStore {
         return jdbcClient.sql("""
                 INSERT INTO article_image_assets (
                     article_id, storage_key, content_sha256, original_storage_path,
-                    original_file_name, original_content_type, original_width, original_height,
+                    original_file_name, stored_file_name, original_content_type,
+                    original_width, original_height,
                     focal_point_x, focal_point_y, status, created_by
                 ) VALUES (
                     :articleId, :storageKey, :sha256, :originalPath,
-                    :originalFileName, :contentType, :width, :height,
+                    :originalFileName, :storedFileName, :contentType, :width, :height,
                     :focalX, :focalY, 'PENDING_LICENSE', :actor
                 )
                 RETURNING id
@@ -67,6 +68,7 @@ class EditorialArticleImageStore {
                 .param("sha256", processed.sha256())
                 .param("originalPath", processed.originalStoragePath())
                 .param("originalFileName", metadata.originalFileName())
+                .param("storedFileName", metadata.storedFileName())
                 .param("contentType", metadata.contentType())
                 .param("width", processed.originalWidth())
                 .param("height", processed.originalHeight())
@@ -147,10 +149,23 @@ class EditorialArticleImageStore {
         }
     }
 
+    long supersedeCurrent(long articleId) {
+        return jdbc.query("""
+                UPDATE article_image_assets
+                SET status = 'SUPERSEDED', updated_at = CURRENT_TIMESTAMP
+                WHERE article_id = ? AND status = 'APPROVED'
+                RETURNING id
+                """, (result, rowNumber) -> result.getLong("id"), articleId).stream()
+                .findFirst()
+                .orElseThrow(() -> new IllegalArgumentException(
+                        "No approved article image is attached"));
+    }
+
     Optional<EditorialArticleImageDtos.Asset> current(long articleId) {
         return jdbc.query("""
-                SELECT id, article_id, status, original_file_name, original_width, original_height,
-                       focal_point_x, focal_point_y, created_at, created_by
+                SELECT id, article_id, status, original_file_name, stored_file_name,
+                       original_width, original_height, focal_point_x, focal_point_y,
+                       created_at, created_by
                 FROM article_image_assets
                 WHERE article_id = ? AND status = 'APPROVED'
                 """, this::assetRow, articleId).stream().findFirst().map(this::asset);
@@ -174,7 +189,8 @@ class EditorialArticleImageStore {
                 result.getLong("license_id"),
                 result.getInt("variant_count"),
                 result.getInt("localization_count")), articleId).stream()
-                .filter(row -> row.variantCount() == 4 && row.localizationCount() == 4)
+                .filter(row -> (row.variantCount() == 4 || row.variantCount() == 5)
+                        && row.localizationCount() == 4)
                 .map(row -> new ApprovedImage(row.assetId(), row.licenseId()))
                 .findFirst()
                 .orElseThrow(() -> new IllegalStateException(
@@ -222,6 +238,7 @@ class EditorialArticleImageStore {
     private EditorialArticleImageDtos.Asset asset(AssetRow row) {
         return new EditorialArticleImageDtos.Asset(
                 row.id(), row.articleId(), row.status(), row.originalFileName(),
+                row.storedFileName(),
                 row.originalWidth(), row.originalHeight(), row.focalPointX(), row.focalPointY(),
                 variants(row.id()).stream().map(value -> new EditorialArticleImageDtos.Variant(
                         value.type(), value.format(), value.publicPath(),
@@ -237,7 +254,12 @@ class EditorialArticleImageStore {
                 FROM article_image_variants
                 WHERE image_asset_id = ?
                 ORDER BY CASE variant_type
-                    WHEN 'HERO' THEN 1 WHEN 'CARD' THEN 2 WHEN 'MOBILE' THEN 3 ELSE 4 END
+                    WHEN 'HERO' THEN 1
+                    WHEN 'CARD' THEN 2
+                    WHEN 'MEDIUM' THEN 3
+                    WHEN 'MOBILE' THEN 4
+                    ELSE 5
+                END
                 """, (result, rowNumber) -> new VariantRow(
                 result.getString("variant_type"),
                 result.getString("format"),
@@ -297,6 +319,7 @@ class EditorialArticleImageStore {
                 result.getLong("article_id"),
                 result.getString("status"),
                 result.getString("original_file_name"),
+                result.getString("stored_file_name"),
                 result.getInt("original_width"),
                 result.getInt("original_height"),
                 result.getDouble("focal_point_x"),
@@ -320,6 +343,7 @@ class EditorialArticleImageStore {
             long articleId,
             String status,
             String originalFileName,
+            String storedFileName,
             int originalWidth,
             int originalHeight,
             double focalPointX,

@@ -16,25 +16,34 @@ class EditorialArticleImagePolicyTest {
             new EditorialArticleImagePolicy(Clock.fixed(NOW, ZoneOffset.UTC));
 
     @Test
-    void acceptsOnlyAnApprovedProviderUrlWithCompleteLocalizedMetadata() {
+    void acceptsAConfirmedLocalUploadWithCompleteLocalizedMetadata() {
         var normalized = policy.normalize(
                 file("image/jpeg"),
-                metadata("https://unsplash.com/photos/belgian-road-123"),
+                metadata(true, "https://rijvia.be/image-sources/belgian-road-123"),
                 "admin@rijvia.be");
 
         assertThat(normalized.sourcePlatform())
-                .isEqualTo(EditorialArticleImageDtos.SourcePlatform.UNSPLASH);
+                .isEqualTo(EditorialArticleImageDtos.SourcePlatform.LOCAL_UPLOAD);
         assertThat(normalized.altTextAr()).isEqualTo("تقاطع طريق في بلجيكا");
         assertThat(normalized.altTextEn()).isEqualTo("A road junction in Belgium");
+        assertThat(normalized.storedFileName()).isEqualTo("rijvia-en-belgian-road-hero");
+        assertThat(normalized.licenseName()).isEqualTo("Owner-approved local file");
         assertThat(normalized.focalPointX()).isEqualTo(0.5);
         assertThat(normalized.approvedBy()).isEqualTo("admin@rijvia.be");
     }
 
     @Test
-    void rejectsAProviderMismatchInsteadOfAcceptingUnknownLicensing() {
+    void rejectsUnconfirmedRightsAndUnsafeOptionalSourceUrls() {
         assertThatThrownBy(() -> policy.normalize(
                 file("image/jpeg"),
-                metadata("https://example.com/photos/belgian-road-123"),
+                metadata(false, null),
+                "admin"))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining("rights");
+
+        assertThatThrownBy(() -> policy.normalize(
+                file("image/jpeg"),
+                metadata(true, "http://example.com/source"),
                 "admin"))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining("sourceUrl");
@@ -44,7 +53,7 @@ class EditorialArticleImagePolicyTest {
     void rejectsSpoofedOrOversizedUploadContractsBeforeProcessing() {
         assertThatThrownBy(() -> policy.normalize(
                 file("image/gif"),
-                metadata("https://unsplash.com/photos/belgian-road-123"),
+                metadata(true, null),
                 "admin"))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining("JPEG or PNG");
@@ -54,27 +63,27 @@ class EditorialArticleImagePolicyTest {
                 new byte[(int) EditorialArticleImagePolicy.MAX_UPLOAD_BYTES + 1]);
         assertThatThrownBy(() -> policy.normalize(
                 oversized,
-                metadata("https://unsplash.com/photos/belgian-road-123"),
+                metadata(true, null),
                 "admin"))
                 .isInstanceOf(IllegalArgumentException.class)
-                .hasMessageContaining("20 MB");
+                .hasMessageContaining("5 MB");
     }
 
     private static MockMultipartFile file(String contentType) {
         return new MockMultipartFile("file", "belgian-road.jpg", contentType, new byte[] {1, 2, 3});
     }
 
-    private static EditorialArticleImageDtos.UploadMetadata metadata(String sourceUrl) {
+    private static EditorialArticleImageDtos.UploadMetadata metadata(
+            boolean rightsConfirmed,
+            String sourceUrl) {
         return new EditorialArticleImageDtos.UploadMetadata(
-                EditorialArticleImageDtos.SourcePlatform.UNSPLASH,
-                "belgian-road-123",
+                "RijVia EN Belgian road hero.JPG",
+                "RijVia owner upload",
                 sourceUrl,
-                "Road Photographer",
-                "https://unsplash.com/@road-photographer",
-                "Unsplash License",
-                "https://unsplash.com/license",
-                NOW.minusSeconds(3600),
-                NOW.minusSeconds(1800),
+                "Owner-approved local file",
+                null,
+                "Usage rights and relevance verified by the administrator",
+                rightsConfirmed,
                 "تقاطع طريق في بلجيكا",
                 "Een kruispunt in België",
                 "Un carrefour routier en Belgique",
@@ -83,8 +92,8 @@ class EditorialArticleImagePolicyTest {
                 null,
                 null,
                 null,
-                null,
-                null,
-                "License, relevance and privacy reviewed by the administrator");
+                0.5,
+                0.5
+        );
     }
 }

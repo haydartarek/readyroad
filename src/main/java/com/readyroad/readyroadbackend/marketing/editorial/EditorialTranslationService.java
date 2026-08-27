@@ -1,0 +1,434 @@
+package com.readyroad.readyroadbackend.marketing.editorial;
+
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.readyroad.readyroadbackend.marketing.admin.MarketingTaskLifecycleResponse;
+import com.readyroad.readyroadbackend.marketing.approval.ApprovalMetadata;
+import com.readyroad.readyroadbackend.marketing.audit.MarketingAuditService;
+import com.readyroad.readyroadbackend.marketing.content.ContentLocale;
+import com.readyroad.readyroadbackend.marketing.domain.TaskPriority;
+import com.readyroad.readyroadbackend.marketing.task.ClaimedTask;
+import com.readyroad.readyroadbackend.marketing.task.CreateMarketingTaskCommand;
+import com.readyroad.readyroadbackend.marketing.task.TaskCreationService;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.support.TransactionTemplate;
+
+@Service
+@RequiredArgsConstructor
+public class EditorialTranslationService {
+
+    static final String AGENT_TYPE = "EDITORIAL";
+    static final String TASK_TYPE = "ARTICLE_TRANSLATION_ADAPT";
+    static final String AUDIT_EVENT = "EDITORIAL_ARTICLE_TRANSLATIONS_CREATED";
+
+    private final EditorialTranslationStore store;
+    private final EditorialTranslationClient translationClient;
+    private final EditorialTranslationQualityPolicy qualityPolicy;
+    private final EditorialArticleVersionService versionService;
+    private final EditorialArticleWorkflowService workflowService;
+    private final TaskCreationService taskCreationService;
+    private final MarketingAuditService auditService;
+    private final ObjectMapper objectMapper;
+    private final PlatformTransactionManager transactionManager;
+
+    public MarketingTaskLifecycleResponse request(
+            long articleId,
+            EditorialTranslationDtos.CreateRequest request,
+            String actor) {
+
+        validateRequest(articleId, request, actor);
+
+        EditorialTranslationStore.TranslationContext context = store.context(articleId);
+
+        if (context.state() != EditorialArticleState.TRANSLATION_REQUIRED) {
+            throw new IllegalStateException(
+                    "Article must be TRANSLATION_REQUIRED before translation adaptation");
+        }
+
+        ObjectNode payload = objectMapper.createObjectNode()
+                .put("articleId", articleId)
+                .put("sourceVersionId", context.sourceVersionId())
+                .put("canonicalLanguage", context.canonicalLanguage())
+                .put("idempotencyKey", request.idempotencyKey().trim());
+
+        var result = taskCreationService.create(new CreateMarketingTaskCommand(
+                AGENT_TYPE,
+                TASK_TYPE,
+                payload,
+                TaskPriority.HIGH,
+                null,
+                actor.trim(),
+                "article-translation:" + articleId + ":" + request.idempotencyKey().trim(),
+                null,
+                null,
+                "ARTICLE",
+                String.valueOf(articleId),
+                ApprovalMetadata.standingOwnerAuthorization()));
+
+        return MarketingTaskLifecycleResponse.from(result.task());
+    }
+
+    public void create(ClaimedTask task) {
+        Preparation preparation = prepare(task);
+
+        if (preparation.completed()) {
+            return;
+        }
+
+        Map<ContentLocale, EditorialTranslationQualityPolicy.ValidatedTranslation> generated =
+                new LinkedHashMap<>();
+
+        for (ContentLocale target : preparation.targets()) {
+            var request = adaptRequest(preparation.context(), target);
+            var result = translationClient.adapt(request);
+            generated.put(target, qualityPolicy.validate(request, result));
+        }
+
+        new TransactionTemplate(transactionManager).executeWithoutResult(
+                status -> persist(task, preparation, generated));
+    }
+
+    Preparation prepare(ClaimedTask task) {
+        long articleId = articleId(task);
+
+        EditorialTranslationStore.TranslationContext context =
+                store.context(articleId);
+
+        Set<String> currentLanguages =
+                store.currentLanguages(articleId);
+
+        if (context.state() == EditorialArticleState.IMAGE_REQUIRED
+                && store.hasAllRequiredCurrentLanguages(articleId)) {
+            return new Preparation(context, List.of(), true);
+        }
+
+        if (context.state() != EditorialArticleState.TRANSLATION_REQUIRED) {
+            throw new IllegalStateException(
+                    "Article is not eligible for translation in state "
+                            + context.state());
+        }
+
+        validateSourceSnapshot(task, context);
+
+        required(
+                EditorialArticleMetadata.metaTitle(context.metadata()),
+                "Canonical article metaTitle is required before translation");
+
+        required(
+                EditorialArticleMetadata.metaDescription(context.metadata()),
+                "Canonical article metaDescription is required before translation");
+
+        required(
+                text(context.metadata(), "primaryCta"),
+                "Canonical article primary CTA is required before translation");
+
+        required(
+                context.title(),
+                "Canonical article title is required before translation");
+
+        required(
+                context.body(),
+                "Canonical article body is required before translation");
+
+        ContentLocale sourceLocale =
+                ContentLocale.valueOf(context.canonicalLanguage());
+
+        List<ContentLocale> targets =
+                ContentLocale.SUPPORTED.stream()
+                        .filter(locale -> locale != sourceLocale)
+                        .filter(locale -> !currentLanguages.contains(locale.name()))
+                        .toList();
+
+        return new Preparation(context, targets, false);
+    }
+
+    void persist(
+            ClaimedTask task,
+            Preparation preparation,
+            Map<ContentLocale, EditorialTranslationQualityPolicy.ValidatedTranslation> generated) {
+
+        EditorialTranslationStore.TranslationContext current =
+                store.lockContext(preparation.context().articleId());
+
+        if (current.state() == EditorialArticleState.IMAGE_REQUIRED
+                && store.hasAllRequiredCurrentLanguages(current.articleId())) {
+            return;
+        }
+
+        if (current.state() != EditorialArticleState.TRANSLATION_REQUIRED) {
+            throw new IllegalStateException(
+                    "Article is no longer in TRANSLATION_REQUIRED state");
+        }
+
+        if (current.sourceVersionId()
+                != preparation.context().sourceVersionId()) {
+            throw new IllegalStateException(
+                    "Canonical article version changed during translation; request translation again");
+        }
+
+        Set<String> currentLanguages =
+                store.currentLanguages(current.articleId());
+
+        var typography =
+                EditorialArticleMetadata.typography(current.metadata());
+
+        for (Map.Entry<ContentLocale,
+                EditorialTranslationQualityPolicy.ValidatedTranslation> entry
+                : generated.entrySet()) {
+
+            ContentLocale target = entry.getKey();
+
+            if (currentLanguages.contains(target.name())) {
+                continue;
+            }
+
+            EditorialTranslationQualityPolicy.ValidatedTranslation translation =
+                    entry.getValue();
+
+            ObjectNode metadata =
+                    EditorialArticleMetadata.withSeoMetadata(
+                            objectMapper.createObjectNode(),
+                            translation.metaTitle(),
+                            translation.metaDescription());
+
+            metadata =
+                    EditorialArticleMetadata.withInternalLinks(
+                            metadata,
+                            List.of());
+
+            metadata =
+                    EditorialArticleMetadata.withTypography(
+                            metadata,
+                            typography);
+
+            metadata.put(
+                    "primaryCta",
+                    translation.cta());
+
+            ObjectNode generation =
+                    objectMapper.createObjectNode()
+                            .put("provider", "OPENAI")
+                            .put("model", translation.model())
+                            .put("inputTokens", translation.inputTokens())
+                            .put("outputTokens", translation.outputTokens())
+                            .put("requestOutcome", translation.requestOutcome())
+                            .put("translationTaskId", task.taskId())
+                            .put("sourceVersionId", current.sourceVersionId())
+                            .put("sourceVersionNumber", current.sourceVersionNumber())
+                            .put("sourceLanguage", current.canonicalLanguage())
+                            .put("targetLanguage", target.name())
+                            .put(
+                                    "adaptationMode",
+                                    "CANONICAL_TRANSLATION_ADAPT");
+
+            String sourceReference =
+                    text(
+                            current.generationMetadata(),
+                            "sourceReference");
+
+            if (sourceReference != null) {
+                generation.put(
+                        "sourceReference",
+                        sourceReference);
+            }
+
+            versionService.append(
+                    new EditorialArticleVersionDtos.AppendRequest(
+                            current.articleId(),
+                            target.name(),
+                            translation.title(),
+                            translation.slug(),
+                            translation.summary(),
+                            translation.body(),
+                            metadata,
+                            generation,
+                            "DRAFT"),
+                    "EDITORIAL_WORKER");
+
+            currentLanguages =
+                    store.currentLanguages(current.articleId());
+        }
+
+        if (!store.hasAllRequiredCurrentLanguages(current.articleId())) {
+            throw new IllegalStateException(
+                    "Translation adaptation did not create current AR, NL, FR and EN article versions");
+        }
+
+        workflowService.transition(
+                new EditorialArticleWorkflowDtos.TransitionRequest(
+                        current.articleId(),
+                        EditorialArticleState.IMAGE_REQUIRED,
+                        task.taskId(),
+                        task.correlationId(),
+                        "EDITORIAL_WORKER",
+                        "Canonical article adapted into all required localized versions",
+                        Set.of()));
+
+        ObjectNode details =
+                objectMapper.createObjectNode()
+                        .put("articleId", current.articleId())
+                        .put("sourceVersionId", current.sourceVersionId())
+                        .put("sourceLanguage", current.canonicalLanguage())
+                        .put("translationTaskId", task.taskId());
+
+        var languages =
+                details.putArray("currentLanguages");
+
+        store.currentLanguages(current.articleId()).stream()
+                .sorted()
+                .forEach(languages::add);
+
+        auditService.recordEntityEvent(
+                AUDIT_EVENT,
+                "EDITORIAL_WORKER",
+                "EDITORIAL_ARTICLE",
+                String.valueOf(current.articleId()),
+                task.taskId(),
+                task.correlationId(),
+                details);
+    }
+
+    private static EditorialTranslationClient.AdaptRequest adaptRequest(
+            EditorialTranslationStore.TranslationContext context,
+            ContentLocale target) {
+
+        String metaTitle =
+                required(
+                        EditorialArticleMetadata.metaTitle(context.metadata()),
+                        "Canonical article metaTitle is required before translation");
+
+        String metaDescription =
+                required(
+                        EditorialArticleMetadata.metaDescription(context.metadata()),
+                        "Canonical article metaDescription is required before translation");
+
+        String primaryCta =
+                required(
+                        text(context.metadata(), "primaryCta"),
+                        "Canonical article primary CTA is required before translation");
+
+        return new EditorialTranslationClient.AdaptRequest(
+                context.articleId(),
+                context.sourceVersionId(),
+                ContentLocale.valueOf(context.canonicalLanguage()),
+                target,
+                context.title(),
+                context.slug(),
+                context.summary(),
+                context.body(),
+                metaTitle,
+                metaDescription,
+                primaryCta);
+    }
+
+    private static void validateSourceSnapshot(
+            ClaimedTask task,
+            EditorialTranslationStore.TranslationContext context) {
+
+        long expectedSourceVersionId =
+                task.payload().path("sourceVersionId").asLong(0);
+
+        String expectedCanonicalLanguage =
+                task.payload()
+                        .path("canonicalLanguage")
+                        .asText("")
+                        .trim();
+
+        if (expectedSourceVersionId <= 0
+                || expectedCanonicalLanguage.isBlank()) {
+            throw new IllegalArgumentException(
+                    "Translation task canonical source snapshot is incomplete");
+        }
+
+        if (expectedSourceVersionId != context.sourceVersionId()
+                || !expectedCanonicalLanguage.equals(context.canonicalLanguage())) {
+            throw new IllegalStateException(
+                    "Translation task canonical source snapshot is stale; request translation again");
+        }
+    }
+
+    private static long articleId(ClaimedTask task) {
+        if (task == null || task.payload() == null) {
+            throw new IllegalArgumentException(
+                    "Translation task payload is required");
+        }
+
+        long articleId =
+                task.payload()
+                        .path("articleId")
+                        .asLong(0);
+
+        if (articleId <= 0) {
+            throw new IllegalArgumentException(
+                    "Editorial translation task has no valid articleId");
+        }
+
+        return articleId;
+    }
+
+    private static void validateRequest(
+            long articleId,
+            EditorialTranslationDtos.CreateRequest request,
+            String actor) {
+
+        if (articleId <= 0) {
+            throw new IllegalArgumentException(
+                    "articleId must be positive");
+        }
+
+        if (request == null
+                || request.idempotencyKey() == null
+                || request.idempotencyKey().isBlank()) {
+            throw new IllegalArgumentException(
+                    "Translation idempotencyKey is required");
+        }
+
+        if (actor == null
+                || actor.isBlank()
+                || actor.trim().length() > 160) {
+            throw new IllegalArgumentException(
+                    "A valid actor is required");
+        }
+    }
+
+    private static String required(
+            String value,
+            String message) {
+
+        if (value == null || value.isBlank()) {
+            throw new IllegalStateException(message);
+        }
+
+        return value.trim();
+    }
+
+    private static String text(
+            JsonNode node,
+            String field) {
+
+        if (node == null || !node.isObject()) {
+            return null;
+        }
+
+        String value =
+                node.path(field)
+                        .asText("")
+                        .trim();
+
+        return value.isEmpty()
+                ? null
+                : value;
+    }
+
+    record Preparation(
+            EditorialTranslationStore.TranslationContext context,
+            List<ContentLocale> targets,
+            boolean completed) {}
+}

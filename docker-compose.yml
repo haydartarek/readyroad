@@ -67,6 +67,12 @@ services:
       # Local-only Search Console workbook workspace. No publishing side effects.
       READYROAD_MARKETING_LOCAL_SEO_IMPORT_ENABLED: "true"
 
+      # Editorial generation/translation provider. Values are injected from the
+      # local PowerShell session and are never stored in this Compose file.
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      MARKETING_CONTENT_PRIMARY_MODEL: ${MARKETING_CONTENT_PRIMARY_MODEL:-gpt-5.6-terra}
+      MARKETING_CONTENT_REVIEW_MODEL: ${MARKETING_CONTENT_REVIEW_MODEL:-gpt-5.6-sol}
+
       # JWT Configuration
       JWT_SECRET: ${JWT_SECRET:?JWT_SECRET must be set}
       JWT_EXPIRATION: 86400000
@@ -153,6 +159,7 @@ services:
       NEXT_PUBLIC_API_BASE_URL: http://localhost:3000
       FRONTEND_URL: ${FRONTEND_URL:-http://localhost:3000}
       GOOGLE_OAUTH_CLIENT_ID: ${GOOGLE_OAUTH_CLIENT_ID:-}
+      YOUTUBE_API_KEY: ${YOUTUBE_API_KEY:-}
       SMTP_USER: ${SMTP_USERNAME:-}
       SMTP_PASS: ${SMTP_PASSWORD:-}
       SMTP_FROM: ${MAIL_FROM:-info@rijvia.be}

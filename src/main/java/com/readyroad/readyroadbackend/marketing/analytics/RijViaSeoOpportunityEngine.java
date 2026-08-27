@@ -38,7 +38,7 @@ public class RijViaSeoOpportunityEngine {
                 .map(this::analyzeQuery)
                 .toList();
         List<AnalyzedRow> pageRows = workbook.pages().stream()
-                .map(this::analyzePage)
+                .map(row -> analyzePage(row, candidateDomain))
                 .toList();
         List<Map<String, Object>> urlMap = pageRows.stream()
                 .map(row -> migrationMap(row.metric().dimension(), candidateDomain))
@@ -113,7 +113,7 @@ public class RijViaSeoOpportunityEngine {
         }
 
         String state;
-        if ("OLD_BRAND_READYROAD".equals(brand) || "COMPETITOR_OR_AMBIGUOUS_BRAND".equals(brand)) {
+        if ("LEGACY_BRAND_QUERY".equals(brand) || "COMPETITOR_OR_AMBIGUOUS_BRAND".equals(brand)) {
             state = "MIGRATION_RISK";
         } else if (row.impressions() < 5) {
             state = "LOW_CONFIDENCE";
@@ -131,10 +131,12 @@ public class RijViaSeoOpportunityEngine {
         return analyzed(row, language, brand, classes, state, false);
     }
 
-    private AnalyzedRow analyzePage(SearchConsoleWorkbookParser.MetricRow row) {
+    private AnalyzedRow analyzePage(
+            SearchConsoleWorkbookParser.MetricRow row,
+            String candidateDomain) {
         String url = row.dimension();
         String language = baseClassifier.language(url, "");
-        String brand = isReadyRoadUrl(url) ? "OLD_BRAND_READYROAD" : "NON_BRAND";
+        String brand = isLegacySourceUrl(url, candidateDomain) ? "LEGACY_SOURCE_DOMAIN" : "NON_BRAND";
         LinkedHashSet<String> classes = commonClassifications(row, language, brand);
         classes.add("MIGRATION_SOURCE_URL");
         String path = path(url);
@@ -220,7 +222,9 @@ public class RijViaSeoOpportunityEngine {
         double contentType = classifications.stream().anyMatch(value -> value.endsWith("_QUERY") || value.endsWith("_PAGE")) ? 7 : 2;
         double conversion = classifications.contains("TRANSACTIONAL") ? 5 : 2;
         double internalLinking = page && row.impressions() >= 20 ? 5 : 2;
-        double brandRisk = Set.of("OLD_BRAND_READYROAD", "COMPETITOR_OR_AMBIGUOUS_BRAND").contains(brand) ? 15 : 0;
+        double brandRisk = Set.of(
+                "LEGACY_BRAND_QUERY", "LEGACY_SOURCE_DOMAIN", "COMPETITOR_OR_AMBIGUOUS_BRAND")
+                .contains(brand) ? 15 : 0;
         double technicalRisk = Set.of("MIGRATION_RISK", "TECHNICAL_SEO_RISK").contains(state) ? 10 : 0;
         double confidenceFactor = row.impressions() < 5 ? 0.45 : row.impressions() < 10 ? 0.7 : 1;
         return (int) Math.round(Math.min(100, (volume + position + ctrGap + belgium
@@ -330,7 +334,8 @@ public class RijViaSeoOpportunityEngine {
         List<DraftBrief> result = new ArrayList<>();
         addBrief(result, workbook, "FR-LANDING-CTR", "FR", "Improve the French RijVia landing-page snippet match",
                 "Align the French title, description and visible promise with the high-impression landing-page intent.",
-                row -> row.dimension().equalsIgnoreCase("https://readyroad.be/fr"), "TRAFFIC_RULES", "ICP-FR-THEORY");
+                row -> "FR".equals(locale(row.dimension())) && "/".equals(stripLocale(row.dimension())),
+                "TRAFFIC_RULES", "ICP-FR-THEORY");
         addBrief(result, workbook, "FR-FAQ-CTR", "FR", "Refine the French Belgian theory FAQ from real search demand",
                 "Improve FAQ snippet relevance and same-language supporting links without inventing legal claims.",
                 row -> row.dimension().contains("/fr/faq"), "PREPARATION_TIPS", "ICP-FR-THEORY");
@@ -520,13 +525,20 @@ public class RijViaSeoOpportunityEngine {
         return path;
     }
 
-    private static boolean isReadyRoadUrl(String value) {
+    private static boolean isLegacySourceUrl(String value, String candidateDomain) {
         try {
-            String host = URI.create(value).getHost();
-            return host != null && (host.equalsIgnoreCase("readyroad.be") || host.equalsIgnoreCase("www.readyroad.be"));
+            String sourceHost = normalizedHost(URI.create(value).getHost());
+            String candidateHost = normalizedHost(URI.create(candidateDomain).getHost());
+            return sourceHost != null && candidateHost != null && !sourceHost.equals(candidateHost);
         } catch (IllegalArgumentException ignored) {
             return false;
         }
+    }
+
+    private static String normalizedHost(String host) {
+        if (host == null) return null;
+        String normalized = host.toLowerCase(Locale.ROOT);
+        return normalized.startsWith("www.") ? normalized.substring(4) : normalized;
     }
 
     private static String path(String value) {

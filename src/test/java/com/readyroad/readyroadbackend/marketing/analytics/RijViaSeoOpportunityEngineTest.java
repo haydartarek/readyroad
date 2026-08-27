@@ -15,14 +15,14 @@ class RijViaSeoOpportunityEngineTest {
             new OrganicDiscoveryClassifier(mock(MarketingStrategyReadService.class)));
 
     @Test
-    void separatesOldBrandRiskAndBuildsPathPreservingRijViaMigrationEvidence() {
+    void separatesLegacyBrandRiskAndBuildsPathPreservingRijViaMigrationEvidence() {
         SearchConsoleWorkbookParser.ParsedWorkbook workbook = workbook();
 
         RijViaSeoOpportunityEngine.Analysis result = engine.analyze(workbook, "https://rijvia.be");
 
         assertThat(result.queryRows()).anySatisfy(row -> {
             assertThat(row.metric().dimension()).isEqualTo("readyroad");
-            assertThat(row.brandClassification()).isEqualTo("OLD_BRAND_READYROAD");
+            assertThat(row.brandClassification()).isEqualTo("LEGACY_BRAND_QUERY");
             assertThat(row.state()).isEqualTo("MIGRATION_RISK");
             assertThat(row.priority()).isEqualTo("P0");
         });

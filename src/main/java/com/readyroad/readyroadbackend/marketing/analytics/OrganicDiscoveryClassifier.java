@@ -35,7 +35,7 @@ public class OrganicDiscoveryClassifier {
             return AnalyticsModels.BrandClassification.OWN_BRAND_RIJVIA;
         }
         if (OLD_BRAND.contains(normalized)) {
-            return AnalyticsModels.BrandClassification.OLD_BRAND_READYROAD;
+            return AnalyticsModels.BrandClassification.LEGACY_BRAND_QUERY;
         }
         if (AMBIGUOUS_BRAND.contains(normalized)) {
             return AnalyticsModels.BrandClassification.COMPETITOR_OR_AMBIGUOUS_BRAND;

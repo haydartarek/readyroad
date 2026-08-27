@@ -1,5 +1,6 @@
 package com.readyroad.readyroadbackend.marketing.admin;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import com.readyroad.readyroadbackend.marketing.domain.AgentExecutionLog;
 import com.readyroad.readyroadbackend.marketing.domain.AgentSchedule;
 import com.readyroad.readyroadbackend.marketing.domain.AgentSetting;
@@ -105,7 +106,7 @@ public final class MarketingAdminDtos {
         static SettingItem from(AgentSetting setting) {
             return new SettingItem(
                     setting.getId(), setting.getAgentType(), setting.getSettingKey(),
-                    setting.getSettingValue().deepCopy(), setting.getUpdatedBy(), setting.getUpdatedAt());
+                    plainJsonValue(setting.getSettingValue()), setting.getUpdatedBy(), setting.getUpdatedAt());
         }
     }
 
@@ -144,4 +145,27 @@ public final class MarketingAdminDtos {
     public record EnabledRequest(
             @NotNull Boolean enabled,
             @NotBlank @Size(max = 255) String idempotencyKey) {}
+
+    private static Object plainJsonValue(JsonNode value) {
+        if (value == null || value.isNull()) {
+            return null;
+        }
+        if (value.isArray()) {
+            java.util.List<Object> items = new java.util.ArrayList<>();
+            value.forEach(item -> items.add(plainJsonValue(item)));
+            return java.util.Collections.unmodifiableList(items);
+        }
+        if (value.isObject()) {
+            java.util.Map<String, Object> fields = new java.util.LinkedHashMap<>();
+            value.properties().forEach(entry -> fields.put(entry.getKey(), plainJsonValue(entry.getValue())));
+            return java.util.Collections.unmodifiableMap(fields);
+        }
+        if (value.isBoolean()) {
+            return value.booleanValue();
+        }
+        if (value.isNumber()) {
+            return value.numberValue();
+        }
+        return value.asText();
+    }
 }

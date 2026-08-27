@@ -73,7 +73,6 @@ jobs:
           check_http "backend" "https://api.rijvia.be/actuator/health"
           check_http "robots" "https://rijvia.be/robots.txt"
           check_http "sitemap" "https://rijvia.be/sitemap.xml"
-          check_http "legacy_redirect" "https://readyroad.be"
 
           if [[ "$SIMULATION" == "failure" ]]; then
             failures+=("simulation: controlled alert-path test")

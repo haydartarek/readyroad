@@ -25,6 +25,7 @@ class EditorialInternalLinkPolicy {
             "EN", "");
     private static final Set<String> GENERIC_ANCHORS = Set.of(
             "click here", "klik hier", "cliquez ici", "اضغط هنا");
+    private static final Set<String> PUBLIC_HOSTS = Set.of("rijvia.be", "www.rijvia.be");
 
     private final EditorialInternalLinkStore store;
 
@@ -133,9 +134,22 @@ class EditorialInternalLinkPolicy {
         String normalized = value == null ? "" : value.trim();
         try {
             URI uri = new URI(normalized);
+            if (uri.isAbsolute()) {
+                String host = uri.getHost() == null
+                        ? ""
+                        : uri.getHost().toLowerCase(Locale.ROOT);
+                if (!"https".equalsIgnoreCase(uri.getScheme())
+                        || !PUBLIC_HOSTS.contains(host)
+                        || uri.getUserInfo() != null
+                        || (uri.getPort() != -1 && uri.getPort() != 443)) {
+                    throw new IllegalArgumentException(
+                            "Only HTTPS RijVia URLs can be normalized as internal links");
+                }
+                normalized = uri.getRawPath();
+            }
             if (normalized.isEmpty() || !normalized.startsWith("/") || normalized.startsWith("//")
-                    || uri.isAbsolute() || uri.getHost() != null || uri.getQuery() != null
-                    || uri.getFragment() != null || normalized.chars().anyMatch(Character::isWhitespace)) {
+                    || uri.getQuery() != null || uri.getFragment() != null
+                    || normalized.chars().anyMatch(Character::isWhitespace)) {
                 throw new IllegalArgumentException("Internal link must be a clean local path");
             }
         } catch (URISyntaxException error) {

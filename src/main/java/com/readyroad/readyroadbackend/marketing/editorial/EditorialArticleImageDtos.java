@@ -2,32 +2,29 @@ package com.readyroad.readyroadbackend.marketing.editorial;
 
 import jakarta.validation.constraints.DecimalMax;
 import jakarta.validation.constraints.DecimalMin;
+import jakarta.validation.constraints.AssertTrue;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import java.time.Instant;
 import java.util.List;
 
 public final class EditorialArticleImageDtos {
 
-    private EditorialArticleImageDtos() {}
+    private EditorialArticleImageDtos() {
+    }
 
     public enum SourcePlatform {
-        UNSPLASH,
-        PIXABAY,
-        PEXELS
+        LOCAL_UPLOAD
     }
 
     public record UploadMetadata(
-            @NotNull SourcePlatform sourcePlatform,
-            @NotBlank @Size(max = 255) String sourceAssetId,
-            @NotBlank @Size(max = 2000) String sourceUrl,
-            @NotBlank @Size(max = 255) String photographerName,
-            @NotBlank @Size(max = 2000) String photographerUrl,
+            @NotBlank @Size(max = 128) String storedFileName,
+            @NotBlank @Size(max = 255) String sourceName,
+            @Size(max = 2000) String sourceUrl,
             @NotBlank @Size(max = 255) String licenseName,
-            @NotBlank @Size(max = 2000) String licenseUrl,
-            @NotNull Instant licenseVerifiedAt,
-            @NotNull Instant downloadedAt,
+            @Size(max = 2000) String licenseUrl,
+            @NotBlank @Size(max = 1000) String approvalReason,
+            @AssertTrue(message = "Image usage rights must be confirmed") boolean rightsConfirmed,
             @NotBlank @Size(max = 500) String altTextAr,
             @NotBlank @Size(max = 500) String altTextNl,
             @NotBlank @Size(max = 500) String altTextFr,
@@ -37,8 +34,9 @@ public final class EditorialArticleImageDtos {
             @Size(max = 2000) String captionFr,
             @Size(max = 2000) String captionEn,
             @DecimalMin("0.0") @DecimalMax("1.0") Double focalPointX,
-            @DecimalMin("0.0") @DecimalMax("1.0") Double focalPointY,
-            @NotBlank @Size(max = 1000) String approvalReason) {}
+            @DecimalMin("0.0") @DecimalMax("1.0") Double focalPointY
+    ) {
+    }
 
     public record Variant(
             String type,
@@ -46,12 +44,16 @@ public final class EditorialArticleImageDtos {
             String publicPath,
             int width,
             int height,
-            int byteSize) {}
+            int byteSize
+    ) {
+    }
 
     public record Localization(
             String language,
             String altText,
-            String caption) {}
+            String caption
+    ) {
+    }
 
     public record License(
             long id,
@@ -67,13 +69,16 @@ public final class EditorialArticleImageDtos {
             String originalFileName,
             String approvedBy,
             Instant approvedAt,
-            String approvalReason) {}
+            String approvalReason
+    ) {
+    }
 
     public record Asset(
             long id,
             long articleId,
             String status,
             String originalFileName,
+            String storedFileName,
             int originalWidth,
             int originalHeight,
             double focalPointX,
@@ -82,7 +87,9 @@ public final class EditorialArticleImageDtos {
             List<Localization> localizations,
             License license,
             Instant createdAt,
-            String createdBy) {}
+            String createdBy
+    ) {
+    }
 
     public record PublicImage(
             long assetId,
@@ -98,5 +105,7 @@ public final class EditorialArticleImageDtos {
             String photographerName,
             String photographerUrl,
             String licenseName,
-            String licenseUrl) {}
+            String licenseUrl
+    ) {
+    }
 }

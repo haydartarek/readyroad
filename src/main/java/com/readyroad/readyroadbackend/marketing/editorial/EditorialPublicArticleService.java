@@ -65,6 +65,7 @@ class EditorialPublicArticleService {
                         ? null
                         : imageStore.publicImage(value.imageAssetId(), language).orElse(null),
                 EditorialArticleMetadata.internalLinks(value.metadata()),
+                EditorialArticleMetadata.typography(value.metadata()),
                 store.alternateSlugs(value.articleId())));
     }
 

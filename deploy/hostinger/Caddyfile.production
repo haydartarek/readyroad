@@ -47,12 +47,11 @@ www.rijvia.be {
 }
 
 readyroad.be, www.readyroad.be {
-	import safe_defaults
-	redir https://rijvia.be{uri} 308
+        import safe_defaults
+        respond "Gone" 410
 }
 
 api.readyroad.be {
-	import safe_defaults
-	header X-RijVia-Legacy-API "true"
-	reverse_proxy backend:8890
+        import safe_defaults
+        respond "Gone" 410
 }

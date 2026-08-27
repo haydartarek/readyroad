@@ -18,9 +18,9 @@ class OrganicDiscoveryClassifierTest {
         assertThat(classifier.brand("Rij Via"))
                 .isEqualTo(AnalyticsModels.BrandClassification.OWN_BRAND_RIJVIA);
         assertThat(classifier.brand("readyroad"))
-                .isEqualTo(AnalyticsModels.BrandClassification.OLD_BRAND_READYROAD);
+                .isEqualTo(AnalyticsModels.BrandClassification.LEGACY_BRAND_QUERY);
         assertThat(classifier.brand("Ready Road"))
-                .isEqualTo(AnalyticsModels.BrandClassification.OLD_BRAND_READYROAD);
+                .isEqualTo(AnalyticsModels.BrandClassification.LEGACY_BRAND_QUERY);
         assertThat(classifier.brand("ready to road"))
                 .isEqualTo(AnalyticsModels.BrandClassification.COMPETITOR_OR_AMBIGUOUS_BRAND);
         assertThat(classifier.brand("readytoroad"))
@@ -34,13 +34,13 @@ class OrganicDiscoveryClassifierTest {
         assertThat(classifier.longTail("verschil autoweg en autosnelweg belgië")).isTrue();
         assertThat(classifier.intent("verschil autoweg en autosnelweg belgië"))
                 .isEqualTo(AnalyticsModels.SearchIntent.INFORMATIONAL);
-        assertThat(classifier.language("https://readyroad.be/ar/lessons/les-1", "علامات المرور"))
+        assertThat(classifier.language("https://rijvia.be/ar/lessons/les-1", "علامات المرور"))
                 .isEqualTo("AR");
-        assertThat(classifier.language("https://readyroad.be/nl/practice", "oefenen"))
+        assertThat(classifier.language("https://rijvia.be/nl/practice", "oefenen"))
                 .isEqualTo("NL");
-        assertThat(classifier.language("https://readyroad.be/fr/exam", "examen"))
+        assertThat(classifier.language("https://rijvia.be/fr/exam", "examen"))
                 .isEqualTo("FR");
-        assertThat(classifier.language("https://readyroad.be/lessons", "traffic signs"))
+        assertThat(classifier.language("https://rijvia.be/lessons", "traffic signs"))
                 .isEqualTo("EN");
     }
 }

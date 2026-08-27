@@ -664,7 +664,7 @@ class MarketingEditorialPostgreSqlIntegrationTest {
                 "BE", "EN", "VERIFIED", "OFFICIAL", true, "VERIFIED",
                 officialFingerprint, "official-etag", "Wed, 13 Aug 2026 10:00:00 GMT");
         var core = new EditorialSourceDtos.SourceInput(
-                "READYROAD_CORE_DATA", "INTERNAL", "ReadyRoad exam configuration", "ReadyRoad",
+                "RIJVIA_CORE_DATA", "INTERNAL", "RijVia exam configuration", "RijVia",
                 null, "core:exam-configuration", "BE", "EN", "VERIFIED",
                 "CORE_TRUSTED", false, "NOT_REQUIRED", "core-v1", null, null);
         return new EditorialSourceDtos.SourceCollectionRequest(

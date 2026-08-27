@@ -19,6 +19,7 @@ import org.springframework.web.server.ResponseStatusException;
 public class EditorialArticleImageService {
 
     static final String AUDIT_EVENT = "EDITORIAL_ARTICLE_IMAGE_APPROVED";
+    static final String REMOVE_AUDIT_EVENT = "EDITORIAL_ARTICLE_IMAGE_REMOVED";
 
     private final EditorialArticleImagePolicy policy;
     private final EditorialArticleImageProcessor processor;
@@ -53,11 +54,12 @@ public class EditorialArticleImageService {
 
         var processed = processor.process(
                 file,
-                article.canonicalKey(),
+                metadata.storedFileName(),
                 metadata.contentType(),
                 metadata.focalPointX(),
                 metadata.focalPointY());
         registerRollbackCleanup(processed);
+        metadata = metadata.withSourceAssetId(processed.sha256());
         if (store.duplicate(processed.sha256(), metadata.sourcePlatform(), metadata.sourceAssetId())) {
             processor.delete(processed);
             throw new ResponseStatusException(
@@ -88,6 +90,34 @@ public class EditorialArticleImageService {
                 "editorial-image-" + assetId,
                 details);
         return store.current(articleId).orElseThrow();
+    }
+
+    @Transactional
+    public void remove(long articleId, String actor) {
+        if (articleId <= 0) {
+            throw new IllegalArgumentException("articleId must be positive");
+        }
+        if (actor == null || actor.isBlank() || actor.trim().length() > 160) {
+            throw new IllegalArgumentException("A valid image remover is required");
+        }
+        var article = store.lockArticle(articleId);
+        if (!"IMAGE_REQUIRED".equals(article.lifecycleState())) {
+            throw new ResponseStatusException(
+                    HttpStatus.CONFLICT,
+                    "Article images can only be removed in IMAGE_REQUIRED state");
+        }
+        long assetId = store.supersedeCurrent(articleId);
+        ObjectNode details = objectMapper.createObjectNode();
+        details.put("articleId", articleId);
+        details.put("imageAssetId", assetId);
+        auditService.recordEntityEvent(
+                REMOVE_AUDIT_EVENT,
+                actor.trim(),
+                "EDITORIAL_ARTICLE_IMAGE",
+                String.valueOf(assetId),
+                null,
+                "editorial-image-remove-" + assetId,
+                details);
     }
 
     private void registerRollbackCleanup(EditorialArticleImageProcessor.Processed processed) {

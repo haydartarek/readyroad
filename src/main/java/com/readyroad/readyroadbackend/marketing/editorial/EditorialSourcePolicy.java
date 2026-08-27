@@ -8,14 +8,14 @@ import java.util.Set;
 final class EditorialSourcePolicy {
 
     private static final Set<String> SOURCE_TYPES = Set.of(
-            "READYROAD_CORE_DATA",
+            "RIJVIA_CORE_DATA",
             "OFFICIAL_LEGAL_SOURCE",
             "OFFICIAL_GOVERNMENT_SOURCE",
             "OFFICIAL_PUBLIC_AUTHORITY_SOURCE",
             "APPROVED_INTERNAL_SOURCE",
             "APPROVED_REFERENCE_SOURCE");
     private static final Set<String> INTERNAL_TYPES = Set.of(
-            "READYROAD_CORE_DATA", "APPROVED_INTERNAL_SOURCE");
+            "RIJVIA_CORE_DATA", "APPROVED_INTERNAL_SOURCE");
     private static final Set<String> OFFICIAL_TYPES = Set.of(
             "OFFICIAL_LEGAL_SOURCE",
             "OFFICIAL_GOVERNMENT_SOURCE",
@@ -78,7 +78,7 @@ final class EditorialSourcePolicy {
             canonicalUrl(source.url());
         }
 
-        if ("READYROAD_CORE_DATA".equals(sourceType) && !"CORE_TRUSTED".equals(trustStatus)) {
+        if ("RIJVIA_CORE_DATA".equals(sourceType) && !"CORE_TRUSTED".equals(trustStatus)) {
             throw new IllegalArgumentException("RijVia core data must use CORE_TRUSTED status");
         }
         if (OFFICIAL_TYPES.contains(sourceType) && !"OFFICIAL".equals(trustStatus)) {
@@ -104,7 +104,7 @@ final class EditorialSourcePolicy {
         }
         if ("LEGAL".equals(upper(claimType))) {
             return "VERIFIED".equals(source.legalReviewStatus())
-                    && (("READYROAD_CORE_DATA".equals(source.sourceType())
+                    && (("RIJVIA_CORE_DATA".equals(source.sourceType())
                                     && "CORE_TRUSTED".equals(source.trustStatus()))
                             || (OFFICIAL_TYPES.contains(source.sourceType())
                                     && "OFFICIAL".equals(source.trustStatus())));

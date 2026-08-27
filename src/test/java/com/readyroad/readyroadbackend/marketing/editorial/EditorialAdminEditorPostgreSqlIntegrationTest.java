@@ -140,6 +140,45 @@ class EditorialAdminEditorPostgreSqlIntegrationTest {
     }
 
     @Test
+    void persistsOnlyApprovedArticleTypographyTokensInsideVersionMetadata() {
+        var typography = new EditorialEditorDtos.Typography(
+                "LARGE", "DEFAULT", "COMPACT", "DEFAULT", "LARGE", "SECONDARY");
+        var saved = service.save(1, "EN", new EditorialEditorDtos.SaveRequest(
+                "Title",
+                "styled-article",
+                "Summary",
+                "# Heading\n\nReadable body",
+                "SEO Title",
+                "SEO Summary",
+                List.of(new EditorialInternalLinkDtos.Input("/exam", "Start the theory exam")),
+                typography,
+                null), "admin");
+
+        assertThat(saved.version().typography()).isEqualTo(typography);
+        assertThat(jdbc.queryForObject("""
+                SELECT metadata -> 'typography' ->> 'textColor'
+                FROM article_versions WHERE id = ?
+                """, String.class, saved.version().id())).isEqualTo("SECONDARY");
+        assertThat(service.versions(saved.articleId(), "EN").getFirst().typography())
+                .isEqualTo(typography);
+
+        var unsafe = new EditorialEditorDtos.Typography(
+                "96PX", "DEFAULT", "DEFAULT", "DEFAULT", "DEFAULT", "DEFAULT");
+        assertThatThrownBy(() -> service.save(2, "EN", new EditorialEditorDtos.SaveRequest(
+                "Unsafe",
+                "unsafe-style",
+                "Summary",
+                "Body",
+                "SEO Unsafe",
+                "SEO Unsafe summary",
+                List.of(),
+                unsafe,
+                null), "admin"))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining("Unsupported article typography value");
+    }
+
+    @Test
     void derivesTheContentGraphAndReportsOnlyDisconnectedArticleVersionsAsOrphans() {
         service.save(1, "EN", new EditorialEditorDtos.SaveRequest(
                 "Connected",

@@ -35,6 +35,17 @@ class EditorialInternalLinkPolicyTest {
     }
 
     @Test
+    void normalizesSameDomainHttpsUrlsToLocalizedInternalPaths() {
+        var links = policy.normalize(10L, "AR", List.of(
+                input("https://rijvia.be/ar/exam", "ابدأ محاكي الامتحان"),
+                input("https://www.rijvia.be/ar/videos/", "شاهد فيديوهات القيادة")));
+
+        assertThat(links)
+                .extracting(EditorialInternalLinkDtos.Link::targetPath)
+                .containsExactly("/ar/exam", "/ar/videos");
+    }
+
+    @Test
     void rejectsCrossLanguageDuplicateAndGenericLinks() {
         assertThatThrownBy(() -> policy.normalize(10L, "AR", List.of(
                 input("/fr/exam", "ابدأ الامتحان"))))
@@ -81,7 +92,7 @@ class EditorialInternalLinkPolicyTest {
         assertThatThrownBy(() -> policy.normalize(10L, "EN", List.of(
                 input("https://example.com", "External source"))))
                 .isInstanceOf(IllegalArgumentException.class)
-                .hasMessageContaining("clean local path");
+                .hasMessageContaining("Only HTTPS RijVia URLs");
     }
 
     private static EditorialInternalLinkDtos.Input input(String targetPath, String anchorText) {

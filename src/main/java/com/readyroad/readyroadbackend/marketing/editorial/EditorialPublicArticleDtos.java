@@ -28,5 +28,6 @@ final class EditorialPublicArticleDtos {
             Instant publishedAt,
             EditorialArticleImageDtos.PublicImage image,
             List<EditorialInternalLinkDtos.Link> internalLinks,
+            EditorialEditorDtos.Typography typography,
             Map<String, String> alternateSlugs) {}
 }

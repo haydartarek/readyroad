@@ -31,8 +31,9 @@ import org.springframework.web.multipart.MultipartFile;
 class EditorialArticleImageProcessor {
 
     private static final List<VariantSpec> VARIANTS = List.of(
-            new VariantSpec("HERO", 1600, 900, 256_000),
-            new VariantSpec("CARD", 800, 450, 143_360),
+            new VariantSpec("HERO", 1920, 1080, 420_000),
+            new VariantSpec("CARD", 1200, 675, 260_000),
+            new VariantSpec("MEDIUM", 800, 450, 143_360),
             new VariantSpec("MOBILE", 480, 270, 81_920),
             new VariantSpec("OG", 1200, 630, 307_200));
 
@@ -55,7 +56,7 @@ class EditorialArticleImageProcessor {
 
     Processed process(
             MultipartFile file,
-            String canonicalKey,
+            String storedFileName,
             String contentType,
             double focalPointX,
             double focalPointY) {
@@ -72,8 +73,8 @@ class EditorialArticleImageProcessor {
             if (source == null) {
                 throw new IllegalArgumentException("The uploaded article image cannot be decoded");
             }
-            if (source.getWidth() < 1600 || source.getHeight() < 900) {
-                throw new IllegalArgumentException("Article source images must be at least 1600 x 900 pixels");
+            if (source.getWidth() < 1920 || source.getHeight() < 1080) {
+                throw new IllegalArgumentException("Article source images must be at least 1920 x 1080 pixels");
             }
 
             Files.createDirectories(archiveDirectory);
@@ -83,7 +84,7 @@ class EditorialArticleImageProcessor {
             Files.write(original, sourceBytes, StandardOpenOption.CREATE_NEW);
 
             String hash = sha256(sourceBytes);
-            String seoName = seoFileName(canonicalKey);
+            String seoName = seoFileName(storedFileName);
             List<ProcessedVariant> variants = VARIANTS.stream()
                     .map(spec -> writeVariant(
                             source,

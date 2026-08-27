@@ -10,6 +10,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -31,6 +32,7 @@ public class EditorialAdminController {
     private final EditorialSourceCollectionService sourceCollectionService;
     private final EditorialBriefService briefService;
     private final EditorialDraftService draftService;
+    private final EditorialTranslationService translationService;
     private final EditorialEditorService editorService;
     private final EditorialArticleApprovalService articleApprovalService;
     private final EditorialArticleImageService articleImageService;
@@ -99,6 +101,15 @@ public class EditorialAdminController {
                 draftService.request(articleId, request, principal.getName()));
     }
 
+    @PostMapping("/editor/articles/{articleId}/translation-requests")
+    public ResponseEntity<MarketingTaskLifecycleResponse> createTranslations(
+            @PathVariable long articleId,
+            @Valid @RequestBody EditorialTranslationDtos.CreateRequest request,
+            Principal principal) {
+        return ResponseEntity.accepted().body(
+                translationService.request(articleId, request, principal.getName()));
+    }
+
     @GetMapping("/editor")
     public EditorialEditorDtos.Workspace editor() {
         return editorService.workspace();
@@ -147,6 +158,14 @@ public class EditorialAdminController {
             @Valid @RequestPart("metadata") EditorialArticleImageDtos.UploadMetadata metadata,
             Principal principal) {
         return articleImageService.upload(articleId, file, metadata, principal.getName());
+    }
+
+    @DeleteMapping("/editor/articles/{articleId}/image")
+    public ResponseEntity<Void> removeArticleImage(
+            @PathVariable long articleId,
+            Principal principal) {
+        articleImageService.remove(articleId, principal.getName());
+        return ResponseEntity.noContent().build();
     }
 
     @PostMapping("/editor/articles/{articleId}/approval-requests")

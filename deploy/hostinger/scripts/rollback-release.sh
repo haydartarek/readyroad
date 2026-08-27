@@ -109,17 +109,10 @@ rr_wait_container_health readyroad-frontend 180
 rr_atomic_current_link "$TARGET_RELEASE"
 rr_compose "$TARGET_RELEASE" up -d --no-deps --no-build caddy
 rr_wait_container_health readyroad-caddy 120
-if grep -qE '^rijvia\.be[[:space:]]*\{' "${TARGET_RELEASE}/Caddyfile"; then
-  "$SMOKE_SCRIPT" \
-    --env-file "${TARGET_RELEASE}/.env.production" \
-    --frontend-url https://rijvia.be \
-    --api-url https://api.rijvia.be
-else
-  "$SMOKE_SCRIPT" \
-    --env-file "${TARGET_RELEASE}/.env.production" \
-    --frontend-url https://readyroad.be \
-    --api-url https://api.readyroad.be
-fi
+"$SMOKE_SCRIPT" \
+  --env-file "${TARGET_RELEASE}/.env.production" \
+  --frontend-url https://rijvia.be \
+  --api-url https://api.rijvia.be
 
 duration=$(( $(date +%s) - started_epoch ))
 {

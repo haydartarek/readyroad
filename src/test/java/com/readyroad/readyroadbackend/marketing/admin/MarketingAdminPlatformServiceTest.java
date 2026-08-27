@@ -10,6 +10,7 @@ import com.readyroad.readyroadbackend.marketing.approval.ApprovalMetadata;
 import com.readyroad.readyroadbackend.marketing.approval.ApprovalMode;
 import com.readyroad.readyroadbackend.marketing.audit.MarketingAuditService;
 import com.readyroad.readyroadbackend.marketing.domain.AgentDefinition;
+import com.readyroad.readyroadbackend.marketing.domain.AgentSetting;
 import com.readyroad.readyroadbackend.marketing.domain.AgentTask;
 import com.readyroad.readyroadbackend.marketing.domain.TaskPriority;
 import com.readyroad.readyroadbackend.marketing.domain.TaskStatus;
@@ -18,6 +19,8 @@ import com.readyroad.readyroadbackend.marketing.repository.AgentTaskRepository;
 import com.readyroad.readyroadbackend.marketing.task.CreateMarketingTaskCommand;
 import com.readyroad.readyroadbackend.marketing.task.TaskCreationResult;
 import com.readyroad.readyroadbackend.marketing.task.TaskCreationService;
+import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -37,6 +40,26 @@ class MarketingAdminPlatformServiceTest {
     @Spy ObjectMapper objectMapper = new ObjectMapper();
 
     @InjectMocks MarketingAdminPlatformService service;
+
+    @Test
+    void settingDtoExposesStructuredJsonWithoutJacksonInternals() {
+        AgentSetting setting = new AgentSetting();
+        setting.setId(12L);
+        setting.setAgentType("ANALYTICS");
+        setting.setSettingKey("thresholds");
+        setting.setSettingValue(objectMapper.createObjectNode()
+                .put("enabled", true)
+                .put("minimum", 20)
+                .set("languages", objectMapper.createArrayNode().add("AR").add("NL")));
+
+        MarketingAdminDtos.SettingItem result = MarketingAdminDtos.SettingItem.from(setting);
+
+        assertThat(result.value()).isEqualTo(Map.of(
+                "enabled", true,
+                "minimum", 20,
+                "languages", List.of("AR", "NL")));
+        assertThat(result.value()).isNotInstanceOf(com.fasterxml.jackson.databind.JsonNode.class);
+    }
 
     @Test
     void disablingAnAgentCreatesAnApprovalBoundControlTask() {

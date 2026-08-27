@@ -53,6 +53,21 @@ class EditorialSourcePolicyTest {
         assertThat(policy.supportsClaim("LEGAL", official)).isTrue();
     }
 
+    @Test
+    void acceptsOnlyTheRijViaCoreSourceIdentity() {
+        var rijViaCore = source(
+                "RIJVIA_CORE_DATA", "INTERNAL", null, "lessons/les-1",
+                "CORE_TRUSTED", "VERIFIED", false, "NOT_REQUIRED");
+
+        policy.validate(request(rijViaCore));
+
+        assertThatThrownBy(() -> policy.validate(request(source(
+                "READYROAD_CORE_DATA", "INTERNAL", null, "lessons/les-1",
+                "CORE_TRUSTED", "VERIFIED", false, "NOT_REQUIRED"))))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining("source type");
+    }
+
     private static EditorialSourceDtos.SourceCollectionRequest request(EditorialSourceDtos.SourceInput source) {
         return new EditorialSourceDtos.SourceCollectionRequest(
                 1L, "BRIEF-1", List.of(new EditorialSourceDtos.ClaimInput(

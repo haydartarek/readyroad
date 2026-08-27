@@ -147,17 +147,10 @@ smoke_release() {
   local env_file="${release}/.env.production"
   local caddy_file="${release}/Caddyfile"
 
-  if grep -qE '^rijvia\.be[[:space:]]*\{' "$caddy_file"; then
-    "$SMOKE_SCRIPT" \
-      --env-file "$env_file" \
-      --frontend-url https://rijvia.be \
-      --api-url https://api.rijvia.be
-  else
-    "$SMOKE_SCRIPT" \
-      --env-file "$env_file" \
-      --frontend-url https://readyroad.be \
-      --api-url https://api.readyroad.be
-  fi
+  "$SMOKE_SCRIPT" \
+    --env-file "$env_file" \
+    --frontend-url https://rijvia.be \
+    --api-url https://api.rijvia.be
 }
 
 finalize_result() {
