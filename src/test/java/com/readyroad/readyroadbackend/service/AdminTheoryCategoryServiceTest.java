@@ -95,6 +95,32 @@ class AdminTheoryCategoryServiceTest {
     }
 
     @Test
+    void updateWithMissingWeightUsesTheDefaultInsteadOfLeavingNull() {
+        Category category = category(
+                9L,
+                "TH09",
+                "Emergency situations",
+                null);
+
+        when(categoryRepository.findById(9L))
+                .thenReturn(Optional.of(category));
+        when(categoryRepository.save(any(Category.class)))
+                .thenAnswer(invocation -> invocation.getArgument(0));
+
+        var response = service.updateCategory(
+                9L,
+                request(
+                        null,
+                        "Emergency situations",
+                        null,
+                        true,
+                        9));
+
+        assertThat(response.code()).isEqualTo("TH09");
+        assertThat(response.examTargetWeight())
+                .isEqualTo(TheoryExamBlueprintPolicy.DEFAULT_CATEGORY_WEIGHT);
+    }
+    @Test
     void updateRejectsAttemptToChangeStableCode() {
         Category category = category(
                 4L,

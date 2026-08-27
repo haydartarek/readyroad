@@ -26,7 +26,7 @@ public class AdminTheoryCategoryService {
     public CategoryResponse createCategory(AdminTheoryCategoryRequest request) {
         Category category = new Category();
         category.setCode(nextTheoryCode());
-        apply(category, request, true);
+        apply(category, request);
         return response(categoryRepository.save(category));
     }
 
@@ -48,7 +48,7 @@ public class AdminTheoryCategoryService {
                     "Category code is a stable identifier and cannot be changed");
         }
 
-        apply(category, request, false);
+        apply(category, request);
         return response(categoryRepository.save(category));
     }
 
@@ -70,8 +70,7 @@ public class AdminTheoryCategoryService {
 
     private static void apply(
             Category category,
-            AdminTheoryCategoryRequest request,
-            boolean creating) {
+            AdminTheoryCategoryRequest request) {
 
         CategoryContentScope scope =
                 CategoryContentScope.valueOf(request.contentScope());
@@ -95,12 +94,9 @@ public class AdminTheoryCategoryService {
         category.setIsActive(request.active());
         category.setContentScope(scope);
 
-        if (request.examTargetWeight() != null) {
-            category.setExamTargetWeight(request.examTargetWeight());
-        } else if (creating) {
-            category.setExamTargetWeight(
-                    TheoryExamBlueprintPolicy.DEFAULT_CATEGORY_WEIGHT);
-        }
+        category.setExamTargetWeight(
+                TheoryExamBlueprintPolicy.effectiveCategoryWeight(
+                        request.examTargetWeight()));
     }
 
     private static CategoryResponse response(Category category) {

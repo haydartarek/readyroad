@@ -179,26 +179,43 @@ class TheoryExamQuestionAllocatorTest {
         assertThat(allocation.categoryTargets()).containsEntry(category.getId(), 50);
     }
     @Test
-    void categoryWithoutConfiguredWeightRemainsInventoryOnly() {
-        Category unconfigured = category(1, "TH_UNCONFIGURED", null);
+    void categoryWithoutConfiguredWeightUsesDefaultWeightAndStillParticipates() {
+        Category defaulted = category(1, "TH_DEFAULTED", null);
         Category configured = category(2, "TH_CONFIGURED", 10);
         List<QuizQuestion> bank = new ArrayList<>();
-        bank.addAll(categoryPool(unconfigured, 20, 20, 20));
+        bank.addAll(categoryPool(defaulted, 20, 20, 20));
         bank.addAll(categoryPool(configured, 20, 20, 20));
 
         TheoryExamQuestionAllocator.Allocation allocation =
                 allocator.allocateEligibleQuestions(bank, bank);
 
-        assertThat(allocation.bankEligibleCounts()).containsEntry(unconfigured.getId(), 60);
-        assertThat(allocation.unconfiguredCategoryCodes()).containsExactly("TH_UNCONFIGURED");
-        assertThat(allocation.blueprintCategoryTargets()).doesNotContainKey(unconfigured.getId());
-        assertThat(allocation.categoryTargets()).doesNotContainKey(unconfigured.getId());
-        assertThat(allocation.questions())
-                .hasSize(50)
-                .allSatisfy(question ->
-                        assertThat(question.getCategory().getCode()).isEqualTo("TH_CONFIGURED"));
+        assertThat(allocation.bankEligibleCounts()).containsEntry(defaulted.getId(), 60);
+        assertThat(allocation.defaultedWeightCategoryCodes()).containsExactly("TH_DEFAULTED");
+        assertThat(allocation.blueprintCategoryTargets()).containsEntry(defaulted.getId(), 25);
+        assertThat(allocation.blueprintCategoryTargets()).containsEntry(configured.getId(), 25);
+        assertThat(allocation.categoryTargets()).containsEntry(defaulted.getId(), 25);
+        assertThat(allocation.categoryTargets()).containsEntry(configured.getId(), 25);
+        assertThat(countByCategory(allocation.questions()))
+                .containsExactlyInAnyOrderEntriesOf(
+                        Map.of("TH_DEFAULTED", 25, "TH_CONFIGURED", 25));
+        assertThat(allocation.questions()).hasSize(50);
     }
 
+    @Test
+    void moreThanFiftyEligibleCategoriesFailsExplicitlyInsteadOfDroppingCoverage() {
+        List<QuizQuestion> bank = new ArrayList<>();
+
+        for (int index = 1; index <= 51; index++) {
+            bank.addAll(categoryPool(
+                    category(index, "TH_OVER_" + index, 10),
+                    2, 2, 1));
+        }
+
+        assertThatThrownBy(() -> allocator.allocateEligibleQuestions(bank))
+                .isInstanceOf(IllegalStateException.class)
+                .hasMessageContaining("51 eligible categories")
+                .hasMessageContaining("50 exam slots");
+    }
     @Test
     void insufficientEligibleCapacityReturnsAControlledUnavailableState() {
         List<QuizQuestion> pool = new ArrayList<>();

@@ -110,7 +110,8 @@ class AdminTheoryBankHealthServiceTest {
     }
 
     @Test
-    void fiveEligibleQuestionsMeetTheSharedBlueprintMinimum() {
+    void fiveEligibleQuestionsUseDefaultWeightAndMeetTheSharedBlueprintMinimum() {
+        category.setExamTargetWeight(null);
         List<QuizQuestion> questions = List.of(
                 question(1L, category, "Question 1", true),
                 question(2L, category, "Question 2", true),
@@ -128,6 +129,8 @@ class AdminTheoryBankHealthServiceTest {
         assertThat(response.categories()).singleElement().satisfies(health -> {
             assertThat(health.eligibleAllLocales()).isEqualTo(5);
             assertThat(health.representationStatus()).isEqualTo("BALANCED");
+            assertThat(health.examTargetWeight())
+                    .isEqualTo(TheoryExamBlueprintPolicy.DEFAULT_CATEGORY_WEIGHT);
             assertThat(health.minimumRequired()).isEqualTo(5);
             assertThat(health.questionsNeeded()).isZero();
             assertThat(health.examEligible()).isTrue();

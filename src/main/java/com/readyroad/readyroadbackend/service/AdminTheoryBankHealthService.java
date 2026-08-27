@@ -80,8 +80,8 @@ public class AdminTheoryBankHealthService {
 
         long totalEligible = facts.stream().filter(QuestionFacts::eligibleAllLocales).count();
         int totalWeight = categories.values().stream()
-                .filter(CategoryAccumulator::configuredForBlueprint)
-                .mapToInt(accumulator -> accumulator.category.getExamTargetWeight())
+                .filter(CategoryAccumulator::participatesInBlueprint)
+                .mapToInt(CategoryAccumulator::effectiveWeight)
                 .sum();
 
         List<CategoryHealth> categoryHealth = categories.values().stream()
@@ -377,27 +377,30 @@ public class AdminTheoryBankHealthService {
             presentations += fact.presentations();
         }
 
-        private boolean configuredForBlueprint() {
+        private boolean participatesInBlueprint() {
             return Boolean.TRUE.equals(category.getIsActive())
-                    && category.getContentScope().supportsTheoreticalExam()
-                    && category.getExamTargetWeight() != null
-                    && category.getExamTargetWeight() > 0;
+                    && category.getContentScope().supportsTheoreticalExam();
+        }
+
+        private int effectiveWeight() {
+            return TheoryExamBlueprintPolicy.effectiveCategoryWeight(
+                    category.getExamTargetWeight());
         }
 
         private CategoryHealth toResponse(long totalEligible, int totalWeight) {
             double inventoryShare = totalEligible == 0 ? 0 : eligibleAll * 100.0 / totalEligible;
-            double targetShare = configuredForBlueprint() && totalWeight > 0
-                    ? category.getExamTargetWeight() * 100.0 / totalWeight
+            double targetShare = participatesInBlueprint() && totalWeight > 0
+                    ? effectiveWeight() * 100.0 / totalWeight
                     : 0;
             int minimumRequired =
                     TheoryExamBlueprintPolicy.MIN_ELIGIBLE_QUESTIONS_PER_CATEGORY;
             long questionsNeeded = Math.max(0L, minimumRequired - eligibleAll);
             boolean examEligible =
-                    configuredForBlueprint() && questionsNeeded == 0;
+                    participatesInBlueprint() && questionsNeeded == 0;
             String status;
             if (!Boolean.TRUE.equals(category.getIsActive())) {
                 status = "INACTIVE";
-            } else if (!configuredForBlueprint()) {
+            } else if (!participatesInBlueprint()) {
                 status = "UNCONFIGURED";
             } else if (eligibleAll < TheoryExamBlueprintPolicy.MIN_ELIGIBLE_QUESTIONS_PER_CATEGORY) {
                 status = "UNDERREPRESENTED";
@@ -413,7 +416,7 @@ public class AdminTheoryBankHealthService {
                     category.getNameFr(), category.getNameAr(), category.getDescriptionEn(),
                     category.getDescriptionNl(), category.getDescriptionFr(), category.getDescriptionAr(),
                     category.getDisplayOrder(), Boolean.TRUE.equals(category.getIsActive()),
-                    category.getContentScope().name(), category.getExamTargetWeight(), total, active, published,
+                    category.getContentScope().name(), effectiveWeight(), total, active, published,
                     eligibleAll, Map.copyOf(eligibleByLocale), Map.copyOf(difficulty), translationGaps,
                     explanationGaps, invalid, presentations, inventoryShare, targetShare, status,
                     minimumRequired, questionsNeeded, examEligible);

@@ -147,9 +147,11 @@ public class ExamService {
         List<QuizQuestion> questions = new ArrayList<>(allocation.questions());
         Collections.shuffle(questions);
 
-        if (!allocation.unconfiguredCategoryCodes().isEmpty()) {
-            log.warn("Bank-eligible theory categories remain inventory-only because no exam weight is configured: {}",
-                    allocation.unconfiguredCategoryCodes());
+        if (!allocation.defaultedWeightCategoryCodes().isEmpty()) {
+            log.warn(
+                    "Bank-eligible theory categories have no explicit exam weight; default weight {} is used: {}",
+                    TheoryExamBlueprintPolicy.DEFAULT_CATEGORY_WEIGHT,
+                    allocation.defaultedWeightCategoryCodes());
         }
         log.info("Selected {} questions for exam: bankEligible={}, userAvailable={}, blueprint={}, "
                         + "allocated={}, difficulties={}, relaxedDifficulty={}",

@@ -109,16 +109,23 @@ public class TheoryExamQuestionAllocator {
                 .toList();
 
         Map<Long, Integer> bankEligibleCounts = categoryCounts(bankEligibleCategories);
-        List<String> unconfiguredCategoryCodes = bankEligibleCategories.stream()
+        List<String> defaultedWeightCategoryCodes = bankEligibleCategories.stream()
                 .filter(pool -> !pool.hasConfiguredWeight())
                 .map(pool -> pool.category().getCode())
                 .toList();
-        List<CategoryPool> configuredBankCategories = bankEligibleCategories.stream()
-                .filter(CategoryPool::hasConfiguredWeight)
-                .toList();
+        List<CategoryPool> participatingBankCategories = bankEligibleCategories;
+
+        if (participatingBankCategories.size() > TheoryExamBlueprintPolicy.EXAM_SIZE) {
+            throw new IllegalStateException(
+                    "Theory exam blueprint has "
+                            + participatingBankCategories.size()
+                            + " eligible categories but only "
+                            + TheoryExamBlueprintPolicy.EXAM_SIZE
+                            + " exam slots");
+        }
 
         Set<Long> bankQuestionIds = bankQuestions.keySet();
-        Set<Long> configuredCategoryIds = configuredBankCategories.stream()
+        Set<Long> participatingCategoryIds = participatingBankCategories.stream()
                 .map(pool -> pool.category().getId())
                 .collect(java.util.stream.Collectors.toSet());
 
@@ -139,7 +146,7 @@ public class TheoryExamQuestionAllocator {
 
         Map<Long, QuizQuestion> effectiveUserQuestions = new LinkedHashMap<>();
         userQuestions.values().stream()
-                .filter(question -> configuredCategoryIds.contains(question.getCategory().getId()))
+                .filter(question -> participatingCategoryIds.contains(question.getCategory().getId()))
                 .forEach(question -> effectiveUserQuestions.putIfAbsent(question.getId(), question));
 
         Set<Long> effectiveCategoryIds = effectiveUserQuestions.values().stream()
@@ -147,7 +154,7 @@ public class TheoryExamQuestionAllocator {
                 .collect(java.util.stream.Collectors.toSet());
 
         // Guarantee the mandatory one-question floor for every bank-eligible category.
-        for (CategoryPool bankCategory : configuredBankCategories) {
+        for (CategoryPool bankCategory : participatingBankCategories) {
             Long categoryId = bankCategory.category().getId();
             if (effectiveCategoryIds.contains(categoryId)) {
                 continue;
@@ -168,7 +175,7 @@ public class TheoryExamQuestionAllocator {
                 if (effectiveUserQuestions.size() >= TheoryExamBlueprintPolicy.EXAM_SIZE) {
                     break;
                 }
-                if (configuredCategoryIds.contains(fallback.getCategory().getId())) {
+                if (participatingCategoryIds.contains(fallback.getCategory().getId())) {
                     effectiveUserQuestions.putIfAbsent(fallback.getId(), fallback);
                 }
             }
@@ -176,7 +183,7 @@ public class TheoryExamQuestionAllocator {
 
         Map<Long, CategoryPool> effectivePoolsByCategory =
                 groupByCategory(effectiveUserQuestions.values());
-        List<CategoryPool> effectiveUserCategories = configuredBankCategories.stream()
+        List<CategoryPool> effectiveUserCategories = participatingBankCategories.stream()
                 .map(pool -> effectivePoolsByCategory.getOrDefault(
                         pool.category().getId(),
                         new CategoryPool(pool.category())))
@@ -185,16 +192,16 @@ public class TheoryExamQuestionAllocator {
         int effectiveEligibleCapacity = effectiveUserCategories.stream()
                 .mapToInt(CategoryPool::capacity)
                 .sum();
-        int configuredBankCapacity = configuredBankCategories.stream()
+        int participatingBankCapacity = participatingBankCategories.stream()
                 .mapToInt(CategoryPool::capacity)
                 .sum();
-        if (configuredBankCapacity < TheoryExamBlueprintPolicy.EXAM_SIZE
+        if (participatingBankCapacity < TheoryExamBlueprintPolicy.EXAM_SIZE
                 || effectiveEligibleCapacity < TheoryExamBlueprintPolicy.EXAM_SIZE) {
             throw unavailable(effectiveEligibleCapacity);
         }
 
         Map<Long, Integer> blueprintCategoryTargets =
-                allocateCategoryTargets(configuredBankCategories);
+                allocateCategoryTargets(participatingBankCategories);
         Map<Long, Integer> categoryTargets =
                 applyUserAvailability(effectiveUserCategories, blueprintCategoryTargets);
         DifficultyAllocation difficultyAllocation =
@@ -215,7 +222,7 @@ public class TheoryExamQuestionAllocator {
                 selected,
                 bankEligibleCounts,
                 userAvailableCounts,
-                unconfiguredCategoryCodes,
+                defaultedWeightCategoryCodes,
                 blueprintCategoryTargets,
                 categoryTargets,
                 difficultyAllocation.globalCounts(),
@@ -557,7 +564,7 @@ public class TheoryExamQuestionAllocator {
             List<QuizQuestion> questions,
             Map<Long, Integer> bankEligibleCounts,
             Map<Long, Integer> userAvailableCounts,
-            List<String> unconfiguredCategoryCodes,
+            List<String> defaultedWeightCategoryCodes,
             Map<Long, Integer> blueprintCategoryTargets,
             Map<Long, Integer> categoryTargets,
             Map<QuizQuestion.DifficultyLevel, Integer> difficultyCounts,
@@ -568,7 +575,7 @@ public class TheoryExamQuestionAllocator {
             questions = List.copyOf(questions);
             bankEligibleCounts = Map.copyOf(bankEligibleCounts);
             userAvailableCounts = Map.copyOf(userAvailableCounts);
-            unconfiguredCategoryCodes = List.copyOf(unconfiguredCategoryCodes);
+            defaultedWeightCategoryCodes = List.copyOf(defaultedWeightCategoryCodes);
             blueprintCategoryTargets = Map.copyOf(blueprintCategoryTargets);
             categoryTargets = Map.copyOf(categoryTargets);
             difficultyCounts = Map.copyOf(difficultyCounts);
@@ -613,7 +620,8 @@ public class TheoryExamQuestionAllocator {
         }
 
         private int weight() {
-            return category.getExamTargetWeight();
+            return TheoryExamBlueprintPolicy.effectiveCategoryWeight(
+                    category.getExamTargetWeight());
         }
 
         private boolean hasConfiguredWeight() {
