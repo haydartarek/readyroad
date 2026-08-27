@@ -49,7 +49,7 @@ while (( $# > 0 )); do
 done
 
 [[ -s "$ENV_FILE" ]] || rr_die "smoke_env_missing"
-rr_require_commands curl jq mktemp
+rr_require_commands curl jq mktemp docker find sort grep head tail
 
 temporary_directory="$(mktemp -d /run/readyroad-smoke.XXXXXX)"
 chmod 0700 "$temporary_directory"
@@ -92,6 +92,127 @@ probe_authenticated() {
   checks=$((checks + 1))
   rr_log INFO smoke_check "name=${name} status=passed"
 }
+
+probe_theory_image_integrity() {
+  local sql_file="${temporary_directory}/theory-image-integrity.sql"
+  local query_output="${temporary_directory}/theory-image-integrity.out"
+  local db_links="${temporary_directory}/theory-image-links.txt"
+  local disk_files="${temporary_directory}/theory-image-files.txt"
+  local upload_mount counts_line total_questions linked_questions
+  local missing_file_questions=0
+  local valid_image_questions=0
+  local orphan_uploads=0
+  local filename
+
+  upload_mount="$(
+    docker volume inspect readyroad-uploads \
+      --format '{{.Mountpoint}}'
+  )"
+
+  [[ -n "$upload_mount" && -d "$upload_mount" ]] ||
+    rr_die "smoke_theory_upload_volume_missing"
+
+  cat >"$sql_file" <<'SQL'
+SELECT
+    COUNT(*)::text || '|' ||
+    COUNT(*) FILTER (
+        WHERE content_image_url ~*
+            '^/images/quiz/[A-Za-z0-9][A-Za-z0-9._-]*\.(jpg|jpeg|png|webp)$'
+    )::text
+FROM quiz_questions;
+
+SELECT regexp_replace(
+    content_image_url,
+    '^/images/quiz/',
+    ''
+)
+FROM quiz_questions
+WHERE content_image_url ~*
+    '^/images/quiz/[A-Za-z0-9][A-Za-z0-9._-]*\.(jpg|jpeg|png|webp)$'
+ORDER BY id;
+SQL
+
+  docker run --rm -i \
+    --network "$READYROAD_NETWORK" \
+    --env-file "$ENV_FILE" \
+    --volume "${sql_file}:/query.sql:ro" \
+    postgres:16-alpine \
+    sh -ceu '
+      DB="${POSTGRES_DATABASE:-${POSTGRES_DB:-readyroad_postgresql}}"
+      PORT="${POSTGRES_PORT:-5433}"
+      SCHEMA="${POSTGRES_SCHEMA:-readyroad}"
+      SSLMODE="${POSTGRES_SSL_MODE:-${POSTGRES_SSLMODE:-disable}}"
+
+      case "$SCHEMA" in
+        *[!A-Za-z0-9_]*|"")
+          exit 2
+          ;;
+      esac
+
+      export PGPASSWORD="$POSTGRES_PASSWORD"
+      export PGOPTIONS="-c search_path=$SCHEMA,public"
+
+      exec psql \
+        "host=$POSTGRES_HOST port=$PORT dbname=$DB user=$POSTGRES_USERNAME sslmode=$SSLMODE" \
+        -qAt \
+        -v ON_ERROR_STOP=1 \
+        -f /query.sql
+    ' >"$query_output"
+
+  counts_line="$(head -n 1 "$query_output")"
+
+  [[ "$counts_line" =~ ^[0-9]+\|[0-9]+$ ]] ||
+    rr_die "smoke_theory_image_counts_invalid"
+
+  total_questions="${counts_line%%|*}"
+  linked_questions="${counts_line##*|}"
+
+  (( total_questions > 0 )) ||
+    rr_die "smoke_theory_image_bank_empty"
+
+  tail -n +2 "$query_output" >"$db_links"
+
+  if (( total_questions != linked_questions )); then
+    rr_die \
+      "smoke_theory_image_link_gap:total=${total_questions}:linked=${linked_questions}"
+  fi
+
+  find "$upload_mount" \
+    -maxdepth 1 \
+    -type f \
+    -printf '%f\n' \
+    | sort >"$disk_files"
+
+  while IFS= read -r filename; do
+    [[ -n "$filename" ]] || continue
+
+    if [[ ! -f "${upload_mount}/${filename}" ]]; then
+      missing_file_questions=$((missing_file_questions + 1))
+    fi
+  done <"$db_links"
+
+  valid_image_questions=$((linked_questions - missing_file_questions))
+
+  if (( total_questions != valid_image_questions )); then
+    rr_die \
+      "smoke_theory_image_integrity_failed:total=${total_questions}:valid=${valid_image_questions}:missing_files=${missing_file_questions}"
+  fi
+
+  while IFS= read -r filename; do
+    [[ -n "$filename" ]] || continue
+
+    if ! grep -Fxq -- "$filename" "$db_links"; then
+      orphan_uploads=$((orphan_uploads + 1))
+    fi
+  done <"$disk_files"
+
+  checks=$((checks + 1))
+
+  rr_log INFO smoke_check \
+    "name=theory_image_integrity status=passed total_questions=${total_questions} questions_with_valid_images=${valid_image_questions} orphan_uploads=${orphan_uploads} orphan_policy=ignored"
+}
+
+probe_theory_image_integrity
 
 probe_get frontend "${FRONTEND_URL}/"
 probe_get backend_health "${API_URL}/actuator/health" '.status == "UP"'
