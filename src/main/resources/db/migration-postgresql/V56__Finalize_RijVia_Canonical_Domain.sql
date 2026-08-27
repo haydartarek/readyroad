@@ -20,13 +20,13 @@ SET setting_value = (setting_value - 'sourceDomain' - 'candidateDomain') || json
 WHERE agent_type = 'STRATEGY'
   AND setting_key = 'seo.migration';
 
+ALTER TABLE editorial_sources
+    DROP CONSTRAINT IF EXISTS editorial_sources_source_type_check;
+
 UPDATE editorial_sources
 SET source_type = 'RIJVIA_CORE_DATA',
     updated_at = CURRENT_TIMESTAMP
 WHERE source_type = 'READYROAD_CORE_DATA';
-
-ALTER TABLE editorial_sources
-    DROP CONSTRAINT IF EXISTS editorial_sources_source_type_check;
 
 ALTER TABLE editorial_sources
     ADD CONSTRAINT editorial_sources_source_type_check CHECK (source_type IN (
@@ -38,16 +38,12 @@ ALTER TABLE editorial_sources
         'APPROVED_REFERENCE_SOURCE'
     ));
 
+ALTER TABLE seo_query_snapshots
+    DROP CONSTRAINT IF EXISTS seo_query_snapshots_brand_classification_check;
+
 UPDATE seo_query_snapshots
 SET brand_classification = 'LEGACY_BRAND_QUERY'
 WHERE brand_classification = 'OLD_BRAND_READYROAD';
-
-UPDATE seo_opportunities
-SET brand_classification = 'LEGACY_BRAND_QUERY'
-WHERE brand_classification = 'OLD_BRAND_READYROAD';
-
-ALTER TABLE seo_query_snapshots
-    DROP CONSTRAINT IF EXISTS seo_query_snapshots_brand_classification_check;
 
 ALTER TABLE seo_query_snapshots
     ADD CONSTRAINT seo_query_snapshots_brand_classification_check CHECK (
@@ -59,6 +55,10 @@ ALTER TABLE seo_query_snapshots
             'COMPETITOR_OR_AMBIGUOUS_BRAND'
         )
     );
+
+UPDATE seo_opportunities
+SET brand_classification = 'LEGACY_BRAND_QUERY'
+WHERE brand_classification = 'OLD_BRAND_READYROAD';
 
 INSERT INTO audit_logs (
     event_type, actor, entity_type, entity_id, correlation_id, safe_details
