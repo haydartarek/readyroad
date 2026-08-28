@@ -60,8 +60,8 @@ class AdminTheoryBankHealthServiceTest {
                 .satisfies(health -> {
                     assertThat(health.totalPresentations()).isEqualTo(9);
                     assertThat(health.representationStatus()).isEqualTo("UNDERREPRESENTED");
-                    assertThat(health.minimumRequired()).isEqualTo(5);
-                    assertThat(health.questionsNeeded()).isEqualTo(4);
+                    assertThat(health.minimumRequired()).isEqualTo(6);
+                    assertThat(health.questionsNeeded()).isEqualTo(5);
                     assertThat(health.examEligible()).isFalse();
                 });
         assertThat(response.heavilyExposedQuestions()).singleElement()
@@ -110,7 +110,7 @@ class AdminTheoryBankHealthServiceTest {
     }
 
     @Test
-    void fiveEligibleQuestionsUseDefaultWeightAndMeetTheSharedBlueprintMinimum() {
+    void fiveEligibleQuestionsRemainBelowTheSharedBlueprintMinimum() {
         category.setExamTargetWeight(null);
         List<QuizQuestion> questions = List.of(
                 question(1L, category, "Question 1", true),
@@ -128,16 +128,41 @@ class AdminTheoryBankHealthServiceTest {
 
         assertThat(response.categories()).singleElement().satisfies(health -> {
             assertThat(health.eligibleAllLocales()).isEqualTo(5);
-            assertThat(health.representationStatus()).isEqualTo("BALANCED");
+            assertThat(health.representationStatus()).isEqualTo("UNDERREPRESENTED");
             assertThat(health.examTargetWeight())
                     .isEqualTo(TheoryExamBlueprintPolicy.DEFAULT_CATEGORY_WEIGHT);
-            assertThat(health.minimumRequired()).isEqualTo(5);
-            assertThat(health.questionsNeeded()).isZero();
-            assertThat(health.examEligible()).isTrue();
+            assertThat(health.minimumRequired()).isEqualTo(6);
+            assertThat(health.questionsNeeded()).isEqualTo(1);
+            assertThat(health.examEligible()).isFalse();
         });
 
         assertThat(service.categoryManagement()).singleElement()
-                .satisfies(health -> assertThat(health.examEligible()).isTrue());
+                .satisfies(health -> assertThat(health.examEligible()).isFalse());
+    }
+
+    @Test
+    void sixEligibleQuestionsMeetTheSharedBlueprintMinimum() {
+        List<QuizQuestion> questions = List.of(
+                question(1L, category, "Question 1", true),
+                question(2L, category, "Question 2", true),
+                question(3L, category, "Question 3", true),
+                question(4L, category, "Question 4", true),
+                question(5L, category, "Question 5", true),
+                question(6L, category, "Question 6", true));
+
+        when(categoryRepository.findAll()).thenReturn(List.of(category));
+        when(questionRepository.findAllForTheoryBankHealth()).thenReturn(questions);
+        when(store.theoryPresentations()).thenReturn(Map.of());
+        when(store.completedPerformanceByLocale()).thenReturn(Map.of());
+
+        BankHealthResponse response = service.bankHealth();
+
+        assertThat(response.categories()).singleElement().satisfies(health -> {
+            assertThat(health.eligibleAllLocales()).isEqualTo(6);
+            assertThat(health.minimumRequired()).isEqualTo(6);
+            assertThat(health.questionsNeeded()).isZero();
+            assertThat(health.examEligible()).isTrue();
+        });
     }
     @Test
     void ignoresLegacyTheoryTaxonomy() {

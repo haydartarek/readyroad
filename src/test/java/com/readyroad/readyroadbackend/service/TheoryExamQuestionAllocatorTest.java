@@ -75,20 +75,20 @@ class TheoryExamQuestionAllocatorTest {
     }
 
     @Test
-    void categoryWithFourQuestionsIsExcludedWhileFiveOrMoreParticipates() {
+    void categoryWithFiveQuestionsIsExcludedWhileSixOrMoreParticipates() {
         Category excluded = category(1, "TH_SMALL", 10);
         Category eligible = category(2, "TH_READY", 10);
         Category support = category(3, "TH_SUPPORT", 10);
         List<QuizQuestion> pool = new ArrayList<>();
-        pool.addAll(categoryPool(excluded, 2, 1, 1));
-        pool.addAll(categoryPool(eligible, 2, 2, 1));
+        pool.addAll(categoryPool(excluded, 2, 2, 1));
+        pool.addAll(categoryPool(eligible, 2, 2, 2));
         pool.addAll(categoryPool(support, 20, 20, 20));
 
         TheoryExamQuestionAllocator.Allocation allocation = allocator.allocateEligibleQuestions(pool);
 
         assertThat(allocation.questions()).hasSize(50);
         assertThat(allocation.bankEligibleCounts()).doesNotContainKey(excluded.getId());
-        assertThat(allocation.bankEligibleCounts()).containsEntry(eligible.getId(), 5);
+        assertThat(allocation.bankEligibleCounts()).containsEntry(eligible.getId(), 6);
         assertThat(allocation.categoryTargets()).doesNotContainKey(excluded.getId());
         assertThat(allocation.categoryTargets()).containsKey(eligible.getId());
         assertThat(countByCategory(allocation.questions()).getOrDefault("TH_READY", 0))
@@ -137,46 +137,40 @@ class TheoryExamQuestionAllocatorTest {
     }
 
     @Test
-    void categoryWithNoCooldownAvailableQuestionsStillGetsOneMandatoryFallback() {
+    void categoryWithNoCooldownAvailableQuestionsRelaxesItsQuotaWithoutFallback() {
         Category constrained = category(1, "TH_CONSTRAINED", 10);
         Category available = category(2, "TH_AVAILABLE", 10);
-        List<QuizQuestion> constrainedBank = categoryPool(constrained, 2, 2, 1);
+        List<QuizQuestion> constrainedBank = categoryPool(constrained, 2, 2, 2);
         List<QuizQuestion> availableBank = categoryPool(available, 20, 20, 20);
         List<QuizQuestion> bank = new ArrayList<>(constrainedBank);
         bank.addAll(availableBank);
 
         TheoryExamQuestionAllocator.Allocation allocation =
-                allocator.allocateEligibleQuestions(
-                        bank,
-                        availableBank,
-                        bank,
-                        "en");
+                allocator.allocateEligibleQuestions(bank, availableBank, "en");
 
         assertThat(allocation.userAvailableCounts()).containsEntry(constrained.getId(), 0);
         assertThat(allocation.blueprintCategoryTargets().get(constrained.getId()))
                 .isGreaterThanOrEqualTo(1);
-        assertThat(allocation.categoryTargets()).containsEntry(constrained.getId(), 1);
-        assertThat(countByCategory(allocation.questions())).containsEntry("TH_CONSTRAINED", 1);
+        assertThat(allocation.categoryTargets()).containsEntry(constrained.getId(), 0);
+        assertThat(countByCategory(allocation.questions())).doesNotContainKey("TH_CONSTRAINED");
         assertThat(allocation.questions()).hasSize(50);
     }
 
     @Test
-    void cooldownFallbackFillsOnlyTheMissingCapacityNeededForFiftyQuestions() {
+    void cooldownShortageReturnsControlledUnavailableWithoutFallback() {
         Category category = category(1, "TH_ONLY", 10);
         List<QuizQuestion> bank = categoryPool(category, 20, 20, 20);
         List<QuizQuestion> outsideCooldown = new ArrayList<>(bank.subList(0, 45));
+        when(messages.get("exam.pool.unavailable", 50, 45)).thenReturn("Theory exam temporarily unavailable");
 
-        TheoryExamQuestionAllocator.Allocation allocation =
-                allocator.allocateEligibleQuestions(
-                        bank,
-                        outsideCooldown,
-                        bank,
-                        "en");
-
-        assertThat(allocation.userAvailableCounts()).containsEntry(category.getId(), 45);
-        assertThat(allocation.questions()).hasSize(50);
-        assertThat(allocation.questions()).extracting(QuizQuestion::getId).doesNotHaveDuplicates();
-        assertThat(allocation.categoryTargets()).containsEntry(category.getId(), 50);
+        assertThatThrownBy(() -> allocator.allocateEligibleQuestions(bank, outsideCooldown, "en"))
+                .isInstanceOf(ExamQuestionPoolUnavailableException.class)
+                .satisfies(error -> {
+                    ExamQuestionPoolUnavailableException unavailable =
+                            (ExamQuestionPoolUnavailableException) error;
+                    assertThat(unavailable.getRequiredQuestions()).isEqualTo(50);
+                    assertThat(unavailable.getEligibleCapacity()).isEqualTo(45);
+                });
     }
     @Test
     void categoryWithoutConfiguredWeightUsesDefaultWeightAndStillParticipates() {
@@ -208,7 +202,7 @@ class TheoryExamQuestionAllocatorTest {
         for (int index = 1; index <= 51; index++) {
             bank.addAll(categoryPool(
                     category(index, "TH_OVER_" + index, 10),
-                    2, 2, 1));
+                    2, 2, 2));
         }
 
         assertThatThrownBy(() -> allocator.allocateEligibleQuestions(bank))
