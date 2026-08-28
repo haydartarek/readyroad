@@ -99,6 +99,7 @@ probe_theory_image_integrity() {
   local db_links="${temporary_directory}/theory-image-links.txt"
   local disk_files="${temporary_directory}/theory-image-files.txt"
   local upload_mount counts_line total_questions linked_questions
+  local invalid_link_questions required_missing_questions
   local missing_file_questions=0
   local valid_image_questions=0
   local orphan_uploads=0
@@ -118,6 +119,22 @@ SELECT
     COUNT(*) FILTER (
         WHERE content_image_url ~*
             '^/images/quiz/[A-Za-z0-9][A-Za-z0-9._-]*\.(jpg|jpeg|png|webp)$'
+    )::text || '|' ||
+    COUNT(*) FILTER (
+        WHERE NULLIF(BTRIM(content_image_url), '') IS NOT NULL
+          AND content_image_url !~*
+            '^/images/quiz/[A-Za-z0-9][A-Za-z0-9._-]*\.(jpg|jpeg|png|webp)$'
+    )::text || '|' ||
+    COUNT(*) FILTER (
+        WHERE (
+            question_type = 'IMAGE_BASED'
+            OR COALESCE(requires_sign_image, false)
+        )
+        AND (
+            NULLIF(BTRIM(content_image_url), '') IS NULL
+            OR content_image_url !~*
+              '^/images/quiz/[A-Za-z0-9][A-Za-z0-9._-]*\.(jpg|jpeg|png|webp)$'
+        )
     )::text
 FROM quiz_questions;
 
@@ -161,21 +178,27 @@ SQL
 
   counts_line="$(head -n 1 "$query_output")"
 
-  [[ "$counts_line" =~ ^[0-9]+\|[0-9]+$ ]] ||
+  [[ "$counts_line" =~ ^[0-9]+\|[0-9]+\|[0-9]+\|[0-9]+$ ]] ||
     rr_die "smoke_theory_image_counts_invalid"
 
-  total_questions="${counts_line%%|*}"
-  linked_questions="${counts_line##*|}"
+  IFS='|' read -r \
+    total_questions \
+    linked_questions \
+    invalid_link_questions \
+    required_missing_questions <<<"$counts_line"
 
   (( total_questions > 0 )) ||
     rr_die "smoke_theory_image_bank_empty"
 
-  tail -n +2 "$query_output" >"$db_links"
-
-  if (( total_questions != linked_questions )); then
+  (( invalid_link_questions == 0 )) ||
     rr_die \
-      "smoke_theory_image_link_gap:total=${total_questions}:linked=${linked_questions}"
-  fi
+      "smoke_theory_image_invalid_links:count=${invalid_link_questions}"
+
+  (( required_missing_questions == 0 )) ||
+    rr_die \
+      "smoke_theory_required_image_gap:count=${required_missing_questions}"
+
+  tail -n +2 "$query_output" >"$db_links"
 
   find "$upload_mount" \
     -maxdepth 1 \
@@ -193,9 +216,9 @@ SQL
 
   valid_image_questions=$((linked_questions - missing_file_questions))
 
-  if (( total_questions != valid_image_questions )); then
+  if (( linked_questions != valid_image_questions )); then
     rr_die \
-      "smoke_theory_image_integrity_failed:total=${total_questions}:valid=${valid_image_questions}:missing_files=${missing_file_questions}"
+      "smoke_theory_image_integrity_failed:linked=${linked_questions}:valid=${valid_image_questions}:missing_files=${missing_file_questions}"
   fi
 
   while IFS= read -r filename; do
@@ -209,7 +232,7 @@ SQL
   checks=$((checks + 1))
 
   rr_log INFO smoke_check \
-    "name=theory_image_integrity status=passed total_questions=${total_questions} questions_with_valid_images=${valid_image_questions} orphan_uploads=${orphan_uploads} orphan_policy=ignored"
+    "name=theory_image_integrity status=passed total_questions=${total_questions} image_linked_questions=${linked_questions} questions_with_valid_images=${valid_image_questions} required_image_gaps=${required_missing_questions} invalid_image_links=${invalid_link_questions} orphan_uploads=${orphan_uploads} orphan_policy=ignored"
 }
 
 probe_theory_image_integrity
