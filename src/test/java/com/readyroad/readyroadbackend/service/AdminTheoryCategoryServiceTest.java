@@ -143,6 +143,30 @@ class AdminTheoryCategoryServiceTest {
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining("stable identifier");
     }
+    @Test
+    void updateRejectsLegacyTheoryCategory() {
+        Category legacy = category(
+                29L,
+                "TH_PRI",
+                "Legacy priority",
+                10);
+
+        when(categoryRepository.findById(29L))
+                .thenReturn(Optional.of(legacy));
+
+        assertThatThrownBy(() ->
+                service.updateCategory(
+                        29L,
+                        request(
+                                null,
+                                "Legacy priority",
+                                10,
+                                true,
+                                29)))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining("Legacy theory categories");
+    }
+
 
     private static AdminTheoryCategoryRequest request(
             String code,

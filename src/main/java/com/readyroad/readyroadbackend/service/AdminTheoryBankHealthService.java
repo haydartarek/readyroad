@@ -57,7 +57,7 @@ public class AdminTheoryBankHealthService {
         Map<Long, Map<String, PerformanceRow>> performance = store.completedPerformanceByLocale();
 
         Map<Long, CategoryAccumulator> categories = categoryRepository.findAll().stream()
-                .filter(category -> category.getContentScope().supportsTheoreticalExam()
+                                .filter(category -> TheoryExamBlueprintPolicy.isManagedTheoryCategoryCode(category.getCode())).filter(category -> category.getContentScope().supportsTheoreticalExam()
                         || questions.stream().anyMatch(question -> question.getCategory() != null
                                 && question.getCategory().getId().equals(category.getId())))
                 .sorted(categoryOrder())
@@ -69,7 +69,9 @@ public class AdminTheoryBankHealthService {
 
         List<QuestionFacts> facts = new ArrayList<>();
         for (QuizQuestion question : questions) {
-            if (question.getCategory() == null) {
+            if (question.getCategory() == null
+                    || !TheoryExamBlueprintPolicy.isManagedTheoryCategoryCode(
+                            question.getCategory().getCode())) {
                 continue;
             }
             QuestionFacts questionFacts = facts(question, presentations.getOrDefault(question.getId(), 0L));
@@ -139,7 +141,7 @@ public class AdminTheoryBankHealthService {
     @Transactional(readOnly = true)
     public List<CategoryHealth> categoryManagement() {
         return bankHealth().categories().stream()
-                .filter(category ->
+                                .filter(category -> TheoryExamBlueprintPolicy.isManagedTheoryCategoryCode(category.code())).filter(category ->
                         "THEORETICAL_EXAM".equals(category.contentScope())
                                 || "BOTH".equals(category.contentScope()))
                 .toList();

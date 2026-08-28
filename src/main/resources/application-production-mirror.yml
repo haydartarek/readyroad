@@ -1,0 +1,23 @@
+spring:
+  flyway:
+    enabled: false
+
+  sql:
+    init:
+      mode: never
+
+  datasource:
+    hikari:
+      read-only: true
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+
+readyroad:
+  marketing:
+    enabled: false
+
+app:
+  lessons:
+    sync-on-startup: false

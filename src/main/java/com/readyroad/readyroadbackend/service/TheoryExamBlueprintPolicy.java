@@ -16,6 +16,15 @@ public final class TheoryExamBlueprintPolicy {
                 : DEFAULT_CATEGORY_WEIGHT;
     }
 
+    /**
+     * Current Admin-managed theory taxonomy uses stable numeric TH codes
+     * (TH01, TH02, ..., TH09, ...). Older symbolic codes such as TH_PRI
+     * are legacy taxonomy and must not be reactivated or edited.
+     */
+    public static boolean isManagedTheoryCategoryCode(String code) {
+        return code != null && code.matches("TH\\d+");
+    }
+
     private TheoryExamBlueprintPolicy() {
         // Utility class.
     }

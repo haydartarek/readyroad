@@ -1,0 +1,31 @@
+services:
+  postgres:
+    profiles:
+      - local-db
+
+  backend:
+    depends_on: !reset {}
+    environment:
+      SPRING_PROFILES_ACTIVE: secure,postgresql,production-mirror
+
+      POSTGRES_HOST: ${MIRROR_POSTGRES_HOST:?MIRROR_POSTGRES_HOST must be set}
+      POSTGRES_PORT: ${MIRROR_POSTGRES_PORT:-5432}
+      POSTGRES_DB: ${MIRROR_POSTGRES_DB:-postgres}
+      POSTGRES_USERNAME: ${MIRROR_POSTGRES_USERNAME:-rijvia_local_readonly}
+      POSTGRES_PASSWORD: ${MIRROR_POSTGRES_PASSWORD:?MIRROR_POSTGRES_PASSWORD must be set}
+      POSTGRES_SCHEMA: ${MIRROR_POSTGRES_SCHEMA:-readyroad}
+      POSTGRES_SSLMODE: require
+
+      SPRING_FLYWAY_ENABLED: "false"
+      SPRING_DATASOURCE_HIKARI_READ_ONLY: "true"
+      SPRING_SQL_INIT_MODE: "never"
+
+      READYROAD_MARKETING_ENABLED: "false"
+      READYROAD_MARKETING_LOCAL_SEO_IMPORT_ENABLED: "false"
+      APP_LESSONS_SYNC_ON_STARTUP: "false"
+  frontend:
+    build:
+      args:
+        QUIZ_IMAGE_ORIGIN: https://rijvia.be
+    environment:
+      QUIZ_IMAGE_ORIGIN: https://rijvia.be

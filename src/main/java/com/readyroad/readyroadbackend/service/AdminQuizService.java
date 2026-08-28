@@ -79,6 +79,7 @@ public class AdminQuizService {
         return categoryRepository
                 .findAllByIsActiveTrueAndContentScopeInOrderByDisplayOrderAsc(THEORETICAL_CATEGORY_SCOPES)
                 .stream()
+                .filter(category -> TheoryExamBlueprintPolicy.isManagedTheoryCategoryCode(category.getCode()))
                 .map(category -> new AdminQuizCategoryResponse(
                         category.getCode(),
                         category.getNameEn(),
@@ -308,6 +309,11 @@ public class AdminQuizService {
         Category category = categoryRepository.findByCode(categoryCode)
                 .orElseThrow(() -> new IllegalArgumentException(
                         messages.get("admin.quiz.category_not_found", categoryCode)));
+        if (!TheoryExamBlueprintPolicy.isManagedTheoryCategoryCode(category.getCode())) {
+            throw new IllegalArgumentException(
+                    messages.get("admin.quiz.category_not_theoretical", categoryCode));
+        }
+
         if (!Boolean.TRUE.equals(category.getIsActive()) || category.getContentScope() == null
                 || !category.getContentScope().supportsTheoreticalExam()) {
             throw new IllegalArgumentException(messages.get("admin.quiz.category_not_theoretical", categoryCode));

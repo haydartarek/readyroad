@@ -93,7 +93,7 @@ class AdminQuizServiceTest {
 
     @Test
     void createsACompliantMultilingualQuestionWithImageAndExplanation() {
-        when(categoryRepository.findByCode("A")).thenReturn(Optional.of(category()));
+        when(categoryRepository.findByCode("TH01")).thenReturn(Optional.of(category()));
         when(questionRepository.save(any(QuizQuestion.class))).thenAnswer(invocation -> {
             QuizQuestion question = invocation.getArgument(0);
             question.setId(99L);
@@ -114,13 +114,32 @@ class AdminQuizServiceTest {
     void rejectsTrafficSignOnlyCategoryForTheoreticalQuestion() {
         Category category = category();
         category.setContentScope(CategoryContentScope.TRAFFIC_SIGN);
-        when(categoryRepository.findByCode("A")).thenReturn(Optional.of(category));
+        when(categoryRepository.findByCode("TH01")).thenReturn(Optional.of(category));
 
         assertThatThrownBy(() -> service.createQuestion(validRequest()))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("admin.quiz.category_not_theoretical");
         verify(questionRepository, never()).save(any());
     }
+    @Test
+    void rejectsLegacyTheoreticalCategoryForQuestionCreate() {
+        Category legacy = category();
+        legacy.setId(29L);
+        legacy.setCode("TH_PRI");
+
+        AdminQuizQuestionRequest request = validRequest();
+        request.setCategoryCode("TH_PRI");
+
+        when(categoryRepository.findByCode("TH_PRI"))
+                .thenReturn(Optional.of(legacy));
+
+        assertThatThrownBy(() -> service.createQuestion(request))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessage("admin.quiz.category_not_theoretical");
+
+        verify(questionRepository, never()).save(any());
+    }
+
 
     @Test
     void listsOnlyTheoreticalCategoryScopes() {
@@ -131,8 +150,26 @@ class AdminQuizServiceTest {
         assertThat(service.getTheoreticalCategories())
                 .singleElement()
                 .extracting(response -> response.code())
-                .isEqualTo("A");
+                .isEqualTo("TH01");
     }
+    @Test
+    void excludesLegacyTheoreticalCategoriesFromAdminList() {
+        Category current = category();
+
+        Category legacy = category();
+        legacy.setId(29L);
+        legacy.setCode("TH_PRI");
+        legacy.setNameEn("Legacy priority");
+
+        when(categoryRepository
+                .findAllByIsActiveTrueAndContentScopeInOrderByDisplayOrderAsc(any()))
+                .thenReturn(List.of(legacy, current));
+
+        assertThat(service.getTheoreticalCategories())
+                .extracting(response -> response.code())
+                .containsExactly("TH01");
+    }
+
 
     @Test
     void updatesQuestionAndOptionTextInOneSave() {
@@ -214,19 +251,19 @@ class AdminQuizServiceTest {
     void referencedQuestionAllowsCategoryAndDifficultyEditingButPreservesHistoricalType() {
         QuizQuestion question = existingQuestion(2);
         Category replacement = category();
-        replacement.setCode("B");
+        replacement.setCode("TH02");
         replacement.setNameEn("Priority");
         when(questionRepository.findByIdForUpdate(7L)).thenReturn(Optional.of(question));
         when(userAnswerRepository.existsByQuestionRefId(7L)).thenReturn(true);
-        when(categoryRepository.findByCode("B")).thenReturn(Optional.of(replacement));
+        when(categoryRepository.findByCode("TH02")).thenReturn(Optional.of(replacement));
         AdminQuizQuestionRequest request = requestFrom(question);
-        request.setCategoryCode("B");
+        request.setCategoryCode("TH02");
         request.setDifficultyLevel("HARD");
         request.setQuestionType("TRUE_FALSE");
 
         var response = service.updateQuestion(7L, request);
 
-        assertThat(response.categoryCode()).isEqualTo("B");
+        assertThat(response.categoryCode()).isEqualTo("TH02");
         assertThat(response.difficultyLevel()).isEqualTo("HARD");
         assertThat(response.questionType()).isEqualTo("MULTIPLE_CHOICE");
     }
@@ -246,7 +283,7 @@ class AdminQuizServiceTest {
 
     @Test
     void rejectsUnknownDifficultyAndIgnoresLegacyQuestionTypeInput() {
-        when(categoryRepository.findByCode("A")).thenReturn(Optional.of(category()));
+        when(categoryRepository.findByCode("TH01")).thenReturn(Optional.of(category()));
         AdminQuizQuestionRequest invalidDifficulty = validRequest();
         invalidDifficulty.setDifficultyLevel("EXPERT");
         assertThatThrownBy(() -> service.createQuestion(invalidDifficulty))
@@ -255,7 +292,7 @@ class AdminQuizServiceTest {
 
         AdminQuizQuestionRequest invalidType = validRequest();
         invalidType.setQuestionType("VIDEO");
-        when(categoryRepository.findByCode("A")).thenReturn(Optional.of(category()));
+        when(categoryRepository.findByCode("TH01")).thenReturn(Optional.of(category()));
         when(questionRepository.save(any(QuizQuestion.class))).thenAnswer(invocation -> invocation.getArgument(0));
         assertThat(service.createQuestion(invalidType).questionType())
                 .isEqualTo("MULTIPLE_CHOICE");
@@ -329,7 +366,7 @@ class AdminQuizServiceTest {
 
     @Test
     void allowsAdminDifficultyIndependentOfTwoOrThreeOptionCount() {
-        when(categoryRepository.findByCode("A")).thenReturn(Optional.of(category()));
+        when(categoryRepository.findByCode("TH01")).thenReturn(Optional.of(category()));
         when(questionRepository.save(any(QuizQuestion.class))).thenAnswer(invocation -> invocation.getArgument(0));
 
         AdminQuizQuestionRequest easyWithTwo = validRequest();
@@ -351,7 +388,7 @@ class AdminQuizServiceTest {
 
     private AdminQuizQuestionRequest validRequest() {
         AdminQuizQuestionRequest request = new AdminQuizQuestionRequest();
-        request.setCategoryCode("A");
+        request.setCategoryCode("TH01");
         request.setDifficultyLevel("HARD");
         request.setQuestionType("MULTIPLE_CHOICE");
         request.setQuestionEn("What does this sign mean?");
@@ -433,7 +470,7 @@ class AdminQuizServiceTest {
     private Category category() {
         Category category = new Category();
         category.setId(1L);
-        category.setCode("A");
+        category.setCode("TH01");
         category.setNameEn("Danger signs");
         category.setNameAr("علامات الخطر");
         category.setNameNl("Gevaarsborden");

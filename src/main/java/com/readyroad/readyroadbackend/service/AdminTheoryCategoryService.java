@@ -40,6 +40,11 @@ public class AdminTheoryCategoryService {
                 .orElseThrow(() ->
                         new IllegalArgumentException("Theory category not found"));
 
+        if (!TheoryExamBlueprintPolicy.isManagedTheoryCategoryCode(category.getCode())) {
+            throw new IllegalArgumentException(
+                    "Legacy theory categories are read-only and cannot be managed");
+        }
+
         String requestedCode = optional(request.code());
 
         if (requestedCode != null

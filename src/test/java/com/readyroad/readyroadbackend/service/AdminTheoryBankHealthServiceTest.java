@@ -139,6 +139,38 @@ class AdminTheoryBankHealthServiceTest {
         assertThat(service.categoryManagement()).singleElement()
                 .satisfies(health -> assertThat(health.examEligible()).isTrue());
     }
+    @Test
+    void ignoresLegacyTheoryTaxonomy() {
+        Category current = category(1L, "TH01", 100);
+        Category legacy = category(29L, "TH_PRI", 100);
+        legacy.setIsActive(false);
+
+        QuizQuestion currentQuestion =
+                question(1L, current, "Current question", true);
+        QuizQuestion legacyQuestion =
+                question(2L, legacy, "Legacy question", true);
+
+        when(categoryRepository.findAll())
+                .thenReturn(List.of(legacy, current));
+        when(questionRepository.findAllForTheoryBankHealth())
+                .thenReturn(List.of(currentQuestion, legacyQuestion));
+        when(store.theoryPresentations()).thenReturn(Map.of());
+        when(store.completedPerformanceByLocale()).thenReturn(Map.of());
+
+        BankHealthResponse response = service.bankHealth();
+
+        assertThat(response.summary().totalQuestions())
+                .isEqualTo(1);
+
+        assertThat(response.categories())
+                .extracting(health -> health.code())
+                .containsExactly("TH01");
+
+        assertThat(service.categoryManagement())
+                .extracting(health -> health.code())
+                .containsExactly("TH01");
+    }
+
     private static Category category(long id, String code, Integer weight) {
         Category category = new Category();
         category.setId(id);
