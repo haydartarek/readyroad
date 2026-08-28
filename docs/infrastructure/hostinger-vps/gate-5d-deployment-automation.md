@@ -52,6 +52,7 @@ backup because they live below `/opt/readyroad/bin`.
 `readyroad-deploy`:
 
 - uses Bash strict mode and a non-blocking global `flock`;
+- requires explicit 40-character Backend and Frontend commit SHAs;
 - validates refs, release IDs, dependencies, templates, and current production;
 - checks out clean, detached Backend and Frontend commits;
 - copies the existing root-only production environment without printing it;
@@ -86,12 +87,14 @@ sudo /opt/readyroad/bin/readyroad-deploy \
   --release-id <release-id>
 ```
 
-Validate without creating a release or container:
+Branch names, tags, shortened SHAs, and omitted refs are rejected. Validate
+without creating a release or container by using the exact commits intended
+for production:
 
 ```bash
 sudo /opt/readyroad/bin/readyroad-deploy \
-  --backend-ref feature/postgresql-supabase \
-  --frontend-ref feature/postgresql-supabase \
+  --backend-ref <40-character-backend-commit> \
+  --frontend-ref <40-character-frontend-commit> \
   --dry-run
 ```
 
@@ -183,8 +186,8 @@ The test-only option fails after candidate Backend and Frontend activation:
 
 ```bash
 sudo /opt/readyroad/bin/readyroad-deploy \
-  --backend-ref <commit> \
-  --frontend-ref <commit> \
+  --backend-ref <40-character-backend-commit> \
+  --frontend-ref <40-character-frontend-commit> \
   --release-id <unique-test-release> \
   --simulate-health-failure
 ```
@@ -207,6 +210,7 @@ suite.
 ## Security and operational rules
 
 - Run deployment and rollback as root through `sudo`.
+- Always pass full 40-character Backend and Frontend commit SHAs to deployment.
 - Keep `.env.production` mode `0600`; never copy it into Git.
 - Never enable shell tracing.
 - Never print Compose interpolation or environment data.
