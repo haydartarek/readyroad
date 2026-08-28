@@ -9,9 +9,15 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyNoInteractions;
 import static org.mockito.Mockito.when;
 
+import com.readyroad.readyroadbackend.domain.entity.Category;
 import com.readyroad.readyroadbackend.domain.entity.ExamSimulation;
+import com.readyroad.readyroadbackend.domain.entity.ExamSimulationAnswer;
+import com.readyroad.readyroadbackend.domain.entity.QuizAnswerOption;
+import com.readyroad.readyroadbackend.domain.entity.QuizQuestion;
+import com.readyroad.readyroadbackend.domain.entity.UserCategoryProgress;
 import com.readyroad.readyroadbackend.domain.entity.ExamSimulationQuestion;
 import com.readyroad.readyroadbackend.domain.entity.User;
+import com.readyroad.readyroadbackend.domain.repository.CategoryRepository;
 import com.readyroad.readyroadbackend.domain.repository.ExamSimulationAnswerRepository;
 import com.readyroad.readyroadbackend.domain.repository.ExamSimulationQuestionRepository;
 import com.readyroad.readyroadbackend.domain.repository.ExamSimulationRepository;
@@ -25,6 +31,10 @@ import com.readyroad.readyroadbackend.domain.repository.UserRepository;
 import com.readyroad.readyroadbackend.exception.ExamNotActiveException;
 import com.readyroad.readyroadbackend.exception.ExamQuestionPoolUnavailableException;
 import com.readyroad.readyroadbackend.exception.UnauthorizedException;
+import com.readyroad.readyroadbackend.dto.exam.TheoryExamQuestionSnapshot;
+import com.readyroad.readyroadbackend.dto.exam.TheoryExamQuestionSnapshot.CategorySnapshot;
+import com.readyroad.readyroadbackend.dto.exam.TheoryExamQuestionSnapshot.LocalizedText;
+import com.readyroad.readyroadbackend.dto.exam.TheoryExamQuestionSnapshot.OptionSnapshot;
 import com.readyroad.readyroadbackend.mapper.ExamMapper;
 import java.time.Instant;
 import java.time.LocalDateTime;
@@ -32,6 +42,7 @@ import java.util.List;
 import java.util.Optional;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.ArgumentCaptor;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -40,6 +51,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 class ExamServiceLifecycleTest {
 
     @Mock ExamSimulationRepository examRepository;
+    @Mock CategoryRepository categoryRepository;
     @Mock ExamSimulationQuestionRepository examQuestionRepository;
     @Mock ExamSimulationAnswerRepository answerRepository;
     @Mock QuizAnswerOptionRepository optionRepository;
@@ -144,6 +156,143 @@ class ExamServiceLifecycleTest {
     }
 
     @Test
+    void completedExamAttributesProgressToSnapshotCategoryWhenQuestionMovesMidExam() {
+        ExamSimulation exam = activeExam();
+        exam.setTotalQuestions(1);
+
+        Category originalCategory =
+                category(1L, "TH01", "Renamed priority");
+
+        Category movedCategory =
+                category(2L, "TH02", "Current moved category");
+
+        QuizQuestion question =
+                question(10L, movedCategory);
+
+        ExamSimulationAnswer answer =
+                answered(exam, question, true);
+
+        ExamSimulationQuestion examQuestion =
+                examQuestion(question);
+
+        when(examRepository.findByIdForUpdate(42L))
+                .thenReturn(Optional.of(exam));
+
+        when(answerRepository.findByExamId(42L))
+                .thenReturn(List.of(answer));
+
+        when(examQuestionRepository.findByExamIdOrderByQuestionOrder(42L))
+                .thenReturn(List.of(examQuestion));
+
+        when(questionSnapshotService.read(examQuestion))
+                .thenReturn(snapshot(
+                        10L,
+                        1L,
+                        "TH01",
+                        "Historical priority"));
+
+        when(categoryRepository.findAll())
+                .thenReturn(List.of(originalCategory, movedCategory));
+
+        when(progressRepository.findByUserIdAndCategoryId(7L, 1L))
+                .thenReturn(Optional.empty());
+
+        service.completeExam(42L, 7L);
+
+        verify(progressRepository)
+                .findByUserIdAndCategoryId(7L, 1L);
+
+        verify(progressRepository, never())
+                .findByUserIdAndCategoryId(7L, 2L);
+
+        ArgumentCaptor<UserCategoryProgress> captor =
+                ArgumentCaptor.forClass(UserCategoryProgress.class);
+
+        verify(progressRepository).save(captor.capture());
+
+        assertThat(captor.getValue().getCategoryId())
+                .isEqualTo(1L);
+    }
+
+    @Test
+    void completedResultsKeepSnapshotIdentityButShowCurrentRenamedCategoryName() {
+        ExamSimulation exam = activeExam();
+        exam.setTotalQuestions(1);
+        exam.setStatus(ExamSimulation.ExamStatus.COMPLETED);
+
+        Instant completedAt = Instant.now();
+        exam.setStartedAt(completedAt.minusSeconds(5));
+        exam.setCompletedAt(completedAt);
+        exam.setCorrectAnswers(1);
+        exam.setScorePercentage(100.0);
+
+        Category renamedCategory =
+                category(1L, "TH01", "Renamed priority");
+
+        Category movedCategory =
+                category(2L, "TH02", "Current moved category");
+
+        QuizQuestion question =
+                question(10L, movedCategory);
+
+        QuizAnswerOption correctOption =
+                option(101L, true);
+
+        ExamSimulationAnswer answer =
+                answered(
+                        exam,
+                        question,
+                        true,
+                        correctOption,
+                        correctOption);
+
+        ExamSimulationQuestion examQuestion =
+                examQuestion(question);
+
+        when(examRepository.findById(42L))
+                .thenReturn(Optional.of(exam));
+
+        when(answerRepository.findByExamId(42L))
+                .thenReturn(List.of(answer));
+
+        when(examQuestionRepository.findByExamIdOrderByQuestionOrder(42L))
+                .thenReturn(List.of(examQuestion));
+
+        when(questionSnapshotService.read(examQuestion))
+                .thenReturn(snapshot(
+                        10L,
+                        1L,
+                        "TH01",
+                        "Historical priority"));
+
+        when(categoryRepository.findAll())
+                .thenReturn(List.of(renamedCategory, movedCategory));
+
+        var result =
+                service.getExamResults(42L, 7L);
+
+        assertThat(result.getCategoryBreakdown())
+                .singleElement()
+                .satisfies(category -> {
+                    assertThat(category.getCategoryId())
+                            .isEqualTo(1L);
+                    assertThat(category.getCategoryCode())
+                            .isEqualTo("TH01");
+                    assertThat(category.getCategoryNameEn())
+                            .isEqualTo("Renamed priority");
+                });
+
+        assertThat(result.getAllAnswers())
+                .singleElement()
+                .satisfies(questionResult -> {
+                    assertThat(questionResult.getCategoryCode())
+                            .isEqualTo("TH01");
+                    assertThat(questionResult.getCategoryNameEn())
+                            .isEqualTo("Renamed priority");
+                });
+    }
+
+    @Test
     void presentedQuestionIsRecordedOnlyOncePerPersistedExamQuestion() {
         ExamSimulation exam = activeExam();
         ExamSimulationQuestion examQuestion = new ExamSimulationQuestion();
@@ -191,6 +340,129 @@ class ExamServiceLifecycleTest {
 
         verify(examRepository, never()).save(any());
         verifyNoInteractions(examQuestionRepository);
+    }
+
+    private static ExamSimulationQuestion examQuestion(
+            QuizQuestion question) {
+
+        ExamSimulationQuestion examQuestion =
+                new ExamSimulationQuestion();
+
+        examQuestion.setQuestion(question);
+        examQuestion.setQuestionId(question.getId());
+        examQuestion.setQuestionOrder(1);
+
+        return examQuestion;
+    }
+
+    private static Category category(
+            long id,
+            String code,
+            String name) {
+
+        Category category = new Category();
+        category.setId(id);
+        category.setCode(code);
+        category.setNameEn(name);
+        category.setNameNl(name);
+        category.setNameFr(name);
+        category.setNameAr(name);
+        category.setIsActive(true);
+        return category;
+    }
+
+    private static QuizQuestion question(
+            long id,
+            Category category) {
+
+        QuizQuestion question = new QuizQuestion();
+        question.setId(id);
+        question.setCategory(category);
+        question.setQuestionEn("Current edited question");
+        question.setQuestionNl("Current edited question");
+        question.setQuestionFr("Current edited question");
+        question.setQuestionAr("Current edited question");
+        return question;
+    }
+
+    private static ExamSimulationAnswer answered(
+            ExamSimulation exam,
+            QuizQuestion question,
+            boolean correct) {
+
+        return answered(
+                exam,
+                question,
+                correct,
+                null,
+                null);
+    }
+
+    private static ExamSimulationAnswer answered(
+            ExamSimulation exam,
+            QuizQuestion question,
+            boolean correct,
+            QuizAnswerOption selected,
+            QuizAnswerOption correctOption) {
+
+        return ExamSimulationAnswer.builder()
+                .exam(exam)
+                .question(question)
+                .selectedOption(selected)
+                .correctOption(correctOption)
+                .isCorrect(correct)
+                .timeTakenSeconds(5)
+                .answeredAt(Instant.now())
+                .answerState(ExamSimulationAnswer.AnswerState.ANSWERED)
+                .build();
+    }
+
+    private static QuizAnswerOption option(
+            long id,
+            boolean correct) {
+
+        QuizAnswerOption option = new QuizAnswerOption();
+        option.setId(id);
+        option.setIsCorrect(correct);
+        option.setDisplayOrder(0);
+        option.setOptionTextEn("Current option");
+        option.setOptionTextNl("Current option");
+        option.setOptionTextFr("Current option");
+        option.setOptionTextAr("Current option");
+        return option;
+    }
+
+    private static TheoryExamQuestionSnapshot snapshot(
+            long questionId,
+            long categoryId,
+            String categoryCode,
+            String historicalCategoryName) {
+
+        return new TheoryExamQuestionSnapshot(
+                (short) 1,
+                questionId,
+                text("Historical question"),
+                text("Historical explanation"),
+                "/historical.webp",
+                new CategorySnapshot(
+                        categoryId,
+                        categoryCode,
+                        text(historicalCategoryName)),
+                "MEDIUM",
+                List.of(
+                        new OptionSnapshot(
+                                101L,
+                                text("Historical correct"),
+                                true,
+                                0)));
+    }
+
+    private static LocalizedText text(String value) {
+        return new LocalizedText(
+                value,
+                value,
+                value,
+                value);
     }
 
     private ExamSimulation activeExam() {

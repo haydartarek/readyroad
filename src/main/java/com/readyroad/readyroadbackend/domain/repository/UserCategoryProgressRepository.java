@@ -24,7 +24,7 @@ public interface UserCategoryProgressRepository extends JpaRepository<UserCatego
      * Find all progress entries for user (any order)
      * Eagerly loads category relationship for analytics
      */
-    @Query("SELECT p FROM UserCategoryProgress p LEFT JOIN FETCH p.category WHERE p.userId = :userId")
+    @Query("SELECT p FROM UserCategoryProgress p WHERE p.userId = :userId")
     List<UserCategoryProgress> findByUserId(@Param("userId") Long userId);
 
     /**

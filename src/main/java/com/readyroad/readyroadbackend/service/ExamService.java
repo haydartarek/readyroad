@@ -10,6 +10,7 @@ import com.readyroad.readyroadbackend.domain.entity.QuizQuestion;
 import com.readyroad.readyroadbackend.domain.entity.UserCategoryProgress;
 import com.readyroad.readyroadbackend.domain.entity.User;
 import com.readyroad.readyroadbackend.domain.entity.NotificationType;
+import com.readyroad.readyroadbackend.domain.repository.CategoryRepository;
 import com.readyroad.readyroadbackend.domain.repository.ExamSimulationAnswerRepository;
 import com.readyroad.readyroadbackend.domain.repository.ExamSimulationQuestionRepository;
 import com.readyroad.readyroadbackend.domain.repository.ExamSimulationRepository;
@@ -75,6 +76,7 @@ import java.util.stream.Collectors;
 public class ExamService {
 
     private final ExamSimulationRepository examRepository;
+    private final CategoryRepository categoryRepository;
     private final ExamSimulationQuestionRepository examQuestionRepository;
     private final ExamSimulationAnswerRepository answerRepository; // Story A2
     private final QuizAnswerOptionRepository optionRepository; // Story A2
@@ -147,9 +149,11 @@ public class ExamService {
         List<QuizQuestion> questions = new ArrayList<>(allocation.questions());
         Collections.shuffle(questions);
 
-        if (!allocation.unconfiguredCategoryCodes().isEmpty()) {
-            log.warn("Bank-eligible theory categories remain inventory-only because no exam weight is configured: {}",
-                    allocation.unconfiguredCategoryCodes());
+        if (!allocation.defaultedWeightCategoryCodes().isEmpty()) {
+            log.warn(
+                    "Bank-eligible theory categories have no explicit exam weight; default weight {} is used: {}",
+                    TheoryExamBlueprintPolicy.DEFAULT_CATEGORY_WEIGHT,
+                    allocation.defaultedWeightCategoryCodes());
         }
         log.info("Selected {} questions for exam: bankEligible={}, userAvailable={}, blueprint={}, "
                         + "allocated={}, difficulties={}, relaxedDifficulty={}",
@@ -411,20 +415,15 @@ public class ExamService {
         // ── Story N2: Persist WEAK_AREA rows + fire notification (deduped per 24h)
         // ──────────
         try {
-            Map<Long, CategoryBreakdownDTO> categoryMap = calculateCategoryBreakdown(answers);
+            Map<Long, CategoryBreakdownDTO> categoryMap = calculateCategoryBreakdown(examId, answers);
             Instant weakAreaCutoff = Instant.now().minusSeconds(24 * 3600);
             boolean notifSent = false;
             for (CategoryBreakdownDTO cat : categoryMap.values()) {
                 if (Boolean.TRUE.equals(cat.getIsWeakArea())) {
-                    // ── Persist every weak category to user_weak_areas (idempotent upsert) ──
-                    weakAreaRepository.upsertByCategoryName(
-                            exam.getUserId(),
-                            cat.getCategoryNameEn(),
-                            cat.getTotalQuestions(),
-                            cat.getCorrectAnswers(),
-                            cat.getWrongAnswers());
-                    log.debug("Weak area persisted for userId={}, category={}", exam.getUserId(),
-                            cat.getCategoryNameEn());
+                    // Category identity is intentionally not persisted in user_weak_areas
+                    // because its legacy category column stores mutable names.
+                    // Canonical theory-category progress is stored by stable category ID in
+                    // user_category_progress.
 
                     // ── Send max 1 notification per exam (deduped per 24h) ──
                     if (!notifSent) {
@@ -465,23 +464,34 @@ public class ExamService {
         // so the dashboard reflects exam activity (not just practice sessions).
         try {
             LocalDateTime now_ldt = LocalDateTime.now();
+            Map<Long, TheoryExamQuestionSnapshot> snapshots = loadExamSnapshots(examId);
+            Map<Long, Category> currentCategories = loadCurrentCategoriesById();
+
             for (ExamSimulationAnswer answer : answers) {
                 if (answer.isTimedOut())
                     continue;
+
                 QuizQuestion q = answer.getQuestion();
                 if (q == null)
                     continue;
-                Category cat = q.getCategory();
-                if (cat == null)
+
+                ExamCategory examCategory = resolveExamCategory(
+                        q,
+                        snapshots.get(q.getId()),
+                        currentCategories);
+
+                if (examCategory == null)
                     continue;
 
                 UserCategoryProgress progress = progressRepository
-                        .findByUserIdAndCategoryId(userId, cat.getId())
+                        .findByUserIdAndCategoryId(userId, examCategory.id())
                         .orElseGet(() -> {
                             UserCategoryProgress np = new UserCategoryProgress();
                             np.setUserId(userId);
-                            np.setCategoryId(cat.getId());
-                            np.setCategory(cat);
+                            np.setCategoryId(examCategory.id());
+                            if (examCategory.currentEntity() != null) {
+                                np.setCategory(examCategory.currentEntity());
+                            }
                             np.setQuestionsAttempted(0);
                             np.setCorrectAnswers(0);
                             np.setMasteryLevel(UserCategoryProgress.MasteryLevel.BEGINNER);
@@ -489,13 +499,16 @@ public class ExamService {
                         });
 
                 progress.setQuestionsAttempted(progress.getQuestionsAttempted() + 1);
+
                 if (Boolean.TRUE.equals(answer.getIsCorrect())) {
                     progress.setCorrectAnswers(progress.getCorrectAnswers() + 1);
                 }
+
                 progress.setLastPracticed(now_ldt);
                 progress.updateAccuracy();
                 progressRepository.save(progress);
             }
+
             log.info("Dashboard progress updated from exam {}: {} answers processed for userId={}",
                     examId, answers.size(), userId);
         } catch (Exception ex) {
@@ -874,14 +887,14 @@ public class ExamService {
         log.debug("Loaded {} answers for exam {}", answers.size(), examId);
 
         // 4. Calculate category breakdown (with performance levels)
-        Map<Long, CategoryBreakdownDTO> categoryMap = calculateCategoryBreakdown(answers);
+        Map<Long, CategoryBreakdownDTO> categoryMap = calculateCategoryBreakdown(examId, answers);
         List<CategoryBreakdownDTO> categoryBreakdown = new ArrayList<>(categoryMap.values());
 
         // Sort by accuracy (worst first) to highlight weak areas
         categoryBreakdown.sort(Comparator.comparing(CategoryBreakdownDTO::getAccuracyPercentage));
 
         // 5. Get incorrect questions (with enhanced details)
-        List<IncorrectQuestionDTO> incorrectQuestions = getIncorrectQuestions(answers);
+        List<IncorrectQuestionDTO> incorrectQuestions = getIncorrectQuestions(examId, answers);
 
         // 5b. Get all answered questions for full review
         List<AllAnsweredQuestionDTO> allAnswers = getAllAnswers(examId, answers);
@@ -954,61 +967,71 @@ public class ExamService {
      * Calculate performance breakdown by category (Production v2.0).
      * Includes performance levels and weak area detection.
      */
-    private Map<Long, CategoryBreakdownDTO> calculateCategoryBreakdown(List<ExamSimulationAnswer> answers) {
+    private Map<Long, CategoryBreakdownDTO> calculateCategoryBreakdown(
+            Long examId,
+            List<ExamSimulationAnswer> answers) {
+
         Map<Long, CategoryBreakdownDTO> categoryMap = new HashMap<>();
+        Map<Long, TheoryExamQuestionSnapshot> snapshots = loadExamSnapshots(examId);
+        Map<Long, Category> currentCategories = loadCurrentCategoriesById();
 
         for (ExamSimulationAnswer answer : answers) {
             if (answer.isTimedOut()) {
                 continue;
             }
-            // Get question from relationship
-            QuizQuestion question = answer.getQuestion();
 
-            if (question == null || question.getCategory() == null) {
-                continue; // Skip if no category
+            QuizQuestion question = answer.getQuestion();
+            if (question == null) {
+                continue;
             }
 
-            Long categoryId = question.getCategory().getId();
+            ExamCategory category = resolveExamCategory(
+                    question,
+                    snapshots.get(question.getId()),
+                    currentCategories);
 
-            // Get or create category breakdown
-            CategoryBreakdownDTO breakdown = categoryMap.computeIfAbsent(categoryId, id -> {
-                var category = question.getCategory();
-                return CategoryBreakdownDTO.builder()
-                        .categoryId(id)
-                        .categoryCode(category.getCode()) // Production enhancement
-                        .categoryNameEn(category.getNameEn())
-                        .categoryNameAr(category.getNameAr())
-                        .categoryNameNl(category.getNameNl())
-                        .categoryNameFr(category.getNameFr())
-                        .totalQuestions(0)
-                        .correctAnswers(0)
-                        .wrongAnswers(0) // Production enhancement
-                        .accuracyPercentage(0.0)
-                        .build();
-            });
+            if (category == null) {
+                continue;
+            }
 
-            // Update counts
+            CategoryBreakdownDTO breakdown = categoryMap.computeIfAbsent(
+                    category.id(),
+                    id -> CategoryBreakdownDTO.builder()
+                            .categoryId(id)
+                            .categoryCode(category.code())
+                            .categoryNameEn(category.nameEn())
+                            .categoryNameAr(category.nameAr())
+                            .categoryNameNl(category.nameNl())
+                            .categoryNameFr(category.nameFr())
+                            .totalQuestions(0)
+                            .correctAnswers(0)
+                            .wrongAnswers(0)
+                            .accuracyPercentage(0.0)
+                            .build());
+
             breakdown.setTotalQuestions(breakdown.getTotalQuestions() + 1);
-            if (answer.getIsCorrect()) {
+
+            if (Boolean.TRUE.equals(answer.getIsCorrect())) {
                 breakdown.setCorrectAnswers(breakdown.getCorrectAnswers() + 1);
             } else {
                 breakdown.setWrongAnswers(breakdown.getWrongAnswers() + 1);
             }
         }
 
-        // Calculate accuracy, performance level, and weak area flag
         categoryMap.values().forEach(breakdown -> {
             if (breakdown.getTotalQuestions() > 0) {
-                double accuracy = (breakdown.getCorrectAnswers() * 100.0) / breakdown.getTotalQuestions();
-                breakdown.setAccuracyPercentage(Math.round(accuracy * 100.0) / 100.0);
+                double accuracy =
+                        (breakdown.getCorrectAnswers() * 100.0)
+                                / breakdown.getTotalQuestions();
 
-                // Calculate performance level (Production v2.0)
-                String performanceLevel = calculatePerformanceLevel(accuracy);
-                breakdown.setPerformanceLevel(performanceLevel);
+                breakdown.setAccuracyPercentage(
+                        Math.round(accuracy * 100.0) / 100.0);
 
-                // Set weak area flag (Production v2.0)
-                boolean isWeakArea = accuracy < 60.0;
-                breakdown.setIsWeakArea(isWeakArea);
+                breakdown.setPerformanceLevel(
+                        calculatePerformanceLevel(accuracy));
+
+                breakdown.setIsWeakArea(
+                        accuracy < 60.0);
             }
         });
 
@@ -1019,41 +1042,75 @@ public class ExamService {
      * Get details of incorrectly answered questions (Production v2.0).
      * Enhanced with analytics fields and error categorization.
      */
-    private List<IncorrectQuestionDTO> getIncorrectQuestions(List<ExamSimulationAnswer> answers) {
+    private List<IncorrectQuestionDTO> getIncorrectQuestions(
+            Long examId,
+            List<ExamSimulationAnswer> answers) {
+
+        Map<Long, TheoryExamQuestionSnapshot> snapshots = loadExamSnapshots(examId);
+        Map<Long, Category> currentCategories = loadCurrentCategoriesById();
+
         return answers.stream()
                 .filter(answer -> !answer.isTimedOut() && !answer.getIsCorrect())
                 .map(answer -> {
-                    // Get question and options from relationships
                     QuizQuestion question = answer.getQuestion();
                     QuizAnswerOption selectedOption = answer.getSelectedOption();
 
                     if (question == null || selectedOption == null) {
-                        return null; // Skip if relationship not loaded
+                        return null;
                     }
 
-                    // Get correct option
-                    QuizAnswerOption correctOption = resolveHistoricalCorrectOption(answer, question);
+                    QuizAnswerOption correctOption =
+                            resolveHistoricalCorrectOption(answer, question);
 
                     if (correctOption == null) {
-                        return null; // Skip if no correct option
+                        return null;
                     }
 
-                    Category category = question.getCategory();
-                    String selectedEn = roadSignReferenceTextResolver.resolveEn(selectedOption.getOptionTextEn());
-                    String selectedAr = roadSignReferenceTextResolver.resolveAr(selectedOption.getOptionTextAr());
-                    String selectedNl = roadSignReferenceTextResolver.resolveNl(selectedOption.getOptionTextNl());
-                    String selectedFr = roadSignReferenceTextResolver.resolveFr(selectedOption.getOptionTextFr());
-                    String correctEn = roadSignReferenceTextResolver.resolveEn(correctOption.getOptionTextEn());
-                    String correctAr = roadSignReferenceTextResolver.resolveAr(correctOption.getOptionTextAr());
-                    String correctNl = roadSignReferenceTextResolver.resolveNl(correctOption.getOptionTextNl());
-                    String correctFr = roadSignReferenceTextResolver.resolveFr(correctOption.getOptionTextFr());
+                    ExamCategory category = resolveExamCategory(
+                            question,
+                            snapshots.get(question.getId()),
+                            currentCategories);
+
+                    String selectedEn =
+                            roadSignReferenceTextResolver.resolveEn(
+                                    selectedOption.getOptionTextEn());
+                    String selectedAr =
+                            roadSignReferenceTextResolver.resolveAr(
+                                    selectedOption.getOptionTextAr());
+                    String selectedNl =
+                            roadSignReferenceTextResolver.resolveNl(
+                                    selectedOption.getOptionTextNl());
+                    String selectedFr =
+                            roadSignReferenceTextResolver.resolveFr(
+                                    selectedOption.getOptionTextFr());
+
+                    String correctEn =
+                            roadSignReferenceTextResolver.resolveEn(
+                                    correctOption.getOptionTextEn());
+                    String correctAr =
+                            roadSignReferenceTextResolver.resolveAr(
+                                    correctOption.getOptionTextAr());
+                    String correctNl =
+                            roadSignReferenceTextResolver.resolveNl(
+                                    correctOption.getOptionTextNl());
+                    String correctFr =
+                            roadSignReferenceTextResolver.resolveFr(
+                                    correctOption.getOptionTextFr());
 
                     return IncorrectQuestionDTO.builder()
                             .questionId(question.getId())
-                            .questionTextEn(roadSignReferenceTextResolver.resolveEn(question.getQuestionEn()))
-                            .questionTextAr(roadSignReferenceTextResolver.resolveAr(question.getQuestionAr()))
-                            .questionTextNl(roadSignReferenceTextResolver.resolveNl(question.getQuestionNl()))
-                            .questionTextFr(roadSignReferenceTextResolver.resolveFr(question.getQuestionFr()))
+                            .questionTextEn(
+                                    roadSignReferenceTextResolver.resolveEn(
+                                            question.getQuestionEn()))
+                            .questionTextAr(
+                                    roadSignReferenceTextResolver.resolveAr(
+                                            question.getQuestionAr()))
+                            .questionTextNl(
+                                    roadSignReferenceTextResolver.resolveNl(
+                                            question.getQuestionNl()))
+                            .questionTextFr(
+                                    roadSignReferenceTextResolver.resolveFr(
+                                            question.getQuestionFr()))
                             .selectedOptionId(selectedOption.getId())
                             .selectedOptionText(selectedEn)
                             .selectedOptionTextEn(selectedEn)
@@ -1066,97 +1123,178 @@ public class ExamService {
                             .correctOptionTextAr(correctAr)
                             .correctOptionTextNl(correctNl)
                             .correctOptionTextFr(correctFr)
-                            .explanationEn(roadSignReferenceTextResolver.resolveEn(question.getExplanationEn()))
-                            .explanationAr(roadSignReferenceTextResolver.resolveAr(question.getExplanationAr()))
-                            .explanationNl(roadSignReferenceTextResolver.resolveNl(question.getExplanationNl()))
-                            .explanationFr(roadSignReferenceTextResolver.resolveFr(question.getExplanationFr()))
-                            .categoryName(category != null
-                                    ? category.getNameEn()
-                                    : messages.get("analytics.category.unknown"))
-                            .categoryNameEn(category != null ? category.getNameEn() : null)
-                            .categoryNameAr(category != null ? category.getNameAr() : null)
-                            .categoryNameNl(category != null ? category.getNameNl() : null)
-                            .categoryNameFr(category != null ? category.getNameFr() : null)
-                            // Production enhancements (v2.0)
-                            .categoryCode(category != null ? category.getCode() : null)
-                            .contentImageUrl(question.getContentImageUrl()) // Traffic sign image
-                            .userAnswerOptionId(selectedOption.getId()) // For analytics
-                            .correctAnswerOptionId(correctOption.getId()) // For analytics
+                            .explanationEn(
+                                    roadSignReferenceTextResolver.resolveEn(
+                                            question.getExplanationEn()))
+                            .explanationAr(
+                                    roadSignReferenceTextResolver.resolveAr(
+                                            question.getExplanationAr()))
+                            .explanationNl(
+                                    roadSignReferenceTextResolver.resolveNl(
+                                            question.getExplanationNl()))
+                            .explanationFr(
+                                    roadSignReferenceTextResolver.resolveFr(
+                                            question.getExplanationFr()))
+                            .categoryName(
+                                    category != null && category.nameEn() != null
+                                            ? category.nameEn()
+                                            : messages.get("analytics.category.unknown"))
+                            .categoryNameEn(
+                                    category == null ? null : category.nameEn())
+                            .categoryNameAr(
+                                    category == null ? null : category.nameAr())
+                            .categoryNameNl(
+                                    category == null ? null : category.nameNl())
+                            .categoryNameFr(
+                                    category == null ? null : category.nameFr())
+                            .categoryCode(
+                                    category == null ? null : category.code())
+                            .contentImageUrl(question.getContentImageUrl())
+                            .userAnswerOptionId(selectedOption.getId())
+                            .correctAnswerOptionId(correctOption.getId())
                             .typicalErrorType(
-                                    question.getTypicalErrorType() != null ? question.getTypicalErrorType().name()
+                                    question.getTypicalErrorType() != null
+                                            ? question.getTypicalErrorType().name()
                                             : null)
                             .build();
                 })
-                .filter(java.util.Objects::nonNull) // Remove nulls
+                .filter(java.util.Objects::nonNull)
                 .collect(Collectors.toList());
     }
 
     /**
      * Get all answered questions (correct and incorrect) for full review.
      */
-    private List<AllAnsweredQuestionDTO> getAllAnswers(Long examId, List<ExamSimulationAnswer> answers) {
-        Map<Long, TheoryExamQuestionSnapshot> snapshots = new HashMap<>();
-        for (ExamSimulationQuestion examQuestion : examQuestionRepository.findByExamIdOrderByQuestionOrder(examId)) {
-            TheoryExamQuestionSnapshot snapshot = questionSnapshotService.read(examQuestion);
-            if (snapshot != null) {
-                snapshots.put(examQuestion.getQuestionId(), snapshot);
-            }
-        }
+    private List<AllAnsweredQuestionDTO> getAllAnswers(
+            Long examId,
+            List<ExamSimulationAnswer> answers) {
+
+        Map<Long, TheoryExamQuestionSnapshot> snapshots =
+                loadExamSnapshots(examId);
+
+        Map<Long, Category> currentCategories =
+                loadCurrentCategoriesById();
 
         return answers.stream()
                 .map(answer -> {
                     QuizQuestion question = answer.getQuestion();
                     QuizAnswerOption selectedOption = answer.getSelectedOption();
 
-                    if (question == null || (selectedOption == null && !answer.isTimedOut())) {
+                    if (question == null
+                            || (selectedOption == null && !answer.isTimedOut())) {
                         return null;
                     }
 
-                    QuizAnswerOption correctOption = resolveHistoricalCorrectOption(answer, question);
+                    QuizAnswerOption correctOption =
+                            resolveHistoricalCorrectOption(answer, question);
 
                     if (correctOption == null) {
                         return null;
                     }
 
-                    Category category = question.getCategory();
-                    TheoryExamQuestionSnapshot snapshot = snapshots.get(question.getId());
-                    OptionSnapshot selectedSnapshot = snapshotOption(
-                            snapshot, selectedOption == null ? null : selectedOption.getId());
-                    OptionSnapshot correctSnapshot = snapshotOption(snapshot, correctOption.getId());
-                    CategorySnapshot categorySnapshot = snapshot == null ? null : snapshot.category();
+                    TheoryExamQuestionSnapshot snapshot =
+                            snapshots.get(question.getId());
 
-                    String selectedEn = snapshot != null ? snapshotEn(selectedSnapshot)
-                            : selectedOption == null ? null
-                                    : roadSignReferenceTextResolver.resolveEn(selectedOption.getOptionTextEn());
-                    String selectedAr = snapshot != null ? snapshotAr(selectedSnapshot)
-                            : selectedOption == null ? null
-                                    : roadSignReferenceTextResolver.resolveAr(selectedOption.getOptionTextAr());
-                    String selectedNl = snapshot != null ? snapshotNl(selectedSnapshot)
-                            : selectedOption == null ? null
-                                    : roadSignReferenceTextResolver.resolveNl(selectedOption.getOptionTextNl());
-                    String selectedFr = snapshot != null ? snapshotFr(selectedSnapshot)
-                            : selectedOption == null ? null
-                                    : roadSignReferenceTextResolver.resolveFr(selectedOption.getOptionTextFr());
-                    String correctEn = snapshot != null ? snapshotEn(correctSnapshot)
-                            : roadSignReferenceTextResolver.resolveEn(correctOption.getOptionTextEn());
-                    String correctAr = snapshot != null ? snapshotAr(correctSnapshot)
-                            : roadSignReferenceTextResolver.resolveAr(correctOption.getOptionTextAr());
-                    String correctNl = snapshot != null ? snapshotNl(correctSnapshot)
-                            : roadSignReferenceTextResolver.resolveNl(correctOption.getOptionTextNl());
-                    String correctFr = snapshot != null ? snapshotFr(correctSnapshot)
-                            : roadSignReferenceTextResolver.resolveFr(correctOption.getOptionTextFr());
+                    OptionSnapshot selectedSnapshot =
+                            snapshotOption(
+                                    snapshot,
+                                    selectedOption == null
+                                            ? null
+                                            : selectedOption.getId());
+
+                    OptionSnapshot correctSnapshot =
+                            snapshotOption(
+                                    snapshot,
+                                    correctOption.getId());
+
+                    ExamCategory category =
+                            resolveExamCategory(
+                                    question,
+                                    snapshot,
+                                    currentCategories);
+
+                    String selectedEn =
+                            snapshot != null
+                                    ? snapshotEn(selectedSnapshot)
+                                    : selectedOption == null
+                                        ? null
+                                        : roadSignReferenceTextResolver.resolveEn(
+                                                selectedOption.getOptionTextEn());
+
+                    String selectedAr =
+                            snapshot != null
+                                    ? snapshotAr(selectedSnapshot)
+                                    : selectedOption == null
+                                        ? null
+                                        : roadSignReferenceTextResolver.resolveAr(
+                                                selectedOption.getOptionTextAr());
+
+                    String selectedNl =
+                            snapshot != null
+                                    ? snapshotNl(selectedSnapshot)
+                                    : selectedOption == null
+                                        ? null
+                                        : roadSignReferenceTextResolver.resolveNl(
+                                                selectedOption.getOptionTextNl());
+
+                    String selectedFr =
+                            snapshot != null
+                                    ? snapshotFr(selectedSnapshot)
+                                    : selectedOption == null
+                                        ? null
+                                        : roadSignReferenceTextResolver.resolveFr(
+                                                selectedOption.getOptionTextFr());
+
+                    String correctEn =
+                            snapshot != null
+                                    ? snapshotEn(correctSnapshot)
+                                    : roadSignReferenceTextResolver.resolveEn(
+                                            correctOption.getOptionTextEn());
+
+                    String correctAr =
+                            snapshot != null
+                                    ? snapshotAr(correctSnapshot)
+                                    : roadSignReferenceTextResolver.resolveAr(
+                                            correctOption.getOptionTextAr());
+
+                    String correctNl =
+                            snapshot != null
+                                    ? snapshotNl(correctSnapshot)
+                                    : roadSignReferenceTextResolver.resolveNl(
+                                            correctOption.getOptionTextNl());
+
+                    String correctFr =
+                            snapshot != null
+                                    ? snapshotFr(correctSnapshot)
+                                    : roadSignReferenceTextResolver.resolveFr(
+                                            correctOption.getOptionTextFr());
 
                     return AllAnsweredQuestionDTO.builder()
                             .questionId(question.getId())
-                            .questionTextEn(snapshot != null ? snapshotEn(snapshot.questionText())
-                                    : roadSignReferenceTextResolver.resolveEn(question.getQuestionEn()))
-                            .questionTextAr(snapshot != null ? snapshotAr(snapshot.questionText())
-                                    : roadSignReferenceTextResolver.resolveAr(question.getQuestionAr()))
-                            .questionTextNl(snapshot != null ? snapshotNl(snapshot.questionText())
-                                    : roadSignReferenceTextResolver.resolveNl(question.getQuestionNl()))
-                            .questionTextFr(snapshot != null ? snapshotFr(snapshot.questionText())
-                                    : roadSignReferenceTextResolver.resolveFr(question.getQuestionFr()))
-                            .selectedOptionId(selectedOption == null ? null : selectedOption.getId())
+                            .questionTextEn(
+                                    snapshot != null
+                                            ? snapshotEn(snapshot.questionText())
+                                            : roadSignReferenceTextResolver.resolveEn(
+                                                    question.getQuestionEn()))
+                            .questionTextAr(
+                                    snapshot != null
+                                            ? snapshotAr(snapshot.questionText())
+                                            : roadSignReferenceTextResolver.resolveAr(
+                                                    question.getQuestionAr()))
+                            .questionTextNl(
+                                    snapshot != null
+                                            ? snapshotNl(snapshot.questionText())
+                                            : roadSignReferenceTextResolver.resolveNl(
+                                                    question.getQuestionNl()))
+                            .questionTextFr(
+                                    snapshot != null
+                                            ? snapshotFr(snapshot.questionText())
+                                            : roadSignReferenceTextResolver.resolveFr(
+                                                    question.getQuestionFr()))
+                            .selectedOptionId(
+                                    selectedOption == null
+                                            ? null
+                                            : selectedOption.getId())
                             .selectedOptionText(selectedEn)
                             .selectedOptionTextEn(selectedEn)
                             .selectedOptionTextAr(selectedAr)
@@ -1168,38 +1306,149 @@ public class ExamService {
                             .correctOptionTextAr(correctAr)
                             .correctOptionTextNl(correctNl)
                             .correctOptionTextFr(correctFr)
-                            .explanationEn(snapshot != null ? snapshotEn(snapshot.explanation())
-                                    : roadSignReferenceTextResolver.resolveEn(question.getExplanationEn()))
-                            .explanationAr(snapshot != null ? snapshotAr(snapshot.explanation())
-                                    : roadSignReferenceTextResolver.resolveAr(question.getExplanationAr()))
-                            .explanationNl(snapshot != null ? snapshotNl(snapshot.explanation())
-                                    : roadSignReferenceTextResolver.resolveNl(question.getExplanationNl()))
-                            .explanationFr(snapshot != null ? snapshotFr(snapshot.explanation())
-                                    : roadSignReferenceTextResolver.resolveFr(question.getExplanationFr()))
-                            .categoryName(categorySnapshot != null
-                                    ? snapshotEn(categorySnapshot.name())
-                                    : category != null ? category.getNameEn()
-                                    : messages.get("analytics.category.unknown"))
-                            .categoryNameEn(categorySnapshot != null ? snapshotEn(categorySnapshot.name())
-                                    : category != null ? category.getNameEn() : null)
-                            .categoryNameAr(categorySnapshot != null ? snapshotAr(categorySnapshot.name())
-                                    : category != null ? category.getNameAr() : null)
-                            .categoryNameNl(categorySnapshot != null ? snapshotNl(categorySnapshot.name())
-                                    : category != null ? category.getNameNl() : null)
-                            .categoryNameFr(categorySnapshot != null ? snapshotFr(categorySnapshot.name())
-                                    : category != null ? category.getNameFr() : null)
-                            .categoryCode(categorySnapshot != null ? categorySnapshot.code()
-                                    : category != null ? category.getCode() : null)
-                            .contentImageUrl(snapshot != null ? snapshot.contentImageUrl() : question.getContentImageUrl())
+                            .explanationEn(
+                                    snapshot != null
+                                            ? snapshotEn(snapshot.explanation())
+                                            : roadSignReferenceTextResolver.resolveEn(
+                                                    question.getExplanationEn()))
+                            .explanationAr(
+                                    snapshot != null
+                                            ? snapshotAr(snapshot.explanation())
+                                            : roadSignReferenceTextResolver.resolveAr(
+                                                    question.getExplanationAr()))
+                            .explanationNl(
+                                    snapshot != null
+                                            ? snapshotNl(snapshot.explanation())
+                                            : roadSignReferenceTextResolver.resolveNl(
+                                                    question.getExplanationNl()))
+                            .explanationFr(
+                                    snapshot != null
+                                            ? snapshotFr(snapshot.explanation())
+                                            : roadSignReferenceTextResolver.resolveFr(
+                                                    question.getExplanationFr()))
+                            .categoryName(
+                                    category != null && category.nameEn() != null
+                                            ? category.nameEn()
+                                            : messages.get("analytics.category.unknown"))
+                            .categoryNameEn(
+                                    category == null ? null : category.nameEn())
+                            .categoryNameAr(
+                                    category == null ? null : category.nameAr())
+                            .categoryNameNl(
+                                    category == null ? null : category.nameNl())
+                            .categoryNameFr(
+                                    category == null ? null : category.nameFr())
+                            .categoryCode(
+                                    category == null ? null : category.code())
+                            .contentImageUrl(
+                                    snapshot != null
+                                            ? snapshot.contentImageUrl()
+                                            : question.getContentImageUrl())
                             .isCorrect(answer.getIsCorrect())
                             .wasTimeout(answer.isTimedOut())
-                            .difficulty(snapshot != null ? snapshot.difficulty()
-                                    : question.getDifficultyLevel() == null
-                                    ? null : question.getDifficultyLevel().name())
+                            .difficulty(
+                                    snapshot != null
+                                            ? snapshot.difficulty()
+                                            : question.getDifficultyLevel() == null
+                                                ? null
+                                                : question.getDifficultyLevel().name())
                             .build();
                 })
                 .filter(java.util.Objects::nonNull)
                 .collect(Collectors.toList());
+    }
+
+    private Map<Long, TheoryExamQuestionSnapshot> loadExamSnapshots(Long examId) {
+        Map<Long, TheoryExamQuestionSnapshot> snapshots = new HashMap<>();
+
+        for (ExamSimulationQuestion examQuestion
+                : examQuestionRepository.findByExamIdOrderByQuestionOrder(examId)) {
+
+            TheoryExamQuestionSnapshot snapshot =
+                    questionSnapshotService.read(examQuestion);
+
+            if (snapshot != null) {
+                snapshots.put(
+                        examQuestion.getQuestionId(),
+                        snapshot);
+            }
+        }
+
+        return snapshots;
+    }
+
+    private Map<Long, Category> loadCurrentCategoriesById() {
+        return categoryRepository.findAll().stream()
+                .filter(category -> category.getId() != null)
+                .collect(Collectors.toMap(
+                        Category::getId,
+                        category -> category));
+    }
+
+    private ExamCategory resolveExamCategory(
+            QuizQuestion question,
+            TheoryExamQuestionSnapshot snapshot,
+            Map<Long, Category> currentCategories) {
+
+        CategorySnapshot storedCategory =
+                snapshot == null
+                        ? null
+                        : snapshot.category();
+
+        if (storedCategory != null
+                && storedCategory.id() != null) {
+
+            Category current =
+                    currentCategories.get(storedCategory.id());
+
+            if (current != null) {
+                return new ExamCategory(
+                        storedCategory.id(),
+                        current.getCode(),
+                        current.getNameEn(),
+                        current.getNameNl(),
+                        current.getNameFr(),
+                        current.getNameAr(),
+                        current);
+            }
+
+            return new ExamCategory(
+                    storedCategory.id(),
+                    storedCategory.code(),
+                    snapshotEn(storedCategory.name()),
+                    snapshotNl(storedCategory.name()),
+                    snapshotFr(storedCategory.name()),
+                    snapshotAr(storedCategory.name()),
+                    null);
+        }
+
+        Category live =
+                question == null
+                        ? null
+                        : question.getCategory();
+
+        if (live == null || live.getId() == null) {
+            return null;
+        }
+
+        return new ExamCategory(
+                live.getId(),
+                live.getCode(),
+                live.getNameEn(),
+                live.getNameNl(),
+                live.getNameFr(),
+                live.getNameAr(),
+                live);
+    }
+
+    private record ExamCategory(
+            Long id,
+            String code,
+            String nameEn,
+            String nameNl,
+            String nameFr,
+            String nameAr,
+            Category currentEntity) {
     }
 
     private static OptionSnapshot snapshotOption(TheoryExamQuestionSnapshot snapshot, Long optionId) {

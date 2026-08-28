@@ -114,7 +114,7 @@ class AdminLearningHistoricalSnapshotPostgreSqlIntegrationTest {
     }
 
     @Test
-    void adminHistoryUsesSnapshotAfterCurrentQuestionAndOptionsAreEdited() throws Exception {
+    void adminHistoryKeepsSnapshotContentButUsesCurrentCategoryNameByStableId() throws Exception {
         long examId = insertExam();
         insertExamQuestion(examId, snapshotJson());
         insertAnswer(examId);
@@ -130,7 +130,7 @@ class AdminLearningHistoricalSnapshotPostgreSqlIntegrationTest {
             assertThat(question.questionTextEn()).isEqualTo("Historical question");
             assertThat(question.selectedOptionTextEn()).isEqualTo("Historical selected");
             assertThat(question.correctOptionTextEn()).isEqualTo("Historical correct");
-            assertThat(question.categoryNameEn()).isEqualTo("Historical category");
+            assertThat(question.categoryNameEn()).isEqualTo("Edited category later");
             assertThat(question.difficulty()).isEqualTo("MEDIUM");
             assertThat(question.isCorrect()).isFalse();
         });

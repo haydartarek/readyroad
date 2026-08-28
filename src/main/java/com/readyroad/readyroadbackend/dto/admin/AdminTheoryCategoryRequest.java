@@ -8,7 +8,7 @@ import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 
 public record AdminTheoryCategoryRequest(
-        @NotBlank @Pattern(regexp = "[A-Za-z0-9_-]{1,10}") String code,
+        @Pattern(regexp = "[A-Za-z0-9_-]{1,10}") String code,
         @NotBlank @Size(max = 200) String nameEn,
         @NotBlank @Size(max = 200) String nameNl,
         @NotBlank @Size(max = 200) String nameFr,

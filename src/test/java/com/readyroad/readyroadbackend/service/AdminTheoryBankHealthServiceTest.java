@@ -1,9 +1,6 @@
 package com.readyroad.readyroadbackend.service;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatThrownBy;
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import com.readyroad.readyroadbackend.domain.entity.Category;
@@ -13,12 +10,10 @@ import com.readyroad.readyroadbackend.domain.enums.CategoryContentScope;
 import com.readyroad.readyroadbackend.domain.repository.CategoryRepository;
 import com.readyroad.readyroadbackend.domain.repository.QuizQuestionRepository;
 import com.readyroad.readyroadbackend.dto.admin.AdminTheoryBankHealthDtos.BankHealthResponse;
-import com.readyroad.readyroadbackend.dto.admin.AdminTheoryCategoryRequest;
 import com.readyroad.readyroadbackend.service.AdminTheoryBankHealthStore.PerformanceRow;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -65,6 +60,9 @@ class AdminTheoryBankHealthServiceTest {
                 .satisfies(health -> {
                     assertThat(health.totalPresentations()).isEqualTo(9);
                     assertThat(health.representationStatus()).isEqualTo("UNDERREPRESENTED");
+                    assertThat(health.minimumRequired()).isEqualTo(5);
+                    assertThat(health.questionsNeeded()).isEqualTo(4);
+                    assertThat(health.examEligible()).isFalse();
                 });
         assertThat(response.heavilyExposedQuestions()).singleElement()
                 .satisfies(exposure -> {
@@ -112,23 +110,35 @@ class AdminTheoryBankHealthServiceTest {
     }
 
     @Test
-    void categoryUpdatesPreserveTheStableCodeAndPersistAdminConfiguration() {
-        when(categoryRepository.findById(1L)).thenReturn(Optional.of(category));
-        when(categoryRepository.save(any(Category.class))).thenAnswer(invocation -> invocation.getArgument(0));
-        AdminTheoryCategoryRequest request = request("TH01", 16, false);
+    void fiveEligibleQuestionsUseDefaultWeightAndMeetTheSharedBlueprintMinimum() {
+        category.setExamTargetWeight(null);
+        List<QuizQuestion> questions = List.of(
+                question(1L, category, "Question 1", true),
+                question(2L, category, "Question 2", true),
+                question(3L, category, "Question 3", true),
+                question(4L, category, "Question 4", true),
+                question(5L, category, "Question 5", true));
 
-        var response = service.updateCategory(1L, request);
+        when(categoryRepository.findAll()).thenReturn(List.of(category));
+        when(questionRepository.findAllForTheoryBankHealth()).thenReturn(questions);
+        when(store.theoryPresentations()).thenReturn(Map.of());
+        when(store.completedPerformanceByLocale()).thenReturn(Map.of());
 
-        assertThat(response.code()).isEqualTo("TH01");
-        assertThat(response.examTargetWeight()).isEqualTo(16);
-        assertThat(response.active()).isFalse();
-        verify(categoryRepository).save(category);
+        BankHealthResponse response = service.bankHealth();
 
-        assertThatThrownBy(() -> service.updateCategory(1L, request("CHANGED", 16, true)))
-                .isInstanceOf(IllegalArgumentException.class)
-                .hasMessageContaining("stable identifier");
+        assertThat(response.categories()).singleElement().satisfies(health -> {
+            assertThat(health.eligibleAllLocales()).isEqualTo(5);
+            assertThat(health.representationStatus()).isEqualTo("BALANCED");
+            assertThat(health.examTargetWeight())
+                    .isEqualTo(TheoryExamBlueprintPolicy.DEFAULT_CATEGORY_WEIGHT);
+            assertThat(health.minimumRequired()).isEqualTo(5);
+            assertThat(health.questionsNeeded()).isZero();
+            assertThat(health.examEligible()).isTrue();
+        });
+
+        assertThat(service.categoryManagement()).singleElement()
+                .satisfies(health -> assertThat(health.examEligible()).isTrue());
     }
-
     private static Category category(long id, String code, Integer weight) {
         Category category = new Category();
         category.setId(id);
@@ -177,9 +187,4 @@ class AdminTheoryBankHealthServiceTest {
         return option;
     }
 
-    private static AdminTheoryCategoryRequest request(String code, Integer weight, boolean active) {
-        return new AdminTheoryCategoryRequest(
-                code, "Rules", "Regels", "Regles", "Rules AR",
-                null, null, null, null, 1, active, "THEORETICAL_EXAM", weight);
-    }
 }

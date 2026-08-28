@@ -3,10 +3,12 @@ package com.readyroad.readyroadbackend.service;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.when;
 
+import com.readyroad.readyroadbackend.domain.entity.Category;
 import com.readyroad.readyroadbackend.domain.entity.ExamSimulationAnswer;
 import com.readyroad.readyroadbackend.domain.entity.ExamSimulationQuestion;
 import com.readyroad.readyroadbackend.domain.entity.QuizAnswerOption;
 import com.readyroad.readyroadbackend.domain.entity.QuizQuestion;
+import com.readyroad.readyroadbackend.domain.repository.CategoryRepository;
 import com.readyroad.readyroadbackend.domain.repository.ExamSimulationAnswerRepository;
 import com.readyroad.readyroadbackend.domain.repository.ExamSimulationQuestionRepository;
 import com.readyroad.readyroadbackend.dto.exam.TheoryExamQuestionSnapshot;
@@ -26,6 +28,7 @@ class AdminTheoryExamHistoryServiceTest {
     @Mock ExamSimulationQuestionRepository questionRepository;
     @Mock ExamSimulationAnswerRepository answerRepository;
     @Mock TheoryExamQuestionSnapshotService snapshotService;
+    @Mock CategoryRepository categoryRepository;
     @InjectMocks AdminTheoryExamHistoryService service;
 
     @Test
@@ -44,6 +47,8 @@ class AdminTheoryExamHistoryServiceTest {
         when(questionRepository.findByExamIdOrderByQuestionOrder(22L)).thenReturn(List.of(examQuestion));
         when(answerRepository.findByExamId(22L)).thenReturn(List.of(answer));
         when(snapshotService.read(examQuestion)).thenReturn(snapshot());
+        when(categoryRepository.findAll()).thenReturn(
+                List.of(category(7L, "A", "Renamed category")));
 
         var result = service.load(22L);
 
@@ -53,6 +58,7 @@ class AdminTheoryExamHistoryServiceTest {
             assertThat(question.selectedOptionTextEn()).isEqualTo("Historical selected");
             assertThat(question.correctOptionTextEn()).isEqualTo("Historical correct");
             assertThat(question.categoryCode()).isEqualTo("A");
+            assertThat(question.categoryNameEn()).isEqualTo("Renamed category");
             assertThat(question.difficulty()).isEqualTo("MEDIUM");
             assertThat(question.isCorrect()).isFalse();
             assertThat(question.snapshotAvailable()).isTrue();
@@ -74,6 +80,7 @@ class AdminTheoryExamHistoryServiceTest {
         when(questionRepository.findByExamIdOrderByQuestionOrder(22L)).thenReturn(List.of(examQuestion));
         when(answerRepository.findByExamId(22L)).thenReturn(List.of(answer));
         when(snapshotService.read(examQuestion)).thenReturn(null);
+        when(categoryRepository.findAll()).thenReturn(List.of());
 
         var result = service.load(22L);
 
@@ -87,6 +94,21 @@ class AdminTheoryExamHistoryServiceTest {
             assertThat(question.difficulty()).isNull();
             assertThat(question.snapshotAvailable()).isFalse();
         });
+    }
+
+    private static Category category(
+            long id,
+            String code,
+            String name) {
+
+        Category category = new Category();
+        category.setId(id);
+        category.setCode(code);
+        category.setNameEn(name);
+        category.setNameNl(name);
+        category.setNameFr(name);
+        category.setNameAr(name);
+        return category;
     }
 
     private static ExamSimulationQuestion examQuestion(QuizQuestion question) {

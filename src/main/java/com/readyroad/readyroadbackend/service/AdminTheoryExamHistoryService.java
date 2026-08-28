@@ -1,7 +1,9 @@
 package com.readyroad.readyroadbackend.service;
 
+import com.readyroad.readyroadbackend.domain.entity.Category;
 import com.readyroad.readyroadbackend.domain.entity.ExamSimulationAnswer;
 import com.readyroad.readyroadbackend.domain.entity.ExamSimulationQuestion;
+import com.readyroad.readyroadbackend.domain.repository.CategoryRepository;
 import com.readyroad.readyroadbackend.domain.repository.ExamSimulationAnswerRepository;
 import com.readyroad.readyroadbackend.domain.repository.ExamSimulationQuestionRepository;
 import com.readyroad.readyroadbackend.dto.admin.AdminLearningDtos.HistoricalTheoryQuestion;
@@ -26,20 +28,27 @@ public class AdminTheoryExamHistoryService {
     private final ExamSimulationQuestionRepository questionRepository;
     private final ExamSimulationAnswerRepository answerRepository;
     private final TheoryExamQuestionSnapshotService snapshotService;
+    private final CategoryRepository categoryRepository;
 
     public AdminTheoryExamHistoryService(
             ExamSimulationQuestionRepository questionRepository,
             ExamSimulationAnswerRepository answerRepository,
-            TheoryExamQuestionSnapshotService snapshotService) {
+            TheoryExamQuestionSnapshotService snapshotService,
+            CategoryRepository categoryRepository) {
         this.questionRepository = questionRepository;
         this.answerRepository = answerRepository;
         this.snapshotService = snapshotService;
+        this.categoryRepository = categoryRepository;
     }
 
     public HistoricalResult load(long examId) {
         List<ExamSimulationQuestion> examQuestions = questionRepository.findByExamIdOrderByQuestionOrder(examId);
         Map<Long, ExamSimulationAnswer> answers = answerRepository.findByExamId(examId).stream()
                 .collect(Collectors.toMap(answer -> answer.getQuestion().getId(), Function.identity()));
+
+        Map<Long, Category> currentCategories = categoryRepository.findAll().stream()
+                .filter(category -> category.getId() != null)
+                .collect(Collectors.toMap(Category::getId, category -> category));
 
         int snapshots = 0;
         List<HistoricalTheoryQuestion> questions = new java.util.ArrayList<>(examQuestions.size());
@@ -48,7 +57,7 @@ public class AdminTheoryExamHistoryService {
             if (snapshot != null) {
                 snapshots++;
             }
-            questions.add(map(examQuestion, answers.get(examQuestion.getQuestionId()), snapshot));
+            questions.add(map(examQuestion, answers.get(examQuestion.getQuestionId()), snapshot, currentCategories));
         }
 
         String status = snapshots == 0
@@ -60,7 +69,8 @@ public class AdminTheoryExamHistoryService {
     private static HistoricalTheoryQuestion map(
             ExamSimulationQuestion examQuestion,
             ExamSimulationAnswer answer,
-            TheoryExamQuestionSnapshot snapshot) {
+            TheoryExamQuestionSnapshot snapshot,
+            Map<Long, Category> currentCategories) {
         if (snapshot == null) {
             return legacy(examQuestion, answer);
         }
@@ -73,6 +83,29 @@ public class AdminTheoryExamHistoryService {
         OptionSnapshot selected = option(snapshot, selectedId);
         OptionSnapshot correct = option(snapshot, correctId);
         CategorySnapshot category = snapshot.category();
+        Category currentCategory = category == null || category.id() == null
+                ? null
+                : currentCategories.get(category.id());
+
+        String categoryCode = currentCategory != null
+                ? currentCategory.getCode()
+                : category == null ? null : category.code();
+
+        String categoryNameEn = currentCategory != null
+                ? currentCategory.getNameEn()
+                : category == null ? null : en(category.name());
+
+        String categoryNameNl = currentCategory != null
+                ? currentCategory.getNameNl()
+                : category == null ? null : nl(category.name());
+
+        String categoryNameFr = currentCategory != null
+                ? currentCategory.getNameFr()
+                : category == null ? null : fr(category.name());
+
+        String categoryNameAr = currentCategory != null
+                ? currentCategory.getNameAr()
+                : category == null ? null : ar(category.name());
 
         return new HistoricalTheoryQuestion(
                 snapshot.questionId(),
@@ -83,11 +116,11 @@ public class AdminTheoryExamHistoryService {
                 correctId,
                 en(text(correct)), nl(text(correct)), fr(text(correct)), ar(text(correct)),
                 en(snapshot.explanation()), nl(snapshot.explanation()), fr(snapshot.explanation()), ar(snapshot.explanation()),
-                category == null ? null : category.code(),
-                category == null ? null : en(category.name()),
-                category == null ? null : nl(category.name()),
-                category == null ? null : fr(category.name()),
-                category == null ? null : ar(category.name()),
+                categoryCode,
+                categoryNameEn,
+                categoryNameNl,
+                categoryNameFr,
+                categoryNameAr,
                 snapshot.difficulty(),
                 snapshot.contentImageUrl(),
                 answer == null || answer.isTimedOut() ? null : answer.getIsCorrect(),
