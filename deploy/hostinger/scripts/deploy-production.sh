@@ -22,8 +22,8 @@ fi
 
 readonly BACKEND_REPOSITORY="https://github.com/haydartarek/readyroad.git"
 readonly FRONTEND_REPOSITORY="https://github.com/haydartarek/readyroad_front_end.git"
-BACKEND_REF="feature/postgresql-supabase"
-FRONTEND_REF="feature/postgresql-supabase"
+BACKEND_REF=""
+FRONTEND_REF=""
 RELEASE_ID=""
 RELEASE_RETENTION=5
 DRY_RUN=0
@@ -48,6 +48,20 @@ Usage: readyroad-deploy [options]
   --simulate-health-failure
 EOF
   exit 2
+}
+
+require_commit_sha() {
+  local flag="$1"
+  local value="$2"
+
+  [[ -n "$value" ]] || {
+    printf '%s is required.\n' "$flag" >&2
+    usage
+  }
+  [[ "$value" =~ ^[0-9a-fA-F]{40}$ ]] || {
+    printf '%s must be a full 40-character Git commit SHA.\n' "$flag" >&2
+    exit 2
+  }
 }
 
 while (( $# > 0 )); do
@@ -85,6 +99,9 @@ while (( $# > 0 )); do
       ;;
   esac
 done
+
+require_commit_sha "--backend-ref" "$BACKEND_REF"
+require_commit_sha "--frontend-ref" "$FRONTEND_REF"
 
 [[ "$EUID" -eq 0 ]] || {
   printf 'readyroad-deploy must run as root.\n' >&2
