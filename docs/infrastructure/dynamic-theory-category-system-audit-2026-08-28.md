@@ -33,4 +33,3 @@ so this audit does not invent or change that rule.
 - Admin category and bank-health frontend tests: 6 passed.
 - Seeded allocator simulation: 500 runs with zero duplicate or cooldown
   violations.
-
