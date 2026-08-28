@@ -71,6 +71,7 @@ public class TheoryExamQuestionAllocator {
         return allocateEligibleQuestions(
                 questionRepository.findTheoryQuestionBankCandidates(languageCode),
                 questionRepository.findCooldownEligibleTheoryQuestions(userId, languageCode, cooldownCutoff),
+                questionRepository.findRankedTheoryQuestionsForUser(userId, languageCode),
                 languageCode);
     }
 
@@ -87,6 +88,18 @@ public class TheoryExamQuestionAllocator {
     Allocation allocateEligibleQuestions(
             List<QuizQuestion> bankCandidates,
             List<QuizQuestion> userAvailableCandidates,
+            String languageCode) {
+        return allocateEligibleQuestions(
+                bankCandidates,
+                userAvailableCandidates,
+                userAvailableCandidates,
+                languageCode);
+    }
+
+    Allocation allocateEligibleQuestions(
+            List<QuizQuestion> bankCandidates,
+            List<QuizQuestion> userAvailableCandidates,
+            List<QuizQuestion> rankedUserCandidates,
             String languageCode) {
         Map<Long, QuizQuestion> bankQuestions = uniqueDeliveryEligible(bankCandidates, languageCode);
         Map<Long, CategoryPool> bankPools = groupByCategory(bankQuestions.values());
@@ -128,10 +141,45 @@ public class TheoryExamQuestionAllocator {
                     userPool == null ? 0 : userPool.capacity());
         }
 
+        Map<Long, QuizQuestion> rankedUserQuestions = eligibleBankSubset(
+                rankedUserCandidates, bankQuestionIds, languageCode);
+
         Map<Long, QuizQuestion> effectiveUserQuestions = new LinkedHashMap<>();
         userQuestions.values().stream()
                 .filter(question -> participatingCategoryIds.contains(question.getCategory().getId()))
                 .forEach(question -> effectiveUserQuestions.putIfAbsent(question.getId(), question));
+
+        Set<Long> effectiveCategoryIds = effectiveUserQuestions.values().stream()
+                .map(question -> question.getCategory().getId())
+                .collect(java.util.stream.Collectors.toSet());
+
+        // Guarantee the mandatory one-question floor for every bank-eligible category.
+        for (CategoryPool bankCategory : participatingBankCategories) {
+            Long categoryId = bankCategory.category().getId();
+            if (effectiveCategoryIds.contains(categoryId)) {
+                continue;
+            }
+            for (QuizQuestion fallback : rankedUserQuestions.values()) {
+                if (categoryId.equals(fallback.getCategory().getId())
+                        && !effectiveUserQuestions.containsKey(fallback.getId())) {
+                    effectiveUserQuestions.put(fallback.getId(), fallback);
+                    effectiveCategoryIds.add(categoryId);
+                    break;
+                }
+            }
+        }
+
+        // Cooldown is preferred, not allowed to make a valid 50-question exam impossible.
+        if (effectiveUserQuestions.size() < TheoryExamBlueprintPolicy.EXAM_SIZE) {
+            for (QuizQuestion fallback : rankedUserQuestions.values()) {
+                if (effectiveUserQuestions.size() >= TheoryExamBlueprintPolicy.EXAM_SIZE) {
+                    break;
+                }
+                if (participatingCategoryIds.contains(fallback.getCategory().getId())) {
+                    effectiveUserQuestions.putIfAbsent(fallback.getId(), fallback);
+                }
+            }
+        }
 
         Map<Long, CategoryPool> effectivePoolsByCategory =
                 groupByCategory(effectiveUserQuestions.values());
