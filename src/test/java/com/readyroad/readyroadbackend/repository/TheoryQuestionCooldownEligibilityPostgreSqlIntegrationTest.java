@@ -141,6 +141,20 @@ class TheoryQuestionCooldownEligibilityPostgreSqlIntegrationTest {
     }
 
     @Test
+    void rankedFallbackIncludesCoolingQuestionsAndOrdersOldestExposureFirst() {
+        long newest = insertQuestion("Newest cooling question");
+        long oldest = insertQuestion("Oldest cooling question");
+
+        insertHistory(userA, newest, "THEORY", NOW.minusHours(1), NOW.minusHours(1));
+        insertHistory(userA, oldest, "THEORY", NOW.minusHours(7), NOW.minusHours(7));
+
+        assertThat(eligibleQuestionIds(userA))
+                .doesNotContain(newest, oldest);
+
+        assertThat(rankedTheoryQuestionIds(userA, "en"))
+                .containsExactly(oldest, newest);
+    }
+    @Test
     void bankCandidatesRemainIndependentFromPerUserCooldownAvailability() {
         long blockedForUser = insertQuestion("Bank eligible but cooling down");
         long availableForUser = insertQuestion("Bank and user eligible");
@@ -171,6 +185,12 @@ class TheoryQuestionCooldownEligibilityPostgreSqlIntegrationTest {
         assertThat(englishIds).doesNotContain(questionId);
     }
 
+    private List<Long> rankedTheoryQuestionIds(long userId, String languageCode) {
+        return questionRepository.findRankedTheoryQuestionsForUser(userId, languageCode)
+                .stream()
+                .map(QuizQuestion::getId)
+                .toList();
+    }
     private Set<Long> eligibleIds(long userId) {
         return eligibleQuestionIds(userId).stream().collect(Collectors.toSet());
     }
