@@ -29,9 +29,5 @@ public interface QuizQuestionRandomRepository {
             String languageCode,
             LocalDateTime cooldownCutoff);
 
-    List<QuizQuestion> findRankedTheoryQuestionsForUser(
-            Long userId,
-            String languageCode);
-
     List<Long> findRandomQuestionIdsByDifficulty(String difficulty, int limit);
 }
