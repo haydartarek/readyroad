@@ -3,7 +3,6 @@ package com.readyroad.readyroadbackend.marketing.editorial;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.readyroad.readyroadbackend.marketing.audit.MarketingAuditService;
-import java.time.Instant;
 import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -49,41 +48,36 @@ public class EditorialArticleImageService {
         if (!"IMAGE_REQUIRED".equals(article.lifecycleState())) {
             throw new ResponseStatusException(
                     HttpStatus.CONFLICT,
-                    "Article images can only be approved in IMAGE_REQUIRED state");
+                    "Article images can only be changed in IMAGE_REQUIRED state");
         }
 
         var processed = processor.process(
                 file,
                 metadata.storedFileName(),
                 metadata.contentType(),
-                metadata.focalPointX(),
-                metadata.focalPointY());
+                0.5,
+                0.5);
         registerRollbackCleanup(processed);
-        metadata = metadata.withSourceAssetId(processed.sha256());
-        if (store.duplicate(processed.sha256(), metadata.sourcePlatform(), metadata.sourceAssetId())) {
+        if (store.duplicate(processed.sha256())) {
             processor.delete(processed);
             throw new ResponseStatusException(
                     HttpStatus.CONFLICT,
-                    "This source image is already registered in the editorial library");
+                    "This image is already registered in the editorial library");
         }
 
         long assetId = store.insertPending(articleId, processed, metadata);
         store.insertVariants(assetId, processed.variants());
         store.insertLocalizations(assetId, metadata);
-        Instant approvedAt = Instant.now();
-        long licenseId = store.insertLicense(assetId, articleId, metadata, approvedAt);
         store.activate(articleId, assetId);
 
         ObjectNode details = objectMapper.createObjectNode();
         details.put("articleId", articleId);
         details.put("imageAssetId", assetId);
-        details.put("licenseRecordId", licenseId);
-        details.put("sourcePlatform", metadata.sourcePlatform().name());
-        details.put("sourceAssetId", metadata.sourceAssetId());
+        details.put("contentSha256", processed.sha256());
         details.put("variantCount", processed.variants().size());
         auditService.recordEntityEvent(
                 AUDIT_EVENT,
-                metadata.approvedBy(),
+                metadata.uploadedBy(),
                 "EDITORIAL_ARTICLE_IMAGE",
                 String.valueOf(assetId),
                 null,
