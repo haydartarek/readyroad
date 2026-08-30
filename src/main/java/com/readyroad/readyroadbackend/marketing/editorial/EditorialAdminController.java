@@ -59,7 +59,7 @@ public class EditorialAdminController {
             @Valid @RequestBody EditorialDtos.RecalculateRequest request,
             Principal principal) {
         return ResponseEntity.accepted().body(
-                priorityAdminService.requestRecalculation(request, principal.getName()));
+                priorityAdminService.requestRecalculation(request.idempotencyKey(), principal.getName()));
     }
 
     @PutMapping("/priority-settings")
