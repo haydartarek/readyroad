@@ -28,13 +28,13 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 /**
  * Security Configuration - Production Ready
- * 
+ *
  * This configuration implements a sensible security model:
  * - Public access to read-only educational content
  * - Protected access for user operations and data modifications
  * - JWT-based stateless authentication
  * - Role Hierarchy: ADMIN > MODERATOR > USER
- * 
+ *
  * @author ReadyRoad Team
  * @since 2026-02-08
  * @version 2.2 (Renamed from SecurityConfigDev; production security config)
@@ -42,7 +42,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @Slf4j
 @Configuration
 @EnableWebSecurity
-@EnableMethodSecurity(prePostEnabled = true) // Enable @PreAuthorize
+@EnableMethodSecurity(prePostEnabled = true)
 @RequiredArgsConstructor
 public class SecurityConfig {
 
@@ -55,25 +55,11 @@ public class SecurityConfig {
         @Value("${app.cors.max-age:3600}")
         private Long corsMaxAge;
 
-        /**
-         * Role Hierarchy Configuration
-         * 
-         * Defines role inheritance:
-         * - ADMIN inherits all permissions from MODERATOR and USER
-         * - MODERATOR inherits all permissions from USER
-         * 
-         * This allows @PreAuthorize("hasRole('USER')") to grant access to ADMIN and
-         * MODERATOR
-         * without explicit role checks.
-         * 
-         * @return RoleHierarchy bean
-         */
         @Bean
         public RoleHierarchy roleHierarchy() {
                 log.info("Configuring Role Hierarchy:");
                 log.info("   ROLE_ADMIN > ROLE_MODERATOR > ROLE_USER");
 
-                // Use static factory method instead of constructor (Spring Security 6.3+)
                 RoleHierarchyImpl hierarchy = RoleHierarchyImpl.fromHierarchy(
                                 "ROLE_ADMIN > ROLE_MODERATOR\n" +
                                                 "ROLE_MODERATOR > ROLE_USER");
@@ -85,15 +71,6 @@ public class SecurityConfig {
                 return hierarchy;
         }
 
-        /**
-         * Method Security Expression Handler with Role Hierarchy
-         * 
-         * Integrates Role Hierarchy with @PreAuthorize annotations
-         * so that role inheritance works with method-level security.
-         * 
-         * @param roleHierarchy the role hierarchy bean
-         * @return MethodSecurityExpressionHandler configured with hierarchy
-         */
         @Bean
         @SuppressWarnings("deprecation")
         public MethodSecurityExpressionHandler methodSecurityExpressionHandler(RoleHierarchy roleHierarchy) {
@@ -120,10 +97,6 @@ public class SecurityConfig {
                                 .csrf(AbstractHttpConfigurer::disable)
                                 .cors(cors -> cors.configurationSource(corsConfigurationSource()))
                                 .authorizeHttpRequests(auth -> auth
-                                                // ═══════════════════════════════════════════════════════════
-                                                // PUBLIC ENDPOINTS (No Authentication Required)
-                                                // ═══════════════════════════════════════════════════════════
-
                                                 // Health & Monitoring
                                                 .requestMatchers("/actuator/health", "/actuator/info").permitAll()
                                                 .requestMatchers("/api/health").permitAll()
@@ -131,7 +104,7 @@ public class SecurityConfig {
                                                 // API Documentation (admin-only)
                                                 .requestMatchers("/swagger-ui/**", "/v3/api-docs/**").hasRole("ADMIN")
 
-                                                // Public static traffic sign images served by the backend
+                                                // Public static images served by the backend
                                                 .requestMatchers(HttpMethod.GET, "/images/signs/**").permitAll()
                                                 .requestMatchers(HttpMethod.HEAD, "/images/signs/**").permitAll()
                                                 .requestMatchers(HttpMethod.GET, "/images/quiz/**").permitAll()
@@ -162,16 +135,9 @@ public class SecurityConfig {
                                                 .requestMatchers(HttpMethod.GET, "/api/youtube/videos").permitAll()
                                                 .requestMatchers(HttpMethod.GET, "/api/articles/**").permitAll()
 
-                                                // ═══════════════════════════════════════════════════════════
-                                                // PROTECTED ENDPOINTS (JWT Authentication Required)
-                                                // ═══════════════════════════════════════════════════════════
-
-                                                // User Operations (requires authentication)
-                                                // Note: Role-specific restrictions should use @PreAuthorize in
-                                                // controllers
+                                                // User Operations
                                                 .requestMatchers(HttpMethod.GET, "/api/auth/me").authenticated()
                                                 .requestMatchers(HttpMethod.POST, "/api/auth/logout").authenticated()
-                                                .requestMatchers(HttpMethod.GET, "/api/assessment/**").authenticated()
                                                 .requestMatchers("/api/users/me/**").authenticated()
                                                 .requestMatchers("/api/users/**").authenticated()
 
@@ -179,29 +145,24 @@ public class SecurityConfig {
                                                 .requestMatchers("/api/exams/**").authenticated()
                                                 .requestMatchers("/api/practice/**").authenticated()
 
-                                                // Sign Quiz (all methods require authentication)
+                                                // Sign Quiz
                                                 .requestMatchers("/api/sign-quiz/**").authenticated()
 
                                                 // Analytics & Progress
                                                 .requestMatchers("/api/analytics/**").authenticated()
                                                 .requestMatchers("/api/progress/**").authenticated()
 
-                                                // Admin Operations (ADMIN role required)
-                                                // Note: With Role Hierarchy, only ADMIN can access this
+                                                // Admin Operations
                                                 .requestMatchers("/api/admin/**").hasRole("ADMIN")
 
-                                                // Write Operations (POST, PUT, DELETE, PATCH)
+                                                // Write Operations
                                                 .requestMatchers(HttpMethod.POST, "/api/**").authenticated()
                                                 .requestMatchers(HttpMethod.PUT, "/api/**").authenticated()
                                                 .requestMatchers(HttpMethod.DELETE, "/api/**").authenticated()
                                                 .requestMatchers(HttpMethod.PATCH, "/api/**").authenticated()
 
-                                                // Default: deny all unregistered requests. Every intentionally public
-                                                // path
-                                                // must be explicitly listed above. This prevents accidental exposure of
-                                                // endpoints added in the future without a matching security rule.
+                                                // Default deny for unregistered routes.
                                                 .anyRequest().denyAll())
-                                // Return proper 401 for unauthenticated requests (not 403)
                                 .exceptionHandling(exception -> exception
                                                 .authenticationEntryPoint((request, response, authException) -> {
                                                         response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
@@ -235,7 +196,6 @@ public class SecurityConfig {
 
                 CorsConfiguration configuration = new CorsConfiguration();
 
-                // Allowed origins
                 if (allowedOriginsProperty != null && !allowedOriginsProperty.isBlank()) {
                         List<String> origins = Arrays.stream(allowedOriginsProperty.split(","))
                                         .map(String::trim)
@@ -252,7 +212,6 @@ public class SecurityConfig {
                         log.info("   Using default development CORS origins");
                 }
 
-                // Allowed methods
                 configuration.setAllowedMethods(Arrays.asList(
                                 HttpMethod.GET.name(),
                                 HttpMethod.POST.name(),
@@ -262,10 +221,7 @@ public class SecurityConfig {
                                 HttpMethod.PATCH.name(),
                                 HttpMethod.HEAD.name()));
 
-                // Allowed headers
                 configuration.setAllowedHeaders(List.of("*"));
-
-                // Exposed headers
                 configuration.setExposedHeaders(Arrays.asList(
                                 "Access-Control-Allow-Origin",
                                 "Access-Control-Allow-Credentials",
