@@ -184,7 +184,6 @@ public class EditorialArticleApprovalService {
         payload.put("canonicalLanguage", article.canonicalLanguage());
         payload.put("requestReason", reason.trim());
         payload.put("imageAssetId", image.assetId());
-        payload.put("imageLicenseId", image.licenseId());
         ArrayNode versionArray = payload.putArray("versions");
         versions.forEach(version -> versionArray.addObject()
                 .put("id", version.id())
@@ -222,11 +221,7 @@ public class EditorialArticleApprovalService {
     private void requireCurrentImageSnapshot(long articleId, JsonNode payload) {
         EditorialArticleImageStore.ApprovedImage current = imageStore.requireApprovalReady(articleId);
         long imageAssetId = payload.path("imageAssetId").asLong();
-        long imageLicenseId = payload.path("imageLicenseId").asLong();
-        if (imageAssetId <= 0
-                || imageLicenseId <= 0
-                || current.assetId() != imageAssetId
-                || current.licenseId() != imageLicenseId) {
+        if (imageAssetId <= 0 || current.assetId() != imageAssetId) {
             throw new IllegalStateException("The approved article image changed after approval was requested");
         }
     }
