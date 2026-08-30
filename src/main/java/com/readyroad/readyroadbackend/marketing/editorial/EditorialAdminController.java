@@ -6,13 +6,13 @@ import java.security.Principal;
 import java.util.List;
 import java.util.Map;
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.http.ResponseEntity;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -36,6 +36,7 @@ public class EditorialAdminController {
     private final EditorialEditorService editorService;
     private final EditorialArticleApprovalService articleApprovalService;
     private final EditorialArticleImageService articleImageService;
+    private final EditorialArticleUpdateService articleUpdateService;
     private final EditorialPerformanceService performanceService;
 
     @GetMapping("/backlog")
@@ -58,7 +59,7 @@ public class EditorialAdminController {
             @Valid @RequestBody EditorialDtos.RecalculateRequest request,
             Principal principal) {
         return ResponseEntity.accepted().body(
-                priorityAdminService.requestRecalculation(request.idempotencyKey(), principal.getName()));
+                priorityAdminService.requestRecalculation(request, principal.getName()));
     }
 
     @PutMapping("/priority-settings")
@@ -134,6 +135,13 @@ public class EditorialAdminController {
             @Valid @RequestBody EditorialEditorDtos.SaveRequest request,
             Principal principal) {
         return editorService.save(topicId, language, request, principal.getName());
+    }
+
+    @PostMapping("/editor/articles/{articleId}/update-session")
+    public EditorialArticleUpdateService.StartResult startArticleUpdate(
+            @PathVariable long articleId,
+            Principal principal) {
+        return articleUpdateService.start(articleId, principal.getName());
     }
 
     @GetMapping("/editor/articles/{articleId}/image")
