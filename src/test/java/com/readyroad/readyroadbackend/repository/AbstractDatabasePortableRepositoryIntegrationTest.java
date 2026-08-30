@@ -1,16 +1,11 @@
 package com.readyroad.readyroadbackend.repository;
 
 import com.readyroad.readyroadbackend.domain.entity.Category;
-import com.readyroad.readyroadbackend.domain.entity.DevExamCategory;
-import com.readyroad.readyroadbackend.domain.entity.DevExamDifficulty;
-import com.readyroad.readyroadbackend.domain.entity.DevExamQuestion;
 import com.readyroad.readyroadbackend.domain.entity.QuizAnswerOption;
 import com.readyroad.readyroadbackend.domain.entity.QuizQuestion;
 import com.readyroad.readyroadbackend.domain.entity.User;
 import com.readyroad.readyroadbackend.domain.enums.Role;
 import com.readyroad.readyroadbackend.domain.repository.CategoryRepository;
-import com.readyroad.readyroadbackend.domain.repository.DevExamCategoryRepository;
-import com.readyroad.readyroadbackend.domain.repository.DevExamQuestionRepository;
 import com.readyroad.readyroadbackend.domain.repository.QuizQuestionRepository;
 import com.readyroad.readyroadbackend.domain.repository.RoadSignRepository;
 import com.readyroad.readyroadbackend.domain.repository.UserQuestionHistoryRepository;
@@ -48,12 +43,6 @@ abstract class AbstractDatabasePortableRepositoryIntegrationTest {
     private RoadSignRepository roadSignRepository;
 
     @Autowired
-    private DevExamCategoryRepository devExamCategoryRepository;
-
-    @Autowired
-    private DevExamQuestionRepository devExamQuestionRepository;
-
-    @Autowired
     private UserRepository userRepository;
 
     @Autowired
@@ -73,7 +62,6 @@ abstract class AbstractDatabasePortableRepositoryIntegrationTest {
 
     private Category primaryCategory;
     private Category secondaryCategory;
-    private DevExamCategory devExamCategory;
     private User user;
     private final Set<Long> eligibleQuestionIds = new HashSet<>();
 
@@ -97,19 +85,6 @@ abstract class AbstractDatabasePortableRepositoryIntegrationTest {
                 QuizQuestion.QuestionStatus.DRAFT, "draft");
         saveQuestion(primaryCategory, QuizQuestion.DifficultyLevel.EASY, false,
                 QuizQuestion.QuestionStatus.PUBLISHED, "inactive");
-
-        devExamCategory = new DevExamCategory();
-        devExamCategory.setSlug("portable-" + suffix);
-        devExamCategory.setIcon("test");
-        devExamCategory.setSortOrder(903);
-        devExamCategory.setIsActive(true);
-        devExamCategory = devExamCategoryRepository.saveAndFlush(devExamCategory);
-
-        for (int index = 0; index < 4; index++) {
-            saveDevExamQuestion(devExamCategory, DevExamDifficulty.BEGINNER, true, "beginner-" + index);
-        }
-        saveDevExamQuestion(devExamCategory, DevExamDifficulty.BEGINNER, false, "inactive");
-        saveDevExamQuestion(devExamCategory, DevExamDifficulty.ADVANCED, true, "advanced");
 
         user = new User();
         user.setUsername("portable_" + suffix);
@@ -191,20 +166,6 @@ abstract class AbstractDatabasePortableRepositoryIntegrationTest {
         quizQuestionRepository.findAllById(easyIds).forEach(question -> {
             assertPublishedAndActive(question);
             assertThat(question.getDifficultyLevel()).isEqualTo(QuizQuestion.DifficultyLevel.EASY);
-        });
-    }
-
-    @Test
-    void devExamRandomQueryPreservesCategoryDifficultyLimitAndUniqueness() {
-        List<DevExamQuestion> questions = devExamQuestionRepository.findRandomByCategoryAndDifficulty(
-                devExamCategory.getId(), DevExamDifficulty.BEGINNER, PageRequest.of(0, 2));
-
-        assertThat(questions).hasSize(2);
-        assertThat(questions).extracting(DevExamQuestion::getId).doesNotHaveDuplicates();
-        assertThat(questions).allSatisfy(question -> {
-            assertThat(question.getCategory().getId()).isEqualTo(devExamCategory.getId());
-            assertThat(question.getDifficulty()).isEqualTo(DevExamDifficulty.BEGINNER);
-            assertThat(question.getIsActive()).isTrue();
         });
     }
 
@@ -301,19 +262,6 @@ abstract class AbstractDatabasePortableRepositoryIntegrationTest {
             question.addOption(option);
         }
         return quizQuestionRepository.saveAndFlush(question);
-    }
-
-    private void saveDevExamQuestion(DevExamCategory category, DevExamDifficulty difficulty,
-            boolean active, String label) {
-        DevExamQuestion question = new DevExamQuestion();
-        question.setCategory(category);
-        question.setDifficulty(difficulty);
-        question.setQuestionEn(label);
-        question.setQuestionAr(label);
-        question.setQuestionNl(label);
-        question.setQuestionFr(label);
-        question.setIsActive(active);
-        devExamQuestionRepository.saveAndFlush(question);
     }
 
     private void assertPublishedAndActive(QuizQuestion question) {
