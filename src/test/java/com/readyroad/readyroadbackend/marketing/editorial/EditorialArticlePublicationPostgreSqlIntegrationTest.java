@@ -94,7 +94,7 @@ class EditorialArticlePublicationPostgreSqlIntegrationTest {
         jdbc.update("DELETE FROM agent_tasks WHERE task_type IN ('ARTICLE_APPROVAL', 'ARTICLE_PUBLISH')");
         jdbc.execute("""
                 TRUNCATE article_refresh_recommendations, article_performance_snapshots,
-                         article_publications, article_image_licenses, article_image_localizations,
+                         article_publications, article_image_localizations,
                          article_image_variants, article_image_assets, article_versions, article_briefs, articles
                 RESTART IDENTITY
                 """);
@@ -215,7 +215,6 @@ class EditorialArticlePublicationPostgreSqlIntegrationTest {
                 .andExpect(jsonPath("$[0].title").value("AR title"))
                 .andExpect(jsonPath("$[0].image.heroUrl").value(org.hamcrest.Matchers.startsWith("/images/articles/")))
                 .andExpect(jsonPath("$[0].image.altText").value("AR approved article image"))
-                .andExpect(jsonPath("$[0].image.sourcePlatform").value("UNSPLASH"))
                 .andExpect(jsonPath("$[0].alternateSlugs.AR").value("publication-6-AR"))
                 .andExpect(jsonPath("$[0].alternateSlugs.NL").value("publication-6-NL"))
                 .andExpect(jsonPath("$[0].alternateSlugs.FR").value("publication-6-FR"))
@@ -231,7 +230,6 @@ class EditorialArticlePublicationPostgreSqlIntegrationTest {
                 .andExpect(jsonPath("$.metaTitle").value("NL meta title"))
                 .andExpect(jsonPath("$.metaDescription").value("NL meta description"))
                 .andExpect(jsonPath("$.image.altText").value("NL approved article image"))
-                .andExpect(jsonPath("$.image.licenseName").value("Unsplash License"))
                 .andExpect(jsonPath("$.internalLinks[0].type").value("EXAM"))
                 .andExpect(jsonPath("$.internalLinks[0].targetPath").value("/nl/exam"))
                 .andExpect(jsonPath("$.internalLinks[0].anchorText").value("NL exam"))
