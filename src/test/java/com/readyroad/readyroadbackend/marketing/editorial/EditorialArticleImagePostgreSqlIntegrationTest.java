@@ -10,7 +10,6 @@ import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.time.Instant;
 import java.util.UUID;
 import javax.imageio.ImageIO;
 import javax.sql.DataSource;
@@ -65,15 +64,17 @@ class EditorialArticleImagePostgreSqlIntegrationTest {
         jdbc = new JdbcTemplate(dataSource);
         jdbc.execute("""
                 TRUNCATE article_refresh_recommendations, article_performance_snapshots,
-                         article_publications, article_image_licenses, article_image_localizations,
+                         article_publications, article_image_localizations,
                          article_image_variants, article_image_assets, article_versions, articles
                 RESTART IDENTITY
                 """);
-        jdbc.update("DELETE FROM audit_logs WHERE event_type = ?", EditorialArticleImageService.AUDIT_EVENT);
+        jdbc.update("DELETE FROM audit_logs WHERE event_type IN (?, ?)",
+                EditorialArticleImageService.AUDIT_EVENT,
+                EditorialArticleImageService.REMOVE_AUDIT_EVENT);
     }
 
     @Test
-    void storesAConfirmedLocalUploadWithFiveResponsiveVariantsAndALicenseRecord() throws Exception {
+    void storesLocalUploadWithResponsiveVariantsAndLocalizedAltText() throws Exception {
         long articleId = imageRequiredArticle(1, "priority-from-right");
 
         var asset = service.upload(articleId, image("source-a"), metadata("source-a"), "admin@rijvia.be");
@@ -82,20 +83,18 @@ class EditorialArticleImagePostgreSqlIntegrationTest {
         assertThat(asset.storedFileName()).isEqualTo("rijvia-en-source-a-hero");
         assertThat(asset.originalWidth()).isEqualTo(2048);
         assertThat(asset.originalHeight()).isEqualTo(1200);
+        assertThat(asset.createdBy()).isEqualTo("admin@rijvia.be");
         assertThat(asset.variants()).extracting(EditorialArticleImageDtos.Variant::type)
                 .containsExactlyInAnyOrder("HERO", "CARD", "MEDIUM", "MOBILE", "OG");
         assertThat(asset.variants()).allSatisfy(variant -> {
             assertThat(variant.publicPath()).startsWith("/images/articles/");
             assertThat(Files.size(publicFile(variant.publicPath()))).isEqualTo(variant.byteSize());
         });
-        assertThat(asset.variants().stream().filter(value -> value.type().equals("HERO")).findFirst().orElseThrow().byteSize())
-                .isLessThan(420_000);
+        assertThat(asset.variants().stream()
+                .filter(value -> value.type().equals("HERO"))
+                .findFirst().orElseThrow().byteSize()).isLessThan(420_000);
         assertThat(asset.localizations()).extracting(EditorialArticleImageDtos.Localization::language)
                 .containsExactly("AR", "NL", "FR", "EN");
-        assertThat(asset.license().sourcePlatform()).isEqualTo("LOCAL_UPLOAD");
-        assertThat(asset.license().sourceAssetId()).matches("[0-9a-f]{64}");
-        assertThat(asset.license().photographerName()).isEqualTo("RijVia owner upload");
-        assertThat(asset.license().approvedBy()).isEqualTo("admin@rijvia.be");
         assertThat(store.requireApprovalReady(articleId).assetId()).isEqualTo(asset.id());
         assertThat(store.publicImage(asset.id(), "EN")).get()
                 .extracting(EditorialArticleImageDtos.PublicImage::altText)
@@ -108,7 +107,15 @@ class EditorialArticleImagePostgreSqlIntegrationTest {
     }
 
     @Test
-    void preventsDuplicateSourcesAndKeepsTheExistingApprovedAsset() throws Exception {
+    void migrationRemovesObsoleteLicensingCaptionAndFocalStructures() {
+        assertThat(tableExists("article_image_licenses")).isFalse();
+        assertThat(columnExists("article_image_assets", "focal_point_x")).isFalse();
+        assertThat(columnExists("article_image_assets", "focal_point_y")).isFalse();
+        assertThat(columnExists("article_image_localizations", "caption")).isFalse();
+    }
+
+    @Test
+    void preventsDuplicateBinarySourcesAndKeepsExistingApprovedAsset() throws Exception {
         long firstArticle = imageRequiredArticle(1, "first-article");
         long secondArticle = imageRequiredArticle(2, "second-article");
         var first = service.upload(firstArticle, image("same-source"), metadata("same-source"), "admin");
@@ -128,7 +135,7 @@ class EditorialArticleImagePostgreSqlIntegrationTest {
     }
 
     @Test
-    void replacesAnImageOnlyInsideImageRequiredAndRetainsTheLicenseHistory() throws Exception {
+    void replacesImageOnlyInsideImageRequiredAndKeepsAssetAuditHistory() throws Exception {
         long articleId = imageRequiredArticle(1, "replaceable-article");
         var first = service.upload(articleId, image("source-first"), metadata("source-first"), "admin");
         var replacement = service.upload(articleId, image("source-second"), metadata("source-second"), "admin");
@@ -139,7 +146,7 @@ class EditorialArticleImagePostgreSqlIntegrationTest {
                 String.class,
                 first.id())).isEqualTo("SUPERSEDED");
         assertThat(jdbc.queryForObject(
-                "SELECT count(*) FROM article_image_licenses WHERE article_id = ?",
+                "SELECT count(*) FROM article_image_assets WHERE article_id = ?",
                 Integer.class,
                 articleId)).isEqualTo(2);
 
@@ -154,7 +161,7 @@ class EditorialArticleImagePostgreSqlIntegrationTest {
     }
 
     @Test
-    void removesTheCurrentImageBeforeApprovalWithoutDeletingItsAuditHistory() throws Exception {
+    void removesCurrentImageBeforeApprovalWithoutDeletingAssetAuditHistory() throws Exception {
         long articleId = imageRequiredArticle(1, "removable-article");
         var asset = service.upload(articleId, image("source-remove"), metadata("source-remove"), "admin");
 
@@ -166,7 +173,7 @@ class EditorialArticleImagePostgreSqlIntegrationTest {
                 String.class,
                 asset.id())).isEqualTo("SUPERSEDED");
         assertThat(jdbc.queryForObject(
-                "SELECT count(*) FROM article_image_licenses WHERE image_asset_id = ?",
+                "SELECT count(*) FROM article_image_assets WHERE id = ?",
                 Integer.class,
                 asset.id())).isOne();
         assertThat(jdbc.queryForObject("""
@@ -174,6 +181,22 @@ class EditorialArticleImagePostgreSqlIntegrationTest {
                 WHERE event_type = ? AND entity_id = ?
                 """, Integer.class, EditorialArticleImageService.REMOVE_AUDIT_EVENT,
                 String.valueOf(asset.id()))).isOne();
+    }
+
+    private boolean tableExists(String tableName) {
+        Integer count = jdbc.queryForObject("""
+                SELECT count(*) FROM information_schema.tables
+                WHERE table_schema = 'public' AND table_name = ?
+                """, Integer.class, tableName);
+        return count != null && count > 0;
+    }
+
+    private boolean columnExists(String tableName, String columnName) {
+        Integer count = jdbc.queryForObject("""
+                SELECT count(*) FROM information_schema.columns
+                WHERE table_schema = 'public' AND table_name = ? AND column_name = ?
+                """, Integer.class, tableName, columnName);
+        return count != null && count > 0;
     }
 
     private long imageRequiredArticle(long topicId, String canonicalKey) {
@@ -188,23 +211,10 @@ class EditorialArticleImagePostgreSqlIntegrationTest {
     private static EditorialArticleImageDtos.UploadMetadata metadata(String sourceAssetId) {
         return new EditorialArticleImageDtos.UploadMetadata(
                 "rijvia-en-" + sourceAssetId + "-hero",
-                "RijVia owner upload",
-                "https://rijvia.be/image-sources/" + sourceAssetId,
-                "Owner-approved local file",
-                null,
-                "Usage rights and relevance verified by the administrator",
-                true,
                 "تقاطع أولوية بلجيكي",
                 "Een Belgisch voorrangskruispunt",
                 "Un carrefour de priorité belge",
-                "A Belgian priority junction",
-                null,
-                null,
-                null,
-                null,
-                0.5,
-                0.5
-        );
+                "A Belgian priority junction");
     }
 
     private static MockMultipartFile image(String seed) throws Exception {
