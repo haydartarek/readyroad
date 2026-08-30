@@ -15,7 +15,28 @@ final class EditorialArticleImageDtos {
             @NotBlank @Size(max = 500) String altTextNl,
             @NotBlank @Size(max = 500) String altTextFr,
             @NotBlank @Size(max = 500) String altTextEn
-    ) {}
+    ) {
+        UploadMetadata(
+                String storedFileName,
+                String ignoredSourceName,
+                String ignoredSourceUrl,
+                String ignoredLicenseName,
+                String ignoredLicenseUrl,
+                String ignoredApprovalReason,
+                boolean ignoredRightsConfirmed,
+                String altTextAr,
+                String altTextNl,
+                String altTextFr,
+                String altTextEn,
+                String ignoredCaptionAr,
+                String ignoredCaptionNl,
+                String ignoredCaptionFr,
+                String ignoredCaptionEn,
+                double ignoredFocalPointX,
+                double ignoredFocalPointY) {
+            this(storedFileName, altTextAr, altTextNl, altTextFr, altTextEn);
+        }
+    }
 
     record Variant(
             String type,
