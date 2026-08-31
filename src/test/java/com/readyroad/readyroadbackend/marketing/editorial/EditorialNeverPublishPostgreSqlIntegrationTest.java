@@ -158,14 +158,12 @@ class EditorialNeverPublishPostgreSqlIntegrationTest {
                     article_refresh_recommendations,
                     article_performance_snapshots,
                     article_publications,
-                    article_image_licenses,
                     article_image_localizations,
                     article_image_variants,
                     article_image_assets,
                     article_versions,
                     article_briefs,
-                    articles,
-                    article_keyword_clusters
+                    articles
                 RESTART IDENTITY
                 """);
 
@@ -189,8 +187,7 @@ class EditorialNeverPublishPostgreSqlIntegrationTest {
                     icp_id = NULL,
                     content_pillar_id = NULL,
                     funnel_stage_id = NULL,
-                    conversion_goal_id = NULL,
-                    target_queries = '[]'::jsonb
+                    conversion_goal_id = NULL
                 """);
 
         generationCalls.set(0);

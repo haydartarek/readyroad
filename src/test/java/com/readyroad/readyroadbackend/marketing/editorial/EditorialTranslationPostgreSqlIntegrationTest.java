@@ -89,14 +89,12 @@ class EditorialTranslationPostgreSqlIntegrationTest {
                 TRUNCATE article_refresh_recommendations,
                          article_performance_snapshots,
                          article_publications,
-                         article_image_licenses,
                          article_image_localizations,
                          article_image_variants,
                          article_image_assets,
                          article_versions,
                          article_briefs,
-                         articles,
-                         article_keyword_clusters
+                         articles
                 RESTART IDENTITY
                 """);
 

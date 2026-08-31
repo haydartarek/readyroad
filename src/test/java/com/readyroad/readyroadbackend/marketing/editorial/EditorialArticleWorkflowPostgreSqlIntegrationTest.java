@@ -60,7 +60,7 @@ class EditorialArticleWorkflowPostgreSqlIntegrationTest {
         jdbc = new JdbcTemplate(dataSource);
         jdbc.execute("""
                 TRUNCATE article_refresh_recommendations, article_performance_snapshots,
-                         article_publications, article_image_licenses, article_image_localizations,
+                         article_publications, article_image_localizations,
                          article_image_variants, article_image_assets, article_versions, article_briefs, articles
                 RESTART IDENTITY
                 """);
@@ -295,9 +295,9 @@ class EditorialArticleWorkflowPostgreSqlIntegrationTest {
         jdbc.update("""
                 INSERT INTO article_briefs (
                     article_topic_id, target_language, search_intent, working_title, purpose,
-                    primary_cta, legal_review_required, status
+                    primary_cta, target_queries, legal_review_required, status
                 ) SELECT article_topic_id, 'EN', 'INFORMATIONAL', 'Workflow title',
-                         'Verify the editorial workflow', 'Start learning', ?, 'APPROVED'
+                         'Verify the editorial workflow', 'Start learning', jsonb_build_array('workflow integration target query'), ?, 'APPROVED'
                   FROM articles WHERE id = ?
                 """, legalReviewRequired, articleId);
     }

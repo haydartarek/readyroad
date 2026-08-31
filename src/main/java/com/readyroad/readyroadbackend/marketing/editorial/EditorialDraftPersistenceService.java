@@ -16,10 +16,12 @@ import com.readyroad.readyroadbackend.marketing.task.ClaimedTask;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.HexFormat;
 import java.util.LinkedHashMap;
+import java.util.Locale;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -131,6 +133,7 @@ class EditorialDraftPersistenceService {
                 objectMapper.createObjectNode(), draft.title(), draft.summary());
         metadata = EditorialArticleMetadata.withInternalLinks(metadata, List.of());
         metadata.put("primaryCta", draft.cta());
+        metadata.put("focusKeyword", current.focusKeyword());
         ObjectNode generation = objectMapper.createObjectNode()
                 .put("provider", "OPENAI")
                 .put("model", draft.model())
@@ -148,7 +151,8 @@ class EditorialDraftPersistenceService {
                 .put("funnelStageId", current.funnelId())
                 .put("conversionGoalId", current.goalId());
         var version = versionService.append(new EditorialArticleVersionDtos.AppendRequest(
-                current.articleId(), current.language(), draft.title(), null, draft.summary(),
+                current.articleId(), current.language(), draft.title(),
+                seoSlug(current.focusKeyword()), draft.summary(),
                 draft.body(), metadata, generation, "DRAFT_READY"), "EDITORIAL_WORKER");
         store.bindGeneratedTask(version.id(), task.taskId());
         workflowService.transition(new EditorialArticleWorkflowDtos.TransitionRequest(
@@ -217,6 +221,25 @@ class EditorialDraftPersistenceService {
             value.append('\n');
         }
         return value.toString().trim();
+    }
+
+    private static String seoSlug(String value) {
+        if (value == null || value.isBlank()) {
+            throw new IllegalStateException("Approved article brief has no focus keyword");
+        }
+
+        String slug = Normalizer.normalize(
+                        value.trim().toLowerCase(Locale.ROOT),
+                        Normalizer.Form.NFKD)
+                .replaceAll("\\p{M}+", "")
+                .replaceAll("[^\\p{L}\\p{Nd}]+", "-")
+                .replaceAll("^-+|-+$", "");
+
+        if (slug.isBlank()) {
+            throw new IllegalStateException("Approved article focus keyword cannot produce a slug");
+        }
+
+        return slug;
     }
 
     private static long articleId(ClaimedTask task) {
