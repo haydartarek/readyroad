@@ -34,7 +34,8 @@ class EditorialDraftStore {
                        a.canonical_language, a.usp_id, a.icp_id, a.content_pillar_id,
                        a.funnel_stage_id, a.conversion_goal_id,
                        t.pillar, b.id AS brief_id, b.working_title, b.purpose,
-                       b.search_intent, b.primary_cta, b.legal_review_required
+                       b.search_intent, b.primary_cta,
+                       b.target_queries ->> 0 AS focus_keyword, b.legal_review_required
                 FROM articles a
                 JOIN article_topics t ON t.id = a.article_topic_id
                 JOIN article_briefs b ON b.article_topic_id = a.article_topic_id
@@ -117,7 +118,8 @@ class EditorialDraftStore {
                 result.getObject("conversion_goal_id", Long.class), result.getBoolean("pillar"),
                 result.getLong("brief_id"), result.getString("working_title"),
                 result.getString("purpose"), result.getString("search_intent"),
-                result.getString("primary_cta"), result.getBoolean("legal_review_required"));
+                result.getString("primary_cta"), result.getString("focus_keyword"),
+                result.getBoolean("legal_review_required"));
     }
 
     private EvidenceRow evidence(ResultSet result, int rowNumber) throws SQLException {
@@ -145,6 +147,7 @@ class EditorialDraftStore {
             String purpose,
             String searchIntent,
             String primaryCta,
+            String focusKeyword,
             boolean legalReviewRequired) {}
 
     record ClaimSummary(int total, int supported) {}

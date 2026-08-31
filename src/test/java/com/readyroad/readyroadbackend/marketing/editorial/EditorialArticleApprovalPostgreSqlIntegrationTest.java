@@ -70,7 +70,7 @@ class EditorialArticleApprovalPostgreSqlIntegrationTest {
         jdbc.update("DELETE FROM agent_tasks WHERE task_type IN ('ARTICLE_APPROVAL', 'ARTICLE_PUBLISH')");
         jdbc.execute("""
                 TRUNCATE article_refresh_recommendations, article_performance_snapshots,
-                         article_publications, article_image_licenses, article_image_localizations,
+                         article_publications, article_image_localizations,
                          article_image_variants, article_image_assets, article_versions, article_briefs, articles
                 RESTART IDENTITY
                 """);

@@ -12,9 +12,9 @@ final class EditorialArticleImageTestData {
         Long assetId = jdbc.queryForObject("""
                 INSERT INTO article_image_assets (
                     article_id, storage_key, content_sha256, original_storage_path,
-                    original_file_name, original_content_type, original_width, original_height,
-                    focal_point_x, focal_point_y, status, created_by
-                ) VALUES (?, ?, ?, ?, ?, 'image/jpeg', 1800, 1000, 0.5000, 0.5000,
+                    original_file_name, stored_file_name, original_content_type,
+                    original_width, original_height, status, created_by
+                ) VALUES (?, ?, ?, ?, ?, ?, 'image/jpeg', 1800, 1000,
                           'APPROVED', 'test-editor')
                 RETURNING id
                 """, Long.class,
@@ -22,7 +22,8 @@ final class EditorialArticleImageTestData {
                 "test-image-" + articleId,
                 String.format(Locale.ROOT, "%064x", articleId),
                 "archive/test-image-" + articleId + ".jpg",
-                "test-image-" + articleId + ".jpg");
+                "test-image-" + articleId + ".jpg",
+                "test-image-" + articleId);
 
         insertVariant(jdbc, assetId, "HERO", 1600, 900);
         insertVariant(jdbc, assetId, "CARD", 800, 450);
@@ -36,23 +37,6 @@ final class EditorialArticleImageTestData {
                     """, assetId, language, language + " approved article image");
         }
 
-        jdbc.update("""
-                INSERT INTO article_image_licenses (
-                    image_asset_id, article_id, source_platform, source_asset_id, source_url,
-                    photographer_name, photographer_url, license_name, license_url,
-                    license_verified_at, downloaded_at, original_file_name,
-                    approved_by, approved_at, approval_reason
-                ) VALUES (?, ?, 'UNSPLASH', ?, ?, 'Test Photographer', ?,
-                          'Unsplash License', 'https://unsplash.com/license',
-                          CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, ?,
-                          'test-owner', CURRENT_TIMESTAMP, 'Verified test license evidence')
-                """,
-                assetId,
-                articleId,
-                "test-source-" + articleId,
-                "https://unsplash.com/photos/test-source-" + articleId,
-                "https://unsplash.com/@test-photographer",
-                "test-image-" + articleId + ".jpg");
         return assetId;
     }
 
