@@ -69,11 +69,12 @@ class EditorialBriefDraftPostgreSqlIntegrationTest {
         jdbc = new JdbcTemplate(dataSource);
         jdbc.execute("""
                 TRUNCATE article_refresh_recommendations, article_performance_snapshots,
-                         article_publications, article_image_licenses, article_image_localizations,
+                         article_publications, article_image_localizations,
                          article_image_variants, article_image_assets, article_versions, article_briefs,
-                         articles, article_keyword_clusters
+                         articles
                 RESTART IDENTITY
                 """);
+        jdbc.update("DELETE FROM article_keyword_clusters WHERE cluster_key NOT LIKE 'OFFICIAL-%-AR'");
         jdbc.update("DELETE FROM editorial_claim_sources");
         jdbc.update("DELETE FROM editorial_claims");
         jdbc.update("DELETE FROM editorial_source_versions");
@@ -85,8 +86,7 @@ class EditorialBriefDraftPostgreSqlIntegrationTest {
                 UPDATE article_topics
                 SET status = 'PLANNED', primary_language = NULL,
                     usp_id = NULL, icp_id = NULL, content_pillar_id = NULL,
-                    funnel_stage_id = NULL, conversion_goal_id = NULL,
-                    target_queries = '[]'::jsonb
+                    funnel_stage_id = NULL, conversion_goal_id = NULL
                 """);
         generationCalls.set(0);
     }
@@ -103,6 +103,14 @@ class EditorialBriefDraftPostgreSqlIntegrationTest {
         assertThat(first.approvalMode()).isEqualTo("STANDING_OWNER_AUTHORIZATION");
 
         var task = taskRepository.findById(first.id()).orElseThrow();
+        List<String> payloadQueries = new java.util.ArrayList<>();
+        task.getPayload().path("targetQueries").forEach(query -> payloadQueries.add(query.asText()));
+        assertThat(payloadQueries)
+                .containsExactly(
+                        "كم عدد أسئلة امتحان السياقة النظري في بلجيكا",
+                        "عدد أسئلة امتحان السياقة النظري بلجيكا",
+                        "امتحان النظري بلجيكا 50 سؤال",
+                        "كم سؤال في امتحان رخصة B بلجيكا");
         ClaimedTask claimed = claimed(task);
         briefHandler.execute(claimed);
         briefHandler.execute(claimed);
@@ -116,6 +124,21 @@ class EditorialBriefDraftPostgreSqlIntegrationTest {
         assertThat(jdbc.queryForObject(
                 "SELECT primary_cta FROM article_briefs WHERE article_topic_id = 2", String.class))
                 .isEqualTo("تعلّم القاعدة بالتفصيل على RijVia");
+        assertThat(jdbc.queryForObject(
+                "SELECT keyword_cluster_id FROM article_briefs WHERE article_topic_id = 2", Long.class))
+                .isNotNull();
+        assertThat(jdbc.queryForList("""
+                SELECT query
+                FROM article_briefs brief
+                CROSS JOIN LATERAL jsonb_array_elements_text(brief.target_queries)
+                    WITH ORDINALITY AS entry(query, ordinal)
+                WHERE brief.article_topic_id = 2
+                ORDER BY entry.ordinal
+                """, String.class)).containsExactly(
+                        "كم عدد أسئلة امتحان السياقة النظري في بلجيكا",
+                        "عدد أسئلة امتحان السياقة النظري بلجيكا",
+                        "امتحان النظري بلجيكا 50 سؤال",
+                        "كم سؤال في امتحان رخصة B بلجيكا");
         assertThat(jdbc.queryForObject(
                 "SELECT source_opportunity_id FROM article_topics WHERE id = 2", Long.class))
                 .isNull();
@@ -234,6 +257,16 @@ class EditorialBriefDraftPostgreSqlIntegrationTest {
                 SELECT (generation_metadata ->> 'wordCount')::int
                 FROM article_versions WHERE generated_by_task_id = ?
                 """, Integer.class, first.id())).isEqualTo(600);
+        assertThat(jdbc.queryForObject("""
+                SELECT metadata ->> 'focusKeyword'
+                FROM article_versions WHERE generated_by_task_id = ?
+                """, String.class, first.id()))
+                .isEqualTo("كم عدد أسئلة امتحان السياقة النظري في بلجيكا");
+        assertThat(jdbc.queryForObject("""
+                SELECT slug
+                FROM article_versions WHERE generated_by_task_id = ?
+                """, String.class, first.id()))
+                .isEqualTo("كم-عدد-اسيلة-امتحان-السياقة-النظري-في-بلجيكا");
     }
 
     private long createBrief() {

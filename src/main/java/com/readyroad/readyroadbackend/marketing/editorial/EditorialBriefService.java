@@ -10,7 +10,9 @@ import com.readyroad.readyroadbackend.marketing.strategy.MarketingStrategyContex
 import com.readyroad.readyroadbackend.marketing.task.ClaimedTask;
 import com.readyroad.readyroadbackend.marketing.task.CreateMarketingTaskCommand;
 import com.readyroad.readyroadbackend.marketing.task.TaskCreationService;
+import java.util.List;
 import java.util.Locale;
+import java.util.Objects;
 import java.util.Set;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -37,7 +39,8 @@ public class EditorialBriefService {
             String actor) {
         validateRequest(topicId, request, actor);
         String language = language(request.targetLanguage());
-        ObjectNode payload = objectMapper.valueToTree(request);
+        var effectiveRequest = effectiveRequest(store.topic(topicId), request, language);
+        ObjectNode payload = objectMapper.valueToTree(effectiveRequest);
         payload.put("articleTopicId", topicId);
         payload.put("targetLanguage", language);
         var result = taskCreationService.create(new CreateMarketingTaskCommand(
@@ -66,15 +69,16 @@ public class EditorialBriefService {
             throw new IllegalArgumentException("Editorial brief task has no valid articleTopicId");
         }
         String language = language(request.targetLanguage());
-        var strategy = strategyContextService.resolve(request.strategyContext());
         var topic = store.lockTopic(topicId);
+        var effectiveRequest = effectiveRequest(topic, request, language);
+        var strategy = strategyContextService.resolve(effectiveRequest.strategyContext());
         if (!Set.of("PLANNED", "BRIEF_READY").contains(topic.status())) {
             throw new IllegalStateException("Article topic is not eligible for brief creation");
         }
         store.requireNoApprovedBrief(topicId, language);
-        long articleId = store.createOrBindArticle(topic, language, request.strategyContext());
+        long articleId = store.createOrBindArticle(topic, language, effectiveRequest.strategyContext());
         long briefId = store.insertApprovedBrief(
-                topicId, task.taskId(), language, request, strategy.conversionGoal().primaryCta());
+                topic, task.taskId(), language, effectiveRequest, strategy.conversionGoal().primaryCta());
         workflowService.transition(new EditorialArticleWorkflowDtos.TransitionRequest(
                 articleId,
                 EditorialArticleState.BRIEF_READY,
@@ -83,7 +87,7 @@ public class EditorialBriefService {
                 "EDITORIAL_WORKER",
                 "Owner-authorized article brief created from resolved Strategy Context",
                 Set.of()));
-        store.bindTopic(topicId, language, request);
+        store.bindTopic(topic, language, effectiveRequest);
         auditService.recordEntityEvent(
                 "EDITORIAL_ARTICLE_BRIEF_CREATED",
                 "EDITORIAL_WORKER",
@@ -118,6 +122,47 @@ public class EditorialBriefService {
         String normalized = value == null ? "" : value.trim().toUpperCase(Locale.ROOT);
         if (!LANGUAGES.contains(normalized)) {
             throw new IllegalArgumentException("Unsupported article language: " + value);
+        }
+        return normalized;
+    }
+
+    private static EditorialBriefDtos.CreateRequest effectiveRequest(
+            EditorialBriefStore.Topic topic,
+            EditorialBriefDtos.CreateRequest request,
+            String language) {
+        List<String> queries = topic.official() && topic.titleLanguage().equals(language)
+                ? normalizeQueries(topic.targetQueries(), "Official article topic has no canonical target queries")
+                : normalizeQueries(request.targetQueries(), "At least one valid target query is required");
+        return new EditorialBriefDtos.CreateRequest(
+                language,
+                request.searchIntent(),
+                request.workingTitle(),
+                request.purpose(),
+                request.strategyContext(),
+                queries,
+                request.sourceRequirements(),
+                request.legalReviewRequired(),
+                request.idempotencyKey());
+    }
+
+    private static List<String> normalizeQueries(List<String> values, String emptyMessage) {
+        if (values == null) {
+            throw new IllegalArgumentException(emptyMessage);
+        }
+        List<String> normalized = values.stream()
+                .filter(Objects::nonNull)
+                .map(String::trim)
+                .filter(value -> !value.isEmpty())
+                .distinct()
+                .toList();
+        if (normalized.isEmpty()) {
+            throw new IllegalArgumentException(emptyMessage);
+        }
+        if (normalized.size() > 12) {
+            throw new IllegalArgumentException("A maximum of 12 target queries is allowed");
+        }
+        if (normalized.stream().anyMatch(value -> value.length() > 120)) {
+            throw new IllegalArgumentException("Target queries must not exceed 120 characters");
         }
         return normalized;
     }

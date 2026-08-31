@@ -25,13 +25,26 @@ class EditorialBriefStore {
                 taskId));
     }
 
+    Topic topic(long topicId) {
+        return jdbc.query("""
+                SELECT id, topic_key, status, pillar, source_type, title_language,
+                       keyword_cluster_id,
+                       ARRAY(SELECT jsonb_array_elements_text(target_queries)) AS target_queries
+                FROM article_topics
+                WHERE id = ?
+                """, this::mapTopic, topicId).stream().findFirst()
+                .orElseThrow(() -> new IllegalArgumentException("Unknown article topic: " + topicId));
+    }
+
     Topic lockTopic(long topicId) {
         return jdbc.query("""
-                SELECT id, topic_key, status, pillar
+                SELECT id, topic_key, status, pillar, source_type, title_language,
+                       keyword_cluster_id,
+                       ARRAY(SELECT jsonb_array_elements_text(target_queries)) AS target_queries
                 FROM article_topics
                 WHERE id = ?
                 FOR UPDATE
-                """, this::topic, topicId).stream().findFirst()
+                """, this::mapTopic, topicId).stream().findFirst()
                 .orElseThrow(() -> new IllegalArgumentException("Unknown article topic: " + topicId));
     }
 
@@ -86,7 +99,7 @@ class EditorialBriefStore {
     }
 
     long insertApprovedBrief(
-            long topicId,
+            Topic topic,
             long taskId,
             String language,
             EditorialBriefDtos.CreateRequest request,
@@ -94,14 +107,16 @@ class EditorialBriefStore {
         MarketingStrategyContextRequest strategy = request.strategyContext();
         Long briefId = jdbc.queryForObject("""
                 INSERT INTO article_briefs (
-                    article_topic_id, target_language, search_intent, working_title, purpose,
+                    article_topic_id, keyword_cluster_id, target_language,
+                    search_intent, working_title, purpose,
                     usp_id, icp_id, content_pillar_id, funnel_stage_id, conversion_goal_id,
                     primary_cta, target_queries, source_requirements, legal_review_required,
                     status, source_task_id
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?::jsonb, ?::jsonb, ?, 'APPROVED', ?)
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?::jsonb, ?::jsonb, ?, 'APPROVED', ?)
                 RETURNING id
                 """, Long.class,
-                topicId, language, request.searchIntent().trim(), request.workingTitle().trim(),
+                topic.id(), topic.keywordClusterIdFor(language), language,
+                request.searchIntent().trim(), request.workingTitle().trim(),
                 request.purpose().trim(), strategy.uspId(), strategy.icpId(),
                 strategy.contentPillarId(), strategy.funnelStageId(), strategy.conversionGoalId(),
                 primaryCta, json(request.targetQueries()), json(request.sourceRequirements()),
@@ -113,20 +128,24 @@ class EditorialBriefStore {
     }
 
     void bindTopic(
-            long topicId,
+            Topic topic,
             String language,
             EditorialBriefDtos.CreateRequest request) {
         MarketingStrategyContextRequest strategy = request.strategyContext();
         jdbc.update("""
                 UPDATE article_topics
                 SET primary_language = ?, usp_id = ?, icp_id = ?, content_pillar_id = ?,
-                    funnel_stage_id = ?, conversion_goal_id = ?, target_queries = ?::jsonb,
+                    funnel_stage_id = ?, conversion_goal_id = ?,
+                    target_queries = CASE
+                        WHEN title_language = ? THEN ?::jsonb
+                        ELSE target_queries
+                    END,
                     status = 'BRIEF_READY', updated_at = CURRENT_TIMESTAMP
                 WHERE id = ?
                 """,
                 language, strategy.uspId(), strategy.icpId(), strategy.contentPillarId(),
                 strategy.funnelStageId(), strategy.conversionGoalId(),
-                json(request.targetQueries()), topicId);
+                language, json(request.targetQueries()), topic.id());
     }
 
     private Optional<ArticleContext> articleByTopic(long topicId) {
@@ -158,10 +177,14 @@ class EditorialBriefStore {
         return current == null || current.equals(requested);
     }
 
-    private Topic topic(ResultSet result, int rowNumber) throws SQLException {
+    private Topic mapTopic(ResultSet result, int rowNumber) throws SQLException {
+        java.sql.Array queryArray = result.getArray("target_queries");
+        String[] queryValues = queryArray == null ? new String[0] : (String[]) queryArray.getArray();
         return new Topic(
                 result.getLong("id"), result.getString("topic_key"),
-                result.getString("status"), result.getBoolean("pillar"));
+                result.getString("status"), result.getBoolean("pillar"),
+                result.getString("source_type"), result.getString("title_language"),
+                result.getObject("keyword_cluster_id", Long.class), List.of(queryValues));
     }
 
     private ArticleContext articleContext(ResultSet result, int rowNumber) throws SQLException {
@@ -181,7 +204,24 @@ class EditorialBriefStore {
         }
     }
 
-    record Topic(long id, String topicKey, String status, boolean pillar) {}
+    record Topic(
+            long id,
+            String topicKey,
+            String status,
+            boolean pillar,
+            String sourceType,
+            String titleLanguage,
+            Long keywordClusterId,
+            List<String> targetQueries) {
+
+        boolean official() {
+            return "OFFICIAL_STRATEGIC_BACKLOG".equals(sourceType);
+        }
+
+        Long keywordClusterIdFor(String language) {
+            return titleLanguage.equals(language) ? keywordClusterId : null;
+        }
+    }
 
     private record ArticleContext(
             long id,

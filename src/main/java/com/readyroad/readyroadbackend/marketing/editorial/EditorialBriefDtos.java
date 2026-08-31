@@ -17,7 +17,8 @@ public final class EditorialBriefDtos {
             @NotBlank @Size(max = 500) String workingTitle,
             @NotBlank @Size(max = 4000) String purpose,
             @NotNull @Valid MarketingStrategyContextRequest strategyContext,
-            @NotNull List<@NotBlank @Size(max = 500) String> targetQueries,
+            @NotNull @Size(min = 1, max = 12)
+            List<@NotBlank @Size(max = 120) String> targetQueries,
             @NotNull List<@NotBlank @Size(max = 1000) String> sourceRequirements,
             boolean legalReviewRequired,
             @NotBlank @Size(max = 255) String idempotencyKey) {}

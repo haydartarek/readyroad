@@ -63,11 +63,12 @@ class MarketingEditorialPostgreSqlIntegrationTest {
         JdbcTemplate jdbc = new JdbcTemplate(dataSource);
         jdbc.execute("""
                 TRUNCATE article_refresh_recommendations, article_performance_snapshots,
-                         article_publications, article_image_licenses, article_image_localizations,
+                         article_publications, article_image_localizations,
                          article_image_variants, article_image_assets, article_versions, article_briefs,
-                         articles, article_keyword_clusters
+                         articles
                 RESTART IDENTITY
                 """);
+        jdbc.update("DELETE FROM article_keyword_clusters WHERE cluster_key NOT LIKE 'OFFICIAL-%-AR'");
         jdbc.update("DELETE FROM editorial_claim_sources");
         jdbc.update("DELETE FROM editorial_claims");
         jdbc.update("DELETE FROM editorial_source_versions");
@@ -114,6 +115,42 @@ class MarketingEditorialPostgreSqlIntegrationTest {
                 """, Integer.class)).containsExactly(8, 6, 6, 7, 7, 6);
         assertThat(jdbc.queryForObject("""
                 SELECT count(*) FROM article_topics
+                WHERE source_type = 'OFFICIAL_STRATEGIC_BACKLOG'
+                  AND keyword_cluster_id IS NOT NULL
+                  AND jsonb_array_length(target_queries) >= 1
+                """, Integer.class)).isEqualTo(40);
+        assertThat(jdbc.queryForObject("""
+                SELECT count(*) FROM article_keyword_clusters
+                WHERE cluster_key LIKE 'OFFICIAL-%-AR'
+                  AND primary_language = 'AR'
+                  AND status = 'ACTIVE'
+                """, Integer.class)).isEqualTo(40);
+        assertThat(jdbc.queryForList("""
+                SELECT query
+                FROM article_topics topic
+                CROSS JOIN LATERAL jsonb_array_elements_text(topic.target_queries)
+                    WITH ORDINALITY AS entry(query, ordinal)
+                WHERE topic.topic_key = 'OFFICIAL-002'
+                ORDER BY entry.ordinal
+                """, String.class)).containsExactly(
+                        "كم عدد أسئلة امتحان السياقة النظري في بلجيكا",
+                        "عدد أسئلة امتحان السياقة النظري بلجيكا",
+                        "امتحان النظري بلجيكا 50 سؤال",
+                        "كم سؤال في امتحان رخصة B بلجيكا");
+        assertThat(jdbc.queryForObject("""
+                SELECT count(*)
+                FROM article_topics topic
+                CROSS JOIN LATERAL jsonb_array_elements_text(topic.target_queries) AS query(value)
+                WHERE btrim(query.value) = '' OR char_length(btrim(query.value)) > 120
+                """, Integer.class)).isZero();
+        assertThatThrownBy(() -> jdbc.update("""
+                UPDATE article_topics
+                SET target_queries = jsonb_build_array(repeat('x', 121))
+                WHERE topic_key = 'OFFICIAL-002'
+                """))
+                .isInstanceOf(DataIntegrityViolationException.class);
+        assertThat(jdbc.queryForObject("""
+                SELECT count(*) FROM article_topics
                 WHERE article_priority IS NOT NULL
                    OR priority_reason IS NOT NULL
                    OR source_opportunity_id IS NOT NULL
@@ -122,7 +159,6 @@ class MarketingEditorialPostgreSqlIntegrationTest {
                    OR content_pillar_id IS NOT NULL
                    OR funnel_stage_id IS NOT NULL
                    OR conversion_goal_id IS NOT NULL
-                   OR target_queries <> '[]'::jsonb
                    OR supporting_pages <> '[]'::jsonb
                    OR internal_link_targets <> '[]'::jsonb
                 """, Integer.class)).isZero();
@@ -476,7 +512,8 @@ class MarketingEditorialPostgreSqlIntegrationTest {
                 WHERE table_schema = current_schema() AND table_name = 'article_sources'
                 """, Integer.class)).isZero();
         assertThat(jdbc.queryForObject("SELECT count(*) FROM article_topics", Integer.class)).isEqualTo(40);
-        assertThat(jdbc.queryForObject("SELECT count(*) FROM article_keyword_clusters", Integer.class)).isZero();
+        assertThat(jdbc.queryForObject(
+                "SELECT count(*) FROM article_keyword_clusters", Integer.class)).isEqualTo(40);
         assertThat(jdbc.queryForObject("SELECT count(*) FROM article_briefs", Integer.class)).isZero();
         assertThat(jdbc.queryForObject("SELECT count(*) FROM articles", Integer.class)).isZero();
         assertThat(jdbc.queryForObject("SELECT count(*) FROM article_versions", Integer.class)).isZero();
