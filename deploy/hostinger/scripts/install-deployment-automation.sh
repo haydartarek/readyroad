@@ -22,6 +22,9 @@ install -o root -g root -m 0755 \
   "${SCRIPT_DIR}/deploy-production.sh" \
   "${TARGET_DIR}/readyroad-deploy"
 install -o root -g root -m 0755 \
+  "${SCRIPT_DIR}/github-actions-deploy-command.sh" \
+  "${TARGET_DIR}/readyroad-ci-command"
+install -o root -g root -m 0755 \
   "${SCRIPT_DIR}/rollback-release.sh" \
   "${TARGET_DIR}/readyroad-rollback"
 install -o root -g root -m 0755 \
@@ -33,5 +36,15 @@ install -o root -g root -m 0644 \
 install -o root -g root -m 0644 \
   "${DEPLOY_ROOT}/Caddyfile.production" \
   "${TARGET_DIR}/templates/Caddyfile.production"
+
+if ! id readyroad-ci >/dev/null 2>&1; then
+  useradd --create-home --shell /bin/bash readyroad-ci
+fi
+install -d -o readyroad-ci -g readyroad-ci -m 0700 \
+  /home/readyroad-ci/.ssh
+install -o root -g root -m 0440 \
+  "${DEPLOY_ROOT}/readyroad-ci.sudoers" \
+  /etc/sudoers.d/readyroad-ci
+visudo -cf /etc/sudoers.d/readyroad-ci >/dev/null
 
 printf 'ReadyRoad deployment automation installed in %s\n' "$TARGET_DIR"

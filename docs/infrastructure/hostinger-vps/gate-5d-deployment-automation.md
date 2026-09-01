@@ -87,6 +87,26 @@ sudo /opt/readyroad/bin/readyroad-deploy \
   --release-id <release-id>
 ```
 
+## GitHub Actions production path
+
+Pushes to `main` deploy only after the corresponding Backend or Web CI
+workflow completes successfully. Each deployment resolves the triggering
+component commit and the latest successful `main` CI commit for the other
+component, then invokes the same immutable Gate 5D command through the
+restricted `readyroad-ci` SSH account.
+
+The GitHub repositories require these encrypted Actions secrets:
+
+```text
+VPS_DEPLOY_PRIVATE_KEY
+VPS_KNOWN_HOSTS
+```
+
+The SSH key is restricted server-side to `readyroad-ci-command`; arbitrary
+commands and interactive shells are rejected. Gate 5D performs the complete
+production smoke suite and automatic rollback. The workflow performs a final
+public Frontend, Backend, robots, and sitemap smoke check after Gate 5D passes.
+
 Branch names, tags, shortened SHAs, and omitted refs are rejected. Validate
 without creating a release or container by using the exact commits intended
 for production:
