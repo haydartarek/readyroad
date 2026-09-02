@@ -66,4 +66,73 @@ for removed in 03 04; do
     fail "eligible release ${removed} was retained"
 done
 
+# Exercise activation with synthetic configuration only; never read production env.
+activation_current="${TEST_ROOT}/activation-current"
+activation_next="${TEST_ROOT}/activation-next"
+mkdir -p "$activation_current" "$activation_next"
+image_id="sha256:$(printf '%064d' 1)"
+printf 'BACKEND_IMAGE_ID=%s\n' "$image_id" \
+  >"${activation_next}/release-manifest.env"
+fixture_running_state="${image_id} true healthy"
+activation_calls="${TEST_ROOT}/activation-calls"
+cat >"${activation_current}/config.json" <<'EOF'
+{"services":{"backend":{"image":"readyroad-backend:old","build":{"context":"/old/backend"},"environment":{"BACKEND_IMAGE_TAG":"old","FRONTEND_IMAGE_TAG":"old","PORT":"8890","SPRING_PROFILES_ACTIVE":"secure,postgresql"},"volumes":[{"type":"volume","source":"readyroad-uploads","target":"/app/public/images/quiz"}],"healthcheck":{"test":["CMD","wget","/actuator/health"]}}}}
+EOF
+jq '.services.backend.image="readyroad-backend:new" |
+  .services.backend.build.context="/new/backend" |
+  .services.backend.environment.BACKEND_IMAGE_TAG="new" |
+  .services.backend.environment.FRONTEND_IMAGE_TAG="new"' \
+  "${activation_current}/config.json" >"${activation_next}/config.json"
+cp "${activation_next}/config.json" "${activation_next}/baseline.json"
+
+docker() {
+  [[ "$1" == inspect ]] || fail "unexpected Docker command"
+  printf '%s\n' "$fixture_running_state"
+}
+rr_compose() {
+  local release="$1"
+  shift
+  if [[ "$1" == config ]]; then
+    cat "${release}/config.json"
+  else
+    printf '%s\n' "$*" >>"$activation_calls"
+  fi
+}
+assert_activation() {
+  local expected="$1"
+  : >"$activation_calls"
+  rr_activate_application "$activation_current" "$activation_next"
+  [[ "$(cat "$activation_calls")" == "$expected" ]] ||
+    fail "unexpected activation: $expected"
+}
+
+frontend_only="up -d --no-deps --no-build frontend"
+both_services="up -d --no-build backend frontend"
+assert_activation "$frontend_only"
+fixture_running_state="sha256:$(printf '%064d' 2) true healthy"
+assert_activation "$both_services"
+fixture_running_state="${image_id} true unhealthy"
+assert_activation "$both_services"
+fixture_running_state="${image_id} false healthy"
+assert_activation "$both_services"
+fixture_running_state="${image_id} true healthy"
+for mutation in \
+  '.services.backend.environment.PORT="8891"' \
+  '.services.backend.volumes[0].source="different-uploads"' \
+  '.services.backend.healthcheck.test=["CMD","different-probe"]'; do
+  jq "$mutation" "${activation_next}/baseline.json" \
+    >"${activation_next}/config.json"
+  assert_activation "$both_services"
+done
+printf 'invalid-json\n' >"${activation_next}/config.json"
+: >"$activation_calls"
+set +e
+( set -e; rr_activate_application "$activation_current" "$activation_next" ) \
+  >/dev/null 2>&1
+invalid_status=$?
+set -e
+[[ "$invalid_status" -ne 0 && ! -s "$activation_calls" ]] ||
+  fail "invalid config must abort before activation"
+
+printf 'deployment_activation_tests=8_passed\n'
 printf 'deployment_automation_unit_test=PASSED\n'

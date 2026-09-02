@@ -12,6 +12,7 @@ on:
       - "Dockerfile"
       - ".dockerignore"
       - "docker-compose*.yml"
+      - "deploy/hostinger/**"
       - ".github/workflows/backend-ci.yml"
       - ".github/workflows/deploy-production.yml"
   pull_request:
@@ -23,6 +24,7 @@ on:
       - "Dockerfile"
       - ".dockerignore"
       - "docker-compose*.yml"
+      - "deploy/hostinger/**"
       - ".github/workflows/backend-ci.yml"
       - ".github/workflows/deploy-production.yml"
   workflow_dispatch:
@@ -43,6 +45,12 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v7
+
+      - name: Verify deployment safety
+        run: |
+          bash -n deploy/hostinger/scripts/deploy-lib.sh
+          bash -n deploy/hostinger/scripts/deploy-production.sh
+          bash deploy/hostinger/tests/deployment-automation-test.sh
 
       - name: Setup Java
         uses: actions/setup-java@v5

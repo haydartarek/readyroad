@@ -381,7 +381,7 @@ if [[ -x "$BACKUP_SCRIPT" ]]; then
 fi
 
 activation_started=1
-rr_compose "$final_release" up -d --no-build backend frontend
+rr_activate_application "$rollback_target" "$final_release"
 rr_wait_container_health readyroad-backend 420
 rr_wait_container_health readyroad-frontend 180
 

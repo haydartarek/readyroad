@@ -202,6 +202,40 @@ rr_compose() {
     "$@"
 }
 
+rr_backend_runtime_fingerprint() {
+  local release="$1"
+
+  # Build paths and release tags do not change the running Spring application.
+  rr_compose "$release" config --format json |
+    jq -ceS '.services.backend | objects |
+      del(.build, .image, .environment.BACKEND_IMAGE_TAG,
+          .environment.FRONTEND_IMAGE_TAG)' |
+    sha256sum | awk '{print $1}'
+}
+
+rr_activate_application() {
+  local current_release="$1"
+  local next_release="$2"
+  local expected_image running_state current_fingerprint next_fingerprint
+
+  expected_image="$(rr_manifest_value BACKEND_IMAGE_ID \
+    "${next_release}/release-manifest.env")"
+  running_state="$(docker inspect --format \
+    '{{.Image}} {{.State.Running}} {{if .State.Health}}{{.State.Health.Status}}{{end}}' \
+    readyroad-backend)"
+  rr_require_sha256 "$expected_image" || rr_die "invalid_backend_image_id"
+  current_fingerprint="$(rr_backend_runtime_fingerprint "$current_release")"
+  next_fingerprint="$(rr_backend_runtime_fingerprint "$next_release")"
+
+  if [[ "$running_state" == "${expected_image} true healthy" &&
+        "$current_fingerprint" == "$next_fingerprint" ]]; then
+    rr_log INFO backend_reused "reason=unchanged_image_and_runtime_config"
+    rr_compose "$next_release" up -d --no-deps --no-build frontend
+  else
+    rr_compose "$next_release" up -d --no-build backend frontend
+  fi
+}
+
 rr_is_valid_release() {
   local manifest="$1"
   local status
