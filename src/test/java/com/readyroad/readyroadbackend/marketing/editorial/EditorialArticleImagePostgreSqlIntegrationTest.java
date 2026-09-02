@@ -116,6 +116,30 @@ class EditorialArticleImagePostgreSqlIntegrationTest {
         assertThat(columnExists("article_image_localizations", "caption")).isFalse();
     }
 
+    @Test
+    void acceptsOwnerImageDimensionsWithoutUpscalingAndPersistsActualVariantSizes() throws Exception {
+        long articleId = imageRequiredArticle(1, "owner-image");
+        var asset = service.upload(articleId, image("owner-image", 1672, 941),
+                metadata("owner-image"), "admin");
+
+        assertThat(asset.originalWidth()).isEqualTo(1672);
+        assertThat(asset.originalHeight()).isEqualTo(941);
+        assertThat(asset.variants().stream().filter(variant -> variant.type().equals("HERO")).findFirst()).get()
+                .satisfies(variant -> {
+                    assertThat(variant.width()).isEqualTo(1600);
+                    assertThat(variant.height()).isEqualTo(900);
+                });
+        assertThat(asset.variants()).hasSize(5).allSatisfy(variant -> {
+            assertThat(variant.width()).isPositive().isLessThanOrEqualTo(1672);
+            assertThat(variant.height()).isPositive().isLessThanOrEqualTo(941);
+            var decoded = ImageIO.read(publicFile(variant.publicPath()).toFile());
+            assertThat(decoded.getWidth()).isEqualTo(variant.width());
+            assertThat(decoded.getHeight()).isEqualTo(variant.height());
+        });
+        assertThat(store.requireApprovalReady(articleId).assetId()).isEqualTo(asset.id());
+        assertThat(service.current(articleId)).get().isEqualTo(asset);
+    }
+
     @ParameterizedTest
     @ValueSource(strings = {"DRAFT_READY", "FACT_CHECK_REQUIRED", "LEGAL_REVIEW_REQUIRED", "TRANSLATION_REQUIRED"})
     void uploadsReplacesAndRemovesDraftImagesWithoutAdvancingOrPublishing(String state) throws Exception {
@@ -254,14 +278,18 @@ class EditorialArticleImagePostgreSqlIntegrationTest {
     }
 
     private static MockMultipartFile image(String seed) throws Exception {
-        BufferedImage image = new BufferedImage(2048, 1200, BufferedImage.TYPE_INT_RGB);
+        return image(seed, 2048, 1200);
+    }
+
+    private static MockMultipartFile image(String seed, int width, int height) throws Exception {
+        BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
         Graphics2D graphics = image.createGraphics();
         try {
             int accent = Math.floorMod(seed.hashCode(), 180) + 40;
             graphics.setPaint(new GradientPaint(
                     0, 0, new Color(accent, 90, 120),
-                    2048, 1200, new Color(30, 130, accent)));
-            graphics.fillRect(0, 0, 2048, 1200);
+                    width, height, new Color(30, 130, accent)));
+            graphics.fillRect(0, 0, width, height);
             graphics.setColor(Color.WHITE);
             graphics.fillRect(900, 0, 240, 1200);
         } finally {

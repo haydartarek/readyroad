@@ -73,9 +73,6 @@ class EditorialArticleImageProcessor {
             if (source == null) {
                 throw new IllegalArgumentException("The uploaded article image cannot be decoded");
             }
-            if (source.getWidth() < 1920 || source.getHeight() < 1080) {
-                throw new IllegalArgumentException("Article source images must be at least 1920 x 1080 pixels");
-            }
 
             Files.createDirectories(archiveDirectory);
             Files.createDirectories(optimizedDirectory);
@@ -125,7 +122,19 @@ class EditorialArticleImageProcessor {
             VariantSpec spec,
             double focalPointX,
             double focalPointY) {
-        BufferedImage rendered = render(source, spec.width(), spec.height(), focalPointX, focalPointY);
+        int width = spec.width();
+        int height = spec.height();
+        // Reuse the smaller schema-approved renditions when the source cannot fill the larger one.
+        if (source.getWidth() < width || source.getHeight() < height) {
+            if (spec.type().equals("HERO")) {
+                width = 1600;
+                height = 900;
+            } else if (spec.type().equals("CARD")) {
+                width = 800;
+                height = 450;
+            }
+        }
+        BufferedImage rendered = render(source, width, height, focalPointX, focalPointY);
         byte[] bytes = encodeJpegWithinBudget(rendered, spec.maxBytes());
         String fileName = seoName + "-" + spec.type().toLowerCase(Locale.ROOT) + ".jpg";
         Path output = directory.resolve(fileName).normalize();
@@ -139,8 +148,8 @@ class EditorialArticleImageProcessor {
                 spec.type(),
                 "JPEG",
                 "/images/articles/" + storageKey + "/" + fileName,
-                spec.width(),
-                spec.height(),
+                rendered.getWidth(),
+                rendered.getHeight(),
                 bytes.length);
     }
 
