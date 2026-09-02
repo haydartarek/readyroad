@@ -45,10 +45,10 @@ public class EditorialArticleImageService {
         }
         var metadata = policy.normalize(file, request, actor);
         var article = store.lockArticle(articleId);
-        if (!"IMAGE_REQUIRED".equals(article.lifecycleState())) {
+        if (!EditorialArticleState.valueOf(article.lifecycleState()).allowsDraftPreparation()) {
             throw new ResponseStatusException(
                     HttpStatus.CONFLICT,
-                    "Article images can only be changed in IMAGE_REQUIRED state");
+                    "Article images can only be changed in an editable draft or review state");
         }
 
         var processed = processor.process(
@@ -95,10 +95,10 @@ public class EditorialArticleImageService {
             throw new IllegalArgumentException("A valid image remover is required");
         }
         var article = store.lockArticle(articleId);
-        if (!"IMAGE_REQUIRED".equals(article.lifecycleState())) {
+        if (!EditorialArticleState.valueOf(article.lifecycleState()).allowsDraftPreparation()) {
             throw new ResponseStatusException(
                     HttpStatus.CONFLICT,
-                    "Article images can only be removed in IMAGE_REQUIRED state");
+                    "Article images can only be removed in an editable draft or review state");
         }
         long assetId = store.supersedeCurrent(articleId);
         ObjectNode details = objectMapper.createObjectNode();

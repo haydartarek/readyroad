@@ -157,6 +157,34 @@ class EditorialArticleWorkflowPostgreSqlIntegrationTest {
     }
 
     @Test
+    void continuesAfterEarlyTranslationsWithoutSkippingTheReviews() {
+        long articleId = insertArticle(12, EditorialArticleState.DRAFT_READY);
+        insertApprovedBrief(articleId, true);
+        for (String language : List.of("AR", "NL", "FR", "EN")) {
+            insertCurrentVersion(articleId, language);
+        }
+        assertThat(workflow.advanceFromEditor(articleId, "admin", "Review draft").state())
+                .isEqualTo(EditorialArticleState.FACT_CHECK_REQUIRED);
+        assertThat(workflow.advanceFromEditor(articleId, "admin", "Facts verified").state())
+                .isEqualTo(EditorialArticleState.LEGAL_REVIEW_REQUIRED);
+        assertThat(workflow.advanceFromEditor(articleId, "admin", "Legal review complete").state())
+                .isEqualTo(EditorialArticleState.TRANSLATION_REQUIRED);
+        assertThat(workflow.advanceFromEditor(articleId, "admin", "Translations already available").state())
+                .isEqualTo(EditorialArticleState.IMAGE_REQUIRED);
+        assertThat(auditCount(articleId)).isEqualTo(4);
+    }
+
+    @Test
+    void doesNotAdvanceToImagesWhenTranslationsAreMissing() {
+        long articleId = insertArticle(13, EditorialArticleState.TRANSLATION_REQUIRED);
+        insertCurrentVersion(articleId, "EN");
+        assertThatThrownBy(() -> workflow.advanceFromEditor(articleId, "admin", "Continue"))
+                .isInstanceOf(IllegalStateException.class).hasMessageContaining("AR, NL, FR and EN");
+        assertThat(state(articleId)).isEqualTo(EditorialArticleState.TRANSLATION_REQUIRED);
+        assertThat(auditCount(articleId)).isZero();
+    }
+
+    @Test
     void blocksMissingPrerequisitesAndIllegalStateSkipping() {
         long articleId = insertArticle(4, EditorialArticleState.PLANNED);
 

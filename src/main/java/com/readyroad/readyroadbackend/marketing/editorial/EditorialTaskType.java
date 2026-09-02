@@ -19,7 +19,7 @@ public enum EditorialTaskType {
     ARTICLE_LEGAL_REVIEW(Coverage.WORKFLOW_GATE,
             "ARTICLE_LEGAL_REVIEW", "LEGAL_REVIEW_REQUIRED and verified legal sources"),
     ARTICLE_TRANSLATION_ADAPT(Coverage.EXECUTABLE_HANDLER,
-            "ARTICLE_TRANSLATION_ADAPT", "TRANSLATION_REQUIRED and localized immutable versions"),
+            "ARTICLE_TRANSLATION_ADAPT", "Saved draft or review and localized immutable versions"),
     ARTICLE_DUPLICATE_CHECK(Coverage.QUALITY_GATE,
             "ARTICLE_DUPLICATE_CHECK", "DUPLICATE_CHECK quality gate"),
     ARTICLE_CANNIBALIZATION_CHECK(Coverage.QUALITY_GATE,

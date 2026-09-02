@@ -47,10 +47,9 @@ public class EditorialTranslationService {
 
         EditorialTranslationStore.TranslationContext context = store.context(articleId);
 
-        if (context.state() != EditorialArticleState.TRANSLATION_REQUIRED
-                && context.state() != EditorialArticleState.IMAGE_REQUIRED) {
+        if (!context.state().allowsDraftPreparation()) {
             throw new IllegalStateException(
-                    "Article must be TRANSLATION_REQUIRED or IMAGE_REQUIRED before translation adaptation");
+                    "Article must be in an editable draft or review state before translation adaptation");
         }
         ContentLocale sourceLocale = ContentLocale.valueOf(context.canonicalLanguage());
         if (targetsRequiringAdaptation(articleId, sourceLocale).isEmpty()) {
@@ -109,18 +108,17 @@ public class EditorialTranslationService {
 
         ContentLocale sourceLocale = ContentLocale.valueOf(context.canonicalLanguage());
         List<ContentLocale> targets = targetsRequiringAdaptation(articleId, sourceLocale);
-        if (context.state() == EditorialArticleState.IMAGE_REQUIRED && targets.isEmpty()) {
-            return new Preparation(context, List.of(), true);
-        }
-
-        if (context.state() != EditorialArticleState.TRANSLATION_REQUIRED
-                && context.state() != EditorialArticleState.IMAGE_REQUIRED) {
+        if (!context.state().allowsDraftPreparation()) {
             throw new IllegalStateException(
                     "Article is not eligible for translation in state "
                             + context.state());
         }
 
         validateSourceSnapshot(task, context);
+
+        if (targets.isEmpty() && context.state() != EditorialArticleState.TRANSLATION_REQUIRED) {
+            return new Preparation(context, List.of(), true);
+        }
 
         required(
                 context.focusKeyword(),
@@ -158,13 +156,7 @@ public class EditorialTranslationService {
                 store.lockContext(preparation.context().articleId());
 
         ContentLocale sourceLocale = ContentLocale.valueOf(current.canonicalLanguage());
-        if (current.state() == EditorialArticleState.IMAGE_REQUIRED
-                && targetsRequiringAdaptation(current.articleId(), sourceLocale).isEmpty()) {
-            return;
-        }
-
-        if (current.state() != EditorialArticleState.TRANSLATION_REQUIRED
-                && current.state() != EditorialArticleState.IMAGE_REQUIRED) {
+        if (!current.state().allowsDraftPreparation()) {
             throw new IllegalStateException(
                     "Article is no longer eligible for translation adaptation");
         }
@@ -173,6 +165,11 @@ public class EditorialTranslationService {
                 != preparation.context().sourceVersionId()) {
             throw new IllegalStateException(
                     "Canonical article version changed during translation; request translation again");
+        }
+
+        if (current.state() != EditorialArticleState.TRANSLATION_REQUIRED
+                && targetsRequiringAdaptation(current.articleId(), sourceLocale).isEmpty()) {
+            return;
         }
 
         var typography =

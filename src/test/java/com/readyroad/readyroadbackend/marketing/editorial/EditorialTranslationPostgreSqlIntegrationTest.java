@@ -16,6 +16,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 import javax.sql.DataSource;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.TestConfiguration;
@@ -288,6 +290,40 @@ class EditorialTranslationPostgreSqlIntegrationTest {
                 Integer.class,
                 fixture.articleId()))
                 .isEqualTo(5);
+    }
+
+    @ParameterizedTest
+    @ValueSource(strings = {"DRAFT_READY", "FACT_CHECK_REQUIRED", "LEGAL_REVIEW_REQUIRED"})
+    void translatesSavedDraftsWithoutSkippingReviewAndReplaysWithoutDuplicates(String state) {
+        ArticleFixture fixture = createArticle("AR");
+        jdbc.update("UPDATE articles SET lifecycle_state = ? WHERE id = ?", state, fixture.articleId());
+        var response = translationService.request(fixture.articleId(),
+                new EditorialTranslationDtos.CreateRequest("draft-translation"), "editorial-admin");
+        var task = claimed(taskRepository.findById(response.id()).orElseThrow());
+
+        translationHandler.execute(task);
+        translationHandler.execute(task);
+
+        assertThat(articleState(fixture.articleId())).isEqualTo(state);
+        assertThat(currentLanguages(fixture.articleId())).containsExactlyInAnyOrder("AR", "NL", "FR", "EN");
+        assertThat(translationStub.calls()).isEqualTo(3);
+        assertThat(jdbc.queryForObject("SELECT count(*) FROM article_versions WHERE article_id = ?",
+                Integer.class, fixture.articleId())).isEqualTo(4);
+        assertThat(jdbc.queryForObject("SELECT count(*) FROM article_publications", Integer.class)).isZero();
+        assertThat(jdbc.queryForObject("SELECT count(*) FROM audit_logs WHERE event_type = ?",
+                Integer.class, EditorialTranslationService.AUDIT_EVENT)).isOne();
+    }
+
+    @ParameterizedTest
+    @ValueSource(strings = {"WAITING_APPROVAL", "APPROVED", "SCHEDULED", "PUBLISHED", "ARCHIVED", "REJECTED"})
+    void doesNotTranslateLockedArticles(String state) {
+        ArticleFixture fixture = createArticle("AR");
+        jdbc.update("UPDATE articles SET lifecycle_state = ? WHERE id = ?", state, fixture.articleId());
+        assertThatThrownBy(() -> translationService.request(fixture.articleId(),
+                new EditorialTranslationDtos.CreateRequest("locked-translation"), "editorial-admin"))
+                .isInstanceOf(IllegalStateException.class);
+        assertThat(translationStub.calls()).isZero();
+        assertThat(currentLanguages(fixture.articleId())).containsExactly("AR");
     }
 
     @Test

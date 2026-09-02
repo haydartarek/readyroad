@@ -16,5 +16,13 @@ enum EditorialArticleState {
     PUBLISHED,
     UPDATE_RECOMMENDED,
     ARCHIVED,
-    REJECTED
+    REJECTED;
+
+    boolean allowsDraftPreparation() {
+        return switch (this) {
+            case DRAFT_READY, FACT_CHECK_REQUIRED, LEGAL_REVIEW_REQUIRED,
+                    TRANSLATION_REQUIRED, IMAGE_REQUIRED -> true;
+            default -> false;
+        };
+    }
 }

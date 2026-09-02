@@ -15,6 +15,8 @@ import javax.imageio.ImageIO;
 import javax.sql.DataSource;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -112,6 +114,40 @@ class EditorialArticleImagePostgreSqlIntegrationTest {
         assertThat(columnExists("article_image_assets", "focal_point_x")).isFalse();
         assertThat(columnExists("article_image_assets", "focal_point_y")).isFalse();
         assertThat(columnExists("article_image_localizations", "caption")).isFalse();
+    }
+
+    @ParameterizedTest
+    @ValueSource(strings = {"DRAFT_READY", "FACT_CHECK_REQUIRED", "LEGAL_REVIEW_REQUIRED", "TRANSLATION_REQUIRED"})
+    void uploadsReplacesAndRemovesDraftImagesWithoutAdvancingOrPublishing(String state) throws Exception {
+        long articleId = imageRequiredArticle(1, "draft-image");
+        jdbc.update("UPDATE articles SET lifecycle_state = ? WHERE id = ?", state, articleId);
+        var first = service.upload(articleId, image("draft-first"), metadata("draft-first"), "admin");
+        var second = service.upload(articleId, image("draft-second"), metadata("draft-second"), "admin");
+        assertThat(service.current(articleId)).get().extracting(EditorialArticleImageDtos.Asset::id)
+                .isEqualTo(second.id());
+        assertThat(second.localizations()).hasSize(4);
+        assertThat(second.variants()).hasSize(5);
+        service.remove(articleId, "admin");
+        assertThat(service.current(articleId)).isEmpty();
+        assertThat(jdbc.queryForList("SELECT status FROM article_image_assets WHERE id IN (?, ?)",
+                String.class, first.id(), second.id())).containsOnly("SUPERSEDED");
+        assertThat(jdbc.queryForObject("SELECT lifecycle_state FROM articles WHERE id = ?",
+                String.class, articleId)).isEqualTo(state);
+        assertThat(jdbc.queryForObject("SELECT count(*) FROM article_publications", Integer.class)).isZero();
+    }
+
+    @ParameterizedTest
+    @ValueSource(strings = {"WAITING_APPROVAL", "APPROVED", "SCHEDULED", "PUBLISHED", "ARCHIVED", "REJECTED"})
+    void rejectsImageChangesAfterEditorialLock(String state) throws Exception {
+        long articleId = imageRequiredArticle(1, "locked-image");
+        var original = service.upload(articleId, image("locked-first"), metadata("locked-first"), "admin");
+        jdbc.update("UPDATE articles SET lifecycle_state = ? WHERE id = ?", state, articleId);
+        assertThatThrownBy(() -> service.upload(articleId, image("locked-second"), metadata("locked-second"), "admin"))
+                .isInstanceOf(ResponseStatusException.class).hasMessageContaining("409 CONFLICT");
+        assertThatThrownBy(() -> service.remove(articleId, "admin"))
+                .isInstanceOf(ResponseStatusException.class).hasMessageContaining("409 CONFLICT");
+        assertThat(service.current(articleId)).get().extracting(EditorialArticleImageDtos.Asset::id)
+                .isEqualTo(original.id());
     }
 
     @Test

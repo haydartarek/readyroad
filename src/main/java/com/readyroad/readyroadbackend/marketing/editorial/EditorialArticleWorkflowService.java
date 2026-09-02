@@ -78,6 +78,7 @@ class EditorialArticleWorkflowService {
                     ? EditorialArticleState.LEGAL_REVIEW_REQUIRED
                     : EditorialArticleState.TRANSLATION_REQUIRED;
             case LEGAL_REVIEW_REQUIRED -> EditorialArticleState.TRANSLATION_REQUIRED;
+            case TRANSLATION_REQUIRED -> EditorialArticleState.IMAGE_REQUIRED;
             default -> throw new IllegalStateException(
                     "Article cannot be manually advanced from state " + article.state());
         };
