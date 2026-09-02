@@ -136,6 +136,27 @@ class EditorialArticleWorkflowPostgreSqlIntegrationTest {
     }
 
     @Test
+    void advancesTheAdminEditorThroughFactCheckToTranslationWithAudit() {
+        long articleId = insertArticle(11, EditorialArticleState.DRAFT_READY);
+        insertApprovedBrief(articleId, false);
+
+        var factCheck = workflow.advanceFromEditor(articleId, "admin", "Start fact check");
+        var translation = workflow.advanceFromEditor(articleId, "admin", "Fact check completed");
+
+        assertThat(factCheck.state()).isEqualTo(EditorialArticleState.FACT_CHECK_REQUIRED);
+        assertThat(translation.state()).isEqualTo(EditorialArticleState.TRANSLATION_REQUIRED);
+        assertThat(state(articleId)).isEqualTo(EditorialArticleState.TRANSLATION_REQUIRED);
+        assertThat(auditCount(articleId)).isEqualTo(2);
+        assertThat(jdbc.queryForObject("""
+                SELECT count(*) FROM audit_logs
+                WHERE event_type = 'EDITORIAL_ARTICLE_STATE_CHANGED'
+                  AND entity_id = ?
+                  AND actor = 'admin'
+                  AND task_id IS NULL
+                """, Integer.class, String.valueOf(articleId))).isEqualTo(2);
+    }
+
+    @Test
     void blocksMissingPrerequisitesAndIllegalStateSkipping() {
         long articleId = insertArticle(4, EditorialArticleState.PLANNED);
 

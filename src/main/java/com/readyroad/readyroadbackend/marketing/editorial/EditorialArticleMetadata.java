@@ -4,13 +4,16 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.JsonNodeFactory;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 final class EditorialArticleMetadata {
 
     static final String META_TITLE = "metaTitle";
     static final String META_DESCRIPTION = "metaDescription";
+    static final String FOCUS_KEYWORD = "focusKeyword";
     static final String INTERNAL_LINKS = "internalLinks";
     static final String TYPOGRAPHY = "typography";
 
@@ -22,6 +25,19 @@ final class EditorialArticleMetadata {
                 : JsonNodeFactory.instance.objectNode();
         metadata.put(META_TITLE, metaTitle.trim());
         metadata.put(META_DESCRIPTION, metaDescription.trim());
+        return metadata;
+    }
+
+    static ObjectNode withFocusKeyword(JsonNode existing, String focusKeyword) {
+        ObjectNode metadata = existing != null && existing.isObject()
+                ? (ObjectNode) existing.deepCopy()
+                : JsonNodeFactory.instance.objectNode();
+        String value = focusKeyword == null ? "" : focusKeyword.trim();
+        if (value.isEmpty()) {
+            metadata.remove(FOCUS_KEYWORD);
+        } else {
+            metadata.put(FOCUS_KEYWORD, value);
+        }
         return metadata;
     }
 
@@ -105,6 +121,29 @@ final class EditorialArticleMetadata {
 
     static String metaDescription(JsonNode metadata) {
         return text(metadata, META_DESCRIPTION);
+    }
+
+    static String focusKeyword(JsonNode metadata) {
+        return text(metadata, FOCUS_KEYWORD);
+    }
+
+    static String slugFromFocusKeyword(String focusKeyword) {
+        if (focusKeyword == null || focusKeyword.isBlank()) {
+            return null;
+        }
+        String value = Normalizer.normalize(focusKeyword.trim(), Normalizer.Form.NFKD)
+                .replaceAll("\\p{M}+", "")
+                .toLowerCase(Locale.ROOT)
+                .replaceAll("[^\\p{L}\\p{N}]+", "-")
+                .replaceAll("(^-+|-+$)", "")
+                .replaceAll("-+", "-");
+        if (value.isBlank()) {
+            return null;
+        }
+        if (value.length() > 255) {
+            value = value.substring(0, 255).replaceAll("-+$", "");
+        }
+        return value;
     }
 
     static boolean isComplete(JsonNode metadata) {

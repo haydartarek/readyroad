@@ -46,8 +46,10 @@ public class EditorialEditorService {
                         topic.titleLanguage(), topic.primaryLanguage(), topic.priority(),
                         topic.strategyContextResolved(), topic.uspId(), topic.icpId(),
                         topic.contentPillarId(), topic.funnelStageId(), topic.conversionGoalId(),
+                        topic.keywordClusterId(), topic.targetQueries(),
                         topic.articleId(), topic.lifecycleState(),
                         topic.canonicalLanguage(),
+                        topic.pendingApprovalTaskId(),
                         topic.articleId() == null
                                 ? null
                                 : articleImageService.current(topic.articleId()).orElse(null),
@@ -180,7 +182,7 @@ public class EditorialEditorService {
         return versions.getOrDefault(articleId, List.of()).stream()
                 .map(value -> new EditorialEditorDtos.CurrentVersion(
                         value.language(), value.versionNumber(), value.title(), value.slug(),
-                        value.status(), value.createdAt(), value.createdBy()))
+                        value.focusKeyword(), value.status(), value.createdAt(), value.createdBy()))
                 .toList();
     }
 

@@ -135,6 +135,7 @@ public class OpenAIResponsesEditorialTranslationClient implements EditorialTrans
                     output.slug,
                     output.summary,
                     output.body,
+                    output.focusKeyword,
                     output.metaTitle,
                     output.metaDescription,
                     output.cta,
@@ -366,6 +367,11 @@ public class OpenAIResponsesEditorialTranslationClient implements EditorialTrans
                 %s
                 </summary>
 
+                CANONICAL FOCUS KEYWORD
+                <focus-keyword>
+                %s
+                </focus-keyword>
+
                 CANONICAL META TITLE
                 <meta-title>
                 %s
@@ -393,8 +399,11 @@ public class OpenAIResponsesEditorialTranslationClient implements EditorialTrans
                 targetLanguage = %s
                 sourceVersionId = %d
 
-                Adapt title, summary, body, metaTitle, metaDescription and CTA
+                Adapt title, summary, body, focusKeyword, metaTitle, metaDescription and CTA
                 naturally into the target language while preserving exact meaning.
+
+                focusKeyword must be one concise target-language search phrase that preserves
+                the canonical search intent. Do not add unrelated queries or keyword stuffing.
 
                 Create a target-language slug suitable for a RijVia article route.
                 The slug must:
@@ -418,6 +427,7 @@ public class OpenAIResponsesEditorialTranslationClient implements EditorialTrans
                 safe(request.sourceTitle()),
                 safe(request.sourceSlug()),
                 safe(request.sourceSummary()),
+                safe(request.sourceFocusKeyword()),
                 safe(request.sourceMetaTitle()),
                 safe(request.sourceMetaDescription()),
                 safe(request.sourceCta()),

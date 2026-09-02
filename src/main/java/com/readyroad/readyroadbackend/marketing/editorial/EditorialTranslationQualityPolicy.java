@@ -40,12 +40,14 @@ class EditorialTranslationQualityPolicy {
         String slug = required(generated.slug(), "slug");
         String summary = required(generated.summary(), "summary");
         String body = required(generated.body(), "body");
+        String focusKeyword = required(generated.focusKeyword(), "focusKeyword");
         String metaTitle = required(generated.metaTitle(), "metaTitle");
         String metaDescription = required(generated.metaDescription(), "metaDescription");
         String cta = required(generated.cta(), "cta");
 
         within(title, properties.getContent().getMaxTitleCharacters(), "title");
         within(summary, properties.getContent().getMaxSummaryCharacters(), "summary");
+        within(focusKeyword, 120, "focusKeyword");
         within(cta, properties.getContent().getMaxCtaCharacters(), "cta");
 
         if (slug.length() > 255) {
@@ -74,6 +76,7 @@ class EditorialTranslationQualityPolicy {
                 slug,
                 summary,
                 body,
+                focusKeyword,
                 metaTitle,
                 metaDescription,
                 cta,
@@ -109,6 +112,7 @@ class EditorialTranslationQualityPolicy {
             String slug,
             String summary,
             String body,
+            String focusKeyword,
             String metaTitle,
             String metaDescription,
             String cta,

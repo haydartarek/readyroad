@@ -33,9 +33,12 @@ public final class EditorialEditorDtos {
             Long contentPillarId,
             Long funnelStageId,
             Long conversionGoalId,
+            Long keywordClusterId,
+            List<String> targetQueries,
             Long articleId,
             String lifecycleState,
             String canonicalLanguage,
+            Long pendingApprovalTaskId,
             EditorialArticleImageDtos.Asset image,
             List<CurrentVersion> currentVersions) {}
 
@@ -64,6 +67,7 @@ public final class EditorialEditorDtos {
             int versionNumber,
             String title,
             String slug,
+            String focusKeyword,
             String status,
             Instant createdAt,
             String createdBy) {}

@@ -47,9 +47,15 @@ public class EditorialTranslationService {
 
         EditorialTranslationStore.TranslationContext context = store.context(articleId);
 
-        if (context.state() != EditorialArticleState.TRANSLATION_REQUIRED) {
+        if (context.state() != EditorialArticleState.TRANSLATION_REQUIRED
+                && context.state() != EditorialArticleState.IMAGE_REQUIRED) {
             throw new IllegalStateException(
-                    "Article must be TRANSLATION_REQUIRED before translation adaptation");
+                    "Article must be TRANSLATION_REQUIRED or IMAGE_REQUIRED before translation adaptation");
+        }
+        ContentLocale sourceLocale = ContentLocale.valueOf(context.canonicalLanguage());
+        if (targetsRequiringAdaptation(articleId, sourceLocale).isEmpty()) {
+            throw new IllegalStateException(
+                    "No localized article version or focus keyword requires adaptation");
         }
 
         ObjectNode payload = objectMapper.createObjectNode()
@@ -101,21 +107,24 @@ public class EditorialTranslationService {
         EditorialTranslationStore.TranslationContext context =
                 store.context(articleId);
 
-        Set<String> currentLanguages =
-                store.currentLanguages(articleId);
-
-        if (context.state() == EditorialArticleState.IMAGE_REQUIRED
-                && store.hasAllRequiredCurrentLanguages(articleId)) {
+        ContentLocale sourceLocale = ContentLocale.valueOf(context.canonicalLanguage());
+        List<ContentLocale> targets = targetsRequiringAdaptation(articleId, sourceLocale);
+        if (context.state() == EditorialArticleState.IMAGE_REQUIRED && targets.isEmpty()) {
             return new Preparation(context, List.of(), true);
         }
 
-        if (context.state() != EditorialArticleState.TRANSLATION_REQUIRED) {
+        if (context.state() != EditorialArticleState.TRANSLATION_REQUIRED
+                && context.state() != EditorialArticleState.IMAGE_REQUIRED) {
             throw new IllegalStateException(
                     "Article is not eligible for translation in state "
                             + context.state());
         }
 
         validateSourceSnapshot(task, context);
+
+        required(
+                context.focusKeyword(),
+                "Canonical article focusKeyword is required before translation");
 
         required(
                 EditorialArticleMetadata.metaTitle(context.metadata()),
@@ -137,15 +146,6 @@ public class EditorialTranslationService {
                 context.body(),
                 "Canonical article body is required before translation");
 
-        ContentLocale sourceLocale =
-                ContentLocale.valueOf(context.canonicalLanguage());
-
-        List<ContentLocale> targets =
-                ContentLocale.SUPPORTED.stream()
-                        .filter(locale -> locale != sourceLocale)
-                        .filter(locale -> !currentLanguages.contains(locale.name()))
-                        .toList();
-
         return new Preparation(context, targets, false);
     }
 
@@ -157,14 +157,16 @@ public class EditorialTranslationService {
         EditorialTranslationStore.TranslationContext current =
                 store.lockContext(preparation.context().articleId());
 
+        ContentLocale sourceLocale = ContentLocale.valueOf(current.canonicalLanguage());
         if (current.state() == EditorialArticleState.IMAGE_REQUIRED
-                && store.hasAllRequiredCurrentLanguages(current.articleId())) {
+                && targetsRequiringAdaptation(current.articleId(), sourceLocale).isEmpty()) {
             return;
         }
 
-        if (current.state() != EditorialArticleState.TRANSLATION_REQUIRED) {
+        if (current.state() != EditorialArticleState.TRANSLATION_REQUIRED
+                && current.state() != EditorialArticleState.IMAGE_REQUIRED) {
             throw new IllegalStateException(
-                    "Article is no longer in TRANSLATION_REQUIRED state");
+                    "Article is no longer eligible for translation adaptation");
         }
 
         if (current.sourceVersionId()
@@ -172,9 +174,6 @@ public class EditorialTranslationService {
             throw new IllegalStateException(
                     "Canonical article version changed during translation; request translation again");
         }
-
-        Set<String> currentLanguages =
-                store.currentLanguages(current.articleId());
 
         var typography =
                 EditorialArticleMetadata.typography(current.metadata());
@@ -185,18 +184,46 @@ public class EditorialTranslationService {
 
             ContentLocale target = entry.getKey();
 
-            if (currentLanguages.contains(target.name())) {
+            EditorialTranslationQualityPolicy.ValidatedTranslation translation =
+                    entry.getValue();
+
+            var existing = versionService.current(current.articleId(), target.name());
+            if (existing.isPresent()
+                    && EditorialArticleMetadata.focusKeyword(existing.get().metadata()) != null) {
                 continue;
             }
 
-            EditorialTranslationQualityPolicy.ValidatedTranslation translation =
-                    entry.getValue();
+            if (existing.isPresent()) {
+                var version = existing.get();
+                ObjectNode repairedMetadata = EditorialArticleMetadata.withFocusKeyword(
+                        version.metadata(), translation.focusKeyword());
+                ObjectNode repairedGeneration = version.generationMetadata() != null
+                                && version.generationMetadata().isObject()
+                        ? (ObjectNode) version.generationMetadata().deepCopy()
+                        : objectMapper.createObjectNode();
+                repairedGeneration
+                        .put("seoMetadataRepairTaskId", task.taskId())
+                        .put("seoMetadataRepairModel", translation.model())
+                        .put("seoMetadataRepairOutcome", translation.requestOutcome());
+                versionService.append(
+                        new EditorialArticleVersionDtos.AppendRequest(
+                                current.articleId(), target.name(), version.title(),
+                                EditorialArticleMetadata.slugFromFocusKeyword(translation.focusKeyword()),
+                                version.summary(), version.body(), repairedMetadata,
+                                repairedGeneration, version.status()),
+                        "EDITORIAL_WORKER");
+                continue;
+            }
 
             ObjectNode metadata =
                     EditorialArticleMetadata.withSeoMetadata(
                             objectMapper.createObjectNode(),
                             translation.metaTitle(),
                             translation.metaDescription());
+
+            metadata = EditorialArticleMetadata.withFocusKeyword(
+                    metadata,
+                    translation.focusKeyword());
 
             metadata =
                     EditorialArticleMetadata.withInternalLinks(
@@ -244,7 +271,7 @@ public class EditorialTranslationService {
                             current.articleId(),
                             target.name(),
                             translation.title(),
-                            translation.slug(),
+                            EditorialArticleMetadata.slugFromFocusKeyword(translation.focusKeyword()),
                             translation.summary(),
                             translation.body(),
                             metadata,
@@ -252,8 +279,6 @@ public class EditorialTranslationService {
                             "DRAFT"),
                     "EDITORIAL_WORKER");
 
-            currentLanguages =
-                    store.currentLanguages(current.articleId());
         }
 
         if (!store.hasAllRequiredCurrentLanguages(current.articleId())) {
@@ -261,15 +286,17 @@ public class EditorialTranslationService {
                     "Translation adaptation did not create current AR, NL, FR and EN article versions");
         }
 
-        workflowService.transition(
-                new EditorialArticleWorkflowDtos.TransitionRequest(
-                        current.articleId(),
-                        EditorialArticleState.IMAGE_REQUIRED,
-                        task.taskId(),
-                        task.correlationId(),
-                        "EDITORIAL_WORKER",
-                        "Canonical article adapted into all required localized versions",
-                        Set.of()));
+        if (current.state() == EditorialArticleState.TRANSLATION_REQUIRED) {
+            workflowService.transition(
+                    new EditorialArticleWorkflowDtos.TransitionRequest(
+                            current.articleId(),
+                            EditorialArticleState.IMAGE_REQUIRED,
+                            task.taskId(),
+                            task.correlationId(),
+                            "EDITORIAL_WORKER",
+                            "Canonical article adapted into all required localized versions",
+                            Set.of()));
+        }
 
         ObjectNode details =
                 objectMapper.createObjectNode()
@@ -295,9 +322,24 @@ public class EditorialTranslationService {
                 details);
     }
 
+    private List<ContentLocale> targetsRequiringAdaptation(
+            long articleId,
+            ContentLocale sourceLocale) {
+        return ContentLocale.SUPPORTED.stream()
+                .filter(locale -> locale != sourceLocale)
+                .filter(locale -> versionService.current(articleId, locale.name())
+                        .map(version -> EditorialArticleMetadata.focusKeyword(version.metadata()) == null)
+                        .orElse(true))
+                .toList();
+    }
+
     private static EditorialTranslationClient.AdaptRequest adaptRequest(
             EditorialTranslationStore.TranslationContext context,
             ContentLocale target) {
+
+        String focusKeyword = required(
+                context.focusKeyword(),
+                "Canonical article focusKeyword is required before translation");
 
         String metaTitle =
                 required(
@@ -323,6 +365,7 @@ public class EditorialTranslationService {
                 context.slug(),
                 context.summary(),
                 context.body(),
+                focusKeyword,
                 metaTitle,
                 metaDescription,
                 primaryCta);

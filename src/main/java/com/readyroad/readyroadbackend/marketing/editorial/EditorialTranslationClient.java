@@ -15,6 +15,7 @@ interface EditorialTranslationClient {
             String sourceSlug,
             String sourceSummary,
             String sourceBody,
+            String sourceFocusKeyword,
             String sourceMetaTitle,
             String sourceMetaDescription,
             String sourceCta) {}
@@ -27,6 +28,7 @@ interface EditorialTranslationClient {
             String slug,
             String summary,
             String body,
+            String focusKeyword,
             String metaTitle,
             String metaDescription,
             String cta,

@@ -71,6 +71,9 @@ class EditorialTranslationPostgreSqlIntegrationTest {
     EditorialTranslationService translationService;
 
     @Autowired
+    EditorialTranslationStore translationStore;
+
+    @Autowired
     EditorialTranslationTaskHandler translationHandler;
 
     @Autowired
@@ -142,11 +145,14 @@ class EditorialTranslationPostgreSqlIntegrationTest {
         translationHandler.execute(claimed);
         translationHandler.execute(claimed);
 
-        assertThat(translationStub.calls()).isEqualTo(2);
+        assertThat(translationStub.calls()).isEqualTo(3);
         assertThat(translationStub.targets())
-                .containsExactlyInAnyOrder(ContentLocale.FR, ContentLocale.EN);
+                .containsExactlyInAnyOrder(
+                        ContentLocale.NL,
+                        ContentLocale.FR,
+                        ContentLocale.EN);
         assertThat(translationStub.targets())
-                .doesNotContain(ContentLocale.AR, ContentLocale.NL);
+                .doesNotContain(ContentLocale.AR);
 
         assertThat(currentLanguages(fixture.articleId()))
                 .containsExactlyInAnyOrder("AR", "NL", "FR", "EN");
@@ -163,6 +169,16 @@ class EditorialTranslationPostgreSqlIntegrationTest {
                 Integer.class,
                 fixture.articleId(),
                 String.valueOf(first.id())))
+                .isEqualTo(2);
+
+        assertThat(jdbc.queryForObject("""
+                SELECT count(*)
+                FROM article_versions
+                WHERE article_id = ?
+                  AND generation_metadata ->> 'translationTaskId' = ?
+                  AND metadata ->> 'focusKeyword' = language || ' driving theory exam'
+                  AND slug = lower(language) || '-driving-theory-exam'
+                """, Integer.class, fixture.articleId(), String.valueOf(first.id())))
                 .isEqualTo(2);
 
         assertThat(jdbc.queryForObject("""
@@ -224,7 +240,45 @@ class EditorialTranslationPostgreSqlIntegrationTest {
                 """,
                 String.class,
                 fixture.articleId()))
-                .isEqualTo("human-editor");
+                .isEqualTo("EDITORIAL_WORKER");
+
+        assertThat(jdbc.queryForObject("""
+                SELECT body
+                FROM article_versions
+                WHERE article_id = ?
+                  AND language = 'NL'
+                  AND is_current
+                """,
+                String.class,
+                fixture.articleId()))
+                .isEqualTo(humanBody());
+
+        assertThat(jdbc.queryForObject("""
+                SELECT count(*)
+                FROM article_versions
+                WHERE article_id = ?
+                  AND language = 'NL'
+                  AND created_by = 'human-editor'
+                  AND NOT is_current
+                """,
+                Integer.class,
+                fixture.articleId()))
+                .isOne();
+
+        assertThat(jdbc.queryForObject("""
+                SELECT count(*)
+                FROM article_versions
+                WHERE article_id = ?
+                  AND language = 'NL'
+                  AND is_current
+                  AND metadata ->> 'focusKeyword' = 'NL driving theory exam'
+                  AND slug = 'nl-driving-theory-exam'
+                  AND generation_metadata ->> 'seoMetadataRepairTaskId' = ?
+                """,
+                Integer.class,
+                fixture.articleId(),
+                String.valueOf(first.id())))
+                .isOne();
 
         assertThat(jdbc.queryForObject("""
                 SELECT count(*)
@@ -233,7 +287,7 @@ class EditorialTranslationPostgreSqlIntegrationTest {
                 """,
                 Integer.class,
                 fixture.articleId()))
-                .isEqualTo(4);
+                .isEqualTo(5);
     }
 
     @Test
@@ -276,6 +330,17 @@ class EditorialTranslationPostgreSqlIntegrationTest {
                 .isEqualTo("Human Dutch version");
 
         assertThat(jdbc.queryForObject("""
+                SELECT body
+                FROM article_versions
+                WHERE article_id = ?
+                  AND language = 'NL'
+                  AND is_current
+                """,
+                String.class,
+                fixture.articleId()))
+                .isEqualTo(humanBody());
+
+        assertThat(jdbc.queryForObject("""
                 SELECT count(*)
                 FROM article_versions
                 WHERE article_id = ?
@@ -285,6 +350,19 @@ class EditorialTranslationPostgreSqlIntegrationTest {
                 fixture.articleId(),
                 String.valueOf(response.id())))
                 .isEqualTo(2);
+
+        assertThat(jdbc.queryForObject("""
+                SELECT count(*)
+                FROM article_versions
+                WHERE article_id = ?
+                  AND language = 'NL'
+                  AND generation_metadata ->> 'seoMetadataRepairTaskId' = ?
+                  AND metadata ->> 'focusKeyword' = 'NL driving theory exam'
+                """,
+                Integer.class,
+                fixture.articleId(),
+                String.valueOf(response.id())))
+                .isOne();
 
         assertThat(currentLanguages(fixture.articleId()))
                 .containsExactlyInAnyOrder("AR", "NL", "FR", "EN");
@@ -413,6 +491,91 @@ class EditorialTranslationPostgreSqlIntegrationTest {
                 .isEqualTo("IMAGE_REQUIRED");
     }
 
+    @Test
+    void repairsMissingLocalizedSeoMetadataWithoutReplacingExistingArticleContent() {
+        ArticleFixture fixture = createArticle("AR");
+        insertHumanVersion(fixture.articleId(), "NL");
+        insertHumanVersion(fixture.articleId(), "FR");
+        insertHumanVersion(fixture.articleId(), "EN");
+        jdbc.update("""
+                UPDATE articles
+                SET lifecycle_state = 'IMAGE_REQUIRED'
+                WHERE id = ?
+                """, fixture.articleId());
+
+        var response = translationService.request(
+                fixture.articleId(),
+                new EditorialTranslationDtos.CreateRequest("repair-localized-seo"),
+                "editorial-admin");
+        var task = taskRepository.findById(response.id()).orElseThrow();
+
+        translationHandler.execute(claimed(task));
+        translationHandler.execute(claimed(task));
+
+        assertThat(translationStub.calls()).isEqualTo(3);
+        assertThat(translationStub.targets()).containsExactlyInAnyOrder(
+                ContentLocale.NL,
+                ContentLocale.FR,
+                ContentLocale.EN);
+        assertThat(articleState(fixture.articleId())).isEqualTo("IMAGE_REQUIRED");
+
+        assertThat(jdbc.queryForObject("""
+                SELECT count(*)
+                FROM article_versions
+                WHERE article_id = ?
+                  AND language IN ('NL', 'FR', 'EN')
+                  AND is_current
+                  AND version_number = 2
+                  AND body = ?
+                  AND metadata ->> 'focusKeyword' = language || ' driving theory exam'
+                  AND slug = lower(language) || '-driving-theory-exam'
+                  AND generation_metadata ->> 'seoMetadataRepairTaskId' = ?
+                """,
+                Integer.class,
+                fixture.articleId(),
+                humanBody(),
+                String.valueOf(response.id())))
+                .isEqualTo(3);
+
+        assertThat(jdbc.queryForObject("""
+                SELECT count(*)
+                FROM article_versions
+                WHERE article_id = ?
+                  AND language IN ('NL', 'FR', 'EN')
+                  AND version_number = 1
+                  AND created_by = 'human-editor'
+                  AND NOT is_current
+                """,
+                Integer.class,
+                fixture.articleId()))
+                .isEqualTo(3);
+    }
+
+    @Test
+    void usesTheLatestApprovedSameLanguageBriefWhenCanonicalMetadataHasNoFocusKeyword() {
+        ArticleFixture fixture = createArticle("AR");
+        replaceCanonicalVersionWithoutFocusKeyword(fixture);
+        jdbc.update("""
+                INSERT INTO article_briefs (
+                    article_topic_id, target_language, search_intent, working_title,
+                    purpose, target_queries, primary_cta, legal_review_required, status
+                ) VALUES (
+                    2, 'AR', 'INFORMATIONAL', 'Translation focus keyword test',
+                    'Verify the approved brief fallback',
+                    '["امتحان السياقة النظري"]'::jsonb,
+                    'Continue', FALSE, 'APPROVED'
+                )
+                """);
+
+        assertThat(translationStore.context(fixture.articleId()).focusKeyword())
+                .isEqualTo("امتحان السياقة النظري");
+        assertThat(translationService.request(
+                fixture.articleId(),
+                new EditorialTranslationDtos.CreateRequest("approved-brief-focus-keyword"),
+                "editorial-admin").taskType())
+                .isEqualTo("ARTICLE_TRANSLATION_ADAPT");
+    }
+
     private ArticleFixture createArticle(String canonicalLanguage) {
         long uspId = jdbc.queryForObject("""
                 SELECT id
@@ -475,6 +638,7 @@ class EditorialTranslationPostgreSqlIntegrationTest {
                 {
                   "metaTitle": "Canonical meta title",
                   "metaDescription": "Canonical meta description for translation testing",
+                  "focusKeyword": "Belgian driving theory exam",
                   "primaryCta": "Continue learning with RijVia",
                   "internalLinks": []
                 }
@@ -620,7 +784,38 @@ class EditorialTranslationPostgreSqlIntegrationTest {
                 {
                   "metaTitle": "Changed canonical meta title",
                   "metaDescription": "Changed canonical meta description",
+                  "focusKeyword": "Changed Belgian driving theory exam",
                   "primaryCta": "Changed CTA",
+                  "internalLinks": []
+                }
+                """);
+    }
+
+    private void replaceCanonicalVersionWithoutFocusKeyword(ArticleFixture fixture) {
+        jdbc.update("""
+                UPDATE article_versions
+                SET is_current = FALSE
+                WHERE id = ?
+                """, fixture.sourceVersionId());
+        jdbc.update("""
+                INSERT INTO article_versions (
+                    article_id, version_number, language, title, slug, summary, body,
+                    metadata, generation_metadata, status, is_current, created_by
+                ) VALUES (
+                    ?, 2, ?, 'Canonical source without stored focus keyword',
+                    'canonical-source-without-focus-keyword', 'Canonical source summary',
+                    ?, ?::jsonb, '{"sourceReference":"ARTICLE_BRIEF:approved"}'::jsonb,
+                    'DRAFT_READY', TRUE, 'human-editor'
+                )
+                """,
+                fixture.articleId(),
+                fixture.canonicalLanguage(),
+                canonicalBody(),
+                """
+                {
+                  "metaTitle": "Canonical meta title",
+                  "metaDescription": "Canonical meta description for translation testing",
+                  "primaryCta": "Continue learning with RijVia",
                   "internalLinks": []
                 }
                 """);
@@ -726,6 +921,7 @@ class EditorialTranslationPostgreSqlIntegrationTest {
                             + "-localized-article",
                     "Localized summary for " + target,
                     localizedBody(target),
+                    target + " driving theory exam",
                     target + " localized meta title | RijVia",
                     "Localized meta description for "
                             + target

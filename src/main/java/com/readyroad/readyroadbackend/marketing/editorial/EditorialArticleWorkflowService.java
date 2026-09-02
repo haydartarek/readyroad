@@ -7,6 +7,7 @@ import com.readyroad.readyroadbackend.marketing.audit.MarketingAuditService;
 import java.util.Comparator;
 import java.util.EnumSet;
 import java.util.Set;
+import java.util.UUID;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -54,6 +55,50 @@ class EditorialArticleWorkflowService {
                 details(article, request, qualityGates));
         return new EditorialArticleWorkflowDtos.TransitionResult(
                 article.id(), request.targetState(), true, updatedAt);
+    }
+
+    @Transactional
+    public EditorialArticleWorkflowDtos.TransitionResult advanceFromEditor(
+            long articleId,
+            String actor,
+            String reason) {
+        if (articleId <= 0) {
+            throw new IllegalArgumentException("articleId must be positive");
+        }
+        if (actor == null || actor.isBlank() || actor.trim().length() > 160) {
+            throw new IllegalArgumentException("A valid editor actor is required");
+        }
+        String normalizedReason = reason == null || reason.isBlank()
+                ? "Admin advanced editorial workflow"
+                : reason.trim();
+        var article = store.lock(articleId);
+        EditorialArticleState target = switch (article.state()) {
+            case DRAFT_READY -> EditorialArticleState.FACT_CHECK_REQUIRED;
+            case FACT_CHECK_REQUIRED -> store.approvedBriefRequiresLegalReview(article.topicId())
+                    ? EditorialArticleState.LEGAL_REVIEW_REQUIRED
+                    : EditorialArticleState.TRANSLATION_REQUIRED;
+            case LEGAL_REVIEW_REQUIRED -> EditorialArticleState.TRANSLATION_REQUIRED;
+            default -> throw new IllegalStateException(
+                    "Article cannot be manually advanced from state " + article.state());
+        };
+        stateMachine.validate(article.state(), target);
+        validatePrerequisites(article, target, Set.of());
+        var updatedAt = store.updateState(article.id(), target);
+        ObjectNode details = objectMapper.createObjectNode();
+        details.put("fromState", article.state().name());
+        details.put("toState", target.name());
+        details.put("reason", normalizedReason);
+        details.putArray("passedQualityGates");
+        auditService.recordEntityEvent(
+                AUDIT_EVENT,
+                actor.trim(),
+                "EDITORIAL_ARTICLE",
+                String.valueOf(article.id()),
+                null,
+                "editor-workflow-" + article.id() + "-" + UUID.randomUUID(),
+                details);
+        return new EditorialArticleWorkflowDtos.TransitionResult(
+                article.id(), target, true, updatedAt);
     }
 
     private void validatePrerequisites(

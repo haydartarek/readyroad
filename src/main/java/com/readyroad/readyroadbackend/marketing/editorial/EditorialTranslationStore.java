@@ -31,13 +31,40 @@ class EditorialTranslationStore {
                        version.slug,
                        version.summary,
                        version.body,
+                       COALESCE(
+                           NULLIF(btrim(version.metadata ->> 'focusKeyword'), ''),
+                           brief.focus_keyword
+                       ) AS focus_keyword,
                        version.metadata,
                        version.generation_metadata
                 FROM articles article
                 JOIN article_versions version
-                  ON version.article_id = article.id
+                 ON version.article_id = article.id
                  AND version.language = article.canonical_language
                  AND version.is_current
+                LEFT JOIN LATERAL (
+                    SELECT candidate.target_queries
+                    FROM article_briefs candidate
+                    WHERE candidate.article_topic_id = article.article_topic_id
+                      AND candidate.target_language = version.language
+                      AND candidate.status = 'APPROVED'
+                    ORDER BY candidate.id DESC
+                    LIMIT 1
+                ) latest_brief ON TRUE
+                LEFT JOIN LATERAL (
+                    SELECT btrim(entry.query) AS focus_keyword
+                    FROM jsonb_array_elements_text(
+                        CASE
+                            WHEN jsonb_typeof(latest_brief.target_queries) = 'array'
+                                THEN latest_brief.target_queries
+                            ELSE '[]'::jsonb
+                        END
+                    ) WITH ORDINALITY AS entry(query, ordinal)
+                    WHERE btrim(entry.query) <> ''
+                      AND char_length(btrim(entry.query)) <= 120
+                    ORDER BY entry.ordinal
+                    LIMIT 1
+                ) brief ON TRUE
                 WHERE article.id = ?
                 """, this::mapContext, articleId).stream().findFirst()
                 .orElseThrow(() -> new IllegalStateException(
@@ -87,6 +114,7 @@ class EditorialTranslationStore {
                 result.getString("slug"),
                 result.getString("summary"),
                 result.getString("body"),
+                result.getString("focus_keyword"),
                 json(result.getString("metadata")),
                 json(result.getString("generation_metadata")));
     }
@@ -112,6 +140,7 @@ class EditorialTranslationStore {
             String slug,
             String summary,
             String body,
+            String focusKeyword,
             JsonNode metadata,
             JsonNode generationMetadata) {}
 }

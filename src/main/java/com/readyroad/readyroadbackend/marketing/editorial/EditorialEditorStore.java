@@ -21,21 +21,66 @@ class EditorialEditorStore {
                        t.working_title, t.title_language, t.primary_language,
                        t.article_priority, t.source_opportunity_id,
                        t.usp_id, t.icp_id, t.content_pillar_id, t.funnel_stage_id,
-                       t.conversion_goal_id,
-                       a.id AS article_id, a.lifecycle_state, a.canonical_language
+                       t.conversion_goal_id, t.keyword_cluster_id,
+                       ARRAY(SELECT jsonb_array_elements_text(t.target_queries)) AS target_queries,
+                       a.id AS article_id, a.lifecycle_state, a.canonical_language,
+                       approval_task.id AS pending_approval_task_id
                 FROM article_topics t
                 LEFT JOIN articles a ON a.article_topic_id = t.id
+                LEFT JOIN LATERAL (
+                    SELECT task.id
+                    FROM agent_tasks task
+                    WHERE task.agent_type = 'EDITORIAL'
+                      AND task.task_type = 'ARTICLE_APPROVAL'
+                      AND task.source_type = 'ARTICLE'
+                      AND task.source_id = a.id::text
+                      AND task.status = 'WAITING_APPROVAL'
+                    ORDER BY task.id DESC
+                    LIMIT 1
+                ) approval_task ON TRUE
                 ORDER BY t.official_backlog_order, t.id
                 """, this::topic);
     }
 
     List<CurrentVersionRow> currentVersions() {
         return jdbc.query("""
-                SELECT article_id, language, version_number, title, slug, status,
-                       created_at, created_by
-                FROM article_versions
-                WHERE is_current
-                ORDER BY article_id, language
+                SELECT version.article_id, version.language, version.version_number,
+                       version.title, version.slug,
+                       COALESCE(
+                           NULLIF(btrim(version.metadata ->> 'focusKeyword'), ''),
+                           brief.focus_keyword
+                       ) AS focus_keyword,
+                       version.status, version.created_at, version.created_by
+                FROM article_versions version
+                JOIN articles article ON article.id = version.article_id
+                LEFT JOIN LATERAL (
+                    SELECT candidate.target_queries
+                    FROM article_briefs candidate
+                    WHERE candidate.article_topic_id = article.article_topic_id
+                      AND candidate.target_language = version.language
+                      AND candidate.status = 'APPROVED'
+                    ORDER BY candidate.id DESC
+                    LIMIT 1
+                ) latest_brief ON TRUE
+                LEFT JOIN LATERAL (
+                    SELECT CASE
+                               WHEN char_length(btrim(entry.query)) <= 120
+                                   THEN btrim(entry.query)
+                               ELSE NULL
+                           END AS focus_keyword
+                    FROM jsonb_array_elements_text(
+                        CASE
+                            WHEN jsonb_typeof(latest_brief.target_queries) = 'array'
+                                THEN latest_brief.target_queries
+                            ELSE '[]'::jsonb
+                        END
+                    ) WITH ORDINALITY AS entry(query, ordinal)
+                    WHERE btrim(entry.query) <> ''
+                    ORDER BY entry.ordinal
+                    LIMIT 1
+                ) brief ON TRUE
+                WHERE version.is_current
+                ORDER BY version.article_id, version.language
                 """, this::currentVersion);
     }
 
@@ -143,6 +188,8 @@ class EditorialEditorStore {
         Long funnelId = result.getObject("funnel_stage_id", Long.class);
         Long goalId = result.getObject("conversion_goal_id", Long.class);
         String primaryLanguage = result.getString("primary_language");
+        java.sql.Array queryArray = result.getArray("target_queries");
+        String[] queryValues = queryArray == null ? new String[0] : (String[]) queryArray.getArray();
         return new TopicRow(
                 result.getLong("id"), result.getString("topic_key"),
                 result.getInt("official_backlog_order"), result.getString("source_type"),
@@ -151,8 +198,10 @@ class EditorialEditorStore {
                 uspId != null && icpId != null && pillarId != null && funnelId != null
                         && goalId != null && primaryLanguage != null,
                 uspId, icpId, pillarId, funnelId, goalId,
+                result.getObject("keyword_cluster_id", Long.class), List.of(queryValues),
                 result.getObject("article_id", Long.class), result.getString("lifecycle_state"),
-                result.getString("canonical_language"));
+                result.getString("canonical_language"),
+                result.getObject("pending_approval_task_id", Long.class));
     }
 
     private AuthoringRow authoring(ResultSet result, int rowNumber) throws SQLException {
@@ -170,7 +219,8 @@ class EditorialEditorStore {
         return new CurrentVersionRow(
                 result.getLong("article_id"), result.getString("language"),
                 result.getInt("version_number"), result.getString("title"),
-                result.getString("slug"), result.getString("status"), createdAt.toInstant(),
+                result.getString("slug"), result.getString("focus_keyword"),
+                result.getString("status"), createdAt.toInstant(),
                 result.getString("created_by"));
     }
 
@@ -205,9 +255,12 @@ class EditorialEditorStore {
             Long contentPillarId,
             Long funnelStageId,
             Long conversionGoalId,
+            Long keywordClusterId,
+            List<String> targetQueries,
             Long articleId,
             String lifecycleState,
-            String canonicalLanguage) {}
+            String canonicalLanguage,
+            Long pendingApprovalTaskId) {}
 
     record AuthoringRow(
             long topicId,
@@ -228,6 +281,7 @@ class EditorialEditorStore {
             int versionNumber,
             String title,
             String slug,
+            String focusKeyword,
             String status,
             java.time.Instant createdAt,
             String createdBy) {}

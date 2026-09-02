@@ -93,11 +93,19 @@ class EditorialArticleApprovalPostgreSqlIntegrationTest {
         assertThat(waiting.getPayload().has("body")).isFalse();
         assertThat(state(articleId)).isEqualTo(EditorialArticleState.WAITING_APPROVAL);
         assertThat(taskCount()).isOne();
+        assertThat(editorService.workspace().topics().stream()
+                .filter(topic -> topic.articleId() != null && topic.articleId() == articleId)
+                .findFirst().orElseThrow()
+                .pendingApprovalTaskId()).isEqualTo(first.id());
 
         approvalService.approve(first.id(), "owner", "Approved exact article version snapshot");
         AgentTask approved = taskRepository.findById(first.id()).orElseThrow();
         assertThat(approved.getStatus()).isEqualTo(TaskStatus.APPROVED);
         assertThat(state(articleId)).isEqualTo(EditorialArticleState.WAITING_APPROVAL);
+        assertThat(editorService.workspace().topics().stream()
+                .filter(topic -> topic.articleId() != null && topic.articleId() == articleId)
+                .findFirst().orElseThrow()
+                .pendingApprovalTaskId()).isNull();
 
         approvalTaskHandler.execute(claimed(approved));
         approvalTaskHandler.execute(claimed(approved));

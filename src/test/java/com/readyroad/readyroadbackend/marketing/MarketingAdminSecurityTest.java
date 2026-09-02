@@ -1,6 +1,7 @@
 package com.readyroad.readyroadbackend.marketing;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.multipart;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
@@ -184,7 +185,8 @@ class MarketingAdminSecurityTest {
         for (String path : new String[] {
                 "/api/admin/marketing/editorial/topics/1/briefs",
                 "/api/admin/marketing/editorial/editor/articles/1/draft-requests",
-                "/api/admin/marketing/editorial/editor/articles/1/translation-requests"
+                "/api/admin/marketing/editorial/editor/articles/1/translation-requests",
+                "/api/admin/marketing/editorial/editor/articles/1/workflow/advance"
         }) {
             mockMvc.perform(post(path)
                             .contentType(MediaType.APPLICATION_JSON)
@@ -216,6 +218,12 @@ class MarketingAdminSecurityTest {
                         .header("Authorization", "Bearer " + userToken)
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("{\"title\":\"Title\",\"body\":\"Body\"}"))
+                .andExpect(status().isForbidden());
+
+        String versionDeletePath = "/api/admin/marketing/editorial/editor/articles/1/versions/2";
+        mockMvc.perform(delete(versionDeletePath)).andExpect(status().isUnauthorized());
+        mockMvc.perform(delete(versionDeletePath)
+                        .header("Authorization", "Bearer " + userToken))
                 .andExpect(status().isForbidden());
 
         String approvalRequest = """

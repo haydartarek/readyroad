@@ -114,6 +114,7 @@ class EditorialTranslationQualityPolicyTest {
                 "canonical-article-title",
                 "Canonical article summary",
                 canonicalBody(),
+                "Belgian driving theory exam",
                 "Canonical meta title",
                 "Canonical meta description",
                 "Continue learning");
@@ -134,6 +135,7 @@ class EditorialTranslationQualityPolicyTest {
                 slug,
                 "Een duidelijke samenvatting voor Belgische kandidaten.",
                 body,
+                "Belgisch theorie-examen",
                 "Belgisch theorie-examen | RijVia",
                 "Bereid je voor op het Belgische theorie-examen met RijVia.",
                 "Ga verder met leren",

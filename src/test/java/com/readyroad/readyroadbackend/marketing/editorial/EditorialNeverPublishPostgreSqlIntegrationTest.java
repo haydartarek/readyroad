@@ -720,6 +720,7 @@ class EditorialNeverPublishPostgreSqlIntegrationTest {
                             + "-never-publish-article",
                     "Localized RijVia summary for " + target,
                     localizedBody(target),
+                    target + " driving theory exam",
                     target + " RijVia article | RijVia",
                     "Localized RijVia meta description for "
                             + target

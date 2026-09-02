@@ -25,6 +25,10 @@ public class OpenAIEditorialTranslationContent {
     @JsonPropertyDescription("Complete localized article body preserving the source facts, legal meaning and Markdown structure.")
     public String body;
 
+    @JsonPropertyDescription(
+            "Localized focus keyword preserving the canonical search intent. Keep it concise and natural in the target language.")
+    public String focusKeyword;
+
     @JsonPropertyDescription("Localized SEO meta title preserving the source meaning.")
     public String metaTitle;
 

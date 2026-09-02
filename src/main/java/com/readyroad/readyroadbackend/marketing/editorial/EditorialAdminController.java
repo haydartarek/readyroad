@@ -33,7 +33,9 @@ public class EditorialAdminController {
     private final EditorialBriefService briefService;
     private final EditorialDraftService draftService;
     private final EditorialTranslationService translationService;
+    private final EditorialArticleWorkflowService workflowService;
     private final EditorialEditorService editorService;
+    private final EditorialArticleVersionDeletionService articleVersionDeletionService;
     private final EditorialArticleApprovalService articleApprovalService;
     private final EditorialArticleImageService articleImageService;
     private final EditorialArticleUpdateService articleUpdateService;
@@ -111,6 +113,16 @@ public class EditorialAdminController {
                 translationService.request(articleId, request, principal.getName()));
     }
 
+    @PostMapping("/editor/articles/{articleId}/workflow/advance")
+    public EditorialArticleWorkflowDtos.TransitionResult advanceWorkflow(
+            @PathVariable long articleId,
+            Principal principal) {
+        return workflowService.advanceFromEditor(
+                articleId,
+                principal.getName(),
+                "Admin advanced editorial workflow");
+    }
+
     @GetMapping("/editor")
     public EditorialEditorDtos.Workspace editor() {
         return editorService.workspace();
@@ -126,6 +138,15 @@ public class EditorialAdminController {
             @PathVariable long articleId,
             @RequestParam String language) {
         return editorService.versions(articleId, language);
+    }
+
+    @DeleteMapping("/editor/articles/{articleId}/versions/{versionId}")
+    public ResponseEntity<Void> deleteArticleVersion(
+            @PathVariable long articleId,
+            @PathVariable long versionId,
+            Principal principal) {
+        articleVersionDeletionService.delete(articleId, versionId, principal.getName());
+        return ResponseEntity.noContent().build();
     }
 
     @PutMapping("/editor/topics/{topicId}/versions/{language}")

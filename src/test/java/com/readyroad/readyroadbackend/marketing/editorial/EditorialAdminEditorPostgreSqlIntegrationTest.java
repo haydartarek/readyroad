@@ -3,6 +3,7 @@ package com.readyroad.readyroadbackend.marketing.editorial;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.Executors;
@@ -10,6 +11,7 @@ import javax.sql.DataSource;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.DynamicPropertyRegistry;
@@ -44,6 +46,9 @@ class EditorialAdminEditorPostgreSqlIntegrationTest {
 
     @Autowired DataSource dataSource;
     @Autowired EditorialEditorService service;
+    @Autowired EditorialArticleVersionService versionService;
+    @Autowired EditorialArticleVersionDeletionService deletionService;
+    @Autowired ObjectMapper objectMapper;
 
     private JdbcTemplate jdbc;
 
@@ -56,7 +61,14 @@ class EditorialAdminEditorPostgreSqlIntegrationTest {
                          article_image_variants, article_image_assets, article_versions, articles
                 RESTART IDENTITY
                 """);
-        jdbc.update("DELETE FROM audit_logs WHERE event_type = 'EDITORIAL_ARTICLE_DRAFT_SAVED'");
+        jdbc.update("DELETE FROM article_briefs WHERE working_title = 'Focus keyword test'");
+        jdbc.update("""
+                DELETE FROM audit_logs
+                WHERE event_type IN (
+                    'EDITORIAL_ARTICLE_DRAFT_SAVED',
+                    'EDITORIAL_ARTICLE_VERSION_DELETED'
+                )
+                """);
         jdbc.update("""
                 UPDATE article_topics
                 SET primary_language = title_language,
@@ -117,6 +129,72 @@ class EditorialAdminEditorPostgreSqlIntegrationTest {
         assertThat(saved.version().createdBy()).isEqualTo("admin");
         assertThat(service.versions(saved.articleId(), "AR")).hasSize(1);
         assertThat(auditCount(saved.articleId())).isOne();
+    }
+
+    @Test
+    void prefersTheVersionMetadataFocusKeywordOverTheApprovedBrief() {
+        var saved = service.save(
+                1, "AR", request("العنوان", "article-ar", "ملخص", "المحتوى", null), "admin");
+        insertApprovedBrief(1, "AR", "امتحان السياقة");
+        var metadata = objectMapper.createObjectNode();
+        metadata.put("focusKeyword", "العلامات المرورية");
+        versionService.append(new EditorialArticleVersionDtos.AppendRequest(
+                saved.articleId(), "AR", "العنوان", "article-ar", "ملخص", "المحتوى",
+                metadata, objectMapper.createObjectNode(), "DRAFT"), "admin");
+
+        assertThat(focusKeyword(1, "AR")).isEqualTo("العلامات المرورية");
+    }
+
+    @Test
+    void fallsBackToTheFirstValidTargetQueryFromTheLatestApprovedSameLanguageBrief() {
+        service.save(2, "NL", request("Titel", "artikel-nl", "Samenvatting", "Inhoud", null), "admin");
+        insertApprovedBrief(2, "NL", "theorie-examen oefenen");
+
+        assertThat(focusKeyword(2, "NL")).isEqualTo("theorie-examen oefenen");
+    }
+
+    @Test
+    void rejectsParagraphQueriesAtTheDatabaseBoundary() {
+        service.save(3, "FR", request("Titre", "article-fr", "Résumé", "Contenu", null), "admin");
+
+        assertThatThrownBy(() -> insertApprovedBrief(3, "FR", "x".repeat(121)))
+                .isInstanceOf(DataIntegrityViolationException.class)
+                .hasMessageContaining("chk_article_briefs_target_queries_valid");
+        assertThat(focusKeyword(3, "FR")).isNull();
+    }
+
+    @Test
+    void leavesTheFocusKeywordEmptyWithoutAnApprovedSameLanguageBrief() {
+        service.save(4, "EN", request("Title", "article-en", "Summary", "Body", null), "admin");
+
+        assertThat(focusKeyword(4, "EN")).isNull();
+    }
+
+    @Test
+    void deletesOnlyAGuardedVersionAndPromotesThePreviousCurrentVersion() {
+        var first = service.save(5, "EN", request("First", "first", "Summary", "First body", null), "admin");
+        var second = service.save(5, "EN", request("Second", "second", "Summary", "Second body", 1), "admin");
+
+        deletionService.delete(second.articleId(), second.version().id(), "admin");
+
+        assertThat(service.versions(first.articleId(), "EN"))
+                .extracting(EditorialEditorDtos.Version::id)
+                .containsExactly(first.version().id());
+        assertThat(service.versions(first.articleId(), "EN").getFirst().current()).isTrue();
+        assertThat(jdbc.queryForObject("""
+                SELECT count(*) FROM audit_logs
+                WHERE event_type = 'EDITORIAL_ARTICLE_VERSION_DELETED'
+                  AND entity_id = ?
+                """, Integer.class, String.valueOf(second.version().id()))).isOne();
+    }
+
+    @Test
+    void refusesDeletingTheLastVersionForALanguage() {
+        var saved = service.save(6, "EN", request("Only", "only", "Summary", "Body", null), "admin");
+
+        assertThatThrownBy(() -> deletionService.delete(saved.articleId(), saved.version().id(), "admin"))
+                .isInstanceOf(ResponseStatusException.class)
+                .hasMessageContaining("last remaining version");
     }
 
     @Test
@@ -286,5 +364,25 @@ class EditorialAdminEditorPostgreSqlIntegrationTest {
                   AND entity_type = 'EDITORIAL_ARTICLE'
                   AND entity_id = ?
                 """, Integer.class, String.valueOf(articleId));
+    }
+
+    private void insertApprovedBrief(long topicId, String language, String targetQuery) {
+        jdbc.update("""
+                INSERT INTO article_briefs (
+                    article_topic_id, target_language, search_intent, working_title,
+                    purpose, target_queries, primary_cta, legal_review_required, status
+                ) VALUES (?, ?, 'INFORMATIONAL', 'Focus keyword test',
+                          'Test purpose', jsonb_build_array(?), 'Continue', FALSE, 'APPROVED')
+                """, topicId, language, targetQuery);
+    }
+
+    private String focusKeyword(long topicId, String language) {
+        return service.workspace().topics().stream()
+                .filter(topic -> topic.topicId() == topicId)
+                .findFirst().orElseThrow()
+                .currentVersions().stream()
+                .filter(current -> current.language().equals(language))
+                .findFirst().orElseThrow()
+                .focusKeyword();
     }
 }
