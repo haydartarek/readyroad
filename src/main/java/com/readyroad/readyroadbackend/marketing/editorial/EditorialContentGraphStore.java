@@ -40,7 +40,7 @@ class EditorialContentGraphStore {
                       AND candidate.language = version.language
                       AND candidate.status = 'PUBLISHED'
                       AND published_version.status = 'PUBLISHED'
-                      AND article.lifecycle_state IN ('PUBLISHED', 'UPDATE_RECOMMENDED')
+                      AND article.lifecycle_state <> 'ARCHIVED'
                     ORDER BY candidate.published_at DESC, candidate.id DESC
                     LIMIT 1
                 ) publication ON TRUE

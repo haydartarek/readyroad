@@ -72,6 +72,9 @@ class EditorialArticlePublicationPostgreSqlIntegrationTest {
     @Autowired ObjectMapper objectMapper;
     @Autowired EditorialContentGraphService contentGraphService;
     @Autowired EditorialEditorService editorService;
+    @Autowired EditorialArticleUpdateService updateService;
+    @Autowired EditorialInternalLinkStore internalLinkStore;
+    @Autowired EditorialPerformanceStore performanceStore;
     @Autowired WebApplicationContext webApplicationContext;
 
     private JdbcTemplate jdbc;
@@ -245,6 +248,69 @@ class EditorialArticlePublicationPostgreSqlIntegrationTest {
     }
 
     @Test
+    void updateSessionKeepsThePublishedSnapshotPublicInEveryLanguage() throws Exception {
+        long articleId = eligibleArticle(6);
+        AgentTask approval = approvedArticle(articleId);
+        approvalTaskHandler.execute(claimed(approval));
+        dispatcher.dispatch(claimed(publicationTask(articleId)));
+
+        updateService.start(articleId, "editor");
+        assertThat(state(articleId)).isEqualTo(EditorialArticleState.DRAFTING);
+        for (String language : List.of("AR", "NL", "FR", "EN")) {
+            replaceCurrentVersion(articleId, language);
+            String publishedSlug = "publication-6-" + language;
+            String examPath = "EN".equals(language) ? "/exam" : "/" + language.toLowerCase() + "/exam";
+
+            mockMvc.perform(get("/api/articles").param("language", language))
+                    .andExpect(status().isOk())
+                    .andExpect(jsonPath("$[0].slug").value(publishedSlug))
+                    .andExpect(jsonPath("$[0].title").value(language + " title"))
+                    .andExpect(jsonPath("$[0].alternateSlugs.EN").value("publication-6-EN"));
+            mockMvc.perform(get("/api/articles/{slug}", publishedSlug).param("language", language))
+                    .andExpect(status().isOk())
+                    .andExpect(jsonPath("$.body").value(language + " body"));
+            mockMvc.perform(get("/api/articles/{slug}", "publication-6-AR").param("language", language))
+                    .andExpect(status().isOk())
+                    .andExpect(jsonPath("$.slug").value(publishedSlug));
+            mockMvc.perform(get("/api/articles/related").param("language", language)
+                            .param("targetPath", examPath))
+                    .andExpect(status().isOk())
+                    .andExpect(jsonPath("$[0].slug").value(publishedSlug));
+            mockMvc.perform(get("/api/articles/{slug}", "changed-" + articleId + "-" + language)
+                            .param("language", language))
+                    .andExpect(status().isNotFound());
+            assertThat(internalLinkStore.publishedArticleId(language, publishedSlug)).contains(articleId);
+        }
+        assertThat(contentGraphService.graph().nodes())
+                .filteredOn(node -> node.id().startsWith("ARTICLE:" + articleId + ":"))
+                .hasSize(4)
+                .allSatisfy(node -> assertThat(node.published()).isTrue());
+        assertThat(performanceStore.publishedArticleIds()).contains(articleId);
+        assertThat(publicationRows(articleId)).isEqualTo(4);
+        assertThat(publicationAuditCount(articleId)).isOne();
+    }
+
+    @Test
+    void pendingUpdateReviewDoesNotWithdrawThePreviousPublication() throws Exception {
+        long articleId = eligibleArticle(6);
+        AgentTask approval = approvedArticle(articleId);
+        approvalTaskHandler.execute(claimed(approval));
+        dispatcher.dispatch(claimed(publicationTask(articleId)));
+
+        for (EditorialArticleState pending : List.of(
+                EditorialArticleState.DRAFT_READY, EditorialArticleState.FACT_CHECK_REQUIRED,
+                EditorialArticleState.LEGAL_REVIEW_REQUIRED, EditorialArticleState.TRANSLATION_REQUIRED,
+                EditorialArticleState.IMAGE_REQUIRED, EditorialArticleState.WAITING_APPROVAL,
+                EditorialArticleState.APPROVED, EditorialArticleState.SCHEDULED,
+                EditorialArticleState.REJECTED)) {
+            jdbc.update("UPDATE articles SET lifecycle_state = ? WHERE id = ?", pending.name(), articleId);
+            mockMvc.perform(get("/api/articles/{slug}", "publication-6-EN").param("language", "EN"))
+                    .andExpect(status().isOk())
+                    .andExpect(jsonPath("$.body").value("EN body"));
+        }
+    }
+
+    @Test
     void publicBlogRoutesHideUnpublishedArticlesAndRejectInvalidRoutes() throws Exception {
         eligibleArticle(7);
 
@@ -259,7 +325,7 @@ class EditorialArticlePublicationPostgreSqlIntegrationTest {
     }
 
     @Test
-    void contentGraphStopsResolvingAnArchivedArticleRoute() {
+    void contentGraphStopsResolvingAnArchivedArticleRoute() throws Exception {
         long targetArticleId = eligibleArticle(10);
         AgentTask targetApproval = approvedArticle(targetArticleId);
         approvalTaskHandler.execute(claimed(targetApproval));
@@ -279,6 +345,16 @@ class EditorialArticlePublicationPostgreSqlIntegrationTest {
                 null), "editor").articleId();
 
         jdbc.update("UPDATE articles SET lifecycle_state = 'ARCHIVED' WHERE id = ?", targetArticleId);
+
+        mockMvc.perform(get("/api/articles").param("language", "EN"))
+                .andExpect(status().isOk()).andExpect(jsonPath("$").isEmpty());
+        mockMvc.perform(get("/api/articles/{slug}", "publication-10-EN").param("language", "EN"))
+                .andExpect(status().isNotFound());
+        mockMvc.perform(get("/api/articles/related").param("language", "EN")
+                        .param("targetPath", "/exam"))
+                .andExpect(status().isOk()).andExpect(jsonPath("$").isEmpty());
+        assertThat(internalLinkStore.publishedArticleId("EN", "publication-10-EN")).isEmpty();
+        assertThat(performanceStore.publishedArticleIds()).doesNotContain(targetArticleId);
 
         var graph = contentGraphService.graph();
         String archivedNodeId = "ARTICLE:" + targetArticleId + ":EN";

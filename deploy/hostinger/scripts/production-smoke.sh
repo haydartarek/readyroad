@@ -77,6 +77,26 @@ probe_get() {
   rr_log INFO smoke_check "name=${name} status=passed"
 }
 
+probe_published_articles() {
+  local language prefix catalog slug
+
+  for language in EN AR NL FR; do
+    prefix="/${language,,}"
+    [[ "$language" != "EN" ]] || prefix=""
+    probe_get "blog_${language}" "${FRONTEND_URL}${prefix}/blog"
+    probe_get "article_catalog_${language}" "${API_URL}/api/articles?language=${language}" \
+      'type == "array" and all(.[]; .slug | type == "string" and length > 0)'
+    catalog="${temporary_directory}/article_catalog_${language}.json"
+    if [[ "$(jq 'length' "$catalog")" == "0" ]]; then
+      rr_log INFO article_route_smoke "language=${language} result=no_published_articles"
+      continue
+    fi
+
+    slug="$(jq --exit-status --raw-output '.[0].slug | @uri' "$catalog")"
+    probe_get "published_article_${language}" "${FRONTEND_URL}${prefix}/blog/${slug}"
+  done
+}
+
 probe_authenticated() {
   local name="$1"
   local url="$2"
@@ -247,6 +267,7 @@ probe_get random_quiz "${API_URL}/api/quiz/random?count=5" \
   'type == "array" and length == 5'
 probe_get robots "${FRONTEND_URL}/robots.txt"
 probe_get sitemap "${FRONTEND_URL}/sitemap.xml"
+probe_published_articles
 
 admin_password="$(
   sed -n 's/^ADMIN_DEFAULT_PASSWORD=//p' "$ENV_FILE" |

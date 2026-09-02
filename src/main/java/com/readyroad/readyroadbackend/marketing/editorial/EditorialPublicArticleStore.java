@@ -19,6 +19,7 @@ import org.springframework.stereotype.Repository;
 @RequiredArgsConstructor
 class EditorialPublicArticleStore {
 
+    // An update's workflow state must not withdraw its existing published snapshot.
     private final JdbcTemplate jdbc;
     private final ObjectMapper objectMapper;
 
@@ -39,7 +40,7 @@ class EditorialPublicArticleStore {
                     JOIN articles article ON article.id = publication.article_id
                     WHERE publication.status = 'PUBLISHED'
                       AND version.status = 'PUBLISHED'
-                      AND article.lifecycle_state IN ('PUBLISHED', 'UPDATE_RECOMMENDED')
+                      AND article.lifecycle_state <> 'ARCHIVED'
                     ORDER BY publication.article_id, publication.language,
                              publication.published_at DESC, publication.id DESC
                 )
@@ -100,7 +101,7 @@ class EditorialPublicArticleStore {
                     JOIN articles article ON article.id = publication.article_id
                     WHERE publication.status = 'PUBLISHED'
                       AND version.status = 'PUBLISHED'
-                      AND article.lifecycle_state IN ('PUBLISHED', 'UPDATE_RECOMMENDED')
+                      AND article.lifecycle_state <> 'ARCHIVED'
                     ORDER BY publication.article_id, publication.language,
                              publication.published_at DESC, publication.id DESC
                 )
@@ -175,7 +176,7 @@ class EditorialPublicArticleStore {
                 WHERE lower(publication.published_slug) = lower(?)
                   AND publication.status = 'PUBLISHED'
                   AND version.status = 'PUBLISHED'
-                  AND article.lifecycle_state IN ('PUBLISHED', 'UPDATE_RECOMMENDED')
+                  AND article.lifecycle_state <> 'ARCHIVED'
                 ORDER BY publication.article_id
                 """, Long.class, slug);
     }
@@ -196,7 +197,7 @@ class EditorialPublicArticleStore {
                     WHERE publication.article_id = ?
                       AND publication.status = 'PUBLISHED'
                       AND version.status = 'PUBLISHED'
-                      AND article.lifecycle_state IN ('PUBLISHED', 'UPDATE_RECOMMENDED')
+                      AND article.lifecycle_state <> 'ARCHIVED'
                     ORDER BY publication.language, publication.published_at DESC, publication.id DESC
                 ) localized
                 ORDER BY CASE language WHEN 'AR' THEN 1 WHEN 'NL' THEN 2 WHEN 'FR' THEN 3 ELSE 4 END
@@ -226,7 +227,7 @@ class EditorialPublicArticleStore {
                 """ + predicate + """
                   AND publication.status = 'PUBLISHED'
                   AND version.status = 'PUBLISHED'
-                  AND article.lifecycle_state IN ('PUBLISHED', 'UPDATE_RECOMMENDED')
+                  AND article.lifecycle_state <> 'ARCHIVED'
                 ORDER BY publication.published_at DESC, publication.id DESC
                 LIMIT 1
                 """;

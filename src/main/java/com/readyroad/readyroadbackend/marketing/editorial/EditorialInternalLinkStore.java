@@ -21,7 +21,7 @@ class EditorialInternalLinkStore {
                   AND lower(publication.published_slug) = lower(?)
                   AND publication.status = 'PUBLISHED'
                   AND version.status = 'PUBLISHED'
-                  AND article.lifecycle_state IN ('PUBLISHED', 'UPDATE_RECOMMENDED')
+                  AND article.lifecycle_state <> 'ARCHIVED'
                 ORDER BY publication.article_id
                 LIMIT 1
                 """, Long.class, language, slug).stream().findFirst();

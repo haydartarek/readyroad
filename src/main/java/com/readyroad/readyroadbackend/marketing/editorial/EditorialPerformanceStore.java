@@ -26,7 +26,7 @@ class EditorialPerformanceStore {
                 SELECT DISTINCT article.id
                 FROM articles article
                 JOIN article_publications publication ON publication.article_id = article.id
-                WHERE article.lifecycle_state IN ('PUBLISHED', 'UPDATE_RECOMMENDED')
+                WHERE article.lifecycle_state <> 'ARCHIVED'
                   AND publication.status = 'PUBLISHED'
                 ORDER BY article.id
                 """, Long.class);

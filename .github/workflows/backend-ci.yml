@@ -50,6 +50,7 @@ jobs:
         run: |
           bash -n deploy/hostinger/scripts/deploy-lib.sh
           bash -n deploy/hostinger/scripts/deploy-production.sh
+          bash -n deploy/hostinger/scripts/production-smoke.sh
           bash deploy/hostinger/tests/deployment-automation-test.sh
 
       - name: Setup Java
