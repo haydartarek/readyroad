@@ -15,6 +15,7 @@ import com.openai.models.responses.ResponseCreateParams;
 import com.openai.models.responses.StructuredResponseCreateParams;
 import com.readyroad.readyroadbackend.marketing.config.MarketingProperties;
 import com.readyroad.readyroadbackend.marketing.content.OpenAIContentGenerationException;
+import com.readyroad.readyroadbackend.marketing.content.OpenAIRequestFailure;
 import java.io.IOException;
 import java.time.Duration;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -153,7 +154,7 @@ public class OpenAIResponsesEditorialTranslationClient implements EditorialTrans
             throw expected;
 
         } catch (OpenAIServiceException serviceError) {
-            throw serviceFailure(serviceError);
+            throw OpenAIRequestFailure.from(serviceError);
 
         } catch (OpenAIIoException ioError) {
             invalidate(activeClient);
@@ -187,7 +188,7 @@ public class OpenAIResponsesEditorialTranslationClient implements EditorialTrans
 
             if (raw.statusCode() < 200
                     || raw.statusCode() >= 300) {
-                throw serviceFailure(raw.statusCode());
+                throw OpenAIRequestFailure.from(raw.statusCode(), raw.body(), objectMapper);
             }
 
             return objectMapper.readTree(raw.body());
@@ -291,32 +292,6 @@ public class OpenAIResponsesEditorialTranslationClient implements EditorialTrans
                     "OPENAI_API_KEY_MISSING",
                     "OpenAI API key is not configured");
         }
-    }
-
-    private static OpenAIContentGenerationException serviceFailure(
-            OpenAIServiceException error) {
-
-        return serviceFailure(error.statusCode());
-    }
-
-    private static OpenAIContentGenerationException serviceFailure(
-            int statusCode) {
-
-        String code =
-                switch (statusCode) {
-                    case 429 -> "HTTP_429";
-                    case 502 -> "HTTP_502";
-                    case 503 -> "HTTP_503";
-                    case 504 -> "HTTP_504";
-                    case 401, 403 -> "INVALID_API_KEY";
-                    case 400 -> "OPENAI_VALIDATION_FAILURE";
-                    default -> "OPENAI_HTTP_" + statusCode;
-                };
-
-        return new OpenAIContentGenerationException(
-                code,
-                "OpenAI translation request failed with HTTP "
-                        + statusCode);
     }
 
     private static String rootCauseType(

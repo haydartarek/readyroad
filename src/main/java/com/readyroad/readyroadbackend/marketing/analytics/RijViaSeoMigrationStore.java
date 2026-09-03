@@ -8,6 +8,8 @@ import com.readyroad.readyroadbackend.marketing.config.MarketingProperties;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HexFormat;
@@ -16,6 +18,7 @@ import java.util.List;
 import java.util.Map;
 import lombok.RequiredArgsConstructor;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.ColumnMapRowMapper;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -170,7 +173,7 @@ public class RijViaSeoMigrationStore {
         result.put("latestImport", imported);
 
         Map<String, Object> report = map(imported.get("report"));
-        result.put("opportunities", jdbc.queryForList("""
+        result.put("opportunities", rows("""
                 SELECT id, query, page, language, state, priority, brand_classification,
                        classifications, recommended_action_category, confidence_level,
                        clicks, impressions, ctr, average_position, evidence
@@ -378,7 +381,7 @@ public class RijViaSeoMigrationStore {
     }
 
     private List<Map<String, Object>> draftBriefs(Long importId) {
-        return jdbc.queryForList("""
+        return rows("""
                 SELECT id, brief_key, language, working_title, purpose, target_queries,
                        supporting_pages, content_pillar_key, icp_key, conversion_goal_key,
                        status, evidence, created_at
@@ -389,7 +392,7 @@ public class RijViaSeoMigrationStore {
     }
 
     private List<Map<String, Object>> officialBacklog() {
-        return jdbc.queryForList("""
+        return rows("""
                 SELECT topic_key, official_backlog_order, cluster_key, working_title,
                        title_language, status, article_priority, priority_reason
                 FROM article_topics
@@ -400,23 +403,23 @@ public class RijViaSeoMigrationStore {
 
     private Map<String, Object> strategy() {
         Map<String, Object> result = new LinkedHashMap<>();
-        result.put("positioning", jdbc.queryForList("""
+        result.put("positioning", rows("""
                 SELECT id, statement, brand_identity, brand_voice, approved_by, version
                 FROM marketing_positioning WHERE active = TRUE ORDER BY id LIMIT 1
                 """));
-        result.put("usps", jdbc.queryForList("""
+        result.put("usps", rows("""
                 SELECT id, title, description, evidence_type, evidence_reference,
                        active, approved_by FROM marketing_usp WHERE active = TRUE ORDER BY priority DESC, id
                 """));
-        result.put("icps", jdbc.queryForList("""
+        result.put("icps", rows("""
                 SELECT id, name, language, country, primary_goal, active, approved_by
                 FROM marketing_icp WHERE active = TRUE ORDER BY id
                 """));
-        result.put("contentPillars", jdbc.queryForList("""
+        result.put("contentPillars", rows("""
                 SELECT id, pillar_key, name, priority, active, approved_by
                 FROM marketing_content_pillars WHERE active = TRUE ORDER BY priority DESC, id
                 """));
-        result.put("settings", jdbc.queryForList("""
+        result.put("settings", rows("""
                 SELECT setting_key, setting_value, updated_by, updated_at
                 FROM agent_settings
                 WHERE agent_type = 'STRATEGY'
@@ -474,6 +477,25 @@ public class RijViaSeoMigrationStore {
             case "P2" -> 2;
             default -> 3;
         };
+    }
+
+    private List<Map<String, Object>> rows(String sql, Object... args) {
+        return jdbc.query(sql, new ColumnMapRowMapper() {
+            @Override
+            protected Object getColumnValue(ResultSet row, int index) throws SQLException {
+                String type = row.getMetaData().getColumnTypeName(index);
+                if ("jsonb".equalsIgnoreCase(type) || "json".equalsIgnoreCase(type)) {
+                    String value = row.getString(index);
+                    if (value == null) return null;
+                    try {
+                        return objectMapper.readValue(value, Object.class);
+                    } catch (JsonProcessingException error) {
+                        throw new SQLException("Stored marketing workspace JSON is invalid", error);
+                    }
+                }
+                return super.getColumnValue(row, index);
+            }
+        }, args);
     }
 
     private String json(Object value) {

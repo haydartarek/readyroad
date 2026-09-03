@@ -155,6 +155,17 @@ class MarketingAnalyticsPostgreSqlIntegrationTest {
         assertThat(repeated.importId()).isEqualTo(first.importId());
         assertThat(first.workspace()).containsEntry("publishingEnabled", true);
         assertThat(first.workspace()).containsEntry("canonicalActivation", "RELEASED");
+        @SuppressWarnings("unchecked")
+        var opportunities = (List<Map<String, Object>>) first.workspace().get("opportunities");
+        assertThat(opportunities).allSatisfy(row -> {
+            assertThat(row.get("classifications")).isInstanceOf(List.class);
+            assertThat(row.get("evidence")).isInstanceOf(Map.class);
+        });
+        @SuppressWarnings("unchecked")
+        var strategy = (Map<String, Object>) first.workspace().get("strategy");
+        @SuppressWarnings("unchecked")
+        var settings = (List<Map<String, Object>>) strategy.get("settings");
+        assertThat(settings).allSatisfy(row -> assertThat(row.get("setting_value")).isInstanceOf(Map.class));
         assertThat(first.workspace().get("ownerDecisionsRequired")).isEqualTo(List.of());
         @SuppressWarnings("unchecked")
         Map<String, Object> social = (Map<String, Object>) first.workspace().get("social");

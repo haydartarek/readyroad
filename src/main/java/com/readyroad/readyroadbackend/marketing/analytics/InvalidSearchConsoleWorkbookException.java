@@ -1,16 +1,15 @@
 package com.readyroad.readyroadbackend.marketing.analytics;
 
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.server.ResponseStatusException;
 
-@ResponseStatus(HttpStatus.BAD_REQUEST)
-public class InvalidSearchConsoleWorkbookException extends RuntimeException {
+public class InvalidSearchConsoleWorkbookException extends ResponseStatusException {
 
     public InvalidSearchConsoleWorkbookException(String message) {
-        super(message);
+        super(HttpStatus.BAD_REQUEST, message);
     }
 
     public InvalidSearchConsoleWorkbookException(String message, Throwable cause) {
-        super(message, cause);
+        super(HttpStatus.BAD_REQUEST, message, cause);
     }
 }
