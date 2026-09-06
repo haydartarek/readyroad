@@ -21,12 +21,15 @@ import com.readyroad.readyroadbackend.marketing.task.TaskCreationService;
 import com.readyroad.readyroadbackend.marketing.worker.MarketingTaskDispatcher;
 import java.util.EnumSet;
 import java.util.List;
+import java.util.ArrayList;
 import javax.sql.DataSource;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.support.TransactionTemplate;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.DynamicPropertyRegistry;
@@ -73,6 +76,10 @@ class EditorialArticlePublicationPostgreSqlIntegrationTest {
     @Autowired EditorialContentGraphService contentGraphService;
     @Autowired EditorialEditorService editorService;
     @Autowired EditorialArticleUpdateService updateService;
+    @Autowired EditorialArticleWorkflowService workflowService;
+    @Autowired EditorialArticlePublicationStore publicationStore;
+    @Autowired EditorialArticleApprovalStore approvalStore;
+    @Autowired PlatformTransactionManager transactionManager;
     @Autowired EditorialInternalLinkStore internalLinkStore;
     @Autowired EditorialPerformanceStore performanceStore;
     @Autowired WebApplicationContext webApplicationContext;
@@ -311,6 +318,87 @@ class EditorialArticlePublicationPostgreSqlIntegrationTest {
     }
 
     @Test
+    void adminCanEditAndRepublishOnTheSameRoutesWithoutReplacingHistory() throws Exception {
+        long articleId = eligibleArticle(6);
+        assignCompleteStrategyContext(6);
+        AgentTask firstApproval = approvedArticle(articleId);
+        approvalTaskHandler.execute(claimed(firstApproval));
+        dispatcher.dispatch(claimed(publicationTask(articleId)));
+
+        assertThat(updateService.start(articleId, "editor").changed()).isTrue();
+        assertThat(updateService.start(articleId, "editor").changed()).isFalse();
+        assertThat(jdbc.queryForObject("SELECT count(*) FROM article_versions WHERE article_id = ?",
+                Integer.class, articleId)).isEqualTo(8);
+        long topicId = jdbc.queryForObject("SELECT article_topic_id FROM articles WHERE id = ?",
+                Long.class, articleId);
+        var version = editorService.versions(articleId, "EN").getFirst();
+        var saved = editorService.save(topicId, "EN", new EditorialEditorDtos.SaveRequest(
+                "Revised title", version.slug(), version.summary(), "Revised body",
+                version.metaTitle(), version.metaDescription(), version.internalLinks().stream()
+                        .map(link -> new EditorialInternalLinkDtos.Input(link.targetPath(), link.anchorText())).toList(),
+                version.typography(), version.versionNumber()), "editor");
+        assertThat(saved.created()).isTrue();
+        mockMvc.perform(get("/api/articles/publication-6-EN").param("language", "EN"))
+                .andExpect(status().isOk()).andExpect(jsonPath("$.body").value("EN body"));
+
+        assertThat(workflowService.advanceFromEditor(articleId, "editor", "Draft reviewed").state())
+                .isEqualTo(EditorialArticleState.DRAFT_READY);
+        workflowService.advanceFromEditor(articleId, "editor", "Begin fact check");
+        jdbc.update("""
+                INSERT INTO article_briefs (article_topic_id, target_language, target_queries,
+                    search_intent, working_title, purpose, primary_cta, legal_review_required, status)
+                VALUES (?, 'EN', '["driving theory"]'::jsonb,
+                    'INFORMATIONAL', 'Test title', 'Test goal', 'Start learning', FALSE, 'APPROVED')
+                """, topicId);
+        workflowService.advanceFromEditor(articleId, "editor", "Facts verified");
+        workflowService.advanceFromEditor(articleId, "editor", "Languages reviewed");
+        AgentTask secondApproval = approvedArticle(articleId);
+        approvalTaskHandler.execute(claimed(secondApproval));
+        var secondPublication = claimed(publicationTask(articleId));
+        dispatcher.dispatch(secondPublication);
+        dispatcher.dispatch(secondPublication);
+        for (String language : List.of("AR", "NL", "FR", "EN")) {
+            mockMvc.perform(get("/api/articles/publication-6-" + language).param("language", language))
+                    .andExpect(status().isOk())
+                    .andExpect(jsonPath("$.body").value("EN".equals(language) ? "Revised body" : language + " body"));
+        }
+        assertThat(publicationRows(articleId)).isEqualTo(8);
+        assertThat(jdbc.queryForObject("SELECT count(*) FROM article_publications WHERE article_id = ? AND status = 'PUBLISHED'",
+                Integer.class, articleId)).isEqualTo(4);
+        assertThat(jdbc.queryForObject("SELECT count(*) FROM article_publications WHERE article_id = ? AND status = 'SUPERSEDED'",
+                Integer.class, articleId)).isEqualTo(4);
+        assertThat(publicationAuditCount(articleId)).isEqualTo(2);
+    }
+
+    @Test
+    void failedRepublishingRestoresEveryPreviouslyPublishedLanguage() throws Exception {
+        long articleId = eligibleArticle(6);
+        var approval = approvedArticle(articleId);
+        approvalTaskHandler.execute(claimed(approval));
+        var firstPublication = publicationTask(articleId);
+        dispatcher.dispatch(claimed(firstPublication));
+        updateService.start(articleId, "editor");
+        var snapshot = new ArrayList<>(approvalStore.currentVersions(articleId));
+        var last = snapshot.getLast();
+        snapshot.set(snapshot.size() - 1,
+                new EditorialArticleApprovalStore.VersionSnapshot(Long.MAX_VALUE, last.language(), last.versionNumber()));
+        long imageId = jdbc.queryForObject("SELECT id FROM article_image_assets WHERE article_id = ? AND status = 'APPROVED'",
+                Long.class, articleId);
+        assertThatThrownBy(() -> new TransactionTemplate(transactionManager).executeWithoutResult(status ->
+                publicationStore.publish(articleId, approval.getId(), approval.getId(), imageId, snapshot)))
+                .isInstanceOf(org.springframework.dao.InvalidDataAccessApiUsageException.class)
+                .hasRootCauseInstanceOf(IllegalStateException.class)
+                .hasMessageContaining("Published article versions do not match the approved snapshot");
+        assertThat(publicationRows(articleId)).isEqualTo(4);
+        assertThat(jdbc.queryForObject("SELECT count(*) FROM article_publications WHERE article_id = ? AND status = 'PUBLISHED'",
+                Integer.class, articleId)).isEqualTo(4);
+        for (String language : List.of("AR", "NL", "FR", "EN")) {
+            mockMvc.perform(get("/api/articles/publication-6-" + language).param("language", language))
+                    .andExpect(status().isOk()).andExpect(jsonPath("$.body").value(language + " body"));
+        }
+    }
+
+    @Test
     void publicBlogRoutesHideUnpublishedArticlesAndRejectInvalidRoutes() throws Exception {
         eligibleArticle(7);
 
@@ -493,8 +581,9 @@ class EditorialArticlePublicationPostgreSqlIntegrationTest {
                 INSERT INTO article_versions (
                     article_id, version_number, language, title, slug, body,
                     status, is_current, created_by
-                ) VALUES (?, 2, ?, ?, ?, ?, 'DRAFT_READY', TRUE, 'another-editor')
-                """, articleId, language, language + " changed", "changed-" + articleId + "-" + language,
+                ) VALUES (?, (SELECT COALESCE(max(version_number), 0) + 1 FROM article_versions WHERE article_id = ? AND language = ?),
+                          ?, ?, ?, ?, 'DRAFT_READY', TRUE, 'another-editor')
+                """, articleId, articleId, language, language, language + " changed", "changed-" + articleId + "-" + language,
                 language + " changed body");
     }
 

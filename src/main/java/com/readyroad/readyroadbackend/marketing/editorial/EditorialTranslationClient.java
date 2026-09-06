@@ -6,6 +6,10 @@ interface EditorialTranslationClient {
 
     AdaptedContent adapt(AdaptRequest request);
 
+    default AdaptedContent adaptKeyword(AdaptRequest request) {
+        return adapt(request);
+    }
+
     record AdaptRequest(
             long articleId,
             long sourceVersionId,

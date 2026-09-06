@@ -73,6 +73,7 @@ class EditorialArticleWorkflowService {
                 : reason.trim();
         var article = store.lock(articleId);
         EditorialArticleState target = switch (article.state()) {
+            case DRAFTING -> EditorialArticleState.DRAFT_READY;
             case DRAFT_READY -> EditorialArticleState.FACT_CHECK_REQUIRED;
             case FACT_CHECK_REQUIRED -> store.approvedBriefRequiresLegalReview(article.topicId())
                     ? EditorialArticleState.LEGAL_REVIEW_REQUIRED
@@ -83,6 +84,9 @@ class EditorialArticleWorkflowService {
                     "Article cannot be manually advanced from state " + article.state());
         };
         stateMachine.validate(article.state(), target);
+        if (article.state() == EditorialArticleState.DRAFTING) {
+            store.markSavedCanonicalDraftReady(article.id(), article.canonicalLanguage(), article.updatedAt());
+        }
         validatePrerequisites(article, target, Set.of());
         var updatedAt = store.updateState(article.id(), target);
         ObjectNode details = objectMapper.createObjectNode();

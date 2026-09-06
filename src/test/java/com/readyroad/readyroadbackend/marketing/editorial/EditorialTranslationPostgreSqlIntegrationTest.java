@@ -447,7 +447,7 @@ class EditorialTranslationPostgreSqlIntegrationTest {
     }
 
     @Test
-    void writesNoPartialTranslationsWhenGenerationFails() {
+    void preservesPaidTranslationsAndRetriesOnlyMissingLanguages() {
         ArticleFixture fixture = createArticle("AR");
 
         translationStub.failOnCall(2);
@@ -467,9 +467,10 @@ class EditorialTranslationPostgreSqlIntegrationTest {
                 .isEqualTo("TEST_TRANSLATION_FAILURE");
 
         assertThat(translationStub.calls()).isEqualTo(2);
-
+        var completedLanguage = translationStub.targets().get(0);
+        var failedLanguage = translationStub.targets().get(1);
         assertThat(currentLanguages(fixture.articleId()))
-                .containsExactly("AR");
+                .containsExactlyInAnyOrder("AR", completedLanguage.name());
 
         assertThat(jdbc.queryForObject("""
                 SELECT count(*)
@@ -478,10 +479,23 @@ class EditorialTranslationPostgreSqlIntegrationTest {
                 """,
                 Integer.class,
                 fixture.articleId()))
-                .isOne();
+                .isEqualTo(2);
 
         assertThat(articleState(fixture.articleId()))
                 .isEqualTo("TRANSLATION_REQUIRED");
+
+        translationHandler.execute(claimed(task));
+        translationHandler.execute(claimed(task));
+        assertThat(translationStub.calls()).isEqualTo(4);
+        assertThat(translationStub.targets().stream().filter(completedLanguage::equals).count()).isEqualTo(1);
+        assertThat(translationStub.targets().stream().filter(failedLanguage::equals).count()).isEqualTo(2);
+        assertThat(translationStub.targets()).contains(ContentLocale.NL, ContentLocale.FR, ContentLocale.EN);
+        assertThat(currentLanguages(fixture.articleId()))
+                .containsExactlyInAnyOrder("AR", "NL", "FR", "EN");
+        assertThat(articleState(fixture.articleId())).isEqualTo("IMAGE_REQUIRED");
+        assertThat(jdbc.queryForObject("""
+                SELECT count(*) FROM article_versions WHERE article_id = ?
+                """, Integer.class, fixture.articleId())).isEqualTo(4);
     }
 
     @Test

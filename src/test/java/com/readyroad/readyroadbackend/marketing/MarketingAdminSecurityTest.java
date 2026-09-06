@@ -186,7 +186,8 @@ class MarketingAdminSecurityTest {
                 "/api/admin/marketing/editorial/topics/1/briefs",
                 "/api/admin/marketing/editorial/editor/articles/1/draft-requests",
                 "/api/admin/marketing/editorial/editor/articles/1/translation-requests",
-                "/api/admin/marketing/editorial/editor/articles/1/workflow/advance"
+                "/api/admin/marketing/editorial/editor/articles/1/workflow/advance",
+                "/api/admin/marketing/editorial/editor/articles/1/update-session"
         }) {
             mockMvc.perform(post(path)
                             .contentType(MediaType.APPLICATION_JSON)

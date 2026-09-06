@@ -283,7 +283,7 @@ public class EditorialEditorService {
     }
 
     private static void ensureEditable(EditorialEditorStore.ArticleRow article) {
-        if (Set.of("WAITING_APPROVAL", "APPROVED", "SCHEDULED", "PUBLISHED", "REJECTED", "ARCHIVED")
+        if (Set.of("WAITING_APPROVAL", "APPROVED", "SCHEDULED", "PUBLISHED", "UPDATE_RECOMMENDED", "REJECTED", "ARCHIVED")
                 .contains(article.lifecycleState())) {
             throw new ResponseStatusException(
                     HttpStatus.CONFLICT,

@@ -18,6 +18,7 @@ public class EditorialArticleUpdateService {
 
     private final EditorialArticleWorkflowStore workflowStore;
     private final EditorialArticleWorkflowStateMachine stateMachine;
+    private final EditorialArticleVersionService versionService;
     private final MarketingAuditService auditService;
     private final ObjectMapper objectMapper;
 
@@ -48,6 +49,18 @@ public class EditorialArticleUpdateService {
         }
         stateMachine.validate(EditorialArticleState.UPDATE_RECOMMENDED, EditorialArticleState.DRAFTING);
         Instant updatedAt = workflowStore.updateState(articleId, EditorialArticleState.DRAFTING);
+
+        // New version identities allow another approved publication without rewriting its history.
+        for (String language : java.util.List.of("AR", "NL", "FR", "EN")) {
+            var version = versionService.current(articleId, language).orElseThrow(() ->
+                    new IllegalStateException("Published article is missing a localized version"));
+            ObjectNode generation = objectMapper.createObjectNode()
+                    .put("updateSourceVersionId", version.id())
+                    .put("updateMode", "ADMIN_EDIT");
+            versionService.append(new EditorialArticleVersionDtos.AppendRequest(
+                    articleId, language, version.title(), version.slug(), version.summary(),
+                    version.body(), version.metadata(), generation, "DRAFT"), actor.trim());
+        }
 
         ObjectNode details = objectMapper.createObjectNode();
         details.put("fromState", initial.name());

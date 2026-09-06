@@ -20,6 +20,13 @@ class EditorialArticlePublicationStore {
             long imageAssetId,
             List<EditorialArticleApprovalStore.VersionSnapshot> versions) {
         OffsetDateTime publishedAt = OffsetDateTime.now(ZoneOffset.UTC);
+        // The caller's transaction replaces all languages together; failures restore the live snapshot.
+        jdbc.update("""
+                UPDATE article_publications
+                SET status = 'SUPERSEDED'
+                WHERE article_id = ? AND status = 'PUBLISHED'
+                  AND publication_task_id <> ?
+                """, articleId, publicationTaskId);
         for (var version : versions) {
             jdbc.update("""
                     INSERT INTO article_publications (

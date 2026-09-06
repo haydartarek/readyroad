@@ -95,6 +95,21 @@ class EditorialArticleWorkflowStore {
                 OffsetDateTime.ofInstant(draftingStartedAt, ZoneOffset.UTC)));
     }
 
+    void markSavedCanonicalDraftReady(long articleId, String language, Instant draftingStartedAt) {
+        int updated = jdbc.update("""
+                UPDATE article_versions SET status = 'DRAFT_READY'
+                WHERE article_id = ? AND language = ? AND is_current
+                  AND status = 'DRAFT' AND created_at >= ?
+                  AND NULLIF(btrim(title), '') IS NOT NULL
+                  AND NULLIF(btrim(body), '') IS NOT NULL
+                  AND NULLIF(btrim(metadata ->> 'metaTitle'), '') IS NOT NULL
+                  AND NULLIF(btrim(metadata ->> 'metaDescription'), '') IS NOT NULL
+                """, articleId, language, OffsetDateTime.ofInstant(draftingStartedAt, ZoneOffset.UTC));
+        if (updated != 1) {
+            throw new IllegalStateException("Save a complete canonical draft before submitting it for review");
+        }
+    }
+
     boolean hasAllRequiredCurrentLanguages(long articleId) {
         Set<String> languages = jdbc.queryForList("""
                 SELECT language FROM article_versions

@@ -212,6 +212,52 @@ public class OpenAIResponsesEditorialTranslationClient implements EditorialTrans
         }
     }
 
+    @Override
+    public AdaptedContent adaptKeyword(AdaptRequest request) {
+        ensureConfigured();
+        var params = ResponseCreateParams.builder()
+                .instructions("Translate only the supplied search phrase for the requested Belgian audience. "
+                        + "Preserve its search intent. Return one concise focusKeyword of at most 120 characters. "
+                        + "Do not write an article or add facts. Copy sourceLanguage, targetLanguage and sourceVersionId exactly.")
+                .input("sourceLanguage: " + request.sourceLocale().name()
+                        + "\ntargetLanguage: " + request.targetLocale().name()
+                        + "\nsourceVersionId: " + request.sourceVersionId()
+                        + "\nfocusKeyword: " + request.sourceFocusKeyword())
+                .reasoning(Reasoning.builder()
+                        .effort(ReasoningEffort.of(properties.getContent().getReasoningEffort())).build())
+                .maxOutputTokens(properties.getContent().getMaxOutputTokens())
+                .store(false)
+                .text(KeywordContent.class)
+                .model(properties.getContent().getPrimaryModel())
+                .build();
+        OpenAIClient activeClient = client();
+        try {
+            JsonNode result = response(activeClient, params.rawParams());
+            KeywordContent keyword = objectMapper.readValue(outputText(result), KeywordContent.class);
+            return new AdaptedContent(keyword.sourceLanguage, keyword.targetLanguage, keyword.sourceVersionId,
+                    null, null, null, null, keyword.focusKeyword, null, null, null,
+                    result.path("model").asText(properties.getContent().getPrimaryModel()),
+                    result.path("usage").path("input_tokens").asLong(0),
+                    result.path("usage").path("output_tokens").asLong(0), "SUCCEEDED");
+        } catch (OpenAIServiceException serviceError) {
+            throw OpenAIRequestFailure.from(serviceError);
+        } catch (OpenAIIoException ioError) {
+            invalidate(activeClient);
+            throw new OpenAIContentGenerationException("NETWORK_INTERRUPTION", "OpenAI keyword request was interrupted");
+        } catch (JsonProcessingException | OpenAIInvalidDataException invalidData) {
+            throw new OpenAIContentGenerationException("MALFORMED_STRUCTURED_OUTPUT", "OpenAI returned an invalid keyword response");
+        } catch (OpenAIException clientError) {
+            throw new OpenAIContentGenerationException("OPENAI_CLIENT_FAILURE", "OpenAI keyword request failed");
+        }
+    }
+
+    public static final class KeywordContent {
+        public String sourceLanguage;
+        public String targetLanguage;
+        public long sourceVersionId;
+        public String focusKeyword;
+    }
+
     private static String outputText(JsonNode response) {
         for (JsonNode output : response.path("output")) {
 

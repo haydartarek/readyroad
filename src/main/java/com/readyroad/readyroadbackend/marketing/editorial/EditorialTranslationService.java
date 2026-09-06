@@ -11,7 +11,6 @@ import com.readyroad.readyroadbackend.marketing.domain.TaskPriority;
 import com.readyroad.readyroadbackend.marketing.task.ClaimedTask;
 import com.readyroad.readyroadbackend.marketing.task.CreateMarketingTaskCommand;
 import com.readyroad.readyroadbackend.marketing.task.TaskCreationService;
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -87,17 +86,23 @@ public class EditorialTranslationService {
             return;
         }
 
-        Map<ContentLocale, EditorialTranslationQualityPolicy.ValidatedTranslation> generated =
-                new LinkedHashMap<>();
-
         for (ContentLocale target : preparation.targets()) {
+            // Recheck before spending: another completed task may already have supplied this language.
+            if (!targetsRequiringAdaptation(preparation.context().articleId(),
+                    ContentLocale.valueOf(preparation.context().canonicalLanguage())).contains(target)) {
+                continue;
+            }
             var request = adaptRequest(preparation.context(), target);
-            var result = translationClient.adapt(request);
-            generated.put(target, qualityPolicy.validate(request, result));
+            var existing = versionService.current(preparation.context().articleId(), target.name());
+            var validated = existing.isPresent()
+                    ? qualityPolicy.validateKeyword(request, translationClient.adaptKeyword(request))
+                    : qualityPolicy.validate(request, translationClient.adapt(request));
+            new TransactionTemplate(transactionManager).executeWithoutResult(
+                    status -> persist(task, preparation, Map.of(target, validated)));
         }
 
         new TransactionTemplate(transactionManager).executeWithoutResult(
-                status -> persist(task, preparation, generated));
+                status -> persist(task, preparation, Map.of()));
     }
 
     Preparation prepare(ClaimedTask task) {
@@ -201,6 +206,8 @@ public class EditorialTranslationService {
                 repairedGeneration
                         .put("seoMetadataRepairTaskId", task.taskId())
                         .put("seoMetadataRepairModel", translation.model())
+                        .put("seoMetadataRepairInputTokens", translation.inputTokens())
+                        .put("seoMetadataRepairOutputTokens", translation.outputTokens())
                         .put("seoMetadataRepairOutcome", translation.requestOutcome());
                 versionService.append(
                         new EditorialArticleVersionDtos.AppendRequest(
@@ -212,6 +219,9 @@ public class EditorialTranslationService {
                 continue;
             }
 
+            if (translation.body() == null) {
+                throw new IllegalStateException("Localized version changed during keyword repair; reload before retrying");
+            }
             ObjectNode metadata =
                     EditorialArticleMetadata.withSeoMetadata(
                             objectMapper.createObjectNode(),
@@ -278,9 +288,8 @@ public class EditorialTranslationService {
 
         }
 
-        if (!store.hasAllRequiredCurrentLanguages(current.articleId())) {
-            throw new IllegalStateException(
-                    "Translation adaptation did not create current AR, NL, FR and EN article versions");
+        if (!targetsRequiringAdaptation(current.articleId(), sourceLocale).isEmpty()) {
+            return;
         }
 
         if (current.state() == EditorialArticleState.TRANSLATION_REQUIRED) {

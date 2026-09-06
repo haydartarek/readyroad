@@ -90,6 +90,20 @@ class EditorialTranslationQualityPolicy {
         return value == null ? "" : value.trim().toUpperCase(Locale.ROOT);
     }
 
+    ValidatedTranslation validateKeyword(
+            EditorialTranslationClient.AdaptRequest request,
+            EditorialTranslationClient.AdaptedContent generated) {
+        if (generated == null || !request.sourceLocale().name().equals(normalize(generated.sourceLanguage()))
+                || !request.targetLocale().name().equals(normalize(generated.targetLanguage()))
+                || generated.sourceVersionId() != request.sourceVersionId()) {
+            throw invalid("Keyword adaptation must reference the requested source version and languages");
+        }
+        String keyword = required(generated.focusKeyword(), "focusKeyword");
+        within(keyword, 120, "focusKeyword");
+        return new ValidatedTranslation(null, null, null, null, keyword, null, null, null,
+                generated.model(), generated.inputTokens(), generated.outputTokens(), generated.requestOutcome());
+    }
+
     private static String required(String value, String field) {
         if (value == null || value.isBlank()) {
             throw invalid("Translated article " + field + " is required");
