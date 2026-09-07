@@ -1,6 +1,7 @@
 package com.readyroad.readyroadbackend.exception;
 
 import com.readyroad.readyroadbackend.service.BackendMessageService;
+import com.readyroad.readyroadbackend.marketing.editorial.EditorialWorkflowPrerequisiteException;
 import org.springframework.orm.ObjectOptimisticLockingFailureException;
 import jakarta.validation.ConstraintViolationException;
 import java.time.LocalDateTime;
@@ -260,6 +261,15 @@ public class GlobalExceptionHandler {
     @ResponseBody
     public ResponseEntity<Map<String, Object>> handleIllegalArgument(IllegalArgumentException ex) {
         return ResponseEntity.badRequest().body(errorBody(ex.getMessage()));
+    }
+
+    @ExceptionHandler(EditorialWorkflowPrerequisiteException.class)
+    @ResponseBody
+    public ResponseEntity<Map<String, Object>> handleEditorialWorkflowPrerequisite(
+            EditorialWorkflowPrerequisiteException ex) {
+        Map<String, Object> body = errorBody(ex.getMessage());
+        body.put("code", EditorialWorkflowPrerequisiteException.ERROR_CODE);
+        return ResponseEntity.status(HttpStatus.CONFLICT).body(body);
     }
 
     @ExceptionHandler(SocialAuthException.class)

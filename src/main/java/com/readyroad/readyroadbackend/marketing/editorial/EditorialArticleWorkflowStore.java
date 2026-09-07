@@ -106,7 +106,8 @@ class EditorialArticleWorkflowStore {
                   AND NULLIF(btrim(metadata ->> 'metaDescription'), '') IS NOT NULL
                 """, articleId, language, OffsetDateTime.ofInstant(draftingStartedAt, ZoneOffset.UTC));
         if (updated != 1) {
-            throw new IllegalStateException("Save a complete canonical draft before submitting it for review");
+            throw new EditorialWorkflowPrerequisiteException(
+                    "Save a complete canonical draft before submitting it for review");
         }
     }
 

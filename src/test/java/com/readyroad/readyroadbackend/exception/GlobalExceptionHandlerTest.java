@@ -1,5 +1,6 @@
 package com.readyroad.readyroadbackend.exception;
 
+import com.readyroad.readyroadbackend.marketing.editorial.EditorialWorkflowPrerequisiteException;
 import com.readyroad.readyroadbackend.service.BackendMessageService;
 import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.Logger;
@@ -114,6 +115,20 @@ class GlobalExceptionHandlerTest {
         assertThat(response.getBody())
                 .containsEntry("error", "The uploaded file exceeds the maximum allowed size of 5 MB.")
                 .containsEntry("message", "The uploaded file exceeds the maximum allowed size of 5 MB.")
+                .containsKey("timestamp");
+    }
+
+    @Test
+    void editorialWorkflowPrerequisiteReturnsConflictWithStableCode() {
+        String message = "Save a complete canonical draft before submitting it for review";
+
+        ResponseEntity<Map<String, Object>> response = globalExceptionHandler
+                .handleEditorialWorkflowPrerequisite(new EditorialWorkflowPrerequisiteException(message));
+
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.CONFLICT);
+        assertThat(response.getBody())
+                .containsEntry("code", EditorialWorkflowPrerequisiteException.ERROR_CODE)
+                .containsEntry("message", message)
                 .containsKey("timestamp");
     }
 
