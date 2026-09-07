@@ -53,6 +53,7 @@ class AnalyticsSyncServiceTest {
 
     @Test
     void oneFailedGoogleSourceProducesAPartialSyncAndKeepsHealthyData() {
+        properties.setAutomaticTasksEnabled(true);
         when(ga4.fetch(any(), any())).thenThrow(
                 new MarketingTaskExecutionException("HTTP_503", "GA4 unavailable"));
         when(search.fetch(any(), any())).thenReturn(new AnalyticsModels.SearchConsoleData(
@@ -66,6 +67,20 @@ class AnalyticsSyncServiceTest {
         verify(editorialOpportunities).enqueueCandidates(42L);
         verify(editorialPerformance).enqueueAfterAnalytics(eq(42L), any());
         verify(schedules).activateAfterSuccessfulSync(any());
+    }
+
+    @Test
+    void manualAnalyticsSyncDoesNotStartEditorialAgents() {
+        when(ga4.fetch(any(), any())).thenThrow(
+                new MarketingTaskExecutionException("HTTP_503", "GA4 unavailable"));
+        when(search.fetch(any(), any())).thenReturn(new AnalyticsModels.SearchConsoleData(
+                List.of(), List.of(), List.of(), Map.of()));
+
+        service.synchronize(44L, false);
+
+        verify(store).saveSearchConsole(any(), any(), eq(44L), anyList());
+        verify(opportunities).analyze(any());
+        verifyNoInteractions(editorialPriorities, editorialOpportunities, editorialPerformance);
     }
 
     @Test

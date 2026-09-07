@@ -27,6 +27,9 @@ public class MarketingScheduleService {
 
     @Transactional
     public int enqueueDueSchedules() {
+        if (!properties.isAutomaticTasksEnabled()) {
+            return 0;
+        }
         Instant now = Instant.now();
         var schedules = scheduleRepository.claimDueSchedules(now, properties.getWorker().getBatchSize());
         for (AgentSchedule schedule : schedules) {

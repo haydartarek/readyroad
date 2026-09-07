@@ -1,6 +1,5 @@
 package com.readyroad.readyroadbackend.marketing.editorial;
 
-import java.time.Duration;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.CacheControl;
@@ -18,7 +17,7 @@ import org.springframework.web.server.ResponseStatusException;
 @RequiredArgsConstructor
 public class EditorialPublicArticleController {
 
-    private static final CacheControl PUBLIC_CACHE = CacheControl.maxAge(Duration.ofMinutes(15)).cachePublic();
+    private static final CacheControl PUBLIC_CACHE = CacheControl.noStore();
 
     private final EditorialPublicArticleService service;
 

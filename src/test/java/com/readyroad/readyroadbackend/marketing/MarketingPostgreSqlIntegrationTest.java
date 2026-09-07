@@ -104,9 +104,11 @@ class MarketingPostgreSqlIntegrationTest {
     @Autowired MarketingTaskDispatcher dispatcher;
     @Autowired ObjectMapper objectMapper;
     @Autowired DataSource dataSource;
+    @Autowired com.readyroad.readyroadbackend.marketing.config.MarketingProperties properties;
 
     @BeforeEach
     void cleanMarketingTables() {
+        properties.setAutomaticTasksEnabled(false);
         executionLogRepository.deleteAll();
         auditRepository.deleteAll();
         approvalRepository.deleteAll();
@@ -402,6 +404,13 @@ class MarketingPostgreSqlIntegrationTest {
         schedule.setNextRunAt(Instant.now().minusSeconds(1));
         schedule = scheduleRepository.saveAndFlush(schedule);
 
+        assertThat(properties.isAutomaticTasksEnabled()).isFalse();
+        assertThat(adminPlatformService.overview().automaticTasksEnabled()).isFalse();
+        assertThat(scheduleService.enqueueDueSchedules()).isZero();
+        assertThat(taskRepository.count()).isZero();
+        assertThat(scheduleRepository.findById(schedule.getId()).orElseThrow().getLastRunAt()).isNull();
+
+        properties.setAutomaticTasksEnabled(true);
         assertThat(scheduleService.enqueueDueSchedules()).isOne();
 
         assertThat(taskRepository.count()).isOne();
@@ -409,6 +418,81 @@ class MarketingPostgreSqlIntegrationTest {
         assertThat(updated.getLastRunAt()).isNotNull();
         assertThat(updated.getNextRunAt()).isAfter(updated.getLastRunAt());
         assertThat(taskRepository.findAll().getFirst().getStatus()).isEqualTo(TaskStatus.PENDING);
+    }
+
+    @Test
+    void manualModeCancelsLegacyAutomaticTasksWithoutAttemptsOrRetries() {
+        for (String actor : List.of("MARKETING_SCHEDULER", "ANALYTICS_WORKER", "STRATEGY_WORKER")) {
+            AgentTask task = creationService.create(command("AUTO", actor, TaskPriority.NORMAL,
+                    ApprovalMetadata.standingOwnerAuthorization())).task();
+            task.setCreatedBy(actor);
+            task.setStatus(TaskStatus.RETRY_SCHEDULED);
+            task.setNextRetryAt(Instant.now().minusSeconds(1));
+            taskRepository.saveAndFlush(task);
+        }
+        AgentTask requested = creationService.create(command("MANUAL", "manual", TaskPriority.NORMAL,
+                ApprovalMetadata.standingOwnerAuthorization())).task();
+
+        assertThat(claimService.claimNextBatch("manual-worker"))
+                .extracting(ClaimedTask::taskId).containsExactly(requested.getId());
+        assertThat(taskRepository.countByStatus(TaskStatus.CANCELLED)).isEqualTo(3);
+        assertThat(attemptRepository.count()).isOne();
+        assertThat(auditRepository.countByEventType("TASK_CANCELLED")).isEqualTo(3);
+        assertThat(claimService.claimNextBatch("manual-worker")).isEmpty();
+        assertThat(auditRepository.countByEventType("TASK_CANCELLED")).isEqualTo(3);
+    }
+
+    @Test
+    void manualModeAllowsSameAgentApprovalChildrenButBlocksCrossAgentChildren() {
+        AgentTask parent = creationService.create(command("REQUEST", "request-parent", TaskPriority.NORMAL,
+                ApprovalMetadata.standingOwnerAuthorization())).task();
+        parent.setStatus(TaskStatus.COMPLETED);
+        taskRepository.saveAndFlush(parent);
+        AgentTask child = creationService.create(command("PUBLISH", "requested-child", TaskPriority.NORMAL,
+                ApprovalMetadata.standingOwnerAuthorization())).task();
+        child.setCreatedBy("SYSTEM");
+        child.setParentTaskId(parent.getId());
+        taskRepository.saveAndFlush(child);
+
+        definitionRepository.saveAndFlush(new AgentDefinition("OTHER_AGENT", "Other agent", true));
+        AgentTask unrelated = creationService.create(command("FAN_OUT", "unrelated-child", TaskPriority.NORMAL,
+                ApprovalMetadata.standingOwnerAuthorization())).task();
+        unrelated.setAgentType("OTHER_AGENT");
+        unrelated.setCreatedBy("SYSTEM");
+        unrelated.setParentTaskId(parent.getId());
+        taskRepository.saveAndFlush(unrelated);
+
+        assertThat(claimService.claimNextBatch("requested-worker"))
+                .extracting(ClaimedTask::taskId).containsExactly(child.getId());
+        assertThat(taskRepository.findById(unrelated.getId()).orElseThrow().getStatus())
+                .isEqualTo(TaskStatus.CANCELLED);
+    }
+
+    @Test
+    void manualRetryIsANewExplicitRequestEvenWhenOriginalWasAutomatic() {
+        AgentTask original = creationService.create(command("RETRY_AUTO", "retry-auto", TaskPriority.NORMAL,
+                ApprovalMetadata.standingOwnerAuthorization())).task();
+        original.setCreatedBy("MARKETING_SCHEDULER");
+        original.setStatus(TaskStatus.FAILED);
+        taskRepository.saveAndFlush(original);
+
+        var replacement = adminPlatformService.retry(original.getId(), "admin");
+
+        assertThat(claimService.claimNextBatch("explicit-retry-worker"))
+                .extracting(ClaimedTask::taskId).containsExactly(replacement.id());
+        assertThat(taskRepository.findById(original.getId()).orElseThrow().getStatus()).isEqualTo(TaskStatus.FAILED);
+    }
+
+    @Test
+    void automaticModeCanClaimScheduledTasksWhenExplicitlyEnabled() {
+        properties.setAutomaticTasksEnabled(true);
+        AgentTask task = creationService.create(command("SCHEDULED", "auto-opt-in", TaskPriority.NORMAL,
+                ApprovalMetadata.standingOwnerAuthorization())).task();
+        task.setCreatedBy("MARKETING_SCHEDULER");
+        task.setSourceType("AGENT_SCHEDULE");
+        taskRepository.saveAndFlush(task);
+        assertThat(claimService.claimNextBatch("opt-in-worker"))
+                .extracting(ClaimedTask::taskId).containsExactly(task.getId());
     }
 
     @Test

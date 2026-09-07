@@ -65,7 +65,8 @@ public class MarketingAdminPlatformService {
                 .map(MarketingAdminDtos.ErrorItem::from)
                 .toList();
         return new MarketingAdminDtos.Overview(
-                properties.isEnabled(), counts, taskRepository.countByCreatedAtGreaterThanEqual(startOfToday()),
+                properties.isEnabled(), properties.isAutomaticTasksEnabled(),
+                counts, taskRepository.countByCreatedAtGreaterThanEqual(startOfToday()),
                 definitionRepository.countByEnabledTrue(),
                 taskRepository.countActiveWorkers(), recent, alerts, Instant.now());
     }

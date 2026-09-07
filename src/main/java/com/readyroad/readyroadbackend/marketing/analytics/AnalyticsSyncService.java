@@ -72,9 +72,11 @@ public class AnalyticsSyncService {
                     searchConsole, properties.getAnalytics().getSearchConsoleSiteUrl(), taskId, partialFailures);
             opportunityService.analyze(end);
             warnIfDataIsLate(taskId, end, settings);
-            editorialPriorityTaskService.enqueueAfterAnalytics(taskId, end);
-            editorialOpportunityDiscoveryService.enqueueCandidates(taskId);
-            editorialPerformanceTaskService.enqueueAfterAnalytics(taskId, end);
+            if (properties.isAutomaticTasksEnabled()) {
+                editorialPriorityTaskService.enqueueAfterAnalytics(taskId, end);
+                editorialOpportunityDiscoveryService.enqueueCandidates(taskId);
+                editorialPerformanceTaskService.enqueueAfterAnalytics(taskId, end);
+            }
         }
         if (!partialFailures.isEmpty()) {
             logService.record(

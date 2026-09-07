@@ -49,4 +49,21 @@ class LessonImportServiceIdempotencyTest {
         assertThat(secondImport.skipped()).isEqualTo(30);
         assertThat(secondImport.errors()).isEmpty();
     }
+
+    @Test
+    void canonicalImportRestoresTheApprovedMechanicsTitleAndKeepsItOnRestart() {
+        lessonImportService.importFromClasspath();
+        Lesson mechanics = storedLessons.get("les-29");
+        assertThat(mechanics.getTitleAr()).isEqualTo("أساسيات ميكانيك السيارة");
+        mechanics.setTitleAr("أساسيات تكنولوجيا السيارة");
+
+        var repaired = lessonImportService.importFromClasspath();
+        var restarted = lessonImportService.importFromClasspath();
+
+        assertThat(repaired.updated()).isOne();
+        assertThat(repaired.skipped()).isEqualTo(29);
+        assertThat(storedLessons.get("les-29").getTitleAr()).isEqualTo("أساسيات ميكانيك السيارة");
+        assertThat(restarted.updated()).isZero();
+        assertThat(restarted.skipped()).isEqualTo(30);
+    }
 }

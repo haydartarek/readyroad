@@ -19,6 +19,7 @@ public final class MarketingAdminDtos {
 
     public record Overview(
             boolean enabled,
+            boolean automaticTasksEnabled,
             Map<String, Long> tasksByStatus,
             long tasksToday,
             long activeAgents,

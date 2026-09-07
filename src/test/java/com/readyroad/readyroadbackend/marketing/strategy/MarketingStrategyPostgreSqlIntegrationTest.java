@@ -204,6 +204,9 @@ class MarketingStrategyPostgreSqlIntegrationTest {
                 });
         assertThat(uspRepository.count()).isEqualTo(uspCountBefore + 1);
         assertThat(auditRepository.countByEventType("STRATEGY_UPDATED")).isEqualTo(auditCountBefore + 1);
+        assertThat(taskRepository.findAll()).noneMatch(candidate ->
+                "STRATEGY_WORKER".equals(candidate.getCreatedBy())
+                        && "EDITORIAL".equals(candidate.getAgentType()));
     }
 
     @Test

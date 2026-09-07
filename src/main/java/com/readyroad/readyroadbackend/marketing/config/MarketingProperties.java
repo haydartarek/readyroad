@@ -13,6 +13,7 @@ import org.springframework.stereotype.Component;
 public class MarketingProperties {
 
     private boolean enabled;
+    private boolean automaticTasksEnabled;
     private Worker worker = new Worker();
     private Analytics analytics = new Analytics();
     private YouTube youtube = new YouTube();

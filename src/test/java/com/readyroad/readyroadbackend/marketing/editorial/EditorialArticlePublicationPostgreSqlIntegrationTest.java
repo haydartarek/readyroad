@@ -220,6 +220,8 @@ class EditorialArticlePublicationPostgreSqlIntegrationTest {
 
         mockMvc.perform(get("/api/articles").param("language", "AR"))
                 .andExpect(status().isOk())
+                .andExpect(org.springframework.test.web.servlet.result.MockMvcResultMatchers.header()
+                        .string("Cache-Control", "no-store"))
                 .andExpect(jsonPath("$[0].language").value("AR"))
                 .andExpect(jsonPath("$[0].slug").value("publication-6-AR"))
                 .andExpect(jsonPath("$[0].title").value("AR title"))
@@ -234,6 +236,8 @@ class EditorialArticlePublicationPostgreSqlIntegrationTest {
         mockMvc.perform(get("/api/articles/{slug}", "publication-6-AR")
                         .param("language", "NL"))
                 .andExpect(status().isOk())
+                .andExpect(org.springframework.test.web.servlet.result.MockMvcResultMatchers.header()
+                        .string("Cache-Control", "no-store"))
                 .andExpect(jsonPath("$.language").value("NL"))
                 .andExpect(jsonPath("$.slug").value("publication-6-NL"))
                 .andExpect(jsonPath("$.body").value("NL body"))
@@ -250,6 +254,8 @@ class EditorialArticlePublicationPostgreSqlIntegrationTest {
                         .param("language", "NL")
                         .param("targetPath", "/nl/exam"))
                 .andExpect(status().isOk())
+                .andExpect(org.springframework.test.web.servlet.result.MockMvcResultMatchers.header()
+                        .string("Cache-Control", "no-store"))
                 .andExpect(jsonPath("$[0].slug").value("publication-6-NL"))
                 .andExpect(jsonPath("$[0].title").value("NL title"));
     }
