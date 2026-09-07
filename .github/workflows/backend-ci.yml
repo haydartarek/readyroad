@@ -15,6 +15,7 @@ on:
       - "deploy/hostinger/**"
       - ".github/workflows/backend-ci.yml"
       - ".github/workflows/deploy-production.yml"
+      - ".github/workflows/production-uptime.yml"
   pull_request:
     paths:
       - "src/**"
@@ -27,6 +28,7 @@ on:
       - "deploy/hostinger/**"
       - ".github/workflows/backend-ci.yml"
       - ".github/workflows/deploy-production.yml"
+      - ".github/workflows/production-uptime.yml"
   workflow_dispatch:
 
 permissions:
