@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MaxUploadSizeExceededException;
 import org.springframework.web.servlet.resource.NoResourceFoundException;
 import org.springframework.web.server.ResponseStatusException;
+import org.springframework.web.util.DisconnectedClientHelper;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -29,6 +30,9 @@ import lombok.extern.slf4j.Slf4j;
 @ControllerAdvice
 @RequiredArgsConstructor
 public class GlobalExceptionHandler {
+
+    private static final DisconnectedClientHelper disconnectedClientHelper =
+            new DisconnectedClientHelper(GlobalExceptionHandler.class.getName());
 
     private final BackendMessageService messages;
 
@@ -318,6 +322,10 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(Exception.class)
     @ResponseBody
     public ResponseEntity<Map<String, Object>> handleGenericException(Exception ex) {
+        if (disconnectedClientHelper.checkAndLogClientDisconnectedException(ex)) {
+            // The client is gone; writing an error body would fail again, especially for images.
+            return null;
+        }
         log.error("Unhandled exception: {}", ex.getMessage(), ex);
         Map<String, Object> body = errorBody(messages.get("error.unexpected"));
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(body);
