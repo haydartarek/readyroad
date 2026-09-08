@@ -60,7 +60,8 @@ public final class EditorialEditorDtos {
             String latestDraftTaskStatus,
             boolean canCreateBrief,
             boolean canCollectSources,
-            boolean canCreateDraft) {}
+            boolean canCreateDraft,
+            String latestDraftErrorCode) {}
 
     public record CurrentVersion(
             String language,

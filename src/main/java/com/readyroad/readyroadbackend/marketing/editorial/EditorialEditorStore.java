@@ -172,6 +172,25 @@ class EditorialEditorStore {
                 """, this::article, topicId).stream().findFirst();
     }
 
+    String latestDraftErrorCode(long articleId) {
+        return jdbc.query("""
+                SELECT error_code FROM agent_tasks
+                WHERE agent_type = 'EDITORIAL' AND task_type = 'ARTICLE_DRAFT_CREATE'
+                  AND source_type = 'ARTICLE' AND source_id = ?
+                ORDER BY id DESC LIMIT 1
+                """, (result, row) -> result.getString("error_code"), String.valueOf(articleId))
+                .stream().filter(java.util.Objects::nonNull).findFirst().orElse(null);
+    }
+
+    boolean hasCanonicalVersion(long articleId) {
+        return Boolean.TRUE.equals(jdbc.queryForObject("""
+                SELECT EXISTS (
+                    SELECT 1 FROM article_versions v JOIN articles a ON a.id = v.article_id
+                    WHERE a.id = ? AND v.language = a.canonical_language AND v.is_current
+                )
+                """, Boolean.class, articleId));
+    }
+
     private Optional<ArticleRow> articleById(long articleId) {
         return jdbc.query("""
                 SELECT id, article_topic_id, lifecycle_state, canonical_language

@@ -174,6 +174,28 @@ class EditorialBriefDraftPostgreSqlIntegrationTest {
     }
 
     @Test
+    void failedDraftCanBeRetriedWithoutDuplicatingActiveTasksOrGeneratingOnRead() {
+        long articleId = createBrief();
+        insertSupportedCoreClaim(2);
+        var first = draftService.request(articleId, new EditorialDraftDtos.CreateRequest("first-attempt"), "admin");
+        jdbc.update("UPDATE articles SET lifecycle_state = 'DRAFTING' WHERE id = ?", articleId);
+        jdbc.update("UPDATE agent_tasks SET status = 'FAILED', error_code = 'OPENAI_QUOTA_EXHAUSTED' WHERE id = ?", first.id());
+        var failed = editorService.authoringStatus(2);
+        assertThat(failed.canCreateDraft()).isTrue();
+        assertThat(failed.latestDraftErrorCode()).isEqualTo("OPENAI_QUOTA_EXHAUSTED");
+        assertThat(generationCalls).hasValue(0);
+        var retry = draftService.request(articleId, new EditorialDraftDtos.CreateRequest("retry"), "admin");
+        var doubleClick = draftService.request(articleId, new EditorialDraftDtos.CreateRequest("another-click"), "admin");
+        assertThat(retry.id()).isNotEqualTo(first.id());
+        assertThat(doubleClick.id()).isEqualTo(retry.id());
+        assertThat(editorService.authoringStatus(2).canCreateDraft()).isFalse();
+        draftHandler.execute(claimed(taskRepository.findById(retry.id()).orElseThrow()));
+        assertThat(generationCalls).hasValue(1);
+        assertThat(editorService.authoringStatus(2).lifecycleState()).isEqualTo("DRAFT_READY");
+        assertThat(editorService.authoringStatus(2).canCreateDraft()).isFalse();
+    }
+
+    @Test
     void blocksBriefCreationWhenTheSelectedGoalDoesNotBelongToTheFunnelStage() {
         EditorialBriefDtos.CreateRequest request = briefRequest(strategy("EDUCATION", "START_PRACTICE"));
         var response = briefService.request(2, request, "editorial-admin");

@@ -18,10 +18,8 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.server.ResponseStatusException;
 
 @Service
 @RequiredArgsConstructor
@@ -51,14 +49,16 @@ public class EditorialArticleApprovalService {
         var article = workflowStore.lock(articleId);
         if (article.state() != EditorialArticleState.IMAGE_REQUIRED
                 && article.state() != EditorialArticleState.WAITING_APPROVAL) {
-            throw new ResponseStatusException(
-                    HttpStatus.CONFLICT,
-                    "Article must be IMAGE_REQUIRED before requesting approval");
+            throw new EditorialWorkflowPrerequisiteException(
+                    "Article must be IMAGE_REQUIRED before requesting approval",
+                    "editorial.approval.state_required", "");
         }
 
         Set<EditorialArticleQualityGate> gates = Set.copyOf(request.passedQualityGates());
         if (!gates.containsAll(REQUIRED_GATES)) {
-            throw new IllegalStateException("All editorial quality gates must pass before approval");
+            throw new EditorialWorkflowPrerequisiteException(
+                    "All editorial quality gates must pass before approval",
+                    "editorial.approval.quality_required", "");
         }
         List<EditorialArticleApprovalStore.VersionSnapshot> versions = currentVersions(articleId);
         EditorialArticleImageStore.ApprovedImage image = imageStore.requireApprovalReady(articleId);
@@ -161,13 +161,16 @@ public class EditorialArticleApprovalService {
                 .map(EditorialArticleApprovalStore.VersionSnapshot::language)
                 .collect(Collectors.toUnmodifiableSet());
         if (versions.size() != REQUIRED_LANGUAGES.size() || !languages.equals(REQUIRED_LANGUAGES)) {
-            throw new IllegalStateException("Current AR, NL, FR and EN article versions are required for approval");
+            throw new EditorialWorkflowPrerequisiteException(
+                    "Current AR, NL, FR and EN article versions are required for approval",
+                    "editorial.approval.languages_required", "");
         }
         List<String> missingMetadata = approvalStore.languagesMissingMetadata(articleId);
         if (!missingMetadata.isEmpty()) {
-            throw new IllegalStateException(
+            throw new EditorialWorkflowPrerequisiteException(
                     "Complete localized article metadata is required for approval: "
-                            + String.join(", ", missingMetadata));
+                            + String.join(", ", missingMetadata),
+                    "editorial.approval.metadata_required", String.join(", ", missingMetadata));
         }
         return versions;
     }

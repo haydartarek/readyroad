@@ -136,6 +136,17 @@ class EditorialArticleWorkflowPostgreSqlIntegrationTest {
     }
 
     @Test
+    void incompleteDraftKeepsItsBusinessErrorThroughTheRepositoryProxy() {
+        long articleId = insertArticle(3, EditorialArticleState.DRAFTING);
+        insertApprovedBrief(articleId, false);
+        assertThatThrownBy(() -> workflow.advanceFromEditor(articleId, "admin", "Submit draft"))
+                .isInstanceOf(EditorialWorkflowPrerequisiteException.class)
+                .hasMessageContaining("Save a complete canonical draft");
+        assertThat(state(articleId)).isEqualTo(EditorialArticleState.DRAFTING);
+        assertThat(auditCount(articleId)).isZero();
+    }
+
+    @Test
     void advancesTheAdminEditorThroughFactCheckToTranslationWithAudit() {
         long articleId = insertArticle(11, EditorialArticleState.DRAFT_READY);
         insertApprovedBrief(articleId, false);

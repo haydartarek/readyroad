@@ -11,6 +11,8 @@ import com.readyroad.readyroadbackend.marketing.task.CreateMarketingTaskCommand;
 import com.readyroad.readyroadbackend.marketing.task.TaskCreationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import com.readyroad.readyroadbackend.marketing.repository.AgentTaskRepository;
 
 @Service
 @RequiredArgsConstructor
@@ -25,13 +27,19 @@ public class EditorialDraftService {
     private final ContentGenerationClient generationClient;
     private final TaskCreationService taskCreationService;
     private final ObjectMapper objectMapper;
+    private final AgentTaskRepository taskRepository;
 
+    @Transactional
     public MarketingTaskLifecycleResponse request(
             long articleId,
             EditorialDraftDtos.CreateRequest request,
             String actor) {
         validateRequest(articleId, request, actor);
         store.requireArticle(articleId);
+        var activeTask = store.activeTaskId(articleId);
+        if (activeTask.isPresent()) {
+            return MarketingTaskLifecycleResponse.from(taskRepository.findById(activeTask.get()).orElseThrow());
+        }
         var payload = objectMapper.createObjectNode()
                 .put("articleId", articleId)
                 .put("idempotencyKey", request.idempotencyKey().trim());

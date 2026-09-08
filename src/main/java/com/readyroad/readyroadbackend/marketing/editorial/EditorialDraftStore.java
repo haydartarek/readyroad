@@ -15,11 +15,21 @@ class EditorialDraftStore {
     private final JdbcTemplate jdbc;
 
     void requireArticle(long articleId) {
-        boolean exists = Boolean.TRUE.equals(jdbc.queryForObject(
-                "SELECT EXISTS (SELECT 1 FROM articles WHERE id = ?)", Boolean.class, articleId));
+        boolean exists = !jdbc.queryForList(
+                "SELECT id FROM articles WHERE id = ? FOR UPDATE", Long.class, articleId).isEmpty();
         if (!exists) {
             throw new IllegalArgumentException("Unknown article: " + articleId);
         }
+    }
+
+    Optional<Long> activeTaskId(long articleId) {
+        return jdbc.queryForList("""
+                SELECT id FROM agent_tasks
+                WHERE agent_type = 'EDITORIAL' AND task_type = 'ARTICLE_DRAFT_CREATE'
+                  AND source_type = 'ARTICLE' AND source_id = ?
+                  AND status IN ('PENDING', 'SCHEDULED', 'WAITING_APPROVAL', 'APPROVED', 'RUNNING', 'RETRY_SCHEDULED')
+                ORDER BY id DESC LIMIT 1
+                """, Long.class, String.valueOf(articleId)).stream().findFirst();
     }
 
     Optional<Long> versionCreatedByTask(long taskId) {

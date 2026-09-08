@@ -267,7 +267,8 @@ public class GlobalExceptionHandler {
     @ResponseBody
     public ResponseEntity<Map<String, Object>> handleEditorialWorkflowPrerequisite(
             EditorialWorkflowPrerequisiteException ex) {
-        Map<String, Object> body = errorBody(ex.getMessage());
+        Map<String, Object> body = errorBody(ex.messageKey() == null
+                ? ex.getMessage() : messages.get(ex.messageKey(), ex.detail()));
         body.put("code", EditorialWorkflowPrerequisiteException.ERROR_CODE);
         return ResponseEntity.status(HttpStatus.CONFLICT).body(body);
     }

@@ -133,6 +133,16 @@ class GlobalExceptionHandlerTest {
     }
 
     @Test
+    void editorialPrerequisiteUsesTheLocalizedMessageAndConflictContract() {
+        when(messages.get("editorial.approval.image_required", "")).thenReturn("Upload the article image first.");
+        var response = globalExceptionHandler.handleEditorialWorkflowPrerequisite(
+                new EditorialWorkflowPrerequisiteException("internal explanation", "editorial.approval.image_required", ""));
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.CONFLICT);
+        assertThat(response.getBody()).containsEntry("message", "Upload the article image first.")
+                .containsEntry("code", EditorialWorkflowPrerequisiteException.ERROR_CODE);
+    }
+
+    @Test
     void clientAbortDoesNotAttemptToCreateAnErrorResponse() {
         assertThat(globalExceptionHandler.handleGenericException(
                 new ClientAbortException(new IOException("Broken pipe")))).isNull();

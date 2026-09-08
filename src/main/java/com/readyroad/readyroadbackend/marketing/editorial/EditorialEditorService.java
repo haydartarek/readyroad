@@ -80,6 +80,10 @@ public class EditorialEditorService {
         boolean sourceTaskActive = activeTask(sourceTaskStatus);
         boolean draftTaskActive = activeTask(draftTaskStatus);
         boolean briefReady = status.briefId() != null && "BRIEF_READY".equals(status.lifecycleState());
+        boolean recoverableDraft = status.briefId() != null && status.articleId() != null
+                && "DRAFTING".equals(status.lifecycleState())
+                && (draftTaskStatus == null || Set.of("FAILED", "CANCELLED", "REJECTED").contains(draftTaskStatus))
+                && !store.hasCanonicalVersion(status.articleId());
         return new EditorialEditorDtos.AuthoringStatus(
                 status.topicId(), status.topicStatus(), status.articleId(), status.lifecycleState(),
                 status.briefId(), status.briefStatus(), status.briefLanguage(),
@@ -89,11 +93,12 @@ public class EditorialEditorService {
                 status.briefId() == null
                         && Set.of("PLANNED", "BRIEF_READY").contains(status.topicStatus())
                         && !briefTaskActive,
-                briefReady && !sourceTaskActive,
-                briefReady
+                (briefReady || recoverableDraft) && !sourceTaskActive,
+                (briefReady || recoverableDraft)
                         && status.claimsTotal() > 0
                         && status.claimsSupported() == status.claimsTotal()
-                        && !draftTaskActive);
+                        && !draftTaskActive,
+                status.articleId() == null ? null : store.latestDraftErrorCode(status.articleId()));
     }
 
     @Transactional(readOnly = true)

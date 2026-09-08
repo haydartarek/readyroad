@@ -143,7 +143,7 @@ class EditorialArticleApprovalPostgreSqlIntegrationTest {
 
         assertThatThrownBy(() -> approvalRequestService.request(
                 articleId, request(incomplete, "Incomplete evidence"), "owner"))
-                .isInstanceOf(IllegalStateException.class)
+                .isInstanceOf(EditorialWorkflowPrerequisiteException.class)
                 .hasMessageContaining("quality gates");
 
         assertThat(state(articleId)).isEqualTo(EditorialArticleState.IMAGE_REQUIRED);
@@ -157,10 +157,22 @@ class EditorialArticleApprovalPostgreSqlIntegrationTest {
 
         assertThatThrownBy(() -> approvalRequestService.request(
                 articleId, request(allGates(), "Metadata evidence is incomplete"), "owner"))
-                .isInstanceOf(IllegalStateException.class)
+                .isInstanceOf(EditorialWorkflowPrerequisiteException.class)
                 .hasMessageContaining("metadata")
                 .hasMessageContaining("FR");
 
+        assertThat(state(articleId)).isEqualTo(EditorialArticleState.IMAGE_REQUIRED);
+        assertThat(taskCount()).isZero();
+    }
+
+    @Test
+    void missingUploadedImageReturnsActionablePrerequisiteWithoutCreatingApproval() {
+        long articleId = eligibleArticle(6);
+        jdbc.update("UPDATE article_image_assets SET status = 'SUPERSEDED' WHERE article_id = ?", articleId);
+        assertThatThrownBy(() -> approvalRequestService.request(
+                articleId, request(allGates(), "Reviewed article"), "owner"))
+                .isInstanceOfSatisfying(EditorialWorkflowPrerequisiteException.class,
+                        error -> assertThat(error.messageKey()).isEqualTo("editorial.approval.image_required"));
         assertThat(state(articleId)).isEqualTo(EditorialArticleState.IMAGE_REQUIRED);
         assertThat(taskCount()).isZero();
     }

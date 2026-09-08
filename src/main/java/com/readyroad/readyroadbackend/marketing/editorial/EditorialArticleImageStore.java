@@ -144,8 +144,9 @@ class EditorialArticleImageStore {
                         && row.localizationCount() == 4)
                 .map(row -> new ApprovedImage(row.assetId()))
                 .findFirst()
-                .orElseThrow(() -> new IllegalStateException(
-                        "An article image with all variants and localized alt text is required"));
+                .orElseThrow(() -> new EditorialWorkflowPrerequisiteException(
+                        "An article image with all variants and localized alt text is required",
+                        "editorial.approval.image_required", ""));
     }
 
     Optional<EditorialArticleImageDtos.PublicImage> publicImage(long assetId, String language) {
