@@ -2,27 +2,31 @@ package com.readyroad.readyroadbackend.marketing.editorial;
 
 import java.util.Locale;
 import java.util.Set;
+import com.readyroad.readyroadbackend.service.BackendMessageService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
 @Component
+@RequiredArgsConstructor
 class EditorialArticleImagePolicy {
 
     private static final long MAX_SOURCE_BYTES = 5L * 1024L * 1024L;
     private static final Set<String> CONTENT_TYPES = Set.of("image/jpeg", "image/png");
+    private final BackendMessageService messages;
 
     Normalized normalize(
             MultipartFile file,
             EditorialArticleImageDtos.UploadMetadata metadata,
             String actor) {
         if (file == null || file.isEmpty()) {
-            throw new IllegalArgumentException("Article image file is required");
+            throw new IllegalArgumentException(messages.get("upload.file_empty"));
         }
         if (file.getSize() > MAX_SOURCE_BYTES) {
-            throw new IllegalArgumentException("Article image file must not exceed 5 MB");
+            throw new IllegalArgumentException(messages.get("upload.file_too_large_request", 5));
         }
         if (metadata == null) {
-            throw new IllegalArgumentException("Article image metadata is required");
+            throw new IllegalArgumentException(messages.get("editorial.image.metadata_required"));
         }
         if (actor == null || actor.isBlank() || actor.trim().length() > 160) {
             throw new IllegalArgumentException("A valid article image uploader is required");
@@ -30,7 +34,7 @@ class EditorialArticleImagePolicy {
 
         String contentType = normalizeContentType(file.getContentType());
         if (!CONTENT_TYPES.contains(contentType)) {
-            throw new IllegalArgumentException("Only JPEG and PNG article images are supported");
+            throw new IllegalArgumentException(messages.get("editorial.image.invalid_type"));
         }
 
         return new Normalized(
@@ -48,14 +52,14 @@ class EditorialArticleImagePolicy {
         return value == null ? "" : value.trim().toLowerCase(Locale.ROOT);
     }
 
-    private static String storedFileName(String value) {
+    private String storedFileName(String value) {
         String normalized = required(value, "storedFileName", 128)
                 .toLowerCase(Locale.ROOT)
                 .replaceAll("[^a-z0-9]+", "-")
                 .replaceAll("^-+|-+$", "")
                 .replaceAll("-+", "-");
         if (normalized.isBlank()) {
-            throw new IllegalArgumentException("storedFileName must contain letters or numbers");
+            throw new IllegalArgumentException(messages.get("editorial.image.metadata_required"));
         }
         return normalized;
     }
@@ -74,13 +78,15 @@ class EditorialArticleImagePolicy {
         return normalized.isBlank() ? "article-image" + extension : normalized;
     }
 
-    private static String required(String value, String field, int maxLength) {
+    private String required(String value, String field, int maxLength) {
         if (value == null || value.isBlank()) {
-            throw new IllegalArgumentException(field + " is required");
+            throw new IllegalArgumentException(field.startsWith("altText")
+                    ? messages.get("editorial.image.alt_required", field.substring(7).toUpperCase(Locale.ROOT))
+                    : messages.get("editorial.image.metadata_required"));
         }
         String normalized = value.trim();
         if (normalized.length() > maxLength) {
-            throw new IllegalArgumentException(field + " exceeds " + maxLength + " characters");
+            throw new IllegalArgumentException(messages.get("editorial.image.text_too_long", maxLength));
         }
         return normalized;
     }

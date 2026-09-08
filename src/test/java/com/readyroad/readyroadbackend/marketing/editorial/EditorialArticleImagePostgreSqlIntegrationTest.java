@@ -13,10 +13,20 @@ import java.nio.file.Path;
 import java.util.UUID;
 import javax.imageio.ImageIO;
 import javax.sql.DataSource;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.web.context.WebApplicationContext;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import static org.springframework.security.test.web.servlet.setup.SecurityMockMvcConfigurers.springSecurity;
+import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.user;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.multipart;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
+import org.junit.jupiter.params.provider.CsvSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -58,6 +68,8 @@ class EditorialArticleImagePostgreSqlIntegrationTest {
     @Autowired DataSource dataSource;
     @Autowired EditorialArticleImageService service;
     @Autowired EditorialArticleImageStore store;
+    @Autowired WebApplicationContext context;
+    @Autowired ObjectMapper objectMapper;
 
     private JdbcTemplate jdbc;
 
@@ -138,6 +150,50 @@ class EditorialArticleImagePostgreSqlIntegrationTest {
         });
         assertThat(store.requireApprovalReady(articleId).assetId()).isEqualTo(asset.id());
         assertThat(service.current(articleId)).get().isEqualTo(asset);
+    }
+
+    @ParameterizedTest
+    @CsvSource({"1448,1086", "1536,1024", "1024,768", "800,450"})
+    void acceptsSourceDimensionsIndependentlyOfGeneratedRenditions(int width, int height) throws Exception {
+        long articleId = imageRequiredArticle(1, "local-source");
+        var asset = service.upload(articleId, image("local-source", width, height),
+                metadata("local-source"), "admin");
+
+        assertThat(asset.originalWidth()).isEqualTo(width);
+        assertThat(asset.originalHeight()).isEqualTo(height);
+        assertThat(asset.variants()).hasSize(5).allSatisfy(variant -> {
+            var decoded = ImageIO.read(publicFile(variant.publicPath()).toFile());
+            assertThat(decoded.getWidth()).isEqualTo(variant.width());
+            assertThat(decoded.getHeight()).isEqualTo(variant.height());
+        });
+        assertThat(store.requireApprovalReady(articleId).assetId()).isEqualTo(asset.id());
+        assertThat(service.current(articleId)).contains(asset);
+    }
+
+    @Test
+    void uploadsThroughAuthenticatedControllerAndExplainsDuplicateInArabic() throws Exception {
+        long articleId = imageRequiredArticle(1, "owner-upload");
+        var mvc = MockMvcBuilders.webAppContextSetup(context).apply(springSecurity()).build();
+        var file = image("owner-upload", 1448, 1086);
+        var metadataPart = new MockMultipartFile("metadata", "metadata.json", "application/json",
+                objectMapper.writeValueAsBytes(metadata("owner-upload")));
+        String url = "/api/admin/marketing/editorial/editor/articles/" + articleId + "/image";
+        mvc.perform(multipart(url).file(file).file(metadataPart)
+                .with(user("admin").roles("ADMIN")).header("Accept-Language", "ar"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.originalWidth").value(1448))
+                .andExpect(jsonPath("$.originalHeight").value(1086))
+                .andExpect(jsonPath("$.status").value("APPROVED"))
+                .andExpect(jsonPath("$.variants.length()").value(5))
+                .andExpect(jsonPath("$.localizations.length()").value(4));
+        mvc.perform(get(url).with(user("admin").roles("ADMIN")))
+                .andExpect(status().isOk()).andExpect(jsonPath("$.originalWidth").value(1448));
+        mvc.perform(multipart(url).file(file).file(metadataPart)
+                .with(user("admin").roles("ADMIN")).header("Accept-Language", "ar"))
+                .andExpect(status().isConflict())
+                .andExpect(jsonPath("$.message").value("هذه الصورة مسجلة مسبقًا. اختر صورة مختلفة."));
+        assertThat(jdbc.queryForObject("SELECT count(*) FROM article_image_assets", Integer.class)).isOne();
+        assertThat(service.current(articleId)).isPresent();
     }
 
     @ParameterizedTest

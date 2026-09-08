@@ -5,10 +5,19 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.mock.web.MockMultipartFile;
+import org.springframework.context.support.ResourceBundleMessageSource;
+import com.readyroad.readyroadbackend.service.BackendMessageService;
 
 class EditorialArticleImagePolicyTest {
 
-    private final EditorialArticleImagePolicy policy = new EditorialArticleImagePolicy();
+    private final EditorialArticleImagePolicy policy = policy();
+
+    private static EditorialArticleImagePolicy policy() {
+        var source = new ResourceBundleMessageSource();
+        source.setBasename("messages");
+        source.setDefaultEncoding("UTF-8");
+        return new EditorialArticleImagePolicy(new BackendMessageService(source));
+    }
 
     @Test
     void acceptsLocalUploadWithSeoNameAndLocalizedAltText() {
@@ -35,7 +44,7 @@ class EditorialArticleImagePolicyTest {
 
         assertThatThrownBy(() -> policy.normalize(file("image/jpeg"), incomplete, "admin"))
                 .isInstanceOf(IllegalArgumentException.class)
-                .hasMessageContaining("altTextEn");
+                .hasMessageContaining("EN");
     }
 
     @Test

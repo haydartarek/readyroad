@@ -3,6 +3,7 @@ package com.readyroad.readyroadbackend.marketing.editorial;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.readyroad.readyroadbackend.marketing.audit.MarketingAuditService;
+import com.readyroad.readyroadbackend.service.BackendMessageService;
 import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -25,6 +26,7 @@ public class EditorialArticleImageService {
     private final EditorialArticleImageStore store;
     private final MarketingAuditService auditService;
     private final ObjectMapper objectMapper;
+    private final BackendMessageService messages;
 
     @Transactional(readOnly = true)
     public Optional<EditorialArticleImageDtos.Asset> current(long articleId) {
@@ -48,7 +50,7 @@ public class EditorialArticleImageService {
         if (!EditorialArticleState.valueOf(article.lifecycleState()).allowsDraftPreparation()) {
             throw new ResponseStatusException(
                     HttpStatus.CONFLICT,
-                    "Article images can only be changed in an editable draft or review state");
+                    messages.get("editorial.image.edit_locked"));
         }
 
         var processed = processor.process(
@@ -62,7 +64,7 @@ public class EditorialArticleImageService {
             processor.delete(processed);
             throw new ResponseStatusException(
                     HttpStatus.CONFLICT,
-                    "This image is already registered in the editorial library");
+                    messages.get("editorial.image.duplicate"));
         }
 
         long assetId = store.insertPending(articleId, processed, metadata);
@@ -98,7 +100,7 @@ public class EditorialArticleImageService {
         if (!EditorialArticleState.valueOf(article.lifecycleState()).allowsDraftPreparation()) {
             throw new ResponseStatusException(
                     HttpStatus.CONFLICT,
-                    "Article images can only be removed in an editable draft or review state");
+                    messages.get("editorial.image.edit_locked"));
         }
         long assetId = store.supersedeCurrent(articleId);
         ObjectNode details = objectMapper.createObjectNode();

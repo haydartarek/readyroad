@@ -1,6 +1,7 @@
 package com.readyroad.readyroadbackend.marketing.editorial;
 
 import jakarta.annotation.PostConstruct;
+import com.readyroad.readyroadbackend.service.BackendMessageService;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
@@ -38,10 +39,13 @@ class EditorialArticleImageProcessor {
             new VariantSpec("OG", 1200, 630, 307_200));
 
     private final Path storageRoot;
+    private final BackendMessageService messages;
 
     EditorialArticleImageProcessor(
-            @Value("${rijvia.editorial.images.directory:data/editorial-images}") String storageDirectory) {
+            @Value("${rijvia.editorial.images.directory:data/editorial-images}") String storageDirectory,
+            BackendMessageService messages) {
         this.storageRoot = Path.of(storageDirectory).toAbsolutePath().normalize();
+        this.messages = messages;
     }
 
     @PostConstruct
@@ -71,7 +75,7 @@ class EditorialArticleImageProcessor {
             verifySignature(sourceBytes, contentType);
             BufferedImage source = ImageIO.read(new ByteArrayInputStream(sourceBytes));
             if (source == null) {
-                throw new IllegalArgumentException("The uploaded article image cannot be decoded");
+                throw new IllegalArgumentException(messages.get("upload.unreadable_image"));
             }
 
             Files.createDirectories(archiveDirectory);
@@ -196,14 +200,14 @@ class EditorialArticleImageProcessor {
         return output;
     }
 
-    private static byte[] encodeJpegWithinBudget(BufferedImage image, int maxBytes) {
+    private byte[] encodeJpegWithinBudget(BufferedImage image, int maxBytes) {
         for (float quality = 0.86f; quality >= 0.38f; quality -= 0.04f) {
             byte[] encoded = encodeJpeg(image, quality);
             if (encoded.length < maxBytes) {
                 return encoded;
             }
         }
-        throw new IllegalArgumentException("The optimized article image cannot meet its byte budget");
+        throw new IllegalArgumentException(messages.get("editorial.image.optimization_failed"));
     }
 
     private static byte[] encodeJpeg(BufferedImage image, float quality) {
@@ -223,7 +227,7 @@ class EditorialArticleImageProcessor {
         }
     }
 
-    private static void verifySignature(byte[] bytes, String contentType) {
+    private void verifySignature(byte[] bytes, String contentType) {
         boolean jpeg = bytes.length >= 3
                 && (bytes[0] & 0xff) == 0xff
                 && (bytes[1] & 0xff) == 0xd8
@@ -239,7 +243,7 @@ class EditorialArticleImageProcessor {
                 && bytes[7] == 0x0a;
         if (("image/jpeg".equals(contentType) && !jpeg)
                 || ("image/png".equals(contentType) && !png)) {
-            throw new IllegalArgumentException("The article image signature does not match its content type");
+            throw new IllegalArgumentException(messages.get("upload.unreadable_image"));
         }
     }
 
