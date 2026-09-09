@@ -24,20 +24,25 @@ class EditorialEditorStore {
                        t.conversion_goal_id, t.keyword_cluster_id,
                        ARRAY(SELECT jsonb_array_elements_text(t.target_queries)) AS target_queries,
                        a.id AS article_id, a.lifecycle_state, a.canonical_language,
-                       approval_task.id AS pending_approval_task_id
+                       CASE WHEN publication_task.task_type = 'ARTICLE_APPROVAL'
+                                  AND publication_task.status = 'WAITING_APPROVAL'
+                            THEN publication_task.id END AS pending_approval_task_id,
+                       publication_task.id AS publication_task_id,
+                       publication_task.task_type AS publication_task_type,
+                       publication_task.status AS publication_task_status,
+                       publication_task.error_code AS publication_task_error_code
                 FROM article_topics t
                 LEFT JOIN articles a ON a.article_topic_id = t.id
                 LEFT JOIN LATERAL (
-                    SELECT task.id
+                    SELECT task.id, task.task_type, task.status, task.error_code
                     FROM agent_tasks task
                     WHERE task.agent_type = 'EDITORIAL'
-                      AND task.task_type = 'ARTICLE_APPROVAL'
+                      AND task.task_type IN ('ARTICLE_APPROVAL', 'ARTICLE_PUBLISH')
                       AND task.source_type = 'ARTICLE'
                       AND task.source_id = a.id::text
-                      AND task.status = 'WAITING_APPROVAL'
                     ORDER BY task.id DESC
                     LIMIT 1
-                ) approval_task ON TRUE
+                ) publication_task ON TRUE
                 ORDER BY t.official_backlog_order, t.id
                 """, this::topic);
     }
@@ -220,7 +225,11 @@ class EditorialEditorStore {
                 result.getObject("keyword_cluster_id", Long.class), List.of(queryValues),
                 result.getObject("article_id", Long.class), result.getString("lifecycle_state"),
                 result.getString("canonical_language"),
-                result.getObject("pending_approval_task_id", Long.class));
+                result.getObject("pending_approval_task_id", Long.class),
+                result.getObject("publication_task_id", Long.class),
+                result.getString("publication_task_type"),
+                result.getString("publication_task_status"),
+                result.getString("publication_task_error_code"));
     }
 
     private AuthoringRow authoring(ResultSet result, int rowNumber) throws SQLException {
@@ -279,7 +288,11 @@ class EditorialEditorStore {
             Long articleId,
             String lifecycleState,
             String canonicalLanguage,
-            Long pendingApprovalTaskId) {}
+            Long pendingApprovalTaskId,
+            Long publicationTaskId,
+            String publicationTaskType,
+            String publicationTaskStatus,
+            String publicationTaskErrorCode) {}
 
     record AuthoringRow(
             long topicId,

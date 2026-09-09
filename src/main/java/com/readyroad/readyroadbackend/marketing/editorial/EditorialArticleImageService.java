@@ -47,7 +47,8 @@ public class EditorialArticleImageService {
         }
         var metadata = policy.normalize(file, request, actor);
         var article = store.lockArticle(articleId);
-        if (!EditorialArticleState.valueOf(article.lifecycleState()).allowsDraftPreparation()) {
+        var state = EditorialArticleState.valueOf(article.lifecycleState());
+        if (state != EditorialArticleState.DRAFTING && !state.allowsDraftPreparation()) {
             throw new ResponseStatusException(
                     HttpStatus.CONFLICT,
                     messages.get("editorial.image.edit_locked"));
@@ -97,7 +98,8 @@ public class EditorialArticleImageService {
             throw new IllegalArgumentException("A valid image remover is required");
         }
         var article = store.lockArticle(articleId);
-        if (!EditorialArticleState.valueOf(article.lifecycleState()).allowsDraftPreparation()) {
+        var state = EditorialArticleState.valueOf(article.lifecycleState());
+        if (state != EditorialArticleState.DRAFTING && !state.allowsDraftPreparation()) {
             throw new ResponseStatusException(
                     HttpStatus.CONFLICT,
                     messages.get("editorial.image.edit_locked"));

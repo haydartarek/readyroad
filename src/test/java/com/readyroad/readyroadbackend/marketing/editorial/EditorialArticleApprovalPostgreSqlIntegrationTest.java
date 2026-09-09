@@ -107,10 +107,22 @@ class EditorialArticleApprovalPostgreSqlIntegrationTest {
                 .findFirst().orElseThrow()
                 .pendingApprovalTaskId()).isNull();
 
+        var approving = editorService.workspace().topics().stream()
+                .filter(topic -> topic.articleId() != null && topic.articleId() == articleId)
+                .findFirst().orElseThrow().publicationTask();
+        assertThat(approving.id()).isEqualTo(first.id());
+        assertThat(approving.taskType()).isEqualTo("ARTICLE_APPROVAL");
+        assertThat(approving.status()).isEqualTo("APPROVED");
+
         approvalTaskHandler.execute(claimed(approved));
         approvalTaskHandler.execute(claimed(approved));
 
         assertThat(state(articleId)).isEqualTo(EditorialArticleState.SCHEDULED);
+        var publishing = editorService.workspace().topics().stream()
+                .filter(topic -> topic.articleId() != null && topic.articleId() == articleId)
+                .findFirst().orElseThrow().publicationTask();
+        assertThat(publishing.taskType()).isEqualTo("ARTICLE_PUBLISH");
+        assertThat(publishing.status()).isEqualTo("PENDING");
         assertThat(articleStateAuditCount(articleId)).isEqualTo(3);
         assertThat(jdbc.queryForObject("""
                 SELECT count(*) FROM agent_tasks

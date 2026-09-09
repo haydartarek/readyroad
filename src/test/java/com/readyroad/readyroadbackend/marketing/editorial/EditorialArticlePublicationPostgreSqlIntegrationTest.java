@@ -324,6 +324,27 @@ class EditorialArticlePublicationPostgreSqlIntegrationTest {
     }
 
     @Test
+    void replacingDraftImageKeepsThePublishedImageSnapshotAvailable() throws Exception {
+        long articleId = eligibleArticle(6);
+        AgentTask approval = approvedArticle(articleId);
+        approvalTaskHandler.execute(claimed(approval));
+        dispatcher.dispatch(claimed(publicationTask(articleId)));
+        Long publishedImage = jdbc.queryForObject(
+                "SELECT image_asset_id FROM article_publications WHERE article_id = ? LIMIT 1",
+                Long.class, articleId);
+
+        updateService.start(articleId, "editor");
+        jdbc.update("UPDATE article_image_assets SET status = 'SUPERSEDED' WHERE id = ?", publishedImage);
+
+        for (String language : List.of("AR", "NL", "FR", "EN")) {
+            mockMvc.perform(get("/api/articles/publication-6-" + language).param("language", language))
+                    .andExpect(status().isOk())
+                    .andExpect(jsonPath("$.image.assetId").value(publishedImage));
+        }
+        assertThat(publicationRows(articleId)).isEqualTo(4);
+    }
+
+    @Test
     void adminCanEditAndRepublishOnTheSameRoutesWithoutReplacingHistory() throws Exception {
         long articleId = eligibleArticle(6);
         assignCompleteStrategyContext(6);

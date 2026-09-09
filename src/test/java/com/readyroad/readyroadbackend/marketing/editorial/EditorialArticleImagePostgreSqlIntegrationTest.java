@@ -197,7 +197,7 @@ class EditorialArticleImagePostgreSqlIntegrationTest {
     }
 
     @ParameterizedTest
-    @ValueSource(strings = {"DRAFT_READY", "FACT_CHECK_REQUIRED", "LEGAL_REVIEW_REQUIRED", "TRANSLATION_REQUIRED"})
+    @ValueSource(strings = {"DRAFTING", "DRAFT_READY", "FACT_CHECK_REQUIRED", "LEGAL_REVIEW_REQUIRED", "TRANSLATION_REQUIRED"})
     void uploadsReplacesAndRemovesDraftImagesWithoutAdvancingOrPublishing(String state) throws Exception {
         long articleId = imageRequiredArticle(1, "draft-image");
         jdbc.update("UPDATE articles SET lifecycle_state = ? WHERE id = ?", state, articleId);
@@ -214,6 +214,7 @@ class EditorialArticleImagePostgreSqlIntegrationTest {
         assertThat(jdbc.queryForObject("SELECT lifecycle_state FROM articles WHERE id = ?",
                 String.class, articleId)).isEqualTo(state);
         assertThat(jdbc.queryForObject("SELECT count(*) FROM article_publications", Integer.class)).isZero();
+        assertThat(store.publicImage(first.id(), "EN")).isEmpty();
     }
 
     @ParameterizedTest

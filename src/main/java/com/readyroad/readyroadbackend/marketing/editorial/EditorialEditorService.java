@@ -50,6 +50,9 @@ public class EditorialEditorService {
                         topic.articleId(), topic.lifecycleState(),
                         topic.canonicalLanguage(),
                         topic.pendingApprovalTaskId(),
+                        topic.publicationTaskId() == null ? null : new EditorialEditorDtos.PublicationTask(
+                                topic.publicationTaskId(), topic.publicationTaskType(),
+                                topic.publicationTaskStatus(), topic.publicationTaskErrorCode()),
                         topic.articleId() == null
                                 ? null
                                 : articleImageService.current(topic.articleId()).orElse(null),

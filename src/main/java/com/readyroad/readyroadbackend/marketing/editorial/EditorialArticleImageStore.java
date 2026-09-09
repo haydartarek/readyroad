@@ -161,7 +161,14 @@ class EditorialArticleImageStore {
                 FROM article_image_assets asset
                 JOIN article_image_localizations localization
                   ON localization.image_asset_id = asset.id AND localization.language = ?
-                WHERE asset.id = ? AND asset.status = 'APPROVED'
+                WHERE asset.id = ?
+                  AND (asset.status = 'APPROVED'
+                       OR (asset.status = 'SUPERSEDED' AND EXISTS (
+                           SELECT 1 FROM article_publications publication
+                           WHERE publication.image_asset_id = asset.id
+                             AND publication.language = localization.language
+                             AND publication.status = 'PUBLISHED'
+                       )))
                 """, (result, rowNumber) -> new EditorialArticleImageDtos.PublicImage(
                 assetId,
                 paths.get("HERO"),

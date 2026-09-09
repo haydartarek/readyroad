@@ -39,8 +39,11 @@ public final class EditorialEditorDtos {
             String lifecycleState,
             String canonicalLanguage,
             Long pendingApprovalTaskId,
+            PublicationTask publicationTask,
             EditorialArticleImageDtos.Asset image,
             List<CurrentVersion> currentVersions) {}
+
+    public record PublicationTask(long id, String taskType, String status, String errorCode) {}
 
     public record AuthoringStatus(
             long topicId,
