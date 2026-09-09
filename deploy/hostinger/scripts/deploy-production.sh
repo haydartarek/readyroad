@@ -294,6 +294,8 @@ cp "${TEMPLATE_DIR}/Caddyfile.production" \
 cp "${rollback_target}/.env.production" \
   "${staging_directory}/.env.production"
 chmod 0600 "${staging_directory}/.env.production"
+rr_apply_notification_env "${staging_directory}/.env.production" \
+  "/opt/readyroad/secrets/learning-notifications.env"
 
 backend_image="readyroad-backend:${RELEASE_ID}"
 frontend_image="readyroad-frontend:${RELEASE_ID}"

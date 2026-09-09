@@ -15,6 +15,16 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
 class NotificationServiceTest {
+    @Mock private LearningNotificationOutbox outbox;
+
+    @Test
+    void defersPersistenceToDurableOutboxWhenEnabled() {
+        org.springframework.test.util.ReflectionTestUtils.setField(notificationService, "outboxEnabled", true);
+        notificationService.createExamPassedNotification(17L, 12L, 41, 50);
+        verify(outbox).enqueue(org.mockito.ArgumentMatchers.argThat(notification ->
+                notification.getUserId() == 17L && notification.getLink().equals("/exam/results/12")));
+        org.mockito.Mockito.verifyNoInteractions(notificationRepository);
+    }
 
     @Mock
     private NotificationRepository notificationRepository;
@@ -59,5 +69,15 @@ class NotificationServiceTest {
                 .contains("\"lessonAr\":\"قواعد الأولوية\"")
                 .contains("\"lessonNl\":\"Voorrangsregels\"")
                 .contains("\"lessonFr\":\"Règles de priorité\"");
+    }
+
+    @Test
+    void localizedNamesRemainValidJsonWithNewlinesAndControlCharacters() throws Exception {
+        notificationService.createWeakAreaNotification(17L, "Priority\nRules", "A\tB", "A\rB", "A\"B");
+        var captor = ArgumentCaptor.forClass(Notification.class);
+        verify(notificationRepository).save(captor.capture());
+        var params = new com.fasterxml.jackson.databind.ObjectMapper().readTree(captor.getValue().getMessageParams());
+        assertThat(params.path("categoryEn").asText()).isEqualTo("Priority\nRules");
+        assertThat(params.path("categoryFr").asText()).isEqualTo("A\"B");
     }
 }

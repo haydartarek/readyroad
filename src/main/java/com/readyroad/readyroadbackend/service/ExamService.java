@@ -412,45 +412,6 @@ public class ExamService {
             log.warn("Failed to create exam notification for examId={}: {}", examId, ex.getMessage());
         }
 
-        // ── Story N2: Persist WEAK_AREA rows + fire notification (deduped per 24h)
-        // ──────────
-        try {
-            Map<Long, CategoryBreakdownDTO> categoryMap = calculateCategoryBreakdown(examId, answers);
-            Instant weakAreaCutoff = Instant.now().minusSeconds(24 * 3600);
-            boolean notifSent = false;
-            for (CategoryBreakdownDTO cat : categoryMap.values()) {
-                if (Boolean.TRUE.equals(cat.getIsWeakArea())) {
-                    // Category identity is intentionally not persisted in user_weak_areas
-                    // because its legacy category column stores mutable names.
-                    // Canonical theory-category progress is stored by stable category ID in
-                    // user_category_progress.
-
-                    // ── Send max 1 notification per exam (deduped per 24h) ──
-                    if (!notifSent) {
-                        boolean recentlySent = !notificationRepository
-                                .findByUserIdAndTypeAndCreatedAtAfter(
-                                        exam.getUserId(), NotificationType.WEAK_AREA, weakAreaCutoff)
-                                .isEmpty();
-                        if (!recentlySent) {
-                            notificationService.createWeakAreaNotification(
-                                    exam.getUserId(),
-                                    cat.getCategoryNameEn(),
-                                    cat.getCategoryNameAr(),
-                                    cat.getCategoryNameNl(),
-                                    cat.getCategoryNameFr());
-                            log.info("WEAK_AREA notification sent for userId={}, category={}",
-                                    exam.getUserId(), cat.getCategoryNameEn());
-                        } else {
-                            log.debug("WEAK_AREA notification skipped (sent within 24h) for userId={}",
-                                    exam.getUserId());
-                        }
-                        notifSent = true;
-                    }
-                }
-            }
-        } catch (Exception ex) {
-            log.warn("Failed to persist/notify weak-area for examId={}: {}", examId, ex.getMessage());
-        }
 
         // ── Story N3: Fire ACHIEVEMENT notifications ──────────────────────────
         try {
@@ -464,6 +425,7 @@ public class ExamService {
         // so the dashboard reflects exam activity (not just practice sessions).
         try {
             LocalDateTime now_ldt = LocalDateTime.now();
+            Map<Long, UserCategoryProgress> updatedProgress = new HashMap<>();
             Map<Long, TheoryExamQuestionSnapshot> snapshots = loadExamSnapshots(examId);
             Map<Long, Category> currentCategories = loadCurrentCategoriesById();
 
@@ -507,8 +469,25 @@ public class ExamService {
                 progress.setLastPracticed(now_ldt);
                 progress.updateAccuracy();
                 progressRepository.save(progress);
+                updatedProgress.put(examCategory.id(), progress);
             }
 
+            // Evaluate cumulative evidence only after every answered question is recorded.
+            var categoryMap = calculateCategoryBreakdown(examId, answers);
+            boolean recentlyNotified = !notificationRepository.findByUserIdAndTypeAndCreatedAtAfter(
+                    userId, NotificationType.WEAK_AREA, Instant.now().minusSeconds(24 * 3600)).isEmpty();
+            if (!recentlyNotified) {
+                for (Long categoryId : categoryMap.keySet().stream().sorted().toList()) {
+                    var progress = updatedProgress.get(categoryId);
+                    if (progress != null && WeakAreaNotificationPolicy.isWeak(
+                            progress.getQuestionsAttempted(), progress.getCorrectAnswers())) {
+                        var category = categoryMap.get(categoryId);
+                        notificationService.createWeakAreaNotification(userId, category.getCategoryNameEn(),
+                                category.getCategoryNameAr(), category.getCategoryNameNl(), category.getCategoryNameFr());
+                        break;
+                    }
+                }
+            }
             log.info("Dashboard progress updated from exam {}: {} answers processed for userId={}",
                     examId, answers.size(), userId);
         } catch (Exception ex) {

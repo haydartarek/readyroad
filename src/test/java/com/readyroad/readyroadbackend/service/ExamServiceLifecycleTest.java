@@ -49,6 +49,32 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
 class ExamServiceLifecycleTest {
+    @org.junit.jupiter.params.ParameterizedTest
+    @org.junit.jupiter.params.provider.CsvSource({"3,0,false", "4,2,true", "4,3,false", "19,18,false"})
+    void weakAreaUsesCumulativeEvidenceAfterTheCurrentAnswer(int attempted, int correct, boolean notify) {
+        var exam = activeExam();
+        exam.setTotalQuestions(1);
+        var category = category(1L, "TH01", "Priority");
+        var question = question(10L, category);
+        var examQuestion = examQuestion(question);
+        var progress = new UserCategoryProgress();
+        progress.setUserId(7L);
+        progress.setCategoryId(1L);
+        progress.setQuestionsAttempted(attempted);
+        progress.setCorrectAnswers(correct);
+        when(examRepository.findByIdForUpdate(42L)).thenReturn(Optional.of(exam));
+        when(answerRepository.findByExamId(42L)).thenReturn(List.of(answered(exam, question, false)));
+        when(examQuestionRepository.findByExamIdOrderByQuestionOrder(42L)).thenReturn(List.of(examQuestion));
+        when(questionSnapshotService.read(examQuestion)).thenReturn(snapshot(10L, 1L, "TH01", "Priority"));
+        when(categoryRepository.findAll()).thenReturn(List.of(category));
+        when(progressRepository.findByUserIdAndCategoryId(7L, 1L)).thenReturn(Optional.of(progress));
+
+        service.completeExam(42L, 7L);
+
+        assertThat(progress.getQuestionsAttempted()).isEqualTo(attempted + 1);
+        verify(notificationService, org.mockito.Mockito.times(notify ? 1 : 0))
+                .createWeakAreaNotification(eq(7L), any(), any(), any(), any());
+    }
 
     @Mock ExamSimulationRepository examRepository;
     @Mock CategoryRepository categoryRepository;

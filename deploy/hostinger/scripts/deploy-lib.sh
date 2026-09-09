@@ -126,6 +126,41 @@ rr_set_env_value() {
   mv -f "$temporary" "$file"
 }
 
+rr_apply_notification_env() {
+  local target="$1" source="$2" line key value temporary
+  [[ -e "$source" ]] || return 0
+  [[ -f "$source" && ! -L "$source" && "$(stat -c '%u:%a' "$source")" == "${EUID}:600" ]] || {
+    rr_die "notification_config_permissions_invalid"; return 1;
+  }
+  while IFS= read -r line || [[ -n "$line" ]]; do
+    [[ -z "$line" || "$line" == \#* ]] && continue
+    [[ "$line" == *=* ]] || { rr_die "notification_config_invalid"; return 1; }
+    key="${line%%=*}"; value="${line#*=}"
+    case "$key" in
+      LEARNING_NOTIFICATION_OUTBOX_ENABLED|LEARNING_NOTIFICATION_EMAIL_ENABLED)
+        [[ "$value" == true || "$value" == false ]] || { rr_die "notification_config_invalid"; return 1; } ;;
+      LEARNING_WEB_PUSH_PUBLIC_KEY|LEARNING_WEB_PUSH_PRIVATE_KEY)
+        [[ "$value" =~ ^[A-Za-z0-9_-]+$ ]] || { rr_die "notification_config_invalid"; return 1; } ;;
+      LEARNING_WEB_PUSH_SUBJECT)
+        [[ "$value" =~ ^mailto:[A-Za-z0-9._+-]+@[A-Za-z0-9.-]+$ ]] || { rr_die "notification_config_invalid"; return 1; } ;;
+      *) rr_die "notification_config_key_not_allowed"; return 1 ;;
+    esac
+  done <"$source"
+  temporary="$(mktemp "${target}.notifications.XXXXXX")"
+  awk '
+    FILENAME == ARGV[1] {
+      if ($0 == "" || $0 ~ /^#/) next
+      key=substr($0,1,index($0,"=")-1); overrides[key]=$0; next
+    }
+    { key=substr($0,1,index($0,"=")-1)
+      if (key in overrides) { print overrides[key]; applied[key]=1 } else print
+    }
+    END { for (key in overrides) if (!(key in applied)) print overrides[key] }
+  ' "$source" "$target" >"$temporary"
+  chmod 0600 "$temporary"
+  mv -f "$temporary" "$target"
+}
+
 rr_atomic_current_link() {
   local release="$1"
   local temporary="${READYROAD_ROOT}/.current.$$.tmp"

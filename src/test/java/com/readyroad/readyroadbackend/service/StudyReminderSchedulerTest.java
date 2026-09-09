@@ -35,7 +35,7 @@ class StudyReminderSchedulerTest {
         assertThat(scheduler.shouldSendReminder(
                 userId, threshold.minusSeconds(1), threshold, cooldownCutoff)).isTrue();
         assertThat(scheduler.shouldSendReminder(
-                userId, threshold, threshold, cooldownCutoff)).isFalse();
+                userId, threshold, threshold, cooldownCutoff)).isTrue();
         assertThat(scheduler.shouldSendReminder(
                 userId, threshold.plusHours(1), threshold, cooldownCutoff)).isFalse();
         assertThat(scheduler.shouldSendReminder(

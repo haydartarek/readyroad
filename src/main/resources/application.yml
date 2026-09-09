@@ -134,9 +134,9 @@ readyroad:
     directory: public/images/quiz
   study-reminder:
     enabled: true
-    days-inactive: 3
+    hours-inactive: 24
     cooldown-hours: 24
-    cron-expression: "0 0 10 * * *"
+    cron-expression: "0 * * * * *"
 
 # Application Info (for /actuator/info)
 info:

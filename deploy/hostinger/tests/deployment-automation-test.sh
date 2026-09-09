@@ -134,5 +134,22 @@ set -e
 [[ "$invalid_status" -ne 0 && ! -s "$activation_calls" ]] ||
   fail "invalid config must abort before activation"
 
+notification_target="${TEST_ROOT}/candidate.env"
+notification_source="${TEST_ROOT}/notification.env"
+printf 'UNCHANGED=value\nLEARNING_NOTIFICATION_EMAIL_ENABLED=false\n' >"$notification_target"
+printf 'LEARNING_NOTIFICATION_EMAIL_ENABLED=true\nLEARNING_WEB_PUSH_PUBLIC_KEY=test-only\n' >"$notification_source"
+chmod 0600 "$notification_source"
+rr_apply_notification_env "$notification_target" "$notification_source"
+grep -qx 'UNCHANGED=value' "$notification_target" || fail "unrelated environment changed"
+grep -qx 'LEARNING_NOTIFICATION_EMAIL_ENABLED=true' "$notification_target" || fail "notification override missing"
+grep -qx 'LEARNING_WEB_PUSH_PUBLIC_KEY=test-only' "$notification_target" || fail "notification key missing"
+[[ "$(stat -c %a "$notification_target")" == 600 ]] || fail "candidate env permissions"
+before_invalid="$(sha256sum "$notification_target")"
+printf 'UNRELATED_SETTING=forbidden\n' >"$notification_source"
+if ( rr_apply_notification_env "$notification_target" "$notification_source" ) >/dev/null 2>&1; then
+  fail "unrelated override accepted"
+fi
+[[ "$(sha256sum "$notification_target")" == "$before_invalid" ]] || fail "invalid overlay modified target"
+printf 'notification_config_tests=PASSED\n'
 printf 'deployment_activation_tests=8_passed\n'
 printf 'deployment_automation_unit_test=PASSED\n'

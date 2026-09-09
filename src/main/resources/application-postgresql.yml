@@ -37,6 +37,12 @@ spring:
     validate-on-migrate: true
 
 readyroad:
+  notifications:
+    outbox-enabled: ${LEARNING_NOTIFICATION_OUTBOX_ENABLED:true}
+    email-enabled: ${LEARNING_NOTIFICATION_EMAIL_ENABLED:false}
+    push-public-key: ${LEARNING_WEB_PUSH_PUBLIC_KEY:}
+    push-private-key: ${LEARNING_WEB_PUSH_PRIVATE_KEY:}
+    push-subject: ${LEARNING_WEB_PUSH_SUBJECT:mailto:info@rijvia.be}
   marketing:
     enabled: ${READYROAD_MARKETING_ENABLED:true}
     worker:

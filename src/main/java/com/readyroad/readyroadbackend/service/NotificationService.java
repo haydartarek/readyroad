@@ -34,6 +34,9 @@ public class NotificationService {
 
     private final NotificationRepository notificationRepository;
     private final UserRepository userRepository;
+    private final LearningNotificationOutbox outbox;
+    @org.springframework.beans.factory.annotation.Value("${readyroad.notifications.outbox-enabled:false}")
+    private boolean outboxEnabled;
 
     // ── Read operations ──────────────────────────────────────────────────────
 
@@ -312,7 +315,8 @@ public class NotificationService {
     }
 
     private static String escapeJson(String value) {
-        return value == null ? "" : value.replace("\\", "\\\\").replace("\"", "\\\"");
+        return value == null ? "" : new String(
+                com.fasterxml.jackson.core.io.JsonStringEncoder.getInstance().quoteAsString(value));
     }
 
     /**
@@ -566,7 +570,9 @@ public class NotificationService {
         if (notification.getCreatedAt() == null) {
             notification.setCreatedAt(Instant.now());
         }
-        notificationRepository.save(notification);
-        log.info("Created notification: type={}, userId={}", notification.getType(), notification.getUserId());
+        if (outboxEnabled) outbox.enqueue(notification);
+        else notificationRepository.save(notification);
+        log.debug("Notification accepted: type={}, userId={}, queued={}",
+                notification.getType(), notification.getUserId(), outboxEnabled);
     }
 }

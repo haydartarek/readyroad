@@ -15,22 +15,7 @@ import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
 
-/**
- * Study Reminder Scheduler — daily cron job that nudges inactive users.
- *
- * Logic:
- * 1. Runs daily at 10:00 AM UTC (configurable via cron-expression).
- * 2. For each active learner, checks their most recent persisted learning activity.
- * 3. If the user has been inactive for ≥ {@code daysInactive} days:
- * - AND no STUDY_REMINDER was sent in the last {@code cooldownHours} hours:
- * → Sends a STUDY_REMINDER notification.
- *
- * Configuration properties (application.yml):
- * readyroad.study-reminder.enabled (default: true)
- * readyroad.study-reminder.days-inactive (default: 3)
- * readyroad.study-reminder.cooldown-hours (default: 24)
- * readyroad.study-reminder.cron-expression (default: "0 0 10 * * *")
- */
+/** Checks persisted learning activity every minute; reminders have a 24-hour cooldown. */
 @Component
 @RequiredArgsConstructor
 @Slf4j
@@ -44,31 +29,27 @@ public class StudyReminderScheduler {
     @Value("${readyroad.study-reminder.enabled:true}")
     private boolean enabled;
 
-    @Value("${readyroad.study-reminder.days-inactive:3}")
-    private int daysInactive;
+    @Value("${readyroad.study-reminder.hours-inactive:24}")
+    private int hoursInactive;
 
     @Value("${readyroad.study-reminder.cooldown-hours:24}")
     private long cooldownHours;
 
-    /**
-     * Daily study reminder job — runs at 10:00 AM UTC every day.
-     * Cron: second minute hour day month weekday
-     */
-    @Scheduled(cron = "${readyroad.study-reminder.cron-expression:0 0 10 * * *}")
+    @Scheduled(cron = "${readyroad.study-reminder.cron-expression:0 * * * * *}", zone = "UTC")
     public void sendStudyReminders() {
         if (!enabled) {
             log.info("Study reminder scheduler is disabled — skipping.");
             return;
         }
 
-        log.info("⏰ Study reminder scheduler started (daysInactive={}, cooldownHours={})",
-                daysInactive, cooldownHours);
+        log.debug("Study reminder scheduler started (hoursInactive={}, cooldownHours={})",
+                hoursInactive, cooldownHours);
 
         List<User> activeUsers = userRepository.findByRole(com.readyroad.readyroadbackend.domain.enums.Role.USER)
                 .stream()
                 .filter(user -> Boolean.TRUE.equals(user.getIsActive()))
                 .toList();
-        LocalDateTime inactivityThreshold = LocalDateTime.now().minusDays(daysInactive);
+        LocalDateTime inactivityThreshold = LocalDateTime.now(java.time.ZoneOffset.UTC).minusHours(hoursInactive);
         Instant cooldownCutoff = Instant.now().minus(cooldownHours, ChronoUnit.HOURS);
 
         int sent = 0;
@@ -86,8 +67,8 @@ public class StudyReminderScheduler {
                             "📚 Time to Study!",
                             String.format(
                                     "You haven't practiced in %d days. A short session today keeps your knowledge fresh. Let's go!",
-                                    daysInactive),
-                            daysInactive);
+                                    Math.max(1, hoursInactive / 24)),
+                            Math.max(1, hoursInactive / 24));
                     sent++;
                     log.debug("Study reminder sent to userId={}", user.getId());
                 } else {
@@ -108,7 +89,7 @@ public class StudyReminderScheduler {
      * Determine whether a user should receive a study reminder.
      *
      * Returns true if:
-     * (a) The user's latest known activity is before the inactivity threshold.
+     * (a) The user's latest known activity is at or before the inactivity threshold.
      * (b) No STUDY_REMINDER was sent within the cooldown window.
      */
     boolean shouldSendReminder(
@@ -116,7 +97,7 @@ public class StudyReminderScheduler {
             LocalDateTime lastActivity,
             LocalDateTime inactivityThreshold,
             Instant cooldownCutoff) {
-        if (lastActivity == null || !lastActivity.isBefore(inactivityThreshold)) {
+        if (lastActivity == null || lastActivity.isAfter(inactivityThreshold)) {
             return false;
         }
 
